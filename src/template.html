@@ -49,7 +49,7 @@ button:focus-visible{outline:2px solid var(--b);outline-offset:2px}
 </div>
 <script>
 'use strict';
-const D=__DATA__, PL=__PLANETS__, TRAITS=__TRAITS__, SIGS=__SIGS__, SYS=__SYS__, ART=__ART__, ARTB=__ARTB__, TITLE=__TITLE__, SHIP=__SHIP__, CUTS=__CUTS__, CHAR=__CHAR__, SCN=__SCENES__, FXD=__FX__, PLANART=__PLANETART__;
+const D=__DATA__, PL=__PLANETS__, TRAITS=__TRAITS__, SIGS=__SIGS__, SYS=__SYS__, ART=__ART__, ARTB=__ARTB__, OW=__OW__, TITLE=__TITLE__, SHIP=__SHIP__, CUTS=__CUTS__, CHAR=__CHAR__, SCN=__SCENES__, FXD=__FX__, PLANART=__PLANETART__;
 const PLI={};for(const k in PLANART){const i=new Image();i.src=PLANART[k];PLI[k]=i}
 const FXI={};for(const k in FXD){const i=new Image();i.src=FXD[k];FXI[k]=i}
 const SCI={};for(const k in SCN){const i=new Image();i.src=SCN[k];SCI[k]=i}
@@ -62,6 +62,7 @@ const SHIPI=new Image();if(SHIP)SHIPI.src=SHIP;const CUTI=CUTS.map(u=>{const i=n
 const TITLEI=new Image();if(TITLE)TITLEI.src=TITLE;
 const ARTI={};for(const k in ART){const im=new Image();im.src=ART[k];ARTI[k]=im}
 const ARTBI={};for(const k in ARTB){const im=new Image();im.src=ARTB[k];ARTBI[k]=im}
+const OWI={};for(const k in OW){const im=new Image();im.src=OW[k];OWI[k]=im}
 const IDX={};D.forEach((d,i)=>IDX[d.name]=i);
 const cv=document.getElementById('scr'),ctx=cv.getContext('2d');
 ctx.setTransform(4,0,0,4,0,0);ctx.imageSmoothingEnabled=false;
@@ -279,12 +280,14 @@ function paintInteract(h){const p=PL[G.planet];
  if(h.k==='ship')return choose('Your ship',['Head out (world map)','Recovery Bay','Shop','Cancel'],i=>{if(i===0)launch();else if(i===1){healAll();say('Ship Recovery Bay: Your Alienmon are fully healed and cured!')}else if(i===2)shop()});
  if(h.k==='talk')return say(h.t,null,h.art||undefined);
  if(h.k==='mon'){if(!G.party.some(m=>m.hp>0))return say('Your team needs to heal first.');const pool=p.pool.r.length?p.pool.r:p.pool.c,[a,b]=p.lv;
-  say(h.t||'The wild Alienmon wants to battle!',()=>startBattle([mk(pick(pool),ri(a,b)+1)],null))}}
+  const id=h.mon&&IDX[h.mon]!=null?IDX[h.mon]:pick(pool);say(h.t||'The wild '+D[id].name+' wants to battle!',()=>startBattle([mk(id,ri(a,b)+1)],null))}}
 function drawPaint(){const P=paintOf(),im=SCI[P.img];if(!G.ppos)G.ppos=P.start.slice();const S=P.S,mw=P.w*S,mh=P.h*S,fx=G.ppos[0]*S,fy=G.ppos[1]*S;
  const cx=Math.max(0,Math.min(mw-160,fx-80)),cy=Math.max(0,Math.min(mh-144,fy-82));rect(0,0,160,144,'#1d1433');
  if(okI(im)){ctx.save();ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';ctx.drawImage(im,cx/S,cy/S,160/S,144/S,0,0,160,144);ctx.restore()}
- const kp=PL[G.planet].keeper,drawK=(h)=>{if(kp&&okI(CHI[kp.art])){const hx=h.x*S-cx,hy=h.y*S-cy;ctx.fillStyle='rgba(20,10,20,0.35)';ctx.beginPath();ctx.ellipse(hx,hy-1,7,2.5,0,0,6.283);ctx.fill();dchar(kp.art,Math.round(hx-14),Math.round(hy-29),28,28)}};
- const ks=P.hot.filter(h=>h.k==='keeper');ks.filter(h=>h.y<=G.ppos[1]).forEach(drawK);
+ const kp=PL[G.planet].keeper,drawK=(h)=>{const hx=h.x*S-cx,hy=h.y*S-cy;if(hx<-30||hx>190||hy<-10||hy>180)return;const shadow=()=>{ctx.fillStyle='rgba(20,10,20,0.35)';ctx.beginPath();ctx.ellipse(hx,hy-1,7,2.5,0,0,6.283);ctx.fill()};
+  if(h.k==='mon'){const im=OWI[h.mon];if(!okI(im))return;shadow();const f=(frame>>4)&1;ctx.save();ctx.imageSmoothingEnabled=true;ctx.drawImage(im,f*64,0,64,64,Math.round(hx-12),Math.round(hy-23),24,24);ctx.restore();return}
+  const art=h.k==='keeper'?kp&&kp.art:h.art;if(art&&okI(CHI[art])){shadow();dchar(art,Math.round(hx-14),Math.round(hy-29),28,28)}};
+ const ks=P.hot.filter(h=>h.k==='keeper'||(h.k==='mon'&&h.mon)||(h.art&&h.draw&&(h.k==='talk'||h.k==='npc')));ks.filter(h=>h.y<=G.ppos[1]).forEach(drawK);
  const sx=fx-cx,sy=fy-cy;ctx.fillStyle='rgba(20,10,20,0.35)';ctx.beginPath();ctx.ellipse(sx,sy-1,7,2.5,0,0,6.283);ctx.fill();
  const k=(G.gender||'boy')+'_'+face,bob=pmove&&(stepc%16<8)?1:0;if(!dchar(k,Math.round(sx-14),Math.round(sy-29-bob),28,28))kid(Math.round(sx-6),Math.round(sy-14),face==='left',face==='up',pmove?1:0);
  ks.filter(h=>h.y>G.ppos[1]).forEach(drawK);

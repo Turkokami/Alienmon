@@ -5,3 +5,4 @@ Thumbs.db
 import_report.json
 .vercel
 __pycache__/
+www/index.html

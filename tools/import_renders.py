@@ -72,6 +72,16 @@ def walk_frames(src):
     im=Image.open(src)
     return [im.crop((b[1].start,b[0].start,b[1].stop,b[0].stop)) for b in (min(r[1],key=lambda b:b[1].start) for r in rows)]
 
+def walk_pair(src,dst,holes=True):
+    """The overworld render is two walk frames side by side on white: clean each half and pack them into a 128x64 strip."""
+    import tempfile
+    im=Image.open(src).convert('RGB'); w,h=im.size; strip=Image.new('RGBA',(128,64),(0,0,0,0))
+    for i in range(2):
+        t=os.path.join(tempfile.mkdtemp(),'half.png'); im.crop((i*w//2,0,(i+1)*w//2,h)).save(t)
+        fr=clean(t,holes='auto' if holes else False).convert('RGBA').resize((64,64),Image.LANCZOS)
+        strip.paste(fr,(i*64,0),fr)
+    strip.quantize(colors=64,method=Image.Quantize.FASTOCTREE,dither=Image.Dither.NONE).save(dst,optimize=True)
+
 def structured(p,f,dry,force,rep):
     """Handle one file from a structured render set. Returns False if the name does not follow that layout."""
     base=os.path.splitext(f)[0]
@@ -81,7 +91,11 @@ def structured(p,f,dry,force,rep):
         if not name: rep['unmatched'].append(p); return True
         if m.group(3): rep['alternates'].append([p,name]); return True
         kind=m.group(2)
-        if kind=='overworld': rep['not_used_yet'].append(p); return True
+        if kind=='overworld':   # two-frame walk strip for wild Alienmon drawn in towns
+            rel='art/overworld/'+name+'.png'; dst=os.path.join(ROOT,rel)
+            if os.path.exists(dst) and not force: rep['exists'].append([p,rel]); return True
+            if not dry: walk_pair(p,dst,name not in NO_AUTO_HOLES)
+            rep['overworld'].append([f,rel]); return True
         rel=('art/sprites/' if kind=='front' else 'art/sprites_back/')+name+'.png'; dst=os.path.join(ROOT,rel)
         if os.path.exists(dst) and not force: rep['exists'].append([p,rel]); return True
         if not dry: clean(p,holes=False if name in NO_AUTO_HOLES else 'auto').save(dst,optimize=True)
@@ -125,8 +139,8 @@ def structured(p,f,dry,force,rep):
 
 def main():
     src=sys.argv[1]; dry='--dry-run' in sys.argv; force='--force' in sys.argv
-    rep={'alienmon':[],'alienmon_back':[],'characters':[],'scenes':[],'planets':[],'maps':[],'exists':[],'alternates':[],'not_used_yet':[],'unmatched':[]}
-    for d in ['art/raw','art/sprites','art/sprites_back','art/characters','art/scenes','art/planets','art/maps_incoming']: os.makedirs(os.path.join(ROOT,d),exist_ok=True)
+    rep={'alienmon':[],'alienmon_back':[],'overworld':[],'characters':[],'scenes':[],'planets':[],'maps':[],'exists':[],'alternates':[],'not_used_yet':[],'unmatched':[]}
+    for d in ['art/raw','art/sprites','art/sprites_back','art/overworld','art/characters','art/scenes','art/planets','art/maps_incoming']: os.makedirs(os.path.join(ROOT,d),exist_ok=True)
     files=sorted(os.path.join(d,f) for d,_,fs in os.walk(src) for f in fs if f.lower().endswith(('.png','.jpg','.jpeg','.webp')))
     for p in files:
         f=os.path.basename(p)
