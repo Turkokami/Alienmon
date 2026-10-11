@@ -9,7 +9,16 @@ import numpy as np
 from PIL import Image
 from scipy import ndimage
 SIZE=192
+def is_hole(a,m,bg):
+    """True if an enclosed white region is background showing through the art (a gap in an orbit ring, between vines)
+    rather than a white body part: it matches the outer background colour and is bordered by the dark sprite outline."""
+    if not bg.any() or m.sum()<4000 or (m&bg).any(): return False   # smaller gaps are usually eyes or lights
+    ref=a[bg].mean(axis=0); match=(np.abs(a[m]-ref).max(axis=1)<=3).mean()
+    ring=ndimage.binary_dilation(m,iterations=3)&~m; outline=(a.min(axis=2)[ring]<120).mean()
+    return match>=0.8 and outline>=0.45
+
 def clean(path,holes=False):
+    """holes: False keeps every enclosed white area, True clears all large ones, 'auto' clears only those is_hole() accepts."""
     im=Image.open(path).convert('RGB'); a=np.asarray(im).astype(int)
     light=(a.min(axis=2)>232)
     lab,n=ndimage.label(light)
@@ -18,6 +27,7 @@ def clean(path,holes=False):
     # large enclosed pure-white gaps (e.g. inside orbit rings) are background too
     pure=(a.min(axis=2)>244); l2,n2=ndimage.label(pure); sizes=ndimage.sum(pure,l2,range(1,n2+1))
     big=[i+1 for i,v in enumerate(sizes) if v>2500]
+    if holes=='auto': big=[i for i in big if is_hole(a,l2==i,bg)]
     if holes: bg|=np.isin(l2,big)
     bg=ndimage.binary_opening(bg,iterations=1)|bg
     # soften: grow background 1px into near-white fringe
