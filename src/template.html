@@ -665,10 +665,10 @@ function updBattle(){const opts=['FIGHT','BAG','SWAP','RUN'];
  else if(B.phase==='podpick_unused'){if(P_('up'))B.podsel=(B.podsel+2)%3;if(P_('down'))B.podsel=(B.podsel+1)%3;if(P_('b'))B.phase='menu';
   if(P_('a')){const p=PODS[B.podsel];if(G.pods[p.k]<=0)say('You have no '+p.n+'s. Buy more at a Recovery Bay.');else startSync(p)}}
  else if(B.phase==='sync'){const S=B.sync;S.t++;S.x+=S.dir*S.sp;if(S.x>=150){S.x=150;S.dir=-1}if(S.x<=10){S.x=10;S.dir=1}if(P_('a')){B.phase='wait';lockSync()}}
- else if(B.phase==='party'){const n=G.party.length;if(P_('up'))B.psel=(B.psel+n-1)%n;if(P_('down'))B.psel=(B.psel+1)%n;if(P_('b')&&!B.forced)B.phase='menu';
-  if(P_('a')&&B.itemUse){const it=B.itemUse,m=G.party[B.psel],L0=[];const ok=useOn(it,{...m,id:m.id,lv:m.lv,hp:m.hp,st:m.st},L0);
+ else if(B.phase==='party'){const n=G.party.length;if(P_('up'))B.psel=(B.psel+n-1)%n;if(P_('down'))B.psel=(B.psel+1)%n;if(!B.forced&&!B.itemUse&&P_('b'))B.phase='menu';
+  if(B.itemUse&&P_('a')){const it=B.itemUse,m=G.party[B.psel],L0=[];const ok=useOn(it,{...m,id:m.id,lv:m.lv,hp:m.hp,st:m.st},L0);
    if(!ok){say(L0)}else{B.itemUse=null;G.items[it.k]--;turn(Object.assign(next=>{const L=['You used a '+it.n+'.'];useOn(it,m,L);say(L,next)},{pri:1}))}return}
-  if(P_('b')&&B.itemUse){B.itemUse=null;B.phase='bag';return}
+  if(B.itemUse&&P_('b')){B.itemUse=null;B.phase='bag';return}
   if(P_('a')){const m=G.party[B.psel];if(m.hp<=0)say(nm(m)+' has fainted.');else if(B.psel===B.pi&&!B.forced)say(nm(m)+' is already out!');
    else{const forced=B.forced,old=PM();if(old)resetStages(old);B.pi=B.psel;resetStages(m);
     if(forced){B.phase='wait';const L=['Go, '+nm(m)+'!'];entry(m,EM(),L);say(L,()=>B.phase='menu')}
