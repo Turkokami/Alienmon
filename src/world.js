@@ -79,3 +79,9 @@ function worldBeats(){if(!G||!G.quests)return;
  if(mDone('M05')&&!G.flags.ship_clear){G.flags.ship_clear=1;qNotify('M05','ship',[WSTATE.ship.grant_text])}
  const F=PAINT.fortress;if(F){const post=mDone('M19');F.town=post?'Reclaimed Forge':'Helix Forge Fortress';
   if(post&&!F.hot.some(h=>h.k==='shop'))F.hot.push({x:600,y:560,r:24,k:'shop',hint:"Grub's shop",art:'grub',draw:true})}}
+
+/* Molten Frontier trainers: levels follow when the story sends you past them (their map zone alone would make
+   Forge Miner Dax a Lv 31 Pyros trainer at M05). Species come from the matching world's tier-1 table. */
+const FRONTIER_TR={mf4:{area:'dustara',lv:[5,7]},mf10:{area:'dustara',lv:[7,9]},mf12:{area:'ferrox',lv:[8,10]},mf6:{area:'ferrox',lv:[11,13]},mf7:{area:'glacia',lv:[32,34]}};
+function frontierTeam(e){const f=FRONTIER_TR[e.id];if(!f)return null;const t=(PROG.areas[f.area].tier1||[]).filter(x=>wildOK(x.name)&&IDX[x.name]!=null),r=rng(hash(e.id));
+ return[[IDX[t[Math.floor(r()*t.length)].name],f.lv[0]],[IDX[t[Math.floor(r()*t.length)].name],f.lv[1]]]}

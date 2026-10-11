@@ -410,7 +410,7 @@ function enterRegion(n){G.sub=null;const pi=pidx(n.k),p=PL[pi];G.planet=pi;const
  cut(okI(SCI[p.landScene||p.scene])?SCI[p.landScene||p.scene]:2,'Entering '+n.n,()=>{scene='planet';banner=90},p.sceneFx)}
 function wTrainer(e){const ri=pidx(regionKey(e.x,e.y)),p=PL[ri],r=rng(hash(e.id)),pool=p.pool.c.concat(p.pool.e),tl=trainerLevels(p.key),lv=tl?tl[1]:p.lv[1]+2;
  const team=[[pool[Math.floor(r()*pool.length)],lv-1],[pool[Math.floor(r()*pool.length)],lv]];const name=e.t[0].split(':')[0];
- return{name,art:e.art,intro:e.t[0].split(': ').slice(1).join(': '),lose:'Wow, you two are in sync. Good luck out there!',after:'Keep exploring, Linker. Every region has new Alienmon.',team,bkey:e.id}}
+ return{name,art:e.art,intro:e.t[0].split(': ').slice(1).join(': '),lose:'Wow, you two are in sync. Good luck out there!',after:'Keep exploring, Linker. Every region has new Alienmon.',team:frontierTeam(e)||team,bkey:e.id}}
 function updWorld(){if(!G.wpos)toWorld(PL[G.planet].key);if(P_('start')){scene='menu';menuSel=0;return}
  if(JMP&&JMP.where==='world'){JMP.t++;G.wpos=[Math.max(4,Math.min(WORLD.w-4,G.wpos[0]+JMP.vx*1.1)),Math.max(4,Math.min(WORLD.h-4,G.wpos[1]+JMP.vy*1.1))];wmove=1;stepc++;
   if(JMP.t>=JUMP_T){G.wpos=landNear((x,y)=>wbit(x,y),G.wpos[0],G.wpos[1],8)||JMP.from;JMP=null}drawWorld();return}
