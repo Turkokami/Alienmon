@@ -1,0 +1,1689 @@
+{
+ "dustara": {
+  "trainers": [
+   {
+    "id": "dustara_tr1",
+    "x": 948,
+    "y": 836,
+    "cls": "Linker",
+    "art": "explorer",
+    "name": "Lio",
+    "face": [
+     0,
+     1
+    ]
+   },
+   {
+    "id": "dustara_tr2",
+    "x": 188,
+    "y": 788,
+    "cls": "Canyon Scout",
+    "art": "wanderer",
+    "name": "Milo",
+    "face": [
+     1,
+     0
+    ]
+   },
+   {
+    "id": "dustara_tr3",
+    "x": 1516,
+    "y": 1004,
+    "cls": "Mechanic",
+    "art": "technician",
+    "name": "Rhee",
+    "face": [
+     0,
+     -1
+    ]
+   }
+  ],
+  "folk": [
+   {
+    "x": 236,
+    "y": 396,
+    "art": "civilian",
+    "t": [
+     "Kid: The drift grass crackles with blue sparks. That's how you know Alienmon are hiding in it!"
+    ]
+   },
+   {
+    "x": 348,
+    "y": 780,
+    "art": "wanderer",
+    "t": [
+     "Old prospector: The Starfall crater glows purple every night since the pods came down."
+    ]
+   },
+   {
+    "x": 564,
+    "y": 356,
+    "art": "technician",
+    "t": [
+     "Mechanic: Press B to hop gaps. Saves you the long way around the canyon."
+    ]
+   }
+  ],
+  "legends": []
+ },
+ "halo": {
+  "trainers": [
+   {
+    "id": "halo_app1",
+    "x": 748,
+    "y": 364,
+    "app": 1,
+    "cls": "Apprentice",
+    "art": "wanderer",
+    "name": "Rhee",
+    "face": [
+     0,
+     1
+    ]
+   },
+   {
+    "id": "halo_app2",
+    "x": 972,
+    "y": 460,
+    "app": 1,
+    "cls": "Apprentice",
+    "art": "pilgrim",
+    "name": "Milo",
+    "face": [
+     0,
+     1
+    ]
+   },
+   {
+    "id": "halo_tr1",
+    "x": 1228,
+    "y": 732,
+    "cls": "Mystic",
+    "art": "wanderer",
+    "name": "Ida",
+    "face": [
+     0,
+     -1
+    ]
+   },
+   {
+    "id": "halo_tr2",
+    "x": 420,
+    "y": 788,
+    "cls": "Pilgrim",
+    "art": "pilgrim",
+    "name": "Yuki",
+    "face": [
+     1,
+     0
+    ]
+   },
+   {
+    "id": "halo_tr3",
+    "x": 1412,
+    "y": 308,
+    "cls": "Skywatcher",
+    "art": "civilian",
+    "name": "Corin",
+    "face": [
+     -1,
+     0
+    ]
+   },
+   {
+    "id": "halo_tr4",
+    "x": 828,
+    "y": 828,
+    "cls": "Mystic",
+    "art": "wanderer",
+    "name": "Mara",
+    "face": [
+     0,
+     1
+    ]
+   },
+   {
+    "id": "halo_tr5",
+    "x": 1092,
+    "y": 380,
+    "cls": "Pilgrim",
+    "art": "pilgrim",
+    "name": "Taro",
+    "face": [
+     0,
+     1
+    ]
+   },
+   {
+    "id": "halo_tr6",
+    "x": 620,
+    "y": 540,
+    "cls": "Skywatcher",
+    "art": "civilian",
+    "name": "Wren",
+    "face": [
+     0,
+     1
+    ]
+   },
+   {
+    "id": "halo_tr7",
+    "x": 996,
+    "y": 612,
+    "cls": "Mystic",
+    "art": "wanderer",
+    "name": "Bo",
+    "face": [
+     0,
+     1
+    ]
+   }
+  ],
+  "folk": [
+   {
+    "x": 756,
+    "y": 452,
+    "art": "pilgrim",
+    "t": [
+     "Pilgrim: The holo-globe shows all fourteen worlds at once."
+    ]
+   },
+   {
+    "x": 316,
+    "y": 644,
+    "art": "civilian",
+    "t": [
+     "Skywatcher: The islands float on updrafts. Don't look down."
+    ]
+   },
+   {
+    "x": 668,
+    "y": 860,
+    "art": "wanderer",
+    "t": [
+     "Mystic: The twins see what you'll do before you do it."
+    ]
+   }
+  ],
+  "legends": []
+ },
+ "neonis": {
+  "trainers": [
+   {
+    "id": "neonis_app1",
+    "x": 172,
+    "y": 468,
+    "app": 1,
+    "cls": "Apprentice",
+    "art": "explorer",
+    "name": "Zora",
+    "face": [
+     0,
+     1
+    ]
+   },
+   {
+    "id": "neonis_app2",
+    "x": 436,
+    "y": 428,
+    "app": 1,
+    "cls": "Apprentice",
+    "art": "civilian",
+    "name": "Bo",
+    "face": [
+     -1,
+     0
+    ]
+   },
+   {
+    "id": "neonis_tr1",
+    "x": 1308,
+    "y": 676,
+    "cls": "Courier",
+    "art": "explorer",
+    "name": "Bo",
+    "face": [
+     1,
+     0
+    ]
+   },
+   {
+    "id": "neonis_tr2",
+    "x": 20,
+    "y": 604,
+    "cls": "Raver",
+    "art": "civilian",
+    "name": "Suri",
+    "face": [
+     1,
+     0
+    ]
+   },
+   {
+    "id": "neonis_tr3",
+    "x": 620,
+    "y": 1004,
+    "cls": "Coder",
+    "art": "technician",
+    "name": "Oz",
+    "face": [
+     0,
+     -1
+    ]
+   },
+   {
+    "id": "neonis_tr4",
+    "x": 828,
+    "y": 588,
+    "cls": "Courier",
+    "art": "explorer",
+    "name": "Zora",
+    "face": [
+     0,
+     1
+    ]
+   },
+   {
+    "id": "neonis_tr5",
+    "x": 412,
+    "y": 668,
+    "cls": "Raver",
+    "art": "civilian",
+    "name": "Corin",
+    "face": [
+     -1,
+     0
+    ]
+   }
+  ],
+  "folk": [
+   {
+    "x": 836,
+    "y": 772,
+    "art": "civilian",
+    "t": [
+     "Raver: The whole city hums with Volt energy. Feel it?"
+    ]
+   },
+   {
+    "x": 476,
+    "y": 540,
+    "art": "technician",
+    "t": [
+     "Coder: Every sign in Neonis runs on Alienmon power."
+    ]
+   },
+   {
+    "x": 980,
+    "y": 436,
+    "art": "explorer",
+    "t": [
+     "Courier: Deliveries are faster across the catwalks."
+    ]
+   }
+  ],
+  "legends": []
+ },
+ "pyros": {
+  "trainers": [
+   {
+    "id": "pyros_app1",
+    "x": 700,
+    "y": 324,
+    "app": 1,
+    "cls": "Apprentice",
+    "art": "wanderer",
+    "name": "Ash",
+    "face": [
+     0,
+     1
+    ]
+   },
+   {
+    "id": "pyros_app2",
+    "x": 1020,
+    "y": 148,
+    "app": 1,
+    "cls": "Apprentice",
+    "art": "miner",
+    "name": "Rook",
+    "face": [
+     0,
+     1
+    ]
+   },
+   {
+    "id": "pyros_tr1",
+    "x": 820,
+    "y": 244,
+    "cls": "Ash Walker",
+    "art": "wanderer",
+    "name": "Taro",
+    "face": [
+     -1,
+     0
+    ]
+   },
+   {
+    "id": "pyros_tr2",
+    "x": 28,
+    "y": 620,
+    "cls": "Miner",
+    "art": "miner",
+    "name": "Juno",
+    "face": [
+     1,
+     0
+    ]
+   },
+   {
+    "id": "pyros_tr3",
+    "x": 1420,
+    "y": 812,
+    "cls": "Smith",
+    "art": "technician",
+    "name": "Tamsin",
+    "face": [
+     -1,
+     0
+    ]
+   },
+   {
+    "id": "pyros_tr4",
+    "x": 764,
+    "y": 820,
+    "cls": "Ash Walker",
+    "art": "wanderer",
+    "name": "Kai",
+    "face": [
+     0,
+     1
+    ]
+   },
+   {
+    "id": "pyros_tr5",
+    "x": 1268,
+    "y": 372,
+    "cls": "Miner",
+    "art": "miner",
+    "name": "Quill",
+    "face": [
+     1,
+     0
+    ]
+   },
+   {
+    "id": "pyros_tr6",
+    "x": 436,
+    "y": 284,
+    "cls": "Smith",
+    "art": "technician",
+    "name": "Tamsin",
+    "face": [
+     1,
+     0
+    ]
+   }
+  ],
+  "folk": [
+   {
+    "x": 676,
+    "y": 588,
+    "art": "miner",
+    "t": [
+     "Miner: The lava's hot enough to melt a mine cart. Stay on the trestles."
+    ]
+   },
+   {
+    "x": 604,
+    "y": 212,
+    "art": "technician",
+    "t": [
+     "Smith: Magma-types forge their own armor down here."
+    ]
+   },
+   {
+    "x": 356,
+    "y": 404,
+    "art": "wanderer",
+    "t": [
+     "Ash walker: The crater's light still flickers after all these years."
+    ]
+   }
+  ],
+  "legends": []
+ },
+ "apex": {
+  "trainers": [
+   {
+    "id": "apex_app1",
+    "x": 748,
+    "y": 180,
+    "app": 1,
+    "cls": "Apprentice",
+    "art": "guard",
+    "name": "Bram",
+    "face": [
+     1,
+     0
+    ]
+   },
+   {
+    "id": "apex_app2",
+    "x": 1092,
+    "y": 188,
+    "app": 1,
+    "cls": "Apprentice",
+    "art": "explorer",
+    "name": "Ines",
+    "face": [
+     -1,
+     0
+    ]
+   },
+   {
+    "id": "apex_tr1",
+    "x": 172,
+    "y": 844,
+    "cls": "Summit Guard",
+    "art": "guard",
+    "name": "Ash",
+    "face": [
+     1,
+     0
+    ]
+   },
+   {
+    "id": "apex_tr2",
+    "x": 1452,
+    "y": 340,
+    "cls": "Ace Linker",
+    "art": "explorer",
+    "name": "Zora",
+    "face": [
+     -1,
+     0
+    ]
+   },
+   {
+    "id": "apex_tr3",
+    "x": 908,
+    "y": 828,
+    "cls": "Astronomer",
+    "art": "researcher",
+    "name": "Juno",
+    "face": [
+     0,
+     1
+    ]
+   },
+   {
+    "id": "apex_tr4",
+    "x": 500,
+    "y": 244,
+    "cls": "Summit Guard",
+    "art": "guard",
+    "name": "Taro",
+    "face": [
+     -1,
+     0
+    ]
+   },
+   {
+    "id": "apex_tr5",
+    "x": 1332,
+    "y": 884,
+    "cls": "Ace Linker",
+    "art": "explorer",
+    "name": "Juno",
+    "face": [
+     -1,
+     0
+    ]
+   },
+   {
+    "id": "apex_tr6",
+    "x": 884,
+    "y": 236,
+    "cls": "Astronomer",
+    "art": "researcher",
+    "name": "Ida",
+    "face": [
+     0,
+     -1
+    ]
+   },
+   {
+    "id": "apex_tr7",
+    "x": 1156,
+    "y": 556,
+    "cls": "Summit Guard",
+    "art": "guard",
+    "name": "Fenn",
+    "face": [
+     -1,
+     0
+    ]
+   },
+   {
+    "id": "apex_tr8",
+    "x": 620,
+    "y": 580,
+    "cls": "Ace Linker",
+    "art": "explorer",
+    "name": "Ash",
+    "face": [
+     0,
+     -1
+    ]
+   }
+  ],
+  "folk": [
+   {
+    "x": 660,
+    "y": 716,
+    "art": "researcher",
+    "t": [
+     "Astronomer: The great telescope can see all the way to Ystra."
+    ]
+   },
+   {
+    "x": 644,
+    "y": 244,
+    "art": "guard",
+    "t": [
+     "Summit guard: Only the strongest Linkers make it this high."
+    ]
+   },
+   {
+    "x": 852,
+    "y": 484,
+    "art": "explorer",
+    "t": [
+     "Ace Linker: Train hard. The summit doesn't forgive."
+    ]
+   }
+  ],
+  "legends": []
+ },
+ "ferrox": {
+  "trainers": [
+   {
+    "id": "ferrox_app1",
+    "x": 732,
+    "y": 276,
+    "app": 1,
+    "cls": "Apprentice",
+    "art": "guard",
+    "name": "Zora",
+    "face": [
+     0,
+     1
+    ]
+   },
+   {
+    "id": "ferrox_app2",
+    "x": 892,
+    "y": 420,
+    "app": 1,
+    "cls": "Apprentice",
+    "art": "technician",
+    "name": "Wren",
+    "face": [
+     0,
+     1
+    ]
+   },
+   {
+    "id": "ferrox_tr1",
+    "x": 300,
+    "y": 484,
+    "cls": "Rail Hand",
+    "art": "guard",
+    "name": "Oz",
+    "face": [
+     0,
+     1
+    ]
+   },
+   {
+    "id": "ferrox_tr2",
+    "x": 1428,
+    "y": 356,
+    "cls": "Scrapper",
+    "art": "technician",
+    "name": "Pell",
+    "face": [
+     -1,
+     0
+    ]
+   },
+   {
+    "id": "ferrox_tr3",
+    "x": 804,
+    "y": 820,
+    "cls": "Miner",
+    "art": "miner",
+    "name": "Rhee",
+    "face": [
+     0,
+     1
+    ]
+   },
+   {
+    "id": "ferrox_tr4",
+    "x": 708,
+    "y": 420,
+    "cls": "Rail Hand",
+    "art": "guard",
+    "name": "Fenn",
+    "face": [
+     0,
+     1
+    ]
+   }
+  ],
+  "folk": [
+   {
+    "x": 948,
+    "y": 388,
+    "art": "technician",
+    "t": [
+     "Scrapper: Everything here is built from junk. Even the Relay Tower."
+    ]
+   },
+   {
+    "x": 564,
+    "y": 684,
+    "art": "miner",
+    "t": [
+     "Rail hand: Alloy-types love the rail yard. Bring something that burns."
+    ]
+   },
+   {
+    "x": 956,
+    "y": 828,
+    "art": "civilian",
+    "t": [
+     "Kid: Hank's Alienmon are tough as old boilers!"
+    ]
+   }
+  ],
+  "legends": []
+ },
+ "glacia": {
+  "trainers": [
+   {
+    "id": "glacia_app1",
+    "x": 860,
+    "y": 364,
+    "app": 1,
+    "cls": "Apprentice",
+    "art": "technician",
+    "name": "Bo",
+    "face": [
+     1,
+     0
+    ]
+   },
+   {
+    "id": "glacia_app2",
+    "x": 428,
+    "y": 252,
+    "app": 1,
+    "cls": "Apprentice",
+    "art": "researcher",
+    "name": "Milo",
+    "face": [
+     0,
+     1
+    ]
+   },
+   {
+    "id": "glacia_tr1",
+    "x": 1140,
+    "y": 388,
+    "cls": "Radio Tech",
+    "art": "technician",
+    "name": "Ash",
+    "face": [
+     0,
+     1
+    ]
+   },
+   {
+    "id": "glacia_tr2",
+    "x": 44,
+    "y": 812,
+    "cls": "Researcher",
+    "art": "researcher",
+    "name": "Fenn",
+    "face": [
+     1,
+     0
+    ]
+   },
+   {
+    "id": "glacia_tr3",
+    "x": 908,
+    "y": 1004,
+    "cls": "Climber",
+    "art": "explorer",
+    "name": "Sol",
+    "face": [
+     0,
+     -1
+    ]
+   },
+   {
+    "id": "glacia_tr4",
+    "x": 556,
+    "y": 508,
+    "cls": "Radio Tech",
+    "art": "technician",
+    "name": "Mara",
+    "face": [
+     1,
+     0
+    ]
+   },
+   {
+    "id": "glacia_tr5",
+    "x": 1516,
+    "y": 756,
+    "cls": "Researcher",
+    "art": "researcher",
+    "name": "Ash",
+    "face": [
+     0,
+     -1
+    ]
+   },
+   {
+    "id": "glacia_tr6",
+    "x": 132,
+    "y": 236,
+    "cls": "Climber",
+    "art": "explorer",
+    "name": "Corin",
+    "face": [
+     -1,
+     0
+    ]
+   }
+  ],
+  "folk": [
+   {
+    "x": 580,
+    "y": 364,
+    "art": "researcher",
+    "t": [
+     "Researcher: Something huge is frozen inside the glacier wall."
+    ]
+   },
+   {
+    "x": 916,
+    "y": 796,
+    "art": "explorer",
+    "t": [
+     "Climber: Ice paths are slick. Jump the cracks, don't walk them."
+    ]
+   },
+   {
+    "x": 996,
+    "y": 388,
+    "art": "technician",
+    "t": [
+     "Radio tech: Our antennas pick up signals from the Starfall Rift."
+    ]
+   }
+  ],
+  "legends": []
+ },
+ "glyphos": {
+  "trainers": [
+   {
+    "id": "glyphos_tr1",
+    "x": 804,
+    "y": 612,
+    "cls": "Archaeologist",
+    "art": "explorer",
+    "name": "Yuki",
+    "face": [
+     0,
+     1
+    ]
+   },
+   {
+    "id": "glyphos_tr2",
+    "x": 20,
+    "y": 196,
+    "cls": "Pilgrim",
+    "art": "pilgrim",
+    "name": "Rhee",
+    "face": [
+     1,
+     0
+    ]
+   },
+   {
+    "id": "glyphos_tr3",
+    "x": 1516,
+    "y": 404,
+    "cls": "Rune Scholar",
+    "art": "researcher",
+    "name": "Mara",
+    "face": [
+     -1,
+     0
+    ]
+   },
+   {
+    "id": "glyphos_tr4",
+    "x": 524,
+    "y": 188,
+    "cls": "Archaeologist",
+    "art": "explorer",
+    "name": "Kai",
+    "face": [
+     -1,
+     0
+    ]
+   },
+   {
+    "id": "glyphos_tr5",
+    "x": 1236,
+    "y": 772,
+    "cls": "Pilgrim",
+    "art": "pilgrim",
+    "name": "Ines",
+    "face": [
+     1,
+     0
+    ]
+   }
+  ],
+  "folk": [
+   {
+    "x": 572,
+    "y": 412,
+    "art": "explorer",
+    "t": [
+     "Archaeologist: These glyphs tell the Alienmon's story. Read the murals."
+    ]
+   },
+   {
+    "x": 260,
+    "y": 668,
+    "art": "pilgrim",
+    "t": [
+     "Pilgrim: The obelisk hums when you hold Signal Shards near it."
+    ]
+   },
+   {
+    "x": 676,
+    "y": 764,
+    "art": "researcher",
+    "t": [
+     "Rune scholar: Crystal-types grow in the old courtyards."
+    ]
+   }
+  ],
+  "legends": []
+ },
+ "helix": {
+  "trainers": [
+   {
+    "id": "helix_app1",
+    "x": 788,
+    "y": 484,
+    "app": 1,
+    "cls": "Apprentice",
+    "art": "guard",
+    "name": "Suri",
+    "face": [
+     0,
+     1
+    ]
+   },
+   {
+    "id": "helix_app2",
+    "x": 548,
+    "y": 180,
+    "app": 1,
+    "cls": "Apprentice",
+    "art": "strand",
+    "name": "Sol",
+    "face": [
+     0,
+     1
+    ]
+   },
+   {
+    "id": "helix_tr1",
+    "x": 396,
+    "y": 748,
+    "cls": "Guard",
+    "art": "guard",
+    "name": "Rhee",
+    "face": [
+     0,
+     -1
+    ]
+   },
+   {
+    "id": "helix_tr2",
+    "x": 1404,
+    "y": 572,
+    "cls": "Helix Grunt",
+    "art": "strand",
+    "name": "Rook",
+    "face": [
+     -1,
+     0
+    ]
+   },
+   {
+    "id": "helix_tr3",
+    "x": 436,
+    "y": 92,
+    "cls": "Scientist",
+    "art": "researcher",
+    "name": "Ida",
+    "face": [
+     0,
+     1
+    ]
+   },
+   {
+    "id": "helix_tr4",
+    "x": 948,
+    "y": 916,
+    "cls": "Guard",
+    "art": "guard",
+    "name": "Suri",
+    "face": [
+     -1,
+     0
+    ]
+   },
+   {
+    "id": "helix_tr5",
+    "x": 876,
+    "y": 332,
+    "cls": "Helix Grunt",
+    "art": "strand",
+    "name": "Tamsin",
+    "face": [
+     0,
+     1
+    ]
+   },
+   {
+    "id": "helix_tr6",
+    "x": 620,
+    "y": 1004,
+    "cls": "Scientist",
+    "art": "researcher",
+    "name": "Pip",
+    "face": [
+     1,
+     0
+    ]
+   }
+  ],
+  "folk": [
+   {
+    "x": 788,
+    "y": 676,
+    "art": "researcher",
+    "t": [
+     "Scientist: I just run the tests. Don't look at me like that."
+    ]
+   },
+   {
+    "x": 332,
+    "y": 524,
+    "art": "guard",
+    "t": [
+     "Guard: Keep moving. Visitors aren't supposed to be on this deck."
+    ]
+   },
+   {
+    "x": 660,
+    "y": 300,
+    "art": "technician",
+    "t": [
+     "Engineer: The power cores have been running hot all week."
+    ]
+   }
+  ],
+  "legends": []
+ },
+ "sporeholm": {
+  "trainers": [
+   {
+    "id": "sporeholm_app1",
+    "x": 996,
+    "y": 404,
+    "app": 1,
+    "cls": "Apprentice",
+    "art": "explorer",
+    "name": "Corin",
+    "face": [
+     1,
+     0
+    ]
+   },
+   {
+    "id": "sporeholm_app2",
+    "x": 692,
+    "y": 156,
+    "app": 1,
+    "cls": "Apprentice",
+    "art": "sporefolk",
+    "name": "Rook",
+    "face": [
+     1,
+     0
+    ]
+   },
+   {
+    "id": "sporeholm_tr1",
+    "x": 732,
+    "y": 548,
+    "cls": "Bog Hiker",
+    "art": "explorer",
+    "name": "Lio",
+    "face": [
+     0,
+     -1
+    ]
+   },
+   {
+    "id": "sporeholm_tr2",
+    "x": 1356,
+    "y": 236,
+    "cls": "Spore Tender",
+    "art": "sporefolk",
+    "name": "Rook",
+    "face": [
+     -1,
+     0
+    ]
+   },
+   {
+    "id": "sporeholm_tr3",
+    "x": 124,
+    "y": 260,
+    "cls": "Botanist",
+    "art": "researcher",
+    "name": "Rhee",
+    "face": [
+     -1,
+     0
+    ]
+   },
+   {
+    "id": "sporeholm_tr4",
+    "x": 356,
+    "y": 1004,
+    "cls": "Bog Hiker",
+    "art": "explorer",
+    "name": "Ash",
+    "face": [
+     1,
+     0
+    ]
+   }
+  ],
+  "folk": [
+   {
+    "x": 492,
+    "y": 404,
+    "art": "sporefolk",
+    "t": [
+     "Spore tender: Mind the lily pads. Some float farther than they look."
+    ]
+   },
+   {
+    "x": 1044,
+    "y": 444,
+    "art": "researcher",
+    "t": [
+     "Botanist: The mushrooms glow brighter near the Relay Tower."
+    ]
+   },
+   {
+    "x": 764,
+    "y": 180,
+    "art": "explorer",
+    "t": [
+     "Bog hiker: Toxin-types hide in the moss reeds. Carry Cure Spray."
+    ]
+   }
+  ],
+  "legends": []
+ },
+ "starfall": {
+  "trainers": [
+   {
+    "id": "starfall_app1",
+    "x": 876,
+    "y": 236,
+    "app": 1,
+    "cls": "Apprentice",
+    "art": "researcher",
+    "name": "Hale",
+    "face": [
+     -1,
+     0
+    ]
+   },
+   {
+    "id": "starfall_app2",
+    "x": 588,
+    "y": 404,
+    "app": 1,
+    "cls": "Apprentice",
+    "art": "strand",
+    "name": "Zora",
+    "face": [
+     1,
+     0
+    ]
+   },
+   {
+    "id": "starfall_tr1",
+    "x": 732,
+    "y": 468,
+    "cls": "Star Watcher",
+    "art": "researcher",
+    "name": "Mara",
+    "face": [
+     0,
+     1
+    ]
+   },
+   {
+    "id": "starfall_tr2",
+    "x": 1516,
+    "y": 300,
+    "cls": "Helix Driller",
+    "art": "strand",
+    "name": "Ash",
+    "face": [
+     -1,
+     0
+    ]
+   },
+   {
+    "id": "starfall_tr3",
+    "x": 20,
+    "y": 348,
+    "cls": "Rift Seeker",
+    "art": "explorer",
+    "name": "Rhee",
+    "face": [
+     1,
+     0
+    ]
+   },
+   {
+    "id": "starfall_tr4",
+    "x": 1316,
+    "y": 868,
+    "cls": "Star Watcher",
+    "art": "researcher",
+    "name": "Suri",
+    "face": [
+     1,
+     0
+    ]
+   },
+   {
+    "id": "starfall_tr5",
+    "x": 628,
+    "y": 948,
+    "cls": "Helix Driller",
+    "art": "strand",
+    "name": "Milo",
+    "face": [
+     1,
+     0
+    ]
+   },
+   {
+    "id": "starfall_tr6",
+    "x": 356,
+    "y": 180,
+    "cls": "Rift Seeker",
+    "art": "explorer",
+    "name": "Fenn",
+    "face": [
+     1,
+     0
+    ]
+   },
+   {
+    "id": "starfall_tr7",
+    "x": 1180,
+    "y": 412,
+    "cls": "Star Watcher",
+    "art": "researcher",
+    "name": "Nyx",
+    "face": [
+     -1,
+     0
+    ]
+   }
+  ],
+  "folk": [
+   {
+    "x": 780,
+    "y": 332,
+    "art": "explorer",
+    "t": [
+     "Rift seeker: Can you hear it? The crater hums like a heartbeat."
+    ]
+   },
+   {
+    "x": 844,
+    "y": 828,
+    "art": "researcher",
+    "t": [
+     "Star watcher: Crystals here grow overnight."
+    ]
+   },
+   {
+    "x": 524,
+    "y": 620,
+    "art": "civilian",
+    "t": [
+     "Rig worker: Helix left half its drills running when they ran."
+    ]
+   }
+  ],
+  "legends": []
+ },
+ "thalassa": {
+  "trainers": [
+   {
+    "id": "thalassa_app1",
+    "x": 660,
+    "y": 420,
+    "app": 1,
+    "cls": "Apprentice",
+    "art": "guard",
+    "name": "Bo",
+    "face": [
+     1,
+     0
+    ]
+   },
+   {
+    "id": "thalassa_app2",
+    "x": 972,
+    "y": 356,
+    "app": 1,
+    "cls": "Apprentice",
+    "art": "squidsailor",
+    "name": "Rook",
+    "face": [
+     -1,
+     0
+    ]
+   },
+   {
+    "id": "thalassa_tr1",
+    "x": 764,
+    "y": 540,
+    "cls": "Dockhand",
+    "art": "guard",
+    "name": "Corin",
+    "face": [
+     0,
+     1
+    ]
+   },
+   {
+    "id": "thalassa_tr2",
+    "x": 108,
+    "y": 268,
+    "cls": "Sailor",
+    "art": "squidsailor",
+    "name": "Hale",
+    "face": [
+     1,
+     0
+    ]
+   },
+   {
+    "id": "thalassa_tr3",
+    "x": 1404,
+    "y": 492,
+    "cls": "Swimmer",
+    "art": "civilian",
+    "name": "Zora",
+    "face": [
+     -1,
+     0
+    ]
+   },
+   {
+    "id": "thalassa_tr4",
+    "x": 980,
+    "y": 1004,
+    "cls": "Dockhand",
+    "art": "guard",
+    "name": "Mara",
+    "face": [
+     0,
+     -1
+    ]
+   },
+   {
+    "id": "thalassa_tr5",
+    "x": 356,
+    "y": 620,
+    "cls": "Sailor",
+    "art": "squidsailor",
+    "name": "Ines",
+    "face": [
+     1,
+     0
+    ]
+   }
+  ],
+  "folk": [
+   {
+    "x": 1036,
+    "y": 660,
+    "art": "squidsailor",
+    "t": [
+     "Sailor: The docks go on for miles. Jump the short gaps between piers."
+    ]
+   },
+   {
+    "x": 540,
+    "y": 404,
+    "art": "civilian",
+    "t": [
+     "Swimmer: Hydro-types shine here. Volt moves send them flying."
+    ]
+   },
+   {
+    "x": 892,
+    "y": 356,
+    "art": "guard",
+    "t": [
+     "Dockhand: Helix boats were circling the harbor again last night."
+    ]
+   }
+  ],
+  "legends": []
+ },
+ "umbra": {
+  "trainers": [
+   {
+    "id": "umbra_app1",
+    "x": 884,
+    "y": 420,
+    "app": 1,
+    "cls": "Apprentice",
+    "art": "explorer",
+    "name": "Fenn",
+    "face": [
+     0,
+     1
+    ]
+   },
+   {
+    "id": "umbra_app2",
+    "x": 644,
+    "y": 308,
+    "app": 1,
+    "cls": "Apprentice",
+    "art": "wanderer",
+    "name": "Pip",
+    "face": [
+     1,
+     0
+    ]
+   },
+   {
+    "id": "umbra_tr1",
+    "x": 1252,
+    "y": 612,
+    "cls": "Drifter",
+    "art": "explorer",
+    "name": "Wren",
+    "face": [
+     0,
+     1
+    ]
+   },
+   {
+    "id": "umbra_tr2",
+    "x": 156,
+    "y": 284,
+    "cls": "Scavenger",
+    "art": "wanderer",
+    "name": "Rook",
+    "face": [
+     1,
+     0
+    ]
+   },
+   {
+    "id": "umbra_tr3",
+    "x": 620,
+    "y": 684,
+    "cls": "Lantern Keeper",
+    "art": "civilian",
+    "name": "Ida",
+    "face": [
+     0,
+     -1
+    ]
+   },
+   {
+    "id": "umbra_tr4",
+    "x": 820,
+    "y": 268,
+    "cls": "Drifter",
+    "art": "explorer",
+    "name": "Pip",
+    "face": [
+     1,
+     0
+    ]
+   },
+   {
+    "id": "umbra_tr5",
+    "x": 956,
+    "y": 836,
+    "cls": "Scavenger",
+    "art": "wanderer",
+    "name": "Bo",
+    "face": [
+     0,
+     -1
+    ]
+   },
+   {
+    "id": "umbra_tr6",
+    "x": 276,
+    "y": 812,
+    "cls": "Lantern Keeper",
+    "art": "civilian",
+    "name": "Corin",
+    "face": [
+     1,
+     0
+    ]
+   },
+   {
+    "id": "umbra_tr7",
+    "x": 1332,
+    "y": 284,
+    "cls": "Drifter",
+    "art": "explorer",
+    "name": "Quill",
+    "face": [
+     1,
+     0
+    ]
+   }
+  ],
+  "folk": [
+   {
+    "x": 980,
+    "y": 604,
+    "art": "wanderer",
+    "t": [
+     "Scavenger: Gravewell was a city once, before it tipped into the sinkhole."
+    ]
+   },
+   {
+    "x": 468,
+    "y": 420,
+    "art": "civilian",
+    "t": [
+     "Lantern keeper: Keep to the lanterns. The dark plays tricks."
+    ]
+   },
+   {
+    "x": 636,
+    "y": 828,
+    "art": "explorer",
+    "t": [
+     "Drifter: Void-types only come out where the light can't reach."
+    ]
+   }
+  ],
+  "legends": []
+ },
+ "ystra": {
+  "trainers": [
+   {
+    "id": "ystra_tr1",
+    "x": 404,
+    "y": 356,
+    "cls": "Ystran Echo",
+    "art": "ystran",
+    "name": "Bo",
+    "face": [
+     1,
+     0
+    ]
+   },
+   {
+    "id": "ystra_tr2",
+    "x": 1492,
+    "y": 748,
+    "cls": "Rift Walker",
+    "art": "explorer",
+    "name": "Ines",
+    "face": [
+     -1,
+     0
+    ]
+   },
+   {
+    "id": "ystra_tr3",
+    "x": 132,
+    "y": 932,
+    "cls": "Seeker",
+    "art": "pilgrim",
+    "name": "Rhee",
+    "face": [
+     1,
+     0
+    ]
+   },
+   {
+    "id": "ystra_tr4",
+    "x": 892,
+    "y": 844,
+    "cls": "Ystran Echo",
+    "art": "ystran",
+    "name": "Quill",
+    "face": [
+     0,
+     1
+    ]
+   },
+   {
+    "id": "ystra_tr5",
+    "x": 948,
+    "y": 284,
+    "cls": "Rift Walker",
+    "art": "explorer",
+    "name": "Quill",
+    "face": [
+     -1,
+     0
+    ]
+   },
+   {
+    "id": "ystra_tr6",
+    "x": 1364,
+    "y": 348,
+    "cls": "Seeker",
+    "art": "pilgrim",
+    "name": "Mara",
+    "face": [
+     1,
+     0
+    ]
+   }
+  ],
+  "folk": [
+   {
+    "x": 708,
+    "y": 324,
+    "art": "ystran",
+    "t": [
+     "Ystran echo: ...welcome home, children of the stars..."
+    ]
+   },
+   {
+    "x": 516,
+    "y": 900,
+    "art": "explorer",
+    "t": [
+     "Rift walker: Every fragment here was one world, once."
+    ]
+   },
+   {
+    "x": 788,
+    "y": 716,
+    "art": "pilgrim",
+    "t": [
+     "Seeker: The crystal forest sings when the Seedmother wakes."
+    ]
+   }
+  ],
+  "legends": [
+   {
+    "mon": "Terravox",
+    "x": 228,
+    "y": 492,
+    "lv": 60
+   },
+   {
+    "mon": "Aquelion",
+    "x": 1268,
+    "y": 772,
+    "lv": 60
+   },
+   {
+    "mon": "Ignarch",
+    "x": 844,
+    "y": 500,
+    "lv": 60
+   }
+  ]
+ }
+}

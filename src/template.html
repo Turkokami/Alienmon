@@ -301,7 +301,7 @@ function landNear(ok,x,y,r){if(ok(x,y))return[x,y];for(let d=4;d<=r;d+=4)for(let
 function jumpSfx(){try{if(!AC||musicMode==='off')return;const t=AC.currentTime,o=AC.createOscillator(),g=AC.createGain();o.type='square';o.frequency.setValueAtTime(330,t);o.frequency.exponentialRampToValueAtTime(880,t+0.12);
  g.gain.setValueAtTime(0.04,t);g.gain.exponentialRampToValueAtTime(0.001,t+0.15);o.connect(g).connect(AC.destination);o.start(t);o.stop(t+0.16)}catch(e){}}
 function launch(){const key=G.sub&&SUB_DOOR[G.sub]||PL[G.planet].key,door=exitDoor(key);if(door)cut(1,'Heading out!',()=>toWorld(door));else teleportToShip()}
-function updPaint(){const P=paintOf();if(!G.ppos)G.ppos=P.start.slice();if(frame%60===0)tip('town');
+function updPaint(){const P=paintOf();if(!G.ppos)G.ppos=P.start.slice();if(spotTick()){drawPaint();return}if(frame%60===0)tip('town');
  if(P_('start')){scene='menu';menuSel=0;return}
  if(JMP&&JMP.where==='paint'){JMP.t++;const sp=4.2;G.ppos=[Math.max(8,Math.min(P.w-8,G.ppos[0]+JMP.vx*sp)),Math.max(8,Math.min(P.h-8,G.ppos[1]+JMP.vy*sp))];pmove=1;stepc++;
   if(JMP.t>=JUMP_T){G.ppos=landNear((x,y)=>pfree(P,x,y),G.ppos[0],G.ppos[1],24)||JMP.from;JMP=null}drawPaint();return}
@@ -312,10 +312,11 @@ function updPaint(){const P=paintOf();if(!G.ppos)G.ppos=P.start.slice();if(frame
   if(G.grace>0)G.grace--;if(G.jam>0&&stepc%8===0)G.jam--;
   if(pbit(P,'grass',x,y)&&!(G.grace>0)&&Math.hypot(x-P.start[0],y-(P.exitY-30))>160){pacc+=d;if(pacc>64){pacc=0;if(R()<0.08){wild();return}}}}
   if(y>=P.exitY&&dy>0){if(PL[G.planet].key==='dustara'&&!gateOpen('dustara')){G.ppos[1]=P.exitY-24;say(gateMsg('dustara'));return}G.ppos[1]=P.exitY-24;say('Leave '+(P.town||PL[G.planet].name)+(exitDoor(G.sub&&SUB_DOOR[G.sub]||PL[G.planet].key)?' and head out onto the Molten Frontier?':' and return to your ship?'),()=>choose('Leave town?',['Yes','No'],i=>{if(i===0)launch()}));return}}
+ if(losCheck(P)){drawPaint();return}
  pnear=null;let best=1e9;for(const h of P.hot){if(h.k==='block')continue;const dx=h.x-G.ppos[0],dy=h.y-G.ppos[1],ry=h.ry||h.r/1.6,dd=Math.hypot(dx,dy),d=dd-dd/Math.max(1e-3,Math.hypot(dx/h.r,dy/ry));if(d<44&&d<best){best=d;pnear=h}}
  const qe=qNear();if(qe&&P_('a'))qInteract(qe);else if(pnear&&P_('a'))paintInteract(pnear);
  drawPaint()}
-function paintInteract(h){const p=PL[G.planet];if(h.k==='talk'||h.k==='npc')qEvent('talk',h.id||'',{x:h.x,y:h.y});
+function paintInteract(h){const p=PL[G.planet];if(h.k==='trainer')return trainerTalk(h);if(h.legend)return legendBattle(h);if(h.k==='talk'||h.k==='npc')qEvent('talk',h.id||'',{x:h.x,y:h.y});
  if(h.k==='bay')return bayMenu();if(h.k==='shop')return shop();
  if(h.k==='npc')return say(p.npc,null,p.npcArt);
  if(h.k==='keeper')return keeperTalk(p);
@@ -329,10 +330,10 @@ function drawPaint(){const P=paintOf(),im=SCI[P.img];if(!G.ppos)G.ppos=P.start.s
  const kp=PL[G.planet].keeper,drawK=(h)=>{const hx=h.x*S-cx,hy=h.y*S-cy;if(hx<-30||hx>190||hy<-10||hy>180)return;const shadow=()=>{ctx.fillStyle='rgba(20,10,20,0.35)';ctx.beginPath();ctx.ellipse(hx,hy-1,7,2.5,0,0,6.283);ctx.fill()};
   if(h.k==='mon'){const im=OWI[h.mon];if(!okI(im))return;shadow();const f=(frame>>4)&1;ctx.save();ctx.imageSmoothingEnabled=true;ctx.drawImage(im,f*64,0,64,64,Math.round(hx-ms/2),Math.round(hy-ms+1),ms,ms);ctx.restore();return}
   const art=h.k==='keeper'?kp&&kp.art:h.art;if(art&&okI(CHI[art])){shadow();dchar(art,Math.round(hx-cs/2),Math.round(hy-cs-1),cs,cs)}};
- const ks=P.hot.filter(h=>h.k==='keeper'||(h.k==='mon'&&h.mon)||(h.art&&h.draw&&(h.k==='talk'||h.k==='npc')));ks.filter(h=>h.y<=G.ppos[1]).forEach(drawK);
+ const ks=P.hot.filter(h=>h.k==='keeper'||(h.k==='mon'&&h.mon)||(h.art&&h.draw&&(h.k==='talk'||h.k==='npc'||h.k==='trainer')));ks.filter(h=>h.y<=G.ppos[1]).forEach(drawK);
  const sx=fx-cx,sy=fy-cy;ctx.fillStyle='rgba(20,10,20,0.35)';ctx.beginPath();ctx.ellipse(sx,sy-1,7,2.5,0,0,6.283);ctx.fill();
  const k=(G.gender||'boy')+'_'+face,bob=pmove&&(stepc%16<8)?1:0;if(!dchar(k,Math.round(sx-cs/2),Math.round(sy-cs-1-bob-jumpH()*cs*0.55),cs,cs))kid(Math.round(sx-6),Math.round(sy-14),face==='left',face==='up',pmove?1:0);
- ks.filter(h=>h.y>G.ppos[1]).forEach(drawK);qDraw(cx,cy,S,cs);qDrawTracker(banner>0?18:0);
+ ks.filter(h=>h.y>G.ppos[1]).forEach(drawK);qDraw(cx,cy,S,cs);drawSpot(cx,cy,S,cs);qDrawTracker(banner>0?18:0);
  if(pmove&&pbit(P,'grass',G.ppos[0],G.ppos[1])){ctx.fillStyle='#3f9d3a';for(let i=0;i<4;i++)ctx.fillRect(Math.round(sx-6+i*4),Math.round(sy-4-(i%2)),2,4)}
  if(pnear&&!DLG&&!CH){const hx=pnear.x*S-cx,hy=pnear.y*S-cy-32+Math.sin(frame/8);box(Math.round(hx-5),Math.round(hy-6),11,11,'#fff','#1b1424');txt('!',Math.round(hx-2),Math.round(hy-4),'#d7262e',7);
   if(pnear.hint&&pnear.hint!=='!')txt(pnear.hint,Math.round(hx-pnear.hint.length*2.5),Math.round(hy+6),'#ffffff',6)}
@@ -471,6 +472,7 @@ function interact(t,under){const p=PL[G.planet];
  if(t===7){say(p.npc,null,p.npcArt);return}
  if(t===6){keeperTalk(p);return}}
 function keeperTalk(p){{const k=p.keeper;if(!k){say(p.tower);return}
+  if(!G.beaten[p.key]&&apprenticesLeft())return say('The tower doors stay shut. '+apprenticesLeft()+' apprentice'+(apprenticesLeft()>1?'s':'')+' still guard the way.');
   if(G.beaten[p.key]){say(k.name+': '+k.after,null,k.art);return}
   if(!G.party.some(m=>m.hp>0)){say('Your team needs to heal first.');return}
   say([k.name+': '+k.intro],()=>{k.team=keeperTeam(p.key,k);startBattle(k.team.map(([id,lv])=>mk(id,lv)),k)},k.art);return}}
@@ -605,7 +607,7 @@ function playerFaint(){if(G.party.some(m=>m.hp>0)){B.phase='party';B.forced=true
  else loseBattle()}
 function loseBattle(){{const lost=Math.floor(G.dust/4);G.dust-=lost;say(['You have no Alienmon left to fight!','You dropped '+lost+' stardust and hurried back to the last place you healed...'],()=>{healAll();wakeAtLastHeal()})}}
 function endBattle(won){const tr=B&&B.tr,lines=[];
- if(won){const pk=PL[G.planet]&&PL[G.planet].key;if(tr&&tr.bkey)qEvent('trainer',tr.bkey);else if(tr&&tr===PL[G.planet].keeper)qEvent('keeper',pk);else if(!tr&&B.team.length)qEvent('win',D[B.team[B.team.length-1].id].name,{area:QWILD})}QWILD=null;
+ if(won){const pk=PL[G.planet]&&PL[G.planet].key;if(tr&&tr.bkey)qEvent('trainer',tr.bkey);else if(tr&&tr===PL[G.planet].keeper)qEvent('keeper',pk);else if(!tr&&B.team.length){qEvent('win',D[B.team[B.team.length-1].id].name,{area:QWILD});noteLegendWin(B.team[B.team.length-1])}}QWILD=null;
  if(won){const e=B.team[B.team.length-1];const dust=payout(tr,e);G.dust+=dust;lines.push('You collected '+dust+' stardust.');
   if(!tr){if(R()<0.05){G.items.gel=(G.items.gel||0)+1;lines.push('You found a Med Gel!')}else if(R()<0.03){G.pods.stasis++;lines.push('You found a Stasis Pod!')}}}
  if(won&&tr){B.trShow=true;G.beaten[tr.bkey||PL[G.planet].key]=1;lines.push(tr.name+': '+tr.lose);if(tr.shard){G.shards++;lines.push('You received a Signal Shard! ('+G.shards+'/8)')}

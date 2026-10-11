@@ -1,0 +1,37 @@
+{
+ "_about": "Trainers and townsfolk for each painted town (docs/world/WORLD_POPULATION_RULES.md). tools/place_trainers.py places them on the map; teams come from progression.json areas at run time.",
+ "classes": {
+  "dustara":   [["Linker", "explorer"], ["Canyon Scout", "wanderer"], ["Mechanic", "technician"]],
+  "ferrox":    [["Scrapper", "technician"], ["Miner", "miner"], ["Rail Hand", "guard"]],
+  "sporeholm": [["Spore Tender", "sporefolk"], ["Botanist", "researcher"], ["Bog Hiker", "explorer"]],
+  "thalassa":  [["Sailor", "squidsailor"], ["Swimmer", "civilian"], ["Dockhand", "guard"]],
+  "neonis":    [["Raver", "civilian"], ["Coder", "technician"], ["Courier", "explorer"]],
+  "glyphos":   [["Archaeologist", "explorer"], ["Pilgrim", "pilgrim"], ["Rune Scholar", "researcher"]],
+  "pyros":     [["Miner", "miner"], ["Smith", "technician"], ["Ash Walker", "wanderer"]],
+  "glacia":    [["Researcher", "researcher"], ["Climber", "explorer"], ["Radio Tech", "technician"]],
+  "helix":     [["Helix Grunt", "strand"], ["Scientist", "researcher"], ["Guard", "guard"]],
+  "halo":      [["Pilgrim", "pilgrim"], ["Skywatcher", "civilian"], ["Mystic", "wanderer"]],
+  "umbra":     [["Scavenger", "wanderer"], ["Lantern Keeper", "civilian"], ["Drifter", "explorer"]],
+  "starfall":  [["Helix Driller", "strand"], ["Rift Seeker", "explorer"], ["Star Watcher", "researcher"]],
+  "apex":      [["Ace Linker", "explorer"], ["Astronomer", "researcher"], ["Summit Guard", "guard"]],
+  "ystra":     [["Ystran Echo", "ystran"], ["Rift Walker", "explorer"], ["Seeker", "pilgrim"]]
+ },
+ "names": ["Kai", "Bo", "Rhee", "Tamsin", "Oz", "Lio", "Mara", "Dex", "Juno", "Pip", "Rook", "Vela", "Corin", "Ines", "Taro", "Wren", "Ash", "Nyx", "Bram", "Sol", "Yuki", "Fenn", "Ida", "Quill", "Remy", "Suri", "Hale", "Pell", "Zora", "Milo"],
+ "trainer_count": {"dustara": 3, "ferrox": 4, "sporeholm": 4, "thalassa": 5, "neonis": 5, "glyphos": 5, "pyros": 6, "glacia": 6, "helix": 6, "halo": 7, "umbra": 7, "starfall": 7, "apex": 8, "ystra": 6},
+ "townsfolk": {
+  "dustara":   [["civilian", "Kid: The drift grass crackles with blue sparks. That's how you know Alienmon are hiding in it!"], ["wanderer", "Old prospector: The Starfall crater glows purple every night since the pods came down."], ["technician", "Mechanic: Press B to hop gaps. Saves you the long way around the canyon."]],
+  "ferrox":    [["technician", "Scrapper: Everything here is built from junk. Even the Relay Tower."], ["miner", "Rail hand: Alloy-types love the rail yard. Bring something that burns."], ["civilian", "Kid: Hank's Alienmon are tough as old boilers!"]],
+  "sporeholm": [["sporefolk", "Spore tender: Mind the lily pads. Some float farther than they look."], ["researcher", "Botanist: The mushrooms glow brighter near the Relay Tower."], ["explorer", "Bog hiker: Toxin-types hide in the moss reeds. Carry Cure Spray."]],
+  "thalassa":  [["squidsailor", "Sailor: The docks go on for miles. Jump the short gaps between piers."], ["civilian", "Swimmer: Hydro-types shine here. Volt moves send them flying."], ["guard", "Dockhand: Helix boats were circling the harbor again last night."]],
+  "neonis":    [["civilian", "Raver: The whole city hums with Volt energy. Feel it?"], ["technician", "Coder: Every sign in Neonis runs on Alienmon power."], ["explorer", "Courier: Deliveries are faster across the catwalks."]],
+  "glyphos":   [["explorer", "Archaeologist: These glyphs tell the Alienmon's story. Read the murals."], ["pilgrim", "Pilgrim: The obelisk hums when you hold Signal Shards near it."], ["researcher", "Rune scholar: Crystal-types grow in the old courtyards."]],
+  "pyros":     [["miner", "Miner: The lava's hot enough to melt a mine cart. Stay on the trestles."], ["technician", "Smith: Magma-types forge their own armor down here."], ["wanderer", "Ash walker: The crater's light still flickers after all these years."]],
+  "glacia":    [["researcher", "Researcher: Something huge is frozen inside the glacier wall."], ["explorer", "Climber: Ice paths are slick. Jump the cracks, don't walk them."], ["technician", "Radio tech: Our antennas pick up signals from the Starfall Rift."]],
+  "helix":     [["researcher", "Scientist: I just run the tests. Don't look at me like that."], ["guard", "Guard: Keep moving. Visitors aren't supposed to be on this deck."], ["technician", "Engineer: The power cores have been running hot all week."]],
+  "halo":      [["pilgrim", "Pilgrim: The holo-globe shows all fourteen worlds at once."], ["civilian", "Skywatcher: The islands float on updrafts. Don't look down."], ["wanderer", "Mystic: The twins see what you'll do before you do it."]],
+  "umbra":     [["wanderer", "Scavenger: Gravewell was a city once, before it tipped into the sinkhole."], ["civilian", "Lantern keeper: Keep to the lanterns. The dark plays tricks."], ["explorer", "Drifter: Void-types only come out where the light can't reach."]],
+  "starfall":  [["explorer", "Rift seeker: Can you hear it? The crater hums like a heartbeat."], ["researcher", "Star watcher: Crystals here grow overnight."], ["civilian", "Rig worker: Helix left half its drills running when they ran."]],
+  "apex":      [["researcher", "Astronomer: The great telescope can see all the way to Ystra."], ["guard", "Summit guard: Only the strongest Linkers make it this high."], ["explorer", "Ace Linker: Train hard. The summit doesn't forgive."]],
+  "ystra":     [["ystran", "Ystran echo: ...welcome home, children of the stars..."], ["explorer", "Rift walker: Every fragment here was one world, once."], ["pilgrim", "Seeker: The crystal forest sings when the Seedmother wakes."]]
+ }
+}

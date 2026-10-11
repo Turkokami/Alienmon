@@ -64,7 +64,8 @@ const PROGMIN={species:Object.fromEntries(Object.entries(PROGJ.species).map(([k,
 fill.__PROGENGINE__=fs.readFileSync(path.join(root,'src/progression.js'),'utf8').replace(/__PROGRESSION__/g,j(PROGMIN));
 // world logic (docs/world/STORY_PROGRESSION_MASTER.md): gate messages and the ship rules
 const WS=JSON.parse(fs.readFileSync(path.join(root,'data/world_state.json'),'utf8'));
-fill.__WORLDENGINE__=fs.readFileSync(path.join(root,'src/world.js'),'utf8').replace(/__WORLDSTATE__/g,j({gates:WS.gates,ship:WS.ship}));
+const PEOPLE=fs.existsSync(path.join(root,'data/town_people.json'))?fs.readFileSync(path.join(root,'data/town_people.json'),'utf8'):'{}';
+fill.__WORLDENGINE__=fs.readFileSync(path.join(root,'src/world.js'),'utf8').replace(/__WORLDSTATE__/g,j({gates:WS.gates,ship:WS.ship})).replace(/__PEOPLE__/g,PEOPLE);
 // function replacer: data can contain "$&"-style sequences that a string replacement would expand
 let html=fs.readFileSync(path.join(root,'src/template.html'),'utf8').replace(/__[A-Z]+__/g,k=>k in fill?fill[k]:k);
 fs.mkdirSync(www,{recursive:true});

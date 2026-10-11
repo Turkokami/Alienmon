@@ -46,7 +46,7 @@ function wakeAtLastHeal(){const h=G.lastHeal;
 /* who stands where at each story stage (world_state.json -> npc_states) */
 let W_BASE=null,P_BASE=null,PL_BASE=null,wSig='';
 const near=(h,x,y,r=30)=>Math.hypot(h.x-x,h.y-y)<r;
-function worldStage(){if(!G||!G.quests)return;worldBeats();const sig=QUESTS.filter(q=>q.type==='main'&&mDone(q.id)).length+'|'+G.shards+'|'+(G.flags.rift?1:0)+(G.flags.champ?1:0)+'|'+(freeRoam()?1:0);
+function worldStage(){if(!G||!G.quests)return;worldBeats();const sig=QUESTS.filter(q=>q.type==='main'&&mDone(q.id)).length+'|'+G.shards+'|'+(G.flags.rift?1:0)+(G.flags.champ?1:0)+'|'+(freeRoam()?1:0)+'|'+Object.keys(G.beaten).length+'|'+Object.keys(G.caught).length+'|'+JSON.stringify(G.legendGone||{});
  if(sig===wSig)return;wSig=sig;
  if(!W_BASE){W_BASE=JSON.parse(JSON.stringify(WORLD.npcs));P_BASE={};for(const k in PAINT)P_BASE[k]=JSON.parse(JSON.stringify(PAINT[k].hot));PL_BASE=PL.map(p=>p.npc)}
  // Molten Frontier
@@ -63,7 +63,7 @@ function worldStage(){if(!G||!G.quests)return;worldBeats();const sig=QUESTS.filt
    for(const h of H)if(near(h,1067,550)||near(h,307,518))h.draw=true}
   if(k==='dustara'){if(mDone('M07'))H=H.filter(h=>!(h.k==='npc'&&near(h,300,348)));
    if(post)H.push({x:1180,y:720,r:20,k:'talk',art:'teo',draw:true,t:["Teo: Home at last. Sola won't stop telling me about you."]},{x:1222,y:724,r:20,k:'talk',art:'sola',draw:true,t:['Sola: Dad\'s home. We did it, Linker.']})}
-  PAINT[k].hot=H}
+  addPeople(k,H);PAINT[k].hot=H}
  // planet story NPC lines
  PL.forEach((p,i)=>{p.npc=PL_BASE[i];
   if(p.key==='dustara'){if(!mDone('M02'))p.npc="Dr. Vashti: Go find Zib's signal on the bridge!";else if(!mDone('M03'))p.npc="Dr. Vashti: Sola's waiting for you at the trading post!"}
@@ -135,3 +135,35 @@ const TEXT_SPD={instant:999,fast:3,slow:1};
 const textSpeed=()=>TEXT_SPD[G&&G.opt&&G.opt.text||'instant']||999;
 
 const volMul=()=>[0.5,1,1.6][G&&G.opt&&G.opt.vol!=null?G.opt.vol:1];
+
+/* ---------- town population: trainers with line of sight, apprentices, townsfolk, fixed legendaries ---------- */
+const PEOPLE=__PEOPLE__;   // tools/place_people.py -> data/town_people.json
+function addPeople(k,H){const P=PEOPLE[k];if(!P)return;
+ for(const t of P.trainers)H.push({k:'trainer',id:t.id,x:t.x,y:t.y,r:16,art:t.art,draw:true,face:t.face,cls:t.cls,name:t.name,app:t.app});
+ for(const f of P.folk)H.push({k:'talk',x:f.x,y:f.y,r:16,art:f.art,draw:true,t:f.t});
+ for(const l of P.legends)if(G.flags.champ&&legendHere(l.mon))H.push({k:'mon',legend:1,mon:l.mon,lvl:l.lv,x:l.x,y:l.y,r:22})}
+// a legendary you defeated (rather than caught) comes back after the next Shard or postgame quest
+const progSig=()=>G.shards+':'+QUESTS.filter(q=>/^P/.test(q.id)&&mDone(q.id)).length;
+function legendHere(name){const id=IDX[name];if(id==null||G.caught[id])return false;return(G.legendGone||{})[name]!==progSig()}
+// trainer teams: size by the world's level band, levels and species from progression.json
+function townTrainer(h){const key=(PL[G.planet]||{}).key,a=PROG.areas[key]||{},tl=a.trainer_levels||a.levels||[5,8],hi=tl[1];
+ const size=hi<=15?[1,2]:hi<=35?[2,3]:[3,4],r=rng(hash(h.id)),n=h.app?size[1]:size[0]+Math.floor(r()*(size[1]-size[0]+1));
+ const t=(wildTable(key)||[]).filter(x=>wildOK(x.name)&&IDX[x.name]!=null);
+ const team=Array.from({length:n},(_,i)=>[IDX[t.length?t[Math.floor(r()*t.length)].name:'Fizzle'],h.app?Math.max(tl[0],hi-2):Math.max(tl[0],Math.min(hi,tl[0]+Math.floor(r()*(hi-tl[0]+1))+i))]);
+ return{name:h.cls+' '+h.name,art:h.art,intro:h.app?"You'll need to get past us to reach the Keeper!":"Our eyes met! That means a battle!",
+  lose:h.app?'Go on, the Keeper is waiting.':'Wow, you two are in sync!',after:h.app?'The Keeper is just ahead.':'Good battle! Keep training out here.',team,bkey:h.id}}
+function trainerTalk(h){const tr=townTrainer(h);if(G.beaten[h.id])return say(tr.name+': '+tr.after,null,h.art);
+ if(!G.party.some(m=>m.hp>0))return say('Your team needs to heal first.');
+ say(tr.name+': '+tr.intro,()=>startBattle(tr.team.map(([id,lv])=>mk(id,lv)),tr),h.art)}
+// apprentices must be beaten before the Keeper will battle
+function apprenticesLeft(){const k=(PL[G.planet]||{}).key;return((PEOPLE[k]||{}).trainers||[]).filter(t=>t.app&&!G.beaten[t.id]).length}
+// line of sight: walking into a trainer's view triggers the battle
+let SPOT=null;
+function losCheck(P){if(SPOT||DLG||CH)return false;const[x,y]=G.ppos;
+ for(const h of P.hot){if(h.k!=='trainer'||G.beaten[h.id]||!h.face)continue;const dx=x-h.x,dy=y-h.y,along=dx*h.face[0]+dy*h.face[1],side=Math.abs(dx*h.face[1]-dy*h.face[0]);
+  if(along>10&&along<150&&side<20){SPOT={h,n:36};return true}}return false}
+function spotTick(){if(!SPOT)return false;if(--SPOT.n<=0){const h=SPOT.h;SPOT=null;trainerTalk(h)}return true}
+function drawSpot(cx,cy,S,cs){if(!SPOT)return;const h=SPOT.h,x=h.x*S-cx,y=h.y*S-cy-cs-8;box(Math.round(x-4),Math.round(y),9,10,'#fff','#1b1424');txt('!',Math.round(x-1),Math.round(y+2),'#d7262e',7)}
+function legendBattle(h){if(!G.party.some(m=>m.hp>0))return say('Your team needs to heal first.');const id=IDX[h.mon];
+ say('The air trembles... '+h.mon+' appears!',()=>startBattle([mk(id,h.lvl||60)],null))}
+function noteLegendWin(e){const n=D[e.id].name,r=(PROG.species[n]||{}).rarity;if(r==='legendary'||r==='mythic'){G.legendGone=G.legendGone||{};G.legendGone[n]=progSig()}}
