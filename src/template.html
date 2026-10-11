@@ -49,7 +49,7 @@ button:focus-visible{outline:2px solid var(--b);outline-offset:2px}
 </div>
 <script>
 'use strict';
-const D=__DATA__, PL=__PLANETS__, TRAITS=__TRAITS__, SIGS=__SIGS__, SYS=__SYS__, ART=__ART__, TITLE=__TITLE__, SHIP=__SHIP__, CUTS=__CUTS__, CHAR=__CHAR__, SCN=__SCENES__, FXD=__FX__, PLANART=__PLANETART__;
+const D=__DATA__, PL=__PLANETS__, TRAITS=__TRAITS__, SIGS=__SIGS__, SYS=__SYS__, ART=__ART__, ARTB=__ARTB__, TITLE=__TITLE__, SHIP=__SHIP__, CUTS=__CUTS__, CHAR=__CHAR__, SCN=__SCENES__, FXD=__FX__, PLANART=__PLANETART__;
 const PLI={};for(const k in PLANART){const i=new Image();i.src=PLANART[k];PLI[k]=i}
 const FXI={};for(const k in FXD){const i=new Image();i.src=FXD[k];FXI[k]=i}
 const SCI={};for(const k in SCN){const i=new Image();i.src=SCN[k];SCI[k]=i}
@@ -61,6 +61,7 @@ function dchar(k,x,y,w,h,flip){const i=CHI[k];if(!okI(i))return false;ctx.save()
 const SHIPI=new Image();if(SHIP)SHIPI.src=SHIP;const CUTI=CUTS.map(u=>{const i=new Image();i.src=u;return i});
 const TITLEI=new Image();if(TITLE)TITLEI.src=TITLE;
 const ARTI={};for(const k in ART){const im=new Image();im.src=ART[k];ARTI[k]=im}
+const ARTBI={};for(const k in ARTB){const im=new Image();im.src=ARTB[k];ARTBI[k]=im}
 const IDX={};D.forEach((d,i)=>IDX[d.name]=i);
 const cv=document.getElementById('scr'),ctx=cv.getContext('2d');
 ctx.setTransform(4,0,0,4,0,0);ctx.imageSmoothingEnabled=false;
@@ -153,7 +154,8 @@ function sprite(id){if(SPR[id])return SPR[id];const d=D[id],r=rng(hash(d.name)),
   return c}
  return SPR[id]={f:draw(false),b:draw(true)}}
 function shade(h){const n=parseInt(h.slice(1),16);const f=v=>Math.max(0,Math.floor(v*0.8));return'rgb('+f(n>>16)+','+f(n>>8&255)+','+f(n&255)+')'}
-function dspr(id,x,y,s,back){const im=ARTI[D[id].name];
+function dspr(id,x,y,s,back){const bi=back&&ARTBI[D[id].name];if(okI(bi)){const z=16*s*1.15,o=(z-16*s)/2;ctx.save();ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';ctx.drawImage(bi,x-o,y-o,z,z);ctx.restore();return}
+ const im=ARTI[D[id].name];
  if(im&&im.complete&&im.naturalWidth){const z=16*s*1.15,o=(z-16*s)/2;ctx.save();ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';
   if(back){ctx.translate(x-o+z,y-o);ctx.scale(-1,1);ctx.drawImage(im,0,0,z,z)}else ctx.drawImage(im,x-o,y-o,z,z);ctx.restore();return}
  ctx.drawImage(sprite(id)[back?'b':'f'],x,y,16*s,16*s)}
@@ -648,7 +650,7 @@ function shakeOf(m){const A=B.anim;if(A&&A.kind==='move'&&A.tgt===m&&A.t>=A.pj&&
 function hpbar(x,y,w,m){const r=m.hp/stat(m,0);rect(x,y,w,4,'#1b1424');rect(x+1,y+1,Math.round((w-2)*r),2,r>0.5?'#3fae49':r>0.2?'#ffd23f':'#d7262e')}
 const STC={burn:['BRN','#d7262e'],poison:['PSN','#8a3ad0'],shock:['SHK','#c9a400'],freeze:['FRZ','#2e86de']};
 function stTag(m,x,y){if(m.st){rect(x,y,20,8,STC[m.st][1]);txt(STC[m.st][0],x+1,y+1,'#fff',6)}}
-function drawBattle(){const e=curEnv(),p=PM(),en=EM(),pl=PL[G.planet],si=SCI[pl.scene];
+function drawBattle(){const e=curEnv(),p=PM(),en=EM(),pl=PL[G.planet],ar=B.tr&&B.tr===pl.keeper&&SCI[pl.key+'_arena'],si=okI(ar)?ar:SCI[pl.scene];
  if(okI(si)){cover(si,0,0,160,104,pl.sceneFx);ctx.fillStyle='rgba(18,12,34,0.18)';ctx.fillRect(0,0,160,104);
   ctx.fillStyle='rgba(18,12,34,0.45)';ctx.beginPath();ctx.ellipse(126,48,30,6,0,0,6.283);ctx.fill();ctx.beginPath();ctx.ellipse(36,97,34,7,0,0,6.283);ctx.fill()}
  else{rect(0,0,160,104,e.bg);rect(96,44,60,8,e.g2);rect(4,92,64,10,e.g2)}
