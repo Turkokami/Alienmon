@@ -148,7 +148,7 @@ function movesAt(id,lv){const m={id,moves:[]};for(const[l,mi]of learnset(id).sor
 function evoLv(id){const d=D[id];if(!d.to)return 999;const t=D[IDX[d.to]];const m=/Level (\d+)/.exec(t.m);return m?+m[1]:(t.st===2?30:45)}
 const TR=i=>TRAITS[D[i].tr];
 /* ---------- mons ---------- */
-const nm=m=>D[m.id].name;
+const nm=m=>m.nick||D[m.id].name;
 
 /* ---------- sprites ---------- */
 const SPR={};
@@ -249,7 +249,7 @@ function importSave(){const inp=document.createElement('input');inp.type='file';
  inp.click();say('Choose your backup file.')}
 function loadSave(){try{const s=localStorage.getItem('alienmon_save_v2');if(!s)return null;const g=JSON.parse(s);g.party.concat(g.box).forEach(m=>{m.st=m.st||null;resetStages(m)});g.items=g.items||{...START_ITEMS};return progMigrate(g)}catch(e){return null}}
 function say(lines,cb,por){const pages=[];for(const l of[].concat(lines)){const w=wrap(l);for(let i=0;i<w.length;i+=2)pages.push(w.slice(i,i+2))}DLG={pages,i:0,cb,por}}
-function healAll(){for(const m of G.party.concat(G.box)){m.hp=stat(m,0);m.st=null;resetStages(m)}if(!G.pods.stasis&&!G.pods.harmonic&&!G.pods.singularity&&G.dust<20)G.pods.stasis=5}
+function healAll(){for(const m of G.party.concat(G.box)){m.hp=stat(m,0);m.ppm={};m.st=null;resetStages(m)}if(!G.pods.stasis&&!G.pods.harmonic&&!G.pods.singularity&&G.dust<20)G.pods.stasis=5}
 const UNLOCK_ALL=false   // playtesters use START > Options > Free roam instead; // playtest: every planet is open
 function unlocked(pi){if(UNLOCK_ALL)return true;return canLand(PL[pi].key)}
 function addMon(m){G.seen[m.id]=1;G.caught[m.id]=1;if(G.party.length<6){G.party.push(m);return'party'}G.box.push(m);return'box'}
@@ -301,7 +301,7 @@ function landNear(ok,x,y,r){if(ok(x,y))return[x,y];for(let d=4;d<=r;d+=4)for(let
 function jumpSfx(){try{if(!AC||musicMode==='off')return;const t=AC.currentTime,o=AC.createOscillator(),g=AC.createGain();o.type='square';o.frequency.setValueAtTime(330,t);o.frequency.exponentialRampToValueAtTime(880,t+0.12);
  g.gain.setValueAtTime(0.04,t);g.gain.exponentialRampToValueAtTime(0.001,t+0.15);o.connect(g).connect(AC.destination);o.start(t);o.stop(t+0.16)}catch(e){}}
 function launch(){const key=G.sub&&SUB_DOOR[G.sub]||PL[G.planet].key;cut(1,'Heading out!',()=>toWorld(key))}
-function updPaint(){const P=paintOf();if(!G.ppos)G.ppos=P.start.slice();
+function updPaint(){const P=paintOf();if(!G.ppos)G.ppos=P.start.slice();if(frame%60===0)tip('town');
  if(P_('start')){scene='menu';menuSel=0;return}
  if(JMP&&JMP.where==='paint'){JMP.t++;const sp=4.2;G.ppos=[Math.max(8,Math.min(P.w-8,G.ppos[0]+JMP.vx*sp)),Math.max(8,Math.min(P.h-8,G.ppos[1]+JMP.vy*sp))];pmove=1;stepc++;
   if(JMP.t>=JUMP_T){G.ppos=landNear((x,y)=>pfree(P,x,y),G.ppos[0],G.ppos[1],24)||JMP.from;JMP=null}drawPaint();return}
@@ -309,7 +309,8 @@ function updPaint(){const P=paintOf();if(!G.ppos)G.ppos=P.start.slice();
  const dx=(held.right?1:0)-(held.left?1:0),dy=(held.down?1:0)-(held.up?1:0);pmove=0;
  if(dx||dy){face=Math.abs(dx)>Math.abs(dy)?(dx>0?'right':'left'):(dy>0?'down':'up');const sp=4.2/(dx&&dy?1.41:1);let[x,y]=G.ppos;
   if(pfree(P,x+dx*sp,y))x+=dx*sp;if(pfree(P,x,y+dy*sp))y+=dy*sp;const d=Math.hypot(x-G.ppos[0],y-G.ppos[1]);if(d>0.1){pmove=1;stepc++;G.ppos=[x,y];
-  if(pbit(P,'grass',x,y)){pacc+=d;if(pacc>64){pacc=0;if(R()<0.11){wild();return}}}}
+  if(G.grace>0)G.grace--;if(G.jam>0&&stepc%8===0)G.jam--;
+  if(pbit(P,'grass',x,y)&&!(G.grace>0)&&Math.hypot(x-P.start[0],y-(P.exitY-30))>160){pacc+=d;if(pacc>64){pacc=0;if(R()<0.08){wild();return}}}}
   if(y>=P.exitY&&dy>0){if(PL[G.planet].key==='dustara'&&!gateOpen('dustara')){G.ppos[1]=P.exitY-24;say(gateMsg('dustara'));return}G.ppos[1]=P.exitY-24;say('Leave '+(P.town||PL[G.planet].name)+' and head out onto the world map?',()=>choose('Leave town?',['Yes','No'],i=>{if(i===0)launch()}));return}}
  pnear=null;let best=1e9;for(const h of P.hot){if(h.k==='block')continue;const dx=h.x-G.ppos[0],dy=h.y-G.ppos[1],ry=h.ry||h.r/1.6,dd=Math.hypot(dx,dy),d=dd-dd/Math.max(1e-3,Math.hypot(dx/h.r,dy/ry));if(d<44&&d<best){best=d;pnear=h}}
  const qe=qNear();if(qe&&P_('a'))qInteract(qe);else if(pnear&&P_('a'))paintInteract(pnear);
@@ -387,8 +388,8 @@ function wantTrack(){if(TITLE_SCENES.includes(scene))return TITLEM;return musicM
 function musicTry(){if(musicMode==='off'||document.hidden)return;const t=wantTrack();if(t!==curTrack){if(t===TITLEM)TITLEM.currentTime=0;curTrack=t}
  if(t==='chip'){chipInit();if(AC&&AC.state==='suspended')AC.resume()}else if(t.paused){const p=t.play();if(p&&p.catch)p.catch(()=>{})}}
 function musicTick(){if(musicMode==='off')return;const t=wantTrack();if(t!==curTrack)musicTry();
- for(const a of[BGM,TITLEM]){const target=a===curTrack?MUSIC_VOL:0;a.volume=Math.max(0,Math.min(1,a.volume+Math.sign(target-a.volume)*Math.min(0.006,Math.abs(target-a.volume))));if(a!==curTrack&&a.volume<=0.001&&!a.paused)a.pause()}
- if(AC){const area=areaTrack();if(curTrack==='chip'){if(chipCur!==area){if(chipVol>0.004)chipVol=Math.max(0,chipVol-0.012);else{lastArea=area;chipPlay(area)}}else chipVol=Math.min(CHIP_VOL,chipVol+0.004)}
+ for(const a of[BGM,TITLEM]){const target=a===curTrack?MUSIC_VOL*volMul():0;a.volume=Math.max(0,Math.min(1,a.volume+Math.sign(target-a.volume)*Math.min(0.006,Math.abs(target-a.volume))));if(a!==curTrack&&a.volume<=0.001&&!a.paused)a.pause()}
+ if(AC){const area=areaTrack();if(curTrack==='chip'){if(chipCur!==area){if(chipVol>0.004)chipVol=Math.max(0,chipVol-0.012);else{lastArea=area;chipPlay(area)}}else chipVol=Math.min(CHIP_VOL*volMul(),chipVol+0.004)}
   else{chipVol=Math.max(0,chipVol-0.006);if(chipVol<=0)chipStop()}chipMaster.gain.setTargetAtTime(chipVol,AC.currentTime,0.05)}}
 function setMusicMode(m){musicMode=m;musicOn=m!=='off';try{localStorage.setItem('alienmon_music',m)}catch(e){}if(m==='off'){BGM.pause();TITLEM.pause();chipVol=0;chipStop();if(chipMaster)chipMaster.gain.value=0;curTrack=null}else{curTrack=null;musicTry()}}
 function setMusic(on){setMusicMode(on?'chip':'off')}
@@ -404,7 +405,7 @@ function nodeOf(key){return WORLD.nodes.find(n=>n.k===key)}
 function nearestNode(x,y){let b=null,bd=1e9;for(const n of WORLD.nodes){const d=Math.hypot(n.x-x,n.y-y);if(d<bd){bd=d;b=n}}return[b,bd]}
 function pidx(key){return PL.findIndex(p=>p.key===key)}
 function regionKey(x,y){const z=(WORLD.zones||[]).find(z=>x>=z.x0&&x<z.x1);return z?z.k:nearestNode(x,y)[0].k}
-function toWorld(key){G.sub=null;const n=nodeOf(key)||nodeOf('space')||WORLD.nodes[0];G.wpos=[n.x,n.y+22];scene='world';wbanner=90;wregion=-2}
+function toWorld(key){G.sub=null;tip('world');const n=nodeOf(key)||nodeOf('space')||WORLD.nodes[0];G.wpos=[n.x,n.y+22];scene='world';wbanner=90;wregion=-2}
 function enterRegion(n){G.sub=null;const pi=pidx(n.k),p=PL[pi];G.planet=pi;const mp=genMap(pi);G.px=mp.pad[0];G.py=mp.pad[1]-1;face='down';
  if(PAINT[p.key]){G.ppos=[PAINT[p.key].start[0],PAINT[p.key].exitY-30];face='up'}
  cut(okI(SCI[p.landScene||p.scene])?SCI[p.landScene||p.scene]:2,'Entering '+n.n,()=>{scene='planet';banner=90},p.sceneFx)}
@@ -420,7 +421,8 @@ function updWorld(){if(!G.wpos)toWorld(PL[G.planet].key);if(P_('start')){scene='
   const free=(x,y)=>wbit(x,y)&&!WORLD.npcs.some(e=>Math.hypot(e.x-x,(e.y-y)*1.5)<6);
   if(free(x+dx*sp,y))x+=dx*sp;if(free(x,y+dy*sp))y+=dy*sp;const d=Math.hypot(x-G.wpos[0],y-G.wpos[1]);
   if(d>0.05){wmove=1;stepc++;G.wpos=[x,y];const[n,nd]=nearestNode(x,y);const ni=WORLD.nodes.indexOf(n);if(nd<70&&ni!==wregion){wregion=ni;wbanner=70}
-   if(nd>45){wacc+=d;if(wacc>22){wacc=0;if(R()<0.07){G.planet=pidx(regionKey(x,y));wild();return}}}}}
+   if(G.grace>0)G.grace--;if(G.jam>0&&stepc%8===0)G.jam--;
+   if(nd>45&&!(G.grace>0)){wacc+=d;if(wacc>22){wacc=0;if(R()<0.07){G.planet=pidx(regionKey(x,y));wild();return}}}}}
  wnear=null;let best=1e9;for(const n of WORLD.nodes){const d=Math.hypot(n.x-G.wpos[0],n.y-G.wpos[1]);if(d<18&&d<best){best=d;wnear={node:n}}}
  for(const e of WORLD.npcs){const d=Math.hypot(e.x-G.wpos[0],e.y-G.wpos[1]);if(d<16&&d<best){best=d;wnear={npc:e}}}
  {const qe=qNear();if(qe&&P_('a')){qInteract(qe);drawWorld();return}}
@@ -489,7 +491,7 @@ function choose(title,opts,cb,back,por){CH={title,opts,sel:0,cb,back,por}}
 function updChoose(){const n=CH.opts.length;if(P_('up'))CH.sel=(CH.sel+n-1)%n;if(P_('down'))CH.sel=(CH.sel+1)%n;
  if(P_('b')){const b=CH.back;CH=null;if(b)b();return}if(P_('a')){const c=CH.cb,i=CH.sel;CH=null;c(i)}}
 function drawChoose(){if(CH.por&&okI(CHI[CH.por])){const h0=16+CH.opts.length*11;box(4,100-h0-48,46,48,'#3b2a5c','#1b1424');dchar(CH.por,6,100-h0-46,42,42)}const h=16+CH.opts.length*11;box(4,100-h,152,h+2);txt(CH.title,8,104-h,'#7a1f6a',7);CH.opts.forEach((o,i)=>txt((i===CH.sel?'>':' ')+o,8,116-h+i*11,i===CH.sel?'#d7262e':'#1b1424',7))}
-function bayMenu(){choose('Recovery Bay',['Heal team','Pod shop','Move Archive','Leave'],i=>{if(i===0){healAll();noteHeal();say(['Nurse: Your Alienmon are fully healed and cured!'].concat(nurseTip()),bayMenu,'nurse')}else if(i===1)shop();else if(i===2)moveArchive()},null,'nurse')}
+function bayMenu(){choose('Recovery Bay',['Heal team','Pod shop','Move Archive','Nickname','Leave'],i=>{if(i===0){healAll();noteHeal();say(['Nurse: Your Alienmon are fully healed and cured!'].concat(nurseTip()),bayMenu,'nurse')}else if(i===1)shop();else if(i===2)moveArchive();else if(i===3)nickMenu()},null,'nurse')}
 function shop(){const goods=PODS.filter(p=>shopOpen(p.k)).map(p=>({n:p.n,price:SHOP_PRICE[p.k]||p.price,get:()=>G.pods[p.k],add:()=>G.pods[p.k]++})).concat(ITEMS.filter(it=>shopOpen(it.k)).map(it=>({n:it.n,price:SHOP_PRICE[it.k]||it.price,get:()=>G.items[it.k]||0,add:()=>G.items[it.k]=(G.items[it.k]||0)+1})));
  choose('Stardust: '+G.dust,goods.map(g=>g.n.slice(0,13).padEnd(13)+String(g.price).padStart(4)+' x'+g.get()).concat(['Back']),i=>{if(i===goods.length)return bayMenu();const g=goods[i];
  if(G.dust<g.price)say('Shopkeeper: Not enough stardust. Win battles to earn more.',shop,'shop');else{G.dust-=g.price;g.add();shop()}},bayMenu,'shop')}
@@ -574,7 +576,7 @@ function aiMove(a,d){let best=a.moves[0],bv=-1;for(const mi of a.moves){const mv
   if(!mv.p){const fx=mv.fx;v=fx.heal?(a.hp<stat(a,0)*0.4?140:0):fx.s?((d.st||immune(d,fx.s)||(fx.s==='confuse'&&d.cf))?0:55):fx.self?(Object.keys(fx.self).some(k=>k!=='c'&&a.bs[k]>=2)?0:45):45;v*=0.6+R()*0.8}
   else{const dt=TR(d.id);v=mv.p*eff(mv.t,D[d.id].t)*(D[a.id].t.includes(mv.t)?1.5:1)*(0.7+R()*0.6);if(dt.k==='absorb'&&dt.v===mv.t)v=0;if(dt.k==='float'&&mv.t==='Gravity')v=0}
   if(v>bv){bv=v;best=mi}}return MV[best]}
-function startBattle(team,trainer){warm(ARTI,team.map(m=>D[m.id].name));warm(ARTBI,G.party.map(m=>D[m.id].name));const pi=G.party.findIndex(m=>m.hp>0);team.forEach(m=>{G.seen[m.id]=1;resetStages(m)});G.party.forEach(resetStages);
+function startBattle(team,trainer){if(!trainer&&G.jam>0&&team.length&&team[0].lv<(G.party.find(m=>m.hp>0)||{lv:0}).lv){return}warm(ARTI,team.map(m=>D[m.id].name));warm(ARTBI,G.party.map(m=>D[m.id].name));const pi=G.party.findIndex(m=>m.hp>0);team.forEach(m=>{G.seen[m.id]=1;resetStages(m)});G.party.forEach(resetStages);
  B={from:scene==='world'?'world':'planet',team,ei:0,tr:trainer,pi,part:new Set([pi]),phase:'wait',sel:0,psel:0,podsel:0,captured:false,anim:null,trShow:!!(trainer&&trainer.art)};scene='battle';const L=trainer?[trainer.name+' wants to battle!',trainer.name+' sent out '+nm(team[0])+'!']:['A wild '+nm(team[0])+' appeared!'];
  const tw=TR(team[0].id);if(!trainer&&tw.k==='sync')L.push(nm(team[0])+"'s signal feels "+(tw.v>1?'calm and friendly.':'jumpy and skittish.'));
  L.push('Go, '+nm(G.party[pi])+'!');entry(team[0],G.party[pi],L);entry(G.party[pi],team[0],L);
@@ -582,8 +584,8 @@ function startBattle(team,trainer){warm(ARTI,team.map(m=>D[m.id].name));warm(ART
 const PM=()=>G.party[B.pi],EM=()=>B.team[B.ei];
 function runSteps(steps,done){if(!B||B.over)return;if(!steps.length)return done();const s=steps.shift();s(()=>runSteps(steps,done))}
 function afterAct(next){if(!B||B.over)return;if(EM().hp<=0||PM().hp<=0)return resolveFaints();next()}
-function turn(pact){B.phase='wait';const em=aiMove(EM(),PM());
- const eStep=next=>{const e=EM(),p=PM();if(e.hp<=0||p.hp<=0)return next();const L=act(e,p,em);playFx(()=>say(L,()=>afterAct(next)))};
+function turn(pact){B.phase='wait';const em=ppPick(EM(),aiMove(EM(),PM()));
+ const eStep=next=>{const e=EM(),p=PM();if(e.hp<=0||p.hp<=0)return next();const L=actPP(e,p,em);playFx(()=>say(L,()=>afterAct(next)))};
  const pStep=next=>pact(()=>afterAct(next));
  const pFirst=pact.pri||es(PM(),'spe')>=es(EM(),'spe');runSteps(pFirst?[pStep,eStep]:[eStep,pStep],endTurn)}
 function endTurn(){const L=[];for(const m of[PM(),EM()]){if(m.hp<=0)continue;const mx=stat(m,0),tr=TR(m.id);
@@ -609,16 +611,18 @@ function endBattle(won){const tr=B&&B.tr,lines=[];
  if(won&&tr){B.trShow=true;G.beaten[tr.bkey||PL[G.planet].key]=1;lines.push(tr.name+': '+tr.lose);if(tr.shard){G.shards++;lines.push('You received a Signal Shard! ('+G.shards+'/8)')}
   if(tr.flag){G.flags[tr.flag]=1;lines.push(tr.flagMsg)}}
  for(const m of G.party)m.cf=0;
- const back=B&&B.from||'planet';if(B)B.over=true;const fin=()=>{scene=back;B=null};const steps=[];if(lines.length)steps.push({say:lines});evoSteps(steps);progRun(steps,fin)}
+ const back=B&&B.from||'planet';if(B)B.over=true;const shard=!!(won&&tr&&tr.shard);const fin=()=>{scene=back;B=null;G.grace=60;if(shard)autosave()};const steps=[];if(lines.length)steps.push({say:lines});evoSteps(steps);progRun(steps,fin)}
 
 /* ---------- items ---------- */
 const ITEMS=[{k:'gel',n:'Med Gel',d:'Restores 30 HP.',heal:30,price:15},{k:'megagel',n:'Mega Gel',d:'Restores 100 HP.',heal:100,price:45},
 {k:'revive',n:'Revive Spark',d:'Revives a fainted Alienmon with half HP.',revive:0.5,price:80},{k:'cure',n:'Cure Spray',d:'Cures burn, poison, shock and freeze.',cure:1,price:20},
 {k:'tether',n:'Tether Pulse',d:'Weakens the foe but never knocks it out. Great before a capture.',battle:'tether',price:30},
 {k:'stun',n:'Stun Spray',d:'Shocks the foe. Shocked Alienmon are easier to capture.',battle:'stun',price:30},
-{k:'fullgel',n:'Full Gel',d:'Fully restores HP.',heal:9999,price:120},{k:'maxrevive',n:'Max Revive',d:'Revives a fainted Alienmon with full HP.',revive:1,price:300}];
+{k:'fullgel',n:'Full Gel',d:'Fully restores HP.',heal:9999,price:120},{k:'ether',n:'Ether Gel',d:'Restores 10 PP to each move.',pp:10,price:60},{k:'jammer',n:'Signal Jammer',d:'Weaker wild Alienmon keep away for 200 steps.',jam:200,price:35},{k:'maxrevive',n:'Max Revive',d:'Revives a fainted Alienmon with full HP.',revive:1,price:300}];
 const START_ITEMS={gel:5,megagel:2,revive:2,cure:3,tether:3,stun:2};
 function useOn(it,m,lines){const mx=stat(m,0);
+ if(it.jam){G.jam=it.jam;lines.push('The Signal Jammer hums. Weaker Alienmon will keep their distance.');return true}
+ if(it.pp){if(m.moves.every(mi=>ppGet(m,mi)>=maxPP(mi))){lines.push(nm(m)+"'s moves are already full.");return false}m.ppm=m.ppm||{};for(const mi of m.moves)m.ppm[mi]=Math.min(maxPP(mi),ppGet(m,mi)+it.pp);lines.push(nm(m)+"'s moves were restored!");return true}
  if(it.revive){if(m.hp>0){lines.push(nm(m)+" hasn't fainted.");return false}m.hp=Math.floor(mx*it.revive);m.st=null;lines.push(nm(m)+' was revived!');return true}
  if(m.hp<=0){lines.push(nm(m)+' has fainted. Use a Revive Spark.');return false}
  if(it.heal){if(m.hp>=mx){lines.push(nm(m)+' is already at full HP.');return false}const a=Math.min(it.heal,mx-m.hp);m.hp+=a;lines.push(nm(m)+' recovered '+a+' HP!');return true}
@@ -639,7 +643,7 @@ function startSync(pod){const e=EM(),d=D[e.id],tr=TR(e.id);G.pods[pod.k]=Math.ma
 function lockSync(){const S=B.sync,e=EM(),d=D[e.id];const dist=Math.abs(S.x-S.c);let tier,ch;
  if(dist<=2){tier='Perfect Sync!';ch=d.r==='mythic'?0.8:1}else if(dist<=S.w/2){tier='Signal locked!';ch={legendary:0.45,mythic:0.3}[d.r]||0.8}else{tier='The signal slipped...';ch=0.08}
  let ok=R()<ch;const need=(PROG.legendaries[d.name]||{}).syncs||1;if(need>1){B.syncs=ok?(B.syncs||0)+1:0;if(ok&&B.syncs<need){ok=false;S.partial=B.syncs+'/'+need}}turn(Object.assign(next=>playTransfer(ok,()=>{const L=['You tuned your Linker to '+d.name+'\'s frequency.',tier,'Transfer beam fired!'];const hums=ok?3:ri(0,2);for(let i=0;i<hums;i++)L.push('...the beam holds...');
-  if(ok){L.push('Transferred! '+d.name+' beamed aboard your ship and joined your crew!');e.st=null;e.cf=0;const where=addMon(e);qEvent('catch',d.name);if(where==='box')L.push(d.name+' was beamed to the ship\'s storage.');const st=[];progAward(e,false,st,e);say(L,()=>progRun(st,()=>{B.over=true;endBattle(false)}))}
+  if(ok){L.push('Transferred! '+d.name+' beamed aboard your ship and joined your crew!');e.st=null;e.cf=0;const where=addMon(e);qEvent('catch',d.name);if(where==='box')L.push(d.name+' was beamed to the ship\'s storage.');const st=[];progAward(e,false,st,e);say(L,()=>nickPrompt(e,()=>progRun(st,()=>{B.over=true;endBattle(false)})))}
   else{L.push(S.partial?'Sync '+S.partial+' held! Lock on again to finish the transfer.':d.name+' broke the signal!');say(L,next)}}),{pri:1}))}
 function updBattle(){const opts=['FIGHT','BAG','SWAP','RUN'];
  if(B.anim){animStep();drawBattle();return}
@@ -647,9 +651,9 @@ function updBattle(){const opts=['FIGHT','BAG','SWAP','RUN'];
   if(P_('a')){const o=opts[B.sel];if(o==='FIGHT'){B.phase='moves';B.msel=0}
    else if(o==='BAG'){B.phase='bag';B.bsel=B.bsel||0}
    else if(o==='SWAP'){B.phase='party';B.forced=false;B.psel=B.pi}
-   else{if(B.tr)say("You can't run from a Keeper battle!");else{const ok=R()<0.85;turn(Object.assign(next=>{if(ok)say('Got away safely!',()=>{B.over=true;scene='planet';B=null});else say("Couldn't get away!",next)},{pri:1}))}}}}
+   else tryRun()}}
  else if(B.phase==='moves'){const n=PM().moves.length;if(P_('up'))B.msel=(B.msel+n-1)%n;if(P_('down'))B.msel=(B.msel+1)%n;if(P_('b'))B.phase='menu';
-  if(P_('a')){const mi=PM().moves[B.msel];turn(next=>{const L=act(PM(),EM(),MV[mi]);playFx(()=>say(L,next))})}}
+  if(P_('a')){const p=PM();if(p.moves.every(x=>ppGet(p,x)<=0))turn(next=>{const L=actPP(PM(),EM(),STRUGGLE);playFx(()=>say([nm(p)+' has no PP left!'].concat(L),next))});else{const mi=p.moves[B.msel];if(ppGet(p,mi)<=0)say('There is no PP left for this move!');else{ppUse(p,mi);turn(next=>{const L=actPP(PM(),EM(),MV[mi]);playFx(()=>say(L,next))})}}}}
  else if(B.phase==='bag'){const list=bagList(true),n=list.length;if(P_('up'))B.bsel=(B.bsel+n-1)%n;if(P_('down'))B.bsel=(B.bsel+1)%n;if(P_('b'))B.phase='menu';
   if(P_('a')){const e=list[B.bsel];if(!e.c)say('You have no '+e.n+' left. Buy more at a Recovery Bay.');
    else if(e.kind==='pod'){if(B.tr)say("A Keeper's partner is already bonded. You can't Sync with it!");else startSync(e.it)}
@@ -680,7 +684,7 @@ Crystal:['beam','spark','hue-rotate(270deg) saturate(1.3)'],Psi:['voidball','voi
 Gravity:['boulder','boom','sepia(1) saturate(0.7)'],Alloy:['boulder','spark','grayscale(1) brightness(1.25)'],None:[null,'boom','grayscale(0.7) brightness(1.2)']};
 const PPOS=[34,74],EPOS=[126,26];
 function posOf(m){return m===PM()?PPOS:EPOS}
-function playFx(cb){const L=LAST;LAST=null;if(!L||!L.hit||!B){cb();return}const mv=L.mv,t=FXT[mv.t]||FXT.None;
+function playFx(cb){if(G.opt&&G.opt.noAnim){LAST=null;cb();return}const L=LAST;LAST=null;if(!L||!L.hit||!B){cb();return}const mv=L.mv,t=FXT[mv.t]||FXT.None;
  const fx0=mv.fx||{},selfOnly=!mv.p&&(fx0.self||fx0.heal)&&!fx0.foe&&!fx0.s;let proj=mv.p?t[0]:null;if(mv.t==='Hydro'&&mv.p>=90)proj='wave';
  const from=posOf(L.a),to=selfOnly?from:posOf(L.d);B.anim={kind:'move',proj,imp:t[1],fx:t[2]||'',from,to,t:0,dur:proj?40:20,pj:proj?22:0,cb,tgt:selfOnly?L.a:L.d,small:!mv.p,label:mv.n?nm(L.a)+' used '+mv.n+'!':''}}
 function playTransfer(ok,cb){B.anim={kind:'transfer',ok,t:0,dur:ok?70:56,cb}}
@@ -711,7 +715,7 @@ function drawBattle(){const e=curEnv(),p=PM(),en=EM(),pl=PL[G.planet],ar=B.tr&&B
  if(B.phase==='menu'){box(0,104,160,40);txt('What will',6,112,'#1b1424');txt(nm(p).slice(0,10)+' do?',6,124,'#1b1424');
   box(80,104,80,40,'#f8f4ff','#ff8a1e');['FIGHT','BAG','SWAP','RUN'].forEach((o,i)=>txt((i===B.sel?'>':' ')+o,84+(i%2)*38,112+Math.floor(i/2)*14,'#1b1424',7))}
  else if(B.phase==='moves'){box(0,104,160,40);p.moves.forEach((mi,i)=>{const m=MV[mi];txt((i===B.msel?'>':' ')+m.n.slice(0,13),4,108+i*8,i===B.msel?'#d7262e':m.sig?'#7a1f6a':'#1b1424',7)});
-  const m=MV[p.moves[B.msel]];txt(m.t==='None'?'Basic':m.t,116,108,m.t==='None'?'#3b2a5c':TC[m.t][2],6);txt(m.p?'PWR '+m.p:'STATUS',116,118,'#3b2a5c',6);txt('ACC '+m.a,116,128,'#3b2a5c',6)}
+  const m=MV[p.moves[B.msel]];txt(m.t==='None'?'Basic':m.t,116,108,m.t==='None'?'#3b2a5c':TC[m.t][2],6);txt(m.p?'PWR '+m.p:'STATUS',116,118,'#3b2a5c',6);const pp=ppGet(p,p.moves[B.msel]);txt('PP '+pp+'/'+maxPP(p.moves[B.msel]),116,128,pp?'#3b2a5c':'#d7262e',6)}
  else if(B.phase==='bag')drawBag(bagList(true),B.bsel,'Bag');
  else if(B.phase==='podpick'){box(0,104,160,40);PODS.forEach((pd,i)=>txt((i===B.podsel?'>':' ')+pd.n+' x'+G.pods[pd.k],4,108+i*10,i===B.podsel?'#d7262e':'#1b1424',7))}
  else if(B.phase==='sync'){const S=B.sync;box(0,104,160,40,'#1b1424','#5ff2ff');txt('Tune in! Press A',8,108,'#5ff2ff',7);
@@ -732,7 +736,7 @@ function drawBox(sel,title){box(0,0,160,144);txt(title,6,5,'#1b1424');if(!G.box.
 let menuSel=0,menuMode='root',dsel=0,prevScene='planet';
 function updMenu(){if(menuMode==='quests'){qLogUpd();return}const opts=['Party','Quests','Storage','Bag','Map','Ship','Xenodex','Options','Save','Close'];
  if(menuMode==='root'){if(P_('up'))menuSel=(menuSel+opts.length-1)%opts.length;if(P_('down'))menuSel=(menuSel+1)%opts.length;if(P_('b')||P_('start')){prevBack();return}
-  if(P_('a')){const o=opts[menuSel];if(o==='Party'){menuMode='party';B={psel:0}}else if(o==='Quests'){menuMode='quests';B={qtab:0,qsel:0}}else if(o==='Bag'){menuMode='bag';B={bsel:0,psel:0}}else if(o==='Options'){const opt=()=>{G.opt=G.opt||{expLink:true};choose('Options',['Music: '+({chip:'Chiptune',song:'Song',off:'Off'})[musicMode],'EXP Link: '+(G.opt.expLink!==false?'On':'Off (Classic)'),'Free roam: '+(G.opt.freeRoam?'On':'Off')+' (playtest)','Back'],k=>{if(k===2){G.opt.freeRoam=!G.opt.freeRoam;return opt()}if(k===0){setMusicMode(musicMode==='chip'?'song':musicMode==='song'?'off':'chip');opt()}else if(k===1){G.opt.expLink=G.opt.expLink===false;opt()}})};opt()}else if(o==='Ship'){if(!shipOK())say(SHIP_NO);else if(PREV==='space')say("You're already aboard your ship.");else choose('Teleport to your ship?',['Teleport','Cancel'],k=>{if(k===0)teleportToShip()})}else if(o==='Storage'){menuMode='storage';B={bxsel:0,psel:0}}else if(o==='Map'){menuMode='map';B={msel:Math.max(0,WORLD.nodes.indexOf(G.wpos?nearestNode(G.wpos[0],G.wpos[1])[0]:nodeOf(PL[G.planet].key)||WORLD.nodes[0]))}}else if(o==='Xenodex')menuMode='dex';else if(o==='Save')choose('Save',['Save now','Export backup','Import backup','Cancel'],k=>{if(k===0)say(save()?'Game saved to this browser.':'Saving is unavailable in this browser.');else if(k===1)exportSave();else if(k===2)importSave()});else{prevBack()}}
+  if(P_('a')){const o=opts[menuSel];if(o==='Party'){menuMode='party';B={psel:0}}else if(o==='Quests'){menuMode='quests';B={qtab:0,qsel:0}}else if(o==='Bag'){menuMode='bag';B={bsel:0,psel:0}}else if(o==='Options'){const opt=()=>{G.opt=G.opt||{expLink:true};choose('Options',['Music: '+({chip:'Chiptune',song:'Song',off:'Off'})[musicMode],'EXP Link: '+(G.opt.expLink!==false?'On':'Off (Classic)'),'Free roam: '+(G.opt.freeRoam?'On':'Off')+' (playtest)','Text: '+(G.opt.text||'instant'),'Volume: '+(['Low','Normal','High'][G.opt.vol??1]),'Battle anims: '+(G.opt.noAnim?'Off':'On'),'Controls','Back'],k=>{if(k===2){G.opt.freeRoam=!G.opt.freeRoam;return opt()}if(k===3){G.opt.text={instant:'fast',fast:'slow',slow:'instant'}[G.opt.text||'instant'];return opt()}if(k===4){G.opt.vol=((G.opt.vol??1)+1)%3;return opt()}if(k===5){G.opt.noAnim=!G.opt.noAnim;return opt()}if(k===6)return say(['Move: arrows / WASD / d-pad. A: Z, Enter or Space. B: X (jump, back).','START: Esc or P opens the menu. M switches music. Gamepads work too.'],opt);if(k===0){setMusicMode(musicMode==='chip'?'song':musicMode==='song'?'off':'chip');opt()}else if(k===1){G.opt.expLink=G.opt.expLink===false;opt()}})};opt()}else if(o==='Ship'){if(!shipOK())say(SHIP_NO);else if(PREV==='space')say("You're already aboard your ship.");else choose('Teleport to your ship?',['Teleport','Cancel'],k=>{if(k===0)teleportToShip()})}else if(o==='Storage'){tip('storage');menuMode='storage';B={bxsel:0,psel:0}}else if(o==='Map'){tip('map');menuMode='map';B={msel:Math.max(0,WORLD.nodes.indexOf(G.wpos?nearestNode(G.wpos[0],G.wpos[1])[0]:nodeOf(PL[G.planet].key)||WORLD.nodes[0]))}}else if(o==='Xenodex')menuMode='dex';else if(o==='Save')choose('Save',['Save now','Export backup','Import backup','Cancel'],k=>{if(k===0)say(save()?'Game saved to this browser.':'Saving is unavailable in this browser.');else if(k===1)exportSave();else if(k===2)importSave()});else{prevBack()}}
   drawUnder();box(96,4,62,116);opts.forEach((o,i)=>txt((i===menuSel?'>':' ')+o,100,10+i*11,'#1b1424',7));box(2,98,92,44);txt('Shards '+G.shards+'/8',6,104,'#1b1424',6);txt('Caught '+Object.keys(G.caught).length+'/'+D.length,6,114,'#1b1424',6);txt('Stardust '+G.dust,6,124,'#1b1424',6);txt('Pods '+G.pods.stasis+'/'+G.pods.harmonic+'/'+G.pods.singularity,6,134,'#1b1424',6)}
  else if(menuMode==='party'){const n=G.party.length;if(P_('up'))B.psel=(B.psel+n-1)%n;if(P_('down'))B.psel=(B.psel+1)%n;if(P_('b')){menuMode='root';B=null;return}
   if(P_('a')){const i=B.psel,m=G.party[i];choose(nm(m),['Summary','Make lead','Send to storage','Cancel'],k=>{
@@ -752,8 +756,8 @@ function updMenu(){if(menuMode==='quests'){qLogUpd();return}const opts=['Party',
   if(P_('a')){const nd=N[B.msel];choose('Travel to '+nd.n.slice(0,20)+'?',['Travel here','Cancel'],k=>{if(k===0){G.wpos=[nd.x,nd.y+10];menuMode='root';B=null;wregion=N.indexOf(nd);wbanner=80;
      cut(1,'Fast travel: '+nd.n.slice(0,14),()=>{scene='world';PREV='world'})}})}
   if(menuMode==='map')drawMap(B.msel)}
- else if(menuMode==='bag'){const list=bagList(false),n=list.length;if(P_('up'))B.bsel=(B.bsel+n-1)%n;if(P_('down'))B.bsel=(B.bsel+1)%n;if(P_('b')){menuMode='root';B=null;return}
-  if(P_('a')){const e=list[B.bsel];if(!e.c)say('You have no '+e.n+' left.');else{B.item=e.it;menuMode='bagpick';B.psel=0}}if(menuMode==='bag')drawBag(list,B.bsel,'Bag')}
+ else if(menuMode==='bag'){tip('bag');const list=bagList(false).concat(keyList()),n=list.length;if(P_('up'))B.bsel=(B.bsel+n-1)%n;if(P_('down'))B.bsel=(B.bsel+1)%n;if(P_('b')){menuMode='root';B=null;return}
+  if(P_('a')){const e=list[B.bsel];if(e.kind==='key')say(e.n+': '+e.d);else if(!e.c)say('You have no '+e.n+' left.');else{B.item=e.it;menuMode='bagpick';B.psel=0}}if(menuMode==='bag')drawBag(list,B.bsel,'Bag')}
  else if(menuMode==='bagpick'){const n=G.party.length;if(P_('up'))B.psel=(B.psel+n-1)%n;if(P_('down'))B.psel=(B.psel+1)%n;if(P_('b')){menuMode='bag';return}
   if(P_('a')){const L=[];if(useOn(B.item,G.party[B.psel],L))G.items[B.item.k]--;say(L);menuMode='bag'}if(menuMode==='bagpick')drawParty(B.psel,'Use '+B.item.n+' on:')}
  else if(menuMode==='sum'){if(P_('b')){menuMode='party';return}if(P_('a')&&B.psel>0){const m=G.party.splice(B.psel,1)[0];G.party.unshift(m);say(nm(m)+' is now your lead.');B.psel=0;menuMode='party';return}drawSum(G.party[B.psel])}
@@ -790,13 +794,13 @@ const PADMAP={0:'a',1:'b',2:'b',8:'start',9:'start',12:'up',13:'down',14:'left',
 function pollPad(){const gp=navigator.getGamepads?Array.from(navigator.getGamepads()).find(g=>g&&g.connected):null;if(!gp){padPrev={};return}const st={};
  for(const i in PADMAP)if(gp.buttons[i]&&gp.buttons[i].pressed)st[PADMAP[i]]=1;const ax=gp.axes||[];if(ax[0]<-0.5)st.left=1;if(ax[0]>0.5)st.right=1;if(ax[1]<-0.5)st.up=1;if(ax[1]>0.5)st.down=1;
  for(const k of['a','b','start','up','down','left','right']){if(st[k]&&!padPrev[k])pressed[k]=true;if(st[k])held[k]=true;else if(padPrev[k])held[k]=false}padPrev=st}
-function loop(){frame++;pollPad();if(G&&G.party&&!G.quests)qInit();if(G&&G.quests){if(frame%20===0)qPassive();if(frame%10===0)worldStage();qFlush()}if(LVP){if(scene==='battle')drawBattle();drawLvPanel();if(P_('a')||P_('b')){const c=LVP.cb;LVP=null;c()}for(const k in pressed)pressed[k]=false;requestAnimationFrame(loop);return}
+function loop(){frame++;pollPad();if(G&&G.party&&!G.quests)qInit();if(G&&G.quests){if(frame%20===0)qPassive();if(frame%10===0)worldStage();qFlush();if(G._as&&scene!=='battle'&&!CUT&&!DLG)autosave()}if(LVP){if(scene==='battle')drawBattle();drawLvPanel();if(P_('a')||P_('b')){const c=LVP.cb;LVP=null;c()}for(const k in pressed)pressed[k]=false;requestAnimationFrame(loop);return}
  if(CH&&!DLG){if(scene==='world')drawWorld();else if(scene==='menu')drawMenuScreen();else if(scene==='battle')drawBattle();else drawPlanet();drawChoose();updChoose()}
  else if(DLG){ if(scene==='battle')drawBattle();else if(scene==='planet')drawPlanet();else if(scene==='space')updSpaceDraw();else if(scene==='world')drawWorld();else if(scene==='menu')drawMenuScreen();else if(scene==='intro'||scene==='title')rect(0,0,160,144,'#120c22');
-  if(DLG.por&&okI(CHI[DLG.por])){box(2,56,46,48,'#3b2a5c','#1b1424');dchar(DLG.por,4,58,42,42)}box(0,104,160,40);const pg=DLG.pages[DLG.i];pg.forEach((l,i)=>txt(l,6,111+i*12,'#1b1424'));if(frame%40<24)rect(150,134,4,4,'#ff8a1e');
-  if(P_('a')||P_('b')){DLG.i++;if(DLG.i>=DLG.pages.length){const cb=DLG.cb;DLG=null;if(cb)cb()}}}
+  if(DLG.por&&okI(CHI[DLG.por])){box(2,56,46,48,'#3b2a5c','#1b1424');dchar(DLG.por,4,58,42,42)}box(0,104,160,40);const pg=DLG.pages[DLG.i];DLG.c=Math.min(999,(DLG.c||0)+textSpeed());let left=DLG.c;pg.forEach((l,i)=>{txt(l.slice(0,Math.max(0,left)),6,111+i*12,'#1b1424');left-=l.length});if(frame%40<24)rect(150,134,4,4,'#ff8a1e');
+  if(P_('a')||P_('b')){if(DLG.c<pg.reduce((a,l)=>a+l.length,0))DLG.c=999;else{DLG.i++;DLG.c=0;if(DLG.i>=DLG.pages.length){const cb=DLG.cb;DLG=null;if(cb)cb()}}}}
  else{if(scene==='title')updTitle();else if(scene==='starter')updStarter();else if(scene==='planet'){PREV='planet';updPlanet()}else if(scene==='space'){PREV='space';updSpace()}else if(scene==='world'){PREV='world';updWorld()}else if(scene==='battle')updBattle();else if(scene==='menu')updMenu();else if(scene==='intro')rect(0,0,160,144,'#120c22');else if(scene==='cut')updCut();else if(scene==='gender')updGender()}
- for(const k in pressed)pressed[k]=false;requestAnimationFrame(loop)}
+ drawToast();for(const k in pressed)pressed[k]=false;requestAnimationFrame(loop)}
 function updSpaceDraw(){const sv={...held};for(const k in held)held[k]=false;const pa=pressed.a;pressed.a=false;const ps=pressed.start;pressed.start=false;updSpace();Object.assign(held,sv);pressed.a=pa;pressed.start=ps}
 __QUESTENGINE__
 let QWILD=null;   // tags the current wild battle for win_battle objectives

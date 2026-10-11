@@ -75,7 +75,7 @@ const SUB_DOOR={fortress:'helix'};
 function nurseTip(){const q=QUESTS.find(q=>q.type==='main'&&G.quests&&G.quests[q.id]&&G.quests[q.id].state==='active');return q?['Nurse: Your next step: '+qText(q)+'.']:[]}
 
 // one-off story beats tied to stages
-function worldBeats(){if(!G||!G.quests)return;
+function worldBeats(){if(!G||!G.quests)return;grantModules();
  if(mDone('M05')&&!G.flags.ship_clear){G.flags.ship_clear=1;qNotify('M05','ship',[WSTATE.ship.grant_text])}
  const F=PAINT.fortress;if(F){const post=mDone('M19');F.town=post?'Reclaimed Forge':'Helix Forge Fortress';
   if(post&&!F.hot.some(h=>h.k==='shop'))F.hot.push({x:600,y:560,r:24,k:'shop',hint:"Grub's shop",art:'grub',draw:true})}}
@@ -85,3 +85,49 @@ function worldBeats(){if(!G||!G.quests)return;
 const FRONTIER_TR={mf4:{area:'dustara',lv:[5,7]},mf10:{area:'dustara',lv:[7,9]},mf12:{area:'ferrox',lv:[8,10]},mf6:{area:'ferrox',lv:[11,13]},mf7:{area:'glacia',lv:[32,34]}};
 function frontierTeam(e){const f=FRONTIER_TR[e.id];if(!f)return null;const t=(PROG.areas[f.area].tier1||[]).filter(x=>wildOK(x.name)&&IDX[x.name]!=null),r=rng(hash(e.id));
  return[[IDX[t[Math.floor(r()*t.length)].name],f.lv[0]],[IDX[t[Math.floor(r()*t.length)].name],f.lv[1]]]}
+
+/* ---------- core rules (docs/world/GAME_RULES_REFERENCE.md) ---------- */
+// PP: 5-35 uses per move by power; restored by healing and Ether Gel; Struggle when every move is empty
+function maxPP(mi){const m=MV[mi];if(!m)return 20;if(m.sig)return 5;const p=m.p||0;return!p?20:p<=40?35:p<=60?25:p<=80?20:p<=100?15:10}
+const ppGet=(m,mi)=>m.ppm&&m.ppm[mi]!=null?m.ppm[mi]:maxPP(mi);
+function ppUse(m,mi){m.ppm=m.ppm||{};m.ppm[mi]=Math.max(0,ppGet(m,mi)-1)}
+const STRUGGLE={n:'Struggle',t:'None',p:50,a:100,fx:{},struggle:1};
+// pick a usable move for the opponent (falls back to Struggle) and spend its PP
+function ppPick(a,mv){let mi=MV.indexOf(mv);if(mi<0||ppGet(a,mi)<=0){mi=a.moves.find(x=>ppGet(a,x)>0);if(mi==null)return STRUGGLE;mv=MV[mi]}ppUse(a,mi);return mv}
+function actPP(a,d,mv){const L=act(a,d,mv);if(mv.struggle&&a.hp>0){const r=Math.max(1,Math.floor(stat(a,0)/4));a.hp=Math.max(0,a.hp-r);L.push(nm(a)+' is hurt by recoil!');if(a.hp<=0)L.push(nm(a)+' fainted!')}return L}
+
+// running away: classic odds; never from trainers, Keepers, bosses or legendaries
+function tryRun(){const e=EM();if(B.tr){say("You can't run from a trainer battle!");return}
+ const r=(PROG.species[D[e.id].name]||{}).rarity;if(r==='legendary'||r==='mythic'){say('A powerful presence holds you in place!');return}
+ B.runs=(B.runs||0)+1;const ps=es(PM(),'spe'),fs=Math.max(1,es(e,'spe')),ok=ps>=fs||((Math.floor(ps*128/fs)+30*B.runs)%256)>Math.floor(R()*256);
+ turn(Object.assign(next=>{if(ok)say('Got away safely!',()=>{const back=B.from||'planet';B.over=true;QWILD=null;scene=back;B=null});else say("Couldn't get away!",next)},{pri:1}))}
+
+// nicknames: offered after a capture, changed at Recovery Bays
+function nickPrompt(m,cb){choose('Give '+D[m.id].name+' a nickname?',['Yes','No'],i=>{if(i===0){let v=null;try{v=window.prompt('Nickname for '+D[m.id].name+' (up to 12 letters):',m.nick||'')}catch(e){}
+  v=(v||'').replace(/[^\w .'-]/g,'').trim().slice(0,12);if(v){m.nick=v;return say(D[m.id].name+' will be known as '+v+'!',cb)}}cb()},cb)}
+function nickMenu(){choose('Nickname which Alienmon?',G.party.map(m=>nm(m)).concat(['Back']),i=>{if(i>=G.party.length)return bayMenu();nickPrompt(G.party[i],nickMenu)},bayMenu)}
+
+// key items: their own Bag entries; can't be used up, sold or thrown away
+const KEY_DESC={helix_keycard:'Opens the Fortress Shuttle Pad to Helix Station.',ystra_shardlet:'A sliver of Ystra that hums near the Seedmother.',seedmother_seed:'A seed from the Seedmother herself.',
+ grapple_line:'Linker module: reach cliff ledges and shortcuts.',hydro_skiff:'Linker module: cross deep water.',heat_shield:'Linker module: walk lava-crossing shortcuts.',
+ lumen_beacon:'Linker module: light dark caves.',gravity_lift:'Linker module: ride floating platforms.'};
+const KEY_NAME={helix_keycard:'Helix Keycard',ystra_shardlet:'Ystra Shardlet',seedmother_seed:'Seedmother Seed',grapple_line:'Grapple Line',hydro_skiff:'Hydro-skiff',heat_shield:'Heat Shield',lumen_beacon:'Lumen Beacon',gravity_lift:'Gravity Lift'};
+const keyList=()=>Object.keys(G.key||{}).filter(k=>G.key[k]).map(k=>({kind:'key',k,n:KEY_NAME[k]||k,c:1,d:KEY_DESC[k]||'A key item.'}));
+// Linker Modules arrive with Signal Shards (they open optional areas only, never the main story)
+const MODULES=[[2,'grapple_line'],[4,'hydro_skiff'],[5,'heat_shield'],[6,'lumen_beacon'],[7,'gravity_lift']];
+function grantModules(){G.key=G.key||{};for(const[s,k]of MODULES)if(G.shards>=s&&!G.key[k]){G.key[k]=1;qNotify('MOD','module',['Your Linker resonates with the Shards. New module: '+KEY_NAME[k]+'!',KEY_DESC[k]])}}
+
+// autosave after story steps and Signal Shards (never mid-battle)
+function autosave(){if(!G||!G.party||!G.party.length)return;if(scene==='battle'||CUT){G._as=1;return}G._as=0;if(save())toast('Saved')}
+// first-time tips: one line, never blocks play
+let TOAST=null;function toast(t){TOAST={t,n:150}}
+const TIPS={bag:'Tip: Items heal between battles. Pods are for wild Alienmon only.',storage:'Tip: Your ship stores every Alienmon beyond 6. Swap them here.',map:'Tip: The Map shows every Relay Gate and world.',
+ ship:'Tip: Fly between worlds. Each landing needs enough Signal Shards.',world:'Tip: B jumps. Grass and trails hide wild Alienmon.',town:'Tip: Press B to jump over small gaps and railings.'};
+function tip(k){G.tips=G.tips||{};if(G.tips[k])return;G.tips[k]=1;toast(TIPS[k])}
+function drawToast(){if(!TOAST)return;if(--TOAST.n<=0){TOAST=null;return}const s=TOAST.t,w=wrap(s,30);box(0,0,160,7+w.length*8,'#1b1424','#7dff6a');w.forEach((l,i)=>txt(l,3,3+i*8,'#7dff6a',6))}
+
+// text speed: instant (default), fast or slow typing
+const TEXT_SPD={instant:999,fast:3,slow:1};
+const textSpeed=()=>TEXT_SPD[G&&G.opt&&G.opt.text||'instant']||999;
+
+const volMul=()=>[0.5,1,1.6][G&&G.opt&&G.opt.vol!=null?G.opt.vol:1];

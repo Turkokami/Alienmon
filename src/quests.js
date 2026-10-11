@@ -64,7 +64,7 @@ function qEvent(type,target,info){if(!G||!G.quests)return false;info=info||{};le
 function qProgress(q,n){const s=qs(q.id),o=qObj(q);s.n+=n;
  if(s.n>=(o.count||1)){s.step++;s.n=0;s.got=[];
   if(s.step>=q.objectives.length)qComplete(q);
-  else{qNotify(q.id,'step',['Objective complete! Next: '+qText(q)]);qPassive()}}}
+  else{qNotify(q.id,'step',['Objective complete! Next: '+qText(q)]);if(q.type==='main')autosave();qPassive()}}}
 
 function itemName(k){const it=ITEMS.find(i=>i.k===k)||PODS.find(p=>p.k===k);return it?it.n:(KEY_ITEMS[k]||k)}
 function qRewardText(r){const L=[];if(r.dust)L.push(r.dust+' stardust');for(const k in r.items||{})L.push(r.items[k]+'x '+itemName(k));if(r.alienmon_gift)L.push(r.alienmon_gift.name);return L.join(', ')}
@@ -81,7 +81,7 @@ function qComplete(q){const s=qs(q.id),r=q.rewards||{};s.state='done';
  qNotify(q.id,'done',(q.dialogue&&q.dialogue.complete||[]).concat(['Quest complete: '+q.title+'!'+(rt?' Received '+rt+(gift||'')+'.':'')]));
  if(q.repeatable){s.state='available';s.step=0;s.n=0}
  if(G.qtrack===q.id)G.qtrack=(qActive()[0]||{}).id||null;
- qUnlock()}
+ qUnlock();if(q.type==='main')autosave()}
 
 // objectives that complete on their own: already-beaten keepers, items in hand, Xenodex counts, places reached
 let qTick=0;
