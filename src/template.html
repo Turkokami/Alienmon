@@ -241,6 +241,14 @@ function genMap(pi){if(MAPS[pi])return MAPS[pi];const r=rng(hash(PL[pi].key)),m=
 let G=null, scene='title', DLG=null, frame=0;
 function newGame(){G={v:2,sys:1,dust:200,party:[],box:[],pods:{stasis:10,harmonic:5,singularity:2},items:{...START_ITEMS},shards:0,beaten:{},flags:{},seen:{},caught:{},planet:0,px:15,py:20,ship:{x:PL[0].x,y:PL[0].y+40,vx:0,vy:0,a:-Math.PI/2}}}
 function save(){G.lastScene=PREV==='world'?'world':'planet';try{localStorage.setItem('alienmon_save_v2',JSON.stringify(G));return true}catch(e){return false}}
+// back up the save to a file and restore it, e.g. to move a game to another browser or device
+function exportSave(){save();try{const blob=new Blob([JSON.stringify({game:'alienmon',version:2,exported:new Date().toISOString(),save:G})],{type:'application/json'}),a=document.createElement('a');
+ a.href=URL.createObjectURL(blob);a.download='alienmon-save-'+new Date().toISOString().slice(0,10)+'.json';document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},1000);say('Backup file downloaded.')}catch(e){say('Export is unavailable in this browser.')}}
+function importSave(){const inp=document.createElement('input');inp.type='file';inp.accept='.json,application/json';
+ inp.onchange=()=>{const f=inp.files&&inp.files[0];if(!f)return;f.text().then(t=>{let d;try{d=JSON.parse(t)}catch(e){}const g=d&&d.game==='alienmon'?d.save:d;
+  if(!g||!Array.isArray(g.party)||!Array.isArray(g.box)){say('That file is not an Alienmon save.');return}
+  choose('Replace your current game?',['Replace','Cancel'],k=>{if(k!==0)return;try{localStorage.setItem('alienmon_save_v2',JSON.stringify(g));say('Backup restored! Restarting...',()=>location.reload())}catch(e){say('Could not store the save.')}})})};
+ inp.click();say('Choose your backup file.')}
 function loadSave(){try{const s=localStorage.getItem('alienmon_save_v2');if(!s)return null;const g=JSON.parse(s);g.party.concat(g.box).forEach(m=>{m.st=m.st||null;resetStages(m)});g.items=g.items||{...START_ITEMS};return g}catch(e){return null}}
 function say(lines,cb,por){const pages=[];for(const l of[].concat(lines)){const w=wrap(l);for(let i=0;i<w.length;i+=2)pages.push(w.slice(i,i+2))}DLG={pages,i:0,cb,por}}
 function healAll(){for(const m of G.party.concat(G.box)){m.hp=stat(m,0);m.st=null;resetStages(m)}if(!G.pods.stasis&&!G.pods.harmonic&&!G.pods.singularity&&G.dust<20)G.pods.stasis=5}
@@ -709,7 +717,7 @@ function drawBox(sel,title){box(0,0,160,144);txt(title,6,5,'#1b1424');if(!G.box.
 let menuSel=0,menuMode='root',dsel=0,prevScene='planet';
 function updMenu(){const opts=['Party','Storage','Bag','Map','Ship','Xenodex',musicMode==='chip'?'Music:Chip':musicMode==='song'?'Music:Song':'Music:Off','Save','Close'];
  if(menuMode==='root'){if(P_('up'))menuSel=(menuSel+8)%9;if(P_('down'))menuSel=(menuSel+1)%9;if(P_('b')||P_('start')){prevBack();return}
-  if(P_('a')){const o=opts[menuSel];if(o==='Party'){menuMode='party';B={psel:0}}else if(o==='Bag'){menuMode='bag';B={bsel:0,psel:0}}else if(o.startsWith('Music')){setMusicMode(musicMode==='chip'?'song':musicMode==='song'?'off':'chip')}else if(o==='Ship'){if(PREV==='space')say("You're already aboard your ship.");else choose('Teleport to your ship?',['Teleport','Cancel'],k=>{if(k===0)teleportToShip()})}else if(o==='Storage'){menuMode='storage';B={bxsel:0,psel:0}}else if(o==='Map'){menuMode='map';B={msel:Math.max(0,WORLD.nodes.indexOf(G.wpos?nearestNode(G.wpos[0],G.wpos[1])[0]:nodeOf(PL[G.planet].key)||WORLD.nodes[0]))}}else if(o==='Xenodex')menuMode='dex';else if(o==='Save')say(save()?'Game saved to this browser.':'Saving is unavailable in this browser.');else{prevBack()}}
+  if(P_('a')){const o=opts[menuSel];if(o==='Party'){menuMode='party';B={psel:0}}else if(o==='Bag'){menuMode='bag';B={bsel:0,psel:0}}else if(o.startsWith('Music')){setMusicMode(musicMode==='chip'?'song':musicMode==='song'?'off':'chip')}else if(o==='Ship'){if(PREV==='space')say("You're already aboard your ship.");else choose('Teleport to your ship?',['Teleport','Cancel'],k=>{if(k===0)teleportToShip()})}else if(o==='Storage'){menuMode='storage';B={bxsel:0,psel:0}}else if(o==='Map'){menuMode='map';B={msel:Math.max(0,WORLD.nodes.indexOf(G.wpos?nearestNode(G.wpos[0],G.wpos[1])[0]:nodeOf(PL[G.planet].key)||WORLD.nodes[0]))}}else if(o==='Xenodex')menuMode='dex';else if(o==='Save')choose('Save',['Save now','Export backup','Import backup','Cancel'],k=>{if(k===0)say(save()?'Game saved to this browser.':'Saving is unavailable in this browser.');else if(k===1)exportSave();else if(k===2)importSave()});else{prevBack()}}
   drawUnder();box(96,4,62,116);opts.forEach((o,i)=>txt((i===menuSel?'>':' ')+o,100,12+i*12,'#1b1424',7));box(2,98,92,44);txt('Shards '+G.shards+'/8',6,104,'#1b1424',6);txt('Caught '+Object.keys(G.caught).length+'/'+D.length,6,114,'#1b1424',6);txt('Stardust '+G.dust,6,124,'#1b1424',6);txt('Pods '+G.pods.stasis+'/'+G.pods.harmonic+'/'+G.pods.singularity,6,134,'#1b1424',6)}
  else if(menuMode==='party'){const n=G.party.length;if(P_('up'))B.psel=(B.psel+n-1)%n;if(P_('down'))B.psel=(B.psel+1)%n;if(P_('b')){menuMode='root';B=null;return}
   if(P_('a')){const i=B.psel,m=G.party[i];choose(nm(m),['Summary','Make lead','Send to storage','Cancel'],k=>{
@@ -762,7 +770,11 @@ function drawDex(){box(0,0,160,144);txt('Xenodex',6,5,'#1b1424');const start=Mat
  else{rect(108,18,40,40,'#d9d0ee');txt('?',122,30,'#8a7aa8',16)}}
 
 /* ---------- main loop ---------- */
-function loop(){frame++;
+const PADMAP={0:'a',1:'b',2:'b',8:'start',9:'start',12:'up',13:'down',14:'left',15:'right'};let padPrev={};
+function pollPad(){const gp=navigator.getGamepads?Array.from(navigator.getGamepads()).find(g=>g&&g.connected):null;if(!gp){padPrev={};return}const st={};
+ for(const i in PADMAP)if(gp.buttons[i]&&gp.buttons[i].pressed)st[PADMAP[i]]=1;const ax=gp.axes||[];if(ax[0]<-0.5)st.left=1;if(ax[0]>0.5)st.right=1;if(ax[1]<-0.5)st.up=1;if(ax[1]>0.5)st.down=1;
+ for(const k of['a','b','start','up','down','left','right']){if(st[k]&&!padPrev[k])pressed[k]=true;if(st[k])held[k]=true;else if(padPrev[k])held[k]=false}padPrev=st}
+function loop(){frame++;pollPad();
  if(CH&&!DLG){if(scene==='world')drawWorld();else if(scene==='menu')drawMenuScreen();else drawPlanet();drawChoose();updChoose()}
  else if(DLG){ if(scene==='battle')drawBattle();else if(scene==='planet')drawPlanet();else if(scene==='space')updSpaceDraw();else if(scene==='world')drawWorld();else if(scene==='menu')drawMenuScreen();else if(scene==='intro'||scene==='title')rect(0,0,160,144,'#120c22');
   if(DLG.por&&okI(CHI[DLG.por])){box(2,56,46,48,'#3b2a5c','#1b1424');dchar(DLG.por,4,58,42,42)}box(0,104,160,40);const pg=DLG.pages[DLG.i];pg.forEach((l,i)=>txt(l,6,111+i*12,'#1b1424'));if(frame%40<24)rect(150,134,4,4,'#ff8a1e');
@@ -785,6 +797,7 @@ function bootLoop(t){const ok=BOOT.filter(i=>i.complete).length;
  if(ok>=BOOT.length||t-bootT0>10000){requestAnimationFrame(loop);setTimeout(prefetch,1500);return}
  rect(0,0,160,144,'#120c22');txt('ALIENMON',48,52,'#7dff6a',8);txt('Loading...',52,72,'#ffffff',7);
  box(30,86,100,8,'#1b1424','#5ff2ff');rect(32,88,Math.round(96*ok/BOOT.length),4,'#5ff2ff');requestAnimationFrame(bootLoop)}
+if(!INLINE&&/^https?:$/.test(location.protocol)&&!/^(localhost|127\.|\[::1\])/.test(location.hostname)){window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};const s=document.createElement('script');s.defer=true;s.src='/_vercel/insights/script.js';document.head.appendChild(s)}
 if(!INLINE&&'serviceWorker' in navigator&&/^https?:$/.test(location.protocol))addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
 document.fonts&&document.fonts.load('8px "Press Start 2P"').finally(()=>requestAnimationFrame(bootLoop));
 if(!document.fonts)requestAnimationFrame(bootLoop);
