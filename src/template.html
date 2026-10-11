@@ -4,6 +4,28 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Alienmon</title>
+<meta name="description" content="Catch them. Bond with them. Save them. A retro monster-catching adventure across the 14 worlds of the Kessler system. Free to play in your browser.">
+<meta name="theme-color" content="#120c22">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Alienmon">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="canonical" href="__SITE__/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Alienmon">
+<meta property="og:title" content="Alienmon">
+<meta property="og:description" content="Catch them. Bond with them. Save them. A retro monster-catching adventure across 14 alien worlds.">
+<meta property="og:url" content="__SITE__/">
+<meta property="og:image" content="__SITE__/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Alienmon">
+<meta name="twitter:description" content="Catch them. Bond with them. Save them. A retro monster-catching adventure across 14 alien worlds.">
+<meta name="twitter:image" content="__SITE__/og.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 <style>
@@ -49,20 +71,21 @@ button:focus-visible{outline:2px solid var(--b);outline-offset:2px}
 </div>
 <script>
 'use strict';
-const D=__DATA__, PL=__PLANETS__, TRAITS=__TRAITS__, SIGS=__SIGS__, SYS=__SYS__, ART=__ART__, ARTB=__ARTB__, OW=__OW__, TITLE=__TITLE__, SHIP=__SHIP__, CUTS=__CUTS__, CHAR=__CHAR__, SCN=__SCENES__, FXD=__FX__, PLANART=__PLANETART__;
-const PLI={};for(const k in PLANART){const i=new Image();i.src=PLANART[k];PLI[k]=i}
-const FXI={};for(const k in FXD){const i=new Image();i.src=FXD[k];FXI[k]=i}
-const SCI={};for(const k in SCN){const i=new Image();i.src=SCN[k];SCI[k]=i}
+const D=__DATA__, PL=__PLANETS__, TRAITS=__TRAITS__, SIGS=__SIGS__, SYS=__SYS__, ART=__ART__, ARTB=__ARTB__, OW=__OW__, TITLE=__TITLE__, SHIP=__SHIP__, CUTS=__CUTS__, CHAR=__CHAR__, SCN=__SCENES__, FXD=__FX__, PLANART=__PLANETART__, BUILD=__BUILD__, INLINE=__INLINE__;
+// art is loaded on first use (the web build serves each image as its own cached file), so the game starts fast
+function lazyImgs(src){return new Proxy({},{get(t,k){if(typeof k!=='string')return undefined;if(!(k in t)&&src[k]){const i=new Image();i.decoding='async';i.src=src[k];t[k]=i}return t[k]},has:(t,k)=>k in src})}
+function warm(imgs,keys){for(const k of keys)imgs[k]}
+const PLI=lazyImgs(PLANART);
+const FXI=lazyImgs(FXD);
+const SCI=lazyImgs(SCN);
 function cover(img,x,y,w,h,fx){const ir=img.naturalWidth/img.naturalHeight,tr=w/h;let sw=img.naturalWidth,sh=img.naturalHeight,sx=0,sy=0;if(ir>tr){sw=sh*tr;sx=(img.naturalWidth-sw)/2}else{sh=sw/tr;sy=(img.naturalHeight-sh)/2}
  ctx.save();ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';if(fx)ctx.filter=fx;ctx.drawImage(img,sx,sy,sw,sh,x,y,w,h);ctx.restore()}
-const CHI={};for(const k in CHAR){const i=new Image();i.src=CHAR[k];CHI[k]=i}
+const CHI=lazyImgs(CHAR);
 const okI=i=>i&&i.complete&&i.naturalWidth;
 function dchar(k,x,y,w,h,flip){const i=CHI[k];if(!okI(i))return false;ctx.save();ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';if(flip){ctx.translate(x+w,y);ctx.scale(-1,1);ctx.drawImage(i,0,0,w,h)}else ctx.drawImage(i,x,y,w,h);ctx.restore();return true}
 const SHIPI=new Image();if(SHIP)SHIPI.src=SHIP;const CUTI=CUTS.map(u=>{const i=new Image();i.src=u;return i});
 const TITLEI=new Image();if(TITLE)TITLEI.src=TITLE;
-const ARTI={};for(const k in ART){const im=new Image();im.src=ART[k];ARTI[k]=im}
-const ARTBI={};for(const k in ARTB){const im=new Image();im.src=ARTB[k];ARTBI[k]=im}
-const OWI={};for(const k in OW){const im=new Image();im.src=OW[k];OWI[k]=im}
+const ARTI=lazyImgs(ART),ARTBI=lazyImgs(ARTB),OWI=lazyImgs(OW);
 const IDX={};D.forEach((d,i)=>IDX[d.name]=i);
 const cv=document.getElementById('scr'),ctx=cv.getContext('2d');
 ctx.setTransform(4,0,0,4,0,0);ctx.imageSmoothingEnabled=false;
@@ -527,7 +550,7 @@ function aiMove(a,d){let best=a.moves[0],bv=-1;for(const mi of a.moves){const mv
   if(!mv.p){const fx=mv.fx;v=fx.heal?(a.hp<stat(a,0)*0.4?140:0):fx.s?((d.st||immune(d,fx.s)||(fx.s==='confuse'&&d.cf))?0:55):fx.self?(Object.keys(fx.self).some(k=>k!=='c'&&a.bs[k]>=2)?0:45):45;v*=0.6+R()*0.8}
   else{const dt=TR(d.id);v=mv.p*eff(mv.t,D[d.id].t)*(D[a.id].t.includes(mv.t)?1.5:1)*(0.7+R()*0.6);if(dt.k==='absorb'&&dt.v===mv.t)v=0;if(dt.k==='float'&&mv.t==='Gravity')v=0}
   if(v>bv){bv=v;best=mi}}return MV[best]}
-function startBattle(team,trainer){const pi=G.party.findIndex(m=>m.hp>0);team.forEach(m=>{G.seen[m.id]=1;resetStages(m)});G.party.forEach(resetStages);
+function startBattle(team,trainer){warm(ARTI,team.map(m=>D[m.id].name));warm(ARTBI,G.party.map(m=>D[m.id].name));const pi=G.party.findIndex(m=>m.hp>0);team.forEach(m=>{G.seen[m.id]=1;resetStages(m)});G.party.forEach(resetStages);
  B={from:scene==='world'?'world':'planet',team,ei:0,tr:trainer,pi,phase:'wait',sel:0,psel:0,podsel:0,captured:false,anim:null,trShow:!!(trainer&&trainer.art)};scene='battle';const L=trainer?[trainer.name+' wants to battle!',trainer.name+' sent out '+nm(team[0])+'!']:['A wild '+nm(team[0])+' appeared!'];
  const tw=TR(team[0].id);if(!trainer&&tw.k==='sync')L.push(nm(team[0])+"'s signal feels "+(tw.v>1?'calm and friendly.':'jumpy and skittish.'));
  L.push('Go, '+nm(G.party[pi])+'!');entry(team[0],G.party[pi],L);entry(G.party[pi],team[0],L);
@@ -747,8 +770,24 @@ function loop(){frame++;
  else{if(scene==='title')updTitle();else if(scene==='starter')updStarter();else if(scene==='planet'){PREV='planet';updPlanet()}else if(scene==='space'){PREV='space';updSpace()}else if(scene==='world'){PREV='world';updWorld()}else if(scene==='battle')updBattle();else if(scene==='menu')updMenu();else if(scene==='intro')rect(0,0,160,144,'#120c22');else if(scene==='cut')updCut();else if(scene==='gender')updGender()}
  for(const k in pressed)pressed[k]=false;requestAnimationFrame(loop)}
 function updSpaceDraw(){const sv={...held};for(const k in held)held[k]=false;const pa=pressed.a;pressed.a=false;const ps=pressed.start;pressed.start=false;updSpace();Object.assign(held,sv);pressed.a=pa;pressed.start=ps}
-document.fonts&&document.fonts.load('8px "Press Start 2P"').finally(()=>requestAnimationFrame(loop));
-if(!document.fonts)requestAnimationFrame(loop);
+/* ---------- boot: loading screen, background prefetch, offline support ---------- */
+// download the rest of the art in the background, a few files at a time, most-needed first
+function prefetch(){const c=navigator.connection;if(INLINE||(c&&(c.saveData||/2g/.test(c.effectiveType||''))))return;
+ const scn=[];for(const p of PL)for(const k of[p.landScene,p.scene,p.key+'_town_hd',p.key+'_arena',PAINT[p.key]&&PAINT[p.key].img])if(k&&SCN[k]&&!scn.includes(k))scn.push(k);
+ const q=[...Object.keys(CHAR).map(k=>[CHI,k]),...Object.keys(PLANART).map(k=>[PLI,k]),...scn.map(k=>[SCI,k]),...Object.keys(FXD).map(k=>[FXI,k]),
+  ...Object.keys(ART).map(k=>[ARTI,k]),...Object.keys(ARTB).map(k=>[ARTBI,k]),...Object.keys(OW).map(k=>[OWI,k]),...Object.keys(SCN).map(k=>[SCI,k])];
+ let n=0;const next=()=>{if(!q.length)return;const[m,k]=q.shift(),i=m[k];if(!i||okI(i)){next();return}n++;const done=()=>{n--;next()};i.addEventListener('load',done,{once:true});i.addEventListener('error',done,{once:true})};
+ for(let i=0;i<4;i++)next();
+ // and have the service worker store every file (music included) so the game also plays offline
+ if(navigator.serviceWorker)navigator.serviceWorker.ready.then(r=>r.active&&r.active.postMessage({type:'cache-all'}))}
+const BOOT=[TITLEI,CHI.boy_big,CHI.girl_big].filter(Boolean),bootT0=performance.now();
+function bootLoop(t){const ok=BOOT.filter(i=>i.complete).length;
+ if(ok>=BOOT.length||t-bootT0>10000){requestAnimationFrame(loop);setTimeout(prefetch,1500);return}
+ rect(0,0,160,144,'#120c22');txt('ALIENMON',48,52,'#7dff6a',8);txt('Loading...',52,72,'#ffffff',7);
+ box(30,86,100,8,'#1b1424','#5ff2ff');rect(32,88,Math.round(96*ok/BOOT.length),4,'#5ff2ff');requestAnimationFrame(bootLoop)}
+if(!INLINE&&'serviceWorker' in navigator&&/^https?:$/.test(location.protocol))addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
+document.fonts&&document.fonts.load('8px "Press Start 2P"').finally(()=>requestAnimationFrame(bootLoop));
+if(!document.fonts)requestAnimationFrame(bootLoop);
 </script>
 </body>
 </html>

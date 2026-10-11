@@ -5,4 +5,6 @@ Thumbs.db
 import_report.json
 .vercel
 __pycache__/
-www/index.html
+# build output (node tools/build.js); only the fonts note is tracked
+www/*
+!www/fonts/
