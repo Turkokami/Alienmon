@@ -1,0 +1,425 @@
+{
+ "version": 1,
+ "stages": [
+  {
+   "stage": 0,
+   "after": null,
+   "active_main_quest": "M01",
+   "title": "A Partner From the Stars"
+  },
+  {
+   "stage": 1,
+   "after": "M01",
+   "active_main_quest": "M02",
+   "title": "Zib's Signal"
+  },
+  {
+   "stage": 2,
+   "after": "M02",
+   "active_main_quest": "M03",
+   "title": "First Rival"
+  },
+  {
+   "stage": 3,
+   "after": "M03",
+   "active_main_quest": "M04",
+   "title": "Into the Molten Frontier"
+  },
+  {
+   "stage": 4,
+   "after": "M04",
+   "active_main_quest": "M05",
+   "title": "Sparks on Ferrox"
+  },
+  {
+   "stage": 5,
+   "after": "M05",
+   "active_main_quest": "M06",
+   "title": "The Glowing Swamp"
+  },
+  {
+   "stage": 6,
+   "after": "M06",
+   "active_main_quest": "M07",
+   "title": "Harbor Under Siege"
+  },
+  {
+   "stage": 7,
+   "after": "M07",
+   "active_main_quest": "M08",
+   "title": "Sola's Choice"
+  },
+  {
+   "stage": 8,
+   "after": "M08",
+   "active_main_quest": "M09",
+   "title": "Static on the Line"
+  },
+  {
+   "stage": 9,
+   "after": "M09",
+   "active_main_quest": "M10",
+   "title": "Murals of Ystra"
+  },
+  {
+   "stage": 10,
+   "after": "M10",
+   "active_main_quest": "M11",
+   "title": "The Light in the Crater"
+  },
+  {
+   "stage": 11,
+   "after": "M11",
+   "active_main_quest": "M12",
+   "title": "Teeth in the Ice"
+  },
+  {
+   "stage": 12,
+   "after": "M12",
+   "active_main_quest": "M13",
+   "title": "Infiltrate the Forge"
+  },
+  {
+   "stage": 13,
+   "after": "M13",
+   "active_main_quest": "M14",
+   "title": "Helix Station"
+  },
+  {
+   "stage": 14,
+   "after": "M14",
+   "active_main_quest": "M15",
+   "title": "Sola Turns"
+  },
+  {
+   "stage": 15,
+   "after": "M15",
+   "active_main_quest": "M16",
+   "title": "Twin Visions"
+  },
+  {
+   "stage": 16,
+   "after": "M16",
+   "active_main_quest": "M17",
+   "title": "Voices in the Dark"
+  },
+  {
+   "stage": 17,
+   "after": "M17",
+   "active_main_quest": "M18",
+   "title": "Eight Shards Sing"
+  },
+  {
+   "stage": 18,
+   "after": "M18",
+   "active_main_quest": "M19",
+   "title": "Seal the Rift"
+  },
+  {
+   "stage": 19,
+   "after": "M19",
+   "active_main_quest": "M20",
+   "title": "The Summit"
+  },
+  {
+   "stage": 20,
+   "after": "M20",
+   "active_main_quest": "M21",
+   "title": "Prime Linker"
+  },
+  {
+   "stage": 21,
+   "after": "M21",
+   "active_main_quest": "P01",
+   "title": "Through the Vortex"
+  },
+  {
+   "stage": 22,
+   "after": "P01",
+   "active_main_quest": "P02",
+   "title": "The Devourer"
+  },
+  {
+   "stage": 23,
+   "after": "P02",
+   "active_main_quest": "P03",
+   "title": "The Seedmother"
+  },
+  {
+   "stage": 24,
+   "after": "P03",
+   "active_main_quest": "P04",
+   "title": "The Warp Gate Hums"
+  },
+  {
+   "stage": 25,
+   "after": "P04",
+   "active_main_quest": null,
+   "title": "Postgame complete"
+  }
+ ],
+ "gates": [
+  {
+   "id": "tunnel_sunset",
+   "node": "dustara",
+   "name": "Tunnel to Sunset Canyon",
+   "kind": "local tunnel",
+   "open_when": "M03 done",
+   "blocked_msg": "Dusty: Sola's waiting for you at the trading post. Settle that first!",
+   "leads_to": "Dustmere (Dustara)"
+  },
+  {
+   "id": "palm_hut",
+   "node": "bay",
+   "name": "Palm Isle Recovery Hut",
+   "kind": "recovery",
+   "open_when": "always"
+  },
+  {
+   "id": "forge_gate",
+   "node": "ferrox",
+   "name": "Forge Gate",
+   "kind": "Ystran Relay Gate",
+   "open_when": "M04 done AND trainer mf12 (Forge Miner Dax) beaten",
+   "blocked_msg": "Forge Miner Dax blocks the gate: 'Beat me first!'",
+   "leads_to": "Ferrox"
+  },
+  {
+   "id": "port_ember_gate",
+   "node": "thalassa",
+   "name": "Port Ember (harbor Relay Gate)",
+   "kind": "Ystran Relay Gate",
+   "open_when": "shards >= 2",
+   "blocked_msg": "The harbor gate's runes stay dark. (Needs 2 Signal Shards.)",
+   "leads_to": "Thalassa",
+   "note": "The village itself is always visitable; only the gate to Thalassa is locked."
+  },
+  {
+   "id": "deep_sea_ferry",
+   "node": "glyphos",
+   "name": "Deep Sea Ferry",
+   "kind": "ferry",
+   "open_when": "M09 done (shards >= 4)",
+   "event_on_first_visit_after": "M07",
+   "event": "M08 Sola's Choice cutscene plays here",
+   "blocked_msg": "Squid Sailor: The ferry's grounded till the Relay signal settles. (Needs 4 Signal Shards.)",
+   "leads_to": "Glyphos"
+  },
+  {
+   "id": "magma_mines",
+   "node": "pyros",
+   "name": "Magma Mines",
+   "kind": "Ystran Relay Gate (deep)",
+   "open_when": "M10 done",
+   "blocked_msg": "A sealed Ystran door glows red. The Ystran echo whispers: '...learn our story first...'",
+   "leads_to": "Pyros"
+  },
+  {
+   "id": "forge_fortress",
+   "node": "helix",
+   "name": "Helix Forge Fortress",
+   "kind": "dungeon",
+   "open_when": "M12 done AND trainer mf7 (Helix Grunt) beaten",
+   "blocked_msg": "Helix Grunt: Nobody gets in without clearance!",
+   "leads_to": "Forge Fortress interior (new map) \u2192 M13 keycard",
+   "after_M19": "Becomes 'Reclaimed Forge': Helix gone, Grub runs a shop inside."
+  },
+  {
+   "id": "fortress_shuttle",
+   "node": "space",
+   "name": "Fortress Shuttle Pad",
+   "kind": "shuttle",
+   "open_when": "M13 done (helix_keycard)",
+   "blocked_msg": "The shuttle hatch needs a Helix Keycard.",
+   "leads_to": "Helix Station",
+   "note": "RENAME from 'Fortress Launch Pad'. General space flight uses your own ship (START \u2192 Ship), not this pad."
+  },
+  {
+   "id": "shadow_tunnel",
+   "node": "umbra",
+   "name": "Shadow Tunnel",
+   "kind": "Ystran Relay Gate",
+   "open_when": "shards >= 7",
+   "blocked_msg": "Deep inside, a Relay seal hums. (Needs 7 Signal Shards.)",
+   "leads_to": "Umbra",
+   "note": "The tunnel mouth (S13 pick) is always reachable; the seal is further in."
+  },
+  {
+   "id": "shuttle_pad",
+   "node": "starfall",
+   "name": "Helix Shuttle Pad",
+   "kind": "shuttle",
+   "open_when": "M17 done (shards = 8)",
+   "blocked_msg": "Strand: Thorne's locked the crater shuttle. Only someone with all 8 Shards could override it.",
+   "leads_to": "Starfall Rift"
+  }
+ ],
+ "ship": {
+  "unlock": "M05 done",
+  "grant_text": "Hank Briggs: Vashti radioed. Your ship's launch clearance is approved. Fly safe, Linker.",
+  "rule": "START \u2192 Ship and every landing pad use your own ship. Before M05 the Ship option says: 'Your ship needs launch clearance. Win your first Signal Shard.' Landing on a planet still requires that planet's req (shards / flags) from planets.json.",
+  "space_landing_req": {
+   "dustara": "always",
+   "ferrox": "M04",
+   "sporeholm": "1 shard",
+   "thalassa": "2",
+   "neonis": "3",
+   "glyphos": "4",
+   "pyros": "4 + M10",
+   "glacia": "5",
+   "helix": "M13 (keycard) \u2014 not landable by ship before",
+   "halo": "6 + M15",
+   "umbra": "7",
+   "starfall": "8 + M17",
+   "apex": "flag rift",
+   "ystra": "flag champ"
+  }
+ },
+ "npc_states": [
+  {
+   "id": "sola",
+   "where": "Dustmere trading post (1180,720)",
+   "visible": "M01\u2013M03",
+   "then": "leaves Dustara"
+  },
+  {
+   "id": "sola",
+   "where": "Deep Sea Ferry dock",
+   "visible": "first dock visit after M07",
+   "role": "M08 cutscene, boards the Helix shuttle"
+  },
+  {
+   "id": "sola",
+   "where": "Helix Station observation deck",
+   "visible": "M14",
+   "role": "rival battle R4, then M15 turns"
+  },
+  {
+   "id": "sola",
+   "where": "Neonis Starport hotspot (1067,550)",
+   "visible": "after M15 ONLY",
+   "fix": "Currently always visible with friendly lines; HIDE before M15 (she is with Helix in M08\u2013M14)."
+  },
+  {
+   "id": "sola",
+   "where": "Skyreach Plaza hotspot (593,484)",
+   "visible": "after M15 (Halo needs 6 shards + M15, so OK)",
+   "dialogue": "current lines are fine"
+  },
+  {
+   "id": "sola",
+   "where": "Starfall planet NPC",
+   "visible": "M18\u2013M19",
+   "dialogue": "'Thorne said my dad was an acceptable loss.' (fits)"
+  },
+  {
+   "id": "sola+teo",
+   "where": "Dustmere trading post",
+   "visible": "after M19",
+   "dialogue": "Teo: Home at last. Sola won't stop telling me about you.",
+   "note": "closure scene"
+  },
+  {
+   "id": "vashti",
+   "where": "Dustmere lab (300,348) via planet npc",
+   "visible": "M01\u2013M07",
+   "dialogue": "Ferrox line is right only after M03; before that: 'Go find Zib's signal on the bridge!' (M02) / 'Sola's waiting!' (M03)"
+  },
+  {
+   "id": "vashti",
+   "where": "Neonis Starport (307,518)",
+   "visible": "from M08 (she moves to Neonis to study the signal)",
+   "dialogue": "M09 giver; after M09 generic research lines"
+  },
+  {
+   "id": "dx4",
+   "where": "Dustmere (400,342)",
+   "visible": "always",
+   "dialogue": "M02 giver \u2192 after M02 S02 giver"
+  },
+  {
+   "id": "grub",
+   "where": "Molten Frontier near the fortress (1000,300) \u2014 NEW spot",
+   "visible": "M12\u2013M13",
+   "role": "M13 giver"
+  },
+  {
+   "id": "grub",
+   "where": "Helix Station planet NPC",
+   "visible": "M14",
+   "dialogue": "current 'Psst, I used to work here' line fits"
+  },
+  {
+   "id": "grub",
+   "where": "Reclaimed Forge interior",
+   "visible": "after M19",
+   "role": "shop + S16 repeatable"
+  },
+  {
+   "id": "mf7 Helix Grunt",
+   "where": "Molten Frontier (1038,318)",
+   "visible": "until M19",
+   "then": "replaced by 'Former Helix worker' talk NPC: 'Helix is finished. I just want to fix things now.'"
+  },
+  {
+   "id": "mf13 Strand",
+   "where": "Molten Frontier (1398,698)",
+   "visible": "always",
+   "dialogue": "before M17: current line; M17\u2013M18: M18 giver; after M19: 'You did it. The crater's quiet.'"
+  },
+  {
+   "id": "mf8 Technician",
+   "where": "Molten Frontier (1450,262)",
+   "visible": "always",
+   "dialogue": "after M19: 'The crater pulse finally stopped.'"
+  },
+  {
+   "id": "mf12 Forge Miner Dax",
+   "where": "Forge Gate (894,714)",
+   "visible": "always",
+   "role": "trainer that gates Ferrox; afterwards S10 giver"
+  },
+  {
+   "id": "apex npc (Marisol)",
+   "where": "Apex Array",
+   "visible": "always",
+   "fix": "Before M21: 'The Quorum waits in four halls. Are you ready?' After M21: current 'The Quorum stepped aside for you' line."
+  },
+  {
+   "id": "starfall/ystra legendaries",
+   "where": "fixed story spots",
+   "visible": "see legendary rules",
+   "fix": "Remove Novaryx and the Ystra legendaries from random wild pools ('l')."
+  }
+ ],
+ "data_fixes": [
+  {
+   "file": "planets.json",
+   "fix": "Keeper team levels \u2192 match PROGRESSION (aces: Hank 12, Moor 17, Marsh 21, Static 25, Basalt 31, Ingrid 35, Twins 41, Kade 45; bosses Vex 36, Thorne 52, Orra 60)."
+  },
+  {
+   "file": "planets.json",
+   "fix": "pool.l (legendaries) must be empty on every planet. Legendaries are static story encounters only."
+  },
+  {
+   "file": "planets.json",
+   "fix": "pool.r signature Alienmon gated: appear only after their owner is beaten \u2014 Forgemaul (ferrox), Mycora (sporeholm), Anchorath (thalassa), Bassquake (neonis), Basaltor (pyros), Glaciryx (glacia), Mirrix/Reflix (halo), Horizar (umbra); Vexhydra/Bronnix/Thornvoid only after M19; Quorum signatures (Facetrix, Encorex, Pyrelyth, Bastionyx, Firstlight) after champ; Lumivex is a gift after S98; Oblivite postgame."
+  },
+  {
+   "file": "planets.json",
+   "fix": "apex npc line per the Marisol fix above."
+  },
+  {
+   "file": "world_map.json",
+   "fix": "Rename node 'space' to 'Fortress Shuttle Pad' (Helix Station shuttle)."
+  },
+  {
+   "file": "src/template.html",
+   "fix": "UNLOCK_ALL=false for story mode; keep a 'Free roam (playtest)' toggle in Options."
+  },
+  {
+   "file": "src/template.html",
+   "fix": "Whiteout returns to the LAST Recovery Bay / Hut used (store G.lastHeal), not the landing pad."
+  }
+ ]
+}
