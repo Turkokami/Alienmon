@@ -42,6 +42,7 @@ display:flex;align-items:center;justify-content:center;overflow:hidden;user-sele
 .device{width:min(420px,96vw);background:linear-gradient(var(--shell-hi),var(--shell) 30%);border-radius:18px 18px 56px 18px;padding:16px 16px 22px;box-shadow:0 0 0 3px #00000040 inset,0 20px 60px #0008}
 .bezel{background:var(--bezel);border-radius:10px 10px 30px 10px;padding:14px 14px 10px}
 canvas{display:block;width:100%;aspect-ratio:160/144;image-rendering:pixelated;background:#000;border-radius:2px}
+.beta{position:fixed;left:50%;bottom:calc(6px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);font-size:9px;color:#1b1424;background:#ffd23f;padding:6px 10px;border-radius:8px;text-decoration:none;box-shadow:0 2px 0 #0006}
 .brand{font-size:9px;color:var(--muted);margin-top:8px;letter-spacing:1px}
 .pad{display:flex;justify-content:space-between;align-items:center;margin-top:18px;padding:0 6px}
 .dpad{position:relative;width:132px;height:132px}
@@ -71,7 +72,7 @@ button:focus-visible{outline:2px solid var(--b);outline-offset:2px}
 </div>
 <script>
 'use strict';
-const D=__DATA__, PL=__PLANETS__, TRAITS=__TRAITS__, SIGS=__SIGS__, SYS=__SYS__, ART=__ART__, ARTB=__ARTB__, OW=__OW__, TITLE=__TITLE__, SHIP=__SHIP__, CUTS=__CUTS__, CHAR=__CHAR__, SCN=__SCENES__, FXD=__FX__, PLANART=__PLANETART__, BUILD=__BUILD__, INLINE=__INLINE__;
+const D=__DATA__, PL=__PLANETS__, TRAITS=__TRAITS__, SIGS=__SIGS__, SYS=__SYS__, ART=__ART__, ARTB=__ARTB__, OW=__OW__, TITLE=__TITLE__, SHIP=__SHIP__, CUTS=__CUTS__, CHAR=__CHAR__, SCN=__SCENES__, FXD=__FX__, PLANART=__PLANETART__, BUILD=__BUILD__, INLINE=__INLINE__, BETA=__BETA__;
 // art is loaded on first use (the web build serves each image as its own cached file), so the game starts fast
 function lazyImgs(src){return new Proxy({},{get(t,k){if(typeof k!=='string')return undefined;if(!(k in t)&&src[k]){const i=new Image();i.decoding='async';i.src=src[k];t[k]=i}return t[k]},has:(t,k)=>k in src})}
 function warm(imgs,keys){for(const k of keys)imgs[k]}
@@ -783,6 +784,18 @@ function loop(){frame++;pollPad();
  for(const k in pressed)pressed[k]=false;requestAnimationFrame(loop)}
 function updSpaceDraw(){const sv={...held};for(const k in held)held[k]=false;const pa=pressed.a;pressed.a=false;const ps=pressed.start;pressed.start=false;updSpace();Object.assign(held,sv);pressed.a=pa;pressed.start=ps}
 /* ---------- boot: loading screen, background prefetch, offline support ---------- */
+// private beta: a feedback link that opens an email with the build and where the tester is
+if(BETA){const m=document.createElement('meta');m.name='robots';m.content='noindex';document.head.appendChild(m);
+ const a=document.createElement('a');a.className='beta';a.textContent='BETA · Send feedback';a.href='#';
+ a.onclick=e=>{e.preventDefault();const where=scene+(G&&PL[G.planet]?' on '+PL[G.planet].name:'');
+  location.href='mailto:'+BETA.email+'?subject='+encodeURIComponent('Alienmon beta feedback (build '+BUILD+')')+'&body='+encodeURIComponent('What happened / what you expected:
+
+
+---
+Build: '+BUILD+'
+Where: '+where+'
+Device: '+navigator.userAgent)};
+ document.body.appendChild(a)}
 // download the rest of the art in the background, a few files at a time, most-needed first
 function prefetch(){const c=navigator.connection;if(INLINE||(c&&(c.saveData||/2g/.test(c.effectiveType||''))))return;
  const scn=[];for(const p of PL)for(const k of[p.landScene,p.scene,p.key+'_town_hd',p.key+'_arena',PAINT[p.key]&&PAINT[p.key].img])if(k&&SCN[k]&&!scn.includes(k))scn.push(k);
