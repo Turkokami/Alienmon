@@ -48,10 +48,16 @@ const j=x=>JSON.stringify(x);
 // private beta build (the Vercel project with PRIVATE_TESTING=1): shows a feedback link that emails FEEDBACK_EMAIL
 const BETA=process.env.PRIVATE_TESTING==='1'?{email:process.env.FEEDBACK_EMAIL||'turkokami@gmail.com'}:null;
 const SITE=(process.env.SITE_URL||'https://alienmon.vercel.app').replace(/\/$/,'');
-const BUILD=crypto.createHash('sha1').update(fs.readFileSync(path.join(root,'src/template.html'))).update(j([D,P,PAINT,WORLDJ,ASSETS])).digest('hex').slice(0,10);
+const BUILD=crypto.createHash('sha1').update(fs.readFileSync(path.join(root,'src/template.html'))).update(fs.readFileSync(path.join(root,'src/progression.js'))).update(j([D,P,PAINT,WORLDJ,ASSETS])).digest('hex').slice(0,10);
 const fill={__DATA__:j(D),__PLANETS__:j(P),__TRAITS__:j(core.traits),__SIGS__:j(core.signature_moves),__SYS__:j(SYS),__ART__:j(ART),__ARTB__:j(ARTB),__OW__:j(OW),
  __TITLE__:j(TITLE),__SHIP__:j(SHIP),__CUTS__:j(CUTS),__CHAR__:j(CHAR),__SCENES__:j(SCN),__FX__:j(FX),__PAINT__:PAINT,__WORLD__:WORLDJ,__WORLDIMG__:j(WORLDIMG),
  __MUSIC__:j(MUSIC),__TITLEMUSIC__:j(TITLEMUSIC),__PLANETART__:j(PLANART),__BUILD__:j(BUILD),__INLINE__:j(INLINE),__SITE__:SITE,__BETA__:j(BETA)};
+// progression (docs/PROGRESSION_AND_LEVELING.md): species curves/yields/evolutions, wild tables, Keeper and boss levels
+const PROGJ=JSON.parse(fs.readFileSync(path.join(root,'data/progression.json'),'utf8'));
+const PROGMIN={species:Object.fromEntries(Object.entries(PROGJ.species).map(([k,v])=>[k,{curve:v.curve,base_yield:v.base_yield,stage:v.stage,stages:v.stages,rarity:v.rarity,evolves:v.evolves,capture_mod:v.capture_mod}])),
+ areas:Object.fromEntries(Object.entries(PROGJ.areas).map(([k,a])=>{const t=l=>l&&l.map(x=>({name:x.name,min:x.min,max:x.max,weight:x.weight}));return[k,{levels:a.levels,tier1:t(a.tier1),tier2_after_4_shards:t(a.tier2_after_4_shards),tier3_after_champion:t(a.tier3_after_champion),trainer_levels:a.trainer_levels,trainer_team_size:a.trainer_team_size}]})),
+ keepers:PROGJ.keepers,bosses:PROGJ.bosses,rival:PROGJ.rival,legendaries:PROGJ.legendaries};
+fill.__PROGENGINE__=fs.readFileSync(path.join(root,'src/progression.js'),'utf8').replace(/__PROGRESSION__/g,j(PROGMIN));
 // function replacer: data can contain "$&"-style sequences that a string replacement would expand
 let html=fs.readFileSync(path.join(root,'src/template.html'),'utf8').replace(/__[A-Z]+__/g,k=>k in fill?fill[k]:k);
 fs.mkdirSync(www,{recursive:true});
