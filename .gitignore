@@ -8,3 +8,4 @@ __pycache__/
 # build output (node tools/build.js); only the fonts note is tracked
 www/*
 !www/fonts/
+.env*
