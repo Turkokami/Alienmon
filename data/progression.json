@@ -1,0 +1,10412 @@
+{
+ "version": 1,
+ "notes": "Generated progression config for Alienmon Batch 1. See PROGRESSION_AND_LEVELING.md.",
+ "exp_curves": {
+  "glitch": "erratic-style piecewise (600,000 at Lv100)",
+  "swift": "floor(0.8*n^3) (800,000)",
+  "standard": "n^3 (1,000,000)",
+  "steady": "floor(1.2*n^3 - 15*n^2 + 100*n - 140) (1,059,860)",
+  "ancient": "floor(1.25*n^3) (1,250,000)",
+  "pulse": "fluctuating-style piecewise (1,640,000)"
+ },
+ "species": {
+  "Sporix": {
+   "n": 1,
+   "curve": "steady",
+   "base_yield": 54,
+   "stage": 1,
+   "stages": 3,
+   "bst": 300,
+   "rarity": "starter",
+   "evolves": {
+    "into": "Mycelith",
+    "level": 16,
+    "method": "Level 16"
+   },
+   "capture_mod": 1.0
+  },
+  "Mycelith": {
+   "n": 2,
+   "curve": "steady",
+   "base_yield": 129,
+   "stage": 2,
+   "stages": 3,
+   "bst": 405,
+   "rarity": "starter",
+   "evolves": {
+    "into": "Fungaroth",
+    "level": 36,
+    "method": "Level 36"
+   },
+   "capture_mod": 0.7
+  },
+  "Fungaroth": {
+   "n": 3,
+   "curve": "steady",
+   "base_yield": 238,
+   "stage": 3,
+   "stages": 3,
+   "bst": 530,
+   "rarity": "starter",
+   "evolves": null,
+   "capture_mod": 0.45
+  },
+  "Plazmo": {
+   "n": 4,
+   "curve": "steady",
+   "base_yield": 54,
+   "stage": 1,
+   "stages": 3,
+   "bst": 300,
+   "rarity": "starter",
+   "evolves": {
+    "into": "Flarion",
+    "level": 16,
+    "method": "Level 16"
+   },
+   "capture_mod": 1.0
+  },
+  "Flarion": {
+   "n": 5,
+   "curve": "steady",
+   "base_yield": 129,
+   "stage": 2,
+   "stages": 3,
+   "bst": 405,
+   "rarity": "starter",
+   "evolves": {
+    "into": "Solarach",
+    "level": 36,
+    "method": "Level 36"
+   },
+   "capture_mod": 0.7
+  },
+  "Solarach": {
+   "n": 6,
+   "curve": "steady",
+   "base_yield": 238,
+   "stage": 3,
+   "stages": 3,
+   "bst": 530,
+   "rarity": "starter",
+   "evolves": null,
+   "capture_mod": 0.45
+  },
+  "Gloopa": {
+   "n": 7,
+   "curve": "steady",
+   "base_yield": 54,
+   "stage": 1,
+   "stages": 3,
+   "bst": 300,
+   "rarity": "starter",
+   "evolves": {
+    "into": "Tidaloid",
+    "level": 16,
+    "method": "Level 16"
+   },
+   "capture_mod": 1.0
+  },
+  "Tidaloid": {
+   "n": 8,
+   "curve": "steady",
+   "base_yield": 129,
+   "stage": 2,
+   "stages": 3,
+   "bst": 405,
+   "rarity": "starter",
+   "evolves": {
+    "into": "Abyssor",
+    "level": 36,
+    "method": "Level 36"
+   },
+   "capture_mod": 0.7
+  },
+  "Abyssor": {
+   "n": 9,
+   "curve": "steady",
+   "base_yield": 238,
+   "stage": 3,
+   "stages": 3,
+   "bst": 530,
+   "rarity": "starter",
+   "evolves": null,
+   "capture_mod": 0.45
+  },
+  "Zib": {
+   "n": 10,
+   "curve": "pulse",
+   "base_yield": 169,
+   "stage": 1,
+   "stages": 1,
+   "bst": 470,
+   "rarity": "mascot",
+   "evolves": null,
+   "capture_mod": 1.0
+  },
+  "Fizzle": {
+   "n": 11,
+   "curve": "glitch",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Fizzlord",
+    "level": 22,
+    "method": "Level 22"
+   },
+   "capture_mod": 1.0
+  },
+  "Fizzlord": {
+   "n": 12,
+   "curve": "glitch",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Skitterbit": {
+   "n": 13,
+   "curve": "steady",
+   "base_yield": 54,
+   "stage": 1,
+   "stages": 3,
+   "bst": 300,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Skitterdrone",
+    "level": 15,
+    "method": "Level 15"
+   },
+   "capture_mod": 1.0
+  },
+  "Skitterdrone": {
+   "n": 14,
+   "curve": "steady",
+   "base_yield": 129,
+   "stage": 2,
+   "stages": 3,
+   "bst": 405,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Hivemaw",
+    "level": 32,
+    "method": "Level 32"
+   },
+   "capture_mod": 0.7
+  },
+  "Hivemaw": {
+   "n": 15,
+   "curve": "steady",
+   "base_yield": 238,
+   "stage": 3,
+   "stages": 3,
+   "bst": 530,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.45
+  },
+  "Pebblet": {
+   "n": 16,
+   "curve": "steady",
+   "base_yield": 54,
+   "stage": 1,
+   "stages": 3,
+   "bst": 300,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Bouldron",
+    "level": 15,
+    "method": "Level 15"
+   },
+   "capture_mod": 1.0
+  },
+  "Bouldron": {
+   "n": 17,
+   "curve": "steady",
+   "base_yield": 129,
+   "stage": 2,
+   "stages": 3,
+   "bst": 405,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Orbitusk",
+    "level": 32,
+    "method": "Level 32"
+   },
+   "capture_mod": 0.7
+  },
+  "Orbitusk": {
+   "n": 18,
+   "curve": "steady",
+   "base_yield": 238,
+   "stage": 3,
+   "stages": 3,
+   "bst": 530,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.45
+  },
+  "Blinkit": {
+   "n": 19,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Grayvision",
+    "level": 22,
+    "method": "Level 22"
+   },
+   "capture_mod": 1.0
+  },
+  "Grayvision": {
+   "n": 20,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Cindermole": {
+   "n": 21,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Kilnback",
+    "level": 22,
+    "method": "Level 22"
+   },
+   "capture_mod": 1.0
+  },
+  "Kilnback": {
+   "n": 22,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Chirpod": {
+   "n": 23,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Squawktone",
+    "level": 22,
+    "method": "Level 22"
+   },
+   "capture_mod": 1.0
+  },
+  "Squawktone": {
+   "n": 24,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Cactling": {
+   "n": 25,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Spinelord",
+    "level": 22,
+    "method": "Level 22"
+   },
+   "capture_mod": 1.0
+  },
+  "Spinelord": {
+   "n": 26,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Shadebit": {
+   "n": 27,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Umbrask",
+    "level": 22,
+    "method": "Level 22"
+   },
+   "capture_mod": 1.0
+  },
+  "Umbrask": {
+   "n": 28,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Liftant": {
+   "n": 29,
+   "curve": "swift",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Hoistant",
+    "level": 22,
+    "method": "Level 22"
+   },
+   "capture_mod": 1.0
+  },
+  "Hoistant": {
+   "n": 30,
+   "curve": "swift",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Spindyn": {
+   "n": 31,
+   "curve": "glitch",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Dynamotor",
+    "level": 22,
+    "method": "Level 22"
+   },
+   "capture_mod": 1.0
+  },
+  "Dynamotor": {
+   "n": 32,
+   "curve": "glitch",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Boltling": {
+   "n": 33,
+   "curve": "steady",
+   "base_yield": 54,
+   "stage": 1,
+   "stages": 3,
+   "bst": 300,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Gearhound",
+    "level": 18,
+    "method": "Level 18"
+   },
+   "capture_mod": 1.0
+  },
+  "Gearhound": {
+   "n": 34,
+   "curve": "steady",
+   "base_yield": 129,
+   "stage": 2,
+   "stages": 3,
+   "bst": 405,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Scraptitan",
+    "level": 36,
+    "method": "Level 36"
+   },
+   "capture_mod": 0.7
+  },
+  "Scraptitan": {
+   "n": 35,
+   "curve": "steady",
+   "base_yield": 238,
+   "stage": 3,
+   "stages": 3,
+   "bst": 530,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.45
+  },
+  "Coilet": {
+   "n": 36,
+   "curve": "glitch",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Coilossus",
+    "level": 26,
+    "method": "Level 26"
+   },
+   "capture_mod": 1.0
+  },
+  "Coilossus": {
+   "n": 37,
+   "curve": "glitch",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Rivetoad": {
+   "n": 38,
+   "curve": "glitch",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Railbeast",
+    "level": 26,
+    "method": "Level 26"
+   },
+   "capture_mod": 1.0
+  },
+  "Railbeast": {
+   "n": 39,
+   "curve": "glitch",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Rustle": {
+   "n": 40,
+   "curve": "glitch",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Corrodon",
+    "level": 26,
+    "method": "Level 26"
+   },
+   "capture_mod": 1.0
+  },
+  "Corrodon": {
+   "n": 41,
+   "curve": "glitch",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Smeltpup": {
+   "n": 42,
+   "curve": "glitch",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Anvilox",
+    "level": 26,
+    "method": "Level 26"
+   },
+   "capture_mod": 1.0
+  },
+  "Anvilox": {
+   "n": 43,
+   "curve": "glitch",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Clangit": {
+   "n": 44,
+   "curve": "glitch",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Gongorr",
+    "level": 26,
+    "method": "Level 26"
+   },
+   "capture_mod": 1.0
+  },
+  "Gongorr": {
+   "n": 45,
+   "curve": "glitch",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Nutbug": {
+   "n": 46,
+   "curve": "glitch",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Screwmantis",
+    "level": 26,
+    "method": "Level 26"
+   },
+   "capture_mod": 1.0
+  },
+  "Screwmantis": {
+   "n": 47,
+   "curve": "glitch",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Forgemaul": {
+   "n": 48,
+   "curve": "pulse",
+   "base_yield": 180,
+   "stage": 1,
+   "stages": 1,
+   "bst": 500,
+   "rarity": "signature",
+   "evolves": null,
+   "capture_mod": 1.0
+  },
+  "Magnub": {
+   "n": 49,
+   "curve": "glitch",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Magnaxis",
+    "level": 26,
+    "method": "Level 26"
+   },
+   "capture_mod": 1.0
+  },
+  "Magnaxis": {
+   "n": 50,
+   "curve": "glitch",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Lumislug": {
+   "n": 51,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Neonmire",
+    "level": 26,
+    "method": "Level 26"
+   },
+   "capture_mod": 1.0
+  },
+  "Neonmire": {
+   "n": 52,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Puffspore": {
+   "n": 53,
+   "curve": "steady",
+   "base_yield": 54,
+   "stage": 1,
+   "stages": 3,
+   "bst": 300,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Miasmoth",
+    "level": 18,
+    "method": "Level 18"
+   },
+   "capture_mod": 1.0
+  },
+  "Miasmoth": {
+   "n": 54,
+   "curve": "steady",
+   "base_yield": 129,
+   "stage": 2,
+   "stages": 3,
+   "bst": 405,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Rotbloom",
+    "level": 36,
+    "method": "Level 36"
+   },
+   "capture_mod": 0.7
+  },
+  "Rotbloom": {
+   "n": 55,
+   "curve": "steady",
+   "base_yield": 238,
+   "stage": 3,
+   "stages": 3,
+   "bst": 530,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.45
+  },
+  "Gnatlet": {
+   "n": 56,
+   "curve": "swift",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Gnatcloud",
+    "level": 26,
+    "method": "Level 26"
+   },
+   "capture_mod": 1.0
+  },
+  "Gnatcloud": {
+   "n": 57,
+   "curve": "swift",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Bogeel": {
+   "n": 58,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Sludgeviper",
+    "level": 26,
+    "method": "Level 26"
+   },
+   "capture_mod": 1.0
+  },
+  "Sludgeviper": {
+   "n": 59,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Vinewisp": {
+   "n": 60,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Lianarch",
+    "level": 26,
+    "method": "Level 26"
+   },
+   "capture_mod": 1.0
+  },
+  "Lianarch": {
+   "n": 61,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Moodshroom": {
+   "n": 62,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Dreamcap",
+    "level": 26,
+    "method": "Level 26"
+   },
+   "capture_mod": 1.0
+  },
+  "Dreamcap": {
+   "n": 63,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Stingmire": {
+   "n": 64,
+   "curve": "swift",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Venomarch",
+    "level": 26,
+    "method": "Level 26"
+   },
+   "capture_mod": 1.0
+  },
+  "Venomarch": {
+   "n": 65,
+   "curve": "swift",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Lilypod": {
+   "n": 66,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Lotudrake",
+    "level": 26,
+    "method": "Level 26"
+   },
+   "capture_mod": 1.0
+  },
+  "Lotudrake": {
+   "n": 67,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Murkling": {
+   "n": 68,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Murkwraith",
+    "level": 26,
+    "method": "Level 26"
+   },
+   "capture_mod": 1.0
+  },
+  "Murkwraith": {
+   "n": 69,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Mycora": {
+   "n": 70,
+   "curve": "pulse",
+   "base_yield": 180,
+   "stage": 1,
+   "stages": 1,
+   "bst": 500,
+   "rarity": "signature",
+   "evolves": null,
+   "capture_mod": 1.0
+  },
+  "Silkpup": {
+   "n": 71,
+   "curve": "steady",
+   "base_yield": 54,
+   "stage": 1,
+   "stages": 3,
+   "bst": 300,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Cocoonix",
+    "level": 18,
+    "method": "Level 18"
+   },
+   "capture_mod": 1.0
+  },
+  "Cocoonix": {
+   "n": 72,
+   "curve": "steady",
+   "base_yield": 129,
+   "stage": 2,
+   "stages": 3,
+   "bst": 405,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Lunaweaver",
+    "level": 36,
+    "method": "Level 36"
+   },
+   "capture_mod": 0.7
+  },
+  "Lunaweaver": {
+   "n": 73,
+   "curve": "steady",
+   "base_yield": 238,
+   "stage": 3,
+   "stages": 3,
+   "bst": 530,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.45
+  },
+  "Drippit": {
+   "n": 74,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Goozilla",
+    "level": 26,
+    "method": "Level 26"
+   },
+   "capture_mod": 1.0
+  },
+  "Goozilla": {
+   "n": 75,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Bubbub": {
+   "n": 76,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Bubblorca",
+    "level": 30,
+    "method": "Level 30"
+   },
+   "capture_mod": 1.0
+  },
+  "Bubblorca": {
+   "n": 77,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Crabot": {
+   "n": 78,
+   "curve": "glitch",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Clawfort",
+    "level": 30,
+    "method": "Level 30"
+   },
+   "capture_mod": 1.0
+  },
+  "Clawfort": {
+   "n": 79,
+   "curve": "glitch",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Zapfin": {
+   "n": 80,
+   "curve": "glitch",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Stormray",
+    "level": 30,
+    "method": "Level 30"
+   },
+   "capture_mod": 1.0
+  },
+  "Stormray": {
+   "n": 81,
+   "curve": "glitch",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Inklet": {
+   "n": 82,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Cephalux",
+    "level": 30,
+    "method": "Level 30"
+   },
+   "capture_mod": 1.0
+  },
+  "Cephalux": {
+   "n": 83,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Shellet": {
+   "n": 84,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Pearlord",
+    "level": 30,
+    "method": "Level 30"
+   },
+   "capture_mod": 1.0
+  },
+  "Pearlord": {
+   "n": 85,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Echofin": {
+   "n": 86,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Echoleviah",
+    "level": 30,
+    "method": "Level 30"
+   },
+   "capture_mod": 1.0
+  },
+  "Echoleviah": {
+   "n": 87,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Tidepull": {
+   "n": 88,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Tidemoon",
+    "level": 30,
+    "method": "Level 30"
+   },
+   "capture_mod": 1.0
+  },
+  "Tidemoon": {
+   "n": 89,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Fogwisp": {
+   "n": 90,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Mistphantom",
+    "level": 30,
+    "method": "Level 30"
+   },
+   "capture_mod": 1.0
+  },
+  "Mistphantom": {
+   "n": 91,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Barnacub": {
+   "n": 92,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Barnacolos",
+    "level": 30,
+    "method": "Level 30"
+   },
+   "capture_mod": 1.0
+  },
+  "Barnacolos": {
+   "n": 93,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Krillo": {
+   "n": 94,
+   "curve": "swift",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Krillswarm",
+    "level": 30,
+    "method": "Level 30"
+   },
+   "capture_mod": 1.0
+  },
+  "Krillswarm": {
+   "n": 95,
+   "curve": "swift",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Anchorath": {
+   "n": 96,
+   "curve": "pulse",
+   "base_yield": 180,
+   "stage": 1,
+   "stages": 1,
+   "bst": 500,
+   "rarity": "signature",
+   "evolves": null,
+   "capture_mod": 1.0
+  },
+  "Gullwhistle": {
+   "n": 97,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Galecry",
+    "level": 30,
+    "method": "Level 30"
+   },
+   "capture_mod": 1.0
+  },
+  "Galecry": {
+   "n": 98,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Ventlet": {
+   "n": 99,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Thermoctus",
+    "level": 30,
+    "method": "Level 30"
+   },
+   "capture_mod": 1.0
+  },
+  "Thermoctus": {
+   "n": 100,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Bulbit": {
+   "n": 101,
+   "curve": "steady",
+   "base_yield": 54,
+   "stage": 1,
+   "stages": 3,
+   "bst": 300,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Filamaw",
+    "level": 21,
+    "method": "Level 21"
+   },
+   "capture_mod": 1.0
+  },
+  "Filamaw": {
+   "n": 102,
+   "curve": "steady",
+   "base_yield": 129,
+   "stage": 2,
+   "stages": 3,
+   "bst": 405,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Arclume",
+    "level": 40,
+    "method": "Level 40"
+   },
+   "capture_mod": 0.7
+  },
+  "Arclume": {
+   "n": 103,
+   "curve": "steady",
+   "base_yield": 238,
+   "stage": 3,
+   "stages": 3,
+   "bst": 530,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.45
+  },
+  "Pixbot": {
+   "n": 104,
+   "curve": "glitch",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Datadron",
+    "level": 30,
+    "method": "Level 30"
+   },
+   "capture_mod": 1.0
+  },
+  "Datadron": {
+   "n": 105,
+   "curve": "glitch",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Ampup": {
+   "n": 106,
+   "curve": "glitch",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Amplion",
+    "level": 30,
+    "method": "Level 30"
+   },
+   "capture_mod": 1.0
+  },
+  "Amplion": {
+   "n": 107,
+   "curve": "glitch",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Signalet": {
+   "n": 108,
+   "curve": "glitch",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Transmitron",
+    "level": 30,
+    "method": "Level 30"
+   },
+   "capture_mod": 1.0
+  },
+  "Transmitron": {
+   "n": 109,
+   "curve": "glitch",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Glitchbug": {
+   "n": 110,
+   "curve": "glitch",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Glitchmoth",
+    "level": 30,
+    "method": "Level 30"
+   },
+   "capture_mod": 1.0
+  },
+  "Glitchmoth": {
+   "n": 111,
+   "curve": "glitch",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Blackwatt": {
+   "n": 112,
+   "curve": "glitch",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Nullgrid",
+    "level": 30,
+    "method": "Level 30"
+   },
+   "capture_mod": 1.0
+  },
+  "Nullgrid": {
+   "n": 113,
+   "curve": "glitch",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Neonewt": {
+   "n": 114,
+   "curve": "glitch",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Neonagon",
+    "level": 30,
+    "method": "Level 30"
+   },
+   "capture_mod": 1.0
+  },
+  "Neonagon": {
+   "n": 115,
+   "curve": "glitch",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Holopup": {
+   "n": 116,
+   "curve": "glitch",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Holofox",
+    "level": 30,
+    "method": "Level 30"
+   },
+   "capture_mod": 1.0
+  },
+  "Holofox": {
+   "n": 117,
+   "curve": "glitch",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Bassquake": {
+   "n": 118,
+   "curve": "pulse",
+   "base_yield": 180,
+   "stage": 1,
+   "stages": 1,
+   "bst": 500,
+   "rarity": "signature",
+   "evolves": null,
+   "capture_mod": 1.0
+  },
+  "Quartzle": {
+   "n": 119,
+   "curve": "glitch",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Piezorn",
+    "level": 30,
+    "method": "Level 30"
+   },
+   "capture_mod": 1.0
+  },
+  "Piezorn": {
+   "n": 120,
+   "curve": "glitch",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Turbinit": {
+   "n": 121,
+   "curve": "glitch",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Turbinox",
+    "level": 30,
+    "method": "Level 30"
+   },
+   "capture_mod": 1.0
+  },
+  "Turbinox": {
+   "n": 122,
+   "curve": "glitch",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Glyphling": {
+   "n": 123,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Runeguard",
+    "level": 25,
+    "method": "Resonance: hold Signal Shard 4"
+   },
+   "capture_mod": 1.0
+  },
+  "Runeguard": {
+   "n": 124,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Monolet": {
+   "n": 125,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Obeliskor",
+    "level": 25,
+    "method": "Resonance: hold Signal Shard 4"
+   },
+   "capture_mod": 1.0
+  },
+  "Obeliskor": {
+   "n": 126,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Shardpup": {
+   "n": 127,
+   "curve": "steady",
+   "base_yield": 54,
+   "stage": 1,
+   "stages": 3,
+   "bst": 300,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Shardwolf",
+    "level": 24,
+    "method": "Level 24"
+   },
+   "capture_mod": 1.0
+  },
+  "Shardwolf": {
+   "n": 128,
+   "curve": "steady",
+   "base_yield": 129,
+   "stage": 2,
+   "stages": 3,
+   "bst": 405,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Prismwolf",
+    "level": 25,
+    "method": "Resonance: hold Signal Shard 4"
+   },
+   "capture_mod": 0.7
+  },
+  "Prismwolf": {
+   "n": 129,
+   "curve": "steady",
+   "base_yield": 238,
+   "stage": 3,
+   "stages": 3,
+   "bst": 530,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.45
+  },
+  "Echoshade": {
+   "n": 130,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Memoria",
+    "level": 25,
+    "method": "Resonance: hold Signal Shard 4"
+   },
+   "capture_mod": 1.0
+  },
+  "Memoria": {
+   "n": 131,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Fossilily": {
+   "n": 132,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Ambroot",
+    "level": 25,
+    "method": "Resonance: hold Signal Shard 4"
+   },
+   "capture_mod": 1.0
+  },
+  "Ambroot": {
+   "n": 133,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Chimelet": {
+   "n": 134,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Chimeral",
+    "level": 25,
+    "method": "Resonance: hold Signal Shard 4"
+   },
+   "capture_mod": 1.0
+  },
+  "Chimeral": {
+   "n": 135,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Vortiny": {
+   "n": 136,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Vortexus",
+    "level": 25,
+    "method": "Resonance: hold Signal Shard 4"
+   },
+   "capture_mod": 1.0
+  },
+  "Vortexus": {
+   "n": 137,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Oracub": {
+   "n": 138,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Oraclaw",
+    "level": 25,
+    "method": "Resonance: hold Signal Shard 4"
+   },
+   "capture_mod": 1.0
+  },
+  "Oraclaw": {
+   "n": 139,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Mosaik": {
+   "n": 140,
+   "curve": "pulse",
+   "base_yield": 169,
+   "stage": 1,
+   "stages": 1,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 1.0
+  },
+  "Ashpup": {
+   "n": 141,
+   "curve": "steady",
+   "base_yield": 54,
+   "stage": 1,
+   "stages": 3,
+   "bst": 300,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Cinderhound",
+    "level": 24,
+    "method": "Level 24"
+   },
+   "capture_mod": 1.0
+  },
+  "Cinderhound": {
+   "n": 142,
+   "curve": "steady",
+   "base_yield": 129,
+   "stage": 2,
+   "stages": 3,
+   "bst": 405,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Pyroclast",
+    "level": 44,
+    "method": "Level 44"
+   },
+   "capture_mod": 0.7
+  },
+  "Pyroclast": {
+   "n": 143,
+   "curve": "steady",
+   "base_yield": 238,
+   "stage": 3,
+   "stages": 3,
+   "bst": 530,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.45
+  },
+  "Magmorb": {
+   "n": 144,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Coremantle",
+    "level": 34,
+    "method": "Level 34"
+   },
+   "capture_mod": 1.0
+  },
+  "Coremantle": {
+   "n": 145,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Obsidimp": {
+   "n": 146,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Obsidrake",
+    "level": 34,
+    "method": "Level 34"
+   },
+   "capture_mod": 1.0
+  },
+  "Obsidrake": {
+   "n": 147,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Kindlefly": {
+   "n": 148,
+   "curve": "swift",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Blazewing",
+    "level": 34,
+    "method": "Level 34"
+   },
+   "capture_mod": 1.0
+  },
+  "Blazewing": {
+   "n": 149,
+   "curve": "swift",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Drillit": {
+   "n": 150,
+   "curve": "glitch",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Drillcrag",
+    "level": 34,
+    "method": "Level 34"
+   },
+   "capture_mod": 1.0
+  },
+  "Drillcrag": {
+   "n": 151,
+   "curve": "glitch",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Smoglet": {
+   "n": 152,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Smogshade",
+    "level": 34,
+    "method": "Level 34"
+   },
+   "capture_mod": 1.0
+  },
+  "Smogshade": {
+   "n": 153,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Rumblet": {
+   "n": 154,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Tremoroar",
+    "level": 34,
+    "method": "Level 34"
+   },
+   "capture_mod": 1.0
+  },
+  "Tremoroar": {
+   "n": 155,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Scorchscale": {
+   "n": 156,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Scorchwyrm",
+    "level": 34,
+    "method": "Level 34"
+   },
+   "capture_mod": 1.0
+  },
+  "Scorchwyrm": {
+   "n": 157,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Basaltor": {
+   "n": 158,
+   "curve": "pulse",
+   "base_yield": 180,
+   "stage": 1,
+   "stages": 1,
+   "bst": 500,
+   "rarity": "signature",
+   "evolves": null,
+   "capture_mod": 1.0
+  },
+  "Charsprout": {
+   "n": 159,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Phoenixia",
+    "level": 34,
+    "method": "Level 34"
+   },
+   "capture_mod": 1.0
+  },
+  "Phoenixia": {
+   "n": 160,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Snoblet": {
+   "n": 161,
+   "curve": "steady",
+   "base_yield": 54,
+   "stage": 1,
+   "stages": 3,
+   "bst": 300,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Iceburr",
+    "level": 27,
+    "method": "Level 27"
+   },
+   "capture_mod": 1.0
+  },
+  "Iceburr": {
+   "n": 162,
+   "curve": "steady",
+   "base_yield": 129,
+   "stage": 2,
+   "stages": 3,
+   "bst": 405,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Glaciarch",
+    "level": 48,
+    "method": "Level 48"
+   },
+   "capture_mod": 0.7
+  },
+  "Glaciarch": {
+   "n": 163,
+   "curve": "steady",
+   "base_yield": 238,
+   "stage": 3,
+   "stages": 3,
+   "bst": 530,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.45
+  },
+  "Rimeshard": {
+   "n": 164,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Rimecrown",
+    "level": 38,
+    "method": "Level 38"
+   },
+   "capture_mod": 1.0
+  },
+  "Rimecrown": {
+   "n": 165,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Floepup": {
+   "n": 166,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Floelord",
+    "level": 38,
+    "method": "Level 38"
+   },
+   "capture_mod": 1.0
+  },
+  "Floelord": {
+   "n": 167,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Auroralet": {
+   "n": 168,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Aurorix",
+    "level": 38,
+    "method": "Level 38"
+   },
+   "capture_mod": 1.0
+  },
+  "Aurorix": {
+   "n": 169,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Hailorb": {
+   "n": 170,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Hailbringer",
+    "level": 38,
+    "method": "Level 38"
+   },
+   "capture_mod": 1.0
+  },
+  "Hailbringer": {
+   "n": 171,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Frostmite": {
+   "n": 172,
+   "curve": "swift",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Frostcolony",
+    "level": 38,
+    "method": "Level 38"
+   },
+   "capture_mod": 1.0
+  },
+  "Frostcolony": {
+   "n": 173,
+   "curve": "swift",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Chillshade": {
+   "n": 174,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Whiteout",
+    "level": 38,
+    "method": "Level 38"
+   },
+   "capture_mod": 1.0
+  },
+  "Whiteout": {
+   "n": 175,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Lichling": {
+   "n": 176,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Lichenoth",
+    "level": 38,
+    "method": "Level 38"
+   },
+   "capture_mod": 1.0
+  },
+  "Lichenoth": {
+   "n": 177,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Shatterling": {
+   "n": 178,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Shatterhorn",
+    "level": 38,
+    "method": "Level 38"
+   },
+   "capture_mod": 1.0
+  },
+  "Shatterhorn": {
+   "n": 179,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Glaciryx": {
+   "n": 180,
+   "curve": "pulse",
+   "base_yield": 180,
+   "stage": 1,
+   "stages": 1,
+   "bst": 500,
+   "rarity": "signature",
+   "evolves": null,
+   "capture_mod": 1.0
+  },
+  "Thawmaw": {
+   "n": 181,
+   "curve": "pulse",
+   "base_yield": 169,
+   "stage": 1,
+   "stages": 1,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 1.0
+  },
+  "Icicub": {
+   "n": 182,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Stalactrix",
+    "level": 38,
+    "method": "Level 38"
+   },
+   "capture_mod": 1.0
+  },
+  "Stalactrix": {
+   "n": 183,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Splicelet": {
+   "n": 184,
+   "curve": "steady",
+   "base_yield": 54,
+   "stage": 1,
+   "stages": 3,
+   "bst": 300,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Splicor",
+    "level": 27,
+    "method": "Level 27"
+   },
+   "capture_mod": 1.0
+  },
+  "Splicor": {
+   "n": 185,
+   "curve": "steady",
+   "base_yield": 129,
+   "stage": 2,
+   "stages": 3,
+   "bst": 405,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Chimerax",
+    "level": 48,
+    "method": "Level 48"
+   },
+   "capture_mod": 0.7
+  },
+  "Chimerax": {
+   "n": 186,
+   "curve": "steady",
+   "base_yield": 238,
+   "stage": 3,
+   "stages": 3,
+   "bst": 530,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.45
+  },
+  "Vialit": {
+   "n": 187,
+   "curve": "glitch",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Vialord",
+    "level": 38,
+    "method": "Level 38"
+   },
+   "capture_mod": 1.0
+  },
+  "Vialord": {
+   "n": 188,
+   "curve": "glitch",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Cagebot": {
+   "n": 189,
+   "curve": "glitch",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Wardenix",
+    "level": 38,
+    "method": "Level 38"
+   },
+   "capture_mod": 1.0
+  },
+  "Wardenix": {
+   "n": 190,
+   "curve": "glitch",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Nullbot": {
+   "n": 191,
+   "curve": "glitch",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Nulltron",
+    "level": 38,
+    "method": "Level 38"
+   },
+   "capture_mod": 1.0
+  },
+  "Nulltron": {
+   "n": 192,
+   "curve": "glitch",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Vexhydra": {
+   "n": 193,
+   "curve": "pulse",
+   "base_yield": 180,
+   "stage": 1,
+   "stages": 1,
+   "bst": 500,
+   "rarity": "signature",
+   "evolves": null,
+   "capture_mod": 1.0
+  },
+  "Bronnix": {
+   "n": 194,
+   "curve": "pulse",
+   "base_yield": 180,
+   "stage": 1,
+   "stages": 1,
+   "bst": 500,
+   "rarity": "signature",
+   "evolves": null,
+   "capture_mod": 1.0
+  },
+  "Thornvoid": {
+   "n": 195,
+   "curve": "pulse",
+   "base_yield": 180,
+   "stage": 1,
+   "stages": 1,
+   "bst": 500,
+   "rarity": "signature",
+   "evolves": null,
+   "capture_mod": 1.0
+  },
+  "Mindlet": {
+   "n": 196,
+   "curve": "steady",
+   "base_yield": 54,
+   "stage": 1,
+   "stages": 3,
+   "bst": 300,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Cerebrix",
+    "level": 30,
+    "method": "Level 30"
+   },
+   "capture_mod": 1.0
+  },
+  "Cerebrix": {
+   "n": 197,
+   "curve": "steady",
+   "base_yield": 129,
+   "stage": 2,
+   "stages": 3,
+   "bst": 405,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Cerebralux",
+    "level": 38,
+    "method": "Resonance: level up on the Halo Heights tower roof"
+   },
+   "capture_mod": 0.7
+  },
+  "Cerebralux": {
+   "n": 198,
+   "curve": "steady",
+   "base_yield": 238,
+   "stage": 3,
+   "stages": 3,
+   "bst": 530,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.45
+  },
+  "Humlet": {
+   "n": 199,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Hummingmind",
+    "level": 38,
+    "method": "Resonance: level up on the Halo Heights tower roof"
+   },
+   "capture_mod": 1.0
+  },
+  "Hummingmind": {
+   "n": 200,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Levitot": {
+   "n": 201,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Levitaur",
+    "level": 38,
+    "method": "Resonance: level up on the Halo Heights tower roof"
+   },
+   "capture_mod": 1.0
+  },
+  "Levitaur": {
+   "n": 202,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Haloette": {
+   "n": 203,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Halocene",
+    "level": 38,
+    "method": "Resonance: level up on the Halo Heights tower roof"
+   },
+   "capture_mod": 1.0
+  },
+  "Halocene": {
+   "n": 204,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Zephyrling": {
+   "n": 205,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Zephyrion",
+    "level": 38,
+    "method": "Resonance: level up on the Halo Heights tower roof"
+   },
+   "capture_mod": 1.0
+  },
+  "Zephyrion": {
+   "n": 206,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Dreamwisp": {
+   "n": 207,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Nightmarra",
+    "level": 38,
+    "method": "Resonance: level up on the Halo Heights tower roof"
+   },
+   "capture_mod": 1.0
+  },
+  "Nightmarra": {
+   "n": 208,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Astrochick": {
+   "n": 209,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Astrowl",
+    "level": 38,
+    "method": "Resonance: level up on the Halo Heights tower roof"
+   },
+   "capture_mod": 1.0
+  },
+  "Astrowl": {
+   "n": 210,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Mirrix": {
+   "n": 211,
+   "curve": "pulse",
+   "base_yield": 180,
+   "stage": 1,
+   "stages": 1,
+   "bst": 500,
+   "rarity": "signature",
+   "evolves": null,
+   "capture_mod": 1.0
+  },
+  "Reflix": {
+   "n": 212,
+   "curve": "pulse",
+   "base_yield": 180,
+   "stage": 1,
+   "stages": 1,
+   "bst": 500,
+   "rarity": "signature",
+   "evolves": null,
+   "capture_mod": 1.0
+  },
+  "Bardlet": {
+   "n": 213,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Bardoracle",
+    "level": 42,
+    "method": "Level 42"
+   },
+   "capture_mod": 1.0
+  },
+  "Bardoracle": {
+   "n": 214,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Gloomit": {
+   "n": 215,
+   "curve": "steady",
+   "base_yield": 54,
+   "stage": 1,
+   "stages": 3,
+   "bst": 300,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Gloomhaunt",
+    "level": 30,
+    "method": "Level 30"
+   },
+   "capture_mod": 1.0
+  },
+  "Gloomhaunt": {
+   "n": 216,
+   "curve": "steady",
+   "base_yield": 129,
+   "stage": 2,
+   "stages": 3,
+   "bst": 405,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Gloomhulk",
+    "level": 52,
+    "method": "Level 52"
+   },
+   "capture_mod": 0.7
+  },
+  "Gloomhulk": {
+   "n": 217,
+   "curve": "steady",
+   "base_yield": 238,
+   "stage": 3,
+   "stages": 3,
+   "bst": 530,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.45
+  },
+  "Wellspawn": {
+   "n": 218,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Wellmaw",
+    "level": 42,
+    "method": "Level 42"
+   },
+   "capture_mod": 1.0
+  },
+  "Wellmaw": {
+   "n": 219,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Ruinbot": {
+   "n": 220,
+   "curve": "glitch",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Ruinmech",
+    "level": 42,
+    "method": "Level 42"
+   },
+   "capture_mod": 1.0
+  },
+  "Ruinmech": {
+   "n": 221,
+   "curve": "glitch",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Duskmite": {
+   "n": 222,
+   "curve": "swift",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Dusklord",
+    "level": 42,
+    "method": "Level 42"
+   },
+   "capture_mod": 1.0
+  },
+  "Dusklord": {
+   "n": 223,
+   "curve": "swift",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Wailshade": {
+   "n": 224,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Banshriek",
+    "level": 42,
+    "method": "Level 42"
+   },
+   "capture_mod": 1.0
+  },
+  "Banshriek": {
+   "n": 225,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Geodle": {
+   "n": 226,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Geodome",
+    "level": 42,
+    "method": "Level 42"
+   },
+   "capture_mod": 1.0
+  },
+  "Geodome": {
+   "n": 227,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Rotroot": {
+   "n": 228,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Gravebloom",
+    "level": 42,
+    "method": "Level 42"
+   },
+   "capture_mod": 1.0
+  },
+  "Gravebloom": {
+   "n": 229,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Horizar": {
+   "n": 230,
+   "curve": "pulse",
+   "base_yield": 180,
+   "stage": 1,
+   "stages": 1,
+   "bst": 500,
+   "rarity": "signature",
+   "evolves": null,
+   "capture_mod": 1.0
+  },
+  "Novaling": {
+   "n": 231,
+   "curve": "steady",
+   "base_yield": 54,
+   "stage": 1,
+   "stages": 3,
+   "bst": 300,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Novacat",
+    "level": 33,
+    "method": "Level 33"
+   },
+   "capture_mod": 1.0
+  },
+  "Novacat": {
+   "n": 232,
+   "curve": "steady",
+   "base_yield": 129,
+   "stage": 2,
+   "stages": 3,
+   "bst": 405,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Supernovyx",
+    "level": 45,
+    "method": "Resonance: hold all 8 Signal Shards"
+   },
+   "capture_mod": 0.7
+  },
+  "Supernovyx": {
+   "n": 233,
+   "curve": "steady",
+   "base_yield": 238,
+   "stage": 3,
+   "stages": 3,
+   "bst": 530,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.45
+  },
+  "Quasarling": {
+   "n": 234,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Quasarus",
+    "level": 45,
+    "method": "Resonance: hold all 8 Signal Shards"
+   },
+   "capture_mod": 1.0
+  },
+  "Quasarus": {
+   "n": 235,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Prismite": {
+   "n": 236,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Prismora",
+    "level": 45,
+    "method": "Resonance: hold all 8 Signal Shards"
+   },
+   "capture_mod": 1.0
+  },
+  "Prismora": {
+   "n": 237,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Eclipsit": {
+   "n": 238,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Eclipsor",
+    "level": 45,
+    "method": "Resonance: hold all 8 Signal Shards"
+   },
+   "capture_mod": 1.0
+  },
+  "Eclipsor": {
+   "n": 239,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Cometlet": {
+   "n": 240,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Cometrix",
+    "level": 45,
+    "method": "Resonance: hold all 8 Signal Shards"
+   },
+   "capture_mod": 1.0
+  },
+  "Cometrix": {
+   "n": 241,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Meteorb": {
+   "n": 242,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Meteorox",
+    "level": 45,
+    "method": "Resonance: hold all 8 Signal Shards"
+   },
+   "capture_mod": 1.0
+  },
+  "Meteorox": {
+   "n": 243,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Sunbug": {
+   "n": 244,
+   "curve": "swift",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Solarswarm",
+    "level": 45,
+    "method": "Resonance: hold all 8 Signal Shards"
+   },
+   "capture_mod": 1.0
+  },
+  "Solarswarm": {
+   "n": 245,
+   "curve": "swift",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Starsprout": {
+   "n": 246,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Starbloom",
+    "level": 45,
+    "method": "Resonance: hold all 8 Signal Shards"
+   },
+   "capture_mod": 1.0
+  },
+  "Starbloom": {
+   "n": 247,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Podlet": {
+   "n": 248,
+   "curve": "steady",
+   "base_yield": 54,
+   "stage": 1,
+   "stages": 3,
+   "bst": 300,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Podspawn",
+    "level": 33,
+    "method": "Level 33"
+   },
+   "capture_mod": 1.0
+  },
+  "Podspawn": {
+   "n": 249,
+   "curve": "steady",
+   "base_yield": 129,
+   "stage": 2,
+   "stages": 3,
+   "bst": 405,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Podsentinel",
+    "level": 45,
+    "method": "Resonance: hold all 8 Signal Shards"
+   },
+   "capture_mod": 0.7
+  },
+  "Podsentinel": {
+   "n": 250,
+   "curve": "steady",
+   "base_yield": 238,
+   "stage": 3,
+   "stages": 3,
+   "bst": 530,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.45
+  },
+  "Foldling": {
+   "n": 251,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Foldarch",
+    "level": 45,
+    "method": "Resonance: hold all 8 Signal Shards"
+   },
+   "capture_mod": 1.0
+  },
+  "Foldarch": {
+   "n": 252,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Gemmling": {
+   "n": 253,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Gemmantle",
+    "level": 46,
+    "method": "Level 46"
+   },
+   "capture_mod": 1.0
+  },
+  "Gemmantle": {
+   "n": 254,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Riffling": {
+   "n": 255,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Riffrex",
+    "level": 46,
+    "method": "Level 46"
+   },
+   "capture_mod": 1.0
+  },
+  "Riffrex": {
+   "n": 256,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Cragpull": {
+   "n": 257,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Cragmajor",
+    "level": 46,
+    "method": "Level 46"
+   },
+   "capture_mod": 1.0
+  },
+  "Cragmajor": {
+   "n": 258,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Flarechick": {
+   "n": 259,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Flarehawk",
+    "level": 46,
+    "method": "Level 46"
+   },
+   "capture_mod": 1.0
+  },
+  "Flarehawk": {
+   "n": 260,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Diamite": {
+   "n": 261,
+   "curve": "glitch",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Diamondillo",
+    "level": 46,
+    "method": "Level 46"
+   },
+   "capture_mod": 1.0
+  },
+  "Diamondillo": {
+   "n": 262,
+   "curve": "glitch",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Facetrix": {
+   "n": 263,
+   "curve": "pulse",
+   "base_yield": 180,
+   "stage": 1,
+   "stages": 1,
+   "bst": 500,
+   "rarity": "signature",
+   "evolves": null,
+   "capture_mod": 1.0
+  },
+  "Encorex": {
+   "n": 264,
+   "curve": "pulse",
+   "base_yield": 180,
+   "stage": 1,
+   "stages": 1,
+   "bst": 500,
+   "rarity": "signature",
+   "evolves": null,
+   "capture_mod": 1.0
+  },
+  "Pyrelyth": {
+   "n": 265,
+   "curve": "pulse",
+   "base_yield": 180,
+   "stage": 1,
+   "stages": 1,
+   "bst": 500,
+   "rarity": "signature",
+   "evolves": null,
+   "capture_mod": 1.0
+  },
+  "Bastionyx": {
+   "n": 266,
+   "curve": "pulse",
+   "base_yield": 180,
+   "stage": 1,
+   "stages": 1,
+   "bst": 500,
+   "rarity": "signature",
+   "evolves": null,
+   "capture_mod": 1.0
+  },
+  "Firstlight": {
+   "n": 267,
+   "curve": "pulse",
+   "base_yield": 180,
+   "stage": 1,
+   "stages": 1,
+   "bst": 500,
+   "rarity": "signature",
+   "evolves": null,
+   "capture_mod": 1.0
+  },
+  "Fractling": {
+   "n": 268,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Fractalith",
+    "level": 45,
+    "method": "Resonance: level up inside the Rift Expanse"
+   },
+   "capture_mod": 1.0
+  },
+  "Fractalith": {
+   "n": 269,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Riftling": {
+   "n": 270,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Riftwalker",
+    "level": 45,
+    "method": "Resonance: level up inside the Rift Expanse"
+   },
+   "capture_mod": 1.0
+  },
+  "Riftwalker": {
+   "n": 271,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Blightling": {
+   "n": 272,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Blightroot",
+    "level": 45,
+    "method": "Resonance: level up inside the Rift Expanse"
+   },
+   "capture_mod": 1.0
+  },
+  "Blightroot": {
+   "n": 273,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Pulsito": {
+   "n": 274,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Pulsarion",
+    "level": 45,
+    "method": "Resonance: level up inside the Rift Expanse"
+   },
+   "capture_mod": 1.0
+  },
+  "Pulsarion": {
+   "n": 275,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Oblivite": {
+   "n": 276,
+   "curve": "pulse",
+   "base_yield": 180,
+   "stage": 1,
+   "stages": 1,
+   "bst": 500,
+   "rarity": "signature",
+   "evolves": null,
+   "capture_mod": 1.0
+  },
+  "Terravox": {
+   "n": 277,
+   "curve": "ancient",
+   "base_yield": 372,
+   "stage": 1,
+   "stages": 1,
+   "bst": 600,
+   "rarity": "legendary",
+   "evolves": null,
+   "capture_mod": 0.2
+  },
+  "Aquelion": {
+   "n": 278,
+   "curve": "ancient",
+   "base_yield": 372,
+   "stage": 1,
+   "stages": 1,
+   "bst": 600,
+   "rarity": "legendary",
+   "evolves": null,
+   "capture_mod": 0.2
+  },
+  "Ignarch": {
+   "n": 279,
+   "curve": "ancient",
+   "base_yield": 372,
+   "stage": 1,
+   "stages": 1,
+   "bst": 600,
+   "rarity": "legendary",
+   "evolves": null,
+   "capture_mod": 0.2
+  },
+  "Cricketick": {
+   "n": 280,
+   "curve": "swift",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Chronocrick",
+    "level": 22,
+    "method": "Level 22"
+   },
+   "capture_mod": 1.0
+  },
+  "Chronocrick": {
+   "n": 281,
+   "curve": "swift",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Croakle": {
+   "n": 282,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Croakoustic",
+    "level": 30,
+    "method": "Level 30"
+   },
+   "capture_mod": 1.0
+  },
+  "Croakoustic": {
+   "n": 283,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Tarbit": {
+   "n": 284,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Tarpitan",
+    "level": 34,
+    "method": "Level 34"
+   },
+   "capture_mod": 1.0
+  },
+  "Tarpitan": {
+   "n": 285,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Frostflare": {
+   "n": 286,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Cryoblaze",
+    "level": 38,
+    "method": "Level 38"
+   },
+   "capture_mod": 1.0
+  },
+  "Cryoblaze": {
+   "n": 287,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Rustlit": {
+   "n": 288,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Rustlegrove",
+    "level": 30,
+    "method": "Level 30"
+   },
+   "capture_mod": 1.0
+  },
+  "Rustlegrove": {
+   "n": 289,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Divebot": {
+   "n": 290,
+   "curve": "glitch",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Divekraken",
+    "level": 30,
+    "method": "Level 30"
+   },
+   "capture_mod": 1.0
+  },
+  "Divekraken": {
+   "n": 291,
+   "curve": "glitch",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Venomite": {
+   "n": 292,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Venomineral",
+    "level": 34,
+    "method": "Level 34"
+   },
+   "capture_mod": 1.0
+  },
+  "Venomineral": {
+   "n": 293,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Drizzlit": {
+   "n": 294,
+   "curve": "glitch",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Thunderhead",
+    "level": 38,
+    "method": "Level 38"
+   },
+   "capture_mod": 1.0
+  },
+  "Thunderhead": {
+   "n": 295,
+   "curve": "glitch",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Stompadon": {
+   "n": 296,
+   "curve": "pulse",
+   "base_yield": 169,
+   "stage": 1,
+   "stages": 1,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 1.0
+  },
+  "Lumivex": {
+   "n": 297,
+   "curve": "pulse",
+   "base_yield": 180,
+   "stage": 1,
+   "stages": 1,
+   "bst": 500,
+   "rarity": "signature",
+   "evolves": null,
+   "capture_mod": 1.0
+  },
+  "Novaryx": {
+   "n": 298,
+   "curve": "ancient",
+   "base_yield": 372,
+   "stage": 1,
+   "stages": 1,
+   "bst": 600,
+   "rarity": "legendary",
+   "evolves": null,
+   "capture_mod": 0.2
+  },
+  "Oblivane": {
+   "n": 299,
+   "curve": "ancient",
+   "base_yield": 372,
+   "stage": 1,
+   "stages": 1,
+   "bst": 600,
+   "rarity": "legendary",
+   "evolves": null,
+   "capture_mod": 0.2
+  },
+  "Seedmother": {
+   "n": 300,
+   "curve": "ancient",
+   "base_yield": 421,
+   "stage": 1,
+   "stages": 1,
+   "bst": 680,
+   "rarity": "mythic",
+   "evolves": null,
+   "capture_mod": 0.2
+  }
+ },
+ "areas": {
+  "dustara": {
+   "name": "Dustara",
+   "levels": [
+    2,
+    6
+   ],
+   "tier1": [
+    {
+     "name": "Fizzle",
+     "types": [
+      "Volt"
+     ],
+     "stage": "1/2",
+     "min": 2,
+     "max": 6,
+     "weight": 10,
+     "source": "common",
+     "chance": "9.1%"
+    },
+    {
+     "name": "Skitterbit",
+     "types": [
+      "Swarm"
+     ],
+     "stage": "1/3",
+     "min": 2,
+     "max": 6,
+     "weight": 10,
+     "source": "common",
+     "chance": "9.1%"
+    },
+    {
+     "name": "Pebblet",
+     "types": [
+      "Gravity"
+     ],
+     "stage": "1/3",
+     "min": 2,
+     "max": 6,
+     "weight": 10,
+     "source": "common",
+     "chance": "9.1%"
+    },
+    {
+     "name": "Blinkit",
+     "types": [
+      "Psi"
+     ],
+     "stage": "1/2",
+     "min": 2,
+     "max": 6,
+     "weight": 10,
+     "source": "common",
+     "chance": "9.1%"
+    },
+    {
+     "name": "Cindermole",
+     "types": [
+      "Magma"
+     ],
+     "stage": "1/2",
+     "min": 2,
+     "max": 6,
+     "weight": 10,
+     "source": "common",
+     "chance": "9.1%"
+    },
+    {
+     "name": "Chirpod",
+     "types": [
+      "Sonic"
+     ],
+     "stage": "1/2",
+     "min": 2,
+     "max": 6,
+     "weight": 10,
+     "source": "common",
+     "chance": "9.1%"
+    },
+    {
+     "name": "Cactling",
+     "types": [
+      "Bio"
+     ],
+     "stage": "1/2",
+     "min": 2,
+     "max": 6,
+     "weight": 10,
+     "source": "common",
+     "chance": "9.1%"
+    },
+    {
+     "name": "Shadebit",
+     "types": [
+      "Void"
+     ],
+     "stage": "1/2",
+     "min": 2,
+     "max": 6,
+     "weight": 10,
+     "source": "common",
+     "chance": "9.1%"
+    },
+    {
+     "name": "Liftant",
+     "types": [
+      "Gravity",
+      "Swarm"
+     ],
+     "stage": "1/2",
+     "min": 2,
+     "max": 6,
+     "weight": 10,
+     "source": "common",
+     "chance": "9.1%"
+    },
+    {
+     "name": "Spindyn",
+     "types": [
+      "Volt",
+      "Gravity"
+     ],
+     "stage": "1/2",
+     "min": 2,
+     "max": 6,
+     "weight": 10,
+     "source": "common",
+     "chance": "9.1%"
+    },
+    {
+     "name": "Cricketick",
+     "types": [
+      "Sonic",
+      "Swarm"
+     ],
+     "stage": "1/2",
+     "min": 2,
+     "max": 6,
+     "weight": 10,
+     "source": "common",
+     "chance": "9.1%"
+    }
+   ],
+   "tier2_after_4_shards": [
+    {
+     "name": "Fizzlord",
+     "types": [
+      "Volt"
+     ],
+     "stage": "2/2",
+     "min": 24,
+     "max": 32,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "8.5%"
+    },
+    {
+     "name": "Skitterdrone",
+     "types": [
+      "Swarm"
+     ],
+     "stage": "2/3",
+     "min": 24,
+     "max": 32,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "8.5%"
+    },
+    {
+     "name": "Bouldron",
+     "types": [
+      "Gravity"
+     ],
+     "stage": "2/3",
+     "min": 24,
+     "max": 32,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "8.5%"
+    },
+    {
+     "name": "Grayvision",
+     "types": [
+      "Psi"
+     ],
+     "stage": "2/2",
+     "min": 24,
+     "max": 32,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "8.5%"
+    },
+    {
+     "name": "Kilnback",
+     "types": [
+      "Magma"
+     ],
+     "stage": "2/2",
+     "min": 24,
+     "max": 32,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "8.5%"
+    },
+    {
+     "name": "Squawktone",
+     "types": [
+      "Sonic"
+     ],
+     "stage": "2/2",
+     "min": 24,
+     "max": 32,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "8.5%"
+    },
+    {
+     "name": "Spinelord",
+     "types": [
+      "Bio"
+     ],
+     "stage": "2/2",
+     "min": 24,
+     "max": 32,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "8.5%"
+    },
+    {
+     "name": "Umbrask",
+     "types": [
+      "Void"
+     ],
+     "stage": "2/2",
+     "min": 24,
+     "max": 32,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "8.5%"
+    },
+    {
+     "name": "Hoistant",
+     "types": [
+      "Gravity",
+      "Swarm"
+     ],
+     "stage": "2/2",
+     "min": 24,
+     "max": 32,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "8.5%"
+    },
+    {
+     "name": "Dynamotor",
+     "types": [
+      "Volt",
+      "Gravity"
+     ],
+     "stage": "2/2",
+     "min": 24,
+     "max": 32,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "8.5%"
+    },
+    {
+     "name": "Chronocrick",
+     "types": [
+      "Sonic",
+      "Swarm"
+     ],
+     "stage": "2/2",
+     "min": 24,
+     "max": 32,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "8.5%"
+    },
+    {
+     "name": "Hivemaw",
+     "types": [
+      "Swarm"
+     ],
+     "stage": "3/3",
+     "min": 31,
+     "max": 32,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "3.4%"
+    },
+    {
+     "name": "Orbitusk",
+     "types": [
+      "Gravity"
+     ],
+     "stage": "3/3",
+     "min": 31,
+     "max": 32,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "3.4%"
+    }
+   ],
+   "tier3_after_champion": [
+    {
+     "name": "Fizzlord",
+     "types": [
+      "Volt"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "8.5%"
+    },
+    {
+     "name": "Hivemaw",
+     "types": [
+      "Swarm"
+     ],
+     "stage": "3/3",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "8.5%"
+    },
+    {
+     "name": "Orbitusk",
+     "types": [
+      "Gravity"
+     ],
+     "stage": "3/3",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "8.5%"
+    },
+    {
+     "name": "Grayvision",
+     "types": [
+      "Psi"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "8.5%"
+    },
+    {
+     "name": "Kilnback",
+     "types": [
+      "Magma"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "8.5%"
+    },
+    {
+     "name": "Squawktone",
+     "types": [
+      "Sonic"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "8.5%"
+    },
+    {
+     "name": "Spinelord",
+     "types": [
+      "Bio"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "8.5%"
+    },
+    {
+     "name": "Umbrask",
+     "types": [
+      "Void"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "8.5%"
+    },
+    {
+     "name": "Hoistant",
+     "types": [
+      "Gravity",
+      "Swarm"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "8.5%"
+    },
+    {
+     "name": "Dynamotor",
+     "types": [
+      "Volt",
+      "Gravity"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "8.5%"
+    },
+    {
+     "name": "Chronocrick",
+     "types": [
+      "Sonic",
+      "Swarm"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "8.5%"
+    },
+    {
+     "name": "Skitterdrone",
+     "types": [
+      "Swarm"
+     ],
+     "stage": "2/3",
+     "min": 50,
+     "max": 60,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "3.4%"
+    },
+    {
+     "name": "Bouldron",
+     "types": [
+      "Gravity"
+     ],
+     "stage": "2/3",
+     "min": 50,
+     "max": 60,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "3.4%"
+    }
+   ],
+   "trainer_levels": [
+    3,
+    8
+   ],
+   "trainer_team_size": [
+    1,
+    2
+   ],
+   "stardust_per_trainer": "20*highest level"
+  },
+  "ferrox": {
+   "name": "Ferrox",
+   "levels": [
+    5,
+    10
+   ],
+   "tier1": [
+    {
+     "name": "Boltling",
+     "types": [
+      "Alloy"
+     ],
+     "stage": "1/3",
+     "min": 5,
+     "max": 10,
+     "weight": 10,
+     "source": "common",
+     "chance": "12.3%"
+    },
+    {
+     "name": "Coilet",
+     "types": [
+      "Alloy",
+      "Volt"
+     ],
+     "stage": "1/2",
+     "min": 5,
+     "max": 10,
+     "weight": 10,
+     "source": "common",
+     "chance": "12.3%"
+    },
+    {
+     "name": "Rivetoad",
+     "types": [
+      "Alloy"
+     ],
+     "stage": "1/2",
+     "min": 5,
+     "max": 10,
+     "weight": 10,
+     "source": "common",
+     "chance": "12.3%"
+    },
+    {
+     "name": "Rustle",
+     "types": [
+      "Toxin",
+      "Alloy"
+     ],
+     "stage": "1/2",
+     "min": 5,
+     "max": 10,
+     "weight": 10,
+     "source": "common",
+     "chance": "12.3%"
+    },
+    {
+     "name": "Smeltpup",
+     "types": [
+      "Magma",
+      "Alloy"
+     ],
+     "stage": "1/2",
+     "min": 5,
+     "max": 10,
+     "weight": 10,
+     "source": "common",
+     "chance": "12.3%"
+    },
+    {
+     "name": "Clangit",
+     "types": [
+      "Sonic",
+      "Alloy"
+     ],
+     "stage": "1/2",
+     "min": 5,
+     "max": 10,
+     "weight": 10,
+     "source": "common",
+     "chance": "12.3%"
+    },
+    {
+     "name": "Nutbug",
+     "types": [
+      "Swarm",
+      "Alloy"
+     ],
+     "stage": "1/2",
+     "min": 5,
+     "max": 10,
+     "weight": 10,
+     "source": "common",
+     "chance": "12.3%"
+    },
+    {
+     "name": "Magnub",
+     "types": [
+      "Alloy",
+      "Gravity"
+     ],
+     "stage": "1/2",
+     "min": 5,
+     "max": 10,
+     "weight": 10,
+     "source": "common",
+     "chance": "12.3%"
+    },
+    {
+     "name": "Forgemaul",
+     "types": [
+      "Alloy"
+     ],
+     "stage": "1/1",
+     "min": 5,
+     "max": 10,
+     "weight": 1,
+     "source": "rare",
+     "chance": "1.2%"
+    }
+   ],
+   "tier2_after_4_shards": [
+    {
+     "name": "Gearhound",
+     "types": [
+      "Alloy"
+     ],
+     "stage": "2/3",
+     "min": 24,
+     "max": 32,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "12.3%"
+    },
+    {
+     "name": "Coilossus",
+     "types": [
+      "Alloy",
+      "Volt"
+     ],
+     "stage": "2/2",
+     "min": 25,
+     "max": 32,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "12.3%"
+    },
+    {
+     "name": "Railbeast",
+     "types": [
+      "Alloy"
+     ],
+     "stage": "2/2",
+     "min": 25,
+     "max": 32,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "12.3%"
+    },
+    {
+     "name": "Corrodon",
+     "types": [
+      "Toxin",
+      "Alloy"
+     ],
+     "stage": "2/2",
+     "min": 25,
+     "max": 32,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "12.3%"
+    },
+    {
+     "name": "Anvilox",
+     "types": [
+      "Magma",
+      "Alloy"
+     ],
+     "stage": "2/2",
+     "min": 25,
+     "max": 32,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "12.3%"
+    },
+    {
+     "name": "Gongorr",
+     "types": [
+      "Sonic",
+      "Alloy"
+     ],
+     "stage": "2/2",
+     "min": 25,
+     "max": 32,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "12.3%"
+    },
+    {
+     "name": "Screwmantis",
+     "types": [
+      "Swarm",
+      "Alloy"
+     ],
+     "stage": "2/2",
+     "min": 25,
+     "max": 32,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "12.3%"
+    },
+    {
+     "name": "Magnaxis",
+     "types": [
+      "Alloy",
+      "Gravity"
+     ],
+     "stage": "2/2",
+     "min": 25,
+     "max": 32,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "12.3%"
+    },
+    {
+     "name": "Forgemaul",
+     "types": [
+      "Alloy"
+     ],
+     "stage": "1/1",
+     "min": 24,
+     "max": 30,
+     "weight": 1,
+     "source": "rare",
+     "chance": "1.2%"
+    }
+   ],
+   "tier3_after_champion": [
+    {
+     "name": "Scraptitan",
+     "types": [
+      "Alloy"
+     ],
+     "stage": "3/3",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "11.8%"
+    },
+    {
+     "name": "Coilossus",
+     "types": [
+      "Alloy",
+      "Volt"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "11.8%"
+    },
+    {
+     "name": "Railbeast",
+     "types": [
+      "Alloy"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "11.8%"
+    },
+    {
+     "name": "Corrodon",
+     "types": [
+      "Toxin",
+      "Alloy"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "11.8%"
+    },
+    {
+     "name": "Anvilox",
+     "types": [
+      "Magma",
+      "Alloy"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "11.8%"
+    },
+    {
+     "name": "Gongorr",
+     "types": [
+      "Sonic",
+      "Alloy"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "11.8%"
+    },
+    {
+     "name": "Screwmantis",
+     "types": [
+      "Swarm",
+      "Alloy"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "11.8%"
+    },
+    {
+     "name": "Magnaxis",
+     "types": [
+      "Alloy",
+      "Gravity"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "11.8%"
+    },
+    {
+     "name": "Gearhound",
+     "types": [
+      "Alloy"
+     ],
+     "stage": "2/3",
+     "min": 50,
+     "max": 60,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "4.7%"
+    },
+    {
+     "name": "Forgemaul",
+     "types": [
+      "Alloy"
+     ],
+     "stage": "1/1",
+     "min": 50,
+     "max": 58,
+     "weight": 1,
+     "source": "rare",
+     "chance": "1.2%"
+    }
+   ],
+   "trainer_levels": [
+    6,
+    12
+   ],
+   "trainer_team_size": [
+    1,
+    2
+   ],
+   "stardust_per_trainer": "20*highest level"
+  },
+  "sporeholm": {
+   "name": "Sporeholm",
+   "levels": [
+    9,
+    15
+   ],
+   "tier1": [
+    {
+     "name": "Lumislug",
+     "types": [
+      "Toxin"
+     ],
+     "stage": "1/2",
+     "min": 9,
+     "max": 15,
+     "weight": 10,
+     "source": "common",
+     "chance": "8.3%"
+    },
+    {
+     "name": "Puffspore",
+     "types": [
+      "Bio",
+      "Toxin"
+     ],
+     "stage": "1/3",
+     "min": 9,
+     "max": 15,
+     "weight": 10,
+     "source": "common",
+     "chance": "8.3%"
+    },
+    {
+     "name": "Gnatlet",
+     "types": [
+      "Swarm"
+     ],
+     "stage": "1/2",
+     "min": 9,
+     "max": 15,
+     "weight": 10,
+     "source": "common",
+     "chance": "8.3%"
+    },
+    {
+     "name": "Bogeel",
+     "types": [
+      "Hydro",
+      "Toxin"
+     ],
+     "stage": "1/2",
+     "min": 9,
+     "max": 15,
+     "weight": 10,
+     "source": "common",
+     "chance": "8.3%"
+    },
+    {
+     "name": "Vinewisp",
+     "types": [
+      "Bio"
+     ],
+     "stage": "1/2",
+     "min": 9,
+     "max": 15,
+     "weight": 10,
+     "source": "common",
+     "chance": "8.3%"
+    },
+    {
+     "name": "Moodshroom",
+     "types": [
+      "Psi",
+      "Bio"
+     ],
+     "stage": "1/2",
+     "min": 9,
+     "max": 15,
+     "weight": 10,
+     "source": "common",
+     "chance": "8.3%"
+    },
+    {
+     "name": "Stingmire",
+     "types": [
+      "Toxin",
+      "Swarm"
+     ],
+     "stage": "1/2",
+     "min": 9,
+     "max": 15,
+     "weight": 10,
+     "source": "common",
+     "chance": "8.3%"
+    },
+    {
+     "name": "Lilypod",
+     "types": [
+      "Hydro",
+      "Bio"
+     ],
+     "stage": "1/2",
+     "min": 9,
+     "max": 15,
+     "weight": 10,
+     "source": "common",
+     "chance": "8.3%"
+    },
+    {
+     "name": "Murkling",
+     "types": [
+      "Void",
+      "Toxin"
+     ],
+     "stage": "1/2",
+     "min": 9,
+     "max": 15,
+     "weight": 10,
+     "source": "common",
+     "chance": "8.3%"
+    },
+    {
+     "name": "Silkpup",
+     "types": [
+      "Swarm",
+      "Bio"
+     ],
+     "stage": "1/3",
+     "min": 9,
+     "max": 15,
+     "weight": 10,
+     "source": "common",
+     "chance": "8.3%"
+    },
+    {
+     "name": "Drippit",
+     "types": [
+      "Toxin",
+      "Hydro"
+     ],
+     "stage": "1/2",
+     "min": 9,
+     "max": 15,
+     "weight": 10,
+     "source": "common",
+     "chance": "8.3%"
+    },
+    {
+     "name": "Miasmoth",
+     "types": [
+      "Bio",
+      "Toxin"
+     ],
+     "stage": "2/3",
+     "min": 17,
+     "max": 18,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "3.3%"
+    },
+    {
+     "name": "Cocoonix",
+     "types": [
+      "Swarm",
+      "Bio"
+     ],
+     "stage": "2/3",
+     "min": 17,
+     "max": 18,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "3.3%"
+    },
+    {
+     "name": "Mycora",
+     "types": [
+      "Toxin",
+      "Bio"
+     ],
+     "stage": "1/1",
+     "min": 9,
+     "max": 15,
+     "weight": 1,
+     "source": "rare",
+     "chance": "0.8%"
+    },
+    {
+     "name": "Zib",
+     "types": [
+      "Volt"
+     ],
+     "stage": "1/1",
+     "min": 9,
+     "max": 15,
+     "weight": 1,
+     "source": "rare",
+     "chance": "0.8%"
+    }
+   ],
+   "tier2_after_4_shards": [
+    {
+     "name": "Neonmire",
+     "types": [
+      "Toxin"
+     ],
+     "stage": "2/2",
+     "min": 25,
+     "max": 32,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "8.9%"
+    },
+    {
+     "name": "Miasmoth",
+     "types": [
+      "Bio",
+      "Toxin"
+     ],
+     "stage": "2/3",
+     "min": 24,
+     "max": 32,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "8.9%"
+    },
+    {
+     "name": "Gnatcloud",
+     "types": [
+      "Swarm"
+     ],
+     "stage": "2/2",
+     "min": 25,
+     "max": 32,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "8.9%"
+    },
+    {
+     "name": "Sludgeviper",
+     "types": [
+      "Hydro",
+      "Toxin"
+     ],
+     "stage": "2/2",
+     "min": 25,
+     "max": 32,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "8.9%"
+    },
+    {
+     "name": "Lianarch",
+     "types": [
+      "Bio"
+     ],
+     "stage": "2/2",
+     "min": 25,
+     "max": 32,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "8.9%"
+    },
+    {
+     "name": "Dreamcap",
+     "types": [
+      "Psi",
+      "Bio"
+     ],
+     "stage": "2/2",
+     "min": 25,
+     "max": 32,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "8.9%"
+    },
+    {
+     "name": "Venomarch",
+     "types": [
+      "Toxin",
+      "Swarm"
+     ],
+     "stage": "2/2",
+     "min": 25,
+     "max": 32,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "8.9%"
+    },
+    {
+     "name": "Lotudrake",
+     "types": [
+      "Hydro",
+      "Bio"
+     ],
+     "stage": "2/2",
+     "min": 25,
+     "max": 32,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "8.9%"
+    },
+    {
+     "name": "Murkwraith",
+     "types": [
+      "Void",
+      "Toxin"
+     ],
+     "stage": "2/2",
+     "min": 25,
+     "max": 32,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "8.9%"
+    },
+    {
+     "name": "Cocoonix",
+     "types": [
+      "Swarm",
+      "Bio"
+     ],
+     "stage": "2/3",
+     "min": 24,
+     "max": 32,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "8.9%"
+    },
+    {
+     "name": "Goozilla",
+     "types": [
+      "Toxin",
+      "Hydro"
+     ],
+     "stage": "2/2",
+     "min": 25,
+     "max": 32,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "8.9%"
+    },
+    {
+     "name": "Mycora",
+     "types": [
+      "Toxin",
+      "Bio"
+     ],
+     "stage": "1/1",
+     "min": 24,
+     "max": 30,
+     "weight": 1,
+     "source": "rare",
+     "chance": "0.9%"
+    },
+    {
+     "name": "Zib",
+     "types": [
+      "Volt"
+     ],
+     "stage": "1/1",
+     "min": 24,
+     "max": 30,
+     "weight": 1,
+     "source": "rare",
+     "chance": "0.9%"
+    }
+   ],
+   "tier3_after_champion": [
+    {
+     "name": "Neonmire",
+     "types": [
+      "Toxin"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "8.3%"
+    },
+    {
+     "name": "Rotbloom",
+     "types": [
+      "Bio",
+      "Toxin"
+     ],
+     "stage": "3/3",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "8.3%"
+    },
+    {
+     "name": "Gnatcloud",
+     "types": [
+      "Swarm"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "8.3%"
+    },
+    {
+     "name": "Sludgeviper",
+     "types": [
+      "Hydro",
+      "Toxin"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "8.3%"
+    },
+    {
+     "name": "Lianarch",
+     "types": [
+      "Bio"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "8.3%"
+    },
+    {
+     "name": "Dreamcap",
+     "types": [
+      "Psi",
+      "Bio"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "8.3%"
+    },
+    {
+     "name": "Venomarch",
+     "types": [
+      "Toxin",
+      "Swarm"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "8.3%"
+    },
+    {
+     "name": "Lotudrake",
+     "types": [
+      "Hydro",
+      "Bio"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "8.3%"
+    },
+    {
+     "name": "Murkwraith",
+     "types": [
+      "Void",
+      "Toxin"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "8.3%"
+    },
+    {
+     "name": "Lunaweaver",
+     "types": [
+      "Swarm",
+      "Bio"
+     ],
+     "stage": "3/3",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "8.3%"
+    },
+    {
+     "name": "Goozilla",
+     "types": [
+      "Toxin",
+      "Hydro"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "8.3%"
+    },
+    {
+     "name": "Miasmoth",
+     "types": [
+      "Bio",
+      "Toxin"
+     ],
+     "stage": "2/3",
+     "min": 50,
+     "max": 60,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "3.3%"
+    },
+    {
+     "name": "Cocoonix",
+     "types": [
+      "Swarm",
+      "Bio"
+     ],
+     "stage": "2/3",
+     "min": 50,
+     "max": 60,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "3.3%"
+    },
+    {
+     "name": "Mycora",
+     "types": [
+      "Toxin",
+      "Bio"
+     ],
+     "stage": "1/1",
+     "min": 50,
+     "max": 58,
+     "weight": 1,
+     "source": "rare",
+     "chance": "0.8%"
+    },
+    {
+     "name": "Zib",
+     "types": [
+      "Volt"
+     ],
+     "stage": "1/1",
+     "min": 50,
+     "max": 58,
+     "weight": 1,
+     "source": "rare",
+     "chance": "0.8%"
+    }
+   ],
+   "trainer_levels": [
+    10,
+    17
+   ],
+   "trainer_team_size": [
+    2,
+    3
+   ],
+   "stardust_per_trainer": "20*highest level"
+  },
+  "thalassa": {
+   "name": "Thalassa",
+   "levels": [
+    13,
+    19
+   ],
+   "tier1": [
+    {
+     "name": "Bubbub",
+     "types": [
+      "Hydro"
+     ],
+     "stage": "1/2",
+     "min": 13,
+     "max": 19,
+     "weight": 10,
+     "source": "common",
+     "chance": "6.6%"
+    },
+    {
+     "name": "Crabot",
+     "types": [
+      "Hydro",
+      "Alloy"
+     ],
+     "stage": "1/2",
+     "min": 13,
+     "max": 19,
+     "weight": 10,
+     "source": "common",
+     "chance": "6.6%"
+    },
+    {
+     "name": "Zapfin",
+     "types": [
+      "Hydro",
+      "Volt"
+     ],
+     "stage": "1/2",
+     "min": 13,
+     "max": 19,
+     "weight": 10,
+     "source": "common",
+     "chance": "6.6%"
+    },
+    {
+     "name": "Inklet",
+     "types": [
+      "Hydro",
+      "Psi"
+     ],
+     "stage": "1/2",
+     "min": 13,
+     "max": 19,
+     "weight": 10,
+     "source": "common",
+     "chance": "6.6%"
+    },
+    {
+     "name": "Shellet",
+     "types": [
+      "Hydro",
+      "Crystal"
+     ],
+     "stage": "1/2",
+     "min": 13,
+     "max": 19,
+     "weight": 10,
+     "source": "common",
+     "chance": "6.6%"
+    },
+    {
+     "name": "Echofin",
+     "types": [
+      "Sonic",
+      "Hydro"
+     ],
+     "stage": "1/2",
+     "min": 13,
+     "max": 19,
+     "weight": 10,
+     "source": "common",
+     "chance": "6.6%"
+    },
+    {
+     "name": "Tidepull",
+     "types": [
+      "Hydro",
+      "Gravity"
+     ],
+     "stage": "1/2",
+     "min": 13,
+     "max": 19,
+     "weight": 10,
+     "source": "common",
+     "chance": "6.6%"
+    },
+    {
+     "name": "Fogwisp",
+     "types": [
+      "Void",
+      "Hydro"
+     ],
+     "stage": "1/2",
+     "min": 13,
+     "max": 19,
+     "weight": 10,
+     "source": "common",
+     "chance": "6.6%"
+    },
+    {
+     "name": "Barnacub",
+     "types": [
+      "Hydro"
+     ],
+     "stage": "1/2",
+     "min": 13,
+     "max": 19,
+     "weight": 10,
+     "source": "common",
+     "chance": "6.6%"
+    },
+    {
+     "name": "Krillo",
+     "types": [
+      "Swarm",
+      "Hydro"
+     ],
+     "stage": "1/2",
+     "min": 13,
+     "max": 19,
+     "weight": 10,
+     "source": "common",
+     "chance": "6.6%"
+    },
+    {
+     "name": "Gullwhistle",
+     "types": [
+      "Sonic"
+     ],
+     "stage": "1/2",
+     "min": 13,
+     "max": 19,
+     "weight": 10,
+     "source": "common",
+     "chance": "6.6%"
+    },
+    {
+     "name": "Ventlet",
+     "types": [
+      "Hydro",
+      "Magma"
+     ],
+     "stage": "1/2",
+     "min": 13,
+     "max": 19,
+     "weight": 10,
+     "source": "common",
+     "chance": "6.6%"
+    },
+    {
+     "name": "Croakle",
+     "types": [
+      "Hydro",
+      "Sonic"
+     ],
+     "stage": "1/2",
+     "min": 13,
+     "max": 19,
+     "weight": 10,
+     "source": "common",
+     "chance": "6.6%"
+    },
+    {
+     "name": "Rustlit",
+     "types": [
+      "Bio",
+      "Sonic"
+     ],
+     "stage": "1/2",
+     "min": 13,
+     "max": 19,
+     "weight": 10,
+     "source": "common",
+     "chance": "6.6%"
+    },
+    {
+     "name": "Divebot",
+     "types": [
+      "Alloy",
+      "Hydro"
+     ],
+     "stage": "1/2",
+     "min": 13,
+     "max": 19,
+     "weight": 10,
+     "source": "common",
+     "chance": "6.6%"
+    },
+    {
+     "name": "Anchorath",
+     "types": [
+      "Hydro"
+     ],
+     "stage": "1/1",
+     "min": 13,
+     "max": 19,
+     "weight": 1,
+     "source": "rare",
+     "chance": "0.7%"
+    }
+   ],
+   "tier2_after_4_shards": [
+    {
+     "name": "Bubbub",
+     "types": [
+      "Hydro"
+     ],
+     "stage": "1/2",
+     "min": 24,
+     "max": 30,
+     "weight": 10,
+     "source": "common",
+     "chance": "4.7%"
+    },
+    {
+     "name": "Crabot",
+     "types": [
+      "Hydro",
+      "Alloy"
+     ],
+     "stage": "1/2",
+     "min": 24,
+     "max": 30,
+     "weight": 10,
+     "source": "common",
+     "chance": "4.7%"
+    },
+    {
+     "name": "Zapfin",
+     "types": [
+      "Hydro",
+      "Volt"
+     ],
+     "stage": "1/2",
+     "min": 24,
+     "max": 30,
+     "weight": 10,
+     "source": "common",
+     "chance": "4.7%"
+    },
+    {
+     "name": "Inklet",
+     "types": [
+      "Hydro",
+      "Psi"
+     ],
+     "stage": "1/2",
+     "min": 24,
+     "max": 30,
+     "weight": 10,
+     "source": "common",
+     "chance": "4.7%"
+    },
+    {
+     "name": "Shellet",
+     "types": [
+      "Hydro",
+      "Crystal"
+     ],
+     "stage": "1/2",
+     "min": 24,
+     "max": 30,
+     "weight": 10,
+     "source": "common",
+     "chance": "4.7%"
+    },
+    {
+     "name": "Echofin",
+     "types": [
+      "Sonic",
+      "Hydro"
+     ],
+     "stage": "1/2",
+     "min": 24,
+     "max": 30,
+     "weight": 10,
+     "source": "common",
+     "chance": "4.7%"
+    },
+    {
+     "name": "Tidepull",
+     "types": [
+      "Hydro",
+      "Gravity"
+     ],
+     "stage": "1/2",
+     "min": 24,
+     "max": 30,
+     "weight": 10,
+     "source": "common",
+     "chance": "4.7%"
+    },
+    {
+     "name": "Fogwisp",
+     "types": [
+      "Void",
+      "Hydro"
+     ],
+     "stage": "1/2",
+     "min": 24,
+     "max": 30,
+     "weight": 10,
+     "source": "common",
+     "chance": "4.7%"
+    },
+    {
+     "name": "Barnacub",
+     "types": [
+      "Hydro"
+     ],
+     "stage": "1/2",
+     "min": 24,
+     "max": 30,
+     "weight": 10,
+     "source": "common",
+     "chance": "4.7%"
+    },
+    {
+     "name": "Krillo",
+     "types": [
+      "Swarm",
+      "Hydro"
+     ],
+     "stage": "1/2",
+     "min": 24,
+     "max": 30,
+     "weight": 10,
+     "source": "common",
+     "chance": "4.7%"
+    },
+    {
+     "name": "Gullwhistle",
+     "types": [
+      "Sonic"
+     ],
+     "stage": "1/2",
+     "min": 24,
+     "max": 30,
+     "weight": 10,
+     "source": "common",
+     "chance": "4.7%"
+    },
+    {
+     "name": "Ventlet",
+     "types": [
+      "Hydro",
+      "Magma"
+     ],
+     "stage": "1/2",
+     "min": 24,
+     "max": 30,
+     "weight": 10,
+     "source": "common",
+     "chance": "4.7%"
+    },
+    {
+     "name": "Croakle",
+     "types": [
+      "Hydro",
+      "Sonic"
+     ],
+     "stage": "1/2",
+     "min": 24,
+     "max": 30,
+     "weight": 10,
+     "source": "common",
+     "chance": "4.7%"
+    },
+    {
+     "name": "Rustlit",
+     "types": [
+      "Bio",
+      "Sonic"
+     ],
+     "stage": "1/2",
+     "min": 24,
+     "max": 30,
+     "weight": 10,
+     "source": "common",
+     "chance": "4.7%"
+    },
+    {
+     "name": "Divebot",
+     "types": [
+      "Alloy",
+      "Hydro"
+     ],
+     "stage": "1/2",
+     "min": 24,
+     "max": 30,
+     "weight": 10,
+     "source": "common",
+     "chance": "4.7%"
+    },
+    {
+     "name": "Bubblorca",
+     "types": [
+      "Hydro"
+     ],
+     "stage": "2/2",
+     "min": 29,
+     "max": 32,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "1.9%"
+    },
+    {
+     "name": "Clawfort",
+     "types": [
+      "Hydro",
+      "Alloy"
+     ],
+     "stage": "2/2",
+     "min": 29,
+     "max": 32,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "1.9%"
+    },
+    {
+     "name": "Stormray",
+     "types": [
+      "Hydro",
+      "Volt"
+     ],
+     "stage": "2/2",
+     "min": 29,
+     "max": 32,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "1.9%"
+    },
+    {
+     "name": "Cephalux",
+     "types": [
+      "Hydro",
+      "Psi"
+     ],
+     "stage": "2/2",
+     "min": 29,
+     "max": 32,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "1.9%"
+    },
+    {
+     "name": "Pearlord",
+     "types": [
+      "Hydro",
+      "Crystal"
+     ],
+     "stage": "2/2",
+     "min": 29,
+     "max": 32,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "1.9%"
+    },
+    {
+     "name": "Echoleviah",
+     "types": [
+      "Sonic",
+      "Hydro"
+     ],
+     "stage": "2/2",
+     "min": 29,
+     "max": 32,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "1.9%"
+    },
+    {
+     "name": "Tidemoon",
+     "types": [
+      "Hydro",
+      "Gravity"
+     ],
+     "stage": "2/2",
+     "min": 29,
+     "max": 32,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "1.9%"
+    },
+    {
+     "name": "Mistphantom",
+     "types": [
+      "Void",
+      "Hydro"
+     ],
+     "stage": "2/2",
+     "min": 29,
+     "max": 32,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "1.9%"
+    },
+    {
+     "name": "Barnacolos",
+     "types": [
+      "Hydro"
+     ],
+     "stage": "2/2",
+     "min": 29,
+     "max": 32,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "1.9%"
+    },
+    {
+     "name": "Krillswarm",
+     "types": [
+      "Swarm",
+      "Hydro"
+     ],
+     "stage": "2/2",
+     "min": 29,
+     "max": 32,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "1.9%"
+    },
+    {
+     "name": "Galecry",
+     "types": [
+      "Sonic"
+     ],
+     "stage": "2/2",
+     "min": 29,
+     "max": 32,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "1.9%"
+    },
+    {
+     "name": "Thermoctus",
+     "types": [
+      "Hydro",
+      "Magma"
+     ],
+     "stage": "2/2",
+     "min": 29,
+     "max": 32,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "1.9%"
+    },
+    {
+     "name": "Croakoustic",
+     "types": [
+      "Hydro",
+      "Sonic"
+     ],
+     "stage": "2/2",
+     "min": 29,
+     "max": 32,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "1.9%"
+    },
+    {
+     "name": "Rustlegrove",
+     "types": [
+      "Bio",
+      "Sonic"
+     ],
+     "stage": "2/2",
+     "min": 29,
+     "max": 32,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "1.9%"
+    },
+    {
+     "name": "Divekraken",
+     "types": [
+      "Alloy",
+      "Hydro"
+     ],
+     "stage": "2/2",
+     "min": 29,
+     "max": 32,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "1.9%"
+    },
+    {
+     "name": "Anchorath",
+     "types": [
+      "Hydro"
+     ],
+     "stage": "1/1",
+     "min": 24,
+     "max": 30,
+     "weight": 1,
+     "source": "rare",
+     "chance": "0.5%"
+    }
+   ],
+   "tier3_after_champion": [
+    {
+     "name": "Bubblorca",
+     "types": [
+      "Hydro"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "6.6%"
+    },
+    {
+     "name": "Clawfort",
+     "types": [
+      "Hydro",
+      "Alloy"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "6.6%"
+    },
+    {
+     "name": "Stormray",
+     "types": [
+      "Hydro",
+      "Volt"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "6.6%"
+    },
+    {
+     "name": "Cephalux",
+     "types": [
+      "Hydro",
+      "Psi"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "6.6%"
+    },
+    {
+     "name": "Pearlord",
+     "types": [
+      "Hydro",
+      "Crystal"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "6.6%"
+    },
+    {
+     "name": "Echoleviah",
+     "types": [
+      "Sonic",
+      "Hydro"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "6.6%"
+    },
+    {
+     "name": "Tidemoon",
+     "types": [
+      "Hydro",
+      "Gravity"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "6.6%"
+    },
+    {
+     "name": "Mistphantom",
+     "types": [
+      "Void",
+      "Hydro"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "6.6%"
+    },
+    {
+     "name": "Barnacolos",
+     "types": [
+      "Hydro"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "6.6%"
+    },
+    {
+     "name": "Krillswarm",
+     "types": [
+      "Swarm",
+      "Hydro"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "6.6%"
+    },
+    {
+     "name": "Galecry",
+     "types": [
+      "Sonic"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "6.6%"
+    },
+    {
+     "name": "Thermoctus",
+     "types": [
+      "Hydro",
+      "Magma"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "6.6%"
+    },
+    {
+     "name": "Croakoustic",
+     "types": [
+      "Hydro",
+      "Sonic"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "6.6%"
+    },
+    {
+     "name": "Rustlegrove",
+     "types": [
+      "Bio",
+      "Sonic"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "6.6%"
+    },
+    {
+     "name": "Divekraken",
+     "types": [
+      "Alloy",
+      "Hydro"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "6.6%"
+    },
+    {
+     "name": "Anchorath",
+     "types": [
+      "Hydro"
+     ],
+     "stage": "1/1",
+     "min": 50,
+     "max": 58,
+     "weight": 1,
+     "source": "rare",
+     "chance": "0.7%"
+    }
+   ],
+   "trainer_levels": [
+    14,
+    21
+   ],
+   "trainer_team_size": [
+    2,
+    3
+   ],
+   "stardust_per_trainer": "20*highest level"
+  },
+  "neonis": {
+   "name": "Neonis",
+   "levels": [
+    17,
+    23
+   ],
+   "tier1": [
+    {
+     "name": "Bulbit",
+     "types": [
+      "Volt"
+     ],
+     "stage": "1/3",
+     "min": 17,
+     "max": 23,
+     "weight": 10,
+     "source": "common",
+     "chance": "9.5%"
+    },
+    {
+     "name": "Pixbot",
+     "types": [
+      "Volt",
+      "Alloy"
+     ],
+     "stage": "1/2",
+     "min": 17,
+     "max": 23,
+     "weight": 10,
+     "source": "common",
+     "chance": "9.5%"
+    },
+    {
+     "name": "Ampup",
+     "types": [
+      "Volt",
+      "Sonic"
+     ],
+     "stage": "1/2",
+     "min": 17,
+     "max": 23,
+     "weight": 10,
+     "source": "common",
+     "chance": "9.5%"
+    },
+    {
+     "name": "Signalet",
+     "types": [
+      "Volt",
+      "Psi"
+     ],
+     "stage": "1/2",
+     "min": 17,
+     "max": 23,
+     "weight": 10,
+     "source": "common",
+     "chance": "9.5%"
+    },
+    {
+     "name": "Glitchbug",
+     "types": [
+      "Volt",
+      "Swarm"
+     ],
+     "stage": "1/2",
+     "min": 17,
+     "max": 23,
+     "weight": 10,
+     "source": "common",
+     "chance": "9.5%"
+    },
+    {
+     "name": "Blackwatt",
+     "types": [
+      "Void",
+      "Volt"
+     ],
+     "stage": "1/2",
+     "min": 17,
+     "max": 23,
+     "weight": 10,
+     "source": "common",
+     "chance": "9.5%"
+    },
+    {
+     "name": "Neonewt",
+     "types": [
+      "Volt"
+     ],
+     "stage": "1/2",
+     "min": 17,
+     "max": 23,
+     "weight": 10,
+     "source": "common",
+     "chance": "9.5%"
+    },
+    {
+     "name": "Holopup",
+     "types": [
+      "Psi",
+      "Volt"
+     ],
+     "stage": "1/2",
+     "min": 17,
+     "max": 23,
+     "weight": 10,
+     "source": "common",
+     "chance": "9.5%"
+    },
+    {
+     "name": "Quartzle",
+     "types": [
+      "Crystal",
+      "Volt"
+     ],
+     "stage": "1/2",
+     "min": 17,
+     "max": 23,
+     "weight": 10,
+     "source": "common",
+     "chance": "9.5%"
+    },
+    {
+     "name": "Turbinit",
+     "types": [
+      "Volt",
+      "Gravity"
+     ],
+     "stage": "1/2",
+     "min": 17,
+     "max": 23,
+     "weight": 10,
+     "source": "common",
+     "chance": "9.5%"
+    },
+    {
+     "name": "Filamaw",
+     "types": [
+      "Volt"
+     ],
+     "stage": "2/3",
+     "min": 20,
+     "max": 25,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "3.8%"
+    },
+    {
+     "name": "Bassquake",
+     "types": [
+      "Volt",
+      "Sonic"
+     ],
+     "stage": "1/1",
+     "min": 17,
+     "max": 23,
+     "weight": 1,
+     "source": "rare",
+     "chance": "1.0%"
+    }
+   ],
+   "tier2_after_4_shards": [
+    {
+     "name": "Filamaw",
+     "types": [
+      "Volt"
+     ],
+     "stage": "2/3",
+     "min": 24,
+     "max": 32,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "7.3%"
+    },
+    {
+     "name": "Pixbot",
+     "types": [
+      "Volt",
+      "Alloy"
+     ],
+     "stage": "1/2",
+     "min": 24,
+     "max": 30,
+     "weight": 10,
+     "source": "common",
+     "chance": "7.3%"
+    },
+    {
+     "name": "Ampup",
+     "types": [
+      "Volt",
+      "Sonic"
+     ],
+     "stage": "1/2",
+     "min": 24,
+     "max": 30,
+     "weight": 10,
+     "source": "common",
+     "chance": "7.3%"
+    },
+    {
+     "name": "Signalet",
+     "types": [
+      "Volt",
+      "Psi"
+     ],
+     "stage": "1/2",
+     "min": 24,
+     "max": 30,
+     "weight": 10,
+     "source": "common",
+     "chance": "7.3%"
+    },
+    {
+     "name": "Glitchbug",
+     "types": [
+      "Volt",
+      "Swarm"
+     ],
+     "stage": "1/2",
+     "min": 24,
+     "max": 30,
+     "weight": 10,
+     "source": "common",
+     "chance": "7.3%"
+    },
+    {
+     "name": "Blackwatt",
+     "types": [
+      "Void",
+      "Volt"
+     ],
+     "stage": "1/2",
+     "min": 24,
+     "max": 30,
+     "weight": 10,
+     "source": "common",
+     "chance": "7.3%"
+    },
+    {
+     "name": "Neonewt",
+     "types": [
+      "Volt"
+     ],
+     "stage": "1/2",
+     "min": 24,
+     "max": 30,
+     "weight": 10,
+     "source": "common",
+     "chance": "7.3%"
+    },
+    {
+     "name": "Holopup",
+     "types": [
+      "Psi",
+      "Volt"
+     ],
+     "stage": "1/2",
+     "min": 24,
+     "max": 30,
+     "weight": 10,
+     "source": "common",
+     "chance": "7.3%"
+    },
+    {
+     "name": "Quartzle",
+     "types": [
+      "Crystal",
+      "Volt"
+     ],
+     "stage": "1/2",
+     "min": 24,
+     "max": 30,
+     "weight": 10,
+     "source": "common",
+     "chance": "7.3%"
+    },
+    {
+     "name": "Turbinit",
+     "types": [
+      "Volt",
+      "Gravity"
+     ],
+     "stage": "1/2",
+     "min": 24,
+     "max": 30,
+     "weight": 10,
+     "source": "common",
+     "chance": "7.3%"
+    },
+    {
+     "name": "Datadron",
+     "types": [
+      "Volt",
+      "Alloy"
+     ],
+     "stage": "2/2",
+     "min": 29,
+     "max": 32,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "2.9%"
+    },
+    {
+     "name": "Amplion",
+     "types": [
+      "Volt",
+      "Sonic"
+     ],
+     "stage": "2/2",
+     "min": 29,
+     "max": 32,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "2.9%"
+    },
+    {
+     "name": "Transmitron",
+     "types": [
+      "Volt",
+      "Psi"
+     ],
+     "stage": "2/2",
+     "min": 29,
+     "max": 32,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "2.9%"
+    },
+    {
+     "name": "Glitchmoth",
+     "types": [
+      "Volt",
+      "Swarm"
+     ],
+     "stage": "2/2",
+     "min": 29,
+     "max": 32,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "2.9%"
+    },
+    {
+     "name": "Nullgrid",
+     "types": [
+      "Void",
+      "Volt"
+     ],
+     "stage": "2/2",
+     "min": 29,
+     "max": 32,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "2.9%"
+    },
+    {
+     "name": "Neonagon",
+     "types": [
+      "Volt"
+     ],
+     "stage": "2/2",
+     "min": 29,
+     "max": 32,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "2.9%"
+    },
+    {
+     "name": "Holofox",
+     "types": [
+      "Psi",
+      "Volt"
+     ],
+     "stage": "2/2",
+     "min": 29,
+     "max": 32,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "2.9%"
+    },
+    {
+     "name": "Piezorn",
+     "types": [
+      "Crystal",
+      "Volt"
+     ],
+     "stage": "2/2",
+     "min": 29,
+     "max": 32,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "2.9%"
+    },
+    {
+     "name": "Turbinox",
+     "types": [
+      "Volt",
+      "Gravity"
+     ],
+     "stage": "2/2",
+     "min": 29,
+     "max": 32,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "2.9%"
+    },
+    {
+     "name": "Bassquake",
+     "types": [
+      "Volt",
+      "Sonic"
+     ],
+     "stage": "1/1",
+     "min": 24,
+     "max": 30,
+     "weight": 1,
+     "source": "rare",
+     "chance": "0.7%"
+    }
+   ],
+   "tier3_after_champion": [
+    {
+     "name": "Arclume",
+     "types": [
+      "Volt"
+     ],
+     "stage": "3/3",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "9.5%"
+    },
+    {
+     "name": "Datadron",
+     "types": [
+      "Volt",
+      "Alloy"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "9.5%"
+    },
+    {
+     "name": "Amplion",
+     "types": [
+      "Volt",
+      "Sonic"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "9.5%"
+    },
+    {
+     "name": "Transmitron",
+     "types": [
+      "Volt",
+      "Psi"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "9.5%"
+    },
+    {
+     "name": "Glitchmoth",
+     "types": [
+      "Volt",
+      "Swarm"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "9.5%"
+    },
+    {
+     "name": "Nullgrid",
+     "types": [
+      "Void",
+      "Volt"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "9.5%"
+    },
+    {
+     "name": "Neonagon",
+     "types": [
+      "Volt"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "9.5%"
+    },
+    {
+     "name": "Holofox",
+     "types": [
+      "Psi",
+      "Volt"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "9.5%"
+    },
+    {
+     "name": "Piezorn",
+     "types": [
+      "Crystal",
+      "Volt"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "9.5%"
+    },
+    {
+     "name": "Turbinox",
+     "types": [
+      "Volt",
+      "Gravity"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "9.5%"
+    },
+    {
+     "name": "Filamaw",
+     "types": [
+      "Volt"
+     ],
+     "stage": "2/3",
+     "min": 50,
+     "max": 60,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "3.8%"
+    },
+    {
+     "name": "Bassquake",
+     "types": [
+      "Volt",
+      "Sonic"
+     ],
+     "stage": "1/1",
+     "min": 50,
+     "max": 58,
+     "weight": 1,
+     "source": "rare",
+     "chance": "1.0%"
+    }
+   ],
+   "trainer_levels": [
+    18,
+    25
+   ],
+   "trainer_team_size": [
+    2,
+    3
+   ],
+   "stardust_per_trainer": "20*highest level"
+  },
+  "glyphos": {
+   "name": "Glyphos",
+   "levels": [
+    20,
+    26
+   ],
+   "tier1": [
+    {
+     "name": "Glyphling",
+     "types": [
+      "Crystal",
+      "Psi"
+     ],
+     "stage": "1/2",
+     "min": 20,
+     "max": 26,
+     "weight": 10,
+     "source": "common",
+     "chance": "7.4%"
+    },
+    {
+     "name": "Monolet",
+     "types": [
+      "Gravity",
+      "Psi"
+     ],
+     "stage": "1/2",
+     "min": 20,
+     "max": 26,
+     "weight": 10,
+     "source": "common",
+     "chance": "7.4%"
+    },
+    {
+     "name": "Shardpup",
+     "types": [
+      "Crystal"
+     ],
+     "stage": "1/3",
+     "min": 20,
+     "max": 26,
+     "weight": 10,
+     "source": "common",
+     "chance": "7.4%"
+    },
+    {
+     "name": "Echoshade",
+     "types": [
+      "Void",
+      "Psi"
+     ],
+     "stage": "1/2",
+     "min": 20,
+     "max": 26,
+     "weight": 10,
+     "source": "common",
+     "chance": "7.4%"
+    },
+    {
+     "name": "Fossilily",
+     "types": [
+      "Bio",
+      "Crystal"
+     ],
+     "stage": "1/2",
+     "min": 20,
+     "max": 26,
+     "weight": 10,
+     "source": "common",
+     "chance": "7.4%"
+    },
+    {
+     "name": "Chimelet",
+     "types": [
+      "Sonic",
+      "Crystal"
+     ],
+     "stage": "1/2",
+     "min": 20,
+     "max": 26,
+     "weight": 10,
+     "source": "common",
+     "chance": "7.4%"
+    },
+    {
+     "name": "Vortiny",
+     "types": [
+      "Gravity"
+     ],
+     "stage": "1/2",
+     "min": 20,
+     "max": 26,
+     "weight": 10,
+     "source": "common",
+     "chance": "7.4%"
+    },
+    {
+     "name": "Oracub",
+     "types": [
+      "Psi"
+     ],
+     "stage": "1/2",
+     "min": 20,
+     "max": 26,
+     "weight": 10,
+     "source": "common",
+     "chance": "7.4%"
+    },
+    {
+     "name": "Mosaik",
+     "types": [
+      "Gravity",
+      "Crystal"
+     ],
+     "stage": "1/1",
+     "min": 20,
+     "max": 26,
+     "weight": 10,
+     "source": "common",
+     "chance": "7.4%"
+    },
+    {
+     "name": "Tarbit",
+     "types": [
+      "Toxin",
+      "Gravity"
+     ],
+     "stage": "1/2",
+     "min": 20,
+     "max": 26,
+     "weight": 10,
+     "source": "common",
+     "chance": "7.4%"
+    },
+    {
+     "name": "Runeguard",
+     "types": [
+      "Crystal",
+      "Psi"
+     ],
+     "stage": "2/2",
+     "min": 24,
+     "max": 28,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "2.9%"
+    },
+    {
+     "name": "Obeliskor",
+     "types": [
+      "Gravity",
+      "Psi"
+     ],
+     "stage": "2/2",
+     "min": 24,
+     "max": 28,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "2.9%"
+    },
+    {
+     "name": "Shardwolf",
+     "types": [
+      "Crystal"
+     ],
+     "stage": "2/3",
+     "min": 23,
+     "max": 28,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "2.9%"
+    },
+    {
+     "name": "Prismwolf",
+     "types": [
+      "Crystal"
+     ],
+     "stage": "3/3",
+     "min": 24,
+     "max": 28,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "2.9%"
+    },
+    {
+     "name": "Memoria",
+     "types": [
+      "Void",
+      "Psi"
+     ],
+     "stage": "2/2",
+     "min": 24,
+     "max": 28,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "2.9%"
+    },
+    {
+     "name": "Ambroot",
+     "types": [
+      "Bio",
+      "Crystal"
+     ],
+     "stage": "2/2",
+     "min": 24,
+     "max": 28,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "2.9%"
+    },
+    {
+     "name": "Chimeral",
+     "types": [
+      "Sonic",
+      "Crystal"
+     ],
+     "stage": "2/2",
+     "min": 24,
+     "max": 28,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "2.9%"
+    },
+    {
+     "name": "Vortexus",
+     "types": [
+      "Gravity"
+     ],
+     "stage": "2/2",
+     "min": 24,
+     "max": 28,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "2.9%"
+    },
+    {
+     "name": "Oraclaw",
+     "types": [
+      "Psi"
+     ],
+     "stage": "2/2",
+     "min": 24,
+     "max": 28,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "2.9%"
+    }
+   ],
+   "tier2_after_4_shards": [
+    {
+     "name": "Runeguard",
+     "types": [
+      "Crystal",
+      "Psi"
+     ],
+     "stage": "2/2",
+     "min": 24,
+     "max": 32,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "9.3%"
+    },
+    {
+     "name": "Obeliskor",
+     "types": [
+      "Gravity",
+      "Psi"
+     ],
+     "stage": "2/2",
+     "min": 24,
+     "max": 32,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "9.3%"
+    },
+    {
+     "name": "Prismwolf",
+     "types": [
+      "Crystal"
+     ],
+     "stage": "3/3",
+     "min": 24,
+     "max": 32,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "9.3%"
+    },
+    {
+     "name": "Memoria",
+     "types": [
+      "Void",
+      "Psi"
+     ],
+     "stage": "2/2",
+     "min": 24,
+     "max": 32,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "9.3%"
+    },
+    {
+     "name": "Ambroot",
+     "types": [
+      "Bio",
+      "Crystal"
+     ],
+     "stage": "2/2",
+     "min": 24,
+     "max": 32,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "9.3%"
+    },
+    {
+     "name": "Chimeral",
+     "types": [
+      "Sonic",
+      "Crystal"
+     ],
+     "stage": "2/2",
+     "min": 24,
+     "max": 32,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "9.3%"
+    },
+    {
+     "name": "Vortexus",
+     "types": [
+      "Gravity"
+     ],
+     "stage": "2/2",
+     "min": 24,
+     "max": 32,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "9.3%"
+    },
+    {
+     "name": "Oraclaw",
+     "types": [
+      "Psi"
+     ],
+     "stage": "2/2",
+     "min": 24,
+     "max": 32,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "9.3%"
+    },
+    {
+     "name": "Mosaik",
+     "types": [
+      "Gravity",
+      "Crystal"
+     ],
+     "stage": "1/1",
+     "min": 24,
+     "max": 30,
+     "weight": 10,
+     "source": "common",
+     "chance": "9.3%"
+    },
+    {
+     "name": "Tarbit",
+     "types": [
+      "Toxin",
+      "Gravity"
+     ],
+     "stage": "1/2",
+     "min": 24,
+     "max": 30,
+     "weight": 10,
+     "source": "common",
+     "chance": "9.3%"
+    },
+    {
+     "name": "Shardwolf",
+     "types": [
+      "Crystal"
+     ],
+     "stage": "2/3",
+     "min": 24,
+     "max": 32,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "3.7%"
+    },
+    {
+     "name": "Tarpitan",
+     "types": [
+      "Toxin",
+      "Gravity"
+     ],
+     "stage": "2/2",
+     "min": 33,
+     "max": 34,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "3.7%"
+    }
+   ],
+   "tier3_after_champion": [
+    {
+     "name": "Runeguard",
+     "types": [
+      "Crystal",
+      "Psi"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "9.6%"
+    },
+    {
+     "name": "Obeliskor",
+     "types": [
+      "Gravity",
+      "Psi"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "9.6%"
+    },
+    {
+     "name": "Prismwolf",
+     "types": [
+      "Crystal"
+     ],
+     "stage": "3/3",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "9.6%"
+    },
+    {
+     "name": "Memoria",
+     "types": [
+      "Void",
+      "Psi"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "9.6%"
+    },
+    {
+     "name": "Ambroot",
+     "types": [
+      "Bio",
+      "Crystal"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "9.6%"
+    },
+    {
+     "name": "Chimeral",
+     "types": [
+      "Sonic",
+      "Crystal"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "9.6%"
+    },
+    {
+     "name": "Vortexus",
+     "types": [
+      "Gravity"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "9.6%"
+    },
+    {
+     "name": "Oraclaw",
+     "types": [
+      "Psi"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "9.6%"
+    },
+    {
+     "name": "Mosaik",
+     "types": [
+      "Gravity",
+      "Crystal"
+     ],
+     "stage": "1/1",
+     "min": 50,
+     "max": 58,
+     "weight": 10,
+     "source": "common",
+     "chance": "9.6%"
+    },
+    {
+     "name": "Tarpitan",
+     "types": [
+      "Toxin",
+      "Gravity"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "9.6%"
+    },
+    {
+     "name": "Shardwolf",
+     "types": [
+      "Crystal"
+     ],
+     "stage": "2/3",
+     "min": 50,
+     "max": 60,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "3.8%"
+    }
+   ],
+   "trainer_levels": [
+    21,
+    28
+   ],
+   "trainer_team_size": [
+    2,
+    3
+   ],
+   "stardust_per_trainer": "20*highest level"
+  },
+  "pyros": {
+   "name": "Pyros",
+   "levels": [
+    23,
+    29
+   ],
+   "tier1": [
+    {
+     "name": "Ashpup",
+     "types": [
+      "Magma"
+     ],
+     "stage": "1/3",
+     "min": 23,
+     "max": 29,
+     "weight": 10,
+     "source": "common",
+     "chance": "9.5%"
+    },
+    {
+     "name": "Magmorb",
+     "types": [
+      "Magma",
+      "Gravity"
+     ],
+     "stage": "1/2",
+     "min": 23,
+     "max": 29,
+     "weight": 10,
+     "source": "common",
+     "chance": "9.5%"
+    },
+    {
+     "name": "Obsidimp",
+     "types": [
+      "Magma",
+      "Crystal"
+     ],
+     "stage": "1/2",
+     "min": 23,
+     "max": 29,
+     "weight": 10,
+     "source": "common",
+     "chance": "9.5%"
+    },
+    {
+     "name": "Kindlefly",
+     "types": [
+      "Magma",
+      "Swarm"
+     ],
+     "stage": "1/2",
+     "min": 23,
+     "max": 29,
+     "weight": 10,
+     "source": "common",
+     "chance": "9.5%"
+    },
+    {
+     "name": "Drillit",
+     "types": [
+      "Magma",
+      "Alloy"
+     ],
+     "stage": "1/2",
+     "min": 23,
+     "max": 29,
+     "weight": 10,
+     "source": "common",
+     "chance": "9.5%"
+    },
+    {
+     "name": "Smoglet",
+     "types": [
+      "Magma",
+      "Void"
+     ],
+     "stage": "1/2",
+     "min": 23,
+     "max": 29,
+     "weight": 10,
+     "source": "common",
+     "chance": "9.5%"
+    },
+    {
+     "name": "Rumblet",
+     "types": [
+      "Magma",
+      "Sonic"
+     ],
+     "stage": "1/2",
+     "min": 23,
+     "max": 29,
+     "weight": 10,
+     "source": "common",
+     "chance": "9.5%"
+    },
+    {
+     "name": "Scorchscale",
+     "types": [
+      "Magma"
+     ],
+     "stage": "1/2",
+     "min": 23,
+     "max": 29,
+     "weight": 10,
+     "source": "common",
+     "chance": "9.5%"
+    },
+    {
+     "name": "Charsprout",
+     "types": [
+      "Magma",
+      "Bio"
+     ],
+     "stage": "1/2",
+     "min": 23,
+     "max": 29,
+     "weight": 10,
+     "source": "common",
+     "chance": "9.5%"
+    },
+    {
+     "name": "Venomite",
+     "types": [
+      "Crystal",
+      "Toxin"
+     ],
+     "stage": "1/2",
+     "min": 23,
+     "max": 29,
+     "weight": 10,
+     "source": "common",
+     "chance": "9.5%"
+    },
+    {
+     "name": "Cinderhound",
+     "types": [
+      "Magma"
+     ],
+     "stage": "2/3",
+     "min": 23,
+     "max": 31,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "3.8%"
+    },
+    {
+     "name": "Basaltor",
+     "types": [
+      "Magma",
+      "Gravity"
+     ],
+     "stage": "1/1",
+     "min": 23,
+     "max": 29,
+     "weight": 1,
+     "source": "rare",
+     "chance": "1.0%"
+    }
+   ],
+   "tier2_after_4_shards": [
+    {
+     "name": "Cinderhound",
+     "types": [
+      "Magma"
+     ],
+     "stage": "2/3",
+     "min": 24,
+     "max": 32,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "7.3%"
+    },
+    {
+     "name": "Magmorb",
+     "types": [
+      "Magma",
+      "Gravity"
+     ],
+     "stage": "1/2",
+     "min": 24,
+     "max": 30,
+     "weight": 10,
+     "source": "common",
+     "chance": "7.3%"
+    },
+    {
+     "name": "Obsidimp",
+     "types": [
+      "Magma",
+      "Crystal"
+     ],
+     "stage": "1/2",
+     "min": 24,
+     "max": 30,
+     "weight": 10,
+     "source": "common",
+     "chance": "7.3%"
+    },
+    {
+     "name": "Kindlefly",
+     "types": [
+      "Magma",
+      "Swarm"
+     ],
+     "stage": "1/2",
+     "min": 24,
+     "max": 30,
+     "weight": 10,
+     "source": "common",
+     "chance": "7.3%"
+    },
+    {
+     "name": "Drillit",
+     "types": [
+      "Magma",
+      "Alloy"
+     ],
+     "stage": "1/2",
+     "min": 24,
+     "max": 30,
+     "weight": 10,
+     "source": "common",
+     "chance": "7.3%"
+    },
+    {
+     "name": "Smoglet",
+     "types": [
+      "Magma",
+      "Void"
+     ],
+     "stage": "1/2",
+     "min": 24,
+     "max": 30,
+     "weight": 10,
+     "source": "common",
+     "chance": "7.3%"
+    },
+    {
+     "name": "Rumblet",
+     "types": [
+      "Magma",
+      "Sonic"
+     ],
+     "stage": "1/2",
+     "min": 24,
+     "max": 30,
+     "weight": 10,
+     "source": "common",
+     "chance": "7.3%"
+    },
+    {
+     "name": "Scorchscale",
+     "types": [
+      "Magma"
+     ],
+     "stage": "1/2",
+     "min": 24,
+     "max": 30,
+     "weight": 10,
+     "source": "common",
+     "chance": "7.3%"
+    },
+    {
+     "name": "Charsprout",
+     "types": [
+      "Magma",
+      "Bio"
+     ],
+     "stage": "1/2",
+     "min": 24,
+     "max": 30,
+     "weight": 10,
+     "source": "common",
+     "chance": "7.3%"
+    },
+    {
+     "name": "Venomite",
+     "types": [
+      "Crystal",
+      "Toxin"
+     ],
+     "stage": "1/2",
+     "min": 24,
+     "max": 30,
+     "weight": 10,
+     "source": "common",
+     "chance": "7.3%"
+    },
+    {
+     "name": "Coremantle",
+     "types": [
+      "Magma",
+      "Gravity"
+     ],
+     "stage": "2/2",
+     "min": 33,
+     "max": 34,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "2.9%"
+    },
+    {
+     "name": "Obsidrake",
+     "types": [
+      "Magma",
+      "Crystal"
+     ],
+     "stage": "2/2",
+     "min": 33,
+     "max": 34,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "2.9%"
+    },
+    {
+     "name": "Blazewing",
+     "types": [
+      "Magma",
+      "Swarm"
+     ],
+     "stage": "2/2",
+     "min": 33,
+     "max": 34,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "2.9%"
+    },
+    {
+     "name": "Drillcrag",
+     "types": [
+      "Magma",
+      "Alloy"
+     ],
+     "stage": "2/2",
+     "min": 33,
+     "max": 34,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "2.9%"
+    },
+    {
+     "name": "Smogshade",
+     "types": [
+      "Magma",
+      "Void"
+     ],
+     "stage": "2/2",
+     "min": 33,
+     "max": 34,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "2.9%"
+    },
+    {
+     "name": "Tremoroar",
+     "types": [
+      "Magma",
+      "Sonic"
+     ],
+     "stage": "2/2",
+     "min": 33,
+     "max": 34,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "2.9%"
+    },
+    {
+     "name": "Scorchwyrm",
+     "types": [
+      "Magma"
+     ],
+     "stage": "2/2",
+     "min": 33,
+     "max": 34,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "2.9%"
+    },
+    {
+     "name": "Phoenixia",
+     "types": [
+      "Magma",
+      "Bio"
+     ],
+     "stage": "2/2",
+     "min": 33,
+     "max": 34,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "2.9%"
+    },
+    {
+     "name": "Venomineral",
+     "types": [
+      "Crystal",
+      "Toxin"
+     ],
+     "stage": "2/2",
+     "min": 33,
+     "max": 34,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "2.9%"
+    },
+    {
+     "name": "Basaltor",
+     "types": [
+      "Magma",
+      "Gravity"
+     ],
+     "stage": "1/1",
+     "min": 24,
+     "max": 30,
+     "weight": 1,
+     "source": "rare",
+     "chance": "0.7%"
+    }
+   ],
+   "tier3_after_champion": [
+    {
+     "name": "Pyroclast",
+     "types": [
+      "Magma"
+     ],
+     "stage": "3/3",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "9.5%"
+    },
+    {
+     "name": "Coremantle",
+     "types": [
+      "Magma",
+      "Gravity"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "9.5%"
+    },
+    {
+     "name": "Obsidrake",
+     "types": [
+      "Magma",
+      "Crystal"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "9.5%"
+    },
+    {
+     "name": "Blazewing",
+     "types": [
+      "Magma",
+      "Swarm"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "9.5%"
+    },
+    {
+     "name": "Drillcrag",
+     "types": [
+      "Magma",
+      "Alloy"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "9.5%"
+    },
+    {
+     "name": "Smogshade",
+     "types": [
+      "Magma",
+      "Void"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "9.5%"
+    },
+    {
+     "name": "Tremoroar",
+     "types": [
+      "Magma",
+      "Sonic"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "9.5%"
+    },
+    {
+     "name": "Scorchwyrm",
+     "types": [
+      "Magma"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "9.5%"
+    },
+    {
+     "name": "Phoenixia",
+     "types": [
+      "Magma",
+      "Bio"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "9.5%"
+    },
+    {
+     "name": "Venomineral",
+     "types": [
+      "Crystal",
+      "Toxin"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "9.5%"
+    },
+    {
+     "name": "Cinderhound",
+     "types": [
+      "Magma"
+     ],
+     "stage": "2/3",
+     "min": 50,
+     "max": 60,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "3.8%"
+    },
+    {
+     "name": "Basaltor",
+     "types": [
+      "Magma",
+      "Gravity"
+     ],
+     "stage": "1/1",
+     "min": 50,
+     "max": 58,
+     "weight": 1,
+     "source": "rare",
+     "chance": "1.0%"
+    }
+   ],
+   "trainer_levels": [
+    24,
+    31
+   ],
+   "trainer_team_size": [
+    2,
+    3
+   ],
+   "stardust_per_trainer": "20*highest level"
+  },
+  "glacia": {
+   "name": "Glacia",
+   "levels": [
+    27,
+    33
+   ],
+   "tier1": [
+    {
+     "name": "Snoblet",
+     "types": [
+      "Cryo"
+     ],
+     "stage": "1/3",
+     "min": 27,
+     "max": 33,
+     "weight": 10,
+     "source": "common",
+     "chance": "7.4%"
+    },
+    {
+     "name": "Rimeshard",
+     "types": [
+      "Cryo",
+      "Crystal"
+     ],
+     "stage": "1/2",
+     "min": 27,
+     "max": 33,
+     "weight": 10,
+     "source": "common",
+     "chance": "7.4%"
+    },
+    {
+     "name": "Floepup",
+     "types": [
+      "Cryo",
+      "Hydro"
+     ],
+     "stage": "1/2",
+     "min": 27,
+     "max": 33,
+     "weight": 10,
+     "source": "common",
+     "chance": "7.4%"
+    },
+    {
+     "name": "Auroralet",
+     "types": [
+      "Cryo",
+      "Psi"
+     ],
+     "stage": "1/2",
+     "min": 27,
+     "max": 33,
+     "weight": 10,
+     "source": "common",
+     "chance": "7.4%"
+    },
+    {
+     "name": "Hailorb",
+     "types": [
+      "Cryo",
+      "Gravity"
+     ],
+     "stage": "1/2",
+     "min": 27,
+     "max": 33,
+     "weight": 10,
+     "source": "common",
+     "chance": "7.4%"
+    },
+    {
+     "name": "Frostmite",
+     "types": [
+      "Cryo",
+      "Swarm"
+     ],
+     "stage": "1/2",
+     "min": 27,
+     "max": 33,
+     "weight": 10,
+     "source": "common",
+     "chance": "7.4%"
+    },
+    {
+     "name": "Chillshade",
+     "types": [
+      "Cryo",
+      "Void"
+     ],
+     "stage": "1/2",
+     "min": 27,
+     "max": 33,
+     "weight": 10,
+     "source": "common",
+     "chance": "7.4%"
+    },
+    {
+     "name": "Lichling",
+     "types": [
+      "Cryo",
+      "Bio"
+     ],
+     "stage": "1/2",
+     "min": 27,
+     "max": 33,
+     "weight": 10,
+     "source": "common",
+     "chance": "7.4%"
+    },
+    {
+     "name": "Shatterling",
+     "types": [
+      "Cryo",
+      "Sonic"
+     ],
+     "stage": "1/2",
+     "min": 27,
+     "max": 33,
+     "weight": 10,
+     "source": "common",
+     "chance": "7.4%"
+    },
+    {
+     "name": "Thawmaw",
+     "types": [
+      "Cryo",
+      "Void"
+     ],
+     "stage": "1/1",
+     "min": 27,
+     "max": 33,
+     "weight": 10,
+     "source": "common",
+     "chance": "7.4%"
+    },
+    {
+     "name": "Icicub",
+     "types": [
+      "Cryo"
+     ],
+     "stage": "1/2",
+     "min": 27,
+     "max": 33,
+     "weight": 10,
+     "source": "common",
+     "chance": "7.4%"
+    },
+    {
+     "name": "Frostflare",
+     "types": [
+      "Cryo",
+      "Plasma"
+     ],
+     "stage": "1/2",
+     "min": 27,
+     "max": 33,
+     "weight": 10,
+     "source": "common",
+     "chance": "7.4%"
+    },
+    {
+     "name": "Drizzlit",
+     "types": [
+      "Volt",
+      "Hydro"
+     ],
+     "stage": "1/2",
+     "min": 27,
+     "max": 33,
+     "weight": 10,
+     "source": "common",
+     "chance": "7.4%"
+    },
+    {
+     "name": "Iceburr",
+     "types": [
+      "Cryo"
+     ],
+     "stage": "2/3",
+     "min": 27,
+     "max": 35,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "3.0%"
+    },
+    {
+     "name": "Glaciryx",
+     "types": [
+      "Cryo",
+      "Crystal"
+     ],
+     "stage": "1/1",
+     "min": 27,
+     "max": 33,
+     "weight": 1,
+     "source": "rare",
+     "chance": "0.7%"
+    }
+   ],
+   "tier2_after_4_shards": null,
+   "tier3_after_champion": [
+    {
+     "name": "Glaciarch",
+     "types": [
+      "Cryo"
+     ],
+     "stage": "3/3",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "7.4%"
+    },
+    {
+     "name": "Rimecrown",
+     "types": [
+      "Cryo",
+      "Crystal"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "7.4%"
+    },
+    {
+     "name": "Floelord",
+     "types": [
+      "Cryo",
+      "Hydro"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "7.4%"
+    },
+    {
+     "name": "Aurorix",
+     "types": [
+      "Cryo",
+      "Psi"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "7.4%"
+    },
+    {
+     "name": "Hailbringer",
+     "types": [
+      "Cryo",
+      "Gravity"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "7.4%"
+    },
+    {
+     "name": "Frostcolony",
+     "types": [
+      "Cryo",
+      "Swarm"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "7.4%"
+    },
+    {
+     "name": "Whiteout",
+     "types": [
+      "Cryo",
+      "Void"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "7.4%"
+    },
+    {
+     "name": "Lichenoth",
+     "types": [
+      "Cryo",
+      "Bio"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "7.4%"
+    },
+    {
+     "name": "Shatterhorn",
+     "types": [
+      "Cryo",
+      "Sonic"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "7.4%"
+    },
+    {
+     "name": "Thawmaw",
+     "types": [
+      "Cryo",
+      "Void"
+     ],
+     "stage": "1/1",
+     "min": 50,
+     "max": 58,
+     "weight": 10,
+     "source": "common",
+     "chance": "7.4%"
+    },
+    {
+     "name": "Stalactrix",
+     "types": [
+      "Cryo"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "7.4%"
+    },
+    {
+     "name": "Cryoblaze",
+     "types": [
+      "Cryo",
+      "Plasma"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "7.4%"
+    },
+    {
+     "name": "Thunderhead",
+     "types": [
+      "Volt",
+      "Hydro"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "7.4%"
+    },
+    {
+     "name": "Iceburr",
+     "types": [
+      "Cryo"
+     ],
+     "stage": "2/3",
+     "min": 50,
+     "max": 60,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "3.0%"
+    },
+    {
+     "name": "Glaciryx",
+     "types": [
+      "Cryo",
+      "Crystal"
+     ],
+     "stage": "1/1",
+     "min": 50,
+     "max": 58,
+     "weight": 1,
+     "source": "rare",
+     "chance": "0.7%"
+    }
+   ],
+   "trainer_levels": [
+    28,
+    35
+   ],
+   "trainer_team_size": [
+    2,
+    3
+   ],
+   "stardust_per_trainer": "20*highest level"
+  },
+  "helix": {
+   "name": "Helix Station",
+   "levels": [
+    30,
+    35
+   ],
+   "tier1": [
+    {
+     "name": "Splicelet",
+     "types": [
+      "Alloy",
+      "Psi"
+     ],
+     "stage": "1/3",
+     "min": 30,
+     "max": 35,
+     "weight": 10,
+     "source": "common",
+     "chance": "16.9%"
+    },
+    {
+     "name": "Vialit",
+     "types": [
+      "Toxin",
+      "Volt"
+     ],
+     "stage": "1/2",
+     "min": 30,
+     "max": 35,
+     "weight": 10,
+     "source": "common",
+     "chance": "16.9%"
+    },
+    {
+     "name": "Cagebot",
+     "types": [
+      "Alloy",
+      "Gravity"
+     ],
+     "stage": "1/2",
+     "min": 30,
+     "max": 35,
+     "weight": 10,
+     "source": "common",
+     "chance": "16.9%"
+    },
+    {
+     "name": "Nullbot",
+     "types": [
+      "Void",
+      "Alloy"
+     ],
+     "stage": "1/2",
+     "min": 30,
+     "max": 35,
+     "weight": 10,
+     "source": "common",
+     "chance": "16.9%"
+    },
+    {
+     "name": "Splicor",
+     "types": [
+      "Alloy",
+      "Psi"
+     ],
+     "stage": "2/3",
+     "min": 30,
+     "max": 37,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "6.8%"
+    },
+    {
+     "name": "Vialord",
+     "types": [
+      "Toxin",
+      "Volt"
+     ],
+     "stage": "2/2",
+     "min": 37,
+     "max": 38,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "6.8%"
+    },
+    {
+     "name": "Wardenix",
+     "types": [
+      "Alloy",
+      "Gravity"
+     ],
+     "stage": "2/2",
+     "min": 37,
+     "max": 38,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "6.8%"
+    },
+    {
+     "name": "Nulltron",
+     "types": [
+      "Void",
+      "Alloy"
+     ],
+     "stage": "2/2",
+     "min": 37,
+     "max": 38,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "6.8%"
+    },
+    {
+     "name": "Vexhydra",
+     "types": [
+      "Toxin"
+     ],
+     "stage": "1/1",
+     "min": 30,
+     "max": 35,
+     "weight": 1,
+     "source": "rare",
+     "chance": "1.7%"
+    },
+    {
+     "name": "Bronnix",
+     "types": [
+      "Alloy"
+     ],
+     "stage": "1/1",
+     "min": 30,
+     "max": 35,
+     "weight": 1,
+     "source": "rare",
+     "chance": "1.7%"
+    },
+    {
+     "name": "Thornvoid",
+     "types": [
+      "Gravity",
+      "Void"
+     ],
+     "stage": "1/1",
+     "min": 30,
+     "max": 35,
+     "weight": 1,
+     "source": "rare",
+     "chance": "1.7%"
+    }
+   ],
+   "tier2_after_4_shards": null,
+   "tier3_after_champion": [
+    {
+     "name": "Chimerax",
+     "types": [
+      "Alloy",
+      "Psi"
+     ],
+     "stage": "3/3",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "21.3%"
+    },
+    {
+     "name": "Vialord",
+     "types": [
+      "Toxin",
+      "Volt"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "21.3%"
+    },
+    {
+     "name": "Wardenix",
+     "types": [
+      "Alloy",
+      "Gravity"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "21.3%"
+    },
+    {
+     "name": "Nulltron",
+     "types": [
+      "Void",
+      "Alloy"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "21.3%"
+    },
+    {
+     "name": "Splicor",
+     "types": [
+      "Alloy",
+      "Psi"
+     ],
+     "stage": "2/3",
+     "min": 50,
+     "max": 60,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "8.5%"
+    },
+    {
+     "name": "Vexhydra",
+     "types": [
+      "Toxin"
+     ],
+     "stage": "1/1",
+     "min": 50,
+     "max": 58,
+     "weight": 1,
+     "source": "rare",
+     "chance": "2.1%"
+    },
+    {
+     "name": "Bronnix",
+     "types": [
+      "Alloy"
+     ],
+     "stage": "1/1",
+     "min": 50,
+     "max": 58,
+     "weight": 1,
+     "source": "rare",
+     "chance": "2.1%"
+    },
+    {
+     "name": "Thornvoid",
+     "types": [
+      "Gravity",
+      "Void"
+     ],
+     "stage": "1/1",
+     "min": 50,
+     "max": 58,
+     "weight": 1,
+     "source": "rare",
+     "chance": "2.1%"
+    }
+   ],
+   "trainer_levels": [
+    31,
+    37
+   ],
+   "trainer_team_size": [
+    3,
+    4
+   ],
+   "stardust_per_trainer": "20*highest level"
+  },
+  "halo": {
+   "name": "Halo",
+   "levels": [
+    33,
+    39
+   ],
+   "tier1": [
+    {
+     "name": "Mindlet",
+     "types": [
+      "Psi"
+     ],
+     "stage": "1/3",
+     "min": 33,
+     "max": 39,
+     "weight": 10,
+     "source": "common",
+     "chance": "7.8%"
+    },
+    {
+     "name": "Humlet",
+     "types": [
+      "Psi",
+      "Sonic"
+     ],
+     "stage": "1/2",
+     "min": 33,
+     "max": 39,
+     "weight": 10,
+     "source": "common",
+     "chance": "7.8%"
+    },
+    {
+     "name": "Levitot",
+     "types": [
+      "Psi",
+      "Gravity"
+     ],
+     "stage": "1/2",
+     "min": 33,
+     "max": 39,
+     "weight": 10,
+     "source": "common",
+     "chance": "7.8%"
+    },
+    {
+     "name": "Haloette",
+     "types": [
+      "Psi",
+      "Crystal"
+     ],
+     "stage": "1/2",
+     "min": 33,
+     "max": 39,
+     "weight": 10,
+     "source": "common",
+     "chance": "7.8%"
+    },
+    {
+     "name": "Zephyrling",
+     "types": [
+      "Sonic",
+      "Gravity"
+     ],
+     "stage": "1/2",
+     "min": 33,
+     "max": 39,
+     "weight": 10,
+     "source": "common",
+     "chance": "7.8%"
+    },
+    {
+     "name": "Dreamwisp",
+     "types": [
+      "Psi",
+      "Void"
+     ],
+     "stage": "1/2",
+     "min": 33,
+     "max": 39,
+     "weight": 10,
+     "source": "common",
+     "chance": "7.8%"
+    },
+    {
+     "name": "Astrochick",
+     "types": [
+      "Psi"
+     ],
+     "stage": "1/2",
+     "min": 33,
+     "max": 39,
+     "weight": 10,
+     "source": "common",
+     "chance": "7.8%"
+    },
+    {
+     "name": "Bardlet",
+     "types": [
+      "Psi",
+      "Sonic"
+     ],
+     "stage": "1/2",
+     "min": 33,
+     "max": 39,
+     "weight": 10,
+     "source": "common",
+     "chance": "7.8%"
+    },
+    {
+     "name": "Stompadon",
+     "types": [
+      "Gravity",
+      "Sonic"
+     ],
+     "stage": "1/1",
+     "min": 33,
+     "max": 39,
+     "weight": 10,
+     "source": "common",
+     "chance": "7.8%"
+    },
+    {
+     "name": "Cerebrix",
+     "types": [
+      "Psi"
+     ],
+     "stage": "2/3",
+     "min": 33,
+     "max": 41,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "3.1%"
+    },
+    {
+     "name": "Cerebralux",
+     "types": [
+      "Psi"
+     ],
+     "stage": "3/3",
+     "min": 37,
+     "max": 41,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "3.1%"
+    },
+    {
+     "name": "Hummingmind",
+     "types": [
+      "Psi",
+      "Sonic"
+     ],
+     "stage": "2/2",
+     "min": 37,
+     "max": 41,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "3.1%"
+    },
+    {
+     "name": "Levitaur",
+     "types": [
+      "Psi",
+      "Gravity"
+     ],
+     "stage": "2/2",
+     "min": 37,
+     "max": 41,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "3.1%"
+    },
+    {
+     "name": "Halocene",
+     "types": [
+      "Psi",
+      "Crystal"
+     ],
+     "stage": "2/2",
+     "min": 37,
+     "max": 41,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "3.1%"
+    },
+    {
+     "name": "Zephyrion",
+     "types": [
+      "Sonic",
+      "Gravity"
+     ],
+     "stage": "2/2",
+     "min": 37,
+     "max": 41,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "3.1%"
+    },
+    {
+     "name": "Nightmarra",
+     "types": [
+      "Psi",
+      "Void"
+     ],
+     "stage": "2/2",
+     "min": 37,
+     "max": 41,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "3.1%"
+    },
+    {
+     "name": "Astrowl",
+     "types": [
+      "Psi"
+     ],
+     "stage": "2/2",
+     "min": 37,
+     "max": 41,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "3.1%"
+    },
+    {
+     "name": "Bardoracle",
+     "types": [
+      "Psi",
+      "Sonic"
+     ],
+     "stage": "2/2",
+     "min": 41,
+     "max": 42,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "3.1%"
+    },
+    {
+     "name": "Mirrix",
+     "types": [
+      "Psi",
+      "Crystal"
+     ],
+     "stage": "1/1",
+     "min": 33,
+     "max": 39,
+     "weight": 1,
+     "source": "rare",
+     "chance": "0.8%"
+    },
+    {
+     "name": "Reflix",
+     "types": [
+      "Psi",
+      "Crystal"
+     ],
+     "stage": "1/1",
+     "min": 33,
+     "max": 39,
+     "weight": 1,
+     "source": "rare",
+     "chance": "0.8%"
+    }
+   ],
+   "tier2_after_4_shards": null,
+   "tier3_after_champion": [
+    {
+     "name": "Cerebralux",
+     "types": [
+      "Psi"
+     ],
+     "stage": "3/3",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "10.4%"
+    },
+    {
+     "name": "Hummingmind",
+     "types": [
+      "Psi",
+      "Sonic"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "10.4%"
+    },
+    {
+     "name": "Levitaur",
+     "types": [
+      "Psi",
+      "Gravity"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "10.4%"
+    },
+    {
+     "name": "Halocene",
+     "types": [
+      "Psi",
+      "Crystal"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "10.4%"
+    },
+    {
+     "name": "Zephyrion",
+     "types": [
+      "Sonic",
+      "Gravity"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "10.4%"
+    },
+    {
+     "name": "Nightmarra",
+     "types": [
+      "Psi",
+      "Void"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "10.4%"
+    },
+    {
+     "name": "Astrowl",
+     "types": [
+      "Psi"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "10.4%"
+    },
+    {
+     "name": "Bardoracle",
+     "types": [
+      "Psi",
+      "Sonic"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "10.4%"
+    },
+    {
+     "name": "Stompadon",
+     "types": [
+      "Gravity",
+      "Sonic"
+     ],
+     "stage": "1/1",
+     "min": 50,
+     "max": 58,
+     "weight": 10,
+     "source": "common",
+     "chance": "10.4%"
+    },
+    {
+     "name": "Cerebrix",
+     "types": [
+      "Psi"
+     ],
+     "stage": "2/3",
+     "min": 50,
+     "max": 60,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "4.2%"
+    },
+    {
+     "name": "Mirrix",
+     "types": [
+      "Psi",
+      "Crystal"
+     ],
+     "stage": "1/1",
+     "min": 50,
+     "max": 58,
+     "weight": 1,
+     "source": "rare",
+     "chance": "1.0%"
+    },
+    {
+     "name": "Reflix",
+     "types": [
+      "Psi",
+      "Crystal"
+     ],
+     "stage": "1/1",
+     "min": 50,
+     "max": 58,
+     "weight": 1,
+     "source": "rare",
+     "chance": "1.0%"
+    }
+   ],
+   "trainer_levels": [
+    34,
+    41
+   ],
+   "trainer_team_size": [
+    3,
+    4
+   ],
+   "stardust_per_trainer": "20*highest level"
+  },
+  "umbra": {
+   "name": "Umbra",
+   "levels": [
+    37,
+    43
+   ],
+   "tier1": [
+    {
+     "name": "Gloomit",
+     "types": [
+      "Void"
+     ],
+     "stage": "1/3",
+     "min": 37,
+     "max": 43,
+     "weight": 10,
+     "source": "common",
+     "chance": "10.1%"
+    },
+    {
+     "name": "Wellspawn",
+     "types": [
+      "Void",
+      "Gravity"
+     ],
+     "stage": "1/2",
+     "min": 37,
+     "max": 43,
+     "weight": 10,
+     "source": "common",
+     "chance": "10.1%"
+    },
+    {
+     "name": "Ruinbot",
+     "types": [
+      "Gravity",
+      "Alloy"
+     ],
+     "stage": "1/2",
+     "min": 37,
+     "max": 43,
+     "weight": 10,
+     "source": "common",
+     "chance": "10.1%"
+    },
+    {
+     "name": "Duskmite",
+     "types": [
+      "Void",
+      "Swarm"
+     ],
+     "stage": "1/2",
+     "min": 37,
+     "max": 43,
+     "weight": 10,
+     "source": "common",
+     "chance": "10.1%"
+    },
+    {
+     "name": "Wailshade",
+     "types": [
+      "Void",
+      "Sonic"
+     ],
+     "stage": "1/2",
+     "min": 37,
+     "max": 43,
+     "weight": 10,
+     "source": "common",
+     "chance": "10.1%"
+    },
+    {
+     "name": "Geodle",
+     "types": [
+      "Gravity",
+      "Crystal"
+     ],
+     "stage": "1/2",
+     "min": 37,
+     "max": 43,
+     "weight": 10,
+     "source": "common",
+     "chance": "10.1%"
+    },
+    {
+     "name": "Rotroot",
+     "types": [
+      "Void",
+      "Bio"
+     ],
+     "stage": "1/2",
+     "min": 37,
+     "max": 43,
+     "weight": 10,
+     "source": "common",
+     "chance": "10.1%"
+    },
+    {
+     "name": "Gloomhaunt",
+     "types": [
+      "Void"
+     ],
+     "stage": "2/3",
+     "min": 37,
+     "max": 45,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "4.0%"
+    },
+    {
+     "name": "Wellmaw",
+     "types": [
+      "Void",
+      "Gravity"
+     ],
+     "stage": "2/2",
+     "min": 41,
+     "max": 45,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "4.0%"
+    },
+    {
+     "name": "Ruinmech",
+     "types": [
+      "Gravity",
+      "Alloy"
+     ],
+     "stage": "2/2",
+     "min": 41,
+     "max": 45,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "4.0%"
+    },
+    {
+     "name": "Dusklord",
+     "types": [
+      "Void",
+      "Swarm"
+     ],
+     "stage": "2/2",
+     "min": 41,
+     "max": 45,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "4.0%"
+    },
+    {
+     "name": "Banshriek",
+     "types": [
+      "Void",
+      "Sonic"
+     ],
+     "stage": "2/2",
+     "min": 41,
+     "max": 45,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "4.0%"
+    },
+    {
+     "name": "Geodome",
+     "types": [
+      "Gravity",
+      "Crystal"
+     ],
+     "stage": "2/2",
+     "min": 41,
+     "max": 45,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "4.0%"
+    },
+    {
+     "name": "Gravebloom",
+     "types": [
+      "Void",
+      "Bio"
+     ],
+     "stage": "2/2",
+     "min": 41,
+     "max": 45,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "4.0%"
+    },
+    {
+     "name": "Horizar",
+     "types": [
+      "Void"
+     ],
+     "stage": "1/1",
+     "min": 37,
+     "max": 43,
+     "weight": 1,
+     "source": "rare",
+     "chance": "1.0%"
+    }
+   ],
+   "tier2_after_4_shards": null,
+   "tier3_after_champion": [
+    {
+     "name": "Gloomhulk",
+     "types": [
+      "Void"
+     ],
+     "stage": "3/3",
+     "min": 51,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "13.3%"
+    },
+    {
+     "name": "Wellmaw",
+     "types": [
+      "Void",
+      "Gravity"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "13.3%"
+    },
+    {
+     "name": "Ruinmech",
+     "types": [
+      "Gravity",
+      "Alloy"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "13.3%"
+    },
+    {
+     "name": "Dusklord",
+     "types": [
+      "Void",
+      "Swarm"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "13.3%"
+    },
+    {
+     "name": "Banshriek",
+     "types": [
+      "Void",
+      "Sonic"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "13.3%"
+    },
+    {
+     "name": "Geodome",
+     "types": [
+      "Gravity",
+      "Crystal"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "13.3%"
+    },
+    {
+     "name": "Gravebloom",
+     "types": [
+      "Void",
+      "Bio"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "13.3%"
+    },
+    {
+     "name": "Gloomhaunt",
+     "types": [
+      "Void"
+     ],
+     "stage": "2/3",
+     "min": 50,
+     "max": 60,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "5.3%"
+    },
+    {
+     "name": "Horizar",
+     "types": [
+      "Void"
+     ],
+     "stage": "1/1",
+     "min": 50,
+     "max": 58,
+     "weight": 1,
+     "source": "rare",
+     "chance": "1.3%"
+    }
+   ],
+   "trainer_levels": [
+    38,
+    45
+   ],
+   "trainer_team_size": [
+    3,
+    4
+   ],
+   "stardust_per_trainer": "20*highest level"
+  },
+  "starfall": {
+   "name": "Starfall Rift",
+   "levels": [
+    42,
+    48
+   ],
+   "tier1": [
+    {
+     "name": "Novaling",
+     "types": [
+      "Plasma"
+     ],
+     "stage": "1/3",
+     "min": 42,
+     "max": 48,
+     "weight": 10,
+     "source": "common",
+     "chance": "6.7%"
+    },
+    {
+     "name": "Quasarling",
+     "types": [
+      "Plasma",
+      "Gravity"
+     ],
+     "stage": "1/2",
+     "min": 42,
+     "max": 48,
+     "weight": 10,
+     "source": "common",
+     "chance": "6.7%"
+    },
+    {
+     "name": "Prismite",
+     "types": [
+      "Plasma",
+      "Crystal"
+     ],
+     "stage": "1/2",
+     "min": 42,
+     "max": 48,
+     "weight": 10,
+     "source": "common",
+     "chance": "6.7%"
+    },
+    {
+     "name": "Eclipsit",
+     "types": [
+      "Plasma",
+      "Void"
+     ],
+     "stage": "1/2",
+     "min": 42,
+     "max": 48,
+     "weight": 10,
+     "source": "common",
+     "chance": "6.7%"
+    },
+    {
+     "name": "Cometlet",
+     "types": [
+      "Gravity",
+      "Plasma"
+     ],
+     "stage": "1/2",
+     "min": 42,
+     "max": 48,
+     "weight": 10,
+     "source": "common",
+     "chance": "6.7%"
+    },
+    {
+     "name": "Meteorb",
+     "types": [
+      "Crystal",
+      "Gravity"
+     ],
+     "stage": "1/2",
+     "min": 42,
+     "max": 48,
+     "weight": 10,
+     "source": "common",
+     "chance": "6.7%"
+    },
+    {
+     "name": "Sunbug",
+     "types": [
+      "Plasma",
+      "Swarm"
+     ],
+     "stage": "1/2",
+     "min": 42,
+     "max": 48,
+     "weight": 10,
+     "source": "common",
+     "chance": "6.7%"
+    },
+    {
+     "name": "Starsprout",
+     "types": [
+      "Bio",
+      "Plasma"
+     ],
+     "stage": "1/2",
+     "min": 42,
+     "max": 48,
+     "weight": 10,
+     "source": "common",
+     "chance": "6.7%"
+    },
+    {
+     "name": "Podlet",
+     "types": [
+      "Bio"
+     ],
+     "stage": "1/3",
+     "min": 42,
+     "max": 48,
+     "weight": 10,
+     "source": "common",
+     "chance": "6.7%"
+    },
+    {
+     "name": "Foldling",
+     "types": [
+      "Gravity",
+      "Void"
+     ],
+     "stage": "1/2",
+     "min": 42,
+     "max": 48,
+     "weight": 10,
+     "source": "common",
+     "chance": "6.7%"
+    },
+    {
+     "name": "Novacat",
+     "types": [
+      "Plasma"
+     ],
+     "stage": "2/3",
+     "min": 42,
+     "max": 50,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "2.7%"
+    },
+    {
+     "name": "Supernovyx",
+     "types": [
+      "Plasma"
+     ],
+     "stage": "3/3",
+     "min": 44,
+     "max": 50,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "2.7%"
+    },
+    {
+     "name": "Quasarus",
+     "types": [
+      "Plasma",
+      "Gravity"
+     ],
+     "stage": "2/2",
+     "min": 44,
+     "max": 50,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "2.7%"
+    },
+    {
+     "name": "Prismora",
+     "types": [
+      "Plasma",
+      "Crystal"
+     ],
+     "stage": "2/2",
+     "min": 44,
+     "max": 50,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "2.7%"
+    },
+    {
+     "name": "Eclipsor",
+     "types": [
+      "Plasma",
+      "Void"
+     ],
+     "stage": "2/2",
+     "min": 44,
+     "max": 50,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "2.7%"
+    },
+    {
+     "name": "Cometrix",
+     "types": [
+      "Gravity",
+      "Plasma"
+     ],
+     "stage": "2/2",
+     "min": 44,
+     "max": 50,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "2.7%"
+    },
+    {
+     "name": "Meteorox",
+     "types": [
+      "Crystal",
+      "Gravity"
+     ],
+     "stage": "2/2",
+     "min": 44,
+     "max": 50,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "2.7%"
+    },
+    {
+     "name": "Solarswarm",
+     "types": [
+      "Plasma",
+      "Swarm"
+     ],
+     "stage": "2/2",
+     "min": 44,
+     "max": 50,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "2.7%"
+    },
+    {
+     "name": "Starbloom",
+     "types": [
+      "Bio",
+      "Plasma"
+     ],
+     "stage": "2/2",
+     "min": 44,
+     "max": 50,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "2.7%"
+    },
+    {
+     "name": "Podspawn",
+     "types": [
+      "Bio"
+     ],
+     "stage": "2/3",
+     "min": 42,
+     "max": 50,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "2.7%"
+    },
+    {
+     "name": "Podsentinel",
+     "types": [
+      "Bio"
+     ],
+     "stage": "3/3",
+     "min": 44,
+     "max": 50,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "2.7%"
+    },
+    {
+     "name": "Foldarch",
+     "types": [
+      "Gravity",
+      "Void"
+     ],
+     "stage": "2/2",
+     "min": 44,
+     "max": 50,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "2.7%"
+    },
+    {
+     "name": "Lumivex",
+     "types": [
+      "Crystal",
+      "Sonic"
+     ],
+     "stage": "1/1",
+     "min": 42,
+     "max": 48,
+     "weight": 1,
+     "source": "rare",
+     "chance": "0.7%"
+    }
+   ],
+   "tier2_after_4_shards": null,
+   "tier3_after_champion": [
+    {
+     "name": "Supernovyx",
+     "types": [
+      "Plasma"
+     ],
+     "stage": "3/3",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "9.2%"
+    },
+    {
+     "name": "Quasarus",
+     "types": [
+      "Plasma",
+      "Gravity"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "9.2%"
+    },
+    {
+     "name": "Prismora",
+     "types": [
+      "Plasma",
+      "Crystal"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "9.2%"
+    },
+    {
+     "name": "Eclipsor",
+     "types": [
+      "Plasma",
+      "Void"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "9.2%"
+    },
+    {
+     "name": "Cometrix",
+     "types": [
+      "Gravity",
+      "Plasma"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "9.2%"
+    },
+    {
+     "name": "Meteorox",
+     "types": [
+      "Crystal",
+      "Gravity"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "9.2%"
+    },
+    {
+     "name": "Solarswarm",
+     "types": [
+      "Plasma",
+      "Swarm"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "9.2%"
+    },
+    {
+     "name": "Starbloom",
+     "types": [
+      "Bio",
+      "Plasma"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "9.2%"
+    },
+    {
+     "name": "Podsentinel",
+     "types": [
+      "Bio"
+     ],
+     "stage": "3/3",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "9.2%"
+    },
+    {
+     "name": "Foldarch",
+     "types": [
+      "Gravity",
+      "Void"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "9.2%"
+    },
+    {
+     "name": "Novacat",
+     "types": [
+      "Plasma"
+     ],
+     "stage": "2/3",
+     "min": 50,
+     "max": 60,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "3.7%"
+    },
+    {
+     "name": "Podspawn",
+     "types": [
+      "Bio"
+     ],
+     "stage": "2/3",
+     "min": 50,
+     "max": 60,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "3.7%"
+    },
+    {
+     "name": "Lumivex",
+     "types": [
+      "Crystal",
+      "Sonic"
+     ],
+     "stage": "1/1",
+     "min": 50,
+     "max": 58,
+     "weight": 1,
+     "source": "rare",
+     "chance": "0.9%"
+    }
+   ],
+   "trainer_levels": [
+    43,
+    50
+   ],
+   "trainer_team_size": [
+    3,
+    4
+   ],
+   "stardust_per_trainer": "20*highest level"
+  },
+  "apex": {
+   "name": "Apex Array",
+   "levels": [
+    46,
+    52
+   ],
+   "tier1": [
+    {
+     "name": "Gemmling",
+     "types": [
+      "Crystal"
+     ],
+     "stage": "1/2",
+     "min": 46,
+     "max": 52,
+     "weight": 10,
+     "source": "common",
+     "chance": "13.3%"
+    },
+    {
+     "name": "Riffling",
+     "types": [
+      "Sonic"
+     ],
+     "stage": "1/2",
+     "min": 46,
+     "max": 52,
+     "weight": 10,
+     "source": "common",
+     "chance": "13.3%"
+    },
+    {
+     "name": "Cragpull",
+     "types": [
+      "Gravity"
+     ],
+     "stage": "1/2",
+     "min": 46,
+     "max": 52,
+     "weight": 10,
+     "source": "common",
+     "chance": "13.3%"
+    },
+    {
+     "name": "Flarechick",
+     "types": [
+      "Plasma"
+     ],
+     "stage": "1/2",
+     "min": 46,
+     "max": 52,
+     "weight": 10,
+     "source": "common",
+     "chance": "13.3%"
+    },
+    {
+     "name": "Diamite",
+     "types": [
+      "Alloy",
+      "Crystal"
+     ],
+     "stage": "1/2",
+     "min": 46,
+     "max": 52,
+     "weight": 10,
+     "source": "common",
+     "chance": "13.3%"
+    },
+    {
+     "name": "Gemmantle",
+     "types": [
+      "Crystal"
+     ],
+     "stage": "2/2",
+     "min": 46,
+     "max": 54,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "5.3%"
+    },
+    {
+     "name": "Riffrex",
+     "types": [
+      "Sonic"
+     ],
+     "stage": "2/2",
+     "min": 46,
+     "max": 54,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "5.3%"
+    },
+    {
+     "name": "Cragmajor",
+     "types": [
+      "Gravity"
+     ],
+     "stage": "2/2",
+     "min": 46,
+     "max": 54,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "5.3%"
+    },
+    {
+     "name": "Flarehawk",
+     "types": [
+      "Plasma"
+     ],
+     "stage": "2/2",
+     "min": 46,
+     "max": 54,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "5.3%"
+    },
+    {
+     "name": "Diamondillo",
+     "types": [
+      "Alloy",
+      "Crystal"
+     ],
+     "stage": "2/2",
+     "min": 46,
+     "max": 54,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "5.3%"
+    },
+    {
+     "name": "Facetrix",
+     "types": [
+      "Crystal"
+     ],
+     "stage": "1/1",
+     "min": 46,
+     "max": 52,
+     "weight": 1,
+     "source": "rare",
+     "chance": "1.3%"
+    },
+    {
+     "name": "Encorex",
+     "types": [
+      "Sonic"
+     ],
+     "stage": "1/1",
+     "min": 46,
+     "max": 52,
+     "weight": 1,
+     "source": "rare",
+     "chance": "1.3%"
+    },
+    {
+     "name": "Pyrelyth",
+     "types": [
+      "Plasma"
+     ],
+     "stage": "1/1",
+     "min": 46,
+     "max": 52,
+     "weight": 1,
+     "source": "rare",
+     "chance": "1.3%"
+    },
+    {
+     "name": "Bastionyx",
+     "types": [
+      "Gravity"
+     ],
+     "stage": "1/1",
+     "min": 46,
+     "max": 52,
+     "weight": 1,
+     "source": "rare",
+     "chance": "1.3%"
+    },
+    {
+     "name": "Firstlight",
+     "types": [
+      "Plasma",
+      "Psi"
+     ],
+     "stage": "1/1",
+     "min": 46,
+     "max": 52,
+     "weight": 1,
+     "source": "rare",
+     "chance": "1.3%"
+    }
+   ],
+   "tier2_after_4_shards": null,
+   "tier3_after_champion": [
+    {
+     "name": "Gemmantle",
+     "types": [
+      "Crystal"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "18.2%"
+    },
+    {
+     "name": "Riffrex",
+     "types": [
+      "Sonic"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "18.2%"
+    },
+    {
+     "name": "Cragmajor",
+     "types": [
+      "Gravity"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "18.2%"
+    },
+    {
+     "name": "Flarehawk",
+     "types": [
+      "Plasma"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "18.2%"
+    },
+    {
+     "name": "Diamondillo",
+     "types": [
+      "Alloy",
+      "Crystal"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "18.2%"
+    },
+    {
+     "name": "Facetrix",
+     "types": [
+      "Crystal"
+     ],
+     "stage": "1/1",
+     "min": 50,
+     "max": 58,
+     "weight": 1,
+     "source": "rare",
+     "chance": "1.8%"
+    },
+    {
+     "name": "Encorex",
+     "types": [
+      "Sonic"
+     ],
+     "stage": "1/1",
+     "min": 50,
+     "max": 58,
+     "weight": 1,
+     "source": "rare",
+     "chance": "1.8%"
+    },
+    {
+     "name": "Pyrelyth",
+     "types": [
+      "Plasma"
+     ],
+     "stage": "1/1",
+     "min": 50,
+     "max": 58,
+     "weight": 1,
+     "source": "rare",
+     "chance": "1.8%"
+    },
+    {
+     "name": "Bastionyx",
+     "types": [
+      "Gravity"
+     ],
+     "stage": "1/1",
+     "min": 50,
+     "max": 58,
+     "weight": 1,
+     "source": "rare",
+     "chance": "1.8%"
+    },
+    {
+     "name": "Firstlight",
+     "types": [
+      "Plasma",
+      "Psi"
+     ],
+     "stage": "1/1",
+     "min": 50,
+     "max": 58,
+     "weight": 1,
+     "source": "rare",
+     "chance": "1.8%"
+    }
+   ],
+   "trainer_levels": [
+    47,
+    54
+   ],
+   "trainer_team_size": [
+    3,
+    4
+   ],
+   "stardust_per_trainer": "20*highest level"
+  },
+  "ystra": {
+   "name": "Ystra",
+   "levels": [
+    55,
+    65
+   ],
+   "tier1": [
+    {
+     "name": "Fractling",
+     "types": [
+      "Void",
+      "Crystal"
+     ],
+     "stage": "1/2",
+     "min": 55,
+     "max": 65,
+     "weight": 10,
+     "source": "common",
+     "chance": "17.5%"
+    },
+    {
+     "name": "Riftling",
+     "types": [
+      "Gravity",
+      "Psi"
+     ],
+     "stage": "1/2",
+     "min": 55,
+     "max": 65,
+     "weight": 10,
+     "source": "common",
+     "chance": "17.5%"
+    },
+    {
+     "name": "Blightling",
+     "types": [
+      "Bio",
+      "Void"
+     ],
+     "stage": "1/2",
+     "min": 55,
+     "max": 65,
+     "weight": 10,
+     "source": "common",
+     "chance": "17.5%"
+    },
+    {
+     "name": "Pulsito",
+     "types": [
+      "Plasma",
+      "Sonic"
+     ],
+     "stage": "1/2",
+     "min": 55,
+     "max": 65,
+     "weight": 10,
+     "source": "common",
+     "chance": "17.5%"
+    },
+    {
+     "name": "Fractalith",
+     "types": [
+      "Void",
+      "Crystal"
+     ],
+     "stage": "2/2",
+     "min": 55,
+     "max": 67,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "7.0%"
+    },
+    {
+     "name": "Riftwalker",
+     "types": [
+      "Gravity",
+      "Psi"
+     ],
+     "stage": "2/2",
+     "min": 55,
+     "max": 67,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "7.0%"
+    },
+    {
+     "name": "Blightroot",
+     "types": [
+      "Bio",
+      "Void"
+     ],
+     "stage": "2/2",
+     "min": 55,
+     "max": 67,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "7.0%"
+    },
+    {
+     "name": "Pulsarion",
+     "types": [
+      "Plasma",
+      "Sonic"
+     ],
+     "stage": "2/2",
+     "min": 55,
+     "max": 67,
+     "weight": 4,
+     "source": "evolved",
+     "chance": "7.0%"
+    },
+    {
+     "name": "Oblivite",
+     "types": [
+      "Void"
+     ],
+     "stage": "1/1",
+     "min": 55,
+     "max": 65,
+     "weight": 1,
+     "source": "rare",
+     "chance": "1.8%"
+    }
+   ],
+   "tier2_after_4_shards": null,
+   "tier3_after_champion": null,
+   "trainer_levels": [
+    56,
+    67
+   ],
+   "trainer_team_size": [
+    3,
+    4
+   ],
+   "stardust_per_trainer": "20*highest level"
+  }
+ },
+ "keepers": {
+  "ferrox": {
+   "name": "Hank Briggs",
+   "ace_level": 12,
+   "team_size": 2,
+   "team_levels": [
+    10,
+    12
+   ],
+   "shard": true,
+   "reward_stardust": 720
+  },
+  "sporeholm": {
+   "name": "Dr. Lysa Moor",
+   "ace_level": 17,
+   "team_size": 3,
+   "team_levels": [
+    15,
+    15,
+    17
+   ],
+   "shard": true,
+   "reward_stardust": 1020
+  },
+  "thalassa": {
+   "name": "Captain Marsh",
+   "ace_level": 21,
+   "team_size": 3,
+   "team_levels": [
+    19,
+    19,
+    21
+   ],
+   "shard": true,
+   "reward_stardust": 1260
+  },
+  "neonis": {
+   "name": "DJ Static",
+   "ace_level": 25,
+   "team_size": 4,
+   "team_levels": [
+    23,
+    23,
+    23,
+    25
+   ],
+   "shard": true,
+   "reward_stardust": 1500
+  },
+  "pyros": {
+   "name": "Old Basalt",
+   "ace_level": 31,
+   "team_size": 4,
+   "team_levels": [
+    29,
+    29,
+    29,
+    31
+   ],
+   "shard": true,
+   "reward_stardust": 1860
+  },
+  "glacia": {
+   "name": "Ingrid Vale",
+   "ace_level": 35,
+   "team_size": 4,
+   "team_levels": [
+    33,
+    33,
+    33,
+    35
+   ],
+   "shard": true,
+   "reward_stardust": 2100
+  },
+  "halo": {
+   "name": "Echo and Iris",
+   "ace_level": 41,
+   "team_size": 5,
+   "team_levels": [
+    39,
+    39,
+    39,
+    39,
+    41
+   ],
+   "shard": true,
+   "reward_stardust": 2460
+  },
+  "umbra": {
+   "name": "Mortimer Kade",
+   "ace_level": 45,
+   "team_size": 5,
+   "team_levels": [
+    43,
+    43,
+    43,
+    43,
+    45
+   ],
+   "shard": true,
+   "reward_stardust": 2700
+  }
+ },
+ "bosses": {
+  "vex": 36,
+  "bronn": 34,
+  "thorne": 52,
+  "quorum": [
+   54,
+   55,
+   56,
+   57
+  ],
+  "orra": 60
+ },
+ "rival": {
+  "R1 Dustmere (M03)": 7,
+  "R2 Sporeholm": 15,
+  "R3 Port Ember / Deep Sea Ferry dock (M08)": 22,
+  "R4 Helix Station before she turns (M14)": 36,
+  "R5 Apex Array friendly match (M20)": 56,
+  "R6 Postgame rematch": 70,
+  "rule": "Sola always has the starter strong against yours, evolved on the same schedule (Lv16 and Lv36), plus 1 more Alienmon each battle."
+ },
+ "legendaries": {
+  "Novaryx": {
+   "level": 50,
+   "where": "Starfall Rift (M18)",
+   "syncs": 3
+  },
+  "Terravox": {
+   "level": 60,
+   "where": "Postgame, Ystra continents",
+   "syncs": 3
+  },
+  "Aquelion": {
+   "level": 60,
+   "where": "Postgame, Ystra seas",
+   "syncs": 3
+  },
+  "Ignarch": {
+   "level": 60,
+   "where": "Postgame, Ystra sun-forge",
+   "syncs": 3
+  },
+  "Oblivane": {
+   "level": 70,
+   "where": "Ystra edge of the void (P02)",
+   "syncs": 3
+  },
+  "Seedmother": {
+   "level": 75,
+   "where": "Ystra crystal grove (after P03)",
+   "syncs": 3
+  }
+ },
+ "shop_unlocks": {
+  "0": [
+   "Stasis Pod 50",
+   "Med Gel 15",
+   "Cure Spray 20"
+  ],
+  "1": [
+   "Tether Pulse 30",
+   "Stun Spray 30"
+  ],
+  "2": [
+   "Harmonic Pod 150",
+   "Mega Gel 45"
+  ],
+  "3": [
+   "Revive Spark 80"
+  ],
+  "5": [
+   "Full Gel (heals all) 120"
+  ],
+  "6": [
+   "Singularity Pod 400 (limited 3 per visit)"
+  ],
+  "8": [
+   "Max Revive 300"
+  ]
+ },
+ "trainers": {}
+}
