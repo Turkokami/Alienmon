@@ -282,14 +282,14 @@ function paintInteract(h){const p=PL[G.planet];
  if(h.k==='mon'){if(!G.party.some(m=>m.hp>0))return say('Your team needs to heal first.');const pool=p.pool.r.length?p.pool.r:p.pool.c,[a,b]=p.lv;
   const id=h.mon&&IDX[h.mon]!=null?IDX[h.mon]:pick(pool);say(h.t||'The wild '+D[id].name+' wants to battle!',()=>startBattle([mk(id,ri(a,b)+1)],null))}}
 function drawPaint(){const P=paintOf(),im=SCI[P.img];if(!G.ppos)G.ppos=P.start.slice();const S=P.S,mw=P.w*S,mh=P.h*S,fx=G.ppos[0]*S,fy=G.ppos[1]*S;
- const cx=Math.max(0,Math.min(mw-160,fx-80)),cy=Math.max(0,Math.min(mh-144,fy-82));rect(0,0,160,144,'#1d1433');
+ const cx=Math.max(0,Math.min(mw-160,fx-80)),cy=Math.max(0,Math.min(mh-144,fy-82)),cs=Math.round(88*S),ms=Math.round(cs*0.85);rect(0,0,160,144,'#1d1433');
  if(okI(im)){ctx.save();ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';ctx.drawImage(im,cx/S,cy/S,160/S,144/S,0,0,160,144);ctx.restore()}
  const kp=PL[G.planet].keeper,drawK=(h)=>{const hx=h.x*S-cx,hy=h.y*S-cy;if(hx<-30||hx>190||hy<-10||hy>180)return;const shadow=()=>{ctx.fillStyle='rgba(20,10,20,0.35)';ctx.beginPath();ctx.ellipse(hx,hy-1,7,2.5,0,0,6.283);ctx.fill()};
-  if(h.k==='mon'){const im=OWI[h.mon];if(!okI(im))return;shadow();const f=(frame>>4)&1;ctx.save();ctx.imageSmoothingEnabled=true;ctx.drawImage(im,f*64,0,64,64,Math.round(hx-12),Math.round(hy-23),24,24);ctx.restore();return}
-  const art=h.k==='keeper'?kp&&kp.art:h.art;if(art&&okI(CHI[art])){shadow();dchar(art,Math.round(hx-14),Math.round(hy-29),28,28)}};
+  if(h.k==='mon'){const im=OWI[h.mon];if(!okI(im))return;shadow();const f=(frame>>4)&1;ctx.save();ctx.imageSmoothingEnabled=true;ctx.drawImage(im,f*64,0,64,64,Math.round(hx-ms/2),Math.round(hy-ms+1),ms,ms);ctx.restore();return}
+  const art=h.k==='keeper'?kp&&kp.art:h.art;if(art&&okI(CHI[art])){shadow();dchar(art,Math.round(hx-cs/2),Math.round(hy-cs-1),cs,cs)}};
  const ks=P.hot.filter(h=>h.k==='keeper'||(h.k==='mon'&&h.mon)||(h.art&&h.draw&&(h.k==='talk'||h.k==='npc')));ks.filter(h=>h.y<=G.ppos[1]).forEach(drawK);
  const sx=fx-cx,sy=fy-cy;ctx.fillStyle='rgba(20,10,20,0.35)';ctx.beginPath();ctx.ellipse(sx,sy-1,7,2.5,0,0,6.283);ctx.fill();
- const k=(G.gender||'boy')+'_'+face,bob=pmove&&(stepc%16<8)?1:0;if(!dchar(k,Math.round(sx-14),Math.round(sy-29-bob),28,28))kid(Math.round(sx-6),Math.round(sy-14),face==='left',face==='up',pmove?1:0);
+ const k=(G.gender||'boy')+'_'+face,bob=pmove&&(stepc%16<8)?1:0;if(!dchar(k,Math.round(sx-cs/2),Math.round(sy-cs-1-bob),cs,cs))kid(Math.round(sx-6),Math.round(sy-14),face==='left',face==='up',pmove?1:0);
  ks.filter(h=>h.y>G.ppos[1]).forEach(drawK);
  if(pmove&&pbit(P,'grass',G.ppos[0],G.ppos[1])){ctx.fillStyle='#3f9d3a';for(let i=0;i<4;i++)ctx.fillRect(Math.round(sx-6+i*4),Math.round(sy-4-(i%2)),2,4)}
  if(pnear&&!DLG&&!CH){const hx=pnear.x*S-cx,hy=pnear.y*S-cy-32+Math.sin(frame/8);box(Math.round(hx-5),Math.round(hy-6),11,11,'#fff','#1b1424');txt('!',Math.round(hx-2),Math.round(hy-4),'#d7262e',7);
