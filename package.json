@@ -5,9 +5,11 @@
   "description": "Alienmon - catch and bond with alien battle partners across the stars",
   "scripts": {
     "build": "node tools/build.js",
-    "android": "npm run build && npx cap sync android && npx cap open android",
+    "build:inline": "node tools/build.js --inline",
+    "android": "node tools/build.js --inline && npx cap sync android && npx cap open android",
     "import-renders": "python tools/import_renders.py",
-    "dev": "npx serve www"
+    "towns": "python tools/paint_town.py --all",
+    "dev": "node tools/build.js && npx serve www"
   },
   "dependencies": {
     "@capacitor/android": "latest",
