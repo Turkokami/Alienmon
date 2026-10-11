@@ -1,0 +1,11 @@
+{
+ "batch": 1,
+ "system": {
+  "id": 1,
+  "name": "Kessler System"
+ },
+ "dex_range": [
+  1,
+  300
+ ]
+}

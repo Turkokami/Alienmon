@@ -1,0 +1,7403 @@
+[
+ {
+  "n": 1,
+  "name": "Sporix",
+  "t": [
+   "Bio"
+  ],
+  "st": 1,
+  "tot": 3,
+  "to": "Mycelith",
+  "m": "Starter (Crater Observatory)",
+  "s": [
+   59,
+   44,
+   55,
+   44,
+   54,
+   44
+  ],
+  "r": "starter",
+  "lore": "Chosen at the Crater Observatory; evolves into Mycelith.",
+  "b": 1,
+  "tr": 2,
+  "sig": -1
+ },
+ {
+  "n": 2,
+  "name": "Mycelith",
+  "t": [
+   "Bio"
+  ],
+  "st": 2,
+  "tot": 3,
+  "to": "Fungaroth",
+  "m": "Level 16",
+  "s": [
+   73,
+   67,
+   77,
+   60,
+   82,
+   46
+  ],
+  "r": "starter",
+  "lore": "Mid evolution of Sporix.",
+  "b": 1,
+  "tr": 2,
+  "sig": -1
+ },
+ {
+  "n": 3,
+  "name": "Fungaroth",
+  "t": [
+   "Bio"
+  ],
+  "st": 3,
+  "tot": 3,
+  "to": "",
+  "m": "Level 36",
+  "s": [
+   97,
+   92,
+   110,
+   77,
+   90,
+   64
+  ],
+  "r": "starter",
+  "lore": "Final form; a towering guardian.",
+  "b": 1,
+  "tr": 2,
+  "sig": 0
+ },
+ {
+  "n": 4,
+  "name": "Plazmo",
+  "t": [
+   "Plasma"
+  ],
+  "st": 1,
+  "tot": 3,
+  "to": "Flarion",
+  "m": "Starter (Crater Observatory)",
+  "s": [
+   52,
+   41,
+   38,
+   61,
+   47,
+   61
+  ],
+  "r": "starter",
+  "lore": "Chosen at the Crater Observatory; evolves into Flarion.",
+  "b": 1,
+  "tr": 0,
+  "sig": -1
+ },
+ {
+  "n": 5,
+  "name": "Flarion",
+  "t": [
+   "Plasma"
+  ],
+  "st": 2,
+  "tot": 3,
+  "to": "Solarach",
+  "m": "Level 16",
+  "s": [
+   62,
+   69,
+   49,
+   82,
+   62,
+   81
+  ],
+  "r": "starter",
+  "lore": "Mid evolution of Plazmo.",
+  "b": 1,
+  "tr": 0,
+  "sig": -1
+ },
+ {
+  "n": 6,
+  "name": "Solarach",
+  "t": [
+   "Plasma"
+  ],
+  "st": 3,
+  "tot": 3,
+  "to": "",
+  "m": "Level 36",
+  "s": [
+   76,
+   83,
+   61,
+   123,
+   86,
+   101
+  ],
+  "r": "starter",
+  "lore": "Final form; a miniature star.",
+  "b": 1,
+  "tr": 0,
+  "sig": 1
+ },
+ {
+  "n": 7,
+  "name": "Gloopa",
+  "t": [
+   "Hydro"
+  ],
+  "st": 1,
+  "tot": 3,
+  "to": "Tidaloid",
+  "m": "Starter (Crater Observatory)",
+  "s": [
+   52,
+   50,
+   50,
+   56,
+   55,
+   37
+  ],
+  "r": "starter",
+  "lore": "Chosen at the Crater Observatory; evolves into Tidaloid.",
+  "b": 1,
+  "tr": 1,
+  "sig": -1
+ },
+ {
+  "n": 8,
+  "name": "Tidaloid",
+  "t": [
+   "Hydro"
+  ],
+  "st": 2,
+  "tot": 3,
+  "to": "Abyssor",
+  "m": "Level 16",
+  "s": [
+   80,
+   61,
+   71,
+   67,
+   82,
+   44
+  ],
+  "r": "starter",
+  "lore": "Mid evolution of Gloopa.",
+  "b": 1,
+  "tr": 1,
+  "sig": -1
+ },
+ {
+  "n": 9,
+  "name": "Abyssor",
+  "t": [
+   "Hydro"
+  ],
+  "st": 3,
+  "tot": 3,
+  "to": "",
+  "m": "Level 36",
+  "s": [
+   97,
+   85,
+   92,
+   92,
+   102,
+   62
+  ],
+  "r": "starter",
+  "lore": "Final form; a deep-sea leviathan.",
+  "b": 1,
+  "tr": 1,
+  "sig": 2
+ },
+ {
+  "n": 10,
+  "name": "Zib",
+  "t": [
+   "Volt"
+  ],
+  "st": 1,
+  "tot": 1,
+  "to": "",
+  "m": "Joins in Act 1 (Route 3)",
+  "s": [
+   60,
+   77,
+   56,
+   86,
+   79,
+   112
+  ],
+  "r": "mascot",
+  "lore": "Follows the player from the opening scene; joins in Act 1 and speaks for the Seedmother at the climax.",
+  "b": 1,
+  "tr": 51,
+  "sig": 3
+ },
+ {
+  "n": 11,
+  "name": "Fizzle",
+  "t": [
+   "Volt"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Fizzlord",
+  "m": "Found in the wild",
+  "s": [
+   43,
+   52,
+   40,
+   56,
+   46,
+   73
+  ],
+  "r": "normal",
+  "lore": "Feeds on the static that crackles through drift grass.",
+  "b": 1,
+  "tr": 17,
+  "sig": -1
+ },
+ {
+  "n": 12,
+  "name": "Fizzlord",
+  "t": [
+   "Volt"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 22",
+  "s": [
+   62,
+   81,
+   51,
+   92,
+   79,
+   105
+  ],
+  "r": "normal",
+  "lore": "Feeds on the static that crackles through drift grass.",
+  "b": 1,
+  "tr": 17,
+  "sig": -1
+ },
+ {
+  "n": 13,
+  "name": "Skitterbit",
+  "t": [
+   "Swarm"
+  ],
+  "st": 1,
+  "tot": 3,
+  "to": "Skitterdrone",
+  "m": "Found in the wild",
+  "s": [
+   36,
+   63,
+   44,
+   44,
+   47,
+   66
+  ],
+  "r": "normal",
+  "lore": "Colonies hum in perfect sync, like a tiny radio choir.",
+  "b": 1,
+  "tr": 39,
+  "sig": -1
+ },
+ {
+  "n": 14,
+  "name": "Skitterdrone",
+  "t": [
+   "Swarm"
+  ],
+  "st": 2,
+  "tot": 3,
+  "to": "Hivemaw",
+  "m": "Level 15",
+  "s": [
+   58,
+   72,
+   66,
+   52,
+   66,
+   91
+  ],
+  "r": "normal",
+  "lore": "Colonies hum in perfect sync, like a tiny radio choir.",
+  "b": 1,
+  "tr": 39,
+  "sig": -1
+ },
+ {
+  "n": 15,
+  "name": "Hivemaw",
+  "t": [
+   "Swarm"
+  ],
+  "st": 3,
+  "tot": 3,
+  "to": "",
+  "m": "Level 32",
+  "s": [
+   71,
+   103,
+   84,
+   63,
+   87,
+   122
+  ],
+  "r": "normal",
+  "lore": "Colonies hum in perfect sync, like a tiny radio choir.",
+  "b": 1,
+  "tr": 39,
+  "sig": -1
+ },
+ {
+  "n": 16,
+  "name": "Pebblet",
+  "t": [
+   "Gravity"
+  ],
+  "st": 1,
+  "tot": 3,
+  "to": "Bouldron",
+  "m": "Found in the wild",
+  "s": [
+   73,
+   58,
+   52,
+   41,
+   44,
+   32
+  ],
+  "r": "normal",
+  "lore": "Rolls along the dunes by bending its own weight.",
+  "b": 1,
+  "tr": 22,
+  "sig": -1
+ },
+ {
+  "n": 17,
+  "name": "Bouldron",
+  "t": [
+   "Gravity"
+  ],
+  "st": 2,
+  "tot": 3,
+  "to": "Orbitusk",
+  "m": "Level 15",
+  "s": [
+   97,
+   76,
+   72,
+   52,
+   74,
+   34
+  ],
+  "r": "normal",
+  "lore": "Rolls along the dunes by bending its own weight.",
+  "b": 1,
+  "tr": 22,
+  "sig": -1
+ },
+ {
+  "n": 18,
+  "name": "Orbitusk",
+  "t": [
+   "Gravity"
+  ],
+  "st": 3,
+  "tot": 3,
+  "to": "",
+  "m": "Level 32",
+  "s": [
+   115,
+   96,
+   102,
+   67,
+   91,
+   59
+  ],
+  "r": "normal",
+  "lore": "Rolls along the dunes by bending its own weight.",
+  "b": 1,
+  "tr": 22,
+  "sig": -1
+ },
+ {
+  "n": 19,
+  "name": "Blinkit",
+  "t": [
+   "Psi"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Grayvision",
+  "m": "Found in the wild",
+  "s": [
+   42,
+   41,
+   42,
+   69,
+   61,
+   55
+  ],
+  "r": "normal",
+  "lore": "Stares at the sky for hours, as if listening for home.",
+  "b": 1,
+  "tr": 49,
+  "sig": -1
+ },
+ {
+  "n": 20,
+  "name": "Grayvision",
+  "t": [
+   "Psi"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 22",
+  "s": [
+   67,
+   54,
+   54,
+   103,
+   96,
+   96
+  ],
+  "r": "normal",
+  "lore": "Stares at the sky for hours, as if listening for home.",
+  "b": 1,
+  "tr": 49,
+  "sig": -1
+ },
+ {
+  "n": 21,
+  "name": "Cindermole",
+  "t": [
+   "Magma"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Kilnback",
+  "m": "Found in the wild",
+  "s": [
+   44,
+   63,
+   60,
+   46,
+   44,
+   53
+  ],
+  "r": "normal",
+  "lore": "Burrows in the hot sand along the crater fence.",
+  "b": 1,
+  "tr": 41,
+  "sig": -1
+ },
+ {
+  "n": 22,
+  "name": "Kilnback",
+  "t": [
+   "Magma"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 22",
+  "s": [
+   71,
+   104,
+   78,
+   80,
+   59,
+   78
+  ],
+  "r": "normal",
+  "lore": "Burrows in the hot sand along the crater fence.",
+  "b": 1,
+  "tr": 41,
+  "sig": -1
+ },
+ {
+  "n": 23,
+  "name": "Chirpod",
+  "t": [
+   "Sonic"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Squawktone",
+  "m": "Found in the wild",
+  "s": [
+   44,
+   50,
+   43,
+   50,
+   53,
+   70
+  ],
+  "r": "normal",
+  "lore": "Chirps in frequencies only a Linker can pick up.",
+  "b": 1,
+  "tr": 11,
+  "sig": -1
+ },
+ {
+  "n": 24,
+  "name": "Squawktone",
+  "t": [
+   "Sonic"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 22",
+  "s": [
+   77,
+   68,
+   57,
+   86,
+   81,
+   101
+  ],
+  "r": "normal",
+  "lore": "Chirps in frequencies only a Linker can pick up.",
+  "b": 1,
+  "tr": 11,
+  "sig": -1
+ },
+ {
+  "n": 25,
+  "name": "Cactling",
+  "t": [
+   "Bio"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Spinelord",
+  "m": "Found in the wild",
+  "s": [
+   55,
+   46,
+   63,
+   49,
+   60,
+   37
+  ],
+  "r": "normal",
+  "lore": "Mistaken for a desert plant until it walks away.",
+  "b": 1,
+  "tr": 2,
+  "sig": -1
+ },
+ {
+  "n": 26,
+  "name": "Spinelord",
+  "t": [
+   "Bio"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 22",
+  "s": [
+   84,
+   71,
+   87,
+   69,
+   92,
+   67
+  ],
+  "r": "normal",
+  "lore": "Mistaken for a desert plant until it walks away.",
+  "b": 1,
+  "tr": 2,
+  "sig": -1
+ },
+ {
+  "n": 27,
+  "name": "Shadebit",
+  "t": [
+   "Void"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Umbrask",
+  "m": "Found in the wild",
+  "s": [
+   46,
+   62,
+   36,
+   57,
+   47,
+   62
+  ],
+  "r": "normal",
+  "lore": "Seen only as a pair of eyes at the edge of lamplight.",
+  "b": 1,
+  "tr": 32,
+  "sig": -1
+ },
+ {
+  "n": 28,
+  "name": "Umbrask",
+  "t": [
+   "Void"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 22",
+  "s": [
+   67,
+   84,
+   56,
+   84,
+   79,
+   100
+  ],
+  "r": "normal",
+  "lore": "Seen only as a pair of eyes at the edge of lamplight.",
+  "b": 1,
+  "tr": 32,
+  "sig": -1
+ },
+ {
+  "n": 29,
+  "name": "Liftant",
+  "t": [
+   "Gravity",
+   "Swarm"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Hoistant",
+  "m": "Found in the wild",
+  "s": [
+   63,
+   65,
+   52,
+   33,
+   48,
+   49
+  ],
+  "r": "normal",
+  "lore": "Ants that carry stones a hundred times their weight by making them float.",
+  "b": 1,
+  "tr": 33,
+  "sig": -1
+ },
+ {
+  "n": 30,
+  "name": "Hoistant",
+  "t": [
+   "Gravity",
+   "Swarm"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 22",
+  "s": [
+   84,
+   103,
+   88,
+   39,
+   78,
+   78
+  ],
+  "r": "normal",
+  "lore": "Ants that carry stones a hundred times their weight by making them float.",
+  "b": 1,
+  "tr": 33,
+  "sig": -1
+ },
+ {
+  "n": 31,
+  "name": "Spindyn",
+  "t": [
+   "Volt",
+   "Gravity"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Dynamotor",
+  "m": "Found in the wild",
+  "s": [
+   54,
+   59,
+   51,
+   47,
+   48,
+   51
+  ],
+  "r": "normal",
+  "lore": "Spins like a top to generate charge.",
+  "b": 1,
+  "tr": 25,
+  "sig": -1
+ },
+ {
+  "n": 32,
+  "name": "Dynamotor",
+  "t": [
+   "Volt",
+   "Gravity"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 22",
+  "s": [
+   81,
+   88,
+   79,
+   70,
+   68,
+   84
+  ],
+  "r": "normal",
+  "lore": "Spins like a top to generate charge.",
+  "b": 1,
+  "tr": 25,
+  "sig": -1
+ },
+ {
+  "n": 33,
+  "name": "Boltling",
+  "t": [
+   "Alloy"
+  ],
+  "st": 1,
+  "tot": 3,
+  "to": "Gearhound",
+  "m": "Found in the wild",
+  "s": [
+   52,
+   63,
+   65,
+   36,
+   44,
+   40
+  ],
+  "r": "normal",
+  "lore": "Builds its own body from whatever scrap it finds.",
+  "b": 1,
+  "tr": 30,
+  "sig": -1
+ },
+ {
+  "n": 34,
+  "name": "Gearhound",
+  "t": [
+   "Alloy"
+  ],
+  "st": 2,
+  "tot": 3,
+  "to": "Scraptitan",
+  "m": "Level 18",
+  "s": [
+   61,
+   78,
+   87,
+   54,
+   68,
+   57
+  ],
+  "r": "normal",
+  "lore": "Builds its own body from whatever scrap it finds.",
+  "b": 1,
+  "tr": 30,
+  "sig": -1
+ },
+ {
+  "n": 35,
+  "name": "Scraptitan",
+  "t": [
+   "Alloy"
+  ],
+  "st": 3,
+  "tot": 3,
+  "to": "",
+  "m": "Level 36",
+  "s": [
+   84,
+   101,
+   112,
+   67,
+   91,
+   75
+  ],
+  "r": "normal",
+  "lore": "Builds its own body from whatever scrap it finds.",
+  "b": 1,
+  "tr": 30,
+  "sig": -1
+ },
+ {
+  "n": 36,
+  "name": "Coilet",
+  "t": [
+   "Alloy",
+   "Volt"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Coilossus",
+  "m": "Found in the wild",
+  "s": [
+   35,
+   61,
+   61,
+   47,
+   53,
+   53
+  ],
+  "r": "normal",
+  "lore": "Clings to dead power lines to recharge overnight.",
+  "b": 1,
+  "tr": 30,
+  "sig": -1
+ },
+ {
+  "n": 37,
+  "name": "Coilossus",
+  "t": [
+   "Alloy",
+   "Volt"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 26",
+  "s": [
+   67,
+   88,
+   95,
+   79,
+   64,
+   77
+  ],
+  "r": "normal",
+  "lore": "Clings to dead power lines to recharge overnight.",
+  "b": 1,
+  "tr": 30,
+  "sig": -1
+ },
+ {
+  "n": 38,
+  "name": "Rivetoad",
+  "t": [
+   "Alloy"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Railbeast",
+  "m": "Found in the wild",
+  "s": [
+   53,
+   62,
+   65,
+   44,
+   46,
+   40
+  ],
+  "r": "normal",
+  "lore": "Lives inside abandoned rail cars and guards them jealously.",
+  "b": 1,
+  "tr": 30,
+  "sig": -1
+ },
+ {
+  "n": 39,
+  "name": "Railbeast",
+  "t": [
+   "Alloy"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 26",
+  "s": [
+   70,
+   83,
+   113,
+   62,
+   83,
+   59
+  ],
+  "r": "normal",
+  "lore": "Lives inside abandoned rail cars and guards them jealously.",
+  "b": 1,
+  "tr": 30,
+  "sig": -1
+ },
+ {
+  "n": 40,
+  "name": "Rustle",
+  "t": [
+   "Toxin",
+   "Alloy"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Corrodon",
+  "m": "Found in the wild",
+  "s": [
+   47,
+   57,
+   61,
+   51,
+   67,
+   27
+  ],
+  "r": "normal",
+  "lore": "Corrodes whatever it sleeps on.",
+  "b": 1,
+  "tr": 47,
+  "sig": -1
+ },
+ {
+  "n": 41,
+  "name": "Corrodon",
+  "t": [
+   "Toxin",
+   "Alloy"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 26",
+  "s": [
+   68,
+   85,
+   87,
+   79,
+   98,
+   53
+  ],
+  "r": "normal",
+  "lore": "Corrodes whatever it sleeps on.",
+  "b": 1,
+  "tr": 47,
+  "sig": -1
+ },
+ {
+  "n": 42,
+  "name": "Smeltpup",
+  "t": [
+   "Magma",
+   "Alloy"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Anvilox",
+  "m": "Found in the wild",
+  "s": [
+   50,
+   70,
+   78,
+   42,
+   34,
+   36
+  ],
+  "r": "normal",
+  "lore": "Forges its own shell in abandoned furnaces.",
+  "b": 1,
+  "tr": 19,
+  "sig": -1
+ },
+ {
+  "n": 43,
+  "name": "Anvilox",
+  "t": [
+   "Magma",
+   "Alloy"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 26",
+  "s": [
+   72,
+   104,
+   104,
+   60,
+   66,
+   64
+  ],
+  "r": "normal",
+  "lore": "Forges its own shell in abandoned furnaces.",
+  "b": 1,
+  "tr": 19,
+  "sig": -1
+ },
+ {
+  "n": 44,
+  "name": "Clangit",
+  "t": [
+   "Sonic",
+   "Alloy"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Gongorr",
+  "m": "Found in the wild",
+  "s": [
+   51,
+   61,
+   54,
+   43,
+   51,
+   50
+  ],
+  "r": "normal",
+  "lore": "Hammers on sheet metal to talk to others.",
+  "b": 1,
+  "tr": 48,
+  "sig": -1
+ },
+ {
+  "n": 45,
+  "name": "Gongorr",
+  "t": [
+   "Sonic",
+   "Alloy"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 26",
+  "s": [
+   79,
+   92,
+   75,
+   75,
+   68,
+   81
+  ],
+  "r": "normal",
+  "lore": "Hammers on sheet metal to talk to others.",
+  "b": 1,
+  "tr": 48,
+  "sig": -1
+ },
+ {
+  "n": 46,
+  "name": "Nutbug",
+  "t": [
+   "Swarm",
+   "Alloy"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Screwmantis",
+  "m": "Found in the wild",
+  "s": [
+   37,
+   66,
+   69,
+   29,
+   48,
+   61
+  ],
+  "r": "normal",
+  "lore": "Hoards shiny screws in hidden nests.",
+  "b": 1,
+  "tr": 7,
+  "sig": -1
+ },
+ {
+  "n": 47,
+  "name": "Screwmantis",
+  "t": [
+   "Swarm",
+   "Alloy"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 26",
+  "s": [
+   54,
+   102,
+   111,
+   48,
+   71,
+   84
+  ],
+  "r": "normal",
+  "lore": "Hoards shiny screws in hidden nests.",
+  "b": 1,
+  "tr": 7,
+  "sig": -1
+ },
+ {
+  "n": 48,
+  "name": "Forgemaul",
+  "t": [
+   "Alloy"
+  ],
+  "st": 1,
+  "tot": 1,
+  "to": "",
+  "m": "Signature Alienmon (one-time gift or postgame encounter)",
+  "s": [
+   81,
+   101,
+   110,
+   56,
+   82,
+   70
+  ],
+  "r": "signature",
+  "lore": "Hank Briggs's partner since the towers were built.",
+  "b": 1,
+  "tr": 50,
+  "sig": 4
+ },
+ {
+  "n": 49,
+  "name": "Magnub",
+  "t": [
+   "Alloy",
+   "Gravity"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Magnaxis",
+  "m": "Found in the wild",
+  "s": [
+   68,
+   63,
+   76,
+   27,
+   52,
+   24
+  ],
+  "r": "normal",
+  "lore": "Magnetizes scrap into floating armor.",
+  "b": 1,
+  "tr": 8,
+  "sig": -1
+ },
+ {
+  "n": 50,
+  "name": "Magnaxis",
+  "t": [
+   "Alloy",
+   "Gravity"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 26",
+  "s": [
+   106,
+   95,
+   122,
+   38,
+   69,
+   40
+  ],
+  "r": "normal",
+  "lore": "Magnetizes scrap into floating armor.",
+  "b": 1,
+  "tr": 8,
+  "sig": -1
+ },
+ {
+  "n": 51,
+  "name": "Lumislug",
+  "t": [
+   "Toxin"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Neonmire",
+  "m": "Found in the wild",
+  "s": [
+   50,
+   50,
+   47,
+   54,
+   68,
+   41
+  ],
+  "r": "normal",
+  "lore": "Its glow warns predators to stay away.",
+  "b": 1,
+  "tr": 20,
+  "sig": -1
+ },
+ {
+  "n": 52,
+  "name": "Neonmire",
+  "t": [
+   "Toxin"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 26",
+  "s": [
+   71,
+   70,
+   70,
+   95,
+   104,
+   60
+  ],
+  "r": "normal",
+  "lore": "Its glow warns predators to stay away.",
+  "b": 1,
+  "tr": 20,
+  "sig": -1
+ },
+ {
+  "n": 53,
+  "name": "Puffspore",
+  "t": [
+   "Bio",
+   "Toxin"
+  ],
+  "st": 1,
+  "tot": 3,
+  "to": "Miasmoth",
+  "m": "Found in the wild",
+  "s": [
+   54,
+   51,
+   48,
+   48,
+   74,
+   25
+  ],
+  "r": "normal",
+  "lore": "Releases purple spores when startled.",
+  "b": 1,
+  "tr": 48,
+  "sig": -1
+ },
+ {
+  "n": 54,
+  "name": "Miasmoth",
+  "t": [
+   "Bio",
+   "Toxin"
+  ],
+  "st": 2,
+  "tot": 3,
+  "to": "Rotbloom",
+  "m": "Level 18",
+  "s": [
+   77,
+   61,
+   62,
+   77,
+   89,
+   39
+  ],
+  "r": "normal",
+  "lore": "Releases purple spores when startled.",
+  "b": 1,
+  "tr": 48,
+  "sig": -1
+ },
+ {
+  "n": 55,
+  "name": "Rotbloom",
+  "t": [
+   "Bio",
+   "Toxin"
+  ],
+  "st": 3,
+  "tot": 3,
+  "to": "",
+  "m": "Level 36",
+  "s": [
+   94,
+   74,
+   86,
+   86,
+   135,
+   55
+  ],
+  "r": "normal",
+  "lore": "Releases purple spores when startled.",
+  "b": 1,
+  "tr": 48,
+  "sig": -1
+ },
+ {
+  "n": 56,
+  "name": "Gnatlet",
+  "t": [
+   "Swarm"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Gnatcloud",
+  "m": "Found in the wild",
+  "s": [
+   44,
+   61,
+   54,
+   35,
+   55,
+   61
+  ],
+  "r": "normal",
+  "lore": "Rises over the swamp at dusk in glowing clouds.",
+  "b": 1,
+  "tr": 39,
+  "sig": -1
+ },
+ {
+  "n": 57,
+  "name": "Gnatcloud",
+  "t": [
+   "Swarm"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 26",
+  "s": [
+   65,
+   79,
+   84,
+   57,
+   84,
+   101
+  ],
+  "r": "normal",
+  "lore": "Rises over the swamp at dusk in glowing clouds.",
+  "b": 1,
+  "tr": 39,
+  "sig": -1
+ },
+ {
+  "n": 58,
+  "name": "Bogeel",
+  "t": [
+   "Hydro",
+   "Toxin"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Sludgeviper",
+  "m": "Found in the wild",
+  "s": [
+   59,
+   42,
+   50,
+   62,
+   71,
+   26
+  ],
+  "r": "normal",
+  "lore": "Lurks under the bog waiting for prey.",
+  "b": 1,
+  "tr": 49,
+  "sig": -1
+ },
+ {
+  "n": 59,
+  "name": "Sludgeviper",
+  "t": [
+   "Hydro",
+   "Toxin"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 26",
+  "s": [
+   81,
+   66,
+   73,
+   88,
+   115,
+   47
+  ],
+  "r": "normal",
+  "lore": "Lurks under the bog waiting for prey.",
+  "b": 1,
+  "tr": 49,
+  "sig": -1
+ },
+ {
+  "n": 60,
+  "name": "Vinewisp",
+  "t": [
+   "Bio"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Lianarch",
+  "m": "Found in the wild",
+  "s": [
+   59,
+   49,
+   56,
+   53,
+   52,
+   41
+  ],
+  "r": "normal",
+  "lore": "Hangs from mangrove roots and sways with the wind.",
+  "b": 1,
+  "tr": 2,
+  "sig": -1
+ },
+ {
+  "n": 61,
+  "name": "Lianarch",
+  "t": [
+   "Bio"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 26",
+  "s": [
+   90,
+   72,
+   85,
+   80,
+   91,
+   52
+  ],
+  "r": "normal",
+  "lore": "Hangs from mangrove roots and sways with the wind.",
+  "b": 1,
+  "tr": 2,
+  "sig": -1
+ },
+ {
+  "n": 62,
+  "name": "Moodshroom",
+  "t": [
+   "Psi",
+   "Bio"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Dreamcap",
+  "m": "Found in the wild",
+  "s": [
+   49,
+   36,
+   49,
+   67,
+   64,
+   45
+  ],
+  "r": "normal",
+  "lore": "Its cap changes color with its mood.",
+  "b": 1,
+  "tr": 28,
+  "sig": -1
+ },
+ {
+  "n": 63,
+  "name": "Dreamcap",
+  "t": [
+   "Psi",
+   "Bio"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 26",
+  "s": [
+   69,
+   57,
+   69,
+   102,
+   104,
+   69
+  ],
+  "r": "normal",
+  "lore": "Its cap changes color with its mood.",
+  "b": 1,
+  "tr": 28,
+  "sig": -1
+ },
+ {
+  "n": 64,
+  "name": "Stingmire",
+  "t": [
+   "Toxin",
+   "Swarm"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Venomarch",
+  "m": "Found in the wild",
+  "s": [
+   41,
+   60,
+   50,
+   43,
+   60,
+   56
+  ],
+  "r": "normal",
+  "lore": "Its sting causes vivid hallucinations.",
+  "b": 1,
+  "tr": 49,
+  "sig": -1
+ },
+ {
+  "n": 65,
+  "name": "Venomarch",
+  "t": [
+   "Toxin",
+   "Swarm"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 26",
+  "s": [
+   54,
+   82,
+   80,
+   71,
+   98,
+   85
+  ],
+  "r": "normal",
+  "lore": "Its sting causes vivid hallucinations.",
+  "b": 1,
+  "tr": 49,
+  "sig": -1
+ },
+ {
+  "n": 66,
+  "name": "Lilypod",
+  "t": [
+   "Hydro",
+   "Bio"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Lotudrake",
+  "m": "Found in the wild",
+  "s": [
+   61,
+   52,
+   56,
+   50,
+   66,
+   25
+  ],
+  "r": "normal",
+  "lore": "Floats on still water pretending to be a lily pad.",
+  "b": 1,
+  "tr": 36,
+  "sig": -1
+ },
+ {
+  "n": 67,
+  "name": "Lotudrake",
+  "t": [
+   "Hydro",
+   "Bio"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 26",
+  "s": [
+   87,
+   79,
+   92,
+   75,
+   90,
+   47
+  ],
+  "r": "normal",
+  "lore": "Floats on still water pretending to be a lily pad.",
+  "b": 1,
+  "tr": 36,
+  "sig": -1
+ },
+ {
+  "n": 68,
+  "name": "Murkling",
+  "t": [
+   "Void",
+   "Toxin"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Murkwraith",
+  "m": "Found in the wild",
+  "s": [
+   51,
+   58,
+   39,
+   55,
+   64,
+   43
+  ],
+  "r": "normal",
+  "lore": "Drifts through swamp fog like a lost lantern.",
+  "b": 1,
+  "tr": 49,
+  "sig": -1
+ },
+ {
+  "n": 69,
+  "name": "Murkwraith",
+  "t": [
+   "Void",
+   "Toxin"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 26",
+  "s": [
+   69,
+   80,
+   59,
+   93,
+   91,
+   78
+  ],
+  "r": "normal",
+  "lore": "Drifts through swamp fog like a lost lantern.",
+  "b": 1,
+  "tr": 49,
+  "sig": -1
+ },
+ {
+  "n": 70,
+  "name": "Mycora",
+  "t": [
+   "Toxin",
+   "Bio"
+  ],
+  "st": 1,
+  "tot": 1,
+  "to": "",
+  "m": "Signature Alienmon (one-time gift or postgame encounter)",
+  "s": [
+   81,
+   69,
+   91,
+   91,
+   114,
+   54
+  ],
+  "r": "signature",
+  "lore": "Dr. Lysa Moor's research partner.",
+  "b": 1,
+  "tr": 50,
+  "sig": 5
+ },
+ {
+  "n": 71,
+  "name": "Silkpup",
+  "t": [
+   "Swarm",
+   "Bio"
+  ],
+  "st": 1,
+  "tot": 3,
+  "to": "Cocoonix",
+  "m": "Found in the wild",
+  "s": [
+   41,
+   51,
+   54,
+   42,
+   51,
+   61
+  ],
+  "r": "normal",
+  "lore": "Spins silk that glows under moonlight.",
+  "b": 1,
+  "tr": 38,
+  "sig": -1
+ },
+ {
+  "n": 72,
+  "name": "Cocoonix",
+  "t": [
+   "Swarm",
+   "Bio"
+  ],
+  "st": 2,
+  "tot": 3,
+  "to": "Lunaweaver",
+  "m": "Level 18",
+  "s": [
+   60,
+   72,
+   73,
+   53,
+   75,
+   72
+  ],
+  "r": "normal",
+  "lore": "Spins silk that glows under moonlight.",
+  "b": 1,
+  "tr": 38,
+  "sig": -1
+ },
+ {
+  "n": 73,
+  "name": "Lunaweaver",
+  "t": [
+   "Swarm",
+   "Bio"
+  ],
+  "st": 3,
+  "tot": 3,
+  "to": "",
+  "m": "Level 36",
+  "s": [
+   78,
+   97,
+   91,
+   71,
+   94,
+   99
+  ],
+  "r": "normal",
+  "lore": "Spins silk that glows under moonlight.",
+  "b": 1,
+  "tr": 38,
+  "sig": -1
+ },
+ {
+  "n": 74,
+  "name": "Drippit",
+  "t": [
+   "Toxin",
+   "Hydro"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Goozilla",
+  "m": "Found in the wild",
+  "s": [
+   47,
+   48,
+   48,
+   66,
+   70,
+   31
+  ],
+  "r": "normal",
+  "lore": "Lives in puddles of glowing runoff.",
+  "b": 1,
+  "tr": 26,
+  "sig": -1
+ },
+ {
+  "n": 75,
+  "name": "Goozilla",
+  "t": [
+   "Toxin",
+   "Hydro"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 26",
+  "s": [
+   84,
+   71,
+   63,
+   95,
+   108,
+   49
+  ],
+  "r": "normal",
+  "lore": "Lives in puddles of glowing runoff.",
+  "b": 1,
+  "tr": 26,
+  "sig": -1
+ },
+ {
+  "n": 76,
+  "name": "Bubbub",
+  "t": [
+   "Hydro"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Bubblorca",
+  "m": "Found in the wild",
+  "s": [
+   58,
+   46,
+   49,
+   57,
+   62,
+   38
+  ],
+  "r": "normal",
+  "lore": "Bounces between waves inside a bubble of air.",
+  "b": 1,
+  "tr": 1,
+  "sig": -1
+ },
+ {
+  "n": 77,
+  "name": "Bubblorca",
+  "t": [
+   "Hydro"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 30",
+  "s": [
+   80,
+   84,
+   68,
+   91,
+   86,
+   61
+  ],
+  "r": "normal",
+  "lore": "Bounces between waves inside a bubble of air.",
+  "b": 1,
+  "tr": 1,
+  "sig": -1
+ },
+ {
+  "n": 78,
+  "name": "Crabot",
+  "t": [
+   "Hydro",
+   "Alloy"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Clawfort",
+  "m": "Found in the wild",
+  "s": [
+   51,
+   60,
+   66,
+   52,
+   53,
+   28
+  ],
+  "r": "normal",
+  "lore": "Grows its shell from shipwreck metal.",
+  "b": 1,
+  "tr": 36,
+  "sig": -1
+ },
+ {
+  "n": 79,
+  "name": "Clawfort",
+  "t": [
+   "Hydro",
+   "Alloy"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 30",
+  "s": [
+   83,
+   82,
+   93,
+   74,
+   87,
+   51
+  ],
+  "r": "normal",
+  "lore": "Grows its shell from shipwreck metal.",
+  "b": 1,
+  "tr": 36,
+  "sig": -1
+ },
+ {
+  "n": 80,
+  "name": "Zapfin",
+  "t": [
+   "Hydro",
+   "Volt"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Stormray",
+  "m": "Found in the wild",
+  "s": [
+   48,
+   48,
+   35,
+   64,
+   63,
+   52
+  ],
+  "r": "normal",
+  "lore": "Lights the harbor during storms.",
+  "b": 1,
+  "tr": 1,
+  "sig": -1
+ },
+ {
+  "n": 81,
+  "name": "Stormray",
+  "t": [
+   "Hydro",
+   "Volt"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 30",
+  "s": [
+   65,
+   74,
+   51,
+   94,
+   94,
+   92
+  ],
+  "r": "normal",
+  "lore": "Lights the harbor during storms.",
+  "b": 1,
+  "tr": 1,
+  "sig": -1
+ },
+ {
+  "n": 82,
+  "name": "Inklet",
+  "t": [
+   "Hydro",
+   "Psi"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Cephalux",
+  "m": "Found in the wild",
+  "s": [
+   49,
+   36,
+   44,
+   71,
+   67,
+   43
+  ],
+  "r": "normal",
+  "lore": "Hypnotizes fish with its spiral eyes.",
+  "b": 1,
+  "tr": 15,
+  "sig": -1
+ },
+ {
+  "n": 83,
+  "name": "Cephalux",
+  "t": [
+   "Hydro",
+   "Psi"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 30",
+  "s": [
+   76,
+   50,
+   65,
+   119,
+   91,
+   69
+  ],
+  "r": "normal",
+  "lore": "Hypnotizes fish with its spiral eyes.",
+  "b": 1,
+  "tr": 15,
+  "sig": -1
+ },
+ {
+  "n": 84,
+  "name": "Shellet",
+  "t": [
+   "Hydro",
+   "Crystal"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Pearlord",
+  "m": "Found in the wild",
+  "s": [
+   49,
+   46,
+   55,
+   64,
+   66,
+   30
+  ],
+  "r": "normal",
+  "lore": "Grows a pearl that stores its memories.",
+  "b": 1,
+  "tr": 1,
+  "sig": -1
+ },
+ {
+  "n": 85,
+  "name": "Pearlord",
+  "t": [
+   "Hydro",
+   "Crystal"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 30",
+  "s": [
+   86,
+   61,
+   73,
+   102,
+   97,
+   51
+  ],
+  "r": "normal",
+  "lore": "Grows a pearl that stores its memories.",
+  "b": 1,
+  "tr": 1,
+  "sig": -1
+ },
+ {
+  "n": 86,
+  "name": "Echofin",
+  "t": [
+   "Sonic",
+   "Hydro"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Echoleviah",
+  "m": "Found in the wild",
+  "s": [
+   57,
+   50,
+   35,
+   59,
+   55,
+   54
+  ],
+  "r": "normal",
+  "lore": "Maps the seafloor with song.",
+  "b": 1,
+  "tr": 38,
+  "sig": -1
+ },
+ {
+  "n": 87,
+  "name": "Echoleviah",
+  "t": [
+   "Sonic",
+   "Hydro"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 30",
+  "s": [
+   81,
+   65,
+   61,
+   95,
+   83,
+   85
+  ],
+  "r": "normal",
+  "lore": "Maps the seafloor with song.",
+  "b": 1,
+  "tr": 38,
+  "sig": -1
+ },
+ {
+  "n": 88,
+  "name": "Tidepull",
+  "t": [
+   "Hydro",
+   "Gravity"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Tidemoon",
+  "m": "Found in the wild",
+  "s": [
+   75,
+   55,
+   55,
+   44,
+   58,
+   23
+  ],
+  "r": "normal",
+  "lore": "Pulls the tides with its tiny moon body.",
+  "b": 1,
+  "tr": 1,
+  "sig": -1
+ },
+ {
+  "n": 89,
+  "name": "Tidemoon",
+  "t": [
+   "Hydro",
+   "Gravity"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 30",
+  "s": [
+   108,
+   91,
+   78,
+   71,
+   86,
+   36
+  ],
+  "r": "normal",
+  "lore": "Pulls the tides with its tiny moon body.",
+  "b": 1,
+  "tr": 1,
+  "sig": -1
+ },
+ {
+  "n": 90,
+  "name": "Fogwisp",
+  "t": [
+   "Void",
+   "Hydro"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Mistphantom",
+  "m": "Found in the wild",
+  "s": [
+   58,
+   50,
+   36,
+   59,
+   55,
+   52
+  ],
+  "r": "normal",
+  "lore": "Rolls in with the fog and steals lantern light.",
+  "b": 1,
+  "tr": 32,
+  "sig": -1
+ },
+ {
+  "n": 91,
+  "name": "Mistphantom",
+  "t": [
+   "Void",
+   "Hydro"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 30",
+  "s": [
+   79,
+   83,
+   62,
+   89,
+   89,
+   68
+  ],
+  "r": "normal",
+  "lore": "Rolls in with the fog and steals lantern light.",
+  "b": 1,
+  "tr": 32,
+  "sig": -1
+ },
+ {
+  "n": 92,
+  "name": "Barnacub",
+  "t": [
+   "Hydro"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Barnacolos",
+  "m": "Found in the wild",
+  "s": [
+   55,
+   51,
+   49,
+   60,
+   57,
+   38
+  ],
+  "r": "normal",
+  "lore": "Lets barnacles grow on it as armor.",
+  "b": 1,
+  "tr": 49,
+  "sig": -1
+ },
+ {
+  "n": 93,
+  "name": "Barnacolos",
+  "t": [
+   "Hydro"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 30",
+  "s": [
+   87,
+   81,
+   72,
+   85,
+   87,
+   58
+  ],
+  "r": "normal",
+  "lore": "Lets barnacles grow on it as armor.",
+  "b": 1,
+  "tr": 49,
+  "sig": -1
+ },
+ {
+  "n": 94,
+  "name": "Krillo",
+  "t": [
+   "Swarm",
+   "Hydro"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Krillswarm",
+  "m": "Found in the wild",
+  "s": [
+   45,
+   58,
+   44,
+   49,
+   58,
+   56
+  ],
+  "r": "normal",
+  "lore": "Moves as one glowing ribbon through the water.",
+  "b": 1,
+  "tr": 7,
+  "sig": -1
+ },
+ {
+  "n": 95,
+  "name": "Krillswarm",
+  "t": [
+   "Swarm",
+   "Hydro"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 30",
+  "s": [
+   73,
+   79,
+   79,
+   75,
+   83,
+   81
+  ],
+  "r": "normal",
+  "lore": "Moves as one glowing ribbon through the water.",
+  "b": 1,
+  "tr": 7,
+  "sig": -1
+ },
+ {
+  "n": 96,
+  "name": "Anchorath",
+  "t": [
+   "Hydro"
+  ],
+  "st": 1,
+  "tot": 1,
+  "to": "",
+  "m": "Signature Alienmon (one-time gift or postgame encounter)",
+  "s": [
+   87,
+   70,
+   85,
+   96,
+   99,
+   63
+  ],
+  "r": "signature",
+  "lore": "Captain Delia Marsh's first mate.",
+  "b": 1,
+  "tr": 50,
+  "sig": 6
+ },
+ {
+  "n": 97,
+  "name": "Gullwhistle",
+  "t": [
+   "Sonic"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Galecry",
+  "m": "Found in the wild",
+  "s": [
+   49,
+   44,
+   38,
+   61,
+   47,
+   71
+  ],
+  "r": "normal",
+  "lore": "Cries out before storms to warn sailors.",
+  "b": 1,
+  "tr": 38,
+  "sig": -1
+ },
+ {
+  "n": 98,
+  "name": "Galecry",
+  "t": [
+   "Sonic"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 30",
+  "s": [
+   80,
+   77,
+   59,
+   92,
+   68,
+   94
+  ],
+  "r": "normal",
+  "lore": "Cries out before storms to warn sailors.",
+  "b": 1,
+  "tr": 38,
+  "sig": -1
+ },
+ {
+  "n": 99,
+  "name": "Ventlet",
+  "t": [
+   "Hydro",
+   "Magma"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Thermoctus",
+  "m": "Found in the wild",
+  "s": [
+   52,
+   67,
+   53,
+   54,
+   50,
+   34
+  ],
+  "r": "normal",
+  "lore": "Lives beside undersea vents.",
+  "b": 1,
+  "tr": 15,
+  "sig": -1
+ },
+ {
+  "n": 100,
+  "name": "Thermoctus",
+  "t": [
+   "Hydro",
+   "Magma"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 30",
+  "s": [
+   77,
+   101,
+   73,
+   87,
+   68,
+   64
+  ],
+  "r": "normal",
+  "lore": "Lives beside undersea vents.",
+  "b": 1,
+  "tr": 15,
+  "sig": -1
+ },
+ {
+  "n": 101,
+  "name": "Bulbit",
+  "t": [
+   "Volt"
+  ],
+  "st": 1,
+  "tot": 3,
+  "to": "Filamaw",
+  "m": "Found in the wild",
+  "s": [
+   34,
+   51,
+   42,
+   54,
+   51,
+   68
+  ],
+  "r": "normal",
+  "lore": "Moths of the city follow it home.",
+  "b": 1,
+  "tr": 3,
+  "sig": -1
+ },
+ {
+  "n": 102,
+  "name": "Filamaw",
+  "t": [
+   "Volt"
+  ],
+  "st": 2,
+  "tot": 3,
+  "to": "Arclume",
+  "m": "Level 21",
+  "s": [
+   59,
+   66,
+   50,
+   80,
+   66,
+   84
+  ],
+  "r": "normal",
+  "lore": "Moths of the city follow it home.",
+  "b": 1,
+  "tr": 3,
+  "sig": -1
+ },
+ {
+  "n": 103,
+  "name": "Arclume",
+  "t": [
+   "Volt"
+  ],
+  "st": 3,
+  "tot": 3,
+  "to": "",
+  "m": "Level 40",
+  "s": [
+   63,
+   86,
+   79,
+   104,
+   74,
+   124
+  ],
+  "r": "normal",
+  "lore": "Moths of the city follow it home.",
+  "b": 1,
+  "tr": 3,
+  "sig": -1
+ },
+ {
+  "n": 104,
+  "name": "Pixbot",
+  "t": [
+   "Volt",
+   "Alloy"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Datadron",
+  "m": "Found in the wild",
+  "s": [
+   42,
+   53,
+   59,
+   46,
+   51,
+   59
+  ],
+  "r": "normal",
+  "lore": "Displays its mood as pixels on its face.",
+  "b": 1,
+  "tr": 34,
+  "sig": -1
+ },
+ {
+  "n": 105,
+  "name": "Datadron",
+  "t": [
+   "Volt",
+   "Alloy"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 30",
+  "s": [
+   59,
+   81,
+   83,
+   79,
+   79,
+   89
+  ],
+  "r": "normal",
+  "lore": "Displays its mood as pixels on its face.",
+  "b": 1,
+  "tr": 34,
+  "sig": -1
+ },
+ {
+  "n": 106,
+  "name": "Ampup",
+  "t": [
+   "Volt",
+   "Sonic"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Amplion",
+  "m": "Found in the wild",
+  "s": [
+   34,
+   48,
+   32,
+   65,
+   51,
+   80
+  ],
+  "r": "normal",
+  "lore": "Its bark rattles windows two blocks away.",
+  "b": 1,
+  "tr": 38,
+  "sig": -1
+ },
+ {
+  "n": 107,
+  "name": "Amplion",
+  "t": [
+   "Volt",
+   "Sonic"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 30",
+  "s": [
+   58,
+   76,
+   38,
+   101,
+   78,
+   119
+  ],
+  "r": "normal",
+  "lore": "Its bark rattles windows two blocks away.",
+  "b": 1,
+  "tr": 38,
+  "sig": -1
+ },
+ {
+  "n": 108,
+  "name": "Signalet",
+  "t": [
+   "Volt",
+   "Psi"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Transmitron",
+  "m": "Found in the wild",
+  "s": [
+   35,
+   41,
+   35,
+   73,
+   59,
+   67
+  ],
+  "r": "normal",
+  "lore": "Picks up radio stations in its antennae.",
+  "b": 1,
+  "tr": 34,
+  "sig": -1
+ },
+ {
+  "n": 109,
+  "name": "Transmitron",
+  "t": [
+   "Volt",
+   "Psi"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 30",
+  "s": [
+   41,
+   69,
+   47,
+   118,
+   91,
+   104
+  ],
+  "r": "normal",
+  "lore": "Picks up radio stations in its antennae.",
+  "b": 1,
+  "tr": 34,
+  "sig": -1
+ },
+ {
+  "n": 110,
+  "name": "Glitchbug",
+  "t": [
+   "Volt",
+   "Swarm"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Glitchmoth",
+  "m": "Found in the wild",
+  "s": [
+   39,
+   53,
+   36,
+   47,
+   54,
+   81
+  ],
+  "r": "normal",
+  "lore": "Causes screens to flicker wherever it lands.",
+  "b": 1,
+  "tr": 38,
+  "sig": -1
+ },
+ {
+  "n": 111,
+  "name": "Glitchmoth",
+  "t": [
+   "Volt",
+   "Swarm"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 30",
+  "s": [
+   42,
+   87,
+   60,
+   73,
+   78,
+   130
+  ],
+  "r": "normal",
+  "lore": "Causes screens to flicker wherever it lands.",
+  "b": 1,
+  "tr": 38,
+  "sig": -1
+ },
+ {
+  "n": 112,
+  "name": "Blackwatt",
+  "t": [
+   "Void",
+   "Volt"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Nullgrid",
+  "m": "Found in the wild",
+  "s": [
+   44,
+   56,
+   32,
+   59,
+   46,
+   73
+  ],
+  "r": "normal",
+  "lore": "Feeds on light and leaves blackouts behind.",
+  "b": 1,
+  "tr": 47,
+  "sig": -1
+ },
+ {
+  "n": 113,
+  "name": "Nullgrid",
+  "t": [
+   "Void",
+   "Volt"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 30",
+  "s": [
+   64,
+   81,
+   41,
+   108,
+   68,
+   108
+  ],
+  "r": "normal",
+  "lore": "Feeds on light and leaves blackouts behind.",
+  "b": 1,
+  "tr": 47,
+  "sig": -1
+ },
+ {
+  "n": 114,
+  "name": "Neonewt",
+  "t": [
+   "Volt"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Neonagon",
+  "m": "Found in the wild",
+  "s": [
+   43,
+   54,
+   37,
+   59,
+   52,
+   65
+  ],
+  "r": "normal",
+  "lore": "Coils around neon signs to sleep.",
+  "b": 1,
+  "tr": 17,
+  "sig": -1
+ },
+ {
+  "n": 115,
+  "name": "Neonagon",
+  "t": [
+   "Volt"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 30",
+  "s": [
+   58,
+   65,
+   69,
+   94,
+   81,
+   103
+  ],
+  "r": "normal",
+  "lore": "Coils around neon signs to sleep.",
+  "b": 1,
+  "tr": 17,
+  "sig": -1
+ },
+ {
+  "n": 116,
+  "name": "Holopup",
+  "t": [
+   "Psi",
+   "Volt"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Holofox",
+  "m": "Found in the wild",
+  "s": [
+   33,
+   44,
+   32,
+   75,
+   59,
+   67
+  ],
+  "r": "normal",
+  "lore": "Projects images of things it remembers.",
+  "b": 1,
+  "tr": 10,
+  "sig": -1
+ },
+ {
+  "n": 117,
+  "name": "Holofox",
+  "t": [
+   "Psi",
+   "Volt"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 30",
+  "s": [
+   42,
+   55,
+   55,
+   115,
+   97,
+   106
+  ],
+  "r": "normal",
+  "lore": "Projects images of things it remembers.",
+  "b": 1,
+  "tr": 10,
+  "sig": -1
+ },
+ {
+  "n": 118,
+  "name": "Bassquake",
+  "t": [
+   "Volt",
+   "Sonic"
+  ],
+  "st": 1,
+  "tot": 1,
+  "to": "",
+  "m": "Signature Alienmon (one-time gift or postgame encounter)",
+  "s": [
+   68,
+   81,
+   54,
+   98,
+   72,
+   127
+  ],
+  "r": "signature",
+  "lore": "DJ Static's headliner.",
+  "b": 1,
+  "tr": 50,
+  "sig": 7
+ },
+ {
+  "n": 119,
+  "name": "Quartzle",
+  "t": [
+   "Crystal",
+   "Volt"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Piezorn",
+  "m": "Found in the wild",
+  "s": [
+   44,
+   41,
+   45,
+   71,
+   57,
+   52
+  ],
+  "r": "normal",
+  "lore": "Squeezing it produces a spark.",
+  "b": 1,
+  "tr": 31,
+  "sig": -1
+ },
+ {
+  "n": 120,
+  "name": "Piezorn",
+  "t": [
+   "Crystal",
+   "Volt"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 30",
+  "s": [
+   63,
+   63,
+   67,
+   111,
+   79,
+   87
+  ],
+  "r": "normal",
+  "lore": "Squeezing it produces a spark.",
+  "b": 1,
+  "tr": 31,
+  "sig": -1
+ },
+ {
+  "n": 121,
+  "name": "Turbinit",
+  "t": [
+   "Volt",
+   "Gravity"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Turbinox",
+  "m": "Found in the wild",
+  "s": [
+   54,
+   60,
+   53,
+   47,
+   50,
+   46
+  ],
+  "r": "normal",
+  "lore": "Spins inside turbines to stay warm.",
+  "b": 1,
+  "tr": 34,
+  "sig": -1
+ },
+ {
+  "n": 122,
+  "name": "Turbinox",
+  "t": [
+   "Volt",
+   "Gravity"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 30",
+  "s": [
+   90,
+   80,
+   69,
+   71,
+   78,
+   82
+  ],
+  "r": "normal",
+  "lore": "Spins inside turbines to stay warm.",
+  "b": 1,
+  "tr": 34,
+  "sig": -1
+ },
+ {
+  "n": 123,
+  "name": "Glyphling",
+  "t": [
+   "Crystal",
+   "Psi"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Runeguard",
+  "m": "Found in the wild",
+  "s": [
+   33,
+   36,
+   47,
+   81,
+   65,
+   48
+  ],
+  "r": "normal",
+  "lore": "Its glyph changes to show what it is thinking.",
+  "b": 1,
+  "tr": 49,
+  "sig": -1
+ },
+ {
+  "n": 124,
+  "name": "Runeguard",
+  "t": [
+   "Crystal",
+   "Psi"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Resonance: hold Signal Shard 4",
+  "s": [
+   55,
+   57,
+   63,
+   128,
+   98,
+   69
+  ],
+  "r": "normal",
+  "lore": "Its glyph changes to show what it is thinking.",
+  "b": 1,
+  "tr": 49,
+  "sig": -1
+ },
+ {
+  "n": 125,
+  "name": "Monolet",
+  "t": [
+   "Gravity",
+   "Psi"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Obeliskor",
+  "m": "Found in the wild",
+  "s": [
+   52,
+   46,
+   46,
+   64,
+   60,
+   42
+  ],
+  "r": "normal",
+  "lore": "Arranges itself into lines with others of its kind.",
+  "b": 1,
+  "tr": 33,
+  "sig": -1
+ },
+ {
+  "n": 126,
+  "name": "Obeliskor",
+  "t": [
+   "Gravity",
+   "Psi"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Resonance: hold Signal Shard 4",
+  "s": [
+   90,
+   66,
+   73,
+   95,
+   88,
+   58
+  ],
+  "r": "normal",
+  "lore": "Arranges itself into lines with others of its kind.",
+  "b": 1,
+  "tr": 33,
+  "sig": -1
+ },
+ {
+  "n": 127,
+  "name": "Shardpup",
+  "t": [
+   "Crystal"
+  ],
+  "st": 1,
+  "tot": 3,
+  "to": "Shardwolf",
+  "m": "Found in the wild",
+  "s": [
+   45,
+   45,
+   53,
+   64,
+   50,
+   43
+  ],
+  "r": "normal",
+  "lore": "Packs howl until the cave walls ring.",
+  "b": 1,
+  "tr": 37,
+  "sig": -1
+ },
+ {
+  "n": 128,
+  "name": "Shardwolf",
+  "t": [
+   "Crystal"
+  ],
+  "st": 2,
+  "tot": 3,
+  "to": "Prismwolf",
+  "m": "Level 24",
+  "s": [
+   66,
+   62,
+   77,
+   77,
+   73,
+   50
+  ],
+  "r": "normal",
+  "lore": "Packs howl until the cave walls ring.",
+  "b": 1,
+  "tr": 37,
+  "sig": -1
+ },
+ {
+  "n": 129,
+  "name": "Prismwolf",
+  "t": [
+   "Crystal"
+  ],
+  "st": 3,
+  "tot": 3,
+  "to": "",
+  "m": "Resonance: hold Signal Shard 4",
+  "s": [
+   85,
+   82,
+   87,
+   104,
+   97,
+   75
+  ],
+  "r": "normal",
+  "lore": "Packs howl until the cave walls ring.",
+  "b": 1,
+  "tr": 37,
+  "sig": -1
+ },
+ {
+  "n": 130,
+  "name": "Echoshade",
+  "t": [
+   "Void",
+   "Psi"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Memoria",
+  "m": "Found in the wild",
+  "s": [
+   36,
+   52,
+   30,
+   71,
+   55,
+   66
+  ],
+  "r": "normal",
+  "lore": "An imprint left behind by something long gone.",
+  "b": 1,
+  "tr": 13,
+  "sig": -1
+ },
+ {
+  "n": 131,
+  "name": "Memoria",
+  "t": [
+   "Void",
+   "Psi"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Resonance: hold Signal Shard 4",
+  "s": [
+   65,
+   74,
+   39,
+   112,
+   76,
+   104
+  ],
+  "r": "normal",
+  "lore": "An imprint left behind by something long gone.",
+  "b": 1,
+  "tr": 13,
+  "sig": -1
+ },
+ {
+  "n": 132,
+  "name": "Fossilily",
+  "t": [
+   "Bio",
+   "Crystal"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Ambroot",
+  "m": "Found in the wild",
+  "s": [
+   54,
+   44,
+   58,
+   61,
+   62,
+   31
+  ],
+  "r": "normal",
+  "lore": "Grew from an Ystra seed sealed in amber.",
+  "b": 1,
+  "tr": 35,
+  "sig": -1
+ },
+ {
+  "n": 133,
+  "name": "Ambroot",
+  "t": [
+   "Bio",
+   "Crystal"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Resonance: hold Signal Shard 4",
+  "s": [
+   78,
+   71,
+   90,
+   96,
+   98,
+   37
+  ],
+  "r": "normal",
+  "lore": "Grew from an Ystra seed sealed in amber.",
+  "b": 1,
+  "tr": 35,
+  "sig": -1
+ },
+ {
+  "n": 134,
+  "name": "Chimelet",
+  "t": [
+   "Sonic",
+   "Crystal"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Chimeral",
+  "m": "Found in the wild",
+  "s": [
+   44,
+   47,
+   47,
+   73,
+   48,
+   51
+  ],
+  "r": "normal",
+  "lore": "Rings softly in the slightest breeze.",
+  "b": 1,
+  "tr": 39,
+  "sig": -1
+ },
+ {
+  "n": 135,
+  "name": "Chimeral",
+  "t": [
+   "Sonic",
+   "Crystal"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Resonance: hold Signal Shard 4",
+  "s": [
+   66,
+   68,
+   73,
+   105,
+   79,
+   79
+  ],
+  "r": "normal",
+  "lore": "Rings softly in the slightest breeze.",
+  "b": 1,
+  "tr": 39,
+  "sig": -1
+ },
+ {
+  "n": 136,
+  "name": "Vortiny",
+  "t": [
+   "Gravity"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Vortexus",
+  "m": "Found in the wild",
+  "s": [
+   73,
+   62,
+   59,
+   42,
+   44,
+   30
+  ],
+  "r": "normal",
+  "lore": "Spins sand into tiny storms.",
+  "b": 1,
+  "tr": 33,
+  "sig": -1
+ },
+ {
+  "n": 137,
+  "name": "Vortexus",
+  "t": [
+   "Gravity"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Resonance: hold Signal Shard 4",
+  "s": [
+   107,
+   94,
+   90,
+   68,
+   73,
+   38
+  ],
+  "r": "normal",
+  "lore": "Spins sand into tiny storms.",
+  "b": 1,
+  "tr": 33,
+  "sig": -1
+ },
+ {
+  "n": 138,
+  "name": "Oracub",
+  "t": [
+   "Psi"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Oraclaw",
+  "m": "Found in the wild",
+  "s": [
+   36,
+   41,
+   46,
+   67,
+   63,
+   57
+  ],
+  "r": "normal",
+  "lore": "Was worshipped by whoever built the ruins.",
+  "b": 1,
+  "tr": 28,
+  "sig": -1
+ },
+ {
+  "n": 139,
+  "name": "Oraclaw",
+  "t": [
+   "Psi"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Resonance: hold Signal Shard 4",
+  "s": [
+   66,
+   70,
+   56,
+   99,
+   85,
+   94
+  ],
+  "r": "normal",
+  "lore": "Was worshipped by whoever built the ruins.",
+  "b": 1,
+  "tr": 28,
+  "sig": -1
+ },
+ {
+  "n": 140,
+  "name": "Mosaik",
+  "t": [
+   "Gravity",
+   "Crystal"
+  ],
+  "st": 1,
+  "tot": 1,
+  "to": "",
+  "m": "Found in the wild",
+  "s": [
+   95,
+   76,
+   98,
+   84,
+   84,
+   33
+  ],
+  "r": "normal",
+  "lore": "Assembled itself from broken mural pieces.",
+  "b": 1,
+  "tr": 12,
+  "sig": -1
+ },
+ {
+  "n": 141,
+  "name": "Ashpup",
+  "t": [
+   "Magma"
+  ],
+  "st": 1,
+  "tot": 3,
+  "to": "Cinderhound",
+  "m": "Found in the wild",
+  "s": [
+   45,
+   72,
+   53,
+   44,
+   37,
+   49
+  ],
+  "r": "normal",
+  "lore": "Leaves glowing pawprints that last for hours.",
+  "b": 1,
+  "tr": 5,
+  "sig": -1
+ },
+ {
+  "n": 142,
+  "name": "Cinderhound",
+  "t": [
+   "Magma"
+  ],
+  "st": 2,
+  "tot": 3,
+  "to": "Pyroclast",
+  "m": "Level 24",
+  "s": [
+   56,
+   88,
+   77,
+   69,
+   47,
+   68
+  ],
+  "r": "normal",
+  "lore": "Leaves glowing pawprints that last for hours.",
+  "b": 1,
+  "tr": 5,
+  "sig": -1
+ },
+ {
+  "n": 143,
+  "name": "Pyroclast",
+  "t": [
+   "Magma"
+  ],
+  "st": 3,
+  "tot": 3,
+  "to": "",
+  "m": "Level 44",
+  "s": [
+   72,
+   112,
+   104,
+   90,
+   70,
+   82
+  ],
+  "r": "normal",
+  "lore": "Leaves glowing pawprints that last for hours.",
+  "b": 1,
+  "tr": 5,
+  "sig": -1
+ },
+ {
+  "n": 144,
+  "name": "Magmorb",
+  "t": [
+   "Magma",
+   "Gravity"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Coremantle",
+  "m": "Found in the wild",
+  "s": [
+   65,
+   75,
+   65,
+   39,
+   36,
+   30
+  ],
+  "r": "normal",
+  "lore": "Its core is denser than iron.",
+  "b": 1,
+  "tr": 5,
+  "sig": -1
+ },
+ {
+  "n": 145,
+  "name": "Coremantle",
+  "t": [
+   "Magma",
+   "Gravity"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 34",
+  "s": [
+   108,
+   110,
+   97,
+   53,
+   53,
+   49
+  ],
+  "r": "normal",
+  "lore": "Its core is denser than iron.",
+  "b": 1,
+  "tr": 5,
+  "sig": -1
+ },
+ {
+  "n": 146,
+  "name": "Obsidimp",
+  "t": [
+   "Magma",
+   "Crystal"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Obsidrake",
+  "m": "Found in the wild",
+  "s": [
+   40,
+   64,
+   56,
+   61,
+   49,
+   40
+  ],
+  "r": "normal",
+  "lore": "Cools its body into razor-sharp glass.",
+  "b": 1,
+  "tr": 41,
+  "sig": -1
+ },
+ {
+  "n": 147,
+  "name": "Obsidrake",
+  "t": [
+   "Magma",
+   "Crystal"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 34",
+  "s": [
+   76,
+   94,
+   94,
+   88,
+   66,
+   52
+  ],
+  "r": "normal",
+  "lore": "Cools its body into razor-sharp glass.",
+  "b": 1,
+  "tr": 41,
+  "sig": -1
+ },
+ {
+  "n": 148,
+  "name": "Kindlefly",
+  "t": [
+   "Magma",
+   "Swarm"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Blazewing",
+  "m": "Found in the wild",
+  "s": [
+   38,
+   75,
+   58,
+   33,
+   38,
+   68
+  ],
+  "r": "normal",
+  "lore": "Swarms light the mine shafts for workers.",
+  "b": 1,
+  "tr": 49,
+  "sig": -1
+ },
+ {
+  "n": 149,
+  "name": "Blazewing",
+  "t": [
+   "Magma",
+   "Swarm"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 34",
+  "s": [
+   57,
+   106,
+   84,
+   61,
+   54,
+   108
+  ],
+  "r": "normal",
+  "lore": "Swarms light the mine shafts for workers.",
+  "b": 1,
+  "tr": 49,
+  "sig": -1
+ },
+ {
+  "n": 150,
+  "name": "Drillit",
+  "t": [
+   "Magma",
+   "Alloy"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Drillcrag",
+  "m": "Found in the wild",
+  "s": [
+   49,
+   68,
+   71,
+   43,
+   40,
+   39
+  ],
+  "r": "normal",
+  "lore": "Drills through bedrock in minutes.",
+  "b": 1,
+  "tr": 24,
+  "sig": -1
+ },
+ {
+  "n": 151,
+  "name": "Drillcrag",
+  "t": [
+   "Magma",
+   "Alloy"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 34",
+  "s": [
+   75,
+   124,
+   106,
+   52,
+   61,
+   52
+  ],
+  "r": "normal",
+  "lore": "Drills through bedrock in minutes.",
+  "b": 1,
+  "tr": 24,
+  "sig": -1
+ },
+ {
+  "n": 152,
+  "name": "Smoglet",
+  "t": [
+   "Magma",
+   "Void"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Smogshade",
+  "m": "Found in the wild",
+  "s": [
+   42,
+   67,
+   47,
+   58,
+   35,
+   61
+  ],
+  "r": "normal",
+  "lore": "Hides in the smoke of eruptions.",
+  "b": 1,
+  "tr": 24,
+  "sig": -1
+ },
+ {
+  "n": 153,
+  "name": "Smogshade",
+  "t": [
+   "Magma",
+   "Void"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 34",
+  "s": [
+   77,
+   111,
+   66,
+   81,
+   56,
+   79
+  ],
+  "r": "normal",
+  "lore": "Hides in the smoke of eruptions.",
+  "b": 1,
+  "tr": 24,
+  "sig": -1
+ },
+ {
+  "n": 154,
+  "name": "Rumblet",
+  "t": [
+   "Magma",
+   "Sonic"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Tremoroar",
+  "m": "Found in the wild",
+  "s": [
+   43,
+   61,
+   41,
+   61,
+   37,
+   67
+  ],
+  "r": "normal",
+  "lore": "Its rumble warns of eruptions.",
+  "b": 1,
+  "tr": 48,
+  "sig": -1
+ },
+ {
+  "n": 155,
+  "name": "Tremoroar",
+  "t": [
+   "Magma",
+   "Sonic"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 34",
+  "s": [
+   76,
+   95,
+   64,
+   78,
+   64,
+   93
+  ],
+  "r": "normal",
+  "lore": "Its rumble warns of eruptions.",
+  "b": 1,
+  "tr": 48,
+  "sig": -1
+ },
+ {
+  "n": 156,
+  "name": "Scorchscale",
+  "t": [
+   "Magma"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Scorchwyrm",
+  "m": "Found in the wild",
+  "s": [
+   47,
+   74,
+   54,
+   56,
+   35,
+   44
+  ],
+  "r": "normal",
+  "lore": "Bathes in lava pools to shed its skin.",
+  "b": 1,
+  "tr": 5,
+  "sig": -1
+ },
+ {
+  "n": 157,
+  "name": "Scorchwyrm",
+  "t": [
+   "Magma"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 34",
+  "s": [
+   81,
+   92,
+   92,
+   73,
+   62,
+   70
+  ],
+  "r": "normal",
+  "lore": "Bathes in lava pools to shed its skin.",
+  "b": 1,
+  "tr": 5,
+  "sig": -1
+ },
+ {
+  "n": 158,
+  "name": "Basaltor",
+  "t": [
+   "Magma",
+   "Gravity"
+  ],
+  "st": 1,
+  "tot": 1,
+  "to": "",
+  "m": "Signature Alienmon (one-time gift or postgame encounter)",
+  "s": [
+   110,
+   119,
+   94,
+   69,
+   60,
+   48
+  ],
+  "r": "signature",
+  "lore": "Old Basalt's companion for sixty years.",
+  "b": 1,
+  "tr": 50,
+  "sig": 8
+ },
+ {
+  "n": 159,
+  "name": "Charsprout",
+  "t": [
+   "Magma",
+   "Bio"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Phoenixia",
+  "m": "Found in the wild",
+  "s": [
+   53,
+   59,
+   61,
+   49,
+   51,
+   37
+  ],
+  "r": "normal",
+  "lore": "Only sprouts after wildfires.",
+  "b": 1,
+  "tr": 41,
+  "sig": -1
+ },
+ {
+  "n": 160,
+  "name": "Phoenixia",
+  "t": [
+   "Magma",
+   "Bio"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 34",
+  "s": [
+   78,
+   89,
+   95,
+   72,
+   72,
+   64
+  ],
+  "r": "normal",
+  "lore": "Only sprouts after wildfires.",
+  "b": 1,
+  "tr": 41,
+  "sig": -1
+ },
+ {
+  "n": 161,
+  "name": "Snoblet",
+  "t": [
+   "Cryo"
+  ],
+  "st": 1,
+  "tot": 3,
+  "to": "Iceburr",
+  "m": "Found in the wild",
+  "s": [
+   42,
+   52,
+   52,
+   57,
+   61,
+   36
+  ],
+  "r": "normal",
+  "lore": "Rolls downhill growing bigger with each trip.",
+  "b": 1,
+  "tr": 27,
+  "sig": -1
+ },
+ {
+  "n": 162,
+  "name": "Iceburr",
+  "t": [
+   "Cryo"
+  ],
+  "st": 2,
+  "tot": 3,
+  "to": "Glaciarch",
+  "m": "Level 27",
+  "s": [
+   58,
+   64,
+   70,
+   81,
+   75,
+   57
+  ],
+  "r": "normal",
+  "lore": "Rolls downhill growing bigger with each trip.",
+  "b": 1,
+  "tr": 27,
+  "sig": -1
+ },
+ {
+  "n": 163,
+  "name": "Glaciarch",
+  "t": [
+   "Cryo"
+  ],
+  "st": 3,
+  "tot": 3,
+  "to": "",
+  "m": "Level 48",
+  "s": [
+   82,
+   84,
+   92,
+   106,
+   94,
+   72
+  ],
+  "r": "normal",
+  "lore": "Rolls downhill growing bigger with each trip.",
+  "b": 1,
+  "tr": 27,
+  "sig": -1
+ },
+ {
+  "n": 164,
+  "name": "Rimeshard",
+  "t": [
+   "Cryo",
+   "Crystal"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Rimecrown",
+  "m": "Found in the wild",
+  "s": [
+   41,
+   40,
+   64,
+   71,
+   64,
+   30
+  ],
+  "r": "normal",
+  "lore": "Its frost forms perfect geometric patterns.",
+  "b": 1,
+  "tr": 49,
+  "sig": -1
+ },
+ {
+  "n": 165,
+  "name": "Rimecrown",
+  "t": [
+   "Cryo",
+   "Crystal"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 38",
+  "s": [
+   66,
+   65,
+   93,
+   108,
+   102,
+   36
+  ],
+  "r": "normal",
+  "lore": "Its frost forms perfect geometric patterns.",
+  "b": 1,
+  "tr": 49,
+  "sig": -1
+ },
+ {
+  "n": 166,
+  "name": "Floepup",
+  "t": [
+   "Cryo",
+   "Hydro"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Floelord",
+  "m": "Found in the wild",
+  "s": [
+   53,
+   50,
+   47,
+   61,
+   66,
+   33
+  ],
+  "r": "normal",
+  "lore": "Slides on its belly faster than a sled.",
+  "b": 1,
+  "tr": 27,
+  "sig": -1
+ },
+ {
+  "n": 167,
+  "name": "Floelord",
+  "t": [
+   "Cryo",
+   "Hydro"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 38",
+  "s": [
+   88,
+   80,
+   76,
+   91,
+   98,
+   37
+  ],
+  "r": "normal",
+  "lore": "Slides on its belly faster than a sled.",
+  "b": 1,
+  "tr": 27,
+  "sig": -1
+ },
+ {
+  "n": 168,
+  "name": "Auroralet",
+  "t": [
+   "Cryo",
+   "Psi"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Aurorix",
+  "m": "Found in the wild",
+  "s": [
+   35,
+   42,
+   46,
+   76,
+   63,
+   48
+  ],
+  "r": "normal",
+  "lore": "Paints the night sky with its aura.",
+  "b": 1,
+  "tr": 27,
+  "sig": -1
+ },
+ {
+  "n": 169,
+  "name": "Aurorix",
+  "t": [
+   "Cryo",
+   "Psi"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 38",
+  "s": [
+   53,
+   64,
+   70,
+   109,
+   95,
+   79
+  ],
+  "r": "normal",
+  "lore": "Paints the night sky with its aura.",
+  "b": 1,
+  "tr": 27,
+  "sig": -1
+ },
+ {
+  "n": 170,
+  "name": "Hailorb",
+  "t": [
+   "Cryo",
+   "Gravity"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Hailbringer",
+  "m": "Found in the wild",
+  "s": [
+   61,
+   57,
+   62,
+   47,
+   57,
+   26
+  ],
+  "r": "normal",
+  "lore": "Drops hailstones on anything that threatens it.",
+  "b": 1,
+  "tr": 27,
+  "sig": -1
+ },
+ {
+  "n": 171,
+  "name": "Hailbringer",
+  "t": [
+   "Cryo",
+   "Gravity"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 38",
+  "s": [
+   101,
+   80,
+   93,
+   69,
+   91,
+   36
+  ],
+  "r": "normal",
+  "lore": "Drops hailstones on anything that threatens it.",
+  "b": 1,
+  "tr": 27,
+  "sig": -1
+ },
+ {
+  "n": 172,
+  "name": "Frostmite",
+  "t": [
+   "Cryo",
+   "Swarm"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Frostcolony",
+  "m": "Found in the wild",
+  "s": [
+   45,
+   57,
+   54,
+   47,
+   56,
+   51
+  ],
+  "r": "normal",
+  "lore": "Colonies sleep inside glaciers for years.",
+  "b": 1,
+  "tr": 18,
+  "sig": -1
+ },
+ {
+  "n": 173,
+  "name": "Frostcolony",
+  "t": [
+   "Cryo",
+   "Swarm"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 38",
+  "s": [
+   52,
+   87,
+   91,
+   67,
+   84,
+   89
+  ],
+  "r": "normal",
+  "lore": "Colonies sleep inside glaciers for years.",
+  "b": 1,
+  "tr": 18,
+  "sig": -1
+ },
+ {
+  "n": 174,
+  "name": "Chillshade",
+  "t": [
+   "Cryo",
+   "Void"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Whiteout",
+  "m": "Found in the wild",
+  "s": [
+   48,
+   57,
+   46,
+   67,
+   51,
+   41
+  ],
+  "r": "normal",
+  "lore": "Erases tracks in the snow so nobody can follow.",
+  "b": 1,
+  "tr": 45,
+  "sig": -1
+ },
+ {
+  "n": 175,
+  "name": "Whiteout",
+  "t": [
+   "Cryo",
+   "Void"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 38",
+  "s": [
+   68,
+   86,
+   74,
+   84,
+   86,
+   72
+  ],
+  "r": "normal",
+  "lore": "Erases tracks in the snow so nobody can follow.",
+  "b": 1,
+  "tr": 45,
+  "sig": -1
+ },
+ {
+  "n": 176,
+  "name": "Lichling",
+  "t": [
+   "Cryo",
+   "Bio"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Lichenoth",
+  "m": "Found in the wild",
+  "s": [
+   51,
+   47,
+   66,
+   58,
+   64,
+   24
+  ],
+  "r": "normal",
+  "lore": "Grows lichen fur that keeps it warm.",
+  "b": 1,
+  "tr": 27,
+  "sig": -1
+ },
+ {
+  "n": 177,
+  "name": "Lichenoth",
+  "t": [
+   "Cryo",
+   "Bio"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 38",
+  "s": [
+   76,
+   73,
+   88,
+   90,
+   96,
+   47
+  ],
+  "r": "normal",
+  "lore": "Grows lichen fur that keeps it warm.",
+  "b": 1,
+  "tr": 27,
+  "sig": -1
+ },
+ {
+  "n": 178,
+  "name": "Shatterling",
+  "t": [
+   "Cryo",
+   "Sonic"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Shatterhorn",
+  "m": "Found in the wild",
+  "s": [
+   51,
+   47,
+   46,
+   62,
+   53,
+   51
+  ],
+  "r": "normal",
+  "lore": "Cracks the ice with a single shout.",
+  "b": 1,
+  "tr": 45,
+  "sig": -1
+ },
+ {
+  "n": 179,
+  "name": "Shatterhorn",
+  "t": [
+   "Cryo",
+   "Sonic"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 38",
+  "s": [
+   73,
+   75,
+   73,
+   89,
+   77,
+   83
+  ],
+  "r": "normal",
+  "lore": "Cracks the ice with a single shout.",
+  "b": 1,
+  "tr": 45,
+  "sig": -1
+ },
+ {
+  "n": 180,
+  "name": "Glaciryx",
+  "t": [
+   "Cryo",
+   "Crystal"
+  ],
+  "st": 1,
+  "tot": 1,
+  "to": "",
+  "m": "Signature Alienmon (one-time gift or postgame encounter)",
+  "s": [
+   78,
+   74,
+   97,
+   106,
+   95,
+   50
+  ],
+  "r": "signature",
+  "lore": "Ingrid Vale's partner on every expedition.",
+  "b": 1,
+  "tr": 50,
+  "sig": 9
+ },
+ {
+  "n": 181,
+  "name": "Thawmaw",
+  "t": [
+   "Cryo",
+   "Void"
+  ],
+  "st": 1,
+  "tot": 1,
+  "to": "",
+  "m": "Found in the wild",
+  "s": [
+   72,
+   84,
+   66,
+   98,
+   84,
+   66
+  ],
+  "r": "normal",
+  "lore": "Thawed from the Ystra fossil Ingrid found; it remembers the Devourer.",
+  "b": 1,
+  "tr": 45,
+  "sig": 10
+ },
+ {
+  "n": 182,
+  "name": "Icicub",
+  "t": [
+   "Cryo"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Stalactrix",
+  "m": "Found in the wild",
+  "s": [
+   53,
+   42,
+   63,
+   54,
+   56,
+   42
+  ],
+  "r": "normal",
+  "lore": "Hibernates inside icicles hanging from cliffs.",
+  "b": 1,
+  "tr": 4,
+  "sig": -1
+ },
+ {
+  "n": 183,
+  "name": "Stalactrix",
+  "t": [
+   "Cryo"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 38",
+  "s": [
+   67,
+   77,
+   86,
+   86,
+   84,
+   70
+  ],
+  "r": "normal",
+  "lore": "Hibernates inside icicles hanging from cliffs.",
+  "b": 1,
+  "tr": 4,
+  "sig": -1
+ },
+ {
+  "n": 184,
+  "name": "Splicelet",
+  "t": [
+   "Alloy",
+   "Psi"
+  ],
+  "st": 1,
+  "tot": 3,
+  "to": "Splicor",
+  "m": "Found in the wild",
+  "s": [
+   38,
+   43,
+   57,
+   54,
+   54,
+   54
+  ],
+  "r": "normal",
+  "lore": "Built by Helix by splicing two Alienmon together.",
+  "b": 1,
+  "tr": 8,
+  "sig": -1
+ },
+ {
+  "n": 185,
+  "name": "Splicor",
+  "t": [
+   "Alloy",
+   "Psi"
+  ],
+  "st": 2,
+  "tot": 3,
+  "to": "Chimerax",
+  "m": "Level 27",
+  "s": [
+   54,
+   71,
+   69,
+   71,
+   79,
+   61
+  ],
+  "r": "normal",
+  "lore": "Built by Helix by splicing two Alienmon together.",
+  "b": 1,
+  "tr": 8,
+  "sig": -1
+ },
+ {
+  "n": 186,
+  "name": "Chimerax",
+  "t": [
+   "Alloy",
+   "Psi"
+  ],
+  "st": 3,
+  "tot": 3,
+  "to": "",
+  "m": "Level 48",
+  "s": [
+   55,
+   86,
+   103,
+   103,
+   101,
+   82
+  ],
+  "r": "normal",
+  "lore": "Built by Helix by splicing two Alienmon together.",
+  "b": 1,
+  "tr": 8,
+  "sig": -1
+ },
+ {
+  "n": 187,
+  "name": "Vialit",
+  "t": [
+   "Toxin",
+   "Volt"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Vialord",
+  "m": "Found in the wild",
+  "s": [
+   45,
+   43,
+   43,
+   61,
+   68,
+   50
+  ],
+  "r": "normal",
+  "lore": "Escaped from a Helix test tube.",
+  "b": 1,
+  "tr": 26,
+  "sig": -1
+ },
+ {
+  "n": 188,
+  "name": "Vialord",
+  "t": [
+   "Toxin",
+   "Volt"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 38",
+  "s": [
+   68,
+   68,
+   56,
+   92,
+   105,
+   81
+  ],
+  "r": "normal",
+  "lore": "Escaped from a Helix test tube.",
+  "b": 1,
+  "tr": 26,
+  "sig": -1
+ },
+ {
+  "n": 189,
+  "name": "Cagebot",
+  "t": [
+   "Alloy",
+   "Gravity"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Wardenix",
+  "m": "Found in the wild",
+  "s": [
+   66,
+   62,
+   69,
+   34,
+   55,
+   24
+  ],
+  "r": "normal",
+  "lore": "Helix's security drones patrol the Spire.",
+  "b": 1,
+  "tr": 49,
+  "sig": -1
+ },
+ {
+  "n": 190,
+  "name": "Wardenix",
+  "t": [
+   "Alloy",
+   "Gravity"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 38",
+  "s": [
+   91,
+   95,
+   119,
+   46,
+   78,
+   41
+  ],
+  "r": "normal",
+  "lore": "Helix's security drones patrol the Spire.",
+  "b": 1,
+  "tr": 49,
+  "sig": -1
+ },
+ {
+  "n": 191,
+  "name": "Nullbot",
+  "t": [
+   "Void",
+   "Alloy"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Nulltron",
+  "m": "Found in the wild",
+  "s": [
+   47,
+   69,
+   56,
+   51,
+   45,
+   42
+  ],
+  "r": "normal",
+  "lore": "A failed Helix experiment that deleted itself from the records.",
+  "b": 1,
+  "tr": 32,
+  "sig": -1
+ },
+ {
+  "n": 192,
+  "name": "Nulltron",
+  "t": [
+   "Void",
+   "Alloy"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 38",
+  "s": [
+   78,
+   96,
+   86,
+   76,
+   67,
+   67
+  ],
+  "r": "normal",
+  "lore": "A failed Helix experiment that deleted itself from the records.",
+  "b": 1,
+  "tr": 32,
+  "sig": -1
+ },
+ {
+  "n": 193,
+  "name": "Vexhydra",
+  "t": [
+   "Toxin"
+  ],
+  "st": 1,
+  "tot": 1,
+  "to": "",
+  "m": "Signature Alienmon (one-time gift or postgame encounter)",
+  "s": [
+   73,
+   71,
+   69,
+   101,
+   113,
+   73
+  ],
+  "r": "signature",
+  "lore": "Admin Vex's favorite.",
+  "b": 1,
+  "tr": 50,
+  "sig": 11
+ },
+ {
+  "n": 194,
+  "name": "Bronnix",
+  "t": [
+   "Alloy"
+  ],
+  "st": 1,
+  "tot": 1,
+  "to": "",
+  "m": "Signature Alienmon (one-time gift or postgame encounter)",
+  "s": [
+   79,
+   92,
+   109,
+   75,
+   75,
+   70
+  ],
+  "r": "signature",
+  "lore": "Admin Bronn built its armor himself.",
+  "b": 1,
+  "tr": 50,
+  "sig": 12
+ },
+ {
+  "n": 195,
+  "name": "Thornvoid",
+  "t": [
+   "Gravity",
+   "Void"
+  ],
+  "st": 1,
+  "tot": 1,
+  "to": "",
+  "m": "Signature Alienmon (one-time gift or postgame encounter)",
+  "s": [
+   97,
+   101,
+   80,
+   71,
+   78,
+   73
+  ],
+  "r": "signature",
+  "lore": "Kael Thorne's ace, raised from a pod he stole from the crater.",
+  "b": 1,
+  "tr": 50,
+  "sig": 13
+ },
+ {
+  "n": 196,
+  "name": "Mindlet",
+  "t": [
+   "Psi"
+  ],
+  "st": 1,
+  "tot": 3,
+  "to": "Cerebrix",
+  "m": "Found in the wild",
+  "s": [
+   36,
+   45,
+   37,
+   64,
+   64,
+   54
+  ],
+  "r": "normal",
+  "lore": "Can read a Linker's thoughts from across a room.",
+  "b": 1,
+  "tr": 28,
+  "sig": -1
+ },
+ {
+  "n": 197,
+  "name": "Cerebrix",
+  "t": [
+   "Psi"
+  ],
+  "st": 2,
+  "tot": 3,
+  "to": "Cerebralux",
+  "m": "Level 30",
+  "s": [
+   53,
+   58,
+   60,
+   86,
+   75,
+   73
+  ],
+  "r": "normal",
+  "lore": "Can read a Linker's thoughts from across a room.",
+  "b": 1,
+  "tr": 28,
+  "sig": -1
+ },
+ {
+  "n": 198,
+  "name": "Cerebralux",
+  "t": [
+   "Psi"
+  ],
+  "st": 3,
+  "tot": 3,
+  "to": "",
+  "m": "Resonance: level up on the Halo Heights tower roof",
+  "s": [
+   78,
+   78,
+   73,
+   115,
+   98,
+   88
+  ],
+  "r": "normal",
+  "lore": "Can read a Linker's thoughts from across a room.",
+  "b": 1,
+  "tr": 28,
+  "sig": -1
+ },
+ {
+  "n": 199,
+  "name": "Humlet",
+  "t": [
+   "Psi",
+   "Sonic"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Hummingmind",
+  "m": "Found in the wild",
+  "s": [
+   40,
+   38,
+   32,
+   74,
+   52,
+   74
+  ],
+  "r": "normal",
+  "lore": "Hums to calm anxious Alienmon.",
+  "b": 1,
+  "tr": 43,
+  "sig": -1
+ },
+ {
+  "n": 200,
+  "name": "Hummingmind",
+  "t": [
+   "Psi",
+   "Sonic"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Resonance: level up on the Halo Heights tower roof",
+  "s": [
+   53,
+   58,
+   43,
+   111,
+   90,
+   115
+  ],
+  "r": "normal",
+  "lore": "Hums to calm anxious Alienmon.",
+  "b": 1,
+  "tr": 43,
+  "sig": -1
+ },
+ {
+  "n": 201,
+  "name": "Levitot",
+  "t": [
+   "Psi",
+   "Gravity"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Levitaur",
+  "m": "Found in the wild",
+  "s": [
+   55,
+   49,
+   44,
+   62,
+   60,
+   40
+  ],
+  "r": "normal",
+  "lore": "Has never once touched the ground.",
+  "b": 1,
+  "tr": 48,
+  "sig": -1
+ },
+ {
+  "n": 202,
+  "name": "Levitaur",
+  "t": [
+   "Psi",
+   "Gravity"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Resonance: level up on the Halo Heights tower roof",
+  "s": [
+   97,
+   65,
+   70,
+   92,
+   83,
+   63
+  ],
+  "r": "normal",
+  "lore": "Has never once touched the ground.",
+  "b": 1,
+  "tr": 48,
+  "sig": -1
+ },
+ {
+  "n": 203,
+  "name": "Haloette",
+  "t": [
+   "Psi",
+   "Crystal"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Halocene",
+  "m": "Found in the wild",
+  "s": [
+   34,
+   41,
+   44,
+   84,
+   66,
+   41
+  ],
+  "r": "normal",
+  "lore": "Wears a halo of floating crystal.",
+  "b": 1,
+  "tr": 28,
+  "sig": -1
+ },
+ {
+  "n": 204,
+  "name": "Halocene",
+  "t": [
+   "Psi",
+   "Crystal"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Resonance: level up on the Halo Heights tower roof",
+  "s": [
+   52,
+   55,
+   66,
+   122,
+   99,
+   76
+  ],
+  "r": "normal",
+  "lore": "Wears a halo of floating crystal.",
+  "b": 1,
+  "tr": 28,
+  "sig": -1
+ },
+ {
+  "n": 205,
+  "name": "Zephyrling",
+  "t": [
+   "Sonic",
+   "Gravity"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Zephyrion",
+  "m": "Found in the wild",
+  "s": [
+   66,
+   50,
+   50,
+   47,
+   53,
+   44
+  ],
+  "r": "normal",
+  "lore": "Rides cliff winds for days without landing.",
+  "b": 1,
+  "tr": 48,
+  "sig": -1
+ },
+ {
+  "n": 206,
+  "name": "Zephyrion",
+  "t": [
+   "Sonic",
+   "Gravity"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Resonance: level up on the Halo Heights tower roof",
+  "s": [
+   90,
+   87,
+   77,
+   77,
+   62,
+   77
+  ],
+  "r": "normal",
+  "lore": "Rides cliff winds for days without landing.",
+  "b": 1,
+  "tr": 48,
+  "sig": -1
+ },
+ {
+  "n": 207,
+  "name": "Dreamwisp",
+  "t": [
+   "Psi",
+   "Void"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Nightmarra",
+  "m": "Found in the wild",
+  "s": [
+   35,
+   47,
+   29,
+   75,
+   59,
+   65
+  ],
+  "r": "normal",
+  "lore": "Visits people in their dreams.",
+  "b": 1,
+  "tr": 44,
+  "sig": -1
+ },
+ {
+  "n": 208,
+  "name": "Nightmarra",
+  "t": [
+   "Psi",
+   "Void"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Resonance: level up on the Halo Heights tower roof",
+  "s": [
+   59,
+   79,
+   45,
+   107,
+   90,
+   90
+  ],
+  "r": "normal",
+  "lore": "Visits people in their dreams.",
+  "b": 1,
+  "tr": 44,
+  "sig": -1
+ },
+ {
+  "n": 209,
+  "name": "Astrochick",
+  "t": [
+   "Psi"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Astrowl",
+  "m": "Found in the wild",
+  "s": [
+   43,
+   45,
+   44,
+   60,
+   60,
+   58
+  ],
+  "r": "normal",
+  "lore": "Navigates by the stars.",
+  "b": 1,
+  "tr": 43,
+  "sig": -1
+ },
+ {
+  "n": 210,
+  "name": "Astrowl",
+  "t": [
+   "Psi"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Resonance: level up on the Halo Heights tower roof",
+  "s": [
+   55,
+   66,
+   71,
+   96,
+   89,
+   93
+  ],
+  "r": "normal",
+  "lore": "Navigates by the stars.",
+  "b": 1,
+  "tr": 43,
+  "sig": -1
+ },
+ {
+  "n": 211,
+  "name": "Mirrix",
+  "t": [
+   "Psi",
+   "Crystal"
+  ],
+  "st": 1,
+  "tot": 1,
+  "to": "",
+  "m": "Signature Alienmon (one-time gift or postgame encounter)",
+  "s": [
+   65,
+   57,
+   72,
+   130,
+   104,
+   72
+  ],
+  "r": "signature",
+  "lore": "Echo's partner; it shows you what you fear.",
+  "b": 1,
+  "tr": 50,
+  "sig": 14
+ },
+ {
+  "n": 212,
+  "name": "Reflix",
+  "t": [
+   "Psi",
+   "Crystal"
+  ],
+  "st": 1,
+  "tot": 1,
+  "to": "",
+  "m": "Signature Alienmon (one-time gift or postgame encounter)",
+  "s": [
+   69,
+   57,
+   82,
+   125,
+   101,
+   66
+  ],
+  "r": "signature",
+  "lore": "Iris's partner; it shows you what you hope for.",
+  "b": 1,
+  "tr": 50,
+  "sig": 15
+ },
+ {
+  "n": 213,
+  "name": "Bardlet",
+  "t": [
+   "Psi",
+   "Sonic"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Bardoracle",
+  "m": "Found in the wild",
+  "s": [
+   41,
+   35,
+   30,
+   74,
+   54,
+   76
+  ],
+  "r": "normal",
+  "lore": "Speaks in rhymes that predict the weather.",
+  "b": 1,
+  "tr": 43,
+  "sig": -1
+ },
+ {
+  "n": 214,
+  "name": "Bardoracle",
+  "t": [
+   "Psi",
+   "Sonic"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 42",
+  "s": [
+   55,
+   56,
+   40,
+   113,
+   89,
+   117
+  ],
+  "r": "normal",
+  "lore": "Speaks in rhymes that predict the weather.",
+  "b": 1,
+  "tr": 43,
+  "sig": -1
+ },
+ {
+  "n": 215,
+  "name": "Gloomit",
+  "t": [
+   "Void"
+  ],
+  "st": 1,
+  "tot": 3,
+  "to": "Gloomhaunt",
+  "m": "Found in the wild",
+  "s": [
+   44,
+   61,
+   35,
+   55,
+   54,
+   51
+  ],
+  "r": "normal",
+  "lore": "Collects lost things from the sinkhole.",
+  "b": 1,
+  "tr": 13,
+  "sig": -1
+ },
+ {
+  "n": 216,
+  "name": "Gloomhaunt",
+  "t": [
+   "Void"
+  ],
+  "st": 2,
+  "tot": 3,
+  "to": "Gloomhulk",
+  "m": "Level 30",
+  "s": [
+   61,
+   68,
+   53,
+   78,
+   65,
+   80
+  ],
+  "r": "normal",
+  "lore": "Collects lost things from the sinkhole.",
+  "b": 1,
+  "tr": 13,
+  "sig": -1
+ },
+ {
+  "n": 217,
+  "name": "Gloomhulk",
+  "t": [
+   "Void"
+  ],
+  "st": 3,
+  "tot": 3,
+  "to": "",
+  "m": "Level 52",
+  "s": [
+   77,
+   106,
+   67,
+   97,
+   77,
+   106
+  ],
+  "r": "normal",
+  "lore": "Collects lost things from the sinkhole.",
+  "b": 1,
+  "tr": 13,
+  "sig": -1
+ },
+ {
+  "n": 218,
+  "name": "Wellspawn",
+  "t": [
+   "Void",
+   "Gravity"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Wellmaw",
+  "m": "Found in the wild",
+  "s": [
+   65,
+   65,
+   49,
+   43,
+   46,
+   42
+  ],
+  "r": "normal",
+  "lore": "Born where the ground fell in.",
+  "b": 1,
+  "tr": 47,
+  "sig": -1
+ },
+ {
+  "n": 219,
+  "name": "Wellmaw",
+  "t": [
+   "Void",
+   "Gravity"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 42",
+  "s": [
+   104,
+   92,
+   76,
+   70,
+   74,
+   54
+  ],
+  "r": "normal",
+  "lore": "Born where the ground fell in.",
+  "b": 1,
+  "tr": 47,
+  "sig": -1
+ },
+ {
+  "n": 220,
+  "name": "Ruinbot",
+  "t": [
+   "Gravity",
+   "Alloy"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Ruinmech",
+  "m": "Found in the wild",
+  "s": [
+   69,
+   69,
+   70,
+   33,
+   46,
+   23
+  ],
+  "r": "normal",
+  "lore": "Rebuilds collapsed buildings at night.",
+  "b": 1,
+  "tr": 12,
+  "sig": -1
+ },
+ {
+  "n": 221,
+  "name": "Ruinmech",
+  "t": [
+   "Gravity",
+   "Alloy"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 42",
+  "s": [
+   105,
+   89,
+   114,
+   50,
+   76,
+   36
+  ],
+  "r": "normal",
+  "lore": "Rebuilds collapsed buildings at night.",
+  "b": 1,
+  "tr": 12,
+  "sig": -1
+ },
+ {
+  "n": 222,
+  "name": "Duskmite",
+  "t": [
+   "Void",
+   "Swarm"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Dusklord",
+  "m": "Found in the wild",
+  "s": [
+   34,
+   61,
+   38,
+   50,
+   52,
+   75
+  ],
+  "r": "normal",
+  "lore": "Glows faintly in the deepest tunnels.",
+  "b": 1,
+  "tr": 32,
+  "sig": -1
+ },
+ {
+  "n": 223,
+  "name": "Dusklord",
+  "t": [
+   "Void",
+   "Swarm"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 42",
+  "s": [
+   54,
+   94,
+   69,
+   67,
+   76,
+   110
+  ],
+  "r": "normal",
+  "lore": "Glows faintly in the deepest tunnels.",
+  "b": 1,
+  "tr": 32,
+  "sig": -1
+ },
+ {
+  "n": 224,
+  "name": "Wailshade",
+  "t": [
+   "Void",
+   "Sonic"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Banshriek",
+  "m": "Found in the wild",
+  "s": [
+   46,
+   55,
+   33,
+   65,
+   41,
+   70
+  ],
+  "r": "normal",
+  "lore": "Its wail echoes up from the sinkhole.",
+  "b": 1,
+  "tr": 23,
+  "sig": -1
+ },
+ {
+  "n": 225,
+  "name": "Banshriek",
+  "t": [
+   "Void",
+   "Sonic"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 42",
+  "s": [
+   70,
+   91,
+   41,
+   93,
+   66,
+   109
+  ],
+  "r": "normal",
+  "lore": "Its wail echoes up from the sinkhole.",
+  "b": 1,
+  "tr": 23,
+  "sig": -1
+ },
+ {
+  "n": 226,
+  "name": "Geodle",
+  "t": [
+   "Gravity",
+   "Crystal"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Geodome",
+  "m": "Found in the wild",
+  "s": [
+   67,
+   55,
+   62,
+   53,
+   51,
+   22
+  ],
+  "r": "normal",
+  "lore": "Hollow inside, full of crystals.",
+  "b": 1,
+  "tr": 22,
+  "sig": -1
+ },
+ {
+  "n": 227,
+  "name": "Geodome",
+  "t": [
+   "Gravity",
+   "Crystal"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 42",
+  "s": [
+   95,
+   84,
+   93,
+   86,
+   74,
+   38
+  ],
+  "r": "normal",
+  "lore": "Hollow inside, full of crystals.",
+  "b": 1,
+  "tr": 22,
+  "sig": -1
+ },
+ {
+  "n": 228,
+  "name": "Rotroot",
+  "t": [
+   "Void",
+   "Bio"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Gravebloom",
+  "m": "Found in the wild",
+  "s": [
+   49,
+   61,
+   45,
+   57,
+   55,
+   43
+  ],
+  "r": "normal",
+  "lore": "Blooms only in total darkness.",
+  "b": 1,
+  "tr": 23,
+  "sig": -1
+ },
+ {
+  "n": 229,
+  "name": "Gravebloom",
+  "t": [
+   "Void",
+   "Bio"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 42",
+  "s": [
+   78,
+   74,
+   76,
+   91,
+   88,
+   63
+  ],
+  "r": "normal",
+  "lore": "Blooms only in total darkness.",
+  "b": 1,
+  "tr": 23,
+  "sig": -1
+ },
+ {
+  "n": 230,
+  "name": "Horizar",
+  "t": [
+   "Void"
+  ],
+  "st": 1,
+  "tot": 1,
+  "to": "",
+  "m": "Signature Alienmon (one-time gift or postgame encounter)",
+  "s": [
+   84,
+   100,
+   72,
+   86,
+   72,
+   86
+  ],
+  "r": "signature",
+  "lore": "Mortimer Kade's guardian.",
+  "b": 1,
+  "tr": 50,
+  "sig": 16
+ },
+ {
+  "n": 231,
+  "name": "Novaling",
+  "t": [
+   "Plasma"
+  ],
+  "st": 1,
+  "tot": 3,
+  "to": "Novacat",
+  "m": "Found in the wild",
+  "s": [
+   47,
+   47,
+   40,
+   66,
+   41,
+   59
+  ],
+  "r": "normal",
+  "lore": "Was born from the heat of the first impact.",
+  "b": 1,
+  "tr": 24,
+  "sig": -1
+ },
+ {
+  "n": 232,
+  "name": "Novacat",
+  "t": [
+   "Plasma"
+  ],
+  "st": 2,
+  "tot": 3,
+  "to": "Supernovyx",
+  "m": "Level 33",
+  "s": [
+   69,
+   57,
+   49,
+   86,
+   66,
+   78
+  ],
+  "r": "normal",
+  "lore": "Was born from the heat of the first impact.",
+  "b": 1,
+  "tr": 24,
+  "sig": -1
+ },
+ {
+  "n": 233,
+  "name": "Supernovyx",
+  "t": [
+   "Plasma"
+  ],
+  "st": 3,
+  "tot": 3,
+  "to": "",
+  "m": "Resonance: hold all 8 Signal Shards",
+  "s": [
+   82,
+   81,
+   76,
+   123,
+   76,
+   92
+  ],
+  "r": "normal",
+  "lore": "Was born from the heat of the first impact.",
+  "b": 1,
+  "tr": 24,
+  "sig": -1
+ },
+ {
+  "n": 234,
+  "name": "Quasarling",
+  "t": [
+   "Plasma",
+   "Gravity"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Quasarus",
+  "m": "Found in the wild",
+  "s": [
+   61,
+   60,
+   53,
+   52,
+   49,
+   35
+  ],
+  "r": "normal",
+  "lore": "Spins so fast it bends light.",
+  "b": 1,
+  "tr": 47,
+  "sig": -1
+ },
+ {
+  "n": 235,
+  "name": "Quasarus",
+  "t": [
+   "Plasma",
+   "Gravity"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Resonance: hold all 8 Signal Shards",
+  "s": [
+   97,
+   89,
+   73,
+   89,
+   68,
+   54
+  ],
+  "r": "normal",
+  "lore": "Spins so fast it bends light.",
+  "b": 1,
+  "tr": 47,
+  "sig": -1
+ },
+ {
+  "n": 236,
+  "name": "Prismite",
+  "t": [
+   "Plasma",
+   "Crystal"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Prismora",
+  "m": "Found in the wild",
+  "s": [
+   47,
+   41,
+   40,
+   79,
+   54,
+   49
+  ],
+  "r": "normal",
+  "lore": "Splits sunlight into rainbow beams.",
+  "b": 1,
+  "tr": 47,
+  "sig": -1
+ },
+ {
+  "n": 237,
+  "name": "Prismora",
+  "t": [
+   "Plasma",
+   "Crystal"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Resonance: hold all 8 Signal Shards",
+  "s": [
+   62,
+   67,
+   71,
+   112,
+   83,
+   75
+  ],
+  "r": "normal",
+  "lore": "Splits sunlight into rainbow beams.",
+  "b": 1,
+  "tr": 47,
+  "sig": -1
+ },
+ {
+  "n": 238,
+  "name": "Eclipsit",
+  "t": [
+   "Plasma",
+   "Void"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Eclipsor",
+  "m": "Found in the wild",
+  "s": [
+   41,
+   53,
+   26,
+   72,
+   53,
+   65
+  ],
+  "r": "normal",
+  "lore": "Half of it is always in shadow.",
+  "b": 1,
+  "tr": 48,
+  "sig": -1
+ },
+ {
+  "n": 239,
+  "name": "Eclipsor",
+  "t": [
+   "Plasma",
+   "Void"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Resonance: hold all 8 Signal Shards",
+  "s": [
+   65,
+   91,
+   46,
+   108,
+   65,
+   95
+  ],
+  "r": "normal",
+  "lore": "Half of it is always in shadow.",
+  "b": 1,
+  "tr": 48,
+  "sig": -1
+ },
+ {
+  "n": 240,
+  "name": "Cometlet",
+  "t": [
+   "Gravity",
+   "Plasma"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Cometrix",
+  "m": "Found in the wild",
+  "s": [
+   71,
+   51,
+   46,
+   58,
+   46,
+   38
+  ],
+  "r": "normal",
+  "lore": "Leaves a trail of sparkling dust.",
+  "b": 1,
+  "tr": 33,
+  "sig": -1
+ },
+ {
+  "n": 241,
+  "name": "Cometrix",
+  "t": [
+   "Gravity",
+   "Plasma"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Resonance: hold all 8 Signal Shards",
+  "s": [
+   92,
+   94,
+   64,
+   86,
+   81,
+   53
+  ],
+  "r": "normal",
+  "lore": "Leaves a trail of sparkling dust.",
+  "b": 1,
+  "tr": 33,
+  "sig": -1
+ },
+ {
+  "n": 242,
+  "name": "Meteorb",
+  "t": [
+   "Crystal",
+   "Gravity"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Meteorox",
+  "m": "Found in the wild",
+  "s": [
+   60,
+   53,
+   65,
+   57,
+   53,
+   22
+  ],
+  "r": "normal",
+  "lore": "A fragment of the original meteor.",
+  "b": 1,
+  "tr": 37,
+  "sig": -1
+ },
+ {
+  "n": 243,
+  "name": "Meteorox",
+  "t": [
+   "Crystal",
+   "Gravity"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Resonance: hold all 8 Signal Shards",
+  "s": [
+   94,
+   78,
+   90,
+   86,
+   88,
+   34
+  ],
+  "r": "normal",
+  "lore": "A fragment of the original meteor.",
+  "b": 1,
+  "tr": 37,
+  "sig": -1
+ },
+ {
+  "n": 244,
+  "name": "Sunbug",
+  "t": [
+   "Plasma",
+   "Swarm"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Solarswarm",
+  "m": "Found in the wild",
+  "s": [
+   35,
+   52,
+   38,
+   56,
+   54,
+   75
+  ],
+  "r": "normal",
+  "lore": "Colonies glow like a tiny sun at noon.",
+  "b": 1,
+  "tr": 14,
+  "sig": -1
+ },
+ {
+  "n": 245,
+  "name": "Solarswarm",
+  "t": [
+   "Plasma",
+   "Swarm"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Resonance: hold all 8 Signal Shards",
+  "s": [
+   60,
+   88,
+   55,
+   83,
+   77,
+   107
+  ],
+  "r": "normal",
+  "lore": "Colonies glow like a tiny sun at noon.",
+  "b": 1,
+  "tr": 14,
+  "sig": -1
+ },
+ {
+  "n": 246,
+  "name": "Starsprout",
+  "t": [
+   "Bio",
+   "Plasma"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Starbloom",
+  "m": "Found in the wild",
+  "s": [
+   55,
+   45,
+   43,
+   59,
+   60,
+   48
+  ],
+  "r": "normal",
+  "lore": "Grows only where starlight hits the ground.",
+  "b": 1,
+  "tr": 35,
+  "sig": -1
+ },
+ {
+  "n": 247,
+  "name": "Starbloom",
+  "t": [
+   "Bio",
+   "Plasma"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Resonance: hold all 8 Signal Shards",
+  "s": [
+   79,
+   70,
+   70,
+   99,
+   77,
+   75
+  ],
+  "r": "normal",
+  "lore": "Grows only where starlight hits the ground.",
+  "b": 1,
+  "tr": 35,
+  "sig": -1
+ },
+ {
+  "n": 248,
+  "name": "Podlet",
+  "t": [
+   "Bio"
+  ],
+  "st": 1,
+  "tot": 3,
+  "to": "Podspawn",
+  "m": "Found in the wild",
+  "s": [
+   59,
+   42,
+   56,
+   51,
+   54,
+   38
+  ],
+  "r": "normal",
+  "lore": "An Alienmon that never fully hatched.",
+  "b": 1,
+  "tr": 35,
+  "sig": -1
+ },
+ {
+  "n": 249,
+  "name": "Podspawn",
+  "t": [
+   "Bio"
+  ],
+  "st": 2,
+  "tot": 3,
+  "to": "Podsentinel",
+  "m": "Level 33",
+  "s": [
+   83,
+   60,
+   81,
+   56,
+   75,
+   50
+  ],
+  "r": "normal",
+  "lore": "An Alienmon that never fully hatched.",
+  "b": 1,
+  "tr": 35,
+  "sig": -1
+ },
+ {
+  "n": 250,
+  "name": "Podsentinel",
+  "t": [
+   "Bio"
+  ],
+  "st": 3,
+  "tot": 3,
+  "to": "",
+  "m": "Resonance: hold all 8 Signal Shards",
+  "s": [
+   97,
+   90,
+   105,
+   76,
+   93,
+   69
+  ],
+  "r": "normal",
+  "lore": "An Alienmon that never fully hatched.",
+  "b": 1,
+  "tr": 35,
+  "sig": -1
+ },
+ {
+  "n": 251,
+  "name": "Foldling",
+  "t": [
+   "Gravity",
+   "Void"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Foldarch",
+  "m": "Found in the wild",
+  "s": [
+   63,
+   71,
+   48,
+   45,
+   49,
+   34
+  ],
+  "r": "normal",
+  "lore": "Lives at the edge of the Rift, where space folds.",
+  "b": 1,
+  "tr": 40,
+  "sig": -1
+ },
+ {
+  "n": 252,
+  "name": "Foldarch",
+  "t": [
+   "Gravity",
+   "Void"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Resonance: hold all 8 Signal Shards",
+  "s": [
+   87,
+   101,
+   72,
+   74,
+   74,
+   62
+  ],
+  "r": "normal",
+  "lore": "Lives at the edge of the Rift, where space folds.",
+  "b": 1,
+  "tr": 40,
+  "sig": -1
+ },
+ {
+  "n": 253,
+  "name": "Gemmling",
+  "t": [
+   "Crystal"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Gemmantle",
+  "m": "Found in the wild",
+  "s": [
+   48,
+   48,
+   53,
+   64,
+   57,
+   40
+  ],
+  "r": "normal",
+  "lore": "Grows a new gem every year.",
+  "b": 1,
+  "tr": 31,
+  "sig": -1
+ },
+ {
+  "n": 254,
+  "name": "Gemmantle",
+  "t": [
+   "Crystal"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 46",
+  "s": [
+   75,
+   80,
+   89,
+   91,
+   83,
+   52
+  ],
+  "r": "normal",
+  "lore": "Grows a new gem every year.",
+  "b": 1,
+  "tr": 31,
+  "sig": -1
+ },
+ {
+  "n": 255,
+  "name": "Riffling",
+  "t": [
+   "Sonic"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Riffrex",
+  "m": "Found in the wild",
+  "s": [
+   52,
+   48,
+   36,
+   54,
+   48,
+   72
+  ],
+  "r": "normal",
+  "lore": "Practices riffs echoing off the mountains.",
+  "b": 1,
+  "tr": 39,
+  "sig": -1
+ },
+ {
+  "n": 256,
+  "name": "Riffrex",
+  "t": [
+   "Sonic"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 46",
+  "s": [
+   75,
+   65,
+   61,
+   92,
+   74,
+   103
+  ],
+  "r": "normal",
+  "lore": "Practices riffs echoing off the mountains.",
+  "b": 1,
+  "tr": 39,
+  "sig": -1
+ },
+ {
+  "n": 257,
+  "name": "Cragpull",
+  "t": [
+   "Gravity"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Cragmajor",
+  "m": "Found in the wild",
+  "s": [
+   71,
+   59,
+   60,
+   44,
+   43,
+   33
+  ],
+  "r": "normal",
+  "lore": "Holds avalanches in place.",
+  "b": 1,
+  "tr": 22,
+  "sig": -1
+ },
+ {
+  "n": 258,
+  "name": "Cragmajor",
+  "t": [
+   "Gravity"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 46",
+  "s": [
+   106,
+   90,
+   86,
+   56,
+   81,
+   51
+  ],
+  "r": "normal",
+  "lore": "Holds avalanches in place.",
+  "b": 1,
+  "tr": 22,
+  "sig": -1
+ },
+ {
+  "n": 259,
+  "name": "Flarechick",
+  "t": [
+   "Plasma"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Flarehawk",
+  "m": "Found in the wild",
+  "s": [
+   52,
+   49,
+   43,
+   60,
+   53,
+   53
+  ],
+  "r": "normal",
+  "lore": "Dives at prey like a falling star.",
+  "b": 1,
+  "tr": 24,
+  "sig": -1
+ },
+ {
+  "n": 260,
+  "name": "Flarehawk",
+  "t": [
+   "Plasma"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 46",
+  "s": [
+   85,
+   67,
+   55,
+   103,
+   73,
+   87
+  ],
+  "r": "normal",
+  "lore": "Dives at prey like a falling star.",
+  "b": 1,
+  "tr": 24,
+  "sig": -1
+ },
+ {
+  "n": 261,
+  "name": "Diamite",
+  "t": [
+   "Alloy",
+   "Crystal"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Diamondillo",
+  "m": "Found in the wild",
+  "s": [
+   50,
+   57,
+   66,
+   56,
+   57,
+   24
+  ],
+  "r": "normal",
+  "lore": "Its diamond armor has never been scratched.",
+  "b": 1,
+  "tr": 30,
+  "sig": -1
+ },
+ {
+  "n": 262,
+  "name": "Diamondillo",
+  "t": [
+   "Alloy",
+   "Crystal"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 46",
+  "s": [
+   67,
+   84,
+   101,
+   90,
+   88,
+   40
+  ],
+  "r": "normal",
+  "lore": "Its diamond armor has never been scratched.",
+  "b": 1,
+  "tr": 30,
+  "sig": -1
+ },
+ {
+  "n": 263,
+  "name": "Facetrix",
+  "t": [
+   "Crystal"
+  ],
+  "st": 1,
+  "tot": 1,
+  "to": "",
+  "m": "Signature Alienmon (one-time gift or postgame encounter)",
+  "s": [
+   77,
+   70,
+   101,
+   98,
+   98,
+   56
+  ],
+  "r": "signature",
+  "lore": "Marisol Fenn's crown jewel.",
+  "b": 1,
+  "tr": 50,
+  "sig": 17
+ },
+ {
+  "n": 264,
+  "name": "Encorex",
+  "t": [
+   "Sonic"
+  ],
+  "st": 1,
+  "tot": 1,
+  "to": "",
+  "m": "Signature Alienmon (one-time gift or postgame encounter)",
+  "s": [
+   80,
+   77,
+   62,
+   90,
+   75,
+   116
+  ],
+  "r": "signature",
+  "lore": "Duke Harrow's opening act.",
+  "b": 1,
+  "tr": 50,
+  "sig": 18
+ },
+ {
+  "n": 265,
+  "name": "Pyrelyth",
+  "t": [
+   "Plasma"
+  ],
+  "st": 1,
+  "tot": 1,
+  "to": "",
+  "m": "Signature Alienmon (one-time gift or postgame encounter)",
+  "s": [
+   79,
+   86,
+   55,
+   107,
+   83,
+   90
+  ],
+  "r": "signature",
+  "lore": "Saga's silent partner.",
+  "b": 1,
+  "tr": 50,
+  "sig": 19
+ },
+ {
+  "n": 266,
+  "name": "Bastionyx",
+  "t": [
+   "Gravity"
+  ],
+  "st": 1,
+  "tot": 1,
+  "to": "",
+  "m": "Signature Alienmon (one-time gift or postgame encounter)",
+  "s": [
+   105,
+   99,
+   94,
+   59,
+   82,
+   61
+  ],
+  "r": "signature",
+  "lore": "General Ostrander's unbreakable defense.",
+  "b": 1,
+  "tr": 50,
+  "sig": 20
+ },
+ {
+  "n": 267,
+  "name": "Firstlight",
+  "t": [
+   "Plasma",
+   "Psi"
+  ],
+  "st": 1,
+  "tot": 1,
+  "to": "",
+  "m": "Signature Alienmon (one-time gift or postgame encounter)",
+  "s": [
+   63,
+   63,
+   44,
+   130,
+   101,
+   99
+  ],
+  "r": "signature",
+  "lore": "Orra Venn's partner: the first Alienmon ever bonded to a human.",
+  "b": 1,
+  "tr": 50,
+  "sig": 21
+ },
+ {
+  "n": 268,
+  "name": "Fractling",
+  "t": [
+   "Void",
+   "Crystal"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Fractalith",
+  "m": "Found in the wild",
+  "s": [
+   48,
+   55,
+   44,
+   66,
+   50,
+   47
+  ],
+  "r": "normal",
+  "lore": "A shard of Ystra that came alive.",
+  "b": 1,
+  "tr": 47,
+  "sig": -1
+ },
+ {
+  "n": 269,
+  "name": "Fractalith",
+  "t": [
+   "Void",
+   "Crystal"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Resonance: level up inside the Rift Expanse",
+  "s": [
+   76,
+   75,
+   62,
+   112,
+   77,
+   68
+  ],
+  "r": "normal",
+  "lore": "A shard of Ystra that came alive.",
+  "b": 1,
+  "tr": 47,
+  "sig": -1
+ },
+ {
+  "n": 270,
+  "name": "Riftling",
+  "t": [
+   "Gravity",
+   "Psi"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Riftwalker",
+  "m": "Found in the wild",
+  "s": [
+   52,
+   46,
+   55,
+   58,
+   55,
+   44
+  ],
+  "r": "normal",
+  "lore": "Steps between pieces of broken land.",
+  "b": 1,
+  "tr": 33,
+  "sig": -1
+ },
+ {
+  "n": 271,
+  "name": "Riftwalker",
+  "t": [
+   "Gravity",
+   "Psi"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Resonance: level up inside the Rift Expanse",
+  "s": [
+   92,
+   73,
+   68,
+   82,
+   91,
+   64
+  ],
+  "r": "normal",
+  "lore": "Steps between pieces of broken land.",
+  "b": 1,
+  "tr": 33,
+  "sig": -1
+ },
+ {
+  "n": 272,
+  "name": "Blightling",
+  "t": [
+   "Bio",
+   "Void"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Blightroot",
+  "m": "Found in the wild",
+  "s": [
+   53,
+   54,
+   49,
+   58,
+   55,
+   41
+  ],
+  "r": "normal",
+  "lore": "Withered by the Devourer but still alive.",
+  "b": 1,
+  "tr": 2,
+  "sig": -1
+ },
+ {
+  "n": 273,
+  "name": "Blightroot",
+  "t": [
+   "Bio",
+   "Void"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Resonance: level up inside the Rift Expanse",
+  "s": [
+   88,
+   81,
+   64,
+   83,
+   79,
+   75
+  ],
+  "r": "normal",
+  "lore": "Withered by the Devourer but still alive.",
+  "b": 1,
+  "tr": 2,
+  "sig": -1
+ },
+ {
+  "n": 274,
+  "name": "Pulsito",
+  "t": [
+   "Plasma",
+   "Sonic"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Pulsarion",
+  "m": "Found in the wild",
+  "s": [
+   47,
+   41,
+   30,
+   75,
+   51,
+   66
+  ],
+  "r": "normal",
+  "lore": "Pulses like a heartbeat.",
+  "b": 1,
+  "tr": 49,
+  "sig": -1
+ },
+ {
+  "n": 275,
+  "name": "Pulsarion",
+  "t": [
+   "Plasma",
+   "Sonic"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Resonance: level up inside the Rift Expanse",
+  "s": [
+   77,
+   71,
+   40,
+   98,
+   69,
+   115
+  ],
+  "r": "normal",
+  "lore": "Pulses like a heartbeat.",
+  "b": 1,
+  "tr": 49,
+  "sig": -1
+ },
+ {
+  "n": 276,
+  "name": "Oblivite",
+  "t": [
+   "Void"
+  ],
+  "st": 1,
+  "tot": 1,
+  "to": "",
+  "m": "Signature Alienmon (one-time gift or postgame encounter)",
+  "s": [
+   85,
+   86,
+   60,
+   90,
+   79,
+   100
+  ],
+  "r": "signature",
+  "lore": "Spawned from the Devourer's shadow.",
+  "b": 1,
+  "tr": 50,
+  "sig": 22
+ },
+ {
+  "n": 277,
+  "name": "Terravox",
+  "t": [
+   "Gravity",
+   "Bio"
+  ],
+  "st": 1,
+  "tot": 1,
+  "to": "",
+  "m": "Story / postgame encounter",
+  "s": [
+   141,
+   120,
+   125,
+   70,
+   98,
+   46
+  ],
+  "r": "legendary",
+  "lore": "One of the Three Pillars of Ystra; it held up the land.",
+  "b": 1,
+  "tr": 56,
+  "sig": 23
+ },
+ {
+  "n": 278,
+  "name": "Aquelion",
+  "t": [
+   "Hydro",
+   "Psi"
+  ],
+  "st": 1,
+  "tot": 1,
+  "to": "",
+  "m": "Story / postgame encounter",
+  "s": [
+   103,
+   81,
+   73,
+   131,
+   114,
+   98
+  ],
+  "r": "legendary",
+  "lore": "One of the Three Pillars of Ystra; it held the oceans.",
+  "b": 1,
+  "tr": 56,
+  "sig": 24
+ },
+ {
+  "n": 279,
+  "name": "Ignarch",
+  "t": [
+   "Plasma",
+   "Magma"
+  ],
+  "st": 1,
+  "tot": 1,
+  "to": "",
+  "m": "Story / postgame encounter",
+  "s": [
+   94,
+   110,
+   86,
+   132,
+   81,
+   97
+  ],
+  "r": "legendary",
+  "lore": "One of the Three Pillars of Ystra; it held the sun.",
+  "b": 1,
+  "tr": 56,
+  "sig": 25
+ },
+ {
+  "n": 280,
+  "name": "Cricketick",
+  "t": [
+   "Sonic",
+   "Swarm"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Chronocrick",
+  "m": "Found in the wild",
+  "s": [
+   40,
+   57,
+   41,
+   45,
+   46,
+   81
+  ],
+  "r": "normal",
+  "lore": "Its chirping colony keeps perfect time.",
+  "b": 1,
+  "tr": 21,
+  "sig": -1
+ },
+ {
+  "n": 281,
+  "name": "Chronocrick",
+  "t": [
+   "Sonic",
+   "Swarm"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 22",
+  "s": [
+   66,
+   88,
+   57,
+   63,
+   74,
+   122
+  ],
+  "r": "normal",
+  "lore": "Its chirping colony keeps perfect time.",
+  "b": 1,
+  "tr": 21,
+  "sig": -1
+ },
+ {
+  "n": 282,
+  "name": "Croakle",
+  "t": [
+   "Hydro",
+   "Sonic"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Croakoustic",
+  "m": "Found in the wild",
+  "s": [
+   58,
+   41,
+   37,
+   60,
+   53,
+   61
+  ],
+  "r": "normal",
+  "lore": "Sings from riverbanks at sunrise.",
+  "b": 1,
+  "tr": 1,
+  "sig": -1
+ },
+ {
+  "n": 283,
+  "name": "Croakoustic",
+  "t": [
+   "Hydro",
+   "Sonic"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 30",
+  "s": [
+   82,
+   77,
+   62,
+   93,
+   79,
+   77
+  ],
+  "r": "normal",
+  "lore": "Sings from riverbanks at sunrise.",
+  "b": 1,
+  "tr": 1,
+  "sig": -1
+ },
+ {
+  "n": 284,
+  "name": "Tarbit",
+  "t": [
+   "Toxin",
+   "Gravity"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Tarpitan",
+  "m": "Found in the wild",
+  "s": [
+   64,
+   57,
+   58,
+   51,
+   57,
+   23
+  ],
+  "r": "normal",
+  "lore": "Sinks into the ground and waits.",
+  "b": 1,
+  "tr": 26,
+  "sig": -1
+ },
+ {
+  "n": 285,
+  "name": "Tarpitan",
+  "t": [
+   "Toxin",
+   "Gravity"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 34",
+  "s": [
+   97,
+   90,
+   84,
+   64,
+   99,
+   36
+  ],
+  "r": "normal",
+  "lore": "Sinks into the ground and waits.",
+  "b": 1,
+  "tr": 26,
+  "sig": -1
+ },
+ {
+  "n": 286,
+  "name": "Frostflare",
+  "t": [
+   "Cryo",
+   "Plasma"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Cryoblaze",
+  "m": "Found in the wild",
+  "s": [
+   50,
+   42,
+   46,
+   76,
+   54,
+   42
+  ],
+  "r": "normal",
+  "lore": "Burns cold: its blue flame freezes what it touches.",
+  "b": 1,
+  "tr": 4,
+  "sig": -1
+ },
+ {
+  "n": 287,
+  "name": "Cryoblaze",
+  "t": [
+   "Cryo",
+   "Plasma"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 38",
+  "s": [
+   64,
+   79,
+   74,
+   115,
+   74,
+   64
+  ],
+  "r": "normal",
+  "lore": "Burns cold: its blue flame freezes what it touches.",
+  "b": 1,
+  "tr": 4,
+  "sig": -1
+ },
+ {
+  "n": 288,
+  "name": "Rustlit",
+  "t": [
+   "Bio",
+   "Sonic"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Rustlegrove",
+  "m": "Found in the wild",
+  "s": [
+   54,
+   45,
+   50,
+   51,
+   57,
+   53
+  ],
+  "r": "normal",
+  "lore": "Its leaves rustle in melodies.",
+  "b": 1,
+  "tr": 48,
+  "sig": -1
+ },
+ {
+  "n": 289,
+  "name": "Rustlegrove",
+  "t": [
+   "Bio",
+   "Sonic"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 30",
+  "s": [
+   73,
+   69,
+   71,
+   87,
+   83,
+   87
+  ],
+  "r": "normal",
+  "lore": "Its leaves rustle in melodies.",
+  "b": 1,
+  "tr": 48,
+  "sig": -1
+ },
+ {
+  "n": 290,
+  "name": "Divebot",
+  "t": [
+   "Alloy",
+   "Hydro"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Divekraken",
+  "m": "Found in the wild",
+  "s": [
+   56,
+   60,
+   60,
+   52,
+   55,
+   27
+  ],
+  "r": "normal",
+  "lore": "Rusted diving suits that came alive.",
+  "b": 1,
+  "tr": 42,
+  "sig": -1
+ },
+ {
+  "n": 291,
+  "name": "Divekraken",
+  "t": [
+   "Alloy",
+   "Hydro"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 30",
+  "s": [
+   84,
+   88,
+   96,
+   73,
+   75,
+   54
+  ],
+  "r": "normal",
+  "lore": "Rusted diving suits that came alive.",
+  "b": 1,
+  "tr": 42,
+  "sig": -1
+ },
+ {
+  "n": 292,
+  "name": "Venomite",
+  "t": [
+   "Crystal",
+   "Toxin"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Venomineral",
+  "m": "Found in the wild",
+  "s": [
+   40,
+   46,
+   57,
+   65,
+   75,
+   27
+  ],
+  "r": "normal",
+  "lore": "Its crystals are poisonous to touch.",
+  "b": 1,
+  "tr": 37,
+  "sig": -1
+ },
+ {
+  "n": 293,
+  "name": "Venomineral",
+  "t": [
+   "Crystal",
+   "Toxin"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 34",
+  "s": [
+   60,
+   68,
+   82,
+   106,
+   108,
+   46
+  ],
+  "r": "normal",
+  "lore": "Its crystals are poisonous to touch.",
+  "b": 1,
+  "tr": 37,
+  "sig": -1
+ },
+ {
+  "n": 294,
+  "name": "Drizzlit",
+  "t": [
+   "Volt",
+   "Hydro"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Thunderhead",
+  "m": "Found in the wild",
+  "s": [
+   48,
+   52,
+   38,
+   65,
+   52,
+   55
+  ],
+  "r": "normal",
+  "lore": "Its body is a living storm cloud.",
+  "b": 1,
+  "tr": 38,
+  "sig": -1
+ },
+ {
+  "n": 295,
+  "name": "Thunderhead",
+  "t": [
+   "Volt",
+   "Hydro"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Level 38",
+  "s": [
+   75,
+   72,
+   54,
+   93,
+   90,
+   86
+  ],
+  "r": "normal",
+  "lore": "Its body is a living storm cloud.",
+  "b": 1,
+  "tr": 38,
+  "sig": -1
+ },
+ {
+  "n": 296,
+  "name": "Stompadon",
+  "t": [
+   "Gravity",
+   "Sonic"
+  ],
+  "st": 1,
+  "tot": 1,
+  "to": "",
+  "m": "Found in the wild",
+  "s": [
+   95,
+   84,
+   63,
+   78,
+   78,
+   72
+  ],
+  "r": "normal",
+  "lore": "Its booming footsteps can be heard for miles.",
+  "b": 1,
+  "tr": 22,
+  "sig": -1
+ },
+ {
+  "n": 297,
+  "name": "Lumivex",
+  "t": [
+   "Crystal",
+   "Sonic"
+  ],
+  "st": 1,
+  "tot": 1,
+  "to": "",
+  "m": "Story / postgame encounter",
+  "s": [
+   74,
+   68,
+   77,
+   116,
+   86,
+   79
+  ],
+  "r": "signature",
+  "lore": "Bonded with Sola's father inside the Rift; joins Sola's team after the rescue.",
+  "b": 1,
+  "tr": 52,
+  "sig": 26
+ },
+ {
+  "n": 298,
+  "name": "Novaryx",
+  "t": [
+   "Plasma",
+   "Psi"
+  ],
+  "st": 1,
+  "tot": 1,
+  "to": "",
+  "m": "Story / postgame encounter",
+  "s": [
+   72,
+   66,
+   60,
+   162,
+   100,
+   140
+  ],
+  "r": "legendary",
+  "lore": "Awakens when all 8 Signal Shards resonate; catchable before the crater.",
+  "b": 1,
+  "tr": 53,
+  "sig": 27
+ },
+ {
+  "n": 299,
+  "name": "Oblivane",
+  "t": [
+   "Void",
+   "Gravity"
+  ],
+  "st": 1,
+  "tot": 1,
+  "to": "",
+  "m": "Story / postgame encounter",
+  "s": [
+   134,
+   118,
+   80,
+   101,
+   82,
+   85
+  ],
+  "r": "legendary",
+  "lore": "Seen reaching through the Rift; catchable in the postgame Rift Expanse.",
+  "b": 1,
+  "tr": 54,
+  "sig": 28
+ },
+ {
+  "n": 300,
+  "name": "Seedmother",
+  "t": [
+   "Bio",
+   "Crystal"
+  ],
+  "st": 1,
+  "tot": 1,
+  "to": "",
+  "m": "Story / postgame encounter",
+  "s": [
+   113,
+   103,
+   139,
+   136,
+   133,
+   56
+  ],
+  "r": "mythic",
+  "lore": "Deepest postgame secret; decides whether Alienmon go home.",
+  "b": 1,
+  "tr": 55,
+  "sig": 29
+ }
+]

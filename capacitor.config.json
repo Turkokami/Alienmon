@@ -1,0 +1,6 @@
+{
+  "appId": "com.yourcompany.alienmon",
+  "appName": "Alienmon",
+  "webDir": "www",
+  "android": { "backgroundColor": "#120c22" }
+}

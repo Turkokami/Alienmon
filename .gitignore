@@ -1,0 +1,7 @@
+node_modules/
+android/
+.DS_Store
+Thumbs.db
+import_report.json
+.vercel
+__pycache__/

@@ -1,0 +1,1072 @@
+[
+ {
+  "key": "dustara",
+  "name": "Dustara",
+  "env": "desert",
+  "lv": [
+   2,
+   5
+  ],
+  "req": {
+   "s": 0
+  },
+  "x": 160,
+  "y": 1050,
+  "r": 18,
+  "col": [
+   "#e0a85a",
+   "#a86a2e"
+  ],
+  "npc": "Dr. Vashti: Ferrox is the closest world with a Relay Tower. Fly there and challenge its Keeper!",
+  "tower": "The Crater Observatory. Dr. Vashti's telescope points at the stars the pods came from.",
+  "pool": {
+   "c": [
+    10,
+    12,
+    15,
+    18,
+    20,
+    22,
+    24,
+    26,
+    28,
+    30,
+    279
+   ],
+   "e": [
+    11,
+    13,
+    14,
+    16,
+    17,
+    19,
+    21,
+    23,
+    25,
+    27,
+    29,
+    31,
+    280
+   ],
+   "r": [],
+   "l": []
+  },
+  "keeper": null,
+  "npcArt": "vashti",
+  "ring": false,
+  "scene": "dustmere",
+  "sceneFx": "",
+  "sys": 1
+ },
+ {
+  "key": "ferrox",
+  "name": "Ferrox",
+  "env": "scrap",
+  "lv": [
+   5,
+   10
+  ],
+  "req": {
+   "s": 0
+  },
+  "x": 420,
+  "y": 980,
+  "r": 16,
+  "col": [
+   "#b07a4a",
+   "#5a5f6a"
+  ],
+  "npc": "Scrapper: Hank Briggs built half this planet's tower out of junk. His Alienmon hit like freight trains.",
+  "tower": null,
+  "pool": {
+   "c": [
+    32,
+    35,
+    37,
+    39,
+    41,
+    43,
+    45,
+    48
+   ],
+   "e": [
+    33,
+    34,
+    36,
+    38,
+    40,
+    42,
+    44,
+    46,
+    49
+   ],
+   "r": [
+    47
+   ],
+   "l": []
+  },
+  "keeper": {
+   "art": "hank",
+   "name": "Hank Briggs",
+   "intro": "Think you can dent my armor, kid? Let's see.",
+   "lose": "Ha! You've got grit. Take the shard.",
+   "after": "Keep that Linker oiled.",
+   "shard": true,
+   "flag": null,
+   "flagMsg": null,
+   "team": [
+    [
+     33,
+     10
+    ],
+    [
+     34,
+     10
+    ],
+    [
+     47,
+     12
+    ]
+   ]
+  },
+  "npcArt": "technician",
+  "ring": false,
+  "scene": "hangar",
+  "sceneFx": "sepia(0.25) saturate(1.1)",
+  "sys": 1
+ },
+ {
+  "key": "sporeholm",
+  "name": "Sporeholm",
+  "env": "swamp",
+  "lv": [
+   9,
+   14
+  ],
+  "req": {
+   "s": 1
+  },
+  "x": 650,
+  "y": 1060,
+  "r": 20,
+  "col": [
+   "#5f8a3f",
+   "#7a3fa0"
+  ],
+  "npc": "Botanist: The spores here react to the towers... almost like they're homesick.",
+  "tower": null,
+  "pool": {
+   "c": [
+    50,
+    52,
+    55,
+    57,
+    59,
+    61,
+    63,
+    65,
+    67,
+    70,
+    73
+   ],
+   "e": [
+    51,
+    53,
+    54,
+    56,
+    58,
+    60,
+    62,
+    64,
+    66,
+    68,
+    71,
+    72,
+    74
+   ],
+   "r": [
+    69,
+    9
+   ],
+   "l": []
+  },
+  "keeper": {
+   "art": "moor",
+   "name": "Dr. Lysa Moor",
+   "intro": "Let me show you how patient poison can be.",
+   "lose": "Fascinating. You adapted quickly.",
+   "after": "The spores glow brighter when you're near. Curious.",
+   "shard": true,
+   "flag": null,
+   "flagMsg": null,
+   "team": [
+    [
+     51,
+     16
+    ],
+    [
+     53,
+     16
+    ],
+    [
+     69,
+     18
+    ]
+   ]
+  },
+  "npcArt": "sporefolk",
+  "ring": false,
+  "scene": "jungle",
+  "sceneFx": "",
+  "sys": 1
+ },
+ {
+  "key": "thalassa",
+  "name": "Thalassa",
+  "env": "ocean",
+  "lv": [
+   13,
+   18
+  ],
+  "req": {
+   "s": 2
+  },
+  "x": 880,
+  "y": 900,
+  "r": 24,
+  "col": [
+   "#2e86de",
+   "#7fd3ff"
+  ],
+  "ring": true,
+  "npc": "Sailor: Helix ships were circling the tower last night. Strange folks in white coats.",
+  "tower": null,
+  "pool": {
+   "c": [
+    75,
+    77,
+    79,
+    81,
+    83,
+    85,
+    87,
+    89,
+    91,
+    93,
+    96,
+    98,
+    281,
+    287,
+    289
+   ],
+   "e": [
+    76,
+    78,
+    80,
+    82,
+    84,
+    86,
+    88,
+    90,
+    92,
+    94,
+    97,
+    99,
+    282,
+    288,
+    290
+   ],
+   "r": [
+    95
+   ],
+   "l": []
+  },
+  "keeper": {
+   "art": "marsh",
+   "name": "Captain Marsh",
+   "intro": "The tide waits for no one. Battle stations!",
+   "lose": "You sailed through that storm. Well done.",
+   "after": "Watch out for Helix. They're after the tower cores.",
+   "shard": true,
+   "flag": null,
+   "flagMsg": null,
+   "team": [
+    [
+     76,
+     22
+    ],
+    [
+     78,
+     22
+    ],
+    [
+     95,
+     24
+    ]
+   ]
+  },
+  "npcArt": "squidsailor",
+  "scene": "beach",
+  "sceneFx": "",
+  "sys": 1
+ },
+ {
+  "key": "neonis",
+  "name": "Neonis",
+  "env": "neon",
+  "lv": [
+   17,
+   22
+  ],
+  "req": {
+   "s": 3
+  },
+  "x": 1120,
+  "y": 1020,
+  "r": 18,
+  "col": [
+   "#5a2a8a",
+   "#ff4fd0"
+  ],
+  "npc": "Radio fan: DJ Static picked up a signal coming from the Starfall Rift. It repeats every 8 seconds.",
+  "tower": null,
+  "pool": {
+   "c": [
+    100,
+    103,
+    105,
+    107,
+    109,
+    111,
+    113,
+    115,
+    118,
+    120
+   ],
+   "e": [
+    101,
+    102,
+    104,
+    106,
+    108,
+    110,
+    112,
+    114,
+    116,
+    119,
+    121
+   ],
+   "r": [
+    117
+   ],
+   "l": []
+  },
+  "keeper": {
+   "art": "static",
+   "name": "DJ Static",
+   "intro": "Turn it up! This battle's going live!",
+   "lose": "That's a wrap. You rocked the stage.",
+   "after": "That signal from the Rift? It sounds like a lullaby.",
+   "shard": true,
+   "flag": null,
+   "flagMsg": null,
+   "team": [
+    [
+     101,
+     26
+    ],
+    [
+     102,
+     26
+    ],
+    [
+     117,
+     28
+    ]
+   ]
+  },
+  "npcArt": "civilian",
+  "ring": false,
+  "scene": "starport",
+  "sceneFx": "",
+  "sys": 1
+ },
+ {
+  "key": "glyphos",
+  "name": "Glyphos",
+  "env": "ruins",
+  "lv": [
+   20,
+   26
+  ],
+  "req": {
+   "s": 4
+  },
+  "x": 1380,
+  "y": 880,
+  "r": 17,
+  "col": [
+   "#b8a385",
+   "#6a5a4a"
+  ],
+  "npc": "Archaeologist: These murals show a shadow eating a planet, and a mother creature launching seeds into space.",
+  "tower": "An ancient obelisk. The glyphs glow: the Alienmon were sent away to escape something called the Devourer.",
+  "pool": {
+   "c": [
+    122,
+    124,
+    126,
+    129,
+    131,
+    133,
+    135,
+    137,
+    139,
+    283
+   ],
+   "e": [
+    123,
+    125,
+    127,
+    128,
+    130,
+    132,
+    134,
+    136,
+    138,
+    284
+   ],
+   "r": [],
+   "l": []
+  },
+  "keeper": null,
+  "npcArt": "explorer",
+  "ring": false,
+  "scene": "temple",
+  "sceneFx": "",
+  "sys": 1
+ },
+ {
+  "key": "pyros",
+  "name": "Pyros",
+  "env": "lava",
+  "lv": [
+   23,
+   29
+  ],
+  "req": {
+   "s": 4
+  },
+  "x": 1560,
+  "y": 700,
+  "r": 21,
+  "col": [
+   "#a02a1a",
+   "#ff8c2a"
+  ],
+  "npc": "Old miner: Basalt saw the first pod land. A man named Teo walked into the light after it and never came back.",
+  "tower": null,
+  "pool": {
+   "c": [
+    140,
+    143,
+    145,
+    147,
+    149,
+    151,
+    153,
+    155,
+    158,
+    291
+   ],
+   "e": [
+    141,
+    142,
+    144,
+    146,
+    148,
+    150,
+    152,
+    154,
+    156,
+    159,
+    292
+   ],
+   "r": [
+    157
+   ],
+   "l": []
+  },
+  "keeper": {
+   "art": "basalt",
+   "name": "Old Basalt",
+   "intro": "Sixty years in the mines. Show me your fire.",
+   "lose": "Hmph. The fire in you burns true.",
+   "after": "Find Teo's girl. She deserves to know.",
+   "shard": true,
+   "flag": null,
+   "flagMsg": null,
+   "team": [
+    [
+     141,
+     31
+    ],
+    [
+     142,
+     31
+    ],
+    [
+     157,
+     33
+    ]
+   ]
+  },
+  "npcArt": "miner",
+  "ring": false,
+  "scene": "lava",
+  "sceneFx": "",
+  "sys": 1
+ },
+ {
+  "key": "glacia",
+  "name": "Glacia",
+  "env": "ice",
+  "lv": [
+   27,
+   33
+  ],
+  "req": {
+   "s": 5
+  },
+  "x": 1350,
+  "y": 560,
+  "r": 22,
+  "col": [
+   "#cfeeff",
+   "#6aaad0"
+  ],
+  "ring": true,
+  "npc": "Researcher: Ingrid found a frozen Ystra creature with bite marks the size of buildings.",
+  "tower": null,
+  "pool": {
+   "c": [
+    160,
+    163,
+    165,
+    167,
+    169,
+    171,
+    173,
+    175,
+    177,
+    180,
+    181,
+    285,
+    293
+   ],
+   "e": [
+    161,
+    162,
+    164,
+    166,
+    168,
+    170,
+    172,
+    174,
+    176,
+    178,
+    182,
+    286,
+    294
+   ],
+   "r": [
+    179
+   ],
+   "l": []
+  },
+  "keeper": {
+   "art": "ingrid",
+   "name": "Ingrid Vale",
+   "intro": "Let's see if you can keep your cool.",
+   "lose": "You thawed my best defense. Impressive.",
+   "after": "Whatever made those bite marks is still out there.",
+   "shard": true,
+   "flag": null,
+   "flagMsg": null,
+   "team": [
+    [
+     161,
+     36
+    ],
+    [
+     162,
+     36
+    ],
+    [
+     179,
+     38
+    ]
+   ]
+  },
+  "npcArt": "researcher",
+  "scene": "crystal",
+  "sceneFx": "",
+  "sys": 1
+ },
+ {
+  "key": "helix",
+  "name": "Helix Station",
+  "env": "station",
+  "lv": [
+   30,
+   36
+  ],
+  "req": {
+   "s": 6
+  },
+  "x": 1080,
+  "y": 640,
+  "r": 14,
+  "col": [
+   "#8a95a5",
+   "#c0303a"
+  ],
+  "npc": "Grub: Psst. I used to work here. Thorne's planning to overload the towers and rip the Rift wide open.",
+  "tower": null,
+  "pool": {
+   "c": [
+    183,
+    186,
+    188,
+    190
+   ],
+   "e": [
+    184,
+    185,
+    187,
+    189,
+    191
+   ],
+   "r": [
+    192,
+    193,
+    194
+   ],
+   "l": []
+  },
+  "keeper": {
+   "art": "vex",
+   "name": "Admin Vex",
+   "intro": "A kid with a Linker? Thorne will love this.",
+   "lose": "Tch. Thorne won't care. He's already at the Rift.",
+   "after": "Go ahead, chase him. You'll never stop it.",
+   "shard": false,
+   "flag": null,
+   "flagMsg": null,
+   "team": [
+    [
+     187,
+     38
+    ],
+    [
+     184,
+     38
+    ],
+    [
+     193,
+     39
+    ],
+    [
+     192,
+     40
+    ]
+   ]
+  },
+  "npcArt": "grub",
+  "ring": false,
+  "scene": "lab",
+  "sceneFx": "",
+  "sys": 1
+ },
+ {
+  "key": "halo",
+  "name": "Halo",
+  "env": "sky",
+  "lv": [
+   33,
+   39
+  ],
+  "req": {
+   "s": 6
+  },
+  "x": 820,
+  "y": 560,
+  "r": 19,
+  "col": [
+   "#ffd0f0",
+   "#a35cff"
+  ],
+  "npc": "Pilgrim: The twins see the future. They say the Rift opens soon.",
+  "tower": null,
+  "pool": {
+   "c": [
+    195,
+    198,
+    200,
+    202,
+    204,
+    206,
+    208,
+    212,
+    295
+   ],
+   "e": [
+    196,
+    197,
+    199,
+    201,
+    203,
+    205,
+    207,
+    209,
+    213
+   ],
+   "r": [
+    210,
+    211
+   ],
+   "l": []
+  },
+  "keeper": {
+   "art": "twins",
+   "name": "Echo and Iris",
+   "intro": "We already saw this battle. Shall we see how it ends?",
+   "lose": "The vision changed. Because of you.",
+   "after": "The Rift. The shadow. A girl and her father. We saw it all.",
+   "shard": true,
+   "flag": null,
+   "flagMsg": null,
+   "team": [
+    [
+     196,
+     41
+    ],
+    [
+     197,
+     41
+    ],
+    [
+     211,
+     42
+    ],
+    [
+     210,
+     43
+    ]
+   ]
+  },
+  "npcArt": "pilgrim",
+  "ring": false,
+  "scene": "plaza",
+  "sceneFx": "",
+  "sys": 1
+ },
+ {
+  "key": "umbra",
+  "name": "Umbra",
+  "env": "dark",
+  "lv": [
+   37,
+   43
+  ],
+  "req": {
+   "s": 7
+  },
+  "x": 560,
+  "y": 640,
+  "r": 18,
+  "col": [
+   "#3a2a55",
+   "#140e22"
+  ],
+  "npc": "Lost wanderer: Kade used to be Helix. He quit when he learned what's on the other side of the Rift.",
+  "tower": null,
+  "pool": {
+   "c": [
+    214,
+    217,
+    219,
+    221,
+    223,
+    225,
+    227
+   ],
+   "e": [
+    215,
+    216,
+    218,
+    220,
+    222,
+    224,
+    226,
+    228
+   ],
+   "r": [
+    229
+   ],
+   "l": []
+  },
+  "keeper": {
+   "art": "kade",
+   "name": "Mortimer Kade",
+   "intro": "The Devourer follows the light. Prove you can stand in the dark.",
+   "lose": "You're ready. Take the last shard.",
+   "after": "With 8 shards, the Rift will let you land. Stop Thorne.",
+   "shard": true,
+   "flag": null,
+   "flagMsg": null,
+   "team": [
+    [
+     215,
+     46
+    ],
+    [
+     216,
+     46
+    ],
+    [
+     229,
+     48
+    ]
+   ]
+  },
+  "npcArt": "wanderer",
+  "ring": false,
+  "scene": "crystal",
+  "sceneFx": "brightness(0.55) hue-rotate(35deg) saturate(1.3)",
+  "sys": 1
+ },
+ {
+  "key": "starfall",
+  "name": "Starfall Rift",
+  "env": "nebula",
+  "lv": [
+   42,
+   48
+  ],
+  "req": {
+   "s": 8
+  },
+  "x": 350,
+  "y": 420,
+  "r": 26,
+  "col": [
+   "#7a4fbf",
+   "#ff74c4"
+  ],
+  "npc": "Sola: Thorne said my dad was an 'acceptable loss.' He's in there. I'm fighting with you this time.",
+  "tower": null,
+  "pool": {
+   "c": [
+    230,
+    233,
+    235,
+    237,
+    239,
+    241,
+    243,
+    245,
+    247,
+    250
+   ],
+   "e": [
+    231,
+    232,
+    234,
+    236,
+    238,
+    240,
+    242,
+    244,
+    246,
+    248,
+    249,
+    251
+   ],
+   "r": [
+    296
+   ],
+   "l": [
+    297
+   ]
+  },
+  "keeper": {
+   "art": "thorne",
+   "name": "Director Thorne",
+   "intro": "The Rift is mine. Unlimited Alienmon. Unlimited power. Move aside!",
+   "lose": "No... the shadow... it's coming through!",
+   "after": "The Rift is sealed. Teo Reyes is home. ...I was wrong.",
+   "shard": false,
+   "flag": "rift",
+   "flagMsg": "Zib and the 8 shards resonate. The Rift seals! Teo Reyes stumbles out, safe. The Apex Array is now open.",
+   "team": [
+    [
+     234,
+     50
+    ],
+    [
+     240,
+     50
+    ],
+    [
+     194,
+     52
+    ]
+   ]
+  },
+  "npcArt": "sola",
+  "ring": false,
+  "scene": "crystal",
+  "sceneFx": "hue-rotate(75deg) saturate(1.6)",
+  "sys": 1
+ },
+ {
+  "key": "apex",
+  "name": "Apex Array",
+  "env": "station",
+  "lv": [
+   46,
+   52
+  ],
+  "req": {
+   "s": 8,
+   "f": "rift"
+  },
+  "x": 640,
+  "y": 260,
+  "r": 16,
+  "col": [
+   "#e8e0ff",
+   "#ffd23f"
+  ],
+  "npc": "Marisol Fenn: The Quorum stepped aside for you. Only the Prime Linker remains.",
+  "tower": null,
+  "pool": {
+   "c": [
+    252,
+    254,
+    256,
+    258,
+    260
+   ],
+   "e": [
+    253,
+    255,
+    257,
+    259,
+    261
+   ],
+   "r": [
+    262,
+    263,
+    264,
+    265,
+    266
+   ],
+   "l": []
+  },
+  "keeper": {
+   "art": "orra",
+   "name": "Orra Venn",
+   "intro": "I bonded the very first Alienmon. Show me what you've built.",
+   "lose": "You're the Prime Linker now. Vashti and I always suspected the truth. The towers were a seal.",
+   "after": "Ystra's fragments drift in the old Rift. Go see where they came from.",
+   "shard": false,
+   "flag": "champ",
+   "flagMsg": "You are the new Prime Linker! A path to Ystra has opened.",
+   "team": [
+    [
+     259,
+     56
+    ],
+    [
+     253,
+     56
+    ],
+    [
+     262,
+     57
+    ],
+    [
+     263,
+     57
+    ],
+    [
+     265,
+     57
+    ],
+    [
+     266,
+     58
+    ]
+   ]
+  },
+  "npcArt": "marisol",
+  "ring": false,
+  "scene": "telescope",
+  "sceneFx": "",
+  "sys": 1
+ },
+ {
+  "key": "ystra",
+  "name": "Ystra",
+  "env": "shattered",
+  "lv": [
+   55,
+   65
+  ],
+  "req": {
+   "s": 8,
+   "f": "champ"
+  },
+  "x": 1000,
+  "y": 180,
+  "r": 28,
+  "col": [
+   "#2a8a6a",
+   "#e23fbf"
+  ],
+  "npc": "A voice in your Linker: My children... thank you for keeping them safe.",
+  "tower": "A crystal shrine. The Seedmother waits deep in the drift grass.",
+  "pool": {
+   "c": [
+    267,
+    269,
+    271,
+    273
+   ],
+   "e": [
+    268,
+    270,
+    272,
+    274
+   ],
+   "r": [
+    275
+   ],
+   "l": [
+    276,
+    277,
+    278,
+    298,
+    299
+   ]
+  },
+  "keeper": null,
+  "npcArt": "ystran",
+  "ring": false,
+  "scene": "jungle",
+  "sceneFx": "hue-rotate(150deg) saturate(1.3)",
+  "sys": 1
+ }
+]

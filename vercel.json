@@ -1,0 +1,13 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "installCommand": "echo \"No install needed: the web build only uses Node built-ins\"",
+  "buildCommand": "node tools/build.js",
+  "outputDirectory": "www",
+  "cleanUrls": true,
+  "headers": [
+    { "source": "/(.*)", "headers": [
+      { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" },
+      { "key": "X-Content-Type-Options", "value": "nosniff" }
+    ] }
+  ]
+}

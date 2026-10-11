@@ -1,0 +1,670 @@
+{
+ "traits": [
+  {
+   "name": "Overheat",
+   "desc": "Powers up Plasma moves by 50% when HP drops below a third.",
+   "k": "low",
+   "v": "Plasma"
+  },
+  {
+   "name": "Riptide",
+   "desc": "Powers up Hydro moves by 50% when HP drops below a third.",
+   "k": "low",
+   "v": "Hydro"
+  },
+  {
+   "name": "Overgrowth",
+   "desc": "Powers up Bio moves by 50% when HP drops below a third.",
+   "k": "low",
+   "v": "Bio"
+  },
+  {
+   "name": "Overcharge",
+   "desc": "Powers up Volt moves by 50% when HP drops below a third.",
+   "k": "low",
+   "v": "Volt"
+  },
+  {
+   "name": "Deep Freeze",
+   "desc": "Powers up Cryo moves by 50% when HP drops below a third.",
+   "k": "low",
+   "v": "Cryo"
+  },
+  {
+   "name": "Meltdown",
+   "desc": "Powers up Magma moves by 50% when HP drops below a third.",
+   "k": "low",
+   "v": "Magma"
+  },
+  {
+   "name": "Toxic Rage",
+   "desc": "Powers up Toxin moves by 50% when HP drops below a third.",
+   "k": "low",
+   "v": "Toxin"
+  },
+  {
+   "name": "Swarm Frenzy",
+   "desc": "Powers up Swarm moves by 50% when HP drops below a third.",
+   "k": "low",
+   "v": "Swarm"
+  },
+  {
+   "name": "Ironclad Fury",
+   "desc": "Powers up Alloy moves by 50% when HP drops below a third.",
+   "k": "low",
+   "v": "Alloy"
+  },
+  {
+   "name": "Refraction",
+   "desc": "Powers up Crystal moves by 50% when HP drops below a third.",
+   "k": "low",
+   "v": "Crystal"
+  },
+  {
+   "name": "Psychic Surge",
+   "desc": "Powers up Psi moves by 50% when HP drops below a third.",
+   "k": "low",
+   "v": "Psi"
+  },
+  {
+   "name": "Crescendo",
+   "desc": "Powers up Sonic moves by 50% when HP drops below a third.",
+   "k": "low",
+   "v": "Sonic"
+  },
+  {
+   "name": "Critical Mass",
+   "desc": "Powers up Gravity moves by 50% when HP drops below a third.",
+   "k": "low",
+   "v": "Gravity"
+  },
+  {
+   "name": "Abyssal Hunger",
+   "desc": "Powers up Void moves by 50% when HP drops below a third.",
+   "k": "low",
+   "v": "Void"
+  },
+  {
+   "name": "Solar Core",
+   "desc": "Absorbs Plasma moves instead of taking damage, healing a quarter of its HP.",
+   "k": "absorb",
+   "v": "Plasma"
+  },
+  {
+   "name": "Sponge Body",
+   "desc": "Absorbs Hydro moves instead of taking damage, healing a quarter of its HP.",
+   "k": "absorb",
+   "v": "Hydro"
+  },
+  {
+   "name": "Photosynth Skin",
+   "desc": "Absorbs Bio moves instead of taking damage, healing a quarter of its HP.",
+   "k": "absorb",
+   "v": "Bio"
+  },
+  {
+   "name": "Lightning Rod",
+   "desc": "Absorbs Volt moves instead of taking damage, healing a quarter of its HP.",
+   "k": "absorb",
+   "v": "Volt"
+  },
+  {
+   "name": "Snow Body",
+   "desc": "Absorbs Cryo moves instead of taking damage, healing a quarter of its HP.",
+   "k": "absorb",
+   "v": "Cryo"
+  },
+  {
+   "name": "Magma Heart",
+   "desc": "Absorbs Magma moves instead of taking damage, healing a quarter of its HP.",
+   "k": "absorb",
+   "v": "Magma"
+  },
+  {
+   "name": "Toxin Sink",
+   "desc": "Absorbs Toxin moves instead of taking damage, healing a quarter of its HP.",
+   "k": "absorb",
+   "v": "Toxin"
+  },
+  {
+   "name": "Sound Sponge",
+   "desc": "Absorbs Sonic moves instead of taking damage, healing a quarter of its HP.",
+   "k": "absorb",
+   "v": "Sonic"
+  },
+  {
+   "name": "Event Anchor",
+   "desc": "Absorbs Gravity moves instead of taking damage, healing a quarter of its HP.",
+   "k": "absorb",
+   "v": "Gravity"
+  },
+  {
+   "name": "Event Skin",
+   "desc": "Absorbs Void moves instead of taking damage, healing a quarter of its HP.",
+   "k": "absorb",
+   "v": "Void"
+  },
+  {
+   "name": "Flame Body",
+   "desc": "Physical hits on it may burn the attacker.",
+   "k": "contact",
+   "v": "burn"
+  },
+  {
+   "name": "Static Fur",
+   "desc": "Physical hits on it may shock the attacker.",
+   "k": "contact",
+   "v": "shock"
+  },
+  {
+   "name": "Toxic Skin",
+   "desc": "Physical hits on it may poison the attacker.",
+   "k": "contact",
+   "v": "poison"
+  },
+  {
+   "name": "Frost Shell",
+   "desc": "Physical hits on it may freeze the attacker.",
+   "k": "contact",
+   "v": "freeze"
+  },
+  {
+   "name": "Mind Mirror",
+   "desc": "Physical hits on it may confuse the attacker.",
+   "k": "contact",
+   "v": "confuse"
+  },
+  {
+   "name": "Barbed Shell",
+   "desc": "Attackers that make contact take recoil damage.",
+   "k": "contact",
+   "v": "recoil"
+  },
+  {
+   "name": "Spiked Plating",
+   "desc": "Attackers that make contact take recoil damage.",
+   "k": "contact",
+   "v": "recoil"
+  },
+  {
+   "name": "Shard Skin",
+   "desc": "Attackers that make contact take recoil damage.",
+   "k": "contact",
+   "v": "recoil"
+  },
+  {
+   "name": "Menace",
+   "desc": "Lowers the foe's Attack when it enters battle.",
+   "k": "entry",
+   "v": {
+    "foe": {
+     "atk": -1
+    }
+   }
+  },
+  {
+   "name": "Looming Mass",
+   "desc": "Lowers the foe's Speed when it enters battle.",
+   "k": "entry",
+   "v": {
+    "foe": {
+     "spe": -1
+    }
+   }
+  },
+  {
+   "name": "Quick Launch",
+   "desc": "Raises its own Speed when it enters battle.",
+   "k": "entry",
+   "v": {
+    "self": {
+     "spe": 1
+    }
+   }
+  },
+  {
+   "name": "Regrowth",
+   "desc": "Restores a little HP at the end of every turn.",
+   "k": "heal",
+   "v": null
+  },
+  {
+   "name": "Tidal Mend",
+   "desc": "Restores a little HP at the end of every turn.",
+   "k": "heal",
+   "v": null
+  },
+  {
+   "name": "Crystal Lattice",
+   "desc": "Restores a little HP at the end of every turn.",
+   "k": "heal",
+   "v": null
+  },
+  {
+   "name": "Accelerator",
+   "desc": "Speed rises at the end of every turn.",
+   "k": "speed",
+   "v": null
+  },
+  {
+   "name": "Keen Sensors",
+   "desc": "Lands critical hits three times as often.",
+   "k": "crit",
+   "v": null
+  },
+  {
+   "name": "Sturdy Core",
+   "desc": "Survives any single hit from full HP with 1 HP left.",
+   "k": "sturdy",
+   "v": null
+  },
+  {
+   "name": "Molten Armor",
+   "desc": "Survives any single hit from full HP with 1 HP left.",
+   "k": "sturdy",
+   "v": null
+  },
+  {
+   "name": "Insulated",
+   "desc": "Cannot be shocked or poisoned.",
+   "k": "immune",
+   "v": [
+    "shock",
+    "poison"
+   ]
+  },
+  {
+   "name": "Pure Mind",
+   "desc": "Cannot be affected by any status condition.",
+   "k": "immune",
+   "v": [
+    "burn",
+    "poison",
+    "shock",
+    "freeze",
+    "confuse"
+   ]
+  },
+  {
+   "name": "Levitate",
+   "desc": "Floats, so Gravity moves have no effect.",
+   "k": "float",
+   "v": null
+  },
+  {
+   "name": "Thick Pelt",
+   "desc": "Takes half damage from Plasma and Cryo moves.",
+   "k": "thick",
+   "v": null
+  },
+  {
+   "name": "Pure Core",
+   "desc": "Same-type moves hit even harder (1.8x instead of 1.5x).",
+   "k": "stab",
+   "v": null
+  },
+  {
+   "name": "Unstable Core",
+   "desc": "Attack and Sp. Atk rise 50% while it has a status condition.",
+   "k": "unstable",
+   "v": null
+  },
+  {
+   "name": "Friendly Signal",
+   "desc": "Its signal is easy to tune: the Sync window is much wider.",
+   "k": "sync",
+   "v": 1.4
+  },
+  {
+   "name": "Skittish",
+   "desc": "Its signal jumps around: the Sync window is narrower.",
+   "k": "sync",
+   "v": 0.7
+  },
+  {
+   "name": "Keeper's Pride",
+   "desc": "Trained by a Keeper: all its moves deal 20% more damage.",
+   "k": "pride",
+   "v": null
+  },
+  {
+   "name": "Scout Signal",
+   "desc": "Seedmother's scout: fast, and widens the Sync window when it leads your team.",
+   "k": "scout",
+   "v": null
+  },
+  {
+   "name": "Harmonic Bond",
+   "desc": "Sonic and Crystal moves deal 30% more; restores a little HP each turn.",
+   "k": "harmonic",
+   "v": null
+  },
+  {
+   "name": "Relay Guardian",
+   "desc": "Takes 25% less damage and restores a little HP each turn.",
+   "k": "guardian",
+   "v": null
+  },
+  {
+   "name": "Devourer",
+   "desc": "Takes 25% less damage and heals by a third of the damage it deals.",
+   "k": "devourer",
+   "v": null
+  },
+  {
+   "name": "Genesis",
+   "desc": "Immune to every status and restores a lot of HP each turn.",
+   "k": "genesis",
+   "v": null
+  },
+  {
+   "name": "Pillar of Ystra",
+   "desc": "Takes 25% less damage and restores a little HP each turn.",
+   "k": "guardian",
+   "v": null
+  }
+ ],
+ "signature_moves": [
+  {
+   "n": "Mycel Crush",
+   "t": "Bio",
+   "p": 100,
+   "a": 95,
+   "fx": {
+    "drain": 0.3
+   }
+  },
+  {
+   "n": "Star Flare",
+   "t": "Plasma",
+   "p": 100,
+   "a": 95,
+   "fx": {
+    "s": "burn",
+    "c": 0.2
+   }
+  },
+  {
+   "n": "Abyssal Lure",
+   "t": "Hydro",
+   "p": 100,
+   "a": 95,
+   "fx": {
+    "foe": {
+     "spd": -1
+    },
+    "c": 0.3
+   }
+  },
+  {
+   "n": "Saucer Spark",
+   "t": "Volt",
+   "p": 60,
+   "a": 100,
+   "fx": {
+    "s": "shock",
+    "c": 0.3
+   }
+  },
+  {
+   "n": "Hammer Horn",
+   "t": "Alloy",
+   "p": 90,
+   "a": 95,
+   "fx": {
+    "self": {
+     "def": 1
+    },
+    "c": 1
+   }
+  },
+  {
+   "n": "Spore Dance",
+   "t": "Toxin",
+   "p": 75,
+   "a": 100,
+   "fx": {
+    "s": "poison",
+    "c": 0.3
+   }
+  },
+  {
+   "n": "Anchor Drop",
+   "t": "Hydro",
+   "p": 95,
+   "a": 95,
+   "fx": {
+    "foe": {
+     "spe": -1
+    },
+    "c": 1
+   }
+  },
+  {
+   "n": "Bass Drop",
+   "t": "Sonic",
+   "p": 90,
+   "a": 95,
+   "fx": {
+    "foe": {
+     "def": -1
+    },
+    "c": 0.5
+   }
+  },
+  {
+   "n": "Volcano Shell",
+   "t": "Magma",
+   "p": 95,
+   "a": 95,
+   "fx": {
+    "s": "burn",
+    "c": 0.2
+   }
+  },
+  {
+   "n": "Tusk Avalanche",
+   "t": "Cryo",
+   "p": 95,
+   "a": 95,
+   "fx": {
+    "s": "freeze",
+    "c": 0.1
+   }
+  },
+  {
+   "n": "Ancient Bite",
+   "t": "Cryo",
+   "p": 90,
+   "a": 95,
+   "fx": {
+    "s": "freeze",
+    "c": 0.2
+   }
+  },
+  {
+   "n": "Triple Venom",
+   "t": "Toxin",
+   "p": 85,
+   "a": 95,
+   "fx": {
+    "s": "poison",
+    "c": 0.4
+   }
+  },
+  {
+   "n": "Hydraulic Crush",
+   "t": "Alloy",
+   "p": 90,
+   "a": 100,
+   "fx": {}
+  },
+  {
+   "n": "Rift Collapse",
+   "t": "Void",
+   "p": 100,
+   "a": 90,
+   "fx": {
+    "foe": {
+     "spe": -1
+    },
+    "c": 0.5
+   }
+  },
+  {
+   "n": "Fear Mirror",
+   "t": "Psi",
+   "p": 80,
+   "a": 100,
+   "fx": {
+    "s": "confuse",
+    "c": 0.3
+   }
+  },
+  {
+   "n": "Hope Mirror",
+   "t": "Psi",
+   "p": 80,
+   "a": 100,
+   "fx": {
+    "heal": 0.25
+   }
+  },
+  {
+   "n": "Horizon Howl",
+   "t": "Void",
+   "p": 90,
+   "a": 95,
+   "fx": {
+    "foe": {
+     "atk": -1
+    },
+    "c": 0.5
+   }
+  },
+  {
+   "n": "Gemstorm",
+   "t": "Crystal",
+   "p": 95,
+   "a": 95,
+   "fx": {
+    "crit": 1
+   }
+  },
+  {
+   "n": "Encore Riff",
+   "t": "Sonic",
+   "p": 85,
+   "a": 100,
+   "fx": {
+    "crit": 1
+   }
+  },
+  {
+   "n": "Pyre Veil",
+   "t": "Plasma",
+   "p": 90,
+   "a": 95,
+   "fx": {
+    "s": "burn",
+    "c": 0.3
+   }
+  },
+  {
+   "n": "Bastion Slam",
+   "t": "Gravity",
+   "p": 90,
+   "a": 95,
+   "fx": {
+    "self": {
+     "def": 1
+    },
+    "c": 1
+   }
+  },
+  {
+   "n": "First Light",
+   "t": "Plasma",
+   "p": 100,
+   "a": 95,
+   "fx": {
+    "heal": 0.25
+   }
+  },
+  {
+   "n": "Hungry Void",
+   "t": "Void",
+   "p": 75,
+   "a": 100,
+   "fx": {
+    "drain": 0.5
+   }
+  },
+  {
+   "n": "Continent Lift",
+   "t": "Gravity",
+   "p": 110,
+   "a": 90,
+   "fx": {
+    "foe": {
+     "spe": -1
+    },
+    "c": 0.3
+   }
+  },
+  {
+   "n": "Tidal Crown",
+   "t": "Hydro",
+   "p": 110,
+   "a": 90,
+   "fx": {
+    "s": "confuse",
+    "c": 0.2
+   }
+  },
+  {
+   "n": "Sunfall",
+   "t": "Plasma",
+   "p": 110,
+   "a": 90,
+   "fx": {
+    "s": "burn",
+    "c": 0.3
+   }
+  },
+  {
+   "n": "Harmonic Chime",
+   "t": "Sonic",
+   "p": 90,
+   "a": 100,
+   "fx": {
+    "heal": 0.25
+   }
+  },
+  {
+   "n": "Signal Nova",
+   "t": "Psi",
+   "p": 110,
+   "a": 90,
+   "fx": {}
+  },
+  {
+   "n": "Devour",
+   "t": "Void",
+   "p": 120,
+   "a": 90,
+   "fx": {
+    "drain": 0.5
+   }
+  },
+  {
+   "n": "Genesis Bloom",
+   "t": "Bio",
+   "p": 110,
+   "a": 95,
+   "fx": {
+    "heal": 0.5
+   }
+  }
+ ]
+}

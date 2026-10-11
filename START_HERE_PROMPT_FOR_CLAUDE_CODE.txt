@@ -1,0 +1,12 @@
+Paste this into Claude Code after unzipping this folder (for example to C:\Users\turko\Projects\alienmon-app) and opening Claude Code in that folder:
+
+----------------------------------------------------------------
+Read CLAUDE.md in this folder first and follow it.
+
+Do these in order:
+1. Import my new renders from C:\Users\turko\Downloads\Alienmon using tools/import_renders.py (dry run first, show me the report, identify any unmatched images by looking at them and the story bible, then import). Copy only, never delete my originals.
+2. Rebuild the game with node tools/build.js and test it in the browser (title music, new game, Dustmere, the START menu, a battle, a capture, space flight).
+3. Create a GitHub repo called alienmon under my account (Turkokami), commit, push, and deploy it to Vercel using the included vercel.json. Give me the live URL.
+
+When you finish, send me a short report: what was imported and where, anything still unmatched or needing a walk mask, and the live URL.
+----------------------------------------------------------------
