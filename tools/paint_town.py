@@ -10,6 +10,8 @@ A spec (data/towns/<planetKey>.json) holds:
   walk     polygons [[x,y],...] the player can stand in
   nowalk   polygons cut back out of walk (buildings, lamp posts, lava inside a plaza...)
   grass    polygons where wild Alienmon can jump out (only counts where also walkable)
+  base     optional: a saved painted map (data/towns/base/<planet>.json, one of the three original hand-made towns)
+           whose walk/grass masks, image, start, exit and hotspots are kept; walk/grass/hot in the spec are added on top
   hot      hotspots, same format as data/painted_maps.json:
              {x,y,r,ry?,k,hint?,t?,art?,mon?}  k = bay | shop | npc | keeper | ship | talk | mon | block
              'art' on a talk/npc spot is the dialogue portrait, and with "draw": true the character is also drawn standing there; 'mon' on a mon spot draws that
@@ -93,18 +95,29 @@ def overlay(spec, walk, grass, path):
     out.save(path)
 
 
+def unpack(b64):
+    b = base64.b64decode(b64)
+    return np.array([(b[i >> 3] >> (i & 7)) & 1 for i in range(GW * GH)], bool).reshape(GH, GW)
+
+
 def build(spec_path, overlay_path=None, dry=False):
     spec = json.load(open(spec_path, encoding='utf-8'))
-    walk = poly_mask(spec['walk']) & ~poly_mask(spec.get('nowalk'))
-    grass = poly_mask(spec.get('grass')) & walk
-    img = spec['planet'] + '_town_hd'
+    base = json.load(open(os.path.join(ROOT, spec['base']), encoding='utf-8')) if spec.get('base') else None
+    if base:   # an original hand-made town: keep everything it had and add the spec's areas and hotspots
+        for k in ('S', 'start', 'exitY', 'town'): spec.setdefault(k, base[k])
+        spec['hot'] = base['hot'] + spec.get('hot', [])
+        spec['src'] = 'art/scenes/' + base['img'] + '.jpg'
+    walk = (poly_mask(spec.get('walk')) | (unpack(base['walk']) if base else False)) & ~poly_mask(spec.get('nowalk'))
+    grass = (poly_mask(spec.get('grass')) | (unpack(base['grass']) if base else False)) & walk
+    img = base['img'] if base else spec['planet'] + '_town_hd'
     probs = check(spec, walk)
     if overlay_path: overlay(spec, walk, grass, overlay_path)
     print(f"{spec['planet']}: {walk.sum()} walkable cells, {grass.sum()} grass cells, {len(spec['hot'])} hotspots" + ('' if not probs else '\n  PROBLEMS:\n  ' + '\n  '.join(probs)))
     if dry: return not probs
-    src = Image.open(os.path.join(ROOT, spec['src'])).convert('RGB')
-    if src.size != (W, H): src = src.resize((W, H), Image.LANCZOS)
-    src.save(os.path.join(ROOT, 'art/scenes', img + '.jpg'), quality=84, optimize=True)
+    if not base:
+        src = Image.open(os.path.join(ROOT, spec['src'])).convert('RGB')
+        if src.size != (W, H): src = src.resize((W, H), Image.LANCZOS)
+        src.save(os.path.join(ROOT, 'art/scenes', img + '.jpg'), quality=84, optimize=True)
     pm_path = os.path.join(ROOT, 'data/painted_maps.json')
     pm = json.load(open(pm_path, encoding='utf-8'))
     pm[spec['planet']] = {'img': img, 'S': spec.get('S', 0.22), 'w': W, 'h': H, 'cell': CELL, 'walk': pack(walk), 'grass': pack(grass),
@@ -116,6 +129,7 @@ def build(spec_path, overlay_path=None, dry=False):
 if __name__ == '__main__':
     args = sys.argv[1:]
     ov = args[args.index('--overlay') + 1] if '--overlay' in args else None
+    # data/towns/base/ holds inputs, not specs
     specs = sorted(glob.glob(os.path.join(ROOT, 'data/towns/*.json'))) if '--all' in args else [args[0]]
     ok = all([build(s, ov if len(specs) == 1 else None, '--dry' in args) for s in specs])
     sys.exit(0 if ok else 1)
