@@ -48,10 +48,14 @@ const j=x=>JSON.stringify(x);
 // private beta build (the Vercel project with PRIVATE_TESTING=1): shows a feedback link that emails FEEDBACK_EMAIL
 const BETA=process.env.PRIVATE_TESTING==='1'?{email:process.env.FEEDBACK_EMAIL||'turkokami@gmail.com'}:null;
 const SITE=(process.env.SITE_URL||'https://alienmon.vercel.app').replace(/\/$/,'');
-const BUILD=crypto.createHash('sha1').update(fs.readFileSync(path.join(root,'src/template.html'))).update(j([D,P,PAINT,WORLDJ,ASSETS])).digest('hex').slice(0,10);
+const BUILD=crypto.createHash('sha1').update(fs.readFileSync(path.join(root,'src/template.html'))).update(fs.readFileSync(path.join(root,'src/quests.js'))).update(j([D,P,PAINT,WORLDJ,ASSETS])).digest('hex').slice(0,10);
 const fill={__DATA__:j(D),__PLANETS__:j(P),__TRAITS__:j(core.traits),__SIGS__:j(core.signature_moves),__SYS__:j(SYS),__ART__:j(ART),__ARTB__:j(ARTB),__OW__:j(OW),
  __TITLE__:j(TITLE),__SHIP__:j(SHIP),__CUTS__:j(CUTS),__CHAR__:j(CHAR),__SCENES__:j(SCN),__FX__:j(FX),__PAINT__:PAINT,__WORLD__:WORLDJ,__WORLDIMG__:j(WORLDIMG),
  __MUSIC__:j(MUSIC),__TITLEMUSIC__:j(TITLEMUSIC),__PLANETART__:j(PLANART),__BUILD__:j(BUILD),__INLINE__:j(INLINE),__SITE__:SITE,__BETA__:j(BETA)};
+// quests: the engine (src/quests.js) is filled in first and then inlined into the template
+const QUESTS=JSON.parse(fs.readFileSync(path.join(root,'data/quests.json'),'utf8')).quests;
+const qp=path.join(root,'data/quest_places.json'),QPLACE=fs.existsSync(qp)?fs.readFileSync(qp,'utf8'):'{}';
+fill.__QUESTENGINE__=fs.readFileSync(path.join(root,'src/quests.js'),'utf8').replace(/__[A-Z]+__/g,k=>({__QUESTS__:j(QUESTS),__QPLACE__:QPLACE})[k]||k);
 // function replacer: data can contain "$&"-style sequences that a string replacement would expand
 let html=fs.readFileSync(path.join(root,'src/template.html'),'utf8').replace(/__[A-Z]+__/g,k=>k in fill?fill[k]:k);
 fs.mkdirSync(www,{recursive:true});
