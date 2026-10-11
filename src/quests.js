@@ -33,11 +33,12 @@ const qObj=q=>q.objectives[qs(q.id).step];
 const qActive=()=>QUESTS.filter(q=>qs(q.id).state==='active');
 
 // which place the player is in, in the terms quests.json uses
-function qHere(){return scene==='world'?'molten_frontier':(PL[G.planet]||{}).key}
+function qHere(){return scene==='world'?'molten_frontier':(G.sub||(PL[G.planet]||{}).key)}
 function qSameArea(loc){if(!loc)return false;const h=qHere();return loc.area==='molten_frontier'?h==='molten_frontier':(loc.planet&&loc.planet===h&&scene!=='world'&&scene!=='space')}
 function qPos(){return scene==='world'?G.wpos:G.ppos}
 // a quest location, moved onto walkable ground for the painted towns when tools/place_quests.py had to
-function qLoc(qid,step,loc){const p=QPLACE[qid+':'+step];return p?Object.assign({},loc,p):loc}
+const QPLACE_FIXED={'M13:1':{area:'fortress',planet:'fortress',x:768,y:222,spot:'Control room terminal'}};
+function qLoc(qid,step,loc){const p=QPLACE_FIXED[qid+':'+step]||QPLACE[qid+':'+step];return p?Object.assign({},loc,p):loc}
 
 function qMatch(q,o,type,target,info){const t=o.type;
  switch(type){
@@ -133,6 +134,7 @@ const QNAME={sola_1:'Sola',admin_vex:'Admin Vex',admin_bronn:'Admin Bronn',direc
 const qTitle=id=>QNAME[id]||id.replace(/_/g,' ').replace(/\b\w/g,c=>c.toUpperCase());
 const QTRAINER=new Set(['battle_trainer','battle_rival','defeat_boss']);
 // spread several pickups around one spot
+const QPROP_GIVES={forge_terminal:'helix_keycard'};
 const QSPREAD=[[0,0],[34,10],[-30,14],[12,-26],[-14,30],[40,-18]];
 
 let qEntCache=null,qEntFrame=-1;
@@ -159,7 +161,7 @@ function qTeam(q,o){const p=PL[G.planet]||PL[0],lv=(p.lv||[5,8])[1];
 function qInteract(e){const q=e.q;
  if(e.k==='giver'){say((q.dialogue&&q.dialogue.start||[]).length?q.dialogue.start:[q.title],()=>choose('Side mission: '+q.title,['Accept','Not now'],i=>{if(i===0){QN=QN.filter(m=>m.q!==q.id);qActivate(q);QN=QN.filter(m=>!(m.q===q.id&&m.kind==='start'));say('Mission accepted: '+q.title+'. '+qText(q)+'.')}}),q.giver&&q.giver.art);return}
  if(e.k==='turnin'||e.k==='talk'){if(!qEvent('talk','q:'+q.id,{x:e.x,y:e.y}))say((q.dialogue&&q.dialogue.progress)||['Keep at it, Linker.'],null,e.art||(q.giver&&q.giver.art));return}
- if(e.k==='prop'){const s=qs(q.id);s.got.push(e.i);say(e.o.type==='collect'?'You found a '+e.o.target.replace(/_/g,' ')+'!':'You examine the '+(qLoc(q.id,s.step,e.o.location).spot||e.o.target.replace(/_/g,' '))+'.');qEvent('prop',e.o.target);return}
+ if(e.k==='prop'){const s=qs(q.id);s.got.push(e.i);if(QPROP_GIVES[e.o.target]){G.key=G.key||{};G.key[QPROP_GIVES[e.o.target]]=1}say(e.o.type==='collect'?'You found a '+e.o.target.replace(/_/g,' ')+'!':'You examine the '+(qLoc(q.id,s.step,e.o.location).spot||e.o.target.replace(/_/g,' '))+'.');qEvent('prop',e.o.target);return}
  if(e.k==='trainer'){if(!G.party.some(m=>m.hp>0)){say('Your team needs to heal first.');return}const name=qTitle(e.o.target),team=qTeam(q,e.o);
   const tr={name,art:e.art,intro:'You want to battle? Let\'s go!',lose:'...You win this time.',after:'Not bad, Linker.',team,bkey:e.o.target};
   say(name+': '+tr.intro,()=>startBattle(team.map(([id,lv])=>mk(id,lv)),tr),e.art);return}

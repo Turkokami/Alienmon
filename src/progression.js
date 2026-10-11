@@ -86,8 +86,8 @@ function disobeys(m){return!!m.ob&&G.party.includes(m)&&m.lv>SYNC_LIMIT[Math.min
 
 /* wild Alienmon by world: tier 1, tier 2 after 4 Shards, tier 3 after the Champion */
 function wildTable(key){const a=PROG.areas[key];if(!a)return null;return(G.flags.champ&&a.tier3_after_champion)||(G.shards>=4&&a.tier2_after_4_shards)||a.tier1}
-function wildPick(key,name){const t=wildTable(key);if(!t||!t.length)return null;let e=null;
- if(name)e=t.find(x=>x.name===name)||(PROG.areas[key].tier1||[]).find(x=>x.name===name);
+function wildPick(key,name){const t=(wildTable(key)||[]).filter(x=>wildOK(x.name));if(!t.length)return null;let e=null;
+ if(name&&wildOK(name))e=t.find(x=>x.name===name)||(PROG.areas[key].tier1||[]).find(x=>x.name===name);
  if(!e){let w=t.reduce((s,x)=>s+(x.weight||1),0)*R();for(const x of t){w-=x.weight||1;if(w<=0){e=x;break}}e=e||t[0]}
  const id=IDX[e.name];return id==null?null:[id,ri(e.min,e.max)]}
 

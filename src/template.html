@@ -250,8 +250,8 @@ function importSave(){const inp=document.createElement('input');inp.type='file';
 function loadSave(){try{const s=localStorage.getItem('alienmon_save_v2');if(!s)return null;const g=JSON.parse(s);g.party.concat(g.box).forEach(m=>{m.st=m.st||null;resetStages(m)});g.items=g.items||{...START_ITEMS};return progMigrate(g)}catch(e){return null}}
 function say(lines,cb,por){const pages=[];for(const l of[].concat(lines)){const w=wrap(l);for(let i=0;i<w.length;i+=2)pages.push(w.slice(i,i+2))}DLG={pages,i:0,cb,por}}
 function healAll(){for(const m of G.party.concat(G.box)){m.hp=stat(m,0);m.st=null;resetStages(m)}if(!G.pods.stasis&&!G.pods.harmonic&&!G.pods.singularity&&G.dust<20)G.pods.stasis=5}
-const UNLOCK_ALL=true; // playtest: every planet is open
-function unlocked(pi){if(UNLOCK_ALL)return true;const q=PL[pi].req;return G.shards>=q.s&&(!q.f||G.flags[q.f])}
+const UNLOCK_ALL=false   // playtesters use START > Options > Free roam instead; // playtest: every planet is open
+function unlocked(pi){if(UNLOCK_ALL)return true;return canLand(PL[pi].key)}
 function addMon(m){G.seen[m.id]=1;G.caught[m.id]=1;if(G.party.length<6){G.party.push(m);return'party'}G.box.push(m);return'box'}
 
 /* ---------- title / starter ---------- */
@@ -286,7 +286,7 @@ function updStarter(){if(P_('left'))ssel=(ssel+2)%3;if(P_('right'))ssel=(ssel+1)
 
 /* ---------- painted (walkable art) maps ---------- */
 const PAINT=__PAINT__;const PMASK={};
-function paintOf(){const p=PL[G.planet];return p&&PAINT[p.key]}
+function paintOf(){const p=PL[G.planet];return p&&PAINT[G.sub||p.key]}
 function pmask(P,key){const id=P.img+key;if(PMASK[id])return PMASK[id];const b=atob(P[key]),u=new Uint8Array(b.length);for(let i=0;i<b.length;i++)u[i]=b.charCodeAt(i);return PMASK[id]=u}
 function pbit(P,key,x,y){const W=P.w/P.cell,H=P.h/P.cell,cx=Math.floor(x/P.cell),cy=Math.floor(y/P.cell);if(cx<0||cy<0||cx>=W||cy>=H)return false;const i=cy*W+cx;return(pmask(P,key)[i>>3]>>(i&7))&1}
 function pfree(P,x,y){if(!pbit(P,'walk',x,y))return false;for(const h of P.hot){const ry=h.ry||h.r/1.6;if(((h.x-x)/h.r)**2+((h.y-y)/ry)**2<1)return false}return true}
@@ -300,7 +300,7 @@ function startJump(where,from){let dx=(held.right?1:0)-(held.left?1:0),dy=(held.
 function landNear(ok,x,y,r){if(ok(x,y))return[x,y];for(let d=4;d<=r;d+=4)for(let a=0;a<16;a++){const px=x+Math.cos(a*Math.PI/8)*d,py=y+Math.sin(a*Math.PI/8)*d;if(ok(px,py))return[px,py]}return null}
 function jumpSfx(){try{if(!AC||musicMode==='off')return;const t=AC.currentTime,o=AC.createOscillator(),g=AC.createGain();o.type='square';o.frequency.setValueAtTime(330,t);o.frequency.exponentialRampToValueAtTime(880,t+0.12);
  g.gain.setValueAtTime(0.04,t);g.gain.exponentialRampToValueAtTime(0.001,t+0.15);o.connect(g).connect(AC.destination);o.start(t);o.stop(t+0.16)}catch(e){}}
-function launch(){const key=PL[G.planet].key;cut(1,'Heading out!',()=>toWorld(key))}
+function launch(){const key=G.sub&&SUB_DOOR[G.sub]||PL[G.planet].key;cut(1,'Heading out!',()=>toWorld(key))}
 function updPaint(){const P=paintOf();if(!G.ppos)G.ppos=P.start.slice();
  if(P_('start')){scene='menu';menuSel=0;return}
  if(JMP&&JMP.where==='paint'){JMP.t++;const sp=4.2;G.ppos=[Math.max(8,Math.min(P.w-8,G.ppos[0]+JMP.vx*sp)),Math.max(8,Math.min(P.h-8,G.ppos[1]+JMP.vy*sp))];pmove=1;stepc++;
@@ -310,7 +310,7 @@ function updPaint(){const P=paintOf();if(!G.ppos)G.ppos=P.start.slice();
  if(dx||dy){face=Math.abs(dx)>Math.abs(dy)?(dx>0?'right':'left'):(dy>0?'down':'up');const sp=4.2/(dx&&dy?1.41:1);let[x,y]=G.ppos;
   if(pfree(P,x+dx*sp,y))x+=dx*sp;if(pfree(P,x,y+dy*sp))y+=dy*sp;const d=Math.hypot(x-G.ppos[0],y-G.ppos[1]);if(d>0.1){pmove=1;stepc++;G.ppos=[x,y];
   if(pbit(P,'grass',x,y)){pacc+=d;if(pacc>64){pacc=0;if(R()<0.11){wild();return}}}}
-  if(y>=P.exitY&&dy>0){G.ppos[1]=P.exitY-24;say('Leave '+(P.town||PL[G.planet].name)+' and head out onto the world map?',()=>choose('Leave town?',['Yes','No'],i=>{if(i===0)launch()}));return}}
+  if(y>=P.exitY&&dy>0){if(PL[G.planet].key==='dustara'&&!gateOpen('dustara')){G.ppos[1]=P.exitY-24;say(gateMsg('dustara'));return}G.ppos[1]=P.exitY-24;say('Leave '+(P.town||PL[G.planet].name)+' and head out onto the world map?',()=>choose('Leave town?',['Yes','No'],i=>{if(i===0)launch()}));return}}
  pnear=null;let best=1e9;for(const h of P.hot){if(h.k==='block')continue;const dx=h.x-G.ppos[0],dy=h.y-G.ppos[1],ry=h.ry||h.r/1.6,dd=Math.hypot(dx,dy),d=dd-dd/Math.max(1e-3,Math.hypot(dx/h.r,dy/ry));if(d<44&&d<best){best=d;pnear=h}}
  const qe=qNear();if(qe&&P_('a'))qInteract(qe);else if(pnear&&P_('a'))paintInteract(pnear);
  drawPaint()}
@@ -318,7 +318,7 @@ function paintInteract(h){const p=PL[G.planet];if(h.k==='talk'||h.k==='npc')qEve
  if(h.k==='bay')return bayMenu();if(h.k==='shop')return shop();
  if(h.k==='npc')return say(p.npc,null,p.npcArt);
  if(h.k==='keeper')return keeperTalk(p);
- if(h.k==='ship')return choose('Your ship',['Head out (world map)','Recovery Bay','Shop','Cancel'],i=>{if(i===0)launch();else if(i===1){healAll();say('Ship Recovery Bay: Your Alienmon are fully healed and cured!')}else if(i===2)shop()});
+ if(h.k==='ship')return choose('Your ship',['Head out (world map)','Recovery Bay','Shop','Cancel'],i=>{if(i===0)launch();else if(i===1){healAll();noteHeal();say('Ship Recovery Bay: Your Alienmon are fully healed and cured!')}else if(i===2)shop()});
  if(h.k==='talk')return say(h.t,null,h.art||undefined);
  if(h.k==='mon'){if(!G.party.some(m=>m.hp>0))return say('Your team needs to heal first.');const pool=p.pool.r.length?p.pool.r:p.pool.c,[a,b]=p.lv;
   const wp=wildPick(p.key,h.mon),id=wp?wp[0]:h.mon&&IDX[h.mon]!=null?IDX[h.mon]:pick(pool);QWILD='hotspot_mon_'+({dustara:'dustmere'}[p.key]||p.key);say(h.t||'The wild '+D[id].name+' wants to battle!',()=>startBattle([mk(id,wp?wp[1]:ri(a,b)+1)],null))}}
@@ -404,8 +404,8 @@ function nodeOf(key){return WORLD.nodes.find(n=>n.k===key)}
 function nearestNode(x,y){let b=null,bd=1e9;for(const n of WORLD.nodes){const d=Math.hypot(n.x-x,n.y-y);if(d<bd){bd=d;b=n}}return[b,bd]}
 function pidx(key){return PL.findIndex(p=>p.key===key)}
 function regionKey(x,y){const z=(WORLD.zones||[]).find(z=>x>=z.x0&&x<z.x1);return z?z.k:nearestNode(x,y)[0].k}
-function toWorld(key){const n=nodeOf(key)||nodeOf('space')||WORLD.nodes[0];G.wpos=[n.x,n.y+22];scene='world';wbanner=90;wregion=-2}
-function enterRegion(n){const pi=pidx(n.k),p=PL[pi];G.planet=pi;const mp=genMap(pi);G.px=mp.pad[0];G.py=mp.pad[1]-1;face='down';
+function toWorld(key){G.sub=null;const n=nodeOf(key)||nodeOf('space')||WORLD.nodes[0];G.wpos=[n.x,n.y+22];scene='world';wbanner=90;wregion=-2}
+function enterRegion(n){G.sub=null;const pi=pidx(n.k),p=PL[pi];G.planet=pi;const mp=genMap(pi);G.px=mp.pad[0];G.py=mp.pad[1]-1;face='down';
  if(PAINT[p.key]){G.ppos=[PAINT[p.key].start[0],PAINT[p.key].exitY-30];face='up'}
  cut(okI(SCI[p.landScene||p.scene])?SCI[p.landScene||p.scene]:2,'Entering '+n.n,()=>{scene='planet';banner=90},p.sceneFx)}
 function wTrainer(e){const ri=pidx(regionKey(e.x,e.y)),p=PL[ri],r=rng(hash(e.id)),pool=p.pool.c.concat(p.pool.e),tl=trainerLevels(p.key),lv=tl?tl[1]:p.lv[1]+2;
@@ -425,9 +425,10 @@ function updWorld(){if(!G.wpos)toWorld(PL[G.planet].key);if(P_('start')){scene='
  for(const e of WORLD.npcs){const d=Math.hypot(e.x-G.wpos[0],e.y-G.wpos[1]);if(d<16&&d<best){best=d;wnear={npc:e}}}
  {const qe=qNear();if(qe&&P_('a')){qInteract(qe);drawWorld();return}}
  if(P_('a')&&wnear){if(wnear.node){const n=wnear.node;
+   if(!gateOpen(n.k)){say(gateMsg(n.k));return}
    if(n.k==='bay'){bayMenu();return}
-   const opts=n.k==='space'?['Fly ship to space','Cancel']:['Enter','Cancel'];
-   choose(n.k==='space'?n.n:n.n+' - '+PL[pidx(n.k)].name,opts,i=>{if(opts[i].startsWith('Enter'))enterRegion(n);else if(opts[i].startsWith('Fly'))cut(1,'Launching!',()=>{const p=PL[pidx('helix')];G.ship.x=p.x;G.ship.y=p.y+p.r+10;G.ship.vx=G.ship.vy=0;scene='space'})})}
+   const opts=n.k==='space'?['Take the shuttle to Helix Station','Cancel']:['Enter','Cancel'];
+   choose(n.k==='space'?n.n:n.n+' - '+PL[pidx(n.k)].name,opts,i=>{if(opts[i].startsWith('Enter')){if(n.k==='helix')enterFortress(n);else enterRegion(n)}else if(opts[i].startsWith('Take'))enterRegion({k:'helix',n:'Helix Station by shuttle'})})}
   else{const e=wnear.npc;qEvent('talk',e.id,{x:e.x,y:e.y});if(e.k==='trainer'){const t=wTrainer(e);if(G.beaten[e.id])say(t.name+': '+t.after,null,e.art);else if(!G.party.some(m=>m.hp>0))say('Your team needs to heal first.');
     else{G.planet=pidx(regionKey(e.x,e.y));say(t.name+': '+t.intro,()=>startBattle(t.team.map(([id,lv])=>mk(id,lv)),t),e.art)}}else say(e.t,null,e.art)}}
  drawWorld()}
@@ -473,7 +474,7 @@ function keeperTalk(p){{const k=p.keeper;if(!k){say(p.tower);return}
   say([k.name+': '+k.intro],()=>{k.team=keeperTeam(p.key,k);startBattle(k.team.map(([id,lv])=>mk(id,lv)),k)},k.art);return}}
 function wild(){if(!G.party.some(m=>m.hp>0))return;QWILD=scene==='world'?({pyros:'wild_lava_fields'}[PL[G.planet].key]||'wild_'+PL[G.planet].key):'wild_'+PL[G.planet].key;const pool=PL[G.planet].pool,r=R();let list=r<0.015&&pool.l.length?pool.l:r<0.06&&pool.r.length?pool.r:r<0.25&&pool.e.length?pool.e:pool.c;
  const wp=list===pool.l?null:wildPick(PL[G.planet].key);if(wp){startBattle([mk(wp[0],wp[1])],null);return}
- const id=pick(list),[a,b]=PL[G.planet].lv;startBattle([mk(id,ri(a,b))],null)}
+ const ok=wildIds(list),id=pick(ok.length?ok:wildIds(pool.c).length?wildIds(pool.c):pool.c),[a,b]=PL[G.planet].lv;startBattle([mk(id,ri(a,b))],null)}
 
 /* ---------- cutscenes ---------- */
 let CUT=null;
@@ -488,7 +489,7 @@ function choose(title,opts,cb,back,por){CH={title,opts,sel:0,cb,back,por}}
 function updChoose(){const n=CH.opts.length;if(P_('up'))CH.sel=(CH.sel+n-1)%n;if(P_('down'))CH.sel=(CH.sel+1)%n;
  if(P_('b')){const b=CH.back;CH=null;if(b)b();return}if(P_('a')){const c=CH.cb,i=CH.sel;CH=null;c(i)}}
 function drawChoose(){if(CH.por&&okI(CHI[CH.por])){const h0=16+CH.opts.length*11;box(4,100-h0-48,46,48,'#3b2a5c','#1b1424');dchar(CH.por,6,100-h0-46,42,42)}const h=16+CH.opts.length*11;box(4,100-h,152,h+2);txt(CH.title,8,104-h,'#7a1f6a',7);CH.opts.forEach((o,i)=>txt((i===CH.sel?'>':' ')+o,8,116-h+i*11,i===CH.sel?'#d7262e':'#1b1424',7))}
-function bayMenu(){choose('Recovery Bay',['Heal team','Pod shop','Move Archive','Leave'],i=>{if(i===0){healAll();say('Nurse: Your Alienmon are fully healed and cured!',bayMenu,'nurse')}else if(i===1)shop();else if(i===2)moveArchive()},null,'nurse')}
+function bayMenu(){choose('Recovery Bay',['Heal team','Pod shop','Move Archive','Leave'],i=>{if(i===0){healAll();noteHeal();say(['Nurse: Your Alienmon are fully healed and cured!'].concat(nurseTip()),bayMenu,'nurse')}else if(i===1)shop();else if(i===2)moveArchive()},null,'nurse')}
 function shop(){const goods=PODS.filter(p=>shopOpen(p.k)).map(p=>({n:p.n,price:SHOP_PRICE[p.k]||p.price,get:()=>G.pods[p.k],add:()=>G.pods[p.k]++})).concat(ITEMS.filter(it=>shopOpen(it.k)).map(it=>({n:it.n,price:SHOP_PRICE[it.k]||it.price,get:()=>G.items[it.k]||0,add:()=>G.items[it.k]=(G.items[it.k]||0)+1})));
  choose('Stardust: '+G.dust,goods.map(g=>g.n.slice(0,13).padEnd(13)+String(g.price).padStart(4)+' x'+g.get()).concat(['Back']),i=>{if(i===goods.length)return bayMenu();const g=goods[i];
  if(G.dust<g.price)say('Shopkeeper: Not enough stardust. Win battles to earn more.',shop,'shop');else{G.dust-=g.price;g.add();shop()}},bayMenu,'shop')}
@@ -506,8 +507,8 @@ function updSpace(){const s=G.ship;if(P_('start')){scene='menu';menuSel=0;return
  if(sp>0.15)s.a=Math.atan2(s.vy,s.vx);s.x=Math.max(0,Math.min(1700,s.x+s.vx));s.y=Math.max(0,Math.min(1200,s.y+s.vy));
  let near=-1,nd=1e9;PL.forEach((p,i)=>{if(p.sys!==G.sys)return;const d=Math.hypot(p.x-s.x,p.y-s.y)-p.r;if(d<nd){nd=d;near=i}});const gd=Math.hypot(GATE.x-s.x,GATE.y-s.y)-14;
  const pa=P_('a');if(pa&&gd<18&&gd<nd){const nx=SYS.find(y=>y.id===G.sys+1);if(nx){G.sys=nx.id;say('Warping to the '+nx.name+'...')}else say('The Warp Gate is dormant. New star systems full of Alienmon will open here in future batches.')}
- else if(pa&&nd<18){const p=PL[near];if(unlocked(near)){G.planet=near;const mp=genMap(near);G.px=mp.pad[0];G.py=mp.pad[1]-1;face='down';if(PAINT[p.key]){G.ppos=[PAINT[p.key].start[0],PAINT[p.key].exitY-30];face='up'}s.vx=s.vy=0;cut(okI(SCI[p.landScene||p.scene])?SCI[p.landScene||p.scene]:2,'Landing on '+p.name,()=>{scene='planet';banner=90},p.sceneFx)}
-  else say(p.name+' is shielded. '+(p.req.f?'Finish your mission at the previous world first.':'You need '+p.req.s+' Signal Shards to land.'))}
+ else if(pa&&nd<18){const p=PL[near];if(unlocked(near)){G.planet=near;G.sub=null;const mp=genMap(near);G.px=mp.pad[0];G.py=mp.pad[1]-1;face='down';if(PAINT[p.key]){G.ppos=[PAINT[p.key].start[0],PAINT[p.key].exitY-30];face='up'}s.vx=s.vy=0;cut(okI(SCI[p.landScene||p.scene])?SCI[p.landScene||p.scene]:2,'Landing on '+p.name,()=>{scene='planet';banner=90},p.sceneFx)}
+  else say(landMsg(p.key))}
  const camx=s.x-80,camy=s.y-72;rect(0,0,160,144,'#0c0818');
  for(let i=0;i<120;i++){const h=hash('st'+i),z=1+(h%3),x=((h%1700)-camx/z*1)%160,y=(((h>>11)%1200)-camy/z)%144;rect((x+160)%160,(y+144)%144,1,1,z===1?'#fff':z===2?'#a99cc8':'#5a4a7a')}
  {const gx=GATE.x-camx,gy=GATE.y-camy;for(let a=0;a<6.28;a+=0.15){rect(Math.round(gx+Math.cos(a+frame/30)*14),Math.round(gy+Math.sin(a+frame/30)*14),2,2,a<3?'#5ff2ff':'#ff74c4')}if(gd<70)txt('Warp Gate',Math.round(gx-36),Math.round(gy+20),'#ffd23f')}
@@ -600,7 +601,7 @@ function playerFaint(){if(G.party.some(m=>m.hp>0)){B.phase='party';B.forced=true
  else if(G.box.some(m=>m.hp>0)){B.phase='boxpick';B.bxsel=G.box.findIndex(m=>m.hp>0);say(['Your whole team is down!','Your ship can beam in a backup Alienmon from storage. Choose one!'])}
 
  else loseBattle()}
-function loseBattle(){{const lost=Math.floor(G.dust/4);G.dust-=lost;say(['You have no Alienmon left to fight!','You dropped '+lost+' stardust and hurried back to the landing pad...'],()=>{healAll();const fromW=B&&B.from==='world';const mp=genMap(G.planet);G.px=mp.pad[0];G.py=mp.pad[1]-1;const pp=PAINT[PL[G.planet].key];if(pp)G.ppos=pp.start.slice();B=null;if(fromW)toWorld(PL[G.planet].key);else scene='planet'})}}
+function loseBattle(){{const lost=Math.floor(G.dust/4);G.dust-=lost;say(['You have no Alienmon left to fight!','You dropped '+lost+' stardust and hurried back to the last place you healed...'],()=>{healAll();wakeAtLastHeal()})}}
 function endBattle(won){const tr=B&&B.tr,lines=[];
  if(won){const pk=PL[G.planet]&&PL[G.planet].key;if(tr&&tr.bkey)qEvent('trainer',tr.bkey);else if(tr&&tr===PL[G.planet].keeper)qEvent('keeper',pk);else if(!tr&&B.team.length)qEvent('win',D[B.team[B.team.length-1].id].name,{area:QWILD})}QWILD=null;
  if(won){const e=B.team[B.team.length-1];const dust=payout(tr,e);G.dust+=dust;lines.push('You collected '+dust+' stardust.');
@@ -731,7 +732,7 @@ function drawBox(sel,title){box(0,0,160,144);txt(title,6,5,'#1b1424');if(!G.box.
 let menuSel=0,menuMode='root',dsel=0,prevScene='planet';
 function updMenu(){if(menuMode==='quests'){qLogUpd();return}const opts=['Party','Quests','Storage','Bag','Map','Ship','Xenodex','Options','Save','Close'];
  if(menuMode==='root'){if(P_('up'))menuSel=(menuSel+opts.length-1)%opts.length;if(P_('down'))menuSel=(menuSel+1)%opts.length;if(P_('b')||P_('start')){prevBack();return}
-  if(P_('a')){const o=opts[menuSel];if(o==='Party'){menuMode='party';B={psel:0}}else if(o==='Quests'){menuMode='quests';B={qtab:0,qsel:0}}else if(o==='Bag'){menuMode='bag';B={bsel:0,psel:0}}else if(o==='Options'){const opt=()=>{G.opt=G.opt||{expLink:true};choose('Options',['Music: '+({chip:'Chiptune',song:'Song',off:'Off'})[musicMode],'EXP Link: '+(G.opt.expLink!==false?'On':'Off (Classic)'),'Back'],k=>{if(k===0){setMusicMode(musicMode==='chip'?'song':musicMode==='song'?'off':'chip');opt()}else if(k===1){G.opt.expLink=G.opt.expLink===false;opt()}})};opt()}else if(o==='Ship'){if(PREV==='space')say("You're already aboard your ship.");else choose('Teleport to your ship?',['Teleport','Cancel'],k=>{if(k===0)teleportToShip()})}else if(o==='Storage'){menuMode='storage';B={bxsel:0,psel:0}}else if(o==='Map'){menuMode='map';B={msel:Math.max(0,WORLD.nodes.indexOf(G.wpos?nearestNode(G.wpos[0],G.wpos[1])[0]:nodeOf(PL[G.planet].key)||WORLD.nodes[0]))}}else if(o==='Xenodex')menuMode='dex';else if(o==='Save')choose('Save',['Save now','Export backup','Import backup','Cancel'],k=>{if(k===0)say(save()?'Game saved to this browser.':'Saving is unavailable in this browser.');else if(k===1)exportSave();else if(k===2)importSave()});else{prevBack()}}
+  if(P_('a')){const o=opts[menuSel];if(o==='Party'){menuMode='party';B={psel:0}}else if(o==='Quests'){menuMode='quests';B={qtab:0,qsel:0}}else if(o==='Bag'){menuMode='bag';B={bsel:0,psel:0}}else if(o==='Options'){const opt=()=>{G.opt=G.opt||{expLink:true};choose('Options',['Music: '+({chip:'Chiptune',song:'Song',off:'Off'})[musicMode],'EXP Link: '+(G.opt.expLink!==false?'On':'Off (Classic)'),'Free roam: '+(G.opt.freeRoam?'On':'Off')+' (playtest)','Back'],k=>{if(k===2){G.opt.freeRoam=!G.opt.freeRoam;return opt()}if(k===0){setMusicMode(musicMode==='chip'?'song':musicMode==='song'?'off':'chip');opt()}else if(k===1){G.opt.expLink=G.opt.expLink===false;opt()}})};opt()}else if(o==='Ship'){if(!shipOK())say(SHIP_NO);else if(PREV==='space')say("You're already aboard your ship.");else choose('Teleport to your ship?',['Teleport','Cancel'],k=>{if(k===0)teleportToShip()})}else if(o==='Storage'){menuMode='storage';B={bxsel:0,psel:0}}else if(o==='Map'){menuMode='map';B={msel:Math.max(0,WORLD.nodes.indexOf(G.wpos?nearestNode(G.wpos[0],G.wpos[1])[0]:nodeOf(PL[G.planet].key)||WORLD.nodes[0]))}}else if(o==='Xenodex')menuMode='dex';else if(o==='Save')choose('Save',['Save now','Export backup','Import backup','Cancel'],k=>{if(k===0)say(save()?'Game saved to this browser.':'Saving is unavailable in this browser.');else if(k===1)exportSave();else if(k===2)importSave()});else{prevBack()}}
   drawUnder();box(96,4,62,116);opts.forEach((o,i)=>txt((i===menuSel?'>':' ')+o,100,10+i*11,'#1b1424',7));box(2,98,92,44);txt('Shards '+G.shards+'/8',6,104,'#1b1424',6);txt('Caught '+Object.keys(G.caught).length+'/'+D.length,6,114,'#1b1424',6);txt('Stardust '+G.dust,6,124,'#1b1424',6);txt('Pods '+G.pods.stasis+'/'+G.pods.harmonic+'/'+G.pods.singularity,6,134,'#1b1424',6)}
  else if(menuMode==='party'){const n=G.party.length;if(P_('up'))B.psel=(B.psel+n-1)%n;if(P_('down'))B.psel=(B.psel+1)%n;if(P_('b')){menuMode='root';B=null;return}
   if(P_('a')){const i=B.psel,m=G.party[i];choose(nm(m),['Summary','Make lead','Send to storage','Cancel'],k=>{
@@ -789,7 +790,7 @@ const PADMAP={0:'a',1:'b',2:'b',8:'start',9:'start',12:'up',13:'down',14:'left',
 function pollPad(){const gp=navigator.getGamepads?Array.from(navigator.getGamepads()).find(g=>g&&g.connected):null;if(!gp){padPrev={};return}const st={};
  for(const i in PADMAP)if(gp.buttons[i]&&gp.buttons[i].pressed)st[PADMAP[i]]=1;const ax=gp.axes||[];if(ax[0]<-0.5)st.left=1;if(ax[0]>0.5)st.right=1;if(ax[1]<-0.5)st.up=1;if(ax[1]>0.5)st.down=1;
  for(const k of['a','b','start','up','down','left','right']){if(st[k]&&!padPrev[k])pressed[k]=true;if(st[k])held[k]=true;else if(padPrev[k])held[k]=false}padPrev=st}
-function loop(){frame++;pollPad();if(G&&G.party&&!G.quests)qInit();if(G&&G.quests){if(frame%20===0)qPassive();qFlush()}if(LVP){if(scene==='battle')drawBattle();drawLvPanel();if(P_('a')||P_('b')){const c=LVP.cb;LVP=null;c()}for(const k in pressed)pressed[k]=false;requestAnimationFrame(loop);return}
+function loop(){frame++;pollPad();if(G&&G.party&&!G.quests)qInit();if(G&&G.quests){if(frame%20===0)qPassive();if(frame%10===0)worldStage();qFlush()}if(LVP){if(scene==='battle')drawBattle();drawLvPanel();if(P_('a')||P_('b')){const c=LVP.cb;LVP=null;c()}for(const k in pressed)pressed[k]=false;requestAnimationFrame(loop);return}
  if(CH&&!DLG){if(scene==='world')drawWorld();else if(scene==='menu')drawMenuScreen();else if(scene==='battle')drawBattle();else drawPlanet();drawChoose();updChoose()}
  else if(DLG){ if(scene==='battle')drawBattle();else if(scene==='planet')drawPlanet();else if(scene==='space')updSpaceDraw();else if(scene==='world')drawWorld();else if(scene==='menu')drawMenuScreen();else if(scene==='intro'||scene==='title')rect(0,0,160,144,'#120c22');
   if(DLG.por&&okI(CHI[DLG.por])){box(2,56,46,48,'#3b2a5c','#1b1424');dchar(DLG.por,4,58,42,42)}box(0,104,160,40);const pg=DLG.pages[DLG.i];pg.forEach((l,i)=>txt(l,6,111+i*12,'#1b1424'));if(frame%40<24)rect(150,134,4,4,'#ff8a1e');
@@ -800,6 +801,7 @@ function updSpaceDraw(){const sv={...held};for(const k in held)held[k]=false;con
 __QUESTENGINE__
 let QWILD=null;   // tags the current wild battle for win_battle objectives
 __PROGENGINE__
+__WORLDENGINE__
 
 /* ---------- boot: loading screen, background prefetch, offline support ---------- */
 // private beta: a feedback link that opens an email with the build and where the tester is
