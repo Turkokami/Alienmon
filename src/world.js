@@ -3,7 +3,11 @@
    where you wake up after losing. Inlined by tools/build.js after the quest and progression engines. */
 const WSTATE=__WORLDSTATE__;
 const mDone=id=>!!(G&&G.quests&&G.quests[id]&&G.quests[id].state==='done');
-const freeRoam=()=>!!(G&&G.opt&&G.opt.freeRoam);
+// Free roam (skip the story locks) exists only in the private beta and local test builds
+const canFreeRoam=()=>!!BETA||(!INLINE&&/^(localhost|127\.|\[::1\])/.test(location.hostname));   // the Android app (inline build) also runs on localhost: no free roam there
+const freeRoam=()=>!!(G&&G.opt&&G.opt.freeRoam&&canFreeRoam());
+// leaving a town: worlds joined to the Molten Frontier by a gate walk back through it; Helix Station uses its shuttle
+const exitDoor=key=>key==='helix'?'space':(nodeOf(key)?key:null);
 
 /* Molten Frontier entrances, by world-map node (messages come from world_state.json -> gates) */
 const GATE_OPEN={dustara:()=>mDone('M03'),ferrox:()=>mDone('M04')&&!!G.beaten.mf12,thalassa:()=>G.shards>=2,glyphos:()=>G.shards>=4&&mDone('M09'),
