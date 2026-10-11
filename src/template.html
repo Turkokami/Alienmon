@@ -68,7 +68,7 @@ button:focus-visible{outline:2px solid var(--b);outline-offset:2px}
   <div class="ab"><button class="B" data-k="b">B</button><button class="A" data-k="a">A</button></div>
  </div>
  <div class="start"><button data-k="start">START</button></div>
- <div class="hint">Keys: arrows/WASD move · Z or Enter = A · X = B · Esc = Start</div>
+ <div class="hint">Keys: arrows/WASD move · Z or Enter = A · X = B (jump) · Esc = Start</div>
 </div>
 <script>
 'use strict';
@@ -294,9 +294,21 @@ function pmask(P,key){const id=P.img+key;if(PMASK[id])return PMASK[id];const b=a
 function pbit(P,key,x,y){const W=P.w/P.cell,H=P.h/P.cell,cx=Math.floor(x/P.cell),cy=Math.floor(y/P.cell);if(cx<0||cy<0||cx>=W||cy>=H)return false;const i=cy*W+cx;return(pmask(P,key)[i>>3]>>(i&7))&1}
 function pfree(P,x,y){if(!pbit(P,'walk',x,y))return false;for(const h of P.hot){const ry=h.ry||h.r/1.6;if(((h.x-x)/h.r)**2+((h.y-y)/ry)**2<1)return false}return true}
 let pmove=0,pacc=0,pnear=null;
+/* jumping (B): hop over small gaps, railings and ledges; you can only land on walkable ground */
+let JMP=null;const JUMP_T=16;
+const jumpH=()=>JMP?Math.sin(Math.PI*JMP.t/JUMP_T):0;
+function startJump(where,from){let dx=(held.right?1:0)-(held.left?1:0),dy=(held.down?1:0)-(held.up?1:0);
+ if(!dx&&!dy){dx=face==='left'?-1:face==='right'?1:0;dy=face==='up'?-1:face==='down'?1:0}const n=Math.hypot(dx,dy)||1;JMP={where,t:0,vx:dx/n,vy:dy/n,from:from.slice()};jumpSfx()}
+// nearest point around (x,y) that ok() accepts, searching outward up to r pixels
+function landNear(ok,x,y,r){if(ok(x,y))return[x,y];for(let d=4;d<=r;d+=4)for(let a=0;a<16;a++){const px=x+Math.cos(a*Math.PI/8)*d,py=y+Math.sin(a*Math.PI/8)*d;if(ok(px,py))return[px,py]}return null}
+function jumpSfx(){try{if(!AC||musicMode==='off')return;const t=AC.currentTime,o=AC.createOscillator(),g=AC.createGain();o.type='square';o.frequency.setValueAtTime(330,t);o.frequency.exponentialRampToValueAtTime(880,t+0.12);
+ g.gain.setValueAtTime(0.04,t);g.gain.exponentialRampToValueAtTime(0.001,t+0.15);o.connect(g).connect(AC.destination);o.start(t);o.stop(t+0.16)}catch(e){}}
 function launch(){const key=PL[G.planet].key;cut(1,'Heading out!',()=>toWorld(key))}
 function updPaint(){const P=paintOf();if(!G.ppos)G.ppos=P.start.slice();
  if(P_('start')){scene='menu';menuSel=0;return}
+ if(JMP&&JMP.where==='paint'){JMP.t++;const sp=4.2;G.ppos=[Math.max(8,Math.min(P.w-8,G.ppos[0]+JMP.vx*sp)),Math.max(8,Math.min(P.h-8,G.ppos[1]+JMP.vy*sp))];pmove=1;stepc++;
+  if(JMP.t>=JUMP_T){G.ppos=landNear((x,y)=>pfree(P,x,y),G.ppos[0],G.ppos[1],24)||JMP.from;JMP=null}drawPaint();return}
+ if(P_('b')){startJump('paint',G.ppos);drawPaint();return}
  const dx=(held.right?1:0)-(held.left?1:0),dy=(held.down?1:0)-(held.up?1:0);pmove=0;
  if(dx||dy){face=Math.abs(dx)>Math.abs(dy)?(dx>0?'right':'left'):(dy>0?'down':'up');const sp=4.2/(dx&&dy?1.41:1);let[x,y]=G.ppos;
   if(pfree(P,x+dx*sp,y))x+=dx*sp;if(pfree(P,x,y+dy*sp))y+=dy*sp;const d=Math.hypot(x-G.ppos[0],y-G.ppos[1]);if(d>0.1){pmove=1;stepc++;G.ppos=[x,y];
@@ -321,7 +333,7 @@ function drawPaint(){const P=paintOf(),im=SCI[P.img];if(!G.ppos)G.ppos=P.start.s
   const art=h.k==='keeper'?kp&&kp.art:h.art;if(art&&okI(CHI[art])){shadow();dchar(art,Math.round(hx-cs/2),Math.round(hy-cs-1),cs,cs)}};
  const ks=P.hot.filter(h=>h.k==='keeper'||(h.k==='mon'&&h.mon)||(h.art&&h.draw&&(h.k==='talk'||h.k==='npc')));ks.filter(h=>h.y<=G.ppos[1]).forEach(drawK);
  const sx=fx-cx,sy=fy-cy;ctx.fillStyle='rgba(20,10,20,0.35)';ctx.beginPath();ctx.ellipse(sx,sy-1,7,2.5,0,0,6.283);ctx.fill();
- const k=(G.gender||'boy')+'_'+face,bob=pmove&&(stepc%16<8)?1:0;if(!dchar(k,Math.round(sx-cs/2),Math.round(sy-cs-1-bob),cs,cs))kid(Math.round(sx-6),Math.round(sy-14),face==='left',face==='up',pmove?1:0);
+ const k=(G.gender||'boy')+'_'+face,bob=pmove&&(stepc%16<8)?1:0;if(!dchar(k,Math.round(sx-cs/2),Math.round(sy-cs-1-bob-jumpH()*cs*0.55),cs,cs))kid(Math.round(sx-6),Math.round(sy-14),face==='left',face==='up',pmove?1:0);
  ks.filter(h=>h.y>G.ppos[1]).forEach(drawK);
  if(pmove&&pbit(P,'grass',G.ppos[0],G.ppos[1])){ctx.fillStyle='#3f9d3a';for(let i=0;i<4;i++)ctx.fillRect(Math.round(sx-6+i*4),Math.round(sy-4-(i%2)),2,4)}
  if(pnear&&!DLG&&!CH){const hx=pnear.x*S-cx,hy=pnear.y*S-cy-32+Math.sin(frame/8);box(Math.round(hx-5),Math.round(hy-6),11,11,'#fff','#1b1424');txt('!',Math.round(hx-2),Math.round(hy-4),'#d7262e',7);
@@ -403,6 +415,9 @@ function wTrainer(e){const ri=pidx(regionKey(e.x,e.y)),p=PL[ri],r=rng(hash(e.id)
  const team=[[pool[Math.floor(r()*pool.length)],lv-1],[pool[Math.floor(r()*pool.length)],lv]];const name=e.t[0].split(':')[0];
  return{name,art:e.art,intro:e.t[0].split(': ').slice(1).join(': '),lose:'Wow, you two are in sync. Good luck out there!',after:'Keep exploring, Linker. Every region has new Alienmon.',team,bkey:e.id}}
 function updWorld(){if(!G.wpos)toWorld(PL[G.planet].key);if(P_('start')){scene='menu';menuSel=0;return}
+ if(JMP&&JMP.where==='world'){JMP.t++;G.wpos=[Math.max(4,Math.min(WORLD.w-4,G.wpos[0]+JMP.vx*1.1)),Math.max(4,Math.min(WORLD.h-4,G.wpos[1]+JMP.vy*1.1))];wmove=1;stepc++;
+  if(JMP.t>=JUMP_T){G.wpos=landNear((x,y)=>wbit(x,y),G.wpos[0],G.wpos[1],8)||JMP.from;JMP=null}drawWorld();return}
+ if(P_('b')){startJump('world',G.wpos);drawWorld();return}
  const dx=(held.right?1:0)-(held.left?1:0),dy=(held.down?1:0)-(held.up?1:0);wmove=0;
  if(dx||dy){face=Math.abs(dx)>Math.abs(dy)?(dx>0?'right':'left'):(dy>0?'down':'up');const sp=1.1/(dx&&dy?1.41:1);let[x,y]=G.wpos;
   const free=(x,y)=>wbit(x,y)&&!WORLD.npcs.some(e=>Math.hypot(e.x-x,(e.y-y)*1.5)<6);
@@ -424,7 +439,7 @@ function drawWorld(){if(!G.wpos)toWorld(PL[G.planet].key);const[fx,fy]=G.wpos,cx
  const ents=WORLD.npcs.map(e=>({y:e.y,f:()=>{const x=e.x-cx,y=e.y-cy;if(x<-12||y<-20||x>172||y>160)return;ctx.fillStyle='rgba(20,10,20,0.4)';ctx.beginPath();ctx.ellipse(x,y,4,1.5,0,0,6.283);ctx.fill();dchar(e.art,Math.round(x-9),Math.round(y-18),18,18);
    if(e.k==='trainer'&&!G.beaten[e.id])txt('!',Math.round(x-2),Math.round(y-27),'#ff74c4',7)}}));
  ents.push({y:fy,f:()=>{const x=fx-cx,y=fy-cy;ctx.fillStyle='rgba(20,10,20,0.45)';ctx.beginPath();ctx.ellipse(x,y,4.5,1.8,0,0,6.283);ctx.fill();const bob=wmove&&(stepc%16<8)?1:0;
-   if(!dchar((G.gender||'boy')+'_'+face,Math.round(x-10),Math.round(y-20-bob),20,20))kid(Math.round(x-6),Math.round(y-14),face==='left',face==='up',0)}});
+   if(!dchar((G.gender||'boy')+'_'+face,Math.round(x-10),Math.round(y-20-bob-jumpH()*9),20,20))kid(Math.round(x-6),Math.round(y-14),face==='left',face==='up',0)}});
  ents.sort((a,b)=>a.y-b.y).forEach(e=>e.f());
  if(wnear&&!DLG&&!CH){const lb=wnear.node?'A: '+wnear.node.n:'A: Talk';box(0,128,160,16,'#1b1424','#5ff2ff');txt(lb.slice(0,24),5,132,'#5ff2ff',7)}
  else if(wbanner>0){wbanner--;const n=wregion>=0?WORLD.nodes[wregion]:null;box(0,0,160,18,'#1b1424','#5ff2ff');txt((n?n.n:WORLD.name).slice(0,24),5,5,'#5ff2ff',7)}
@@ -788,13 +803,7 @@ function updSpaceDraw(){const sv={...held};for(const k in held)held[k]=false;con
 if(BETA){const m=document.createElement('meta');m.name='robots';m.content='noindex';document.head.appendChild(m);
  const a=document.createElement('a');a.className='beta';a.textContent='BETA · Send feedback';a.href='#';
  a.onclick=e=>{e.preventDefault();const where=scene+(G&&PL[G.planet]?' on '+PL[G.planet].name:'');
-  location.href='mailto:'+BETA.email+'?subject='+encodeURIComponent('Alienmon beta feedback (build '+BUILD+')')+'&body='+encodeURIComponent('What happened / what you expected:
-
-
----
-Build: '+BUILD+'
-Where: '+where+'
-Device: '+navigator.userAgent)};
+  location.href='mailto:'+BETA.email+'?subject='+encodeURIComponent('Alienmon beta feedback (build '+BUILD+')')+'&body='+encodeURIComponent('What happened / what you expected:\n\n\n---\nBuild: '+BUILD+'\nWhere: '+where+'\nDevice: '+navigator.userAgent)};
  document.body.appendChild(a)}
 // download the rest of the art in the background, a few files at a time, most-needed first
 function prefetch(){const c=navigator.connection;if(INLINE||(c&&(c.saveData||/2g/.test(c.effectiveType||''))))return;
