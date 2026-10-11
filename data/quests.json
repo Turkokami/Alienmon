@@ -1,0 +1,4032 @@
+{
+ "version": 1,
+ "generated_for": "Alienmon Batch 1 (Kessler System)",
+ "quests": [
+  {
+   "id": "M01",
+   "type": "main",
+   "act": "Act 1",
+   "title": "A Partner From the Stars",
+   "location": {
+    "area": "dustmere",
+    "planet": "dustara",
+    "spot": "Dr. Vashti's lab (Crater Observatory) / opening",
+    "x": 300,
+    "y": 348,
+    "map": "data/painted_maps.json#dustara"
+   },
+   "giver": {
+    "name": "Dr. Imogen Vashti",
+    "art": "vashti"
+   },
+   "prereq": [],
+   "objectives": [
+    {
+     "type": "choose_starter",
+     "target": "Sporix|Plazmo|Gloopa",
+     "count": 1,
+     "location": {
+      "area": "dustmere",
+      "planet": "dustara",
+      "spot": "Observatory lab",
+      "x": 300,
+      "y": 348,
+      "map": "data/painted_maps.json#dustara"
+     }
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Dr. Vashti: Twenty years ago the Starfall brought them here. Today, one of them chooses you.",
+     "Pick your partner: Sporix, Plazmo or Gloopa."
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "Dr. Vashti: A perfect match! Your Linker is synced. Take these Stasis Pods, and be kind to your partner."
+    ]
+   },
+   "rewards": {
+    "items": {
+     "stasis": 10,
+     "gel": 5
+    },
+    "flags": [
+     "has_starter"
+    ]
+   },
+   "repeatable": false,
+   "notes": "Already implemented (starter scene). Mark complete on starter pick."
+  },
+  {
+   "id": "M02",
+   "type": "main",
+   "act": "Act 1",
+   "title": "Zib's Signal",
+   "location": {
+    "area": "dustmere",
+    "planet": "dustara",
+    "spot": "Steel bridge over the lava falls",
+    "x": 620,
+    "y": 398,
+    "map": "data/painted_maps.json#dustara"
+   },
+   "giver": {
+    "name": "Scout unit DX-4",
+    "art": "technician"
+   },
+   "prereq": [
+    "M01"
+   ],
+   "objectives": [
+    {
+     "type": "talk",
+     "target": "DX-4 robot",
+     "count": 1,
+     "location": {
+      "area": "dustmere",
+      "planet": "dustara",
+      "spot": "DX-4 robot by the dome homes",
+      "x": 400,
+      "y": 342,
+      "map": "data/painted_maps.json#dustara"
+     }
+    },
+    {
+     "type": "visit",
+     "target": "bridge_center",
+     "count": 1,
+     "location": {
+      "area": "dustmere",
+      "planet": "dustara",
+      "spot": "Middle of the big bridge",
+      "x": 850,
+      "y": 396,
+      "map": "data/painted_maps.json#dustara"
+     }
+    },
+    {
+     "type": "cutscene",
+     "target": "zib_joins",
+     "count": 1,
+     "location": {
+      "area": "dustmere",
+      "planet": "dustara",
+      "spot": "Bridge",
+      "x": 850,
+      "y": 396,
+      "map": "data/painted_maps.json#dustara"
+     }
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "DX-4: Bzzt! Unknown signal on the canyon bridge. Frequency... friendly?"
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "A tiny saucer flickers out of the canyon haze and circles your head. It's an Alienmon called Zib, and it decided you're its new captain!"
+    ]
+   },
+   "rewards": {
+    "alienmon_gift": {
+     "name": "Zib",
+     "lv": 5
+    },
+    "flags": [
+     "zib_joined"
+    ]
+   },
+   "repeatable": false,
+   "notes": "Zib is the Seedmother's scout. Give as a gift (add to party or storage). Zib follows the story."
+  },
+  {
+   "id": "M03",
+   "type": "main",
+   "act": "Act 1",
+   "title": "First Rival",
+   "location": {
+    "area": "dustmere",
+    "planet": "dustara",
+    "spot": "Trading post yard",
+    "x": 1180,
+    "y": 720,
+    "map": "data/painted_maps.json#dustara"
+   },
+   "giver": {
+    "name": "Sola Reyes",
+    "art": "sola"
+   },
+   "prereq": [
+    "M02"
+   ],
+   "objectives": [
+    {
+     "type": "battle_rival",
+     "target": "sola_1",
+     "count": 1,
+     "team": [
+      [
+       "counter_starter",
+       7
+      ]
+     ],
+     "location": {
+      "area": "dustmere",
+      "planet": "dustara",
+      "spot": "Trading post",
+      "x": 1180,
+      "y": 720,
+      "map": "data/painted_maps.json#dustara"
+     }
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Sola: Took the slow starter, huh? Let's see who's the better Linker."
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "Sola: Not bad... for a beginner. My dad would've liked you. I'm heading out to find him. Don't fall behind!"
+    ]
+   },
+   "rewards": {
+    "dust": 150,
+    "flags": [
+     "rival_1"
+    ]
+   },
+   "repeatable": false,
+   "notes": "Sola uses the starter strong against yours (Sporix\u2192Plazmo, Plazmo\u2192Gloopa, Gloopa\u2192Sporix)."
+  },
+  {
+   "id": "M04",
+   "type": "main",
+   "act": "Act 1",
+   "title": "Into the Molten Frontier",
+   "location": {
+    "area": "molten_frontier",
+    "spot": "Tunnel to Sunset Canyon",
+    "x": 687,
+    "y": 300,
+    "map": "data/world_map.json"
+   },
+   "giver": {
+    "name": "Dusty the wanderer",
+    "art": "wanderer"
+   },
+   "prereq": [
+    "M03"
+   ],
+   "objectives": [
+    {
+     "type": "visit",
+     "target": "molten_frontier",
+     "count": 1,
+     "location": {
+      "area": "molten_frontier",
+      "spot": "Tunnel to Sunset Canyon",
+      "x": 687,
+      "y": 300,
+      "map": "data/world_map.json"
+     }
+    },
+    {
+     "type": "visit",
+     "target": "node:bay",
+     "count": 1,
+     "location": {
+      "area": "molten_frontier",
+      "spot": "Palm Isle Recovery Hut",
+      "x": 325,
+      "y": 614,
+      "map": "data/world_map.json"
+     }
+    },
+    {
+     "type": "talk",
+     "target": "mf2",
+     "count": 1,
+     "location": {
+      "area": "molten_frontier",
+      "spot": "Guard",
+      "x": 558,
+      "y": 138,
+      "map": "data/world_map.json"
+     }
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Dusty: The tunnel at the bottom of town runs clear under the sea to the Molten Frontier. Every Linker's road starts there."
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "Guard: So you're the new Linker. Helix runs a forge fortress up the ridge. Stay sharp out here."
+    ]
+   },
+   "rewards": {
+    "items": {
+     "gel": 3
+    },
+    "flags": [
+     "frontier_open"
+    ]
+   },
+   "repeatable": false,
+   "notes": "Teaches world map travel, the Recovery Hut, and talking to NPCs."
+  },
+  {
+   "id": "M05",
+   "type": "main",
+   "act": "Act 1",
+   "title": "Sparks on Ferrox",
+   "location": {
+    "area": "molten_frontier",
+    "spot": "Forge Gate",
+    "x": 873,
+    "y": 790,
+    "map": "data/world_map.json"
+   },
+   "giver": {
+    "name": "Hank Briggs",
+    "art": "hank"
+   },
+   "prereq": [
+    "M04"
+   ],
+   "objectives": [
+    {
+     "type": "battle_trainer",
+     "target": "mf12",
+     "count": 1,
+     "location": {
+      "area": "molten_frontier",
+      "spot": "Forge Miner Dax",
+      "x": 894,
+      "y": 714,
+      "map": "data/world_map.json"
+     }
+    },
+    {
+     "type": "visit",
+     "target": "planet:ferrox",
+     "count": 1,
+     "location": {
+      "area": "molten_frontier",
+      "spot": "Forge Gate",
+      "x": 873,
+      "y": 790,
+      "map": "data/world_map.json"
+     }
+    },
+    {
+     "type": "spot_event",
+     "target": "helix_scouts_ferrox",
+     "count": 1,
+     "location": {
+      "area": "ferrox_town",
+      "planet": "ferrox",
+      "spot": "Scrapyard crane yard",
+      "note": "tile map or future painted map; place this spot when building"
+     }
+    },
+    {
+     "type": "defeat_keeper",
+     "target": "ferrox",
+     "count": 1,
+     "location": {
+      "area": "ferrox_town",
+      "planet": "ferrox",
+      "spot": "Relay Tower",
+      "note": "tile map or future painted map; place this spot when building"
+     }
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Forge Miner Dax: Hank's tower is past this gate. Beat me and I'll let you through."
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "Hank Briggs: You've got grit, kid. Here's your first Signal Shard. And watch those Helix suits poking around my yard."
+    ]
+   },
+   "rewards": {
+    "shard": 1,
+    "dust": 400,
+    "flags": [
+     "shard_ferrox",
+     "helix_seen"
+    ]
+   },
+   "repeatable": false,
+   "notes": "First Signal Shard. Helix scouts are seen but flee."
+  },
+  {
+   "id": "M06",
+   "type": "main",
+   "act": "Act 1",
+   "title": "The Glowing Swamp",
+   "location": {
+    "area": "sporeholm_town",
+    "planet": "sporeholm",
+    "spot": "Mirefen village",
+    "note": "tile map or future painted map; place this spot when building"
+   },
+   "giver": {
+    "name": "Dr. Lysa Moor",
+    "art": "moor"
+   },
+   "prereq": [
+    "M05"
+   ],
+   "objectives": [
+    {
+     "type": "visit",
+     "target": "planet:sporeholm",
+     "count": 1,
+     "how": "Fly from the Fortress Launch Pad",
+     "location": {
+      "area": "molten_frontier",
+      "spot": "Fortress Launch Pad",
+      "x": 1093,
+      "y": 300,
+      "map": "data/world_map.json"
+     }
+    },
+    {
+     "type": "battle_trainer",
+     "target": "helix_spore_grunt",
+     "count": 2,
+     "location": {
+      "area": "sporeholm_town",
+      "planet": "sporeholm",
+      "spot": "Spore pools",
+      "note": "tile map or future painted map; place this spot when building"
+     }
+    },
+    {
+     "type": "defeat_keeper",
+     "target": "sporeholm",
+     "count": 1,
+     "location": {
+      "area": "sporeholm_town",
+      "planet": "sporeholm",
+      "spot": "Relay Tower",
+      "note": "tile map or future painted map; place this spot when building"
+     }
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Dr. Moor: Helix is siphoning my spore pools! Run them off, then show me what you've learned."
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "Dr. Moor: The swamp is breathing easy again. Take the Shard, and this sample. Something in it glows like the Starfall."
+    ]
+   },
+   "rewards": {
+    "shard": 2,
+    "items": {
+     "cure": 3
+    },
+    "flags": [
+     "shard_sporeholm"
+    ]
+   },
+   "repeatable": false,
+   "notes": ""
+  },
+  {
+   "id": "M07",
+   "type": "main",
+   "act": "Act 2",
+   "title": "Harbor Under Siege",
+   "location": {
+    "area": "molten_frontier",
+    "spot": "Port Ember",
+    "x": 300,
+    "y": 150,
+    "map": "data/world_map.json"
+   },
+   "giver": {
+    "name": "Captain Delia Marsh",
+    "art": "marsh"
+   },
+   "prereq": [
+    "M06"
+   ],
+   "objectives": [
+    {
+     "type": "visit",
+     "target": "node:thalassa",
+     "count": 1,
+     "location": {
+      "area": "molten_frontier",
+      "spot": "Port Ember",
+      "x": 300,
+      "y": 150,
+      "map": "data/world_map.json"
+     }
+    },
+    {
+     "type": "battle_trainer",
+     "target": "helix_dock_grunt",
+     "count": 2,
+     "location": {
+      "area": "thalassa_town",
+      "planet": "thalassa",
+      "spot": "Port Saltreach docks",
+      "note": "tile map or future painted map; place this spot when building"
+     }
+    },
+    {
+     "type": "defeat_keeper",
+     "target": "thalassa",
+     "count": 1,
+     "location": {
+      "area": "thalassa_town",
+      "planet": "thalassa",
+      "spot": "Harbor Relay Tower",
+      "note": "tile map or future painted map; place this spot when building"
+     }
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Captain Marsh: Helix stormed my tower and ripped out its core! Help me clear the docks first."
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "Captain Marsh: They got away with the core, but you fought like a storm. This Shard is yours."
+    ]
+   },
+   "rewards": {
+    "shard": 3,
+    "dust": 800,
+    "flags": [
+     "shard_thalassa",
+     "core_stolen"
+    ]
+   },
+   "repeatable": false,
+   "notes": "Port Ember (Molten Frontier) is the gateway to Thalassa."
+  },
+  {
+   "id": "M08",
+   "type": "main",
+   "act": "Act 2",
+   "title": "Sola's Choice",
+   "location": {
+    "area": "molten_frontier",
+    "spot": "Deep Sea Ferry",
+    "x": 300,
+    "y": 318,
+    "map": "data/world_map.json"
+   },
+   "giver": {
+    "name": "Sola Reyes",
+    "art": "sola"
+   },
+   "prereq": [
+    "M07"
+   ],
+   "objectives": [
+    {
+     "type": "cutscene",
+     "target": "sola_leaves",
+     "count": 1,
+     "location": {
+      "area": "molten_frontier",
+      "spot": "Deep Sea Ferry",
+      "x": 300,
+      "y": 318,
+      "map": "data/world_map.json"
+     }
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Sola: Helix says they know where my dad is. They found the crater signal he was chasing."
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "Sola steps onto a Helix shuttle. \"Don't follow me.\" The doors hiss shut."
+    ]
+   },
+   "rewards": {
+    "flags": [
+     "sola_with_helix"
+    ]
+   },
+   "repeatable": false,
+   "notes": "Story beat at the Deep Sea Ferry dock."
+  },
+  {
+   "id": "M09",
+   "type": "main",
+   "act": "Act 2",
+   "title": "Static on the Line",
+   "location": {
+    "area": "neonis_starport",
+    "planet": "neonis",
+    "spot": "Dr. Vashti on the deck",
+    "x": 307,
+    "y": 518,
+    "map": "data/painted_maps.json#neonis"
+   },
+   "giver": {
+    "name": "Dr. Imogen Vashti",
+    "art": "vashti"
+   },
+   "prereq": [
+    "M08"
+   ],
+   "objectives": [
+    {
+     "type": "talk",
+     "target": "vashti",
+     "count": 1,
+     "location": {
+      "area": "neonis_starport",
+      "planet": "neonis",
+      "spot": "Dr. Vashti",
+      "x": 307,
+      "y": 518,
+      "map": "data/painted_maps.json#neonis"
+     }
+    },
+    {
+     "type": "defeat_keeper",
+     "target": "neonis",
+     "count": 1,
+     "location": {
+      "area": "neonis_starport",
+      "planet": "neonis",
+      "spot": "Keeper door at top of stairs",
+      "x": 196,
+      "y": 340,
+      "map": "data/painted_maps.json#neonis"
+     }
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Dr. Vashti: Every Relay Tower is broadcasting the same pulse... a signal from the Starfall crater. Win Neonis's Shard so we can tune in."
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "DJ Static: That was a banger! Take the Shard. And hey, that signal? It's coming from the other side of something."
+    ]
+   },
+   "rewards": {
+    "shard": 4,
+    "items": {
+     "harmonic": 3
+    },
+    "flags": [
+     "shard_neonis",
+     "rift_signal"
+    ]
+   },
+   "repeatable": false,
+   "notes": ""
+  },
+  {
+   "id": "M10",
+   "type": "main",
+   "act": "Act 2",
+   "title": "Murals of Ystra",
+   "location": {
+    "area": "glyphos_town",
+    "planet": "glyphos",
+    "spot": "Sunken temple ruins",
+    "note": "tile map or future painted map; place this spot when building"
+   },
+   "giver": {
+    "name": "Ystran echo",
+    "art": "ystran"
+   },
+   "prereq": [
+    "M09"
+   ],
+   "objectives": [
+    {
+     "type": "visit",
+     "target": "node:glyphos",
+     "count": 1,
+     "how": "Deep Sea Ferry",
+     "location": {
+      "area": "molten_frontier",
+      "spot": "Deep Sea Ferry",
+      "x": 300,
+      "y": 318,
+      "map": "data/world_map.json"
+     }
+    },
+    {
+     "type": "examine",
+     "target": "mural",
+     "count": 3,
+     "location": {
+      "area": "glyphos_town",
+      "planet": "glyphos",
+      "spot": "Mural hall: Ystra, the Devourer, the Seedmother",
+      "note": "tile map or future painted map; place this spot when building"
+     }
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Carved walls glow as you approach. Three murals tell a story older than the Starfall."
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "The murals show it plainly: a dying world called Ystra, a void that ate the stars, and a great tree-mother sending her children away in seedpods. The Alienmon are refugees."
+    ]
+   },
+   "rewards": {
+    "flags": [
+     "murals_read"
+    ],
+    "dust": 600
+   },
+   "repeatable": false,
+   "notes": "No Keeper on Glyphos."
+  },
+  {
+   "id": "M11",
+   "type": "main",
+   "act": "Act 3",
+   "title": "The Light in the Crater",
+   "location": {
+    "area": "molten_frontier",
+    "spot": "Magma Mines",
+    "x": 1347,
+    "y": 118,
+    "map": "data/world_map.json"
+   },
+   "giver": {
+    "name": "Old Basalt",
+    "art": "basalt"
+   },
+   "prereq": [
+    "M10"
+   ],
+   "objectives": [
+    {
+     "type": "visit",
+     "target": "node:pyros",
+     "count": 1,
+     "how": "Magma Mines cave",
+     "location": {
+      "area": "molten_frontier",
+      "spot": "Magma Mines",
+      "x": 1347,
+      "y": 118,
+      "map": "data/world_map.json"
+     }
+    },
+    {
+     "type": "talk",
+     "target": "old_basalt",
+     "count": 1,
+     "location": {
+      "area": "pyros_town",
+      "planet": "pyros",
+      "spot": "Cinder Hollow lift",
+      "note": "tile map or future painted map; place this spot when building"
+     }
+    },
+    {
+     "type": "defeat_keeper",
+     "target": "pyros",
+     "count": 1,
+     "location": {
+      "area": "pyros_town",
+      "planet": "pyros",
+      "spot": "Volcano Relay Tower",
+      "note": "tile map or future painted map; place this spot when building"
+     }
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Old Basalt: Teo Reyes? Sure, I knew him. Last I saw, he walked into the crater's light and didn't come back."
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "Old Basalt: Tell Sola her pa was the bravest fool I ever met. Here, your fifth Shard."
+    ]
+   },
+   "rewards": {
+    "shard": 5,
+    "flags": [
+     "shard_pyros",
+     "teo_clue"
+    ]
+   },
+   "repeatable": false,
+   "notes": ""
+  },
+  {
+   "id": "M12",
+   "type": "main",
+   "act": "Act 3",
+   "title": "Teeth in the Ice",
+   "location": {
+    "area": "glacia_town",
+    "planet": "glacia",
+    "spot": "Frostmark dig site",
+    "note": "tile map or future painted map; place this spot when building"
+   },
+   "giver": {
+    "name": "Ingrid Vale",
+    "art": "ingrid"
+   },
+   "prereq": [
+    "M11"
+   ],
+   "objectives": [
+    {
+     "type": "examine",
+     "target": "fossil_bite",
+     "count": 3,
+     "location": {
+      "area": "glacia_town",
+      "planet": "glacia",
+      "spot": "Three frozen fossil sites in the crystal caverns",
+      "note": "tile map or future painted map; place this spot when building"
+     }
+    },
+    {
+     "type": "defeat_keeper",
+     "target": "glacia",
+     "count": 1,
+     "location": {
+      "area": "glacia_town",
+      "planet": "glacia",
+      "spot": "Aurora Relay Tower",
+      "note": "tile map or future painted map; place this spot when building"
+     }
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Ingrid Vale: The ice holds something you need to see. Fossils... with bite marks the size of moons."
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "Ingrid Vale: The Devourer isn't a legend. Take the sixth Shard. We'll need every tower standing."
+    ]
+   },
+   "rewards": {
+    "shard": 6,
+    "flags": [
+     "shard_glacia",
+     "devourer_real"
+    ]
+   },
+   "repeatable": false,
+   "notes": ""
+  },
+  {
+   "id": "M13",
+   "type": "main",
+   "act": "Act 3",
+   "title": "Infiltrate the Forge",
+   "location": {
+    "area": "molten_frontier",
+    "spot": "Helix Forge Fortress",
+    "x": 1090,
+    "y": 252,
+    "map": "data/world_map.json"
+   },
+   "giver": {
+    "name": "Grub",
+    "art": "grub"
+   },
+   "prereq": [
+    "M12"
+   ],
+   "objectives": [
+    {
+     "type": "battle_trainer",
+     "target": "mf7",
+     "count": 1,
+     "location": {
+      "area": "molten_frontier",
+      "spot": "Helix Grunt",
+      "x": 1038,
+      "y": 318,
+      "map": "data/world_map.json"
+     }
+    },
+    {
+     "type": "examine",
+     "target": "forge_terminal",
+     "count": 1,
+     "location": {
+      "area": "molten_frontier",
+      "spot": "Helix Forge Fortress",
+      "x": 1090,
+      "y": 252,
+      "map": "data/world_map.json"
+     }
+    },
+    {
+     "type": "item",
+     "target": "helix_keycard",
+     "count": 1,
+     "location": {
+      "area": "molten_frontier",
+      "spot": "Helix Forge Fortress",
+      "x": 1090,
+      "y": 252,
+      "map": "data/world_map.json"
+     }
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Grub: Psst. I used to work for Helix. Their Forge Fortress has a shuttle keycard in the control room. Get it and you can reach Helix Station."
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "You swipe a Helix Keycard from the control terminal. The fortress shuttle pad lights up."
+    ]
+   },
+   "rewards": {
+    "items": {
+     "helix_keycard": 1
+    },
+    "flags": [
+     "keycard"
+    ]
+   },
+   "repeatable": false,
+   "notes": "Grub is the junk trader and a secret ex-Helix engineer."
+  },
+  {
+   "id": "M14",
+   "type": "main",
+   "act": "Act 3",
+   "title": "Helix Station",
+   "location": {
+    "area": "helix_town",
+    "planet": "helix",
+    "spot": "Station decks",
+    "note": "tile map or future painted map; place this spot when building"
+   },
+   "giver": {
+    "name": "Admin Bronn",
+    "art": "vex"
+   },
+   "prereq": [
+    "M13"
+   ],
+   "objectives": [
+    {
+     "type": "visit",
+     "target": "planet:helix",
+     "count": 1,
+     "location": {
+      "area": "molten_frontier",
+      "spot": "Helix Forge Fortress",
+      "x": 1090,
+      "y": 252,
+      "map": "data/world_map.json"
+     }
+    },
+    {
+     "type": "battle_trainer",
+     "target": "admin_bronn",
+     "count": 1,
+     "location": {
+      "area": "helix_town",
+      "planet": "helix",
+      "spot": "Engineering bay",
+      "note": "tile map or future painted map; place this spot when building"
+     }
+    },
+    {
+     "type": "defeat_boss",
+     "target": "admin_vex",
+     "count": 1,
+     "location": {
+      "area": "helix_town",
+      "planet": "helix",
+      "spot": "Vex's containment arena",
+      "note": "tile map or future painted map; place this spot when building"
+     }
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Admin Bronn: Thorne's lost his mind. That Rift will swallow us all. Beat me and I'll open the way to Vex."
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "Admin Vex: Ugh! Fine. The Director already has what he needs. You're too late."
+    ]
+   },
+   "rewards": {
+    "items": {
+     "singularity": 1
+    },
+    "flags": [
+     "vex_defeated"
+    ]
+   },
+   "repeatable": false,
+   "notes": "Vex is a boss, not a Relay Keeper: no Signal Shard. Bronn leaks Thorne's plan."
+  },
+  {
+   "id": "M15",
+   "type": "main",
+   "act": "Act 3",
+   "title": "Sola Turns",
+   "location": {
+    "area": "helix_town",
+    "planet": "helix",
+    "spot": "Observation deck",
+    "note": "tile map or future painted map; place this spot when building"
+   },
+   "giver": {
+    "name": "Sola Reyes",
+    "art": "sola"
+   },
+   "prereq": [
+    "M14"
+   ],
+   "objectives": [
+    {
+     "type": "cutscene",
+     "target": "sola_joins",
+     "count": 1,
+     "location": {
+      "area": "helix_town",
+      "planet": "helix",
+      "spot": "Observation deck",
+      "note": "tile map or future painted map; place this spot when building"
+     }
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Sola: They lied to me. Thorne never wanted to find my dad. He wants to OPEN the thing that took him."
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "Sola: I'm with you now. Let's finish this, together."
+    ]
+   },
+   "rewards": {
+    "items": {
+     "harmonic": 5
+    },
+    "flags": [
+     "sola_ally"
+    ]
+   },
+   "repeatable": false,
+   "notes": ""
+  },
+  {
+   "id": "M16",
+   "type": "main",
+   "act": "Act 4",
+   "title": "Twin Visions",
+   "location": {
+    "area": "skyreach_plaza",
+    "planet": "halo",
+    "spot": "Grand stairs, tower door",
+    "x": 772,
+    "y": 296,
+    "map": "data/painted_maps.json#halo"
+   },
+   "giver": {
+    "name": "Echo & Iris",
+    "art": "twins"
+   },
+   "prereq": [
+    "M15"
+   ],
+   "objectives": [
+    {
+     "type": "examine",
+     "target": "holo_globe",
+     "count": 1,
+     "location": {
+      "area": "skyreach_plaza",
+      "planet": "halo",
+      "spot": "Holo-globe fountain",
+      "x": 770,
+      "y": 655,
+      "map": "data/painted_maps.json#halo"
+     }
+    },
+    {
+     "type": "defeat_keeper",
+     "target": "halo",
+     "count": 1,
+     "location": {
+      "area": "skyreach_plaza",
+      "planet": "halo",
+      "spot": "Top of the grand stairs",
+      "x": 772,
+      "y": 296,
+      "map": "data/painted_maps.json#halo"
+     }
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Echo & Iris: We already saw you climb these stairs. We also saw the sky tear open."
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "Echo & Iris: The vision is clear now. The Rift opens at the Starfall crater. Take the seventh Shard."
+    ]
+   },
+   "rewards": {
+    "shard": 7,
+    "flags": [
+     "shard_halo",
+     "vision"
+    ]
+   },
+   "repeatable": false,
+   "notes": ""
+  },
+  {
+   "id": "M17",
+   "type": "main",
+   "act": "Act 4",
+   "title": "Voices in the Dark",
+   "location": {
+    "area": "molten_frontier",
+    "spot": "Shadow Tunnel",
+    "x": 840,
+    "y": 526,
+    "map": "data/world_map.json"
+   },
+   "giver": {
+    "name": "Mortimer Kade",
+    "art": "kade"
+   },
+   "prereq": [
+    "M16"
+   ],
+   "objectives": [
+    {
+     "type": "visit",
+     "target": "node:umbra",
+     "count": 1,
+     "how": "Shadow Tunnel",
+     "location": {
+      "area": "molten_frontier",
+      "spot": "Shadow Tunnel",
+      "x": 840,
+      "y": 526,
+      "map": "data/world_map.json"
+     }
+    },
+    {
+     "type": "defeat_keeper",
+     "target": "umbra",
+     "count": 1,
+     "location": {
+      "area": "umbra_town",
+      "planet": "umbra",
+      "spot": "Gravewell Relay Tower",
+      "note": "tile map or future painted map; place this spot when building"
+     }
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Mortimer Kade: I built the Rift engine for Thorne. I scratched the logo off my coat the day I understood what it would wake."
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "Mortimer Kade: Eight Shards. The towers will sing. Go to the crater before Thorne does."
+    ]
+   },
+   "rewards": {
+    "shard": 8,
+    "flags": [
+     "shard_umbra"
+    ]
+   },
+   "repeatable": false,
+   "notes": ""
+  },
+  {
+   "id": "M18",
+   "type": "main",
+   "act": "Act 4",
+   "title": "Eight Shards Sing",
+   "location": {
+    "area": "molten_frontier",
+    "spot": "Helix Shuttle Pad",
+    "x": 1436,
+    "y": 704,
+    "map": "data/world_map.json"
+   },
+   "giver": {
+    "name": "Strand (defector)",
+    "art": "strand"
+   },
+   "prereq": [
+    "M17"
+   ],
+   "objectives": [
+    {
+     "type": "visit",
+     "target": "node:starfall",
+     "count": 1,
+     "how": "Helix Shuttle Pad",
+     "location": {
+      "area": "molten_frontier",
+      "spot": "Helix Shuttle Pad",
+      "x": 1436,
+      "y": 704,
+      "map": "data/world_map.json"
+     }
+    },
+    {
+     "type": "cutscene",
+     "target": "novaryx_awakens",
+     "count": 1,
+     "location": {
+      "area": "starfall_town",
+      "planet": "starfall",
+      "spot": "Crater rim",
+      "note": "tile map or future painted map; place this spot when building"
+     }
+    },
+    {
+     "type": "legendary_encounter",
+     "target": "Novaryx",
+     "count": 1,
+     "lv": 50,
+     "syncs": 3,
+     "location": {
+      "area": "starfall_town",
+      "planet": "starfall",
+      "spot": "Crater rim",
+      "note": "tile map or future painted map; place this spot when building"
+     }
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Strand: That shuttle goes straight to the crater. Take it. I'm done with Helix."
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "Your eight Shards rise and resonate. A great signal-winged bird answers the call: Novaryx!"
+    ]
+   },
+   "rewards": {
+    "flags": [
+     "novaryx_met"
+    ]
+   },
+   "repeatable": false,
+   "notes": "Legendary capture needs 3 successful Syncs in a row (Overcharge)."
+  },
+  {
+   "id": "M19",
+   "type": "main",
+   "act": "Act 4",
+   "title": "Seal the Rift",
+   "location": {
+    "area": "starfall_town",
+    "planet": "starfall",
+    "spot": "Rift vortex",
+    "note": "tile map or future painted map; place this spot when building"
+   },
+   "giver": {
+    "name": "Director Kael Thorne",
+    "art": "thorne"
+   },
+   "prereq": [
+    "M18"
+   ],
+   "objectives": [
+    {
+     "type": "defeat_boss",
+     "target": "director_thorne",
+     "count": 1,
+     "location": {
+      "area": "starfall_town",
+      "planet": "starfall",
+      "spot": "Rift vortex",
+      "note": "tile map or future painted map; place this spot when building"
+     }
+    },
+    {
+     "type": "cutscene",
+     "target": "rift_sealed",
+     "count": 1,
+     "location": {
+      "area": "starfall_town",
+      "planet": "starfall",
+      "spot": "Rift vortex",
+      "note": "tile map or future painted map; place this spot when building"
+     }
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Director Thorne: The Rift is power, child. Power the universe wasted on refugees."
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "The Shards blaze and the Rift folds shut. From the fading light stumbles Teo Reyes, a crystal Alienmon at his side. Sola runs to him."
+    ]
+   },
+   "rewards": {
+    "dust": 3000,
+    "flags": [
+     "rift"
+    ],
+    "alienmon_seen": [
+     "Lumivex"
+    ]
+   },
+   "repeatable": false,
+   "notes": "Sets flag 'rift', which unlocks Apex Array."
+  },
+  {
+   "id": "M20",
+   "type": "main",
+   "act": "Act 5",
+   "title": "The Summit",
+   "location": {
+    "area": "apex_town",
+    "planet": "apex",
+    "spot": "Celestial Observatory summit",
+    "note": "tile map or future painted map; place this spot when building"
+   },
+   "giver": {
+    "name": "Orra Venn",
+    "art": "orra"
+   },
+   "prereq": [
+    "M19"
+   ],
+   "objectives": [
+    {
+     "type": "defeat_boss",
+     "target": "quorum_marisol",
+     "count": 1,
+     "location": {
+      "area": "apex_town",
+      "planet": "apex",
+      "spot": "Crystal hall",
+      "note": "tile map or future painted map; place this spot when building"
+     }
+    },
+    {
+     "type": "defeat_boss",
+     "target": "quorum_harrow",
+     "count": 1,
+     "location": {
+      "area": "apex_town",
+      "planet": "apex",
+      "spot": "Sonic hall",
+      "note": "tile map or future painted map; place this spot when building"
+     }
+    },
+    {
+     "type": "defeat_boss",
+     "target": "quorum_saga",
+     "count": 1,
+     "location": {
+      "area": "apex_town",
+      "planet": "apex",
+      "spot": "Plasma hall",
+      "note": "tile map or future painted map; place this spot when building"
+     }
+    },
+    {
+     "type": "defeat_boss",
+     "target": "quorum_ostrander",
+     "count": 1,
+     "location": {
+      "area": "apex_town",
+      "planet": "apex",
+      "spot": "Gravity hall",
+      "note": "tile map or future painted map; place this spot when building"
+     }
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Orra Venn: The Quorum waits in four halls. Beat them all, then come find me under the great telescope."
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "General Ostrander: Go on, then. The Prime Linker is waiting."
+    ]
+   },
+   "rewards": {
+    "flags": [
+     "quorum"
+    ]
+   },
+   "repeatable": false,
+   "notes": "Quorum: Marisol Fenn (Crystal), Duke Harrow (Sonic), Saga (Plasma), General Ostrander (Gravity)."
+  },
+  {
+   "id": "M21",
+   "type": "main",
+   "act": "Act 5",
+   "title": "Prime Linker",
+   "location": {
+    "area": "apex_town",
+    "planet": "apex",
+    "spot": "Great telescope",
+    "note": "tile map or future painted map; place this spot when building"
+   },
+   "giver": {
+    "name": "Orra Venn",
+    "art": "orra"
+   },
+   "prereq": [
+    "M20"
+   ],
+   "objectives": [
+    {
+     "type": "defeat_boss",
+     "target": "orra_venn",
+     "count": 1,
+     "location": {
+      "area": "apex_town",
+      "planet": "apex",
+      "spot": "Great telescope",
+      "note": "tile map or future painted map; place this spot when building"
+     }
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Orra Venn: My first Linker still works. Let's see if yours can outshine it."
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "Orra Venn: The Kessler system has a new Prime Linker. Roll the credits, then look up. Ystra is waiting."
+    ]
+   },
+   "rewards": {
+    "flags": [
+     "champ"
+    ],
+    "dust": 10000
+   },
+   "repeatable": false,
+   "notes": "Credits roll. Sets flag 'champ', which unlocks Ystra."
+  },
+  {
+   "id": "P01",
+   "type": "main",
+   "act": "Postgame",
+   "title": "Through the Vortex",
+   "location": {
+    "area": "world",
+    "spot": "The Rift Vortex",
+    "note": "black hole near the Void Ruins in the old map; in the Molten Frontier era, travel by ship to Ystra"
+   },
+   "giver": {
+    "name": "Zib",
+    "art": "technician"
+   },
+   "prereq": [
+    "M21"
+   ],
+   "objectives": [
+    {
+     "type": "visit",
+     "target": "planet:ystra",
+     "count": 1,
+     "location": {
+      "area": "space",
+      "spot": "Ystra"
+     }
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Zib's lights blink in a rhythm you've never seen. It's pointing home."
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "You step onto shattered Ystra. Floating continents, crystal forests, a dying red sun."
+    ]
+   },
+   "rewards": {
+    "flags": [
+     "ystra_visited"
+    ]
+   },
+   "repeatable": false,
+   "notes": ""
+  },
+  {
+   "id": "P02",
+   "type": "main",
+   "act": "Postgame",
+   "title": "The Devourer",
+   "location": {
+    "area": "ystra_town",
+    "planet": "ystra",
+    "spot": "Edge of the void",
+    "note": "tile map or future painted map; place this spot when building"
+   },
+   "giver": {
+    "name": "Seedmother's voice",
+    "art": "ystran"
+   },
+   "prereq": [
+    "P01"
+   ],
+   "objectives": [
+    {
+     "type": "legendary_encounter",
+     "target": "Oblivane",
+     "count": 1,
+     "lv": 70,
+     "syncs": 3,
+     "location": {
+      "area": "ystra_town",
+      "planet": "ystra",
+      "spot": "Edge of the void",
+      "note": "tile map or future painted map; place this spot when building"
+     }
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "A shadow the size of a planet turns its countless eyes toward you."
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "Oblivane is calm at last. Some say it was never evil. It was only hungry and alone."
+    ]
+   },
+   "rewards": {
+    "flags": [
+     "oblivane"
+    ]
+   },
+   "repeatable": false,
+   "notes": ""
+  },
+  {
+   "id": "P03",
+   "type": "main",
+   "act": "Postgame",
+   "title": "The Seedmother",
+   "location": {
+    "area": "ystra_town",
+    "planet": "ystra",
+    "spot": "Crystal grove heart",
+    "note": "tile map or future painted map; place this spot when building"
+   },
+   "giver": {
+    "name": "Seedmother",
+    "art": "ystran"
+   },
+   "prereq": [
+    "P02"
+   ],
+   "objectives": [
+    {
+     "type": "talk",
+     "target": "seedmother",
+     "count": 1,
+     "location": {
+      "area": "ystra_town",
+      "planet": "ystra",
+      "spot": "Crystal grove",
+      "note": "tile map or future painted map; place this spot when building"
+     }
+    },
+    {
+     "type": "choice",
+     "target": "alienmon_future",
+     "count": 1,
+     "options": [
+      "Rebuild Ystra together",
+      "Keep Kessler as a shared home"
+     ],
+     "location": {
+      "area": "ystra_town",
+      "planet": "ystra",
+      "spot": "Crystal grove",
+      "note": "tile map or future painted map; place this spot when building"
+     }
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Seedmother: My children found friends among the stars. Tell me, Linker: where do they belong now?"
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "Seedmother: Then it is decided. Take this seed. A gate at the edge of your sky is waking."
+    ]
+   },
+   "rewards": {
+    "flags": [
+     "seedmother"
+    ],
+    "items": {
+     "seedmother_seed": 1
+    }
+   },
+   "repeatable": false,
+   "notes": "The choice changes ending dialogue only. Both paths unlock the Warp Gate teaser."
+  },
+  {
+   "id": "P04",
+   "type": "main",
+   "act": "Postgame",
+   "title": "The Warp Gate Hums",
+   "location": {
+    "area": "space",
+    "spot": "Warp Gate (far edge)"
+   },
+   "giver": {
+    "name": "Dr. Imogen Vashti",
+    "art": "vashti"
+   },
+   "prereq": [
+    "P03"
+   ],
+   "objectives": [
+    {
+     "type": "visit",
+     "target": "warp_gate",
+     "count": 1,
+     "location": {
+      "area": "space",
+      "spot": "Warp Gate"
+     }
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Dr. Vashti: The Warp Gate just lit up on every scope in the system!"
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "The gate's runes glow cyan and pink... then dim. Not yet. (Batch 2 coming soon.)"
+    ]
+   },
+   "rewards": {
+    "flags": [
+     "warp_teaser"
+    ]
+   },
+   "repeatable": false,
+   "notes": "Hook for Batch 2. When a batch02 folder exists, this opens the next system."
+  },
+  {
+   "id": "S01",
+   "type": "side",
+   "act": "Dustara",
+   "title": "Dusty's Cactus Garden",
+   "location": {
+    "area": "dustmere",
+    "planet": "dustara",
+    "spot": "Trading post doorway",
+    "x": 1330,
+    "y": 644,
+    "map": "data/painted_maps.json#dustara"
+   },
+   "giver": {
+    "name": "Dusty the wanderer",
+    "art": "wanderer"
+   },
+   "prereq": [
+    "M01"
+   ],
+   "objectives": [
+    {
+     "type": "catch",
+     "target": "Cactling",
+     "count": 1,
+     "location": {
+      "area": "dustmere",
+      "planet": "dustara",
+      "spot": "Cactus gardens (drift grass)",
+      "x": 1350,
+      "y": 930,
+      "map": "data/painted_maps.json#dustara"
+     }
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Dusty: Haven't seen a Cactling bloom in years. Catch one and show me?"
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "Dusty: Look at those petals! Here, a little something for your trouble."
+    ]
+   },
+   "rewards": {
+    "items": {
+     "gel": 3
+    },
+    "dust": 100
+   },
+   "repeatable": false,
+   "notes": ""
+  },
+  {
+   "id": "S02",
+   "type": "side",
+   "act": "Dustara",
+   "title": "DX-4's Missing Parts",
+   "location": {
+    "area": "dustmere",
+    "planet": "dustara",
+    "spot": "DX-4 robot",
+    "x": 400,
+    "y": 342,
+    "map": "data/painted_maps.json#dustara"
+   },
+   "giver": {
+    "name": "Scout unit DX-4",
+    "art": "technician"
+   },
+   "prereq": [
+    "M02"
+   ],
+   "objectives": [
+    {
+     "type": "collect",
+     "target": "scrap_bolt",
+     "count": 3,
+     "location": {
+      "area": "dustmere",
+      "planet": "dustara",
+      "spot": "Market crates (270,760), bridge east end (1110,398), trading post crates (1312,722)",
+      "x": 0,
+      "y": 0,
+      "map": "data/painted_maps.json#dustara"
+     }
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "DX-4: Bzzt. Three of my bolts rolled away in the Starfall wind. Retrieve them?"
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "DX-4: Systems at 100%! Accept this Stun Spray, Linker."
+    ]
+   },
+   "rewards": {
+    "items": {
+     "stun": 2
+    }
+   },
+   "repeatable": false,
+   "notes": ""
+  },
+  {
+   "id": "S03",
+   "type": "side",
+   "act": "Dustara",
+   "title": "Pink Gills",
+   "location": {
+    "area": "dustmere",
+    "planet": "dustara",
+    "spot": "Pink Alienmon by the trading post",
+    "x": 1232,
+    "y": 756,
+    "map": "data/painted_maps.json#dustara"
+   },
+   "giver": {
+    "name": "(the pink Alienmon)",
+    "art": null
+   },
+   "prereq": [
+    "M01"
+   ],
+   "objectives": [
+    {
+     "type": "win_battle",
+     "target": "hotspot_mon_dustmere",
+     "count": 3,
+     "location": {
+      "area": "dustmere",
+      "planet": "dustara",
+      "spot": "Pink Alienmon",
+      "x": 1232,
+      "y": 756,
+      "map": "data/painted_maps.json#dustara"
+     }
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "The pink Alienmon puffs up its gills. It looks like it wants a rematch... again and again."
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "After its third loss it happily hands you a shiny stone it was guarding."
+    ]
+   },
+   "rewards": {
+    "items": {
+     "harmonic": 1
+    }
+   },
+   "repeatable": false,
+   "notes": "Uses the existing 'mon' hotspot; count wins."
+  },
+  {
+   "id": "S04",
+   "type": "side",
+   "act": "Dustara",
+   "title": "Explorer's Field Test",
+   "location": {
+    "area": "dustmere",
+    "planet": "dustara",
+    "spot": "Explorer near trading post",
+    "x": 1140,
+    "y": 746,
+    "map": "data/painted_maps.json#dustara"
+   },
+   "giver": {
+    "name": "Explorer",
+    "art": "explorer"
+   },
+   "prereq": [
+    "M04"
+   ],
+   "objectives": [
+    {
+     "type": "use_item",
+     "target": "tether",
+     "count": 1,
+     "location": null
+    },
+    {
+     "type": "use_item",
+     "target": "stun",
+     "count": 1,
+     "location": null
+    },
+    {
+     "type": "catch_any",
+     "target": "",
+     "count": 1,
+     "location": null
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Explorer: Let's test your technique: Tether Pulse, Stun Spray, then fire the beam!"
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "Explorer: Textbook capture! Take these. You'll need them out there."
+    ]
+   },
+   "rewards": {
+    "items": {
+     "tether": 2,
+     "stun": 2
+    }
+   },
+   "repeatable": false,
+   "notes": "Tutorial for the capture tools."
+  },
+  {
+   "id": "S10",
+   "type": "side",
+   "act": "Molten Frontier",
+   "title": "Frontier Gauntlet",
+   "location": {
+    "area": "molten_frontier",
+    "spot": "Fortress Launch Pad",
+    "x": 1093,
+    "y": 300,
+    "map": "data/world_map.json"
+   },
+   "giver": {
+    "name": "Forge Miner Dax",
+    "art": "miner"
+   },
+   "prereq": [
+    "M04"
+   ],
+   "objectives": [
+    {
+     "type": "battle_trainer",
+     "target": "mf4|mf6|mf7|mf10|mf12",
+     "count": 5,
+     "location": {
+      "area": "molten_frontier",
+      "spot": "all five Frontier trainers"
+     }
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Dax: Beat every trainer on the Frontier and you'll earn a Frontier Badge of honor."
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "Dax: All five! Here, a Singularity Cell. Don't waste it."
+    ]
+   },
+   "rewards": {
+    "items": {
+     "singularity": 1
+    },
+    "dust": 500
+   },
+   "repeatable": false,
+   "notes": ""
+  },
+  {
+   "id": "S11",
+   "type": "side",
+   "act": "Molten Frontier",
+   "title": "Signal Static",
+   "location": {
+    "area": "molten_frontier",
+    "spot": "Technician",
+    "x": 1450,
+    "y": 262,
+    "map": "data/world_map.json"
+   },
+   "giver": {
+    "name": "Technician",
+    "art": "technician"
+   },
+   "prereq": [
+    "M04"
+   ],
+   "objectives": [
+    {
+     "type": "win_battle",
+     "target": "wild_lava_fields",
+     "count": 5,
+     "location": {
+      "area": "molten_frontier",
+      "spot": "east trails (x > 560)"
+     }
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Technician: Wild Alienmon keep chewing my relay cables. Thin them out a little?"
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "Technician: Signal's clean again. Thanks! Take some Tether Pulses."
+    ]
+   },
+   "rewards": {
+    "items": {
+     "tether": 3
+    }
+   },
+   "repeatable": false,
+   "notes": ""
+  },
+  {
+   "id": "S12",
+   "type": "side",
+   "act": "Molten Frontier",
+   "title": "Palm Isle Herbs",
+   "location": {
+    "area": "molten_frontier",
+    "spot": "Explorer",
+    "x": 206,
+    "y": 638,
+    "map": "data/world_map.json"
+   },
+   "giver": {
+    "name": "Explorer",
+    "art": "explorer"
+   },
+   "prereq": [
+    "M04"
+   ],
+   "objectives": [
+    {
+     "type": "catch_type",
+     "target": "Bio",
+     "count": 1,
+     "location": null
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Explorer: The hut needs fresh herbs. A Bio-type Alienmon could grow them. Catch one?"
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "Explorer: Perfect! The hut will stay stocked for weeks. Here's a Revive Spark."
+    ]
+   },
+   "rewards": {
+    "items": {
+     "revive": 1
+    }
+   },
+   "repeatable": false,
+   "notes": ""
+  },
+  {
+   "id": "S13",
+   "type": "side",
+   "act": "Molten Frontier",
+   "title": "The Miner's Lost Pick",
+   "location": {
+    "area": "molten_frontier",
+    "spot": "Miner",
+    "x": 702,
+    "y": 322,
+    "map": "data/world_map.json"
+   },
+   "giver": {
+    "name": "Miner",
+    "art": "miner"
+   },
+   "prereq": [
+    "M04"
+   ],
+   "objectives": [
+    {
+     "type": "collect",
+     "target": "old_pickaxe",
+     "count": 1,
+     "hint": "Just inside the Shadow Tunnel entrance",
+     "location": {
+      "area": "molten_frontier",
+      "spot": "Shadow Tunnel",
+      "x": 840,
+      "y": 526,
+      "map": "data/world_map.json"
+     }
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Miner: Dropped my lucky pick near the Shadow Tunnel. Too spooky to go back alone."
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "Miner: My lucky pick! You're a lifesaver."
+    ]
+   },
+   "rewards": {
+    "dust": 300,
+    "items": {
+     "megagel": 1
+    }
+   },
+   "repeatable": false,
+   "notes": ""
+  },
+  {
+   "id": "S14",
+   "type": "side",
+   "act": "Molten Frontier",
+   "title": "Ferry Fare",
+   "location": {
+    "area": "molten_frontier",
+    "spot": "Squid Sailor",
+    "x": 230,
+    "y": 250,
+    "map": "data/world_map.json"
+   },
+   "giver": {
+    "name": "Squid Sailor",
+    "art": "squidsailor"
+   },
+   "prereq": [
+    "M07"
+   ],
+   "objectives": [
+    {
+     "type": "deliver",
+     "target": "megagel",
+     "count": 1,
+     "location": {
+      "area": "molten_frontier",
+      "spot": "Squid Sailor",
+      "x": 230,
+      "y": 250,
+      "map": "data/world_map.json"
+     }
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Squid Sailor: The ferry crew's been working double shifts. A Mega Gel for them would go a long way."
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "Squid Sailor: Crew says thanks! You ride free, forever."
+    ]
+   },
+   "rewards": {
+    "dust": 400
+   },
+   "repeatable": false,
+   "notes": "Flavor reward: ferry dialogue changes."
+  },
+  {
+   "id": "S15",
+   "type": "side",
+   "act": "Molten Frontier",
+   "title": "Echo in the Mountain",
+   "location": {
+    "area": "molten_frontier",
+    "spot": "Ystran echo",
+    "x": 1358,
+    "y": 234,
+    "map": "data/world_map.json"
+   },
+   "giver": {
+    "name": "Ystran echo",
+    "art": "ystran"
+   },
+   "prereq": [
+    "M10"
+   ],
+   "objectives": [
+    {
+     "type": "talk",
+     "target": "mf14",
+     "count": 1,
+     "location": {
+      "area": "molten_frontier",
+      "spot": "Ystran echo",
+      "x": 1358,
+      "y": 234,
+      "map": "data/world_map.json"
+     }
+    },
+    {
+     "type": "visit",
+     "target": "node:pyros",
+     "count": 1,
+     "location": {
+      "area": "molten_frontier",
+      "spot": "Magma Mines",
+      "x": 1347,
+      "y": 118,
+      "map": "data/world_map.json"
+     }
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Ystran echo: ...the mountain's heart remembers Ystra... go deeper..."
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "Deep in the Magma Mines a crystal hums with the echo's voice. You take the Ystra Shardlet."
+    ]
+   },
+   "rewards": {
+    "items": {
+     "ystra_shardlet": 1
+    },
+    "flags": [
+     "echo_1"
+    ]
+   },
+   "repeatable": false,
+   "notes": "One of 3 Ystran echo quests (with S92, S93)."
+  },
+  {
+   "id": "S16",
+   "type": "side",
+   "act": "Molten Frontier",
+   "title": "Grub's Bargain",
+   "location": {
+    "area": "molten_frontier",
+    "spot": "Helix Forge Fortress",
+    "x": 1090,
+    "y": 252,
+    "map": "data/world_map.json"
+   },
+   "giver": {
+    "name": "Grub",
+    "art": "grub"
+   },
+   "prereq": [
+    "M13"
+   ],
+   "objectives": [
+    {
+     "type": "collect",
+     "target": "scrap_cog",
+     "count": 5,
+     "location": {
+      "area": "molten_frontier",
+      "spot": "lava field trails"
+     }
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Grub: Bring me five scrap cogs from the lava trails and I'll trade you something special."
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "Grub: Heh, pleasure doing business. One Singularity Cell, as promised."
+    ]
+   },
+   "rewards": {
+    "items": {
+     "singularity": 1
+    }
+   },
+   "repeatable": true,
+   "notes": ""
+  },
+  {
+   "id": "S20",
+   "type": "side",
+   "act": "Ferrox",
+   "title": "Scrap for Grub",
+   "location": {
+    "area": "ferrox_town",
+    "planet": "ferrox",
+    "spot": "Junk market",
+    "note": "tile map or future painted map; place this spot when building"
+   },
+   "giver": {
+    "name": "Grub",
+    "art": "grub"
+   },
+   "prereq": [
+    "M05"
+   ],
+   "objectives": [
+    {
+     "type": "catch",
+     "target": "Rustle",
+     "count": 1,
+     "location": {
+      "area": "ferrox_town",
+      "planet": "ferrox",
+      "spot": "Scrapyard drift grass",
+      "note": "tile map or future painted map; place this spot when building"
+     }
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Grub: A Rustle eats rust and spits out polish. I need one for my shop!"
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "Grub: Shiny! Here's your cut."
+    ]
+   },
+   "rewards": {
+    "dust": 350
+   },
+   "repeatable": false,
+   "notes": ""
+  },
+  {
+   "id": "S21",
+   "type": "side",
+   "act": "Ferrox",
+   "title": "Crane Yard Brawl",
+   "location": {
+    "area": "ferrox_town",
+    "planet": "ferrox",
+    "spot": "Crane yard",
+    "note": "tile map or future painted map; place this spot when building"
+   },
+   "giver": {
+    "name": "Hank Briggs",
+    "art": "hank"
+   },
+   "prereq": [
+    "M05"
+   ],
+   "objectives": [
+    {
+     "type": "battle_trainer",
+     "target": "ferrox_junkers",
+     "count": 3,
+     "location": {
+      "area": "ferrox_town",
+      "planet": "ferrox",
+      "spot": "Crane yard",
+      "note": "tile map or future painted map; place this spot when building"
+     }
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Hank: Three junkers keep jamming my cranes. Teach 'em some manners."
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "Hank: Cranes are running smooth. You're welcome back anytime."
+    ]
+   },
+   "rewards": {
+    "items": {
+     "megagel": 2
+    }
+   },
+   "repeatable": false,
+   "notes": ""
+  },
+  {
+   "id": "S22",
+   "type": "side",
+   "act": "Ferrox",
+   "title": "Forgemaul Sighting",
+   "location": {
+    "area": "ferrox_town",
+    "planet": "ferrox",
+    "spot": "Furnace ridge",
+    "note": "tile map or future painted map; place this spot when building"
+   },
+   "giver": {
+    "name": "Scrapper",
+    "art": "miner"
+   },
+   "prereq": [
+    "M05"
+   ],
+   "objectives": [
+    {
+     "type": "catch",
+     "target": "Forgemaul",
+     "count": 1,
+     "location": {
+      "area": "ferrox_town",
+      "planet": "ferrox",
+      "spot": "Furnace ridge (rare)",
+      "note": "tile map or future painted map; place this spot when building"
+     }
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Scrapper: A Forgemaul's been hammering in the furnace ridge at night. Nobody's caught one."
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "Scrapper: You actually did it! Legend."
+    ]
+   },
+   "rewards": {
+    "dust": 800
+   },
+   "repeatable": false,
+   "notes": ""
+  },
+  {
+   "id": "S30",
+   "type": "side",
+   "act": "Sporeholm",
+   "title": "Glow Samples",
+   "location": {
+    "area": "sporeholm_town",
+    "planet": "sporeholm",
+    "spot": "Moor's lab hut",
+    "note": "tile map or future painted map; place this spot when building"
+   },
+   "giver": {
+    "name": "Dr. Lysa Moor",
+    "art": "moor"
+   },
+   "prereq": [
+    "M06"
+   ],
+   "objectives": [
+    {
+     "type": "catch",
+     "target": "Lumislug",
+     "count": 1,
+     "location": null
+    },
+    {
+     "type": "catch",
+     "target": "Puffspore",
+     "count": 1,
+     "location": null
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Dr. Moor: I need two glowing specimens: a Lumislug and a Puffspore."
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "Dr. Moor: Their glow matches the Starfall pods exactly. Fascinating!"
+    ]
+   },
+   "rewards": {
+    "items": {
+     "cure": 3,
+     "revive": 1
+    }
+   },
+   "repeatable": false,
+   "notes": ""
+  },
+  {
+   "id": "S31",
+   "type": "side",
+   "act": "Sporeholm",
+   "title": "Lost in the Mist",
+   "location": {
+    "area": "sporeholm_town",
+    "planet": "sporeholm",
+    "spot": "Village edge",
+    "note": "tile map or future painted map; place this spot when building"
+   },
+   "giver": {
+    "name": "Sporefolk elder",
+    "art": "sporefolk"
+   },
+   "prereq": [
+    "M06"
+   ],
+   "objectives": [
+    {
+     "type": "visit",
+     "target": "giant_mushroom",
+     "count": 3,
+     "location": {
+      "area": "sporeholm_town",
+      "planet": "sporeholm",
+      "spot": "Three giant teal mushrooms",
+      "note": "tile map or future painted map; place this spot when building"
+     }
+    },
+    {
+     "type": "talk",
+     "target": "lost_sporeling",
+     "count": 1,
+     "location": {
+      "area": "sporeholm_town",
+      "planet": "sporeholm",
+      "spot": "Third mushroom",
+      "note": "tile map or future painted map; place this spot when building"
+     }
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Sporefolk elder: Our little one wandered into the mist. Follow the glowing mushrooms!"
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "The little sporeling clings to you all the way home. The elder gives you a woven charm."
+    ]
+   },
+   "rewards": {
+    "items": {
+     "gel": 5
+    },
+    "dust": 200
+   },
+   "repeatable": false,
+   "notes": ""
+  },
+  {
+   "id": "S32",
+   "type": "side",
+   "act": "Sporeholm",
+   "title": "Zib's Cousin",
+   "location": {
+    "area": "sporeholm_town",
+    "planet": "sporeholm",
+    "spot": "Bog clearing",
+    "note": "tile map or future painted map; place this spot when building"
+   },
+   "giver": {
+    "name": "Zib",
+    "art": "technician"
+   },
+   "prereq": [
+    "M06",
+    "M02"
+   ],
+   "objectives": [
+    {
+     "type": "catch",
+     "target": "Zib",
+     "count": 1,
+     "location": {
+      "area": "sporeholm_town",
+      "planet": "sporeholm",
+      "spot": "Bog clearing (rare)",
+      "note": "tile map or future painted map; place this spot when building"
+     }
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Zib beeps excitedly. Another saucer signal pings from the bog."
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "Two Zibs! They blink at each other in perfect sync."
+    ]
+   },
+   "rewards": {
+    "dust": 500
+   },
+   "repeatable": false,
+   "notes": "Zib is a rare wild encounter on Sporeholm."
+  },
+  {
+   "id": "S40",
+   "type": "side",
+   "act": "Thalassa",
+   "title": "Captain's Log",
+   "location": {
+    "area": "thalassa_town",
+    "planet": "thalassa",
+    "spot": "Harbor master's office",
+    "note": "tile map or future painted map; place this spot when building"
+   },
+   "giver": {
+    "name": "Captain Delia Marsh",
+    "art": "marsh"
+   },
+   "prereq": [
+    "M07"
+   ],
+   "objectives": [
+    {
+     "type": "collect",
+     "target": "log_page",
+     "count": 3,
+     "location": {
+      "area": "thalassa_town",
+      "planet": "thalassa",
+      "spot": "Docks, lighthouse, sea arch",
+      "note": "tile map or future painted map; place this spot when building"
+     }
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Captain Marsh: Helix scattered my logbook to the wind. Three pages are still out there."
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "Captain Marsh: The last page... it shows where they took the core: the Helix Forge Fortress."
+    ]
+   },
+   "rewards": {
+    "items": {
+     "harmonic": 2
+    },
+    "flags": [
+     "core_location"
+    ]
+   },
+   "repeatable": false,
+   "notes": "Foreshadows M13."
+  },
+  {
+   "id": "S41",
+   "type": "side",
+   "act": "Thalassa",
+   "title": "Bubble Trouble",
+   "location": {
+    "area": "thalassa_town",
+    "planet": "thalassa",
+    "spot": "Beach",
+    "note": "tile map or future painted map; place this spot when building"
+   },
+   "giver": {
+    "name": "Beach kid",
+    "art": "civilian"
+   },
+   "prereq": [
+    "M07"
+   ],
+   "objectives": [
+    {
+     "type": "catch",
+     "target": "Bubbub",
+     "count": 1,
+     "location": null
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Kid: I want a Bubbub for the tide pool! Pleeease?"
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "Kid: It blew a bubble on my nose! Best day ever!"
+    ]
+   },
+   "rewards": {
+    "items": {
+     "gel": 3
+    }
+   },
+   "repeatable": false,
+   "notes": ""
+  },
+  {
+   "id": "S42",
+   "type": "side",
+   "act": "Thalassa",
+   "title": "Anchorath of the Deep",
+   "location": {
+    "area": "thalassa_town",
+    "planet": "thalassa",
+    "spot": "Sea arch",
+    "note": "tile map or future painted map; place this spot when building"
+   },
+   "giver": {
+    "name": "Squid Sailor",
+    "art": "squidsailor"
+   },
+   "prereq": [
+    "M07"
+   ],
+   "objectives": [
+    {
+     "type": "catch",
+     "target": "Anchorath",
+     "count": 1,
+     "location": {
+      "area": "thalassa_town",
+      "planet": "thalassa",
+      "spot": "Under the sea arch (rare)",
+      "note": "tile map or future painted map; place this spot when building"
+     }
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Squid Sailor: Old sailors say an anchor-beast sleeps under the sea arch."
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "Squid Sailor: By the tides... you caught the legend!"
+    ]
+   },
+   "rewards": {
+    "dust": 900
+   },
+   "repeatable": false,
+   "notes": ""
+  },
+  {
+   "id": "S50",
+   "type": "side",
+   "act": "Neonis",
+   "title": "Encore!",
+   "location": {
+    "area": "neonis_starport",
+    "planet": "neonis",
+    "spot": "Stairs to Static's tower",
+    "x": 196,
+    "y": 400,
+    "map": "data/painted_maps.json#neonis"
+   },
+   "giver": {
+    "name": "DJ Static",
+    "art": "static"
+   },
+   "prereq": [
+    "M09"
+   ],
+   "objectives": [
+    {
+     "type": "battle_trainer",
+     "target": "static_dancers",
+     "count": 3,
+     "location": {
+      "area": "neonis_starport",
+      "planet": "neonis",
+      "spot": "Starport deck",
+      "x": 900,
+      "y": 600,
+      "map": "data/painted_maps.json#neonis"
+     }
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "DJ Static: My backup dancers want a battle-off. Three rounds. You in?"
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "DJ Static: The crowd LOVES you! Here's a VIP pass and some cash."
+    ]
+   },
+   "rewards": {
+    "dust": 700
+   },
+   "repeatable": false,
+   "notes": ""
+  },
+  {
+   "id": "S51",
+   "type": "side",
+   "act": "Neonis",
+   "title": "Glitch Hunt",
+   "location": {
+    "area": "neonis_starport",
+    "planet": "neonis",
+    "spot": "Technician",
+    "x": 1300,
+    "y": 572,
+    "map": "data/painted_maps.json#neonis"
+   },
+   "giver": {
+    "name": "Technician",
+    "art": "technician"
+   },
+   "prereq": [
+    "M09"
+   ],
+   "objectives": [
+    {
+     "type": "catch",
+     "target": "Glitchbug",
+     "count": 3,
+     "location": null
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Technician: Glitchbugs keep crashing the starport. Collect three and I'll rehome them."
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "Technician: Systems stable. Thanks, Linker!"
+    ]
+   },
+   "rewards": {
+    "items": {
+     "stun": 3
+    }
+   },
+   "repeatable": false,
+   "notes": ""
+  },
+  {
+   "id": "S52",
+   "type": "side",
+   "act": "Neonis",
+   "title": "Lost Signal",
+   "location": {
+    "area": "neonis_starport",
+    "planet": "neonis",
+    "spot": "Dr. Vashti",
+    "x": 307,
+    "y": 518,
+    "map": "data/painted_maps.json#neonis"
+   },
+   "giver": {
+    "name": "Dr. Imogen Vashti",
+    "art": "vashti"
+   },
+   "prereq": [
+    "M09"
+   ],
+   "objectives": [
+    {
+     "type": "examine",
+     "target": "antenna",
+     "count": 3,
+     "location": {
+      "area": "neonis_town",
+      "planet": "neonis",
+      "spot": "Three rooftop antennas in Galactic City",
+      "note": "tile map or future painted map; place this spot when building"
+     }
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Dr. Vashti: Retune three city antennas to the crater pulse and we'll triangulate the source."
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "Dr. Vashti: Triangulated. The pulse comes from INSIDE the crater, from somewhere else entirely."
+    ]
+   },
+   "rewards": {
+    "items": {
+     "harmonic": 2
+    },
+    "flags": [
+     "triangulated"
+    ]
+   },
+   "repeatable": false,
+   "notes": ""
+  },
+  {
+   "id": "S60",
+   "type": "side",
+   "act": "Glyphos",
+   "title": "Mural Rubbings",
+   "location": {
+    "area": "glyphos_town",
+    "planet": "glyphos",
+    "spot": "Temple entrance",
+    "note": "tile map or future painted map; place this spot when building"
+   },
+   "giver": {
+    "name": "Researcher",
+    "art": "researcher"
+   },
+   "prereq": [
+    "M10"
+   ],
+   "objectives": [
+    {
+     "type": "collect",
+     "target": "rubbing",
+     "count": 5,
+     "location": {
+      "area": "glyphos_town",
+      "planet": "glyphos",
+      "spot": "Five carved stones around the ruins",
+      "note": "tile map or future painted map; place this spot when building"
+     }
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Researcher: Make rubbings of five carved stones. They may be a map."
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "Researcher: It IS a map, of the Relay Towers!"
+    ]
+   },
+   "rewards": {
+    "dust": 600
+   },
+   "repeatable": false,
+   "notes": ""
+  },
+  {
+   "id": "S61",
+   "type": "side",
+   "act": "Glyphos",
+   "title": "Song of the Chimes",
+   "location": {
+    "area": "glyphos_town",
+    "planet": "glyphos",
+    "spot": "Bell court",
+    "note": "tile map or future painted map; place this spot when building"
+   },
+   "giver": {
+    "name": "Pilgrim",
+    "art": "pilgrim"
+   },
+   "prereq": [
+    "M10"
+   ],
+   "objectives": [
+    {
+     "type": "catch",
+     "target": "Chimelet",
+     "count": 1,
+     "location": null
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Pilgrim: The bell court's song fell silent. A Chimelet could bring it back."
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "The bells ring again. The pilgrim weeps with joy."
+    ]
+   },
+   "rewards": {
+    "items": {
+     "megagel": 2
+    }
+   },
+   "repeatable": false,
+   "notes": ""
+  },
+  {
+   "id": "S62",
+   "type": "side",
+   "act": "Glyphos",
+   "title": "Guardian Stones",
+   "location": {
+    "area": "glyphos_town",
+    "planet": "glyphos",
+    "spot": "Inner sanctum",
+    "note": "tile map or future painted map; place this spot when building"
+   },
+   "giver": {
+    "name": "Ystran echo",
+    "art": "ystran"
+   },
+   "prereq": [
+    "M10"
+   ],
+   "objectives": [
+    {
+     "type": "win_battle",
+     "target": "Monolet",
+     "count": 3,
+     "location": {
+      "area": "glyphos_town",
+      "planet": "glyphos",
+      "spot": "Inner sanctum",
+      "note": "tile map or future painted map; place this spot when building"
+     }
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Ystran echo: ...prove your heart to the guardians..."
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "The guardian stones part, revealing an old Ystran relic."
+    ]
+   },
+   "rewards": {
+    "items": {
+     "singularity": 1
+    }
+   },
+   "repeatable": false,
+   "notes": ""
+  },
+  {
+   "id": "S70",
+   "type": "side",
+   "act": "Pyros",
+   "title": "Basalt's Lantern",
+   "location": {
+    "area": "pyros_town",
+    "planet": "pyros",
+    "spot": "Cinder Hollow",
+    "note": "tile map or future painted map; place this spot when building"
+   },
+   "giver": {
+    "name": "Old Basalt",
+    "art": "basalt"
+   },
+   "prereq": [
+    "M11"
+   ],
+   "objectives": [
+    {
+     "type": "collect",
+     "target": "brass_lantern",
+     "count": 1,
+     "location": {
+      "area": "pyros_town",
+      "planet": "pyros",
+      "spot": "Deep mine shaft",
+      "note": "tile map or future painted map; place this spot when building"
+     }
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Old Basalt: My old lantern's down the deep shaft. Fetch it? These knees won't."
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "Old Basalt: Still burning after forty years. Thank you, youngster."
+    ]
+   },
+   "rewards": {
+    "items": {
+     "revive": 2
+    }
+   },
+   "repeatable": false,
+   "notes": ""
+  },
+  {
+   "id": "S71",
+   "type": "side",
+   "act": "Pyros",
+   "title": "Ember Rain",
+   "location": {
+    "area": "pyros_town",
+    "planet": "pyros",
+    "spot": "Lava river bank",
+    "note": "tile map or future painted map; place this spot when building"
+   },
+   "giver": {
+    "name": "Miner",
+    "art": "miner"
+   },
+   "prereq": [
+    "M11"
+   ],
+   "objectives": [
+    {
+     "type": "catch",
+     "target": "Kindlefly",
+     "count": 2,
+     "location": null
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Miner: Kindleflies light the tunnels for us. Catch two for the night shift?"
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "Miner: The tunnels are glowing again. Great work!"
+    ]
+   },
+   "rewards": {
+    "dust": 500
+   },
+   "repeatable": false,
+   "notes": ""
+  },
+  {
+   "id": "S72",
+   "type": "side",
+   "act": "Pyros",
+   "title": "Deep Drill",
+   "location": {
+    "area": "pyros_town",
+    "planet": "pyros",
+    "spot": "Mine depths",
+    "note": "tile map or future painted map; place this spot when building"
+   },
+   "giver": {
+    "name": "Forge Miner Dax",
+    "art": "miner"
+   },
+   "prereq": [
+    "M11"
+   ],
+   "objectives": [
+    {
+     "type": "battle_trainer",
+     "target": "pyros_miners",
+     "count": 4,
+     "location": {
+      "area": "pyros_town",
+      "planet": "pyros",
+      "spot": "Mine depths",
+      "note": "tile map or future painted map; place this spot when building"
+     }
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Dax: The deep crew thinks they're the toughest Linkers on Pyros. Prove 'em wrong."
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "Dax: Ha! They'll be talking about this for years."
+    ]
+   },
+   "rewards": {
+    "items": {
+     "megagel": 3
+    }
+   },
+   "repeatable": false,
+   "notes": ""
+  },
+  {
+   "id": "S80",
+   "type": "side",
+   "act": "Glacia",
+   "title": "Aurora Watch",
+   "location": {
+    "area": "glacia_town",
+    "planet": "glacia",
+    "spot": "Frostmark lookout",
+    "note": "tile map or future painted map; place this spot when building"
+   },
+   "giver": {
+    "name": "Ingrid Vale",
+    "art": "ingrid"
+   },
+   "prereq": [
+    "M12"
+   ],
+   "objectives": [
+    {
+     "type": "visit",
+     "target": "vantage_point",
+     "count": 3,
+     "location": {
+      "area": "glacia_town",
+      "planet": "glacia",
+      "spot": "Three icy lookouts",
+      "note": "tile map or future painted map; place this spot when building"
+     }
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Ingrid: The aurora is acting strangely. Check it from three lookouts."
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "Ingrid: It pulses with the crater signal. The whole system is listening."
+    ]
+   },
+   "rewards": {
+    "items": {
+     "harmonic": 2
+    }
+   },
+   "repeatable": false,
+   "notes": ""
+  },
+  {
+   "id": "S81",
+   "type": "side",
+   "act": "Glacia",
+   "title": "Frozen Cargo",
+   "location": {
+    "area": "glacia_town",
+    "planet": "glacia",
+    "spot": "Ice cave",
+    "note": "tile map or future painted map; place this spot when building"
+   },
+   "giver": {
+    "name": "Stranded researcher",
+    "art": "researcher"
+   },
+   "prereq": [
+    "M12"
+   ],
+   "objectives": [
+    {
+     "type": "deliver",
+     "target": "revive",
+     "count": 1,
+     "location": {
+      "area": "glacia_town",
+      "planet": "glacia",
+      "spot": "Ice cave camp",
+      "note": "tile map or future painted map; place this spot when building"
+     }
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Researcher: My Alienmon fainted in the cold. Do you have a Revive Spark?"
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "Researcher: You saved us both. Take my field notes and these supplies."
+    ]
+   },
+   "rewards": {
+    "items": {
+     "megagel": 2
+    },
+    "dust": 400
+   },
+   "repeatable": false,
+   "notes": ""
+  },
+  {
+   "id": "S82",
+   "type": "side",
+   "act": "Glacia",
+   "title": "The Glaciryx Hunt",
+   "location": {
+    "area": "glacia_town",
+    "planet": "glacia",
+    "spot": "Frozen waterfall",
+    "note": "tile map or future painted map; place this spot when building"
+   },
+   "giver": {
+    "name": "Ingrid Vale",
+    "art": "ingrid"
+   },
+   "prereq": [
+    "M12"
+   ],
+   "objectives": [
+    {
+     "type": "catch",
+     "target": "Glaciryx",
+     "count": 1,
+     "location": {
+      "area": "glacia_town",
+      "planet": "glacia",
+      "spot": "Frozen waterfall (rare)",
+      "note": "tile map or future painted map; place this spot when building"
+     }
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Ingrid: A Glaciryx nests behind the frozen waterfall. Only the bravest try."
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "Ingrid: Incredible. You have the coldest nerve I've ever seen."
+    ]
+   },
+   "rewards": {
+    "dust": 1000
+   },
+   "repeatable": false,
+   "notes": ""
+  },
+  {
+   "id": "S90",
+   "type": "side",
+   "act": "Helix Station",
+   "title": "Free the Captives",
+   "location": {
+    "area": "helix_town",
+    "planet": "helix",
+    "spot": "Containment wing",
+    "note": "tile map or future painted map; place this spot when building"
+   },
+   "giver": {
+    "name": "Admin Bronn",
+    "art": "technician"
+   },
+   "prereq": [
+    "M14"
+   ],
+   "objectives": [
+    {
+     "type": "examine",
+     "target": "cage_console",
+     "count": 5,
+     "location": {
+      "area": "helix_town",
+      "planet": "helix",
+      "spot": "Five containment cages",
+      "note": "tile map or future painted map; place this spot when building"
+     }
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Admin Bronn: Helix keeps captured Alienmon in cages. Open them and they're free."
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "The freed Alienmon chirp their thanks. Several follow your transfer beam to your ship's storage."
+    ]
+   },
+   "rewards": {
+    "alienmon_gift": {
+     "name": "random_helix_pool",
+     "count": 2,
+     "to": "storage"
+    }
+   },
+   "repeatable": false,
+   "notes": ""
+  },
+  {
+   "id": "S91",
+   "type": "side",
+   "act": "Helix Station",
+   "title": "Nullbot Override",
+   "location": {
+    "area": "helix_town",
+    "planet": "helix",
+    "spot": "Server room",
+    "note": "tile map or future painted map; place this spot when building"
+   },
+   "giver": {
+    "name": "Strand (defector)",
+    "art": "strand"
+   },
+   "prereq": [
+    "M14"
+   ],
+   "objectives": [
+    {
+     "type": "win_battle",
+     "target": "Nullbot",
+     "count": 3,
+     "location": {
+      "area": "helix_town",
+      "planet": "helix",
+      "spot": "Server room",
+      "note": "tile map or future painted map; place this spot when building"
+     }
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Strand: The Nullbots guard Thorne's files. Beat three and the server unlocks."
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "Strand: Thorne's files... the Rift engine schematics. This proves everything."
+    ]
+   },
+   "rewards": {
+    "flags": [
+     "thorne_files"
+    ],
+    "items": {
+     "singularity": 1
+    }
+   },
+   "repeatable": false,
+   "notes": ""
+  },
+  {
+   "id": "S92",
+   "type": "side",
+   "act": "Umbra",
+   "title": "Lantern Lighting",
+   "location": {
+    "area": "umbra_town",
+    "planet": "umbra",
+    "spot": "Gravewell streets",
+    "note": "tile map or future painted map; place this spot when building"
+   },
+   "giver": {
+    "name": "Mortimer Kade",
+    "art": "kade"
+   },
+   "prereq": [
+    "M17"
+   ],
+   "objectives": [
+    {
+     "type": "examine",
+     "target": "street_lantern",
+     "count": 4,
+     "location": {
+      "area": "umbra_town",
+      "planet": "umbra",
+      "spot": "Four dark lanterns",
+      "note": "tile map or future painted map; place this spot when building"
+     }
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Kade: Light the four old lanterns. The Wailshades fear warm light."
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "Gravewell glows amber again. The children come out to play."
+    ]
+   },
+   "rewards": {
+    "items": {
+     "revive": 2
+    }
+   },
+   "repeatable": false,
+   "notes": ""
+  },
+  {
+   "id": "S93",
+   "type": "side",
+   "act": "Umbra",
+   "title": "Kade's Notes",
+   "location": {
+    "area": "umbra_town",
+    "planet": "umbra",
+    "spot": "Ruined lab",
+    "note": "tile map or future painted map; place this spot when building"
+   },
+   "giver": {
+    "name": "Mortimer Kade",
+    "art": "kade"
+   },
+   "prereq": [
+    "M17"
+   ],
+   "objectives": [
+    {
+     "type": "collect",
+     "target": "lab_note",
+     "count": 3,
+     "location": {
+      "area": "umbra_town",
+      "planet": "umbra",
+      "spot": "Ruined lab",
+      "note": "tile map or future painted map; place this spot when building"
+     }
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Kade: My old notes are in the ruined lab. They prove Thorne knew the Devourer was real."
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "Kade: Now everyone will know the truth about Helix."
+    ]
+   },
+   "rewards": {
+    "flags": [
+     "kade_notes"
+    ],
+    "dust": 800
+   },
+   "repeatable": false,
+   "notes": ""
+  },
+  {
+   "id": "S94",
+   "type": "side",
+   "act": "Halo",
+   "title": "A Kid's Dream",
+   "location": {
+    "area": "skyreach_plaza",
+    "planet": "halo",
+    "spot": "Kid near the plaza",
+    "x": 1003,
+    "y": 730,
+    "map": "data/painted_maps.json#halo"
+   },
+   "giver": {
+    "name": "Kid",
+    "art": "civilian"
+   },
+   "prereq": [
+    "M16"
+   ],
+   "objectives": [
+    {
+     "type": "show",
+     "target": "type:Psi",
+     "count": 1,
+     "location": {
+      "area": "skyreach_plaza",
+      "planet": "halo",
+      "spot": "Kid",
+      "x": 1003,
+      "y": 730,
+      "map": "data/painted_maps.json#halo"
+     }
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Kid: Can I see a Psi-type up close? Pleeeease!"
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "Kid: Its eyes glow! I'm gonna be a Linker someday, just like you!"
+    ]
+   },
+   "rewards": {
+    "items": {
+     "gel": 5
+    }
+   },
+   "repeatable": false,
+   "notes": ""
+  },
+  {
+   "id": "S95",
+   "type": "side",
+   "act": "Halo",
+   "title": "Wind Wanderer",
+   "location": {
+    "area": "skyreach_plaza",
+    "planet": "halo",
+    "spot": "Wanderer",
+    "x": 1187,
+    "y": 646,
+    "map": "data/painted_maps.json#halo"
+   },
+   "giver": {
+    "name": "Wanderer",
+    "art": "wanderer"
+   },
+   "prereq": [
+    "M16"
+   ],
+   "objectives": [
+    {
+     "type": "catch",
+     "target": "Novaling",
+     "count": 1,
+     "location": {
+      "area": "starfall_town",
+      "planet": "starfall",
+      "spot": "Crater rim (common there)",
+      "note": "tile map or future painted map; place this spot when building"
+     }
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Wanderer: I chased a Novaling all the way up here. If you ever catch one, show me?"
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "Wanderer: A real Novaling! It's like holding a star."
+    ]
+   },
+   "rewards": {
+    "dust": 700
+   },
+   "repeatable": false,
+   "notes": ""
+  },
+  {
+   "id": "S96",
+   "type": "side",
+   "act": "Halo",
+   "title": "Mirror Match",
+   "location": {
+    "area": "skyreach_plaza",
+    "planet": "halo",
+    "spot": "Holo-globe",
+    "x": 770,
+    "y": 655,
+    "map": "data/painted_maps.json#halo"
+   },
+   "giver": {
+    "name": "Echo & Iris",
+    "art": "twins"
+   },
+   "prereq": [
+    "M16"
+   ],
+   "objectives": [
+    {
+     "type": "catch",
+     "target": "Mirrix",
+     "count": 1,
+     "location": null
+    },
+    {
+     "type": "catch",
+     "target": "Reflix",
+     "count": 1,
+     "location": null
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Echo & Iris: Two reflections live in the clouds: Mirrix and Reflix. Catch both."
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "Echo & Iris: We saw you'd do it. But it's still nice to watch."
+    ]
+   },
+   "rewards": {
+    "items": {
+     "singularity": 1
+    }
+   },
+   "repeatable": false,
+   "notes": ""
+  },
+  {
+   "id": "S97",
+   "type": "side",
+   "act": "Starfall Rift",
+   "title": "Seedpod Shells",
+   "location": {
+    "area": "starfall_town",
+    "planet": "starfall",
+    "spot": "Crater field",
+    "note": "tile map or future painted map; place this spot when building"
+   },
+   "giver": {
+    "name": "Teo Reyes",
+    "art": "strand"
+   },
+   "prereq": [
+    "M19"
+   ],
+   "objectives": [
+    {
+     "type": "collect",
+     "target": "seedpod_shell",
+     "count": 5,
+     "location": {
+      "area": "starfall_town",
+      "planet": "starfall",
+      "spot": "Crashed pods around the crater",
+      "note": "tile map or future painted map; place this spot when building"
+     }
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Teo: Each shell holds a memory of Ystra. Help me gather five."
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "Teo: Lumivex can hear them singing. Thank you."
+    ]
+   },
+   "rewards": {
+    "items": {
+     "harmonic": 5
+    }
+   },
+   "repeatable": false,
+   "notes": ""
+  },
+  {
+   "id": "S98",
+   "type": "side",
+   "act": "Starfall Rift",
+   "title": "Teo's Journal",
+   "location": {
+    "area": "starfall_town",
+    "planet": "starfall",
+    "spot": "Old camp",
+    "note": "tile map or future painted map; place this spot when building"
+   },
+   "giver": {
+    "name": "Sola Reyes",
+    "art": "sola"
+   },
+   "prereq": [
+    "M19"
+   ],
+   "objectives": [
+    {
+     "type": "collect",
+     "target": "teo_journal",
+     "count": 1,
+     "location": {
+      "area": "starfall_town",
+      "planet": "starfall",
+      "spot": "Teo's old camp",
+      "note": "tile map or future painted map; place this spot when building"
+     }
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Sola: Dad left his journal at his old camp. Can we find it together?"
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "Sola: \"Day one: the light is beautiful.\" ...Thanks for coming with me."
+    ]
+   },
+   "rewards": {
+    "dust": 500,
+    "flags": [
+     "journal"
+    ]
+   },
+   "repeatable": false,
+   "notes": ""
+  },
+  {
+   "id": "S99",
+   "type": "side",
+   "act": "Apex Array",
+   "title": "Telescope Alignment",
+   "location": {
+    "area": "apex_town",
+    "planet": "apex",
+    "spot": "Great telescope",
+    "note": "tile map or future painted map; place this spot when building"
+   },
+   "giver": {
+    "name": "Technician",
+    "art": "technician"
+   },
+   "prereq": [
+    "M21"
+   ],
+   "objectives": [
+    {
+     "type": "examine",
+     "target": "alignment_node",
+     "count": 3,
+     "location": {
+      "area": "apex_town",
+      "planet": "apex",
+      "spot": "Three telescope nodes",
+      "note": "tile map or future painted map; place this spot when building"
+     }
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Technician: Align the three nodes and we can see the Warp Gate from here."
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "Through the lens, the far Warp Gate flickers... like it's breathing."
+    ]
+   },
+   "rewards": {
+    "flags": [
+     "gate_seen"
+    ]
+   },
+   "repeatable": false,
+   "notes": ""
+  },
+  {
+   "id": "S100",
+   "type": "side",
+   "act": "Apex Array",
+   "title": "Quorum Rematch",
+   "location": {
+    "area": "apex_town",
+    "planet": "apex",
+    "spot": "Summit halls",
+    "note": "tile map or future painted map; place this spot when building"
+   },
+   "giver": {
+    "name": "Orra Venn",
+    "art": "orra"
+   },
+   "prereq": [
+    "M21"
+   ],
+   "objectives": [
+    {
+     "type": "defeat_boss",
+     "target": "quorum_all_rematch",
+     "count": 4,
+     "location": {
+      "area": "apex_town",
+      "planet": "apex",
+      "spot": "Summit halls",
+      "note": "tile map or future painted map; place this spot when building"
+     }
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Orra Venn: The Quorum wants a rematch, stronger than before. Weekly."
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "Orra Venn: Still the Prime Linker. Impressive."
+    ]
+   },
+   "rewards": {
+    "dust": 5000,
+    "items": {
+     "singularity": 2
+    }
+   },
+   "repeatable": true,
+   "notes": "Repeatable weekly; levels +10."
+  },
+  {
+   "id": "S101",
+   "type": "side",
+   "act": "Apex Array",
+   "title": "Star Chart",
+   "location": {
+    "area": "apex_town",
+    "planet": "apex",
+    "spot": "Observatory library",
+    "note": "tile map or future painted map; place this spot when building"
+   },
+   "giver": {
+    "name": "Dr. Imogen Vashti",
+    "art": "vashti"
+   },
+   "prereq": [
+    "M21"
+   ],
+   "objectives": [
+    {
+     "type": "xenodex",
+     "target": "caught",
+     "count": 150,
+     "location": null
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Dr. Vashti: Register 150 Alienmon in your Xenodex and I'll give you my rarest cell."
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "Dr. Vashti: Half the system catalogued! You've earned this."
+    ]
+   },
+   "rewards": {
+    "items": {
+     "singularity": 3
+    }
+   },
+   "repeatable": false,
+   "notes": ""
+  },
+  {
+   "id": "S110",
+   "type": "side",
+   "act": "Ystra",
+   "title": "Echoes of Home",
+   "location": {
+    "area": "ystra_town",
+    "planet": "ystra",
+    "spot": "Crystal ruins",
+    "note": "tile map or future painted map; place this spot when building"
+   },
+   "giver": {
+    "name": "Ystran echo",
+    "art": "ystran"
+   },
+   "prereq": [
+    "P01"
+   ],
+   "objectives": [
+    {
+     "type": "collect",
+     "target": "ystran_echo",
+     "count": 3,
+     "location": {
+      "area": "ystra_town",
+      "planet": "ystra",
+      "spot": "Three crystal shrines",
+      "note": "tile map or future painted map; place this spot when building"
+     }
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Ystran echo: ...gather our voices... so the Seedmother can hear..."
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "The echoes merge into one clear song. The Seedmother's grove opens."
+    ]
+   },
+   "rewards": {
+    "flags": [
+     "echoes"
+    ]
+   },
+   "repeatable": false,
+   "notes": ""
+  },
+  {
+   "id": "S111",
+   "type": "side",
+   "act": "Ystra",
+   "title": "Blight Cleansing",
+   "location": {
+    "area": "ystra_town",
+    "planet": "ystra",
+    "spot": "Blighted forest",
+    "note": "tile map or future painted map; place this spot when building"
+   },
+   "giver": {
+    "name": "Seedmother",
+    "art": "ystran"
+   },
+   "prereq": [
+    "P03"
+   ],
+   "objectives": [
+    {
+     "type": "win_battle",
+     "target": "Blightling",
+     "count": 5,
+     "location": {
+      "area": "ystra_town",
+      "planet": "ystra",
+      "spot": "Blighted forest",
+      "note": "tile map or future painted map; place this spot when building"
+     }
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Seedmother: The void's blight still clings to my forest. Help my children heal it."
+    ],
+    "progress": [
+     "Keep at it, Linker. You've got this."
+    ],
+    "complete": [
+     "Crystal leaves bloom where the blight was."
+    ]
+   },
+   "rewards": {
+    "items": {
+     "singularity": 2
+    }
+   },
+   "repeatable": true,
+   "notes": ""
+  }
+ ]
+}

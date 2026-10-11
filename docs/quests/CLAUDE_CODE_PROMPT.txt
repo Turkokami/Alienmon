@@ -1,0 +1,26 @@
+Paste this into Claude Code, opened in the alienmon-app folder:
+----------------------------------------------------------------
+I've added the quest pack. Copy the files into place:
+- quests.json → data/quests.json
+- world_map.json → data/world_map.json
+- the .md files → docs/quests/
+
+Read docs/quests/QUEST_SYSTEM_SPEC.md and follow it to build the quest system into src/template.html:
+- quest save state with migration of old saves
+- objective hooks for talk, visit, catch, battle, keeper, collect, deliver and the other types
+- rewards, including key items
+- a Quests option in the START menu with Main and Side tabs
+- a tracked-quest banner and map marker
+- !/? markers over quest NPCs
+
+Add every main quest (M01–M21, P01–P04) and side mission (S01–S111) from docs/quests/MAIN_STORY_QUESTS.md and docs/quests/SIDE_QUESTS.md at the locations listed in docs/quests/QUEST_LOCATIONS.md. Create any new NPCs, trainers, bosses and quest props they need, using existing character art and the story bible.
+
+Build in this order, testing and committing after each:
+1. Quest engine and UI.
+2. Act 1 (M01–M06) plus Dustara and Molten Frontier side missions.
+3. Acts 2–3.
+4. Acts 4–5 and the postgame.
+5. The remaining side missions.
+
+Deploy a Vercel preview after each step and send me the link and a short report.
+----------------------------------------------------------------
