@@ -240,3 +240,16 @@ function leaveRoute(){const k=baseKey(G.sub),P=PAINT[k];G.sub=null;scene='planet
 const inRoute=()=>!!(G.sub&&/_route$/.test(G.sub));
 function drawRouteSigns(cx,cy,S){const P=paintOf();if(!P)return;for(const h of P.hot){if(h.k!=='route')continue;const x=Math.round(h.x*S-cx),y=Math.round(h.y*S-cy);if(x<-10||x>170||y<-20||y>150)continue;
  rect(x-1,y-10,2,10,'#6b4a2a');box(x-6,y-16,13,8,'#ffd23f','#1b1424');txt('>',x-2,y-15,'#1b1424',6)}}
+
+/* ---------- wild levels follow the story: never far above where the player should be ---------- */
+// the next Keeper's ace for each Shard count (progression pack), then the Rift and the postgame
+const STAGE_CAP=[12,17,21,25,31,35,41,45,50];
+function wildCap(){const lead=Math.max(1,...(G.party||[]).map(m=>m.lv)),stage=G.flags&&G.flags.champ?65:G.flags&&G.flags.rift?55:STAGE_CAP[Math.min(8,G.shards||0)];
+ return Math.min(stage,lead+2)}
+// species that evolve into each Alienmon (to swap in an earlier form when the level is too low for the evolved one)
+const PREVO={};for(const n in PROG.species){const ev=PROG.species[n].evolves;if(ev&&ev.into&&/^Level/.test(ev.method||'Level'))PREVO[ev.into]={from:n,level:ev.level}}
+function clampWild(id,lv,extra){const cap=wildCap()+(extra||0);if(lv>cap)lv=Math.max(2,cap-ri(0,3));
+ let n=D[id].name;for(let i=0;i<3;i++){const p=PREVO[n];if(!p||lv>=p.level-1||IDX[p.from]==null)break;n=p.from}
+ return[IDX[n],lv]}
+// the form a visible wild Alienmon takes at the current cap (what's drawn is what you battle)
+function shownMon(name,extra){const cap=wildCap()+(extra||0);let n=name;for(let i=0;i<3;i++){const p=PREVO[n];if(!p||cap>=p.level-1||IDX[p.from]==null)break;n=p.from}return n}
