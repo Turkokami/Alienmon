@@ -32,6 +32,7 @@ const OW=folder('art/overworld','.png');
 const TITLE=asset('art/ui/title.jpg');
 const SHIP=asset('art/ui/ship.png'),CUTS=[0,1,2].map(i=>asset('art/ui/cut_'+i+'.jpg')).filter(Boolean);
 const CHAR=folder('art/characters','.png');
+const PORTRAITS=folder('art/portraits','.png');   // large speaker portraits for dialogue (from the character battle renders)
 const SCN=folder('art/scenes','.jpg');
 const FX=folder('art/fx','.webp');
 const PAINT=fs.existsSync(path.join(root,'data/painted_maps.json'))?fs.readFileSync(path.join(root,'data/painted_maps.json'),'utf8'):'{}';
@@ -50,7 +51,7 @@ const BETA=process.env.PRIVATE_TESTING==='1'?{email:process.env.FEEDBACK_EMAIL||
 const SITE=(process.env.SITE_URL||'https://alienmon.vercel.app').replace(/\/$/,'');
 const BUILD=crypto.createHash('sha1').update(fs.readFileSync(path.join(root,'src/template.html'))).update(fs.readFileSync(path.join(root,'src/quests.js'))).update(fs.readFileSync(path.join(root,'src/progression.js'))).update(fs.readFileSync(path.join(root,'src/world.js'))).update(j([D,P,PAINT,WORLDJ,ASSETS])).digest('hex').slice(0,10);
 const fill={__DATA__:j(D),__PLANETS__:j(P),__TRAITS__:j(core.traits),__SIGS__:j(core.signature_moves),__SYS__:j(SYS),__ART__:j(ART),__ARTB__:j(ARTB),__OW__:j(OW),
- __TITLE__:j(TITLE),__SHIP__:j(SHIP),__CUTS__:j(CUTS),__CHAR__:j(CHAR),__SCENES__:j(SCN),__FX__:j(FX),__PAINT__:PAINT,__WORLD__:WORLDJ,__WORLDIMG__:j(WORLDIMG),
+ __TITLE__:j(TITLE),__SHIP__:j(SHIP),__CUTS__:j(CUTS),__CHAR__:j(CHAR),__PORTRAITS__:j(PORTRAITS),__SCENES__:j(SCN),__FX__:j(FX),__PAINT__:PAINT,__WORLD__:WORLDJ,__WORLDIMG__:j(WORLDIMG),
  __MUSIC__:j(MUSIC),__TITLEMUSIC__:j(TITLEMUSIC),__PLANETART__:j(PLANART),__BUILD__:j(BUILD),__INLINE__:j(INLINE),__SITE__:SITE,__BETA__:j(BETA)};
 // quests: the engine (src/quests.js) is filled in first and then inlined into the template
 const QUESTS=JSON.parse(fs.readFileSync(path.join(root,'data/quests.json'),'utf8')).quests;

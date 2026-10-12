@@ -72,7 +72,7 @@ button:focus-visible{outline:2px solid var(--b);outline-offset:2px}
 </div>
 <script>
 'use strict';
-const D=__DATA__, PL=__PLANETS__, TRAITS=__TRAITS__, SIGS=__SIGS__, SYS=__SYS__, ART=__ART__, ARTB=__ARTB__, OW=__OW__, TITLE=__TITLE__, SHIP=__SHIP__, CUTS=__CUTS__, CHAR=__CHAR__, SCN=__SCENES__, FXD=__FX__, PLANART=__PLANETART__, BUILD=__BUILD__, INLINE=__INLINE__, BETA=__BETA__;
+const D=__DATA__, PL=__PLANETS__, TRAITS=__TRAITS__, SIGS=__SIGS__, SYS=__SYS__, ART=__ART__, ARTB=__ARTB__, OW=__OW__, TITLE=__TITLE__, SHIP=__SHIP__, CUTS=__CUTS__, CHAR=__CHAR__, PORT=__PORTRAITS__, SCN=__SCENES__, FXD=__FX__, PLANART=__PLANETART__, BUILD=__BUILD__, INLINE=__INLINE__, BETA=__BETA__;
 // art is loaded on first use (the web build serves each image as its own cached file), so the game starts fast
 function lazyImgs(src){return new Proxy({},{get(t,k){if(typeof k!=='string')return undefined;if(!(k in t)&&src[k]){const i=new Image();i.decoding='async';i.src=src[k];t[k]=i}return t[k]},has:(t,k)=>k in src})}
 function warm(imgs,keys){for(const k of keys)imgs[k]}
@@ -81,7 +81,11 @@ const FXI=lazyImgs(FXD);
 const SCI=lazyImgs(SCN);
 function cover(img,x,y,w,h,fx){const ir=img.naturalWidth/img.naturalHeight,tr=w/h;let sw=img.naturalWidth,sh=img.naturalHeight,sx=0,sy=0;if(ir>tr){sw=sh*tr;sx=(img.naturalWidth-sw)/2}else{sh=sw/tr;sy=(img.naturalHeight-sh)/2}
  ctx.save();ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';if(fx)ctx.filter=fx;ctx.drawImage(img,sx,sy,sw,sh,x,y,w,h);ctx.restore()}
-const CHI=lazyImgs(CHAR);
+const CHI=lazyImgs(CHAR),PORTI=lazyImgs(PORT);
+// the speaker fills the screen above the text box: a full portrait when there is one, otherwise their sprite
+function drawPortrait(k,bottom){const im=okI(PORTI[k])?PORTI[k]:okI(CHI[k])?CHI[k]:null;if(!im||bottom<30)return;
+ ctx.fillStyle='rgba(18,12,34,0.78)';ctx.fillRect(0,0,160,bottom);const z=Math.min(bottom-2,112);
+ ctx.save();ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';ctx.drawImage(im,Math.round(80-z/2),bottom-z,z,z);ctx.restore()}
 const okI=i=>i&&i.complete&&i.naturalWidth;
 function dchar(k,x,y,w,h,flip){const i=CHI[k];if(!okI(i))return false;ctx.save();ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';if(flip){ctx.translate(x+w,y);ctx.scale(-1,1);ctx.drawImage(i,0,0,w,h)}else ctx.drawImage(i,x,y,w,h);ctx.restore();return true}
 const SHIPI=new Image();if(SHIP)SHIPI.src=SHIP;const CUTI=CUTS.map(u=>{const i=new Image();i.src=u;return i});
@@ -492,7 +496,7 @@ let CH=null;
 function choose(title,opts,cb,back,por){CH={title,opts,sel:0,cb,back,por}}
 function updChoose(){const n=CH.opts.length;if(P_('up'))CH.sel=(CH.sel+n-1)%n;if(P_('down'))CH.sel=(CH.sel+1)%n;
  if(P_('b')){const b=CH.back;CH=null;if(b)b();return}if(P_('a')){const c=CH.cb,i=CH.sel;CH=null;c(i)}}
-function drawChoose(){if(CH.por&&okI(CHI[CH.por])){const h0=16+CH.opts.length*11;box(4,100-h0-48,46,48,'#3b2a5c','#1b1424');dchar(CH.por,6,100-h0-46,42,42)}const h=16+CH.opts.length*11;box(4,100-h,152,h+2);txt(CH.title,8,104-h,'#7a1f6a',7);CH.opts.forEach((o,i)=>txt((i===CH.sel?'>':' ')+o,8,116-h+i*11,i===CH.sel?'#d7262e':'#1b1424',7))}
+function drawChoose(){if(CH.por){const h0=16+CH.opts.length*11;drawPortrait(CH.por,100-h0)}const h=16+CH.opts.length*11;box(4,100-h,152,h+2);txt(CH.title,8,104-h,'#7a1f6a',7);CH.opts.forEach((o,i)=>txt((i===CH.sel?'>':' ')+o,8,116-h+i*11,i===CH.sel?'#d7262e':'#1b1424',7))}
 function bayMenu(){choose('Recovery Bay',['Heal team','Pod shop','Move Archive','Nickname','Leave'],i=>{if(i===0){healAll();noteHeal();say(['Nurse: Your Alienmon are fully healed and cured!'].concat(nurseTip()),bayMenu,'nurse')}else if(i===1)shop();else if(i===2)moveArchive();else if(i===3)nickMenu()},null,'nurse')}
 function shop(){const goods=PODS.filter(p=>shopOpen(p.k)).map(p=>({n:p.n,price:SHOP_PRICE[p.k]||p.price,get:()=>G.pods[p.k],add:()=>{if(p.k==='singularity'){if((G.singBuy||0)>=3)return say('Shopkeeper: Only 3 Singularity Pods per visit. They take ages to charge!',shop,'shop')||true;G.singBuy=(G.singBuy||0)+1}G.pods[p.k]++}})).concat(ITEMS.filter(it=>shopOpen(it.k)).map(it=>({n:it.n,price:SHOP_PRICE[it.k]||it.price,get:()=>G.items[it.k]||0,add:()=>G.items[it.k]=(G.items[it.k]||0)+1})));
  choose('Stardust: '+G.dust,goods.map(g=>g.n.slice(0,13).padEnd(13)+String(g.price).padStart(4)+' x'+g.get()).concat(['Back']),i=>{if(i===goods.length)return bayMenu();const g=goods[i];
@@ -800,7 +804,7 @@ function pollPad(){const gp=navigator.getGamepads?Array.from(navigator.getGamepa
 function loop(){frame++;pollPad();if(G&&G.party&&!G.quests)qInit();if(G&&G.quests){if(frame%20===0)qPassive();if(frame%10===0)worldStage();qFlush();if(G._as&&scene!=='battle'&&!CUT&&!DLG)autosave()}if(LVP){if(scene==='battle')drawBattle();drawLvPanel();if(P_('a')||P_('b')){const c=LVP.cb;LVP=null;c()}for(const k in pressed)pressed[k]=false;requestAnimationFrame(loop);return}
  if(CH&&!DLG){if(scene==='world')drawWorld();else if(scene==='menu')drawMenuScreen();else if(scene==='battle')drawBattle();else drawPlanet();drawChoose();updChoose()}
  else if(DLG){ if(scene==='battle')drawBattle();else if(scene==='planet')drawPlanet();else if(scene==='space')updSpaceDraw();else if(scene==='world')drawWorld();else if(scene==='menu')drawMenuScreen();else if(scene==='intro'||scene==='title')rect(0,0,160,144,'#120c22');
-  if(DLG.por&&okI(CHI[DLG.por])){box(2,56,46,48,'#3b2a5c','#1b1424');dchar(DLG.por,4,58,42,42)}box(0,104,160,40);const pg=DLG.pages[DLG.i];DLG.c=Math.min(999,(DLG.c||0)+textSpeed());let left=DLG.c;pg.forEach((l,i)=>{txt(l.slice(0,Math.max(0,left)),6,111+i*12,'#1b1424');left-=l.length});if(frame%40<24)rect(150,134,4,4,'#ff8a1e');
+  if(DLG.por)drawPortrait(DLG.por,104);box(0,104,160,40);const pg=DLG.pages[DLG.i];DLG.c=Math.min(999,(DLG.c||0)+textSpeed());let left=DLG.c;pg.forEach((l,i)=>{txt(l.slice(0,Math.max(0,left)),6,111+i*12,'#1b1424');left-=l.length});if(frame%40<24)rect(150,134,4,4,'#ff8a1e');
   if(P_('a')||P_('b')){if(DLG.c<pg.reduce((a,l)=>a+l.length,0))DLG.c=999;else{DLG.i++;DLG.c=0;if(DLG.i>=DLG.pages.length){const cb=DLG.cb;DLG=null;if(cb)cb()}}}}
  else{if(scene==='title')updTitle();else if(scene==='starter')updStarter();else if(scene==='planet'){PREV='planet';updPlanet()}else if(scene==='space'){PREV='space';updSpace()}else if(scene==='world'){PREV='world';updWorld()}else if(scene==='battle')updBattle();else if(scene==='menu')updMenu();else if(scene==='intro')rect(0,0,160,144,'#120c22');else if(scene==='cut')updCut();else if(scene==='gender')updGender()}
  drawToast();for(const k in pressed)pressed[k]=false;requestAnimationFrame(loop)}
@@ -820,7 +824,7 @@ if(BETA){const m=document.createElement('meta');m.name='robots';m.content='noind
 // download the rest of the art in the background, a few files at a time, most-needed first
 function prefetch(){const c=navigator.connection;if(INLINE||(c&&(c.saveData||/2g/.test(c.effectiveType||''))))return;
  const scn=[];for(const p of PL)for(const k of[p.landScene,p.scene,p.key+'_town_hd',p.key+'_arena',PAINT[p.key]&&PAINT[p.key].img])if(k&&SCN[k]&&!scn.includes(k))scn.push(k);
- const q=[...Object.keys(CHAR).map(k=>[CHI,k]),...Object.keys(PLANART).map(k=>[PLI,k]),...scn.map(k=>[SCI,k]),...Object.keys(FXD).map(k=>[FXI,k]),
+ const q=[...Object.keys(PORT).map(k=>[PORTI,k]),...Object.keys(CHAR).map(k=>[CHI,k]),...Object.keys(PLANART).map(k=>[PLI,k]),...scn.map(k=>[SCI,k]),...Object.keys(FXD).map(k=>[FXI,k]),
   ...Object.keys(ART).map(k=>[ARTI,k]),...Object.keys(ARTB).map(k=>[ARTBI,k]),...Object.keys(OW).map(k=>[OWI,k]),...Object.keys(SCN).map(k=>[SCI,k])];
  let n=0;const next=()=>{if(!q.length)return;const[m,k]=q.shift(),i=m[k];if(!i||okI(i)){next();return}n++;const done=()=>{n--;next()};i.addEventListener('load',done,{once:true});i.addEventListener('error',done,{once:true})};
  for(let i=0;i<4;i++)next();

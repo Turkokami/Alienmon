@@ -17,7 +17,7 @@ def is_hole(a,m,bg):
     ring=ndimage.binary_dilation(m,iterations=3)&~m; outline=(a.min(axis=2)[ring]<120).mean()
     return match>=0.8 and outline>=0.45
 
-def clean(path,holes=False):
+def clean(path,holes=False,size=SIZE):
     """holes: False keeps every enclosed white area, True clears all large ones, 'auto' clears only those is_hole() accepts."""
     im=Image.open(path).convert('RGB'); a=np.asarray(im).astype(int)
     light=(a.min(axis=2)>232)
@@ -38,7 +38,7 @@ def clean(path,holes=False):
     bb=out.getbbox(); out=out.crop(bb)
     w,h=out.size; s=int(max(w,h)*1.06)
     canvas=Image.new('RGBA',(s,s),(0,0,0,0)); canvas.paste(out,((s-w)//2,(s-h)//2))
-    small=canvas.convert('RGBa').resize((SIZE,SIZE),Image.LANCZOS).convert('RGBA')
+    small=canvas.convert('RGBa').resize((size,size),Image.LANCZOS).convert('RGBA')
     arr=np.asarray(small).copy(); arr[...,3]=np.where(arr[...,3]>110,255,0)  # hard edge like pixel art
     small=Image.fromarray(arr,'RGBA')
     q=small.quantize(colors=64,method=Image.Quantize.FASTOCTREE,dither=Image.Dither.NONE)
