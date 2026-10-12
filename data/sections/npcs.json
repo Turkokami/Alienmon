@@ -1,0 +1,412 @@
+{
+ "_about": "Townsfolk and flavour NPCs per section. art = a key in art/characters. tile [col,row] pins a spot; without one, tools/sections/build_world.py places them on open walkable ground (clear of exits, doors and each other). Story characters (Vashti, Sola, Keepers) are driven by the quest engine, not listed here.",
+ "001": [
+  {
+   "art": "mom",
+   "name": "Mom",
+   "tile": [
+    4,
+    5
+   ],
+   "t": [
+    "Mom: Off to see Dr. Vashti? Take your time, the lab isn't going anywhere.",
+    "Mom: Remember, if your Alienmon get tired, the Recovery Bay heals them for free."
+   ]
+  }
+ ],
+ "002": [],
+ "003": [
+  {
+   "art": "researcher",
+   "name": "Lab aide",
+   "tile": [
+    9,
+    7
+   ],
+   "t": [
+    "Lab aide: Dr. Vashti tracks every seedpod that fell twenty years ago. There are still hundreds unaccounted for.",
+    "Lab aide: The big telescope points at the Starfall Crater. It's been glowing purple again."
+   ]
+  }
+ ],
+ "004": [
+  {
+   "art": "civilian",
+   "t": [
+    "Kid: The drift grass crackles with blue sparks. That's how you know Alienmon are hiding in it!"
+   ],
+   "tile": [
+    6,
+    5
+   ]
+  },
+  {
+   "art": "wanderer",
+   "t": [
+    "Old prospector: The Starfall crater glows purple every night since the pods came down.",
+    "Old prospector: Twenty years I've watched it. Something down there is still awake."
+   ],
+   "tile": [
+    10,
+    5
+   ]
+  },
+  {
+   "art": "technician",
+   "t": [
+    "Mechanic: DX-4 keeps wandering off toward the bridge. Must be picking up a signal out there."
+   ],
+   "tile": [
+    17,
+    5
+   ]
+  },
+  {
+   "art": "explorer",
+   "t": [
+    "Linker: Press START to check your team. A tired Alienmon is a fainted Alienmon waiting to happen."
+   ],
+   "tile": [
+    11,
+    10
+   ]
+  },
+  {
+   "art": "civilian",
+   "t": [
+    "Woman: The shop dome sells Stasis Pods. You can't catch anything without them!",
+    "Woman: Weaken an Alienmon first. A full-health one just pops right back out."
+   ],
+   "tile": [
+    4,
+    12
+   ]
+  },
+  {
+   "art": "guard",
+   "t": [
+    "Watchman: West of here is the landing pad. Ships only leave with launch clearance from a Keeper."
+   ],
+   "tile": [
+    3,
+    5
+   ]
+  }
+ ],
+ "005": [
+  {
+   "art": "nurse",
+   "name": "Nurse",
+   "tile": [
+    7,
+    7
+   ],
+   "t": [
+    "Nurse: Welcome to the Recovery Bay! Step up to the counter and I'll heal your team."
+   ]
+  },
+  {
+   "art": "explorer",
+   "t": [
+    "Trainer: I come here after every route. Healing is free, so there's no excuse to push your luck."
+   ]
+  }
+ ],
+ "006": [
+  {
+   "art": "shop",
+   "name": "Shopkeeper",
+   "tile": [
+    4,
+    5
+   ],
+   "t": [
+    "Shopkeeper: Talk to me at the counter for pods and potions!"
+   ]
+  },
+  {
+   "art": "civilian",
+   "t": [
+    "Shopper: Gels heal, Cure Spray fixes poison and burns. I always carry both."
+   ]
+  }
+ ],
+ "007": [
+  {
+   "art": "wanderer",
+   "t": [
+    "Hiker: Don't look down. That canyon goes all the way to the old lava falls."
+   ]
+  },
+  {
+   "art": "technician",
+   "t": [
+    "Bridge keeper: This bridge was built by Ferrox steelworkers. Not a single rivet has slipped in forty years."
+   ]
+  }
+ ],
+ "008": [
+  {
+   "art": "technician",
+   "t": [
+    "Trader: Everything here came over the Molten Frontier on a cart. Prices reflect the danger!"
+   ]
+  },
+  {
+   "art": "civilian",
+   "t": [
+    "Merchant: I'd sell you a map, but the Frontier changes every time the volcano coughs."
+   ]
+  },
+  {
+   "art": "miner",
+   "t": [
+    "Miner: The Sunset Tunnel past the cactus gardens is the only way through to the Frontier on foot."
+   ]
+  },
+  {
+   "art": "wanderer",
+   "t": [
+    "Drifter: Sola trains out back every morning. Tough kid. Even tougher partner."
+   ]
+  },
+  {
+   "art": "explorer",
+   "t": [
+    "Linker: Trainers on the trail will battle you the moment they spot you. Walk past them if you're feeling brave."
+   ]
+  }
+ ],
+ "009": [
+  {
+   "art": "explorer",
+   "t": [
+    "Hiker: The Rimwalk Trail hugs the canyon edge. Great view, terrible place to trip."
+   ]
+  },
+  {
+   "art": "wanderer",
+   "t": [
+    "Birdwatcher: I've seen Alienmon with wings riding the thermals over the canyon."
+   ]
+  }
+ ],
+ "010": [
+  {
+   "art": "researcher",
+   "t": [
+    "Researcher: Different grass patches hold different Alienmon. Try them all!"
+   ]
+  },
+  {
+   "art": "civilian",
+   "t": [
+    "Camper: If you're low on health, head back to Dustmere. Pride is not a healing item."
+   ]
+  }
+ ],
+ "011": [
+  {
+   "art": "sporefolk",
+   "t": [
+    "Gardener: These cacti store water for months. Some Alienmon nest right inside them."
+   ]
+  },
+  {
+   "art": "explorer",
+   "t": [
+    "Explorer: The Sunset Tunnel is just east. Bring light, it's a maze in there."
+   ]
+  }
+ ],
+ "012": [
+  {
+   "art": "miner",
+   "t": [
+    "Miner: Watch your step. The lanterns down here run on crystal shards."
+   ]
+  }
+ ],
+ "013": [
+  {
+   "art": "miner",
+   "t": [
+    "Old miner: You can feel the heat from here. The Molten Frontier is right above us."
+   ]
+  }
+ ],
+ "014": [
+  {
+   "art": "guard",
+   "t": [
+    "Guard: Welcome to the Molten Frontier. Stick to the trails and stay off anything glowing."
+   ]
+  },
+  {
+   "art": "wanderer",
+   "t": [
+    "Traveller: The ash trail east leads to Palm Isle and Port Ember. Rest up there."
+   ]
+  }
+ ],
+ "015": [
+  {
+   "art": "explorer",
+   "t": [
+    "Ash walker: The ash makes everything look grey, but the Alienmon out here are anything but dull."
+   ]
+  }
+ ],
+ "016": [
+  {
+   "art": "wanderer",
+   "t": [
+    "Nomad: Magma-types love the warm ground. Hydro moves cool them off fast."
+   ]
+  },
+  {
+   "art": "researcher",
+   "t": [
+    "Geologist: These vents breathe every few minutes. Count to ten and you'll see."
+   ]
+  }
+ ],
+ "017": [
+  {
+   "art": "civilian",
+   "t": [
+    "Islander: Palm Isle is the only green spot for miles. The Recovery Hut here has saved a lot of Linkers."
+   ]
+  },
+  {
+   "art": "sporefolk",
+   "t": [
+    "Fruit picker: Try the fire-coconuts. Crunchy outside, molten inside."
+   ]
+  }
+ ],
+ "018": [
+  {
+   "art": "squidsailor",
+   "t": [
+    "Sailor: The Deep Sea Ferry leaves from the long dock. Only cleared Linkers ride, though."
+   ]
+  },
+  {
+   "art": "technician",
+   "t": [
+    "Dock mechanic: Helix boats have been prowling the harbor. Keep your pods close."
+   ]
+  },
+  {
+   "art": "civilian",
+   "t": [
+    "Fish seller: Fresh from the ember sea! Well... warm from the ember sea."
+   ]
+  },
+  {
+   "art": "guard",
+   "t": [
+    "Harbor guard: Port Ember's been a safe harbor for a hundred years. We intend to keep it that way."
+   ]
+  },
+  {
+   "art": "explorer",
+   "t": [
+    "Linker: Every Keeper you beat gives you a Signal Shard. Eight of them and something big happens. Nobody agrees on what."
+   ]
+  }
+ ],
+ "019": [
+  {
+   "art": "squidsailor",
+   "t": [
+    "Deckhand: Mind the gaps between the planks. The sea down there is hot enough to boil soup."
+   ]
+  }
+ ],
+ "020": [
+  {
+   "art": "explorer",
+   "t": [
+    "Climber: The Ridge Path climbs toward the Forge Gate. Helix guards everywhere up there."
+   ]
+  }
+ ],
+ "021": [
+  {
+   "art": "wanderer",
+   "t": [
+    "Scout: I saw Helix grunts hauling crates toward the fortress. Something's being built in there."
+   ]
+  }
+ ],
+ "022": [
+  {
+   "art": "miner",
+   "t": [
+    "Forge worker: The Forge Gate opens toward Ferrox once you've proven yourself."
+   ]
+  },
+  {
+   "art": "guard",
+   "t": [
+    "Gate guard: No clearance, no passage. Those are the rules."
+   ]
+  }
+ ],
+ "023": [
+  {
+   "art": "civilian",
+   "t": [
+    "Refugee: Helix took the old forge and turned it into a fortress. We had to leave everything."
+   ]
+  }
+ ],
+ "024": [
+  {
+   "art": "technician",
+   "t": [
+    "Bridge tech: These lava bridges are cooled by pumps. If they stop, run."
+   ]
+  }
+ ],
+ "025": [
+  {
+   "art": "explorer",
+   "t": [
+    "Linker: Almost at the shuttle pad. Ships to the far planets launch from there."
+   ]
+  }
+ ],
+ "026": [
+  {
+   "art": "technician",
+   "t": [
+    "Pad controller: Shuttles leave when the board says so. The board says 'not yet'."
+   ]
+  },
+  {
+   "art": "guard",
+   "t": [
+    "Helix deserter: I flew shuttles for Helix. Never again. Ask me nothing about the Director."
+   ]
+  }
+ ],
+ "027": [
+  {
+   "art": "wanderer",
+   "t": [
+    "Lantern keeper: The Shadow Tunnel leads to Umbra. The dark in there plays tricks on you."
+   ]
+  }
+ ],
+ "028": [
+  {
+   "art": "miner",
+   "t": [
+    "Mine foreman: The Magma Mines run all the way down to Pyros' crust. Hard hats mandatory."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,190 @@
+{
+ "_about": "Hand-placed links the atlas text can't give: which building door on the parent map each interior's doormat leads to, stairs between floors, and objects (counters). Tiles are [col,row] at 16 px. 'confidence': high | todo. tools/sections/build_world.py merges this with art/sections/atlas.json.",
+ "doors": [
+  {
+   "interior": "001",
+   "parent": "004",
+   "door": [
+    5,
+    4
+   ],
+   "mat": [
+    [
+     7,
+     12
+    ],
+    [
+     8,
+     12
+    ]
+   ],
+   "confidence": "high",
+   "why": "Hero's house: the dome home top-left with the purple doormat"
+  },
+  {
+   "interior": "003",
+   "parent": "004",
+   "door": [
+    16,
+    4
+   ],
+   "mat": [
+    [
+     7,
+     13
+    ],
+    [
+     8,
+     13
+    ]
+   ],
+   "confidence": "high",
+   "why": "Vashti's observatory: the big telescope dome top-right"
+  },
+  {
+   "interior": "005",
+   "parent": "004",
+   "door": [
+    5,
+    10
+   ],
+   "door2": [
+    6,
+    10
+   ],
+   "mat": [
+    [
+     7,
+     14
+    ],
+    [
+     8,
+     14
+    ]
+   ],
+   "confidence": "high",
+   "why": "Recovery Bay: dome with the cyan cross, double door"
+  },
+  {
+   "interior": "006",
+   "parent": "004",
+   "door": [
+    18,
+    10
+   ],
+   "mat": [
+    [
+     7,
+     13
+    ],
+    [
+     8,
+     13
+    ]
+   ],
+   "confidence": "high",
+   "why": "Shop: dome with the striped awning bottom-right"
+  }
+ ],
+ "stairs": [
+  {
+   "a": "001",
+   "a_tile": [
+    11,
+    4
+   ],
+   "b": "002",
+   "b_tile": [
+    11,
+    4
+   ],
+   "why": "Your House 1F stairs (top right) up to 2F stairs"
+  }
+ ],
+ "ignore_mats": {
+  "002": "2F is upstairs; its drawn doormat can't lead outside, so it is left inert and 2F is reached by the stairs"
+ },
+ "objects": {
+  "005": [
+   {
+    "tile": [
+     7,
+     8
+    ],
+    "k": "bay",
+    "why": "Recovery Bay counter"
+   }
+  ],
+  "006": [
+   {
+    "tile": [
+     4,
+     6
+    ],
+    "k": "shop",
+    "why": "shop counter"
+   }
+  ],
+  "003": [
+   {
+    "tile": [
+     8,
+     8
+    ],
+    "k": "lab",
+    "why": "Vashti's starter pods on the lab table"
+   }
+  ]
+ },
+ "arrival": {
+  "dustara": {
+   "section": "004",
+   "edge": "left",
+   "why": "atlas: 004 left edge -> arrival (landing pad / gate)"
+  }
+ },
+ "unlisted": {
+  "004": "stairs at the top edge (columns 11-12) and a gated path at the bottom edge (columns 11-12) are drawn, but the atlas gives the plaza only left and right exits; the prompt notes say 'trading post south'",
+  "008": "stairs off the top edge at cols 1-2 and 21-22; a path off the bottom edge at col 11; the lower-right dome door (17,12) has no path to it",
+  "010": "stairs off the bottom edge at col 15",
+  "014": "the tunnel mouth is drawn at the top centre (14,1-2), but the atlas puts the way back to Sunset Tunnel B2 on the left edge rows 7-8 (fence/cliff in the art, opened to walk); also a path off the bottom edge at col 11",
+  "016": "stairs at (7,11) lead down toward the lava",
+  "017": "Recovery Hut door (16,4) has no interior in the atlas",
+  "018": "stairs off the top edge at col 11; healing-centre door (18,4) and other doors have no interiors in the atlas",
+  "019": "a sand path at (9,0) and stairs at (18,0-1) run off the top edge",
+  "020": "stairs off the top edge at col 11",
+  "021": "a sand path off the top edge at col 11",
+  "022": "stairs off the top at (4,0-2) and (18,0-3), off the bottom at (11-12,15) and (20-21,14-15); dome doors (3-4,5), (20-21,4), (4,12), (21,12); portal at (11-12,2-4)",
+  "023": "Helix Forge Fortress main doors (11-12,1-4) look enterable (the old game's fortress interior isn't in the atlas); stairs off the bottom at (11-12,15)",
+  "024": "closed portcullis (17-18,6-7) cuts off the top bridge and upper ground; stairs off the top (16,1-2) and bottom (19-20,12-14)",
+  "026": "stairs off the bottom at (6,14-15) and (18,15); dome doors (4,4), (5,11-12), (19,13)",
+  "027": "the Shadow Tunnel mouth (14-18,3-6) looks enterable but the atlas has no section beyond it; stairs off the bottom (16-17,13-14)",
+  "028": "Magma Mines gate (14-17,1-4) and a mine door (20-21,5) look enterable; the bridge at row 10 runs to the right edge; stairs off the bottom (7-8,14)"
+ },
+ "spawns": {
+  "002": {
+   "wake": [
+    7,
+    8
+   ]
+  }
+ },
+ "zones": {
+  "_about": "wild-encounter table per section (a planet key in data/progression.json areas); unlisted sections use their own planet. Molten Frontier sections keep the old world map's split: west half Thalassa, east half Pyros.",
+  "014": "thalassa",
+  "015": "thalassa",
+  "016": "thalassa",
+  "017": "thalassa",
+  "018": "thalassa",
+  "019": "thalassa",
+  "020": "pyros",
+  "021": "pyros",
+  "022": "pyros",
+  "023": "pyros",
+  "024": "pyros",
+  "025": "pyros",
+  "026": "pyros",
+  "027": "pyros",
+  "028": "pyros"
+ }
+}

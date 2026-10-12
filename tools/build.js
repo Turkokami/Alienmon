@@ -50,7 +50,7 @@ const j=x=>JSON.stringify(x);
 // private beta build (the Vercel project with PRIVATE_TESTING=1): shows a feedback link that emails FEEDBACK_EMAIL
 const BETA=process.env.PRIVATE_TESTING==='1'?{email:process.env.FEEDBACK_EMAIL||'turkokami@gmail.com'}:null;
 const SITE=(process.env.SITE_URL||'https://alienmon.vercel.app').replace(/\/$/,'');
-const BUILD=crypto.createHash('sha1').update(fs.readFileSync(path.join(root,'src/template.html'))).update(fs.readFileSync(path.join(root,'src/quests.js'))).update(fs.readFileSync(path.join(root,'src/progression.js'))).update(fs.readFileSync(path.join(root,'src/world.js'))).update(j([D,P,PAINT,WORLDJ,ASSETS])).digest('hex').slice(0,10);
+const BUILD=crypto.createHash('sha1').update(fs.readFileSync(path.join(root,'src/template.html'))).update(fs.readFileSync(path.join(root,'src/quests.js'))).update(fs.readFileSync(path.join(root,'src/progression.js'))).update(fs.readFileSync(path.join(root,'src/world.js'))).update(fs.readFileSync(path.join(root,'src/sections.js'))).update(['data/world.json',...(fs.existsSync(path.join(root,'data/collision'))?fs.readdirSync(path.join(root,'data/collision')).sort().map(f=>'data/collision/'+f):[])].filter(f=>fs.existsSync(path.join(root,f))).map(f=>fs.readFileSync(path.join(root,f),'utf8')).join('')).update(j([D,P,PAINT,WORLDJ,ASSETS])).digest('hex').slice(0,10);
 const fill={__DATA__:j(D),__PLANETS__:j(P),__TRAITS__:j(core.traits),__SIGS__:j(core.signature_moves),__SYS__:j(SYS),__ART__:j(ART),__ARTB__:j(ARTB),__OW__:j(OW),
  __TITLE__:j(TITLE),__SHIP__:j(SHIP),__CUTS__:j(CUTS),__CHAR__:j(CHAR),__PORTRAITS__:j(PORTRAITS),__SCENES__:j(SCN),__FX__:j(FX),__PAINT__:PAINT,__WORLD__:WORLDJ,__WORLDIMG__:j(WORLDIMG),
  __MUSIC__:j(MUSIC),__TITLEMUSIC__:j(TITLEMUSIC),__PLANETART__:j(PLANART),__BUILD__:j(BUILD),__INLINE__:j(INLINE),__SITE__:SITE,__BETA__:j(BETA)};
@@ -67,6 +67,12 @@ fill.__PROGENGINE__=fs.readFileSync(path.join(root,'src/progression.js'),'utf8')
 // world logic (docs/world/STORY_PROGRESSION_MASTER.md): gate messages and the ship rules
 const WS=JSON.parse(fs.readFileSync(path.join(root,'data/world_state.json'),'utf8'));
 const PEOPLE=fs.existsSync(path.join(root,'data/town_people.json'))?fs.readFileSync(path.join(root,'data/town_people.json'),'utf8'):'{}';
+// section maps (data/world.json + data/collision/*.json): Gold/Crystal-style screens at 16 px per tile
+const SECW=fs.existsSync(path.join(root,'data/world.json'))?JSON.parse(fs.readFileSync(path.join(root,'data/world.json'),'utf8')):{sections:{},arrival:{}};
+const SECIMG={},SECS={};for(const[id,sec]of Object.entries(SECW.sections)){const cp=path.join(root,'data/collision',id+'.json');if(!sec.img||!fs.existsSync(cp))continue;
+ SECIMG[id]=asset(sec.img);SECS[id]={id,name:sec.name,planet:sec.planet,type:sec.type,tiles:sec.tiles,edges:sec.edges,warps:sec.warps,objects:sec.objects,spawns:sec.spawns,npcs:sec.npcs||[],zone:sec.zone,rows:JSON.parse(fs.readFileSync(cp,'utf8')).rows}}
+console.log('section maps:',Object.keys(SECS).length);
+fill.__SECENGINE__=fs.readFileSync(path.join(root,'src/sections.js'),'utf8').replace(/__SWORLD__/g,j(SECS)).replace(/__SECIMG__/g,j(SECIMG)).replace(/__SECARRIVAL__/g,j(SECW.arrival||{}));
 fill.__WORLDENGINE__=fs.readFileSync(path.join(root,'src/world.js'),'utf8').replace(/__WORLDSTATE__/g,j({gates:WS.gates,ship:WS.ship})).replace(/__PEOPLE__/g,PEOPLE).replace(/__SPACE__/g,j(SPACEART));
 // function replacer: data can contain "$&"-style sequences that a string replacement would expand
 let html=fs.readFileSync(path.join(root,'src/template.html'),'utf8').replace(/__[A-Z]+__/g,k=>k in fill?fill[k]:k);
