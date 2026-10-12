@@ -53,7 +53,7 @@ function secGate(w){if(w.options){const back=()=>{G.sec.x=w.at[0];G.sec.y=w.at[1
 function secBackThroughGate(){const b=G.secBack;if(!b||!SWORLD[b.id])return false;const go=()=>{G.planet=b.planet;G.sub=null;enterSection(b.id,b.at,b.at[1]>=SWORLD[b.id].tiles[1]/2?'down':'down');G.secBack=null;scene='planet'};if(secOn())SFADE={t:0,go};else cut(1,'Back to the Molten Frontier',go);return true}
 function secLeaveForShip(){if(G.secBack&&SWORLD[G.secBack.id])return say('The gate back to the Molten Frontier.',()=>choose('Go back through the gate?',['Yes','No'],i=>{if(i===0)secBackThroughGate()}));if(!shipOK())return say(['The landing pad. Your ship sits waiting, but it has no launch clearance yet.',SHIP_NO]);say('This path leads back to the landing pad.',()=>choose('Board your ship?',['Yes','No'],i=>{if(i===0){G.sec=null;teleportToShip()}}))}
 function secInteract(){const s=SWORLD[G.sec.id],[dx,dy]=DIRS[face],x=G.sec.x+dx,y=G.sec.y+dy;
- const qe=secQAt(x,y,false);if(qe&&!secNpcAt(s,x,y))return qInteract(qe);
+ const qe=secQAt(x,y,false);if(qe&&(!secNpcAt(s,x,y)||qe.k==='giver'||qe.k==='turnin'))return qInteract(qe);   // a townsperson who offers or takes back a mission
  const wm=secMonAt(s,x,y);if(wm)return secMonBattle(s,wm);
  const n=secNpcAt(s,x,y);if(n){n.face=({up:'down',down:'up',left:'right',right:'left'})[face];if(n.legend)return legendBattle({mon:n.legend,lvl:n.lv||60});if(n.trainer)return secTrainerTalk(n);if(n.wid)qEvent('talk',n.wid,{x:n.x*16+8,y:n.y*16+15});if(n.story==='starter'&&!G.party.length)return secStarterTalk();return say(!G.party.length&&n.pre?n.pre:n.t,null,n.por||undefined)}
  const o=(s.objects||[]).find(o=>o.tile[0]===x&&o.tile[1]===y);if(!o)return;
@@ -64,7 +64,7 @@ function secInteract(){const s=SWORLD[G.sec.id],[dx,dy]=DIRS[face],x=G.sec.x+dx,
  if(o.t)return say(o.t)}
 function updSec(){const s=SWORLD[G.sec.id];if(SBUMP>0)SBUMP--;
  if(SSPOT){if(--SSPOT.t<=0){const n=SSPOT.n;SSPOT=null;secTrainerTalk(n)}drawSec();return}
- if(SFADE){SFADE.t++;if(SFADE.t===10){SFADE.go()}if(SFADE.t>=20)SFADE=null;drawSec();return}
+ if(SFADE){SFADE.t++;if(SFADE.t===10){SFADE.go();if(!secOn()){SFADE=null;return}}if(SFADE.t>=20)SFADE=null;drawSec();return}   // a fade can hand over to a painted map (the Forge Fortress)
  if(SM){SM.t++;if(SM.t>=SEC_STEP){const a=SM.to;SM=null;if(a.s.id!==G.sec.id)enterSection(a.s.id,[a.x,a.y],null);else{G.sec.x=a.x;G.sec.y=a.y}secArrive()}
   if(!SM&&!SFADE&&!DLG&&!CH)secStepHeld();drawSec();return}
  if(P_('start')){scene='menu';menuSel=0;return}

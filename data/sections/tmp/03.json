@@ -1,0 +1,1539 @@
+{
+ "version": 1,
+ "tile": 16,
+ "screen_tiles": [
+  10,
+  9
+ ],
+ "arrival": {
+  "dustara": {
+   "section": "004",
+   "edge": "left",
+   "why": "atlas: 004 left edge -> arrival (landing pad / gate)"
+  },
+  "ferrox": {
+   "section": "029",
+   "edge": "left",
+   "why": "atlas: 029 left edge -> arrival (landing pad / gate)"
+  },
+  "sporeholm": {
+   "section": "041",
+   "why": "atlas exit marked arrival"
+  }
+ },
+ "quest_spots": {
+  "M06:giver": {
+   "s": "042",
+   "x": 12,
+   "y": 7
+  },
+  "M06:1": {
+   "s": "049",
+   "x": 14,
+   "y": 8
+  },
+  "M06:2": {
+   "s": "051",
+   "x": 8,
+   "y": 13
+  },
+  "S30:giver": {
+   "s": "042",
+   "x": 6,
+   "y": 6
+  },
+  "S31:giver": {
+   "s": "042",
+   "x": 18,
+   "y": 9
+  },
+  "S31:0": {
+   "s": "046",
+   "x": 13,
+   "y": 8,
+   "pts": [
+    [
+     13,
+     8
+    ],
+    [
+     8,
+     6
+    ],
+    [
+     10,
+     12
+    ]
+   ]
+  },
+  "S31:1": {
+   "s": "046",
+   "art": "sporefolk",
+   "x": 18,
+   "y": 6
+  },
+  "S32:giver": {
+   "s": "041",
+   "x": 12,
+   "y": 8
+  },
+  "S32:0": {
+   "s": "041",
+   "x": 12,
+   "y": 7
+  }
+ },
+ "sections": {
+  "041": {
+   "id": "041",
+   "name": "Landing Bog",
+   "planet": "Sporeholm",
+   "dir": "03_sporeholm",
+   "type": "landmark",
+   "img": "art/sections_game/03_sporeholm/041_landing_bog.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Landing pad on a boardwalk in the bog",
+   "edges": {
+    "left": {
+     "to": "arrival",
+     "range": [
+      7,
+      8
+     ]
+    },
+    "right": {
+     "to": "042",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [],
+   "objects": [
+    {
+     "tile": [
+      15,
+      5
+     ],
+     "k": "sign",
+     "t": [
+      "Sporeholm Landing Pad. Mirefen Village lies east along the boardwalk."
+     ]
+    }
+   ],
+   "spawns": {
+    "arrival": [
+     1,
+     7
+    ],
+    "default": [
+     1,
+     7
+    ]
+   },
+   "grid": [
+    0,
+    0
+   ],
+   "pkey": "sporeholm",
+   "npcs": [
+    {
+     "x": 18,
+     "y": 7,
+     "art": "technician",
+     "face": "down",
+     "t": [
+      "Dock tech: Ships set down on the pad here. Mirefen Village is just east along the boardwalk."
+     ]
+    },
+    {
+     "x": 2,
+     "y": 8,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Bog hiker: Stay on the planks. The bog looks like moss, but it's mostly water and bad decisions."
+     ]
+    }
+   ],
+   "mons": []
+  },
+  "042": {
+   "id": "042",
+   "name": "Mirefen Village",
+   "planet": "Sporeholm",
+   "dir": "03_sporeholm",
+   "type": "town",
+   "img": "art/sections_game/03_sporeholm/042_mirefen_village.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Stilt village of huts on mushroom stalks with rope bridges",
+   "edges": {
+    "left": {
+     "to": "041",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    },
+    "right": {
+     "to": "045",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [
+    {
+     "tile": [
+      17,
+      5
+     ],
+     "to": "043",
+     "at": [
+      7,
+      12
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    },
+    {
+     "tile": [
+      18,
+      5
+     ],
+     "to": "043",
+     "at": [
+      8,
+      12
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    },
+    {
+     "tile": [
+      4,
+      6
+     ],
+     "to": "044",
+     "at": [
+      7,
+      12
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      11,
+      8
+     ],
+     "k": "sign",
+     "t": [
+      "Mirefen Village: stilts deep, lanterns bright. Welcome, traveler."
+     ]
+    }
+   ],
+   "spawns": {
+    "default": [
+     1,
+     7
+    ]
+   },
+   "grid": [
+    24,
+    0
+   ],
+   "pkey": "sporeholm",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 9,
+     "art": "sporefolk",
+     "face": "down",
+     "t": [
+      "Spore tender: Mirefen stands on stilts. When the bog breathes, the whole village sways a little."
+     ]
+    },
+    {
+     "x": 10,
+     "y": 12,
+     "art": "researcher",
+     "face": "down",
+     "t": [
+      "Botanist: The mushrooms glow brighter near the tower to the east. Dr. Moor says they're listening."
+     ]
+    },
+    {
+     "x": 21,
+     "y": 3,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Bog hiker: Toxin-types hide in the reed beds. Carry Cure Spray, or the walk home gets long."
+     ]
+    },
+    {
+     "x": 13,
+     "y": 9,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Villager: The dome with the cyan cross is the Recovery Bay. Rest up before you head into the marsh."
+     ]
+    },
+    {
+     "x": 21,
+     "y": 14,
+     "art": "mom",
+     "face": "down",
+     "t": [
+      "Grandmother: My grandson swears he was lost in the Mushroom Maze for a whole day. It was an hour."
+     ]
+    },
+    {
+     "x": 20,
+     "y": 6,
+     "art": "pilgrim",
+     "face": "down",
+     "t": [
+      "Pilgrim: I came to hear the Spore Choir at the pools. On still nights the spores hum in harmony."
+     ]
+    },
+    {
+     "x": 14,
+     "y": 3,
+     "art": "strand",
+     "face": "down",
+     "t": [
+      "Man in a white coat: Helix? Never heard of them. I'm just... sampling the mushrooms. For science."
+     ]
+    },
+    {
+     "x": 7,
+     "y": 13,
+     "art": "wanderer",
+     "face": "down",
+     "t": [
+      "Traveler: The Keeper here guards a Signal Shard. Climb her tower and she'll test you herself."
+     ]
+    }
+   ],
+   "mons": []
+  },
+  "043": {
+   "id": "043",
+   "name": "Mirefen Recovery Bay",
+   "planet": "Sporeholm",
+   "dir": "03_sporeholm",
+   "type": "interior",
+   "img": "art/sections_game/03_sporeholm/043_mirefen_recovery_bay.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      13
+     ],
+     "to": "042",
+     "at": [
+      17,
+      6
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      13
+     ],
+     "to": "042",
+     "at": [
+      17,
+      6
+     ],
+     "face": "down",
+     "kind": "door"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      7,
+      7
+     ],
+     "k": "bay"
+    }
+   ],
+   "spawns": {
+    "door": [
+     7,
+     12
+    ],
+    "default": [
+     7,
+     12
+    ]
+   },
+   "parent": "042",
+   "pkey": "sporeholm",
+   "npcs": [
+    {
+     "x": 7,
+     "y": 6,
+     "art": "nurse",
+     "face": "down",
+     "t": [
+      "Nurse: Welcome to the Mirefen Recovery Bay. Spore-sick or battle-worn, we'll patch your team up."
+     ]
+    },
+    {
+     "x": 8,
+     "y": 11,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Visitor: Healing here is free. Step up to the counter whenever your team is hurting."
+     ]
+    }
+   ]
+  },
+  "044": {
+   "id": "044",
+   "name": "Mirefen Shop",
+   "planet": "Sporeholm",
+   "dir": "03_sporeholm",
+   "type": "interior",
+   "img": "art/sections_game/03_sporeholm/044_mirefen_shop.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      13
+     ],
+     "to": "042",
+     "at": [
+      4,
+      7
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      13
+     ],
+     "to": "042",
+     "at": [
+      4,
+      7
+     ],
+     "face": "down",
+     "kind": "door"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      4,
+      7
+     ],
+     "k": "shop"
+    }
+   ],
+   "spawns": {
+    "door": [
+     7,
+     12
+    ],
+    "default": [
+     7,
+     12
+    ]
+   },
+   "parent": "042",
+   "pkey": "sporeholm",
+   "npcs": [
+    {
+     "x": 4,
+     "y": 6,
+     "art": "shop",
+     "face": "down",
+     "t": [
+      "Clerk: Stasis Pods, Cure Spray, the works. In spore season the Cure Spray sells out fast."
+     ]
+    },
+    {
+     "x": 8,
+     "y": 10,
+     "art": "sporefolk",
+     "face": "down",
+     "t": [
+      "Shopper: Weaken a wild alien before you throw a Stasis Pod. Healthy ones just pop right back out."
+     ]
+    }
+   ]
+  },
+  "045": {
+   "id": "045",
+   "name": "Lantern Marsh Part A",
+   "planet": "Sporeholm",
+   "dir": "03_sporeholm",
+   "type": "route",
+   "img": "art/sections_game/03_sporeholm/045_lantern_marsh_part_a.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Marsh of glowing lanterns and lily pads",
+   "edges": {
+    "left": {
+     "to": "042",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    },
+    "right": {
+     "to": "046",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [],
+   "objects": [],
+   "spawns": {
+    "default": [
+     1,
+     7
+    ]
+   },
+   "grid": [
+    48,
+    0
+   ],
+   "pkey": "sporeholm",
+   "npcs": [
+    {
+     "x": 6,
+     "y": 9,
+     "art": "researcher",
+     "face": "down",
+     "t": [
+      "Botanist: Every lantern in this marsh is a living fungus. Don't pick them. They bite back."
+     ]
+    },
+    {
+     "x": 19,
+     "y": 6,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Bog hiker: Wild aliens jump out of the reeds. Stick to the dirt paths if your team is tired."
+     ]
+    },
+    {
+     "x": 11,
+     "y": 6,
+     "art": "sporefolk",
+     "face": "left",
+     "t": [],
+     "id": "sec045_tr2",
+     "trainer": {
+      "cls": "Spore Tender",
+      "route": 1,
+      "name": "Nyx"
+     }
+    },
+    {
+     "x": 16,
+     "y": 10,
+     "art": "researcher",
+     "face": "right",
+     "t": [],
+     "id": "sec045_tr3",
+     "trainer": {
+      "cls": "Botanist",
+      "route": 1,
+      "name": "Ida"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 5,
+     "y": 1,
+     "mon": "Sludgeviper"
+    },
+    {
+     "x": 20,
+     "y": 12,
+     "mon": "Lianarch"
+    }
+   ]
+  },
+  "046": {
+   "id": "046",
+   "name": "Lantern Marsh Part B",
+   "planet": "Sporeholm",
+   "dir": "03_sporeholm",
+   "type": "route",
+   "img": "art/sections_game/03_sporeholm/046_lantern_marsh_part_b.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Marsh of glowing lanterns and lily pads",
+   "edges": {
+    "left": {
+     "to": "045",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [
+    {
+     "tile": [
+      23,
+      7
+     ],
+     "to": "047",
+     "at": [
+      7,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      8
+     ],
+     "to": "047",
+     "at": [
+      8,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     1,
+     7
+    ]
+   },
+   "grid": [
+    72,
+    0
+   ],
+   "pkey": "sporeholm",
+   "npcs": [
+    {
+     "x": 16,
+     "y": 7,
+     "art": "sporefolk",
+     "face": "down",
+     "t": [
+      "Spore tender: The Mushroom Maze is just ahead. Left at the glowing caps... or was it right?"
+     ]
+    },
+    {
+     "x": 8,
+     "y": 9,
+     "art": "wanderer",
+     "face": "down",
+     "t": [
+      "Wanderer: Trainers watch the paths. Step into their line of sight and it's a battle."
+     ]
+    },
+    {
+     "x": 18,
+     "y": 4,
+     "art": "researcher",
+     "face": "down",
+     "t": [],
+     "id": "sec046_tr2",
+     "trainer": {
+      "cls": "Botanist",
+      "route": 1,
+      "name": "Mara"
+     }
+    },
+    {
+     "x": 10,
+     "y": 11,
+     "art": "explorer",
+     "face": "left",
+     "t": [],
+     "id": "sec046_tr3",
+     "trainer": {
+      "cls": "Bog Hiker",
+      "route": 1,
+      "name": "Rook"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 5,
+     "y": 6,
+     "mon": "Miasmoth"
+    },
+    {
+     "x": 21,
+     "y": 11,
+     "mon": "Rotbloom"
+    }
+   ]
+  },
+  "047": {
+   "id": "047",
+   "name": "Mushroom Maze 1F",
+   "planet": "Sporeholm",
+   "dir": "03_sporeholm",
+   "type": "dungeon",
+   "img": "art/sections_game/03_sporeholm/047_mushroom_maze_1f.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "Maze of giant mushrooms (Lost in the Mist)",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      15
+     ],
+     "to": "046",
+     "at": [
+      22,
+      7
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      8,
+      15
+     ],
+     "to": "046",
+     "at": [
+      22,
+      8
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      7,
+      0
+     ],
+     "to": "048",
+     "at": [
+      7,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      8,
+      0
+     ],
+     "to": "048",
+     "at": [
+      8,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      3,
+      3
+     ],
+     "k": "sign",
+     "t": [
+      "A mossy stone shrine. The carving reads: The mist forgets nothing, but it lets you leave."
+     ]
+    }
+   ],
+   "spawns": {
+    "default": [
+     7,
+     14
+    ]
+   },
+   "pkey": "sporeholm",
+   "npcs": [
+    {
+     "x": 11,
+     "y": 8,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Lost hiker: I've passed that stone shrine three times. I'm starting to think it follows me."
+     ]
+    },
+    {
+     "x": 4,
+     "y": 5,
+     "art": "explorer",
+     "face": "left",
+     "t": [],
+     "id": "sec047_tr1",
+     "trainer": {
+      "cls": "Bog Hiker",
+      "route": 1,
+      "name": "Yuki"
+     }
+    }
+   ]
+  },
+  "048": {
+   "id": "048",
+   "name": "Mushroom Maze 2F",
+   "planet": "Sporeholm",
+   "dir": "03_sporeholm",
+   "type": "dungeon",
+   "img": "art/sections_game/03_sporeholm/048_mushroom_maze_2f.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "Maze of giant mushrooms (Lost in the Mist)",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      15
+     ],
+     "to": "047",
+     "at": [
+      7,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      8,
+      15
+     ],
+     "to": "047",
+     "at": [
+      8,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      7,
+      0
+     ],
+     "to": "049",
+     "at": [
+      1,
+      7
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      8,
+      0
+     ],
+     "to": "049",
+     "at": [
+      1,
+      8
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "top"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      3,
+      3
+     ],
+     "k": "sign",
+     "t": [
+      "Another shrine, just like the one below. Someone scratched an arrow pointing north."
+     ]
+    }
+   ],
+   "spawns": {
+    "default": [
+     7,
+     14
+    ]
+   },
+   "pkey": "sporeholm",
+   "npcs": [
+    {
+     "x": 11,
+     "y": 12,
+     "art": "researcher",
+     "face": "down",
+     "t": [
+      "Mycologist: These bridges grow on their own. The mushrooms knit the planks back together each night."
+     ]
+    },
+    {
+     "x": 9,
+     "y": 5,
+     "art": "sporefolk",
+     "face": "left",
+     "t": [],
+     "id": "sec048_tr1",
+     "trainer": {
+      "cls": "Spore Tender",
+      "route": 1,
+      "name": "Wren"
+     }
+    }
+   ]
+  },
+  "049": {
+   "id": "049",
+   "name": "Spore Pools",
+   "planet": "Sporeholm",
+   "dir": "03_sporeholm",
+   "type": "field",
+   "img": "art/sections_game/03_sporeholm/049_spore_pools.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Glowing spore pools (Spore Choir)",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      0,
+      7
+     ],
+     "to": "048",
+     "at": [
+      7,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      8
+     ],
+     "to": "048",
+     "at": [
+      8,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      23,
+      7
+     ],
+     "to": "050",
+     "at": [
+      7,
+      22
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      8
+     ],
+     "to": "050",
+     "at": [
+      8,
+      22
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     1,
+     7
+    ]
+   },
+   "grid": [
+    0,
+    20
+   ],
+   "pkey": "sporeholm",
+   "npcs": [
+    {
+     "x": 8,
+     "y": 4,
+     "art": "pilgrim",
+     "face": "down",
+     "t": [
+      "Pilgrim: Listen... the Spore Choir. The pools sing when the spores rise. Some say the tower answers."
+     ]
+    },
+    {
+     "x": 12,
+     "y": 13,
+     "art": "sporefolk",
+     "face": "down",
+     "t": [
+      "Spore tender: The big lily pads hold your weight. Mostly. Hop across them to reach the tower path."
+     ]
+    },
+    {
+     "x": 13,
+     "y": 6,
+     "art": "researcher",
+     "face": "up",
+     "t": [],
+     "id": "sec049_tr2",
+     "trainer": {
+      "cls": "Botanist",
+      "route": 1,
+      "name": "Quill"
+     }
+    },
+    {
+     "x": 22,
+     "y": 6,
+     "art": "explorer",
+     "face": "down",
+     "t": [],
+     "id": "sec049_tr3",
+     "trainer": {
+      "cls": "Bog Hiker",
+      "route": 1,
+      "name": "Ida"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 7,
+     "y": 11,
+     "mon": "Sludgeviper"
+    },
+    {
+     "x": 18,
+     "y": 4,
+     "mon": "Lianarch"
+    }
+   ]
+  },
+  "050": {
+   "id": "050",
+   "name": "Sporeholm Tower 1F",
+   "planet": "Sporeholm",
+   "dir": "03_sporeholm",
+   "type": "tower",
+   "img": "art/sections_game/03_sporeholm/050_sporeholm_tower_1f.png",
+   "tiles": [
+    16,
+    24
+   ],
+   "notes": "Keeper Dr. Lysa Moor's tower",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      23
+     ],
+     "to": "049",
+     "at": [
+      22,
+      7
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      8,
+      23
+     ],
+     "to": "049",
+     "at": [
+      22,
+      8
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      7,
+      0
+     ],
+     "to": "051",
+     "at": [
+      7,
+      22
+     ],
+     "face": "up",
+     "kind": "stairs",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      8,
+      0
+     ],
+     "to": "051",
+     "at": [
+      8,
+      22
+     ],
+     "face": "up",
+     "kind": "stairs",
+     "edge": "top"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      8,
+      9
+     ],
+     "k": "sign",
+     "t": [
+      "A glowing spore orb. The plaque reads: Sporeholm Tower, field station of Dr. Lysa Moor."
+     ]
+    }
+   ],
+   "spawns": {
+    "default": [
+     7,
+     22
+    ]
+   },
+   "pkey": "sporeholm",
+   "npcs": [
+    {
+     "x": 8,
+     "y": 12,
+     "art": "researcher",
+     "face": "down",
+     "t": [
+      "Lab aide: Dr. Moor's apprentices guard this floor. Beat them and the stairs to her lab are yours."
+     ]
+    },
+    {
+     "x": 9,
+     "y": 18,
+     "art": "researcher",
+     "face": "left",
+     "t": [],
+     "id": "sec050_app1",
+     "trainer": {
+      "cls": "Apprentice",
+      "app": 1,
+      "name": "Pell"
+     }
+    },
+    {
+     "x": 4,
+     "y": 5,
+     "art": "explorer",
+     "face": "down",
+     "t": [],
+     "id": "sec050_app2",
+     "trainer": {
+      "cls": "Apprentice",
+      "app": 1,
+      "name": "Quill"
+     }
+    }
+   ]
+  },
+  "051": {
+   "id": "051",
+   "name": "Sporeholm Tower 2F",
+   "planet": "Sporeholm",
+   "dir": "03_sporeholm",
+   "type": "tower",
+   "img": "art/sections_game/03_sporeholm/051_sporeholm_tower_2f.png",
+   "tiles": [
+    16,
+    24
+   ],
+   "notes": "Keeper Dr. Lysa Moor's tower",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      23
+     ],
+     "to": "050",
+     "at": [
+      7,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      8,
+      23
+     ],
+     "to": "050",
+     "at": [
+      8,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      7,
+      2
+     ],
+     "k": "keeper"
+    }
+   ],
+   "spawns": {
+    "default": [
+     7,
+     22
+    ]
+   },
+   "pkey": "sporeholm",
+   "npcs": [
+    {
+     "x": 11,
+     "y": 12,
+     "art": "technician",
+     "face": "down",
+     "t": [
+      "Lab aide: Beat Dr. Moor and she'll hand over Sporeholm's Signal Shard. Bring Cure Spray. Trust me."
+     ]
+    }
+   ]
+  }
+ },
+ "connections": [
+  {
+   "from_id": "041",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "arrival",
+   "to_edge": null,
+   "to_tile": null
+  },
+  {
+   "from_id": "041",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "042",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "042",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "041",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "042",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "045",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "045",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "042",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "045",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "046",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "046",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "045",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "046",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "047",
+   "to_edge": "bottom",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "047",
+   "edge": "bottom",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "046",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "047",
+   "edge": "top",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "048",
+   "to_edge": "bottom",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "048",
+   "edge": "bottom",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "047",
+   "to_edge": "top",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "048",
+   "edge": "top",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "049",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "049",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "048",
+   "to_edge": "top",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "049",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "050",
+   "to_edge": "bottom",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "050",
+   "edge": "bottom",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "049",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "050",
+   "edge": "top",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "051",
+   "to_edge": "bottom",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "051",
+   "edge": "bottom",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "050",
+   "to_edge": "top",
+   "to_tile": [
+    7,
+    8
+   ]
+  }
+ ]
+}

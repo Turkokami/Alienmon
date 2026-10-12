@@ -1,0 +1,494 @@
+{
+ "doors": [
+  {
+   "interior": "094",
+   "parent": "093",
+   "door": [
+    17,
+    6
+   ],
+   "mat": [
+    [
+     7,
+     13
+    ],
+    [
+     8,
+     13
+    ]
+   ],
+   "confidence": "high",
+   "why": "Frostmark Recovery Bay: big white dome top-right with the cyan cross over the door"
+  },
+  {
+   "interior": "095",
+   "parent": "093",
+   "door": [
+    7,
+    8
+   ],
+   "mat": [
+    [
+     7,
+     13
+    ],
+    [
+     8,
+     13
+    ]
+   ],
+   "confidence": "high",
+   "why": "Frostmark Shop: dome with the red-and-gold striped awning left of the plaza"
+  }
+ ],
+ "objects": {
+  "094": [
+   {
+    "tile": [
+     7,
+     7
+    ],
+    "k": "bay",
+    "why": "Recovery Bay curved counter in front of the healing pods"
+   }
+  ],
+  "095": [
+   {
+    "tile": [
+     3,
+     8
+    ],
+    "k": "shop",
+    "why": "L-shaped shop counter on the left"
+   }
+  ],
+  "104": [
+   {
+    "tile": [
+     7,
+     2
+    ],
+    "k": "keeper",
+    "why": "Ingrid Vale at the top of Aurora Tower 2F, below the sealed stairs"
+   }
+  ],
+  "093": [
+   {
+    "tile": [
+     12,
+     9
+    ],
+    "k": "sign",
+    "t": [
+     "Frostmark Research Station. The crystal in this fountain was cut from the glacier and never melts.",
+     "Founded by survey crews who came for the aurora and stayed for the ice."
+    ]
+   }
+  ],
+  "096": [
+   {
+    "tile": [
+     20,
+     10
+    ],
+    "k": "sign",
+    "t": [
+     "Aurora Route. West: Frostmark. East: Crystal Caverns.",
+     "Warning: frost grass hides wild Alienmon. Keep a Stasis Pod handy."
+    ]
+   }
+  ],
+  "100": [
+   {
+    "tile": [
+     9,
+     5
+    ],
+    "k": "sign",
+    "t": [
+     "The crystal wall looks almost like a wing... something huge is folded up inside the ice.",
+     "A scratched note: 'Fossil Dig is just above. Mind the stairs.'"
+    ]
+   }
+  ],
+  "101": [
+   {
+    "tile": [
+     6,
+     4
+    ],
+    "k": "sign",
+    "t": [
+     "Frozen fossil site #1. A jawbone longer than a shuttle, gouged by teeth from something even bigger.",
+     "The bite marks are ringed with frost that never thaws."
+    ]
+   },
+   {
+    "tile": [
+     12,
+     5
+    ],
+    "k": "sign",
+    "t": [
+     "Frozen fossil site #2. Ribs snapped clean through. The tooth marks are as wide as a road.",
+     "Field tag: 'Predator unknown. Size: impossible.'"
+    ]
+   },
+   {
+    "tile": [
+     12,
+     8
+    ],
+    "k": "sign",
+    "t": [
+     "Frozen fossil site #3. A thighbone with one huge crescent bite taken out of it.",
+     "Three sites, one bite pattern. Whatever ate these was the size of a moon."
+    ]
+   },
+   {
+    "tile": [
+     8,
+     10
+    ],
+    "k": "sign",
+    "t": [
+     "The Teeth in the Ice: a giant Ystran creature, frozen mid-roar in the glacier wall.",
+     "Dig crews say it hums when the aurora is bright."
+    ]
+   }
+  ],
+  "102": [
+   {
+    "tile": [
+     12,
+     6
+    ],
+    "k": "sign",
+    "t": [
+     "Frozen Falls. The water froze mid-plunge, all at once, in a single night.",
+     "Locals swear a Glaciryx nests behind the ice curtain."
+    ]
+   }
+  ],
+  "103": [
+   {
+    "tile": [
+     7,
+     10
+    ],
+    "k": "sign",
+    "t": [
+     "Aurora Relay Crystal. It pulses in time with the sky.",
+     "Plaque: 'Keeper Ingrid Vale awaits challengers on the floor above.'"
+    ]
+   }
+  ]
+ },
+ "apprentices": {
+  "103": 2
+ },
+ "trainer_tiles": [
+  {
+   "section": "103",
+   "n": 0,
+   "tile": [
+    6,
+    19
+   ],
+   "face": "right"
+  },
+  {
+   "section": "103",
+   "n": 1,
+   "tile": [
+    9,
+    3
+   ],
+   "face": "left"
+  },
+  {
+   "section": "096",
+   "n": 0,
+   "tile": [
+    15,
+    7
+   ],
+   "face": "down"
+  },
+  {
+   "section": "096",
+   "n": 1,
+   "tile": [
+    8,
+    6
+   ],
+   "face": "down"
+  },
+  {
+   "section": "101",
+   "n": 0,
+   "tile": [
+    14,
+    6
+   ],
+   "face": "down"
+  },
+  {
+   "section": "101",
+   "n": 1,
+   "tile": [
+    21,
+    6
+   ],
+   "face": "left"
+  }
+ ],
+ "trainers_per_section": {
+  "098": 1,
+  "099": 1,
+  "100": 1
+ },
+ "npcs": {
+  "093": [
+   {
+    "tile": [
+     7,
+     1
+    ],
+    "art": "researcher",
+    "t": [
+     "Researcher: Something huge is frozen inside the glacier wall past the caverns.",
+     "We call it the Teeth in the Ice. Nobody sleeps well near it."
+    ]
+   },
+   {
+    "tile": [
+     4,
+     6
+    ],
+    "art": "explorer",
+    "t": [
+     "Climber: Ice paths are slick. Jump the cracks, don't walk them.",
+     "Aurora Route has frost grass. Wild Alienmon love it."
+    ]
+   },
+   {
+    "tile": [
+     11,
+     6
+    ],
+    "art": "technician",
+    "t": [
+     "Radio tech: Our antennas pick up signals from the Starfall Rift.",
+     "Lately they pulse in sync with the aurora. Spooky, right?"
+    ]
+   },
+   {
+    "tile": [
+     3,
+     7
+    ],
+    "art": "civilian",
+    "t": [
+     "Townsfolk: The Recovery Bay is the dome with the cyan cross. Heal before the caverns!"
+    ]
+   },
+   {
+    "tile": [
+     13,
+     11
+    ],
+    "art": "guard",
+    "t": [
+     "Guard: Helix crews keep asking for dig permits. The station keeps saying no.",
+     "If you see anyone in a Helix strand-suit near the fossils, tell us."
+    ]
+   },
+   {
+    "tile": [
+     17,
+     13
+    ],
+    "art": "wanderer",
+    "t": [
+     "Wanderer: Keeper Ingrid lives up in Aurora Tower, past the Frozen Falls.",
+     "Win a Signal Shard from her and you'll have really earned it."
+    ]
+   },
+   {
+    "tile": [
+     18,
+     13
+    ],
+    "art": "mom",
+    "t": [
+     "Mom: My kids want to catch a Cryo-type. I said only after their homework thaws."
+    ]
+   }
+  ],
+  "094": [
+   {
+    "art": "nurse",
+    "name": "Nurse",
+    "tile": [
+     7,
+     6
+    ],
+    "t": [
+     "Nurse: Welcome to the Frostmark Recovery Bay. Let's warm your team right up."
+    ]
+   },
+   {
+    "art": "explorer",
+    "t": [
+     "Climber: Cold doesn't bother Cryo-types, but everyone else hates the caverns.",
+     "Heal here before you head out. It's a long walk back."
+    ]
+   }
+  ],
+  "095": [
+   {
+    "art": "shop",
+    "name": "Clerk",
+    "tile": [
+     3,
+     7
+    ],
+    "t": [
+     "Clerk: Stasis Pods, gels, warm socks. Okay, not socks. Take a look!"
+    ]
+   },
+   {
+    "art": "researcher",
+    "t": [
+     "Researcher: I buy Stasis Pods by the crate. Cave Alienmon break out a lot."
+    ]
+   }
+  ],
+  "096": [
+   {
+    "tile": [
+     4,
+     1
+    ],
+    "art": "explorer",
+    "t": [
+     "Climber: Trainers spot you from a few tiles away. Step out of their line if your team is hurt."
+    ]
+   },
+   {
+    "tile": [
+     13,
+     13
+    ],
+    "art": "researcher",
+    "t": [
+     "Researcher: The aurora isn't just pretty. It carries a signal. We just can't read it yet."
+    ]
+   }
+  ],
+  "097": [
+   {
+    "art": "technician",
+    "t": [
+     "Radio tech: The Crystal Caverns are ahead. Three floors deep, then up into the Fossil Dig."
+    ]
+   },
+   {
+    "art": "wanderer",
+    "t": [
+     "Wanderer: Fire melts ice, they say. Bring something hot for Ingrid's team."
+    ]
+   }
+  ],
+  "098": [
+   {
+    "art": "miner",
+    "t": [
+     "Miner: These crystals sing when you tap them. Don't. The wild ones hear it too."
+    ]
+   }
+  ],
+  "099": [
+   {
+    "art": "researcher",
+    "t": [
+     "Researcher: My Alienmon fainted in the cold once. Always carry a Revive Spark down here."
+    ]
+   }
+  ],
+  "100": [
+   {
+    "art": "explorer",
+    "t": [
+     "Climber: The stairs above lead to the Fossil Dig. Look closely at those bite marks."
+    ]
+   }
+  ],
+  "101": [
+   {
+    "tile": [
+     15,
+     13
+    ],
+    "art": "researcher",
+    "t": [
+     "Dig chief: Three fossil sites, same bite pattern every time. Read the markers."
+    ]
+   },
+   {
+    "tile": [
+     2,
+     5
+    ],
+    "art": "miner",
+    "t": [
+     "Digger: I asked Helix for better drills. They asked where the biggest bones were.",
+     "I didn't tell them."
+    ]
+   }
+  ],
+  "102": [
+   {
+    "art": "pilgrim",
+    "t": [
+     "Pilgrim: The falls froze the night the aurora turned violet. I come here to listen."
+    ]
+   },
+   {
+    "art": "explorer",
+    "t": [
+     "Climber: Aurora Tower is just east. Ingrid trains Cryo-types up top."
+    ]
+   }
+  ],
+  "103": [
+   {
+    "art": "technician",
+    "t": [
+     "Relay tech: This tower boosts the aurora signal across the whole system.",
+     "Ingrid's apprentices will test you on the way up."
+    ]
+   }
+  ],
+  "104": [
+   {
+    "art": "researcher",
+    "t": [
+     "Researcher: Ingrid reads ice cores like books. She says the ice remembers the Devourer."
+    ]
+   }
+  ]
+ },
+ "unlisted": {
+  "093": "Stairs at the top (col 7, row 0) and bottom (col 15, row 15) run off-map; the three plain dome houses (doors ~6,5 / 6,11 / 17,12) have no interiors, so their doors are blocked and the bottom-left fenced yard is blocked.",
+  "097": "Stairs off the top edge (col 4) and off the bottom edge (col 16) lead nowhere; final edge tiles blocked.",
+  "098": "Wooden ladder on the west ledge (1,5) and openings on the left/right edges at rows 7-8 lead nowhere; blocked.",
+  "099": "Wooden ladder on the north-west ledge (3,4) leads nowhere; blocked.",
+  "100": "Wooden ladder on the north-west ledge (3,4) leads nowhere; blocked.",
+  "101": "Ladder on the top-left ledge (4,2), scaffold ladder into the glacier (17,5) and stairs off the bottom edge (col 11) lead nowhere; blocked.",
+  "102": "Stairs off the bottom edge (col 6 and col 12, rows 14-15) lead nowhere; blocked.",
+  "104": "Stairs at the top (cols 7-8, rows 0-1) have no floor above; blocked behind the Keeper."
+ },
+ "notes": "Glacia (08). The Aurora Tower fountains (103, 104) sit in the central corridor; the player walks round them on the ring (cols 6 and 9), which slightly overlaps a lamp and the void edge. On 101 the left exit path runs along a thin snow band at the top edge of a frozen pool (row 7). Quest M12 places the three fossil sites 'in the crystal caverns'; per the lead they are sign objects on Fossil Dig (101), plus one for the giant skeleton pit."
+}

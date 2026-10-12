@@ -1,0 +1,1370 @@
+{
+ "version": 1,
+ "tile": 16,
+ "screen_tiles": [
+  10,
+  9
+ ],
+ "arrival": {
+  "dustara": {
+   "section": "004",
+   "edge": "left",
+   "why": "atlas: 004 left edge -> arrival (landing pad / gate)"
+  },
+  "ferrox": {
+   "section": "029",
+   "edge": "left",
+   "why": "atlas: 029 left edge -> arrival (landing pad / gate)"
+  },
+  "glyphos": {
+   "section": "072",
+   "why": "atlas exit marked arrival"
+  }
+ },
+ "quest_spots": {
+  "M10:giver": {
+   "s": "078",
+   "x": 8,
+   "y": 12
+  },
+  "M10:1": {
+   "s": "081",
+   "x": 8,
+   "y": 6
+  },
+  "S60:giver": {
+   "s": "078",
+   "x": 8,
+   "y": 18
+  },
+  "S60:0": {
+   "s": "077",
+   "x": 12,
+   "y": 8,
+   "pts": [
+    [
+     12,
+     8
+    ],
+    [
+     10,
+     3
+    ],
+    [
+     17,
+     6
+    ],
+    [
+     6,
+     7
+    ],
+    [
+     9,
+     12
+    ]
+   ]
+  },
+  "S61:giver": {
+   "s": "079",
+   "x": 8,
+   "y": 12
+  },
+  "S62:giver": {
+   "s": "080",
+   "x": 8,
+   "y": 10
+  },
+  "S62:0": {
+   "s": "080",
+   "x": 8,
+   "y": 12
+  }
+ },
+ "sections": {
+  "072": {
+   "id": "072",
+   "name": "Sunken Landing",
+   "planet": "Glyphos",
+   "dir": "06_glyphos",
+   "type": "landmark",
+   "img": "art/sections_game/06_glyphos/072_sunken_landing.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Landing among sunken ruins",
+   "edges": {
+    "left": {
+     "to": "arrival",
+     "range": [
+      7,
+      8
+     ]
+    },
+    "right": {
+     "to": "073",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [],
+   "objects": [
+    {
+     "tile": [
+      12,
+      2
+     ],
+     "k": "sign",
+     "t": [
+      "Sunken gate: The carvings are worn smooth by the tide. Only one glyph is clear: a seed."
+     ]
+    }
+   ],
+   "spawns": {
+    "arrival": [
+     1,
+     7
+    ],
+    "default": [
+     1,
+     7
+    ]
+   },
+   "grid": [
+    0,
+    0
+   ],
+   "pkey": "glyphos",
+   "npcs": [
+    {
+     "x": 3,
+     "y": 6,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Archaeologist: Welcome to Glyphos! Mind your step, half this place is underwater at high tide.",
+      "Dig Camp is just east. They've got a Recovery Tent if your team needs patching up."
+     ]
+    },
+    {
+     "x": 12,
+     "y": 6,
+     "art": "squidsailor",
+     "face": "down",
+     "t": [
+      "Ferry hand: The Deep Sea Ferry runs here and back. Nobody else is brave enough to sail these ruins."
+     ]
+    }
+   ],
+   "mons": [
+    {
+     "x": 22,
+     "y": 6,
+     "mon": "Runeguard"
+    },
+    {
+     "x": 17,
+     "y": 10,
+     "mon": "Obeliskor"
+    }
+   ]
+  },
+  "073": {
+   "id": "073",
+   "name": "Dig Camp",
+   "planet": "Glyphos",
+   "dir": "06_glyphos",
+   "type": "town",
+   "img": "art/sections_game/06_glyphos/073_dig_camp.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Archaeologists' camp of tents and scaffolding",
+   "edges": {
+    "left": {
+     "to": "072",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    },
+    "right": {
+     "to": "075",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [
+    {
+     "tile": [
+      18,
+      4
+     ],
+     "to": "074",
+     "at": [
+      7,
+      11
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      1,
+      6
+     ],
+     "k": "sign",
+     "t": [
+      "DIG CAMP - Glyphos Expedition. Keep to the marked paths. Do NOT lick the crystals."
+     ]
+    }
+   ],
+   "spawns": {
+    "default": [
+     1,
+     7
+    ]
+   },
+   "grid": [
+    24,
+    0
+   ],
+   "pkey": "glyphos",
+   "npcs": [
+    {
+     "x": 11,
+     "y": 8,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Archaeologist: These glyphs tell the Alienmon's story. Read the murals and you'll see."
+     ]
+    },
+    {
+     "x": 9,
+     "y": 9,
+     "art": "researcher",
+     "face": "down",
+     "t": [
+      "Rune scholar: Crystal-types grow in the old courtyards. They love the humming stones."
+     ]
+    },
+    {
+     "x": 4,
+     "y": 6,
+     "art": "pilgrim",
+     "face": "down",
+     "t": [
+      "Pilgrim: The obelisks in Glyph Hollow hum when you carry Signal Shards near them."
+     ]
+    },
+    {
+     "x": 10,
+     "y": 4,
+     "art": "miner",
+     "face": "down",
+     "t": [
+      "Digger: We found a whole hall of murals past the Coral Ruins. Took us a month to drain the steps."
+     ]
+    },
+    {
+     "x": 22,
+     "y": 11,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Archaeologist: Trainers out on the ruins will spot you if you walk in their line of sight. Be ready."
+     ]
+    },
+    {
+     "x": 1,
+     "y": 12,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Camp cook: No shop out here, friend. Stock up on pods and potions before you ride the ferry."
+     ]
+    },
+    {
+     "x": 15,
+     "y": 5,
+     "art": "researcher",
+     "face": "down",
+     "t": [
+      "Rune scholar: Some Helix folks came asking where the murals were. Wouldn't say why. I didn't like it."
+     ]
+    }
+   ],
+   "mons": [
+    {
+     "x": 18,
+     "y": 9,
+     "mon": "Fossilily"
+    }
+   ]
+  },
+  "074": {
+   "id": "074",
+   "name": "Dig Camp Recovery Tent",
+   "planet": "Glyphos",
+   "dir": "06_glyphos",
+   "type": "interior",
+   "img": "art/sections_game/06_glyphos/074_dig_camp_recovery_tent.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "Recovery Bay as a large tent",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      12
+     ],
+     "to": "073",
+     "at": [
+      18,
+      5
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      12
+     ],
+     "to": "073",
+     "at": [
+      18,
+      5
+     ],
+     "face": "down",
+     "kind": "door"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      8,
+      5
+     ],
+     "k": "bay",
+     "why": "healing pod in the middle of the tent, used from (8,6)"
+    }
+   ],
+   "spawns": {
+    "door": [
+     7,
+     11
+    ],
+    "default": [
+     7,
+     11
+    ]
+   },
+   "parent": "073",
+   "pkey": "glyphos",
+   "npcs": [
+    {
+     "x": 9,
+     "y": 5,
+     "art": "nurse",
+     "face": "down",
+     "t": [
+      "Nurse: Welcome to the Recovery Tent! Step up to the pod and I'll heal your team."
+     ],
+     "name": "Nurse"
+    },
+    {
+     "x": 10,
+     "y": 8,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Archaeologist: Dust, damp, and angry Alienmon. This tent has saved my dig crew more times than I can count."
+     ]
+    }
+   ]
+  },
+  "075": {
+   "id": "075",
+   "name": "Coral Ruins Part A",
+   "planet": "Glyphos",
+   "dir": "06_glyphos",
+   "type": "route",
+   "img": "art/sections_game/06_glyphos/075_coral_ruins_part_a.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Flooded ruins route",
+   "edges": {
+    "left": {
+     "to": "073",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    },
+    "right": {
+     "to": "076",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [],
+   "objects": [],
+   "spawns": {
+    "default": [
+     1,
+     7
+    ]
+   },
+   "grid": [
+    48,
+    0
+   ],
+   "pkey": "glyphos",
+   "npcs": [
+    {
+     "x": 6,
+     "y": 6,
+     "art": "wanderer",
+     "face": "down",
+     "t": [
+      "Wanderer: Tall grass grows thick between the ruins. Wild Alienmon hide in every patch."
+     ]
+    },
+    {
+     "x": 13,
+     "y": 7,
+     "art": "explorer",
+     "face": "left",
+     "t": [],
+     "id": "sec075_tr1",
+     "trainer": {
+      "cls": "Archaeologist",
+      "route": 1,
+      "name": "Rook"
+     }
+    },
+    {
+     "x": 10,
+     "y": 9,
+     "art": "pilgrim",
+     "face": "left",
+     "t": [],
+     "id": "sec075_tr2",
+     "trainer": {
+      "cls": "Pilgrim",
+      "route": 1,
+      "name": "Bo"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 21,
+     "y": 9,
+     "mon": "Prismwolf"
+    },
+    {
+     "x": 1,
+     "y": 9,
+     "mon": "Memoria"
+    }
+   ]
+  },
+  "076": {
+   "id": "076",
+   "name": "Coral Ruins Part B",
+   "planet": "Glyphos",
+   "dir": "06_glyphos",
+   "type": "route",
+   "img": "art/sections_game/06_glyphos/076_coral_ruins_part_b.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Flooded ruins route",
+   "edges": {
+    "left": {
+     "to": "075",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    },
+    "right": {
+     "to": "077",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [],
+   "objects": [],
+   "spawns": {
+    "default": [
+     1,
+     7
+    ]
+   },
+   "grid": [
+    72,
+    0
+   ],
+   "pkey": "glyphos",
+   "npcs": [
+    {
+     "x": 9,
+     "y": 7,
+     "art": "researcher",
+     "face": "down",
+     "t": [
+      "Rune scholar: The glyph under that pool glows at night. I think the whole valley was once a temple."
+     ]
+    },
+    {
+     "x": 14,
+     "y": 9,
+     "art": "pilgrim",
+     "face": "down",
+     "t": [
+      "Pilgrim: Weaken a wild one before you throw a Stasis Pod. A tired Alienmon is an easy catch."
+     ]
+    },
+    {
+     "x": 4,
+     "y": 8,
+     "art": "pilgrim",
+     "face": "left",
+     "t": [],
+     "id": "sec076_tr2",
+     "trainer": {
+      "cls": "Pilgrim",
+      "route": 1,
+      "name": "Milo"
+     }
+    },
+    {
+     "x": 7,
+     "y": 9,
+     "art": "researcher",
+     "face": "up",
+     "t": [],
+     "id": "sec076_tr3",
+     "trainer": {
+      "cls": "Rune Scholar",
+      "route": 1,
+      "name": "Ines"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 21,
+     "y": 14,
+     "mon": "Runeguard"
+    },
+    {
+     "x": 19,
+     "y": 3,
+     "mon": "Obeliskor"
+    }
+   ]
+  },
+  "077": {
+   "id": "077",
+   "name": "Glyph Hollow",
+   "planet": "Glyphos",
+   "dir": "06_glyphos",
+   "type": "field",
+   "img": "art/sections_game/06_glyphos/077_glyph_hollow.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Hollow of glowing glyph stones (Guardian Stones)",
+   "edges": {
+    "left": {
+     "to": "076",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [
+    {
+     "tile": [
+      23,
+      7
+     ],
+     "to": "078",
+     "at": [
+      7,
+      22
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      8
+     ],
+     "to": "078",
+     "at": [
+      8,
+      22
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      12,
+      2
+     ],
+     "to": "081",
+     "at": [
+      7,
+      14
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      10,
+      8
+     ],
+     "k": "sign",
+     "t": [
+      "Guardian Stone: Its glyphs pulse softly, like a heartbeat. It feels like it is waiting for someone."
+     ]
+    },
+    {
+     "tile": [
+      14,
+      8
+     ],
+     "k": "sign",
+     "t": [
+      "Guardian Stone: The carving shows a ring of stones around a sleeping seed."
+     ]
+    }
+   ],
+   "spawns": {
+    "default": [
+     1,
+     7
+    ]
+   },
+   "grid": [
+    96,
+    0
+   ],
+   "pkey": "glyphos",
+   "npcs": [
+    {
+     "x": 5,
+     "y": 7,
+     "art": "pilgrim",
+     "face": "down",
+     "t": [
+      "Pilgrim: The Guardian Stones circle the hollow. Some say they still guard something sleeping."
+     ]
+    },
+    {
+     "x": 20,
+     "y": 8,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Archaeologist: The glowing door up the steps leads to the Mural Hall. Go look. Really look."
+     ]
+    },
+    {
+     "x": 11,
+     "y": 5,
+     "art": "researcher",
+     "face": "down",
+     "t": [],
+     "id": "sec077_tr2",
+     "trainer": {
+      "cls": "Rune Scholar",
+      "route": 1,
+      "name": "Quill"
+     }
+    },
+    {
+     "x": 9,
+     "y": 11,
+     "art": "explorer",
+     "face": "right",
+     "t": [],
+     "id": "sec077_tr3",
+     "trainer": {
+      "cls": "Archaeologist",
+      "route": 1,
+      "name": "Sol"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 3,
+     "y": 12,
+     "mon": "Prismwolf"
+    },
+    {
+     "x": 8,
+     "y": 3,
+     "mon": "Memoria"
+    }
+   ]
+  },
+  "078": {
+   "id": "078",
+   "name": "Temple of Voices 1F",
+   "planet": "Glyphos",
+   "dir": "06_glyphos",
+   "type": "tower",
+   "img": "art/sections_game/06_glyphos/078_temple_of_voices_1f.png",
+   "tiles": [
+    16,
+    24
+   ],
+   "notes": "Ancient Ystran temple (no Keeper), 3 floors (Song of the Chimes)",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      23
+     ],
+     "to": "077",
+     "at": [
+      22,
+      7
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      8,
+      23
+     ],
+     "to": "077",
+     "at": [
+      22,
+      8
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      7,
+      0
+     ],
+     "to": "079",
+     "at": [
+      7,
+      22
+     ],
+     "face": "up",
+     "kind": "stairs",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      8,
+      0
+     ],
+     "to": "079",
+     "at": [
+      8,
+      22
+     ],
+     "face": "up",
+     "kind": "stairs",
+     "edge": "top"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     7,
+     22
+    ]
+   },
+   "pkey": "glyphos",
+   "npcs": [
+    {
+     "x": 8,
+     "y": 13,
+     "art": "pilgrim",
+     "face": "down",
+     "t": [
+      "Pilgrim: This is the Temple of Voices. Long ago the bells up top sang every dawn."
+     ]
+    },
+    {
+     "x": 4,
+     "y": 9,
+     "art": "explorer",
+     "face": "up",
+     "t": [],
+     "id": "sec078_tr1",
+     "trainer": {
+      "cls": "Archaeologist",
+      "route": 1,
+      "name": "Lio"
+     }
+    }
+   ]
+  },
+  "079": {
+   "id": "079",
+   "name": "Temple of Voices 2F",
+   "planet": "Glyphos",
+   "dir": "06_glyphos",
+   "type": "tower",
+   "img": "art/sections_game/06_glyphos/079_temple_of_voices_2f.png",
+   "tiles": [
+    16,
+    24
+   ],
+   "notes": "Ancient Ystran temple (no Keeper), 3 floors (Song of the Chimes)",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      23
+     ],
+     "to": "078",
+     "at": [
+      7,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      8,
+      23
+     ],
+     "to": "078",
+     "at": [
+      8,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      7,
+      0
+     ],
+     "to": "080",
+     "at": [
+      7,
+      22
+     ],
+     "face": "up",
+     "kind": "stairs",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      8,
+      0
+     ],
+     "to": "080",
+     "at": [
+      8,
+      22
+     ],
+     "face": "up",
+     "kind": "stairs",
+     "edge": "top"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     7,
+     22
+    ]
+   },
+   "pkey": "glyphos",
+   "npcs": [
+    {
+     "x": 8,
+     "y": 11,
+     "art": "researcher",
+     "face": "down",
+     "t": [
+      "Rune scholar: Every floor has the same glyph in the floor: a seed with wings. Curious, no?"
+     ]
+    },
+    {
+     "x": 7,
+     "y": 18,
+     "art": "pilgrim",
+     "face": "down",
+     "t": [],
+     "id": "sec079_tr1",
+     "trainer": {
+      "cls": "Pilgrim",
+      "route": 1,
+      "name": "Suri"
+     }
+    }
+   ]
+  },
+  "080": {
+   "id": "080",
+   "name": "Temple of Voices 3F",
+   "planet": "Glyphos",
+   "dir": "06_glyphos",
+   "type": "tower",
+   "img": "art/sections_game/06_glyphos/080_temple_of_voices_3f.png",
+   "tiles": [
+    16,
+    24
+   ],
+   "notes": "Ancient Ystran temple (no Keeper), 3 floors (Song of the Chimes)",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      23
+     ],
+     "to": "079",
+     "at": [
+      7,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      8,
+      23
+     ],
+     "to": "079",
+     "at": [
+      8,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      7,
+      0
+     ],
+     "k": "sign",
+     "t": [
+      "Altar of Voices: Old chimes hang silent above the dais.",
+      "A line of glyphs: WHEN THE BELLS SING, THE GUARDIANS LISTEN."
+     ]
+    }
+   ],
+   "spawns": {
+    "default": [
+     7,
+     22
+    ]
+   },
+   "pkey": "glyphos",
+   "npcs": [
+    {
+     "x": 8,
+     "y": 11,
+     "art": "pilgrim",
+     "face": "down",
+     "t": [
+      "Pilgrim: The chimes fell silent ages ago. They say a Chimelet's song could wake them."
+     ]
+    },
+    {
+     "x": 7,
+     "y": 14,
+     "art": "researcher",
+     "face": "down",
+     "t": [],
+     "id": "sec080_tr1",
+     "trainer": {
+      "cls": "Rune Scholar",
+      "route": 1,
+      "name": "Corin"
+     }
+    }
+   ]
+  },
+  "081": {
+   "id": "081",
+   "name": "Mural Hall",
+   "planet": "Glyphos",
+   "dir": "06_glyphos",
+   "type": "interior",
+   "img": "art/sections_game/06_glyphos/081_mural_hall.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "Great hall of Ystran murals (M10b Vashti's confession)",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      15
+     ],
+     "to": "077",
+     "at": [
+      12,
+      3
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      15
+     ],
+     "to": "077",
+     "at": [
+      12,
+      3
+     ],
+     "face": "down",
+     "kind": "door"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      4,
+      3
+     ],
+     "k": "sign",
+     "t": [
+      "Mural: A golden sun over a green world. Tall figures raise their arms to it.",
+      "The glyphs read: YSTRA. Home. The garden that sang."
+     ]
+    },
+    {
+     "tile": [
+      8,
+      3
+     ],
+     "k": "sign",
+     "t": [
+      "Mural: A vast tree-mother, roots wrapped around glowing seeds.",
+      "The glyphs read: THE SEEDMOTHER. She gave her children wings of pod and light, and sent them far."
+     ]
+    },
+    {
+     "tile": [
+      12,
+      3
+     ],
+     "k": "sign",
+     "t": [
+      "Mural: A dark tide swallows the stars one by one. A pale world sits in its mouth.",
+      "The glyphs read: THE DEVOURER. It does not hunger. It simply ends."
+     ]
+    }
+   ],
+   "spawns": {
+    "door": [
+     7,
+     14
+    ],
+    "default": [
+     7,
+     14
+    ]
+   },
+   "parent": "077",
+   "pkey": "glyphos",
+   "npcs": [
+    {
+     "x": 8,
+     "y": 7,
+     "art": "researcher",
+     "face": "down",
+     "t": [
+      "Rune scholar: Three murals. A home, a hunger, a mother. Read them left to right."
+     ]
+    },
+    {
+     "x": 2,
+     "y": 9,
+     "art": "pilgrim",
+     "face": "down",
+     "t": [
+      "Pilgrim: If the murals are true, every Alienmon you've met is a refugee. Makes you want to be kinder."
+     ]
+    }
+   ]
+  }
+ },
+ "connections": [
+  {
+   "from_id": "072",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "arrival",
+   "to_edge": null,
+   "to_tile": null
+  },
+  {
+   "from_id": "072",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "073",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "073",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "072",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "073",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "075",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "075",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "073",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "075",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "076",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "076",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "075",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "076",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "077",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "077",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "076",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "077",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "078",
+   "to_edge": "bottom",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "078",
+   "edge": "bottom",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "077",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "078",
+   "edge": "top",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "079",
+   "to_edge": "bottom",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "079",
+   "edge": "bottom",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "078",
+   "to_edge": "top",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "079",
+   "edge": "top",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "080",
+   "to_edge": "bottom",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "080",
+   "edge": "bottom",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "079",
+   "to_edge": "top",
+   "to_tile": [
+    7,
+    8
+   ]
+  }
+ ]
+}

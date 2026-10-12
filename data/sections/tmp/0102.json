@@ -1,0 +1,5188 @@
+{
+ "version": 1,
+ "tile": 16,
+ "screen_tiles": [
+  10,
+  9
+ ],
+ "arrival": {
+  "dustara": {
+   "section": "004",
+   "edge": "left",
+   "why": "atlas: 004 left edge -> arrival (landing pad / gate)"
+  },
+  "ferrox": {
+   "section": "029",
+   "edge": "left",
+   "why": "atlas: 029 left edge -> arrival (landing pad / gate)"
+  }
+ },
+ "quest_spots": {
+  "M01:giver": {
+   "s": "003",
+   "x": 8,
+   "y": 6
+  },
+  "M01:0": {
+   "s": "003",
+   "x": 8,
+   "y": 6
+  },
+  "M02:giver": {
+   "s": "004",
+   "x": 4,
+   "y": 5
+  },
+  "M02:0": {
+   "s": "004",
+   "x": 4,
+   "y": 5
+  },
+  "M02:1": {
+   "s": "007",
+   "x": 12,
+   "y": 7
+  },
+  "M02:2": {
+   "s": "007",
+   "x": 12,
+   "y": 7
+  },
+  "M03:giver": {
+   "s": "008",
+   "x": 12,
+   "y": 7
+  },
+  "M03:0": {
+   "s": "008",
+   "x": 11,
+   "y": 10
+  },
+  "M04:giver": {
+   "s": "014",
+   "x": 14,
+   "y": 8
+  },
+  "M04:0": {
+   "s": "014",
+   "x": 14,
+   "y": 8
+  },
+  "M04:1": {
+   "s": "017",
+   "x": 16,
+   "y": 6
+  },
+  "M04:2": {
+   "s": "014",
+   "x": 3,
+   "y": 8
+  },
+  "M05:giver": {
+   "s": "022",
+   "x": 12,
+   "y": 8
+  },
+  "M05:0": {
+   "s": "022",
+   "x": 12,
+   "y": 7
+  },
+  "M05:1": {
+   "s": "022",
+   "x": 12,
+   "y": 8
+  },
+  "M05:2": {
+   "s": "036",
+   "x": 12,
+   "y": 8
+  },
+  "M05:3": {
+   "s": "040",
+   "x": 9,
+   "y": 11
+  },
+  "M06:0": {
+   "s": "026",
+   "x": 12,
+   "y": 8
+  },
+  "M07:giver": {
+   "s": "018",
+   "x": 12,
+   "y": 7
+  },
+  "M07:0": {
+   "s": "018",
+   "x": 12,
+   "y": 12
+  },
+  "M08:giver": {
+   "s": "019",
+   "x": 11,
+   "y": 8
+  },
+  "M08:0": {
+   "s": "019",
+   "x": 17,
+   "y": 7
+  },
+  "M10:0": {
+   "s": "019",
+   "x": 17,
+   "y": 7
+  },
+  "M11:giver": {
+   "s": "028",
+   "x": 12,
+   "y": 8
+  },
+  "M11:0": {
+   "s": "028",
+   "x": 15,
+   "y": 6
+  },
+  "M13:giver": {
+   "s": "023",
+   "x": 12,
+   "y": 8
+  },
+  "M13:0": {
+   "s": "023",
+   "x": 12,
+   "y": 7
+  },
+  "M17:giver": {
+   "s": "027",
+   "x": 12,
+   "y": 8
+  },
+  "M17:0": {
+   "s": "027",
+   "x": 15,
+   "y": 6
+  },
+  "M18:giver": {
+   "s": "026",
+   "x": 12,
+   "y": 8
+  },
+  "M18:0": {
+   "s": "026",
+   "x": 15,
+   "y": 6
+  },
+  "S01:giver": {
+   "s": "008",
+   "x": 6,
+   "y": 7
+  },
+  "S01:0": {
+   "s": "011",
+   "x": 11,
+   "y": 8
+  },
+  "S02:giver": {
+   "s": "004",
+   "x": 4,
+   "y": 5
+  },
+  "S02:0": {
+   "s": "008",
+   "x": 12,
+   "y": 7,
+   "pts": [
+    [
+     12,
+     7
+    ],
+    [
+     6,
+     8
+    ],
+    [
+     18,
+     8
+    ]
+   ]
+  },
+  "S03:giver": {
+   "s": "008",
+   "x": 17,
+   "y": 7
+  },
+  "S03:0": {
+   "s": "008",
+   "x": 17,
+   "y": 8
+  },
+  "S04:giver": {
+   "s": "008",
+   "x": 8,
+   "y": 6
+  },
+  "S10:giver": {
+   "s": "026",
+   "x": 9,
+   "y": 8
+  },
+  "S10:0": {
+   "s": "022",
+   "x": 12,
+   "y": 9
+  },
+  "S11:giver": {
+   "s": "025",
+   "x": 12,
+   "y": 6
+  },
+  "S11:0": {
+   "s": "024",
+   "x": 15,
+   "y": 8
+  },
+  "S12:giver": {
+   "s": "017",
+   "x": 17,
+   "y": 10
+  },
+  "S13:giver": {
+   "s": "014",
+   "x": 12,
+   "y": 4
+  },
+  "S13:0": {
+   "s": "027",
+   "x": 14,
+   "y": 7
+  },
+  "S14:giver": {
+   "s": "019",
+   "x": 14,
+   "y": 7
+  },
+  "S14:0": {
+   "s": "019",
+   "x": 14,
+   "y": 7
+  },
+  "S15:giver": {
+   "s": "028",
+   "x": 10,
+   "y": 8
+  },
+  "S15:0": {
+   "s": "028",
+   "x": 10,
+   "y": 8
+  },
+  "S15:1": {
+   "s": "028",
+   "x": 15,
+   "y": 6
+  },
+  "S16:giver": {
+   "s": "023",
+   "x": 10,
+   "y": 9
+  },
+  "S16:0": {
+   "s": "024",
+   "x": 15,
+   "y": 8,
+   "pts": [
+    [
+     15,
+     8
+    ],
+    [
+     11,
+     11
+    ],
+    [
+     12,
+     3
+    ],
+    [
+     7,
+     8
+    ],
+    [
+     18,
+     4
+    ]
+   ]
+  },
+  "S20:giver": {
+   "s": "037",
+   "x": 12,
+   "y": 9
+  },
+  "S20:0": {
+   "s": "034",
+   "x": 12,
+   "y": 8
+  },
+  "S21:giver": {
+   "s": "036",
+   "x": 5,
+   "y": 8
+  },
+  "S21:0": {
+   "s": "036",
+   "x": 17,
+   "y": 8
+  },
+  "S22:giver": {
+   "s": "038",
+   "x": 8,
+   "y": 8
+  },
+  "S22:0": {
+   "s": "038",
+   "x": 12,
+   "y": 8
+  }
+ },
+ "sections": {
+  "001": {
+   "id": "001",
+   "name": "Your House 1F",
+   "planet": "Dustara",
+   "dir": "01_dustara",
+   "type": "interior",
+   "img": "art/sections_game/01_dustara/001_your_house_1f.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "Hero's home ground floor: Mom's kitchen table, stove, TV, stairs up, door at bottom",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      12
+     ],
+     "to": "004",
+     "at": [
+      5,
+      5
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      12
+     ],
+     "to": "004",
+     "at": [
+      5,
+      5
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      11,
+      4
+     ],
+     "to": "002",
+     "at": [
+      11,
+      5
+     ],
+     "face": "down",
+     "kind": "stairs"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "door": [
+     7,
+     11
+    ],
+    "default": [
+     7,
+     11
+    ]
+   },
+   "parent": "004",
+   "pkey": "dustara",
+   "npcs": [
+    {
+     "x": 4,
+     "y": 5,
+     "art": "mom",
+     "face": "down",
+     "t": [
+      "Mom: Look at you two! Remember, if your Alienmon get tired, the Recovery Bay heals them for free.",
+      "Mom: And call home once in a while, Linker."
+     ],
+     "name": "Mom",
+     "pre": [
+      "Mom: Good morning, sleepyhead! Dr. Vashti called. She's waiting for you at her observatory lab.",
+      "Mom: It's the big dome with the telescope, across the plaza. Go on, your partner is waiting!"
+     ]
+    }
+   ]
+  },
+  "002": {
+   "id": "002",
+   "name": "Your House 2F",
+   "planet": "Dustara",
+   "dir": "01_dustara",
+   "type": "interior",
+   "img": "art/sections_game/01_dustara/002_your_house_2f.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "Hero's bedroom: bed, desk with game console, telescope at the window, poster of the Starfall, stairs down",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      11,
+      4
+     ],
+     "to": "001",
+     "at": [
+      11,
+      5
+     ],
+     "face": "down",
+     "kind": "stairs"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "stairs": [
+     11,
+     5
+    ],
+    "wake": [
+     7,
+     8
+    ],
+    "default": [
+     11,
+     5
+    ]
+   },
+   "parent": "004",
+   "pkey": "dustara"
+  },
+  "003": {
+   "id": "003",
+   "name": "Vashti's Observatory Lab",
+   "planet": "Dustara",
+   "dir": "01_dustara",
+   "type": "interior",
+   "img": "art/sections_game/01_dustara/003_vashti_s_observatory_lab.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "Domed lab with a big brass telescope, three capsule pedestals for the starters on a table, computers, bookshelves",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      13
+     ],
+     "to": "004",
+     "at": [
+      16,
+      5
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      13
+     ],
+     "to": "004",
+     "at": [
+      16,
+      5
+     ],
+     "face": "down",
+     "kind": "door"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      8,
+      8
+     ],
+     "k": "lab",
+     "why": "Vashti's starter pods on the lab table"
+    }
+   ],
+   "spawns": {
+    "door": [
+     7,
+     12
+    ],
+    "default": [
+     7,
+     12
+    ]
+   },
+   "parent": "004",
+   "pkey": "dustara",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 7,
+     "art": "vashti",
+     "face": "down",
+     "t": [
+      "Dr. Vashti: The Starfall Crater glows purple again. Something down there is stirring.",
+      "Dr. Vashti: Bring me news from every world you visit. And take care of your partner."
+     ],
+     "name": "Dr. Vashti",
+     "story": "starter",
+     "until": "M07"
+    },
+    {
+     "x": 4,
+     "y": 9,
+     "art": "researcher",
+     "face": "down",
+     "t": [
+      "Lab aide: Dr. Vashti tracks every seedpod that fell twenty years ago. There are still hundreds unaccounted for.",
+      "Lab aide: The big telescope points at the Starfall Crater. It's been glowing purple again."
+     ],
+     "name": "Lab aide",
+     "pre": [
+      "Lab aide: Dr. Vashti has been waiting for you! She's by the pod table."
+     ]
+    }
+   ]
+  },
+  "004": {
+   "id": "004",
+   "name": "Dustmere Plaza",
+   "planet": "Dustara",
+   "dir": "01_dustara",
+   "type": "town",
+   "img": "art/sections_game/01_dustara/004_dustmere_plaza.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Home town: hero's house, Vashti's observatory dome, Recovery Bay, shop, the bridge exit east, trading post south",
+   "edges": {
+    "left": {
+     "to": "arrival",
+     "range": [
+      7,
+      8
+     ]
+    },
+    "right": {
+     "to": "007",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [
+    {
+     "tile": [
+      5,
+      4
+     ],
+     "to": "001",
+     "at": [
+      7,
+      11
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    },
+    {
+     "tile": [
+      16,
+      4
+     ],
+     "to": "003",
+     "at": [
+      7,
+      12
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    },
+    {
+     "tile": [
+      5,
+      10
+     ],
+     "to": "005",
+     "at": [
+      7,
+      13
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    },
+    {
+     "tile": [
+      6,
+      10
+     ],
+     "to": "005",
+     "at": [
+      8,
+      13
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    },
+    {
+     "tile": [
+      18,
+      10
+     ],
+     "to": "006",
+     "at": [
+      7,
+      12
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "arrival": [
+     1,
+     7
+    ],
+    "default": [
+     1,
+     7
+    ]
+   },
+   "grid": [
+    0,
+    0
+   ],
+   "pkey": "dustara",
+   "npcs": [
+    {
+     "x": 6,
+     "y": 5,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Kid: The drift grass crackles with blue sparks. That's how you know Alienmon are hiding in it!"
+     ],
+     "pre": [
+      "Kid: You're getting your first Alienmon today? Lucky! Dr. Vashti's lab is the dome with the telescope."
+     ]
+    },
+    {
+     "x": 12,
+     "y": 12,
+     "art": "wanderer",
+     "face": "down",
+     "t": [
+      "Old prospector: The Starfall crater glows purple every night since the pods came down.",
+      "Old prospector: Twenty years I've watched it. Something down there is still awake."
+     ]
+    },
+    {
+     "x": 17,
+     "y": 5,
+     "art": "technician",
+     "face": "down",
+     "t": [
+      "Mechanic: DX-4 keeps wandering off toward the bridge. Must be picking up a signal out there."
+     ]
+    },
+    {
+     "x": 11,
+     "y": 10,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Linker: Press START to check your team. A tired Alienmon is a fainted Alienmon waiting to happen."
+     ]
+    },
+    {
+     "x": 4,
+     "y": 12,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Woman: The shop dome sells Stasis Pods. You can't catch anything without them!",
+      "Woman: Weaken an Alienmon first. A full-health one just pops right back out."
+     ]
+    },
+    {
+     "x": 2,
+     "y": 8,
+     "art": "guard",
+     "face": "down",
+     "t": [
+      "Watchman: West of here is the landing pad. Ships only leave with launch clearance from a Keeper."
+     ]
+    },
+    {
+     "x": 4,
+     "y": 5,
+     "art": "technician",
+     "face": "down",
+     "t": [
+      "DX-4: Bzzt! Scout unit DX-4 online.",
+      "DX-4: The bridge crosses the canyon to the east trading post. Mind the lava falls!"
+     ],
+     "name": "DX-4",
+     "wid": "DX-4 robot"
+    },
+    {
+     "x": 10,
+     "y": 5,
+     "art": "wanderer",
+     "face": "down",
+     "t": [
+      "Dusty: Name's Dusty. I've lived on this rim since the Starfall.",
+      "Dusty: That crater past the falls? The seedpods came down hot as stars twenty years back."
+     ],
+     "name": "Dusty"
+    }
+   ],
+   "mons": []
+  },
+  "005": {
+   "id": "005",
+   "name": "Dustmere Recovery Bay",
+   "planet": "Dustara",
+   "dir": "01_dustara",
+   "type": "interior",
+   "img": "art/sections_game/01_dustara/005_dustmere_recovery_bay.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      14
+     ],
+     "to": "004",
+     "at": [
+      5,
+      11
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      14
+     ],
+     "to": "004",
+     "at": [
+      5,
+      11
+     ],
+     "face": "down",
+     "kind": "door"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      7,
+      8
+     ],
+     "k": "bay",
+     "why": "Recovery Bay counter"
+    }
+   ],
+   "spawns": {
+    "door": [
+     7,
+     13
+    ],
+    "default": [
+     7,
+     13
+    ]
+   },
+   "parent": "004",
+   "pkey": "dustara",
+   "npcs": [
+    {
+     "x": 7,
+     "y": 7,
+     "art": "nurse",
+     "face": "down",
+     "t": [
+      "Nurse: Welcome to the Recovery Bay! Step up to the counter and I'll heal your team."
+     ],
+     "name": "Nurse"
+    },
+    {
+     "x": 2,
+     "y": 8,
+     "art": "explorer",
+     "face": "right",
+     "t": [
+      "Trainer: I come here after every route. Healing is free, so there's no excuse to push your luck."
+     ]
+    }
+   ]
+  },
+  "006": {
+   "id": "006",
+   "name": "Dustmere Shop",
+   "planet": "Dustara",
+   "dir": "01_dustara",
+   "type": "interior",
+   "img": "art/sections_game/01_dustara/006_dustmere_shop.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      13
+     ],
+     "to": "004",
+     "at": [
+      18,
+      11
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      13
+     ],
+     "to": "004",
+     "at": [
+      18,
+      11
+     ],
+     "face": "down",
+     "kind": "door"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      4,
+      6
+     ],
+     "k": "shop",
+     "why": "shop counter"
+    }
+   ],
+   "spawns": {
+    "door": [
+     7,
+     12
+    ],
+    "default": [
+     7,
+     12
+    ]
+   },
+   "parent": "004",
+   "pkey": "dustara",
+   "npcs": [
+    {
+     "x": 4,
+     "y": 5,
+     "art": "shop",
+     "face": "down",
+     "t": [
+      "Shopkeeper: Talk to me at the counter for pods and potions!"
+     ],
+     "name": "Shopkeeper"
+    },
+    {
+     "x": 10,
+     "y": 6,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Shopper: Gels heal, Cure Spray fixes poison and burns. I always carry both."
+     ]
+    }
+   ]
+  },
+  "007": {
+   "id": "007",
+   "name": "Dustmere Bridge",
+   "planet": "Dustara",
+   "dir": "01_dustara",
+   "type": "landmark",
+   "img": "art/sections_game/01_dustara/007_dustmere_bridge.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "The humming canyon bridge (story: Zib's signal, M02). Long wooden-and-brass bridge over a deep canyon, glowing rune lamps",
+   "edges": {
+    "left": {
+     "to": "004",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    },
+    "right": {
+     "to": "008",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [],
+   "objects": [],
+   "spawns": {
+    "default": [
+     1,
+     7
+    ]
+   },
+   "grid": [
+    24,
+    0
+   ],
+   "pkey": "dustara",
+   "npcs": [
+    {
+     "x": 19,
+     "y": 7,
+     "art": "wanderer",
+     "face": "down",
+     "t": [
+      "Hiker: Don't look down. That canyon goes all the way to the old lava falls."
+     ]
+    },
+    {
+     "x": 4,
+     "y": 7,
+     "art": "technician",
+     "face": "down",
+     "t": [
+      "Bridge keeper: This bridge was built by Ferrox steelworkers. Not a single rivet has slipped in forty years."
+     ]
+    }
+   ],
+   "mons": [
+    {
+     "x": 0,
+     "y": 9,
+     "mon": "Kilnback"
+    },
+    {
+     "x": 23,
+     "y": 9,
+     "mon": "Squawktone"
+    }
+   ]
+  },
+  "008": {
+   "id": "008",
+   "name": "Trading Post",
+   "planet": "Dustara",
+   "dir": "01_dustara",
+   "type": "town",
+   "img": "art/sections_game/01_dustara/008_trading_post.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Small outpost of stalls and a corral where Sola waits (M03 first rival battle)",
+   "edges": {
+    "left": {
+     "to": "007",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    },
+    "right": {
+     "to": "009",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [],
+   "objects": [],
+   "spawns": {
+    "default": [
+     1,
+     7
+    ]
+   },
+   "grid": [
+    48,
+    0
+   ],
+   "pkey": "dustara",
+   "npcs": [
+    {
+     "x": 4,
+     "y": 7,
+     "art": "technician",
+     "face": "down",
+     "t": [
+      "Trader: Everything here came over the Molten Frontier on a cart. Prices reflect the danger!"
+     ]
+    },
+    {
+     "x": 12,
+     "y": 8,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Merchant: I'd sell you a map, but the Frontier changes every time the volcano coughs."
+     ]
+    },
+    {
+     "x": 19,
+     "y": 7,
+     "art": "miner",
+     "face": "down",
+     "t": [
+      "Miner: The Sunset Tunnel past the cactus gardens is the only way through to the Frontier on foot."
+     ]
+    },
+    {
+     "x": 10,
+     "y": 8,
+     "art": "wanderer",
+     "face": "down",
+     "t": [
+      "Drifter: Sola trains out back every morning. Tough kid. Even tougher partner."
+     ]
+    },
+    {
+     "x": 11,
+     "y": 8,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Linker: Trainers on the trail will battle you the moment they spot you. Walk past them if you're feeling brave."
+     ]
+    }
+   ],
+   "mons": []
+  },
+  "009": {
+   "id": "009",
+   "name": "Rimwalk Trail Part A",
+   "planet": "Dustara",
+   "dir": "01_dustara",
+   "type": "route",
+   "img": "art/sections_game/01_dustara/009_rimwalk_trail_part_a.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Canyon-rim route with drift grass, ledges you hop down, trainers",
+   "edges": {
+    "left": {
+     "to": "008",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    },
+    "right": {
+     "to": "010",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [],
+   "objects": [],
+   "spawns": {
+    "default": [
+     1,
+     7
+    ]
+   },
+   "grid": [
+    72,
+    0
+   ],
+   "pkey": "dustara",
+   "npcs": [
+    {
+     "x": 18,
+     "y": 9,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Hiker: The Rimwalk Trail hugs the canyon edge. Great view, terrible place to trip."
+     ]
+    },
+    {
+     "x": 9,
+     "y": 8,
+     "art": "wanderer",
+     "face": "down",
+     "t": [
+      "Birdwatcher: I've seen Alienmon with wings riding the thermals over the canyon."
+     ]
+    },
+    {
+     "x": 3,
+     "y": 6,
+     "art": "explorer",
+     "face": "right",
+     "t": [],
+     "id": "sec009_tr2",
+     "trainer": {
+      "cls": "Linker",
+      "route": 1,
+      "name": "Suri"
+     }
+    },
+    {
+     "x": 13,
+     "y": 10,
+     "art": "wanderer",
+     "face": "left",
+     "t": [],
+     "id": "sec009_tr3",
+     "trainer": {
+      "cls": "Canyon Scout",
+      "route": 1,
+      "name": "Ida"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 20,
+     "y": 3,
+     "mon": "Kilnback"
+    },
+    {
+     "x": 6,
+     "y": 2,
+     "mon": "Squawktone"
+    }
+   ]
+  },
+  "010": {
+   "id": "010",
+   "name": "Rimwalk Trail Part B",
+   "planet": "Dustara",
+   "dir": "01_dustara",
+   "type": "route",
+   "img": "art/sections_game/01_dustara/010_rimwalk_trail_part_b.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Canyon-rim route with drift grass, ledges you hop down, trainers",
+   "edges": {
+    "left": {
+     "to": "009",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    },
+    "right": {
+     "to": "011",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [],
+   "objects": [],
+   "spawns": {
+    "default": [
+     1,
+     7
+    ]
+   },
+   "grid": [
+    96,
+    0
+   ],
+   "pkey": "dustara",
+   "npcs": [
+    {
+     "x": 17,
+     "y": 9,
+     "art": "researcher",
+     "face": "down",
+     "t": [
+      "Researcher: Different grass patches hold different Alienmon. Try them all!"
+     ]
+    },
+    {
+     "x": 8,
+     "y": 7,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Camper: If you're low on health, head back to Dustmere. Pride is not a healing item."
+     ]
+    },
+    {
+     "x": 14,
+     "y": 8,
+     "art": "wanderer",
+     "face": "right",
+     "t": [],
+     "id": "sec010_tr2",
+     "trainer": {
+      "cls": "Canyon Scout",
+      "route": 1,
+      "name": "Dex"
+     }
+    },
+    {
+     "x": 16,
+     "y": 12,
+     "art": "technician",
+     "face": "up",
+     "t": [],
+     "id": "sec010_tr3",
+     "trainer": {
+      "cls": "Mechanic",
+      "route": 1,
+      "name": "Vela"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 4,
+     "y": 2,
+     "mon": "Fizzlord"
+    },
+    {
+     "x": 21,
+     "y": 5,
+     "mon": "Skitterdrone"
+    }
+   ]
+  },
+  "011": {
+   "id": "011",
+   "name": "Cactus Gardens",
+   "planet": "Dustara",
+   "dir": "01_dustara",
+   "type": "field",
+   "img": "art/sections_game/01_dustara/011_cactus_gardens.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Maze of tall cacti and flowering succulents, drift grass, hidden items",
+   "edges": {
+    "left": {
+     "to": "010",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [
+    {
+     "tile": [
+      23,
+      7
+     ],
+     "to": "012",
+     "at": [
+      7,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right",
+     "node": "dustara"
+    },
+    {
+     "tile": [
+      23,
+      8
+     ],
+     "to": "012",
+     "at": [
+      8,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right",
+     "node": "dustara"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     1,
+     7
+    ]
+   },
+   "grid": [
+    120,
+    0
+   ],
+   "pkey": "dustara",
+   "npcs": [
+    {
+     "x": 16,
+     "y": 8,
+     "art": "sporefolk",
+     "face": "down",
+     "t": [
+      "Gardener: These cacti store water for months. Some Alienmon nest right inside them."
+     ]
+    },
+    {
+     "x": 8,
+     "y": 9,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Explorer: The Sunset Tunnel is just east. Bring light, it's a maze in there."
+     ]
+    },
+    {
+     "x": 20,
+     "y": 10,
+     "art": "technician",
+     "face": "down",
+     "t": [],
+     "id": "sec011_tr2",
+     "trainer": {
+      "cls": "Mechanic",
+      "route": 1,
+      "name": "Bram"
+     }
+    },
+    {
+     "x": 10,
+     "y": 12,
+     "art": "explorer",
+     "face": "up",
+     "t": [],
+     "id": "sec011_tr3",
+     "trainer": {
+      "cls": "Linker",
+      "route": 1,
+      "name": "Suri"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 9,
+     "y": 1,
+     "mon": "Kilnback"
+    },
+    {
+     "x": 21,
+     "y": 2,
+     "mon": "Squawktone"
+    }
+   ]
+  },
+  "012": {
+   "id": "012",
+   "name": "Sunset Tunnel B1",
+   "planet": "Dustara",
+   "dir": "01_dustara",
+   "type": "cave",
+   "img": "art/sections_game/01_dustara/012_sunset_tunnel_b1.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "Sandstone tunnel to the Molten Frontier; lantern-lit, boulders",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      15
+     ],
+     "to": "011",
+     "at": [
+      22,
+      7
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      8,
+      15
+     ],
+     "to": "011",
+     "at": [
+      22,
+      8
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      7,
+      0
+     ],
+     "to": "013",
+     "at": [
+      7,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      8,
+      0
+     ],
+     "to": "013",
+     "at": [
+      8,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     7,
+     14
+    ]
+   },
+   "pkey": "dustara",
+   "npcs": [
+    {
+     "x": 8,
+     "y": 3,
+     "art": "miner",
+     "face": "down",
+     "t": [
+      "Miner: Watch your step. The lanterns down here run on crystal shards."
+     ]
+    }
+   ]
+  },
+  "013": {
+   "id": "013",
+   "name": "Sunset Tunnel B2",
+   "planet": "Dustara",
+   "dir": "01_dustara",
+   "type": "cave",
+   "img": "art/sections_game/01_dustara/013_sunset_tunnel_b2.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "Sandstone tunnel to the Molten Frontier; lantern-lit, boulders",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      15
+     ],
+     "to": "012",
+     "at": [
+      7,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      8,
+      15
+     ],
+     "to": "012",
+     "at": [
+      8,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      7,
+      0
+     ],
+     "to": "014",
+     "at": [
+      1,
+      7
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      8,
+      0
+     ],
+     "to": "014",
+     "at": [
+      1,
+      8
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "top"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     7,
+     14
+    ]
+   },
+   "pkey": "dustara",
+   "npcs": [
+    {
+     "x": 6,
+     "y": 9,
+     "art": "miner",
+     "face": "down",
+     "t": [
+      "Old miner: You can feel the heat from here. The Molten Frontier is right above us."
+     ]
+    }
+   ]
+  },
+  "014": {
+   "id": "014",
+   "name": "Molten Frontier: Tunnel Mouth",
+   "planet": "Dustara",
+   "dir": "01_dustara",
+   "type": "route",
+   "img": "art/sections_game/01_dustara/014_molten_frontier_tunnel_mouth.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Exit of Sunset Tunnel onto volcanic far side",
+   "edges": {
+    "right": {
+     "to": "015",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [
+    {
+     "tile": [
+      0,
+      7
+     ],
+     "to": "013",
+     "at": [
+      7,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      8
+     ],
+     "to": "013",
+     "at": [
+      8,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "left"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     22,
+     7
+    ]
+   },
+   "zone": "thalassa",
+   "grid": [
+    0,
+    20
+   ],
+   "pkey": "dustara",
+   "npcs": [
+    {
+     "x": 12,
+     "y": 11,
+     "art": "guard",
+     "face": "down",
+     "t": [
+      "Guard: Welcome to the Molten Frontier. Stick to the trails and stay off anything glowing."
+     ]
+    },
+    {
+     "x": 15,
+     "y": 6,
+     "art": "wanderer",
+     "face": "down",
+     "t": [
+      "Traveller: The ash trail east leads to Palm Isle and Port Ember. Rest up there."
+     ]
+    },
+    {
+     "x": 3,
+     "y": 8,
+     "art": "guard",
+     "face": "down",
+     "t": [
+      "Guard: You're entering the Molten Frontier.",
+      "Helix built their forge fortress at the top of the ridge. Watch yourself up there."
+     ],
+     "wid": "mf2"
+    },
+    {
+     "x": 12,
+     "y": 4,
+     "art": "miner",
+     "face": "down",
+     "t": [
+      "Miner: That tunnel runs all the way under the sea to Sunset Canyon.",
+      "The ground's been rumbling since Helix started digging."
+     ],
+     "wid": "mf5"
+    }
+   ],
+   "mons": [
+    {
+     "x": 19,
+     "y": 13,
+     "mon": "Fizzlord"
+    },
+    {
+     "x": 6,
+     "y": 12,
+     "mon": "Skitterdrone"
+    }
+   ]
+  },
+  "015": {
+   "id": "015",
+   "name": "Molten Frontier: Ash Trail Part A",
+   "planet": "Dustara",
+   "dir": "01_dustara",
+   "type": "route",
+   "img": "art/sections_game/01_dustara/015_molten_frontier_ash_trail_part_a.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Ash fields, cooling lava channels",
+   "edges": {
+    "left": {
+     "to": "014",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    },
+    "right": {
+     "to": "016",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [],
+   "objects": [],
+   "spawns": {
+    "default": [
+     1,
+     7
+    ]
+   },
+   "zone": "thalassa",
+   "grid": [
+    24,
+    20
+   ],
+   "pkey": "dustara",
+   "npcs": [
+    {
+     "x": 9,
+     "y": 7,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Ash walker: The ash makes everything look grey, but the Alienmon out here are anything but dull."
+     ]
+    },
+    {
+     "x": 11,
+     "y": 8,
+     "art": "sporefolk",
+     "face": "down",
+     "t": [
+      "Sporefolk: Even here, spores find a way. The red blooms feed on lava heat."
+     ],
+     "wid": "mf11"
+    }
+   ],
+   "mons": [
+    {
+     "x": 12,
+     "y": 1,
+     "mon": "Kilnback"
+    },
+    {
+     "x": 18,
+     "y": 7,
+     "mon": "Squawktone"
+    }
+   ]
+  },
+  "016": {
+   "id": "016",
+   "name": "Molten Frontier: Ash Trail Part B",
+   "planet": "Dustara",
+   "dir": "01_dustara",
+   "type": "route",
+   "img": "art/sections_game/01_dustara/016_molten_frontier_ash_trail_part_b.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Ash fields, cooling lava channels",
+   "edges": {
+    "left": {
+     "to": "015",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    },
+    "right": {
+     "to": "017",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [],
+   "objects": [],
+   "spawns": {
+    "default": [
+     1,
+     7
+    ]
+   },
+   "zone": "thalassa",
+   "grid": [
+    48,
+    20
+   ],
+   "pkey": "dustara",
+   "npcs": [
+    {
+     "x": 5,
+     "y": 4,
+     "art": "wanderer",
+     "face": "down",
+     "t": [
+      "Nomad: Magma-types love the warm ground. Hydro moves cool them off fast."
+     ]
+    },
+    {
+     "x": 15,
+     "y": 7,
+     "art": "researcher",
+     "face": "down",
+     "t": [
+      "Geologist: These vents breathe every few minutes. Count to ten and you'll see."
+     ]
+    },
+    {
+     "x": 10,
+     "y": 8,
+     "art": "grub",
+     "face": "down",
+     "t": [
+      "Bug Catcher Grub: Fire bugs! The hottest bugs! Battle me!"
+     ],
+     "wid": "mf10",
+     "id": "mf10",
+     "trainer": {
+      "frontier": 1,
+      "name": "Lio"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 13,
+     "y": 13,
+     "mon": "Fizzlord"
+    },
+    {
+     "x": 18,
+     "y": 11,
+     "mon": "Skitterdrone"
+    }
+   ]
+  },
+  "017": {
+   "id": "017",
+   "name": "Molten Frontier: Palm Isle",
+   "planet": "Dustara",
+   "dir": "01_dustara",
+   "type": "field",
+   "img": "art/sections_game/01_dustara/017_molten_frontier_palm_isle.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Tropical island with Recovery Hut, palm trees, turquoise water",
+   "edges": {
+    "left": {
+     "to": "016",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    },
+    "right": {
+     "to": "018",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [],
+   "objects": [],
+   "spawns": {
+    "default": [
+     1,
+     7
+    ]
+   },
+   "zone": "thalassa",
+   "grid": [
+    72,
+    20
+   ],
+   "pkey": "dustara",
+   "npcs": [
+    {
+     "x": 12,
+     "y": 9,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Islander: Palm Isle is the only green spot for miles. The Recovery Hut here has saved a lot of Linkers."
+     ]
+    },
+    {
+     "x": 19,
+     "y": 7,
+     "art": "sporefolk",
+     "face": "down",
+     "t": [
+      "Fruit picker: Try the fire-coconuts. Crunchy outside, molten inside."
+     ]
+    },
+    {
+     "x": 17,
+     "y": 10,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Explorer: The hut here is a Recovery Hut. Rest up before you head into the lava fields.",
+      "Weaken a wild Alienmon with a Tether Pulse, shock it with a Stun Spray, then fire the transfer beam!"
+     ],
+     "wid": "mf3"
+    },
+    {
+     "x": 6,
+     "y": 9,
+     "art": "pilgrim",
+     "face": "right",
+     "t": [
+      "Pilgrim Sol: The island spirits test every traveler. Let's battle!"
+     ],
+     "wid": "mf4",
+     "id": "mf4",
+     "trainer": {
+      "frontier": 1,
+      "name": "Taro"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 21,
+     "y": 1,
+     "mon": "Kilnback"
+    },
+    {
+     "x": 10,
+     "y": 5,
+     "mon": "Squawktone"
+    }
+   ]
+  },
+  "018": {
+   "id": "018",
+   "name": "Molten Frontier: Port Ember",
+   "planet": "Dustara",
+   "dir": "01_dustara",
+   "type": "town",
+   "img": "art/sections_game/01_dustara/018_molten_frontier_port_ember.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Harbor village with the harbor Relay Gate (needs 2 Shards)",
+   "edges": {
+    "left": {
+     "to": "017",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    },
+    "right": {
+     "to": "019",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [
+    {
+     "tile": [
+      11,
+      14
+     ],
+     "to": "planet:thalassa",
+     "at": [
+      11,
+      13
+     ],
+     "face": "up",
+     "kind": "gate",
+     "node": "thalassa",
+     "label": "the harbor boat to Thalassa"
+    },
+    {
+     "tile": [
+      12,
+      14
+     ],
+     "to": "planet:thalassa",
+     "at": [
+      12,
+      13
+     ],
+     "face": "up",
+     "kind": "gate",
+     "node": "thalassa",
+     "label": "the harbor boat to Thalassa"
+    },
+    {
+     "tile": [
+      13,
+      14
+     ],
+     "to": "planet:thalassa",
+     "at": [
+      13,
+      13
+     ],
+     "face": "up",
+     "kind": "gate",
+     "node": "thalassa",
+     "label": "the harbor boat to Thalassa"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     1,
+     7
+    ]
+   },
+   "zone": "thalassa",
+   "grid": [
+    96,
+    20
+   ],
+   "pkey": "dustara",
+   "npcs": [
+    {
+     "x": 12,
+     "y": 8,
+     "art": "squidsailor",
+     "face": "down",
+     "t": [
+      "Sailor: The Deep Sea Ferry leaves from the long dock. Only cleared Linkers ride, though."
+     ]
+    },
+    {
+     "x": 10,
+     "y": 3,
+     "art": "technician",
+     "face": "down",
+     "t": [
+      "Dock mechanic: Helix boats have been prowling the harbor. Keep your pods close."
+     ]
+    },
+    {
+     "x": 11,
+     "y": 9,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Fish seller: Fresh from the ember sea! Well... warm from the ember sea."
+     ]
+    },
+    {
+     "x": 11,
+     "y": 8,
+     "art": "guard",
+     "face": "down",
+     "t": [
+      "Harbor guard: Port Ember's been a safe harbor for a hundred years. We intend to keep it that way."
+     ]
+    },
+    {
+     "x": 12,
+     "y": 9,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Linker: Every Keeper you beat gives you a Signal Shard. Eight of them and something big happens. Nobody agrees on what."
+     ]
+    },
+    {
+     "x": 5,
+     "y": 12,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Villager: Welcome to Port Ember, the last calm shore before the lava fields."
+     ],
+     "wid": "mf1"
+    }
+   ],
+   "mons": []
+  },
+  "019": {
+   "id": "019",
+   "name": "Molten Frontier: Long Dock",
+   "planet": "Dustara",
+   "dir": "01_dustara",
+   "type": "route",
+   "img": "art/sections_game/01_dustara/019_molten_frontier_long_dock.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Long wooden dock where the Deep Sea Ferry berths (M08 Sola's Choice scene)",
+   "edges": {
+    "left": {
+     "to": "018",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    },
+    "right": {
+     "to": "020",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [
+    {
+     "tile": [
+      18,
+      8
+     ],
+     "to": "planet:glyphos",
+     "at": [
+      18,
+      7
+     ],
+     "face": "up",
+     "kind": "gate",
+     "node": "glyphos",
+     "label": "the Deep Sea Ferry"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     1,
+     7
+    ]
+   },
+   "zone": "thalassa",
+   "grid": [
+    120,
+    20
+   ],
+   "pkey": "dustara",
+   "npcs": [
+    {
+     "x": 15,
+     "y": 5,
+     "art": "squidsailor",
+     "face": "down",
+     "t": [
+      "Deckhand: Mind the gaps between the planks. The sea down there is hot enough to boil soup."
+     ]
+    },
+    {
+     "x": 14,
+     "y": 7,
+     "art": "squidsailor",
+     "face": "down",
+     "t": [
+      "Squid Sailor: The ferry at the end of this dock sails to the Deep Sea Ruins.",
+      "Hop aboard whenever you're ready."
+     ],
+     "wid": "mf0"
+    }
+   ],
+   "mons": [
+    {
+     "x": 6,
+     "y": 5,
+     "mon": "Kilnback"
+    },
+    {
+     "x": 20,
+     "y": 2,
+     "mon": "Squawktone"
+    }
+   ]
+  },
+  "020": {
+   "id": "020",
+   "name": "Molten Frontier: Ridge Path Part A",
+   "planet": "Dustara",
+   "dir": "01_dustara",
+   "type": "route",
+   "img": "art/sections_game/01_dustara/020_molten_frontier_ridge_path_part_a.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Climbing ridge with ledges",
+   "edges": {
+    "left": {
+     "to": "019",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    },
+    "right": {
+     "to": "021",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [],
+   "objects": [],
+   "spawns": {
+    "default": [
+     1,
+     7
+    ]
+   },
+   "zone": "pyros",
+   "grid": [
+    144,
+    20
+   ],
+   "pkey": "dustara",
+   "npcs": [
+    {
+     "x": 18,
+     "y": 8,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Climber: The Ridge Path climbs toward the Forge Gate. Helix guards everywhere up there."
+     ]
+    },
+    {
+     "x": 12,
+     "y": 9,
+     "art": "researcher",
+     "face": "left",
+     "t": [
+      "Researcher Kel: Lava-forged Alienmon have incredible stats. Let me show you!"
+     ],
+     "wid": "mf6",
+     "id": "mf6",
+     "trainer": {
+      "frontier": 1,
+      "name": "Bo"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 16,
+     "y": 1,
+     "mon": "Fizzlord"
+    },
+    {
+     "x": 6,
+     "y": 1,
+     "mon": "Skitterdrone"
+    }
+   ]
+  },
+  "021": {
+   "id": "021",
+   "name": "Molten Frontier: Ridge Path Part B",
+   "planet": "Dustara",
+   "dir": "01_dustara",
+   "type": "route",
+   "img": "art/sections_game/01_dustara/021_molten_frontier_ridge_path_part_b.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Climbing ridge with ledges",
+   "edges": {
+    "left": {
+     "to": "020",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    },
+    "right": {
+     "to": "022",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [],
+   "objects": [],
+   "spawns": {
+    "default": [
+     1,
+     7
+    ]
+   },
+   "zone": "pyros",
+   "grid": [
+    168,
+    20
+   ],
+   "pkey": "dustara",
+   "npcs": [
+    {
+     "x": 13,
+     "y": 10,
+     "art": "wanderer",
+     "face": "down",
+     "t": [
+      "Scout: I saw Helix grunts hauling crates toward the fortress. Something's being built in there."
+     ]
+    },
+    {
+     "x": 12,
+     "y": 8,
+     "art": "wanderer",
+     "face": "down",
+     "t": [
+      "Wanderer: The paths wind down the ridge to the Forge Gate and the shuttle pad.",
+      "Wild Alienmon roam the trails between towns. Keep your team healthy."
+     ],
+     "wid": "mf9"
+    }
+   ],
+   "mons": [
+    {
+     "x": 9,
+     "y": 1,
+     "mon": "Kilnback"
+    },
+    {
+     "x": 21,
+     "y": 5,
+     "mon": "Squawktone"
+    }
+   ]
+  },
+  "022": {
+   "id": "022",
+   "name": "Molten Frontier: Forge Gate",
+   "planet": "Dustara",
+   "dir": "01_dustara",
+   "type": "landmark",
+   "img": "art/sections_game/01_dustara/022_molten_frontier_forge_gate.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Ystran Relay Gate to Ferrox, guarded by Forge Miner Dax",
+   "edges": {
+    "left": {
+     "to": "021",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    },
+    "right": {
+     "to": "023",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [
+    {
+     "tile": [
+      11,
+      4
+     ],
+     "to": "planet:ferrox",
+     "at": [
+      11,
+      5
+     ],
+     "face": "down",
+     "kind": "gate",
+     "node": "ferrox"
+    },
+    {
+     "tile": [
+      12,
+      4
+     ],
+     "to": "planet:ferrox",
+     "at": [
+      12,
+      5
+     ],
+     "face": "down",
+     "kind": "gate",
+     "node": "ferrox"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     1,
+     7
+    ]
+   },
+   "zone": "pyros",
+   "grid": [
+    192,
+    20
+   ],
+   "pkey": "dustara",
+   "npcs": [
+    {
+     "x": 19,
+     "y": 7,
+     "art": "miner",
+     "face": "down",
+     "t": [
+      "Forge worker: The Forge Gate opens toward Ferrox once you've proven yourself."
+     ]
+    },
+    {
+     "x": 12,
+     "y": 10,
+     "art": "guard",
+     "face": "down",
+     "t": [
+      "Gate guard: No clearance, no passage. Those are the rules."
+     ]
+    },
+    {
+     "x": 12,
+     "y": 7,
+     "art": "miner",
+     "face": "down",
+     "t": [
+      "Forge Miner Dax: The gate's mine to guard. Beat me first!"
+     ],
+     "wid": "mf12",
+     "id": "mf12",
+     "trainer": {
+      "frontier": 1,
+      "name": "Bo"
+     }
+    }
+   ],
+   "mons": []
+  },
+  "023": {
+   "id": "023",
+   "name": "Molten Frontier: Fortress Gate",
+   "planet": "Dustara",
+   "dir": "01_dustara",
+   "type": "landmark",
+   "img": "art/sections_game/01_dustara/023_molten_frontier_fortress_gate.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Helix Forge Fortress entrance, Helix grunt guard",
+   "edges": {
+    "left": {
+     "to": "022",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    },
+    "right": {
+     "to": "024",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [
+    {
+     "tile": [
+      11,
+      4
+     ],
+     "to": "planet:helix",
+     "at": [
+      11,
+      5
+     ],
+     "face": "down",
+     "kind": "gate",
+     "node": "helix",
+     "sub": "fortress",
+     "label": "the Helix Forge Fortress"
+    },
+    {
+     "tile": [
+      12,
+      4
+     ],
+     "to": "planet:helix",
+     "at": [
+      12,
+      5
+     ],
+     "face": "down",
+     "kind": "gate",
+     "node": "helix",
+     "sub": "fortress",
+     "label": "the Helix Forge Fortress"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     1,
+     7
+    ]
+   },
+   "zone": "pyros",
+   "grid": [
+    216,
+    20
+   ],
+   "pkey": "dustara",
+   "npcs": [
+    {
+     "x": 12,
+     "y": 11,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Refugee: Helix took the old forge and turned it into a fortress. We had to leave everything."
+     ]
+    },
+    {
+     "x": 12,
+     "y": 7,
+     "art": "guard",
+     "face": "down",
+     "t": [
+      "Helix Grunt: Halt! This forge belongs to the Helix Directive!"
+     ],
+     "wid": "mf7",
+     "until": "M19",
+     "id": "mf7",
+     "trainer": {
+      "frontier": 1,
+      "name": "Yuki"
+     }
+    },
+    {
+     "x": 12,
+     "y": 7,
+     "art": "guard",
+     "face": "down",
+     "t": [
+      "Former Helix worker: Helix is finished. I just want to fix things now."
+     ],
+     "wid": "mf7",
+     "after": "M19"
+    },
+    {
+     "x": 11,
+     "y": 9,
+     "art": "grub",
+     "face": "down",
+     "t": [
+      "Grub: Psst. I used to work in that Forge. I know a way in.",
+      "Grub: Beat the grunt at the door, then find the control room terminal. The keycard is in there."
+     ],
+     "name": "Grub",
+     "after": "M11",
+     "until": "M13"
+    }
+   ],
+   "mons": []
+  },
+  "024": {
+   "id": "024",
+   "name": "Molten Frontier: Lava Bridges Part A",
+   "planet": "Dustara",
+   "dir": "01_dustara",
+   "type": "route",
+   "img": "art/sections_game/01_dustara/024_molten_frontier_lava_bridges_part_a.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Iron bridges over lava rivers",
+   "edges": {
+    "left": {
+     "to": "023",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    },
+    "right": {
+     "to": "025",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [],
+   "objects": [],
+   "spawns": {
+    "default": [
+     1,
+     7
+    ]
+   },
+   "zone": "pyros",
+   "grid": [
+    240,
+    20
+   ],
+   "pkey": "dustara",
+   "npcs": [
+    {
+     "x": 18,
+     "y": 3,
+     "art": "technician",
+     "face": "down",
+     "t": [
+      "Bridge tech: These lava bridges are cooled by pumps. If they stop, run."
+     ]
+    }
+   ],
+   "mons": [
+    {
+     "x": 5,
+     "y": 8,
+     "mon": "Fizzlord"
+    },
+    {
+     "x": 21,
+     "y": 12,
+     "mon": "Skitterdrone"
+    }
+   ]
+  },
+  "025": {
+   "id": "025",
+   "name": "Molten Frontier: Lava Bridges Part B",
+   "planet": "Dustara",
+   "dir": "01_dustara",
+   "type": "route",
+   "img": "art/sections_game/01_dustara/025_molten_frontier_lava_bridges_part_b.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Iron bridges over lava rivers",
+   "edges": {
+    "left": {
+     "to": "024",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    },
+    "right": {
+     "to": "026",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [],
+   "objects": [],
+   "spawns": {
+    "default": [
+     1,
+     7
+    ]
+   },
+   "zone": "pyros",
+   "grid": [
+    264,
+    20
+   ],
+   "pkey": "dustara",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 10,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Linker: Almost at the shuttle pad. Ships to the far planets launch from there."
+     ]
+    },
+    {
+     "x": 12,
+     "y": 6,
+     "art": "technician",
+     "face": "down",
+     "t": [
+      "Technician: This dish relays every signal in the Frontier.",
+      "Lately it keeps catching a pulse from the Starfall crater. Same rhythm, every night."
+     ],
+     "wid": "mf8"
+    }
+   ],
+   "mons": [
+    {
+     "x": 2,
+     "y": 1,
+     "mon": "Kilnback"
+    },
+    {
+     "x": 17,
+     "y": 3,
+     "mon": "Squawktone"
+    }
+   ]
+  },
+  "026": {
+   "id": "026",
+   "name": "Molten Frontier: Shuttle Pad",
+   "planet": "Dustara",
+   "dir": "01_dustara",
+   "type": "landmark",
+   "img": "art/sections_game/01_dustara/026_molten_frontier_shuttle_pad.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Fortress Shuttle Pad to Helix Station",
+   "edges": {
+    "left": {
+     "to": "025",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    },
+    "right": {
+     "to": "027",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [
+    {
+     "tile": [
+      15,
+      4
+     ],
+     "to": "planet:helix",
+     "at": [
+      15,
+      5
+     ],
+     "face": "down",
+     "kind": "gate",
+     "options": [
+      {
+       "node": "space",
+       "planet": "helix",
+       "label": "Shuttle to Helix Station"
+      },
+      {
+       "node": "starfall",
+       "planet": "starfall",
+       "label": "Crater shuttle to Starfall"
+      }
+     ]
+    },
+    {
+     "tile": [
+      16,
+      4
+     ],
+     "to": "planet:helix",
+     "at": [
+      16,
+      5
+     ],
+     "face": "down",
+     "kind": "gate",
+     "options": [
+      {
+       "node": "space",
+       "planet": "helix",
+       "label": "Shuttle to Helix Station"
+      },
+      {
+       "node": "starfall",
+       "planet": "starfall",
+       "label": "Crater shuttle to Starfall"
+      }
+     ]
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     1,
+     7
+    ]
+   },
+   "zone": "pyros",
+   "grid": [
+    288,
+    20
+   ],
+   "pkey": "dustara",
+   "npcs": [
+    {
+     "x": 16,
+     "y": 7,
+     "art": "technician",
+     "face": "down",
+     "t": [
+      "Pad controller: Shuttles leave when the board says so. The board says 'not yet'."
+     ]
+    },
+    {
+     "x": 5,
+     "y": 7,
+     "art": "guard",
+     "face": "down",
+     "t": [
+      "Helix deserter: I flew shuttles for Helix. Never again. Ask me nothing about the Director."
+     ]
+    },
+    {
+     "x": 18,
+     "y": 5,
+     "art": "strand",
+     "face": "down",
+     "t": [
+      "Strand: Helix shuttles fly from this pad straight to the Starfall Rift.",
+      "Whatever they're hauling out there, they don't want anyone to see."
+     ],
+     "wid": "mf13"
+    }
+   ],
+   "mons": [
+    {
+     "x": 22,
+     "y": 10,
+     "mon": "Fizzlord"
+    },
+    {
+     "x": 14,
+     "y": 13,
+     "mon": "Skitterdrone"
+    }
+   ]
+  },
+  "027": {
+   "id": "027",
+   "name": "Molten Frontier: Shadow Tunnel Mouth",
+   "planet": "Dustara",
+   "dir": "01_dustara",
+   "type": "landmark",
+   "img": "art/sections_game/01_dustara/027_molten_frontier_shadow_tunnel_mouth.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Dark tunnel mouth leading to Umbra",
+   "edges": {
+    "left": {
+     "to": "026",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    },
+    "right": {
+     "to": "028",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [
+    {
+     "tile": [
+      15,
+      4
+     ],
+     "to": "planet:umbra",
+     "at": [
+      15,
+      5
+     ],
+     "face": "down",
+     "kind": "gate",
+     "node": "umbra",
+     "label": "the Shadow Tunnel"
+    },
+    {
+     "tile": [
+      16,
+      4
+     ],
+     "to": "planet:umbra",
+     "at": [
+      16,
+      5
+     ],
+     "face": "down",
+     "kind": "gate",
+     "node": "umbra",
+     "label": "the Shadow Tunnel"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     1,
+     7
+    ]
+   },
+   "zone": "pyros",
+   "grid": [
+    312,
+    20
+   ],
+   "pkey": "dustara",
+   "npcs": [
+    {
+     "x": 15,
+     "y": 8,
+     "art": "wanderer",
+     "face": "down",
+     "t": [
+      "Lantern keeper: The Shadow Tunnel leads to Umbra. The dark in there plays tricks on you."
+     ]
+    }
+   ],
+   "mons": [
+    {
+     "x": 1,
+     "y": 4,
+     "mon": "Kilnback"
+    },
+    {
+     "x": 3,
+     "y": 10,
+     "mon": "Squawktone"
+    }
+   ]
+  },
+  "028": {
+   "id": "028",
+   "name": "Molten Frontier: Magma Mines Gate",
+   "planet": "Dustara",
+   "dir": "01_dustara",
+   "type": "landmark",
+   "img": "art/sections_game/01_dustara/028_molten_frontier_magma_mines_gate.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Sealed glowing-red Ystran door to Pyros",
+   "edges": {
+    "left": {
+     "to": "027",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [
+    {
+     "tile": [
+      15,
+      4
+     ],
+     "to": "planet:pyros",
+     "at": [
+      15,
+      5
+     ],
+     "face": "down",
+     "kind": "gate",
+     "node": "pyros",
+     "label": "the Magma Mines"
+    },
+    {
+     "tile": [
+      16,
+      4
+     ],
+     "to": "planet:pyros",
+     "at": [
+      16,
+      5
+     ],
+     "face": "down",
+     "kind": "gate",
+     "node": "pyros",
+     "label": "the Magma Mines"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     1,
+     7
+    ]
+   },
+   "zone": "pyros",
+   "grid": [
+    336,
+    20
+   ],
+   "pkey": "dustara",
+   "npcs": [
+    {
+     "x": 7,
+     "y": 8,
+     "art": "miner",
+     "face": "down",
+     "t": [
+      "Mine foreman: The Magma Mines run all the way down to Pyros' crust. Hard hats mandatory."
+     ]
+    },
+    {
+     "x": 10,
+     "y": 8,
+     "art": "ystran",
+     "face": "down",
+     "t": [
+      "Ystran echo: ...the mountain's heart burns like Ystra's dying sun...",
+      "...the Magma Mines go deeper than anyone has dared..."
+     ],
+     "wid": "mf14"
+    }
+   ],
+   "mons": [
+    {
+     "x": 4,
+     "y": 2,
+     "mon": "Fizzlord"
+    },
+    {
+     "x": 3,
+     "y": 12,
+     "mon": "Skitterdrone"
+    }
+   ]
+  },
+  "029": {
+   "id": "029",
+   "name": "Gate Plaza",
+   "planet": "Ferrox",
+   "dir": "02_ferrox",
+   "type": "landmark",
+   "img": "art/sections_game/02_ferrox/029_gate_plaza.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Arrival plaza around the Relay Gate",
+   "edges": {
+    "left": {
+     "to": "arrival",
+     "range": [
+      7,
+      8
+     ]
+    },
+    "right": {
+     "to": "030",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [],
+   "objects": [],
+   "spawns": {
+    "arrival": [
+     1,
+     7
+    ],
+    "default": [
+     1,
+     7
+    ]
+   },
+   "grid": [
+    0,
+    0
+   ],
+   "pkey": "ferrox",
+   "npcs": [
+    {
+     "x": 11,
+     "y": 8,
+     "art": "guard",
+     "face": "down",
+     "t": [
+      "Gate guard: Welcome to Ferrox. Mind the rails, the ore carts don't stop for anyone."
+     ]
+    },
+    {
+     "x": 13,
+     "y": 12,
+     "art": "technician",
+     "face": "down",
+     "t": [
+      "Porter: Everything that lands here gets weighed, stamped and argued over. That's Ferrox for you."
+     ]
+    },
+    {
+     "x": 7,
+     "y": 7,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Traveller: First time on Ferrox? Rustvale is just east. Best scrap stew in the system."
+     ]
+    }
+   ],
+   "mons": [
+    {
+     "x": 22,
+     "y": 4,
+     "mon": "Anvilox"
+    },
+    {
+     "x": 0,
+     "y": 9,
+     "mon": "Gongorr"
+    }
+   ]
+  },
+  "030": {
+   "id": "030",
+   "name": "Rustvale",
+   "planet": "Ferrox",
+   "dir": "02_ferrox",
+   "type": "town",
+   "img": "art/sections_game/02_ferrox/030_rustvale.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Shanty town of shacks and converted rail cars",
+   "edges": {
+    "left": {
+     "to": "029",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    },
+    "right": {
+     "to": "034",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [
+    {
+     "tile": [
+      16,
+      5
+     ],
+     "to": "031",
+     "at": [
+      7,
+      12
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    },
+    {
+     "tile": [
+      6,
+      10
+     ],
+     "to": "032",
+     "at": [
+      7,
+      12
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    },
+    {
+     "tile": [
+      6,
+      4
+     ],
+     "to": "033",
+     "at": [
+      7,
+      12
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     1,
+     7
+    ]
+   },
+   "grid": [
+    24,
+    0
+   ],
+   "pkey": "ferrox",
+   "npcs": [
+    {
+     "x": 8,
+     "y": 7,
+     "art": "technician",
+     "face": "down",
+     "t": [
+      "Scrapper: Everything here is built from junk. Even the Relay Tower."
+     ]
+    },
+    {
+     "x": 12,
+     "y": 11,
+     "art": "miner",
+     "face": "down",
+     "t": [
+      "Rail hand: Alloy-types love the rail yard. Bring something that burns."
+     ]
+    },
+    {
+     "x": 16,
+     "y": 7,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Kid: Hank's Alienmon are tough as old boilers!"
+     ]
+    },
+    {
+     "x": 9,
+     "y": 9,
+     "art": "guard",
+     "face": "down",
+     "t": [
+      "Watchman: Helix suits were sniffing around the crane yard last night. Hank's not happy."
+     ]
+    },
+    {
+     "x": 17,
+     "y": 8,
+     "art": "wanderer",
+     "face": "down",
+     "t": [
+      "Old welder: Hank Briggs runs the tower at the end of Furnace Ridge. You'll need a Shard's worth of guts to face him."
+     ]
+    },
+    {
+     "x": 7,
+     "y": 7,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Linker: Magma moves melt Alloy-types fast. Volt moves just bounce off."
+     ]
+    }
+   ],
+   "mons": [
+    {
+     "x": 5,
+     "y": 13,
+     "mon": "Magnub"
+    }
+   ]
+  },
+  "031": {
+   "id": "031",
+   "name": "Rustvale Recovery Bay",
+   "planet": "Ferrox",
+   "dir": "02_ferrox",
+   "type": "interior",
+   "img": "art/sections_game/02_ferrox/031_rustvale_recovery_bay.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      13
+     ],
+     "to": "030",
+     "at": [
+      16,
+      6
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      13
+     ],
+     "to": "030",
+     "at": [
+      16,
+      6
+     ],
+     "face": "down",
+     "kind": "door"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      7,
+      7
+     ],
+     "k": "bay",
+     "why": "Recovery Bay counter"
+    }
+   ],
+   "spawns": {
+    "door": [
+     7,
+     12
+    ],
+    "default": [
+     7,
+     12
+    ]
+   },
+   "parent": "030",
+   "pkey": "ferrox",
+   "npcs": [
+    {
+     "x": 7,
+     "y": 5,
+     "art": "nurse",
+     "face": "down",
+     "t": [
+      "Nurse: Welcome to the Rustvale Recovery Bay. Step up to the counter!"
+     ],
+     "name": "Nurse"
+    },
+    {
+     "x": 9,
+     "y": 10,
+     "art": "miner",
+     "face": "down",
+     "t": [
+      "Miner: I patch up my Alienmon here after every shift. The nurse doesn't even charge for the soot."
+     ]
+    }
+   ]
+  },
+  "032": {
+   "id": "032",
+   "name": "Rustvale Shop",
+   "planet": "Ferrox",
+   "dir": "02_ferrox",
+   "type": "interior",
+   "img": "art/sections_game/02_ferrox/032_rustvale_shop.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      13
+     ],
+     "to": "030",
+     "at": [
+      6,
+      11
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      13
+     ],
+     "to": "030",
+     "at": [
+      6,
+      11
+     ],
+     "face": "down",
+     "kind": "door"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      6,
+      8
+     ],
+     "k": "shop",
+     "why": "L-shaped shop counter, used from its right side"
+    }
+   ],
+   "spawns": {
+    "door": [
+     7,
+     12
+    ],
+    "default": [
+     7,
+     12
+    ]
+   },
+   "parent": "030",
+   "pkey": "ferrox",
+   "npcs": [
+    {
+     "x": 5,
+     "y": 8,
+     "art": "shop",
+     "face": "down",
+     "t": [
+      "Shopkeeper: Pods, gels, sprays. Talk to me at the counter."
+     ],
+     "name": "Shopkeeper"
+    },
+    {
+     "x": 8,
+     "y": 11,
+     "art": "technician",
+     "face": "down",
+     "t": [
+      "Customer: Stun Spray is a lifesaver on the Scrap Route. Those junk-types hit hard."
+     ]
+    }
+   ]
+  },
+  "033": {
+   "id": "033",
+   "name": "Grub's Workshop",
+   "planet": "Ferrox",
+   "dir": "02_ferrox",
+   "type": "interior",
+   "img": "art/sections_game/02_ferrox/033_grub_s_workshop.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "Grub's cluttered scrap workshop",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      13
+     ],
+     "to": "030",
+     "at": [
+      6,
+      5
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      13
+     ],
+     "to": "030",
+     "at": [
+      6,
+      5
+     ],
+     "face": "down",
+     "kind": "door"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "door": [
+     7,
+     12
+    ],
+    "default": [
+     7,
+     12
+    ]
+   },
+   "parent": "030",
+   "pkey": "ferrox",
+   "npcs": [
+    {
+     "x": 6,
+     "y": 9,
+     "art": "grub",
+     "face": "down",
+     "t": [
+      "Grub: Mind the parts. Half of these are holding the other half together.",
+      "Grub: Come back when you've seen a bit more of Ferrox. I might have work for you."
+     ],
+     "name": "Grub"
+    }
+   ]
+  },
+  "034": {
+   "id": "034",
+   "name": "Scrap Route Part A",
+   "planet": "Ferrox",
+   "dir": "02_ferrox",
+   "type": "route",
+   "img": "art/sections_game/02_ferrox/034_scrap_route_part_a.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Route through scrap mountains",
+   "edges": {
+    "left": {
+     "to": "030",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    },
+    "right": {
+     "to": "035",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [],
+   "objects": [],
+   "spawns": {
+    "default": [
+     1,
+     7
+    ]
+   },
+   "grid": [
+    48,
+    0
+   ],
+   "pkey": "ferrox",
+   "npcs": [
+    {
+     "x": 12,
+     "y": 9,
+     "art": "technician",
+     "face": "down",
+     "t": [
+      "Scavenger: The Scrap Route is all junk piles and loose rails. Alienmon love hiding in the scrap."
+     ]
+    },
+    {
+     "x": 3,
+     "y": 6,
+     "art": "miner",
+     "face": "down",
+     "t": [
+      "Hauler: My cart threw a wheel. Again. Third time this week."
+     ]
+    },
+    {
+     "x": 7,
+     "y": 8,
+     "art": "miner",
+     "face": "left",
+     "t": [],
+     "id": "sec034_tr2",
+     "trainer": {
+      "cls": "Miner",
+      "route": 1,
+      "name": "Rhee"
+     }
+    },
+    {
+     "x": 12,
+     "y": 3,
+     "art": "guard",
+     "face": "left",
+     "t": [],
+     "id": "sec034_tr3",
+     "trainer": {
+      "cls": "Rail Hand",
+      "route": 1,
+      "name": "Oz"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 20,
+     "y": 3,
+     "mon": "Gearhound"
+    },
+    {
+     "x": 18,
+     "y": 14,
+     "mon": "Coilossus"
+    }
+   ]
+  },
+  "035": {
+   "id": "035",
+   "name": "Scrap Route Part B",
+   "planet": "Ferrox",
+   "dir": "02_ferrox",
+   "type": "route",
+   "img": "art/sections_game/02_ferrox/035_scrap_route_part_b.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Route through scrap mountains",
+   "edges": {
+    "left": {
+     "to": "034",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    },
+    "right": {
+     "to": "036",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [],
+   "objects": [],
+   "spawns": {
+    "default": [
+     1,
+     7
+    ]
+   },
+   "grid": [
+    72,
+    0
+   ],
+   "pkey": "ferrox",
+   "npcs": [
+    {
+     "x": 15,
+     "y": 8,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Hiker: Tall rust-grass is where the wild ones hide. Walk around it if your team is tired."
+     ]
+    },
+    {
+     "x": 7,
+     "y": 4,
+     "art": "wanderer",
+     "face": "down",
+     "t": [
+      "Drifter: The crane yard's next. Watch for falling crates."
+     ]
+    },
+    {
+     "x": 9,
+     "y": 12,
+     "art": "guard",
+     "face": "left",
+     "t": [],
+     "id": "sec035_tr2",
+     "trainer": {
+      "cls": "Rail Hand",
+      "route": 1,
+      "name": "Bo"
+     }
+    },
+    {
+     "x": 4,
+     "y": 7,
+     "art": "technician",
+     "face": "left",
+     "t": [],
+     "id": "sec035_tr3",
+     "trainer": {
+      "cls": "Scrapper",
+      "route": 1,
+      "name": "Dex"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 20,
+     "y": 10,
+     "mon": "Anvilox"
+    },
+    {
+     "x": 3,
+     "y": 2,
+     "mon": "Gongorr"
+    }
+   ]
+  },
+  "036": {
+   "id": "036",
+   "name": "Crane Yard",
+   "planet": "Ferrox",
+   "dir": "02_ferrox",
+   "type": "field",
+   "img": "art/sections_game/02_ferrox/036_crane_yard.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Swinging cranes, container stacks (Crane Yard Brawl)",
+   "edges": {
+    "left": {
+     "to": "035",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    },
+    "right": {
+     "to": "037",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [],
+   "objects": [],
+   "spawns": {
+    "default": [
+     1,
+     7
+    ]
+   },
+   "grid": [
+    96,
+    0
+   ],
+   "pkey": "ferrox",
+   "npcs": [
+    {
+     "x": 4,
+     "y": 9,
+     "art": "technician",
+     "face": "down",
+     "t": [
+      "Crane operator: Three junkers keep jamming my cranes. Hank wants them taught a lesson."
+     ]
+    },
+    {
+     "x": 9,
+     "y": 4,
+     "art": "guard",
+     "face": "down",
+     "t": [
+      "Yard guard: No Helix allowed in this yard. Not after what they pulled last month."
+     ]
+    },
+    {
+     "x": 14,
+     "y": 7,
+     "art": "technician",
+     "face": "right",
+     "t": [],
+     "id": "sec036_tr2",
+     "trainer": {
+      "cls": "Scrapper",
+      "route": 1,
+      "name": "Sol"
+     }
+    },
+    {
+     "x": 19,
+     "y": 6,
+     "art": "miner",
+     "face": "down",
+     "t": [],
+     "id": "sec036_tr3",
+     "trainer": {
+      "cls": "Miner",
+      "route": 1,
+      "name": "Bo"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 10,
+     "y": 14,
+     "mon": "Gearhound"
+    },
+    {
+     "x": 6,
+     "y": 12,
+     "mon": "Coilossus"
+    }
+   ]
+  },
+  "037": {
+   "id": "037",
+   "name": "Junk Market",
+   "planet": "Ferrox",
+   "dir": "02_ferrox",
+   "type": "town",
+   "img": "art/sections_game/02_ferrox/037_junk_market.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Open-air junk market stalls",
+   "edges": {
+    "left": {
+     "to": "036",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    },
+    "right": {
+     "to": "038",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [],
+   "objects": [],
+   "spawns": {
+    "default": [
+     1,
+     7
+    ]
+   },
+   "grid": [
+    120,
+    0
+   ],
+   "pkey": "ferrox",
+   "npcs": [
+    {
+     "x": 14,
+     "y": 12,
+     "art": "technician",
+     "face": "down",
+     "t": [
+      "Junk dealer: One Linker's trash is another Linker's treasure. Mostly it's just trash."
+     ]
+    },
+    {
+     "x": 17,
+     "y": 6,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Shopper: I came for a bolt and left with a jetpack. It doesn't work, but still."
+     ]
+    },
+    {
+     "x": 15,
+     "y": 11,
+     "art": "miner",
+     "face": "down",
+     "t": [
+      "Ore trader: Ferrox ore powers half the ships in the system. Helix wants all of it."
+     ]
+    },
+    {
+     "x": 18,
+     "y": 6,
+     "art": "wanderer",
+     "face": "down",
+     "t": [
+      "Fortune teller: I see... a tower. And a man with a very large wrench."
+     ]
+    }
+   ],
+   "mons": [
+    {
+     "x": 2,
+     "y": 1,
+     "mon": "Magnub"
+    }
+   ]
+  },
+  "038": {
+   "id": "038",
+   "name": "Furnace Ridge",
+   "planet": "Ferrox",
+   "dir": "02_ferrox",
+   "type": "route",
+   "img": "art/sections_game/02_ferrox/038_furnace_ridge.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Ridge of smoking furnaces",
+   "edges": {
+    "left": {
+     "to": "037",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [
+    {
+     "tile": [
+      23,
+      7
+     ],
+     "to": "039",
+     "at": [
+      7,
+      22
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      8
+     ],
+     "to": "039",
+     "at": [
+      8,
+      22
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     1,
+     7
+    ]
+   },
+   "grid": [
+    144,
+    0
+   ],
+   "pkey": "ferrox",
+   "npcs": [
+    {
+     "x": 15,
+     "y": 8,
+     "art": "miner",
+     "face": "down",
+     "t": [
+      "Furnace worker: The heat up here peels paint off ships. Keep your Alienmon hydrated."
+     ]
+    },
+    {
+     "x": 4,
+     "y": 8,
+     "art": "guard",
+     "face": "down",
+     "t": [
+      "Guard: Ferrox Tower is just ahead. Hank Briggs is the Keeper. Good luck, kid."
+     ]
+    },
+    {
+     "x": 20,
+     "y": 7,
+     "art": "guard",
+     "face": "left",
+     "t": [],
+     "id": "sec038_tr2",
+     "trainer": {
+      "cls": "Rail Hand",
+      "route": 1,
+      "name": "Rook"
+     }
+    },
+    {
+     "x": 12,
+     "y": 10,
+     "art": "technician",
+     "face": "right",
+     "t": [],
+     "id": "sec038_tr3",
+     "trainer": {
+      "cls": "Scrapper",
+      "route": 1,
+      "name": "Kai"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 6,
+     "y": 4,
+     "mon": "Gearhound"
+    },
+    {
+     "x": 13,
+     "y": 1,
+     "mon": "Coilossus"
+    }
+   ]
+  },
+  "039": {
+   "id": "039",
+   "name": "Ferrox Tower 1F",
+   "planet": "Ferrox",
+   "dir": "02_ferrox",
+   "type": "tower",
+   "img": "art/sections_game/02_ferrox/039_ferrox_tower_1f.png",
+   "tiles": [
+    16,
+    24
+   ],
+   "notes": "Keeper Hank Briggs's tower, 2 floors",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      23
+     ],
+     "to": "038",
+     "at": [
+      22,
+      7
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      8,
+      23
+     ],
+     "to": "038",
+     "at": [
+      22,
+      8
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      7,
+      0
+     ],
+     "to": "040",
+     "at": [
+      7,
+      22
+     ],
+     "face": "up",
+     "kind": "stairs",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      8,
+      0
+     ],
+     "to": "040",
+     "at": [
+      8,
+      22
+     ],
+     "face": "up",
+     "kind": "stairs",
+     "edge": "top"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     7,
+     22
+    ]
+   },
+   "pkey": "ferrox",
+   "npcs": [
+    {
+     "x": 9,
+     "y": 15,
+     "art": "technician",
+     "face": "down",
+     "t": [
+      "Tower engineer: Hank's apprentices train on this floor. The Keeper waits upstairs."
+     ]
+    },
+    {
+     "x": 9,
+     "y": 6,
+     "art": "guard",
+     "face": "left",
+     "t": [],
+     "id": "sec039_app1",
+     "trainer": {
+      "cls": "Apprentice",
+      "app": 1,
+      "name": "Milo"
+     }
+    },
+    {
+     "x": 6,
+     "y": 20,
+     "art": "technician",
+     "face": "right",
+     "t": [],
+     "id": "sec039_app2",
+     "trainer": {
+      "cls": "Apprentice",
+      "app": 1,
+      "name": "Juno"
+     }
+    }
+   ]
+  },
+  "040": {
+   "id": "040",
+   "name": "Ferrox Tower 2F",
+   "planet": "Ferrox",
+   "dir": "02_ferrox",
+   "type": "tower",
+   "img": "art/sections_game/02_ferrox/040_ferrox_tower_2f.png",
+   "tiles": [
+    16,
+    24
+   ],
+   "notes": "Keeper Hank Briggs's tower, 2 floors",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      23
+     ],
+     "to": "039",
+     "at": [
+      7,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      8,
+      23
+     ],
+     "to": "039",
+     "at": [
+      8,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      7,
+      2
+     ],
+     "k": "keeper",
+     "why": "Keeper's dais at the far end of the arena, challenged from (7,3)"
+    }
+   ],
+   "spawns": {
+    "default": [
+     7,
+     22
+    ]
+   },
+   "pkey": "ferrox"
+  }
+ },
+ "connections": [
+  {
+   "from_id": "004",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "arrival",
+   "to_edge": null,
+   "to_tile": null
+  },
+  {
+   "from_id": "004",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "007",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "007",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "004",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "007",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "008",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "008",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "007",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "008",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "009",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "009",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "008",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "009",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "010",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "010",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "009",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "010",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "011",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "011",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "010",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "011",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "012",
+   "to_edge": "bottom",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "012",
+   "edge": "bottom",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "011",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "012",
+   "edge": "top",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "013",
+   "to_edge": "bottom",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "013",
+   "edge": "bottom",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "012",
+   "to_edge": "top",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "013",
+   "edge": "top",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "014",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "014",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "013",
+   "to_edge": "top",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "014",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "015",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "015",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "014",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "015",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "016",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "016",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "015",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "016",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "017",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "017",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "016",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "017",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "018",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "018",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "017",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "018",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "019",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "019",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "018",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "019",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "020",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "020",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "019",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "020",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "021",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "021",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "020",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "021",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "022",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "022",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "021",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "022",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "023",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "023",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "022",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "023",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "024",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "024",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "023",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "024",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "025",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "025",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "024",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "025",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "026",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "026",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "025",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "026",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "027",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "027",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "026",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "027",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "028",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "028",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "027",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "029",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "arrival",
+   "to_edge": null,
+   "to_tile": null
+  },
+  {
+   "from_id": "029",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "030",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "030",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "029",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "030",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "034",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "034",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "030",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "034",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "035",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "035",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "034",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "035",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "036",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "036",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "035",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "036",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "037",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "037",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "036",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "037",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "038",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "038",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "037",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "038",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "039",
+   "to_edge": "bottom",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "039",
+   "edge": "bottom",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "038",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "039",
+   "edge": "top",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "040",
+   "to_edge": "bottom",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "040",
+   "edge": "bottom",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "039",
+   "to_edge": "top",
+   "to_tile": [
+    7,
+    8
+   ]
+  }
+ ]
+}

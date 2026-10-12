@@ -1,0 +1,1732 @@
+{
+ "version": 1,
+ "tile": 16,
+ "screen_tiles": [
+  10,
+  9
+ ],
+ "arrival": {
+  "dustara": {
+   "section": "004",
+   "edge": "left",
+   "why": "atlas: 004 left edge -> arrival (landing pad / gate)"
+  },
+  "ferrox": {
+   "section": "029",
+   "edge": "left",
+   "why": "atlas: 029 left edge -> arrival (landing pad / gate)"
+  },
+  "glacia": {
+   "section": "093",
+   "why": "atlas exit marked arrival"
+  }
+ },
+ "quest_spots": {
+  "M12:giver": {
+   "s": "093",
+   "x": 11,
+   "y": 7
+  },
+  "M12:0": {
+   "s": "101",
+   "x": 13,
+   "y": 7,
+   "pts": [
+    [
+     13,
+     7
+    ],
+    [
+     7,
+     8
+    ],
+    [
+     11,
+     12
+    ]
+   ]
+  },
+  "M12:1": {
+   "s": "104",
+   "x": 8,
+   "y": 12
+  },
+  "S80:giver": {
+   "s": "093",
+   "x": 14,
+   "y": 7
+  },
+  "S80:0": {
+   "s": "097",
+   "x": 12,
+   "y": 8,
+   "pts": [
+    [
+     12,
+     8
+    ],
+    [
+     9,
+     4
+    ],
+    [
+     16,
+     5
+    ]
+   ]
+  },
+  "S81:giver": {
+   "s": "098",
+   "x": 8,
+   "y": 11
+  },
+  "S81:0": {
+   "s": "098",
+   "x": 8,
+   "y": 12
+  },
+  "S82:giver": {
+   "s": "102",
+   "x": 5,
+   "y": 9
+  },
+  "S82:0": {
+   "s": "102",
+   "x": 11,
+   "y": 7
+  }
+ },
+ "sections": {
+  "093": {
+   "id": "093",
+   "name": "Frostmark",
+   "planet": "Glacia",
+   "dir": "08_glacia",
+   "type": "town",
+   "img": "art/sections_game/08_glacia/093_frostmark.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Research town under aurora skies",
+   "edges": {
+    "left": {
+     "to": "arrival",
+     "range": [
+      7,
+      8
+     ]
+    },
+    "right": {
+     "to": "096",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [
+    {
+     "tile": [
+      17,
+      6
+     ],
+     "to": "094",
+     "at": [
+      7,
+      12
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    },
+    {
+     "tile": [
+      7,
+      8
+     ],
+     "to": "095",
+     "at": [
+      7,
+      12
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      12,
+      9
+     ],
+     "k": "sign",
+     "t": [
+      "Frostmark Research Station. The crystal in this fountain was cut from the glacier and never melts.",
+      "Founded by survey crews who came for the aurora and stayed for the ice."
+     ]
+    }
+   ],
+   "spawns": {
+    "arrival": [
+     1,
+     7
+    ],
+    "default": [
+     1,
+     7
+    ]
+   },
+   "grid": [
+    0,
+    0
+   ],
+   "pkey": "glacia",
+   "npcs": [
+    {
+     "x": 7,
+     "y": 1,
+     "art": "researcher",
+     "face": "down",
+     "t": [
+      "Researcher: Something huge is frozen inside the glacier wall past the caverns.",
+      "We call it the Teeth in the Ice. Nobody sleeps well near it."
+     ]
+    },
+    {
+     "x": 4,
+     "y": 6,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Climber: Ice paths are slick. Jump the cracks, don't walk them.",
+      "Aurora Route has frost grass. Wild Alienmon love it."
+     ]
+    },
+    {
+     "x": 11,
+     "y": 6,
+     "art": "technician",
+     "face": "down",
+     "t": [
+      "Radio tech: Our antennas pick up signals from the Starfall Rift.",
+      "Lately they pulse in sync with the aurora. Spooky, right?"
+     ]
+    },
+    {
+     "x": 3,
+     "y": 7,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Townsfolk: The Recovery Bay is the dome with the cyan cross. Heal before the caverns!"
+     ]
+    },
+    {
+     "x": 13,
+     "y": 11,
+     "art": "guard",
+     "face": "down",
+     "t": [
+      "Guard: Helix crews keep asking for dig permits. The station keeps saying no.",
+      "If you see anyone in a Helix strand-suit near the fossils, tell us."
+     ]
+    },
+    {
+     "x": 17,
+     "y": 13,
+     "art": "wanderer",
+     "face": "down",
+     "t": [
+      "Wanderer: Keeper Ingrid lives up in Aurora Tower, past the Frozen Falls.",
+      "Win a Signal Shard from her and you'll have really earned it."
+     ]
+    },
+    {
+     "x": 18,
+     "y": 13,
+     "art": "mom",
+     "face": "down",
+     "t": [
+      "Mom: My kids want to catch a Cryo-type. I said only after their homework thaws."
+     ]
+    }
+   ],
+   "mons": [
+    {
+     "x": 9,
+     "y": 10,
+     "mon": "Lichling"
+    }
+   ]
+  },
+  "094": {
+   "id": "094",
+   "name": "Frostmark Recovery Bay",
+   "planet": "Glacia",
+   "dir": "08_glacia",
+   "type": "interior",
+   "img": "art/sections_game/08_glacia/094_frostmark_recovery_bay.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      13
+     ],
+     "to": "093",
+     "at": [
+      17,
+      7
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      13
+     ],
+     "to": "093",
+     "at": [
+      17,
+      7
+     ],
+     "face": "down",
+     "kind": "door"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      7,
+      7
+     ],
+     "k": "bay",
+     "why": "Recovery Bay curved counter in front of the healing pods"
+    }
+   ],
+   "spawns": {
+    "door": [
+     7,
+     12
+    ],
+    "default": [
+     7,
+     12
+    ]
+   },
+   "parent": "093",
+   "pkey": "glacia",
+   "npcs": [
+    {
+     "x": 7,
+     "y": 6,
+     "art": "nurse",
+     "face": "down",
+     "t": [
+      "Nurse: Welcome to the Frostmark Recovery Bay. Let's warm your team right up."
+     ],
+     "name": "Nurse"
+    },
+    {
+     "x": 12,
+     "y": 9,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Climber: Cold doesn't bother Cryo-types, but everyone else hates the caverns.",
+      "Heal here before you head out. It's a long walk back."
+     ]
+    }
+   ]
+  },
+  "095": {
+   "id": "095",
+   "name": "Frostmark Shop",
+   "planet": "Glacia",
+   "dir": "08_glacia",
+   "type": "interior",
+   "img": "art/sections_game/08_glacia/095_frostmark_shop.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      13
+     ],
+     "to": "093",
+     "at": [
+      7,
+      9
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      13
+     ],
+     "to": "093",
+     "at": [
+      7,
+      9
+     ],
+     "face": "down",
+     "kind": "door"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      3,
+      8
+     ],
+     "k": "shop",
+     "why": "L-shaped shop counter on the left"
+    }
+   ],
+   "spawns": {
+    "door": [
+     7,
+     12
+    ],
+    "default": [
+     7,
+     12
+    ]
+   },
+   "parent": "093",
+   "pkey": "glacia",
+   "npcs": [
+    {
+     "x": 3,
+     "y": 7,
+     "art": "shop",
+     "face": "down",
+     "t": [
+      "Clerk: Stasis Pods, gels, warm socks. Okay, not socks. Take a look!"
+     ],
+     "name": "Clerk"
+    },
+    {
+     "x": 8,
+     "y": 11,
+     "art": "researcher",
+     "face": "down",
+     "t": [
+      "Researcher: I buy Stasis Pods by the crate. Cave Alienmon break out a lot."
+     ]
+    }
+   ]
+  },
+  "096": {
+   "id": "096",
+   "name": "Aurora Route Part A",
+   "planet": "Glacia",
+   "dir": "08_glacia",
+   "type": "route",
+   "img": "art/sections_game/08_glacia/096_aurora_route_part_a.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Snowfield route",
+   "edges": {
+    "left": {
+     "to": "093",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    },
+    "right": {
+     "to": "097",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [],
+   "objects": [
+    {
+     "tile": [
+      20,
+      10
+     ],
+     "k": "sign",
+     "t": [
+      "Aurora Route. West: Frostmark. East: Crystal Caverns.",
+      "Warning: frost grass hides wild Alienmon. Keep a Stasis Pod handy."
+     ]
+    }
+   ],
+   "spawns": {
+    "default": [
+     1,
+     7
+    ]
+   },
+   "grid": [
+    24,
+    0
+   ],
+   "pkey": "glacia",
+   "npcs": [
+    {
+     "x": 4,
+     "y": 1,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Climber: Trainers spot you from a few tiles away. Step out of their line if your team is hurt."
+     ]
+    },
+    {
+     "x": 13,
+     "y": 13,
+     "art": "researcher",
+     "face": "down",
+     "t": [
+      "Researcher: The aurora isn't just pretty. It carries a signal. We just can't read it yet."
+     ]
+    },
+    {
+     "x": 15,
+     "y": 7,
+     "art": "researcher",
+     "face": "down",
+     "t": [],
+     "id": "sec096_tr2",
+     "trainer": {
+      "cls": "Researcher",
+      "route": 1,
+      "name": "Bo"
+     }
+    },
+    {
+     "x": 8,
+     "y": 6,
+     "art": "explorer",
+     "face": "down",
+     "t": [],
+     "id": "sec096_tr3",
+     "trainer": {
+      "cls": "Climber",
+      "route": 1,
+      "name": "Rook"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 3,
+     "y": 9,
+     "mon": "Iceburr"
+    },
+    {
+     "x": 7,
+     "y": 14,
+     "mon": "Glaciarch"
+    }
+   ]
+  },
+  "097": {
+   "id": "097",
+   "name": "Aurora Route Part B",
+   "planet": "Glacia",
+   "dir": "08_glacia",
+   "type": "route",
+   "img": "art/sections_game/08_glacia/097_aurora_route_part_b.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Snowfield route",
+   "edges": {
+    "left": {
+     "to": "096",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [
+    {
+     "tile": [
+      23,
+      7
+     ],
+     "to": "098",
+     "at": [
+      7,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      8
+     ],
+     "to": "098",
+     "at": [
+      8,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     1,
+     7
+    ]
+   },
+   "grid": [
+    48,
+    0
+   ],
+   "pkey": "glacia",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 7,
+     "art": "technician",
+     "face": "down",
+     "t": [
+      "Radio tech: The Crystal Caverns are ahead. Three floors deep, then up into the Fossil Dig."
+     ]
+    },
+    {
+     "x": 6,
+     "y": 2,
+     "art": "wanderer",
+     "face": "down",
+     "t": [
+      "Wanderer: Fire melts ice, they say. Bring something hot for Ingrid's team."
+     ]
+    },
+    {
+     "x": 7,
+     "y": 11,
+     "art": "explorer",
+     "face": "down",
+     "t": [],
+     "id": "sec097_tr2",
+     "trainer": {
+      "cls": "Climber",
+      "route": 1,
+      "name": "Nyx"
+     }
+    },
+    {
+     "x": 13,
+     "y": 10,
+     "art": "technician",
+     "face": "left",
+     "t": [],
+     "id": "sec097_tr3",
+     "trainer": {
+      "cls": "Radio Tech",
+      "route": 1,
+      "name": "Tamsin"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 17,
+     "y": 5,
+     "mon": "Floelord"
+    },
+    {
+     "x": 4,
+     "y": 8,
+     "mon": "Aurorix"
+    }
+   ]
+  },
+  "098": {
+   "id": "098",
+   "name": "Crystal Caverns B1",
+   "planet": "Glacia",
+   "dir": "08_glacia",
+   "type": "cave",
+   "img": "art/sections_game/08_glacia/098_crystal_caverns_b1.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "Ice caves with crystal icicles, 3 floors",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      15
+     ],
+     "to": "097",
+     "at": [
+      22,
+      7
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      8,
+      15
+     ],
+     "to": "097",
+     "at": [
+      22,
+      8
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      7,
+      0
+     ],
+     "to": "099",
+     "at": [
+      7,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      8,
+      0
+     ],
+     "to": "099",
+     "at": [
+      8,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     7,
+     14
+    ]
+   },
+   "pkey": "glacia",
+   "npcs": [
+    {
+     "x": 5,
+     "y": 8,
+     "art": "miner",
+     "face": "down",
+     "t": [
+      "Miner: These crystals sing when you tap them. Don't. The wild ones hear it too."
+     ]
+    },
+    {
+     "x": 11,
+     "y": 8,
+     "art": "technician",
+     "face": "right",
+     "t": [],
+     "id": "sec098_tr1",
+     "trainer": {
+      "cls": "Radio Tech",
+      "route": 1,
+      "name": "Taro"
+     }
+    }
+   ]
+  },
+  "099": {
+   "id": "099",
+   "name": "Crystal Caverns B2",
+   "planet": "Glacia",
+   "dir": "08_glacia",
+   "type": "cave",
+   "img": "art/sections_game/08_glacia/099_crystal_caverns_b2.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "Ice caves with crystal icicles, 3 floors",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      15
+     ],
+     "to": "098",
+     "at": [
+      7,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      8,
+      15
+     ],
+     "to": "098",
+     "at": [
+      8,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      7,
+      0
+     ],
+     "to": "100",
+     "at": [
+      7,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      8,
+      0
+     ],
+     "to": "100",
+     "at": [
+      8,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     7,
+     14
+    ]
+   },
+   "pkey": "glacia",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 10,
+     "art": "researcher",
+     "face": "down",
+     "t": [
+      "Researcher: My Alienmon fainted in the cold once. Always carry a Revive Spark down here."
+     ]
+    },
+    {
+     "x": 6,
+     "y": 4,
+     "art": "researcher",
+     "face": "right",
+     "t": [],
+     "id": "sec099_tr1",
+     "trainer": {
+      "cls": "Researcher",
+      "route": 1,
+      "name": "Bo"
+     }
+    }
+   ]
+  },
+  "100": {
+   "id": "100",
+   "name": "Crystal Caverns B3",
+   "planet": "Glacia",
+   "dir": "08_glacia",
+   "type": "cave",
+   "img": "art/sections_game/08_glacia/100_crystal_caverns_b3.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "Ice caves with crystal icicles, 3 floors",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      15
+     ],
+     "to": "099",
+     "at": [
+      7,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      8,
+      15
+     ],
+     "to": "099",
+     "at": [
+      8,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      7,
+      0
+     ],
+     "to": "101",
+     "at": [
+      1,
+      7
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      8,
+      0
+     ],
+     "to": "101",
+     "at": [
+      1,
+      8
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "top"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      9,
+      5
+     ],
+     "k": "sign",
+     "t": [
+      "The crystal wall looks almost like a wing... something huge is folded up inside the ice.",
+      "A scratched note: 'Fossil Dig is just above. Mind the stairs.'"
+     ]
+    }
+   ],
+   "spawns": {
+    "default": [
+     7,
+     14
+    ]
+   },
+   "pkey": "glacia",
+   "npcs": [
+    {
+     "x": 5,
+     "y": 5,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Climber: The stairs above lead to the Fossil Dig. Look closely at those bite marks."
+     ]
+    },
+    {
+     "x": 6,
+     "y": 12,
+     "art": "explorer",
+     "face": "down",
+     "t": [],
+     "id": "sec100_tr1",
+     "trainer": {
+      "cls": "Climber",
+      "route": 1,
+      "name": "Tamsin"
+     }
+    }
+   ]
+  },
+  "101": {
+   "id": "101",
+   "name": "Fossil Dig",
+   "planet": "Glacia",
+   "dir": "08_glacia",
+   "type": "field",
+   "img": "art/sections_game/08_glacia/101_fossil_dig.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Dig site with a giant Ystran creature frozen in the glacier wall (Teeth in the ice)",
+   "edges": {
+    "right": {
+     "to": "102",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [
+    {
+     "tile": [
+      0,
+      7
+     ],
+     "to": "100",
+     "at": [
+      7,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      8
+     ],
+     "to": "100",
+     "at": [
+      8,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "left"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      6,
+      4
+     ],
+     "k": "sign",
+     "t": [
+      "Frozen fossil site #1. A jawbone longer than a shuttle, gouged by teeth from something even bigger.",
+      "The bite marks are ringed with frost that never thaws."
+     ]
+    },
+    {
+     "tile": [
+      12,
+      5
+     ],
+     "k": "sign",
+     "t": [
+      "Frozen fossil site #2. Ribs snapped clean through. The tooth marks are as wide as a road.",
+      "Field tag: 'Predator unknown. Size: impossible.'"
+     ]
+    },
+    {
+     "tile": [
+      12,
+      8
+     ],
+     "k": "sign",
+     "t": [
+      "Frozen fossil site #3. A thighbone with one huge crescent bite taken out of it.",
+      "Three sites, one bite pattern. Whatever ate these was the size of a moon."
+     ]
+    },
+    {
+     "tile": [
+      8,
+      10
+     ],
+     "k": "sign",
+     "t": [
+      "The Teeth in the Ice: a giant Ystran creature, frozen mid-roar in the glacier wall.",
+      "Dig crews say it hums when the aurora is bright."
+     ]
+    }
+   ],
+   "spawns": {
+    "default": [
+     22,
+     7
+    ]
+   },
+   "grid": [
+    0,
+    20
+   ],
+   "pkey": "glacia",
+   "npcs": [
+    {
+     "x": 15,
+     "y": 13,
+     "art": "researcher",
+     "face": "down",
+     "t": [
+      "Dig chief: Three fossil sites, same bite pattern every time. Read the markers."
+     ]
+    },
+    {
+     "x": 2,
+     "y": 5,
+     "art": "miner",
+     "face": "down",
+     "t": [
+      "Digger: I asked Helix for better drills. They asked where the biggest bones were.",
+      "I didn't tell them."
+     ]
+    },
+    {
+     "x": 14,
+     "y": 6,
+     "art": "technician",
+     "face": "down",
+     "t": [],
+     "id": "sec101_tr2",
+     "trainer": {
+      "cls": "Radio Tech",
+      "route": 1,
+      "name": "Ines"
+     }
+    },
+    {
+     "x": 21,
+     "y": 6,
+     "art": "researcher",
+     "face": "left",
+     "t": [],
+     "id": "sec101_tr3",
+     "trainer": {
+      "cls": "Researcher",
+      "route": 1,
+      "name": "Fenn"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 19,
+     "y": 10,
+     "mon": "Floelord"
+    },
+    {
+     "x": 3,
+     "y": 13,
+     "mon": "Aurorix"
+    }
+   ]
+  },
+  "102": {
+   "id": "102",
+   "name": "Frozen Falls",
+   "planet": "Glacia",
+   "dir": "08_glacia",
+   "type": "landmark",
+   "img": "art/sections_game/08_glacia/102_frozen_falls.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Frozen waterfall (Glaciryx)",
+   "edges": {
+    "left": {
+     "to": "101",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [
+    {
+     "tile": [
+      23,
+      7
+     ],
+     "to": "103",
+     "at": [
+      7,
+      22
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      8
+     ],
+     "to": "103",
+     "at": [
+      8,
+      22
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      12,
+      6
+     ],
+     "k": "sign",
+     "t": [
+      "Frozen Falls. The water froze mid-plunge, all at once, in a single night.",
+      "Locals swear a Glaciryx nests behind the ice curtain."
+     ]
+    }
+   ],
+   "spawns": {
+    "default": [
+     1,
+     7
+    ]
+   },
+   "grid": [
+    24,
+    20
+   ],
+   "pkey": "glacia",
+   "npcs": [
+    {
+     "x": 21,
+     "y": 7,
+     "art": "pilgrim",
+     "face": "down",
+     "t": [
+      "Pilgrim: The falls froze the night the aurora turned violet. I come here to listen."
+     ]
+    },
+    {
+     "x": 20,
+     "y": 6,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Climber: Aurora Tower is just east. Ingrid trains Cryo-types up top."
+     ]
+    }
+   ],
+   "mons": []
+  },
+  "103": {
+   "id": "103",
+   "name": "Aurora Tower 1F",
+   "planet": "Glacia",
+   "dir": "08_glacia",
+   "type": "tower",
+   "img": "art/sections_game/08_glacia/103_aurora_tower_1f.png",
+   "tiles": [
+    16,
+    24
+   ],
+   "notes": "Keeper Ingrid's tower",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      23
+     ],
+     "to": "102",
+     "at": [
+      22,
+      7
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      8,
+      23
+     ],
+     "to": "102",
+     "at": [
+      22,
+      8
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      7,
+      0
+     ],
+     "to": "104",
+     "at": [
+      7,
+      22
+     ],
+     "face": "up",
+     "kind": "stairs",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      8,
+      0
+     ],
+     "to": "104",
+     "at": [
+      8,
+      22
+     ],
+     "face": "up",
+     "kind": "stairs",
+     "edge": "top"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      7,
+      10
+     ],
+     "k": "sign",
+     "t": [
+      "Aurora Relay Crystal. It pulses in time with the sky.",
+      "Plaque: 'Keeper Ingrid Vale awaits challengers on the floor above.'"
+     ]
+    }
+   ],
+   "spawns": {
+    "default": [
+     7,
+     22
+    ]
+   },
+   "pkey": "glacia",
+   "npcs": [
+    {
+     "x": 8,
+     "y": 18,
+     "art": "technician",
+     "face": "down",
+     "t": [
+      "Relay tech: This tower boosts the aurora signal across the whole system.",
+      "Ingrid's apprentices will test you on the way up."
+     ]
+    },
+    {
+     "x": 6,
+     "y": 19,
+     "art": "researcher",
+     "face": "right",
+     "t": [],
+     "id": "sec103_app1",
+     "trainer": {
+      "cls": "Apprentice",
+      "app": 1,
+      "name": "Bo"
+     }
+    },
+    {
+     "x": 9,
+     "y": 3,
+     "art": "explorer",
+     "face": "left",
+     "t": [],
+     "id": "sec103_app2",
+     "trainer": {
+      "cls": "Apprentice",
+      "app": 1,
+      "name": "Quill"
+     }
+    }
+   ]
+  },
+  "104": {
+   "id": "104",
+   "name": "Aurora Tower 2F",
+   "planet": "Glacia",
+   "dir": "08_glacia",
+   "type": "tower",
+   "img": "art/sections_game/08_glacia/104_aurora_tower_2f.png",
+   "tiles": [
+    16,
+    24
+   ],
+   "notes": "Keeper Ingrid's tower",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      23
+     ],
+     "to": "103",
+     "at": [
+      7,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      8,
+      23
+     ],
+     "to": "103",
+     "at": [
+      8,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      7,
+      2
+     ],
+     "k": "keeper",
+     "why": "Ingrid Vale at the top of Aurora Tower 2F, below the sealed stairs"
+    }
+   ],
+   "spawns": {
+    "default": [
+     7,
+     22
+    ]
+   },
+   "pkey": "glacia",
+   "npcs": [
+    {
+     "x": 8,
+     "y": 13,
+     "art": "researcher",
+     "face": "down",
+     "t": [
+      "Researcher: Ingrid reads ice cores like books. She says the ice remembers the Devourer."
+     ]
+    }
+   ]
+  }
+ },
+ "connections": [
+  {
+   "from_id": "093",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "arrival",
+   "to_edge": null,
+   "to_tile": null
+  },
+  {
+   "from_id": "093",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "096",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "096",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "093",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "096",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "097",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "097",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "096",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "097",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "098",
+   "to_edge": "bottom",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "098",
+   "edge": "bottom",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "097",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "098",
+   "edge": "top",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "099",
+   "to_edge": "bottom",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "099",
+   "edge": "bottom",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "098",
+   "to_edge": "top",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "099",
+   "edge": "top",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "100",
+   "to_edge": "bottom",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "100",
+   "edge": "bottom",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "099",
+   "to_edge": "top",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "100",
+   "edge": "top",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "101",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "101",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "100",
+   "to_edge": "top",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "101",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "102",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "102",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "101",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "102",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "103",
+   "to_edge": "bottom",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "103",
+   "edge": "bottom",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "102",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "103",
+   "edge": "top",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "104",
+   "to_edge": "bottom",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "104",
+   "edge": "bottom",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "103",
+   "to_edge": "top",
+   "to_tile": [
+    7,
+    8
+   ]
+  }
+ ]
+}

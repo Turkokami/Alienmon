@@ -1,0 +1,1397 @@
+{
+ "version": 1,
+ "tile": 16,
+ "screen_tiles": [
+  10,
+  9
+ ],
+ "arrival": {
+  "dustara": {
+   "section": "004",
+   "edge": "left",
+   "why": "atlas: 004 left edge -> arrival (landing pad / gate)"
+  },
+  "ferrox": {
+   "section": "029",
+   "edge": "left",
+   "why": "atlas: 029 left edge -> arrival (landing pad / gate)"
+  },
+  "thalassa": {
+   "section": "052",
+   "why": "atlas exit marked arrival"
+  }
+ },
+ "quest_spots": {
+  "M07:1": {
+   "s": "052",
+   "x": 11,
+   "y": 8
+  },
+  "M07:2": {
+   "s": "061",
+   "x": 12,
+   "y": 12
+  },
+  "S40:giver": {
+   "s": "052",
+   "x": 8,
+   "y": 8
+  },
+  "S40:0": {
+   "s": "052",
+   "x": 12,
+   "y": 9,
+   "pts": [
+    [
+     12,
+     9
+    ],
+    [
+     11,
+     3
+    ],
+    [
+     16,
+     6
+    ]
+   ]
+  },
+  "S41:giver": {
+   "s": "057",
+   "x": 5,
+   "y": 7
+  },
+  "S42:giver": {
+   "s": "059",
+   "x": 8,
+   "y": 6
+  },
+  "S42:0": {
+   "s": "059",
+   "x": 8,
+   "y": 8
+  }
+ },
+ "sections": {
+  "052": {
+   "id": "052",
+   "name": "Port Saltreach Docks",
+   "planet": "Thalassa",
+   "dir": "04_thalassa",
+   "type": "town",
+   "img": "art/sections_game/04_thalassa/052_port_saltreach_docks.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Fog-bound docks, net sheds, stilt houses",
+   "edges": {
+    "left": {
+     "to": "arrival",
+     "range": [
+      7,
+      8
+     ]
+    },
+    "right": {
+     "to": "053",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [
+    {
+     "tile": [
+      16,
+      4
+     ],
+     "to": "054",
+     "at": [
+      7,
+      12
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    },
+    {
+     "tile": [
+      8,
+      11
+     ],
+     "to": "055",
+     "at": [
+      7,
+      12
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      12,
+      7
+     ],
+     "k": "sign",
+     "t": [
+      "PORT SALTREACH DOCKS. Mind the fog, mind the nets, mind the gap between the piers."
+     ]
+    }
+   ],
+   "spawns": {
+    "arrival": [
+     1,
+     7
+    ],
+    "default": [
+     1,
+     7
+    ]
+   },
+   "grid": [
+    0,
+    0
+   ],
+   "pkey": "thalassa",
+   "npcs": [
+    {
+     "x": 16,
+     "y": 7,
+     "art": "squidsailor",
+     "face": "down",
+     "t": [
+      "Sailor: Welcome to Port Saltreach! The fog rolls in every morning, thick as chowder."
+     ]
+    },
+    {
+     "x": 5,
+     "y": 8,
+     "art": "guard",
+     "face": "down",
+     "t": [
+      "Dockhand: Helix boats were circling the harbor again last night. White coats, no flags. Shady."
+     ]
+    },
+    {
+     "x": 10,
+     "y": 6,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Swimmer: Hydro types are everywhere here. Bring something with Volt moves and they'll fold fast."
+     ]
+    },
+    {
+     "x": 14,
+     "y": 8,
+     "art": "mom",
+     "face": "down",
+     "t": [
+      "Net-mender: The big dome up top is the Recovery Bay. Rest your Alienmon there, it's free."
+     ]
+    },
+    {
+     "x": 9,
+     "y": 8,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Diver: Tall weeds on the coral bars hide wild Alienmon. The shallows are full of them."
+     ]
+    },
+    {
+     "x": 18,
+     "y": 6,
+     "art": "wanderer",
+     "face": "down",
+     "t": [
+      "Old salt: Thalassa's rings throw rainbows on the water at noon. Best view's from the lighthouse."
+     ]
+    }
+   ],
+   "mons": []
+  },
+  "053": {
+   "id": "053",
+   "name": "Saltreach Market",
+   "planet": "Thalassa",
+   "dir": "04_thalassa",
+   "type": "town",
+   "img": "art/sections_game/04_thalassa/053_saltreach_market.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Harbor market",
+   "edges": {
+    "left": {
+     "to": "052",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [
+    {
+     "tile": [
+      23,
+      7
+     ],
+     "to": "056",
+     "at": [
+      7,
+      22
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      8
+     ],
+     "to": "056",
+     "at": [
+      8,
+      22
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      12,
+      8
+     ],
+     "k": "sign",
+     "t": [
+      "SALTREACH MARKET. Fresh catch at dawn, fair prices till dusk. No haggling with the gulls."
+     ]
+    }
+   ],
+   "spawns": {
+    "default": [
+     1,
+     7
+    ]
+   },
+   "grid": [
+    24,
+    0
+   ],
+   "pkey": "thalassa",
+   "npcs": [
+    {
+     "x": 5,
+     "y": 6,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Fishmonger: Fresh catch! ...No, you can't catch it with a Stasis Pod. It's a fish. It's dead."
+     ]
+    },
+    {
+     "x": 14,
+     "y": 11,
+     "art": "squidsailor",
+     "face": "down",
+     "t": [
+      "Sailor: Lighthouse is east, past the market. The old Captain's Log is still up there."
+     ]
+    },
+    {
+     "x": 3,
+     "y": 8,
+     "art": "mom",
+     "face": "down",
+     "t": [
+      "Shopper: Stock up on Stasis Pods at the docks shop. A weakened Alienmon is easier to catch."
+     ]
+    },
+    {
+     "x": 17,
+     "y": 6,
+     "art": "technician",
+     "face": "down",
+     "t": [
+      "Mechanic: Captain Marsh's tower relays signals for the whole system. Or it did, till Helix came."
+     ]
+    },
+    {
+     "x": 7,
+     "y": 8,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Traveller: Keepers guard the Relay Towers. Win and they hand you a Signal Shard."
+     ]
+    },
+    {
+     "x": 4,
+     "y": 12,
+     "art": "guard",
+     "face": "down",
+     "t": [
+      "Harbor guard: Trainers on the routes will spot you if you walk into their line of sight. Be ready."
+     ]
+    },
+    {
+     "x": 22,
+     "y": 12,
+     "art": "wanderer",
+     "face": "down",
+     "t": [
+      "Storyteller: They say Anchorath sleeps under the sea arch, and the tide turns when it dreams."
+     ]
+    }
+   ],
+   "mons": [
+    {
+     "x": 2,
+     "y": 1,
+     "mon": "Tidepull"
+    }
+   ]
+  },
+  "054": {
+   "id": "054",
+   "name": "Saltreach Recovery Bay",
+   "planet": "Thalassa",
+   "dir": "04_thalassa",
+   "type": "interior",
+   "img": "art/sections_game/04_thalassa/054_saltreach_recovery_bay.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      13
+     ],
+     "to": "052",
+     "at": [
+      16,
+      5
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      13
+     ],
+     "to": "052",
+     "at": [
+      16,
+      5
+     ],
+     "face": "down",
+     "kind": "door"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      8,
+      7
+     ],
+     "k": "bay"
+    }
+   ],
+   "spawns": {
+    "door": [
+     7,
+     12
+    ],
+    "default": [
+     7,
+     12
+    ]
+   },
+   "parent": "052",
+   "pkey": "thalassa",
+   "npcs": [
+    {
+     "x": 8,
+     "y": 6,
+     "art": "nurse",
+     "face": "down",
+     "t": [
+      "Nurse: Welcome to the Saltreach Recovery Bay. Your Alienmon will be shipshape in no time."
+     ]
+    },
+    {
+     "x": 5,
+     "y": 11,
+     "art": "squidsailor",
+     "face": "down",
+     "t": [
+      "Sailor: I come here after every storm. Even my Alienmon get seasick, believe it or not."
+     ]
+    }
+   ]
+  },
+  "055": {
+   "id": "055",
+   "name": "Saltreach Shop",
+   "planet": "Thalassa",
+   "dir": "04_thalassa",
+   "type": "interior",
+   "img": "art/sections_game/04_thalassa/055_saltreach_shop.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      13
+     ],
+     "to": "052",
+     "at": [
+      8,
+      12
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      13
+     ],
+     "to": "052",
+     "at": [
+      8,
+      12
+     ],
+     "face": "down",
+     "kind": "door"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      5,
+      7
+     ],
+     "k": "shop"
+    }
+   ],
+   "spawns": {
+    "door": [
+     7,
+     12
+    ],
+    "default": [
+     7,
+     12
+    ]
+   },
+   "parent": "052",
+   "pkey": "thalassa",
+   "npcs": [
+    {
+     "x": 5,
+     "y": 6,
+     "art": "shop",
+     "face": "down",
+     "t": [
+      "Clerk: Ahoy! Pods, potions, rope, bait. Everything a Linker needs before the coral route."
+     ]
+    },
+    {
+     "x": 8,
+     "y": 10,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Shopper: Status cures are worth it out on the islands. Wild bites sting more than you'd think."
+     ]
+    }
+   ]
+  },
+  "056": {
+   "id": "056",
+   "name": "Lighthouse",
+   "planet": "Thalassa",
+   "dir": "04_thalassa",
+   "type": "tower",
+   "img": "art/sections_game/04_thalassa/056_lighthouse.png",
+   "tiles": [
+    16,
+    24
+   ],
+   "notes": "Old lighthouse interior spiral (Captain's Log)",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      23
+     ],
+     "to": "053",
+     "at": [
+      22,
+      7
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      8,
+      23
+     ],
+     "to": "053",
+     "at": [
+      22,
+      8
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      7,
+      0
+     ],
+     "to": "057",
+     "at": [
+      1,
+      7
+     ],
+     "face": "right",
+     "kind": "stairs",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      8,
+      0
+     ],
+     "to": "057",
+     "at": [
+      1,
+      8
+     ],
+     "face": "right",
+     "kind": "stairs",
+     "edge": "top"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      3,
+      6
+     ],
+     "k": "sign",
+     "t": [
+      "Captain's Log, faded: 'The arch woke again tonight. The water glowed blue all the way to the tower.'",
+      "The rest of the page is water-stained."
+     ]
+    }
+   ],
+   "spawns": {
+    "default": [
+     7,
+     22
+    ]
+   },
+   "pkey": "thalassa",
+   "npcs": [
+    {
+     "x": 8,
+     "y": 4,
+     "art": "researcher",
+     "face": "down",
+     "t": [
+      "Keeper's aide: The stairs up top lead out onto the coral sand bars. Watch for the tide."
+     ]
+    },
+    {
+     "x": 8,
+     "y": 19,
+     "art": "squidsailor",
+     "face": "down",
+     "t": [
+      "Lamp tender: This light guided the fishing fleet for a hundred years. Helix ships ignore it."
+     ]
+    }
+   ]
+  },
+  "057": {
+   "id": "057",
+   "name": "Coral Route Part A",
+   "planet": "Thalassa",
+   "dir": "04_thalassa",
+   "type": "route",
+   "img": "art/sections_game/04_thalassa/057_coral_route_part_a.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Sand-bar route over coral shallows",
+   "edges": {
+    "right": {
+     "to": "058",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [
+    {
+     "tile": [
+      0,
+      7
+     ],
+     "to": "056",
+     "at": [
+      7,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      8
+     ],
+     "to": "056",
+     "at": [
+      8,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "left"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     22,
+     7
+    ]
+   },
+   "grid": [
+    0,
+    20
+   ],
+   "pkey": "thalassa",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 4,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Beachcomber: The coral bars connect at low tide. Hop the bridges and you'll stay dry."
+     ]
+    },
+    {
+     "x": 17,
+     "y": 8,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Swimmer: My Alienmon love the shallows. Low-level ones, sure, but they never stop splashing."
+     ]
+    },
+    {
+     "x": 15,
+     "y": 13,
+     "art": "squidsailor",
+     "face": "up",
+     "t": [],
+     "id": "sec057_tr2",
+     "trainer": {
+      "cls": "Sailor",
+      "route": 1,
+      "name": "Ida"
+     }
+    },
+    {
+     "x": 6,
+     "y": 3,
+     "art": "civilian",
+     "face": "right",
+     "t": [],
+     "id": "sec057_tr3",
+     "trainer": {
+      "cls": "Swimmer",
+      "route": 1,
+      "name": "Pell"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 23,
+     "y": 6,
+     "mon": "Cephalux"
+    },
+    {
+     "x": 21,
+     "y": 12,
+     "mon": "Pearlord"
+    }
+   ]
+  },
+  "058": {
+   "id": "058",
+   "name": "Coral Route Part B",
+   "planet": "Thalassa",
+   "dir": "04_thalassa",
+   "type": "route",
+   "img": "art/sections_game/04_thalassa/058_coral_route_part_b.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Sand-bar route over coral shallows",
+   "edges": {
+    "left": {
+     "to": "057",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    },
+    "right": {
+     "to": "059",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [],
+   "objects": [],
+   "spawns": {
+    "default": [
+     1,
+     7
+    ]
+   },
+   "grid": [
+    24,
+    20
+   ],
+   "pkey": "thalassa",
+   "npcs": [
+    {
+     "x": 14,
+     "y": 7,
+     "art": "wanderer",
+     "face": "down",
+     "t": [
+      "Castaway: Saw an old wreck off the south rocks. Nobody's dared dive it yet."
+     ]
+    },
+    {
+     "x": 4,
+     "y": 7,
+     "art": "squidsailor",
+     "face": "down",
+     "t": [
+      "Sailor: Harbor Tower is past the sea arch. Captain Marsh doesn't go easy on anyone."
+     ]
+    },
+    {
+     "x": 6,
+     "y": 2,
+     "art": "civilian",
+     "face": "down",
+     "t": [],
+     "id": "sec058_tr2",
+     "trainer": {
+      "cls": "Swimmer",
+      "route": 1,
+      "name": "Remy"
+     }
+    },
+    {
+     "x": 19,
+     "y": 8,
+     "art": "guard",
+     "face": "left",
+     "t": [],
+     "id": "sec058_tr3",
+     "trainer": {
+      "cls": "Dockhand",
+      "route": 1,
+      "name": "Corin"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 10,
+     "y": 12,
+     "mon": "Bubblorca"
+    },
+    {
+     "x": 17,
+     "y": 3,
+     "mon": "Clawfort"
+    }
+   ]
+  },
+  "059": {
+   "id": "059",
+   "name": "Sea Arch Cove",
+   "planet": "Thalassa",
+   "dir": "04_thalassa",
+   "type": "landmark",
+   "img": "art/sections_game/04_thalassa/059_sea_arch_cove.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Giant stone sea arch where Anchorath sleeps",
+   "edges": {
+    "left": {
+     "to": "058",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [
+    {
+     "tile": [
+      23,
+      7
+     ],
+     "to": "060",
+     "at": [
+      7,
+      22
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      8
+     ],
+     "to": "060",
+     "at": [
+      8,
+      22
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      3,
+      9
+     ],
+     "k": "sign",
+     "t": [
+      "SEA ARCH COVE. Quiet waters. Something very large sleeps beneath the arch. Please do not wake it."
+     ]
+    }
+   ],
+   "spawns": {
+    "default": [
+     1,
+     7
+    ]
+   },
+   "grid": [
+    48,
+    20
+   ],
+   "pkey": "thalassa",
+   "npcs": [
+    {
+     "x": 5,
+     "y": 10,
+     "art": "researcher",
+     "face": "down",
+     "t": [
+      "Researcher: Readings spike under the arch at night. Whatever sleeps there is enormous."
+     ]
+    },
+    {
+     "x": 21,
+     "y": 6,
+     "art": "pilgrim",
+     "face": "down",
+     "t": [
+      "Pilgrim: Walk softly here. The islanders leave shells at the shrines so Anchorath sleeps on."
+     ]
+    },
+    {
+     "x": 19,
+     "y": 13,
+     "art": "guard",
+     "face": "down",
+     "t": [
+      "Lookout: Helix divers were poking around the cove. I chased them off with a bucket."
+     ]
+    }
+   ],
+   "mons": [
+    {
+     "x": 10,
+     "y": 14,
+     "mon": "Cephalux"
+    },
+    {
+     "x": 1,
+     "y": 4,
+     "mon": "Pearlord"
+    }
+   ]
+  },
+  "060": {
+   "id": "060",
+   "name": "Harbor Tower 1F",
+   "planet": "Thalassa",
+   "dir": "04_thalassa",
+   "type": "tower",
+   "img": "art/sections_game/04_thalassa/060_harbor_tower_1f.png",
+   "tiles": [
+    16,
+    24
+   ],
+   "notes": "Captain Marsh's harbor tower",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      23
+     ],
+     "to": "059",
+     "at": [
+      22,
+      7
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      8,
+      23
+     ],
+     "to": "059",
+     "at": [
+      22,
+      8
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      7,
+      0
+     ],
+     "to": "061",
+     "at": [
+      7,
+      22
+     ],
+     "face": "up",
+     "kind": "stairs",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      8,
+      0
+     ],
+     "to": "061",
+     "at": [
+      8,
+      22
+     ],
+     "face": "up",
+     "kind": "stairs",
+     "edge": "top"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      7,
+      11
+     ],
+     "k": "sign",
+     "t": [
+      "Harbor Tower relay housing. The socket is empty and scorched. Someone tore the core out in a hurry."
+     ]
+    }
+   ],
+   "spawns": {
+    "default": [
+     7,
+     22
+    ]
+   },
+   "pkey": "thalassa",
+   "npcs": [
+    {
+     "x": 9,
+     "y": 11,
+     "art": "squidsailor",
+     "face": "down",
+     "t": [
+      "Deckhand: Captain Marsh is upstairs. Helix ripped the core right out of this tower. She's furious."
+     ]
+    },
+    {
+     "x": 2,
+     "y": 10,
+     "art": "guard",
+     "face": "right",
+     "t": [],
+     "id": "sec060_app1",
+     "trainer": {
+      "cls": "Apprentice",
+      "app": 1,
+      "name": "Pip"
+     }
+    },
+    {
+     "x": 13,
+     "y": 10,
+     "art": "squidsailor",
+     "face": "left",
+     "t": [],
+     "id": "sec060_app2",
+     "trainer": {
+      "cls": "Apprentice",
+      "app": 1,
+      "name": "Suri"
+     }
+    }
+   ]
+  },
+  "061": {
+   "id": "061",
+   "name": "Harbor Tower 2F",
+   "planet": "Thalassa",
+   "dir": "04_thalassa",
+   "type": "tower",
+   "img": "art/sections_game/04_thalassa/061_harbor_tower_2f.png",
+   "tiles": [
+    16,
+    24
+   ],
+   "notes": "Captain Marsh's harbor tower",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      23
+     ],
+     "to": "060",
+     "at": [
+      7,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      8,
+      23
+     ],
+     "to": "060",
+     "at": [
+      8,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      7,
+      3
+     ],
+     "k": "keeper"
+    }
+   ],
+   "spawns": {
+    "default": [
+     7,
+     22
+    ]
+   },
+   "pkey": "thalassa",
+   "npcs": [
+    {
+     "x": 8,
+     "y": 18,
+     "art": "guard",
+     "face": "down",
+     "t": [
+      "First mate: The Captain fights with the tide behind her. Volt types might give you a chance."
+     ]
+    }
+   ]
+  }
+ },
+ "connections": [
+  {
+   "from_id": "052",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "arrival",
+   "to_edge": null,
+   "to_tile": null
+  },
+  {
+   "from_id": "052",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "053",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "053",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "052",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "053",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "056",
+   "to_edge": "bottom",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "056",
+   "edge": "bottom",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "053",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "056",
+   "edge": "top",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "057",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "057",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "056",
+   "to_edge": "top",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "057",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "058",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "058",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "057",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "058",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "059",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "059",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "058",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "059",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "060",
+   "to_edge": "bottom",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "060",
+   "edge": "bottom",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "059",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "060",
+   "edge": "top",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "061",
+   "to_edge": "bottom",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "061",
+   "edge": "bottom",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "060",
+   "to_edge": "top",
+   "to_tile": [
+    7,
+    8
+   ]
+  }
+ ]
+}

@@ -1,0 +1,1543 @@
+{
+ "version": 1,
+ "tile": 16,
+ "screen_tiles": [
+  10,
+  9
+ ],
+ "arrival": {
+  "dustara": {
+   "section": "004",
+   "edge": "left",
+   "why": "atlas: 004 left edge -> arrival (landing pad / gate)"
+  },
+  "ferrox": {
+   "section": "029",
+   "edge": "left",
+   "why": "atlas: 029 left edge -> arrival (landing pad / gate)"
+  },
+  "pyros": {
+   "section": "082",
+   "why": "atlas exit marked arrival"
+  }
+ },
+ "quest_spots": {
+  "M11:1": {
+   "s": "082",
+   "art": "basalt",
+   "x": 10,
+   "y": 8
+  },
+  "M11:2": {
+   "s": "092",
+   "x": 8,
+   "y": 12
+  },
+  "S70:giver": {
+   "s": "082",
+   "x": 17,
+   "y": 8
+  },
+  "S70:0": {
+   "s": "089",
+   "x": 8,
+   "y": 6
+  },
+  "S71:giver": {
+   "s": "085",
+   "x": 8,
+   "y": 7
+  },
+  "S72:giver": {
+   "s": "088",
+   "x": 9,
+   "y": 10
+  },
+  "S72:0": {
+   "s": "088",
+   "x": 8,
+   "y": 6
+  }
+ },
+ "sections": {
+  "082": {
+   "id": "082",
+   "name": "Cinder Hollow",
+   "planet": "Pyros",
+   "dir": "07_pyros",
+   "type": "town",
+   "img": "art/sections_game/07_pyros/082_cinder_hollow.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Mining camp of timber shacks, brass furnaces, rope lifts",
+   "edges": {
+    "left": {
+     "to": "arrival",
+     "range": [
+      7,
+      8
+     ]
+    },
+    "right": {
+     "to": "085",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [
+    {
+     "tile": [
+      14,
+      4
+     ],
+     "to": "083",
+     "at": [
+      7,
+      12
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    },
+    {
+     "tile": [
+      8,
+      4
+     ],
+     "to": "084",
+     "at": [
+      7,
+      12
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    },
+    {
+     "tile": [
+      9,
+      4
+     ],
+     "to": "084",
+     "at": [
+      8,
+      12
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      13,
+      8
+     ],
+     "k": "sign",
+     "t": [
+      "CINDER HOLLOW. Raised on the first ember seam of Pyros.",
+      "Below, someone has scratched: 'Dig deep, come home.'"
+     ]
+    },
+    {
+     "tile": [
+      20,
+      4
+     ],
+     "k": "sign",
+     "t": [
+      "The camp furnace. It has not gone out in forty years.",
+      "A brass plate reads: 'Lit by Old Basalt.'"
+     ]
+    }
+   ],
+   "spawns": {
+    "arrival": [
+     1,
+     7
+    ],
+    "default": [
+     1,
+     7
+    ]
+   },
+   "grid": [
+    0,
+    0
+   ],
+   "pkey": "pyros",
+   "npcs": [
+    {
+     "x": 4,
+     "y": 5,
+     "art": "miner",
+     "face": "down",
+     "t": [
+      "Miner: Cinder Hollow sits on the richest ember seam on Pyros. Also the hottest. Mostly the hottest."
+     ]
+    },
+    {
+     "x": 18,
+     "y": 8,
+     "art": "technician",
+     "face": "down",
+     "t": [
+      "Smith: Magma-types temper their own hides in the vents.",
+      "Bring a Water-type if you plan to argue with one."
+     ]
+    },
+    {
+     "x": 5,
+     "y": 6,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Cook: Nothing beats lava-baked rockroot. Crunchy outside, molten inside. Don't bite too fast."
+     ]
+    },
+    {
+     "x": 14,
+     "y": 12,
+     "art": "wanderer",
+     "face": "down",
+     "t": [
+      "Ash walker: The crater's light still flickers some nights. The old-timers won't look at it."
+     ]
+    },
+    {
+     "x": 7,
+     "y": 11,
+     "art": "miner",
+     "face": "down",
+     "t": [
+      "Old miner: Basalt saw the first pod land, you know. He's been Keeper longer than I've been alive.",
+      "Still climbs that tower every morning on those knees."
+     ]
+    },
+    {
+     "x": 10,
+     "y": 9,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Traveler: The dome with the cyan cross is the Recovery Bay. Free healing, even for outworlders."
+     ]
+    },
+    {
+     "x": 16,
+     "y": 8,
+     "art": "guard",
+     "face": "down",
+     "t": [
+      "Camp watch: Helix suits came through asking about the deep shafts. We told 'em nothing.",
+      "Folks who ask about the deep shafts never want ore."
+     ]
+    },
+    {
+     "x": 15,
+     "y": 10,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Kid: I'm gonna catch a Cindermole and ride it down the rail line!",
+      "Kid: ...Mom says no."
+     ]
+    }
+   ],
+   "mons": [
+    {
+     "x": 10,
+     "y": 5,
+     "mon": "Ashpup"
+    }
+   ]
+  },
+  "083": {
+   "id": "083",
+   "name": "Cinder Hollow Recovery Bay",
+   "planet": "Pyros",
+   "dir": "07_pyros",
+   "type": "interior",
+   "img": "art/sections_game/07_pyros/083_cinder_hollow_recovery_bay.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      13
+     ],
+     "to": "082",
+     "at": [
+      14,
+      5
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      13
+     ],
+     "to": "082",
+     "at": [
+      14,
+      5
+     ],
+     "face": "down",
+     "kind": "door"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      8,
+      7
+     ],
+     "k": "bay"
+    }
+   ],
+   "spawns": {
+    "door": [
+     7,
+     12
+    ],
+    "default": [
+     7,
+     12
+    ]
+   },
+   "parent": "082",
+   "pkey": "pyros",
+   "npcs": [
+    {
+     "x": 8,
+     "y": 5,
+     "art": "nurse",
+     "face": "down",
+     "t": [
+      "Nurse: Welcome to the Recovery Bay. We'll have your team patched up and cooled down in no time."
+     ]
+    },
+    {
+     "x": 5,
+     "y": 10,
+     "art": "miner",
+     "face": "down",
+     "t": [
+      "Miner: Took a cave-in on B2. My Bouldron caught the worst of it, bless him."
+     ]
+    }
+   ]
+  },
+  "084": {
+   "id": "084",
+   "name": "Cinder Hollow Shop",
+   "planet": "Pyros",
+   "dir": "07_pyros",
+   "type": "interior",
+   "img": "art/sections_game/07_pyros/084_cinder_hollow_shop.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      13
+     ],
+     "to": "082",
+     "at": [
+      8,
+      5
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      13
+     ],
+     "to": "082",
+     "at": [
+      8,
+      5
+     ],
+     "face": "down",
+     "kind": "door"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      4,
+      8
+     ],
+     "k": "shop"
+    }
+   ],
+   "spawns": {
+    "door": [
+     7,
+     12
+    ],
+    "default": [
+     7,
+     12
+    ]
+   },
+   "parent": "082",
+   "pkey": "pyros",
+   "npcs": [
+    {
+     "x": 4,
+     "y": 7,
+     "art": "shop",
+     "face": "down",
+     "t": [
+      "Clerk: Stasis Pods, burn salve, cooling tonics. Everything a Linker needs down the mines."
+     ]
+    },
+    {
+     "x": 5,
+     "y": 10,
+     "art": "technician",
+     "face": "down",
+     "t": [
+      "Smith: Heat-proof Stasis Pods? No such thing, kid. They all hold up fine down there."
+     ]
+    }
+   ]
+  },
+  "085": {
+   "id": "085",
+   "name": "Lava Rail Part A",
+   "planet": "Pyros",
+   "dir": "07_pyros",
+   "type": "route",
+   "img": "art/sections_game/07_pyros/085_lava_rail_part_a.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Mine-cart rail line over lava",
+   "edges": {
+    "left": {
+     "to": "082",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    },
+    "right": {
+     "to": "086",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [],
+   "objects": [],
+   "spawns": {
+    "default": [
+     1,
+     7
+    ]
+   },
+   "grid": [
+    24,
+    0
+   ],
+   "pkey": "pyros",
+   "npcs": [
+    {
+     "x": 6,
+     "y": 7,
+     "art": "miner",
+     "face": "down",
+     "t": [
+      "Rail hand: Stay off the tracks when a cart's coming. The carts don't stop, and neither does the lava."
+     ]
+    },
+    {
+     "x": 12,
+     "y": 4,
+     "art": "wanderer",
+     "face": "down",
+     "t": [
+      "Ash walker: Wild Alienmon nest in the ember-weed. Stick to the dirt if you want a quiet walk."
+     ]
+    },
+    {
+     "x": 16,
+     "y": 11,
+     "art": "technician",
+     "face": "up",
+     "t": [],
+     "id": "sec085_tr2",
+     "trainer": {
+      "cls": "Smith",
+      "route": 1,
+      "name": "Ash"
+     }
+    },
+    {
+     "x": 4,
+     "y": 3,
+     "art": "wanderer",
+     "face": "down",
+     "t": [],
+     "id": "sec085_tr3",
+     "trainer": {
+      "cls": "Ash Walker",
+      "route": 1,
+      "name": "Remy"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 22,
+     "y": 13,
+     "mon": "Obsidrake"
+    },
+    {
+     "x": 3,
+     "y": 12,
+     "mon": "Blazewing"
+    }
+   ]
+  },
+  "086": {
+   "id": "086",
+   "name": "Lava Rail Part B",
+   "planet": "Pyros",
+   "dir": "07_pyros",
+   "type": "route",
+   "img": "art/sections_game/07_pyros/086_lava_rail_part_b.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Mine-cart rail line over lava",
+   "edges": {
+    "left": {
+     "to": "085",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [
+    {
+     "tile": [
+      23,
+      7
+     ],
+     "to": "087",
+     "at": [
+      7,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      8
+     ],
+     "to": "087",
+     "at": [
+      8,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     1,
+     7
+    ]
+   },
+   "grid": [
+    48,
+    0
+   ],
+   "pkey": "pyros",
+   "npcs": [
+    {
+     "x": 18,
+     "y": 9,
+     "art": "technician",
+     "face": "down",
+     "t": [
+      "Rail smith: The Deep Mines start past the east bend. Three levels down, and hotter every level."
+     ]
+    },
+    {
+     "x": 9,
+     "y": 4,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Hiker: Trainers out here spot you from five paces. Eyes front, Pods ready."
+     ]
+    },
+    {
+     "x": 20,
+     "y": 3,
+     "art": "wanderer",
+     "face": "left",
+     "t": [],
+     "id": "sec086_tr2",
+     "trainer": {
+      "cls": "Ash Walker",
+      "route": 1,
+      "name": "Rook"
+     }
+    },
+    {
+     "x": 21,
+     "y": 7,
+     "art": "miner",
+     "face": "left",
+     "t": [],
+     "id": "sec086_tr3",
+     "trainer": {
+      "cls": "Miner",
+      "route": 1,
+      "name": "Juno"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 3,
+     "y": 7,
+     "mon": "Cinderhound"
+    },
+    {
+     "x": 15,
+     "y": 11,
+     "mon": "Pyroclast"
+    }
+   ]
+  },
+  "087": {
+   "id": "087",
+   "name": "Deep Mines B1",
+   "planet": "Pyros",
+   "dir": "07_pyros",
+   "type": "cave",
+   "img": "art/sections_game/07_pyros/087_deep_mines_b1.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "Deep mines, 3 levels (Teo's Trail 1, Deep Drill)",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      15
+     ],
+     "to": "086",
+     "at": [
+      22,
+      7
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      8,
+      15
+     ],
+     "to": "086",
+     "at": [
+      22,
+      8
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      7,
+      0
+     ],
+     "to": "088",
+     "at": [
+      7,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      8,
+      0
+     ],
+     "to": "088",
+     "at": [
+      8,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     7,
+     14
+    ]
+   },
+   "pkey": "pyros",
+   "npcs": [
+    {
+     "x": 11,
+     "y": 11,
+     "art": "miner",
+     "face": "down",
+     "t": [
+      "Miner: Teo Reyes came down this shaft once, chasing some signal. Folks say his tracks go deeper than ours."
+     ]
+    },
+    {
+     "x": 7,
+     "y": 7,
+     "art": "miner",
+     "face": "left",
+     "t": [],
+     "id": "sec087_tr1",
+     "trainer": {
+      "cls": "Miner",
+      "route": 1,
+      "name": "Vela"
+     }
+    }
+   ]
+  },
+  "088": {
+   "id": "088",
+   "name": "Deep Mines B2",
+   "planet": "Pyros",
+   "dir": "07_pyros",
+   "type": "cave",
+   "img": "art/sections_game/07_pyros/088_deep_mines_b2.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "Deep mines, 3 levels (Teo's Trail 1, Deep Drill)",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      15
+     ],
+     "to": "087",
+     "at": [
+      7,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      8,
+      15
+     ],
+     "to": "087",
+     "at": [
+      8,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      7,
+      0
+     ],
+     "to": "089",
+     "at": [
+      7,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      8,
+      0
+     ],
+     "to": "089",
+     "at": [
+      8,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     7,
+     14
+    ]
+   },
+   "pkey": "pyros",
+   "npcs": [
+    {
+     "x": 7,
+     "y": 12,
+     "art": "researcher",
+     "face": "down",
+     "t": [
+      "Geologist: These red crystals hum on the same pulse as the crater.",
+      "Signal Shards grow from the same rock, I'd bet my lamp on it."
+     ]
+    },
+    {
+     "x": 8,
+     "y": 5,
+     "art": "technician",
+     "face": "up",
+     "t": [],
+     "id": "sec088_tr1",
+     "trainer": {
+      "cls": "Smith",
+      "route": 1,
+      "name": "Suri"
+     }
+    }
+   ]
+  },
+  "089": {
+   "id": "089",
+   "name": "Deep Mines B3",
+   "planet": "Pyros",
+   "dir": "07_pyros",
+   "type": "cave",
+   "img": "art/sections_game/07_pyros/089_deep_mines_b3.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "Deep mines, 3 levels (Teo's Trail 1, Deep Drill)",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      15
+     ],
+     "to": "088",
+     "at": [
+      7,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      8,
+      15
+     ],
+     "to": "088",
+     "at": [
+      8,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      7,
+      0
+     ],
+     "to": "090",
+     "at": [
+      1,
+      7
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      8,
+      0
+     ],
+     "to": "090",
+     "at": [
+      1,
+      8
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "top"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     7,
+     14
+    ]
+   },
+   "pkey": "pyros",
+   "npcs": [
+    {
+     "x": 8,
+     "y": 7,
+     "art": "miner",
+     "face": "down",
+     "t": [
+      "Deep crew: Furnace Ridge is just above. No Recovery Bay down here, so heal up before you push on."
+     ]
+    },
+    {
+     "x": 5,
+     "y": 3,
+     "art": "wanderer",
+     "face": "up",
+     "t": [],
+     "id": "sec089_tr1",
+     "trainer": {
+      "cls": "Ash Walker",
+      "route": 1,
+      "name": "Remy"
+     }
+    }
+   ]
+  },
+  "090": {
+   "id": "090",
+   "name": "Furnace Ridge (Pyros)",
+   "planet": "Pyros",
+   "dir": "07_pyros",
+   "type": "route",
+   "img": "art/sections_game/07_pyros/090_furnace_ridge_pyros.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Ridge of forges",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      0,
+      7
+     ],
+     "to": "089",
+     "at": [
+      7,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      8
+     ],
+     "to": "089",
+     "at": [
+      8,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      23,
+      7
+     ],
+     "to": "091",
+     "at": [
+      7,
+      22
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      8
+     ],
+     "to": "091",
+     "at": [
+      8,
+      22
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      1,
+      3
+     ],
+     "k": "sign",
+     "t": [
+      "SHAFT 4 - CLOSED. Ember rain. Do not enter.",
+      "Volcano Tower: follow the ridge east."
+     ]
+    }
+   ],
+   "spawns": {
+    "default": [
+     1,
+     7
+    ]
+   },
+   "grid": [
+    0,
+    20
+   ],
+   "pkey": "pyros",
+   "npcs": [
+    {
+     "x": 6,
+     "y": 5,
+     "art": "technician",
+     "face": "down",
+     "t": [
+      "Forge keeper: Every forge on this ridge was lit from the volcano's heart. Old Basalt lit half of 'em."
+     ]
+    },
+    {
+     "x": 11,
+     "y": 9,
+     "art": "pilgrim",
+     "face": "down",
+     "t": [
+      "Pilgrim: The Volcano Tower is just east. Keeper Basalt waits at the top. He doesn't go easy on anyone."
+     ]
+    },
+    {
+     "x": 17,
+     "y": 11,
+     "art": "strand",
+     "face": "down",
+     "t": [
+      "Helix grunt: Nothing to see here. Just... surveying the ridge. Move along, Linker."
+     ]
+    },
+    {
+     "x": 13,
+     "y": 5,
+     "art": "miner",
+     "face": "down",
+     "t": [],
+     "id": "sec090_tr3",
+     "trainer": {
+      "cls": "Miner",
+      "route": 1,
+      "name": "Juno"
+     }
+    },
+    {
+     "x": 9,
+     "y": 6,
+     "art": "technician",
+     "face": "left",
+     "t": [],
+     "id": "sec090_tr4",
+     "trainer": {
+      "cls": "Smith",
+      "route": 1,
+      "name": "Juno"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 19,
+     "y": 2,
+     "mon": "Cinderhound"
+    },
+    {
+     "x": 22,
+     "y": 7,
+     "mon": "Pyroclast"
+    }
+   ]
+  },
+  "091": {
+   "id": "091",
+   "name": "Volcano Tower 1F",
+   "planet": "Pyros",
+   "dir": "07_pyros",
+   "type": "tower",
+   "img": "art/sections_game/07_pyros/091_volcano_tower_1f.png",
+   "tiles": [
+    16,
+    24
+   ],
+   "notes": "Keeper Basalt's tower",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      23
+     ],
+     "to": "090",
+     "at": [
+      22,
+      7
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      8,
+      23
+     ],
+     "to": "090",
+     "at": [
+      22,
+      8
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      7,
+      0
+     ],
+     "to": "092",
+     "at": [
+      7,
+      22
+     ],
+     "face": "up",
+     "kind": "stairs",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      8,
+      0
+     ],
+     "to": "092",
+     "at": [
+      8,
+      22
+     ],
+     "face": "up",
+     "kind": "stairs",
+     "edge": "top"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     7,
+     22
+    ]
+   },
+   "pkey": "pyros",
+   "npcs": [
+    {
+     "x": 5,
+     "y": 21,
+     "art": "guard",
+     "face": "down",
+     "t": [
+      "Tower guard: Basalt's apprentices hold this floor. Beat them and the stairs are yours."
+     ]
+    },
+    {
+     "x": 6,
+     "y": 4,
+     "art": "miner",
+     "face": "right",
+     "t": [],
+     "id": "sec091_app1",
+     "trainer": {
+      "cls": "Apprentice",
+      "app": 1,
+      "name": "Suri"
+     }
+    },
+    {
+     "x": 9,
+     "y": 10,
+     "art": "technician",
+     "face": "left",
+     "t": [],
+     "id": "sec091_app2",
+     "trainer": {
+      "cls": "Apprentice",
+      "app": 1,
+      "name": "Remy"
+     }
+    }
+   ]
+  },
+  "092": {
+   "id": "092",
+   "name": "Volcano Tower 2F",
+   "planet": "Pyros",
+   "dir": "07_pyros",
+   "type": "tower",
+   "img": "art/sections_game/07_pyros/092_volcano_tower_2f.png",
+   "tiles": [
+    16,
+    24
+   ],
+   "notes": "Keeper Basalt's tower",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      23
+     ],
+     "to": "091",
+     "at": [
+      7,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      8,
+      23
+     ],
+     "to": "091",
+     "at": [
+      8,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      7,
+      3
+     ],
+     "k": "keeper"
+    }
+   ],
+   "spawns": {
+    "default": [
+     7,
+     22
+    ]
+   },
+   "pkey": "pyros"
+  }
+ },
+ "connections": [
+  {
+   "from_id": "082",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "arrival",
+   "to_edge": null,
+   "to_tile": null
+  },
+  {
+   "from_id": "082",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "085",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "085",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "082",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "085",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "086",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "086",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "085",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "086",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "087",
+   "to_edge": "bottom",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "087",
+   "edge": "bottom",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "086",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "087",
+   "edge": "top",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "088",
+   "to_edge": "bottom",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "088",
+   "edge": "bottom",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "087",
+   "to_edge": "top",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "088",
+   "edge": "top",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "089",
+   "to_edge": "bottom",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "089",
+   "edge": "bottom",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "088",
+   "to_edge": "top",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "089",
+   "edge": "top",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "090",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "090",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "089",
+   "to_edge": "top",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "090",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "091",
+   "to_edge": "bottom",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "091",
+   "edge": "bottom",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "090",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "091",
+   "edge": "top",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "092",
+   "to_edge": "bottom",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "092",
+   "edge": "bottom",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "091",
+   "to_edge": "top",
+   "to_tile": [
+    7,
+    8
+   ]
+  }
+ ]
+}

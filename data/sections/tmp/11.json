@@ -1,0 +1,1716 @@
+{
+ "version": 1,
+ "tile": 16,
+ "screen_tiles": [
+  10,
+  9
+ ],
+ "arrival": {
+  "dustara": {
+   "section": "004",
+   "edge": "left",
+   "why": "atlas: 004 left edge -> arrival (landing pad / gate)"
+  },
+  "ferrox": {
+   "section": "029",
+   "edge": "left",
+   "why": "atlas: 029 left edge -> arrival (landing pad / gate)"
+  },
+  "umbra": {
+   "section": "123",
+   "why": "atlas exit marked arrival"
+  }
+ },
+ "quest_spots": {
+  "M17:1": {
+   "s": "135",
+   "x": 8,
+   "y": 12
+  },
+  "S92:giver": {
+   "s": "124",
+   "x": 13,
+   "y": 10
+  },
+  "S92:0": {
+   "s": "127",
+   "x": 11,
+   "y": 6,
+   "pts": [
+    [
+     11,
+     6
+    ],
+    [
+     14,
+     10
+    ],
+    [
+     6,
+     8
+    ],
+    [
+     19,
+     8
+    ]
+   ]
+  },
+  "S93:giver": {
+   "s": "133",
+   "x": 8,
+   "y": 11
+  },
+  "S93:0": {
+   "s": "133",
+   "x": 8,
+   "y": 7
+  }
+ },
+ "sections": {
+  "123": {
+   "id": "123",
+   "name": "Shadow Tunnel Exit",
+   "planet": "Umbra",
+   "dir": "11_umbra",
+   "type": "cave",
+   "img": "art/sections_game/11_umbra/123_shadow_tunnel_exit.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "Exit of the Shadow Tunnel",
+   "edges": {
+    "bottom": {
+     "to": "arrival",
+     "range": [
+      7,
+      8
+     ]
+    }
+   },
+   "warps": [
+    {
+     "tile": [
+      7,
+      0
+     ],
+     "to": "124",
+     "at": [
+      1,
+      7
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      8,
+      0
+     ],
+     "to": "124",
+     "at": [
+      1,
+      8
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "top"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "arrival": [
+     7,
+     14
+    ],
+    "default": [
+     7,
+     14
+    ]
+   },
+   "pkey": "umbra",
+   "npcs": [
+    {
+     "x": 9,
+     "y": 9,
+     "art": "wanderer",
+     "face": "down",
+     "t": [
+      "Traveller: You made it through the Shadow Tunnel? Most folk turn back halfway. Gravewell's just north."
+     ]
+    }
+   ]
+  },
+  "124": {
+   "id": "124",
+   "name": "Gravewell",
+   "planet": "Umbra",
+   "dir": "11_umbra",
+   "type": "town",
+   "img": "art/sections_game/11_umbra/124_gravewell.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Dark lantern city",
+   "edges": {
+    "right": {
+     "to": "127",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [
+    {
+     "tile": [
+      0,
+      7
+     ],
+     "to": "123",
+     "at": [
+      7,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      8
+     ],
+     "to": "123",
+     "at": [
+      8,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      17,
+      5
+     ],
+     "to": "125",
+     "at": [
+      7,
+      13
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    },
+    {
+     "tile": [
+      18,
+      5
+     ],
+     "to": "125",
+     "at": [
+      8,
+      13
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    },
+    {
+     "tile": [
+      7,
+      8
+     ],
+     "to": "126",
+     "at": [
+      7,
+      13
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    },
+    {
+     "tile": [
+      8,
+      8
+     ],
+     "to": "126",
+     "at": [
+      8,
+      13
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    },
+    {
+     "tile": [
+      17,
+      10
+     ],
+     "to": "133",
+     "at": [
+      7,
+      12
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      11,
+      8
+     ],
+     "k": "sign",
+     "t": [
+      "The Gravewell Lantern: lit the night the city tipped into the sinkhole. It has never gone out."
+     ]
+    }
+   ],
+   "spawns": {
+    "default": [
+     22,
+     7
+    ]
+   },
+   "grid": [
+    0,
+    0
+   ],
+   "pkey": "umbra",
+   "npcs": [
+    {
+     "x": 3,
+     "y": 8,
+     "art": "wanderer",
+     "face": "down",
+     "t": [
+      "Scavenger: Gravewell was a city once, before it tipped into the sinkhole.",
+      "Now we just call it home and keep the lanterns full."
+     ]
+    },
+    {
+     "x": 11,
+     "y": 3,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Lantern keeper: Keep to the lanterns. The dark plays tricks.",
+      "If a light goes out behind you, don't turn around. Just walk faster."
+     ]
+    },
+    {
+     "x": 16,
+     "y": 8,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Drifter: Void-types only come out where the light can't reach.",
+      "The Sinkhole is full of them. Bring something that hits hard."
+     ]
+    },
+    {
+     "x": 20,
+     "y": 8,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Old woman: The Recovery Bay is the brightest room in town. We go there to feel warm, not just to heal."
+     ]
+    },
+    {
+     "x": 7,
+     "y": 5,
+     "art": "researcher",
+     "face": "down",
+     "t": [
+      "Researcher: The black-hole sky pulls on everything here. Even sound falls a little slower."
+     ]
+    },
+    {
+     "x": 18,
+     "y": 12,
+     "art": "strand",
+     "face": "down",
+     "t": [
+      "Helix contractor: Nothing to see here. Just... measuring the sinkhole. For safety.",
+      "Move along, Linker."
+     ]
+    },
+    {
+     "x": 12,
+     "y": 10,
+     "art": "wanderer",
+     "face": "down",
+     "t": [
+      "Kid: My big brother says the well whispers your name if you stand at the edge long enough!"
+     ]
+    }
+   ],
+   "mons": [
+    {
+     "x": 11,
+     "y": 14,
+     "mon": "Wellspawn"
+    }
+   ]
+  },
+  "125": {
+   "id": "125",
+   "name": "Gravewell Recovery Bay",
+   "planet": "Umbra",
+   "dir": "11_umbra",
+   "type": "interior",
+   "img": "art/sections_game/11_umbra/125_gravewell_recovery_bay.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      14
+     ],
+     "to": "124",
+     "at": [
+      17,
+      6
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      14
+     ],
+     "to": "124",
+     "at": [
+      17,
+      6
+     ],
+     "face": "down",
+     "kind": "door"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      7,
+      6
+     ],
+     "k": "bay"
+    }
+   ],
+   "spawns": {
+    "door": [
+     7,
+     13
+    ],
+    "default": [
+     7,
+     13
+    ]
+   },
+   "parent": "124",
+   "pkey": "umbra",
+   "npcs": [
+    {
+     "x": 7,
+     "y": 5,
+     "art": "nurse",
+     "face": "down",
+     "t": [
+      "Nurse: Welcome to the Gravewell Recovery Bay. We'll have your Alienmon glowing again."
+     ]
+    },
+    {
+     "x": 8,
+     "y": 12,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Diver: I came up from Sinkhole B3 with every team member fainted. Heal before every level down."
+     ]
+    }
+   ]
+  },
+  "126": {
+   "id": "126",
+   "name": "Gravewell Shop",
+   "planet": "Umbra",
+   "dir": "11_umbra",
+   "type": "interior",
+   "img": "art/sections_game/11_umbra/126_gravewell_shop.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      14
+     ],
+     "to": "124",
+     "at": [
+      7,
+      9
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      14
+     ],
+     "to": "124",
+     "at": [
+      7,
+      9
+     ],
+     "face": "down",
+     "kind": "door"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      4,
+      7
+     ],
+     "k": "shop"
+    }
+   ],
+   "spawns": {
+    "door": [
+     7,
+     13
+    ],
+    "default": [
+     7,
+     13
+    ]
+   },
+   "parent": "124",
+   "pkey": "umbra",
+   "npcs": [
+    {
+     "x": 4,
+     "y": 6,
+     "art": "shop",
+     "face": "down",
+     "t": [
+      "Clerk: Lantern oil, Stasis Pods, potions. Everything you need to go down and come back up."
+     ]
+    },
+    {
+     "x": 7,
+     "y": 11,
+     "art": "miner",
+     "face": "down",
+     "t": [
+      "Shopper: Stock up on Stasis Pods. Void-types are slippery and slip out of a weak throw."
+     ]
+    }
+   ]
+  },
+  "127": {
+   "id": "127",
+   "name": "Lantern Streets Part A",
+   "planet": "Umbra",
+   "dir": "11_umbra",
+   "type": "route",
+   "img": "art/sections_game/11_umbra/127_lantern_streets_part_a.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Lantern-lined streets (Lanterns of Gravewell)",
+   "edges": {
+    "left": {
+     "to": "124",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    },
+    "right": {
+     "to": "128",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [],
+   "objects": [],
+   "spawns": {
+    "default": [
+     1,
+     7
+    ]
+   },
+   "grid": [
+    24,
+    0
+   ],
+   "pkey": "umbra",
+   "npcs": [
+    {
+     "x": 7,
+     "y": 7,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Lantern keeper: Every lantern on this street is tended by hand. Miss one night and the shadows creep in."
+     ]
+    },
+    {
+     "x": 13,
+     "y": 12,
+     "art": "wanderer",
+     "face": "down",
+     "t": [
+      "Scavenger: Trainers on these streets watch from the dark. Walk into their line of sight and they'll call you out."
+     ]
+    },
+    {
+     "x": 18,
+     "y": 9,
+     "art": "civilian",
+     "face": "left",
+     "t": [],
+     "id": "sec127_tr2",
+     "trainer": {
+      "cls": "Lantern Keeper",
+      "route": 1,
+      "name": "Quill"
+     }
+    },
+    {
+     "x": 10,
+     "y": 3,
+     "art": "explorer",
+     "face": "right",
+     "t": [],
+     "id": "sec127_tr3",
+     "trainer": {
+      "cls": "Drifter",
+      "route": 1,
+      "name": "Kai"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 3,
+     "y": 4,
+     "mon": "Wellmaw"
+    },
+    {
+     "x": 20,
+     "y": 5,
+     "mon": "Geodome"
+    }
+   ]
+  },
+  "128": {
+   "id": "128",
+   "name": "Lantern Streets Part B",
+   "planet": "Umbra",
+   "dir": "11_umbra",
+   "type": "route",
+   "img": "art/sections_game/11_umbra/128_lantern_streets_part_b.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Lantern-lined streets (Lanterns of Gravewell)",
+   "edges": {
+    "left": {
+     "to": "127",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [
+    {
+     "tile": [
+      23,
+      7
+     ],
+     "to": "129",
+     "at": [
+      7,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      8
+     ],
+     "to": "129",
+     "at": [
+      8,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     1,
+     7
+    ]
+   },
+   "grid": [
+    48,
+    0
+   ],
+   "pkey": "umbra",
+   "npcs": [
+    {
+     "x": 13,
+     "y": 12,
+     "art": "pilgrim",
+     "face": "down",
+     "t": [
+      "Pilgrim: The Sinkhole is just east. They say a Signal Shard sleeps at the very bottom."
+     ]
+    },
+    {
+     "x": 10,
+     "y": 3,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Drifter: Past the Sinkhole stands Gravewell Tower. The Keeper there fights with the dark itself."
+     ]
+    },
+    {
+     "x": 6,
+     "y": 8,
+     "art": "explorer",
+     "face": "left",
+     "t": [],
+     "id": "sec128_tr2",
+     "trainer": {
+      "cls": "Drifter",
+      "route": 1,
+      "name": "Lio"
+     }
+    },
+    {
+     "x": 17,
+     "y": 6,
+     "art": "wanderer",
+     "face": "down",
+     "t": [],
+     "id": "sec128_tr3",
+     "trainer": {
+      "cls": "Scavenger",
+      "route": 1,
+      "name": "Suri"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 21,
+     "y": 12,
+     "mon": "Dusklord"
+    },
+    {
+     "x": 13,
+     "y": 5,
+     "mon": "Gloomhulk"
+    }
+   ]
+  },
+  "129": {
+   "id": "129",
+   "name": "The Sinkhole B1",
+   "planet": "Umbra",
+   "dir": "11_umbra",
+   "type": "cave",
+   "img": "art/sections_game/11_umbra/129_the_sinkhole_b1.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "The Sinkhole, 4 levels (The well that whispers)",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      15
+     ],
+     "to": "128",
+     "at": [
+      22,
+      7
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      8,
+      15
+     ],
+     "to": "128",
+     "at": [
+      22,
+      8
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      7,
+      0
+     ],
+     "to": "130",
+     "at": [
+      7,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      8,
+      0
+     ],
+     "to": "130",
+     "at": [
+      8,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     7,
+     14
+    ]
+   },
+   "pkey": "umbra",
+   "npcs": [
+    {
+     "x": 5,
+     "y": 2,
+     "art": "miner",
+     "face": "down",
+     "t": [
+      "Miner: B1's the easy floor. Mind the waterfalls; that glow isn't water."
+     ]
+    },
+    {
+     "x": 14,
+     "y": 9,
+     "art": "wanderer",
+     "face": "left",
+     "t": [],
+     "id": "sec129_tr1",
+     "trainer": {
+      "cls": "Scavenger",
+      "route": 1,
+      "name": "Corin"
+     }
+    }
+   ]
+  },
+  "130": {
+   "id": "130",
+   "name": "The Sinkhole B2",
+   "planet": "Umbra",
+   "dir": "11_umbra",
+   "type": "cave",
+   "img": "art/sections_game/11_umbra/130_the_sinkhole_b2.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "The Sinkhole, 4 levels (The well that whispers)",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      15
+     ],
+     "to": "129",
+     "at": [
+      7,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      8,
+      15
+     ],
+     "to": "129",
+     "at": [
+      8,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      7,
+      0
+     ],
+     "to": "131",
+     "at": [
+      7,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      8,
+      0
+     ],
+     "to": "131",
+     "at": [
+      8,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     7,
+     14
+    ]
+   },
+   "pkey": "umbra",
+   "npcs": [
+    {
+     "x": 8,
+     "y": 10,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Explorer: I've mapped this level three times. The tunnels never quite match my notes."
+     ]
+    },
+    {
+     "x": 13,
+     "y": 4,
+     "art": "civilian",
+     "face": "left",
+     "t": [],
+     "id": "sec130_tr1",
+     "trainer": {
+      "cls": "Lantern Keeper",
+      "route": 1,
+      "name": "Sol"
+     }
+    }
+   ]
+  },
+  "131": {
+   "id": "131",
+   "name": "The Sinkhole B3",
+   "planet": "Umbra",
+   "dir": "11_umbra",
+   "type": "cave",
+   "img": "art/sections_game/11_umbra/131_the_sinkhole_b3.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "The Sinkhole, 4 levels (The well that whispers)",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      15
+     ],
+     "to": "130",
+     "at": [
+      7,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      8,
+      15
+     ],
+     "to": "130",
+     "at": [
+      8,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      7,
+      0
+     ],
+     "to": "132",
+     "at": [
+      7,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      8,
+      0
+     ],
+     "to": "132",
+     "at": [
+      8,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     7,
+     14
+    ]
+   },
+   "pkey": "umbra",
+   "npcs": [
+    {
+     "x": 8,
+     "y": 7,
+     "art": "researcher",
+     "face": "down",
+     "t": [
+      "Researcher: Ghost and Void readings double every floor down. Whatever is below, it is awake."
+     ]
+    },
+    {
+     "x": 6,
+     "y": 2,
+     "art": "explorer",
+     "face": "right",
+     "t": [],
+     "id": "sec131_tr1",
+     "trainer": {
+      "cls": "Drifter",
+      "route": 1,
+      "name": "Juno"
+     }
+    }
+   ]
+  },
+  "132": {
+   "id": "132",
+   "name": "The Sinkhole B4",
+   "planet": "Umbra",
+   "dir": "11_umbra",
+   "type": "cave",
+   "img": "art/sections_game/11_umbra/132_the_sinkhole_b4.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "The Sinkhole, 4 levels (The well that whispers)",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      15
+     ],
+     "to": "131",
+     "at": [
+      7,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      8,
+      15
+     ],
+     "to": "131",
+     "at": [
+      8,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      7,
+      0
+     ],
+     "to": "134",
+     "at": [
+      7,
+      22
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      8,
+      0
+     ],
+     "to": "134",
+     "at": [
+      8,
+      22
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     7,
+     14
+    ]
+   },
+   "pkey": "umbra",
+   "npcs": [
+    {
+     "x": 8,
+     "y": 11,
+     "art": "pilgrim",
+     "face": "down",
+     "t": [
+      "Pilgrim: The well that whispers... listen. Do you hear it too?",
+      "Go around the rift. Never across."
+     ]
+    },
+    {
+     "x": 2,
+     "y": 6,
+     "art": "wanderer",
+     "face": "down",
+     "t": [],
+     "id": "sec132_tr1",
+     "trainer": {
+      "cls": "Scavenger",
+      "route": 1,
+      "name": "Kai"
+     }
+    }
+   ]
+  },
+  "133": {
+   "id": "133",
+   "name": "Kade's Lab",
+   "planet": "Umbra",
+   "dir": "11_umbra",
+   "type": "interior",
+   "img": "art/sections_game/11_umbra/133_kade_s_lab.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "Kade's lab (Kade's Notes)",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      13
+     ],
+     "to": "124",
+     "at": [
+      17,
+      11
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      13
+     ],
+     "to": "124",
+     "at": [
+      17,
+      11
+     ],
+     "face": "down",
+     "kind": "door"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      3,
+      9
+     ],
+     "k": "sign",
+     "t": [
+      "Kade's Notes: 'Thorne knew. The engine does not open a door. It rings a bell, and something below is listening.'"
+     ]
+    },
+    {
+     "tile": [
+      8,
+      5
+     ],
+     "k": "sign",
+     "t": [
+      "A cracked Rift-engine prototype. The orb inside still turns, slowly, toward the floor."
+     ]
+    }
+   ],
+   "spawns": {
+    "door": [
+     7,
+     12
+    ],
+    "default": [
+     7,
+     12
+    ]
+   },
+   "parent": "124",
+   "pkey": "umbra",
+   "npcs": [
+    {
+     "x": 6,
+     "y": 8,
+     "art": "researcher",
+     "face": "down",
+     "t": [
+      "Lab assistant: The professor left in a hurry years ago. The papers are still exactly where he dropped them."
+     ]
+    }
+   ]
+  },
+  "134": {
+   "id": "134",
+   "name": "Gravewell Tower 1F",
+   "planet": "Umbra",
+   "dir": "11_umbra",
+   "type": "tower",
+   "img": "art/sections_game/11_umbra/134_gravewell_tower_1f.png",
+   "tiles": [
+    16,
+    24
+   ],
+   "notes": "Keeper Kade's tower",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      23
+     ],
+     "to": "132",
+     "at": [
+      7,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      8,
+      23
+     ],
+     "to": "132",
+     "at": [
+      8,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      7,
+      0
+     ],
+     "to": "135",
+     "at": [
+      7,
+      22
+     ],
+     "face": "up",
+     "kind": "stairs",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      8,
+      0
+     ],
+     "to": "135",
+     "at": [
+      8,
+      22
+     ],
+     "face": "up",
+     "kind": "stairs",
+     "edge": "top"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      7,
+      5
+     ],
+     "k": "sign",
+     "t": [
+      "A void crystal hums on the altar. Your shadow leans toward it."
+     ]
+    }
+   ],
+   "spawns": {
+    "default": [
+     7,
+     22
+    ]
+   },
+   "pkey": "umbra",
+   "npcs": [
+    {
+     "x": 7,
+     "y": 12,
+     "art": "guard",
+     "face": "down",
+     "t": [
+      "Tower guard: Keeper Kade waits upstairs. Beat his apprentices first; he only sees challengers who've earned it."
+     ]
+    },
+    {
+     "x": 13,
+     "y": 10,
+     "art": "civilian",
+     "face": "left",
+     "t": [],
+     "id": "sec134_app1",
+     "trainer": {
+      "cls": "Apprentice",
+      "app": 1,
+      "name": "Bo"
+     }
+    },
+    {
+     "x": 9,
+     "y": 13,
+     "art": "explorer",
+     "face": "left",
+     "t": [],
+     "id": "sec134_app2",
+     "trainer": {
+      "cls": "Apprentice",
+      "app": 1,
+      "name": "Lio"
+     }
+    }
+   ]
+  },
+  "135": {
+   "id": "135",
+   "name": "Gravewell Tower 2F",
+   "planet": "Umbra",
+   "dir": "11_umbra",
+   "type": "tower",
+   "img": "art/sections_game/11_umbra/135_gravewell_tower_2f.png",
+   "tiles": [
+    16,
+    24
+   ],
+   "notes": "Keeper Kade's tower",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      23
+     ],
+     "to": "134",
+     "at": [
+      7,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      8,
+      23
+     ],
+     "to": "134",
+     "at": [
+      8,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      7,
+      4
+     ],
+     "k": "keeper"
+    }
+   ],
+   "spawns": {
+    "default": [
+     7,
+     22
+    ]
+   },
+   "pkey": "umbra"
+  }
+ },
+ "connections": [
+  {
+   "from_id": "123",
+   "edge": "bottom",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "arrival",
+   "to_edge": null,
+   "to_tile": null
+  },
+  {
+   "from_id": "123",
+   "edge": "top",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "124",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "124",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "123",
+   "to_edge": "top",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "124",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "127",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "127",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "124",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "127",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "128",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "128",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "127",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "128",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "129",
+   "to_edge": "bottom",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "129",
+   "edge": "bottom",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "128",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "129",
+   "edge": "top",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "130",
+   "to_edge": "bottom",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "130",
+   "edge": "bottom",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "129",
+   "to_edge": "top",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "130",
+   "edge": "top",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "131",
+   "to_edge": "bottom",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "131",
+   "edge": "bottom",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "130",
+   "to_edge": "top",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "131",
+   "edge": "top",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "132",
+   "to_edge": "bottom",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "132",
+   "edge": "bottom",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "131",
+   "to_edge": "top",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "132",
+   "edge": "top",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "134",
+   "to_edge": "bottom",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "134",
+   "edge": "bottom",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "132",
+   "to_edge": "top",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "134",
+   "edge": "top",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "135",
+   "to_edge": "bottom",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "135",
+   "edge": "bottom",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "134",
+   "to_edge": "top",
+   "to_tile": [
+    7,
+    8
+   ]
+  }
+ ]
+}

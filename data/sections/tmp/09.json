@@ -1,0 +1,1278 @@
+{
+ "version": 1,
+ "tile": 16,
+ "screen_tiles": [
+  10,
+  9
+ ],
+ "arrival": {
+  "dustara": {
+   "section": "004",
+   "edge": "left",
+   "why": "atlas: 004 left edge -> arrival (landing pad / gate)"
+  },
+  "ferrox": {
+   "section": "029",
+   "edge": "left",
+   "why": "atlas: 029 left edge -> arrival (landing pad / gate)"
+  },
+  "helix": {
+   "section": "105",
+   "why": "atlas exit marked arrival"
+  }
+ },
+ "quest_spots": {
+  "M14:giver": {
+   "s": "105",
+   "x": 14,
+   "y": 8
+  },
+  "M14:0": {
+   "s": "105",
+   "x": 14,
+   "y": 8
+  },
+  "M14:1": {
+   "s": "111",
+   "x": 8,
+   "y": 8
+  },
+  "M14:2": {
+   "s": "113",
+   "x": 8,
+   "y": 4
+  },
+  "M15:giver": {
+   "s": "112",
+   "x": 8,
+   "y": 9
+  },
+  "M15:0": {
+   "s": "112",
+   "x": 8,
+   "y": 9
+  },
+  "S90:giver": {
+   "s": "109",
+   "x": 8,
+   "y": 12
+  },
+  "S90:0": {
+   "s": "110",
+   "x": 8,
+   "y": 10,
+   "pts": [
+    [
+     8,
+     10
+    ],
+    [
+     8,
+     3
+    ],
+    [
+     4,
+     7
+    ],
+    [
+     11,
+     7
+    ],
+    [
+     6,
+     5
+    ]
+   ]
+  },
+  "S91:giver": {
+   "s": "111",
+   "x": 8,
+   "y": 12
+  },
+  "S91:0": {
+   "s": "111",
+   "x": 8,
+   "y": 7
+  }
+ },
+ "sections": {
+  "105": {
+   "id": "105",
+   "name": "Docking Ring",
+   "planet": "Helix Station",
+   "dir": "09_helix",
+   "type": "town",
+   "img": "art/sections_game/09_helix/105_docking_ring.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Station docking ring hub",
+   "edges": {
+    "left": {
+     "to": "arrival",
+     "range": [
+      6,
+      7
+     ]
+    }
+   },
+   "warps": [
+    {
+     "tile": [
+      23,
+      6
+     ],
+     "to": "109",
+     "at": [
+      7,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      7
+     ],
+     "to": "109",
+     "at": [
+      8,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      5,
+      10
+     ],
+     "to": "106",
+     "at": [
+      7,
+      11
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    },
+    {
+     "tile": [
+      18,
+      10
+     ],
+     "to": "107",
+     "at": [
+      7,
+      12
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    },
+    {
+     "tile": [
+      11,
+      1
+     ],
+     "to": "112",
+     "at": [
+      7,
+      12
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    },
+    {
+     "tile": [
+      12,
+      1
+     ],
+     "to": "112",
+     "at": [
+      8,
+      12
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      16,
+      4
+     ],
+     "k": "bay",
+     "t": [
+      "The medical dome's scanner hums. Helix-grade nanites patch up your whole team."
+     ]
+    },
+    {
+     "tile": [
+      12,
+      8
+     ],
+     "k": "sign",
+     "t": [
+      "HELIX STATION - DOCKING RING. All personnel: report unregistered Linkers to Security."
+     ]
+    }
+   ],
+   "spawns": {
+    "arrival": [
+     1,
+     6
+    ],
+    "default": [
+     1,
+     6
+    ]
+   },
+   "grid": [
+    0,
+    0
+   ],
+   "pkey": "helix",
+   "npcs": [
+    {
+     "x": 11,
+     "y": 3,
+     "art": "guard",
+     "face": "down",
+     "t": [
+      "Guard: Keep moving. Visitors aren't supposed to be on this deck.",
+      "Guard: Wait, are you a visitor? We don't get visitors. ...Carry on, I guess."
+     ]
+    },
+    {
+     "x": 8,
+     "y": 5,
+     "art": "strand",
+     "face": "down",
+     "t": [
+      "Helix grunt: I signed up for the free uniform. Nobody said it came with toxic cleanup duty.",
+      "Helix grunt: Don't tell Admin Vex you saw me napping by the planters."
+     ]
+    },
+    {
+     "x": 11,
+     "y": 9,
+     "art": "researcher",
+     "face": "up",
+     "t": [
+      "Scientist: I just run the tests. Don't look at me like that.",
+      "Scientist: The medical dome up top heals anyone. Even intruders. Budget cuts hit the ID scanner."
+     ]
+    },
+    {
+     "x": 13,
+     "y": 5,
+     "art": "technician",
+     "face": "right",
+     "t": [
+      "Engineer: The power cores have been running hot all week. Engineering says it's 'within tolerance'.",
+      "Engineer: Containment wing is east. Then 2F, then Engineering, then Vex. Not that I told you."
+     ]
+    },
+    {
+     "x": 20,
+     "y": 11,
+     "art": "strand",
+     "face": "left",
+     "t": [
+      "Helix grunt: The cages? Oh, those are... wellness pods. For the Alienmon. Very relaxing pods.",
+      "Helix grunt: Toxin types love the green pools here. That's why we keep so many. Probably."
+     ]
+    },
+    {
+     "x": 3,
+     "y": 9,
+     "art": "guard",
+     "face": "up",
+     "t": [
+      "Guard: Labs are in the right dome, barracks in the left. Not that you're allowed in either.",
+      "Guard: Grunts spot you from five tiles out. Walk into their line and you WILL be battling."
+     ]
+    },
+    {
+     "x": 2,
+     "y": 5,
+     "art": "researcher",
+     "face": "right",
+     "t": [
+      "Scientist: Stasis Pods work best on a weakened Alienmon. Helix just uses bigger cages.",
+      "Scientist: The Director keeps asking about Signal Shards. Why does a space station need Relay keys?"
+     ]
+    }
+   ],
+   "mons": []
+  },
+  "106": {
+   "id": "106",
+   "name": "Barracks",
+   "planet": "Helix Station",
+   "dir": "09_helix",
+   "type": "interior",
+   "img": "art/sections_game/09_helix/106_barracks.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "Grunt barracks",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      12
+     ],
+     "to": "105",
+     "at": [
+      5,
+      11
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      12
+     ],
+     "to": "105",
+     "at": [
+      5,
+      11
+     ],
+     "face": "down",
+     "kind": "door"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      8,
+      4
+     ],
+     "k": "sign",
+     "t": [
+      "DUTY ROSTER: Shift A - cages. Shift B - cages. Shift C - also cages. Complaints to Admin Vex."
+     ]
+    }
+   ],
+   "spawns": {
+    "door": [
+     7,
+     11
+    ],
+    "default": [
+     7,
+     11
+    ]
+   },
+   "parent": "105",
+   "pkey": "helix",
+   "npcs": [
+    {
+     "x": 3,
+     "y": 9,
+     "art": "strand",
+     "face": "up",
+     "t": [
+      "Off-duty grunt: This is my bunk. That's my bunk too. Grunt Pell snores, so I took his.",
+      "Off-duty grunt: Lights out is at 22:00. Battles are at 22:01. Every night."
+     ]
+    },
+    {
+     "x": 12,
+     "y": 9,
+     "art": "guard",
+     "face": "up",
+     "t": [
+      "Barracks guard: Mess rule one: nobody sits in Admin Vex's chair. Rule two: see rule one."
+     ]
+    }
+   ]
+  },
+  "107": {
+   "id": "107",
+   "name": "Labs 1F",
+   "planet": "Helix Station",
+   "dir": "09_helix",
+   "type": "interior",
+   "img": "art/sections_game/09_helix/107_labs_1f.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "Helix labs",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      13
+     ],
+     "to": "105",
+     "at": [
+      18,
+      11
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      13
+     ],
+     "to": "105",
+     "at": [
+      18,
+      11
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      6,
+      8
+     ],
+     "to": "108",
+     "at": [
+      8,
+      4
+     ],
+     "face": "down",
+     "kind": "stairs"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      7,
+      9
+     ],
+     "k": "sign",
+     "t": [
+      "SPECIMEN TANK 1F-03. Do not tap the glass. It taps back."
+     ]
+    }
+   ],
+   "spawns": {
+    "door": [
+     7,
+     12
+    ],
+    "default": [
+     7,
+     12
+    ]
+   },
+   "parent": "105",
+   "pkey": "helix",
+   "npcs": [
+    {
+     "x": 2,
+     "y": 7,
+     "art": "researcher",
+     "face": "up",
+     "t": [
+      "Lab tech: Those tanks hold Alienmon from every planet you've visited. We call it 'the collection'.",
+      "Lab tech: Upstairs is Project Rift. Downstairs is everything we can't explain to HR."
+     ]
+    },
+    {
+     "x": 13,
+     "y": 7,
+     "art": "researcher",
+     "face": "up",
+     "t": [
+      "Scientist: Toxin types shrug off poison, but Ground and Psychic moves hit them hard. For science.",
+      "Scientist: Please don't free the specimens. I'd have to fill out so many forms."
+     ]
+    }
+   ]
+  },
+  "108": {
+   "id": "108",
+   "name": "Labs 2F",
+   "planet": "Helix Station",
+   "dir": "09_helix",
+   "type": "interior",
+   "img": "art/sections_game/09_helix/108_labs_2f.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "Helix labs",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      8,
+      3
+     ],
+     "to": "107",
+     "at": [
+      6,
+      9
+     ],
+     "face": "down",
+     "kind": "stairs"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      7,
+      9
+     ],
+     "k": "sign",
+     "t": [
+      "PROJECT RIFT: stabiliser coolant at 81%. Director Thorne wants 100% by next cycle."
+     ]
+    }
+   ],
+   "spawns": {
+    "stairs": [
+     8,
+     4
+    ],
+    "default": [
+     8,
+     4
+    ]
+   },
+   "parent": "105",
+   "pkey": "helix",
+   "npcs": [
+    {
+     "x": 3,
+     "y": 6,
+     "art": "researcher",
+     "face": "right",
+     "t": [
+      "Senior scientist: The Rift engine needs a Singularity core. Admin Vex holds the only one aboard.",
+      "Senior scientist: Director Thorne says the Rift is a door. I've seen the numbers. It's a mouth."
+     ]
+    },
+    {
+     "x": 12,
+     "y": 6,
+     "art": "technician",
+     "face": "left",
+     "t": [
+      "Lab engineer: Don't touch the blue tank. Or the green ones. Actually, just admire from over there."
+     ]
+    }
+   ]
+  },
+  "109": {
+   "id": "109",
+   "name": "Containment Wing 1F",
+   "planet": "Helix Station",
+   "dir": "09_helix",
+   "type": "dungeon",
+   "img": "art/sections_game/09_helix/109_containment_wing_1f.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "Cells with captive Alienmon (The Captives)",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      15
+     ],
+     "to": "105",
+     "at": [
+      22,
+      6
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      8,
+      15
+     ],
+     "to": "105",
+     "at": [
+      22,
+      7
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      7,
+      0
+     ],
+     "to": "110",
+     "at": [
+      7,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      8,
+      0
+     ],
+     "to": "110",
+     "at": [
+      8,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      7,
+      8
+     ],
+     "k": "sign",
+     "t": [
+      "CONTAINMENT WING 1F. Captured Alienmon are station property. Feeding is optional."
+     ]
+    },
+    {
+     "tile": [
+      2,
+      7
+     ],
+     "k": "sign",
+     "t": [
+      "CAGE CONSOLE: the Alienmon inside presses a paw to the glass. The lock reads HELIX ADMIN ONLY."
+     ]
+    },
+    {
+     "tile": [
+      13,
+      7
+     ],
+     "k": "sign",
+     "t": [
+      "CAGE CONSOLE: something green shuffles behind the bars. The lock is keyed to an admin card."
+     ]
+    }
+   ],
+   "spawns": {
+    "default": [
+     7,
+     14
+    ]
+   },
+   "pkey": "helix",
+   "npcs": [
+    {
+     "x": 12,
+     "y": 8,
+     "art": "researcher",
+     "face": "left",
+     "t": [
+      "Worried scientist: They cry at night. The Alienmon, I mean. I've put in for a transfer three times."
+     ]
+    },
+    {
+     "x": 4,
+     "y": 8,
+     "art": "researcher",
+     "face": "right",
+     "t": [],
+     "id": "sec109_tr1",
+     "trainer": {
+      "cls": "Scientist",
+      "route": 1,
+      "name": "Mara"
+     }
+    },
+    {
+     "x": 9,
+     "y": 6,
+     "art": "guard",
+     "face": "left",
+     "t": [],
+     "id": "sec109_tr2",
+     "trainer": {
+      "cls": "Guard",
+      "route": 1,
+      "name": "Bram"
+     }
+    }
+   ]
+  },
+  "110": {
+   "id": "110",
+   "name": "Containment Wing 2F",
+   "planet": "Helix Station",
+   "dir": "09_helix",
+   "type": "dungeon",
+   "img": "art/sections_game/09_helix/110_containment_wing_2f.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "Cells with captive Alienmon (The Captives)",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      15
+     ],
+     "to": "109",
+     "at": [
+      7,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      8,
+      15
+     ],
+     "to": "109",
+     "at": [
+      8,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      7,
+      0
+     ],
+     "to": "111",
+     "at": [
+      7,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      8,
+      0
+     ],
+     "to": "111",
+     "at": [
+      8,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      7,
+      9
+     ],
+     "k": "sign",
+     "t": [
+      "CONTAINMENT WING 2F. Toxin pools are for Alienmon conditioning. Do not swim."
+     ]
+    },
+    {
+     "tile": [
+      4,
+      4
+     ],
+     "k": "sign",
+     "t": [
+      "CAGE CONSOLE: two tanks, two sleeping Alienmon. A sticky note says 'ask Bronn for the code'."
+     ]
+    },
+    {
+     "tile": [
+      12,
+      4
+     ],
+     "k": "sign",
+     "t": [
+      "CAGE CONSOLE: status SEDATED. Someone has doodled a sad face on the screen."
+     ]
+    }
+   ],
+   "spawns": {
+    "default": [
+     7,
+     14
+    ]
+   },
+   "pkey": "helix",
+   "npcs": [
+    {
+     "x": 14,
+     "y": 5,
+     "art": "technician",
+     "face": "left",
+     "t": [
+      "Cage tech: Admin Bronn has the cage codes. He's been acting... odd lately. Almost sympathetic."
+     ]
+    },
+    {
+     "x": 1,
+     "y": 5,
+     "art": "guard",
+     "face": "right",
+     "t": [],
+     "id": "sec110_tr1",
+     "trainer": {
+      "cls": "Guard",
+      "route": 1,
+      "name": "Zora"
+     }
+    },
+    {
+     "x": 13,
+     "y": 5,
+     "art": "strand",
+     "face": "left",
+     "t": [],
+     "id": "sec110_tr2",
+     "trainer": {
+      "cls": "Helix Grunt",
+      "route": 1,
+      "name": "Bo"
+     }
+    }
+   ]
+  },
+  "111": {
+   "id": "111",
+   "name": "Engineering",
+   "planet": "Helix Station",
+   "dir": "09_helix",
+   "type": "dungeon",
+   "img": "art/sections_game/09_helix/111_engineering.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "Reactor engineering deck",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      15
+     ],
+     "to": "110",
+     "at": [
+      7,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      8,
+      15
+     ],
+     "to": "110",
+     "at": [
+      8,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      7,
+      0
+     ],
+     "to": "113",
+     "at": [
+      7,
+      22
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      8,
+      0
+     ],
+     "to": "113",
+     "at": [
+      8,
+      22
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      13,
+      4
+     ],
+     "k": "sign",
+     "t": [
+      "REACTOR CORE: output 340% of rated. A label underneath says 'it's fine'."
+     ]
+    },
+    {
+     "tile": [
+      6,
+      6
+     ],
+     "k": "sign",
+     "t": [
+      "ENGINEERING LOG: Rerouted core power to the Rift engine again. Lights on 2F may flicker. - B."
+     ]
+    }
+   ],
+   "spawns": {
+    "default": [
+     7,
+     14
+    ]
+   },
+   "pkey": "helix",
+   "npcs": [
+    {
+     "x": 5,
+     "y": 12,
+     "art": "technician",
+     "face": "up",
+     "t": [
+      "Reactor tech: If the core turns white, run. If it's orange, that's normal. It's always orange.",
+      "Reactor tech: Vex's arena is straight up the corridor. Heal first. She plays dirty."
+     ]
+    },
+    {
+     "x": 9,
+     "y": 4,
+     "art": "strand",
+     "face": "left",
+     "t": [],
+     "id": "sec111_tr1",
+     "trainer": {
+      "cls": "Helix Grunt",
+      "route": 1,
+      "name": "Milo"
+     }
+    },
+    {
+     "x": 1,
+     "y": 5,
+     "art": "researcher",
+     "face": "right",
+     "t": [],
+     "id": "sec111_tr2",
+     "trainer": {
+      "cls": "Scientist",
+      "route": 1,
+      "name": "Fenn"
+     }
+    }
+   ]
+  },
+  "112": {
+   "id": "112",
+   "name": "Observation Deck",
+   "planet": "Helix Station",
+   "dir": "09_helix",
+   "type": "interior",
+   "img": "art/sections_game/09_helix/112_observation_deck.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "Observation deck (rival battle R4, M14)",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      13
+     ],
+     "to": "105",
+     "at": [
+      11,
+      2
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      13
+     ],
+     "to": "105",
+     "at": [
+      11,
+      2
+     ],
+     "face": "down",
+     "kind": "door"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      7,
+      8
+     ],
+     "k": "sign",
+     "t": [
+      "STAR MAP: every planet you've visited glows. One dark point beyond them all is marked RIFT."
+     ]
+    }
+   ],
+   "spawns": {
+    "door": [
+     7,
+     12
+    ],
+    "default": [
+     7,
+     12
+    ]
+   },
+   "parent": "105",
+   "pkey": "helix",
+   "npcs": [
+    {
+     "x": 2,
+     "y": 9,
+     "art": "guard",
+     "face": "up",
+     "t": [
+      "Deck guard: Best view in the galaxy. Shame we only use it to watch for Relay Keepers' ships."
+     ]
+    },
+    {
+     "x": 13,
+     "y": 9,
+     "art": "strand",
+     "face": "up",
+     "t": [
+      "Helix grunt: Sometimes I come up here and wonder if we're the bad guys. Then payday comes."
+     ]
+    }
+   ]
+  },
+  "113": {
+   "id": "113",
+   "name": "Vex's Arena",
+   "planet": "Helix Station",
+   "dir": "09_helix",
+   "type": "arena",
+   "img": "art/sections_game/09_helix/113_vex_s_arena.png",
+   "tiles": [
+    16,
+    24
+   ],
+   "notes": "Admin Vex's arena",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      23
+     ],
+     "to": "111",
+     "at": [
+      7,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      8,
+      23
+     ],
+     "to": "111",
+     "at": [
+      8,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     7,
+     22
+    ]
+   },
+   "pkey": "helix"
+  }
+ },
+ "connections": [
+  {
+   "from_id": "105",
+   "edge": "left",
+   "tile_range": [
+    6,
+    7
+   ],
+   "to_id": "arrival",
+   "to_edge": null,
+   "to_tile": null
+  },
+  {
+   "from_id": "105",
+   "edge": "right",
+   "tile_range": [
+    6,
+    7
+   ],
+   "to_id": "109",
+   "to_edge": "bottom",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "109",
+   "edge": "bottom",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "105",
+   "to_edge": "right",
+   "to_tile": [
+    6,
+    7
+   ]
+  },
+  {
+   "from_id": "109",
+   "edge": "top",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "110",
+   "to_edge": "bottom",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "110",
+   "edge": "bottom",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "109",
+   "to_edge": "top",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "110",
+   "edge": "top",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "111",
+   "to_edge": "bottom",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "111",
+   "edge": "bottom",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "110",
+   "to_edge": "top",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "111",
+   "edge": "top",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "113",
+   "to_edge": "bottom",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "113",
+   "edge": "bottom",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "111",
+   "to_edge": "top",
+   "to_tile": [
+    7,
+    8
+   ]
+  }
+ ]
+}

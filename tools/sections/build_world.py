@@ -427,13 +427,16 @@ for key, sp in qsrc.items():
     block = blocked_set(sec) | qtaken[sid]
     base = reach(rows, W, H, next(iter(keys)), block) if keys else set()
     near = sp.get('near') or [W // 2, H // 2]
-    want = sp.get('n', 1)
+    obj = q['objectives'][int(step)] if q and step.isdigit() and int(step) < len(q['objectives']) else {}
+    want = sp.get('n') or (obj.get('count', 1) if obj.get('type') in ('collect', 'examine', 'visit') else 1)   # one point per item to find
     pts = []
     for _ in range(want):
         best, bs = None, None
         for y in range(H):
             for x in range(W):
                 if rows[y][x] not in '.,' or (x, y) in keys or (x, y) in block or (x, y) in pts:
+                    continue
+                if base and (x, y) not in base:   # only ground the player can actually reach
                     continue
                 if pts:   # several points: spread them out, each a few tiles from the others
                     gap = min(abs(x - a) + abs(y - b) for a, b in pts)

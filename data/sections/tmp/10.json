@@ -1,0 +1,1224 @@
+{
+ "version": 1,
+ "tile": 16,
+ "screen_tiles": [
+  10,
+  9
+ ],
+ "arrival": {
+  "dustara": {
+   "section": "004",
+   "edge": "left",
+   "why": "atlas: 004 left edge -> arrival (landing pad / gate)"
+  },
+  "ferrox": {
+   "section": "029",
+   "edge": "left",
+   "why": "atlas: 029 left edge -> arrival (landing pad / gate)"
+  },
+  "halo": {
+   "section": "114",
+   "why": "atlas exit marked arrival"
+  }
+ },
+ "quest_spots": {
+  "M16:giver": {
+   "s": "115",
+   "x": 12,
+   "y": 10
+  },
+  "M16:0": {
+   "s": "115",
+   "x": 12,
+   "y": 10
+  },
+  "M16:1": {
+   "s": "122",
+   "x": 8,
+   "y": 12
+  },
+  "S94:giver": {
+   "s": "115",
+   "x": 6,
+   "y": 9
+  },
+  "S94:0": {
+   "s": "115",
+   "x": 7,
+   "y": 9
+  },
+  "S95:giver": {
+   "s": "115",
+   "x": 18,
+   "y": 12
+  },
+  "S96:giver": {
+   "s": "115",
+   "x": 12,
+   "y": 5
+  }
+ },
+ "sections": {
+  "114": {
+   "id": "114",
+   "name": "Cloud Dock",
+   "planet": "Halo",
+   "dir": "10_halo",
+   "type": "landmark",
+   "img": "art/sections_game/10_halo/114_cloud_dock.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Sky dock for airships",
+   "edges": {
+    "left": {
+     "to": "arrival",
+     "range": [
+      7,
+      8
+     ]
+    },
+    "right": {
+     "to": "115",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [],
+   "objects": [
+    {
+     "tile": [
+      17,
+      11
+     ],
+     "k": "sign",
+     "t": [
+      "A small crystal shrine. Travellers make a wish here before crossing the Wind Bridges."
+     ]
+    },
+    {
+     "tile": [
+      17,
+      3
+     ],
+     "k": "sign",
+     "t": [
+      "SKYLINER HALO-1. Boarding by ticket only.",
+      "Today's departures: none. Enjoy the view!"
+     ]
+    }
+   ],
+   "spawns": {
+    "arrival": [
+     1,
+     7
+    ],
+    "default": [
+     1,
+     7
+    ]
+   },
+   "grid": [
+    0,
+    0
+   ],
+   "pkey": "halo",
+   "npcs": [
+    {
+     "x": 17,
+     "y": 7,
+     "art": "pilgrim",
+     "face": "down",
+     "t": [
+      "Pilgrim: I rode the skyliner up from the cloud sea. My ears still haven't popped back."
+     ]
+    },
+    {
+     "x": 19,
+     "y": 6,
+     "art": "technician",
+     "face": "down",
+     "t": [
+      "Dock tech: The airships float on Psi-charged crystals. Don't ask me how. I just polish them."
+     ]
+    },
+    {
+     "x": 15,
+     "y": 6,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Skywatcher: Skyreach Plaza is just east. Heal up at the Recovery Bay before the Wind Bridges."
+     ]
+    }
+   ],
+   "mons": [
+    {
+     "x": 8,
+     "y": 11,
+     "mon": "Cerebrix"
+    },
+    {
+     "x": 4,
+     "y": 4,
+     "mon": "Hummingmind"
+    }
+   ]
+  },
+  "115": {
+   "id": "115",
+   "name": "Skyreach Plaza",
+   "planet": "Halo",
+   "dir": "10_halo",
+   "type": "town",
+   "img": "art/sections_game/10_halo/115_skyreach_plaza.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Plaza with holo-globe fountain (rebuild at new scale)",
+   "edges": {
+    "left": {
+     "to": "114",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    },
+    "right": {
+     "to": "118",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [
+    {
+     "tile": [
+      17,
+      5
+     ],
+     "to": "116",
+     "at": [
+      7,
+      12
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    },
+    {
+     "tile": [
+      18,
+      5
+     ],
+     "to": "116",
+     "at": [
+      8,
+      12
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    },
+    {
+     "tile": [
+      3,
+      4
+     ],
+     "to": "117",
+     "at": [
+      7,
+      12
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      11,
+      9
+     ],
+     "k": "sign",
+     "t": [
+      "THE HOLO-GLOBE. Fourteen worlds turn in its light.",
+      "Look closely: one of them is slowly dimming."
+     ]
+    }
+   ],
+   "spawns": {
+    "default": [
+     1,
+     7
+    ]
+   },
+   "grid": [
+    24,
+    0
+   ],
+   "pkey": "halo",
+   "npcs": [
+    {
+     "x": 4,
+     "y": 6,
+     "art": "pilgrim",
+     "face": "down",
+     "t": [
+      "Pilgrim: The holo-globe shows all fourteen worlds at once. I found my home world spinning in it."
+     ]
+    },
+    {
+     "x": 6,
+     "y": 5,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Skywatcher: The islands float on updrafts. Don't look down. Seriously, don't."
+     ]
+    },
+    {
+     "x": 16,
+     "y": 9,
+     "art": "wanderer",
+     "face": "down",
+     "t": [
+      "Mystic: The twins see what you'll do before you do it. They told me you'd come today."
+     ]
+    },
+    {
+     "x": 2,
+     "y": 9,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Kid: I caught a Psi-type with a Stasis Pod! Weaken them first or the pod just pops open."
+     ]
+    },
+    {
+     "x": 10,
+     "y": 4,
+     "art": "researcher",
+     "face": "down",
+     "t": [
+      "Star scholar: The Sky Temple sits past the Floating Gardens. Echo and Iris guard Halo's Signal Shard."
+     ]
+    },
+    {
+     "x": 14,
+     "y": 5,
+     "art": "guard",
+     "face": "down",
+     "t": [
+      "Plaza guard: Folks in Helix coats kept asking about the temple crystal. Odd questions. I sent them off."
+     ]
+    },
+    {
+     "x": 11,
+     "y": 14,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Climber: Trainers on the bridges spot you from five tiles off. Slip past their line of sight if you're tired."
+     ]
+    }
+   ],
+   "mons": []
+  },
+  "116": {
+   "id": "116",
+   "name": "Skyreach Recovery Bay",
+   "planet": "Halo",
+   "dir": "10_halo",
+   "type": "interior",
+   "img": "art/sections_game/10_halo/116_skyreach_recovery_bay.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      13
+     ],
+     "to": "115",
+     "at": [
+      17,
+      6
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      13
+     ],
+     "to": "115",
+     "at": [
+      17,
+      6
+     ],
+     "face": "down",
+     "kind": "door"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      8,
+      6
+     ],
+     "k": "bay"
+    }
+   ],
+   "spawns": {
+    "door": [
+     7,
+     12
+    ],
+    "default": [
+     7,
+     12
+    ]
+   },
+   "parent": "115",
+   "pkey": "halo",
+   "npcs": [
+    {
+     "x": 8,
+     "y": 5,
+     "art": "nurse",
+     "face": "down",
+     "t": [
+      "Nurse: Welcome to the Skyreach Recovery Bay. Rest your Alienmon, the thin air tires them out."
+     ]
+    },
+    {
+     "x": 6,
+     "y": 10,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Visitor: Psi-types hit hard up here. Bring something sturdy, or bring plenty of healing gel."
+     ]
+    }
+   ]
+  },
+  "117": {
+   "id": "117",
+   "name": "Skyreach Shop",
+   "planet": "Halo",
+   "dir": "10_halo",
+   "type": "interior",
+   "img": "art/sections_game/10_halo/117_skyreach_shop.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      13
+     ],
+     "to": "115",
+     "at": [
+      3,
+      5
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      13
+     ],
+     "to": "115",
+     "at": [
+      3,
+      5
+     ],
+     "face": "down",
+     "kind": "door"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      4,
+      7
+     ],
+     "k": "shop"
+    }
+   ],
+   "spawns": {
+    "door": [
+     7,
+     12
+    ],
+    "default": [
+     7,
+     12
+    ]
+   },
+   "parent": "115",
+   "pkey": "halo",
+   "npcs": [
+    {
+     "x": 4,
+     "y": 6,
+     "art": "shop",
+     "face": "down",
+     "t": [
+      "Clerk: Welcome to Skyreach Supply! Stock up now, there's no shop past the plaza."
+     ]
+    },
+    {
+     "x": 11,
+     "y": 7,
+     "art": "pilgrim",
+     "face": "down",
+     "t": [
+      "Shopper: I always carry spare Stasis Pods. You never know what drifts out of the clouds."
+     ]
+    }
+   ]
+  },
+  "118": {
+   "id": "118",
+   "name": "Wind Bridges Part A",
+   "planet": "Halo",
+   "dir": "10_halo",
+   "type": "route",
+   "img": "art/sections_game/10_halo/118_wind_bridges_part_a.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Bridges between floating islands",
+   "edges": {
+    "left": {
+     "to": "115",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    },
+    "right": {
+     "to": "119",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [],
+   "objects": [],
+   "spawns": {
+    "default": [
+     1,
+     7
+    ]
+   },
+   "grid": [
+    48,
+    0
+   ],
+   "pkey": "halo",
+   "npcs": [
+    {
+     "x": 5,
+     "y": 7,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Bridge walker: The ropes creak, but they've held for three hundred years. Probably."
+     ]
+    },
+    {
+     "x": 19,
+     "y": 10,
+     "art": "pilgrim",
+     "face": "down",
+     "t": [
+      "Pilgrim: Wild Alienmon hide in the pink blossoms. Step around them if your team is worn out."
+     ]
+    },
+    {
+     "x": 19,
+     "y": 4,
+     "art": "civilian",
+     "face": "down",
+     "t": [],
+     "id": "sec118_tr2",
+     "trainer": {
+      "cls": "Skywatcher",
+      "route": 1,
+      "name": "Vela"
+     }
+    },
+    {
+     "x": 6,
+     "y": 4,
+     "art": "wanderer",
+     "face": "down",
+     "t": [],
+     "id": "sec118_tr3",
+     "trainer": {
+      "cls": "Mystic",
+      "route": 1,
+      "name": "Ash"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 8,
+     "y": 10,
+     "mon": "Cerebrix"
+    },
+    {
+     "x": 11,
+     "y": 2,
+     "mon": "Hummingmind"
+    }
+   ]
+  },
+  "119": {
+   "id": "119",
+   "name": "Wind Bridges Part B",
+   "planet": "Halo",
+   "dir": "10_halo",
+   "type": "route",
+   "img": "art/sections_game/10_halo/119_wind_bridges_part_b.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Bridges between floating islands",
+   "edges": {
+    "left": {
+     "to": "118",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    },
+    "right": {
+     "to": "120",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [],
+   "objects": [],
+   "spawns": {
+    "default": [
+     1,
+     7
+    ]
+   },
+   "grid": [
+    72,
+    0
+   ],
+   "pkey": "halo",
+   "npcs": [
+    {
+     "x": 5,
+     "y": 6,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Skywatcher: See those little islands drifting by? Some of them glitter with Signal Shard dust."
+     ]
+    },
+    {
+     "x": 19,
+     "y": 8,
+     "art": "wanderer",
+     "face": "down",
+     "t": [
+      "Mystic: The wind sings louder near the temple. The twins say it is singing your name."
+     ]
+    },
+    {
+     "x": 13,
+     "y": 9,
+     "art": "wanderer",
+     "face": "left",
+     "t": [],
+     "id": "sec119_tr2",
+     "trainer": {
+      "cls": "Mystic",
+      "route": 1,
+      "name": "Taro"
+     }
+    },
+    {
+     "x": 16,
+     "y": 5,
+     "art": "pilgrim",
+     "face": "left",
+     "t": [],
+     "id": "sec119_tr3",
+     "trainer": {
+      "cls": "Pilgrim",
+      "route": 1,
+      "name": "Sol"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 8,
+     "y": 4,
+     "mon": "Halocene"
+    },
+    {
+     "x": 8,
+     "y": 10,
+     "mon": "Zephyrion"
+    }
+   ]
+  },
+  "120": {
+   "id": "120",
+   "name": "Floating Gardens",
+   "planet": "Halo",
+   "dir": "10_halo",
+   "type": "field",
+   "img": "art/sections_game/10_halo/120_floating_gardens.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Floating garden islands",
+   "edges": {
+    "left": {
+     "to": "119",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [
+    {
+     "tile": [
+      23,
+      7
+     ],
+     "to": "121",
+     "at": [
+      7,
+      22
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      8
+     ],
+     "to": "121",
+     "at": [
+      8,
+      22
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      18,
+      2
+     ],
+     "k": "sign",
+     "t": [
+      "GARDEN SHRINE. Leave the flowers, take the quiet.",
+      "The Sky Temple lies east, past the last bridge."
+     ]
+    }
+   ],
+   "spawns": {
+    "default": [
+     1,
+     7
+    ]
+   },
+   "grid": [
+    96,
+    0
+   ],
+   "pkey": "halo",
+   "npcs": [
+    {
+     "x": 18,
+     "y": 9,
+     "art": "researcher",
+     "face": "down",
+     "t": [
+      "Botanist: These blossoms only grow above the clouds. Psi-types nest in them when the wind is calm."
+     ]
+    },
+    {
+     "x": 6,
+     "y": 6,
+     "art": "pilgrim",
+     "face": "down",
+     "t": [
+      "Pilgrim: The Sky Temple is just east. Echo and Iris accept every challenger, but few leave smiling."
+     ]
+    },
+    {
+     "x": 10,
+     "y": 10,
+     "art": "pilgrim",
+     "face": "left",
+     "t": [],
+     "id": "sec120_tr2",
+     "trainer": {
+      "cls": "Pilgrim",
+      "route": 1,
+      "name": "Ines"
+     }
+    },
+    {
+     "x": 17,
+     "y": 4,
+     "art": "civilian",
+     "face": "down",
+     "t": [],
+     "id": "sec120_tr3",
+     "trainer": {
+      "cls": "Skywatcher",
+      "route": 1,
+      "name": "Corin"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 2,
+     "y": 10,
+     "mon": "Cerebrix"
+    },
+    {
+     "x": 10,
+     "y": 3,
+     "mon": "Hummingmind"
+    }
+   ]
+  },
+  "121": {
+   "id": "121",
+   "name": "Sky Temple 1F",
+   "planet": "Halo",
+   "dir": "10_halo",
+   "type": "tower",
+   "img": "art/sections_game/10_halo/121_sky_temple_1f.png",
+   "tiles": [
+    16,
+    24
+   ],
+   "notes": "Echo & Iris's temple",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      23
+     ],
+     "to": "120",
+     "at": [
+      22,
+      7
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      8,
+      23
+     ],
+     "to": "120",
+     "at": [
+      22,
+      8
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      7,
+      0
+     ],
+     "to": "122",
+     "at": [
+      7,
+      22
+     ],
+     "face": "up",
+     "kind": "stairs",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      8,
+      0
+     ],
+     "to": "122",
+     "at": [
+      8,
+      22
+     ],
+     "face": "up",
+     "kind": "stairs",
+     "edge": "top"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      7,
+      8
+     ],
+     "k": "sign",
+     "t": [
+      "THE SKY CRYSTAL. It hums softly.",
+      "For a moment you feel someone reading your thoughts."
+     ]
+    }
+   ],
+   "spawns": {
+    "default": [
+     7,
+     22
+    ]
+   },
+   "pkey": "halo",
+   "npcs": [
+    {
+     "x": 8,
+     "y": 15,
+     "art": "pilgrim",
+     "face": "down",
+     "t": [
+      "Temple pilgrim: The twins wait upstairs. Their apprentices will test you first."
+     ]
+    },
+    {
+     "x": 10,
+     "y": 16,
+     "art": "pilgrim",
+     "face": "left",
+     "t": [],
+     "id": "sec121_app1",
+     "trainer": {
+      "cls": "Apprentice",
+      "app": 1,
+      "name": "Juno"
+     }
+    },
+    {
+     "x": 6,
+     "y": 6,
+     "art": "civilian",
+     "face": "right",
+     "t": [],
+     "id": "sec121_app2",
+     "trainer": {
+      "cls": "Apprentice",
+      "app": 1,
+      "name": "Oz"
+     }
+    }
+   ]
+  },
+  "122": {
+   "id": "122",
+   "name": "Sky Temple 2F",
+   "planet": "Halo",
+   "dir": "10_halo",
+   "type": "tower",
+   "img": "art/sections_game/10_halo/122_sky_temple_2f.png",
+   "tiles": [
+    16,
+    24
+   ],
+   "notes": "Echo & Iris's temple",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      23
+     ],
+     "to": "121",
+     "at": [
+      7,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      8,
+      23
+     ],
+     "to": "121",
+     "at": [
+      8,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      7,
+      4
+     ],
+     "k": "keeper"
+    }
+   ],
+   "spawns": {
+    "default": [
+     7,
+     22
+    ]
+   },
+   "pkey": "halo",
+   "npcs": [
+    {
+     "x": 8,
+     "y": 10,
+     "art": "wanderer",
+     "face": "down",
+     "t": [
+      "Mystic: One twin starts a sentence, the other finishes it. Don't let it rattle you."
+     ]
+    }
+   ]
+  }
+ },
+ "connections": [
+  {
+   "from_id": "114",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "arrival",
+   "to_edge": null,
+   "to_tile": null
+  },
+  {
+   "from_id": "114",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "115",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "115",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "114",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "115",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "118",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "118",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "115",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "118",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "119",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "119",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "118",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "119",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "120",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "120",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "119",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "120",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "121",
+   "to_edge": "bottom",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "121",
+   "edge": "bottom",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "120",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "121",
+   "edge": "top",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "122",
+   "to_edge": "bottom",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "122",
+   "edge": "bottom",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "121",
+   "to_edge": "top",
+   "to_tile": [
+    7,
+    8
+   ]
+  }
+ ]
+}

@@ -1,0 +1,791 @@
+{
+ "version": 1,
+ "tile": 16,
+ "screen_tiles": [
+  10,
+  9
+ ],
+ "arrival": {
+  "dustara": {
+   "section": "004",
+   "edge": "left",
+   "why": "atlas: 004 left edge -> arrival (landing pad / gate)"
+  },
+  "ferrox": {
+   "section": "029",
+   "edge": "left",
+   "why": "atlas: 029 left edge -> arrival (landing pad / gate)"
+  },
+  "apex": {
+   "section": "146",
+   "why": "atlas exit marked arrival"
+  }
+ },
+ "quest_spots": {
+  "M20:giver": {
+   "s": "146",
+   "x": 12,
+   "y": 8
+  },
+  "M20:0": {
+   "s": "147",
+   "x": 11,
+   "y": 5
+  },
+  "M20:1": {
+   "s": "148",
+   "x": 8,
+   "y": 4
+  },
+  "M20:2": {
+   "s": "149",
+   "x": 12,
+   "y": 5
+  },
+  "M20:3": {
+   "s": "150",
+   "x": 9,
+   "y": 5
+  },
+  "M21:giver": {
+   "s": "151",
+   "x": 8,
+   "y": 12
+  },
+  "M21:0": {
+   "s": "151",
+   "x": 7,
+   "y": 6
+  },
+  "S99:giver": {
+   "s": "151",
+   "x": 8,
+   "y": 18
+  },
+  "S99:0": {
+   "s": "151",
+   "x": 8,
+   "y": 12,
+   "pts": [
+    [
+     8,
+     12
+    ],
+    [
+     10,
+     7
+    ],
+    [
+     3,
+     10
+    ]
+   ]
+  },
+  "S100:giver": {
+   "s": "146",
+   "x": 12,
+   "y": 8
+  },
+  "S100:0": {
+   "s": "147",
+   "x": 8,
+   "y": 8
+  },
+  "S101:giver": {
+   "s": "152",
+   "x": 8,
+   "y": 10
+  }
+ },
+ "sections": {
+  "146": {
+   "id": "146",
+   "name": "Summit Lift",
+   "planet": "Apex Array",
+   "dir": "13_apex",
+   "type": "landmark",
+   "img": "art/sections_game/13_apex/146_summit_lift.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Lift station up the mountain",
+   "edges": {
+    "left": {
+     "to": "arrival",
+     "range": [
+      7,
+      8
+     ]
+    }
+   },
+   "warps": [
+    {
+     "tile": [
+      23,
+      7
+     ],
+     "to": "151",
+     "at": [
+      7,
+      22
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      8
+     ],
+     "to": "151",
+     "at": [
+      8,
+      22
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      17,
+      4
+     ],
+     "to": "147",
+     "at": [
+      7,
+      13
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    },
+    {
+     "tile": [
+      18,
+      4
+     ],
+     "to": "147",
+     "at": [
+      8,
+      13
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    },
+    {
+     "tile": [
+      5,
+      4
+     ],
+     "to": "152",
+     "at": [
+      7,
+      12
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      19,
+      12
+     ],
+     "k": "bay"
+    },
+    {
+     "tile": [
+      6,
+      8
+     ],
+     "k": "shop"
+    },
+    {
+     "tile": [
+      20,
+      12
+     ],
+     "k": "sign",
+     "t": [
+      "SUMMIT UPLINK: Recovery terminal online. Last full heal before the Great Telescope."
+     ]
+    },
+    {
+     "tile": [
+      10,
+      6
+     ],
+     "k": "sign",
+     "t": [
+      "APEX ARRAY. Lift gate: Observatory Halls of the Quorum. Road east: the Great Telescope."
+     ]
+    }
+   ],
+   "spawns": {
+    "arrival": [
+     1,
+     7
+    ],
+    "default": [
+     1,
+     7
+    ]
+   },
+   "grid": [
+    0,
+    0
+   ],
+   "pkey": "apex",
+   "npcs": [
+    {
+     "x": 11,
+     "y": 10,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Ace Linker: I beat the Quorum once. Then they beat me four times. Heal before every hall."
+     ]
+    },
+    {
+     "x": 6,
+     "y": 8,
+     "art": "researcher",
+     "face": "down",
+     "t": [
+      "Astronomer: The thin air up here makes the sky so clear. On a good night you can see the Rift glow."
+     ]
+    },
+    {
+     "x": 15,
+     "y": 7,
+     "art": "guard",
+     "face": "down",
+     "t": [
+      "Summit guard: Only Linkers with all eight Signal Shards ride the lift. Go on, you've earned it."
+     ]
+    }
+   ],
+   "mons": [
+    {
+     "x": 22,
+     "y": 7,
+     "mon": "Flarehawk"
+    },
+    {
+     "x": 4,
+     "y": 11,
+     "mon": "Diamondillo"
+    }
+   ]
+  },
+  "147": {
+   "id": "147",
+   "name": "Observatory Halls 1F",
+   "planet": "Apex Array",
+   "dir": "13_apex",
+   "type": "interior",
+   "img": "art/sections_game/13_apex/147_observatory_halls_1f.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "Quorum observatory halls, 4 halls",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      14
+     ],
+     "to": "146",
+     "at": [
+      17,
+      5
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      14
+     ],
+     "to": "146",
+     "at": [
+      17,
+      5
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      6
+     ],
+     "to": "148",
+     "at": [
+      3,
+      8
+     ],
+     "face": "down",
+     "kind": "stairs"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      7,
+      6
+     ],
+     "k": "sign",
+     "t": [
+      "CRYSTAL HALL, 1F. Seat of Quorum member Marisol Fenn.",
+      "Step into the orrery column to ride up to the Sonic Hall."
+     ]
+    }
+   ],
+   "spawns": {
+    "door": [
+     7,
+     13
+    ],
+    "default": [
+     7,
+     13
+    ]
+   },
+   "parent": "146",
+   "pkey": "apex",
+   "npcs": [
+    {
+     "x": 3,
+     "y": 11,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Ace Linker: Crystal types shrug off hits but crack under heavy blows. Bring something that hits hard."
+     ]
+    }
+   ]
+  },
+  "148": {
+   "id": "148",
+   "name": "Observatory Halls 2F",
+   "planet": "Apex Array",
+   "dir": "13_apex",
+   "type": "interior",
+   "img": "art/sections_game/13_apex/148_observatory_halls_2f.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "Quorum observatory halls, 4 halls",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      3,
+      7
+     ],
+     "to": "147",
+     "at": [
+      8,
+      7
+     ],
+     "face": "down",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      12,
+      7
+     ],
+     "to": "149",
+     "at": [
+      3,
+      8
+     ],
+     "face": "down",
+     "kind": "stairs"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      7,
+      8
+     ],
+     "k": "sign",
+     "t": [
+      "SONIC HALL, 2F. Seat of Quorum member Duke Harrow.",
+      "The dome hums a low chord. The right staircase climbs to 3F."
+     ]
+    }
+   ],
+   "spawns": {
+    "stairs": [
+     3,
+     8
+    ],
+    "default": [
+     3,
+     8
+    ]
+   },
+   "parent": "146",
+   "pkey": "apex",
+   "npcs": [
+    {
+     "x": 11,
+     "y": 6,
+     "art": "researcher",
+     "face": "down",
+     "t": [
+      "Astronomer: The dome here was tuned to hear radio stars. Now it mostly hears guitar solos."
+     ]
+    }
+   ]
+  },
+  "149": {
+   "id": "149",
+   "name": "Observatory Halls 3F",
+   "planet": "Apex Array",
+   "dir": "13_apex",
+   "type": "interior",
+   "img": "art/sections_game/13_apex/149_observatory_halls_3f.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "Quorum observatory halls, 4 halls",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      3,
+      7
+     ],
+     "to": "148",
+     "at": [
+      12,
+      8
+     ],
+     "face": "down",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      12,
+      7
+     ],
+     "to": "150",
+     "at": [
+      8,
+      9
+     ],
+     "face": "down",
+     "kind": "stairs"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      8,
+      4
+     ],
+     "k": "sign",
+     "t": [
+      "PLASMA HALL, 3F. Seat of the silent Quorum member Saga.",
+      "A lone flame burns in the orb. The right staircase climbs to 4F."
+     ]
+    }
+   ],
+   "spawns": {
+    "stairs": [
+     3,
+     8
+    ],
+    "default": [
+     3,
+     8
+    ]
+   },
+   "parent": "146",
+   "pkey": "apex",
+   "npcs": [
+    {
+     "x": 4,
+     "y": 9,
+     "art": "guard",
+     "face": "down",
+     "t": [
+      "Summit guard: Nobody has heard Saga speak. The battle does the talking."
+     ]
+    }
+   ]
+  },
+  "150": {
+   "id": "150",
+   "name": "Observatory Halls 4F",
+   "planet": "Apex Array",
+   "dir": "13_apex",
+   "type": "interior",
+   "img": "art/sections_game/13_apex/150_observatory_halls_4f.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "Quorum observatory halls, 4 halls",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      8,
+      8
+     ],
+     "to": "149",
+     "at": [
+      12,
+      8
+     ],
+     "face": "down",
+     "kind": "stairs"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      7,
+      8
+     ],
+     "k": "sign",
+     "t": [
+      "GRAVITY HALL, 4F. Seat of Quorum member General Ostrander.",
+      "Beyond this hall, only the Prime Linker waits at the Great Telescope."
+     ]
+    }
+   ],
+   "spawns": {
+    "stairs": [
+     8,
+     9
+    ],
+    "default": [
+     8,
+     9
+    ]
+   },
+   "parent": "146",
+   "pkey": "apex",
+   "npcs": [
+    {
+     "x": 1,
+     "y": 9,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Ace Linker: Gravity moves hit like a landslide. Lighten your team and keep your Pods ready."
+     ]
+    }
+   ]
+  },
+  "151": {
+   "id": "151",
+   "name": "Great Telescope",
+   "planet": "Apex Array",
+   "dir": "13_apex",
+   "type": "arena",
+   "img": "art/sections_game/13_apex/151_great_telescope.png",
+   "tiles": [
+    16,
+    24
+   ],
+   "notes": "Prime Linker Orra's chamber under the Great Telescope",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      23
+     ],
+     "to": "146",
+     "at": [
+      22,
+      7
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      8,
+      23
+     ],
+     "to": "146",
+     "at": [
+      22,
+      8
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     7,
+     22
+    ]
+   },
+   "pkey": "apex",
+   "npcs": [
+    {
+     "x": 6,
+     "y": 16,
+     "art": "guard",
+     "face": "down",
+     "t": [
+      "Summit guard: Prime Linker Orra Venn bonded the very first Alienmon. Show respect, then show your best."
+     ]
+    }
+   ]
+  },
+  "152": {
+   "id": "152",
+   "name": "Apex Library",
+   "planet": "Apex Array",
+   "dir": "13_apex",
+   "type": "interior",
+   "img": "art/sections_game/13_apex/152_apex_library.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "Library of star charts (Star Chart)",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      13
+     ],
+     "to": "146",
+     "at": [
+      5,
+      5
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      13
+     ],
+     "to": "146",
+     "at": [
+      5,
+      5
+     ],
+     "face": "down",
+     "kind": "door"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      8,
+      3
+     ],
+     "k": "sign",
+     "t": [
+      "STAR CHART: Every Linker world is pinned here, Dustara to Starfall.",
+      "One faint point past the Rift has no name, only a note: 'Ystra?'"
+     ]
+    }
+   ],
+   "spawns": {
+    "door": [
+     7,
+     12
+    ],
+    "default": [
+     7,
+     12
+    ]
+   },
+   "parent": "146",
+   "pkey": "apex",
+   "npcs": [
+    {
+     "x": 6,
+     "y": 8,
+     "art": "researcher",
+     "face": "down",
+     "t": [
+      "Astronomer: Every Signal Shard you carried lit a world on these charts. Helix wanted the map for itself."
+     ]
+    },
+    {
+     "x": 9,
+     "y": 8,
+     "art": "researcher",
+     "face": "down",
+     "t": [
+      "Archivist: Quiet, please. The star charts are older than the Linker League itself."
+     ]
+    }
+   ]
+  }
+ },
+ "connections": [
+  {
+   "from_id": "146",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "arrival",
+   "to_edge": null,
+   "to_tile": null
+  },
+  {
+   "from_id": "146",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "151",
+   "to_edge": "bottom",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "151",
+   "edge": "bottom",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "146",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  }
+ ]
+}

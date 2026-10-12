@@ -1,0 +1,1415 @@
+{
+ "version": 1,
+ "tile": 16,
+ "screen_tiles": [
+  10,
+  9
+ ],
+ "arrival": {
+  "dustara": {
+   "section": "004",
+   "edge": "left",
+   "why": "atlas: 004 left edge -> arrival (landing pad / gate)"
+  },
+  "ferrox": {
+   "section": "029",
+   "edge": "left",
+   "why": "atlas: 029 left edge -> arrival (landing pad / gate)"
+  },
+  "neonis": {
+   "section": "062",
+   "why": "atlas exit marked arrival"
+  }
+ },
+ "quest_spots": {
+  "M09:giver": {
+   "s": "062",
+   "x": 12,
+   "y": 8
+  },
+  "M09:0": {
+   "s": "062",
+   "x": 13,
+   "y": 8
+  },
+  "M09:1": {
+   "s": "071",
+   "x": 8,
+   "y": 14
+  },
+  "S50:giver": {
+   "s": "062",
+   "x": 15,
+   "y": 9
+  },
+  "S50:0": {
+   "s": "062",
+   "x": 8,
+   "y": 8
+  },
+  "S51:giver": {
+   "s": "063",
+   "x": 8,
+   "y": 8
+  },
+  "S52:giver": {
+   "s": "062",
+   "x": 12,
+   "y": 6
+  },
+  "S52:0": {
+   "s": "063",
+   "x": 12,
+   "y": 8,
+   "pts": [
+    [
+     12,
+     8
+    ],
+    [
+     7,
+     6
+    ],
+    [
+     17,
+     6
+    ]
+   ]
+  }
+ },
+ "sections": {
+  "062": {
+   "id": "062",
+   "name": "Neonis Starport",
+   "planet": "Neonis",
+   "dir": "05_neonis",
+   "type": "town",
+   "img": "art/sections_game/05_neonis/062_neonis_starport.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Floating landing deck with orange landing ring (rebuild at new scale)",
+   "edges": {
+    "left": {
+     "to": "arrival",
+     "range": [
+      7,
+      8
+     ]
+    },
+    "right": {
+     "to": "063",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [
+    {
+     "tile": [
+      12,
+      4
+     ],
+     "to": "064",
+     "at": [
+      7,
+      12
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    },
+    {
+     "tile": [
+      20,
+      5
+     ],
+     "to": "065",
+     "at": [
+      7,
+      12
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      10,
+      7
+     ],
+     "k": "sign",
+     "t": [
+      "NEONIS STARPORT - Deck 7. Mind the landing ring while ships are docking."
+     ]
+    },
+    {
+     "tile": [
+      15,
+      7
+     ],
+     "k": "sign",
+     "t": [
+      "East gate: Neon Boulevard. Shops, nightlife and the Arcade District beyond."
+     ]
+    }
+   ],
+   "spawns": {
+    "arrival": [
+     1,
+     7
+    ],
+    "default": [
+     1,
+     7
+    ]
+   },
+   "grid": [
+    0,
+    0
+   ],
+   "pkey": "neonis",
+   "npcs": [
+    {
+     "x": 12,
+     "y": 10,
+     "art": "technician",
+     "face": "down",
+     "t": [
+      "Dock tech: Ships land on that orange ring. Stand clear unless you like being flattened.",
+      "Dock tech: The whole deck floats on Volt power. If the lights flicker, hold onto something."
+     ]
+    },
+    {
+     "x": 4,
+     "y": 6,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Courier: Deliveries are faster across the catwalks. Faster still if your Alienmon can fly."
+     ]
+    },
+    {
+     "x": 13,
+     "y": 7,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Raver: First time on Neonis? The city never sleeps. Neither do I, apparently."
+     ]
+    },
+    {
+     "x": 14,
+     "y": 12,
+     "art": "guard",
+     "face": "down",
+     "t": [
+      "Port guard: Helix freighters docked here last week. Paperwork was clean. Too clean, if you ask me."
+     ]
+    },
+    {
+     "x": 11,
+     "y": 12,
+     "art": "researcher",
+     "face": "down",
+     "t": [
+      "Signal researcher: Every Relay Tower picks up the same pulse, every eight seconds. Spooky, right?"
+     ]
+    },
+    {
+     "x": 10,
+     "y": 9,
+     "art": "wanderer",
+     "face": "down",
+     "t": [
+      "Traveller: The dome with the cross is the Recovery Bay. It heals your whole team for free. Use it!"
+     ]
+    },
+    {
+     "x": 14,
+     "y": 9,
+     "art": "mom",
+     "face": "down",
+     "t": [
+      "Mom: My son wants to be a DJ like Static. I told him to finish his homework first."
+     ]
+    }
+   ],
+   "mons": [
+    {
+     "x": 7,
+     "y": 2,
+     "mon": "Pixbot"
+    }
+   ]
+  },
+  "063": {
+   "id": "063",
+   "name": "Neon Boulevard",
+   "planet": "Neonis",
+   "dir": "05_neonis",
+   "type": "town",
+   "img": "art/sections_game/05_neonis/063_neon_boulevard.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Main neon street",
+   "edges": {
+    "left": {
+     "to": "062",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    },
+    "right": {
+     "to": "066",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [],
+   "objects": [
+    {
+     "tile": [
+      12,
+      4
+     ],
+     "k": "sign",
+     "t": [
+      "A holo-ad loops: a glowing jellyfish Alienmon drifts by. 'Stay charged. Stay bright. Neonis.'"
+     ]
+    }
+   ],
+   "spawns": {
+    "default": [
+     1,
+     7
+    ]
+   },
+   "grid": [
+    24,
+    0
+   ],
+   "pkey": "neonis",
+   "npcs": [
+    {
+     "x": 13,
+     "y": 8,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Raver: The whole city hums with Volt energy. Feel it? That buzz in your teeth?"
+     ]
+    },
+    {
+     "x": 6,
+     "y": 6,
+     "art": "technician",
+     "face": "down",
+     "t": [
+      "Coder: Every sign in Neonis runs on Alienmon power. They get paid in snacks. Good snacks."
+     ]
+    },
+    {
+     "x": 19,
+     "y": 6,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Courier: The Arcade District is east. Trainers there love a surprise battle."
+     ]
+    },
+    {
+     "x": 10,
+     "y": 7,
+     "art": "wanderer",
+     "face": "down",
+     "t": [
+      "Tourist: Volt types hate ground moves. Remember that before you climb Voltspire."
+     ]
+    },
+    {
+     "x": 15,
+     "y": 6,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Street vendor: Neon noodles! You glow for an hour after eating. Totally safe. Mostly."
+     ]
+    },
+    {
+     "x": 17,
+     "y": 8,
+     "art": "researcher",
+     "face": "down",
+     "t": [
+      "Archivist: Signal Shards are said to resonate with each other. Collect them and listen closely."
+     ]
+    },
+    {
+     "x": 11,
+     "y": 10,
+     "art": "strand",
+     "face": "down",
+     "t": [
+      "Suspicious man: Helix? Never heard of it. I just... like dark uniforms. Move along."
+     ]
+    }
+   ],
+   "mons": [
+    {
+     "x": 14,
+     "y": 13,
+     "mon": "Ampup"
+    }
+   ]
+  },
+  "064": {
+   "id": "064",
+   "name": "Neonis Recovery Bay",
+   "planet": "Neonis",
+   "dir": "05_neonis",
+   "type": "interior",
+   "img": "art/sections_game/05_neonis/064_neonis_recovery_bay.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      13
+     ],
+     "to": "062",
+     "at": [
+      12,
+      5
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      13
+     ],
+     "to": "062",
+     "at": [
+      12,
+      5
+     ],
+     "face": "down",
+     "kind": "door"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      8,
+      7
+     ],
+     "k": "bay"
+    }
+   ],
+   "spawns": {
+    "door": [
+     7,
+     12
+    ],
+    "default": [
+     7,
+     12
+    ]
+   },
+   "parent": "062",
+   "pkey": "neonis",
+   "npcs": [
+    {
+     "x": 8,
+     "y": 6,
+     "art": "nurse",
+     "face": "down",
+     "t": [
+      "Nurse: Welcome to the Neonis Recovery Bay! Step up to the counter and we'll recharge your team."
+     ]
+    },
+    {
+     "x": 6,
+     "y": 11,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Raver: Three battles in a row at the Arcade. My Alienmon needed a nap. So did I."
+     ]
+    }
+   ]
+  },
+  "065": {
+   "id": "065",
+   "name": "Neonis Shop",
+   "planet": "Neonis",
+   "dir": "05_neonis",
+   "type": "interior",
+   "img": "art/sections_game/05_neonis/065_neonis_shop.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      13
+     ],
+     "to": "062",
+     "at": [
+      20,
+      6
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      13
+     ],
+     "to": "062",
+     "at": [
+      20,
+      6
+     ],
+     "face": "down",
+     "kind": "door"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      4,
+      7
+     ],
+     "k": "shop"
+    }
+   ],
+   "spawns": {
+    "door": [
+     7,
+     12
+    ],
+    "default": [
+     7,
+     12
+    ]
+   },
+   "parent": "062",
+   "pkey": "neonis",
+   "npcs": [
+    {
+     "x": 4,
+     "y": 6,
+     "art": "shop",
+     "face": "down",
+     "t": [
+      "Clerk: Welcome to the Neonis Shop! Stasis Pods, potions, all the essentials."
+     ]
+    },
+    {
+     "x": 8,
+     "y": 11,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Shopper: Stock up before Voltspire. Static's team hits hard and fast."
+     ]
+    }
+   ]
+  },
+  "066": {
+   "id": "066",
+   "name": "Arcade District",
+   "planet": "Neonis",
+   "dir": "05_neonis",
+   "type": "field",
+   "img": "art/sections_game/05_neonis/066_arcade_district.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Arcade halls and plazas (Glitch Hunt)",
+   "edges": {
+    "left": {
+     "to": "063",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    },
+    "right": {
+     "to": "067",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [],
+   "objects": [
+    {
+     "tile": [
+      11,
+      9
+     ],
+     "k": "sign",
+     "t": [
+      "GLITCH HUNT: static-y Alienmon flicker between the cabinets after dark. Bring Stasis Pods!"
+     ]
+    }
+   ],
+   "spawns": {
+    "default": [
+     1,
+     7
+    ]
+   },
+   "grid": [
+    48,
+    0
+   ],
+   "pkey": "neonis",
+   "npcs": [
+    {
+     "x": 17,
+     "y": 7,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Gamer: High score on Star Saucer 3! ...Okay, second highest. A Coder beat me with a macro."
+     ]
+    },
+    {
+     "x": 5,
+     "y": 7,
+     "art": "technician",
+     "face": "down",
+     "t": [
+      "Repair coder: Glitchy Alienmon hide in the static. A weakened one is easier to catch in a Stasis Pod."
+     ]
+    },
+    {
+     "x": 10,
+     "y": 11,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Courier: Trainers battle you if you walk into their line of sight. Fight, or sneak around them."
+     ]
+    },
+    {
+     "x": 20,
+     "y": 6,
+     "art": "civilian",
+     "face": "left",
+     "t": [],
+     "id": "sec066_tr3",
+     "trainer": {
+      "cls": "Raver",
+      "route": 1,
+      "name": "Oz"
+     }
+    },
+    {
+     "x": 15,
+     "y": 8,
+     "art": "technician",
+     "face": "right",
+     "t": [],
+     "id": "sec066_tr4",
+     "trainer": {
+      "cls": "Coder",
+      "route": 1,
+      "name": "Dex"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 11,
+     "y": 2,
+     "mon": "Filamaw"
+    },
+    {
+     "x": 8,
+     "y": 14,
+     "mon": "Arclume"
+    }
+   ]
+  },
+  "067": {
+   "id": "067",
+   "name": "Broadcast Route Part A",
+   "planet": "Neonis",
+   "dir": "05_neonis",
+   "type": "route",
+   "img": "art/sections_game/05_neonis/067_broadcast_route_part_a.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Route of antenna towers and cables (Pirate Radio)",
+   "edges": {
+    "left": {
+     "to": "066",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    },
+    "right": {
+     "to": "068",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [],
+   "objects": [
+    {
+     "tile": [
+      11,
+      6
+     ],
+     "k": "sign",
+     "t": [
+      "BROADCAST ROUTE: every dish here relays DJ Static's show. Pirate signals will be prosecuted. Probably."
+     ]
+    }
+   ],
+   "spawns": {
+    "default": [
+     1,
+     7
+    ]
+   },
+   "grid": [
+    72,
+    0
+   ],
+   "pkey": "neonis",
+   "npcs": [
+    {
+     "x": 18,
+     "y": 7,
+     "art": "technician",
+     "face": "down",
+     "t": [
+      "Dish tech: These antennas relay DJ Static's show to the whole system. Someone keeps hijacking channel 9."
+     ]
+    },
+    {
+     "x": 11,
+     "y": 8,
+     "art": "wanderer",
+     "face": "down",
+     "t": [
+      "Hiker: The glowing grass is full of wild Alienmon. Keep a few Stasis Pods handy."
+     ]
+    },
+    {
+     "x": 6,
+     "y": 11,
+     "art": "technician",
+     "face": "up",
+     "t": [],
+     "id": "sec067_tr2",
+     "trainer": {
+      "cls": "Coder",
+      "route": 1,
+      "name": "Fenn"
+     }
+    },
+    {
+     "x": 3,
+     "y": 6,
+     "art": "explorer",
+     "face": "right",
+     "t": [],
+     "id": "sec067_tr3",
+     "trainer": {
+      "cls": "Courier",
+      "route": 1,
+      "name": "Milo"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 15,
+     "y": 3,
+     "mon": "Amplion"
+    },
+    {
+     "x": 20,
+     "y": 13,
+     "mon": "Transmitron"
+    }
+   ]
+  },
+  "068": {
+   "id": "068",
+   "name": "Broadcast Route Part B",
+   "planet": "Neonis",
+   "dir": "05_neonis",
+   "type": "route",
+   "img": "art/sections_game/05_neonis/068_broadcast_route_part_b.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Route of antenna towers and cables (Pirate Radio)",
+   "edges": {
+    "left": {
+     "to": "067",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [
+    {
+     "tile": [
+      23,
+      7
+     ],
+     "to": "069",
+     "at": [
+      7,
+      22
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      8
+     ],
+     "to": "069",
+     "at": [
+      8,
+      22
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      9,
+      2
+     ],
+     "k": "sign",
+     "t": [
+      "The billboard flashes: 'VOLTSPIRE - LIVE TONIGHT - DJ STATIC.' An arrow points east."
+     ]
+    }
+   ],
+   "spawns": {
+    "default": [
+     1,
+     7
+    ]
+   },
+   "grid": [
+    96,
+    0
+   ],
+   "pkey": "neonis",
+   "npcs": [
+    {
+     "x": 6,
+     "y": 7,
+     "art": "researcher",
+     "face": "down",
+     "t": [
+      "Radio fan: DJ Static picked up a signal coming from the Starfall Rift. It repeats every 8 seconds."
+     ]
+    },
+    {
+     "x": 13,
+     "y": 6,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Raver: Voltspire is just east. Static's apprentices guard the first floor. They're loud. Really loud."
+     ]
+    },
+    {
+     "x": 19,
+     "y": 8,
+     "art": "explorer",
+     "face": "right",
+     "t": [],
+     "id": "sec068_tr2",
+     "trainer": {
+      "cls": "Courier",
+      "route": 1,
+      "name": "Pell"
+     }
+    },
+    {
+     "x": 10,
+     "y": 9,
+     "art": "civilian",
+     "face": "left",
+     "t": [],
+     "id": "sec068_tr3",
+     "trainer": {
+      "cls": "Raver",
+      "route": 1,
+      "name": "Suri"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 3,
+     "y": 11,
+     "mon": "Filamaw"
+    },
+    {
+     "x": 1,
+     "y": 4,
+     "mon": "Arclume"
+    }
+   ]
+  },
+  "069": {
+   "id": "069",
+   "name": "Voltspire 1F",
+   "planet": "Neonis",
+   "dir": "05_neonis",
+   "type": "tower",
+   "img": "art/sections_game/05_neonis/069_voltspire_1f.png",
+   "tiles": [
+    16,
+    24
+   ],
+   "notes": "Keeper Static's tower, 3 floors",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      23
+     ],
+     "to": "068",
+     "at": [
+      22,
+      7
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      8,
+      23
+     ],
+     "to": "068",
+     "at": [
+      22,
+      8
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      7,
+      0
+     ],
+     "to": "070",
+     "at": [
+      7,
+      22
+     ],
+     "face": "up",
+     "kind": "stairs",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      8,
+      0
+     ],
+     "to": "070",
+     "at": [
+      8,
+      22
+     ],
+     "face": "up",
+     "kind": "stairs",
+     "edge": "top"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      2,
+      9
+     ],
+     "k": "sign",
+     "t": [
+      "A display case of old mixing decks. The plaque reads: 'Every Keeper starts with one track.'"
+     ]
+    }
+   ],
+   "spawns": {
+    "default": [
+     7,
+     22
+    ]
+   },
+   "pkey": "neonis",
+   "npcs": [
+    {
+     "x": 5,
+     "y": 20,
+     "art": "guard",
+     "face": "down",
+     "t": [
+      "Stage guard: Welcome to Voltspire! The Keeper waits at the top. Heal up before you climb."
+     ]
+    },
+    {
+     "x": 3,
+     "y": 10,
+     "art": "explorer",
+     "face": "left",
+     "t": [],
+     "id": "sec069_app1",
+     "trainer": {
+      "cls": "Apprentice",
+      "app": 1,
+      "name": "Hale"
+     }
+    },
+    {
+     "x": 12,
+     "y": 11,
+     "art": "civilian",
+     "face": "right",
+     "t": [],
+     "id": "sec069_app2",
+     "trainer": {
+      "cls": "Apprentice",
+      "app": 1,
+      "name": "Sol"
+     }
+    }
+   ]
+  },
+  "070": {
+   "id": "070",
+   "name": "Voltspire 2F",
+   "planet": "Neonis",
+   "dir": "05_neonis",
+   "type": "tower",
+   "img": "art/sections_game/05_neonis/070_voltspire_2f.png",
+   "tiles": [
+    16,
+    24
+   ],
+   "notes": "Keeper Static's tower, 3 floors",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      23
+     ],
+     "to": "069",
+     "at": [
+      7,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      8,
+      23
+     ],
+     "to": "069",
+     "at": [
+      8,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      7,
+      0
+     ],
+     "to": "071",
+     "at": [
+      7,
+      22
+     ],
+     "face": "up",
+     "kind": "stairs",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      8,
+      0
+     ],
+     "to": "071",
+     "at": [
+      8,
+      22
+     ],
+     "face": "up",
+     "kind": "stairs",
+     "edge": "top"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     7,
+     22
+    ]
+   },
+   "pkey": "neonis",
+   "npcs": [
+    {
+     "x": 8,
+     "y": 17,
+     "art": "technician",
+     "face": "down",
+     "t": [
+      "Sound tech: Feel that bass? That's the reactor below us. Static tunes it like an instrument."
+     ]
+    },
+    {
+     "x": 8,
+     "y": 4,
+     "art": "technician",
+     "face": "up",
+     "t": [],
+     "id": "sec070_tr1",
+     "trainer": {
+      "cls": "Coder",
+      "route": 1,
+      "name": "Pip"
+     }
+    }
+   ]
+  },
+  "071": {
+   "id": "071",
+   "name": "Voltspire 3F",
+   "planet": "Neonis",
+   "dir": "05_neonis",
+   "type": "tower",
+   "img": "art/sections_game/05_neonis/071_voltspire_3f.png",
+   "tiles": [
+    16,
+    24
+   ],
+   "notes": "Keeper Static's tower, 3 floors",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      23
+     ],
+     "to": "070",
+     "at": [
+      7,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      8,
+      23
+     ],
+     "to": "070",
+     "at": [
+      8,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      8,
+      4
+     ],
+     "k": "keeper"
+    }
+   ],
+   "spawns": {
+    "default": [
+     7,
+     22
+    ]
+   },
+   "pkey": "neonis"
+  }
+ },
+ "connections": [
+  {
+   "from_id": "062",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "arrival",
+   "to_edge": null,
+   "to_tile": null
+  },
+  {
+   "from_id": "062",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "063",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "063",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "062",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "063",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "066",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "066",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "063",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "066",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "067",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "067",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "066",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "067",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "068",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "068",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "067",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "068",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "069",
+   "to_edge": "bottom",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "069",
+   "edge": "bottom",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "068",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "069",
+   "edge": "top",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "070",
+   "to_edge": "bottom",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "070",
+   "edge": "bottom",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "069",
+   "to_edge": "top",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "070",
+   "edge": "top",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "071",
+   "to_edge": "bottom",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "071",
+   "edge": "bottom",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "070",
+   "to_edge": "top",
+   "to_tile": [
+    7,
+    8
+   ]
+  }
+ ]
+}

@@ -1,0 +1,1444 @@
+{
+ "version": 1,
+ "tile": 16,
+ "screen_tiles": [
+  10,
+  9
+ ],
+ "arrival": {
+  "dustara": {
+   "section": "004",
+   "edge": "left",
+   "why": "atlas: 004 left edge -> arrival (landing pad / gate)"
+  },
+  "ferrox": {
+   "section": "029",
+   "edge": "left",
+   "why": "atlas: 029 left edge -> arrival (landing pad / gate)"
+  },
+  "starfall": {
+   "section": "136",
+   "why": "atlas exit marked arrival"
+  }
+ },
+ "quest_spots": {
+  "M18:1": {
+   "s": "141",
+   "x": 12,
+   "y": 8
+  },
+  "M18:2": {
+   "s": "141",
+   "x": 11,
+   "y": 6
+  },
+  "M19:giver": {
+   "s": "145",
+   "x": 12,
+   "y": 8
+  },
+  "M19:0": {
+   "s": "145",
+   "x": 17,
+   "y": 7
+  },
+  "M19:1": {
+   "s": "145",
+   "x": 12,
+   "y": 8
+  },
+  "S95:0": {
+   "s": "141",
+   "x": 12,
+   "y": 8
+  },
+  "S97:giver": {
+   "s": "138",
+   "x": 8,
+   "y": 8
+  },
+  "S97:0": {
+   "s": "139",
+   "x": 12,
+   "y": 8,
+   "pts": [
+    [
+     12,
+     8
+    ],
+    [
+     12,
+     1
+    ],
+    [
+     8,
+     5
+    ],
+    [
+     16,
+     5
+    ]
+   ]
+  },
+  "S98:giver": {
+   "s": "140",
+   "x": 10,
+   "y": 8
+  },
+  "S98:0": {
+   "s": "140",
+   "x": 14,
+   "y": 8
+  }
+ },
+ "sections": {
+  "136": {
+   "id": "136",
+   "name": "Rim Camp",
+   "planet": "Starfall Rift",
+   "dir": "12_starfall",
+   "type": "town",
+   "img": "art/sections_game/12_starfall/136_rim_camp.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Military cordon camp",
+   "edges": {
+    "left": {
+     "to": "arrival",
+     "range": [
+      7,
+      8
+     ]
+    },
+    "right": {
+     "to": "138",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [
+    {
+     "tile": [
+      17,
+      5
+     ],
+     "to": "137",
+     "at": [
+      7,
+      12
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    },
+    {
+     "tile": [
+      18,
+      5
+     ],
+     "to": "137",
+     "at": [
+      8,
+      12
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      7,
+      6
+     ],
+     "k": "sign",
+     "t": [
+      "A hand-lettered card on the stall: 'Closed until the Helix inspection is over. Again.'"
+     ]
+    },
+    {
+     "tile": [
+      14,
+      5
+     ],
+     "k": "sign",
+     "t": [
+      "CORDON NOTICE: Civilian access to the Starfall Rift is suspended by order of the Helix Directive.",
+      "Someone has scratched underneath: 'Since when does Helix give orders out here?'"
+     ]
+    }
+   ],
+   "spawns": {
+    "arrival": [
+     1,
+     7
+    ],
+    "default": [
+     1,
+     7
+    ]
+   },
+   "grid": [
+    0,
+    0
+   ],
+   "pkey": "starfall",
+   "npcs": [
+    {
+     "x": 11,
+     "y": 7,
+     "art": "guard",
+     "face": "down",
+     "t": [
+      "Cordon guard: Nobody goes past the fields without a reason. Got one? Fine, just don't die down there."
+     ]
+    },
+    {
+     "x": 4,
+     "y": 6,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Rig worker: Helix left half its drills running when they ran. You can hear them grinding at night."
+     ]
+    },
+    {
+     "x": 14,
+     "y": 13,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Rift seeker: Can you hear it? The crater hums like a heartbeat. Louder every week."
+     ]
+    },
+    {
+     "x": 5,
+     "y": 9,
+     "art": "researcher",
+     "face": "down",
+     "t": [
+      "Star watcher: Crystals here grow overnight. I measured one at breakfast and again at dinner. Twice as big."
+     ]
+    },
+    {
+     "x": 19,
+     "y": 9,
+     "art": "technician",
+     "face": "down",
+     "t": [
+      "Camp tech: The Medic Tent is the dome with the blue cross. Rest your team before the Seedpod Fields."
+     ]
+    },
+    {
+     "x": 3,
+     "y": 4,
+     "art": "wanderer",
+     "face": "down",
+     "t": [
+      "Old hand: Twenty years back the pods fell right here. Every Alienmon you've ever met came from that sky."
+     ]
+    },
+    {
+     "x": 21,
+     "y": 5,
+     "art": "strand",
+     "face": "down",
+     "t": [
+      "Ex-Helix grunt: I scratched the logo off my jacket. Whatever Thorne's building down there, I want no part."
+     ]
+    }
+   ],
+   "mons": [
+    {
+     "x": 10,
+     "y": 12,
+     "mon": "Prismite"
+    }
+   ]
+  },
+  "137": {
+   "id": "137",
+   "name": "Rim Camp Medic Tent",
+   "planet": "Starfall Rift",
+   "dir": "12_starfall",
+   "type": "interior",
+   "img": "art/sections_game/12_starfall/137_rim_camp_medic_tent.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "Recovery tent interior",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      13
+     ],
+     "to": "136",
+     "at": [
+      17,
+      6
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      13
+     ],
+     "to": "136",
+     "at": [
+      17,
+      6
+     ],
+     "face": "down",
+     "kind": "door"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      8,
+      10
+     ],
+     "k": "bay"
+    }
+   ],
+   "spawns": {
+    "door": [
+     7,
+     12
+    ],
+    "default": [
+     7,
+     12
+    ]
+   },
+   "parent": "136",
+   "pkey": "starfall",
+   "npcs": [
+    {
+     "x": 8,
+     "y": 8,
+     "art": "nurse",
+     "face": "down",
+     "t": [
+      "Nurse: Welcome to the Medic Tent. Step up to the counter and I'll patch your team right up."
+     ]
+    },
+    {
+     "x": 7,
+     "y": 6,
+     "art": "miner",
+     "face": "down",
+     "t": [
+      "Injured driller: Got clipped by a crystal-type in the fields. Those shells hide more than dust, kid."
+     ]
+    }
+   ]
+  },
+  "138": {
+   "id": "138",
+   "name": "Seedpod Fields Part A",
+   "planet": "Starfall Rift",
+   "dir": "12_starfall",
+   "type": "field",
+   "img": "art/sections_game/12_starfall/138_seedpod_fields_part_a.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Fields of cracked seedpod shells",
+   "edges": {
+    "left": {
+     "to": "136",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    },
+    "right": {
+     "to": "139",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [],
+   "objects": [],
+   "spawns": {
+    "default": [
+     1,
+     7
+    ]
+   },
+   "grid": [
+    24,
+    0
+   ],
+   "pkey": "starfall",
+   "npcs": [
+    {
+     "x": 19,
+     "y": 9,
+     "art": "researcher",
+     "face": "down",
+     "t": [
+      "Researcher: Each cracked seedpod is a shell something hatched from. Rare Alienmon hide in the pink weeds."
+     ]
+    },
+    {
+     "x": 13,
+     "y": 7,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Hiker: Out of Stasis Pods already? Weaken them first - a tired Alienmon is much easier to catch."
+     ]
+    },
+    {
+     "x": 6,
+     "y": 6,
+     "art": "strand",
+     "face": "left",
+     "t": [],
+     "id": "sec138_tr2",
+     "trainer": {
+      "cls": "Helix Driller",
+      "route": 1,
+      "name": "Oz"
+     }
+    },
+    {
+     "x": 9,
+     "y": 10,
+     "art": "explorer",
+     "face": "up",
+     "t": [],
+     "id": "sec138_tr3",
+     "trainer": {
+      "cls": "Rift Seeker",
+      "route": 1,
+      "name": "Remy"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 15,
+     "y": 13,
+     "mon": "Novacat"
+    },
+    {
+     "x": 17,
+     "y": 3,
+     "mon": "Prismora"
+    }
+   ]
+  },
+  "139": {
+   "id": "139",
+   "name": "Seedpod Fields Part B",
+   "planet": "Starfall Rift",
+   "dir": "12_starfall",
+   "type": "field",
+   "img": "art/sections_game/12_starfall/139_seedpod_fields_part_b.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Fields of cracked seedpod shells",
+   "edges": {
+    "left": {
+     "to": "138",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    },
+    "right": {
+     "to": "140",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [],
+   "objects": [],
+   "spawns": {
+    "default": [
+     1,
+     7
+    ]
+   },
+   "grid": [
+    48,
+    0
+   ],
+   "pkey": "starfall",
+   "npcs": [
+    {
+     "x": 13,
+     "y": 5,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Rift seeker: Trainers out here spot you from five tiles off. Heal up before you walk their line of sight."
+     ]
+    },
+    {
+     "x": 18,
+     "y": 9,
+     "art": "miner",
+     "face": "down",
+     "t": [
+      "Driller: Helix paid triple to dig here. Then the pods started glowing back. Nobody stayed for the bonus."
+     ]
+    },
+    {
+     "x": 10,
+     "y": 10,
+     "art": "explorer",
+     "face": "right",
+     "t": [],
+     "id": "sec139_tr2",
+     "trainer": {
+      "cls": "Rift Seeker",
+      "route": 1,
+      "name": "Sol"
+     }
+    },
+    {
+     "x": 4,
+     "y": 7,
+     "art": "researcher",
+     "face": "left",
+     "t": [],
+     "id": "sec139_tr3",
+     "trainer": {
+      "cls": "Star Watcher",
+      "route": 1,
+      "name": "Suri"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 8,
+     "y": 1,
+     "mon": "Cometrix"
+    },
+    {
+     "x": 22,
+     "y": 5,
+     "mon": "Quasarus"
+    }
+   ]
+  },
+  "140": {
+   "id": "140",
+   "name": "Teo's Old Camp",
+   "planet": "Starfall Rift",
+   "dir": "12_starfall",
+   "type": "landmark",
+   "img": "art/sections_game/12_starfall/140_teo_s_old_camp.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Teo's abandoned camp (Teo's Journal)",
+   "edges": {
+    "left": {
+     "to": "139",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    },
+    "right": {
+     "to": "141",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [],
+   "objects": [
+    {
+     "tile": [
+      5,
+      4
+     ],
+     "k": "sign",
+     "t": [
+      "Teo's tent. The flap is tied shut with a careful knot, as if he meant to come back.",
+      "A child's drawing is pinned inside: a man, a star, and the word 'DAD'."
+     ]
+    },
+    {
+     "tile": [
+      6,
+      10
+     ],
+     "k": "sign",
+     "t": [
+      "Teo's Journal, last page: 'The light at the bottom is singing. I think it knows my name.'",
+      "'If Sola ever reads this - I didn't leave you. I went to find out why they came.'"
+     ]
+    },
+    {
+     "tile": [
+      12,
+      11
+     ],
+     "k": "sign",
+     "t": [
+      "The campfire is long cold. Three cups still sit around it, one never used."
+     ]
+    }
+   ],
+   "spawns": {
+    "default": [
+     1,
+     7
+    ]
+   },
+   "grid": [
+    72,
+    0
+   ],
+   "pkey": "starfall",
+   "npcs": [
+    {
+     "x": 6,
+     "y": 7,
+     "art": "pilgrim",
+     "face": "down",
+     "t": [
+      "Pilgrim: They say an explorer camped here waiting for the light to speak. His tent still stands."
+     ]
+    },
+    {
+     "x": 13,
+     "y": 9,
+     "art": "wanderer",
+     "face": "down",
+     "t": [
+      "Wanderer: I leave a fresh cup by the fire each time I pass. Somebody should, for whoever comes home."
+     ]
+    }
+   ],
+   "mons": [
+    {
+     "x": 18,
+     "y": 4,
+     "mon": "Novacat"
+    },
+    {
+     "x": 23,
+     "y": 9,
+     "mon": "Prismora"
+    }
+   ]
+  },
+  "141": {
+   "id": "141",
+   "name": "Crater Rim",
+   "planet": "Starfall Rift",
+   "dir": "12_starfall",
+   "type": "route",
+   "img": "art/sections_game/12_starfall/141_crater_rim.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Rim of the crater",
+   "edges": {
+    "left": {
+     "to": "140",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [
+    {
+     "tile": [
+      23,
+      7
+     ],
+     "to": "142",
+     "at": [
+      7,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      8
+     ],
+     "to": "142",
+     "at": [
+      8,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      12,
+      5
+     ],
+     "k": "sign",
+     "t": [
+      "Lookout: Below, the Rift turns slowly, a purple wound in the crater floor. The hum is louder here."
+     ]
+    }
+   ],
+   "spawns": {
+    "default": [
+     1,
+     7
+    ]
+   },
+   "grid": [
+    96,
+    0
+   ],
+   "pkey": "starfall",
+   "npcs": [
+    {
+     "x": 18,
+     "y": 10,
+     "art": "researcher",
+     "face": "down",
+     "t": [
+      "Star watcher: Psychic and gravity-touched Alienmon gather near the rim. Bring something sturdy."
+     ]
+    },
+    {
+     "x": 6,
+     "y": 7,
+     "art": "guard",
+     "face": "down",
+     "t": [
+      "Rim guard: The descent's three levels deep. Signal Shards resonate louder the farther down you go."
+     ]
+    },
+    {
+     "x": 13,
+     "y": 8,
+     "art": "strand",
+     "face": "up",
+     "t": [],
+     "id": "sec141_tr2",
+     "trainer": {
+      "cls": "Helix Driller",
+      "route": 1,
+      "name": "Vela"
+     }
+    },
+    {
+     "x": 12,
+     "y": 13,
+     "art": "explorer",
+     "face": "left",
+     "t": [],
+     "id": "sec141_tr3",
+     "trainer": {
+      "cls": "Rift Seeker",
+      "route": 1,
+      "name": "Vela"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 1,
+     "y": 4,
+     "mon": "Cometrix"
+    },
+    {
+     "x": 3,
+     "y": 11,
+     "mon": "Quasarus"
+    }
+   ]
+  },
+  "142": {
+   "id": "142",
+   "name": "Crater Descent B1",
+   "planet": "Starfall Rift",
+   "dir": "12_starfall",
+   "type": "cave",
+   "img": "art/sections_game/12_starfall/142_crater_descent_b1.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "Descent into the crater, 3 levels",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      15
+     ],
+     "to": "141",
+     "at": [
+      22,
+      7
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      8,
+      15
+     ],
+     "to": "141",
+     "at": [
+      22,
+      8
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      7,
+      0
+     ],
+     "to": "143",
+     "at": [
+      7,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      8,
+      0
+     ],
+     "to": "143",
+     "at": [
+      8,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     7,
+     14
+    ]
+   },
+   "pkey": "starfall",
+   "npcs": [
+    {
+     "x": 6,
+     "y": 4,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Caver: Watch the purple cracks. That's not lava, it's starlight. Doesn't burn - just pulls."
+     ]
+    },
+    {
+     "x": 8,
+     "y": 11,
+     "art": "explorer",
+     "face": "up",
+     "t": [],
+     "id": "sec142_tr1",
+     "trainer": {
+      "cls": "Rift Seeker",
+      "route": 1,
+      "name": "Corin"
+     }
+    }
+   ]
+  },
+  "143": {
+   "id": "143",
+   "name": "Crater Descent B2",
+   "planet": "Starfall Rift",
+   "dir": "12_starfall",
+   "type": "cave",
+   "img": "art/sections_game/12_starfall/143_crater_descent_b2.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "Descent into the crater, 3 levels",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      15
+     ],
+     "to": "142",
+     "at": [
+      7,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      8,
+      15
+     ],
+     "to": "142",
+     "at": [
+      8,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      7,
+      0
+     ],
+     "to": "144",
+     "at": [
+      7,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      8,
+      0
+     ],
+     "to": "144",
+     "at": [
+      8,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     7,
+     14
+    ]
+   },
+   "pkey": "starfall",
+   "npcs": [
+    {
+     "x": 13,
+     "y": 2,
+     "art": "technician",
+     "face": "down",
+     "t": [
+      "Helix tech (lost): My map says the Rift Engine is 'down'. Every tunnel here says 'down'. Help?"
+     ]
+    },
+    {
+     "x": 11,
+     "y": 8,
+     "art": "researcher",
+     "face": "up",
+     "t": [],
+     "id": "sec143_tr1",
+     "trainer": {
+      "cls": "Star Watcher",
+      "route": 1,
+      "name": "Pip"
+     }
+    }
+   ]
+  },
+  "144": {
+   "id": "144",
+   "name": "Crater Descent B3",
+   "planet": "Starfall Rift",
+   "dir": "12_starfall",
+   "type": "cave",
+   "img": "art/sections_game/12_starfall/144_crater_descent_b3.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "Descent into the crater, 3 levels",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      15
+     ],
+     "to": "143",
+     "at": [
+      7,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      8,
+      15
+     ],
+     "to": "143",
+     "at": [
+      8,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      7,
+      0
+     ],
+     "to": "145",
+     "at": [
+      1,
+      6
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      8,
+      0
+     ],
+     "to": "145",
+     "at": [
+      1,
+      7
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "top"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     7,
+     14
+    ]
+   },
+   "pkey": "starfall",
+   "npcs": [
+    {
+     "x": 7,
+     "y": 11,
+     "art": "pilgrim",
+     "face": "down",
+     "t": [
+      "Pilgrim: The vortex below is breathing. If the Keepers' Shards ever meant anything, it's here."
+     ]
+    },
+    {
+     "x": 8,
+     "y": 13,
+     "art": "strand",
+     "face": "down",
+     "t": [],
+     "id": "sec144_tr1",
+     "trainer": {
+      "cls": "Helix Driller",
+      "route": 1,
+      "name": "Nyx"
+     }
+    }
+   ]
+  },
+  "145": {
+   "id": "145",
+   "name": "Rift Engine Platform",
+   "planet": "Starfall Rift",
+   "dir": "12_starfall",
+   "type": "landmark",
+   "img": "art/sections_game/12_starfall/145_rift_engine_platform.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Helix Rift Engine platform (M19 Thorne at the Rift)",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      0,
+      6
+     ],
+     "to": "144",
+     "at": [
+      7,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      7
+     ],
+     "to": "144",
+     "at": [
+      8,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "left"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      19,
+      7
+     ],
+     "k": "sign",
+     "t": [
+      "RIFT ENGINE CONSOLE - Containment field: 41%. Output: rising. Authorized by Director K. Thorne."
+     ]
+    }
+   ],
+   "spawns": {
+    "default": [
+     1,
+     6
+    ]
+   },
+   "grid": [
+    0,
+    20
+   ],
+   "pkey": "starfall",
+   "npcs": [
+    {
+     "x": 7,
+     "y": 8,
+     "art": "strand",
+     "face": "down",
+     "t": [
+      "Helix grunt: The Director's up at the Engine. Go ahead - I'm not paid enough to stand between you two."
+     ]
+    },
+    {
+     "x": 14,
+     "y": 11,
+     "art": "researcher",
+     "face": "down",
+     "t": [
+      "Shaken scientist: Containment keeps dropping. That thing isn't a power source. It's a door."
+     ]
+    }
+   ],
+   "mons": [
+    {
+     "x": 5,
+     "y": 1,
+     "mon": "Cometrix"
+    },
+    {
+     "x": 2,
+     "y": 6,
+     "mon": "Quasarus"
+    }
+   ]
+  }
+ },
+ "connections": [
+  {
+   "from_id": "136",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "arrival",
+   "to_edge": null,
+   "to_tile": null
+  },
+  {
+   "from_id": "136",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "138",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "138",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "136",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "138",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "139",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "139",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "138",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "139",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "140",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "140",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "139",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "140",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "141",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "141",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "140",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "141",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "142",
+   "to_edge": "bottom",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "142",
+   "edge": "bottom",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "141",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "142",
+   "edge": "top",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "143",
+   "to_edge": "bottom",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "143",
+   "edge": "bottom",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "142",
+   "to_edge": "top",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "143",
+   "edge": "top",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "144",
+   "to_edge": "bottom",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "144",
+   "edge": "bottom",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "143",
+   "to_edge": "top",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "144",
+   "edge": "top",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "145",
+   "to_edge": "left",
+   "to_tile": [
+    6,
+    7
+   ]
+  },
+  {
+   "from_id": "145",
+   "edge": "left",
+   "tile_range": [
+    6,
+    7
+   ],
+   "to_id": "144",
+   "to_edge": "top",
+   "to_tile": [
+    7,
+    8
+   ]
+  }
+ ]
+}
