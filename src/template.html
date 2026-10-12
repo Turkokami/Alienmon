@@ -304,7 +304,7 @@ function startJump(where,from){let dx=(held.right?1:0)-(held.left?1:0),dy=(held.
 function landNear(ok,x,y,r){if(ok(x,y))return[x,y];for(let d=4;d<=r;d+=4)for(let a=0;a<16;a++){const px=x+Math.cos(a*Math.PI/8)*d,py=y+Math.sin(a*Math.PI/8)*d;if(ok(px,py))return[px,py]}return null}
 function jumpSfx(){try{if(!AC||musicMode==='off')return;const t=AC.currentTime,o=AC.createOscillator(),g=AC.createGain();o.type='square';o.frequency.setValueAtTime(330,t);o.frequency.exponentialRampToValueAtTime(880,t+0.12);
  g.gain.setValueAtTime(0.04,t);g.gain.exponentialRampToValueAtTime(0.001,t+0.15);o.connect(g).connect(AC.destination);o.start(t);o.stop(t+0.16)}catch(e){}}
-function launch(){const key=G.sub&&SUB_DOOR[G.sub]||PL[G.planet].key,door=exitDoor(key);if(door)cut(1,'Heading out!',()=>toWorld(door));else teleportToShip()}
+function launch(){if(inRoute())return cut(1,'Back to town',leaveRoute);const key=G.sub&&SUB_DOOR[G.sub]||PL[G.planet].key,door=exitDoor(key);if(door)cut(1,'Heading out!',()=>toWorld(door));else teleportToShip()}
 function updPaint(){const P=paintOf();if(!G.ppos)G.ppos=P.start.slice();if(spotTick()){drawPaint();return}if(frame%60===0)tip('town');
  if(P_('start')){scene='menu';menuSel=0;return}
  if(JMP&&JMP.where==='paint'){JMP.t++;const mk_=MOD_BIOME[G.sub||PL[G.planet].key],sp=4.2*(mk_&&G.key&&G.key[mk_]?1.5:1);   // a town's Linker Module carries you 50% farther
@@ -317,19 +317,19 @@ function updPaint(){const P=paintOf();if(!G.ppos)G.ppos=P.start.slice();if(spotT
   if(pfree(P,x+dx*sp,y))x+=dx*sp;if(pfree(P,x,y+dy*sp))y+=dy*sp;const d=Math.hypot(x-G.ppos[0],y-G.ppos[1]);if(d>0.1){pmove=1;stepc++;G.ppos=[x,y];
   if(G.grace>0)G.grace--;if(G.jam>0&&stepc%8===0)G.jam--;
   if(pbit(P,'grass',x,y)&&!(G.grace>0)&&Math.hypot(x-P.start[0],y-(P.exitY-30))>160){pacc+=d;if(pacc>64){pacc=0;if(R()<0.08){wild();return}}}}
-  if(y>=P.exitY&&dy>0){if(PL[G.planet].key==='dustara'&&!gateOpen('dustara')){G.ppos[1]=P.exitY-24;say(gateMsg('dustara'));return}G.ppos[1]=P.exitY-24;say('Leave '+(P.town||PL[G.planet].name)+(exitDoor(G.sub&&SUB_DOOR[G.sub]||PL[G.planet].key)?' and head out onto the Molten Frontier?':' and return to your ship?'),()=>choose('Leave town?',['Yes','No'],i=>{if(i===0)launch()}));return}}
+  if(y>=P.exitY&&dy>0){if(PL[G.planet].key==='dustara'&&!gateOpen('dustara')){G.ppos[1]=P.exitY-24;say(gateMsg('dustara'));return}G.ppos[1]=P.exitY-24;say(inRoute()?'Head back to '+(PAINT[baseKey(G.sub)].town||PL[G.planet].name)+'?':'Leave '+(P.town||PL[G.planet].name)+(exitDoor(G.sub&&SUB_DOOR[G.sub]||PL[G.planet].key)?' and head out onto the Molten Frontier?':' and return to your ship?'),()=>choose('Leave town?',['Yes','No'],i=>{if(i===0)launch()}));return}}
  if(losCheck(P)){drawPaint();return}
  pnear=null;let best=1e9;for(const h of P.hot){if(h.k==='block')continue;const dx=h.x-G.ppos[0],dy=h.y-G.ppos[1],ry=h.ry||h.r/1.6,dd=Math.hypot(dx,dy),d=dd-dd/Math.max(1e-3,Math.hypot(dx/h.r,dy/ry));if(d<44&&d<best){best=d;pnear=h}}
  const qe=qNear();if(qe&&P_('a'))qInteract(qe);else if(pnear&&P_('a'))paintInteract(pnear);
  drawPaint()}
-function paintInteract(h){const p=PL[G.planet];if(h.k==='trainer')return trainerTalk(h);if(h.legend)return legendBattle(h);if(h.k==='talk'||h.k==='npc')qEvent('talk',h.id||'',{x:h.x,y:h.y});
+function paintInteract(h){const p=PL[G.planet];if(h.k==='route')return enterRoute(p.key);if(h.k==='trainer')return trainerTalk(h);if(h.legend)return legendBattle(h);if(h.k==='talk'||h.k==='npc')qEvent('talk',h.id||'',{x:h.x,y:h.y});
  if(h.k==='bay'){G.singBuy=0;return bayMenu()}if(h.k==='shop')return shop();
  if(h.k==='npc')return say(p.npc,null,p.npcArt);
  if(h.k==='keeper')return keeperTalk(p);
  if(h.k==='ship')return choose('Your ship',['Head out (world map)','Recovery Bay','Shop','Cancel'],i=>{if(i===0)launch();else if(i===1){healAll();noteHeal();say('Ship Recovery Bay: Your Alienmon are fully healed and cured!')}else if(i===2)shop()});
  if(h.k==='talk')return say(h.t,null,h.art||undefined);
  if(h.k==='mon'){if(!G.party.some(m=>m.hp>0))return say('Your team needs to heal first.');const pool=p.pool.r.length?p.pool.r:p.pool.c,[a,b]=p.lv;
-  const wp=wildPick(p.key,h.mon),id=wp?wp[0]:h.mon&&IDX[h.mon]!=null?IDX[h.mon]:pick(pool);QWILD='hotspot_mon_'+({dustara:'dustmere'}[p.key]||p.key);say(h.t||'The wild '+D[id].name+' wants to battle!',()=>startBattle([mk(id,wp?wp[1]:ri(a,b)+1)],null))}}
+  const wp=wildPick(p.key,h.mon),id=wp?wp[0]:h.mon&&IDX[h.mon]!=null?IDX[h.mon]:pick(pool);QWILD='hotspot_mon_'+({dustara:'dustmere'}[p.key]||p.key);say(h.t||'The wild '+D[id].name+' wants to battle!',()=>startBattle([mk(id,(wp?wp[1]:ri(a,b)+1)+(inRoute()?2:0))],null))}}
 function drawPaint(){const P=paintOf(),im=SCI[P.img];if(!G.ppos)G.ppos=P.start.slice();const S=P.S,mw=P.w*S,mh=P.h*S,fx=G.ppos[0]*S,fy=G.ppos[1]*S;
  const cx=Math.max(0,Math.min(mw-160,fx-80)),cy=Math.max(0,Math.min(mh-144,fy-82)),cs=Math.round(88*S),ms=Math.round(cs*0.85);rect(0,0,160,144,'#1d1433');
  if(okI(im)){ctx.save();ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';ctx.drawImage(im,cx/S,cy/S,160/S,144/S,0,0,160,144);ctx.restore()}
@@ -339,7 +339,7 @@ function drawPaint(){const P=paintOf(),im=SCI[P.img];if(!G.ppos)G.ppos=P.start.s
  const ks=P.hot.filter(h=>h.k==='keeper'||(h.k==='mon'&&h.mon)||(h.art&&h.draw&&(h.k==='talk'||h.k==='npc'||h.k==='trainer')));ks.filter(h=>h.y<=G.ppos[1]).forEach(drawK);
  const sx=fx-cx,sy=fy-cy;ctx.fillStyle='rgba(20,10,20,0.35)';ctx.beginPath();ctx.ellipse(sx,sy-1,7,2.5,0,0,6.283);ctx.fill();
  const k=(G.gender||'boy')+'_'+face,bob=pmove&&(stepc%16<8)?1:0;if(!dchar(k,Math.round(sx-cs/2),Math.round(sy-cs-1-bob-jumpH()*cs*0.55),cs,cs))kid(Math.round(sx-6),Math.round(sy-14),face==='left',face==='up',pmove?1:0);
- ks.filter(h=>h.y>G.ppos[1]).forEach(drawK);drawDecor(cx,cy,S,ms);nightTint();qDraw(cx,cy,S,cs);drawSpot(cx,cy,S,cs);qDrawTracker(banner>0?18:0);
+ ks.filter(h=>h.y>G.ppos[1]).forEach(drawK);drawDecor(cx,cy,S,ms);drawRouteSigns(cx,cy,S);nightTint();qDraw(cx,cy,S,cs);drawSpot(cx,cy,S,cs);qDrawTracker(banner>0?18:0);
  if(pmove&&pbit(P,'grass',G.ppos[0],G.ppos[1])){ctx.fillStyle='#3f9d3a';for(let i=0;i<4;i++)ctx.fillRect(Math.round(sx-6+i*4),Math.round(sy-4-(i%2)),2,4)}
  if(pnear&&!DLG&&!CH){const hx=pnear.x*S-cx,hy=pnear.y*S-cy-32+Math.sin(frame/8);box(Math.round(hx-5),Math.round(hy-6),11,11,'#fff','#1b1424');txt('!',Math.round(hx-2),Math.round(hy-4),'#d7262e',7);
   if(pnear.hint&&pnear.hint!=='!')txt(pnear.hint,Math.round(hx-pnear.hint.length*2.5),Math.round(hy+6),'#ffffff',6)}
@@ -477,13 +477,13 @@ function interact(t,under){const p=PL[G.planet];
  if(t===5){bayMenu();return}
  if(t===7){say(p.npc,null,p.npcArt);return}
  if(t===6){keeperTalk(p);return}}
-function keeperTalk(p){{const k=p.keeper;if(!k){say(p.tower);return}
+function keeperTalk(p){{if(landmarkFirst(p,()=>keeperTalk(p)))return;const k=p.keeper;if(!k){say(p.tower);return}
   if(!G.beaten[p.key]&&apprenticesLeft())return say('The tower doors stay shut. '+apprenticesLeft()+' apprentice'+(apprenticesLeft()>1?'s':'')+' still guard the way.');
   if(G.beaten[p.key]){say(k.name+': '+k.after,null,k.art);return}
   if(!G.party.some(m=>m.hp>0)){say('Your team needs to heal first.');return}
   say([k.name+': '+k.intro],()=>{k.team=keeperTeam(p.key,k);startBattle(k.team.map(([id,lv])=>mk(id,lv)),k)},k.art);return}}
 function wild(){if(!G.party.some(m=>m.hp>0))return;QWILD=scene==='world'?({pyros:'wild_lava_fields'}[PL[G.planet].key]||'wild_'+PL[G.planet].key):'wild_'+PL[G.planet].key;const pool=PL[G.planet].pool,r=R();let list=r<0.015&&pool.l.length?pool.l:r<0.06&&pool.r.length?pool.r:r<0.25&&pool.e.length?pool.e:pool.c;
- const wp=list===pool.l?null:wildPick(PL[G.planet].key);if(wp){startBattle([mk(wp[0],wp[1])],null);return}
+ const wp=list===pool.l?null:wildPick(PL[G.planet].key);if(wp){startBattle([mk(wp[0],Math.min(100,wp[1]+(inRoute()?2:0)))],null);return}   // the wild regions run 2 levels hotter than town
  const ok=wildIds(list),id=pick(ok.length?ok:wildIds(pool.c).length?wildIds(pool.c):pool.c),[a,b]=PL[G.planet].lv;startBattle([mk(id,ri(a,b))],null)}
 
 /* ---------- cutscenes ---------- */
