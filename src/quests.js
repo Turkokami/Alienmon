@@ -92,7 +92,9 @@ function qPassive(){if(!G||!G.quests)return;
   else if(QTRAINER.has(o.type)&&!q.repeatable){const n=Math.min(o.count||1,o.target.split('|').filter(t=>G.beaten[t]).length);if(n>s.n)qProgress(q,n-s.n)}
   else if(o.type==='item'&&G.key[o.target])qProgress(q,1);
   else if(o.type==='xenodex'&&Object.keys(G.caught).length>=(o.count||1))qProgress(q,o.count||1);
-  else if(o.type==='cutscene'){qNotify(q.id,'scene',QCUT[o.target]||[]);qProgress(q,1)}
+  else if(o.type==='cutscene'){if(s.playing)continue;const art=QCUT_ART[o.target]&&SCI[QCUT_ART[o.target][0]];
+   // wait a few seconds for the scene art to download before falling back to text only
+   if(okI(art)&&!DLG&&!CH&&scene!=='battle'){s.playing=1;cut(art,QCUT_ART[o.target][1],()=>{s.playing=0;qNotify(q.id,'scene',QCUT[o.target]||[]);qProgress(q,1)})}else if(!okI(art)&&(s.wait=(s.wait||0)+1)>15){qNotify(q.id,'scene',QCUT[o.target]||[]);qProgress(q,1)}}
   else if(o.type==='choice'&&!s.asking&&!DLG&&!CH){s.asking=1;choose(o.hint||q.title,o.options,i=>{s.asking=0;G.flags[o.target]=i+1;qProgress(q,1)})}
   else if(o.type==='visit'||o.type==='spot_event'){const t=o.target||'';
    if(t==='molten_frontier'){if(scene==='world')qProgress(q,1)}
@@ -101,6 +103,7 @@ function qPassive(){if(!G||!G.quests)return;
    else if(loc&&qSameArea(loc)){const p=qPos();if(loc.x==null||(p&&Math.hypot(loc.x-p[0],loc.y-p[1])<44))qProgress(q,1)}}}}
 
 // cutscene lines that are not already part of a quest's own dialogue
+const QCUT_ART={zib_joins:['dustara_keyart','A signal from the canyon...'],sola_leaves:['thalassa_keyart','The Deep Sea Ferry dock'],sola_joins:['helix_keyart','Helix Station'],novaryx_awakens:['starfall_keyart','The eight Shards sing'],rift_sealed:['starfall_battle','The Rift closes']};
 const QCUT={novaryx_awakens:['Your eight Shards rise and resonate. A great signal-winged bird answers the call...']};
 
 function qNotify(q,kind,lines){if(lines&&lines.length)QN.push({q,kind,lines})}

@@ -10,6 +10,7 @@ A spec (data/towns/<planetKey>.json) holds:
   walk     polygons [[x,y],...] the player can stand in
   nowalk   polygons cut back out of walk (buildings, lamp posts, lava inside a plaza...)
   grass    polygons where wild Alienmon can jump out (only counts where also walkable)
+  door     regions only (data/regions/<planet>.json, planet '<planet>_route'): {x, y} of the route sign in the town map
   base     optional: a saved painted map (data/towns/base/<planet>.json, one of the three original hand-made towns)
            whose walk/grass masks, image, start, exit and hotspots are kept; walk/grass/hot in the spec are added on top
   hot      hotspots, same format as data/painted_maps.json:
@@ -122,6 +123,8 @@ def build(spec_path, overlay_path=None, dry=False):
     pm = json.load(open(pm_path, encoding='utf-8'))
     pm[spec['planet']] = {'img': img, 'S': spec.get('S', 0.22), 'w': W, 'h': H, 'cell': CELL, 'walk': pack(walk), 'grass': pack(grass),
                           'start': spec['start'], 'exitY': spec['exitY'], 'town': spec['town'], 'hot': spec['hot']}
+    if spec.get('door'):
+        pm[spec['planet']]['door'] = spec['door']   # regions: where the route sign stands in the town
     json.dump(pm, open(pm_path, 'w', encoding='utf-8'), ensure_ascii=False)
     return not probs
 
@@ -130,6 +133,6 @@ if __name__ == '__main__':
     args = sys.argv[1:]
     ov = args[args.index('--overlay') + 1] if '--overlay' in args else None
     # data/towns/base/ holds inputs, not specs
-    specs = sorted(glob.glob(os.path.join(ROOT, 'data/towns/*.json'))) if '--all' in args else [args[0]]
+    specs = (sorted(glob.glob(os.path.join(ROOT, 'data/towns/*.json'))) + sorted(glob.glob(os.path.join(ROOT, 'data/regions/*.json')))) if '--all' in args else [args[0]]
     ok = all([build(s, ov if len(specs) == 1 else None, '--dry' in args) for s in specs])
     sys.exit(0 if ok else 1)

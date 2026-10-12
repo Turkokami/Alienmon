@@ -63,7 +63,7 @@ function worldStage(){if(!G||!G.quests)return;worldBeats();const sig=QUESTS.filt
    for(const h of H)if(near(h,1067,550)||near(h,307,518))h.draw=true}
   if(k==='dustara'){if(mDone('M07'))H=H.filter(h=>!(h.k==='npc'&&near(h,300,348)));
    if(post)H.push({x:1180,y:720,r:20,k:'talk',art:'teo',draw:true,t:["Teo: Home at last. Sola won't stop telling me about you."]},{x:1222,y:724,r:20,k:'talk',art:'sola',draw:true,t:['Sola: Dad\'s home. We did it, Linker.']})}
-  addPeople(k,H);PAINT[k].hot=H}
+  addPeople(k,H);addRouteSign(k,H);PAINT[k].hot=H}
  // planet story NPC lines
  PL.forEach((p,i)=>{p.npc=PL_BASE[i];
   if(p.key==='dustara'){if(!mDone('M02'))p.npc="Dr. Vashti: Go find Zib's signal on the bridge!";else if(!mDone('M03'))p.npc="Dr. Vashti: Sola's waiting for you at the trading post!"}
@@ -139,7 +139,7 @@ const volMul=()=>[0.5,1,1.6][G&&G.opt&&G.opt.vol!=null?G.opt.vol:1];
 /* ---------- town population: trainers with line of sight, apprentices, townsfolk, fixed legendaries ---------- */
 const PEOPLE=__PEOPLE__;   // tools/place_people.py -> data/town_people.json
 function addPeople(k,H){const P=PEOPLE[k];if(!P)return;
- for(const t of P.trainers)H.push({k:'trainer',id:t.id,x:t.x,y:t.y,r:16,art:t.art,draw:true,face:t.face,cls:t.cls,name:t.name,app:t.app});
+ for(const t of P.trainers)H.push({k:'trainer',id:t.id,x:t.x,y:t.y,r:16,art:t.art,draw:true,face:t.face,cls:t.cls,name:t.name,app:t.app,route:t.route});
  for(const f of P.folk)H.push({k:'talk',x:f.x,y:f.y,r:16,art:f.art,draw:true,t:f.t});
  for(const l of P.legends)if(G.flags.champ&&legendHere(l.mon))H.push({k:'mon',legend:1,mon:l.mon,lvl:l.lv,x:l.x,y:l.y,r:22});
  optReward(k,H)}
@@ -150,7 +150,7 @@ function legendHere(name){const id=IDX[name];if(id==null||G.caught[id])return fa
 function townTrainer(h){const key=(PL[G.planet]||{}).key,a=PROG.areas[key]||{},tl=a.trainer_levels||a.levels||[5,8],hi=tl[1];
  const size=hi<=15?[1,2]:hi<=35?[2,3]:[3,4],r=rng(hash(h.id)),n=h.app?size[1]:size[0]+Math.floor(r()*(size[1]-size[0]+1));
  const t=(wildTable(key)||[]).filter(x=>wildOK(x.name)&&IDX[x.name]!=null);
- const team=Array.from({length:n},(_,i)=>[IDX[t.length?t[Math.floor(r()*t.length)].name:'Fizzle'],h.app?Math.max(tl[0],hi-2):Math.max(tl[0],Math.min(hi,tl[0]+Math.floor(r()*(hi-tl[0]+1))+i))]);
+ const team=Array.from({length:n},(_,i)=>[IDX[t.length?t[Math.floor(r()*t.length)].name:'Fizzle'],(h.app?Math.max(tl[0],hi-2):Math.max(tl[0],Math.min(hi,tl[0]+Math.floor(r()*(hi-tl[0]+1))+i)))+(h.route?2:0)]);
  return{name:h.cls+' '+h.name,art:h.art,intro:h.app?"You'll need to get past us to reach the Keeper!":"Our eyes met! That means a battle!",
   lose:h.app?'Go on, the Keeper is waiting.':'Wow, you two are in sync!',after:h.app?'The Keeper is just ahead.':'Good battle! Keep training out here.',team,bkey:h.id}}
 function trainerTalk(h){const tr=townTrainer(h);if(G.beaten[h.id])return say(tr.name+': '+tr.after,null,h.art);
@@ -198,7 +198,7 @@ function optInfo(key){if(OPT[key])return OPT[key];const P=PAINT[key];if(!P)retur
  for(let i=0;i<W*H;i++)if(!lab[i]&&bit(i)){n++;const a=fill(i,n+1);a.id=n+1;areas.push(a)}
  return OPT[key]={lab,W,areas}}
 const optAt=(key,x,y)=>{const o=optInfo(key);if(!o)return 0;const P=PAINT[key],c=Math.floor(y/P.cell)*o.W+Math.floor(x/P.cell);return o.lab[c]>1?o.lab[c]:0};
-function modOK(key,x,y){if(!MOD_BIOME[key]||freeRoam())return true;return!optAt(key,x,y)||!!(G.key&&G.key[MOD_BIOME[key]])}
+function modOK(key,x,y){const m=MOD_BIOME[baseKey(key)];if(!m||freeRoam())return true;return!optAt(key,x,y)||!!(G.key&&G.key[m])}
 // the largest optional area of each town holds a rare Alienmon (a reward for the module)
 function optReward(k,H){const o=optInfo(k);if(!o||!o.areas.length)return;const a=o.areas.reduce((x,y)=>y.c>x.c?y:x);if(a.c<12)return;const P=PAINT[k];
  let best=null,bd=1e9;for(let i=0;i<o.lab.length;i++)if(o.lab[i]===a.id){const d=Math.hypot(i%o.W-a.cx,Math.floor(i/o.W)-a.cy);if(d<bd){bd=d;best=i}}
@@ -224,3 +224,19 @@ function slotMenu(){const info=[1,2,3].map(i=>{try{const g=JSON.parse(localStora
 function drawDecor(cx,cy,S,ms){const k=(PL[G.planet]||{}).key;if(G.sub||!PEOPLE[k])return;const p=PL.find(x=>x.key===k),pool=p?p.pool.c:[];if(!pool.length)return;
  PEOPLE[k].folk.forEach((f,i)=>{const id=pool[(hash(k)+i)%pool.length],im=OWI[D[id].name];if(!okI(im))return;const t=frame/90+i*2.1,x=(f.x+30+Math.cos(t)*22)*S-cx,y=(f.y+10+Math.sin(t*1.3)*10)*S-cy;
   if(x<-20||x>180||y<-20||y>170)return;const z=Math.round(ms*0.75);ctx.drawImage(im,((frame>>4)&1)*64,0,64,64,Math.round(x-z/2),Math.round(y-z),z,z)})}
+
+/* ---------- landmark reveal: the first time you approach a world's tower ---------- */
+const TOWER_NAME={dustara:'The Crater Observatory',glyphos:'The Ancient Obelisk',ystra:'The Crystal Shrine',helix:"Vex's Containment Arena",starfall:'The Rift Spire',apex:'The Great Telescope'};
+function landmarkFirst(p,then){G.lm=G.lm||{};const im=SCI[p.key+'_landmark'];if(G.lm[p.key]||!okI(im))return false;G.lm[p.key]=1;
+ cut(im,TOWER_NAME[p.key]||(p.name+' Relay Tower'),then);return true}
+
+/* ---------- regions: a second, wild area on each world, reached by a route sign in town ---------- */
+const baseKey=k=>(k||'').replace(/_route$/,'');
+const routeOf=k=>PAINT[k+'_route'];
+function addRouteSign(k,H){const R=routeOf(k);if(R&&R.door)H.push({k:'route',x:R.door.x,y:R.door.y,r:16,hint:R.town})}
+function enterRoute(k){const R=routeOf(k);if(!R)return;G.routeBack=G.ppos.slice();
+ cut(okI(SCI[k+'_battle'])?SCI[k+'_battle']:2,'Heading into '+R.town,()=>{G.sub=k+'_route';G.ppos=[R.start[0],R.exitY-30];face='up';scene='planet';banner=90})}
+function leaveRoute(){const k=baseKey(G.sub),P=PAINT[k];G.sub=null;scene='planet';banner=90;const d=routeOf(k).door;G.ppos=G.routeBack||[d.x,d.y+30];face='down'}
+const inRoute=()=>!!(G.sub&&/_route$/.test(G.sub));
+function drawRouteSigns(cx,cy,S){const P=paintOf();if(!P)return;for(const h of P.hot){if(h.k!=='route')continue;const x=Math.round(h.x*S-cx),y=Math.round(h.y*S-cy);if(x<-10||x>170||y<-20||y>150)continue;
+ rect(x-1,y-10,2,10,'#6b4a2a');box(x-6,y-16,13,8,'#ffd23f','#1b1424');txt('>',x-2,y-15,'#1b1424',6)}}

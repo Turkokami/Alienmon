@@ -58,7 +58,9 @@ def facing(walk, x, y):
 
 out = {}
 for town, P in pm.items():
-    if town not in planets:
+    region = town.endswith('_route')
+    world = town[:-6] if region else town
+    if world not in planets:
         continue   # interiors such as the fortress get no random population
     walk = unpack(P['walk'])
     yy, xx = np.mgrid[0:GH, 0:GW]
@@ -82,7 +84,7 @@ for town, P in pm.items():
         ys, xs = np.nonzero(cands)
         pts = [(int(cx[y, x]), int(cy[y, x])) for y, x in zip(ys, xs)]
         chosen = []
-        if not pts:
+        if not pts or n <= 0:
             return chosen
         first = pts[h32(seed) % len(pts)]
         pool = [p for p in pts if all(np.hypot(p[0] - t[0], p[1] - t[1]) >= min_gap for t in taken)]
@@ -103,19 +105,19 @@ for town, P in pm.items():
     people = {'trainers': [], 'folk': [], 'legends': []}
     # townsfolk near the plaza
     near_plaza = free & (np.hypot(cx - px, cy - py) < 320)
-    for i, (x, y) in enumerate(pick(near_plaza if near_plaza.any() else free, len(pop['townsfolk'].get(town, [])), 70, town + 'folk')):
+    for i, (x, y) in enumerate(pick(near_plaza if near_plaza.any() else free, 0 if region else len(pop['townsfolk'].get(town, [])), 70, town + 'folk')):
         art, line = pop['townsfolk'][town][i]
         people['folk'].append({'x': x, 'y': y, 'art': art, 't': [line]})
     # tower apprentices near the Keeper's door
     keeper = next((h for h in P['hot'] if h['k'] == 'keeper'), None)
-    if keeper and planets[town].get('keeper'):
+    if keeper and not region and planets[world].get('keeper'):
         ring = free & (np.hypot(cx - keeper['x'], cy - keeper['y']) > 70) & (np.hypot(cx - keeper['x'], cy - keeper['y']) < 260)
         for i, (x, y) in enumerate(pick(ring, 2, 60, town + 'app')):
             people['trainers'].append({'id': f'{town}_app{i + 1}', 'x': x, 'y': y, 'app': 1})
     # route trainers spread over the rest of the town
-    for i, (x, y) in enumerate(pick(free, pop['trainer_count'].get(town, 4), 140, town + 'tr')):
-        people['trainers'].append({'id': f'{town}_tr{i + 1}', 'x': x, 'y': y})
-    classes, names = pop['classes'][town], pop['names']
+    for i, (x, y) in enumerate(pick(free, 5 if region else pop['trainer_count'].get(town, 4), 140, town + 'tr')):
+        people['trainers'].append({'id': f'{town}_tr{i + 1}', 'x': x, 'y': y, **({'route': 1} if region else {})})
+    classes, names = pop['classes'][world], pop['names']
     for i, t in enumerate(people['trainers']):
         cls, art = classes[(i + (2 if t.get('app') else 0)) % len(classes)]
         t.update({'cls': 'Apprentice' if t.get('app') else cls, 'art': art, 'name': names[h32(town + t['id']) % len(names)],
