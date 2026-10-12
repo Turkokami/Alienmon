@@ -88,7 +88,8 @@ let qTick=0;
 function qPassive(){if(!G||!G.quests)return;
  for(const q of qActive()){const o=qObj(q);if(!o)continue;const s=qs(q.id),loc=qLoc(q.id,s.step,o.location);
   if(o.type==='defeat_keeper'&&G.beaten[o.target])qProgress(q,o.count||1);
-  else if(o.type==='battle_trainer'&&o.target.includes('|')){const n=o.target.split('|').filter(t=>G.beaten[t]).length;if(n>s.n)qProgress(q,n-s.n)}
+  // trainers fight once: one you already beat (S10 before M13, say) counts for the objective; rematch quests don't
+  else if(QTRAINER.has(o.type)&&!q.repeatable){const n=Math.min(o.count||1,o.target.split('|').filter(t=>G.beaten[t]).length);if(n>s.n)qProgress(q,n-s.n)}
   else if(o.type==='item'&&G.key[o.target])qProgress(q,1);
   else if(o.type==='xenodex'&&Object.keys(G.caught).length>=(o.count||1))qProgress(q,o.count||1);
   else if(o.type==='cutscene'){qNotify(q.id,'scene',QCUT[o.target]||[]);qProgress(q,1)}

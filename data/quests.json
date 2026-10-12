@@ -202,7 +202,7 @@
     ]
    },
    "repeatable": false,
-   "notes": "Sola uses the starter strong against yours (Sporix\u2192Plazmo, Plazmo\u2192Gloopa, Gloopa\u2192Sporix)."
+   "notes": "Sola uses the starter strong against yours (Sporix→Plazmo, Plazmo→Gloopa, Gloopa→Sporix)."
   },
   {
    "id": "M04",
@@ -3596,7 +3596,7 @@
     "art": "wanderer"
    },
    "prereq": [
-    "M16"
+    "M17"
    ],
    "objectives": [
     {
@@ -3626,7 +3626,7 @@
     "dust": 700
    },
    "repeatable": false,
-   "notes": ""
+   "notes": " (Starts after M17: Novaryx-line Alienmon live on Starfall Rift, which opens at M17.)"
   },
   {
    "id": "S96",
