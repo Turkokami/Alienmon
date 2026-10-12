@@ -10,6 +10,11 @@
    "section": "004",
    "edge": "left",
    "why": "atlas: 004 left edge -> arrival (landing pad / gate)"
+  },
+  "ferrox": {
+   "section": "029",
+   "edge": "left",
+   "why": "atlas: 029 left edge -> arrival (landing pad / gate)"
   }
  },
  "sections": {
@@ -79,6 +84,7 @@
     ]
    },
    "parent": "004",
+   "pkey": "dustara",
    "npcs": [
     {
      "x": 4,
@@ -86,10 +92,14 @@
      "art": "mom",
      "face": "down",
      "t": [
-      "Mom: Off to see Dr. Vashti? Take your time, the lab isn't going anywhere.",
-      "Mom: Remember, if your Alienmon get tired, the Recovery Bay heals them for free."
+      "Mom: Look at you two! Remember, if your Alienmon get tired, the Recovery Bay heals them for free.",
+      "Mom: And call home once in a while, Linker."
      ],
-     "name": "Mom"
+     "name": "Mom",
+     "pre": [
+      "Mom: Good morning, sleepyhead! Dr. Vashti called. She's waiting for you at her observatory lab.",
+      "Mom: It's the big dome with the telescope, across the plaza. Go on, your partner is waiting!"
+     ]
     }
    ]
   },
@@ -136,7 +146,8 @@
      5
     ]
    },
-   "parent": "004"
+   "parent": "004",
+   "pkey": "dustara"
   },
   "003": {
    "id": "003",
@@ -200,17 +211,33 @@
     ]
    },
    "parent": "004",
+   "pkey": "dustara",
    "npcs": [
     {
-     "x": 9,
+     "x": 10,
      "y": 7,
+     "art": "vashti",
+     "face": "down",
+     "t": [
+      "Dr. Vashti: The Starfall Crater glows purple again. Something down there is stirring.",
+      "Dr. Vashti: Bring me news from every world you visit. And take care of your partner."
+     ],
+     "name": "Dr. Vashti",
+     "story": "starter"
+    },
+    {
+     "x": 4,
+     "y": 9,
      "art": "researcher",
      "face": "down",
      "t": [
       "Lab aide: Dr. Vashti tracks every seedpod that fell twenty years ago. There are still hundreds unaccounted for.",
       "Lab aide: The big telescope points at the Starfall Crater. It's been glowing purple again."
      ],
-     "name": "Lab aide"
+     "name": "Lab aide",
+     "pre": [
+      "Lab aide: Dr. Vashti has been waiting for you! She's by the pod table."
+     ]
     }
    ]
   },
@@ -330,6 +357,7 @@
     0,
     0
    ],
+   "pkey": "dustara",
    "npcs": [
     {
      "x": 6,
@@ -338,6 +366,9 @@
      "face": "down",
      "t": [
       "Kid: The drift grass crackles with blue sparks. That's how you know Alienmon are hiding in it!"
+     ],
+     "pre": [
+      "Kid: You're getting your first Alienmon today? Lucky! Dr. Vashti's lab is the dome with the telescope."
      ]
     },
     {
@@ -451,6 +482,7 @@
     ]
    },
    "parent": "004",
+   "pkey": "dustara",
    "npcs": [
     {
      "x": 7,
@@ -463,10 +495,10 @@
      "name": "Nurse"
     },
     {
-     "x": 9,
-     "y": 12,
+     "x": 2,
+     "y": 8,
      "art": "explorer",
-     "face": "down",
+     "face": "right",
      "t": [
       "Trainer: I come here after every route. Healing is free, so there's no excuse to push your luck."
      ]
@@ -535,6 +567,7 @@
     ]
    },
    "parent": "004",
+   "pkey": "dustara",
    "npcs": [
     {
      "x": 4,
@@ -547,8 +580,8 @@
      "name": "Shopkeeper"
     },
     {
-     "x": 8,
-     "y": 11,
+     "x": 10,
+     "y": 6,
      "art": "civilian",
      "face": "down",
      "t": [
@@ -599,9 +632,10 @@
     24,
     0
    ],
+   "pkey": "dustara",
    "npcs": [
     {
-     "x": 19,
+     "x": 4,
      "y": 7,
      "art": "wanderer",
      "face": "down",
@@ -610,7 +644,7 @@
      ]
     },
     {
-     "x": 4,
+     "x": 19,
      "y": 7,
      "art": "technician",
      "face": "down",
@@ -662,6 +696,7 @@
     48,
     0
    ],
+   "pkey": "dustara",
    "npcs": [
     {
      "x": 4,
@@ -673,8 +708,8 @@
      ]
     },
     {
-     "x": 3,
-     "y": 6,
+     "x": 11,
+     "y": 8,
      "art": "civilian",
      "face": "down",
      "t": [
@@ -691,8 +726,8 @@
      ]
     },
     {
-     "x": 11,
-     "y": 12,
+     "x": 5,
+     "y": 7,
      "art": "wanderer",
      "face": "down",
      "t": [
@@ -700,8 +735,8 @@
      ]
     },
     {
-     "x": 16,
-     "y": 7,
+     "x": 4,
+     "y": 6,
      "art": "explorer",
      "face": "down",
      "t": [
@@ -752,6 +787,7 @@
     72,
     0
    ],
+   "pkey": "dustara",
    "npcs": [
     {
      "x": 18,
@@ -763,13 +799,39 @@
      ]
     },
     {
-     "x": 7,
-     "y": 7,
+     "x": 9,
+     "y": 8,
      "art": "wanderer",
      "face": "down",
      "t": [
       "Birdwatcher: I've seen Alienmon with wings riding the thermals over the canyon."
      ]
+    },
+    {
+     "x": 3,
+     "y": 6,
+     "art": "explorer",
+     "face": "right",
+     "t": [],
+     "id": "sec009_tr2",
+     "trainer": {
+      "cls": "Linker",
+      "route": 1,
+      "name": "Suri"
+     }
+    },
+    {
+     "x": 13,
+     "y": 10,
+     "art": "wanderer",
+     "face": "left",
+     "t": [],
+     "id": "sec009_tr3",
+     "trainer": {
+      "cls": "Canyon Scout",
+      "route": 1,
+      "name": "Ida"
+     }
     }
    ]
   },
@@ -815,9 +877,10 @@
     96,
     0
    ],
+   "pkey": "dustara",
    "npcs": [
     {
-     "x": 14,
+     "x": 17,
      "y": 9,
      "art": "researcher",
      "face": "down",
@@ -833,6 +896,32 @@
      "t": [
       "Camper: If you're low on health, head back to Dustmere. Pride is not a healing item."
      ]
+    },
+    {
+     "x": 14,
+     "y": 8,
+     "art": "wanderer",
+     "face": "right",
+     "t": [],
+     "id": "sec010_tr2",
+     "trainer": {
+      "cls": "Canyon Scout",
+      "route": 1,
+      "name": "Dex"
+     }
+    },
+    {
+     "x": 16,
+     "y": 12,
+     "art": "technician",
+     "face": "up",
+     "t": [],
+     "id": "sec010_tr3",
+     "trainer": {
+      "cls": "Mechanic",
+      "route": 1,
+      "name": "Vela"
+     }
     }
    ]
   },
@@ -899,10 +988,11 @@
     120,
     0
    ],
+   "pkey": "dustara",
    "npcs": [
     {
-     "x": 10,
-     "y": 11,
+     "x": 13,
+     "y": 6,
      "art": "sporefolk",
      "face": "down",
      "t": [
@@ -910,13 +1000,39 @@
      ]
     },
     {
-     "x": 13,
-     "y": 6,
+     "x": 20,
+     "y": 10,
      "art": "explorer",
      "face": "down",
      "t": [
       "Explorer: The Sunset Tunnel is just east. Bring light, it's a maze in there."
      ]
+    },
+    {
+     "x": 10,
+     "y": 12,
+     "art": "technician",
+     "face": "up",
+     "t": [],
+     "id": "sec011_tr2",
+     "trainer": {
+      "cls": "Mechanic",
+      "route": 1,
+      "name": "Bram"
+     }
+    },
+    {
+     "x": 4,
+     "y": 10,
+     "art": "explorer",
+     "face": "right",
+     "t": [],
+     "id": "sec011_tr3",
+     "trainer": {
+      "cls": "Linker",
+      "route": 1,
+      "name": "Suri"
+     }
     }
    ]
   },
@@ -998,10 +1114,11 @@
      14
     ]
    },
+   "pkey": "dustara",
    "npcs": [
     {
      "x": 9,
-     "y": 5,
+     "y": 6,
      "art": "miner",
      "face": "down",
      "t": [
@@ -1088,6 +1205,7 @@
      14
     ]
    },
+   "pkey": "dustara",
    "npcs": [
     {
      "x": 6,
@@ -1164,6 +1282,7 @@
     0,
     20
    ],
+   "pkey": "dustara",
    "npcs": [
     {
      "x": 15,
@@ -1228,6 +1347,7 @@
     24,
     20
    ],
+   "pkey": "dustara",
    "npcs": [
     {
      "x": 9,
@@ -1283,6 +1403,7 @@
     48,
     20
    ],
+   "pkey": "dustara",
    "npcs": [
     {
      "x": 5,
@@ -1347,6 +1468,7 @@
     72,
     20
    ],
+   "pkey": "dustara",
    "npcs": [
     {
      "x": 12,
@@ -1411,6 +1533,7 @@
     96,
     20
    ],
+   "pkey": "dustara",
    "npcs": [
     {
      "x": 12,
@@ -1431,8 +1554,8 @@
      ]
     },
     {
-     "x": 11,
-     "y": 9,
+     "x": 12,
+     "y": 12,
      "art": "civilian",
      "face": "down",
      "t": [
@@ -1440,8 +1563,8 @@
      ]
     },
     {
-     "x": 12,
-     "y": 10,
+     "x": 11,
+     "y": 9,
      "art": "guard",
      "face": "down",
      "t": [
@@ -1502,6 +1625,7 @@
     120,
     20
    ],
+   "pkey": "dustara",
    "npcs": [
     {
      "x": 12,
@@ -1557,6 +1681,7 @@
     144,
     20
    ],
+   "pkey": "dustara",
    "npcs": [
     {
      "x": 9,
@@ -1612,6 +1737,7 @@
     168,
     20
    ],
+   "pkey": "dustara",
    "npcs": [
     {
      "x": 13,
@@ -1654,7 +1780,36 @@
      "offset": 0
     }
    },
-   "warps": [],
+   "warps": [
+    {
+     "tile": [
+      11,
+      4
+     ],
+     "to": "planet:ferrox",
+     "node": "ferrox",
+     "at": [
+      11,
+      5
+     ],
+     "face": "down",
+     "kind": "gate"
+    },
+    {
+     "tile": [
+      12,
+      4
+     ],
+     "to": "planet:ferrox",
+     "node": "ferrox",
+     "at": [
+      12,
+      5
+     ],
+     "face": "down",
+     "kind": "gate"
+    }
+   ],
    "objects": [],
    "spawns": {
     "default": [
@@ -1667,6 +1822,7 @@
     192,
     20
    ],
+   "pkey": "dustara",
    "npcs": [
     {
      "x": 19,
@@ -1731,6 +1887,7 @@
     216,
     20
    ],
+   "pkey": "dustara",
    "npcs": [
     {
      "x": 12,
@@ -1786,6 +1943,7 @@
     240,
     20
    ],
+   "pkey": "dustara",
    "npcs": [
     {
      "x": 4,
@@ -1841,6 +1999,7 @@
     264,
     20
    ],
+   "pkey": "dustara",
    "npcs": [
     {
      "x": 13,
@@ -1896,6 +2055,7 @@
     288,
     20
    ],
+   "pkey": "dustara",
    "npcs": [
     {
      "x": 15,
@@ -1960,6 +2120,7 @@
     312,
     20
    ],
+   "pkey": "dustara",
    "npcs": [
     {
      "x": 7,
@@ -2007,6 +2168,7 @@
     336,
     20
    ],
+   "pkey": "dustara",
    "npcs": [
     {
      "x": 7,
@@ -2018,6 +2180,1104 @@
      ]
     }
    ]
+  },
+  "029": {
+   "id": "029",
+   "name": "Gate Plaza",
+   "planet": "Ferrox",
+   "dir": "02_ferrox",
+   "type": "landmark",
+   "img": "art/sections_game/02_ferrox/029_gate_plaza.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Arrival plaza around the Relay Gate",
+   "edges": {
+    "left": {
+     "to": "arrival",
+     "range": [
+      7,
+      8
+     ]
+    },
+    "right": {
+     "to": "030",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [],
+   "objects": [],
+   "spawns": {
+    "arrival": [
+     1,
+     7
+    ],
+    "default": [
+     1,
+     7
+    ]
+   },
+   "grid": [
+    0,
+    0
+   ],
+   "pkey": "ferrox",
+   "npcs": [
+    {
+     "x": 11,
+     "y": 8,
+     "art": "guard",
+     "face": "down",
+     "t": [
+      "Gate guard: Welcome to Ferrox. Mind the rails, the ore carts don't stop for anyone."
+     ]
+    },
+    {
+     "x": 13,
+     "y": 12,
+     "art": "technician",
+     "face": "down",
+     "t": [
+      "Porter: Everything that lands here gets weighed, stamped and argued over. That's Ferrox for you."
+     ]
+    },
+    {
+     "x": 7,
+     "y": 7,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Traveller: First time on Ferrox? Rustvale is just east. Best scrap stew in the system."
+     ]
+    }
+   ]
+  },
+  "030": {
+   "id": "030",
+   "name": "Rustvale",
+   "planet": "Ferrox",
+   "dir": "02_ferrox",
+   "type": "town",
+   "img": "art/sections_game/02_ferrox/030_rustvale.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Shanty town of shacks and converted rail cars",
+   "edges": {
+    "left": {
+     "to": "029",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    },
+    "right": {
+     "to": "034",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [
+    {
+     "tile": [
+      16,
+      5
+     ],
+     "to": "031",
+     "at": [
+      7,
+      12
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    },
+    {
+     "tile": [
+      6,
+      10
+     ],
+     "to": "032",
+     "at": [
+      7,
+      12
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    },
+    {
+     "tile": [
+      6,
+      4
+     ],
+     "to": "033",
+     "at": [
+      7,
+      12
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     1,
+     7
+    ]
+   },
+   "grid": [
+    24,
+    0
+   ],
+   "pkey": "ferrox",
+   "npcs": [
+    {
+     "x": 8,
+     "y": 7,
+     "art": "technician",
+     "face": "down",
+     "t": [
+      "Scrapper: Everything here is built from junk. Even the Relay Tower."
+     ]
+    },
+    {
+     "x": 12,
+     "y": 11,
+     "art": "miner",
+     "face": "down",
+     "t": [
+      "Rail hand: Alloy-types love the rail yard. Bring something that burns."
+     ]
+    },
+    {
+     "x": 16,
+     "y": 7,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Kid: Hank's Alienmon are tough as old boilers!"
+     ]
+    },
+    {
+     "x": 9,
+     "y": 9,
+     "art": "guard",
+     "face": "down",
+     "t": [
+      "Watchman: Helix suits were sniffing around the crane yard last night. Hank's not happy."
+     ]
+    },
+    {
+     "x": 17,
+     "y": 8,
+     "art": "wanderer",
+     "face": "down",
+     "t": [
+      "Old welder: Hank Briggs runs the tower at the end of Furnace Ridge. You'll need a Shard's worth of guts to face him."
+     ]
+    },
+    {
+     "x": 7,
+     "y": 7,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Linker: Magma moves melt Alloy-types fast. Volt moves just bounce off."
+     ]
+    }
+   ]
+  },
+  "031": {
+   "id": "031",
+   "name": "Rustvale Recovery Bay",
+   "planet": "Ferrox",
+   "dir": "02_ferrox",
+   "type": "interior",
+   "img": "art/sections_game/02_ferrox/031_rustvale_recovery_bay.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      13
+     ],
+     "to": "030",
+     "at": [
+      16,
+      6
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      13
+     ],
+     "to": "030",
+     "at": [
+      16,
+      6
+     ],
+     "face": "down",
+     "kind": "door"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      7,
+      7
+     ],
+     "k": "bay",
+     "why": "Recovery Bay counter"
+    }
+   ],
+   "spawns": {
+    "door": [
+     7,
+     12
+    ],
+    "default": [
+     7,
+     12
+    ]
+   },
+   "parent": "030",
+   "pkey": "ferrox",
+   "npcs": [
+    {
+     "x": 7,
+     "y": 5,
+     "art": "nurse",
+     "face": "down",
+     "t": [
+      "Nurse: Welcome to the Rustvale Recovery Bay. Step up to the counter!"
+     ],
+     "name": "Nurse"
+    },
+    {
+     "x": 9,
+     "y": 10,
+     "art": "miner",
+     "face": "down",
+     "t": [
+      "Miner: I patch up my Alienmon here after every shift. The nurse doesn't even charge for the soot."
+     ]
+    }
+   ]
+  },
+  "032": {
+   "id": "032",
+   "name": "Rustvale Shop",
+   "planet": "Ferrox",
+   "dir": "02_ferrox",
+   "type": "interior",
+   "img": "art/sections_game/02_ferrox/032_rustvale_shop.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      13
+     ],
+     "to": "030",
+     "at": [
+      6,
+      11
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      13
+     ],
+     "to": "030",
+     "at": [
+      6,
+      11
+     ],
+     "face": "down",
+     "kind": "door"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      6,
+      8
+     ],
+     "k": "shop",
+     "why": "L-shaped shop counter, used from its right side"
+    }
+   ],
+   "spawns": {
+    "door": [
+     7,
+     12
+    ],
+    "default": [
+     7,
+     12
+    ]
+   },
+   "parent": "030",
+   "pkey": "ferrox",
+   "npcs": [
+    {
+     "x": 5,
+     "y": 8,
+     "art": "shop",
+     "face": "down",
+     "t": [
+      "Shopkeeper: Pods, gels, sprays. Talk to me at the counter."
+     ],
+     "name": "Shopkeeper"
+    },
+    {
+     "x": 8,
+     "y": 11,
+     "art": "technician",
+     "face": "down",
+     "t": [
+      "Customer: Stun Spray is a lifesaver on the Scrap Route. Those junk-types hit hard."
+     ]
+    }
+   ]
+  },
+  "033": {
+   "id": "033",
+   "name": "Grub's Workshop",
+   "planet": "Ferrox",
+   "dir": "02_ferrox",
+   "type": "interior",
+   "img": "art/sections_game/02_ferrox/033_grub_s_workshop.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "Grub's cluttered scrap workshop",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      13
+     ],
+     "to": "030",
+     "at": [
+      6,
+      5
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      13
+     ],
+     "to": "030",
+     "at": [
+      6,
+      5
+     ],
+     "face": "down",
+     "kind": "door"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "door": [
+     7,
+     12
+    ],
+    "default": [
+     7,
+     12
+    ]
+   },
+   "parent": "030",
+   "pkey": "ferrox",
+   "npcs": [
+    {
+     "x": 6,
+     "y": 9,
+     "art": "grub",
+     "face": "down",
+     "t": [
+      "Grub: Mind the parts. Half of these are holding the other half together.",
+      "Grub: Come back when you've seen a bit more of Ferrox. I might have work for you."
+     ],
+     "name": "Grub"
+    }
+   ]
+  },
+  "034": {
+   "id": "034",
+   "name": "Scrap Route Part A",
+   "planet": "Ferrox",
+   "dir": "02_ferrox",
+   "type": "route",
+   "img": "art/sections_game/02_ferrox/034_scrap_route_part_a.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Route through scrap mountains",
+   "edges": {
+    "left": {
+     "to": "030",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    },
+    "right": {
+     "to": "035",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [],
+   "objects": [],
+   "spawns": {
+    "default": [
+     1,
+     7
+    ]
+   },
+   "grid": [
+    48,
+    0
+   ],
+   "pkey": "ferrox",
+   "npcs": [
+    {
+     "x": 12,
+     "y": 9,
+     "art": "technician",
+     "face": "down",
+     "t": [
+      "Scavenger: The Scrap Route is all junk piles and loose rails. Alienmon love hiding in the scrap."
+     ]
+    },
+    {
+     "x": 3,
+     "y": 6,
+     "art": "miner",
+     "face": "down",
+     "t": [
+      "Hauler: My cart threw a wheel. Again. Third time this week."
+     ]
+    },
+    {
+     "x": 7,
+     "y": 8,
+     "art": "miner",
+     "face": "left",
+     "t": [],
+     "id": "sec034_tr2",
+     "trainer": {
+      "cls": "Miner",
+      "route": 1,
+      "name": "Rhee"
+     }
+    },
+    {
+     "x": 12,
+     "y": 3,
+     "art": "guard",
+     "face": "left",
+     "t": [],
+     "id": "sec034_tr3",
+     "trainer": {
+      "cls": "Rail Hand",
+      "route": 1,
+      "name": "Oz"
+     }
+    }
+   ]
+  },
+  "035": {
+   "id": "035",
+   "name": "Scrap Route Part B",
+   "planet": "Ferrox",
+   "dir": "02_ferrox",
+   "type": "route",
+   "img": "art/sections_game/02_ferrox/035_scrap_route_part_b.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Route through scrap mountains",
+   "edges": {
+    "left": {
+     "to": "034",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    },
+    "right": {
+     "to": "036",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [],
+   "objects": [],
+   "spawns": {
+    "default": [
+     1,
+     7
+    ]
+   },
+   "grid": [
+    72,
+    0
+   ],
+   "pkey": "ferrox",
+   "npcs": [
+    {
+     "x": 15,
+     "y": 8,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Hiker: Tall rust-grass is where the wild ones hide. Walk around it if your team is tired."
+     ]
+    },
+    {
+     "x": 7,
+     "y": 4,
+     "art": "wanderer",
+     "face": "down",
+     "t": [
+      "Drifter: The crane yard's next. Watch for falling crates."
+     ]
+    },
+    {
+     "x": 9,
+     "y": 12,
+     "art": "guard",
+     "face": "left",
+     "t": [],
+     "id": "sec035_tr2",
+     "trainer": {
+      "cls": "Rail Hand",
+      "route": 1,
+      "name": "Bo"
+     }
+    },
+    {
+     "x": 4,
+     "y": 7,
+     "art": "technician",
+     "face": "left",
+     "t": [],
+     "id": "sec035_tr3",
+     "trainer": {
+      "cls": "Scrapper",
+      "route": 1,
+      "name": "Dex"
+     }
+    }
+   ]
+  },
+  "036": {
+   "id": "036",
+   "name": "Crane Yard",
+   "planet": "Ferrox",
+   "dir": "02_ferrox",
+   "type": "field",
+   "img": "art/sections_game/02_ferrox/036_crane_yard.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Swinging cranes, container stacks (Crane Yard Brawl)",
+   "edges": {
+    "left": {
+     "to": "035",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    },
+    "right": {
+     "to": "037",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [],
+   "objects": [],
+   "spawns": {
+    "default": [
+     1,
+     7
+    ]
+   },
+   "grid": [
+    96,
+    0
+   ],
+   "pkey": "ferrox",
+   "npcs": [
+    {
+     "x": 4,
+     "y": 9,
+     "art": "technician",
+     "face": "down",
+     "t": [
+      "Crane operator: Three junkers keep jamming my cranes. Hank wants them taught a lesson."
+     ]
+    },
+    {
+     "x": 9,
+     "y": 4,
+     "art": "guard",
+     "face": "down",
+     "t": [
+      "Yard guard: No Helix allowed in this yard. Not after what they pulled last month."
+     ]
+    },
+    {
+     "x": 14,
+     "y": 7,
+     "art": "technician",
+     "face": "right",
+     "t": [],
+     "id": "sec036_tr2",
+     "trainer": {
+      "cls": "Scrapper",
+      "route": 1,
+      "name": "Sol"
+     }
+    },
+    {
+     "x": 19,
+     "y": 6,
+     "art": "miner",
+     "face": "down",
+     "t": [],
+     "id": "sec036_tr3",
+     "trainer": {
+      "cls": "Miner",
+      "route": 1,
+      "name": "Bo"
+     }
+    }
+   ]
+  },
+  "037": {
+   "id": "037",
+   "name": "Junk Market",
+   "planet": "Ferrox",
+   "dir": "02_ferrox",
+   "type": "town",
+   "img": "art/sections_game/02_ferrox/037_junk_market.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Open-air junk market stalls",
+   "edges": {
+    "left": {
+     "to": "036",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    },
+    "right": {
+     "to": "038",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [],
+   "objects": [],
+   "spawns": {
+    "default": [
+     1,
+     7
+    ]
+   },
+   "grid": [
+    120,
+    0
+   ],
+   "pkey": "ferrox",
+   "npcs": [
+    {
+     "x": 14,
+     "y": 12,
+     "art": "technician",
+     "face": "down",
+     "t": [
+      "Junk dealer: One Linker's trash is another Linker's treasure. Mostly it's just trash."
+     ]
+    },
+    {
+     "x": 17,
+     "y": 6,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Shopper: I came for a bolt and left with a jetpack. It doesn't work, but still."
+     ]
+    },
+    {
+     "x": 11,
+     "y": 3,
+     "art": "miner",
+     "face": "down",
+     "t": [
+      "Ore trader: Ferrox ore powers half the ships in the system. Helix wants all of it."
+     ]
+    },
+    {
+     "x": 18,
+     "y": 6,
+     "art": "wanderer",
+     "face": "down",
+     "t": [
+      "Fortune teller: I see... a tower. And a man with a very large wrench."
+     ]
+    }
+   ]
+  },
+  "038": {
+   "id": "038",
+   "name": "Furnace Ridge",
+   "planet": "Ferrox",
+   "dir": "02_ferrox",
+   "type": "route",
+   "img": "art/sections_game/02_ferrox/038_furnace_ridge.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Ridge of smoking furnaces",
+   "edges": {
+    "left": {
+     "to": "037",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [
+    {
+     "tile": [
+      23,
+      7
+     ],
+     "to": "039",
+     "at": [
+      7,
+      22
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      8
+     ],
+     "to": "039",
+     "at": [
+      8,
+      22
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     1,
+     7
+    ]
+   },
+   "grid": [
+    144,
+    0
+   ],
+   "pkey": "ferrox",
+   "npcs": [
+    {
+     "x": 15,
+     "y": 8,
+     "art": "miner",
+     "face": "down",
+     "t": [
+      "Furnace worker: The heat up here peels paint off ships. Keep your Alienmon hydrated."
+     ]
+    },
+    {
+     "x": 4,
+     "y": 8,
+     "art": "guard",
+     "face": "down",
+     "t": [
+      "Guard: Ferrox Tower is just ahead. Hank Briggs is the Keeper. Good luck, kid."
+     ]
+    },
+    {
+     "x": 20,
+     "y": 7,
+     "art": "guard",
+     "face": "left",
+     "t": [],
+     "id": "sec038_tr2",
+     "trainer": {
+      "cls": "Rail Hand",
+      "route": 1,
+      "name": "Rook"
+     }
+    },
+    {
+     "x": 12,
+     "y": 10,
+     "art": "technician",
+     "face": "right",
+     "t": [],
+     "id": "sec038_tr3",
+     "trainer": {
+      "cls": "Scrapper",
+      "route": 1,
+      "name": "Kai"
+     }
+    }
+   ]
+  },
+  "039": {
+   "id": "039",
+   "name": "Ferrox Tower 1F",
+   "planet": "Ferrox",
+   "dir": "02_ferrox",
+   "type": "tower",
+   "img": "art/sections_game/02_ferrox/039_ferrox_tower_1f.png",
+   "tiles": [
+    16,
+    24
+   ],
+   "notes": "Keeper Hank Briggs's tower, 2 floors",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      23
+     ],
+     "to": "038",
+     "at": [
+      22,
+      7
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      8,
+      23
+     ],
+     "to": "038",
+     "at": [
+      22,
+      8
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      7,
+      0
+     ],
+     "to": "040",
+     "at": [
+      7,
+      22
+     ],
+     "face": "up",
+     "kind": "stairs",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      8,
+      0
+     ],
+     "to": "040",
+     "at": [
+      8,
+      22
+     ],
+     "face": "up",
+     "kind": "stairs",
+     "edge": "top"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     7,
+     22
+    ]
+   },
+   "pkey": "ferrox",
+   "npcs": [
+    {
+     "x": 9,
+     "y": 15,
+     "art": "technician",
+     "face": "down",
+     "t": [
+      "Tower engineer: Hank's apprentices train on this floor. The Keeper waits upstairs."
+     ]
+    },
+    {
+     "x": 9,
+     "y": 6,
+     "art": "guard",
+     "face": "left",
+     "t": [],
+     "id": "sec039_app1",
+     "trainer": {
+      "cls": "Apprentice",
+      "app": 1,
+      "name": "Milo"
+     }
+    },
+    {
+     "x": 6,
+     "y": 20,
+     "art": "technician",
+     "face": "right",
+     "t": [],
+     "id": "sec039_app2",
+     "trainer": {
+      "cls": "Apprentice",
+      "app": 1,
+      "name": "Juno"
+     }
+    }
+   ]
+  },
+  "040": {
+   "id": "040",
+   "name": "Ferrox Tower 2F",
+   "planet": "Ferrox",
+   "dir": "02_ferrox",
+   "type": "tower",
+   "img": "art/sections_game/02_ferrox/040_ferrox_tower_2f.png",
+   "tiles": [
+    16,
+    24
+   ],
+   "notes": "Keeper Hank Briggs's tower, 2 floors",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      23
+     ],
+     "to": "039",
+     "at": [
+      7,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      8,
+      23
+     ],
+     "to": "039",
+     "at": [
+      8,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      7,
+      2
+     ],
+     "k": "keeper",
+     "why": "Keeper's dais at the far end of the arena, challenged from (7,3)"
+    }
+   ],
+   "spawns": {
+    "default": [
+     7,
+     22
+    ]
+   },
+   "pkey": "ferrox"
   }
  },
  "connections": [
@@ -2643,6 +3903,241 @@
    ],
    "to_id": "027",
    "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "029",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "arrival",
+   "to_edge": null,
+   "to_tile": null
+  },
+  {
+   "from_id": "029",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "030",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "030",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "029",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "030",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "034",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "034",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "030",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "034",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "035",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "035",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "034",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "035",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "036",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "036",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "035",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "036",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "037",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "037",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "036",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "037",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "038",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "038",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "037",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "038",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "039",
+   "to_edge": "bottom",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "039",
+   "edge": "bottom",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "038",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "039",
+   "edge": "top",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "040",
+   "to_edge": "bottom",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "040",
+   "edge": "bottom",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "039",
+   "to_edge": "top",
    "to_tile": [
     7,
     8

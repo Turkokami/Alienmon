@@ -70,7 +70,7 @@ const PEOPLE=fs.existsSync(path.join(root,'data/town_people.json'))?fs.readFileS
 // section maps (data/world.json + data/collision/*.json): Gold/Crystal-style screens at 16 px per tile
 const SECW=fs.existsSync(path.join(root,'data/world.json'))?JSON.parse(fs.readFileSync(path.join(root,'data/world.json'),'utf8')):{sections:{},arrival:{}};
 const SECIMG={},SECS={};for(const[id,sec]of Object.entries(SECW.sections)){const cp=path.join(root,'data/collision',id+'.json');if(!sec.img||!fs.existsSync(cp))continue;
- SECIMG[id]=asset(sec.img);SECS[id]={id,name:sec.name,planet:sec.planet,type:sec.type,tiles:sec.tiles,edges:sec.edges,warps:sec.warps,objects:sec.objects,spawns:sec.spawns,npcs:sec.npcs||[],zone:sec.zone,rows:JSON.parse(fs.readFileSync(cp,'utf8')).rows}}
+ SECIMG[id]=asset(sec.img);SECS[id]={id,name:sec.name,planet:sec.planet,type:sec.type,tiles:sec.tiles,edges:sec.edges,warps:sec.warps,objects:sec.objects,spawns:sec.spawns,npcs:sec.npcs||[],zone:sec.zone,pkey:sec.pkey,rows:JSON.parse(fs.readFileSync(cp,'utf8')).rows}}
 console.log('section maps:',Object.keys(SECS).length);
 fill.__SECENGINE__=fs.readFileSync(path.join(root,'src/sections.js'),'utf8').replace(/__SWORLD__/g,j(SECS)).replace(/__SECIMG__/g,j(SECIMG)).replace(/__SECARRIVAL__/g,j(SECW.arrival||{}));
 fill.__WORLDENGINE__=fs.readFileSync(path.join(root,'src/world.js'),'utf8').replace(/__WORLDSTATE__/g,j({gates:WS.gates,ship:WS.ship})).replace(/__PEOPLE__/g,PEOPLE).replace(/__SPACE__/g,j(SPACEART));

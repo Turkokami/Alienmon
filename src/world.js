@@ -37,8 +37,12 @@ function wildOK(name){const s=PROG.species[name]||{};if(s.rarity==='legendary'||
 const wildIds=list=>list.filter(id=>wildOK(D[id].name));
 
 /* where you wake up after losing: the last Recovery Bay or Hut you used */
-function noteHeal(){G.lastHeal=scene==='world'?{w:'bay'}:{p:(PL[G.planet]||PL[0]).key,pos:(G.ppos||[0,0]).slice()}}
+function noteHeal(){if(typeof secOn==='function'&&secOn()){G.lastHeal={sec:G.sec.id,at:[G.sec.x,G.sec.y],planet:G.planet,back:G.secBack||null};return}G.lastHeal=scene==='world'?{w:'bay'}:{p:(PL[G.planet]||PL[0]).key,pos:(G.ppos||[0,0]).slice()}}
 function wakeAtLastHeal(){const h=G.lastHeal;
+ // section maps: back to the last Recovery Bay counter you used, or home to Mom if you never healed anywhere
+ if(h&&h.sec&&SWORLD[h.sec]){B=null;scene='planet';G.planet=h.planet;G.sub=null;G.secBack=h.back||null;enterSection(h.sec,h.at,'up');return}
+ if(typeof secOn==='function'&&secOn()&&!(h&&h.p)){B=null;scene='planet';G.planet=pidx('dustara');G.sub=null;G.secBack=null;enterSection('001',[5,6],'up');return}
+ if(G.sec)G.sec=null;
  if(h&&h.w){B=null;toWorld(h.w);return}
  const key=h&&h.p||'dustara',P=PAINT[key];G.planet=pidx(key);B=null;scene='planet';
  if(h&&h.pos)G.ppos=h.pos.slice();else if(P){const bay=P.hot.find(x=>x.k==='bay');G.ppos=bay?[bay.x,bay.y+(bay.ry||bay.r/1.6)+14]:P.start.slice()}}
@@ -157,7 +161,7 @@ function trainerTalk(h){const tr=townTrainer(h);if(G.beaten[h.id])return say(tr.
  if(!G.party.some(m=>m.hp>0))return say('Your team needs to heal first.');
  say(tr.name+': '+tr.intro,()=>startBattle(tr.team.map(([id,lv])=>mk(id,lv)),tr),h.art)}
 // apprentices must be beaten before the Keeper will battle
-function apprenticesLeft(){const k=(PL[G.planet]||{}).key;return((PEOPLE[k]||{}).trainers||[]).filter(t=>t.app&&!G.beaten[t.id]).length}
+function apprenticesLeft(){const k=(PL[G.planet]||{}).key;if(typeof secOn==='function'&&secOn()){const n=secApprentices(k);if(n!==null)return n}return((PEOPLE[k]||{}).trainers||[]).filter(t=>t.app&&!G.beaten[t.id]).length}
 // line of sight: walking into a trainer's view triggers the battle
 let SPOT=null;
 function losCheck(P){if(SPOT||DLG||CH)return false;const[x,y]=G.ppos;

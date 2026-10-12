@@ -9,19 +9,35 @@
     5
    ],
    "t": [
-    "Mom: Off to see Dr. Vashti? Take your time, the lab isn't going anywhere.",
-    "Mom: Remember, if your Alienmon get tired, the Recovery Bay heals them for free."
+    "Mom: Look at you two! Remember, if your Alienmon get tired, the Recovery Bay heals them for free.",
+    "Mom: And call home once in a while, Linker."
+   ],
+   "pre": [
+    "Mom: Good morning, sleepyhead! Dr. Vashti called. She's waiting for you at her observatory lab.",
+    "Mom: It's the big dome with the telescope, across the plaza. Go on, your partner is waiting!"
    ]
   }
  ],
  "002": [],
  "003": [
   {
+   "art": "vashti",
+   "name": "Dr. Vashti",
+   "tile": [
+    10,
+    7
+   ],
+   "story": "starter",
+   "t": [
+    "Dr. Vashti: The Starfall Crater glows purple again. Something down there is stirring.",
+    "Dr. Vashti: Bring me news from every world you visit. And take care of your partner."
+   ]
+  },
+  {
    "art": "researcher",
    "name": "Lab aide",
-   "tile": [
-    9,
-    7
+   "pre": [
+    "Lab aide: Dr. Vashti has been waiting for you! She's by the pod table."
    ],
    "t": [
     "Lab aide: Dr. Vashti tracks every seedpod that fell twenty years ago. There are still hundreds unaccounted for.",
@@ -38,6 +54,9 @@
    "tile": [
     6,
     5
+   ],
+   "pre": [
+    "Kid: You're getting your first Alienmon today? Lucky! Dr. Vashti's lab is the dome with the telescope."
    ]
   },
   {
@@ -109,7 +128,12 @@
    "art": "explorer",
    "t": [
     "Trainer: I come here after every route. Healing is free, so there's no excuse to push your luck."
-   ]
+   ],
+   "tile": [
+    2,
+    8
+   ],
+   "face": "right"
   }
  ],
  "006": [
@@ -408,5 +432,202 @@
     "Mine foreman: The Magma Mines run all the way down to Pyros' crust. Hard hats mandatory."
    ]
   }
- ]
+ ],
+ "029": [
+  {
+   "art": "guard",
+   "t": [
+    "Gate guard: Welcome to Ferrox. Mind the rails, the ore carts don't stop for anyone."
+   ]
+  },
+  {
+   "art": "technician",
+   "t": [
+    "Porter: Everything that lands here gets weighed, stamped and argued over. That's Ferrox for you."
+   ]
+  },
+  {
+   "art": "civilian",
+   "t": [
+    "Traveller: First time on Ferrox? Rustvale is just east. Best scrap stew in the system."
+   ]
+  }
+ ],
+ "030": [
+  {
+   "art": "technician",
+   "t": [
+    "Scrapper: Everything here is built from junk. Even the Relay Tower."
+   ]
+  },
+  {
+   "art": "miner",
+   "t": [
+    "Rail hand: Alloy-types love the rail yard. Bring something that burns."
+   ]
+  },
+  {
+   "art": "civilian",
+   "t": [
+    "Kid: Hank's Alienmon are tough as old boilers!"
+   ]
+  },
+  {
+   "art": "guard",
+   "t": [
+    "Watchman: Helix suits were sniffing around the crane yard last night. Hank's not happy."
+   ]
+  },
+  {
+   "art": "wanderer",
+   "t": [
+    "Old welder: Hank Briggs runs the tower at the end of Furnace Ridge. You'll need a Shard's worth of guts to face him."
+   ]
+  },
+  {
+   "art": "explorer",
+   "t": [
+    "Linker: Magma moves melt Alloy-types fast. Volt moves just bounce off."
+   ]
+  }
+ ],
+ "031": [
+  {
+   "art": "nurse",
+   "name": "Nurse",
+   "tile": [
+    7,
+    5
+   ],
+   "t": [
+    "Nurse: Welcome to the Rustvale Recovery Bay. Step up to the counter!"
+   ]
+  },
+  {
+   "art": "miner",
+   "t": [
+    "Miner: I patch up my Alienmon here after every shift. The nurse doesn't even charge for the soot."
+   ]
+  }
+ ],
+ "032": [
+  {
+   "art": "shop",
+   "name": "Shopkeeper",
+   "tile": [
+    5,
+    8
+   ],
+   "t": [
+    "Shopkeeper: Pods, gels, sprays. Talk to me at the counter."
+   ]
+  },
+  {
+   "art": "technician",
+   "t": [
+    "Customer: Stun Spray is a lifesaver on the Scrap Route. Those junk-types hit hard."
+   ]
+  }
+ ],
+ "033": [
+  {
+   "art": "grub",
+   "name": "Grub",
+   "t": [
+    "Grub: Mind the parts. Half of these are holding the other half together.",
+    "Grub: Come back when you've seen a bit more of Ferrox. I might have work for you."
+   ]
+  }
+ ],
+ "034": [
+  {
+   "art": "technician",
+   "t": [
+    "Scavenger: The Scrap Route is all junk piles and loose rails. Alienmon love hiding in the scrap."
+   ]
+  },
+  {
+   "art": "miner",
+   "t": [
+    "Hauler: My cart threw a wheel. Again. Third time this week."
+   ]
+  }
+ ],
+ "035": [
+  {
+   "art": "explorer",
+   "t": [
+    "Hiker: Tall rust-grass is where the wild ones hide. Walk around it if your team is tired."
+   ]
+  },
+  {
+   "art": "wanderer",
+   "t": [
+    "Drifter: The crane yard's next. Watch for falling crates."
+   ]
+  }
+ ],
+ "036": [
+  {
+   "art": "technician",
+   "t": [
+    "Crane operator: Three junkers keep jamming my cranes. Hank wants them taught a lesson."
+   ]
+  },
+  {
+   "art": "guard",
+   "t": [
+    "Yard guard: No Helix allowed in this yard. Not after what they pulled last month."
+   ]
+  }
+ ],
+ "037": [
+  {
+   "art": "technician",
+   "t": [
+    "Junk dealer: One Linker's trash is another Linker's treasure. Mostly it's just trash."
+   ]
+  },
+  {
+   "art": "civilian",
+   "t": [
+    "Shopper: I came for a bolt and left with a jetpack. It doesn't work, but still."
+   ]
+  },
+  {
+   "art": "miner",
+   "t": [
+    "Ore trader: Ferrox ore powers half the ships in the system. Helix wants all of it."
+   ]
+  },
+  {
+   "art": "wanderer",
+   "t": [
+    "Fortune teller: I see... a tower. And a man with a very large wrench."
+   ]
+  }
+ ],
+ "038": [
+  {
+   "art": "miner",
+   "t": [
+    "Furnace worker: The heat up here peels paint off ships. Keep your Alienmon hydrated."
+   ]
+  },
+  {
+   "art": "guard",
+   "t": [
+    "Guard: Ferrox Tower is just ahead. Hank Briggs is the Keeper. Good luck, kid."
+   ]
+  }
+ ],
+ "039": [
+  {
+   "art": "technician",
+   "t": [
+    "Tower engineer: Hank's apprentices train on this floor. The Keeper waits upstairs."
+   ]
+  }
+ ],
+ "040": []
 }

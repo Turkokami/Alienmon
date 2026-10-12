@@ -262,7 +262,7 @@ function addMon(m){G.seen[m.id]=1;G.caught[m.id]=1;if(G.party.length<6){G.party.
 let tsel=0,ssel=0,gsel=0;
 function startIntro(){scene='intro';say(["Twenty years ago, the sky fell.","Seedpods scattered across the whole Kessler system, onto every world.","What hatched were Alienmon: refugees from a dying planet called Ystra.","I'm Dr. Vashti. Your Linker can bond with them.","Choose your first partner, then take the ship and find the rest."],()=>{scene='starter'},'vashti')}
 function updGender(){if(P_('left')||P_('right'))gsel^=1;
- if(P_('a')){G.gender=gsel?'girl':'boy';startIntro();return}
+ if(P_('a')){G.gender=gsel?'girl':'boy';if(secEnabled()&&SWORLD['002'])secWakeUp();else startIntro();return}
  rect(0,0,160,144,'#1d1433');txt('Who are you?',32,6,'#fff');
  ['boy','girl'].forEach((g,i)=>{const x=8+i*76;if(i===gsel)box(x-2,18,72,96,'#3b2a5c','#ff8a1e');else box(x-2,18,72,96,'#2a1f44','#1b1424');dchar(g+'_big',x+2,22,64,88)});
  txt(gsel?'> Girl':'> Boy',60,124,'#ffd23f')}const STARTERS=[IDX['Sporix'],IDX['Plazmo'],IDX['Gloopa']];
@@ -281,7 +281,7 @@ function updTitle(){const sv=loadSave();const opts=sv?['Continue','New game']:['
  txt('Catch them across',12,88,'#e8e0ff');txt('the stars.',12,98,'#e8e0ff');
  opts.forEach((o,i)=>txt((i===tsel?'>':' ')+o,40,116+i*12,i===tsel?'#ff8a1e':'#a99cc8'))}}
 function updStarter(){if(P_('left'))ssel=(ssel+2)%3;if(P_('right'))ssel=(ssel+1)%3;
- if(P_('a')){const id=STARTERS[ssel];G.party.push(mk(id,5));G.seen[id]=G.caught[id]=1;scene='planet';if(secEnabled()&&SWORLD['002'])enterSection('002',SWORLD['002'].spawns.wake||SWORLD['002'].spawns.default,'down');qEvent('starter');
+ if(P_('a')){const id=STARTERS[ssel];G.party.push(mk(id,5));G.seen[id]=G.caught[id]=1;scene='planet';if(secOn()){qEvent('starter');return secStarterChosen(id)}qEvent('starter');
   say([D[id].name+' joined you!','Your rival Sola took the other starter and blasted off already.','This is Dustmere, your home town on the crater rim. Head down the path at the bottom of town to step out onto the world map.','Drift grass hides wild Alienmon. Keepers guard each world\'s tower and its Signal Shard.'])}
  rect(0,0,160,144,'#1d1433');txt('Choose a partner',8,6,'#fff');
  STARTERS.forEach((id,i)=>{const x=6+i*52;if(i===ssel)box(x-2,22,52,52,'#3b2a5c','#ff8a1e');dspr(id,x+2,26,3)});
@@ -517,7 +517,7 @@ function updSpace(){const s=G.ship;if(P_('start')){scene='menu';menuSel=0;return
  if(sp>0.15)s.a=Math.atan2(s.vy,s.vx);s.x=Math.max(0,Math.min(1700,s.x+s.vx));s.y=Math.max(0,Math.min(1200,s.y+s.vy));
  let near=-1,nd=1e9;PL.forEach((p,i)=>{if(p.sys!==G.sys)return;const d=Math.hypot(p.x-s.x,p.y-s.y)-p.r;if(d<nd){nd=d;near=i}});const gd=Math.hypot(GATE.x-s.x,GATE.y-s.y)-14;
  const pa=P_('a');if(pa&&gd<18&&gd<nd&&qEvent('visit','warp_gate')){}else if(pa&&gd<18&&gd<nd){const nx=SYS.find(y=>y.id===G.sys+1);if(nx){G.sys=nx.id;say('Warping to the '+nx.name+'...')}else say('The Warp Gate is dormant. New star systems full of Alienmon will open here in future batches.')}
- else if(pa&&nd<18){const p=PL[near];if(unlocked(near)){G.planet=near;G.sub=null;G.sec=null;if(secEnabled()){const a=secArrival(p.key);if(a)enterSection(a[0],a[1],'right',true)}const mp=genMap(near);G.px=mp.pad[0];G.py=mp.pad[1]-1;face='down';if(PAINT[p.key]){G.ppos=[PAINT[p.key].start[0],PAINT[p.key].exitY-30];face='up'}s.vx=s.vy=0;cut(okI(SCI[p.landScene||p.scene])?SCI[p.landScene||p.scene]:2,'Landing on '+p.name,()=>{scene='planet';banner=90},p.sceneFx)}
+ else if(pa&&nd<18){const p=PL[near];if(unlocked(near)){G.planet=near;G.sub=null;G.sec=null;G.secBack=null;if(secEnabled()){const a=secArrival(p.key);if(a)enterSection(a[0],a[1],'right',true)}const mp=genMap(near);G.px=mp.pad[0];G.py=mp.pad[1]-1;face='down';if(PAINT[p.key]){G.ppos=[PAINT[p.key].start[0],PAINT[p.key].exitY-30];face='up'}s.vx=s.vy=0;cut(okI(SCI[p.landScene||p.scene])?SCI[p.landScene||p.scene]:2,'Landing on '+p.name,()=>{scene='planet';banner=90},p.sceneFx)}
   else say(landMsg(p.key))}
  const camx=s.x-80,camy=s.y-72;rect(0,0,160,144,'#0c0818');
  for(let i=0;i<120;i++){const h=hash('st'+i),z=1+(h%3),x=((h%1700)-camx/z*1)%160,y=(((h>>11)%1200)-camy/z)%144;rect((x+160)%160,(y+144)%144,1,1,z===1?'#fff':z===2?'#a99cc8':'#5a4a7a')}

@@ -84,6 +84,66 @@
    ],
    "confidence": "high",
    "why": "Shop: dome with the striped awning bottom-right"
+  },
+  {
+   "interior": "031",
+   "parent": "030",
+   "door": [
+    16,
+    5
+   ],
+   "mat": [
+    [
+     7,
+     13
+    ],
+    [
+     8,
+     13
+    ]
+   ],
+   "confidence": "high",
+   "why": "Rustvale Recovery Bay: big dome top-right with the cyan cross door"
+  },
+  {
+   "interior": "032",
+   "parent": "030",
+   "door": [
+    6,
+    10
+   ],
+   "mat": [
+    [
+     7,
+     13
+    ],
+    [
+     8,
+     13
+    ]
+   ],
+   "confidence": "high",
+   "why": "Rustvale Shop: dome bottom-left with the striped awning"
+  },
+  {
+   "interior": "033",
+   "parent": "030",
+   "door": [
+    6,
+    4
+   ],
+   "mat": [
+    [
+     7,
+     13
+    ],
+    [
+     8,
+     13
+    ]
+   ],
+   "confidence": "todo",
+   "why": "Grub's Workshop: the cluttered workshop top-left with gear signs; atlas doesn't say which building, the nearest-by-id rule would pick Scrap Route A which has no building"
   }
  ],
  "stairs": [
@@ -134,6 +194,36 @@
     "k": "lab",
     "why": "Vashti's starter pods on the lab table"
    }
+  ],
+  "031": [
+   {
+    "tile": [
+     7,
+     7
+    ],
+    "k": "bay",
+    "why": "Recovery Bay counter"
+   }
+  ],
+  "032": [
+   {
+    "tile": [
+     6,
+     8
+    ],
+    "k": "shop",
+    "why": "L-shaped shop counter, used from its right side"
+   }
+  ],
+  "040": [
+   {
+    "tile": [
+     7,
+     2
+    ],
+    "k": "keeper",
+    "why": "Keeper's dais at the far end of the arena, challenged from (7,3)"
+   }
   ]
  },
  "arrival": {
@@ -141,6 +231,11 @@
    "section": "004",
    "edge": "left",
    "why": "atlas: 004 left edge -> arrival (landing pad / gate)"
+  },
+  "ferrox": {
+   "section": "029",
+   "edge": "left",
+   "why": "atlas: 029 left edge -> arrival (landing pad / gate)"
   }
  },
  "unlisted": {
@@ -186,5 +281,68 @@
   "026": "pyros",
   "027": "pyros",
   "028": "pyros"
+ },
+ "gates": [
+  {
+   "section": "022",
+   "tiles": [
+    [
+     11,
+     4
+    ],
+    [
+     12,
+     4
+    ]
+   ],
+   "node": "ferrox",
+   "planet": "ferrox",
+   "why": "Forge Gate portal at the top of the stairs: the old Frontier's Forge Gate node led to Ferrox (story gate 'ferrox')"
+  }
+ ],
+ "trainers": {
+  "_about": "route_default trainers on every route/field section (skip = sections whose story levels aren't wired yet: the Molten Frontier); apprentices per tower floor; tiles pins {section,n,tile,face}",
+  "route_default": 2,
+  "skip": [
+   "014",
+   "015",
+   "016",
+   "017",
+   "018",
+   "019",
+   "020",
+   "021",
+   "022",
+   "023",
+   "024",
+   "025",
+   "026",
+   "027",
+   "028"
+  ],
+  "apprentices": {
+   "039": 2
+  },
+  "per_section": {},
+  "tiles": [
+   {
+    "section": "039",
+    "n": 0,
+    "tile": [
+     9,
+     6
+    ],
+    "face": "left"
+   },
+   {
+    "section": "039",
+    "n": 1,
+    "tile": [
+     6,
+     20
+    ],
+    "face": "right"
+   }
+  ]
  }
 }

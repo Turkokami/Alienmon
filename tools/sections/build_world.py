@@ -10,7 +10,7 @@
 
 Usage: python tools/sections/build_world.py [planet folder prefixes...]   e.g.  01   (default: every planet)
 """
-import json, os, re, sys, glob
+import json, os, re, sys, glob, hashlib
 from collections import defaultdict
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -143,6 +143,11 @@ for st in links.get('stairs', []):
 for i, why in links.get('ignore_mats', {}).items():
     if i in world:
         report['doormats left inert'].append(f"{i} {world[i]['name']}: {why}")
+# planet gates on the Molten Frontier: stepping on the portal checks the story gate and travels to that planet
+for g in links.get('gates', []):
+    if g['section'] in world:
+        for t in g['tiles']:
+            world[g['section']]['warps'].append({'tile': t, 'to': 'planet:' + g['planet'], 'node': g['node'], 'at': [t[0], t[1] + 1], 'face': 'down', 'kind': 'gate'})
 for k, z in links.get('zones', {}).items():
     if k in world:
         world[k]['zone'] = z
@@ -210,6 +215,37 @@ def reach(rows, W, H, start, block):
     return seen
 
 
+pop = json.load(open(os.path.join(ROOT, 'data/population.json'), encoding='utf-8'))
+PKEY = {'Dustara': 'dustara', 'Ferrox': 'ferrox', 'Sporeholm': 'sporeholm', 'Thalassa': 'thalassa', 'Neonis': 'neonis', 'Glyphos': 'glyphos', 'Pyros': 'pyros',
+        'Glacia': 'glacia', 'Helix Station': 'helix', 'Halo': 'halo', 'Umbra': 'umbra', 'Starfall': 'starfall', 'Apex Arena': 'apex', 'Ystra': 'ystra'}
+
+
+def hname(seed):
+    return pop['names'][int(hashlib.md5(seed.encode()).hexdigest()[:8], 16) % len(pop['names'])]
+
+
+# trainers: route_default on every route/field (minus 'skip'), apprentices per tower floor, optional pinned tiles
+tr_rules = links.get('trainers', {})
+for sid, sec in world.items():
+    pk = PKEY.get(sec['planet'], sec['planet'].lower())
+    sec['pkey'] = pk
+    classes = pop['classes'].get(pk, [['Linker', 'explorer']])
+    extra = []
+    auto = tr_rules.get('route_default', 0) if sec['type'] in ('route', 'field') and sid not in tr_rules.get('skip', []) else 0
+    for i in range(tr_rules.get('per_section', {}).get(sid, auto)):
+        cls, art = classes[(int(sid) + i) % len(classes)]
+        extra.append({'art': art, 'trainer': {'cls': cls, 'route': 1}, 't': []})
+    for i in range(tr_rules.get('apprentices', {}).get(sid, 0)):
+        cls, art = classes[(int(sid) + i + 2) % len(classes)]
+        extra.append({'art': art, 'trainer': {'cls': 'Apprentice', 'app': 1}, 't': []})
+    npc_src[sid] = npc_src.get(sid, []) + extra
+for t in tr_rules.get('tiles', []):
+    lst = [p for p in npc_src.get(t['section'], []) if p.get('trainer')]
+    if t['n'] < len(lst):
+        lst[t['n']]['tile'] = t['tile']
+        if t.get('face'):
+            lst[t['n']]['face'] = t['face']
+
 for sid, sec in world.items():
     people = npc_src.get(sid, [])
     cp = os.path.join(ROOT, 'data/collision', sid + '.json')
@@ -228,9 +264,15 @@ for sid, sec in world.items():
             for d in range(3):
                 keys.add({'left': (d, k), 'right': (W - 1 - d, k), 'top': (k, d), 'bottom': (k, H - 1 - d)}[side])
     keys |= {tuple(v) for v in sec['spawns'].values() if v}
+    # the tiles you stand on to use a counter or talk to a pinned character must stay reachable too
+    for t0 in [o['tile'] for o in sec.get('objects', [])] + [p['tile'] for p in people if p.get('tile')]:
+        for dx, dy in ((0, 1), (0, -1), (1, 0), (-1, 0)):
+            keys.add((t0[0] + dx, t0[1] + dy))
     keys = {k for k in keys if 0 <= k[0] < W and 0 <= k[1] < H and rows[k[1]][k[0]] in '.,'}
     taken = set()
     out = []
+    pinned = {tuple(p['tile']) for p in people if p.get('tile')}
+    base = reach(rows, W, H, next(iter(keys)), pinned) if keys else set()
     for n, person in enumerate(people):
         if person.get('tile'):
             t = tuple(person['tile'])
@@ -259,7 +301,8 @@ for sid, sec in world.items():
                       if keys:
                           k0 = next(iter(keys))
                           r = reach(rows, W, H, k0, taken | {(x, y)})
-                          if not keys <= r:
+                          # never cut anything off: exits, counters, and every other walkable tile stay reachable
+                          if not keys <= r or len(r) < len(base) - len((taken - pinned) & base) - 1:
                               continue
                       best, bs = (x, y), score
             if not best:
@@ -267,7 +310,22 @@ for sid, sec in world.items():
                 continue
             t = best
         taken.add(t)
-        out.append({'x': t[0], 'y': t[1], 'art': person['art'], 'face': person.get('face', 'down'), 't': person['t'], **({'name': person['name']} if person.get('name') else {})})
+        o = {'x': t[0], 'y': t[1], 'art': person['art'], 'face': person.get('face', 'down'), 't': person['t'], **({'name': person['name']} if person.get('name') else {}), **({k: person[k] for k in ('pre', 'story') if person.get(k)})}
+        if person.get('trainer'):
+            tr = dict(person['trainer'])
+            o['id'] = f"sec{sid}_{'app' if tr.get('app') else 'tr'}{n}"
+            tr.setdefault('name', hname(o['id']))
+            o['trainer'] = tr
+            if not person.get('face'):   # look down the longest open line: that's where they spot you
+                best = None
+                for d, (dx, dy) in (('down', (0, 1)), ('left', (-1, 0)), ('right', (1, 0)), ('up', (0, -1))):
+                    k = 0
+                    while k < 5 and 0 <= t[0] + dx * (k + 1) < W and 0 <= t[1] + dy * (k + 1) < H and rows[t[1] + dy * (k + 1)][t[0] + dx * (k + 1)] in '.,':
+                        k += 1
+                    if best is None or k > best[1]:
+                        best = (d, k)
+                o['face'] = best[0]
+        out.append(o)
     sec['npcs'] = out
 
 json.dump({'version': 1, 'tile': 16, 'screen_tiles': [10, 9], 'arrival': links.get('arrival', {}), 'sections': world, 'connections': conns},
