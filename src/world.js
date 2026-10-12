@@ -139,7 +139,7 @@ const volMul=()=>[0.5,1,1.6][G&&G.opt&&G.opt.vol!=null?G.opt.vol:1];
 /* ---------- town population: trainers with line of sight, apprentices, townsfolk, fixed legendaries ---------- */
 const PEOPLE=__PEOPLE__;   // tools/place_people.py -> data/town_people.json
 function addPeople(k,H){const P=PEOPLE[k];if(!P)return;
- for(const t of P.trainers)H.push({k:'trainer',id:t.id,x:t.x,y:t.y,r:16,art:t.art,draw:true,face:t.face,cls:t.cls,name:t.name,app:t.app});
+ for(const t of P.trainers)H.push({k:'trainer',id:t.id,x:t.x,y:t.y,r:16,art:t.art,draw:true,face:t.face,cls:t.cls,name:t.name,app:t.app,route:t.route});
  for(const f of P.folk)H.push({k:'talk',x:f.x,y:f.y,r:16,art:f.art,draw:true,t:f.t});
  for(const l of P.legends)if(G.flags.champ&&legendHere(l.mon))H.push({k:'mon',legend:1,mon:l.mon,lvl:l.lv,x:l.x,y:l.y,r:22});
  optReward(k,H)}
@@ -150,7 +150,7 @@ function legendHere(name){const id=IDX[name];if(id==null||G.caught[id])return fa
 function townTrainer(h){const key=(PL[G.planet]||{}).key,a=PROG.areas[key]||{},tl=a.trainer_levels||a.levels||[5,8],hi=tl[1];
  const size=hi<=15?[1,2]:hi<=35?[2,3]:[3,4],r=rng(hash(h.id)),n=h.app?size[1]:size[0]+Math.floor(r()*(size[1]-size[0]+1));
  const t=(wildTable(key)||[]).filter(x=>wildOK(x.name)&&IDX[x.name]!=null);
- const team=Array.from({length:n},(_,i)=>[IDX[t.length?t[Math.floor(r()*t.length)].name:'Fizzle'],h.app?Math.max(tl[0],hi-2):Math.max(tl[0],Math.min(hi,tl[0]+Math.floor(r()*(hi-tl[0]+1))+i))]);
+ const team=Array.from({length:n},(_,i)=>[IDX[t.length?t[Math.floor(r()*t.length)].name:'Fizzle'],(h.app?Math.max(tl[0],hi-2):Math.max(tl[0],Math.min(hi,tl[0]+Math.floor(r()*(hi-tl[0]+1))+i)))+(h.route?2:0)]);
  return{name:h.cls+' '+h.name,art:h.art,intro:h.app?"You'll need to get past us to reach the Keeper!":"Our eyes met! That means a battle!",
   lose:h.app?'Go on, the Keeper is waiting.':'Wow, you two are in sync!',after:h.app?'The Keeper is just ahead.':'Good battle! Keep training out here.',team,bkey:h.id}}
 function trainerTalk(h){const tr=townTrainer(h);if(G.beaten[h.id])return say(tr.name+': '+tr.after,null,h.art);

@@ -93,7 +93,8 @@ function qPassive(){if(!G||!G.quests)return;
   else if(o.type==='item'&&G.key[o.target])qProgress(q,1);
   else if(o.type==='xenodex'&&Object.keys(G.caught).length>=(o.count||1))qProgress(q,o.count||1);
   else if(o.type==='cutscene'){if(s.playing)continue;const art=QCUT_ART[o.target]&&SCI[QCUT_ART[o.target][0]];
-   if(okI(art)&&!DLG&&!CH&&scene!=='battle'){s.playing=1;cut(art,QCUT_ART[o.target][1],()=>{s.playing=0;qNotify(q.id,'scene',QCUT[o.target]||[]);qProgress(q,1)})}else if(!okI(art)){qNotify(q.id,'scene',QCUT[o.target]||[]);qProgress(q,1)}}
+   // wait a few seconds for the scene art to download before falling back to text only
+   if(okI(art)&&!DLG&&!CH&&scene!=='battle'){s.playing=1;cut(art,QCUT_ART[o.target][1],()=>{s.playing=0;qNotify(q.id,'scene',QCUT[o.target]||[]);qProgress(q,1)})}else if(!okI(art)&&(s.wait=(s.wait||0)+1)>15){qNotify(q.id,'scene',QCUT[o.target]||[]);qProgress(q,1)}}
   else if(o.type==='choice'&&!s.asking&&!DLG&&!CH){s.asking=1;choose(o.hint||q.title,o.options,i=>{s.asking=0;G.flags[o.target]=i+1;qProgress(q,1)})}
   else if(o.type==='visit'||o.type==='spot_event'){const t=o.target||'';
    if(t==='molten_frontier'){if(scene==='world')qProgress(q,1)}

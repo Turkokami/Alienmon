@@ -317,7 +317,7 @@ function updPaint(){const P=paintOf();if(!G.ppos)G.ppos=P.start.slice();if(spotT
   if(pfree(P,x+dx*sp,y))x+=dx*sp;if(pfree(P,x,y+dy*sp))y+=dy*sp;const d=Math.hypot(x-G.ppos[0],y-G.ppos[1]);if(d>0.1){pmove=1;stepc++;G.ppos=[x,y];
   if(G.grace>0)G.grace--;if(G.jam>0&&stepc%8===0)G.jam--;
   if(pbit(P,'grass',x,y)&&!(G.grace>0)&&Math.hypot(x-P.start[0],y-(P.exitY-30))>160){pacc+=d;if(pacc>64){pacc=0;if(R()<0.08){wild();return}}}}
-  if(y>=P.exitY&&dy>0){if(PL[G.planet].key==='dustara'&&!gateOpen('dustara')){G.ppos[1]=P.exitY-24;say(gateMsg('dustara'));return}G.ppos[1]=P.exitY-24;say(inRoute()?'Head back to '+(PAINT[baseKey(G.sub)].town||PL[G.planet].name)+'?':'Leave '+(P.town||PL[G.planet].name)+(exitDoor(G.sub&&SUB_DOOR[G.sub]||PL[G.planet].key)?' and head out onto the Molten Frontier?':' and return to your ship?'),()=>choose('Leave town?',['Yes','No'],i=>{if(i===0)launch()}));return}}
+  if(y>=P.exitY&&dy>0){if(!inRoute()&&PL[G.planet].key==='dustara'&&!gateOpen('dustara')){G.ppos[1]=P.exitY-24;say(gateMsg('dustara'));return}G.ppos[1]=P.exitY-24;say(inRoute()?'Head back to '+(PAINT[baseKey(G.sub)].town||PL[G.planet].name)+'?':'Leave '+(P.town||PL[G.planet].name)+(exitDoor(G.sub&&SUB_DOOR[G.sub]||PL[G.planet].key)?' and head out onto the Molten Frontier?':' and return to your ship?'),()=>choose('Leave town?',['Yes','No'],i=>{if(i===0)launch()}));return}}
  if(losCheck(P)){drawPaint();return}
  pnear=null;let best=1e9;for(const h of P.hot){if(h.k==='block')continue;const dx=h.x-G.ppos[0],dy=h.y-G.ppos[1],ry=h.ry||h.r/1.6,dd=Math.hypot(dx,dy),d=dd-dd/Math.max(1e-3,Math.hypot(dx/h.r,dy/ry));if(d<44&&d<best){best=d;pnear=h}}
  const qe=qNear();if(qe&&P_('a'))qInteract(qe);else if(pnear&&P_('a'))paintInteract(pnear);
@@ -488,10 +488,10 @@ function wild(){if(!G.party.some(m=>m.hp>0))return;QWILD=scene==='world'?({pyros
 
 /* ---------- cutscenes ---------- */
 let CUT=null;
-function cut(i,text,next,fx){const im=typeof i==='number'?CUTI[i]:i;if(!(im&&im.complete&&im.naturalWidth)){next();return}CUT={im,text,next,t:0,fx};scene='cut'}
+function cut(i,text,next,fx){const im=typeof i==='number'?CUTI[i]:i;if(!(im&&im.complete&&im.naturalWidth)){next();return}CUT={im,text,next,t:0,fx,back:scene==='cut'?'planet':scene};scene='cut'}
 function updCut(){CUT.t++;ctx.save();ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';ctx.restore();const z=1+CUT.t*0.0012;cover(CUT.im,80-80*z,72-72*z,160*z,144*z,CUT.fx);
  ctx.fillStyle='rgba(18,12,34,0.92)';ctx.fillRect(0,126,160,18);txt(CUT.text,Math.round(80-CUT.text.length*4),131,'#5ff2ff');
- if(CUT.t>110||(CUT.t>15&&(P_('a')||P_('b')))){const n=CUT.next;CUT=null;n()}}
+ if(CUT.t>110||(CUT.t>15&&(P_('a')||P_('b')))){const n=CUT.next;scene=CUT.back;CUT=null;n()}}
 
 /* ---------- chooser / shop ---------- */
 let CH=null;
@@ -825,7 +825,7 @@ if(BETA){const m=document.createElement('meta');m.name='robots';m.content='noind
  document.body.appendChild(a)}
 // download the rest of the art in the background, a few files at a time, most-needed first
 function prefetch(){const c=navigator.connection;if(INLINE||(c&&(c.saveData||/2g/.test(c.effectiveType||''))))return;
- const scn=[];for(const p of PL)for(const k of[p.landScene,p.scene,p.key+'_town_hd',p.key+'_arena',PAINT[p.key]&&PAINT[p.key].img])if(k&&SCN[k]&&!scn.includes(k))scn.push(k);
+ const scn=Object.values(QCUT_ART).map(v=>v[0]);for(const p of PL)for(const k of[p.key+'_landmark',p.landScene,p.scene,p.key+'_town_hd',p.key+'_arena',PAINT[p.key]&&PAINT[p.key].img])if(k&&SCN[k]&&!scn.includes(k))scn.push(k);
  const q=[...Object.keys(PORT).map(k=>[PORTI,k]),...Object.keys(CHAR).map(k=>[CHI,k]),...Object.keys(PLANART).map(k=>[PLI,k]),...scn.map(k=>[SCI,k]),...Object.keys(FXD).map(k=>[FXI,k]),
   ...Object.keys(ART).map(k=>[ARTI,k]),...Object.keys(ARTB).map(k=>[ARTBI,k]),...Object.keys(OW).map(k=>[OWI,k]),...Object.keys(SCN).map(k=>[SCI,k])];
  let n=0;const next=()=>{if(!q.length)return;const[m,k]=q.shift(),i=m[k];if(!i||okI(i)){next();return}n++;const done=()=>{n--;next()};i.addEventListener('load',done,{once:true});i.addEventListener('error',done,{once:true})};
