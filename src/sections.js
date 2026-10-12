@@ -113,9 +113,10 @@ function drawSecDebug(s,cx,cy){ctx.save();for(let y=0;y<s.tiles[1];y++)for(let x
  ctx.restore();txt(s.id+' '+G.sec.x+','+G.sec.y,2,126,'#fff',6)}
 // starting points: a fresh game wakes up upstairs at home; landing on Dustara puts you at the plaza's landing-pad edge
 function secArrival(planetKey){const a=(__SECARRIVAL__)[planetKey];if(!a||!SWORLD[a.section])return null;return[a.section,SWORLD[a.section].spawns.arrival||SWORLD[a.section].spawns.default]}
-// section maps are a preview: on for playtest builds with ?sections in the address or the Options toggle, and for any save already inside one
+// section maps: on for playtest builds with ?sections in the address or the Options toggle, and for any save already inside one
 const SEC_URL=/[?&]sections/.test(location.search);
-function secEnabled(){return!!(G&&(G.sec||(G.opt&&G.opt.secMaps)||(SEC_URL&&canFreeRoam())))}
+// on by default in the private beta (testers can switch it off in Options); the public game keeps the classic maps for now
+function secEnabled(){if(!G)return false;if(G.sec)return true;if(G.opt&&G.opt.secMaps===false)return false;return!!((G.opt&&G.opt.secMaps)||BETA||(SEC_URL&&canFreeRoam()))}
 // apprentices in a planet's tower sections must be beaten before its Keeper battles (classic towns keep their own list)
 function secApprentices(k){let n=0,any=false;for(const s of Object.values(SWORLD))if(s.pkey===k)for(const p of s.npcs||[])if(p.trainer&&p.trainer.app){any=true;if(!G.beaten[p.id])n++}return any?n:null}
 // the opening: wake up at home, Mom sends you to Dr. Vashti's lab, and your partner is chosen at her pod table
