@@ -372,8 +372,8 @@
      ]
     },
     {
-     "x": 10,
-     "y": 5,
+     "x": 12,
+     "y": 12,
      "art": "wanderer",
      "face": "down",
      "t": [
@@ -635,7 +635,7 @@
    "pkey": "dustara",
    "npcs": [
     {
-     "x": 4,
+     "x": 19,
      "y": 7,
      "art": "wanderer",
      "face": "down",
@@ -644,7 +644,7 @@
      ]
     },
     {
-     "x": 19,
+     "x": 4,
      "y": 7,
      "art": "technician",
      "face": "down",
@@ -708,7 +708,7 @@
      ]
     },
     {
-     "x": 11,
+     "x": 12,
      "y": 8,
      "art": "civilian",
      "face": "down",
@@ -726,8 +726,8 @@
      ]
     },
     {
-     "x": 5,
-     "y": 7,
+     "x": 10,
+     "y": 8,
      "art": "wanderer",
      "face": "down",
      "t": [
@@ -735,8 +735,8 @@
      ]
     },
     {
-     "x": 4,
-     "y": 6,
+     "x": 11,
+     "y": 8,
      "art": "explorer",
      "face": "down",
      "t": [
@@ -991,8 +991,8 @@
    "pkey": "dustara",
    "npcs": [
     {
-     "x": 13,
-     "y": 6,
+     "x": 16,
+     "y": 8,
      "art": "sporefolk",
      "face": "down",
      "t": [
@@ -1000,8 +1000,8 @@
      ]
     },
     {
-     "x": 20,
-     "y": 10,
+     "x": 8,
+     "y": 9,
      "art": "explorer",
      "face": "down",
      "t": [
@@ -1009,10 +1009,10 @@
      ]
     },
     {
-     "x": 10,
-     "y": 12,
+     "x": 20,
+     "y": 10,
      "art": "technician",
-     "face": "up",
+     "face": "down",
      "t": [],
      "id": "sec011_tr2",
      "trainer": {
@@ -1022,10 +1022,10 @@
      }
     },
     {
-     "x": 4,
-     "y": 10,
+     "x": 10,
+     "y": 12,
      "art": "explorer",
-     "face": "right",
+     "face": "up",
      "t": [],
      "id": "sec011_tr3",
      "trainer": {
@@ -1117,8 +1117,8 @@
    "pkey": "dustara",
    "npcs": [
     {
-     "x": 9,
-     "y": 6,
+     "x": 8,
+     "y": 3,
      "art": "miner",
      "face": "down",
      "t": [
@@ -1285,8 +1285,8 @@
    "pkey": "dustara",
    "npcs": [
     {
-     "x": 15,
-     "y": 6,
+     "x": 12,
+     "y": 11,
      "art": "guard",
      "face": "down",
      "t": [
@@ -1294,8 +1294,8 @@
      ]
     },
     {
-     "x": 12,
-     "y": 11,
+     "x": 15,
+     "y": 6,
      "art": "wanderer",
      "face": "down",
      "t": [
@@ -1415,8 +1415,8 @@
      ]
     },
     {
-     "x": 10,
-     "y": 9,
+     "x": 15,
+     "y": 7,
      "art": "researcher",
      "face": "down",
      "t": [
@@ -1628,8 +1628,8 @@
    "pkey": "dustara",
    "npcs": [
     {
-     "x": 12,
-     "y": 4,
+     "x": 15,
+     "y": 5,
      "art": "squidsailor",
      "face": "down",
      "t": [
@@ -1684,8 +1684,8 @@
    "pkey": "dustara",
    "npcs": [
     {
-     "x": 9,
-     "y": 9,
+     "x": 18,
+     "y": 8,
      "art": "explorer",
      "face": "down",
      "t": [
@@ -1946,8 +1946,8 @@
    "pkey": "dustara",
    "npcs": [
     {
-     "x": 4,
-     "y": 9,
+     "x": 18,
+     "y": 3,
      "art": "technician",
      "face": "down",
      "t": [
@@ -2002,8 +2002,8 @@
    "pkey": "dustara",
    "npcs": [
     {
-     "x": 13,
-     "y": 11,
+     "x": 10,
+     "y": 10,
      "art": "explorer",
      "face": "down",
      "t": [
@@ -2123,8 +2123,8 @@
    "pkey": "dustara",
    "npcs": [
     {
-     "x": 7,
-     "y": 9,
+     "x": 15,
+     "y": 8,
      "art": "wanderer",
      "face": "down",
      "t": [
@@ -2971,8 +2971,8 @@
      ]
     },
     {
-     "x": 11,
-     "y": 3,
+     "x": 15,
+     "y": 11,
      "art": "miner",
      "face": "down",
      "t": [

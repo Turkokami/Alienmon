@@ -54,10 +54,15 @@ for sid, sec in world.items():
         for k, v in pts.items():
             if walk(*v) and v not in seen:
                 probs.append(f'{k} is cut off from {next(k2 for k2, v2 in pts.items() if v2 == good[0])}')
+    # walkable ground the player can never reach looks open but isn't: report it (a warning, it doesn't fail)
+    islands = 0
+    if good:
+        allw = {(x, y) for y in range(H) for x in range(W) if rows[y][x] in '.,'} - npc
+        islands = len(allw - seen)
     n = sum(r.count('.') + r.count(',') for r in rows)
     if probs:
         bad += 1
         print(f"{sid} {sec['name']}: FAIL ({n} walkable) - " + '; '.join(probs))
     else:
-        print(f"{sid} {sec['name']}: ok ({n} walkable, {sum(r.count(',') for r in rows)} grass){'' if c.get('edited') else ' [auto, not reviewed]'}")
+        print(f"{sid} {sec['name']}: ok ({n} walkable, {sum(r.count(',') for r in rows)} grass){'' if c.get('edited') else ' [auto, not reviewed]'}" + (f' WARN {islands} unreachable walkable tiles: ' + ' '.join(f'{x},{y}' for x, y in sorted(allw - seen, key=lambda t: (t[1], t[0]))[:40]) if islands else ''))
 sys.exit(1 if bad else 0)
