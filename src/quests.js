@@ -99,7 +99,7 @@ function qPassive(){if(!G||!G.quests)return;
    else if(loc&&qSameArea(loc)){const p=qPos();if(loc.x==null||(p&&Math.hypot(loc.x-p[0],loc.y-p[1])<44))qProgress(q,1)}}}}
 
 // cutscene lines that are not already part of a quest's own dialogue
-const QCUT={};
+const QCUT={novaryx_awakens:['Your eight Shards rise and resonate. A great signal-winged bird answers the call...']};
 
 function qNotify(q,kind,lines){if(lines&&lines.length)QN.push({q,kind,lines})}
 // show waiting quest messages when nothing else is on screen
@@ -153,7 +153,18 @@ function qEnts(){if(qEntFrame===frame&&qEntCache)return qEntCache;qEntFrame=fram
 
 function qNear(){const p=qPos();if(!p)return null;let best=null,bd=scene==='world'?14:40;for(const e of qEnts()){if(e.k==='beacon')continue;const d=Math.hypot(e.x-p[0],e.y-p[1]);if(d<bd){bd=d;best=e}}return best}
 
-function qTeam(q,o){const p=PL[G.planet]||PL[0],lv=(p.lv||[5,8])[1];
+// story bosses and the rival use the progression levels and lead with their signature Alienmon
+const QBOSS={admin_bronn:['bronn','Bronnix',3],admin_vex:['vex','Vexhydra',4],director_thorne:['thorne','Thornvoid',5],orra_venn:['orra','Firstlight',6],
+ quorum_marisol:[0,'Facetrix',5],quorum_harrow:[1,'Encorex',5],quorum_saga:[2,'Pyrelyth',5],quorum_ostrander:[3,'Bastionyx',5]};
+const RIVAL_LV=[7,15,22,36,56,70];
+function evolvedAt(id,lv){let n=D[id].name;for(let i=0;i<3;i++){const ev=(PROG.species[n]||{}).evolves;if(ev&&ev.into&&/^Level/.test(ev.method||'Level')&&lv>=ev.level&&IDX[ev.into]!=null)n=ev.into;else break}return IDX[n]}
+function bossTeam(q,o){const p=PL[G.planet]||PL[0],pool=p.pool.e.concat(p.pool.c).filter(id=>wildOK(D[id].name)),r=rng(hash(o.target)),fill=(n,lv)=>Array.from({length:n},()=>[evolvedAt(pool[Math.floor(r()*pool.length)],lv),lv]);
+ const rv=/^sola_(\d)$/.exec(o.target);
+ if(rv){const n=+rv[1],ace=RIVAL_LV[n-1]||7,mine=STARTERS.find(s=>G.caught[s])??STARTERS[0],counter=STARTERS[(STARTERS.indexOf(mine)+1)%3];
+  return fill(n-1,Math.max(2,ace-2)).concat([[evolvedAt(counter,ace),ace]])}
+ const b=QBOSS[o.target];if(!b)return null;const lv=typeof b[0]==='number'?PROG.bosses.quorum[b[0]]:PROG.bosses[b[0]];
+ return fill(b[2]-1,lv-2).concat([[IDX[b[1]]??pool[0],lv]])}
+function qTeam(q,o){const bt=bossTeam(q,o);if(bt)return bt;const p=PL[G.planet]||PL[0],lv=(p.lv||[5,8])[1];
  if(o.team&&o.team.length)return o.team.map(([id,l])=>{if(id==='counter_starter'){const mine=STARTERS.find(s=>G.caught[s]);return[STARTERS[(STARTERS.indexOf(mine)+1)%3]??STARTERS[1],l]}return[IDX[id]!=null?IDX[id]:id,l]});
  const pool=p.pool.c.concat(p.pool.e),r=rng(hash(o.target)),boss=o.type==='defeat_boss',n=boss?3:2;
  return Array.from({length:n},(_,i)=>[pool[Math.floor(r()*pool.length)],lv+(boss?3:1)+i])}

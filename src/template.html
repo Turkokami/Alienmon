@@ -317,7 +317,7 @@ function updPaint(){const P=paintOf();if(!G.ppos)G.ppos=P.start.slice();if(spotT
  const qe=qNear();if(qe&&P_('a'))qInteract(qe);else if(pnear&&P_('a'))paintInteract(pnear);
  drawPaint()}
 function paintInteract(h){const p=PL[G.planet];if(h.k==='trainer')return trainerTalk(h);if(h.legend)return legendBattle(h);if(h.k==='talk'||h.k==='npc')qEvent('talk',h.id||'',{x:h.x,y:h.y});
- if(h.k==='bay')return bayMenu();if(h.k==='shop')return shop();
+ if(h.k==='bay'){G.singBuy=0;return bayMenu()}if(h.k==='shop')return shop();
  if(h.k==='npc')return say(p.npc,null,p.npcArt);
  if(h.k==='keeper')return keeperTalk(p);
  if(h.k==='ship')return choose('Your ship',['Head out (world map)','Recovery Bay','Shop','Cancel'],i=>{if(i===0)launch();else if(i===1){healAll();noteHeal();say('Ship Recovery Bay: Your Alienmon are fully healed and cured!')}else if(i===2)shop()});
@@ -429,7 +429,7 @@ function updWorld(){if(!G.wpos)toWorld(PL[G.planet].key);if(P_('start')){scene='
  {const qe=qNear();if(qe&&P_('a')){qInteract(qe);drawWorld();return}}
  if(P_('a')&&wnear){if(wnear.node){const n=wnear.node;
    if(!gateOpen(n.k)){say(gateMsg(n.k));return}
-   if(n.k==='bay'){bayMenu();return}
+   if(n.k==='bay'){G.singBuy=0;bayMenu();return}
    const opts=n.k==='space'?['Take the shuttle to Helix Station','Cancel']:['Enter','Cancel'];
    choose(n.k==='space'?n.n:n.n+' - '+PL[pidx(n.k)].name,opts,i=>{if(opts[i].startsWith('Enter')){if(n.k==='helix')enterFortress(n);else enterRegion(n)}else if(opts[i].startsWith('Take'))enterRegion({k:'helix',n:'Helix Station by shuttle'})})}
   else{const e=wnear.npc;qEvent('talk',e.id,{x:e.x,y:e.y});if(e.k==='trainer'){const t=wTrainer(e);if(G.beaten[e.id])say(t.name+': '+t.after,null,e.art);else if(!G.party.some(m=>m.hp>0))say('Your team needs to heal first.');
@@ -494,9 +494,9 @@ function updChoose(){const n=CH.opts.length;if(P_('up'))CH.sel=(CH.sel+n-1)%n;if
  if(P_('b')){const b=CH.back;CH=null;if(b)b();return}if(P_('a')){const c=CH.cb,i=CH.sel;CH=null;c(i)}}
 function drawChoose(){if(CH.por&&okI(CHI[CH.por])){const h0=16+CH.opts.length*11;box(4,100-h0-48,46,48,'#3b2a5c','#1b1424');dchar(CH.por,6,100-h0-46,42,42)}const h=16+CH.opts.length*11;box(4,100-h,152,h+2);txt(CH.title,8,104-h,'#7a1f6a',7);CH.opts.forEach((o,i)=>txt((i===CH.sel?'>':' ')+o,8,116-h+i*11,i===CH.sel?'#d7262e':'#1b1424',7))}
 function bayMenu(){choose('Recovery Bay',['Heal team','Pod shop','Move Archive','Nickname','Leave'],i=>{if(i===0){healAll();noteHeal();say(['Nurse: Your Alienmon are fully healed and cured!'].concat(nurseTip()),bayMenu,'nurse')}else if(i===1)shop();else if(i===2)moveArchive();else if(i===3)nickMenu()},null,'nurse')}
-function shop(){const goods=PODS.filter(p=>shopOpen(p.k)).map(p=>({n:p.n,price:SHOP_PRICE[p.k]||p.price,get:()=>G.pods[p.k],add:()=>G.pods[p.k]++})).concat(ITEMS.filter(it=>shopOpen(it.k)).map(it=>({n:it.n,price:SHOP_PRICE[it.k]||it.price,get:()=>G.items[it.k]||0,add:()=>G.items[it.k]=(G.items[it.k]||0)+1})));
+function shop(){const goods=PODS.filter(p=>shopOpen(p.k)).map(p=>({n:p.n,price:SHOP_PRICE[p.k]||p.price,get:()=>G.pods[p.k],add:()=>{if(p.k==='singularity'){if((G.singBuy||0)>=3)return say('Shopkeeper: Only 3 Singularity Pods per visit. They take ages to charge!',shop,'shop')||true;G.singBuy=(G.singBuy||0)+1}G.pods[p.k]++}})).concat(ITEMS.filter(it=>shopOpen(it.k)).map(it=>({n:it.n,price:SHOP_PRICE[it.k]||it.price,get:()=>G.items[it.k]||0,add:()=>G.items[it.k]=(G.items[it.k]||0)+1})));
  choose('Stardust: '+G.dust,goods.map(g=>g.n.slice(0,13).padEnd(13)+String(g.price).padStart(4)+' x'+g.get()).concat(['Back']),i=>{if(i===goods.length)return bayMenu();const g=goods[i];
- if(G.dust<g.price)say('Shopkeeper: Not enough stardust. Win battles to earn more.',shop,'shop');else{G.dust-=g.price;g.add();shop()}},bayMenu,'shop')}
+ if(G.dust<g.price)say('Shopkeeper: Not enough stardust. Win battles to earn more.',shop,'shop');else{if(g.add()===true)return;G.dust-=g.price;shop()}},bayMenu,'shop')}
 
 /* ---------- space ---------- */
 const PSPR={},GATE={x:1640,y:120};
@@ -620,9 +620,10 @@ const ITEMS=[{k:'gel',n:'Med Gel',d:'Restores 30 HP.',heal:30,price:15},{k:'mega
 {k:'revive',n:'Revive Spark',d:'Revives a fainted Alienmon with half HP.',revive:0.5,price:80},{k:'cure',n:'Cure Spray',d:'Cures burn, poison, shock and freeze.',cure:1,price:20},
 {k:'tether',n:'Tether Pulse',d:'Weakens the foe but never knocks it out. Great before a capture.',battle:'tether',price:30},
 {k:'stun',n:'Stun Spray',d:'Shocks the foe. Shocked Alienmon are easier to capture.',battle:'stun',price:30},
-{k:'fullgel',n:'Full Gel',d:'Fully restores HP.',heal:9999,price:120},{k:'ether',n:'Ether Gel',d:'Restores 10 PP to each move.',pp:10,price:60},{k:'jammer',n:'Signal Jammer',d:'Weaker wild Alienmon keep away for 200 steps.',jam:200,price:35},{k:'maxrevive',n:'Max Revive',d:'Revives a fainted Alienmon with full HP.',revive:1,price:300}];
+{k:'fullgel',n:'Full Gel',d:'Fully heals your whole team.',heal:9999,price:120},{k:'ether',n:'Ether Gel',d:'Restores 10 PP to each move.',pp:10,price:60},{k:'jammer',n:'Signal Jammer',d:'Weaker wild Alienmon keep away for 200 steps.',jam:200,price:35},{k:'maxrevive',n:'Max Revive',d:'Revives a fainted Alienmon with full HP.',revive:1,price:300}];
 const START_ITEMS={gel:5,megagel:2,revive:2,cure:3,tether:3,stun:2};
 function useOn(it,m,lines){const mx=stat(m,0);
+ if(it.k==='fullgel'){let any=false;for(const x of G.party)if(x.hp>0&&x.hp<stat(x,0)){x.hp=stat(x,0);any=true}if(!any){lines.push('Your team is already at full health.');return false}lines.push('The whole team was fully healed!');return true}
  if(it.jam){G.jam=it.jam;lines.push('The Signal Jammer hums. Weaker Alienmon will keep their distance.');return true}
  if(it.pp){if(m.moves.every(mi=>ppGet(m,mi)>=maxPP(mi))){lines.push(nm(m)+"'s moves are already full.");return false}m.ppm=m.ppm||{};for(const mi of m.moves)m.ppm[mi]=Math.min(maxPP(mi),ppGet(m,mi)+it.pp);lines.push(nm(m)+"'s moves were restored!");return true}
  if(it.revive){if(m.hp>0){lines.push(nm(m)+" hasn't fainted.");return false}m.hp=Math.floor(mx*it.revive);m.st=null;lines.push(nm(m)+' was revived!');return true}

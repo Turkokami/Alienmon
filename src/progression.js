@@ -31,8 +31,10 @@ function progMigrate(g){for(const m of g.party.concat(g.box)){if(!m.pot){m.pot=[
  g.opt=g.opt||{expLink:true};return g}
 
 /* EXP: scaled formula, x1.5 from trainers; EXP Link gives the rest of the party 50% (Classic mode: split among battlers) */
+// overall EXP pace: tuned so a starter that fights most battles stays about 2 levels above each Keeper's ace
+let EXP_SCALE=0.7;
 function expGain(e,p,trainer){const by=spOf(e.id).base_yield||Math.round(D[e.id].s.reduce((a,b)=>a+b,0)*0.25),L=e.lv,Lp=p.lv;
- let x=Math.floor((by*L/5)*Math.pow((2*L+10)/(L+Lp+10),2.5))+1;return trainer?Math.floor(x*1.5):x}
+ let x=Math.floor((by*L/5)*Math.pow((2*L+10)/(L+Lp+10),2.5)*EXP_SCALE)+1;return trainer?Math.floor(x*1.5):x}
 // TP in the defeated species' highest base stat: 1 first stage, 2 middle or single-stage, 3 final stage
 function tpGain(e){const s=spOf(e.id),b=D[e.id].s,n=s.stages||1,st=s.stage||1;return[b.indexOf(Math.max(...b)),n>1&&st===n?3:(n===1||st>1)?2:1]}
 function addTP(m,i,a){m.tp=m.tp||[0,0,0,0,0,0];const tot=m.tp.reduce((x,y)=>x+y,0);a=Math.max(0,Math.min(a,250-m.tp[i],500-tot));m.tp[i]+=a}
