@@ -10,7 +10,7 @@ let SM=null,SFADE=null,SBANNER=0,SDEBUG=false,SBUMP=0,SNEAR=null;
 const secOn=()=>!!(G&&G.sec&&SWORLD[G.sec.id]);
 const secTile=(s,x,y)=>x<0||y<0||x>=s.tiles[0]||y>=s.tiles[1]?null:s.rows[y][x];
 const DIRS={up:[0,-1],down:[0,1],left:[-1,0],right:[1,0]};
-const secVis=n=>(!n.after||mDone(n.after))&&(!n.until||!mDone(n.until));
+const secVis=n=>(!n.after||mDone(n.after))&&(!n.until||!mDone(n.until))&&(!n.flag||!!(G.flags&&G.flags[n.flag]))&&(!n.legend||legendHere(n.legend));
 const secNpcs=s=>(s.npcs||[]).filter(secVis);
 function secNpcAt(s,x,y){return secNpcs(s).find(n=>n.x===x&&n.y===y)}
 function secWalk(s,x,y){const c=secTile(s,x,y);return(c==='.'||c===',')&&!secNpcAt(s,x,y)&&!(s.id===(G.sec&&G.sec.id)&&(secQAt(x,y,true)||secMonAt(s,x,y)))}
@@ -55,9 +55,11 @@ function secLeaveForShip(){if(G.secBack&&SWORLD[G.secBack.id])return say('The ga
 function secInteract(){const s=SWORLD[G.sec.id],[dx,dy]=DIRS[face],x=G.sec.x+dx,y=G.sec.y+dy;
  const qe=secQAt(x,y,false);if(qe&&!secNpcAt(s,x,y))return qInteract(qe);
  const wm=secMonAt(s,x,y);if(wm)return secMonBattle(s,wm);
- const n=secNpcAt(s,x,y);if(n){n.face=({up:'down',down:'up',left:'right',right:'left'})[face];if(n.trainer)return secTrainerTalk(n);if(n.wid)qEvent('talk',n.wid,{x:n.x*16+8,y:n.y*16+15});if(n.story==='starter'&&!G.party.length)return secStarterTalk();return say(!G.party.length&&n.pre?n.pre:n.t,null,n.por||undefined)}
+ const n=secNpcAt(s,x,y);if(n){n.face=({up:'down',down:'up',left:'right',right:'left'})[face];if(n.legend)return legendBattle({mon:n.legend,lvl:n.lv||60});if(n.trainer)return secTrainerTalk(n);if(n.wid)qEvent('talk',n.wid,{x:n.x*16+8,y:n.y*16+15});if(n.story==='starter'&&!G.party.length)return secStarterTalk();return say(!G.party.length&&n.pre?n.pre:n.t,null,n.por||undefined)}
  const o=(s.objects||[]).find(o=>o.tile[0]===x&&o.tile[1]===y);if(!o)return;
- if(o.k==='keeper')return keeperTalk(PL[G.planet]);if(o.k==='bay'){G.singBuy=0;return bayMenu()}if(o.k==='shop')return shop();
+ if(o.k==='keeper')return keeperTalk(PL[G.planet]);
+ if(o.k==='chest'){G.opened=G.opened||{};const tag=s.id+':'+o.tile;if(G.opened[tag])return say('The chest is empty.');G.opened[tag]=1;const pod=G.pods&&o.item in G.pods,n=o.n||1;if(pod)G.pods[o.item]+=n;else G.items[o.item]=(G.items[o.item]||0)+n;
+  const name=(ITEMS.concat(PODS).find(i=>i.k===o.item)||{n:o.item}).n;return say('You opened the chest... and found '+(n>1?n+'x ':'a ')+name+'!')}if(o.k==='bay'){G.singBuy=0;return bayMenu()}if(o.k==='shop')return shop();
  if(o.k==='lab'&&!G.party.length)return secStarterTalk();if(o.k==='lab')return say(G.party.length?'Three empty pod cradles. Your partner\'s pod used to sit in the middle one.':'Three seed pods hum on the lab table.');
  if(o.t)return say(o.t)}
 function updSec(){const s=SWORLD[G.sec.id];if(SBUMP>0)SBUMP--;
@@ -86,7 +88,7 @@ function drawSec(){const s=SWORLD[G.sec.id],p=SM?SM.t/SEC_STEP:0,px=G.sec.x*16+(
  for(const[k,e]of Object.entries(s.edges)){const t=SWORLD[e.to];if(!t)continue;const o=(e.offset||0)*16;
   if(k==='right')secDrawImg(t.id,s.tiles[0]*16-cx,-o-cy);else if(k==='left')secDrawImg(t.id,-t.tiles[0]*16-cx,-o-cy);else if(k==='bottom')secDrawImg(t.id,-o-cx,s.tiles[1]*16-cy);else secDrawImg(t.id,-o-cx,-t.tiles[1]*16-cy)}
  ctx.restore();
- const people=secNpcs(s).map(n=>({y:n.y*16,draw:()=>secDrawChar(n.art,n.face||'down',n.x*16-cx,n.y*16-cy,0)}));
+ const people=secNpcs(s).map(n=>({y:n.y*16,draw:()=>n.legend?secDrawLegend(n.legend,n.x*16-cx,n.y*16-cy):secDrawChar(n.art,n.face||'down',n.x*16-cx,n.y*16-cy,0)}));
  const kp=PL[G.planet]&&PL[G.planet].keeper;for(const o of s.objects||[])if(o.k==='keeper'&&kp)people.push({y:o.tile[1]*16,draw:()=>secDrawChar(kp.art,'down',o.tile[0]*16-cx,o.tile[1]*16-cy,0)});
  people.push({y:py,me:1,draw:()=>{const k=(G.gender||'boy');secDrawChar(k,face,px-cx,py-cy,SM&&p>0.25&&p<0.75?1:0,true)}});
  people.sort((a,b)=>a.y-b.y).forEach(o=>o.draw());
@@ -134,3 +136,5 @@ function secQLoc(key,loc){const sp=SECQ[key];if(!sp)return null;return Object.as
 // the old Molten Frontier world map's places, now sections: 'visit the Frontier' / 'visit node X' objectives
 const SEC_FRONTIER=new Set(['014','015','016','017','018','019','020','021','022','023','024','025','026','027','028']);
 const SEC_NODE={dustara:'014',bay:'017',thalassa:'018',glyphos:'019',ferrox:'022',helix:'023',space:'026',starfall:'026',umbra:'027',pyros:'028'};
+// a legendary waiting on the map: its overworld sprite, larger than a person, gently bobbing
+function secDrawLegend(name,x,y){const im=OWI[name];if(!okI(im))return;ctx.fillStyle='rgba(20,10,20,0.35)';ctx.beginPath();ctx.ellipse(x+8,y+15,9,3,0,0,6.283);ctx.fill();ctx.save();ctx.imageSmoothingEnabled=true;ctx.drawImage(im,((frame>>4)&1)*64,0,64,64,x-8,y-17+Math.round(Math.sin(frame/12)),32,32);ctx.restore()}

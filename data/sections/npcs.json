@@ -882,5 +882,32 @@
     "Dr. Vashti: Keep going, Linker. Every Shard brings us closer to the truth."
    ]
   }
+ ],
+ "157": [
+  {
+   "art": "ystran",
+   "legend": "Ignarch",
+   "lv": 60,
+   "flag": "champ",
+   "t": []
+  }
+ ],
+ "156": [
+  {
+   "art": "ystran",
+   "legend": "Aquelion",
+   "lv": 60,
+   "flag": "champ",
+   "t": []
+  }
+ ],
+ "154": [
+  {
+   "art": "ystran",
+   "legend": "Terravox",
+   "lv": 60,
+   "flag": "champ",
+   "t": []
+  }
  ]
 }

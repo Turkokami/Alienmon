@@ -1,0 +1,560 @@
+{
+ "doors": [
+  {
+   "interior": "106",
+   "parent": "105",
+   "door": [
+    5,
+    10
+   ],
+   "mat": [
+    [
+     7,
+     12
+    ],
+    [
+     8,
+     12
+    ]
+   ],
+   "confidence": "high",
+   "why": "Lower-left Helix-bannered dome on the Docking Ring (door 5,10): crew quarters beside the arrival corridor"
+  },
+  {
+   "interior": "107",
+   "parent": "105",
+   "door": [
+    18,
+    10
+   ],
+   "mat": [
+    [
+     7,
+     13
+    ],
+    [
+     8,
+     13
+    ]
+   ],
+   "confidence": "high",
+   "why": "Lower-right Helix-bannered dome on the Docking Ring (door 18,10), mirror of the barracks; Labs 2F via the lift inside"
+  },
+  {
+   "interior": "112",
+   "parent": "105",
+   "door": [
+    11,
+    1
+   ],
+   "door2": [
+    12,
+    1
+   ],
+   "mat": [
+    [
+     7,
+     13
+    ],
+    [
+     8,
+     13
+    ]
+   ],
+   "confidence": "todo",
+   "why": "Big Helix-emblem gate at the top centre of the Docking Ring (cols 11-12) facing open space; no other door on 105 or 109-111 suits a viewing deck"
+  }
+ ],
+ "stairs": [
+  {
+   "a": "107",
+   "a_tile": [
+    6,
+    8
+   ],
+   "b": "108",
+   "b_tile": [
+    8,
+    3
+   ],
+   "why": "Labs 1F: dark lift rack left of the central tank (6,8) <-> Labs 2F: emblem lift door at the top centre (8,3)"
+  }
+ ],
+ "edge_rows": {
+  "105": {
+   "left": [
+    6,
+    7
+   ],
+   "right": [
+    6,
+    7
+   ]
+  }
+ },
+ "objects": {
+  "105": [
+   {
+    "tile": [
+     16,
+     4
+    ],
+    "k": "bay",
+    "t": [
+     "The medical dome's scanner hums. Helix-grade nanites patch up your whole team."
+    ]
+   },
+   {
+    "tile": [
+     12,
+     8
+    ],
+    "k": "sign",
+    "t": [
+     "HELIX STATION - DOCKING RING. All personnel: report unregistered Linkers to Security."
+    ]
+   }
+  ],
+  "106": [
+   {
+    "tile": [
+     8,
+     4
+    ],
+    "k": "sign",
+    "t": [
+     "DUTY ROSTER: Shift A - cages. Shift B - cages. Shift C - also cages. Complaints to Admin Vex."
+    ]
+   }
+  ],
+  "107": [
+   {
+    "tile": [
+     7,
+     9
+    ],
+    "k": "sign",
+    "t": [
+     "SPECIMEN TANK 1F-03. Do not tap the glass. It taps back."
+    ]
+   }
+  ],
+  "108": [
+   {
+    "tile": [
+     7,
+     9
+    ],
+    "k": "sign",
+    "t": [
+     "PROJECT RIFT: stabiliser coolant at 81%. Director Thorne wants 100% by next cycle."
+    ]
+   }
+  ],
+  "109": [
+   {
+    "tile": [
+     7,
+     8
+    ],
+    "k": "sign",
+    "t": [
+     "CONTAINMENT WING 1F. Captured Alienmon are station property. Feeding is optional."
+    ]
+   },
+   {
+    "tile": [
+     2,
+     7
+    ],
+    "k": "sign",
+    "t": [
+     "CAGE CONSOLE: the Alienmon inside presses a paw to the glass. The lock reads HELIX ADMIN ONLY."
+    ]
+   },
+   {
+    "tile": [
+     13,
+     7
+    ],
+    "k": "sign",
+    "t": [
+     "CAGE CONSOLE: something green shuffles behind the bars. The lock is keyed to an admin card."
+    ]
+   }
+  ],
+  "110": [
+   {
+    "tile": [
+     7,
+     9
+    ],
+    "k": "sign",
+    "t": [
+     "CONTAINMENT WING 2F. Toxin pools are for Alienmon conditioning. Do not swim."
+    ]
+   },
+   {
+    "tile": [
+     4,
+     4
+    ],
+    "k": "sign",
+    "t": [
+     "CAGE CONSOLE: two tanks, two sleeping Alienmon. A sticky note says 'ask Bronn for the code'."
+    ]
+   },
+   {
+    "tile": [
+     12,
+     4
+    ],
+    "k": "sign",
+    "t": [
+     "CAGE CONSOLE: status SEDATED. Someone has doodled a sad face on the screen."
+    ]
+   }
+  ],
+  "111": [
+   {
+    "tile": [
+     13,
+     4
+    ],
+    "k": "sign",
+    "t": [
+     "REACTOR CORE: output 340% of rated. A label underneath says 'it's fine'."
+    ]
+   },
+   {
+    "tile": [
+     6,
+     6
+    ],
+    "k": "sign",
+    "t": [
+     "ENGINEERING LOG: Rerouted core power to the Rift engine again. Lights on 2F may flicker. - B."
+    ]
+   }
+  ],
+  "112": [
+   {
+    "tile": [
+     7,
+     8
+    ],
+    "k": "sign",
+    "t": [
+     "STAR MAP: every planet you've visited glows. One dark point beyond them all is marked RIFT."
+    ]
+   }
+  ],
+  "113": [
+   {
+    "tile": [
+     8,
+     4
+    ],
+    "k": "keeper",
+    "t": []
+   }
+  ]
+ },
+ "trainers_per_section": {
+  "109": 2,
+  "110": 2,
+  "111": 2
+ },
+ "npcs": {
+  "105": [
+   {
+    "art": "guard",
+    "t": [
+     "Guard: Keep moving. Visitors aren't supposed to be on this deck.",
+     "Guard: Wait, are you a visitor? We don't get visitors. ...Carry on, I guess."
+    ],
+    "tile": [
+     11,
+     3
+    ],
+    "face": "down"
+   },
+   {
+    "art": "strand",
+    "t": [
+     "Helix grunt: I signed up for the free uniform. Nobody said it came with toxic cleanup duty.",
+     "Helix grunt: Don't tell Admin Vex you saw me napping by the planters."
+    ],
+    "tile": [
+     8,
+     5
+    ],
+    "face": "down"
+   },
+   {
+    "art": "researcher",
+    "t": [
+     "Scientist: I just run the tests. Don't look at me like that.",
+     "Scientist: The medical dome up top heals anyone. Even intruders. Budget cuts hit the ID scanner."
+    ],
+    "tile": [
+     11,
+     9
+    ],
+    "face": "up"
+   },
+   {
+    "art": "technician",
+    "t": [
+     "Engineer: The power cores have been running hot all week. Engineering says it's 'within tolerance'.",
+     "Engineer: Containment wing is east. Then 2F, then Engineering, then Vex. Not that I told you."
+    ],
+    "tile": [
+     13,
+     5
+    ],
+    "face": "right"
+   },
+   {
+    "art": "strand",
+    "t": [
+     "Helix grunt: The cages? Oh, those are... wellness pods. For the Alienmon. Very relaxing pods.",
+     "Helix grunt: Toxin types love the green pools here. That's why we keep so many. Probably."
+    ],
+    "tile": [
+     20,
+     11
+    ],
+    "face": "left"
+   },
+   {
+    "art": "guard",
+    "t": [
+     "Guard: Labs are in the right dome, barracks in the left. Not that you're allowed in either.",
+     "Guard: Grunts spot you from five tiles out. Walk into their line and you WILL be battling."
+    ],
+    "tile": [
+     3,
+     9
+    ],
+    "face": "up"
+   },
+   {
+    "art": "researcher",
+    "t": [
+     "Scientist: Stasis Pods work best on a weakened Alienmon. Helix just uses bigger cages.",
+     "Scientist: The Director keeps asking about Signal Shards. Why does a space station need Relay keys?"
+    ],
+    "tile": [
+     2,
+     5
+    ],
+    "face": "right"
+   }
+  ],
+  "106": [
+   {
+    "art": "strand",
+    "t": [
+     "Off-duty grunt: This is my bunk. That's my bunk too. Grunt Pell snores, so I took his.",
+     "Off-duty grunt: Lights out is at 22:00. Battles are at 22:01. Every night."
+    ],
+    "tile": [
+     3,
+     9
+    ],
+    "face": "up"
+   },
+   {
+    "art": "guard",
+    "t": [
+     "Barracks guard: Mess rule one: nobody sits in Admin Vex's chair. Rule two: see rule one."
+    ],
+    "tile": [
+     12,
+     9
+    ],
+    "face": "up"
+   }
+  ],
+  "107": [
+   {
+    "art": "researcher",
+    "t": [
+     "Lab tech: Those tanks hold Alienmon from every planet you've visited. We call it 'the collection'.",
+     "Lab tech: Upstairs is Project Rift. Downstairs is everything we can't explain to HR."
+    ],
+    "tile": [
+     2,
+     7
+    ],
+    "face": "up"
+   },
+   {
+    "art": "researcher",
+    "t": [
+     "Scientist: Toxin types shrug off poison, but Ground and Psychic moves hit them hard. For science.",
+     "Scientist: Please don't free the specimens. I'd have to fill out so many forms."
+    ],
+    "tile": [
+     13,
+     7
+    ],
+    "face": "up"
+   }
+  ],
+  "108": [
+   {
+    "art": "researcher",
+    "t": [
+     "Senior scientist: The Rift engine needs a Singularity core. Admin Vex holds the only one aboard.",
+     "Senior scientist: Director Thorne says the Rift is a door. I've seen the numbers. It's a mouth."
+    ],
+    "tile": [
+     3,
+     6
+    ],
+    "face": "right"
+   },
+   {
+    "art": "technician",
+    "t": [
+     "Lab engineer: Don't touch the blue tank. Or the green ones. Actually, just admire from over there."
+    ],
+    "tile": [
+     12,
+     6
+    ],
+    "face": "left"
+   }
+  ],
+  "109": [
+   {
+    "art": "researcher",
+    "t": [
+     "Worried scientist: They cry at night. The Alienmon, I mean. I've put in for a transfer three times."
+    ],
+    "tile": [
+     12,
+     8
+    ],
+    "face": "left"
+   }
+  ],
+  "110": [
+   {
+    "art": "technician",
+    "t": [
+     "Cage tech: Admin Bronn has the cage codes. He's been acting... odd lately. Almost sympathetic."
+    ],
+    "tile": [
+     14,
+     5
+    ],
+    "face": "left"
+   }
+  ],
+  "111": [
+   {
+    "art": "technician",
+    "t": [
+     "Reactor tech: If the core turns white, run. If it's orange, that's normal. It's always orange.",
+     "Reactor tech: Vex's arena is straight up the corridor. Heal first. She plays dirty."
+    ],
+    "tile": [
+     5,
+     12
+    ],
+    "face": "up"
+   }
+  ],
+  "112": [
+   {
+    "art": "guard",
+    "t": [
+     "Deck guard: Best view in the galaxy. Shame we only use it to watch for Relay Keepers' ships."
+    ],
+    "tile": [
+     2,
+     9
+    ],
+    "face": "up"
+   },
+   {
+    "art": "strand",
+    "t": [
+     "Helix grunt: Sometimes I come up here and wonder if we're the bad guys. Then payday comes."
+    ],
+    "tile": [
+     13,
+     9
+    ],
+    "face": "up"
+   }
+  ]
+ },
+ "unlisted": {
+  "105": "Shop-style dome with a striped awning (door 7,4) has no interior, left blocked; stair down into the green toxin pit at the bottom centre (cols 11-12, rows 12-13) leads nowhere, left blocked.",
+  "108": "Bottom doormat corridor (7-8,13) is drawn, but Labs 2F is reached by the lift from Labs 1F; mat tiles left blocked. The two stair ramps (cols 5 and 10) are treated as in-room ramps joining the top and bottom halves."
+ },
+ "ignore_mats": {
+  "108": "Labs 2F is reached by the lift from Labs 1F; its drawn bottom doormat is blocked."
+ },
+ "notes": "Helix Station (09). Docking Ring left/right edge exits moved from atlas rows 7-8 to the art's rows 6-7 (edge_rows). Healing 'bay' is the cyan-cross medical dome door on 105 (16,4); no shop. Observation Deck on the top-centre emblem gate of 105 is a judgement call (todo). Labs lift: 107 (6,8) <-> 108 (8,3). Admin Vex keeper on the throne dais of 113 (8,4), challenged from the stairs (8,5). Admin Bronn (M14 'Engineering bay') is a story NPC, not placed here.",
+ "trainer_tiles": [
+  {
+   "section": "109",
+   "n": 0,
+   "tile": [
+    4,
+    8
+   ],
+   "face": "right"
+  },
+  {
+   "section": "109",
+   "n": 1,
+   "tile": [
+    9,
+    6
+   ],
+   "face": "left"
+  },
+  {
+   "section": "110",
+   "n": 0,
+   "tile": [
+    1,
+    5
+   ],
+   "face": "right"
+  },
+  {
+   "section": "110",
+   "n": 1,
+   "tile": [
+    13,
+    5
+   ],
+   "face": "left"
+  },
+  {
+   "section": "111",
+   "n": 0,
+   "tile": [
+    9,
+    4
+   ],
+   "face": "left"
+  },
+  {
+   "section": "111",
+   "n": 1,
+   "tile": [
+    1,
+    5
+   ],
+   "face": "right"
+  }
+ ]
+}

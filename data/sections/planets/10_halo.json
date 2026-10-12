@@ -1,0 +1,359 @@
+{
+ "doors": [
+  {
+   "interior": "116",
+   "parent": "115",
+   "door": [
+    17,
+    5
+   ],
+   "door2": [
+    18,
+    5
+   ],
+   "mat": [
+    [
+     7,
+     13
+    ],
+    [
+     8,
+     13
+    ]
+   ],
+   "confidence": "high",
+   "why": "Big domed hall top-right of Skyreach Plaza with the glowing cyan cross over a wide double door"
+  },
+  {
+   "interior": "117",
+   "parent": "115",
+   "door": [
+    3,
+    4
+   ],
+   "mat": [
+    [
+     7,
+     13
+    ],
+    [
+     8,
+     13
+    ]
+   ],
+   "confidence": "high",
+   "why": "Top-left building with the red-striped market awning; its blue arched door sits left of the stall"
+  }
+ ],
+ "objects": {
+  "116": [
+   {
+    "tile": [
+     8,
+     6
+    ],
+    "k": "bay"
+   }
+  ],
+  "117": [
+   {
+    "tile": [
+     4,
+     7
+    ],
+    "k": "shop"
+   }
+  ],
+  "122": [
+   {
+    "tile": [
+     7,
+     4
+    ],
+    "k": "keeper"
+   }
+  ],
+  "115": [
+   {
+    "tile": [
+     11,
+     9
+    ],
+    "k": "sign",
+    "t": [
+     "THE HOLO-GLOBE. Fourteen worlds turn in its light.",
+     "Look closely: one of them is slowly dimming."
+    ]
+   }
+  ],
+  "114": [
+   {
+    "tile": [
+     17,
+     11
+    ],
+    "k": "sign",
+    "t": [
+     "A small crystal shrine. Travellers make a wish here before crossing the Wind Bridges."
+    ]
+   },
+   {
+    "tile": [
+     17,
+     3
+    ],
+    "k": "sign",
+    "t": [
+     "SKYLINER HALO-1. Boarding by ticket only.",
+     "Today's departures: none. Enjoy the view!"
+    ]
+   }
+  ],
+  "120": [
+   {
+    "tile": [
+     18,
+     2
+    ],
+    "k": "sign",
+    "t": [
+     "GARDEN SHRINE. Leave the flowers, take the quiet.",
+     "The Sky Temple lies east, past the last bridge."
+    ]
+   }
+  ],
+  "121": [
+   {
+    "tile": [
+     7,
+     8
+    ],
+    "k": "sign",
+    "t": [
+     "THE SKY CRYSTAL. It hums softly.",
+     "For a moment you feel someone reading your thoughts."
+    ]
+   }
+  ]
+ },
+ "apprentices": {
+  "121": 2
+ },
+ "trainer_tiles": [
+  {
+   "section": "121",
+   "n": 0,
+   "tile": [
+    10,
+    16
+   ],
+   "face": "left"
+  },
+  {
+   "section": "121",
+   "n": 1,
+   "tile": [
+    6,
+    6
+   ],
+   "face": "right"
+  }
+ ],
+ "npcs": {
+  "114": [
+   {
+    "art": "pilgrim",
+    "t": [
+     "Pilgrim: I rode the skyliner up from the cloud sea. My ears still haven't popped back."
+    ]
+   },
+   {
+    "art": "technician",
+    "t": [
+     "Dock tech: The airships float on Psi-charged crystals. Don't ask me how. I just polish them."
+    ]
+   },
+   {
+    "art": "civilian",
+    "t": [
+     "Skywatcher: Skyreach Plaza is just east. Heal up at the Recovery Bay before the Wind Bridges."
+    ]
+   }
+  ],
+  "115": [
+   {
+    "art": "pilgrim",
+    "tile": [
+     4,
+     6
+    ],
+    "t": [
+     "Pilgrim: The holo-globe shows all fourteen worlds at once. I found my home world spinning in it."
+    ]
+   },
+   {
+    "art": "civilian",
+    "tile": [
+     6,
+     5
+    ],
+    "t": [
+     "Skywatcher: The islands float on updrafts. Don't look down. Seriously, don't."
+    ]
+   },
+   {
+    "art": "wanderer",
+    "tile": [
+     16,
+     9
+    ],
+    "t": [
+     "Mystic: The twins see what you'll do before you do it. They told me you'd come today."
+    ]
+   },
+   {
+    "art": "civilian",
+    "tile": [
+     2,
+     9
+    ],
+    "t": [
+     "Kid: I caught a Psi-type with a Stasis Pod! Weaken them first or the pod just pops open."
+    ]
+   },
+   {
+    "art": "researcher",
+    "tile": [
+     10,
+     4
+    ],
+    "t": [
+     "Star scholar: The Sky Temple sits past the Floating Gardens. Echo and Iris guard Halo's Signal Shard."
+    ]
+   },
+   {
+    "art": "guard",
+    "tile": [
+     14,
+     5
+    ],
+    "t": [
+     "Plaza guard: Folks in Helix coats kept asking about the temple crystal. Odd questions. I sent them off."
+    ]
+   },
+   {
+    "art": "explorer",
+    "tile": [
+     11,
+     14
+    ],
+    "t": [
+     "Climber: Trainers on the bridges spot you from five tiles off. Slip past their line of sight if you're tired."
+    ]
+   }
+  ],
+  "116": [
+   {
+    "art": "nurse",
+    "tile": [
+     8,
+     5
+    ],
+    "t": [
+     "Nurse: Welcome to the Skyreach Recovery Bay. Rest your Alienmon, the thin air tires them out."
+    ]
+   },
+   {
+    "art": "civilian",
+    "t": [
+     "Visitor: Psi-types hit hard up here. Bring something sturdy, or bring plenty of healing gel."
+    ]
+   }
+  ],
+  "117": [
+   {
+    "art": "shop",
+    "tile": [
+     4,
+     6
+    ],
+    "t": [
+     "Clerk: Welcome to Skyreach Supply! Stock up now, there's no shop past the plaza."
+    ]
+   },
+   {
+    "art": "pilgrim",
+    "t": [
+     "Shopper: I always carry spare Stasis Pods. You never know what drifts out of the clouds."
+    ]
+   }
+  ],
+  "118": [
+   {
+    "art": "explorer",
+    "t": [
+     "Bridge walker: The ropes creak, but they've held for three hundred years. Probably."
+    ]
+   },
+   {
+    "art": "pilgrim",
+    "t": [
+     "Pilgrim: Wild Alienmon hide in the pink blossoms. Step around them if your team is worn out."
+    ]
+   }
+  ],
+  "119": [
+   {
+    "art": "civilian",
+    "t": [
+     "Skywatcher: See those little islands drifting by? Some of them glitter with Signal Shard dust."
+    ]
+   },
+   {
+    "art": "wanderer",
+    "t": [
+     "Mystic: The wind sings louder near the temple. The twins say it is singing your name."
+    ]
+   }
+  ],
+  "120": [
+   {
+    "art": "researcher",
+    "t": [
+     "Botanist: These blossoms only grow above the clouds. Psi-types nest in them when the wind is calm."
+    ]
+   },
+   {
+    "art": "pilgrim",
+    "t": [
+     "Pilgrim: The Sky Temple is just east. Echo and Iris accept every challenger, but few leave smiling."
+    ]
+   }
+  ],
+  "121": [
+   {
+    "art": "pilgrim",
+    "t": [
+     "Temple pilgrim: The twins wait upstairs. Their apprentices will test you first."
+    ]
+   }
+  ],
+  "122": [
+   {
+    "art": "wanderer",
+    "t": [
+     "Mystic: One twin starts a sentence, the other finishes it. Don't let it rattle you."
+    ]
+   }
+  ]
+ },
+ "unlisted": {
+  "114": "Domed hall door (4,3), the top shrine (11,2), the airship boarding ramp (17,2-3) and the lower-left dome/shop fronts (4-5,9-11) are drawn but lead nowhere; left blocked. The small shrine island (15-18,12) is reachable over the rope bridge.",
+  "115": "Top-centre dome door (11,2), lower-left dome door (4,11), lower-right dome door (18,11) and the grand stairs running off the bottom edge (11,11-15, final tile 11,15 blocked); rope bridge off the top-left edge (0,3). Left blocked.",
+  "118": "Shrine doors at the top-left (5,1) and top-right (18,2) left blocked; their stairs are walkable.",
+  "119": "Shrine door top-left (4,2); the far tower and rope bridge along the top; the lower-right fountain island (19-23,9-13) is fenced off from the path. Left blocked.",
+  "120": "Treasure chest on the top-left ledge (3,1) left blocked (no chest object kind); stairs off the bottom of the garden island (5-6,13) end at a waterfall, blocked.",
+  "121": "Side stairs (3,5) and (12,5) climb toward the lily-pool terraces and dead-end."
+ },
+ "notes": "Halo: 118/119/120 left-edge paths are drawn at rows 6-7 with a railing on row 8; row 8 at the edge is opened so the atlas rows 7-8 work. Pink blossom patches on 118-120 are tall grass. 116/117 doormats are the two red-mat tiles [7,13],[8,13]. Keeper Echo & Iris object stands in front of the crystal on 122 (7,4); player challenges from (7,5) or (8,4)."
+}

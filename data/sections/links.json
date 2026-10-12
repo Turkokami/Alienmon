@@ -224,6 +224,30 @@
     "k": "keeper",
     "why": "Keeper's dais at the far end of the arena, challenged from (7,3)"
    }
+  ],
+  "025": [
+   {
+    "tile": [
+     6,
+     3
+    ],
+    "k": "chest",
+    "item": "megagel",
+    "n": 1,
+    "why": "treasure chest drawn on the mesa"
+   }
+  ],
+  "120": [
+   {
+    "tile": [
+     3,
+     1
+    ],
+    "k": "chest",
+    "item": "fullgel",
+    "n": 2,
+    "why": "treasure chest drawn on the top-left ledge"
+   }
   ]
  },
  "arrival": {

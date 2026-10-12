@@ -1,0 +1,386 @@
+{
+ "doors": [
+  {
+   "interior": "064",
+   "parent": "062",
+   "door": [
+    12,
+    4
+   ],
+   "mat": [
+    [
+     7,
+     13
+    ],
+    [
+     8,
+     13
+    ]
+   ],
+   "confidence": "high",
+   "why": "Starport's big glass dome with the glowing cyan cross over its door (Recovery Bay), north side of the deck plaza"
+  },
+  {
+   "interior": "065",
+   "parent": "062",
+   "door": [
+    20,
+    5
+   ],
+   "mat": [
+    [
+     7,
+     13
+    ],
+    [
+     8,
+     13
+    ]
+   ],
+   "confidence": "high",
+   "why": "Starport's round shop with the shopping-basket sign and striped awning, north-east of the plaza"
+  }
+ ],
+ "objects": {
+  "064": [
+   {
+    "tile": [
+     8,
+     7
+    ],
+    "k": "bay"
+   }
+  ],
+  "065": [
+   {
+    "tile": [
+     4,
+     7
+    ],
+    "k": "shop"
+   }
+  ],
+  "071": [
+   {
+    "tile": [
+     8,
+     4
+    ],
+    "k": "keeper"
+   }
+  ],
+  "062": [
+   {
+    "tile": [
+     10,
+     7
+    ],
+    "k": "sign",
+    "t": [
+     "NEONIS STARPORT - Deck 7. Mind the landing ring while ships are docking."
+    ]
+   },
+   {
+    "tile": [
+     15,
+     7
+    ],
+    "k": "sign",
+    "t": [
+     "East gate: Neon Boulevard. Shops, nightlife and the Arcade District beyond."
+    ]
+   }
+  ],
+  "063": [
+   {
+    "tile": [
+     12,
+     4
+    ],
+    "k": "sign",
+    "t": [
+     "A holo-ad loops: a glowing jellyfish Alienmon drifts by. 'Stay charged. Stay bright. Neonis.'"
+    ]
+   }
+  ],
+  "066": [
+   {
+    "tile": [
+     11,
+     9
+    ],
+    "k": "sign",
+    "t": [
+     "GLITCH HUNT: static-y Alienmon flicker between the cabinets after dark. Bring Stasis Pods!"
+    ]
+   }
+  ],
+  "067": [
+   {
+    "tile": [
+     11,
+     6
+    ],
+    "k": "sign",
+    "t": [
+     "BROADCAST ROUTE: every dish here relays DJ Static's show. Pirate signals will be prosecuted. Probably."
+    ]
+   }
+  ],
+  "068": [
+   {
+    "tile": [
+     9,
+     2
+    ],
+    "k": "sign",
+    "t": [
+     "The billboard flashes: 'VOLTSPIRE - LIVE TONIGHT - DJ STATIC.' An arrow points east."
+    ]
+   }
+  ],
+  "069": [
+   {
+    "tile": [
+     2,
+     9
+    ],
+    "k": "sign",
+    "t": [
+     "A display case of old mixing decks. The plaque reads: 'Every Keeper starts with one track.'"
+    ]
+   }
+  ]
+ },
+ "apprentices": {
+  "069": 2
+ },
+ "trainer_tiles": [
+  {
+   "section": "069",
+   "n": 0,
+   "tile": [
+    3,
+    10
+   ],
+   "face": "left"
+  },
+  {
+   "section": "069",
+   "n": 1,
+   "tile": [
+    12,
+    11
+   ],
+   "face": "right"
+  }
+ ],
+ "trainers_per_section": {
+  "070": 1
+ },
+ "npcs": {
+  "062": [
+   {
+    "art": "technician",
+    "t": [
+     "Dock tech: Ships land on that orange ring. Stand clear unless you like being flattened.",
+     "Dock tech: The whole deck floats on Volt power. If the lights flicker, hold onto something."
+    ]
+   },
+   {
+    "art": "explorer",
+    "t": [
+     "Courier: Deliveries are faster across the catwalks. Faster still if your Alienmon can fly."
+    ]
+   },
+   {
+    "art": "civilian",
+    "t": [
+     "Raver: First time on Neonis? The city never sleeps. Neither do I, apparently."
+    ]
+   },
+   {
+    "art": "guard",
+    "t": [
+     "Port guard: Helix freighters docked here last week. Paperwork was clean. Too clean, if you ask me."
+    ]
+   },
+   {
+    "art": "researcher",
+    "t": [
+     "Signal researcher: Every Relay Tower picks up the same pulse, every eight seconds. Spooky, right?"
+    ]
+   },
+   {
+    "art": "wanderer",
+    "t": [
+     "Traveller: The dome with the cross is the Recovery Bay. It heals your whole team for free. Use it!"
+    ]
+   },
+   {
+    "art": "mom",
+    "t": [
+     "Mom: My son wants to be a DJ like Static. I told him to finish his homework first."
+    ]
+   }
+  ],
+  "063": [
+   {
+    "art": "civilian",
+    "t": [
+     "Raver: The whole city hums with Volt energy. Feel it? That buzz in your teeth?"
+    ]
+   },
+   {
+    "art": "technician",
+    "t": [
+     "Coder: Every sign in Neonis runs on Alienmon power. They get paid in snacks. Good snacks."
+    ]
+   },
+   {
+    "art": "explorer",
+    "t": [
+     "Courier: The Arcade District is east. Trainers there love a surprise battle."
+    ]
+   },
+   {
+    "art": "wanderer",
+    "t": [
+     "Tourist: Volt types hate ground moves. Remember that before you climb Voltspire."
+    ]
+   },
+   {
+    "art": "civilian",
+    "t": [
+     "Street vendor: Neon noodles! You glow for an hour after eating. Totally safe. Mostly."
+    ]
+   },
+   {
+    "art": "researcher",
+    "t": [
+     "Archivist: Signal Shards are said to resonate with each other. Collect them and listen closely."
+    ]
+   },
+   {
+    "art": "strand",
+    "t": [
+     "Suspicious man: Helix? Never heard of it. I just... like dark uniforms. Move along."
+    ]
+   }
+  ],
+  "066": [
+   {
+    "art": "civilian",
+    "t": [
+     "Gamer: High score on Star Saucer 3! ...Okay, second highest. A Coder beat me with a macro."
+    ]
+   },
+   {
+    "art": "technician",
+    "t": [
+     "Repair coder: Glitchy Alienmon hide in the static. A weakened one is easier to catch in a Stasis Pod."
+    ]
+   },
+   {
+    "art": "explorer",
+    "t": [
+     "Courier: Trainers battle you if you walk into their line of sight. Fight, or sneak around them."
+    ]
+   }
+  ],
+  "067": [
+   {
+    "art": "technician",
+    "t": [
+     "Dish tech: These antennas relay DJ Static's show to the whole system. Someone keeps hijacking channel 9."
+    ]
+   },
+   {
+    "art": "wanderer",
+    "t": [
+     "Hiker: The glowing grass is full of wild Alienmon. Keep a few Stasis Pods handy."
+    ]
+   }
+  ],
+  "068": [
+   {
+    "art": "researcher",
+    "t": [
+     "Radio fan: DJ Static picked up a signal coming from the Starfall Rift. It repeats every 8 seconds."
+    ]
+   },
+   {
+    "art": "civilian",
+    "t": [
+     "Raver: Voltspire is just east. Static's apprentices guard the first floor. They're loud. Really loud."
+    ]
+   }
+  ],
+  "069": [
+   {
+    "art": "guard",
+    "tile": [
+     5,
+     20
+    ],
+    "t": [
+     "Stage guard: Welcome to Voltspire! The Keeper waits at the top. Heal up before you climb."
+    ]
+   }
+  ],
+  "070": [
+   {
+    "art": "technician",
+    "t": [
+     "Sound tech: Feel that bass? That's the reactor below us. Static tunes it like an instrument."
+    ]
+   }
+  ],
+  "064": [
+   {
+    "art": "nurse",
+    "tile": [
+     8,
+     6
+    ],
+    "t": [
+     "Nurse: Welcome to the Neonis Recovery Bay! Step up to the counter and we'll recharge your team."
+    ]
+   },
+   {
+    "art": "civilian",
+    "t": [
+     "Raver: Three battles in a row at the Arcade. My Alienmon needed a nap. So did I."
+    ]
+   }
+  ],
+  "065": [
+   {
+    "art": "shop",
+    "tile": [
+     4,
+     6
+    ],
+    "t": [
+     "Clerk: Welcome to the Neonis Shop! Stasis Pods, potions, all the essentials."
+    ]
+   },
+   {
+    "art": "explorer",
+    "t": [
+     "Shopper: Stock up before Voltspire. Static's team hits hard and fast."
+    ]
+   }
+  ]
+ },
+ "unlisted": {
+  "062": "Small dome-house doors at (2,3) and (19,9) (that porch is sealed off), escalators off the top edge at col 7 and col 20, and the striped landing ramp off the bottom edge at cols 12-13 (rows 13-14 walkable, row 15 blocked).",
+  "063": "Neon Boulevard has its own Recovery Bay front (door 18,5) and shop front (door ~4-5,13, faces south onto an unreachable terrace), left blocked because 064/065 link to the Starport; small house door (3,4); south-facing house (door 19,13) and its porch; escalators at the top (7-8, rows 0-2) and (22, rows 0-3); fountain-plaza stairs off the bottom edge (12-13,15).",
+  "066": "Planet-sign arcade hall door (17,4); arcade booth top-left (3,4); stairs off the top edge at col 11 (rows 2-3 walkable); stairs off the bottom edge at cols 8-9 (row 15 blocked); the lower arcade hall facing south (cols 16-19, rows 11-15) and its carpet are unreachable and blocked.",
+  "067": "Building door top-left (3,3; its steps at row 4 are walkable); stairs down the cliff at (6,13-14) blocked; stairs (18-19, rows 10-12) lead to a small dead-end landing (rows 12-13).",
+  "068": "Building fronts along the top (rows 0-2) and bottom (rows 13-15); stairs from the lower bed at (18,11) end at row 12 (blocked).",
+  "069": "Central reactor pit behind velvet ropes (cols 5-10, rows 7-17) is decorative and blocked, except the upper landing at rows 5-6.",
+  "071": "Stairs drawn above the Keeper's terminal (7-8, rows 0-1) have no exit: blocked (3F is the top floor)."
+ },
+ "notes": "Neonis: the Recovery Bay and Shop interiors both link to the Starport (062), where the player lands. Neon Boulevard (063) also has a bay front and a shop front drawn; they are left blocked/unlisted and could take extra interiors later. Arcade District (066) is a 'field' but no grass or weeds are drawn (all paving and arcade plazas), so it has no tall grass. Routes 067/068 use the glowing blue sparkle beds as tall grass. Voltspire 1F: 2 apprentices flank the two side corridors at rows 10-11; 2F gets 1 auto trainer; DJ Static stands in front of the broadcast terminal at 071 (8,4) and is challenged from (8,5)."
+}

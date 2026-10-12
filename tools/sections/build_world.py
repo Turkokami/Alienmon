@@ -228,7 +228,8 @@ for sec in world.values():
 # townsfolk (data/sections/npcs.json): pinned tiles are kept; the rest go on open ground once a collision file
 # exists, never on an exit, door or spawn, never next to one, spread apart, and never where they would cut a path
 npc_src = json.load(open(os.path.join(ROOT, 'data/sections/npcs.json'), encoding='utf-8'))
-npc_src.update(PLANET_NPCS)
+for _k, _v in PLANET_NPCS.items():   # planet townsfolk join the story characters already listed for that section
+    npc_src[_k] = npc_src.get(_k, []) + _v
 
 
 def reach(rows, W, H, start, block):
@@ -344,7 +345,7 @@ for sid, sec in world.items():
         taken.add(t)
         if person.get('wid'):
             wid_tile.setdefault(person['wid'], t)
-        o = {'x': t[0], 'y': t[1], 'art': person['art'], 'face': person.get('face', 'down'), 't': person['t'], **({'name': person['name']} if person.get('name') else {}), **({k: person[k] for k in ('pre', 'story', 'wid', 'after', 'until') if person.get(k)})}
+        o = {'x': t[0], 'y': t[1], 'art': person['art'], 'face': person.get('face', 'down'), 't': person['t'], **({'name': person['name']} if person.get('name') else {}), **({k: person[k] for k in ('pre', 'story', 'wid', 'after', 'until', 'legend', 'lv', 'flag') if person.get(k)})}
         if person.get('trainer'):
             tr = dict(person['trainer'])
             o['id'] = person.get('wid') or f"sec{sid}_{'app' if tr.get('app') else 'tr'}{n}"
@@ -414,6 +415,7 @@ for key, sp in qsrc.items():
         spots[key] = out
         continue
     keys = {tuple(w['tile']) for w in sec['warps']} | {tuple(w['at']) for w in sec['warps']} | {tuple(v) for v in sec['spawns'].values() if v}
+    keys |= {(w['tile'][0] + dx, w['tile'][1] + dy) for w in sec['warps'] for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1))}   # keep doorways clear
     for side, e in sec['edges'].items():
         for k in range(e['range'][0], e['range'][1] + 1):
             for d in range(2):
@@ -477,6 +479,7 @@ for sid, sec in world.items():
     rows = json.load(open(cp))['rows']
     W, H = sec['tiles']
     keys = {tuple(w['tile']) for w in sec['warps']} | {tuple(w['at']) for w in sec['warps']} | {tuple(v) for v in sec['spawns'].values() if v}
+    keys |= {(w['tile'][0] + dx, w['tile'][1] + dy) for w in sec['warps'] for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1))}   # keep doorways clear
     for side, e in sec['edges'].items():
         for k in range(e['range'][0], e['range'][1] + 1):
             for d in range(3):

@@ -1,0 +1,338 @@
+{
+ "doors": [
+  {
+   "interior": "074",
+   "parent": "073",
+   "door": [
+    18,
+    4
+   ],
+   "mat": [
+    [
+     7,
+     12
+    ],
+    [
+     8,
+     12
+    ]
+   ],
+   "confidence": "high",
+   "why": "Dig Camp Recovery Tent: the big dome with the cyan cross (top right of Dig Camp), steps below the door"
+  },
+  {
+   "interior": "081",
+   "parent": "077",
+   "door": [
+    12,
+    2
+   ],
+   "mat": [
+    [
+     7,
+     15
+    ],
+    [
+     8,
+     15
+    ]
+   ],
+   "confidence": "high",
+   "why": "Mural Hall: the tall glowing glyph door at the top centre of Glyph Hollow, reached by the steps at (12,3); the hollow is the focal glyph site and the hall's walls are glyph murals"
+  }
+ ],
+ "objects": {
+  "074": [
+   {
+    "tile": [
+     8,
+     5
+    ],
+    "k": "bay",
+    "why": "healing pod in the middle of the tent, used from (8,6)"
+   }
+  ],
+  "081": [
+   {
+    "tile": [
+     4,
+     3
+    ],
+    "k": "sign",
+    "t": [
+     "Mural: A golden sun over a green world. Tall figures raise their arms to it.",
+     "The glyphs read: YSTRA. Home. The garden that sang."
+    ]
+   },
+   {
+    "tile": [
+     8,
+     3
+    ],
+    "k": "sign",
+    "t": [
+     "Mural: A vast tree-mother, roots wrapped around glowing seeds.",
+     "The glyphs read: THE SEEDMOTHER. She gave her children wings of pod and light, and sent them far."
+    ]
+   },
+   {
+    "tile": [
+     12,
+     3
+    ],
+    "k": "sign",
+    "t": [
+     "Mural: A dark tide swallows the stars one by one. A pale world sits in its mouth.",
+     "The glyphs read: THE DEVOURER. It does not hunger. It simply ends."
+    ]
+   }
+  ],
+  "072": [
+   {
+    "tile": [
+     12,
+     2
+    ],
+    "k": "sign",
+    "t": [
+     "Sunken gate: The carvings are worn smooth by the tide. Only one glyph is clear: a seed."
+    ]
+   }
+  ],
+  "073": [
+   {
+    "tile": [
+     1,
+     6
+    ],
+    "k": "sign",
+    "t": [
+     "DIG CAMP - Glyphos Expedition. Keep to the marked paths. Do NOT lick the crystals."
+    ]
+   }
+  ],
+  "077": [
+   {
+    "tile": [
+     10,
+     8
+    ],
+    "k": "sign",
+    "t": [
+     "Guardian Stone: Its glyphs pulse softly, like a heartbeat. It feels like it is waiting for someone."
+    ]
+   },
+   {
+    "tile": [
+     14,
+     8
+    ],
+    "k": "sign",
+    "t": [
+     "Guardian Stone: The carving shows a ring of stones around a sleeping seed."
+    ]
+   }
+  ],
+  "080": [
+   {
+    "tile": [
+     7,
+     0
+    ],
+    "k": "sign",
+    "t": [
+     "Altar of Voices: Old chimes hang silent above the dais.",
+     "A line of glyphs: WHEN THE BELLS SING, THE GUARDIANS LISTEN."
+    ]
+   }
+  ]
+ },
+ "trainers_per_section": {
+  "078": 1,
+  "079": 1,
+  "080": 1
+ },
+ "npcs": {
+  "072": [
+   {
+    "art": "explorer",
+    "t": [
+     "Archaeologist: Welcome to Glyphos! Mind your step, half this place is underwater at high tide.",
+     "Dig Camp is just east. They've got a Recovery Tent if your team needs patching up."
+    ]
+   },
+   {
+    "art": "squidsailor",
+    "t": [
+     "Ferry hand: The Deep Sea Ferry runs here and back. Nobody else is brave enough to sail these ruins."
+    ]
+   }
+  ],
+  "073": [
+   {
+    "art": "explorer",
+    "t": [
+     "Archaeologist: These glyphs tell the Alienmon's story. Read the murals and you'll see."
+    ]
+   },
+   {
+    "art": "researcher",
+    "t": [
+     "Rune scholar: Crystal-types grow in the old courtyards. They love the humming stones."
+    ]
+   },
+   {
+    "art": "pilgrim",
+    "t": [
+     "Pilgrim: The obelisks in Glyph Hollow hum when you carry Signal Shards near them."
+    ]
+   },
+   {
+    "art": "miner",
+    "tile": [
+     10,
+     4
+    ],
+    "t": [
+     "Digger: We found a whole hall of murals past the Coral Ruins. Took us a month to drain the steps."
+    ]
+   },
+   {
+    "art": "explorer",
+    "tile": [
+     22,
+     11
+    ],
+    "t": [
+     "Archaeologist: Trainers out on the ruins will spot you if you walk in their line of sight. Be ready."
+    ]
+   },
+   {
+    "art": "civilian",
+    "tile": [
+     1,
+     12
+    ],
+    "t": [
+     "Camp cook: No shop out here, friend. Stock up on pods and potions before you ride the ferry."
+    ]
+   },
+   {
+    "art": "researcher",
+    "tile": [
+     15,
+     5
+    ],
+    "t": [
+     "Rune scholar: Some Helix folks came asking where the murals were. Wouldn't say why. I didn't like it."
+    ]
+   }
+  ],
+  "074": [
+   {
+    "art": "nurse",
+    "name": "Nurse",
+    "tile": [
+     9,
+     5
+    ],
+    "t": [
+     "Nurse: Welcome to the Recovery Tent! Step up to the pod and I'll heal your team."
+    ]
+   },
+   {
+    "art": "explorer",
+    "tile": [
+     10,
+     8
+    ],
+    "t": [
+     "Archaeologist: Dust, damp, and angry Alienmon. This tent has saved my dig crew more times than I can count."
+    ]
+   }
+  ],
+  "075": [
+   {
+    "art": "wanderer",
+    "t": [
+     "Wanderer: Tall grass grows thick between the ruins. Wild Alienmon hide in every patch."
+    ]
+   }
+  ],
+  "076": [
+   {
+    "art": "researcher",
+    "t": [
+     "Rune scholar: The glyph under that pool glows at night. I think the whole valley was once a temple."
+    ]
+   },
+   {
+    "art": "pilgrim",
+    "t": [
+     "Pilgrim: Weaken a wild one before you throw a Stasis Pod. A tired Alienmon is an easy catch."
+    ]
+   }
+  ],
+  "077": [
+   {
+    "art": "pilgrim",
+    "t": [
+     "Pilgrim: The Guardian Stones circle the hollow. Some say they still guard something sleeping."
+    ]
+   },
+   {
+    "art": "explorer",
+    "t": [
+     "Archaeologist: The glowing door up the steps leads to the Mural Hall. Go look. Really look."
+    ]
+   }
+  ],
+  "078": [
+   {
+    "art": "pilgrim",
+    "t": [
+     "Pilgrim: This is the Temple of Voices. Long ago the bells up top sang every dawn."
+    ]
+   }
+  ],
+  "079": [
+   {
+    "art": "researcher",
+    "t": [
+     "Rune scholar: Every floor has the same glyph in the floor: a seed with wings. Curious, no?"
+    ]
+   }
+  ],
+  "080": [
+   {
+    "art": "pilgrim",
+    "t": [
+     "Pilgrim: The chimes fell silent ages ago. They say a Chimelet's song could wake them."
+    ]
+   }
+  ],
+  "081": [
+   {
+    "art": "researcher",
+    "t": [
+     "Rune scholar: Three murals. A home, a hunger, a mother. Read them left to right."
+    ]
+   },
+   {
+    "art": "pilgrim",
+    "t": [
+     "Pilgrim: If the murals are true, every Alienmon you've met is a refugee. Makes you want to be kinder."
+    ]
+   }
+  ]
+ },
+ "unlisted": {
+  "072": "Building doors drawn but not wired (left blocked): striped stall and dome top-left (door 4,3), dome top-right (21,5), dome bottom-left (4,13, yard reachable from the road at col 6); sunken gate at top centre (11-12,0-2); steps at (17,9-11) running down into the lagoon.",
+  "073": "Mine/cliff opening top-left (4,1); big canvas tent door (4,11); small centre tent (11-12,10-11); small dome bottom-right (19,11); stalls are counters; stairs at (11-12,13-14) run down to the waterfall at the bottom edge (bottom stair row blocked).",
+  "075": "Arch doorway top centre (11-12,0-1) behind the plaza; arch ruins top-left (4-5,0-1); stairs (11,10) down into the flooded ruins; path at cols 2-3 runs off the bottom edge (row 15 blocked).",
+  "076": "Arch doorway top centre (6-7,0-1) behind the plaza; shrine doorway top right (20,0-1) behind its plaza; small stairs (4,10) and (15,11) end at the water; path at col 21-22 runs off the bottom edge (row 15 blocked).",
+  "077": "Small glowing portal arch bottom-left (3,11); stairs (7-8,14) down to the water at the bottom edge; carved glyph panel top-left (4-5,0-2) is decoration.",
+  "079": "Side stairs (3-4,14) and (11-12,14) lead down to pools; ruined arches (5,17) and (10,17)."
+ },
+ "notes": "Glyphos (06): no Keeper and no shop on this planet. Recovery Tent (074) uses the cyan-cross dome in Dig Camp; the interior art is a tent. Nurse pinned beside the healing pod at (9,5) (the pod has no counter to stand behind). Mural Hall (081) hangs off the glyph door at the top of Glyph Hollow (077); the shrine plaza with a doorway at the top right of Coral Ruins B (076, door 20,1) is the alternative if the owner prefers. Murals in 081 left to right: Ystra (4,3), the Seedmother (8,3), the Devourer (12,3) - M10 'examine mural x3'. Temple of Voices floors each get 1 trainer (Archaeologist/Pilgrim/Rune Scholar)."
+}

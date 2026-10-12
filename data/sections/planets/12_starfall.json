@@ -1,0 +1,343 @@
+{
+ "doors": [
+  {
+   "interior": "137",
+   "parent": "136",
+   "door": [
+    17,
+    5
+   ],
+   "door2": [
+    18,
+    5
+   ],
+   "mat": [
+    [
+     7,
+     13
+    ],
+    [
+     8,
+     13
+    ]
+   ],
+   "confidence": "high",
+   "why": "Rim Camp's big dome with the cyan cross over the arched double door (cols 17-18) is the medic/recovery tent"
+  }
+ ],
+ "edge_rows": {
+  "145": {
+   "left": [
+    6,
+    7
+   ]
+  }
+ },
+ "objects": {
+  "137": [
+   {
+    "tile": [
+     8,
+     10
+    ],
+    "k": "bay"
+   }
+  ],
+  "136": [
+   {
+    "tile": [
+     7,
+     6
+    ],
+    "k": "sign",
+    "t": [
+     "A hand-lettered card on the stall: 'Closed until the Helix inspection is over. Again.'"
+    ]
+   },
+   {
+    "tile": [
+     14,
+     5
+    ],
+    "k": "sign",
+    "t": [
+     "CORDON NOTICE: Civilian access to the Starfall Rift is suspended by order of the Helix Directive.",
+     "Someone has scratched underneath: 'Since when does Helix give orders out here?'"
+    ]
+   }
+  ],
+  "140": [
+   {
+    "tile": [
+     5,
+     4
+    ],
+    "k": "sign",
+    "t": [
+     "Teo's tent. The flap is tied shut with a careful knot, as if he meant to come back.",
+     "A child's drawing is pinned inside: a man, a star, and the word 'DAD'."
+    ]
+   },
+   {
+    "tile": [
+     6,
+     10
+    ],
+    "k": "sign",
+    "t": [
+     "Teo's Journal, last page: 'The light at the bottom is singing. I think it knows my name.'",
+     "'If Sola ever reads this - I didn't leave you. I went to find out why they came.'"
+    ]
+   },
+   {
+    "tile": [
+     12,
+     11
+    ],
+    "k": "sign",
+    "t": [
+     "The campfire is long cold. Three cups still sit around it, one never used."
+    ]
+   }
+  ],
+  "141": [
+   {
+    "tile": [
+     12,
+     5
+    ],
+    "k": "sign",
+    "t": [
+     "Lookout: Below, the Rift turns slowly, a purple wound in the crater floor. The hum is louder here."
+    ]
+   }
+  ],
+  "145": [
+   {
+    "tile": [
+     17,
+     7
+    ],
+    "k": "keeper"
+   },
+   {
+    "tile": [
+     19,
+     7
+    ],
+    "k": "sign",
+    "t": [
+     "RIFT ENGINE CONSOLE - Containment field: 41%. Output: rising. Authorized by Director K. Thorne."
+    ]
+   }
+  ]
+ },
+ "trainer_tiles": [
+  {
+   "section": "143",
+   "n": 0,
+   "tile": [
+    11,
+    8
+   ],
+   "face": "up"
+  }
+ ],
+ "trainers_per_section": {
+  "142": 1,
+  "143": 1,
+  "144": 1
+ },
+ "npcs": {
+  "136": [
+   {
+    "art": "guard",
+    "t": [
+     "Cordon guard: Nobody goes past the fields without a reason. Got one? Fine, just don't die down there."
+    ]
+   },
+   {
+    "art": "civilian",
+    "t": [
+     "Rig worker: Helix left half its drills running when they ran. You can hear them grinding at night."
+    ]
+   },
+   {
+    "art": "explorer",
+    "tile": [
+     14,
+     13
+    ],
+    "t": [
+     "Rift seeker: Can you hear it? The crater hums like a heartbeat. Louder every week."
+    ]
+   },
+   {
+    "art": "researcher",
+    "tile": [
+     5,
+     9
+    ],
+    "t": [
+     "Star watcher: Crystals here grow overnight. I measured one at breakfast and again at dinner. Twice as big."
+    ]
+   },
+   {
+    "art": "technician",
+    "tile": [
+     19,
+     9
+    ],
+    "t": [
+     "Camp tech: The Medic Tent is the dome with the blue cross. Rest your team before the Seedpod Fields."
+    ]
+   },
+   {
+    "art": "wanderer",
+    "tile": [
+     3,
+     4
+    ],
+    "t": [
+     "Old hand: Twenty years back the pods fell right here. Every Alienmon you've ever met came from that sky."
+    ]
+   },
+   {
+    "art": "strand",
+    "tile": [
+     21,
+     5
+    ],
+    "t": [
+     "Ex-Helix grunt: I scratched the logo off my jacket. Whatever Thorne's building down there, I want no part."
+    ]
+   }
+  ],
+  "137": [
+   {
+    "art": "nurse",
+    "tile": [
+     8,
+     8
+    ],
+    "t": [
+     "Nurse: Welcome to the Medic Tent. Step up to the counter and I'll patch your team right up."
+    ]
+   },
+   {
+    "art": "miner",
+    "t": [
+     "Injured driller: Got clipped by a crystal-type in the fields. Those shells hide more than dust, kid."
+    ]
+   }
+  ],
+  "138": [
+   {
+    "art": "researcher",
+    "t": [
+     "Researcher: Each cracked seedpod is a shell something hatched from. Rare Alienmon hide in the pink weeds."
+    ]
+   },
+   {
+    "art": "civilian",
+    "t": [
+     "Hiker: Out of Stasis Pods already? Weaken them first - a tired Alienmon is much easier to catch."
+    ]
+   }
+  ],
+  "139": [
+   {
+    "art": "explorer",
+    "t": [
+     "Rift seeker: Trainers out here spot you from five tiles off. Heal up before you walk their line of sight."
+    ]
+   },
+   {
+    "art": "miner",
+    "t": [
+     "Driller: Helix paid triple to dig here. Then the pods started glowing back. Nobody stayed for the bonus."
+    ]
+   }
+  ],
+  "140": [
+   {
+    "art": "pilgrim",
+    "t": [
+     "Pilgrim: They say an explorer camped here waiting for the light to speak. His tent still stands."
+    ]
+   },
+   {
+    "art": "wanderer",
+    "t": [
+     "Wanderer: I leave a fresh cup by the fire each time I pass. Somebody should, for whoever comes home."
+    ]
+   }
+  ],
+  "141": [
+   {
+    "art": "researcher",
+    "t": [
+     "Star watcher: Psychic and gravity-touched Alienmon gather near the rim. Bring something sturdy."
+    ]
+   },
+   {
+    "art": "guard",
+    "t": [
+     "Rim guard: The descent's three levels deep. Signal Shards resonate louder the farther down you go."
+    ]
+   }
+  ],
+  "142": [
+   {
+    "art": "explorer",
+    "t": [
+     "Caver: Watch the purple cracks. That's not lava, it's starlight. Doesn't burn - just pulls."
+    ]
+   }
+  ],
+  "143": [
+   {
+    "art": "technician",
+    "tile": [
+     13,
+     2
+    ],
+    "t": [
+     "Helix tech (lost): My map says the Rift Engine is 'down'. Every tunnel here says 'down'. Help?"
+    ]
+   }
+  ],
+  "144": [
+   {
+    "art": "pilgrim",
+    "t": [
+     "Pilgrim: The vortex below is breathing. If the Keepers' Shards ever meant anything, it's here."
+    ]
+   }
+  ],
+  "145": [
+   {
+    "art": "strand",
+    "t": [
+     "Helix grunt: The Director's up at the Engine. Go ahead - I'm not paid enough to stand between you two."
+    ]
+   },
+   {
+    "art": "researcher",
+    "t": [
+     "Shaken scientist: Containment keeps dropping. That thing isn't a power source. It's a door."
+    ]
+   }
+  ]
+ },
+ "unlisted": {
+  "136": "Three other domes have doors with no interior (stall dome door 5,5; dome door 10,4; small domes 8,12 and 15,12) - all left blocked.",
+  "138": "Stairs at 9,2-9,3 climb toward the top edge into crystals/void - top tile 9,2 left blocked.",
+  "139": "Path and stairs at col 11 rows 0-3 run off the top edge - 11,0 left blocked; stairs 10,11-10,12 end at a crystal dead-end.",
+  "140": "Stairs/path at cols 11-12 rows 0-1 run off the top edge (row 0 blocked); path at col 11 rows 13-15 runs off the bottom edge (11,15 blocked); stairs 16,12 end at crystals.",
+  "141": "Stairs 18-19,14 lead off the bottom edge into the void (row 15 blocked).",
+  "142": "Stairs 10,5-10,6 climb into a crystal void pit - 10,5 left blocked.",
+  "145": "Gate/hut at 7-8,0-1 above the north stairs and the domed lab doors (10,5; 3,11; 21,15) have no interiors - left blocked. South stairs 17-18,12-13 lead to a red carpet running off the bottom edge (row 14-15 blocked); stairs 6,12 drop toward a floating rock."
+ },
+ "notes": "Rift Engine Platform (145): the art's walkway meets the left edge at rows 6-7, not 7-8, so edge_rows moves that exit to [6,7]. Thorne's keeper tile is 17,7 at the top of the engine stairs; challenge from 17,8. Caves 143/144: ledges joined where moss/stairs suggest a way down; the 144 route from the bottom climbs the west ladder (2,2) onto the north ledge to reach the top exit."
+}
