@@ -141,7 +141,8 @@ const PEOPLE=__PEOPLE__;   // tools/place_people.py -> data/town_people.json
 function addPeople(k,H){const P=PEOPLE[k];if(!P)return;
  for(const t of P.trainers)H.push({k:'trainer',id:t.id,x:t.x,y:t.y,r:16,art:t.art,draw:true,face:t.face,cls:t.cls,name:t.name,app:t.app});
  for(const f of P.folk)H.push({k:'talk',x:f.x,y:f.y,r:16,art:f.art,draw:true,t:f.t});
- for(const l of P.legends)if(G.flags.champ&&legendHere(l.mon))H.push({k:'mon',legend:1,mon:l.mon,lvl:l.lv,x:l.x,y:l.y,r:22})}
+ for(const l of P.legends)if(G.flags.champ&&legendHere(l.mon))H.push({k:'mon',legend:1,mon:l.mon,lvl:l.lv,x:l.x,y:l.y,r:22});
+ optReward(k,H)}
 // a legendary you defeated (rather than caught) comes back after the next Shard or postgame quest
 const progSig=()=>G.shards+':'+QUESTS.filter(q=>/^P/.test(q.id)&&mDone(q.id)).length;
 function legendHere(name){const id=IDX[name];if(id==null||G.caught[id])return false;return(G.legendGone||{})[name]!==progSig()}
@@ -185,3 +186,41 @@ function drawSpaceDecor(camx,camy){
 const gateLive=()=>{const s=G.quests&&G.quests.P04;return!!s&&s.state!=='locked'};
 function drawWarpGate(gx,gy){const im=SPI[gateLive()?'warpgate_active':'warpgate_dormant'];if(!okI(im))return false;const z=34+(gateLive()?Math.sin(frame/20)*2:0);
  ctx.save();ctx.imageSmoothingEnabled=true;ctx.drawImage(im,Math.round(gx-z/2),Math.round(gy-z/2),z,z);ctx.restore();return true}
+
+/* ---------- Linker Modules open optional areas: ground you can only reach by jumping ---------- */
+const MOD_BIOME={dustara:'grapple_line',ferrox:'grapple_line',glyphos:'grapple_line',apex:'grapple_line',sporeholm:'hydro_skiff',thalassa:'hydro_skiff',
+ pyros:'heat_shield',glacia:'lumen_beacon',umbra:'lumen_beacon',neonis:'gravity_lift',helix:'gravity_lift',halo:'gravity_lift',starfall:'gravity_lift',ystra:'gravity_lift'};
+const OPT={};
+// label walkable areas: 1 = reachable on foot from the landing point, 2+ = optional (jump-only) areas
+function optInfo(key){if(OPT[key])return OPT[key];const P=PAINT[key];if(!P)return null;const W=P.w/P.cell,H=P.h/P.cell,lab=new Int16Array(W*H),bit=i=>(pmask(P,'walk')[i>>3]>>(i&7))&1;
+ let n=0;const fill=(s,id)=>{const st=[s];lab[s]=id;let c=0,sx=0,sy=0;while(st.length){const i=st.pop();c++;sx+=i%W;sy+=Math.floor(i/W);for(const j of[i-1,i+1,i-W,i+W]){if(j<0||j>=W*H||lab[j]||!bit(j)||(Math.abs(j%W-i%W)>1))continue;lab[j]=id;st.push(j)}}return{c,cx:sx/c,cy:sy/c}};
+ const s0=Math.floor((P.exitY-30)/P.cell)*W+Math.floor(P.start[0]/P.cell);fill(s0,1);const areas=[];
+ for(let i=0;i<W*H;i++)if(!lab[i]&&bit(i)){n++;const a=fill(i,n+1);a.id=n+1;areas.push(a)}
+ return OPT[key]={lab,W,areas}}
+const optAt=(key,x,y)=>{const o=optInfo(key);if(!o)return 0;const P=PAINT[key],c=Math.floor(y/P.cell)*o.W+Math.floor(x/P.cell);return o.lab[c]>1?o.lab[c]:0};
+function modOK(key,x,y){if(!MOD_BIOME[key]||freeRoam())return true;return!optAt(key,x,y)||!!(G.key&&G.key[MOD_BIOME[key]])}
+// the largest optional area of each town holds a rare Alienmon (a reward for the module)
+function optReward(k,H){const o=optInfo(k);if(!o||!o.areas.length)return;const a=o.areas.reduce((x,y)=>y.c>x.c?y:x);if(a.c<12)return;const P=PAINT[k];
+ let best=null,bd=1e9;for(let i=0;i<o.lab.length;i++)if(o.lab[i]===a.id){const d=Math.hypot(i%o.W-a.cx,Math.floor(i/o.W)-a.cy);if(d<bd){bd=d;best=i}}
+ const p=PL.find(x=>x.key===k),pool=(p?p.pool.r.concat(p.pool.e):[]).filter(id=>wildOK(D[id].name));if(!pool.length||best==null)return;
+ H.push({k:'mon',mon:D[pool[hash(k)%pool.length]].name,x:(best%o.W)*P.cell+4,y:Math.floor(best/o.W)*P.cell+4,r:20,opt:1})}
+
+/* ---------- day and night (device clock): some types prefer the dark, others the sun ---------- */
+const isNight=()=>{const h=new Date().getHours();return h>=19||h<6};
+function dayMul(name){const id=IDX[name];if(id==null)return 1;const t=D[id].t||[],n=isNight();return(n&&(t.includes('Void')||t.includes('Psi')))||(!n&&(t.includes('Bio')||t.includes('Plasma')))?2:1}
+function nightTint(){if(!isNight()||(G.opt&&G.opt.noNight))return;ctx.fillStyle='rgba(16,18,60,0.22)';ctx.fillRect(0,0,160,144)}
+
+/* ---------- Xenodex: where a caught Alienmon lives ---------- */
+function livesIn(id){const n=D[id].name,out=[];for(const k in PROG.areas){const a=PROG.areas[k];if(['tier1','tier2_after_4_shards','tier3_after_champion'].some(t=>(a[t]||[]).some(x=>x.name===n)))out.push((PL.find(p=>p.key===k)||{}).name||k)}return out}
+
+/* ---------- three save slots (copies of the current game) ---------- */
+const SLOT=i=>'alienmon_slot_'+i;
+function slotMenu(){const info=[1,2,3].map(i=>{try{const g=JSON.parse(localStorage.getItem(SLOT(i))||'null');return g?'Slot '+i+': '+nm(g.party[0]||{id:0})+' Lv'+((g.party[0]||{}).lv||'?')+' ◆'+g.shards:'Slot '+i+': empty'}catch(e){return'Slot '+i+': empty'}});
+ choose('Save slots',info.concat(['Back']),i=>{if(i>2)return;choose(info[i],['Save current game here','Load this slot','Cancel'],k=>{
+  if(k===0){save();try{localStorage.setItem(SLOT(i+1),JSON.stringify(G));say('Saved to slot '+(i+1)+'.',slotMenu)}catch(e){say('Saving is unavailable in this browser.')}}
+  if(k===1){const s=localStorage.getItem(SLOT(i+1));if(!s)return say('That slot is empty.',slotMenu);choose('Replace your current game?',['Load slot '+(i+1),'Cancel'],c=>{if(c===0){localStorage.setItem('alienmon_save_v2',s);say('Loading...',()=>location.reload())}})}})})}
+
+/* ---------- small friendly Alienmon wandering beside the townsfolk (decoration, can't be caught) ---------- */
+function drawDecor(cx,cy,S,ms){const k=(PL[G.planet]||{}).key;if(G.sub||!PEOPLE[k])return;const p=PL.find(x=>x.key===k),pool=p?p.pool.c:[];if(!pool.length)return;
+ PEOPLE[k].folk.forEach((f,i)=>{const id=pool[(hash(k)+i)%pool.length],im=OWI[D[id].name];if(!okI(im))return;const t=frame/90+i*2.1,x=(f.x+30+Math.cos(t)*22)*S-cx,y=(f.y+10+Math.sin(t*1.3)*10)*S-cy;
+  if(x<-20||x>180||y<-20||y>170)return;const z=Math.round(ms*0.75);ctx.drawImage(im,((frame>>4)&1)*64,0,64,64,Math.round(x-z/2),Math.round(y-z),z,z)})}

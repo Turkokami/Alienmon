@@ -75,7 +75,7 @@ function moveArchive(){const L=G.party.map(m=>nm(m)+' Lv'+m.lv);choose('Move Arc
 /* evolution: level or Resonance; B cancels */
 function evoReady(m){const ev=spOf(m.id).evolves;if(!ev||!ev.into||IDX[ev.into]==null||m.hp<=0||m.lv<(ev.level||999))return false;const how=ev.method||'';
  if(how.startsWith('Level'))return true;if(/Signal Shard 4/.test(how))return G.shards>=4;if(/all 8/.test(how))return G.shards>=8;
- const here=(PL[G.planet]||{}).key;if(/Halo/.test(how))return m.lvUp&&here==='halo';if(/Rift/.test(how))return m.lvUp&&here==='starfall';return false}
+ const here=(PL[G.planet]||{}).key;if(/Halo/.test(how))return m.lvUp&&here==='halo'&&nearTower();if(/Rift/.test(how))return m.lvUp&&here==='starfall'&&nearTower();return false}
 function evoSteps(steps){for(const m of G.party)if(evoReady(m))steps.push({fn:cb=>{const into=IDX[spOf(m.id).evolves.into],old=nm(m);
   say('What? '+old+' is evolving!',()=>choose('Let '+old+' evolve?',['Evolve','Stop'],i=>{if(i!==0)return say('Huh? '+old+' stopped evolving!',cb);
    const r=m.hp/stat(m,0);m.id=into;m.hp=Math.max(1,Math.round(stat(m,0)*r));G.seen[m.id]=G.caught[m.id]=1;
@@ -90,7 +90,7 @@ function disobeys(m){return!!m.ob&&G.party.includes(m)&&m.lv>SYNC_LIMIT[Math.min
 function wildTable(key){const a=PROG.areas[key];if(!a)return null;return(G.flags.champ&&a.tier3_after_champion)||(G.shards>=4&&a.tier2_after_4_shards)||a.tier1}
 function wildPick(key,name){const t=(wildTable(key)||[]).filter(x=>wildOK(x.name));if(!t.length)return null;let e=null;
  if(name&&wildOK(name))e=t.find(x=>x.name===name)||(PROG.areas[key].tier1||[]).find(x=>x.name===name);
- if(!e){let w=t.reduce((s,x)=>s+(x.weight||1),0)*R();for(const x of t){w-=x.weight||1;if(w<=0){e=x;break}}e=e||t[0]}
+ if(!e){const wt=x=>(x.weight||1)*dayMul(x.name);let w=t.reduce((s,x)=>s+wt(x),0)*R();for(const x of t){w-=wt(x);if(w<=0){e=x;break}}e=e||t[0]}
  const id=IDX[e.name];return id==null?null:[id,ri(e.min,e.max)]}
 
 /* trainers, Keepers, bosses: levels and payouts from the tables */
@@ -102,3 +102,6 @@ function payout(tr,e){if(!tr)return ri(2,6);const lv=Math.max(...tr.team.map(x=>
 const SHOP_TIERS=[[0,['stasis','gel','cure']],[1,['tether','stun']],[2,['harmonic','megagel','ether','jammer']],[3,['revive']],[5,['fullgel']],[6,['singularity']],[8,['maxrevive']]];
 const SHOP_PRICE={ether:60,jammer:35,stasis:50,gel:15,cure:20,tether:30,stun:30,harmonic:150,megagel:45,revive:80,fullgel:120,singularity:400,maxrevive:300};
 const shopOpen=k=>SHOP_TIERS.some(([s,ks])=>ks.includes(k)&&(G.shards||0)>=s);
+
+// Resonance spots: the Halo tower roof and the Rift vortex both sit at the top of their towns, by the tower
+function nearTower(){const P=paintOf(),kh=P&&P.hot.find(h=>h.k==='keeper');return!!(kh&&G.ppos&&Math.hypot(G.ppos[0]-kh.x,G.ppos[1]-kh.y)<260)}
