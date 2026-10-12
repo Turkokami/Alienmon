@@ -16,6 +16,22 @@ from collections import defaultdict
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 atlas = json.load(open(os.path.join(ROOT, 'art/sections/atlas.json'), encoding='utf-8'))['sections']
 links = json.load(open(os.path.join(ROOT, 'data/sections/links.json'), encoding='utf-8'))
+PLANET_NPCS = {}
+for pf in sorted(glob.glob(os.path.join(ROOT, 'data/sections/planets/*.json'))):
+    try:
+        extra = json.load(open(pf, encoding='utf-8'))
+    except (ValueError, OSError) as e:   # another helper may be mid-write: skip it this run
+        print('skipping', os.path.basename(pf), e)
+        continue
+    for k in ('doors', 'stairs', 'gates'):
+        links.setdefault(k, []).extend(extra.get(k, []))
+    for k in ('objects', 'spawns', 'unlisted', 'ignore_mats', 'zones', 'arrival', 'edge_rows'):
+        links.setdefault(k, {}).update(extra.get(k, {}))
+    tr = links.setdefault('trainers', {})
+    tr.setdefault('apprentices', {}).update(extra.get('apprentices', {}))
+    tr.setdefault('tiles', []).extend(extra.get('trainer_tiles', []))
+    tr.setdefault('per_section', {}).update(extra.get('trainers_per_section', {}))
+    PLANET_NPCS.update(extra.get('npcs', {}))
 OUTDOOR = {'town', 'route', 'field', 'landmark'}
 OPP = {'left': 'right', 'right': 'left', 'top': 'bottom', 'bottom': 'top'}
 norm = lambda s: re.sub(r'[^a-z0-9]', '', s.lower())
@@ -24,7 +40,8 @@ byid = {s['id']: s for s in atlas}
 folder = {}
 for f in glob.glob(os.path.join(ROOT, 'art/sections_game/*/*.png')):
     folder[os.path.basename(f)[:3]] = os.path.relpath(f, ROOT).replace('\\', '/')
-want = sys.argv[1:]
+OUT = sys.argv[sys.argv.index('--out') + 1] if '--out' in sys.argv else None
+want = [a for a in sys.argv[1:] if not a.startswith('--') and a != OUT]
 planet_dir = {s['id']: os.path.dirname(s['file']).split('/')[-1] for s in atlas}
 sel = [s for s in atlas if not want or any(planet_dir[s['id']].startswith(w) for w in want)]
 report = defaultdict(list)
@@ -146,8 +163,17 @@ for i, why in links.get('ignore_mats', {}).items():
 # planet gates on the Molten Frontier: stepping on the portal checks the story gate and travels to that planet
 for g in links.get('gates', []):
     if g['section'] in world:
+        dy = g.get('at_dy', 1)
         for t in g['tiles']:
-            world[g['section']]['warps'].append({'tile': t, 'to': 'planet:' + g['planet'], 'node': g['node'], 'at': [t[0], t[1] + 1], 'face': 'down', 'kind': 'gate'})
+            w = {'tile': t, 'to': 'planet:' + (g.get('planet') or g['options'][0]['planet']), 'at': [t[0], t[1] + dy], 'face': 'down' if dy > 0 else 'up', 'kind': 'gate'}
+            for k in ('node', 'sub', 'label', 'options'):
+                if g.get(k):
+                    w[k] = g[k]
+            world[g['section']]['warps'].append(w)
+for lk in links.get('locks', []):   # story locks on ordinary warps: the gate check runs before you step on
+    for w in world.get(lk['section'], {}).get('warps', []):
+        if w['to'] == lk['to']:
+            w['node'] = lk['node']
 for k, z in links.get('zones', {}).items():
     if k in world:
         world[k]['zone'] = z
@@ -202,6 +228,7 @@ for sec in world.values():
 # townsfolk (data/sections/npcs.json): pinned tiles are kept; the rest go on open ground once a collision file
 # exists, never on an exit, door or spawn, never next to one, spread apart, and never where they would cut a path
 npc_src = json.load(open(os.path.join(ROOT, 'data/sections/npcs.json'), encoding='utf-8'))
+npc_src.update(PLANET_NPCS)
 
 
 def reach(rows, W, H, start, block):
@@ -227,7 +254,7 @@ def hname(seed):
 # trainers: route_default on every route/field (minus 'skip'), apprentices per tower floor, optional pinned tiles
 tr_rules = links.get('trainers', {})
 for sid, sec in world.items():
-    pk = PKEY.get(sec['planet'], sec['planet'].lower())
+    pk = sec['dir'].split('_', 1)[1]   # folder name: 12_starfall -> starfall
     sec['pkey'] = pk
     classes = pop['classes'].get(pk, [['Linker', 'explorer']])
     extra = []
@@ -271,10 +298,13 @@ for sid, sec in world.items():
     keys = {k for k in keys if 0 <= k[0] < W and 0 <= k[1] < H and rows[k[1]][k[0]] in '.,'}
     taken = set()
     out = []
+    wid_tile = {}
     pinned = {tuple(p['tile']) for p in people if p.get('tile')}
     base = reach(rows, W, H, next(iter(keys)), pinned) if keys else set()
     for n, person in enumerate(people):
-        if person.get('tile'):
+        if person.get('wid') in wid_tile and (person.get('after') or person.get('until')):
+            t = wid_tile[person['wid']]   # the same character at another story stage stands in the same place
+        elif person.get('tile'):
             t = tuple(person['tile'])
         else:
             best, bs = None, -1
@@ -293,9 +323,11 @@ for sid, sec in world.items():
                       # spread out, lean toward the middle of the map, tie-break deterministically per section
                       # open ground only (plazas, clearings, room floors), never a 1-2 tile corridor
                       op = sum(1 for yy in range(y - 2, y + 3) for xx in range(x - 2, x + 3) if 0 <= xx < W and 0 <= yy < H and rows[yy][xx] in '.,')
-                      if op < thr:
+                      if op < thr and not person.get('near'):
                           continue
                       score = min(gap, 8) * 10 + op * 2 - (abs(x - W / 2) + abs(y - H / 2)) * 0.3 + ((x * 7 + y * 13 + n * 5 + int(sid)) % 10) * 0.05
+                      if person.get('near'):   # a placement hint wins over everything but the safety rules
+                          score = 1000 - 10 * (abs(x - person['near'][0]) + abs(y - person['near'][1])) + min(gap, 3)
                       if score <= bs:
                           continue
                       if keys:
@@ -306,14 +338,16 @@ for sid, sec in world.items():
                               continue
                       best, bs = (x, y), score
             if not best:
-                report['npcs with no room'].append(f"{sid} {sec['name']}: {person['t'][0][:40]}")
+                report['npcs with no room'].append(f"{sid} {sec['name']}: " + ((person['t'] or [''])[0][:40] or (person.get('trainer') or {}).get('cls', person['art'])))
                 continue
             t = best
         taken.add(t)
-        o = {'x': t[0], 'y': t[1], 'art': person['art'], 'face': person.get('face', 'down'), 't': person['t'], **({'name': person['name']} if person.get('name') else {}), **({k: person[k] for k in ('pre', 'story') if person.get(k)})}
+        if person.get('wid'):
+            wid_tile.setdefault(person['wid'], t)
+        o = {'x': t[0], 'y': t[1], 'art': person['art'], 'face': person.get('face', 'down'), 't': person['t'], **({'name': person['name']} if person.get('name') else {}), **({k: person[k] for k in ('pre', 'story', 'wid', 'after', 'until') if person.get(k)})}
         if person.get('trainer'):
             tr = dict(person['trainer'])
-            o['id'] = f"sec{sid}_{'app' if tr.get('app') else 'tr'}{n}"
+            o['id'] = person.get('wid') or f"sec{sid}_{'app' if tr.get('app') else 'tr'}{n}"
             tr.setdefault('name', hname(o['id']))
             o['trainer'] = tr
             if not person.get('face'):   # look down the longest open line: that's where they spot you
@@ -328,13 +362,159 @@ for sid, sec in world.items():
         out.append(o)
     sec['npcs'] = out
 
-json.dump({'version': 1, 'tile': 16, 'screen_tiles': [10, 9], 'arrival': links.get('arrival', {}), 'sections': world, 'connections': conns},
-          open(os.path.join(ROOT, 'data/world.json'), 'w', encoding='utf-8'), indent=1, ensure_ascii=False)
+arrivals = dict(links.get('arrival', {}))
+for sid, sec in world.items():
+    if 'arrival' in sec['spawns'] and sec.get('pkey') and sec['pkey'] not in arrivals:
+        arrivals[sec['pkey']] = {'section': sid, 'why': 'atlas exit marked arrival'}
+# ---- quest spots (data/sections/quest_spots.json) and visible wild Alienmon ----
+QUESTS = {q['id']: q for q in json.load(open(os.path.join(ROOT, 'data/quests.json'), encoding='utf-8'))['quests']}
+qsrc = {k: v for k, v in json.load(open(os.path.join(ROOT, 'data/sections/quest_spots.json'), encoding='utf-8')).items() if not k.startswith('_')}
+STORY_BOSS = {'helix', 'starfall', 'apex'}   # their "keepers" are story bosses fought through the quest engine
+boss_tile = {}
+for sid, sec in world.items():
+    if sec.get('pkey') in STORY_BOSS:
+        for o in [o for o in sec['objects'] if o['k'] == 'keeper']:
+            boss_tile[sid] = tuple(o['tile'])
+            sec['objects'].remove(o)
+CHAR_KINDS = {'giver', 'talk', 'battle_trainer', 'battle_rival', 'defeat_boss', 'legendary_encounter'}
+
+
+def blocked_set(sec):
+    return {(n['x'], n['y']) for n in sec.get('npcs', [])} | {tuple(o['tile']) for o in sec['objects']}
+
+
+qtaken = defaultdict(set)
+spots = {}
+for key, sp in qsrc.items():
+    sid = sp['s']
+    if sid not in world:
+        continue
+    sec = world[sid]
+    cp = os.path.join(ROOT, 'data/collision', sid + '.json')
+    if not os.path.exists(cp):
+        continue
+    rows = json.load(open(cp))['rows']
+    W, H = sec['tiles']
+    qid, step = key.split(':')
+    q = QUESTS.get(qid)
+    kind = ('giver' if q and q.get('type') == 'side' else 'main_giver') if step == 'giver' else (q['objectives'][int(step)]['type'] if q and step.isdigit() and int(step) < len(q['objectives']) else '')
+    out = {'s': sid}
+    if sp.get('art'):
+        out['art'] = sp['art']
+    if sp.get('npc'):
+        hit = [n for n in sec.get('npcs', []) if n.get('wid') == sp['npc']]
+        if hit:
+            out.update(x=hit[0]['x'], y=hit[0]['y'])
+            spots[key] = out
+            continue
+        report['quest spots: npc not found'].append(f"{key} -> {sid} npc {sp['npc']}")
+    if sp.get('boss') and sid in boss_tile:
+        out.update(x=boss_tile[sid][0], y=boss_tile[sid][1])
+        qtaken[sid].add(boss_tile[sid])
+        spots[key] = out
+        continue
+    keys = {tuple(w['tile']) for w in sec['warps']} | {tuple(w['at']) for w in sec['warps']} | {tuple(v) for v in sec['spawns'].values() if v}
+    for side, e in sec['edges'].items():
+        for k in range(e['range'][0], e['range'][1] + 1):
+            for d in range(2):
+                keys.add({'left': (d, k), 'right': (W - 1 - d, k), 'top': (k, d), 'bottom': (k, H - 1 - d)}[side])
+    for o in sec['objects']:
+        for dx, dy in ((0, 1), (0, -1), (1, 0), (-1, 0)):
+            keys.add((o['tile'][0] + dx, o['tile'][1] + dy))
+    keys = {k for k in keys if 0 <= k[0] < W and 0 <= k[1] < H and rows[k[1]][k[0]] in '.,'}
+    block = blocked_set(sec) | qtaken[sid]
+    base = reach(rows, W, H, next(iter(keys)), block) if keys else set()
+    near = sp.get('near') or [W // 2, H // 2]
+    want = sp.get('n', 1)
+    pts = []
+    for _ in range(want):
+        best, bs = None, None
+        for y in range(H):
+            for x in range(W):
+                if rows[y][x] not in '.,' or (x, y) in keys or (x, y) in block or (x, y) in pts:
+                    continue
+                if pts:   # several points: spread them out, each a few tiles from the others
+                    gap = min(abs(x - a) + abs(y - b) for a, b in pts)
+                    if gap < 3:
+                        continue
+                    score = -min(gap, 7) * 3 + (abs(x - near[0]) + abs(y - near[1])) * 0.2
+                else:
+                    score = abs(x - near[0]) + abs(y - near[1])
+                if bs is not None and score >= bs:
+                    continue
+                if kind in CHAR_KINDS and keys:   # people block: never cut anything off
+                    r = reach(rows, W, H, next(iter(keys)), block | {(x, y)})
+                    if not keys <= r or len(r) < len(base) - 1:
+                        continue
+                best, bs = (x, y), score
+        if not best:
+            break
+        pts.append(best)
+    if not pts:
+        report['quest spots with no room'].append(f"{key} -> {sid}")
+        continue
+    out.update(x=pts[0][0], y=pts[0][1])
+    if want > 1:
+        out['pts'] = [list(p) for p in pts]
+    if kind in CHAR_KINDS:
+        qtaken[sid].add(pts[0])
+    spots[key] = out
+
+# visible wild Alienmon: the classic towns' and regions' roaming Alienmon, one or two per outdoor section
+pm = json.load(open(os.path.join(ROOT, 'data/painted_maps.json'), encoding='utf-8'))
+for sid, sec in world.items():
+    pk = sec.get('pkey')
+    if sec['type'] not in OUTDOOR or not pk or sid in links.get('trainers', {}).get('skip', []) and False:
+        continue
+    src = [h['mon'] for h in pm.get(pk + ('' if sec['type'] == 'town' else '_route'), pm.get(pk, {})).get('hot', []) if h['k'] == 'mon' and h.get('mon')]
+    if not src:
+        src = [h['mon'] for h in pm.get(pk, {}).get('hot', []) if h['k'] == 'mon' and h.get('mon')]
+    if not src:
+        continue
+    cp = os.path.join(ROOT, 'data/collision', sid + '.json')
+    if not os.path.exists(cp):
+        continue
+    rows = json.load(open(cp))['rows']
+    W, H = sec['tiles']
+    keys = {tuple(w['tile']) for w in sec['warps']} | {tuple(w['at']) for w in sec['warps']} | {tuple(v) for v in sec['spawns'].values() if v}
+    for side, e in sec['edges'].items():
+        for k in range(e['range'][0], e['range'][1] + 1):
+            for d in range(3):
+                keys.add({'left': (d, k), 'right': (W - 1 - d, k), 'top': (k, d), 'bottom': (k, H - 1 - d)}[side])
+    keys = {k for k in keys if 0 <= k[0] < W and 0 <= k[1] < H and rows[k[1]][k[0]] in '.,'}
+    block = blocked_set(sec) | qtaken[sid] | {(s2['x'], s2['y']) for s2 in spots.values() if s2['s'] == sid}
+    base = reach(rows, W, H, next(iter(keys)), block) if keys else set()
+    mons = []
+    for i in range(1 if sec['type'] == 'town' else 2):
+        name = src[(int(sid) * 3 + i) % len(src)]
+        best, bs = None, None
+        for y in range(H):
+            for x in range(W):
+                if rows[y][x] not in '.,' or (x, y) in keys or (x, y) in block:
+                    continue
+                gap = min((abs(x - a) + abs(y - b) for a, b in block), default=9)
+                if gap < 3:
+                    continue
+                score = -min(gap, 8) - (2 if rows[y][x] == ',' else 0) + ((x * 5 + y * 11 + i) % 7) * 0.1
+                if bs is not None and score >= bs:
+                    continue
+                r = reach(rows, W, H, next(iter(keys)), block | {(x, y)}) if keys else set()
+                if keys and (not keys <= r or len(r) < len(base) - 1):
+                    continue
+                best, bs = (x, y), score
+        if best:
+            block.add(best)
+            base = reach(rows, W, H, next(iter(keys)), block) if keys else set()
+            mons.append({'x': best[0], 'y': best[1], 'mon': name})
+    sec['mons'] = mons
+
+json.dump({'version': 1, 'tile': 16, 'screen_tiles': [10, 9], 'arrival': arrivals, 'quest_spots': spots, 'sections': world, 'connections': conns},
+          open(os.path.join(ROOT, OUT or 'data/world.json'), 'w', encoding='utf-8'), indent=1, ensure_ascii=False)
 lines = ['# Section connections report', '',
          f'{len(world)} sections, {len(conns)} edge connections. Generated by `tools/sections/build_world.py`; fix these in `art/sections/atlas.json` or `data/sections/links.json` and re-run.', '']
 if not report:
     lines.append('Every exit matched confidently.')
 for k, v in report.items():
     lines += [f'## {k} ({len(v)})', ''] + [f'- {x}' for x in v] + ['']
-open(os.path.join(ROOT, 'data/connections_report.md'), 'w', encoding='utf-8').write('\n'.join(lines))
+open(os.path.join(ROOT, (OUT[:-5] + '_report.md') if OUT else 'data/connections_report.md'), 'w', encoding='utf-8').write('\n'.join(lines))
 print(f'{len(world)} sections, {len(conns)} connections; report: ' + ', '.join(f'{k} {len(v)}' for k, v in report.items()))

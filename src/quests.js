@@ -34,11 +34,11 @@ const qActive=()=>QUESTS.filter(q=>qs(q.id).state==='active');
 
 // which place the player is in, in the terms quests.json uses
 function qHere(){return scene==='world'?'molten_frontier':(G.sub||(PL[G.planet]||{}).key)}
-function qSameArea(loc){if(!loc)return false;const h=qHere();return loc.area==='molten_frontier'?h==='molten_frontier':(loc.planet&&loc.planet===h&&scene!=='world'&&scene!=='space')}
-function qPos(){return scene==='world'?G.wpos:G.ppos}
+function qSameArea(loc){if(!loc)return false;if(typeof secOn==='function'&&secOn())return loc.sec===G.sec.id;const h=qHere();return loc.area==='molten_frontier'?h==='molten_frontier':(loc.planet&&loc.planet===h&&scene!=='world'&&scene!=='space')}
+function qPos(){if(typeof secOn==='function'&&secOn())return[G.sec.x*16+8,G.sec.y*16+15];return scene==='world'?G.wpos:G.ppos}
 // a quest location, moved onto walkable ground for the painted towns when tools/place_quests.py had to
 const QPLACE_FIXED={'M13:1':{area:'fortress',planet:'fortress',x:768,y:222,spot:'Control room terminal'}};
-function qLoc(qid,step,loc){const p=QPLACE_FIXED[qid+':'+step]||QPLACE[qid+':'+step];return p?Object.assign({},loc,p):loc}
+function qLoc(qid,step,loc){if(typeof secOn==='function'&&secOn()){const sl=secQLoc(qid+':'+step,loc);if(sl)return sl}const p=QPLACE_FIXED[qid+':'+step]||QPLACE[qid+':'+step];return p?Object.assign({},loc,p):loc}
 
 function qMatch(q,o,type,target,info){const t=o.type;
  switch(type){
@@ -97,10 +97,10 @@ function qPassive(){if(!G||!G.quests)return;
    if(okI(art)&&!DLG&&!CH&&scene!=='battle'){s.playing=1;cut(art,QCUT_ART[o.target][1],()=>{s.playing=0;qNotify(q.id,'scene',QCUT[o.target]||[]);qProgress(q,1)})}else if(!okI(art)&&(s.wait=(s.wait||0)+1)>15){qNotify(q.id,'scene',QCUT[o.target]||[]);qProgress(q,1)}}
   else if(o.type==='choice'&&!s.asking&&!DLG&&!CH){s.asking=1;choose(o.hint||q.title,o.options,i=>{s.asking=0;G.flags[o.target]=i+1;qProgress(q,1)})}
   else if(o.type==='visit'||o.type==='spot_event'){const t=o.target||'';
-   if(t==='molten_frontier'){if(scene==='world')qProgress(q,1)}
+   if(t==='molten_frontier'){if(scene==='world'||(typeof secOn==='function'&&secOn()&&SEC_FRONTIER.has(G.sec.id)))qProgress(q,1)}
    else if(t.startsWith('planet:')){if(scene==='planet'&&qHere()===t.slice(7))qProgress(q,1)}
-   else if(t.startsWith('node:')){if(scene==='world'){const[n,d]=nearestNode(G.wpos[0],G.wpos[1]);if(n&&n.k===t.slice(5)&&d<70)qProgress(q,1)}}
-   else if(loc&&qSameArea(loc)){const p=qPos();if(loc.x==null||(p&&Math.hypot(loc.x-p[0],loc.y-p[1])<44))qProgress(q,1)}}}}
+   else if(t.startsWith('node:')){if(typeof secOn==='function'&&secOn()){if(SEC_NODE[t.slice(5)]===G.sec.id)qProgress(q,1)}else if(scene==='world'){const[n,d]=nearestNode(G.wpos[0],G.wpos[1]);if(n&&n.k===t.slice(5)&&d<70)qProgress(q,1)}}
+   else if(loc&&qSameArea(loc)){const p=qPos(),pp=loc.pts&&loc.pts[Math.min(s.n,loc.pts.length-1)],lx=pp?pp[0]*16+8:loc.x,ly=pp?pp[1]*16+15:loc.y;if(lx==null||(p&&Math.hypot(lx-p[0],ly-p[1])<(pp?20:44)))qProgress(q,1)}}}}
 
 // cutscene lines that are not already part of a quest's own dialogue
 const QCUT_ART={zib_joins:['dustara_keyart','A signal from the canyon...'],sola_leaves:['thalassa_keyart','The Deep Sea Ferry dock'],sola_joins:['helix_keyart','Helix Station'],novaryx_awakens:['starfall_keyart','The eight Shards sing'],rift_sealed:['starfall_battle','The Rift closes']};
@@ -108,7 +108,7 @@ const QCUT={novaryx_awakens:['Your eight Shards rise and resonate. A great signa
 
 function qNotify(q,kind,lines){if(lines&&lines.length)QN.push({q,kind,lines})}
 // show waiting quest messages when nothing else is on screen
-function qFlush(){if(QN.length&&!DLG&&!CH&&(scene==='planet'||scene==='world')){const m=QN.shift();const giver=QI[m.q]&&QI[m.q].giver;say(m.lines,null,giver&&giver.art||undefined)}}
+function qFlush(){if(QN.length&&!DLG&&!CH&&(scene==='planet'||scene==='world')&&!(typeof SFADE!=='undefined'&&SFADE)&&!(typeof SM!=='undefined'&&SM)){const m=QN.shift();const giver=QI[m.q]&&QI[m.q].giver;say(m.lines,null,giver&&giver.art||undefined)}}
 
 /* ---- quest log text ---- */
 function qText(q){const s=qs(q.id),o=qObj(q);if(!o)return'Done';const l=qLoc(q.id,s.step,o.location)||{},spot=l.spot||'',c=o.count||1,cnt=c>1?' ('+s.n+'/'+c+')':'',t=o.target||'';
@@ -150,10 +150,10 @@ function qEnts(){if(qEntFrame===frame&&qEntCache)return qEntCache;qEntFrame=fram
   if(o.type==='deliver'||o.type==='show'){const g=qLoc(q.id,'giver',q.location);if(g&&g.x!=null&&qSameArea(g))E.push({k:'turnin',q,o,x:g.x,y:g.y,art:q.giver&&q.giver.art,mark:'?'});continue}
   if(!l||l.x==null||!qSameArea(l))continue;
   if(o.type==='talk')E.push({k:'talk',q,o,x:l.x,y:l.y,art:l.art||null,mark:'?'});
-  else if(o.type==='examine'||o.type==='collect'){const c=o.count||1;for(let i=0;i<c;i++)if(!s.got.includes(i)){const d=QSPREAD[i%QSPREAD.length];E.push({k:'prop',q,o,i,x:l.x+d[0],y:l.y+d[1]})}}
+  else if(o.type==='examine'||o.type==='collect'){const c=o.count||1;for(let i=0;i<c;i++)if(!s.got.includes(i)){const d=QSPREAD[i%QSPREAD.length],pp=l.pts&&l.pts[i%l.pts.length];E.push({k:'prop',q,o,i,x:pp?pp[0]*16+8:l.x+d[0],y:pp?pp[1]*16+15:l.y+d[1]})}}
   else if(QTRAINER.has(o.type)&&!(o.target.includes('|'))&&!/^mf\d+$/.test(o.target))E.push({k:'trainer',q,o,x:l.x,y:l.y,art:QART[o.target]||(q.giver&&q.giver.art)||'guard',mark:'!'});
   else if(o.type==='legendary_encounter')E.push({k:'legend',q,o,x:l.x,y:l.y,mon:o.target,mark:'!'});
-  else if(o.type==='visit'||o.type==='spot_event')E.push({k:'beacon',q,o,x:l.x,y:l.y})}
+  else if(o.type==='visit'||o.type==='spot_event'){const pp=l.pts&&l.pts[Math.min(s.n,l.pts.length-1)];E.push({k:'beacon',q,o,x:pp?pp[0]*16+8:l.x,y:pp?pp[1]*16+15:l.y})}}
  return qEntCache=E}
 
 function qNear(){const p=qPos();if(!p)return null;let best=null,bd=scene==='world'?14:40;for(const e of qEnts()){if(e.k==='beacon')continue;const d=Math.hypot(e.x-p[0],e.y-p[1]);if(d<bd){bd=d;best=e}}return best}
@@ -192,7 +192,7 @@ function qDraw(cx,cy,S,cs){for(const e of qEnts()){const x=e.x*S-cx,y=e.y*S-cy;i
   else if(e.art&&!qPainted(e))dchar(e.art,Math.round(x-cs/2),Math.round(y-cs-1),cs,cs);
   if(e.mark){const my=Math.round(y-cs-9+Math.sin(frame/8)),done=e.k==='turnin'&&qReady(e);box(Math.round(x-4),my,9,9,e.mark==='!'||done?'#ffd23f':'#d8d0e8','#1b1424');txt(e.mark,Math.round(x-2),my+1,'#1b1424',6)}}}
 // a talk target that is already painted into the town art (or is a world NPC) only gets the marker
-function qPainted(e){if(scene==='world')return WORLD.npcs.some(n=>Math.hypot(n.x-e.x,n.y-e.y)<30);const P=paintOf();return!!(P&&P.hot.some(h=>(h.k==='talk'||h.k==='npc'||h.k==='mon')&&Math.hypot(h.x-e.x,h.y-e.y)<40))}
+function qPainted(e){if(typeof secOn==='function'&&secOn())return!!secNpcAt(SWORLD[G.sec.id],Math.floor(e.x/16),Math.floor(e.y/16));if(scene==='world')return WORLD.npcs.some(n=>Math.hypot(n.x-e.x,n.y-e.y)<30);const P=paintOf();return!!(P&&P.hot.some(h=>(h.k==='talk'||h.k==='npc'||h.k==='mon')&&Math.hypot(h.x-e.x,h.y-e.y)<40))}
 function qReady(e){const o=e.o;if(o.type==='deliver')return G.items[o.target]>0;if(o.type==='show')return G.party.some(m=>(D[m.id].t||[]).includes(o.target.replace('type:','')));return true}
 
 // one-line tracker for the tracked quest

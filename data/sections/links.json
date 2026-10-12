@@ -297,7 +297,121 @@
    ],
    "node": "ferrox",
    "planet": "ferrox",
-   "why": "Forge Gate portal at the top of the stairs: the old Frontier's Forge Gate node led to Ferrox (story gate 'ferrox')"
+   "why": "Forge Gate portal at the top of the stairs (old Forge Gate node -> Ferrox)"
+  },
+  {
+   "section": "018",
+   "tiles": [
+    [
+     11,
+     14
+    ],
+    [
+     12,
+     14
+    ],
+    [
+     13,
+     14
+    ]
+   ],
+   "at_dy": -1,
+   "node": "thalassa",
+   "planet": "thalassa",
+   "label": "the harbor boat to Thalassa",
+   "why": "end of Port Ember's pier (old Port Ember node -> Thalassa)"
+  },
+  {
+   "section": "019",
+   "tiles": [
+    [
+     18,
+     8
+    ]
+   ],
+   "at_dy": -1,
+   "node": "glyphos",
+   "planet": "glyphos",
+   "label": "the Deep Sea Ferry",
+   "why": "the ferry's gangway on the Long Dock (old Deep Sea Ferry node -> Glyphos)"
+  },
+  {
+   "section": "023",
+   "tiles": [
+    [
+     11,
+     4
+    ],
+    [
+     12,
+     4
+    ]
+   ],
+   "node": "helix",
+   "planet": "helix",
+   "sub": "fortress",
+   "label": "the Helix Forge Fortress",
+   "why": "the fortress main doors (old Helix Forge Fortress node -> the painted fortress interior)"
+  },
+  {
+   "section": "026",
+   "tiles": [
+    [
+     15,
+     4
+    ],
+    [
+     16,
+     4
+    ]
+   ],
+   "options": [
+    {
+     "node": "space",
+     "planet": "helix",
+     "label": "Shuttle to Helix Station"
+    },
+    {
+     "node": "starfall",
+     "planet": "starfall",
+     "label": "Crater shuttle to Starfall"
+    }
+   ],
+   "why": "the landing pad (old Fortress Shuttle Pad and Helix Shuttle Pad nodes)"
+  },
+  {
+   "section": "027",
+   "tiles": [
+    [
+     15,
+     4
+    ],
+    [
+     16,
+     4
+    ]
+   ],
+   "node": "umbra",
+   "planet": "umbra",
+   "label": "the Shadow Tunnel",
+   "why": "the tunnel mouth (old Shadow Tunnel node -> Umbra)"
+  },
+  {
+   "section": "028",
+   "tiles": [
+    [
+     15,
+     4
+    ],
+    [
+     16,
+     4
+    ]
+   ],
+   "node": "pyros",
+   "planet": "pyros",
+   "label": "the Magma Mines",
+   "why": "the mines gate (old Magma Mines node -> Pyros)"
   }
  ],
  "trainers": {
@@ -344,5 +458,13 @@
     "face": "right"
    }
   ]
- }
+ },
+ "locks": [
+  {
+   "section": "011",
+   "to": "012",
+   "node": "dustara",
+   "why": "the way onto the Molten Frontier opens after the rival battle (old Dustmere exit gate, M03)"
+  }
+ ]
 }

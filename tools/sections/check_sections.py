@@ -7,8 +7,9 @@ import json, os, sys
 from collections import deque
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-world = json.load(open(os.path.join(ROOT, 'data/world.json'), encoding='utf-8'))['sections']
-args = sys.argv[1:]
+WP = sys.argv[sys.argv.index('--world') + 1] if '--world' in sys.argv else 'data/world.json'
+world = json.load(open(os.path.join(ROOT, WP), encoding='utf-8'))['sections']
+args = [a for a in sys.argv[1:] if not a.startswith('--') and a != WP]
 bad = 0
 for sid, sec in world.items():
     if args and not any(sid == a or sec['dir'].startswith(a) for a in args):

@@ -304,7 +304,7 @@ function startJump(where,from){let dx=(held.right?1:0)-(held.left?1:0),dy=(held.
 function landNear(ok,x,y,r){if(ok(x,y))return[x,y];for(let d=4;d<=r;d+=4)for(let a=0;a<16;a++){const px=x+Math.cos(a*Math.PI/8)*d,py=y+Math.sin(a*Math.PI/8)*d;if(ok(px,py))return[px,py]}return null}
 function jumpSfx(){try{if(!AC||musicMode==='off')return;const t=AC.currentTime,o=AC.createOscillator(),g=AC.createGain();o.type='square';o.frequency.setValueAtTime(330,t);o.frequency.exponentialRampToValueAtTime(880,t+0.12);
  g.gain.setValueAtTime(0.04,t);g.gain.exponentialRampToValueAtTime(0.001,t+0.15);o.connect(g).connect(AC.destination);o.start(t);o.stop(t+0.16)}catch(e){}}
-function launch(){if(inRoute())return cut(1,'Back to town',leaveRoute);const key=G.sub&&SUB_DOOR[G.sub]||PL[G.planet].key,door=exitDoor(key);if(door)cut(1,'Heading out!',()=>toWorld(door));else teleportToShip()}
+function launch(){if(G.secBack&&secBackThroughGate())return;if(inRoute())return cut(1,'Back to town',leaveRoute);const key=G.sub&&SUB_DOOR[G.sub]||PL[G.planet].key,door=exitDoor(key);if(door)cut(1,'Heading out!',()=>toWorld(door));else teleportToShip()}
 function updPaint(){const P=paintOf();if(!G.ppos)G.ppos=P.start.slice();if(spotTick()){drawPaint();return}if(frame%60===0)tip('town');
  if(P_('start')){scene='menu';menuSel=0;return}
  if(JMP&&JMP.where==='paint'){JMP.t++;const mk_=MOD_BIOME[G.sub||PL[G.planet].key],sp=4.2*(mk_&&G.key&&G.key[mk_]?1.5:1);   // a town's Linker Module carries you 50% farther
@@ -517,7 +517,7 @@ function updSpace(){const s=G.ship;if(P_('start')){scene='menu';menuSel=0;return
  if(sp>0.15)s.a=Math.atan2(s.vy,s.vx);s.x=Math.max(0,Math.min(1700,s.x+s.vx));s.y=Math.max(0,Math.min(1200,s.y+s.vy));
  let near=-1,nd=1e9;PL.forEach((p,i)=>{if(p.sys!==G.sys)return;const d=Math.hypot(p.x-s.x,p.y-s.y)-p.r;if(d<nd){nd=d;near=i}});const gd=Math.hypot(GATE.x-s.x,GATE.y-s.y)-14;
  const pa=P_('a');if(pa&&gd<18&&gd<nd&&qEvent('visit','warp_gate')){}else if(pa&&gd<18&&gd<nd){const nx=SYS.find(y=>y.id===G.sys+1);if(nx){G.sys=nx.id;say('Warping to the '+nx.name+'...')}else say('The Warp Gate is dormant. New star systems full of Alienmon will open here in future batches.')}
- else if(pa&&nd<18){const p=PL[near];if(unlocked(near)){G.planet=near;G.sub=null;G.sec=null;G.secBack=null;if(secEnabled()){const a=secArrival(p.key);if(a)enterSection(a[0],a[1],'right',true)}const mp=genMap(near);G.px=mp.pad[0];G.py=mp.pad[1]-1;face='down';if(PAINT[p.key]){G.ppos=[PAINT[p.key].start[0],PAINT[p.key].exitY-30];face='up'}s.vx=s.vy=0;cut(okI(SCI[p.landScene||p.scene])?SCI[p.landScene||p.scene]:2,'Landing on '+p.name,()=>{scene='planet';banner=90},p.sceneFx)}
+ else if(pa&&nd<18){const p=PL[near];if(unlocked(near)){G.planet=near;G.sub=null;G.sec=null;G.secBack=null;G.monGone={};if(secEnabled()){const a=secArrival(p.key);if(a)enterSection(a[0],a[1],'right',true)}const mp=genMap(near);G.px=mp.pad[0];G.py=mp.pad[1]-1;face='down';if(PAINT[p.key]){G.ppos=[PAINT[p.key].start[0],PAINT[p.key].exitY-30];face='up'}s.vx=s.vy=0;cut(okI(SCI[p.landScene||p.scene])?SCI[p.landScene||p.scene]:2,'Landing on '+p.name,()=>{scene='planet';banner=90},p.sceneFx)}
   else say(landMsg(p.key))}
  const camx=s.x-80,camy=s.y-72;rect(0,0,160,144,'#0c0818');
  for(let i=0;i<120;i++){const h=hash('st'+i),z=1+(h%3),x=((h%1700)-camx/z*1)%160,y=(((h>>11)%1200)-camy/z)%144;rect((x+160)%160,(y+144)%144,1,1,z===1?'#fff':z===2?'#a99cc8':'#5a4a7a')}

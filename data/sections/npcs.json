@@ -31,7 +31,8 @@
    "t": [
     "Dr. Vashti: The Starfall Crater glows purple again. Something down there is stirring.",
     "Dr. Vashti: Bring me news from every world you visit. And take care of your partner."
-   ]
+   ],
+   "until": "M07"
   },
   {
    "art": "researcher",
@@ -103,7 +104,32 @@
     "Watchman: West of here is the landing pad. Ships only leave with launch clearance from a Keeper."
    ],
    "tile": [
-    3,
+    2,
+    8
+   ]
+  },
+  {
+   "art": "technician",
+   "name": "DX-4",
+   "wid": "DX-4 robot",
+   "t": [
+    "DX-4: Bzzt! Scout unit DX-4 online.",
+    "DX-4: The bridge crosses the canyon to the east trading post. Mind the lava falls!"
+   ],
+   "tile": [
+    4,
+    5
+   ]
+  },
+  {
+   "art": "wanderer",
+   "name": "Dusty",
+   "t": [
+    "Dusty: Name's Dusty. I've lived on this rim since the Starfall.",
+    "Dusty: That crater past the falls? The seedpods came down hot as stars twenty years back."
+   ],
+   "tile": [
+    10,
     5
    ]
   }
@@ -267,6 +293,30 @@
    "t": [
     "Traveller: The ash trail east leads to Palm Isle and Port Ember. Rest up there."
    ]
+  },
+  {
+   "art": "guard",
+   "t": [
+    "Guard: You're entering the Molten Frontier.",
+    "Helix built their forge fortress at the top of the ridge. Watch yourself up there."
+   ],
+   "wid": "mf2",
+   "near": [
+    3,
+    8
+   ]
+  },
+  {
+   "art": "miner",
+   "t": [
+    "Miner: That tunnel runs all the way under the sea to Sunset Canyon.",
+    "The ground's been rumbling since Helix started digging."
+   ],
+   "wid": "mf5",
+   "near": [
+    13,
+    4
+   ]
   }
  ],
  "015": [
@@ -274,6 +324,17 @@
    "art": "explorer",
    "t": [
     "Ash walker: The ash makes everything look grey, but the Alienmon out here are anything but dull."
+   ]
+  },
+  {
+   "art": "sporefolk",
+   "t": [
+    "Sporefolk: Even here, spores find a way. The red blooms feed on lava heat."
+   ],
+   "wid": "mf11",
+   "near": [
+    12,
+    10
    ]
   }
  ],
@@ -289,6 +350,20 @@
    "t": [
     "Geologist: These vents breathe every few minutes. Count to ten and you'll see."
    ]
+  },
+  {
+   "art": "grub",
+   "t": [
+    "Bug Catcher Grub: Fire bugs! The hottest bugs! Battle me!"
+   ],
+   "wid": "mf10",
+   "near": [
+    12,
+    8
+   ],
+   "trainer": {
+    "frontier": 1
+   }
   }
  ],
  "017": [
@@ -303,6 +378,32 @@
    "t": [
     "Fruit picker: Try the fire-coconuts. Crunchy outside, molten inside."
    ]
+  },
+  {
+   "art": "explorer",
+   "t": [
+    "Explorer: The hut here is a Recovery Hut. Rest up before you head into the lava fields.",
+    "Weaken a wild Alienmon with a Tether Pulse, shock it with a Stun Spray, then fire the transfer beam!"
+   ],
+   "wid": "mf3",
+   "near": [
+    16,
+    6
+   ]
+  },
+  {
+   "art": "pilgrim",
+   "t": [
+    "Pilgrim Sol: The island spirits test every traveler. Let's battle!"
+   ],
+   "wid": "mf4",
+   "near": [
+    8,
+    9
+   ],
+   "trainer": {
+    "frontier": 1
+   }
   }
  ],
  "018": [
@@ -335,6 +436,17 @@
    "t": [
     "Linker: Every Keeper you beat gives you a Signal Shard. Eight of them and something big happens. Nobody agrees on what."
    ]
+  },
+  {
+   "art": "civilian",
+   "t": [
+    "Villager: Welcome to Port Ember, the last calm shore before the lava fields."
+   ],
+   "wid": "mf1",
+   "near": [
+    8,
+    9
+   ]
   }
  ],
  "019": [
@@ -342,6 +454,18 @@
    "art": "squidsailor",
    "t": [
     "Deckhand: Mind the gaps between the planks. The sea down there is hot enough to boil soup."
+   ]
+  },
+  {
+   "art": "squidsailor",
+   "t": [
+    "Squid Sailor: The ferry at the end of this dock sails to the Deep Sea Ruins.",
+    "Hop aboard whenever you're ready."
+   ],
+   "wid": "mf0",
+   "near": [
+    17,
+    7
    ]
   }
  ],
@@ -351,6 +475,20 @@
    "t": [
     "Climber: The Ridge Path climbs toward the Forge Gate. Helix guards everywhere up there."
    ]
+  },
+  {
+   "art": "researcher",
+   "t": [
+    "Researcher Kel: Lava-forged Alienmon have incredible stats. Let me show you!"
+   ],
+   "wid": "mf6",
+   "near": [
+    12,
+    9
+   ],
+   "trainer": {
+    "frontier": 1
+   }
   }
  ],
  "021": [
@@ -358,6 +496,18 @@
    "art": "wanderer",
    "t": [
     "Scout: I saw Helix grunts hauling crates toward the fortress. Something's being built in there."
+   ]
+  },
+  {
+   "art": "wanderer",
+   "t": [
+    "Wanderer: The paths wind down the ridge to the Forge Gate and the shuttle pad.",
+    "Wild Alienmon roam the trails between towns. Keep your team healthy."
+   ],
+   "wid": "mf9",
+   "near": [
+    12,
+    8
    ]
   }
  ],
@@ -373,6 +523,20 @@
    "t": [
     "Gate guard: No clearance, no passage. Those are the rules."
    ]
+  },
+  {
+   "art": "miner",
+   "t": [
+    "Forge Miner Dax: The gate's mine to guard. Beat me first!"
+   ],
+   "wid": "mf12",
+   "near": [
+    13,
+    8
+   ],
+   "trainer": {
+    "frontier": 1
+   }
   }
  ],
  "023": [
@@ -380,6 +544,47 @@
    "art": "civilian",
    "t": [
     "Refugee: Helix took the old forge and turned it into a fortress. We had to leave everything."
+   ]
+  },
+  {
+   "art": "guard",
+   "t": [
+    "Helix Grunt: Halt! This forge belongs to the Helix Directive!"
+   ],
+   "wid": "mf7",
+   "near": [
+    13,
+    6
+   ],
+   "trainer": {
+    "frontier": 1
+   },
+   "until": "M19"
+  },
+  {
+   "art": "guard",
+   "wid": "mf7",
+   "near": [
+    13,
+    6
+   ],
+   "after": "M19",
+   "t": [
+    "Former Helix worker: Helix is finished. I just want to fix things now."
+   ]
+  },
+  {
+   "art": "grub",
+   "name": "Grub",
+   "after": "M11",
+   "until": "M13",
+   "near": [
+    9,
+    8
+   ],
+   "t": [
+    "Grub: Psst. I used to work in that Forge. I know a way in.",
+    "Grub: Beat the grunt at the door, then find the control room terminal. The keycard is in there."
    ]
   }
  ],
@@ -397,6 +602,18 @@
    "t": [
     "Linker: Almost at the shuttle pad. Ships to the far planets launch from there."
    ]
+  },
+  {
+   "art": "technician",
+   "t": [
+    "Technician: This dish relays every signal in the Frontier.",
+    "Lately it keeps catching a pulse from the Starfall crater. Same rhythm, every night."
+   ],
+   "wid": "mf8",
+   "near": [
+    12,
+    8
+   ]
   }
  ],
  "026": [
@@ -410,6 +627,18 @@
    "art": "guard",
    "t": [
     "Helix deserter: I flew shuttles for Helix. Never again. Ask me nothing about the Director."
+   ]
+  },
+  {
+   "art": "strand",
+   "t": [
+    "Strand: Helix shuttles fly from this pad straight to the Starfall Rift.",
+    "Whatever they're hauling out there, they don't want anyone to see."
+   ],
+   "wid": "mf13",
+   "near": [
+    18,
+    7
    ]
   }
  ],
@@ -426,6 +655,18 @@
    "art": "miner",
    "t": [
     "Mine foreman: The Magma Mines run all the way down to Pyros' crust. Hard hats mandatory."
+   ]
+  },
+  {
+   "art": "ystran",
+   "t": [
+    "Ystran echo: ...the mountain's heart burns like Ystra's dying sun...",
+    "...the Magma Mines go deeper than anyone has dared..."
+   ],
+   "wid": "mf14",
+   "near": [
+    10,
+    7
    ]
   }
  ],
@@ -625,5 +866,21 @@
    ]
   }
  ],
- "040": []
+ "040": [],
+ "062": [
+  {
+   "art": "vashti",
+   "name": "Dr. Vashti",
+   "wid": "vashti",
+   "after": "M07",
+   "near": [
+    12,
+    8
+   ],
+   "t": [
+    "Dr. Vashti: The signal is clearer here. Neonis hears everything in the system.",
+    "Dr. Vashti: Keep going, Linker. Every Shard brings us closer to the truth."
+   ]
+  }
+ ]
 }

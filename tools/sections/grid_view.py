@@ -21,7 +21,7 @@ if os.path.exists(cp):
             box = [x * 16 * S, y * 16 * S, (x + 1) * 16 * S - 1, (y + 1) * 16 * S - 1]
             if c == '#': d.rectangle(box, fill=(255, 0, 0, 90))
             elif c == ',': d.rectangle(box, fill=(0, 255, 0, 60))
-wp = os.path.join(ROOT, 'data', 'world.json')
+wp = os.path.join(ROOT, sys.argv[sys.argv.index('--world') + 1] if '--world' in sys.argv else os.path.join('data', 'world.json'))
 if os.path.exists(wp):
     sec = json.load(open(wp, encoding='utf-8'))['sections'].get(sid)
     for w in (sec or {}).get('warps', []):
