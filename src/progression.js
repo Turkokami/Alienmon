@@ -91,7 +91,7 @@ function wildTable(key){const a=PROG.areas[key];if(!a)return null;return(G.flags
 function wildPick(key,name){const t=(wildTable(key)||[]).filter(x=>wildOK(x.name));if(!t.length)return null;let e=null;
  if(name&&wildOK(name))e=t.find(x=>x.name===name)||(PROG.areas[key].tier1||[]).find(x=>x.name===name);
  if(!e){const wt=x=>(x.weight||1)*dayMul(x.name);let w=t.reduce((s,x)=>s+wt(x),0)*R();for(const x of t){w-=wt(x);if(w<=0){e=x;break}}e=e||t[0]}
- const id=IDX[e.name];return id==null?null:[id,ri(e.min,e.max)]}
+ const id=IDX[e.name];return id==null?null:clampWild(id,ri(e.min,e.max),inRoute()?2:0)}   // capped to the story stage (world.js)
 
 /* trainers, Keepers, bosses: levels and payouts from the tables */
 function keeperTeam(key,k){const t=PROG.keepers[key];if(!t)return k.team;const base=k.team.map(([id])=>id),p=PL.find(x=>x.key===key),extra=p?p.pool.e.concat(p.pool.c):[];
