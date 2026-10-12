@@ -167,3 +167,21 @@ function drawSpot(cx,cy,S,cs){if(!SPOT)return;const h=SPOT.h,x=h.x*S-cx,y=h.y*S-
 function legendBattle(h){if(!G.party.some(m=>m.hp>0))return say('Your team needs to heal first.');const id=IDX[h.mon];
  say('The air trembles... '+h.mon+' appears!',()=>startBattle([mk(id,h.lvl||60)],null))}
 function noteLegendWin(e){const n=D[e.id].name,r=(PROG.species[n]||{}).rarity;if(r==='legendary'||r==='mythic'){G.legendGone=G.legendGone||{};G.legendGone[n]=progSig()}}
+
+/* ---------- space: warp gate art, asteroid field, Helix patrols (until the Rift is sealed) ---------- */
+const SPACE=__SPACE__,SPI=lazyImgs(SPACE);
+// a fixed asteroid field, placed away from every planet
+const ROIDS=(()=>{const r=rng(hash('asteroids')),out=[];for(let i=0;i<70&&out.length<34;i++){const x=Math.floor(r()*1700),y=Math.floor(r()*1200);
+ if(PL.every(p=>Math.hypot(p.x-x,p.y-y)>p.r+70)&&Math.hypot(GATE.x-x,GATE.y-y)>90)out.push({x,y,k:'asteroid_'+Math.floor(r()*9),s:10+Math.floor(r()*14),sp:(r()-0.5)*0.02})}return out})();
+// Helix patrol ships loop between worlds until M19
+const PATROLS=[['helix','starfall'],['helix','pyros'],['umbra','helix']];
+function drawSpaceDecor(camx,camy){
+ for(const a of ROIDS){const x=a.x-camx,y=a.y-camy;if(x<-30||y<-30||x>190||y>175)continue;const im=SPI[a.k];if(!okI(im))continue;
+  ctx.save();ctx.translate(x,y);ctx.rotate(frame*a.sp);ctx.drawImage(im,-a.s/2,-a.s/2,a.s,a.s);ctx.restore()}
+ if(!mDone('M19'))PATROLS.forEach(([f,t],i)=>{const A=PL.find(p=>p.key===f),Z=PL.find(p=>p.key===t),u=(Math.sin(frame/(600+i*170)+i*2)+1)/2;
+  const x=A.x+(Z.x-A.x)*u-camx,y=A.y+(Z.y-A.y)*u-camy;if(x<-30||y<-30||x>190||y>175)return;const im=SPI.helix_patrol;if(!okI(im))return;
+  ctx.save();ctx.translate(x,y);ctx.rotate(Math.atan2(Z.y-A.y,Z.x-A.x)*(Math.cos(frame/(600+i*170)+i*2)>0?1:-1)+Math.PI/2);ctx.drawImage(im,-9,-9,18,18);ctx.restore()})}
+// the Warp Gate wakes up for the postgame finale (P04)
+const gateLive=()=>{const s=G.quests&&G.quests.P04;return!!s&&s.state!=='locked'};
+function drawWarpGate(gx,gy){const im=SPI[gateLive()?'warpgate_active':'warpgate_dormant'];if(!okI(im))return false;const z=34+(gateLive()?Math.sin(frame/20)*2:0);
+ ctx.save();ctx.imageSmoothingEnabled=true;ctx.drawImage(im,Math.round(gx-z/2),Math.round(gy-z/2),z,z);ctx.restore();return true}

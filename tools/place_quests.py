@@ -80,5 +80,33 @@ for q in quests:
         places[f"{q['id']}:{key}"] = {'x': x, 'y': y}
         taken.setdefault(t, []).append((x, y))
 
+# Molten Frontier spots without coordinates (e.g. "lava field trails"): a walkable world-map cell in the right zone
+wm = json.load(open(os.path.join(ROOT, 'data/world_map.json'), encoding='utf-8'))
+WC, WW, WH = wm['cell'], wm['w'] // wm['cell'], wm['h'] // wm['cell']
+wb = base64.b64decode(wm['walk'])
+wwalk = np.array([(wb[i >> 3] >> (i & 7)) & 1 for i in range(WW * WH)], bool).reshape(WH, WW)
+wy, wx = np.mgrid[0:WH, 0:WW]
+wcx, wcy = wx * WC + WC / 2, wy * WC + WC / 2
+for q in quests:
+    for i, o in enumerate(q['objectives']):
+        loc = o.get('location') or {}
+        if loc.get('area') != 'molten_frontier' or loc.get('x') is not None or o['type'] not in ('examine', 'collect', 'talk'):
+            continue
+        spot = (loc.get('spot') or '').lower()
+        cand = wwalk.copy()
+        if 'lava' in spot:
+            z = [zz for zz in wm['zones'] if zz['k'] == 'pyros']
+            if z:
+                cand &= (wcx >= z[0]['x0']) & (wcx < z[0]['x1'])
+        if 'east' in spot:
+            cand &= wcx > 560
+        for n in wm['npcs']:
+            cand &= np.hypot(wcx - n['x'], wcy - n['y']) > 40
+        ys, xs = np.nonzero(cand)
+        if len(xs):
+            k = int(hashlib.md5(f"{q['id']}:{i}".encode()).hexdigest(), 16) % len(xs)
+            places[f"{q['id']}:{i}"] = {'x': int(wcx[ys[k], xs[k]]), 'y': int(wcy[ys[k], xs[k]])}
+            print('frontier spot', q['id'], i, places[f"{q['id']}:{i}"])
+
 json.dump(places, open(os.path.join(ROOT, 'data/quest_places.json'), 'w'), indent=1)
 print(len(places), 'quest locations placed on painted towns')

@@ -43,7 +43,7 @@ function qLoc(qid,step,loc){const p=QPLACE_FIXED[qid+':'+step]||QPLACE[qid+':'+s
 function qMatch(q,o,type,target,info){const t=o.type;
  switch(type){
   case'starter':return t==='choose_starter';
-  case'talk':if(t==='talk'||t==='deliver'||t==='show'){if(o.target===target)return true;const l=qLoc(q.id,qs(q.id).step,o.location);return!!(info.x!=null&&l&&l.x!=null&&qSameArea(l)&&Math.hypot(l.x-info.x,l.y-info.y)<56)}return false;
+  case'talk':if(t==='talk'||t==='deliver'||t==='show'){if(o.target===target||target==='q:'+q.id)return true;const l=qLoc(q.id,qs(q.id).step,o.location);return!!(info.x!=null&&l&&l.x!=null&&qSameArea(l)&&Math.hypot(l.x-info.x,l.y-info.y)<56)}return false;
   case'visit':return(t==='visit'||t==='spot_event')&&o.target===target;
   case'prop':return(t==='examine'||t==='collect')&&o.target===target;
   case'catch':return(t==='catch'&&o.target===target)||t==='catch_any'||(t==='catch_type'&&(D[IDX[target]].t||[]).includes(o.target))||(t==='legendary_encounter'&&o.target===target);
@@ -88,6 +88,7 @@ let qTick=0;
 function qPassive(){if(!G||!G.quests)return;
  for(const q of qActive()){const o=qObj(q);if(!o)continue;const s=qs(q.id),loc=qLoc(q.id,s.step,o.location);
   if(o.type==='defeat_keeper'&&G.beaten[o.target])qProgress(q,o.count||1);
+  else if(o.type==='battle_trainer'&&o.target.includes('|')){const n=o.target.split('|').filter(t=>G.beaten[t]).length;if(n>s.n)qProgress(q,n-s.n)}
   else if(o.type==='item'&&G.key[o.target])qProgress(q,1);
   else if(o.type==='xenodex'&&Object.keys(G.caught).length>=(o.count||1))qProgress(q,o.count||1);
   else if(o.type==='cutscene'){qNotify(q.id,'scene',QCUT[o.target]||[]);qProgress(q,1)}

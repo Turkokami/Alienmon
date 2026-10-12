@@ -514,12 +514,12 @@ function updSpace(){const s=G.ship;if(P_('start')){scene='menu';menuSel=0;return
  s.vx=(s.vx+ax*0.12)*0.97;s.vy=(s.vy+ay*0.12)*0.97;const sp=Math.hypot(s.vx,s.vy);if(sp>2.4){s.vx*=2.4/sp;s.vy*=2.4/sp}
  if(sp>0.15)s.a=Math.atan2(s.vy,s.vx);s.x=Math.max(0,Math.min(1700,s.x+s.vx));s.y=Math.max(0,Math.min(1200,s.y+s.vy));
  let near=-1,nd=1e9;PL.forEach((p,i)=>{if(p.sys!==G.sys)return;const d=Math.hypot(p.x-s.x,p.y-s.y)-p.r;if(d<nd){nd=d;near=i}});const gd=Math.hypot(GATE.x-s.x,GATE.y-s.y)-14;
- const pa=P_('a');if(pa&&gd<18&&gd<nd){const nx=SYS.find(y=>y.id===G.sys+1);if(nx){G.sys=nx.id;say('Warping to the '+nx.name+'...')}else say('The Warp Gate is dormant. New star systems full of Alienmon will open here in future batches.')}
+ const pa=P_('a');if(pa&&gd<18&&gd<nd&&qEvent('visit','warp_gate')){}else if(pa&&gd<18&&gd<nd){const nx=SYS.find(y=>y.id===G.sys+1);if(nx){G.sys=nx.id;say('Warping to the '+nx.name+'...')}else say('The Warp Gate is dormant. New star systems full of Alienmon will open here in future batches.')}
  else if(pa&&nd<18){const p=PL[near];if(unlocked(near)){G.planet=near;G.sub=null;const mp=genMap(near);G.px=mp.pad[0];G.py=mp.pad[1]-1;face='down';if(PAINT[p.key]){G.ppos=[PAINT[p.key].start[0],PAINT[p.key].exitY-30];face='up'}s.vx=s.vy=0;cut(okI(SCI[p.landScene||p.scene])?SCI[p.landScene||p.scene]:2,'Landing on '+p.name,()=>{scene='planet';banner=90},p.sceneFx)}
   else say(landMsg(p.key))}
  const camx=s.x-80,camy=s.y-72;rect(0,0,160,144,'#0c0818');
  for(let i=0;i<120;i++){const h=hash('st'+i),z=1+(h%3),x=((h%1700)-camx/z*1)%160,y=(((h>>11)%1200)-camy/z)%144;rect((x+160)%160,(y+144)%144,1,1,z===1?'#fff':z===2?'#a99cc8':'#5a4a7a')}
- {const gx=GATE.x-camx,gy=GATE.y-camy;for(let a=0;a<6.28;a+=0.15){rect(Math.round(gx+Math.cos(a+frame/30)*14),Math.round(gy+Math.sin(a+frame/30)*14),2,2,a<3?'#5ff2ff':'#ff74c4')}if(gd<70)txt('Warp Gate',Math.round(gx-36),Math.round(gy+20),'#ffd23f')}
+ {const gx=GATE.x-camx,gy=GATE.y-camy;drawSpaceDecor(camx,camy);if(!drawWarpGate(gx,gy))for(let a=0;a<6.28;a+=0.15){rect(Math.round(gx+Math.cos(a+frame/30)*14),Math.round(gy+Math.sin(a+frame/30)*14),2,2,a<3?'#5ff2ff':'#ff74c4')}if(gd<70)txt('Warp Gate',Math.max(2,Math.min(112,Math.round(gx-22))),Math.round(gy+20),'#ffd23f')}
  PL.forEach((p,i)=>{if(p.sys!==G.sys)return;const x=p.x-camx,y=p.y-camy;if(x<-60||y<-60||x>220||y>200)return;const pim=PLI[p.key];if(okI(pim)){ctx.save();ctx.imageSmoothingEnabled=true;ctx.drawImage(pim,Math.round(x-p.r-4),Math.round(y-p.r-4),p.r*2+8,p.r*2+8);ctx.restore()}else{const c=planetSpr(i);ctx.drawImage(c,Math.round(x-p.r-6),Math.round(y-p.r-6))}
   if(Math.hypot(p.x-s.x,p.y-s.y)<p.r+70){const lb=p.name+(unlocked(i)?'':' (locked)');txt(lb,Math.round(x-lb.length*4),Math.round(y+p.r+6),unlocked(i)?'#5ff2ff':'#ff74c4')}});
  if(SHIPI.complete&&SHIPI.naturalWidth){const mv=Math.hypot(s.vx,s.vy)>0.3;

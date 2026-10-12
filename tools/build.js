@@ -32,7 +32,8 @@ const OW=folder('art/overworld','.png');
 const TITLE=asset('art/ui/title.jpg');
 const SHIP=asset('art/ui/ship.png'),CUTS=[0,1,2].map(i=>asset('art/ui/cut_'+i+'.jpg')).filter(Boolean);
 const CHAR=folder('art/characters','.png');
-const PORTRAITS=folder('art/portraits','.png');   // large speaker portraits for dialogue (from the character battle renders)
+const PORTRAITS=folder('art/portraits','.png');
+const SPACEART=folder('art/space','.png');   // warp gate, asteroids, Helix patrol ships   // large speaker portraits for dialogue (from the character battle renders)
 const SCN=folder('art/scenes','.jpg');
 const FX=folder('art/fx','.webp');
 const PAINT=fs.existsSync(path.join(root,'data/painted_maps.json'))?fs.readFileSync(path.join(root,'data/painted_maps.json'),'utf8'):'{}';
@@ -66,7 +67,7 @@ fill.__PROGENGINE__=fs.readFileSync(path.join(root,'src/progression.js'),'utf8')
 // world logic (docs/world/STORY_PROGRESSION_MASTER.md): gate messages and the ship rules
 const WS=JSON.parse(fs.readFileSync(path.join(root,'data/world_state.json'),'utf8'));
 const PEOPLE=fs.existsSync(path.join(root,'data/town_people.json'))?fs.readFileSync(path.join(root,'data/town_people.json'),'utf8'):'{}';
-fill.__WORLDENGINE__=fs.readFileSync(path.join(root,'src/world.js'),'utf8').replace(/__WORLDSTATE__/g,j({gates:WS.gates,ship:WS.ship})).replace(/__PEOPLE__/g,PEOPLE);
+fill.__WORLDENGINE__=fs.readFileSync(path.join(root,'src/world.js'),'utf8').replace(/__WORLDSTATE__/g,j({gates:WS.gates,ship:WS.ship})).replace(/__PEOPLE__/g,PEOPLE).replace(/__SPACE__/g,j(SPACEART));
 // function replacer: data can contain "$&"-style sequences that a string replacement would expand
 let html=fs.readFileSync(path.join(root,'src/template.html'),'utf8').replace(/__[A-Z]+__/g,k=>k in fill?fill[k]:k);
 fs.mkdirSync(www,{recursive:true});
