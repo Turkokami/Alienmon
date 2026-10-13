@@ -102,3 +102,5 @@ function storyCutLines(o){const L=(o.lines||QCUT[o.target]||[]).slice();for(cons
 function storyIsMon(m,name){let n=D[m.id].name;const seen=new Set();for(let i=0;i<3&&n;i++){seen.add(n);n=PREVO[n]&&PREVO[n].from}if(seen.has(name))return true;let b=name;for(let i=0;i<3&&b;i++){if(b===D[m.id].name)return true;const ev=(PROG.species[b]||{}).evolves;b=ev&&ev.into}return false}
 // a cutscene or choice with 'at' only plays once you're standing in that section
 function storyAt(o){return!o.at||(typeof secOn==='function'&&secOn()&&G.sec.id===o.at)}
+// story locks on the Thalassa ships (data/sections/links.json warps with a node)
+Object.assign(GATE_OPEN,{ghost_ship:()=>mDone('M07'),helix_freighter:()=>mDone('M17'),smuggler_freighter:()=>mDone('M19')});

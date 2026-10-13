@@ -138,14 +138,15 @@
    "name": "Kit",
    "after": "M19",
    "until": "P01",
-   "near": [
-    13,
-    9
-   ],
    "t": [
     "Kit: I'm keeper of the Shards now. ...Okay, I gave myself that job. But somebody has to!",
     "Kit: Dad gave me his old welding goggles. They're too big. I'm keeping them."
-   ]
+   ],
+   "tile": [
+    12,
+    11
+   ],
+   "face": "left"
   }
  ],
  "005": [
@@ -1106,6 +1107,46 @@
    "lv": 60,
    "after": "P04",
    "t": []
+  }
+ ],
+ "166": [
+  {
+   "art": "teo",
+   "name": "Teo",
+   "after": "M19",
+   "near": [
+    10,
+    9
+   ],
+   "t": [
+    "Teo: Six years beyond the light, and the thing I missed most was this canyon wind.",
+    "Teo: Lumivex keeps watch on the roof. It doesn't trust doors yet. Neither do I."
+   ]
+  },
+  {
+   "art": "sola",
+   "name": "Sola",
+   "after": "M19",
+   "near": [
+    9,
+    6
+   ],
+   "t": [
+    "Sola: I made a cactus-berry pie for your mom. It's... a little burned. A lot burned.",
+    "Sola: It's weird having a normal day. Good weird."
+   ]
+  },
+  {
+   "art": "civilian",
+   "name": "Moving box",
+   "until": "M19",
+   "near": [
+    9,
+    10
+   ],
+   "t": [
+    "The house is empty. A sign on the door says: Reserved for the Reyes family."
+   ]
   }
  ]
 }

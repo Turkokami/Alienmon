@@ -1408,7 +1408,7 @@
      "then": {
       "art": "marsh",
       "lines": [
-       "Captain Marsh: A Helix freighter just limped into my harbor for repairs. Guess what's in its hold?",
+       "Captain Marsh: A Helix freighter just tied up at the end of my east pier for repairs. Guess what's in its hold?",
        "Captain Marsh: My tower core. The one Vex stole. We're taking it back, tonight."
       ]
      }
@@ -1869,7 +1869,7 @@
      "type": "examine",
      "target": "nana_journal",
      "count": 1,
-     "hint": "Search the Recovery Bay attic",
+     "hint": "Climb to the Recovery Bay attic (the ladder behind the cabinet)",
      "location": {
       "area": "dustara_town",
       "planet": "dustara",
@@ -1912,12 +1912,12 @@
      "type": "cutscene",
      "target": "thorne_trial",
      "count": 1,
-     "at": "062",
+     "at": "170",
      "scene": "neonis_keyart",
      "title": "The trial on Neonis",
-     "hint": "Go to the trial on Neonis",
+     "hint": "Go to the courtroom on Neon Boulevard",
      "lines": [
-      "In a Neonis courtroom, Strand testifies with shaking hands.",
+      "In the Linker League courtroom, Strand testifies with shaking hands.",
       "Dr. Vashti testifies too, and confesses her own twenty years of silence, in public, for everyone to hear.",
       "Director Thorne pleads guilty to everything. He looks at no one.",
       "A week later, a letter arrives from his cell. Folded inside is a Codex page he copied twenty years ago.",
@@ -1933,7 +1933,7 @@
      "type": "defeat_boss",
      "target": "admin_vex_final",
      "count": 1,
-     "hint": "Catch Admin Vex aboard the smuggler's freighter off Thalassa",
+     "hint": "Catch Admin Vex aboard the smuggler's freighter (Saltreach Market pier)",
      "location": {
       "area": "thalassa_town",
       "planet": "thalassa",
@@ -3415,10 +3415,12 @@
      "scene": "thalassa_keyart",
      "title": "The ghost ship",
      "lines": [
-      "You climb aboard the drifting freighter. Rows of empty cages rattle in the swell.",
+      "You climb down into the ghost ship's hold. Rows of empty cages rattle in the swell.",
       "The howl comes from the very last cage. It isn't a ghost at all. It's a lost little Chirpod, calling and calling for anyone to answer.",
       "You open the cage. The Chirpod hops onto your arm and won't let go."
-     ]
+     ],
+     "at": "167",
+     "hint": "Board the ghost ship at the tip of the west pier"
     },
     {
      "type": "choice",
@@ -3441,7 +3443,8 @@
       "lines": [
        "The Chirpod chirps happily and tucks itself under your collar."
       ]
-     }
+     },
+     "at": "167"
     }
    ],
    "dialogue": {

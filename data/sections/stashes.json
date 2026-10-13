@@ -26,8 +26,8 @@
    "section": "008",
    "name": "Trading Post",
    "tile": [
-    19,
-    5
+    8,
+    6
    ],
    "item": "cure",
    "n": 2,
@@ -637,8 +637,8 @@
    "section": "052",
    "name": "Port Saltreach Docks",
    "tile": [
-    19,
-    13
+    11,
+    3
    ],
    "item": "harmonic",
    "n": 2,
@@ -648,8 +648,8 @@
    "section": "053",
    "name": "Saltreach Market",
    "tile": [
-    11,
-    14
+    1,
+    1
    ],
    "item": "megagel",
    "n": 1,

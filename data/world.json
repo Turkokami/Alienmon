@@ -187,8 +187,8 @@
   },
   "M07:1": {
    "s": "052",
-   "x": 11,
-   "y": 12
+   "x": 10,
+   "y": 9
   },
   "M07:2": {
    "s": "061",
@@ -432,8 +432,8 @@
   },
   "S01:giver": {
    "s": "008",
-   "x": 3,
-   "y": 9
+   "x": 5,
+   "y": 11
   },
   "S01:0": {
    "s": "011",
@@ -648,8 +648,8 @@
   },
   "S40:giver": {
    "s": "052",
-   "x": 5,
-   "y": 6
+   "x": 8,
+   "y": 8
   },
   "S40:0": {
    "s": "052",
@@ -697,7 +697,7 @@
   },
   "S51:giver": {
    "s": "063",
-   "x": 7,
+   "x": 11,
    "y": 9
   },
   "S52:giver": {
@@ -1165,23 +1165,23 @@
   "M17b:giver": {
    "s": "052",
    "x": 8,
-   "y": 8
+   "y": 7
   },
   "M17b:0": {
    "s": "052",
    "art": "marsh",
    "x": 10,
-   "y": 4
+   "y": 12
   },
   "M17b:1": {
-   "s": "052",
-   "x": 18,
-   "y": 6
+   "s": "168",
+   "x": 9,
+   "y": 5
   },
   "M17b:2": {
-   "s": "052",
-   "x": 20,
-   "y": 12
+   "s": "168",
+   "x": 8,
+   "y": 5
   },
   "S102:giver": {
    "s": "030",
@@ -1216,8 +1216,8 @@
   "M18:0": {
    "s": "004",
    "art": "strand",
-   "x": 12,
-   "y": 8
+   "x": 11,
+   "y": 9
   },
   "M18:4": {
    "s": "141",
@@ -1227,18 +1227,18 @@
   "M19b:giver": {
    "s": "004",
    "x": 12,
-   "y": 9
+   "y": 8
   },
   "M19b:0": {
    "s": "004",
    "art": "wanderer",
-   "x": 10,
+   "x": 13,
    "y": 8
   },
   "M19b:1": {
-   "s": "005",
-   "x": 4,
-   "y": 7
+   "s": "165",
+   "x": 6,
+   "y": 5
   },
   "M19b:2": {
    "s": "004",
@@ -1246,9 +1246,9 @@
    "y": 12
   },
   "M19b:4": {
-   "s": "052",
-   "x": 15,
-   "y": 9
+   "s": "169",
+   "x": 13,
+   "y": 5
   },
   "P01:giver": {
    "s": "151",
@@ -1262,14 +1262,19 @@
    "y": 9
   },
   "M19b:3": {
-   "s": "062",
-   "x": 12,
-   "y": 9
+   "s": "170",
+   "x": 8,
+   "y": 6
   },
   "P01:1": {
    "s": "151",
    "x": 12,
    "y": 9
+  },
+  "S40:1": {
+   "s": "167",
+   "x": 11,
+   "y": 10
   }
  },
  "sections": {
@@ -1627,8 +1632,8 @@
    "pkey": "dustara",
    "npcs": [
     {
-     "x": 11,
-     "y": 5,
+     "x": 10,
+     "y": 8,
      "art": "civilian",
      "face": "down",
      "t": [
@@ -1639,8 +1644,8 @@
      ]
     },
     {
-     "x": 12,
-     "y": 12,
+     "x": 11,
+     "y": 13,
      "art": "wanderer",
      "face": "down",
      "t": [
@@ -1650,7 +1655,7 @@
     },
     {
      "x": 11,
-     "y": 9,
+     "y": 14,
      "art": "technician",
      "face": "down",
      "t": [
@@ -1704,7 +1709,7 @@
      "wid": "DX-4 robot"
     },
     {
-     "x": 7,
+     "x": 10,
      "y": 5,
      "art": "wanderer",
      "face": "down",
@@ -1713,6 +1718,19 @@
       "Dusty: That crater past the falls? The seedpods came down hot as stars twenty years back."
      ],
      "name": "Dusty"
+    },
+    {
+     "x": 11,
+     "y": 12,
+     "art": "kit",
+     "face": "left",
+     "t": [
+      "Kit: I'm keeper of the Shards now. ...Okay, I gave myself that job. But somebody has to!",
+      "Kit: Dad gave me his old welding goggles. They're too big. I'm keeping them."
+     ],
+     "name": "Kit",
+     "after": "M19",
+     "until": "P01"
     }
    ],
    "mons": [
@@ -1772,6 +1790,21 @@
      ],
      "k": "bay",
      "why": "Recovery Bay counter"
+    },
+    {
+     "tile": [
+      13,
+      8
+     ],
+     "k": "ladder",
+     "to": "165",
+     "at": [
+      4,
+      12
+     ],
+     "face": "up",
+     "label": "A narrow ladder behind the supply cabinet leads up to the attic.",
+     "why": "the way up to Nana Wren's attic (no ladder is drawn in 005, so it's an interaction)"
     }
    ],
    "spawns": {
@@ -2010,12 +2043,26 @@
      "offset": 0
     }
    },
-   "warps": [],
+   "warps": [
+    {
+     "tile": [
+      4,
+      5
+     ],
+     "to": "166",
+     "at": [
+      7,
+      12
+     ],
+     "face": "up",
+     "kind": "door"
+    }
+   ],
    "objects": [
     {
      "tile": [
-      19,
-      5
+      8,
+      6
      ],
      "k": "stash",
      "item": "cure",
@@ -2036,8 +2083,8 @@
    "pkey": "dustara",
    "npcs": [
     {
-     "x": 4,
-     "y": 6,
+     "x": 3,
+     "y": 9,
      "art": "technician",
      "face": "down",
      "t": [
@@ -7251,6 +7298,34 @@
      "face": "up",
      "kind": "door",
      "edge": "up"
+    },
+    {
+     "tile": [
+      5,
+      12
+     ],
+     "to": "167",
+     "at": [
+      7,
+      11
+     ],
+     "face": "up",
+     "kind": "door",
+     "node": "ghost_ship"
+    },
+    {
+     "tile": [
+      21,
+      12
+     ],
+     "to": "168",
+     "at": [
+      8,
+      12
+     ],
+     "face": "up",
+     "kind": "door",
+     "node": "helix_freighter"
     }
    ],
    "objects": [
@@ -7266,8 +7341,8 @@
     },
     {
      "tile": [
-      19,
-      13
+      11,
+      3
      ],
      "k": "stash",
      "item": "harmonic",
@@ -7293,7 +7368,7 @@
    "npcs": [
     {
      "x": 15,
-     "y": 10,
+     "y": 12,
      "art": "squidsailor",
      "face": "down",
      "t": [
@@ -7319,8 +7394,8 @@
      ]
     },
     {
-     "x": 15,
-     "y": 12,
+     "x": 11,
+     "y": 4,
      "art": "mom",
      "face": "down",
      "t": [
@@ -7328,8 +7403,8 @@
      ]
     },
     {
-     "x": 10,
-     "y": 5,
+     "x": 5,
+     "y": 6,
      "art": "explorer",
      "face": "down",
      "t": [
@@ -7338,7 +7413,7 @@
     },
     {
      "x": 19,
-     "y": 6,
+     "y": 13,
      "art": "wanderer",
      "face": "down",
      "t": [
@@ -7346,13 +7421,7 @@
      ]
     }
    ],
-   "mons": [
-    {
-     "x": 6,
-     "y": 13,
-     "mon": "Bubbub"
-    }
-   ]
+   "mons": []
   },
   "053": {
    "id": "053",
@@ -7404,6 +7473,20 @@
      "face": "up",
      "kind": "edge",
      "edge": "right"
+    },
+    {
+     "tile": [
+      12,
+      14
+     ],
+     "to": "169",
+     "at": [
+      11,
+      13
+     ],
+     "face": "up",
+     "kind": "door",
+     "node": "smuggler_freighter"
     }
    ],
    "objects": [
@@ -7419,8 +7502,8 @@
     },
     {
      "tile": [
-      11,
-      14
+      1,
+      1
      ],
      "k": "stash",
      "item": "megagel",
@@ -8608,7 +8691,21 @@
      "offset": 0
     }
    },
-   "warps": [],
+   "warps": [
+    {
+     "tile": [
+      3,
+      4
+     ],
+     "to": "170",
+     "at": [
+      8,
+      13
+     ],
+     "face": "up",
+     "kind": "door"
+    }
+   ],
    "objects": [
     {
      "tile": [
@@ -8671,7 +8768,7 @@
      ]
     },
     {
-     "x": 11,
+     "x": 7,
      "y": 9,
      "art": "wanderer",
      "face": "down",
@@ -20809,6 +20906,323 @@
      "stay": 1
     }
    ]
+  },
+  "165": {
+   "id": "165",
+   "name": "Recovery Bay Attic",
+   "planet": "Dustara",
+   "dir": "01_dustara",
+   "type": "interior",
+   "img": "art/sections_game/01_dustara/165_recovery_bay_attic.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "Nana Wren's attic above the Dustmere Recovery Bay: trunks, baskets, the old R.B. sign",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      4,
+      13
+     ],
+     "to": "005",
+     "at": [
+      12,
+      8
+     ],
+     "face": "left",
+     "kind": "stairs"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     4,
+     12
+    ]
+   },
+   "parent": "005",
+   "pkey": "dustara"
+  },
+  "166": {
+   "id": "166",
+   "name": "Reyes House",
+   "planet": "Dustara",
+   "dir": "01_dustara",
+   "type": "interior",
+   "img": "art/sections_game/01_dustara/166_reyes_house_1f.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "Teo and Sola's home by the Trading Post",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      13
+     ],
+     "to": "008",
+     "at": [
+      4,
+      6
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      13
+     ],
+     "to": "008",
+     "at": [
+      4,
+      6
+     ],
+     "face": "down",
+     "kind": "door"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     7,
+     12
+    ]
+   },
+   "parent": "008",
+   "pkey": "dustara",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 9,
+     "art": "teo",
+     "face": "down",
+     "t": [
+      "Teo: Six years beyond the light, and the thing I missed most was this canyon wind.",
+      "Teo: Lumivex keeps watch on the roof. It doesn't trust doors yet. Neither do I."
+     ],
+     "name": "Teo",
+     "after": "M19"
+    },
+    {
+     "x": 9,
+     "y": 6,
+     "art": "sola",
+     "face": "down",
+     "t": [
+      "Sola: I made a cactus-berry pie for your mom. It's... a little burned. A lot burned.",
+      "Sola: It's weird having a normal day. Good weird."
+     ],
+     "name": "Sola",
+     "after": "M19"
+    },
+    {
+     "x": 8,
+     "y": 11,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "The house is empty. A sign on the door says: Reserved for the Reyes family."
+     ],
+     "name": "Moving box",
+     "until": "M19"
+    }
+   ]
+  },
+  "167": {
+   "id": "167",
+   "name": "Ghost Ship Hold",
+   "planet": "Thalassa",
+   "dir": "04_thalassa",
+   "type": "interior",
+   "img": "art/sections_game/04_thalassa/167_ghost_ship_hold.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "The hold of the drifting Helix freighter: empty cages and barred grates",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      12
+     ],
+     "to": "052",
+     "at": [
+      6,
+      12
+     ],
+     "face": "right",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      12
+     ],
+     "to": "052",
+     "at": [
+      6,
+      12
+     ],
+     "face": "right",
+     "kind": "door"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     7,
+     11
+    ]
+   },
+   "parent": "052",
+   "pkey": "thalassa"
+  },
+  "168": {
+   "id": "168",
+   "name": "Helix Freighter",
+   "planet": "Thalassa",
+   "dir": "04_thalassa",
+   "type": "interior",
+   "img": "art/sections_game/04_thalassa/168_helix_freighter.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "Helix cargo freighter at the east pier; Thalassa's tower core is held in the glowing cargo pit",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      8,
+      13
+     ],
+     "to": "052",
+     "at": [
+      20,
+      12
+     ],
+     "face": "left",
+     "kind": "door"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     8,
+     12
+    ]
+   },
+   "parent": "052",
+   "pkey": "thalassa"
+  },
+  "169": {
+   "id": "169",
+   "name": "Smuggler's Freighter",
+   "planet": "Thalassa",
+   "dir": "04_thalassa",
+   "type": "interior",
+   "img": "art/sections_game/04_thalassa/169_smugglers_freighter.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "A rusty smuggler's freighter at the Saltreach Market pier, where Admin Vex hides",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      11,
+      14
+     ],
+     "to": "053",
+     "at": [
+      12,
+      13
+     ],
+     "face": "up",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      12,
+      14
+     ],
+     "to": "053",
+     "at": [
+      12,
+      13
+     ],
+     "face": "up",
+     "kind": "door"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     11,
+     13
+    ]
+   },
+   "parent": "053",
+   "pkey": "thalassa"
+  },
+  "170": {
+   "id": "170",
+   "name": "Neonis Courtroom",
+   "planet": "Neonis",
+   "dir": "05_neonis",
+   "type": "interior",
+   "img": "art/sections_game/05_neonis/170_neonis_courtroom.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "The Linker League courtroom on Neon Boulevard",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      14
+     ],
+     "to": "063",
+     "at": [
+      3,
+      5
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      14
+     ],
+     "to": "063",
+     "at": [
+      3,
+      5
+     ],
+     "face": "down",
+     "kind": "door"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     8,
+     13
+    ]
+   },
+   "parent": "063",
+   "pkey": "neonis"
   }
  },
  "connections": [

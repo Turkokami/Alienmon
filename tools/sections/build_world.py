@@ -157,6 +157,12 @@ for st in links.get('stairs', []):
         world[b]['spawns'].setdefault('stairs', [st['b_tile'][0], st['b_tile'][1] + 1])
         linked.add(b)
         world[b]['parent'] = world[a].get('parent', a)
+for w in links.get('warps', []):   # one-off links: gangways, a door on a drawn building, a ladder hatch
+    if w['section'] in world and w['to'] in world:
+        world[w['section']]['warps'].append({k: w[k] for k in ('tile', 'to', 'at', 'face', 'kind', 'node') if k in w})
+        linked.add(w['section'])
+        if w.get('parent'):
+            world[w['section']]['parent'] = w['parent']
 for i, why in links.get('ignore_mats', {}).items():
     if i in world:
         report['doormats left inert'].append(f"{i} {world[i]['name']}: {why}")

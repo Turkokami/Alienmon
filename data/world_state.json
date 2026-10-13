@@ -252,6 +252,30 @@
    "open_when": "M17 done (shards = 8)",
    "blocked_msg": "Strand: Thorne's locked the crater shuttle. Only someone with all 8 Shards could override it.",
    "leads_to": "Starfall Rift"
+  },
+  {
+   "id": "ghost_ship",
+   "node": "ghost_ship",
+   "name": "The ghost ship",
+   "kind": "ship",
+   "open_when": "M07 done",
+   "blocked_msg": "Dock worker: Nobody boards that drifting freighter. Not until the harbor's safe again."
+  },
+  {
+   "id": "helix_freighter",
+   "node": "helix_freighter",
+   "name": "The Helix freighter",
+   "kind": "ship",
+   "open_when": "M17 done",
+   "blocked_msg": "Helix Guard: This vessel is Helix Directive property. Move along."
+  },
+  {
+   "id": "smuggler_freighter",
+   "node": "smuggler_freighter",
+   "name": "The smuggler's freighter",
+   "kind": "ship",
+   "open_when": "M19 done",
+   "blocked_msg": "A rough-looking sailor: Private boat. Shove off."
   }
  ],
  "ship": {

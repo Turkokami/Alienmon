@@ -3564,6 +3564,120 @@
    ],
    "notes": "Floating coliseum among the stars: central battle floor, royal box with the Arena Master, vendor stalls left and right, south gate bridge",
    "file": "art/sections/15_arena/164_star_arena.png"
+  },
+  {
+   "id": "165",
+   "planet": "Dustara",
+   "name": "Recovery Bay Attic",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "Nana Wren's attic above the Dustmere Recovery Bay: trunks, baskets, the old R.B. sign",
+   "file": "art/sections/01_dustara/165_recovery_bay_attic.png"
+  },
+  {
+   "id": "166",
+   "planet": "Dustara",
+   "name": "Reyes House",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "Teo and Sola's home by the Trading Post",
+   "file": "art/sections/01_dustara/166_reyes_house_1f.png"
+  },
+  {
+   "id": "167",
+   "planet": "Thalassa",
+   "name": "Ghost Ship Hold",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "The hold of the drifting Helix freighter: empty cages and barred grates",
+   "file": "art/sections/04_thalassa/167_ghost_ship_hold.png"
+  },
+  {
+   "id": "168",
+   "planet": "Thalassa",
+   "name": "Helix Freighter",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "Helix cargo freighter at the east pier; Thalassa's tower core is held in the glowing cargo pit",
+   "file": "art/sections/04_thalassa/168_helix_freighter.png"
+  },
+  {
+   "id": "169",
+   "planet": "Thalassa",
+   "name": "Smuggler's Freighter",
+   "type": "interior",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "A rusty smuggler's freighter at the Saltreach Market pier, where Admin Vex hides",
+   "file": "art/sections/04_thalassa/169_smugglers_freighter.png"
+  },
+  {
+   "id": "170",
+   "planet": "Neonis",
+   "name": "Neonis Courtroom",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "The Linker League courtroom on Neon Boulevard",
+   "file": "art/sections/05_neonis/170_neonis_courtroom.png"
   }
  ]
 }

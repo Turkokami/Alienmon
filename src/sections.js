@@ -60,6 +60,7 @@ function secInteract(){const s=SWORLD[G.sec.id],[dx,dy]=DIRS[face],x=G.sec.x+dx,
  const n=secNpcAt(s,x,y);if(n){n.face=({up:'down',down:'up',left:'right',right:'left'})[face];if(n.legend)return storyLegend(n);if(n.trainer)return secTrainerTalk(n);if(n.wid)qEvent('talk',n.wid,{x:n.x*16+8,y:n.y*16+15});if(n.story==='starter'&&!G.party.length)return secStarterTalk();if(storyNpc(n))return;if(n.story==='arena')return arenaMenu();return say(!G.party.length&&n.pre?n.pre:n.t,null,n.por||undefined)}
  const o=(s.objects||[]).find(o=>o.tile[0]===x&&o.tile[1]===y);if(!o)return secFieldA(s,x,y);
  if(o.k==='arena')return arenaMenu();
+ if(o.k==='ladder')return say(o.label||'A ladder.',()=>choose('Climb up?',['Climb','Not now'],i=>{if(i===0)secWarp({to:o.to,at:o.at,face:o.face||'up',kind:'stairs'})}));
  if(o.k==='keeper')return keeperTalk(PL[G.planet]);
  if(o.k==='stash'){G.opened=G.opened||{};const tag=s.id+':'+o.tile;if(G.opened[tag])return;G.opened[tag]=1;const n=o.n||1;
   if(o.item==='dust'){G.dust+=n;return say(['You found a Linker Stash!','Inside: '+n+' Stardust.'])}

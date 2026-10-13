@@ -173,6 +173,21 @@
     ],
     "k": "bay",
     "why": "Recovery Bay counter"
+   },
+   {
+    "tile": [
+     13,
+     8
+    ],
+    "k": "ladder",
+    "to": "165",
+    "at": [
+     4,
+     12
+    ],
+    "face": "up",
+    "label": "A narrow ladder behind the supply cabinet leads up to the attic.",
+    "why": "the way up to Nana Wren's attic (no ladder is drawn in 005, so it's an interaction)"
    }
   ],
   "006": [
@@ -285,6 +300,42 @@
    "wake": [
     7,
     8
+   ]
+  },
+  "165": {
+   "default": [
+    4,
+    12
+   ]
+  },
+  "166": {
+   "default": [
+    7,
+    12
+   ]
+  },
+  "167": {
+   "default": [
+    7,
+    11
+   ]
+  },
+  "168": {
+   "default": [
+    8,
+    12
+   ]
+  },
+  "169": {
+   "default": [
+    11,
+    13
+   ]
+  },
+  "170": {
+   "default": [
+    8,
+    13
    ]
   }
  },
@@ -495,6 +546,231 @@
    "to": "012",
    "node": "dustara",
    "why": "the way onto the Molten Frontier opens after the rival battle (old Dustmere exit gate, M03)"
+  }
+ ],
+ "warps": [
+  {
+   "section": "008",
+   "tile": [
+    4,
+    5
+   ],
+   "to": "166",
+   "at": [
+    7,
+    12
+   ],
+   "face": "up",
+   "kind": "door"
+  },
+  {
+   "section": "166",
+   "tile": [
+    7,
+    13
+   ],
+   "to": "008",
+   "at": [
+    4,
+    6
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "008"
+  },
+  {
+   "section": "166",
+   "tile": [
+    8,
+    13
+   ],
+   "to": "008",
+   "at": [
+    4,
+    6
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "008"
+  },
+  {
+   "section": "165",
+   "tile": [
+    4,
+    13
+   ],
+   "to": "005",
+   "at": [
+    12,
+    8
+   ],
+   "face": "left",
+   "kind": "stairs",
+   "parent": "005"
+  },
+  {
+   "section": "052",
+   "tile": [
+    5,
+    12
+   ],
+   "to": "167",
+   "at": [
+    7,
+    11
+   ],
+   "face": "up",
+   "kind": "door",
+   "node": "ghost_ship"
+  },
+  {
+   "section": "167",
+   "tile": [
+    7,
+    12
+   ],
+   "to": "052",
+   "at": [
+    6,
+    12
+   ],
+   "face": "right",
+   "kind": "door",
+   "parent": "052"
+  },
+  {
+   "section": "167",
+   "tile": [
+    8,
+    12
+   ],
+   "to": "052",
+   "at": [
+    6,
+    12
+   ],
+   "face": "right",
+   "kind": "door",
+   "parent": "052"
+  },
+  {
+   "section": "052",
+   "tile": [
+    21,
+    12
+   ],
+   "to": "168",
+   "at": [
+    8,
+    12
+   ],
+   "face": "up",
+   "kind": "door",
+   "node": "helix_freighter"
+  },
+  {
+   "section": "168",
+   "tile": [
+    8,
+    13
+   ],
+   "to": "052",
+   "at": [
+    20,
+    12
+   ],
+   "face": "left",
+   "kind": "door",
+   "parent": "052"
+  },
+  {
+   "section": "053",
+   "tile": [
+    12,
+    14
+   ],
+   "to": "169",
+   "at": [
+    11,
+    13
+   ],
+   "face": "up",
+   "kind": "door",
+   "node": "smuggler_freighter"
+  },
+  {
+   "section": "169",
+   "tile": [
+    11,
+    14
+   ],
+   "to": "053",
+   "at": [
+    12,
+    13
+   ],
+   "face": "up",
+   "kind": "door",
+   "parent": "053"
+  },
+  {
+   "section": "169",
+   "tile": [
+    12,
+    14
+   ],
+   "to": "053",
+   "at": [
+    12,
+    13
+   ],
+   "face": "up",
+   "kind": "door",
+   "parent": "053"
+  },
+  {
+   "section": "063",
+   "tile": [
+    3,
+    4
+   ],
+   "to": "170",
+   "at": [
+    8,
+    13
+   ],
+   "face": "up",
+   "kind": "door"
+  },
+  {
+   "section": "170",
+   "tile": [
+    7,
+    14
+   ],
+   "to": "063",
+   "at": [
+    3,
+    5
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "063"
+  },
+  {
+   "section": "170",
+   "tile": [
+    8,
+    14
+   ],
+   "to": "063",
+   "at": [
+    3,
+    5
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "063"
   }
  ]
 }
