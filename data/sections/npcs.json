@@ -974,5 +974,20 @@
     "Tamsin: Thirty years I've looked for the world on my question-mark patch. Maybe it's down there."
    ]
   }
+ ],
+ "151": [
+  {
+   "art": "vashti",
+   "name": "Dr. Vashti",
+   "after": "P01",
+   "near": [
+    10,
+    9
+   ],
+   "t": [
+    "Dr. Vashti: I've got the road, Linker. It's holding. Go and bring her home.",
+    "Dr. Vashti: Kessler's side of the Vortex is safe with me."
+   ]
+  }
  ]
 }

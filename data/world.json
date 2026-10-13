@@ -1223,6 +1223,53 @@
    "s": "141",
    "x": 11,
    "y": 6
+  },
+  "M19b:giver": {
+   "s": "004",
+   "x": 12,
+   "y": 9
+  },
+  "M19b:0": {
+   "s": "004",
+   "art": "wanderer",
+   "x": 10,
+   "y": 8
+  },
+  "M19b:1": {
+   "s": "005",
+   "x": 4,
+   "y": 7
+  },
+  "M19b:2": {
+   "s": "004",
+   "x": 5,
+   "y": 12
+  },
+  "M19b:4": {
+   "s": "052",
+   "x": 15,
+   "y": 9
+  },
+  "P01:giver": {
+   "s": "151",
+   "x": 8,
+   "y": 12
+  },
+  "P01:0": {
+   "s": "151",
+   "art": "vashti",
+   "x": 11,
+   "y": 10
+  },
+  "M19b:3": {
+   "s": "062",
+   "x": 12,
+   "y": 9
+  },
+  "P01:1": {
+   "s": "151",
+   "x": 12,
+   "y": 9
   }
  },
  "sections": {
@@ -19021,6 +19068,18 @@
    },
    "pkey": "apex",
    "npcs": [
+    {
+     "x": 10,
+     "y": 9,
+     "art": "vashti",
+     "face": "down",
+     "t": [
+      "Dr. Vashti: I've got the road, Linker. It's holding. Go and bring her home.",
+      "Dr. Vashti: Kessler's side of the Vortex is safe with me."
+     ],
+     "name": "Dr. Vashti",
+     "after": "P01"
+    },
     {
      "x": 5,
      "y": 14,

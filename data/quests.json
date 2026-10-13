@@ -1815,6 +1815,186 @@
    "notes": "Sets flag 'rift', which unlocks Apex Array."
   },
   {
+   "id": "M19b",
+   "type": "main",
+   "act": "Act 4",
+   "title": "Homecoming",
+   "location": {
+    "area": "dustara_town",
+    "planet": "dustara",
+    "spot": "Dustmere Plaza"
+   },
+   "giver": {
+    "name": "Mom",
+    "art": "mom"
+   },
+   "prereq": [
+    "M19"
+   ],
+   "objectives": [
+    {
+     "type": "talk",
+     "target": "dusty_bonfire",
+     "count": 1,
+     "hint": "Join the Starfall Festival bonfire in Dustmere's plaza",
+     "location": {
+      "area": "dustara_town",
+      "planet": "dustara",
+      "spot": "Dusty at the bonfire",
+      "art": "wanderer"
+     },
+     "then": {
+      "art": "wanderer",
+      "lines": [
+       "Dustmere is celebrating twenty years since the Starfall. The bridge glows all on its own.",
+       "Dusty: Twenty years ago, four kids climbed down into that crater and found the Mother Pod. I always told it like a fairy tale. Tonight I'll tell it true.",
+       "Dusty: Imogen Vashti. Kael Thorne. Orra Venn. And Teo Reyes.",
+       "Everybody around the fire turns and looks at Teo. He just smiles and pokes the coals."
+      ]
+     }
+    },
+    {
+     "type": "examine",
+     "target": "nana_journal",
+     "count": 1,
+     "hint": "Search the Recovery Bay attic",
+     "location": {
+      "area": "dustara_town",
+      "planet": "dustara",
+      "spot": "The Recovery Bay attic"
+     },
+     "then": {
+      "art": "nurse",
+      "items": {
+       "nana_journal": 1
+      },
+      "lines": [
+       "Up in the Recovery Bay attic, under a dusty blanket, you find Nana Wren's journal.",
+       "Nana Wren (journal): The night the stars fell, three pods of baby saucers came to my door. Little things with one big eye, like scouts.",
+       "Nana Wren (journal): I nursed them all night. And I heard a voice singing, far away and so tired. So I sang back.",
+       "Zib chose you because the same Signal runs in your family."
+      ]
+     }
+    },
+    {
+     "type": "talk",
+     "target": "DX-4 robot",
+     "count": 1,
+     "hint": "Read the journal's last page to DX-4",
+     "location": {
+      "area": "dustara_town",
+      "planet": "dustara",
+      "spot": "DX-4 in the plaza"
+     },
+     "then": {
+      "art": "technician",
+      "lines": [
+       "Nana Wren (journal, last page): I built a little robot to listen for the scout's frequency, and to watch over my grandchild when I can't.",
+       "Nana Wren (journal): I taught him my favorite word. Probably.",
+       "DX-4 is quiet for a long, long time.",
+       "DX-4: I KNEW THAT. PROBABLY."
+      ]
+     }
+    },
+    {
+     "type": "cutscene",
+     "target": "thorne_trial",
+     "count": 1,
+     "at": "062",
+     "scene": "neonis_keyart",
+     "title": "The trial on Neonis",
+     "hint": "Go to the trial on Neonis",
+     "lines": [
+      "In a Neonis courtroom, Strand testifies with shaking hands.",
+      "Dr. Vashti testifies too, and confesses her own twenty years of silence, in public, for everyone to hear.",
+      "Director Thorne pleads guilty to everything. He looks at no one.",
+      "A week later, a letter arrives from his cell. Folded inside is a Codex page he copied twenty years ago.",
+      "Codex page: The door that is a road opens only for a scout and a listener, together."
+     ],
+     "then": {
+      "items": {
+       "codex_page": 1
+      }
+     }
+    },
+    {
+     "type": "defeat_boss",
+     "target": "admin_vex_final",
+     "count": 1,
+     "hint": "Catch Admin Vex aboard the smuggler's freighter off Thalassa",
+     "location": {
+      "area": "thalassa_town",
+      "planet": "thalassa",
+      "spot": "The smuggler's freighter"
+     },
+     "team": [
+      [
+       "Smoglet",
+       52
+      ],
+      [
+       "Venomite",
+       53
+      ],
+      [
+       "Vexhydra",
+       55
+      ]
+     ],
+     "ally": {
+      "who": "Captain Marsh",
+      "mon": "Anchorath",
+      "lv": 54
+     },
+     "intro": "You again?! I'm not going back to that Director. I'm not going ANYWHERE!",
+     "lose": "No... no, no, no!",
+     "then": {
+      "art": "marsh",
+      "flags": [
+       "vex_captured"
+      ],
+      "lines": [
+       "Captain Marsh clamps the cuffs on Admin Vex. Marsh: That's for my tower. And my harbor. And my logbook.",
+       "Pell steps up onto the deck, chest out. Pell: Helix Directive! Field Division! ...",
+       "Pell: ...Former.",
+       "Captain Marsh: Not bad, kid. There's room on my crew for a man who knows when to quit."
+      ]
+     }
+    },
+    {
+     "type": "cutscene",
+     "target": "orra_invitation",
+     "count": 1,
+     "scene": "apex_keyart",
+     "title": "An invitation",
+     "lines": [
+      "A message arrives from Apex Array, from Orra Venn, the Prime Linker and the last of the Crater Four.",
+      "Orra Venn (message): Come to the Summit.",
+      "Dr. Vashti reads it twice. Vashti: Orra and I haven't spoken in fifteen years."
+     ]
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Mom: You're home! Come on, the whole town is at the Starfall Festival tonight."
+    ],
+    "progress": [
+     "Mom: Go on, enjoy the festival. You've earned it."
+    ],
+    "complete": [
+     "Mom: The Summit, huh? Go on. Make your Nana proud."
+    ]
+   },
+   "rewards": {
+    "dust": 3000,
+    "flags": [
+     "homecoming"
+    ]
+   },
+   "repeatable": false,
+   "notes": "Book 4 Part One and Two: the festival, the journal, DX-4, the trial, Vex captured off Thalassa (moved here from the postgame), the invitation."
+  },
+  {
    "id": "M20",
    "type": "main",
    "act": "Act 5",
@@ -1830,7 +2010,7 @@
     "art": "orra"
    },
    "prereq": [
-    "M19"
+    "M19b"
    ],
    "objectives": [
     {
@@ -1842,6 +2022,13 @@
       "planet": "apex",
       "spot": "Crystal hall",
       "note": "tile map or future painted map; place this spot when building"
+     },
+     "then": {
+      "art": "marisol",
+      "lines": [
+       "Marisol Fenn: This crystal cut the first Signal Shard. Twenty years ago, four kids built the very first Linker around it.",
+       "Marisol Fenn: Vashti did the biology, Orra the signal, Kael the engineering. Teo just kept saying it would work. It did."
+      ]
      }
     },
     {
@@ -1853,6 +2040,13 @@
       "planet": "apex",
       "spot": "Sonic hall",
       "note": "tile map or future painted map; place this spot when building"
+     },
+     "then": {
+      "art": "harrow",
+      "lines": [
+       "Duke Harrow: I wrote the anthem they played the day the Linker League was founded.",
+       "Duke Harrow: That same night, Orra and Vashti locked the Codex away in this mountain. I watched them do it. Nobody sang about that part."
+      ]
      }
     },
     {
@@ -1864,6 +2058,13 @@
       "planet": "apex",
       "spot": "Plasma hall",
       "note": "tile map or future painted map; place this spot when building"
+     },
+     "then": {
+      "art": "saga",
+      "lines": [
+       "As Saga's last Alienmon falls, Saga leans close and whispers one word. It isn't any language you know.",
+       "Zib's lights flash every color at once. Nobody else seems to notice."
+      ]
      }
     },
     {
@@ -1875,6 +2076,13 @@
       "planet": "apex",
       "spot": "Gravity hall",
       "note": "tile map or future painted map; place this spot when building"
+     },
+     "then": {
+      "art": "ostrander",
+      "lines": [
+       "General Ostrander: I guarded that crater for twenty years. I'll tell you something I never put in a report.",
+       "General Ostrander: Six years ago I saw Teo Reyes walk into the light. I could have stopped him. He looked so happy. So I let him go."
+      ]
      }
     }
    ],
@@ -1925,6 +2133,20 @@
       "planet": "apex",
       "spot": "Great telescope",
       "note": "tile map or future painted map; place this spot when building"
+     },
+     "test": "orra",
+     "intro": "My first Linker still works. Let's see if yours can carry what mine carried.",
+     "then": {
+      "art": "orra",
+      "lines": [
+       "Orra Venn: I kept the Codex locked up for nineteen years and called it protecting people.",
+       "Orra Venn: You carried the truth across fourteen worlds, in the open. That's the difference."
+      ],
+      "lines_if": {
+       "shielded_zib": [
+        "Orra Venn: And when it mattered, you put yourself between your friend and the light. That was the test."
+       ]
+      }
      }
     }
    ],
@@ -1936,7 +2158,7 @@
      "Keep at it, Linker. You've got this."
     ],
     "complete": [
-     "Orra Venn: The Kessler system has a new Prime Linker. Roll the credits, then look up. Ystra is waiting."
+     "Orra Venn: The Kessler system has a new Prime Linker. Carry the secret differently. Carry it in the open."
     ]
    },
    "rewards": {
@@ -1967,6 +2189,43 @@
    ],
    "objectives": [
     {
+     "type": "talk",
+     "target": "telescope_lens",
+     "count": 1,
+     "hint": "Meet Dr. Vashti at the Great Telescope",
+     "location": {
+      "area": "apex_town",
+      "planet": "apex",
+      "spot": "Dr. Vashti at the Great Telescope",
+      "art": "vashti"
+     },
+     "then": {
+      "art": "vashti",
+      "lines": [
+       "Dr. Vashti: Thorne's Codex page. \"A door that is a road, opened only by a scout and a listener together.\"",
+       "Dr. Vashti: The Great Telescope can focus all eight Shards into a Vortex, if the lens is right. So we built one from Teo's crystal map.",
+       "Dr. Vashti: The Shards are set. Nothing's happening. ...A scout and a listener. Of course. You and Zib, together."
+      ]
+     }
+    },
+    {
+     "type": "cutscene",
+     "target": "vortex_opens",
+     "count": 1,
+     "at": "151",
+     "scene": "telescope",
+     "title": "The Vortex",
+     "lines": [
+      "You and Zib hum the Spore Choir's song. Hmm-mm-mmm.",
+      "The sky above the telescope folds open into a spinning road of light.",
+      "Dr. Vashti: Go. I'll hold the road open from this side. However long it takes.",
+      "A last message from Thorne arrives on her screen: \"Bring her home, all of her.\""
+     ],
+     "then": {
+      "go": "153"
+     }
+    },
+    {
      "type": "visit",
      "target": "planet:ystra",
      "count": 1,
@@ -1978,13 +2237,14 @@
    ],
    "dialogue": {
     "start": [
-     "Zib's lights blink in a rhythm you've never seen. It's pointing home."
+     "Zib's lights blink in a rhythm you've never seen. It's pointing up, at the Great Telescope."
     ],
     "progress": [
      "Keep at it, Linker. You've got this."
     ],
     "complete": [
-     "You step onto shattered Ystra. Floating continents, crystal forests, a dying red sun."
+     "You step out of the Vortex under a huge, tired red sun, into a forest of crystal trees that chime in the wind.",
+     "It's the forest from your very first dream."
     ]
    },
    "rewards": {

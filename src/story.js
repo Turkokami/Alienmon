@@ -33,6 +33,7 @@ function storyThen(q,t){if(!t||!storyIf(t.if))return;const L=(t.lines||[]).slice
  if(t.gift&&IDX[t.gift.name]!=null){const m=mk(IDX[t.gift.name],t.gift.lv||10);if(t.gift.nick)m.nick=t.gift.nick;const w=addMon(m);L.push(t.gift.name+' joined '+(w==='party'?'your team':'your Storage')+'!')}
  if(t.evolve==='starter'){const ln=starterLine(myStarter()),top=IDX[ln[2]],m=G.party.concat(G.box).find(m=>ln.includes(D[m.id].name));
   if(m&&m.id!==top){const was=nm(m);m.id=top;if(!m.nick){}m.hp=stat(m,0);G.seen[top]=G.caught[top]=1;L.push('...'+was+' is glowing!',was+' evolved into '+D[top].name+'!')}}
+ if(t.go&&SWORLD[t.go]){const g=SWORLD[t.go],go=()=>{G.sub=null;G.secBack=null;const p=pidx(g.pkey);if(p>=0)G.planet=p;enterSection(g.id,g.spawns.arrival||g.spawns.default,'down');scene='planet';PREV='planet'};if(secOn())SFADE={t:0,go};else go()}   // walk through to another place (the Vortex to Ystra)
  if(L.length)QN.push({q:q.id,kind:'then',lines:L.map(qFmt),art:t.art})}
 
 /* ---- section scenes: walk in at the right moment and the scene plays once ---- */

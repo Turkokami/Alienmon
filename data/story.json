@@ -1,6 +1,6 @@
 {
  "_about": "Book canon story data (docs/SAGA_MASTER_PLAN.md). scenes: play once on entering a section; shifts: objectives inserted into existing quests (older saves move their step on); inserted: new main quests (older saves past them count them as done). Bump version when adding shifts or inserted quests.",
- "version": 4,
+ "version": 5,
  "scenes": [
   {
    "id": "strand_sporeling",
@@ -102,6 +102,12 @@
    "at": 3,
    "n": 1,
    "v": 4
+  },
+  {
+   "q": "P01",
+   "at": 0,
+   "n": 2,
+   "v": 5
   }
  ],
  "inserted": [
@@ -109,6 +115,11 @@
    "q": "M17b",
    "next": "M18",
    "v": 4
+  },
+  {
+   "q": "M19b",
+   "next": "M20",
+   "v": 5
   }
  ],
  "keys": [
