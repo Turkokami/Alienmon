@@ -40,7 +40,7 @@ body{margin:0;height:100%;background:var(--space);color:var(--ink);font-family:"
 background-image:radial-gradient(1px 1px at 20% 30%,#fff8,transparent),radial-gradient(1px 1px at 70% 80%,#fff6,transparent),radial-gradient(1px 1px at 40% 70%,#fff5,transparent),radial-gradient(1px 1px at 85% 20%,#fff7,transparent);
 display:flex;align-items:center;justify-content:center;overflow:hidden;user-select:none;-webkit-user-select:none;touch-action:none}
 .dwrap{filter:drop-shadow(0 18px 40px #000b)}
-.device{position:relative;width:min(780px,98vw,calc((100vh - 170px)*1.11 + 360px));display:grid;grid-template-columns:150px minmax(0,1fr) 150px;grid-template-areas:"top top top" "dpad screen ab" "foot foot foot";align-items:center;gap:8px 16px;padding:14px 20px 16px;
+.device{position:relative;width:min(440px,96vw,calc((100vh - 330px)*0.98));min-width:min(300px,96vw);display:grid;grid-template-columns:1fr 1fr;grid-template-areas:"top top" "screen screen" "dpad ab" "foot foot";align-items:center;gap:8px 16px;padding:12px 14px 18px;
  background:linear-gradient(120deg,#5ff2ff,#7a3fbf 40%,#ff8a1e);--cut:polygon(30px 0,calc(100% - 30px) 0,100% 30px,100% calc(100% - 44px),calc(100% - 44px) 100%,44px 100%,0 calc(100% - 44px),0 30px);clip-path:var(--cut)}
 .device::before{content:'';position:absolute;inset:3px;background:linear-gradient(165deg,var(--shell-hi),var(--shell) 40%,#271a40);clip-path:polygon(29px 0,calc(100% - 29px) 0,100% 29px,100% calc(100% - 43px),calc(100% - 43px) 100%,43px 100%,0 calc(100% - 43px),0 29px)}
 .device>*{position:relative;z-index:1}
@@ -66,7 +66,7 @@ canvas{display:block;width:100%;aspect-ratio:160/144;image-rendering:pixelated;b
 button:active,button.on{filter:brightness(1.4)}
 button:focus-visible{outline:2px solid var(--b);outline-offset:2px}
 .hint{font-size:7px;color:var(--muted);text-align:center;line-height:1.8}
-@media (max-width:680px),(orientation:portrait){.device{width:min(440px,96vw);grid-template-columns:1fr 1fr;grid-template-areas:"top top" "screen screen" "dpad ab" "foot foot";padding:12px 14px 18px}.grille{display:none}}
+.grille{display:none}
 </style>
 </head>
 <body>
