@@ -95,3 +95,5 @@ function storyMigrate(){const v=STORY.version||1;if((G.storyv||0)>=v)return;
 function storyCutLines(o){const L=(o.lines||QCUT[o.target]||[]).slice();for(const[f,ls]of Object.entries(o.lines_if||{}))if(G.flags[f])L.push(...ls);return L}
 // any stage of a species' line counts (a Chimelet that evolved into Chimeral still opens the doors)
 function storyIsMon(m,name){let n=D[m.id].name;const seen=new Set();for(let i=0;i<3&&n;i++){seen.add(n);n=PREVO[n]&&PREVO[n].from}if(seen.has(name))return true;let b=name;for(let i=0;i<3&&b;i++){if(b===D[m.id].name)return true;const ev=(PROG.species[b]||{}).evolves;b=ev&&ev.into}return false}
+// a cutscene or choice with 'at' only plays once you're standing in that section
+function storyAt(o){return!o.at||(typeof secOn==='function'&&secOn()&&G.sec.id===o.at)}

@@ -1,6 +1,6 @@
 {
  "_about": "Book canon story data (docs/SAGA_MASTER_PLAN.md). scenes: play once on entering a section; shifts: objectives inserted into existing quests (older saves move their step on); inserted: new main quests (older saves past them count them as done). Bump version when adding shifts or inserted quests.",
- "version": 3,
+ "version": 4,
  "scenes": [
   {
    "id": "strand_sporeling",
@@ -15,6 +15,61 @@
     "Helix Grunt: ...Shh. You didn't see that. Name's Strand. Forget it, okay?"
    ],
    "art": "strand"
+  },
+  {
+   "id": "rim_ostrander",
+   "sec": "136",
+   "when": {
+    "active": "M18"
+   },
+   "lines": [
+    "General Ostrander: Halt. This crater has been under military guard for twenty years.",
+    "General Ostrander: I don't care how many Shards you carry. No children go past this camp."
+   ],
+   "art": "ostrander"
+  },
+  {
+   "id": "rim_tamsin",
+   "sec": "136",
+   "when": {
+    "active": "M18"
+   },
+   "lines": [
+    "Tamsin: General! They're with me.",
+    "Tamsin: I've mapped every inch of this crater, and I'll be at their side the whole way down. You have my word.",
+    "General Ostrander: ...Fine. But if anything happens, Tamsin, it's on you.",
+    "Tamsin: (to you) Told you I'd turn up. Come on. Stay close."
+   ],
+   "art": "explorer"
+  },
+  {
+   "id": "zib_pod",
+   "sec": "138",
+   "when": {
+    "after": "M17b",
+    "until": "M19"
+   },
+   "lines": [
+    "The valley is full of cracked, glowing seedpod shells. Zib zips straight past all of them...",
+    "...and stops at one small shell, half-buried in the rock.",
+    "Zib lands inside it and sits very still for a long, quiet minute. Its lights go soft and pink.",
+    "This was Zib's pod. The last one Liss launched."
+   ]
+  },
+  {
+   "id": "pell_refuses",
+   "sec": "141",
+   "when": {
+    "active": "M18"
+   },
+   "lines": [
+    "Admin Vex: Pell! The little saucer. Net it. NOW.",
+    "Pell raises the net gun. His hands are shaking.",
+    "Pell: Helix Directive... Field Division... (He looks at Zib.) ...No.",
+    "Pell throws the net gun over the rim. It tumbles down into the crater's light.",
+    "Admin Vex: You'll regret that! (She storms off toward the engine.)"
+   ],
+   "art": "vex"
   }
  ],
  "shifts": [
@@ -35,9 +90,27 @@
    "at": 1,
    "n": 2,
    "v": 3
+  },
+  {
+   "q": "M18",
+   "at": 0,
+   "n": 1,
+   "v": 4
+  },
+  {
+   "q": "M18",
+   "at": 3,
+   "n": 1,
+   "v": 4
   }
  ],
- "inserted": [],
+ "inserted": [
+  {
+   "q": "M17b",
+   "next": "M18",
+   "v": 4
+  }
+ ],
  "keys": [
   {
    "k": "nana_badge",

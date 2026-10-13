@@ -1373,6 +1373,233 @@
    "notes": ""
   },
   {
+   "id": "M17b",
+   "type": "main",
+   "act": "Act 3",
+   "title": "Harbor Reclaimed",
+   "location": {
+    "area": "thalassa_town",
+    "planet": "thalassa",
+    "spot": "Port Saltreach Docks"
+   },
+   "giver": {
+    "name": "Captain Delia Marsh",
+    "art": "marsh"
+   },
+   "prereq": [
+    "M17"
+   ],
+   "objectives": [
+    {
+     "type": "talk",
+     "target": "marsh_harbor",
+     "count": 1,
+     "location": {
+      "area": "thalassa_town",
+      "planet": "thalassa",
+      "spot": "Captain Marsh on the docks",
+      "art": "marsh"
+     },
+     "then": {
+      "art": "marsh",
+      "lines": [
+       "Captain Marsh: A Helix freighter just limped into my harbor for repairs. Guess what's in its hold?",
+       "Captain Marsh: My tower core. The one Vex stole. We're taking it back, tonight."
+      ]
+     }
+    },
+    {
+     "type": "battle_trainer",
+     "target": "helix_freighter_crew",
+     "count": 1,
+     "location": {
+      "area": "thalassa_town",
+      "planet": "thalassa",
+      "spot": "The Helix freighter"
+     },
+     "team": [
+      [
+       "Gearhound",
+       44
+      ],
+      [
+       "Nullbot",
+       45
+      ],
+      [
+       "Wardenix",
+       46
+      ]
+     ],
+     "intro": "Helix Directive! This freighter is restricted!",
+     "lose": "Abandon ship! Abandon ship!"
+    },
+    {
+     "type": "collect",
+     "target": "tower_core",
+     "count": 1,
+     "hint": "Take back Thalassa's tower core",
+     "location": {
+      "area": "thalassa_town",
+      "planet": "thalassa",
+      "spot": "The freighter hold"
+     }
+    },
+    {
+     "type": "cutscene",
+     "target": "harbor_relit",
+     "count": 1,
+     "scene": "thalassa_landmark",
+     "title": "The Harbor Tower",
+     "lines": [
+      "Captain Marsh slots the core back into the Harbor Tower. For a second, nothing.",
+      "Then the whole tower hums, and a beam of light shoots up into the night. Every boat in the harbor sounds its horn.",
+      "Captain Marsh: Now we're even."
+     ]
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Captain Marsh: Linker! Get to Port Saltreach. I've found where Helix is hiding my tower core."
+    ],
+    "progress": [
+     "Captain Marsh: The freighter won't wait forever. Move!"
+    ],
+    "complete": [
+     "Captain Marsh: The seal's got one more tower singing. Go get that crater, kid."
+    ]
+   },
+   "rewards": {
+    "dust": 2000,
+    "items": {
+     "fullgel": 2
+    },
+    "flags": [
+     "harbor_core"
+    ]
+   },
+   "repeatable": false,
+   "notes": "Book 3: Captain Marsh and the player raid a Helix freighter to win back Thalassa's stolen tower core. Required before the crater."
+  },
+  {
+   "id": "S102",
+   "type": "side",
+   "act": "Act 3",
+   "title": "The Keepers' Call",
+   "location": {
+    "area": "ferrox_town",
+    "planet": "ferrox",
+    "spot": "Rustvale"
+   },
+   "giver": {
+    "name": "Hank Briggs",
+    "art": "hank"
+   },
+   "prereq": [
+    "M17b"
+   ],
+   "objectives": [
+    {
+     "type": "battle_trainer",
+     "target": "helix_tower_crew",
+     "count": 1,
+     "location": {
+      "area": "ferrox_town",
+      "planet": "ferrox",
+      "spot": "Ferrox Tower"
+     },
+     "team": [
+      [
+       "Wardenix",
+       45
+      ],
+      [
+       "Nullbot",
+       46
+      ],
+      [
+       "Gearhound",
+       47
+      ]
+     ],
+     "ally": {
+      "who": "Hank",
+      "mon": "Forgemaul",
+      "lv": 48
+     },
+     "intro": "Helix Directive! Stand aside, this tower is ours now!",
+     "lose": "Retreat! The scrappers won't quit!"
+    },
+    {
+     "type": "battle_trainer",
+     "target": "helix_broadcast_crew",
+     "count": 1,
+     "location": {
+      "area": "neonis_town",
+      "planet": "neonis",
+      "spot": "Voltspire"
+     },
+     "team": [
+      [
+       "Nullbot",
+       46
+      ],
+      [
+       "Smoglet",
+       47
+      ],
+      [
+       "Wardenix",
+       48
+      ]
+     ],
+     "ally": {
+      "who": "DJ Static",
+      "mon": "Bassquake",
+      "lv": 48
+     },
+     "intro": "Helix Directive! Shut that broadcast down!",
+     "lose": "They're... they're still on the air!"
+    },
+    {
+     "type": "cutscene",
+     "target": "static_broadcast",
+     "count": 1,
+     "scene": "neonis_keyart",
+     "title": "Static goes live",
+     "lines": [
+      "DJ Static: This is Static, live on every frequency in the Kessler system. You need to hear this.",
+      "Director Thorne (log): Reyes was an acceptable loss.",
+      "On every world, people stop and listen. By morning, nobody believes Helix anymore.",
+      "DJ Static: The Keepers are with you, Linker. When you need us, just call. We'll sing."
+     ]
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Hank Briggs: Helix crews are hitting the towers, trying to crack them before you reach the crater.",
+     "Hank Briggs: Ferrox first. Then Static's tower on Neonis. You and me, kid. Let's hold the line."
+    ],
+    "progress": [
+     "Hank Briggs: The towers won't hold themselves!"
+    ],
+    "complete": [
+     "Hank Briggs: Every Keeper's on the line now. Whatever happens at that crater, you won't be alone."
+    ]
+   },
+   "rewards": {
+    "dust": 2500,
+    "items": {
+     "maxrevive": 2
+    },
+    "flags": [
+     "keepers_call"
+    ]
+   },
+   "repeatable": false,
+   "notes": "Book 3 Ch 3-6: the Keepers hold the towers; Static broadcasts Thorne's logs. Completing it adds the Keepers singing to the sealing."
+  },
+  {
    "id": "M18",
    "type": "main",
    "act": "Act 4",
@@ -1389,9 +1616,28 @@
     "art": "strand"
    },
    "prereq": [
-    "M17"
+    "M17b"
    ],
    "objectives": [
+    {
+     "type": "talk",
+     "target": "strand_defects",
+     "count": 1,
+     "location": {
+      "area": "dustara_town",
+      "planet": "dustara",
+      "spot": "Strand's stolen shuttle",
+      "art": "strand"
+     },
+     "then": {
+      "art": "strand",
+      "lines": [
+       "A battered Helix shuttle drops into Dustmere's plaza. The hatch opens. It's Strand.",
+       "Strand: Field Division. Second Class. ...Resigning.",
+       "Strand: Ostrander's soldiers have the crater sealed tight. But nobody stops a Helix shuttle. Get in. I'll fly you past the cordon."
+      ]
+     }
+    },
     {
      "type": "visit",
      "target": "node:starfall",
@@ -1414,7 +1660,21 @@
       "planet": "starfall",
       "spot": "Crater rim",
       "note": "tile map or future painted map; place this spot when building"
-     }
+     },
+     "at": "141",
+     "hint": "Go to the Crater Rim"
+    },
+    {
+     "type": "choice",
+     "target": "novaryx_way",
+     "count": 1,
+     "default": 0,
+     "hint": "Novaryx answers the Shards. What do you do?",
+     "options": [
+      "Calm it and ask it to guide you",
+      "Try to capture it"
+     ],
+     "at": "141"
     },
     {
      "type": "legendary_encounter",
@@ -1427,12 +1687,23 @@
       "planet": "starfall",
       "spot": "Crater rim",
       "note": "tile map or future painted map; place this spot when building"
-     }
+     },
+     "skip_if": {
+      "flag": "novaryx_way",
+      "value": 1,
+      "lines": [
+       "You don't reach for a pod. You just hold out your hand, the way Tamsin taught you: a capture isn't taking, it's asking.",
+       "Novaryx tilts its great signal wings and looks at you for a long time.",
+       "Then it lowers its head until its glow touches Zib. Zib bips, very softly.",
+       "Novaryx will guide you down into the crater. Its light shows the way."
+      ]
+     },
+     "at": "141"
     }
    ],
    "dialogue": {
     "start": [
-     "Strand: That shuttle goes straight to the crater. Take it. I'm done with Helix."
+     "Strand: Linker! Meet me in Dustmere's plaza. I'm done with Helix."
     ],
     "progress": [
      "Keep at it, Linker. You've got this."
@@ -1477,7 +1748,14 @@
       "planet": "starfall",
       "spot": "Rift vortex",
       "note": "tile map or future painted map; place this spot when building"
-     }
+     },
+     "ally": {
+      "who": "Sola",
+      "mon": "Squawktone",
+      "lv": 52
+     },
+     "intro": "Do you know what infinite energy means? It means no accident is ever final.",
+     "lose": "...Elena isn't in there. There's nothing in there but hunger."
     },
     {
      "type": "cutscene",
@@ -1488,6 +1766,26 @@
       "planet": "starfall",
       "spot": "Rift vortex",
       "note": "tile map or future painted map; place this spot when building"
+     },
+     "scene": "starfall_battle",
+     "title": "The Rift closes: the Signal song",
+     "lines": [
+      "Thorne stares into the Rift, looking for Elena. He sees only Oblivane: starving, enormous and sad. He drops to his knees.",
+      "Director Thorne: Reroute the engine to the seal. I'll hold it. Go!",
+      "Zib pours its light into the Shards. One by one, its lights start to go out.",
+      "You, Sola, Novaryx and Zib start to sing the Signal. It's the Spore Choir's song from Sporeholm. Hmm-mm-mmm."
+     ],
+     "lines_if": {
+      "keepers_call": [
+       "Over Static's broadcast, every Keeper joins in: Hank, Dr. Moor, Captain Marsh, Static, Basalt, Ingrid, Echo and Iris, Kade.",
+       "On every world, every Alienmon sings with them."
+      ]
+     },
+     "then": {
+      "evolve": "starter",
+      "lines": [
+       "{starter3} blazes like a small star and pushes the Rift closed with light."
+      ]
      }
     }
    ],
@@ -1499,7 +1797,9 @@
      "Keep at it, Linker. You've got this."
     ],
     "complete": [
-     "The Shards blaze and the Rift folds shut. From the fading light stumbles Teo Reyes, a crystal Alienmon at his side. Sola runs to him."
+     "The Shards blaze and the Rift folds shut. From the last of its light steps Teo Reyes, an adult Lumivex at his side. Sola runs to him.",
+     "Teo: Sola? ...You're so tall.",
+     "Teo: Listen, all of you. The seal can only be truly healed from Ystra's side. And the Seedmother... she's fading."
     ]
    },
    "rewards": {

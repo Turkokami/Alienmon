@@ -958,5 +958,21 @@
     "Pell: Helix Directive! Field Division! ...Second Class! We are NOT lost. We are... surveying."
    ]
   }
+ ],
+ "136": [
+  {
+   "art": "explorer",
+   "name": "Tamsin",
+   "after": "M17b",
+   "until": "M19",
+   "near": [
+    10,
+    9
+   ],
+   "t": [
+    "Tamsin: The crater's three levels deep, and the light gets stranger the further down you go.",
+    "Tamsin: Thirty years I've looked for the world on my question-mark patch. Maybe it's down there."
+   ]
+  }
  ]
 }
