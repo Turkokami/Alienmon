@@ -69,3 +69,28 @@ function secMapDraw(){rect(0,0,160,144,'#120c22');box(0,0,160,16,'#1b1424','#5ff
  if(frame%30<20){const px=Math.round(inside?hg.x+(G.sec.x+0.5)*hg.k:hg.x+hg.w/2),py=Math.round(inside?hg.y+(G.sec.y+0.5)*hg.k:hg.y+hg.h/2);rect(px-2,py-2,5,5,'#ffffff');rect(px-1,py-1,3,3,'#d7262e')}
  const sel=SWORLD[B.sel],known=V[sel.id];box(0,118,160,26,'#1b1424','#5ff2ff');txt(known?sel.name.replace(/^Molten Frontier: /,'').slice(0,26):'???',4,122,'#ffd23f',7);
  txt(B.marks[sel.id]?(B.marks[sel.id]===2?'Tracked quest here!':'A quest waits here.'):(B.sel===B.here?'You are here.':'Arrows: browse  B: back'),4,132,'#e8e0ff',6)}
+
+/* ---- Bag pockets: Items / Pods / Key Items / Tech Discs (left and right switch pockets) ---- */
+const POCKETS=['Items','Pods','Key Items','Tech Discs'];
+function bagPockets(){const items=[{kind:'quick',n:'Quick heal team',c:'',d:'Uses the smallest Gels that will top up every hurt Alienmon on your team.'}].concat(bagList(false));
+ const pods=PODS.map(p=>({kind:'pod',it:p,n:p.n,c:G.pods[p.k]||0,d:(p.d||'A capture pod.')+' Use it in battle.'}));
+ const discs=typeof discList==='function'?discList():[];
+ return[{n:'Items',list:items},{n:'Pods',list:pods},{n:'Key Items',list:keyList()},{n:'Tech Discs',list:discs}]}
+function quickHeal(){const gels=ITEMS.filter(i=>i.heal&&i.k!=='fullgel').sort((a,b)=>a.heal-b.heal),L=[];let used=0;
+ for(const m of G.party){if(m.hp<=0)continue;let need=stat(m,0)-m.hp;while(need>0){const g=gels.find(i=>(G.items[i.k]||0)>0&&i.heal>=need)||gels.slice().reverse().find(i=>(G.items[i.k]||0)>0);if(!g)break;G.items[g.k]--;used++;const a=Math.min(g.heal,need);m.hp+=a;need-=a}}
+ const fainted=G.party.filter(m=>m.hp<=0).length;
+ say(used?['Used '+used+' Gel'+(used>1?'s':'')+'. '+(G.party.every(m=>m.hp<=0||m.hp>=stat(m,0))?'Your team is topped up!':'You ran out of Gels.')].concat(fainted?[fainted+' fainted Alienmon need a Revive Spark or a Recovery Bay.']:[]):
+  [G.party.some(m=>m.hp>0&&m.hp<stat(m,0))?'You have no Gels left.':'Your team is already at full health.'])}
+function bagDrawP(sel){const PK=bagPockets(),p=PK[B.pk||0];drawBag(p.list,sel,'< '+p.n+' >');if(!p.list.length)txt(p.n==='Tech Discs'?'No Tech Discs yet.':'Nothing here yet.',6,20,'#a99cc8',7)}
+
+/* ---- your lead Alienmon follows one tile behind you ---- */
+let SFOL=null;
+const followOn=()=>!(G.opt&&G.opt.noFollow)&&G.party.some(m=>m.hp>0);
+function secFollowStep(x,y){if(!G.sec)return;SFOL=SFOL&&SFOL.sec===G.sec.id?{sec:G.sec.id,from:SFOL.at,at:[x,y]}:{sec:G.sec.id,from:[x,y],at:[x,y]}}
+function secFollowDraw(people,s,cx,cy,p){if(!SFOL||SFOL.sec!==s.id||!followOn())return;const m=G.party.find(m=>m.hp>0),name=D[m.id].name,im=OWI[name];if(!okI(im))return;
+ const t=SM?p:1,fx=(SFOL.from[0]+(SFOL.at[0]-SFOL.from[0])*t)*16,fy=(SFOL.from[1]+(SFOL.at[1]-SFOL.from[1])*t)*16;
+ if(!SM&&SFOL.at[0]===G.sec.x&&SFOL.at[1]===G.sec.y)return;
+ people.push({y:fy-1,draw:()=>{const X=Math.round(fx-cx),Y=Math.round(fy-cy);ctx.fillStyle='rgba(20,10,20,0.35)';ctx.beginPath();ctx.ellipse(X+8,Y+15,6,2,0,0,6.283);ctx.fill();
+  ctx.save();ctx.imageSmoothingEnabled=true;if(typeof monFilter==='function')monFilter(m);ctx.drawImage(im,((frame>>4)&1)*64,0,64,64,X-2,Y-5-(SM?Math.round(Math.sin(t*Math.PI)):0),20,20);ctx.restore()}})}
+GEAR.push({k:'follow',has:()=>G.party.length>0,label:()=>'Follower: '+(G.opt&&G.opt.noFollow?'Off':'On'),use(){G.opt=G.opt||{};G.opt.noFollow=!G.opt.noFollow;
+ say(G.opt.noFollow?'Your Alienmon will ride in its pod.':nm(G.party.find(m=>m.hp>0)||G.party[0])+' is happy to walk with you!')}});

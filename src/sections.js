@@ -90,7 +90,7 @@ function secStepHeld(){const d=held.up?'up':held.down?'down':held.left?'left':he
  if(a&&a.arrival)return secLeaveForShip();
  if(!a||!secWalk(a.s,a.x,a.y)){bumpSfx();return}
  const lw=a.s.warps.find(w=>w.tile[0]===a.x&&w.tile[1]===a.y&&w.node);if(lw&&!gateOpen(lw.node)){bumpSfx();return say(gateMsg(lw.node))}
- SM={t:0,n:secStepN(s),dx:DIRS[d][0],dy:DIRS[d][1],to:a}}
+ secFollowStep(G.sec.x,G.sec.y);SM={t:0,n:secStepN(s),dx:DIRS[d][0],dy:DIRS[d][1],to:a}}
 // camera: follows the player; it only stops at an edge with nothing beyond it
 function secCam(s,px,py){const W=s.tiles[0]*16,H=s.tiles[1]*16,e=s.edges,open=k=>e[k]&&SWORLD[e[k].to];
  let cx=px+8-80,cy=py+8-76;if(!open('left'))cx=Math.max(0,cx);if(!open('right'))cx=Math.min(W-160,cx);if(!open('top'))cy=Math.max(0,cy);if(!open('bottom'))cy=Math.min(H-144,cy);
@@ -105,7 +105,7 @@ function drawSec(){const s=SWORLD[G.sec.id],p=SM?SM.t/SM.n:0,jp=SJ?SJ.t/SEC_JUMP
  const people=secNpcs(s).map(n=>({y:n.y*16+(n.oy||0),draw:()=>n.legend?secDrawLegend(n.legend,n.x*16-cx,n.y*16-cy):secDrawChar(n.art,n.face||'down',n.x*16+(n.ox||0)-cx,n.y*16+(n.oy||0)-cy,(n.ox||n.oy)&&((frame>>3)&1)?1:0)}));
  const kp=PL[G.planet]&&PL[G.planet].keeper;for(const o of s.objects||[])if(o.k==='keeper'&&kp)people.push({y:o.tile[1]*16,draw:()=>secDrawChar(kp.art,'down',o.tile[0]*16-cx,o.tile[1]*16-cy,0)});
  people.push({y:py,me:1,draw:()=>{const k=(G.gender||'boy');if(hop){ctx.fillStyle='rgba(20,10,20,0.3)';ctx.beginPath();ctx.ellipse(px-cx+8,py-cy+15,5,2,0,0,6.283);ctx.fill()}const hv=secHoverOn(s);if(hv)secDrawBoard(px-cx,py-cy-hop);secDrawChar(k,face,px-cx,py-cy-hop-(hv?3:0),hv?0:SM&&p>0.25&&p<0.75?1:0,true)}});
- people.sort((a,b)=>a.y-b.y).forEach(o=>o.draw());
+ secFollowDraw(people,s,cx,cy,p);people.sort((a,b)=>a.y-b.y).forEach(o=>o.draw());
  for(const m of s.mons||[]){if(G.monGone&&G.monGone[s.id+':'+m.x+','+m.y])continue;const im=OWI[shownMon(m.mon,0)];if(!okI(im))continue;const X=m.x*16-cx,Y=m.y*16-cy;if(X<-24||Y<-24||X>176||Y>160)continue;
   ctx.fillStyle='rgba(20,10,20,0.35)';ctx.beginPath();ctx.ellipse(X+8,Y+15,6,2,0,0,6.283);ctx.fill();ctx.save();ctx.imageSmoothingEnabled=true;ctx.drawImage(im,((frame>>4)&1)*64,0,64,64,X-2,Y-5,20,20);ctx.restore()}
  for(const o of s.objects||[])if(o.k==='stash'&&!(G.opened&&G.opened[s.id+':'+o.tile]))secDrawStash(o.tile[0]*16-cx,o.tile[1]*16-cy);
@@ -193,7 +193,7 @@ function secJump(){const s=SWORLD[G.sec.id],[dx,dy]=DIRS[face];
  // two tiles is a normal hop; three clears a wider gap; nothing to land on is a bump
  const n=[2,3].find(k=>ok(G.sec.x+dx*k,G.sec.y+dy*k)&&!(k===3&&ok(G.sec.x+dx,G.sec.y+dy)&&ok(G.sec.x+dx*2,G.sec.y+dy*2)));
  if(!n){bumpSfx();return}
- SJ={t:0,from:[G.sec.x,G.sec.y],to:[G.sec.x+dx*n,G.sec.y+dy*n]};jumpSfx()}
+ SFOL=null;SJ={t:0,from:[G.sec.x,G.sec.y],to:[G.sec.x+dx*n,G.sec.y+dy*n]};jumpSfx()}
 
 // a Linker Stash on the ground: a little gold-and-violet capsule with a cyan light (drawn, so every world gets the same look)
 function secDrawStash(x,y){if(x<-16||y<-16||x>160||y>144)return;const b=Math.round(Math.sin(frame/14)),g=frame%60<30;

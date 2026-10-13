@@ -771,8 +771,8 @@ function updMenu(){if(menuMode==='quests'){qLogUpd();return}const opts=['Party',
   if(P_('a')){const nd=N[B.msel];choose('Travel to '+nd.n.slice(0,20)+'?',['Travel here','Cancel'],k=>{if(k===0){G.wpos=[nd.x,nd.y+10];menuMode='root';B=null;wregion=N.indexOf(nd);wbanner=80;
      cut(1,'Fast travel: '+nd.n.slice(0,14),()=>{scene='world';PREV='world'})}})}
   if(menuMode==='map')drawMap(B.msel)}
- else if(menuMode==='bag'){tip('bag');const list=bagList(false).concat(keyList()),n=list.length;if(P_('up'))B.bsel=(B.bsel+n-1)%n;if(P_('down'))B.bsel=(B.bsel+1)%n;if(P_('b')){menuMode='root';B=null;return}
-  if(P_('a')){const e=list[B.bsel];if(e.kind==='key')say(e.n+': '+e.d);else if(!e.c)say('You have no '+e.n+' left.');else{B.item=e.it;menuMode='bagpick';B.psel=0}}if(menuMode==='bag')drawBag(list,B.bsel,'Bag')}
+ else if(menuMode==='bag'){tip('bag');B.pk=B.pk||0;if(P_('left')){B.pk=(B.pk+3)%4;B.bsel=0}if(P_('right')){B.pk=(B.pk+1)%4;B.bsel=0}const list=bagPockets()[B.pk].list,n=Math.max(1,list.length);if(P_('up'))B.bsel=(B.bsel+n-1)%n;if(P_('down'))B.bsel=(B.bsel+1)%n;if(P_('b')){menuMode='root';B=null;return}
+  if(P_('a')){const e=list[B.bsel];if(!e);else if(e.kind==='quick')quickHeal();else if(e.kind==='pod')say(e.n+': '+e.d);else if(e.kind==='disc')discUse(e);else if(e.kind==='key')say(e.n+': '+e.d);else if(!e.c)say('You have no '+e.n+' left.');else{B.item=e.it;menuMode='bagpick';B.psel=0}}if(menuMode==='bag')bagDrawP(B.bsel)}
  else if(menuMode==='bagpick'){const n=G.party.length;if(P_('up'))B.psel=(B.psel+n-1)%n;if(P_('down'))B.psel=(B.psel+1)%n;if(P_('b')){menuMode='bag';return}
   if(P_('a')){const L=[];if(useOn(B.item,G.party[B.psel],L))G.items[B.item.k]--;say(L);menuMode='bag'}if(menuMode==='bagpick')drawParty(B.psel,'Use '+B.item.n+' on:')}
  else if(menuMode==='sum'){if(P_('b')){menuMode='party';return}if(P_('a')&&B.psel>0){const m=G.party.splice(B.psel,1)[0];G.party.unshift(m);say(nm(m)+' is now your lead.');B.psel=0;menuMode='party';return}drawSum(G.party[B.psel])}
@@ -786,7 +786,7 @@ function drawMap(sel){rect(0,0,160,144,'#120c22');const k=160/WORLD.w,oy=16,h=WO
  if(G.wpos&&frame%30<20){const x=Math.round(G.wpos[0]*k),y=Math.round(oy+G.wpos[1]*k);rect(x-2,y-2,5,5,'#ffffff');rect(x-1,y-1,3,3,'#d7262e')}
  const nd=WORLD.nodes[sel],pi=pidx(nd.k);box(0,oy+h,160,144-oy-h,'#1b1424','#5ff2ff');txt(nd.n.slice(0,25),4,oy+h+4,'#ffd23f',7);
  txt((pi>=0?PL[pi].name+'  ':'')+'A: travel  B: back',4,oy+h+13,'#e8e0ff',6)}
-function drawMenuScreen(){if(menuMode==='quests'){qLogDraw();return}if(menuMode==='secmap'){secMapDraw();return}if(menuMode==='dex')drawDex();else if(menuMode==='party')drawParty(B?B.psel:0,'Party');else if(menuMode==='bag')drawBag(bagList(false),B.bsel,'Bag');else if(menuMode==='bagpick')drawParty(B.psel,'Use '+B.item.n+' on:');
+function drawMenuScreen(){if(menuMode==='quests'){qLogDraw();return}if(menuMode==='secmap'){secMapDraw();return}if(menuMode==='dex')drawDex();else if(menuMode==='party')drawParty(B?B.psel:0,'Party');else if(menuMode==='bag')bagDrawP(B.bsel);else if(menuMode==='bagpick')drawParty(B.psel,'Use '+B.item.n+' on:');
  else if(menuMode==='sum')drawSum(G.party[B.psel]);else if(menuMode==='storage')drawBox(B.bxsel,'Ship storage');else if(menuMode==='swappick')drawParty(B.psel,'Swap with:');else if(menuMode==='boxsum')drawSum(G.box[B.bxsel]);else if(menuMode==='map')drawMap(B.msel);else drawUnder()}
 function drawSum(m){const d=D[m.id],tr=TR(m.id);box(0,0,160,144);dspr(m.id,4,4,2);txt(d.name,40,6,'#1b1424');txt('Lv'+m.lv+'  '+d.t.join('/'),40,17,'#3b2a5c',6);
  txt('HP '+m.hp+'/'+stat(m,0),40,26,'#3b2a5c',6);expbar(40,34,80,m);txt(m.lv>=100?'Max level':'Next Lv: '+Math.max(0,xpFor(m.id,m.lv+1)-m.xp)+' EXP',40,39,'#3b2a5c',6);
