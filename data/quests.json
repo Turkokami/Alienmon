@@ -712,18 +712,26 @@
       "planet": "glyphos",
       "spot": "Mural hall: Ystra, the Devourer, the Seedmother",
       "note": "tile map or future painted map; place this spot when building"
-     },
+     }
+    },
+    {
+     "type": "cutscene",
+     "target": "prophecy_mural",
+     "count": 1,
+     "at": "081",
+     "scene": "prophecy_mural",
+     "title": "The Prophecy Mural",
+     "hint": "Look for the last panel in the Mural Hall",
+     "lines": [
+      "Behind the third mural there is one more panel, half hidden in shadow.",
+      "A figure stands in a ring of every kind of Alienmon. From their joined light, a tree is growing.",
+      "Ystran echo: ...she is scattered so she may live... whoever reunites all her children will let the Seedmother grow again... and her world with her...",
+      "You take a rubbing of the carving. You don't understand it yet."
+     ],
      "then": {
-      "art": "ystran",
       "items": {
        "prophecy_mural": 1
-      },
-      "lines": [
-       "Behind the third mural there is one more panel, half hidden in shadow.",
-       "A figure stands in a ring of every kind of Alienmon. From their joined light, a tree is growing.",
-       "Ystran echo: ...she is scattered so she may live... whoever reunites all her children will let the Seedmother grow again... and her world with her...",
-       "You take a rubbing of the carving. You don't understand it yet."
-      ]
+      }
      }
     }
    ],
