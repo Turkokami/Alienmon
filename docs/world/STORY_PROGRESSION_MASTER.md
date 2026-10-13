@@ -124,7 +124,15 @@ These are inconsistencies found in today's game data. Claude Code should fix all
 - **Story scenes** that play once when you walk into a section live in `data/story.json`.
 - Full list of changes: `docs/BOOK_SYNC_CHANGELOG.md`.
 
-## 6. Seedmother revision (docs/SEEDMOTHER_REVISION.md)
+## 6. Seedmother Revision 2 (docs/ALIENMON_SEEDMOTHER_REVISION.md)
+
+- **Act 1 (M01–M10) has no hint of the truth.** The build checks this with `tools/check_act1.js`.
+- **Reveal steps:**
+  - **M11 Pyros:** Teo's cache holds the journal page (key item `teo_journal_page`).
+  - **M12 Glacia:** Ingrid's line about no fossil of the Seedmother.
+  - **M16 Halo:** the new step at the third wind shrine (Floating Gardens, 120) gives the Prophecy Shrine (key item `prophecy_shrine`).
+  - **M17 Umbra:** the Seedmother's own voice after Shard 8.
+- **The Heartroot page** in the Xenodex opens only after M16.
 
 - **Heartroot counter:** species caught plus story legendaries befriended (a calmed Novaryx or Oblivane), out of every species in the game, so new generations raise the total. It is shown in START > Xenodex (press A). Data lives in `world_state.json` under `heartroot`.
 - **Blooms:** at each sixth of the total, part of Ystra blooms (flags `bloom_1` to `bloom_6`) and a Ystran echo returns there.

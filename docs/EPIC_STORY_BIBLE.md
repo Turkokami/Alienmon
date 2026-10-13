@@ -1,6 +1,6 @@
 # ALIENMON — The Epic Story Bible
 
-> **Seedmother revision (canon, wins over everything else):** the Seedmother split herself into the seeds. She is not waiting anywhere; she is the Alienmon. Only the Heartroot is left on barren Ystra. Whoever reunites all her children lets her grow again. See `docs/SEEDMOTHER_REVISION.md`.
+> **Seedmother Revision 2 (current canon, wins over everything else):** the Seedmother split herself into the seeds; she is the Alienmon. Only the Heartroot is left on barren Ystra. Act 1 (Prologue to Ch 8) keeps the old belief that she stayed behind on Ystra. The truth comes in Act 2: Ch 9 Pyros (Teo's journal page with Vashti's damaged Codex line), Ch 10 Glacia (no Seedmother fossil), Ch 13 Halo's third wind shrine (Liss and the Prophecy Shrine), Ch 14 Umbra after Shard 8 (her own voice). See `docs/ALIENMON_SEEDMOTHER_REVISION.md`.
 
 > **Story canon:** the Alienmon novels (Books 1-5, planned in `docs/SAGA_MASTER_PLAN.md`) are now the story canon. The books win on story, characters and dialogue; the game data wins on Alienmon types, stats and moves. Every change made to match them is listed in `docs/BOOK_SYNC_CHANGELOG.md`.
 

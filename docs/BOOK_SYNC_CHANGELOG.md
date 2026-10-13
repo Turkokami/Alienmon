@@ -113,7 +113,7 @@ The Alienmon novels (Books 1–5, planned in `docs/SAGA_MASTER_PLAN.md`) are now
 | --- | --- | --- | --- |
 | Saga Master Plan and Epic Story Bible added as Markdown; the plan's renamed-Alienmon row now points at `data/renames.json` so the old-name build check passes | n/a | n/a | `docs/SAGA_MASTER_PLAN.md`, `docs/EPIC_STORY_BIBLE.md`, `tools/pdf_to_md.py` |
 
-## Seedmother revision (docs/SEEDMOTHER_REVISION.md)
+## Seedmother Revision 1 (history: docs/ALIENMON_SEEDMOTHER_REVISION_1.md, superseded by Revision 2 below)
 
 | Change | From | Where in the game | Files |
 | --- | --- | --- | --- |
@@ -139,11 +139,36 @@ The Alienmon novels (Books 1–5, planned in `docs/SAGA_MASTER_PLAN.md`) are now
 | Unifier bonus (every species in the game, after the story): epilogue, Unifier title, golden Linker skin | Rev 4.2 | Anywhere, after P04 | `src/story.js`, `src/template.html` |
 | Old lines saying the Seedmother is alive, waiting or fading were rewritten | Rev 4.1 | Ystra NPCs, Pyros shrine text, key items | `data/sections/planets/14_ystra.json`, `data/batches/batch01_kessler/planets.json`, `src/world.js` |
 
-**Not done, or worth deciding (Seedmother revision):**
+**Not done, or worth deciding (Revision 1):**
 1. **A real "Codex/journal" screen:** the game has none, so the legend lives in the Prophecy Rubbing key item (Bag > Key Items) and on the Xenodex Heartroot page.
 2. **Ystra's maps don't visibly change:** blooming is shown through returning echoes and dialogue, because new map art isn't allowed. Bloomed versions of the Ystra maps could be rendered later.
 3. **The Unifier's "Linker skin":** this is the golden device shell, not an in-world outfit, because no player outfit system exists.
 4. **The Forge Fortress cage hall:** it's on the classic painted map, so Project Unity is labelled only on Helix Station.
+
+## Seedmother Revision 2 (docs/ALIENMON_SEEDMOTHER_REVISION.md, current)
+
+| Change | From (file, section) | Where in the game | Files |
+| --- | --- | --- | --- |
+| Act 1 restored to its book text: the Glyphos Prophecy Mural step, its rubbing, "Every Alienmon is a piece of her" and Thorne's "Every species, Sola" line come out of M10 | Revision 2: "Act 1 is unchanged" | M10 Glyphos | `data/quests.json`, `data/sections/quest_spots.json` |
+| Build check: fails on any Act 1 hint (quests, scenes, signs, townsfolk, planet blurbs) | Revision 2: the task's check | Build | `tools/check_act1.js`, `tools/build.js` |
+| Old saves: the Act 1 rubbing is removed; a save left on the removed M10 step completes normally; saves past Halo get the Prophecy Shrine | Revision 2 | Save load | `src/story.js`, `data/story.json` (version 7) |
+| The Xenodex Heartroot page and its subtitle open only after the Halo reveal | Revision 2: Act 1 unchanged; the Xenodex meter | START > Xenodex | `src/story.js`, `src/template.html` |
+| Reveal 1, Pyros: Teo's journal page with Vashti's damaged Codex line, "She is scattered so she may live..." | Revision 2: reveal step 1 | M11, Teo's cache, Deep Mines | `data/quests.json`, `src/story.js` |
+| Reveal 2, Glacia: Ingrid's fossils show no trace of the Seedmother (kept from Revision 1) | Revision 2: reveal step 2 | M12 | `data/quests.json` |
+| Reveal 3, Halo: at the third wind shrine Liss reveals the truth and the full prophecy, which becomes the Prophecy Shrine lore item; the cutscene uses the Prophecy Mural art | Revision 2: reveal step 3 | M16, new step at the Floating Gardens (120) | `data/quests.json`, `data/sections/quest_spots.json`, `data/story.json` (save shift) |
+| Reveal 4, Umbra: Zib's full message, in the Seedmother's own voice | Revision 2: reveal step 4 | After M17 (Shard 8) | `data/quests.json` |
+| Project Unity on the Forge Fortress cage hall too (signs beside the lower cage rooms); the Helix Station log terminal explains it | Revision 2: Project Unity | Forge Fortress (painted map), Helix Station 109 | `data/painted_maps.json`, `data/sections/planets/09_helix.json` |
+| The Reunion comes through the Warp Gate, which wakes at the Reunion and stays open | Revision 2: the ending | P03 cutscene, P03 and P04 dialogue | `data/quests.json` |
+| Spoiler-free Xenodex lore for the Seedmother and Oblivane (no Act 2 reveal in the lore the website uses) | Revision 2: Act 1 unchanged | Xenodex, website | `data/batches/batch01_kessler/alienmon.json` |
+| Stale "the Seedmother waits past the void" lines removed from scratch build files | Revision 2: sweep for alive/waiting/fading | Not in the game | `data/sections/tmp/*.json` |
+| The Book Sync file and Revision 2 canon are stored in the project; Revision 1 is kept and marked superseded | Task | Docs | `docs/ALIENMON_BOOK_SYNC_CHANGES.md`, `docs/ALIENMON_SEEDMOTHER_REVISION.md`, `docs/ALIENMON_SEEDMOTHER_REVISION_1.md`, `CLAUDE.md`, `docs/EPIC_STORY_BIBLE.md`, `docs/world/STORY_PROGRESSION_MASTER.md` |
+
+**Unchanged from Revision 1, and still correct under Revision 2:**
+- the Heartroot meter and the Ystra blooms;
+- the Unifier bonus;
+- Project Unity on Helix Station;
+- the Reunion and the children's choice;
+- the Act 2+ dialogue sweep.
 
 ## How the new story data works
 

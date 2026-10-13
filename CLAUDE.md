@@ -10,13 +10,13 @@ Read this whole file first. Background lore and art style are in `docs/STORY_BIB
 
 ## Story canon: the books
 
-The Alienmon novels (Books 1-5) are the **story canon**: `docs/SAGA_MASTER_PLAN.md` (the books) and `docs/EPIC_STORY_BIBLE.md` (the game's chapter plan).
+The Alienmon novels (Books 1-5) are the **story canon** (the book-to-game list is `docs/ALIENMON_BOOK_SYNC_CHANGES.md`): `docs/SAGA_MASTER_PLAN.md` (the books) and `docs/EPIC_STORY_BIBLE.md` (the game's chapter plan).
 - The books win on story, characters and dialogue. The game data wins on Alienmon types, stats and moves; never change a type to match a book.
 - The player is a silent protagonist with any of the three starters. Book scenes with Plazmo/Plazmet/Solarach use the player's own starter line (`{starter}`, `{starter2}`, `{starter3}` in quest text). Sola always takes the starter that beats the player's (`{rival}` ...).
 - Kid-friendly for ages 7 and up. Nobody dies on screen.
 - Story features (partner battles, section scenes, cutscenes, choices, save migrations) are documented at the top of `src/story.js`; scenes and save shifts are in `data/story.json`.
 - Renamed Alienmon: old names live only in `data/renames.json`; `node tools/build.js` fails if one appears anywhere else.
-- **Seedmother revision (canon, wins over the books where they differ):** `docs/SEEDMOTHER_REVISION.md`. The Seedmother is scattered in every Alienmon; only the Heartroot is left on Ystra. Never lock the story ending behind Xenodex completion.
+- **Seedmother Revision 2 is current** (`docs/ALIENMON_SEEDMOTHER_REVISION.md`; Revision 1 is kept only as history). It wins over the books and the Book Sync file. Act 1 (Prologue to Ch 8) keeps the old belief that she stayed on Ystra, and `tools/check_act1.js` fails the build on any Act 1 hint. The reveal comes in Act 2: Pyros, Glacia, Halo's third wind shrine, then Umbra. Never lock the story ending behind Xenodex completion.
 - Every Book Sync change is listed in `docs/BOOK_SYNC_CHANGELOG.md`. Kit Briggs is a proposal awaiting approval: `docs/KIT_BRIGGS_PROPOSAL.md`.
 
 ---

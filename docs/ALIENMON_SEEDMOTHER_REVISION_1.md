@@ -1,3 +1,5 @@
+> **Superseded by Revision 2** (`docs/ALIENMON_SEEDMOTHER_REVISION.md`). Revision 2 moves the whole reveal out of Act 1 (no Glyphos Prophecy Mural, no Act 1 Project Unity line). Kept for history only.
+
 # Alienmon Story Revision: The Seedmother's Seeds
 
 #### Revision 1, October 2026. This changes the core lore of Alienmon. It applies to the game, Books 1–5
