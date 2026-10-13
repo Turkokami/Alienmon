@@ -32,7 +32,7 @@ function bumpSfx(){if(SBUMP>0)return;SBUMP=14;try{if(!AC||musicMode==='off')retu
 // arriving on a tile: warps (doors, mats, stairs, cave mouths) fire as you step onto them
 const secTrainerH=n=>({id:n.id,cls:n.trainer.cls,name:n.trainer.name,art:n.art,app:n.trainer.app,route:n.trainer.route});
 // the Molten Frontier's own trainers keep their world ids, lines and story-paced teams
-function secTrainerTalk(n){if(n.trainer.linker&&G.beaten[n.id])return say(n.t,null,n.art);if(!n.trainer.frontier)return trainerTalk(secTrainerH(n));const t0=n.t[0]||'',name=t0.split(':')[0],team=frontierTeam({id:n.id})||townTrainer(secTrainerH(Object.assign({},n,{trainer:{cls:name,name:''}}))).team;
+function secTrainerTalk(n){if(G.rem&&G.rem[n.id]&&G.beaten[n.id])return secRematch(n);if(n.trainer.linker&&G.beaten[n.id])return say(n.t,null,n.art);if(!n.trainer.frontier)return trainerTalk(secTrainerH(n));const t0=n.t[0]||'',name=t0.split(':')[0],team=frontierTeam({id:n.id})||townTrainer(secTrainerH(Object.assign({},n,{trainer:{cls:name,name:''}}))).team;
  const tr={name,art:n.art,intro:t0.split(': ').slice(1).join(': ')||'Let\'s battle!',lose:'Wow, you two are in sync. Good luck out there!',after:'Keep exploring, Linker. Every region has new Alienmon.',team,bkey:n.id};
  qEvent('talk',n.id,{x:n.x*16+8,y:n.y*16+15});if(G.beaten[n.id])return say(name+': '+tr.after,null,n.art);if(!G.party.some(m=>m.hp>0))return say('Your team needs to heal first.');say(t0,()=>startBattle(team.map(([id,lv])=>mk(id,lv)),tr),n.art)}
 // line of sight: step into a trainer's view (up to 5 clear tiles straight ahead of them) and they call you out
@@ -41,7 +41,7 @@ function secLos(){if(!G.party.length||!G.party.some(m=>m.hp>0))return false;cons
   for(let k=1;k<=5;k++){const x=n.x+dx*k,y=n.y+dy*k;if(x===G.sec.x&&y===G.sec.y){if(!n.home)n.home=[n.x,n.y];SSPOT={n,t:36,walk:0,steps:k-1};exclaimSfx();face=({up:'down',down:'up',left:'right',right:'left'})[n.face||'down'];return true}if(!secWalk(s,x,y))break}}return false}
 function secArrive(){const s=SWORLD[G.sec.id],w=s.warps.find(w=>w.tile[0]===G.sec.x&&w.tile[1]===G.sec.y);if(w&&w.kind==='gate')return secGate(w);if(w&&SWORLD[w.to])return secWarp(w);
  if(G.grace>0)G.grace=Math.max(0,G.grace-15);if(G.jam>0)G.jam=Math.max(0,G.jam-2);stepc++;
- if(secLos())return;
+ if(eggStep())return;if(secLos())return;
  if(secTile(s,G.sec.x,G.sec.y)===','&&!(G.grace>0)&&R()<0.1)wild()}
 // Frontier gates: the story gate decides; through it you arrive at that planet's landing edge (its own sections,
 // or its classic painted town until that planet's sections are built). Walking back out returns you to the gate.
@@ -58,7 +58,7 @@ function secInteract(){const s=SWORLD[G.sec.id],[dx,dy]=DIRS[face],x=G.sec.x+dx,
  const qe=secQAt(x,y,false);if(qe&&(!secNpcAt(s,x,y)||qe.k==='giver'||qe.k==='turnin'))return qInteract(qe);   // a townsperson who offers or takes back a mission
  const wm=secMonAt(s,x,y);if(wm)return secMonBattle(s,wm);
  const n=secNpcAt(s,x,y);if(n){n.face=({up:'down',down:'up',left:'right',right:'left'})[face];if(n.legend)return legendBattle({mon:n.legend,lvl:n.lv||60});if(n.trainer)return secTrainerTalk(n);if(n.wid)qEvent('talk',n.wid,{x:n.x*16+8,y:n.y*16+15});if(n.story==='starter'&&!G.party.length)return secStarterTalk();if(n.story==='arena')return arenaMenu();return say(!G.party.length&&n.pre?n.pre:n.t,null,n.por||undefined)}
- const o=(s.objects||[]).find(o=>o.tile[0]===x&&o.tile[1]===y);if(!o)return;
+ const o=(s.objects||[]).find(o=>o.tile[0]===x&&o.tile[1]===y);if(!o)return secFieldA(s,x,y);
  if(o.k==='arena')return arenaMenu();
  if(o.k==='keeper')return keeperTalk(PL[G.planet]);
  if(o.k==='stash'){G.opened=G.opened||{};const tag=s.id+':'+o.tile;if(G.opened[tag])return;G.opened[tag]=1;const n=o.n||1;

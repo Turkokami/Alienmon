@@ -14,6 +14,7 @@ const onSurface=()=>secOn()&&(PREV==='planet'||scene==='planet');
 function extrasBeats(){if(!G||!G.party||!G.party.length)return;G.key=G.key||{};const give=(k,lines)=>{if(G.key[k])return;G.key[k]=1;qNotify('GEAR','gear',lines)};
  if(G.shards>=1)give('hover_board',['Dr. Vashti is calling on your Linker!','"Congratulations on your first Signal Shard! I\'m sending you my old Hover Board."','You received the Hover Board! Turn it on in START > Gear. It glides twice as fast outdoors.']);
  if(G.shards>=2)give('warp_beacon',['Dr. Vashti is calling on your Linker!','"Two Shards! You\'ll be travelling a lot now, so take this Warp Beacon."','You received the Warp Beacon! It beams you to any Recovery Bay you have visited. START > Gear.']);
+ if(G.shards>=3)give('signal_finder',['Dr. Vashti is calling on your Linker!','"Three Shards! Take my Signal Finder. Plenty of Linkers drop things and never find them again."','You received the Signal Finder! Use it in START > Gear to find hidden items.']);
  dexBeats();eventBeats();for(const g of GEAR)if(g.beat)g.beat()}
 function gearMenu(){extrasBeats();const L=GEAR.filter(g=>g.has());
  if(!L.length)return say('No field gear yet. Gear like the Hover Board turns up as your journey goes on.');
@@ -75,7 +76,7 @@ const POCKETS=['Items','Pods','Key Items','Tech Discs'];
 function bagPockets(){const items=[{kind:'quick',n:'Quick heal team',c:'',d:'Uses the smallest Gels that will top up every hurt Alienmon on your team.'}].concat(bagList(false));
  const pods=PODS.map(p=>({kind:'pod',it:p,n:p.n,c:G.pods[p.k]||0,d:(p.d||'A capture pod.')+' Use it in battle.'}));
  const discs=typeof discList==='function'?discList():[];
- return[{n:'Items',list:items},{n:'Pods',list:pods},{n:'Key Items',list:keyList()},{n:'Tech Discs',list:discs}]}
+ return[{n:'Items',list:items},{n:'Pods',list:pods},{n:'Key Items',list:keyList().concat(eggList())},{n:'Tech Discs',list:discs}]}
 function quickHeal(){const gels=ITEMS.filter(i=>i.heal&&i.k!=='fullgel').sort((a,b)=>a.heal-b.heal),L=[];let used=0;
  for(const m of G.party){if(m.hp<=0)continue;let need=stat(m,0)-m.hp;while(need>0){const g=gels.find(i=>(G.items[i.k]||0)>0&&i.heal>=need)||gels.slice().reverse().find(i=>(G.items[i.k]||0)>0);if(!g)break;G.items[g.k]--;used++;const a=Math.min(g.heal,need);m.hp+=a;need-=a}}
  const fainted=G.party.filter(m=>m.hp<=0).length;
@@ -136,3 +137,95 @@ GEAR.push({k:'gift',has:()=>G.party.length>0,label:()=>'Mystery Gift',use(){if(!
     G.gifts=G.gifts||{};if(G.gifts[h]){msg.textContent='This save already received that gift.';return}G.gifts[h]=1;close();const L=['Mystery Gift: '+gift.n+'!'];
     if(gift.g)giveAll(gift.g,L);if(gift.mon){const id=STARTERS[Math.floor(Math.random()*STARTERS.length)],m=mk(id,10,{gift:1});m.pri=1;const w=addMon(m);L.push('A Prismatic '+D[id].name+' joined '+(w==='party'?'your team':'your Storage')+'!');priSfx()}
     autosave();say(L)},true],['Cancel',(b,close)=>close()]])}});
+
+/* ---- hidden items: a few tiles on every outdoor map and cave hide something (A to search; the Signal Finder points the way) ---- */
+const HID={};
+const HID_LOOT=[[['gel',2],['cure',2],['stasis',3],['dust',150],['jammer',1]],[['megagel',2],['revive',1],['harmonic',2],['ether',1],['dust',400]],
+ [['fullgel',1],['maxrevive',1],['harmonic',3],['jammer',2],['dust',900]],[['singularity',1],['maxrevive',2],['fullgel',2],['dust',2000]]];
+const secTier=s=>Math.min(3,Math.floor(Math.max(0,pidx(s.pkey==='arena'?'dustara':s.pkey))/4)+(SEC_FRONTIER.has(s.id)?0:0));
+function secHidden(s){if(s.id in HID)return HID[s.id];if(s.type==='interior'||s.type==='arena')return HID[s.id]=[];
+ const r=rng(hash('hid'+s.id)),main=secMain(s),busy=new Set();for(const w of s.warps){busy.add(w.tile+'');busy.add(w.at+'')}for(const n of s.npcs||[])busy.add(n.x+','+n.y);for(const m of s.mons||[])busy.add(m.x+','+m.y);
+ for(const o of s.objects||[])busy.add(o.tile+'');for(const v of Object.values(s.spawns||{}))if(v)busy.add(v+'');for(const sp of Object.values(SECQ))if(sp.s===s.id){busy.add(sp.x+','+sp.y);for(const p of sp.pts||[])busy.add(p+'')}
+ const ok=[...main].filter(k=>{const[x,y]=k.split(',').map(Number);return s.rows[y][x]==='.'&&x>0&&y>0&&x<s.tiles[0]-1&&y<s.tiles[1]-1&&!busy.has(k)}).sort();
+ const n=Math.min(ok.length,s.tiles[0]*s.tiles[1]>400?2:1),out=[],tier=secTier(s);
+ for(let i=0;i<n;i++){const k=ok.splice(Math.floor(r()*ok.length),1)[0];if(!k)break;const[x,y]=k.split(',').map(Number);
+  const disc=r()<(s.type==='cave'||s.type==='landmark'||s.type==='tower'?0.45:0.2),L=HID_LOOT[tier][Math.floor(r()*HID_LOOT[tier].length)];
+  out.push({x,y,item:disc?'disc':L[0],n:disc?1:L[1],disc:disc?discPick(r,tier):null})}return HID[s.id]=out}
+const hidLeft=s=>secHidden(s).filter(h=>!(G.hid&&G.hid[s.id+':'+h.x+','+h.y]));
+function secFieldA(s,x,y){const kd=(KNOCK[s.id]||[]).find(d=>d[0]===x&&d[1]===y);if(kd)return knockDoor(s,kd);
+ const h=hidLeft(s).find(h=>h.x===x&&h.y===y);if(!h)return;G.hid=G.hid||{};G.hid[s.id+':'+x+','+y]=1;stashSfx();
+ if(h.disc!=null){G.discs=G.discs||{};const had=G.discs[h.disc];G.discs[h.disc]=1;return say(['You found something hidden on the ground!','It\'s a Tech Disc: '+MV[h.disc].n+'!'+(had?' (You already had it, so you sold the spare for 300 Stardust.)':' Teach it from Bag > Tech Discs.')],()=>{if(had)G.dust+=300})}
+ if(h.item==='dust'){G.dust+=h.n;return say(['You found something hidden on the ground!',h.n+' Stardust!'])}
+ const L=giveAll({[h.item]:h.n},['You found something hidden on the ground!']);say(L)}
+GEAR.push({k:'signal_finder',has:()=>!!G.key.signal_finder,label:()=>'Signal Finder',use(){if(!onSurface())return say('The Signal Finder only works on a world\'s surface.');
+ const s=SWORLD[G.sec.id],L=hidLeft(s);let world=0;for(const t of Object.values(SWORLD))if(t.pkey===s.pkey)world+=hidLeft(t).length;
+ if(!L.length)return say(['...No signal in this area.',world?world+' signal'+(world>1?'s':'')+' left somewhere on this world.':'You found everything hidden on this world!']);
+ const h=L.sort((a,b)=>Math.abs(a.x-G.sec.x)+Math.abs(a.y-G.sec.y)-Math.abs(b.x-G.sec.x)-Math.abs(b.y-G.sec.y))[0],dx=h.x-G.sec.x,dy=h.y-G.sec.y,d=Math.abs(dx)+Math.abs(dy);
+ const dir=(dy<0?'north':dy>0?'south':'')+(dx&&dy?'-':'')+(dx>0?'east':dx<0?'west':'');
+ say([d<=1?'BEEEEEP! It\'s right here! Face it and press A.':d<=4?'Beep-beep-beep! Something is very close, to the '+dir+'.':'Beep... beep... A signal to the '+dir+', about '+d+' steps away.',world+' signal'+(world>1?'s':'')+' left on this world.'])}});
+
+/* ---- Tech Discs: reusable discs that teach a move to any Alienmon of that move's type ---- */
+let DISCS=null;
+function discAll(){if(DISCS)return DISCS;DISCS=[];MV.forEach((m,i)=>{if(m&&!m.sig&&m.t&&m.t!=='None'&&m.p>=45)DISCS.push(i)});return DISCS}
+function discPick(r,tier){const A=discAll().slice().sort((a,b)=>MV[a].p-MV[b].p),q=Math.floor(A.length/4),lo=tier*q,hi=tier>=3?A.length:lo+q*2;return A[Math.min(A.length-1,lo+Math.floor(r()*Math.max(1,hi-lo)))]}
+const discFits=(mi,m)=>(D[m.id].t||[]).includes(MV[mi].t);
+function discList(){return Object.keys(G.discs||{}).map(Number).filter(mi=>MV[mi]).sort((a,b)=>MV[a].t.localeCompare(MV[b].t)||MV[a].n.localeCompare(MV[b].n))
+ .map(mi=>({kind:'disc',mi,n:MV[mi].n,c:'',d:'Tech Disc ('+MV[mi].t+', power '+MV[mi].p+'). Teaches any '+MV[mi].t+'-type Alienmon. Never used up.'}))}
+function discUse(e){const mi=e.mi,ok=G.party.filter(m=>discFits(mi,m)&&!m.moves.includes(mi));
+ if(!ok.length)return say('None of your team can learn '+MV[mi].n+'. Only '+MV[mi].t+'-type Alienmon can (and not ones that already know it).');
+ choose('Teach '+MV[mi].n+' to:',ok.map(m=>nm(m)+' Lv'+m.lv).concat(['Cancel']),i=>{const m=ok[i];if(!m)return;
+  if(m.moves.length<4){m.moves.push(mi);return say(nm(m)+' learned '+MV[mi].n+'!')}
+  choose('Forget which move?',m.moves.map(x=>MV[x].n).concat(['Cancel']),k=>{if(k>=m.moves.length)return;const old=MV[m.moves[k]].n;m.moves[k]=mi;if(m.ppm)delete m.ppm[mi];say(['1, 2 and... poof!',nm(m)+' forgot '+old+' and learned '+MV[mi].n+'!'])})})}
+
+/* ---- Linker Phone: Linkers you have beaten on the section maps can be called for a rematch ---- */
+const phoneList=()=>{const L=[];for(const s of Object.values(SWORLD))for(const n of s.npcs||[])if(n.trainer&&!n.trainer.app&&G.beaten[n.id])L.push({n,s});return L};
+const trName=n=>n.trainer.name?((n.trainer.cls?n.trainer.cls+' ':'')+n.trainer.name):(n.t&&n.t[0]||'Linker').split(':')[0];
+GEAR.push({k:'phone',has:()=>phoneList().length>0,label:()=>'Linker Phone',use(){const L=phoneList(),day=new Date().toDateString();G.rem=G.rem||{};G.remDay=G.remDay||{};
+ const show=L.slice(-12).reverse();choose('Linker Phone',show.map(x=>trName(x.n).slice(0,18)+(G.rem[x.n.id]?' !':'')).concat(['Back']),i=>{const x=show[i];if(!x)return;const who=trName(x.n),where=x.s.name.replace(/^Molten Frontier: /,'');
+  if(G.rem[x.n.id])return say(who+': I\'m waiting for you at '+where+'! Hurry up!');
+  if(G.remDay[x.n.id]===day)return say(who+': We already talked today! Call me tomorrow.');G.remDay[x.n.id]=day;
+  if(R()<0.6){G.rem[x.n.id]=1;return say(['Ring... ring...',who+': Hey, it\'s you! My team has been training hard.','Come find me at '+where+' for a rematch!'])}
+  say(['Ring... ring...',who+': '+['I just saw a Prismatic Alienmon! ...It got away.','My partner learned a new move today!','Have you tried the Star Arena leagues yet?','I\'m still training. Call me again soon!'][Math.floor(R()*4)]])})}});
+function secRematch(n){delete G.rem[n.id];const who=trName(n),top=Math.max(...G.party.map(m=>m.lv));
+ const base=n.trainer.frontier?(frontierTeam({id:n.id})||[]):(townTrainer(secTrainerH(n)).team||[]),team=(base.length?base:[[STARTERS[0],5]]).map(([id,lv],i)=>{const l=Math.max(lv,top-2+(i===base.length-1?1:0));return[evolvedAt(id,l),l]});
+ const tr={name:who,art:n.art,intro:'You came! Let\'s see how much we have both grown!',lose:'You\'re still way ahead of me... Call me again!',after:'Call me any time for another rematch.',team,bkey:'rem_'+n.id};
+ if(!G.party.some(m=>m.hp>0))return say('Your team needs to heal first.');say(who+': '+tr.intro,()=>startBattle(team.map(([id,lv])=>mk(id,lv)),tr),n.art)}
+
+/* ---- Nursery (Recovery Bay counter): leave an Alienmon, and every so often the nurse finds an Egg ---- */
+const NURSE_STEPS=350,EGG_STEPS=500;
+function baseForm(id){let n=D[id].name;for(let i=0;i<3;i++){const p=PREVO[n];if(!p||IDX[p.from]==null)break;n=p.from}return IDX[n]}
+function nurseryMenu(){const N=G.nurse;
+ if(!N)return choose('Nursery',['Leave an Alienmon','What is this?','Back'],i=>{if(i===1)return say(['Nurse: Leave one Alienmon with us. It earns a little EXP for every step you take.','Now and then we find an Egg beside it! Walk with an Egg and it hatches.'],nurseryMenu,'nurse');if(i!==0)return bayMenu();
+  if(G.party.length<2)return say('Nurse: You need at least two Alienmon with you to leave one here.',nurseryMenu,'nurse');
+  choose('Leave which?',G.party.map(m=>nm(m)+' Lv'+m.lv).concat(['Cancel']),k=>{const m=G.party[k];if(!m)return nurseryMenu();if(legendary(m))return say('Nurse: That one is far too powerful for our little Nursery!',nurseryMenu,'nurse');
+   G.party.splice(k,1);G.nurse={m,steps:0,xp:0,egg:0};autosave();say('Nurse: We\'ll take good care of '+nm(m)+'.',null,'nurse')})},null,'nurse');
+ const m=N.m;choose('Nursery: '+nm(m),(N.egg?['Collect the Egg']:[]).concat(['Take '+nm(m)+' back','Back']),i=>{const o=(N.egg?['egg']:[]).concat(['take','back'])[i];
+  if(o==='egg'){G.eggs=G.eggs||[];if(G.eggs.length>=6)return say('Nurse: You can only carry 6 Eggs at a time!',null,'nurse');G.eggs.push({id:baseForm(m.id),steps:EGG_STEPS});N.egg=0;N.steps=0;autosave();return say(['Nurse: We found this Egg next to '+nm(m)+'!','You received an Alienmon Egg! It is in Bag > Key Items. Walk with it to hatch it.'],null,'nurse')}
+  if(o==='take'){const lv=m.lv;if(N.xp){m.xp+=N.xp;while(m.lv<100&&m.xp>=xpFor(m.id,m.lv+1))m.lv++}m.hp=stat(m,0);const w=addMon(m);delete G.nurse;autosave();
+   return say(['Nurse: Here is '+nm(m)+'!'+(m.lv>lv?' It grew to Lv'+m.lv+'!':''),nm(m)+' went to '+(w==='party'?'your team':'your Storage')+'.'],null,'nurse')}
+  bayMenu()},null,'nurse')}
+// every step on the maps: the Nursery Alienmon trains, Eggs warm up and hatch
+function eggStep(){let hatched=false;if(G.nurse){const N=G.nurse;N.steps++;N.xp+=1;if(!N.egg&&N.steps>=NURSE_STEPS){N.egg=1;toast('The Nursery found an Egg!')}}
+ for(const e of G.eggs||[]){e.steps--;if(e.steps<=0&&!hatched){hatched=true;G.eggs.splice(G.eggs.indexOf(e),1);const m=mk(e.id,5);if(R()<priOdds()*2)m.pri=1;G.seen[m.id]=1;
+   say(['Oh? Your Egg is moving...','...','The Egg hatched into '+(m.pri?'a Prismatic ':'')+D[m.id].name+'!'],()=>{const w=addMon(m);if(w==='box')say(D[m.id].name+' was sent to your Storage.');autosave()});if(m.pri)priSfx();else stashSfx()}}return hatched}
+const eggList=()=>(G.eggs||[]).map(e=>({kind:'key',n:'Alienmon Egg',c:'',d:e.steps>300?'It barely moves. It will take a while to hatch.':e.steps>100?'Something is moving inside! It should hatch soon.':'It is making sounds! It is about to hatch!'}));
+
+/* ---- knocking on doors: drawn doors with no interior have residents who answer (items, trades, a Xenodex rater, gossip) ---- */
+const KNOCK=__KNOCK__;
+const KNOCK_CHAT=['Who is it? ...Oh, a Linker! Good luck on your journey!','*A sleepy voice*: Come back later, I\'m napping...','Grandma: In my day we caught Alienmon with our bare hands! ...Well, almost.',
+ 'Kid: Mom says I can get my own Alienmon next year!','Inventor: Don\'t open the door! My experiment is very, very fragile!','*Nobody answers. You can hear a TV playing an Arena match inside.*',
+ 'Collector: Did you know some Alienmon only come out at night?','Chef: Something smells good? That\'s Stardust stew. Secret recipe!'];
+function knockKind(s,i){const h=hash('knock'+s.id+':'+i)%10;return h<3?'item':h<5?'trade':h<6?'rater':'chat'}
+function knockDoor(s,d){const i=KNOCK[s.id].indexOf(d),key=s.id+':'+i,kind=knockKind(s,i),r=rng(hash('kn'+key));G.knock=G.knock||{};doorSfx();
+ if(kind==='item'){if(G.knock[key])return say('*Knock knock* Resident: Did you use what I gave you? Good luck!');G.knock[key]=1;const L=HID_LOOT[secTier(s)][Math.floor(r()*4)];
+  return say(['*Knock knock*','Resident: Oh! A visitor! Here, take this. I never use it anyway.'].concat(L[0]==='dust'?giveAll({dust:L[1]},[]):giveAll({[L[0]]:L[1]},[])))}
+ if(kind==='rater'){const n=Object.keys(G.caught||{}).length;return say(['*Knock knock*','Professor Lyle: Ah, a Linker! Let me rate your Xenodex.','You have registered '+n+' Alienmon. '+(n<10?'A fine start! Get out there and catch more!':n<50?'Impressive progress! Keep it up!':n<150?'Remarkable! Dr. Vashti must be proud.':n<300?'Astonishing! Only a few more to go!':'A complete Xenodex! You are a living legend!')])}
+ if(kind==='trade'){if(G.knock[key])return say('*Knock knock* Resident: My new partner and I are so happy. Thank you again!');
+  const pool=(wildTable(s.pkey==='arena'?'dustara':s.pkey)||[]).map(x=>x.name).filter(x=>IDX[x]!=null),want=pool[Math.floor(r()*pool.length)];
+  const all=Object.values(PROG.areas).flatMap(a=>(a.tier1||[]).map(x=>x.name)).filter(x=>IDX[x]!=null&&x!==want),give=all[Math.floor(r()*all.length)];
+  if(!want||!give)return say('*Knock knock* ...Nobody is home.');const mine=G.party.filter(m=>D[m.id].name===want);
+  const nick=['Pip','Mochi','Zoom','Bean','Nova','Tofu','Sprocket','Luna'][Math.floor(r()*8)];
+  if(!mine.length)return say(['*Knock knock*','Resident: I\'m looking for a '+want+'. If you bring one on your team, I\'ll trade you my '+give+', '+nick+'!']);
+  return choose('Trade your '+want+' for '+give+'?',['Trade','No thanks'],k=>{if(k!==0)return say('Resident: Aww. Come back if you change your mind!');const old=mine[0],lv=old.lv,m=mk(IDX[give],lv,{gift:1});m.nick=nick;m.ot='Resident';m.ob='trade';
+   G.party[G.party.indexOf(old)]=m;G.knock[key]=1;G.seen[m.id]=G.caught[m.id]=1;autosave();say(['You traded '+nm(old)+' for '+nick+' the '+give+'!','Resident: Take good care of '+nick+'!'])})}
+ say(['*Knock knock*',KNOCK_CHAT[Math.floor(r()*KNOCK_CHAT.length)]])}
