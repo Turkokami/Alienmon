@@ -167,7 +167,7 @@ function evolvedAt(id,lv){let n=D[id].name;for(let i=0;i<3;i++){const ev=(PROG.s
 function bossTeam(q,o){const p=PL[G.planet]||PL[0],pool=p.pool.e.concat(p.pool.c).filter(id=>wildOK(D[id].name)),r=rng(hash(o.target)),fill=(n,lv)=>Array.from({length:n},()=>[evolvedAt(pool[Math.floor(r()*pool.length)],lv),lv]);
  const rv=/^sola_(\d)$/.exec(o.target);
  if(rv){const n=+rv[1],ace=RIVAL_LV[n-1]||7,mine=STARTERS.find(s=>G.caught[s])??STARTERS[0],counter=STARTERS[(STARTERS.indexOf(mine)+1)%3];
-  return fill(n-1,Math.max(2,ace-2)).concat([[evolvedAt(counter,ace),ace]])}
+  return fill(n-1,Math.max(2,ace-2)).concat([[o.rival_stage&&typeof starterLine==='function'?IDX[starterLine(counter)[o.rival_stage-1]]:evolvedAt(counter,ace),ace]])}
  const b=QBOSS[o.target];if(!b)return null;const lv=typeof b[0]==='number'?PROG.bosses.quorum[b[0]]:PROG.bosses[b[0]];
  return fill(b[2]-1,lv-2).concat([[IDX[b[1]]??pool[0],lv]])}
 function qTeam(q,o){const bt=bossTeam(q,o);if(bt)return bt;const p=PL[G.planet]||PL[0],lv=(p.lv||[5,8])[1];

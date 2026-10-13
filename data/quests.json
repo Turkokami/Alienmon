@@ -780,6 +780,36 @@
       "planet": "pyros",
       "spot": "Cinder Hollow lift",
       "note": "tile map or future painted map; place this spot when building"
+     },
+     "then": {
+      "art": "basalt",
+      "items": {
+       "teo_lantern": 1
+      },
+      "lines": [
+       "Old Basalt: That badge... R.B. No. 1. Wren's. I knew a man who wore a jacket too big for him, and a woman who wore that badge. Good people.",
+       "Old Basalt: Here. Teo left his old mining lantern with me. It never quite goes out. Take it down the Deep Mines.",
+       "Old Basalt: And catch yourself an Ashpup. Those sooty pups love lantern light, and they can sniff out a hidden ledge."
+      ]
+     }
+    },
+    {
+     "type": "examine",
+     "target": "teo_cache_1",
+     "count": 1,
+     "hint": "Find Teo's cache in the Deep Mines",
+     "location": {
+      "area": "pyros_town",
+      "planet": "pyros",
+      "spot": "Teo's cache on a hidden ledge"
+     },
+     "then": {
+      "art": "teo",
+      "lines": [
+       "Behind a hidden ledge, Teo's lantern flares. There's a little crystal recorder wedged in the rock.",
+       "Teo (recording): If you find this, Sola, I'm not lost. I'm following them home.",
+       "You'd better keep this safe for Sola."
+      ]
      }
     },
     {
@@ -796,7 +826,8 @@
    ],
    "dialogue": {
     "start": [
-     "Old Basalt: Teo Reyes? Sure, I knew him. Last I saw, he walked into the crater's light and didn't come back."
+     "Old Basalt: Teo Reyes? Sure, I knew him. Six years ago he stood at the crater's edge, smiling, saying he could hear a song.",
+     "Old Basalt: Then he walked into the light and didn't come back."
     ],
     "progress": [
      "Keep at it, Linker. You've got this."
@@ -843,6 +874,27 @@
       "planet": "glacia",
       "spot": "Three frozen fossil sites in the crystal caverns",
       "note": "tile map or future painted map; place this spot when building"
+     }
+    },
+    {
+     "type": "examine",
+     "target": "teo_cache_2",
+     "count": 1,
+     "hint": "Find Teo's second cache in the Crystal Caverns",
+     "location": {
+      "area": "glacia_town",
+      "planet": "glacia",
+      "spot": "Teo's cache in the mirror ice"
+     },
+     "then": {
+      "art": "teo",
+      "items": {
+       "crystal_map": 1
+      },
+      "lines": [
+       "Frozen into the mirror ice is a second little cache. Inside: a map carved from crystal.",
+       "Scratched along its edge in Teo's handwriting: \"the floating gardens beyond the light.\""
+      ]
      }
     },
     {
@@ -1000,15 +1052,32 @@
      }
     },
     {
-     "type": "defeat_boss",
-     "target": "admin_vex",
+     "type": "battle_rival",
+     "target": "sola_4",
      "count": 1,
+     "rival_stage": 2,
      "location": {
       "area": "helix_town",
       "planet": "helix",
-      "spot": "Vex's containment arena",
-      "note": "tile map or future painted map; place this spot when building"
-     }
+      "spot": "Sola on the Observation Deck"
+     },
+     "intro": "You came all this way to stop me? I'm SO close to finding my dad!",
+     "lose": "...Fine. You win. But Helix is going to find him. They promised."
+    },
+    {
+     "type": "cutscene",
+     "target": "thorne_logs",
+     "count": 1,
+     "scene": "helix_keyart",
+     "title": "The Observation Deck",
+     "lines": [
+      "After the battle you play Sola the recording from the Deep Mines. \"If you find this, Sola, I'm not lost.\"",
+      "Before she can answer, the deck's big screen flickers on by itself. Two files play.",
+      "Director Thorne (log): Reyes was an acceptable loss. The data he left behind was worth it.",
+      "Sola goes completely still.",
+      "The second file: a reactor alarm, a woman's voice, then silence. Elena Thorne, lost in a Helix accident.",
+      "Director Thorne (log): If the Rift can power anything, it can power a way back to her."
+     ]
     }
    ],
    "dialogue": {
@@ -1019,7 +1088,7 @@
      "Keep at it, Linker. You've got this."
     ],
     "complete": [
-     "Admin Vex: Ugh! Fine. The Director already has what he needs. You're too late."
+     "Sola: ...An acceptable loss. That's what he called my dad."
     ]
    },
    "rewards": {
@@ -1027,7 +1096,8 @@
      "singularity": 1
     },
     "flags": [
-     "vex_defeated"
+     "sola_r4",
+     "thorne_logs"
     ]
    },
    "repeatable": false,
@@ -1061,6 +1131,31 @@
       "planet": "helix",
       "spot": "Observation deck",
       "note": "tile map or future painted map; place this spot when building"
+     },
+     "scene": "helix_keyart",
+     "title": "Sola turns",
+     "lines": [
+      "Sola rips the Helix patch off her sleeve and throws it on the floor.",
+      "Sola: He's not data. He's my dad.",
+      "Sola: I'm with you. Let's finish this, together."
+     ]
+    },
+    {
+     "type": "defeat_boss",
+     "target": "admin_vex",
+     "count": 1,
+     "location": {
+      "area": "helix_town",
+      "planet": "helix",
+      "spot": "Admin Vex's arena"
+     },
+     "intro": "Two brats for the price of one? The Director will be thrilled.",
+     "lose": "Ugh! Fine. The Director already has what he needs.",
+     "ally": {
+      "who": "Sola",
+      "mon": "rival",
+      "evolve": 1,
+      "lv": 38
      }
     }
    ],
@@ -1072,7 +1167,8 @@
      "Keep at it, Linker. You've got this."
     ],
     "complete": [
-     "Sola: I'm with you now. Let's finish this, together."
+     "Admin Vex escapes in a pod, shrieking about the Director.",
+     "Sola: We did it. Together."
     ]
    },
    "rewards": {
@@ -1080,11 +1176,21 @@
      "harmonic": 5
     },
     "flags": [
-     "sola_ally"
+     "sola_ally",
+     "vex_defeated"
     ]
    },
    "repeatable": false,
-   "notes": ""
+   "notes": "",
+   "epilogue": {
+    "art": "sola",
+    "lines": [
+     "On the way out, the freed captives flood past you. One stays behind: a tiny crystal hatchling that glows like Teo's lantern.",
+     "It's a Lumivex hatchling. It looks at Sola for a long moment, then climbs into her jacket pocket.",
+     "Sola: ...Hi. Hi, little one. Okay. You can come with me.",
+     "On the shuttle home, Sola falls asleep against your shoulder, the hatchling glowing softly in her pocket."
+    ]
+   }
   },
   {
    "id": "M16",
@@ -1153,7 +1259,16 @@
     ]
    },
    "repeatable": false,
-   "notes": ""
+   "notes": "",
+   "epilogue": {
+    "art": "ystran",
+    "lines": [
+     "At the last wind shrine, the Ystran echo Liss is clearer than ever.",
+     "Liss: I launched the last seedpod. The one carrying Zib. The fold was closing, and someone had to push it through.",
+     "Liss: I stayed behind on purpose. Someone had to sing it on its way.",
+     "Zib's lights flicker through every color, then go soft and blue. It's crying in lights."
+    ]
+   }
   },
   {
    "id": "M17",
@@ -1186,6 +1301,43 @@
       "x": 840,
       "y": 526,
       "map": "data/world_map.json"
+     }
+    },
+    {
+     "type": "examine",
+     "target": "kade_schematics",
+     "count": 1,
+     "hint": "Read Kade's schematics in his ruined lab",
+     "location": {
+      "area": "umbra_town",
+      "planet": "umbra",
+      "spot": "Kade's schematics"
+     },
+     "then": {
+      "art": "kade",
+      "lines": [
+       "Mortimer Kade: I built Thorne's Rift engine. Look at the key slot. It's tuned to one frequency.",
+       "Mortimer Kade: The eighth tower's resonance. The moment you win Shard 8, Thorne gets his key.",
+       "Mortimer Kade: But if you don't, the cracked seal fails on its own. There is no safe answer."
+      ]
+     }
+    },
+    {
+     "type": "choice",
+     "target": "shard8_choice",
+     "count": 1,
+     "hint": "Win Shard 8, knowing it helps Thorne?",
+     "default": 0,
+     "options": [
+      "We go ahead, together",
+      "There's no other way. Go on."
+     ],
+     "then": {
+      "art": "sola",
+      "lines": [
+       "Sola: Then we do it together. And we stop him at the other end.",
+       "Mortimer Kade: ...All right. Gravewell Tower. I'll be waiting."
+      ]
      }
     },
     {

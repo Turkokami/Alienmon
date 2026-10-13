@@ -962,8 +962,8 @@
    "section": "088",
    "name": "Deep Mines B2",
    "tile": [
-    15,
-    8
+    12,
+    10
    ],
    "item": "megagel",
    "n": 3,

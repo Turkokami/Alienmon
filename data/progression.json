@@ -7287,7 +7287,7 @@
      "stage": "1/3",
      "min": 23,
      "max": 29,
-     "weight": 10,
+     "weight": 22,
      "source": "common",
      "chance": "9.5%"
     },

@@ -929,5 +929,34 @@
    "flag": "champ",
    "t": []
   }
+ ],
+ "098": [
+  {
+   "art": "strand",
+   "name": "Strand",
+   "after": "M11",
+   "until": "M13",
+   "near": [
+    12,
+    8
+   ],
+   "t": [
+    "Strand: Oh. It's you. We're, uh, lost. Pell says we're not lost. We're lost.",
+    "Strand: (quietly) Helix is digging under the Fossil Dig, toward the old Ystran bones. You didn't hear it from me."
+   ]
+  },
+  {
+   "art": "guard",
+   "name": "Pell",
+   "after": "M11",
+   "until": "M13",
+   "near": [
+    13,
+    8
+   ],
+   "t": [
+    "Pell: Helix Directive! Field Division! ...Second Class! We are NOT lost. We are... surveying."
+   ]
+  }
  ]
 }

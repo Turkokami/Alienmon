@@ -265,11 +265,6 @@
    "x": 14,
    "y": 11
   },
-  "M11:2": {
-   "s": "092",
-   "x": 8,
-   "y": 12
-  },
   "M12:giver": {
    "s": "093",
    "x": 11,
@@ -293,11 +288,6 @@
      12
     ]
    ]
-  },
-  "M12:1": {
-   "s": "104",
-   "x": 8,
-   "y": 12
   },
   "M13:giver": {
    "s": "023",
@@ -323,11 +313,6 @@
    "s": "111",
    "x": 8,
    "y": 8
-  },
-  "M14:2": {
-   "s": "113",
-   "x": 8,
-   "y": 4
   },
   "M15:giver": {
    "s": "112",
@@ -363,11 +348,6 @@
    "s": "027",
    "x": 15,
    "y": 6
-  },
-  "M17:1": {
-   "s": "135",
-   "x": 8,
-   "y": 12
   },
   "M18:giver": {
    "s": "026",
@@ -857,8 +837,8 @@
   },
   "S81:giver": {
    "s": "098",
-   "x": 8,
-   "y": 11
+   "x": 5,
+   "y": 10
   },
   "S81:0": {
    "s": "098",
@@ -1156,6 +1136,46 @@
      9
     ]
    ]
+  },
+  "M11:3": {
+   "s": "092",
+   "x": 8,
+   "y": 12
+  },
+  "M11:2": {
+   "s": "088",
+   "x": 8,
+   "y": 8
+  },
+  "M12:2": {
+   "s": "104",
+   "x": 8,
+   "y": 12
+  },
+  "M12:1": {
+   "s": "099",
+   "x": 8,
+   "y": 8
+  },
+  "M15:1": {
+   "s": "113",
+   "x": 8,
+   "y": 4
+  },
+  "M14:2": {
+   "s": "112",
+   "x": 13,
+   "y": 8
+  },
+  "M17:3": {
+   "s": "135",
+   "x": 8,
+   "y": 12
+  },
+  "M17:1": {
+   "s": "133",
+   "x": 8,
+   "y": 7
   }
  },
  "sections": {
@@ -11454,8 +11474,8 @@
    "objects": [
     {
      "tile": [
-      15,
-      8
+      12,
+      10
      ],
      "k": "stash",
      "item": "megagel",
@@ -12701,8 +12721,33 @@
    "pkey": "glacia",
    "npcs": [
     {
-     "x": 5,
+     "x": 11,
      "y": 8,
+     "art": "strand",
+     "face": "down",
+     "t": [
+      "Strand: Oh. It's you. We're, uh, lost. Pell says we're not lost. We're lost.",
+      "Strand: (quietly) Helix is digging under the Fossil Dig, toward the old Ystran bones. You didn't hear it from me."
+     ],
+     "name": "Strand",
+     "after": "M11",
+     "until": "M13"
+    },
+    {
+     "x": 6,
+     "y": 8,
+     "art": "guard",
+     "face": "down",
+     "t": [
+      "Pell: Helix Directive! Field Division! ...Second Class! We are NOT lost. We are... surveying."
+     ],
+     "name": "Pell",
+     "after": "M11",
+     "until": "M13"
+    },
+    {
+     "x": 8,
+     "y": 11,
      "art": "miner",
      "face": "down",
      "t": [
@@ -12710,16 +12755,16 @@
      ]
     },
     {
-     "x": 11,
-     "y": 8,
+     "x": 5,
+     "y": 4,
      "art": "technician",
-     "face": "right",
+     "face": "down",
      "t": [],
-     "id": "sec098_tr1",
+     "id": "sec098_tr3",
      "trainer": {
       "cls": "Radio Tech",
       "route": 1,
-      "name": "Taro"
+      "name": "Lio"
      }
     }
    ]
@@ -14486,7 +14531,7 @@
      ]
     },
     {
-     "x": 13,
+     "x": 10,
      "y": 9,
      "art": "strand",
      "face": "up",

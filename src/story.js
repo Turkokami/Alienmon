@@ -63,7 +63,7 @@ function storyLegend(n){const k=PILLAR[n.legend],go=()=>legendBattle({mon:n.lege
 let NEXTB=null;
 function storyBattleStart(tr,L){B.sp=(tr&&tr.sp)||NEXTB||null;NEXTB=null;if(B.sp)B.sp.turns=0;
  if(tr&&tr.ally){const a=tr.ally,base=a.mon==='rival'?rivalStarter():IDX[a.mon];if(base!=null){const lv=a.lv||Math.max(...G.party.map(m=>m.lv));let id=a.mon==='rival'?IDX[starterLine(base)[a.evolve?2:1]]:base;
-   const m=mk(id,lv);m.guest=1;m.nick=null;G.party.splice(Math.min(1,G.party.length),0,m);G.seen[id]=1;
+   const m=mk(id,lv);m.guest=1;m.nick=null;G.party.push(m);G.seen[id]=1;
    L.push(a.who+' fights beside you!');if(a.evolve&&a.mon==='rival')L.push(a.who+"'s "+starterLine(base)[1]+' is glowing... it evolved into '+D[id].name+'!');L.push(a.who+"'s "+D[id].name+' is ready to swap in from your team!')}}
  if(!tr&&B.team.length&&D[B.team[0].id].name==='Blightling'&&secOn()&&['160','161'].includes(G.sec.id))L.push('...It isn\'t attacking. It\'s reaching for your light. It\'s begging.')}
 function storyAllyLeave(){if(G&&G.party.some(m=>m.guest)){G.party=G.party.filter(m=>!m.guest)}}
