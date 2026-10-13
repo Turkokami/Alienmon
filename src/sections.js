@@ -14,7 +14,7 @@ const secVis=n=>(!n.after||mDone(n.after))&&(!n.until||!mDone(n.until))&&(!n.fla
 const secNpcs=s=>(s.npcs||[]).filter(secVis);
 function secNpcAt(s,x,y){return secNpcs(s).find(n=>n.x===x&&n.y===y)}
 function secStashAt(s,x,y){return(s.objects||[]).find(o=>o.k==='stash'&&o.tile[0]===x&&o.tile[1]===y&&!(G.opened&&G.opened[s.id+':'+o.tile]))}
-function secWalk(s,x,y){const c=secTile(s,x,y);return(c==='.'||c===',')&&!secNpcAt(s,x,y)&&!secStashAt(s,x,y)&&!(s.id===(G.sec&&G.sec.id)&&(secQAt(x,y,true)||secMonAt(s,x,y)))}
+function secWalk(s,x,y){const c=secTile(s,x,y);return(c==='.'||c===','||fluidOK(c))&&!secNpcAt(s,x,y)&&!secStashAt(s,x,y)&&!(s.id===(G.sec&&G.sec.id)&&(secQAt(x,y,true)||secMonAt(s,x,y)))}
 const QCHAR=new Set(['giver','talk','turnin','trainer','legend']);
 function secQAt(x,y,chars){if(typeof qEnts!=='function')return null;return qEnts().find(e=>(!chars||QCHAR.has(e.k))&&e.k!=='beacon'&&Math.floor(e.x/16)===x&&Math.floor(e.y/16)===y)}
 function secMonAt(s,x,y){return(s.mons||[]).find(m=>m.x===x&&m.y===y&&!(G.monGone&&G.monGone[s.id+':'+m.x+','+m.y]))}
@@ -42,7 +42,7 @@ function secLos(){if(!G.party.length||!G.party.some(m=>m.hp>0))return false;cons
 function secArrive(){const s=SWORLD[G.sec.id],w=s.warps.find(w=>w.tile[0]===G.sec.x&&w.tile[1]===G.sec.y);if(w&&w.kind==='gate')return secGate(w);if(w&&SWORLD[w.to])return secWarp(w);
  if(G.grace>0)G.grace=Math.max(0,G.grace-15);if(G.jam>0)G.jam=Math.max(0,G.jam-2);stepc++;
  if(eggStep())return;if(secLos())return;
- if(secTile(s,G.sec.x,G.sec.y)===','&&!(G.grace>0)&&R()<0.1)wild()}
+ const ct=secTile(s,G.sec.x,G.sec.y);if(ct===','&&!(G.grace>0)&&R()<0.1)wild();else if(ct==='~'&&!(G.grace>0)&&R()<0.05)wild()}
 // Frontier gates: the story gate decides; through it you arrive at that planet's landing edge (its own sections,
 // or its classic painted town until that planet's sections are built). Walking back out returns you to the gate.
 function secGate(w){if(w.options){const back=()=>{G.sec.x=w.at[0];G.sec.y=w.at[1];face=w.face};
@@ -69,7 +69,7 @@ function secInteract(){const s=SWORLD[G.sec.id],[dx,dy]=DIRS[face],x=G.sec.x+dx,
   const name=(ITEMS.concat(PODS).find(i=>i.k===o.item)||{n:o.item}).n;return say('You opened the chest... and found '+(n>1?n+'x ':'a ')+name+'!')}if(o.k==='bay'){G.singBuy=0;return bayMenu()}if(o.k==='shop')return shop();
  if(o.k==='lab'&&!G.party.length)return secStarterTalk();if(o.k==='lab')return say(G.party.length?'Three empty pod cradles. Your partner\'s pod used to sit in the middle one.':'Three seed pods hum on the lab table.');
  if(o.t)return say(o.t)}
-function updSec(){const s=SWORLD[G.sec.id];if(SBUMP>0)SBUMP--;
+function updSec(){const s=SWORLD[G.sec.id];if(SBUMP>0)SBUMP--;if(MODHINT>0)MODHINT--;
  // a trainer who walked up to challenge you goes back to their spot once the battle and talk are over, so nobody is left blocking a path
  if(!SSPOT&&!DLG&&!CH)for(const n of s.npcs||[])if(n.home&&!(n.home[0]===G.sec.x&&n.home[1]===G.sec.y)){n.x=n.home[0];n.y=n.home[1];n.ox=n.oy=0;delete n.home}
  if(SSPOT){if(SSPOT.t>0){SSPOT.t--;if(SSPOT.t===0)SSPOT.walk=0}else{const n=SSPOT.n,[dx,dy]=DIRS[n.face||'down'];
@@ -88,7 +88,7 @@ function updSec(){const s=SWORLD[G.sec.id];if(SBUMP>0)SBUMP--;
 function secStepHeld(){const d=held.up?'up':held.down?'down':held.left?'left':held.right?'right':null;if(!d)return;face=d;const s=SWORLD[G.sec.id],a=secAhead(s,G.sec.x,G.sec.y,d);
  if(a&&(a.arrival||a.s.id!==s.id)&&!G.party.length&&s.type!=='interior')return say(NO_PARTNER);
  if(a&&a.arrival)return secLeaveForShip();
- if(!a||!secWalk(a.s,a.x,a.y)){bumpSfx();return}
+ if(!a||!secWalk(a.s,a.x,a.y)){if(a&&a.s){const c=secTile(a.s,a.x,a.y);if(c==='~'||c==='^')modHint(c)}bumpSfx();return}
  const lw=a.s.warps.find(w=>w.tile[0]===a.x&&w.tile[1]===a.y&&w.node);if(lw&&!gateOpen(lw.node)){bumpSfx();return say(gateMsg(lw.node))}
  secFollowStep(G.sec.x,G.sec.y);SM={t:0,n:secStepN(s),dx:DIRS[d][0],dy:DIRS[d][1],to:a}}
 // camera: follows the player; it only stops at an edge with nothing beyond it
@@ -104,12 +104,12 @@ function drawSec(){const s=SWORLD[G.sec.id],p=SM?SM.t/SM.n:0,jp=SJ?SJ.t/SEC_JUMP
  ctx.restore();
  const people=secNpcs(s).map(n=>({y:n.y*16+(n.oy||0),draw:()=>n.legend?secDrawLegend(n.legend,n.x*16-cx,n.y*16-cy):secDrawChar(n.art,n.face||'down',n.x*16+(n.ox||0)-cx,n.y*16+(n.oy||0)-cy,(n.ox||n.oy)&&((frame>>3)&1)?1:0)}));
  const kp=PL[G.planet]&&PL[G.planet].keeper;for(const o of s.objects||[])if(o.k==='keeper'&&kp)people.push({y:o.tile[1]*16,draw:()=>secDrawChar(kp.art,'down',o.tile[0]*16-cx,o.tile[1]*16-cy,0)});
- people.push({y:py,me:1,draw:()=>{const k=(G.gender||'boy');if(hop){ctx.fillStyle='rgba(20,10,20,0.3)';ctx.beginPath();ctx.ellipse(px-cx+8,py-cy+15,5,2,0,0,6.283);ctx.fill()}const hv=secHoverOn(s);if(hv)secDrawBoard(px-cx,py-cy-hop);secDrawChar(k,face,px-cx,py-cy-hop-(hv?3:0),hv?0:SM&&p>0.25&&p<0.75?1:0,true)}});
+ people.push({y:py,me:1,draw:()=>{const k=(G.gender||'boy');if(hop){ctx.fillStyle='rgba(20,10,20,0.3)';ctx.beginPath();ctx.ellipse(px-cx+8,py-cy+15,5,2,0,0,6.283);ctx.fill()}const rd=secDrawRide(s,px-cx,py-cy-hop),hv=!rd&&secHoverOn(s);if(hv)secDrawBoard(px-cx,py-cy-hop);secDrawChar(k,face,px-cx,py-cy-hop-(hv?3:0)-rd,hv?0:SM&&p>0.25&&p<0.75?1:0,true)}});
  secFollowDraw(people,s,cx,cy,p);people.sort((a,b)=>a.y-b.y).forEach(o=>o.draw());
  for(const m of s.mons||[]){if(G.monGone&&G.monGone[s.id+':'+m.x+','+m.y])continue;const im=OWI[shownMon(m.mon,0)];if(!okI(im))continue;const X=m.x*16-cx,Y=m.y*16-cy;if(X<-24||Y<-24||X>176||Y>160)continue;
   ctx.fillStyle='rgba(20,10,20,0.35)';ctx.beginPath();ctx.ellipse(X+8,Y+15,6,2,0,0,6.283);ctx.fill();ctx.save();ctx.imageSmoothingEnabled=true;ctx.drawImage(im,((frame>>4)&1)*64,0,64,64,X-2,Y-5,20,20);ctx.restore()}
  for(const o of s.objects||[])if(o.k==='stash'&&!(G.opened&&G.opened[s.id+':'+o.tile]))secDrawStash(o.tile[0]*16-cx,o.tile[1]*16-cy);
- qDraw(cx,cy,1,24);
+ secDark(s,px-cx,py-cy);qDraw(cx,cy,1,24);
  if(secTile(s,G.sec.x,G.sec.y)===','){ctx.fillStyle='#3f9d3a';for(let i=0;i<4;i++)ctx.fillRect(Math.round(px-cx+2+i*3),Math.round(py-cy+11-(i%2)),2,5)}
  if(SSPOT&&SSPOT.t>0){const X=SSPOT.n.x*16-cx+3,Y=SSPOT.n.y*16-cy-20;box(X,Y,10,11,'#fff','#1b1424');txt('!',X+3,Y+2,'#d7262e',7)}
  if(SDEBUG)drawSecDebug(s,cx,cy);
@@ -191,7 +191,7 @@ function secMain(s){if(s._main)return s._main;const W=s.tiles[0],H=s.tiles[1],ok
 function secJump(){const s=SWORLD[G.sec.id],[dx,dy]=DIRS[face];
  const ok=(x,y)=>secTile(s,x,y)!==null&&secWalk(s,x,y)&&secMain(s).has(x+','+y)&&!s.warps.some(w=>w.node&&w.tile[0]===x&&w.tile[1]===y&&!gateOpen(w.node));
  // two tiles is a normal hop; three clears a wider gap; nothing to land on is a bump
- const n=[2,3].find(k=>ok(G.sec.x+dx*k,G.sec.y+dy*k)&&!(k===3&&ok(G.sec.x+dx,G.sec.y+dy)&&ok(G.sec.x+dx*2,G.sec.y+dy*2)));
+ const n=[2,3].concat(modHas('grapple_line')?[4]:[],modHas('gravity_lift')?[5]:[]).find(k=>ok(G.sec.x+dx*k,G.sec.y+dy*k)&&!(k>=3&&ok(G.sec.x+dx,G.sec.y+dy)&&ok(G.sec.x+dx*2,G.sec.y+dy*2)));
  if(!n){bumpSfx();return}
  SFOL=null;SJ={t:0,from:[G.sec.x,G.sec.y],to:[G.sec.x+dx*n,G.sec.y+dy*n]};jumpSfx()}
 

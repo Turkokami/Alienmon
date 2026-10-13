@@ -90,7 +90,7 @@ const followOn=()=>!(G.opt&&G.opt.noFollow)&&G.party.some(m=>m.hp>0);
 function secFollowStep(x,y){if(!G.sec)return;SFOL=SFOL&&SFOL.sec===G.sec.id?{sec:G.sec.id,from:SFOL.at,at:[x,y]}:{sec:G.sec.id,from:[x,y],at:[x,y]}}
 function secFollowDraw(people,s,cx,cy,p){if(!SFOL||SFOL.sec!==s.id||!followOn())return;const m=G.party.find(m=>m.hp>0),name=D[m.id].name,im=OWI[name];if(!okI(im))return;
  const t=SM?p:1,fx=(SFOL.from[0]+(SFOL.at[0]-SFOL.from[0])*t)*16,fy=(SFOL.from[1]+(SFOL.at[1]-SFOL.from[1])*t)*16;
- if(!SM&&SFOL.at[0]===G.sec.x&&SFOL.at[1]===G.sec.y)return;
+ if(!SM&&SFOL.at[0]===G.sec.x&&SFOL.at[1]===G.sec.y)return;if('~^'.includes(secTile(s,SFOL.at[0],SFOL.at[1])||'#'))return;
  people.push({y:fy-1,draw:()=>{const X=Math.round(fx-cx),Y=Math.round(fy-cy);ctx.fillStyle='rgba(20,10,20,0.35)';ctx.beginPath();ctx.ellipse(X+8,Y+15,6,2,0,0,6.283);ctx.fill();
   ctx.save();ctx.imageSmoothingEnabled=true;if(typeof monFilter==='function')monFilter(m);ctx.drawImage(im,((frame>>4)&1)*64,0,64,64,X-2,Y-5-(SM?Math.round(Math.sin(t*Math.PI)):0),20,20);ctx.restore()}})}
 GEAR.push({k:'follow',has:()=>G.party.length>0,label:()=>'Follower: '+(G.opt&&G.opt.noFollow?'Off':'On'),use(){G.opt=G.opt||{};G.opt.noFollow=!G.opt.noFollow;
@@ -150,7 +150,10 @@ function secHidden(s){if(s.id in HID)return HID[s.id];if(s.type==='interior'||s.
  const n=Math.min(ok.length,s.tiles[0]*s.tiles[1]>400?2:1),out=[],tier=secTier(s);
  for(let i=0;i<n;i++){const k=ok.splice(Math.floor(r()*ok.length),1)[0];if(!k)break;const[x,y]=k.split(',').map(Number);
   const disc=r()<(s.type==='cave'||s.type==='landmark'||s.type==='tower'?0.45:0.2),L=HID_LOOT[tier][Math.floor(r()*HID_LOOT[tier].length)];
-  out.push({x,y,item:disc?'disc':L[0],n:disc?1:L[1],disc:disc?discPick(r,tier):null})}return HID[s.id]=out}
+  out.push({x,y,item:disc?'disc':L[0],n:disc?1:L[1],disc:disc?discPick(r,tier):null})}
+ const pk=secFluidPockets(s).filter(([x,y])=>!busy.has(x+','+y));if(pk.length){const[x,y]=pk[Math.floor(r()*pk.length)],t2=Math.min(3,tier+1),disc=r()<0.5,L=HID_LOOT[t2][Math.floor(r()*HID_LOOT[t2].length)];
+  out.push({x,y,item:disc?'disc':L[0],n:disc?1:L[1],disc:disc?discPick(r,t2):null,far:1})}
+ return HID[s.id]=out}
 const hidLeft=s=>secHidden(s).filter(h=>!(G.hid&&G.hid[s.id+':'+h.x+','+h.y]));
 function secFieldA(s,x,y){const kd=(KNOCK[s.id]||[]).find(d=>d[0]===x&&d[1]===y);if(kd)return knockDoor(s,kd);
  const h=hidLeft(s).find(h=>h.x===x&&h.y===y);if(!h)return;G.hid=G.hid||{};G.hid[s.id+':'+x+','+y]=1;stashSfx();
@@ -229,3 +232,22 @@ function knockDoor(s,d){const i=KNOCK[s.id].indexOf(d),key=s.id+':'+i,kind=knock
   return choose('Trade your '+want+' for '+give+'?',['Trade','No thanks'],k=>{if(k!==0)return say('Resident: Aww. Come back if you change your mind!');const old=mine[0],lv=old.lv,m=mk(IDX[give],lv,{gift:1});m.nick=nick;m.ot='Resident';m.ob='trade';
    G.party[G.party.indexOf(old)]=m;G.knock[key]=1;G.seen[m.id]=G.caught[m.id]=1;autosave();say(['You traded '+nm(old)+' for '+nick+' the '+give+'!','Resident: Take good care of '+nick+'!'])})}
  say(['*Knock knock*',KNOCK_CHAT[Math.floor(r()*KNOCK_CHAT.length)]])}
+
+/* ---- Linker Modules on the section maps ----
+ Hydro-skiff: ride across open water ('~').  Heat Shield: cross lava ('^').  Grapple Line: jumps reach 4 tiles.
+ Gravity Lift: jumps reach 5 tiles.  Lumen Beacon: lights up the dark caves on the outer worlds. */
+const modHas=k=>!!(G&&G.key&&G.key[k]);
+Object.assign(KEY_DESC,{grapple_line:'Linker module: your jumps (B) reach up to 4 tiles, over wider gaps.',hydro_skiff:'Linker module: walk onto open water to ride across it.',
+ heat_shield:'Linker module: walk across lava flows unharmed.',lumen_beacon:'Linker module: lights up dark caves.',gravity_lift:'Linker module: your jumps (B) reach up to 5 tiles.'});
+const fluidOK=c=>c==='~'?modHas('hydro_skiff'):c==='^'?modHas('heat_shield'):false;
+let MODHINT=0;
+function modHint(c){if(MODHINT>0)return;MODHINT=240;toast(c==='~'?'Deep water. A Hydro-skiff module could cross it.':'Lava! A Heat Shield module could cross it.')}
+function secDrawRide(s,x,y){const c=SM?secTile(SM.to.s,SM.to.x,SM.to.y):secTile(s,G.sec.x,G.sec.y),c0=secTile(s,G.sec.x,G.sec.y),w=c==='~'||c0==='~'&&SM,l=c==='^'||c0==='^'&&SM;
+ if(w){const b=Math.round(Math.sin(frame/9));ctx.fillStyle='rgba(255,255,255,0.5)';ctx.fillRect(x-1,y+14+b,18,1);ctx.fillStyle='#1b1424';ctx.fillRect(x,y+8+b,16,7);ctx.fillStyle='#ff8a1e';ctx.fillRect(x+1,y+9+b,14,4);ctx.fillStyle='#5ff2ff';ctx.fillRect(x+2,y+9+b,12,1);return 3}
+ if(l){ctx.save();ctx.globalAlpha=0.35+0.15*Math.sin(frame/6);ctx.strokeStyle='#ffd23f';ctx.lineWidth=1;ctx.beginPath();ctx.ellipse(x+8,y+4,10,13,0,0,6.283);ctx.stroke();ctx.restore();return 0}return 0}
+// dark caves: past Dustara and the Frontier, caves are pitch dark without the Lumen Beacon (you still see a little around you)
+function secDark(s,px,py){if(s.type!=='cave'||secTier(s)<1||modHas('lumen_beacon'))return;ctx.save();ctx.fillStyle='rgba(4,2,10,0.86)';ctx.beginPath();ctx.rect(0,0,160,144);ctx.arc(px+8,py+8,30+Math.sin(frame/15),0,6.283,true);ctx.fill('evenodd');ctx.restore()}
+// pockets of ground you can only reach across water or lava hold a hidden reward
+function secFluidPockets(s){const main=secMain(s),W=s.tiles[0],H=s.tiles[1],seen=new Set(main),q=[...main].map(k=>k.split(',').map(Number)),out=[];
+ while(q.length){const[x,y]=q.pop();for(const[dx,dy]of Object.values(DIRS)){const nx=x+dx,ny=y+dy,k=nx+','+ny;if(nx<0||ny<0||nx>=W||ny>=H||seen.has(k))continue;const c=s.rows[ny][nx];if('.,~^'.includes(c)){seen.add(k);q.push([nx,ny]);if(c==='.')out.push([nx,ny,c])}}}
+ return out}
