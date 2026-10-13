@@ -115,8 +115,8 @@ function drawSecDebug(s,cx,cy){ctx.save();for(let y=0;y<s.tiles[1];y++)for(let x
 function secArrival(planetKey){const a=(__SECARRIVAL__)[planetKey];if(!a||!SWORLD[a.section])return null;return[a.section,SWORLD[a.section].spawns.arrival||SWORLD[a.section].spawns.default]}
 // section maps: on for playtest builds with ?sections in the address or the Options toggle, and for any save already inside one
 const SEC_URL=/[?&]sections/.test(location.search);
-// on by default in the private beta (testers can switch it off in Options); the public game keeps the classic maps for now
-function secEnabled(){if(!G)return false;if(G.sec)return true;if(G.opt&&G.opt.secMaps===false)return false;return!!((G.opt&&G.opt.secMaps)||BETA||testerOn()||(SEC_URL&&canFreeRoam()))}
+// the section maps are the game's maps now (the site is tester-only); Options > New maps can switch back to the classic maps
+function secEnabled(){if(!G)return false;if(G.sec)return true;return!(G.opt&&G.opt.secMaps===false)}
 // apprentices in a planet's tower sections must be beaten before its Keeper battles (classic towns keep their own list)
 function secApprentices(k){let n=0,any=false;for(const s of Object.values(SWORLD))if(s.pkey===k)for(const p of s.npcs||[])if(p.trainer&&p.trainer.app){any=true;if(!G.beaten[p.id])n++}return any?n:null}
 // the opening: wake up at home, Mom sends you to Dr. Vashti's lab, and your partner is chosen at her pod table
@@ -163,4 +163,4 @@ function testerUI(){if(BETA||!window.crypto||!crypto.subtle)return;const hint=do
   box.querySelector('#tok').onclick=go;
   // typing in the box must not move the player (the game listens to keys on the whole page)
   inp.addEventListener('keydown',e=>{e.stopPropagation();if(e.key==='Enter')go();if(e.key==='Escape')close()});inp.addEventListener('keyup',e=>e.stopPropagation())})}
-testerUI();
+// the tester code now lives on the server (middleware.js login screen), so no in-page button
