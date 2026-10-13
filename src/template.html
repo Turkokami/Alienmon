@@ -397,7 +397,7 @@ const MUSIC_VOL=0.18,CHIP_VOL=0.11;let musicMode='chip';try{const v=localStorage
 let musicOn=musicMode!=='off';
 const BGM=new Audio(__MUSIC__),TITLEM=new Audio(__TITLEMUSIC__),BATTLEM=new Audio(__BATTLEMUSIC__);[BGM,TITLEM,BATTLEM].forEach(a=>{a.loop=true;a.volume=0;a.preload='auto'});
 const TITLE_SCENES=['title','gender','intro','starter'];let curTrack=null,lastArea='frontier';
-function areaTrack(){if(scene==='battle')return'battle';if(scene==='space')return'space';if(scene==='planet')return typeof secOn==='function'&&secOn()&&SEC_FRONTIER.has(G.sec.id)?'frontier':'town';if(scene==='world')return'frontier';
+function areaTrack(){if(typeof storyTrack==='function'){const st=storyTrack();if(st)return st}if(scene==='battle')return'battle';if(scene==='space')return'space';if(scene==='planet')return typeof secOn==='function'&&secOn()&&SEC_FRONTIER.has(G.sec.id)?'frontier':'town';if(scene==='world')return'frontier';
  if(scene==='menu'||scene==='cut'){return PREV==='space'?'space':PREV==='world'?'frontier':PREV==='planet'?'town':lastArea}return lastArea}
 function wantTrack(){if(TITLE_SCENES.includes(scene))return TITLEM;if(scene==='battle'||(LVP&&B))return BATTLEM;return musicMode==='song'?BGM:'chip'}
 function musicTry(){if(musicMode==='off'||document.hidden)return;const t=wantTrack();if(t!==curTrack){if(t===TITLEM)TITLEM.currentTime=0;if(t===BATTLEM)BATTLEM.currentTime=0;curTrack=t}
@@ -595,17 +595,17 @@ function aiMove(a,d){let best=a.moves[0],bv=-1;for(const mi of a.moves){const mv
   if(v>bv){bv=v;best=mi}}return MV[best]}
 function startBattle(team,trainer){if(!trainer)for(const m of team)if(!m.pri&&R()<priOdds())m.pri=1;if(typeof SJBUF!=='undefined'){SJBUF=0;SJ=null}if(!trainer&&G.jam>0&&team.length&&team[0].lv<(G.party.find(m=>m.hp>0)||{lv:0}).lv){return}warm(ARTI,team.map(m=>D[m.id].name));warm(ARTBI,G.party.map(m=>D[m.id].name));const pi=G.party.findIndex(m=>m.hp>0);team.forEach(m=>{G.seen[m.id]=1;resetStages(m)});G.party.forEach(resetStages);
  B={from:scene==='world'?'world':'planet',team,ei:0,tr:trainer,pi,part:new Set([pi]),phase:'wait',sel:0,psel:0,podsel:0,captured:false,anim:null,trShow:!!(trainer&&trainer.art)};scene='battle';const L=trainer?[trainer.name+' wants to battle!',trainer.name+' sent out '+nm(team[0])+'!']:['A wild '+nm(team[0])+' appeared!'];if(!trainer&&team[0].pri){L[0]='A Prismatic '+nm(team[0])+' appeared!';L.push('Its colours shimmer like nothing you have seen!');priSfx()}
- const tw=TR(team[0].id);if(!trainer&&tw.k==='sync')L.push(nm(team[0])+"'s signal feels "+(tw.v>1?'calm and friendly.':'jumpy and skittish.'));
+ storyBattleStart(trainer,L);const tw=TR(team[0].id);if(!trainer&&tw.k==='sync')L.push(nm(team[0])+"'s signal feels "+(tw.v>1?'calm and friendly.':'jumpy and skittish.'));
  L.push('Go, '+nm(G.party[pi])+'!');entry(team[0],G.party[pi],L);entry(G.party[pi],team[0],L);
  if(B.trShow){say(L[0],()=>{B.trShow=false;say(L.slice(1),()=>B.phase='menu')})}else say(L,()=>B.phase='menu')}
 const PM=()=>G.party[B.pi],EM=()=>B.team[B.ei];
 function runSteps(steps,done){if(!B||B.over)return;if(!steps.length)return done();const s=steps.shift();s(()=>runSteps(steps,done))}
-function afterAct(next){if(!B||B.over)return;if(EM().hp<=0||PM().hp<=0)return resolveFaints();next()}
+function afterAct(next){if(!B||B.over)return;storyImmortal();if(EM().hp<=0||PM().hp<=0)return resolveFaints();next()}
 function turn(pact){B.phase='wait';const em=ppPick(EM(),aiMove(EM(),PM()));
  const eStep=next=>{const e=EM(),p=PM();if(e.hp<=0||p.hp<=0)return next();const L=actPP(e,p,em);playFx(()=>say(L,()=>afterAct(next)))};
  const pStep=next=>pact(()=>afterAct(next));
  const pFirst=pact.pri||es(PM(),'spe')>=es(EM(),'spe');runSteps(pFirst?[pStep,eStep]:[eStep,pStep],endTurn)}
-function endTurn(){const L=[];for(const m of[PM(),EM()]){if(m.hp<=0)continue;const mx=stat(m,0),tr=TR(m.id);
+function endTurn(){const L=[];if(B.sp)B.sp.turns++;for(const m of[PM(),EM()]){if(m.hp<=0)continue;const mx=stat(m,0),tr=TR(m.id);
   if(m.st==='burn'){m.hp=Math.max(0,m.hp-Math.max(1,Math.floor(mx/16)));L.push(nm(m)+' is hurt by its burn!')}
   if(m.st==='poison'){m.hp=Math.max(0,m.hp-Math.max(1,Math.floor(mx/8)));L.push(nm(m)+' is hurt by poison!')}
   if(m.hp>0&&['heal','guardian','harmonic'].includes(tr.k))heal(m,1/16,L,'restored HP with '+tr.name+'!');
@@ -620,8 +620,8 @@ function playerFaint(){if(G.party.some(m=>m.hp>0)){B.phase='party';B.forced=true
  else if(G.box.some(m=>m.hp>0)){B.phase='boxpick';B.bxsel=G.box.findIndex(m=>m.hp>0);say(['Your whole team is down!','Your ship can beam in a backup Alienmon from storage. Choose one!'])}
 
  else loseBattle()}
-function loseBattle(){if(B&&B.tr&&B.tr.arena){B.over=true;const back=B.from||'planet';B=null;scene=back;return arenaAfter(false)}{const lost=Math.floor(G.dust/4);G.dust-=lost;say(['You have no Alienmon left to fight!','You dropped '+lost+' stardust and hurried back to the last place you healed...'],()=>{healAll();wakeAtLastHeal()})}}
-function endBattle(won){const tr=B&&B.tr,lines=[];
+function loseBattle(){storyAllyLeave();if(B&&B.tr&&B.tr.arena){B.over=true;const back=B.from||'planet';B=null;scene=back;return arenaAfter(false)}{const lost=Math.floor(G.dust/4);G.dust-=lost;say(['You have no Alienmon left to fight!','You dropped '+lost+' stardust and hurried back to the last place you healed...'],()=>{healAll();wakeAtLastHeal()})}}
+function endBattle(won){storyAllyLeave();const tr=B&&B.tr,lines=[];
  if(won){const pk=PL[G.planet]&&PL[G.planet].key;if(tr&&tr.bkey)qEvent('trainer',tr.bkey);else if(tr&&tr===PL[G.planet].keeper)qEvent('keeper',pk);else if(!tr&&B.team.length){qEvent('win',D[B.team[B.team.length-1].id].name,{area:QWILD});noteLegendWin(B.team[B.team.length-1])}}QWILD=null;
  if(won){const e=B.team[B.team.length-1];const dust=payout(tr,e);G.dust+=dust;lines.push('You collected '+dust+' stardust.');
   if(!tr){if(R()<0.05){G.items.gel=(G.items.gel||0)+1;lines.push('You found a Med Gel!')}else if(R()<0.03){G.pods.stasis++;lines.push('You found a Stasis Pod!')}}}
@@ -663,18 +663,19 @@ function lockSync(){const S=B.sync,e=EM(),d=D[e.id];const dist=Math.abs(S.x-S.c)
  let ok=R()<ch;const need=(PROG.legendaries[d.name]||{}).syncs||1;if(need>1){B.syncs=ok?(B.syncs||0)+1:0;if(ok&&B.syncs<need){ok=false;S.partial=B.syncs+'/'+need}}turn(Object.assign(next=>playTransfer(ok,()=>{const L=['You tuned your Linker to '+d.name+'\'s frequency.',tier,'Transfer beam fired!'];const hums=ok?3:ri(0,2);for(let i=0;i<hums;i++)L.push('...the beam holds...');
   if(ok){L.push('Transferred! '+d.name+' beamed aboard your ship and joined your crew!');e.st=null;e.cf=0;const where=addMon(e);qEvent('catch',d.name);if(where==='box')L.push(d.name+' was beamed to the ship\'s storage.');const st=[];progAward(e,false,st,e);say(L,()=>nickPrompt(e,()=>progRun(st,()=>{B.over=true;endBattle(false)})))}
   else{L.push(S.partial?'Sync '+S.partial+' held! Lock on again to finish the transfer.':d.name+' broke the signal!');say(L,next)}}),{pri:1}))}
-function updBattle(){const opts=['FIGHT','BAG','SWAP','RUN'];
+function updBattle(){const opts=['FIGHT','BAG','SWAP',storyRunLabel()];
  if(B.anim){animStep();drawBattle();return}
+ if(B.phase==='menu'&&storyMidBattle()){drawBattle();return}
  if(B.phase==='menu'){if(P_('up')||P_('down'))B.sel^=2;if(P_('left')||P_('right'))B.sel^=1;
   if(P_('a')){const o=opts[B.sel];if(o==='FIGHT'){B.phase='moves';B.msel=0}
    else if(o==='BAG'){B.phase='bag';B.bsel=B.bsel||0}
    else if(o==='SWAP'){B.phase='party';B.forced=false;B.psel=B.pi}
-   else tryRun()}}
+   else if(o==='LISTEN')storyListen();else tryRun()}}
  else if(B.phase==='moves'){const n=PM().moves.length;if(P_('up'))B.msel=(B.msel+n-1)%n;if(P_('down'))B.msel=(B.msel+1)%n;if(P_('b'))B.phase='menu';
   if(P_('a')){const p=PM();if(p.moves.every(x=>ppGet(p,x)<=0))turn(next=>{const L=actPP(PM(),EM(),STRUGGLE);playFx(()=>say([nm(p)+' has no PP left!'].concat(L),next))});else{const mi=p.moves[B.msel];if(ppGet(p,mi)<=0)say('There is no PP left for this move!');else{ppUse(p,mi);turn(next=>{const L=actPP(PM(),EM(),MV[mi]);playFx(()=>say(L,next))})}}}}
  else if(B.phase==='bag'){const list=bagList(true),n=list.length;if(P_('up'))B.bsel=(B.bsel+n-1)%n;if(P_('down'))B.bsel=(B.bsel+1)%n;if(P_('b'))B.phase='menu';
   if(P_('a')){const e=list[B.bsel];if(!e.c)say('You have no '+e.n+' left. Buy more at a Recovery Bay.');
-   else if(e.kind==='pod'){if(B.tr)say("A Keeper's partner is already bonded. You can't Sync with it!");else startSync(e.it)}
+   else if(e.kind==='pod'){if(B.sp&&B.sp.immortal)say('Oblivane is far too vast for any pod. Hold on...');else if(B.tr)say("A Keeper's partner is already bonded. You can't Sync with it!");else startSync(e.it)}
    else if(e.kind==='heal'){B.itemUse=e.it;B.phase='party';B.forced=false;B.psel=B.pi}
    else{const it=e.it,en=EM();G.items[it.k]--;qEvent('use',it.battle);turn(Object.assign(next=>{const L=['You used a '+it.n+'!'];
      if(it.battle==='tether'){const mx=stat(en,0),dmg=Math.min(Math.max(1,Math.floor(mx*0.25)),en.hp-1);if(dmg>0){en.hp-=dmg;L.push(nm(en)+' was weakened! It has '+en.hp+' HP left.')}else L.push(nm(en)+" can't be weakened any further.")}
@@ -731,7 +732,7 @@ function drawBattle(){const e=curEnv(),p=PM(),en=EM(),pl=PL[G.planet],ar=B.tr&&(
  if(!B.trShow){box(2,4,96,26);txt(nm(en).slice(0,10),6,8,'#1b1424');txt('Lv'+en.lv,70,8,'#1b1424');hpbar(6,20,64,en);stTag(en,72,19)}else{box(2,4,96,16);txt(B.tr.name.slice(0,11),6,8,'#1b1424')}if(G.caught[en.id]&&!B.tr)rect(92,9,4,4,'#ff8a1e');
  box(70,66,88,34);txt(nm(p).slice(0,10),74,70,'#1b1424');txt('Lv'+p.lv,74,80,'#3b2a5c');hpbar(110,81,44,p);txt(p.hp+'/'+stat(p,0),100,89,'#3b2a5c');stTag(p,74,89);expbar(74,96,80,p);
  if(B.phase==='menu'){box(0,104,160,40);txt('What will',6,112,'#1b1424');txt(nm(p).slice(0,10)+' do?',6,124,'#1b1424');
-  box(80,104,80,40,'#f8f4ff','#ff8a1e');['FIGHT','BAG','SWAP','RUN'].forEach((o,i)=>txt((i===B.sel?'>':' ')+o,84+(i%2)*38,112+Math.floor(i/2)*14,'#1b1424',7))}
+  box(80,104,80,40,'#f8f4ff','#ff8a1e');['FIGHT','BAG','SWAP',storyRunLabel()].forEach((o,i)=>txt((i===B.sel?'>':' ')+o,84+(i%2)*38,112+Math.floor(i/2)*14,'#1b1424',7))}
  else if(B.phase==='moves'){box(0,104,160,40);p.moves.forEach((mi,i)=>{const m=MV[mi];txt((i===B.msel?'>':' ')+m.n.slice(0,13),4,108+i*8,i===B.msel?'#d7262e':m.sig?'#7a1f6a':'#1b1424',7)});
   const m=MV[p.moves[B.msel]];txt(m.t==='None'?'Basic':m.t,116,108,m.t==='None'?'#3b2a5c':TC[m.t][2],6);txt(m.p?'PWR '+m.p:'STATUS',116,118,'#3b2a5c',6);const pp=ppGet(p,p.moves[B.msel]);txt('PP '+pp+'/'+maxPP(p.moves[B.msel]),116,128,pp?'#3b2a5c':'#d7262e',6)}
  else if(B.phase==='bag')drawBag(bagList(true),B.bsel,'Bag');

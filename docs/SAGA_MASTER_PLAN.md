@@ -66,7 +66,7 @@ The crater pulse is the seal straining. Helix experiments have been cracking the
 | --- | --- | --- |
 | Tamsin's patch | A question mark: "the world I never found" | Book 1, Ch 4; pays off in Book 5 |
 | Shards won by end of Book 1 | 4 (Ferrox, Sporeholm, Thalassa, Neonis) | Thalassa's tower core is still in Helix hands |
-| The renamed Alienmon | Gleamgrub (not Rustle), Plazmet (not Flarion), plus the ten other renames from the name check | All books |
+| The renamed Alienmon | Gleamgrub and Plazmet, plus the ten other renames from the name check (old names are listed only in data/renames.json) | All books |
 
 ### Running gags and motifs
 

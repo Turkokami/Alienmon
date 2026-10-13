@@ -24,7 +24,7 @@ function secAhead(s,x,y,d){const[dx,dy]=DIRS[d],nx=x+dx,ny=y+dy;if(secTile(s,nx,
  if(!e||along<e.range[0]||along>e.range[1])return null;if(e.to==='arrival')return{arrival:true,side};const t=SWORLD[e.to];if(!t)return null;
  const k=along+(e.offset||0);return side==='right'?{s:t,x:0,y:k}:side==='left'?{s:t,x:t.tiles[0]-1,y:k}:side==='bottom'?{s:t,x:k,y:0}:{s:t,x:k,y:t.tiles[1]-1}}
 function secPrefetch(id){const s=SWORLD[id];if(!s)return;SECI[id];const g=(G&&G.gender)||'boy';for(const f of['down','up','left','right'])CHI[g+'_'+f];for(const n of s.npcs||[])CHI[n.art];for(const e of Object.values(s.edges))if(SWORLD[e.to])SECI[e.to];for(const w of s.warps)SECI[w.to]}
-function enterSection(id,at,f,quiet){const prev=G.sec&&G.sec.id;G.sec={id,x:at[0],y:at[1]};if(f)face=f;SM=null;SJ=null;SJBUF=0;SSPOT=null;secPrefetch(id);secVisit(id);
+function enterSection(id,at,f,quiet){const prev=G.sec&&G.sec.id;G.sec={id,x:at[0],y:at[1]};if(f)face=f;SM=null;SJ=null;SJBUF=0;SSPOT=null;secPrefetch(id);secVisit(id);storyEnter(id);
  const s=SWORLD[id];if(!quiet&&(!prev||!SWORLD[prev]||SWORLD[prev].name!==s.name))SBANNER=100}
 function secWarp(w){SFADE={t:0,go:()=>{enterSection(w.to,w.at,w.face);if(w.kind==='door'||w.kind==='stairs')doorSfx()}}}
 function doorSfx(){try{if(!AC||musicMode==='off')return;const t=AC.currentTime,o=AC.createOscillator(),g=AC.createGain();o.type='square';o.frequency.setValueAtTime(220,t);o.frequency.setValueAtTime(330,t+0.05);g.gain.setValueAtTime(0.035,t);g.gain.exponentialRampToValueAtTime(0.001,t+0.12);o.connect(g).connect(AC.destination);o.start(t);o.stop(t+0.13)}catch(e){}}
@@ -57,7 +57,7 @@ function secLeaveForShip(){if(G.secBack&&SWORLD[G.secBack.id])return say(G.sec.i
 function secInteract(){const s=SWORLD[G.sec.id],[dx,dy]=DIRS[face],x=G.sec.x+dx,y=G.sec.y+dy;
  const qe=secQAt(x,y,false);if(qe&&(!secNpcAt(s,x,y)||qe.k==='giver'||qe.k==='turnin'))return qInteract(qe);   // a townsperson who offers or takes back a mission
  const wm=secMonAt(s,x,y);if(wm)return secMonBattle(s,wm);
- const n=secNpcAt(s,x,y);if(n){n.face=({up:'down',down:'up',left:'right',right:'left'})[face];if(n.legend)return legendBattle({mon:n.legend,lvl:n.lv||60});if(n.trainer)return secTrainerTalk(n);if(n.wid)qEvent('talk',n.wid,{x:n.x*16+8,y:n.y*16+15});if(n.story==='starter'&&!G.party.length)return secStarterTalk();if(n.story==='arena')return arenaMenu();return say(!G.party.length&&n.pre?n.pre:n.t,null,n.por||undefined)}
+ const n=secNpcAt(s,x,y);if(n){n.face=({up:'down',down:'up',left:'right',right:'left'})[face];if(n.legend)return storyLegend(n);if(n.trainer)return secTrainerTalk(n);if(n.wid)qEvent('talk',n.wid,{x:n.x*16+8,y:n.y*16+15});if(n.story==='starter'&&!G.party.length)return secStarterTalk();if(storyNpc(n))return;if(n.story==='arena')return arenaMenu();return say(!G.party.length&&n.pre?n.pre:n.t,null,n.por||undefined)}
  const o=(s.objects||[]).find(o=>o.tile[0]===x&&o.tile[1]===y);if(!o)return secFieldA(s,x,y);
  if(o.k==='arena')return arenaMenu();
  if(o.k==='keeper')return keeperTalk(PL[G.planet]);

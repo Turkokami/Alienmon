@@ -12,7 +12,7 @@ const qs=id=>G.quests[id];
 function qInit(){G.quests=G.quests||{};G.key=G.key||{};G.flags=G.flags||{};
  for(const q of QUESTS)if(!G.quests[q.id])G.quests[q.id]={state:'locked',step:0,n:0,got:[]};
  if(!G.qmig){G.qmig=1;qMigrate()}
- if(G.qtrack===undefined)G.qtrack=null;qUnlock()}
+ if(G.qtrack===undefined)G.qtrack=null;if(typeof storyMigrate==='function')storyMigrate();qUnlock()}
 
 // older saves: credit what the player already did, without paying rewards twice
 function qMigrate(){const done=id=>{const s=qs(id);if(s){s.state='done';s.step=QI[id].objectives.length}};
@@ -57,12 +57,12 @@ function qMatch(q,o,type,target,info){const t=o.type;
 function qEvent(type,target,info){if(!G||!G.quests)return false;info=info||{};let hit=false;
  for(const q of qActive()){const o=qObj(q);if(!o||!qMatch(q,o,type,target,info))continue;
   if(o.type==='deliver'){const k=o.target;if(!(G.items[k]>0)){qNotify(q.id,'need',['You need a '+itemName(k)+' to hand over.']);continue}G.items[k]--}
-  if(o.type==='show'){const ty=o.target.replace('type:','');if(!G.party.some(m=>(D[m.id].t||[]).includes(ty))){qNotify(q.id,'need',['Bring a '+ty+'-type Alienmon in your party.']);continue}}
+  if(o.type==='show'){const ty=o.target.replace(/^(type|mon):/,''),sp=o.target.startsWith('mon:');if(!G.party.some(m=>sp?D[m.id].name===ty:(D[m.id].t||[]).includes(ty))){qNotify(q.id,'need',['Bring '+(sp?'a '+ty:'a '+ty+'-type Alienmon')+' in your party.']);continue}}
   hit=true;qProgress(q,1)}
  return hit}
 
 function qProgress(q,n){const s=qs(q.id),o=qObj(q);s.n+=n;
- if(s.n>=(o.count||1)){s.step++;s.n=0;s.got=[];
+ if(s.n>=(o.count||1)){s.step++;s.n=0;s.got=[];if(o.then)storyThen(q,o.then);
   if(s.step>=q.objectives.length)qComplete(q);
   else{qNotify(q.id,'step',['Objective complete! Next: '+qText(q)]);if(q.type==='main')autosave();qPassive()}}}
 
@@ -78,7 +78,7 @@ function qComplete(q){const s=qs(q.id),r=q.rewards||{};s.state='done';
  if(r.alienmon_seen)for(const n of[].concat(r.alienmon_seen))if(IDX[n]!=null)G.seen[IDX[n]]=1;
  let gift=null;if(r.alienmon_gift&&IDX[r.alienmon_gift.name]!=null){const m=mk(IDX[r.alienmon_gift.name],r.alienmon_gift.lv||5);gift=addMon(m)==='box'?' (sent to storage)':''}
  const rt=qRewardText(r);
- qNotify(q.id,'done',(q.dialogue&&q.dialogue.complete||[]).concat(['Quest complete: '+q.title+'!'+(rt?' Received '+rt+(gift||'')+'.':'')]));
+ qNotify(q.id,'done',(q.dialogue&&q.dialogue.complete||[]).concat(['Quest complete: '+q.title+'!'+(rt?' Received '+rt+(gift||'')+'.':'')]));if(q.epilogue)storyThen(q,q.epilogue);
  if(q.repeatable){s.state='available';s.step=0;s.n=0}
  if(G.qtrack===q.id)G.qtrack=(qActive()[0]||{}).id||null;
  qUnlock();if(q.type==='main')autosave()}
@@ -92,10 +92,11 @@ function qPassive(){if(!G||!G.quests)return;
   else if(QTRAINER.has(o.type)&&!q.repeatable){const n=Math.min(o.count||1,o.target.split('|').filter(t=>G.beaten[t]).length);if(n>s.n)qProgress(q,n-s.n)}
   else if(o.type==='item'&&G.key[o.target])qProgress(q,1);
   else if(o.type==='xenodex'&&Object.keys(G.caught).length>=(o.count||1))qProgress(q,o.count||1);
-  else if(o.type==='cutscene'){if(s.playing)continue;const art=QCUT_ART[o.target]&&SCI[QCUT_ART[o.target][0]];
+  else if(o.type==='cutscene'){if(s.playing)continue;const ca=o.scene?[o.scene,o.title||'']:QCUT_ART[o.target],art=ca&&SCI[ca[0]];
    // wait a few seconds for the scene art to download before falling back to text only
-   if(okI(art)&&!DLG&&!CH&&scene!=='battle'){s.playing=1;cut(art,QCUT_ART[o.target][1],()=>{s.playing=0;qNotify(q.id,'scene',QCUT[o.target]||[]);qProgress(q,1)})}else if(!okI(art)&&(s.wait=(s.wait||0)+1)>15){qNotify(q.id,'scene',QCUT[o.target]||[]);qProgress(q,1)}}
-  else if(o.type==='choice'&&!s.asking&&!DLG&&!CH){s.asking=1;choose(o.hint||q.title,o.options,i=>{s.asking=0;G.flags[o.target]=i+1;qProgress(q,1)})}
+   if(okI(art)&&!DLG&&!CH&&scene!=='battle'){s.playing=1;cut(art,ca[1],()=>{s.playing=0;qNotify(q.id,'scene',storyCutLines(o));qProgress(q,1)})}else if(!okI(art)&&(s.wait=(s.wait||0)+1)>15){qNotify(q.id,'scene',storyCutLines(o));qProgress(q,1)}}
+  else if(o.type==='choice'&&!s.asking&&!DLG&&!CH){s.asking=1;choose(qFmt(o.hint||q.title),o.options.map(qFmt),i=>{s.asking=0;G.flags[o.target]=i+1;qProgress(q,1)});if(o.default!=null&&CH)CH.sel=o.default}
+  else if(o.type==='legendary_encounter'&&o.skip_if&&(G.flags[o.skip_if.flag]||0)===o.skip_if.value){qNotify(q.id,'scene',o.skip_if.lines||[]);qProgress(q,1)}
   else if(o.type==='visit'||o.type==='spot_event'){const t=o.target||'';
    if(t==='molten_frontier'){if(scene==='world'||(typeof secOn==='function'&&secOn()&&SEC_FRONTIER.has(G.sec.id)))qProgress(q,1)}
    else if(t.startsWith('planet:')){if(scene==='planet'&&qHere()===t.slice(7))qProgress(q,1)}
@@ -106,9 +107,9 @@ function qPassive(){if(!G||!G.quests)return;
 const QCUT_ART={zib_joins:['dustara_keyart','A signal from the canyon...'],sola_leaves:['thalassa_keyart','The Deep Sea Ferry dock'],sola_joins:['helix_keyart','Helix Station'],novaryx_awakens:['starfall_keyart','The eight Shards sing'],rift_sealed:['starfall_battle','The Rift closes']};
 const QCUT={novaryx_awakens:['Your eight Shards rise and resonate. A great signal-winged bird answers the call...']};
 
-function qNotify(q,kind,lines){if(lines&&lines.length)QN.push({q,kind,lines})}
+function qNotify(q,kind,lines){if(lines&&lines.length)QN.push({q,kind,lines:lines.map(l=>typeof qFmt==='function'?qFmt(l):l)})}
 // show waiting quest messages when nothing else is on screen
-function qFlush(){if(QN.length&&!DLG&&!CH&&(scene==='planet'||scene==='world')&&!(typeof SFADE!=='undefined'&&SFADE)&&!(typeof SM!=='undefined'&&SM)){const m=QN.shift();const giver=QI[m.q]&&QI[m.q].giver;say(m.lines,null,giver&&giver.art||undefined)}}
+function qFlush(){if(QN.length&&!DLG&&!CH&&(scene==='planet'||scene==='world')&&!(typeof SFADE!=='undefined'&&SFADE)&&!(typeof SM!=='undefined'&&SM)){const m=QN.shift();const giver=QI[m.q]&&QI[m.q].giver;say(m.lines,null,m.art||giver&&giver.art||undefined)}}
 
 /* ---- quest log text ---- */
 function qText(q){const s=qs(q.id),o=qObj(q);if(!o)return'Done';const l=qLoc(q.id,s.step,o.location)||{},spot=l.spot||'',c=o.count||1,cnt=c>1?' ('+s.n+'/'+c+')':'',t=o.target||'';
@@ -175,14 +176,14 @@ function qTeam(q,o){const bt=bossTeam(q,o);if(bt)return bt;const p=PL[G.planet]|
  return Array.from({length:n},(_,i)=>[pool[Math.floor(r()*pool.length)],lv+(boss?3:1)+i])}
 
 function qInteract(e){const q=e.q;
- if(e.k==='giver'){say((q.dialogue&&q.dialogue.start||[]).length?q.dialogue.start:[q.title],()=>choose('Side mission: '+q.title,['Accept','Not now'],i=>{if(i===0){QN=QN.filter(m=>m.q!==q.id);qActivate(q);QN=QN.filter(m=>!(m.q===q.id&&m.kind==='start'));say('Mission accepted: '+q.title+'. '+qText(q)+'.')}}),q.giver&&q.giver.art);return}
- if(e.k==='turnin'||e.k==='talk'){if(!qEvent('talk','q:'+q.id,{x:e.x,y:e.y}))say((q.dialogue&&q.dialogue.progress)||['Keep at it, Linker.'],null,e.art||(q.giver&&q.giver.art));return}
+ if(e.k==='giver'){say(((q.dialogue&&q.dialogue.start||[]).length?q.dialogue.start:[q.title]).map(qFmt),()=>choose('Side mission: '+q.title,['Accept','Not now'],i=>{if(i===0){QN=QN.filter(m=>m.q!==q.id);qActivate(q);QN=QN.filter(m=>!(m.q===q.id&&m.kind==='start'));say('Mission accepted: '+q.title+'. '+qText(q)+'.')}}),q.giver&&q.giver.art);return}
+ if(e.k==='turnin'||e.k==='talk'){if(!qEvent('talk','q:'+q.id,{x:e.x,y:e.y}))say(((q.dialogue&&q.dialogue.progress)||['Keep at it, Linker.']).map(qFmt),null,e.art||(q.giver&&q.giver.art));return}
  if(e.k==='prop'){const s=qs(q.id);s.got.push(e.i);if(QPROP_GIVES[e.o.target]){G.key=G.key||{};G.key[QPROP_GIVES[e.o.target]]=1}say(e.o.type==='collect'?'You found a '+e.o.target.replace(/_/g,' ')+'!':'You examine the '+(qLoc(q.id,s.step,e.o.location).spot||e.o.target.replace(/_/g,' '))+'.');qEvent('prop',e.o.target);return}
  if(e.k==='trainer'){if(!G.party.some(m=>m.hp>0)){say('Your team needs to heal first.');return}const name=qTitle(e.o.target),team=qTeam(q,e.o);
-  const tr={name,art:e.art,intro:'You want to battle? Let\'s go!',lose:'...You win this time.',after:'Not bad, Linker.',team,bkey:e.o.target};
+  const tr={name,art:e.art,intro:qFmt(e.o.intro||'You want to battle? Let\'s go!'),lose:qFmt(e.o.lose||'...You win this time.'),after:'Not bad, Linker.',team,bkey:e.o.target,ally:e.o.ally,sp:e.o.test==='orra'?{orra:1}:null};
   say(name+': '+tr.intro,()=>startBattle(team.map(([id,lv])=>mk(id,lv)),tr),e.art);return}
  if(e.k==='legend'){if(!G.party.some(m=>m.hp>0)){say('Your team needs to heal first.');return}const id=IDX[e.mon];if(id==null)return;
-  say('The air hums... '+e.mon+' appears!',()=>startBattle([mk(id,e.o.lv||50)],null));return}}
+  say('The air hums... '+e.mon+' appears!',()=>{NEXTB=e.o.listen?{immortal:1,listen:1}:null;startBattle([mk(id,e.o.lv||50)],null)});return}}
 
 // markers and quest figures, drawn on painted towns (S = map zoom, cs = character size) and on the world map (S = 1)
 function qDraw(cx,cy,S,cs){for(const e of qEnts()){const x=e.x*S-cx,y=e.y*S-cy;if(x<-20||x>180||y<-30||y>170)continue;
@@ -193,7 +194,7 @@ function qDraw(cx,cy,S,cs){for(const e of qEnts()){const x=e.x*S-cx,y=e.y*S-cy;i
   if(e.mark){const my=Math.round(y-cs-9+Math.sin(frame/8)),done=e.k==='turnin'&&qReady(e);box(Math.round(x-4),my,9,9,e.mark==='!'||done?'#ffd23f':'#d8d0e8','#1b1424');txt(e.mark,Math.round(x-2),my+1,'#1b1424',6)}}}
 // a talk target that is already painted into the town art (or is a world NPC) only gets the marker
 function qPainted(e){if(typeof secOn==='function'&&secOn())return!!secNpcAt(SWORLD[G.sec.id],Math.floor(e.x/16),Math.floor(e.y/16));if(scene==='world')return WORLD.npcs.some(n=>Math.hypot(n.x-e.x,n.y-e.y)<30);const P=paintOf();return!!(P&&P.hot.some(h=>(h.k==='talk'||h.k==='npc'||h.k==='mon')&&Math.hypot(h.x-e.x,h.y-e.y)<40))}
-function qReady(e){const o=e.o;if(o.type==='deliver')return G.items[o.target]>0;if(o.type==='show')return G.party.some(m=>(D[m.id].t||[]).includes(o.target.replace('type:','')));return true}
+function qReady(e){const o=e.o;if(o.type==='deliver')return G.items[o.target]>0;if(o.type==='show'){const ty=o.target.replace(/^(type|mon):/,'');return G.party.some(m=>o.target.startsWith('mon:')?D[m.id].name===ty:(D[m.id].t||[]).includes(ty))}return true}
 
 // one-line tracker for the tracked quest
 function qTrackerText(){const id=G&&G.qtrack;if(!id||!qs(id)||qs(id).state!=='active')return null;return'▶ '+qText(QI[id])}

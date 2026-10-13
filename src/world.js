@@ -105,7 +105,7 @@ function ppPick(a,mv){let mi=MV.indexOf(mv);if(mi<0||ppGet(a,mi)<=0){mi=a.moves.
 function actPP(a,d,mv){const L=act(a,d,mv);if(mv.struggle&&a.hp>0){const r=Math.max(1,Math.floor(stat(a,0)/4));a.hp=Math.max(0,a.hp-r);L.push(nm(a)+' is hurt by recoil!');if(a.hp<=0)L.push(nm(a)+' fainted!')}return L}
 
 // running away: classic odds; never from trainers, Keepers, bosses or legendaries
-function tryRun(){const e=EM();if(B.tr){say("You can't run from a trainer battle!");return}
+function tryRun(){const e=EM();if(B.sp&&B.sp.immortal){say('There is nowhere to run. Your team stands firm.');return}if(B.tr){say("You can't run from a trainer battle!");return}
  const r=(PROG.species[D[e.id].name]||{}).rarity;if(r==='legendary'||r==='mythic'){say('A powerful presence holds you in place!');return}
  B.runs=(B.runs||0)+1;const ps=es(PM(),'spe'),fs=Math.max(1,es(e,'spe')),ok=ps>=fs||((Math.floor(ps*128/fs)+30*B.runs)%256)>Math.floor(R()*256);
  turn(Object.assign(next=>{if(ok)say('Got away safely!',()=>{const back=B.from||'planet';B.over=true;QWILD=null;scene=back;B=null});else say("Couldn't get away!",next)},{pri:1}))}
