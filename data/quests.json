@@ -813,8 +813,14 @@
       "lines": [
        "Behind a hidden ledge, Teo's lantern flares. There's a little crystal recorder wedged in the rock.",
        "Teo (recording): If you find this, Sola, I'm not lost. I'm following them home.",
-       "You'd better keep this safe for Sola."
-      ]
+       "Tucked under the recorder is a page torn from Teo's journal. He copied one line from Imogen Vashti's Codex pages, and the stone it came from was damaged:",
+       "\"She is scattered so she may live...\" The rest of the line is gone.",
+       "Teo (note): Imogen never told us how it ends. I think it's the most important line in the whole Codex.",
+       "You'd better keep the recording safe for Sola."
+      ],
+      "items": {
+       "teo_journal_page": 1
+      }
      }
     },
     {
@@ -1236,6 +1242,28 @@
      }
     },
     {
+     "type": "cutscene",
+     "target": "prophecy_shrine",
+     "count": 1,
+     "at": "120",
+     "scene": "prophecy_mural",
+     "title": "The Prophecy Shrine",
+     "hint": "Follow Liss to the third wind shrine in the Floating Gardens",
+     "lines": [
+      "At the third wind shrine, the wind falls silent. Carved across the whole shrine wall is one great picture.",
+      "Liss: You have been told she stayed behind on Ystra. She didn't. She couldn't.",
+      "Liss: As the hungry one ate our sky, the Seedmother broke her whole self apart into the seedpods. Every Alienmon carries a piece of her. Zib. Your partner. All of them.",
+      "Liss: On Ystra only the Heartroot is left, one last root in the crater where her tree stood. And it is fading.",
+      "Liss: This is the rest of the line Teo copied: \"She is scattered so she may live. Whoever reunites all her children will let the Seedmother grow again, and her world with her.\"",
+      "Liss: Reunite, Linker. Not cage. Every one of them stays itself."
+     ],
+     "then": {
+      "items": {
+       "prophecy_shrine": 1
+      }
+     }
+    },
+    {
      "type": "defeat_keeper",
      "target": "halo",
      "count": 1,
@@ -1381,10 +1409,13 @@
    "repeatable": false,
    "notes": "",
    "epilogue": {
+    "art": "ystran",
     "lines": [
      "All eight Shards ring at once. Zib rises into the air, and its big eye projects a soft, shimmering light.",
-     "Zib's message: The Seedmother is not gone. She is in every one of you.",
-     "Zib's message: Heal the one who hungers, then bring her children home together, and she will grow again."
+     "A woman's voice fills the room, warm and huge, and you know it before she says a word.",
+     "Seedmother: If you hear this, my scout found a true listener.",
+     "Seedmother: I am not gone. I am in every one of you, scattered so I may live.",
+     "Seedmother: Heal the one who hungers, my sibling who took in too much. Then bring my children home together, and I will grow again."
     ]
    }
   },
