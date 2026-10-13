@@ -1,0 +1,99 @@
+{
+ "objects": {
+  "164": [
+   {
+    "tile": [
+     2,
+     8
+    ],
+    "k": "shop",
+    "why": "left vendor stall"
+   },
+   {
+    "tile": [
+     21,
+     8
+    ],
+    "k": "bay",
+    "why": "right stall: the arena medic heals your team"
+   },
+   {
+    "tile": [
+     11,
+     4
+    ],
+    "k": "arena",
+    "why": "the Arena Master's stage under the royal box"
+   }
+  ]
+ },
+ "npcs": {
+  "164": [
+   {
+    "art": "guard",
+    "name": "Arena Master",
+    "tile": [
+     11,
+     4
+    ],
+    "story": "arena",
+    "t": [
+     "Arena Master: Welcome to the Star Arena!"
+    ]
+   },
+   {
+    "art": "shop",
+    "name": "Vendor",
+    "tile": [
+     2,
+     9
+    ],
+    "t": [
+     "Vendor: Pods and gels for the brave!"
+    ]
+   },
+   {
+    "art": "nurse",
+    "name": "Arena medic",
+    "tile": [
+     21,
+     9
+    ],
+    "t": [
+     "Arena medic: Step up to the stall and I'll patch your team up."
+    ]
+   },
+   {
+    "art": "explorer",
+    "t": [
+     "Fan: I've watched every Star Cup final. The Star Cup crowd is wild!"
+    ]
+   },
+   {
+    "art": "civilian",
+    "t": [
+     "Kid: When I grow up I'm going to win the Gold Cup. Then the Star Cup!"
+    ]
+   },
+   {
+    "art": "researcher",
+    "t": [
+     "Commentator: Arena trainers bring teams as strong as yours. No easy wins in here!"
+    ]
+   },
+   {
+    "art": "wanderer",
+    "t": [
+     "Old fan: Your team is healed before every round. Losing just ends your run, no harm done."
+    ]
+   },
+   {
+    "art": "technician",
+    "t": [
+     "Scoreboard tech: The board remembers every Linker who clears a Cup."
+    ]
+   }
+  ]
+ },
+ "notes": "The Star Arena (164) is reached by the Shuttle Pad (026) once you hold a Signal Shard; its south gate takes you back."
+}

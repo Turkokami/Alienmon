@@ -11,9 +11,9 @@ const exitDoor=key=>key==='helix'?'space':(nodeOf(key)?key:null);
 
 /* Molten Frontier entrances, by world-map node (messages come from world_state.json -> gates) */
 const GATE_OPEN={dustara:()=>mDone('M03'),ferrox:()=>mDone('M04')&&!!G.beaten.mf12,thalassa:()=>G.shards>=2,glyphos:()=>G.shards>=4&&mDone('M09'),
- pyros:()=>mDone('M10'),helix:()=>mDone('M12')&&!!G.beaten.mf7,space:()=>mDone('M13')||!!(G.key&&G.key.helix_keycard),umbra:()=>G.shards>=7,starfall:()=>mDone('M17')};
+ pyros:()=>mDone('M10'),helix:()=>mDone('M12')&&!!G.beaten.mf7,space:()=>mDone('M13')||!!(G.key&&G.key.helix_keycard),umbra:()=>G.shards>=7,starfall:()=>mDone('M17'),arena:()=>mDone('M05')};
 const gateOpen=k=>freeRoam()||!GATE_OPEN[k]||GATE_OPEN[k]();
-const gateMsg=k=>(WSTATE.gates.find(g=>g.node===k)||{}).blocked_msg||'The way is sealed for now.';
+const gateMsg=k=>k==='arena'?'Shuttle tech: The Star Arena only flies out Linkers who hold a Signal Shard.':(WSTATE.gates.find(g=>g.node===k)||{}).blocked_msg||'The way is sealed for now.';
 
 /* your own ship: launch clearance after the first Shard (M05); landing needs the world's requirement */
 const shipOK=()=>freeRoam()||mDone('M05');

@@ -86,8 +86,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 arrival (landing pad / gate)",
-    "right edge, tile rows 7\u20138 \u2192 Dustmere Bridge"
+    "left edge, tile rows 7–8 → arrival (landing pad / gate)",
+    "right edge, tile rows 7–8 → Dustmere Bridge"
    ],
    "notes": "Home town: hero's house, Vashti's observatory dome, Recovery Bay, shop, the bridge exit east, trading post south",
    "file": "art/sections/01_dustara/004_dustmere_plaza.png"
@@ -150,8 +150,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Dustmere Plaza",
-    "right edge, tile rows 7\u20138 \u2192 Trading Post"
+    "left edge, tile rows 7–8 → Dustmere Plaza",
+    "right edge, tile rows 7–8 → Trading Post"
    ],
    "notes": "The humming canyon bridge (story: Zib's signal, M02). Long wooden-and-brass bridge over a deep canyon, glowing rune lamps",
    "file": "art/sections/01_dustara/007_dustmere_bridge.png"
@@ -172,8 +172,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Dustmere Bridge",
-    "right edge, tile rows 7\u20138 \u2192 Rimwalk Trail Part A"
+    "left edge, tile rows 7–8 → Dustmere Bridge",
+    "right edge, tile rows 7–8 → Rimwalk Trail Part A"
    ],
    "notes": "Small outpost of stalls and a corral where Sola waits (M03 first rival battle)",
    "file": "art/sections/01_dustara/008_trading_post.png"
@@ -194,8 +194,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Trading Post",
-    "right edge, tile rows 7\u20138 \u2192 Rimwalk Trail Part B"
+    "left edge, tile rows 7–8 → Trading Post",
+    "right edge, tile rows 7–8 → Rimwalk Trail Part B"
    ],
    "notes": "Canyon-rim route with drift grass, ledges you hop down, trainers",
    "file": "art/sections/01_dustara/009_rimwalk_trail_part_a.png"
@@ -216,8 +216,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Rimwalk Trail Part A",
-    "right edge, tile rows 7\u20138 \u2192 Cactus Gardens"
+    "left edge, tile rows 7–8 → Rimwalk Trail Part A",
+    "right edge, tile rows 7–8 → Cactus Gardens"
    ],
    "notes": "Canyon-rim route with drift grass, ledges you hop down, trainers",
    "file": "art/sections/01_dustara/010_rimwalk_trail_part_b.png"
@@ -238,8 +238,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Rimwalk Trail Part B",
-    "right edge, tile rows 7\u20138 \u2192 Sunset Tunnel B1"
+    "left edge, tile rows 7–8 → Rimwalk Trail Part B",
+    "right edge, tile rows 7–8 → Sunset Tunnel B1"
    ],
    "notes": "Maze of tall cacti and flowering succulents, drift grass, hidden items",
    "file": "art/sections/01_dustara/011_cactus_gardens.png"
@@ -260,8 +260,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7\u20138 \u2192 Cactus Gardens",
-    "top edge, tile columns 7\u20138 \u2192 Sunset Tunnel B2"
+    "bottom edge, tile columns 7–8 → Cactus Gardens",
+    "top edge, tile columns 7–8 → Sunset Tunnel B2"
    ],
    "notes": "Sandstone tunnel to the Molten Frontier; lantern-lit, boulders",
    "file": "art/sections/01_dustara/012_sunset_tunnel_b1.png"
@@ -282,8 +282,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7\u20138 \u2192 Sunset Tunnel B1",
-    "top edge, tile columns 7\u20138 \u2192 Molten Frontier: Tunnel Mouth"
+    "bottom edge, tile columns 7–8 → Sunset Tunnel B1",
+    "top edge, tile columns 7–8 → Molten Frontier: Tunnel Mouth"
    ],
    "notes": "Sandstone tunnel to the Molten Frontier; lantern-lit, boulders",
    "file": "art/sections/01_dustara/013_sunset_tunnel_b2.png"
@@ -304,8 +304,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Sunset Tunnel B2",
-    "right edge, tile rows 7\u20138 \u2192 Molten Frontier: Ash Trail Part A"
+    "left edge, tile rows 7–8 → Sunset Tunnel B2",
+    "right edge, tile rows 7–8 → Molten Frontier: Ash Trail Part A"
    ],
    "notes": "Exit of Sunset Tunnel onto volcanic far side",
    "file": "art/sections/01_dustara/014_molten_frontier_tunnel_mouth.png"
@@ -326,8 +326,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Molten Frontier: Tunnel Mouth",
-    "right edge, tile rows 7\u20138 \u2192 Molten Frontier: Ash Trail Part B"
+    "left edge, tile rows 7–8 → Molten Frontier: Tunnel Mouth",
+    "right edge, tile rows 7–8 → Molten Frontier: Ash Trail Part B"
    ],
    "notes": "Ash fields, cooling lava channels",
    "file": "art/sections/01_dustara/015_molten_frontier_ash_trail_part_a.png"
@@ -348,8 +348,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Molten Frontier: Ash Trail Part A",
-    "right edge, tile rows 7\u20138 \u2192 Molten Frontier: Palm Isle"
+    "left edge, tile rows 7–8 → Molten Frontier: Ash Trail Part A",
+    "right edge, tile rows 7–8 → Molten Frontier: Palm Isle"
    ],
    "notes": "Ash fields, cooling lava channels",
    "file": "art/sections/01_dustara/016_molten_frontier_ash_trail_part_b.png"
@@ -370,8 +370,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Molten Frontier: Ash Trail Part B",
-    "right edge, tile rows 7\u20138 \u2192 Molten Frontier: Port Ember"
+    "left edge, tile rows 7–8 → Molten Frontier: Ash Trail Part B",
+    "right edge, tile rows 7–8 → Molten Frontier: Port Ember"
    ],
    "notes": "Tropical island with Recovery Hut, palm trees, turquoise water",
    "file": "art/sections/01_dustara/017_molten_frontier_palm_isle.png"
@@ -392,8 +392,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Molten Frontier: Palm Isle",
-    "right edge, tile rows 7\u20138 \u2192 Molten Frontier: Long Dock"
+    "left edge, tile rows 7–8 → Molten Frontier: Palm Isle",
+    "right edge, tile rows 7–8 → Molten Frontier: Long Dock"
    ],
    "notes": "Harbor village with the harbor Relay Gate (needs 2 Shards)",
    "file": "art/sections/01_dustara/018_molten_frontier_port_ember.png"
@@ -414,8 +414,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Molten Frontier: Port Ember",
-    "right edge, tile rows 7\u20138 \u2192 Molten Frontier: Ridge Path Part A"
+    "left edge, tile rows 7–8 → Molten Frontier: Port Ember",
+    "right edge, tile rows 7–8 → Molten Frontier: Ridge Path Part A"
    ],
    "notes": "Long wooden dock where the Deep Sea Ferry berths (M08 Sola's Choice scene)",
    "file": "art/sections/01_dustara/019_molten_frontier_long_dock.png"
@@ -436,8 +436,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Molten Frontier: Long Dock",
-    "right edge, tile rows 7\u20138 \u2192 Molten Frontier: Ridge Path Part B"
+    "left edge, tile rows 7–8 → Molten Frontier: Long Dock",
+    "right edge, tile rows 7–8 → Molten Frontier: Ridge Path Part B"
    ],
    "notes": "Climbing ridge with ledges",
    "file": "art/sections/01_dustara/020_molten_frontier_ridge_path_part_a.png"
@@ -458,8 +458,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Molten Frontier: Ridge Path Part A",
-    "right edge, tile rows 7\u20138 \u2192 Molten Frontier: Forge Gate"
+    "left edge, tile rows 7–8 → Molten Frontier: Ridge Path Part A",
+    "right edge, tile rows 7–8 → Molten Frontier: Forge Gate"
    ],
    "notes": "Climbing ridge with ledges",
    "file": "art/sections/01_dustara/021_molten_frontier_ridge_path_part_b.png"
@@ -480,8 +480,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Molten Frontier: Ridge Path Part B",
-    "right edge, tile rows 7\u20138 \u2192 Molten Frontier: Fortress Gate"
+    "left edge, tile rows 7–8 → Molten Frontier: Ridge Path Part B",
+    "right edge, tile rows 7–8 → Molten Frontier: Fortress Gate"
    ],
    "notes": "Ystran Relay Gate to Ferrox, guarded by Forge Miner Dax",
    "file": "art/sections/01_dustara/022_molten_frontier_forge_gate.png"
@@ -502,8 +502,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Molten Frontier: Forge Gate",
-    "right edge, tile rows 7\u20138 \u2192 Molten Frontier: Lava Bridges Part A"
+    "left edge, tile rows 7–8 → Molten Frontier: Forge Gate",
+    "right edge, tile rows 7–8 → Molten Frontier: Lava Bridges Part A"
    ],
    "notes": "Helix Forge Fortress entrance, Helix grunt guard",
    "file": "art/sections/01_dustara/023_molten_frontier_fortress_gate.png"
@@ -524,8 +524,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Molten Frontier: Fortress Gate",
-    "right edge, tile rows 7\u20138 \u2192 Molten Frontier: Lava Bridges Part B"
+    "left edge, tile rows 7–8 → Molten Frontier: Fortress Gate",
+    "right edge, tile rows 7–8 → Molten Frontier: Lava Bridges Part B"
    ],
    "notes": "Iron bridges over lava rivers",
    "file": "art/sections/01_dustara/024_molten_frontier_lava_bridges_part_a.png"
@@ -546,8 +546,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Molten Frontier: Lava Bridges Part A",
-    "right edge, tile rows 7\u20138 \u2192 Molten Frontier: Shuttle Pad"
+    "left edge, tile rows 7–8 → Molten Frontier: Lava Bridges Part A",
+    "right edge, tile rows 7–8 → Molten Frontier: Shuttle Pad"
    ],
    "notes": "Iron bridges over lava rivers",
    "file": "art/sections/01_dustara/025_molten_frontier_lava_bridges_part_b.png"
@@ -568,8 +568,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Molten Frontier: Lava Bridges Part B",
-    "right edge, tile rows 7\u20138 \u2192 Molten Frontier: Shadow Tunnel Mouth"
+    "left edge, tile rows 7–8 → Molten Frontier: Lava Bridges Part B",
+    "right edge, tile rows 7–8 → Molten Frontier: Shadow Tunnel Mouth"
    ],
    "notes": "Fortress Shuttle Pad to Helix Station",
    "file": "art/sections/01_dustara/026_molten_frontier_shuttle_pad.png"
@@ -590,8 +590,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Molten Frontier: Shuttle Pad",
-    "right edge, tile rows 7\u20138 \u2192 Molten Frontier: Magma Mines Gate"
+    "left edge, tile rows 7–8 → Molten Frontier: Shuttle Pad",
+    "right edge, tile rows 7–8 → Molten Frontier: Magma Mines Gate"
    ],
    "notes": "Dark tunnel mouth leading to Umbra",
    "file": "art/sections/01_dustara/027_molten_frontier_shadow_tunnel_mouth.png"
@@ -612,7 +612,7 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Molten Frontier: Shadow Tunnel Mouth"
+    "left edge, tile rows 7–8 → Molten Frontier: Shadow Tunnel Mouth"
    ],
    "notes": "Sealed glowing-red Ystran door to Pyros",
    "file": "art/sections/01_dustara/028_molten_frontier_magma_mines_gate.png"
@@ -633,8 +633,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 arrival (landing pad / gate)",
-    "right edge, tile rows 7\u20138 \u2192 Rustvale"
+    "left edge, tile rows 7–8 → arrival (landing pad / gate)",
+    "right edge, tile rows 7–8 → Rustvale"
    ],
    "notes": "Arrival plaza around the Relay Gate",
    "file": "art/sections/02_ferrox/029_gate_plaza.png"
@@ -655,8 +655,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Gate Plaza",
-    "right edge, tile rows 7\u20138 \u2192 Scrap Route Part A"
+    "left edge, tile rows 7–8 → Gate Plaza",
+    "right edge, tile rows 7–8 → Scrap Route Part A"
    ],
    "notes": "Shanty town of shacks and converted rail cars",
    "file": "art/sections/02_ferrox/030_rustvale.png"
@@ -740,8 +740,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Rustvale",
-    "right edge, tile rows 7\u20138 \u2192 Scrap Route Part B"
+    "left edge, tile rows 7–8 → Rustvale",
+    "right edge, tile rows 7–8 → Scrap Route Part B"
    ],
    "notes": "Route through scrap mountains",
    "file": "art/sections/02_ferrox/034_scrap_route_part_a.png"
@@ -762,8 +762,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Scrap Route Part A",
-    "right edge, tile rows 7\u20138 \u2192 Crane Yard"
+    "left edge, tile rows 7–8 → Scrap Route Part A",
+    "right edge, tile rows 7–8 → Crane Yard"
    ],
    "notes": "Route through scrap mountains",
    "file": "art/sections/02_ferrox/035_scrap_route_part_b.png"
@@ -784,8 +784,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Scrap Route Part B",
-    "right edge, tile rows 7\u20138 \u2192 Junk Market"
+    "left edge, tile rows 7–8 → Scrap Route Part B",
+    "right edge, tile rows 7–8 → Junk Market"
    ],
    "notes": "Swinging cranes, container stacks (Crane Yard Brawl)",
    "file": "art/sections/02_ferrox/036_crane_yard.png"
@@ -806,8 +806,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Crane Yard",
-    "right edge, tile rows 7\u20138 \u2192 Furnace Ridge"
+    "left edge, tile rows 7–8 → Crane Yard",
+    "right edge, tile rows 7–8 → Furnace Ridge"
    ],
    "notes": "Open-air junk market stalls",
    "file": "art/sections/02_ferrox/037_junk_market.png"
@@ -828,8 +828,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Junk Market",
-    "right edge, tile rows 7\u20138 \u2192 Ferrox Tower 1F"
+    "left edge, tile rows 7–8 → Junk Market",
+    "right edge, tile rows 7–8 → Ferrox Tower 1F"
    ],
    "notes": "Ridge of smoking furnaces",
    "file": "art/sections/02_ferrox/038_furnace_ridge.png"
@@ -850,8 +850,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7\u20138 \u2192 Furnace Ridge",
-    "top edge, tile columns 7\u20138 (stairs up) \u2192 Ferrox Tower 2F"
+    "bottom edge, tile columns 7–8 → Furnace Ridge",
+    "top edge, tile columns 7–8 (stairs up) → Ferrox Tower 2F"
    ],
    "notes": "Keeper Hank Briggs's tower, 2 floors",
    "file": "art/sections/02_ferrox/039_ferrox_tower_1f.png"
@@ -872,7 +872,7 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7\u20138 \u2192 Ferrox Tower 1F"
+    "bottom edge, tile columns 7–8 → Ferrox Tower 1F"
    ],
    "notes": "Keeper Hank Briggs's tower, 2 floors",
    "file": "art/sections/02_ferrox/040_ferrox_tower_2f.png"
@@ -893,8 +893,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 arrival (landing pad / gate)",
-    "right edge, tile rows 7\u20138 \u2192 Mirefen Village"
+    "left edge, tile rows 7–8 → arrival (landing pad / gate)",
+    "right edge, tile rows 7–8 → Mirefen Village"
    ],
    "notes": "Landing pad on a boardwalk in the bog",
    "file": "art/sections/03_sporeholm/041_landing_bog.png"
@@ -915,8 +915,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Landing Bog",
-    "right edge, tile rows 7\u20138 \u2192 Lantern Marsh Part A"
+    "left edge, tile rows 7–8 → Landing Bog",
+    "right edge, tile rows 7–8 → Lantern Marsh Part A"
    ],
    "notes": "Stilt village of huts on mushroom stalks with rope bridges",
    "file": "art/sections/03_sporeholm/042_mirefen_village.png"
@@ -979,8 +979,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Mirefen Village",
-    "right edge, tile rows 7\u20138 \u2192 Lantern Marsh Part B"
+    "left edge, tile rows 7–8 → Mirefen Village",
+    "right edge, tile rows 7–8 → Lantern Marsh Part B"
    ],
    "notes": "Marsh of glowing lanterns and lily pads",
    "file": "art/sections/03_sporeholm/045_lantern_marsh_part_a.png"
@@ -1001,8 +1001,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Lantern Marsh Part A",
-    "right edge, tile rows 7\u20138 \u2192 Mushroom Maze 1F"
+    "left edge, tile rows 7–8 → Lantern Marsh Part A",
+    "right edge, tile rows 7–8 → Mushroom Maze 1F"
    ],
    "notes": "Marsh of glowing lanterns and lily pads",
    "file": "art/sections/03_sporeholm/046_lantern_marsh_part_b.png"
@@ -1023,8 +1023,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7\u20138 \u2192 Lantern Marsh Part B",
-    "top edge, tile columns 7\u20138 \u2192 Mushroom Maze 2F"
+    "bottom edge, tile columns 7–8 → Lantern Marsh Part B",
+    "top edge, tile columns 7–8 → Mushroom Maze 2F"
    ],
    "notes": "Maze of giant mushrooms (Lost in the Mist)",
    "file": "art/sections/03_sporeholm/047_mushroom_maze_1f.png"
@@ -1045,8 +1045,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7\u20138 \u2192 Mushroom Maze 1F",
-    "top edge, tile columns 7\u20138 \u2192 Spore Pools"
+    "bottom edge, tile columns 7–8 → Mushroom Maze 1F",
+    "top edge, tile columns 7–8 → Spore Pools"
    ],
    "notes": "Maze of giant mushrooms (Lost in the Mist)",
    "file": "art/sections/03_sporeholm/048_mushroom_maze_2f.png"
@@ -1067,8 +1067,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Mushroom Maze 2F",
-    "right edge, tile rows 7\u20138 \u2192 Sporeholm Tower 1F"
+    "left edge, tile rows 7–8 → Mushroom Maze 2F",
+    "right edge, tile rows 7–8 → Sporeholm Tower 1F"
    ],
    "notes": "Glowing spore pools (Spore Choir)",
    "file": "art/sections/03_sporeholm/049_spore_pools.png"
@@ -1089,8 +1089,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7\u20138 \u2192 Spore Pools",
-    "top edge, tile columns 7\u20138 (stairs up) \u2192 Sporeholm Tower 2F"
+    "bottom edge, tile columns 7–8 → Spore Pools",
+    "top edge, tile columns 7–8 (stairs up) → Sporeholm Tower 2F"
    ],
    "notes": "Keeper Dr. Lysa Moor's tower",
    "file": "art/sections/03_sporeholm/050_sporeholm_tower_1f.png"
@@ -1111,7 +1111,7 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7\u20138 \u2192 Sporeholm Tower 1F"
+    "bottom edge, tile columns 7–8 → Sporeholm Tower 1F"
    ],
    "notes": "Keeper Dr. Lysa Moor's tower",
    "file": "art/sections/03_sporeholm/051_sporeholm_tower_2f.png"
@@ -1132,8 +1132,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 arrival (landing pad / gate)",
-    "right edge, tile rows 7\u20138 \u2192 Saltreach Market"
+    "left edge, tile rows 7–8 → arrival (landing pad / gate)",
+    "right edge, tile rows 7–8 → Saltreach Market"
    ],
    "notes": "Fog-bound docks, net sheds, stilt houses",
    "file": "art/sections/04_thalassa/052_port_saltreach_docks.png"
@@ -1154,8 +1154,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Port Saltreach Docks",
-    "right edge, tile rows 7\u20138 \u2192 Lighthouse"
+    "left edge, tile rows 7–8 → Port Saltreach Docks",
+    "right edge, tile rows 7–8 → Lighthouse"
    ],
    "notes": "Harbor market",
    "file": "art/sections/04_thalassa/053_saltreach_market.png"
@@ -1218,8 +1218,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7\u20138 \u2192 Saltreach Market",
-    "top edge, tile columns 7\u20138 (stairs up) \u2192 Coral Route Part A"
+    "bottom edge, tile columns 7–8 → Saltreach Market",
+    "top edge, tile columns 7–8 (stairs up) → Coral Route Part A"
    ],
    "notes": "Old lighthouse interior spiral (Captain's Log)",
    "file": "art/sections/04_thalassa/056_lighthouse.png"
@@ -1240,8 +1240,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Lighthouse",
-    "right edge, tile rows 7\u20138 \u2192 Coral Route Part B"
+    "left edge, tile rows 7–8 → Lighthouse",
+    "right edge, tile rows 7–8 → Coral Route Part B"
    ],
    "notes": "Sand-bar route over coral shallows",
    "file": "art/sections/04_thalassa/057_coral_route_part_a.png"
@@ -1262,8 +1262,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Coral Route Part A",
-    "right edge, tile rows 7\u20138 \u2192 Sea Arch Cove"
+    "left edge, tile rows 7–8 → Coral Route Part A",
+    "right edge, tile rows 7–8 → Sea Arch Cove"
    ],
    "notes": "Sand-bar route over coral shallows",
    "file": "art/sections/04_thalassa/058_coral_route_part_b.png"
@@ -1284,8 +1284,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Coral Route Part B",
-    "right edge, tile rows 7\u20138 \u2192 Harbor Tower 1F"
+    "left edge, tile rows 7–8 → Coral Route Part B",
+    "right edge, tile rows 7–8 → Harbor Tower 1F"
    ],
    "notes": "Giant stone sea arch where Anchorath sleeps",
    "file": "art/sections/04_thalassa/059_sea_arch_cove.png"
@@ -1306,8 +1306,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7\u20138 \u2192 Sea Arch Cove",
-    "top edge, tile columns 7\u20138 (stairs up) \u2192 Harbor Tower 2F"
+    "bottom edge, tile columns 7–8 → Sea Arch Cove",
+    "top edge, tile columns 7–8 (stairs up) → Harbor Tower 2F"
    ],
    "notes": "Captain Marsh's harbor tower",
    "file": "art/sections/04_thalassa/060_harbor_tower_1f.png"
@@ -1328,7 +1328,7 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7\u20138 \u2192 Harbor Tower 1F"
+    "bottom edge, tile columns 7–8 → Harbor Tower 1F"
    ],
    "notes": "Captain Marsh's harbor tower",
    "file": "art/sections/04_thalassa/061_harbor_tower_2f.png"
@@ -1349,8 +1349,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 arrival (landing pad / gate)",
-    "right edge, tile rows 7\u20138 \u2192 Neon Boulevard"
+    "left edge, tile rows 7–8 → arrival (landing pad / gate)",
+    "right edge, tile rows 7–8 → Neon Boulevard"
    ],
    "notes": "Floating landing deck with orange landing ring (rebuild at new scale)",
    "file": "art/sections/05_neonis/062_neonis_starport.png"
@@ -1371,8 +1371,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Neonis Starport",
-    "right edge, tile rows 7\u20138 \u2192 Arcade District"
+    "left edge, tile rows 7–8 → Neonis Starport",
+    "right edge, tile rows 7–8 → Arcade District"
    ],
    "notes": "Main neon street",
    "file": "art/sections/05_neonis/063_neon_boulevard.png"
@@ -1435,8 +1435,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Neon Boulevard",
-    "right edge, tile rows 7\u20138 \u2192 Broadcast Route Part A"
+    "left edge, tile rows 7–8 → Neon Boulevard",
+    "right edge, tile rows 7–8 → Broadcast Route Part A"
    ],
    "notes": "Arcade halls and plazas (Glitch Hunt)",
    "file": "art/sections/05_neonis/066_arcade_district.png"
@@ -1457,8 +1457,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Arcade District",
-    "right edge, tile rows 7\u20138 \u2192 Broadcast Route Part B"
+    "left edge, tile rows 7–8 → Arcade District",
+    "right edge, tile rows 7–8 → Broadcast Route Part B"
    ],
    "notes": "Route of antenna towers and cables (Pirate Radio)",
    "file": "art/sections/05_neonis/067_broadcast_route_part_a.png"
@@ -1479,8 +1479,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Broadcast Route Part A",
-    "right edge, tile rows 7\u20138 \u2192 Voltspire 1F"
+    "left edge, tile rows 7–8 → Broadcast Route Part A",
+    "right edge, tile rows 7–8 → Voltspire 1F"
    ],
    "notes": "Route of antenna towers and cables (Pirate Radio)",
    "file": "art/sections/05_neonis/068_broadcast_route_part_b.png"
@@ -1501,8 +1501,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7\u20138 \u2192 Broadcast Route Part B",
-    "top edge, tile columns 7\u20138 (stairs up) \u2192 Voltspire 2F"
+    "bottom edge, tile columns 7–8 → Broadcast Route Part B",
+    "top edge, tile columns 7–8 (stairs up) → Voltspire 2F"
    ],
    "notes": "Keeper Static's tower, 3 floors",
    "file": "art/sections/05_neonis/069_voltspire_1f.png"
@@ -1523,8 +1523,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7\u20138 \u2192 Voltspire 1F",
-    "top edge, tile columns 7\u20138 (stairs up) \u2192 Voltspire 3F"
+    "bottom edge, tile columns 7–8 → Voltspire 1F",
+    "top edge, tile columns 7–8 (stairs up) → Voltspire 3F"
    ],
    "notes": "Keeper Static's tower, 3 floors",
    "file": "art/sections/05_neonis/070_voltspire_2f.png"
@@ -1545,7 +1545,7 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7\u20138 \u2192 Voltspire 2F"
+    "bottom edge, tile columns 7–8 → Voltspire 2F"
    ],
    "notes": "Keeper Static's tower, 3 floors",
    "file": "art/sections/05_neonis/071_voltspire_3f.png"
@@ -1566,8 +1566,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 arrival (landing pad / gate)",
-    "right edge, tile rows 7\u20138 \u2192 Dig Camp"
+    "left edge, tile rows 7–8 → arrival (landing pad / gate)",
+    "right edge, tile rows 7–8 → Dig Camp"
    ],
    "notes": "Landing among sunken ruins",
    "file": "art/sections/06_glyphos/072_sunken_landing.png"
@@ -1588,8 +1588,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Sunken Landing",
-    "right edge, tile rows 7\u20138 \u2192 Coral Ruins Part A"
+    "left edge, tile rows 7–8 → Sunken Landing",
+    "right edge, tile rows 7–8 → Coral Ruins Part A"
    ],
    "notes": "Archaeologists' camp of tents and scaffolding",
    "file": "art/sections/06_glyphos/073_dig_camp.png"
@@ -1631,8 +1631,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Dig Camp",
-    "right edge, tile rows 7\u20138 \u2192 Coral Ruins Part B"
+    "left edge, tile rows 7–8 → Dig Camp",
+    "right edge, tile rows 7–8 → Coral Ruins Part B"
    ],
    "notes": "Flooded ruins route",
    "file": "art/sections/06_glyphos/075_coral_ruins_part_a.png"
@@ -1653,8 +1653,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Coral Ruins Part A",
-    "right edge, tile rows 7\u20138 \u2192 Glyph Hollow"
+    "left edge, tile rows 7–8 → Coral Ruins Part A",
+    "right edge, tile rows 7–8 → Glyph Hollow"
    ],
    "notes": "Flooded ruins route",
    "file": "art/sections/06_glyphos/076_coral_ruins_part_b.png"
@@ -1675,8 +1675,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Coral Ruins Part B",
-    "right edge, tile rows 7\u20138 \u2192 Temple of Voices 1F"
+    "left edge, tile rows 7–8 → Coral Ruins Part B",
+    "right edge, tile rows 7–8 → Temple of Voices 1F"
    ],
    "notes": "Hollow of glowing glyph stones (Guardian Stones)",
    "file": "art/sections/06_glyphos/077_glyph_hollow.png"
@@ -1697,8 +1697,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7\u20138 \u2192 Glyph Hollow",
-    "top edge, tile columns 7\u20138 (stairs up) \u2192 Temple of Voices 2F"
+    "bottom edge, tile columns 7–8 → Glyph Hollow",
+    "top edge, tile columns 7–8 (stairs up) → Temple of Voices 2F"
    ],
    "notes": "Ancient Ystran temple (no Keeper), 3 floors (Song of the Chimes)",
    "file": "art/sections/06_glyphos/078_temple_of_voices_1f.png"
@@ -1719,8 +1719,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7\u20138 \u2192 Temple of Voices 1F",
-    "top edge, tile columns 7\u20138 (stairs up) \u2192 Temple of Voices 3F"
+    "bottom edge, tile columns 7–8 → Temple of Voices 1F",
+    "top edge, tile columns 7–8 (stairs up) → Temple of Voices 3F"
    ],
    "notes": "Ancient Ystran temple (no Keeper), 3 floors (Song of the Chimes)",
    "file": "art/sections/06_glyphos/079_temple_of_voices_2f.png"
@@ -1741,7 +1741,7 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7\u20138 \u2192 Temple of Voices 2F"
+    "bottom edge, tile columns 7–8 → Temple of Voices 2F"
    ],
    "notes": "Ancient Ystran temple (no Keeper), 3 floors (Song of the Chimes)",
    "file": "art/sections/06_glyphos/080_temple_of_voices_3f.png"
@@ -1783,8 +1783,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 arrival (landing pad / gate)",
-    "right edge, tile rows 7\u20138 \u2192 Lava Rail Part A"
+    "left edge, tile rows 7–8 → arrival (landing pad / gate)",
+    "right edge, tile rows 7–8 → Lava Rail Part A"
    ],
    "notes": "Mining camp of timber shacks, brass furnaces, rope lifts",
    "file": "art/sections/07_pyros/082_cinder_hollow.png"
@@ -1847,8 +1847,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Cinder Hollow",
-    "right edge, tile rows 7\u20138 \u2192 Lava Rail Part B"
+    "left edge, tile rows 7–8 → Cinder Hollow",
+    "right edge, tile rows 7–8 → Lava Rail Part B"
    ],
    "notes": "Mine-cart rail line over lava",
    "file": "art/sections/07_pyros/085_lava_rail_part_a.png"
@@ -1869,8 +1869,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Lava Rail Part A",
-    "right edge, tile rows 7\u20138 \u2192 Deep Mines B1"
+    "left edge, tile rows 7–8 → Lava Rail Part A",
+    "right edge, tile rows 7–8 → Deep Mines B1"
    ],
    "notes": "Mine-cart rail line over lava",
    "file": "art/sections/07_pyros/086_lava_rail_part_b.png"
@@ -1891,8 +1891,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7\u20138 \u2192 Lava Rail Part B",
-    "top edge, tile columns 7\u20138 \u2192 Deep Mines B2"
+    "bottom edge, tile columns 7–8 → Lava Rail Part B",
+    "top edge, tile columns 7–8 → Deep Mines B2"
    ],
    "notes": "Deep mines, 3 levels (Teo's Trail 1, Deep Drill)",
    "file": "art/sections/07_pyros/087_deep_mines_b1.png"
@@ -1913,8 +1913,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7\u20138 \u2192 Deep Mines B1",
-    "top edge, tile columns 7\u20138 \u2192 Deep Mines B3"
+    "bottom edge, tile columns 7–8 → Deep Mines B1",
+    "top edge, tile columns 7–8 → Deep Mines B3"
    ],
    "notes": "Deep mines, 3 levels (Teo's Trail 1, Deep Drill)",
    "file": "art/sections/07_pyros/088_deep_mines_b2.png"
@@ -1935,8 +1935,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7\u20138 \u2192 Deep Mines B2",
-    "top edge, tile columns 7\u20138 \u2192 Furnace Ridge (Pyros)"
+    "bottom edge, tile columns 7–8 → Deep Mines B2",
+    "top edge, tile columns 7–8 → Furnace Ridge (Pyros)"
    ],
    "notes": "Deep mines, 3 levels (Teo's Trail 1, Deep Drill)",
    "file": "art/sections/07_pyros/089_deep_mines_b3.png"
@@ -1957,8 +1957,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Deep Mines B3",
-    "right edge, tile rows 7\u20138 \u2192 Volcano Tower 1F"
+    "left edge, tile rows 7–8 → Deep Mines B3",
+    "right edge, tile rows 7–8 → Volcano Tower 1F"
    ],
    "notes": "Ridge of forges",
    "file": "art/sections/07_pyros/090_furnace_ridge_pyros.png"
@@ -1979,8 +1979,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7\u20138 \u2192 Furnace Ridge (Pyros)",
-    "top edge, tile columns 7\u20138 (stairs up) \u2192 Volcano Tower 2F"
+    "bottom edge, tile columns 7–8 → Furnace Ridge (Pyros)",
+    "top edge, tile columns 7–8 (stairs up) → Volcano Tower 2F"
    ],
    "notes": "Keeper Basalt's tower",
    "file": "art/sections/07_pyros/091_volcano_tower_1f.png"
@@ -2001,7 +2001,7 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7\u20138 \u2192 Volcano Tower 1F"
+    "bottom edge, tile columns 7–8 → Volcano Tower 1F"
    ],
    "notes": "Keeper Basalt's tower",
    "file": "art/sections/07_pyros/092_volcano_tower_2f.png"
@@ -2022,8 +2022,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 arrival (landing pad / gate)",
-    "right edge, tile rows 7\u20138 \u2192 Aurora Route Part A"
+    "left edge, tile rows 7–8 → arrival (landing pad / gate)",
+    "right edge, tile rows 7–8 → Aurora Route Part A"
    ],
    "notes": "Research town under aurora skies",
    "file": "art/sections/08_glacia/093_frostmark.png"
@@ -2086,8 +2086,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Frostmark",
-    "right edge, tile rows 7\u20138 \u2192 Aurora Route Part B"
+    "left edge, tile rows 7–8 → Frostmark",
+    "right edge, tile rows 7–8 → Aurora Route Part B"
    ],
    "notes": "Snowfield route",
    "file": "art/sections/08_glacia/096_aurora_route_part_a.png"
@@ -2108,8 +2108,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Aurora Route Part A",
-    "right edge, tile rows 7\u20138 \u2192 Crystal Caverns B1"
+    "left edge, tile rows 7–8 → Aurora Route Part A",
+    "right edge, tile rows 7–8 → Crystal Caverns B1"
    ],
    "notes": "Snowfield route",
    "file": "art/sections/08_glacia/097_aurora_route_part_b.png"
@@ -2130,8 +2130,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7\u20138 \u2192 Aurora Route Part B",
-    "top edge, tile columns 7\u20138 \u2192 Crystal Caverns B2"
+    "bottom edge, tile columns 7–8 → Aurora Route Part B",
+    "top edge, tile columns 7–8 → Crystal Caverns B2"
    ],
    "notes": "Ice caves with crystal icicles, 3 floors",
    "file": "art/sections/08_glacia/098_crystal_caverns_b1.png"
@@ -2152,8 +2152,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7\u20138 \u2192 Crystal Caverns B1",
-    "top edge, tile columns 7\u20138 \u2192 Crystal Caverns B3"
+    "bottom edge, tile columns 7–8 → Crystal Caverns B1",
+    "top edge, tile columns 7–8 → Crystal Caverns B3"
    ],
    "notes": "Ice caves with crystal icicles, 3 floors",
    "file": "art/sections/08_glacia/099_crystal_caverns_b2.png"
@@ -2174,8 +2174,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7\u20138 \u2192 Crystal Caverns B2",
-    "top edge, tile columns 7\u20138 \u2192 Fossil Dig"
+    "bottom edge, tile columns 7–8 → Crystal Caverns B2",
+    "top edge, tile columns 7–8 → Fossil Dig"
    ],
    "notes": "Ice caves with crystal icicles, 3 floors",
    "file": "art/sections/08_glacia/100_crystal_caverns_b3.png"
@@ -2196,8 +2196,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Crystal Caverns B3",
-    "right edge, tile rows 7\u20138 \u2192 Frozen Falls"
+    "left edge, tile rows 7–8 → Crystal Caverns B3",
+    "right edge, tile rows 7–8 → Frozen Falls"
    ],
    "notes": "Dig site with a giant Ystran creature frozen in the glacier wall (Teeth in the ice)",
    "file": "art/sections/08_glacia/101_fossil_dig.png"
@@ -2218,8 +2218,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Fossil Dig",
-    "right edge, tile rows 7\u20138 \u2192 Aurora Tower 1F"
+    "left edge, tile rows 7–8 → Fossil Dig",
+    "right edge, tile rows 7–8 → Aurora Tower 1F"
    ],
    "notes": "Frozen waterfall (Glaciryx)",
    "file": "art/sections/08_glacia/102_frozen_falls.png"
@@ -2240,8 +2240,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7\u20138 \u2192 Frozen Falls",
-    "top edge, tile columns 7\u20138 (stairs up) \u2192 Aurora Tower 2F"
+    "bottom edge, tile columns 7–8 → Frozen Falls",
+    "top edge, tile columns 7–8 (stairs up) → Aurora Tower 2F"
    ],
    "notes": "Keeper Ingrid's tower",
    "file": "art/sections/08_glacia/103_aurora_tower_1f.png"
@@ -2262,7 +2262,7 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7\u20138 \u2192 Aurora Tower 1F"
+    "bottom edge, tile columns 7–8 → Aurora Tower 1F"
    ],
    "notes": "Keeper Ingrid's tower",
    "file": "art/sections/08_glacia/104_aurora_tower_2f.png"
@@ -2283,8 +2283,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 arrival (landing pad / gate)",
-    "right edge, tile rows 7\u20138 \u2192 Containment Wing 1F"
+    "left edge, tile rows 7–8 → arrival (landing pad / gate)",
+    "right edge, tile rows 7–8 → Containment Wing 1F"
    ],
    "notes": "Station docking ring hub",
    "file": "art/sections/09_helix/105_docking_ring.png"
@@ -2368,8 +2368,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7\u20138 \u2192 Docking Ring",
-    "top edge, tile columns 7\u20138 \u2192 Containment Wing 2F"
+    "bottom edge, tile columns 7–8 → Docking Ring",
+    "top edge, tile columns 7–8 → Containment Wing 2F"
    ],
    "notes": "Cells with captive Alienmon (The Captives)",
    "file": "art/sections/09_helix/109_containment_wing_1f.png"
@@ -2390,8 +2390,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7\u20138 \u2192 Containment Wing 1F",
-    "top edge, tile columns 7\u20138 \u2192 Engineering"
+    "bottom edge, tile columns 7–8 → Containment Wing 1F",
+    "top edge, tile columns 7–8 → Engineering"
    ],
    "notes": "Cells with captive Alienmon (The Captives)",
    "file": "art/sections/09_helix/110_containment_wing_2f.png"
@@ -2412,8 +2412,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7\u20138 \u2192 Containment Wing 2F",
-    "top edge, tile columns 7\u20138 \u2192 Vex's Arena"
+    "bottom edge, tile columns 7–8 → Containment Wing 2F",
+    "top edge, tile columns 7–8 → Vex's Arena"
    ],
    "notes": "Reactor engineering deck",
    "file": "art/sections/09_helix/111_engineering.png"
@@ -2455,7 +2455,7 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7\u20138 \u2192 Engineering"
+    "bottom edge, tile columns 7–8 → Engineering"
    ],
    "notes": "Admin Vex's arena",
    "file": "art/sections/09_helix/113_vex_s_arena.png"
@@ -2476,8 +2476,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 arrival (landing pad / gate)",
-    "right edge, tile rows 7\u20138 \u2192 Skyreach Plaza"
+    "left edge, tile rows 7–8 → arrival (landing pad / gate)",
+    "right edge, tile rows 7–8 → Skyreach Plaza"
    ],
    "notes": "Sky dock for airships",
    "file": "art/sections/10_halo/114_cloud_dock.png"
@@ -2498,8 +2498,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Cloud Dock",
-    "right edge, tile rows 7\u20138 \u2192 Wind Bridges Part A"
+    "left edge, tile rows 7–8 → Cloud Dock",
+    "right edge, tile rows 7–8 → Wind Bridges Part A"
    ],
    "notes": "Plaza with holo-globe fountain (rebuild at new scale)",
    "file": "art/sections/10_halo/115_skyreach_plaza.png"
@@ -2562,8 +2562,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Skyreach Plaza",
-    "right edge, tile rows 7\u20138 \u2192 Wind Bridges Part B"
+    "left edge, tile rows 7–8 → Skyreach Plaza",
+    "right edge, tile rows 7–8 → Wind Bridges Part B"
    ],
    "notes": "Bridges between floating islands",
    "file": "art/sections/10_halo/118_wind_bridges_part_a.png"
@@ -2584,8 +2584,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Wind Bridges Part A",
-    "right edge, tile rows 7\u20138 \u2192 Floating Gardens"
+    "left edge, tile rows 7–8 → Wind Bridges Part A",
+    "right edge, tile rows 7–8 → Floating Gardens"
    ],
    "notes": "Bridges between floating islands",
    "file": "art/sections/10_halo/119_wind_bridges_part_b.png"
@@ -2606,8 +2606,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Wind Bridges Part B",
-    "right edge, tile rows 7\u20138 \u2192 Sky Temple 1F"
+    "left edge, tile rows 7–8 → Wind Bridges Part B",
+    "right edge, tile rows 7–8 → Sky Temple 1F"
    ],
    "notes": "Floating garden islands",
    "file": "art/sections/10_halo/120_floating_gardens.png"
@@ -2628,8 +2628,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7\u20138 \u2192 Floating Gardens",
-    "top edge, tile columns 7\u20138 (stairs up) \u2192 Sky Temple 2F"
+    "bottom edge, tile columns 7–8 → Floating Gardens",
+    "top edge, tile columns 7–8 (stairs up) → Sky Temple 2F"
    ],
    "notes": "Echo & Iris's temple",
    "file": "art/sections/10_halo/121_sky_temple_1f.png"
@@ -2650,7 +2650,7 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7\u20138 \u2192 Sky Temple 1F"
+    "bottom edge, tile columns 7–8 → Sky Temple 1F"
    ],
    "notes": "Echo & Iris's temple",
    "file": "art/sections/10_halo/122_sky_temple_2f.png"
@@ -2671,8 +2671,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7\u20138 \u2192 arrival (landing pad / gate)",
-    "top edge, tile columns 7\u20138 \u2192 Gravewell"
+    "bottom edge, tile columns 7–8 → arrival (landing pad / gate)",
+    "top edge, tile columns 7–8 → Gravewell"
    ],
    "notes": "Exit of the Shadow Tunnel",
    "file": "art/sections/11_umbra/123_shadow_tunnel_exit.png"
@@ -2693,8 +2693,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Shadow Tunnel Exit",
-    "right edge, tile rows 7\u20138 \u2192 Lantern Streets Part A"
+    "left edge, tile rows 7–8 → Shadow Tunnel Exit",
+    "right edge, tile rows 7–8 → Lantern Streets Part A"
    ],
    "notes": "Dark lantern city",
    "file": "art/sections/11_umbra/124_gravewell.png"
@@ -2757,8 +2757,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Gravewell",
-    "right edge, tile rows 7\u20138 \u2192 Lantern Streets Part B"
+    "left edge, tile rows 7–8 → Gravewell",
+    "right edge, tile rows 7–8 → Lantern Streets Part B"
    ],
    "notes": "Lantern-lined streets (Lanterns of Gravewell)",
    "file": "art/sections/11_umbra/127_lantern_streets_part_a.png"
@@ -2779,8 +2779,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Lantern Streets Part A",
-    "right edge, tile rows 7\u20138 \u2192 The Sinkhole B1"
+    "left edge, tile rows 7–8 → Lantern Streets Part A",
+    "right edge, tile rows 7–8 → The Sinkhole B1"
    ],
    "notes": "Lantern-lined streets (Lanterns of Gravewell)",
    "file": "art/sections/11_umbra/128_lantern_streets_part_b.png"
@@ -2801,8 +2801,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7\u20138 \u2192 Lantern Streets Part B",
-    "top edge, tile columns 7\u20138 \u2192 The Sinkhole B2"
+    "bottom edge, tile columns 7–8 → Lantern Streets Part B",
+    "top edge, tile columns 7–8 → The Sinkhole B2"
    ],
    "notes": "The Sinkhole, 4 levels (The well that whispers)",
    "file": "art/sections/11_umbra/129_the_sinkhole_b1.png"
@@ -2823,8 +2823,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7\u20138 \u2192 The Sinkhole B1",
-    "top edge, tile columns 7\u20138 \u2192 The Sinkhole B3"
+    "bottom edge, tile columns 7–8 → The Sinkhole B1",
+    "top edge, tile columns 7–8 → The Sinkhole B3"
    ],
    "notes": "The Sinkhole, 4 levels (The well that whispers)",
    "file": "art/sections/11_umbra/130_the_sinkhole_b2.png"
@@ -2845,8 +2845,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7\u20138 \u2192 The Sinkhole B2",
-    "top edge, tile columns 7\u20138 \u2192 The Sinkhole B4"
+    "bottom edge, tile columns 7–8 → The Sinkhole B2",
+    "top edge, tile columns 7–8 → The Sinkhole B4"
    ],
    "notes": "The Sinkhole, 4 levels (The well that whispers)",
    "file": "art/sections/11_umbra/131_the_sinkhole_b3.png"
@@ -2867,8 +2867,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7\u20138 \u2192 The Sinkhole B3",
-    "top edge, tile columns 7\u20138 \u2192 Gravewell Tower 1F"
+    "bottom edge, tile columns 7–8 → The Sinkhole B3",
+    "top edge, tile columns 7–8 → Gravewell Tower 1F"
    ],
    "notes": "The Sinkhole, 4 levels (The well that whispers)",
    "file": "art/sections/11_umbra/132_the_sinkhole_b4.png"
@@ -2910,8 +2910,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7\u20138 \u2192 The Sinkhole B4",
-    "top edge, tile columns 7\u20138 (stairs up) \u2192 Gravewell Tower 2F"
+    "bottom edge, tile columns 7–8 → The Sinkhole B4",
+    "top edge, tile columns 7–8 (stairs up) → Gravewell Tower 2F"
    ],
    "notes": "Keeper Kade's tower",
    "file": "art/sections/11_umbra/134_gravewell_tower_1f.png"
@@ -2932,7 +2932,7 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7\u20138 \u2192 Gravewell Tower 1F"
+    "bottom edge, tile columns 7–8 → Gravewell Tower 1F"
    ],
    "notes": "Keeper Kade's tower",
    "file": "art/sections/11_umbra/135_gravewell_tower_2f.png"
@@ -2953,8 +2953,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 arrival (landing pad / gate)",
-    "right edge, tile rows 7\u20138 \u2192 Seedpod Fields Part A"
+    "left edge, tile rows 7–8 → arrival (landing pad / gate)",
+    "right edge, tile rows 7–8 → Seedpod Fields Part A"
    ],
    "notes": "Military cordon camp",
    "file": "art/sections/12_starfall/136_rim_camp.png"
@@ -2996,8 +2996,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Rim Camp",
-    "right edge, tile rows 7\u20138 \u2192 Seedpod Fields Part B"
+    "left edge, tile rows 7–8 → Rim Camp",
+    "right edge, tile rows 7–8 → Seedpod Fields Part B"
    ],
    "notes": "Fields of cracked seedpod shells",
    "file": "art/sections/12_starfall/138_seedpod_fields_part_a.png"
@@ -3018,8 +3018,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Seedpod Fields Part A",
-    "right edge, tile rows 7\u20138 \u2192 Teo's Old Camp"
+    "left edge, tile rows 7–8 → Seedpod Fields Part A",
+    "right edge, tile rows 7–8 → Teo's Old Camp"
    ],
    "notes": "Fields of cracked seedpod shells",
    "file": "art/sections/12_starfall/139_seedpod_fields_part_b.png"
@@ -3040,8 +3040,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Seedpod Fields Part B",
-    "right edge, tile rows 7\u20138 \u2192 Crater Rim"
+    "left edge, tile rows 7–8 → Seedpod Fields Part B",
+    "right edge, tile rows 7–8 → Crater Rim"
    ],
    "notes": "Teo's abandoned camp (Teo's Journal)",
    "file": "art/sections/12_starfall/140_teo_s_old_camp.png"
@@ -3062,8 +3062,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Teo's Old Camp",
-    "right edge, tile rows 7\u20138 \u2192 Crater Descent B1"
+    "left edge, tile rows 7–8 → Teo's Old Camp",
+    "right edge, tile rows 7–8 → Crater Descent B1"
    ],
    "notes": "Rim of the crater",
    "file": "art/sections/12_starfall/141_crater_rim.png"
@@ -3084,8 +3084,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7\u20138 \u2192 Crater Rim",
-    "top edge, tile columns 7\u20138 \u2192 Crater Descent B2"
+    "bottom edge, tile columns 7–8 → Crater Rim",
+    "top edge, tile columns 7–8 → Crater Descent B2"
    ],
    "notes": "Descent into the crater, 3 levels",
    "file": "art/sections/12_starfall/142_crater_descent_b1.png"
@@ -3106,8 +3106,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7\u20138 \u2192 Crater Descent B1",
-    "top edge, tile columns 7\u20138 \u2192 Crater Descent B3"
+    "bottom edge, tile columns 7–8 → Crater Descent B1",
+    "top edge, tile columns 7–8 → Crater Descent B3"
    ],
    "notes": "Descent into the crater, 3 levels",
    "file": "art/sections/12_starfall/143_crater_descent_b2.png"
@@ -3128,8 +3128,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7\u20138 \u2192 Crater Descent B2",
-    "top edge, tile columns 7\u20138 \u2192 Rift Engine Platform"
+    "bottom edge, tile columns 7–8 → Crater Descent B2",
+    "top edge, tile columns 7–8 → Rift Engine Platform"
    ],
    "notes": "Descent into the crater, 3 levels",
    "file": "art/sections/12_starfall/144_crater_descent_b3.png"
@@ -3150,7 +3150,7 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Crater Descent B3"
+    "left edge, tile rows 7–8 → Crater Descent B3"
    ],
    "notes": "Helix Rift Engine platform (M19 Thorne at the Rift)",
    "file": "art/sections/12_starfall/145_rift_engine_platform.png"
@@ -3171,8 +3171,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 arrival (landing pad / gate)",
-    "right edge, tile rows 7\u20138 \u2192 Great Telescope"
+    "left edge, tile rows 7–8 → arrival (landing pad / gate)",
+    "right edge, tile rows 7–8 → Great Telescope"
    ],
    "notes": "Lift station up the mountain",
    "file": "art/sections/13_apex/146_summit_lift.png"
@@ -3277,7 +3277,7 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7\u20138 \u2192 Summit Lift"
+    "bottom edge, tile columns 7–8 → Summit Lift"
    ],
    "notes": "Prime Linker Orra's chamber under the Great Telescope",
    "file": "art/sections/13_apex/151_great_telescope.png"
@@ -3319,8 +3319,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 arrival (landing pad / gate)",
-    "right edge, tile rows 7\u20138 \u2192 Floating Continents Part A"
+    "left edge, tile rows 7–8 → arrival (landing pad / gate)",
+    "right edge, tile rows 7–8 → Floating Continents Part A"
    ],
    "notes": "Floating fragment where you arrive",
    "file": "art/sections/14_ystra/153_arrival_fragment.png"
@@ -3341,8 +3341,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Arrival Fragment",
-    "right edge, tile rows 7\u20138 \u2192 Floating Continents Part B"
+    "left edge, tile rows 7–8 → Arrival Fragment",
+    "right edge, tile rows 7–8 → Floating Continents Part B"
    ],
    "notes": "Floating continents",
    "file": "art/sections/14_ystra/154_floating_continents_part_a.png"
@@ -3363,8 +3363,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Floating Continents Part A",
-    "right edge, tile rows 7\u20138 \u2192 Drowned Seas"
+    "left edge, tile rows 7–8 → Floating Continents Part A",
+    "right edge, tile rows 7–8 → Drowned Seas"
    ],
    "notes": "Floating continents",
    "file": "art/sections/14_ystra/155_floating_continents_part_b.png"
@@ -3385,8 +3385,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Floating Continents Part B",
-    "right edge, tile rows 7\u20138 \u2192 Sun Forge"
+    "left edge, tile rows 7–8 → Floating Continents Part B",
+    "right edge, tile rows 7–8 → Sun Forge"
    ],
    "notes": "Drowned seas",
    "file": "art/sections/14_ystra/156_drowned_seas.png"
@@ -3407,8 +3407,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Drowned Seas",
-    "right edge, tile rows 7\u20138 \u2192 Crystal Ruins 1F"
+    "left edge, tile rows 7–8 → Drowned Seas",
+    "right edge, tile rows 7–8 → Crystal Ruins 1F"
    ],
    "notes": "Sun Forge pillar",
    "file": "art/sections/14_ystra/157_sun_forge.png"
@@ -3429,8 +3429,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7\u20138 \u2192 Sun Forge",
-    "top edge, tile columns 7\u20138 \u2192 Crystal Ruins 2F"
+    "bottom edge, tile columns 7–8 → Sun Forge",
+    "top edge, tile columns 7–8 → Crystal Ruins 2F"
    ],
    "notes": "Crystal ruins",
    "file": "art/sections/14_ystra/158_crystal_ruins_1f.png"
@@ -3451,8 +3451,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7\u20138 \u2192 Crystal Ruins 1F",
-    "top edge, tile columns 7\u20138 \u2192 Blighted Forest Part A"
+    "bottom edge, tile columns 7–8 → Crystal Ruins 1F",
+    "top edge, tile columns 7–8 → Blighted Forest Part A"
    ],
    "notes": "Crystal ruins",
    "file": "art/sections/14_ystra/159_crystal_ruins_2f.png"
@@ -3473,8 +3473,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Crystal Ruins 2F",
-    "right edge, tile rows 7\u20138 \u2192 Blighted Forest Part B"
+    "left edge, tile rows 7–8 → Crystal Ruins 2F",
+    "right edge, tile rows 7–8 → Blighted Forest Part B"
    ],
    "notes": "Blighted forest (Blight Cleansing)",
    "file": "art/sections/14_ystra/160_blighted_forest_part_a.png"
@@ -3495,8 +3495,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Blighted Forest Part A",
-    "right edge, tile rows 7\u20138 \u2192 Edge of the Void"
+    "left edge, tile rows 7–8 → Blighted Forest Part A",
+    "right edge, tile rows 7–8 → Edge of the Void"
    ],
    "notes": "Blighted forest (Blight Cleansing)",
    "file": "art/sections/14_ystra/161_blighted_forest_part_b.png"
@@ -3517,8 +3517,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Blighted Forest Part B",
-    "right edge, tile rows 7\u20138 \u2192 Seedmother's Grove"
+    "left edge, tile rows 7–8 → Blighted Forest Part B",
+    "right edge, tile rows 7–8 → Seedmother's Grove"
    ],
    "notes": "Edge of the void where Oblivane waits",
    "file": "art/sections/14_ystra/162_edge_of_the_void.png"
@@ -3539,10 +3539,31 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7\u20138 \u2192 Edge of the Void"
+    "left edge, tile rows 7–8 → Edge of the Void"
    ],
    "notes": "The Seedmother's grove (finale)",
    "file": "art/sections/14_ystra/163_seedmother_s_grove.png"
+  },
+  {
+   "id": "164",
+   "planet": "Star Arena",
+   "name": "Star Arena",
+   "type": "arena",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "bottom edge, tile columns 11–12 → arrival (shuttle back to the Molten Frontier)"
+   ],
+   "notes": "Floating coliseum among the stars: central battle floor, royal box with the Arena Master, vendor stalls left and right, south gate bridge",
+   "file": "art/sections/15_arena/164_star_arena.png"
   }
  ]
 }

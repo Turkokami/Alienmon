@@ -46,18 +46,20 @@ function secArrive(){const s=SWORLD[G.sec.id],w=s.warps.find(w=>w.tile[0]===G.se
 // Frontier gates: the story gate decides; through it you arrive at that planet's landing edge (its own sections,
 // or its classic painted town until that planet's sections are built). Walking back out returns you to the gate.
 function secGate(w){if(w.options){const back=()=>{G.sec.x=w.at[0];G.sec.y=w.at[1];face=w.face};
-  return choose('Shuttle Pad',w.options.map(o=>o.label).concat(['Cancel']),i=>{const o=w.options[i];if(!o)return back();if(!gateOpen(o.node)){back();return say(gateMsg(o.node))}secGate(Object.assign({},w,{options:null,node:o.node,to:'planet:'+o.planet}))},()=>back())}
+  return choose('Shuttle Pad',w.options.map(o=>o.label).concat(['Cancel']),i=>{const o=w.options[i];if(!o)return back();if(!gateOpen(o.node)){back();return say(gateMsg(o.node))}secGate(Object.assign({},w,{options:null,node:o.node,to:'planet:'+o.planet,section:o.section}))},()=>back())}
  const k=w.to.slice(7);if(w.node&&!gateOpen(w.node)){G.sec.x=w.at[0];G.sec.y=w.at[1];face=w.face;return say(gateMsg(w.node))}
  if(w.sub&&PAINT[w.sub]){SFADE={t:0,go:()=>{G.secBack={id:G.sec.id,at:w.at,planet:G.planet};G.planet=pidx(k);G.sub=w.sub;G.sec=null;G.ppos=PAINT[w.sub].start.slice();face='up';banner=90;doorSfx()}};return}
+ if(w.section&&SWORLD[w.section]){const tgt=SWORLD[w.section];SFADE={t:0,go:()=>{G.secBack={id:G.sec.id,at:w.at,planet:G.planet};enterSection(tgt.id,tgt.spawns.arrival||tgt.spawns.default,'up');doorSfx()}};return}
  SFADE={t:0,go:()=>{G.secBack={id:G.sec.id,at:w.at,planet:G.planet};G.planet=pidx(k);G.sub=null;const a=secArrival(k);
   if(a)enterSection(a[0],a[1],'right');else{G.sec=null;const P=PAINT[k];if(P){G.ppos=[P.start[0],P.exitY-30];face='up'}banner=90}doorSfx()}}}
 function secBackThroughGate(){const b=G.secBack;if(!b||!SWORLD[b.id])return false;const go=()=>{G.planet=b.planet;G.sub=null;enterSection(b.id,b.at,b.at[1]>=SWORLD[b.id].tiles[1]/2?'down':'down');G.secBack=null;scene='planet'};if(secOn())SFADE={t:0,go};else cut(1,'Back to the Molten Frontier',go);return true}
-function secLeaveForShip(){if(G.secBack&&SWORLD[G.secBack.id])return say('The gate back to the Molten Frontier.',()=>choose('Go back through the gate?',['Yes','No'],i=>{if(i===0)secBackThroughGate()}));if(!shipOK())return say(['The landing pad. Your ship sits waiting, but it has no launch clearance yet.',SHIP_NO]);say('This path leads back to the landing pad.',()=>choose('Board your ship?',['Yes','No'],i=>{if(i===0){G.sec=null;teleportToShip()}}))}
+function secLeaveForShip(){if(G.secBack&&SWORLD[G.secBack.id])return say(G.sec.id==='164'?'The shuttle back to the Molten Frontier.':'The gate back to the Molten Frontier.',()=>choose('Go back through the gate?',['Yes','No'],i=>{if(i===0)secBackThroughGate()}));if(!shipOK())return say(['The landing pad. Your ship sits waiting, but it has no launch clearance yet.',SHIP_NO]);say('This path leads back to the landing pad.',()=>choose('Board your ship?',['Yes','No'],i=>{if(i===0){G.sec=null;teleportToShip()}}))}
 function secInteract(){const s=SWORLD[G.sec.id],[dx,dy]=DIRS[face],x=G.sec.x+dx,y=G.sec.y+dy;
  const qe=secQAt(x,y,false);if(qe&&(!secNpcAt(s,x,y)||qe.k==='giver'||qe.k==='turnin'))return qInteract(qe);   // a townsperson who offers or takes back a mission
  const wm=secMonAt(s,x,y);if(wm)return secMonBattle(s,wm);
- const n=secNpcAt(s,x,y);if(n){n.face=({up:'down',down:'up',left:'right',right:'left'})[face];if(n.legend)return legendBattle({mon:n.legend,lvl:n.lv||60});if(n.trainer)return secTrainerTalk(n);if(n.wid)qEvent('talk',n.wid,{x:n.x*16+8,y:n.y*16+15});if(n.story==='starter'&&!G.party.length)return secStarterTalk();return say(!G.party.length&&n.pre?n.pre:n.t,null,n.por||undefined)}
+ const n=secNpcAt(s,x,y);if(n){n.face=({up:'down',down:'up',left:'right',right:'left'})[face];if(n.legend)return legendBattle({mon:n.legend,lvl:n.lv||60});if(n.trainer)return secTrainerTalk(n);if(n.wid)qEvent('talk',n.wid,{x:n.x*16+8,y:n.y*16+15});if(n.story==='starter'&&!G.party.length)return secStarterTalk();if(n.story==='arena')return arenaMenu();return say(!G.party.length&&n.pre?n.pre:n.t,null,n.por||undefined)}
  const o=(s.objects||[]).find(o=>o.tile[0]===x&&o.tile[1]===y);if(!o)return;
+ if(o.k==='arena')return arenaMenu();
  if(o.k==='keeper')return keeperTalk(PL[G.planet]);
  if(o.k==='stash'){G.opened=G.opened||{};const tag=s.id+':'+o.tile;if(G.opened[tag])return;G.opened[tag]=1;const n=o.n||1;
   if(o.item==='dust'){G.dust+=n;return say(['You found a Linker Stash!','Inside: '+n+' Stardust.'])}
@@ -199,3 +201,35 @@ function secDrawStash(x,y){if(x<-16||y<-16||x>160||y>144)return;const b=Math.rou
  ctx.fillStyle=g?'#5ff2ff':'#b8fbff';ctx.fillRect(x+7,y+8+b,2,2)}
 function stashSfx(){try{if(!AC||musicMode==='off')return;const t=AC.currentTime;[523,659,784,1047].forEach((f,i)=>{const o=AC.createOscillator(),g=AC.createGain();o.type='square';o.frequency.value=f;g.gain.setValueAtTime(0.03,t+i*0.07);g.gain.exponentialRampToValueAtTime(0.001,t+i*0.07+0.12);o.connect(g).connect(AC.destination);o.start(t+i*0.07);o.stop(t+i*0.07+0.13)})}catch(e){}}
 function exclaimSfx(){try{if(!AC||musicMode==='off')return;const t=AC.currentTime,o=AC.createOscillator(),g=AC.createGain();o.type='square';o.frequency.setValueAtTime(880,t);o.frequency.setValueAtTime(1175,t+0.06);g.gain.setValueAtTime(0.04,t);g.gain.exponentialRampToValueAtTime(0.001,t+0.16);o.connect(g).connect(AC.destination);o.start(t);o.stop(t+0.17)}catch(e){}}
+
+/* ---------- the Star Arena: Arena Cups, three battles in a row against trainers matched to your team ----------
+ Your team is healed before every round. A loss ends the run where you stand (no blackout, no lost stardust).
+ Cups open with Signal Shards; clearing one pays out every time, and the first clear is remembered. */
+const ARENA_CUPS=[
+ {k:'bronze',n:'Bronze Cup',need:1,lv:-3,size:[2,2,3],dust:500,items:{harmonic:3,gel:3}},
+ {k:'silver',n:'Silver Cup',need:3,lv:-1,size:[2,3,3],dust:1000,items:{megagel:3,revive:2}},
+ {k:'gold',n:'Gold Cup',need:5,lv:1,size:[3,3,4],dust:2000,items:{fullgel:2,maxrevive:1,ether:2}},
+ {k:'star',n:'Star Cup',need:8,lv:3,size:[3,4,4],dust:4000,items:{singularity:2,maxrevive:2,fullgel:3}}];
+let ARENA=null;
+function arenaMenu(){G.arena=G.arena||{};const open=ARENA_CUPS.filter(c=>G.shards>=c.need||freeRoam());
+ say(['Arena Master: Welcome to the Star Arena, Linker!','Win three battles in a row to take a Cup. I heal your team before every round.'],()=>
+  choose('Arena Cups',ARENA_CUPS.map(c=>(G.shards>=c.need||freeRoam()?'':'[locked] ')+c.n+(G.arena[c.k]?' *':'')).concat(['Not now']),i=>{const c=ARENA_CUPS[i];if(!c)return;
+   if(!(G.shards>=c.need||freeRoam()))return say('Arena Master: The '+c.n+' needs '+c.need+' Signal Shard'+(c.need>1?'s':'')+'. Come back stronger!');
+   if(!G.party.length)return say('Arena Master: You need an Alienmon to enter!');
+   ARENA={cup:c,round:0};arenaRound()},null,'guard'),'guard')}
+function arenaTrainer(c,round){const lead=Math.max(...G.party.map(m=>m.lv)),lv=Math.max(5,Math.min(70,lead+c.lv+round)),r=rng(hash(c.k+round+frame)),
+  pool=Object.keys(PROG.areas).slice(0,Math.max(2,Math.min(14,2+G.shards))).flatMap(k=>(PROG.areas[k].tier1||[]).map(x=>x.name)).filter(n=>IDX[n]!=null&&wildOK(n)),
+  cls=(['Ace Linker','Arena Ace','Star Duelist','Cup Rookie','Veteran Linker','Rival Linker'])[Math.floor(r()*6)],art=['explorer','guard','technician','wanderer','pilgrim','researcher'][Math.floor(r()*6)],
+  name=['Kai','Rhee','Juno','Vela','Corin','Wren','Nyx','Sol','Yuki','Zora','Milo','Quill'][Math.floor(r()*12)],
+  team=Array.from({length:c.size[round]},(_,i)=>{const id=IDX[pool[Math.floor(r()*pool.length)]]??STARTERS[0];return[evolvedAt(id,lv),Math.max(2,lv-(c.size[round]-1-i))]});
+ return{name:cls+' '+name,art,intro:['Round '+(round+1)+' of 3! Show me what you two can do!','Final round! The crowd is on its feet!','Let\'s give them a show!'][round===2?1:round===0?0:2],
+  lose:'What a battle! The crowd loves you!',after:'Good luck in the next round!',team,bkey:'arena_'+c.k,arena:1}}
+function arenaRound(){const c=ARENA.cup,tr=arenaTrainer(c,ARENA.round);healAll();
+ say(['Announcer: '+c.n+', round '+(ARENA.round+1)+'!',tr.name+' steps onto the floor!'],()=>say(tr.name+': '+tr.intro,()=>startBattle(tr.team.map(([id,lv])=>mk(id,lv)),tr),tr.art))}
+// called when an arena battle ends
+function arenaAfter(won){const a=ARENA;if(!a)return;healAll();
+ if(!won){ARENA=null;return say(['Announcer: And that\'s the end of the run!','Arena Master: Heal up and try again any time, Linker.'])}
+ a.round++;if(a.round<3)return say('Announcer: A win! On to round '+(a.round+1)+'!',arenaRound);
+ const c=a.cup;ARENA=null;G.arena=G.arena||{};const first=!G.arena[c.k];G.arena[c.k]=(G.arena[c.k]||0)+1;G.dust+=c.dust;const L=['Announcer: '+c.n+' champion!','You received '+c.dust+' Stardust!'];
+ for(const[k,n]of Object.entries(c.items)){if(G.pods&&k in G.pods)G.pods[k]+=n;else G.items[k]=(G.items[k]||0)+n;L.push('You received '+n+'x '+(ITEMS.concat(PODS).find(i=>i.k===k)||{n:k}).n+'!')}
+ if(first)L.push('Arena Master: Your name goes up on the board. First '+c.n+' clear!');autosave();say(L)}

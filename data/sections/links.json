@@ -399,6 +399,12 @@
      "node": "starfall",
      "planet": "starfall",
      "label": "Crater shuttle to Starfall"
+    },
+    {
+     "node": "arena",
+     "planet": "arena",
+     "section": "164",
+     "label": "Shuttle to the Star Arena"
     }
    ],
    "why": "the landing pad (old Fortress Shuttle Pad and Helix Shuttle Pad nodes)"

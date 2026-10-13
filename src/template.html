@@ -611,15 +611,15 @@ function playerFaint(){if(G.party.some(m=>m.hp>0)){B.phase='party';B.forced=true
  else if(G.box.some(m=>m.hp>0)){B.phase='boxpick';B.bxsel=G.box.findIndex(m=>m.hp>0);say(['Your whole team is down!','Your ship can beam in a backup Alienmon from storage. Choose one!'])}
 
  else loseBattle()}
-function loseBattle(){{const lost=Math.floor(G.dust/4);G.dust-=lost;say(['You have no Alienmon left to fight!','You dropped '+lost+' stardust and hurried back to the last place you healed...'],()=>{healAll();wakeAtLastHeal()})}}
+function loseBattle(){if(B&&B.tr&&B.tr.arena){B.over=true;const back=B.from||'planet';B=null;scene=back;return arenaAfter(false)}{const lost=Math.floor(G.dust/4);G.dust-=lost;say(['You have no Alienmon left to fight!','You dropped '+lost+' stardust and hurried back to the last place you healed...'],()=>{healAll();wakeAtLastHeal()})}}
 function endBattle(won){const tr=B&&B.tr,lines=[];
  if(won){const pk=PL[G.planet]&&PL[G.planet].key;if(tr&&tr.bkey)qEvent('trainer',tr.bkey);else if(tr&&tr===PL[G.planet].keeper)qEvent('keeper',pk);else if(!tr&&B.team.length){qEvent('win',D[B.team[B.team.length-1].id].name,{area:QWILD});noteLegendWin(B.team[B.team.length-1])}}QWILD=null;
  if(won){const e=B.team[B.team.length-1];const dust=payout(tr,e);G.dust+=dust;lines.push('You collected '+dust+' stardust.');
   if(!tr){if(R()<0.05){G.items.gel=(G.items.gel||0)+1;lines.push('You found a Med Gel!')}else if(R()<0.03){G.pods.stasis++;lines.push('You found a Stasis Pod!')}}}
- if(won&&tr){B.trShow=true;G.beaten[tr.bkey||PL[G.planet].key]=1;lines.push(tr.name+': '+tr.lose);if(tr.shard){G.shards++;lines.push('You received a Signal Shard! ('+G.shards+'/8)')}
+ if(won&&tr&&!tr.arena){B.trShow=true;G.beaten[tr.bkey||PL[G.planet].key]=1;lines.push(tr.name+': '+tr.lose);if(tr.shard){G.shards++;lines.push('You received a Signal Shard! ('+G.shards+'/8)')}
   if(tr.flag){G.flags[tr.flag]=1;lines.push(tr.flagMsg)}}
  for(const m of G.party)m.cf=0;
- const back=B&&B.from||'planet';if(B)B.over=true;const shard=!!(won&&tr&&tr.shard);const fin=()=>{scene=back;B=null;G.grace=60;if(shard)autosave()};const steps=[];if(lines.length)steps.push({say:lines});evoSteps(steps);progRun(steps,fin)}
+ const back=B&&B.from||'planet';if(B)B.over=true;const shard=!!(won&&tr&&tr.shard);const fin=()=>{scene=back;B=null;G.grace=60;if(shard)autosave();if(tr&&tr.arena)arenaAfter(won)};const steps=[];if(lines.length)steps.push({say:lines});evoSteps(steps);progRun(steps,fin)}
 
 /* ---------- items ---------- */
 const ITEMS=[{k:'gel',n:'Med Gel',d:'Restores 30 HP.',heal:30,price:15},{k:'megagel',n:'Mega Gel',d:'Restores 100 HP.',heal:100,price:45},
@@ -713,7 +713,7 @@ function shakeOf(m){const A=B.anim;if(A&&A.kind==='move'&&A.tgt===m&&A.t>=A.pj&&
 function hpbar(x,y,w,m){const r=m.hp/stat(m,0);rect(x,y,w,4,'#1b1424');rect(x+1,y+1,Math.round((w-2)*r),2,r>0.5?'#3fae49':r>0.2?'#ffd23f':'#d7262e')}
 const STC={burn:['BRN','#d7262e'],poison:['PSN','#8a3ad0'],shock:['SHK','#c9a400'],freeze:['FRZ','#2e86de']};
 function stTag(m,x,y){if(m.st){rect(x,y,20,8,STC[m.st][1]);txt(STC[m.st][0],x+1,y+1,'#fff',6)}}
-function drawBattle(){const e=curEnv(),p=PM(),en=EM(),pl=PL[G.planet],ar=B.tr&&B.tr===pl.keeper&&SCI[pl.key+'_arena'],si=okI(ar)?ar:SCI[pl.scene];
+function drawBattle(){const e=curEnv(),p=PM(),en=EM(),pl=PL[G.planet],ar=B.tr&&(B.tr===pl.keeper?SCI[pl.key+'_arena']:B.tr.arena?SCI.apex_arena:null),si=okI(ar)?ar:SCI[pl.scene];
  if(okI(si)){cover(si,0,0,160,104,pl.sceneFx);ctx.fillStyle='rgba(18,12,34,0.18)';ctx.fillRect(0,0,160,104);
   ctx.fillStyle='rgba(18,12,34,0.45)';ctx.beginPath();ctx.ellipse(126,48,30,6,0,0,6.283);ctx.fill();ctx.beginPath();ctx.ellipse(36,97,34,7,0,0,6.283);ctx.fill()}
  else{rect(0,0,160,104,e.bg);rect(96,44,60,8,e.g2);rect(4,92,64,10,e.g2)}

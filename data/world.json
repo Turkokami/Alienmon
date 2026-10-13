@@ -63,6 +63,10 @@
   "ystra": {
    "section": "153",
    "why": "atlas exit marked arrival"
+  },
+  "arena": {
+   "section": "164",
+   "why": "atlas exit marked arrival"
   }
  },
  "quest_spots": {
@@ -4019,6 +4023,12 @@
        "node": "starfall",
        "planet": "starfall",
        "label": "Crater shuttle to Starfall"
+      },
+      {
+       "node": "arena",
+       "planet": "arena",
+       "section": "164",
+       "label": "Shuttle to the Star Arena"
       }
      ]
     },
@@ -4044,6 +4054,12 @@
        "node": "starfall",
        "planet": "starfall",
        "label": "Crater shuttle to Starfall"
+      },
+      {
+       "node": "arena",
+       "planet": "arena",
+       "section": "164",
+       "label": "Shuttle to the Star Arena"
       }
      ]
     }
@@ -20347,6 +20363,144 @@
      "mon": "Fractalith"
     }
    ]
+  },
+  "164": {
+   "id": "164",
+   "name": "Star Arena",
+   "planet": "Star Arena",
+   "dir": "15_arena",
+   "type": "arena",
+   "img": "art/sections_game/15_arena/164_star_arena.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "Floating coliseum among the stars: central battle floor, royal box with the Arena Master, vendor stalls left and right, south gate bridge",
+   "edges": {
+    "bottom": {
+     "to": "arrival",
+     "range": [
+      11,
+      12
+     ]
+    }
+   },
+   "warps": [],
+   "objects": [
+    {
+     "tile": [
+      2,
+      8
+     ],
+     "k": "shop",
+     "why": "left vendor stall"
+    },
+    {
+     "tile": [
+      21,
+      8
+     ],
+     "k": "bay",
+     "why": "right stall: the arena medic heals your team"
+    },
+    {
+     "tile": [
+      11,
+      4
+     ],
+     "k": "arena",
+     "why": "the Arena Master's stage under the royal box"
+    }
+   ],
+   "spawns": {
+    "arrival": [
+     11,
+     14
+    ],
+    "default": [
+     11,
+     14
+    ]
+   },
+   "pkey": "arena",
+   "npcs": [
+    {
+     "x": 11,
+     "y": 4,
+     "art": "guard",
+     "face": "down",
+     "t": [
+      "Arena Master: Welcome to the Star Arena!"
+     ],
+     "name": "Arena Master",
+     "story": "arena"
+    },
+    {
+     "x": 2,
+     "y": 9,
+     "art": "shop",
+     "face": "down",
+     "t": [
+      "Vendor: Pods and gels for the brave!"
+     ],
+     "name": "Vendor"
+    },
+    {
+     "x": 21,
+     "y": 9,
+     "art": "nurse",
+     "face": "down",
+     "t": [
+      "Arena medic: Step up to the stall and I'll patch your team up."
+     ],
+     "name": "Arena medic"
+    },
+    {
+     "x": 15,
+     "y": 9,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Fan: I've watched every Star Cup final. The Star Cup crowd is wild!"
+     ]
+    },
+    {
+     "x": 8,
+     "y": 5,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Kid: When I grow up I'm going to win the Gold Cup. Then the Star Cup!"
+     ]
+    },
+    {
+     "x": 8,
+     "y": 9,
+     "art": "researcher",
+     "face": "down",
+     "t": [
+      "Commentator: Arena trainers bring teams as strong as yours. No easy wins in here!"
+     ]
+    },
+    {
+     "x": 15,
+     "y": 5,
+     "art": "wanderer",
+     "face": "down",
+     "t": [
+      "Old fan: Your team is healed before every round. Losing just ends your run, no harm done."
+     ]
+    },
+    {
+     "x": 5,
+     "y": 8,
+     "art": "technician",
+     "face": "down",
+     "t": [
+      "Scoreboard tech: The board remembers every Linker who clears a Cup."
+     ]
+    }
+   ]
   }
  },
  "connections": [
@@ -23692,6 +23846,17 @@
     7,
     8
    ]
+  },
+  {
+   "from_id": "164",
+   "edge": "bottom",
+   "tile_range": [
+    11,
+    12
+   ],
+   "to_id": "arrival",
+   "to_edge": null,
+   "to_tile": null
   }
  ]
 }
