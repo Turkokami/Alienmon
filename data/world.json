@@ -5514,7 +5514,7 @@
      "to": "038",
      "at": [
       22,
-      8
+      7
      ],
      "face": "left",
      "kind": "edge",
@@ -5571,7 +5571,7 @@
      "x": 11,
      "y": 6,
      "art": "guard",
-     "face": "left",
+     "face": "down",
      "t": [],
      "face_pinned": 1,
      "id": "sec039_app1",
@@ -6569,7 +6569,7 @@
      "to": "049",
      "at": [
       1,
-      8
+      7
      ],
      "face": "right",
      "kind": "edge",
@@ -7544,7 +7544,7 @@
      "to": "057",
      "at": [
       1,
-      8
+      7
      ],
      "face": "right",
      "kind": "stairs",
@@ -9148,7 +9148,7 @@
      "to": "068",
      "at": [
       22,
-      8
+      7
      ],
      "face": "left",
      "kind": "edge",
@@ -11500,7 +11500,7 @@
      "to": "090",
      "at": [
       1,
-      8
+      7
      ],
      "face": "right",
      "kind": "edge",
@@ -12853,7 +12853,7 @@
      "to": "101",
      "at": [
       1,
-      8
+      7
      ],
      "face": "right",
      "kind": "edge",
@@ -15367,7 +15367,7 @@
      "to": "120",
      "at": [
       22,
-      8
+      7
      ],
      "face": "left",
      "kind": "edge",
@@ -15450,7 +15450,7 @@
      "x": 4,
      "y": 6,
      "art": "civilian",
-     "face": "right",
+     "face": "left",
      "t": [],
      "face_pinned": 1,
      "id": "sec121_app2",
@@ -15577,7 +15577,7 @@
      "to": "124",
      "at": [
       1,
-      8
+      7
      ],
      "face": "right",
      "kind": "edge",
@@ -16320,7 +16320,7 @@
      "to": "128",
      "at": [
       22,
-      8
+      7
      ],
      "face": "left",
      "kind": "edge",
@@ -18102,7 +18102,7 @@
      "to": "143",
      "at": [
       8,
-      1
+      0
      ],
      "face": "down",
      "kind": "edge",
@@ -19088,11 +19088,12 @@
    "notes": "Floating continents",
    "edges": {
     "left": {
-     "to": "arrival",
+     "to": "153",
      "range": [
       7,
       8
-     ]
+     ],
+     "offset": 0
     },
     "right": {
      "to": "155",
@@ -19127,10 +19128,6 @@
     }
    ],
    "spawns": {
-    "arrival": [
-     1,
-     7
-    ],
     "default": [
      1,
      7
@@ -19872,7 +19869,7 @@
      "x": 10,
      "y": 10,
      "art": "ystran",
-     "face": "left",
+     "face": "down",
      "t": [],
      "face_pinned": 1,
      "id": "sec159_tr1",
@@ -23584,9 +23581,12 @@
     7,
     8
    ],
-   "to_id": "arrival",
-   "to_edge": null,
-   "to_tile": null
+   "to_id": "153",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
   },
   {
    "from_id": "154",

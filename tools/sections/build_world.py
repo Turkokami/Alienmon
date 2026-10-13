@@ -101,7 +101,7 @@ for s in sel:
         if ex['edge'] in ('door', '?'):
             continue
         tgt = ex['target']
-        if norm(tgt).startswith('arrival'):
+        if norm(tgt).startswith('arrival') and not byname.get(norm(tgt)):
             conns.append({'from_id': s['id'], 'edge': ex['edge'], 'tile_range': ex['range'], 'to_id': 'arrival', 'to_edge': None, 'to_tile': None})
             sec['edges'][ex['edge']] = {'to': 'arrival', 'range': ex['range']}
             sec['spawns']['arrival'] = inward(edge_tiles(s, ex['edge'], ex['range'])[0], ex['edge'])[0]
@@ -851,6 +851,42 @@ doc.insert(4, f'**{total} stashes in total.**\n')
 os.makedirs(os.path.join(ROOT, 'docs'), exist_ok=True)
 open(os.path.join(ROOT, 'docs/LINKER_STASHES.md'), 'w', encoding='utf-8').write('\n'.join(doc))
 print(f'{total} Linker Stashes placed')
+
+def nearest_floor(sid, t):
+    rows = json.load(open(os.path.join(ROOT, 'data/collision', sid + '.json')))['rows']
+    W, H = world[sid]['tiles']
+    if 0 <= t[0] < W and 0 <= t[1] < H and rows[t[1]][t[0]] in '.,':
+        return t
+    for r in range(1, 4):
+        for dy in range(-r, r + 1):
+            for dx in range(-r, r + 1):
+                x, y = t[0] + dx, t[1] + dy
+                if abs(dx) + abs(dy) == r and 0 <= x < W and 0 <= y < H and rows[y][x] in '.,':
+                    return [x, y]
+    return t
+
+
+for sid, sec in world.items():
+    for w in sec['warps']:
+        if w['to'] in world and os.path.exists(os.path.join(ROOT, 'data/collision', w['to'] + '.json')):
+            fixed_at = nearest_floor(w['to'], w['at'])
+            if fixed_at != w['at']:
+                report['warp landings moved off a wall'].append(f"{sid} -> {w['to']}: {w['at']} -> {fixed_at}")
+                w['at'] = list(fixed_at)
+    # trainers who face straight into a wall turn toward their longest open line
+    cp = os.path.join(ROOT, 'data/collision', sid + '.json')
+    if os.path.exists(cp):
+        rows = json.load(open(cp))['rows']
+        W, H = sec['tiles']
+        ok = lambda x, y: 0 <= x < W and 0 <= y < H and rows[y][x] in '.,'
+        D4 = {'down': (0, 1), 'left': (-1, 0), 'right': (1, 0), 'up': (0, -1)}
+        for n in sec.get('npcs', []):
+            if not n.get('trainer') or n.get('wid') in GUARDS:
+                continue
+            dx, dy = D4[n.get('face', 'down')]
+            if not ok(n['x'] + dx, n['y'] + dy):
+                best = max(D4, key=lambda d: sum(1 for k in range(1, 6) if all(ok(n['x'] + D4[d][0] * j, n['y'] + D4[d][1] * j) for j in range(1, k + 1))))
+                n['face'] = best
 
 json.dump({'version': 1, 'tile': 16, 'screen_tiles': [10, 9], 'arrival': arrivals, 'quest_spots': spots, 'sections': world, 'connections': conns},
           open(os.path.join(ROOT, OUT or 'data/world.json'), 'w', encoding='utf-8'), indent=1, ensure_ascii=False)

@@ -41,7 +41,7 @@ function noteHeal(){if(typeof secOn==='function'&&secOn()){G.lastHeal={sec:G.sec
 function wakeAtLastHeal(){const h=G.lastHeal;
  // section maps: back to the last Recovery Bay counter you used, or home to Mom if you never healed anywhere
  if(h&&h.sec&&SWORLD[h.sec]){B=null;scene='planet';G.planet=h.planet;G.sub=null;G.secBack=h.back||null;enterSection(h.sec,h.at,'up');return}
- if(typeof secOn==='function'&&secOn()&&!(h&&h.p)){B=null;scene='planet';G.planet=pidx('dustara');G.sub=null;G.secBack=null;enterSection('001',[5,6],'up');return}
+ if(typeof secOn==='function'&&secOn()&&!(h&&h.p)){B=null;scene='planet';G.planet=pidx('dustara');G.sub=null;G.secBack=null;enterSection('001',SWORLD['001'].spawns.default,'up');return}
  if(G.sec)G.sec=null;
  if(h&&h.w){B=null;toWorld(h.w);return}
  const key=h&&h.p||'dustara',P=PAINT[key];G.planet=pidx(key);B=null;scene='planet';

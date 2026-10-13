@@ -43,7 +43,7 @@ function qLoc(qid,step,loc){if(typeof secOn==='function'&&secOn()){const sl=secQ
 function qMatch(q,o,type,target,info){const t=o.type;
  switch(type){
   case'starter':return t==='choose_starter';
-  case'talk':if(t==='talk'||t==='deliver'||t==='show'){if(o.target===target||target==='q:'+q.id)return true;const l=qLoc(q.id,qs(q.id).step,o.location);return!!(info.x!=null&&l&&l.x!=null&&qSameArea(l)&&Math.hypot(l.x-info.x,l.y-info.y)<56)}return false;
+  case'talk':if(t==='talk'||t==='deliver'||t==='show'){if(o.target===target||target==='q:'+q.id)return true;const l=qLoc(q.id,qs(q.id).step,o.location);return!!(info.x!=null&&l&&l.x!=null&&qSameArea(l)&&Math.hypot(l.x-info.x,l.y-info.y)<(typeof secOn==='function'&&secOn()?8:56))}return false;
   case'visit':return(t==='visit'||t==='spot_event')&&o.target===target;
   case'prop':return(t==='examine'||t==='collect')&&o.target===target;
   case'catch':return(t==='catch'&&o.target===target)||t==='catch_any'||(t==='catch_type'&&(D[IDX[target]].t||[]).includes(o.target))||(t==='legendary_encounter'&&o.target===target);

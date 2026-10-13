@@ -24,8 +24,8 @@ function secAhead(s,x,y,d){const[dx,dy]=DIRS[d],nx=x+dx,ny=y+dy;if(secTile(s,nx,
  if(!e||along<e.range[0]||along>e.range[1])return null;if(e.to==='arrival')return{arrival:true,side};const t=SWORLD[e.to];if(!t)return null;
  const k=along+(e.offset||0);return side==='right'?{s:t,x:0,y:k}:side==='left'?{s:t,x:t.tiles[0]-1,y:k}:side==='bottom'?{s:t,x:k,y:0}:{s:t,x:k,y:t.tiles[1]-1}}
 function secPrefetch(id){const s=SWORLD[id];if(!s)return;SECI[id];const g=(G&&G.gender)||'boy';for(const f of['down','up','left','right'])CHI[g+'_'+f];for(const n of s.npcs||[])CHI[n.art];for(const e of Object.values(s.edges))if(SWORLD[e.to])SECI[e.to];for(const w of s.warps)SECI[w.to]}
-function enterSection(id,at,f,quiet){const prev=G.sec&&G.sec.id;G.sec={id,x:at[0],y:at[1]};if(f)face=f;SM=null;secPrefetch(id);
- const s=SWORLD[id];if(!quiet&&(!prev||SWORLD[prev].name!==s.name))SBANNER=100}
+function enterSection(id,at,f,quiet){const prev=G.sec&&G.sec.id;G.sec={id,x:at[0],y:at[1]};if(f)face=f;SM=null;SJ=null;SJBUF=0;SSPOT=null;secPrefetch(id);
+ const s=SWORLD[id];if(!quiet&&(!prev||!SWORLD[prev]||SWORLD[prev].name!==s.name))SBANNER=100}
 function secWarp(w){SFADE={t:0,go:()=>{enterSection(w.to,w.at,w.face);if(w.kind==='door'||w.kind==='stairs')doorSfx()}}}
 function doorSfx(){try{if(!AC||musicMode==='off')return;const t=AC.currentTime,o=AC.createOscillator(),g=AC.createGain();o.type='square';o.frequency.setValueAtTime(220,t);o.frequency.setValueAtTime(330,t+0.05);g.gain.setValueAtTime(0.035,t);g.gain.exponentialRampToValueAtTime(0.001,t+0.12);o.connect(g).connect(AC.destination);o.start(t);o.stop(t+0.13)}catch(e){}}
 function bumpSfx(){if(SBUMP>0)return;SBUMP=14;try{if(!AC||musicMode==='off')return;const t=AC.currentTime,o=AC.createOscillator(),g=AC.createGain();o.type='square';o.frequency.setValueAtTime(90,t);g.gain.setValueAtTime(0.03,t);g.gain.exponentialRampToValueAtTime(0.001,t+0.08);o.connect(g).connect(AC.destination);o.start(t);o.stop(t+0.09)}catch(e){}}
@@ -37,10 +37,10 @@ function secTrainerTalk(n){if(n.trainer.linker&&G.beaten[n.id])return say(n.t,nu
  qEvent('talk',n.id,{x:n.x*16+8,y:n.y*16+15});if(G.beaten[n.id])return say(name+': '+tr.after,null,n.art);if(!G.party.some(m=>m.hp>0))return say('Your team needs to heal first.');say(t0,()=>startBattle(team.map(([id,lv])=>mk(id,lv)),tr),n.art)}
 // line of sight: step into a trainer's view (up to 5 clear tiles straight ahead of them) and they call you out
 let SSPOT=null;
-function secLos(){const s=SWORLD[G.sec.id];for(const n of secNpcs(s)){if(!n.trainer||G.beaten[n.id])continue;const[dx,dy]=DIRS[n.face||'down'];
+function secLos(){if(!G.party.length||!G.party.some(m=>m.hp>0))return false;const s=SWORLD[G.sec.id];for(const n of secNpcs(s)){if(!n.trainer||G.beaten[n.id])continue;const[dx,dy]=DIRS[n.face||'down'];
   for(let k=1;k<=5;k++){const x=n.x+dx*k,y=n.y+dy*k;if(x===G.sec.x&&y===G.sec.y){if(!n.home)n.home=[n.x,n.y];SSPOT={n,t:36,walk:0,steps:k-1};exclaimSfx();face=({up:'down',down:'up',left:'right',right:'left'})[n.face||'down'];return true}if(!secWalk(s,x,y))break}}return false}
 function secArrive(){const s=SWORLD[G.sec.id],w=s.warps.find(w=>w.tile[0]===G.sec.x&&w.tile[1]===G.sec.y);if(w&&w.kind==='gate')return secGate(w);if(w&&SWORLD[w.to])return secWarp(w);
- if(G.grace>0)G.grace--;if(G.jam>0&&stepc%8===0)G.jam--;stepc++;
+ if(G.grace>0)G.grace=Math.max(0,G.grace-15);if(G.jam>0)G.jam=Math.max(0,G.jam-2);stepc++;
  if(secLos())return;
  if(secTile(s,G.sec.x,G.sec.y)===','&&!(G.grace>0)&&R()<0.1)wild()}
 // Frontier gates: the story gate decides; through it you arrive at that planet's landing edge (its own sections,
@@ -77,7 +77,7 @@ function updSec(){const s=SWORLD[G.sec.id];if(SBUMP>0)SBUMP--;
    else{SSPOT.walk++;n.ox=dx*16*SSPOT.walk/SEC_STEP;n.oy=dy*16*SSPOT.walk/SEC_STEP;if(SSPOT.walk>=SEC_STEP){n.x+=dx;n.y+=dy;n.ox=n.oy=0;SSPOT.walk=0;SSPOT.steps--}}}drawSec();return}
  if(SFADE){SFADE.t++;if(SFADE.t===10){SFADE.go();if(!secOn()){SFADE=null;return}}if(SFADE.t>=20)SFADE=null;drawSec();return}   // a fade can hand over to a painted map (the Forge Fortress)
  if(SM){if(pressed.b)SJBUF=12;SM.t++;if(SM.t>=SEC_STEP){const a=SM.to;SM=null;if(a.s.id!==G.sec.id)enterSection(a.s.id,[a.x,a.y],null);else{G.sec.x=a.x;G.sec.y=a.y}secArrive()}
-  if(!SM&&!SFADE&&!DLG&&!CH&&!SJ){if(SJBUF>0){SJBUF=0;secJump()}else secStepHeld()}drawSec();return}
+  if(!SM&&!SFADE&&!DLG&&!CH&&!SJ&&!SSPOT){if(SJBUF>0){SJBUF=0;secJump()}else secStepHeld()}drawSec();return}
  if(SJ){SJ.t++;if(SJ.t>=SEC_JUMP_T){G.sec.x=SJ.to[0];G.sec.y=SJ.to[1];SJ=null;secArrive()}drawSec();return}
  if(P_('start')){scene='menu';menuSel=0;return}
  if(SJBUF>0)SJBUF--;
@@ -146,7 +146,7 @@ function secMonBattle(s,wm){if(!G.party.some(m=>m.hp>0))return say('Your team ne
  let wp=wildPick(zk,wm.mon);if(wp){const sm=IDX[shownMon(wm.mon,0)],pv=PREVO[D[sm].name];wp=[sm,Math.max(wp[1],pv?pv.level-1:0)]}
  const id=wp?wp[0]:IDX[shownMon(wm.mon,0)];if(id==null)return;QWILD='hotspot_mon_'+({dustara:'dustmere'}[p.key]||p.key);
  G.monGone=G.monGone||{};const tag=s.id+':'+wm.x+','+wm.y;
- say('The wild '+D[id].name+' wants to battle!',()=>{G.monGone[tag]=G.planet;startBattle([mk(...(wp?[id,wp[1]]:clampWild(id,ri(p.lv[0],p.lv[1]),0)))],null)})}
+ say('The wild '+D[id].name+' wants to battle!',()=>{startBattle([mk(...(wp?[id,wp[1]]:clampWild(id,ri(p.lv[0],p.lv[1]),0)))],null);if(scene==='battle')G.monGone[tag]=G.planet;else say('It ran off, scared by your Signal Jammer!')})}
 // quest spots on the section maps: tile positions in 16 px space (feet on the tile's bottom edge)
 function secQLoc(key,loc){const sp=SECQ[key];if(!sp)return null;return Object.assign({},loc,{sec:sp.s,x:sp.x*16+8,y:sp.y*16+15,pts:sp.pts,art:sp.art||loc&&loc.art})}
 // the old Molten Frontier world map's places, now sections: 'visit the Frontier' / 'visit node X' objectives
