@@ -1,0 +1,1409 @@
+{
+ "_about": "Every drawn building door with no interior. kind: bay/shop (works as a counter now), house (shared per-planet house interior, locked until it is rendered), special (its own interior), shrine/mine/ruin/cave (stays closed). knock = it already has a knock-door visitor.",
+ "doors": [
+  {
+   "s": "007",
+   "name": "Dustmere Bridge",
+   "planet": "dustara",
+   "tile": [
+    4,
+    3
+   ],
+   "kind": "house",
+   "template": "dustara_house",
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "007",
+   "name": "Dustmere Bridge",
+   "planet": "dustara",
+   "tile": [
+    22,
+    4
+   ],
+   "kind": "house",
+   "template": "dustara_house",
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "014",
+   "name": "Molten Frontier: Tunnel Mouth",
+   "planet": "dustara",
+   "tile": [
+    14,
+    1
+   ],
+   "kind": "cave",
+   "template": null,
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "017",
+   "name": "Molten Frontier: Palm Isle",
+   "planet": "dustara",
+   "tile": [
+    16,
+    4
+   ],
+   "kind": "bay",
+   "template": null,
+   "note": "Palm Isle Recovery Hut",
+   "knock": true
+  },
+  {
+   "s": "018",
+   "name": "Molten Frontier: Port Ember",
+   "planet": "dustara",
+   "tile": [
+    18,
+    4
+   ],
+   "kind": "bay",
+   "template": null,
+   "note": "Port Ember healing centre",
+   "knock": true
+  },
+  {
+   "s": "022",
+   "name": "Molten Frontier: Forge Gate",
+   "planet": "dustara",
+   "tile": [
+    3,
+    5
+   ],
+   "kind": "house",
+   "template": "dustara_house",
+   "note": "",
+   "knock": true
+  },
+  {
+   "s": "022",
+   "name": "Molten Frontier: Forge Gate",
+   "planet": "dustara",
+   "tile": [
+    4,
+    12
+   ],
+   "kind": "house",
+   "template": "dustara_house",
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "022",
+   "name": "Molten Frontier: Forge Gate",
+   "planet": "dustara",
+   "tile": [
+    20,
+    4
+   ],
+   "kind": "house",
+   "template": "dustara_house",
+   "note": "",
+   "knock": true
+  },
+  {
+   "s": "022",
+   "name": "Molten Frontier: Forge Gate",
+   "planet": "dustara",
+   "tile": [
+    21,
+    12
+   ],
+   "kind": "house",
+   "template": "dustara_house",
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "026",
+   "name": "Molten Frontier: Shuttle Pad",
+   "planet": "dustara",
+   "tile": [
+    4,
+    4
+   ],
+   "kind": "house",
+   "template": "dustara_house",
+   "note": "",
+   "knock": true
+  },
+  {
+   "s": "026",
+   "name": "Molten Frontier: Shuttle Pad",
+   "planet": "dustara",
+   "tile": [
+    5,
+    11
+   ],
+   "kind": "house",
+   "template": "dustara_house",
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "026",
+   "name": "Molten Frontier: Shuttle Pad",
+   "planet": "dustara",
+   "tile": [
+    19,
+    13
+   ],
+   "kind": "house",
+   "template": "dustara_house",
+   "note": "",
+   "knock": true
+  },
+  {
+   "s": "028",
+   "name": "Molten Frontier: Magma Mines Gate",
+   "planet": "dustara",
+   "tile": [
+    20,
+    5
+   ],
+   "kind": "mine",
+   "template": null,
+   "note": "",
+   "knock": true
+  },
+  {
+   "s": "029",
+   "name": "Gate Plaza",
+   "planet": "ferrox",
+   "tile": [
+    6,
+    5
+   ],
+   "kind": "house",
+   "template": "ferrox_house",
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "029",
+   "name": "Gate Plaza",
+   "planet": "ferrox",
+   "tile": [
+    18,
+    5
+   ],
+   "kind": "house",
+   "template": "ferrox_house",
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "029",
+   "name": "Gate Plaza",
+   "planet": "ferrox",
+   "tile": [
+    6,
+    11
+   ],
+   "kind": "house",
+   "template": "ferrox_house",
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "029",
+   "name": "Gate Plaza",
+   "planet": "ferrox",
+   "tile": [
+    17,
+    12
+   ],
+   "kind": "house",
+   "template": "ferrox_house",
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "030",
+   "name": "Rustvale",
+   "planet": "ferrox",
+   "tile": [
+    17,
+    11
+   ],
+   "kind": "house",
+   "template": "ferrox_house",
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "037",
+   "name": "Junk Market",
+   "planet": "ferrox",
+   "tile": [
+    18,
+    4
+   ],
+   "kind": "bay",
+   "template": null,
+   "note": "Junk Market Recovery Bay",
+   "knock": false
+  },
+  {
+   "s": "037",
+   "name": "Junk Market",
+   "planet": "ferrox",
+   "tile": [
+    18,
+    12
+   ],
+   "kind": "shop",
+   "template": null,
+   "note": "Junk Market big shop",
+   "knock": false
+  },
+  {
+   "s": "037",
+   "name": "Junk Market",
+   "planet": "ferrox",
+   "tile": [
+    6,
+    11
+   ],
+   "kind": "house",
+   "template": "ferrox_house",
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "041",
+   "name": "Landing Bog",
+   "planet": "sporeholm",
+   "tile": [
+    17,
+    4
+   ],
+   "kind": "special",
+   "template": "landing_dome",
+   "note": "landing_dome",
+   "knock": true
+  },
+  {
+   "s": "041",
+   "name": "Landing Bog",
+   "planet": "sporeholm",
+   "tile": [
+    5,
+    12
+   ],
+   "kind": "house",
+   "template": "sporeholm_house",
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "041",
+   "name": "Landing Bog",
+   "planet": "sporeholm",
+   "tile": [
+    6,
+    2
+   ],
+   "kind": "house",
+   "template": "sporeholm_house",
+   "note": "",
+   "knock": true
+  },
+  {
+   "s": "042",
+   "name": "Mirefen Village",
+   "planet": "sporeholm",
+   "tile": [
+    5,
+    13
+   ],
+   "kind": "house",
+   "template": "sporeholm_house",
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "042",
+   "name": "Mirefen Village",
+   "planet": "sporeholm",
+   "tile": [
+    6,
+    2
+   ],
+   "kind": "house",
+   "template": "sporeholm_house",
+   "note": "",
+   "knock": true
+  },
+  {
+   "s": "042",
+   "name": "Mirefen Village",
+   "planet": "sporeholm",
+   "tile": [
+    20,
+    13
+   ],
+   "kind": "house",
+   "template": "sporeholm_house",
+   "note": "",
+   "knock": true
+  },
+  {
+   "s": "047",
+   "name": "Mushroom Maze 1F",
+   "planet": "sporeholm",
+   "tile": [
+    12,
+    4
+   ],
+   "kind": "special",
+   "template": "mushroom_house",
+   "note": "mushroom_house",
+   "knock": true
+  },
+  {
+   "s": "049",
+   "name": "Spore Pools",
+   "planet": "sporeholm",
+   "tile": [
+    19,
+    4
+   ],
+   "kind": "special",
+   "template": "mushroom_house",
+   "note": "mushroom_house",
+   "knock": false
+  },
+  {
+   "s": "052",
+   "name": "Port Saltreach Docks",
+   "planet": "thalassa",
+   "tile": [
+    5,
+    4
+   ],
+   "kind": "house",
+   "template": "thalassa_house",
+   "note": "",
+   "knock": true
+  },
+  {
+   "s": "052",
+   "name": "Port Saltreach Docks",
+   "planet": "thalassa",
+   "tile": [
+    19,
+    11
+   ],
+   "kind": "house",
+   "template": "thalassa_house",
+   "note": "",
+   "knock": true
+  },
+  {
+   "s": "053",
+   "name": "Saltreach Market",
+   "planet": "thalassa",
+   "tile": [
+    16,
+    4
+   ],
+   "kind": "bay",
+   "template": null,
+   "note": "Saltreach second Recovery Bay",
+   "knock": true
+  },
+  {
+   "s": "053",
+   "name": "Saltreach Market",
+   "planet": "thalassa",
+   "tile": [
+    5,
+    4
+   ],
+   "kind": "house",
+   "template": "thalassa_house",
+   "note": "",
+   "knock": true
+  },
+  {
+   "s": "053",
+   "name": "Saltreach Market",
+   "planet": "thalassa",
+   "tile": [
+    6,
+    11
+   ],
+   "kind": "house",
+   "template": "thalassa_house",
+   "note": "",
+   "knock": true
+  },
+  {
+   "s": "053",
+   "name": "Saltreach Market",
+   "planet": "thalassa",
+   "tile": [
+    20,
+    11
+   ],
+   "kind": "house",
+   "template": "thalassa_house",
+   "note": "",
+   "knock": true
+  },
+  {
+   "s": "059",
+   "name": "Sea Arch Cove",
+   "planet": "thalassa",
+   "tile": [
+    1,
+    3
+   ],
+   "kind": "shrine",
+   "template": null,
+   "note": "",
+   "knock": true
+  },
+  {
+   "s": "059",
+   "name": "Sea Arch Cove",
+   "planet": "thalassa",
+   "tile": [
+    20,
+    5
+   ],
+   "kind": "shrine",
+   "template": null,
+   "note": "",
+   "knock": true
+  },
+  {
+   "s": "062",
+   "name": "Neonis Starport",
+   "planet": "neonis",
+   "tile": [
+    2,
+    3
+   ],
+   "kind": "house",
+   "template": "neonis_house",
+   "note": "",
+   "knock": true
+  },
+  {
+   "s": "062",
+   "name": "Neonis Starport",
+   "planet": "neonis",
+   "tile": [
+    19,
+    9
+   ],
+   "kind": "house",
+   "template": "neonis_house",
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "063",
+   "name": "Neon Boulevard",
+   "planet": "neonis",
+   "tile": [
+    17,
+    4
+   ],
+   "kind": "bay",
+   "template": null,
+   "note": "Neon Boulevard Recovery Bay",
+   "knock": false
+  },
+  {
+   "s": "063",
+   "name": "Neon Boulevard",
+   "planet": "neonis",
+   "tile": [
+    19,
+    12
+   ],
+   "kind": "house",
+   "template": "neonis_house",
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "066",
+   "name": "Arcade District",
+   "planet": "neonis",
+   "tile": [
+    17,
+    4
+   ],
+   "kind": "special",
+   "template": "arcade_hall",
+   "note": "arcade_hall",
+   "knock": true
+  },
+  {
+   "s": "066",
+   "name": "Arcade District",
+   "planet": "neonis",
+   "tile": [
+    3,
+    4
+   ],
+   "kind": "house",
+   "template": "neonis_house",
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "072",
+   "name": "Sunken Landing",
+   "planet": "glyphos",
+   "tile": [
+    21,
+    5
+   ],
+   "kind": "house",
+   "template": "glyphos_house",
+   "note": "",
+   "knock": true
+  },
+  {
+   "s": "072",
+   "name": "Sunken Landing",
+   "planet": "glyphos",
+   "tile": [
+    4,
+    3
+   ],
+   "kind": "house",
+   "template": "glyphos_house",
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "072",
+   "name": "Sunken Landing",
+   "planet": "glyphos",
+   "tile": [
+    4,
+    13
+   ],
+   "kind": "house",
+   "template": "glyphos_house",
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "072",
+   "name": "Sunken Landing",
+   "planet": "glyphos",
+   "tile": [
+    11,
+    0
+   ],
+   "kind": "ruin",
+   "template": null,
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "073",
+   "name": "Dig Camp",
+   "planet": "glyphos",
+   "tile": [
+    4,
+    11
+   ],
+   "kind": "special",
+   "template": "dig_camp_tent",
+   "note": "dig_camp_tent",
+   "knock": true
+  },
+  {
+   "s": "073",
+   "name": "Dig Camp",
+   "planet": "glyphos",
+   "tile": [
+    11,
+    10
+   ],
+   "kind": "house",
+   "template": "glyphos_house",
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "073",
+   "name": "Dig Camp",
+   "planet": "glyphos",
+   "tile": [
+    19,
+    11
+   ],
+   "kind": "house",
+   "template": "glyphos_house",
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "073",
+   "name": "Dig Camp",
+   "planet": "glyphos",
+   "tile": [
+    4,
+    1
+   ],
+   "kind": "mine",
+   "template": null,
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "075",
+   "name": "Coral Ruins Part A",
+   "planet": "glyphos",
+   "tile": [
+    4,
+    0
+   ],
+   "kind": "ruin",
+   "template": null,
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "075",
+   "name": "Coral Ruins Part A",
+   "planet": "glyphos",
+   "tile": [
+    11,
+    0
+   ],
+   "kind": "ruin",
+   "template": null,
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "076",
+   "name": "Coral Ruins Part B",
+   "planet": "glyphos",
+   "tile": [
+    6,
+    0
+   ],
+   "kind": "ruin",
+   "template": null,
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "076",
+   "name": "Coral Ruins Part B",
+   "planet": "glyphos",
+   "tile": [
+    20,
+    0
+   ],
+   "kind": "ruin",
+   "template": null,
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "077",
+   "name": "Glyph Hollow",
+   "planet": "glyphos",
+   "tile": [
+    3,
+    11
+   ],
+   "kind": "ruin",
+   "template": null,
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "079",
+   "name": "Temple of Voices 2F",
+   "planet": "glyphos",
+   "tile": [
+    5,
+    17
+   ],
+   "kind": "ruin",
+   "template": null,
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "079",
+   "name": "Temple of Voices 2F",
+   "planet": "glyphos",
+   "tile": [
+    10,
+    17
+   ],
+   "kind": "ruin",
+   "template": null,
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "082",
+   "name": "Cinder Hollow",
+   "planet": "pyros",
+   "tile": [
+    3,
+    10
+   ],
+   "kind": "house",
+   "template": "pyros_house",
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "082",
+   "name": "Cinder Hollow",
+   "planet": "pyros",
+   "tile": [
+    7,
+    10
+   ],
+   "kind": "house",
+   "template": "pyros_house",
+   "note": "",
+   "knock": true
+  },
+  {
+   "s": "082",
+   "name": "Cinder Hollow",
+   "planet": "pyros",
+   "tile": [
+    19,
+    11
+   ],
+   "kind": "house",
+   "template": "pyros_house",
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "085",
+   "name": "Lava Rail Part A",
+   "planet": "pyros",
+   "tile": [
+    2,
+    9
+   ],
+   "kind": "mine",
+   "template": null,
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "085",
+   "name": "Lava Rail Part A",
+   "planet": "pyros",
+   "tile": [
+    3,
+    0
+   ],
+   "kind": "mine",
+   "template": null,
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "086",
+   "name": "Lava Rail Part B",
+   "planet": "pyros",
+   "tile": [
+    2,
+    1
+   ],
+   "kind": "mine",
+   "template": null,
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "086",
+   "name": "Lava Rail Part B",
+   "planet": "pyros",
+   "tile": [
+    19,
+    1
+   ],
+   "kind": "mine",
+   "template": null,
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "087",
+   "name": "Deep Mines B1",
+   "planet": "pyros",
+   "tile": [
+    1,
+    9
+   ],
+   "kind": "mine",
+   "template": null,
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "087",
+   "name": "Deep Mines B1",
+   "planet": "pyros",
+   "tile": [
+    3,
+    2
+   ],
+   "kind": "mine",
+   "template": null,
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "087",
+   "name": "Deep Mines B1",
+   "planet": "pyros",
+   "tile": [
+    3,
+    8
+   ],
+   "kind": "mine",
+   "template": null,
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "087",
+   "name": "Deep Mines B1",
+   "planet": "pyros",
+   "tile": [
+    11,
+    1
+   ],
+   "kind": "mine",
+   "template": null,
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "088",
+   "name": "Deep Mines B2",
+   "planet": "pyros",
+   "tile": [
+    1,
+    10
+   ],
+   "kind": "mine",
+   "template": null,
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "088",
+   "name": "Deep Mines B2",
+   "planet": "pyros",
+   "tile": [
+    2,
+    1
+   ],
+   "kind": "mine",
+   "template": null,
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "088",
+   "name": "Deep Mines B2",
+   "planet": "pyros",
+   "tile": [
+    13,
+    2
+   ],
+   "kind": "mine",
+   "template": null,
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "089",
+   "name": "Deep Mines B3",
+   "planet": "pyros",
+   "tile": [
+    2,
+    0
+   ],
+   "kind": "mine",
+   "template": null,
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "089",
+   "name": "Deep Mines B3",
+   "planet": "pyros",
+   "tile": [
+    2,
+    5
+   ],
+   "kind": "mine",
+   "template": null,
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "089",
+   "name": "Deep Mines B3",
+   "planet": "pyros",
+   "tile": [
+    13,
+    3
+   ],
+   "kind": "mine",
+   "template": null,
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "089",
+   "name": "Deep Mines B3",
+   "planet": "pyros",
+   "tile": [
+    14,
+    10
+   ],
+   "kind": "mine",
+   "template": null,
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "090",
+   "name": "Furnace Ridge (Pyros)",
+   "planet": "pyros",
+   "tile": [
+    2,
+    2
+   ],
+   "kind": "mine",
+   "template": null,
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "093",
+   "name": "Frostmark",
+   "planet": "glacia",
+   "tile": [
+    6,
+    5
+   ],
+   "kind": "house",
+   "template": "glacia_house",
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "093",
+   "name": "Frostmark",
+   "planet": "glacia",
+   "tile": [
+    6,
+    11
+   ],
+   "kind": "house",
+   "template": "glacia_house",
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "093",
+   "name": "Frostmark",
+   "planet": "glacia",
+   "tile": [
+    17,
+    12
+   ],
+   "kind": "house",
+   "template": "glacia_house",
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "105",
+   "name": "Docking Ring",
+   "planet": "helix",
+   "tile": [
+    6,
+    4
+   ],
+   "kind": "shop",
+   "template": null,
+   "note": "Docking Ring shop",
+   "knock": false
+  },
+  {
+   "s": "114",
+   "name": "Cloud Dock",
+   "planet": "halo",
+   "tile": [
+    4,
+    3
+   ],
+   "kind": "special",
+   "template": "cloud_dock_hall",
+   "note": "cloud_dock_hall",
+   "knock": true
+  },
+  {
+   "s": "114",
+   "name": "Cloud Dock",
+   "planet": "halo",
+   "tile": [
+    17,
+    2
+   ],
+   "kind": "special",
+   "template": "airship_cabin",
+   "note": "airship_cabin",
+   "knock": false
+  },
+  {
+   "s": "114",
+   "name": "Cloud Dock",
+   "planet": "halo",
+   "tile": [
+    4,
+    9
+   ],
+   "kind": "house",
+   "template": "halo_house",
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "114",
+   "name": "Cloud Dock",
+   "planet": "halo",
+   "tile": [
+    11,
+    2
+   ],
+   "kind": "shrine",
+   "template": null,
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "115",
+   "name": "Skyreach Plaza",
+   "planet": "halo",
+   "tile": [
+    4,
+    11
+   ],
+   "kind": "house",
+   "template": "halo_house",
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "115",
+   "name": "Skyreach Plaza",
+   "planet": "halo",
+   "tile": [
+    11,
+    2
+   ],
+   "kind": "house",
+   "template": "halo_house",
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "115",
+   "name": "Skyreach Plaza",
+   "planet": "halo",
+   "tile": [
+    18,
+    11
+   ],
+   "kind": "house",
+   "template": "halo_house",
+   "note": "",
+   "knock": true
+  },
+  {
+   "s": "118",
+   "name": "Wind Bridges Part A",
+   "planet": "halo",
+   "tile": [
+    5,
+    1
+   ],
+   "kind": "shrine",
+   "template": null,
+   "note": "",
+   "knock": true
+  },
+  {
+   "s": "118",
+   "name": "Wind Bridges Part A",
+   "planet": "halo",
+   "tile": [
+    18,
+    2
+   ],
+   "kind": "shrine",
+   "template": null,
+   "note": "",
+   "knock": true
+  },
+  {
+   "s": "119",
+   "name": "Wind Bridges Part B",
+   "planet": "halo",
+   "tile": [
+    4,
+    2
+   ],
+   "kind": "shrine",
+   "template": null,
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "123",
+   "name": "Shadow Tunnel Exit",
+   "planet": "umbra",
+   "tile": [
+    11,
+    5
+   ],
+   "kind": "cave",
+   "template": null,
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "124",
+   "name": "Gravewell",
+   "planet": "umbra",
+   "tile": [
+    6,
+    12
+   ],
+   "kind": "house",
+   "template": "umbra_house",
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "124",
+   "name": "Gravewell",
+   "planet": "umbra",
+   "tile": [
+    7,
+    4
+   ],
+   "kind": "house",
+   "template": "umbra_house",
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "127",
+   "name": "Lantern Streets Part A",
+   "planet": "umbra",
+   "tile": [
+    6,
+    12
+   ],
+   "kind": "house",
+   "template": "umbra_house",
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "127",
+   "name": "Lantern Streets Part A",
+   "planet": "umbra",
+   "tile": [
+    16,
+    3
+   ],
+   "kind": "house",
+   "template": "umbra_house",
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "128",
+   "name": "Lantern Streets Part B",
+   "planet": "umbra",
+   "tile": [
+    4,
+    3
+   ],
+   "kind": "house",
+   "template": "umbra_house",
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "128",
+   "name": "Lantern Streets Part B",
+   "planet": "umbra",
+   "tile": [
+    20,
+    11
+   ],
+   "kind": "house",
+   "template": "umbra_house",
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "136",
+   "name": "Rim Camp",
+   "planet": "starfall",
+   "tile": [
+    5,
+    5
+   ],
+   "kind": "house",
+   "template": "starfall_house",
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "136",
+   "name": "Rim Camp",
+   "planet": "starfall",
+   "tile": [
+    10,
+    4
+   ],
+   "kind": "house",
+   "template": "starfall_house",
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "136",
+   "name": "Rim Camp",
+   "planet": "starfall",
+   "tile": [
+    8,
+    12
+   ],
+   "kind": "house",
+   "template": "starfall_house",
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "136",
+   "name": "Rim Camp",
+   "planet": "starfall",
+   "tile": [
+    14,
+    12
+   ],
+   "kind": "house",
+   "template": "starfall_house",
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "145",
+   "name": "Rift Engine Platform",
+   "planet": "starfall",
+   "tile": [
+    9,
+    5
+   ],
+   "kind": "house",
+   "template": "starfall_house",
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "145",
+   "name": "Rift Engine Platform",
+   "planet": "starfall",
+   "tile": [
+    3,
+    11
+   ],
+   "kind": "house",
+   "template": "starfall_house",
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "145",
+   "name": "Rift Engine Platform",
+   "planet": "starfall",
+   "tile": [
+    21,
+    14
+   ],
+   "kind": "house",
+   "template": "starfall_house",
+   "note": "",
+   "knock": false
+  },
+  {
+   "s": "153",
+   "name": "Arrival Fragment",
+   "planet": "ystra",
+   "tile": [
+    19,
+    4
+   ],
+   "kind": "special",
+   "template": "arrival_research_dome",
+   "note": "arrival_research_dome",
+   "knock": true
+  },
+  {
+   "s": "153",
+   "name": "Arrival Fragment",
+   "planet": "ystra",
+   "tile": [
+    4,
+    4
+   ],
+   "kind": "house",
+   "template": "ystra_house",
+   "note": "",
+   "knock": true
+  },
+  {
+   "s": "153",
+   "name": "Arrival Fragment",
+   "planet": "ystra",
+   "tile": [
+    4,
+    11
+   ],
+   "kind": "house",
+   "template": "ystra_house",
+   "note": "",
+   "knock": false
+  }
+ ]
+}

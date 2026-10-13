@@ -25,7 +25,9 @@ for pf in sorted(glob.glob(os.path.join(ROOT, 'data/sections/planets/*.json'))):
         continue
     for k in ('doors', 'stairs', 'gates'):
         links.setdefault(k, []).extend(extra.get(k, []))
-    for k in ('objects', 'spawns', 'unlisted', 'ignore_mats', 'zones', 'arrival', 'edge_rows'):
+    for sid, objs in extra.get('objects', {}).items():   # a planet file adds to a section's objects (door responses live in links.json)
+        links.setdefault('objects', {}).setdefault(sid, []).extend(objs)
+    for k in ('spawns', 'unlisted', 'ignore_mats', 'zones', 'arrival', 'edge_rows'):
         links.setdefault(k, {}).update(extra.get(k, {}))
     tr = links.setdefault('trainers', {})
     tr.setdefault('apprentices', {}).update(extra.get('apprentices', {}))

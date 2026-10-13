@@ -15,7 +15,7 @@
    "section": "007",
    "name": "Dustmere Bridge",
    "tile": [
-    22,
+    2,
     5
    ],
    "item": "stasis",
@@ -147,8 +147,8 @@
    "section": "014",
    "name": "Molten Frontier: Tunnel Mouth",
    "tile": [
-    11,
-    4
+    6,
+    13
    ],
    "item": "gel",
    "n": 2,
@@ -403,7 +403,7 @@
    "name": "Gate Plaza",
    "tile": [
     11,
-    14
+    4
    ],
    "item": "cure",
    "n": 2,
@@ -413,8 +413,8 @@
    "section": "030",
    "name": "Rustvale",
    "tile": [
-    16,
-    12
+    5,
+    13
    ],
    "item": "gel",
    "n": 2,
@@ -490,8 +490,8 @@
    "section": "037",
    "name": "Junk Market",
    "tile": [
-    15,
-    14
+    11,
+    2
    ],
    "item": "cure",
    "n": 2,
@@ -525,8 +525,8 @@
    "section": "041",
    "name": "Landing Bog",
    "tile": [
-    5,
-    13
+    6,
+    4
    ],
    "item": "stasis",
    "n": 5,
@@ -806,8 +806,8 @@
    "section": "072",
    "name": "Sunken Landing",
    "tile": [
-    3,
-    14
+    10,
+    3
    ],
    "item": "ether",
    "n": 1,
@@ -817,8 +817,8 @@
    "section": "073",
    "name": "Dig Camp",
    "tile": [
-    12,
-    13
+    2,
+    12
    ],
    "item": "megagel",
    "n": 2,
@@ -872,8 +872,8 @@
    "section": "077",
    "name": "Glyph Hollow",
    "tile": [
-    3,
-    13
+    8,
+    3
    ],
    "item": "megagel",
    "n": 2,
@@ -883,8 +883,8 @@
    "section": "077",
    "name": "Glyph Hollow",
    "tile": [
-    8,
-    3
+    19,
+    12
    ],
    "item": "harmonic",
    "n": 3,
@@ -929,8 +929,8 @@
    "section": "086",
    "name": "Lava Rail Part B",
    "tile": [
-    15,
-    11
+    9,
+    10
    ],
    "item": "dust",
    "n": 800,
@@ -940,7 +940,7 @@
    "section": "086",
    "name": "Lava Rail Part B",
    "tile": [
-    5,
+    20,
     12
    ],
    "item": "revive",
@@ -1004,17 +1004,6 @@
   }
  ],
  "Glacia": [
-  {
-   "section": "093",
-   "name": "Frostmark",
-   "tile": [
-    7,
-    2
-   ],
-   "item": "harmonic",
-   "n": 5,
-   "tier": 4
-  },
   {
    "section": "096",
    "name": "Aurora Route Part A",
@@ -1232,8 +1221,8 @@
    "section": "119",
    "name": "Wind Bridges Part B",
    "tile": [
-    4,
-    3
+    14,
+    7
    ],
    "item": "harmonic",
    "n": 5,
@@ -1267,8 +1256,8 @@
    "section": "123",
    "name": "Shadow Tunnel Exit",
    "tile": [
-    13,
-    9
+    3,
+    3
    ],
    "item": "dust",
    "n": 1600,
@@ -1289,8 +1278,8 @@
    "section": "127",
    "name": "Lantern Streets Part A",
    "tile": [
-    13,
-    4
+    11,
+    1
    ],
    "item": "maxrevive",
    "n": 1,
@@ -1300,8 +1289,8 @@
    "section": "127",
    "name": "Lantern Streets Part A",
    "tile": [
-    11,
-    1
+    4,
+    3
    ],
    "item": "maxrevive",
    "n": 1,
@@ -1401,8 +1390,8 @@
    "section": "136",
    "name": "Rim Camp",
    "tile": [
-    11,
-    13
+    17,
+    12
    ],
    "item": "dust",
    "n": 1600,
@@ -1534,7 +1523,7 @@
    "name": "Rift Engine Platform",
    "tile": [
     6,
-    1
+    12
    ],
    "item": "maxrevive",
    "n": 1,

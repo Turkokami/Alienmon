@@ -267,8 +267,8 @@
   },
   "M12:giver": {
    "s": "093",
-   "x": 11,
-   "y": 7
+   "x": 10,
+   "y": 8
   },
   "M12:0": {
    "s": "101",
@@ -501,8 +501,8 @@
   },
   "S13:giver": {
    "s": "014",
-   "x": 12,
-   "y": 4
+   "x": 10,
+   "y": 3
   },
   "S13:0": {
    "s": "027",
@@ -789,11 +789,11 @@
   "S72:0": {
    "s": "088",
    "x": 9,
-   "y": 7
+   "y": 2
   },
   "S80:giver": {
    "s": "093",
-   "x": 14,
+   "x": 15,
    "y": 7
   },
   "S80:0": {
@@ -879,7 +879,7 @@
   },
   "S92:giver": {
    "s": "124",
-   "x": 14,
+   "x": 17,
    "y": 8
   },
   "S92:0": {
@@ -931,8 +931,8 @@
   },
   "S94:giver": {
    "s": "115",
-   "x": 6,
-   "y": 9
+   "x": 4,
+   "y": 6
   },
   "S94:0": {
    "s": "115",
@@ -951,7 +951,7 @@
   },
   "S96:giver": {
    "s": "115",
-   "x": 12,
+   "x": 10,
    "y": 5
   },
   "S97:giver": {
@@ -1181,7 +1181,7 @@
   "S102:giver": {
    "s": "030",
    "x": 12,
-   "y": 10
+   "y": 5
   },
   "S102:0": {
    "s": "039",
@@ -1965,7 +1965,25 @@
    "objects": [
     {
      "tile": [
+      4,
+      3
+     ],
+     "k": "sign",
+     "t": "The door is locked. Nobody seems to be home.",
+     "why": "door plan: house door with no interior yet"
+    },
+    {
+     "tile": [
       22,
+      4
+     ],
+     "k": "sign",
+     "t": "The door is locked. Nobody seems to be home.",
+     "why": "door plan: house door with no interior yet"
+    },
+    {
+     "tile": [
+      2,
       5
      ],
      "k": "stash",
@@ -2842,6 +2860,15 @@
    "objects": [
     {
      "tile": [
+      14,
+      1
+     ],
+     "k": "sign",
+     "t": "Loose rock blocks the passage.",
+     "why": "door plan: cave door with no interior yet"
+    },
+    {
+     "tile": [
       3,
       1
      ],
@@ -2852,8 +2879,8 @@
     },
     {
      "tile": [
-      11,
-      4
+      6,
+      13
      ],
      "k": "stash",
      "item": "gel",
@@ -2885,7 +2912,7 @@
     },
     {
      "x": 15,
-     "y": 6,
+     "y": 5,
      "art": "wanderer",
      "face": "down",
      "t": [
@@ -2904,8 +2931,8 @@
      "wid": "mf2"
     },
     {
-     "x": 12,
-     "y": 4,
+     "x": 10,
+     "y": 3,
      "art": "miner",
      "face": "down",
      "t": [
@@ -3174,6 +3201,14 @@
    "objects": [
     {
      "tile": [
+      16,
+      4
+     ],
+     "k": "bay",
+     "why": "Palm Isle Recovery Hut (no interior yet, so the door works like the counter)"
+    },
+    {
+     "tile": [
       18,
       1
      ],
@@ -3361,6 +3396,14 @@
     }
    ],
    "objects": [
+    {
+     "tile": [
+      18,
+      4
+     ],
+     "k": "bay",
+     "why": "Port Ember healing centre (no interior yet, so the door works like the counter)"
+    },
     {
      "tile": [
       10,
@@ -3836,6 +3879,24 @@
     }
    ],
    "objects": [
+    {
+     "tile": [
+      4,
+      12
+     ],
+     "k": "sign",
+     "t": "The door is locked. Nobody seems to be home.",
+     "why": "door plan: house door with no interior yet"
+    },
+    {
+     "tile": [
+      21,
+      12
+     ],
+     "k": "sign",
+     "t": "The door is locked. Nobody seems to be home.",
+     "why": "door plan: house door with no interior yet"
+    },
     {
      "tile": [
       11,
@@ -4350,6 +4411,15 @@
    "objects": [
     {
      "tile": [
+      5,
+      11
+     ],
+     "k": "sign",
+     "t": "The door is locked. Nobody seems to be home.",
+     "why": "door plan: house door with no interior yet"
+    },
+    {
+     "tile": [
       14,
       12
      ],
@@ -4671,8 +4741,44 @@
    "objects": [
     {
      "tile": [
+      6,
+      5
+     ],
+     "k": "sign",
+     "t": "The door is locked. Nobody seems to be home.",
+     "why": "door plan: house door with no interior yet"
+    },
+    {
+     "tile": [
+      18,
+      5
+     ],
+     "k": "sign",
+     "t": "The door is locked. Nobody seems to be home.",
+     "why": "door plan: house door with no interior yet"
+    },
+    {
+     "tile": [
+      6,
+      11
+     ],
+     "k": "sign",
+     "t": "The door is locked. Nobody seems to be home.",
+     "why": "door plan: house door with no interior yet"
+    },
+    {
+     "tile": [
+      17,
+      12
+     ],
+     "k": "sign",
+     "t": "The door is locked. Nobody seems to be home.",
+     "why": "door plan: house door with no interior yet"
+    },
+    {
+     "tile": [
       11,
-      14
+      4
      ],
      "k": "stash",
      "item": "cure",
@@ -4698,7 +4804,7 @@
    "npcs": [
     {
      "x": 11,
-     "y": 8,
+     "y": 6,
      "art": "guard",
      "face": "down",
      "t": [
@@ -4707,7 +4813,7 @@
     },
     {
      "x": 13,
-     "y": 12,
+     "y": 14,
      "art": "technician",
      "face": "down",
      "t": [
@@ -4715,8 +4821,8 @@
      ]
     },
     {
-     "x": 7,
-     "y": 6,
+     "x": 5,
+     "y": 8,
      "art": "civilian",
      "face": "down",
      "t": [
@@ -4726,12 +4832,12 @@
    ],
    "mons": [
     {
-     "x": 22,
-     "y": 4,
+     "x": 0,
+     "y": 9,
      "mon": "Anvilox"
     },
     {
-     "x": 0,
+     "x": 14,
      "y": 9,
      "mon": "Gongorr"
     }
@@ -4814,8 +4920,17 @@
    "objects": [
     {
      "tile": [
-      16,
-      12
+      17,
+      11
+     ],
+     "k": "sign",
+     "t": "The door is locked. Nobody seems to be home.",
+     "why": "door plan: house door with no interior yet"
+    },
+    {
+     "tile": [
+      5,
+      13
      ],
      "k": "stash",
      "item": "gel",
@@ -4846,7 +4961,7 @@
     },
     {
      "x": 12,
-     "y": 11,
+     "y": 13,
      "art": "miner",
      "face": "down",
      "t": [
@@ -4873,7 +4988,7 @@
     },
     {
      "x": 18,
-     "y": 8,
+     "y": 12,
      "art": "wanderer",
      "face": "down",
      "t": [
@@ -4896,8 +5011,8 @@
      }
     },
     {
-     "x": 17,
-     "y": 8,
+     "x": 15,
+     "y": 6,
      "art": "kit",
      "face": "down",
      "t": [
@@ -4912,7 +5027,7 @@
    "mons": [
     {
      "x": 5,
-     "y": 13,
+     "y": 12,
      "mon": "Magnub"
     }
    ]
@@ -5558,8 +5673,33 @@
    "objects": [
     {
      "tile": [
-      15,
-      14
+      18,
+      4
+     ],
+     "k": "bay",
+     "why": "Junk Market Recovery Bay (no interior yet, so the door works like the counter)"
+    },
+    {
+     "tile": [
+      18,
+      12
+     ],
+     "k": "shop",
+     "why": "Junk Market big shop (no interior yet, so the door works like the counter)"
+    },
+    {
+     "tile": [
+      6,
+      11
+     ],
+     "k": "sign",
+     "t": "The door is locked. Nobody seems to be home.",
+     "why": "door plan: house door with no interior yet"
+    },
+    {
+     "tile": [
+      11,
+      2
      ],
      "k": "stash",
      "item": "cure",
@@ -5580,8 +5720,8 @@
    "pkey": "ferrox",
    "npcs": [
     {
-     "x": 14,
-     "y": 12,
+     "x": 16,
+     "y": 11,
      "art": "technician",
      "face": "down",
      "t": [
@@ -5590,7 +5730,7 @@
     },
     {
      "x": 17,
-     "y": 5,
+     "y": 8,
      "art": "civilian",
      "face": "down",
      "t": [
@@ -5607,8 +5747,8 @@
      ]
     },
     {
-     "x": 18,
-     "y": 5,
+     "x": 11,
+     "y": 3,
      "art": "wanderer",
      "face": "down",
      "t": [
@@ -5981,6 +6121,15 @@
    "objects": [
     {
      "tile": [
+      5,
+      12
+     ],
+     "k": "sign",
+     "t": "The door is locked. Nobody seems to be home.",
+     "why": "door plan: house door with no interior yet"
+    },
+    {
+     "tile": [
       15,
       5
      ],
@@ -5991,8 +6140,8 @@
     },
     {
      "tile": [
-      5,
-      13
+      6,
+      4
      ],
      "k": "stash",
      "item": "stasis",
@@ -6037,13 +6186,13 @@
    ],
    "mons": [
     {
-     "x": 9,
-     "y": 12,
+     "x": 20,
+     "y": 4,
      "mon": "Sludgeviper"
     },
     {
-     "x": 4,
-     "y": 8,
+     "x": 5,
+     "y": 6,
      "mon": "Lianarch"
     }
    ]
@@ -6123,6 +6272,15 @@
     }
    ],
    "objects": [
+    {
+     "tile": [
+      5,
+      13
+     ],
+     "k": "sign",
+     "t": "The door is locked. Nobody seems to be home.",
+     "why": "door plan: house door with no interior yet"
+    },
     {
      "tile": [
       11,
@@ -6995,6 +7153,15 @@
    "objects": [
     {
      "tile": [
+      19,
+      4
+     ],
+     "k": "sign",
+     "t": "The door is locked for now.",
+     "why": "door plan: special door with no interior yet"
+    },
+    {
+     "tile": [
       14,
       12
      ],
@@ -7537,6 +7704,14 @@
    "objects": [
     {
      "tile": [
+      16,
+      4
+     ],
+     "k": "bay",
+     "why": "Saltreach second Recovery Bay (no interior yet, so the door works like the counter)"
+    },
+    {
+     "tile": [
       12,
       8
      ],
@@ -7578,7 +7753,7 @@
      ]
     },
     {
-     "x": 14,
+     "x": 12,
      "y": 11,
      "art": "squidsailor",
      "face": "down",
@@ -7596,8 +7771,8 @@
      ]
     },
     {
-     "x": 17,
-     "y": 5,
+     "x": 14,
+     "y": 10,
      "art": "technician",
      "face": "down",
      "t": [
@@ -8575,6 +8750,15 @@
    "objects": [
     {
      "tile": [
+      19,
+      9
+     ],
+     "k": "sign",
+     "t": "The door is locked. Nobody seems to be home.",
+     "why": "door plan: house door with no interior yet"
+    },
+    {
+     "tile": [
       10,
       7
      ],
@@ -8754,6 +8938,23 @@
    "objects": [
     {
      "tile": [
+      17,
+      4
+     ],
+     "k": "bay",
+     "why": "Neon Boulevard Recovery Bay (no interior yet, so the door works like the counter)"
+    },
+    {
+     "tile": [
+      19,
+      12
+     ],
+     "k": "sign",
+     "t": "The door is locked. Nobody seems to be home.",
+     "why": "door plan: house door with no interior yet"
+    },
+    {
+     "tile": [
       12,
       4
      ],
@@ -8804,7 +9005,7 @@
      ]
     },
     {
-     "x": 17,
+     "x": 22,
      "y": 5,
      "art": "explorer",
      "face": "down",
@@ -8851,8 +9052,8 @@
    ],
    "mons": [
     {
-     "x": 23,
-     "y": 6,
+     "x": 11,
+     "y": 13,
      "mon": "Ampup"
     }
    ]
@@ -9055,6 +9256,15 @@
    },
    "warps": [],
    "objects": [
+    {
+     "tile": [
+      3,
+      4
+     ],
+     "k": "sign",
+     "t": "The door is locked. Nobody seems to be home.",
+     "why": "door plan: house door with no interior yet"
+    },
     {
      "tile": [
       11,
@@ -9768,6 +9978,33 @@
    "objects": [
     {
      "tile": [
+      4,
+      3
+     ],
+     "k": "sign",
+     "t": "The door is locked. Nobody seems to be home.",
+     "why": "door plan: house door with no interior yet"
+    },
+    {
+     "tile": [
+      4,
+      13
+     ],
+     "k": "sign",
+     "t": "The door is locked. Nobody seems to be home.",
+     "why": "door plan: house door with no interior yet"
+    },
+    {
+     "tile": [
+      11,
+      0
+     ],
+     "k": "sign",
+     "t": "Fallen stone blocks the way.",
+     "why": "door plan: ruin door with no interior yet"
+    },
+    {
+     "tile": [
       12,
       2
      ],
@@ -9778,8 +10015,8 @@
     },
     {
      "tile": [
-      3,
-      14
+      10,
+      3
      ],
      "k": "stash",
      "item": "ether",
@@ -9804,8 +10041,8 @@
    "pkey": "glyphos",
    "npcs": [
     {
-     "x": 3,
-     "y": 6,
+     "x": 1,
+     "y": 5,
      "art": "explorer",
      "face": "down",
      "t": [
@@ -9885,6 +10122,33 @@
    "objects": [
     {
      "tile": [
+      11,
+      10
+     ],
+     "k": "sign",
+     "t": "The door is locked. Nobody seems to be home.",
+     "why": "door plan: house door with no interior yet"
+    },
+    {
+     "tile": [
+      19,
+      11
+     ],
+     "k": "sign",
+     "t": "The door is locked. Nobody seems to be home.",
+     "why": "door plan: house door with no interior yet"
+    },
+    {
+     "tile": [
+      4,
+      1
+     ],
+     "k": "sign",
+     "t": "This old shaft has caved in. There's no way through.",
+     "why": "door plan: mine door with no interior yet"
+    },
+    {
+     "tile": [
       1,
       6
      ],
@@ -9895,8 +10159,8 @@
     },
     {
      "tile": [
-      12,
-      13
+      2,
+      12
      ],
      "k": "stash",
      "item": "megagel",
@@ -9918,7 +10182,7 @@
    "npcs": [
     {
      "x": 11,
-     "y": 8,
+     "y": 6,
      "art": "explorer",
      "face": "down",
      "t": [
@@ -9926,8 +10190,8 @@
      ]
     },
     {
-     "x": 9,
-     "y": 9,
+     "x": 5,
+     "y": 5,
      "art": "researcher",
      "face": "down",
      "t": [
@@ -9935,8 +10199,8 @@
      ]
     },
     {
-     "x": 4,
-     "y": 6,
+     "x": 18,
+     "y": 8,
      "art": "pilgrim",
      "face": "down",
      "t": [
@@ -9963,7 +10227,7 @@
     },
     {
      "x": 1,
-     "y": 12,
+     "y": 9,
      "art": "civilian",
      "face": "down",
      "t": [
@@ -9982,8 +10246,8 @@
    ],
    "mons": [
     {
-     "x": 18,
-     "y": 9,
+     "x": 22,
+     "y": 5,
      "mon": "Fossilily"
     }
    ]
@@ -10107,6 +10371,24 @@
    "objects": [
     {
      "tile": [
+      4,
+      0
+     ],
+     "k": "sign",
+     "t": "Fallen stone blocks the way.",
+     "why": "door plan: ruin door with no interior yet"
+    },
+    {
+     "tile": [
+      11,
+      0
+     ],
+     "k": "sign",
+     "t": "Fallen stone blocks the way.",
+     "why": "door plan: ruin door with no interior yet"
+    },
+    {
+     "tile": [
       3,
       14
      ],
@@ -10219,6 +10501,24 @@
    },
    "warps": [],
    "objects": [
+    {
+     "tile": [
+      6,
+      0
+     ],
+     "k": "sign",
+     "t": "Fallen stone blocks the way.",
+     "why": "door plan: ruin door with no interior yet"
+    },
+    {
+     "tile": [
+      20,
+      0
+     ],
+     "k": "sign",
+     "t": "Fallen stone blocks the way.",
+     "why": "door plan: ruin door with no interior yet"
+    },
     {
      "tile": [
       22,
@@ -10379,6 +10679,15 @@
    "objects": [
     {
      "tile": [
+      3,
+      11
+     ],
+     "k": "sign",
+     "t": "Fallen stone blocks the way.",
+     "why": "door plan: ruin door with no interior yet"
+    },
+    {
+     "tile": [
       10,
       8
      ],
@@ -10399,8 +10708,8 @@
     },
     {
      "tile": [
-      3,
-      13
+      8,
+      3
      ],
      "k": "stash",
      "item": "megagel",
@@ -10409,8 +10718,8 @@
     },
     {
      "tile": [
-      8,
-      3
+      19,
+      12
      ],
      "k": "stash",
      "item": "harmonic",
@@ -10463,9 +10772,9 @@
     },
     {
      "x": 9,
-     "y": 11,
+     "y": 7,
      "art": "explorer",
-     "face": "up",
+     "face": "left",
      "t": [],
      "id": "sec077_tr3",
      "trainer": {
@@ -10477,13 +10786,13 @@
    ],
    "mons": [
     {
-     "x": 3,
-     "y": 9,
+     "x": 18,
+     "y": 11,
      "mon": "Prismwolf"
     },
     {
-     "x": 18,
-     "y": 11,
+     "x": 0,
+     "y": 6,
      "mon": "Memoria"
     }
    ]
@@ -10663,7 +10972,26 @@
      "edge": "top"
     }
    ],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      5,
+      17
+     ],
+     "k": "sign",
+     "t": "Fallen stone blocks the way.",
+     "why": "door plan: ruin door with no interior yet"
+    },
+    {
+     "tile": [
+      10,
+      17
+     ],
+     "k": "sign",
+     "t": "Fallen stone blocks the way.",
+     "why": "door plan: ruin door with no interior yet"
+    }
+   ],
    "spawns": {
     "default": [
      7,
@@ -10683,7 +11011,7 @@
     },
     {
      "x": 6,
-     "y": 17,
+     "y": 13,
      "art": "pilgrim",
      "face": "right",
      "t": [],
@@ -10967,6 +11295,24 @@
     }
    ],
    "objects": [
+    {
+     "tile": [
+      3,
+      10
+     ],
+     "k": "sign",
+     "t": "The door is locked. Nobody seems to be home.",
+     "why": "door plan: house door with no interior yet"
+    },
+    {
+     "tile": [
+      19,
+      11
+     ],
+     "k": "sign",
+     "t": "The door is locked. Nobody seems to be home.",
+     "why": "door plan: house door with no interior yet"
+    },
     {
      "tile": [
       13,
@@ -11301,6 +11647,24 @@
    "objects": [
     {
      "tile": [
+      2,
+      9
+     ],
+     "k": "sign",
+     "t": "This old shaft has caved in. There's no way through.",
+     "why": "door plan: mine door with no interior yet"
+    },
+    {
+     "tile": [
+      3,
+      0
+     ],
+     "k": "sign",
+     "t": "This old shaft has caved in. There's no way through.",
+     "why": "door plan: mine door with no interior yet"
+    },
+    {
+     "tile": [
       15,
       13
      ],
@@ -11445,8 +11809,26 @@
    "objects": [
     {
      "tile": [
-      15,
-      11
+      2,
+      1
+     ],
+     "k": "sign",
+     "t": "This old shaft has caved in. There's no way through.",
+     "why": "door plan: mine door with no interior yet"
+    },
+    {
+     "tile": [
+      19,
+      1
+     ],
+     "k": "sign",
+     "t": "This old shaft has caved in. There's no way through.",
+     "why": "door plan: mine door with no interior yet"
+    },
+    {
+     "tile": [
+      9,
+      10
      ],
      "k": "stash",
      "item": "dust",
@@ -11455,7 +11837,7 @@
     },
     {
      "tile": [
-      5,
+      20,
       12
      ],
      "k": "stash",
@@ -11495,10 +11877,10 @@
      ]
     },
     {
-     "x": 20,
+     "x": 17,
      "y": 3,
      "art": "wanderer",
-     "face": "left",
+     "face": "right",
      "t": [],
      "id": "sec086_tr2",
      "trainer": {
@@ -11508,10 +11890,10 @@
      }
     },
     {
-     "x": 21,
-     "y": 4,
+     "x": 19,
+     "y": 8,
      "art": "miner",
-     "face": "left",
+     "face": "up",
      "t": [],
      "id": "sec086_tr3",
      "trainer": {
@@ -11523,13 +11905,13 @@
    ],
    "mons": [
     {
-     "x": 3,
-     "y": 7,
+     "x": 4,
+     "y": 8,
      "mon": "Cinderhound"
     },
     {
-     "x": 9,
-     "y": 10,
+     "x": 15,
+     "y": 11,
      "mon": "Pyroclast"
     }
    ]
@@ -11608,6 +11990,42 @@
    "objects": [
     {
      "tile": [
+      1,
+      9
+     ],
+     "k": "sign",
+     "t": "This old shaft has caved in. There's no way through.",
+     "why": "door plan: mine door with no interior yet"
+    },
+    {
+     "tile": [
+      3,
+      2
+     ],
+     "k": "sign",
+     "t": "This old shaft has caved in. There's no way through.",
+     "why": "door plan: mine door with no interior yet"
+    },
+    {
+     "tile": [
+      3,
+      8
+     ],
+     "k": "sign",
+     "t": "This old shaft has caved in. There's no way through.",
+     "why": "door plan: mine door with no interior yet"
+    },
+    {
+     "tile": [
+      11,
+      1
+     ],
+     "k": "sign",
+     "t": "This old shaft has caved in. There's no way through.",
+     "why": "door plan: mine door with no interior yet"
+    },
+    {
+     "tile": [
       14,
       12
      ],
@@ -11635,10 +12053,10 @@
      ]
     },
     {
-     "x": 7,
-     "y": 7,
+     "x": 9,
+     "y": 8,
      "art": "miner",
-     "face": "right",
+     "face": "left",
      "t": [],
      "id": "sec087_tr1",
      "trainer": {
@@ -11723,6 +12141,33 @@
    "objects": [
     {
      "tile": [
+      1,
+      10
+     ],
+     "k": "sign",
+     "t": "This old shaft has caved in. There's no way through.",
+     "why": "door plan: mine door with no interior yet"
+    },
+    {
+     "tile": [
+      2,
+      1
+     ],
+     "k": "sign",
+     "t": "This old shaft has caved in. There's no way through.",
+     "why": "door plan: mine door with no interior yet"
+    },
+    {
+     "tile": [
+      13,
+      2
+     ],
+     "k": "sign",
+     "t": "This old shaft has caved in. There's no way through.",
+     "why": "door plan: mine door with no interior yet"
+    },
+    {
+     "tile": [
       12,
       10
      ],
@@ -11751,10 +12196,10 @@
      ]
     },
     {
-     "x": 7,
-     "y": 4,
+     "x": 9,
+     "y": 3,
      "art": "technician",
-     "face": "right",
+     "face": "left",
      "t": [],
      "id": "sec088_tr1",
      "trainer": {
@@ -11837,6 +12282,42 @@
     }
    ],
    "objects": [
+    {
+     "tile": [
+      2,
+      0
+     ],
+     "k": "sign",
+     "t": "This old shaft has caved in. There's no way through.",
+     "why": "door plan: mine door with no interior yet"
+    },
+    {
+     "tile": [
+      2,
+      5
+     ],
+     "k": "sign",
+     "t": "This old shaft has caved in. There's no way through.",
+     "why": "door plan: mine door with no interior yet"
+    },
+    {
+     "tile": [
+      13,
+      3
+     ],
+     "k": "sign",
+     "t": "This old shaft has caved in. There's no way through.",
+     "why": "door plan: mine door with no interior yet"
+    },
+    {
+     "tile": [
+      14,
+      10
+     ],
+     "k": "sign",
+     "t": "This old shaft has caved in. There's no way through.",
+     "why": "door plan: mine door with no interior yet"
+    },
     {
      "tile": [
       2,
@@ -11952,6 +12433,15 @@
     }
    ],
    "objects": [
+    {
+     "tile": [
+      2,
+      2
+     ],
+     "k": "sign",
+     "t": "This old shaft has caved in. There's no way through.",
+     "why": "door plan: mine door with no interior yet"
+    },
     {
      "tile": [
       1,
@@ -12304,6 +12794,33 @@
    "objects": [
     {
      "tile": [
+      6,
+      5
+     ],
+     "k": "sign",
+     "t": "The door is locked. Nobody seems to be home.",
+     "why": "door plan: house door with no interior yet"
+    },
+    {
+     "tile": [
+      6,
+      11
+     ],
+     "k": "sign",
+     "t": "The door is locked. Nobody seems to be home.",
+     "why": "door plan: house door with no interior yet"
+    },
+    {
+     "tile": [
+      17,
+      12
+     ],
+     "k": "sign",
+     "t": "The door is locked. Nobody seems to be home.",
+     "why": "door plan: house door with no interior yet"
+    },
+    {
+     "tile": [
       12,
       9
      ],
@@ -12312,16 +12829,6 @@
       "Frostmark Research Station. The crystal in this fountain was cut from the glacier and never melts.",
       "Founded by survey crews who came for the aurora and stayed for the ice."
      ]
-    },
-    {
-     "tile": [
-      7,
-      2
-     ],
-     "k": "stash",
-     "item": "harmonic",
-     "n": 5,
-     "tier": 4
     }
    ],
    "spawns": {
@@ -12371,8 +12878,8 @@
      ]
     },
     {
-     "x": 6,
-     "y": 6,
+     "x": 11,
+     "y": 7,
      "art": "civilian",
      "face": "down",
      "t": [
@@ -12390,8 +12897,8 @@
      ]
     },
     {
-     "x": 17,
-     "y": 13,
+     "x": 15,
+     "y": 14,
      "art": "wanderer",
      "face": "down",
      "t": [
@@ -12400,8 +12907,8 @@
      ]
     },
     {
-     "x": 9,
-     "y": 10,
+     "x": 18,
+     "y": 13,
      "art": "mom",
      "face": "down",
      "t": [
@@ -12411,8 +12918,8 @@
    ],
    "mons": [
     {
-     "x": 15,
-     "y": 14,
+     "x": 9,
+     "y": 3,
      "mon": "Lichling"
     }
    ]
@@ -14879,6 +15386,33 @@
     {
      "tile": [
       17,
+      2
+     ],
+     "k": "sign",
+     "t": "The door is locked for now.",
+     "why": "door plan: special door with no interior yet"
+    },
+    {
+     "tile": [
+      4,
+      9
+     ],
+     "k": "sign",
+     "t": "The door is locked. Nobody seems to be home.",
+     "why": "door plan: house door with no interior yet"
+    },
+    {
+     "tile": [
+      11,
+      2
+     ],
+     "k": "sign",
+     "t": "The shrine door is sealed. Old wind still whistles through the cracks.",
+     "why": "door plan: shrine door with no interior yet"
+    },
+    {
+     "tile": [
+      17,
       11
      ],
      "k": "sign",
@@ -14954,8 +15488,8 @@
    ],
    "mons": [
     {
-     "x": 8,
-     "y": 11,
+     "x": 10,
+     "y": 12,
      "mon": "Cerebrix"
     },
     {
@@ -15042,6 +15576,24 @@
    "objects": [
     {
      "tile": [
+      4,
+      11
+     ],
+     "k": "sign",
+     "t": "The door is locked. Nobody seems to be home.",
+     "why": "door plan: house door with no interior yet"
+    },
+    {
+     "tile": [
+      11,
+      2
+     ],
+     "k": "sign",
+     "t": "The door is locked. Nobody seems to be home.",
+     "why": "door plan: house door with no interior yet"
+    },
+    {
+     "tile": [
       11,
       9
      ],
@@ -15066,29 +15618,11 @@
    "npcs": [
     {
      "x": 6,
-     "y": 6,
-     "art": "pilgrim",
-     "face": "down",
-     "t": [
-      "Pilgrim: The holo-globe shows all fourteen worlds at once. I found my home world spinning in it."
-     ]
-    },
-    {
-     "x": 4,
-     "y": 6,
+     "y": 5,
      "art": "civilian",
      "face": "down",
      "t": [
       "Skywatcher: The islands float on updrafts. Don't look down. Seriously, don't."
-     ]
-    },
-    {
-     "x": 11,
-     "y": 3,
-     "art": "wanderer",
-     "face": "down",
-     "t": [
-      "Mystic: The twins see what you'll do before you do it. They told me you'd come today."
      ]
     },
     {
@@ -15101,21 +15635,12 @@
      ]
     },
     {
-     "x": 10,
-     "y": 4,
+     "x": 9,
+     "y": 3,
      "art": "researcher",
      "face": "down",
      "t": [
       "Star scholar: The Sky Temple sits past the Floating Gardens. Echo and Iris guard Halo's Signal Shard."
-     ]
-    },
-    {
-     "x": 9,
-     "y": 3,
-     "art": "guard",
-     "face": "down",
-     "t": [
-      "Plaza guard: Folks in Helix coats kept asking about the temple crystal. Odd questions. I sent them off."
      ]
     }
    ],
@@ -15444,6 +15969,15 @@
    "objects": [
     {
      "tile": [
+      4,
+      2
+     ],
+     "k": "sign",
+     "t": "The shrine door is sealed. Old wind still whistles through the cracks.",
+     "why": "door plan: shrine door with no interior yet"
+    },
+    {
+     "tile": [
       18,
       11
      ],
@@ -15454,8 +15988,8 @@
     },
     {
      "tile": [
-      4,
-      3
+      14,
+      7
      ],
      "k": "stash",
      "item": "harmonic",
@@ -15476,8 +16010,8 @@
    "pkey": "halo",
    "npcs": [
     {
-     "x": 5,
-     "y": 4,
+     "x": 8,
+     "y": 6,
      "art": "civilian",
      "face": "down",
      "t": [
@@ -15522,8 +16056,8 @@
    ],
    "mons": [
     {
-     "x": 9,
-     "y": 6,
+     "x": 11,
+     "y": 4,
      "mon": "Halocene"
     },
     {
@@ -15588,6 +16122,16 @@
    "objects": [
     {
      "tile": [
+      3,
+      1
+     ],
+     "k": "chest",
+     "item": "fullgel",
+     "n": 2,
+     "why": "treasure chest drawn on the top-left ledge"
+    },
+    {
+     "tile": [
       18,
       2
      ],
@@ -15640,7 +16184,7 @@
      ]
     },
     {
-     "x": 6,
+     "x": 3,
      "y": 4,
      "art": "pilgrim",
      "face": "down",
@@ -15944,8 +16488,17 @@
    "objects": [
     {
      "tile": [
-      13,
-      9
+      11,
+      5
+     ],
+     "k": "sign",
+     "t": "Loose rock blocks the passage.",
+     "why": "door plan: cave door with no interior yet"
+    },
+    {
+     "tile": [
+      3,
+      3
      ],
      "k": "stash",
      "item": "dust",
@@ -15967,7 +16520,7 @@
    "npcs": [
     {
      "x": 9,
-     "y": 9,
+     "y": 11,
      "art": "wanderer",
      "face": "down",
      "t": [
@@ -16101,6 +16654,24 @@
    "objects": [
     {
      "tile": [
+      6,
+      12
+     ],
+     "k": "sign",
+     "t": "The door is locked. Nobody seems to be home.",
+     "why": "door plan: house door with no interior yet"
+    },
+    {
+     "tile": [
+      7,
+      4
+     ],
+     "k": "sign",
+     "t": "The door is locked. Nobody seems to be home.",
+     "why": "door plan: house door with no interior yet"
+    },
+    {
+     "tile": [
       11,
       8
      ],
@@ -16133,8 +16704,8 @@
    "pkey": "umbra",
    "npcs": [
     {
-     "x": 8,
-     "y": 5,
+     "x": 14,
+     "y": 8,
      "art": "wanderer",
      "face": "down",
      "t": [
@@ -16191,8 +16762,8 @@
      ]
     },
     {
-     "x": 12,
-     "y": 6,
+     "x": 15,
+     "y": 8,
      "art": "wanderer",
      "face": "down",
      "t": [
@@ -16408,8 +16979,26 @@
    "objects": [
     {
      "tile": [
-      13,
-      4
+      6,
+      12
+     ],
+     "k": "sign",
+     "t": "The door is locked. Nobody seems to be home.",
+     "why": "door plan: house door with no interior yet"
+    },
+    {
+     "tile": [
+      16,
+      3
+     ],
+     "k": "sign",
+     "t": "The door is locked. Nobody seems to be home.",
+     "why": "door plan: house door with no interior yet"
+    },
+    {
+     "tile": [
+      11,
+      1
      ],
      "k": "stash",
      "item": "maxrevive",
@@ -16418,8 +17007,8 @@
     },
     {
      "tile": [
-      11,
-      1
+      4,
+      3
      ],
      "k": "stash",
      "item": "maxrevive",
@@ -16449,8 +17038,8 @@
      ]
     },
     {
-     "x": 13,
-     "y": 12,
+     "x": 12,
+     "y": 13,
      "art": "wanderer",
      "face": "down",
      "t": [
@@ -16458,8 +17047,8 @@
      ]
     },
     {
-     "x": 17,
-     "y": 8,
+     "x": 20,
+     "y": 11,
      "art": "civilian",
      "face": "down",
      "t": [],
@@ -16486,13 +17075,13 @@
    ],
    "mons": [
     {
-     "x": 4,
-     "y": 10,
+     "x": 3,
+     "y": 3,
      "mon": "Wellmaw"
     },
     {
-     "x": 3,
-     "y": 3,
+     "x": 13,
+     "y": 4,
      "mon": "Geodome"
     }
    ]
@@ -16552,6 +17141,24 @@
    "objects": [
     {
      "tile": [
+      4,
+      3
+     ],
+     "k": "sign",
+     "t": "The door is locked. Nobody seems to be home.",
+     "why": "door plan: house door with no interior yet"
+    },
+    {
+     "tile": [
+      20,
+      11
+     ],
+     "k": "sign",
+     "t": "The door is locked. Nobody seems to be home.",
+     "why": "door plan: house door with no interior yet"
+    },
+    {
+     "tile": [
       11,
       4
      ],
@@ -16602,10 +17209,10 @@
      ]
     },
     {
-     "x": 5,
-     "y": 4,
+     "x": 8,
+     "y": 5,
      "art": "explorer",
-     "face": "down",
+     "face": "right",
      "t": [],
      "id": "sec128_tr2",
      "trainer": {
@@ -16630,13 +17237,13 @@
    ],
    "mons": [
     {
-     "x": 21,
-     "y": 9,
+     "x": 22,
+     "y": 5,
      "mon": "Dusklord"
     },
     {
-     "x": 9,
-     "y": 6,
+     "x": 13,
+     "y": 5,
      "mon": "Gloomhulk"
     }
    ]
@@ -17462,6 +18069,42 @@
    "objects": [
     {
      "tile": [
+      5,
+      5
+     ],
+     "k": "sign",
+     "t": "The door is locked. Nobody seems to be home.",
+     "why": "door plan: house door with no interior yet"
+    },
+    {
+     "tile": [
+      10,
+      4
+     ],
+     "k": "sign",
+     "t": "The door is locked. Nobody seems to be home.",
+     "why": "door plan: house door with no interior yet"
+    },
+    {
+     "tile": [
+      8,
+      12
+     ],
+     "k": "sign",
+     "t": "The door is locked. Nobody seems to be home.",
+     "why": "door plan: house door with no interior yet"
+    },
+    {
+     "tile": [
+      14,
+      12
+     ],
+     "k": "sign",
+     "t": "The door is locked. Nobody seems to be home.",
+     "why": "door plan: house door with no interior yet"
+    },
+    {
+     "tile": [
       7,
       6
      ],
@@ -17483,8 +18126,8 @@
     },
     {
      "tile": [
-      11,
-      13
+      17,
+      12
      ],
      "k": "stash",
      "item": "dust",
@@ -17510,7 +18153,7 @@
    "npcs": [
     {
      "x": 10,
-     "y": 6,
+     "y": 9,
      "art": "explorer",
      "face": "down",
      "t": [
@@ -17523,7 +18166,7 @@
     },
     {
      "x": 4,
-     "y": 6,
+     "y": 8,
      "art": "guard",
      "face": "down",
      "t": [
@@ -17540,7 +18183,7 @@
      ]
     },
     {
-     "x": 14,
+     "x": 11,
      "y": 13,
      "art": "explorer",
      "face": "down",
@@ -17587,8 +18230,8 @@
    ],
    "mons": [
     {
-     "x": 17,
-     "y": 12,
+     "x": 13,
+     "y": 3,
      "mon": "Prismite"
     }
    ]
@@ -18607,6 +19250,33 @@
    "objects": [
     {
      "tile": [
+      9,
+      5
+     ],
+     "k": "sign",
+     "t": "The door is locked. Nobody seems to be home.",
+     "why": "door plan: house door with no interior yet"
+    },
+    {
+     "tile": [
+      3,
+      11
+     ],
+     "k": "sign",
+     "t": "The door is locked. Nobody seems to be home.",
+     "why": "door plan: house door with no interior yet"
+    },
+    {
+     "tile": [
+      21,
+      14
+     ],
+     "k": "sign",
+     "t": "The door is locked. Nobody seems to be home.",
+     "why": "door plan: house door with no interior yet"
+    },
+    {
+     "tile": [
       19,
       7
      ],
@@ -18618,7 +19288,7 @@
     {
      "tile": [
       6,
-      1
+      12
      ],
      "k": "stash",
      "item": "maxrevive",
@@ -18659,13 +19329,13 @@
    ],
    "mons": [
     {
-     "x": 6,
-     "y": 7,
+     "x": 5,
+     "y": 1,
      "mon": "Cometrix"
     },
     {
-     "x": 18,
-     "y": 13,
+     "x": 17,
+     "y": 12,
      "mon": "Quasarus"
     }
    ]
@@ -19390,6 +20060,15 @@
    },
    "warps": [],
    "objects": [
+    {
+     "tile": [
+      4,
+      11
+     ],
+     "k": "sign",
+     "t": "The door is locked. Nobody seems to be home.",
+     "why": "door plan: house door with no interior yet"
+    },
     {
      "tile": [
       12,

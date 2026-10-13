@@ -305,6 +305,796 @@
     "k": "shop",
     "why": "Trading Post shop front"
    }
+  ],
+  "007": [
+   {
+    "tile": [
+     4,
+     3
+    ],
+    "k": "sign",
+    "t": "The door is locked. Nobody seems to be home.",
+    "why": "door plan: house door with no interior yet"
+   },
+   {
+    "tile": [
+     22,
+     4
+    ],
+    "k": "sign",
+    "t": "The door is locked. Nobody seems to be home.",
+    "why": "door plan: house door with no interior yet"
+   }
+  ],
+  "014": [
+   {
+    "tile": [
+     14,
+     1
+    ],
+    "k": "sign",
+    "t": "Loose rock blocks the passage.",
+    "why": "door plan: cave door with no interior yet"
+   }
+  ],
+  "017": [
+   {
+    "tile": [
+     16,
+     4
+    ],
+    "k": "bay",
+    "why": "Palm Isle Recovery Hut (no interior yet, so the door works like the counter)"
+   }
+  ],
+  "018": [
+   {
+    "tile": [
+     18,
+     4
+    ],
+    "k": "bay",
+    "why": "Port Ember healing centre (no interior yet, so the door works like the counter)"
+   }
+  ],
+  "022": [
+   {
+    "tile": [
+     4,
+     12
+    ],
+    "k": "sign",
+    "t": "The door is locked. Nobody seems to be home.",
+    "why": "door plan: house door with no interior yet"
+   },
+   {
+    "tile": [
+     21,
+     12
+    ],
+    "k": "sign",
+    "t": "The door is locked. Nobody seems to be home.",
+    "why": "door plan: house door with no interior yet"
+   }
+  ],
+  "026": [
+   {
+    "tile": [
+     5,
+     11
+    ],
+    "k": "sign",
+    "t": "The door is locked. Nobody seems to be home.",
+    "why": "door plan: house door with no interior yet"
+   }
+  ],
+  "028": [],
+  "029": [
+   {
+    "tile": [
+     6,
+     5
+    ],
+    "k": "sign",
+    "t": "The door is locked. Nobody seems to be home.",
+    "why": "door plan: house door with no interior yet"
+   },
+   {
+    "tile": [
+     18,
+     5
+    ],
+    "k": "sign",
+    "t": "The door is locked. Nobody seems to be home.",
+    "why": "door plan: house door with no interior yet"
+   },
+   {
+    "tile": [
+     6,
+     11
+    ],
+    "k": "sign",
+    "t": "The door is locked. Nobody seems to be home.",
+    "why": "door plan: house door with no interior yet"
+   },
+   {
+    "tile": [
+     17,
+     12
+    ],
+    "k": "sign",
+    "t": "The door is locked. Nobody seems to be home.",
+    "why": "door plan: house door with no interior yet"
+   }
+  ],
+  "030": [
+   {
+    "tile": [
+     17,
+     11
+    ],
+    "k": "sign",
+    "t": "The door is locked. Nobody seems to be home.",
+    "why": "door plan: house door with no interior yet"
+   }
+  ],
+  "037": [
+   {
+    "tile": [
+     18,
+     4
+    ],
+    "k": "bay",
+    "why": "Junk Market Recovery Bay (no interior yet, so the door works like the counter)"
+   },
+   {
+    "tile": [
+     18,
+     12
+    ],
+    "k": "shop",
+    "why": "Junk Market big shop (no interior yet, so the door works like the counter)"
+   },
+   {
+    "tile": [
+     6,
+     11
+    ],
+    "k": "sign",
+    "t": "The door is locked. Nobody seems to be home.",
+    "why": "door plan: house door with no interior yet"
+   }
+  ],
+  "041": [
+   {
+    "tile": [
+     5,
+     12
+    ],
+    "k": "sign",
+    "t": "The door is locked. Nobody seems to be home.",
+    "why": "door plan: house door with no interior yet"
+   }
+  ],
+  "042": [
+   {
+    "tile": [
+     5,
+     13
+    ],
+    "k": "sign",
+    "t": "The door is locked. Nobody seems to be home.",
+    "why": "door plan: house door with no interior yet"
+   }
+  ],
+  "047": [],
+  "049": [
+   {
+    "tile": [
+     19,
+     4
+    ],
+    "k": "sign",
+    "t": "The door is locked for now.",
+    "why": "door plan: special door with no interior yet"
+   }
+  ],
+  "052": [],
+  "053": [
+   {
+    "tile": [
+     16,
+     4
+    ],
+    "k": "bay",
+    "why": "Saltreach second Recovery Bay (no interior yet, so the door works like the counter)"
+   }
+  ],
+  "059": [],
+  "062": [
+   {
+    "tile": [
+     19,
+     9
+    ],
+    "k": "sign",
+    "t": "The door is locked. Nobody seems to be home.",
+    "why": "door plan: house door with no interior yet"
+   }
+  ],
+  "063": [
+   {
+    "tile": [
+     17,
+     4
+    ],
+    "k": "bay",
+    "why": "Neon Boulevard Recovery Bay (no interior yet, so the door works like the counter)"
+   },
+   {
+    "tile": [
+     19,
+     12
+    ],
+    "k": "sign",
+    "t": "The door is locked. Nobody seems to be home.",
+    "why": "door plan: house door with no interior yet"
+   }
+  ],
+  "066": [
+   {
+    "tile": [
+     3,
+     4
+    ],
+    "k": "sign",
+    "t": "The door is locked. Nobody seems to be home.",
+    "why": "door plan: house door with no interior yet"
+   }
+  ],
+  "072": [
+   {
+    "tile": [
+     4,
+     3
+    ],
+    "k": "sign",
+    "t": "The door is locked. Nobody seems to be home.",
+    "why": "door plan: house door with no interior yet"
+   },
+   {
+    "tile": [
+     4,
+     13
+    ],
+    "k": "sign",
+    "t": "The door is locked. Nobody seems to be home.",
+    "why": "door plan: house door with no interior yet"
+   },
+   {
+    "tile": [
+     11,
+     0
+    ],
+    "k": "sign",
+    "t": "Fallen stone blocks the way.",
+    "why": "door plan: ruin door with no interior yet"
+   }
+  ],
+  "073": [
+   {
+    "tile": [
+     11,
+     10
+    ],
+    "k": "sign",
+    "t": "The door is locked. Nobody seems to be home.",
+    "why": "door plan: house door with no interior yet"
+   },
+   {
+    "tile": [
+     19,
+     11
+    ],
+    "k": "sign",
+    "t": "The door is locked. Nobody seems to be home.",
+    "why": "door plan: house door with no interior yet"
+   },
+   {
+    "tile": [
+     4,
+     1
+    ],
+    "k": "sign",
+    "t": "This old shaft has caved in. There's no way through.",
+    "why": "door plan: mine door with no interior yet"
+   }
+  ],
+  "075": [
+   {
+    "tile": [
+     4,
+     0
+    ],
+    "k": "sign",
+    "t": "Fallen stone blocks the way.",
+    "why": "door plan: ruin door with no interior yet"
+   },
+   {
+    "tile": [
+     11,
+     0
+    ],
+    "k": "sign",
+    "t": "Fallen stone blocks the way.",
+    "why": "door plan: ruin door with no interior yet"
+   }
+  ],
+  "076": [
+   {
+    "tile": [
+     6,
+     0
+    ],
+    "k": "sign",
+    "t": "Fallen stone blocks the way.",
+    "why": "door plan: ruin door with no interior yet"
+   },
+   {
+    "tile": [
+     20,
+     0
+    ],
+    "k": "sign",
+    "t": "Fallen stone blocks the way.",
+    "why": "door plan: ruin door with no interior yet"
+   }
+  ],
+  "077": [
+   {
+    "tile": [
+     3,
+     11
+    ],
+    "k": "sign",
+    "t": "Fallen stone blocks the way.",
+    "why": "door plan: ruin door with no interior yet"
+   }
+  ],
+  "079": [
+   {
+    "tile": [
+     5,
+     17
+    ],
+    "k": "sign",
+    "t": "Fallen stone blocks the way.",
+    "why": "door plan: ruin door with no interior yet"
+   },
+   {
+    "tile": [
+     10,
+     17
+    ],
+    "k": "sign",
+    "t": "Fallen stone blocks the way.",
+    "why": "door plan: ruin door with no interior yet"
+   }
+  ],
+  "082": [
+   {
+    "tile": [
+     3,
+     10
+    ],
+    "k": "sign",
+    "t": "The door is locked. Nobody seems to be home.",
+    "why": "door plan: house door with no interior yet"
+   },
+   {
+    "tile": [
+     19,
+     11
+    ],
+    "k": "sign",
+    "t": "The door is locked. Nobody seems to be home.",
+    "why": "door plan: house door with no interior yet"
+   }
+  ],
+  "085": [
+   {
+    "tile": [
+     2,
+     9
+    ],
+    "k": "sign",
+    "t": "This old shaft has caved in. There's no way through.",
+    "why": "door plan: mine door with no interior yet"
+   },
+   {
+    "tile": [
+     3,
+     0
+    ],
+    "k": "sign",
+    "t": "This old shaft has caved in. There's no way through.",
+    "why": "door plan: mine door with no interior yet"
+   }
+  ],
+  "086": [
+   {
+    "tile": [
+     2,
+     1
+    ],
+    "k": "sign",
+    "t": "This old shaft has caved in. There's no way through.",
+    "why": "door plan: mine door with no interior yet"
+   },
+   {
+    "tile": [
+     19,
+     1
+    ],
+    "k": "sign",
+    "t": "This old shaft has caved in. There's no way through.",
+    "why": "door plan: mine door with no interior yet"
+   }
+  ],
+  "087": [
+   {
+    "tile": [
+     1,
+     9
+    ],
+    "k": "sign",
+    "t": "This old shaft has caved in. There's no way through.",
+    "why": "door plan: mine door with no interior yet"
+   },
+   {
+    "tile": [
+     3,
+     2
+    ],
+    "k": "sign",
+    "t": "This old shaft has caved in. There's no way through.",
+    "why": "door plan: mine door with no interior yet"
+   },
+   {
+    "tile": [
+     3,
+     8
+    ],
+    "k": "sign",
+    "t": "This old shaft has caved in. There's no way through.",
+    "why": "door plan: mine door with no interior yet"
+   },
+   {
+    "tile": [
+     11,
+     1
+    ],
+    "k": "sign",
+    "t": "This old shaft has caved in. There's no way through.",
+    "why": "door plan: mine door with no interior yet"
+   }
+  ],
+  "088": [
+   {
+    "tile": [
+     1,
+     10
+    ],
+    "k": "sign",
+    "t": "This old shaft has caved in. There's no way through.",
+    "why": "door plan: mine door with no interior yet"
+   },
+   {
+    "tile": [
+     2,
+     1
+    ],
+    "k": "sign",
+    "t": "This old shaft has caved in. There's no way through.",
+    "why": "door plan: mine door with no interior yet"
+   },
+   {
+    "tile": [
+     13,
+     2
+    ],
+    "k": "sign",
+    "t": "This old shaft has caved in. There's no way through.",
+    "why": "door plan: mine door with no interior yet"
+   }
+  ],
+  "089": [
+   {
+    "tile": [
+     2,
+     0
+    ],
+    "k": "sign",
+    "t": "This old shaft has caved in. There's no way through.",
+    "why": "door plan: mine door with no interior yet"
+   },
+   {
+    "tile": [
+     2,
+     5
+    ],
+    "k": "sign",
+    "t": "This old shaft has caved in. There's no way through.",
+    "why": "door plan: mine door with no interior yet"
+   },
+   {
+    "tile": [
+     13,
+     3
+    ],
+    "k": "sign",
+    "t": "This old shaft has caved in. There's no way through.",
+    "why": "door plan: mine door with no interior yet"
+   },
+   {
+    "tile": [
+     14,
+     10
+    ],
+    "k": "sign",
+    "t": "This old shaft has caved in. There's no way through.",
+    "why": "door plan: mine door with no interior yet"
+   }
+  ],
+  "090": [
+   {
+    "tile": [
+     2,
+     2
+    ],
+    "k": "sign",
+    "t": "This old shaft has caved in. There's no way through.",
+    "why": "door plan: mine door with no interior yet"
+   }
+  ],
+  "093": [
+   {
+    "tile": [
+     6,
+     5
+    ],
+    "k": "sign",
+    "t": "The door is locked. Nobody seems to be home.",
+    "why": "door plan: house door with no interior yet"
+   },
+   {
+    "tile": [
+     6,
+     11
+    ],
+    "k": "sign",
+    "t": "The door is locked. Nobody seems to be home.",
+    "why": "door plan: house door with no interior yet"
+   },
+   {
+    "tile": [
+     17,
+     12
+    ],
+    "k": "sign",
+    "t": "The door is locked. Nobody seems to be home.",
+    "why": "door plan: house door with no interior yet"
+   }
+  ],
+  "114": [
+   {
+    "tile": [
+     17,
+     2
+    ],
+    "k": "sign",
+    "t": "The door is locked for now.",
+    "why": "door plan: special door with no interior yet"
+   },
+   {
+    "tile": [
+     4,
+     9
+    ],
+    "k": "sign",
+    "t": "The door is locked. Nobody seems to be home.",
+    "why": "door plan: house door with no interior yet"
+   },
+   {
+    "tile": [
+     11,
+     2
+    ],
+    "k": "sign",
+    "t": "The shrine door is sealed. Old wind still whistles through the cracks.",
+    "why": "door plan: shrine door with no interior yet"
+   }
+  ],
+  "115": [
+   {
+    "tile": [
+     4,
+     11
+    ],
+    "k": "sign",
+    "t": "The door is locked. Nobody seems to be home.",
+    "why": "door plan: house door with no interior yet"
+   },
+   {
+    "tile": [
+     11,
+     2
+    ],
+    "k": "sign",
+    "t": "The door is locked. Nobody seems to be home.",
+    "why": "door plan: house door with no interior yet"
+   }
+  ],
+  "118": [],
+  "119": [
+   {
+    "tile": [
+     4,
+     2
+    ],
+    "k": "sign",
+    "t": "The shrine door is sealed. Old wind still whistles through the cracks.",
+    "why": "door plan: shrine door with no interior yet"
+   }
+  ],
+  "123": [
+   {
+    "tile": [
+     11,
+     5
+    ],
+    "k": "sign",
+    "t": "Loose rock blocks the passage.",
+    "why": "door plan: cave door with no interior yet"
+   }
+  ],
+  "124": [
+   {
+    "tile": [
+     6,
+     12
+    ],
+    "k": "sign",
+    "t": "The door is locked. Nobody seems to be home.",
+    "why": "door plan: house door with no interior yet"
+   },
+   {
+    "tile": [
+     7,
+     4
+    ],
+    "k": "sign",
+    "t": "The door is locked. Nobody seems to be home.",
+    "why": "door plan: house door with no interior yet"
+   }
+  ],
+  "127": [
+   {
+    "tile": [
+     6,
+     12
+    ],
+    "k": "sign",
+    "t": "The door is locked. Nobody seems to be home.",
+    "why": "door plan: house door with no interior yet"
+   },
+   {
+    "tile": [
+     16,
+     3
+    ],
+    "k": "sign",
+    "t": "The door is locked. Nobody seems to be home.",
+    "why": "door plan: house door with no interior yet"
+   }
+  ],
+  "128": [
+   {
+    "tile": [
+     4,
+     3
+    ],
+    "k": "sign",
+    "t": "The door is locked. Nobody seems to be home.",
+    "why": "door plan: house door with no interior yet"
+   },
+   {
+    "tile": [
+     20,
+     11
+    ],
+    "k": "sign",
+    "t": "The door is locked. Nobody seems to be home.",
+    "why": "door plan: house door with no interior yet"
+   }
+  ],
+  "136": [
+   {
+    "tile": [
+     5,
+     5
+    ],
+    "k": "sign",
+    "t": "The door is locked. Nobody seems to be home.",
+    "why": "door plan: house door with no interior yet"
+   },
+   {
+    "tile": [
+     10,
+     4
+    ],
+    "k": "sign",
+    "t": "The door is locked. Nobody seems to be home.",
+    "why": "door plan: house door with no interior yet"
+   },
+   {
+    "tile": [
+     8,
+     12
+    ],
+    "k": "sign",
+    "t": "The door is locked. Nobody seems to be home.",
+    "why": "door plan: house door with no interior yet"
+   },
+   {
+    "tile": [
+     14,
+     12
+    ],
+    "k": "sign",
+    "t": "The door is locked. Nobody seems to be home.",
+    "why": "door plan: house door with no interior yet"
+   }
+  ],
+  "145": [
+   {
+    "tile": [
+     9,
+     5
+    ],
+    "k": "sign",
+    "t": "The door is locked. Nobody seems to be home.",
+    "why": "door plan: house door with no interior yet"
+   },
+   {
+    "tile": [
+     3,
+     11
+    ],
+    "k": "sign",
+    "t": "The door is locked. Nobody seems to be home.",
+    "why": "door plan: house door with no interior yet"
+   },
+   {
+    "tile": [
+     21,
+     14
+    ],
+    "k": "sign",
+    "t": "The door is locked. Nobody seems to be home.",
+    "why": "door plan: house door with no interior yet"
+   }
+  ],
+  "153": [
+   {
+    "tile": [
+     4,
+     11
+    ],
+    "k": "sign",
+    "t": "The door is locked. Nobody seems to be home.",
+    "why": "door plan: house door with no interior yet"
+   }
   ]
  },
  "arrival": {
