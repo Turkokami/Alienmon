@@ -29,7 +29,7 @@ function landMsg(k){if(LAND_MSG[k])return LAND_MSG[k];const p=PL.find(x=>x.key==
 
 /* wild encounters: legendaries are story encounters only; signature Alienmon wait until their owner is beaten */
 const SIG_GATE={Forgemaul:'ferrox',Mycora:'sporeholm',Anchorath:'thalassa',Bassquake:'neonis',Basaltor:'pyros',Glaciryx:'glacia',Mirrix:'halo',Reflix:'halo',Horizar:'umbra'};
-function wildOK(name){const s=PROG.species[name]||{};if(s.rarity==='legendary'||s.rarity==='mythic'||name==='Lumivex')return false;
+function wildOK(name){const s=PROG.species[name]||{};if(s.rarity==='legendary'||s.rarity==='mythic')return false;if(name==='Lumivex')return!!(G.flags&&G.flags.champ);
  if(SIG_GATE[name])return!!G.beaten[SIG_GATE[name]];
  if(['Vexhydra','Bronnix','Thornvoid'].includes(name))return mDone('M19');
  if(['Facetrix','Encorex','Pyrelyth','Bastionyx','Firstlight','Oblivite'].includes(name))return!!G.flags.champ;

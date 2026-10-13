@@ -251,9 +251,9 @@ def lanes(sec, rows):
     W, H = sec['tiles']
     walk = lambda x, y: 0 <= x < W and 0 <= y < H and rows[y][x] in '.,'
     pts = [tuple(w['tile']) for w in sec['warps']] + [tuple(w['at']) for w in sec['warps']]
-    for side, e in sec['edges'].items():
-        k = (e['range'][0] + e['range'][1]) // 2
-        pts.append({'left': (0, k), 'right': (W - 1, k), 'top': (k, 0), 'bottom': (k, H - 1)}[side])
+    for side, e in sec['edges'].items():   # every tile of every exit, so a two-wide corridor is a lane on both sides
+        for k in range(e['range'][0], e['range'][1] + 1):
+            pts.append({'left': (0, k), 'right': (W - 1, k), 'top': (k, 0), 'bottom': (k, H - 1)}[side])
     for o in sec.get('objects', []):
         for dx, dy in ((0, 1), (0, -1), (1, 0), (-1, 0)):
             if walk(o['tile'][0] + dx, o['tile'][1] + dy):
@@ -304,8 +304,8 @@ def unblock(sec, rows, things, keep_free=()):
         here = (t['x'], t['y'])
         if here not in lane or not (0 <= t['x'] < W and 0 <= t['y'] < H) or rows[t['y']][t['x']] not in '.,':
             continue   # out of the lanes already, or standing behind a counter / on scenery
-        if t.get('wid') in GUARDS:
-            continue   # standing in the way is their job until you beat them
+        if t.get('wid') in GUARDS or t.get('stay'):
+            continue   # standing in the way is their job until you beat them (or a hand-placed spot)
         best = None
         for r in range(1, max(W, H)):   # nearest free spot beside the lanes, anywhere in the section if need be
             cands = sorted(((x, y) for y in range(t['y'] - r, t['y'] + r + 1) for x in range(t['x'] - r, t['x'] + r + 1)
@@ -434,7 +434,7 @@ for sid, sec in world.items():
         taken.add(t)
         if person.get('wid'):
             wid_tile.setdefault(person['wid'], t)
-        o = {'x': t[0], 'y': t[1], 'art': person['art'], 'face': person.get('face', 'down'), 't': person['t'], **({'name': person['name']} if person.get('name') else {}), **({k: person[k] for k in ('pre', 'story', 'wid', 'after', 'until', 'legend', 'lv', 'flag') if person.get(k)})}
+        o = {'x': t[0], 'y': t[1], 'art': person['art'], 'face': person.get('face', 'down'), 't': person['t'], **({'name': person['name']} if person.get('name') else {}), **({k: person[k] for k in ('pre', 'story', 'wid', 'after', 'until', 'legend', 'lv', 'flag', 'stay') if person.get(k)})}
         if person.get('trainer'):
             tr = dict(person['trainer'])
             if person.get('face'):
@@ -695,6 +695,145 @@ for sid, sec in world.items():
             pick -= w
         sec['objects'].append({'tile': list(t), 'k': 'stash', 'item': item, 'n': cnt, 'tier': tier})
         stash_plan.setdefault(sec['planet'], []).append({'section': sid, 'name': sec['name'], 'tile': list(t), 'item': item, 'n': cnt, 'tier': tier})
+# ---- final repair: everything a player can talk to, pick up, fight or walk onto must be reachable ----
+CHAR_Q = {'giver', 'talk', 'battle_trainer', 'battle_rival', 'defeat_boss', 'legendary_encounter', 'deliver', 'show'}
+N4 = ((1, 0), (-1, 0), (0, 1), (0, -1))
+
+
+def repair(sid, sec):
+    cp = os.path.join(ROOT, 'data/collision', sid + '.json')
+    if not os.path.exists(cp):
+        return
+    rows = json.load(open(cp))['rows']
+    W, H = sec['tiles']
+    ground = lambda x, y: 0 <= x < W and 0 <= y < H and rows[y][x] in '.,'
+    keys = {tuple(w['tile']) for w in sec['warps']} | {tuple(w['at']) for w in sec['warps']} | {tuple(v) for v in sec['spawns'].values() if v}
+    starts = []   # explore from the way you arrive (edges and spawns first), then doors and warps
+    for side, e in sec['edges'].items():
+        for k in range(e['range'][0], e['range'][1] + 1):
+            starts.append({'left': (0, k), 'right': (W - 1, k), 'top': (k, 0), 'bottom': (k, H - 1)}[side])
+            for d in range(3):
+                keys.add({'left': (d, k), 'right': (W - 1 - d, k), 'top': (k, d), 'bottom': (k, H - 1 - d)}[side])
+    starts += [tuple(v) for v in sec['spawns'].values() if v] + [tuple(w['tile']) for w in sec['warps']]
+    fixed = {tuple(o['tile']) for o in sec['objects'] if o['k'] != 'stash'}   # counters, signs, keepers: never move
+    exits = set(starts)
+    keys |= {(f[0] + dx, f[1] + dy) for f in fixed for dx, dy in N4}   # the tiles you use counters and signs from
+    # movable things: [kind, getter, setter, droppable]
+    things = []
+    for n in sec.get('npcs', []):
+        if not ground(n['x'], n['y']) or any((n['x'] + dx, n['y'] + dy) in fixed for dx, dy in N4) and n.get('tile_pinned'):
+            continue
+        if n.get('wid') in GUARDS or n.get('stay'):
+            continue
+        flavour = not (n.get('wid') or n.get('story') or n.get('name') or n.get('legend') or (n.get('trainer') or {}).get('app'))
+        things.append(['npc', n, flavour])
+    for m in sec.get('mons', []):
+        things.append(['mon', m, True])
+    for o in sec['objects']:
+        if o['k'] == 'stash':
+            things.append(['stash', o, True])
+    use_pts = []
+    for key, sp in spots.items():
+        if sp['s'] != sid:
+            continue
+        qid, step = key.split(':')
+        q = QUESTS.get(qid, {})
+        kind = ('giver' if q.get('type') == 'side' else 'main_giver') if step == 'giver' else q['objectives'][int(step)]['type']
+        if kind in CHAR_Q and not any(t[1].get('x') == sp['x'] and t[1].get('y') == sp['y'] for t in things if t[0] == 'npc'):
+            things.append(['quest', sp, False])
+        elif kind in ('visit', 'spot_event', 'collect', 'examine'):
+            for p in sp.get('pts') or [[sp['x'], sp['y']]]:
+                use_pts.append((tuple(p), kind in ('collect', 'examine')))
+    pos = lambda t: tuple(t[1]['tile']) if t[0] == 'stash' else (t[1]['x'], t[1]['y'])
+
+    def setpos(t, p):
+        if t[0] == 'stash':
+            t[1]['tile'] = list(p)
+        else:
+            t[1]['x'], t[1]['y'] = p
+
+    def reachable(occ):
+        seed = next((s for s in starts if ground(*s) and s not in occ), None)
+        if seed is None:
+            return set()
+        seen = {seed}
+        q = [seed]
+        while q:
+            x, y = q.pop()
+            for dx, dy in N4:
+                n = (x + dx, y + dy)
+                if n not in seen and ground(*n) and n not in occ:
+                    seen.add(n); q.append(n)
+        return seen
+
+    def problems(occ, seen):
+        out = [t for t in things if not any((pos(t)[0] + dx, pos(t)[1] + dy) in seen for dx, dy in N4)]
+        pts_bad = [p for p, adj in use_pts if not (p in seen or (adj and any((p[0] + dx, p[1] + dy) in seen for dx, dy in N4)))]
+        return out, pts_bad
+
+    reserved = {p for p, _ in use_pts}
+    for _ in range(60):
+        occ = {pos(t) for t in things} | fixed
+        seen = reachable(occ)
+        bad_things, bad_pts = problems(occ, seen)
+        # something standing on a quest point is the first thing to move
+        on_pt = [t for t in things if pos(t) in reserved or pos(t) in keys]
+        target = (on_pt or bad_things or [None])[0]
+        if target is None and bad_pts:
+            p = bad_pts[0]   # a point walled off: move whoever stands nearest it
+            target = min(things, key=lambda t: abs(pos(t)[0] - p[0]) + abs(pos(t)[1] - p[1]), default=None)
+        if target is None:
+            return
+        here = pos(target)
+        others = occ - {here}
+        base_seen = reachable(others)
+        base_exits = {k for k in exits if k in base_seen}
+        cands = sorted((c for c in base_seen if c not in keys and c not in reserved and c != here and ground(*c)),
+                       key=lambda c: abs(c[0] - here[0]) + abs(c[1] - here[1]))
+        moved = False
+        for c in cands[:120]:
+            occ2 = others | {c}
+            seen2 = reachable(occ2)
+            if len(seen2) != len(base_seen) - 1 or not (base_exits <= seen2):   # cut nothing off, no exit lost
+                continue
+            setpos(target, c)
+            b2, p2 = problems(occ2, seen2)
+            if target not in b2 and len(b2) + len(p2) < len(bad_things) + len(bad_pts) + (1 if target not in bad_things else 0):
+                moved = True   # this one is fixed and nothing got worse
+                break
+            setpos(target, here)
+        if moved:
+            continue
+        blockers = [t for t in things if t is not target and t[2] and abs(pos(t)[0] - here[0]) + abs(pos(t)[1] - here[1]) <= 2]
+        if not target[2] and blockers:   # clear a movable neighbour out of the way first
+            b = blockers[0]
+            things.remove(b)
+            things.insert(0, b)
+            (sec['npcs'].remove(b[1]) if b[0] == 'npc' else sec['mons'].remove(b[1]) if b[0] == 'mon' else sec['objects'].remove(b[1]))
+            things.remove(b)
+            report['moved or dropped to keep everything reachable'].append(f"{sid} {sec['name']}: dropped {b[0]} at {pos(b)} (was crowding a quest figure)")
+            continue
+        if target[2]:   # a flavour townsperson, roaming Alienmon or stash with nowhere to go
+            if target[0] == 'npc':
+                sec['npcs'].remove(target[1])
+            elif target[0] == 'mon':
+                sec['mons'].remove(target[1])
+            else:
+                sec['objects'].remove(target[1])
+            things.remove(target)
+            report['moved or dropped to keep everything reachable'].append(f"{sid} {sec['name']}: dropped {target[0]} at {here}")
+        else:
+            report['unreachable (needs a hand fix)'].append(f"{sid} {sec['name']}: {target[0]} at {here}")
+            things.remove(target)
+
+
+for sid, sec in world.items():
+    repair(sid, sec)
+stash_plan = {}
+for sid, sec in world.items():
+    for o in sec['objects']:
+        if o['k'] == 'stash':
+            stash_plan.setdefault(sec['planet'], []).append({'section': sid, 'name': sec['name'], 'tile': list(o['tile']), 'item': o['item'], 'n': o['n'], 'tier': o['tier']})
 json.dump(stash_plan, open(os.path.join(ROOT, 'data/sections/stashes.json'), 'w', encoding='utf-8'), indent=1, ensure_ascii=False)
 NAMES = {'stasis': 'Stasis Pod', 'harmonic': 'Harmonic Pod', 'singularity': 'Singularity Pod', 'gel': 'Med Gel', 'megagel': 'Mega Gel',
          'fullgel': 'Full Gel', 'revive': 'Revive Spark', 'maxrevive': 'Max Revive', 'cure': 'Cure Spray', 'tether': 'Tether Pulse',

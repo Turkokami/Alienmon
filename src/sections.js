@@ -38,7 +38,7 @@ function secTrainerTalk(n){if(n.trainer.linker&&G.beaten[n.id])return say(n.t,nu
 // line of sight: step into a trainer's view (up to 5 clear tiles straight ahead of them) and they call you out
 let SSPOT=null;
 function secLos(){const s=SWORLD[G.sec.id];for(const n of secNpcs(s)){if(!n.trainer||G.beaten[n.id])continue;const[dx,dy]=DIRS[n.face||'down'];
-  for(let k=1;k<=5;k++){const x=n.x+dx*k,y=n.y+dy*k;if(x===G.sec.x&&y===G.sec.y){SSPOT={n,t:36,walk:0,steps:k-1};exclaimSfx();face=({up:'down',down:'up',left:'right',right:'left'})[n.face||'down'];return true}if(!secWalk(s,x,y))break}}return false}
+  for(let k=1;k<=5;k++){const x=n.x+dx*k,y=n.y+dy*k;if(x===G.sec.x&&y===G.sec.y){if(!n.home)n.home=[n.x,n.y];SSPOT={n,t:36,walk:0,steps:k-1};exclaimSfx();face=({up:'down',down:'up',left:'right',right:'left'})[n.face||'down'];return true}if(!secWalk(s,x,y))break}}return false}
 function secArrive(){const s=SWORLD[G.sec.id],w=s.warps.find(w=>w.tile[0]===G.sec.x&&w.tile[1]===G.sec.y);if(w&&w.kind==='gate')return secGate(w);if(w&&SWORLD[w.to])return secWarp(w);
  if(G.grace>0)G.grace--;if(G.jam>0&&stepc%8===0)G.jam--;stepc++;
  if(secLos())return;
@@ -70,8 +70,10 @@ function secInteract(){const s=SWORLD[G.sec.id],[dx,dy]=DIRS[face],x=G.sec.x+dx,
  if(o.k==='lab'&&!G.party.length)return secStarterTalk();if(o.k==='lab')return say(G.party.length?'Three empty pod cradles. Your partner\'s pod used to sit in the middle one.':'Three seed pods hum on the lab table.');
  if(o.t)return say(o.t)}
 function updSec(){const s=SWORLD[G.sec.id];if(SBUMP>0)SBUMP--;
+ // a trainer who walked up to challenge you goes back to their spot once the battle and talk are over, so nobody is left blocking a path
+ if(!SSPOT&&!DLG&&!CH)for(const n of s.npcs||[])if(n.home&&!(n.home[0]===G.sec.x&&n.home[1]===G.sec.y)){n.x=n.home[0];n.y=n.home[1];n.ox=n.oy=0;delete n.home}
  if(SSPOT){if(SSPOT.t>0){SSPOT.t--;if(SSPOT.t===0)SSPOT.walk=0}else{const n=SSPOT.n,[dx,dy]=DIRS[n.face||'down'];
-   if(Math.abs(n.x+dx-G.sec.x)+Math.abs(n.y+dy-G.sec.y)===0||SSPOT.steps<=0){SSPOT=null;n.ox=n.oy=0;secTrainerTalk(n)}
+   if(Math.abs(n.x+dx-G.sec.x)+Math.abs(n.y+dy-G.sec.y)===0||SSPOT.steps<=0){SSPOT=null;n.ox=n.oy=0;secTrainerTalk(n)}   // (n.home: where they walk back to afterwards)
    else{SSPOT.walk++;n.ox=dx*16*SSPOT.walk/SEC_STEP;n.oy=dy*16*SSPOT.walk/SEC_STEP;if(SSPOT.walk>=SEC_STEP){n.x+=dx;n.y+=dy;n.ox=n.oy=0;SSPOT.walk=0;SSPOT.steps--}}}drawSec();return}
  if(SFADE){SFADE.t++;if(SFADE.t===10){SFADE.go();if(!secOn()){SFADE=null;return}}if(SFADE.t>=20)SFADE=null;drawSec();return}   // a fade can hand over to a painted map (the Forge Fortress)
  if(SM){if(pressed.b)SJBUF=12;SM.t++;if(SM.t>=SEC_STEP){const a=SM.to;SM=null;if(a.s.id!==G.sec.id)enterSection(a.s.id,[a.x,a.y],null);else{G.sec.x=a.x;G.sec.y=a.y}secArrive()}
@@ -232,4 +234,45 @@ function arenaAfter(won){const a=ARENA;if(!a)return;healAll();
  a.round++;if(a.round<3)return say('Announcer: A win! On to round '+(a.round+1)+'!',arenaRound);
  const c=a.cup;ARENA=null;G.arena=G.arena||{};const first=!G.arena[c.k];G.arena[c.k]=(G.arena[c.k]||0)+1;G.dust+=c.dust;const L=['Announcer: '+c.n+' champion!','You received '+c.dust+' Stardust!'];
  for(const[k,n]of Object.entries(c.items)){if(G.pods&&k in G.pods)G.pods[k]+=n;else G.items[k]=(G.items[k]||0)+n;L.push('You received '+n+'x '+(ITEMS.concat(PODS).find(i=>i.k===k)||{n:k}).n+'!')}
- if(first)L.push('Arena Master: Your name goes up on the board. First '+c.n+' clear!');autosave();say(L)}
+ if(first)L.push('Arena Master: Your name goes up on the board. First '+c.n+' clear!');
+ if(first&&c.k==='star'&&IDX.Lumivex!=null){const m=mk(IDX.Lumivex,50,{gift:1});G.seen[m.id]=1;const where=addMon(m);L.push('Arena Master: And this is for the Star Cup champion. Lumivex, the arena\'s guardian, has chosen you!','Lumivex joined '+(where==='party'?'your team':'your Storage')+'!')}
+ autosave();say(L)}
+
+/* ---------- trading by code: send an Alienmon as a code, a friend enters it and receives it (no live link) ----------
+ The code carries the Alienmon (species, level, EXP, moves, Potential, Temperament, training, nickname) and its
+ original Linker ID, with a checksum so a typo or edit is caught. Sending removes it from your team; a save can
+ redeem each code only once. Traded Alienmon above your Shard level may not always obey (the gift rule). */
+function linkerId(){if(!G.lid)G.lid=String(10000+Math.floor(Math.random()*89999));return G.lid}
+function tradeSum(s){let h=2166136261;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619)>>>0}return(h>>>0).toString(36)}
+function tradeEncode(m){const tid=linkerId()+'-'+Date.now().toString(36)+'-'+Math.floor(Math.random()*1e6).toString(36);
+ const p=JSON.stringify([2,m.id,m.lv,m.xp,m.moves,m.pot,m.tm,m.tp,m.tpa,m.nick||'',m.ot||linkerId(),tid]);
+ const b=btoa(unescape(encodeURIComponent(p))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');return'AMON-'+b+'.'+tradeSum('alienmon:'+b)}
+function tradeDecode(code){const c=String(code||'').replace(/\s+/g,'');const mt=/^AMON-([A-Za-z0-9_-]+)\.([a-z0-9]+)$/.exec(c);if(!mt)return{err:'That does not look like an Alienmon trade code.'};
+ if(tradeSum('alienmon:'+mt[1])!==mt[2])return{err:'That code is damaged or was changed. Ask your friend to copy it again.'};
+ let a;try{a=JSON.parse(decodeURIComponent(escape(atob(mt[1].replace(/-/g,'+').replace(/_/g,'/')))))}catch(e){return{err:'That code could not be read.'}}
+ const[v,id,lv,xp,moves,pot,tm,tp,tpa,nick,ot,tid]=a;
+ if(v!==2||!D[id]||!(lv>=1&&lv<=100)||!Array.isArray(moves)||!moves.length||moves.length>4||moves.some(x=>!MV[x])||!Array.isArray(pot)||pot.length!==6||(PROG.species[D[id].name]||{}).rarity==='mythic')return{err:'That Alienmon could not be received.'};
+ const m={id,lv,xp:Math.max(xpFor(id,lv),Math.min(xp|0,xpFor(id,Math.min(100,lv+1))-1)),moves:moves.slice(0,4),st:null,pot:pot.map(x=>Math.max(0,Math.min(31,x|0))),tm:Math.max(0,Math.min(TEMPS.length-1,tm|0)),
+  tp:(tp||[0,0,0,0,0,0]).map(x=>Math.max(0,x|0)),tpa:(tpa||[0,0,0,0,0,0]).map(x=>Math.max(0,x|0)),ob:'trade',ot:String(ot||'?').slice(0,8)};
+ if(nick)m.nick=String(nick).slice(0,12);m.hp=stat(m,0);resetStages(m);return{m,tid}}
+function tradePanel(title,body,buttons){const wrap=document.createElement('div');wrap.style.cssText='position:fixed;inset:0;background:#0b0716cc;display:flex;align-items:center;justify-content:center;z-index:60;padding:16px';
+ const box=document.createElement('div');box.style.cssText='width:min(360px,100%);background:#1d1433;border:3px solid #5ff2ff;border-radius:12px;padding:16px;color:#e8e0ff;font:inherit;font-size:9px;line-height:1.8;text-align:center';
+ box.innerHTML='<div style="color:#5ff2ff;font-size:11px;margin-bottom:8px">'+title+'</div>'+body+'<div class="tb" style="display:flex;gap:8px;justify-content:center;margin-top:10px;flex-wrap:wrap"></div>';
+ for(const[label,fn,main]of buttons){const b=document.createElement('button');b.type='button';b.textContent=label;b.style.cssText='font:inherit;font-size:9px;border:0;border-radius:8px;padding:8px 12px;cursor:pointer;background:'+(main?'#ffd23f;color:#1b1424':'#3b2a5c;color:#e8e0ff');b.onclick=()=>fn(box,()=>wrap.remove());box.querySelector('.tb').appendChild(b)}
+ for(const t of box.querySelectorAll('textarea,input')){t.addEventListener('keydown',e=>e.stopPropagation());t.addEventListener('keyup',e=>e.stopPropagation())}
+ wrap.appendChild(box);document.body.appendChild(wrap);return box}
+const TA='width:100%;box-sizing:border-box;height:90px;font:12px ui-monospace,Menlo,monospace;padding:8px;border-radius:6px;border:2px solid #3b2a5c;background:#120c22;color:#fff;word-break:break-all';
+function tradeMenu(){linkerId();choose('Trade (Linker ID '+G.lid+')',['Send an Alienmon','Receive with a code','How trading works','Back'],i=>{
+ if(i===0)return tradeSend();if(i===1)return tradeReceive();
+ if(i===2)return say(['Send: pick an Alienmon and you get a trade code. It leaves your team, so only share the code with one friend.','Receive: paste a friend\'s code to welcome their Alienmon. Traded Alienmon above your Shard level may not always obey.'],tradeMenu)},null,'nurse')}
+function tradeSend(){if(G.party.length<2)return say('You need at least two Alienmon on your team to send one away.',tradeMenu);
+ choose('Send which Alienmon?',G.party.map(m=>nm(m)+' Lv'+m.lv).concat(['Cancel']),i=>{const m=G.party[i];if(!m)return tradeMenu();
+  choose('Send '+nm(m)+'? It will leave your team.',['Send','Cancel'],k=>{if(k!==0)return tradeMenu();const code=tradeEncode(m);G.party.splice(i,1);G.sent=(G.sent||0)+1;autosave();
+   const box=tradePanel(nm(m)+' is ready to travel!','<p style="margin:0 0 8px">Copy this code and send it to your friend (text, chat, email). It only works once per save.</p><textarea readonly style="'+TA+'">'+code+'</textarea><div class="msg" style="min-height:14px;color:#9be36b"></div>',
+    [['Copy code',async(b)=>{const t=b.querySelector('textarea');t.select();try{await navigator.clipboard.writeText(code);b.querySelector('.msg').textContent='Copied!'}catch(e){document.execCommand&&document.execCommand('copy');b.querySelector('.msg').textContent='Select the code and copy it.'}},true],['Done',(b,close)=>close()]]);
+   say(nm(m)+' was sent off. Share the code with your friend!')})})}
+function tradeReceive(){tradePanel('Receive an Alienmon','<p style="margin:0 0 8px">Paste the trade code your friend sent you.</p><textarea style="'+TA+'" placeholder="AMON-..."></textarea><div class="msg" style="min-height:14px;color:#ff8a1e"></div>',
+ [['Receive',(b,close)=>{const r=tradeDecode(b.querySelector('textarea').value);if(r.err){b.querySelector('.msg').textContent=r.err;return}
+   G.tradeIn=G.tradeIn||{};if(G.tradeIn[r.tid]){b.querySelector('.msg').textContent='This save already received that Alienmon.';return}
+   G.tradeIn[r.tid]=1;const where=addMon(r.m);G.seen[r.m.id]=G.caught[r.m.id]=1;autosave();close();
+   say([nm(r.m)+' arrived from Linker #'+r.m.ot+'!',nm(r.m)+' was sent to '+(where==='party'?'your team':'your Storage')+'.'])},true],['Cancel',(b,close)=>close()]])}

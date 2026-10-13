@@ -5,7 +5,7 @@
    "name": "Dustmere Plaza",
    "tile": [
     12,
-    1
+    2
    ],
    "item": "dust",
    "n": 150,
@@ -334,8 +334,8 @@
    "section": "024",
    "name": "Molten Frontier: Lava Bridges Part A",
    "tile": [
-    16,
-    8
+    17,
+    12
    ],
    "item": "megagel",
    "n": 3,
@@ -525,8 +525,8 @@
    "section": "041",
    "name": "Landing Bog",
    "tile": [
-    18,
-    11
+    5,
+    13
    ],
    "item": "stasis",
    "n": 5,
@@ -727,8 +727,8 @@
    "section": "063",
    "name": "Neon Boulevard",
    "tile": [
-    14,
-    13
+    8,
+    3
    ],
    "item": "dust",
    "n": 500,
@@ -1052,7 +1052,7 @@
    "section": "097",
    "name": "Aurora Route Part B",
    "tile": [
-    16,
+    12,
     5
    ],
    "item": "fullgel",
@@ -1193,17 +1193,6 @@
    ],
    "item": "fullgel",
    "n": 2,
-   "tier": 5
-  },
-  {
-   "section": "115",
-   "name": "Skyreach Plaza",
-   "tile": [
-    17,
-    12
-   ],
-   "item": "ether",
-   "n": 3,
    "tier": 5
   },
   {
@@ -1625,8 +1614,8 @@
    "section": "156",
    "name": "Drowned Seas",
    "tile": [
-    4,
-    12
+    6,
+    11
    ],
    "item": "dust",
    "n": 2500,
@@ -1636,7 +1625,7 @@
    "section": "156",
    "name": "Drowned Seas",
    "tile": [
-    6,
+    20,
     11
    ],
    "item": "maxrevive",

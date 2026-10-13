@@ -117,3 +117,14 @@
 - 161 Blighted Forest Part B: Centre path stairs go off the TOP edge (11,0-1) and the path runs off the BOTTOM edge (11,15); edge tiles blocked. Small stone bridge at (3-4,10) is a dead end.
 - 162 Edge of the Void: Centre path below the void altar runs off the BOTTOM edge (11-12,15); blocked. Top-left stairs (2-3,3-4) end at a small ledge.
 - 163 Seedmother's Grove: Stairs at the top-left (1-2,2) lead off the LEFT edge at row 2 and the stairs at the bottom (14-15,15) lead off the BOTTOM edge; edge tiles blocked. Small bridge at (4,9) toward the waterfall pool is a dead end.
+
+## moved or dropped to keep everything reachable (2)
+
+- 115 Skyreach Plaza: dropped npc at (11, 14)
+- 115 Skyreach Plaza: dropped stash at (17, 12)
+
+## unreachable (needs a hand fix) (3)
+
+- 115 Skyreach Plaza: quest at (6, 9)
+- 115 Skyreach Plaza: quest at (18, 12)
+- 115 Skyreach Plaza: quest at (12, 5)

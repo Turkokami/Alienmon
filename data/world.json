@@ -82,13 +82,13 @@
   },
   "M02:giver": {
    "s": "004",
-   "x": 4,
-   "y": 11
+   "x": 5,
+   "y": 12
   },
   "M02:0": {
    "s": "004",
-   "x": 4,
-   "y": 11
+   "x": 5,
+   "y": 12
   },
   "M02:1": {
    "s": "007",
@@ -263,7 +263,7 @@
    "s": "082",
    "art": "basalt",
    "x": 14,
-   "y": 9
+   "y": 11
   },
   "M11:2": {
    "s": "092",
@@ -477,8 +477,8 @@
   },
   "S02:giver": {
    "s": "004",
-   "x": 4,
-   "y": 11
+   "x": 5,
+   "y": 12
   },
   "S02:0": {
    "s": "008",
@@ -673,13 +673,13 @@
   },
   "S32:giver": {
    "s": "041",
-   "x": 12,
-   "y": 8
+   "x": 13,
+   "y": 9
   },
   "S32:0": {
    "s": "041",
    "x": 12,
-   "y": 7
+   "y": 8
   },
   "S40:giver": {
    "s": "052",
@@ -732,8 +732,8 @@
   },
   "S51:giver": {
    "s": "063",
-   "x": 8,
-   "y": 8
+   "x": 7,
+   "y": 9
   },
   "S52:giver": {
    "s": "062",
@@ -808,8 +808,8 @@
   },
   "S70:giver": {
    "s": "082",
-   "x": 17,
-   "y": 8
+   "x": 13,
+   "y": 12
   },
   "S70:0": {
    "s": "089",
@@ -857,8 +857,8 @@
   },
   "S81:giver": {
    "s": "098",
-   "x": 9,
-   "y": 12
+   "x": 8,
+   "y": 11
   },
   "S81:0": {
    "s": "098",
@@ -909,8 +909,8 @@
   },
   "S91:giver": {
    "s": "111",
-   "x": 4,
-   "y": 12
+   "x": 7,
+   "y": 13
   },
   "S91:0": {
    "s": "111",
@@ -976,7 +976,7 @@
   },
   "S94:0": {
    "s": "115",
-   "x": 7,
+   "x": 6,
    "y": 9
   },
   "S95:giver": {
@@ -1436,7 +1436,7 @@
     {
      "tile": [
       12,
-      1
+      2
      ],
      "k": "stash",
      "item": "dust",
@@ -1507,7 +1507,7 @@
      }
     },
     {
-     "x": 4,
+     "x": 6,
      "y": 12,
      "art": "civilian",
      "face": "down",
@@ -1517,8 +1517,8 @@
      ]
     },
     {
-     "x": 2,
-     "y": 8,
+     "x": 4,
+     "y": 11,
      "art": "guard",
      "face": "down",
      "t": [
@@ -1526,8 +1526,8 @@
      ]
     },
     {
-     "x": 4,
-     "y": 11,
+     "x": 5,
+     "y": 12,
      "art": "technician",
      "face": "down",
      "t": [
@@ -1538,7 +1538,7 @@
      "wid": "DX-4 robot"
     },
     {
-     "x": 10,
+     "x": 7,
      "y": 5,
      "art": "wanderer",
      "face": "down",
@@ -1549,7 +1549,13 @@
      "name": "Dusty"
     }
    ],
-   "mons": []
+   "mons": [
+    {
+     "x": 17,
+     "y": 5,
+     "mon": "Pebblet"
+    }
+   ]
   },
   "005": {
    "id": "005",
@@ -1616,8 +1622,8 @@
    "pkey": "dustara",
    "npcs": [
     {
-     "x": 7,
-     "y": 7,
+     "x": 8,
+     "y": 9,
      "art": "nurse",
      "face": "down",
      "t": [
@@ -1777,8 +1783,8 @@
    "pkey": "dustara",
    "npcs": [
     {
-     "x": 19,
-     "y": 8,
+     "x": 20,
+     "y": 9,
      "art": "wanderer",
      "face": "down",
      "t": [
@@ -1786,8 +1792,8 @@
      ]
     },
     {
-     "x": 4,
-     "y": 8,
+     "x": 3,
+     "y": 9,
      "art": "technician",
      "face": "down",
      "t": [
@@ -1873,8 +1879,8 @@
      ]
     },
     {
-     "x": 12,
-     "y": 6,
+     "x": 13,
+     "y": 7,
      "art": "civilian",
      "face": "down",
      "t": [
@@ -3809,8 +3815,8 @@
     },
     {
      "tile": [
-      16,
-      8
+      17,
+      12
      ],
      "k": "stash",
      "item": "megagel",
@@ -3833,7 +3839,7 @@
    "npcs": [
     {
      "x": 18,
-     "y": 3,
+     "y": 10,
      "art": "technician",
      "face": "down",
      "t": [
@@ -3849,7 +3855,7 @@
     },
     {
      "x": 3,
-     "y": 3,
+     "y": 7,
      "mon": "Skitterdrone"
     }
    ]
@@ -4590,7 +4596,7 @@
     },
     {
      "x": 18,
-     "y": 12,
+     "y": 8,
      "art": "wanderer",
      "face": "down",
      "t": [
@@ -5695,8 +5701,8 @@
     },
     {
      "tile": [
-      18,
-      11
+      5,
+      13
      ],
      "k": "stash",
      "item": "stasis",
@@ -5722,7 +5728,7 @@
    "npcs": [
     {
      "x": 18,
-     "y": 8,
+     "y": 9,
      "art": "technician",
      "face": "down",
      "t": [
@@ -5730,8 +5736,8 @@
      ]
     },
     {
-     "x": 2,
-     "y": 8,
+     "x": 4,
+     "y": 6,
      "art": "explorer",
      "face": "down",
      "t": [
@@ -5739,7 +5745,18 @@
      ]
     }
    ],
-   "mons": []
+   "mons": [
+    {
+     "x": 9,
+     "y": 12,
+     "mon": "Sludgeviper"
+    },
+    {
+     "x": 4,
+     "y": 8,
+     "mon": "Lianarch"
+    }
+   ]
   },
   "042": {
    "id": "042",
@@ -5868,8 +5885,8 @@
      ]
     },
     {
-     "x": 21,
-     "y": 3,
+     "x": 20,
+     "y": 6,
      "art": "explorer",
      "face": "down",
      "t": [
@@ -7086,8 +7103,8 @@
      ]
     },
     {
-     "x": 5,
-     "y": 5,
+     "x": 6,
+     "y": 7,
      "art": "guard",
      "face": "down",
      "t": [
@@ -7244,8 +7261,8 @@
      ]
     },
     {
-     "x": 3,
-     "y": 8,
+     "x": 2,
+     "y": 9,
      "art": "mom",
      "face": "down",
      "t": [
@@ -7708,8 +7725,8 @@
    ],
    "mons": [
     {
-     "x": 5,
-     "y": 13,
+     "x": 7,
+     "y": 11,
      "mon": "Cephalux"
     },
     {
@@ -8407,8 +8424,8 @@
     },
     {
      "tile": [
-      14,
-      13
+      8,
+      3
      ],
      "k": "stash",
      "item": "dust",
@@ -8430,7 +8447,7 @@
    "npcs": [
     {
      "x": 13,
-     "y": 8,
+     "y": 9,
      "art": "civilian",
      "face": "down",
      "t": [
@@ -8438,8 +8455,8 @@
      ]
     },
     {
-     "x": 6,
-     "y": 8,
+     "x": 7,
+     "y": 3,
      "art": "technician",
      "face": "down",
      "t": [
@@ -8447,8 +8464,8 @@
      ]
     },
     {
-     "x": 19,
-     "y": 8,
+     "x": 17,
+     "y": 5,
      "art": "explorer",
      "face": "down",
      "t": [
@@ -8456,8 +8473,8 @@
      ]
     },
     {
-     "x": 10,
-     "y": 8,
+     "x": 11,
+     "y": 9,
      "art": "wanderer",
      "face": "down",
      "t": [
@@ -8465,8 +8482,8 @@
      ]
     },
     {
-     "x": 15,
-     "y": 8,
+     "x": 16,
+     "y": 9,
      "art": "civilian",
      "face": "down",
      "t": [
@@ -8474,8 +8491,8 @@
      ]
     },
     {
-     "x": 17,
-     "y": 8,
+     "x": 14,
+     "y": 10,
      "art": "researcher",
      "face": "down",
      "t": [
@@ -8494,8 +8511,8 @@
    ],
    "mons": [
     {
-     "x": 3,
-     "y": 5,
+     "x": 23,
+     "y": 6,
      "mon": "Ampup"
     }
    ]
@@ -9707,7 +9724,7 @@
    "pkey": "glyphos",
    "npcs": [
     {
-     "x": 9,
+     "x": 10,
      "y": 5,
      "art": "nurse",
      "face": "down",
@@ -9926,7 +9943,7 @@
     },
     {
      "x": 4,
-     "y": 8,
+     "y": 9,
      "art": "pilgrim",
      "face": "up",
      "t": [],
@@ -9954,12 +9971,12 @@
    "mons": [
     {
      "x": 21,
-     "y": 14,
+     "y": 11,
      "mon": "Runeguard"
     },
     {
-     "x": 19,
-     "y": 3,
+     "x": 1,
+     "y": 6,
      "mon": "Obeliskor"
     }
    ]
@@ -10132,7 +10149,7 @@
    "mons": [
     {
      "x": 3,
-     "y": 12,
+     "y": 9,
      "mon": "Prismwolf"
     },
     {
@@ -10680,8 +10697,8 @@
      ]
     },
     {
-     "x": 18,
-     "y": 8,
+     "x": 14,
+     "y": 9,
      "art": "technician",
      "face": "down",
      "t": [
@@ -10699,8 +10716,8 @@
      ]
     },
     {
-     "x": 14,
-     "y": 12,
+     "x": 11,
+     "y": 9,
      "art": "wanderer",
      "face": "down",
      "t": [
@@ -10708,8 +10725,8 @@
      ]
     },
     {
-     "x": 7,
-     "y": 11,
+     "x": 9,
+     "y": 8,
      "art": "miner",
      "face": "down",
      "t": [
@@ -10727,8 +10744,8 @@
      ]
     },
     {
-     "x": 16,
-     "y": 8,
+     "x": 14,
+     "y": 10,
      "art": "guard",
      "face": "down",
      "t": [
@@ -10737,8 +10754,8 @@
      ]
     },
     {
-     "x": 15,
-     "y": 10,
+     "x": 16,
+     "y": 8,
      "art": "civilian",
      "face": "down",
      "t": [
@@ -11033,8 +11050,8 @@
    ],
    "mons": [
     {
-     "x": 8,
-     "y": 13,
+     "x": 6,
+     "y": 12,
      "mon": "Obsidrake"
     },
     {
@@ -11995,8 +12012,8 @@
    "pkey": "glacia",
    "npcs": [
     {
-     "x": 7,
-     "y": 1,
+     "x": 3,
+     "y": 7,
      "art": "researcher",
      "face": "down",
      "t": [
@@ -12054,8 +12071,8 @@
      ]
     },
     {
-     "x": 18,
-     "y": 13,
+     "x": 9,
+     "y": 10,
      "art": "mom",
      "face": "down",
      "t": [
@@ -12443,7 +12460,7 @@
     },
     {
      "tile": [
-      16,
+      12,
       5
      ],
      "k": "stash",
@@ -13597,18 +13614,8 @@
      ]
     },
     {
-     "x": 3,
-     "y": 7,
-     "art": "strand",
-     "face": "left",
-     "t": [
-      "Helix grunt: The cages? Oh, those are... wellness pods. For the Alienmon. Very relaxing pods.",
-      "Helix grunt: Toxin types love the green pools here. That's why we keep so many. Probably."
-     ]
-    },
-    {
-     "x": 3,
-     "y": 9,
+     "x": 5,
+     "y": 5,
      "art": "guard",
      "face": "up",
      "t": [
@@ -14154,7 +14161,7 @@
    "pkey": "helix",
    "npcs": [
     {
-     "x": 14,
+     "x": 10,
      "y": 5,
      "art": "technician",
      "face": "left",
@@ -14163,8 +14170,8 @@
      ]
     },
     {
-     "x": 1,
-     "y": 5,
+     "x": 7,
+     "y": 4,
      "art": "guard",
      "face": "right",
      "t": [],
@@ -14304,7 +14311,7 @@
    "pkey": "helix",
    "npcs": [
     {
-     "x": 5,
+     "x": 7,
      "y": 12,
      "art": "technician",
      "face": "up",
@@ -14686,16 +14693,6 @@
       "THE HOLO-GLOBE. Fourteen worlds turn in its light.",
       "Look closely: one of them is slowly dimming."
      ]
-    },
-    {
-     "tile": [
-      17,
-      12
-     ],
-     "k": "stash",
-     "item": "ether",
-     "n": 3,
-     "tier": 5
     }
    ],
    "spawns": {
@@ -14720,8 +14717,8 @@
      ]
     },
     {
-     "x": 6,
-     "y": 5,
+     "x": 4,
+     "y": 6,
      "art": "civilian",
      "face": "down",
      "t": [
@@ -14729,8 +14726,8 @@
      ]
     },
     {
-     "x": 16,
-     "y": 9,
+     "x": 11,
+     "y": 3,
      "art": "wanderer",
      "face": "down",
      "t": [
@@ -14756,21 +14753,12 @@
      ]
     },
     {
-     "x": 14,
-     "y": 5,
+     "x": 9,
+     "y": 3,
      "art": "guard",
      "face": "down",
      "t": [
       "Plaza guard: Folks in Helix coats kept asking about the temple crystal. Odd questions. I sent them off."
-     ]
-    },
-    {
-     "x": 11,
-     "y": 14,
-     "art": "explorer",
-     "face": "down",
-     "t": [
-      "Climber: Trainers on the bridges spot you from five tiles off. Slip past their line of sight if you're tired."
      ]
     }
    ],
@@ -15337,8 +15325,8 @@
      "mon": "Cerebrix"
     },
     {
-     "x": 7,
-     "y": 12,
+     "x": 8,
+     "y": 11,
      "mon": "Hummingmind"
     }
    ]
@@ -15827,8 +15815,8 @@
      ]
     },
     {
-     "x": 7,
-     "y": 5,
+     "x": 11,
+     "y": 4,
      "art": "researcher",
      "face": "down",
      "t": [
@@ -16407,8 +16395,8 @@
      ]
     },
     {
-     "x": 14,
-     "y": 9,
+     "x": 12,
+     "y": 8,
      "art": "wanderer",
      "face": "left",
      "t": [],
@@ -18291,8 +18279,8 @@
    ],
    "mons": [
     {
-     "x": 5,
-     "y": 1,
+     "x": 6,
+     "y": 7,
      "mon": "Cometrix"
     },
     {
@@ -19392,8 +19380,8 @@
     },
     {
      "tile": [
-      4,
-      12
+      6,
+      11
      ],
      "k": "stash",
      "item": "dust",
@@ -19402,7 +19390,7 @@
     },
     {
      "tile": [
-      6,
+      20,
       11
      ],
      "k": "stash",
@@ -19444,8 +19432,8 @@
      ]
     },
     {
-     "x": 4,
-     "y": 8,
+     "x": 3,
+     "y": 9,
      "art": "explorer",
      "face": "down",
      "t": [
@@ -19470,7 +19458,7 @@
      "x": 4,
      "y": 9,
      "art": "explorer",
-     "face": "down",
+     "face": "up",
      "t": [],
      "id": "sec156_tr4",
      "trainer": {
@@ -20154,8 +20142,8 @@
    ],
    "mons": [
     {
-     "x": 11,
-     "y": 1,
+     "x": 12,
+     "y": 2,
      "mon": "Pulsarion"
     },
     {
@@ -20390,7 +20378,7 @@
     {
      "tile": [
       2,
-      8
+      11
      ],
      "k": "shop",
      "why": "left vendor stall"
@@ -20398,18 +20386,18 @@
     {
      "tile": [
       21,
-      8
+      11
      ],
      "k": "bay",
-     "why": "right stall: the arena medic heals your team"
+     "why": "right stall: the arena medic"
     },
     {
      "tile": [
-      11,
-      4
+      12,
+      3
      ],
      "k": "arena",
-     "why": "the Arena Master's stage under the royal box"
+     "why": "the Arena Master at the top of the red-carpet stairs, below the royal box"
     }
    ],
    "spawns": {
@@ -20425,8 +20413,8 @@
    "pkey": "arena",
    "npcs": [
     {
-     "x": 11,
-     "y": 4,
+     "x": 12,
+     "y": 3,
      "art": "guard",
      "face": "down",
      "t": [
@@ -20436,8 +20424,8 @@
      "story": "arena"
     },
     {
-     "x": 2,
-     "y": 9,
+     "x": 1,
+     "y": 11,
      "art": "shop",
      "face": "down",
      "t": [
@@ -20446,8 +20434,8 @@
      "name": "Vendor"
     },
     {
-     "x": 21,
-     "y": 9,
+     "x": 22,
+     "y": 11,
      "art": "nurse",
      "face": "down",
      "t": [
@@ -20456,49 +20444,54 @@
      "name": "Arena medic"
     },
     {
-     "x": 15,
-     "y": 9,
+     "x": 8,
+     "y": 5,
      "art": "explorer",
      "face": "down",
      "t": [
       "Fan: I've watched every Star Cup final. The Star Cup crowd is wild!"
-     ]
+     ],
+     "stay": 1
     },
     {
-     "x": 8,
+     "x": 15,
      "y": 5,
      "art": "civilian",
      "face": "down",
      "t": [
       "Kid: When I grow up I'm going to win the Gold Cup. Then the Star Cup!"
-     ]
+     ],
+     "stay": 1
     },
     {
-     "x": 8,
+     "x": 15,
      "y": 9,
      "art": "researcher",
      "face": "down",
      "t": [
       "Commentator: Arena trainers bring teams as strong as yours. No easy wins in here!"
-     ]
+     ],
+     "stay": 1
     },
     {
-     "x": 15,
-     "y": 5,
+     "x": 8,
+     "y": 9,
      "art": "wanderer",
      "face": "down",
      "t": [
       "Old fan: Your team is healed before every round. Losing just ends your run, no harm done."
-     ]
+     ],
+     "stay": 1
     },
     {
-     "x": 5,
-     "y": 8,
+     "x": 9,
+     "y": 5,
      "art": "technician",
      "face": "down",
      "t": [
       "Scoreboard tech: The board remembers every Linker who clears a Cup."
-     ]
+     ],
+     "stay": 1
     }
    ]
   }
