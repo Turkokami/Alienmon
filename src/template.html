@@ -82,7 +82,7 @@ button:focus-visible{outline:2px solid var(--b);outline-offset:2px}
 </div></div>
 <script>
 'use strict';
-const D=__DATA__, PL=__PLANETS__, TRAITS=__TRAITS__, SIGS=__SIGS__, SYS=__SYS__, ART=__ART__, ARTB=__ARTB__, OW=__OW__, TITLE=__TITLE__, SHIP=__SHIP__, CUTS=__CUTS__, CHAR=__CHAR__, PORT=__PORTRAITS__, SCN=__SCENES__, FXD=__FX__, PLANART=__PLANETART__, BUILD=__BUILD__, INLINE=__INLINE__, BETA=__BETA__, NEWONLY=__NEWONLY__;
+const D=__DATA__, PL=__PLANETS__, TRAITS=__TRAITS__, SIGS=__SIGS__, SYS=__SYS__, ART=__ART__, ARTB=__ARTB__, OW=__OW__, TITLE=__TITLE__, SHIP=__SHIP__, CUTS=__CUTS__, CHAR=__CHAR__, PORT=__PORTRAITS__, SCN=__SCENES__, FXD=__FX__, PLANART=__PLANETART__, BUILD=__BUILD__, INLINE=__INLINE__, BETA=__BETA__, NEWONLY=__NEWONLY__, MOVEFX=__MOVEFX__;
 // art is loaded on first use (the web build serves each image as its own cached file), so the game starts fast
 function lazyImgs(src){return new Proxy({},{get(t,k){if(typeof k!=='string')return undefined;if(!(k in t)&&src[k]){const i=new Image();i.decoding='async';i.src=src[k];t[k]=i}return t[k]},has:(t,k)=>k in src})}
 function warm(imgs,keys){for(const k of keys)imgs[k]}
@@ -152,8 +152,11 @@ Void:[['Shade Claw',40,100,{crit:1}],['Null Bite',70,95,{foe:{atk:-1},c:.2}],['E
 const MV=[{n:'Ram',t:'None',p:40,a:100,fx:{}}];const MVI={};
 for(const t of TYPES)TM[t].forEach(([n,p,a,fx],i)=>{MVI[t+i]=MV.length;MV.push({n,t,p,a,fx})});
 const SIGBASE=MV.length;SIGS.forEach(m=>MV.push({...m,sig:1}));
+for(const t of TYPES)(MOVEFX.new[t]||[]).forEach(([n,p,a,fx],i)=>{MVI[t+'n'+i]=MV.length;MV.push({n,t,p,a,fx})});
+MV.forEach(m=>{const an=MOVEFX.anim[m.n];if(an)m.an=an});
 const PHYS=new Set(['None','Alloy','Swarm','Gravity','Magma','Void','Bio']);
-function learnset(id){const d=D[id],t=d.t,t2=t[1]||t[0];const ls=[[1,0],[1,MVI[t[0]+0]],[7,MVI[t[0]+3]],[12,MVI[t2+0]],[20,MVI[t[0]+1]],[30,MVI[t2+(t[1]?1:3)]],[42,MVI[t[0]+2]],[55,MVI[t2+2]]];
+function learnset(id){const d=D[id],t=d.t,t2=t[1]||t[0];const ls=[[1,0],[1,MVI[t[0]+0]],[7,MVI[t[0]+3]],[12,MVI[t2+0]],[20,MVI[t[0]+1]],[30,MVI[t2+(t[1]?1:3)]],[42,MVI[t[0]+2]],[55,MVI[t2+2]],[4,MVI[t[0]+'n0']],[24,MVI[t[0]+'n1']],[48,MVI[t[0]+'n2']]];
+ if(t[1])ls.push([16,MVI[t[1]+'n0']],[38,MVI[t[1]+'n1']]);
  if(d.sig>=0)ls.push([d.tot===1?1:Math.min(36,evoFrom(id)),SIGBASE+d.sig]);return ls}
 function evoFrom(id){for(let i=0;i<D.length;i++)if(D[i].to===D[id].name)return evoLv(i);return 1}
 function mval(mi){const m=MV[mi];return m.sig?999:m.p||55}
@@ -702,22 +705,31 @@ Gravity:['boulder','boom','sepia(1) saturate(0.7)'],Alloy:['boulder','spark','gr
 const PPOS=[34,74],EPOS=[126,26];
 function posOf(m){return m===PM()?PPOS:EPOS}
 function playFx(cb){if(G.opt&&G.opt.noAnim){LAST=null;cb();return}const L=LAST;LAST=null;if(!L||!L.hit||!B){cb();return}const mv=L.mv,t=FXT[mv.t]||FXT.None;
+ if(mv.an&&okI(FXI['mv_'+mv.an.r])){const an=mv.an,fx0=mv.fx||{},selfOnly=!mv.p&&(fx0.self||fx0.heal)&&!fx0.foe&&!fx0.s,from=posOf(L.a),to=selfOnly?from:posOf(L.d),proj=an.p&&!selfOnly;
+  B.anim={kind:'move2',an,from,to,t:0,pj:proj?20:0,dur:(proj?20:0)+(an.big?44:32),cb,tgt:selfOnly?L.a:L.d,small:!mv.p,label:mv.n?nm(L.a)+' used '+mv.n+'!':''};return}
  const fx0=mv.fx||{},selfOnly=!mv.p&&(fx0.self||fx0.heal)&&!fx0.foe&&!fx0.s;let proj=mv.p?t[0]:null;if(mv.t==='Hydro'&&mv.p>=90)proj='wave';
  const from=posOf(L.a),to=selfOnly?from:posOf(L.d);B.anim={kind:'move',proj,imp:t[1],fx:t[2]||'',from,to,t:0,dur:proj?40:20,pj:proj?22:0,cb,tgt:selfOnly?L.a:L.d,small:!mv.p,label:mv.n?nm(L.a)+' used '+mv.n+'!':''}}
 function playTransfer(ok,cb){B.anim={kind:'transfer',ok,t:0,dur:ok?70:56,cb}}
 function animStep(){const A=B.anim;A.t++;if(A.t>=A.dur){B.anim=null;if(A.kind==='transfer'&&A.ok)B.captured=true;A.cb()}}
 function fxImg(k,x,y,w,fx,alpha,flip,rot){const im=FXI[k];if(!okI(im))return;const h=w*im.naturalHeight/im.naturalWidth;ctx.save();ctx.globalAlpha=alpha;if(fx)ctx.filter=fx;ctx.imageSmoothingEnabled=true;
  ctx.translate(x,y);if(rot)ctx.rotate(rot);if(flip)ctx.scale(-1,1);ctx.drawImage(im,-w/2,-h/2,w,h);ctx.restore()}
+function drawCell(im,c,x,y,w,h,flip,alpha){ctx.save();ctx.globalAlpha=alpha;ctx.imageSmoothingEnabled=true;ctx.translate(x,y);if(flip)ctx.scale(-1,1);ctx.drawImage(im,c[0],c[1],c[2],c[3],-w/2,-h/2,w,h);ctx.restore()}
+function drawMove2(A){const im=FXI['mv_'+A.an.r],R=MOVEFX.rows[A.an.r];if(!okI(im)||!R)return;const[fx0,fy0]=A.from,[tx,ty]=A.to,flip=tx<fx0;
+ if(A.t<A.pj){const k=A.t/A.pj,c=R.p[Math.min(R.p.length-1,Math.floor(k*R.p.length))]||R.p[0];if(!c)return;const h=12+k*8,w=h*c[2]/c[3];drawCell(im,c,fx0+(tx-fx0)*k,fy0+(ty-fy0)*k-Math.sin(k*Math.PI)*8,w,h,flip,1);return}
+ const c=R.i[Math.min(A.an.i,R.i.length-1)]||R.i[R.i.length-1];if(!c)return;const k=(A.t-A.pj)/(A.dur-A.pj),grow=0.55+0.45*Math.min(1,k*3);
+ let h=(A.an.big?56:A.small?30:44)*grow,w=h*c[2]/c[3];if(w>(A.an.big?110:90)){w=(A.an.big?110:90)*grow;h=w*c[3]/c[2]}
+ const wide=c[2]>c[3]*1.5,cy=wide?ty+16-h/2:ty;drawCell(im,c,tx,cy,w,h,flip&&!wide,k>0.7?(1-k)/0.3:1)}
 function drawAnim(){const A=B.anim;if(!A)return;box(0,104,160,40);if(A.label)wrap(A.label,24).slice(0,2).forEach((l,i)=>txt(l,8,112+i*12,'#1b1424',7));if(A.kind==='transfer')txt(A.ok||A.t<A.dur*0.6?'Transfer beam locked...':'The signal is breaking!',8,112,'#1b1424',7);
+ if(A.kind==='move2')drawMove2(A);
  if(A.kind==='move'){const[fx0,fy0]=A.from,[tx,ty]=A.to;
   if(A.proj&&A.t<A.pj){const k=A.t/A.pj;
    if(A.proj==='beam'||A.proj==='flamebeam'){const ex=fx0+(tx-fx0)*k,ey=fy0+(ty-fy0)*k,len=Math.hypot(ex-fx0,ey-fy0);const im=FXI[A.proj];if(okI(im)){ctx.save();if(A.fx)ctx.filter=A.fx;ctx.imageSmoothingEnabled=true;ctx.translate(fx0,fy0);ctx.rotate(Math.atan2(ey-fy0,ex-fx0));ctx.drawImage(im,0,-7,Math.max(4,len),14);ctx.restore()}}
    else{const x=fx0+(tx-fx0)*k,y=fy0+(ty-fy0)*k-Math.sin(k*Math.PI)*8;fxImg(A.proj,x,y,44,A.fx,1,tx<fx0,Math.atan2(ty-fy0,Math.abs(tx-fx0))*(tx<fx0?-1:1))}}
   else{const k=(A.t-A.pj)/(A.dur-A.pj);const w=(A.small?34:58)*(0.55+0.45*Math.min(1,k*2.2));fxImg(A.imp,tx,ty,w,A.fx,k>0.7?(1-k)/0.3:1,false,0)}}
- else{const k=A.t/A.dur,[fx0,fy0]=PPOS,[tx,ty]=EPOS;ctx.save();ctx.globalAlpha=0.85;ctx.strokeStyle='#5ff2ff';ctx.lineWidth=3+Math.sin(A.t/2);ctx.beginPath();ctx.moveTo(fx0+8,fy0-6);ctx.lineTo(tx,ty);ctx.stroke();
+ else if(A.kind==='transfer'){const k=A.t/A.dur,[fx0,fy0]=PPOS,[tx,ty]=EPOS;ctx.save();ctx.globalAlpha=0.85;ctx.strokeStyle='#5ff2ff';ctx.lineWidth=3+Math.sin(A.t/2);ctx.beginPath();ctx.moveTo(fx0+8,fy0-6);ctx.lineTo(tx,ty);ctx.stroke();
   ctx.strokeStyle='#ffffff';ctx.lineWidth=1;ctx.stroke();ctx.restore();for(let i=0;i<6;i++){const q=((A.t*3+i*17)%40)/40;rect(Math.round(fx0+8+(tx-fx0-8)*q),Math.round(fy0-6+(ty-fy0+6)*q)+(i%2?1:-1),2,2,i%2?'#ff74c4':'#ffffff')}}}
 function enemyAlpha(){const A=B.anim;if(B.captured)return 0;if(A&&A.kind==='transfer'){const k=A.t/A.dur;return A.ok?Math.max(0,1-k*1.4):(k<0.6?1-k:Math.min(1,(k-0.6)*3+0.4))}return 1}
-function shakeOf(m){const A=B.anim;if(A&&A.kind==='move'&&A.tgt===m&&A.t>=A.pj&&A.t<A.pj+10&&!A.small)return(A.t%2?2:-2);return 0}
+function shakeOf(m){const A=B.anim;if(A&&(A.kind==='move'||A.kind==='move2')&&A.tgt===m&&A.t>=A.pj&&A.t<A.pj+10&&!A.small)return(A.t%2?2:-2);return 0}
 function hpbar(x,y,w,m){const r=m.hp/stat(m,0);rect(x,y,w,4,'#1b1424');rect(x+1,y+1,Math.round((w-2)*r),2,r>0.5?'#3fae49':r>0.2?'#ffd23f':'#d7262e')}
 const STC={burn:['BRN','#d7262e'],poison:['PSN','#8a3ad0'],shock:['SHK','#c9a400'],freeze:['FRZ','#2e86de']};
 function stTag(m,x,y){if(m.st){rect(x,y,20,8,STC[m.st][1]);txt(STC[m.st][0],x+1,y+1,'#fff',6)}}
