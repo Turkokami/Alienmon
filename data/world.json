@@ -1258,8 +1258,8 @@
   "P01:0": {
    "s": "151",
    "art": "vashti",
-   "x": 11,
-   "y": 10
+   "x": 9,
+   "y": 9
   },
   "M19b:3": {
    "s": "062",
@@ -4722,7 +4722,7 @@
    "objects": [
     {
      "tile": [
-      17,
+      16,
       12
      ],
      "k": "stash",
@@ -4802,6 +4802,19 @@
       "linker": 1,
       "name": "Corin"
      }
+    },
+    {
+     "x": 17,
+     "y": 8,
+     "art": "kit",
+     "face": "down",
+     "t": [
+      "Kit: Dad says I can fix anything except my own room.",
+      "Kit: My {kit} sniffs out loose bolts. It's better at it than me!"
+     ],
+     "name": "Kit",
+     "after": "M04",
+     "until": "M19"
     }
    ],
    "mons": [
@@ -17982,6 +17995,16 @@
     {
      "x": 18,
      "y": 10,
+     "art": "ystran",
+     "face": "down",
+     "t": [],
+     "after": "P04",
+     "legend": "Novaryx",
+     "lv": 60
+    },
+    {
+     "x": 6,
+     "y": 8,
      "art": "researcher",
      "face": "down",
      "t": [
@@ -17989,7 +18012,7 @@
      ]
     },
     {
-     "x": 6,
+     "x": 13,
      "y": 8,
      "art": "guard",
      "face": "down",
@@ -17998,12 +18021,12 @@
      ]
     },
     {
-     "x": 13,
-     "y": 8,
+     "x": 12,
+     "y": 13,
      "art": "strand",
-     "face": "up",
+     "face": "left",
      "t": [],
-     "id": "sec141_tr2",
+     "id": "sec141_tr3",
      "trainer": {
       "cls": "Helix Driller",
       "route": 1,
@@ -18011,16 +18034,16 @@
      }
     },
     {
-     "x": 12,
-     "y": 13,
+     "x": 10,
+     "y": 6,
      "art": "explorer",
-     "face": "left",
+     "face": "down",
      "t": [],
-     "id": "sec141_tr3",
+     "id": "sec141_tr4",
      "trainer": {
       "cls": "Rift Seeker",
       "route": 1,
-      "name": "Vela"
+      "name": "Mara"
      }
     }
    ],
@@ -19081,6 +19104,19 @@
      "after": "P01"
     },
     {
+     "x": 12,
+     "y": 11,
+     "art": "kit",
+     "face": "down",
+     "t": [
+      "Kit: The lens is Teo's crystal map, ground down layer by layer. Took us three weeks!",
+      "Kit: If this works, we're walking to another world. No pressure."
+     ],
+     "name": "Kit",
+     "after": "M21",
+     "until": "P02"
+    },
+    {
      "x": 5,
      "y": 14,
      "art": "guard",
@@ -19956,6 +19992,18 @@
      "after": "P01"
     },
     {
+     "x": 12,
+     "y": 6,
+     "art": "kit",
+     "face": "down",
+     "t": [
+      "Kit: Saga's right. This isn't a building, it's an instrument! A big, broken, beautiful instrument.",
+      "Kit: Give me some time. I can fix this."
+     ],
+     "name": "Kit",
+     "after": "P01"
+    },
+    {
      "x": 1,
      "y": 8,
      "art": "explorer",
@@ -19966,16 +20014,16 @@
      ]
     },
     {
-     "x": 12,
+     "x": 8,
      "y": 5,
      "art": "pilgrim",
      "face": "down",
      "t": [],
-     "id": "sec158_tr2",
+     "id": "sec158_tr3",
      "trainer": {
       "cls": "Seeker",
       "route": 1,
-      "name": "Rook"
+      "name": "Fenn"
      }
     }
    ]
@@ -20216,8 +20264,20 @@
    "pkey": "ystra",
    "npcs": [
     {
-     "x": 11,
-     "y": 6,
+     "x": 9,
+     "y": 10,
+     "art": "kit",
+     "face": "down",
+     "t": [
+      "Kit: My {kit3} can heal the blight, slowly, tree by tree. We'll stay and do this part.",
+      "Kit: Go on. We've got this. Nobody gets left, remember?"
+     ],
+     "name": "Kit",
+     "after": "P01"
+    },
+    {
+     "x": 17,
+     "y": 5,
      "art": "pilgrim",
      "face": "down",
      "t": [
@@ -20235,16 +20295,16 @@
      ]
     },
     {
-     "x": 19,
-     "y": 6,
+     "x": 12,
+     "y": 3,
      "art": "explorer",
      "face": "down",
      "t": [],
-     "id": "sec160_tr2",
+     "id": "sec160_tr3",
      "trainer": {
       "cls": "Rift Walker",
       "route": 1,
-      "name": "Rook"
+      "name": "Lio"
      }
     },
     {
@@ -20253,22 +20313,22 @@
      "art": "pilgrim",
      "face": "up",
      "t": [],
-     "id": "sec160_tr3",
+     "id": "sec160_tr4",
      "trainer": {
       "cls": "Seeker",
       "route": 1,
-      "name": "Lio"
+      "name": "Ida"
      }
     }
    ],
    "mons": [
     {
-     "x": 7,
+     "x": 19,
      "y": 10,
      "mon": "Fractalith"
     },
     {
-     "x": 18,
+     "x": 4,
      "y": 10,
      "mon": "Riftwalker"
     }

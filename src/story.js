@@ -11,18 +11,22 @@
  Section scenes (data/story_scenes.json) play once when you walk into a section at the right point in the story. */
 const STORY=__STORY__;
 Object.assign(KEY_ITEMS,{nana_badge:"Nana Wren's Badge",teo_lantern:"Teo's Lantern",crystal_map:"Teo's Crystal Map",nana_journal:"Nana Wren's Journal",codex_page:'Codex Page'});
-Object.assign(KEY_NAME,KEY_ITEMS);
+Object.assign(KEY_ITEMS,{stowaway:'Stowaway'});Object.assign(KEY_NAME,KEY_ITEMS);
+// Kit Briggs's art: until art/characters/kit.png exists, Kit borrows the Technician sprite
+if(!CHAR.kit&&CHAR.technician)CHAR.kit=CHAR.technician;
 Object.assign(KEY_DESC,{nana_badge:'A brass cross with a glowing blue core, stamped "R.B. No. 1". Mom pinned it on you.',teo_lantern:"Teo Reyes's old mining lantern. It never quite goes out.",
- crystal_map:'Teo\'s crystal map: "the floating gardens beyond the light."',nana_journal:'Nana Wren\'s journal from the night of the Starfall.',codex_page:'A Codex page Thorne copied: "a door that is a road."'});
+ crystal_map:'Teo\'s crystal map: "the floating gardens beyond the light."',nana_journal:'Nana Wren\'s journal from the night of the Starfall.',codex_page:'A Codex page Thorne copied: "a door that is a road."',stowaway:'The starter nobody picked at Dr. Vashti\'s lab. It hides in your bag and only peeks out for snacks.'});
 Object.assign(QNAME,{sola_2:'Sola',sola_3:'Sola',sola_4:'Sola',sola_5:'Sola',sola_6:'Sola',admin_vex_final:'Admin Vex',helix_freighter_crew:'Helix Freighter Crew',helix_tower_crew:'Helix Tower Crew',helix_broadcast_crew:'Helix Broadcast Crew'});
 Object.assign(QART,{sola_2:'sola',sola_3:'sola',sola_4:'sola',sola_5:'sola',sola_6:'sola',admin_vex_final:'vex',helix_freighter_crew:'guard',helix_tower_crew:'guard',helix_broadcast_crew:'guard'});
 
 /* ---- your starter line and Sola's (she always takes the one that beats yours) ---- */
 function starterLine(id){const L=[];let n=D[id].name;for(let i=0;i<3&&n;i++){L.push(n);const ev=(PROG.species[n]||{}).evolves;n=ev&&ev.into&&IDX[ev.into]!=null?ev.into:null}while(L.length<3)L.push(L[L.length-1]);return L}
-function myStarter(){const all=G.party.concat(G.box);for(const s of STARTERS){const ln=starterLine(s);if(all.some(m=>ln.includes(D[m.id].name)))return s}return STARTERS.find(s=>G.caught[s])??STARTERS[1]}
+function myStarter(){if(G.starter!=null&&D[G.starter])return G.starter;const all=G.party.concat(G.box);for(const s of STARTERS){const ln=starterLine(s);if(all.some(m=>ln.includes(D[m.id].name)))return s}return STARTERS.find(s=>G.caught[s])??STARTERS[1]}
 const rivalStarter=()=>STARTERS[(STARTERS.indexOf(myStarter())+1)%3];
+// the third starter, the one nobody picked: it stows away in your bag, then chooses Kit Briggs on Ferrox
+const kitStarter=()=>STARTERS[(STARTERS.indexOf(myStarter())+2)%3];
 function qFmt(s){if(typeof s!=='string'||s.indexOf('{')<0||!G)return s;const a=starterLine(myStarter()),b=starterLine(rivalStarter());
- return s.replace(/\{starter(2|3)?\}/g,(_,n)=>a[(+n||1)-1]).replace(/\{rival(2|3)?\}/g,(_,n)=>b[(+n||1)-1])}
+ const c=starterLine(kitStarter());return s.replace(/\{starter(2|3)?\}/g,(_,n)=>a[(+n||1)-1]).replace(/\{rival(2|3)?\}/g,(_,n)=>b[(+n||1)-1]).replace(/\{kit(2|3)?\}/g,(_,n)=>c[(+n||1)-1])}
 
 /* ---- things that happen when an objective or a quest completes ---- */
 function storyIf(c){if(!c)return true;return Object.entries(c).every(([f,v])=>(G.flags[f]||0)===v)}
@@ -38,9 +42,9 @@ function storyThen(q,t){if(!t||!storyIf(t.if))return;const L=(t.lines||[]).slice
 
 /* ---- section scenes: walk in at the right moment and the scene plays once ---- */
 function storyWhen(w){if(!w)return true;if(w.active){const q=QI[w.active];if(!q||qs(w.active).state!=='active')return false;if(w.step!=null&&qs(w.active).step!==w.step)return false}
- if(w.after&&!mDone(w.after))return false;if(w.until&&mDone(w.until))return false;if(w.flag&&!G.flags[w.flag])return false;if(w.key&&!(G.key&&G.key[w.key]))return false;return true}
+ if(w.after&&!mDone(w.after))return false;if(w.until&&mDone(w.until))return false;if(w.flag&&!G.flags[w.flag])return false;if(w.key&&!(G.key&&G.key[w.key]))return false;if(w.noflag&&G.flags[w.noflag])return false;if(w.nokey&&G.key&&G.key[w.nokey])return false;return true}
 function storyEnter(id){if(!G||!G.quests)return;G.sseen=G.sseen||{};for(const sc of STORY.scenes||[]){if(sc.sec!==id||G.sseen[sc.id]||!storyWhen(sc.when))continue;G.sseen[sc.id]=1;
-  for(const f of sc.flags||[])G.flags[f]=1;QN.push({q:sc.id,kind:'scene',lines:sc.lines.map(qFmt),art:sc.art})}}
+  for(const f of sc.flags||[])G.flags[f]=1;for(const k of sc.take||[])if(G.key)delete G.key[k];QN.push({q:sc.id,kind:'scene',lines:sc.lines.map(qFmt),art:sc.art})}}
 
 /* ---- townsfolk with story extras: a line for when you carry a key item, and nurses who heal ---- */
 function storyNpc(n){if(n.keyline&&G.key&&G.key[n.keyline.k]){if(n.story==='heal'){healAll();noteHeal()}say(n.keyline.t.map(qFmt).concat(n.story==='heal'?['Your team is fully healed!']:[]),null,n.por);return true}
@@ -63,7 +67,7 @@ function storyLegend(n){const k=PILLAR[n.legend],go=()=>legendBattle({mon:n.lege
 /* ---- battles: partners who fight beside you, Orra's test, and Oblivane, who can only be calmed ---- */
 let NEXTB=null;
 function storyBattleStart(tr,L){B.sp=(tr&&tr.sp)||NEXTB||null;NEXTB=null;if(B.sp)B.sp.turns=0;
- if(tr&&tr.ally){const a=tr.ally,base=a.mon==='rival'?rivalStarter():IDX[a.mon];if(base!=null){const lv=a.lv||Math.max(...G.party.map(m=>m.lv));let id=a.mon==='rival'?IDX[starterLine(base)[a.evolve?2:1]]:base;
+ if(tr&&tr.ally){const a=tr.ally,base=a.mon==='rival'?rivalStarter():a.mon==='kit'?kitStarter():IDX[a.mon];if(base!=null){const lv=a.lv||Math.max(...G.party.map(m=>m.lv));let id=a.mon==='rival'?IDX[starterLine(base)[a.evolve?2:1]]:a.mon==='kit'?evolvedAt(base,lv):base;
    const m=mk(id,lv);m.guest=1;m.nick=null;G.party.push(m);G.seen[id]=1;
    L.push(a.who+' fights beside you!');if(a.evolve&&a.mon==='rival')L.push(a.who+"'s "+starterLine(base)[1]+' is glowing... it evolved into '+D[id].name+'!');L.push(a.who+"'s "+D[id].name+' is ready to swap in from your team!')}}
  if(!tr&&B.team.length&&D[B.team[0].id].name==='Blightling'&&secOn()&&['160','161'].includes(G.sec.id))L.push('...It isn\'t attacking. It\'s reaching for your light. It\'s begging.')}

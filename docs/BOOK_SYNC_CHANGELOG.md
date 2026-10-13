@@ -97,7 +97,9 @@ The Alienmon novels (Books 1–5, planned in `docs/SAGA_MASTER_PLAN.md`) are now
 
 | Change | From | Where in the game | Files |
 | --- | --- | --- | --- |
-| Proposal only, waiting for approval | All books | Not built | `docs/KIT_BRIGGS_PROPOSAL.md` |
+| Kit Briggs (they/them) built as a companion NPC; Kit's book moments given back to Kit | All books | Gate Plaza meeting, Rustvale, Aurora Route, Containment Wing, Ferrox tower partner battle, Crater Descent, Dustmere, Great Telescope, Crystal Ruins, Blighted Forest | ST, NP, Q, engine (`{kit}` tokens, `ally.mon: 'kit'`, Technician art until Kit's sprite exists) |
+| The stowaway: the starter nobody picked runs off at the lab, hides in your bag (a key item) after M03, and chooses Kit on Ferrox | Book 1, Ch 1 | Lab, M03, Gate Plaza (029) | `src/sections.js`, ST, Q |
+| A calmed Novaryx can be found and caught at the Crater Rim after the credits | Book 3 / owner decision | Crater Rim (141) after P04 | NP |
 
 ### Section 8: not a game change
 
@@ -126,21 +128,18 @@ The Alienmon novels (Books 1–5, planned in `docs/SAGA_MASTER_PLAN.md`) are now
 - **Section scenes:** `data/story.json` plays them once on entering a section.
 - **Saves:** `data/story.json` also migrates older saves: inserted objectives move a save's step on, new main quests count as done if you're past them, and missing key items are filled in.
 
-## Couldn't fit, or conflicts with game mechanics (for a decision)
+## Decisions (owner, after the first pass)
 
-1. **The stowaway starter (Book 1)** was skipped, as the sync doc allows. Giving a second starter breaks the three-starter rule: Sola takes the counter, and Kit would take the leftover. The "shy capsule nobody picked" survives as the saga's last image in the epilogue.
-2. **Double battles.** The battle engine is one-on-one, so "fights beside you" is a partner battle: the friend's Alienmon joins your team for that fight, you can swap to it, and it leaves afterwards. This covers Sola vs Vex, Sola vs Thorne, Hank and DJ Static (S102), and Marsh vs Vex. True two-on-two battles would be a large battle-engine project.
-3. **"Reuse the Spore Choir audio."** No Spore Choir audio existed (the Spore Choir side story was never built), so there's a new chiptune hum. It plays at the Spore Pools, at the sealing and at the Edge of the Void. A real recorded song can replace it later.
-4. **Places with no map section** (new sections are off limits):
-   - the Recovery Bay attic is the Dustmere Recovery Bay itself;
-   - the ghost ship, the Helix freighter and the smuggler's freighter are scenes and battles on the Thalassa docks;
-   - Thorne's courtroom is a cutscene at the Neonis Starport.
-5. **Kit Briggs** isn't in the game yet (see the proposal). A few book moments that are Kit's went to other characters: Hank runs the Keepers' relay, and the lens is built "together" with Vashti.
-6. **Saga as Liss's brother** is new canon the Saga Plan says to confirm before Book 4 is written. It is in the game now; it's one line in `data/story.json` if you change it.
-7. **Novaryx.** Choosing "calm" (canon) skips that encounter, so Novaryx isn't caught on that save. Players who want it pick "capture". If you'd like a calmed Novaryx to be catchable after the credits like Oblivane, it's one NPC entry.
-8. **Story order.**
-   - Tamsin's tutorial (S04) now opens after M02 instead of M04, to match Book 1.
-   - Vex's defeat moved from M14 to M15, so Sola can fight beside you.
-   - The Codex page now arrives with Thorne's letter during Homecoming rather than at the telescope.
-9. **Oblivane's difficulty.** The fight can't be lost: if your team falls, the Choir takes over, because the books say it can't be won by fighting.
-10. **Batch 2 tease.** The old "Batch 2 coming soon" line at the Warp Gate is gone, because canon says the gate wakes. The epilogue ends on a calmed Oblivane still drifting at the Edge of the Void. Add a new signal from beyond the gate if a second saga is planned.
+1. **The stowaway** is in. It stays a story companion in your bag, never a second starter you own, and it becomes Kit's partner, which keeps the three-starter rule.
+2. **Double battles** stay as partner battles.
+3. **The Spore Choir hum** stays.
+4. **Places with no map:** ChatGPT prompts for the six missing locations are in `Alienmon_Book_Locations_Prompts.zip`. Until the maps exist, the scenes stay where they are.
+5. **Kit Briggs** is built (see above). The sprite prompt is in the same zip.
+6. **Saga as Liss's brother:** left as it is for now. It's one line in `data/story.json` if that changes.
+7. **Novaryx:** a calmed Novaryx is catchable after the credits.
+8. **Story order changes:** kept as they are.
+   - Tamsin's tutorial opens after M02.
+   - Vex's defeat moved to M15.
+   - The Codex page arrives during Homecoming.
+9. **Oblivane:** the fight can't be lost; the Choir takes over if your team falls.
+10. **Batch 2 tease:** the "coming soon" line was replaced by the open Warp Gate; the epilogue ends on Oblivane.

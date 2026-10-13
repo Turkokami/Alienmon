@@ -1,6 +1,26 @@
-# Proposal: Kit Briggs as a companion NPC
+# Kit Briggs as a companion NPC
 
-**Status: proposal only. Nothing here is built.** Book Sync section 7 asks for a proposal to approve first.
+**Status: built.** The owner approved it with "make your best judgements", so the answers to the open questions below are the recommended ones:
+- Kit appears from Ferrox onward.
+- Kit's partner is the starter nobody picked: it stows away in your bag after the first rival battle and chooses Kit at Ferrox's Gate Plaza.
+- Kit's book moments went back to Kit.
+
+**Still needed:** Kit's sprite and portrait. The prompts are in `Alienmon_Book_Locations_Prompts.zip` (`KIT_BRIGGS_SPRITE.md`). Until then Kit uses the Technician sprite.
+
+**Where Kit appears:**
+- The meeting at Gate Plaza (029).
+- An NPC in Rustvale (030).
+- Fixing an Iceburr's leg on Aurora Route (096).
+- Rooting the cages open in the Containment Wing (S90).
+- Fighting beside you at the Ferrox tower (S102).
+- Freezing the gravity trap on the Crater Descent (142).
+- Hank's Gearhound and goggles after Homecoming.
+- Keeper of the Shards in Dustmere (004).
+- Building the Vortex lens at the Great Telescope (151).
+- Fixing the Choir chamber (158).
+- Healing the Blighted Forest (160).
+
+The original proposal follows.
 
 ## Who Kit is
 

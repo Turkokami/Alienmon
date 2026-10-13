@@ -132,6 +132,20 @@
     10,
     5
    ]
+  },
+  {
+   "art": "kit",
+   "name": "Kit",
+   "after": "M19",
+   "until": "P01",
+   "near": [
+    13,
+    9
+   ],
+   "t": [
+    "Kit: I'm keeper of the Shards now. ...Okay, I gave myself that job. But somebody has to!",
+    "Kit: Dad gave me his old welding goggles. They're too big. I'm keeping them."
+   ]
   }
  ],
  "005": [
@@ -746,6 +760,20 @@
    "t": [
     "Linker: Magma moves melt Alloy-types fast. Volt moves just bounce off."
    ]
+  },
+  {
+   "art": "kit",
+   "name": "Kit",
+   "after": "M04",
+   "until": "M19",
+   "near": [
+    14,
+    9
+   ],
+   "t": [
+    "Kit: Dad says I can fix anything except my own room.",
+    "Kit: My {kit} sniffs out loose bolts. It's better at it than me!"
+   ]
   }
  ],
  "031": [
@@ -988,6 +1016,20 @@
     "Dr. Vashti: I've got the road, Linker. It's holding. Go and bring her home.",
     "Dr. Vashti: Kessler's side of the Vortex is safe with me."
    ]
+  },
+  {
+   "art": "kit",
+   "name": "Kit",
+   "after": "M21",
+   "until": "P02",
+   "near": [
+    14,
+    9
+   ],
+   "t": [
+    "Kit: The lens is Teo's crystal map, ground down layer by layer. Took us three weeks!",
+    "Kit: If this works, we're walking to another world. No pressure."
+   ]
   }
  ],
  "158": [
@@ -1002,6 +1044,19 @@
    "t": [
     "Saga: This was the Choir chamber, where every Ystran sang together. It is an instrument, not a building.",
     "Saga: Gather the echoes. They will come if you call them with the old song."
+   ]
+  },
+  {
+   "art": "kit",
+   "name": "Kit",
+   "after": "P01",
+   "near": [
+    14,
+    10
+   ],
+   "t": [
+    "Kit: Saga's right. This isn't a building, it's an instrument! A big, broken, beautiful instrument.",
+    "Kit: Give me some time. I can fix this."
    ]
   }
  ],
@@ -1025,6 +1080,30 @@
    "art": "ystran",
    "legend": "Oblivane",
    "lv": 70,
+   "after": "P04",
+   "t": []
+  }
+ ],
+ "160": [
+  {
+   "art": "kit",
+   "name": "Kit",
+   "after": "P01",
+   "near": [
+    10,
+    9
+   ],
+   "t": [
+    "Kit: My {kit3} can heal the blight, slowly, tree by tree. We'll stay and do this part.",
+    "Kit: Go on. We've got this. Nobody gets left, remember?"
+   ]
+  }
+ ],
+ "141": [
+  {
+   "art": "ystran",
+   "legend": "Novaryx",
+   "lv": 60,
    "after": "P04",
    "t": []
   }

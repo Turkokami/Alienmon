@@ -209,13 +209,17 @@
    "epilogue": {
     "art": "mom",
     "items": {
-     "nana_badge": 1
+     "nana_badge": 1,
+     "stowaway": 1
     },
     "lines": [
      "Mom catches up with you at the trading post, a little out of breath.",
      "Mom: Before you head out... this was your Nana Wren's. She wore it every day she ran the Recovery Bay.",
      "It's a brass cross with a glowing blue core. Stamped on the back: R.B. No. 1.",
-     "Mom: She'd want you to have it. Call home once in a while, Linker."
+     "Mom: She'd want you to have it. Call home once in a while, Linker.",
+     "Later, as you pack your bag for the road, something wriggles inside it.",
+     "A pair of shy eyes blink up at you. It's the {kit} that ran out of Dr. Vashti's lab! It has stowed away in your bag.",
+     "It won't come out... but it won't leave either."
     ]
    }
   },
@@ -1524,12 +1528,18 @@
       ]
      ],
      "ally": {
-      "who": "Hank",
-      "mon": "Forgemaul",
+      "who": "Kit",
+      "mon": "kit",
       "lv": 48
      },
      "intro": "Helix Directive! Stand aside, this tower is ours now!",
-     "lose": "Retreat! The scrappers won't quit!"
+     "lose": "Retreat! The scrappers won't quit!",
+     "then": {
+      "art": "hank",
+      "lines": [
+       "Hank Briggs: That's my kid. Battling beside me, not behind me."
+      ]
+     }
     },
     {
      "type": "battle_trainer",
@@ -1579,7 +1589,8 @@
    "dialogue": {
     "start": [
      "Hank Briggs: Helix crews are hitting the towers, trying to crack them before you reach the crater.",
-     "Hank Briggs: Ferrox first. Then Static's tower on Neonis. You and me, kid. Let's hold the line."
+     "Kit: I rigged a Shard relay out of Nana Wren's old ship radio. Now your Shards can talk to every tower, and Static can call every Keeper!",
+     "Hank Briggs: Ferrox first. Then Static's tower on Neonis. Kit, you're with the Linker."
     ],
     "progress": [
      "Hank Briggs: The towers won't hold themselves!"
@@ -1993,7 +2004,15 @@
     ]
    },
    "repeatable": false,
-   "notes": "Book 4 Part One and Two: the festival, the journal, DX-4, the trial, Vex captured off Thalassa (moved here from the postgame), the invitation."
+   "notes": "Book 4 Part One and Two: the festival, the journal, DX-4, the trial, Vex captured off Thalassa (moved here from the postgame), the invitation.",
+   "epilogue": {
+    "art": "hank",
+    "lines": [
+     "Before you leave for the Summit, Hank hands Kit a Gearhound and his old welding goggles.",
+     "Hank Briggs: You fix everything for everybody, kid. Let somebody look after you for once.",
+     "Kit puts the goggles on. They're much too big. Kit doesn't take them off for a week."
+    ]
+   }
   },
   {
    "id": "M20",
@@ -2204,7 +2223,7 @@
       "art": "vashti",
       "lines": [
        "Dr. Vashti: Thorne's Codex page. \"A door that is a road, opened only by a scout and a listener together.\"",
-       "Dr. Vashti: The Great Telescope can focus all eight Shards into a Vortex, if the lens is right. So we built one from Teo's crystal map.",
+       "Dr. Vashti: The Great Telescope can focus all eight Shards into a Vortex, if the lens is right. So Kit and I built one from Teo's crystal map.",
        "Dr. Vashti: The Shards are set. Nothing's happening. ...A scout and a listener. Of course. You and Zib, together."
       ]
      }
@@ -4203,7 +4222,9 @@
      "Keep at it, Linker. You've got this."
     ],
     "complete": [
-     "The freed Alienmon chirp their thanks. Several follow your transfer beam to your ship's storage."
+     "The freed Alienmon chirp their thanks. Several follow your transfer beam to your ship's storage.",
+     "Kit refuses to leave until every cage is open. Kit's {kit3} digs in and roots the last stuck doors wide open.",
+     "Kit (shaking): Nobody gets left."
     ]
    },
    "rewards": {
@@ -4858,7 +4879,8 @@
    "dialogue": {
     "start": [
      "Seedmother: The blight still clings to my forest. The little shadows there are pieces of my sibling's hunger.",
-     "Seedmother: They are not attacking you, child. They are begging. Meet them gently, and help my children heal the forest."
+     "Seedmother: They are not attacking you, child. They are begging. Meet them gently, and help my children heal the forest.",
+     "Kit: My {kit3} and I will help. Tree by tree."
     ],
     "progress": [
      "Keep at it, Linker. You've got this."

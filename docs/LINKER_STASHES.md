@@ -51,7 +51,7 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 | Section | Tile | Item | Tier |
 |---|---|---|---|
 | 029 Gate Plaza | 11,14 | 2x Cure Spray | 1 |
-| 030 Rustvale | 17,12 | 2x Med Gel | 1 |
+| 030 Rustvale | 16,12 | 2x Med Gel | 1 |
 | 034 Scrap Route Part A | 16,14 | 1x Revive Spark | 1 |
 | 034 Scrap Route Part A | 6,2 | 2x Med Gel | 1 |
 | 035 Scrap Route Part B | 9,2 | 2x Med Gel | 1 |

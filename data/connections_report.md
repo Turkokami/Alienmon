@@ -118,6 +118,10 @@
 - 162 Edge of the Void: Centre path below the void altar runs off the BOTTOM edge (11-12,15); blocked. Top-left stairs (2-3,3-4) end at a small ledge.
 - 163 Seedmother's Grove: Stairs at the top-left (1-2,2) lead off the LEFT edge at row 2 and the stairs at the bottom (14-15,15) lead off the BOTTOM edge; edge tiles blocked. Small bridge at (4,9) toward the waterfall pool is a dead end.
 
+## npcs with no room (1)
+
+- 004 Dustmere Plaza: Kit: I'm keeper of the Shards now. ...Ok
+
 ## moved or dropped to keep everything reachable (2)
 
 - 115 Skyreach Plaza: dropped npc at (11, 14)
