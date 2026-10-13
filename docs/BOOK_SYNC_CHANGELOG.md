@@ -135,8 +135,8 @@ The Alienmon novels (Books 1–5, planned in `docs/SAGA_MASTER_PLAN.md`) are now
 | P03 becomes The Reunion: the Heartroot, everyone comes through the Vortex, the Seedmother grows and holds Oblivane; the children choose where to live (Both default, a line per choice) | Rev 4.2, 4.3; Book 5, Ch 23–25 | P03 (new cutscene step) | Q, ST (save shift) |
 | Epilogue: the tree seen through the Warp Gate; "I wanted to own her. You set her free." | Book 5, Ch 26 | After P04 | Q |
 | Xenodex: subtitle and a Heartroot page (press A) whose glow grows with caught and befriended species | Rev 4.2 | START > Xenodex | `src/story.js`, `src/template.html` |
-| Ystra blooms at 50, 100, 150, 200, 250 and 300, each with a returning Ystran echo | Rev 4.2 | Ystra 153, 154, 156, 158, 160, 163 | `src/story.js`, NP, WS (`heartroot`) |
-| Unifier bonus (all 300, after the story): epilogue, Unifier title, golden Linker skin | Rev 4.2 | Anywhere, after P04 | `src/story.js`, `src/template.html` |
+| Ystra blooms at each sixth of all species (50 per step with Batch 1's 300), each with a returning Ystran echo; the total grows with new generations | Rev 4.2 | Ystra 153, 154, 156, 158, 160, 163 | `src/story.js`, NP, WS (`heartroot`) |
+| Unifier bonus (every species in the game, after the story): epilogue, Unifier title, golden Linker skin | Rev 4.2 | Anywhere, after P04 | `src/story.js`, `src/template.html` |
 | Old lines saying the Seedmother is alive, waiting or fading were rewritten | Rev 4.1 | Ystra NPCs, Pyros shrine text, key items | `data/sections/planets/14_ystra.json`, `data/batches/batch01_kessler/planets.json`, `src/world.js` |
 
 **Not done, or worth deciding (Seedmother revision):**

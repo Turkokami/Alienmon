@@ -783,7 +783,7 @@ function updMenu(){if(menuMode==='quests'){qLogUpd();if(menuMode==='quests')qLog
  else if(menuMode==='bagpick'){const n=G.party.length;if(P_('up'))B.psel=(B.psel+n-1)%n;if(P_('down'))B.psel=(B.psel+1)%n;if(P_('b')){menuMode='bag';return}
   if(P_('a')){const L=[];if(useOn(B.item,G.party[B.psel],L))G.items[B.item.k]--;say(L);menuMode='bag'}if(menuMode==='bagpick')drawParty(B.psel,'Use '+B.item.n+' on:')}
  else if(menuMode==='sum'){if(P_('b')){menuMode='party';return}if(P_('a')&&B.psel>0){const m=G.party.splice(B.psel,1)[0];G.party.unshift(m);say(nm(m)+' is now your lead.');B.psel=0;menuMode='party';return}drawSum(G.party[B.psel])}
- else{if(P_('a'))DEXH=!DEXH;if(!DEXH){if(P_('up'))dsel=(dsel+299)%300;if(P_('down'))dsel=(dsel+1)%300;if(P_('left'))dsel=(dsel+290)%300;if(P_('right'))dsel=(dsel+10)%300}if(P_('b')){if(DEXH){DEXH=false;return}menuMode='root';return}if(DEXH)drawHeartroot();else drawDex()}}
+ else{if(P_('a'))DEXH=!DEXH;if(!DEXH){if(P_('up'))dsel=(dsel+D.length-1)%D.length;if(P_('down'))dsel=(dsel+1)%D.length;if(P_('left'))dsel=(dsel+D.length-10)%D.length;if(P_('right'))dsel=(dsel+10)%D.length}if(P_('b')){if(DEXH){DEXH=false;return}menuMode='root';return}if(DEXH)drawHeartroot();else drawDex()}}
 function teleportToShip(){const p=PL[G.planet]||PL[0];const onSec=!!G.sec;G.sec=null;G.secBack=null;G.sys=p.sys||G.sys;G.ship.x=p.x;G.ship.y=p.y+p.r+12;G.ship.vx=G.ship.vy=0;G.ship.a=-Math.PI/2;menuMode='root';B=null;
  cut(1,'Teleporting to your ship...',()=>{scene='space';PREV='space';say(['Transfer beam complete. You are aboard your ship.',onSec?'Fly to any planet and press A to land. Land on Dustara to walk back to the Molten Frontier.':'Fly to any planet and press A to land. Press START and choose Map to return to the Molten Frontier.'])})}
 function drawMap(sel){rect(0,0,160,144,'#120c22');const k=160/WORLD.w,oy=16,h=WORLD.h*k;
@@ -805,8 +805,8 @@ function drawSum(m){const d=D[m.id],tr=TR(m.id);box(0,0,160,144);dspr(m.id,4,4,2
 function prevBack(){menuMode='root';scene=PREV;return PREV}
 let PREV='planet';
 function drawUnder(){if(PREV==='space'){rect(0,0,160,144,'#0c0818')}else if(PREV==='world')drawWorld();else drawPlanet()}
-function drawDex(){box(0,0,160,144);txt('Xenodex',6,5,'#1b1424');txt('A: Heartroot',88,5,'#2e8b57',6);const start=Math.max(0,Math.min(dsel-5,288));
- for(let i=0;i<12&&start+i<300;i++){const id=start+i,d=D[id],y=16+i*10,seen=G.seen[id];if(id===dsel)rect(3,y-1,86,10,'#ffe0c0');
+function drawDex(){box(0,0,160,144);txt('Xenodex',6,5,'#1b1424');txt('A: Heartroot',88,5,'#2e8b57',6);const start=Math.max(0,Math.min(dsel-5,D.length-12));
+ for(let i=0;i<12&&start+i<D.length;i++){const id=start+i,d=D[id],y=16+i*10,seen=G.seen[id];if(id===dsel)rect(3,y-1,86,10,'#ffe0c0');
   txt(String(d.n).padStart(3,'0')+' '+(seen?d.name.slice(0,7):'???'),5,y,G.caught[id]?'#1b1424':'#8a7aa8',6)}
  const d=D[dsel];if(G.seen[dsel]){dspr(dsel,104,14,3);txt(d.t.join('/'),92,64,TC[d.t[0]][2],6);txt(TR(dsel).name,92,74,'#7a1f6a',6);const lv=G.caught[dsel]?livesIn(dsel):[];wrap(d.lore,11).slice(0,lv.length?4:6).forEach((l,i)=>txt(l,92,86+i*9,'#3b2a5c',6));if(lv.length){txt('Lives in:',92,124,'#2e86de',6);txt(lv.slice(0,2).join(', ').slice(0,16),92,133,'#2e86de',6)}}
  else{rect(108,18,40,40,'#d9d0ee');txt('?',122,30,'#8a7aa8',16)}}

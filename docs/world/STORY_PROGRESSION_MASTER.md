@@ -126,7 +126,7 @@ These are inconsistencies found in today's game data. Claude Code should fix all
 
 ## 6. Seedmother revision (docs/SEEDMOTHER_REVISION.md)
 
-- **Heartroot counter:** species caught plus story legendaries befriended (a calmed Novaryx or Oblivane), out of 300. It is shown in START > Xenodex (press A). Data lives in `world_state.json` under `heartroot`.
-- **Blooms:** at 50, 100, 150, 200, 250 and 300, part of Ystra blooms (flags `bloom_N`) and a Ystran echo returns there.
+- **Heartroot counter:** species caught plus story legendaries befriended (a calmed Novaryx or Oblivane), out of every species in the game, so new generations raise the total. It is shown in START > Xenodex (press A). Data lives in `world_state.json` under `heartroot`.
+- **Blooms:** at each sixth of the total, part of Ystra blooms (flags `bloom_1` to `bloom_6`) and a Ystran echo returns there.
 - **P03 is now The Reunion** (Heartroot, the Reunion cutscene, then the children's choice). It never needs a full Xenodex.
-- **Unifier:** all 300 after P04 unlocks the bonus epilogue, the Unifier title and a golden Linker (flag `unifier`).
+- **Unifier:** every species after P04 unlocks the bonus epilogue, the Unifier title and a golden Linker (flag `unifier`).

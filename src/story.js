@@ -107,13 +107,13 @@ Object.assign(GATE_OPEN,{ghost_ship:()=>mDone('M07'),helix_freighter:()=>mDone('
 
 /* ---------- the Seedmother revision (docs/SEEDMOTHER_REVISION.md): she is scattered in every Alienmon ----------
  The Heartroot's glow grows with every species you have registered as bonded: caught, or befriended in the story
- (a calmed Novaryx or Oblivane). At 50/100/150/200/250/300 a part of Ystra blooms and a Ystran echo returns.
+ (a calmed Novaryx or Oblivane), out of every species in the game, so new generations raise the total. Each sixth of the way, a part of Ystra blooms and a Ystran echo returns.
  The Reunion ending never needs a full Xenodex; completing it is the bonus Unifier epilogue. */
-const HEART_TOTAL=300,BLOOMS=[[50,'the Arrival Fragment'],[100,'the Floating Continents'],[150,'the Drowned Seas'],[200,'the Crystal Ruins'],[250,'the Blighted Forest'],[300,'the Seedmother\'s crater']];
+const HEART_TOTAL=D.length,BLOOMS=['the Arrival Fragment','the Floating Continents','the Drowned Seas','the Crystal Ruins','the Blighted Forest','the Seedmother\'s crater'].map((w,i)=>[Math.round(HEART_TOTAL*(i+1)/6),w,i+1]);
 function heartCount(){let n=Object.keys(G.caught||{}).length;const f=G.flags||{};
  if(f.novaryx_way===1&&IDX.Novaryx!=null&&!G.caught[IDX.Novaryx])n++;if(f.oblivane_calmed&&IDX.Oblivane!=null&&!G.caught[IDX.Oblivane])n++;return Math.min(HEART_TOTAL,n)}
 function heartBeats(){if(!G||!G.flags)return;const n=heartCount();
- for(const[k,where]of BLOOMS)if(n>=k&&!G.flags['bloom_'+k]){G.flags['bloom_'+k]=1;if(mDone('P01'))qNotify('HEART','bloom',['Word from Ystra: '+where+' is starting to bloom!','Every Alienmon is a piece of her. '+k+' notes of her song have come home, and a Ystran echo has returned.'])}
+ for(const[k,where,i]of BLOOMS)if(n>=k&&!G.flags['bloom_'+i]){G.flags['bloom_'+i]=1;if(mDone('P01'))qNotify('HEART','bloom',['Word from Ystra: '+where+' is starting to bloom!','Every Alienmon is a piece of her. '+k+' notes of her song have come home, and a Ystran echo has returned.'])}
  if(n>=HEART_TOTAL&&mDone('P04')&&!G.flags.unifier){G.flags.unifier=1;G.key.gold_dex=1;QN.push({q:'UNIFIER',kind:'scene',lines:[
   'Every kind of Alienmon in the Kessler system has bonded with you.','Under the Seedmother\'s tree, you walk with every Alienmon you have ever met. They hum the song together, each one still itself.',
   'Liss: The legend called for someone who would reunite all her children. Not catch them. Unite them.','You are named the Unifier!','(Your Linker shines gold now: the Unifier\'s Linker.)']})}

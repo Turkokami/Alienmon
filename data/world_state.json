@@ -448,34 +448,34 @@
  ],
  "heartroot": {
   "counts": "species caught + story legendaries befriended (calmed Novaryx, calmed Oblivane)",
-  "total": 300,
+  "total": "every species in the game (D.length): 300 in Batch 1, more with each new batch",
   "milestones": {
-   "50": {
-    "flag": "bloom_50",
+   "1/6": {
+    "flag": "bloom_1",
     "echo_section": "153"
    },
-   "100": {
-    "flag": "bloom_100",
+   "2/6": {
+    "flag": "bloom_2",
     "echo_section": "154"
    },
-   "150": {
-    "flag": "bloom_150",
+   "3/6": {
+    "flag": "bloom_3",
     "echo_section": "156"
    },
-   "200": {
-    "flag": "bloom_200",
+   "4/6": {
+    "flag": "bloom_4",
     "echo_section": "158"
    },
-   "250": {
-    "flag": "bloom_250",
+   "5/6": {
+    "flag": "bloom_5",
     "echo_section": "160"
    },
-   "300": {
-    "flag": "bloom_300",
+   "6/6": {
+    "flag": "bloom_6",
     "echo_section": "163"
    }
   },
-  "unifier": "all 300 after P04: bonus epilogue, Unifier title, golden Linker skin (flag unifier)",
+  "unifier": "every species after P04: bonus epilogue, Unifier title, golden Linker skin (flag unifier)",
   "rule": "The Reunion ending (P03) never needs a full Xenodex."
  }
 }

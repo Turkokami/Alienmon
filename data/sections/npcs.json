@@ -951,8 +951,8 @@
   },
   {
    "art": "ystran",
-   "name": "Returning echo 150",
-   "flag": "bloom_150",
+   "name": "Returning echo 3",
+   "flag": "bloom_3",
    "after": "P01",
    "t": [
     "Ystran echo: Coral is growing in the Drowned Seas. Aquelion says the dreams are happier."
@@ -969,8 +969,8 @@
   },
   {
    "art": "ystran",
-   "name": "Returning echo 100",
-   "flag": "bloom_100",
+   "name": "Returning echo 2",
+   "flag": "bloom_2",
    "after": "P01",
    "t": [
     "Ystran echo: The floating islands are putting down roots again. Terravox hums when it walks."
@@ -1080,8 +1080,8 @@
   },
   {
    "art": "ystran",
-   "name": "Returning echo 200",
-   "flag": "bloom_200",
+   "name": "Returning echo 4",
+   "flag": "bloom_4",
    "after": "P01",
    "t": [
     "Ystran echo: The Choir chamber sings on its own now. Every note is one of her children."
@@ -1128,8 +1128,8 @@
   },
   {
    "art": "ystran",
-   "name": "Returning echo 250",
-   "flag": "bloom_250",
+   "name": "Returning echo 5",
+   "flag": "bloom_5",
    "after": "P01",
    "t": [
     "Ystran echo: The blight is gone. The little shadows sleep in the new leaves."
@@ -1188,8 +1188,8 @@
  "153": [
   {
    "art": "ystran",
-   "name": "Returning echo 50",
-   "flag": "bloom_50",
+   "name": "Returning echo 1",
+   "flag": "bloom_1",
    "after": "P01",
    "t": [
     "Ystran echo: I remember this place green. Look, the first moss is back on the Arrival Fragment!"
@@ -1199,8 +1199,8 @@
  "163": [
   {
    "art": "ystran",
-   "name": "Returning echo 300",
-   "flag": "bloom_300",
+   "name": "Returning echo 6",
+   "flag": "bloom_6",
    "after": "P01",
    "t": [
     "Ystran echo: Every child came home and stayed itself. That is the whole legend. Thank you, Unifier."
