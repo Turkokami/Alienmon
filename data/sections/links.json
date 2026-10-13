@@ -263,6 +263,48 @@
     "n": 2,
     "why": "treasure chest drawn on the top-left ledge"
    }
+  ],
+  "008": [
+   {
+    "tile": [
+     19,
+     4
+    ],
+    "k": "bay",
+    "why": "Trading Post Recovery Bay door (no interior is drawn, so the door works like the counter)"
+   },
+   {
+    "tile": [
+     20,
+     4
+    ],
+    "k": "bay",
+    "why": "Trading Post Recovery Bay door, right half"
+   },
+   {
+    "tile": [
+     5,
+     10
+    ],
+    "k": "shop",
+    "why": "Trading Post shop door (no interior is drawn, so the door works like the counter)"
+   },
+   {
+    "tile": [
+     7,
+     11
+    ],
+    "k": "shop",
+    "why": "Trading Post shop front"
+   },
+   {
+    "tile": [
+     8,
+     11
+    ],
+    "k": "shop",
+    "why": "Trading Post shop front"
+   }
   ]
  },
  "arrival": {

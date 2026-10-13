@@ -427,8 +427,8 @@
   },
   "S01:giver": {
    "s": "008",
-   "x": 5,
-   "y": 11
+   "x": 2,
+   "y": 9
   },
   "S01:0": {
    "s": "011",
@@ -2066,8 +2066,48 @@
    "objects": [
     {
      "tile": [
+      19,
+      4
+     ],
+     "k": "bay",
+     "why": "Trading Post Recovery Bay door (no interior is drawn, so the door works like the counter)"
+    },
+    {
+     "tile": [
+      20,
+      4
+     ],
+     "k": "bay",
+     "why": "Trading Post Recovery Bay door, right half"
+    },
+    {
+     "tile": [
+      5,
+      10
+     ],
+     "k": "shop",
+     "why": "Trading Post shop door (no interior is drawn, so the door works like the counter)"
+    },
+    {
+     "tile": [
+      7,
+      11
+     ],
+     "k": "shop",
+     "why": "Trading Post shop front"
+    },
+    {
+     "tile": [
       8,
-      6
+      11
+     ],
+     "k": "shop",
+     "why": "Trading Post shop front"
+    },
+    {
+     "tile": [
+      21,
+      9
      ],
      "k": "stash",
      "item": "cure",
@@ -2106,8 +2146,8 @@
      ]
     },
     {
-     "x": 19,
-     "y": 7,
+     "x": 18,
+     "y": 6,
      "art": "miner",
      "face": "down",
      "t": [

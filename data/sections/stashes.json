@@ -26,8 +26,8 @@
    "section": "008",
    "name": "Trading Post",
    "tile": [
-    8,
-    6
+    21,
+    9
    ],
    "item": "cure",
    "n": 2,

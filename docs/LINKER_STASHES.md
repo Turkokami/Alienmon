@@ -11,7 +11,7 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 |---|---|---|---|
 | 004 Dustmere Plaza | 12,2 | 150x Stardust | 1 |
 | 007 Dustmere Bridge | 22,5 | 3x Stasis Pod | 1 |
-| 008 Trading Post | 8,6 | 2x Cure Spray | 1 |
+| 008 Trading Post | 21,9 | 2x Cure Spray | 1 |
 | 009 Rimwalk Trail Part A | 4,2 | 2x Med Gel | 1 |
 | 009 Rimwalk Trail Part A | 17,4 | 1x Revive Spark | 1 |
 | 010 Rimwalk Trail Part B | 3,1 | 2x Med Gel | 1 |
