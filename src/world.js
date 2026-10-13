@@ -37,7 +37,7 @@ function wildOK(name){const s=PROG.species[name]||{};if(s.rarity==='legendary'||
 const wildIds=list=>list.filter(id=>wildOK(D[id].name));
 
 /* where you wake up after losing: the last Recovery Bay or Hut you used */
-function noteHeal(){if(typeof secOn==='function'&&secOn()){G.lastHeal={sec:G.sec.id,at:[G.sec.x,G.sec.y],planet:G.planet,back:G.secBack||null};return}G.lastHeal=scene==='world'?{w:'bay'}:{p:(PL[G.planet]||PL[0]).key,pos:(G.ppos||[0,0]).slice()}}
+function noteHeal(){if(typeof secOn==='function'&&secOn()){secVisit(G.sec.id);G.lastHeal={sec:G.sec.id,at:[G.sec.x,G.sec.y],planet:G.planet,back:G.secBack||null};return}G.lastHeal=scene==='world'?{w:'bay'}:{p:(PL[G.planet]||PL[0]).key,pos:(G.ppos||[0,0]).slice()}}
 function wakeAtLastHeal(){const h=G.lastHeal;
  // section maps: back to the last Recovery Bay counter you used, or home to Mom if you never healed anywhere
  if(h&&h.sec&&SWORLD[h.sec]){B=null;scene='planet';G.planet=h.planet;G.sub=null;G.secBack=h.back||null;enterSection(h.sec,h.at,'up');return}
@@ -123,7 +123,7 @@ const KEY_NAME={helix_keycard:'Helix Keycard',ystra_shardlet:'Ystra Shardlet',se
 const keyList=()=>Object.keys(G.key||{}).filter(k=>G.key[k]).map(k=>({kind:'key',k,n:KEY_NAME[k]||k,c:1,d:KEY_DESC[k]||'A key item.'}));
 // Linker Modules arrive with Signal Shards (they open optional areas only, never the main story)
 const MODULES=[[2,'grapple_line'],[4,'hydro_skiff'],[5,'heat_shield'],[6,'lumen_beacon'],[7,'gravity_lift']];
-function grantModules(){G.key=G.key||{};for(const[s,k]of MODULES)if(G.shards>=s&&!G.key[k]){G.key[k]=1;qNotify('MOD','module',['Your Linker resonates with the Shards. New module: '+KEY_NAME[k]+'!',KEY_DESC[k]])}}
+function grantModules(){G.key=G.key||{};for(const[s,k]of MODULES)if(G.shards>=s&&!G.key[k]){G.key[k]=1;qNotify('MOD','module',['Your Linker resonates with the Shards. New module: '+KEY_NAME[k]+'!',KEY_DESC[k]])}if(typeof extrasBeats==='function')extrasBeats()}
 
 // autosave after story steps and Signal Shards (never mid-battle)
 function autosave(){if(!G||!G.party||!G.party.length)return;if(scene==='battle'||CUT){G._as=1;return}G._as=0;if(save())toast('Saved')}

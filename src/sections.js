@@ -24,7 +24,7 @@ function secAhead(s,x,y,d){const[dx,dy]=DIRS[d],nx=x+dx,ny=y+dy;if(secTile(s,nx,
  if(!e||along<e.range[0]||along>e.range[1])return null;if(e.to==='arrival')return{arrival:true,side};const t=SWORLD[e.to];if(!t)return null;
  const k=along+(e.offset||0);return side==='right'?{s:t,x:0,y:k}:side==='left'?{s:t,x:t.tiles[0]-1,y:k}:side==='bottom'?{s:t,x:k,y:0}:{s:t,x:k,y:t.tiles[1]-1}}
 function secPrefetch(id){const s=SWORLD[id];if(!s)return;SECI[id];const g=(G&&G.gender)||'boy';for(const f of['down','up','left','right'])CHI[g+'_'+f];for(const n of s.npcs||[])CHI[n.art];for(const e of Object.values(s.edges))if(SWORLD[e.to])SECI[e.to];for(const w of s.warps)SECI[w.to]}
-function enterSection(id,at,f,quiet){const prev=G.sec&&G.sec.id;G.sec={id,x:at[0],y:at[1]};if(f)face=f;SM=null;SJ=null;SJBUF=0;SSPOT=null;secPrefetch(id);
+function enterSection(id,at,f,quiet){const prev=G.sec&&G.sec.id;G.sec={id,x:at[0],y:at[1]};if(f)face=f;SM=null;SJ=null;SJBUF=0;SSPOT=null;secPrefetch(id);secVisit(id);
  const s=SWORLD[id];if(!quiet&&(!prev||!SWORLD[prev]||SWORLD[prev].name!==s.name))SBANNER=100}
 function secWarp(w){SFADE={t:0,go:()=>{enterSection(w.to,w.at,w.face);if(w.kind==='door'||w.kind==='stairs')doorSfx()}}}
 function doorSfx(){try{if(!AC||musicMode==='off')return;const t=AC.currentTime,o=AC.createOscillator(),g=AC.createGain();o.type='square';o.frequency.setValueAtTime(220,t);o.frequency.setValueAtTime(330,t+0.05);g.gain.setValueAtTime(0.035,t);g.gain.exponentialRampToValueAtTime(0.001,t+0.12);o.connect(g).connect(AC.destination);o.start(t);o.stop(t+0.13)}catch(e){}}
@@ -76,7 +76,7 @@ function updSec(){const s=SWORLD[G.sec.id];if(SBUMP>0)SBUMP--;
    if(Math.abs(n.x+dx-G.sec.x)+Math.abs(n.y+dy-G.sec.y)===0||SSPOT.steps<=0){SSPOT=null;n.ox=n.oy=0;secTrainerTalk(n)}   // (n.home: where they walk back to afterwards)
    else{SSPOT.walk++;n.ox=dx*16*SSPOT.walk/SEC_STEP;n.oy=dy*16*SSPOT.walk/SEC_STEP;if(SSPOT.walk>=SEC_STEP){n.x+=dx;n.y+=dy;n.ox=n.oy=0;SSPOT.walk=0;SSPOT.steps--}}}drawSec();return}
  if(SFADE){SFADE.t++;if(SFADE.t===10){SFADE.go();if(!secOn()){SFADE=null;return}}if(SFADE.t>=20)SFADE=null;drawSec();return}   // a fade can hand over to a painted map (the Forge Fortress)
- if(SM){if(pressed.b)SJBUF=12;SM.t++;if(SM.t>=SEC_STEP){const a=SM.to;SM=null;if(a.s.id!==G.sec.id)enterSection(a.s.id,[a.x,a.y],null);else{G.sec.x=a.x;G.sec.y=a.y}secArrive()}
+ if(SM){if(pressed.b)SJBUF=12;SM.t++;if(SM.t>=SM.n){const a=SM.to;SM=null;if(a.s.id!==G.sec.id)enterSection(a.s.id,[a.x,a.y],null);else{G.sec.x=a.x;G.sec.y=a.y}secArrive()}
   if(!SM&&!SFADE&&!DLG&&!CH&&!SJ&&!SSPOT){if(SJBUF>0){SJBUF=0;secJump()}else secStepHeld()}drawSec();return}
  if(SJ){SJ.t++;if(SJ.t>=SEC_JUMP_T){G.sec.x=SJ.to[0];G.sec.y=SJ.to[1];SJ=null;secArrive()}drawSec();return}
  if(P_('start')){scene='menu';menuSel=0;return}
@@ -90,13 +90,13 @@ function secStepHeld(){const d=held.up?'up':held.down?'down':held.left?'left':he
  if(a&&a.arrival)return secLeaveForShip();
  if(!a||!secWalk(a.s,a.x,a.y)){bumpSfx();return}
  const lw=a.s.warps.find(w=>w.tile[0]===a.x&&w.tile[1]===a.y&&w.node);if(lw&&!gateOpen(lw.node)){bumpSfx();return say(gateMsg(lw.node))}
- SM={t:0,dx:DIRS[d][0],dy:DIRS[d][1],to:a}}
+ SM={t:0,n:secStepN(s),dx:DIRS[d][0],dy:DIRS[d][1],to:a}}
 // camera: follows the player; it only stops at an edge with nothing beyond it
 function secCam(s,px,py){const W=s.tiles[0]*16,H=s.tiles[1]*16,e=s.edges,open=k=>e[k]&&SWORLD[e[k].to];
  let cx=px+8-80,cy=py+8-76;if(!open('left'))cx=Math.max(0,cx);if(!open('right'))cx=Math.min(W-160,cx);if(!open('top'))cy=Math.max(0,cy);if(!open('bottom'))cy=Math.min(H-144,cy);
  if(W<160)cx=(W-160)/2;if(H<144)cy=(H-144)/2;return[Math.round(cx),Math.round(cy)]}
 function secDrawImg(id,ox,oy){const im=SECI[id];if(okI(im))ctx.drawImage(im,ox,oy);else{const s=SWORLD[id];rect(ox,oy,s.tiles[0]*16,s.tiles[1]*16,'#1d1433')}}
-function drawSec(){const s=SWORLD[G.sec.id],p=SM?SM.t/SEC_STEP:0,jp=SJ?SJ.t/SEC_JUMP_T:0,px=SJ?(SJ.from[0]+(SJ.to[0]-SJ.from[0])*jp)*16:G.sec.x*16+(SM?SM.dx*16*p:0),py=SJ?(SJ.from[1]+(SJ.to[1]-SJ.from[1])*jp)*16:G.sec.y*16+(SM?SM.dy*16*p:0),[cx,cy]=secCam(s,px,py),hop=SJ?Math.round(Math.sin(Math.PI*jp)*10):0;
+function drawSec(){const s=SWORLD[G.sec.id],p=SM?SM.t/SM.n:0,jp=SJ?SJ.t/SEC_JUMP_T:0,px=SJ?(SJ.from[0]+(SJ.to[0]-SJ.from[0])*jp)*16:G.sec.x*16+(SM?SM.dx*16*p:0),py=SJ?(SJ.from[1]+(SJ.to[1]-SJ.from[1])*jp)*16:G.sec.y*16+(SM?SM.dy*16*p:0),[cx,cy]=secCam(s,px,py),hop=SJ?Math.round(Math.sin(Math.PI*jp)*10):0;
  rect(0,0,160,144,s.type==='interior'||s.type==='cave'?'#000':'#1d1433');ctx.save();ctx.imageSmoothingEnabled=false;
  secDrawImg(s.id,-cx,-cy);
  for(const[k,e]of Object.entries(s.edges)){const t=SWORLD[e.to];if(!t)continue;const o=(e.offset||0)*16;
@@ -104,7 +104,7 @@ function drawSec(){const s=SWORLD[G.sec.id],p=SM?SM.t/SEC_STEP:0,jp=SJ?SJ.t/SEC_
  ctx.restore();
  const people=secNpcs(s).map(n=>({y:n.y*16+(n.oy||0),draw:()=>n.legend?secDrawLegend(n.legend,n.x*16-cx,n.y*16-cy):secDrawChar(n.art,n.face||'down',n.x*16+(n.ox||0)-cx,n.y*16+(n.oy||0)-cy,(n.ox||n.oy)&&((frame>>3)&1)?1:0)}));
  const kp=PL[G.planet]&&PL[G.planet].keeper;for(const o of s.objects||[])if(o.k==='keeper'&&kp)people.push({y:o.tile[1]*16,draw:()=>secDrawChar(kp.art,'down',o.tile[0]*16-cx,o.tile[1]*16-cy,0)});
- people.push({y:py,me:1,draw:()=>{const k=(G.gender||'boy');if(hop){ctx.fillStyle='rgba(20,10,20,0.3)';ctx.beginPath();ctx.ellipse(px-cx+8,py-cy+15,5,2,0,0,6.283);ctx.fill()}secDrawChar(k,face,px-cx,py-cy-hop,SM&&p>0.25&&p<0.75?1:0,true)}});
+ people.push({y:py,me:1,draw:()=>{const k=(G.gender||'boy');if(hop){ctx.fillStyle='rgba(20,10,20,0.3)';ctx.beginPath();ctx.ellipse(px-cx+8,py-cy+15,5,2,0,0,6.283);ctx.fill()}const hv=secHoverOn(s);if(hv)secDrawBoard(px-cx,py-cy-hop);secDrawChar(k,face,px-cx,py-cy-hop-(hv?3:0),hv?0:SM&&p>0.25&&p<0.75?1:0,true)}});
  people.sort((a,b)=>a.y-b.y).forEach(o=>o.draw());
  for(const m of s.mons||[]){if(G.monGone&&G.monGone[s.id+':'+m.x+','+m.y])continue;const im=OWI[shownMon(m.mon,0)];if(!okI(im))continue;const X=m.x*16-cx,Y=m.y*16-cy;if(X<-24||Y<-24||X>176||Y>160)continue;
   ctx.fillStyle='rgba(20,10,20,0.35)';ctx.beginPath();ctx.ellipse(X+8,Y+15,6,2,0,0,6.283);ctx.fill();ctx.save();ctx.imageSmoothingEnabled=true;ctx.drawImage(im,((frame>>4)&1)*64,0,64,64,X-2,Y-5,20,20);ctx.restore()}
