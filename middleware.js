@@ -74,7 +74,10 @@ export default async function middleware(request) {
     let given = '';
     try { given = String((await request.formData()).get('code') || ''); } catch (e) {}
     if ((await token(given)) === want) {
-      return new Response(null, { status: 303, headers: { Location: '/', 'Cache-Control': 'no-store',
+      // alienmon.com serves the website and proxies the game under /play/, so send testers back to the path they signed in from
+      let back = '/';
+      try { const ref = new URL(request.headers.get('referer') || ''); if (ref.pathname.startsWith('/play')) back = '/play/'; } catch (e) {}
+      return new Response(null, { status: 303, headers: { Location: back, 'Cache-Control': 'no-store',
         'Set-Cookie': `${COOKIE}=${want}; Path=/; Max-Age=2592000; HttpOnly; Secure; SameSite=Lax` } });
     }
     return loginPage(true);
