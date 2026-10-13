@@ -267,16 +267,12 @@ function unlocked(pi){if(UNLOCK_ALL)return true;return canLand(PL[pi].key)}
 function addMon(m){G.seen[m.id]=1;G.caught[m.id]=1;if(G.party.length<6){G.party.push(m);return'party'}G.box.push(m);return'box'}
 
 /* ---------- title / starter ---------- */
-let tsel=0,ssel=0,gsel=0;
+let tsel=0,ssel=0;
 function startIntro(){scene='intro';say(["Twenty years ago, the sky fell.","Seedpods scattered across the whole Kessler system, onto every world.","What hatched were Alienmon: refugees from a dying planet called Ystra.","I'm Dr. Vashti. Your Linker can bond with them.","Choose your first partner, then take the ship and find the rest."],()=>{scene='starter'},'vashti')}
-function updGender(){if(P_('left')||P_('right'))gsel^=1;
- if(P_('a')){G.gender=gsel?'girl':'boy';if(secEnabled()&&SWORLD['002'])secWakeUp();else startIntro();return}
- rect(0,0,160,144,'#1d1433');txt('Who are you?',32,6,'#fff');
- ['boy','girl'].forEach((g,i)=>{const x=8+i*76;if(i===gsel)box(x-2,18,72,96,'#3b2a5c','#ff8a1e');else box(x-2,18,72,96,'#2a1f44','#1b1424');dchar(g+'_big',x+2,22,64,88)});
- txt(gsel?'> Girl':'> Boy',60,124,'#ffd23f')}const STARTERS=[IDX['Sporix'],IDX['Plazmo'],IDX['Gloopa']];
+const STARTERS=[IDX['Sporix'],IDX['Plazmo'],IDX['Gloopa']];
 function updTitle(){const sv=loadSave();const opts=sv?['Continue','New game']:['New game'];
  if(P_('up')||P_('down')||P_('left')||P_('right'))tsel=(tsel+1)%opts.length;
- if(P_('a')){if(opts[tsel]==='Continue'){G=sv;if(G.arenaParty){G.party=G.arenaParty;G.box=G.arenaBox||G.box;delete G.arenaParty;delete G.arenaBox}scene=G.lastScene==='world'?'world':'planet';say('Welcome back, Linker.')}else{newGame();scene='gender';gsel=0}}
+ if(P_('a')){if(opts[tsel]==='Continue'){G=sv;G.gender='boy';if(G.arenaParty){G.party=G.arenaParty;G.box=G.arenaBox||G.box;delete G.arenaParty;delete G.arenaBox}scene=G.lastScene==='world'?'world':'planet';say('Welcome back, Linker.')}else{newGame();G.gender='boy';if(secEnabled()&&SWORLD['002'])secWakeUp();else startIntro()}}
 
  frame++;
  if(TITLEI.complete&&TITLEI.naturalWidth){ctx.save();ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';ctx.drawImage(TITLEI,0,0,160,144);ctx.restore();
@@ -396,7 +392,7 @@ function chipStop(){chipCur=null}
 const MUSIC_VOL=0.18,CHIP_VOL=0.11;let musicMode='chip';try{const v=localStorage.getItem('alienmon_music');musicMode=v==='off'?'off':v==='song'?'song':'chip'}catch(e){}
 let musicOn=musicMode!=='off';
 const BGM=new Audio(__MUSIC__),TITLEM=new Audio(__TITLEMUSIC__),BATTLEM=new Audio(__BATTLEMUSIC__);[BGM,TITLEM,BATTLEM].forEach(a=>{a.loop=true;a.volume=0;a.preload='auto'});
-const TITLE_SCENES=['title','gender','intro','starter'];let curTrack=null,lastArea='frontier';
+const TITLE_SCENES=['title','intro','starter'];let curTrack=null,lastArea='frontier';
 function areaTrack(){if(typeof storyTrack==='function'){const st=storyTrack();if(st)return st}if(scene==='battle')return'battle';if(scene==='space')return'space';if(scene==='planet')return typeof secOn==='function'&&secOn()&&SEC_FRONTIER.has(G.sec.id)?'frontier':'town';if(scene==='world')return'frontier';
  if(scene==='menu'||scene==='cut'){return PREV==='space'?'space':PREV==='world'?'frontier':PREV==='planet'?'town':lastArea}return lastArea}
 function wantTrack(){if(TITLE_SCENES.includes(scene))return TITLEM;if(scene==='battle'||(LVP&&B))return BATTLEM;return musicMode==='song'?BGM:'chip'}
@@ -823,7 +819,7 @@ function loop(){frame++;pollPad();if(G&&G.party&&!G.quests)qInit();if(G&&G.quest
  else if(DLG){ if(scene==='battle')drawBattle();else if(scene==='planet')drawPlanet();else if(scene==='space')updSpaceDraw();else if(scene==='world')drawWorld();else if(scene==='menu')drawMenuScreen();else if(scene==='intro'||scene==='title')rect(0,0,160,144,'#120c22');
   if(DLG.por)drawPortrait(DLG.por,104);box(0,104,160,40);const pg=DLG.pages[DLG.i];DLG.c=Math.min(999,(DLG.c||0)+textSpeed());let left=DLG.c;pg.forEach((l,i)=>{txt(l.slice(0,Math.max(0,left)),6,111+i*12,'#1b1424');left-=l.length});if(frame%40<24)rect(150,134,4,4,'#ff8a1e');
   if(P_('a')||P_('b')){if(DLG.c<pg.reduce((a,l)=>a+l.length,0))DLG.c=999;else{DLG.i++;DLG.c=0;if(DLG.i>=DLG.pages.length){const cb=DLG.cb;DLG=null;if(cb)cb()}}}}
- else{if(scene==='title')updTitle();else if(scene==='starter')updStarter();else if(scene==='planet'){PREV='planet';updPlanet()}else if(scene==='space'){PREV='space';updSpace()}else if(scene==='world'){PREV='world';updWorld()}else if(scene==='battle')updBattle();else if(scene==='menu')updMenu();else if(scene==='intro')rect(0,0,160,144,'#120c22');else if(scene==='cut')updCut();else if(scene==='gender')updGender()}
+ else{if(scene==='title')updTitle();else if(scene==='starter')updStarter();else if(scene==='planet'){PREV='planet';updPlanet()}else if(scene==='space'){PREV='space';updSpace()}else if(scene==='world'){PREV='world';updWorld()}else if(scene==='battle')updBattle();else if(scene==='menu')updMenu();else if(scene==='intro')rect(0,0,160,144,'#120c22');else if(scene==='cut')updCut();}
  drawToast();for(const k in pressed)pressed[k]=false;requestAnimationFrame(loop)}
 function updSpaceDraw(){const sv={...held};for(const k in held)held[k]=false;const pa=pressed.a;pressed.a=false;const ps=pressed.start;pressed.start=false;updSpace();Object.assign(held,sv);pressed.a=pa;pressed.start=ps}
 __QUESTENGINE__
@@ -848,7 +844,7 @@ function prefetch(){const c=navigator.connection;if(INLINE||(c&&(c.saveData||/2g
  for(let i=0;i<4;i++)next();
  // and have the service worker store every file (music included) so the game also plays offline
  if(navigator.serviceWorker)navigator.serviceWorker.ready.then(r=>r.active&&r.active.postMessage({type:'cache-all'}))}
-const BOOT=[TITLEI,CHI.boy_big,CHI.girl_big].filter(Boolean),bootT0=performance.now();
+const BOOT=[TITLEI,CHI.boy_big].filter(Boolean),bootT0=performance.now();
 function bootLoop(t){const ok=BOOT.filter(i=>i.complete).length;
  if(ok>=BOOT.length||t-bootT0>10000){requestAnimationFrame(loop);setTimeout(prefetch,1500);return}
  rect(0,0,160,144,'#120c22');txt('ALIENMON',48,52,'#7dff6a',8);txt('Loading...',52,72,'#ffffff',7);
