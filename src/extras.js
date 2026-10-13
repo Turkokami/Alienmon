@@ -14,7 +14,7 @@ const onSurface=()=>secOn()&&(PREV==='planet'||scene==='planet');
 function extrasBeats(){if(!G||!G.party||!G.party.length)return;G.key=G.key||{};const give=(k,lines)=>{if(G.key[k])return;G.key[k]=1;qNotify('GEAR','gear',lines)};
  if(G.shards>=1)give('hover_board',['Dr. Vashti is calling on your Linker!','"Congratulations on your first Signal Shard! I\'m sending you my old Hover Board."','You received the Hover Board! Turn it on in START > Gear. It glides twice as fast outdoors.']);
  if(G.shards>=2)give('warp_beacon',['Dr. Vashti is calling on your Linker!','"Two Shards! You\'ll be travelling a lot now, so take this Warp Beacon."','You received the Warp Beacon! It beams you to any Recovery Bay you have visited. START > Gear.']);
- for(const g of GEAR)if(g.beat)g.beat()}
+ dexBeats();eventBeats();for(const g of GEAR)if(g.beat)g.beat()}
 function gearMenu(){extrasBeats();const L=GEAR.filter(g=>g.has());
  if(!L.length)return say('No field gear yet. Gear like the Hover Board turns up as your journey goes on.');
  choose('Gear',L.map(g=>g.label()).concat(['Back']),i=>{if(L[i])L[i].use()})}
@@ -94,3 +94,45 @@ function secFollowDraw(people,s,cx,cy,p){if(!SFOL||SFOL.sec!==s.id||!followOn())
   ctx.save();ctx.imageSmoothingEnabled=true;if(typeof monFilter==='function')monFilter(m);ctx.drawImage(im,((frame>>4)&1)*64,0,64,64,X-2,Y-5-(SM?Math.round(Math.sin(t*Math.PI)):0),20,20);ctx.restore()}})}
 GEAR.push({k:'follow',has:()=>G.party.length>0,label:()=>'Follower: '+(G.opt&&G.opt.noFollow?'Off':'On'),use(){G.opt=G.opt||{};G.opt.noFollow=!G.opt.noFollow;
  say(G.opt.noFollow?'Your Alienmon will ride in its pod.':nm(G.party.find(m=>m.hp>0)||G.party[0])+' is happy to walk with you!')}});
+
+/* ---- gifts: one helper for items, pods, stardust and key items ---- */
+function giveAll(gift,L){for(const[k,n]of Object.entries(gift)){if(k==='dust'){G.dust+=n;L.push('You received '+n+' Stardust!')}
+  else if(k in GEAR_NAME){G.key[k]=1;L.push('You received the '+(KEY_NAME[k]||k)+'!'+(KEY_DESC[k]?' '+KEY_DESC[k]:''))}
+  else{if(G.pods&&k in G.pods)G.pods[k]+=n;else G.items[k]=(G.items[k]||0)+n;L.push('You received '+n+'x '+(ITEMS.concat(PODS).find(i=>i.k===k)||{n:k}).n+'!')}}return L}
+
+/* ---- Xenodex milestones: Dr. Vashti sends a reward each time your registered count passes a mark ---- */
+Object.assign(GEAR_NAME,{signal_finder:'Signal Finder',prism_charm:'Prismatic Charm',gold_dex:'Golden Xenodex'});
+Object.assign(GEAR_DESC,{signal_finder:'Beeps when a hidden item is near. START > Gear.',prism_charm:'Prismatic Alienmon appear three times as often.',gold_dex:'Proof you registered every Alienmon. Dr. Vashti is speechless.'});
+Object.assign(KEY_NAME,GEAR_NAME);Object.assign(KEY_DESC,GEAR_DESC);
+const DEX_MS=[[10,{harmonic:5}],[25,{signal_finder:1,dust:1000}],[50,{maxrevive:3,singularity:2}],[100,{prism_charm:1}],[150,{fullgel:5,dust:5000}],[200,{singularity:10}],[250,{maxrevive:5,dust:10000}],[300,{gold_dex:1}]];
+function dexBeats(){const n=Object.keys(G.caught||{}).length;G.dexms=G.dexms||0;for(const[k,gift]of DEX_MS){if(n<k||G.dexms>=k)continue;G.dexms=k;
+  qNotify('DEX','gear',giveAll(gift,['Dr. Vashti is calling on your Linker!','"'+k+' Alienmon registered in your Xenodex! Here, you\'ve earned this."']))}}
+
+/* ---- Prismatic Alienmon: rare colour variants of wild Alienmon (1 in 400; the Charm and Prismatic Night raise it) ---- */
+const PRI_FILTER='hue-rotate(160deg) saturate(1.35) brightness(1.08)';
+const priOdds=()=>(1/400)*(G.key&&G.key.prism_charm?3:1)*evMul('pri');
+function priSfx(){try{if(!AC||musicMode==='off')return;const t=AC.currentTime;[1319,1568,2093,1568,2637].forEach((f,i)=>{const o=AC.createOscillator(),g=AC.createGain();o.type='triangle';o.frequency.value=f;g.gain.setValueAtTime(0.03,t+i*0.06);g.gain.exponentialRampToValueAtTime(0.001,t+i*0.06+0.15);o.connect(g).connect(AC.destination);o.start(t+i*0.06);o.stop(t+i*0.06+0.16)})}catch(e){}}
+function priTwinkle(x,y,s){for(let i=0;i<4;i++){if((frame>>2)%4===i)continue;const a=frame/10+i*1.57,r=s*8+Math.sin(frame/7+i)*3,X=Math.round(x+s*8+Math.cos(a)*r),Y=Math.round(y+s*8+Math.sin(a)*r*0.8);
+  ctx.fillStyle=i%2?'#fff6b0':'#b8fbff';ctx.fillRect(X,Y-1,1,3);ctx.fillRect(X-1,Y,3,1)}}
+function monFilter(m){if(m&&m.pri)ctx.filter=PRI_FILTER}
+
+/* ---- weekly events (your local calendar) ---- */
+const EVENTS={3:{k:'exp',n:'Training Day',d:'Battles give 1.5x EXP all Wednesday.'},5:{k:'pri',n:'Prismatic Night',d:'Prismatic Alienmon are 4x as common on Friday night (2x by day).'},
+ 6:{k:'dust',n:'Lucky Day',d:'Every battle pays double Stardust on Saturday.'},0:{k:'swarm',n:'Swarm Sunday',d:'Rare Alienmon turn up 3x as often on Sunday.'}};
+const weekEvent=()=>EVENTS[new Date().getDay()]||null;
+function evMul(k){const e=weekEvent();if(!e||e.k!==k)return 1;return k==='exp'?1.5:k==='dust'?2:k==='pri'?(isNight()?4:2):1}
+function evSwarm(name){const e=weekEvent();if(!e||e.k!=='swarm')return 1;const r=(PROG.species[name]||{}).rarity;return r==='rare'||r==='uncommon'?3:1}
+function eventBeats(){const e=weekEvent(),day=new Date().toDateString();if(!e||G.evSeen===day)return;G.evSeen=day;qNotify('EVT','event',['Linker news: today is '+e.n+'!',e.d])}
+GEAR.push({k:'calendar',has:()=>G.party.length>0,label:()=>'Events'+(weekEvent()?': '+weekEvent().n:''),use(){const e=weekEvent();
+ say([e?'Today: '+e.n+'. '+e.d:'No event today. Check back tomorrow!','Every week: Wednesday Training Day, Friday Prismatic Night, Saturday Lucky Day, Sunday Swarm.',isNight()?'It is night: Void and Psi Alienmon are out in force.':'It is daytime: Bio and Plasma Alienmon are out in force.'])}});
+
+/* ---- Mystery Gift: enter a gift code (stored only as a hash); each code works once per save ---- */
+const GIFTS={b6dfe23fa4ee29070a5c902a1de7f028f6e823e53e508ae5994745605d8c3667:{n:'Welcome Linker pack',g:{harmonic:5,megagel:5,revive:2}},
+ '83c51c1035f7d0d9b53c0d3cae34025f88446be295c5e9ff08f03a2dc02a9921':{n:'Stardust Rain',g:{dust:2000}},
+ e6d0d77078234f38942db15e68e7e39d1fbb60f630fe04837131a8158eb26577:{n:'Prismatic Spark',mon:1}};
+GEAR.push({k:'gift',has:()=>G.party.length>0,label:()=>'Mystery Gift',use(){if(!window.crypto||!crypto.subtle)return say('Mystery Gift needs a secure connection.');
+ tradePanel('Mystery Gift','<p style="margin:0 0 8px">Enter a gift code.</p><input style="'+TA.replace('height:90px','height:auto')+';text-align:center" autocomplete="off" autocapitalize="characters" spellcheck="false"><div class="msg" style="min-height:14px;color:#ff8a1e"></div>',
+  [['Redeem',async(b,close)=>{const h=await testerHash(b.querySelector('input').value),gift=GIFTS[h],msg=b.querySelector('.msg');if(!gift){msg.textContent='That code is not valid.';return}
+    G.gifts=G.gifts||{};if(G.gifts[h]){msg.textContent='This save already received that gift.';return}G.gifts[h]=1;close();const L=['Mystery Gift: '+gift.n+'!'];
+    if(gift.g)giveAll(gift.g,L);if(gift.mon){const id=STARTERS[Math.floor(Math.random()*STARTERS.length)],m=mk(id,10,{gift:1});m.pri=1;const w=addMon(m);L.push('A Prismatic '+D[id].name+' joined '+(w==='party'?'your team':'your Storage')+'!');priSfx()}
+    autosave();say(L)},true],['Cancel',(b,close)=>close()]])}});

@@ -266,16 +266,16 @@ function arenaAfter(won){const a=ARENA;if(!a)return;healAll();const L=a.L;G.aren
 function linkerId(){if(!G.lid)G.lid=String(10000+Math.floor(Math.random()*89999));return G.lid}
 function tradeSum(s){let h=2166136261;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619)>>>0}return(h>>>0).toString(36)}
 function tradeEncode(m){const tid=linkerId()+'-'+Date.now().toString(36)+'-'+Math.floor(Math.random()*1e6).toString(36);
- const p=JSON.stringify([2,m.id,m.lv,m.xp,m.moves,m.pot,m.tm,m.tp,m.tpa,m.nick||'',m.ot||linkerId(),tid]);
+ const p=JSON.stringify([2,m.id,m.lv,m.xp,m.moves,m.pot,m.tm,m.tp,m.tpa,m.nick||'',m.ot||linkerId(),tid,m.pri?1:0]);
  const b=btoa(unescape(encodeURIComponent(p))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');return'AMON-'+b+'.'+tradeSum('alienmon:'+b)}
 function tradeDecode(code){const c=String(code||'').replace(/\s+/g,'');const mt=/^AMON-([A-Za-z0-9_-]+)\.([a-z0-9]+)$/.exec(c);if(!mt)return{err:'That does not look like an Alienmon trade code.'};
  if(tradeSum('alienmon:'+mt[1])!==mt[2])return{err:'That code is damaged or was changed. Ask your friend to copy it again.'};
  let a;try{a=JSON.parse(decodeURIComponent(escape(atob(mt[1].replace(/-/g,'+').replace(/_/g,'/')))))}catch(e){return{err:'That code could not be read.'}}
- const[v,id,lv,xp,moves,pot,tm,tp,tpa,nick,ot,tid]=a;
+ const[v,id,lv,xp,moves,pot,tm,tp,tpa,nick,ot,tid,pri]=a;
  if(v!==2||!D[id]||!(lv>=1&&lv<=100)||!Array.isArray(moves)||!moves.length||moves.length>4||moves.some(x=>!MV[x])||!Array.isArray(pot)||pot.length!==6||(PROG.species[D[id].name]||{}).rarity==='mythic')return{err:'That Alienmon could not be received.'};
  const m={id,lv,xp:Math.max(xpFor(id,lv),Math.min(xp|0,xpFor(id,Math.min(100,lv+1))-1)),moves:moves.slice(0,4),st:null,pot:pot.map(x=>Math.max(0,Math.min(31,x|0))),tm:Math.max(0,Math.min(TEMPS.length-1,tm|0)),
   tp:(tp||[0,0,0,0,0,0]).map(x=>Math.max(0,x|0)),tpa:(tpa||[0,0,0,0,0,0]).map(x=>Math.max(0,x|0)),ob:'trade',ot:String(ot||'?').slice(0,8)};
- if(nick)m.nick=String(nick).slice(0,12);m.hp=stat(m,0);resetStages(m);return{m,tid}}
+ if(nick)m.nick=String(nick).slice(0,12);if(pri)m.pri=1;m.hp=stat(m,0);resetStages(m);return{m,tid}}
 function tradePanel(title,body,buttons){const wrap=document.createElement('div');wrap.style.cssText='position:fixed;inset:0;background:#0b0716cc;display:flex;align-items:center;justify-content:center;z-index:60;padding:16px';
  const box=document.createElement('div');box.style.cssText='width:min(360px,100%);background:#1d1433;border:3px solid #5ff2ff;border-radius:12px;padding:16px;color:#e8e0ff;font:inherit;font-size:9px;line-height:1.8;text-align:center';
  box.innerHTML='<div style="color:#5ff2ff;font-size:11px;margin-bottom:8px">'+title+'</div>'+body+'<div class="tb" style="display:flex;gap:8px;justify-content:center;margin-top:10px;flex-wrap:wrap"></div>';

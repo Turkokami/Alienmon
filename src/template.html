@@ -188,9 +188,9 @@ function sprite(id){if(SPR[id])return SPR[id];const d=D[id],r=rng(hash(d.name)),
   return c}
  return SPR[id]={f:draw(false),b:draw(true)}}
 function shade(h){const n=parseInt(h.slice(1),16);const f=v=>Math.max(0,Math.floor(v*0.8));return'rgb('+f(n>>16)+','+f(n>>8&255)+','+f(n&255)+')'}
-function dspr(id,x,y,s,back){const bi=back&&ARTBI[D[id].name];if(okI(bi)){const z=16*s*1.15,o=(z-16*s)/2;ctx.save();ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';ctx.drawImage(bi,x-o,y-o,z,z);ctx.restore();return}
+function dspr(id,x,y,s,back,mon){const bi=back&&ARTBI[D[id].name];if(okI(bi)){const z=16*s*1.15,o=(z-16*s)/2;ctx.save();monFilter(mon);ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';ctx.drawImage(bi,x-o,y-o,z,z);ctx.restore();return}
  const im=ARTI[D[id].name];
- if(im&&im.complete&&im.naturalWidth){const z=16*s*1.15,o=(z-16*s)/2;ctx.save();ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';
+ if(im&&im.complete&&im.naturalWidth){const z=16*s*1.15,o=(z-16*s)/2;ctx.save();monFilter(mon);ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';
   if(back){ctx.translate(x-o+z,y-o);ctx.scale(-1,1);ctx.drawImage(im,0,0,z,z)}else ctx.drawImage(im,x-o,y-o,z,z);ctx.restore();return}
  ctx.drawImage(sprite(id)[back?'b':'f'],x,y,16*s,16*s)}
 
@@ -593,8 +593,8 @@ function aiMove(a,d){let best=a.moves[0],bv=-1;for(const mi of a.moves){const mv
   if(!mv.p){const fx=mv.fx;v=fx.heal?(a.hp<stat(a,0)*0.4?140:0):fx.s?((d.st||immune(d,fx.s)||(fx.s==='confuse'&&d.cf))?0:55):fx.self?(Object.keys(fx.self).some(k=>k!=='c'&&a.bs[k]>=2)?0:45):45;v*=0.6+R()*0.8}
   else{const dt=TR(d.id);v=mv.p*eff(mv.t,D[d.id].t)*(D[a.id].t.includes(mv.t)?1.5:1)*(0.7+R()*0.6);if(dt.k==='absorb'&&dt.v===mv.t)v=0;if(dt.k==='float'&&mv.t==='Gravity')v=0}
   if(v>bv){bv=v;best=mi}}return MV[best]}
-function startBattle(team,trainer){if(typeof SJBUF!=='undefined'){SJBUF=0;SJ=null}if(!trainer&&G.jam>0&&team.length&&team[0].lv<(G.party.find(m=>m.hp>0)||{lv:0}).lv){return}warm(ARTI,team.map(m=>D[m.id].name));warm(ARTBI,G.party.map(m=>D[m.id].name));const pi=G.party.findIndex(m=>m.hp>0);team.forEach(m=>{G.seen[m.id]=1;resetStages(m)});G.party.forEach(resetStages);
- B={from:scene==='world'?'world':'planet',team,ei:0,tr:trainer,pi,part:new Set([pi]),phase:'wait',sel:0,psel:0,podsel:0,captured:false,anim:null,trShow:!!(trainer&&trainer.art)};scene='battle';const L=trainer?[trainer.name+' wants to battle!',trainer.name+' sent out '+nm(team[0])+'!']:['A wild '+nm(team[0])+' appeared!'];
+function startBattle(team,trainer){if(!trainer)for(const m of team)if(!m.pri&&R()<priOdds())m.pri=1;if(typeof SJBUF!=='undefined'){SJBUF=0;SJ=null}if(!trainer&&G.jam>0&&team.length&&team[0].lv<(G.party.find(m=>m.hp>0)||{lv:0}).lv){return}warm(ARTI,team.map(m=>D[m.id].name));warm(ARTBI,G.party.map(m=>D[m.id].name));const pi=G.party.findIndex(m=>m.hp>0);team.forEach(m=>{G.seen[m.id]=1;resetStages(m)});G.party.forEach(resetStages);
+ B={from:scene==='world'?'world':'planet',team,ei:0,tr:trainer,pi,part:new Set([pi]),phase:'wait',sel:0,psel:0,podsel:0,captured:false,anim:null,trShow:!!(trainer&&trainer.art)};scene='battle';const L=trainer?[trainer.name+' wants to battle!',trainer.name+' sent out '+nm(team[0])+'!']:['A wild '+nm(team[0])+' appeared!'];if(!trainer&&team[0].pri){L[0]='A Prismatic '+nm(team[0])+' appeared!';L.push('Its colours shimmer like nothing you have seen!');priSfx()}
  const tw=TR(team[0].id);if(!trainer&&tw.k==='sync')L.push(nm(team[0])+"'s signal feels "+(tw.v>1?'calm and friendly.':'jumpy and skittish.'));
  L.push('Go, '+nm(G.party[pi])+'!');entry(team[0],G.party[pi],L);entry(G.party[pi],team[0],L);
  if(B.trShow){say(L[0],()=>{B.trShow=false;say(L.slice(1),()=>B.phase='menu')})}else say(L,()=>B.phase='menu')}
@@ -727,7 +727,7 @@ function drawBattle(){const e=curEnv(),p=PM(),en=EM(),pl=PL[G.planet],ar=B.tr&&(
   ctx.fillStyle='rgba(18,12,34,0.45)';ctx.beginPath();ctx.ellipse(126,48,30,6,0,0,6.283);ctx.fill();ctx.beginPath();ctx.ellipse(36,97,34,7,0,0,6.283);ctx.fill()}
  else{rect(0,0,160,104,e.bg);rect(96,44,60,8,e.g2);rect(4,92,64,10,e.g2)}
  if(B.trShow&&B.tr)dchar(B.tr.art,100,0,52,52);
- else if(B.captured){}else if(en.hp>0&&enemyAlpha()>0){ctx.save();ctx.globalAlpha=enemyAlpha();dspr(en.id,102+shakeOf(en),4,3);ctx.restore()}if(p.hp>0)dspr(p.id,10+shakeOf(p),48,3,true);
+ else if(B.captured){}else if(en.hp>0&&enemyAlpha()>0){ctx.save();ctx.globalAlpha=enemyAlpha();dspr(en.id,102+shakeOf(en),4,3,false,en);if(en.pri)priTwinkle(102,4,3);ctx.restore()}if(p.hp>0)dspr(p.id,10+shakeOf(p),48,3,true,p);
  if(!B.trShow){box(2,4,96,26);txt(nm(en).slice(0,10),6,8,'#1b1424');txt('Lv'+en.lv,70,8,'#1b1424');hpbar(6,20,64,en);stTag(en,72,19)}else{box(2,4,96,16);txt(B.tr.name.slice(0,11),6,8,'#1b1424')}if(G.caught[en.id]&&!B.tr)rect(92,9,4,4,'#ff8a1e');
  box(70,66,88,34);txt(nm(p).slice(0,10),74,70,'#1b1424');txt('Lv'+p.lv,74,80,'#3b2a5c');hpbar(110,81,44,p);txt(p.hp+'/'+stat(p,0),100,89,'#3b2a5c');stTag(p,74,89);expbar(74,96,80,p);
  if(B.phase==='menu'){box(0,104,160,40);txt('What will',6,112,'#1b1424');txt(nm(p).slice(0,10)+' do?',6,124,'#1b1424');
@@ -743,10 +743,10 @@ function drawBattle(){const e=curEnv(),p=PM(),en=EM(),pl=PL[G.planet],ar=B.tr&&(
  else if(B.phase==='party')drawParty(B.psel,B.itemUse?'Use '+B.itemUse.n+' on:':B.forced?'Who goes next?':'Swap to whom?');
  drawAnim()}
 function expbar(x,y,w,m){rect(x,y,w,3,'#1b1424');rect(x+1,y+1,Math.round((w-2)*expFrac(m)),1,'#5ff2ff')}
-function drawParty(sel,title){box(0,0,160,144);txt(title,6,6,'#1b1424');G.party.forEach((m,i)=>{const y=20+i*20;if(i===sel)rect(4,y-2,152,19,'#ffe0c0');dspr(m.id,6,y-1,1);
+function drawParty(sel,title){box(0,0,160,144);txt(title,6,6,'#1b1424');G.party.forEach((m,i)=>{const y=20+i*20;if(i===sel)rect(4,y-2,152,19,'#ffe0c0');dspr(m.id,6,y-1,1,false,m);
  txt(nm(m).slice(0,10),26,y,m.hp>0?'#1b1424':'#a99cc8',7);txt('Lv'+m.lv,120,y,'#3b2a5c',7);hpbar(26,y+10,60,m);expbar(122,y+10,30,m);txt(m.hp>0?m.hp+'/'+stat(m,0):'FAINTED',92,y+9,m.hp>0?'#3b2a5c':'#d7262e',6)})}
 function drawBox(sel,title){box(0,0,160,144);txt(title,6,5,'#1b1424');if(!G.box.length){wrap('Storage is empty. Alienmon you catch while your team is full are beamed here.',24).forEach((l,i)=>txt(l,6,24+i*10,'#3b2a5c',7));return}
- const st=Math.max(0,Math.min(sel-5,G.box.length-7));for(let i=0;i<7&&st+i<G.box.length;i++){const m=G.box[st+i],y=18+i*17;if(st+i===sel)rect(3,y-2,154,16,'#ffe0c0');dspr(m.id,5,y-2,1);
+ const st=Math.max(0,Math.min(sel-5,G.box.length-7));for(let i=0;i<7&&st+i<G.box.length;i++){const m=G.box[st+i],y=18+i*17;if(st+i===sel)rect(3,y-2,154,16,'#ffe0c0');dspr(m.id,5,y-2,1,false,m);
   txt(nm(m).slice(0,10),26,y,m.hp>0?'#1b1424':'#a99cc8',7);txt('Lv'+m.lv,120,y,'#3b2a5c',7);hpbar(26,y+9,60,m);txt(m.hp>0?m.hp+'/'+stat(m,0):'FAINTED',92,y+8,m.hp>0?'#3b2a5c':'#d7262e',6)}
  txt((sel+1)+'/'+G.box.length,124,5,'#3b2a5c',6)}
 
@@ -796,7 +796,7 @@ function drawMap(sel){rect(0,0,160,144,'#120c22');const k=160/WORLD.w,oy=16,h=WO
  txt((pi>=0?PL[pi].name+'  ':'')+'A: travel  B: back',4,oy+h+13,'#e8e0ff',6)}
 function drawMenuScreen(){if(menuMode==='quests'){qLogDraw();return}if(menuMode==='secmap'){secMapDraw();return}if(menuMode==='dex')drawDex();else if(menuMode==='party')drawParty(B?B.psel:0,'Party');else if(menuMode==='bag')bagDrawP(B.bsel);else if(menuMode==='bagpick')drawParty(B.psel,'Use '+B.item.n+' on:');
  else if(menuMode==='sum')drawSum(G.party[B.psel]);else if(menuMode==='storage')drawBox(B.bxsel,'Ship storage');else if(menuMode==='swappick')drawParty(B.psel,'Swap with:');else if(menuMode==='boxsum')drawSum(G.box[B.bxsel]);else if(menuMode==='map')drawMap(B.msel);else drawUnder()}
-function drawSum(m){const d=D[m.id],tr=TR(m.id);box(0,0,160,144);dspr(m.id,4,4,2);txt(d.name,40,6,'#1b1424');txt('Lv'+m.lv+'  '+d.t.join('/'),40,17,'#3b2a5c',6);
+function drawSum(m){const d=D[m.id],tr=TR(m.id);box(0,0,160,144);dspr(m.id,4,4,2,false,m);txt(d.name,40,6,'#1b1424');txt('Lv'+m.lv+'  '+d.t.join('/'),40,17,'#3b2a5c',6);
  txt('HP '+m.hp+'/'+stat(m,0),40,26,'#3b2a5c',6);expbar(40,34,80,m);txt(m.lv>=100?'Max level':'Next Lv: '+Math.max(0,xpFor(m.id,m.lv+1)-m.xp)+' EXP',40,39,'#3b2a5c',6);
  const ev=spOf(m.id).evolves;txt(ev&&ev.into?(/^Level/.test(ev.method||'Level')?'Evolves at Lv '+ev.level+' into '+ev.into:ev.into+': '+ev.method.replace('Resonance: ','')).slice(0,26):'Final form',4,48,ev&&ev.into?'#2e86de':'#3b2a5c',6);
  txt('★'.repeat(potStars(m))+'☆'.repeat(5-potStars(m)),104,26,'#ff8a1e',6);

@@ -211,7 +211,9 @@ function optReward(k,H){const o=optInfo(k);if(!o||!o.areas.length)return;const a
 
 /* ---------- day and night (device clock): some types prefer the dark, others the sun ---------- */
 const isNight=()=>{const h=new Date().getHours();return h>=19||h<6};
-function dayMul(name){const id=IDX[name];if(id==null)return 1;const t=D[id].t||[],n=isNight();return(n&&(t.includes('Void')||t.includes('Psi')))||(!n&&(t.includes('Bio')||t.includes('Plasma')))?2:1}
+// night: Void and Psi Alienmon come out (x3) and Bio/Plasma hide (x0.5); by day it is the other way round
+function dayMul(name){const id=IDX[name];if(id==null)return 1;const t=D[id].t||[],n=isNight(),nite=t.includes('Void')||t.includes('Psi'),day=t.includes('Bio')||t.includes('Plasma');
+ return(nite&&!day?(n?3:0.5):day&&!nite?(n?0.5:3):1)*(typeof evSwarm==='function'?evSwarm(name):1)}
 function nightTint(){if(!isNight()||(G.opt&&G.opt.noNight))return;ctx.fillStyle='rgba(16,18,60,0.22)';ctx.fillRect(0,0,160,144)}
 
 /* ---------- Xenodex: where a caught Alienmon lives ---------- */

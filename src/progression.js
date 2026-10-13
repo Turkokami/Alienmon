@@ -42,7 +42,7 @@ function progAward(e,trainer,steps,skip){const link=!G.opt||G.opt.expLink!==fals
  const alive=G.party.map((m,i)=>[m,i]).filter(([m,i])=>m.hp>0&&m!==skip);
  const recv=link?alive.map(([m,i])=>[m,i===B.pi?1:0.5]):alive.filter(([m,i])=>parts.has(i)).map(([m])=>[m,1/Math.max(1,alive.filter(([x,i])=>parts.has(i)).length)]);
  const[ti,ta]=tpGain(e);let shared=0;
- for(const[m,share]of recv){const amt=Math.max(1,Math.floor(expGain(e,m,trainer)*share));m.xp+=amt;addTP(m,ti,ta);
+ for(const[m,share]of recv){const amt=Math.max(1,Math.floor(expGain(e,m,trainer)*share*(typeof evMul==='function'?evMul('exp'):1)));m.xp+=amt;addTP(m,ti,ta);
   if(share===0.5)shared++;else steps.push({say:[nm(m)+' gained '+amt+' EXP!']})}
  if(shared)steps.push({say:['The rest of your team gained EXP through EXP Link.']});
  for(const[m]of recv)levelSteps(m,steps)}
@@ -97,7 +97,7 @@ function wildPick(key,name){const t=(wildTable(key)||[]).filter(x=>wildOK(x.name
 function keeperTeam(key,k){const t=PROG.keepers[key];if(!t)return k.team;const base=k.team.map(([id])=>id),p=PL.find(x=>x.key===key),extra=p?p.pool.e.concat(p.pool.c):[];
  return t.team_levels.map((lv,i)=>[i<base.length?base[i]:extra[i%extra.length],lv])}
 function trainerLevels(key){const a=PROG.areas[key];return a&&a.trainer_levels?a.trainer_levels:null}
-function payout(tr,e){if(!tr)return ri(2,6);const lv=Math.max(...tr.team.map(x=>x[1]));return tr.shard?60*lv:20*lv}
+function payout(tr,e){const ev=typeof evMul==='function'?evMul('dust'):1;if(!tr)return ri(2,6)*ev;const lv=Math.max(...tr.team.map(x=>x[1]));return(tr.shard?60*lv:20*lv)*ev}
 // shop stock grows with Signal Shards
 const SHOP_TIERS=[[0,['stasis','gel','cure']],[1,['tether','stun']],[2,['harmonic','megagel','ether','jammer']],[3,['revive']],[5,['fullgel']],[6,['singularity']],[8,['maxrevive']]];
 const SHOP_PRICE={ether:60,jammer:35,stasis:50,gel:15,cure:20,tether:30,stun:30,harmonic:150,megagel:45,revive:80,fullgel:120,singularity:400,maxrevive:300};
