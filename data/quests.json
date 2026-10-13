@@ -728,7 +728,15 @@
     "dust": 600
    },
    "repeatable": false,
-   "notes": "No Keeper on Glyphos."
+   "notes": "No Keeper on Glyphos.",
+   "epilogue": {
+    "art": "thorne",
+    "lines": [
+     "Far away, on Helix Station, Sola stands beside Director Thorne at a window full of stars.",
+     "Director Thorne: Begin Phase Three.",
+     "...Back on Glyphos, Zib blinks. For a split second, its big eye reflects something enormous: a giant dark eye, slowly opening."
+    ]
+   }
   },
   {
    "id": "M11",
@@ -1872,17 +1880,17 @@
    "location": {
     "area": "dustmere",
     "planet": "dustara",
-    "spot": "Explorer near trading post",
+    "spot": "Tamsin in the Cactus Gardens",
     "x": 1140,
     "y": 746,
     "map": "data/painted_maps.json#dustara"
    },
    "giver": {
-    "name": "Explorer",
+    "name": "Tamsin the Explorer",
     "art": "explorer"
    },
    "prereq": [
-    "M04"
+    "M02"
    ],
    "objectives": [
     {
@@ -1906,13 +1914,17 @@
    ],
    "dialogue": {
     "start": [
-     "Explorer: Let's test your technique: Tether Pulse, Stun Spray, then fire the beam!"
+     "Tamsin: Name's Tamsin. Explorer. (She tips a battered straw hat. Her vest is covered in patches from a hundred places.)",
+     "Tamsin: This one? (She taps a patch shaped like a question mark.) That's the world I never found.",
+     "Tamsin: Now, your field test. First rule: a capture isn't taking. It's asking.",
+     "Tamsin: Weaken it gently with a Tether Pulse, calm it with a Stun Spray, then ask with your beam."
     ],
     "progress": [
      "Keep at it, Linker. You've got this."
     ],
     "complete": [
-     "Explorer: Textbook capture! Take these. You'll need them out there."
+     "Tamsin: Textbook! See? It said yes.",
+     "Tamsin: Keep these. And if you ever find a world nobody has mapped, come and tell me about it."
     ]
    },
    "rewards": {
@@ -2627,11 +2639,47 @@
       "spot": "Docks, lighthouse, sea arch",
       "note": "tile map or future painted map; place this spot when building"
      }
+    },
+    {
+     "type": "cutscene",
+     "target": "ghost_ship_howl",
+     "count": 1,
+     "scene": "thalassa_keyart",
+     "title": "The ghost ship",
+     "lines": [
+      "You climb aboard the drifting freighter. Rows of empty cages rattle in the swell.",
+      "The howl comes from the very last cage. It isn't a ghost at all. It's a lost little Chirpod, calling and calling for anyone to answer.",
+      "You open the cage. The Chirpod hops onto your arm and won't let go."
+     ]
+    },
+    {
+     "type": "choice",
+     "target": "chirpod_choice",
+     "count": 1,
+     "options": [
+      "Take it with you",
+      "Let it fly home"
+     ],
+     "default": 0,
+     "hint": "The lost Chirpod looks up at you.",
+     "then": {
+      "if": {
+       "chirpod_choice": 1
+      },
+      "gift": {
+       "name": "Chirpod",
+       "lv": 18
+      },
+      "lines": [
+       "The Chirpod chirps happily and tucks itself under your collar."
+      ]
+     }
     }
    ],
    "dialogue": {
     "start": [
-     "Captain Marsh: Helix scattered my logbook to the wind. Three pages are still out there."
+     "Captain Marsh: Helix scattered my logbook to the wind. Three pages are still out there.",
+     "Captain Marsh: And there's a Helix freighter drifting off the docks with nobody aboard. The crews call it the ghost ship. Something in its hold howls at night."
     ],
     "progress": [
      "Keep at it, Linker. You've got this."
@@ -2649,7 +2697,15 @@
     ]
    },
    "repeatable": false,
-   "notes": "Foreshadows M13."
+   "notes": "Foreshadows M13.",
+   "epilogue": {
+    "if": {
+     "chirpod_choice": 2
+    },
+    "lines": [
+     "The Chirpod circles you three times, then flies off over the harbor, singing."
+    ]
+   }
   },
   {
    "id": "S41",
@@ -2995,7 +3051,7 @@
    "id": "S62",
    "type": "side",
    "act": "Glyphos",
-   "title": "Guardian Stones",
+   "title": "The Great Doors",
    "location": {
     "area": "glyphos_town",
     "planet": "glyphos",
@@ -3019,18 +3075,44 @@
       "planet": "glyphos",
       "spot": "Inner sanctum",
       "note": "tile map or future painted map; place this spot when building"
+     },
+     "hint": "Calm the Monolet guardians"
+    },
+    {
+     "type": "examine",
+     "target": "light_mirror",
+     "count": 3,
+     "hint": "Turn the mirrors to light the doors",
+     "location": {
+      "area": "glyphos_town",
+      "planet": "glyphos",
+      "spot": "Temple mirrors"
+     }
+    },
+    {
+     "type": "show",
+     "target": "mon:Chimelet",
+     "count": 1,
+     "hint": "Bring a Chimelet to the great doors",
+     "location": {
+      "area": "glyphos_town",
+      "planet": "glyphos",
+      "spot": "The great doors"
      }
     }
    ],
    "dialogue": {
     "start": [
-     "Ystran echo: ...prove your heart to the guardians..."
+     "Ystran echo: ...the great doors sleep... guardians of stone keep the halls...",
+     "Ystran echo: ...turn the light toward the doors... and only a Chimelet's note can wake them..."
     ],
     "progress": [
      "Keep at it, Linker. You've got this."
     ],
     "complete": [
-     "The guardian stones part, revealing an old Ystran relic."
+     "The Chimelet sings one clear note. The great doors shiver, then swing slowly open.",
+     "Behind them, the oldest mural of all: tiny crystal people waving goodbye to a sky full of seedpods.",
+     "Ystran echo: ...you listened... thank you..."
     ]
    },
    "rewards": {
@@ -4042,6 +4124,69 @@
    },
    "repeatable": true,
    "notes": ""
+  },
+  {
+   "id": "S53",
+   "type": "side",
+   "act": "Act 1",
+   "title": "Glitchbug Outbreak",
+   "location": {
+    "area": "neonis_town",
+    "planet": "neonis",
+    "spot": "Neon Boulevard"
+   },
+   "giver": {
+    "name": "Technician",
+    "art": "technician"
+   },
+   "prereq": [
+    "M09"
+   ],
+   "objectives": [
+    {
+     "type": "examine",
+     "target": "crashed_shuttle",
+     "count": 1,
+     "location": {
+      "area": "neonis_town",
+      "planet": "neonis",
+      "spot": "The crashed Helix shuttle"
+     }
+    },
+    {
+     "type": "collect",
+     "target": "stray_glitchbug",
+     "count": 4,
+     "hint": "Round up the loose Glitchbugs",
+     "location": {
+      "area": "neonis_town",
+      "planet": "neonis",
+      "spot": "Loose Glitchbugs in the Arcade District"
+     }
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Technician: A Helix shuttle just crashed in the Arcade District! Its cargo hold burst open, and now there are Glitchbugs everywhere.",
+     "Technician: They're scrambling every screen in the city. Can you round them up before the whole grid goes dark?"
+    ],
+    "progress": [
+     "Technician: Still more out there! Listen for the buzzing."
+    ],
+    "complete": [
+     "Technician: That's the last of them! The grid is back up.",
+     "Technician: Huh. That last little one won't leave your side. I think it's picked you."
+    ]
+   },
+   "rewards": {
+    "dust": 800,
+    "alienmon_gift": {
+     "name": "Glitchbug",
+     "lv": 22
+    }
+   },
+   "repeatable": false,
+   "notes": "Book 1: a crashed Helix shuttle releases Glitchbugs across Neonis; the last one joins the player."
   }
  ]
 }

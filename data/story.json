@@ -1,7 +1,22 @@
 {
  "_about": "Book canon story data (docs/SAGA_MASTER_PLAN.md). scenes: play once on entering a section; shifts: objectives inserted into existing quests (older saves move their step on); inserted: new main quests (older saves past them count them as done). Bump version when adding shifts or inserted quests.",
  "version": 2,
- "scenes": [],
+ "scenes": [
+  {
+   "id": "strand_sporeling",
+   "sec": "047",
+   "when": {
+    "active": "M06"
+   },
+   "lines": [
+    "Behind a giant mushroom, a Helix grunt kneels beside a little cage.",
+    "He flips the latch. A tiny glowing sporeling hops out and bounces away into the mist.",
+    "He looks up and sees you watching... then puts a finger to his lips.",
+    "Helix Grunt: ...Shh. You didn't see that. Name's Strand. Forget it, okay?"
+   ],
+   "art": "strand"
+  }
+ ],
  "shifts": [],
  "inserted": [],
  "keys": [

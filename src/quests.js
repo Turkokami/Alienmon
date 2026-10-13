@@ -57,7 +57,7 @@ function qMatch(q,o,type,target,info){const t=o.type;
 function qEvent(type,target,info){if(!G||!G.quests)return false;info=info||{};let hit=false;
  for(const q of qActive()){const o=qObj(q);if(!o||!qMatch(q,o,type,target,info))continue;
   if(o.type==='deliver'){const k=o.target;if(!(G.items[k]>0)){qNotify(q.id,'need',['You need a '+itemName(k)+' to hand over.']);continue}G.items[k]--}
-  if(o.type==='show'){const ty=o.target.replace(/^(type|mon):/,''),sp=o.target.startsWith('mon:');if(!G.party.some(m=>sp?D[m.id].name===ty:(D[m.id].t||[]).includes(ty))){qNotify(q.id,'need',['Bring '+(sp?'a '+ty:'a '+ty+'-type Alienmon')+' in your party.']);continue}}
+  if(o.type==='show'){const ty=o.target.replace(/^(type|mon):/,''),sp=o.target.startsWith('mon:');if(!G.party.some(m=>sp?storyIsMon(m,ty):(D[m.id].t||[]).includes(ty))){qNotify(q.id,'need',['Bring '+(sp?'a '+ty:'a '+ty+'-type Alienmon')+' in your party.']);continue}}
   hit=true;qProgress(q,1)}
  return hit}
 
@@ -194,7 +194,7 @@ function qDraw(cx,cy,S,cs){for(const e of qEnts()){const x=e.x*S-cx,y=e.y*S-cy;i
   if(e.mark){const my=Math.round(y-cs-9+Math.sin(frame/8)),done=e.k==='turnin'&&qReady(e);box(Math.round(x-4),my,9,9,e.mark==='!'||done?'#ffd23f':'#d8d0e8','#1b1424');txt(e.mark,Math.round(x-2),my+1,'#1b1424',6)}}}
 // a talk target that is already painted into the town art (or is a world NPC) only gets the marker
 function qPainted(e){if(typeof secOn==='function'&&secOn())return!!secNpcAt(SWORLD[G.sec.id],Math.floor(e.x/16),Math.floor(e.y/16));if(scene==='world')return WORLD.npcs.some(n=>Math.hypot(n.x-e.x,n.y-e.y)<30);const P=paintOf();return!!(P&&P.hot.some(h=>(h.k==='talk'||h.k==='npc'||h.k==='mon')&&Math.hypot(h.x-e.x,h.y-e.y)<40))}
-function qReady(e){const o=e.o;if(o.type==='deliver')return G.items[o.target]>0;if(o.type==='show'){const ty=o.target.replace(/^(type|mon):/,'');return G.party.some(m=>o.target.startsWith('mon:')?D[m.id].name===ty:(D[m.id].t||[]).includes(ty))}return true}
+function qReady(e){const o=e.o;if(o.type==='deliver')return G.items[o.target]>0;if(o.type==='show'){const ty=o.target.replace(/^(type|mon):/,'');return G.party.some(m=>o.target.startsWith('mon:')?storyIsMon(m,ty):(D[m.id].t||[]).includes(ty))}return true}
 
 // one-line tracker for the tracked quest
 function qTrackerText(){const id=G&&G.qtrack;if(!id||!qs(id)||qs(id).state!=='active')return null;return'▶ '+qText(QI[id])}
