@@ -14,10 +14,21 @@ async function token(code) {
   return Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2, '0')).join('');
 }
 
-function loginPage(wrong) {
+// link-preview crawlers have no tester cookie: they get the same login page, but with a 200 so every app shows the preview
+const PREVIEW_BOT = /facebookexternalhit|facebot|twitterbot|slackbot|discordbot|whatsapp|linkedinbot|telegrambot|pinterest|redditbot|applebot|skypeuripreview|embedly|vkshare|bingpreview/i;
+const SHARE_IMG = 'https://alienmon.com/img/og/game.jpg';   // 1200x630, served publicly by the alienmon.com website
+
+function loginPage(wrong, request) {
+  const bot = PREVIEW_BOT.test((request && request.headers.get('user-agent')) || '');
   const html = `<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="robots" content="noindex"><title>Alienmon · Tester login</title>
+<meta property="og:type" content="website"><meta property="og:site_name" content="Alienmon">
+<meta property="og:title" content="Play Alienmon">
+<meta property="og:description" content="Catch them. Bond with them. Save them. Play the free demo in your browser.">
+<meta property="og:url" content="https://alienmon.com/play/">
+<meta property="og:image" content="${SHARE_IMG}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="${SHARE_IMG}">
 <link rel="icon" href="/icons/icon-192.png">
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 <style>
@@ -43,7 +54,7 @@ button{margin-top:14px;width:100%;font:inherit;font-size:11px;padding:12px;borde
 <button type="submit">Enter</button>
 <div class="err">${wrong ? 'That code is not right. Try again.' : ''}</div>
 </form></body></html>`;
-  return new Response(html, { status: 401, headers: { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-store', 'X-Robots-Tag': 'noindex' } });
+  return new Response(html, { status: bot ? 200 : 401, headers: { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-store', 'X-Robots-Tag': 'noindex' } });
 }
 
 export default async function middleware(request) {
@@ -80,7 +91,7 @@ export default async function middleware(request) {
       return new Response(null, { status: 303, headers: { Location: back, 'Cache-Control': 'no-store',
         'Set-Cookie': `${COOKIE}=${want}; Path=/; Max-Age=2592000; HttpOnly; Secure; SameSite=Lax` } });
     }
-    return loginPage(true);
+    return loginPage(true, request);
   }
-  return loginPage(false);
+  return loginPage(false, request);
 }
