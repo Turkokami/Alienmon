@@ -192,7 +192,9 @@
      "Keep at it, Linker. You've got this."
     ],
     "complete": [
-     "Sola: Not bad... for a beginner. My dad would've liked you. I'm heading out to find him. Don't fall behind!"
+     "Sola: Not bad... for a beginner. My dad would've liked you.",
+     "Sola: He walked into the crater light six years ago. I was seven. Everyone says he got lost.",
+     "Sola: I'm going to find him. Don't fall behind!"
     ]
    },
    "rewards": {
@@ -202,7 +204,19 @@
     ]
    },
    "repeatable": false,
-   "notes": "Sola uses the starter strong against yours (Sporix→Plazmo, Plazmo→Gloopa, Gloopa→Sporix)."
+   "notes": "Sola uses the starter strong against yours (Sporix→Plazmo, Plazmo→Gloopa, Gloopa→Sporix).",
+   "epilogue": {
+    "art": "mom",
+    "items": {
+     "nana_badge": 1
+    },
+    "lines": [
+     "Mom catches up with you at the trading post, a little out of breath.",
+     "Mom: Before you head out... this was your Nana Wren's. She wore it every day she ran the Recovery Bay.",
+     "It's a brass cross with a glowing blue core. Stamped on the back: R.B. No. 1.",
+     "Mom: She'd want you to have it. Call home once in a while, Linker."
+    ]
+   }
   },
   {
    "id": "M04",
@@ -358,7 +372,8 @@
      "Keep at it, Linker. You've got this."
     ],
     "complete": [
-     "Hank Briggs: You've got grit, kid. Here's your first Signal Shard. And watch those Helix suits poking around my yard."
+     "Hank Briggs: You've got grit, kid. Here's your first Signal Shard. And watch those Helix suits poking around my yard.",
+     "Hank Briggs: Hold on. That badge on your jacket... R.B. No. 1. You're Wren's grandkid! Then I've got something of hers for you."
     ]
    },
    "rewards": {

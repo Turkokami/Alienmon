@@ -434,7 +434,7 @@ for sid, sec in world.items():
         taken.add(t)
         if person.get('wid'):
             wid_tile.setdefault(person['wid'], t)
-        o = {'x': t[0], 'y': t[1], 'art': person['art'], 'face': person.get('face', 'down'), 't': person['t'], **({'name': person['name']} if person.get('name') else {}), **({k: person[k] for k in ('pre', 'story', 'wid', 'after', 'until', 'legend', 'lv', 'flag', 'stay') if person.get(k)})}
+        o = {'x': t[0], 'y': t[1], 'art': person['art'], 'face': person.get('face', 'down'), 't': person['t'], **({'name': person['name']} if person.get('name') else {}), **({k: person[k] for k in ('pre', 'story', 'wid', 'after', 'until', 'legend', 'lv', 'flag', 'stay', 'keyline', 'por') if person.get(k)})}
         if person.get('trainer'):
             tr = dict(person['trainer'])
             if person.get('face'):

@@ -368,6 +368,26 @@
  ],
  "017": [
   {
+   "art": "nurse",
+   "name": "Nurse Coral",
+   "story": "heal",
+   "near": [
+    16,
+    6
+   ],
+   "t": [
+    "Nurse Coral: Welcome to the Palm Isle Recovery Hut! Let me patch your team up."
+   ],
+   "keyline": {
+    "k": "nana_badge",
+    "t": [
+     "Nurse Coral: Wait. Is that... R.B. No. 1? That's Wren's badge!",
+     "Nurse Coral: I was her apprentice at the Dustmere Recovery Bay the night the stars fell. She taught me everything.",
+     "Nurse Coral: You've got her eyes. Come here, let me patch your team up. For Wren."
+    ]
+   }
+  },
+  {
    "art": "civilian",
    "t": [
     "Islander: Palm Isle is the only green spot for miles. The Recovery Hut here has saved a lot of Linkers."

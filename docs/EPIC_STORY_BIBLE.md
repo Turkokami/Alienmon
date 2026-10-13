@@ -156,9 +156,9 @@ Teo kept exploring the crater, convinced something on the other side was still a
 
 The Zib hatchling slipped away into the canyons, waiting for the right Linker.
 
-### 1.6 The last 3 years
+### 1.6 The last six years
 
-Teo vanished into the crater light three years ago while chasing the Signal. Sola was eleven. He
+Teo vanished into the crater light six years ago while chasing the Signal. Sola was seven. He
 
 reached a floating fragment of Ystra and has survived there, bonded to a crystal Alienmon,
 
@@ -190,7 +190,7 @@ Oblivane breaking through.
 | 19 years ago | The first Linker is built; the Linker League is founded; Orra becomes the first Prime Linker |
 | 15 years ago | Thorne founds the Helix Directive |
 | 8 years ago | Elena Thorne dies in the Helix reactor accident |
-| 3 years ago | Teo walks into the crater light and vanishes |
+| 6 years ago | Teo walks into the crater light and vanishes (Sola is seven) |
 | Now | The hero turns 13; the crater pulse grows stronger; Zib's signal appears on the Dustmere bridge |
 
 ## PART 2 — The cast
@@ -251,7 +251,7 @@ Arc: her guilt surfaces gradually, and she confesses at the end of Part 4 (NEW q
 
 ### Teo Reyes, the lost father
 
-Arc: missing for three years.
+Arc: missing for six years.
 
 Clues: his trail is followed through Pyros, Glacia and Teo's Journal.
 
@@ -293,7 +293,7 @@ Each Keeper guards one tower without knowing exactly what it holds shut. Some su
 
 | # | Keeper | World | Personality | Secret or story role |
 | --- | --- | --- | --- | --- |
-| 1 | Hank Briggs | Ferrox | gruff, fatherly, junk genius | Rebuilt his tower from scrap after Helix "inspected" it. Gives your ship launch clearance |
+| 1 | Hank Briggs | Ferrox | gruff, fatherly, junk genius | Rebuilt his tower from scrap after Helix "inspected" it. Kept Nana Wren's old starship (small, round, cream, pink engines, bubble cockpit) safe in his hangar and gives it launch clearance |
 | 2 | Dr. Lysa Moor | Sporeholm | eccentric botanist | Discovers spores respond to the crater pulse, the first scientific proof the seal is straining |
 | 3 | Captain Delia Marsh | Thalassa | blunt harbor master | Her tower core is stolen by Helix; she's out for revenge, and gets it in the postgame |
 | 4 | DJ Static | Neonis | party star | Their radio show was the first to broadcast the crater pulse; Helix tried to buy the station |

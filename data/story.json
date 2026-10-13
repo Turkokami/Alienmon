@@ -1,7 +1,13 @@
 {
  "_about": "Book canon story data (docs/SAGA_MASTER_PLAN.md). scenes: play once on entering a section; shifts: objectives inserted into existing quests (older saves move their step on); inserted: new main quests (older saves past them count them as done). Bump version when adding shifts or inserted quests.",
- "version": 1,
+ "version": 2,
  "scenes": [],
  "shifts": [],
- "inserted": []
+ "inserted": [],
+ "keys": [
+  {
+   "k": "nana_badge",
+   "after": "M03"
+  }
+ ]
 }

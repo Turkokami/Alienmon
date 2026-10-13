@@ -221,7 +221,7 @@
    "kind": "dungeon",
    "open_when": "M12 done AND trainer mf7 (Helix Grunt) beaten",
    "blocked_msg": "Helix Grunt: Nobody gets in without clearance!",
-   "leads_to": "Forge Fortress interior (new map) \u2192 M13 keycard",
+   "leads_to": "Forge Fortress interior (new map) → M13 keycard",
    "after_M19": "Becomes 'Reclaimed Forge': Helix gone, Grub runs a shop inside."
   },
   {
@@ -232,7 +232,7 @@
    "open_when": "M13 done (helix_keycard)",
    "blocked_msg": "The shuttle hatch needs a Helix Keycard.",
    "leads_to": "Helix Station",
-   "note": "RENAME from 'Fortress Launch Pad'. General space flight uses your own ship (START \u2192 Ship), not this pad."
+   "note": "RENAME from 'Fortress Launch Pad'. General space flight uses your own ship (START → Ship), not this pad."
   },
   {
    "id": "shadow_tunnel",
@@ -256,8 +256,8 @@
  ],
  "ship": {
   "unlock": "M05 done",
-  "grant_text": "Hank Briggs: Vashti radioed. Your ship's launch clearance is approved. Fly safe, Linker.",
-  "rule": "START \u2192 Ship and every landing pad use your own ship. Before M05 the Ship option says: 'Your ship needs launch clearance. Win your first Signal Shard.' Landing on a planet still requires that planet's req (shards / flags) from planets.json.",
+  "grant_text": "Hank Briggs: Come see what's in my hangar. Small, round, cream-colored, pink engines, bubble cockpit. That's your Nana Wren's old starship. I've kept it safe for her grandkid all these years. Launch clearance approved. Fly safe, Linker.",
+  "rule": "START → Ship and every landing pad use your own ship. Before M05 the Ship option says: 'Your ship needs launch clearance. Win your first Signal Shard.' Landing on a planet still requires that planet's req (shards / flags) from planets.json.",
   "space_landing_req": {
    "dustara": "always",
    "ferrox": "M04",
@@ -267,7 +267,7 @@
    "glyphos": "4",
    "pyros": "4 + M10",
    "glacia": "5",
-   "helix": "M13 (keycard) \u2014 not landable by ship before",
+   "helix": "M13 (keycard) — not landable by ship before",
    "halo": "6 + M15",
    "umbra": "7",
    "starfall": "8 + M17",
@@ -279,7 +279,7 @@
   {
    "id": "sola",
    "where": "Dustmere trading post (1180,720)",
-   "visible": "M01\u2013M03",
+   "visible": "M01–M03",
    "then": "leaves Dustara"
   },
   {
@@ -298,7 +298,7 @@
    "id": "sola",
    "where": "Neonis Starport hotspot (1067,550)",
    "visible": "after M15 ONLY",
-   "fix": "Currently always visible with friendly lines; HIDE before M15 (she is with Helix in M08\u2013M14)."
+   "fix": "Currently always visible with friendly lines; HIDE before M15 (she is with Helix in M08–M14)."
   },
   {
    "id": "sola",
@@ -309,7 +309,7 @@
   {
    "id": "sola",
    "where": "Starfall planet NPC",
-   "visible": "M18\u2013M19",
+   "visible": "M18–M19",
    "dialogue": "'Thorne said my dad was an acceptable loss.' (fits)"
   },
   {
@@ -322,7 +322,7 @@
   {
    "id": "vashti",
    "where": "Dustmere lab (300,348) via planet npc",
-   "visible": "M01\u2013M07",
+   "visible": "M01–M07",
    "dialogue": "Ferrox line is right only after M03; before that: 'Go find Zib's signal on the bridge!' (M02) / 'Sola's waiting!' (M03)"
   },
   {
@@ -335,12 +335,12 @@
    "id": "dx4",
    "where": "Dustmere (400,342)",
    "visible": "always",
-   "dialogue": "M02 giver \u2192 after M02 S02 giver"
+   "dialogue": "M02 giver → after M02 S02 giver"
   },
   {
    "id": "grub",
-   "where": "Molten Frontier near the fortress (1000,300) \u2014 NEW spot",
-   "visible": "M12\u2013M13",
+   "where": "Molten Frontier near the fortress (1000,300) — NEW spot",
+   "visible": "M12–M13",
    "role": "M13 giver"
   },
   {
@@ -365,7 +365,7 @@
    "id": "mf13 Strand",
    "where": "Molten Frontier (1398,698)",
    "visible": "always",
-   "dialogue": "before M17: current line; M17\u2013M18: M18 giver; after M19: 'You did it. The crater's quiet.'"
+   "dialogue": "before M17: current line; M17–M18: M18 giver; after M19: 'You did it. The crater's quiet.'"
   },
   {
    "id": "mf8 Technician",
@@ -395,7 +395,7 @@
  "data_fixes": [
   {
    "file": "planets.json",
-   "fix": "Keeper team levels \u2192 match PROGRESSION (aces: Hank 12, Moor 17, Marsh 21, Static 25, Basalt 31, Ingrid 35, Twins 41, Kade 45; bosses Vex 36, Thorne 52, Orra 60)."
+   "fix": "Keeper team levels → match PROGRESSION (aces: Hank 12, Moor 17, Marsh 21, Static 25, Basalt 31, Ingrid 35, Twins 41, Kade 45; bosses Vex 36, Thorne 52, Orra 60)."
   },
   {
    "file": "planets.json",
@@ -403,7 +403,7 @@
   },
   {
    "file": "planets.json",
-   "fix": "pool.r signature Alienmon gated: appear only after their owner is beaten \u2014 Forgemaul (ferrox), Mycora (sporeholm), Anchorath (thalassa), Bassquake (neonis), Basaltor (pyros), Glaciryx (glacia), Mirrix/Reflix (halo), Horizar (umbra); Vexhydra/Bronnix/Thornvoid only after M19; Quorum signatures (Facetrix, Encorex, Pyrelyth, Citadrake, Firstlight) after champ; Lumivex is a gift after S98; Oblivite postgame."
+   "fix": "pool.r signature Alienmon gated: appear only after their owner is beaten — Forgemaul (ferrox), Mycora (sporeholm), Anchorath (thalassa), Bassquake (neonis), Basaltor (pyros), Glaciryx (glacia), Mirrix/Reflix (halo), Horizar (umbra); Vexhydra/Bronnix/Thornvoid only after M19; Quorum signatures (Facetrix, Encorex, Pyrelyth, Citadrake, Firstlight) after champ; Lumivex is a gift after S98; Oblivite postgame."
   },
   {
    "file": "planets.json",

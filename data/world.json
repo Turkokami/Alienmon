@@ -2949,6 +2949,25 @@
    "pkey": "dustara",
    "npcs": [
     {
+     "x": 19,
+     "y": 6,
+     "art": "nurse",
+     "face": "down",
+     "t": [
+      "Nurse Coral: Welcome to the Palm Isle Recovery Hut! Let me patch your team up."
+     ],
+     "name": "Nurse Coral",
+     "story": "heal",
+     "keyline": {
+      "k": "nana_badge",
+      "t": [
+       "Nurse Coral: Wait. Is that... R.B. No. 1? That's Wren's badge!",
+       "Nurse Coral: I was her apprentice at the Dustmere Recovery Bay the night the stars fell. She taught me everything.",
+       "Nurse Coral: You've got her eyes. Come here, let me patch your team up. For Wren."
+      ]
+     }
+    },
+    {
      "x": 12,
      "y": 10,
      "art": "civilian",
@@ -2958,8 +2977,8 @@
      ]
     },
     {
-     "x": 19,
-     "y": 6,
+     "x": 6,
+     "y": 10,
      "art": "sporefolk",
      "face": "down",
      "t": [
@@ -2978,8 +2997,8 @@
      "wid": "mf3"
     },
     {
-     "x": 6,
-     "y": 10,
+     "x": 10,
+     "y": 11,
      "art": "pilgrim",
      "face": "up",
      "t": [
@@ -2995,13 +3014,13 @@
    ],
    "mons": [
     {
-     "x": 10,
-     "y": 5,
+     "x": 21,
+     "y": 1,
      "mon": "Kilnback"
     },
     {
-     "x": 22,
-     "y": 2,
+     "x": 2,
+     "y": 6,
      "mon": "Squawktone"
     }
    ]

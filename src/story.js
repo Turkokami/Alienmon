@@ -90,5 +90,6 @@ function storyTrack(){if(scene==='planet'&&secOn()&&['049','162'].includes(G.sec
 function storyMigrate(){const v=STORY.version||1;if((G.storyv||0)>=v)return;
  if(G.party.length&&(G.storyv||0)<v){for(const sh of STORY.shifts||[]){if((G.storyv||0)>=sh.v)continue;const s=qs(sh.q);if(s&&s.state==='active'&&s.step>=sh.at)s.step+=sh.n}
   for(const nq of STORY.inserted||[]){if((G.storyv||0)>=nq.v)continue;const s=qs(nq.q),nx=qs(nq.next);if(s&&nx&&nx.state!=='locked'){s.state='done';s.step=QI[nq.q].objectives.length}}}
+ for(const k of STORY.keys||[])if(mDone(k.after)&&!(G.key&&G.key[k.k])){G.key=G.key||{};G.key[k.k]=1}   // story key items older saves missed
  G.storyv=v}
 function storyCutLines(o){const L=(o.lines||QCUT[o.target]||[]).slice();for(const[f,ls]of Object.entries(o.lines_if||{}))if(G.flags[f])L.push(...ls);return L}
