@@ -216,8 +216,8 @@ function qLogDraw(){const L=qList(B.qtab);rect(0,0,160,144,'#120c22');
  L.slice(top,top+7).forEach((q,j)=>{const i=top+j,s=qs(q.id).state,mark=s==='done'?'✓':s==='available'?'!':G.qtrack===q.id?'▶':' ';
   txt((i===B.qsel?'>':' ')+mark+q.title.slice(0,23),6,22+j*9,s==='done'?'#8a7fa8':'#1b1424',6)});
  const q=L[B.qsel];box(2,90,156,52,'#1b1424','#ffd23f');if(!q)return;const s=qs(q.id).state;
- txt(q.title.slice(0,26),6,94,'#ffd23f',6);txt((q.act?q.act+' · ':'')+qWhere(q),6,103,'#a99cc8',6);
+ const ht=G.qtrack===q.id?'A: untrack':'A: track',tl=s==='active'?Math.floor((152-ht.length*6-8)/6):25;txt(q.title.length>tl?q.title.slice(0,tl-1)+'…':q.title,6,94,'#ffd23f',6);txt((q.act?q.act+' · ':'')+qWhere(q),6,103,'#a99cc8',6);
  if(s==='active'){const w=wrap(qText(q),28);txt(w[0]||'',6,112,'#ffffff',6);if(w[1])txt(w[1],6,120,'#ffffff',6)}
  else txt(s==='done'?'Complete!':'Talk to '+((q.giver&&q.giver.name)||'them').slice(0,20)+' to start.',6,112,'#ffffff',6);
  const rt=qRewardText(q.rewards||{});if(rt)txt(('Reward: '+rt).slice(0,30),6,130,'#7dff6a',6);
- if(s==='active')txt(G.qtrack===q.id?'A: untrack':'A: track',112,94,'#5ff2ff',6)}
+ if(s==='active')txt(ht,154-ht.length*6,94,'#5ff2ff',6)}
