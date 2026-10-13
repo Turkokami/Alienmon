@@ -116,7 +116,7 @@ function nickPrompt(m,cb){choose('Give '+D[m.id].name+' a nickname?',['Yes','No'
 function nickMenu(){choose('Nickname which Alienmon?',G.party.map(m=>nm(m)).concat(['Back']),i=>{if(i>=G.party.length)return bayMenu();nickPrompt(G.party[i],nickMenu)},bayMenu)}
 
 // key items: their own Bag entries; can't be used up, sold or thrown away
-const KEY_DESC={helix_keycard:'Opens the Fortress Shuttle Pad to Helix Station.',ystra_shardlet:'A sliver of Ystra that hums near the Seedmother.',seedmother_seed:'A seed from the Seedmother herself.',
+const KEY_DESC={helix_keycard:'Opens the Fortress Shuttle Pad to Helix Station.',ystra_shardlet:'A sliver of Ystra that hums near the Heartroot.',seedmother_seed:'A seed from the new world-tree of the Seedmother.',
  grapple_line:'Linker module: reach cliff ledges and shortcuts.',hydro_skiff:'Linker module: cross deep water.',heat_shield:'Linker module: walk lava-crossing shortcuts.',
  lumen_beacon:'Linker module: light dark caves.',gravity_lift:'Linker module: ride floating platforms.'};
 const KEY_NAME={helix_keycard:'Helix Keycard',ystra_shardlet:'Ystra Shardlet',seedmother_seed:'Seedmother Seed',grapple_line:'Grapple Line',hydro_skiff:'Hydro-skiff',heat_shield:'Heat Shield',lumen_beacon:'Lumen Beacon',gravity_lift:'Gravity Lift'};

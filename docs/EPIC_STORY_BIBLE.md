@@ -1,5 +1,7 @@
 # ALIENMON — The Epic Story Bible
 
+> **Seedmother revision (canon, wins over everything else):** the Seedmother split herself into the seeds. She is not waiting anywhere; she is the Alienmon. Only the Heartroot is left on barren Ystra. Whoever reunites all her children lets her grow again. See `docs/SEEDMOTHER_REVISION.md`.
+
 > **Story canon:** the Alienmon novels (Books 1-5, planned in `docs/SAGA_MASTER_PLAN.md`) are now the story canon. The books win on story, characters and dialogue; the game data wins on Alienmon types, stats and moves. Every change made to match them is listed in `docs/BOOK_SYNC_CHANGELOG.md`.
 
 ### Batch 1: The Kessler Signal
@@ -64,9 +66,9 @@ side of a fold in space. Its people, the Ystrans, were tall, gentle crystal-skin
 
 conquer their world; they listened to it.
 
-The Seedmother is Ystra's living heart: a world-tree fused with crystal that dreams new life into
+The Seedmother was Ystra's living heart: a world-tree fused with crystal that dreamed new life into being. As Oblivane devoured Ystra, she broke her whole self apart into thousands of seedpods. Every Alienmon species carries a piece of her: she is the Alienmon. On barren Ystra only the Heartroot remains, one last living root in the empty crater where her tree stood, guarded by the Three Pillars.
 
-being. Every Alienmon species began as one of her dreams.
+The Legend of the Unifier: "She is scattered so she may live. Whoever reunites all her children will let the Seedmother grow again, and her world with her." Reuniting means bonding, not caging: every Alienmon gives one note of her song and stays itself. It can't happen while Oblivane still hungers.
 
 The Three Pillars are her guardians:
 
@@ -98,7 +100,7 @@ now sounds like hunger. The Seedmother never stopped trying to reach it.
 
 As Oblivane consumed Ystra, the Ystrans made two last choices:
 
-1. The Seedpods. The Seedmother poured her strength into thousands of crystal seedpods, each
+1. The Seedpods. The Seedmother broke herself apart into thousands of crystal seedpods, each
 
 carrying sleeping Alienmon. They were launched through the fold toward a quiet star the Ystrans
 
@@ -219,9 +221,7 @@ Arc: Zib starts as comic relief: curious, glitchy, nervous.
 
 Each Shard unlocks a "memory flash": short scenes of Ystra seen through Zib's eye.
 
-Part 7: Zib's message plays. The Seedmother is still alive, and Oblivane is not a monster but her
-
-lost sibling.
+Part 7: Zib's message plays: "The Seedmother is not gone. She is in every one of you. Heal the one who hungers, then bring her children home together, and she will grow again." Oblivane is not a monster but her lost sibling.
 
 ### Sola Reyes, the rival
 
@@ -753,7 +753,7 @@ In its last light, Teo steps through with Lumivex. Sola runs to him.
 
 Boss: Admin Vex rematch, Director Thorne.
 
-Reveal: the seal can be healed, but only from Ystra's side. Teo explains the Seedmother is fading.
+Reveal: the seal can be healed, but only from Ystra's side. Teo explains the Heartroot, the last piece of her on Ystra, is dying.
 
 ### CHAPTER 17 — "Homecoming" (49–50 h, NEW M19b)
 
@@ -823,7 +823,7 @@ Gather the Ystran echoes into the Choir.
 
 Oblivane cannot be beaten. After a few turns the player chooses LISTEN, the Choir sings, and Oblivane is calmed and released, not caught. An optional capture exists only after the credits.
 
-The Seedmother is renewed. The choice: rebuild Ystra together, keep Kessler as a shared home, or Both (canon, the highlighted default).
+The Reunion (required ending): at the Heartroot's crater, the call goes back through the Vortex and every Keeper, trainer and wild Alienmon comes through. Every Alienmon sings one note; the Heartroot drinks the song and the Seedmother grows again as a world-tree, holding Oblivane in her branches. The choice is her children's: rebuild Ystra, keep Kessler as a shared home, or Both (canon, the highlighted default). Completing the Xenodex is a bonus (the Unifier epilogue), never required for the ending.
 
 Zib's choice: the Seedmother tells Zib his mission is done; he chooses the hero. "A scout's job is to find a home. You found one."
 
@@ -943,13 +943,13 @@ SOLA: I'm with you. Let's finish this, together.
 
 Eight Shards orbit Zib. Its eye projects a soft hologram of the Seedmother.
 
-SEEDMOTHER: If you hear this, my scout found a true listener.
+ZIB'S MESSAGE: If you hear this, my scout found a true listener.
 
-SEEDMOTHER: The shadow that ate our sky was my sibling, our moon-heart, who took in too much
+ZIB'S MESSAGE: The shadow that ate our sky was my sibling, our moon-heart, who took in too much
 
 grief to bear. It is not evil. It is starving and alone.
 
-SEEDMOTHER: The seal will not hold forever. Heal it, little ones. Heal it from home.
+ZIB'S MESSAGE: The Seedmother is not gone. She is in every one of you. Heal the one who hungers, then bring her children home together, and she will grow again.
 
 ### S7 · Thorne at the Rift (M19)
 

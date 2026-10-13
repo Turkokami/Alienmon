@@ -15,7 +15,7 @@ function extrasBeats(){if(!G||!G.party||!G.party.length)return;G.key=G.key||{};c
  if(G.shards>=1)give('hover_board',['Dr. Vashti is calling on your Linker!','"Congratulations on your first Signal Shard! I\'m sending you my old Hover Board."','You received the Hover Board! Turn it on in START > Gear. It glides twice as fast outdoors.']);
  if(G.shards>=2)give('warp_beacon',['Dr. Vashti is calling on your Linker!','"Two Shards! You\'ll be travelling a lot now, so take this Warp Beacon."','You received the Warp Beacon! It beams you to any Recovery Bay you have visited. START > Gear.']);
  if(G.shards>=3)give('signal_finder',['Dr. Vashti is calling on your Linker!','"Three Shards! Take my Signal Finder. Plenty of Linkers drop things and never find them again."','You received the Signal Finder! Use it in START > Gear to find hidden items.']);
- dexBeats();eventBeats();for(const g of GEAR)if(g.beat)g.beat()}
+ dexBeats();eventBeats();if(typeof heartBeats==='function')heartBeats();for(const g of GEAR)if(g.beat)g.beat()}
 function gearMenu(){extrasBeats();const L=GEAR.filter(g=>g.has());
  if(!L.length)return say('No field gear yet. Gear like the Hover Board turns up as your journey goes on.');
  choose('Gear',L.map(g=>g.label()).concat(['Back']),i=>{if(L[i])L[i].use()})}
@@ -36,7 +36,7 @@ GEAR.push({k:'warp_beacon',has:()=>!!G.key.warp_beacon,label:()=>'Warp Beacon',u
 
 /* ---- Hover Board: twice the walking pace outdoors ---- */
 const secHoverOn=s=>!!(G.hover&&G.key&&G.key.hover_board&&s&&secOutdoors(s));
-const secStepN=s=>secHoverOn(s)?4:SEC_STEP;
+const secStepN=s=>secHoverOn(s)?SEC_STEP/2:SEC_STEP;
 GEAR.push({k:'hover_board',has:()=>!!G.key.hover_board,label:()=>'Hover Board: '+(G.hover?'On':'Off'),use(){G.hover=!G.hover;
  say(G.hover?'You hopped on the Hover Board!'+(secOn()&&!secOutdoors(SWORLD[G.sec.id])?' (It works once you are back outdoors.)':''):'You put the Hover Board away.')}});
 function secDrawBoard(x,y){const b=Math.round(Math.sin(frame/8));ctx.fillStyle='rgba(20,10,20,0.3)';ctx.beginPath();ctx.ellipse(x+8,y+16,7,2,0,0,6.283);ctx.fill();
@@ -86,15 +86,15 @@ function bagDrawP(sel){const PK=bagPockets(),p=PK[B.pk||0];drawBag(p.list,sel,'<
 
 /* ---- your lead Alienmon follows one tile behind you ---- */
 let SFOL=null;
-const followOn=()=>!(G.opt&&G.opt.noFollow)&&G.party.some(m=>m.hp>0);
+const followOn=()=>!!(G.opt&&G.opt.follow)&&G.party.some(m=>m.hp>0);
 function secFollowStep(x,y){if(!G.sec)return;SFOL=SFOL&&SFOL.sec===G.sec.id?{sec:G.sec.id,from:SFOL.at,at:[x,y]}:{sec:G.sec.id,from:[x,y],at:[x,y]}}
 function secFollowDraw(people,s,cx,cy,p){if(!SFOL||SFOL.sec!==s.id||!followOn())return;const m=G.party.find(m=>m.hp>0),name=D[m.id].name,im=OWI[name];if(!okI(im))return;
  const t=SM?p:1,fx=(SFOL.from[0]+(SFOL.at[0]-SFOL.from[0])*t)*16,fy=(SFOL.from[1]+(SFOL.at[1]-SFOL.from[1])*t)*16;
  if(!SM&&SFOL.at[0]===G.sec.x&&SFOL.at[1]===G.sec.y)return;if('~^'.includes(secTile(s,SFOL.at[0],SFOL.at[1])||'#'))return;
  people.push({y:fy-1,draw:()=>{const X=Math.round(fx-cx),Y=Math.round(fy-cy);ctx.fillStyle='rgba(20,10,20,0.35)';ctx.beginPath();ctx.ellipse(X+8,Y+15,6,2,0,0,6.283);ctx.fill();
   ctx.save();ctx.imageSmoothingEnabled=true;if(typeof monFilter==='function')monFilter(m);ctx.drawImage(im,((frame>>4)&1)*64,0,64,64,X-2,Y-5-(SM?Math.round(Math.sin(t*Math.PI)):0),20,20);ctx.restore()}})}
-GEAR.push({k:'follow',has:()=>G.party.length>0,label:()=>'Follower: '+(G.opt&&G.opt.noFollow?'Off':'On'),use(){G.opt=G.opt||{};G.opt.noFollow=!G.opt.noFollow;
- say(G.opt.noFollow?'Your Alienmon will ride in its pod.':nm(G.party.find(m=>m.hp>0)||G.party[0])+' is happy to walk with you!')}});
+GEAR.push({k:'follow',has:()=>G.party.length>0,label:()=>'Buddy walk: '+(G.opt&&G.opt.follow?'On':'Off'),use(){G.opt=G.opt||{};G.opt.follow=!G.opt.follow;
+ say(!G.opt.follow?'Your Alienmon will ride in its pod.':nm(G.party.find(m=>m.hp>0)||G.party[0])+' is happy to walk with you!')}});
 
 /* ---- gifts: one helper for items, pods, stardust and key items ---- */
 function giveAll(gift,L){for(const[k,n]of Object.entries(gift)){if(k==='dust'){G.dust+=n;L.push('You received '+n+' Stardust!')}
@@ -256,3 +256,11 @@ function secFluidPockets(s){const main=secMain(s),W=s.tiles[0],H=s.tiles[1],seen
 const RENAMES=__RENAMES__;
 function renameMigrate(g){if(!g)return g;g.gender='boy';   // the player is always Rook
  for(const m of(g.party||[]).concat(g.box||[],g.nurse?[g.nurse.m]:[]))if(m&&m.nick&&RENAMES[m.nick])m.nick=RENAMES[m.nick];return g}
+
+/* ---- map seams: townsfolk, legends and roaming Alienmon in the section next door are drawn too ---- */
+function secNeighbours(s,people,cx,cy){for(const[k,e]of Object.entries(s.edges)){const t=SWORLD[e.to];if(!t)continue;const o=(e.offset||0)*16,
+  ox=k==='right'?s.tiles[0]*16:k==='left'?-t.tiles[0]*16:-o,oy=k==='bottom'?s.tiles[1]*16:k==='top'?-t.tiles[1]*16:-o;
+ for(const n of secNpcs(t)){const X=n.x*16+ox-cx,Y=n.y*16+oy-cy;if(X<-32||Y<-40||X>176||Y>170)continue;
+  people.push({y:n.y*16+oy,draw:()=>n.legend?secDrawLegend(n.legend,X,Y):secDrawChar(n.art,n.face||'down',X,Y,0)})}
+ for(const m of t.mons||[]){if(G.monGone&&G.monGone[t.id+':'+m.x+','+m.y])continue;const im=OWI[shownMon(m.mon,0)];const X=m.x*16+ox-cx,Y=m.y*16+oy-cy;if(!okI(im)||X<-24||Y<-24||X>176||Y>160)continue;
+  people.push({y:m.y*16+oy,draw:()=>{ctx.fillStyle='rgba(20,10,20,0.35)';ctx.beginPath();ctx.ellipse(X+8,Y+15,6,2,0,0,6.283);ctx.fill();ctx.save();ctx.imageSmoothingEnabled=true;ctx.drawImage(im,((frame>>4)&1)*64,0,64,64,X-2,Y-5,20,20);ctx.restore()}})}}}

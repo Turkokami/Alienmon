@@ -14286,7 +14286,10 @@
      ],
      "k": "sign",
      "t": [
-      "CONTAINMENT WING 1F. Captured Alienmon are station property. Feeding is optional."
+      "PROJECT UNITY LOG, Director Thorne:",
+      "\"The Ystran prophecy says whoever reunites all her children lets the Seedmother grow again.\"",
+      "\"So we will hold all of them. One of every species, in one vault, carried through the Rift.\"",
+      "\"Whoever holds every species controls her power to regrow life. Then no accident is ever final.\""
      ]
     },
     {
@@ -19387,6 +19390,18 @@
    "pkey": "ystra",
    "npcs": [
     {
+     "x": 17,
+     "y": 11,
+     "art": "ystran",
+     "face": "down",
+     "t": [
+      "Ystran echo: I remember this place green. Look, the first moss is back on the Arrival Fragment!"
+     ],
+     "name": "Returning echo 50",
+     "after": "P01",
+     "flag": "bloom_50"
+    },
+    {
      "x": 10,
      "y": 4,
      "art": "ystran",
@@ -19398,8 +19413,8 @@
      "name": "Ystran echo"
     },
     {
-     "x": 17,
-     "y": 11,
+     "x": 5,
+     "y": 6,
      "art": "explorer",
      "face": "down",
      "t": [
@@ -19408,8 +19423,8 @@
      ]
     },
     {
-     "x": 5,
-     "y": 6,
+     "x": 11,
+     "y": 12,
      "art": "pilgrim",
      "face": "down",
      "t": [
@@ -19420,13 +19435,13 @@
    ],
    "mons": [
     {
-     "x": 10,
-     "y": 12,
+     "x": 21,
+     "y": 5,
      "mon": "Riftwalker"
     },
     {
-     "x": 21,
-     "y": 5,
+     "x": 15,
+     "y": 2,
      "mon": "Fractalith"
     }
    ]
@@ -19509,6 +19524,18 @@
     {
      "x": 9,
      "y": 7,
+     "art": "ystran",
+     "face": "down",
+     "t": [
+      "Ystran echo: The floating islands are putting down roots again. Terravox hums when it walks."
+     ],
+     "name": "Returning echo 100",
+     "after": "P01",
+     "flag": "bloom_100"
+    },
+    {
+     "x": 3,
+     "y": 4,
      "art": "explorer",
      "face": "down",
      "t": [
@@ -19517,8 +19544,8 @@
      ]
     },
     {
-     "x": 3,
-     "y": 4,
+     "x": 13,
+     "y": 7,
      "art": "ystran",
      "face": "down",
      "t": [
@@ -19527,29 +19554,29 @@
      ]
     },
     {
-     "x": 13,
-     "y": 7,
-     "art": "explorer",
-     "face": "down",
-     "t": [],
-     "id": "sec154_tr3",
-     "trainer": {
-      "cls": "Rift Walker",
-      "route": 1,
-      "name": "Rook"
-     }
-    },
-    {
      "x": 17,
      "y": 10,
-     "art": "pilgrim",
+     "art": "explorer",
      "face": "up",
      "t": [],
      "id": "sec154_tr4",
      "trainer": {
-      "cls": "Seeker",
+      "cls": "Rift Walker",
       "route": 1,
       "name": "Zora"
+     }
+    },
+    {
+     "x": 7,
+     "y": 5,
+     "art": "pilgrim",
+     "face": "down",
+     "t": [],
+     "id": "sec154_tr5",
+     "trainer": {
+      "cls": "Seeker",
+      "route": 1,
+      "name": "Lio"
      }
     }
    ],
@@ -19734,8 +19761,8 @@
     },
     {
      "tile": [
-      6,
-      11
+      4,
+      12
      ],
      "k": "stash",
      "item": "dust",
@@ -19781,13 +19808,25 @@
      "art": "ystran",
      "face": "down",
      "t": [
+      "Ystran echo: Coral is growing in the Drowned Seas. Aquelion says the dreams are happier."
+     ],
+     "name": "Returning echo 150",
+     "after": "P01",
+     "flag": "bloom_150"
+    },
+    {
+     "x": 3,
+     "y": 9,
+     "art": "ystran",
+     "face": "down",
+     "t": [
       "Ystran echo: These were our seas. Aquelion sang over them... now the water drowns the old roads.",
       "Ystran echo: ...the coral still grows. Grief is not the same as ending."
      ]
     },
     {
-     "x": 3,
-     "y": 9,
+     "x": 17,
+     "y": 11,
      "art": "explorer",
      "face": "down",
      "t": [
@@ -19796,29 +19835,29 @@
      ]
     },
     {
-     "x": 17,
-     "y": 11,
-     "art": "ystran",
-     "face": "up",
-     "t": [],
-     "id": "sec156_tr3",
-     "trainer": {
-      "cls": "Ystran Echo",
-      "route": 1,
-      "name": "Taro"
-     }
-    },
-    {
      "x": 4,
      "y": 9,
-     "art": "explorer",
+     "art": "ystran",
      "face": "up",
      "t": [],
      "id": "sec156_tr4",
      "trainer": {
-      "cls": "Rift Walker",
+      "cls": "Ystran Echo",
       "route": 1,
       "name": "Juno"
+     }
+    },
+    {
+     "x": 12,
+     "y": 10,
+     "art": "explorer",
+     "face": "right",
+     "t": [],
+     "id": "sec156_tr5",
+     "trainer": {
+      "cls": "Rift Walker",
+      "route": 1,
+      "name": "Dex"
      }
     }
    ],
@@ -19829,7 +19868,7 @@
      "mon": "Pulsarion"
     },
     {
-     "x": 12,
+     "x": 6,
      "y": 11,
      "mon": "Riftwalker"
     }
@@ -20059,7 +20098,7 @@
     },
     {
      "tile": [
-      13,
+      14,
       5
      ],
      "k": "stash",
@@ -20103,6 +20142,18 @@
     {
      "x": 1,
      "y": 8,
+     "art": "ystran",
+     "face": "down",
+     "t": [
+      "Ystran echo: The Choir chamber sings on its own now. Every note is one of her children."
+     ],
+     "name": "Returning echo 200",
+     "after": "P01",
+     "flag": "bloom_200"
+    },
+    {
+     "x": 8,
+     "y": 5,
      "art": "explorer",
      "face": "down",
      "t": [
@@ -20112,15 +20163,15 @@
     },
     {
      "x": 8,
-     "y": 5,
+     "y": 6,
      "art": "pilgrim",
      "face": "down",
      "t": [],
-     "id": "sec158_tr3",
+     "id": "sec158_tr4",
      "trainer": {
       "cls": "Seeker",
       "route": 1,
-      "name": "Fenn"
+      "name": "Kai"
      }
     }
    ]
@@ -20375,6 +20426,18 @@
     {
      "x": 17,
      "y": 5,
+     "art": "ystran",
+     "face": "down",
+     "t": [
+      "Ystran echo: The blight is gone. The little shadows sleep in the new leaves."
+     ],
+     "name": "Returning echo 250",
+     "after": "P01",
+     "flag": "bloom_250"
+    },
+    {
+     "x": 5,
+     "y": 5,
      "art": "pilgrim",
      "face": "down",
      "t": [
@@ -20383,8 +20446,8 @@
      ]
     },
     {
-     "x": 5,
-     "y": 5,
+     "x": 12,
+     "y": 3,
      "art": "explorer",
      "face": "down",
      "t": [
@@ -20392,29 +20455,29 @@
      ]
     },
     {
-     "x": 12,
-     "y": 3,
-     "art": "explorer",
-     "face": "down",
-     "t": [],
-     "id": "sec160_tr3",
-     "trainer": {
-      "cls": "Rift Walker",
-      "route": 1,
-      "name": "Lio"
-     }
-    },
-    {
      "x": 14,
      "y": 11,
-     "art": "pilgrim",
+     "art": "explorer",
      "face": "up",
      "t": [],
      "id": "sec160_tr4",
      "trainer": {
-      "cls": "Seeker",
+      "cls": "Rift Walker",
       "route": 1,
       "name": "Ida"
+     }
+    },
+    {
+     "x": 11,
+     "y": 6,
+     "art": "pilgrim",
+     "face": "down",
+     "t": [],
+     "id": "sec160_tr5",
+     "trainer": {
+      "cls": "Seeker",
+      "route": 1,
+      "name": "Tamsin"
      }
     }
    ],
@@ -20503,7 +20566,7 @@
      "face": "down",
      "t": [
       "Ystran echo: ...the trees remember being green. If you listen, they will tell you what green sounded like.",
-      "Ystran echo: The Seedmother waits past the void. First, you must look into it."
+      "Ystran echo: Past the void lies the Heartroot's crater. First, you must look into the hungry one."
      ]
     },
     {
@@ -20695,7 +20758,7 @@
      ],
      "k": "sign",
      "t": [
-      "The heart crystal of the Seedmother. It is warm to the touch, and very, very old."
+      "A crystal shard from the Seedmother's old world-tree. It is warm to the touch, and hums the same note as your partner."
      ]
     },
     {
@@ -20737,13 +20800,25 @@
      "art": "ystran",
      "face": "down",
      "t": [
-      "Ystran echo: The Seedmother's Grove. Every seedpod that crossed the stars began on these branches.",
-      "Ystran echo: ...she is tired, Linker. But she waited for you. She always knew someone would come."
-     ]
+      "Ystran echo: Every child came home and stayed itself. That is the whole legend. Thank you, Unifier."
+     ],
+     "name": "Returning echo 300",
+     "after": "P01",
+     "flag": "bloom_300"
     },
     {
      "x": 15,
      "y": 12,
+     "art": "ystran",
+     "face": "down",
+     "t": [
+      "Ystran echo: Her world-tree stood here once. Every seedpod that crossed the stars was a piece of her. Now only the Heartroot remains.",
+      "Ystran echo: ...she is tired, Linker. But she waited for you. She always knew someone would come."
+     ]
+    },
+    {
+     "x": 13,
+     "y": 6,
      "art": "pilgrim",
      "face": "down",
      "t": [
@@ -20997,18 +21072,6 @@
    "pkey": "dustara",
    "npcs": [
     {
-     "x": 10,
-     "y": 9,
-     "art": "teo",
-     "face": "down",
-     "t": [
-      "Teo: Six years beyond the light, and the thing I missed most was this canyon wind.",
-      "Teo: Lumivex keeps watch on the roof. It doesn't trust doors yet. Neither do I."
-     ],
-     "name": "Teo",
-     "after": "M19"
-    },
-    {
      "x": 9,
      "y": 6,
      "art": "sola",
@@ -21021,8 +21084,8 @@
      "after": "M19"
     },
     {
-     "x": 8,
-     "y": 11,
+     "x": 9,
+     "y": 9,
      "art": "civilian",
      "face": "down",
      "t": [
@@ -21030,6 +21093,18 @@
      ],
      "name": "Moving box",
      "until": "M19"
+    },
+    {
+     "x": 6,
+     "y": 9,
+     "art": "teo",
+     "face": "down",
+     "t": [
+      "Teo: I never saw a living Seedmother. Just the empty crater where she stood, and the Heartroot, a little dimmer every year.",
+      "Teo: Lumivex grew up near its light. It keeps watch on the roof now. It doesn't trust doors yet. Neither do I."
+     ],
+     "name": "Teo",
+     "after": "M19"
     }
    ]
   },

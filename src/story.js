@@ -11,11 +11,11 @@
  Section scenes (data/story_scenes.json) play once when you walk into a section at the right point in the story. */
 const STORY=__STORY__;
 Object.assign(KEY_ITEMS,{nana_badge:"Nana Wren's Badge",teo_lantern:"Teo's Lantern",crystal_map:"Teo's Crystal Map",nana_journal:"Nana Wren's Journal",codex_page:'Codex Page'});
-Object.assign(KEY_ITEMS,{stowaway:'Stowaway'});Object.assign(KEY_NAME,KEY_ITEMS);
+Object.assign(KEY_ITEMS,{stowaway:'Stowaway',prophecy_mural:'Prophecy Rubbing'});Object.assign(KEY_NAME,KEY_ITEMS);
 // Kit Briggs's art: until art/characters/kit.png exists, Kit borrows the Technician sprite
 if(!CHAR.kit&&CHAR.technician)CHAR.kit=CHAR.technician;
 Object.assign(KEY_DESC,{nana_badge:'A brass cross with a glowing blue core, stamped "R.B. No. 1". Mom pinned it on you.',teo_lantern:"Teo Reyes's old mining lantern. It never quite goes out.",
- crystal_map:'Teo\'s crystal map: "the floating gardens beyond the light."',nana_journal:'Nana Wren\'s journal from the night of the Starfall.',codex_page:'A Codex page Thorne copied: "a door that is a road."',stowaway:'The starter nobody picked at Dr. Vashti\'s lab. It hides in your bag and only peeks out for snacks.'});
+ crystal_map:'Teo\'s crystal map: "the floating gardens beyond the light."',nana_journal:'Nana Wren\'s journal from the night of the Starfall.',codex_page:'A Codex page Thorne copied: "a door that is a road."',prophecy_mural:'Rubbing of the Prophecy Mural: "She is scattered so she may live. Whoever reunites all her children will let the Seedmother grow again, and her world with her."',stowaway:'The starter nobody picked at Dr. Vashti\'s lab. It hides in your bag and only peeks out for snacks.'});
 Object.assign(QNAME,{sola_2:'Sola',sola_3:'Sola',sola_4:'Sola',sola_5:'Sola',sola_6:'Sola',admin_vex_final:'Admin Vex',helix_freighter_crew:'Helix Freighter Crew',helix_tower_crew:'Helix Tower Crew',helix_broadcast_crew:'Helix Broadcast Crew'});
 Object.assign(QART,{sola_2:'sola',sola_3:'sola',sola_4:'sola',sola_5:'sola',sola_6:'sola',admin_vex_final:'vex',helix_freighter_crew:'guard',helix_tower_crew:'guard',helix_broadcast_crew:'guard'});
 
@@ -30,7 +30,7 @@ function qFmt(s){if(typeof s!=='string'||s.indexOf('{')<0||!G)return s;const a=s
 
 /* ---- things that happen when an objective or a quest completes ---- */
 function storyIf(c){if(!c)return true;return Object.entries(c).every(([f,v])=>(G.flags[f]||0)===v)}
-function storyThen(q,t){if(!t||!storyIf(t.if))return;const L=(t.lines||[]).slice();
+function storyThen(q,t){if(!t||!storyIf(t.if))return;const L=(t.lines||[]).slice();storyPick(t,L);
  for(const[f,ls]of Object.entries(t.lines_if||{}))if(G.flags[f])L.push(...ls);
  for(const f of t.flags||[])G.flags[f]=1;
  for(const[k,n]of Object.entries(t.items||{})){if(KEY_ITEMS[k]){G.key[k]=1;L.push('You received '+KEY_ITEMS[k]+'!')}else if(k in G.pods){G.pods[k]+=n;L.push('You received '+n+'x '+itemName(k)+'!')}else{G.items[k]=(G.items[k]||0)+n;L.push('You received '+n+'x '+itemName(k)+'!')}}
@@ -54,7 +54,7 @@ function storyNpc(n){if(n.keyline&&G.key&&G.key[n.keyline.k]){if(n.story==='heal
 /* ---- the Three Pillars test you before they battle (Book 5) ---- */
 const PILLAR={Terravox:'strength',Aquelion:'memory',Ignarch:'courage'};
 function storyLegend(n){const k=PILLAR[n.legend],go=()=>legendBattle({mon:n.legend,lvl:n.lv||60});if(!k||G.flags['test_'+k])return go();
- const pass=lines=>{G.flags['test_'+k]=1;say(lines.concat([n.legend+' accepts you. Now it tests your bond in battle!']),go)};
+ const pass=lines=>{G.flags['test_'+k]=1;const all=['strength','memory','courage'].every(x=>G.flags['test_'+x]);say(lines.concat(all&&!G.flags.named_unifier?(G.flags.named_unifier=1,['The Three Pillars bow their great heads together.','The Pillars: Unifier.','You haven\'t caught them all. You\'re thirteen! How can you be the Unifier?','Liss: Nobody said catch.']):[]).concat([n.legend+' accepts you. Now it tests your bond in battle!']),go)};
  if(k==='strength'){const up=G.party.filter(m=>m.hp>0);if(up.length<3)return say(['Terravox lowers its forest-heavy head. A floating island above you groans and starts to fall.','Terravox: No one holds up an island alone. Come back with at least three partners beside you.']);
   return say(['Terravox: Hold it.','A floating island tilts and starts to fall toward the forest below.','You, '+up.map(nm).slice(0,3).join(', ')+' push together. Your arms shake. Nobody lets go.','The island steadies, then rises back into the sky.'],()=>pass(['Terravox: Strength is not one creature lifting. It is many refusing to let go.']))}
  if(k==='memory'){const ask=()=>choose('Aquelion offers to wash away your saddest memory.',['Keep the memory','Let Aquelion erase it'],i=>{
@@ -76,7 +76,7 @@ const storyRunLabel=()=>B&&B.sp&&B.sp.listen&&B.sp.turns>=3?'LISTEN':'RUN';
 function storyImmortal(){if(!B||!B.sp||!B.sp.immortal)return;const e=EM();if(e.hp<=0){e.hp=Math.ceil(stat(e,0)*0.5);B.sp.grow=(B.sp.grow||0)+1;e.bs&&e.bs.atk<6&&e.bs.atk++}}
 function storyListen(down){B.phase='wait';const e=EM();
  say((down?['Your last partner falls. Oblivane\'s shadow closes over you...','...but you stand up anyway.']:[]).concat(['You stop the battle and step forward with Zib.','Everybody\'s somebody\'s somebody. You think it as hard as you can.','You ask Oblivane what it lost.','From far away, the Ystran Choir begins to sing. Hmm-mm-mmm.',
-  'Oblivane remembers: it was the moon-spirit who carried the dying home as starlight. It never wanted to keep them. It just couldn\'t let go.','Two hundred years of swallowed light pour back into Ystra\'s sky as starlight.','Oblivane is calm. It drifts away, small and silver, toward the Seedmother\'s grove.','Starlight falls over your team and heals every one of them.']),
+  'Oblivane remembers: it was the moon-spirit who carried the dying home as starlight. It never wanted to keep them. It just couldn\'t let go.','Two hundred years of swallowed light pour back into Ystra\'s sky as starlight.','Oblivane is calm. It drifts away, small and silver, toward the empty crater where the Heartroot glows.','Light returns to Ystra\'s sky... but the land stays bare. The job isn\'t finished.','Starlight falls over your team and heals every one of them.']),
   ()=>{G.flags.oblivane_calmed=1;healAll();B.over=true;const back=B.from||'planet';qEvent('win',D[e.id].name,{});noteLegendWin(e);scene=back;B=null;G.grace=60;autosave()})}
 function storyMidBattle(){const s=B&&B.sp;if(!s||!s.orra||s.asked||!B.tr||B.ei!==B.team.length-1)return false;const e=EM();if(e.hp>stat(e,0)*0.6&&s.turns<4)return false;
  s.asked=1;B.phase='wait';say(['Orra\'s '+nm(e)+' gathers a blinding attack...','...and aims it straight at Zib!'],()=>choose('Orra is targeting Zib!',['Shield Zib','Attack'],i=>{
@@ -104,3 +104,28 @@ function storyIsMon(m,name){let n=D[m.id].name;const seen=new Set();for(let i=0;
 function storyAt(o){return!o.at||(typeof secOn==='function'&&secOn()&&G.sec.id===o.at)}
 // story locks on the Thalassa ships (data/sections/links.json warps with a node)
 Object.assign(GATE_OPEN,{ghost_ship:()=>mDone('M07'),helix_freighter:()=>mDone('M17'),smuggler_freighter:()=>mDone('M19')});
+
+/* ---------- the Seedmother revision (docs/SEEDMOTHER_REVISION.md): she is scattered in every Alienmon ----------
+ The Heartroot's glow grows with every species you have registered as bonded: caught, or befriended in the story
+ (a calmed Novaryx or Oblivane). At 50/100/150/200/250/300 a part of Ystra blooms and a Ystran echo returns.
+ The Reunion ending never needs a full Xenodex; completing it is the bonus Unifier epilogue. */
+const HEART_TOTAL=300,BLOOMS=[[50,'the Arrival Fragment'],[100,'the Floating Continents'],[150,'the Drowned Seas'],[200,'the Crystal Ruins'],[250,'the Blighted Forest'],[300,'the Seedmother\'s crater']];
+function heartCount(){let n=Object.keys(G.caught||{}).length;const f=G.flags||{};
+ if(f.novaryx_way===1&&IDX.Novaryx!=null&&!G.caught[IDX.Novaryx])n++;if(f.oblivane_calmed&&IDX.Oblivane!=null&&!G.caught[IDX.Oblivane])n++;return Math.min(HEART_TOTAL,n)}
+function heartBeats(){if(!G||!G.flags)return;const n=heartCount();
+ for(const[k,where]of BLOOMS)if(n>=k&&!G.flags['bloom_'+k]){G.flags['bloom_'+k]=1;if(mDone('P01'))qNotify('HEART','bloom',['Word from Ystra: '+where+' is starting to bloom!','Every Alienmon is a piece of her. '+k+' notes of her song have come home, and a Ystran echo has returned.'])}
+ if(n>=HEART_TOTAL&&mDone('P04')&&!G.flags.unifier){G.flags.unifier=1;G.key.gold_dex=1;QN.push({q:'UNIFIER',kind:'scene',lines:[
+  'Every kind of Alienmon in the Kessler system has bonded with you.','Under the Seedmother\'s tree, you walk with every Alienmon you have ever met. They hum the song together, each one still itself.',
+  'Liss: The legend called for someone who would reunite all her children. Not catch them. Unite them.','You are named the Unifier!','(Your Linker shines gold now: the Unifier\'s Linker.)']})}
+ document.body.classList.toggle('unifier',!!G.flags.unifier)}
+// START > Xenodex: press A to switch to the Heartroot page
+let DEXH=false;
+function drawHeartroot(){const n=heartCount(),t=n/HEART_TOTAL;rect(0,0,160,144,'#0d0a18');box(0,0,160,16,'#1b1424','#9be36b');txt('Heartroot',5,4,'#9be36b',7);txt('A: list',112,5,'#5ff2ff',6);
+ txt('Every Alienmon is',6,20,'#e8e0ff',6);txt('a piece of her.',6,29,'#e8e0ff',6);
+ const cx=80,cy=104,g=10+t*34+Math.sin(frame/18)*2;ctx.save();const rg=ctx.createRadialGradient(cx,cy-8,2,cx,cy-8,g+14);rg.addColorStop(0,'rgba(155,227,107,'+(0.35+t*0.55).toFixed(2)+')');rg.addColorStop(1,'rgba(95,242,255,0)');ctx.fillStyle=rg;ctx.fillRect(cx-70,cy-70,140,90);ctx.restore();
+ rect(40,cy+8,80,6,'#2a1f44');ctx.fillStyle='#6b4f2a';for(const[dx,w]of[[-14,3],[-6,2],[6,2],[13,3]])ctx.fillRect(cx+dx,cy+2,w,10);ctx.fillRect(cx-3,cy-14,6,18);
+ const L=Math.floor(t*6);for(let i=0;i<L;i++){const a=-2.6+i*0.55,r=12+(i%2)*5;rect(Math.round(cx+Math.cos(a)*r)-2,Math.round(cy-16+Math.sin(a)*r)-2,5,4,i%2?'#9be36b':'#5ff2ff')}
+ txt('Notes of her song',6,40,'#9be36b',6);txt(n+' / '+HEART_TOTAL,6,49,'#ffd23f',7);
+ const nx=BLOOMS.find(([k])=>n<k);txt(nx?'Next bloom: '+nx[0]:'Ystra has fully bloomed',6,124,'#a99cc8',6);if(G.flags.unifier)txt('Title: Unifier',6,134,'#ffd23f',6);else txt('Caught + befriended species',6,134,'#6f6390',6)}
+// choices whose follow-up lines depend on which option was picked
+function storyPick(t,L){if(t&&t.pick){const v=(G.flags||{})[t.pick.flag];const ls=t.pick.lines&&t.pick.lines[v];if(ls)L.push(...ls)}}

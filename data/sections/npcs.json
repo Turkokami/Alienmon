@@ -948,6 +948,15 @@
    "lv": 60,
    "flag": "champ",
    "t": []
+  },
+  {
+   "art": "ystran",
+   "name": "Returning echo 150",
+   "flag": "bloom_150",
+   "after": "P01",
+   "t": [
+    "Ystran echo: Coral is growing in the Drowned Seas. Aquelion says the dreams are happier."
+   ]
   }
  ],
  "154": [
@@ -957,6 +966,15 @@
    "lv": 60,
    "flag": "champ",
    "t": []
+  },
+  {
+   "art": "ystran",
+   "name": "Returning echo 100",
+   "flag": "bloom_100",
+   "after": "P01",
+   "t": [
+    "Ystran echo: The floating islands are putting down roots again. Terravox hums when it walks."
+   ]
   }
  ],
  "098": [
@@ -1059,6 +1077,15 @@
     "Kit: Saga's right. This isn't a building, it's an instrument! A big, broken, beautiful instrument.",
     "Kit: Give me some time. I can fix this."
    ]
+  },
+  {
+   "art": "ystran",
+   "name": "Returning echo 200",
+   "flag": "bloom_200",
+   "after": "P01",
+   "t": [
+    "Ystran echo: The Choir chamber sings on its own now. Every note is one of her children."
+   ]
   }
  ],
  "159": [
@@ -1098,6 +1125,15 @@
     "Kit: My {kit3} can heal the blight, slowly, tree by tree. We'll stay and do this part.",
     "Kit: Go on. We've got this. Nobody gets left, remember?"
    ]
+  },
+  {
+   "art": "ystran",
+   "name": "Returning echo 250",
+   "flag": "bloom_250",
+   "after": "P01",
+   "t": [
+    "Ystran echo: The blight is gone. The little shadows sleep in the new leaves."
+   ]
   }
  ],
  "141": [
@@ -1110,19 +1146,6 @@
   }
  ],
  "166": [
-  {
-   "art": "teo",
-   "name": "Teo",
-   "after": "M19",
-   "near": [
-    10,
-    9
-   ],
-   "t": [
-    "Teo: Six years beyond the light, and the thing I missed most was this canyon wind.",
-    "Teo: Lumivex keeps watch on the roof. It doesn't trust doors yet. Neither do I."
-   ]
-  },
   {
    "art": "sola",
    "name": "Sola",
@@ -1146,6 +1169,41 @@
    ],
    "t": [
     "The house is empty. A sign on the door says: Reserved for the Reyes family."
+   ]
+  },
+  {
+   "art": "teo",
+   "name": "Teo",
+   "after": "M19",
+   "near": [
+    10,
+    9
+   ],
+   "t": [
+    "Teo: I never saw a living Seedmother. Just the empty crater where she stood, and the Heartroot, a little dimmer every year.",
+    "Teo: Lumivex grew up near its light. It keeps watch on the roof now. It doesn't trust doors yet. Neither do I."
+   ]
+  }
+ ],
+ "153": [
+  {
+   "art": "ystran",
+   "name": "Returning echo 50",
+   "flag": "bloom_50",
+   "after": "P01",
+   "t": [
+    "Ystran echo: I remember this place green. Look, the first moss is back on the Arrival Fragment!"
+   ]
+  }
+ ],
+ "163": [
+  {
+   "art": "ystran",
+   "name": "Returning echo 300",
+   "flag": "bloom_300",
+   "after": "P01",
+   "t": [
+    "Ystran echo: Every child came home and stayed itself. That is the whole legend. Thank you, Unifier."
    ]
   }
  ]

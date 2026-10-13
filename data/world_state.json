@@ -445,5 +445,37 @@
    "file": "src/template.html",
    "fix": "Whiteout returns to the LAST Recovery Bay / Hut used (store G.lastHeal), not the landing pad."
   }
- ]
+ ],
+ "heartroot": {
+  "counts": "species caught + story legendaries befriended (calmed Novaryx, calmed Oblivane)",
+  "total": 300,
+  "milestones": {
+   "50": {
+    "flag": "bloom_50",
+    "echo_section": "153"
+   },
+   "100": {
+    "flag": "bloom_100",
+    "echo_section": "154"
+   },
+   "150": {
+    "flag": "bloom_150",
+    "echo_section": "156"
+   },
+   "200": {
+    "flag": "bloom_200",
+    "echo_section": "158"
+   },
+   "250": {
+    "flag": "bloom_250",
+    "echo_section": "160"
+   },
+   "300": {
+    "flag": "bloom_300",
+    "echo_section": "163"
+   }
+  },
+  "unifier": "all 300 after P04: bonus epilogue, Unifier title, golden Linker skin (flag unifier)",
+  "rule": "The Reunion ending (P03) never needs a full Xenodex."
+ }
 }

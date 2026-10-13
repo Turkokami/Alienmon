@@ -1614,8 +1614,8 @@
    "section": "156",
    "name": "Drowned Seas",
    "tile": [
-    6,
-    11
+    4,
+    12
    ],
    "item": "dust",
    "n": 2500,
@@ -1647,7 +1647,7 @@
    "section": "158",
    "name": "Crystal Ruins 1F",
    "tile": [
-    13,
+    14,
     5
    ],
    "item": "maxrevive",

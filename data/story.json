@@ -1,6 +1,6 @@
 {
  "_about": "Book canon story data (docs/SAGA_MASTER_PLAN.md). scenes: play once on entering a section; shifts: objectives inserted into existing quests (older saves move their step on); inserted: new main quests (older saves past them count them as done). Bump version when adding shifts or inserted quests.",
- "version": 5,
+ "version": 6,
  "scenes": [
   {
    "id": "strand_sporeling",
@@ -182,6 +182,17 @@
     "Kit: Got it! Keep moving, everybody."
    ],
    "art": "kit"
+  },
+  {
+   "id": "project_unity_sign",
+   "sec": "109",
+   "when": {
+    "after": "M13"
+   },
+   "lines": [
+    "A cold white sign hangs over the cage rows: PROJECT UNITY. ONE OF EVERY SPECIES.",
+    "Every cage has a label, a number and a species name, like a museum."
+   ]
   }
  ],
  "shifts": [
@@ -220,6 +231,12 @@
    "at": 0,
    "n": 2,
    "v": 5
+  },
+  {
+   "q": "P03",
+   "at": 1,
+   "n": 1,
+   "v": 6
   }
  ],
  "inserted": [

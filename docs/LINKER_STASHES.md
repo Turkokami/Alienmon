@@ -11,7 +11,7 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 |---|---|---|---|
 | 004 Dustmere Plaza | 12,2 | 150x Stardust | 1 |
 | 007 Dustmere Bridge | 22,5 | 3x Stasis Pod | 1 |
-| 008 Trading Post | 19,5 | 2x Cure Spray | 1 |
+| 008 Trading Post | 8,6 | 2x Cure Spray | 1 |
 | 009 Rimwalk Trail Part A | 4,2 | 2x Med Gel | 1 |
 | 009 Rimwalk Trail Part A | 17,4 | 1x Revive Spark | 1 |
 | 010 Rimwalk Trail Part B | 3,1 | 2x Med Gel | 1 |
@@ -81,8 +81,8 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 
 | Section | Tile | Item | Tier |
 |---|---|---|---|
-| 052 Port Saltreach Docks | 19,13 | 2x Harmonic Pod | 2 |
-| 053 Saltreach Market | 11,14 | 1x Mega Gel | 2 |
+| 052 Port Saltreach Docks | 11,3 | 2x Harmonic Pod | 2 |
+| 053 Saltreach Market | 1,1 | 1x Mega Gel | 2 |
 | 057 Coral Route Part A | 17,1 | 3x Med Gel | 2 |
 | 057 Coral Route Part A | 6,13 | 1x Revive Spark | 2 |
 | 058 Coral Route Part B | 5,2 | 1x Signal Jammer | 2 |
@@ -218,10 +218,10 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 | 154 Floating Continents Part A | 10,2 | 2x Max Revive | 7 |
 | 155 Floating Continents Part B | 9,12 | 2x Singularity Pod | 7 |
 | 155 Floating Continents Part B | 17,12 | 5x Ether Gel | 7 |
-| 156 Drowned Seas | 6,11 | 2500x Stardust | 7 |
+| 156 Drowned Seas | 4,12 | 2500x Stardust | 7 |
 | 156 Drowned Seas | 20,11 | 2x Max Revive | 7 |
 | 157 Sun Forge | 8,5 | 3x Full Gel | 7 |
-| 158 Crystal Ruins 1F | 13,5 | 2x Max Revive | 7 |
+| 158 Crystal Ruins 1F | 14,5 | 2x Max Revive | 7 |
 | 159 Crystal Ruins 2F | 12,12 | 2x Singularity Pod | 7 |
 | 160 Blighted Forest Part A | 12,1 | 5x Ether Gel | 7 |
 | 160 Blighted Forest Part A | 12,14 | 2x Max Revive | 7 |

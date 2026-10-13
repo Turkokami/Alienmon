@@ -107,7 +107,7 @@
     ],
     "k": "sign",
     "t": [
-     "The heart crystal of the Seedmother. It is warm to the touch, and very, very old."
+     "A crystal shard from the Seedmother's old world-tree. It is warm to the touch, and hums the same note as your partner."
     ]
    },
    {
@@ -260,7 +260,7 @@
     "art": "ystran",
     "t": [
      "Ystran echo: ...the trees remember being green. If you listen, they will tell you what green sounded like.",
-     "Ystran echo: The Seedmother waits past the void. First, you must look into it."
+     "Ystran echo: Past the void lies the Heartroot's crater. First, you must look into the hungry one."
     ]
    },
    {
@@ -290,7 +290,7 @@
    {
     "art": "ystran",
     "t": [
-     "Ystran echo: The Seedmother's Grove. Every seedpod that crossed the stars began on these branches.",
+     "Ystran echo: Her world-tree stood here once. Every seedpod that crossed the stars was a piece of her. Now only the Heartroot remains.",
      "Ystran echo: ...she is tired, Linker. But she waited for you. She always knew someone would come."
     ]
    },

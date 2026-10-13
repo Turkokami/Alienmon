@@ -712,6 +712,18 @@
       "planet": "glyphos",
       "spot": "Mural hall: Ystra, the Devourer, the Seedmother",
       "note": "tile map or future painted map; place this spot when building"
+     },
+     "then": {
+      "art": "ystran",
+      "items": {
+       "prophecy_mural": 1
+      },
+      "lines": [
+       "Behind the third mural there is one more panel, half hidden in shadow.",
+       "A figure stands in a ring of every kind of Alienmon. From their joined light, a tree is growing.",
+       "Ystran echo: ...she is scattered so she may live... whoever reunites all her children will let the Seedmother grow again... and her world with her...",
+       "You take a rubbing of the carving. You don't understand it yet."
+      ]
      }
     }
    ],
@@ -723,7 +735,8 @@
      "Keep at it, Linker. You've got this."
     ],
     "complete": [
-     "The murals show it plainly: a dying world called Ystra, a void that ate the stars, and a great tree-mother sending her children away in seedpods. The Alienmon are refugees."
+     "The murals show it plainly: a dying world called Ystra, a void that ate the stars, and a great tree-mother who broke herself into seedpods and sent them away.",
+     "She didn't send her children away. She became them. Every Alienmon is a piece of her."
     ]
    },
    "rewards": {
@@ -737,7 +750,8 @@
    "epilogue": {
     "art": "thorne",
     "lines": [
-     "Far away, on Helix Station, Sola stands beside Director Thorne at a window full of stars.",
+     "Far away, on Helix Station, Sola walks beside Director Thorne past rows and rows of glowing cages.",
+     "Director Thorne: Every species, Sola. When we have them all, she answers to us.",
      "Director Thorne: Begin Phase Three.",
      "...Back on Glyphos, Zib blinks. For a split second, its big eye reflects something enormous: a giant dark eye, slowly opening."
     ]
@@ -922,7 +936,9 @@
      "Keep at it, Linker. You've got this."
     ],
     "complete": [
-     "Ingrid Vale: The Devourer isn't a legend. Take the sixth Shard. We'll need every tower standing."
+     "Ingrid Vale: The Devourer isn't a legend. But look closer: Ystran creatures, Ystran trees... and no fossil of the Seedmother. Not one bone.",
+     "Ingrid Vale: Because there was nothing left to bite. She'd already gone.",
+     "Ingrid Vale: Take the sixth Shard. We'll need every tower standing."
     ]
    },
    "rewards": {
@@ -1081,7 +1097,9 @@
       "Director Thorne (log): Reyes was an acceptable loss. The data he left behind was worth it.",
       "Sola goes completely still.",
       "The second file: a reactor alarm, a woman's voice, then silence. Elena Thorne, lost in a Helix accident.",
-      "Director Thorne (log): If the Rift can power anything, it can power a way back to her."
+      "Director Thorne (log): If the Rift can power anything, it can power a way back to her.",
+      "Director Thorne (log): Project Unity is nearly complete. One of every species. Carry them all through the Rift and the Seedmother regrows life the way I choose.",
+      "Director Thorne (log): She will give me Elena back."
      ]
     }
    ],
@@ -1375,7 +1393,14 @@
     ]
    },
    "repeatable": false,
-   "notes": ""
+   "notes": "",
+   "epilogue": {
+    "lines": [
+     "All eight Shards ring at once. Zib rises into the air, and its big eye projects a soft, shimmering light.",
+     "Zib's message: The Seedmother is not gone. She is in every one of you.",
+     "Zib's message: Heal the one who hungers, then bring her children home together, and she will grow again."
+    ]
+   }
   },
   {
    "id": "M17b",
@@ -1581,6 +1606,7 @@
      "lines": [
       "DJ Static: This is Static, live on every frequency in the Kessler system. You need to hear this.",
       "Director Thorne (log): Reyes was an acceptable loss.",
+      "DJ Static: And this: Project Unity. Helix has been caging one of every Alienmon to force the Seedmother's power. Look at these cages, people.",
       "On every world, people stop and listen. By morning, nobody believes Helix anymore.",
       "DJ Static: The Keepers are with you, Linker. When you need us, just call. We'll sing."
      ]
@@ -1782,7 +1808,8 @@
      "scene": "starfall_battle",
      "title": "The Rift closes: the Signal song",
      "lines": [
-      "Thorne stares into the Rift, looking for Elena. He sees only Oblivane: starving, enormous and sad. He drops to his knees.",
+      "Thorne stares through the Rift, looking for the power he was promised. He sees Ystra: grey, barren, empty. No Seedmother to command. Nothing to answer him.",
+      "Only Oblivane, starving and enormous. The power he wanted doesn't exist. He drops to his knees.",
       "Director Thorne: Reroute the engine to the seal. I'll hold it. Go!",
       "Zib pours its light into the Shards. One by one, its lights start to go out.",
       "You, Sola, Novaryx and Zib start to sing the Signal. It's the Spore Choir's song from Sporeholm. Hmm-mm-mmm."
@@ -1796,6 +1823,7 @@
      "then": {
       "evolve": "starter",
       "lines": [
+       "Every Alienmon's song folds into one voice: a woman's, warm and huge. For a heartbeat the Seedmother is whole.",
        "{starter3} blazes like a small star and pushes the Rift closed with light."
       ]
      }
@@ -1811,7 +1839,8 @@
     "complete": [
      "The Shards blaze and the Rift folds shut. From the last of its light steps Teo Reyes, an adult Lumivex at his side. Sola runs to him.",
      "Teo: Sola? ...You're so tall.",
-     "Teo: Listen, all of you. The seal can only be truly healed from Ystra's side. And the Seedmother... she's fading."
+     "Teo: The seal can only be healed from Ystra's side. And there's something you need to know.",
+     "Teo: The Heartroot, the last piece of her on Ystra, is dying. If it dies, the legend can't come true."
     ]
    },
    "rewards": {
@@ -1884,6 +1913,7 @@
        "Up in the Recovery Bay attic, under a dusty blanket, you find Nana Wren's journal.",
        "Nana Wren (journal): The night the stars fell, three pods of baby saucers came to my door. Little things with one big eye, like scouts.",
        "Nana Wren (journal): I nursed them all night. And I heard a voice singing, far away and so tired. So I sang back.",
+       "Nana Wren (journal): Every pod sang a different note of the same song. I think they're all pieces of one mother. So I sang the missing notes back.",
        "Zib chose you because the same Signal runs in your family."
       ]
      }
@@ -1921,7 +1951,8 @@
       "Dr. Vashti testifies too, and confesses her own twenty years of silence, in public, for everyone to hear.",
       "Director Thorne pleads guilty to everything. He looks at no one.",
       "A week later, a letter arrives from his cell. Folded inside is a Codex page he copied twenty years ago.",
-      "Codex page: The door that is a road opens only for a scout and a listener, together."
+      "Codex page: The door that is a road opens only for a scout and a listener, together.",
+      "Codex page: But she cannot grow while the hungry one still hungers. Heal it first. Then call her children home."
      ],
      "then": {
       "items": {
@@ -2160,11 +2191,13 @@
       "art": "orra",
       "lines": [
        "Orra Venn: I kept the Codex locked up for nineteen years and called it protecting people.",
-       "Orra Venn: You carried the truth across fourteen worlds, in the open. That's the difference."
+       "Orra Venn: You carried the truth across fourteen worlds, in the open. That's the difference.",
+       "Orra Venn: Tonight Imogen and I will tell every world the whole prophecy, in the open. They should know what the Reunion is."
       ],
       "lines_if": {
        "shielded_zib": [
-        "Orra Venn: And when it mattered, you put yourself between your friend and the light. That was the test."
+        "Orra Venn: And when it mattered, you put yourself between your friend and the light. That was the test.",
+        "Orra Venn: The Unifier has to choose a partner over winning. Otherwise they'd only collect. Not unite."
        ]
       }
      }
@@ -2224,7 +2257,8 @@
       "lines": [
        "Dr. Vashti: Thorne's Codex page. \"A door that is a road, opened only by a scout and a listener together.\"",
        "Dr. Vashti: The Great Telescope can focus all eight Shards into a Vortex, if the lens is right. So Kit and I built one from Teo's crystal map.",
-       "Dr. Vashti: The Shards are set. Nothing's happening. ...A scout and a listener. Of course. You and Zib, together."
+       "Dr. Vashti: The Shards are set. Nothing's happening. ...A scout and a listener. Of course. You and Zib, together.",
+       "Dr. Vashti: And every Keeper has promised: when the call comes, they'll bring their Alienmon through."
       ]
      }
     },
@@ -2263,8 +2297,9 @@
      "Keep at it, Linker. You've got this."
     ],
     "complete": [
-     "You step out of the Vortex under a huge, tired red sun, into a forest of crystal trees that chime in the wind.",
-     "It's the forest from your very first dream."
+     "You step out of the Vortex under a huge, tired red sun. Ystra is barren: grey crystal, nothing growing. The crystal forest from your dream is a dead, chiming ruin.",
+     "Liss: Look. Far off, at the bottom of that empty crater. That single faint glow is the Heartroot, the last piece of her on Ystra.",
+     "Liss: The legend says whoever reunites all her children lets her grow again. But nothing can grow while Oblivane still hungers."
     ]
    },
    "rewards": {
@@ -2318,7 +2353,7 @@
      "Keep at it, Linker. You've got this."
     ],
     "complete": [
-     "Oblivane is calm at last, small and silver. It was never evil. It was only hungry, and lost, and alone."
+     "Oblivane is calm at last, small and silver. Light returns to Ystra's sky... but the land stays bare. The job isn't finished."
     ]
    },
    "rewards": {
@@ -2333,7 +2368,7 @@
    "id": "P03",
    "type": "main",
    "act": "Postgame",
-   "title": "The Seedmother",
+   "title": "The Reunion",
    "location": {
     "area": "ystra_town",
     "planet": "ystra",
@@ -2341,7 +2376,7 @@
     "note": "tile map or future painted map; place this spot when building"
    },
    "giver": {
-    "name": "Seedmother",
+    "name": "The Heartroot",
     "art": "ystran"
    },
    "prereq": [
@@ -2357,7 +2392,32 @@
       "planet": "ystra",
       "spot": "Crystal grove",
       "note": "tile map or future painted map; place this spot when building"
+     },
+     "hint": "Reach the Heartroot in the empty crater",
+     "then": {
+      "art": "ystran",
+      "lines": [
+       "At the bottom of the empty crater, the Heartroot glows very faintly. It's almost dark.",
+       "You understand all at once: one team isn't enough. The legend needs every Alienmon. All of her children, together."
+      ]
      }
+    },
+    {
+     "type": "cutscene",
+     "target": "reunion",
+     "count": 1,
+     "at": "163",
+     "scene": "ystra_keyart",
+     "title": "The Reunion: Choir",
+     "lines": [
+      "Kit's Shard relay and Static's frequency send the call back through the Vortex.",
+      "And they come. Hank, Captain Marsh, DJ Static, Ingrid, Old Basalt, Echo and Iris, Kade, every trainer you ever battled, even Pell.",
+      "Wild Alienmon of every kind pour through from Kessler behind them.",
+      "Every Alienmon sings one note of her song. Nobody gives up their body or their life, only a note.",
+      "The Heartroot drinks the song. Green floods out across Ystra.",
+      "A world-tree of crystal and leaves rises out of the crater: the Seedmother, growing again.",
+      "She holds Oblivane, small and silver now, like a moon in her branches."
+     ]
     },
     {
      "type": "choice",
@@ -2375,27 +2435,36 @@
       "note": "tile map or future painted map; place this spot when building"
      },
      "default": 2,
-     "hint": "Seedmother: Where do my children belong now?",
+     "hint": "Seedmother: My children, where would you like to live?",
      "then": {
       "art": "ystran",
-      "if": {
-       "alienmon_future": 3
-      },
-      "lines": [
-       "Seedmother: Both. Of course. Why should a home have only one door?"
-      ]
+      "pick": {
+       "flag": "alienmon_future",
+       "lines": {
+        "1": [
+         "Seedmother: Then my children will make Ystra green again, and the Warp Gate will carry them to their friends whenever they wish."
+        ],
+        "2": [
+         "Seedmother: Then my children will stay with the friends who took them in, and the Warp Gate will bring them home to visit."
+        ],
+        "3": [
+         "Seedmother: Both. Of course. Why should a home have only one door?"
+        ]
+       }
+      }
      }
     }
    ],
    "dialogue": {
     "start": [
-     "Seedmother: My children found friends among the stars. Tell me, Linker: where do they belong now?"
+     "Liss: Now. The Heartroot's crater. Before its light goes out."
     ],
     "progress": [
      "Keep at it, Linker. You've got this."
     ],
     "complete": [
-     "Seedmother: Then it is decided. Take this seed. A gate at the edge of your sky is waking."
+     "Seedmother: Thank you, my children. Every one of you still yourselves.",
+     "Seedmother: Take this seed. A gate at the edge of your sky is waking."
     ]
    },
    "rewards": {
@@ -2468,12 +2537,13 @@
     "art": "thorne",
     "lines": [
      "One year later.",
-     "The Warp Gate hums over Dustmere. Tamsin is still exploring Ystra. Teo and Dr. Vashti run a research station between the worlds.",
+     "The Warp Gate hums over Dustmere. Through it, green against Ystra's new sky, you can see the Seedmother's tree.",
+     "Tamsin is still exploring Ystra. Teo and Dr. Vashti run a research station between the worlds.",
      "Admin Vex is still in prison, and Captain Marsh still visits just to gloat.",
-     "A letter arrives from Kael Thorne: \"Elena would have liked you. Tell your Zib thank you.\"",
+     "A letter arrives from Kael Thorne: \"I wanted to own her. You set her free. Elena would have liked you. Tell your Zib thank you.\"",
      "At the Observatory, a nervous new thirteen-year-old is choosing a first partner.",
      "Over on the table, one shy capsule sits all alone. Nobody picked it. You walk over to it.",
-     "THE END of the Alienmon Chronicles. (A calmed Oblivane still drifts at the Edge of the Void...)"
+     "THE END of the Alienmon Chronicles. (Every Alienmon is a piece of her. Open the Xenodex and press A to see the Heartroot.)"
     ]
    }
   },
@@ -4219,7 +4289,8 @@
    ],
    "dialogue": {
     "start": [
-     "Admin Bronn: Helix keeps captured Alienmon in cages. Open them and they're free."
+     "Admin Bronn: This whole wing is Project Unity: one of every species Helix has found, catalogued like museum pieces.",
+     "Admin Bronn: Open the cages and Thorne's collection is broken."
     ],
     "progress": [
      "Keep at it, Linker. You've got this."
@@ -4227,7 +4298,8 @@
     "complete": [
      "The freed Alienmon chirp their thanks. Several follow your transfer beam to your ship's storage.",
      "Kit refuses to leave until every cage is open. Kit's {kit3} digs in and roots the last stuck doors wide open.",
-     "Kit (shaking): Nobody gets left."
+     "Kit (shaking): Nobody gets left.",
+     "Project Unity is broken. Helix's collection is gone."
     ]
    },
    "rewards": {
@@ -4837,7 +4909,7 @@
      "Keep at it, Linker. You've got this."
     ],
     "complete": [
-     "The echoes merge into one clear song. The Seedmother's grove opens."
+     "The echoes merge into one clear song. Their song drifts across the bare land toward the Heartroot's crater."
     ]
    },
    "rewards": {
@@ -4860,7 +4932,7 @@
     "note": "tile map or future painted map; place this spot when building"
    },
    "giver": {
-    "name": "Seedmother",
+    "name": "Liss",
     "art": "ystran"
    },
    "prereq": [
@@ -4881,16 +4953,15 @@
    ],
    "dialogue": {
     "start": [
-     "Seedmother: The blight still clings to my forest. The little shadows there are pieces of my sibling's hunger.",
-     "Seedmother: They are not attacking you, child. They are begging. Meet them gently, and help my children heal the forest.",
-     "Kit: My {kit3} and I will help. Tree by tree."
+     "Liss: The little shadows in this forest are pieces of Oblivane's hunger. They are not attacking you. They are begging.",
+     "Liss: Meet them gently. Kit's {kit3} can heal a little of the blight, tree by tree."
     ],
     "progress": [
      "Keep at it, Linker. You've got this."
     ],
     "complete": [
      "The little shadow creatures settle, one by one, like birds coming home to roost.",
-     "Crystal leaves bloom where the blight was."
+     "A few crystal leaves bloom... but nothing will truly grow until the Heartroot does."
     ]
    },
    "rewards": {

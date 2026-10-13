@@ -5,7 +5,7 @@
  doors, doormats, stairs and cave mouths. Collision is one char per tile: '.' walk, '#' blocked, ',' tall grass.
  G.sec = {id,x,y} is the player's tile; the old painted town maps stay in use wherever no section is active. */
 const SWORLD=__SWORLD__,SECI=lazyImgs(__SECIMG__),SECQ=__SECQ__;
-const SEC_STEP=8;               // frames per tile (2 px a frame, Gold/Crystal walking pace)
+const SEC_STEP=12;              // frames per tile at 60 updates a second (the Hover Board halves it)
 let SJ=null,SJBUF=0,SM=null,SFADE=null,SBANNER=0,SDEBUG=false,SBUMP=0,SNEAR=null;
 const secOn=()=>!!(G&&G.sec&&SWORLD[G.sec.id]);
 const secTile=(s,x,y)=>x<0||y<0||x>=s.tiles[0]||y>=s.tiles[1]?null:s.rows[y][x];
@@ -106,7 +106,7 @@ function drawSec(){const s=SWORLD[G.sec.id],p=SM?SM.t/SM.n:0,jp=SJ?SJ.t/SEC_JUMP
  const people=secNpcs(s).map(n=>({y:n.y*16+(n.oy||0),draw:()=>n.legend?secDrawLegend(n.legend,n.x*16-cx,n.y*16-cy):secDrawChar(n.art,n.face||'down',n.x*16+(n.ox||0)-cx,n.y*16+(n.oy||0)-cy,(n.ox||n.oy)&&((frame>>3)&1)?1:0)}));
  const kp=PL[G.planet]&&PL[G.planet].keeper;for(const o of s.objects||[])if(o.k==='keeper'&&kp)people.push({y:o.tile[1]*16,draw:()=>secDrawChar(kp.art,'down',o.tile[0]*16-cx,o.tile[1]*16-cy,0)});
  people.push({y:py,me:1,draw:()=>{const k=(G.gender||'boy');if(hop){ctx.fillStyle='rgba(20,10,20,0.3)';ctx.beginPath();ctx.ellipse(px-cx+8,py-cy+15,5,2,0,0,6.283);ctx.fill()}const rd=secDrawRide(s,px-cx,py-cy-hop),hv=!rd&&secHoverOn(s);if(hv)secDrawBoard(px-cx,py-cy-hop);secDrawChar(k,face,px-cx,py-cy-hop-(hv?3:0)-rd,hv?0:SM&&p>0.25&&p<0.75?1:0,true)}});
- secFollowDraw(people,s,cx,cy,p);people.sort((a,b)=>a.y-b.y).forEach(o=>o.draw());
+ secFollowDraw(people,s,cx,cy,p);secNeighbours(s,people,cx,cy);people.sort((a,b)=>a.y-b.y).forEach(o=>o.draw());
  for(const m of s.mons||[]){if(G.monGone&&G.monGone[s.id+':'+m.x+','+m.y])continue;const im=OWI[shownMon(m.mon,0)];if(!okI(im))continue;const X=m.x*16-cx,Y=m.y*16-cy;if(X<-24||Y<-24||X>176||Y>160)continue;
   ctx.fillStyle='rgba(20,10,20,0.35)';ctx.beginPath();ctx.ellipse(X+8,Y+15,6,2,0,0,6.283);ctx.fill();ctx.save();ctx.imageSmoothingEnabled=true;ctx.drawImage(im,((frame>>4)&1)*64,0,64,64,X-2,Y-5,20,20);ctx.restore()}
  for(const o of s.objects||[])if(o.k==='stash'&&!(G.opened&&G.opened[s.id+':'+o.tile]))secDrawStash(o.tile[0]*16-cx,o.tile[1]*16-cy);

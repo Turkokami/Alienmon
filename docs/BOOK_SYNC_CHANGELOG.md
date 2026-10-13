@@ -113,6 +113,38 @@ The Alienmon novels (Books 1–5, planned in `docs/SAGA_MASTER_PLAN.md`) are now
 | --- | --- | --- | --- |
 | Saga Master Plan and Epic Story Bible added as Markdown; the plan's renamed-Alienmon row now points at `data/renames.json` so the old-name build check passes | n/a | n/a | `docs/SAGA_MASTER_PLAN.md`, `docs/EPIC_STORY_BIBLE.md`, `tools/pdf_to_md.py` |
 
+## Seedmother revision (docs/SEEDMOTHER_REVISION.md)
+
+| Change | From | Where in the game | Files |
+| --- | --- | --- | --- |
+| Prophecy Mural: a final panel and a key item, "Prophecy Rubbing", carrying the legend | Rev 4.1; Book 1, Ch 25 | M10, Glyphos Mural Hall | Q, `src/story.js` |
+| End-of-Act-1 cutaway: "Every species, Sola. When we have them all, she answers to us." | Book 1, Ch 26 | After M10 | Q |
+| Ingrid: no fossil of the Seedmother. "There was nothing left to bite." | Book 2, Ch 9 | M12 | Q |
+| Project Unity: a sign over the cage halls, the log terminal on Containment Wing 1F, Bronn's lines, the broken collection | Rev 4.1; Book 2, Ch 15–16 | Helix Station (109), S90 | Q, ST, `data/sections/planets/09_helix.json` |
+| Thorne's second log adds his plan | Book 2, Ch 18 | M14 | Q |
+| Zib's message rewritten: "She is in every one of you..." | Book 2, Ch 26 | After M17 (Shard 8) | Q |
+| Static's broadcast exposes Project Unity | Book 3, Ch 6 | S102 | Q |
+| Thorne sees barren Ystra: nothing to command; for a heartbeat the Seedmother is whole in the song | Rev 4.3; Book 3, Ch 21, 23 | M19 sealing | Q |
+| Teo: the Heartroot is dying | Book 3, Ch 26 | End of M19; Teo in the Reyes house | Q, NP |
+| Nana's journal: "pieces of one mother"; the Codex page's second half: no Reunion while Oblivane hungers | Book 4, Ch 4, 8 | M19b | Q |
+| Orra: the Unifier chooses a partner over winning; the prophecy is broadcast in the open | Book 4, Ch 18–19 | M21 | Q |
+| Every Keeper promises to come through when called | Book 4, Ch 22 | P01, Vashti | Q |
+| Ystra is barren; Liss shows the Heartroot | Book 5, Ch 1–2 | End of P01 | Q |
+| The Pillars name you "Unifier" ("Nobody said catch.") | Book 5, Ch 8 | After all three Pillar tests | `src/story.js` |
+| Blight healing only works a little; Oblivane's light returns but the land stays bare | Book 5, Ch 14, 22 | S111, P02, LISTEN scene | Q, `src/story.js` |
+| P03 becomes The Reunion: the Heartroot, everyone comes through the Vortex, the Seedmother grows and holds Oblivane; the children choose where to live (Both default, a line per choice) | Rev 4.2, 4.3; Book 5, Ch 23–25 | P03 (new cutscene step) | Q, ST (save shift) |
+| Epilogue: the tree seen through the Warp Gate; "I wanted to own her. You set her free." | Book 5, Ch 26 | After P04 | Q |
+| Xenodex: subtitle and a Heartroot page (press A) whose glow grows with caught and befriended species | Rev 4.2 | START > Xenodex | `src/story.js`, `src/template.html` |
+| Ystra blooms at 50, 100, 150, 200, 250 and 300, each with a returning Ystran echo | Rev 4.2 | Ystra 153, 154, 156, 158, 160, 163 | `src/story.js`, NP, WS (`heartroot`) |
+| Unifier bonus (all 300, after the story): epilogue, Unifier title, golden Linker skin | Rev 4.2 | Anywhere, after P04 | `src/story.js`, `src/template.html` |
+| Old lines saying the Seedmother is alive, waiting or fading were rewritten | Rev 4.1 | Ystra NPCs, Pyros shrine text, key items | `data/sections/planets/14_ystra.json`, `data/batches/batch01_kessler/planets.json`, `src/world.js` |
+
+**Not done, or worth deciding (Seedmother revision):**
+1. **A real "Codex/journal" screen:** the game has none, so the legend lives in the Prophecy Rubbing key item (Bag > Key Items) and on the Xenodex Heartroot page.
+2. **Ystra's maps don't visibly change:** blooming is shown through returning echoes and dialogue, because new map art isn't allowed. Bloomed versions of the Ystra maps could be rendered later.
+3. **The Unifier's "Linker skin":** this is the golden device shell, not an in-world outfit, because no player outfit system exists.
+4. **The Forge Fortress cage hall:** it's on the classic painted map, so Project Unity is labelled only on Helix Station.
+
 ## How the new story data works
 
 `src/story.js` explains the new quest fields in its header comment.

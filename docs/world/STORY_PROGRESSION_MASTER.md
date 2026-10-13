@@ -123,3 +123,10 @@ These are inconsistencies found in today's game data. Claude Code should fix all
 - **New side quests:** S53 Glitchbug Outbreak (Neonis, after M09); S102 The Keepers' Call (after M17b; finishing it adds the Keepers singing to the sealing).
 - **Story scenes** that play once when you walk into a section live in `data/story.json`.
 - Full list of changes: `docs/BOOK_SYNC_CHANGELOG.md`.
+
+## 6. Seedmother revision (docs/SEEDMOTHER_REVISION.md)
+
+- **Heartroot counter:** species caught plus story legendaries befriended (a calmed Novaryx or Oblivane), out of 300. It is shown in START > Xenodex (press A). Data lives in `world_state.json` under `heartroot`.
+- **Blooms:** at 50, 100, 150, 200, 250 and 300, part of Ystra blooms (flags `bloom_N`) and a Ystran echo returns there.
+- **P03 is now The Reunion** (Heartroot, the Reunion cutscene, then the children's choice). It never needs a full Xenodex.
+- **Unifier:** all 300 after P04 unlocks the bonus epilogue, the Unifier title and a golden Linker (flag `unifier`).
