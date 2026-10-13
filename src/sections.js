@@ -6,7 +6,7 @@
  G.sec = {id,x,y} is the player's tile; the old painted town maps stay in use wherever no section is active. */
 const SWORLD=__SWORLD__,SECI=lazyImgs(__SECIMG__),SECQ=__SECQ__;
 const SEC_STEP=8;               // frames per tile (2 px a frame, Gold/Crystal walking pace)
-let SM=null,SFADE=null,SBANNER=0,SDEBUG=false,SBUMP=0,SNEAR=null;
+let SJ=null,SM=null,SFADE=null,SBANNER=0,SDEBUG=false,SBUMP=0,SNEAR=null;
 const secOn=()=>!!(G&&G.sec&&SWORLD[G.sec.id]);
 const secTile=(s,x,y)=>x<0||y<0||x>=s.tiles[0]||y>=s.tiles[1]?null:s.rows[y][x];
 const DIRS={up:[0,-1],down:[0,1],left:[-1,0],right:[1,0]};
@@ -67,7 +67,9 @@ function updSec(){const s=SWORLD[G.sec.id];if(SBUMP>0)SBUMP--;
  if(SFADE){SFADE.t++;if(SFADE.t===10){SFADE.go();if(!secOn()){SFADE=null;return}}if(SFADE.t>=20)SFADE=null;drawSec();return}   // a fade can hand over to a painted map (the Forge Fortress)
  if(SM){SM.t++;if(SM.t>=SEC_STEP){const a=SM.to;SM=null;if(a.s.id!==G.sec.id)enterSection(a.s.id,[a.x,a.y],null);else{G.sec.x=a.x;G.sec.y=a.y}secArrive()}
   if(!SM&&!SFADE&&!DLG&&!CH)secStepHeld();drawSec();return}
+ if(SJ){SJ.t++;if(SJ.t>=SEC_JUMP_T){G.sec.x=SJ.to[0];G.sec.y=SJ.to[1];SJ=null;secArrive()}drawSec();return}
  if(P_('start')){scene='menu';menuSel=0;return}
+ if(P_('b')){secJump();drawSec();return}
  if(pressed.g){pressed.g=false;SDEBUG=!SDEBUG;toast('Grid overlay '+(SDEBUG?'on':'off'))}
  if(P_('a')){secInteract();drawSec();return}
  secStepHeld();drawSec()}
@@ -82,7 +84,7 @@ function secCam(s,px,py){const W=s.tiles[0]*16,H=s.tiles[1]*16,e=s.edges,open=k=
  let cx=px+8-80,cy=py+8-76;if(!open('left'))cx=Math.max(0,cx);if(!open('right'))cx=Math.min(W-160,cx);if(!open('top'))cy=Math.max(0,cy);if(!open('bottom'))cy=Math.min(H-144,cy);
  if(W<160)cx=(W-160)/2;if(H<144)cy=(H-144)/2;return[Math.round(cx),Math.round(cy)]}
 function secDrawImg(id,ox,oy){const im=SECI[id];if(okI(im))ctx.drawImage(im,ox,oy);else{const s=SWORLD[id];rect(ox,oy,s.tiles[0]*16,s.tiles[1]*16,'#1d1433')}}
-function drawSec(){const s=SWORLD[G.sec.id],p=SM?SM.t/SEC_STEP:0,px=G.sec.x*16+(SM?SM.dx*16*p:0),py=G.sec.y*16+(SM?SM.dy*16*p:0),[cx,cy]=secCam(s,px,py);
+function drawSec(){const s=SWORLD[G.sec.id],p=SM?SM.t/SEC_STEP:0,jp=SJ?SJ.t/SEC_JUMP_T:0,px=SJ?(SJ.from[0]+(SJ.to[0]-SJ.from[0])*jp)*16:G.sec.x*16+(SM?SM.dx*16*p:0),py=SJ?(SJ.from[1]+(SJ.to[1]-SJ.from[1])*jp)*16:G.sec.y*16+(SM?SM.dy*16*p:0),[cx,cy]=secCam(s,px,py),hop=SJ?Math.round(Math.sin(Math.PI*jp)*10):0;
  rect(0,0,160,144,s.type==='interior'||s.type==='cave'?'#000':'#1d1433');ctx.save();ctx.imageSmoothingEnabled=false;
  secDrawImg(s.id,-cx,-cy);
  for(const[k,e]of Object.entries(s.edges)){const t=SWORLD[e.to];if(!t)continue;const o=(e.offset||0)*16;
@@ -90,7 +92,7 @@ function drawSec(){const s=SWORLD[G.sec.id],p=SM?SM.t/SEC_STEP:0,px=G.sec.x*16+(
  ctx.restore();
  const people=secNpcs(s).map(n=>({y:n.y*16,draw:()=>n.legend?secDrawLegend(n.legend,n.x*16-cx,n.y*16-cy):secDrawChar(n.art,n.face||'down',n.x*16-cx,n.y*16-cy,0)}));
  const kp=PL[G.planet]&&PL[G.planet].keeper;for(const o of s.objects||[])if(o.k==='keeper'&&kp)people.push({y:o.tile[1]*16,draw:()=>secDrawChar(kp.art,'down',o.tile[0]*16-cx,o.tile[1]*16-cy,0)});
- people.push({y:py,me:1,draw:()=>{const k=(G.gender||'boy');secDrawChar(k,face,px-cx,py-cy,SM&&p>0.25&&p<0.75?1:0,true)}});
+ people.push({y:py,me:1,draw:()=>{const k=(G.gender||'boy');if(hop){ctx.fillStyle='rgba(20,10,20,0.3)';ctx.beginPath();ctx.ellipse(px-cx+8,py-cy+15,5,2,0,0,6.283);ctx.fill()}secDrawChar(k,face,px-cx,py-cy-hop,SM&&p>0.25&&p<0.75?1:0,true)}});
  people.sort((a,b)=>a.y-b.y).forEach(o=>o.draw());
  for(const m of s.mons||[]){if(G.monGone&&G.monGone[s.id+':'+m.x+','+m.y])continue;const im=OWI[shownMon(m.mon,0)];if(!okI(im))continue;const X=m.x*16-cx,Y=m.y*16-cy;if(X<-24||Y<-24||X>176||Y>160)continue;
   ctx.fillStyle='rgba(20,10,20,0.35)';ctx.beginPath();ctx.ellipse(X+8,Y+15,6,2,0,0,6.283);ctx.fill();ctx.save();ctx.imageSmoothingEnabled=true;ctx.drawImage(im,((frame>>4)&1)*64,0,64,64,X-2,Y-5,20,20);ctx.restore()}
@@ -164,3 +166,16 @@ function testerUI(){if(BETA||!window.crypto||!crypto.subtle)return;const hint=do
   // typing in the box must not move the player (the game listens to keys on the whole page)
   inp.addEventListener('keydown',e=>{e.stopPropagation();if(e.key==='Enter')go();if(e.key==='Escape')close()});inp.addEventListener('keyup',e=>e.stopPropagation())})}
 // the tester code now lives on the server (middleware.js login screen), so no in-page button
+
+/* ---------- jumping (B): hop two tiles over a ledge, railing, rock or gap, Gold/Crystal style ----------
+ You only land on open ground that is part of the section's main walkable area, so a jump never reaches
+ places the map seals off on purpose (behind a closed gate) and never skips a story gate or warp lock. */
+const SEC_JUMP_T=14;
+function secMain(s){if(s._main)return s._main;const W=s.tiles[0],H=s.tiles[1],ok=(x,y)=>x>=0&&y>=0&&x<W&&y<H&&'.,'.includes(s.rows[y][x]),seen=new Set(),q=[];
+ const seed=[s.spawns&&s.spawns.default].concat(s.warps.map(w=>w.tile)).concat(Object.entries(s.edges).map(([k,e])=>k==='left'?[0,e.range[0]]:k==='right'?[W-1,e.range[0]]:k==='top'?[e.range[0],0]:[e.range[0],H-1]));
+ for(const t of seed)if(t&&ok(t[0],t[1])&&!seen.has(t[0]+','+t[1])){seen.add(t[0]+','+t[1]);q.push(t)}
+ while(q.length){const[x,y]=q.pop();for(const[dx,dy]of Object.values(DIRS)){const k=(x+dx)+','+(y+dy);if(!seen.has(k)&&ok(x+dx,y+dy)){seen.add(k);q.push([x+dx,y+dy])}}}return s._main=seen}
+function secJump(){const s=SWORLD[G.sec.id],[dx,dy]=DIRS[face],x=G.sec.x+dx*2,y=G.sec.y+dy*2;
+ const land=secTile(s,x,y)!==null&&secWalk(s,x,y)&&secMain(s).has(x+','+y)&&!s.warps.some(w=>w.node&&w.tile[0]===x&&w.tile[1]===y&&!gateOpen(w.node));
+ if(!land){bumpSfx();return}
+ SJ={t:0,from:[G.sec.x,G.sec.y],to:[x,y]};jumpSfx()}
