@@ -116,7 +116,7 @@ function secArrival(planetKey){const a=(__SECARRIVAL__)[planetKey];if(!a||!SWORL
 // section maps: on for playtest builds with ?sections in the address or the Options toggle, and for any save already inside one
 const SEC_URL=/[?&]sections/.test(location.search);
 // on by default in the private beta (testers can switch it off in Options); the public game keeps the classic maps for now
-function secEnabled(){if(!G)return false;if(G.sec)return true;if(G.opt&&G.opt.secMaps===false)return false;return!!((G.opt&&G.opt.secMaps)||BETA||(SEC_URL&&canFreeRoam()))}
+function secEnabled(){if(!G)return false;if(G.sec)return true;if(G.opt&&G.opt.secMaps===false)return false;return!!((G.opt&&G.opt.secMaps)||BETA||testerOn()||(SEC_URL&&canFreeRoam()))}
 // apprentices in a planet's tower sections must be beaten before its Keeper battles (classic towns keep their own list)
 function secApprentices(k){let n=0,any=false;for(const s of Object.values(SWORLD))if(s.pkey===k)for(const p of s.npcs||[])if(p.trainer&&p.trainer.app){any=true;if(!G.beaten[p.id])n++}return any?n:null}
 // the opening: wake up at home, Mom sends you to Dr. Vashti's lab, and your partner is chosen at her pod table
@@ -139,3 +139,28 @@ const SEC_FRONTIER=new Set(['014','015','016','017','018','019','020','021','022
 const SEC_NODE={dustara:'014',bay:'017',thalassa:'018',glyphos:'019',ferrox:'022',helix:'023',space:'026',starfall:'026',umbra:'027',pyros:'028'};
 // a legendary waiting on the map: its overworld sprite, larger than a person, gently bobbing
 function secDrawLegend(name,x,y){const im=OWI[name];if(!okI(im))return;ctx.fillStyle='rgba(20,10,20,0.35)';ctx.beginPath();ctx.ellipse(x+8,y+15,9,3,0,0,6.283);ctx.fill();ctx.save();ctx.imageSmoothingEnabled=true;ctx.drawImage(im,((frame>>4)&1)*64,0,64,64,x-8,y-17+Math.round(Math.sin(frame/12)),32,32);ctx.restore()}
+
+/* ---------- tester code: on the public site, testers unlock the new maps with a code (stored only as a hash) ---------- */
+const TESTER_HASH='72717560a790f72925a42847538ff598f43d2c5e25971c9ac59a1335ba8c9d8d';
+function testerOn(){try{return localStorage.getItem('alienmon_tester')===TESTER_HASH}catch(e){return false}}
+async function testerHash(t){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(t.trim().toLowerCase()));return Array.from(new Uint8Array(b)).map(x=>x.toString(16).padStart(2,'0')).join('')}
+function testerUI(){if(BETA||!window.crypto||!crypto.subtle)return;const hint=document.querySelector('.hint');if(!hint)return;
+ const btn=document.createElement('button');btn.type='button';btn.style.cssText='display:block;margin:10px auto 0;background:var(--dpad);color:var(--muted);border:0;border-radius:10px;padding:7px 14px;font:inherit;font-size:8px;cursor:pointer';
+ const label=()=>{btn.textContent=testerOn()?'TESTER MODE: ON':'TESTER CODE'};label();hint.after(btn);
+ btn.addEventListener('click',()=>{const wrap=document.createElement('div');wrap.style.cssText='position:fixed;inset:0;background:#0b0716cc;display:flex;align-items:center;justify-content:center;z-index:50;padding:16px';
+  const box=document.createElement('div');box.style.cssText='width:min(320px,100%);background:#1d1433;border:3px solid #5ff2ff;border-radius:12px;padding:18px;color:#e8e0ff;font:inherit;font-size:10px;line-height:1.7;text-align:center;box-shadow:0 10px 40px #000a';
+  const on=testerOn();box.innerHTML='<div style="color:#5ff2ff;font-size:12px;margin-bottom:10px">'+(on?'Tester mode is on':'Tester code')+'</div>'+
+   (on?'<p style="margin:0 0 14px">New games use the new maps. You can also switch them in START &gt; Options.</p>':'<p style="margin:0 0 10px">Enter your tester code to play the new maps.</p><input id="tcode" autocomplete="off" autocapitalize="off" spellcheck="false" style="width:100%;box-sizing:border-box;font:inherit;font-size:12px;padding:8px;border-radius:6px;border:2px solid #3b2a5c;background:#120c22;color:#fff;text-align:center"><div id="tmsg" style="min-height:18px;margin-top:8px;color:#ff8a1e"></div>')+
+   '<div style="display:flex;gap:10px;justify-content:center;margin-top:6px">'+(on?'<button id="toff" type="button">Turn off</button>':'<button id="tok" type="button">Unlock</button>')+'<button id="tcancel" type="button">Close</button></div>';
+  for(const b of box.querySelectorAll('button'))b.style.cssText='font:inherit;font-size:9px;border:0;border-radius:8px;padding:8px 14px;cursor:pointer;background:'+(b.id==='tcancel'?'#3b2a5c;color:#e8e0ff':'#ffd23f;color:#1b1424');
+  wrap.appendChild(box);document.body.appendChild(wrap);const close=()=>{wrap.remove();label()};
+  box.querySelector('#tcancel').onclick=close;wrap.addEventListener('click',e=>{if(e.target===wrap)close()});
+  if(on){box.querySelector('#toff').onclick=()=>{try{localStorage.removeItem('alienmon_tester')}catch(e){}close()};return}
+  const inp=box.querySelector('#tcode'),msg=box.querySelector('#tmsg');inp.focus();
+  const go=async()=>{const h=await testerHash(inp.value);if(h===TESTER_HASH){try{localStorage.setItem('alienmon_tester',h)}catch(e){}
+    box.innerHTML='<div style="color:#5ff2ff;font-size:12px;margin-bottom:10px">Welcome, tester!</div><p style="margin:0 0 14px">The new maps are unlocked. Start a New game, or land on any planet in your current game.</p><button type="button" style="font:inherit;font-size:9px;border:0;border-radius:8px;padding:8px 14px;background:#ffd23f;color:#1b1424;cursor:pointer">Let\'s go</button>';box.querySelector('button').onclick=close}
+   else{msg.textContent='That code is not right.';inp.select()}};
+  box.querySelector('#tok').onclick=go;
+  // typing in the box must not move the player (the game listens to keys on the whole page)
+  inp.addEventListener('keydown',e=>{e.stopPropagation();if(e.key==='Enter')go();if(e.key==='Escape')close()});inp.addEventListener('keyup',e=>e.stopPropagation())})}
+testerUI();
