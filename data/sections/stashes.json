@@ -1,0 +1,1746 @@
+{
+ "Dustara": [
+  {
+   "section": "004",
+   "name": "Dustmere Plaza",
+   "tile": [
+    12,
+    1
+   ],
+   "item": "dust",
+   "n": 150,
+   "tier": 1
+  },
+  {
+   "section": "007",
+   "name": "Dustmere Bridge",
+   "tile": [
+    22,
+    5
+   ],
+   "item": "stasis",
+   "n": 3,
+   "tier": 1
+  },
+  {
+   "section": "008",
+   "name": "Trading Post",
+   "tile": [
+    19,
+    5
+   ],
+   "item": "cure",
+   "n": 2,
+   "tier": 1
+  },
+  {
+   "section": "009",
+   "name": "Rimwalk Trail Part A",
+   "tile": [
+    4,
+    2
+   ],
+   "item": "gel",
+   "n": 2,
+   "tier": 1
+  },
+  {
+   "section": "009",
+   "name": "Rimwalk Trail Part A",
+   "tile": [
+    17,
+    4
+   ],
+   "item": "revive",
+   "n": 1,
+   "tier": 1
+  },
+  {
+   "section": "010",
+   "name": "Rimwalk Trail Part B",
+   "tile": [
+    3,
+    1
+   ],
+   "item": "gel",
+   "n": 2,
+   "tier": 1
+  },
+  {
+   "section": "010",
+   "name": "Rimwalk Trail Part B",
+   "tile": [
+    12,
+    13
+   ],
+   "item": "dust",
+   "n": 150,
+   "tier": 1
+  },
+  {
+   "section": "011",
+   "name": "Cactus Gardens",
+   "tile": [
+    19,
+    2
+   ],
+   "item": "tether",
+   "n": 1,
+   "tier": 1
+  },
+  {
+   "section": "011",
+   "name": "Cactus Gardens",
+   "tile": [
+    7,
+    3
+   ],
+   "item": "cure",
+   "n": 2,
+   "tier": 1
+  },
+  {
+   "section": "012",
+   "name": "Sunset Tunnel B1",
+   "tile": [
+    14,
+    2
+   ],
+   "item": "stun",
+   "n": 1,
+   "tier": 1
+  },
+  {
+   "section": "013",
+   "name": "Sunset Tunnel B2",
+   "tile": [
+    13,
+    11
+   ],
+   "item": "stasis",
+   "n": 3,
+   "tier": 1
+  },
+  {
+   "section": "013",
+   "name": "Sunset Tunnel B2",
+   "tile": [
+    14,
+    3
+   ],
+   "item": "gel",
+   "n": 2,
+   "tier": 1
+  },
+  {
+   "section": "014",
+   "name": "Molten Frontier: Tunnel Mouth",
+   "tile": [
+    3,
+    1
+   ],
+   "item": "tether",
+   "n": 1,
+   "tier": 1
+  },
+  {
+   "section": "014",
+   "name": "Molten Frontier: Tunnel Mouth",
+   "tile": [
+    11,
+    4
+   ],
+   "item": "gel",
+   "n": 2,
+   "tier": 1
+  },
+  {
+   "section": "015",
+   "name": "Molten Frontier: Ash Trail Part A",
+   "tile": [
+    11,
+    2
+   ],
+   "item": "gel",
+   "n": 2,
+   "tier": 1
+  },
+  {
+   "section": "015",
+   "name": "Molten Frontier: Ash Trail Part A",
+   "tile": [
+    16,
+    1
+   ],
+   "item": "cure",
+   "n": 2,
+   "tier": 1
+  },
+  {
+   "section": "016",
+   "name": "Molten Frontier: Ash Trail Part B",
+   "tile": [
+    4,
+    2
+   ],
+   "item": "stasis",
+   "n": 3,
+   "tier": 1
+  },
+  {
+   "section": "016",
+   "name": "Molten Frontier: Ash Trail Part B",
+   "tile": [
+    12,
+    3
+   ],
+   "item": "revive",
+   "n": 1,
+   "tier": 1
+  },
+  {
+   "section": "017",
+   "name": "Molten Frontier: Palm Isle",
+   "tile": [
+    18,
+    1
+   ],
+   "item": "stasis",
+   "n": 3,
+   "tier": 1
+  },
+  {
+   "section": "017",
+   "name": "Molten Frontier: Palm Isle",
+   "tile": [
+    4,
+    14
+   ],
+   "item": "cure",
+   "n": 2,
+   "tier": 1
+  },
+  {
+   "section": "018",
+   "name": "Molten Frontier: Port Ember",
+   "tile": [
+    10,
+    1
+   ],
+   "item": "dust",
+   "n": 150,
+   "tier": 1
+  },
+  {
+   "section": "019",
+   "name": "Molten Frontier: Long Dock",
+   "tile": [
+    18,
+    1
+   ],
+   "item": "stasis",
+   "n": 5,
+   "tier": 2
+  },
+  {
+   "section": "019",
+   "name": "Molten Frontier: Long Dock",
+   "tile": [
+    15,
+    11
+   ],
+   "item": "gel",
+   "n": 3,
+   "tier": 2
+  },
+  {
+   "section": "020",
+   "name": "Molten Frontier: Ridge Path Part A",
+   "tile": [
+    18,
+    1
+   ],
+   "item": "harmonic",
+   "n": 2,
+   "tier": 2
+  },
+  {
+   "section": "020",
+   "name": "Molten Frontier: Ridge Path Part A",
+   "tile": [
+    5,
+    1
+   ],
+   "item": "stasis",
+   "n": 5,
+   "tier": 2
+  },
+  {
+   "section": "021",
+   "name": "Molten Frontier: Ridge Path Part B",
+   "tile": [
+    11,
+    14
+   ],
+   "item": "revive",
+   "n": 1,
+   "tier": 2
+  },
+  {
+   "section": "021",
+   "name": "Molten Frontier: Ridge Path Part B",
+   "tile": [
+    22,
+    14
+   ],
+   "item": "dust",
+   "n": 300,
+   "tier": 2
+  },
+  {
+   "section": "022",
+   "name": "Molten Frontier: Forge Gate",
+   "tile": [
+    11,
+    14
+   ],
+   "item": "harmonic",
+   "n": 2,
+   "tier": 2
+  },
+  {
+   "section": "023",
+   "name": "Molten Frontier: Fortress Gate",
+   "tile": [
+    11,
+    14
+   ],
+   "item": "ether",
+   "n": 2,
+   "tier": 4
+  },
+  {
+   "section": "024",
+   "name": "Molten Frontier: Lava Bridges Part A",
+   "tile": [
+    20,
+    13
+   ],
+   "item": "megagel",
+   "n": 3,
+   "tier": 4
+  },
+  {
+   "section": "024",
+   "name": "Molten Frontier: Lava Bridges Part A",
+   "tile": [
+    16,
+    8
+   ],
+   "item": "megagel",
+   "n": 3,
+   "tier": 4
+  },
+  {
+   "section": "025",
+   "name": "Molten Frontier: Lava Bridges Part B",
+   "tile": [
+    15,
+    13
+   ],
+   "item": "dust",
+   "n": 800,
+   "tier": 4
+  },
+  {
+   "section": "025",
+   "name": "Molten Frontier: Lava Bridges Part B",
+   "tile": [
+    22,
+    14
+   ],
+   "item": "fullgel",
+   "n": 1,
+   "tier": 4
+  },
+  {
+   "section": "026",
+   "name": "Molten Frontier: Shuttle Pad",
+   "tile": [
+    14,
+    12
+   ],
+   "item": "harmonic",
+   "n": 5,
+   "tier": 4
+  },
+  {
+   "section": "027",
+   "name": "Molten Frontier: Shadow Tunnel Mouth",
+   "tile": [
+    6,
+    14
+   ],
+   "item": "harmonic",
+   "n": 5,
+   "tier": 4
+  },
+  {
+   "section": "028",
+   "name": "Molten Frontier: Magma Mines Gate",
+   "tile": [
+    22,
+    10
+   ],
+   "item": "fullgel",
+   "n": 1,
+   "tier": 4
+  }
+ ],
+ "Ferrox": [
+  {
+   "section": "029",
+   "name": "Gate Plaza",
+   "tile": [
+    11,
+    14
+   ],
+   "item": "cure",
+   "n": 2,
+   "tier": 1
+  },
+  {
+   "section": "030",
+   "name": "Rustvale",
+   "tile": [
+    17,
+    12
+   ],
+   "item": "gel",
+   "n": 2,
+   "tier": 1
+  },
+  {
+   "section": "034",
+   "name": "Scrap Route Part A",
+   "tile": [
+    16,
+    14
+   ],
+   "item": "revive",
+   "n": 1,
+   "tier": 1
+  },
+  {
+   "section": "034",
+   "name": "Scrap Route Part A",
+   "tile": [
+    6,
+    2
+   ],
+   "item": "gel",
+   "n": 2,
+   "tier": 1
+  },
+  {
+   "section": "035",
+   "name": "Scrap Route Part B",
+   "tile": [
+    9,
+    2
+   ],
+   "item": "gel",
+   "n": 2,
+   "tier": 1
+  },
+  {
+   "section": "035",
+   "name": "Scrap Route Part B",
+   "tile": [
+    10,
+    14
+   ],
+   "item": "gel",
+   "n": 2,
+   "tier": 1
+  },
+  {
+   "section": "036",
+   "name": "Crane Yard",
+   "tile": [
+    15,
+    13
+   ],
+   "item": "stasis",
+   "n": 3,
+   "tier": 1
+  },
+  {
+   "section": "036",
+   "name": "Crane Yard",
+   "tile": [
+    6,
+    2
+   ],
+   "item": "gel",
+   "n": 2,
+   "tier": 1
+  },
+  {
+   "section": "037",
+   "name": "Junk Market",
+   "tile": [
+    15,
+    14
+   ],
+   "item": "cure",
+   "n": 2,
+   "tier": 1
+  },
+  {
+   "section": "038",
+   "name": "Furnace Ridge",
+   "tile": [
+    13,
+    1
+   ],
+   "item": "gel",
+   "n": 2,
+   "tier": 1
+  },
+  {
+   "section": "038",
+   "name": "Furnace Ridge",
+   "tile": [
+    3,
+    12
+   ],
+   "item": "stasis",
+   "n": 3,
+   "tier": 1
+  }
+ ],
+ "Sporeholm": [
+  {
+   "section": "041",
+   "name": "Landing Bog",
+   "tile": [
+    18,
+    11
+   ],
+   "item": "stasis",
+   "n": 5,
+   "tier": 2
+  },
+  {
+   "section": "042",
+   "name": "Mirefen Village",
+   "tile": [
+    17,
+    13
+   ],
+   "item": "harmonic",
+   "n": 2,
+   "tier": 2
+  },
+  {
+   "section": "045",
+   "name": "Lantern Marsh Part A",
+   "tile": [
+    16,
+    12
+   ],
+   "item": "revive",
+   "n": 1,
+   "tier": 2
+  },
+  {
+   "section": "045",
+   "name": "Lantern Marsh Part A",
+   "tile": [
+    4,
+    1
+   ],
+   "item": "revive",
+   "n": 1,
+   "tier": 2
+  },
+  {
+   "section": "046",
+   "name": "Lantern Marsh Part B",
+   "tile": [
+    17,
+    1
+   ],
+   "item": "gel",
+   "n": 3,
+   "tier": 2
+  },
+  {
+   "section": "046",
+   "name": "Lantern Marsh Part B",
+   "tile": [
+    5,
+    11
+   ],
+   "item": "stasis",
+   "n": 5,
+   "tier": 2
+  },
+  {
+   "section": "047",
+   "name": "Mushroom Maze 1F",
+   "tile": [
+    1,
+    9
+   ],
+   "item": "megagel",
+   "n": 1,
+   "tier": 2
+  },
+  {
+   "section": "048",
+   "name": "Mushroom Maze 2F",
+   "tile": [
+    13,
+    7
+   ],
+   "item": "gel",
+   "n": 3,
+   "tier": 2
+  },
+  {
+   "section": "049",
+   "name": "Spore Pools",
+   "tile": [
+    14,
+    12
+   ],
+   "item": "harmonic",
+   "n": 2,
+   "tier": 2
+  },
+  {
+   "section": "049",
+   "name": "Spore Pools",
+   "tile": [
+    10,
+    14
+   ],
+   "item": "revive",
+   "n": 1,
+   "tier": 2
+  }
+ ],
+ "Thalassa": [
+  {
+   "section": "052",
+   "name": "Port Saltreach Docks",
+   "tile": [
+    19,
+    14
+   ],
+   "item": "harmonic",
+   "n": 2,
+   "tier": 2
+  },
+  {
+   "section": "053",
+   "name": "Saltreach Market",
+   "tile": [
+    11,
+    14
+   ],
+   "item": "megagel",
+   "n": 1,
+   "tier": 2
+  },
+  {
+   "section": "057",
+   "name": "Coral Route Part A",
+   "tile": [
+    17,
+    1
+   ],
+   "item": "gel",
+   "n": 3,
+   "tier": 2
+  },
+  {
+   "section": "057",
+   "name": "Coral Route Part A",
+   "tile": [
+    6,
+    13
+   ],
+   "item": "revive",
+   "n": 1,
+   "tier": 2
+  },
+  {
+   "section": "058",
+   "name": "Coral Route Part B",
+   "tile": [
+    5,
+    2
+   ],
+   "item": "jammer",
+   "n": 1,
+   "tier": 2
+  },
+  {
+   "section": "058",
+   "name": "Coral Route Part B",
+   "tile": [
+    15,
+    2
+   ],
+   "item": "harmonic",
+   "n": 2,
+   "tier": 2
+  },
+  {
+   "section": "059",
+   "name": "Sea Arch Cove",
+   "tile": [
+    21,
+    14
+   ],
+   "item": "megagel",
+   "n": 1,
+   "tier": 2
+  }
+ ],
+ "Neonis": [
+  {
+   "section": "062",
+   "name": "Neonis Starport",
+   "tile": [
+    12,
+    13
+   ],
+   "item": "stun",
+   "n": 2,
+   "tier": 3
+  },
+  {
+   "section": "063",
+   "name": "Neon Boulevard",
+   "tile": [
+    14,
+    13
+   ],
+   "item": "dust",
+   "n": 500,
+   "tier": 3
+  },
+  {
+   "section": "066",
+   "name": "Arcade District",
+   "tile": [
+    8,
+    14
+   ],
+   "item": "ether",
+   "n": 1,
+   "tier": 3
+  },
+  {
+   "section": "066",
+   "name": "Arcade District",
+   "tile": [
+    18,
+    9
+   ],
+   "item": "dust",
+   "n": 500,
+   "tier": 3
+  },
+  {
+   "section": "067",
+   "name": "Broadcast Route Part A",
+   "tile": [
+    19,
+    3
+   ],
+   "item": "revive",
+   "n": 2,
+   "tier": 3
+  },
+  {
+   "section": "067",
+   "name": "Broadcast Route Part A",
+   "tile": [
+    4,
+    11
+   ],
+   "item": "megagel",
+   "n": 2,
+   "tier": 3
+  },
+  {
+   "section": "068",
+   "name": "Broadcast Route Part B",
+   "tile": [
+    12,
+    12
+   ],
+   "item": "dust",
+   "n": 500,
+   "tier": 3
+  },
+  {
+   "section": "068",
+   "name": "Broadcast Route Part B",
+   "tile": [
+    4,
+    11
+   ],
+   "item": "megagel",
+   "n": 2,
+   "tier": 3
+  }
+ ],
+ "Glyphos": [
+  {
+   "section": "072",
+   "name": "Sunken Landing",
+   "tile": [
+    3,
+    14
+   ],
+   "item": "ether",
+   "n": 1,
+   "tier": 3
+  },
+  {
+   "section": "073",
+   "name": "Dig Camp",
+   "tile": [
+    12,
+    13
+   ],
+   "item": "megagel",
+   "n": 2,
+   "tier": 3
+  },
+  {
+   "section": "075",
+   "name": "Coral Ruins Part A",
+   "tile": [
+    3,
+    14
+   ],
+   "item": "jammer",
+   "n": 1,
+   "tier": 3
+  },
+  {
+   "section": "075",
+   "name": "Coral Ruins Part A",
+   "tile": [
+    11,
+    2
+   ],
+   "item": "revive",
+   "n": 2,
+   "tier": 3
+  },
+  {
+   "section": "076",
+   "name": "Coral Ruins Part B",
+   "tile": [
+    22,
+    14
+   ],
+   "item": "stun",
+   "n": 2,
+   "tier": 3
+  },
+  {
+   "section": "076",
+   "name": "Coral Ruins Part B",
+   "tile": [
+    6,
+    2
+   ],
+   "item": "harmonic",
+   "n": 3,
+   "tier": 3
+  },
+  {
+   "section": "077",
+   "name": "Glyph Hollow",
+   "tile": [
+    3,
+    13
+   ],
+   "item": "megagel",
+   "n": 2,
+   "tier": 3
+  },
+  {
+   "section": "077",
+   "name": "Glyph Hollow",
+   "tile": [
+    8,
+    3
+   ],
+   "item": "harmonic",
+   "n": 3,
+   "tier": 3
+  }
+ ],
+ "Pyros": [
+  {
+   "section": "082",
+   "name": "Cinder Hollow",
+   "tile": [
+    6,
+    11
+   ],
+   "item": "dust",
+   "n": 800,
+   "tier": 4
+  },
+  {
+   "section": "085",
+   "name": "Lava Rail Part A",
+   "tile": [
+    15,
+    13
+   ],
+   "item": "ether",
+   "n": 2,
+   "tier": 4
+  },
+  {
+   "section": "085",
+   "name": "Lava Rail Part A",
+   "tile": [
+    7,
+    13
+   ],
+   "item": "revive",
+   "n": 2,
+   "tier": 4
+  },
+  {
+   "section": "086",
+   "name": "Lava Rail Part B",
+   "tile": [
+    15,
+    11
+   ],
+   "item": "dust",
+   "n": 800,
+   "tier": 4
+  },
+  {
+   "section": "086",
+   "name": "Lava Rail Part B",
+   "tile": [
+    5,
+    12
+   ],
+   "item": "revive",
+   "n": 2,
+   "tier": 4
+  },
+  {
+   "section": "087",
+   "name": "Deep Mines B1",
+   "tile": [
+    14,
+    12
+   ],
+   "item": "dust",
+   "n": 800,
+   "tier": 4
+  },
+  {
+   "section": "088",
+   "name": "Deep Mines B2",
+   "tile": [
+    15,
+    8
+   ],
+   "item": "megagel",
+   "n": 3,
+   "tier": 4
+  },
+  {
+   "section": "089",
+   "name": "Deep Mines B3",
+   "tile": [
+    2,
+    2
+   ],
+   "item": "fullgel",
+   "n": 1,
+   "tier": 4
+  },
+  {
+   "section": "090",
+   "name": "Furnace Ridge (Pyros)",
+   "tile": [
+    13,
+    1
+   ],
+   "item": "revive",
+   "n": 2,
+   "tier": 4
+  },
+  {
+   "section": "090",
+   "name": "Furnace Ridge (Pyros)",
+   "tile": [
+    14,
+    13
+   ],
+   "item": "dust",
+   "n": 800,
+   "tier": 4
+  }
+ ],
+ "Glacia": [
+  {
+   "section": "093",
+   "name": "Frostmark",
+   "tile": [
+    7,
+    2
+   ],
+   "item": "harmonic",
+   "n": 5,
+   "tier": 4
+  },
+  {
+   "section": "096",
+   "name": "Aurora Route Part A",
+   "tile": [
+    5,
+    1
+   ],
+   "item": "ether",
+   "n": 2,
+   "tier": 4
+  },
+  {
+   "section": "096",
+   "name": "Aurora Route Part A",
+   "tile": [
+    14,
+    5
+   ],
+   "item": "harmonic",
+   "n": 5,
+   "tier": 4
+  },
+  {
+   "section": "097",
+   "name": "Aurora Route Part B",
+   "tile": [
+    4,
+    1
+   ],
+   "item": "fullgel",
+   "n": 1,
+   "tier": 4
+  },
+  {
+   "section": "097",
+   "name": "Aurora Route Part B",
+   "tile": [
+    16,
+    5
+   ],
+   "item": "fullgel",
+   "n": 1,
+   "tier": 4
+  },
+  {
+   "section": "098",
+   "name": "Crystal Caverns B1",
+   "tile": [
+    1,
+    7
+   ],
+   "item": "ether",
+   "n": 2,
+   "tier": 4
+  },
+  {
+   "section": "098",
+   "name": "Crystal Caverns B1",
+   "tile": [
+    13,
+    8
+   ],
+   "item": "dust",
+   "n": 800,
+   "tier": 4
+  },
+  {
+   "section": "099",
+   "name": "Crystal Caverns B2",
+   "tile": [
+    2,
+    8
+   ],
+   "item": "dust",
+   "n": 800,
+   "tier": 4
+  },
+  {
+   "section": "099",
+   "name": "Crystal Caverns B2",
+   "tile": [
+    3,
+    10
+   ],
+   "item": "fullgel",
+   "n": 1,
+   "tier": 4
+  },
+  {
+   "section": "100",
+   "name": "Crystal Caverns B3",
+   "tile": [
+    2,
+    10
+   ],
+   "item": "fullgel",
+   "n": 1,
+   "tier": 4
+  },
+  {
+   "section": "100",
+   "name": "Crystal Caverns B3",
+   "tile": [
+    2,
+    2
+   ],
+   "item": "fullgel",
+   "n": 1,
+   "tier": 4
+  },
+  {
+   "section": "101",
+   "name": "Fossil Dig",
+   "tile": [
+    11,
+    14
+   ],
+   "item": "dust",
+   "n": 800,
+   "tier": 4
+  },
+  {
+   "section": "101",
+   "name": "Fossil Dig",
+   "tile": [
+    9,
+    5
+   ],
+   "item": "revive",
+   "n": 2,
+   "tier": 4
+  },
+  {
+   "section": "102",
+   "name": "Frozen Falls",
+   "tile": [
+    21,
+    2
+   ],
+   "item": "megagel",
+   "n": 3,
+   "tier": 4
+  }
+ ],
+ "Helix Station": [
+  {
+   "section": "110",
+   "name": "Containment Wing 2F",
+   "tile": [
+    2,
+    5
+   ],
+   "item": "harmonic",
+   "n": 5,
+   "tier": 5
+  },
+  {
+   "section": "111",
+   "name": "Engineering",
+   "tile": [
+    3,
+    12
+   ],
+   "item": "maxrevive",
+   "n": 1,
+   "tier": 5
+  }
+ ],
+ "Halo": [
+  {
+   "section": "114",
+   "name": "Cloud Dock",
+   "tile": [
+    3,
+    12
+   ],
+   "item": "fullgel",
+   "n": 2,
+   "tier": 5
+  },
+  {
+   "section": "115",
+   "name": "Skyreach Plaza",
+   "tile": [
+    17,
+    12
+   ],
+   "item": "ether",
+   "n": 3,
+   "tier": 5
+  },
+  {
+   "section": "118",
+   "name": "Wind Bridges Part A",
+   "tile": [
+    12,
+    10
+   ],
+   "item": "harmonic",
+   "n": 5,
+   "tier": 5
+  },
+  {
+   "section": "118",
+   "name": "Wind Bridges Part A",
+   "tile": [
+    21,
+    12
+   ],
+   "item": "fullgel",
+   "n": 2,
+   "tier": 5
+  },
+  {
+   "section": "119",
+   "name": "Wind Bridges Part B",
+   "tile": [
+    18,
+    11
+   ],
+   "item": "maxrevive",
+   "n": 1,
+   "tier": 5
+  },
+  {
+   "section": "119",
+   "name": "Wind Bridges Part B",
+   "tile": [
+    4,
+    3
+   ],
+   "item": "harmonic",
+   "n": 5,
+   "tier": 5
+  },
+  {
+   "section": "120",
+   "name": "Floating Gardens",
+   "tile": [
+    17,
+    13
+   ],
+   "item": "singularity",
+   "n": 1,
+   "tier": 5
+  },
+  {
+   "section": "120",
+   "name": "Floating Gardens",
+   "tile": [
+    6,
+    12
+   ],
+   "item": "dust",
+   "n": 1200,
+   "tier": 5
+  }
+ ],
+ "Umbra": [
+  {
+   "section": "123",
+   "name": "Shadow Tunnel Exit",
+   "tile": [
+    13,
+    9
+   ],
+   "item": "dust",
+   "n": 1600,
+   "tier": 6
+  },
+  {
+   "section": "124",
+   "name": "Gravewell",
+   "tile": [
+    12,
+    1
+   ],
+   "item": "maxrevive",
+   "n": 1,
+   "tier": 6
+  },
+  {
+   "section": "127",
+   "name": "Lantern Streets Part A",
+   "tile": [
+    13,
+    4
+   ],
+   "item": "maxrevive",
+   "n": 1,
+   "tier": 6
+  },
+  {
+   "section": "127",
+   "name": "Lantern Streets Part A",
+   "tile": [
+    11,
+    1
+   ],
+   "item": "maxrevive",
+   "n": 1,
+   "tier": 6
+  },
+  {
+   "section": "128",
+   "name": "Lantern Streets Part B",
+   "tile": [
+    11,
+    4
+   ],
+   "item": "fullgel",
+   "n": 3,
+   "tier": 6
+  },
+  {
+   "section": "128",
+   "name": "Lantern Streets Part B",
+   "tile": [
+    16,
+    1
+   ],
+   "item": "fullgel",
+   "n": 3,
+   "tier": 6
+  },
+  {
+   "section": "129",
+   "name": "The Sinkhole B1",
+   "tile": [
+    13,
+    9
+   ],
+   "item": "maxrevive",
+   "n": 1,
+   "tier": 6
+  },
+  {
+   "section": "129",
+   "name": "The Sinkhole B1",
+   "tile": [
+    10,
+    3
+   ],
+   "item": "fullgel",
+   "n": 3,
+   "tier": 6
+  },
+  {
+   "section": "130",
+   "name": "The Sinkhole B2",
+   "tile": [
+    13,
+    2
+   ],
+   "item": "fullgel",
+   "n": 3,
+   "tier": 6
+  },
+  {
+   "section": "131",
+   "name": "The Sinkhole B3",
+   "tile": [
+    12,
+    13
+   ],
+   "item": "dust",
+   "n": 1600,
+   "tier": 6
+  },
+  {
+   "section": "131",
+   "name": "The Sinkhole B3",
+   "tile": [
+    9,
+    4
+   ],
+   "item": "fullgel",
+   "n": 3,
+   "tier": 6
+  },
+  {
+   "section": "132",
+   "name": "The Sinkhole B4",
+   "tile": [
+    1,
+    12
+   ],
+   "item": "ether",
+   "n": 3,
+   "tier": 6
+  }
+ ],
+ "Starfall Rift": [
+  {
+   "section": "136",
+   "name": "Rim Camp",
+   "tile": [
+    11,
+    13
+   ],
+   "item": "dust",
+   "n": 1600,
+   "tier": 6
+  },
+  {
+   "section": "138",
+   "name": "Seedpod Fields Part A",
+   "tile": [
+    16,
+    14
+   ],
+   "item": "ether",
+   "n": 3,
+   "tier": 6
+  },
+  {
+   "section": "138",
+   "name": "Seedpod Fields Part A",
+   "tile": [
+    11,
+    2
+   ],
+   "item": "singularity",
+   "n": 1,
+   "tier": 6
+  },
+  {
+   "section": "139",
+   "name": "Seedpod Fields Part B",
+   "tile": [
+    13,
+    1
+   ],
+   "item": "ether",
+   "n": 3,
+   "tier": 6
+  },
+  {
+   "section": "139",
+   "name": "Seedpod Fields Part B",
+   "tile": [
+    18,
+    14
+   ],
+   "item": "dust",
+   "n": 1600,
+   "tier": 6
+  },
+  {
+   "section": "140",
+   "name": "Teo's Old Camp",
+   "tile": [
+    17,
+    12
+   ],
+   "item": "dust",
+   "n": 1600,
+   "tier": 6
+  },
+  {
+   "section": "141",
+   "name": "Crater Rim",
+   "tile": [
+    10,
+    13
+   ],
+   "item": "maxrevive",
+   "n": 1,
+   "tier": 6
+  },
+  {
+   "section": "141",
+   "name": "Crater Rim",
+   "tile": [
+    19,
+    14
+   ],
+   "item": "fullgel",
+   "n": 3,
+   "tier": 6
+  },
+  {
+   "section": "142",
+   "name": "Crater Descent B1",
+   "tile": [
+    14,
+    5
+   ],
+   "item": "fullgel",
+   "n": 3,
+   "tier": 6
+  },
+  {
+   "section": "143",
+   "name": "Crater Descent B2",
+   "tile": [
+    3,
+    7
+   ],
+   "item": "singularity",
+   "n": 1,
+   "tier": 6
+  },
+  {
+   "section": "143",
+   "name": "Crater Descent B2",
+   "tile": [
+    2,
+    4
+   ],
+   "item": "fullgel",
+   "n": 3,
+   "tier": 6
+  },
+  {
+   "section": "144",
+   "name": "Crater Descent B3",
+   "tile": [
+    14,
+    5
+   ],
+   "item": "dust",
+   "n": 1600,
+   "tier": 6
+  },
+  {
+   "section": "145",
+   "name": "Rift Engine Platform",
+   "tile": [
+    6,
+    1
+   ],
+   "item": "maxrevive",
+   "n": 1,
+   "tier": 6
+  }
+ ],
+ "Apex Array": [
+  {
+   "section": "146",
+   "name": "Summit Lift",
+   "tile": [
+    4,
+    11
+   ],
+   "item": "singularity",
+   "n": 2,
+   "tier": 7
+  }
+ ],
+ "Ystra": [
+  {
+   "section": "153",
+   "name": "Arrival Fragment",
+   "tile": [
+    8,
+    2
+   ],
+   "item": "ether",
+   "n": 5,
+   "tier": 7
+  },
+  {
+   "section": "154",
+   "name": "Floating Continents Part A",
+   "tile": [
+    16,
+    3
+   ],
+   "item": "singularity",
+   "n": 2,
+   "tier": 7
+  },
+  {
+   "section": "154",
+   "name": "Floating Continents Part A",
+   "tile": [
+    10,
+    2
+   ],
+   "item": "maxrevive",
+   "n": 2,
+   "tier": 7
+  },
+  {
+   "section": "155",
+   "name": "Floating Continents Part B",
+   "tile": [
+    9,
+    12
+   ],
+   "item": "singularity",
+   "n": 2,
+   "tier": 7
+  },
+  {
+   "section": "155",
+   "name": "Floating Continents Part B",
+   "tile": [
+    17,
+    12
+   ],
+   "item": "ether",
+   "n": 5,
+   "tier": 7
+  },
+  {
+   "section": "156",
+   "name": "Drowned Seas",
+   "tile": [
+    4,
+    12
+   ],
+   "item": "dust",
+   "n": 2500,
+   "tier": 7
+  },
+  {
+   "section": "156",
+   "name": "Drowned Seas",
+   "tile": [
+    6,
+    11
+   ],
+   "item": "maxrevive",
+   "n": 2,
+   "tier": 7
+  },
+  {
+   "section": "157",
+   "name": "Sun Forge",
+   "tile": [
+    8,
+    5
+   ],
+   "item": "fullgel",
+   "n": 3,
+   "tier": 7
+  },
+  {
+   "section": "158",
+   "name": "Crystal Ruins 1F",
+   "tile": [
+    15,
+    5
+   ],
+   "item": "maxrevive",
+   "n": 2,
+   "tier": 7
+  },
+  {
+   "section": "159",
+   "name": "Crystal Ruins 2F",
+   "tile": [
+    12,
+    12
+   ],
+   "item": "singularity",
+   "n": 2,
+   "tier": 7
+  },
+  {
+   "section": "160",
+   "name": "Blighted Forest Part A",
+   "tile": [
+    12,
+    1
+   ],
+   "item": "ether",
+   "n": 5,
+   "tier": 7
+  },
+  {
+   "section": "160",
+   "name": "Blighted Forest Part A",
+   "tile": [
+    12,
+    14
+   ],
+   "item": "maxrevive",
+   "n": 2,
+   "tier": 7
+  },
+  {
+   "section": "161",
+   "name": "Blighted Forest Part B",
+   "tile": [
+    11,
+    2
+   ],
+   "item": "maxrevive",
+   "n": 2,
+   "tier": 7
+  },
+  {
+   "section": "161",
+   "name": "Blighted Forest Part B",
+   "tile": [
+    12,
+    4
+   ],
+   "item": "fullgel",
+   "n": 3,
+   "tier": 7
+  },
+  {
+   "section": "162",
+   "name": "Edge of the Void",
+   "tile": [
+    3,
+    3
+   ],
+   "item": "maxrevive",
+   "n": 2,
+   "tier": 7
+  },
+  {
+   "section": "163",
+   "name": "Seedmother's Grove",
+   "tile": [
+    9,
+    4
+   ],
+   "item": "maxrevive",
+   "n": 2,
+   "tier": 7
+  }
+ ]
+}

@@ -387,21 +387,21 @@ function chipStop(){chipCur=null}
 /* ---------- music director: title song, then chiptune (or the gameplay song) ---------- */
 const MUSIC_VOL=0.18,CHIP_VOL=0.11;let musicMode='chip';try{const v=localStorage.getItem('alienmon_music');musicMode=v==='off'?'off':v==='song'?'song':'chip'}catch(e){}
 let musicOn=musicMode!=='off';
-const BGM=new Audio(__MUSIC__),TITLEM=new Audio(__TITLEMUSIC__);[BGM,TITLEM].forEach(a=>{a.loop=true;a.volume=0;a.preload='auto'});
+const BGM=new Audio(__MUSIC__),TITLEM=new Audio(__TITLEMUSIC__),BATTLEM=new Audio(__BATTLEMUSIC__);[BGM,TITLEM,BATTLEM].forEach(a=>{a.loop=true;a.volume=0;a.preload='auto'});
 const TITLE_SCENES=['title','gender','intro','starter'];let curTrack=null,lastArea='frontier';
 function areaTrack(){if(scene==='battle')return'battle';if(scene==='space')return'space';if(scene==='planet')return'town';if(scene==='world')return'frontier';
  if(scene==='menu'||scene==='cut'){return PREV==='space'?'space':PREV==='world'?'frontier':PREV==='planet'?'town':lastArea}return lastArea}
-function wantTrack(){if(TITLE_SCENES.includes(scene))return TITLEM;return musicMode==='song'?BGM:'chip'}
-function musicTry(){if(musicMode==='off'||document.hidden)return;const t=wantTrack();if(t!==curTrack){if(t===TITLEM)TITLEM.currentTime=0;curTrack=t}
+function wantTrack(){if(TITLE_SCENES.includes(scene))return TITLEM;if(scene==='battle'||(LVP&&B))return BATTLEM;return musicMode==='song'?BGM:'chip'}
+function musicTry(){if(musicMode==='off'||document.hidden)return;const t=wantTrack();if(t!==curTrack){if(t===TITLEM)TITLEM.currentTime=0;if(t===BATTLEM)BATTLEM.currentTime=0;curTrack=t}
  if(t==='chip'){chipInit();if(AC&&AC.state==='suspended')AC.resume()}else if(t.paused){const p=t.play();if(p&&p.catch)p.catch(()=>{})}}
 function musicTick(){if(musicMode==='off')return;const t=wantTrack();if(t!==curTrack)musicTry();
- for(const a of[BGM,TITLEM]){const target=a===curTrack?MUSIC_VOL*volMul():0;a.volume=Math.max(0,Math.min(1,a.volume+Math.sign(target-a.volume)*Math.min(0.006,Math.abs(target-a.volume))));if(a!==curTrack&&a.volume<=0.001&&!a.paused)a.pause()}
+ for(const a of[BGM,TITLEM,BATTLEM]){const target=a===curTrack?MUSIC_VOL*volMul()*(a===BATTLEM?1.15:1):0;a.volume=Math.max(0,Math.min(1,a.volume+Math.sign(target-a.volume)*Math.min(0.006,Math.abs(target-a.volume))));if(a!==curTrack&&a.volume<=0.001&&!a.paused)a.pause()}
  if(AC){const area=areaTrack();if(curTrack==='chip'){if(chipCur!==area){if(chipVol>0.004)chipVol=Math.max(0,chipVol-0.012);else{lastArea=area;chipPlay(area)}}else chipVol=Math.min(CHIP_VOL*volMul(),chipVol+0.004)}
   else{chipVol=Math.max(0,chipVol-0.006);if(chipVol<=0)chipStop()}chipMaster.gain.setTargetAtTime(chipVol,AC.currentTime,0.05)}}
-function setMusicMode(m){musicMode=m;musicOn=m!=='off';try{localStorage.setItem('alienmon_music',m)}catch(e){}if(m==='off'){BGM.pause();TITLEM.pause();chipVol=0;chipStop();if(chipMaster)chipMaster.gain.value=0;curTrack=null}else{curTrack=null;musicTry()}}
+function setMusicMode(m){musicMode=m;musicOn=m!=='off';try{localStorage.setItem('alienmon_music',m)}catch(e){}if(m==='off'){BGM.pause();TITLEM.pause();BATTLEM.pause();chipVol=0;chipStop();if(chipMaster)chipMaster.gain.value=0;curTrack=null}else{curTrack=null;musicTry()}}
 function setMusic(on){setMusicMode(on?'chip':'off')}
 ['pointerdown','keydown','touchstart'].forEach(ev=>window.addEventListener(ev,musicTry,{passive:true}));
-document.addEventListener('visibilitychange',()=>{if(document.hidden){BGM.pause();TITLEM.pause();if(AC)AC.suspend()}else{if(AC)AC.resume();curTrack=null;musicTry()}});setInterval(musicTick,50);
+document.addEventListener('visibilitychange',()=>{if(document.hidden){BGM.pause();TITLEM.pause();BATTLEM.pause();if(AC)AC.suspend()}else{if(AC)AC.resume();curTrack=null;musicTry()}});setInterval(musicTick,50);
 window.addEventListener('keydown',e=>{if(e.code==='KeyM')setMusicMode(musicMode==='chip'?'song':musicMode==='song'?'off':'chip')});
 
 /* ---------- world map (on-foot travel between regions) ---------- */

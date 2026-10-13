@@ -41,6 +41,7 @@ const WORLDJ=fs.readFileSync(path.join(root,'data/world_map.json'),'utf8');
 const WORLDIMG=asset('art/world/molten_frontier.webp');
 const MUSIC=asset('audio/save_the_stars.mp3');
 const TITLEMUSIC=asset('audio/lets_go_alienmon_title.mp3');
+const BATTLEMUSIC=asset('audio/battle_spark.mp3');
 // planet sprites seen from space (art/planets/<planetKey>.png) and auto-wired planet scenes
 const PLANART=folder('art/planets','.png');
 for(const p of P){if(SCN[p.key+'_battle']){p.scene=p.key+'_battle';p.sceneFx=''}if(SCN[p.key+'_keyart'])p.landScene=p.key+'_keyart';}
@@ -53,7 +54,7 @@ const SITE=(process.env.SITE_URL||'https://alienmon.vercel.app').replace(/\/$/,'
 const BUILD=crypto.createHash('sha1').update(fs.readFileSync(path.join(root,'src/template.html'))).update(fs.readFileSync(path.join(root,'src/quests.js'))).update(fs.readFileSync(path.join(root,'src/progression.js'))).update(fs.readFileSync(path.join(root,'src/world.js'))).update(fs.readFileSync(path.join(root,'src/sections.js'))).update(['data/world.json',...(fs.existsSync(path.join(root,'data/collision'))?fs.readdirSync(path.join(root,'data/collision')).sort().map(f=>'data/collision/'+f):[])].filter(f=>fs.existsSync(path.join(root,f))).map(f=>fs.readFileSync(path.join(root,f),'utf8')).join('')).update(j([D,P,PAINT,WORLDJ,ASSETS])).digest('hex').slice(0,10);
 const fill={__DATA__:j(D),__PLANETS__:j(P),__TRAITS__:j(core.traits),__SIGS__:j(core.signature_moves),__SYS__:j(SYS),__ART__:j(ART),__ARTB__:j(ARTB),__OW__:j(OW),
  __TITLE__:j(TITLE),__SHIP__:j(SHIP),__CUTS__:j(CUTS),__CHAR__:j(CHAR),__PORTRAITS__:j(PORTRAITS),__SCENES__:j(SCN),__FX__:j(FX),__PAINT__:PAINT,__WORLD__:WORLDJ,__WORLDIMG__:j(WORLDIMG),
- __MUSIC__:j(MUSIC),__TITLEMUSIC__:j(TITLEMUSIC),__PLANETART__:j(PLANART),__BUILD__:j(BUILD),__INLINE__:j(INLINE),__SITE__:SITE,__BETA__:j(BETA)};
+ __MUSIC__:j(MUSIC),__TITLEMUSIC__:j(TITLEMUSIC),__BATTLEMUSIC__:j(BATTLEMUSIC),__PLANETART__:j(PLANART),__BUILD__:j(BUILD),__INLINE__:j(INLINE),__SITE__:SITE,__BETA__:j(BETA)};
 // quests: the engine (src/quests.js) is filled in first and then inlined into the template
 const QUESTS=JSON.parse(fs.readFileSync(path.join(root,'data/quests.json'),'utf8')).quests;
 const qp=path.join(root,'data/quest_places.json'),QPLACE=fs.existsSync(qp)?fs.readFileSync(qp,'utf8'):'{}';

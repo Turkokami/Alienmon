@@ -351,6 +351,11 @@ for sid, sec in world.items():
         cls, art = classes[(int(sid) + i + 2) % len(classes)]
         extra.append({'art': art, 'trainer': {'cls': 'Apprentice', 'app': 1}, 't': []})
     npc_src[sid] = npc_src.get(sid, []) + extra
+    if sec['type'] != 'interior':
+        for p in npc_src[sid]:
+            role = (p.get('t') or [''])[0].split(':')[0].strip()
+            if not p.get('trainer') and not p.get('wid') and not p.get('story') and 'Linker' in role and len(role) < 24:
+                p['trainer'] = {'cls': role, 'linker': 1}
 for t in tr_rules.get('tiles', []):
     lst = [p for p in npc_src.get(t['section'], []) if p.get('trainer')]
     if t['n'] < len(lst):
@@ -432,6 +437,8 @@ for sid, sec in world.items():
         o = {'x': t[0], 'y': t[1], 'art': person['art'], 'face': person.get('face', 'down'), 't': person['t'], **({'name': person['name']} if person.get('name') else {}), **({k: person[k] for k in ('pre', 'story', 'wid', 'after', 'until', 'legend', 'lv', 'flag') if person.get(k)})}
         if person.get('trainer'):
             tr = dict(person['trainer'])
+            if person.get('face'):
+                o['face_pinned'] = 1
             o['id'] = person.get('wid') or f"sec{sid}_{'app' if tr.get('app') else 'tr'}{n}"
             tr.setdefault('name', hname(o['id']))
             o['trainer'] = tr
@@ -447,6 +454,24 @@ for sid, sec in world.items():
         out.append(o)
     movable = [o for o in out if not o.get('legend')]
     unblock(sec, rows, movable)
+    lane_now = lanes(sec, rows)
+    occupied = {(o['x'], o['y']) for o in movable}
+    for o in movable:
+        if not o.get('trainer') or o.get('wid') in GUARDS or o.get('face_pinned'):
+            continue
+        best = None
+        for d, (dx, dy) in (('down', (0, 1)), ('left', (-1, 0)), ('right', (1, 0)), ('up', (0, -1))):
+            k = hits = 0
+            while k < 5:
+                x, y = o['x'] + dx * (k + 1), o['y'] + dy * (k + 1)
+                if not (0 <= x < W and 0 <= y < H) or rows[y][x] not in '.,' or (x, y) in occupied:
+                    break
+                k += 1
+                hits += (x, y) in lane_now
+            score = hits * 10 + k
+            if best is None or score > best[1]:
+                best = (d, score)
+        o['face'] = best[0]
     sec['npcs'] = [o for o in out if o.get('legend') or o in movable]
 
 arrivals = dict(links.get('arrival', {}))
@@ -601,6 +626,92 @@ for sid, sec in world.items():
             base = reach(rows, W, H, next(iter(keys)), block) if keys else set()
             mons.append({'x': best[0], 'y': best[1], 'mon': name})
     sec['mons'] = mons
+
+# ---- Linker Stashes: one-time item caches, better items as the story goes on, tucked away from the travel lanes ----
+TIER = {'dustara': 1, 'ferrox': 1, 'sporeholm': 2, 'thalassa': 2, 'neonis': 3, 'glyphos': 3, 'pyros': 4, 'glacia': 4,
+        'helix': 5, 'halo': 5, 'umbra': 6, 'starfall': 6, 'apex': 7, 'ystra': 7}
+FRONTIER_TIER = {**{f'{i:03d}': 1 for i in range(14, 19)}, **{f'{i:03d}': 2 for i in range(19, 23)}, **{f'{i:03d}': 4 for i in range(23, 29)}}
+LOOT = {   # (item, count, weight); 'dust' is Stardust
+    1: [('stasis', 3, 5), ('gel', 2, 5), ('cure', 2, 3), ('tether', 1, 2), ('stun', 1, 2), ('dust', 150, 3), ('revive', 1, 1)],
+    2: [('stasis', 5, 4), ('gel', 3, 3), ('megagel', 1, 3), ('harmonic', 2, 3), ('revive', 1, 2), ('cure', 2, 2), ('jammer', 1, 1), ('dust', 300, 3)],
+    3: [('megagel', 2, 4), ('harmonic', 3, 4), ('revive', 2, 3), ('ether', 1, 2), ('stun', 2, 2), ('jammer', 1, 1), ('dust', 500, 3)],
+    4: [('megagel', 3, 4), ('fullgel', 1, 2), ('harmonic', 5, 3), ('revive', 2, 3), ('ether', 2, 2), ('jammer', 2, 1), ('dust', 800, 3)],
+    5: [('fullgel', 2, 4), ('maxrevive', 1, 2), ('ether', 3, 2), ('harmonic', 5, 2), ('singularity', 1, 1), ('dust', 1200, 3)],
+    6: [('fullgel', 3, 4), ('maxrevive', 1, 3), ('singularity', 1, 2), ('ether', 3, 2), ('dust', 1600, 3)],
+    7: [('fullgel', 3, 3), ('maxrevive', 2, 3), ('singularity', 2, 2), ('ether', 5, 2), ('dust', 2500, 3)],
+}
+COUNT = {'route': 2, 'field': 2, 'cave': 1, 'dungeon': 1, 'landmark': 1, 'town': 1, 'tower': 0, 'arena': 0, 'interior': 0}
+stash_plan = {}
+for sid, sec in world.items():
+    n = COUNT.get(sec['type'], 0)
+    if sec['type'] == 'tower' and not any(w['kind'] == 'stairs' and w['edge'] == 'top' for w in sec['warps'] if w.get('edge')):
+        n = 0
+    if sec['type'] in ('cave', 'dungeon') and int(hashlib.md5(sid.encode()).hexdigest(), 16) % 2:
+        n += 1
+    cp = os.path.join(ROOT, 'data/collision', sid + '.json')
+    if not n or not os.path.exists(cp):
+        continue
+    tier = FRONTIER_TIER.get(sid) or TIER.get(sec.get('pkey'), 1)
+    rows = json.load(open(cp))['rows']
+    W, H = sec['tiles']
+    lane = lanes(sec, rows)
+    keys = {tuple(w['tile']) for w in sec['warps']} | {tuple(w['at']) for w in sec['warps']} | {tuple(v) for v in sec['spawns'].values() if v}
+    for side, e in sec['edges'].items():
+        for k in range(e['range'][0], e['range'][1] + 1):
+            for d in range(3):
+                keys.add({'left': (d, k), 'right': (W - 1 - d, k), 'top': (k, d), 'bottom': (k, H - 1 - d)}[side])
+    for o in sec['objects']:
+        keys |= {(o['tile'][0] + dx, o['tile'][1] + dy) for dx in (-1, 0, 1) for dy in (-1, 0, 1)}
+    block = blocked_set(sec) | qtaken[sid] | {(s2['x'], s2['y']) for s2 in spots.values() if s2['s'] == sid} | {(m['x'], m['y']) for m in sec.get('mons', [])}
+    start = next((p for p in lane if p not in block), None)
+    if start is None:
+        continue
+    base = reach(rows, W, H, start, block)
+    chosen = []
+    for i in range(n):
+        best, bs = None, None
+        for (x, y) in base:
+            if (x, y) in lane or (x, y) in keys or (x, y) in chosen or (x, y) == start:
+                continue
+            far = min((abs(x - a) + abs(y - b) for a, b in lane), default=0)   # tucked away from the paths
+            gap = min((abs(x - a) + abs(y - b) for a, b in chosen), default=20)
+            score = min(far, 6) * 3 + min(gap, 10) + ((x * 7 + y * 13 + i) % 5) * 0.1
+            if bs is not None and score <= bs:
+                continue
+            if len(reach(rows, W, H, start, block | set(chosen) | {(x, y)})) != len(base) - len(chosen) - 1:
+                continue   # never wall anything off
+            best, bs = (x, y), score
+        if not best:
+            break
+        chosen.append(best)
+    for i, t in enumerate(chosen):
+        table = LOOT[tier]
+        r = int(hashlib.md5(f'stash{sid}{i}'.encode()).hexdigest(), 16)
+        total = sum(w for _, _, w in table)
+        pick = r % total
+        for item, cnt, w in table:
+            if pick < w:
+                break
+            pick -= w
+        sec['objects'].append({'tile': list(t), 'k': 'stash', 'item': item, 'n': cnt, 'tier': tier})
+        stash_plan.setdefault(sec['planet'], []).append({'section': sid, 'name': sec['name'], 'tile': list(t), 'item': item, 'n': cnt, 'tier': tier})
+json.dump(stash_plan, open(os.path.join(ROOT, 'data/sections/stashes.json'), 'w', encoding='utf-8'), indent=1, ensure_ascii=False)
+NAMES = {'stasis': 'Stasis Pod', 'harmonic': 'Harmonic Pod', 'singularity': 'Singularity Pod', 'gel': 'Med Gel', 'megagel': 'Mega Gel',
+         'fullgel': 'Full Gel', 'revive': 'Revive Spark', 'maxrevive': 'Max Revive', 'cure': 'Cure Spray', 'tether': 'Tether Pulse',
+         'stun': 'Stun Spray', 'ether': 'Ether Gel', 'jammer': 'Signal Jammer', 'dust': 'Stardust'}
+doc = ['# Linker Stashes', '', 'One-time item caches hidden around every world, generated by `tools/sections/build_world.py` (edit the `LOOT` and `COUNT` tables there and rebuild).',
+       'Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Array, Ystra). Stashes sit away from the main paths to reward exploring.', '']
+total = 0
+for planet, lst in stash_plan.items():
+    doc += [f'## {planet} ({len(lst)})', '', '| Section | Tile | Item | Tier |', '|---|---|---|---|']
+    for st in lst:
+        doc.append(f"| {st['section']} {st['name'].replace('Molten Frontier: ', 'Frontier: ')} | {st['tile'][0]},{st['tile'][1]} | {st['n']}x {NAMES.get(st['item'], st['item'])} | {st['tier']} |")
+        total += 1
+    doc.append('')
+doc.insert(4, f'**{total} stashes in total.**\n')
+os.makedirs(os.path.join(ROOT, 'docs'), exist_ok=True)
+open(os.path.join(ROOT, 'docs/LINKER_STASHES.md'), 'w', encoding='utf-8').write('\n'.join(doc))
+print(f'{total} Linker Stashes placed')
 
 json.dump({'version': 1, 'tile': 16, 'screen_tiles': [10, 9], 'arrival': arrivals, 'quest_spots': spots, 'sections': world, 'connections': conns},
           open(os.path.join(ROOT, OUT or 'data/world.json'), 'w', encoding='utf-8'), indent=1, ensure_ascii=False)

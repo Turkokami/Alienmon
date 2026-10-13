@@ -1428,7 +1428,18 @@
      "edge": "up"
     }
    ],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      12,
+      1
+     ],
+     "k": "stash",
+     "item": "dust",
+     "n": 150,
+     "tier": 1
+    }
+   ],
    "spawns": {
     "arrival": [
      1,
@@ -1483,7 +1494,13 @@
      "face": "down",
      "t": [
       "Linker: Press START to check your team. A tired Alienmon is a fainted Alienmon waiting to happen."
-     ]
+     ],
+     "id": "sec004_tr3",
+     "trainer": {
+      "cls": "Linker",
+      "linker": 1,
+      "name": "Remy"
+     }
     },
     {
      "x": 4,
@@ -1731,7 +1748,18 @@
     }
    },
    "warps": [],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      22,
+      5
+     ],
+     "k": "stash",
+     "item": "stasis",
+     "n": 3,
+     "tier": 1
+    }
+   ],
    "spawns": {
     "default": [
      1,
@@ -1807,7 +1835,18 @@
     }
    },
    "warps": [],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      19,
+      5
+     ],
+     "k": "stash",
+     "item": "cure",
+     "n": 2,
+     "tier": 1
+    }
+   ],
    "spawns": {
     "default": [
      1,
@@ -1863,7 +1902,13 @@
      "face": "down",
      "t": [
       "Linker: Trainers on the trail will battle you the moment they spot you. Walk past them if you're feeling brave."
-     ]
+     ],
+     "id": "sec008_tr4",
+     "trainer": {
+      "cls": "Linker",
+      "linker": 1,
+      "name": "Oz"
+     }
     }
    ],
    "mons": []
@@ -1899,7 +1944,28 @@
     }
    },
    "warps": [],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      4,
+      2
+     ],
+     "k": "stash",
+     "item": "gel",
+     "n": 2,
+     "tier": 1
+    },
+    {
+     "tile": [
+      17,
+      4
+     ],
+     "k": "stash",
+     "item": "revive",
+     "n": 1,
+     "tier": 1
+    }
+   ],
    "spawns": {
     "default": [
      1,
@@ -1934,7 +2000,7 @@
      "x": 3,
      "y": 6,
      "art": "explorer",
-     "face": "right",
+     "face": "down",
      "t": [],
      "id": "sec009_tr2",
      "trainer": {
@@ -1947,7 +2013,7 @@
      "x": 13,
      "y": 10,
      "art": "wanderer",
-     "face": "left",
+     "face": "up",
      "t": [],
      "id": "sec009_tr3",
      "trainer": {
@@ -2001,7 +2067,28 @@
     }
    },
    "warps": [],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      3,
+      1
+     ],
+     "k": "stash",
+     "item": "gel",
+     "n": 2,
+     "tier": 1
+    },
+    {
+     "tile": [
+      12,
+      13
+     ],
+     "k": "stash",
+     "item": "dust",
+     "n": 150,
+     "tier": 1
+    }
+   ],
    "spawns": {
     "default": [
      1,
@@ -2036,7 +2123,7 @@
      "x": 14,
      "y": 9,
      "art": "wanderer",
-     "face": "right",
+     "face": "up",
      "t": [],
      "id": "sec010_tr2",
      "trainer": {
@@ -2126,7 +2213,28 @@
      "node": "dustara"
     }
    ],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      19,
+      2
+     ],
+     "k": "stash",
+     "item": "tether",
+     "n": 1,
+     "tier": 1
+    },
+    {
+     "tile": [
+      7,
+      3
+     ],
+     "k": "stash",
+     "item": "cure",
+     "n": 2,
+     "tier": 1
+    }
+   ],
    "spawns": {
     "default": [
      1,
@@ -2161,7 +2269,7 @@
      "x": 20,
      "y": 10,
      "art": "technician",
-     "face": "down",
+     "face": "up",
      "t": [],
      "id": "sec011_tr2",
      "trainer": {
@@ -2268,7 +2376,18 @@
      "edge": "top"
     }
    ],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      14,
+      2
+     ],
+     "k": "stash",
+     "item": "stun",
+     "n": 1,
+     "tier": 1
+    }
+   ],
    "spawns": {
     "default": [
      7,
@@ -2359,7 +2478,28 @@
      "edge": "top"
     }
    ],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      13,
+      11
+     ],
+     "k": "stash",
+     "item": "stasis",
+     "n": 3,
+     "tier": 1
+    },
+    {
+     "tile": [
+      14,
+      3
+     ],
+     "k": "stash",
+     "item": "gel",
+     "n": 2,
+     "tier": 1
+    }
+   ],
    "spawns": {
     "default": [
      7,
@@ -2431,7 +2571,28 @@
      "edge": "left"
     }
    ],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      3,
+      1
+     ],
+     "k": "stash",
+     "item": "tether",
+     "n": 1,
+     "tier": 1
+    },
+    {
+     "tile": [
+      11,
+      4
+     ],
+     "k": "stash",
+     "item": "gel",
+     "n": 2,
+     "tier": 1
+    }
+   ],
    "spawns": {
     "default": [
      22,
@@ -2530,7 +2691,28 @@
     }
    },
    "warps": [],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      11,
+      2
+     ],
+     "k": "stash",
+     "item": "gel",
+     "n": 2,
+     "tier": 1
+    },
+    {
+     "tile": [
+      16,
+      1
+     ],
+     "k": "stash",
+     "item": "cure",
+     "n": 2,
+     "tier": 1
+    }
+   ],
    "spawns": {
     "default": [
      1,
@@ -2608,7 +2790,28 @@
     }
    },
    "warps": [],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      4,
+      2
+     ],
+     "k": "stash",
+     "item": "stasis",
+     "n": 3,
+     "tier": 1
+    },
+    {
+     "tile": [
+      12,
+      3
+     ],
+     "k": "stash",
+     "item": "revive",
+     "n": 1,
+     "tier": 1
+    }
+   ],
    "spawns": {
     "default": [
      1,
@@ -2700,7 +2903,28 @@
     }
    },
    "warps": [],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      18,
+      1
+     ],
+     "k": "stash",
+     "item": "stasis",
+     "n": 3,
+     "tier": 1
+    },
+    {
+     "tile": [
+      4,
+      14
+     ],
+     "k": "stash",
+     "item": "cure",
+     "n": 2,
+     "tier": 1
+    }
+   ],
    "spawns": {
     "default": [
      1,
@@ -2747,7 +2971,7 @@
      "x": 6,
      "y": 10,
      "art": "pilgrim",
-     "face": "right",
+     "face": "up",
      "t": [
       "Pilgrim Sol: The island spirits test every traveler. Let's battle!"
      ],
@@ -2849,7 +3073,18 @@
      "label": "the harbor boat to Thalassa"
     }
    ],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      10,
+      1
+     ],
+     "k": "stash",
+     "item": "dust",
+     "n": 150,
+     "tier": 1
+    }
+   ],
    "spawns": {
     "default": [
      1,
@@ -2903,10 +3138,16 @@
      "x": 17,
      "y": 9,
      "art": "explorer",
-     "face": "down",
+     "face": "left",
      "t": [
       "Linker: Every Keeper you beat gives you a Signal Shard. Eight of them and something big happens. Nobody agrees on what."
-     ]
+     ],
+     "id": "sec018_tr4",
+     "trainer": {
+      "cls": "Linker",
+      "linker": 1,
+      "name": "Rook"
+     }
     },
     {
      "x": 5,
@@ -2974,7 +3215,28 @@
      "label": "the Deep Sea Ferry"
     }
    ],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      18,
+      1
+     ],
+     "k": "stash",
+     "item": "stasis",
+     "n": 5,
+     "tier": 2
+    },
+    {
+     "tile": [
+      15,
+      11
+     ],
+     "k": "stash",
+     "item": "gel",
+     "n": 3,
+     "tier": 2
+    }
+   ],
    "spawns": {
     "default": [
      1,
@@ -3053,7 +3315,28 @@
     }
    },
    "warps": [],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      18,
+      1
+     ],
+     "k": "stash",
+     "item": "harmonic",
+     "n": 2,
+     "tier": 2
+    },
+    {
+     "tile": [
+      5,
+      1
+     ],
+     "k": "stash",
+     "item": "stasis",
+     "n": 5,
+     "tier": 2
+    }
+   ],
    "spawns": {
     "default": [
      1,
@@ -3080,7 +3363,7 @@
      "x": 12,
      "y": 10,
      "art": "researcher",
-     "face": "left",
+     "face": "up",
      "t": [
       "Researcher Kel: Lava-forged Alienmon have incredible stats. Let me show you!"
      ],
@@ -3136,7 +3419,28 @@
     }
    },
    "warps": [],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      11,
+      14
+     ],
+     "k": "stash",
+     "item": "revive",
+     "n": 1,
+     "tier": 2
+    },
+    {
+     "tile": [
+      22,
+      14
+     ],
+     "k": "stash",
+     "item": "dust",
+     "n": 300,
+     "tier": 2
+    }
+   ],
    "spawns": {
     "default": [
      1,
@@ -3244,7 +3548,18 @@
      "node": "ferrox"
     }
    ],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      11,
+      14
+     ],
+     "k": "stash",
+     "item": "harmonic",
+     "n": 2,
+     "tier": 2
+    }
+   ],
    "spawns": {
     "default": [
      1,
@@ -3358,7 +3673,18 @@
      "label": "the Helix Forge Fortress"
     }
    ],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      11,
+      14
+     ],
+     "k": "stash",
+     "item": "ether",
+     "n": 2,
+     "tier": 4
+    }
+   ],
    "spawns": {
     "default": [
      1,
@@ -3466,7 +3792,28 @@
     }
    },
    "warps": [],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      20,
+      13
+     ],
+     "k": "stash",
+     "item": "megagel",
+     "n": 3,
+     "tier": 4
+    },
+    {
+     "tile": [
+      16,
+      8
+     ],
+     "k": "stash",
+     "item": "megagel",
+     "n": 3,
+     "tier": 4
+    }
+   ],
    "spawns": {
     "default": [
      1,
@@ -3544,6 +3891,26 @@
      "item": "megagel",
      "n": 1,
      "why": "treasure chest drawn on the mesa"
+    },
+    {
+     "tile": [
+      15,
+      13
+     ],
+     "k": "stash",
+     "item": "dust",
+     "n": 800,
+     "tier": 4
+    },
+    {
+     "tile": [
+      22,
+      14
+     ],
+     "k": "stash",
+     "item": "fullgel",
+     "n": 1,
+     "tier": 4
     }
    ],
    "spawns": {
@@ -3563,10 +3930,16 @@
      "x": 10,
      "y": 11,
      "art": "explorer",
-     "face": "down",
+     "face": "up",
      "t": [
       "Linker: Almost at the shuttle pad. Ships to the far planets launch from there."
-     ]
+     ],
+     "id": "sec025_tr0",
+     "trainer": {
+      "cls": "Linker",
+      "linker": 1,
+      "name": "Wren"
+     }
     },
     {
      "x": 10,
@@ -3675,7 +4048,18 @@
      ]
     }
    ],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      14,
+      12
+     ],
+     "k": "stash",
+     "item": "harmonic",
+     "n": 5,
+     "tier": 4
+    }
+   ],
    "spawns": {
     "default": [
      1,
@@ -3794,7 +4178,18 @@
      "label": "the Shadow Tunnel"
     }
    ],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      6,
+      14
+     ],
+     "k": "stash",
+     "item": "harmonic",
+     "n": 5,
+     "tier": 4
+    }
+   ],
    "spawns": {
     "default": [
      1,
@@ -3885,7 +4280,18 @@
      "label": "the Magma Mines"
     }
    ],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      22,
+      10
+     ],
+     "k": "stash",
+     "item": "fullgel",
+     "n": 1,
+     "tier": 4
+    }
+   ],
    "spawns": {
     "default": [
      1,
@@ -3963,7 +4369,18 @@
     }
    },
    "warps": [],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      11,
+      14
+     ],
+     "k": "stash",
+     "item": "cure",
+     "n": 2,
+     "tier": 1
+    }
+   ],
    "spawns": {
     "arrival": [
      1,
@@ -4095,7 +4512,18 @@
      "edge": "up"
     }
    ],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      17,
+      12
+     ],
+     "k": "stash",
+     "item": "gel",
+     "n": 2,
+     "tier": 1
+    }
+   ],
    "spawns": {
     "default": [
      1,
@@ -4160,7 +4588,13 @@
      "face": "down",
      "t": [
       "Linker: Magma moves melt Alloy-types fast. Volt moves just bounce off."
-     ]
+     ],
+     "id": "sec030_tr5",
+     "trainer": {
+      "cls": "Linker",
+      "linker": 1,
+      "name": "Corin"
+     }
     }
    ],
    "mons": [
@@ -4440,7 +4874,28 @@
     }
    },
    "warps": [],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      16,
+      14
+     ],
+     "k": "stash",
+     "item": "revive",
+     "n": 1,
+     "tier": 1
+    },
+    {
+     "tile": [
+      6,
+      2
+     ],
+     "k": "stash",
+     "item": "gel",
+     "n": 2,
+     "tier": 1
+    }
+   ],
    "spawns": {
     "default": [
      1,
@@ -4475,7 +4930,7 @@
      "x": 7,
      "y": 10,
      "art": "miner",
-     "face": "left",
+     "face": "up",
      "t": [],
      "id": "sec034_tr2",
      "trainer": {
@@ -4542,7 +4997,28 @@
     }
    },
    "warps": [],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      9,
+      2
+     ],
+     "k": "stash",
+     "item": "gel",
+     "n": 2,
+     "tier": 1
+    },
+    {
+     "tile": [
+      10,
+      14
+     ],
+     "k": "stash",
+     "item": "gel",
+     "n": 2,
+     "tier": 1
+    }
+   ],
    "spawns": {
     "default": [
      1,
@@ -4590,7 +5066,7 @@
      "x": 4,
      "y": 6,
      "art": "technician",
-     "face": "left",
+     "face": "down",
      "t": [],
      "id": "sec035_tr3",
      "trainer": {
@@ -4644,7 +5120,28 @@
     }
    },
    "warps": [],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      15,
+      13
+     ],
+     "k": "stash",
+     "item": "stasis",
+     "n": 3,
+     "tier": 1
+    },
+    {
+     "tile": [
+      6,
+      2
+     ],
+     "k": "stash",
+     "item": "gel",
+     "n": 2,
+     "tier": 1
+    }
+   ],
    "spawns": {
     "default": [
      1,
@@ -4679,7 +5176,7 @@
      "x": 14,
      "y": 6,
      "art": "technician",
-     "face": "right",
+     "face": "down",
      "t": [],
      "id": "sec036_tr2",
      "trainer": {
@@ -4746,7 +5243,18 @@
     }
    },
    "warps": [],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      15,
+      14
+     ],
+     "k": "stash",
+     "item": "cure",
+     "n": 2,
+     "tier": 1
+    }
+   ],
    "spawns": {
     "default": [
      1,
@@ -4856,7 +5364,28 @@
      "edge": "right"
     }
    ],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      13,
+      1
+     ],
+     "k": "stash",
+     "item": "gel",
+     "n": 2,
+     "tier": 1
+    },
+    {
+     "tile": [
+      3,
+      12
+     ],
+     "k": "stash",
+     "item": "stasis",
+     "n": 3,
+     "tier": 1
+    }
+   ],
    "spawns": {
     "default": [
      1,
@@ -4891,7 +5420,7 @@
      "x": 20,
      "y": 6,
      "art": "guard",
-     "face": "left",
+     "face": "down",
      "t": [],
      "id": "sec038_tr2",
      "trainer": {
@@ -4904,7 +5433,7 @@
      "x": 12,
      "y": 10,
      "art": "technician",
-     "face": "right",
+     "face": "up",
      "t": [],
      "id": "sec038_tr3",
      "trainer": {
@@ -5022,6 +5551,7 @@
      "art": "guard",
      "face": "left",
      "t": [],
+     "face_pinned": 1,
      "id": "sec039_app1",
      "trainer": {
       "cls": "Apprentice",
@@ -5035,6 +5565,7 @@
      "art": "technician",
      "face": "right",
      "t": [],
+     "face_pinned": 1,
      "id": "sec039_app2",
      "trainer": {
       "cls": "Apprentice",
@@ -5145,6 +5676,16 @@
      "t": [
       "Sporeholm Landing Pad. Mirefen Village lies east along the boardwalk."
      ]
+    },
+    {
+     "tile": [
+      18,
+      11
+     ],
+     "k": "stash",
+     "item": "stasis",
+     "n": 5,
+     "tier": 2
     }
    ],
    "spawns": {
@@ -5268,6 +5809,16 @@
      "t": [
       "Mirefen Village: stilts deep, lanterns bright. Welcome, traveler."
      ]
+    },
+    {
+     "tile": [
+      17,
+      13
+     ],
+     "k": "stash",
+     "item": "harmonic",
+     "n": 2,
+     "tier": 2
     }
    ],
    "spawns": {
@@ -5560,7 +6111,28 @@
     }
    },
    "warps": [],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      16,
+      12
+     ],
+     "k": "stash",
+     "item": "revive",
+     "n": 1,
+     "tier": 2
+    },
+    {
+     "tile": [
+      4,
+      1
+     ],
+     "k": "stash",
+     "item": "revive",
+     "n": 1,
+     "tier": 2
+    }
+   ],
    "spawns": {
     "default": [
      1,
@@ -5595,7 +6167,7 @@
      "x": 11,
      "y": 5,
      "art": "sporefolk",
-     "face": "left",
+     "face": "down",
      "t": [],
      "id": "sec045_tr2",
      "trainer": {
@@ -5683,7 +6255,28 @@
      "edge": "right"
     }
    ],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      17,
+      1
+     ],
+     "k": "stash",
+     "item": "gel",
+     "n": 3,
+     "tier": 2
+    },
+    {
+     "tile": [
+      5,
+      11
+     ],
+     "k": "stash",
+     "item": "stasis",
+     "n": 5,
+     "tier": 2
+    }
+   ],
    "spawns": {
     "default": [
      1,
@@ -5731,7 +6324,7 @@
      "x": 10,
      "y": 11,
      "art": "explorer",
-     "face": "left",
+     "face": "up",
      "t": [],
      "id": "sec046_tr3",
      "trainer": {
@@ -5835,6 +6428,16 @@
      "t": [
       "A mossy stone shrine. The carving reads: The mist forgets nothing, but it lets you leave."
      ]
+    },
+    {
+     "tile": [
+      1,
+      9
+     ],
+     "k": "stash",
+     "item": "megagel",
+     "n": 1,
+     "tier": 2
     }
    ],
    "spawns": {
@@ -5858,7 +6461,7 @@
      "x": 4,
      "y": 5,
      "art": "explorer",
-     "face": "left",
+     "face": "up",
      "t": [],
      "id": "sec047_tr1",
      "trainer": {
@@ -5950,6 +6553,16 @@
      "t": [
       "Another shrine, just like the one below. Someone scratched an arrow pointing north."
      ]
+    },
+    {
+     "tile": [
+      13,
+      7
+     ],
+     "k": "stash",
+     "item": "gel",
+     "n": 3,
+     "tier": 2
     }
    ],
    "spawns": {
@@ -5975,6 +6588,7 @@
      "art": "sporefolk",
      "face": "left",
      "t": [],
+     "face_pinned": 1,
      "id": "sec048_tr1",
      "trainer": {
       "cls": "Spore Tender",
@@ -6055,7 +6669,28 @@
      "edge": "right"
     }
    ],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      14,
+      12
+     ],
+     "k": "stash",
+     "item": "harmonic",
+     "n": 2,
+     "tier": 2
+    },
+    {
+     "tile": [
+      10,
+      14
+     ],
+     "k": "stash",
+     "item": "revive",
+     "n": 1,
+     "tier": 2
+    }
+   ],
    "spawns": {
     "default": [
      1,
@@ -6092,6 +6727,7 @@
      "art": "researcher",
      "face": "up",
      "t": [],
+     "face_pinned": 1,
      "id": "sec049_tr2",
      "trainer": {
       "cls": "Botanist",
@@ -6103,7 +6739,7 @@
      "x": 21,
      "y": 11,
      "art": "explorer",
-     "face": "down",
+     "face": "up",
      "t": [],
      "id": "sec049_tr3",
      "trainer": {
@@ -6232,6 +6868,7 @@
      "art": "researcher",
      "face": "left",
      "t": [],
+     "face_pinned": 1,
      "id": "sec050_app1",
      "trainer": {
       "cls": "Apprentice",
@@ -6245,6 +6882,7 @@
      "art": "explorer",
      "face": "down",
      "t": [],
+     "face_pinned": 1,
      "id": "sec050_app2",
      "trainer": {
       "cls": "Apprentice",
@@ -6394,6 +7032,16 @@
      "t": [
       "PORT SALTREACH DOCKS. Mind the fog, mind the nets, mind the gap between the piers."
      ]
+    },
+    {
+     "tile": [
+      19,
+      14
+     ],
+     "k": "stash",
+     "item": "harmonic",
+     "n": 2,
+     "tier": 2
     }
    ],
    "spawns": {
@@ -6537,6 +7185,16 @@
      "t": [
       "SALTREACH MARKET. Fresh catch at dawn, fair prices till dusk. No haggling with the gulls."
      ]
+    },
+    {
+     "tile": [
+      11,
+      14
+     ],
+     "k": "stash",
+     "item": "megagel",
+     "n": 1,
+     "tier": 2
     }
    ],
    "spawns": {
@@ -6953,7 +7611,28 @@
      "edge": "left"
     }
    ],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      17,
+      1
+     ],
+     "k": "stash",
+     "item": "gel",
+     "n": 3,
+     "tier": 2
+    },
+    {
+     "tile": [
+      6,
+      13
+     ],
+     "k": "stash",
+     "item": "revive",
+     "n": 1,
+     "tier": 2
+    }
+   ],
    "spawns": {
     "default": [
      22,
@@ -7055,7 +7734,28 @@
     }
    },
    "warps": [],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      5,
+      2
+     ],
+     "k": "stash",
+     "item": "jammer",
+     "n": 1,
+     "tier": 2
+    },
+    {
+     "tile": [
+      15,
+      2
+     ],
+     "k": "stash",
+     "item": "harmonic",
+     "n": 2,
+     "tier": 2
+    }
+   ],
    "spawns": {
     "default": [
      1,
@@ -7103,7 +7803,7 @@
      "x": 17,
      "y": 10,
      "art": "guard",
-     "face": "left",
+     "face": "up",
      "t": [],
      "id": "sec058_tr3",
      "trainer": {
@@ -7188,6 +7888,16 @@
      "t": [
       "SEA ARCH COVE. Quiet waters. Something very large sleeps beneath the arch. Please do not wake it."
      ]
+    },
+    {
+     "tile": [
+      21,
+      14
+     ],
+     "k": "stash",
+     "item": "megagel",
+     "n": 1,
+     "tier": 2
     }
    ],
    "spawns": {
@@ -7349,6 +8059,7 @@
      "art": "guard",
      "face": "right",
      "t": [],
+     "face_pinned": 1,
      "id": "sec060_app1",
      "trainer": {
       "cls": "Apprentice",
@@ -7362,6 +8073,7 @@
      "art": "squidsailor",
      "face": "left",
      "t": [],
+     "face_pinned": 1,
      "id": "sec060_app2",
      "trainer": {
       "cls": "Apprentice",
@@ -7521,6 +8233,16 @@
      "t": [
       "East gate: Neon Boulevard. Shops, nightlife and the Arcade District beyond."
      ]
+    },
+    {
+     "tile": [
+      12,
+      13
+     ],
+     "k": "stash",
+     "item": "stun",
+     "n": 2,
+     "tier": 3
     }
    ],
    "spawns": {
@@ -7666,6 +8388,16 @@
      "t": [
       "A holo-ad loops: a glowing jellyfish Alienmon drifts by. 'Stay charged. Stay bright. Neonis.'"
      ]
+    },
+    {
+     "tile": [
+      14,
+      13
+     ],
+     "k": "stash",
+     "item": "dust",
+     "n": 500,
+     "tier": 3
     }
    ],
    "spawns": {
@@ -7959,6 +8691,26 @@
      "t": [
       "GLITCH HUNT: static-y Alienmon flicker between the cabinets after dark. Bring Stasis Pods!"
      ]
+    },
+    {
+     "tile": [
+      8,
+      14
+     ],
+     "k": "stash",
+     "item": "ether",
+     "n": 1,
+     "tier": 3
+    },
+    {
+     "tile": [
+      18,
+      9
+     ],
+     "k": "stash",
+     "item": "dust",
+     "n": 500,
+     "tier": 3
     }
    ],
    "spawns": {
@@ -8004,7 +8756,7 @@
      "x": 20,
      "y": 8,
      "art": "civilian",
-     "face": "left",
+     "face": "up",
      "t": [],
      "id": "sec066_tr3",
      "trainer": {
@@ -8017,7 +8769,7 @@
      "x": 15,
      "y": 8,
      "art": "technician",
-     "face": "right",
+     "face": "up",
      "t": [],
      "id": "sec066_tr4",
      "trainer": {
@@ -8081,6 +8833,26 @@
      "t": [
       "BROADCAST ROUTE: every dish here relays DJ Static's show. Pirate signals will be prosecuted. Probably."
      ]
+    },
+    {
+     "tile": [
+      19,
+      3
+     ],
+     "k": "stash",
+     "item": "revive",
+     "n": 2,
+     "tier": 3
+    },
+    {
+     "tile": [
+      4,
+      11
+     ],
+     "k": "stash",
+     "item": "megagel",
+     "n": 2,
+     "tier": 3
     }
    ],
    "spawns": {
@@ -8130,7 +8902,7 @@
      "x": 3,
      "y": 5,
      "art": "explorer",
-     "face": "right",
+     "face": "down",
      "t": [],
      "id": "sec067_tr3",
      "trainer": {
@@ -8215,6 +8987,26 @@
      "t": [
       "The billboard flashes: 'VOLTSPIRE - LIVE TONIGHT - DJ STATIC.' An arrow points east."
      ]
+    },
+    {
+     "tile": [
+      12,
+      12
+     ],
+     "k": "stash",
+     "item": "dust",
+     "n": 500,
+     "tier": 3
+    },
+    {
+     "tile": [
+      4,
+      11
+     ],
+     "k": "stash",
+     "item": "megagel",
+     "n": 2,
+     "tier": 3
     }
    ],
    "spawns": {
@@ -8251,7 +9043,7 @@
      "x": 17,
      "y": 8,
      "art": "explorer",
-     "face": "right",
+     "face": "down",
      "t": [],
      "id": "sec068_tr2",
      "trainer": {
@@ -8393,6 +9185,7 @@
      "art": "explorer",
      "face": "left",
      "t": [],
+     "face_pinned": 1,
      "id": "sec069_app1",
      "trainer": {
       "cls": "Apprentice",
@@ -8406,6 +9199,7 @@
      "art": "civilian",
      "face": "right",
      "t": [],
+     "face_pinned": 1,
      "id": "sec069_app2",
      "trainer": {
       "cls": "Apprentice",
@@ -8619,6 +9413,16 @@
      "t": [
       "Sunken gate: The carvings are worn smooth by the tide. Only one glyph is clear: a seed."
      ]
+    },
+    {
+     "tile": [
+      3,
+      14
+     ],
+     "k": "stash",
+     "item": "ether",
+     "n": 1,
+     "tier": 3
     }
    ],
    "spawns": {
@@ -8726,6 +9530,16 @@
      "t": [
       "DIG CAMP - Glyphos Expedition. Keep to the marked paths. Do NOT lick the crystals."
      ]
+    },
+    {
+     "tile": [
+      12,
+      13
+     ],
+     "k": "stash",
+     "item": "megagel",
+     "n": 2,
+     "tier": 3
     }
    ],
    "spawns": {
@@ -8928,7 +9742,28 @@
     }
    },
    "warps": [],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      3,
+      14
+     ],
+     "k": "stash",
+     "item": "jammer",
+     "n": 1,
+     "tier": 3
+    },
+    {
+     "tile": [
+      11,
+      2
+     ],
+     "k": "stash",
+     "item": "revive",
+     "n": 2,
+     "tier": 3
+    }
+   ],
    "spawns": {
     "default": [
      1,
@@ -8954,7 +9789,7 @@
      "x": 13,
      "y": 8,
      "art": "explorer",
-     "face": "left",
+     "face": "up",
      "t": [],
      "id": "sec075_tr1",
      "trainer": {
@@ -8967,7 +9802,7 @@
      "x": 10,
      "y": 9,
      "art": "pilgrim",
-     "face": "left",
+     "face": "up",
      "t": [],
      "id": "sec075_tr2",
      "trainer": {
@@ -9021,7 +9856,28 @@
     }
    },
    "warps": [],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      22,
+      14
+     ],
+     "k": "stash",
+     "item": "stun",
+     "n": 2,
+     "tier": 3
+    },
+    {
+     "tile": [
+      6,
+      2
+     ],
+     "k": "stash",
+     "item": "harmonic",
+     "n": 3,
+     "tier": 3
+    }
+   ],
    "spawns": {
     "default": [
      1,
@@ -9056,7 +9912,7 @@
      "x": 4,
      "y": 8,
      "art": "pilgrim",
-     "face": "left",
+     "face": "up",
      "t": [],
      "id": "sec076_tr2",
      "trainer": {
@@ -9178,6 +10034,26 @@
      "t": [
       "Guardian Stone: The carving shows a ring of stones around a sleeping seed."
      ]
+    },
+    {
+     "tile": [
+      3,
+      13
+     ],
+     "k": "stash",
+     "item": "megagel",
+     "n": 2,
+     "tier": 3
+    },
+    {
+     "tile": [
+      8,
+      3
+     ],
+     "k": "stash",
+     "item": "harmonic",
+     "n": 3,
+     "tier": 3
     }
    ],
    "spawns": {
@@ -9214,7 +10090,7 @@
      "x": 10,
      "y": 3,
      "art": "researcher",
-     "face": "down",
+     "face": "left",
      "t": [],
      "id": "sec077_tr2",
      "trainer": {
@@ -9227,7 +10103,7 @@
      "x": 9,
      "y": 11,
      "art": "explorer",
-     "face": "right",
+     "face": "up",
      "t": [],
      "id": "sec077_tr3",
      "trainer": {
@@ -9447,7 +10323,7 @@
      "x": 6,
      "y": 17,
      "art": "pilgrim",
-     "face": "down",
+     "face": "right",
      "t": [],
      "id": "sec079_tr1",
      "trainer": {
@@ -9535,7 +10411,7 @@
      "x": 6,
      "y": 12,
      "art": "researcher",
-     "face": "down",
+     "face": "right",
      "t": [],
      "id": "sec080_tr1",
      "trainer": {
@@ -9750,6 +10626,16 @@
       "The camp furnace. It has not gone out in forty years.",
       "A brass plate reads: 'Lit by Old Basalt.'"
      ]
+    },
+    {
+     "tile": [
+      6,
+      11
+     ],
+     "k": "stash",
+     "item": "dust",
+     "n": 800,
+     "tier": 4
     }
    ],
    "spawns": {
@@ -10050,7 +10936,28 @@
     }
    },
    "warps": [],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      15,
+      13
+     ],
+     "k": "stash",
+     "item": "ether",
+     "n": 2,
+     "tier": 4
+    },
+    {
+     "tile": [
+      7,
+      13
+     ],
+     "k": "stash",
+     "item": "revive",
+     "n": 2,
+     "tier": 4
+    }
+   ],
    "spawns": {
     "default": [
      1,
@@ -10173,7 +11080,28 @@
      "edge": "right"
     }
    ],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      15,
+      11
+     ],
+     "k": "stash",
+     "item": "dust",
+     "n": 800,
+     "tier": 4
+    },
+    {
+     "tile": [
+      5,
+      12
+     ],
+     "k": "stash",
+     "item": "revive",
+     "n": 2,
+     "tier": 4
+    }
+   ],
    "spawns": {
     "default": [
      1,
@@ -10315,7 +11243,18 @@
      "edge": "top"
     }
    ],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      14,
+      12
+     ],
+     "k": "stash",
+     "item": "dust",
+     "n": 800,
+     "tier": 4
+    }
+   ],
    "spawns": {
     "default": [
      7,
@@ -10337,7 +11276,7 @@
      "x": 7,
      "y": 7,
      "art": "miner",
-     "face": "left",
+     "face": "right",
      "t": [],
      "id": "sec087_tr1",
      "trainer": {
@@ -10419,7 +11358,18 @@
      "edge": "top"
     }
    ],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      15,
+      8
+     ],
+     "k": "stash",
+     "item": "megagel",
+     "n": 3,
+     "tier": 4
+    }
+   ],
    "spawns": {
     "default": [
      7,
@@ -10442,7 +11392,7 @@
      "x": 7,
      "y": 4,
      "art": "technician",
-     "face": "up",
+     "face": "right",
      "t": [],
      "id": "sec088_tr1",
      "trainer": {
@@ -10524,7 +11474,18 @@
      "edge": "top"
     }
    ],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      2,
+      2
+     ],
+     "k": "stash",
+     "item": "fullgel",
+     "n": 1,
+     "tier": 4
+    }
+   ],
    "spawns": {
     "default": [
      7,
@@ -10639,6 +11600,26 @@
       "SHAFT 4 - CLOSED. Ember rain. Do not enter.",
       "Volcano Tower: follow the ridge east."
      ]
+    },
+    {
+     "tile": [
+      13,
+      1
+     ],
+     "k": "stash",
+     "item": "revive",
+     "n": 2,
+     "tier": 4
+    },
+    {
+     "tile": [
+      14,
+      13
+     ],
+     "k": "stash",
+     "item": "dust",
+     "n": 800,
+     "tier": 4
     }
    ],
    "spawns": {
@@ -10697,7 +11678,7 @@
      "x": 8,
      "y": 3,
      "art": "technician",
-     "face": "left",
+     "face": "down",
      "t": [],
      "id": "sec090_tr4",
      "trainer": {
@@ -10815,6 +11796,7 @@
      "art": "miner",
      "face": "right",
      "t": [],
+     "face_pinned": 1,
      "id": "sec091_app1",
      "trainer": {
       "cls": "Apprentice",
@@ -10828,6 +11810,7 @@
      "art": "technician",
      "face": "left",
      "t": [],
+     "face_pinned": 1,
      "id": "sec091_app2",
      "trainer": {
       "cls": "Apprentice",
@@ -10967,6 +11950,16 @@
       "Frostmark Research Station. The crystal in this fountain was cut from the glacier and never melts.",
       "Founded by survey crews who came for the aurora and stayed for the ice."
      ]
+    },
+    {
+     "tile": [
+      7,
+      2
+     ],
+     "k": "stash",
+     "item": "harmonic",
+     "n": 5,
+     "tier": 4
     }
    ],
    "spawns": {
@@ -11275,6 +12268,26 @@
       "Aurora Route. West: Frostmark. East: Crystal Caverns.",
       "Warning: frost grass hides wild Alienmon. Keep a Stasis Pod handy."
      ]
+    },
+    {
+     "tile": [
+      5,
+      1
+     ],
+     "k": "stash",
+     "item": "ether",
+     "n": 2,
+     "tier": 4
+    },
+    {
+     "tile": [
+      14,
+      5
+     ],
+     "k": "stash",
+     "item": "harmonic",
+     "n": 5,
+     "tier": 4
     }
    ],
    "spawns": {
@@ -11313,6 +12326,7 @@
      "art": "researcher",
      "face": "down",
      "t": [],
+     "face_pinned": 1,
      "id": "sec096_tr2",
      "trainer": {
       "cls": "Researcher",
@@ -11326,6 +12340,7 @@
      "art": "explorer",
      "face": "down",
      "t": [],
+     "face_pinned": 1,
      "id": "sec096_tr3",
      "trainer": {
       "cls": "Climber",
@@ -11399,7 +12414,28 @@
      "edge": "right"
     }
    ],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      4,
+      1
+     ],
+     "k": "stash",
+     "item": "fullgel",
+     "n": 1,
+     "tier": 4
+    },
+    {
+     "tile": [
+      16,
+      5
+     ],
+     "k": "stash",
+     "item": "fullgel",
+     "n": 1,
+     "tier": 4
+    }
+   ],
    "spawns": {
     "default": [
      1,
@@ -11447,7 +12483,7 @@
      "x": 13,
      "y": 11,
      "art": "technician",
-     "face": "left",
+     "face": "up",
      "t": [],
      "id": "sec097_tr3",
      "trainer": {
@@ -11541,7 +12577,28 @@
      "edge": "top"
     }
    ],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      1,
+      7
+     ],
+     "k": "stash",
+     "item": "ether",
+     "n": 2,
+     "tier": 4
+    },
+    {
+     "tile": [
+      13,
+      8
+     ],
+     "k": "stash",
+     "item": "dust",
+     "n": 800,
+     "tier": 4
+    }
+   ],
    "spawns": {
     "default": [
      7,
@@ -11645,7 +12702,28 @@
      "edge": "top"
     }
    ],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      2,
+      8
+     ],
+     "k": "stash",
+     "item": "dust",
+     "n": 800,
+     "tier": 4
+    },
+    {
+     "tile": [
+      3,
+      10
+     ],
+     "k": "stash",
+     "item": "fullgel",
+     "n": 1,
+     "tier": 4
+    }
+   ],
    "spawns": {
     "default": [
      7,
@@ -11760,6 +12838,26 @@
       "The crystal wall looks almost like a wing... something huge is folded up inside the ice.",
       "A scratched note: 'Fossil Dig is just above. Mind the stairs.'"
      ]
+    },
+    {
+     "tile": [
+      2,
+      10
+     ],
+     "k": "stash",
+     "item": "fullgel",
+     "n": 1,
+     "tier": 4
+    },
+    {
+     "tile": [
+      2,
+      2
+     ],
+     "k": "stash",
+     "item": "fullgel",
+     "n": 1,
+     "tier": 4
     }
    ],
    "spawns": {
@@ -11783,7 +12881,7 @@
      "x": 6,
      "y": 12,
      "art": "explorer",
-     "face": "down",
+     "face": "right",
      "t": [],
      "id": "sec100_tr1",
      "trainer": {
@@ -11890,6 +12988,26 @@
       "The Teeth in the Ice: a giant Ystran creature, frozen mid-roar in the glacier wall.",
       "Dig crews say it hums when the aurora is bright."
      ]
+    },
+    {
+     "tile": [
+      11,
+      14
+     ],
+     "k": "stash",
+     "item": "dust",
+     "n": 800,
+     "tier": 4
+    },
+    {
+     "tile": [
+      9,
+      5
+     ],
+     "k": "stash",
+     "item": "revive",
+     "n": 2,
+     "tier": 4
     }
    ],
    "spawns": {
@@ -11929,6 +13047,7 @@
      "art": "technician",
      "face": "down",
      "t": [],
+     "face_pinned": 1,
      "id": "sec101_tr2",
      "trainer": {
       "cls": "Radio Tech",
@@ -11942,6 +13061,7 @@
      "art": "researcher",
      "face": "left",
      "t": [],
+     "face_pinned": 1,
      "id": "sec101_tr3",
      "trainer": {
       "cls": "Researcher",
@@ -12026,6 +13146,16 @@
       "Frozen Falls. The water froze mid-plunge, all at once, in a single night.",
       "Locals swear a Glaciryx nests behind the ice curtain."
      ]
+    },
+    {
+     "tile": [
+      21,
+      2
+     ],
+     "k": "stash",
+     "item": "megagel",
+     "n": 3,
+     "tier": 4
     }
    ],
    "spawns": {
@@ -12169,6 +13299,7 @@
      "art": "researcher",
      "face": "right",
      "t": [],
+     "face_pinned": 1,
      "id": "sec103_app1",
      "trainer": {
       "cls": "Apprentice",
@@ -12182,6 +13313,7 @@
      "art": "explorer",
      "face": "left",
      "t": [],
+     "face_pinned": 1,
      "id": "sec103_app2",
      "trainer": {
       "cls": "Apprentice",
@@ -12860,6 +13992,7 @@
      "art": "researcher",
      "face": "right",
      "t": [],
+     "face_pinned": 1,
      "id": "sec109_tr1",
      "trainer": {
       "cls": "Scientist",
@@ -12873,6 +14006,7 @@
      "art": "guard",
      "face": "left",
      "t": [],
+     "face_pinned": 1,
      "id": "sec109_tr2",
      "trainer": {
       "cls": "Guard",
@@ -12983,6 +14117,16 @@
      "t": [
       "CAGE CONSOLE: status SEDATED. Someone has doodled a sad face on the screen."
      ]
+    },
+    {
+     "tile": [
+      2,
+      5
+     ],
+     "k": "stash",
+     "item": "harmonic",
+     "n": 5,
+     "tier": 5
     }
    ],
    "spawns": {
@@ -13008,6 +14152,7 @@
      "art": "guard",
      "face": "right",
      "t": [],
+     "face_pinned": 1,
      "id": "sec110_tr1",
      "trainer": {
       "cls": "Guard",
@@ -13021,6 +14166,7 @@
      "art": "strand",
      "face": "left",
      "t": [],
+     "face_pinned": 1,
      "id": "sec110_tr2",
      "trainer": {
       "cls": "Helix Grunt",
@@ -13121,6 +14267,16 @@
      "t": [
       "ENGINEERING LOG: Rerouted core power to the Rift engine again. Lights on 2F may flicker. - B."
      ]
+    },
+    {
+     "tile": [
+      3,
+      12
+     ],
+     "k": "stash",
+     "item": "maxrevive",
+     "n": 1,
+     "tier": 5
     }
    ],
    "spawns": {
@@ -13147,6 +14303,7 @@
      "art": "strand",
      "face": "left",
      "t": [],
+     "face_pinned": 1,
      "id": "sec111_tr1",
      "trainer": {
       "cls": "Helix Grunt",
@@ -13160,6 +14317,7 @@
      "art": "researcher",
      "face": "right",
      "t": [],
+     "face_pinned": 1,
      "id": "sec111_tr2",
      "trainer": {
       "cls": "Scientist",
@@ -13358,6 +14516,16 @@
       "SKYLINER HALO-1. Boarding by ticket only.",
       "Today's departures: none. Enjoy the view!"
      ]
+    },
+    {
+     "tile": [
+      3,
+      12
+     ],
+     "k": "stash",
+     "item": "fullgel",
+     "n": 2,
+     "tier": 5
     }
    ],
    "spawns": {
@@ -13502,6 +14670,16 @@
       "THE HOLO-GLOBE. Fourteen worlds turn in its light.",
       "Look closely: one of them is slowly dimming."
      ]
+    },
+    {
+     "tile": [
+      17,
+      12
+     ],
+     "k": "stash",
+     "item": "ether",
+     "n": 3,
+     "tier": 5
     }
    ],
    "spawns": {
@@ -13779,7 +14957,28 @@
     }
    },
    "warps": [],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      12,
+      10
+     ],
+     "k": "stash",
+     "item": "harmonic",
+     "n": 5,
+     "tier": 5
+    },
+    {
+     "tile": [
+      21,
+      12
+     ],
+     "k": "stash",
+     "item": "fullgel",
+     "n": 2,
+     "tier": 5
+    }
+   ],
    "spawns": {
     "default": [
      1,
@@ -13814,7 +15013,7 @@
      "x": 19,
      "y": 6,
      "art": "civilian",
-     "face": "down",
+     "face": "up",
      "t": [],
      "id": "sec118_tr2",
      "trainer": {
@@ -13827,7 +15026,7 @@
      "x": 7,
      "y": 5,
      "art": "wanderer",
-     "face": "down",
+     "face": "left",
      "t": [],
      "id": "sec118_tr3",
      "trainer": {
@@ -13881,7 +15080,28 @@
     }
    },
    "warps": [],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      18,
+      11
+     ],
+     "k": "stash",
+     "item": "maxrevive",
+     "n": 1,
+     "tier": 5
+    },
+    {
+     "tile": [
+      4,
+      3
+     ],
+     "k": "stash",
+     "item": "harmonic",
+     "n": 5,
+     "tier": 5
+    }
+   ],
    "spawns": {
     "default": [
      1,
@@ -13916,7 +15136,7 @@
      "x": 13,
      "y": 10,
      "art": "wanderer",
-     "face": "left",
+     "face": "up",
      "t": [],
      "id": "sec119_tr2",
      "trainer": {
@@ -13929,7 +15149,7 @@
      "x": 16,
      "y": 4,
      "art": "pilgrim",
-     "face": "left",
+     "face": "down",
      "t": [],
      "id": "sec119_tr3",
      "trainer": {
@@ -14015,6 +15235,26 @@
       "GARDEN SHRINE. Leave the flowers, take the quiet.",
       "The Sky Temple lies east, past the last bridge."
      ]
+    },
+    {
+     "tile": [
+      17,
+      13
+     ],
+     "k": "stash",
+     "item": "singularity",
+     "n": 1,
+     "tier": 5
+    },
+    {
+     "tile": [
+      6,
+      12
+     ],
+     "k": "stash",
+     "item": "dust",
+     "n": 1200,
+     "tier": 5
     }
    ],
    "spawns": {
@@ -14051,7 +15291,7 @@
      "x": 10,
      "y": 10,
      "art": "pilgrim",
-     "face": "left",
+     "face": "up",
      "t": [],
      "id": "sec120_tr2",
      "trainer": {
@@ -14194,6 +15434,7 @@
      "art": "pilgrim",
      "face": "left",
      "t": [],
+     "face_pinned": 1,
      "id": "sec121_app1",
      "trainer": {
       "cls": "Apprentice",
@@ -14207,6 +15448,7 @@
      "art": "civilian",
      "face": "right",
      "t": [],
+     "face_pinned": 1,
      "id": "sec121_app2",
      "trainer": {
       "cls": "Apprentice",
@@ -14338,7 +15580,18 @@
      "edge": "top"
     }
    ],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      13,
+      9
+     ],
+     "k": "stash",
+     "item": "dust",
+     "n": 1600,
+     "tier": 6
+    }
+   ],
    "spawns": {
     "arrival": [
      7,
@@ -14494,6 +15747,16 @@
      "t": [
       "The Gravewell Lantern: lit the night the city tipped into the sinkhole. It has never gone out."
      ]
+    },
+    {
+     "tile": [
+      12,
+      1
+     ],
+     "k": "stash",
+     "item": "maxrevive",
+     "n": 1,
+     "tier": 6
     }
    ],
    "spawns": {
@@ -14781,7 +16044,28 @@
     }
    },
    "warps": [],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      13,
+      4
+     ],
+     "k": "stash",
+     "item": "maxrevive",
+     "n": 1,
+     "tier": 6
+    },
+    {
+     "tile": [
+      11,
+      1
+     ],
+     "k": "stash",
+     "item": "maxrevive",
+     "n": 1,
+     "tier": 6
+    }
+   ],
    "spawns": {
     "default": [
      1,
@@ -14816,7 +16100,7 @@
      "x": 17,
      "y": 8,
      "art": "civilian",
-     "face": "left",
+     "face": "down",
      "t": [],
      "id": "sec127_tr2",
      "trainer": {
@@ -14904,7 +16188,28 @@
      "edge": "right"
     }
    ],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      11,
+      4
+     ],
+     "k": "stash",
+     "item": "fullgel",
+     "n": 3,
+     "tier": 6
+    },
+    {
+     "tile": [
+      16,
+      1
+     ],
+     "k": "stash",
+     "item": "fullgel",
+     "n": 3,
+     "tier": 6
+    }
+   ],
    "spawns": {
     "default": [
      1,
@@ -14939,7 +16244,7 @@
      "x": 5,
      "y": 4,
      "art": "explorer",
-     "face": "left",
+     "face": "down",
      "t": [],
      "id": "sec128_tr2",
      "trainer": {
@@ -14952,7 +16257,7 @@
      "x": 16,
      "y": 6,
      "art": "wanderer",
-     "face": "down",
+     "face": "right",
      "t": [],
      "id": "sec128_tr3",
      "trainer": {
@@ -15046,7 +16351,28 @@
      "edge": "top"
     }
    ],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      13,
+      9
+     ],
+     "k": "stash",
+     "item": "maxrevive",
+     "n": 1,
+     "tier": 6
+    },
+    {
+     "tile": [
+      10,
+      3
+     ],
+     "k": "stash",
+     "item": "fullgel",
+     "n": 3,
+     "tier": 6
+    }
+   ],
    "spawns": {
     "default": [
      7,
@@ -15070,6 +16396,7 @@
      "art": "wanderer",
      "face": "left",
      "t": [],
+     "face_pinned": 1,
      "id": "sec129_tr1",
      "trainer": {
       "cls": "Scavenger",
@@ -15150,7 +16477,18 @@
      "edge": "top"
     }
    ],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      13,
+      2
+     ],
+     "k": "stash",
+     "item": "fullgel",
+     "n": 3,
+     "tier": 6
+    }
+   ],
    "spawns": {
     "default": [
      7,
@@ -15254,7 +16592,28 @@
      "edge": "top"
     }
    ],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      12,
+      13
+     ],
+     "k": "stash",
+     "item": "dust",
+     "n": 1600,
+     "tier": 6
+    },
+    {
+     "tile": [
+      9,
+      4
+     ],
+     "k": "stash",
+     "item": "fullgel",
+     "n": 3,
+     "tier": 6
+    }
+   ],
    "spawns": {
     "default": [
      7,
@@ -15276,7 +16635,7 @@
      "x": 7,
      "y": 4,
      "art": "explorer",
-     "face": "right",
+     "face": "up",
      "t": [],
      "id": "sec131_tr1",
      "trainer": {
@@ -15358,7 +16717,18 @@
      "edge": "top"
     }
    ],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      1,
+      12
+     ],
+     "k": "stash",
+     "item": "ether",
+     "n": 3,
+     "tier": 6
+    }
+   ],
    "spawns": {
     "default": [
      7,
@@ -15585,6 +16955,7 @@
      "art": "civilian",
      "face": "left",
      "t": [],
+     "face_pinned": 1,
      "id": "sec134_app1",
      "trainer": {
       "cls": "Apprentice",
@@ -15598,6 +16969,7 @@
      "art": "explorer",
      "face": "left",
      "t": [],
+     "face_pinned": 1,
      "id": "sec134_app2",
      "trainer": {
       "cls": "Apprentice",
@@ -15747,6 +17119,16 @@
       "CORDON NOTICE: Civilian access to the Starfall Rift is suspended by order of the Helix Directive.",
       "Someone has scratched underneath: 'Since when does Helix give orders out here?'"
      ]
+    },
+    {
+     "tile": [
+      11,
+      13
+     ],
+     "k": "stash",
+     "item": "dust",
+     "n": 1600,
+     "tier": 6
     }
    ],
    "spawns": {
@@ -15951,7 +17333,28 @@
     }
    },
    "warps": [],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      16,
+      14
+     ],
+     "k": "stash",
+     "item": "ether",
+     "n": 3,
+     "tier": 6
+    },
+    {
+     "tile": [
+      11,
+      2
+     ],
+     "k": "stash",
+     "item": "singularity",
+     "n": 1,
+     "tier": 6
+    }
+   ],
    "spawns": {
     "default": [
      1,
@@ -15986,7 +17389,7 @@
      "x": 6,
      "y": 6,
      "art": "strand",
-     "face": "left",
+     "face": "down",
      "t": [],
      "id": "sec138_tr2",
      "trainer": {
@@ -16053,7 +17456,28 @@
     }
    },
    "warps": [],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      13,
+      1
+     ],
+     "k": "stash",
+     "item": "ether",
+     "n": 3,
+     "tier": 6
+    },
+    {
+     "tile": [
+      18,
+      14
+     ],
+     "k": "stash",
+     "item": "dust",
+     "n": 1600,
+     "tier": 6
+    }
+   ],
    "spawns": {
     "default": [
      1,
@@ -16088,7 +17512,7 @@
      "x": 10,
      "y": 10,
      "art": "explorer",
-     "face": "right",
+     "face": "up",
      "t": [],
      "id": "sec139_tr2",
      "trainer": {
@@ -16101,7 +17525,7 @@
      "x": 4,
      "y": 6,
      "art": "researcher",
-     "face": "left",
+     "face": "down",
      "t": [],
      "id": "sec139_tr3",
      "trainer": {
@@ -16187,6 +17611,16 @@
      "t": [
       "The campfire is long cold. Three cups still sit around it, one never used."
      ]
+    },
+    {
+     "tile": [
+      17,
+      12
+     ],
+     "k": "stash",
+     "item": "dust",
+     "n": 1600,
+     "tier": 6
     }
    ],
    "spawns": {
@@ -16295,6 +17729,26 @@
      "t": [
       "Lookout: Below, the Rift turns slowly, a purple wound in the crater floor. The hum is louder here."
      ]
+    },
+    {
+     "tile": [
+      10,
+      13
+     ],
+     "k": "stash",
+     "item": "maxrevive",
+     "n": 1,
+     "tier": 6
+    },
+    {
+     "tile": [
+      19,
+      14
+     ],
+     "k": "stash",
+     "item": "fullgel",
+     "n": 3,
+     "tier": 6
     }
    ],
    "spawns": {
@@ -16438,7 +17892,18 @@
      "edge": "top"
     }
    ],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      14,
+      5
+     ],
+     "k": "stash",
+     "item": "fullgel",
+     "n": 3,
+     "tier": 6
+    }
+   ],
    "spawns": {
     "default": [
      7,
@@ -16460,7 +17925,7 @@
      "x": 9,
      "y": 10,
      "art": "explorer",
-     "face": "up",
+     "face": "left",
      "t": [],
      "id": "sec142_tr1",
      "trainer": {
@@ -16542,7 +18007,28 @@
      "edge": "top"
     }
    ],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      3,
+      7
+     ],
+     "k": "stash",
+     "item": "singularity",
+     "n": 1,
+     "tier": 6
+    },
+    {
+     "tile": [
+      2,
+      4
+     ],
+     "k": "stash",
+     "item": "fullgel",
+     "n": 3,
+     "tier": 6
+    }
+   ],
    "spawns": {
     "default": [
      7,
@@ -16566,6 +18052,7 @@
      "art": "researcher",
      "face": "up",
      "t": [],
+     "face_pinned": 1,
      "id": "sec143_tr1",
      "trainer": {
       "cls": "Star Watcher",
@@ -16646,7 +18133,18 @@
      "edge": "top"
     }
    ],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      14,
+      5
+     ],
+     "k": "stash",
+     "item": "dust",
+     "n": 1600,
+     "tier": 6
+    }
+   ],
    "spawns": {
     "default": [
      7,
@@ -16668,7 +18166,7 @@
      "x": 11,
      "y": 8,
      "art": "strand",
-     "face": "down",
+     "face": "right",
      "t": [],
      "id": "sec144_tr1",
      "trainer": {
@@ -16732,6 +18230,16 @@
      "t": [
       "RIFT ENGINE CONSOLE - Containment field: 41%. Output: rising. Authorized by Director K. Thorne."
      ]
+    },
+    {
+     "tile": [
+      6,
+      1
+     ],
+     "k": "stash",
+     "item": "maxrevive",
+     "n": 1,
+     "tier": 6
     }
    ],
    "spawns": {
@@ -16905,6 +18413,16 @@
      "t": [
       "APEX ARRAY. Lift gate: Observatory Halls of the Quorum. Road east: the Great Telescope."
      ]
+    },
+    {
+     "tile": [
+      4,
+      11
+     ],
+     "k": "stash",
+     "item": "singularity",
+     "n": 2,
+     "tier": 7
     }
    ],
    "spawns": {
@@ -16927,10 +18445,16 @@
      "x": 11,
      "y": 10,
      "art": "explorer",
-     "face": "down",
+     "face": "up",
      "t": [
       "Ace Linker: I beat the Quorum once. Then they beat me four times. Heal before every hall."
-     ]
+     ],
+     "id": "sec146_tr0",
+     "trainer": {
+      "cls": "Ace Linker",
+      "linker": 1,
+      "name": "Bo"
+     }
     },
     {
      "x": 5,
@@ -17473,6 +18997,16 @@
      "t": [
       "A banner bearing the Seedmother's crest. Stitched below: 'Every road home begins with a single seed.'"
      ]
+    },
+    {
+     "tile": [
+      8,
+      2
+     ],
+     "k": "stash",
+     "item": "ether",
+     "n": 5,
+     "tier": 7
     }
    ],
    "spawns": {
@@ -17566,7 +19100,28 @@
     }
    },
    "warps": [],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      16,
+      3
+     ],
+     "k": "stash",
+     "item": "singularity",
+     "n": 2,
+     "tier": 7
+    },
+    {
+     "tile": [
+      10,
+      2
+     ],
+     "k": "stash",
+     "item": "maxrevive",
+     "n": 2,
+     "tier": 7
+    }
+   ],
    "spawns": {
     "arrival": [
      1,
@@ -17684,7 +19239,28 @@
     }
    },
    "warps": [],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      9,
+      12
+     ],
+     "k": "stash",
+     "item": "singularity",
+     "n": 2,
+     "tier": 7
+    },
+    {
+     "tile": [
+      17,
+      12
+     ],
+     "k": "stash",
+     "item": "ether",
+     "n": 5,
+     "tier": 7
+    }
+   ],
    "spawns": {
     "default": [
      1,
@@ -17733,7 +19309,7 @@
      "x": 4,
      "y": 8,
      "art": "ystran",
-     "face": "left",
+     "face": "up",
      "t": [],
      "id": "sec155_tr3",
      "trainer": {
@@ -17797,6 +19373,26 @@
      "t": [
       "A drowned archway. Aquelion, Pillar of the Seas, once sang the tides through this gate."
      ]
+    },
+    {
+     "tile": [
+      4,
+      12
+     ],
+     "k": "stash",
+     "item": "dust",
+     "n": 2500,
+     "tier": 7
+    },
+    {
+     "tile": [
+      6,
+      11
+     ],
+     "k": "stash",
+     "item": "maxrevive",
+     "n": 2,
+     "tier": 7
     }
    ],
    "spawns": {
@@ -17845,7 +19441,7 @@
      "x": 17,
      "y": 11,
      "art": "ystran",
-     "face": "right",
+     "face": "up",
      "t": [],
      "id": "sec156_tr3",
      "trainer": {
@@ -17943,6 +19539,16 @@
      "t": [
       "The Sun Forge. Ignarch, Pillar of the Sun, fed Ystra's red star from this flame until the very end."
      ]
+    },
+    {
+     "tile": [
+      8,
+      5
+     ],
+     "k": "stash",
+     "item": "fullgel",
+     "n": 3,
+     "tier": 7
     }
    ],
    "spawns": {
@@ -18092,6 +19698,16 @@
      "t": [
       "A sealed reliquary. Its light pulses slowly, like something asleep and dreaming."
      ]
+    },
+    {
+     "tile": [
+      15,
+      5
+     ],
+     "k": "stash",
+     "item": "maxrevive",
+     "n": 2,
+     "tier": 7
     }
    ],
    "spawns": {
@@ -18116,7 +19732,7 @@
      "x": 1,
      "y": 8,
      "art": "pilgrim",
-     "face": "down",
+     "face": "up",
      "t": [],
      "id": "sec158_tr1",
      "trainer": {
@@ -18218,6 +19834,16 @@
      "t": [
       "The Archive Disc. Most of its records are dark. One still glows: a map of stars named Kessler."
      ]
+    },
+    {
+     "tile": [
+      12,
+      12
+     ],
+     "k": "stash",
+     "item": "singularity",
+     "n": 2,
+     "tier": 7
     }
    ],
    "spawns": {
@@ -18244,6 +19870,7 @@
      "art": "ystran",
      "face": "left",
      "t": [],
+     "face_pinned": 1,
      "id": "sec159_tr1",
      "trainer": {
       "cls": "Ystran Echo",
@@ -18305,7 +19932,28 @@
      "edge": "left"
     }
    ],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      12,
+      1
+     ],
+     "k": "stash",
+     "item": "ether",
+     "n": 5,
+     "tier": 7
+    },
+    {
+     "tile": [
+      12,
+      14
+     ],
+     "k": "stash",
+     "item": "maxrevive",
+     "n": 2,
+     "tier": 7
+    }
+   ],
    "spawns": {
     "default": [
      22,
@@ -18341,7 +19989,7 @@
      "x": 19,
      "y": 6,
      "art": "explorer",
-     "face": "up",
+     "face": "down",
      "t": [],
      "id": "sec160_tr2",
      "trainer": {
@@ -18354,7 +20002,7 @@
      "x": 14,
      "y": 11,
      "art": "pilgrim",
-     "face": "left",
+     "face": "up",
      "t": [],
      "id": "sec160_tr3",
      "trainer": {
@@ -18408,7 +20056,28 @@
     }
    },
    "warps": [],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      11,
+      2
+     ],
+     "k": "stash",
+     "item": "maxrevive",
+     "n": 2,
+     "tier": 7
+    },
+    {
+     "tile": [
+      12,
+      4
+     ],
+     "k": "stash",
+     "item": "fullgel",
+     "n": 3,
+     "tier": 7
+    }
+   ],
    "spawns": {
     "default": [
      1,
@@ -18444,7 +20113,7 @@
      "x": 20,
      "y": 6,
      "art": "pilgrim",
-     "face": "left",
+     "face": "down",
      "t": [],
      "id": "sec161_tr2",
      "trainer": {
@@ -18457,7 +20126,7 @@
      "x": 12,
      "y": 12,
      "art": "ystran",
-     "face": "left",
+     "face": "up",
      "t": [],
      "id": "sec161_tr3",
      "trainer": {
@@ -18521,6 +20190,16 @@
      "t": [
       "A cracked pillar. Scratched in haste: 'It does not hate us. It is only hungry. Do not look into it too long.'"
      ]
+    },
+    {
+     "tile": [
+      3,
+      3
+     ],
+     "k": "stash",
+     "item": "maxrevive",
+     "n": 2,
+     "tier": 7
     }
    ],
    "spawns": {
@@ -18612,6 +20291,16 @@
      "t": [
       "A quiet spring shrine. Seedpods once floated here before their long fall between the stars."
      ]
+    },
+    {
+     "tile": [
+      9,
+      4
+     ],
+     "k": "stash",
+     "item": "maxrevive",
+     "n": 2,
+     "tier": 7
     }
    ],
    "spawns": {
