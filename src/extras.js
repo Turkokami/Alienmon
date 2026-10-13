@@ -254,4 +254,5 @@ function secFluidPockets(s){const main=secMain(s),W=s.tiles[0],H=s.tiles[1],seen
 
 /* ---- renamed species (data/renames.json): saves keep species by number, so only nicknames need moving over ---- */
 const RENAMES=__RENAMES__;
-function renameMigrate(g){if(!g)return g;for(const m of(g.party||[]).concat(g.box||[],g.nurse?[g.nurse.m]:[]))if(m&&m.nick&&RENAMES[m.nick])m.nick=RENAMES[m.nick];return g}
+function renameMigrate(g){if(!g)return g;g.gender='boy';   // the player is always Rook
+ for(const m of(g.party||[]).concat(g.box||[],g.nurse?[g.nurse.m]:[]))if(m&&m.nick&&RENAMES[m.nick])m.nick=RENAMES[m.nick];return g}
