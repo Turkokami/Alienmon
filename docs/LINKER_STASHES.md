@@ -81,7 +81,7 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 
 | Section | Tile | Item | Tier |
 |---|---|---|---|
-| 052 Port Saltreach Docks | 19,14 | 2x Harmonic Pod | 2 |
+| 052 Port Saltreach Docks | 19,13 | 2x Harmonic Pod | 2 |
 | 053 Saltreach Market | 11,14 | 1x Mega Gel | 2 |
 | 057 Coral Route Part A | 17,1 | 3x Med Gel | 2 |
 | 057 Coral Route Part A | 6,13 | 1x Revive Spark | 2 |
@@ -96,7 +96,7 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 | 062 Neonis Starport | 12,13 | 2x Stun Spray | 3 |
 | 063 Neon Boulevard | 8,3 | 500x Stardust | 3 |
 | 066 Arcade District | 8,14 | 1x Ether Gel | 3 |
-| 066 Arcade District | 18,9 | 500x Stardust | 3 |
+| 066 Arcade District | 11,2 | 500x Stardust | 3 |
 | 067 Broadcast Route Part A | 19,3 | 2x Revive Spark | 3 |
 | 067 Broadcast Route Part A | 4,11 | 2x Mega Gel | 3 |
 | 068 Broadcast Route Part B | 12,12 | 500x Stardust | 3 |
@@ -125,7 +125,7 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 | 086 Lava Rail Part B | 15,11 | 800x Stardust | 4 |
 | 086 Lava Rail Part B | 5,12 | 2x Revive Spark | 4 |
 | 087 Deep Mines B1 | 14,12 | 800x Stardust | 4 |
-| 088 Deep Mines B2 | 15,8 | 3x Mega Gel | 4 |
+| 088 Deep Mines B2 | 12,10 | 3x Mega Gel | 4 |
 | 089 Deep Mines B3 | 2,2 | 1x Full Gel | 4 |
 | 090 Furnace Ridge (Pyros) | 13,1 | 2x Revive Spark | 4 |
 | 090 Furnace Ridge (Pyros) | 14,13 | 800x Stardust | 4 |
@@ -221,7 +221,7 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 | 156 Drowned Seas | 6,11 | 2500x Stardust | 7 |
 | 156 Drowned Seas | 20,11 | 2x Max Revive | 7 |
 | 157 Sun Forge | 8,5 | 3x Full Gel | 7 |
-| 158 Crystal Ruins 1F | 15,5 | 2x Max Revive | 7 |
+| 158 Crystal Ruins 1F | 13,5 | 2x Max Revive | 7 |
 | 159 Crystal Ruins 2F | 12,12 | 2x Singularity Pod | 7 |
 | 160 Blighted Forest Part A | 12,1 | 5x Ether Gel | 7 |
 | 160 Blighted Forest Part A | 12,14 | 2x Max Revive | 7 |

@@ -1,5 +1,6 @@
 {
  "version": 1,
+ "canon": "The Alienmon novels (docs/SAGA_MASTER_PLAN.md) are the story canon; see docs/BOOK_SYNC_CHANGELOG.md. Quest fields added for the books are documented at the top of src/story.js.",
  "generated_for": "Alienmon Batch 1 (Kessler System)",
  "quests": [
   {

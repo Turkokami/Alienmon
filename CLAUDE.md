@@ -8,6 +8,16 @@ You are picking up **Alienmon**, an original monster-collecting retro RPG that a
 
 Read this whole file first. Background lore and art style are in `docs/STORY_BIBLE.md`.
 
+## Story canon: the books
+
+The Alienmon novels (Books 1-5) are the **story canon**: `docs/SAGA_MASTER_PLAN.md` (the books) and `docs/EPIC_STORY_BIBLE.md` (the game's chapter plan).
+- The books win on story, characters and dialogue. The game data wins on Alienmon types, stats and moves; never change a type to match a book.
+- The player is a silent protagonist with any of the three starters. Book scenes with Plazmo/Plazmet/Solarach use the player's own starter line (`{starter}`, `{starter2}`, `{starter3}` in quest text). Sola always takes the starter that beats the player's (`{rival}` ...).
+- Kid-friendly for ages 7 and up. Nobody dies on screen.
+- Story features (partner battles, section scenes, cutscenes, choices, save migrations) are documented at the top of `src/story.js`; scenes and save shifts are in `data/story.json`.
+- Renamed Alienmon: old names live only in `data/renames.json`; `node tools/build.js` fails if one appears anywhere else.
+- Every Book Sync change is listed in `docs/BOOK_SYNC_CHANGELOG.md`. Kit Briggs is a proposal awaiting approval: `docs/KIT_BRIGGS_PROPOSAL.md`.
+
 ---
 
 ## 1. How the project works (important)

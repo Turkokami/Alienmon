@@ -1,5 +1,7 @@
 # Alienmon — Story Progression Master (the single source of truth)
 
+> **Story canon:** the Alienmon novels (Books 1-5, planned in `docs/SAGA_MASTER_PLAN.md`) are now the story canon. The books win on story, characters and dialogue; the game data wins on Alienmon types, stats and moves. Every change made to match them is listed in `docs/BOOK_SYNC_CHANGELOG.md`.
+
 This is how the whole game unlocks, step by step, so the story always makes sense and can't be broken. If this file disagrees with another doc, **this file wins**. The machine-readable version is `world_state.json`.
 
 ---
@@ -74,8 +76,10 @@ Columns:
 | 14 | M15 Sola Turns | Helix Station | `sola_ally`; **Halo landing** | **Sola reappears as an ally** (Neonis and Skyreach lines) | — |
 | 15 | M16 Twin Visions | Skyreach Plaza | 7 Shards → **Shadow Tunnel** | — | — |
 | 16 | M17 Voices in the Dark | Umbra | 8 Shards → **Helix Shuttle Pad**; Starfall landing | Strand becomes the M18 giver | Max Revive |
+| 16b | M17b Harbor Reclaimed (NEW, Book 3) | Thalassa docks | Thalassa's tower core back; the harbor tower relights | Captain Marsh; Strand becomes the M18 giver in Dustmere's plaza | — |
 | 17 | M18 Eight Shards Sing | Starfall crater | Novaryx encounter | Sola at the crater | — |
 | 18 | M19 Seal the Rift | Starfall | `rift` flag → **Apex Array**; Helix signatures in the wild; Lumivex via S98 | **Helix Grunt replaced**; fortress becomes the Reclaimed Forge (Grub's shop); Technician and Strand get new lines; **Teo and Sola home in Dustmere** | — |
+| 18b | M19b Homecoming (NEW, Book 4) | Dustmere, Neonis, Thalassa | Nana Wren's journal, Codex page | Dusty names the Crater Four; DX-4's origin; Thorne's trial; **Vex captured** (moved from the postgame) | — |
 | 19 | M20 The Summit | Apex Array | — | Quorum in four halls | — |
 | 20 | M21 Prime Linker | Apex Array | `champ` flag → **Ystra**; revisit tier 3 wild tables | Marisol's after-champion line | — |
 | 21 | P01–P04 | Ystra, then space | Pillars, Oblivane, Seedmother encounters; Warp Gate teaser | — | — |
@@ -110,3 +114,12 @@ These are inconsistencies found in today's game data. Claude Code should fix all
 - **Bosses are one-time; Keepers can be rematched after the Champion** (postgame tier).
 - **Never lose story items:** key items can't be discarded or sold.
 - **Save anywhere except mid-cutscene and mid-battle.** Autosave after every main quest step and every Shard.
+
+---
+
+## 5. Book canon additions
+
+- **New main quests:** M17b Harbor Reclaimed (after M17, before M18) and M19b Homecoming (after M19, before M20).
+- **New side quests:** S53 Glitchbug Outbreak (Neonis, after M09); S102 The Keepers' Call (after M17b; finishing it adds the Keepers singing to the sealing).
+- **Story scenes** that play once when you walk into a section live in `data/story.json`.
+- Full list of changes: `docs/BOOK_SYNC_CHANGELOG.md`.

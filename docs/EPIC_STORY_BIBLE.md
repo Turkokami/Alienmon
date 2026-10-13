@@ -1,5 +1,7 @@
 # ALIENMON — The Epic Story Bible
 
+> **Story canon:** the Alienmon novels (Books 1-5, planned in `docs/SAGA_MASTER_PLAN.md`) are now the story canon. The books win on story, characters and dialogue; the game data wins on Alienmon types, stats and moves. Every change made to match them is listed in `docs/BOOK_SYNC_CHANGELOG.md`.
+
 ### Batch 1: The Kessler Signal
 
 Target length: 35–40 hours for the main story, 15+ more for side stories and postgame.
@@ -311,7 +313,7 @@ Each Keeper guards one tower without knowing exactly what it holds shut. Some su
 
 | Character | Type | Story role |
 | --- | --- | --- |
-| Saga | Plasma | Silent hooded master; revealed to be a Ystran echo bonded to a human body (a postgame secret) |
+| Saga | Plasma | Silent hooded master; revealed to be a Ystran echo in a borrowed human body, and Liss's brother (postgame, Crystal Ruins) |
 | General Ostrander | Gravity | Ran the military cordon around the crater for 20 years |
 | Orra Venn | Prime Linker; Plasma ace | Last of the Crater Four. Kept the secret longest. Her final battle is a test: "Could you carry what I carried?" |
 
@@ -719,7 +721,7 @@ Strand defects and flies you in.
 
 At Teo's old camp, find his journal (S98).
 
-At the rim, the eight Shards rise and Novaryx answers. Capture it, or calm it and let it guide you.
+At the rim, the eight Shards rise and Novaryx answers. Calm it and let it guide you (canon), or capture it.
 
 Thorne is already at the center.
 
@@ -819,19 +821,17 @@ The three Pillars each test you: Terravox tests strength, Aquelion memory, Ignar
 
 Gather the Ystran echoes into the Choir.
 
-Calm Oblivane with the Choir's song plus the Signal. Battle, then capture or release it.
+Oblivane cannot be beaten. After a few turns the player chooses LISTEN, the Choir sings, and Oblivane is calmed and released, not caught. An optional capture exists only after the credits.
 
-The Seedmother is renewed. The choice: rebuild Ystra together, or keep Kessler as a shared
+The Seedmother is renewed. The choice: rebuild Ystra together, keep Kessler as a shared home, or Both (canon, the highlighted default).
 
-home.
+Zib's choice: the Seedmother tells Zib his mission is done; he chooses the hero. "A scout's job is to find a home. You found one."
 
 Either way, the Warp Gate wakes.
 
 Epilogue letter from Thorne in prison: "Elena would have liked you. Tell your Zib thank you."
 
-Extras: Keeper and Quorum rematches, Marsh captures Vex, Saga's true identity, and the Batch 2
-
-tease.
+Extras: Keeper and Quorum rematches, Saga's true identity, Tamsin's map room, and the one-year-later epilogue. (Marsh capturing Vex moved to Chapter 17, Homecoming.)
 
 ## PART 4 — World guides
 
@@ -993,7 +993,11 @@ New main quests to add:
 
 M10b "The Crater Four": after M10, at Neonis (Vashti's lab).
 
-M19b "Homecoming": after M19, in Dustmere.
+M19b "Homecoming": after M19, in Dustmere. Built: festival, Nana Wren's journal, DX-4's origin, Thorne's trial, Vex's capture off Thalassa, Orra's invitation.
+
+M17b "Harbor Reclaimed" (built, from Book 3): after M17, at Thalassa. Required before the crater.
+
+New side quests (built): S53 "Glitchbug Outbreak" (Neonis), S102 "The Keepers' Call" (Ferrox and Neonis; adds the Keepers singing to the sealing).
 
 Rival battle placement:
 
