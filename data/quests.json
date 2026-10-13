@@ -2427,10 +2427,11 @@
      "scene": "ystra_keyart",
      "title": "The Reunion: Choir",
      "lines": [
-      "Kit's Shard relay and Static's frequency send the call back through the Vortex.",
-      "And they come. Hank, Captain Marsh, DJ Static, Ingrid, Old Basalt, Echo and Iris, Kade, every trainer you ever battled, even Pell.",
-      "Wild Alienmon of every kind pour through from Kessler behind them.",
-      "Every Alienmon sings one note of her song. Nobody gives up their body or their life, only a note.",
+      "Kit's Shard relay and Static's frequency send the call home to Kessler.",
+      "Above the crater, the Warp Gate wakes for the first time and opens a road between the worlds.",
+      "And they come through it: Hank, Captain Marsh, DJ Static, Ingrid, Old Basalt, Echo and Iris, Kade, every trainer you ever battled, even Pell.",
+      "Wild Alienmon of every kind pour through the Gate behind them.",
+      "Every Alienmon sings one note of her song. Nobody gives up their body or their life, only a note. Every one of them stays itself.",
       "The Heartroot drinks the song. Green floods out across Ystra.",
       "A world-tree of crystal and leaves rises out of the crater: the Seedmother, growing again.",
       "She holds Oblivane, small and silver now, like a moon in her branches."
@@ -2481,7 +2482,7 @@
     ],
     "complete": [
      "Seedmother: Thank you, my children. Every one of you still yourselves.",
-     "Seedmother: Take this seed. A gate at the edge of your sky is waking."
+     "Seedmother: Take this seed. The Gate will stay open, a road between your two homes."
     ]
    },
    "rewards": {
@@ -2534,7 +2535,7 @@
    ],
    "dialogue": {
     "start": [
-     "Dr. Vashti: The Warp Gate just lit up on every scope in the system!"
+     "Dr. Vashti: The Warp Gate is still open, on every scope in the system! Go and see it from our side."
     ],
     "progress": [
      "Keep at it, Linker. You've got this."
