@@ -244,6 +244,90 @@ def reach(rows, W, H, start, block):
 
 
 pop = json.load(open(os.path.join(ROOT, 'data/population.json'), encoding='utf-8'))
+
+
+def lanes(sec, rows):
+    """Tiles on any shortest walk between two of the section's exits, doors, warps and counters: the travel lanes."""
+    W, H = sec['tiles']
+    walk = lambda x, y: 0 <= x < W and 0 <= y < H and rows[y][x] in '.,'
+    pts = [tuple(w['tile']) for w in sec['warps']] + [tuple(w['at']) for w in sec['warps']]
+    for side, e in sec['edges'].items():
+        k = (e['range'][0] + e['range'][1]) // 2
+        pts.append({'left': (0, k), 'right': (W - 1, k), 'top': (k, 0), 'bottom': (k, H - 1)}[side])
+    for o in sec.get('objects', []):
+        for dx, dy in ((0, 1), (0, -1), (1, 0), (-1, 0)):
+            if walk(o['tile'][0] + dx, o['tile'][1] + dy):
+                pts.append((o['tile'][0] + dx, o['tile'][1] + dy))
+                break
+    pts = [p for p in dict.fromkeys(pts) if walk(*p)]
+    dist = []
+    for p in pts:
+        d = {p: 0}
+        q = [p]
+        for c in q:
+            for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+                n = (c[0] + dx, c[1] + dy)
+                if n not in d and walk(*n):
+                    d[n] = d[c] + 1
+                    q.append(n)
+        dist.append(d)
+    out = set()
+    for i in range(len(pts)):
+        for j in range(i + 1, len(pts)):
+            if pts[j] not in dist[i]:
+                continue
+            L = dist[i][pts[j]]
+            out |= {t for t, a in dist[i].items() if a + dist[j].get(t, 1 << 30) == L}
+    return out
+
+
+GUARDS = {'mf12', 'mf7'}   # Forge Miner Dax and the Helix grunt guard their gates on purpose
+
+
+def unblock(sec, rows, things, keep_free=()):
+    """Move anything standing in a travel lane to the nearest free tile beside it (within 4 tiles), never cutting a path off."""
+    W, H = sec['tiles']
+    lane = lanes(sec, rows)
+    taken = {(t['x'], t['y']) for t in things} | set(keep_free)
+    start = next((p for p in lane if p not in taken), None)
+    if start is None:
+        return
+    count = lambda blocked: len(reach(rows, W, H, start, blocked)) if start not in blocked else 0
+    keep = {tuple(w['tile']) for w in sec['warps']} | {tuple(w['at']) for w in sec['warps']} | {tuple(v) for v in sec['spawns'].values() if v}
+    for side, e in sec['edges'].items():   # every exit tile and the two tiles in from it
+        for k in range(e['range'][0], e['range'][1] + 1):
+            for d in range(3):
+                keep.add({'left': (d, k), 'right': (W - 1 - d, k), 'top': (k, d), 'bottom': (k, H - 1 - d)}[side])
+    for o in sec.get('objects', []):
+        keep |= {(o['tile'][0] + dx, o['tile'][1] + dy) for dx, dy in ((0, 1), (0, -1), (1, 0), (-1, 0))}
+    for t in things:
+        here = (t['x'], t['y'])
+        if here not in lane or not (0 <= t['x'] < W and 0 <= t['y'] < H) or rows[t['y']][t['x']] not in '.,':
+            continue   # out of the lanes already, or standing behind a counter / on scenery
+        if t.get('wid') in GUARDS:
+            continue   # standing in the way is their job until you beat them
+        best = None
+        for r in range(1, max(W, H)):   # nearest free spot beside the lanes, anywhere in the section if need be
+            cands = sorted(((x, y) for y in range(t['y'] - r, t['y'] + r + 1) for x in range(t['x'] - r, t['x'] + r + 1)
+                            if abs(x - t['x']) + abs(y - t['y']) == r), key=lambda c: (c[1], c[0]))
+            for c in cands:
+                if not (0 <= c[0] < W and 0 <= c[1] < H) or rows[c[1]][c[0]] not in '.,' or c in lane or c in taken or c in keep:
+                    continue
+                without = taken - {here}
+                base = count(without)
+                if c not in reach(rows, W, H, start, without) or count(without | {c}) != base - 1:
+                    continue   # standing there would wall off a pocket of ground
+                best = c
+                break
+            if best:
+                break
+        if best:
+            taken.discard(here)
+            taken.add(best)
+            t['x'], t['y'] = best
+        elif not (t.get('wid') or t.get('story') or t.get('trainer') or t.get('name')):
+            t['drop'] = 1   # a flavour townsperson with nowhere out of the way to stand
+    things[:] = [t for t in things if not t.get('drop')]
 PKEY = {'Dustara': 'dustara', 'Ferrox': 'ferrox', 'Sporeholm': 'sporeholm', 'Thalassa': 'thalassa', 'Neonis': 'neonis', 'Glyphos': 'glyphos', 'Pyros': 'pyros',
         'Glacia': 'glacia', 'Helix Station': 'helix', 'Halo': 'halo', 'Umbra': 'umbra', 'Starfall': 'starfall', 'Apex Arena': 'apex', 'Ystra': 'ystra'}
 
@@ -361,7 +445,9 @@ for sid, sec in world.items():
                         best = (d, k)
                 o['face'] = best[0]
         out.append(o)
-    sec['npcs'] = out
+    movable = [o for o in out if not o.get('legend')]
+    unblock(sec, rows, movable)
+    sec['npcs'] = [o for o in out if o.get('legend') or o in movable]
 
 arrivals = dict(links.get('arrival', {}))
 for sid, sec in world.items():
@@ -425,6 +511,7 @@ for key, sp in qsrc.items():
             keys.add((o['tile'][0] + dx, o['tile'][1] + dy))
     keys = {k for k in keys if 0 <= k[0] < W and 0 <= k[1] < H and rows[k[1]][k[0]] in '.,'}
     block = blocked_set(sec) | qtaken[sid]
+    lane = lanes(sec, rows) if kind in CHAR_KINDS else set()
     base = reach(rows, W, H, next(iter(keys)), block) if keys else set()
     near = sp.get('near') or [W // 2, H // 2]
     obj = q['objectives'][int(step)] if q and step.isdigit() and int(step) < len(q['objectives']) else {}
@@ -444,7 +531,7 @@ for key, sp in qsrc.items():
                         continue
                     score = -min(gap, 7) * 3 + (abs(x - near[0]) + abs(y - near[1])) * 0.2
                 else:
-                    score = abs(x - near[0]) + abs(y - near[1])
+                    score = abs(x - near[0]) + abs(y - near[1]) + (6 if (x, y) in lane else 0)   # people stand beside the lanes
                 if bs is not None and score >= bs:
                     continue
                 if kind in CHAR_KINDS and keys:   # people block: never cut anything off
@@ -489,6 +576,7 @@ for sid, sec in world.items():
                 keys.add({'left': (d, k), 'right': (W - 1 - d, k), 'top': (k, d), 'bottom': (k, H - 1 - d)}[side])
     keys = {k for k in keys if 0 <= k[0] < W and 0 <= k[1] < H and rows[k[1]][k[0]] in '.,'}
     block = blocked_set(sec) | qtaken[sid] | {(s2['x'], s2['y']) for s2 in spots.values() if s2['s'] == sid}
+    mlane = lanes(sec, rows)
     base = reach(rows, W, H, next(iter(keys)), block) if keys else set()
     mons = []
     for i in range(1 if sec['type'] == 'town' else 2):
@@ -496,7 +584,7 @@ for sid, sec in world.items():
         best, bs = None, None
         for y in range(H):
             for x in range(W):
-                if rows[y][x] not in '.,' or (x, y) in keys or (x, y) in block:
+                if rows[y][x] not in '.,' or (x, y) in keys or (x, y) in block or (x, y) in mlane:
                     continue
                 gap = min((abs(x - a) + abs(y - b) for a, b in block), default=9)
                 if gap < 3:

@@ -6,7 +6,7 @@
  G.sec = {id,x,y} is the player's tile; the old painted town maps stay in use wherever no section is active. */
 const SWORLD=__SWORLD__,SECI=lazyImgs(__SECIMG__),SECQ=__SECQ__;
 const SEC_STEP=8;               // frames per tile (2 px a frame, Gold/Crystal walking pace)
-let SJ=null,SM=null,SFADE=null,SBANNER=0,SDEBUG=false,SBUMP=0,SNEAR=null;
+let SJ=null,SJBUF=0,SM=null,SFADE=null,SBANNER=0,SDEBUG=false,SBUMP=0,SNEAR=null;
 const secOn=()=>!!(G&&G.sec&&SWORLD[G.sec.id]);
 const secTile=(s,x,y)=>x<0||y<0||x>=s.tiles[0]||y>=s.tiles[1]?null:s.rows[y][x];
 const DIRS={up:[0,-1],down:[0,1],left:[-1,0],right:[1,0]};
@@ -65,11 +65,12 @@ function secInteract(){const s=SWORLD[G.sec.id],[dx,dy]=DIRS[face],x=G.sec.x+dx,
 function updSec(){const s=SWORLD[G.sec.id];if(SBUMP>0)SBUMP--;
  if(SSPOT){if(--SSPOT.t<=0){const n=SSPOT.n;SSPOT=null;secTrainerTalk(n)}drawSec();return}
  if(SFADE){SFADE.t++;if(SFADE.t===10){SFADE.go();if(!secOn()){SFADE=null;return}}if(SFADE.t>=20)SFADE=null;drawSec();return}   // a fade can hand over to a painted map (the Forge Fortress)
- if(SM){SM.t++;if(SM.t>=SEC_STEP){const a=SM.to;SM=null;if(a.s.id!==G.sec.id)enterSection(a.s.id,[a.x,a.y],null);else{G.sec.x=a.x;G.sec.y=a.y}secArrive()}
-  if(!SM&&!SFADE&&!DLG&&!CH)secStepHeld();drawSec();return}
+ if(SM){if(pressed.b)SJBUF=12;SM.t++;if(SM.t>=SEC_STEP){const a=SM.to;SM=null;if(a.s.id!==G.sec.id)enterSection(a.s.id,[a.x,a.y],null);else{G.sec.x=a.x;G.sec.y=a.y}secArrive()}
+  if(!SM&&!SFADE&&!DLG&&!CH&&!SJ){if(SJBUF>0){SJBUF=0;secJump()}else secStepHeld()}drawSec();return}
  if(SJ){SJ.t++;if(SJ.t>=SEC_JUMP_T){G.sec.x=SJ.to[0];G.sec.y=SJ.to[1];SJ=null;secArrive()}drawSec();return}
  if(P_('start')){scene='menu';menuSel=0;return}
- if(P_('b')){secJump();drawSec();return}
+ if(SJBUF>0)SJBUF--;
+ if(P_('b')){SJBUF=0;secJump();drawSec();return}
  if(pressed.g){pressed.g=false;SDEBUG=!SDEBUG;toast('Grid overlay '+(SDEBUG?'on':'off'))}
  if(P_('a')){secInteract();drawSec();return}
  secStepHeld();drawSec()}
@@ -175,7 +176,9 @@ function secMain(s){if(s._main)return s._main;const W=s.tiles[0],H=s.tiles[1],ok
  const seed=[s.spawns&&s.spawns.default].concat(s.warps.map(w=>w.tile)).concat(Object.entries(s.edges).map(([k,e])=>k==='left'?[0,e.range[0]]:k==='right'?[W-1,e.range[0]]:k==='top'?[e.range[0],0]:[e.range[0],H-1]));
  for(const t of seed)if(t&&ok(t[0],t[1])&&!seen.has(t[0]+','+t[1])){seen.add(t[0]+','+t[1]);q.push(t)}
  while(q.length){const[x,y]=q.pop();for(const[dx,dy]of Object.values(DIRS)){const k=(x+dx)+','+(y+dy);if(!seen.has(k)&&ok(x+dx,y+dy)){seen.add(k);q.push([x+dx,y+dy])}}}return s._main=seen}
-function secJump(){const s=SWORLD[G.sec.id],[dx,dy]=DIRS[face],x=G.sec.x+dx*2,y=G.sec.y+dy*2;
- const land=secTile(s,x,y)!==null&&secWalk(s,x,y)&&secMain(s).has(x+','+y)&&!s.warps.some(w=>w.node&&w.tile[0]===x&&w.tile[1]===y&&!gateOpen(w.node));
- if(!land){bumpSfx();return}
- SJ={t:0,from:[G.sec.x,G.sec.y],to:[x,y]};jumpSfx()}
+function secJump(){const s=SWORLD[G.sec.id],[dx,dy]=DIRS[face];
+ const ok=(x,y)=>secTile(s,x,y)!==null&&secWalk(s,x,y)&&secMain(s).has(x+','+y)&&!s.warps.some(w=>w.node&&w.tile[0]===x&&w.tile[1]===y&&!gateOpen(w.node));
+ // two tiles is a normal hop; three clears a wider gap; nothing to land on is a bump
+ const n=[2,3].find(k=>ok(G.sec.x+dx*k,G.sec.y+dy*k)&&!(k===3&&ok(G.sec.x+dx,G.sec.y+dy)&&ok(G.sec.x+dx*2,G.sec.y+dy*2)));
+ if(!n){bumpSfx();return}
+ SJ={t:0,from:[G.sec.x,G.sec.y],to:[G.sec.x+dx*n,G.sec.y+dy*n]};jumpSfx()}
