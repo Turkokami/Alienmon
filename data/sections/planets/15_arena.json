@@ -66,7 +66,7 @@
    {
     "art": "explorer",
     "t": [
-     "Fan: I've watched every Star Cup final. The Star Cup crowd is wild!"
+     "Fan: I've watched every Singularity League final. Grand Champion Nyx Horizon has never lost here!"
     ],
     "tile": [
      8,
@@ -77,7 +77,7 @@
    {
     "art": "civilian",
     "t": [
-     "Kid: When I grow up I'm going to win the Gold Cup. Then the Star Cup!"
+     "Kid: I'm entering the Stardust League with my Lv 12 team! Level caps make it fair for everyone."
     ],
     "tile": [
      15,
@@ -88,7 +88,7 @@
    {
     "art": "researcher",
     "t": [
-     "Commentator: Arena trainers bring teams as strong as yours. No easy wins in here!"
+     "Commentator: Stardust, Comet, Supernova, Singularity. Each league has its own level cap and its own Champion."
     ],
     "tile": [
      15,

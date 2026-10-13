@@ -204,39 +204,60 @@ function secDrawStash(x,y){if(x<-16||y<-16||x>160||y>144)return;const b=Math.rou
 function stashSfx(){try{if(!AC||musicMode==='off')return;const t=AC.currentTime;[523,659,784,1047].forEach((f,i)=>{const o=AC.createOscillator(),g=AC.createGain();o.type='square';o.frequency.value=f;g.gain.setValueAtTime(0.03,t+i*0.07);g.gain.exponentialRampToValueAtTime(0.001,t+i*0.07+0.12);o.connect(g).connect(AC.destination);o.start(t+i*0.07);o.stop(t+i*0.07+0.13)})}catch(e){}}
 function exclaimSfx(){try{if(!AC||musicMode==='off')return;const t=AC.currentTime,o=AC.createOscillator(),g=AC.createGain();o.type='square';o.frequency.setValueAtTime(880,t);o.frequency.setValueAtTime(1175,t+0.06);g.gain.setValueAtTime(0.04,t);g.gain.exponentialRampToValueAtTime(0.001,t+0.16);o.connect(g).connect(AC.destination);o.start(t);o.stop(t+0.17)}catch(e){}}
 
-/* ---------- the Star Arena: Arena Cups, three battles in a row against trainers matched to your team ----------
- Your team is healed before every round. A loss ends the run where you stand (no blackout, no lost stardust).
- Cups open with Signal Shards; clearing one pays out every time, and the first clear is remembered. */
-const ARENA_CUPS=[
- {k:'bronze',n:'Bronze Cup',need:1,lv:-3,size:[2,2,3],dust:500,items:{harmonic:3,gel:3}},
- {k:'silver',n:'Silver Cup',need:3,lv:-1,size:[2,3,3],dust:1000,items:{megagel:3,revive:2}},
- {k:'gold',n:'Gold Cup',need:5,lv:1,size:[3,3,4],dust:2000,items:{fullgel:2,maxrevive:1,ether:2}},
- {k:'star',n:'Star Cup',need:8,lv:3,size:[3,4,4],dust:4000,items:{singularity:2,maxrevive:2,fullgel:3}}];
+/* ---------- the Star Arena: four leagues with level caps, a three-round ladder and a League Champion ----------
+ Pick a league at the Arena Master, choose up to 3 Alienmon that fit its level cap, then beat three rounds and the
+ League Champion. Your team is healed before every battle. A loss ends the run where you stand (no blackout, no lost
+ stardust) and resets that league's win streak. Your other Alienmon wait safely on the side (even if you quit mid-run). */
+const LEAGUES=[
+ {k:'stardust',n:'Stardust League',cls:'Easy',cap:25,lv:[20,25],tiers:4,dust:600,items:{harmonic:3,gel:4,revive:1},
+  champ:{name:'Stardust Champion Pip Starling',art:'explorer',intro:'You made it to me! Let\'s see if you shine like real stardust!',lose:'Wow... you\'re the Stardust Champion now!'}},
+ {k:'comet',n:'Comet League',cls:'Middle',cap:45,lv:[40,45],tiers:8,need:3,dust:1500,items:{megagel:4,revive:2,ether:2},
+  champ:{name:'Comet Champion Vela Quasar',art:'technician',intro:'Comets burn bright and fast. Can you keep up?',lose:'You blazed right past me. The Comet crown is yours.'}},
+ {k:'supernova',n:'Supernova League',cls:'Hard',cap:65,lv:[60,65],tiers:12,need:6,dust:3000,items:{fullgel:3,maxrevive:2,harmonic:5},
+  champ:{name:'Supernova Champion Ash Corona',art:'guard',intro:'Nobody has outshone me in a hundred battles. Prove me wrong!',lose:'A brighter star than me... incredible. Supernova Champion!'}},
+ {k:'singularity',n:'Singularity League',cls:'Master',cap:0,lv:[68,72],tiers:14,master:1,dust:6000,items:{singularity:2,maxrevive:3,fullgel:4},
+  champ:{name:'Grand Champion Nyx Horizon',art:'wanderer',intro:'Every light falls into the Singularity eventually. Show me yours.',lose:'...You are the Grand Champion of the Star Arena.'}}];
 let ARENA=null;
-function arenaMenu(){G.arena=G.arena||{};const open=ARENA_CUPS.filter(c=>G.shards>=c.need||freeRoam());
- say(['Arena Master: Welcome to the Star Arena, Linker!','Win three battles in a row to take a Cup. I heal your team before every round.'],()=>
-  choose('Arena Cups',ARENA_CUPS.map(c=>(G.shards>=c.need||freeRoam()?'':'[locked] ')+c.n+(G.arena[c.k]?' *':'')).concat(['Not now']),i=>{const c=ARENA_CUPS[i];if(!c)return;
-   if(!(G.shards>=c.need||freeRoam()))return say('Arena Master: The '+c.n+' needs '+c.need+' Signal Shard'+(c.need>1?'s':'')+'. Come back stronger!');
-   if(!G.party.length)return say('Arena Master: You need an Alienmon to enter!');
-   ARENA={cup:c,round:0};arenaRound()},null,'guard'),'guard')}
-function arenaTrainer(c,round){const lead=Math.max(...G.party.map(m=>m.lv)),lv=Math.max(5,Math.min(70,lead+c.lv+round)),r=rng(hash(c.k+round+frame)),
-  pool=Object.keys(PROG.areas).slice(0,Math.max(2,Math.min(14,2+G.shards))).flatMap(k=>(PROG.areas[k].tier1||[]).map(x=>x.name)).filter(n=>IDX[n]!=null&&wildOK(n)),
-  cls=(['Ace Linker','Arena Ace','Star Duelist','Cup Rookie','Veteran Linker','Rival Linker'])[Math.floor(r()*6)],art=['explorer','guard','technician','wanderer','pilgrim','researcher'][Math.floor(r()*6)],
-  name=['Kai','Rhee','Juno','Vela','Corin','Wren','Nyx','Sol','Yuki','Zora','Milo','Quill'][Math.floor(r()*12)],
-  team=Array.from({length:c.size[round]},(_,i)=>{const id=IDX[pool[Math.floor(r()*pool.length)]]??STARTERS[0];return[evolvedAt(id,lv),Math.max(2,lv-(c.size[round]-1-i))]});
- return{name:cls+' '+name,art,intro:['Round '+(round+1)+' of 3! Show me what you two can do!','Final round! The crowd is on its feet!','Let\'s give them a show!'][round===2?1:round===0?0:2],
-  lose:'What a battle! The crowd loves you!',after:'Good luck in the next round!',team,bkey:'arena_'+c.k,arena:1}}
-function arenaRound(){const c=ARENA.cup,tr=arenaTrainer(c,ARENA.round);healAll();
- say(['Announcer: '+c.n+', round '+(ARENA.round+1)+'!',tr.name+' steps onto the floor!'],()=>say(tr.name+': '+tr.intro,()=>startBattle(tr.team.map(([id,lv])=>mk(id,lv)),tr),tr.art))}
-// called when an arena battle ends
-function arenaAfter(won){const a=ARENA;if(!a)return;healAll();
- if(!won){ARENA=null;return say(['Announcer: And that\'s the end of the run!','Arena Master: Heal up and try again any time, Linker.'])}
- a.round++;if(a.round<3)return say('Announcer: A win! On to round '+(a.round+1)+'!',arenaRound);
- const c=a.cup;ARENA=null;G.arena=G.arena||{};const first=!G.arena[c.k];G.arena[c.k]=(G.arena[c.k]||0)+1;G.dust+=c.dust;const L=['Announcer: '+c.n+' champion!','You received '+c.dust+' Stardust!'];
- for(const[k,n]of Object.entries(c.items)){if(G.pods&&k in G.pods)G.pods[k]+=n;else G.items[k]=(G.items[k]||0)+n;L.push('You received '+n+'x '+(ITEMS.concat(PODS).find(i=>i.k===k)||{n:k}).n+'!')}
- if(first)L.push('Arena Master: Your name goes up on the board. First '+c.n+' clear!');
- if(first&&c.k==='star'&&IDX.Lumivex!=null){const m=mk(IDX.Lumivex,50,{gift:1});G.seen[m.id]=1;const where=addMon(m);L.push('Arena Master: And this is for the Star Cup champion. Lumivex, the arena\'s guardian, has chosen you!','Lumivex joined '+(where==='party'?'your team':'your Storage')+'!')}
- autosave();say(L)}
+const legendary=m=>{const r=(PROG.species[D[m.id].name]||{}).rarity;return r==='legendary'||r==='mythic'};
+function leagueOpen(L){if(freeRoam())return true;if(L.master)return LEAGUES.filter(x=>!x.master).every(x=>G.arena&&G.arena[x.k]&&G.arena[x.k].wins);return G.shards>=(L.need||1)}
+function leagueFits(L,m){return(L.cap?m.lv<=L.cap:true)&&!(L.master&&legendary(m))}
+function leagueLabel(L){const rec=G.arena&&G.arena[L.k];return(leagueOpen(L)?'':'[locked] ')+L.n+(rec&&rec.wins?' ★':'')}
+function arenaMenu(){G.arena=G.arena||{};for(const k in G.arena)if(typeof G.arena[k]==='number')delete G.arena[k];   // old Cup records
+ say(['Arena Master: Welcome to the Star Arena, Linker!','Four leagues, each with its own level cap. Beat three rounds and the League Champion to take the crown.'],arenaPick,'guard')}
+function arenaPick(){choose('Star Arena leagues',LEAGUES.map(leagueLabel).concat(['Arena board','Not now']),i=>{const L=LEAGUES[i];
+  if(i===LEAGUES.length)return arenaBoard();if(!L)return;
+  if(!leagueOpen(L))return say('Arena Master: '+(L.master?'The Singularity League opens once you have won the other three leagues.':'The '+L.n+' opens at '+L.need+' Signal Shards.'),arenaPick,'guard');
+  say(['Arena Master: The '+L.n+' ('+L.cls+'). '+(L.cap?'Your Alienmon must be level '+L.cap+' or lower.':'Any level, but no legendary Alienmon.'),'Pick up to three Alienmon. Opponents are level '+L.lv[0]+' to '+L.lv[1]+'.'],()=>arenaTeam(L,[]),'guard')},null,'guard')}
+function arenaBoard(){const L=LEAGUES.map(x=>{const r=G.arena[x.k];return x.n+': '+(r&&r.wins?r.wins+' win'+(r.wins>1?'s':'')+', best streak '+(r.best||r.wins):'not won yet')});say(['Arena board'].concat(L),arenaPick,'guard')}
+function arenaTeam(L,picked){const all=G.party.concat(G.box),ok=all.filter(m=>leagueFits(L,m)&&!picked.includes(m));
+ if(!picked.length&&!ok.length)return say('Arena Master: None of your Alienmon fit the '+L.n+' rules. '+(L.cap?'Bring some at level '+L.cap+' or lower.':'Leave the legendaries at home.'),arenaPick,'guard');
+ if(picked.length>=3||!ok.length)return arenaStart(L,picked);
+ const list=ok.slice(0,8);choose('Pick Alienmon '+(picked.length+1)+' of 3',list.map(m=>nm(m)+' Lv'+m.lv).concat(picked.length?['Start with '+picked.length]:[]).concat(['Cancel']),i=>{
+  if(i<list.length)return arenaTeam(L,picked.concat([list[i]]));if(picked.length&&i===list.length)return arenaStart(L,picked);arenaPick()})}
+function arenaStart(L,team){G.arenaParty=G.party.slice();G.arenaBox=G.box.slice();G.party=team.slice();G.box=G.box.filter(m=>!team.includes(m));ARENA={L,round:0};arenaRound()}
+function arenaEnd(){if(G.arenaParty){const back=G.arenaParty.concat(G.arenaBox||[]);G.box=(G.arenaBox||[]).filter(m=>!G.arenaParty.includes(m));G.party=G.arenaParty;delete G.arenaParty;delete G.arenaBox;
+  for(const m of G.party.concat(G.box))m.hp=stat(m,0)}ARENA=null}
+function arenaTrainer(L,round){const champ=round===3,r=rng(hash(L.k+round+frame)),[lo,hi]=L.lv,lv=champ?hi:Math.round(lo+(hi-lo)*round/3),
+  pool=Object.keys(PROG.areas).slice(0,L.tiers).flatMap(k=>{const a=PROG.areas[k];return(a.tier1||[]).concat(L.tiers>8?(a.tier2_after_4_shards||[]):[]).concat(L.master?(a.tier3_after_champion||[]):[]).map(x=>x.name)})
+   .filter(n=>IDX[n]!=null&&!['legendary','mythic'].includes((PROG.species[n]||{}).rarity)&&n!=='Lumivex'),
+  size=3,team=Array.from({length:size},(_,i)=>{const id=IDX[pool[Math.floor(r()*pool.length)]]??STARTERS[0],l=Math.max(lo,lv-(champ?(i<2?1:0):(size-1-i)));return[evolvedAt(id,l),l]});
+ if(champ)return{name:L.champ.name,art:L.champ.art,intro:L.champ.intro,lose:L.champ.lose,after:'Come back and defend your title any time.',team,bkey:'arena_'+L.k,arena:1,champ:1};
+ const cls=(['Rookie Linker','Arena Ace','Star Duelist','Veteran Linker','Rival Linker','Cosmic Scout'])[Math.floor(r()*6)],art=['explorer','guard','technician','wanderer','pilgrim','researcher'][Math.floor(r()*6)],
+  name=['Kai','Rhee','Juno','Vela','Corin','Wren','Nyx','Sol','Yuki','Zora','Milo','Quill'][Math.floor(r()*12)];
+ return{name:cls+' '+name,art,intro:['Round 1! Let\'s give the crowd a show!','Round 2! You won\'t get past me so easily!','Final round before the Champion! Bring it!'][round],lose:'What a battle! The crowd loves you!',after:'Good luck out there!',team,bkey:'arena_'+L.k,arena:1}}
+function arenaRound(){const L=ARENA.L,tr=arenaTrainer(L,ARENA.round);healAll();
+ const call=ARENA.round===3?['Announcer: The '+L.n+' Championship!',tr.name+' takes the floor!']:['Announcer: '+L.n+', round '+(ARENA.round+1)+' of 3!',tr.name+' steps onto the floor!'];
+ say(call,()=>say(tr.name+': '+tr.intro,()=>startBattle(tr.team.map(([id,lv])=>mk(id,lv)),tr),tr.art))}
+function arenaAfter(won){const a=ARENA;if(!a)return;healAll();const L=a.L;G.arena=G.arena||{};const rec=G.arena[L.k]=G.arena[L.k]||{wins:0,streak:0,best:0};
+ if(!won){rec.streak=0;arenaEnd();return say(['Announcer: And that\'s the end of the run!','Arena Master: Heal up and try the '+L.n+' again any time, Linker.'],null,'guard')}
+ a.round++;if(a.round<4)return say(a.round===3?'Announcer: Three wins! Now for the League Champion!':'Announcer: A win! On to round '+(a.round+1)+'!',arenaRound);
+ const first=!rec.wins;rec.wins++;rec.streak++;rec.best=Math.max(rec.best,rec.streak);arenaEnd();G.dust+=L.dust;
+ const Ls=['Announcer: '+L.n+' Champion!','You received '+L.dust+' Stardust!'];
+ for(const[k,n]of Object.entries(L.items)){if(G.pods&&k in G.pods)G.pods[k]+=n;else G.items[k]=(G.items[k]||0)+n;Ls.push('You received '+n+'x '+(ITEMS.concat(PODS).find(i=>i.k===k)||{n:k}).n+'!')}
+ Ls.push(first?'Arena Master: Your name goes up on the board as '+L.n+' Champion!':'Arena Master: Title defended! Win streak: '+rec.streak+'.');
+ if(first&&L.master&&IDX.Lumivex!=null){const m=mk(IDX.Lumivex,50,{gift:1});G.seen[m.id]=1;const where=addMon(m);Ls.push('Arena Master: And for the Grand Champion... Lumivex, the arena\'s guardian, has chosen you!','Lumivex joined '+(where==='party'?'your team':'your Storage')+'!')}
+ if(first&&!L.master&&LEAGUES.filter(x=>!x.master).every(x=>G.arena[x.k]&&G.arena[x.k].wins))Ls.push('Arena Master: You\'ve won all three leagues. The Singularity League is open to you!');
+ autosave();say(Ls,null,'guard')}
 
 /* ---------- trading by code: send an Alienmon as a code, a friend enters it and receives it (no live link) ----------
  The code carries the Alienmon (species, level, EXP, moves, Potential, Temperament, training, nickname) and its

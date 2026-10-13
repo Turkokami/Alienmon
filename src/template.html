@@ -268,7 +268,7 @@ function updGender(){if(P_('left')||P_('right'))gsel^=1;
  txt(gsel?'> Girl':'> Boy',60,124,'#ffd23f')}const STARTERS=[IDX['Sporix'],IDX['Plazmo'],IDX['Gloopa']];
 function updTitle(){const sv=loadSave();const opts=sv?['Continue','New game']:['New game'];
  if(P_('up')||P_('down')||P_('left')||P_('right'))tsel=(tsel+1)%opts.length;
- if(P_('a')){if(opts[tsel]==='Continue'){G=sv;scene=G.lastScene==='world'?'world':'planet';say('Welcome back, Linker.')}else{newGame();scene='gender';gsel=0}}
+ if(P_('a')){if(opts[tsel]==='Continue'){G=sv;if(G.arenaParty){G.party=G.arenaParty;G.box=G.arenaBox||G.box;delete G.arenaParty;delete G.arenaBox}scene=G.lastScene==='world'?'world':'planet';say('Welcome back, Linker.')}else{newGame();scene='gender';gsel=0}}
 
  frame++;
  if(TITLEI.complete&&TITLEI.naturalWidth){ctx.save();ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';ctx.drawImage(TITLEI,0,0,160,144);ctx.restore();
@@ -605,7 +605,7 @@ function endTurn(){const L=[];for(const m of[PM(),EM()]){if(m.hp<=0)continue;con
   if(m.hp<=0)L.push(nm(m)+' fainted!')}
  const fin=()=>{if(EM().hp<=0||PM().hp<=0)resolveFaints();else B.phase='menu'};if(L.length)say(L,fin);else fin()}
 function resolveFaints(){const pDead=PM().hp<=0;if(EM().hp<=0)enemyFaint(()=>{if(pDead)playerFaint();else B.phase='menu'});else playerFaint()}
-function enemyFaint(cont){const e=EM(),steps=[];progAward(e,!!B.tr,steps);
+function enemyFaint(cont){const e=EM(),steps=[];if(!(B.tr&&B.tr.arena))progAward(e,!!B.tr,steps);   // league battles give no EXP (level caps stay fair)
  progRun(steps,()=>{if(B.tr&&B.ei<B.team.length-1){B.ei++;const n=EM();G.seen[n.id]=1;resetStages(n);const L=[B.tr.name+' sent out '+nm(n)+'!'];entry(n,PM(),L);say(L,cont)}else endBattle(true)})}
 function playerFaint(){if(G.party.some(m=>m.hp>0)){B.phase='party';B.forced=true;B.psel=G.party.findIndex(m=>m.hp>0);say([nm(PM())+' is out of the fight!','Choose which Alienmon to swap in.'])}
  else if(G.box.some(m=>m.hp>0)){B.phase='boxpick';B.bxsel=G.box.findIndex(m=>m.hp>0);say(['Your whole team is down!','Your ship can beam in a backup Alienmon from storage. Choose one!'])}
