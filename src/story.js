@@ -70,10 +70,10 @@ function storyBattleStart(tr,L){B.sp=(tr&&tr.sp)||NEXTB||null;NEXTB=null;if(B.sp
 function storyAllyLeave(){if(G&&G.party.some(m=>m.guest)){G.party=G.party.filter(m=>!m.guest)}}
 const storyRunLabel=()=>B&&B.sp&&B.sp.listen&&B.sp.turns>=3?'LISTEN':'RUN';
 function storyImmortal(){if(!B||!B.sp||!B.sp.immortal)return;const e=EM();if(e.hp<=0){e.hp=Math.ceil(stat(e,0)*0.5);B.sp.grow=(B.sp.grow||0)+1;e.bs&&e.bs.atk<6&&e.bs.atk++}}
-function storyListen(){B.phase='wait';const e=EM();
- say(['You stop the battle and step forward with Zib.','Everybody\'s somebody\'s somebody. You think it as hard as you can.','You ask Oblivane what it lost.','From far away, the Ystran Choir begins to sing. Hmm-mm-mmm.',
-  'Oblivane remembers: it was the moon-spirit who carried the dying home as starlight. It never wanted to keep them. It just couldn\'t let go.','Two hundred years of swallowed light pour back into Ystra\'s sky as starlight.','Oblivane is calm. It drifts away, small and silver, toward the Seedmother\'s grove.'],
-  ()=>{G.flags.oblivane_calmed=1;B.over=true;const back=B.from||'planet';qEvent('win',D[e.id].name,{});noteLegendWin(e);scene=back;B=null;G.grace=60;autosave()})}
+function storyListen(down){B.phase='wait';const e=EM();
+ say((down?['Your last partner falls. Oblivane\'s shadow closes over you...','...but you stand up anyway.']:[]).concat(['You stop the battle and step forward with Zib.','Everybody\'s somebody\'s somebody. You think it as hard as you can.','You ask Oblivane what it lost.','From far away, the Ystran Choir begins to sing. Hmm-mm-mmm.',
+  'Oblivane remembers: it was the moon-spirit who carried the dying home as starlight. It never wanted to keep them. It just couldn\'t let go.','Two hundred years of swallowed light pour back into Ystra\'s sky as starlight.','Oblivane is calm. It drifts away, small and silver, toward the Seedmother\'s grove.','Starlight falls over your team and heals every one of them.']),
+  ()=>{G.flags.oblivane_calmed=1;healAll();B.over=true;const back=B.from||'planet';qEvent('win',D[e.id].name,{});noteLegendWin(e);scene=back;B=null;G.grace=60;autosave()})}
 function storyMidBattle(){const s=B&&B.sp;if(!s||!s.orra||s.asked||!B.tr||B.ei!==B.team.length-1)return false;const e=EM();if(e.hp>stat(e,0)*0.6&&s.turns<4)return false;
  s.asked=1;B.phase='wait';say(['Orra\'s '+nm(e)+' gathers a blinding attack...','...and aims it straight at Zib!'],()=>choose('Orra is targeting Zib!',['Shield Zib','Attack'],i=>{
   if(i===0){G.flags.shielded_zib=1;say(['You throw yourself in front of Zib.','Orra lowers her hand. The attack fades to nothing.','Orra: That was the test. Could you carry what I carried? You just showed me.'],()=>enemyWin())}

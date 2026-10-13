@@ -588,7 +588,7 @@ if(fx.drain&&a.hp<stat(a,0)){a.hp=Math.min(stat(a,0),a.hp+Math.max(1,Math.floor(
  if(fx.self&&R()<(fx.c||1))stages(a,fx.self,lines);
  if(ph&&dt.k==='contact'&&a.hp>0){if(dt.v==='recoil'){const r=Math.max(1,Math.floor(stat(a,0)/8));a.hp=Math.max(0,a.hp-r);lines.push(nm(a)+' was hurt by '+nm(d)+"'s "+dt.name+'!')}
   else if(R()<(dt.v==='freeze'?0.15:0.3)){const L=[];inflict(a,dt.v,L);if(L.length)lines.push(nm(d)+"'s "+dt.name+'!',...L)}}
- if(d.hp<=0)lines.push(nm(d)+' fainted!');if(a.hp<=0)lines.push(nm(a)+' fainted!');return lines}
+ if(d.hp<=0&&B&&B.sp&&B.sp.immortal&&d===EM()){d.hp=Math.ceil(stat(d,0)*0.5);lines.push(nm(d)+' swallows the blow and grows even hungrier!')}else if(d.hp<=0)lines.push(nm(d)+' fainted!');if(a.hp<=0)lines.push(nm(a)+' fainted!');return lines}
 function aiMove(a,d){let best=a.moves[0],bv=-1;for(const mi of a.moves){const mv=MV[mi];let v;
   if(!mv.p){const fx=mv.fx;v=fx.heal?(a.hp<stat(a,0)*0.4?140:0):fx.s?((d.st||immune(d,fx.s)||(fx.s==='confuse'&&d.cf))?0:55):fx.self?(Object.keys(fx.self).some(k=>k!=='c'&&a.bs[k]>=2)?0:45):45;v*=0.6+R()*0.8}
   else{const dt=TR(d.id);v=mv.p*eff(mv.t,D[d.id].t)*(D[a.id].t.includes(mv.t)?1.5:1)*(0.7+R()*0.6);if(dt.k==='absorb'&&dt.v===mv.t)v=0;if(dt.k==='float'&&mv.t==='Gravity')v=0}
@@ -619,7 +619,7 @@ function enemyFaint(cont){const e=EM(),steps=[];if(!(B.tr&&B.tr.arena))progAward
 function playerFaint(){if(G.party.some(m=>m.hp>0)){B.phase='party';B.forced=true;B.psel=G.party.findIndex(m=>m.hp>0);say([nm(PM())+' is out of the fight!','Choose which Alienmon to swap in.'])}
  else if(G.box.some(m=>m.hp>0)){B.phase='boxpick';B.bxsel=G.box.findIndex(m=>m.hp>0);say(['Your whole team is down!','Your ship can beam in a backup Alienmon from storage. Choose one!'])}
 
- else loseBattle()}
+ else if(B.sp&&B.sp.listen)storyListen(true);else loseBattle()}
 function loseBattle(){storyAllyLeave();if(B&&B.tr&&B.tr.arena){B.over=true;const back=B.from||'planet';B=null;scene=back;return arenaAfter(false)}{const lost=Math.floor(G.dust/4);G.dust-=lost;say(['You have no Alienmon left to fight!','You dropped '+lost+' stardust and hurried back to the last place you healed...'],()=>{healAll();wakeAtLastHeal()})}}
 function endBattle(won){storyAllyLeave();const tr=B&&B.tr,lines=[];
  if(won){const pk=PL[G.planet]&&PL[G.planet].key;if(tr&&tr.bkey)qEvent('trainer',tr.bkey);else if(tr&&tr===PL[G.planet].keeper)qEvent('keeper',pk);else if(!tr&&B.team.length){qEvent('win',D[B.team[B.team.length-1].id].name,{area:QWILD});noteLegendWin(B.team[B.team.length-1])}}QWILD=null;

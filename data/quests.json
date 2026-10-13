@@ -2279,24 +2279,26 @@
      "target": "Oblivane",
      "count": 1,
      "lv": 70,
-     "syncs": 3,
      "location": {
       "area": "ystra_town",
       "planet": "ystra",
       "spot": "Edge of the void",
       "note": "tile map or future painted map; place this spot when building"
-     }
+     },
+     "listen": 1,
+     "hint": "Reach Oblivane at the Edge of the Void"
     }
    ],
    "dialogue": {
     "start": [
-     "A shadow the size of a planet turns its countless eyes toward you."
+     "The ground simply stops. Beyond it is a darkness so complete it has no shape.",
+     "Something enormous is breathing inside it."
     ],
     "progress": [
      "Keep at it, Linker. You've got this."
     ],
     "complete": [
-     "Oblivane is calm at last. Some say it was never evil. It was only hungry and alone."
+     "Oblivane is calm at last, small and silver. It was never evil. It was only hungry, and lost, and alone."
     ]
    },
    "rewards": {
@@ -2343,13 +2345,25 @@
      "count": 1,
      "options": [
       "Rebuild Ystra together",
-      "Keep Kessler as a shared home"
+      "Keep Kessler as a shared home",
+      "Both: one home across two worlds"
      ],
      "location": {
       "area": "ystra_town",
       "planet": "ystra",
       "spot": "Crystal grove",
       "note": "tile map or future painted map; place this spot when building"
+     },
+     "default": 2,
+     "hint": "Seedmother: Where do my children belong now?",
+     "then": {
+      "art": "ystran",
+      "if": {
+       "alienmon_future": 3
+      },
+      "lines": [
+       "Seedmother: Both. Of course. Why should a home have only one door?"
+      ]
      }
     }
    ],
@@ -2373,7 +2387,17 @@
     }
    },
    "repeatable": false,
-   "notes": "The choice changes ending dialogue only. Both paths unlock the Warp Gate teaser."
+   "notes": "The choice changes ending dialogue only. Both paths unlock the Warp Gate teaser.",
+   "epilogue": {
+    "art": "ystran",
+    "lines": [
+     "Seedmother: Little scout. Your mission is done. You can stay home now, with me.",
+     "Zib looks up at the Seedmother. Then it looks at you, for a long time.",
+     "Zib: ...Biiip.",
+     "Seedmother: A scout's job is to find a home. You found one.",
+     "Zib zips back to your shoulder, every light glowing gold."
+    ]
+   }
   },
   {
    "id": "P04",
@@ -2410,7 +2434,7 @@
      "Keep at it, Linker. You've got this."
     ],
     "complete": [
-     "The gate's runes glow cyan and pink... then dim. Not yet. (Batch 2 coming soon.)"
+     "The Warp Gate's runes blaze cyan and pink. A road between two worlds, open at last."
     ]
    },
    "rewards": {
@@ -2419,7 +2443,19 @@
     ]
    },
    "repeatable": false,
-   "notes": "Hook for Batch 2. When a batch02 folder exists, this opens the next system."
+   "notes": "Hook for Batch 2. When a batch02 folder exists, this opens the next system.",
+   "epilogue": {
+    "art": "thorne",
+    "lines": [
+     "One year later.",
+     "The Warp Gate hums over Dustmere. Tamsin is still exploring Ystra. Teo and Dr. Vashti run a research station between the worlds.",
+     "Admin Vex is still in prison, and Captain Marsh still visits just to gloat.",
+     "A letter arrives from Kael Thorne: \"Elena would have liked you. Tell your Zib thank you.\"",
+     "At the Observatory, a nervous new thirteen-year-old is choosing a first partner.",
+     "Over on the table, one shy capsule sits all alone. Nobody picked it. You walk over to it.",
+     "THE END of the Alienmon Chronicles. (A calmed Oblivane still drifts at the Edge of the Void...)"
+    ]
+   }
   },
   {
    "id": "S01",
@@ -4820,12 +4856,14 @@
    ],
    "dialogue": {
     "start": [
-     "Seedmother: The void's blight still clings to my forest. Help my children heal it."
+     "Seedmother: The blight still clings to my forest. The little shadows there are pieces of my sibling's hunger.",
+     "Seedmother: They are not attacking you, child. They are begging. Meet them gently, and help my children heal the forest."
     ],
     "progress": [
      "Keep at it, Linker. You've got this."
     ],
     "complete": [
+     "The little shadow creatures settle, one by one, like birds coming home to roost.",
      "Crystal leaves bloom where the blight was."
     ]
    },

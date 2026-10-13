@@ -1055,8 +1055,8 @@
      2
     ],
     [
-     12,
-     5
+     3,
+     6
     ]
    ]
   },
@@ -19926,7 +19926,7 @@
     },
     {
      "tile": [
-      15,
+      13,
       5
      ],
      "k": "stash",
@@ -19946,6 +19946,18 @@
     {
      "x": 3,
      "y": 8,
+     "art": "saga",
+     "face": "down",
+     "t": [
+      "Saga: This was the Choir chamber, where every Ystran sang together. It is an instrument, not a building.",
+      "Saga: Gather the echoes. They will come if you call them with the old song."
+     ],
+     "name": "Saga",
+     "after": "P01"
+    },
+    {
+     "x": 1,
+     "y": 8,
      "art": "explorer",
      "face": "down",
      "t": [
@@ -19954,16 +19966,16 @@
      ]
     },
     {
-     "x": 1,
-     "y": 8,
+     "x": 12,
+     "y": 5,
      "art": "pilgrim",
-     "face": "up",
+     "face": "down",
      "t": [],
-     "id": "sec158_tr1",
+     "id": "sec158_tr2",
      "trainer": {
       "cls": "Seeker",
       "route": 1,
-      "name": "Fenn"
+      "name": "Rook"
      }
     }
    ]
@@ -20080,6 +20092,18 @@
    "pkey": "ystra",
    "npcs": [
     {
+     "x": 10,
+     "y": 10,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Tamsin: I'm staying on Ystra. There's a whole map room of places nobody has found yet.",
+      "Tamsin: A capture isn't taking. It's asking. Same goes for a world, I think."
+     ],
+     "name": "Tamsin",
+     "after": "P01"
+    },
+    {
      "x": 13,
      "y": 5,
      "art": "ystran",
@@ -20090,17 +20114,17 @@
      ]
     },
     {
-     "x": 10,
+     "x": 12,
      "y": 10,
      "art": "ystran",
-     "face": "down",
+     "face": "left",
      "t": [],
      "face_pinned": 1,
-     "id": "sec159_tr1",
+     "id": "sec159_tr2",
      "trainer": {
       "cls": "Ystran Echo",
       "route": 1,
-      "name": "Quill"
+      "name": "Dex"
      }
     }
    ]
@@ -20440,8 +20464,18 @@
    "pkey": "ystra",
    "npcs": [
     {
-     "x": 5,
+     "x": 3,
      "y": 9,
+     "art": "ystran",
+     "face": "down",
+     "t": [],
+     "after": "P04",
+     "legend": "Oblivane",
+     "lv": 70
+    },
+    {
+     "x": 11,
+     "y": 14,
      "art": "explorer",
      "face": "down",
      "t": [
@@ -20450,8 +20484,8 @@
      ]
     },
     {
-     "x": 11,
-     "y": 14,
+     "x": 20,
+     "y": 6,
      "art": "ystran",
      "face": "down",
      "t": [
@@ -20467,8 +20501,8 @@
      "mon": "Riftwalker"
     },
     {
-     "x": 21,
-     "y": 5,
+     "x": 19,
+     "y": 11,
      "mon": "Blightroot"
     }
    ]

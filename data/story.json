@@ -70,6 +70,48 @@
     "Admin Vex: You'll regret that! (She storms off toward the engine.)"
    ],
    "art": "vex"
+  },
+  {
+   "id": "saga_reveal",
+   "sec": "158",
+   "when": {
+    "after": "P01"
+   },
+   "lines": [
+    "A hooded figure has followed you through the Vortex. It's Saga, the silent Quorum master.",
+    "Saga lowers the hood. Underneath is a face like clear crystal, flickering at the edges.",
+    "Saga: I am a Ystran echo. I came in the Mother Pod and lived twenty years in a borrowed human shape, guarding the Vortex secret.",
+    "Saga: The one who launched your little scout... Liss... is my sister.",
+    "Zib flashes every color at once. So that was the word Saga whispered at the Summit."
+   ],
+   "art": "saga"
+  },
+  {
+   "id": "tamsin_map_room",
+   "sec": "159",
+   "when": {
+    "after": "P01"
+   },
+   "lines": [
+    "Tamsin finds a ruined room covered in star charts: the Ystran explorers' map room.",
+    "On the wall is a symbol shaped exactly like the question mark on her vest.",
+    "Saga: That word means \"the place we haven't found yet.\"",
+    "Tamsin sits down on the floor and laughs until she cries.",
+    "Tamsin: Forty years. Forty years I've been looking for this. I think I'll stay a while."
+   ],
+   "art": "explorer"
+  },
+  {
+   "id": "blight_begging",
+   "sec": "160",
+   "when": {
+    "after": "P01"
+   },
+   "lines": [
+    "The forest is gray and silent here. Small shadow creatures creep out of the dead trees and swarm toward you.",
+    "Your team braces for a fight... then you see it. They aren't attacking.",
+    "They're reaching for your light. They're begging."
+   ]
   }
  ],
  "shifts": [

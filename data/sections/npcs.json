@@ -989,5 +989,44 @@
     "Dr. Vashti: Kessler's side of the Vortex is safe with me."
    ]
   }
+ ],
+ "158": [
+  {
+   "art": "saga",
+   "name": "Saga",
+   "after": "P01",
+   "near": [
+    12,
+    9
+   ],
+   "t": [
+    "Saga: This was the Choir chamber, where every Ystran sang together. It is an instrument, not a building.",
+    "Saga: Gather the echoes. They will come if you call them with the old song."
+   ]
+  }
+ ],
+ "159": [
+  {
+   "art": "explorer",
+   "name": "Tamsin",
+   "after": "P01",
+   "near": [
+    10,
+    9
+   ],
+   "t": [
+    "Tamsin: I'm staying on Ystra. There's a whole map room of places nobody has found yet.",
+    "Tamsin: A capture isn't taking. It's asking. Same goes for a world, I think."
+   ]
+  }
+ ],
+ "162": [
+  {
+   "art": "ystran",
+   "legend": "Oblivane",
+   "lv": 70,
+   "after": "P04",
+   "t": []
+  }
  ]
 }
