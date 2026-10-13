@@ -1,4 +1,5 @@
 require('child_process').execSync('node '+JSON.stringify(require('path').join(__dirname,'check_names.js')),{stdio:'inherit'});   // old species names fail the build
+require('child_process').execSync('node '+JSON.stringify(require('path').join(__dirname,'check_act1.js')),{stdio:'inherit'});   // Act 1 must not hint at the Seedmother's truth (Revision 2)
 // Merges every batch in data/batches into src/template.html -> www/index.html
 // Default (web): art and audio are written to www/assets/ under content-hashed names and the page loads them by URL,
 // so browsers and the service worker can cache them forever. `node tools/build.js --inline` instead embeds everything

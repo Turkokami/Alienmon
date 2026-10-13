@@ -713,26 +713,6 @@
       "spot": "Mural hall: Ystra, the Devourer, the Seedmother",
       "note": "tile map or future painted map; place this spot when building"
      }
-    },
-    {
-     "type": "cutscene",
-     "target": "prophecy_mural",
-     "count": 1,
-     "at": "081",
-     "scene": "prophecy_mural",
-     "title": "The Prophecy Mural",
-     "hint": "Look for the last panel in the Mural Hall",
-     "lines": [
-      "Behind the third mural there is one more panel, half hidden in shadow.",
-      "A figure stands in a ring of every kind of Alienmon. From their joined light, a tree is growing.",
-      "Ystran echo: ...she is scattered so she may live... whoever reunites all her children will let the Seedmother grow again... and her world with her...",
-      "You take a rubbing of the carving. You don't understand it yet."
-     ],
-     "then": {
-      "items": {
-       "prophecy_mural": 1
-      }
-     }
     }
    ],
    "dialogue": {
@@ -743,8 +723,7 @@
      "Keep at it, Linker. You've got this."
     ],
     "complete": [
-     "The murals show it plainly: a dying world called Ystra, a void that ate the stars, and a great tree-mother who broke herself into seedpods and sent them away.",
-     "She didn't send her children away. She became them. Every Alienmon is a piece of her."
+     "The murals show it plainly: a dying world called Ystra, a void that ate the stars, and a great tree-mother sending her children away in seedpods. The Alienmon are refugees."
     ]
    },
    "rewards": {
@@ -758,8 +737,7 @@
    "epilogue": {
     "art": "thorne",
     "lines": [
-     "Far away, on Helix Station, Sola walks beside Director Thorne past rows and rows of glowing cages.",
-     "Director Thorne: Every species, Sola. When we have them all, she answers to us.",
+     "Far away, on Helix Station, Sola stands beside Director Thorne at a window full of stars.",
      "Director Thorne: Begin Phase Three.",
      "...Back on Glyphos, Zib blinks. For a split second, its big eye reflects something enormous: a giant dark eye, slowly opening."
     ]

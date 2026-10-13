@@ -11,11 +11,11 @@
  Section scenes (data/story_scenes.json) play once when you walk into a section at the right point in the story. */
 const STORY=__STORY__;
 Object.assign(KEY_ITEMS,{nana_badge:"Nana Wren's Badge",teo_lantern:"Teo's Lantern",crystal_map:"Teo's Crystal Map",nana_journal:"Nana Wren's Journal",codex_page:'Codex Page'});
-Object.assign(KEY_ITEMS,{stowaway:'Stowaway',prophecy_mural:'Prophecy Rubbing'});Object.assign(KEY_NAME,KEY_ITEMS);
+Object.assign(KEY_ITEMS,{stowaway:'Stowaway',teo_journal_page:'Teo\'s Journal Page',prophecy_shrine:'Prophecy Shrine'});Object.assign(KEY_NAME,KEY_ITEMS);
 // Kit Briggs's art: until art/characters/kit.png exists, Kit borrows the Technician sprite
 if(!CHAR.kit&&CHAR.technician)CHAR.kit=CHAR.technician;
 Object.assign(KEY_DESC,{nana_badge:'A brass cross with a glowing blue core, stamped "R.B. No. 1". Mom pinned it on you.',teo_lantern:"Teo Reyes's old mining lantern. It never quite goes out.",
- crystal_map:'Teo\'s crystal map: "the floating gardens beyond the light."',nana_journal:'Nana Wren\'s journal from the night of the Starfall.',codex_page:'A Codex page Thorne copied: "a door that is a road."',prophecy_mural:'Rubbing of the Prophecy Mural: "She is scattered so she may live. Whoever reunites all her children will let the Seedmother grow again, and her world with her."',stowaway:'The starter nobody picked at Dr. Vashti\'s lab. It hides in your bag and only peeks out for snacks.'});
+ crystal_map:'Teo\'s crystal map: "the floating gardens beyond the light."',nana_journal:'Nana Wren\'s journal from the night of the Starfall.',codex_page:'A Codex page Thorne copied: "a door that is a road."',teo_journal_page:'A page from Teo\'s journal. He copied one damaged line from Vashti\'s Codex: "She is scattered so she may live..." The rest is gone.',prophecy_shrine:'The Prophecy Shrine at Halo\'s third wind shrine: "She is scattered so she may live. Whoever reunites all her children will let the Seedmother grow again, and her world with her." Reunite, not cage.',stowaway:'The starter nobody picked at Dr. Vashti\'s lab. It hides in your bag and only peeks out for snacks.'});
 Object.assign(QNAME,{sola_2:'Sola',sola_3:'Sola',sola_4:'Sola',sola_5:'Sola',sola_6:'Sola',admin_vex_final:'Admin Vex',helix_freighter_crew:'Helix Freighter Crew',helix_tower_crew:'Helix Tower Crew',helix_broadcast_crew:'Helix Broadcast Crew'});
 Object.assign(QART,{sola_2:'sola',sola_3:'sola',sola_4:'sola',sola_5:'sola',sola_6:'sola',admin_vex_final:'vex',helix_freighter_crew:'guard',helix_tower_crew:'guard',helix_broadcast_crew:'guard'});
 
@@ -96,6 +96,7 @@ function storyMigrate(){const v=STORY.version||1;if((G.storyv||0)>=v)return;
  if(G.party.length&&(G.storyv||0)<v){for(const sh of STORY.shifts||[]){if((G.storyv||0)>=sh.v)continue;const s=qs(sh.q);if(s&&s.state==='active'&&s.step>=sh.at)s.step+=sh.n}
   for(const nq of STORY.inserted||[]){if((G.storyv||0)>=nq.v)continue;const s=qs(nq.q),nx=qs(nq.next);if(s&&nx&&nx.state!=='locked'){s.state='done';s.step=QI[nq.q].objectives.length}}}
  for(const k of STORY.keys||[])if(mDone(k.after)&&!(G.key&&G.key[k.k])){G.key=G.key||{};G.key[k.k]=1}   // story key items older saves missed
+ if(v>=7){if(G.key&&G.key.prophecy_mural){delete G.key.prophecy_mural}if(mDone('M16')&&G.key)G.key.prophecy_shrine=1;for(const q of QUESTS){const s=qs(q.id);if(s&&s.state==='active'&&s.step>=q.objectives.length)qComplete(q)}}
  G.storyv=v}
 function storyCutLines(o){const L=(o.lines||QCUT[o.target]||[]).slice();for(const[f,ls]of Object.entries(o.lines_if||{}))if(G.flags[f])L.push(...ls);return L}
 // any stage of a species' line counts (a Chimelet that evolved into Chimeral still opens the doors)
@@ -120,6 +121,7 @@ function heartBeats(){if(!G||!G.flags)return;const n=heartCount();
  document.body.classList.toggle('unifier',!!G.flags.unifier)}
 // START > Xenodex: press A to switch to the Heartroot page
 let DEXH=false;
+const heartOpen=()=>!!(G&&(mDone('M16')||(G.key&&G.key.prophecy_shrine)));
 function drawHeartroot(){const n=heartCount(),t=n/HEART_TOTAL;rect(0,0,160,144,'#0d0a18');box(0,0,160,16,'#1b1424','#9be36b');txt('Heartroot',5,4,'#9be36b',7);txt('A: list',112,5,'#5ff2ff',6);
  txt('Every Alienmon is',6,20,'#e8e0ff',6);txt('a piece of her.',6,29,'#e8e0ff',6);
  const cx=80,cy=104,g=10+t*34+Math.sin(frame/18)*2;ctx.save();const rg=ctx.createRadialGradient(cx,cy-8,2,cx,cy-8,g+14);rg.addColorStop(0,'rgba(155,227,107,'+(0.35+t*0.55).toFixed(2)+')');rg.addColorStop(1,'rgba(95,242,255,0)');ctx.fillStyle=rg;ctx.fillRect(cx-70,cy-70,140,90);ctx.restore();
