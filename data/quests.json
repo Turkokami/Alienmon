@@ -2295,7 +2295,7 @@
    "objectives": [
     {
      "type": "catch",
-     "target": "Rustle",
+     "target": "Gleamgrub",
      "count": 1,
      "location": {
       "area": "ferrox_town",
@@ -2307,7 +2307,7 @@
    ],
    "dialogue": {
     "start": [
-     "Grub: A Rustle eats rust and spits out polish. I need one for my shop!"
+     "Grub: A Gleamgrub eats rust and spits out polish. I need one for my shop!"
     ],
     "progress": [
      "Keep at it, Linker. You've got this."

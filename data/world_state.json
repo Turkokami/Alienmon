@@ -403,7 +403,7 @@
   },
   {
    "file": "planets.json",
-   "fix": "pool.r signature Alienmon gated: appear only after their owner is beaten \u2014 Forgemaul (ferrox), Mycora (sporeholm), Anchorath (thalassa), Bassquake (neonis), Basaltor (pyros), Glaciryx (glacia), Mirrix/Reflix (halo), Horizar (umbra); Vexhydra/Bronnix/Thornvoid only after M19; Quorum signatures (Facetrix, Encorex, Pyrelyth, Bastionyx, Firstlight) after champ; Lumivex is a gift after S98; Oblivite postgame."
+   "fix": "pool.r signature Alienmon gated: appear only after their owner is beaten \u2014 Forgemaul (ferrox), Mycora (sporeholm), Anchorath (thalassa), Bassquake (neonis), Basaltor (pyros), Glaciryx (glacia), Mirrix/Reflix (halo), Horizar (umbra); Vexhydra/Bronnix/Thornvoid only after M19; Quorum signatures (Facetrix, Encorex, Pyrelyth, Citadrake, Firstlight) after champ; Lumivex is a gift after S98; Oblivite postgame."
   },
   {
    "file": "planets.json",

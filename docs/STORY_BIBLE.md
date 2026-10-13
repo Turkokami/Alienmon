@@ -243,7 +243,7 @@ Dual-type Alienmon use the first type's colors for the body and the second type'
 | 002 | Mycelith | Bio | Lanky upright fungal creature, shelf-mushroom cap, root arms trailing threads, glowing spore pores |
 | 003 | Fungaroth | Bio | Huge fungal guardian, castle-like layered mushroom crown, root legs, bark-plated chest, swirling spore cloak |
 | 004 | **Plazmo** (starter) | Plasma | Small floating ember, one big central eye, flickering flame body, two orbiting sparks like moons |
-| 005 | Flarion | Plasma | Comet-shaped flame body with long tail, one sharp eye, plasma ring, wispy arm-flames |
+| 005 | Plazmet | Plasma | Comet-shaped flame body with long tail, one sharp eye, plasma ring, wispy arm-flames |
 | 006 | Solarach | Plasma | Miniature floating star, one blazing eye, jagged solar-flare spikes, three tilted plasma rings |
 | 007 | **Gloopa** (starter) | Hydro | Wobbly translucent jelly dome, bubble core inside, dot eyes, happy mouth, short tentacle fringe |
 | 008 | Tidaloid | Hydro | Upright jellyfish, tall bell head, long flowing tentacle arms, glowing core, wave fins |

@@ -102,7 +102,7 @@ Stat stages (Attack, Defense, Sp. Atk, Sp. Def, Speed, accuracy) go from -6 to +
 | Gemstorm | Facetrix | Crystal | 95 | 95 |
 | Encore Riff | Encorex | Sonic | 85 | 100 |
 | Pyre Veil | Pyrelyth | Plasma | 90 | 95 |
-| Bastion Slam | Bastionyx | Gravity | 90 | 95 |
+| Bastion Slam | Citadrake | Gravity | 90 | 95 |
 | First Light | Firstlight | Plasma | 100 | 95 |
 | Hungry Void | Oblivite | Void | 75 | 100 |
 | Continent Lift | Terravox | Gravity | 110 | 90 |

@@ -32,7 +32,7 @@ const SIG_GATE={Forgemaul:'ferrox',Mycora:'sporeholm',Anchorath:'thalassa',Bassq
 function wildOK(name){const s=PROG.species[name]||{};if(s.rarity==='legendary'||s.rarity==='mythic')return false;if(name==='Lumivex')return!!(G.flags&&G.flags.champ);
  if(SIG_GATE[name])return!!G.beaten[SIG_GATE[name]];
  if(['Vexhydra','Bronnix','Thornvoid'].includes(name))return mDone('M19');
- if(['Facetrix','Encorex','Pyrelyth','Bastionyx','Firstlight','Oblivite'].includes(name))return!!G.flags.champ;
+ if(['Facetrix','Encorex','Pyrelyth','Citadrake','Firstlight','Oblivite'].includes(name))return!!G.flags.champ;
  if(name==='Zib')return mDone('M05');return true}
 const wildIds=list=>list.filter(id=>wildOK(D[id].name));
 

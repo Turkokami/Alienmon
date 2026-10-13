@@ -3,7 +3,7 @@ No,Name,Types,Trait,Trait effect,Signature move
 002,Mycelith,Bio,Overgrowth,Powers up Bio moves by 50% when HP drops below a third.,
 003,Fungaroth,Bio,Overgrowth,Powers up Bio moves by 50% when HP drops below a third.,Mycel Crush
 004,Plazmo,Plasma,Overheat,Powers up Plasma moves by 50% when HP drops below a third.,
-005,Flarion,Plasma,Overheat,Powers up Plasma moves by 50% when HP drops below a third.,
+005,Plazmet,Plasma,Overheat,Powers up Plasma moves by 50% when HP drops below a third.,
 006,Solarach,Plasma,Overheat,Powers up Plasma moves by 50% when HP drops below a third.,Star Flare
 007,Gloopa,Hydro,Riptide,Powers up Hydro moves by 50% when HP drops below a third.,
 008,Tidaloid,Hydro,Riptide,Powers up Hydro moves by 50% when HP drops below a third.,
@@ -38,11 +38,11 @@ No,Name,Types,Trait,Trait effect,Signature move
 037,Coilossus,Alloy/Volt,Spiked Plating,Attackers that make contact take recoil damage.,
 038,Rivetoad,Alloy,Spiked Plating,Attackers that make contact take recoil damage.,
 039,Railbeast,Alloy,Spiked Plating,Attackers that make contact take recoil damage.,
-040,Rustle,Toxin/Alloy,Unstable Core,Attack and Sp. Atk rise 50% while it has a status condition.,
-041,Corrodon,Toxin/Alloy,Unstable Core,Attack and Sp. Atk rise 50% while it has a status condition.,
+040,Gleamgrub,Toxin/Alloy,Unstable Core,Attack and Sp. Atk rise 50% while it has a status condition.,
+041,Corrovore,Toxin/Alloy,Unstable Core,Attack and Sp. Atk rise 50% while it has a status condition.,
 042,Smeltpup,Magma/Alloy,Magma Heart,"Absorbs Magma moves instead of taking damage, healing a quarter of its HP.",
 043,Anvilox,Magma/Alloy,Magma Heart,"Absorbs Magma moves instead of taking damage, healing a quarter of its HP.",
-044,Clangit,Sonic/Alloy,Friendly Signal,Its signal is easy to tune: the Sync window is much wider.,
+044,Gongit,Sonic/Alloy,Friendly Signal,Its signal is easy to tune: the Sync window is much wider.,
 045,Gongorr,Sonic/Alloy,Friendly Signal,Its signal is easy to tune: the Sync window is much wider.,
 046,Nutbug,Swarm/Alloy,Swarm Frenzy,Powers up Swarm moves by 50% when HP drops below a third.,
 047,Screwmantis,Swarm/Alloy,Swarm Frenzy,Powers up Swarm moves by 50% when HP drops below a third.,
@@ -82,7 +82,7 @@ No,Name,Types,Trait,Trait effect,Signature move
 081,Stormray,Hydro/Volt,Riptide,Powers up Hydro moves by 50% when HP drops below a third.,
 082,Inklet,Hydro/Psi,Sponge Body,"Absorbs Hydro moves instead of taking damage, healing a quarter of its HP.",
 083,Cephalux,Hydro/Psi,Sponge Body,"Absorbs Hydro moves instead of taking damage, healing a quarter of its HP.",
-084,Shellet,Hydro/Crystal,Riptide,Powers up Hydro moves by 50% when HP drops below a third.,
+084,Conchlet,Hydro/Crystal,Riptide,Powers up Hydro moves by 50% when HP drops below a third.,
 085,Pearlord,Hydro/Crystal,Riptide,Powers up Hydro moves by 50% when HP drops below a third.,
 086,Echofin,Sonic/Hydro,Accelerator,Speed rises at the end of every turn.,
 087,Echoleviah,Sonic/Hydro,Accelerator,Speed rises at the end of every turn.,
@@ -142,7 +142,7 @@ No,Name,Types,Trait,Trait effect,Signature move
 141,Ashpup,Magma,Meltdown,Powers up Magma moves by 50% when HP drops below a third.,
 142,Cinderhound,Magma,Meltdown,Powers up Magma moves by 50% when HP drops below a third.,
 143,Pyroclast,Magma,Meltdown,Powers up Magma moves by 50% when HP drops below a third.,
-144,Magmorb,Magma/Gravity,Meltdown,Powers up Magma moves by 50% when HP drops below a third.,
+144,Lavorb,Magma/Gravity,Meltdown,Powers up Magma moves by 50% when HP drops below a third.,
 145,Coremantle,Magma/Gravity,Meltdown,Powers up Magma moves by 50% when HP drops below a third.,
 146,Obsidimp,Magma/Crystal,Molten Armor,Survives any single hit from full HP with 1 HP left.,
 147,Obsidrake,Magma/Crystal,Molten Armor,Survives any single hit from full HP with 1 HP left.,
@@ -167,7 +167,7 @@ No,Name,Types,Trait,Trait effect,Signature move
 166,Floepup,Cryo/Hydro,Frost Shell,Physical hits on it may freeze the attacker.,
 167,Floelord,Cryo/Hydro,Frost Shell,Physical hits on it may freeze the attacker.,
 168,Auroralet,Cryo/Psi,Frost Shell,Physical hits on it may freeze the attacker.,
-169,Aurorix,Cryo/Psi,Frost Shell,Physical hits on it may freeze the attacker.,
+169,Borealix,Cryo/Psi,Frost Shell,Physical hits on it may freeze the attacker.,
 170,Hailorb,Cryo/Gravity,Frost Shell,Physical hits on it may freeze the attacker.,
 171,Hailbringer,Cryo/Gravity,Frost Shell,Physical hits on it may freeze the attacker.,
 172,Frostmite,Cryo/Swarm,Snow Body,"Absorbs Cryo moves instead of taking damage, healing a quarter of its HP.",
@@ -212,8 +212,8 @@ No,Name,Types,Trait,Trait effect,Signature move
 211,Mirrix,Psi/Crystal,Keeper's Pride,Trained by a Keeper: all its moves deal 20% more damage.,Fear Mirror
 212,Reflix,Psi/Crystal,Keeper's Pride,Trained by a Keeper: all its moves deal 20% more damage.,Hope Mirror
 213,Bardlet,Psi/Sonic,Pure Mind,Cannot be affected by any status condition.,
-214,Bardoracle,Psi/Sonic,Pure Mind,Cannot be affected by any status condition.,
-215,Gloomit,Void,Abyssal Hunger,Powers up Void moves by 50% when HP drops below a third.,
+214,Bardseer,Psi/Sonic,Pure Mind,Cannot be affected by any status condition.,
+215,Sulklet,Void,Abyssal Hunger,Powers up Void moves by 50% when HP drops below a third.,
 216,Gloomhaunt,Void,Abyssal Hunger,Powers up Void moves by 50% when HP drops below a third.,
 217,Gloomhulk,Void,Abyssal Hunger,Powers up Void moves by 50% when HP drops below a third.,
 218,Wellspawn,Void/Gravity,Unstable Core,Attack and Sp. Atk rise 50% while it has a status condition.,
@@ -224,7 +224,7 @@ No,Name,Types,Trait,Trait effect,Signature move
 223,Dusklord,Void/Swarm,Menace,Lowers the foe's Attack when it enters battle.,
 224,Wailshade,Void/Sonic,Event Skin,"Absorbs Void moves instead of taking damage, healing a quarter of its HP.",
 225,Banshriek,Void/Sonic,Event Skin,"Absorbs Void moves instead of taking damage, healing a quarter of its HP.",
-226,Geodle,Gravity/Crystal,Event Anchor,"Absorbs Gravity moves instead of taking damage, healing a quarter of its HP.",
+226,Geopip,Gravity/Crystal,Event Anchor,"Absorbs Gravity moves instead of taking damage, healing a quarter of its HP.",
 227,Geodome,Gravity/Crystal,Event Anchor,"Absorbs Gravity moves instead of taking damage, healing a quarter of its HP.",
 228,Rotroot,Void/Bio,Event Skin,"Absorbs Void moves instead of taking damage, healing a quarter of its HP.",
 229,Gravebloom,Void/Bio,Event Skin,"Absorbs Void moves instead of taking damage, healing a quarter of its HP.",
@@ -264,7 +264,7 @@ No,Name,Types,Trait,Trait effect,Signature move
 263,Facetrix,Crystal,Keeper's Pride,Trained by a Keeper: all its moves deal 20% more damage.,Gemstorm
 264,Encorex,Sonic,Keeper's Pride,Trained by a Keeper: all its moves deal 20% more damage.,Encore Riff
 265,Pyrelyth,Plasma,Keeper's Pride,Trained by a Keeper: all its moves deal 20% more damage.,Pyre Veil
-266,Bastionyx,Gravity,Keeper's Pride,Trained by a Keeper: all its moves deal 20% more damage.,Bastion Slam
+266,Citadrake,Gravity,Keeper's Pride,Trained by a Keeper: all its moves deal 20% more damage.,Bastion Slam
 267,Firstlight,Plasma/Psi,Keeper's Pride,Trained by a Keeper: all its moves deal 20% more damage.,First Light
 268,Fractling,Void/Crystal,Unstable Core,Attack and Sp. Atk rise 50% while it has a status condition.,
 269,Fractalith,Void/Crystal,Unstable Core,Attack and Sp. Atk rise 50% while it has a status condition.,
@@ -278,7 +278,7 @@ No,Name,Types,Trait,Trait effect,Signature move
 277,Terravox,Gravity/Bio,Pillar of Ystra,Takes 25% less damage and restores a little HP each turn.,Continent Lift
 278,Aquelion,Hydro/Psi,Pillar of Ystra,Takes 25% less damage and restores a little HP each turn.,Tidal Crown
 279,Ignarch,Plasma/Magma,Pillar of Ystra,Takes 25% less damage and restores a little HP each turn.,Sunfall
-280,Cricketick,Sonic/Swarm,Sound Sponge,"Absorbs Sonic moves instead of taking damage, healing a quarter of its HP.",
+280,Tiktrill,Sonic/Swarm,Sound Sponge,"Absorbs Sonic moves instead of taking damage, healing a quarter of its HP.",
 281,Chronocrick,Sonic/Swarm,Sound Sponge,"Absorbs Sonic moves instead of taking damage, healing a quarter of its HP.",
 282,Croakle,Hydro/Sonic,Riptide,Powers up Hydro moves by 50% when HP drops below a third.,
 283,Croakoustic,Hydro/Sonic,Riptide,Powers up Hydro moves by 50% when HP drops below a third.,

@@ -58,3 +58,20 @@ for i, n in enumerate(names):
 out = os.path.join(ROOT, 'docs/prismatic_sheet.png')
 sheet.save(out, optimize=True)
 print(out, sheet.size, len(names))
+
+# the same sheet as a PDF, 30 Alienmon a page (5 x 6), for easy viewing on a phone or tablet
+PER, PC = 30, 5
+pages = []
+for p0 in range(0, len(names), PER):
+    chunk = names[p0:p0 + PER]
+    pg = Image.new('RGB', (PC * CW, 6 * CH + 40), (24, 18, 40))
+    d = ImageDraw.Draw(pg)
+    d.text((10, 12), f'Prismatic variants {p0 + 1}-{p0 + len(chunk)} of {len(names)}', fill=(95, 242, 255), font=big)
+    for i, n in enumerate(chunk):
+        x, y = (i % PC) * CW, (i // PC) * CH + 40
+        src = sheet.crop(((p0 + i) % COLS * CW, (p0 + i) // COLS * CH + 40, (p0 + i) % COLS * CW + CW, (p0 + i) // COLS * CH + 40 + CH))
+        pg.paste(src, (x, y))
+    pages.append(pg)
+pdf = os.path.join(ROOT, 'docs/prismatic_sheet.pdf')
+pages[0].save(pdf, save_all=True, append_images=pages[1:], resolution=96)
+print(pdf, len(pages), 'pages')

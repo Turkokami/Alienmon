@@ -79,7 +79,7 @@
   ],
   "st": 1,
   "tot": 3,
-  "to": "Flarion",
+  "to": "Plazmet",
   "m": "Starter (Crater Observatory)",
   "s": [
    52,
@@ -90,14 +90,14 @@
    61
   ],
   "r": "starter",
-  "lore": "Chosen at the Crater Observatory; evolves into Flarion.",
+  "lore": "Chosen at the Crater Observatory; evolves into Plazmet.",
   "b": 1,
   "tr": 0,
   "sig": -1
  },
  {
   "n": 5,
-  "name": "Flarion",
+  "name": "Plazmet",
   "t": [
    "Plasma"
   ],
@@ -943,14 +943,14 @@
  },
  {
   "n": 40,
-  "name": "Rustle",
+  "name": "Gleamgrub",
   "t": [
    "Toxin",
    "Alloy"
   ],
   "st": 1,
   "tot": 2,
-  "to": "Corrodon",
+  "to": "Corrovore",
   "m": "Found in the wild",
   "s": [
    47,
@@ -968,7 +968,7 @@
  },
  {
   "n": 41,
-  "name": "Corrodon",
+  "name": "Corrovore",
   "t": [
    "Toxin",
    "Alloy"
@@ -1043,7 +1043,7 @@
  },
  {
   "n": 44,
-  "name": "Clangit",
+  "name": "Gongit",
   "t": [
    "Sonic",
    "Alloy"
@@ -2034,7 +2034,7 @@
  },
  {
   "n": 84,
-  "name": "Shellet",
+  "name": "Conchlet",
   "t": [
    "Hydro",
    "Crystal"
@@ -3514,7 +3514,7 @@
  },
  {
   "n": 144,
-  "name": "Magmorb",
+  "name": "Lavorb",
   "t": [
    "Magma",
    "Gravity"
@@ -4116,7 +4116,7 @@
   ],
   "st": 1,
   "tot": 2,
-  "to": "Aurorix",
+  "to": "Borealix",
   "m": "Found in the wild",
   "s": [
    35,
@@ -4134,7 +4134,7 @@
  },
  {
   "n": 169,
-  "name": "Aurorix",
+  "name": "Borealix",
   "t": [
    "Cryo",
    "Psi"
@@ -5232,7 +5232,7 @@
   ],
   "st": 1,
   "tot": 2,
-  "to": "Bardoracle",
+  "to": "Bardseer",
   "m": "Found in the wild",
   "s": [
    41,
@@ -5250,7 +5250,7 @@
  },
  {
   "n": 214,
-  "name": "Bardoracle",
+  "name": "Bardseer",
   "t": [
    "Psi",
    "Sonic"
@@ -5275,7 +5275,7 @@
  },
  {
   "n": 215,
-  "name": "Gloomit",
+  "name": "Sulklet",
   "t": [
    "Void"
   ],
@@ -5547,7 +5547,7 @@
  },
  {
   "n": 226,
-  "name": "Geodle",
+  "name": "Geopip",
   "t": [
    "Gravity",
    "Crystal"
@@ -6529,7 +6529,7 @@
  },
  {
   "n": 266,
-  "name": "Bastionyx",
+  "name": "Citadrake",
   "t": [
    "Gravity"
   ],
@@ -6877,7 +6877,7 @@
  },
  {
   "n": 280,
-  "name": "Cricketick",
+  "name": "Tiktrill",
   "t": [
    "Sonic",
    "Swarm"

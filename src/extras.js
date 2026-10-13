@@ -251,3 +251,7 @@ function secDark(s,px,py){if(s.type!=='cave'||secTier(s)<1||modHas('lumen_beacon
 function secFluidPockets(s){const main=secMain(s),W=s.tiles[0],H=s.tiles[1],seen=new Set(main),q=[...main].map(k=>k.split(',').map(Number)),out=[];
  while(q.length){const[x,y]=q.pop();for(const[dx,dy]of Object.values(DIRS)){const nx=x+dx,ny=y+dy,k=nx+','+ny;if(nx<0||ny<0||nx>=W||ny>=H||seen.has(k))continue;const c=s.rows[ny][nx];if('.,~^'.includes(c)){seen.add(k);q.push([nx,ny]);if(c==='.')out.push([nx,ny,c])}}}
  return out}
+
+/* ---- renamed species (data/renames.json): saves keep species by number, so only nicknames need moving over ---- */
+const RENAMES=__RENAMES__;
+function renameMigrate(g){if(!g)return g;for(const m of(g.party||[]).concat(g.box||[],g.nurse?[g.nurse.m]:[]))if(m&&m.nick&&RENAMES[m.nick])m.nick=RENAMES[m.nick];return g}

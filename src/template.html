@@ -259,7 +259,7 @@ function importSave(){const inp=document.createElement('input');inp.type='file';
   if(!g||!Array.isArray(g.party)||!Array.isArray(g.box)){say('That file is not an Alienmon save.');return}
   choose('Replace your current game?',['Replace','Cancel'],k=>{if(k!==0)return;try{localStorage.setItem('alienmon_save_v2',JSON.stringify(g));say('Backup restored! Restarting...',()=>location.reload())}catch(e){say('Could not store the save.')}})})};
  inp.click();say('Choose your backup file.')}
-function loadSave(){try{const s=localStorage.getItem('alienmon_save_v2');if(!s)return null;const g=JSON.parse(s);g.party.concat(g.box).forEach(m=>{m.st=m.st||null;resetStages(m)});g.items=g.items||{...START_ITEMS};return progMigrate(g)}catch(e){return null}}
+function loadSave(){try{const s=localStorage.getItem('alienmon_save_v2');if(!s)return null;const g=JSON.parse(s);g.party.concat(g.box).forEach(m=>{m.st=m.st||null;resetStages(m)});g.items=g.items||{...START_ITEMS};return progMigrate(renameMigrate(g))}catch(e){return null}}
 function say(lines,cb,por){const pages=[];for(const l of[].concat(lines)){const w=wrap(l);for(let i=0;i<w.length;i+=2)pages.push(w.slice(i,i+2))}DLG={pages,i:0,cb,por}}
 function healAll(){for(const m of G.party.concat(G.box)){m.hp=stat(m,0);m.ppm={};m.st=null;resetStages(m)}if(!G.pods.stasis&&!G.pods.harmonic&&!G.pods.singularity&&G.dust<20)G.pods.stasis=5}
 const UNLOCK_ALL=false   // playtesters use START > Options > Free roam instead; // playtest: every planet is open

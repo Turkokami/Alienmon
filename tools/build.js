@@ -1,3 +1,4 @@
+require('child_process').execSync('node '+JSON.stringify(require('path').join(__dirname,'check_names.js')),{stdio:'inherit'});   // old species names fail the build
 // Merges every batch in data/batches into src/template.html -> www/index.html
 // Default (web): art and audio are written to www/assets/ under content-hashed names and the page loads them by URL,
 // so browsers and the service worker can cache them forever. `node tools/build.js --inline` instead embeds everything
@@ -77,7 +78,7 @@ function fluids(id,rows){const f=path.join(root,'data/sections/fluids',id+'.json
  for(const[k,ch]of[['water','~'],['lava','^']])for(const[x0,y0,x1,y1]of F[k]||[])for(let y=Math.max(1,y0);y<=Math.min(H-2,y1);y++)for(let x=Math.max(1,x0);x<=Math.min(W-2,x1);x++)if(R[y][x]==='#')R[y][x]=ch;return R.map(r=>r.join(''))}
 function fluidDump(){const d=path.join(root,'data/sections/fluids');return fs.existsSync(d)?fs.readdirSync(d).sort().map(f=>fs.readFileSync(path.join(d,f),'utf8')).join(''):''}
 console.log('section maps:',Object.keys(SECS).length);
-fill.__SECENGINE__=(fs.readFileSync(path.join(root,'src/sections.js'),'utf8')+'\n'+fs.readFileSync(path.join(root,'src/extras.js'),'utf8')).replace(/__SWORLD__/g,j(SECS)).replace(/__SECIMG__/g,j(SECIMG)).replace(/__SECARRIVAL__/g,j(SECW.arrival||{})).replace(/__SECQ__/g,j(SECW.quest_spots||{})).replace(/__KNOCK__/g,j(fs.existsSync(path.join(root,'data/sections/knock_doors.json'))?JSON.parse(fs.readFileSync(path.join(root,'data/sections/knock_doors.json'),'utf8')):{}));
+fill.__SECENGINE__=(fs.readFileSync(path.join(root,'src/sections.js'),'utf8')+'\n'+fs.readFileSync(path.join(root,'src/extras.js'),'utf8')).replace(/__SWORLD__/g,j(SECS)).replace(/__SECIMG__/g,j(SECIMG)).replace(/__SECARRIVAL__/g,j(SECW.arrival||{})).replace(/__SECQ__/g,j(SECW.quest_spots||{})).replace(/__RENAMES__/g,j(JSON.parse(fs.readFileSync(path.join(root,'data/renames.json'),'utf8')))).replace(/__KNOCK__/g,j(fs.existsSync(path.join(root,'data/sections/knock_doors.json'))?JSON.parse(fs.readFileSync(path.join(root,'data/sections/knock_doors.json'),'utf8')):{}));
 fill.__WORLDENGINE__=fs.readFileSync(path.join(root,'src/world.js'),'utf8').replace(/__WORLDSTATE__/g,j({gates:WS.gates,ship:WS.ship})).replace(/__PEOPLE__/g,PEOPLE).replace(/__SPACE__/g,j(SPACEART));
 // function replacer: data can contain "$&"-style sequences that a string replacement would expand
 let html=fs.readFileSync(path.join(root,'src/template.html'),'utf8').replace(/__[A-Z]+__/g,k=>k in fill?fill[k]:k);

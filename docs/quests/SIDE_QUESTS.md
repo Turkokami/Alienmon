@@ -145,8 +145,8 @@
 - **Given by:** Grub (art `grub`)
 - **Requires:** M05
 - **Objectives:**
-  1. catch: **Rustle** @ Ferrox Town — Scrapyard drift grass
-- **Start:** “Grub: A Rustle eats rust and spits out polish. I need one for my shop!”
+  1. catch: **Gleamgrub** @ Ferrox Town — Scrapyard drift grass
+- **Start:** “Grub: A Gleamgrub eats rust and spits out polish. I need one for my shop!”
 - **Complete:** “Grub: Shiny! Here's your cut.”
 - **Rewards:** 350 stardust
 

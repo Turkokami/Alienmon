@@ -160,7 +160,7 @@ function qNear(){const p=qPos();if(!p)return null;let best=null,bd=scene==='worl
 
 // story bosses and the rival use the progression levels and lead with their signature Alienmon
 const QBOSS={admin_bronn:['bronn','Bronnix',3],admin_vex:['vex','Vexhydra',4],director_thorne:['thorne','Thornvoid',5],orra_venn:['orra','Firstlight',6],
- quorum_marisol:[0,'Facetrix',5],quorum_harrow:[1,'Encorex',5],quorum_saga:[2,'Pyrelyth',5],quorum_ostrander:[3,'Bastionyx',5]};
+ quorum_marisol:[0,'Facetrix',5],quorum_harrow:[1,'Encorex',5],quorum_saga:[2,'Pyrelyth',5],quorum_ostrander:[3,'Citadrake',5]};
 const RIVAL_LV=[7,15,22,36,56,70];
 function evolvedAt(id,lv){let n=D[id].name;for(let i=0;i<3;i++){const ev=(PROG.species[n]||{}).evolves;if(ev&&ev.into&&/^Level/.test(ev.method||'Level')&&lv>=ev.level&&IDX[ev.into]!=null)n=ev.into;else break}return IDX[n]}
 function bossTeam(q,o){const p=PL[G.planet]||PL[0],pool=p.pool.e.concat(p.pool.c).filter(id=>wildOK(D[id].name)),r=rng(hash(o.target)),fill=(n,lv)=>Array.from({length:n},()=>[evolvedAt(pool[Math.floor(r()*pool.length)],lv),lv]);
