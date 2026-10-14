@@ -274,6 +274,20 @@ function say(lines,cb,por){const pages=[];for(const l of[].concat(lines)){const 
 function healAll(){for(const m of G.party.concat(G.box)){m.hp=stat(m,0);m.ppm={};m.st=null;resetStages(m)}if(!G.pods.stasis&&!G.pods.harmonic&&!G.pods.singularity&&G.dust<20)G.pods.stasis=5}
 const UNLOCK_ALL=false   // playtesters use START > Options > Free roam instead; // playtest: every planet is open
 function unlocked(pi){if(UNLOCK_ALL)return true;return canLand(PL[pi].key)}
+/* ---- first catch: the Xenodex registers the new species (sprite, number, types, trait, base stats, lore) ---- */
+const STATL=['HP','Atk','Def','SpA','SpD','Spe'];
+function dexChime(){try{if(!AC||musicMode==='off')return;const t=AC.currentTime;[523,659,784,1047].forEach((f,i)=>{const o=AC.createOscillator(),g=AC.createGain();o.type='square';o.frequency.value=f;g.gain.setValueAtTime(0.03,t+i*0.09);g.gain.exponentialRampToValueAtTime(0.001,t+i*0.09+0.16);o.connect(g).connect(AC.destination);o.start(t+i*0.09);o.stop(t+i*0.09+0.17)})}catch(e){}}
+function drawDexReg(){const id=CH.mon,d=D[id],tr=TR(id),k=Math.min(1,(frame-CH.t0)/30);box(0,0,160,144);rect(0,0,160,14,'#1b1424');txt('Registered to the Xenodex!',4,4,'#5ff2ff',6);
+ rect(4,18,52,52,'#d9d0ee');ctx.save();ctx.globalAlpha=k;dspr(id,6,20,3);ctx.restore();if(k<1)rect(4,18,52,52,'rgba(255,255,255,'+(1-k).toFixed(2)+')');
+ txt('No.'+String(d.n).padStart(3,'0'),60,19,'#3b2a5c',6);txtFit(d.name,60,28,'#1b1424',96);
+ let x=60;d.t.forEach(t=>{const w=t.length*6+4;rect(x,40,w,9,TC[t][0]);txt(t,x+2,41,'#1b1424',6);x+=w+3});
+ txtFit(tr.name,60,53,'#7a1f6a',96,6);if(d.to)txtFit('Evolves: '+d.to,60,62,'#3b2a5c',96,6);
+ const sum=d.s.reduce((a,b)=>a+b,0);d.s.forEach((v,i)=>{const y=74+i*8;txt(STATL[i],5,y,'#3b2a5c',6);rect(28,y+1,92,5,'#e8e0ff');rect(28,y+1,Math.round(92*Math.min(1,v/160)*k),5,v>=100?'#3fae49':v>=70?'#ffd23f':'#ff8a1e');txtR(String(v),155,y,'#1b1424',6)});
+ txt('Total '+sum,5,124,'#7a1f6a',6);txt('A: Xenodex notes',5,134,'#3b2a5c',6);if(frame%40<24)rect(150,134,4,4,'#ff8a1e')}
+function drawDexLore(){const id=CH.mon,d=D[id],lv=livesIn(id);box(0,0,160,144);rect(0,0,160,14,'#1b1424');txt('Xenodex notes',4,4,'#5ff2ff',6);
+ rect(4,18,52,52,'#d9d0ee');dspr(id,6,20,3);txt('No.'+String(d.n).padStart(3,'0'),60,22,'#3b2a5c',6);txtFit(d.name,60,32,'#1b1424',96);txtFit(d.t.join(' / '),60,44,TC[d.t[0]][2],96,6);
+ wrap(d.lore,25).slice(0,6).forEach((l,i)=>txt(l,5,76+i*9,'#1b1424',6));if(lv.length)txtFit('Lives in: '+lv.slice(0,2).join(', '),5,132,'#2e86de',150,6);if(frame%40<24)rect(150,134,4,4,'#ff8a1e')}
+function dexRegister(id,cb){dexChime();const lore=()=>{choose('Xenodex',['OK'],()=>cb(),()=>cb());CH.draw=drawDexLore;CH.mon=id};choose('Xenodex',['OK'],lore,lore);CH.draw=drawDexReg;CH.mon=id;CH.t0=frame}
 function addMon(m){G.seen[m.id]=1;G.caught[m.id]=1;if(G.party.length<6){G.party.push(m);return'party'}G.box.push(m);return'box'}
 
 /* ---------- title / starter ---------- */
@@ -669,7 +683,7 @@ function startSync(pod){const e=EM(),d=D[e.id],tr=TR(e.id);G.pods[pod.k]=Math.ma
 function lockSync(){const S=B.sync,e=EM(),d=D[e.id];const dist=Math.abs(S.x-S.c);let tier,ch;
  if(dist<=2){tier='Perfect Sync!';ch=d.r==='mythic'?0.8:1}else if(dist<=S.w/2){tier='Signal locked!';ch={legendary:0.45,mythic:0.3}[d.r]||0.8}else{tier='The signal slipped...';ch=0.08}
  let ok=R()<ch;const need=(PROG.legendaries[d.name]||{}).syncs||1;if(need>1){B.syncs=ok?(B.syncs||0)+1:0;if(ok&&B.syncs<need){ok=false;S.partial=B.syncs+'/'+need}}turn(Object.assign(next=>playTransfer(ok,()=>{const L=['You tuned your Linker to '+d.name+'\'s frequency.',tier,'Transfer beam fired!'];const hums=ok?3:ri(0,2);for(let i=0;i<hums;i++)L.push('...the beam holds...');
-  if(ok){L.push('Transferred! '+d.name+' beamed aboard your ship and joined your crew!');e.st=null;e.cf=0;const where=addMon(e);qEvent('catch',d.name);if(where==='box')L.push(d.name+' was beamed to the ship\'s storage.');const st=[];progAward(e,false,st,e);say(L,()=>nickPrompt(e,()=>progRun(st,()=>{B.over=true;endBattle(false)})))}
+  if(ok){L.push('Transferred! '+d.name+' beamed aboard your ship and joined your crew!');e.st=null;e.cf=0;const first=!G.caught[e.id];const where=addMon(e);qEvent('catch',d.name);if(where==='box')L.push(d.name+' was beamed to the ship\'s storage.');const st=[];progAward(e,false,st,e);const after=()=>nickPrompt(e,()=>progRun(st,()=>{B.over=true;endBattle(false)}));say(L,()=>first?dexRegister(e.id,after):after())}
   else{L.push(S.partial?'Sync '+S.partial+' held! Lock on again to finish the transfer.':d.name+' broke the signal!');say(L,next)}}),{pri:1}))}
 function updBattle(){const opts=['FIGHT','BAG','SWAP',storyRunLabel()];
  if(B.anim){animStep();drawBattle();return}
