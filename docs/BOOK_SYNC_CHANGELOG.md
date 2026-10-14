@@ -97,7 +97,7 @@ The Alienmon novels (Books 1–5, planned in `docs/SAGA_MASTER_PLAN.md`) are now
 
 | Change | From | Where in the game | Files |
 | --- | --- | --- | --- |
-| Kit Briggs (he/him) built as a companion NPC; Kit's book moments given back to Kit | All books | Gate Plaza meeting, Rustvale, Aurora Route, Containment Wing, Ferrox tower partner battle, Crater Descent, Dustmere, Great Telescope, Crystal Ruins, Blighted Forest | ST, NP, Q, engine (`{kit}` tokens, `ally.mon: 'kit'`, Technician art until Kit's sprite exists) |
+| Kit Briggs (she/her) built as a companion NPC; Kit's book moments given back to Kit | All books | Gate Plaza meeting, Rustvale, Aurora Route, Containment Wing, Ferrox tower partner battle, Crater Descent, Dustmere, Great Telescope, Crystal Ruins, Blighted Forest | ST, NP, Q, engine (`{kit}` tokens, `ally.mon: 'kit'`, Technician art until Kit's sprite exists) |
 | The stowaway: the starter nobody picked runs off at the lab, hides in your bag (a key item) after M03, and chooses Kit on Ferrox | Book 1, Ch 1 | Lab, M03, Gate Plaza (029) | `src/sections.js`, ST, Q |
 | A calmed Novaryx can be found and caught at the Crater Rim after the credits | Book 3 / owner decision | Crater Rim (141) after P04 | NP |
 
@@ -158,7 +158,7 @@ The new edition of *The Kessler Signal* (about 100,000 words; it was 85,000) red
 - **Art sets the look** (owner rule, 2026-10-14): the Xenodex sprites define each Alienmon, and the Oct 14 book was written to match them. Every redesigned species matches its sprite. The Lumislug and Skitterdrone descriptions were corrected to the sprites (lime-green slug with a dark spotted mantle; gold and bronze dish-winged flier), and the book text should follow.
 - The Helix logo is now an orange ring with a diagonal slash; any Helix art with the old twisting-ladder mark needs repainting.
 - New book NPCs not in the game: Brann (a grunt with a static-net launcher), Pip (a young grunt's Skitterdrone), Mr. Abernathy (the Dustmere baker). New item: Dr. Moor's Spore tonic.
-- Kit is he/him (owner decision, 2026-10-14). The game, the docs and the website use he/him; the Book 1 text (and the recorded audiobook) still say they/them and need updating.
+- Kit is a girl, she/her (owner decision, 2026-10-14). The game, the docs and the website use she/her; the Book 1 text (and the recorded audiobook) still say they/them and need updating.
 - Later-book gags kept for now: Strand's "...Resigning" (M18) and Pell's "...Former" (M19b) still reference "Field Division, Second Class", which Book 1 now only uses once (Strand, Ch 20).
 
 ## Seedmother Revision 2 (docs/ALIENMON_SEEDMOTHER_REVISION.md, current)

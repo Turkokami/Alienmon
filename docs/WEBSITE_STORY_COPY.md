@@ -7,7 +7,7 @@ Copy for alienmon.com, written from the saga plan (`docs/SAGA_MASTER_PLAN.md`), 
 - Later books are teased with questions, not answers.
 - Never say the Seedmother is scattered, split into the seedpods, or living in the Alienmon. The public belief is that she stayed behind on Ystra.
 - Never say who Oblivane is, or how the saga ends.
-- Kit is "he" (owner decision, 2026-10-14).
+- Kit is a girl: "she" (owner decision, 2026-10-14).
 
 ---
 
@@ -87,7 +87,7 @@ Helix has been studying the Relay Towers for fifteen years. Ships circle the tow
 
 **Sola Reyes.** Rook's rival, and the best young Linker in Dustmere. Sharp, proud and always one step ahead. Her father, the explorer Teo Reyes, walked into the crater's light six years ago and never came back. Sola will do anything to find him, and "anything" might mean the wrong side.
 
-**Kit Briggs.** The team's engineer. Kit can fix anything with a wrench, some wire and a stubborn grin, and has a habit of being the last person he thinks to look after. Kit's partner is Sporix, the shy pod nobody else picked.
+**Kit Briggs.** The team's engineer. Kit can fix anything with a wrench, some wire and a stubborn grin, and has a habit of being the last person she thinks to look after. Kit's partner is Sporix, the shy pod nobody else picked.
 
 **Dr. Imogen Vashti.** Dustmere's xenobiologist, keeper of the Observatory, and the person who hands every new Linker their first partner. Warm, brilliant, and holding onto a secret that is twenty years old.
 
