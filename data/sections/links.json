@@ -474,6 +474,15 @@
     "k": "house",
     "why": "house door: opens the shared Sporeholm house",
     "to": "173"
+   },
+   {
+    "tile": [
+     17,
+     4
+    ],
+    "k": "house",
+    "to": "184",
+    "why": "walk-in door: landing_dome"
    }
   ],
   "042": [
@@ -487,16 +496,26 @@
     "to": "173"
    }
   ],
-  "047": [],
+  "047": [
+   {
+    "tile": [
+     12,
+     4
+    ],
+    "k": "house",
+    "to": "185",
+    "why": "walk-in door: mushroom_house"
+   }
+  ],
   "049": [
    {
     "tile": [
      19,
      4
     ],
-    "k": "sign",
-    "t": "The door is locked for now.",
-    "why": "door plan: special door with no interior yet"
+    "k": "house",
+    "why": "walk-in door: Mushroom House",
+    "to": "185"
    }
   ],
   "052": [],
@@ -559,6 +578,15 @@
     "k": "house",
     "why": "house door: opens the shared Neonis house",
     "to": "176"
+   },
+   {
+    "tile": [
+     17,
+     4
+    ],
+    "k": "house",
+    "to": "180",
+    "why": "walk-in door: arcade_hall"
    }
   ],
   "072": [
@@ -617,6 +645,15 @@
     "k": "sign",
     "t": "This old shaft has caved in. There's no way through.",
     "why": "door plan: mine door with no interior yet"
+   },
+   {
+    "tile": [
+     4,
+     11
+    ],
+    "k": "house",
+    "to": "183",
+    "why": "walk-in door: dig_camp_tent"
    }
   ],
   "075": [
@@ -901,9 +938,9 @@
      17,
      2
     ],
-    "k": "sign",
-    "t": "The door is locked for now.",
-    "why": "door plan: special door with no interior yet"
+    "k": "house",
+    "why": "walk-in door: Airship Cabin",
+    "to": "179"
    },
    {
     "tile": [
@@ -922,6 +959,15 @@
     "k": "sign",
     "t": "The shrine door is sealed. Old wind still whistles through the cracks.",
     "why": "door plan: shrine door with no interior yet"
+   },
+   {
+    "tile": [
+     4,
+     3
+    ],
+    "k": "house",
+    "to": "182",
+    "why": "walk-in door: cloud_dock_hall"
    }
   ],
   "115": [
@@ -1103,6 +1149,15 @@
     "k": "sign",
     "t": "The door is locked. Nobody seems to be home.",
     "why": "door plan: house door with no interior yet"
+   },
+   {
+    "tile": [
+     19,
+     4
+    ],
+    "k": "house",
+    "to": "181",
+    "why": "walk-in door: arrival_research_dome"
    }
   ]
  },
@@ -1222,6 +1277,48 @@
    ]
   },
   "178": {
+   "default": [
+    7,
+    12
+   ]
+  },
+  "179": {
+   "default": [
+    7,
+    12
+   ]
+  },
+  "180": {
+   "default": [
+    7,
+    12
+   ]
+  },
+  "181": {
+   "default": [
+    7,
+    12
+   ]
+  },
+  "182": {
+   "default": [
+    7,
+    12
+   ]
+  },
+  "183": {
+   "default": [
+    7,
+    12
+   ]
+  },
+  "184": {
+   "default": [
+    7,
+    12
+   ]
+  },
+  "185": {
    "default": [
     7,
     12
@@ -1900,6 +1997,216 @@
    "face": "down",
    "kind": "door",
    "parent": "093"
+  },
+  {
+   "section": "179",
+   "tile": [
+    7,
+    13
+   ],
+   "to": "back",
+   "at": [
+    7,
+    12
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "114"
+  },
+  {
+   "section": "179",
+   "tile": [
+    8,
+    13
+   ],
+   "to": "back",
+   "at": [
+    8,
+    12
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "114"
+  },
+  {
+   "section": "180",
+   "tile": [
+    7,
+    13
+   ],
+   "to": "back",
+   "at": [
+    7,
+    12
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "066"
+  },
+  {
+   "section": "180",
+   "tile": [
+    8,
+    13
+   ],
+   "to": "back",
+   "at": [
+    8,
+    12
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "066"
+  },
+  {
+   "section": "181",
+   "tile": [
+    7,
+    13
+   ],
+   "to": "back",
+   "at": [
+    7,
+    12
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "153"
+  },
+  {
+   "section": "181",
+   "tile": [
+    8,
+    13
+   ],
+   "to": "back",
+   "at": [
+    8,
+    12
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "153"
+  },
+  {
+   "section": "182",
+   "tile": [
+    7,
+    13
+   ],
+   "to": "back",
+   "at": [
+    7,
+    12
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "114"
+  },
+  {
+   "section": "182",
+   "tile": [
+    8,
+    13
+   ],
+   "to": "back",
+   "at": [
+    8,
+    12
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "114"
+  },
+  {
+   "section": "183",
+   "tile": [
+    7,
+    13
+   ],
+   "to": "back",
+   "at": [
+    7,
+    12
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "073"
+  },
+  {
+   "section": "183",
+   "tile": [
+    8,
+    13
+   ],
+   "to": "back",
+   "at": [
+    8,
+    12
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "073"
+  },
+  {
+   "section": "184",
+   "tile": [
+    7,
+    13
+   ],
+   "to": "back",
+   "at": [
+    7,
+    12
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "041"
+  },
+  {
+   "section": "184",
+   "tile": [
+    8,
+    13
+   ],
+   "to": "back",
+   "at": [
+    8,
+    12
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "041"
+  },
+  {
+   "section": "185",
+   "tile": [
+    7,
+    13
+   ],
+   "to": "back",
+   "at": [
+    7,
+    12
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "047"
+  },
+  {
+   "section": "185",
+   "tile": [
+    8,
+    13
+   ],
+   "to": "back",
+   "at": [
+    8,
+    12
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "047"
   }
  ]
 }

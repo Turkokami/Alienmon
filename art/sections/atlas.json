@@ -3838,6 +3838,139 @@
    "notes": "Shared house interior: every house door on Glacia opens here",
    "file": "art/sections/08_glacia/178_glacia_house.png",
    "house": "glacia"
+  },
+  {
+   "id": "179",
+   "planet": "Halo",
+   "name": "Airship Cabin",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "Special interior (airship_cabin)",
+   "file": "art/sections/10_halo/179_airship_cabin.png"
+  },
+  {
+   "id": "180",
+   "planet": "Neonis",
+   "name": "Arcade Hall",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "Special interior (arcade_hall)",
+   "file": "art/sections/05_neonis/180_arcade_hall.png"
+  },
+  {
+   "id": "181",
+   "planet": "Ystra",
+   "name": "Arrival Research Dome",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "Special interior (arrival_research_dome)",
+   "file": "art/sections/14_ystra/181_arrival_research_dome.png"
+  },
+  {
+   "id": "182",
+   "planet": "Halo",
+   "name": "Cloud Dock Hall",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "Special interior (cloud_dock_hall)",
+   "file": "art/sections/10_halo/182_cloud_dock_hall.png"
+  },
+  {
+   "id": "183",
+   "planet": "Glyphos",
+   "name": "Dig Camp HQ Tent",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "Special interior (dig_camp_tent)",
+   "file": "art/sections/06_glyphos/183_dig_camp_tent.png"
+  },
+  {
+   "id": "184",
+   "planet": "Sporeholm",
+   "name": "Landing Dome",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "Special interior (landing_dome)",
+   "file": "art/sections/03_sporeholm/184_landing_dome.png"
+  },
+  {
+   "id": "185",
+   "planet": "Sporeholm",
+   "name": "Mushroom House",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "Special interior (mushroom_house)",
+   "file": "art/sections/03_sporeholm/185_mushroom_house.png"
   }
  ]
 }

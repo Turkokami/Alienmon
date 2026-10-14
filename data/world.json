@@ -6130,6 +6130,15 @@
     },
     {
      "tile": [
+      17,
+      4
+     ],
+     "k": "house",
+     "to": "184",
+     "why": "walk-in door: landing_dome"
+    },
+    {
+     "tile": [
       15,
       5
      ],
@@ -6186,13 +6195,13 @@
    ],
    "mons": [
     {
-     "x": 20,
-     "y": 4,
+     "x": 5,
+     "y": 6,
      "mon": "Sludgeviper"
     },
     {
-     "x": 5,
-     "y": 6,
+     "x": 9,
+     "y": 12,
      "mon": "Lianarch"
     }
    ]
@@ -6902,6 +6911,15 @@
    "objects": [
     {
      "tile": [
+      12,
+      4
+     ],
+     "k": "house",
+     "to": "185",
+     "why": "walk-in door: mushroom_house"
+    },
+    {
+     "tile": [
       3,
       3
      ],
@@ -6930,7 +6948,7 @@
    "pkey": "sporeholm",
    "npcs": [
     {
-     "x": 11,
+     "x": 9,
      "y": 8,
      "art": "explorer",
      "face": "down",
@@ -7156,9 +7174,9 @@
       19,
       4
      ],
-     "k": "sign",
-     "t": "The door is locked for now.",
-     "why": "door plan: special door with no interior yet"
+     "k": "house",
+     "why": "walk-in door: Mushroom House",
+     "to": "185"
     },
     {
      "tile": [
@@ -9276,6 +9294,15 @@
     },
     {
      "tile": [
+      17,
+      4
+     ],
+     "k": "house",
+     "to": "180",
+     "why": "walk-in door: arcade_hall"
+    },
+    {
+     "tile": [
       11,
       9
      ],
@@ -10158,6 +10185,15 @@
     },
     {
      "tile": [
+      4,
+      11
+     ],
+     "k": "house",
+     "to": "183",
+     "why": "walk-in door: dig_camp_tent"
+    },
+    {
+     "tile": [
       1,
       6
      ],
@@ -10168,8 +10204,8 @@
     },
     {
      "tile": [
-      2,
-      12
+      8,
+      4
      ],
      "k": "stash",
      "item": "megagel",
@@ -10236,7 +10272,7 @@
     },
     {
      "x": 1,
-     "y": 9,
+     "y": 12,
      "art": "civilian",
      "face": "down",
      "t": [
@@ -15397,9 +15433,9 @@
       17,
       2
      ],
-     "k": "sign",
-     "t": "The door is locked for now.",
-     "why": "door plan: special door with no interior yet"
+     "k": "house",
+     "why": "walk-in door: Airship Cabin",
+     "to": "179"
     },
     {
      "tile": [
@@ -15418,6 +15454,15 @@
      "k": "sign",
      "t": "The shrine door is sealed. Old wind still whistles through the cracks.",
      "why": "door plan: shrine door with no interior yet"
+    },
+    {
+     "tile": [
+      4,
+      3
+     ],
+     "k": "house",
+     "to": "182",
+     "why": "walk-in door: cloud_dock_hall"
     },
     {
      "tile": [
@@ -15502,8 +15547,8 @@
      "mon": "Cerebrix"
     },
     {
-     "x": 4,
-     "y": 4,
+     "x": 9,
+     "y": 5,
      "mon": "Hummingmind"
     }
    ]
@@ -20080,6 +20125,15 @@
     },
     {
      "tile": [
+      19,
+      4
+     ],
+     "k": "house",
+     "to": "181",
+     "why": "walk-in door: arrival_research_dome"
+    },
+    {
+     "tile": [
       12,
       4
      ],
@@ -20168,8 +20222,8 @@
    ],
    "mons": [
     {
-     "x": 21,
-     "y": 5,
+     "x": 7,
+     "y": 2,
      "mon": "Riftwalker"
     },
     {
@@ -22541,6 +22595,454 @@
       "Grandma Frost: Ingrid used to sit right there when she was little."
      ],
      "name": "Grandma Frost"
+    }
+   ]
+  },
+  "179": {
+   "id": "179",
+   "name": "Airship Cabin",
+   "planet": "Halo",
+   "dir": "10_halo",
+   "type": "interior",
+   "img": "art/sections_game/10_halo/179_airship_cabin.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "Special interior (airship_cabin)",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      13
+     ],
+     "to": "back",
+     "at": [
+      7,
+      12
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      13
+     ],
+     "to": "back",
+     "at": [
+      8,
+      12
+     ],
+     "face": "down",
+     "kind": "door"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     7,
+     12
+    ]
+   },
+   "parent": "114",
+   "pkey": "halo",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 8,
+     "art": "pilgrim",
+     "face": "down",
+     "t": [
+      "Captain: Welcome aboard! She's docked for repairs, but the view's still free.",
+      "Captain: On a clear day you can see every island in the Halo chain from the helm."
+     ],
+     "name": "Airship Captain"
+    }
+   ]
+  },
+  "180": {
+   "id": "180",
+   "name": "Arcade Hall",
+   "planet": "Neonis",
+   "dir": "05_neonis",
+   "type": "interior",
+   "img": "art/sections_game/05_neonis/180_arcade_hall.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "Special interior (arcade_hall)",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      13
+     ],
+     "to": "back",
+     "at": [
+      7,
+      12
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      13
+     ],
+     "to": "back",
+     "at": [
+      8,
+      12
+     ],
+     "face": "down",
+     "kind": "door"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     7,
+     12
+    ]
+   },
+   "parent": "066",
+   "pkey": "neonis",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 8,
+     "art": "technician",
+     "face": "down",
+     "t": [
+      "Prize Clerk: Welcome to the Neonis Arcade! The machines are being rewired for the big tournament.",
+      "Prize Clerk: Come back later and you might win one of those plush Alienmon on the shelf."
+     ],
+     "name": "Prize Clerk"
+    }
+   ]
+  },
+  "181": {
+   "id": "181",
+   "name": "Arrival Research Dome",
+   "planet": "Ystra",
+   "dir": "14_ystra",
+   "type": "interior",
+   "img": "art/sections_game/14_ystra/181_arrival_research_dome.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "Special interior (arrival_research_dome)",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      13
+     ],
+     "to": "back",
+     "at": [
+      7,
+      12
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      13
+     ],
+     "to": "back",
+     "at": [
+      8,
+      12
+     ],
+     "face": "down",
+     "kind": "door"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     7,
+     12
+    ]
+   },
+   "parent": "153",
+   "pkey": "ystra",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 8,
+     "art": "researcher",
+     "face": "down",
+     "t": [
+      "Field Scientist: Ystra was green once. Every sample we take says so.",
+      "Field Scientist: The crater readings change whenever a Linker walks by. Strange, isn't it?"
+     ],
+     "name": "Field Scientist"
+    }
+   ]
+  },
+  "182": {
+   "id": "182",
+   "name": "Cloud Dock Hall",
+   "planet": "Halo",
+   "dir": "10_halo",
+   "type": "interior",
+   "img": "art/sections_game/10_halo/182_cloud_dock_hall.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "Special interior (cloud_dock_hall)",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      13
+     ],
+     "to": "back",
+     "at": [
+      7,
+      12
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      13
+     ],
+     "to": "back",
+     "at": [
+      8,
+      12
+     ],
+     "face": "down",
+     "kind": "door"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     7,
+     12
+    ]
+   },
+   "parent": "114",
+   "pkey": "halo",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 8,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Dock Attendant: Welcome to the Cloud Dock. Airships leave when the winds allow.",
+      "Dock Attendant: Mind the windows, the sky islands drift closer than they look."
+     ],
+     "name": "Dock Attendant"
+    }
+   ]
+  },
+  "183": {
+   "id": "183",
+   "name": "Dig Camp HQ Tent",
+   "planet": "Glyphos",
+   "dir": "06_glyphos",
+   "type": "interior",
+   "img": "art/sections_game/06_glyphos/183_dig_camp_tent.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "Special interior (dig_camp_tent)",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      13
+     ],
+     "to": "back",
+     "at": [
+      7,
+      12
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      13
+     ],
+     "to": "back",
+     "at": [
+      8,
+      12
+     ],
+     "face": "down",
+     "kind": "door"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     7,
+     12
+    ]
+   },
+   "parent": "073",
+   "pkey": "glyphos",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 8,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Dig Chief: Every glyph on that board came out of the ground this week.",
+      "Dig Chief: Whoever built these ruins knew the stars far better than we do."
+     ],
+     "name": "Dig Chief"
+    }
+   ]
+  },
+  "184": {
+   "id": "184",
+   "name": "Landing Dome",
+   "planet": "Sporeholm",
+   "dir": "03_sporeholm",
+   "type": "interior",
+   "img": "art/sections_game/03_sporeholm/184_landing_dome.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "Special interior (landing_dome)",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      13
+     ],
+     "to": "back",
+     "at": [
+      7,
+      12
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      13
+     ],
+     "to": "back",
+     "at": [
+      8,
+      12
+     ],
+     "face": "down",
+     "kind": "door"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     7,
+     12
+    ]
+   },
+   "parent": "041",
+   "pkey": "sporeholm",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 8,
+     "art": "sporefolk",
+     "face": "down",
+     "t": [
+      "Greeter: Welcome to Sporeholm! Please don't step on the glowing moss. It bruises.",
+      "Greeter: The bog is safest on the lit paths. The mushroom lamps show the way."
+     ],
+     "name": "Greeter"
+    }
+   ]
+  },
+  "185": {
+   "id": "185",
+   "name": "Mushroom House",
+   "planet": "Sporeholm",
+   "dir": "03_sporeholm",
+   "type": "interior",
+   "img": "art/sections_game/03_sporeholm/185_mushroom_house.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "Special interior (mushroom_house)",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      13
+     ],
+     "to": "back",
+     "at": [
+      7,
+      12
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      13
+     ],
+     "to": "back",
+     "at": [
+      8,
+      12
+     ],
+     "face": "down",
+     "kind": "door"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     7,
+     12
+    ]
+   },
+   "parent": "047",
+   "pkey": "sporeholm",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 8,
+     "art": "sporefolk",
+     "face": "down",
+     "t": [
+      "Mushroom Keeper: Oh! A guest inside my mushroom. Mind the jars, they're full of spores.",
+      "Mushroom Keeper: This mushroom was growing before my grandmother was born. It's still growing now."
+     ],
+     "name": "Mushroom Keeper"
     }
    ]
   }

@@ -107,7 +107,7 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 | Section | Tile | Item | Tier |
 |---|---|---|---|
 | 072 Sunken Landing | 10,3 | 1x Ether Gel | 3 |
-| 073 Dig Camp | 2,12 | 2x Mega Gel | 3 |
+| 073 Dig Camp | 8,4 | 2x Mega Gel | 3 |
 | 075 Coral Ruins Part A | 3,14 | 1x Signal Jammer | 3 |
 | 075 Coral Ruins Part A | 11,2 | 2x Revive Spark | 3 |
 | 076 Coral Ruins Part B | 22,14 | 2x Stun Spray | 3 |

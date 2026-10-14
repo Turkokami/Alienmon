@@ -817,8 +817,8 @@
    "section": "073",
    "name": "Dig Camp",
    "tile": [
-    2,
-    12
+    8,
+    4
    ],
    "item": "megagel",
    "n": 2,

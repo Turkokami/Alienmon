@@ -1318,5 +1318,103 @@
     "Grandma Frost: Ingrid used to sit right there when she was little."
    ]
   }
+ ],
+ "179": [
+  {
+   "art": "pilgrim",
+   "name": "Airship Captain",
+   "near": [
+    10,
+    8
+   ],
+   "t": [
+    "Captain: Welcome aboard! She's docked for repairs, but the view's still free.",
+    "Captain: On a clear day you can see every island in the Halo chain from the helm."
+   ]
+  }
+ ],
+ "180": [
+  {
+   "art": "technician",
+   "name": "Prize Clerk",
+   "near": [
+    10,
+    8
+   ],
+   "t": [
+    "Prize Clerk: Welcome to the Neonis Arcade! The machines are being rewired for the big tournament.",
+    "Prize Clerk: Come back later and you might win one of those plush Alienmon on the shelf."
+   ]
+  }
+ ],
+ "181": [
+  {
+   "art": "researcher",
+   "name": "Field Scientist",
+   "near": [
+    10,
+    8
+   ],
+   "t": [
+    "Field Scientist: Ystra was green once. Every sample we take says so.",
+    "Field Scientist: The crater readings change whenever a Linker walks by. Strange, isn't it?"
+   ]
+  }
+ ],
+ "182": [
+  {
+   "art": "civilian",
+   "name": "Dock Attendant",
+   "near": [
+    10,
+    8
+   ],
+   "t": [
+    "Dock Attendant: Welcome to the Cloud Dock. Airships leave when the winds allow.",
+    "Dock Attendant: Mind the windows, the sky islands drift closer than they look."
+   ]
+  }
+ ],
+ "183": [
+  {
+   "art": "explorer",
+   "name": "Dig Chief",
+   "near": [
+    10,
+    8
+   ],
+   "t": [
+    "Dig Chief: Every glyph on that board came out of the ground this week.",
+    "Dig Chief: Whoever built these ruins knew the stars far better than we do."
+   ]
+  }
+ ],
+ "184": [
+  {
+   "art": "sporefolk",
+   "name": "Greeter",
+   "near": [
+    10,
+    8
+   ],
+   "t": [
+    "Greeter: Welcome to Sporeholm! Please don't step on the glowing moss. It bruises.",
+    "Greeter: The bog is safest on the lit paths. The mushroom lamps show the way."
+   ]
+  }
+ ],
+ "185": [
+  {
+   "art": "sporefolk",
+   "name": "Mushroom Keeper",
+   "near": [
+    10,
+    8
+   ],
+   "t": [
+    "Mushroom Keeper: Oh! A guest inside my mushroom. Mind the jars, they're full of spores.",
+    "Mushroom Keeper: This mushroom was growing before my grandmother was born. It's still growing now."
+   ]
+  }
  ]
 }
