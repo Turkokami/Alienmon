@@ -95,7 +95,7 @@ function updSec(){const s=SWORLD[G.sec.id];if(SBUMP>0)SBUMP--;if(MODHINT>0)MODHI
 function secStepHeld(){const d=held.up?'up':held.down?'down':held.left?'left':held.right?'right':null;if(!d)return;face=d;const s=SWORLD[G.sec.id],a=secAhead(s,G.sec.x,G.sec.y,d);
  if(a&&(a.arrival||a.s.id!==s.id)&&!G.party.length&&s.type!=='interior')return say(NO_PARTNER);
  if(a&&a.arrival)return secLeaveForShip();
- if(!a||!secWalk(a.s,a.x,a.y)){const ho=a&&a.s===SWORLD[G.sec.id]&&(a.s.objects||[]).find(o=>o.k==='house'&&o.tile[0]===a.x&&o.tile[1]===a.y);if(ho)return secHouse(a.s,ho);if(a&&a.s){const c=secTile(a.s,a.x,a.y);if(c==='~'||c==='^')modHint(c)}bumpSfx();return}
+ if(!a||!secWalk(a.s,a.x,a.y)){const ho=a&&a.s===SWORLD[G.sec.id]&&(a.s.objects||[]).find(o=>o.k==='house'&&o.tile[0]===a.x&&o.tile[1]===a.y);if(ho)return secHouse(a.s,ho);const dr=a&&a.s===SWORLD[G.sec.id]&&face==='up'&&(a.s.objects||[]).find(o=>o.door&&o.tile[0]===a.x&&o.tile[1]===a.y);if(dr){doorSfx();if(dr.k==='bay'){G.singBuy=0;return bayMenu()}return shop()}if(a&&a.s){const c=secTile(a.s,a.x,a.y);if(c==='~'||c==='^')modHint(c)}bumpSfx();return}
  const lw=a.s.warps.find(w=>w.tile[0]===a.x&&w.tile[1]===a.y&&w.node);if(lw&&!gateOpen(lw.node)){bumpSfx();return say(gateMsg(lw.node))}
  secFollowStep(G.sec.x,G.sec.y);SM={t:0,n:secStepN(s),dx:DIRS[d][0],dy:DIRS[d][1],to:a}}
 // camera: follows the player; it only stops at an edge with nothing beyond it

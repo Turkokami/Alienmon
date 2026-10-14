@@ -287,7 +287,8 @@
      4
     ],
     "k": "bay",
-    "why": "Trading Post Recovery Bay door (no interior is drawn, so the door works like the counter)"
+    "why": "Trading Post Recovery Bay door (no interior is drawn, so the door works like the counter)",
+    "door": true
    },
    {
     "tile": [
@@ -295,7 +296,8 @@
      4
     ],
     "k": "bay",
-    "why": "Trading Post Recovery Bay door, right half"
+    "why": "Trading Post Recovery Bay door, right half",
+    "door": true
    },
    {
     "tile": [
@@ -303,7 +305,8 @@
      10
     ],
     "k": "shop",
-    "why": "Trading Post shop door (no interior is drawn, so the door works like the counter)"
+    "why": "Trading Post shop door (no interior is drawn, so the door works like the counter)",
+    "door": true
    },
    {
     "tile": [
@@ -311,7 +314,8 @@
      11
     ],
     "k": "shop",
-    "why": "Trading Post shop front"
+    "why": "Trading Post shop front",
+    "door": true
    },
    {
     "tile": [
@@ -319,7 +323,8 @@
      11
     ],
     "k": "shop",
-    "why": "Trading Post shop front"
+    "why": "Trading Post shop front",
+    "door": true
    }
   ],
   "007": [
@@ -360,7 +365,8 @@
      4
     ],
     "k": "bay",
-    "why": "Palm Isle Recovery Hut (no interior yet, so the door works like the counter)"
+    "why": "Palm Isle Recovery Hut (no interior yet, so the door works like the counter)",
+    "door": true
    }
   ],
   "018": [
@@ -370,7 +376,8 @@
      4
     ],
     "k": "bay",
-    "why": "Port Ember healing centre (no interior yet, so the door works like the counter)"
+    "why": "Port Ember healing centre (no interior yet, so the door works like the counter)",
+    "door": true
    }
   ],
   "022": [
@@ -461,7 +468,8 @@
      4
     ],
     "k": "bay",
-    "why": "Junk Market Recovery Bay (no interior yet, so the door works like the counter)"
+    "why": "Junk Market Recovery Bay (no interior yet, so the door works like the counter)",
+    "door": true
    },
    {
     "tile": [
@@ -469,7 +477,8 @@
      12
     ],
     "k": "shop",
-    "why": "Junk Market big shop (no interior yet, so the door works like the counter)"
+    "why": "Junk Market big shop (no interior yet, so the door works like the counter)",
+    "door": true
    },
    {
     "tile": [
@@ -542,7 +551,8 @@
      4
     ],
     "k": "bay",
-    "why": "Saltreach second Recovery Bay (no interior yet, so the door works like the counter)"
+    "why": "Saltreach second Recovery Bay (no interior yet, so the door works like the counter)",
+    "door": true
    },
    {
     "tile": [
@@ -573,7 +583,8 @@
      4
     ],
     "k": "bay",
-    "why": "Neon Boulevard Recovery Bay (no interior yet, so the door works like the counter)"
+    "why": "Neon Boulevard Recovery Bay (no interior yet, so the door works like the counter)",
+    "door": true
    },
    {
     "tile": [
