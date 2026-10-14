@@ -398,6 +398,15 @@
     "k": "sign",
     "t": "The door is locked. Nobody seems to be home.",
     "why": "door plan: house door with no interior yet"
+   },
+   {
+    "tile": [
+     18,
+     0
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
    }
   ],
   "026": [
@@ -409,9 +418,37 @@
     "k": "sign",
     "t": "The door is locked. Nobody seems to be home.",
     "why": "door plan: house door with no interior yet"
+   },
+   {
+    "tile": [
+     18,
+     15
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
    }
   ],
-  "028": [],
+  "028": [
+   {
+    "tile": [
+     7,
+     14
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   },
+   {
+    "tile": [
+     8,
+     15
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   }
+  ],
   "029": [
    {
     "tile": [
@@ -543,7 +580,26 @@
     "to": "185"
    }
   ],
-  "052": [],
+  "052": [
+   {
+    "tile": [
+     12,
+     3
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   },
+   {
+    "tile": [
+     12,
+     4
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   }
+  ],
   "053": [
    {
     "tile": [
@@ -562,9 +618,46 @@
     "k": "house",
     "to": "171",
     "why": "house door: opens the shared Thalassa house"
+   },
+   {
+    "tile": [
+     1,
+     0
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   },
+   {
+    "tile": [
+     2,
+     0
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
    }
   ],
-  "059": [],
+  "059": [
+   {
+    "tile": [
+     1,
+     9
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   },
+   {
+    "tile": [
+     1,
+     10
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   }
+  ],
   "062": [
    {
     "tile": [
@@ -643,6 +736,15 @@
     "k": "sign",
     "t": "Fallen stone blocks the way.",
     "why": "door plan: ruin door with no interior yet"
+   },
+   {
+    "tile": [
+     17,
+     11
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
    }
   ],
   "073": [
@@ -681,6 +783,24 @@
     "k": "house",
     "to": "183",
     "why": "walk-in door: dig_camp_tent"
+   },
+   {
+    "tile": [
+     11,
+     14
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   },
+   {
+    "tile": [
+     12,
+     14
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
    }
   ],
   "075": [
@@ -701,6 +821,15 @@
     "k": "sign",
     "t": "Fallen stone blocks the way.",
     "why": "door plan: ruin door with no interior yet"
+   },
+   {
+    "tile": [
+     11,
+     10
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
    }
   ],
   "076": [
@@ -721,6 +850,24 @@
     "k": "sign",
     "t": "Fallen stone blocks the way.",
     "why": "door plan: ruin door with no interior yet"
+   },
+   {
+    "tile": [
+     4,
+     10
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   },
+   {
+    "tile": [
+     15,
+     12
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
    }
   ],
   "077": [
@@ -732,6 +879,24 @@
     "k": "sign",
     "t": "Fallen stone blocks the way.",
     "why": "door plan: ruin door with no interior yet"
+   },
+   {
+    "tile": [
+     7,
+     14
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   },
+   {
+    "tile": [
+     8,
+     14
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
    }
   ],
   "079": [
@@ -772,6 +937,24 @@
     "k": "house",
     "why": "house door: opens the shared Pyros house",
     "to": "174"
+   },
+   {
+    "tile": [
+     13,
+     13
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   },
+   {
+    "tile": [
+     14,
+     13
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
    }
   ],
   "085": [
@@ -792,6 +975,15 @@
     "k": "sign",
     "t": "This old shaft has caved in. There's no way through.",
     "why": "door plan: mine door with no interior yet"
+   },
+   {
+    "tile": [
+     15,
+     14
+    ],
+    "k": "stop",
+    "t": "This ladder is broken. You can't climb it.",
+    "why": "dead-end ladder (tools/sections/dead_ends.py)"
    }
   ],
   "086": [
@@ -812,6 +1004,60 @@
     "k": "sign",
     "t": "This old shaft has caved in. There's no way through.",
     "why": "door plan: mine door with no interior yet"
+   },
+   {
+    "tile": [
+     2,
+     3
+    ],
+    "k": "stop",
+    "t": "This ladder is broken. You can't climb it.",
+    "why": "dead-end ladder (tools/sections/dead_ends.py)"
+   },
+   {
+    "tile": [
+     3,
+     3
+    ],
+    "k": "stop",
+    "t": "This ladder is broken. You can't climb it.",
+    "why": "dead-end ladder (tools/sections/dead_ends.py)"
+   },
+   {
+    "tile": [
+     5,
+     10
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   },
+   {
+    "tile": [
+     5,
+     11
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   },
+   {
+    "tile": [
+     5,
+     13
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   },
+   {
+    "tile": [
+     6,
+     13
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
    }
   ],
   "087": [
@@ -850,6 +1096,42 @@
     "k": "sign",
     "t": "This old shaft has caved in. There's no way through.",
     "why": "door plan: mine door with no interior yet"
+   },
+   {
+    "tile": [
+     3,
+     9
+    ],
+    "k": "stop",
+    "t": "This shaft has caved in. There's no way through.",
+    "why": "dead-end mine (tools/sections/dead_ends.py)"
+   },
+   {
+    "tile": [
+     4,
+     8
+    ],
+    "k": "stop",
+    "t": "This shaft has caved in. There's no way through.",
+    "why": "dead-end mine (tools/sections/dead_ends.py)"
+   },
+   {
+    "tile": [
+     4,
+     9
+    ],
+    "k": "stop",
+    "t": "This shaft has caved in. There's no way through.",
+    "why": "dead-end mine (tools/sections/dead_ends.py)"
+   },
+   {
+    "tile": [
+     11,
+     8
+    ],
+    "k": "stop",
+    "t": "This ladder is broken. You can't climb it.",
+    "why": "dead-end ladder (tools/sections/dead_ends.py)"
    }
   ],
   "088": [
@@ -879,6 +1161,15 @@
     "k": "sign",
     "t": "This old shaft has caved in. There's no way through.",
     "why": "door plan: mine door with no interior yet"
+   },
+   {
+    "tile": [
+     2,
+     11
+    ],
+    "k": "stop",
+    "t": "This shaft has caved in. There's no way through.",
+    "why": "dead-end mine (tools/sections/dead_ends.py)"
    }
   ],
   "089": [
@@ -917,6 +1208,15 @@
     "k": "sign",
     "t": "This old shaft has caved in. There's no way through.",
     "why": "door plan: mine door with no interior yet"
+   },
+   {
+    "tile": [
+     2,
+     1
+    ],
+    "k": "stop",
+    "t": "This shaft has caved in. There's no way through.",
+    "why": "dead-end mine (tools/sections/dead_ends.py)"
    }
   ],
   "090": [
@@ -928,6 +1228,60 @@
     "k": "sign",
     "t": "This old shaft has caved in. There's no way through.",
     "why": "door plan: mine door with no interior yet"
+   },
+   {
+    "tile": [
+     19,
+     1
+    ],
+    "k": "stop",
+    "t": "This ladder is broken. You can't climb it.",
+    "why": "dead-end ladder (tools/sections/dead_ends.py)"
+   },
+   {
+    "tile": [
+     19,
+     3
+    ],
+    "k": "stop",
+    "t": "This ladder is broken. You can't climb it.",
+    "why": "dead-end ladder (tools/sections/dead_ends.py)"
+   },
+   {
+    "tile": [
+     20,
+     2
+    ],
+    "k": "stop",
+    "t": "This ladder is broken. You can't climb it.",
+    "why": "dead-end ladder (tools/sections/dead_ends.py)"
+   },
+   {
+    "tile": [
+     14,
+     15
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   },
+   {
+    "tile": [
+     15,
+     15
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   },
+   {
+    "tile": [
+     19,
+     14
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
    }
   ],
   "093": [
@@ -1186,7 +1540,433 @@
     "to": "181",
     "why": "walk-in door: arrival_research_dome"
    }
-  ]
+  ],
+  "016": [
+   {
+    "tile": [
+     7,
+     11
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   }
+  ],
+  "019": [
+   {
+    "tile": [
+     18,
+     0
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   }
+  ],
+  "023": [
+   {
+    "tile": [
+     11,
+     15
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   },
+   {
+    "tile": [
+     12,
+     15
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   }
+  ],
+  "024": [
+   {
+    "tile": [
+     19,
+     14
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   },
+   {
+    "tile": [
+     20,
+     14
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   }
+  ],
+  "027": [
+   {
+    "tile": [
+     16,
+     12
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   },
+   {
+    "tile": [
+     16,
+     15
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   },
+   {
+    "tile": [
+     17,
+     14
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   }
+  ],
+  "057": [],
+  "061": [
+   {
+    "tile": [
+     7,
+     2
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   },
+   {
+    "tile": [
+     8,
+     2
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   }
+  ],
+  "067": [
+   {
+    "tile": [
+     6,
+     12
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   }
+  ],
+  "068": [
+   {
+    "tile": [
+     18,
+     12
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   }
+  ],
+  "092": [
+   {
+    "tile": [
+     7,
+     2
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   },
+   {
+    "tile": [
+     8,
+     2
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   }
+  ],
+  "101": [
+   {
+    "tile": [
+     17,
+     5
+    ],
+    "k": "stop",
+    "t": "This ladder is broken. You can't climb it.",
+    "why": "dead-end ladder (tools/sections/dead_ends.py)"
+   },
+   {
+    "tile": [
+     17,
+     6
+    ],
+    "k": "stop",
+    "t": "This ladder is broken. You can't climb it.",
+    "why": "dead-end ladder (tools/sections/dead_ends.py)"
+   }
+  ],
+  "121": [
+   {
+    "tile": [
+     3,
+     4
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   },
+   {
+    "tile": [
+     12,
+     4
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   }
+  ],
+  "129": [
+   {
+    "tile": [
+     3,
+     3
+    ],
+    "k": "stop",
+    "t": "This ladder is broken. You can't climb it.",
+    "why": "dead-end ladder (tools/sections/dead_ends.py)"
+   },
+   {
+    "tile": [
+     11,
+     7
+    ],
+    "k": "stop",
+    "t": "This ladder is broken. You can't climb it.",
+    "why": "dead-end ladder (tools/sections/dead_ends.py)"
+   }
+  ],
+  "130": [
+   {
+    "tile": [
+     3,
+     9
+    ],
+    "k": "stop",
+    "t": "This ladder is broken. You can't climb it.",
+    "why": "dead-end ladder (tools/sections/dead_ends.py)"
+   }
+  ],
+  "131": [
+   {
+    "tile": [
+     13,
+     7
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   }
+  ],
+  "132": [
+   {
+    "tile": [
+     12,
+     12
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   },
+   {
+    "tile": [
+     12,
+     14
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   }
+  ],
+  "139": [
+   {
+    "tile": [
+     11,
+     0
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   }
+  ],
+  "146": [],
+  "148": [
+   {
+    "tile": [
+     7,
+     14
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   },
+   {
+    "tile": [
+     8,
+     14
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   }
+  ],
+  "151": [
+   {
+    "tile": [
+     2,
+     5
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   },
+   {
+    "tile": [
+     2,
+     8
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   },
+   {
+    "tile": [
+     13,
+     5
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   },
+   {
+    "tile": [
+     13,
+     8
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   }
+  ],
+  "160": [
+   {
+    "tile": [
+     11,
+     0
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   },
+   {
+    "tile": [
+     12,
+     0
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   }
+  ],
+  "161": [
+   {
+    "tile": [
+     11,
+     0
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   }
+  ],
+  "162": [
+   {
+    "tile": [
+     2,
+     2
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   },
+   {
+    "tile": [
+     2,
+     5
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   },
+   {
+    "tile": [
+     3,
+     2
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   }
+  ],
+  "163": [
+   {
+    "tile": [
+     1,
+     1
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   },
+   {
+    "tile": [
+     2,
+     1
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   },
+   {
+    "tile": [
+     14,
+     15
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   },
+   {
+    "tile": [
+     15,
+     15
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   }
+  ],
+  "012": [],
+  "013": []
  },
  "arrival": {
   "dustara": {

@@ -30,19 +30,19 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 | 017 Frontier: Palm Isle | 18,1 | 3x Stasis Pod | 1 |
 | 017 Frontier: Palm Isle | 4,14 | 2x Cure Spray | 1 |
 | 018 Frontier: Port Ember | 10,1 | 150x Stardust | 1 |
-| 019 Frontier: Long Dock | 18,1 | 5x Stasis Pod | 2 |
-| 019 Frontier: Long Dock | 15,11 | 3x Med Gel | 2 |
+| 019 Frontier: Long Dock | 15,11 | 5x Stasis Pod | 2 |
+| 019 Frontier: Long Dock | 9,1 | 3x Med Gel | 2 |
 | 020 Frontier: Ridge Path Part A | 18,1 | 2x Harmonic Pod | 2 |
 | 020 Frontier: Ridge Path Part A | 5,1 | 5x Stasis Pod | 2 |
 | 021 Frontier: Ridge Path Part B | 11,14 | 1x Revive Spark | 2 |
 | 021 Frontier: Ridge Path Part B | 22,14 | 300x Stardust | 2 |
 | 022 Frontier: Forge Gate | 11,14 | 2x Harmonic Pod | 2 |
-| 023 Frontier: Fortress Gate | 11,14 | 2x Ether Gel | 4 |
-| 024 Frontier: Lava Bridges Part A | 20,13 | 3x Mega Gel | 4 |
+| 023 Frontier: Fortress Gate | 3,5 | 2x Ether Gel | 4 |
 | 024 Frontier: Lava Bridges Part A | 17,12 | 3x Mega Gel | 4 |
+| 024 Frontier: Lava Bridges Part A | 4,9 | 3x Mega Gel | 4 |
 | 025 Frontier: Lava Bridges Part B | 15,13 | 800x Stardust | 4 |
 | 025 Frontier: Lava Bridges Part B | 22,14 | 1x Full Gel | 4 |
-| 026 Frontier: Shuttle Pad | 14,12 | 5x Harmonic Pod | 4 |
+| 026 Frontier: Shuttle Pad | 7,3 | 5x Harmonic Pod | 4 |
 | 027 Frontier: Shadow Tunnel Mouth | 6,14 | 5x Harmonic Pod | 4 |
 | 028 Frontier: Magma Mines Gate | 22,10 | 1x Full Gel | 4 |
 
@@ -81,8 +81,8 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 
 | Section | Tile | Item | Tier |
 |---|---|---|---|
-| 052 Port Saltreach Docks | 11,3 | 2x Harmonic Pod | 2 |
-| 053 Saltreach Market | 1,1 | 1x Mega Gel | 2 |
+| 052 Port Saltreach Docks | 19,14 | 2x Harmonic Pod | 2 |
+| 053 Saltreach Market | 20,13 | 1x Mega Gel | 2 |
 | 057 Coral Route Part A | 17,1 | 3x Med Gel | 2 |
 | 057 Coral Route Part A | 6,13 | 1x Revive Spark | 2 |
 | 058 Coral Route Part B | 5,2 | 1x Signal Jammer | 2 |
@@ -98,9 +98,9 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 | 066 Arcade District | 8,14 | 1x Ether Gel | 3 |
 | 066 Arcade District | 11,2 | 500x Stardust | 3 |
 | 067 Broadcast Route Part A | 19,3 | 2x Revive Spark | 3 |
-| 067 Broadcast Route Part A | 4,11 | 2x Mega Gel | 3 |
-| 068 Broadcast Route Part B | 12,12 | 500x Stardust | 3 |
-| 068 Broadcast Route Part B | 4,11 | 2x Mega Gel | 3 |
+| 067 Broadcast Route Part A | 19,13 | 2x Mega Gel | 3 |
+| 068 Broadcast Route Part B | 7,11 | 500x Stardust | 3 |
+| 068 Broadcast Route Part B | 1,5 | 2x Mega Gel | 3 |
 
 ## Glyphos (8)
 
@@ -119,16 +119,16 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 
 | Section | Tile | Item | Tier |
 |---|---|---|---|
-| 082 Cinder Hollow | 6,11 | 800x Stardust | 4 |
-| 085 Lava Rail Part A | 15,13 | 2x Ether Gel | 4 |
-| 085 Lava Rail Part A | 7,13 | 2x Revive Spark | 4 |
-| 086 Lava Rail Part B | 9,10 | 800x Stardust | 4 |
-| 086 Lava Rail Part B | 20,12 | 2x Revive Spark | 4 |
+| 082 Cinder Hollow | 5,12 | 800x Stardust | 4 |
+| 085 Lava Rail Part A | 7,13 | 2x Ether Gel | 4 |
+| 085 Lava Rail Part A | 16,2 | 2x Revive Spark | 4 |
+| 086 Lava Rail Part B | 19,12 | 800x Stardust | 4 |
+| 086 Lava Rail Part B | 9,10 | 2x Revive Spark | 4 |
 | 087 Deep Mines B1 | 14,12 | 800x Stardust | 4 |
 | 088 Deep Mines B2 | 12,10 | 3x Mega Gel | 4 |
-| 089 Deep Mines B3 | 2,2 | 1x Full Gel | 4 |
-| 090 Furnace Ridge (Pyros) | 13,1 | 2x Revive Spark | 4 |
-| 090 Furnace Ridge (Pyros) | 14,13 | 800x Stardust | 4 |
+| 089 Deep Mines B3 | 10,5 | 1x Full Gel | 4 |
+| 090 Furnace Ridge (Pyros) | 7,10 | 2x Revive Spark | 4 |
+| 090 Furnace Ridge (Pyros) | 10,1 | 800x Stardust | 4 |
 
 ## Glacia (13)
 
@@ -177,11 +177,11 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 | 127 Lantern Streets Part A | 4,3 | 1x Max Revive | 6 |
 | 128 Lantern Streets Part B | 11,4 | 3x Full Gel | 6 |
 | 128 Lantern Streets Part B | 16,1 | 3x Full Gel | 6 |
-| 129 The Sinkhole B1 | 13,9 | 1x Max Revive | 6 |
-| 129 The Sinkhole B1 | 10,3 | 3x Full Gel | 6 |
+| 129 The Sinkhole B1 | 10,3 | 1x Max Revive | 6 |
+| 129 The Sinkhole B1 | 13,9 | 3x Full Gel | 6 |
 | 130 The Sinkhole B2 | 13,2 | 3x Full Gel | 6 |
 | 131 The Sinkhole B3 | 12,13 | 1600x Stardust | 6 |
-| 131 The Sinkhole B3 | 9,4 | 3x Full Gel | 6 |
+| 131 The Sinkhole B3 | 9,5 | 3x Full Gel | 6 |
 | 132 The Sinkhole B4 | 1,12 | 3x Ether Gel | 6 |
 
 ## Starfall Rift (13)
@@ -191,8 +191,8 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 | 136 Rim Camp | 17,12 | 1600x Stardust | 6 |
 | 138 Seedpod Fields Part A | 16,14 | 3x Ether Gel | 6 |
 | 138 Seedpod Fields Part A | 11,2 | 1x Singularity Pod | 6 |
-| 139 Seedpod Fields Part B | 13,1 | 3x Ether Gel | 6 |
-| 139 Seedpod Fields Part B | 18,14 | 1600x Stardust | 6 |
+| 139 Seedpod Fields Part B | 18,14 | 3x Ether Gel | 6 |
+| 139 Seedpod Fields Part B | 7,3 | 1600x Stardust | 6 |
 | 140 Teo's Old Camp | 17,12 | 1600x Stardust | 6 |
 | 141 Crater Rim | 10,13 | 1x Max Revive | 6 |
 | 141 Crater Rim | 19,14 | 3x Full Gel | 6 |
@@ -222,9 +222,9 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 | 157 Sun Forge | 8,5 | 3x Full Gel | 7 |
 | 158 Crystal Ruins 1F | 14,5 | 2x Max Revive | 7 |
 | 159 Crystal Ruins 2F | 12,12 | 2x Singularity Pod | 7 |
-| 160 Blighted Forest Part A | 12,1 | 5x Ether Gel | 7 |
-| 160 Blighted Forest Part A | 12,14 | 2x Max Revive | 7 |
-| 161 Blighted Forest Part B | 11,2 | 2x Max Revive | 7 |
-| 161 Blighted Forest Part B | 12,4 | 3x Full Gel | 7 |
-| 162 Edge of the Void | 3,3 | 2x Max Revive | 7 |
-| 163 Seedmother's Grove | 9,4 | 2x Max Revive | 7 |
+| 160 Blighted Forest Part A | 11,14 | 5x Ether Gel | 7 |
+| 160 Blighted Forest Part A | 4,3 | 2x Max Revive | 7 |
+| 161 Blighted Forest Part B | 18,3 | 2x Max Revive | 7 |
+| 161 Blighted Forest Part B | 6,5 | 3x Full Gel | 7 |
+| 162 Edge of the Void | 21,4 | 2x Max Revive | 7 |
+| 163 Seedmother's Grove | 10,5 | 2x Max Revive | 7 |

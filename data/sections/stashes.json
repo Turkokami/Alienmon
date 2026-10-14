@@ -235,8 +235,8 @@
    "section": "019",
    "name": "Molten Frontier: Long Dock",
    "tile": [
-    18,
-    1
+    15,
+    11
    ],
    "item": "stasis",
    "n": 5,
@@ -246,8 +246,8 @@
    "section": "019",
    "name": "Molten Frontier: Long Dock",
    "tile": [
-    15,
-    11
+    9,
+    1
    ],
    "item": "gel",
    "n": 3,
@@ -312,8 +312,8 @@
    "section": "023",
    "name": "Molten Frontier: Fortress Gate",
    "tile": [
-    11,
-    14
+    3,
+    5
    ],
    "item": "ether",
    "n": 2,
@@ -323,8 +323,8 @@
    "section": "024",
    "name": "Molten Frontier: Lava Bridges Part A",
    "tile": [
-    20,
-    13
+    17,
+    12
    ],
    "item": "megagel",
    "n": 3,
@@ -334,8 +334,8 @@
    "section": "024",
    "name": "Molten Frontier: Lava Bridges Part A",
    "tile": [
-    17,
-    12
+    4,
+    9
    ],
    "item": "megagel",
    "n": 3,
@@ -367,8 +367,8 @@
    "section": "026",
    "name": "Molten Frontier: Shuttle Pad",
    "tile": [
-    14,
-    12
+    7,
+    3
    ],
    "item": "harmonic",
    "n": 5,
@@ -637,8 +637,8 @@
    "section": "052",
    "name": "Port Saltreach Docks",
    "tile": [
-    11,
-    3
+    19,
+    14
    ],
    "item": "harmonic",
    "n": 2,
@@ -648,8 +648,8 @@
    "section": "053",
    "name": "Saltreach Market",
    "tile": [
-    1,
-    1
+    20,
+    13
    ],
    "item": "megagel",
    "n": 1,
@@ -771,8 +771,8 @@
    "section": "067",
    "name": "Broadcast Route Part A",
    "tile": [
-    4,
-    11
+    19,
+    13
    ],
    "item": "megagel",
    "n": 2,
@@ -782,8 +782,8 @@
    "section": "068",
    "name": "Broadcast Route Part B",
    "tile": [
-    12,
-    12
+    7,
+    11
    ],
    "item": "dust",
    "n": 500,
@@ -793,8 +793,8 @@
    "section": "068",
    "name": "Broadcast Route Part B",
    "tile": [
-    4,
-    11
+    1,
+    5
    ],
    "item": "megagel",
    "n": 2,
@@ -896,8 +896,8 @@
    "section": "082",
    "name": "Cinder Hollow",
    "tile": [
-    6,
-    11
+    5,
+    12
    ],
    "item": "dust",
    "n": 800,
@@ -907,7 +907,7 @@
    "section": "085",
    "name": "Lava Rail Part A",
    "tile": [
-    15,
+    7,
     13
    ],
    "item": "ether",
@@ -918,8 +918,8 @@
    "section": "085",
    "name": "Lava Rail Part A",
    "tile": [
-    7,
-    13
+    16,
+    2
    ],
    "item": "revive",
    "n": 2,
@@ -929,8 +929,8 @@
    "section": "086",
    "name": "Lava Rail Part B",
    "tile": [
-    9,
-    10
+    19,
+    12
    ],
    "item": "dust",
    "n": 800,
@@ -940,8 +940,8 @@
    "section": "086",
    "name": "Lava Rail Part B",
    "tile": [
-    20,
-    12
+    9,
+    10
    ],
    "item": "revive",
    "n": 2,
@@ -973,8 +973,8 @@
    "section": "089",
    "name": "Deep Mines B3",
    "tile": [
-    2,
-    2
+    10,
+    5
    ],
    "item": "fullgel",
    "n": 1,
@@ -984,8 +984,8 @@
    "section": "090",
    "name": "Furnace Ridge (Pyros)",
    "tile": [
-    13,
-    1
+    7,
+    10
    ],
    "item": "revive",
    "n": 2,
@@ -995,8 +995,8 @@
    "section": "090",
    "name": "Furnace Ridge (Pyros)",
    "tile": [
-    14,
-    13
+    10,
+    1
    ],
    "item": "dust",
    "n": 800,
@@ -1322,8 +1322,8 @@
    "section": "129",
    "name": "The Sinkhole B1",
    "tile": [
-    13,
-    9
+    10,
+    3
    ],
    "item": "maxrevive",
    "n": 1,
@@ -1333,8 +1333,8 @@
    "section": "129",
    "name": "The Sinkhole B1",
    "tile": [
-    10,
-    3
+    13,
+    9
    ],
    "item": "fullgel",
    "n": 3,
@@ -1367,7 +1367,7 @@
    "name": "The Sinkhole B3",
    "tile": [
     9,
-    4
+    5
    ],
    "item": "fullgel",
    "n": 3,
@@ -1423,8 +1423,8 @@
    "section": "139",
    "name": "Seedpod Fields Part B",
    "tile": [
-    13,
-    1
+    18,
+    14
    ],
    "item": "ether",
    "n": 3,
@@ -1434,8 +1434,8 @@
    "section": "139",
    "name": "Seedpod Fields Part B",
    "tile": [
-    18,
-    14
+    7,
+    3
    ],
    "item": "dust",
    "n": 1600,
@@ -1658,8 +1658,8 @@
    "section": "160",
    "name": "Blighted Forest Part A",
    "tile": [
-    12,
-    1
+    11,
+    14
    ],
    "item": "ether",
    "n": 5,
@@ -1669,8 +1669,8 @@
    "section": "160",
    "name": "Blighted Forest Part A",
    "tile": [
-    12,
-    14
+    4,
+    3
    ],
    "item": "maxrevive",
    "n": 2,
@@ -1680,8 +1680,8 @@
    "section": "161",
    "name": "Blighted Forest Part B",
    "tile": [
-    11,
-    2
+    18,
+    3
    ],
    "item": "maxrevive",
    "n": 2,
@@ -1691,8 +1691,8 @@
    "section": "161",
    "name": "Blighted Forest Part B",
    "tile": [
-    12,
-    4
+    6,
+    5
    ],
    "item": "fullgel",
    "n": 3,
@@ -1702,8 +1702,8 @@
    "section": "162",
    "name": "Edge of the Void",
    "tile": [
-    3,
-    3
+    21,
+    4
    ],
    "item": "maxrevive",
    "n": 2,
@@ -1713,8 +1713,8 @@
    "section": "163",
    "name": "Seedmother's Grove",
    "tile": [
-    9,
-    4
+    10,
+    5
    ],
    "item": "maxrevive",
    "n": 2,
