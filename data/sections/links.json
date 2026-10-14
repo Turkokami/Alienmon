@@ -330,15 +330,6 @@
   "007": [
    {
     "tile": [
-     4,
-     3
-    ],
-    "k": "sign",
-    "t": "The door is locked. Nobody seems to be home.",
-    "why": "door plan: house door with no interior yet"
-   },
-   {
-    "tile": [
      22,
      4
     ],
@@ -383,24 +374,6 @@
   "022": [
    {
     "tile": [
-     4,
-     12
-    ],
-    "k": "sign",
-    "t": "The door is locked. Nobody seems to be home.",
-    "why": "door plan: house door with no interior yet"
-   },
-   {
-    "tile": [
-     21,
-     12
-    ],
-    "k": "sign",
-    "t": "The door is locked. Nobody seems to be home.",
-    "why": "door plan: house door with no interior yet"
-   },
-   {
-    "tile": [
      18,
      0
     ],
@@ -410,15 +383,6 @@
    }
   ],
   "026": [
-   {
-    "tile": [
-     5,
-     11
-    ],
-    "k": "sign",
-    "t": "The door is locked. Nobody seems to be home.",
-    "why": "door plan: house door with no interior yet"
-   },
    {
     "tile": [
      18,
@@ -463,15 +427,6 @@
     "tile": [
      18,
      5
-    ],
-    "k": "sign",
-    "t": "The door is locked. Nobody seems to be home.",
-    "why": "door plan: house door with no interior yet"
-   },
-   {
-    "tile": [
-     6,
-     11
     ],
     "k": "sign",
     "t": "The door is locked. Nobody seems to be home.",
@@ -547,17 +502,7 @@
     "why": "walk-in door: landing_dome"
    }
   ],
-  "042": [
-   {
-    "tile": [
-     5,
-     13
-    ],
-    "k": "house",
-    "why": "house door: opens the shared Sporeholm house",
-    "to": "173"
-   }
-  ],
+  "042": [],
   "047": [
    {
     "tile": [
@@ -658,17 +603,7 @@
     "why": "dead-end stairs (tools/sections/dead_ends.py)"
    }
   ],
-  "062": [
-   {
-    "tile": [
-     19,
-     9
-    ],
-    "k": "house",
-    "why": "house door: opens the shared Neonis house",
-    "to": "176"
-   }
-  ],
+  "062": [],
   "063": [
    {
     "tile": [
@@ -678,15 +613,6 @@
     "k": "bay",
     "why": "Neon Boulevard Recovery Bay (no interior yet, so the door works like the counter)",
     "door": true
-   },
-   {
-    "tile": [
-     19,
-     12
-    ],
-    "k": "house",
-    "why": "house door: opens the shared Neonis house",
-    "to": "176"
    }
   ],
   "066": [
@@ -730,15 +656,6 @@
    },
    {
     "tile": [
-     11,
-     0
-    ],
-    "k": "sign",
-    "t": "Fallen stone blocks the way.",
-    "why": "door plan: ruin door with no interior yet"
-   },
-   {
-    "tile": [
      17,
      11
     ],
@@ -765,15 +682,6 @@
     "k": "house",
     "why": "house door: opens the shared Glyphos house",
     "to": "177"
-   },
-   {
-    "tile": [
-     4,
-     1
-    ],
-    "k": "sign",
-    "t": "This old shaft has caved in. There's no way through.",
-    "why": "door plan: mine door with no interior yet"
    },
    {
     "tile": [
@@ -806,24 +714,6 @@
   "075": [
    {
     "tile": [
-     4,
-     0
-    ],
-    "k": "sign",
-    "t": "Fallen stone blocks the way.",
-    "why": "door plan: ruin door with no interior yet"
-   },
-   {
-    "tile": [
-     11,
-     0
-    ],
-    "k": "sign",
-    "t": "Fallen stone blocks the way.",
-    "why": "door plan: ruin door with no interior yet"
-   },
-   {
-    "tile": [
      11,
      10
     ],
@@ -833,24 +723,6 @@
    }
   ],
   "076": [
-   {
-    "tile": [
-     6,
-     0
-    ],
-    "k": "sign",
-    "t": "Fallen stone blocks the way.",
-    "why": "door plan: ruin door with no interior yet"
-   },
-   {
-    "tile": [
-     20,
-     0
-    ],
-    "k": "sign",
-    "t": "Fallen stone blocks the way.",
-    "why": "door plan: ruin door with no interior yet"
-   },
    {
     "tile": [
      4,
@@ -922,24 +794,6 @@
   "082": [
    {
     "tile": [
-     3,
-     10
-    ],
-    "k": "house",
-    "why": "house door: opens the shared Pyros house",
-    "to": "174"
-   },
-   {
-    "tile": [
-     19,
-     11
-    ],
-    "k": "house",
-    "why": "house door: opens the shared Pyros house",
-    "to": "174"
-   },
-   {
-    "tile": [
      13,
      13
     ],
@@ -969,15 +823,6 @@
    },
    {
     "tile": [
-     3,
-     0
-    ],
-    "k": "sign",
-    "t": "This old shaft has caved in. There's no way through.",
-    "why": "door plan: mine door with no interior yet"
-   },
-   {
-    "tile": [
      15,
      14
     ],
@@ -987,15 +832,6 @@
    }
   ],
   "086": [
-   {
-    "tile": [
-     2,
-     1
-    ],
-    "k": "sign",
-    "t": "This old shaft has caved in. There's no way through.",
-    "why": "door plan: mine door with no interior yet"
-   },
    {
     "tile": [
      19,
@@ -1063,15 +899,6 @@
   "087": [
    {
     "tile": [
-     1,
-     9
-    ],
-    "k": "sign",
-    "t": "This old shaft has caved in. There's no way through.",
-    "why": "door plan: mine door with no interior yet"
-   },
-   {
-    "tile": [
      3,
      2
     ],
@@ -1083,15 +910,6 @@
     "tile": [
      3,
      8
-    ],
-    "k": "sign",
-    "t": "This old shaft has caved in. There's no way through.",
-    "why": "door plan: mine door with no interior yet"
-   },
-   {
-    "tile": [
-     11,
-     1
     ],
     "k": "sign",
     "t": "This old shaft has caved in. There's no way through.",
@@ -1137,26 +955,8 @@
   "088": [
    {
     "tile": [
-     1,
-     10
-    ],
-    "k": "sign",
-    "t": "This old shaft has caved in. There's no way through.",
-    "why": "door plan: mine door with no interior yet"
-   },
-   {
-    "tile": [
      2,
      1
-    ],
-    "k": "sign",
-    "t": "This old shaft has caved in. There's no way through.",
-    "why": "door plan: mine door with no interior yet"
-   },
-   {
-    "tile": [
-     13,
-     2
     ],
     "k": "sign",
     "t": "This old shaft has caved in. There's no way through.",
@@ -1173,24 +973,6 @@
    }
   ],
   "089": [
-   {
-    "tile": [
-     2,
-     0
-    ],
-    "k": "sign",
-    "t": "This old shaft has caved in. There's no way through.",
-    "why": "door plan: mine door with no interior yet"
-   },
-   {
-    "tile": [
-     2,
-     5
-    ],
-    "k": "sign",
-    "t": "This old shaft has caved in. There's no way through.",
-    "why": "door plan: mine door with no interior yet"
-   },
    {
     "tile": [
      13,
@@ -1296,15 +1078,6 @@
    },
    {
     "tile": [
-     6,
-     11
-    ],
-    "k": "house",
-    "why": "house door: opens the shared Glacia house",
-    "to": "178"
-   },
-   {
-    "tile": [
      17,
      12
     ],
@@ -1316,33 +1089,6 @@
   "114": [
    {
     "tile": [
-     17,
-     2
-    ],
-    "k": "house",
-    "why": "walk-in door: Airship Cabin",
-    "to": "179"
-   },
-   {
-    "tile": [
-     4,
-     9
-    ],
-    "k": "house",
-    "why": "house door: opens the shared Halo house",
-    "to": "175"
-   },
-   {
-    "tile": [
-     11,
-     2
-    ],
-    "k": "sign",
-    "t": "The shrine door is sealed. Old wind still whistles through the cracks.",
-    "why": "door plan: shrine door with no interior yet"
-   },
-   {
-    "tile": [
      4,
      3
     ],
@@ -1352,15 +1098,6 @@
    }
   ],
   "115": [
-   {
-    "tile": [
-     4,
-     11
-    ],
-    "k": "house",
-    "why": "house door: opens the shared Halo house",
-    "to": "175"
-   },
    {
     "tile": [
      11,
@@ -1395,15 +1132,6 @@
    }
   ],
   "124": [
-   {
-    "tile": [
-     6,
-     12
-    ],
-    "k": "sign",
-    "t": "The door is locked. Nobody seems to be home.",
-    "why": "door plan: house door with no interior yet"
-   },
    {
     "tile": [
      7,
@@ -1475,15 +1203,6 @@
    },
    {
     "tile": [
-     8,
-     12
-    ],
-    "k": "house",
-    "why": "house door: opens the shared Starfall Rift house",
-    "to": "172"
-   },
-   {
-    "tile": [
      14,
      12
     ],
@@ -1501,36 +1220,9 @@
     "k": "house",
     "why": "house door: opens the shared Starfall Rift house",
     "to": "172"
-   },
-   {
-    "tile": [
-     3,
-     11
-    ],
-    "k": "house",
-    "why": "house door: opens the shared Starfall Rift house",
-    "to": "172"
-   },
-   {
-    "tile": [
-     21,
-     14
-    ],
-    "k": "house",
-    "why": "house door: opens the shared Starfall Rift house",
-    "to": "172"
    }
   ],
   "153": [
-   {
-    "tile": [
-     4,
-     11
-    ],
-    "k": "sign",
-    "t": "The door is locked. Nobody seems to be home.",
-    "why": "door plan: house door with no interior yet"
-   },
    {
     "tile": [
      19,
@@ -1636,15 +1328,6 @@
   "061": [
    {
     "tile": [
-     7,
-     2
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   },
-   {
-    "tile": [
      8,
      2
     ],
@@ -1676,15 +1359,6 @@
    }
   ],
   "092": [
-   {
-    "tile": [
-     7,
-     2
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   },
    {
     "tile": [
      8,
@@ -2404,7 +2078,7 @@
   {
    "section": "052",
    "tile": [
-    5,
+    11,
     12
    ],
    "to": "167",
@@ -2424,10 +2098,10 @@
    ],
    "to": "052",
    "at": [
-    6,
+    10,
     12
    ],
-   "face": "right",
+   "face": "left",
    "kind": "door",
    "parent": "052"
   },
@@ -2439,10 +2113,10 @@
    ],
    "to": "052",
    "at": [
-    6,
+    10,
     12
    ],
-   "face": "right",
+   "face": "left",
    "kind": "door",
    "parent": "052"
   },

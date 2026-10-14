@@ -81,7 +81,7 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 
 | Section | Tile | Item | Tier |
 |---|---|---|---|
-| 052 Port Saltreach Docks | 19,14 | 2x Harmonic Pod | 2 |
+| 052 Port Saltreach Docks | 20,14 | 2x Harmonic Pod | 2 |
 | 053 Saltreach Market | 20,13 | 1x Mega Gel | 2 |
 | 057 Coral Route Part A | 17,1 | 3x Med Gel | 2 |
 | 057 Coral Route Part A | 6,13 | 1x Revive Spark | 2 |

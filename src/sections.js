@@ -199,7 +199,7 @@ function testerUI(){if(BETA||!window.crypto||!crypto.subtle)return;const hint=do
  You only land on open ground that is part of the section's main walkable area, so a jump never reaches
  places the map seals off on purpose (behind a closed gate) and never skips a story gate or warp lock. */
 const SEC_JUMP_T=14;
-function secMain(s){if(s._main)return s._main;const W=s.tiles[0],H=s.tiles[1],ok=(x,y)=>x>=0&&y>=0&&x<W&&y<H&&'.,'.includes(s.rows[y][x]),seen=new Set(),q=[];
+function secMain(s){if(s._main)return s._main;const W=s.tiles[0],H=s.tiles[1],ok=(x,y)=>x>=0&&y>=0&&x<W&&y<H&&'.,:'.includes(s.rows[y][x]),seen=new Set(),q=[];
  const seed=[s.spawns&&s.spawns.default].concat(s.warps.map(w=>w.tile)).concat(Object.entries(s.edges).map(([k,e])=>k==='left'?[0,e.range[0]]:k==='right'?[W-1,e.range[0]]:k==='top'?[e.range[0],0]:[e.range[0],H-1]));
  for(const t of seed)if(t&&ok(t[0],t[1])&&!seen.has(t[0]+','+t[1])){seen.add(t[0]+','+t[1]);q.push(t)}
  while(q.length){const[x,y]=q.pop();for(const[dx,dy]of Object.values(DIRS)){const k=(x+dx)+','+(y+dy);if(!seen.has(k)&&ok(x+dx,y+dy)){seen.add(k);q.push([x+dx,y+dy])}}}return s._main=seen}
