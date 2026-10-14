@@ -155,7 +155,7 @@ The new edition of *The Kessler Signal* (about 100,000 words; it was 85,000) red
 | Pell and Strand are no longer comic: Pell is a calm field agent ("Helix doesn't lose things. We just collect them later."), Strand is quietly reluctant ("You didn't see that, and I didn't see you.") | Ch 5, 10, 13, 17, 20 | Glacia Fossil Dig pair (098), Strand freeing the sporeling, Helix barracks joke | `data/sections/npcs.json`, `data/story.json`, `data/sections/planets/09_helix.json` |
 
 **Not changed, worth deciding:**
-- Sprites still show the old designs where the book redesigned them (Cactling, Gleamgrub, Lumislug, Chirpod, Bubbub, Glitchbug, Monolet, Chimelet, Anvilox, Tidaloid, Mycelith, Skitterdrone, Zib). New art is needed to match.
+- **Art sets the look** (owner rule, 2026-10-14): the Xenodex sprites define each Alienmon, and the Oct 14 book was written to match them. Every redesigned species matches its sprite. The Lumislug and Skitterdrone descriptions were corrected to the sprites (lime-green slug with a dark spotted mantle; gold and bronze dish-winged flier), and the book text should follow.
 - The Helix logo is now an orange ring with a diagonal slash; any Helix art with the old twisting-ladder mark needs repainting.
 - New book NPCs not in the game: Brann (a grunt with a static-net launcher), Pip (a young grunt's Skitterdrone), Mr. Abernathy (the Dustmere baker). New item: Dr. Moor's Spore tonic.
 - Kit is he/him (owner decision, 2026-10-14). The game, the docs and the website use he/him; the Book 1 text (and the recorded audiobook) still say they/them and need updating.
