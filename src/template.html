@@ -513,7 +513,7 @@ let CH=null;
 function choose(title,opts,cb,back,por,desc){CH={title,opts,sel:0,cb,back,por,desc}}   // desc: optional explainer per option, shown under the list
 function updChoose(){const n=CH.opts.length;if(P_('up'))CH.sel=(CH.sel+n-1)%n;if(P_('down'))CH.sel=(CH.sel+1)%n;
  if(P_('b')){const b=CH.back;CH=null;if(b)b();return}if(P_('a')){const c=CH.cb,i=CH.sel;CH=null;c(i)}}
-function drawChoose(){const n=CH.opts.length,V=Math.min(n,7),st=Math.max(0,Math.min(CH.sel-3,n-V)),h=16+V*11;if(CH.por)drawPortrait(CH.por,100-h);box(4,100-h,152,h+2);txt(CH.title,8,104-h,'#7a1f6a',7);
+function drawChoose(){if(CH.draw)return CH.draw();const n=CH.opts.length,V=Math.min(n,7),st=Math.max(0,Math.min(CH.sel-3,n-V)),h=16+V*11;if(CH.por)drawPortrait(CH.por,100-h);box(4,100-h,152,h+2);txt(CH.title,8,104-h,'#7a1f6a',7);
  for(let j=0;j<V;j++){const i=st+j;txt((i===CH.sel?'>':' ')+CH.opts[i],8,116-h+j*11,i===CH.sel?'#d7262e':'#1b1424',7)}if(st>0)txt('^',148,116-h,'#7a1f6a',7);if(st+V<n)txt('v',148,105+(V-1)*11-h+11,'#7a1f6a',7)
  const dd=CH.desc&&CH.desc[CH.sel];if(dd){box(0,104,160,40);wrap(dd,25).slice(0,3).forEach((l,i)=>txt(l,6,108+i*11,'#1b1424',7))}}
 function bayMenu(){choose('Recovery Bay',['Heal team','Pod shop','Move Archive','Nickname','Trade','Nursery','Leave'],i=>{if(i===4)return tradeMenu();if(i===5)return nurseryMenu();if(i===0){healAll();noteHeal();say(['Nurse: Your Alienmon are fully healed and cured!'].concat(nurseTip()),bayMenu,'nurse')}else if(i===1)shop();else if(i===2)moveArchive();else if(i===3)nickMenu()},null,'nurse')}

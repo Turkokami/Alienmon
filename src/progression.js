@@ -61,11 +61,30 @@ function drawLvPanel(){const P=LVP;box(84,4,74,86,'#f8f4ff','#1b1424');txt(P.nam
  P.rows.forEach(([n,v,g],i)=>{const y=20+i*11;txt(n,88,y,'#3b2a5c',6);txt(String(v).padStart(3),112,y,'#1b1424',6);txt((g>=0?'+':'')+g,136,y,g>=4?'#ff6a00':'#2e86de',6)})}
 
 /* moves: the player chooses what to forget; the Move Archive relearns older moves */
+/* ---- learning a 5th move: a full screen with the Alienmon, its 4 moves plus the new one, and what the highlighted move does ---- */
+const STATUSN={burn:'burn',poison:'poison',shock:'shock',freeze:'freeze',confuse:'confuse'};
+function moveFxText(mv){const fx=mv.fx||{},c=fx.c!=null?fx.c:1,pc=c>=1?'':Math.round(c*100)+'% chance to ',L=[];
+ if(fx.s)L.push(c>=1?'Always '+(STATUSN[fx.s]||fx.s)+'s the foe.':pc+(STATUSN[fx.s]||fx.s)+' the foe.');
+ const st=(o,who,chance)=>{for(const k in o){const v=o[k],sh=v>1||v<-1;if(chance&&c<1)L.push(pc+(sh?'sharply ':'')+(v>0?'raise ':'lower ')+who+' '+STN[k]+'.');else L.push((sh?'Sharply ':'')+(sh?(v>0?'raises ':'lowers '):(v>0?'Raises ':'Lowers '))+who+' '+STN[k]+'.')}};
+ if(fx.foe)st(fx.foe,"the foe's",1);if(fx.self)st(fx.self,'its own',0);
+ if(fx.heal)L.push('Heals '+Math.round(fx.heal*100)+'% of its HP.');if(fx.drain)L.push('Heals by '+Math.round(fx.drain*100)+'% of the damage dealt.');if(fx.crit)L.push('Lands critical hits more often.');
+ return L.length?L.join(' '):(mv.p?'A straight attack, no extra effect.':'No extra effect.')}
+function drawMoveInfo(mi,y){const mv=MV[mi];box(0,y,160,144-y);const tc=mv.t==='None'?'#3b2a5c':TC[mv.t][2];
+ txt(mv.t==='None'?'Basic':mv.t,6,y+4,tc,7);txt(!mv.p?'Status':PHYS.has(mv.t)?'Physical':'Special',64,y+5,'#3b2a5c',6);
+ txt('PWR '+(mv.p||'-')+'  ACC '+(mv.a||'-')+'  PP '+maxPP(mi),6,y+13,'#1b1424',6);
+ wrap(moveFxText(mv),24).slice(0,2).forEach((l,i)=>txt(l,6,y+21+i*8,'#1b1424',6))}
+function drawLearn(){const C=CH,m=C.mon,list=C.list;box(0,0,160,144);dspr(m.id,2,2,3,false,m);
+ txtFit(nm(m),54,5,'#1b1424',102);txt('Lv'+m.lv,54,15,'#3b2a5c',6);txt('wants to learn',54,25,'#3b2a5c',6);txtFit(MV[list[4]].n,54,35,'#d7262e',102,7);
+ txt('Forget which move?',4,50,'#7a1f6a',6);
+ list.forEach((mi,i)=>{const mv=MV[mi],y=60+i*9,sel=i===C.sel;if(sel)rect(2,y-2,156,9,'#ffe0c0');rect(5,y,4,4,mv.t==='None'?'#a99cc8':TC[mv.t][0]);
+  txtFit((i===4?'NEW ':'')+mv.n,12,y-1,i===4?'#d7262e':'#1b1424',100,7);txtR(mv.p?String(mv.p):'-',156,y-1,'#3b2a5c',6)});
+ drawMoveInfo(list[C.sel],104)}
 function learnPrompt(m,mi,cb){if(m.moves.includes(mi))return cb();
  if(m.moves.length<4){m.moves.push(mi);return say(nm(m)+' learned '+MV[mi].n+'!',cb)}
  const skip=()=>say(nm(m)+' did not learn '+MV[mi].n+'.',cb);
- say(nm(m)+' wants to learn '+MV[mi].n+', but it already knows 4 moves.',()=>choose('Forget which move?',m.moves.map(x=>MV[x].n).concat(["Don't learn"]),i=>{
-  if(i>=4)return skip();const old=m.moves[i];m.moves[i]=mi;say(['1, 2 and... Poof!',nm(m)+' forgot '+MV[old].n+'...','...and learned '+MV[mi].n+'!'],cb)},skip))}
+ say(nm(m)+' wants to learn '+MV[mi].n+', but it already knows 4 moves.',()=>{choose('Forget which move?',m.moves.map(x=>MV[x].n).concat(['Keep old moves']),i=>{
+  if(i>=4)return skip();const old=m.moves[i];m.moves[i]=mi;if(m.ppm)delete m.ppm[mi];say(['1, 2 and... Poof!',nm(m)+' forgot '+MV[old].n+'...','...and learned '+MV[mi].n+'!'],cb)},skip);
+  CH.draw=drawLearn;CH.mon=m;CH.list=m.moves.concat([mi]);CH.sel=4})}
 function moveArchive(){const L=G.party.map(m=>nm(m)+' Lv'+m.lv);choose('Move Archive: 100 stardust',L.concat(['Back']),i=>{if(i>=G.party.length)return bayMenu();const m=G.party[i];
  const opts=[...new Set(learnset(m.id).filter(([l,mi])=>l<=m.lv&&!m.moves.includes(mi)).map(([l,mi])=>mi))];
  if(!opts.length)return say(nm(m)+' has no moves to remember.',moveArchive);
