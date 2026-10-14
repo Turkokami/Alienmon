@@ -5,21 +5,6 @@
   "habitat": "canyon",
   "encounters": [
    {
-    "n": 10,
-    "name": "Zib",
-    "types": [
-     "Volt"
-    ],
-    "rarity": "common",
-    "weight": 10,
-    "levels": [
-     2,
-     3
-    ],
-    "method": "walk",
-    "time": "any"
-   },
-   {
     "n": 13,
     "name": "Skitterbit",
     "types": [
@@ -122,21 +107,6 @@
   "name": "Rimwalk Trail Part B",
   "habitat": "canyon",
   "encounters": [
-   {
-    "n": 10,
-    "name": "Zib",
-    "types": [
-     "Volt"
-    ],
-    "rarity": "common",
-    "weight": 10,
-    "levels": [
-     2,
-     3
-    ],
-    "method": "walk",
-    "time": "any"
-   },
    {
     "n": 12,
     "name": "Fizzlord",

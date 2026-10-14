@@ -33,7 +33,7 @@ function wildOK(name){const s=PROG.species[name]||{};if(s.rarity==='legendary'||
  if(SIG_GATE[name])return!!G.beaten[SIG_GATE[name]];
  if(['Vexhydra','Bronnix','Thornvoid'].includes(name))return mDone('M19');
  if(['Facetrix','Encorex','Pyrelyth','Citadrake','Firstlight','Oblivite'].includes(name))return!!G.flags.champ;
- if(name==='Zib')return mDone('M05');return true}
+ if(name==='Zib')return false;return true}   // Zib is one of a kind: never wild
 const wildIds=list=>list.filter(id=>wildOK(D[id].name));
 
 /* where you wake up after losing: the last Recovery Bay or Hut you used */
