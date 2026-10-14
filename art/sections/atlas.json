@@ -3971,6 +3971,26 @@
    "exits": [],
    "notes": "Special interior (mushroom_house)",
    "file": "art/sections/03_sporeholm/185_mushroom_house.png"
+  },
+  {
+   "id": "186",
+   "planet": "Umbra",
+   "name": "Umbra House",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "Shared house interior: every house door on Umbra opens here",
+   "file": "art/sections/11_umbra/186_umbra_house.png",
+   "house": "umbra"
   }
  ]
 }

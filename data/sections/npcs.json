@@ -1416,5 +1416,19 @@
     "Mushroom Keeper: This mushroom was growing before my grandmother was born. It's still growing now."
    ]
   }
+ ],
+ "186": [
+  {
+   "art": "pilgrim",
+   "name": "Lamplighter",
+   "near": [
+    10,
+    9
+   ],
+   "t": [
+    "Lamplighter: Come in, come in. On Umbra we keep every lamp lit, all night long.",
+    "Lamplighter: The Devourer follows the light, they say. So we never let it go out."
+   ]
+  }
  ]
 }

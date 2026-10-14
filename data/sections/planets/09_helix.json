@@ -70,14 +70,14 @@
    "a": "107",
    "a_tile": [
     6,
-    8
+    6
    ],
    "b": "108",
    "b_tile": [
     8,
     3
    ],
-   "why": "Labs 1F: dark lift rack left of the central tank (6,8) <-> Labs 2F: emblem lift door at the top centre (8,3)"
+   "why": "Labs 1F: the stairs drawn at the left of the floor (6,6) <-> Labs 2F: emblem lift door at the top centre (8,3)"
   }
  ],
  "edge_rows": {
@@ -130,8 +130,8 @@
   "107": [
    {
     "tile": [
-     7,
-     9
+     8,
+     4
     ],
     "k": "sign",
     "t": [
@@ -388,20 +388,20 @@
      "Lab tech: Upstairs is Project Rift. Downstairs is everything we can't explain to HR."
     ],
     "tile": [
-     2,
-     7
+     4,
+     8
     ],
     "face": "up"
    },
    {
     "art": "researcher",
     "t": [
-     "Scientist: Toxin types shrug off poison, but Ground and Psychic moves hit them hard. For science.",
+     "Scientist: Toxin types shrug off poison, but Gravity and Psi moves hit them hard. For science.",
      "Scientist: Please don't free the specimens. I'd have to fill out so many forms."
     ],
     "tile": [
-     13,
-     7
+     12,
+     9
     ],
     "face": "up"
    }

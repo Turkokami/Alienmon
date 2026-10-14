@@ -1137,9 +1137,9 @@
      7,
      4
     ],
-    "k": "sign",
-    "t": "The door is locked. Nobody seems to be home.",
-    "why": "door plan: house door with no interior yet"
+    "k": "house",
+    "why": "house door: opens the shared Umbra house",
+    "to": "186"
    }
   ],
   "127": [
@@ -1148,18 +1148,18 @@
      6,
      12
     ],
-    "k": "sign",
-    "t": "The door is locked. Nobody seems to be home.",
-    "why": "door plan: house door with no interior yet"
+    "k": "house",
+    "why": "house door: opens the shared Umbra house",
+    "to": "186"
    },
    {
     "tile": [
      16,
      3
     ],
-    "k": "sign",
-    "t": "The door is locked. Nobody seems to be home.",
-    "why": "door plan: house door with no interior yet"
+    "k": "house",
+    "why": "house door: opens the shared Umbra house",
+    "to": "186"
    }
   ],
   "128": [
@@ -1168,18 +1168,18 @@
      4,
      3
     ],
-    "k": "sign",
-    "t": "The door is locked. Nobody seems to be home.",
-    "why": "door plan: house door with no interior yet"
+    "k": "house",
+    "why": "house door: opens the shared Umbra house",
+    "to": "186"
    },
    {
     "tile": [
      20,
      11
     ],
-    "k": "sign",
-    "t": "The door is locked. Nobody seems to be home.",
-    "why": "door plan: house door with no interior yet"
+    "k": "house",
+    "why": "house door: opens the shared Umbra house",
+    "to": "186"
    }
   ],
   "136": [
@@ -1800,6 +1800,12 @@
    ]
   },
   "185": {
+   "default": [
+    7,
+    12
+   ]
+  },
+  "186": {
    "default": [
     7,
     12
@@ -2688,6 +2694,36 @@
    "face": "down",
    "kind": "door",
    "parent": "047"
+  },
+  {
+   "section": "186",
+   "tile": [
+    7,
+    13
+   ],
+   "to": "back",
+   "at": [
+    7,
+    12
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "124"
+  },
+  {
+   "section": "186",
+   "tile": [
+    8,
+    13
+   ],
+   "to": "back",
+   "at": [
+    8,
+    12
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "124"
   }
  ]
 }
