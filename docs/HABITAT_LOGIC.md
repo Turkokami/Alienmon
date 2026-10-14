@@ -1,5 +1,7 @@
 > **Applied to the game on 2026-10-13.** The pack's `data/planets.json` was not used: it was built from an older copy of the game (its species numbers are shifted, and it would undo keeper and Ystra edits). Instead the moves were applied by name: 8 of the 9 were already on the right world; Drizzlit and Thunderhead moved from Glacia to Thalassa, and Zib left Sporeholm's pool. Section encounters now come from `data/encounters.json`, checked by `tools/check_habitats.js` on every build.
 
+> **Thin areas filled (2026-10-13):** `tools/fill_encounters.py` gave every area at least 5 distinct wild Alienmon (as they appear at that level, not counting story-gated ones). Fills are marked `"fill": true` in `data/encounters.json`, always suit the habitat (the habitat's signature types first, e.g. Ashpup, Charsprout and Kindlefly on the Ash Trail; Eclipsit and Eclipsor at the Edge of the Void), and come from the area's own world where possible. Sun Forge stays empty by design. The tables below show the pack as delivered, before the fills.
+
 # Alienmon Habitat Logic Pack
 
 This pack decides **which Alienmon live on which world, and exactly where**, so the game never puts a water creature on a fire planet. Every placement follows one set of habitat rules, and a validator checks them automatically.

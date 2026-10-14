@@ -64,6 +64,56 @@
     ],
     "method": "walk",
     "time": "any"
+   },
+   {
+    "n": 29,
+    "name": "Liftant",
+    "types": [
+     "Gravity",
+     "Swarm"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     2,
+     5
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
+   },
+   {
+    "n": 16,
+    "name": "Pebblet",
+    "types": [
+     "Gravity"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     2,
+     5
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
+   },
+   {
+    "n": 31,
+    "name": "Spindyn",
+    "types": [
+     "Volt",
+     "Gravity"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     2,
+     5
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
    }
   ]
  },
@@ -132,6 +182,56 @@
     "method": "walk",
     "time": "any",
     "note": "spillover"
+   },
+   {
+    "n": 29,
+    "name": "Liftant",
+    "types": [
+     "Gravity",
+     "Swarm"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     2,
+     5
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
+   },
+   {
+    "n": 16,
+    "name": "Pebblet",
+    "types": [
+     "Gravity"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     2,
+     5
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
+   },
+   {
+    "n": 31,
+    "name": "Spindyn",
+    "types": [
+     "Volt",
+     "Gravity"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     2,
+     5
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
    }
   ]
  },
@@ -200,6 +300,56 @@
     "method": "walk",
     "time": "any",
     "note": "spillover"
+   },
+   {
+    "n": 29,
+    "name": "Liftant",
+    "types": [
+     "Gravity",
+     "Swarm"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     2,
+     6
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
+   },
+   {
+    "n": 16,
+    "name": "Pebblet",
+    "types": [
+     "Gravity"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     2,
+     6
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
+   },
+   {
+    "n": 31,
+    "name": "Spindyn",
+    "types": [
+     "Volt",
+     "Gravity"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     2,
+     6
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
    }
   ]
  },
@@ -268,6 +418,40 @@
     "method": "cave",
     "time": "any",
     "note": "spillover"
+   },
+   {
+    "n": 29,
+    "name": "Liftant",
+    "types": [
+     "Gravity",
+     "Swarm"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     3,
+     6
+    ],
+    "method": "cave",
+    "time": "any",
+    "fill": true
+   },
+   {
+    "n": 49,
+    "name": "Magnub",
+    "types": [
+     "Alloy",
+     "Gravity"
+    ],
+    "rarity": "rare",
+    "weight": 2,
+    "levels": [
+     3,
+     6
+    ],
+    "method": "cave",
+    "time": "any",
+    "fill": true
    }
   ]
  },
@@ -336,6 +520,23 @@
     "method": "cave",
     "time": "any",
     "note": "spillover"
+   },
+   {
+    "n": 29,
+    "name": "Liftant",
+    "types": [
+     "Gravity",
+     "Swarm"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     3,
+     6
+    ],
+    "method": "cave",
+    "time": "any",
+    "fill": true
    }
   ]
  },
@@ -407,6 +608,23 @@
     "method": "walk",
     "time": "any",
     "note": "spillover"
+   },
+   {
+    "n": 42,
+    "name": "Smeltpup",
+    "types": [
+     "Magma",
+     "Alloy"
+    ],
+    "rarity": "rare",
+    "weight": 2,
+    "levels": [
+     3,
+     4
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
    }
   ]
  },
@@ -478,6 +696,39 @@
     "method": "walk",
     "time": "any",
     "note": "spillover"
+   },
+   {
+    "n": 141,
+    "name": "Ashpup",
+    "types": [
+     "Magma"
+    ],
+    "rarity": "rare",
+    "weight": 2,
+    "levels": [
+     3,
+     6
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
+   },
+   {
+    "n": 159,
+    "name": "Charsprout",
+    "types": [
+     "Magma",
+     "Bio"
+    ],
+    "rarity": "rare",
+    "weight": 2,
+    "levels": [
+     3,
+     6
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
    }
   ]
  },
@@ -550,6 +801,56 @@
     "method": "walk",
     "time": "any",
     "note": "spillover"
+   },
+   {
+    "n": 141,
+    "name": "Ashpup",
+    "types": [
+     "Magma"
+    ],
+    "rarity": "rare",
+    "weight": 2,
+    "levels": [
+     3,
+     7
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
+   },
+   {
+    "n": 159,
+    "name": "Charsprout",
+    "types": [
+     "Magma",
+     "Bio"
+    ],
+    "rarity": "rare",
+    "weight": 2,
+    "levels": [
+     3,
+     7
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
+   },
+   {
+    "n": 148,
+    "name": "Kindlefly",
+    "types": [
+     "Magma",
+     "Swarm"
+    ],
+    "rarity": "rare",
+    "weight": 2,
+    "levels": [
+     3,
+     7
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
    }
   ]
  },
@@ -619,6 +920,40 @@
     "method": "walk",
     "time": "night x2",
     "note": "spillover"
+   },
+   {
+    "n": 58,
+    "name": "Bogeel",
+    "types": [
+     "Hydro",
+     "Toxin"
+    ],
+    "rarity": "rare",
+    "weight": 2,
+    "levels": [
+     4,
+     7
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
+   },
+   {
+    "n": 74,
+    "name": "Drippit",
+    "types": [
+     "Toxin",
+     "Hydro"
+    ],
+    "rarity": "rare",
+    "weight": 2,
+    "levels": [
+     4,
+     7
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
    }
   ]
  },
@@ -688,6 +1023,40 @@
     "method": "walk",
     "time": "any",
     "note": "spillover"
+   },
+   {
+    "n": 58,
+    "name": "Bogeel",
+    "types": [
+     "Hydro",
+     "Toxin"
+    ],
+    "rarity": "rare",
+    "weight": 2,
+    "levels": [
+     4,
+     7
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
+   },
+   {
+    "n": 74,
+    "name": "Drippit",
+    "types": [
+     "Toxin",
+     "Hydro"
+    ],
+    "rarity": "rare",
+    "weight": 2,
+    "levels": [
+     4,
+     7
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
    }
   ]
  },
@@ -760,6 +1129,39 @@
     "method": "walk",
     "time": "any",
     "note": "spillover"
+   },
+   {
+    "n": 21,
+    "name": "Cindermole",
+    "types": [
+     "Magma"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     4,
+     7
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
+   },
+   {
+    "n": 42,
+    "name": "Smeltpup",
+    "types": [
+     "Magma",
+     "Alloy"
+    ],
+    "rarity": "rare",
+    "weight": 2,
+    "levels": [
+     4,
+     7
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
    }
   ]
  },
@@ -832,6 +1234,23 @@
     "method": "walk",
     "time": "any",
     "note": "spillover"
+   },
+   {
+    "n": 42,
+    "name": "Smeltpup",
+    "types": [
+     "Magma",
+     "Alloy"
+    ],
+    "rarity": "rare",
+    "weight": 2,
+    "levels": [
+     4,
+     7
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
    }
   ]
  },
@@ -904,6 +1323,56 @@
     "method": "walk",
     "time": "any",
     "note": "spillover"
+   },
+   {
+    "n": 42,
+    "name": "Smeltpup",
+    "types": [
+     "Magma",
+     "Alloy"
+    ],
+    "rarity": "rare",
+    "weight": 2,
+    "levels": [
+     4,
+     7
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
+   },
+   {
+    "n": 141,
+    "name": "Ashpup",
+    "types": [
+     "Magma"
+    ],
+    "rarity": "rare",
+    "weight": 2,
+    "levels": [
+     4,
+     7
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
+   },
+   {
+    "n": 159,
+    "name": "Charsprout",
+    "types": [
+     "Magma",
+     "Bio"
+    ],
+    "rarity": "rare",
+    "weight": 2,
+    "levels": [
+     4,
+     7
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
    }
   ]
  },
@@ -975,6 +1444,39 @@
     "method": "walk",
     "time": "any",
     "note": "spillover"
+   },
+   {
+    "n": 42,
+    "name": "Smeltpup",
+    "types": [
+     "Magma",
+     "Alloy"
+    ],
+    "rarity": "rare",
+    "weight": 2,
+    "levels": [
+     4,
+     7
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
+   },
+   {
+    "n": 141,
+    "name": "Ashpup",
+    "types": [
+     "Magma"
+    ],
+    "rarity": "rare",
+    "weight": 2,
+    "levels": [
+     4,
+     7
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
    }
   ]
  },
@@ -1043,6 +1545,40 @@
     "method": "walk",
     "time": "night x2",
     "note": "spillover"
+   },
+   {
+    "n": 29,
+    "name": "Liftant",
+    "types": [
+     "Gravity",
+     "Swarm"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     5,
+     7
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
+   },
+   {
+    "n": 49,
+    "name": "Magnub",
+    "types": [
+     "Alloy",
+     "Gravity"
+    ],
+    "rarity": "rare",
+    "weight": 2,
+    "levels": [
+     5,
+     7
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
    }
   ]
  },
@@ -1113,6 +1649,56 @@
     "method": "walk",
     "time": "any",
     "note": "spillover"
+   },
+   {
+    "n": 42,
+    "name": "Smeltpup",
+    "types": [
+     "Magma",
+     "Alloy"
+    ],
+    "rarity": "rare",
+    "weight": 2,
+    "levels": [
+     5,
+     7
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
+   },
+   {
+    "n": 141,
+    "name": "Ashpup",
+    "types": [
+     "Magma"
+    ],
+    "rarity": "rare",
+    "weight": 2,
+    "levels": [
+     5,
+     7
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
+   },
+   {
+    "n": 150,
+    "name": "Drillit",
+    "types": [
+     "Magma",
+     "Alloy"
+    ],
+    "rarity": "rare",
+    "weight": 2,
+    "levels": [
+     5,
+     7
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
    }
   ]
  },
@@ -1815,6 +2401,39 @@
     ],
     "method": "surf",
     "time": "any"
+   },
+   {
+    "n": 71,
+    "name": "Silkpup",
+    "types": [
+     "Swarm",
+     "Bio"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     10,
+     14
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
+   },
+   {
+    "n": 60,
+    "name": "Vinewisp",
+    "types": [
+     "Bio"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     10,
+     14
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
    }
   ]
  },
@@ -2166,6 +2785,23 @@
     ],
     "method": "walk",
     "time": "any"
+   },
+   {
+    "n": 66,
+    "name": "Lilypod",
+    "types": [
+     "Hydro",
+     "Bio"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     14,
+     16
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
    }
   ]
  },
@@ -2539,6 +3175,40 @@
     ],
     "method": "surf",
     "time": "any"
+   },
+   {
+    "n": 78,
+    "name": "Crabot",
+    "types": [
+     "Hydro",
+     "Alloy"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     13,
+     18
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
+   },
+   {
+    "n": 294,
+    "name": "Drizzlit",
+    "types": [
+     "Volt",
+     "Hydro"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     13,
+     18
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
    }
   ]
  },
@@ -2913,6 +3583,38 @@
     ],
     "method": "surf",
     "time": "any"
+   },
+   {
+    "n": 92,
+    "name": "Barnacub",
+    "types": [
+     "Hydro"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     15,
+     19
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
+   },
+   {
+    "n": 76,
+    "name": "Bubbub",
+    "types": [
+     "Hydro"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     15,
+     19
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
    }
   ]
  },
@@ -2985,6 +3687,90 @@
     "method": "surf",
     "time": "any",
     "note": "spillover"
+   },
+   {
+    "n": 92,
+    "name": "Barnacub",
+    "types": [
+     "Hydro"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     16,
+     20
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
+   },
+   {
+    "n": 84,
+    "name": "Conchlet",
+    "types": [
+     "Hydro",
+     "Crystal"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     16,
+     20
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
+   },
+   {
+    "n": 282,
+    "name": "Croakle",
+    "types": [
+     "Hydro",
+     "Sonic"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     16,
+     20
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
+   },
+   {
+    "n": 294,
+    "name": "Drizzlit",
+    "types": [
+     "Volt",
+     "Hydro"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     16,
+     20
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
+   },
+   {
+    "n": 86,
+    "name": "Echofin",
+    "types": [
+     "Sonic",
+     "Hydro"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     16,
+     20
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
    }
   ]
  },
@@ -4276,6 +5062,22 @@
     ],
     "method": "cave",
     "time": "any"
+   },
+   {
+    "n": 141,
+    "name": "Ashpup",
+    "types": [
+     "Magma"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     25,
+     29
+    ],
+    "method": "cave",
+    "time": "any",
+    "fill": true
    }
   ]
  },
@@ -4668,6 +5470,23 @@
     ],
     "method": "walk",
     "time": "any"
+   },
+   {
+    "n": 168,
+    "name": "Auroralet",
+    "types": [
+     "Cryo",
+     "Psi"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     27,
+     31
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
    }
   ]
  },
@@ -4755,6 +5574,23 @@
     ],
     "method": "walk",
     "time": "any"
+   },
+   {
+    "n": 166,
+    "name": "Floepup",
+    "types": [
+     "Cryo",
+     "Hydro"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     28,
+     32
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
    }
   ]
  },
@@ -4913,6 +5749,23 @@
     ],
     "method": "cave",
     "time": "any"
+   },
+   {
+    "n": 174,
+    "name": "Chillshade",
+    "types": [
+     "Cryo",
+     "Void"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     30,
+     33
+    ],
+    "method": "cave",
+    "time": "any",
+    "fill": true
    }
   ]
  },
@@ -4983,6 +5836,23 @@
     ],
     "method": "cave",
     "time": "any"
+   },
+   {
+    "n": 166,
+    "name": "Floepup",
+    "types": [
+     "Cryo",
+     "Hydro"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     32,
+     34
+    ],
+    "method": "cave",
+    "time": "any",
+    "fill": true
    }
   ]
  },
@@ -5154,6 +6024,40 @@
     ],
     "method": "walk",
     "time": "any"
+   },
+   {
+    "n": 168,
+    "name": "Auroralet",
+    "types": [
+     "Cryo",
+     "Psi"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     32,
+     35
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
+   },
+   {
+    "n": 166,
+    "name": "Floepup",
+    "types": [
+     "Cryo",
+     "Hydro"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     32,
+     35
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
    }
   ]
  },
@@ -5240,6 +6144,23 @@
     ],
     "method": "cave",
     "time": "any"
+   },
+   {
+    "n": 185,
+    "name": "Splicor",
+    "types": [
+     "Alloy",
+     "Psi"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     30,
+     33
+    ],
+    "method": "cave",
+    "time": "any",
+    "fill": true
    }
   ]
  },
@@ -5326,6 +6247,40 @@
     ],
     "method": "cave",
     "time": "any"
+   },
+   {
+    "n": 189,
+    "name": "Cagebot",
+    "types": [
+     "Alloy",
+     "Gravity"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     32,
+     37
+    ],
+    "method": "cave",
+    "time": "any",
+    "fill": true
+   },
+   {
+    "n": 191,
+    "name": "Nullbot",
+    "types": [
+     "Void",
+     "Alloy"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     32,
+     37
+    ],
+    "method": "cave",
+    "time": "any",
+    "fill": true
    }
   ]
  },
@@ -5945,6 +6900,23 @@
     ],
     "method": "walk",
     "time": "night x2"
+   },
+   {
+    "n": 222,
+    "name": "Duskmite",
+    "types": [
+     "Void",
+     "Swarm"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     37,
+     41
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
    }
   ]
  },
@@ -6016,6 +6988,23 @@
     ],
     "method": "walk",
     "time": "night x2"
+   },
+   {
+    "n": 222,
+    "name": "Duskmite",
+    "types": [
+     "Void",
+     "Swarm"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     38,
+     42
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
    }
   ]
  },
@@ -6086,6 +7075,23 @@
     "method": "cave",
     "time": "night x2",
     "note": "spillover"
+   },
+   {
+    "n": 224,
+    "name": "Wailshade",
+    "types": [
+     "Void",
+     "Sonic"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     39,
+     43
+    ],
+    "method": "cave",
+    "time": "any",
+    "fill": true
    }
   ]
  },
@@ -6156,6 +7162,39 @@
     "method": "cave",
     "time": "night x2",
     "note": "spillover"
+   },
+   {
+    "n": 222,
+    "name": "Duskmite",
+    "types": [
+     "Void",
+     "Swarm"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     42,
+     44
+    ],
+    "method": "cave",
+    "time": "any",
+    "fill": true
+   },
+   {
+    "n": 215,
+    "name": "Sulklet",
+    "types": [
+     "Void"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     42,
+     44
+    ],
+    "method": "cave",
+    "time": "any",
+    "fill": true
    }
   ]
  },
@@ -6226,6 +7265,23 @@
     ],
     "method": "cave",
     "time": "any"
+   },
+   {
+    "n": 222,
+    "name": "Duskmite",
+    "types": [
+     "Void",
+     "Swarm"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     43,
+     45
+    ],
+    "method": "cave",
+    "time": "any",
+    "fill": true
    }
   ]
  },
@@ -6297,6 +7353,23 @@
     ],
     "method": "cave",
     "time": "any"
+   },
+   {
+    "n": 222,
+    "name": "Duskmite",
+    "types": [
+     "Void",
+     "Swarm"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     43,
+     45
+    ],
+    "method": "cave",
+    "time": "any",
+    "fill": true
    }
   ]
  },
@@ -6631,6 +7704,23 @@
     ],
     "method": "walk",
     "time": "any"
+   },
+   {
+    "n": 240,
+    "name": "Cometlet",
+    "types": [
+     "Gravity",
+     "Plasma"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     44,
+     48
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
    }
   ]
  },
@@ -6717,6 +7807,23 @@
     ],
     "method": "cave",
     "time": "any"
+   },
+   {
+    "n": 240,
+    "name": "Cometlet",
+    "types": [
+     "Gravity",
+     "Plasma"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     45,
+     49
+    ],
+    "method": "cave",
+    "time": "any",
+    "fill": true
    }
   ]
  },
@@ -6787,6 +7894,23 @@
     ],
     "method": "cave",
     "time": "any"
+   },
+   {
+    "n": 240,
+    "name": "Cometlet",
+    "types": [
+     "Gravity",
+     "Plasma"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     48,
+     50
+    ],
+    "method": "cave",
+    "time": "any",
+    "fill": true
    }
   ]
  },
@@ -6857,6 +7981,23 @@
     ],
     "method": "cave",
     "time": "any"
+   },
+   {
+    "n": 240,
+    "name": "Cometlet",
+    "types": [
+     "Gravity",
+     "Plasma"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     48,
+     50
+    ],
+    "method": "cave",
+    "time": "any",
+    "fill": true
    }
   ]
  },
@@ -7166,6 +8307,22 @@
     "method": "walk",
     "time": "day x2",
     "note": "spillover"
+   },
+   {
+    "n": 257,
+    "name": "Cragpull",
+    "types": [
+     "Gravity"
+    ],
+    "rarity": "rare",
+    "weight": 2,
+    "levels": [
+     55,
+     59
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
    }
   ]
  },
@@ -7240,6 +8397,22 @@
     "method": "walk",
     "time": "day x2",
     "note": "spillover"
+   },
+   {
+    "n": 257,
+    "name": "Cragpull",
+    "types": [
+     "Gravity"
+    ],
+    "rarity": "rare",
+    "weight": 2,
+    "levels": [
+     56,
+     60
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
    }
   ]
  },
@@ -7315,6 +8488,22 @@
     "method": "walk",
     "time": "day x2",
     "note": "spillover"
+   },
+   {
+    "n": 209,
+    "name": "Astrochick",
+    "types": [
+     "Psi"
+    ],
+    "rarity": "rare",
+    "weight": 2,
+    "levels": [
+     57,
+     61
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
    }
   ]
  },
@@ -7393,6 +8582,38 @@
     "method": "cave",
     "time": "day x2",
     "note": "spillover"
+   },
+   {
+    "n": 253,
+    "name": "Gemmling",
+    "types": [
+     "Crystal"
+    ],
+    "rarity": "rare",
+    "weight": 2,
+    "levels": [
+     59,
+     64
+    ],
+    "method": "cave",
+    "time": "any",
+    "fill": true
+   },
+   {
+    "n": 254,
+    "name": "Gemmantle",
+    "types": [
+     "Crystal"
+    ],
+    "rarity": "rare",
+    "weight": 2,
+    "levels": [
+     59,
+     64
+    ],
+    "method": "cave",
+    "time": "any",
+    "fill": true
    }
   ]
  },
@@ -7464,6 +8685,39 @@
     ],
     "method": "cave",
     "time": "day x2"
+   },
+   {
+    "n": 268,
+    "name": "Fractling",
+    "types": [
+     "Void",
+     "Crystal"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     61,
+     65
+    ],
+    "method": "cave",
+    "time": "any",
+    "fill": true
+   },
+   {
+    "n": 253,
+    "name": "Gemmling",
+    "types": [
+     "Crystal"
+    ],
+    "rarity": "rare",
+    "weight": 2,
+    "levels": [
+     61,
+     65
+    ],
+    "method": "cave",
+    "time": "any",
+    "fill": true
    }
   ]
  },
@@ -7537,6 +8791,23 @@
     "method": "walk",
     "time": "any",
     "note": "spillover"
+   },
+   {
+    "n": 251,
+    "name": "Foldling",
+    "types": [
+     "Gravity",
+     "Void"
+    ],
+    "rarity": "rare",
+    "weight": 2,
+    "levels": [
+     62,
+     66
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
    }
   ]
  },
@@ -7611,6 +8882,23 @@
     "method": "walk",
     "time": "any",
     "note": "spillover"
+   },
+   {
+    "n": 251,
+    "name": "Foldling",
+    "types": [
+     "Gravity",
+     "Void"
+    ],
+    "rarity": "rare",
+    "weight": 2,
+    "levels": [
+     63,
+     67
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
    }
   ]
  },
@@ -7668,6 +8956,57 @@
     "method": "walk",
     "time": "day x2",
     "note": "spillover"
+   },
+   {
+    "n": 238,
+    "name": "Eclipsit",
+    "types": [
+     "Plasma",
+     "Void"
+    ],
+    "rarity": "rare",
+    "weight": 2,
+    "levels": [
+     64,
+     67
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
+   },
+   {
+    "n": 251,
+    "name": "Foldling",
+    "types": [
+     "Gravity",
+     "Void"
+    ],
+    "rarity": "rare",
+    "weight": 2,
+    "levels": [
+     64,
+     67
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
+   },
+   {
+    "n": 239,
+    "name": "Eclipsor",
+    "types": [
+     "Plasma",
+     "Void"
+    ],
+    "rarity": "rare",
+    "weight": 2,
+    "levels": [
+     64,
+     67
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
    }
   ]
  }
