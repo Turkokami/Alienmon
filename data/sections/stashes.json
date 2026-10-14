@@ -536,8 +536,8 @@
    "section": "042",
    "name": "Mirefen Village",
    "tile": [
-    17,
-    13
+    8,
+    2
    ],
    "item": "harmonic",
    "n": 2,
@@ -638,7 +638,7 @@
    "name": "Port Saltreach Docks",
    "tile": [
     20,
-    14
+    13
    ],
    "item": "harmonic",
    "n": 2,
@@ -648,8 +648,8 @@
    "section": "053",
    "name": "Saltreach Market",
    "tile": [
-    20,
-    13
+    1,
+    10
    ],
    "item": "megagel",
    "n": 1,
@@ -896,8 +896,8 @@
    "section": "082",
    "name": "Cinder Hollow",
    "tile": [
-    5,
-    12
+    3,
+    5
    ],
    "item": "dust",
    "n": 800,

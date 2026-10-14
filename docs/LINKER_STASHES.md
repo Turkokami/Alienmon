@@ -67,7 +67,7 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 | Section | Tile | Item | Tier |
 |---|---|---|---|
 | 041 Landing Bog | 6,4 | 5x Stasis Pod | 2 |
-| 042 Mirefen Village | 17,13 | 2x Harmonic Pod | 2 |
+| 042 Mirefen Village | 8,2 | 2x Harmonic Pod | 2 |
 | 045 Lantern Marsh Part A | 16,12 | 1x Revive Spark | 2 |
 | 045 Lantern Marsh Part A | 4,1 | 1x Revive Spark | 2 |
 | 046 Lantern Marsh Part B | 17,1 | 3x Med Gel | 2 |
@@ -81,8 +81,8 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 
 | Section | Tile | Item | Tier |
 |---|---|---|---|
-| 052 Port Saltreach Docks | 20,14 | 2x Harmonic Pod | 2 |
-| 053 Saltreach Market | 20,13 | 1x Mega Gel | 2 |
+| 052 Port Saltreach Docks | 20,13 | 2x Harmonic Pod | 2 |
+| 053 Saltreach Market | 1,10 | 1x Mega Gel | 2 |
 | 057 Coral Route Part A | 17,1 | 3x Med Gel | 2 |
 | 057 Coral Route Part A | 6,13 | 1x Revive Spark | 2 |
 | 058 Coral Route Part B | 5,2 | 1x Signal Jammer | 2 |
@@ -119,7 +119,7 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 
 | Section | Tile | Item | Tier |
 |---|---|---|---|
-| 082 Cinder Hollow | 5,12 | 800x Stardust | 4 |
+| 082 Cinder Hollow | 3,5 | 800x Stardust | 4 |
 | 085 Lava Rail Part A | 7,13 | 2x Ether Gel | 4 |
 | 085 Lava Rail Part A | 16,2 | 2x Revive Spark | 4 |
 | 086 Lava Rail Part B | 19,12 | 800x Stardust | 4 |

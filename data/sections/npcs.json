@@ -1430,5 +1430,103 @@
     "Lamplighter: The Devourer follows the light, they say. So we never let it go out."
    ]
   }
+ ],
+ "187": [
+  {
+   "art": "explorer",
+   "name": "Canyon Guide",
+   "near": [
+    9,
+    7
+   ],
+   "t": [
+    "Canyon Guide: Shoes off, the rug's my grandma's. Oven's always warm if you're hungry.",
+    "Canyon Guide: When the drift grass crackles at night, the Starfall Crater is glowing."
+   ]
+  }
+ ],
+ "188": [
+  {
+   "art": "technician",
+   "name": "Scrap Welder",
+   "near": [
+    9,
+    7
+   ],
+   "t": [
+    "Scrap Welder: Every bolt in this cabin came off a crashed freighter. Hank says it's the sturdiest house on Ferrox.",
+    "Scrap Welder: Mind the stove. It runs on old reactor cores."
+   ]
+  }
+ ],
+ "189": [
+  {
+   "art": "researcher",
+   "name": "Crystal Keeper",
+   "near": [
+    9,
+    7
+   ],
+   "t": [
+    "Crystal Keeper: These crystals grew from the old world-tree's sap. They still hum when an Alienmon walks by.",
+    "Crystal Keeper: Ystra was green once. Listen closely and you can hear it remembering."
+   ]
+  }
+ ],
+ "190": [
+  {
+   "art": "sporefolk",
+   "name": "Moss Tender",
+   "near": [
+    9,
+    7
+   ],
+   "t": [
+    "Moss Tender: The lamps are glowcaps. Pick one and it sulks for a week.",
+    "Moss Tender: Sit, sit. The tea is mostly spores, but the good kind."
+   ]
+  }
+ ],
+ "191": [
+  {
+   "art": "squidsailor",
+   "name": "Old Netmender",
+   "near": [
+    9,
+    7
+   ],
+   "t": [
+    "Old Netmender: You can see the whole bay from that window. Captain Marsh's boat comes in at dawn.",
+    "Old Netmender: If you hear singing under the pier, that's just the Gloopa. Probably."
+   ]
+  }
+ ],
+ "192": [
+  {
+   "art": "static",
+   "name": "Late-Night Coder",
+   "near": [
+    9,
+    7
+   ],
+   "t": [
+    "Late-Night Coder: Every screen in this place is tuned to DJ Static's channel. Rent includes the bass.",
+    "Late-Night Coder: The crystal on the table charges my phone. Don't tell the landlord."
+   ]
+  }
+ ],
+ "193": [
+  {
+   "art": "wanderer",
+   "name": "Ice Fisher",
+   "near": [
+    9,
+    7
+   ],
+   "t": [
+    "Ice Fisher: Fire's always lit. The blue flame burns colder than you'd think, but it keeps the frost off.",
+    "Ice Fisher: Ingrid digs fossils all winter. I just dig holes and wait for fish."
+   ]
+  }
  ]
 }

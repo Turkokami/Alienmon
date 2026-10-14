@@ -3991,6 +3991,146 @@
    "notes": "Shared house interior: every house door on Umbra opens here",
    "file": "art/sections/11_umbra/186_umbra_house.png",
    "house": "umbra"
+  },
+  {
+   "id": "187",
+   "planet": "Dustara",
+   "name": "Dustara Cottage",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "House interior on dustara",
+   "file": "art/sections/01_dustara/187_dustara_cottage.png",
+   "house": "dustara"
+  },
+  {
+   "id": "188",
+   "planet": "Ferrox",
+   "name": "Ferrox Cabin",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "House interior on ferrox",
+   "file": "art/sections/02_ferrox/188_ferrox_cabin.png",
+   "house": "ferrox"
+  },
+  {
+   "id": "189",
+   "planet": "Ystra",
+   "name": "Ystra Crystal Lodge",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "House interior on ystra",
+   "file": "art/sections/14_ystra/189_ystra_crystal_lodge.png",
+   "house": "ystra"
+  },
+  {
+   "id": "190",
+   "planet": "Sporeholm",
+   "name": "Sporeholm Mushroom Hut",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "House interior on sporeholm",
+   "file": "art/sections/03_sporeholm/190_sporeholm_mushroom_hut.png",
+   "house": "sporeholm"
+  },
+  {
+   "id": "191",
+   "planet": "Thalassa",
+   "name": "Thalassa Seaside Home",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "House interior on thalassa",
+   "file": "art/sections/04_thalassa/191_thalassa_seaside_home.png",
+   "house": "thalassa"
+  },
+  {
+   "id": "192",
+   "planet": "Neonis",
+   "name": "Neonis Apartment",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "House interior on neonis",
+   "file": "art/sections/05_neonis/192_neonis_apartment.png",
+   "house": "neonis"
+  },
+  {
+   "id": "193",
+   "planet": "Glacia",
+   "name": "Glacia Ice Lodge",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "House interior on glacia",
+   "file": "art/sections/08_glacia/193_glacia_ice_lodge.png",
+   "house": "glacia"
   }
  ]
 }

@@ -165,6 +165,444 @@
   "002": "2F is upstairs; its drawn doormat can't lead outside, so it is left inert and 2F is reached by the stairs"
  },
  "objects": {
+  "101": [
+   {
+    "tile": [
+     17,
+     5
+    ],
+    "k": "stop",
+    "t": "This ladder is broken. You can't climb it.",
+    "why": "dead-end ladder (tools/sections/dead_ends.py)"
+   },
+   {
+    "tile": [
+     17,
+     6
+    ],
+    "k": "stop",
+    "t": "This ladder is broken. You can't climb it.",
+    "why": "dead-end ladder (tools/sections/dead_ends.py)"
+   }
+  ],
+  "114": [
+   {
+    "tile": [
+     4,
+     3
+    ],
+    "k": "house",
+    "to": "182",
+    "why": "walk-in door: cloud_dock_hall"
+   }
+  ],
+  "115": [
+   {
+    "tile": [
+     11,
+     2
+    ],
+    "k": "house",
+    "why": "house door: opens the shared Halo house",
+    "to": "175"
+   }
+  ],
+  "118": [],
+  "119": [
+   {
+    "tile": [
+     4,
+     2
+    ],
+    "k": "sign",
+    "t": "The shrine door is sealed. Old wind still whistles through the cracks.",
+    "why": "door plan: shrine door with no interior yet"
+   }
+  ],
+  "120": [
+   {
+    "tile": [
+     3,
+     1
+    ],
+    "k": "chest",
+    "item": "fullgel",
+    "n": 2,
+    "why": "treasure chest drawn on the top-left ledge"
+   }
+  ],
+  "121": [
+   {
+    "tile": [
+     3,
+     4
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   },
+   {
+    "tile": [
+     12,
+     4
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   }
+  ],
+  "123": [
+   {
+    "tile": [
+     11,
+     5
+    ],
+    "k": "sign",
+    "t": "Loose rock blocks the passage.",
+    "why": "door plan: cave door with no interior yet"
+   }
+  ],
+  "124": [
+   {
+    "tile": [
+     7,
+     4
+    ],
+    "k": "house",
+    "why": "house door: opens the shared Umbra house",
+    "to": "186"
+   }
+  ],
+  "127": [
+   {
+    "tile": [
+     6,
+     12
+    ],
+    "k": "house",
+    "why": "house door: opens the shared Umbra house",
+    "to": "186"
+   },
+   {
+    "tile": [
+     16,
+     3
+    ],
+    "k": "house",
+    "why": "house door: opens the shared Umbra house",
+    "to": "186"
+   }
+  ],
+  "128": [
+   {
+    "tile": [
+     4,
+     3
+    ],
+    "k": "house",
+    "why": "house door: opens the shared Umbra house",
+    "to": "186"
+   },
+   {
+    "tile": [
+     20,
+     11
+    ],
+    "k": "house",
+    "why": "house door: opens the shared Umbra house",
+    "to": "186"
+   }
+  ],
+  "129": [
+   {
+    "tile": [
+     3,
+     3
+    ],
+    "k": "stop",
+    "t": "This ladder is broken. You can't climb it.",
+    "why": "dead-end ladder (tools/sections/dead_ends.py)"
+   },
+   {
+    "tile": [
+     11,
+     7
+    ],
+    "k": "stop",
+    "t": "This ladder is broken. You can't climb it.",
+    "why": "dead-end ladder (tools/sections/dead_ends.py)"
+   }
+  ],
+  "130": [
+   {
+    "tile": [
+     3,
+     9
+    ],
+    "k": "stop",
+    "t": "This ladder is broken. You can't climb it.",
+    "why": "dead-end ladder (tools/sections/dead_ends.py)"
+   }
+  ],
+  "131": [
+   {
+    "tile": [
+     13,
+     7
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   }
+  ],
+  "132": [
+   {
+    "tile": [
+     12,
+     12
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   },
+   {
+    "tile": [
+     12,
+     14
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   }
+  ],
+  "136": [
+   {
+    "tile": [
+     5,
+     5
+    ],
+    "k": "house",
+    "why": "house door: opens the shared Starfall Rift house",
+    "to": "172"
+   },
+   {
+    "tile": [
+     10,
+     4
+    ],
+    "k": "house",
+    "why": "house door: opens the shared Starfall Rift house",
+    "to": "172"
+   },
+   {
+    "tile": [
+     14,
+     12
+    ],
+    "k": "house",
+    "why": "house door: opens the shared Starfall Rift house",
+    "to": "172"
+   }
+  ],
+  "139": [
+   {
+    "tile": [
+     11,
+     0
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   }
+  ],
+  "145": [
+   {
+    "tile": [
+     9,
+     5
+    ],
+    "k": "house",
+    "why": "house door: opens the shared Starfall Rift house",
+    "to": "172"
+   }
+  ],
+  "146": [],
+  "148": [
+   {
+    "tile": [
+     7,
+     14
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   },
+   {
+    "tile": [
+     8,
+     14
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   }
+  ],
+  "151": [
+   {
+    "tile": [
+     2,
+     5
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   },
+   {
+    "tile": [
+     2,
+     8
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   },
+   {
+    "tile": [
+     13,
+     5
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   },
+   {
+    "tile": [
+     13,
+     8
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   }
+  ],
+  "153": [
+   {
+    "tile": [
+     19,
+     4
+    ],
+    "k": "house",
+    "to": "181",
+    "why": "walk-in door: arrival_research_dome"
+   },
+   {
+    "tile": [
+     4,
+     4
+    ],
+    "k": "house",
+    "to": "189",
+    "why": "house door: opens the ystra house (was a chat knock door)"
+   }
+  ],
+  "160": [
+   {
+    "tile": [
+     11,
+     0
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   },
+   {
+    "tile": [
+     12,
+     0
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   }
+  ],
+  "161": [
+   {
+    "tile": [
+     11,
+     0
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   }
+  ],
+  "162": [
+   {
+    "tile": [
+     2,
+     2
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   },
+   {
+    "tile": [
+     2,
+     5
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   },
+   {
+    "tile": [
+     3,
+     2
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   }
+  ],
+  "163": [
+   {
+    "tile": [
+     1,
+     1
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   },
+   {
+    "tile": [
+     2,
+     1
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   },
+   {
+    "tile": [
+     14,
+     15
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   },
+   {
+    "tile": [
+     15,
+     15
+    ],
+    "k": "stop",
+    "t": "The stairs are blocked off. You can't go this way.",
+    "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   }
+  ],
   "005": [
    {
     "tile": [
@@ -268,18 +706,6 @@
     "why": "treasure chest drawn on the mesa"
    }
   ],
-  "120": [
-   {
-    "tile": [
-     3,
-     1
-    ],
-    "k": "chest",
-    "item": "fullgel",
-    "n": 2,
-    "why": "treasure chest drawn on the top-left ledge"
-   }
-  ],
   "008": [
    {
     "tile": [
@@ -333,9 +759,9 @@
      22,
      4
     ],
-    "k": "sign",
-    "t": "The door is locked. Nobody seems to be home.",
-    "why": "door plan: house door with no interior yet"
+    "k": "house",
+    "why": "house door: opens Dustara Cottage",
+    "to": "187"
    }
   ],
   "014": [
@@ -380,6 +806,24 @@
     "k": "stop",
     "t": "The stairs are blocked off. You can't go this way.",
     "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   },
+   {
+    "tile": [
+     3,
+     5
+    ],
+    "k": "house",
+    "to": "187",
+    "why": "house door: opens the dustara house (was a item knock door)"
+   },
+   {
+    "tile": [
+     20,
+     4
+    ],
+    "k": "house",
+    "to": "187",
+    "why": "house door: opens the dustara house (was a item knock door)"
    }
   ],
   "026": [
@@ -391,6 +835,15 @@
     "k": "stop",
     "t": "The stairs are blocked off. You can't go this way.",
     "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   },
+   {
+    "tile": [
+     19,
+     13
+    ],
+    "k": "house",
+    "to": "187",
+    "why": "house door: opens the dustara house (was a chat knock door)"
    }
   ],
   "028": [
@@ -419,27 +872,27 @@
      6,
      5
     ],
-    "k": "sign",
-    "t": "The door is locked. Nobody seems to be home.",
-    "why": "door plan: house door with no interior yet"
+    "k": "house",
+    "why": "house door: opens Ferrox Cabin",
+    "to": "188"
    },
    {
     "tile": [
      18,
      5
     ],
-    "k": "sign",
-    "t": "The door is locked. Nobody seems to be home.",
-    "why": "door plan: house door with no interior yet"
+    "k": "house",
+    "why": "house door: opens Ferrox Cabin",
+    "to": "188"
    },
    {
     "tile": [
      17,
      12
     ],
-    "k": "sign",
-    "t": "The door is locked. Nobody seems to be home.",
-    "why": "door plan: house door with no interior yet"
+    "k": "house",
+    "why": "house door: opens Ferrox Cabin",
+    "to": "188"
    }
   ],
   "030": [
@@ -448,9 +901,9 @@
      17,
      11
     ],
-    "k": "sign",
-    "t": "The door is locked. Nobody seems to be home.",
-    "why": "door plan: house door with no interior yet"
+    "k": "house",
+    "why": "house door: opens Ferrox Cabin",
+    "to": "188"
    }
   ],
   "037": [
@@ -477,9 +930,9 @@
      6,
      11
     ],
-    "k": "sign",
-    "t": "The door is locked. Nobody seems to be home.",
-    "why": "door plan: house door with no interior yet"
+    "k": "house",
+    "why": "house door: opens Ferrox Cabin",
+    "to": "188"
    }
   ],
   "041": [
@@ -502,7 +955,26 @@
     "why": "walk-in door: landing_dome"
    }
   ],
-  "042": [],
+  "042": [
+   {
+    "tile": [
+     6,
+     2
+    ],
+    "k": "house",
+    "to": "190",
+    "why": "house door: opens the sporeholm house (was a item knock door)"
+   },
+   {
+    "tile": [
+     20,
+     13
+    ],
+    "k": "house",
+    "to": "190",
+    "why": "house door: opens the sporeholm house (was a item knock door)"
+   }
+  ],
   "047": [
    {
     "tile": [
@@ -543,6 +1015,24 @@
     "k": "stop",
     "t": "The stairs are blocked off. You can't go this way.",
     "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   },
+   {
+    "tile": [
+     5,
+     4
+    ],
+    "k": "house",
+    "to": "191",
+    "why": "house door: opens the thalassa house (was a item knock door)"
+   },
+   {
+    "tile": [
+     19,
+     11
+    ],
+    "k": "house",
+    "to": "191",
+    "why": "house door: opens the thalassa house (was a chat knock door)"
    }
   ],
   "053": [
@@ -581,6 +1071,15 @@
     "k": "stop",
     "t": "The stairs are blocked off. You can't go this way.",
     "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   },
+   {
+    "tile": [
+     20,
+     11
+    ],
+    "k": "house",
+    "to": "191",
+    "why": "house door: opens the thalassa house (was a item knock door)"
    }
   ],
   "059": [
@@ -809,6 +1308,15 @@
     "k": "stop",
     "t": "The stairs are blocked off. You can't go this way.",
     "why": "dead-end stairs (tools/sections/dead_ends.py)"
+   },
+   {
+    "tile": [
+     7,
+     10
+    ],
+    "k": "house",
+    "to": "174",
+    "why": "house door: opens the pyros house (was a chat knock door)"
    }
   ],
   "085": [
@@ -1082,155 +1590,8 @@
      12
     ],
     "k": "house",
-    "why": "house door: opens the shared Glacia house",
-    "to": "178"
-   }
-  ],
-  "114": [
-   {
-    "tile": [
-     4,
-     3
-    ],
-    "k": "house",
-    "to": "182",
-    "why": "walk-in door: cloud_dock_hall"
-   }
-  ],
-  "115": [
-   {
-    "tile": [
-     11,
-     2
-    ],
-    "k": "house",
-    "why": "house door: opens the shared Halo house",
-    "to": "175"
-   }
-  ],
-  "118": [],
-  "119": [
-   {
-    "tile": [
-     4,
-     2
-    ],
-    "k": "sign",
-    "t": "The shrine door is sealed. Old wind still whistles through the cracks.",
-    "why": "door plan: shrine door with no interior yet"
-   }
-  ],
-  "123": [
-   {
-    "tile": [
-     11,
-     5
-    ],
-    "k": "sign",
-    "t": "Loose rock blocks the passage.",
-    "why": "door plan: cave door with no interior yet"
-   }
-  ],
-  "124": [
-   {
-    "tile": [
-     7,
-     4
-    ],
-    "k": "house",
-    "why": "house door: opens the shared Umbra house",
-    "to": "186"
-   }
-  ],
-  "127": [
-   {
-    "tile": [
-     6,
-     12
-    ],
-    "k": "house",
-    "why": "house door: opens the shared Umbra house",
-    "to": "186"
-   },
-   {
-    "tile": [
-     16,
-     3
-    ],
-    "k": "house",
-    "why": "house door: opens the shared Umbra house",
-    "to": "186"
-   }
-  ],
-  "128": [
-   {
-    "tile": [
-     4,
-     3
-    ],
-    "k": "house",
-    "why": "house door: opens the shared Umbra house",
-    "to": "186"
-   },
-   {
-    "tile": [
-     20,
-     11
-    ],
-    "k": "house",
-    "why": "house door: opens the shared Umbra house",
-    "to": "186"
-   }
-  ],
-  "136": [
-   {
-    "tile": [
-     5,
-     5
-    ],
-    "k": "house",
-    "why": "house door: opens the shared Starfall Rift house",
-    "to": "172"
-   },
-   {
-    "tile": [
-     10,
-     4
-    ],
-    "k": "house",
-    "why": "house door: opens the shared Starfall Rift house",
-    "to": "172"
-   },
-   {
-    "tile": [
-     14,
-     12
-    ],
-    "k": "house",
-    "why": "house door: opens the shared Starfall Rift house",
-    "to": "172"
-   }
-  ],
-  "145": [
-   {
-    "tile": [
-     9,
-     5
-    ],
-    "k": "house",
-    "why": "house door: opens the shared Starfall Rift house",
-    "to": "172"
-   }
-  ],
-  "153": [
-   {
-    "tile": [
-     19,
-     4
-    ],
-    "k": "house",
-    "to": "181",
-    "why": "walk-in door: arrival_research_dome"
+    "why": "house door: opens Glacia Ice Lodge",
+    "to": "193"
    }
   ],
   "016": [
@@ -1369,276 +1730,6 @@
     "why": "dead-end stairs (tools/sections/dead_ends.py)"
    }
   ],
-  "101": [
-   {
-    "tile": [
-     17,
-     5
-    ],
-    "k": "stop",
-    "t": "This ladder is broken. You can't climb it.",
-    "why": "dead-end ladder (tools/sections/dead_ends.py)"
-   },
-   {
-    "tile": [
-     17,
-     6
-    ],
-    "k": "stop",
-    "t": "This ladder is broken. You can't climb it.",
-    "why": "dead-end ladder (tools/sections/dead_ends.py)"
-   }
-  ],
-  "121": [
-   {
-    "tile": [
-     3,
-     4
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   },
-   {
-    "tile": [
-     12,
-     4
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   }
-  ],
-  "129": [
-   {
-    "tile": [
-     3,
-     3
-    ],
-    "k": "stop",
-    "t": "This ladder is broken. You can't climb it.",
-    "why": "dead-end ladder (tools/sections/dead_ends.py)"
-   },
-   {
-    "tile": [
-     11,
-     7
-    ],
-    "k": "stop",
-    "t": "This ladder is broken. You can't climb it.",
-    "why": "dead-end ladder (tools/sections/dead_ends.py)"
-   }
-  ],
-  "130": [
-   {
-    "tile": [
-     3,
-     9
-    ],
-    "k": "stop",
-    "t": "This ladder is broken. You can't climb it.",
-    "why": "dead-end ladder (tools/sections/dead_ends.py)"
-   }
-  ],
-  "131": [
-   {
-    "tile": [
-     13,
-     7
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   }
-  ],
-  "132": [
-   {
-    "tile": [
-     12,
-     12
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   },
-   {
-    "tile": [
-     12,
-     14
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   }
-  ],
-  "139": [
-   {
-    "tile": [
-     11,
-     0
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   }
-  ],
-  "146": [],
-  "148": [
-   {
-    "tile": [
-     7,
-     14
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   },
-   {
-    "tile": [
-     8,
-     14
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   }
-  ],
-  "151": [
-   {
-    "tile": [
-     2,
-     5
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   },
-   {
-    "tile": [
-     2,
-     8
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   },
-   {
-    "tile": [
-     13,
-     5
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   },
-   {
-    "tile": [
-     13,
-     8
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   }
-  ],
-  "160": [
-   {
-    "tile": [
-     11,
-     0
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   },
-   {
-    "tile": [
-     12,
-     0
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   }
-  ],
-  "161": [
-   {
-    "tile": [
-     11,
-     0
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   }
-  ],
-  "162": [
-   {
-    "tile": [
-     2,
-     2
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   },
-   {
-    "tile": [
-     2,
-     5
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   },
-   {
-    "tile": [
-     3,
-     2
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   }
-  ],
-  "163": [
-   {
-    "tile": [
-     1,
-     1
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   },
-   {
-    "tile": [
-     2,
-     1
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   },
-   {
-    "tile": [
-     14,
-     15
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   },
-   {
-    "tile": [
-     15,
-     15
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   }
-  ],
   "012": [],
   "013": []
  },
@@ -1673,12 +1764,6 @@
   "028": "Magma Mines gate (14-17,1-4) and a mine door (20-21,5) look enterable; the bridge at row 10 runs to the right edge; stairs off the bottom (7-8,14)"
  },
  "spawns": {
-  "002": {
-   "wake": [
-    7,
-    8
-   ]
-  },
   "165": {
    "default": [
     4,
@@ -1809,6 +1894,54 @@
    "default": [
     7,
     12
+   ]
+  },
+  "187": {
+   "default": [
+    7,
+    12
+   ]
+  },
+  "188": {
+   "default": [
+    7,
+    12
+   ]
+  },
+  "189": {
+   "default": [
+    7,
+    12
+   ]
+  },
+  "190": {
+   "default": [
+    7,
+    12
+   ]
+  },
+  "191": {
+   "default": [
+    7,
+    12
+   ]
+  },
+  "192": {
+   "default": [
+    7,
+    12
+   ]
+  },
+  "193": {
+   "default": [
+    7,
+    12
+   ]
+  },
+  "002": {
+   "wake": [
+    7,
+    8
    ]
   }
  },
@@ -2724,6 +2857,291 @@
    "face": "down",
    "kind": "door",
    "parent": "124"
+  },
+  {
+   "section": "187",
+   "tile": [
+    6,
+    13
+   ],
+   "to": "back",
+   "at": [
+    6,
+    12
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "007"
+  },
+  {
+   "section": "187",
+   "tile": [
+    7,
+    13
+   ],
+   "to": "back",
+   "at": [
+    7,
+    12
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "007"
+  },
+  {
+   "section": "187",
+   "tile": [
+    8,
+    13
+   ],
+   "to": "back",
+   "at": [
+    8,
+    12
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "007"
+  },
+  {
+   "section": "188",
+   "tile": [
+    7,
+    13
+   ],
+   "to": "back",
+   "at": [
+    7,
+    12
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "029"
+  },
+  {
+   "section": "188",
+   "tile": [
+    8,
+    13
+   ],
+   "to": "back",
+   "at": [
+    8,
+    12
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "029"
+  },
+  {
+   "section": "189",
+   "tile": [
+    6,
+    13
+   ],
+   "to": "back",
+   "at": [
+    6,
+    12
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "153"
+  },
+  {
+   "section": "189",
+   "tile": [
+    7,
+    13
+   ],
+   "to": "back",
+   "at": [
+    7,
+    12
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "153"
+  },
+  {
+   "section": "189",
+   "tile": [
+    8,
+    13
+   ],
+   "to": "back",
+   "at": [
+    8,
+    12
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "153"
+  },
+  {
+   "section": "189",
+   "tile": [
+    9,
+    13
+   ],
+   "to": "back",
+   "at": [
+    9,
+    12
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "153"
+  },
+  {
+   "section": "190",
+   "tile": [
+    7,
+    13
+   ],
+   "to": "back",
+   "at": [
+    7,
+    12
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "041"
+  },
+  {
+   "section": "190",
+   "tile": [
+    8,
+    13
+   ],
+   "to": "back",
+   "at": [
+    8,
+    12
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "041"
+  },
+  {
+   "section": "191",
+   "tile": [
+    7,
+    13
+   ],
+   "to": "back",
+   "at": [
+    7,
+    12
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "052"
+  },
+  {
+   "section": "191",
+   "tile": [
+    8,
+    13
+   ],
+   "to": "back",
+   "at": [
+    8,
+    12
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "052"
+  },
+  {
+   "section": "192",
+   "tile": [
+    6,
+    13
+   ],
+   "to": "back",
+   "at": [
+    6,
+    12
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "062"
+  },
+  {
+   "section": "192",
+   "tile": [
+    7,
+    13
+   ],
+   "to": "back",
+   "at": [
+    7,
+    12
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "062"
+  },
+  {
+   "section": "192",
+   "tile": [
+    8,
+    13
+   ],
+   "to": "back",
+   "at": [
+    8,
+    12
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "062"
+  },
+  {
+   "section": "193",
+   "tile": [
+    6,
+    13
+   ],
+   "to": "back",
+   "at": [
+    6,
+    12
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "093"
+  },
+  {
+   "section": "193",
+   "tile": [
+    7,
+    13
+   ],
+   "to": "back",
+   "at": [
+    7,
+    12
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "093"
+  },
+  {
+   "section": "193",
+   "tile": [
+    8,
+    13
+   ],
+   "to": "back",
+   "at": [
+    8,
+    12
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "093"
   }
  ]
 }

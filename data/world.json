@@ -599,12 +599,12 @@
   "S30:giver": {
    "s": "042",
    "x": 6,
-   "y": 6
+   "y": 9
   },
   "S31:giver": {
    "s": "042",
    "x": 17,
-   "y": 8
+   "y": 13
   },
   "S31:0": {
    "s": "046",
@@ -1976,9 +1976,9 @@
       22,
       4
      ],
-     "k": "sign",
-     "t": "The door is locked. Nobody seems to be home.",
-     "why": "door plan: house door with no interior yet"
+     "k": "house",
+     "why": "house door: opens Dustara Cottage",
+     "to": "187"
     },
     {
      "tile": [
@@ -3914,6 +3914,24 @@
     },
     {
      "tile": [
+      3,
+      5
+     ],
+     "k": "house",
+     "to": "187",
+     "why": "house door: opens the dustara house (was a item knock door)"
+    },
+    {
+     "tile": [
+      20,
+      4
+     ],
+     "k": "house",
+     "to": "187",
+     "why": "house door: opens the dustara house (was a item knock door)"
+    },
+    {
+     "tile": [
       11,
       14
      ],
@@ -4471,6 +4489,15 @@
     },
     {
      "tile": [
+      19,
+      13
+     ],
+     "k": "house",
+     "to": "187",
+     "why": "house door: opens the dustara house (was a chat knock door)"
+    },
+    {
+     "tile": [
       7,
       3
      ],
@@ -4525,8 +4552,8 @@
    ],
    "mons": [
     {
-     "x": 20,
-     "y": 9,
+     "x": 22,
+     "y": 10,
      "mon": "Fizzlord"
     },
     {
@@ -4840,27 +4867,27 @@
       6,
       5
      ],
-     "k": "sign",
-     "t": "The door is locked. Nobody seems to be home.",
-     "why": "door plan: house door with no interior yet"
+     "k": "house",
+     "why": "house door: opens Ferrox Cabin",
+     "to": "188"
     },
     {
      "tile": [
       18,
       5
      ],
-     "k": "sign",
-     "t": "The door is locked. Nobody seems to be home.",
-     "why": "door plan: house door with no interior yet"
+     "k": "house",
+     "why": "house door: opens Ferrox Cabin",
+     "to": "188"
     },
     {
      "tile": [
       17,
       12
      ],
-     "k": "sign",
-     "t": "The door is locked. Nobody seems to be home.",
-     "why": "door plan: house door with no interior yet"
+     "k": "house",
+     "why": "house door: opens Ferrox Cabin",
+     "to": "188"
     },
     {
      "tile": [
@@ -5010,9 +5037,9 @@
       17,
       11
      ],
-     "k": "sign",
-     "t": "The door is locked. Nobody seems to be home.",
-     "why": "door plan: house door with no interior yet"
+     "k": "house",
+     "why": "house door: opens Ferrox Cabin",
+     "to": "188"
     },
     {
      "tile": [
@@ -5789,9 +5816,9 @@
       6,
       11
      ],
-     "k": "sign",
-     "t": "The door is locked. Nobody seems to be home.",
-     "why": "door plan: house door with no interior yet"
+     "k": "house",
+     "why": "house door: opens Ferrox Cabin",
+     "to": "188"
     },
     {
      "tile": [
@@ -6380,6 +6407,24 @@
    "objects": [
     {
      "tile": [
+      6,
+      2
+     ],
+     "k": "house",
+     "to": "190",
+     "why": "house door: opens the sporeholm house (was a item knock door)"
+    },
+    {
+     "tile": [
+      20,
+      13
+     ],
+     "k": "house",
+     "to": "190",
+     "why": "house door: opens the sporeholm house (was a item knock door)"
+    },
+    {
+     "tile": [
       11,
       8
      ],
@@ -6390,8 +6435,8 @@
     },
     {
      "tile": [
-      17,
-      13
+      8,
+      2
      ],
      "k": "stash",
      "item": "harmonic",
@@ -6439,8 +6484,8 @@
      ]
     },
     {
-     "x": 17,
-     "y": 9,
+     "x": 11,
+     "y": 13,
      "art": "civilian",
      "face": "down",
      "t": [
@@ -6484,13 +6529,7 @@
      ]
     }
    ],
-   "mons": [
-    {
-     "x": 8,
-     "y": 2,
-     "mon": "Lilypod"
-    }
-   ]
+   "mons": []
   },
   "043": {
    "id": "043",
@@ -7667,6 +7706,24 @@
     },
     {
      "tile": [
+      5,
+      4
+     ],
+     "k": "house",
+     "to": "191",
+     "why": "house door: opens the thalassa house (was a item knock door)"
+    },
+    {
+     "tile": [
+      19,
+      11
+     ],
+     "k": "house",
+     "to": "191",
+     "why": "house door: opens the thalassa house (was a chat knock door)"
+    },
+    {
+     "tile": [
       12,
       7
      ],
@@ -7678,7 +7735,7 @@
     {
      "tile": [
       20,
-      14
+      13
      ],
      "k": "stash",
      "item": "harmonic",
@@ -7712,8 +7769,8 @@
      ]
     },
     {
-     "x": 4,
-     "y": 7,
+     "x": 6,
+     "y": 13,
      "art": "guard",
      "face": "down",
      "t": [
@@ -7721,8 +7778,8 @@
      ]
     },
     {
-     "x": 5,
-     "y": 6,
+     "x": 7,
+     "y": 13,
      "art": "civilian",
      "face": "down",
      "t": [
@@ -7739,8 +7796,8 @@
      ]
     },
     {
-     "x": 7,
-     "y": 13,
+     "x": 19,
+     "y": 6,
      "art": "explorer",
      "face": "down",
      "t": [
@@ -7748,8 +7805,8 @@
      ]
     },
     {
-     "x": 19,
-     "y": 6,
+     "x": 16,
+     "y": 9,
      "art": "wanderer",
      "face": "down",
      "t": [
@@ -7864,6 +7921,15 @@
     },
     {
      "tile": [
+      20,
+      11
+     ],
+     "k": "house",
+     "to": "191",
+     "why": "house door: opens the thalassa house (was a item knock door)"
+    },
+    {
+     "tile": [
       12,
       8
      ],
@@ -7874,8 +7940,8 @@
     },
     {
      "tile": [
-      20,
-      13
+      1,
+      10
      ],
      "k": "stash",
      "item": "megagel",
@@ -7914,8 +7980,8 @@
      ]
     },
     {
-     "x": 2,
-     "y": 10,
+     "x": 3,
+     "y": 8,
      "art": "mom",
      "face": "down",
      "t": [
@@ -11531,6 +11597,15 @@
     },
     {
      "tile": [
+      7,
+      10
+     ],
+     "k": "house",
+     "to": "174",
+     "why": "house door: opens the pyros house (was a chat knock door)"
+    },
+    {
+     "tile": [
       13,
       8
      ],
@@ -11553,8 +11628,8 @@
     },
     {
      "tile": [
-      5,
-      12
+      3,
+      5
      ],
      "k": "stash",
      "item": "dust",
@@ -11579,8 +11654,8 @@
    "pkey": "pyros",
    "npcs": [
     {
-     "x": 4,
-     "y": 5,
+     "x": 8,
+     "y": 6,
      "art": "miner",
      "face": "down",
      "t": [
@@ -11607,8 +11682,8 @@
      ]
     },
     {
-     "x": 6,
-     "y": 11,
+     "x": 5,
+     "y": 12,
      "art": "wanderer",
      "face": "down",
      "t": [
@@ -11616,8 +11691,8 @@
      ]
     },
     {
-     "x": 10,
-     "y": 10,
+     "x": 7,
+     "y": 5,
      "art": "miner",
      "face": "down",
      "t": [
@@ -11626,8 +11701,8 @@
      ]
     },
     {
-     "x": 7,
-     "y": 5,
+     "x": 4,
+     "y": 6,
      "art": "explorer",
      "face": "down",
      "t": [
@@ -11635,8 +11710,8 @@
      ]
     },
     {
-     "x": 4,
-     "y": 6,
+     "x": 9,
+     "y": 8,
      "art": "guard",
      "face": "down",
      "t": [
@@ -13125,8 +13200,8 @@
       12
      ],
      "k": "house",
-     "why": "house door: opens the shared Glacia house",
-     "to": "178"
+     "why": "house door: opens Glacia Ice Lodge",
+     "to": "193"
     },
     {
      "tile": [
@@ -20471,6 +20546,15 @@
     },
     {
      "tile": [
+      4,
+      4
+     ],
+     "k": "house",
+     "to": "189",
+     "why": "house door: opens the ystra house (was a chat knock door)"
+    },
+    {
+     "tile": [
       12,
       4
      ],
@@ -20537,7 +20621,7 @@
      "name": "Ystran echo"
     },
     {
-     "x": 5,
+     "x": 6,
      "y": 6,
      "art": "explorer",
      "face": "down",
@@ -20559,8 +20643,8 @@
    ],
    "mons": [
     {
-     "x": 7,
-     "y": 2,
+     "x": 4,
+     "y": 9,
      "mon": "Riftwalker"
     },
     {
@@ -23534,6 +23618,519 @@
       "Lamplighter: The Devourer follows the light, they say. So we never let it go out."
      ],
      "name": "Lamplighter"
+    }
+   ]
+  },
+  "187": {
+   "id": "187",
+   "name": "Dustara Cottage",
+   "planet": "Dustara",
+   "dir": "01_dustara",
+   "type": "interior",
+   "img": "art/sections_game/01_dustara/187_dustara_cottage.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "House interior on dustara",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      6,
+      13
+     ],
+     "to": "back",
+     "at": [
+      6,
+      12
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      7,
+      13
+     ],
+     "to": "back",
+     "at": [
+      7,
+      12
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      13
+     ],
+     "to": "back",
+     "at": [
+      8,
+      12
+     ],
+     "face": "down",
+     "kind": "door"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     7,
+     12
+    ]
+   },
+   "parent": "007",
+   "pkey": "dustara",
+   "npcs": [
+    {
+     "x": 9,
+     "y": 7,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Canyon Guide: Shoes off, the rug's my grandma's. Oven's always warm if you're hungry.",
+      "Canyon Guide: When the drift grass crackles at night, the Starfall Crater is glowing."
+     ],
+     "name": "Canyon Guide"
+    }
+   ]
+  },
+  "188": {
+   "id": "188",
+   "name": "Ferrox Cabin",
+   "planet": "Ferrox",
+   "dir": "02_ferrox",
+   "type": "interior",
+   "img": "art/sections_game/02_ferrox/188_ferrox_cabin.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "House interior on ferrox",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      13
+     ],
+     "to": "back",
+     "at": [
+      7,
+      12
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      13
+     ],
+     "to": "back",
+     "at": [
+      8,
+      12
+     ],
+     "face": "down",
+     "kind": "door"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     7,
+     12
+    ]
+   },
+   "parent": "029",
+   "pkey": "ferrox",
+   "npcs": [
+    {
+     "x": 9,
+     "y": 7,
+     "art": "technician",
+     "face": "down",
+     "t": [
+      "Scrap Welder: Every bolt in this cabin came off a crashed freighter. Hank says it's the sturdiest house on Ferrox.",
+      "Scrap Welder: Mind the stove. It runs on old reactor cores."
+     ],
+     "name": "Scrap Welder"
+    }
+   ]
+  },
+  "189": {
+   "id": "189",
+   "name": "Ystra Crystal Lodge",
+   "planet": "Ystra",
+   "dir": "14_ystra",
+   "type": "interior",
+   "img": "art/sections_game/14_ystra/189_ystra_crystal_lodge.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "House interior on ystra",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      6,
+      13
+     ],
+     "to": "back",
+     "at": [
+      6,
+      12
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      7,
+      13
+     ],
+     "to": "back",
+     "at": [
+      7,
+      12
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      13
+     ],
+     "to": "back",
+     "at": [
+      8,
+      12
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      9,
+      13
+     ],
+     "to": "back",
+     "at": [
+      9,
+      12
+     ],
+     "face": "down",
+     "kind": "door"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     7,
+     12
+    ]
+   },
+   "parent": "153",
+   "pkey": "ystra",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 7,
+     "art": "researcher",
+     "face": "down",
+     "t": [
+      "Crystal Keeper: These crystals grew from the old world-tree's sap. They still hum when an Alienmon walks by.",
+      "Crystal Keeper: Ystra was green once. Listen closely and you can hear it remembering."
+     ],
+     "name": "Crystal Keeper"
+    }
+   ]
+  },
+  "190": {
+   "id": "190",
+   "name": "Sporeholm Mushroom Hut",
+   "planet": "Sporeholm",
+   "dir": "03_sporeholm",
+   "type": "interior",
+   "img": "art/sections_game/03_sporeholm/190_sporeholm_mushroom_hut.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "House interior on sporeholm",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      13
+     ],
+     "to": "back",
+     "at": [
+      7,
+      12
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      13
+     ],
+     "to": "back",
+     "at": [
+      8,
+      12
+     ],
+     "face": "down",
+     "kind": "door"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     7,
+     12
+    ]
+   },
+   "parent": "041",
+   "pkey": "sporeholm",
+   "npcs": [
+    {
+     "x": 8,
+     "y": 7,
+     "art": "sporefolk",
+     "face": "down",
+     "t": [
+      "Moss Tender: The lamps are glowcaps. Pick one and it sulks for a week.",
+      "Moss Tender: Sit, sit. The tea is mostly spores, but the good kind."
+     ],
+     "name": "Moss Tender"
+    }
+   ]
+  },
+  "191": {
+   "id": "191",
+   "name": "Thalassa Seaside Home",
+   "planet": "Thalassa",
+   "dir": "04_thalassa",
+   "type": "interior",
+   "img": "art/sections_game/04_thalassa/191_thalassa_seaside_home.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "House interior on thalassa",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      13
+     ],
+     "to": "back",
+     "at": [
+      7,
+      12
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      13
+     ],
+     "to": "back",
+     "at": [
+      8,
+      12
+     ],
+     "face": "down",
+     "kind": "door"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     7,
+     12
+    ]
+   },
+   "parent": "052",
+   "pkey": "thalassa",
+   "npcs": [
+    {
+     "x": 9,
+     "y": 7,
+     "art": "squidsailor",
+     "face": "down",
+     "t": [
+      "Old Netmender: You can see the whole bay from that window. Captain Marsh's boat comes in at dawn.",
+      "Old Netmender: If you hear singing under the pier, that's just the Gloopa. Probably."
+     ],
+     "name": "Old Netmender"
+    }
+   ]
+  },
+  "192": {
+   "id": "192",
+   "name": "Neonis Apartment",
+   "planet": "Neonis",
+   "dir": "05_neonis",
+   "type": "interior",
+   "img": "art/sections_game/05_neonis/192_neonis_apartment.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "House interior on neonis",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      6,
+      13
+     ],
+     "to": "back",
+     "at": [
+      6,
+      12
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      7,
+      13
+     ],
+     "to": "back",
+     "at": [
+      7,
+      12
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      13
+     ],
+     "to": "back",
+     "at": [
+      8,
+      12
+     ],
+     "face": "down",
+     "kind": "door"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     7,
+     12
+    ]
+   },
+   "parent": "062",
+   "pkey": "neonis",
+   "npcs": [
+    {
+     "x": 9,
+     "y": 7,
+     "art": "static",
+     "face": "down",
+     "t": [
+      "Late-Night Coder: Every screen in this place is tuned to DJ Static's channel. Rent includes the bass.",
+      "Late-Night Coder: The crystal on the table charges my phone. Don't tell the landlord."
+     ],
+     "name": "Late-Night Coder"
+    }
+   ]
+  },
+  "193": {
+   "id": "193",
+   "name": "Glacia Ice Lodge",
+   "planet": "Glacia",
+   "dir": "08_glacia",
+   "type": "interior",
+   "img": "art/sections_game/08_glacia/193_glacia_ice_lodge.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "House interior on glacia",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      6,
+      13
+     ],
+     "to": "back",
+     "at": [
+      6,
+      12
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      7,
+      13
+     ],
+     "to": "back",
+     "at": [
+      7,
+      12
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      13
+     ],
+     "to": "back",
+     "at": [
+      8,
+      12
+     ],
+     "face": "down",
+     "kind": "door"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     7,
+     12
+    ]
+   },
+   "parent": "093",
+   "pkey": "glacia",
+   "npcs": [
+    {
+     "x": 9,
+     "y": 7,
+     "art": "wanderer",
+     "face": "down",
+     "t": [
+      "Ice Fisher: Fire's always lit. The blue flame burns colder than you'd think, but it keeps the frost off.",
+      "Ice Fisher: Ingrid digs fossils all winter. I just dig holes and wait for fish."
+     ],
+     "name": "Ice Fisher"
     }
    ]
   }
