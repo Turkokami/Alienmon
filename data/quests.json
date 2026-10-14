@@ -75,7 +75,7 @@
    },
    "giver": {
     "name": "Scout unit DX-4",
-    "art": "technician"
+    "art": "dx4"
    },
    "prereq": [
     "M01"
@@ -2635,7 +2635,7 @@
    },
    "giver": {
     "name": "Scout unit DX-4",
-    "art": "technician"
+    "art": "dx4"
    },
    "prereq": [
     "M02"
