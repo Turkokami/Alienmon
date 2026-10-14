@@ -381,7 +381,7 @@
     "x": 1420,
     "y": 812,
     "cls": "Smith",
-    "art": "technician",
+    "art": "tamsin",
     "name": "Tamsin",
     "face": [
      -1,
@@ -417,7 +417,7 @@
     "x": 436,
     "y": 284,
     "cls": "Smith",
-    "art": "technician",
+    "art": "tamsin",
     "name": "Tamsin",
     "face": [
      1,
@@ -1012,7 +1012,7 @@
     "x": 876,
     "y": 332,
     "cls": "Helix Grunt",
-    "art": "strand",
+    "art": "tamsin",
     "name": "Tamsin",
     "face": [
      0,
@@ -2075,7 +2075,7 @@
     "y": 740,
     "route": 1,
     "cls": "Mystic",
-    "art": "wanderer",
+    "art": "tamsin",
     "name": "Tamsin",
     "face": [
      0,
@@ -2617,7 +2617,7 @@
     "y": 580,
     "route": 1,
     "cls": "Ystran Echo",
-    "art": "ystran",
+    "art": "tamsin",
     "name": "Tamsin",
     "face": [
      1,

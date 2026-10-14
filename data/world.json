@@ -3287,7 +3287,7 @@
     {
      "x": 19,
      "y": 6,
-     "art": "nurse",
+     "art": "coral",
      "face": "down",
      "t": [
       "Nurse Coral: Welcome to the Palm Isle Recovery Hut! Let me patch your team up."
@@ -18634,7 +18634,7 @@
     {
      "x": 10,
      "y": 9,
-     "art": "explorer",
+     "art": "tamsin",
      "face": "down",
      "t": [
       "Tamsin: The crater's three levels deep, and the light gets stranger the further down you go.",
@@ -21567,7 +21567,7 @@
     {
      "x": 10,
      "y": 10,
-     "art": "explorer",
+     "art": "tamsin",
      "face": "down",
      "t": [
       "Tamsin: I'm staying on Ystra. There's a whole map room of places nobody has found yet.",

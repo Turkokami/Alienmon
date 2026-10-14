@@ -404,7 +404,7 @@
  ],
  "017": [
   {
-   "art": "nurse",
+   "art": "coral",
    "name": "Nurse Coral",
    "story": "heal",
    "near": [
@@ -1030,7 +1030,7 @@
  ],
  "136": [
   {
-   "art": "explorer",
+   "art": "tamsin",
    "name": "Tamsin",
    "after": "M17b",
    "until": "M19",
@@ -1112,7 +1112,7 @@
  ],
  "159": [
   {
-   "art": "explorer",
+   "art": "tamsin",
    "name": "Tamsin",
    "after": "P01",
    "near": [

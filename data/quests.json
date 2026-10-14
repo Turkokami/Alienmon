@@ -2743,7 +2743,7 @@
    },
    "giver": {
     "name": "Tamsin the Explorer",
-    "art": "explorer"
+    "art": "tamsin"
    },
    "prereq": [
     "M02"
@@ -2806,7 +2806,7 @@
    },
    "giver": {
     "name": "Forge Miner Dax",
-    "art": "miner"
+    "art": "dax"
    },
    "prereq": [
     "M04"
@@ -4088,7 +4088,7 @@
    },
    "giver": {
     "name": "Forge Miner Dax",
-    "art": "miner"
+    "art": "dax"
    },
    "prereq": [
     "M11"
@@ -4951,7 +4951,7 @@
    },
    "giver": {
     "name": "Liss",
-    "art": "ystran"
+    "art": "liss"
    },
    "prereq": [
     "P03"
