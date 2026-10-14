@@ -1206,5 +1206,117 @@
     "Ystran echo: Every child came home and stayed itself. That is the whole legend. Thank you, Unifier."
    ]
   }
+ ],
+ "171": [
+  {
+   "art": "squidsailor",
+   "name": "Fisher",
+   "near": [
+    10,
+    9
+   ],
+   "t": [
+    "Fisher: Mind the nets! I just mended them.",
+    "Fisher: On calm nights you can hear Gloopa singing under the piers."
+   ]
+  }
+ ],
+ "172": [
+  {
+   "art": "explorer",
+   "name": "Rift Scout",
+   "near": [
+    10,
+    9
+   ],
+   "t": [
+    "Rift Scout: Don't touch the crystals. They hum back at you.",
+    "Rift Scout: Every night the Rift glows a little brighter. I write it all down."
+   ]
+  }
+ ],
+ "173": [
+  {
+   "art": "sporefolk",
+   "name": "Bog Keeper",
+   "near": [
+    10,
+    9
+   ],
+   "t": [
+    "Bog Keeper: Welcome, welcome! Shoes off, the moss is drying.",
+    "Bog Keeper: The mushroom lamps glow brighter when a happy Alienmon is near."
+   ]
+  }
+ ],
+ "174": [
+  {
+   "art": "miner",
+   "name": "Miner",
+   "near": [
+    10,
+    9
+   ],
+   "t": [
+    "Miner: Long shift in the Deep Mines. Come in, it's cooler in here.",
+    "Miner: If your helmet lamp flickers, turn back. That's the rule."
+   ]
+  }
+ ],
+ "175": [
+  {
+   "art": "pilgrim",
+   "name": "Sky Weaver",
+   "near": [
+    10,
+    9
+   ],
+   "t": [
+    "Sky Weaver: The clouds drift right past my window. I never get tired of it.",
+    "Sky Weaver: Play the harp if you like. The wind shrines answer it, they say."
+   ]
+  }
+ ],
+ "176": [
+  {
+   "art": "technician",
+   "name": "Night DJ",
+   "near": [
+    10,
+    9
+   ],
+   "t": [
+    "Night DJ: Oh, a visitor! Welcome to my studio. Well, my living room.",
+    "Night DJ: DJ Static lives three towers over. I've heard every set."
+   ]
+  }
+ ],
+ "177": [
+  {
+   "art": "researcher",
+   "name": "Dig Assistant",
+   "near": [
+    10,
+    9
+   ],
+   "t": [
+    "Dig Assistant: Careful with the scrolls, they're older than the city.",
+    "Dig Assistant: Those glyphs on the wall? Even Dr. Vashti hasn't read them all."
+   ]
+  }
+ ],
+ "178": [
+  {
+   "art": "wanderer",
+   "name": "Grandma Frost",
+   "near": [
+    10,
+    9
+   ],
+   "t": [
+    "Grandma Frost: Come warm up by the fire, dear.",
+    "Grandma Frost: Ingrid used to sit right there when she was little."
+   ]
+  }
  ]
 }

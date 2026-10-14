@@ -3678,6 +3678,166 @@
    "exits": [],
    "notes": "The Linker League courtroom on Neon Boulevard",
    "file": "art/sections/05_neonis/170_neonis_courtroom.png"
+  },
+  {
+   "id": "171",
+   "planet": "Thalassa",
+   "name": "Thalassa House",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "Shared house interior: every house door on Thalassa opens here",
+   "file": "art/sections/04_thalassa/171_thalassa_house.png",
+   "house": "thalassa"
+  },
+  {
+   "id": "172",
+   "planet": "Starfall Rift",
+   "name": "Starfall Rift House",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "Shared house interior: every house door on Starfall Rift opens here",
+   "file": "art/sections/12_starfall/172_starfall_house.png",
+   "house": "starfall"
+  },
+  {
+   "id": "173",
+   "planet": "Sporeholm",
+   "name": "Sporeholm House",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "Shared house interior: every house door on Sporeholm opens here",
+   "file": "art/sections/03_sporeholm/173_sporeholm_house.png",
+   "house": "sporeholm"
+  },
+  {
+   "id": "174",
+   "planet": "Pyros",
+   "name": "Pyros House",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "Shared house interior: every house door on Pyros opens here",
+   "file": "art/sections/07_pyros/174_pyros_house.png",
+   "house": "pyros"
+  },
+  {
+   "id": "175",
+   "planet": "Halo",
+   "name": "Halo House",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "Shared house interior: every house door on Halo opens here",
+   "file": "art/sections/10_halo/175_halo_house.png",
+   "house": "halo"
+  },
+  {
+   "id": "176",
+   "planet": "Neonis",
+   "name": "Neonis House",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "Shared house interior: every house door on Neonis opens here",
+   "file": "art/sections/05_neonis/176_neonis_house.png",
+   "house": "neonis"
+  },
+  {
+   "id": "177",
+   "planet": "Glyphos",
+   "name": "Glyphos House",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "Shared house interior: every house door on Glyphos opens here",
+   "file": "art/sections/06_glyphos/177_glyphos_house.png",
+   "house": "glyphos"
+  },
+  {
+   "id": "178",
+   "planet": "Glacia",
+   "name": "Glacia House",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "Shared house interior: every house door on Glacia opens here",
+   "file": "art/sections/08_glacia/178_glacia_house.png",
+   "house": "glacia"
   }
  ]
 }

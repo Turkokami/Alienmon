@@ -6124,9 +6124,9 @@
       5,
       12
      ],
-     "k": "sign",
-     "t": "The door is locked. Nobody seems to be home.",
-     "why": "door plan: house door with no interior yet"
+     "k": "house",
+     "why": "house door: opens the shared Sporeholm house",
+     "to": "173"
     },
     {
      "tile": [
@@ -6277,9 +6277,9 @@
       5,
       13
      ],
-     "k": "sign",
-     "t": "The door is locked. Nobody seems to be home.",
-     "why": "door plan: house door with no interior yet"
+     "k": "house",
+     "why": "house door: opens the shared Sporeholm house",
+     "to": "173"
     },
     {
      "tile": [
@@ -7712,6 +7712,15 @@
     },
     {
      "tile": [
+      6,
+      11
+     ],
+     "k": "house",
+     "to": "171",
+     "why": "house door: opens the shared Thalassa house"
+    },
+    {
+     "tile": [
       12,
       8
      ],
@@ -8753,9 +8762,9 @@
       19,
       9
      ],
-     "k": "sign",
-     "t": "The door is locked. Nobody seems to be home.",
-     "why": "door plan: house door with no interior yet"
+     "k": "house",
+     "why": "house door: opens the shared Neonis house",
+     "to": "176"
     },
     {
      "tile": [
@@ -8949,9 +8958,9 @@
       19,
       12
      ],
-     "k": "sign",
-     "t": "The door is locked. Nobody seems to be home.",
-     "why": "door plan: house door with no interior yet"
+     "k": "house",
+     "why": "house door: opens the shared Neonis house",
+     "to": "176"
     },
     {
      "tile": [
@@ -9261,9 +9270,9 @@
       3,
       4
      ],
-     "k": "sign",
-     "t": "The door is locked. Nobody seems to be home.",
-     "why": "door plan: house door with no interior yet"
+     "k": "house",
+     "why": "house door: opens the shared Neonis house",
+     "to": "176"
     },
     {
      "tile": [
@@ -9981,18 +9990,18 @@
       4,
       3
      ],
-     "k": "sign",
-     "t": "The door is locked. Nobody seems to be home.",
-     "why": "door plan: house door with no interior yet"
+     "k": "house",
+     "why": "house door: opens the shared Glyphos house",
+     "to": "177"
     },
     {
      "tile": [
       4,
       13
      ],
-     "k": "sign",
-     "t": "The door is locked. Nobody seems to be home.",
-     "why": "door plan: house door with no interior yet"
+     "k": "house",
+     "why": "house door: opens the shared Glyphos house",
+     "to": "177"
     },
     {
      "tile": [
@@ -10125,18 +10134,18 @@
       11,
       10
      ],
-     "k": "sign",
-     "t": "The door is locked. Nobody seems to be home.",
-     "why": "door plan: house door with no interior yet"
+     "k": "house",
+     "why": "house door: opens the shared Glyphos house",
+     "to": "177"
     },
     {
      "tile": [
       19,
       11
      ],
-     "k": "sign",
-     "t": "The door is locked. Nobody seems to be home.",
-     "why": "door plan: house door with no interior yet"
+     "k": "house",
+     "why": "house door: opens the shared Glyphos house",
+     "to": "177"
     },
     {
      "tile": [
@@ -11300,18 +11309,18 @@
       3,
       10
      ],
-     "k": "sign",
-     "t": "The door is locked. Nobody seems to be home.",
-     "why": "door plan: house door with no interior yet"
+     "k": "house",
+     "why": "house door: opens the shared Pyros house",
+     "to": "174"
     },
     {
      "tile": [
       19,
       11
      ],
-     "k": "sign",
-     "t": "The door is locked. Nobody seems to be home.",
-     "why": "door plan: house door with no interior yet"
+     "k": "house",
+     "why": "house door: opens the shared Pyros house",
+     "to": "174"
     },
     {
      "tile": [
@@ -12797,27 +12806,27 @@
       6,
       5
      ],
-     "k": "sign",
-     "t": "The door is locked. Nobody seems to be home.",
-     "why": "door plan: house door with no interior yet"
+     "k": "house",
+     "why": "house door: opens the shared Glacia house",
+     "to": "178"
     },
     {
      "tile": [
       6,
       11
      ],
-     "k": "sign",
-     "t": "The door is locked. Nobody seems to be home.",
-     "why": "door plan: house door with no interior yet"
+     "k": "house",
+     "why": "house door: opens the shared Glacia house",
+     "to": "178"
     },
     {
      "tile": [
       17,
       12
      ],
-     "k": "sign",
-     "t": "The door is locked. Nobody seems to be home.",
-     "why": "door plan: house door with no interior yet"
+     "k": "house",
+     "why": "house door: opens the shared Glacia house",
+     "to": "178"
     },
     {
      "tile": [
@@ -15397,9 +15406,9 @@
       4,
       9
      ],
-     "k": "sign",
-     "t": "The door is locked. Nobody seems to be home.",
-     "why": "door plan: house door with no interior yet"
+     "k": "house",
+     "why": "house door: opens the shared Halo house",
+     "to": "175"
     },
     {
      "tile": [
@@ -15579,18 +15588,18 @@
       4,
       11
      ],
-     "k": "sign",
-     "t": "The door is locked. Nobody seems to be home.",
-     "why": "door plan: house door with no interior yet"
+     "k": "house",
+     "why": "house door: opens the shared Halo house",
+     "to": "175"
     },
     {
      "tile": [
       11,
       2
      ],
-     "k": "sign",
-     "t": "The door is locked. Nobody seems to be home.",
-     "why": "door plan: house door with no interior yet"
+     "k": "house",
+     "why": "house door: opens the shared Halo house",
+     "to": "175"
     },
     {
      "tile": [
@@ -18072,36 +18081,36 @@
       5,
       5
      ],
-     "k": "sign",
-     "t": "The door is locked. Nobody seems to be home.",
-     "why": "door plan: house door with no interior yet"
+     "k": "house",
+     "why": "house door: opens the shared Starfall Rift house",
+     "to": "172"
     },
     {
      "tile": [
       10,
       4
      ],
-     "k": "sign",
-     "t": "The door is locked. Nobody seems to be home.",
-     "why": "door plan: house door with no interior yet"
+     "k": "house",
+     "why": "house door: opens the shared Starfall Rift house",
+     "to": "172"
     },
     {
      "tile": [
       8,
       12
      ],
-     "k": "sign",
-     "t": "The door is locked. Nobody seems to be home.",
-     "why": "door plan: house door with no interior yet"
+     "k": "house",
+     "why": "house door: opens the shared Starfall Rift house",
+     "to": "172"
     },
     {
      "tile": [
       14,
       12
      ],
-     "k": "sign",
-     "t": "The door is locked. Nobody seems to be home.",
-     "why": "door plan: house door with no interior yet"
+     "k": "house",
+     "why": "house door: opens the shared Starfall Rift house",
+     "to": "172"
     },
     {
      "tile": [
@@ -19253,27 +19262,27 @@
       9,
       5
      ],
-     "k": "sign",
-     "t": "The door is locked. Nobody seems to be home.",
-     "why": "door plan: house door with no interior yet"
+     "k": "house",
+     "why": "house door: opens the shared Starfall Rift house",
+     "to": "172"
     },
     {
      "tile": [
       3,
       11
      ],
-     "k": "sign",
-     "t": "The door is locked. Nobody seems to be home.",
-     "why": "door plan: house door with no interior yet"
+     "k": "house",
+     "why": "house door: opens the shared Starfall Rift house",
+     "to": "172"
     },
     {
      "tile": [
       21,
       14
      ],
-     "k": "sign",
-     "t": "The door is locked. Nobody seems to be home.",
-     "why": "door plan: house door with no interior yet"
+     "k": "house",
+     "why": "house door: opens the shared Starfall Rift house",
+     "to": "172"
     },
     {
      "tile": [
@@ -22022,6 +22031,518 @@
    },
    "parent": "063",
    "pkey": "neonis"
+  },
+  "171": {
+   "id": "171",
+   "name": "Thalassa House",
+   "planet": "Thalassa",
+   "dir": "04_thalassa",
+   "type": "interior",
+   "img": "art/sections_game/04_thalassa/171_thalassa_house.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "Shared house interior: every house door on Thalassa opens here",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      13
+     ],
+     "to": "back",
+     "at": [
+      7,
+      12
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      13
+     ],
+     "to": "back",
+     "at": [
+      8,
+      12
+     ],
+     "face": "down",
+     "kind": "door"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     7,
+     12
+    ]
+   },
+   "parent": "052",
+   "pkey": "thalassa",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 9,
+     "art": "squidsailor",
+     "face": "down",
+     "t": [
+      "Fisher: Mind the nets! I just mended them.",
+      "Fisher: On calm nights you can hear Gloopa singing under the piers."
+     ],
+     "name": "Fisher"
+    }
+   ]
+  },
+  "172": {
+   "id": "172",
+   "name": "Starfall Rift House",
+   "planet": "Starfall Rift",
+   "dir": "12_starfall",
+   "type": "interior",
+   "img": "art/sections_game/12_starfall/172_starfall_house.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "Shared house interior: every house door on Starfall Rift opens here",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      13
+     ],
+     "to": "back",
+     "at": [
+      7,
+      12
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      13
+     ],
+     "to": "back",
+     "at": [
+      8,
+      12
+     ],
+     "face": "down",
+     "kind": "door"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     7,
+     12
+    ]
+   },
+   "parent": "136",
+   "pkey": "starfall",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 9,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Rift Scout: Don't touch the crystals. They hum back at you.",
+      "Rift Scout: Every night the Rift glows a little brighter. I write it all down."
+     ],
+     "name": "Rift Scout"
+    }
+   ]
+  },
+  "173": {
+   "id": "173",
+   "name": "Sporeholm House",
+   "planet": "Sporeholm",
+   "dir": "03_sporeholm",
+   "type": "interior",
+   "img": "art/sections_game/03_sporeholm/173_sporeholm_house.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "Shared house interior: every house door on Sporeholm opens here",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      13
+     ],
+     "to": "back",
+     "at": [
+      7,
+      12
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      13
+     ],
+     "to": "back",
+     "at": [
+      8,
+      12
+     ],
+     "face": "down",
+     "kind": "door"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     7,
+     12
+    ]
+   },
+   "parent": "041",
+   "pkey": "sporeholm",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 9,
+     "art": "sporefolk",
+     "face": "down",
+     "t": [
+      "Bog Keeper: Welcome, welcome! Shoes off, the moss is drying.",
+      "Bog Keeper: The mushroom lamps glow brighter when a happy Alienmon is near."
+     ],
+     "name": "Bog Keeper"
+    }
+   ]
+  },
+  "174": {
+   "id": "174",
+   "name": "Pyros House",
+   "planet": "Pyros",
+   "dir": "07_pyros",
+   "type": "interior",
+   "img": "art/sections_game/07_pyros/174_pyros_house.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "Shared house interior: every house door on Pyros opens here",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      13
+     ],
+     "to": "back",
+     "at": [
+      7,
+      12
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      13
+     ],
+     "to": "back",
+     "at": [
+      8,
+      12
+     ],
+     "face": "down",
+     "kind": "door"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     7,
+     12
+    ]
+   },
+   "parent": "082",
+   "pkey": "pyros",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 9,
+     "art": "miner",
+     "face": "down",
+     "t": [
+      "Miner: Long shift in the Deep Mines. Come in, it's cooler in here.",
+      "Miner: If your helmet lamp flickers, turn back. That's the rule."
+     ],
+     "name": "Miner"
+    }
+   ]
+  },
+  "175": {
+   "id": "175",
+   "name": "Halo House",
+   "planet": "Halo",
+   "dir": "10_halo",
+   "type": "interior",
+   "img": "art/sections_game/10_halo/175_halo_house.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "Shared house interior: every house door on Halo opens here",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      13
+     ],
+     "to": "back",
+     "at": [
+      7,
+      12
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      13
+     ],
+     "to": "back",
+     "at": [
+      8,
+      12
+     ],
+     "face": "down",
+     "kind": "door"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     7,
+     12
+    ]
+   },
+   "parent": "114",
+   "pkey": "halo",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 9,
+     "art": "pilgrim",
+     "face": "down",
+     "t": [
+      "Sky Weaver: The clouds drift right past my window. I never get tired of it.",
+      "Sky Weaver: Play the harp if you like. The wind shrines answer it, they say."
+     ],
+     "name": "Sky Weaver"
+    }
+   ]
+  },
+  "176": {
+   "id": "176",
+   "name": "Neonis House",
+   "planet": "Neonis",
+   "dir": "05_neonis",
+   "type": "interior",
+   "img": "art/sections_game/05_neonis/176_neonis_house.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "Shared house interior: every house door on Neonis opens here",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      13
+     ],
+     "to": "back",
+     "at": [
+      7,
+      12
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      13
+     ],
+     "to": "back",
+     "at": [
+      8,
+      12
+     ],
+     "face": "down",
+     "kind": "door"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     7,
+     12
+    ]
+   },
+   "parent": "062",
+   "pkey": "neonis",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 9,
+     "art": "technician",
+     "face": "down",
+     "t": [
+      "Night DJ: Oh, a visitor! Welcome to my studio. Well, my living room.",
+      "Night DJ: DJ Static lives three towers over. I've heard every set."
+     ],
+     "name": "Night DJ"
+    }
+   ]
+  },
+  "177": {
+   "id": "177",
+   "name": "Glyphos House",
+   "planet": "Glyphos",
+   "dir": "06_glyphos",
+   "type": "interior",
+   "img": "art/sections_game/06_glyphos/177_glyphos_house.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "Shared house interior: every house door on Glyphos opens here",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      13
+     ],
+     "to": "back",
+     "at": [
+      7,
+      12
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      13
+     ],
+     "to": "back",
+     "at": [
+      8,
+      12
+     ],
+     "face": "down",
+     "kind": "door"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     7,
+     12
+    ]
+   },
+   "parent": "072",
+   "pkey": "glyphos",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 9,
+     "art": "researcher",
+     "face": "down",
+     "t": [
+      "Dig Assistant: Careful with the scrolls, they're older than the city.",
+      "Dig Assistant: Those glyphs on the wall? Even Dr. Vashti hasn't read them all."
+     ],
+     "name": "Dig Assistant"
+    }
+   ]
+  },
+  "178": {
+   "id": "178",
+   "name": "Glacia House",
+   "planet": "Glacia",
+   "dir": "08_glacia",
+   "type": "interior",
+   "img": "art/sections_game/08_glacia/178_glacia_house.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "Shared house interior: every house door on Glacia opens here",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      13
+     ],
+     "to": "back",
+     "at": [
+      7,
+      12
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      13
+     ],
+     "to": "back",
+     "at": [
+      8,
+      12
+     ],
+     "face": "down",
+     "kind": "door"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     7,
+     12
+    ]
+   },
+   "parent": "093",
+   "pkey": "glacia",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 9,
+     "art": "wanderer",
+     "face": "down",
+     "t": [
+      "Grandma Frost: Come warm up by the fire, dear.",
+      "Grandma Frost: Ingrid used to sit right there when she was little."
+     ],
+     "name": "Grandma Frost"
+    }
+   ]
   }
  },
  "connections": [

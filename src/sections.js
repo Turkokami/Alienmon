@@ -39,7 +39,11 @@ function secTrainerTalk(n){if(G.rem&&G.rem[n.id]&&G.beaten[n.id])return secRemat
 let SSPOT=null;
 function secLos(){if(!G.party.length||!G.party.some(m=>m.hp>0))return false;const s=SWORLD[G.sec.id];for(const n of secNpcs(s)){if(!n.trainer||G.beaten[n.id])continue;const[dx,dy]=DIRS[n.face||'down'];
   for(let k=1;k<=5;k++){const x=n.x+dx*k,y=n.y+dy*k;if(x===G.sec.x&&y===G.sec.y){if(!n.home)n.home=[n.x,n.y];SSPOT={n,t:36,walk:0,steps:k-1};exclaimSfx();face=({up:'down',down:'up',left:'right',right:'left'})[n.face||'down'];return true}if(!secWalk(s,x,y))break}}return false}
-function secArrive(){const s=SWORLD[G.sec.id],w=s.warps.find(w=>w.tile[0]===G.sec.x&&w.tile[1]===G.sec.y);if(w&&w.kind==='gate')return secGate(w);if(w&&SWORLD[w.to])return secWarp(w);
+// shared houses: one room per planet; the doormat ('back') returns you to the door you came in by
+function secHouse(s,o){if(!SWORLD[o.to])return say('The door is locked. Nobody seems to be home.');G.houseBack={id:s.id,at:[G.sec.x,G.sec.y]};secWarp({to:o.to,at:(SWORLD[o.to].spawns||{}).default||[7,12],face:'up',kind:'door'})}
+function secHouseBack(){const s=SWORLD[G.sec.id],b=G.houseBack&&SWORLD[G.houseBack.id]?G.houseBack:null,p=SWORLD[s.parent];G.houseBack=null;
+ SFADE={t:0,go:()=>{if(b)enterSection(b.id,b.at,'down');else if(p)enterSection(p.id,(p.spawns||{}).default||p.spawns.arrival,'down');doorSfx()}}}
+function secArrive(){const s=SWORLD[G.sec.id],w=s.warps.find(w=>w.tile[0]===G.sec.x&&w.tile[1]===G.sec.y);if(w&&w.to==='back')return secHouseBack();if(w&&w.kind==='gate')return secGate(w);if(w&&SWORLD[w.to])return secWarp(w);
  if(G.grace>0)G.grace=Math.max(0,G.grace-15);if(G.jam>0)G.jam=Math.max(0,G.jam-2);stepc++;
  if(eggStep())return;if(secLos())return;
  const ct=secTile(s,G.sec.x,G.sec.y);if(ct===','&&!(G.grace>0)&&R()<0.1)wild();else if(ct==='~'&&!(G.grace>0)&&R()<0.05)wild()}
@@ -61,6 +65,7 @@ function secInteract(){const s=SWORLD[G.sec.id],[dx,dy]=DIRS[face],x=G.sec.x+dx,
  const n=secNpcAt(s,x,y);if(n){n.face=({up:'down',down:'up',left:'right',right:'left'})[face];if(n.legend)return storyLegend(n);if(n.trainer)return secTrainerTalk(n);if(n.wid)qEvent('talk',n.wid,{x:n.x*16+8,y:n.y*16+15});if(n.story==='starter'&&!G.party.length)return secStarterTalk();if(storyNpc(n))return;if(n.story==='arena')return arenaMenu();return say(!G.party.length&&n.pre?n.pre:n.t,null,n.por||undefined)}
  const o=(s.objects||[]).find(o=>o.tile[0]===x&&o.tile[1]===y);if(!o)return secFieldA(s,x,y);
  if(o.k==='arena')return arenaMenu();
+ if(o.k==='house')return secHouse(s,o);
  if(o.k==='ladder')return say(o.label||'A ladder.',()=>choose('Climb up?',['Climb','Not now'],i=>{if(i===0)secWarp({to:o.to,at:o.at,face:o.face||'up',kind:'stairs'})}));
  if(o.k==='keeper')return keeperTalk(PL[G.planet]);
  if(o.k==='stash'){G.opened=G.opened||{};const tag=s.id+':'+o.tile;if(G.opened[tag])return;G.opened[tag]=1;const n=o.n||1;
@@ -90,7 +95,7 @@ function updSec(){const s=SWORLD[G.sec.id];if(SBUMP>0)SBUMP--;if(MODHINT>0)MODHI
 function secStepHeld(){const d=held.up?'up':held.down?'down':held.left?'left':held.right?'right':null;if(!d)return;face=d;const s=SWORLD[G.sec.id],a=secAhead(s,G.sec.x,G.sec.y,d);
  if(a&&(a.arrival||a.s.id!==s.id)&&!G.party.length&&s.type!=='interior')return say(NO_PARTNER);
  if(a&&a.arrival)return secLeaveForShip();
- if(!a||!secWalk(a.s,a.x,a.y)){if(a&&a.s){const c=secTile(a.s,a.x,a.y);if(c==='~'||c==='^')modHint(c)}bumpSfx();return}
+ if(!a||!secWalk(a.s,a.x,a.y)){const ho=a&&a.s===SWORLD[G.sec.id]&&(a.s.objects||[]).find(o=>o.k==='house'&&o.tile[0]===a.x&&o.tile[1]===a.y);if(ho)return secHouse(a.s,ho);if(a&&a.s){const c=secTile(a.s,a.x,a.y);if(c==='~'||c==='^')modHint(c)}bumpSfx();return}
  const lw=a.s.warps.find(w=>w.tile[0]===a.x&&w.tile[1]===a.y&&w.node);if(lw&&!gateOpen(lw.node)){bumpSfx();return say(gateMsg(lw.node))}
  secFollowStep(G.sec.x,G.sec.y);SM={t:0,n:secStepN(s),dx:DIRS[d][0],dy:DIRS[d][1],to:a}}
 // camera: follows the player; it only stops at an edge with nothing beyond it

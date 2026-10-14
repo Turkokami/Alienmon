@@ -471,9 +471,9 @@
      5,
      12
     ],
-    "k": "sign",
-    "t": "The door is locked. Nobody seems to be home.",
-    "why": "door plan: house door with no interior yet"
+    "k": "house",
+    "why": "house door: opens the shared Sporeholm house",
+    "to": "173"
    }
   ],
   "042": [
@@ -482,9 +482,9 @@
      5,
      13
     ],
-    "k": "sign",
-    "t": "The door is locked. Nobody seems to be home.",
-    "why": "door plan: house door with no interior yet"
+    "k": "house",
+    "why": "house door: opens the shared Sporeholm house",
+    "to": "173"
    }
   ],
   "047": [],
@@ -508,6 +508,15 @@
     ],
     "k": "bay",
     "why": "Saltreach second Recovery Bay (no interior yet, so the door works like the counter)"
+   },
+   {
+    "tile": [
+     6,
+     11
+    ],
+    "k": "house",
+    "to": "171",
+    "why": "house door: opens the shared Thalassa house"
    }
   ],
   "059": [],
@@ -517,9 +526,9 @@
      19,
      9
     ],
-    "k": "sign",
-    "t": "The door is locked. Nobody seems to be home.",
-    "why": "door plan: house door with no interior yet"
+    "k": "house",
+    "why": "house door: opens the shared Neonis house",
+    "to": "176"
    }
   ],
   "063": [
@@ -536,9 +545,9 @@
      19,
      12
     ],
-    "k": "sign",
-    "t": "The door is locked. Nobody seems to be home.",
-    "why": "door plan: house door with no interior yet"
+    "k": "house",
+    "why": "house door: opens the shared Neonis house",
+    "to": "176"
    }
   ],
   "066": [
@@ -547,9 +556,9 @@
      3,
      4
     ],
-    "k": "sign",
-    "t": "The door is locked. Nobody seems to be home.",
-    "why": "door plan: house door with no interior yet"
+    "k": "house",
+    "why": "house door: opens the shared Neonis house",
+    "to": "176"
    }
   ],
   "072": [
@@ -558,18 +567,18 @@
      4,
      3
     ],
-    "k": "sign",
-    "t": "The door is locked. Nobody seems to be home.",
-    "why": "door plan: house door with no interior yet"
+    "k": "house",
+    "why": "house door: opens the shared Glyphos house",
+    "to": "177"
    },
    {
     "tile": [
      4,
      13
     ],
-    "k": "sign",
-    "t": "The door is locked. Nobody seems to be home.",
-    "why": "door plan: house door with no interior yet"
+    "k": "house",
+    "why": "house door: opens the shared Glyphos house",
+    "to": "177"
    },
    {
     "tile": [
@@ -587,18 +596,18 @@
      11,
      10
     ],
-    "k": "sign",
-    "t": "The door is locked. Nobody seems to be home.",
-    "why": "door plan: house door with no interior yet"
+    "k": "house",
+    "why": "house door: opens the shared Glyphos house",
+    "to": "177"
    },
    {
     "tile": [
      19,
      11
     ],
-    "k": "sign",
-    "t": "The door is locked. Nobody seems to be home.",
-    "why": "door plan: house door with no interior yet"
+    "k": "house",
+    "why": "house door: opens the shared Glyphos house",
+    "to": "177"
    },
    {
     "tile": [
@@ -687,18 +696,18 @@
      3,
      10
     ],
-    "k": "sign",
-    "t": "The door is locked. Nobody seems to be home.",
-    "why": "door plan: house door with no interior yet"
+    "k": "house",
+    "why": "house door: opens the shared Pyros house",
+    "to": "174"
    },
    {
     "tile": [
      19,
      11
     ],
-    "k": "sign",
-    "t": "The door is locked. Nobody seems to be home.",
-    "why": "door plan: house door with no interior yet"
+    "k": "house",
+    "why": "house door: opens the shared Pyros house",
+    "to": "174"
    }
   ],
   "085": [
@@ -863,27 +872,27 @@
      6,
      5
     ],
-    "k": "sign",
-    "t": "The door is locked. Nobody seems to be home.",
-    "why": "door plan: house door with no interior yet"
+    "k": "house",
+    "why": "house door: opens the shared Glacia house",
+    "to": "178"
    },
    {
     "tile": [
      6,
      11
     ],
-    "k": "sign",
-    "t": "The door is locked. Nobody seems to be home.",
-    "why": "door plan: house door with no interior yet"
+    "k": "house",
+    "why": "house door: opens the shared Glacia house",
+    "to": "178"
    },
    {
     "tile": [
      17,
      12
     ],
-    "k": "sign",
-    "t": "The door is locked. Nobody seems to be home.",
-    "why": "door plan: house door with no interior yet"
+    "k": "house",
+    "why": "house door: opens the shared Glacia house",
+    "to": "178"
    }
   ],
   "114": [
@@ -901,9 +910,9 @@
      4,
      9
     ],
-    "k": "sign",
-    "t": "The door is locked. Nobody seems to be home.",
-    "why": "door plan: house door with no interior yet"
+    "k": "house",
+    "why": "house door: opens the shared Halo house",
+    "to": "175"
    },
    {
     "tile": [
@@ -921,18 +930,18 @@
      4,
      11
     ],
-    "k": "sign",
-    "t": "The door is locked. Nobody seems to be home.",
-    "why": "door plan: house door with no interior yet"
+    "k": "house",
+    "why": "house door: opens the shared Halo house",
+    "to": "175"
    },
    {
     "tile": [
      11,
      2
     ],
-    "k": "sign",
-    "t": "The door is locked. Nobody seems to be home.",
-    "why": "door plan: house door with no interior yet"
+    "k": "house",
+    "why": "house door: opens the shared Halo house",
+    "to": "175"
    }
   ],
   "118": [],
@@ -1024,36 +1033,36 @@
      5,
      5
     ],
-    "k": "sign",
-    "t": "The door is locked. Nobody seems to be home.",
-    "why": "door plan: house door with no interior yet"
+    "k": "house",
+    "why": "house door: opens the shared Starfall Rift house",
+    "to": "172"
    },
    {
     "tile": [
      10,
      4
     ],
-    "k": "sign",
-    "t": "The door is locked. Nobody seems to be home.",
-    "why": "door plan: house door with no interior yet"
+    "k": "house",
+    "why": "house door: opens the shared Starfall Rift house",
+    "to": "172"
    },
    {
     "tile": [
      8,
      12
     ],
-    "k": "sign",
-    "t": "The door is locked. Nobody seems to be home.",
-    "why": "door plan: house door with no interior yet"
+    "k": "house",
+    "why": "house door: opens the shared Starfall Rift house",
+    "to": "172"
    },
    {
     "tile": [
      14,
      12
     ],
-    "k": "sign",
-    "t": "The door is locked. Nobody seems to be home.",
-    "why": "door plan: house door with no interior yet"
+    "k": "house",
+    "why": "house door: opens the shared Starfall Rift house",
+    "to": "172"
    }
   ],
   "145": [
@@ -1062,27 +1071,27 @@
      9,
      5
     ],
-    "k": "sign",
-    "t": "The door is locked. Nobody seems to be home.",
-    "why": "door plan: house door with no interior yet"
+    "k": "house",
+    "why": "house door: opens the shared Starfall Rift house",
+    "to": "172"
    },
    {
     "tile": [
      3,
      11
     ],
-    "k": "sign",
-    "t": "The door is locked. Nobody seems to be home.",
-    "why": "door plan: house door with no interior yet"
+    "k": "house",
+    "why": "house door: opens the shared Starfall Rift house",
+    "to": "172"
    },
    {
     "tile": [
      21,
      14
     ],
-    "k": "sign",
-    "t": "The door is locked. Nobody seems to be home.",
-    "why": "door plan: house door with no interior yet"
+    "k": "house",
+    "why": "house door: opens the shared Starfall Rift house",
+    "to": "172"
    }
   ],
   "153": [
@@ -1168,6 +1177,54 @@
    "default": [
     8,
     13
+   ]
+  },
+  "171": {
+   "default": [
+    7,
+    12
+   ]
+  },
+  "172": {
+   "default": [
+    7,
+    12
+   ]
+  },
+  "173": {
+   "default": [
+    7,
+    12
+   ]
+  },
+  "174": {
+   "default": [
+    7,
+    12
+   ]
+  },
+  "175": {
+   "default": [
+    7,
+    12
+   ]
+  },
+  "176": {
+   "default": [
+    7,
+    12
+   ]
+  },
+  "177": {
+   "default": [
+    7,
+    12
+   ]
+  },
+  "178": {
+   "default": [
+    7,
+    12
    ]
   }
  },
@@ -1603,6 +1660,246 @@
    "face": "down",
    "kind": "door",
    "parent": "063"
+  },
+  {
+   "section": "171",
+   "tile": [
+    7,
+    13
+   ],
+   "to": "back",
+   "at": [
+    7,
+    12
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "052"
+  },
+  {
+   "section": "171",
+   "tile": [
+    8,
+    13
+   ],
+   "to": "back",
+   "at": [
+    8,
+    12
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "052"
+  },
+  {
+   "section": "172",
+   "tile": [
+    7,
+    13
+   ],
+   "to": "back",
+   "at": [
+    7,
+    12
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "136"
+  },
+  {
+   "section": "172",
+   "tile": [
+    8,
+    13
+   ],
+   "to": "back",
+   "at": [
+    8,
+    12
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "136"
+  },
+  {
+   "section": "173",
+   "tile": [
+    7,
+    13
+   ],
+   "to": "back",
+   "at": [
+    7,
+    12
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "041"
+  },
+  {
+   "section": "173",
+   "tile": [
+    8,
+    13
+   ],
+   "to": "back",
+   "at": [
+    8,
+    12
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "041"
+  },
+  {
+   "section": "174",
+   "tile": [
+    7,
+    13
+   ],
+   "to": "back",
+   "at": [
+    7,
+    12
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "082"
+  },
+  {
+   "section": "174",
+   "tile": [
+    8,
+    13
+   ],
+   "to": "back",
+   "at": [
+    8,
+    12
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "082"
+  },
+  {
+   "section": "175",
+   "tile": [
+    7,
+    13
+   ],
+   "to": "back",
+   "at": [
+    7,
+    12
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "114"
+  },
+  {
+   "section": "175",
+   "tile": [
+    8,
+    13
+   ],
+   "to": "back",
+   "at": [
+    8,
+    12
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "114"
+  },
+  {
+   "section": "176",
+   "tile": [
+    7,
+    13
+   ],
+   "to": "back",
+   "at": [
+    7,
+    12
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "062"
+  },
+  {
+   "section": "176",
+   "tile": [
+    8,
+    13
+   ],
+   "to": "back",
+   "at": [
+    8,
+    12
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "062"
+  },
+  {
+   "section": "177",
+   "tile": [
+    7,
+    13
+   ],
+   "to": "back",
+   "at": [
+    7,
+    12
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "072"
+  },
+  {
+   "section": "177",
+   "tile": [
+    8,
+    13
+   ],
+   "to": "back",
+   "at": [
+    8,
+    12
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "072"
+  },
+  {
+   "section": "178",
+   "tile": [
+    7,
+    13
+   ],
+   "to": "back",
+   "at": [
+    7,
+    12
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "093"
+  },
+  {
+   "section": "178",
+   "tile": [
+    8,
+    13
+   ],
+   "to": "back",
+   "at": [
+    8,
+    12
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "093"
   }
  ]
 }
