@@ -3110,7 +3110,7 @@
     },
     {
      "tile": [
-      4,
+      11,
       2
      ],
      "k": "stash",
@@ -3120,8 +3120,8 @@
     },
     {
      "tile": [
-      12,
-      3
+      1,
+      1
      ],
      "k": "stash",
      "item": "revive",
@@ -3152,8 +3152,8 @@
      ]
     },
     {
-     "x": 15,
-     "y": 7,
+     "x": 12,
+     "y": 11,
      "art": "researcher",
      "face": "down",
      "t": [
@@ -3162,9 +3162,9 @@
     },
     {
      "x": 10,
-     "y": 8,
+     "y": 11,
      "art": "grub",
-     "face": "down",
+     "face": "up",
      "t": [
       "Bug Catcher Grub: Fire bugs! The hottest bugs! Battle me!"
      ],
@@ -3178,13 +3178,13 @@
    ],
    "mons": [
     {
-     "x": 13,
-     "y": 13,
+     "x": 15,
+     "y": 4,
      "mon": "Fizzlord"
     },
     {
-     "x": 18,
-     "y": 11,
+     "x": 19,
+     "y": 10,
      "mon": "Skitterdrone"
     }
    ]
