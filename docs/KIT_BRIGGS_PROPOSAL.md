@@ -24,11 +24,11 @@ The original proposal follows.
 
 ## Who Kit is
 
-- **Who they are:** Kit Briggs (they/them) is Hank Briggs's kid and the hero's best friend in the books and the anime.
-- **Their saga question:** *Can someone who fixes everything learn they're worth choosing?*
-- **Their book beats:**
+- **Who he is:** Kit Briggs (he/him) is Hank Briggs's kid and the hero's best friend in the books and the anime.
+- **His saga question:** *Can someone who fixes everything learn he's worth choosing?*
+- **His book beats:**
   - Chosen by Sporix (Book 1).
-  - Frees the captives, and their Fungaroth evolves (Book 2).
+  - Frees the captives, and his Fungaroth evolves (Book 2).
   - Keeps the Keepers' network running (Book 3).
   - Builds the Vortex lens with Vashti (Book 4).
   - Repairs the Ystran Choir chamber (Book 5).
@@ -76,7 +76,7 @@ Estimate: about half a day with placeholder art.
 
 1. **Placement:** should Kit appear from Ferrox onward (the book order), or from the start in Dustmere?
 2. **Team:** should Kit always use Sporix as in the books (so a Sporix player meets a second Sporix), or take the leftover starter (suggested)?
-3. **Art:** who makes Kit's sprite and portrait? Kit is they/them, and both the books and the game use those pronouns.
+3. **Art:** who makes Kit's sprite and portrait? Kit is he/him (owner decision, 2026-10-14).
 4. **Book lines:** a few Book Sync lines currently give Kit's book moments to others. Should they go back to Kit once Kit exists?
    - Vashti builds the Vortex lens "with us".
    - The Keepers' relay is run by Hank.

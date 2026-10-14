@@ -57,7 +57,7 @@ The crater pulse is the seal straining. Helix experiments have been cracking the
 | Plazmo's line | Plazmo → Plazmet → Solarach | Plazmet in Book 1, Ch 14; Solarach in Book 3 |
 | Gloopa's line | Gloopa → Tidaloid → Abyssor | Tidaloid in Book 1, Ch 12; Abyssor in Book 2 |
 | Sporix's line | Sporix → Mycelith → Fungaroth | Mycelith in Book 1, Ch 17; Fungaroth in Book 2 |
-| Kit's pronouns | they/them | All books |
+| Kit's pronouns | he/him (owner decision, 2026-10-14; the Book 1 text still needs updating) | All books |
 | Nana Wren's starship | Small, round, cream with pink engines, bubble cockpit; Hank kept it in Ferrox | Book 1, Ch 10 |
 | Nana Wren's badge | Brass cross, glowing blue core, stamped R.B. No. 1 | Book 1, Ch 5 |
 | Vashti's photo | Four kids in the desert at night, lit purple | Book 1, Ch 2 |
@@ -106,7 +106,7 @@ Each main character has one question the saga answers, and each book moves them 
 | --- | --- | --- | --- | --- | --- | --- |
 | Rook | Can a kid who rushes in learn to listen? | Learns "think first"; wins 4 Shards | Learns to carry hard truths; chooses to win Shard 8 knowing it helps Thorne | Leads instead of fights; sings the Signal | Inherits Nana Wren's gift and Orra's secret; chooses openness | Becomes "the one who listens"; reaches Oblivane with kindness |
 | Zib | Will the scout ever get home, and will he want to? | Comic, glitchy; 4 memory flashes | Shows the Devourer; his full message plays | Guides the sealing; nearly burns out | Recovers; his siblings appear in Nana's journal | Delivers the message; chooses Rook and a shared home |
-| Kit Briggs | Can someone who fixes everything learn they're worth choosing? | Chosen by Sporix; Hank's pride | Frees the captives; Fungaroth evolves | Keeps the Keepers' network running; becomes the group's engineer | Builds the Vortex lens with Vashti | Repairs the Ystran Choir chamber; earns Ystra's maker-mark |
+| Kit Briggs | Can someone who fixes everything learn he's worth choosing? | Chosen by Sporix; Hank's pride | Frees the captives; Fungaroth evolves | Keeps the Keepers' network running; becomes the group's engineer | Builds the Vortex lens with Vashti | Repairs the Ystran Choir chamber; earns Ystra's maker-mark |
 | Sola Reyes | Can she stop carrying her grief alone? | Rival; joins Helix to find Teo | Learns "acceptable loss"; turns; Abyssor; bonds a Lumivex hatchling | Reaches her father first | Lives next door; learns to be a kid again | Faces Oblivane with Rook as a true partner |
 
 | Character | Saga question | Book 1 | Book 2 | Book 3 | Book 4 | Book 5 |
@@ -163,7 +163,7 @@ Zib memories: Memory 4 (Oblivane swallowing Ystra's sky) in Glacia; Memory 5 (th
 
 6. Frostmark. Glacia is aurora skies and ice-fishing towns. Ingrid Vale is stern and secretive. Her lab is locked, and Helix ice-cutters are drilling the glacier. Kit catches Iceburr, a prickly snowball, by fixing its frozen leg.
 
-7. Aurora Route. A blizzard traps the team in a cave. Cold and scared, Kit admits they're afraid they'll be left behind once the "important" adventure starts. Rook answers by giving Kit the job of keeper of the Shards. Cactling evolves into Spinelord, holding the cave mouth against the storm.
+7. Aurora Route. A blizzard traps the team in a cave. Cold and scared, Kit admits he's afraid he'll be left behind once the "important" adventure starts. Rook answers by giving Kit the job of keeper of the Shards. Cactling evolves into Spinelord, holding the cave mouth against the storm.
 
 8. Crystal Caverns. Three floors of mirror ice. Teo's second cache holds a crystal map: "the floating gardens beyond the light." Pell and Strand are here too, lost. Strand quietly tells Rook which way Helix is digging.
 
@@ -231,7 +231,7 @@ New faces: General Ostrander, Novaryx, Thornvoid. Returning: Tamsin, Bronn, Kade
 
 3. The Keepers' Call. Kit builds a Shard relay from Nana Wren's ship radio, so the eight Shards can talk to the eight towers. Through DJ Static's frequency, Rook calls every Keeper. One by one, they answer.
 
-4. Hank's Iron Wall. Helix crews attack the Ferrox tower to crack it. Kit and Hank hold it together with Gleamgrub and every scrapper in Rustvale. Kit finally battles beside their dad, not behind him.
+4. Hank's Iron Wall. Helix crews attack the Ferrox tower to crack it. Kit and Hank hold it together with Gleamgrub and every scrapper in Rustvale. Kit finally battles beside his dad, not behind him.
 
 #### Part Two: Taking Back the Towers (Days 5–8)
 
