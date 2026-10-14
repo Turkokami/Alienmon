@@ -10,7 +10,7 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 | Section | Tile | Item | Tier |
 |---|---|---|---|
 | 004 Dustmere Plaza | 12,2 | 150x Stardust | 1 |
-| 007 Dustmere Bridge | 2,5 | 3x Stasis Pod | 1 |
+| 007 Dustmere Bridge | 21,9 | 3x Stasis Pod | 1 |
 | 008 Trading Post | 21,9 | 2x Cure Spray | 1 |
 | 009 Rimwalk Trail Part A | 4,2 | 2x Med Gel | 1 |
 | 009 Rimwalk Trail Part A | 17,4 | 1x Revive Spark | 1 |
@@ -67,7 +67,7 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 | Section | Tile | Item | Tier |
 |---|---|---|---|
 | 041 Landing Bog | 6,4 | 5x Stasis Pod | 2 |
-| 042 Mirefen Village | 8,2 | 2x Harmonic Pod | 2 |
+| 042 Mirefen Village | 21,5 | 2x Harmonic Pod | 2 |
 | 045 Lantern Marsh Part A | 16,12 | 1x Revive Spark | 2 |
 | 045 Lantern Marsh Part A | 4,1 | 1x Revive Spark | 2 |
 | 046 Lantern Marsh Part B | 17,1 | 3x Med Gel | 2 |
@@ -94,7 +94,7 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 | Section | Tile | Item | Tier |
 |---|---|---|---|
 | 062 Neonis Starport | 12,13 | 2x Stun Spray | 3 |
-| 063 Neon Boulevard | 8,3 | 500x Stardust | 3 |
+| 063 Neon Boulevard | 8,4 | 500x Stardust | 3 |
 | 066 Arcade District | 8,14 | 1x Ether Gel | 3 |
 | 066 Arcade District | 11,2 | 500x Stardust | 3 |
 | 067 Broadcast Route Part A | 19,3 | 2x Revive Spark | 3 |
@@ -200,7 +200,7 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 | 143 Crater Descent B2 | 3,7 | 1x Singularity Pod | 6 |
 | 143 Crater Descent B2 | 2,4 | 3x Full Gel | 6 |
 | 144 Crater Descent B3 | 14,5 | 1600x Stardust | 6 |
-| 145 Rift Engine Platform | 6,12 | 1x Max Revive | 6 |
+| 145 Rift Engine Platform | 6,1 | 1x Max Revive | 6 |
 
 ## Apex Array (1)
 

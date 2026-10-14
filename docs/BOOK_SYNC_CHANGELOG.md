@@ -145,6 +145,22 @@ The Alienmon novels (Books 1–5, planned in `docs/SAGA_MASTER_PLAN.md`) are now
 3. **The Unifier's "Linker skin":** this is the golden device shell, not an in-world outfit, because no player outfit system exists.
 4. **The Forge Fortress cage hall:** it's on the classic painted map, so Project Unity is labelled only on Helix Station.
 
+## Book 1 edition of 2026-10-14
+
+The new edition of *The Kessler Signal* (about 100,000 words; it was 85,000) redesigns several Alienmon, makes Helix menacing instead of comic, and no longer has the Seedmother prophecy, the ring-of-Alienmon mural or Thorne's "every species" line in Book 1. The game already matched those last three (Revision 2) and every type the new Xenodex appendix lists (Glitchbug Volt/Swarm, Gleamgrub Toxin/Alloy, Lumislug Toxin, Monolet Gravity/Psi, Chimelet Sonic/Crystal, Anvilox Magma/Alloy, Chirpod Sonic, Bubbub Hydro, Skitterdrone Swarm).
+
+| Change | Book (2026-10-14) | Where in the game | Files |
+| --- | --- | --- | --- |
+| Xenodex descriptions match the redesigns: Zib's glass dome, one-eyed knee-high Cactling, Pebblet, Fizzle, rust-slug Gleamgrub, Anvilox the Anvil Hound, lime-green Lumislug, lantern-bell Tidaloid, rope-fibre Mycelith, Bubbub in its bubble, pom-pom Chirpod, dish-winged Skitterdrone, striped Glitchbug, standing-stone Monolet, silver-bell Chimelet, and the bigger starters | Ch 1-2, 4, 8-9, 12-13, 15-17, 20, 24, appendix | START > Xenodex, first-catch screen, website Xenodex | `data/batches/batch01_kessler/alienmon.json` |
+| Pell and Strand are no longer comic: Pell is a calm field agent ("Helix doesn't lose things. We just collect them later."), Strand is quietly reluctant ("You didn't see that, and I didn't see you.") | Ch 5, 10, 13, 17, 20 | Glacia Fossil Dig pair (098), Strand freeing the sporeling, Helix barracks joke | `data/sections/npcs.json`, `data/story.json`, `data/sections/planets/09_helix.json` |
+
+**Not changed, worth deciding:**
+- Sprites still show the old designs where the book redesigned them (Cactling, Gleamgrub, Lumislug, Chirpod, Bubbub, Glitchbug, Monolet, Chimelet, Anvilox, Tidaloid, Mycelith, Skitterdrone, Zib). New art is needed to match.
+- The Helix logo is now an orange ring with a diagonal slash; any Helix art with the old twisting-ladder mark needs repainting.
+- New book NPCs not in the game: Brann (a grunt with a static-net launcher), Pip (a young grunt's Skitterdrone), Mr. Abernathy (the Dustmere baker). New item: Dr. Moor's Spore tonic.
+- Kit stays they/them in the new edition (the website now uses he/him; the book and the game use they/them).
+- Later-book gags kept for now: Strand's "...Resigning" (M18) and Pell's "...Former" (M19b) still reference "Field Division, Second Class", which Book 1 now only uses once (Strand, Ch 20).
+
 ## Seedmother Revision 2 (docs/ALIENMON_SEEDMOTHER_REVISION.md, current)
 
 | Change | From (file, section) | Where in the game | Files |

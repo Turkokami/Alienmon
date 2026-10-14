@@ -18,7 +18,7 @@
    44
   ],
   "r": "starter",
-  "lore": "Chosen at the Crater Observatory; evolves into Mycelith.",
+  "lore": "A knee-high puffball with a red spotted cap that puffs spores when it's nervous. Heavier than it looks, and braver than it knows.",
   "b": 1,
   "tr": 2,
   "sig": -1
@@ -42,7 +42,7 @@
    46
   ],
   "r": "starter",
-  "lore": "Mid evolution of Sporix.",
+  "lore": "Pale woody fibers twisted together like rope, under a wide, ragged red cap. It can send its roots through any crack in the ground.",
   "b": 1,
   "tr": 2,
   "sig": -1
@@ -90,7 +90,7 @@
    61
   ],
   "r": "starter",
-  "lore": "Chosen at the Crater Observatory; evolves into Plazmet.",
+  "lore": "A pumpkin-sized swirl of living fire with one big eye and two orbiting sparks. Prone to sneezing fire. Chosen at the Crater Observatory.",
   "b": 1,
   "tr": 0,
   "sig": -1
@@ -114,7 +114,7 @@
    81
   ],
   "r": "starter",
-  "lore": "Mid evolution of Plazmo.",
+  "lore": "Plazmo grown fierce, ringed with extra-hot white-gold plasma. Its sneezes are bigger now, too.",
   "b": 1,
   "tr": 0,
   "sig": -1
@@ -162,7 +162,7 @@
    37
   ],
   "r": "starter",
-  "lore": "Chosen at the Crater Observatory; evolves into Tidaloid.",
+  "lore": "A wobbly jelly dome with a bubble core, curly tentacles that taste the air, and a gurgling giggle. Chosen at the Crater Observatory.",
   "b": 1,
   "tr": 1,
   "sig": -1
@@ -186,7 +186,7 @@
    44
   ],
   "r": "starter",
-  "lore": "Mid evolution of Gloopa.",
+  "lore": "Floats beneath a tall, speckled bell like a living lantern of seawater, with a quiet face under the rim. It hums when it's calm.",
   "b": 1,
   "tr": 1,
   "sig": -1
@@ -234,7 +234,7 @@
    112
   ],
   "r": "mascot",
-  "lore": "Follows the player from the opening scene; joins in Act 1 and speaks for the Seedmother at the climax.",
+  "lore": "A palm-sized silver saucer with a glass dome, and inside it a little round body with one huge eye. Says only \"Bip.\" Its lights change with its mood.",
   "b": 1,
   "tr": 51,
   "sig": 3
@@ -258,7 +258,7 @@
    73
   ],
   "r": "normal",
-  "lore": "Feeds on the static that crackles through drift grass.",
+  "lore": "A fuzzy yellow puff with huge ears tipped in glowing sparks. Feeds on the static that crackles through drift grass.",
   "b": 1,
   "tr": 17,
   "sig": -1
@@ -330,7 +330,7 @@
    91
   ],
   "r": "normal",
-  "lore": "Colonies hum in perfect sync, like a tiny radio choir.",
+  "lore": "A dog-sized flier with a hard white shell and two wings shaped like satellite dishes. Helix uses them to listen for signals.",
   "b": 1,
   "tr": 39,
   "sig": -1
@@ -378,7 +378,7 @@
    32
   ],
   "r": "normal",
-  "lore": "Rolls along the dunes by bending its own weight.",
+  "lore": "A chunky brown stone block with sleepy eyes and indigo crystals in its cracks. Rolls into foes like a bowling ball.",
   "b": 1,
   "tr": 22,
   "sig": -1
@@ -546,7 +546,7 @@
    70
   ],
   "r": "normal",
-  "lore": "Chirps in frequencies only a Linker can pick up.",
+  "lore": "A teal and hot-pink pom-pom of feathers with chrome wings, a speaker-shaped ear and a megaphone beak. Copies any sound it hears.",
   "b": 1,
   "tr": 11,
   "sig": -1
@@ -594,7 +594,7 @@
    37
   ],
   "r": "normal",
-  "lore": "Mistaken for a desert plant until it walks away.",
+  "lore": "Knee-high and covered in cream spines, with one green eye at the heart of the flower on its body. Mistaken for a desert plant until it walks away.",
   "b": 1,
   "tr": 2,
   "sig": -1
@@ -961,7 +961,7 @@
    27
   ],
   "r": "normal",
-  "lore": "Corrodes whatever it sleeps on.",
+  "lore": "A shy rust slug with a riveted shell and green eyestalks. Its lime-green slime eats metal, and then it eats the rust.",
   "b": 1,
   "tr": 47,
   "sig": -1
@@ -1036,7 +1036,7 @@
    64
   ],
   "r": "normal",
-  "lore": "Forges its own shell in abandoned furnaces.",
+  "lore": "The Anvil Hound: a fortress of dark metal and rock with glowing lava seams and an anvil plate on its brow. It drinks fire and grows stronger.",
   "b": 1,
   "tr": 19,
   "sig": -1
@@ -1234,7 +1234,7 @@
    41
   ],
   "r": "normal",
-  "lore": "Its glow warns predators to stay away.",
+  "lore": "A dark purple slug with glowing spots and frills. Its bright lime-green glow warns others to keep their distance, but it means no harm.",
   "b": 1,
   "tr": 20,
   "sig": -1
@@ -1853,7 +1853,7 @@
    38
   ],
   "r": "normal",
-  "lore": "Bounces between waves inside a bubble of air.",
+  "lore": "A cat-sized Alienmon that rides inside an air bubble it blows from a pouch in its chest. They travel in big giggly groups.",
   "b": 1,
   "tr": 1,
   "sig": -1
@@ -2694,7 +2694,7 @@
    81
   ],
   "r": "normal",
-  "lore": "Causes screens to flicker wherever it lands.",
+  "lore": "A loaf-sized bug striped yellow and black, with huge cyan eyes and wings that break apart into pixels. Scrambles any screen it touches.",
   "b": 1,
   "tr": 38,
   "sig": -1
@@ -3067,7 +3067,7 @@
    42
   ],
   "r": "normal",
-  "lore": "Arranges itself into lines with others of its kind.",
+  "lore": "A chest-high standing stone with a glowing violet crack and three pebbles orbiting on rings of pink light. Its voice lands inside your head.",
   "b": 1,
   "tr": 33,
   "sig": -1
@@ -3289,7 +3289,7 @@
    51
   ],
   "r": "normal",
-  "lore": "Rings softly in the slightest breeze.",
+  "lore": "A knee-high silver bell with a tiny smiling face, long teal ribbons and a skirt of glass chime tubes. Rings softly in the slightest breeze.",
   "b": 1,
   "tr": 39,
   "sig": -1
