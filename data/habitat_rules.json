@@ -1,0 +1,1180 @@
+{
+ "version": 1,
+ "rule": "A species can live in a habitat if none of its types is banned there, every type is native or tolerated there, and (for a strong fit) at least one type is native. Tolerated-only species appear as uncommon or rare.",
+ "fire_plant_exception": "Bio species may live in fire habitats (volcanic, volcano, ash_trail, sun_forge) only if they are also Magma or Plasma.",
+ "habitats": {
+  "canyon": {
+   "description": "Dry red canyons and cactus flats",
+   "native": [
+    "Gravity",
+    "Swarm",
+    "Bio",
+    "Volt"
+   ],
+   "tolerated": [
+    "Sonic",
+    "Psi",
+    "Plasma",
+    "Alloy",
+    "Crystal",
+    "Void"
+   ],
+   "banned": [
+    "Cryo",
+    "Hydro",
+    "Magma",
+    "Toxin"
+   ]
+  },
+  "rock_cave": {
+   "description": "Dark rock tunnels",
+   "native": [
+    "Gravity",
+    "Void",
+    "Crystal",
+    "Sonic"
+   ],
+   "tolerated": [
+    "Swarm",
+    "Alloy",
+    "Psi",
+    "Magma",
+    "Toxin"
+   ],
+   "banned": [
+    "Bio",
+    "Cryo",
+    "Hydro",
+    "Plasma",
+    "Volt"
+   ]
+  },
+  "volcanic": {
+   "description": "Lava flows and black cliffs",
+   "native": [
+    "Magma",
+    "Plasma",
+    "Gravity"
+   ],
+   "tolerated": [
+    "Alloy",
+    "Crystal",
+    "Swarm",
+    "Volt",
+    "Void",
+    "Sonic",
+    "Toxin"
+   ],
+   "banned": [
+    "Bio",
+    "Cryo",
+    "Hydro",
+    "Psi"
+   ]
+  },
+  "tropical_shore": {
+   "description": "Warm beaches and palm isles",
+   "native": [
+    "Hydro",
+    "Bio"
+   ],
+   "tolerated": [
+    "Swarm",
+    "Sonic",
+    "Gravity",
+    "Volt",
+    "Psi",
+    "Crystal",
+    "Toxin"
+   ],
+   "banned": [
+    "Alloy",
+    "Cryo",
+    "Magma",
+    "Plasma",
+    "Void"
+   ]
+  },
+  "scrapyard": {
+   "description": "Scrap heaps, cranes and furnaces",
+   "native": [
+    "Alloy",
+    "Volt"
+   ],
+   "tolerated": [
+    "Gravity",
+    "Toxin",
+    "Magma",
+    "Swarm",
+    "Sonic",
+    "Void"
+   ],
+   "banned": [
+    "Bio",
+    "Cryo",
+    "Crystal",
+    "Hydro",
+    "Plasma",
+    "Psi"
+   ]
+  },
+  "swamp": {
+   "description": "Bogs, marsh pools and spore mist",
+   "native": [
+    "Bio",
+    "Toxin",
+    "Hydro",
+    "Swarm"
+   ],
+   "tolerated": [
+    "Psi",
+    "Void",
+    "Sonic",
+    "Gravity"
+   ],
+   "banned": [
+    "Alloy",
+    "Cryo",
+    "Crystal",
+    "Magma",
+    "Plasma",
+    "Volt"
+   ]
+  },
+  "fungal": {
+   "description": "Giant mushroom caverns",
+   "native": [
+    "Bio",
+    "Toxin",
+    "Void"
+   ],
+   "tolerated": [
+    "Swarm",
+    "Psi",
+    "Gravity",
+    "Sonic"
+   ],
+   "banned": [
+    "Alloy",
+    "Cryo",
+    "Crystal",
+    "Hydro",
+    "Magma",
+    "Plasma",
+    "Volt"
+   ]
+  },
+  "coast": {
+   "description": "Coral routes and open sea",
+   "native": [
+    "Hydro",
+    "Sonic"
+   ],
+   "tolerated": [
+    "Bio",
+    "Swarm",
+    "Volt",
+    "Crystal",
+    "Psi",
+    "Gravity",
+    "Alloy",
+    "Void",
+    "Toxin"
+   ],
+   "banned": [
+    "Cryo",
+    "Magma",
+    "Plasma"
+   ]
+  },
+  "neon_city": {
+   "description": "Neon streets and broadcast towers",
+   "native": [
+    "Volt",
+    "Sonic",
+    "Alloy"
+   ],
+   "tolerated": [
+    "Psi",
+    "Swarm",
+    "Void",
+    "Crystal",
+    "Gravity",
+    "Toxin",
+    "Plasma"
+   ],
+   "banned": [
+    "Bio",
+    "Cryo",
+    "Hydro",
+    "Magma"
+   ]
+  },
+  "ruins": {
+   "description": "Sunken coral ruins and glyph halls",
+   "native": [
+    "Crystal",
+    "Psi",
+    "Gravity"
+   ],
+   "tolerated": [
+    "Sonic",
+    "Void",
+    "Bio",
+    "Hydro",
+    "Toxin"
+   ],
+   "banned": [
+    "Alloy",
+    "Cryo",
+    "Magma",
+    "Plasma",
+    "Swarm",
+    "Volt"
+   ]
+  },
+  "mine_hot": {
+   "description": "Hot deep mines",
+   "native": [
+    "Magma",
+    "Gravity",
+    "Crystal",
+    "Alloy"
+   ],
+   "tolerated": [
+    "Void",
+    "Swarm",
+    "Sonic",
+    "Toxin",
+    "Plasma"
+   ],
+   "banned": [
+    "Bio",
+    "Cryo",
+    "Hydro",
+    "Psi",
+    "Volt"
+   ]
+  },
+  "volcano": {
+   "description": "Volcano slopes and lava rails",
+   "native": [
+    "Magma",
+    "Plasma"
+   ],
+   "tolerated": [
+    "Gravity",
+    "Crystal",
+    "Alloy",
+    "Swarm",
+    "Sonic",
+    "Void",
+    "Toxin"
+   ],
+   "banned": [
+    "Bio",
+    "Cryo",
+    "Hydro",
+    "Psi",
+    "Volt"
+   ]
+  },
+  "tundra": {
+   "description": "Snowfields and fossil digs",
+   "native": [
+    "Cryo",
+    "Gravity",
+    "Crystal"
+   ],
+   "tolerated": [
+    "Psi",
+    "Bio",
+    "Void",
+    "Sonic",
+    "Hydro"
+   ],
+   "banned": [
+    "Alloy",
+    "Magma",
+    "Plasma",
+    "Swarm",
+    "Toxin",
+    "Volt"
+   ]
+  },
+  "ice_cave": {
+   "description": "Crystal ice caverns",
+   "native": [
+    "Cryo",
+    "Crystal"
+   ],
+   "tolerated": [
+    "Gravity",
+    "Void",
+    "Sonic",
+    "Psi",
+    "Hydro",
+    "Swarm"
+   ],
+   "banned": [
+    "Alloy",
+    "Bio",
+    "Magma",
+    "Plasma",
+    "Toxin",
+    "Volt"
+   ]
+  },
+  "frozen_falls": {
+   "description": "Frozen waterfall and ice pools",
+   "native": [
+    "Cryo",
+    "Hydro"
+   ],
+   "tolerated": [
+    "Crystal",
+    "Psi",
+    "Sonic"
+   ],
+   "banned": [
+    "Alloy",
+    "Bio",
+    "Gravity",
+    "Magma",
+    "Plasma",
+    "Swarm",
+    "Toxin",
+    "Void",
+    "Volt"
+   ]
+  },
+  "containment": {
+   "description": "Helix lab wings (escaped specimens only)",
+   "native": [
+    "Alloy",
+    "Toxin",
+    "Volt"
+   ],
+   "tolerated": [
+    "Psi",
+    "Void",
+    "Gravity",
+    "Cryo",
+    "Swarm"
+   ],
+   "banned": [
+    "Bio",
+    "Crystal",
+    "Hydro",
+    "Magma",
+    "Plasma",
+    "Sonic"
+   ]
+  },
+  "sky": {
+   "description": "Wind bridges above the clouds",
+   "native": [
+    "Psi",
+    "Sonic",
+    "Gravity"
+   ],
+   "tolerated": [
+    "Crystal",
+    "Void",
+    "Volt",
+    "Hydro",
+    "Swarm"
+   ],
+   "banned": [
+    "Alloy",
+    "Bio",
+    "Cryo",
+    "Magma",
+    "Plasma",
+    "Toxin"
+   ]
+  },
+  "sky_garden": {
+   "description": "Floating gardens",
+   "native": [
+    "Psi",
+    "Bio"
+   ],
+   "tolerated": [
+    "Hydro",
+    "Sonic",
+    "Crystal",
+    "Swarm",
+    "Gravity"
+   ],
+   "banned": [
+    "Alloy",
+    "Cryo",
+    "Magma",
+    "Plasma",
+    "Toxin",
+    "Void",
+    "Volt"
+   ]
+  },
+  "dark_city": {
+   "description": "Lantern streets in endless night",
+   "native": [
+    "Void",
+    "Gravity"
+   ],
+   "tolerated": [
+    "Sonic",
+    "Psi",
+    "Alloy",
+    "Swarm",
+    "Bio",
+    "Toxin"
+   ],
+   "banned": [
+    "Cryo",
+    "Crystal",
+    "Hydro",
+    "Magma",
+    "Plasma",
+    "Volt"
+   ]
+  },
+  "abyss": {
+   "description": "The deep Sinkhole",
+   "native": [
+    "Void",
+    "Gravity",
+    "Crystal"
+   ],
+   "tolerated": [
+    "Sonic",
+    "Swarm",
+    "Toxin",
+    "Psi"
+   ],
+   "banned": [
+    "Alloy",
+    "Bio",
+    "Cryo",
+    "Hydro",
+    "Magma",
+    "Plasma",
+    "Volt"
+   ]
+  },
+  "seedpod_field": {
+   "description": "Fields of cracked glowing seedpods",
+   "native": [
+    "Plasma",
+    "Bio",
+    "Gravity"
+   ],
+   "tolerated": [
+    "Crystal",
+    "Psi",
+    "Swarm",
+    "Volt",
+    "Sonic"
+   ],
+   "banned": [
+    "Alloy",
+    "Cryo",
+    "Hydro",
+    "Magma",
+    "Toxin",
+    "Void"
+   ]
+  },
+  "crater": {
+   "description": "The Starfall crater and descent",
+   "native": [
+    "Plasma",
+    "Void",
+    "Gravity",
+    "Crystal"
+   ],
+   "tolerated": [
+    "Psi",
+    "Sonic",
+    "Magma",
+    "Swarm"
+   ],
+   "banned": [
+    "Alloy",
+    "Bio",
+    "Cryo",
+    "Hydro",
+    "Toxin",
+    "Volt"
+   ]
+  },
+  "summit": {
+   "description": "High mountain lift above the clouds",
+   "native": [
+    "Crystal",
+    "Gravity",
+    "Sonic"
+   ],
+   "tolerated": [
+    "Plasma",
+    "Alloy",
+    "Psi",
+    "Void",
+    "Volt",
+    "Cryo"
+   ],
+   "banned": [
+    "Bio",
+    "Hydro",
+    "Magma",
+    "Swarm",
+    "Toxin"
+   ]
+  },
+  "floating_land": {
+   "description": "Drifting Ystran islands",
+   "native": [
+    "Gravity",
+    "Bio",
+    "Psi"
+   ],
+   "tolerated": [
+    "Crystal",
+    "Void",
+    "Sonic"
+   ],
+   "banned": [
+    "Alloy",
+    "Cryo",
+    "Hydro",
+    "Magma",
+    "Plasma",
+    "Swarm",
+    "Toxin",
+    "Volt"
+   ]
+  },
+  "drowned_sea": {
+   "description": "Sunken Ystran city",
+   "native": [
+    "Hydro",
+    "Psi"
+   ],
+   "tolerated": [
+    "Crystal",
+    "Sonic",
+    "Bio",
+    "Void"
+   ],
+   "banned": [
+    "Alloy",
+    "Cryo",
+    "Gravity",
+    "Magma",
+    "Plasma",
+    "Swarm",
+    "Toxin",
+    "Volt"
+   ]
+  },
+  "sun_forge": {
+   "description": "Ignarch's furnace (no wild Alienmon)",
+   "native": [
+    "Plasma",
+    "Magma"
+   ],
+   "tolerated": [
+    "Crystal",
+    "Gravity"
+   ],
+   "banned": [
+    "Alloy",
+    "Bio",
+    "Cryo",
+    "Hydro",
+    "Psi",
+    "Sonic",
+    "Swarm",
+    "Toxin",
+    "Void",
+    "Volt"
+   ]
+  },
+  "crystal_ruins": {
+   "description": "Shattered Choir ruins",
+   "native": [
+    "Crystal",
+    "Psi",
+    "Sonic"
+   ],
+   "tolerated": [
+    "Void",
+    "Gravity",
+    "Plasma"
+   ],
+   "banned": [
+    "Alloy",
+    "Bio",
+    "Cryo",
+    "Hydro",
+    "Magma",
+    "Swarm",
+    "Toxin",
+    "Volt"
+   ]
+  },
+  "blighted_forest": {
+   "description": "Grey forest eaten by hunger",
+   "native": [
+    "Void",
+    "Bio"
+   ],
+   "tolerated": [
+    "Toxin",
+    "Gravity",
+    "Psi"
+   ],
+   "banned": [
+    "Alloy",
+    "Cryo",
+    "Crystal",
+    "Hydro",
+    "Magma",
+    "Plasma",
+    "Sonic",
+    "Swarm",
+    "Volt"
+   ]
+  },
+  "void_edge": {
+   "description": "Where the ground ends",
+   "native": [
+    "Void",
+    "Gravity"
+   ],
+   "tolerated": [
+    "Psi",
+    "Plasma"
+   ],
+   "banned": [
+    "Alloy",
+    "Bio",
+    "Cryo",
+    "Crystal",
+    "Hydro",
+    "Magma",
+    "Sonic",
+    "Swarm",
+    "Toxin",
+    "Volt"
+   ]
+  },
+  "aurora": {
+   "description": "Aurora-lit snow routes (sky plasma allowed)",
+   "native": [
+    "Cryo",
+    "Gravity"
+   ],
+   "tolerated": [
+    "Plasma",
+    "Psi",
+    "Crystal",
+    "Sonic",
+    "Hydro",
+    "Swarm"
+   ],
+   "banned": [
+    "Alloy",
+    "Bio",
+    "Magma",
+    "Toxin",
+    "Void",
+    "Volt"
+   ]
+  },
+  "thermal_vent": {
+   "description": "Undersea volcanic vents",
+   "native": [
+    "Magma"
+   ],
+   "tolerated": [
+    "Hydro",
+    "Crystal",
+    "Toxin",
+    "Sonic",
+    "Gravity",
+    "Volt"
+   ],
+   "banned": [
+    "Alloy",
+    "Bio",
+    "Cryo",
+    "Plasma",
+    "Psi",
+    "Swarm",
+    "Void"
+   ]
+  },
+  "ash_trail": {
+   "description": "Ash fields where fire-loving plants grow",
+   "native": [
+    "Magma",
+    "Plasma",
+    "Gravity"
+   ],
+   "tolerated": [
+    "Bio",
+    "Swarm",
+    "Toxin",
+    "Void"
+   ],
+   "banned": [
+    "Alloy",
+    "Cryo",
+    "Crystal",
+    "Hydro",
+    "Psi",
+    "Sonic",
+    "Volt"
+   ]
+  }
+ },
+ "hard_bans": {
+  "Hydro": [
+   "ash_trail",
+   "volcanic",
+   "volcano",
+   "mine_hot",
+   "sun_forge",
+   "canyon",
+   "scrapyard",
+   "neon_city",
+   "containment",
+   "summit",
+   "seedpod_field",
+   "crater"
+  ],
+  "Cryo": [
+   "ash_trail",
+   "thermal_vent",
+   "volcanic",
+   "volcano",
+   "mine_hot",
+   "sun_forge",
+   "canyon",
+   "tropical_shore",
+   "swamp",
+   "fungal",
+   "coast",
+   "seedpod_field",
+   "crater",
+   "drowned_sea",
+   "neon_city"
+  ],
+  "Magma": [
+   "aurora",
+   "tundra",
+   "ice_cave",
+   "frozen_falls",
+   "coast",
+   "swamp",
+   "fungal",
+   "tropical_shore",
+   "drowned_sea",
+   "sky",
+   "sky_garden"
+  ],
+  "Plasma": [
+   "tundra",
+   "ice_cave",
+   "frozen_falls",
+   "coast",
+   "swamp",
+   "fungal",
+   "drowned_sea"
+  ],
+  "Bio": [
+   "mine_hot",
+   "containment",
+   "void_edge"
+  ]
+ },
+ "sections": {
+  "009": {
+   "planet": "Dustara",
+   "name": "Rimwalk Trail Part A",
+   "habitat": "canyon"
+  },
+  "010": {
+   "planet": "Dustara",
+   "name": "Rimwalk Trail Part B",
+   "habitat": "canyon"
+  },
+  "011": {
+   "planet": "Dustara",
+   "name": "Cactus Gardens",
+   "habitat": "canyon"
+  },
+  "012": {
+   "planet": "Dustara",
+   "name": "Sunset Tunnel B1",
+   "habitat": "rock_cave"
+  },
+  "013": {
+   "planet": "Dustara",
+   "name": "Sunset Tunnel B2",
+   "habitat": "rock_cave"
+  },
+  "014": {
+   "planet": "Dustara",
+   "name": "Molten Frontier: Tunnel Mouth",
+   "habitat": "volcanic"
+  },
+  "015": {
+   "planet": "Dustara",
+   "name": "Molten Frontier: Ash Trail Part A",
+   "habitat": "ash_trail"
+  },
+  "016": {
+   "planet": "Dustara",
+   "name": "Molten Frontier: Ash Trail Part B",
+   "habitat": "ash_trail"
+  },
+  "017": {
+   "planet": "Dustara",
+   "name": "Molten Frontier: Palm Isle",
+   "habitat": "tropical_shore"
+  },
+  "019": {
+   "planet": "Dustara",
+   "name": "Molten Frontier: Long Dock",
+   "habitat": "tropical_shore"
+  },
+  "020": {
+   "planet": "Dustara",
+   "name": "Molten Frontier: Ridge Path Part A",
+   "habitat": "volcanic"
+  },
+  "021": {
+   "planet": "Dustara",
+   "name": "Molten Frontier: Ridge Path Part B",
+   "habitat": "volcanic"
+  },
+  "024": {
+   "planet": "Dustara",
+   "name": "Molten Frontier: Lava Bridges Part A",
+   "habitat": "volcanic"
+  },
+  "025": {
+   "planet": "Dustara",
+   "name": "Molten Frontier: Lava Bridges Part B",
+   "habitat": "volcanic"
+  },
+  "027": {
+   "planet": "Dustara",
+   "name": "Molten Frontier: Shadow Tunnel Mouth",
+   "habitat": "rock_cave"
+  },
+  "028": {
+   "planet": "Dustara",
+   "name": "Molten Frontier: Magma Mines Gate",
+   "habitat": "mine_hot"
+  },
+  "034": {
+   "planet": "Ferrox",
+   "name": "Scrap Route Part A",
+   "habitat": "scrapyard"
+  },
+  "035": {
+   "planet": "Ferrox",
+   "name": "Scrap Route Part B",
+   "habitat": "scrapyard"
+  },
+  "036": {
+   "planet": "Ferrox",
+   "name": "Crane Yard",
+   "habitat": "scrapyard"
+  },
+  "038": {
+   "planet": "Ferrox",
+   "name": "Furnace Ridge",
+   "habitat": "scrapyard"
+  },
+  "045": {
+   "planet": "Sporeholm",
+   "name": "Lantern Marsh Part A",
+   "habitat": "swamp"
+  },
+  "046": {
+   "planet": "Sporeholm",
+   "name": "Lantern Marsh Part B",
+   "habitat": "swamp"
+  },
+  "047": {
+   "planet": "Sporeholm",
+   "name": "Mushroom Maze 1F",
+   "habitat": "fungal"
+  },
+  "048": {
+   "planet": "Sporeholm",
+   "name": "Mushroom Maze 2F",
+   "habitat": "fungal"
+  },
+  "049": {
+   "planet": "Sporeholm",
+   "name": "Spore Pools",
+   "habitat": "swamp"
+  },
+  "057": {
+   "planet": "Thalassa",
+   "name": "Coral Route Part A",
+   "habitat": "coast"
+  },
+  "058": {
+   "planet": "Thalassa",
+   "name": "Coral Route Part B",
+   "habitat": "coast"
+  },
+  "059": {
+   "planet": "Thalassa",
+   "name": "Sea Arch Cove",
+   "habitat": "thermal_vent"
+  },
+  "066": {
+   "planet": "Neonis",
+   "name": "Arcade District",
+   "habitat": "neon_city"
+  },
+  "067": {
+   "planet": "Neonis",
+   "name": "Broadcast Route Part A",
+   "habitat": "neon_city"
+  },
+  "068": {
+   "planet": "Neonis",
+   "name": "Broadcast Route Part B",
+   "habitat": "neon_city"
+  },
+  "075": {
+   "planet": "Glyphos",
+   "name": "Coral Ruins Part A",
+   "habitat": "ruins"
+  },
+  "076": {
+   "planet": "Glyphos",
+   "name": "Coral Ruins Part B",
+   "habitat": "ruins"
+  },
+  "077": {
+   "planet": "Glyphos",
+   "name": "Glyph Hollow",
+   "habitat": "ruins"
+  },
+  "085": {
+   "planet": "Pyros",
+   "name": "Lava Rail Part A",
+   "habitat": "volcano"
+  },
+  "086": {
+   "planet": "Pyros",
+   "name": "Lava Rail Part B",
+   "habitat": "volcano"
+  },
+  "087": {
+   "planet": "Pyros",
+   "name": "Deep Mines B1",
+   "habitat": "mine_hot"
+  },
+  "088": {
+   "planet": "Pyros",
+   "name": "Deep Mines B2",
+   "habitat": "mine_hot"
+  },
+  "089": {
+   "planet": "Pyros",
+   "name": "Deep Mines B3",
+   "habitat": "mine_hot"
+  },
+  "090": {
+   "planet": "Pyros",
+   "name": "Furnace Ridge (Pyros)",
+   "habitat": "volcano"
+  },
+  "096": {
+   "planet": "Glacia",
+   "name": "Aurora Route Part A",
+   "habitat": "aurora"
+  },
+  "097": {
+   "planet": "Glacia",
+   "name": "Aurora Route Part B",
+   "habitat": "aurora"
+  },
+  "098": {
+   "planet": "Glacia",
+   "name": "Crystal Caverns B1",
+   "habitat": "ice_cave"
+  },
+  "099": {
+   "planet": "Glacia",
+   "name": "Crystal Caverns B2",
+   "habitat": "ice_cave"
+  },
+  "100": {
+   "planet": "Glacia",
+   "name": "Crystal Caverns B3",
+   "habitat": "ice_cave"
+  },
+  "101": {
+   "planet": "Glacia",
+   "name": "Fossil Dig",
+   "habitat": "tundra"
+  },
+  "102": {
+   "planet": "Glacia",
+   "name": "Frozen Falls",
+   "habitat": "frozen_falls"
+  },
+  "109": {
+   "planet": "Helix Station",
+   "name": "Containment Wing 1F",
+   "habitat": "containment"
+  },
+  "110": {
+   "planet": "Helix Station",
+   "name": "Containment Wing 2F",
+   "habitat": "containment"
+  },
+  "111": {
+   "planet": "Helix Station",
+   "name": "Engineering",
+   "habitat": "containment"
+  },
+  "118": {
+   "planet": "Halo",
+   "name": "Wind Bridges Part A",
+   "habitat": "sky"
+  },
+  "119": {
+   "planet": "Halo",
+   "name": "Wind Bridges Part B",
+   "habitat": "sky"
+  },
+  "120": {
+   "planet": "Halo",
+   "name": "Floating Gardens",
+   "habitat": "sky_garden"
+  },
+  "127": {
+   "planet": "Umbra",
+   "name": "Lantern Streets Part A",
+   "habitat": "dark_city"
+  },
+  "128": {
+   "planet": "Umbra",
+   "name": "Lantern Streets Part B",
+   "habitat": "dark_city"
+  },
+  "129": {
+   "planet": "Umbra",
+   "name": "The Sinkhole B1",
+   "habitat": "abyss"
+  },
+  "130": {
+   "planet": "Umbra",
+   "name": "The Sinkhole B2",
+   "habitat": "abyss"
+  },
+  "131": {
+   "planet": "Umbra",
+   "name": "The Sinkhole B3",
+   "habitat": "abyss"
+  },
+  "132": {
+   "planet": "Umbra",
+   "name": "The Sinkhole B4",
+   "habitat": "abyss"
+  },
+  "138": {
+   "planet": "Starfall Rift",
+   "name": "Seedpod Fields Part A",
+   "habitat": "seedpod_field"
+  },
+  "139": {
+   "planet": "Starfall Rift",
+   "name": "Seedpod Fields Part B",
+   "habitat": "seedpod_field"
+  },
+  "141": {
+   "planet": "Starfall Rift",
+   "name": "Crater Rim",
+   "habitat": "crater"
+  },
+  "142": {
+   "planet": "Starfall Rift",
+   "name": "Crater Descent B1",
+   "habitat": "crater"
+  },
+  "143": {
+   "planet": "Starfall Rift",
+   "name": "Crater Descent B2",
+   "habitat": "crater"
+  },
+  "144": {
+   "planet": "Starfall Rift",
+   "name": "Crater Descent B3",
+   "habitat": "crater"
+  },
+  "146": {
+   "planet": "Apex Array",
+   "name": "Summit Lift",
+   "habitat": "summit"
+  },
+  "154": {
+   "planet": "Ystra",
+   "name": "Floating Continents Part A",
+   "habitat": "floating_land"
+  },
+  "155": {
+   "planet": "Ystra",
+   "name": "Floating Continents Part B",
+   "habitat": "floating_land"
+  },
+  "156": {
+   "planet": "Ystra",
+   "name": "Drowned Seas",
+   "habitat": "drowned_sea"
+  },
+  "157": {
+   "planet": "Ystra",
+   "name": "Sun Forge",
+   "habitat": "sun_forge"
+  },
+  "158": {
+   "planet": "Ystra",
+   "name": "Crystal Ruins 1F",
+   "habitat": "crystal_ruins"
+  },
+  "159": {
+   "planet": "Ystra",
+   "name": "Crystal Ruins 2F",
+   "habitat": "crystal_ruins"
+  },
+  "160": {
+   "planet": "Ystra",
+   "name": "Blighted Forest Part A",
+   "habitat": "blighted_forest"
+  },
+  "161": {
+   "planet": "Ystra",
+   "name": "Blighted Forest Part B",
+   "habitat": "blighted_forest"
+  },
+  "162": {
+   "planet": "Ystra",
+   "name": "Edge of the Void",
+   "habitat": "void_edge"
+  }
+ }
+}

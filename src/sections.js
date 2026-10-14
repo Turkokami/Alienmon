@@ -4,7 +4,7 @@
  section (it is drawn beside this one while you approach). Interiors, caves and tower floors are reached by warps:
  doors, doormats, stairs and cave mouths. Collision is one char per tile: '.' walk, '#' blocked, ',' tall grass.
  G.sec = {id,x,y} is the player's tile; the old painted town maps stay in use wherever no section is active. */
-const SWORLD=__SWORLD__,SECI=lazyImgs(__SECIMG__),SECOVI=lazyImgs(__SECOV__),SECQ=__SECQ__;
+const ENC=__ENC__,SWORLD=__SWORLD__,SECI=lazyImgs(__SECIMG__),SECOVI=lazyImgs(__SECOV__),SECQ=__SECQ__;
 const SEC_STEP=12;              // frames per tile at 60 updates a second (the Hover Board halves it)
 let SJ=null,SJBUF=0,SM=null,SFADE=null,SBANNER=0,SDEBUG=false,SBUMP=0,SNEAR=null;
 const secOn=()=>!!(G&&G.sec&&SWORLD[G.sec.id]);
@@ -312,3 +312,25 @@ function tradeReceive(){tradePanel('Receive an Alienmon','<p style="margin:0 0 8
    G.tradeIn=G.tradeIn||{};if(G.tradeIn[r.tid]){b.querySelector('.msg').textContent='This save already received that Alienmon.';return}
    G.tradeIn[r.tid]=1;const where=addMon(r.m);G.seen[r.m.id]=G.caught[r.m.id]=1;autosave();close();
    say([nm(r.m)+' arrived from Linker #'+r.m.ot+'!',nm(r.m)+' was sent to '+(where==='party'?'your team':'your Storage')+'.'])},true],['Cancel',(b,close)=>close()]])}
+
+/* ---- habitats: wild Alienmon come from each map section's habitat table (data/encounters.json), weighted, with day/night boosts ---- */
+// the same habitat rule as tools/check_habitats.js: every type native or tolerated, none hard-banned; fire habitats only take fire-adapted Bio
+const HFIRE=new Set(['volcanic','volcano','sun_forge','ash_trail']);function habFit(types,h){const r=ENC.r.hab[h];if(!r)return false;let tol=r[1];if(HFIRE.has(h)&&types.includes('Bio')){if(!types.some(t=>t==='Magma'||t==='Plasma'))return false;tol=tol.concat(['Bio'])}
+ return types.every(t=>!(ENC.r.ban[t]||[]).includes(h)&&(r[0].includes(t)||tol.includes(t)))}
+const habName=h=>h?h.replace(/_/g,' ').replace(/\b\w/g,c=>c.toUpperCase()):'';
+function secWildPick(){if(!secOn())return null;const T=ENC.s[G.sec.id];if(!T)return null;const water=secTile(SWORLD[G.sec.id],G.sec.x,G.sec.y)==='~',n=isNight();
+ const ok=T.e.filter(([name])=>IDX[name]!=null&&wildOK(name)),land=ok.filter(e=>e[4]!=='surf');
+ // on water only surf species; on land the walk/cave species, plus the water species at the shoreline (half weight) where land life is thin
+ const shore=!water&&new Set(land.map(e=>D[clampWild(IDX[e[0]],e[3],0)[0]].name)).size<4;let L=water?ok.filter(e=>e[4]==='surf'):shore?ok:land;
+ // still thin (story Alienmon like Zib are left out): add this world's usual wild species that suit the habitat, at low weight
+ if(!water&&new Set(L.map(e=>D[clampWild(IDX[e[0]],e[3],0)[0]].name)).size<4){const s=SWORLD[G.sec.id],have=new Set(L.map(e=>e[0])),lv=L.length?[Math.min(...L.map(e=>e[2])),Math.max(...L.map(e=>e[3]))]:(PL[G.planet].lv||[2,5]);
+  for(const x of wildTable(s.zone||s.pkey)||[])if(!have.has(x.name)&&IDX[x.name]!=null&&wildOK(x.name)&&habFit(D[IDX[x.name]].t,T.h)){have.add(x.name);L.push([x.name,3,lv[0],lv[1],'walk','any'])}}
+ if(!L.length)return null;
+ const wt=([,w,,,m,t])=>(shore&&m==='surf'?w/2:w)*(t==='night x2'?(n?2:1):t==='day x2'?(n?1:2):1);let r=L.reduce((a,e)=>a+wt(e),0)*R(),e=L[0];for(const x of L){r-=wt(x);if(r<=0){e=x;break}}
+ return clampWild(IDX[e[0]],ri(e[2],e[3]),0)}
+// Xenodex: the map areas (and their habitat) where a species lives wild
+function habitatsOf(id){const n=D[id].name,out=[];for(const[sid,T]of Object.entries(ENC.s))if(T.e.some(e=>e[0]===n)&&SWORLD[sid])out.push({sec:sid,name:SWORLD[sid].name.replace(/^Molten Frontier: /,''),h:T.h,pk:SWORLD[sid].pkey});return out}
+// START > Map area info: the habitat, and which wild Alienmon live here (names you haven't seen show as ???)
+function areaInfo(sid){const T=ENC.s[sid];if(!T)return[];const names=[...new Set(T.e.filter(e=>IDX[e[0]]!=null&&wildOK(e[0])).map(e=>e[0]))];
+ const shown=names.map(n=>G.seen[IDX[n]]?n:'???'),seen=shown.filter(n=>n!=='???').length;
+ return['Habitat: '+habName(T.h)+'. '+(ENC.h[T.h]||''),'Wild here ('+seen+'/'+names.length+' seen): '+shown.join(', ')+'.']}

@@ -1,0 +1,301 @@
+No,Name,Type 1,Type 2,Home world,How to get it,Rarity,Where (section),Habitat
+1,Sporix,Bio,,Dustara,gift: starter at Vashti's Observatory (Crater Observatory),starter,003 Vashti's Observatory Lab,
+2,Mycelith,Bio,,Dustara,evolve from starter,starter,003 Vashti's Observatory Lab,
+3,Fungaroth,Bio,,Dustara,evolve from starter,starter,003 Vashti's Observatory Lab,
+4,Plazmo,Plasma,,Dustara,gift: starter at Vashti's Observatory (Crater Observatory),starter,003 Vashti's Observatory Lab,
+5,Plazmet,Plasma,,Dustara,evolve from starter,starter,003 Vashti's Observatory Lab,
+6,Solarach,Plasma,,Dustara,evolve from starter,starter,003 Vashti's Observatory Lab,
+7,Gloopa,Hydro,,Dustara,gift: starter at Vashti's Observatory (Crater Observatory),starter,003 Vashti's Observatory Lab,
+8,Tidaloid,Hydro,,Dustara,evolve from starter,starter,003 Vashti's Observatory Lab,
+9,Abyssor,Hydro,,Sporeholm,wild,rare,049 Spore Pools,swamp
+10,Zib,Volt,,Dustara,wild,common,009 Rimwalk Trail Part A; 010 Rimwalk Trail Part B,canyon
+11,Fizzle,Volt,,Dustara,wild,uncommon,011 Cactus Gardens; 010 Rimwalk Trail Part B,canyon
+12,Fizzlord,Volt,,Dustara,wild,common,010 Rimwalk Trail Part B; 011 Cactus Gardens,canyon
+13,Skitterbit,Swarm,,Dustara,wild,uncommon,009 Rimwalk Trail Part A; 011 Cactus Gardens,canyon
+14,Skitterdrone,Swarm,,Dustara,wild,uncommon,011 Cactus Gardens; 017 Molten Frontier: Palm Isle,canyon; tropical_shore
+15,Hivemaw,Swarm,,Dustara,wild,common,009 Rimwalk Trail Part A; 010 Rimwalk Trail Part B,canyon
+16,Pebblet,Gravity,,Dustara,wild,uncommon,012 Sunset Tunnel B1; 013 Sunset Tunnel B2; 014 Molten Frontier: Tunnel Mouth; 020 Molten Frontier: Ridge Path Part A; 025 Molten Frontier: Lava Bridges Part B,rock_cave; volcanic
+17,Bouldron,Gravity,,Dustara,wild,uncommon,028 Molten Frontier: Magma Mines Gate; 012 Sunset Tunnel B1; 015 Molten Frontier: Ash Trail Part A; 020 Molten Frontier: Ridge Path Part A,ash_trail; mine_hot; rock_cave; volcanic
+18,Orbitusk,Gravity,,Dustara,wild,common,025 Molten Frontier: Lava Bridges Part B; 027 Molten Frontier: Shadow Tunnel Mouth; 015 Molten Frontier: Ash Trail Part A; 021 Molten Frontier: Ridge Path Part B; 028 Molten Frontier: Magma Mines Gate,ash_trail; mine_hot; rock_cave; volcanic
+19,Blinkit,Psi,,Dustara,wild,uncommon,013 Sunset Tunnel B2; 017 Molten Frontier: Palm Isle,rock_cave; tropical_shore
+20,Grayvision,Psi,,Dustara,wild,uncommon,019 Molten Frontier: Long Dock,tropical_shore
+21,Cindermole,Magma,,Dustara,wild,uncommon,014 Molten Frontier: Tunnel Mouth; 015 Molten Frontier: Ash Trail Part A; 016 Molten Frontier: Ash Trail Part B; 024 Molten Frontier: Lava Bridges Part A; 028 Molten Frontier: Magma Mines Gate,ash_trail; mine_hot; volcanic
+22,Kilnback,Magma,,Dustara,wild,common,021 Molten Frontier: Ridge Path Part B; 024 Molten Frontier: Lava Bridges Part A; 016 Molten Frontier: Ash Trail Part B; 025 Molten Frontier: Lava Bridges Part B; 028 Molten Frontier: Magma Mines Gate,ash_trail; mine_hot; volcanic
+23,Chirpod,Sonic,,Dustara,wild,uncommon,012 Sunset Tunnel B1; 019 Molten Frontier: Long Dock,rock_cave; tropical_shore
+24,Squawktone,Sonic,,Dustara,wild,common,013 Sunset Tunnel B2; 027 Molten Frontier: Shadow Tunnel Mouth,rock_cave
+25,Cactling,Bio,,Dustara,wild,uncommon,017 Molten Frontier: Palm Isle; 019 Molten Frontier: Long Dock,tropical_shore
+26,Spinelord,Bio,,Dustara,wild,common,017 Molten Frontier: Palm Isle; 019 Molten Frontier: Long Dock,tropical_shore
+27,Shadebit,Void,,Dustara,wild,uncommon,012 Sunset Tunnel B1; 027 Molten Frontier: Shadow Tunnel Mouth,rock_cave
+28,Umbrask,Void,,Dustara,wild,common,013 Sunset Tunnel B2; 027 Molten Frontier: Shadow Tunnel Mouth,rock_cave
+29,Liftant,Gravity,Swarm,Dustara,wild,uncommon,015 Molten Frontier: Ash Trail Part A; 014 Molten Frontier: Tunnel Mouth; 016 Molten Frontier: Ash Trail Part B; 024 Molten Frontier: Lava Bridges Part A,ash_trail; volcanic
+30,Hoistant,Gravity,Swarm,Dustara,wild,common,016 Molten Frontier: Ash Trail Part B; 020 Molten Frontier: Ridge Path Part A; 021 Molten Frontier: Ridge Path Part B; 024 Molten Frontier: Lava Bridges Part A,ash_trail; volcanic
+31,Spindyn,Volt,Gravity,Dustara,wild,uncommon,014 Molten Frontier: Tunnel Mouth; 020 Molten Frontier: Ridge Path Part A; 021 Molten Frontier: Ridge Path Part B; 025 Molten Frontier: Lava Bridges Part B,volcanic
+32,Dynamotor,Volt,Gravity,Ferrox,wild,common,036 Crane Yard; 038 Furnace Ridge,scrapyard
+33,Boltling,Alloy,,Ferrox,wild,uncommon,034 Scrap Route Part A,scrapyard
+34,Gearhound,Alloy,,Ferrox,wild,uncommon,035 Scrap Route Part B,scrapyard
+35,Scraptitan,Alloy,,Ferrox,wild,common,036 Crane Yard; 038 Furnace Ridge,scrapyard
+36,Coilet,Alloy,Volt,Ferrox,wild,uncommon,034 Scrap Route Part A,scrapyard
+37,Coilossus,Alloy,Volt,Ferrox,wild,common,035 Scrap Route Part B; 038 Furnace Ridge,scrapyard
+38,Rivetoad,Alloy,,Ferrox,wild,uncommon,034 Scrap Route Part A,scrapyard
+39,Railbeast,Alloy,,Ferrox,wild,common,035 Scrap Route Part B; 036 Crane Yard,scrapyard
+40,Gleamgrub,Toxin,Alloy,Ferrox,wild,uncommon,034 Scrap Route Part A,scrapyard
+41,Corrovore,Toxin,Alloy,Ferrox,wild,common,036 Crane Yard; 038 Furnace Ridge,scrapyard
+42,Smeltpup,Magma,Alloy,Ferrox,wild,uncommon,035 Scrap Route Part B,scrapyard
+43,Anvilox,Magma,Alloy,Ferrox,wild,common,036 Crane Yard; 038 Furnace Ridge,scrapyard
+44,Gongit,Sonic,Alloy,Ferrox,wild,uncommon,034 Scrap Route Part A,scrapyard
+45,Gongorr,Sonic,Alloy,Ferrox,wild,common,035 Scrap Route Part B; 038 Furnace Ridge,scrapyard
+46,Nutbug,Swarm,Alloy,Ferrox,wild,uncommon,034 Scrap Route Part A,scrapyard
+47,Screwmantis,Swarm,Alloy,Ferrox,wild,rare,036 Crane Yard,scrapyard
+48,Forgemaul,Alloy,,Ferrox,wild,common,034 Scrap Route Part A; 035 Scrap Route Part B,scrapyard
+49,Magnub,Alloy,Gravity,Ferrox,wild,uncommon,035 Scrap Route Part B,scrapyard
+50,Magnaxis,Alloy,Gravity,Ferrox,wild,common,036 Crane Yard; 038 Furnace Ridge,scrapyard
+51,Lumislug,Toxin,,Sporeholm,wild,uncommon,045 Lantern Marsh Part A,swamp
+52,Neonmire,Toxin,,Sporeholm,wild,common,047 Mushroom Maze 1F; 048 Mushroom Maze 2F,fungal
+53,Puffspore,Bio,Toxin,Sporeholm,wild,uncommon,046 Lantern Marsh Part B,swamp
+54,Miasmoth,Bio,Toxin,Sporeholm,wild,uncommon,049 Spore Pools,swamp
+55,Rotbloom,Bio,Toxin,Sporeholm,wild,common,047 Mushroom Maze 1F; 048 Mushroom Maze 2F,fungal
+56,Gnatlet,Swarm,,Sporeholm,wild,uncommon,045 Lantern Marsh Part A,swamp
+57,Gnatcloud,Swarm,,Sporeholm,wild,common,046 Lantern Marsh Part B; 049 Spore Pools,swamp
+58,Bogeel,Hydro,Toxin,Sporeholm,wild,uncommon,045 Lantern Marsh Part A,swamp
+59,Sludgeviper,Hydro,Toxin,Sporeholm,wild,common,046 Lantern Marsh Part B; 049 Spore Pools,swamp
+60,Vinewisp,Bio,,Sporeholm,wild,uncommon,047 Mushroom Maze 1F,fungal
+61,Lianarch,Bio,,Sporeholm,wild,common,047 Mushroom Maze 1F; 048 Mushroom Maze 2F,fungal
+62,Moodshroom,Psi,Bio,Sporeholm,wild,uncommon,045 Lantern Marsh Part A,swamp
+63,Dreamcap,Psi,Bio,Sporeholm,wild,common,046 Lantern Marsh Part B; 048 Mushroom Maze 2F,fungal; swamp
+64,Stingmire,Toxin,Swarm,Sporeholm,wild,uncommon,045 Lantern Marsh Part A,swamp
+65,Venomarch,Toxin,Swarm,Sporeholm,wild,common,048 Mushroom Maze 2F; 049 Spore Pools,fungal; swamp
+66,Lilypod,Hydro,Bio,Sporeholm,wild,uncommon,046 Lantern Marsh Part B,swamp
+67,Lotudrake,Hydro,Bio,Sporeholm,wild,common,046 Lantern Marsh Part B; 049 Spore Pools,swamp
+68,Murkling,Void,Toxin,Sporeholm,wild,uncommon,047 Mushroom Maze 1F,fungal
+69,Murkwraith,Void,Toxin,Sporeholm,wild,rare,048 Mushroom Maze 2F,fungal
+70,Mycora,Toxin,Bio,Sporeholm,wild,common,045 Lantern Marsh Part A; 047 Mushroom Maze 1F,fungal; swamp
+71,Silkpup,Swarm,Bio,Sporeholm,wild,uncommon,045 Lantern Marsh Part A,swamp
+72,Cocoonix,Swarm,Bio,Sporeholm,wild,uncommon,049 Spore Pools,swamp
+73,Lunaweaver,Swarm,Bio,Sporeholm,wild,common,047 Mushroom Maze 1F; 048 Mushroom Maze 2F,fungal
+74,Drippit,Toxin,Hydro,Sporeholm,wild,uncommon,046 Lantern Marsh Part B,swamp
+75,Goozilla,Toxin,Hydro,Thalassa,wild,common,057 Coral Route Part A; 058 Coral Route Part B,coast
+76,Bubbub,Hydro,,Thalassa,wild,uncommon,057 Coral Route Part A; 059 Sea Arch Cove,coast; thermal_vent
+77,Bubblorca,Hydro,,Thalassa,wild,common,057 Coral Route Part A; 058 Coral Route Part B,coast
+78,Crabot,Hydro,Alloy,Thalassa,wild,uncommon,058 Coral Route Part B,coast
+79,Clawfort,Hydro,Alloy,Thalassa,wild,common,057 Coral Route Part A; 058 Coral Route Part B,coast
+80,Zapfin,Hydro,Volt,Thalassa,wild,uncommon,057 Coral Route Part A; 059 Sea Arch Cove,coast; thermal_vent
+81,Stormray,Hydro,Volt,Thalassa,wild,common,057 Coral Route Part A; 058 Coral Route Part B,coast
+82,Inklet,Hydro,Psi,Thalassa,wild,uncommon,058 Coral Route Part B,coast
+83,Cephalux,Hydro,Psi,Thalassa,wild,common,057 Coral Route Part A; 058 Coral Route Part B,coast
+84,Conchlet,Hydro,Crystal,Thalassa,wild,uncommon,057 Coral Route Part A,coast
+85,Pearlord,Hydro,Crystal,Thalassa,wild,common,057 Coral Route Part A; 058 Coral Route Part B,coast
+86,Echofin,Sonic,Hydro,Thalassa,wild,uncommon,058 Coral Route Part B,coast
+87,Echoleviah,Sonic,Hydro,Thalassa,wild,common,057 Coral Route Part A; 058 Coral Route Part B,coast
+88,Tidepull,Hydro,Gravity,Thalassa,wild,uncommon,057 Coral Route Part A,coast
+89,Tidemoon,Hydro,Gravity,Thalassa,wild,common,057 Coral Route Part A; 058 Coral Route Part B,coast
+90,Fogwisp,Void,Hydro,Thalassa,wild,uncommon,058 Coral Route Part B,coast
+91,Mistphantom,Void,Hydro,Thalassa,wild,common,057 Coral Route Part A; 058 Coral Route Part B,coast
+92,Barnacub,Hydro,,Thalassa,wild,uncommon,057 Coral Route Part A,coast
+93,Barnacolos,Hydro,,Thalassa,wild,common,057 Coral Route Part A; 058 Coral Route Part B,coast
+94,Krillo,Swarm,Hydro,Thalassa,wild,uncommon,058 Coral Route Part B,coast
+95,Krillswarm,Swarm,Hydro,Thalassa,wild,rare,058 Coral Route Part B,coast
+96,Anchorath,Hydro,,Thalassa,wild,common,057 Coral Route Part A; 058 Coral Route Part B,coast
+97,Gullwhistle,Sonic,,Thalassa,wild,uncommon,057 Coral Route Part A,coast
+98,Galecry,Sonic,,Thalassa,wild,common,057 Coral Route Part A; 058 Coral Route Part B,coast
+99,Ventlet,Hydro,Magma,Thalassa,wild,uncommon,059 Sea Arch Cove,thermal_vent
+100,Thermoctus,Hydro,Magma,Thalassa,wild,common,059 Sea Arch Cove,thermal_vent
+101,Bulbit,Volt,,Neonis,wild,uncommon,066 Arcade District,neon_city
+102,Filamaw,Volt,,Neonis,wild,uncommon,068 Broadcast Route Part B,neon_city
+103,Arclume,Volt,,Neonis,wild,common,067 Broadcast Route Part A; 068 Broadcast Route Part B,neon_city
+104,Pixbot,Volt,Alloy,Neonis,wild,uncommon,066 Arcade District,neon_city
+105,Datadron,Volt,Alloy,Neonis,wild,common,067 Broadcast Route Part A; 068 Broadcast Route Part B,neon_city
+106,Ampup,Volt,Sonic,Neonis,wild,uncommon,066 Arcade District,neon_city
+107,Amplion,Volt,Sonic,Neonis,wild,common,067 Broadcast Route Part A; 068 Broadcast Route Part B,neon_city
+108,Signalet,Volt,Psi,Neonis,wild,uncommon,066 Arcade District,neon_city
+109,Transmitron,Volt,Psi,Neonis,wild,common,067 Broadcast Route Part A; 068 Broadcast Route Part B,neon_city
+110,Glitchbug,Volt,Swarm,Neonis,wild,uncommon,066 Arcade District,neon_city
+111,Glitchmoth,Volt,Swarm,Neonis,wild,common,067 Broadcast Route Part A; 068 Broadcast Route Part B,neon_city
+112,Blackwatt,Void,Volt,Neonis,wild,uncommon,066 Arcade District,neon_city
+113,Nullgrid,Void,Volt,Neonis,wild,common,067 Broadcast Route Part A; 068 Broadcast Route Part B,neon_city
+114,Neonewt,Volt,,Neonis,wild,uncommon,066 Arcade District,neon_city
+115,Neonagon,Volt,,Neonis,wild,common,067 Broadcast Route Part A; 068 Broadcast Route Part B,neon_city
+116,Holopup,Psi,Volt,Neonis,wild,uncommon,066 Arcade District,neon_city
+117,Holofox,Psi,Volt,Neonis,wild,rare,067 Broadcast Route Part A,neon_city
+118,Bassquake,Volt,Sonic,Neonis,wild,common,066 Arcade District; 067 Broadcast Route Part A,neon_city
+119,Quartzle,Crystal,Volt,Neonis,wild,uncommon,068 Broadcast Route Part B,neon_city
+120,Piezorn,Crystal,Volt,Neonis,wild,common,067 Broadcast Route Part A; 068 Broadcast Route Part B,neon_city
+121,Turbinit,Volt,Gravity,Neonis,wild,uncommon,066 Arcade District,neon_city
+122,Turbinox,Volt,Gravity,Neonis,wild,common,067 Broadcast Route Part A; 068 Broadcast Route Part B,neon_city
+123,Glyphling,Crystal,Psi,Glyphos,wild,uncommon,075 Coral Ruins Part A,ruins
+124,Runeguard,Crystal,Psi,Glyphos,wild,common,076 Coral Ruins Part B; 077 Glyph Hollow,ruins
+125,Monolet,Gravity,Psi,Glyphos,wild,uncommon,075 Coral Ruins Part A,ruins
+126,Obeliskor,Gravity,Psi,Glyphos,wild,common,076 Coral Ruins Part B; 077 Glyph Hollow,ruins
+127,Shardpup,Crystal,,Glyphos,wild,uncommon,075 Coral Ruins Part A,ruins
+128,Shardwolf,Crystal,,Glyphos,wild,uncommon,077 Glyph Hollow,ruins
+129,Prismwolf,Crystal,,Glyphos,wild,common,076 Coral Ruins Part B; 077 Glyph Hollow,ruins
+130,Echoshade,Void,Psi,Glyphos,wild,uncommon,075 Coral Ruins Part A,ruins
+131,Memoria,Void,Psi,Glyphos,wild,common,076 Coral Ruins Part B; 077 Glyph Hollow,ruins
+132,Fossilily,Bio,Crystal,Glyphos,wild,uncommon,075 Coral Ruins Part A,ruins
+133,Ambroot,Bio,Crystal,Glyphos,wild,common,076 Coral Ruins Part B; 077 Glyph Hollow,ruins
+134,Chimelet,Sonic,Crystal,Glyphos,wild,uncommon,075 Coral Ruins Part A,ruins
+135,Chimeral,Sonic,Crystal,Glyphos,wild,common,076 Coral Ruins Part B; 077 Glyph Hollow,ruins
+136,Vortiny,Gravity,,Glyphos,wild,uncommon,075 Coral Ruins Part A,ruins
+137,Vortexus,Gravity,,Glyphos,wild,common,076 Coral Ruins Part B; 077 Glyph Hollow,ruins
+138,Oracub,Psi,,Glyphos,wild,uncommon,075 Coral Ruins Part A,ruins
+139,Oraclaw,Psi,,Glyphos,wild,common,076 Coral Ruins Part B; 077 Glyph Hollow,ruins
+140,Mosaik,Gravity,Crystal,Pyros,wild,common,087 Deep Mines B1; 088 Deep Mines B2,mine_hot
+141,Ashpup,Magma,,Pyros,wild,uncommon,085 Lava Rail Part A,volcano
+142,Cinderhound,Magma,,Pyros,wild,uncommon,090 Furnace Ridge (Pyros),volcano
+143,Pyroclast,Magma,,Pyros,wild,common,086 Lava Rail Part B; 089 Deep Mines B3,mine_hot; volcano
+144,Lavorb,Magma,Gravity,Pyros,wild,uncommon,085 Lava Rail Part A,volcano
+145,Coremantle,Magma,Gravity,Pyros,wild,common,089 Deep Mines B3; 090 Furnace Ridge (Pyros),mine_hot; volcano
+146,Obsidimp,Magma,Crystal,Pyros,wild,uncommon,086 Lava Rail Part B,volcano
+147,Obsidrake,Magma,Crystal,Pyros,wild,common,087 Deep Mines B1; 088 Deep Mines B2,mine_hot
+148,Kindlefly,Magma,Swarm,Pyros,wild,uncommon,085 Lava Rail Part A,volcano
+149,Blazewing,Magma,Swarm,Pyros,wild,common,089 Deep Mines B3; 090 Furnace Ridge (Pyros),mine_hot; volcano
+150,Drillit,Magma,Alloy,Pyros,wild,uncommon,086 Lava Rail Part B,volcano
+151,Drillcrag,Magma,Alloy,Pyros,wild,common,087 Deep Mines B1; 088 Deep Mines B2,mine_hot
+152,Smoglet,Magma,Void,Pyros,wild,uncommon,085 Lava Rail Part A,volcano
+153,Smogshade,Magma,Void,Pyros,wild,common,089 Deep Mines B3; 090 Furnace Ridge (Pyros),mine_hot; volcano
+154,Rumblet,Magma,Sonic,Pyros,wild,uncommon,086 Lava Rail Part B,volcano
+155,Tremoroar,Magma,Sonic,Pyros,wild,common,087 Deep Mines B1; 088 Deep Mines B2,mine_hot
+156,Scorchscale,Magma,,Pyros,wild,uncommon,085 Lava Rail Part A,volcano
+157,Scorchwyrm,Magma,,Pyros,wild,rare,090 Furnace Ridge (Pyros),volcano
+158,Basaltor,Magma,Gravity,Pyros,wild,common,086 Lava Rail Part B; 087 Deep Mines B1,mine_hot; volcano
+159,Charsprout,Magma,Bio,Pyros,wild,uncommon,085 Lava Rail Part A,volcano
+160,Phoenixia,Magma,Bio,Pyros,wild,common,086 Lava Rail Part B; 090 Furnace Ridge (Pyros),volcano
+161,Snoblet,Cryo,,Glacia,wild,uncommon,096 Aurora Route Part A,aurora
+162,Iceburr,Cryo,,Glacia,wild,uncommon,102 Frozen Falls,frozen_falls
+163,Glaciarch,Cryo,,Glacia,wild,common,100 Crystal Caverns B3; 101 Fossil Dig,ice_cave; tundra
+164,Rimeshard,Cryo,Crystal,Glacia,wild,uncommon,097 Aurora Route Part B,aurora
+165,Rimecrown,Cryo,Crystal,Glacia,wild,common,098 Crystal Caverns B1; 099 Crystal Caverns B2,ice_cave
+166,Floepup,Cryo,Hydro,Glacia,wild,uncommon,096 Aurora Route Part A,aurora
+167,Floelord,Cryo,Hydro,Glacia,wild,common,101 Fossil Dig; 102 Frozen Falls,frozen_falls; tundra
+168,Auroralet,Cryo,Psi,Glacia,wild,uncommon,097 Aurora Route Part B,aurora
+169,Borealix,Cryo,Psi,Glacia,wild,common,099 Crystal Caverns B2; 100 Crystal Caverns B3,ice_cave
+170,Hailorb,Cryo,Gravity,Glacia,wild,uncommon,098 Crystal Caverns B1,ice_cave
+171,Hailbringer,Cryo,Gravity,Glacia,wild,common,100 Crystal Caverns B3; 101 Fossil Dig,ice_cave; tundra
+172,Frostmite,Cryo,Swarm,Glacia,wild,uncommon,096 Aurora Route Part A,aurora
+173,Frostcolony,Cryo,Swarm,Glacia,wild,common,098 Crystal Caverns B1; 099 Crystal Caverns B2,ice_cave
+174,Chillshade,Cryo,Void,Glacia,wild,uncommon,098 Crystal Caverns B1,ice_cave
+175,Whiteout,Cryo,Void,Glacia,wild,common,100 Crystal Caverns B3; 101 Fossil Dig,ice_cave; tundra
+176,Lichling,Cryo,Bio,Glacia,wild,uncommon,101 Fossil Dig,tundra
+177,Lichenoth,Cryo,Bio,Glacia,wild,common,101 Fossil Dig,tundra
+178,Shatterling,Cryo,Sonic,Glacia,wild,uncommon,097 Aurora Route Part B,aurora
+179,Shatterhorn,Cryo,Sonic,Glacia,wild,rare,102 Frozen Falls,frozen_falls
+180,Glaciryx,Cryo,Crystal,Glacia,wild,common,096 Aurora Route Part A; 097 Aurora Route Part B,aurora
+181,Thawmaw,Cryo,Void,Glacia,wild,common,098 Crystal Caverns B1; 099 Crystal Caverns B2,ice_cave
+182,Icicub,Cryo,,Glacia,wild,uncommon,102 Frozen Falls,frozen_falls
+183,Stalactrix,Cryo,,Helix Station,wild,uncommon,111 Engineering,containment
+184,Splicelet,Alloy,Psi,Helix Station,wild,uncommon,109 Containment Wing 1F,containment
+185,Splicor,Alloy,Psi,Helix Station,wild,uncommon,110 Containment Wing 2F,containment
+186,Chimerax,Alloy,Psi,Helix Station,wild,common,110 Containment Wing 2F; 111 Engineering,containment
+187,Vialit,Toxin,Volt,Helix Station,wild,uncommon,109 Containment Wing 1F,containment
+188,Vialord,Toxin,Volt,Helix Station,wild,common,110 Containment Wing 2F; 111 Engineering,containment
+189,Cagebot,Alloy,Gravity,Helix Station,wild,uncommon,109 Containment Wing 1F,containment
+190,Wardenix,Alloy,Gravity,Helix Station,wild,common,110 Containment Wing 2F; 111 Engineering,containment
+191,Nullbot,Void,Alloy,Helix Station,wild,uncommon,109 Containment Wing 1F,containment
+192,Nulltron,Void,Alloy,Helix Station,wild,rare,111 Engineering,containment
+193,Vexhydra,Toxin,,Helix Station,wild,rare,109 Containment Wing 1F,containment
+194,Bronnix,Alloy,,Helix Station,wild,rare,110 Containment Wing 2F,containment
+195,Thornvoid,Gravity,Void,Halo,wild,common,118 Wind Bridges Part A; 119 Wind Bridges Part B,sky
+196,Mindlet,Psi,,Halo,wild,uncommon,120 Floating Gardens,sky_garden
+197,Cerebrix,Psi,,Halo,wild,uncommon,120 Floating Gardens,sky_garden
+198,Cerebralux,Psi,,Halo,wild,common,118 Wind Bridges Part A; 119 Wind Bridges Part B,sky
+199,Humlet,Psi,Sonic,Halo,wild,uncommon,118 Wind Bridges Part A,sky
+200,Hummingmind,Psi,Sonic,Halo,wild,common,119 Wind Bridges Part B; 120 Floating Gardens,sky; sky_garden
+201,Levitot,Psi,Gravity,Halo,wild,uncommon,118 Wind Bridges Part A,sky
+202,Levitaur,Psi,Gravity,Halo,wild,common,119 Wind Bridges Part B; 120 Floating Gardens,sky; sky_garden
+203,Haloette,Psi,Crystal,Halo,wild,uncommon,118 Wind Bridges Part A,sky
+204,Halocene,Psi,Crystal,Halo,wild,common,119 Wind Bridges Part B; 120 Floating Gardens,sky; sky_garden
+205,Zephyrling,Sonic,Gravity,Halo,wild,uncommon,118 Wind Bridges Part A,sky
+206,Zephyrion,Sonic,Gravity,Halo,wild,common,118 Wind Bridges Part A; 119 Wind Bridges Part B,sky
+207,Dreamwisp,Psi,Void,Halo,wild,uncommon,119 Wind Bridges Part B,sky
+208,Nightmarra,Psi,Void,Halo,wild,common,118 Wind Bridges Part A; 119 Wind Bridges Part B,sky
+209,Astrochick,Psi,,Halo,wild,uncommon,120 Floating Gardens,sky_garden
+210,Astrowl,Psi,,Halo,wild,rare,120 Floating Gardens,sky_garden
+211,Mirrix,Psi,Crystal,Halo,wild,rare,120 Floating Gardens,sky_garden
+212,Reflix,Psi,Crystal,Halo,wild,common,118 Wind Bridges Part A; 119 Wind Bridges Part B,sky
+213,Bardlet,Psi,Sonic,Halo,wild,uncommon,120 Floating Gardens,sky_garden
+214,Bardseer,Psi,Sonic,Umbra,wild,uncommon,132 The Sinkhole B4,abyss
+215,Sulklet,Void,,Umbra,wild,uncommon,127 Lantern Streets Part A; 129 The Sinkhole B1,abyss; dark_city
+216,Gloomhaunt,Void,,Umbra,wild,uncommon,131 The Sinkhole B3; 130 The Sinkhole B2,abyss
+217,Gloomhulk,Void,,Umbra,wild,common,129 The Sinkhole B1; 130 The Sinkhole B2,abyss
+218,Wellspawn,Void,Gravity,Umbra,wild,uncommon,128 Lantern Streets Part B,dark_city
+219,Wellmaw,Void,Gravity,Umbra,wild,common,131 The Sinkhole B3; 132 The Sinkhole B4,abyss
+220,Ruinbot,Gravity,Alloy,Umbra,wild,uncommon,127 Lantern Streets Part A,dark_city
+221,Ruinmech,Gravity,Alloy,Umbra,wild,common,127 Lantern Streets Part A; 128 Lantern Streets Part B,dark_city
+222,Duskmite,Void,Swarm,Umbra,wild,uncommon,129 The Sinkhole B1,abyss
+223,Dusklord,Void,Swarm,Umbra,wild,common,130 The Sinkhole B2; 132 The Sinkhole B4,abyss
+224,Wailshade,Void,Sonic,Umbra,wild,uncommon,128 Lantern Streets Part B,dark_city
+225,Banshriek,Void,Sonic,Umbra,wild,common,130 The Sinkhole B2; 131 The Sinkhole B3,abyss
+226,Geopip,Gravity,Crystal,Umbra,wild,uncommon,129 The Sinkhole B1,abyss
+227,Geodome,Gravity,Crystal,Umbra,wild,common,131 The Sinkhole B3; 132 The Sinkhole B4,abyss
+228,Rotroot,Void,Bio,Umbra,wild,uncommon,127 Lantern Streets Part A,dark_city
+229,Gravebloom,Void,Bio,Umbra,wild,rare,128 Lantern Streets Part B,dark_city
+230,Horizar,Void,,Starfall Rift,wild,common,141 Crater Rim; 142 Crater Descent B1,crater
+231,Novaling,Plasma,,Starfall Rift,wild,uncommon,138 Seedpod Fields Part A,seedpod_field
+232,Novacat,Plasma,,Starfall Rift,wild,uncommon,144 Crater Descent B3,crater
+233,Supernovyx,Plasma,,Starfall Rift,wild,common,139 Seedpod Fields Part B; 143 Crater Descent B2,crater; seedpod_field
+234,Quasarling,Plasma,Gravity,Starfall Rift,wild,uncommon,138 Seedpod Fields Part A,seedpod_field
+235,Quasarus,Plasma,Gravity,Starfall Rift,wild,common,143 Crater Descent B2; 144 Crater Descent B3,crater
+236,Prismite,Plasma,Crystal,Starfall Rift,wild,uncommon,139 Seedpod Fields Part B,seedpod_field
+237,Prismora,Plasma,Crystal,Starfall Rift,wild,common,141 Crater Rim; 142 Crater Descent B1,crater
+238,Eclipsit,Plasma,Void,Starfall Rift,wild,uncommon,141 Crater Rim,crater
+239,Eclipsor,Plasma,Void,Starfall Rift,wild,common,143 Crater Descent B2; 144 Crater Descent B3,crater
+240,Cometlet,Gravity,Plasma,Starfall Rift,wild,uncommon,138 Seedpod Fields Part A,seedpod_field
+241,Cometrix,Gravity,Plasma,Starfall Rift,wild,common,139 Seedpod Fields Part B; 142 Crater Descent B1,crater; seedpod_field
+242,Meteorb,Crystal,Gravity,Starfall Rift,wild,uncommon,138 Seedpod Fields Part A,seedpod_field
+243,Meteorox,Crystal,Gravity,Starfall Rift,wild,common,143 Crater Descent B2; 144 Crater Descent B3,crater
+244,Sunbug,Plasma,Swarm,Starfall Rift,wild,uncommon,139 Seedpod Fields Part B,seedpod_field
+245,Solarswarm,Plasma,Swarm,Starfall Rift,wild,common,141 Crater Rim; 142 Crater Descent B1,crater
+246,Starsprout,Bio,Plasma,Starfall Rift,wild,uncommon,138 Seedpod Fields Part A,seedpod_field
+247,Starbloom,Bio,Plasma,Starfall Rift,wild,common,138 Seedpod Fields Part A; 139 Seedpod Fields Part B,seedpod_field
+248,Podlet,Bio,,Starfall Rift,wild,uncommon,139 Seedpod Fields Part B,seedpod_field
+249,Podspawn,Bio,,Starfall Rift,wild,uncommon,139 Seedpod Fields Part B,seedpod_field
+250,Podsentinel,Bio,,Starfall Rift,wild,common,138 Seedpod Fields Part A; 139 Seedpod Fields Part B,seedpod_field
+251,Foldling,Gravity,Void,Starfall Rift,wild,uncommon,141 Crater Rim,crater
+252,Foldarch,Gravity,Void,Apex Array,wild,common,146 Summit Lift,summit
+253,Gemmling,Crystal,,Apex Array,wild,uncommon,146 Summit Lift,summit
+254,Gemmantle,Crystal,,Apex Array,wild,common,146 Summit Lift,summit
+255,Riffling,Sonic,,Apex Array,wild,uncommon,146 Summit Lift,summit
+256,Riffrex,Sonic,,Apex Array,wild,common,146 Summit Lift,summit
+257,Cragpull,Gravity,,Apex Array,wild,uncommon,146 Summit Lift,summit
+258,Cragmajor,Gravity,,Apex Array,wild,common,146 Summit Lift,summit
+259,Flarechick,Plasma,,Apex Array,wild,uncommon,146 Summit Lift,summit
+260,Flarehawk,Plasma,,Apex Array,wild,uncommon,146 Summit Lift,summit
+261,Diamite,Alloy,Crystal,Apex Array,wild,uncommon,146 Summit Lift,summit
+262,Diamondillo,Alloy,Crystal,Apex Array,wild,rare,146 Summit Lift,summit
+263,Facetrix,Crystal,,Apex Array,wild,rare,146 Summit Lift,summit
+264,Encorex,Sonic,,Apex Array,wild,rare,146 Summit Lift,summit
+265,Pyrelyth,Plasma,,Apex Array,wild,rare,146 Summit Lift,summit
+266,Citadrake,Gravity,,Apex Array,wild,rare,146 Summit Lift,summit
+267,Firstlight,Plasma,Psi,Ystra,wild,common,158 Crystal Ruins 1F; 159 Crystal Ruins 2F; 162 Edge of the Void,crystal_ruins; void_edge
+268,Fractling,Void,Crystal,Ystra,wild,uncommon,158 Crystal Ruins 1F; 156 Drowned Seas,crystal_ruins; drowned_sea
+269,Fractalith,Void,Crystal,Ystra,wild,common,158 Crystal Ruins 1F; 159 Crystal Ruins 2F; 156 Drowned Seas,crystal_ruins; drowned_sea
+270,Riftling,Gravity,Psi,Ystra,wild,uncommon,154 Floating Continents Part A; 155 Floating Continents Part B; 160 Blighted Forest Part A; 161 Blighted Forest Part B; 162 Edge of the Void,blighted_forest; floating_land; void_edge
+271,Riftwalker,Gravity,Psi,Ystra,wild,common,155 Floating Continents Part B; 162 Edge of the Void; 154 Floating Continents Part A; 160 Blighted Forest Part A; 161 Blighted Forest Part B,blighted_forest; floating_land; void_edge
+272,Blightling,Bio,Void,Ystra,wild,uncommon,160 Blighted Forest Part A; 154 Floating Continents Part A; 155 Floating Continents Part B; 156 Drowned Seas; 161 Blighted Forest Part B,blighted_forest; drowned_sea; floating_land
+273,Blightroot,Bio,Void,Ystra,wild,common,160 Blighted Forest Part A; 161 Blighted Forest Part B; 154 Floating Continents Part A; 155 Floating Continents Part B; 156 Drowned Seas,blighted_forest; drowned_sea; floating_land
+274,Pulsito,Plasma,Sonic,Ystra,wild,uncommon,159 Crystal Ruins 2F; 158 Crystal Ruins 1F,crystal_ruins
+275,Pulsarion,Plasma,Sonic,Ystra,wild,rare,159 Crystal Ruins 2F,crystal_ruins
+276,Oblivite,Void,,Ystra,static encounter (one per save),legendary,160 Blighted Forest Part A,blighted_forest
+277,Terravox,Gravity,Bio,Ystra,static encounter (one per save),legendary,154 Floating Continents Part A,floating_land
+278,Aquelion,Hydro,Psi,Ystra,static encounter (one per save),legendary,156 Drowned Seas,drowned_sea
+279,Ignarch,Plasma,Magma,Dustara,static encounter (one per save),legendary,157 Sun Forge,sun_forge
+280,Tiktrill,Sonic,Swarm,Dustara,wild,uncommon,009 Rimwalk Trail Part A,canyon
+281,Chronocrick,Sonic,Swarm,Thalassa,wild,common,057 Coral Route Part A; 058 Coral Route Part B,coast
+282,Croakle,Hydro,Sonic,Thalassa,wild,uncommon,057 Coral Route Part A,coast
+283,Croakoustic,Hydro,Sonic,Glyphos,wild,uncommon,076 Coral Ruins Part B,ruins
+284,Tarbit,Toxin,Gravity,Glyphos,wild,uncommon,075 Coral Ruins Part A,ruins
+285,Tarpitan,Toxin,Gravity,Glyphos,wild,common,076 Coral Ruins Part B; 077 Glyph Hollow,ruins
+286,Frostflare,Cryo,Plasma,Glacia,wild,uncommon,096 Aurora Route Part A,aurora
+287,Cryoblaze,Cryo,Plasma,Glacia,wild,common,096 Aurora Route Part A; 097 Aurora Route Part B,aurora
+288,Rustlit,Bio,Sonic,Thalassa,wild,uncommon,058 Coral Route Part B,coast
+289,Rustlegrove,Bio,Sonic,Thalassa,wild,common,057 Coral Route Part A; 058 Coral Route Part B,coast
+290,Divebot,Alloy,Hydro,Thalassa,wild,uncommon,057 Coral Route Part A,coast
+291,Divekraken,Alloy,Hydro,Thalassa,wild,common,057 Coral Route Part A; 058 Coral Route Part B,coast
+292,Venomite,Crystal,Toxin,Pyros,wild,uncommon,088 Deep Mines B2,mine_hot
+293,Venomineral,Crystal,Toxin,Pyros,wild,common,088 Deep Mines B2; 089 Deep Mines B3,mine_hot
+294,Drizzlit,Volt,Hydro,Thalassa,wild,uncommon,058 Coral Route Part B,coast
+295,Thunderhead,Volt,Hydro,Halo,wild,uncommon,119 Wind Bridges Part B,sky
+296,Stompadon,Gravity,Sonic,Starfall Rift,wild,rare,142 Crater Descent B1,crater
+297,Lumivex,Crystal,Sonic,Starfall Rift,static encounter (one per save),legendary,141 Crater Rim,crater
+298,Novaryx,Plasma,Psi,Ystra,static encounter (one per save),legendary,158 Crystal Ruins 1F,crystal_ruins
+299,Oblivane,Void,Gravity,Ystra,static encounter (one per save),legendary,162 Edge of the Void,void_edge
+300,Seedmother,Bio,Crystal,Ystra,story: the Reunion (never caught),mythic,163 Seedmother's Grove,

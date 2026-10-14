@@ -4924,18 +4924,6 @@
      "weight": 1,
      "source": "rare",
      "chance": "0.8%"
-    },
-    {
-     "name": "Zib",
-     "types": [
-      "Volt"
-     ],
-     "stage": "1/1",
-     "min": 9,
-     "max": 15,
-     "weight": 1,
-     "source": "rare",
-     "chance": "0.8%"
     }
    ],
    "tier2_after_4_shards": [
@@ -5084,18 +5072,6 @@
      "types": [
       "Toxin",
       "Bio"
-     ],
-     "stage": "1/1",
-     "min": 24,
-     "max": 30,
-     "weight": 1,
-     "source": "rare",
-     "chance": "0.9%"
-    },
-    {
-     "name": "Zib",
-     "types": [
-      "Volt"
      ],
      "stage": "1/1",
      "min": 24,
@@ -5277,18 +5253,6 @@
      "types": [
       "Toxin",
       "Bio"
-     ],
-     "stage": "1/1",
-     "min": 50,
-     "max": 58,
-     "weight": 1,
-     "source": "rare",
-     "chance": "0.8%"
-    },
-    {
-     "name": "Zib",
-     "types": [
-      "Volt"
      ],
      "stage": "1/1",
      "min": 50,
@@ -5518,6 +5482,19 @@
      "weight": 1,
      "source": "rare",
      "chance": "0.7%"
+    },
+    {
+     "name": "Drizzlit",
+     "types": [
+      "Volt",
+      "Hydro"
+     ],
+     "stage": "1/2",
+     "min": 13,
+     "max": 19,
+     "weight": 10,
+     "source": "common",
+     "chance": "7.4%"
     }
    ],
    "tier2_after_4_shards": [
@@ -6122,6 +6099,19 @@
      "weight": 1,
      "source": "rare",
      "chance": "0.7%"
+    },
+    {
+     "name": "Thunderhead",
+     "types": [
+      "Volt",
+      "Hydro"
+     ],
+     "stage": "2/2",
+     "min": 50,
+     "max": 60,
+     "weight": 10,
+     "source": "common (evolved for this tier)",
+     "chance": "7.4%"
     }
    ],
    "trainer_levels": [
@@ -8019,19 +8009,6 @@
      "chance": "7.4%"
     },
     {
-     "name": "Drizzlit",
-     "types": [
-      "Volt",
-      "Hydro"
-     ],
-     "stage": "1/2",
-     "min": 27,
-     "max": 33,
-     "weight": 10,
-     "source": "common",
-     "chance": "7.4%"
-    },
-    {
      "name": "Iceburr",
      "types": [
       "Cryo"
@@ -8205,19 +8182,6 @@
      "types": [
       "Cryo",
       "Plasma"
-     ],
-     "stage": "2/2",
-     "min": 50,
-     "max": 60,
-     "weight": 10,
-     "source": "common (evolved for this tier)",
-     "chance": "7.4%"
-    },
-    {
-     "name": "Thunderhead",
-     "types": [
-      "Volt",
-      "Hydro"
      ],
      "stage": "2/2",
      "min": 50,

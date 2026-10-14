@@ -217,7 +217,7 @@ function dayMul(name){const id=IDX[name];if(id==null)return 1;const t=D[id].t||[
 function nightTint(){if(!isNight()||(G.opt&&G.opt.noNight))return;ctx.fillStyle='rgba(16,18,60,0.22)';ctx.fillRect(0,0,160,144)}
 
 /* ---------- Xenodex: where a caught Alienmon lives ---------- */
-function livesIn(id){const n=D[id].name,out=[];for(const k in PROG.areas){const a=PROG.areas[k];if(['tier1','tier2_after_4_shards','tier3_after_champion'].some(t=>(a[t]||[]).some(x=>x.name===n)))out.push((PL.find(p=>p.key===k)||{}).name||k)}return out}
+function livesIn(id){if(typeof habitatsOf==='function'){const hs=habitatsOf(id);if(hs.length){const seen=new Set(),out=[];for(const h of hs){const k=h.name.replace(/ Part [AB]$| [0-9]F$| B[0-9]$/,'');if(!seen.has(k)){seen.add(k);out.push(k)}}return out}}const n=D[id].name,out=[];for(const k in PROG.areas){const a=PROG.areas[k];if(['tier1','tier2_after_4_shards','tier3_after_champion'].some(t=>(a[t]||[]).some(x=>x.name===n)))out.push((PL.find(p=>p.key===k)||{}).name||k)}return out}
 
 /* ---------- three save slots (copies of the current game) ---------- */
 const SLOT=i=>'alienmon_slot_'+i;
