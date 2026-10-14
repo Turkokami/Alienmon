@@ -262,5 +262,5 @@ function secNeighbours(s,people,cx,cy){for(const[k,e]of Object.entries(s.edges))
   ox=k==='right'?s.tiles[0]*16:k==='left'?-t.tiles[0]*16:-o,oy=k==='bottom'?s.tiles[1]*16:k==='top'?-t.tiles[1]*16:-o;
  for(const n of secNpcs(t)){const X=n.x*16+ox-cx,Y=n.y*16+oy-cy;if(X<-32||Y<-40||X>176||Y>170)continue;
   people.push({y:n.y*16+oy,draw:()=>n.legend?secDrawLegend(n.legend,X,Y):secDrawChar(n.art,n.face||'down',X,Y,0)})}
- for(const m of t.mons||[]){if(G.monGone&&G.monGone[t.id+':'+m.x+','+m.y])continue;const im=OWI[shownMon(m.mon,0)];const X=m.x*16+ox-cx,Y=m.y*16+oy-cy;if(!okI(im)||X<-24||Y<-24||X>176||Y>160)continue;
+ for(const m of t.mons||[]){if(G.monGone&&(t.id+':'+m.x+','+m.y) in G.monGone)continue;const im=OWI[shownMon(m.mon,0)];const X=m.x*16+ox-cx,Y=m.y*16+oy-cy;if(!okI(im)||X<-24||Y<-24||X>176||Y>160)continue;
   people.push({y:m.y*16+oy,draw:()=>{ctx.fillStyle='rgba(20,10,20,0.35)';ctx.beginPath();ctx.ellipse(X+8,Y+15,6,2,0,0,6.283);ctx.fill();ctx.save();ctx.imageSmoothingEnabled=true;ctx.drawImage(im,((frame>>4)&1)*64,0,64,64,X-2,Y-5,20,20);ctx.restore()}})}}}

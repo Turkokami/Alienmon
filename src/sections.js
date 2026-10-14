@@ -17,7 +17,7 @@ function secStashAt(s,x,y){return(s.objects||[]).find(o=>o.k==='stash'&&o.tile[0
 function secWalk(s,x,y){const c=secTile(s,x,y);return(c==='.'||c===','||c===':'||fluidOK(c))&&!secNpcAt(s,x,y)&&!secStashAt(s,x,y)&&!(s.id===(G.sec&&G.sec.id)&&(secQAt(x,y,true)||secMonAt(s,x,y)))}
 const QCHAR=new Set(['giver','talk','turnin','trainer','legend']);
 function secQAt(x,y,chars){if(typeof qEnts!=='function')return null;return qEnts().find(e=>(!chars||QCHAR.has(e.k))&&e.k!=='beacon'&&Math.floor(e.x/16)===x&&Math.floor(e.y/16)===y)}
-function secMonAt(s,x,y){return(s.mons||[]).find(m=>m.x===x&&m.y===y&&!(G.monGone&&G.monGone[s.id+':'+m.x+','+m.y]))}
+function secMonAt(s,x,y){return(s.mons||[]).find(m=>m.x===x&&m.y===y&&!(G.monGone&&(s.id+':'+m.x+','+m.y) in G.monGone))}
 // the section and tile you'd stand on if you stepped from (x,y) in direction d (crossing a seamless edge if needed)
 function secAhead(s,x,y,d){const[dx,dy]=DIRS[d],nx=x+dx,ny=y+dy;if(secTile(s,nx,ny)!==null)return{s,x:nx,y:ny};
  const side=dx>0?'right':dx<0?'left':dy>0?'bottom':'top',e=s.edges[side],along=dx?y:x;
@@ -92,10 +92,16 @@ function updSec(){const s=SWORLD[G.sec.id];if(SBUMP>0)SBUMP--;if(MODHINT>0)MODHI
  if(pressed.g){pressed.g=false;SDEBUG=!SDEBUG;toast('Grid overlay '+(SDEBUG?'on':'off'))}
  if(P_('a')){secInteract();drawSec();return}
  secStepHeld();drawSec()}
+// a path that runs off the edge of an outdoor map but leads nowhere: keep pushing into it and you're told it's blocked
+let SBLK=null;
+function secPathBlock(s,a,d){if(s.type==='interior'||s.type==='cave'||s.type==='arena')return;const W=s.tiles[0],H=s.tiles[1],x=a?a.x:G.sec.x,y=a?a.y:G.sec.y;
+ const edge=!a||(a.s===s&&(x===0||y===0||x===W-1||y===H-1));if(!edge){SBLK=null;return}const k=s.id+':'+G.sec.x+','+G.sec.y+':'+d;
+ if(!SBLK||SBLK.k!==k){SBLK={k,t:frame,said:0};return}if(!SBLK.said&&frame-SBLK.t>18){SBLK.said=1;say(PATH_BLOCK[s.type]||PATH_BLOCK.route)}}
+const PATH_BLOCK={town:'The way out of town is blocked off here. Try another path.',route:'The path ahead is blocked. You cannot go this way.',field:'The path ahead is blocked. You cannot go this way.',landmark:'The way is blocked off here. Try another path.',tower:'That way is sealed off.',dungeon:'That way is sealed off.'};
 function secStepHeld(){const d=held.up?'up':held.down?'down':held.left?'left':held.right?'right':null;if(!d)return;face=d;const s=SWORLD[G.sec.id],a=secAhead(s,G.sec.x,G.sec.y,d);
  if(a&&(a.arrival||a.s.id!==s.id)&&!G.party.length&&s.type!=='interior')return say(NO_PARTNER);
  if(a&&a.arrival)return secLeaveForShip();
- if(!a||!secWalk(a.s,a.x,a.y)){const ho=a&&a.s===SWORLD[G.sec.id]&&(a.s.objects||[]).find(o=>o.k==='house'&&o.tile[0]===a.x&&o.tile[1]===a.y);if(ho)return secHouse(a.s,ho);const dr=a&&a.s===SWORLD[G.sec.id]&&face==='up'&&(a.s.objects||[]).find(o=>o.door&&o.tile[0]===a.x&&o.tile[1]===a.y);if(dr){doorSfx();if(dr.k==='bay'){G.singBuy=0;return bayMenu()}return shop()}if(a&&a.s){const c=secTile(a.s,a.x,a.y);if(c==='~'||c==='^')modHint(c)}bumpSfx();return}
+ if(!a||!secWalk(a.s,a.x,a.y)){const ho=a&&a.s===SWORLD[G.sec.id]&&(a.s.objects||[]).find(o=>o.k==='house'&&o.tile[0]===a.x&&o.tile[1]===a.y);if(ho)return secHouse(a.s,ho);const dr=a&&a.s===SWORLD[G.sec.id]&&face==='up'&&(a.s.objects||[]).find(o=>o.door&&o.tile[0]===a.x&&o.tile[1]===a.y);if(dr){doorSfx();if(dr.k==='bay'){G.singBuy=0;return bayMenu()}return shop()}if(a&&a.s){const c=secTile(a.s,a.x,a.y);if(c==='~'||c==='^')modHint(c)}bumpSfx();secPathBlock(s,a,d);return}
  const lw=a.s.warps.find(w=>w.tile[0]===a.x&&w.tile[1]===a.y&&w.node);if(lw&&!gateOpen(lw.node)){bumpSfx();return say(gateMsg(lw.node))}
  secFollowStep(G.sec.x,G.sec.y);SM={t:0,n:secStepN(s),dx:DIRS[d][0],dy:DIRS[d][1],to:a}}
 // camera: follows the player; it only stops at an edge with nothing beyond it
@@ -115,7 +121,7 @@ function drawSec(){const s=SWORLD[G.sec.id],p=SM?SM.t/SM.n:0,jp=SJ?SJ.t/SEC_JUMP
  // walk-behind props: each cut-out sorts with the people by its base row, so whoever stands behind it is drawn first
  if(s.over){const ov=SECOVI[s.id];if(okI(ov))for(const[x,y0,h,by]of s.over){const X=x*16-cx,Y=y0*16-cy;if(X<-16||X>160||Y>144||Y+h*16<0)continue;people.push({y:by*16+1,draw:()=>ctx.drawImage(ov,x*16,y0*16,16,h*16,X,Y,16,h*16)})}}
  secFollowDraw(people,s,cx,cy,p);secNeighbours(s,people,cx,cy);people.sort((a,b)=>a.y-b.y).forEach(o=>o.draw());
- for(const m of s.mons||[]){if(G.monGone&&G.monGone[s.id+':'+m.x+','+m.y])continue;const im=OWI[shownMon(m.mon,0)];if(!okI(im))continue;const X=m.x*16-cx,Y=m.y*16-cy;if(X<-24||Y<-24||X>176||Y>160)continue;
+ for(const m of s.mons||[]){if(G.monGone&&(s.id+':'+m.x+','+m.y) in G.monGone)continue;const im=OWI[shownMon(m.mon,0)];if(!okI(im))continue;const X=m.x*16-cx,Y=m.y*16-cy;if(X<-24||Y<-24||X>176||Y>160)continue;
   ctx.fillStyle='rgba(20,10,20,0.35)';ctx.beginPath();ctx.ellipse(X+8,Y+15,6,2,0,0,6.283);ctx.fill();ctx.save();ctx.imageSmoothingEnabled=true;ctx.drawImage(im,((frame>>4)&1)*64,0,64,64,X-2,Y-5,20,20);ctx.restore()}
  for(const o of s.objects||[])if(o.k==='stash'&&!(G.opened&&G.opened[s.id+':'+o.tile]))secDrawStash(o.tile[0]*16-cx,o.tile[1]*16-cy);
  secDark(s,px-cx,py-cy);qDraw(cx,cy,1,24);
@@ -155,7 +161,7 @@ function secMonBattle(s,wm){if(!G.party.some(m=>m.hp>0))return say('Your team ne
  let wp=wildPick(zk,wm.mon);if(wp){const sm=IDX[shownMon(wm.mon,0)],pv=PREVO[D[sm].name];wp=[sm,Math.max(wp[1],pv?pv.level-1:0)]}
  const id=wp?wp[0]:IDX[shownMon(wm.mon,0)];if(id==null)return;QWILD='hotspot_mon_'+({dustara:'dustmere'}[p.key]||p.key);
  G.monGone=G.monGone||{};const tag=s.id+':'+wm.x+','+wm.y;
- say('The wild '+D[id].name+' wants to battle!',()=>{startBattle([mk(...(wp?[id,wp[1]]:clampWild(id,ri(p.lv[0],p.lv[1]),0)))],null);if(scene==='battle')G.monGone[tag]=G.planet;else say('It ran off, scared by your Signal Jammer!')})}
+ say('The wild '+D[id].name+' wants to battle!',()=>{startBattle([mk(...(wp?[id,wp[1]]:clampWild(id,ri(p.lv[0],p.lv[1]),0)))],null);if(scene==='battle')G.monGone[tag]=1;else say('It ran off, scared by your Signal Jammer!')})}
 // quest spots on the section maps: tile positions in 16 px space (feet on the tile's bottom edge)
 function secQLoc(key,loc){const sp=SECQ[key];if(!sp)return null;return Object.assign({},loc,{sec:sp.s,x:sp.x*16+8,y:sp.y*16+15,pts:sp.pts,art:sp.art||loc&&loc.art})}
 // the old Molten Frontier world map's places, now sections: 'visit the Frontier' / 'visit node X' objectives
