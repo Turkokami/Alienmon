@@ -48,9 +48,10 @@
  ],
  "004": [
   {
-   "art": "civilian",
+   "art": "bram",
    "t": [
-    "Kid: The drift grass crackles with blue sparks. That's how you know Alienmon are hiding in it!"
+    "Bram: Sola's always at the Trading Post. If she says she's waiting for you, she means a battle!",
+    "Bram: The drift grass crackles with blue sparks. That's how you know Alienmon are hiding in it!"
    ],
    "tile": [
     6,
@@ -58,24 +59,29 @@
    ],
    "pre": [
     "Kid: You're getting your first Alienmon today? Lucky! Dr. Vashti's lab is the dome with the telescope."
-   ]
+   ],
+   "name": "Bram"
   },
   {
-   "art": "wanderer",
+   "art": "abernathy",
    "t": [
-    "Old prospector: The Starfall crater glows purple every night since the pods came down.",
-    "Old prospector: Twenty years I've watched it. Something down there is still awake."
-   ]
+    "Mr. Abernathy: Honey rolls, fresh out of the oven! First one's free for anybody with a brand-new partner.",
+    "Mr. Abernathy: I've baked for Dustmere since before the Starfall. Never once burned a loaf. ...Well. Once."
+   ],
+   "name": "Mr. Abernathy"
   },
   {
-   "art": "technician",
+   "art": "rockgirl",
    "t": [
-    "Mechanic: DX-4 keeps wandering off toward the bridge. Must be picking up a signal out there."
+    "Girl: This is my Pebblet! It's a rock. It's my best friend. Both!",
+    "Girl: When it's sleepy it rolls into the shade. When it's happy it rolls into ME.",
+    "Girl: DX-4 keeps wandering off toward the bridge. Pebblet follows him. I follow Pebblet."
    ],
    "tile": [
     17,
     5
-   ]
+   ],
+   "name": "Rock-girl"
   },
   {
    "art": "explorer",
@@ -88,7 +94,7 @@
    ]
   },
   {
-   "art": "civilian",
+   "art": "townsfolk",
    "t": [
     "Woman: The shop dome sells Stasis Pods. You can't catch anything without them!",
     "Woman: Weaken an Alienmon first. A full-health one just pops right back out."
@@ -109,7 +115,7 @@
    ]
   },
   {
-   "art": "technician",
+   "art": "dx4",
    "name": "DX-4",
    "wid": "DX-4 robot",
    "t": [
@@ -122,8 +128,8 @@
    ]
   },
   {
-   "art": "wanderer",
-   "name": "Dusty",
+   "art": "dusty",
+   "name": "Old Dusty",
    "t": [
     "Dusty: Name's Dusty. I've lived on this rim since the Starfall.",
     "Dusty: That crater past the falls? The seedpods came down hot as stars twenty years back."
@@ -208,16 +214,19 @@
  ],
  "008": [
   {
-   "art": "technician",
+   "art": "snacktrader",
    "t": [
+    "Snack trader: Battle snacks! Get your battle snacks! Roasted cactus nuts, still crackling!",
     "Trader: Everything here came over the Molten Frontier on a cart. Prices reflect the danger!"
-   ]
+   ],
+   "name": "Snack trader"
   },
   {
-   "art": "civilian",
+   "art": "sheepkid",
    "t": [
-    "Merchant: I'd sell you a map, but the Frontier changes every time the volcano coughs."
-   ]
+    "Kid: The lemonade stand? That was... an accident. Mostly the lamb's fault."
+   ],
+   "name": "Kid with a lamb"
   },
   {
    "art": "miner",
@@ -235,6 +244,18 @@
    "art": "explorer",
    "t": [
     "Linker: Trainers on the trail will battle you the moment they spot you. Walk past them if you're feeling brave."
+   ]
+  },
+  {
+   "art": "referee",
+   "name": "Referee",
+   "near": [
+    12,
+    9
+   ],
+   "t": [
+    "Referee: One-on-one! First partner who can't keep going loses! No hitting trainers, no fighting dirty!",
+    "Referee: ...And no knocking over my lemonade stand AGAIN."
    ]
   }
  ],

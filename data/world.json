@@ -1639,11 +1639,13 @@
     {
      "x": 10,
      "y": 8,
-     "art": "civilian",
+     "art": "bram",
      "face": "down",
      "t": [
-      "Kid: The drift grass crackles with blue sparks. That's how you know Alienmon are hiding in it!"
+      "Bram: Sola's always at the Trading Post. If she says she's waiting for you, she means a battle!",
+      "Bram: The drift grass crackles with blue sparks. That's how you know Alienmon are hiding in it!"
      ],
+     "name": "Bram",
      "pre": [
       "Kid: You're getting your first Alienmon today? Lucky! Dr. Vashti's lab is the dome with the telescope."
      ]
@@ -1651,21 +1653,25 @@
     {
      "x": 11,
      "y": 13,
-     "art": "wanderer",
+     "art": "abernathy",
      "face": "down",
      "t": [
-      "Old prospector: The Starfall crater glows purple every night since the pods came down.",
-      "Old prospector: Twenty years I've watched it. Something down there is still awake."
-     ]
+      "Mr. Abernathy: Honey rolls, fresh out of the oven! First one's free for anybody with a brand-new partner.",
+      "Mr. Abernathy: I've baked for Dustmere since before the Starfall. Never once burned a loaf. ...Well. Once."
+     ],
+     "name": "Mr. Abernathy"
     },
     {
      "x": 11,
      "y": 14,
-     "art": "technician",
+     "art": "rockgirl",
      "face": "down",
      "t": [
-      "Mechanic: DX-4 keeps wandering off toward the bridge. Must be picking up a signal out there."
-     ]
+      "Girl: This is my Pebblet! It's a rock. It's my best friend. Both!",
+      "Girl: When it's sleepy it rolls into the shade. When it's happy it rolls into ME.",
+      "Girl: DX-4 keeps wandering off toward the bridge. Pebblet follows him. I follow Pebblet."
+     ],
+     "name": "Rock-girl"
     },
     {
      "x": 11,
@@ -1685,7 +1691,7 @@
     {
      "x": 6,
      "y": 12,
-     "art": "civilian",
+     "art": "townsfolk",
      "face": "down",
      "t": [
       "Woman: The shop dome sells Stasis Pods. You can't catch anything without them!",
@@ -1704,7 +1710,7 @@
     {
      "x": 5,
      "y": 12,
-     "art": "technician",
+     "art": "dx4",
      "face": "down",
      "t": [
       "DX-4: Bzzt! Scout unit DX-4 online.",
@@ -1716,13 +1722,13 @@
     {
      "x": 10,
      "y": 5,
-     "art": "wanderer",
+     "art": "dusty",
      "face": "down",
      "t": [
       "Dusty: Name's Dusty. I've lived on this rim since the Starfall.",
       "Dusty: That crater past the falls? The seedpods came down hot as stars twenty years back."
      ],
-     "name": "Dusty"
+     "name": "Old Dusty"
     },
     {
      "x": 11,
@@ -2161,20 +2167,23 @@
     {
      "x": 3,
      "y": 9,
-     "art": "technician",
+     "art": "snacktrader",
      "face": "down",
      "t": [
+      "Snack trader: Battle snacks! Get your battle snacks! Roasted cactus nuts, still crackling!",
       "Trader: Everything here came over the Molten Frontier on a cart. Prices reflect the danger!"
-     ]
+     ],
+     "name": "Snack trader"
     },
     {
      "x": 13,
      "y": 7,
-     "art": "civilian",
+     "art": "sheepkid",
      "face": "down",
      "t": [
-      "Merchant: I'd sell you a map, but the Frontier changes every time the volcano coughs."
-     ]
+      "Kid: The lemonade stand? That was... an accident. Mostly the lamb's fault."
+     ],
+     "name": "Kid with a lamb"
     },
     {
      "x": 18,
@@ -2208,6 +2217,17 @@
       "linker": 1,
       "name": "Oz"
      }
+    },
+    {
+     "x": 8,
+     "y": 6,
+     "art": "referee",
+     "face": "down",
+     "t": [
+      "Referee: One-on-one! First partner who can't keep going loses! No hitting trainers, no fighting dirty!",
+      "Referee: ...And no knocking over my lemonade stand AGAIN."
+     ],
+     "name": "Referee"
     }
    ],
    "mons": []
@@ -13896,8 +13916,8 @@
      "art": "strand",
      "face": "down",
      "t": [
-      "Strand: Oh. It's you. We're, uh, lost. Pell says we're not lost. We're lost.",
-      "Strand: (quietly) Helix is digging under the Fossil Dig, toward the old Ystran bones. You didn't hear it from me."
+      "Strand: (quietly) Keep walking. Pell's on the radio, and he notices everything.",
+      "Strand: Helix is digging under the Fossil Dig, toward the old Ystran bones. You didn't see me, and I didn't see you."
      ],
      "name": "Strand",
      "after": "M11",
@@ -13909,7 +13929,8 @@
      "art": "guard",
      "face": "down",
      "t": [
-      "Pell: Helix Directive! Field Division! ...Second Class! We are NOT lost. We are... surveying."
+      "Pell: Hello again, Rook. This dig site is Helix business.",
+      "Pell: Helix doesn't lose things. We just collect them later."
      ],
      "name": "Pell",
      "after": "M11",
@@ -15001,7 +15022,7 @@
      "art": "strand",
      "face": "right",
      "t": [
-      "Off-duty grunt: This is my bunk. That's my bunk too. Grunt Pell snores, so I took his.",
+      "Off-duty grunt: This is my bunk. That's my bunk too. The new guy snores, so I took his.",
       "Off-duty grunt: Lights out is at 22:00. Battles are at 22:01. Every night."
      ]
     },
