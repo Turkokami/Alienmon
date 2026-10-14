@@ -82,7 +82,7 @@ button:focus-visible{outline:2px solid var(--b);outline-offset:2px}
 </div></div>
 <script>
 'use strict';
-const D=__DATA__, PL=__PLANETS__, TRAITS=__TRAITS__, SIGS=__SIGS__, SYS=__SYS__, ART=__ART__, ARTB=__ARTB__, OW=__OW__, TITLE=__TITLE__, SHIP=__SHIP__, CUTS=__CUTS__, CHAR=__CHAR__, PORT=__PORTRAITS__, SCN=__SCENES__, FXD=__FX__, PLANART=__PLANETART__, BUILD=__BUILD__, INLINE=__INLINE__, BETA=__BETA__, NEWONLY=__NEWONLY__, MOVEFX=__MOVEFX__;
+const D=__DATA__, PL=__PLANETS__, TRAITS=__TRAITS__, SIGS=__SIGS__, SYS=__SYS__, ART=__ART__, ARTB=__ARTB__, OW=__OW__, TITLE=__TITLE__, SHIP=__SHIP__, CUTS=__CUTS__, CHAR=__CHAR__, PORT=__PORTRAITS__, SCN=__SCENES__, FXD=__FX__, PLANART=__PLANETART__, BUILD=__BUILD__, INLINE=__INLINE__, BETA=__BETA__, NEWONLY_BUILD=__NEWONLY__, MOVEFX=__MOVEFX__;
 // art is loaded on first use (the web build serves each image as its own cached file), so the game starts fast
 function lazyImgs(src){return new Proxy({},{get(t,k){if(typeof k!=='string')return undefined;if(!(k in t)&&src[k]){const i=new Image();i.decoding='async';i.src=src[k];t[k]=i}return t[k]},has:(t,k)=>k in src})}
 function warm(imgs,keys){for(const k of keys)imgs[k]}
@@ -259,7 +259,9 @@ function save(){G.lastScene=PREV==='world'?'world':'planet';try{localStorage.set
 // back up the save to a file and restore it, e.g. to move a game to another browser or device
 function exportSave(){save();try{const blob=new Blob([JSON.stringify({game:'alienmon',version:2,exported:new Date().toISOString(),save:G})],{type:'application/json'}),a=document.createElement('a');
  a.href=URL.createObjectURL(blob);a.download='alienmon-save-'+new Date().toISOString().slice(0,10)+'.json';document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},1000);say('Backup file downloaded.')}catch(e){say('Export is unavailable in this browser.')}}
-function importSave(){if(NEWONLY)return say('The demo always starts a fresh game, so loading saves is turned off.');const inp=document.createElement('input');inp.type='file';inp.accept='.json,application/json';
+// New game only is for the public demo; testers (signed in, beta, or tester code) keep Continue and their saves
+function newOnly(){if(!NEWONLY_BUILD||BETA)return false;try{if(/(?:^|;\s*)alienmon_signed_in=1/.test(document.cookie))return false}catch(e){}try{if(typeof testerOn==='function'&&testerOn())return false}catch(e){}return true}
+function importSave(){if(newOnly())return say('The demo always starts a fresh game, so loading saves is turned off.');const inp=document.createElement('input');inp.type='file';inp.accept='.json,application/json';
  inp.onchange=()=>{const f=inp.files&&inp.files[0];if(!f)return;f.text().then(t=>{let d;try{d=JSON.parse(t)}catch(e){}const g=d&&d.game==='alienmon'?d.save:d;
   if(!g||!Array.isArray(g.party)||!Array.isArray(g.box)){say('That file is not an Alienmon save.');return}
   choose('Replace your current game?',['Replace','Cancel'],k=>{if(k!==0)return;try{localStorage.setItem('alienmon_save_v2',JSON.stringify(g));say('Backup restored! Restarting...',()=>location.reload())}catch(e){say('Could not store the save.')}})})};
@@ -275,7 +277,7 @@ function addMon(m){G.seen[m.id]=1;G.caught[m.id]=1;if(G.party.length<6){G.party.
 let tsel=0,ssel=0;
 function startIntro(){scene='intro';say(["Twenty years ago, the sky fell.","Seedpods scattered across the whole Kessler system, onto every world.","What hatched were Alienmon: refugees from a dying planet called Ystra.","I'm Dr. Vashti. Your Linker can bond with them.","Choose your first partner, then take the ship and find the rest."],()=>{scene='starter'},'vashti')}
 const STARTERS=[IDX['Sporix'],IDX['Plazmo'],IDX['Gloopa']];
-function updTitle(){const sv=NEWONLY?null:loadSave();const opts=sv?['Continue','New game']:['New game'];
+function updTitle(){const sv=newOnly()?null:loadSave();const opts=sv?['Continue','New game']:['New game'];
  if(P_('up')||P_('down')||P_('left')||P_('right'))tsel=(tsel+1)%opts.length;
  if(P_('a')){if(opts[tsel]==='Continue'){G=sv;G.gender='boy';if(G.arenaParty){G.party=G.arenaParty;G.box=G.arenaBox||G.box;delete G.arenaParty;delete G.arenaBox}scene=G.lastScene==='world'?'world':'planet';say('Welcome back, Linker.')}else{newGame();G.gender='boy';if(secEnabled()&&SWORLD['002'])secWakeUp();else startIntro()}}
 

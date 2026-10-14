@@ -7,6 +7,7 @@ export const config = { matcher: '/:path*' };
 
 const PUBLIC = /^\/(og\.jpg|icons\/.*|manifest\.webmanifest|favicon\.ico|robots\.txt|fonts\/.*)$/;
 const COOKIE = 'alienmon_tester';
+const UI_COOKIE = 'alienmon_signed_in';   // readable by the game (not a secret): signed-in testers keep Continue and save loading
 
 async function token(code) {
   const data = new TextEncoder().encode('alienmon-tester:' + code.trim().toLowerCase());
@@ -82,7 +83,16 @@ export default async function middleware(request) {
   if (PUBLIC.test(url.pathname)) return;
   const want = await token(code);
   const m = (request.headers.get('cookie') || '').match(/(?:^|;\s*)alienmon_tester=([a-f0-9]{64})/);
-  if (m && m[1] === want) return;
+  if (m && m[1] === want) {
+    // testers who signed in before the game-side flag existed: set it once on their next page load
+    const page = (request.headers.get('accept') || '').includes('text/html');
+    const flagged = (request.headers.get('cookie') || '').split(/;\s*/).includes(UI_COOKIE + '=1');
+    if (page && !flagged && !url.searchParams.has('signed')) {   // 'signed' stops a loop if a browser refuses the cookie
+      const next = new URL(url); next.searchParams.set('signed', '1');
+      return new Response(null, { status: 302, headers: { Location: next.search, 'Cache-Control': 'no-store', 'Set-Cookie': `${UI_COOKIE}=1; Path=/; Max-Age=2592000; Secure; SameSite=Lax` } });
+    }
+    return;
+  }
   if (url.pathname === '/tester-login' && request.method === 'POST') {
     let given = '';
     try { given = String((await request.formData()).get('code') || ''); } catch (e) {}
@@ -90,8 +100,10 @@ export default async function middleware(request) {
       // alienmon.com serves the website and proxies the game under /play/, so send testers back to the path they signed in from
       let back = '/';
       try { const ref = new URL(request.headers.get('referer') || ''); if (ref.pathname.startsWith('/play')) back = '/play/'; } catch (e) {}
-      return new Response(null, { status: 303, headers: { Location: back, 'Cache-Control': 'no-store',
-        'Set-Cookie': `${COOKIE}=${want}; Path=/; Max-Age=2592000; HttpOnly; Secure; SameSite=Lax` } });
+      const h = new Headers({ Location: back, 'Cache-Control': 'no-store' });
+      h.append('Set-Cookie', `${COOKIE}=${want}; Path=/; Max-Age=2592000; HttpOnly; Secure; SameSite=Lax`);
+      h.append('Set-Cookie', `${UI_COOKIE}=1; Path=/; Max-Age=2592000; Secure; SameSite=Lax`);
+      return new Response(null, { status: 303, headers: h });
     }
     return loginPage(true, request);
   }

@@ -224,7 +224,7 @@ const SLOT=i=>'alienmon_slot_'+i;
 function slotMenu(){const info=[1,2,3].map(i=>{try{const g=JSON.parse(localStorage.getItem(SLOT(i))||'null');return g?'Slot '+i+': '+nm(g.party[0]||{id:0})+' Lv'+((g.party[0]||{}).lv||'?')+' ◆'+g.shards:'Slot '+i+': empty'}catch(e){return'Slot '+i+': empty'}});
  choose('Save slots',info.concat(['Back']),i=>{if(i>2)return;choose(info[i],['Save current game here','Load this slot','Cancel'],k=>{
   if(k===0){save();try{localStorage.setItem(SLOT(i+1),JSON.stringify(G));say('Saved to slot '+(i+1)+'.',slotMenu)}catch(e){say('Saving is unavailable in this browser.')}}
-  if(k===1&&NEWONLY)return say('The demo always starts a fresh game, so loading saves is turned off.',slotMenu);
+  if(k===1&&newOnly())return say('The demo always starts a fresh game, so loading saves is turned off.',slotMenu);
   if(k===1){const s=localStorage.getItem(SLOT(i+1));if(!s)return say('That slot is empty.',slotMenu);choose('Replace your current game?',['Load slot '+(i+1),'Cancel'],c=>{if(c===0){localStorage.setItem('alienmon_save_v2',s);say('Loading...',()=>location.reload())}})}})})}
 
 /* ---------- small friendly Alienmon wandering beside the townsfolk (decoration, can't be caught) ---------- */
