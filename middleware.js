@@ -46,16 +46,17 @@ input{width:100%;font:inherit;font-size:13px;padding:12px;border-radius:8px;bord
 input:focus{border-color:#ffd23f}
 button{margin-top:14px;width:100%;font:inherit;font-size:11px;padding:12px;border:0;border-radius:10px;background:#ffd23f;color:#1b1424;cursor:pointer;box-shadow:0 4px 0 #0006}
 .err{color:#ff8a1e;font-size:9px;min-height:16px;margin-top:10px}
-.apply{margin:14px 0 0;font-size:8px}.apply a{color:#5ff2ff}
+.apply{margin:14px 0 0;font-size:8px}.note{margin:12px 0 0;font-size:7px;color:#a99cc8;line-height:1.8}.apply a{color:#5ff2ff}
 </style></head><body>
 <form class="card" method="post" action="/tester-login">
 <img src="/og.jpg" alt="Alienmon">
 <h1>Tester login</h1>
-<p>Alienmon is in testing. Enter your tester code to play.</p>
+<p>Alienmon is in active development, and we're excited to bring its universe to life. Early builds are open to invited testers. Enter your tester code to play.</p>
 <input name="code" type="password" autocomplete="current-password" autocapitalize="off" spellcheck="false" placeholder="Tester code" autofocus required>
 <button type="submit">Enter</button>
 <div class="err">${wrong ? 'That code is not right. Try again.' : ''}</div>
 <p class="apply">No code yet? <a href="https://alienmon.com/testers">Apply to be a tester</a></p>
+<p class="note">Features and content may change before release.</p>
 </form></body></html>`;
   return new Response(html, { status: bot ? 200 : 401, headers: { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-store', 'X-Robots-Tag': 'noindex' } });
 }
