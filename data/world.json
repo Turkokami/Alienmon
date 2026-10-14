@@ -317,12 +317,12 @@
   "M15:giver": {
    "s": "112",
    "x": 8,
-   "y": 9
+   "y": 8
   },
   "M15:0": {
    "s": "112",
    "x": 8,
-   "y": 9
+   "y": 8
   },
   "M16:giver": {
    "s": "115",
@@ -1144,7 +1144,7 @@
   },
   "M14:2": {
    "s": "112",
-   "x": 13,
+   "x": 11,
    "y": 8
   },
   "M17:3": {
@@ -1573,7 +1573,7 @@
      "to": "005",
      "at": [
       7,
-      13
+      12
      ],
      "face": "up",
      "kind": "door",
@@ -1587,7 +1587,7 @@
      "to": "005",
      "at": [
       8,
-      13
+      12
      ],
      "face": "up",
      "kind": "door",
@@ -1763,7 +1763,7 @@
     {
      "tile": [
       7,
-      14
+      13
      ],
      "to": "004",
      "at": [
@@ -1776,7 +1776,7 @@
     {
      "tile": [
       8,
-      14
+      13
      ],
      "to": "004",
      "at": [
@@ -1791,15 +1791,23 @@
     {
      "tile": [
       7,
-      8
+      5
      ],
      "k": "bay",
      "why": "Recovery Bay counter"
     },
     {
      "tile": [
-      13,
-      8
+      8,
+      5
+     ],
+     "k": "bay",
+     "why": "Recovery Bay counter"
+    },
+    {
+     "tile": [
+      12,
+      7
      ],
      "k": "ladder",
      "to": "165",
@@ -1808,18 +1816,18 @@
       12
      ],
      "face": "up",
-     "label": "A narrow ladder behind the supply cabinet leads up to the attic.",
-     "why": "the way up to Nana Wren's attic (no ladder is drawn in 005, so it's an interaction)"
+     "label": "A ladder hatch in the floor leads up to the attic.",
+     "why": "the attic hatch drawn on the floor"
     }
    ],
    "spawns": {
     "door": [
      7,
-     13
+     12
     ],
     "default": [
      7,
-     13
+     12
     ]
    },
    "parent": "004",
@@ -1827,7 +1835,7 @@
    "npcs": [
     {
      "x": 8,
-     "y": 9,
+     "y": 4,
      "art": "nurse",
      "face": "down",
      "t": [
@@ -1836,8 +1844,8 @@
      "name": "Nurse"
     },
     {
-     "x": 2,
-     "y": 8,
+     "x": 3,
+     "y": 9,
      "art": "explorer",
      "face": "right",
      "t": [
@@ -5161,11 +5169,19 @@
    "objects": [
     {
      "tile": [
-      6,
-      8
+      4,
+      7
      ],
      "k": "shop",
-     "why": "L-shaped shop counter, used from its right side"
+     "why": "shop counter"
+    },
+    {
+     "tile": [
+      5,
+      7
+     ],
+     "k": "shop",
+     "why": "shop counter"
     }
    ],
    "spawns": {
@@ -5182,8 +5198,8 @@
    "pkey": "ferrox",
    "npcs": [
     {
-     "x": 5,
-     "y": 8,
+     "x": 3,
+     "y": 6,
      "art": "shop",
      "face": "down",
      "t": [
@@ -5192,8 +5208,8 @@
      "name": "Shopkeeper"
     },
     {
-     "x": 9,
-     "y": 11,
+     "x": 7,
+     "y": 7,
      "art": "technician",
      "face": "down",
      "t": [
@@ -7998,8 +8014,8 @@
      ]
     },
     {
-     "x": 4,
-     "y": 11,
+     "x": 9,
+     "y": 9,
      "art": "civilian",
      "face": "down",
      "t": [
@@ -14392,7 +14408,7 @@
      "to": "106",
      "at": [
       7,
-      11
+      12
      ],
      "face": "up",
      "kind": "door",
@@ -14559,7 +14575,7 @@
     {
      "tile": [
       7,
-      12
+      13
      ],
      "to": "105",
      "at": [
@@ -14572,7 +14588,7 @@
     {
      "tile": [
       8,
-      12
+      13
      ],
      "to": "105",
      "at": [
@@ -14587,7 +14603,7 @@
     {
      "tile": [
       8,
-      4
+      3
      ],
      "k": "sign",
      "t": [
@@ -14598,31 +14614,31 @@
    "spawns": {
     "door": [
      7,
-     11
+     12
     ],
     "default": [
      7,
-     11
+     12
     ]
    },
    "parent": "105",
    "pkey": "helix",
    "npcs": [
     {
-     "x": 3,
+     "x": 4,
      "y": 9,
      "art": "strand",
-     "face": "up",
+     "face": "right",
      "t": [
       "Off-duty grunt: This is my bunk. That's my bunk too. Grunt Pell snores, so I took his.",
       "Off-duty grunt: Lights out is at 22:00. Battles are at 22:01. Every night."
      ]
     },
     {
-     "x": 12,
+     "x": 11,
      "y": 9,
      "art": "guard",
-     "face": "up",
+     "face": "left",
      "t": [
       "Barracks guard: Mess rule one: nobody sits in Admin Vex's chair. Rule two: see rule one."
      ]
@@ -14785,7 +14801,7 @@
    "npcs": [
     {
      "x": 3,
-     "y": 6,
+     "y": 9,
      "art": "researcher",
      "face": "right",
      "t": [
@@ -14795,7 +14811,7 @@
     },
     {
      "x": 12,
-     "y": 6,
+     "y": 9,
      "art": "technician",
      "face": "left",
      "t": [
@@ -15304,7 +15320,7 @@
     {
      "tile": [
       7,
-      8
+      4
      ],
      "k": "sign",
      "t": [
@@ -15335,7 +15351,7 @@
      ]
     },
     {
-     "x": 10,
+     "x": 13,
      "y": 9,
      "art": "strand",
      "face": "up",
@@ -15856,8 +15872,8 @@
      ]
     },
     {
-     "x": 11,
-     "y": 7,
+     "x": 9,
+     "y": 10,
      "art": "pilgrim",
      "face": "down",
      "t": [

@@ -154,8 +154,8 @@
    "art": "nurse",
    "name": "Nurse",
    "tile": [
-    7,
-    7
+    8,
+    4
    ],
    "t": [
     "Nurse: Welcome to the Recovery Bay! Step up to the counter and I'll heal your team."
@@ -167,8 +167,8 @@
     "Trainer: I come here after every route. Healing is free, so there's no excuse to push your luck."
    ],
    "tile": [
-    2,
-    8
+    3,
+    9
    ],
    "face": "right"
   }
@@ -801,8 +801,8 @@
    "art": "shop",
    "name": "Shopkeeper",
    "tile": [
-    5,
-    8
+    3,
+    6
    ],
    "t": [
     "Shopkeeper: Pods, gels, sprays. Talk to me at the counter."

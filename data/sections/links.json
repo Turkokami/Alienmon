@@ -55,11 +55,11 @@
    "mat": [
     [
      7,
-     14
+     13
     ],
     [
      8,
-     14
+     13
     ]
    ],
    "confidence": "high",
@@ -169,15 +169,23 @@
    {
     "tile": [
      7,
-     8
+     5
     ],
     "k": "bay",
     "why": "Recovery Bay counter"
    },
    {
     "tile": [
-     13,
-     8
+     8,
+     5
+    ],
+    "k": "bay",
+    "why": "Recovery Bay counter"
+   },
+   {
+    "tile": [
+     12,
+     7
     ],
     "k": "ladder",
     "to": "165",
@@ -186,8 +194,8 @@
      12
     ],
     "face": "up",
-    "label": "A narrow ladder behind the supply cabinet leads up to the attic.",
-    "why": "the way up to Nana Wren's attic (no ladder is drawn in 005, so it's an interaction)"
+    "label": "A ladder hatch in the floor leads up to the attic.",
+    "why": "the attic hatch drawn on the floor"
    }
   ],
   "006": [
@@ -223,11 +231,19 @@
   "032": [
    {
     "tile": [
-     6,
-     8
+     4,
+     7
     ],
     "k": "shop",
-    "why": "L-shaped shop counter, used from its right side"
+    "why": "shop counter"
+   },
+   {
+    "tile": [
+     5,
+     7
+    ],
+    "k": "shop",
+    "why": "shop counter"
    }
   ],
   "040": [
