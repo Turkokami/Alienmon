@@ -424,6 +424,15 @@
     "k": "house",
     "why": "house door: opens the shared Starfall Rift house",
     "to": "172"
+   },
+   {
+    "tile": [
+     3,
+     11
+    ],
+    "k": "house",
+    "to": "172",
+    "why": "house door: path in front opened to match the drawn ground"
    }
   ],
   "146": [],
@@ -503,6 +512,15 @@
     "k": "house",
     "to": "189",
     "why": "house door: opens the ystra house (was a chat knock door)"
+   },
+   {
+    "tile": [
+     4,
+     11
+    ],
+    "k": "house",
+    "to": "189",
+    "why": "house door: path in front opened to match the drawn ground"
    }
   ],
   "160": [
@@ -762,6 +780,15 @@
     "k": "house",
     "why": "house door: opens Dustara Cottage",
     "to": "187"
+   },
+   {
+    "tile": [
+     4,
+     3
+    ],
+    "k": "house",
+    "to": "187",
+    "why": "house door: path in front opened to match the drawn ground"
    }
   ],
   "014": [
@@ -973,6 +1000,15 @@
     "k": "house",
     "to": "190",
     "why": "house door: opens the sporeholm house (was a item knock door)"
+   },
+   {
+    "tile": [
+     5,
+     13
+    ],
+    "k": "house",
+    "to": "173",
+    "why": "house door: path in front opened to match the drawn ground"
    }
   ],
   "047": [
@@ -1112,6 +1148,15 @@
     "k": "bay",
     "why": "Neon Boulevard Recovery Bay (no interior yet, so the door works like the counter)",
     "door": true
+   },
+   {
+    "tile": [
+     19,
+     12
+    ],
+    "k": "house",
+    "to": "192",
+    "why": "house door: path in front opened to match the drawn ground"
    }
   ],
   "066": [
@@ -1317,6 +1362,15 @@
     "k": "house",
     "to": "174",
     "why": "house door: opens the pyros house (was a chat knock door)"
+   },
+   {
+    "tile": [
+     3,
+     10
+    ],
+    "k": "house",
+    "to": "174",
+    "why": "house door: path in front opened to match the drawn ground"
    }
   ],
   "085": [

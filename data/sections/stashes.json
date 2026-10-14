@@ -15,8 +15,8 @@
    "section": "007",
    "name": "Dustmere Bridge",
    "tile": [
-    2,
-    5
+    21,
+    9
    ],
    "item": "stasis",
    "n": 3,
@@ -536,8 +536,8 @@
    "section": "042",
    "name": "Mirefen Village",
    "tile": [
-    8,
-    2
+    21,
+    5
    ],
    "item": "harmonic",
    "n": 2,
@@ -728,7 +728,7 @@
    "name": "Neon Boulevard",
    "tile": [
     8,
-    3
+    4
    ],
    "item": "dust",
    "n": 500,
@@ -1523,7 +1523,7 @@
    "name": "Rift Engine Platform",
    "tile": [
     6,
-    12
+    1
    ],
    "item": "maxrevive",
    "n": 1,

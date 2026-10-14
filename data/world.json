@@ -603,8 +603,8 @@
   },
   "S31:giver": {
    "s": "042",
-   "x": 17,
-   "y": 13
+   "x": 18,
+   "y": 9
   },
   "S31:0": {
    "s": "046",
@@ -692,8 +692,8 @@
   },
   "S51:giver": {
    "s": "063",
-   "x": 11,
-   "y": 9
+   "x": 8,
+   "y": 6
   },
   "S52:giver": {
    "s": "062",
@@ -1067,8 +1067,8 @@
   },
   "S53:giver": {
    "s": "063",
-   "x": 13,
-   "y": 10
+   "x": 11,
+   "y": 12
   },
   "S53:0": {
    "s": "066",
@@ -1982,8 +1982,17 @@
     },
     {
      "tile": [
-      2,
-      5
+      4,
+      3
+     ],
+     "k": "house",
+     "to": "187",
+     "why": "house door: path in front opened to match the drawn ground"
+    },
+    {
+     "tile": [
+      21,
+      9
      ],
      "k": "stash",
      "item": "stasis",
@@ -6425,6 +6434,15 @@
     },
     {
      "tile": [
+      5,
+      13
+     ],
+     "k": "house",
+     "to": "173",
+     "why": "house door: path in front opened to match the drawn ground"
+    },
+    {
+     "tile": [
       11,
       8
      ],
@@ -6435,8 +6453,8 @@
     },
     {
      "tile": [
-      8,
-      2
+      21,
+      5
      ],
      "k": "stash",
      "item": "harmonic",
@@ -6466,7 +6484,7 @@
      ]
     },
     {
-     "x": 10,
+     "x": 17,
      "y": 13,
      "art": "researcher",
      "face": "down",
@@ -6484,8 +6502,8 @@
      ]
     },
     {
-     "x": 11,
-     "y": 13,
+     "x": 17,
+     "y": 14,
      "art": "civilian",
      "face": "down",
      "t": [
@@ -6502,8 +6520,8 @@
      ]
     },
     {
-     "x": 21,
-     "y": 4,
+     "x": 19,
+     "y": 6,
      "art": "pilgrim",
      "face": "down",
      "t": [
@@ -6520,8 +6538,8 @@
      ]
     },
     {
-     "x": 7,
-     "y": 13,
+     "x": 8,
+     "y": 2,
      "art": "wanderer",
      "face": "down",
      "t": [
@@ -9183,6 +9201,15 @@
     },
     {
      "tile": [
+      19,
+      12
+     ],
+     "k": "house",
+     "to": "192",
+     "why": "house door: path in front opened to match the drawn ground"
+    },
+    {
+     "tile": [
       12,
       4
      ],
@@ -9194,7 +9221,7 @@
     {
      "tile": [
       8,
-      3
+      4
      ],
      "k": "stash",
      "item": "dust",
@@ -9215,7 +9242,7 @@
    "pkey": "neonis",
    "npcs": [
     {
-     "x": 13,
+     "x": 16,
      "y": 9,
      "art": "civilian",
      "face": "down",
@@ -9233,8 +9260,8 @@
      ]
     },
     {
-     "x": 22,
-     "y": 5,
+     "x": 20,
+     "y": 6,
      "art": "explorer",
      "face": "down",
      "t": [
@@ -9251,8 +9278,8 @@
      ]
     },
     {
-     "x": 16,
-     "y": 9,
+     "x": 22,
+     "y": 6,
      "art": "civilian",
      "face": "down",
      "t": [
@@ -9260,8 +9287,8 @@
      ]
     },
     {
-     "x": 14,
-     "y": 10,
+     "x": 23,
+     "y": 6,
      "art": "researcher",
      "face": "down",
      "t": [
@@ -9278,13 +9305,7 @@
      ]
     }
    ],
-   "mons": [
-    {
-     "x": 11,
-     "y": 13,
-     "mon": "Ampup"
-    }
-   ]
+   "mons": []
   },
   "064": {
    "id": "064",
@@ -11603,6 +11624,15 @@
      "k": "house",
      "to": "174",
      "why": "house door: opens the pyros house (was a chat knock door)"
+    },
+    {
+     "tile": [
+      3,
+      10
+     ],
+     "k": "house",
+     "to": "174",
+     "why": "house door: path in front opened to match the drawn ground"
     },
     {
      "tile": [
@@ -19697,6 +19727,15 @@
     },
     {
      "tile": [
+      3,
+      11
+     ],
+     "k": "house",
+     "to": "172",
+     "why": "house door: path in front opened to match the drawn ground"
+    },
+    {
+     "tile": [
       19,
       7
      ],
@@ -19708,7 +19747,7 @@
     {
      "tile": [
       6,
-      12
+      1
      ],
      "k": "stash",
      "item": "maxrevive",
@@ -19729,8 +19768,8 @@
    "pkey": "starfall",
    "npcs": [
     {
-     "x": 7,
-     "y": 8,
+     "x": 9,
+     "y": 9,
      "art": "strand",
      "face": "down",
      "t": [
@@ -19738,8 +19777,8 @@
      ]
     },
     {
-     "x": 13,
-     "y": 11,
+     "x": 14,
+     "y": 8,
      "art": "researcher",
      "face": "down",
      "t": [
@@ -19749,8 +19788,8 @@
    ],
    "mons": [
     {
-     "x": 5,
-     "y": 1,
+     "x": 6,
+     "y": 7,
      "mon": "Cometrix"
     },
     {
@@ -20555,6 +20594,15 @@
     },
     {
      "tile": [
+      4,
+      11
+     ],
+     "k": "house",
+     "to": "189",
+     "why": "house door: path in front opened to match the drawn ground"
+    },
+    {
+     "tile": [
       12,
       4
      ],
@@ -20632,7 +20680,7 @@
     },
     {
      "x": 11,
-     "y": 12,
+     "y": 13,
      "art": "pilgrim",
      "face": "down",
      "t": [
@@ -20643,7 +20691,7 @@
    ],
    "mons": [
     {
-     "x": 4,
+     "x": 13,
      "y": 9,
      "mon": "Riftwalker"
     },
