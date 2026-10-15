@@ -48,7 +48,7 @@
   },
   "umbra": {
    "section": "123",
-   "why": "atlas exit marked arrival"
+   "why": "V2: out of the Shadow Tunnel archway"
   },
   "starfall": {
    "section": "136",
@@ -877,36 +877,36 @@
   },
   "S92:giver": {
    "s": "124",
-   "x": 17,
-   "y": 8
+   "x": 12,
+   "y": 10
   },
   "S92:0": {
    "s": "127",
-   "x": 11,
-   "y": 6,
+   "x": 12,
+   "y": 8,
    "pts": [
     [
-     11,
-     6
+     12,
+     8
     ],
     [
-     14,
-     10
+     10,
+     3
+    ],
+    [
+     16,
+     5
     ],
     [
      6,
-     8
-    ],
-    [
-     19,
-     8
+     7
     ]
    ]
   },
   "S93:giver": {
    "s": "133",
-   "x": 11,
-   "y": 9
+   "x": 5,
+   "y": 10
   },
   "S93:0": {
    "s": "133",
@@ -918,12 +918,12 @@
      7
     ],
     [
-     4,
-     10
+     3,
+     5
     ],
     [
-     12,
-     10
+     13,
+     5
     ]
    ]
   },
@@ -1153,7 +1153,7 @@
   "M17:1": {
    "s": "133",
    "x": 8,
-   "y": 7
+   "y": 8
   },
   "M17b:giver": {
    "s": "052",
@@ -19413,16 +19413,22 @@
     16
    ],
    "notes": "Exit of the Shadow Tunnel",
-   "edges": {
-    "bottom": {
-     "to": "arrival",
-     "range": [
-      7,
-      8
-     ]
-    }
-   },
+   "edges": {},
    "warps": [
+    {
+     "tile": [
+      6,
+      0
+     ],
+     "to": "124",
+     "at": [
+      1,
+      5
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "top"
+    },
     {
      "tile": [
       7,
@@ -19431,7 +19437,7 @@
      "to": "124",
      "at": [
       1,
-      7
+      6
      ],
      "face": "right",
      "kind": "edge",
@@ -19450,22 +19456,57 @@
      "face": "right",
      "kind": "edge",
      "edge": "top"
+    },
+    {
+     "tile": [
+      9,
+      0
+     ],
+     "to": "124",
+     "at": [
+      1,
+      8
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      7,
+      14
+     ],
+     "to": "planet:dustara",
+     "at": [
+      7,
+      13
+     ],
+     "face": "up",
+     "kind": "gate",
+     "node": "dustara",
+     "label": "the Shadow Tunnel back to the Frontier"
+    },
+    {
+     "tile": [
+      8,
+      14
+     ],
+     "to": "planet:dustara",
+     "at": [
+      8,
+      13
+     ],
+     "face": "up",
+     "kind": "gate",
+     "node": "dustara",
+     "label": "the Shadow Tunnel back to the Frontier"
     }
    ],
    "objects": [
     {
      "tile": [
-      11,
+      2,
       5
-     ],
-     "k": "sign",
-     "t": "Loose rock blocks the passage.",
-     "why": "door plan: cave door with no interior yet"
-    },
-    {
-     "tile": [
-      3,
-      3
      ],
      "k": "stash",
      "item": "dust",
@@ -19476,23 +19517,24 @@
    "spawns": {
     "arrival": [
      7,
-     14
+     12
     ],
     "default": [
      7,
-     14
+     12
     ]
    },
    "pkey": "umbra",
    "npcs": [
     {
-     "x": 9,
-     "y": 11,
+     "x": 10,
+     "y": 8,
      "art": "wanderer",
      "face": "down",
      "t": [
       "Traveller: You made it through the Shadow Tunnel? Most folk turn back halfway. Gravewell's just north."
      ],
+     "stay": true,
      "src": "p:123:0"
     }
    ]
@@ -19513,8 +19555,8 @@
     "right": {
      "to": "127",
      "range": [
-      7,
-      8
+      5,
+      10
      ],
      "offset": 0
     }
@@ -19523,7 +19565,21 @@
     {
      "tile": [
       0,
-      7
+      5
+     ],
+     "to": "123",
+     "at": [
+      6,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      6
      ],
      "to": "123",
      "at": [
@@ -19537,7 +19593,7 @@
     {
      "tile": [
       0,
-      8
+      7
      ],
      "to": "123",
      "at": [
@@ -19550,8 +19606,22 @@
     },
     {
      "tile": [
-      17,
-      5
+      0,
+      8
+     ],
+     "to": "123",
+     "at": [
+      9,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      8,
+      3
      ],
      "to": "125",
      "at": [
@@ -19564,8 +19634,8 @@
     },
     {
      "tile": [
-      18,
-      5
+      9,
+      3
      ],
      "to": "125",
      "at": [
@@ -19578,8 +19648,8 @@
     },
     {
      "tile": [
-      7,
-      8
+      14,
+      3
      ],
      "to": "126",
      "at": [
@@ -19592,27 +19662,13 @@
     },
     {
      "tile": [
-      8,
-      8
+      15,
+      3
      ],
      "to": "126",
      "at": [
       8,
       13
-     ],
-     "face": "up",
-     "kind": "door",
-     "edge": "up"
-    },
-    {
-     "tile": [
-      17,
-      10
-     ],
-     "to": "133",
-     "at": [
-      7,
-      12
      ],
      "face": "up",
      "kind": "door",
@@ -19622,12 +19678,39 @@
    "objects": [
     {
      "tile": [
-      7,
-      4
+      3,
+      3
      ],
      "k": "house",
-     "why": "house door: opens the shared Umbra house",
-     "to": "186"
+     "to": "186",
+     "why": "V2: Gravewell house (shared Umbra home)"
+    },
+    {
+     "tile": [
+      4,
+      3
+     ],
+     "k": "house",
+     "to": "186",
+     "why": "V2: Gravewell house"
+    },
+    {
+     "tile": [
+      20,
+      3
+     ],
+     "k": "house",
+     "to": "186",
+     "why": "V2: Gravewell house"
+    },
+    {
+     "tile": [
+      21,
+      3
+     ],
+     "k": "house",
+     "to": "186",
+     "why": "V2: Gravewell house"
     },
     {
      "tile": [
@@ -19641,8 +19724,8 @@
     },
     {
      "tile": [
-      12,
-      1
+      8,
+      11
      ],
      "k": "stash",
      "item": "maxrevive",
@@ -19653,7 +19736,7 @@
    "spawns": {
     "default": [
      22,
-     7
+     5
     ]
    },
    "grid": [
@@ -19663,84 +19746,91 @@
    "pkey": "umbra",
    "npcs": [
     {
-     "x": 14,
-     "y": 8,
+     "x": 12,
+     "y": 5,
      "art": "wanderer",
      "face": "down",
      "t": [
       "Scavenger: Gravewell was a city once, before it tipped into the sinkhole.",
       "Now we just call it home and keep the lanterns full."
      ],
+     "stay": true,
      "src": "p:124:0"
     },
     {
-     "x": 11,
-     "y": 3,
+     "x": 17,
+     "y": 9,
      "art": "civilian",
      "face": "down",
      "t": [
       "Lantern keeper: Keep to the lanterns. The dark plays tricks.",
       "If a light goes out behind you, don't turn around. Just walk faster."
      ],
+     "stay": true,
      "src": "p:124:1"
     },
     {
-     "x": 16,
-     "y": 8,
+     "x": 4,
+     "y": 6,
      "art": "explorer",
      "face": "down",
      "t": [
       "Drifter: Void-types only come out where the light can't reach.",
       "The Sinkhole is full of them. Bring something that hits hard."
      ],
+     "stay": true,
      "src": "p:124:2"
     },
     {
-     "x": 20,
-     "y": 8,
+     "x": 1,
+     "y": 10,
      "art": "civilian",
      "face": "down",
      "t": [
       "Old woman: The Recovery Bay is the brightest room in town. We go there to feel warm, not just to heal."
      ],
+     "stay": true,
      "src": "p:124:3"
     },
     {
-     "x": 11,
-     "y": 4,
+     "x": 20,
+     "y": 5,
      "art": "researcher",
      "face": "down",
      "t": [
       "Researcher: The black-hole sky pulls on everything here. Even sound falls a little slower."
      ],
+     "stay": true,
      "src": "p:124:4"
     },
     {
-     "x": 18,
-     "y": 12,
+     "x": 13,
+     "y": 11,
      "art": "strand",
      "face": "down",
      "t": [
       "Helix contractor: Nothing to see here. Just... measuring the sinkhole. For safety.",
       "Move along, Linker."
      ],
+     "stay": true,
      "src": "p:124:5"
     },
     {
-     "x": 15,
-     "y": 8,
+     "x": 20,
+     "y": 11,
      "art": "wanderer",
      "face": "down",
      "t": [
       "Kid: My big brother says the well whispers your name if you stand at the edge long enough!"
      ],
+     "stay": true,
      "src": "p:124:6"
     }
    ],
    "mons": [
     {
-     "x": 11,
-     "y": 14,
+     "x": 7,
+     "y": 11,
      "mon": "Wellspawn"
     }
    ]
@@ -19766,8 +19856,8 @@
      ],
      "to": "124",
      "at": [
-      17,
-      6
+      8,
+      4
      ],
      "face": "down",
      "kind": "door"
@@ -19779,8 +19869,8 @@
      ],
      "to": "124",
      "at": [
-      17,
-      6
+      8,
+      4
      ],
      "face": "down",
      "kind": "door"
@@ -19790,7 +19880,14 @@
     {
      "tile": [
       7,
-      6
+      4
+     ],
+     "k": "bay"
+    },
+    {
+     "tile": [
+      8,
+      4
      ],
      "k": "bay"
     }
@@ -19809,8 +19906,8 @@
    "pkey": "umbra",
    "npcs": [
     {
-     "x": 7,
-     "y": 6,
+     "x": 8,
+     "y": 4,
      "art": "nurse",
      "face": "down",
      "t": [
@@ -19821,12 +19918,13 @@
     },
     {
      "x": 9,
-     "y": 10,
+     "y": 12,
      "art": "explorer",
      "face": "down",
      "t": [
       "Diver: I came up from Sinkhole B3 with every team member fainted. Heal before every level down."
      ],
+     "stay": true,
      "src": "p:125:1"
     }
    ]
@@ -19852,8 +19950,8 @@
      ],
      "to": "124",
      "at": [
-      7,
-      9
+      14,
+      4
      ],
      "face": "down",
      "kind": "door"
@@ -19865,8 +19963,8 @@
      ],
      "to": "124",
      "at": [
-      7,
-      9
+      14,
+      4
      ],
      "face": "down",
      "kind": "door"
@@ -19875,8 +19973,15 @@
    "objects": [
     {
      "tile": [
-      4,
-      7
+      7,
+      4
+     ],
+     "k": "shop"
+    },
+    {
+     "tile": [
+      8,
+      4
      ],
      "k": "shop"
     }
@@ -19895,8 +20000,8 @@
    "pkey": "umbra",
    "npcs": [
     {
-     "x": 4,
-     "y": 7,
+     "x": 8,
+     "y": 4,
      "art": "shop",
      "face": "down",
      "t": [
@@ -19907,12 +20012,13 @@
     },
     {
      "x": 9,
-     "y": 11,
+     "y": 12,
      "art": "miner",
      "face": "down",
      "t": [
       "Shopper: Stock up on Stasis Pods. Void-types are slippery and slip out of a weak throw."
      ],
+     "stay": true,
      "src": "p:126:1"
     }
    ]
@@ -19933,16 +20039,16 @@
     "left": {
      "to": "124",
      "range": [
-      7,
-      8
+      5,
+      9
      ],
      "offset": 0
     },
     "right": {
      "to": "128",
      "range": [
-      7,
-      8
+      5,
+      9
      ],
      "offset": 0
     }
@@ -19951,26 +20057,8 @@
    "objects": [
     {
      "tile": [
-      6,
-      12
-     ],
-     "k": "house",
-     "why": "house door: opens the shared Umbra house",
-     "to": "186"
-    },
-    {
-     "tile": [
-      16,
-      3
-     ],
-     "k": "house",
-     "why": "house door: opens the shared Umbra house",
-     "to": "186"
-    },
-    {
-     "tile": [
       11,
-      1
+      14
      ],
      "k": "stash",
      "item": "maxrevive",
@@ -19979,8 +20067,8 @@
     },
     {
      "tile": [
-      4,
-      3
+      17,
+      12
      ],
      "k": "stash",
      "item": "maxrevive",
@@ -19991,7 +20079,7 @@
    "spawns": {
     "default": [
      1,
-     7
+     5
     ]
    },
    "grid": [
@@ -20001,30 +20089,32 @@
    "pkey": "umbra",
    "npcs": [
     {
-     "x": 7,
-     "y": 6,
+     "x": 12,
+     "y": 5,
      "art": "civilian",
      "face": "down",
      "t": [
       "Lantern keeper: Every lantern on this street is tended by hand. Miss one night and the shadows creep in."
      ],
+     "stay": true,
      "src": "p:127:0"
     },
     {
-     "x": 12,
-     "y": 13,
+     "x": 6,
+     "y": 9,
      "art": "wanderer",
      "face": "down",
      "t": [
       "Scavenger: Trainers on these streets watch from the dark. Walk into their line of sight and they'll call you out."
      ],
+     "stay": true,
      "src": "p:127:1"
     },
     {
-     "x": 20,
-     "y": 11,
+     "x": 19,
+     "y": 10,
      "art": "civilian",
-     "face": "down",
+     "face": "up",
      "t": [],
      "id": "sec127_tr2",
      "trainer": {
@@ -20034,10 +20124,10 @@
      }
     },
     {
-     "x": 10,
-     "y": 3,
+     "x": 3,
+     "y": 4,
      "art": "explorer",
-     "face": "right",
+     "face": "down",
      "t": [],
      "id": "sec127_tr3",
      "trainer": {
@@ -20049,13 +20139,13 @@
    ],
    "mons": [
     {
-     "x": 3,
-     "y": 3,
+     "x": 18,
+     "y": 2,
      "mon": "Wellmaw"
     },
     {
-     "x": 13,
-     "y": 4,
+     "x": 8,
+     "y": 2,
      "mon": "Geodome"
     }
    ]
@@ -20076,13 +20166,41 @@
     "left": {
      "to": "127",
      "range": [
-      7,
-      8
+      5,
+      9
      ],
      "offset": 0
     }
    },
    "warps": [
+    {
+     "tile": [
+      23,
+      5
+     ],
+     "to": "129",
+     "at": [
+      5,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      6
+     ],
+     "to": "129",
+     "at": [
+      6,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
+    },
     {
      "tile": [
       23,
@@ -20110,31 +20228,27 @@
      "face": "up",
      "kind": "edge",
      "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      9
+     ],
+     "to": "129",
+     "at": [
+      9,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
     }
    ],
    "objects": [
     {
      "tile": [
-      4,
-      3
-     ],
-     "k": "house",
-     "why": "house door: opens the shared Umbra house",
-     "to": "186"
-    },
-    {
-     "tile": [
-      20,
-      11
-     ],
-     "k": "house",
-     "why": "house door: opens the shared Umbra house",
-     "to": "186"
-    },
-    {
-     "tile": [
       11,
-      4
+      14
      ],
      "k": "stash",
      "item": "fullgel",
@@ -20143,8 +20257,8 @@
     },
     {
      "tile": [
-      16,
-      1
+      6,
+      0
      ],
      "k": "stash",
      "item": "fullgel",
@@ -20155,7 +20269,7 @@
    "spawns": {
     "default": [
      1,
-     7
+     5
     ]
    },
    "grid": [
@@ -20165,30 +20279,32 @@
    "pkey": "umbra",
    "npcs": [
     {
-     "x": 14,
-     "y": 13,
+     "x": 12,
+     "y": 5,
      "art": "pilgrim",
      "face": "down",
      "t": [
       "Pilgrim: The Sinkhole is just east. They say a Signal Shard sleeps at the very bottom."
      ],
+     "stay": true,
      "src": "p:128:0"
     },
     {
-     "x": 10,
-     "y": 3,
+     "x": 6,
+     "y": 9,
      "art": "explorer",
      "face": "down",
      "t": [
       "Drifter: Past the Sinkhole stands Gravewell Tower. The Keeper there fights with the dark itself."
      ],
+     "stay": true,
      "src": "p:128:1"
     },
     {
-     "x": 8,
-     "y": 5,
+     "x": 20,
+     "y": 3,
      "art": "explorer",
-     "face": "right",
+     "face": "left",
      "t": [],
      "id": "sec128_tr2",
      "trainer": {
@@ -20198,10 +20314,10 @@
      }
     },
     {
-     "x": 16,
-     "y": 6,
+     "x": 3,
+     "y": 4,
      "art": "wanderer",
-     "face": "right",
+     "face": "down",
      "t": [],
      "id": "sec128_tr3",
      "trainer": {
@@ -20213,13 +20329,13 @@
    ],
    "mons": [
     {
-     "x": 22,
-     "y": 5,
+     "x": 15,
+     "y": 11,
      "mon": "Dusklord"
     },
     {
-     "x": 13,
-     "y": 5,
+     "x": 8,
+     "y": 2,
      "mon": "Gloomhulk"
     }
    ]
@@ -20240,6 +20356,34 @@
    "warps": [
     {
      "tile": [
+      5,
+      15
+     ],
+     "to": "128",
+     "at": [
+      22,
+      5
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      6,
+      15
+     ],
+     "to": "128",
+     "at": [
+      22,
+      6
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
       7,
       15
      ],
@@ -20260,7 +20404,7 @@
      "to": "128",
      "at": [
       22,
-      7
+      8
      ],
      "face": "left",
      "kind": "edge",
@@ -20268,7 +20412,35 @@
     },
     {
      "tile": [
-      7,
+      9,
+      15
+     ],
+     "to": "128",
+     "at": [
+      22,
+      9
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      5,
+      0
+     ],
+     "to": "130",
+     "at": [
+      6,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      6,
       0
      ],
      "to": "130",
@@ -20282,12 +20454,40 @@
     },
     {
      "tile": [
-      8,
+      7,
       0
      ],
      "to": "130",
      "at": [
       8,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      8,
+      0
+     ],
+     "to": "130",
+     "at": [
+      9,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      9,
+      0
+     ],
+     "to": "130",
+     "at": [
+      10,
       14
      ],
      "face": "up",
@@ -20298,26 +20498,8 @@
    "objects": [
     {
      "tile": [
-      3,
-      3
-     ],
-     "k": "stop",
-     "t": "This ladder is broken. You can't climb it.",
-     "why": "dead-end ladder (tools/sections/dead_ends.py)"
-    },
-    {
-     "tile": [
-      11,
+      14,
       7
-     ],
-     "k": "stop",
-     "t": "This ladder is broken. You can't climb it.",
-     "why": "dead-end ladder (tools/sections/dead_ends.py)"
-    },
-    {
-     "tile": [
-      10,
-      3
      ],
      "k": "stash",
      "item": "maxrevive",
@@ -20326,8 +20508,8 @@
     },
     {
      "tile": [
-      13,
-      9
+      1,
+      8
      ],
      "k": "stash",
      "item": "fullgel",
@@ -20337,25 +20519,26 @@
    ],
    "spawns": {
     "default": [
-     7,
+     5,
      14
     ]
    },
    "pkey": "umbra",
    "npcs": [
     {
-     "x": 7,
-     "y": 4,
+     "x": 8,
+     "y": 11,
      "art": "miner",
      "face": "down",
      "t": [
       "Miner: B1's the easy floor. Mind the waterfalls; that glow isn't water."
      ],
+     "stay": true,
      "src": "p:129:0"
     },
     {
-     "x": 12,
-     "y": 8,
+     "x": 13,
+     "y": 6,
      "art": "wanderer",
      "face": "left",
      "t": [],
@@ -20385,12 +20568,26 @@
    "warps": [
     {
      "tile": [
+      6,
+      15
+     ],
+     "to": "129",
+     "at": [
+      5,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
       7,
       15
      ],
      "to": "129",
      "at": [
-      7,
+      6,
       1
      ],
      "face": "down",
@@ -20404,12 +20601,54 @@
      ],
      "to": "129",
      "at": [
+      7,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      9,
+      15
+     ],
+     "to": "129",
+     "at": [
       8,
       1
      ],
      "face": "down",
      "kind": "edge",
      "edge": "bottom"
+    },
+    {
+     "tile": [
+      10,
+      15
+     ],
+     "to": "129",
+     "at": [
+      9,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      6,
+      0
+     ],
+     "to": "131",
+     "at": [
+      6,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
     },
     {
      "tile": [
@@ -20433,6 +20672,34 @@
      "to": "131",
      "at": [
       8,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      9,
+      0
+     ],
+     "to": "131",
+     "at": [
+      9,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      10,
+      0
+     ],
+     "to": "131",
+     "at": [
+      10,
       14
      ],
      "face": "up",
@@ -20443,17 +20710,8 @@
    "objects": [
     {
      "tile": [
-      3,
-      9
-     ],
-     "k": "stop",
-     "t": "This ladder is broken. You can't climb it.",
-     "why": "dead-end ladder (tools/sections/dead_ends.py)"
-    },
-    {
-     "tile": [
-      13,
-      2
+      1,
+      4
      ],
      "k": "stash",
      "item": "fullgel",
@@ -20463,27 +20721,28 @@
    ],
    "spawns": {
     "default": [
-     7,
+     6,
      14
     ]
    },
    "pkey": "umbra",
    "npcs": [
     {
-     "x": 9,
-     "y": 9,
+     "x": 11,
+     "y": 4,
      "art": "explorer",
      "face": "down",
      "t": [
       "Explorer: I've mapped this level three times. The tunnels never quite match my notes."
      ],
+     "stay": true,
      "src": "p:130:0"
     },
     {
-     "x": 13,
-     "y": 4,
+     "x": 5,
+     "y": 8,
      "art": "civilian",
-     "face": "left",
+     "face": "right",
      "t": [],
      "id": "sec130_tr1",
      "trainer": {
@@ -20510,6 +20769,20 @@
    "warps": [
     {
      "tile": [
+      6,
+      15
+     ],
+     "to": "130",
+     "at": [
+      6,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
       7,
       15
      ],
@@ -20535,6 +20808,48 @@
      "face": "down",
      "kind": "edge",
      "edge": "bottom"
+    },
+    {
+     "tile": [
+      9,
+      15
+     ],
+     "to": "130",
+     "at": [
+      9,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      10,
+      15
+     ],
+     "to": "130",
+     "at": [
+      10,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      6,
+      0
+     ],
+     "to": "132",
+     "at": [
+      5,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
     },
     {
      "tile": [
@@ -20543,7 +20858,7 @@
      ],
      "to": "132",
      "at": [
-      7,
+      6,
       14
      ],
      "face": "up",
@@ -20557,7 +20872,35 @@
      ],
      "to": "132",
      "at": [
+      7,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      9,
+      0
+     ],
+     "to": "132",
+     "at": [
       8,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      10,
+      0
+     ],
+     "to": "132",
+     "at": [
+      9,
       14
      ],
      "face": "up",
@@ -20568,17 +20911,8 @@
    "objects": [
     {
      "tile": [
-      13,
-      7
-     ],
-     "k": "stop",
-     "t": "The stairs are blocked off. You can't go this way.",
-     "why": "dead-end stairs (tools/sections/dead_ends.py)"
-    },
-    {
-     "tile": [
-      12,
-      13
+      1,
+      9
      ],
      "k": "stash",
      "item": "dust",
@@ -20587,8 +20921,8 @@
     },
     {
      "tile": [
-      9,
-      5
+      14,
+      6
      ],
      "k": "stash",
      "item": "fullgel",
@@ -20598,27 +20932,28 @@
    ],
    "spawns": {
     "default": [
-     7,
+     6,
      14
     ]
    },
    "pkey": "umbra",
    "npcs": [
     {
-     "x": 7,
+     "x": 5,
      "y": 4,
      "art": "researcher",
      "face": "down",
      "t": [
       "Researcher: Ghost and Void readings double every floor down. Whatever is below, it is awake."
      ],
+     "stay": true,
      "src": "p:131:0"
     },
     {
-     "x": 8,
-     "y": 3,
+     "x": 5,
+     "y": 9,
      "art": "explorer",
-     "face": "left",
+     "face": "right",
      "t": [],
      "id": "sec131_tr1",
      "trainer": {
@@ -20645,7 +20980,21 @@
    "warps": [
     {
      "tile": [
-      7,
+      5,
+      15
+     ],
+     "to": "131",
+     "at": [
+      6,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      6,
       15
      ],
      "to": "131",
@@ -20659,7 +21008,7 @@
     },
     {
      "tile": [
-      8,
+      7,
       15
      ],
      "to": "131",
@@ -20673,7 +21022,49 @@
     },
     {
      "tile": [
-      7,
+      8,
+      15
+     ],
+     "to": "131",
+     "at": [
+      9,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      9,
+      15
+     ],
+     "to": "131",
+     "at": [
+      10,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      5,
+      0
+     ],
+     "to": "134",
+     "at": [
+      6,
+      22
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      6,
       0
      ],
      "to": "134",
@@ -20687,7 +21078,7 @@
     },
     {
      "tile": [
-      8,
+      7,
       0
      ],
      "to": "134",
@@ -20698,31 +21089,41 @@
      "face": "up",
      "kind": "edge",
      "edge": "top"
+    },
+    {
+     "tile": [
+      8,
+      0
+     ],
+     "to": "134",
+     "at": [
+      9,
+      22
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      12,
+      3
+     ],
+     "to": "133",
+     "at": [
+      7,
+      13
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
     }
    ],
    "objects": [
     {
      "tile": [
-      12,
-      12
-     ],
-     "k": "stop",
-     "t": "The stairs are blocked off. You can't go this way.",
-     "why": "dead-end stairs (tools/sections/dead_ends.py)"
-    },
-    {
-     "tile": [
-      12,
-      14
-     ],
-     "k": "stop",
-     "t": "The stairs are blocked off. You can't go this way.",
-     "why": "dead-end stairs (tools/sections/dead_ends.py)"
-    },
-    {
-     "tile": [
       1,
-      12
+      9
      ],
      "k": "stash",
      "item": "ether",
@@ -20732,28 +21133,29 @@
    ],
    "spawns": {
     "default": [
-     7,
+     5,
      14
     ]
    },
    "pkey": "umbra",
    "npcs": [
     {
-     "x": 6,
-     "y": 10,
+     "x": 11,
+     "y": 4,
      "art": "pilgrim",
      "face": "down",
      "t": [
       "Pilgrim: The well that whispers... listen. Do you hear it too?",
       "Go around the rift. Never across."
      ],
+     "stay": true,
      "src": "p:132:0"
     },
     {
-     "x": 2,
-     "y": 6,
+     "x": 4,
+     "y": 8,
      "art": "wanderer",
-     "face": "down",
+     "face": "right",
      "t": [],
      "id": "sec132_tr1",
      "trainer": {
@@ -20781,12 +21183,12 @@
     {
      "tile": [
       7,
-      13
+      14
      ],
-     "to": "124",
+     "to": "132",
      "at": [
-      17,
-      11
+      12,
+      4
      ],
      "face": "down",
      "kind": "door"
@@ -20794,12 +21196,12 @@
     {
      "tile": [
       8,
-      13
+      14
      ],
-     "to": "124",
+     "to": "132",
      "at": [
-      17,
-      11
+      12,
+      4
      ],
      "face": "down",
      "kind": "door"
@@ -20808,8 +21210,8 @@
    "objects": [
     {
      "tile": [
-      3,
-      9
+      4,
+      3
      ],
      "k": "sign",
      "t": [
@@ -20818,8 +21220,8 @@
     },
     {
      "tile": [
-      8,
-      5
+      10,
+      3
      ],
      "k": "sign",
      "t": [
@@ -20830,24 +21232,25 @@
    "spawns": {
     "door": [
      7,
-     12
+     13
     ],
     "default": [
      7,
-     12
+     13
     ]
    },
-   "parent": "124",
+   "parent": "132",
    "pkey": "umbra",
    "npcs": [
     {
-     "x": 3,
-     "y": 7,
+     "x": 8,
+     "y": 4,
      "art": "researcher",
      "face": "down",
      "t": [
       "Lab assistant: The professor left in a hurry years ago. The papers are still exactly where he dropped them."
      ],
+     "stay": true,
      "src": "p:133:0"
     }
    ]
@@ -20868,7 +21271,35 @@
    "warps": [
     {
      "tile": [
+      6,
+      23
+     ],
+     "to": "132",
+     "at": [
+      5,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
       7,
+      23
+     ],
+     "to": "132",
+     "at": [
+      6,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      8,
       23
      ],
      "to": "132",
@@ -20882,7 +21313,7 @@
     },
     {
      "tile": [
-      8,
+      9,
       23
      ],
      "to": "132",
@@ -20901,7 +21332,7 @@
      ],
      "to": "135",
      "at": [
-      7,
+      6,
       22
      ],
      "face": "up",
@@ -20915,7 +21346,7 @@
      ],
      "to": "135",
      "at": [
-      8,
+      7,
       22
      ],
      "face": "up",
@@ -20927,7 +21358,7 @@
     {
      "tile": [
       7,
-      5
+      10
      ],
      "k": "sign",
      "t": [
@@ -20937,7 +21368,7 @@
    ],
    "spawns": {
     "default": [
-     7,
+     6,
      22
     ]
    },
@@ -20945,16 +21376,17 @@
    "npcs": [
     {
      "x": 9,
-     "y": 12,
+     "y": 3,
      "art": "guard",
      "face": "down",
      "t": [
       "Tower guard: Keeper Kade waits upstairs. Beat his apprentices first; he only sees challengers who've earned it."
      ],
+     "stay": true,
      "src": "p:134:0"
     },
     {
-     "x": 13,
+     "x": 12,
      "y": 10,
      "art": "civilian",
      "face": "left",
@@ -20968,10 +21400,10 @@
      }
     },
     {
-     "x": 9,
-     "y": 13,
+     "x": 3,
+     "y": 14,
      "art": "explorer",
-     "face": "left",
+     "face": "right",
      "t": [],
      "face_pinned": 1,
      "id": "sec134_app2",
@@ -20999,7 +21431,7 @@
    "warps": [
     {
      "tile": [
-      7,
+      6,
       23
      ],
      "to": "134",
@@ -21013,7 +21445,7 @@
     },
     {
      "tile": [
-      8,
+      7,
       23
      ],
      "to": "134",
@@ -21037,7 +21469,7 @@
    ],
    "spawns": {
     "default": [
-     7,
+     6,
      22
     ]
    },
@@ -29290,237 +29722,226 @@
   },
   {
    "from_id": "123",
-   "edge": "bottom",
-   "tile_range": [
-    7,
-    8
-   ],
-   "to_id": "arrival",
-   "to_edge": null,
-   "to_tile": null
-  },
-  {
-   "from_id": "123",
    "edge": "top",
    "tile_range": [
-    7,
-    8
+    6,
+    9
    ],
    "to_id": "124",
    "to_edge": "left",
    "to_tile": [
-    7,
-    8
+    5,
+    10
    ]
   },
   {
    "from_id": "124",
    "edge": "left",
    "tile_range": [
-    7,
-    8
+    5,
+    10
    ],
    "to_id": "123",
    "to_edge": "top",
    "to_tile": [
-    7,
-    8
+    6,
+    9
    ]
   },
   {
    "from_id": "124",
    "edge": "right",
    "tile_range": [
-    7,
-    8
+    5,
+    10
    ],
    "to_id": "127",
    "to_edge": "left",
    "to_tile": [
-    7,
-    8
+    5,
+    9
    ]
   },
   {
    "from_id": "127",
    "edge": "left",
    "tile_range": [
-    7,
-    8
+    5,
+    9
    ],
    "to_id": "124",
    "to_edge": "right",
    "to_tile": [
-    7,
-    8
+    5,
+    10
    ]
   },
   {
    "from_id": "127",
    "edge": "right",
    "tile_range": [
-    7,
-    8
+    5,
+    9
    ],
    "to_id": "128",
    "to_edge": "left",
    "to_tile": [
-    7,
-    8
+    5,
+    9
    ]
   },
   {
    "from_id": "128",
    "edge": "left",
    "tile_range": [
-    7,
-    8
+    5,
+    9
    ],
    "to_id": "127",
    "to_edge": "right",
    "to_tile": [
-    7,
-    8
+    5,
+    9
    ]
   },
   {
    "from_id": "128",
    "edge": "right",
    "tile_range": [
-    7,
-    8
+    5,
+    9
    ],
    "to_id": "129",
    "to_edge": "bottom",
    "to_tile": [
-    7,
-    8
+    5,
+    9
    ]
   },
   {
    "from_id": "129",
    "edge": "bottom",
    "tile_range": [
-    7,
-    8
+    5,
+    9
    ],
    "to_id": "128",
    "to_edge": "right",
    "to_tile": [
-    7,
-    8
+    5,
+    9
    ]
   },
   {
    "from_id": "129",
    "edge": "top",
    "tile_range": [
-    7,
-    8
+    5,
+    9
    ],
    "to_id": "130",
    "to_edge": "bottom",
    "to_tile": [
-    7,
-    8
+    6,
+    10
    ]
   },
   {
    "from_id": "130",
    "edge": "bottom",
    "tile_range": [
-    7,
-    8
+    6,
+    10
    ],
    "to_id": "129",
    "to_edge": "top",
    "to_tile": [
-    7,
-    8
+    5,
+    9
    ]
   },
   {
    "from_id": "130",
    "edge": "top",
    "tile_range": [
-    7,
-    8
+    6,
+    10
    ],
    "to_id": "131",
    "to_edge": "bottom",
    "to_tile": [
-    7,
-    8
+    6,
+    10
    ]
   },
   {
    "from_id": "131",
    "edge": "bottom",
    "tile_range": [
-    7,
-    8
+    6,
+    10
    ],
    "to_id": "130",
    "to_edge": "top",
    "to_tile": [
-    7,
-    8
+    6,
+    10
    ]
   },
   {
    "from_id": "131",
    "edge": "top",
    "tile_range": [
-    7,
-    8
+    6,
+    10
    ],
    "to_id": "132",
    "to_edge": "bottom",
    "to_tile": [
-    7,
-    8
+    5,
+    10
    ]
   },
   {
    "from_id": "132",
    "edge": "bottom",
    "tile_range": [
-    7,
-    8
+    5,
+    10
    ],
    "to_id": "131",
    "to_edge": "top",
    "to_tile": [
-    7,
-    8
+    6,
+    10
    ]
   },
   {
    "from_id": "132",
    "edge": "top",
    "tile_range": [
-    7,
-    8
+    5,
+    10
    ],
    "to_id": "134",
    "to_edge": "bottom",
    "to_tile": [
-    7,
-    8
+    6,
+    9
    ]
   },
   {
    "from_id": "134",
    "edge": "bottom",
    "tile_range": [
-    7,
-    8
+    6,
+    9
    ],
    "to_id": "132",
    "to_edge": "top",
    "to_tile": [
-    7,
-    8
+    5,
+    10
    ]
   },
   {
@@ -29533,16 +29954,16 @@
    "to_id": "135",
    "to_edge": "bottom",
    "to_tile": [
-    7,
-    8
+    6,
+    9
    ]
   },
   {
    "from_id": "135",
    "edge": "bottom",
    "tile_range": [
-    7,
-    8
+    6,
+    9
    ],
    "to_id": "134",
    "to_edge": "top",

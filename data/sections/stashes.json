@@ -1245,8 +1245,8 @@
    "section": "123",
    "name": "Shadow Tunnel Exit",
    "tile": [
-    3,
-    3
+    2,
+    5
    ],
    "item": "dust",
    "n": 1600,
@@ -1256,8 +1256,8 @@
    "section": "124",
    "name": "Gravewell",
    "tile": [
-    12,
-    1
+    8,
+    11
    ],
    "item": "maxrevive",
    "n": 1,
@@ -1268,7 +1268,7 @@
    "name": "Lantern Streets Part A",
    "tile": [
     11,
-    1
+    14
    ],
    "item": "maxrevive",
    "n": 1,
@@ -1278,8 +1278,8 @@
    "section": "127",
    "name": "Lantern Streets Part A",
    "tile": [
-    4,
-    3
+    17,
+    12
    ],
    "item": "maxrevive",
    "n": 1,
@@ -1290,7 +1290,7 @@
    "name": "Lantern Streets Part B",
    "tile": [
     11,
-    4
+    14
    ],
    "item": "fullgel",
    "n": 3,
@@ -1300,8 +1300,8 @@
    "section": "128",
    "name": "Lantern Streets Part B",
    "tile": [
-    16,
-    1
+    6,
+    0
    ],
    "item": "fullgel",
    "n": 3,
@@ -1311,8 +1311,8 @@
    "section": "129",
    "name": "The Sinkhole B1",
    "tile": [
-    10,
-    3
+    14,
+    7
    ],
    "item": "maxrevive",
    "n": 1,
@@ -1322,8 +1322,8 @@
    "section": "129",
    "name": "The Sinkhole B1",
    "tile": [
-    13,
-    9
+    1,
+    8
    ],
    "item": "fullgel",
    "n": 3,
@@ -1333,8 +1333,8 @@
    "section": "130",
    "name": "The Sinkhole B2",
    "tile": [
-    13,
-    2
+    1,
+    4
    ],
    "item": "fullgel",
    "n": 3,
@@ -1344,8 +1344,8 @@
    "section": "131",
    "name": "The Sinkhole B3",
    "tile": [
-    12,
-    13
+    1,
+    9
    ],
    "item": "dust",
    "n": 1600,
@@ -1355,8 +1355,8 @@
    "section": "131",
    "name": "The Sinkhole B3",
    "tile": [
-    9,
-    5
+    14,
+    6
    ],
    "item": "fullgel",
    "n": 3,
@@ -1367,7 +1367,7 @@
    "name": "The Sinkhole B4",
    "tile": [
     1,
-    12
+    9
    ],
    "item": "ether",
    "n": 3,

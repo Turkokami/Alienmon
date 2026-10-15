@@ -2731,11 +2731,11 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7–8 → arrival (landing pad / gate)",
-    "top edge, tile columns 7–8 → Gravewell"
+    "top edge, tile columns 6–9 → Gravewell"
    ],
    "notes": "Exit of the Shadow Tunnel",
-   "file": "art/sections/11_umbra/123_shadow_tunnel_exit.png"
+   "file": "art/sections/11_umbra/123_shadow_tunnel_exit.png",
+   "v2": true
   },
   {
    "id": "124",
@@ -2753,11 +2753,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Shadow Tunnel Exit",
-    "right edge, tile rows 7–8 → Lantern Streets Part A"
+    "left edge, tile rows 5–10 → Shadow Tunnel Exit",
+    "right edge, tile rows 5–10 → Lantern Streets Part A"
    ],
    "notes": "Dark lantern city",
-   "file": "art/sections/11_umbra/124_gravewell.png"
+   "file": "art/sections/11_umbra/124_gravewell.png",
+   "v2": true
   },
   {
    "id": "125",
@@ -2774,11 +2775,10 @@
    ],
    "tile_px_render": 64,
    "tile_px_game": 16,
-   "exits": [
-    "doormat at the bottom center of the room leads back outside"
-   ],
+   "exits": [],
    "notes": "",
-   "file": "art/sections/11_umbra/125_gravewell_recovery_bay.png"
+   "file": "art/sections/11_umbra/125_gravewell_recovery_bay.png",
+   "v2": true
   },
   {
    "id": "126",
@@ -2795,11 +2795,10 @@
    ],
    "tile_px_render": 64,
    "tile_px_game": 16,
-   "exits": [
-    "doormat at the bottom center of the room leads back outside"
-   ],
+   "exits": [],
    "notes": "",
-   "file": "art/sections/11_umbra/126_gravewell_shop.png"
+   "file": "art/sections/11_umbra/126_gravewell_shop.png",
+   "v2": true
   },
   {
    "id": "127",
@@ -2817,11 +2816,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Gravewell",
-    "right edge, tile rows 7–8 → Lantern Streets Part B"
+    "left edge, tile rows 5–9 → Gravewell",
+    "right edge, tile rows 5–9 → Lantern Streets Part B"
    ],
    "notes": "Lantern-lined streets (Lanterns of Gravewell)",
-   "file": "art/sections/11_umbra/127_lantern_streets_part_a.png"
+   "file": "art/sections/11_umbra/127_lantern_streets_part_a.png",
+   "v2": true
   },
   {
    "id": "128",
@@ -2839,11 +2839,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Lantern Streets Part A",
-    "right edge, tile rows 7–8 → The Sinkhole B1"
+    "left edge, tile rows 5–9 → Lantern Streets Part A",
+    "right edge, tile rows 5–9 → The Sinkhole B1"
    ],
    "notes": "Lantern-lined streets (Lanterns of Gravewell)",
-   "file": "art/sections/11_umbra/128_lantern_streets_part_b.png"
+   "file": "art/sections/11_umbra/128_lantern_streets_part_b.png",
+   "v2": true
   },
   {
    "id": "129",
@@ -2861,11 +2862,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7–8 → Lantern Streets Part B",
-    "top edge, tile columns 7–8 → The Sinkhole B2"
+    "bottom edge, tile columns 5–9 → Lantern Streets Part B",
+    "top edge, tile columns 5–9 → The Sinkhole B2"
    ],
    "notes": "The Sinkhole, 4 levels (The well that whispers)",
-   "file": "art/sections/11_umbra/129_the_sinkhole_b1.png"
+   "file": "art/sections/11_umbra/129_the_sinkhole_b1.png",
+   "v2": true
   },
   {
    "id": "130",
@@ -2883,11 +2885,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7–8 → The Sinkhole B1",
-    "top edge, tile columns 7–8 → The Sinkhole B3"
+    "bottom edge, tile columns 6–10 → The Sinkhole B1",
+    "top edge, tile columns 6–10 → The Sinkhole B3"
    ],
    "notes": "The Sinkhole, 4 levels (The well that whispers)",
-   "file": "art/sections/11_umbra/130_the_sinkhole_b2.png"
+   "file": "art/sections/11_umbra/130_the_sinkhole_b2.png",
+   "v2": true
   },
   {
    "id": "131",
@@ -2905,11 +2908,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7–8 → The Sinkhole B2",
-    "top edge, tile columns 7–8 → The Sinkhole B4"
+    "bottom edge, tile columns 6–10 → The Sinkhole B2",
+    "top edge, tile columns 6–10 → The Sinkhole B4"
    ],
    "notes": "The Sinkhole, 4 levels (The well that whispers)",
-   "file": "art/sections/11_umbra/131_the_sinkhole_b3.png"
+   "file": "art/sections/11_umbra/131_the_sinkhole_b3.png",
+   "v2": true
   },
   {
    "id": "132",
@@ -2927,11 +2931,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7–8 → The Sinkhole B3",
-    "top edge, tile columns 7–8 → Gravewell Tower 1F"
+    "bottom edge, tile columns 5–10 → The Sinkhole B3",
+    "top edge, tile columns 5–10 → Gravewell Tower 1F"
    ],
    "notes": "The Sinkhole, 4 levels (The well that whispers)",
-   "file": "art/sections/11_umbra/132_the_sinkhole_b4.png"
+   "file": "art/sections/11_umbra/132_the_sinkhole_b4.png",
+   "v2": true
   },
   {
    "id": "133",
@@ -2948,11 +2953,10 @@
    ],
    "tile_px_render": 64,
    "tile_px_game": 16,
-   "exits": [
-    "doormat at the bottom center of the room leads back outside"
-   ],
+   "exits": [],
    "notes": "Kade's lab (Kade's Notes)",
-   "file": "art/sections/11_umbra/133_kade_s_lab.png"
+   "file": "art/sections/11_umbra/133_kade_s_lab.png",
+   "v2": true
   },
   {
    "id": "134",
@@ -2970,11 +2974,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7–8 → The Sinkhole B4",
+    "bottom edge, tile columns 6–9 → The Sinkhole B4",
     "top edge, tile columns 7–8 (stairs up) → Gravewell Tower 2F"
    ],
    "notes": "Keeper Kade's tower",
-   "file": "art/sections/11_umbra/134_gravewell_tower_1f.png"
+   "file": "art/sections/11_umbra/134_gravewell_tower_1f.png",
+   "v2": true
   },
   {
    "id": "135",
@@ -2992,10 +2997,11 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7–8 → Gravewell Tower 1F"
+    "bottom edge, tile columns 6–9 → Gravewell Tower 1F"
    ],
    "notes": "Keeper Kade's tower",
-   "file": "art/sections/11_umbra/135_gravewell_tower_2f.png"
+   "file": "art/sections/11_umbra/135_gravewell_tower_2f.png",
+   "v2": true
   },
   {
    "id": "136",

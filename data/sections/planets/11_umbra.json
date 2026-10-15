@@ -4,12 +4,12 @@
    "interior": "125",
    "parent": "124",
    "door": [
-    17,
-    5
+    8,
+    3
    ],
    "door2": [
-    18,
-    5
+    9,
+    3
    ],
    "mat": [
     [
@@ -22,18 +22,18 @@
     ]
    ],
    "confidence": "high",
-   "why": "Gravewell's big dome with the cyan cross and double doors (top right) is the Recovery Bay"
+   "why": "V2: Gravewell Recovery Bay (cyan cross)"
   },
   {
    "interior": "126",
    "parent": "124",
    "door": [
-    7,
-    8
+    14,
+    3
    ],
    "door2": [
-    8,
-    8
+    15,
+    3
    ],
    "mat": [
     [
@@ -46,27 +46,27 @@
     ]
    ],
    "confidence": "high",
-   "why": "Striped-awning shop front west of the plaza statue with the red mat"
+   "why": "V2: Gravewell shop (purple awning)"
   },
   {
    "interior": "133",
-   "parent": "124",
+   "parent": "132",
    "door": [
-    17,
-    10
+    12,
+    3
    ],
    "mat": [
     [
      7,
-     13
+     14
     ],
     [
      8,
-     13
+     14
     ]
    ],
-   "confidence": "todo",
-   "why": "Kade's Lab ('the ruined lab', quest area umbra_town): put on Gravewell's small orb-topped house SE of the statue; no ruined building is drawn anywhere, Lantern Streets domes (127 [6,12], 128 [5,3]/[20,11]) are the alternatives"
+   "confidence": "high",
+   "why": "V2: the lit doorway in the ruined building at the top right of Sinkhole B4 is Kade's Lab"
   }
  ],
  "objects": {
@@ -74,7 +74,14 @@
    {
     "tile": [
      7,
-     6
+     4
+    ],
+    "k": "bay"
+   },
+   {
+    "tile": [
+     8,
+     4
     ],
     "k": "bay"
    }
@@ -82,8 +89,15 @@
   "126": [
    {
     "tile": [
-     4,
-     7
+     7,
+     4
+    ],
+    "k": "shop"
+   },
+   {
+    "tile": [
+     8,
+     4
     ],
     "k": "shop"
    }
@@ -100,8 +114,8 @@
   "133": [
    {
     "tile": [
-     3,
-     9
+     4,
+     3
     ],
     "k": "sign",
     "t": [
@@ -110,8 +124,8 @@
    },
    {
     "tile": [
-     8,
-     5
+     10,
+     3
     ],
     "k": "sign",
     "t": [
@@ -135,7 +149,7 @@
    {
     "tile": [
      7,
-     5
+     10
     ],
     "k": "sign",
     "t": [
@@ -152,7 +166,7 @@
    "section": "134",
    "n": 0,
    "tile": [
-    13,
+    12,
     10
    ],
    "face": "left"
@@ -161,17 +175,17 @@
    "section": "134",
    "n": 1,
    "tile": [
-    9,
-    13
+    3,
+    14
    ],
-   "face": "left"
+   "face": "right"
   },
   {
    "section": "129",
    "n": 0,
    "tile": [
-    14,
-    9
+    13,
+    6
    ],
    "face": "left"
   }
@@ -186,85 +200,92 @@
   "124": [
    {
     "tile": [
-     3,
-     8
+     12,
+     5
     ],
     "art": "wanderer",
     "t": [
      "Scavenger: Gravewell was a city once, before it tipped into the sinkhole.",
      "Now we just call it home and keep the lanterns full."
-    ]
+    ],
+    "stay": true
    },
    {
     "tile": [
-     11,
-     3
+     17,
+     9
     ],
     "art": "civilian",
     "t": [
      "Lantern keeper: Keep to the lanterns. The dark plays tricks.",
      "If a light goes out behind you, don't turn around. Just walk faster."
-    ]
+    ],
+    "stay": true
    },
    {
     "tile": [
-     16,
-     8
+     4,
+     6
     ],
     "art": "explorer",
     "t": [
      "Drifter: Void-types only come out where the light can't reach.",
      "The Sinkhole is full of them. Bring something that hits hard."
-    ]
+    ],
+    "stay": true
    },
    {
     "tile": [
-     20,
-     8
+     1,
+     10
     ],
     "art": "civilian",
     "t": [
      "Old woman: The Recovery Bay is the brightest room in town. We go there to feel warm, not just to heal."
-    ]
+    ],
+    "stay": true
    },
    {
     "tile": [
-     7,
+     20,
      5
     ],
     "art": "researcher",
     "t": [
      "Researcher: The black-hole sky pulls on everything here. Even sound falls a little slower."
-    ]
+    ],
+    "stay": true
    },
    {
     "tile": [
-     18,
-     12
+     13,
+     11
     ],
     "art": "strand",
     "t": [
      "Helix contractor: Nothing to see here. Just... measuring the sinkhole. For safety.",
      "Move along, Linker."
-    ]
+    ],
+    "stay": true
    },
    {
     "tile": [
-     12,
-     10
+     20,
+     11
     ],
     "art": "wanderer",
     "t": [
      "Kid: My big brother says the well whispers your name if you stand at the edge long enough!"
-    ]
+    ],
+    "stay": true
    }
   ],
   "125": [
    {
     "art": "nurse",
     "tile": [
-     7,
-     6
+     8,
+     4
     ],
     "t": [
      "Nurse: Welcome to the Gravewell Recovery Bay. We'll have your Alienmon glowing again."
@@ -275,15 +296,20 @@
     "art": "explorer",
     "t": [
      "Diver: I came up from Sinkhole B3 with every team member fainted. Heal before every level down."
-    ]
+    ],
+    "tile": [
+     9,
+     12
+    ],
+    "stay": true
    }
   ],
   "126": [
    {
     "art": "shop",
     "tile": [
-     4,
-     7
+     8,
+     4
     ],
     "t": [
      "Clerk: Lantern oil, Stasis Pods, potions. Everything you need to go down and come back up."
@@ -294,7 +320,12 @@
     "art": "miner",
     "t": [
      "Shopper: Stock up on Stasis Pods. Void-types are slippery and slip out of a weak throw."
-    ]
+    ],
+    "tile": [
+     9,
+     12
+    ],
+    "stay": true
    }
   ],
   "133": [
@@ -302,7 +333,12 @@
     "art": "researcher",
     "t": [
      "Lab assistant: The professor left in a hurry years ago. The papers are still exactly where he dropped them."
-    ]
+    ],
+    "tile": [
+     8,
+     4
+    ],
+    "stay": true
    }
   ],
   "127": [
@@ -310,13 +346,23 @@
     "art": "civilian",
     "t": [
      "Lantern keeper: Every lantern on this street is tended by hand. Miss one night and the shadows creep in."
-    ]
+    ],
+    "tile": [
+     12,
+     5
+    ],
+    "stay": true
    },
    {
     "art": "wanderer",
     "t": [
      "Scavenger: Trainers on these streets watch from the dark. Walk into their line of sight and they'll call you out."
-    ]
+    ],
+    "tile": [
+     6,
+     9
+    ],
+    "stay": true
    }
   ],
   "128": [
@@ -324,13 +370,23 @@
     "art": "pilgrim",
     "t": [
      "Pilgrim: The Sinkhole is just east. They say a Signal Shard sleeps at the very bottom."
-    ]
+    ],
+    "tile": [
+     12,
+     5
+    ],
+    "stay": true
    },
    {
     "art": "explorer",
     "t": [
      "Drifter: Past the Sinkhole stands Gravewell Tower. The Keeper there fights with the dark itself."
-    ]
+    ],
+    "tile": [
+     6,
+     9
+    ],
+    "stay": true
    }
   ],
   "123": [
@@ -338,19 +394,25 @@
     "art": "wanderer",
     "t": [
      "Traveller: You made it through the Shadow Tunnel? Most folk turn back halfway. Gravewell's just north."
-    ]
+    ],
+    "tile": [
+     10,
+     8
+    ],
+    "stay": true
    }
   ],
   "129": [
    {
     "tile": [
-     5,
-     2
+     8,
+     11
     ],
     "art": "miner",
     "t": [
      "Miner: B1's the easy floor. Mind the waterfalls; that glow isn't water."
-    ]
+    ],
+    "stay": true
    }
   ],
   "130": [
@@ -358,7 +420,12 @@
     "art": "explorer",
     "t": [
      "Explorer: I've mapped this level three times. The tunnels never quite match my notes."
-    ]
+    ],
+    "tile": [
+     11,
+     4
+    ],
+    "stay": true
    }
   ],
   "131": [
@@ -366,7 +433,12 @@
     "art": "researcher",
     "t": [
      "Researcher: Ghost and Void readings double every floor down. Whatever is below, it is awake."
-    ]
+    ],
+    "tile": [
+     5,
+     4
+    ],
+    "stay": true
    }
   ],
   "132": [
@@ -375,7 +447,12 @@
     "t": [
      "Pilgrim: The well that whispers... listen. Do you hear it too?",
      "Go around the rift. Never across."
-    ]
+    ],
+    "tile": [
+     11,
+     4
+    ],
+    "stay": true
    }
   ],
   "134": [
@@ -383,20 +460,15 @@
     "art": "guard",
     "t": [
      "Tower guard: Keeper Kade waits upstairs. Beat his apprentices first; he only sees challengers who've earned it."
-    ]
+    ],
+    "tile": [
+     9,
+     3
+    ],
+    "stay": true
    }
   ]
  },
- "unlisted": {
-  "124": "Stairs drawn off the top (cols 11-12) and bottom (col 11) edges of Gravewell lead nowhere; edge tiles blocked. House doors at [7,4] (top-left) and [6,12] (bottom-left, also fenced in) have no interior; blocked.",
-  "123": "The dark tunnel mouth at [11,5] (Shadow Tunnel entrance art) is not an exit; blocked, [11,6] in front of it walkable.",
-  "127": "Stairs off the top (col 11) and bottom (cols 11-12) edges are not exits; edge tiles blocked. Dome doors at [16,3] and [6,12] have no interior; blocked.",
-  "128": "Stairs/paths off the top edge (cols 9-10 and col 17) and bottom edge (cols 14-15) are not exits; edge tiles blocked. Dome doors at [4,3]/[5,3] and [20,11] have no interior; blocked.",
-  "129": "Ladders at [3,3] and [11,7] lead nowhere; the left ledge and upper-right lamp ledge they serve are left blocked.",
-  "130": "Ladder at [3,8] blocked; isolated ledges left/bottom-left blocked.",
-  "131": "Ladders at [3,3] and stairs at [13,4]/[13,6] serve disconnected ledges; blocked.",
-  "132": "Stairs at [12,13] lead down to a dead-end ledge; walkable to the top step only.",
-  "135": "Stairs drawn at the top of Gravewell Tower 2F (cols 7-8, rows 0-3) lead nowhere (no 3F); blocked behind the Keeper."
- },
+ "unlisted": {},
  "notes": "Umbra (11). Kade's Lab door is a judgement call (todo): Gravewell's SE orb house. Sinkhole floors are narrow cave corridors; B4 (132) routes around the central rift via the left bridge pocket and the right rope bridge. Purple foliage patches on Lantern Streets are tall grass."
 }

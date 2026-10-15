@@ -242,130 +242,6 @@
  ],
  "ignore_mats": {},
  "objects": {
-  "123": [
-   {
-    "tile": [
-     11,
-     5
-    ],
-    "k": "sign",
-    "t": "Loose rock blocks the passage.",
-    "why": "door plan: cave door with no interior yet"
-   }
-  ],
-  "124": [
-   {
-    "tile": [
-     7,
-     4
-    ],
-    "k": "house",
-    "why": "house door: opens the shared Umbra house",
-    "to": "186"
-   }
-  ],
-  "127": [
-   {
-    "tile": [
-     6,
-     12
-    ],
-    "k": "house",
-    "why": "house door: opens the shared Umbra house",
-    "to": "186"
-   },
-   {
-    "tile": [
-     16,
-     3
-    ],
-    "k": "house",
-    "why": "house door: opens the shared Umbra house",
-    "to": "186"
-   }
-  ],
-  "128": [
-   {
-    "tile": [
-     4,
-     3
-    ],
-    "k": "house",
-    "why": "house door: opens the shared Umbra house",
-    "to": "186"
-   },
-   {
-    "tile": [
-     20,
-     11
-    ],
-    "k": "house",
-    "why": "house door: opens the shared Umbra house",
-    "to": "186"
-   }
-  ],
-  "129": [
-   {
-    "tile": [
-     3,
-     3
-    ],
-    "k": "stop",
-    "t": "This ladder is broken. You can't climb it.",
-    "why": "dead-end ladder (tools/sections/dead_ends.py)"
-   },
-   {
-    "tile": [
-     11,
-     7
-    ],
-    "k": "stop",
-    "t": "This ladder is broken. You can't climb it.",
-    "why": "dead-end ladder (tools/sections/dead_ends.py)"
-   }
-  ],
-  "130": [
-   {
-    "tile": [
-     3,
-     9
-    ],
-    "k": "stop",
-    "t": "This ladder is broken. You can't climb it.",
-    "why": "dead-end ladder (tools/sections/dead_ends.py)"
-   }
-  ],
-  "131": [
-   {
-    "tile": [
-     13,
-     7
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   }
-  ],
-  "132": [
-   {
-    "tile": [
-     12,
-     12
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   },
-   {
-    "tile": [
-     12,
-     14
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   }
-  ],
   "136": [
    {
     "tile": [
@@ -1390,6 +1266,44 @@
     "to": "175",
     "why": "V2: Skyreach house"
    }
+  ],
+  "124": [
+   {
+    "tile": [
+     3,
+     3
+    ],
+    "k": "house",
+    "to": "186",
+    "why": "V2: Gravewell house (shared Umbra home)"
+   },
+   {
+    "tile": [
+     4,
+     3
+    ],
+    "k": "house",
+    "to": "186",
+    "why": "V2: Gravewell house"
+   },
+   {
+    "tile": [
+     20,
+     3
+    ],
+    "k": "house",
+    "to": "186",
+    "why": "V2: Gravewell house"
+   },
+   {
+    "tile": [
+     21,
+     3
+    ],
+    "k": "house",
+    "to": "186",
+    "why": "V2: Gravewell house"
+   }
   ]
  },
  "arrival": {
@@ -1432,6 +1346,10 @@
   "halo": {
    "section": "114",
    "why": "V2: the round sky-dock landing pad"
+  },
+  "umbra": {
+   "section": "123",
+   "why": "V2: out of the Shadow Tunnel archway"
   }
  },
  "unlisted": {},
@@ -1721,6 +1639,16 @@
     3,
     7
    ]
+  },
+  "123": {
+   "arrival": [
+    7,
+    12
+   ],
+   "default": [
+    7,
+    12
+   ]
   }
  },
  "zones": {
@@ -1943,6 +1871,24 @@
    "planet": "dustara",
    "label": "the shuttle back to the Shuttle Pad",
    "why": "V2: the docking bay pad is the arrival point and the shuttle home"
+  },
+  {
+   "section": "123",
+   "tiles": [
+    [
+     7,
+     14
+    ],
+    [
+     8,
+     14
+    ]
+   ],
+   "at_dy": -1,
+   "node": "dustara",
+   "planet": "dustara",
+   "label": "the Shadow Tunnel back to the Frontier",
+   "why": "V2: the tunnel archway is the arrival point and the way home"
   }
  ],
  "trainers": {

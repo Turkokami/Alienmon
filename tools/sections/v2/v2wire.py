@@ -6,7 +6,21 @@ A2={s['id']:s for s in json.load(open(S+'atlas_v2.json',encoding='utf-8'))['sect
 AT=json.load(open('art/sections/atlas.json',encoding='utf-8'));A1={s['id']:s for s in AT['sections']}
 L=json.load(open('data/sections/links.json',encoding='utf-8'))
 H=lambda x,y:{'tile':[x,y]}
-WIRE={'10':{
+WIRE={'11':{
+ 'ids':['%03d'%i for i in range(123,136)],
+ 'doors':[],'stairs':[],
+ 'objects':{
+  '124':[{'tile':[3,3],'k':'house','to':'186','why':'V2: Gravewell house (shared Umbra home)'},{'tile':[4,3],'k':'house','to':'186','why':'V2: Gravewell house'},
+         {'tile':[20,3],'k':'house','to':'186','why':'V2: Gravewell house'},{'tile':[21,3],'k':'house','to':'186','why':'V2: Gravewell house'}],
+ },
+ 'warps':[],
+ 'gates':{},
+ 'gates_new':[{'section':'123','tiles':[[7,14],[8,14]],'at_dy':-1,'node':'dustara','planet':'dustara','label':'the Shadow Tunnel back to the Frontier','why':'V2: the tunnel archway is the arrival point and the way home'}],
+ 'atlas_extra':{'134':['top edge, tile columns 7–8 (stairs up) → Gravewell Tower 2F']},
+ 'spawns':{'123':{'arrival':[7,12],'default':[7,12]}},
+ 'arrival':{'umbra':{'section':'123','why':'V2: out of the Shadow Tunnel archway'}},
+ 'reparent':{'186':'124'},
+},'10':{
  'ids':['%03d'%i for i in range(114,123)],
  'doors':[],'stairs':[],
  'objects':{

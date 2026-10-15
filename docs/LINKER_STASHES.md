@@ -170,18 +170,18 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 
 | Section | Tile | Item | Tier |
 |---|---|---|---|
-| 123 Shadow Tunnel Exit | 3,3 | 1600x Stardust | 6 |
-| 124 Gravewell | 12,1 | 1x Max Revive | 6 |
-| 127 Lantern Streets Part A | 11,1 | 1x Max Revive | 6 |
-| 127 Lantern Streets Part A | 4,3 | 1x Max Revive | 6 |
-| 128 Lantern Streets Part B | 11,4 | 3x Full Gel | 6 |
-| 128 Lantern Streets Part B | 16,1 | 3x Full Gel | 6 |
-| 129 The Sinkhole B1 | 10,3 | 1x Max Revive | 6 |
-| 129 The Sinkhole B1 | 13,9 | 3x Full Gel | 6 |
-| 130 The Sinkhole B2 | 13,2 | 3x Full Gel | 6 |
-| 131 The Sinkhole B3 | 12,13 | 1600x Stardust | 6 |
-| 131 The Sinkhole B3 | 9,5 | 3x Full Gel | 6 |
-| 132 The Sinkhole B4 | 1,12 | 3x Ether Gel | 6 |
+| 123 Shadow Tunnel Exit | 2,5 | 1600x Stardust | 6 |
+| 124 Gravewell | 8,11 | 1x Max Revive | 6 |
+| 127 Lantern Streets Part A | 11,14 | 1x Max Revive | 6 |
+| 127 Lantern Streets Part A | 17,12 | 1x Max Revive | 6 |
+| 128 Lantern Streets Part B | 11,14 | 3x Full Gel | 6 |
+| 128 Lantern Streets Part B | 6,0 | 3x Full Gel | 6 |
+| 129 The Sinkhole B1 | 14,7 | 1x Max Revive | 6 |
+| 129 The Sinkhole B1 | 1,8 | 3x Full Gel | 6 |
+| 130 The Sinkhole B2 | 1,4 | 3x Full Gel | 6 |
+| 131 The Sinkhole B3 | 1,9 | 1600x Stardust | 6 |
+| 131 The Sinkhole B3 | 14,6 | 3x Full Gel | 6 |
+| 132 The Sinkhole B4 | 1,9 | 3x Ether Gel | 6 |
 
 ## Starfall Rift (13)
 
