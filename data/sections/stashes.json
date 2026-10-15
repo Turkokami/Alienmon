@@ -26,7 +26,7 @@
    "section": "008",
    "name": "Trading Post",
    "tile": [
-    9,
+    7,
     10
    ],
    "item": "cure",
@@ -224,7 +224,7 @@
    "section": "018",
    "name": "Molten Frontier: Port Ember",
    "tile": [
-    16,
+    7,
     10
    ],
    "item": "dust",

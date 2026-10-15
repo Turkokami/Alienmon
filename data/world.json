@@ -102,11 +102,11 @@
   "M03:giver": {
    "s": "008",
    "x": 12,
-   "y": 8
+   "y": 7
   },
   "M03:0": {
    "s": "008",
-   "x": 10,
+   "x": 12,
    "y": 10
   },
   "M04:giver": {
@@ -442,25 +442,25 @@
   "S02:0": {
    "s": "008",
    "x": 12,
-   "y": 8,
+   "y": 7,
    "pts": [
     [
      12,
+     7
+    ],
+    [
+     6,
      8
     ],
     [
-     7,
-     6
-    ],
-    [
-     17,
-     6
+     18,
+     8
     ]
    ]
   },
   "S03:giver": {
    "s": "008",
-   "x": 14,
+   "x": 17,
    "y": 10
   },
   "S03:0": {
@@ -2202,7 +2202,7 @@
     },
     {
      "tile": [
-      9,
+      7,
       10
      ],
      "k": "stash",
@@ -2224,52 +2224,57 @@
    "pkey": "dustara",
    "npcs": [
     {
-     "x": 12,
-     "y": 10,
+     "x": 5,
+     "y": 6,
      "art": "snacktrader",
      "face": "down",
      "t": [
       "Snack trader: Battle snacks! Get your battle snacks! Roasted cactus nuts, still crackling!",
       "Trader: Everything here came over the Molten Frontier on a cart. Prices reflect the danger!"
      ],
-     "name": "Snack trader"
+     "name": "Snack trader",
+     "stay": true
     },
     {
-     "x": 4,
-     "y": 10,
+     "x": 3,
+     "y": 8,
      "art": "sheepkid",
      "face": "down",
      "t": [
       "Kid: The lemonade stand? That was... an accident. Mostly the lamb's fault."
      ],
-     "name": "Kid with a lamb"
+     "name": "Kid with a lamb",
+     "stay": true
     },
     {
-     "x": 17,
-     "y": 10,
+     "x": 10,
+     "y": 7,
      "art": "miner",
      "face": "down",
      "t": [
       "Miner: The Sunset Tunnel past the cactus gardens is the only way through to the Frontier on foot."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 7,
-     "y": 10,
+     "x": 15,
+     "y": 9,
      "art": "wanderer",
      "face": "down",
      "t": [
       "Drifter: Sola trains out back every morning. Tough kid. Even tougher partner."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 16,
-     "y": 10,
+     "x": 12,
+     "y": 8,
      "art": "explorer",
-     "face": "up",
+     "face": "left",
      "t": [
       "Linker: Trainers on the trail will battle you the moment they spot you. Walk past them if you're feeling brave."
      ],
+     "stay": true,
      "id": "sec008_tr4",
      "trainer": {
       "cls": "Linker",
@@ -2278,29 +2283,37 @@
      }
     },
     {
-     "x": 11,
-     "y": 10,
+     "x": 17,
+     "y": 7,
      "art": "referee",
      "face": "down",
      "t": [
       "Referee: One-on-one! First partner who can't keep going loses! No hitting trainers, no fighting dirty!",
       "Referee: ...And no knocking over my lemonade stand AGAIN."
      ],
-     "name": "Referee"
+     "name": "Referee",
+     "stay": true
     },
     {
-     "x": 15,
-     "y": 10,
+     "x": 19,
+     "y": 6,
      "art": "fenna",
      "face": "down",
      "t": [
       "Fenna: Spores, roots, a few mushrooms that hum. I trade them for anything shiny.",
       "Fenna: Sporeholm grows mushrooms bigger than houses. Bigger than Dustmere, nearly!"
      ],
-     "name": "Fenna"
+     "name": "Fenna",
+     "stay": true
     }
    ],
-   "mons": []
+   "mons": [
+    {
+     "x": 9,
+     "y": 10,
+     "mon": "Pebblet"
+    }
+   ]
   },
   "009": {
    "id": "009",
@@ -3675,7 +3688,7 @@
     },
     {
      "tile": [
-      16,
+      7,
       10
      ],
      "k": "stash",
@@ -3698,49 +3711,54 @@
    "pkey": "dustara",
    "npcs": [
     {
-     "x": 12,
-     "y": 10,
+     "x": 13,
+     "y": 6,
      "art": "squidsailor",
      "face": "down",
      "t": [
       "Sailor: The Deep Sea Ferry leaves from the long dock. Only cleared Linkers ride, though."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 4,
-     "y": 10,
+     "x": 7,
+     "y": 8,
      "art": "technician",
      "face": "down",
      "t": [
       "Dock mechanic: Helix boats have been prowling the harbor. Keep your pods close."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 17,
-     "y": 10,
+     "x": 16,
+     "y": 9,
      "art": "civilian",
      "face": "down",
      "t": [
       "Fish seller: Fresh from the ember sea! Well... warm from the ember sea."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 7,
-     "y": 10,
+     "x": 20,
+     "y": 6,
      "art": "guard",
      "face": "down",
      "t": [
       "Harbor guard: Port Ember's been a safe harbor for a hundred years. We intend to keep it that way."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 15,
-     "y": 10,
+     "x": 11,
+     "y": 8,
      "art": "explorer",
-     "face": "up",
+     "face": "right",
      "t": [
       "Linker: Every Keeper you beat gives you a Signal Shard. Eight of them and something big happens. Nobody agrees on what."
      ],
+     "stay": true,
      "id": "sec018_tr4",
      "trainer": {
       "cls": "Linker",
@@ -3749,31 +3767,33 @@
      }
     },
     {
-     "x": 9,
-     "y": 10,
+     "x": 5,
+     "y": 8,
      "art": "civilian",
      "face": "down",
      "t": [
       "Villager: Welcome to Port Ember, the last calm shore before the lava fields."
      ],
-     "wid": "mf1"
+     "wid": "mf1",
+     "stay": true
     },
     {
      "x": 14,
-     "y": 10,
+     "y": 11,
      "art": "mina",
      "face": "down",
      "t": [
       "Mina: This hood? It's a shark. Obviously. The fish respect it.",
       "Mina: Cast past the end of the boardwalk and wait. Something on Thalassa always bites back."
      ],
-     "name": "Mina"
+     "name": "Mina",
+     "stay": true
     }
    ],
    "mons": [
     {
-     "x": 16,
-     "y": 5,
+     "x": 9,
+     "y": 10,
      "mon": "Cindermole"
     }
    ]

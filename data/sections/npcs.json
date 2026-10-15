@@ -232,56 +232,83 @@
     "Snack trader: Battle snacks! Get your battle snacks! Roasted cactus nuts, still crackling!",
     "Trader: Everything here came over the Molten Frontier on a cart. Prices reflect the danger!"
    ],
-   "name": "Snack trader"
+   "name": "Snack trader",
+   "tile": [
+    5,
+    6
+   ],
+   "stay": true
   },
   {
    "art": "sheepkid",
    "t": [
     "Kid: The lemonade stand? That was... an accident. Mostly the lamb's fault."
    ],
-   "name": "Kid with a lamb"
+   "name": "Kid with a lamb",
+   "tile": [
+    3,
+    8
+   ],
+   "stay": true
   },
   {
    "art": "miner",
    "t": [
     "Miner: The Sunset Tunnel past the cactus gardens is the only way through to the Frontier on foot."
-   ]
+   ],
+   "tile": [
+    10,
+    7
+   ],
+   "stay": true
   },
   {
    "art": "wanderer",
    "t": [
     "Drifter: Sola trains out back every morning. Tough kid. Even tougher partner."
-   ]
+   ],
+   "tile": [
+    15,
+    9
+   ],
+   "stay": true
   },
   {
    "art": "explorer",
    "t": [
     "Linker: Trainers on the trail will battle you the moment they spot you. Walk past them if you're feeling brave."
-   ]
+   ],
+   "tile": [
+    12,
+    8
+   ],
+   "stay": true
   },
   {
    "art": "referee",
    "name": "Referee",
-   "near": [
-    12,
-    9
-   ],
    "t": [
     "Referee: One-on-one! First partner who can't keep going loses! No hitting trainers, no fighting dirty!",
     "Referee: ...And no knocking over my lemonade stand AGAIN."
-   ]
+   ],
+   "tile": [
+    17,
+    7
+   ],
+   "stay": true
   },
   {
    "art": "fenna",
    "name": "Fenna",
-   "near": [
-    19,
-    9
-   ],
    "t": [
     "Fenna: Spores, roots, a few mushrooms that hum. I trade them for anything shiny.",
     "Fenna: Sporeholm grows mushrooms bigger than houses. Bigger than Dustmere, nearly!"
-   ]
+   ],
+   "tile": [
+    19,
+    6
+   ],
+   "stay": true
   }
  ],
  "009": [
@@ -492,31 +519,56 @@
    "art": "squidsailor",
    "t": [
     "Sailor: The Deep Sea Ferry leaves from the long dock. Only cleared Linkers ride, though."
-   ]
+   ],
+   "tile": [
+    13,
+    6
+   ],
+   "stay": true
   },
   {
    "art": "technician",
    "t": [
     "Dock mechanic: Helix boats have been prowling the harbor. Keep your pods close."
-   ]
+   ],
+   "tile": [
+    7,
+    8
+   ],
+   "stay": true
   },
   {
    "art": "civilian",
    "t": [
     "Fish seller: Fresh from the ember sea! Well... warm from the ember sea."
-   ]
+   ],
+   "tile": [
+    16,
+    9
+   ],
+   "stay": true
   },
   {
    "art": "guard",
    "t": [
     "Harbor guard: Port Ember's been a safe harbor for a hundred years. We intend to keep it that way."
-   ]
+   ],
+   "tile": [
+    20,
+    6
+   ],
+   "stay": true
   },
   {
    "art": "explorer",
    "t": [
     "Linker: Every Keeper you beat gives you a Signal Shard. Eight of them and something big happens. Nobody agrees on what."
-   ]
+   ],
+   "tile": [
+    11,
+    8
+   ],
+   "stay": true
   },
   {
    "art": "civilian",
@@ -524,22 +576,24 @@
     "Villager: Welcome to Port Ember, the last calm shore before the lava fields."
    ],
    "wid": "mf1",
-   "near": [
-    8,
-    9
-   ]
+   "tile": [
+    5,
+    8
+   ],
+   "stay": true
   },
   {
    "art": "mina",
    "name": "Mina",
-   "near": [
-    14,
-    10
-   ],
    "t": [
     "Mina: This hood? It's a shark. Obviously. The fish respect it.",
     "Mina: Cast past the end of the boardwalk and wait. Something on Thalassa always bites back."
-   ]
+   ],
+   "tile": [
+    14,
+    11
+   ],
+   "stay": true
   }
  ],
  "019": [
