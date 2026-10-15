@@ -741,7 +741,7 @@
    "name": "Sunken Landing",
    "tile": [
     10,
-    3
+    13
    ],
    "item": "ether",
    "n": 1,
@@ -751,8 +751,8 @@
    "section": "073",
    "name": "Dig Camp",
    "tile": [
-    8,
-    4
+    9,
+    12
    ],
    "item": "megagel",
    "n": 2,
@@ -762,7 +762,7 @@
    "section": "075",
    "name": "Coral Ruins Part A",
    "tile": [
-    3,
+    11,
     14
    ],
    "item": "jammer",
@@ -773,8 +773,8 @@
    "section": "075",
    "name": "Coral Ruins Part A",
    "tile": [
-    11,
-    2
+    17,
+    12
    ],
    "item": "revive",
    "n": 2,
@@ -784,7 +784,7 @@
    "section": "076",
    "name": "Coral Ruins Part B",
    "tile": [
-    22,
+    11,
     14
    ],
    "item": "stun",
@@ -795,8 +795,8 @@
    "section": "076",
    "name": "Coral Ruins Part B",
    "tile": [
-    6,
-    2
+    13,
+    14
    ],
    "item": "harmonic",
    "n": 3,
@@ -806,8 +806,8 @@
    "section": "077",
    "name": "Glyph Hollow",
    "tile": [
-    8,
-    3
+    10,
+    12
    ],
    "item": "megagel",
    "n": 2,
@@ -817,8 +817,8 @@
    "section": "077",
    "name": "Glyph Hollow",
    "tile": [
-    19,
-    12
+    15,
+    3
    ],
    "item": "harmonic",
    "n": 3,

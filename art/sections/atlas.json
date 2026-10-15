@@ -1604,11 +1604,11 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → arrival (landing pad / gate)",
-    "right edge, tile rows 7–8 → Dig Camp"
+    "right edge, tile rows 5–9 → Dig Camp"
    ],
    "notes": "Landing among sunken ruins",
-   "file": "art/sections/06_glyphos/072_sunken_landing.png"
+   "file": "art/sections/06_glyphos/072_sunken_landing.png",
+   "v2": true
   },
   {
    "id": "073",
@@ -1626,11 +1626,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Sunken Landing",
-    "right edge, tile rows 7–8 → Coral Ruins Part A"
+    "left edge, tile rows 5–10 → Sunken Landing",
+    "right edge, tile rows 5–10 → Coral Ruins Part A"
    ],
    "notes": "Archaeologists' camp of tents and scaffolding",
-   "file": "art/sections/06_glyphos/073_dig_camp.png"
+   "file": "art/sections/06_glyphos/073_dig_camp.png",
+   "v2": true
   },
   {
    "id": "074",
@@ -1647,11 +1648,10 @@
    ],
    "tile_px_render": 64,
    "tile_px_game": 16,
-   "exits": [
-    "doormat at the bottom center of the room leads back outside"
-   ],
+   "exits": [],
    "notes": "Recovery Bay as a large tent",
-   "file": "art/sections/06_glyphos/074_dig_camp_recovery_tent.png"
+   "file": "art/sections/06_glyphos/074_dig_camp_recovery_tent.png",
+   "v2": true
   },
   {
    "id": "075",
@@ -1669,11 +1669,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Dig Camp",
-    "right edge, tile rows 7–8 → Coral Ruins Part B"
+    "left edge, tile rows 5–9 → Dig Camp",
+    "right edge, tile rows 5–9 → Coral Ruins Part B"
    ],
    "notes": "Flooded ruins route",
-   "file": "art/sections/06_glyphos/075_coral_ruins_part_a.png"
+   "file": "art/sections/06_glyphos/075_coral_ruins_part_a.png",
+   "v2": true
   },
   {
    "id": "076",
@@ -1691,11 +1692,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Coral Ruins Part A",
-    "right edge, tile rows 7–8 → Glyph Hollow"
+    "left edge, tile rows 5–9 → Coral Ruins Part A",
+    "right edge, tile rows 5–9 → Glyph Hollow"
    ],
    "notes": "Flooded ruins route",
-   "file": "art/sections/06_glyphos/076_coral_ruins_part_b.png"
+   "file": "art/sections/06_glyphos/076_coral_ruins_part_b.png",
+   "v2": true
   },
   {
    "id": "077",
@@ -1713,11 +1715,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Coral Ruins Part B",
-    "right edge, tile rows 7–8 → Temple of Voices 1F"
+    "left edge, tile rows 5–9 → Coral Ruins Part B",
+    "right edge, tile rows 5–9 → Temple of Voices 1F"
    ],
    "notes": "Hollow of glowing glyph stones (Guardian Stones)",
-   "file": "art/sections/06_glyphos/077_glyph_hollow.png"
+   "file": "art/sections/06_glyphos/077_glyph_hollow.png",
+   "v2": true
   },
   {
    "id": "078",
@@ -1735,11 +1738,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7–8 → Glyph Hollow",
-    "top edge, tile columns 7–8 (stairs up) → Temple of Voices 2F"
+    "bottom edge, tile columns 6–9 → Glyph Hollow",
+    "top edge, tile columns 6–9 (stairs up) → Temple of Voices 2F"
    ],
    "notes": "Ancient Ystran temple (no Keeper), 3 floors (Song of the Chimes)",
-   "file": "art/sections/06_glyphos/078_temple_of_voices_1f.png"
+   "file": "art/sections/06_glyphos/078_temple_of_voices_1f.png",
+   "v2": true
   },
   {
    "id": "079",
@@ -1757,11 +1761,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7–8 → Temple of Voices 1F",
-    "top edge, tile columns 7–8 (stairs up) → Temple of Voices 3F"
+    "bottom edge, tile columns 6–9 → Temple of Voices 1F",
+    "top edge, tile columns 6–9 (stairs up) → Temple of Voices 3F"
    ],
    "notes": "Ancient Ystran temple (no Keeper), 3 floors (Song of the Chimes)",
-   "file": "art/sections/06_glyphos/079_temple_of_voices_2f.png"
+   "file": "art/sections/06_glyphos/079_temple_of_voices_2f.png",
+   "v2": true
   },
   {
    "id": "080",
@@ -1779,10 +1784,11 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7–8 → Temple of Voices 2F"
+    "bottom edge, tile columns 6–9 → Temple of Voices 2F"
    ],
    "notes": "Ancient Ystran temple (no Keeper), 3 floors (Song of the Chimes)",
-   "file": "art/sections/06_glyphos/080_temple_of_voices_3f.png"
+   "file": "art/sections/06_glyphos/080_temple_of_voices_3f.png",
+   "v2": true
   },
   {
    "id": "081",
@@ -1799,11 +1805,10 @@
    ],
    "tile_px_render": 64,
    "tile_px_game": 16,
-   "exits": [
-    "doormat at the bottom center of the room leads back outside"
-   ],
+   "exits": [],
    "notes": "Great hall of Ystran murals (M10b Vashti's confession)",
-   "file": "art/sections/06_glyphos/081_mural_hall.png"
+   "file": "art/sections/06_glyphos/081_mural_hall.png",
+   "v2": true
   },
   {
    "id": "082",

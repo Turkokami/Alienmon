@@ -672,162 +672,6 @@
     "why": "dead-end stairs (tools/sections/dead_ends.py)"
    }
   ],
-  "072": [
-   {
-    "tile": [
-     4,
-     3
-    ],
-    "k": "house",
-    "why": "house door: opens the shared Glyphos house",
-    "to": "177"
-   },
-   {
-    "tile": [
-     4,
-     13
-    ],
-    "k": "house",
-    "why": "house door: opens the shared Glyphos house",
-    "to": "177"
-   },
-   {
-    "tile": [
-     17,
-     11
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   }
-  ],
-  "073": [
-   {
-    "tile": [
-     11,
-     10
-    ],
-    "k": "house",
-    "why": "house door: opens the shared Glyphos house",
-    "to": "177"
-   },
-   {
-    "tile": [
-     19,
-     11
-    ],
-    "k": "house",
-    "why": "house door: opens the shared Glyphos house",
-    "to": "177"
-   },
-   {
-    "tile": [
-     4,
-     11
-    ],
-    "k": "house",
-    "to": "183",
-    "why": "walk-in door: dig_camp_tent"
-   },
-   {
-    "tile": [
-     11,
-     14
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   },
-   {
-    "tile": [
-     12,
-     14
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   }
-  ],
-  "075": [
-   {
-    "tile": [
-     11,
-     10
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   }
-  ],
-  "076": [
-   {
-    "tile": [
-     4,
-     10
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   },
-   {
-    "tile": [
-     15,
-     12
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   }
-  ],
-  "077": [
-   {
-    "tile": [
-     3,
-     11
-    ],
-    "k": "sign",
-    "t": "Fallen stone blocks the way.",
-    "why": "door plan: ruin door with no interior yet"
-   },
-   {
-    "tile": [
-     7,
-     14
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   },
-   {
-    "tile": [
-     8,
-     14
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   }
-  ],
-  "079": [
-   {
-    "tile": [
-     5,
-     17
-    ],
-    "k": "sign",
-    "t": "Fallen stone blocks the way.",
-    "why": "door plan: ruin door with no interior yet"
-   },
-   {
-    "tile": [
-     10,
-     17
-    ],
-    "k": "sign",
-    "t": "Fallen stone blocks the way.",
-    "why": "door plan: ruin door with no interior yet"
-   }
-  ],
   "082": [
    {
     "tile": [
@@ -1686,6 +1530,62 @@
     "to": "180",
     "why": "V2: the arcade hall"
    }
+  ],
+  "073": [
+   {
+    "tile": [
+     2,
+     4
+    ],
+    "k": "house",
+    "to": "177",
+    "why": "V2: expedition tent (shared Glyphos home)"
+   },
+   {
+    "tile": [
+     3,
+     4
+    ],
+    "k": "house",
+    "to": "177",
+    "why": "V2: expedition tent"
+   },
+   {
+    "tile": [
+     14,
+     4
+    ],
+    "k": "house",
+    "to": "183",
+    "why": "V2: the big dig tent"
+   },
+   {
+    "tile": [
+     15,
+     4
+    ],
+    "k": "house",
+    "to": "183",
+    "why": "V2: the big dig tent"
+   },
+   {
+    "tile": [
+     19,
+     4
+    ],
+    "k": "house",
+    "to": "177",
+    "why": "V2: expedition tent"
+   },
+   {
+    "tile": [
+     20,
+     4
+    ],
+    "k": "house",
+    "to": "177",
+    "why": "V2: expedition tent"
+   }
   ]
  },
  "arrival": {
@@ -1708,6 +1608,10 @@
   "neonis": {
    "section": "062",
    "why": "V2: the landing ring on the starport deck"
+  },
+  "glyphos": {
+   "section": "072",
+   "why": "V2: the jetty at Sunken Landing"
   }
  },
  "unlisted": {},
@@ -1941,6 +1845,16 @@
     3,
     8
    ]
+  },
+  "072": {
+   "arrival": [
+    2,
+    7
+   ],
+   "default": [
+    2,
+    7
+   ]
   }
  },
  "zones": {
@@ -2123,6 +2037,28 @@
    "planet": "dustara",
    "label": "the Relay Gate back to Dustara",
    "why": "V2: the Relay Gate ring is the arrival point and the way home"
+  },
+  {
+   "section": "072",
+   "tiles": [
+    [
+     0,
+     6
+    ],
+    [
+     0,
+     7
+    ],
+    [
+     0,
+     8
+    ]
+   ],
+   "at_dy": 0,
+   "node": "dustara",
+   "planet": "dustara",
+   "label": "the Deep Sea Ferry back to the Long Dock",
+   "why": "V2: the jetty is the arrival point and the ferry home"
   }
  ],
  "trainers": {
@@ -2372,7 +2308,7 @@
    ],
    "face": "down",
    "kind": "door",
-   "parent": "072"
+   "parent": "073"
   },
   {
    "section": "177",
@@ -2387,7 +2323,7 @@
    ],
    "face": "down",
    "kind": "door",
-   "parent": "072"
+   "parent": "073"
   },
   {
    "section": "178",
@@ -3151,6 +3087,64 @@
    "face": "down",
    "kind": "door",
    "parent": "063"
+  },
+  {
+   "section": "080",
+   "tile": [
+    7,
+    4
+   ],
+   "to": "081",
+   "at": [
+    7,
+    13
+   ],
+   "face": "up",
+   "kind": "door"
+  },
+  {
+   "section": "080",
+   "tile": [
+    8,
+    4
+   ],
+   "to": "081",
+   "at": [
+    8,
+    13
+   ],
+   "face": "up",
+   "kind": "door"
+  },
+  {
+   "section": "081",
+   "tile": [
+    7,
+    14
+   ],
+   "to": "080",
+   "at": [
+    7,
+    5
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "080"
+  },
+  {
+   "section": "081",
+   "tile": [
+    8,
+    14
+   ],
+   "to": "080",
+   "at": [
+    8,
+    5
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "080"
   }
  ],
  "shared_rooms": [

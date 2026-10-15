@@ -6,7 +6,23 @@ A2={s['id']:s for s in json.load(open(S+'atlas_v2.json',encoding='utf-8'))['sect
 AT=json.load(open('art/sections/atlas.json',encoding='utf-8'));A1={s['id']:s for s in AT['sections']}
 L=json.load(open('data/sections/links.json',encoding='utf-8'))
 H=lambda x,y:{'tile':[x,y]}
-WIRE={'05':{
+WIRE={'06':{
+ 'ids':['%03d'%i for i in range(72,82)],
+ 'doors':[],'stairs':[],
+ 'objects':{
+  '073':[{'tile':[2,4],'k':'house','to':'177','why':'V2: expedition tent (shared Glyphos home)'},{'tile':[3,4],'k':'house','to':'177','why':'V2: expedition tent'},
+         {'tile':[14,4],'k':'house','to':'183','why':'V2: the big dig tent'},{'tile':[15,4],'k':'house','to':'183','why':'V2: the big dig tent'},
+         {'tile':[19,4],'k':'house','to':'177','why':'V2: expedition tent'},{'tile':[20,4],'k':'house','to':'177','why':'V2: expedition tent'}],
+ },
+ 'warps':[{'section':'080','tile':[7,4],'to':'081','at':[7,13],'face':'up','kind':'door'},{'section':'080','tile':[8,4],'to':'081','at':[8,13],'face':'up','kind':'door'},
+          {'section':'081','tile':[7,14],'to':'080','at':[7,5],'face':'down','kind':'door','parent':'080'},{'section':'081','tile':[8,14],'to':'080','at':[8,5],'face':'down','kind':'door','parent':'080'}],
+ 'gates':{},
+ 'gates_new':[{'section':'072','tiles':[[0,6],[0,7],[0,8]],'at_dy':0,'node':'dustara','planet':'dustara','label':'the Deep Sea Ferry back to the Long Dock','why':'V2: the jetty is the arrival point and the ferry home'}],
+ 'atlas_extra':{'078':['top edge, tile columns 6–9 (stairs up) → Temple of Voices 2F'],'079':['top edge, tile columns 6–9 (stairs up) → Temple of Voices 3F']},
+ 'spawns':{'072':{'arrival':[2,7],'default':[2,7]}},
+ 'arrival':{'glyphos':{'section':'072','why':'V2: the jetty at Sunken Landing'}},
+ 'reparent':{'177':'073','183':'073'},
+},'05':{
  'ids':['%03d'%i for i in range(62,72)]+['170'],
  'doors':[],'stairs':[],
  'objects':{

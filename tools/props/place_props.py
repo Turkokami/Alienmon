@@ -27,6 +27,17 @@ ZONE_TOWN = {'thalassa': [('wall', T(40, 41, 43, 44, 47, 50, 51), 2), ('wall', T
 # Towns are laid out by hand like a real street: lamps in straight evenly spaced rows, stalls in a line along the
 # shopfronts, planters in pairs either side of a door, benches facing each other. (prop, x, y)
 HAND = {
+ # Glyphos (sheet 06_glyphos): camp lanterns and banners, a finds table, cook fire and mess table, dig gear stacked by the tents, glyph stones and braziers in the ruins and temple
+ '072': [('06_glyphos/17', 7, 4), ('06_glyphos/17', 15, 4), ('06_glyphos/28', 13, 10), ('06_glyphos/21', 13, 12), ('06_glyphos/26', 5, 9), ('06_glyphos/26', 18, 9)],
+ '073': [('06_glyphos/27', 5, 5), ('06_glyphos/35', 6, 5), ('06_glyphos/27', 12, 5), ('06_glyphos/27', 17, 5), ('06_glyphos/35', 18, 5), ('06_glyphos/59', 4, 8), ('06_glyphos/94', 10, 8), ('06_glyphos/114', 15, 8), ('06_glyphos/12', 19, 8), ('06_glyphos/28', 4, 12), ('06_glyphos/28', 5, 12), ('06_glyphos/44', 8, 12), ('06_glyphos/25', 14, 12), ('06_glyphos/02', 18, 12), ('06_glyphos/33', 19, 12)],
+ '074': [('06_glyphos/121', 5, 5), ('06_glyphos/121', 10, 5), ('06_glyphos/132', 4, 12), ('06_glyphos/132', 11, 12)],
+ '075': [('06_glyphos/35', 6, 5), ('06_glyphos/35', 17, 5), ('06_glyphos/47', 3, 9), ('06_glyphos/47', 20, 9), ('06_glyphos/16', 9, 5)],
+ '076': [('06_glyphos/35', 6, 5), ('06_glyphos/35', 17, 5), ('06_glyphos/26', 4, 9), ('06_glyphos/26', 19, 9)],
+ '077': [('06_glyphos/47', 7, 5), ('06_glyphos/47', 16, 5), ('06_glyphos/121', 5, 9), ('06_glyphos/121', 18, 9)],
+ '078': [('06_glyphos/121', 2, 5), ('06_glyphos/121', 13, 5), ('06_glyphos/121', 2, 15), ('06_glyphos/121', 13, 15)],
+ '079': [('06_glyphos/121', 2, 4), ('06_glyphos/121', 13, 4), ('06_glyphos/63', 3, 10), ('06_glyphos/63', 12, 10), ('06_glyphos/121', 2, 18), ('06_glyphos/121', 13, 18)],
+ '080': [('06_glyphos/110', 3, 6), ('06_glyphos/110', 12, 6), ('06_glyphos/63', 4, 12), ('06_glyphos/63', 11, 12), ('06_glyphos/121', 2, 18), ('06_glyphos/121', 13, 18)],
+ '081': [('06_glyphos/130', 3, 5), ('06_glyphos/130', 12, 5), ('06_glyphos/132', 3, 12), ('06_glyphos/132', 12, 12)],
  # Neonis (sheet 05_neonis): neon lamp + planter rows, four evenly spaced market stalls, benches and vending machines
  '062': [('05_neonis/17', 7, 5), ('05_neonis/10', 8, 5), ('05_neonis/17', 12, 5), ('05_neonis/10', 13, 5), ('05_neonis/17', 17, 5), ('05_neonis/10', 18, 5), ('05_neonis/37', 7, 8), ('05_neonis/38', 11, 8), ('05_neonis/39', 15, 8), ('05_neonis/42', 19, 8), ('05_neonis/04', 2, 12), ('05_neonis/04', 5, 12), ('05_neonis/00', 9, 11), ('05_neonis/00', 13, 11), ('05_neonis/56', 16, 12), ('05_neonis/45', 19, 12), ('05_neonis/46', 20, 12)],
  '063': [('05_neonis/17', 6, 5), ('05_neonis/10', 7, 5), ('05_neonis/17', 12, 5), ('05_neonis/10', 13, 5), ('05_neonis/17', 18, 5), ('05_neonis/10', 19, 5), ('05_neonis/38', 5, 8), ('05_neonis/40', 9, 8), ('05_neonis/39', 13, 8), ('05_neonis/37', 17, 8), ('05_neonis/01', 2, 12), ('05_neonis/01', 6, 12), ('05_neonis/01', 15, 12), ('05_neonis/01', 19, 12), ('05_neonis/46', 21, 12)],

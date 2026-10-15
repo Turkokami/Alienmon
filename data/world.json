@@ -28,7 +28,7 @@
   },
   "glyphos": {
    "section": "072",
-   "why": "atlas exit marked arrival"
+   "why": "V2: the jetty at Sunken Landing"
   },
   "pyros": {
    "section": "082",
@@ -230,20 +230,20 @@
   },
   "M10:1": {
    "s": "081",
-   "x": 7,
+   "x": 9,
    "y": 4,
    "pts": [
     [
-     7,
+     9,
      4
     ],
     [
-     13,
-     5
+     2,
+     4
     ],
     [
-     9,
-     9
+     6,
+     8
     ]
    ]
   },
@@ -719,8 +719,8 @@
   },
   "S60:giver": {
    "s": "078",
-   "x": 9,
-   "y": 16
+   "x": 10,
+   "y": 18
   },
   "S60:0": {
    "s": "077",
@@ -732,16 +732,16 @@
      8
     ],
     [
-     9,
-     4
+     14,
+     3
     ],
     [
-     17,
-     6
+     8,
+     5
     ],
     [
-     5,
-     8
+     18,
+     7
     ],
     [
      9,
@@ -751,13 +751,13 @@
   },
   "S61:giver": {
    "s": "079",
-   "x": 9,
-   "y": 12
+   "x": 10,
+   "y": 11
   },
   "S62:giver": {
    "s": "080",
-   "x": 9,
-   "y": 9
+   "x": 10,
+   "y": 12
   },
   "S62:0": {
    "s": "080",
@@ -11418,55 +11418,67 @@
    ],
    "notes": "Landing among sunken ruins",
    "edges": {
-    "left": {
-     "to": "arrival",
-     "range": [
-      7,
-      8
-     ]
-    },
     "right": {
      "to": "073",
      "range": [
-      7,
-      8
+      5,
+      9
      ],
      "offset": 0
     }
    },
-   "warps": [],
+   "warps": [
+    {
+     "tile": [
+      0,
+      6
+     ],
+     "to": "planet:dustara",
+     "at": [
+      0,
+      6
+     ],
+     "face": "up",
+     "kind": "gate",
+     "node": "dustara",
+     "label": "the Deep Sea Ferry back to the Long Dock"
+    },
+    {
+     "tile": [
+      0,
+      7
+     ],
+     "to": "planet:dustara",
+     "at": [
+      0,
+      7
+     ],
+     "face": "up",
+     "kind": "gate",
+     "node": "dustara",
+     "label": "the Deep Sea Ferry back to the Long Dock"
+    },
+    {
+     "tile": [
+      0,
+      8
+     ],
+     "to": "planet:dustara",
+     "at": [
+      0,
+      8
+     ],
+     "face": "up",
+     "kind": "gate",
+     "node": "dustara",
+     "label": "the Deep Sea Ferry back to the Long Dock"
+    }
+   ],
    "objects": [
     {
      "tile": [
-      4,
-      3
-     ],
-     "k": "house",
-     "why": "house door: opens the shared Glyphos house",
-     "to": "177"
-    },
-    {
-     "tile": [
-      4,
-      13
-     ],
-     "k": "house",
-     "why": "house door: opens the shared Glyphos house",
-     "to": "177"
-    },
-    {
-     "tile": [
-      17,
-      11
-     ],
-     "k": "stop",
-     "t": "The stairs are blocked off. You can't go this way.",
-     "why": "dead-end stairs (tools/sections/dead_ends.py)"
-    },
-    {
-     "tile": [
       12,
-      2
+      3
      ],
      "k": "sign",
      "t": [
@@ -11476,7 +11488,7 @@
     {
      "tile": [
       10,
-      3
+      13
      ],
      "k": "stash",
      "item": "ether",
@@ -11486,11 +11498,11 @@
    ],
    "spawns": {
     "arrival": [
-     1,
+     2,
      7
     ],
     "default": [
-     1,
+     2,
      7
     ]
    },
@@ -11501,36 +11513,38 @@
    "pkey": "glyphos",
    "npcs": [
     {
-     "x": 1,
-     "y": 5,
+     "x": 11,
+     "y": 4,
      "art": "explorer",
      "face": "down",
      "t": [
       "Archaeologist: Welcome to Glyphos! Mind your step, half this place is underwater at high tide.",
       "Dig Camp is just east. They've got a Recovery Tent if your team needs patching up."
      ],
+     "stay": true,
      "src": "p:072:0"
     },
     {
-     "x": 13,
-     "y": 5,
+     "x": 15,
+     "y": 9,
      "art": "squidsailor",
      "face": "down",
      "t": [
       "Ferry hand: The Deep Sea Ferry runs here and back. Nobody else is brave enough to sail these ruins."
      ],
+     "stay": true,
      "src": "p:072:1"
     }
    ],
    "mons": [
     {
-     "x": 22,
-     "y": 6,
+     "x": 4,
+     "y": 9,
      "mon": "Runeguard"
     },
     {
-     "x": 10,
-     "y": 4,
+     "x": 9,
+     "y": 13,
      "mon": "Obeliskor"
     }
    ]
@@ -11551,16 +11565,16 @@
     "left": {
      "to": "072",
      "range": [
-      7,
-      8
+      5,
+      10
      ],
      "offset": 0
     },
     "right": {
      "to": "075",
      "range": [
-      7,
-      8
+      5,
+      10
      ],
      "offset": 0
     }
@@ -11568,13 +11582,27 @@
    "warps": [
     {
      "tile": [
-      18,
+      8,
       4
      ],
      "to": "074",
      "at": [
       7,
-      11
+      13
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    },
+    {
+     "tile": [
+      9,
+      4
+     ],
+     "to": "074",
+     "at": [
+      8,
+      13
      ],
      "face": "up",
      "kind": "door",
@@ -11584,53 +11612,62 @@
    "objects": [
     {
      "tile": [
-      11,
-      10
+      2,
+      4
      ],
      "k": "house",
-     "why": "house door: opens the shared Glyphos house",
-     "to": "177"
+     "to": "177",
+     "why": "V2: expedition tent (shared Glyphos home)"
+    },
+    {
+     "tile": [
+      3,
+      4
+     ],
+     "k": "house",
+     "to": "177",
+     "why": "V2: expedition tent"
+    },
+    {
+     "tile": [
+      14,
+      4
+     ],
+     "k": "house",
+     "to": "183",
+     "why": "V2: the big dig tent"
+    },
+    {
+     "tile": [
+      15,
+      4
+     ],
+     "k": "house",
+     "to": "183",
+     "why": "V2: the big dig tent"
     },
     {
      "tile": [
       19,
-      11
+      4
      ],
      "k": "house",
-     "why": "house door: opens the shared Glyphos house",
-     "to": "177"
+     "to": "177",
+     "why": "V2: expedition tent"
     },
     {
      "tile": [
-      4,
-      11
+      20,
+      4
      ],
      "k": "house",
-     "to": "183",
-     "why": "walk-in door: dig_camp_tent"
-    },
-    {
-     "tile": [
-      11,
-      14
-     ],
-     "k": "stop",
-     "t": "The stairs are blocked off. You can't go this way.",
-     "why": "dead-end stairs (tools/sections/dead_ends.py)"
-    },
-    {
-     "tile": [
-      12,
-      14
-     ],
-     "k": "stop",
-     "t": "The stairs are blocked off. You can't go this way.",
-     "why": "dead-end stairs (tools/sections/dead_ends.py)"
+     "to": "177",
+     "why": "V2: expedition tent"
     },
     {
      "tile": [
       1,
-      6
+      4
      ],
      "k": "sign",
      "t": [
@@ -11639,8 +11676,8 @@
     },
     {
      "tile": [
-      8,
-      4
+      9,
+      12
      ],
      "k": "stash",
      "item": "megagel",
@@ -11651,7 +11688,7 @@
    "spawns": {
     "default": [
      1,
-     7
+     5
     ]
    },
    "grid": [
@@ -11661,80 +11698,87 @@
    "pkey": "glyphos",
    "npcs": [
     {
-     "x": 11,
+     "x": 12,
      "y": 6,
      "art": "explorer",
      "face": "down",
      "t": [
       "Archaeologist: These glyphs tell the Alienmon's story. Read the murals and you'll see."
      ],
+     "stay": true,
      "src": "p:073:0"
     },
     {
-     "x": 5,
-     "y": 5,
+     "x": 18,
+     "y": 11,
      "art": "researcher",
      "face": "down",
      "t": [
       "Rune scholar: Crystal-types grow in the old courtyards. They love the humming stones."
      ],
+     "stay": true,
      "src": "p:073:1"
     },
     {
-     "x": 18,
-     "y": 8,
+     "x": 4,
+     "y": 7,
      "art": "pilgrim",
      "face": "down",
      "t": [
       "Pilgrim: The obelisks in Glyph Hollow hum when you carry Signal Shards near them."
      ],
+     "stay": true,
      "src": "p:073:2"
     },
     {
-     "x": 10,
-     "y": 4,
+     "x": 1,
+     "y": 12,
      "art": "miner",
      "face": "down",
      "t": [
       "Digger: We found a whole hall of murals past the Coral Ruins. Took us a month to drain the steps."
      ],
+     "stay": true,
      "src": "p:073:3"
     },
     {
-     "x": 22,
-     "y": 11,
+     "x": 20,
+     "y": 6,
      "art": "explorer",
      "face": "down",
      "t": [
       "Archaeologist: Trainers out on the ruins will spot you if you walk in their line of sight. Be ready."
      ],
+     "stay": true,
      "src": "p:073:4"
     },
     {
-     "x": 1,
-     "y": 12,
+     "x": 15,
+     "y": 9,
      "art": "civilian",
      "face": "down",
      "t": [
       "Camp cook: No shop out here, friend. Stock up on pods and potions before you ride the ferry."
      ],
+     "stay": true,
      "src": "p:073:5"
     },
     {
-     "x": 15,
-     "y": 5,
+     "x": 5,
+     "y": 11,
      "art": "researcher",
      "face": "down",
      "t": [
       "Rune scholar: Some Helix folks came asking where the murals were. Wouldn't say why. I didn't like it."
      ],
+     "stay": true,
      "src": "p:073:6"
     }
    ],
    "mons": [
     {
-     "x": 22,
-     "y": 5,
+     "x": 11,
+     "y": 12,
      "mon": "Fossilily"
     }
    ]
@@ -11756,11 +11800,11 @@
     {
      "tile": [
       7,
-      12
+      14
      ],
      "to": "073",
      "at": [
-      18,
+      8,
       5
      ],
      "face": "down",
@@ -11769,11 +11813,11 @@
     {
      "tile": [
       8,
-      12
+      14
      ],
      "to": "073",
      "at": [
-      18,
+      8,
       5
      ],
      "face": "down",
@@ -11783,21 +11827,27 @@
    "objects": [
     {
      "tile": [
-      8,
-      5
+      7,
+      4
      ],
-     "k": "bay",
-     "why": "healing pod in the middle of the tent, used from (8,6)"
+     "k": "bay"
+    },
+    {
+     "tile": [
+      8,
+      4
+     ],
+     "k": "bay"
     }
    ],
    "spawns": {
     "door": [
      7,
-     11
+     13
     ],
     "default": [
      7,
-     11
+     13
     ]
    },
    "parent": "073",
@@ -11805,7 +11855,7 @@
    "npcs": [
     {
      "x": 8,
-     "y": 5,
+     "y": 4,
      "art": "nurse",
      "face": "down",
      "t": [
@@ -11816,13 +11866,14 @@
      "src": "p:074:0"
     },
     {
-     "x": 10,
-     "y": 8,
+     "x": 9,
+     "y": 12,
      "art": "explorer",
      "face": "down",
      "t": [
       "Archaeologist: Dust, damp, and angry Alienmon. This tent has saved my dig crew more times than I can count."
      ],
+     "stay": true,
      "src": "p:074:1"
     }
    ]
@@ -11843,16 +11894,16 @@
     "left": {
      "to": "073",
      "range": [
-      7,
-      8
+      5,
+      9
      ],
      "offset": 0
     },
     "right": {
      "to": "076",
      "range": [
-      7,
-      8
+      5,
+      9
      ],
      "offset": 0
     }
@@ -11862,15 +11913,6 @@
     {
      "tile": [
       11,
-      10
-     ],
-     "k": "stop",
-     "t": "The stairs are blocked off. You can't go this way.",
-     "why": "dead-end stairs (tools/sections/dead_ends.py)"
-    },
-    {
-     "tile": [
-      3,
       14
      ],
      "k": "stash",
@@ -11880,8 +11922,8 @@
     },
     {
      "tile": [
-      11,
-      2
+      17,
+      12
      ],
      "k": "stash",
      "item": "revive",
@@ -11892,7 +11934,7 @@
    "spawns": {
     "default": [
      1,
-     7
+     5
     ]
    },
    "grid": [
@@ -11902,20 +11944,21 @@
    "pkey": "glyphos",
    "npcs": [
     {
-     "x": 6,
-     "y": 5,
+     "x": 10,
+     "y": 6,
      "art": "wanderer",
      "face": "down",
      "t": [
       "Wanderer: Tall grass grows thick between the ruins. Wild Alienmon hide in every patch."
      ],
+     "stay": true,
      "src": "p:075:0"
     },
     {
-     "x": 14,
-     "y": 5,
+     "x": 16,
+     "y": 9,
      "art": "explorer",
-     "face": "down",
+     "face": "up",
      "t": [],
      "id": "sec075_tr1",
      "trainer": {
@@ -11925,10 +11968,10 @@
      }
     },
     {
-     "x": 12,
-     "y": 5,
+     "x": 4,
+     "y": 9,
      "art": "pilgrim",
-     "face": "down",
+     "face": "up",
      "t": [],
      "id": "sec075_tr2",
      "trainer": {
@@ -11940,13 +11983,13 @@
    ],
    "mons": [
     {
-     "x": 21,
-     "y": 9,
+     "x": 20,
+     "y": 3,
      "mon": "Prismwolf"
     },
     {
-     "x": 1,
-     "y": 9,
+     "x": 3,
+     "y": 3,
      "mon": "Memoria"
     }
    ]
@@ -11967,16 +12010,16 @@
     "left": {
      "to": "075",
      "range": [
-      7,
-      8
+      5,
+      9
      ],
      "offset": 0
     },
     "right": {
      "to": "077",
      "range": [
-      7,
-      8
+      5,
+      9
      ],
      "offset": 0
     }
@@ -11985,25 +12028,7 @@
    "objects": [
     {
      "tile": [
-      4,
-      10
-     ],
-     "k": "stop",
-     "t": "The stairs are blocked off. You can't go this way.",
-     "why": "dead-end stairs (tools/sections/dead_ends.py)"
-    },
-    {
-     "tile": [
-      15,
-      12
-     ],
-     "k": "stop",
-     "t": "The stairs are blocked off. You can't go this way.",
-     "why": "dead-end stairs (tools/sections/dead_ends.py)"
-    },
-    {
-     "tile": [
-      22,
+      11,
       14
      ],
      "k": "stash",
@@ -12013,8 +12038,8 @@
     },
     {
      "tile": [
-      6,
-      2
+      13,
+      14
      ],
      "k": "stash",
      "item": "harmonic",
@@ -12025,7 +12050,7 @@
    "spawns": {
     "default": [
      1,
-     7
+     5
     ]
    },
    "grid": [
@@ -12035,28 +12060,30 @@
    "pkey": "glyphos",
    "npcs": [
     {
-     "x": 9,
-     "y": 6,
+     "x": 12,
+     "y": 5,
      "art": "researcher",
      "face": "down",
      "t": [
       "Rune scholar: The glyph under that pool glows at night. I think the whole valley was once a temple."
      ],
+     "stay": true,
      "src": "p:076:0"
     },
     {
-     "x": 14,
-     "y": 7,
+     "x": 7,
+     "y": 9,
      "art": "pilgrim",
      "face": "down",
      "t": [
       "Pilgrim: Weaken a wild one before you throw a Stasis Pod. A tired Alienmon is an easy catch."
      ],
+     "stay": true,
      "src": "p:076:1"
     },
     {
-     "x": 7,
-     "y": 6,
+     "x": 19,
+     "y": 4,
      "art": "pilgrim",
      "face": "down",
      "t": [],
@@ -12068,10 +12095,10 @@
      }
     },
     {
-     "x": 3,
-     "y": 6,
+     "x": 13,
+     "y": 12,
      "art": "researcher",
-     "face": "down",
+     "face": "up",
      "t": [],
      "id": "sec076_tr3",
      "trainer": {
@@ -12083,13 +12110,13 @@
    ],
    "mons": [
     {
-     "x": 21,
-     "y": 11,
+     "x": 4,
+     "y": 4,
      "mon": "Runeguard"
     },
     {
-     "x": 19,
-     "y": 3,
+     "x": 17,
+     "y": 9,
      "mon": "Obeliskor"
     }
    ]
@@ -12110,8 +12137,8 @@
     "left": {
      "to": "076",
      "range": [
-      7,
-      8
+      5,
+      9
      ],
      "offset": 0
     }
@@ -12120,7 +12147,21 @@
     {
      "tile": [
       23,
-      7
+      5
+     ],
+     "to": "078",
+     "at": [
+      6,
+      22
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      6
      ],
      "to": "078",
      "at": [
@@ -12134,7 +12175,7 @@
     {
      "tile": [
       23,
-      8
+      7
      ],
      "to": "078",
      "at": [
@@ -12147,51 +12188,24 @@
     },
     {
      "tile": [
-      12,
-      2
+      23,
+      8
      ],
-     "to": "081",
+     "to": "078",
      "at": [
-      7,
-      14
+      9,
+      22
      ],
      "face": "up",
-     "kind": "door",
-     "edge": "up"
+     "kind": "edge",
+     "edge": "right"
     }
    ],
    "objects": [
     {
      "tile": [
-      3,
-      11
-     ],
-     "k": "sign",
-     "t": "Fallen stone blocks the way.",
-     "why": "door plan: ruin door with no interior yet"
-    },
-    {
-     "tile": [
-      7,
-      14
-     ],
-     "k": "stop",
-     "t": "The stairs are blocked off. You can't go this way.",
-     "why": "dead-end stairs (tools/sections/dead_ends.py)"
-    },
-    {
-     "tile": [
-      8,
-      14
-     ],
-     "k": "stop",
-     "t": "The stairs are blocked off. You can't go this way.",
-     "why": "dead-end stairs (tools/sections/dead_ends.py)"
-    },
-    {
-     "tile": [
-      10,
-      8
+      4,
+      2
      ],
      "k": "sign",
      "t": [
@@ -12200,8 +12214,8 @@
     },
     {
      "tile": [
-      14,
-      8
+      19,
+      4
      ],
      "k": "sign",
      "t": [
@@ -12210,8 +12224,8 @@
     },
     {
      "tile": [
-      8,
-      3
+      10,
+      12
      ],
      "k": "stash",
      "item": "megagel",
@@ -12220,8 +12234,8 @@
     },
     {
      "tile": [
-      19,
-      12
+      15,
+      3
      ],
      "k": "stash",
      "item": "harmonic",
@@ -12232,7 +12246,7 @@
    "spawns": {
     "default": [
      1,
-     7
+     5
     ]
    },
    "grid": [
@@ -12242,30 +12256,32 @@
    "pkey": "glyphos",
    "npcs": [
     {
-     "x": 5,
+     "x": 7,
      "y": 6,
      "art": "pilgrim",
      "face": "down",
      "t": [
       "Pilgrim: The Guardian Stones circle the hollow. Some say they still guard something sleeping."
      ],
+     "stay": true,
      "src": "p:077:0"
     },
     {
-     "x": 20,
-     "y": 6,
+     "x": 19,
+     "y": 8,
      "art": "explorer",
      "face": "down",
      "t": [
       "Archaeologist: The glowing door up the steps leads to the Mural Hall. Go look. Really look."
      ],
+     "stay": true,
      "src": "p:077:1"
     },
     {
-     "x": 10,
-     "y": 3,
+     "x": 12,
+     "y": 9,
      "art": "researcher",
-     "face": "left",
+     "face": "up",
      "t": [],
      "id": "sec077_tr2",
      "trainer": {
@@ -12275,10 +12291,10 @@
      }
     },
     {
-     "x": 9,
-     "y": 7,
+     "x": 15,
+     "y": 5,
      "art": "explorer",
-     "face": "left",
+     "face": "down",
      "t": [],
      "id": "sec077_tr3",
      "trainer": {
@@ -12290,13 +12306,13 @@
    ],
    "mons": [
     {
-     "x": 18,
-     "y": 11,
+     "x": 13,
+     "y": 3,
      "mon": "Prismwolf"
     },
     {
-     "x": 0,
-     "y": 6,
+     "x": 14,
+     "y": 11,
      "mon": "Memoria"
     }
    ]
@@ -12317,7 +12333,35 @@
    "warps": [
     {
      "tile": [
+      6,
+      23
+     ],
+     "to": "077",
+     "at": [
+      22,
+      5
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
       7,
+      23
+     ],
+     "to": "077",
+     "at": [
+      22,
+      6
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      8,
       23
      ],
      "to": "077",
@@ -12331,7 +12375,7 @@
     },
     {
      "tile": [
-      8,
+      9,
       23
      ],
      "to": "077",
@@ -12345,6 +12389,20 @@
     },
     {
      "tile": [
+      6,
+      0
+     ],
+     "to": "079",
+     "at": [
+      6,
+      22
+     ],
+     "face": "up",
+     "kind": "stairs",
+     "edge": "top"
+    },
+    {
+     "tile": [
       7,
       0
      ],
@@ -12370,32 +12428,47 @@
      "face": "up",
      "kind": "stairs",
      "edge": "top"
+    },
+    {
+     "tile": [
+      9,
+      0
+     ],
+     "to": "079",
+     "at": [
+      9,
+      22
+     ],
+     "face": "up",
+     "kind": "stairs",
+     "edge": "top"
     }
    ],
    "objects": [],
    "spawns": {
     "default": [
-     7,
+     6,
      22
     ]
    },
    "pkey": "glyphos",
    "npcs": [
     {
-     "x": 9,
-     "y": 12,
+     "x": 10,
+     "y": 3,
      "art": "pilgrim",
      "face": "down",
      "t": [
       "Pilgrim: This is the Temple of Voices. Long ago the bells up top sang every dawn."
      ],
+     "stay": true,
      "src": "p:078:0"
     },
     {
-     "x": 4,
-     "y": 9,
+     "x": 10,
+     "y": 12,
      "art": "explorer",
-     "face": "up",
+     "face": "left",
      "t": [],
      "id": "sec078_tr1",
      "trainer": {
@@ -12422,6 +12495,20 @@
    "warps": [
     {
      "tile": [
+      6,
+      23
+     ],
+     "to": "078",
+     "at": [
+      6,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
       7,
       23
      ],
@@ -12450,6 +12537,34 @@
     },
     {
      "tile": [
+      9,
+      23
+     ],
+     "to": "078",
+     "at": [
+      9,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      6,
+      0
+     ],
+     "to": "080",
+     "at": [
+      6,
+      22
+     ],
+     "face": "up",
+     "kind": "stairs",
+     "edge": "top"
+    },
+    {
+     "tile": [
       7,
       0
      ],
@@ -12475,51 +12590,47 @@
      "face": "up",
      "kind": "stairs",
      "edge": "top"
-    }
-   ],
-   "objects": [
-    {
-     "tile": [
-      5,
-      17
-     ],
-     "k": "sign",
-     "t": "Fallen stone blocks the way.",
-     "why": "door plan: ruin door with no interior yet"
     },
     {
      "tile": [
-      10,
-      17
+      9,
+      0
      ],
-     "k": "sign",
-     "t": "Fallen stone blocks the way.",
-     "why": "door plan: ruin door with no interior yet"
+     "to": "080",
+     "at": [
+      9,
+      22
+     ],
+     "face": "up",
+     "kind": "stairs",
+     "edge": "top"
     }
    ],
+   "objects": [],
    "spawns": {
     "default": [
-     7,
+     6,
      22
     ]
    },
    "pkey": "glyphos",
    "npcs": [
     {
-     "x": 9,
-     "y": 10,
+     "x": 10,
+     "y": 3,
      "art": "researcher",
      "face": "down",
      "t": [
       "Rune scholar: Every floor has the same glyph in the floor: a seed with wings. Curious, no?"
      ],
+     "stay": true,
      "src": "p:079:0"
     },
     {
-     "x": 6,
-     "y": 13,
+     "x": 10,
+     "y": 12,
      "art": "pilgrim",
-     "face": "right",
+     "face": "left",
      "t": [],
      "id": "sec079_tr1",
      "trainer": {
@@ -12546,6 +12657,20 @@
    "warps": [
     {
      "tile": [
+      6,
+      23
+     ],
+     "to": "079",
+     "at": [
+      6,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
       7,
       23
      ],
@@ -12571,13 +12696,53 @@
      "face": "down",
      "kind": "edge",
      "edge": "bottom"
+    },
+    {
+     "tile": [
+      9,
+      23
+     ],
+     "to": "079",
+     "at": [
+      9,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      7,
+      4
+     ],
+     "to": "081",
+     "at": [
+      7,
+      13
+     ],
+     "face": "up",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      4
+     ],
+     "to": "081",
+     "at": [
+      8,
+      13
+     ],
+     "face": "up",
+     "kind": "door"
     }
    ],
    "objects": [
     {
      "tile": [
-      7,
-      0
+      4,
+      4
      ],
      "k": "sign",
      "t": [
@@ -12588,7 +12753,7 @@
    ],
    "spawns": {
     "default": [
-     7,
+     6,
      22
     ]
    },
@@ -12596,19 +12761,20 @@
    "npcs": [
     {
      "x": 9,
-     "y": 11,
+     "y": 5,
      "art": "pilgrim",
      "face": "down",
      "t": [
       "Pilgrim: The chimes fell silent ages ago. They say a Chimelet's song could wake them."
      ],
+     "stay": true,
      "src": "p:080:0"
     },
     {
-     "x": 6,
-     "y": 12,
+     "x": 10,
+     "y": 15,
      "art": "researcher",
-     "face": "right",
+     "face": "left",
      "t": [],
      "id": "sec080_tr1",
      "trainer": {
@@ -12636,12 +12802,12 @@
     {
      "tile": [
       7,
-      15
+      14
      ],
-     "to": "077",
+     "to": "080",
      "at": [
-      12,
-      3
+      7,
+      5
      ],
      "face": "down",
      "kind": "door"
@@ -12649,12 +12815,12 @@
     {
      "tile": [
       8,
-      15
+      14
      ],
-     "to": "077",
+     "to": "080",
      "at": [
-      12,
-      3
+      8,
+      5
      ],
      "face": "down",
      "kind": "door"
@@ -12696,36 +12862,34 @@
     }
    ],
    "spawns": {
-    "door": [
-     7,
-     14
-    ],
     "default": [
-     7,
-     14
+     8,
+     8
     ]
    },
-   "parent": "077",
+   "parent": "080",
    "pkey": "glyphos",
    "npcs": [
     {
-     "x": 11,
-     "y": 7,
+     "x": 9,
+     "y": 12,
      "art": "researcher",
      "face": "down",
      "t": [
       "Rune scholar: Three murals. A home, a hunger, a mother. Read them left to right."
      ],
+     "stay": true,
      "src": "p:081:0"
     },
     {
-     "x": 2,
-     "y": 9,
+     "x": 7,
+     "y": 4,
      "art": "pilgrim",
      "face": "down",
      "t": [
       "Pilgrim: If the murals are true, every Alienmon you've met is a refugee. Makes you want to be kinder."
      ],
+     "stay": true,
      "src": "p:081:1"
     }
    ]
@@ -24508,7 +24672,7 @@
      12
     ]
    },
-   "parent": "072",
+   "parent": "073",
    "pkey": "glyphos",
    "npcs": [
     {
@@ -27090,209 +27254,198 @@
   },
   {
    "from_id": "072",
-   "edge": "left",
-   "tile_range": [
-    7,
-    8
-   ],
-   "to_id": "arrival",
-   "to_edge": null,
-   "to_tile": null
-  },
-  {
-   "from_id": "072",
    "edge": "right",
    "tile_range": [
-    7,
-    8
+    5,
+    9
    ],
    "to_id": "073",
    "to_edge": "left",
    "to_tile": [
-    7,
-    8
+    5,
+    10
    ]
   },
   {
    "from_id": "073",
    "edge": "left",
    "tile_range": [
-    7,
-    8
+    5,
+    10
    ],
    "to_id": "072",
    "to_edge": "right",
    "to_tile": [
-    7,
-    8
+    5,
+    9
    ]
   },
   {
    "from_id": "073",
    "edge": "right",
    "tile_range": [
-    7,
-    8
+    5,
+    10
    ],
    "to_id": "075",
    "to_edge": "left",
    "to_tile": [
-    7,
-    8
+    5,
+    9
    ]
   },
   {
    "from_id": "075",
    "edge": "left",
    "tile_range": [
-    7,
-    8
+    5,
+    9
    ],
    "to_id": "073",
    "to_edge": "right",
    "to_tile": [
-    7,
-    8
+    5,
+    10
    ]
   },
   {
    "from_id": "075",
    "edge": "right",
    "tile_range": [
-    7,
-    8
+    5,
+    9
    ],
    "to_id": "076",
    "to_edge": "left",
    "to_tile": [
-    7,
-    8
+    5,
+    9
    ]
   },
   {
    "from_id": "076",
    "edge": "left",
    "tile_range": [
-    7,
-    8
+    5,
+    9
    ],
    "to_id": "075",
    "to_edge": "right",
    "to_tile": [
-    7,
-    8
+    5,
+    9
    ]
   },
   {
    "from_id": "076",
    "edge": "right",
    "tile_range": [
-    7,
-    8
+    5,
+    9
    ],
    "to_id": "077",
    "to_edge": "left",
    "to_tile": [
-    7,
-    8
+    5,
+    9
    ]
   },
   {
    "from_id": "077",
    "edge": "left",
    "tile_range": [
-    7,
-    8
+    5,
+    9
    ],
    "to_id": "076",
    "to_edge": "right",
    "to_tile": [
-    7,
-    8
+    5,
+    9
    ]
   },
   {
    "from_id": "077",
    "edge": "right",
    "tile_range": [
-    7,
-    8
+    5,
+    9
    ],
    "to_id": "078",
    "to_edge": "bottom",
    "to_tile": [
-    7,
-    8
+    6,
+    9
    ]
   },
   {
    "from_id": "078",
    "edge": "bottom",
    "tile_range": [
-    7,
-    8
+    6,
+    9
    ],
    "to_id": "077",
    "to_edge": "right",
    "to_tile": [
-    7,
-    8
+    5,
+    9
    ]
   },
   {
    "from_id": "078",
    "edge": "top",
    "tile_range": [
-    7,
-    8
+    6,
+    9
    ],
    "to_id": "079",
    "to_edge": "bottom",
    "to_tile": [
-    7,
-    8
+    6,
+    9
    ]
   },
   {
    "from_id": "079",
    "edge": "bottom",
    "tile_range": [
-    7,
-    8
+    6,
+    9
    ],
    "to_id": "078",
    "to_edge": "top",
    "to_tile": [
-    7,
-    8
+    6,
+    9
    ]
   },
   {
    "from_id": "079",
    "edge": "top",
    "tile_range": [
-    7,
-    8
+    6,
+    9
    ],
    "to_id": "080",
    "to_edge": "bottom",
    "to_tile": [
-    7,
-    8
+    6,
+    9
    ]
   },
   {
    "from_id": "080",
    "edge": "bottom",
    "tile_range": [
-    7,
-    8
+    6,
+    9
    ],
    "to_id": "079",
    "to_edge": "top",
    "to_tile": [
-    7,
-    8
+    6,
+    9
    ]
   },
   {

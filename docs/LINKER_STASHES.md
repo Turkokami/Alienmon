@@ -100,14 +100,14 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 
 | Section | Tile | Item | Tier |
 |---|---|---|---|
-| 072 Sunken Landing | 10,3 | 1x Ether Gel | 3 |
-| 073 Dig Camp | 8,4 | 2x Mega Gel | 3 |
-| 075 Coral Ruins Part A | 3,14 | 1x Signal Jammer | 3 |
-| 075 Coral Ruins Part A | 11,2 | 2x Revive Spark | 3 |
-| 076 Coral Ruins Part B | 22,14 | 2x Stun Spray | 3 |
-| 076 Coral Ruins Part B | 6,2 | 3x Harmonic Pod | 3 |
-| 077 Glyph Hollow | 8,3 | 2x Mega Gel | 3 |
-| 077 Glyph Hollow | 19,12 | 3x Harmonic Pod | 3 |
+| 072 Sunken Landing | 10,13 | 1x Ether Gel | 3 |
+| 073 Dig Camp | 9,12 | 2x Mega Gel | 3 |
+| 075 Coral Ruins Part A | 11,14 | 1x Signal Jammer | 3 |
+| 075 Coral Ruins Part A | 17,12 | 2x Revive Spark | 3 |
+| 076 Coral Ruins Part B | 11,14 | 2x Stun Spray | 3 |
+| 076 Coral Ruins Part B | 13,14 | 3x Harmonic Pod | 3 |
+| 077 Glyph Hollow | 10,12 | 2x Mega Gel | 3 |
+| 077 Glyph Hollow | 15,3 | 3x Harmonic Pod | 3 |
 
 ## Pyros (10)
 
