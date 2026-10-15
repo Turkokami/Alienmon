@@ -1409,7 +1409,12 @@
    "t": [
     "Dr. Vashti: The signal is clearer here. Neonis hears everything in the system.",
     "Dr. Vashti: Keep going, Linker. Every Shard brings us closer to the truth."
-   ]
+   ],
+   "tile": [
+    13,
+    6
+   ],
+   "stay": true
   }
  ],
  "157": [

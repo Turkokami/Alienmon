@@ -87,14 +87,14 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 
 | Section | Tile | Item | Tier |
 |---|---|---|---|
-| 062 Neonis Starport | 12,13 | 2x Stun Spray | 3 |
-| 063 Neon Boulevard | 8,4 | 500x Stardust | 3 |
-| 066 Arcade District | 8,14 | 1x Ether Gel | 3 |
-| 066 Arcade District | 11,2 | 500x Stardust | 3 |
-| 067 Broadcast Route Part A | 19,3 | 2x Revive Spark | 3 |
-| 067 Broadcast Route Part A | 19,13 | 2x Mega Gel | 3 |
-| 068 Broadcast Route Part B | 7,11 | 500x Stardust | 3 |
-| 068 Broadcast Route Part B | 1,5 | 2x Mega Gel | 3 |
+| 062 Neonis Starport | 0,12 | 2x Stun Spray | 3 |
+| 063 Neon Boulevard | 4,12 | 500x Stardust | 3 |
+| 066 Arcade District | 21,4 | 1x Ether Gel | 3 |
+| 066 Arcade District | 3,4 | 500x Stardust | 3 |
+| 067 Broadcast Route Part A | 11,14 | 2x Revive Spark | 3 |
+| 067 Broadcast Route Part A | 10,1 | 2x Mega Gel | 3 |
+| 068 Broadcast Route Part B | 11,14 | 500x Stardust | 3 |
+| 068 Broadcast Route Part B | 11,0 | 2x Mega Gel | 3 |
 
 ## Glyphos (8)
 

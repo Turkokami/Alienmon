@@ -672,47 +672,6 @@
     "why": "dead-end stairs (tools/sections/dead_ends.py)"
    }
   ],
-  "062": [],
-  "063": [
-   {
-    "tile": [
-     17,
-     4
-    ],
-    "k": "bay",
-    "why": "Neon Boulevard Recovery Bay (no interior yet, so the door works like the counter)",
-    "door": true
-   },
-   {
-    "tile": [
-     19,
-     12
-    ],
-    "k": "house",
-    "to": "192",
-    "why": "house door: path in front opened to match the drawn ground"
-   }
-  ],
-  "066": [
-   {
-    "tile": [
-     3,
-     4
-    ],
-    "k": "house",
-    "why": "house door: opens the shared Neonis house",
-    "to": "176"
-   },
-   {
-    "tile": [
-     17,
-     4
-    ],
-    "k": "house",
-    "to": "180",
-    "why": "walk-in door: arcade_hall"
-   }
-  ],
   "072": [
    {
     "tile": [
@@ -1182,28 +1141,6 @@
     "to": "193"
    }
   ],
-  "067": [
-   {
-    "tile": [
-     6,
-     12
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   }
-  ],
-  "068": [
-   {
-    "tile": [
-     18,
-     12
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   }
-  ],
   "092": [
    {
     "tile": [
@@ -1635,6 +1572,120 @@
     "to": "191",
     "why": "V2: market house"
    }
+  ],
+  "062": [
+   {
+    "tile": [
+     3,
+     4
+    ],
+    "k": "house",
+    "to": "192",
+    "why": "V2: Starport apartment (shared Neonis home)"
+   },
+   {
+    "tile": [
+     4,
+     4
+    ],
+    "k": "house",
+    "to": "192",
+    "why": "V2: Starport apartment"
+   },
+   {
+    "tile": [
+     9,
+     4
+    ],
+    "k": "house",
+    "to": "064",
+    "why": "V2: Starport Recovery Bay (shared room)"
+   },
+   {
+    "tile": [
+     10,
+     4
+    ],
+    "k": "house",
+    "to": "064",
+    "why": "V2: Starport Recovery Bay"
+   },
+   {
+    "tile": [
+     14,
+     4
+    ],
+    "k": "house",
+    "to": "065",
+    "why": "V2: Starport shop (shared room)"
+   },
+   {
+    "tile": [
+     15,
+     4
+    ],
+    "k": "house",
+    "to": "065",
+    "why": "V2: Starport shop"
+   },
+   {
+    "tile": [
+     19,
+     4
+    ],
+    "k": "house",
+    "to": "192",
+    "why": "V2: Starport apartment"
+   },
+   {
+    "tile": [
+     20,
+     4
+    ],
+    "k": "house",
+    "to": "192",
+    "why": "V2: Starport apartment"
+   }
+  ],
+  "063": [
+   {
+    "tile": [
+     20,
+     4
+    ],
+    "k": "house",
+    "to": "192",
+    "why": "V2: Boulevard apartment (shared Neonis home)"
+   },
+   {
+    "tile": [
+     21,
+     4
+    ],
+    "k": "house",
+    "to": "192",
+    "why": "V2: Boulevard apartment"
+   }
+  ],
+  "066": [
+   {
+    "tile": [
+     11,
+     3
+    ],
+    "k": "house",
+    "to": "180",
+    "why": "V2: the arcade hall"
+   },
+   {
+    "tile": [
+     12,
+     3
+    ],
+    "k": "house",
+    "to": "180",
+    "why": "V2: the arcade hall"
+   }
   ]
  },
  "arrival": {
@@ -1653,6 +1704,10 @@
   "thalassa": {
    "section": "052",
    "why": "V2: the compass landing pad on the Saltreach docks"
+  },
+  "neonis": {
+   "section": "062",
+   "why": "V2: the landing ring on the starport deck"
   }
  },
  "unlisted": {},
@@ -1689,7 +1744,7 @@
   },
   "170": {
    "default": [
-    8,
+    7,
     13
    ]
   },
@@ -1875,6 +1930,16 @@
    "default": [
     3,
     7
+   ]
+  },
+  "062": {
+   "arrival": [
+    3,
+    8
+   ],
+   "default": [
+    3,
+    8
    ]
   }
  },
@@ -2115,50 +2180,6 @@
  ],
  "warps": [
   {
-   "section": "063",
-   "tile": [
-    3,
-    4
-   ],
-   "to": "170",
-   "at": [
-    8,
-    13
-   ],
-   "face": "up",
-   "kind": "door"
-  },
-  {
-   "section": "170",
-   "tile": [
-    7,
-    14
-   ],
-   "to": "063",
-   "at": [
-    3,
-    5
-   ],
-   "face": "down",
-   "kind": "door",
-   "parent": "063"
-  },
-  {
-   "section": "170",
-   "tile": [
-    8,
-    14
-   ],
-   "to": "063",
-   "at": [
-    3,
-    5
-   ],
-   "face": "down",
-   "kind": "door",
-   "parent": "063"
-  },
-  {
    "section": "171",
    "tile": [
     7,
@@ -2321,7 +2342,7 @@
    ],
    "face": "down",
    "kind": "door",
-   "parent": "062"
+   "parent": "063"
   },
   {
    "section": "176",
@@ -2336,7 +2357,7 @@
    ],
    "face": "down",
    "kind": "door",
-   "parent": "062"
+   "parent": "063"
   },
   {
    "section": "177",
@@ -2846,7 +2867,7 @@
    ],
    "face": "down",
    "kind": "door",
-   "parent": "062"
+   "parent": "063"
   },
   {
    "section": "192",
@@ -2861,7 +2882,7 @@
    ],
    "face": "down",
    "kind": "door",
-   "parent": "062"
+   "parent": "063"
   },
   {
    "section": "192",
@@ -2876,7 +2897,7 @@
    ],
    "face": "down",
    "kind": "door",
-   "parent": "062"
+   "parent": "063"
   },
   {
    "section": "193",
@@ -3072,6 +3093,64 @@
    "face": "up",
    "kind": "door",
    "parent": "053"
+  },
+  {
+   "section": "063",
+   "tile": [
+    14,
+    4
+   ],
+   "to": "170",
+   "at": [
+    7,
+    13
+   ],
+   "face": "up",
+   "kind": "door"
+  },
+  {
+   "section": "063",
+   "tile": [
+    15,
+    4
+   ],
+   "to": "170",
+   "at": [
+    8,
+    13
+   ],
+   "face": "up",
+   "kind": "door"
+  },
+  {
+   "section": "170",
+   "tile": [
+    7,
+    14
+   ],
+   "to": "063",
+   "at": [
+    14,
+    5
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "063"
+  },
+  {
+   "section": "170",
+   "tile": [
+    8,
+    14
+   ],
+   "to": "063",
+   "at": [
+    15,
+    5
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "063"
   }
  ],
  "shared_rooms": [
@@ -3080,6 +3159,8 @@
   "031",
   "032",
   "054",
-  "055"
+  "055",
+  "064",
+  "065"
  ]
 }

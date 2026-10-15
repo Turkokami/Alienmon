@@ -24,7 +24,7 @@
   },
   "neonis": {
    "section": "062",
-   "why": "atlas exit marked arrival"
+   "why": "V2: the landing ring on the starport deck"
   },
   "glyphos": {
    "section": "072",
@@ -205,18 +205,18 @@
   },
   "M09:giver": {
    "s": "062",
-   "x": 12,
-   "y": 8
+   "x": 13,
+   "y": 6
   },
   "M09:0": {
    "s": "062",
-   "x": 12,
-   "y": 8
+   "x": 13,
+   "y": 6
   },
   "M09:1": {
    "s": "071",
    "x": 8,
-   "y": 14
+   "y": 12
   },
   "M10:giver": {
    "s": "078",
@@ -681,22 +681,22 @@
   "S50:giver": {
    "s": "062",
    "x": 15,
-   "y": 9
+   "y": 11
   },
   "S50:0": {
    "s": "062",
    "x": 8,
-   "y": 8
+   "y": 11
   },
   "S51:giver": {
    "s": "063",
-   "x": 8,
-   "y": 6
+   "x": 7,
+   "y": 11
   },
   "S52:giver": {
    "s": "062",
-   "x": 12,
-   "y": 8
+   "x": 13,
+   "y": 6
   },
   "S52:0": {
    "s": "063",
@@ -708,12 +708,12 @@
      8
     ],
     [
-     7,
+     17,
      6
     ],
     [
-     17,
-     6
+     6,
+     7
     ]
    ]
   },
@@ -1065,8 +1065,8 @@
   },
   "S53:giver": {
    "s": "063",
-   "x": 11,
-   "y": 12
+   "x": 15,
+   "y": 11
   },
   "S53:0": {
    "s": "066",
@@ -1076,23 +1076,23 @@
   "S53:1": {
    "s": "066",
    "x": 12,
-   "y": 6,
+   "y": 8,
    "pts": [
     [
      12,
-     6
-    ],
-    [
-     7,
      8
     ],
     [
-     16,
-     9
+     9,
+     4
     ],
     [
-     10,
-     12
+     16,
+     5
+    ],
+    [
+     5,
+     8
     ]
    ]
   },
@@ -1188,8 +1188,8 @@
   },
   "S102:1": {
    "s": "069",
-   "x": 12,
-   "y": 10
+   "x": 10,
+   "y": 12
   },
   "M18:3": {
    "s": "141",
@@ -9847,57 +9847,93 @@
    ],
    "notes": "Floating landing deck with orange landing ring (rebuild at new scale)",
    "edges": {
-    "left": {
-     "to": "arrival",
-     "range": [
-      7,
-      8
-     ]
-    },
     "right": {
      "to": "063",
      "range": [
-      7,
-      8
+      5,
+      10
      ],
      "offset": 0
     }
    },
-   "warps": [
+   "warps": [],
+   "objects": [
     {
      "tile": [
-      12,
+      3,
       4
      ],
-     "to": "064",
-     "at": [
-      7,
-      12
+     "k": "house",
+     "to": "192",
+     "why": "V2: Starport apartment (shared Neonis home)"
+    },
+    {
+     "tile": [
+      4,
+      4
      ],
-     "face": "up",
-     "kind": "door",
-     "edge": "up"
+     "k": "house",
+     "to": "192",
+     "why": "V2: Starport apartment"
+    },
+    {
+     "tile": [
+      9,
+      4
+     ],
+     "k": "house",
+     "to": "064",
+     "why": "V2: Starport Recovery Bay (shared room)"
+    },
+    {
+     "tile": [
+      10,
+      4
+     ],
+     "k": "house",
+     "to": "064",
+     "why": "V2: Starport Recovery Bay"
+    },
+    {
+     "tile": [
+      14,
+      4
+     ],
+     "k": "house",
+     "to": "065",
+     "why": "V2: Starport shop (shared room)"
+    },
+    {
+     "tile": [
+      15,
+      4
+     ],
+     "k": "house",
+     "to": "065",
+     "why": "V2: Starport shop"
+    },
+    {
+     "tile": [
+      19,
+      4
+     ],
+     "k": "house",
+     "to": "192",
+     "why": "V2: Starport apartment"
     },
     {
      "tile": [
       20,
-      5
+      4
      ],
-     "to": "065",
-     "at": [
-      7,
-      12
-     ],
-     "face": "up",
-     "kind": "door",
-     "edge": "up"
-    }
-   ],
-   "objects": [
+     "k": "house",
+     "to": "192",
+     "why": "V2: Starport apartment"
+    },
     {
      "tile": [
-      10,
-      7
+      12,
+      4
      ],
      "k": "sign",
      "t": [
@@ -9906,18 +9942,8 @@
     },
     {
      "tile": [
-      15,
-      7
-     ],
-     "k": "sign",
-     "t": [
-      "East gate: Neon Boulevard. Shops, nightlife and the Arcade District beyond."
-     ]
-    },
-    {
-     "tile": [
-      12,
-      13
+      0,
+      12
      ],
      "k": "stash",
      "item": "stun",
@@ -9927,12 +9953,12 @@
    ],
    "spawns": {
     "arrival": [
-     1,
-     7
+     3,
+     8
     ],
     "default": [
-     1,
-     7
+     3,
+     8
     ]
    },
    "grid": [
@@ -9942,8 +9968,8 @@
    "pkey": "neonis",
    "npcs": [
     {
-     "x": 12,
-     "y": 8,
+     "x": 13,
+     "y": 6,
      "art": "vashti",
      "face": "down",
      "t": [
@@ -9953,84 +9979,92 @@
      "name": "Dr. Vashti",
      "wid": "vashti",
      "after": "M07",
+     "stay": true,
      "src": "n:062:0"
     },
     {
-     "x": 4,
-     "y": 6,
+     "x": 16,
+     "y": 11,
      "art": "technician",
      "face": "down",
      "t": [
       "Dock tech: Ships land on that orange ring. Stand clear unless you like being flattened.",
       "Dock tech: The whole deck floats on Volt power. If the lights flicker, hold onto something."
      ],
+     "stay": true,
      "src": "p:062:0"
     },
     {
-     "x": 14,
-     "y": 12,
+     "x": 2,
+     "y": 5,
      "art": "explorer",
      "face": "down",
      "t": [
       "Courier: Deliveries are faster across the catwalks. Faster still if your Alienmon can fly."
      ],
+     "stay": true,
      "src": "p:062:1"
     },
     {
-     "x": 11,
-     "y": 11,
+     "x": 7,
+     "y": 10,
      "art": "civilian",
      "face": "down",
      "t": [
       "Raver: First time on Neonis? The city never sleeps. Neither do I, apparently."
      ],
+     "stay": true,
      "src": "p:062:2"
     },
     {
-     "x": 13,
-     "y": 10,
+     "x": 20,
+     "y": 7,
      "art": "guard",
      "face": "down",
      "t": [
       "Port guard: Helix freighters docked here last week. Paperwork was clean. Too clean, if you ask me."
      ],
+     "stay": true,
      "src": "p:062:3"
     },
     {
-     "x": 10,
-     "y": 9,
+     "x": 22,
+     "y": 12,
      "art": "researcher",
      "face": "down",
      "t": [
       "Signal researcher: Every Relay Tower picks up the same pulse, every eight seconds. Spooky, right?"
      ],
+     "stay": true,
      "src": "p:062:4"
     },
     {
-     "x": 12,
+     "x": 11,
      "y": 12,
      "art": "wanderer",
      "face": "down",
      "t": [
       "Traveller: The dome with the cross is the Recovery Bay. It heals your whole team for free. Use it!"
      ],
+     "stay": true,
      "src": "p:062:5"
     },
     {
-     "x": 12,
-     "y": 10,
+     "x": 6,
+     "y": 6,
      "art": "mom",
      "face": "down",
      "t": [
       "Mom: My son wants to be a DJ like Static. I told him to finish his homework first."
      ],
+     "stay": true,
      "src": "p:062:6"
     }
    ],
    "mons": [
     {
-     "x": 7,
-     "y": 2,
+     "x": 0,
+     "y": 11,
      "mon": "Pixbot"
     }
    ]
@@ -10051,16 +10085,16 @@
     "left": {
      "to": "062",
      "range": [
-      7,
-      8
+      5,
+      10
      ],
      "offset": 0
     },
     "right": {
      "to": "066",
      "range": [
-      7,
-      8
+      5,
+      10
      ],
      "offset": 0
     }
@@ -10069,6 +10103,75 @@
     {
      "tile": [
       3,
+      4
+     ],
+     "to": "064",
+     "at": [
+      7,
+      13
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    },
+    {
+     "tile": [
+      4,
+      4
+     ],
+     "to": "064",
+     "at": [
+      8,
+      13
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    },
+    {
+     "tile": [
+      8,
+      4
+     ],
+     "to": "065",
+     "at": [
+      7,
+      13
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    },
+    {
+     "tile": [
+      9,
+      4
+     ],
+     "to": "065",
+     "at": [
+      8,
+      13
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    },
+    {
+     "tile": [
+      14,
+      4
+     ],
+     "to": "170",
+     "at": [
+      7,
+      13
+     ],
+     "face": "up",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      15,
       4
      ],
      "to": "170",
@@ -10083,21 +10186,21 @@
    "objects": [
     {
      "tile": [
-      17,
+      20,
       4
-     ],
-     "k": "bay",
-     "why": "Neon Boulevard Recovery Bay (no interior yet, so the door works like the counter)",
-     "door": true
-    },
-    {
-     "tile": [
-      19,
-      12
      ],
      "k": "house",
      "to": "192",
-     "why": "house door: path in front opened to match the drawn ground"
+     "why": "V2: Boulevard apartment (shared Neonis home)"
+    },
+    {
+     "tile": [
+      21,
+      4
+     ],
+     "k": "house",
+     "to": "192",
+     "why": "V2: Boulevard apartment"
     },
     {
      "tile": [
@@ -10111,8 +10214,8 @@
     },
     {
      "tile": [
-      8,
-      4
+      4,
+      12
      ],
      "k": "stash",
      "item": "dust",
@@ -10123,7 +10226,7 @@
    "spawns": {
     "default": [
      1,
-     7
+     5
     ]
    },
    "grid": [
@@ -10133,77 +10236,90 @@
    "pkey": "neonis",
    "npcs": [
     {
-     "x": 16,
-     "y": 9,
+     "x": 12,
+     "y": 10,
      "art": "civilian",
      "face": "down",
      "t": [
       "Raver: The whole city hums with Volt energy. Feel it? That buzz in your teeth?"
      ],
+     "stay": true,
      "src": "p:063:0"
     },
     {
-     "x": 7,
-     "y": 3,
+     "x": 16,
+     "y": 5,
      "art": "technician",
      "face": "down",
      "t": [
       "Coder: Every sign in Neonis runs on Alienmon power. They get paid in snacks. Good snacks."
      ],
+     "stay": true,
      "src": "p:063:1"
     },
     {
-     "x": 20,
+     "x": 7,
      "y": 6,
      "art": "explorer",
      "face": "down",
      "t": [
       "Courier: The Arcade District is east. Trainers there love a surprise battle."
      ],
+     "stay": true,
      "src": "p:063:2"
     },
     {
-     "x": 7,
-     "y": 9,
+     "x": 20,
+     "y": 11,
      "art": "wanderer",
      "face": "down",
      "t": [
       "Tourist: Volt types hate ground moves. Remember that before you climb Voltspire."
      ],
+     "stay": true,
      "src": "p:063:3"
     },
     {
-     "x": 22,
-     "y": 6,
+     "x": 17,
+     "y": 9,
      "art": "civilian",
      "face": "down",
      "t": [
       "Street vendor: Neon noodles! You glow for an hour after eating. Totally safe. Mostly."
      ],
+     "stay": true,
      "src": "p:063:4"
     },
     {
-     "x": 23,
+     "x": 20,
      "y": 6,
      "art": "researcher",
      "face": "down",
      "t": [
       "Archivist: Signal Shards are said to resonate with each other. Collect them and listen closely."
      ],
+     "stay": true,
      "src": "p:063:5"
     },
     {
-     "x": 11,
-     "y": 10,
+     "x": 3,
+     "y": 7,
      "art": "strand",
      "face": "down",
      "t": [
       "Suspicious man: Helix? Never heard of it. I just... like dark uniforms. Move along."
      ],
+     "stay": true,
      "src": "p:063:6"
     }
    ],
-   "mons": []
+   "mons": [
+    {
+     "x": 2,
+     "y": 11,
+     "mon": "Ampup"
+    }
+   ]
   },
   "064": {
    "id": "064",
@@ -10222,11 +10338,11 @@
     {
      "tile": [
       7,
-      13
+      14
      ],
-     "to": "062",
+     "to": "back",
      "at": [
-      12,
+      3,
       5
      ],
      "face": "down",
@@ -10235,11 +10351,11 @@
     {
      "tile": [
       8,
-      13
+      14
      ],
-     "to": "062",
+     "to": "back",
      "at": [
-      12,
+      3,
       5
      ],
      "face": "down",
@@ -10249,8 +10365,15 @@
    "objects": [
     {
      "tile": [
+      7,
+      4
+     ],
+     "k": "bay"
+    },
+    {
+     "tile": [
       8,
-      7
+      4
      ],
      "k": "bay"
     }
@@ -10258,19 +10381,19 @@
    "spawns": {
     "door": [
      7,
-     12
+     13
     ],
     "default": [
      7,
-     12
+     13
     ]
    },
-   "parent": "062",
+   "parent": "063",
    "pkey": "neonis",
    "npcs": [
     {
      "x": 8,
-     "y": 7,
+     "y": 4,
      "art": "nurse",
      "face": "down",
      "t": [
@@ -10280,13 +10403,14 @@
      "src": "p:064:0"
     },
     {
-     "x": 6,
-     "y": 11,
+     "x": 4,
+     "y": 12,
      "art": "civilian",
      "face": "down",
      "t": [
       "Raver: Three battles in a row at the Arcade. My Alienmon needed a nap. So did I."
      ],
+     "stay": true,
      "src": "p:064:1"
     }
    ]
@@ -10308,12 +10432,12 @@
     {
      "tile": [
       7,
-      13
+      14
      ],
-     "to": "062",
+     "to": "back",
      "at": [
-      20,
-      6
+      8,
+      5
      ],
      "face": "down",
      "kind": "door"
@@ -10321,12 +10445,12 @@
     {
      "tile": [
       8,
-      13
+      14
      ],
-     "to": "062",
+     "to": "back",
      "at": [
-      20,
-      6
+      8,
+      5
      ],
      "face": "down",
      "kind": "door"
@@ -10335,8 +10459,15 @@
    "objects": [
     {
      "tile": [
-      4,
-      7
+      7,
+      4
+     ],
+     "k": "shop"
+    },
+    {
+     "tile": [
+      8,
+      4
      ],
      "k": "shop"
     }
@@ -10344,19 +10475,19 @@
    "spawns": {
     "door": [
      7,
-     12
+     13
     ],
     "default": [
      7,
-     12
+     13
     ]
    },
-   "parent": "062",
+   "parent": "063",
    "pkey": "neonis",
    "npcs": [
     {
-     "x": 4,
-     "y": 7,
+     "x": 8,
+     "y": 4,
      "art": "shop",
      "face": "down",
      "t": [
@@ -10367,12 +10498,13 @@
     },
     {
      "x": 9,
-     "y": 11,
+     "y": 12,
      "art": "explorer",
      "face": "down",
      "t": [
       "Shopper: Stock up before Voltspire. Static's team hits hard and fast."
      ],
+     "stay": true,
      "src": "p:065:1"
     }
    ]
@@ -10393,16 +10525,16 @@
     "left": {
      "to": "063",
      "range": [
-      7,
-      8
+      5,
+      10
      ],
      "offset": 0
     },
     "right": {
      "to": "067",
      "range": [
-      7,
-      8
+      5,
+      10
      ],
      "offset": 0
     }
@@ -10411,26 +10543,26 @@
    "objects": [
     {
      "tile": [
-      3,
-      4
-     ],
-     "k": "house",
-     "why": "house door: opens the shared Neonis house",
-     "to": "176"
-    },
-    {
-     "tile": [
-      17,
-      4
+      11,
+      3
      ],
      "k": "house",
      "to": "180",
-     "why": "walk-in door: arcade_hall"
+     "why": "V2: the arcade hall"
     },
     {
      "tile": [
-      11,
-      9
+      12,
+      3
+     ],
+     "k": "house",
+     "to": "180",
+     "why": "V2: the arcade hall"
+    },
+    {
+     "tile": [
+      14,
+      3
      ],
      "k": "sign",
      "t": [
@@ -10439,8 +10571,8 @@
     },
     {
      "tile": [
-      8,
-      14
+      21,
+      4
      ],
      "k": "stash",
      "item": "ether",
@@ -10449,8 +10581,8 @@
     },
     {
      "tile": [
-      11,
-      2
+      3,
+      4
      ],
      "k": "stash",
      "item": "dust",
@@ -10461,7 +10593,7 @@
    "spawns": {
     "default": [
      1,
-     7
+     5
     ]
    },
    "grid": [
@@ -10471,40 +10603,43 @@
    "pkey": "neonis",
    "npcs": [
     {
-     "x": 17,
-     "y": 8,
+     "x": 13,
+     "y": 9,
      "art": "civilian",
      "face": "down",
      "t": [
       "Gamer: High score on Star Saucer 3! ...Okay, second highest. A Coder beat me with a macro."
      ],
+     "stay": true,
      "src": "p:066:0"
     },
     {
-     "x": 4,
-     "y": 9,
+     "x": 7,
+     "y": 10,
      "art": "technician",
      "face": "down",
      "t": [
       "Repair coder: Glitchy Alienmon hide in the static. A weakened one is easier to catch in a Stasis Pod."
      ],
+     "stay": true,
      "src": "p:066:1"
     },
     {
-     "x": 10,
-     "y": 11,
+     "x": 15,
+     "y": 5,
      "art": "explorer",
      "face": "down",
      "t": [
       "Courier: Trainers battle you if you walk into their line of sight. Fight, or sneak around them."
      ],
+     "stay": true,
      "src": "p:066:2"
     },
     {
-     "x": 20,
-     "y": 8,
+     "x": 4,
+     "y": 4,
      "art": "civilian",
-     "face": "up",
+     "face": "down",
      "t": [],
      "id": "sec066_tr3",
      "trainer": {
@@ -10514,10 +10649,10 @@
      }
     },
     {
-     "x": 15,
-     "y": 8,
+     "x": 6,
+     "y": 4,
      "art": "technician",
-     "face": "up",
+     "face": "down",
      "t": [],
      "id": "sec066_tr4",
      "trainer": {
@@ -10527,7 +10662,18 @@
      }
     }
    ],
-   "mons": []
+   "mons": [
+    {
+     "x": 22,
+     "y": 4,
+     "mon": "Filamaw"
+    },
+    {
+     "x": 18,
+     "y": 4,
+     "mon": "Arclume"
+    }
+   ]
   },
   "067": {
    "id": "067",
@@ -10545,16 +10691,16 @@
     "left": {
      "to": "066",
      "range": [
-      7,
-      8
+      5,
+      9
      ],
      "offset": 0
     },
     "right": {
      "to": "068",
      "range": [
-      7,
-      8
+      5,
+      9
      ],
      "offset": 0
     }
@@ -10563,27 +10709,8 @@
    "objects": [
     {
      "tile": [
-      6,
-      12
-     ],
-     "k": "stop",
-     "t": "The stairs are blocked off. You can't go this way.",
-     "why": "dead-end stairs (tools/sections/dead_ends.py)"
-    },
-    {
-     "tile": [
       11,
-      6
-     ],
-     "k": "sign",
-     "t": [
-      "BROADCAST ROUTE: every dish here relays DJ Static's show. Pirate signals will be prosecuted. Probably."
-     ]
-    },
-    {
-     "tile": [
-      19,
-      3
+      14
      ],
      "k": "stash",
      "item": "revive",
@@ -10592,8 +10719,8 @@
     },
     {
      "tile": [
-      19,
-      13
+      10,
+      1
      ],
      "k": "stash",
      "item": "megagel",
@@ -10604,7 +10731,7 @@
    "spawns": {
     "default": [
      1,
-     7
+     5
     ]
    },
    "grid": [
@@ -10614,27 +10741,29 @@
    "pkey": "neonis",
    "npcs": [
     {
-     "x": 18,
-     "y": 7,
+     "x": 15,
+     "y": 6,
      "art": "technician",
      "face": "down",
      "t": [
       "Dish tech: These antennas relay DJ Static's show to the whole system. Someone keeps hijacking channel 9."
      ],
+     "stay": true,
      "src": "p:067:0"
     },
     {
-     "x": 11,
-     "y": 10,
+     "x": 20,
+     "y": 9,
      "art": "wanderer",
      "face": "down",
      "t": [
       "Hiker: The glowing grass is full of wild Alienmon. Keep a few Stasis Pods handy."
      ],
+     "stay": true,
      "src": "p:067:1"
     },
     {
-     "x": 4,
+     "x": 7,
      "y": 5,
      "art": "technician",
      "face": "down",
@@ -10647,8 +10776,8 @@
      }
     },
     {
-     "x": 13,
-     "y": 10,
+     "x": 12,
+     "y": 11,
      "art": "explorer",
      "face": "up",
      "t": [],
@@ -10662,13 +10791,13 @@
    ],
    "mons": [
     {
-     "x": 15,
-     "y": 3,
+     "x": 12,
+     "y": 1,
      "mon": "Amplion"
     },
     {
-     "x": 19,
-     "y": 12,
+     "x": 10,
+     "y": 14,
      "mon": "Transmitron"
     }
    ]
@@ -10689,8 +10818,8 @@
     "left": {
      "to": "067",
      "range": [
-      7,
-      8
+      5,
+      9
      ],
      "offset": 0
     }
@@ -10699,7 +10828,21 @@
     {
      "tile": [
       23,
-      7
+      5
+     ],
+     "to": "069",
+     "at": [
+      6,
+      22
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      6
      ],
      "to": "069",
      "at": [
@@ -10713,11 +10856,25 @@
     {
      "tile": [
       23,
-      8
+      7
      ],
      "to": "069",
      "at": [
       8,
+      22
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      8
+     ],
+     "to": "069",
+     "at": [
+      9,
       22
      ],
      "face": "up",
@@ -10728,27 +10885,8 @@
    "objects": [
     {
      "tile": [
-      18,
-      12
-     ],
-     "k": "stop",
-     "t": "The stairs are blocked off. You can't go this way.",
-     "why": "dead-end stairs (tools/sections/dead_ends.py)"
-    },
-    {
-     "tile": [
-      9,
-      2
-     ],
-     "k": "sign",
-     "t": [
-      "The billboard flashes: 'VOLTSPIRE - LIVE TONIGHT - DJ STATIC.' An arrow points east."
-     ]
-    },
-    {
-     "tile": [
-      7,
-      11
+      11,
+      14
      ],
      "k": "stash",
      "item": "dust",
@@ -10757,8 +10895,8 @@
     },
     {
      "tile": [
-      1,
-      5
+      11,
+      0
      ],
      "k": "stash",
      "item": "megagel",
@@ -10769,7 +10907,7 @@
    "spawns": {
     "default": [
      1,
-     7
+     5
     ]
    },
    "grid": [
@@ -10779,28 +10917,30 @@
    "pkey": "neonis",
    "npcs": [
     {
-     "x": 6,
-     "y": 10,
+     "x": 15,
+     "y": 9,
      "art": "researcher",
      "face": "down",
      "t": [
       "Radio fan: DJ Static picked up a signal coming from the Starfall Rift. It repeats every 8 seconds."
      ],
+     "stay": true,
      "src": "p:068:0"
     },
     {
-     "x": 17,
-     "y": 8,
+     "x": 20,
+     "y": 5,
      "art": "civilian",
      "face": "down",
      "t": [
       "Raver: Voltspire is just east. Static's apprentices guard the first floor. They're loud. Really loud."
      ],
+     "stay": true,
      "src": "p:068:1"
     },
     {
-     "x": 12,
-     "y": 12,
+     "x": 9,
+     "y": 9,
      "art": "explorer",
      "face": "up",
      "t": [],
@@ -10812,10 +10952,10 @@
      }
     },
     {
-     "x": 8,
-     "y": 9,
+     "x": 13,
+     "y": 3,
      "art": "civilian",
-     "face": "left",
+     "face": "down",
      "t": [],
      "id": "sec068_tr3",
      "trainer": {
@@ -10832,8 +10972,8 @@
      "mon": "Filamaw"
     },
     {
-     "x": 3,
-     "y": 11,
+     "x": 12,
+     "y": 14,
      "mon": "Arclume"
     }
    ]
@@ -10854,13 +10994,27 @@
    "warps": [
     {
      "tile": [
+      6,
+      23
+     ],
+     "to": "068",
+     "at": [
+      22,
+      5
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
       7,
       23
      ],
      "to": "068",
      "at": [
       22,
-      7
+      6
      ],
      "face": "left",
      "kind": "edge",
@@ -10879,6 +11033,34 @@
      "face": "left",
      "kind": "edge",
      "edge": "bottom"
+    },
+    {
+     "tile": [
+      9,
+      23
+     ],
+     "to": "068",
+     "at": [
+      22,
+      8
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      6,
+      0
+     ],
+     "to": "070",
+     "at": [
+      6,
+      22
+     ],
+     "face": "up",
+     "kind": "stairs",
+     "edge": "top"
     },
     {
      "tile": [
@@ -10907,43 +11089,47 @@
      "face": "up",
      "kind": "stairs",
      "edge": "top"
-    }
-   ],
-   "objects": [
+    },
     {
      "tile": [
-      2,
-      9
+      9,
+      0
      ],
-     "k": "sign",
-     "t": [
-      "A display case of old mixing decks. The plaque reads: 'Every Keeper starts with one track.'"
-     ]
+     "to": "070",
+     "at": [
+      9,
+      22
+     ],
+     "face": "up",
+     "kind": "stairs",
+     "edge": "top"
     }
    ],
+   "objects": [],
    "spawns": {
     "default": [
-     7,
+     6,
      22
     ]
    },
    "pkey": "neonis",
    "npcs": [
     {
-     "x": 7,
-     "y": 18,
+     "x": 10,
+     "y": 3,
      "art": "guard",
      "face": "down",
      "t": [
       "Stage guard: Welcome to Voltspire! The Keeper waits at the top. Heal up before you climb."
      ],
+     "stay": true,
      "src": "p:069:0"
     },
     {
      "x": 3,
-     "y": 10,
+     "y": 12,
      "art": "explorer",
-     "face": "left",
+     "face": "right",
      "t": [],
      "face_pinned": 1,
      "id": "sec069_app1",
@@ -10955,9 +11141,9 @@
     },
     {
      "x": 12,
-     "y": 11,
+     "y": 12,
      "art": "civilian",
-     "face": "right",
+     "face": "left",
      "t": [],
      "face_pinned": 1,
      "id": "sec069_app2",
@@ -10985,6 +11171,20 @@
    "warps": [
     {
      "tile": [
+      6,
+      23
+     ],
+     "to": "069",
+     "at": [
+      6,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
       7,
       23
      ],
@@ -11010,6 +11210,34 @@
      "face": "down",
      "kind": "edge",
      "edge": "bottom"
+    },
+    {
+     "tile": [
+      9,
+      23
+     ],
+     "to": "069",
+     "at": [
+      9,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      6,
+      0
+     ],
+     "to": "071",
+     "at": [
+      6,
+      22
+     ],
+     "face": "up",
+     "kind": "stairs",
+     "edge": "top"
     },
     {
      "tile": [
@@ -11033,6 +11261,20 @@
      "to": "071",
      "at": [
       8,
+      22
+     ],
+     "face": "up",
+     "kind": "stairs",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      9,
+      0
+     ],
+     "to": "071",
+     "at": [
+      9,
       22
      ],
      "face": "up",
@@ -11043,27 +11285,28 @@
    "objects": [],
    "spawns": {
     "default": [
-     7,
+     6,
      22
     ]
    },
    "pkey": "neonis",
    "npcs": [
     {
-     "x": 8,
-     "y": 6,
+     "x": 10,
+     "y": 3,
      "art": "technician",
      "face": "down",
      "t": [
       "Sound tech: Feel that bass? That's the reactor below us. Static tunes it like an instrument."
      ],
+     "stay": true,
      "src": "p:070:0"
     },
     {
-     "x": 7,
-     "y": 6,
+     "x": 10,
+     "y": 12,
      "art": "technician",
-     "face": "up",
+     "face": "left",
      "t": [],
      "id": "sec070_tr1",
      "trainer": {
@@ -11090,6 +11333,20 @@
    "warps": [
     {
      "tile": [
+      6,
+      23
+     ],
+     "to": "070",
+     "at": [
+      6,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
       7,
       23
      ],
@@ -11115,12 +11372,26 @@
      "face": "down",
      "kind": "edge",
      "edge": "bottom"
+    },
+    {
+     "tile": [
+      9,
+      23
+     ],
+     "to": "070",
+     "at": [
+      9,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
     }
    ],
    "objects": [
     {
      "tile": [
-      8,
+      7,
       4
      ],
      "k": "keeper"
@@ -11128,7 +11399,7 @@
    ],
    "spawns": {
     "default": [
-     7,
+     6,
      22
     ]
    },
@@ -23769,7 +24040,7 @@
      ],
      "to": "063",
      "at": [
-      3,
+      14,
       5
      ],
      "face": "down",
@@ -23782,7 +24053,7 @@
      ],
      "to": "063",
      "at": [
-      3,
+      15,
       5
      ],
      "face": "down",
@@ -23792,7 +24063,7 @@
    "objects": [],
    "spawns": {
     "default": [
-     8,
+     7,
      13
     ]
    },
@@ -24172,7 +24443,7 @@
      12
     ]
    },
-   "parent": "062",
+   "parent": "063",
    "pkey": "neonis",
    "npcs": [
     {
@@ -25264,7 +25535,7 @@
      12
     ]
    },
-   "parent": "062",
+   "parent": "063",
    "pkey": "neonis",
    "npcs": [
     {
@@ -26623,209 +26894,198 @@
   },
   {
    "from_id": "062",
-   "edge": "left",
-   "tile_range": [
-    7,
-    8
-   ],
-   "to_id": "arrival",
-   "to_edge": null,
-   "to_tile": null
-  },
-  {
-   "from_id": "062",
    "edge": "right",
    "tile_range": [
-    7,
-    8
+    5,
+    10
    ],
    "to_id": "063",
    "to_edge": "left",
    "to_tile": [
-    7,
-    8
+    5,
+    10
    ]
   },
   {
    "from_id": "063",
    "edge": "left",
    "tile_range": [
-    7,
-    8
+    5,
+    10
    ],
    "to_id": "062",
    "to_edge": "right",
    "to_tile": [
-    7,
-    8
+    5,
+    10
    ]
   },
   {
    "from_id": "063",
    "edge": "right",
    "tile_range": [
-    7,
-    8
+    5,
+    10
    ],
    "to_id": "066",
    "to_edge": "left",
    "to_tile": [
-    7,
-    8
+    5,
+    10
    ]
   },
   {
    "from_id": "066",
    "edge": "left",
    "tile_range": [
-    7,
-    8
+    5,
+    10
    ],
    "to_id": "063",
    "to_edge": "right",
    "to_tile": [
-    7,
-    8
+    5,
+    10
    ]
   },
   {
    "from_id": "066",
    "edge": "right",
    "tile_range": [
-    7,
-    8
+    5,
+    10
    ],
    "to_id": "067",
    "to_edge": "left",
    "to_tile": [
-    7,
-    8
+    5,
+    9
    ]
   },
   {
    "from_id": "067",
    "edge": "left",
    "tile_range": [
-    7,
-    8
+    5,
+    9
    ],
    "to_id": "066",
    "to_edge": "right",
    "to_tile": [
-    7,
-    8
+    5,
+    10
    ]
   },
   {
    "from_id": "067",
    "edge": "right",
    "tile_range": [
-    7,
-    8
+    5,
+    9
    ],
    "to_id": "068",
    "to_edge": "left",
    "to_tile": [
-    7,
-    8
+    5,
+    9
    ]
   },
   {
    "from_id": "068",
    "edge": "left",
    "tile_range": [
-    7,
-    8
+    5,
+    9
    ],
    "to_id": "067",
    "to_edge": "right",
    "to_tile": [
-    7,
-    8
+    5,
+    9
    ]
   },
   {
    "from_id": "068",
    "edge": "right",
    "tile_range": [
-    7,
-    8
+    5,
+    9
    ],
    "to_id": "069",
    "to_edge": "bottom",
    "to_tile": [
-    7,
-    8
+    6,
+    9
    ]
   },
   {
    "from_id": "069",
    "edge": "bottom",
    "tile_range": [
-    7,
-    8
+    6,
+    9
    ],
    "to_id": "068",
    "to_edge": "right",
    "to_tile": [
-    7,
-    8
+    5,
+    9
    ]
   },
   {
    "from_id": "069",
    "edge": "top",
    "tile_range": [
-    7,
-    8
+    6,
+    9
    ],
    "to_id": "070",
    "to_edge": "bottom",
    "to_tile": [
-    7,
-    8
+    6,
+    9
    ]
   },
   {
    "from_id": "070",
    "edge": "bottom",
    "tile_range": [
-    7,
-    8
+    6,
+    9
    ],
    "to_id": "069",
    "to_edge": "top",
    "to_tile": [
-    7,
-    8
+    6,
+    9
    ]
   },
   {
    "from_id": "070",
    "edge": "top",
    "tile_range": [
-    7,
-    8
+    6,
+    9
    ],
    "to_id": "071",
    "to_edge": "bottom",
    "to_tile": [
-    7,
-    8
+    6,
+    9
    ]
   },
   {
    "from_id": "071",
    "edge": "bottom",
    "tile_range": [
-    7,
-    8
+    6,
+    9
    ],
    "to_id": "070",
    "to_edge": "top",
    "to_tile": [
-    7,
-    8
+    6,
+    9
    ]
   },
   {

@@ -650,8 +650,8 @@
    "section": "062",
    "name": "Neonis Starport",
    "tile": [
-    12,
-    13
+    0,
+    12
    ],
    "item": "stun",
    "n": 2,
@@ -661,8 +661,8 @@
    "section": "063",
    "name": "Neon Boulevard",
    "tile": [
-    8,
-    4
+    4,
+    12
    ],
    "item": "dust",
    "n": 500,
@@ -672,8 +672,8 @@
    "section": "066",
    "name": "Arcade District",
    "tile": [
-    8,
-    14
+    21,
+    4
    ],
    "item": "ether",
    "n": 1,
@@ -683,8 +683,8 @@
    "section": "066",
    "name": "Arcade District",
    "tile": [
-    11,
-    2
+    3,
+    4
    ],
    "item": "dust",
    "n": 500,
@@ -694,8 +694,8 @@
    "section": "067",
    "name": "Broadcast Route Part A",
    "tile": [
-    19,
-    3
+    11,
+    14
    ],
    "item": "revive",
    "n": 2,
@@ -705,8 +705,8 @@
    "section": "067",
    "name": "Broadcast Route Part A",
    "tile": [
-    19,
-    13
+    10,
+    1
    ],
    "item": "megagel",
    "n": 2,
@@ -716,8 +716,8 @@
    "section": "068",
    "name": "Broadcast Route Part B",
    "tile": [
-    7,
-    11
+    11,
+    14
    ],
    "item": "dust",
    "n": 500,
@@ -727,8 +727,8 @@
    "section": "068",
    "name": "Broadcast Route Part B",
    "tile": [
-    1,
-    5
+    11,
+    0
    ],
    "item": "megagel",
    "n": 2,

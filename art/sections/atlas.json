@@ -1382,11 +1382,11 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → arrival (landing pad / gate)",
-    "right edge, tile rows 7–8 → Neon Boulevard"
+    "right edge, tile rows 5–10 → Neon Boulevard"
    ],
    "notes": "Floating landing deck with orange landing ring (rebuild at new scale)",
-   "file": "art/sections/05_neonis/062_neonis_starport.png"
+   "file": "art/sections/05_neonis/062_neonis_starport.png",
+   "v2": true
   },
   {
    "id": "063",
@@ -1404,11 +1404,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Neonis Starport",
-    "right edge, tile rows 7–8 → Arcade District"
+    "left edge, tile rows 5–10 → Neonis Starport",
+    "right edge, tile rows 5–10 → Arcade District"
    ],
    "notes": "Main neon street",
-   "file": "art/sections/05_neonis/063_neon_boulevard.png"
+   "file": "art/sections/05_neonis/063_neon_boulevard.png",
+   "v2": true
   },
   {
    "id": "064",
@@ -1425,11 +1426,10 @@
    ],
    "tile_px_render": 64,
    "tile_px_game": 16,
-   "exits": [
-    "doormat at the bottom center of the room leads back outside"
-   ],
+   "exits": [],
    "notes": "",
-   "file": "art/sections/05_neonis/064_neonis_recovery_bay.png"
+   "file": "art/sections/05_neonis/064_neonis_recovery_bay.png",
+   "v2": true
   },
   {
    "id": "065",
@@ -1446,11 +1446,10 @@
    ],
    "tile_px_render": 64,
    "tile_px_game": 16,
-   "exits": [
-    "doormat at the bottom center of the room leads back outside"
-   ],
+   "exits": [],
    "notes": "",
-   "file": "art/sections/05_neonis/065_neonis_shop.png"
+   "file": "art/sections/05_neonis/065_neonis_shop.png",
+   "v2": true
   },
   {
    "id": "066",
@@ -1468,11 +1467,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Neon Boulevard",
-    "right edge, tile rows 7–8 → Broadcast Route Part A"
+    "left edge, tile rows 5–10 → Neon Boulevard",
+    "right edge, tile rows 5–10 → Broadcast Route Part A"
    ],
    "notes": "Arcade halls and plazas (Glitch Hunt)",
-   "file": "art/sections/05_neonis/066_arcade_district.png"
+   "file": "art/sections/05_neonis/066_arcade_district.png",
+   "v2": true
   },
   {
    "id": "067",
@@ -1490,11 +1490,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Arcade District",
-    "right edge, tile rows 7–8 → Broadcast Route Part B"
+    "left edge, tile rows 5–9 → Arcade District",
+    "right edge, tile rows 5–9 → Broadcast Route Part B"
    ],
    "notes": "Route of antenna towers and cables (Pirate Radio)",
-   "file": "art/sections/05_neonis/067_broadcast_route_part_a.png"
+   "file": "art/sections/05_neonis/067_broadcast_route_part_a.png",
+   "v2": true
   },
   {
    "id": "068",
@@ -1512,11 +1513,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Broadcast Route Part A",
-    "right edge, tile rows 7–8 → Voltspire 1F"
+    "left edge, tile rows 5–9 → Broadcast Route Part A",
+    "right edge, tile rows 5–9 → Voltspire 1F"
    ],
    "notes": "Route of antenna towers and cables (Pirate Radio)",
-   "file": "art/sections/05_neonis/068_broadcast_route_part_b.png"
+   "file": "art/sections/05_neonis/068_broadcast_route_part_b.png",
+   "v2": true
   },
   {
    "id": "069",
@@ -1534,11 +1536,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7–8 → Broadcast Route Part B",
-    "top edge, tile columns 7–8 (stairs up) → Voltspire 2F"
+    "bottom edge, tile columns 6–9 → Broadcast Route Part B",
+    "top edge, tile columns 6–9 (stairs up) → Voltspire 2F"
    ],
    "notes": "Keeper Static's tower, 3 floors",
-   "file": "art/sections/05_neonis/069_voltspire_1f.png"
+   "file": "art/sections/05_neonis/069_voltspire_1f.png",
+   "v2": true
   },
   {
    "id": "070",
@@ -1556,11 +1559,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7–8 → Voltspire 1F",
-    "top edge, tile columns 7–8 (stairs up) → Voltspire 3F"
+    "bottom edge, tile columns 6–9 → Voltspire 1F",
+    "top edge, tile columns 6–9 (stairs up) → Voltspire 3F"
    ],
    "notes": "Keeper Static's tower, 3 floors",
-   "file": "art/sections/05_neonis/070_voltspire_2f.png"
+   "file": "art/sections/05_neonis/070_voltspire_2f.png",
+   "v2": true
   },
   {
    "id": "071",
@@ -1578,10 +1582,11 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7–8 → Voltspire 2F"
+    "bottom edge, tile columns 6–9 → Voltspire 2F"
    ],
    "notes": "Keeper Static's tower, 3 floors",
-   "file": "art/sections/05_neonis/071_voltspire_3f.png"
+   "file": "art/sections/05_neonis/071_voltspire_3f.png",
+   "v2": true
   },
   {
    "id": "072",
@@ -3715,7 +3720,8 @@
    "tile_px_game": 16,
    "exits": [],
    "notes": "The Linker League courtroom on Neon Boulevard",
-   "file": "art/sections/05_neonis/170_neonis_courtroom.png"
+   "file": "art/sections/05_neonis/170_neonis_courtroom.png",
+   "v2": true
   },
   {
    "id": "171",

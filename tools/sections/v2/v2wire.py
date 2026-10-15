@@ -6,7 +6,26 @@ A2={s['id']:s for s in json.load(open(S+'atlas_v2.json',encoding='utf-8'))['sect
 AT=json.load(open('art/sections/atlas.json',encoding='utf-8'));A1={s['id']:s for s in AT['sections']}
 L=json.load(open('data/sections/links.json',encoding='utf-8'))
 H=lambda x,y:{'tile':[x,y]}
-WIRE={'04':{
+WIRE={'05':{
+ 'ids':['%03d'%i for i in range(62,72)]+['170'],
+ 'doors':[],'stairs':[],
+ 'objects':{
+  '062':[{'tile':[3,4],'k':'house','to':'192','why':'V2: Starport apartment (shared Neonis home)'},{'tile':[4,4],'k':'house','to':'192','why':'V2: Starport apartment'},
+         {'tile':[9,4],'k':'house','to':'064','why':'V2: Starport Recovery Bay (shared room)'},{'tile':[10,4],'k':'house','to':'064','why':'V2: Starport Recovery Bay'},
+         {'tile':[14,4],'k':'house','to':'065','why':'V2: Starport shop (shared room)'},{'tile':[15,4],'k':'house','to':'065','why':'V2: Starport shop'},
+         {'tile':[19,4],'k':'house','to':'192','why':'V2: Starport apartment'},{'tile':[20,4],'k':'house','to':'192','why':'V2: Starport apartment'}],
+  '063':[{'tile':[20,4],'k':'house','to':'192','why':'V2: Boulevard apartment (shared Neonis home)'},{'tile':[21,4],'k':'house','to':'192','why':'V2: Boulevard apartment'}],
+  '066':[{'tile':[11,3],'k':'house','to':'180','why':'V2: the arcade hall'},{'tile':[12,3],'k':'house','to':'180','why':'V2: the arcade hall'}],
+ },
+ 'warps':[{'section':'063','tile':[14,4],'to':'170','at':[7,13],'face':'up','kind':'door'},{'section':'063','tile':[15,4],'to':'170','at':[8,13],'face':'up','kind':'door'},
+          {'section':'170','tile':[7,14],'to':'063','at':[14,5],'face':'down','kind':'door','parent':'063'},{'section':'170','tile':[8,14],'to':'063','at':[15,5],'face':'down','kind':'door','parent':'063'}],
+ 'gates':{},
+ 'atlas_extra':{'069':['top edge, tile columns 6–9 (stairs up) → Voltspire 2F'],'070':['top edge, tile columns 6–9 (stairs up) → Voltspire 3F']},
+ 'spawns':{'062':{'arrival':[3,8],'default':[3,8]},'170':{'default':[7,13]}},
+ 'arrival':{'neonis':{'section':'062','why':'V2: the landing ring on the starport deck'}},
+ 'shared':['064','065'],
+ 'reparent':{'176':'063','192':'063','180':'066'},
+},'04':{
  'ids':['%03d'%i for i in range(52,62)]+['167','168','169'],
  'doors':[],'stairs':[],
  'objects':{
