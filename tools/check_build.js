@@ -6,6 +6,6 @@ try{new vm.Script(code,{filename:'www/index.html'});console.log('game script OK'
 // art/audio on this disk but not in git would build locally and be missing on Vercel
 try{const {execSync}=require('child_process'),path=require('path'),fs=require('fs');const root=path.join(__dirname,'..');
  const tracked=new Set(execSync('git ls-files',{cwd:root}).toString().split('\n'));const miss=[];
- for(const d of['art/sprites','art/sprites_back','art/overworld','art/characters','art/portraits','art/scenes','art/planets','art/space','art/fx','art/ui','art/ui/icons','art/world','art/sections_over','audio'])
+ for(const d of['art/sprites','art/sprites_back','art/overworld','art/characters','art/portraits','art/scenes','art/planets','art/space','art/fx','art/ui','art/ui/icons','art/world','art/sections_over','art/portraits_talk','audio'].concat(fs.existsSync(path.join(root,'art/props'))?fs.readdirSync(path.join(root,'art/props')).map(d=>'art/props/'+d):[]).concat(fs.existsSync(path.join(root,'art/sections_game'))?fs.readdirSync(path.join(root,'art/sections_game')).map(d=>'art/sections_game/'+d):[]))
   {const p=path.join(root,d);if(fs.existsSync(p))for(const f of fs.readdirSync(p)){const r=d+'/'+f;if(fs.statSync(path.join(p,f)).isFile()&&!tracked.has(r))miss.push(r)}}
  if(miss.length){console.error('NOT IN GIT (will be missing on Vercel): '+miss.join(', '));process.exitCode=1}else console.log('all build files are in git')}catch(e){}
