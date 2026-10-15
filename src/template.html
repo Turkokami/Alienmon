@@ -286,7 +286,7 @@ function drawDexReg(){const id=CH.mon,d=D[id],tr=TR(id),k=Math.min(1,(frame-CH.t
  txt('Total '+sum,5,124,'#7a1f6a',6);txt('A: Xenodex notes',5,134,'#3b2a5c',6);if(frame%40<24)rect(150,134,4,4,'#ff8a1e')}
 function drawDexLore(){const id=CH.mon,d=D[id],lv=livesIn(id);box(0,0,160,144);rect(0,0,160,14,'#1b1424');txt('Xenodex notes',4,4,'#5ff2ff',6);
  rect(4,18,52,52,'#d9d0ee');dspr(id,6,20,3);txt('No.'+String(d.n).padStart(3,'0'),60,22,'#3b2a5c',6);txtFit(d.name,60,32,'#1b1424',96);txtFit(d.t.join(' / '),60,44,TC[d.t[0]][2],96,6);
- wrap(d.lore,25).slice(0,6).forEach((l,i)=>txt(l,5,76+i*9,'#1b1424',6));const hb=typeof habitatsOf==='function'?habitatsOf(id):[];if(hb.length)txtFit('Habitat: '+[...new Set(hb.map(h=>habName(h.h)))].slice(0,2).join(', '),5,123,'#2e8b57',150,6);if(lv.length)txtFit('Lives in: '+lv.slice(0,2).join(', '),5,132,'#2e86de',150,6);if(frame%40<24)rect(150,134,4,4,'#ff8a1e')}
+ {const LL=wrap(d.lore,25).slice(0,7),sp=LL.length>5?7:9;LL.forEach((l,i)=>txt(l,5,(LL.length>6?73:LL.length>5?75:76)+i*sp,'#1b1424',6))}const hb=typeof habitatsOf==='function'?habitatsOf(id):[];if(hb.length)txtFit('Habitat: '+[...new Set(hb.map(h=>habName(h.h)))].slice(0,2).join(', '),5,123,'#2e8b57',150,6);if(lv.length)txtFit('Lives in: '+lv.slice(0,2).join(', '),5,132,'#2e86de',150,6);if(frame%40<24)rect(150,134,4,4,'#ff8a1e')}
 function dexRegister(id,cb){dexChime();const lore=()=>{choose('Xenodex',['OK'],()=>cb(),()=>cb());CH.draw=drawDexLore;CH.mon=id};choose('Xenodex',['OK'],lore,lore);CH.draw=drawDexReg;CH.mon=id;CH.t0=frame}
 function addMon(m){G.seen[m.id]=1;G.caught[m.id]=1;if(G.party.length<6){G.party.push(m);return'party'}G.box.push(m);return'box'}
 
