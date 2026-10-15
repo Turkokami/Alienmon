@@ -292,12 +292,12 @@
   "M13:giver": {
    "s": "023",
    "x": 12,
-   "y": 8
+   "y": 7
   },
   "M13:0": {
    "s": "023",
    "x": 12,
-   "y": 7
+   "y": 8
   },
   "M14:giver": {
    "s": "105",
@@ -4136,14 +4136,27 @@
      ]
     },
     {
+     "x": 14,
+     "y": 6,
+     "art": "guard",
+     "face": "down",
+     "t": [
+      "Helix Grunt: Halt! This forge belongs to the Helix Directive.",
+      "Helix Grunt: Run along, kid. Come back when you're a real Linker, and maybe I'll bother beating you."
+     ],
+     "name": "Helix Grunt",
+     "until": "M12"
+    },
+    {
      "x": 12,
-     "y": 7,
+     "y": 8,
      "art": "guard",
      "face": "down",
      "t": [
       "Helix Grunt: Halt! This forge belongs to the Helix Directive!"
      ],
      "wid": "mf7",
+     "after": "M12",
      "until": "M19",
      "id": "mf7",
      "trainer": {
@@ -4153,7 +4166,7 @@
     },
     {
      "x": 12,
-     "y": 7,
+     "y": 8,
      "art": "guard",
      "face": "down",
      "t": [
