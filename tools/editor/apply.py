@@ -30,6 +30,7 @@ def unpack(path):
     json.dump(b.get('grid', {}), open('data/editor/grid.json', 'w'), indent=1)
     json.dump(b.get('routes', []), open('data/editor/routes.json', 'w'), indent=1)
     json.dump(b.get('doors', {}), open('data/editor/doors.json', 'w'), indent=1)
+    json.dump(b.get('clips', []), open('data/editor/clips.json', 'w', encoding='utf-8'), indent=1, ensure_ascii=False)
     for sid, c in b.get('collision', {}).items():
         json.dump(c, open(f'data/collision/{sid}.json', 'w'))
     for rel, url in b.get('images', {}).items():
@@ -43,7 +44,7 @@ def main():
     if '--from' in sys.argv:
         unpack(sys.argv[sys.argv.index('--from') + 1])
     if '--stage' in sys.argv:   # new map images must be tracked or check_build flags them as missing on Vercel
-        subprocess.run(['git', 'add', 'art/sections_game', 'data/collision', 'data/editor', 'data/sections/props_layout.json'])
+        subprocess.run(['git', 'add'] + [p for p in ('art/sections_game', 'art/editor_clips', 'data/collision', 'data/editor', 'data/sections/props_layout.json') if os.path.exists(p)])
     steps = [['python', 'tools/sections/build_world.py'], ['python', 'tools/sections/check_sections.py'],
              ['python', 'tools/sections/check_reach.py'], ['node', 'tools/build.js'], ['node', 'tools/check_build.js']]
     bad = False
