@@ -33,7 +33,7 @@ HAND = {
   ('01_dustara/28', 7, 7), ('01_dustara/44', 8, 7), ('01_dustara/24', 10, 7), ('01_dustara/02', 11, 7),
   ('01_dustara/36', 14, 7), ('01_dustara/13', 15, 7), ('01_dustara/45', 16, 7), ('01_dustara/43', 18, 7), ('01_dustara/15', 20, 7), ('01_dustara/36', 21, 7),
   ('01_dustara/02', 9, 9), ('01_dustara/02', 15, 9), ('01_dustara/06', 17, 9), ('01_dustara/42', 22, 9),
-  ('01_dustara/28', 9, 12), ('01_dustara/36', 14, 12), ('01_dustara/67', 10, 12, 2)],
+  ('01_dustara/28', 9, 12), ('01_dustara/36', 14, 12), ('01_dustara/67', 10, 12, 2, {'ox': 8, 'w': 4})],
  '008': [('01_dustara/44', 5, 5), ('01_dustara/45', 17, 5), ('01_dustara/13', 11, 5), ('01_dustara/13', 16, 5),
          ('01_dustara/26', 3, 10), ('01_dustara/26', 8, 10), ('01_dustara/26', 13, 10), ('01_dustara/26', 18, 10)],
  '018': [('04_thalassa/40', 12, 5), ('04_thalassa/44', 14, 5), ('04_thalassa/08', 6, 5), ('04_thalassa/08', 11, 5),
@@ -80,15 +80,15 @@ for sid in sys.argv[1:]:
         if v: hard.add(tuple(v))
     if sid in HAND:
         for item in HAND[sid]:
-            p, x, y = item[:3]; h = item[3] if len(item) > 3 else 1
-            w, _ = size(p); fp = [(x + i, y + j) for i in range(w) for j in range(h)]
+            p, x, y = item[:3]; h = item[3] if len(item) > 3 else 1; ext = item[4] if len(item) > 4 else {}
+            w = ext.get('w') or size(p)[0]; fp = [(x + i, y + j) for i in range(w) for j in range(h)]
             bad = [t for t in fp if t in hard]   # hand layouts may stand on drawn scenery; only doors, warps, counters and spawns are off limits
             old = [rows[b][a] for a, b in fp]
             for a, b in fp: rows[b][a] = '#'
             if bad or not reach_ok():
                 print('  SKIP', p, x, y, 'blocked/key' if bad else 'cuts a path', bad)
                 for (a, b), c in zip(fp, old): rows[b][a] = c
-            else: out.append({'p': p, 'x': x, 'y': y, **({'h': h} if h > 1 else {})})
+            else: out.append({'p': p, 'x': x, 'y': y, **({'h': h} if h > 1 else {}), **ext})
         pal = []
     for kind, props, n in pal:
         for _ in range(n):

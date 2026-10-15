@@ -4,8 +4,8 @@
    "section": "004",
    "name": "Dustmere Plaza",
    "tile": [
-    10,
-    15
+    5,
+    12
    ],
    "item": "dust",
    "n": 150,

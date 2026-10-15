@@ -31,7 +31,7 @@ def open(path, *a, **k):
             for q in _PROPS[sid]:
                 if q.get('solid') is False or not os.path.exists(os.path.join(ROOT, 'art/props', q['p'] + '.png')): continue
                 for y in range(q['y'], q['y'] + q.get('h', 1)):
-                    for x in range(q['x'], q['x'] + _prop_w(q['p'])):
+                    for x in range(q['x'], q['x'] + (q.get('w') or _prop_w(q['p']))):
                         if 0 <= y < len(R) and 0 <= x < len(R[y]): R[y][x] = '#'
             d['rows'] = [''.join(r) for r in R]; return io.StringIO(json.dumps(d))
     return _open(path, *a, **k)
