@@ -206,12 +206,18 @@ cv.addEventListener('pointerdown', e => {
       if (i) { snap(); S.sel = { kind: 'stamp', sid: S.view, i: i[1] }; S.stampDrag = { dx: t.x - i[0].x, dy: t.y - i[0].y }; panel(); draw(); return; } }
     S.clipRect = { sid: t.sid, x0: t.x, y0: t.y, x1: t.x, y1: t.y }; draw(); return; }
   if (S.mode === 'doors') { S.sel = { kind: 'door', sid: t.sid, x: t.x, y: t.y }; panel(); draw(); return; }
-  if (S.mode === 'arrange') { if (S.view !== 'outdoor') return toast('Arrange works on the whole-world view.'); const s = sec(t.sid), [ox, oy] = origin(s); snap(); S.sel = { kind: 'piece', sid: t.sid }; S.pieceDrag = { sid: t.sid, dx: wx - ox, dy: wy - oy }; panel(); draw(); return; }
-  if (S.mode === 'routes') { if (S.view !== 'outdoor') return toast('Routes work on the whole-world view.'); const s = sec(t.sid), [W, H] = s.tiles, side = t.x === 0 ? 'left' : t.x === W - 1 ? 'right' : t.y === 0 ? 'top' : t.y === H - 1 ? 'bottom' : null;
+  if (S.mode === 'arrange') { if (S.view !== 'outdoor') { toWorldView(); return; } const s = sec(t.sid), [ox, oy] = origin(s); snap(); S.sel = { kind: 'piece', sid: t.sid }; S.pieceDrag = { sid: t.sid, dx: wx - ox, dy: wy - oy }; panel(); draw(); return; }
+  if (S.mode === 'routes') { if (S.view !== 'outdoor') { toWorldView(); return; } const s = sec(t.sid), [W, H] = s.tiles, side = t.x === 0 ? 'left' : t.x === W - 1 ? 'right' : t.y === 0 ? 'top' : t.y === H - 1 ? 'bottom' : null;
     if (!side) return toast('Start a route on the edge of a map piece, where it meets the next one.');
     const ex = (s.edges || {})[side], k = side === 'left' || side === 'right' ? t.y : t.x; if (ex && k >= ex.range[0] && k <= ex.range[1]) { S.sel = { kind: 'route', sid: s.id, side }; panel(); draw(); return; }
     S.routeDrag = { sid: s.id, side, k0: k, k1: k }; draw(); return; }
-  if (S.stamp) { place(t); if (!e.shiftKey) { /* keep stamping until Esc so rows of lamps are quick */ } return; }
+  if (S.stamp) {
+    if (S.stamp.kind === 'prop') {   // clicking an item already on the map grabs it, so it can be dragged anywhere
+      const it = itemAt(wx, wy); if (it && it.ref.kind === 'prop') { S.sel = it.ref; snap(); S.drag = true; S.propGrab = { dx: wx - it.box[0], dy: wy - it.box[1] }; panel(); draw(); return; } }
+    const n0 = (LAYOUT[t.sid] || []).length; place(t);   // keep stamping until Esc so rows of lamps are quick
+    if (S.stamp.kind === 'prop' && (LAYOUT[t.sid] || []).length > n0) {   // the new item follows the pointer until you let go: drop it at any pixel
+      const b = propBox(LAYOUT[t.sid][n0]); S.drag = true; S.propGrab = { dx: b.pw / 2, dy: b.ph / 2 }; dragProp(wx - b.pw / 2, wy - b.ph / 2); }
+    return; }
   const it = itemAt(wx, wy);
   if (it) { S.sel = it.ref; snap(); S.drag = true; if (it.ref.kind === 'prop') S.propGrab = { dx: wx - it.box[0], dy: wy - it.box[1] }; panel(); draw(); } else { S.sel = null; S.pan = [e.clientX - S.ox, e.clientY - S.oy]; panel(); draw(); }
 });
@@ -273,6 +279,9 @@ function roomChoices() {   // rooms on this world first, then everything else
 
 // ---------- arranging map pieces ----------
 function overlap(a, b) { const [ax, ay] = gridOf(a), [bx, by] = gridOf(b); return ax < bx + b.tiles[0] && bx < ax + a.tiles[0] && ay < by + b.tiles[1] && by < ay + a.tiles[1]; }
+function toWorldView() {   // moving scenes and drawing routes happen with every outdoor map of the planet laid out together
+  S.view = 'outdoor'; S.sel = null; views(); fit(); panel(); draw(); toast('Showing the whole planet. Drag any map piece to move it.');
+}
 function movePiece(wx, wy) {
   const d = S.pieceDrag, s = sec(d.sid), [W, H] = s.tiles; let gx = Math.round((wx - d.dx) / 16), gy = Math.round((wy - d.dy) / 16);
   const SN = 3;   // snap flush against a neighbour's edge, and line up with its top or left
@@ -331,7 +340,7 @@ function panel() {
   if (S.sel) h += selPanel();
   const PRE = `<div id="preview"><div class="box" id="pbox"></div><div class="cap" id="pcap">Hover over an item to see it large</div><div class="sizes">Item size <input type="range" id="cellsz" min="70" max="300" value="${S.cell || Math.round(Math.max(100, Math.min(200, innerWidth * 0.065)))}"></div></div>`;
   if (m === 'props') {
-    h += PRE + `<h3>Props</h3><label>Sheet <select id="sheet">${Object.keys(ED.props).map(d => `<option ${d === S.sheet ? 'selected' : ''}>${d}</option>`).join('')}</select></label>
+    h += PRE + `<h3>Props</h3><p class="hint"><b>Add:</b> pick an item below, then press on the map and drag it to the exact spot before letting go. <b>Move or remove:</b> click any item already on the map (including the ones Claude placed), drag it anywhere, or press Remove / Delete.</p>${S.stamp ? '<button id="stopstamp">Stop placing (Esc)</button>' : ''}<label>Sheet <select id="sheet">${Object.keys(ED.props).map(d => `<option ${d === S.sheet ? 'selected' : ''}>${d}</option>`).join('')}</select></label>
       <label class="row"><input type="checkbox" id="flat" ${S.flatNext ? 'checked' : ''}> place as a flat rug (walk over it)</label>
       <div class="grid">${(ED.props[S.sheet] || []).map(p => { const key = S.sheet + '/' + String(p.n).padStart(2, '0'); return `<button class="pal ${S.stamp && S.stamp.p === key ? 'on' : ''}" data-p="${key}" data-cap="${S.sheet} #${p.n} · ${p.px[0]}×${p.px[1]} px · about ${Math.max(1, Math.round(p.px[0] / 16))} tile(s) wide" title="#${p.n}"><img src="${p.url}"></button>`; }).join('')}</div>`;
   } else if (m === 'people') {
@@ -351,7 +360,7 @@ function panel() {
   } else if (m === 'maps') h += mapPanel();
   else if (m === 'clips') h += (S.mode === 'clips' ? `<div id="preview"><div class="box" id="pbox"></div><div class="cap" id="pcap">Hover over a clip to see it large</div></div>` : '') + clipsPanel();
   else if (m === 'doors') h += `<h3>Doors</h3><p class="hint">Click a door on the map, then choose what it opens. Cyan = doors the game already has, yellow = doors you set, grey = story doors (fixed). Any number of doors can open the same room: leaving it takes the player back out the door they came in by. To add a new Alienmon centre or house, place a building from the Props sheet, then click its door here and pick that world's Recovery Bay or house room.</p>`;
-  else if (m === 'arrange') h += `<h3>Arrange the world</h3><p class="hint">Drag a map piece to move it. It snaps flush against the piece beside, above or below it and lines up with it. Arrows nudge the selected piece one tile. A red outline means two pieces overlap. Moving pieces only changes the layout: use Routes to let the player walk between them.</p>`;
+  else if (m === 'arrange') h += `<h3>Arrange the world</h3><p class="hint">Press on any map piece and drag it to move the whole scene. It snaps flush against the piece beside, above or below it and lines up with it. Arrows nudge the selected piece one tile. A red outline means two pieces overlap. Moving pieces only changes the layout: use Routes to let the player walk between them.</p>`;
   else if (m === 'routes') h += `<h3>Travel routes</h3><p class="hint">Blue bars are the ways across between map pieces. To add one, press on the edge of a piece where it touches the next piece and drag along that edge to set how wide the opening is (a road is usually 4 to 6 tiles). The opening is cut through the walls on both sides. Click a bar to select it; Delete removes it. Each side of a piece can have one route.</p>
     ${ROUTES.filter(r => !r.remove).map(r => `<div>${r.a} ${r.side} ${r.band[0]}-${r.band[1]} to ${r.b}</div>`).join('')}`;
   h += `<h3>Check</h3><button id="check">Check edited maps</button><div id="checkout"></div>`;
@@ -409,6 +418,7 @@ function wire() {
   on('#pline', 'input', e => { S.pline = e.target.value; if (S.stamp) S.stamp.line = S.pline; });
   on('#msearch', 'input', e => { S.msearch = e.target.value; const pos = e.target.selectionStart; panel(); const i = $('#msearch'); i.focus(); i.setSelectionRange(pos, pos); });
   on('#del', 'click', delSel);
+  on('#stopstamp', 'click', () => { S.stamp = null; panel(); draw(); });
   on('#ename', 'input', e => { const a = ADDED[S.sel.sid][S.sel.i]; a.name = e.target.value; touch(S.sel.sid); });
   on('#eline', 'input', e => { const a = ADDED[S.sel.sid][S.sel.i]; a.t = e.target.value.split('\n').filter(Boolean); touch(S.sel.sid); });
   on('#check', 'click', check);
@@ -607,7 +617,7 @@ async function boot() {
   $('#planet').innerHTML = dirs.map(d => `<option value="${d}">${ED.planets[d]}</option>`).join('');
   $('#planet').onchange = e => { S.planet = e.target.value; S.view = 'outdoor'; S.sel = null; if (ED.props[S.planet]) S.sheet = S.planet; views(); panel(); fit(); };
   $('#view').onchange = e => { S.view = e.target.value; S.sel = null; fit(); };
-  document.querySelectorAll('[data-mode]').forEach(b => b.onclick = () => { S.mode = b.dataset.mode; S.stamp = null; document.querySelectorAll('[data-mode]').forEach(x => x.classList.toggle('on', x === b)); panel(); draw(); });
+  document.querySelectorAll('[data-mode]').forEach(b => b.onclick = () => { S.mode = b.dataset.mode; S.stamp = null; document.querySelectorAll('[data-mode]').forEach(x => x.classList.toggle('on', x === b)); if ((S.mode === 'arrange' || S.mode === 'routes') && S.view !== 'outdoor') toWorldView(); panel(); draw(); });
   $('#walls').onchange = e => { S.walls = e.target.checked; draw(); }; $('#showdoors').onchange = draw;
   $('#zin').onclick = () => { S.zoom = Math.min(8, S.zoom * 1.25); draw(); }; $('#zout').onclick = () => { S.zoom = Math.max(0.25, S.zoom / 1.25); draw(); }; $('#zfit').onclick = fit;
   $('#undo').onclick = undo; $('#save').onclick = save;
