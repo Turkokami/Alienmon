@@ -1848,7 +1848,7 @@
       7,
       14
      ],
-     "to": "004",
+     "to": "back",
      "at": [
       11,
       5
@@ -1861,7 +1861,7 @@
       8,
       14
      ],
-     "to": "004",
+     "to": "back",
      "at": [
       11,
       5
@@ -1971,7 +1971,7 @@
       7,
       14
      ],
-     "to": "004",
+     "to": "back",
      "at": [
       16,
       5
@@ -1984,7 +1984,7 @@
       8,
       14
      ],
-     "to": "004",
+     "to": "back",
      "at": [
       16,
       5
@@ -2166,39 +2166,57 @@
    "objects": [
     {
      "tile": [
+      3,
+      4
+     ],
+     "k": "house",
+     "to": "187",
+     "why": "house door: Trading Post dome (shared Dustara home)"
+    },
+    {
+     "tile": [
+      18,
+      4
+     ],
+     "k": "house",
+     "to": "187",
+     "why": "house door: Trading Post dome (shared Dustara home)"
+    },
+    {
+     "tile": [
       8,
       4
      ],
-     "k": "bay",
-     "door": true,
-     "why": "Trading Post Recovery Bay door (works like the counter)"
+     "k": "house",
+     "to": "005",
+     "why": "Trading Post Recovery Bay (shared room)"
     },
     {
      "tile": [
       9,
       4
      ],
-     "k": "bay",
-     "door": true,
-     "why": "Recovery Bay door, right half"
+     "k": "house",
+     "to": "005",
+     "why": "Trading Post Recovery Bay (shared room)"
     },
     {
      "tile": [
       13,
       4
      ],
-     "k": "shop",
-     "door": true,
-     "why": "Trading Post shop door"
+     "k": "house",
+     "to": "006",
+     "why": "Trading Post shop (shared room)"
     },
     {
      "tile": [
       14,
       4
      ],
-     "k": "shop",
-     "door": true,
-     "why": "Trading Post shop door"
+     "k": "house",
+     "to": "006",
+     "why": "Trading Post shop (shared room)"
     },
     {
      "tile": [
@@ -3661,30 +3679,30 @@
    "objects": [
     {
      "tile": [
-      8,
-      4
-     ],
-     "k": "bay",
-     "door": true,
-     "why": "Port Ember healing centre"
-    },
-    {
-     "tile": [
-      9,
-      4
-     ],
-     "k": "bay",
-     "door": true,
-     "why": "Port Ember healing centre"
-    },
-    {
-     "tile": [
       2,
       4
      ],
      "k": "house",
      "to": "187",
      "why": "house door: opens Dustara Cottage"
+    },
+    {
+     "tile": [
+      8,
+      4
+     ],
+     "k": "house",
+     "to": "005",
+     "why": "Port Ember healing centre (shared Recovery Bay room)"
+    },
+    {
+     "tile": [
+      9,
+      4
+     ],
+     "k": "house",
+     "to": "005",
+     "why": "Port Ember healing centre (shared Recovery Bay room)"
     },
     {
      "tile": [

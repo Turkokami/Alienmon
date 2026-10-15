@@ -17,11 +17,9 @@ WIRE={'01':{
          {'tile':[12,4],'k':'ladder','to':'165','at':[4,13],'face':'up','label':'A ladder leads up to the attic.','why':'attic ladder, top right'},
          {'tile':[13,4],'k':'ladder','to':'165','at':[4,13],'face':'up','label':'A ladder leads up to the attic.','why':'attic ladder, top right'}],
   '006':[{'tile':[7,5],'k':'shop','why':'shop counter'},{'tile':[8,5],'k':'shop','why':'shop counter'}],
-  '008':[{'tile':[8,4],'k':'bay','door':True,'why':'Trading Post Recovery Bay door (works like the counter)'},{'tile':[9,4],'k':'bay','door':True,'why':'Recovery Bay door, right half'},
-         {'tile':[13,4],'k':'shop','door':True,'why':'Trading Post shop door'},{'tile':[14,4],'k':'shop','door':True,'why':'Trading Post shop door'}],
+  '008':[{"tile": [3, 4], "k": "house", "to": "187", "why": "house door: Trading Post dome (shared Dustara home)"}, {"tile": [18, 4], "k": "house", "to": "187", "why": "house door: Trading Post dome (shared Dustara home)"}, {"tile": [8, 4], "k": "house", "to": "005", "why": "Trading Post Recovery Bay (shared room)"}, {"tile": [9, 4], "k": "house", "to": "005", "why": "Trading Post Recovery Bay (shared room)"}, {"tile": [13, 4], "k": "house", "to": "006", "why": "Trading Post shop (shared room)"}, {"tile": [14, 4], "k": "house", "to": "006", "why": "Trading Post shop (shared room)"}],
   '017':[{'tile':[14,3],'k':'bay','door':True,'why':'Palm Isle Recovery Hut (works like the counter)'}],
-  '018':[{'tile':[8,4],'k':'bay','door':True,'why':'Port Ember healing centre'},{'tile':[9,4],'k':'bay','door':True,'why':'Port Ember healing centre'},
-         {'tile':[2,4],'k':'house','to':'187','why':'house door: opens Dustara Cottage'}],
+  '018':[{"tile": [2, 4], "k": "house", "to": "187", "why": "house door: opens Dustara Cottage"}, {"tile": [8, 4], "k": "house", "to": "005", "why": "Port Ember healing centre (shared Recovery Bay room)"}, {"tile": [9, 4], "k": "house", "to": "005", "why": "Port Ember healing centre (shared Recovery Bay room)"}],
  },
  'warps':[{'section':'165','tile':[2,12],'to':'005','at':[12,5],'face':'down','kind':'stairs','parent':'005'},
           {'section':'165','tile':[3,12],'to':'005','at':[12,5],'face':'down','kind':'stairs','parent':'005'}],
@@ -64,6 +62,7 @@ for pf in sys.argv[1:]:
         if g['section'] in W['gates']: g['tiles']=W['gates'][g['section']]; g['at_dy']=1
     for k,v in W['spawns'].items(): L['spawns'][k]=v
     L['arrival'].update(W['arrival'])
+    L['shared_rooms']=sorted(set(L.get('shared_rooms',[]))|{'005','006'})
 json.dump(AT,open('art/sections/atlas.json','w',encoding='utf-8'),indent=1,ensure_ascii=False)
 json.dump(L,open('data/sections/links.json','w',encoding='utf-8'),indent=1,ensure_ascii=False)
 print('wired',sys.argv[1:])
