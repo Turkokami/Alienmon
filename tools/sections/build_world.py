@@ -46,7 +46,7 @@ _by_id = {a['id']: a for a in atlas}
 for m in ED_MAPS:
     if m['id'] in _by_id:
         continue
-    t = _by_id.get(m['attach']['to'])
+    t = _by_id.get((m.get('attach') or {}).get('to'))
     entry = {'id': m['id'], 'planet': m.get('planet') or (t or {}).get('planet', ''), 'name': m['name'], 'type': m.get('type', 'route'),
              'size_px': [m['tiles'][0] * 64, m['tiles'][1] * 64], 'tiles': m['tiles'], 'tile_px_render': 64, 'tile_px_game': 16,
              'exits': [], 'notes': 'Added in the map editor', 'file': 'art/sections/' + m['dir'] + '/' + os.path.basename(m['img'])}
@@ -95,6 +95,39 @@ for pf in sorted(glob.glob(os.path.join(ROOT, 'data/sections/planets/*.json'))):
     tr.setdefault('per_section', {}).update(extra.get('trainers_per_section', {}))
     PLANET_NPCS.update(extra.get('npcs', {}))
 OUTDOOR = {'town', 'route', 'field', 'landmark'}
+# ---- map editor: rooms uploaded as new interiors, and doors assigned in the Doors tool (data/editor/doors.json) ----
+# A door opens a room ('to' = section id), works as a counter ('menu:bay' / 'menu:shop'), or is removed (to = None).
+# Rooms opened from editor doors become shared rooms: their doormat returns you to the door you came in by.
+_ED_DOORS = _ed('doors.json', {})
+_first_door = {}
+for _sid, _lst in _ED_DOORS.items():
+    for d in _lst:
+        if d.get('to') and not str(d['to']).startswith('menu:'):
+            _first_door.setdefault(d['to'], _sid)
+for m in ED_MAPS:
+    if m.get('type') == 'interior' and not m.get('attach'):
+        W_, H_ = m['tiles']; c = W_ // 2 - 1
+        for x in (c, c + 1):
+            links.setdefault('warps', []).append({'section': m['id'], 'tile': [x, H_ - 1], 'to': 'back', 'at': [x, H_ - 2], 'face': 'down', 'kind': 'door',
+                                                  **({'parent': _first_door[m['id']]} if m['id'] in _first_door else {})})
+        links.setdefault('spawns', {})[m['id']] = {'default': [c, H_ - 2]}
+for _sid, _lst in _ED_DOORS.items():
+    objs = links.setdefault('objects', {}).setdefault(_sid, [])
+    for d in _lst:
+        t = list(d['tile'])
+        objs[:] = [o for o in objs if not (list(o['tile']) == t and (o.get('k') in ('house', 'bay', 'shop') or o.get('door')))]
+        links['warps'] = [w for w in links.get('warps', []) if not (w['section'] == _sid and list(w['tile']) == t)]
+        links['doors'] = [x for x in links.get('doors', []) if not (x['parent'] == _sid and (list(x['door']) == t or list(x.get('door2') or []) == t))]
+        to = d.get('to')
+        if not to:
+            continue
+        if to in ('menu:bay', 'menu:shop'):
+            objs.append({'tile': t, 'k': to[5:], 'door': True, 'why': 'map editor: counter door'})
+        else:
+            objs.append({'tile': t, 'k': 'house', 'to': to, 'why': 'map editor: door to ' + to})
+            links.setdefault('shared_rooms', [])
+            if to not in links['shared_rooms']:
+                links['shared_rooms'].append(to)
 OPP = {'left': 'right', 'right': 'left', 'top': 'bottom', 'bottom': 'top'}
 norm = lambda s: re.sub(r'[^a-z0-9]', '', s.lower())
 byname = {norm(s['name']): s for s in atlas}

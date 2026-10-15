@@ -115,7 +115,7 @@ for(const f of fs.readdirSync(path.join(root,'art/ui/icons')))copy('art/ui/icons
 // ---- map editor (prototype builds): www/editor.html + www/editor_data.json ----
 if(PROTO&&!INLINE){
  const rd=(f,d)=>fs.existsSync(path.join(root,f))?JSON.parse(fs.readFileSync(path.join(root,f),'utf8')):d;
- const ED={planets:{},sections:{},props:{},chars:{},mons:{},layout:rd('data/sections/props_layout.json',{}),edits:{npcs:rd('data/editor/npcs.json',{}),mons:rd('data/editor/mons.json',{}),maps:rd('data/editor/maps.json',[]),grid:rd('data/editor/grid.json',{}),routes:rd('data/editor/routes.json',[])}};
+ const ED={planets:{},sections:{},props:{},chars:{},mons:{},layout:rd('data/sections/props_layout.json',{}),edits:{npcs:rd('data/editor/npcs.json',{}),mons:rd('data/editor/mons.json',{}),maps:rd('data/editor/maps.json',[]),grid:rd('data/editor/grid.json',{}),routes:rd('data/editor/routes.json',[]),doors:rd('data/editor/doors.json',{})}};
  for(const[id,sec]of Object.entries(SECW.sections)){const cp=path.join(root,'data/collision',id+'.json');if(!sec.img)continue;
   ED.planets[sec.dir]=sec.planet;
   ED.sections[id]={id,name:sec.name,planet:sec.planet,dir:sec.dir,type:sec.type,tiles:sec.tiles,grid:sec.grid||null,img:asset(sec.img),

@@ -29,6 +29,7 @@ def unpack(path):
     json.dump(b.get('maps', []), open('data/editor/maps.json', 'w', encoding='utf-8'), indent=1, ensure_ascii=False)
     json.dump(b.get('grid', {}), open('data/editor/grid.json', 'w'), indent=1)
     json.dump(b.get('routes', []), open('data/editor/routes.json', 'w'), indent=1)
+    json.dump(b.get('doors', {}), open('data/editor/doors.json', 'w'), indent=1)
     for sid, c in b.get('collision', {}).items():
         json.dump(c, open(f'data/collision/{sid}.json', 'w'))
     for rel, url in b.get('images', {}).items():

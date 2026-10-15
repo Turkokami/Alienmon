@@ -10,12 +10,12 @@ const ok = i => i && i.complete && i.naturalWidth;
 
 // ---------- working state ----------
 const S = { planet: null, view: 'outdoor', mode: 'props', zoom: 2, ox: 40, oy: 40, sheet: null, stamp: null, sel: null, walls: false, brush: '#', drag: null, pan: null };
-let LAYOUT = {}, MOVES = {}, ADDED = {}, REMOVED = {}, MONS = {}, MAPS = [], ROWS = {}, NEWIMG = {}, GRID = {}, ROUTES = [];
+let LAYOUT = {}, MOVES = {}, ADDED = {}, REMOVED = {}, MONS = {}, MAPS = [], ROWS = {}, NEWIMG = {}, GRID = {}, ROUTES = [], DOORS = {};
 const DIRTY = new Set();
 const HIST = [];
 const edgeSnap = () => Object.fromEntries(Object.values(ED.sections).map(s => [s.id, s.edges]));
-function snap() { HIST.push(JSON.stringify({ LAYOUT, MOVES, ADDED, REMOVED, MONS, ROWS, GRID, ROUTES, EDGES: edgeSnap() })); if (HIST.length > 60) HIST.shift(); }
-function undo() { const h = HIST.pop(); if (!h) return toast('Nothing to undo'); let E; ({ LAYOUT, MOVES, ADDED, REMOVED, MONS, ROWS, GRID, ROUTES, EDGES: E } = JSON.parse(h)); for (const [k, v] of Object.entries(E || {})) if (ED.sections[k]) ED.sections[k].edges = v; S.sel = null; panel(); draw(); }
+function snap() { HIST.push(JSON.stringify({ LAYOUT, MOVES, ADDED, REMOVED, MONS, ROWS, GRID, ROUTES, DOORS, EDGES: edgeSnap() })); if (HIST.length > 60) HIST.shift(); }
+function undo() { const h = HIST.pop(); if (!h) return toast('Nothing to undo'); let E; ({ LAYOUT, MOVES, ADDED, REMOVED, MONS, ROWS, GRID, ROUTES, DOORS, EDGES: E } = JSON.parse(h)); for (const [k, v] of Object.entries(E || {})) if (ED.sections[k]) ED.sections[k].edges = v; S.sel = null; panel(); draw(); }
 function touch(sid) { DIRTY.add(sid); $('#save').classList.add('hot'); }
 
 // ---------- data helpers ----------
@@ -63,11 +63,14 @@ function draw() {
     ctx.strokeStyle = 'rgba(255,255,255,0.35)'; ctx.lineWidth = 1 / S.zoom; ctx.strokeRect(ox, oy, W * 16, H * 16);
     ctx.fillStyle = 'rgba(0,0,0,0.6)'; ctx.fillRect(ox, oy, Math.min(W * 16, s.name.length * 5 + 26), 9);
     ctx.fillStyle = '#ffd23f'; ctx.font = '7px monospace'; ctx.fillText(s.id + ' ' + s.name, ox + 2, oy + 7);
-    if (S.walls || S.mode === 'walls') { const R = rowsOf(s.id);
-      for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) { const c = (R[y] || '')[x];
-        if (c === '#') { ctx.fillStyle = 'rgba(255,40,60,0.35)'; ctx.fillRect(ox + x * 16, oy + y * 16, 16, 16); }
-        else if (c === ',') { ctx.fillStyle = 'rgba(60,255,90,0.25)'; ctx.fillRect(ox + x * 16, oy + y * 16, 16, 16); } }
-      ctx.strokeStyle = 'rgba(255,255,255,0.08)'; for (let x = 0; x <= W; x++) { ctx.beginPath(); ctx.moveTo(ox + x * 16, oy); ctx.lineTo(ox + x * 16, oy + H * 16); ctx.stroke(); }
+    if (S.walls || S.mode === 'walls') { const R = rowsOf(s.id), RE = reachOf(s.id);
+      for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) { const c = (R[y] || '')[x], k = x + ',' + y;
+        if (c === '#') ctx.fillStyle = 'rgba(255,40,60,0.38)';
+        else if (RE.solid.has(k)) ctx.fillStyle = 'rgba(150,90,255,0.35)';                    // walkable ground under a prop or person
+        else if (!RE.seen.has(k)) ctx.fillStyle = 'rgba(255,150,0,0.62)';                    // walkable but cut off: the player can never get here
+        else ctx.fillStyle = c === ',' ? 'rgba(40,220,120,0.42)' : 'rgba(80,255,150,0.22)'; // reachable ground / reachable tall grass
+        ctx.fillRect(ox + x * 16, oy + y * 16, 16, 16); }
+      ctx.strokeStyle = 'rgba(255,255,255,0.10)'; for (let x = 0; x <= W; x++) { ctx.beginPath(); ctx.moveTo(ox + x * 16, oy); ctx.lineTo(ox + x * 16, oy + H * 16); ctx.stroke(); }
       for (let y = 0; y <= H; y++) { ctx.beginPath(); ctx.moveTo(ox, oy + y * 16); ctx.lineTo(ox + W * 16, oy + y * 16); ctx.stroke(); } }
     if (S.view === 'outdoor' && (S.mode === 'routes' || S.mode === 'arrange' || $('#showdoors').checked)) for (const [side, e] of Object.entries(s.edges || {})) {
       const on = S.sel && S.sel.kind === 'route' && S.sel.sid === s.id && S.sel.side === side; ctx.fillStyle = on ? 'rgba(255,210,63,0.95)' : 'rgba(95,242,255,0.85)';
@@ -75,6 +78,9 @@ function draw() {
       if (side === 'left') ctx.fillRect(ox, oy + a, t, b - a); else if (side === 'right') ctx.fillRect(ox + W * 16 - t, oy + a, t, b - a);
       else if (side === 'top') ctx.fillRect(ox + a, oy, b - a, t); else ctx.fillRect(ox + a, oy + H * 16 - t, b - a, t); }
     if (S.mode === 'arrange' && S.view === 'outdoor') { const bad = viewSecs().some(o => o !== s && overlap(s, o)); ctx.strokeStyle = bad ? '#ff5050' : (S.sel && S.sel.kind === 'piece' && S.sel.sid === s.id ? '#ffd23f' : 'rgba(255,255,255,0.7)'); ctx.lineWidth = 2 / S.zoom; ctx.strokeRect(ox, oy, W * 16, H * 16); }
+    if (S.mode === 'doors') for (const d of allDoors(s.id)) { ctx.fillStyle = d.fixed ? 'rgba(160,160,160,0.55)' : d.edited ? 'rgba(255,210,63,0.75)' : 'rgba(95,242,255,0.55)'; ctx.fillRect(ox + d.x * 16, oy + d.y * 16, 16, 16);
+      ctx.fillStyle = '#000'; ctx.fillRect(ox + d.x * 16 - 2, oy + d.y * 16 - 9, Math.min(110, doorName(d.to).length * 4 + 6), 8); ctx.fillStyle = '#fff'; ctx.font = '6px monospace'; ctx.fillText(doorName(d.to).slice(0, 26), ox + d.x * 16, oy + d.y * 16 - 3); }
+    if (S.mode === 'doors' && S.sel && S.sel.kind === 'door' && S.sel.sid === s.id) { ctx.strokeStyle = '#ffd23f'; ctx.lineWidth = 2 / S.zoom; ctx.strokeRect(ox + S.sel.x * 16, oy + S.sel.y * 16, 16, 16); }
     if ($('#showdoors').checked) for (const w of s.warps) { ctx.strokeStyle = '#5ff2ff'; ctx.lineWidth = 1.5 / S.zoom; ctx.strokeRect(ox + w.tile[0] * 16 + 1, oy + w.tile[1] * 16 + 1, 14, 14); }
     (LAYOUT[s.id] || []).forEach((q, i) => { const b = propBox(q); if (b) items.push({ y: q.solid === false ? -1e9 : (q.y + b.h - 1) * 16, d: () => { const im = img(b.url); if (ok(im)) ctx.drawImage(im, ox + b.X, oy + b.Y); }, ref: { kind: 'prop', sid: s.id, i }, box: [ox + b.X, oy + b.Y, b.pw, b.ph] }); });
     for (const n of npcsOf(s.id)) { const u = ED.chars[n.art]; items.push({ y: n.y * 16 + 1, d: () => { const im = img(u); if (ok(im)) ctx.drawImage(im, ox + n.x * 16 - 4, oy + n.y * 16 - 8, 24, 24); else { ctx.fillStyle = '#ff8a1e'; ctx.fillRect(ox + n.x * 16 + 4, oy + n.y * 16 + 2, 8, 12); } }, ref: n.ref, box: [ox + n.x * 16 - 4, oy + n.y * 16 - 8, 24, 24] }); }
@@ -84,6 +90,10 @@ function draw() {
   items.sort((a, b) => a.y - b.y).forEach(it => it.d());
   draw.items = items;
   if (S.sel) { const it = items.find(it => same(it.ref, S.sel)); if (it) { ctx.strokeStyle = '#ffd23f'; ctx.lineWidth = 1.5 / S.zoom; ctx.setLineDash([3 / S.zoom, 2 / S.zoom]); ctx.strokeRect(...it.box); ctx.setLineDash([]); } }
+  if (S.wallRect) { const r = S.wallRect, s = sec(r.sid), [ox, oy] = origin(s), x0 = Math.min(r.x0, r.x1), y0 = Math.min(r.y0, r.y1);
+    ctx.fillStyle = S.brush === '#' ? 'rgba(255,40,60,0.5)' : S.brush === ',' ? 'rgba(40,220,120,0.5)' : 'rgba(255,255,255,0.45)';
+    ctx.fillRect(ox + x0 * 16, oy + y0 * 16, (Math.abs(r.x1 - r.x0) + 1) * 16, (Math.abs(r.y1 - r.y0) + 1) * 16);
+    ctx.strokeStyle = '#ffd23f'; ctx.lineWidth = 2 / S.zoom; ctx.strokeRect(ox + x0 * 16, oy + y0 * 16, (Math.abs(r.x1 - r.x0) + 1) * 16, (Math.abs(r.y1 - r.y0) + 1) * 16); }
   if (S.routeDrag) { const r = S.routeDrag, s = sec(r.sid), [ox, oy] = origin(s), a = Math.min(r.k0, r.k1) * 16, b = (Math.max(r.k0, r.k1) + 1) * 16; ctx.fillStyle = 'rgba(255,210,63,0.6)';
     if (r.side === 'left' || r.side === 'right') ctx.fillRect(ox + (r.side === 'right' ? s.tiles[0] * 16 - 16 : 0), oy + a, 16, b - a); else ctx.fillRect(ox + a, oy + (r.side === 'bottom' ? s.tiles[1] * 16 - 16 : 0), b - a, 16); }
   if (S.hover && S.stamp) { const [hx, hy] = S.hover; ctx.strokeStyle = 'rgba(255,210,63,0.9)'; ctx.lineWidth = 1 / S.zoom; ctx.strokeRect(hx.ox + hx.x * 16, hx.oy + hx.y * 16, (S.stamp.w || 1) * 16, 16); }
@@ -146,6 +156,34 @@ function delSel() { const r = S.sel; if (!r) return; if (r.kind === 'piece') ret
   else if (r.kind === 'npc') { if (!confirm('Remove this person from the map? (Story characters may be needed by quests.)')) return; (REMOVED[r.sid] = REMOVED[r.sid] || []).push(r.src); }
   else if (r.kind === 'mon') { if (!MONS[r.sid]) MONS[r.sid] = (sec(r.sid).mons || []).map(m => ({ ...m })); MONS[r.sid].splice(r.i, 1); }
   touch(r.sid); S.sel = null; panel(); draw(); }
+function fillRect() {
+  const r = S.wallRect; S.wallRect = null; const s = sec(r.sid), keys = blockedKeys(r.sid), R = rowsOf(r.sid).map(x => x.split(''));
+  const x0 = Math.min(r.x0, r.x1), x1 = Math.max(r.x0, r.x1), y0 = Math.min(r.y0, r.y1), y1 = Math.max(r.y0, r.y1); let n = 0, kept = 0;
+  snap();
+  for (let y = y0; y <= y1; y++) for (let x = x0; x <= x1; x++) { if (!R[y] || R[y][x] === undefined || R[y][x] === S.brush) continue;
+    if (S.brush === '#' && keys.has(x + ',' + y)) { kept++; continue; }   // never wall over a door, exit, counter or spawn
+    R[y][x] = S.brush; n++; }
+  if (n) { ROWS[r.sid] = R.map(x => x.join('')); touch(r.sid); }
+  toast(`${n} tile${n === 1 ? '' : 's'} set to ${{ '#': 'wall', '.': 'walkable', ',': 'tall grass' }[S.brush]}${kept ? ` (${kept} door/exit tile${kept === 1 ? '' : 's'} left open)` : ''}`); panel(); draw();
+}
+// which walkable tiles the player can actually reach: flood from every exit, door, doormat, spawn and the tile in front of each door
+function reachOf(id) {
+  const s = sec(id), [W, H] = s.tiles, R = rowsOf(id), solid = new Set();
+  for (const q of LAYOUT[id] || []) { if (q.solid === false) continue; const b = propBox(q); if (b) for (let j = 0; j < b.h; j++) for (let i = 0; i < b.w; i++) solid.add((q.x + i) + ',' + (q.y + j)); }
+  for (const n of npcsOf(id)) solid.add(n.x + ',' + n.y); for (const m of monsOf(id)) solid.add(m.x + ',' + m.y);
+  for (const o of s.objects) if (o.k === 'stash') solid.add(o.tile.join(','));
+  const walk = (x, y) => x >= 0 && y >= 0 && x < W && y < H && '.,'.includes((R[y] || '')[x]) && !solid.has(x + ',' + y);
+  const seeds = [];
+  for (const [side, e] of Object.entries(s.edges || {})) for (let k = e.range[0]; k <= e.range[1]; k++) seeds.push({ left: [0, k], right: [W - 1, k], top: [k, 0], bottom: [k, H - 1] }[side]);
+  for (const w of s.warps) seeds.push(w.tile, [w.tile[0], w.tile[1] + 1], [w.tile[0], w.tile[1] - 1]);
+  for (const o of s.objects) if (o.k !== 'stash') seeds.push([o.tile[0], o.tile[1] + 1], [o.tile[0], o.tile[1] - 1], [o.tile[0] + 1, o.tile[1]], [o.tile[0] - 1, o.tile[1]]);
+  for (const d of DOORS[id] || []) seeds.push([d.tile[0], d.tile[1] + 1]);
+  for (const v of Object.values(s.spawns || {})) if (v) seeds.push(v);
+  const seen = new Set(), q = [];
+  for (const [x, y] of seeds) if (walk(x, y) && !seen.has(x + ',' + y)) { seen.add(x + ',' + y); q.push([x, y]); }
+  while (q.length) { const [x, y] = q.shift(); for (const [a, b] of [[1, 0], [-1, 0], [0, 1], [0, -1]]) { const k = (x + a) + ',' + (y + b); if (!seen.has(k) && walk(x + a, y + b)) { seen.add(k); q.push([x + a, y + b]); } } }
+  return { seen, solid };
+}
 function paint(t) { if (!t) return; const R = rowsOf(t.sid).slice(), row = R[t.y].split(''); if (row[t.x] === S.brush) return;
   if (S.brush !== '#' || !blockedKeys(t.sid).has(t.x + ',' + t.y) || confirm('This tile is a door, exit or spawn. Make it a wall anyway?')) { row[t.x] = S.brush; R[t.y] = row.join(''); ROWS[t.sid] = R; touch(t.sid); draw(); } }
 
@@ -153,7 +191,8 @@ function paint(t) { if (!t) return; const R = rowsOf(t.sid).slice(), row = R[t.y
 cv.addEventListener('pointerdown', e => {
   cv.setPointerCapture(e.pointerId); const [wx, wy] = toWorld(e), t = tileAt(wx, wy);
   if (e.button === 1 || e.button === 2 || e.altKey || !t) { S.pan = [e.clientX - S.ox, e.clientY - S.oy]; return; }
-  if (S.mode === 'walls') { snap(); S.painting = true; paint(t); return; }
+  if (S.mode === 'walls') { S.wallRect = { sid: t.sid, x0: t.x, y0: t.y, x1: t.x, y1: t.y }; draw(); return; }
+  if (S.mode === 'doors') { S.sel = { kind: 'door', sid: t.sid, x: t.x, y: t.y }; panel(); draw(); return; }
   if (S.mode === 'arrange') { if (S.view !== 'outdoor') return toast('Arrange works on the whole-world view.'); const s = sec(t.sid), [ox, oy] = origin(s); snap(); S.sel = { kind: 'piece', sid: t.sid }; S.pieceDrag = { sid: t.sid, dx: wx - ox, dy: wy - oy }; panel(); draw(); return; }
   if (S.mode === 'routes') { if (S.view !== 'outdoor') return toast('Routes work on the whole-world view.'); const s = sec(t.sid), [W, H] = s.tiles, side = t.x === 0 ? 'left' : t.x === W - 1 ? 'right' : t.y === 0 ? 'top' : t.y === H - 1 ? 'bottom' : null;
     if (!side) return toast('Start a route on the edge of a map piece, where it meets the next one.');
@@ -167,6 +206,7 @@ cv.addEventListener('pointermove', e => {
   const [wx, wy] = toWorld(e), t = tileAt(wx, wy);
   if (S.pan) { S.ox = e.clientX - S.pan[0]; S.oy = e.clientY - S.pan[1]; draw(); return; }
   if (S.painting) { paint(t); return; }
+  if (S.wallRect) { if (t && t.sid === S.wallRect.sid) { S.wallRect.x1 = t.x; S.wallRect.y1 = t.y; draw(); } return; }
   if (S.pieceDrag) { movePiece(wx, wy); return; }
   if (S.routeDrag) { const r = S.routeDrag, s = sec(r.sid), [ox, oy] = origin(s), [W, H] = s.tiles; r.k1 = r.side === 'left' || r.side === 'right' ? Math.max(0, Math.min(H - 1, Math.floor((wy - oy) / 16))) : Math.max(0, Math.min(W - 1, Math.floor((wx - ox) / 16))); draw(); return; }
   if (S.drag && S.propGrab && S.sel && S.sel.kind === 'prop') { dragProp(wx - S.propGrab.dx, wy - S.propGrab.dy); return; }
@@ -174,7 +214,7 @@ cv.addEventListener('pointermove', e => {
   S.hover = t ? [t] : null; if (S.stamp) { if (t) S.hover = [{ ...t }]; draw(); }
   $('#where').textContent = t ? `${t.sid} ${sec(t.sid).name}  tile ${t.x},${t.y}` : '';
 });
-addEventListener('pointerup', () => { if (S.routeDrag) finishRoute(); S.pan = null; S.drag = false; S.painting = false; S.pieceDrag = null; S.propGrab = null; });
+addEventListener('pointerup', () => { if (S.wallRect) fillRect(); if (S.routeDrag) finishRoute(); S.pan = null; S.drag = false; S.painting = false; S.pieceDrag = null; S.propGrab = null; });
 cv.addEventListener('wheel', e => { e.preventDefault(); const r = cv.getBoundingClientRect(), mx = e.clientX - r.left, my = e.clientY - r.top, z0 = S.zoom;
   S.zoom = Math.max(0.25, Math.min(8, S.zoom * (e.deltaY < 0 ? 1.15 : 1 / 1.15))); S.ox = mx - (mx - S.ox) * S.zoom / z0; S.oy = my - (my - S.oy) * S.zoom / z0; draw(); }, { passive: false });
 cv.addEventListener('contextmenu', e => e.preventDefault());
@@ -188,6 +228,33 @@ addEventListener('keydown', e => {
     snap(); if (e.shiftKey && S.sel.kind === 'prop') { const q = LAYOUT[S.sel.sid][S.sel.i]; q.ox = (q.ox || 0) + d[0]; q.oy = (q.oy || 0) + d[1]; touch(S.sel.sid); panel(); draw(); }
     else if (S.sel.kind === 'piece') { const g = gridOf(sec(S.sel.sid)).slice(); GRID[S.sel.sid] = [g[0] + d[0], g[1] + d[1]]; touch(S.sel.sid); draw(); } else moveSel(null, d[0], d[1]); }
 });
+
+// ---------- doors ----------
+function doorAt(sid, x, y) {
+  const ed = (DOORS[sid] || []).find(d => d.tile[0] === x && d.tile[1] === y); if (ed) return ed.to ? { to: ed.to, edited: true } : null;
+  const s = sec(sid), o = s.objects.find(o => o.tile[0] === x && o.tile[1] === y && (o.k === 'house' || o.k === 'bay' || o.k === 'shop'));
+  if (o) return { to: o.k === 'house' ? o.to : 'menu:' + o.k };
+  const w = s.warps.find(w => w.tile[0] === x && w.tile[1] === y && w.kind === 'door' && w.to !== 'back'); return w ? { to: w.to, fixed: true } : null;
+}
+const doorName = to => !to ? 'nothing' : to === 'menu:bay' ? 'a healing counter' : to === 'menu:shop' ? 'a shop counter' : to === 'back' ? 'back outside' : ((sec(to) || {}).name || to);
+function allDoors(sid) { const s = sec(sid), out = new Map(), add = (x, y) => { const d = doorAt(sid, x, y); if (d) out.set(x + ',' + y, { x, y, ...d }); };
+  for (const o of s.objects) if (['house', 'bay', 'shop'].includes(o.k)) add(...o.tile);
+  for (const w of s.warps) if (w.kind === 'door' && w.to !== 'back') add(...w.tile);
+  for (const d of DOORS[sid] || []) add(...d.tile); return [...out.values()]; }
+function setDoor(sid, x, y, to) {
+  snap(); DOORS[sid] = (DOORS[sid] || []).filter(d => !(d.tile[0] === x && d.tile[1] === y)); DOORS[sid].push({ tile: [x, y], to: to || null });
+  if (to) { const R = rowsOf(sid).map(r => r.split('')); if (R[y]) { R[y][x] = '#'; ROWS[sid] = R.map(r => r.join('')); }   // a door is bumped into, so its tile is solid
+    const below = (rowsOf(sid)[y + 1] || '')[x]; if (below !== '.' && below !== ',') toast('Heads up: the tile in front of this door is not walkable. Paint it walkable in Walls so the player can reach it.', 6000); }
+  touch(sid); panel(); draw();
+}
+function roomChoices() {   // rooms on this world first, then everything else
+  const mine = [], other = [];
+  for (const s of Object.values(ED.sections)) if (s.type === 'interior') (s.dir === S.planet ? mine : other).push(s);
+  const o = s => `<option value="${s.id}">${s.id} ${s.name}${s.dir === S.planet ? '' : ' (' + (ED.planets[s.dir] || s.dir) + ')'}</option>`;
+  return `<optgroup label="Rooms on this world">${mine.sort((a, b) => a.id.localeCompare(b.id)).map(o).join('')}</optgroup>
+    <optgroup label="Counters (no room)"><option value="menu:bay">Healing counter: heals the team at the door</option><option value="menu:shop">Shop counter: opens the shop at the door</option></optgroup>
+    <optgroup label="Rooms on other worlds">${other.sort((a, b) => a.id.localeCompare(b.id)).map(o).join('')}</optgroup>`;
+}
 
 // ---------- arranging map pieces ----------
 function overlap(a, b) { const [ax, ay] = gridOf(a), [bx, by] = gridOf(b); return ax < bx + b.tiles[0] && bx < ax + a.tiles[0] && ay < by + b.tiles[1] && by < ay + a.tiles[1]; }
@@ -261,9 +328,13 @@ function panel() {
       <input id="msearch" placeholder="Search Alienmon" value="${S.msearch || ''}">
       <div class="grid">${Object.entries(ED.mons).filter(([k]) => !S.msearch || k.toLowerCase().includes(S.msearch.toLowerCase())).map(([k, u]) => `<button class="pal mon ${S.stamp && S.stamp.mon === k ? 'on' : ''}" data-m="${k}" data-cap="${k}" title="${k}"><span style="background-image:url(${u})"></span></button>`).join('')}</div>`;
   } else if (m === 'walls') {
-    h += `<h3>Walls</h3><p class="hint">Paint where you can walk. Red = wall, green = tall grass (wild battles), clear = walkable.</p>
+    h += `<h3>Walls and walkable ground</h3><p class="hint">Pick a brush, then click a tile or press and drag to select a block of tiles; letting go fills the whole block. Doors and exits are never walled over.</p>
+      <div class="hint"><b>Colours:</b> <span style="color:#7dffa0">green</span> = the player can walk here (darker green = tall grass with wild battles),
+      <span style="color:#ffaa33">orange</span> = walkable but cut off (no way to get there: these are the spots to fix),
+      <span style="color:#ff6070">red</span> = wall, <span style="color:#b48cff">purple</span> = ground under a prop or person.</div>
       <div class="row">${[['#', 'Wall'], ['.', 'Walkable'], [',', 'Tall grass']].map(([c, n]) => `<button class="tool ${S.brush === c ? 'on' : ''}" data-b="${c}">${n}</button>`).join('')}</div>`;
   } else if (m === 'maps') h += mapPanel();
+  else if (m === 'doors') h += `<h3>Doors</h3><p class="hint">Click a door on the map, then choose what it opens. Cyan = doors the game already has, yellow = doors you set, grey = story doors (fixed). Any number of doors can open the same room: leaving it takes the player back out the door they came in by. To add a new Alienmon centre or house, place a building from the Props sheet, then click its door here and pick that world's Recovery Bay or house room.</p>`;
   else if (m === 'arrange') h += `<h3>Arrange the world</h3><p class="hint">Drag a map piece to move it. It snaps flush against the piece beside, above or below it and lines up with it. Arrows nudge the selected piece one tile. A red outline means two pieces overlap. Moving pieces only changes the layout: use Routes to let the player walk between them.</p>`;
   else if (m === 'routes') h += `<h3>Travel routes</h3><p class="hint">Blue bars are the ways across between map pieces. To add one, press on the edge of a piece where it touches the next piece and drag along that edge to set how wide the opening is (a road is usually 4 to 6 tiles). The opening is cut through the walls on both sides. Click a bar to select it; Delete removes it. Each side of a piece can have one route.</p>
     ${ROUTES.filter(r => !r.remove).map(r => `<div>${r.a} ${r.side} ${r.band[0]}-${r.band[1]} to ${r.b}</div>`).join('')}`;
@@ -272,11 +343,18 @@ function panel() {
 }
 function selPanel() {
   const r = S.sel;
+  if (r && r.kind === 'door') { const d = doorAt(r.sid, r.x, r.y), s = sec(r.sid);
+    if (d && d.fixed) return `<div class="sel"><b>Story door</b><div>${s.name}, tile ${r.x},${r.y} opens ${doorName(d.to)}</div><div class="hint">This door is part of the story wiring. Ask Claude to change it.</div></div>`;
+    return `<div class="sel"><b>${d ? 'Door' : 'New door'}</b><div>${s.name}, tile ${r.x},${r.y}${d ? ' opens ' + doorName(d.to) : ''}</div>
+      <label>Opens <select id="doorto"><option value="">Choose a room...</option>${roomChoices()}</select></label>
+      <div class="row"><button id="doorset">Set door</button>${d ? '<button id="doorrm">Remove door</button>' : ''}${d && d.to && sec(d.to) ? `<button id="dooropen">Open ${doorName(d.to)}</button>` : ''}</div>
+      <div class="hint">The door tile becomes solid (you walk into it to go in). The tile in front of it must be walkable.</div></div>`; }
   if (r && r.kind === 'piece') { const s = sec(r.sid), g = gridOf(s); return `<div class="sel"><b>${s.id} ${s.name}</b><div>at ${g[0]}, ${g[1]} (tiles), ${s.tiles[0]}x${s.tiles[1]}</div><div class="hint">Drag to move, arrows nudge a tile</div></div>`; }
   if (r && r.kind === 'route') { const s = sec(r.sid), e = (s.edges || {})[r.side]; return e ? `<div class="sel"><b>Route</b><div>${s.name}, ${r.side} edge ${e.range[0]}-${e.range[1]}, to ${(sec(e.to) || {}).name || e.to}</div><button id="del">Remove route</button></div>` : ''; }
   const p = selPos(); if (!p) return '';
   let name = r.kind === 'prop' ? 'Prop ' + LAYOUT[r.sid][r.i].p : r.kind === 'mon' ? monsOf(r.sid)[r.i].mon : (npcsOf(r.sid).find(n => same(n.ref, r)) || {}).name || 'Townsperson';
   let extra = '';
+  if (r.kind === 'prop') { const q = LAYOUT[r.sid][r.i]; extra = `<label>Solid rows (for buildings: how many tiles deep it blocks) <input id="ph" type="number" min="1" max="8" value="${q.h || 1}"></label>`; }
   if (r.kind === 'added') { const a = ADDED[r.sid][r.i]; extra = `<label>Name <input id="ename" value="${a.name || ''}"></label><label>Says <textarea id="eline">${(a.t || []).join('\n')}</textarea></label>`; }
   return `<div class="sel"><b>${name}</b><div>${r.sid} ${sec(r.sid).name} · tile ${p[0]},${p[1]}</div>${extra}
     <div class="hint">Drag to move${r.kind === 'prop' ? ' anywhere, to the pixel (its solid footprint follows the tile under its base)' : ''} · arrows move a tile${r.kind === 'prop' ? ' · Shift+arrows nudge a pixel · Ctrl+C copy' : ''} · Delete removes</div><button id="del">Remove</button></div>`;
@@ -286,7 +364,7 @@ function mapPanel() {
   return `<h3>Grow this world</h3><p class="hint">Upload a new map render (same style and scale as the others: 64 px per tile, 1536×1024 wide or 1024×1024 square) and attach it to the edge of an existing map piece.</p>
     <input type="file" id="mfile" accept="image/*">
     <label>Name <input id="mname" placeholder="e.g. Rimwalk Trail Part C"></label>
-    <label>Kind <select id="mtype"><option>route</option><option>town</option><option>field</option><option>landmark</option></select></label>
+    <label>Kind <select id="mtype"><option>route</option><option>town</option><option>field</option><option>landmark</option><option value="interior">interior room (Recovery Bay, shop, house...)</option></select></label>
     <label>Attach to <select id="mto">${outs.map(s => `<option value="${s.id}">${s.id} ${s.name}</option>`).join('')}</select></label>
     <label>On its <select id="mside"><option>right</option><option>left</option><option>top</option><option>bottom</option></select> edge</label>
     <label>Opening, tiles <input id="mband" value="5-10" size="6"> (rows for left/right, columns for top/bottom)</label>
@@ -317,6 +395,10 @@ function wire() {
   on('#ename', 'input', e => { const a = ADDED[S.sel.sid][S.sel.i]; a.name = e.target.value; touch(S.sel.sid); });
   on('#eline', 'input', e => { const a = ADDED[S.sel.sid][S.sel.i]; a.t = e.target.value.split('\n').filter(Boolean); touch(S.sel.sid); });
   on('#check', 'click', check);
+  on('#doorset', 'click', () => { const v = $('#doorto').value; if (!v) return toast('Choose a room first.'); setDoor(S.sel.sid, S.sel.x, S.sel.y, v); toast('Door set: opens ' + doorName(v)); });
+  on('#doorrm', 'click', () => setDoor(S.sel.sid, S.sel.x, S.sel.y, null));
+  on('#dooropen', 'click', () => { const d = doorAt(S.sel.sid, S.sel.x, S.sel.y); S.view = d.to; S.sel = null; views(); panel(); fit(); });
+  on('#ph', 'input', e => { const q = LAYOUT[S.sel.sid][S.sel.i]; snap(); const h = Math.max(1, Math.min(8, +e.target.value || 1)); if (h > 1) q.h = h; else delete q.h; touch(S.sel.sid); draw(); });
   on('#madd', 'click', addMap);
 }
 
@@ -340,6 +422,7 @@ function check() {
 // ---------- growing a world ----------
 async function addMap() {
   const f = $('#mfile').files[0], name = ($('#mname').value || '').trim(); if (!f || !name) return toast('Choose an image and give it a name.');
+  if ($('#mtype').value === 'interior') return addRoom(f, name);
   const to = $('#mto').value, side = $('#mside').value, band = ($('#mband').value || '5-10').split('-').map(Number), t = sec(to);
   if ((t.edges || {})[side] || MAPS.some(m => m.attach.to === to && m.attach.side === side)) return toast(`${to} already has an exit on its ${side} edge.`);
   const im = await new Promise((res, rej) => { const i = new Image(); i.onload = () => res(i); i.onerror = rej; i.src = URL.createObjectURL(f); });
@@ -363,12 +446,28 @@ async function addMap() {
   toast(`Added ${id} ${name} (${W}×${H} tiles). Paint its walls, then dress it.`); panel(); draw();
 }
 
+async function addRoom(f, name) {   // a new interior: walls round the edge, a 2-tile doormat in the middle of the bottom wall
+  const im = await new Promise((res, rej) => { const i = new Image(); i.onload = () => res(i); i.onerror = rej; i.src = URL.createObjectURL(f); });
+  const per = im.naturalWidth >= 600 ? 64 : 16, W = Math.max(8, Math.round(im.naturalWidth / per)), H = Math.max(8, Math.round(im.naturalHeight / per));
+  const c = document.createElement('canvas'); c.width = W * 16; c.height = H * 16; const g = c.getContext('2d'); g.imageSmoothingQuality = 'high'; g.drawImage(im, 0, 0, W * 16, H * 16);
+  const used = new Set(Object.keys(ED.sections)); let n = 300; while (used.has(String(n))) n++; const id = String(n), dir = S.planet, url = c.toDataURL('image/png');
+  const slug = name.toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, ''), cx = Math.floor(W / 2) - 1;
+  const R = Array.from({ length: H }, (_, y) => Array.from({ length: W }, (_, x) => (x <= 1 || y <= 3 || x >= W - 2 || y >= H - 1) ? '#' : '.'));
+  R[H - 1][cx] = R[H - 1][cx + 1] = '.';
+  ED.sections[id] = { id, name, planet: ED.planets[dir], dir, type: 'interior', tiles: [W, H], grid: null, img: url, rows: R.map(r => r.join('')), edges: {},
+    warps: [{ tile: [cx, H - 1], to: 'back', kind: 'door' }, { tile: [cx + 1, H - 1], to: 'back', kind: 'door' }], objects: [], spawns: { default: [cx, H - 2] }, npcs: [], mons: [] };
+  ROWS[id] = ED.sections[id].rows; NEWIMG[id] = url; touch(id);
+  MAPS.push({ id, name, dir, planet: ED.planets[dir], type: 'interior', tiles: [W, H], img: `art/sections_game/${dir}/${id}_${slug}.png` });
+  S.view = id; views(); fit(); S.mode = 'walls'; document.querySelectorAll('[data-mode]').forEach(x => x.classList.toggle('on', x.dataset.mode === 'walls'));
+  toast(`Room ${id} ${name} added (${W}x${H} tiles). Paint its walls and furniture as walls, then use Doors to point doors at it.`, 9000); panel(); draw();
+}
+
 // ---------- saving ----------
 function bundle() {
   const npcs = { moves: MOVES, added: ADDED, removed: REMOVED };
   const coll = {}; for (const id of Object.keys(ROWS)) coll[id] = { id, name: sec(id).name, tiles: sec(id).tiles, edited: true, legend: { '.': 'walk', '#': 'blocked', ',': 'tall grass' }, rows: ROWS[id] };
   const images = {}; for (const m of MAPS) images[m.img] = NEWIMG[m.id];
-  return { version: 1, layout: LAYOUT, npcs, mons: MONS, maps: MAPS, collision: coll, images, grid: GRID, routes: ROUTES };
+  return { version: 1, layout: LAYOUT, npcs, mons: MONS, maps: MAPS, collision: coll, images, grid: GRID, routes: ROUTES, doors: DOORS };
 }
 let DIR = null;
 async function save() {
@@ -387,6 +486,7 @@ async function save() {
     await put('data/editor/maps.json', JSON.stringify(b.maps, null, 1));
     await put('data/editor/grid.json', JSON.stringify(b.grid, null, 1));
     await put('data/editor/routes.json', JSON.stringify(b.routes, null, 1));
+    await put('data/editor/doors.json', JSON.stringify(b.doors, null, 1));
     for (const [id, c] of Object.entries(b.collision)) await put(`data/collision/${id}.json`, JSON.stringify(c));
     for (const [rel, url] of Object.entries(b.images)) await put(rel, await (await fetch(url)).blob());
     DIRTY.clear(); $('#save').classList.remove('hot');
@@ -415,7 +515,7 @@ function views() { const ss = planetSecs().sort((a, b) => a.id.localeCompare(b.i
   $('#view').innerHTML = `<option value="outdoor">Whole world (outdoor maps stitched)</option>` + ss.map(s => `<option value="${s.id}" ${S.view === s.id ? 'selected' : ''}>${s.id} ${s.name}${s.grid ? '' : ' (inside)'}</option>`).join(''); $('#view').value = S.view; }
 async function boot() {
   ED = await (await fetch('editor_data.json', { cache: 'no-store' })).json();
-  LAYOUT = ED.layout || {}; MOVES = (ED.edits.npcs || {}).moves || {}; ADDED = (ED.edits.npcs || {}).added || {}; REMOVED = (ED.edits.npcs || {}).removed || {}; MONS = ED.edits.mons || {}; MAPS = ED.edits.maps || []; GRID = ED.edits.grid || {}; ROUTES = ED.edits.routes || [];
+  LAYOUT = ED.layout || {}; MOVES = (ED.edits.npcs || {}).moves || {}; ADDED = (ED.edits.npcs || {}).added || {}; REMOVED = (ED.edits.npcs || {}).removed || {}; MONS = ED.edits.mons || {}; MAPS = ED.edits.maps || []; GRID = ED.edits.grid || {}; ROUTES = ED.edits.routes || []; DOORS = ED.edits.doors || {};
   const dirs = Object.keys(ED.planets).sort(); S.planet = dirs[0]; S.sheet = Object.keys(ED.props).find(d => d === S.planet) || Object.keys(ED.props)[0];
   $('#planet').innerHTML = dirs.map(d => `<option value="${d}">${ED.planets[d]}</option>`).join('');
   $('#planet').onchange = e => { S.planet = e.target.value; S.view = 'outdoor'; S.sel = null; if (ED.props[S.planet]) S.sheet = S.planet; views(); panel(); fit(); };
