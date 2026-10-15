@@ -6,7 +6,19 @@ A2={s['id']:s for s in json.load(open(S+'atlas_v2.json',encoding='utf-8'))['sect
 AT=json.load(open('art/sections/atlas.json',encoding='utf-8'));A1={s['id']:s for s in AT['sections']}
 L=json.load(open('data/sections/links.json',encoding='utf-8'))
 H=lambda x,y:{'tile':[x,y]}
-WIRE={'11':{
+WIRE={'12':{
+ 'ids':['%03d'%i for i in range(136,146)],
+ 'doors':[],'stairs':[],
+ 'objects':{
+  '136':[{'tile':[4,4],'k':'house','to':'172','why':'V2: camp tent (shared Starfall home)'},{'tile':[20,4],'k':'house','to':'172','why':'V2: camp tent'}],
+ },
+ 'warps':[],
+ 'gates':{},
+ 'gates_new':[{'section':'136','tiles':[[1,7],[1,8]],'at_dy':0,'node':'dustara','planet':'dustara','label':'the crater shuttle back to the Shuttle Pad','why':'V2: the landing pad is the arrival point and the shuttle home'}],
+ 'spawns':{'136':{'arrival':[3,8],'default':[3,8]}},
+ 'arrival':{'starfall':{'section':'136','why':'V2: the sandbagged landing pad at Rim Camp'}},
+ 'reparent':{'172':'136'},
+},'11':{
  'ids':['%03d'%i for i in range(123,136)],
  'doors':[],'stairs':[],
  'objects':{

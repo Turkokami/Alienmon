@@ -187,19 +187,19 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 
 | Section | Tile | Item | Tier |
 |---|---|---|---|
-| 136 Rim Camp | 17,12 | 1600x Stardust | 6 |
-| 138 Seedpod Fields Part A | 16,14 | 3x Ether Gel | 6 |
-| 138 Seedpod Fields Part A | 11,2 | 1x Singularity Pod | 6 |
-| 139 Seedpod Fields Part B | 18,14 | 3x Ether Gel | 6 |
-| 139 Seedpod Fields Part B | 7,3 | 1600x Stardust | 6 |
-| 140 Teo's Old Camp | 17,12 | 1600x Stardust | 6 |
+| 136 Rim Camp | 9,12 | 1600x Stardust | 6 |
+| 138 Seedpod Fields Part A | 10,13 | 3x Ether Gel | 6 |
+| 138 Seedpod Fields Part A | 18,12 | 1x Singularity Pod | 6 |
+| 139 Seedpod Fields Part B | 10,13 | 3x Ether Gel | 6 |
+| 139 Seedpod Fields Part B | 6,2 | 1600x Stardust | 6 |
+| 140 Teo's Old Camp | 10,3 | 1600x Stardust | 6 |
 | 141 Crater Rim | 10,13 | 1x Max Revive | 6 |
-| 141 Crater Rim | 19,14 | 3x Full Gel | 6 |
-| 142 Crater Descent B1 | 14,5 | 3x Full Gel | 6 |
-| 143 Crater Descent B2 | 3,7 | 1x Singularity Pod | 6 |
-| 143 Crater Descent B2 | 2,4 | 3x Full Gel | 6 |
-| 144 Crater Descent B3 | 14,5 | 1600x Stardust | 6 |
-| 145 Rift Engine Platform | 6,1 | 1x Max Revive | 6 |
+| 141 Crater Rim | 6,2 | 3x Full Gel | 6 |
+| 142 Crater Descent B1 | 14,7 | 3x Full Gel | 6 |
+| 143 Crater Descent B2 | 2,10 | 1x Singularity Pod | 6 |
+| 143 Crater Descent B2 | 13,9 | 3x Full Gel | 6 |
+| 144 Crater Descent B3 | 2,10 | 1600x Stardust | 6 |
+| 145 Rift Engine Platform | 9,12 | 1x Max Revive | 6 |
 
 ## Apex Array (1)
 

@@ -3019,11 +3019,11 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → arrival (landing pad / gate)",
-    "right edge, tile rows 7–8 → Seedpod Fields Part A"
+    "right edge, tile rows 5–10 → Seedpod Fields Part A"
    ],
    "notes": "Military cordon camp",
-   "file": "art/sections/12_starfall/136_rim_camp.png"
+   "file": "art/sections/12_starfall/136_rim_camp.png",
+   "v2": true
   },
   {
    "id": "137",
@@ -3040,11 +3040,10 @@
    ],
    "tile_px_render": 64,
    "tile_px_game": 16,
-   "exits": [
-    "doormat at the bottom center of the room leads back outside"
-   ],
+   "exits": [],
    "notes": "Recovery tent interior",
-   "file": "art/sections/12_starfall/137_rim_camp_medic_tent.png"
+   "file": "art/sections/12_starfall/137_rim_camp_medic_tent.png",
+   "v2": true
   },
   {
    "id": "138",
@@ -3062,11 +3061,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Rim Camp",
-    "right edge, tile rows 7–8 → Seedpod Fields Part B"
+    "left edge, tile rows 5–9 → Rim Camp",
+    "right edge, tile rows 5–9 → Seedpod Fields Part B"
    ],
    "notes": "Fields of cracked seedpod shells",
-   "file": "art/sections/12_starfall/138_seedpod_fields_part_a.png"
+   "file": "art/sections/12_starfall/138_seedpod_fields_part_a.png",
+   "v2": true
   },
   {
    "id": "139",
@@ -3084,11 +3084,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Seedpod Fields Part A",
-    "right edge, tile rows 7–8 → Teo's Old Camp"
+    "left edge, tile rows 5–8 → Seedpod Fields Part A",
+    "right edge, tile rows 5–8 → Teo's Old Camp"
    ],
    "notes": "Fields of cracked seedpod shells",
-   "file": "art/sections/12_starfall/139_seedpod_fields_part_b.png"
+   "file": "art/sections/12_starfall/139_seedpod_fields_part_b.png",
+   "v2": true
   },
   {
    "id": "140",
@@ -3106,11 +3107,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Seedpod Fields Part B",
-    "right edge, tile rows 7–8 → Crater Rim"
+    "left edge, tile rows 5–9 → Seedpod Fields Part B",
+    "right edge, tile rows 5–9 → Crater Rim"
    ],
    "notes": "Teo's abandoned camp (Teo's Journal)",
-   "file": "art/sections/12_starfall/140_teo_s_old_camp.png"
+   "file": "art/sections/12_starfall/140_teo_s_old_camp.png",
+   "v2": true
   },
   {
    "id": "141",
@@ -3128,11 +3130,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Teo's Old Camp",
-    "right edge, tile rows 7–8 → Crater Descent B1"
+    "left edge, tile rows 5–8 → Teo's Old Camp",
+    "right edge, tile rows 5–8 → Crater Descent B1"
    ],
    "notes": "Rim of the crater",
-   "file": "art/sections/12_starfall/141_crater_rim.png"
+   "file": "art/sections/12_starfall/141_crater_rim.png",
+   "v2": true
   },
   {
    "id": "142",
@@ -3150,11 +3153,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7–8 → Crater Rim",
-    "top edge, tile columns 7–8 → Crater Descent B2"
+    "bottom edge, tile columns 6–9 → Crater Rim",
+    "top edge, tile columns 6–9 → Crater Descent B2"
    ],
    "notes": "Descent into the crater, 3 levels",
-   "file": "art/sections/12_starfall/142_crater_descent_b1.png"
+   "file": "art/sections/12_starfall/142_crater_descent_b1.png",
+   "v2": true
   },
   {
    "id": "143",
@@ -3172,11 +3176,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7–8 → Crater Descent B1",
-    "top edge, tile columns 7–8 → Crater Descent B3"
+    "bottom edge, tile columns 6–9 → Crater Descent B1",
+    "top edge, tile columns 6–9 → Crater Descent B3"
    ],
    "notes": "Descent into the crater, 3 levels",
-   "file": "art/sections/12_starfall/143_crater_descent_b2.png"
+   "file": "art/sections/12_starfall/143_crater_descent_b2.png",
+   "v2": true
   },
   {
    "id": "144",
@@ -3194,11 +3199,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7–8 → Crater Descent B2",
-    "top edge, tile columns 7–8 → Rift Engine Platform"
+    "bottom edge, tile columns 6–9 → Crater Descent B2",
+    "top edge, tile columns 6–9 → Rift Engine Platform"
    ],
    "notes": "Descent into the crater, 3 levels",
-   "file": "art/sections/12_starfall/144_crater_descent_b3.png"
+   "file": "art/sections/12_starfall/144_crater_descent_b3.png",
+   "v2": true
   },
   {
    "id": "145",
@@ -3216,10 +3222,11 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Crater Descent B3"
+    "left edge, tile rows 5–10 → Crater Descent B3"
    ],
    "notes": "Helix Rift Engine platform (M19 Thorne at the Rift)",
-   "file": "art/sections/12_starfall/145_rift_engine_platform.png"
+   "file": "art/sections/12_starfall/145_rift_engine_platform.png",
+   "v2": true
   },
   {
    "id": "146",

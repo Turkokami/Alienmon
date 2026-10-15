@@ -242,66 +242,6 @@
  ],
  "ignore_mats": {},
  "objects": {
-  "136": [
-   {
-    "tile": [
-     5,
-     5
-    ],
-    "k": "house",
-    "why": "house door: opens the shared Starfall Rift house",
-    "to": "172"
-   },
-   {
-    "tile": [
-     10,
-     4
-    ],
-    "k": "house",
-    "why": "house door: opens the shared Starfall Rift house",
-    "to": "172"
-   },
-   {
-    "tile": [
-     14,
-     12
-    ],
-    "k": "house",
-    "why": "house door: opens the shared Starfall Rift house",
-    "to": "172"
-   }
-  ],
-  "139": [
-   {
-    "tile": [
-     11,
-     0
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   }
-  ],
-  "145": [
-   {
-    "tile": [
-     9,
-     5
-    ],
-    "k": "house",
-    "why": "house door: opens the shared Starfall Rift house",
-    "to": "172"
-   },
-   {
-    "tile": [
-     3,
-     11
-    ],
-    "k": "house",
-    "to": "172",
-    "why": "house door: path in front opened to match the drawn ground"
-   }
-  ],
   "146": [],
   "148": [
    {
@@ -1304,6 +1244,26 @@
     "to": "186",
     "why": "V2: Gravewell house"
    }
+  ],
+  "136": [
+   {
+    "tile": [
+     4,
+     4
+    ],
+    "k": "house",
+    "to": "172",
+    "why": "V2: camp tent (shared Starfall home)"
+   },
+   {
+    "tile": [
+     20,
+     4
+    ],
+    "k": "house",
+    "to": "172",
+    "why": "V2: camp tent"
+   }
   ]
  },
  "arrival": {
@@ -1350,6 +1310,10 @@
   "umbra": {
    "section": "123",
    "why": "V2: out of the Shadow Tunnel archway"
+  },
+  "starfall": {
+   "section": "136",
+   "why": "V2: the sandbagged landing pad at Rim Camp"
   }
  },
  "unlisted": {},
@@ -1649,6 +1613,16 @@
     7,
     12
    ]
+  },
+  "136": {
+   "arrival": [
+    3,
+    8
+   ],
+   "default": [
+    3,
+    8
+   ]
   }
  },
  "zones": {
@@ -1889,6 +1863,24 @@
    "planet": "dustara",
    "label": "the Shadow Tunnel back to the Frontier",
    "why": "V2: the tunnel archway is the arrival point and the way home"
+  },
+  {
+   "section": "136",
+   "tiles": [
+    [
+     1,
+     7
+    ],
+    [
+     1,
+     8
+    ]
+   ],
+   "at_dy": 0,
+   "node": "dustara",
+   "planet": "dustara",
+   "label": "the crater shuttle back to the Shuttle Pad",
+   "why": "V2: the landing pad is the arrival point and the shuttle home"
   }
  ],
  "trainers": {

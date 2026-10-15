@@ -27,6 +27,16 @@ ZONE_TOWN = {'thalassa': [('wall', T(40, 41, 43, 44, 47, 50, 51), 2), ('wall', T
 # Towns are laid out by hand like a real street: lamps in straight evenly spaced rows, stalls in a line along the
 # shopfronts, planters in pairs either side of a door, benches facing each other. (prop, x, y)
 HAND = {
+ '136': [('12_starfall/28', 2, 5), ('12_starfall/28', 7, 5), ('12_starfall/28', 12, 5), ('12_starfall/28', 17, 5), ('12_starfall/28', 22, 5), ('12_starfall/03', 8, 5), ('12_starfall/03', 11, 5), ('12_starfall/01', 8, 8), ('12_starfall/80', 12, 8), ('12_starfall/23', 16, 8), ('12_starfall/09', 19, 11), ('12_starfall/101', 9, 11), ('12_starfall/101', 13, 11), ('12_starfall/50', 22, 11)],
+ '137': [('12_starfall/97', 3, 4), ('12_starfall/97', 12, 4), ('12_starfall/109', 12, 11), ('12_starfall/110', 3, 11)],
+ '138': [('12_starfall/11', 6, 5), ('12_starfall/11', 17, 5), ('12_starfall/45', 4, 9), ('12_starfall/20', 19, 9)],
+ '139': [('12_starfall/11', 6, 5), ('12_starfall/11', 17, 5), ('12_starfall/46', 14, 8)],
+ '140': [('12_starfall/28', 8, 4), ('12_starfall/28', 15, 4), ('12_starfall/74', 3, 9), ('12_starfall/01', 19, 9)],
+ '141': [('12_starfall/11', 5, 5), ('12_starfall/11', 18, 5), ('12_starfall/40', 11, 9), ('12_starfall/41', 13, 9)],
+ '142': [('12_starfall/47', 2, 5), ('12_starfall/19', 13, 5), ('12_starfall/59', 2, 9)],
+ '143': [('12_starfall/47', 13, 4), ('12_starfall/72', 2, 9)],
+ '144': [('12_starfall/47', 2, 5), ('12_starfall/59', 13, 5)],
+ '145': [('12_starfall/11', 3, 4), ('12_starfall/11', 12, 4), ('12_starfall/40', 4, 10), ('12_starfall/38', 11, 11)],
  '123': [('11_umbra/42', 5, 4), ('11_umbra/42', 10, 4), ('11_umbra/79', 2, 6), ('11_umbra/78', 13, 6)],
  '124': [('11_umbra/16', 1, 4), ('11_umbra/16', 6, 4), ('11_umbra/16', 11, 4), ('11_umbra/16', 17, 4), ('11_umbra/16', 22, 4), ('11_umbra/26', 5, 4), ('11_umbra/26', 10, 4), ('11_umbra/26', 13, 4), ('11_umbra/26', 16, 4), ('11_umbra/33', 3, 7), ('11_umbra/35', 8, 7), ('11_umbra/39', 15, 7), ('11_umbra/33', 19, 7), ('11_umbra/01', 6, 10), ('11_umbra/04', 16, 10), ('11_umbra/48', 1, 11), ('11_umbra/48', 22, 11)],
  '125': [('11_umbra/84', 2, 5), ('11_umbra/84', 13, 5)],

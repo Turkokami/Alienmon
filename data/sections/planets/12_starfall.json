@@ -4,41 +4,40 @@
    "interior": "137",
    "parent": "136",
    "door": [
-    17,
-    5
+    9,
+    4
    ],
    "door2": [
-    18,
-    5
+    10,
+    4
    ],
    "mat": [
     [
      7,
-     13
+     14
     ],
     [
      8,
-     13
+     14
     ]
    ],
    "confidence": "high",
-   "why": "Rim Camp's big dome with the cyan cross over the arched double door (cols 17-18) is the medic/recovery tent"
+   "why": "V2: the medic tent with the cyan cross"
   }
  ],
- "edge_rows": {
-  "145": {
-   "left": [
-    6,
-    7
-   ]
-  }
- },
  "objects": {
   "137": [
    {
     "tile": [
+     7,
+     4
+    ],
+    "k": "bay"
+   },
+   {
+    "tile": [
      8,
-     10
+     4
     ],
     "k": "bay"
    }
@@ -46,8 +45,8 @@
   "136": [
    {
     "tile": [
-     7,
-     6
+     6,
+     4
     ],
     "k": "sign",
     "t": [
@@ -56,8 +55,8 @@
    },
    {
     "tile": [
-     14,
-     5
+     13,
+     4
     ],
     "k": "sign",
     "t": [
@@ -115,20 +114,20 @@
   "145": [
    {
     "tile": [
-     17,
-     7
-    ],
-    "k": "keeper"
-   },
-   {
-    "tile": [
-     19,
-     7
+     15,
+     4
     ],
     "k": "sign",
     "t": [
      "RIFT ENGINE CONSOLE - Containment field: 41%. Output: rising. Authorized by Director K. Thorne."
     ]
+   },
+   {
+    "tile": [
+     15,
+     7
+    ],
+    "k": "keeper"
    }
   ]
  },
@@ -154,63 +153,78 @@
     "art": "guard",
     "t": [
      "Cordon guard: Nobody goes past the fields without a reason. Got one? Fine, just don't die down there."
-    ]
+    ],
+    "tile": [
+     14,
+     5
+    ],
+    "stay": true
    },
    {
     "art": "civilian",
     "t": [
      "Rig worker: Helix left half its drills running when they ran. You can hear them grinding at night."
-    ]
+    ],
+    "tile": [
+     19,
+     10
+    ],
+    "stay": true
    },
    {
     "art": "explorer",
     "tile": [
-     14,
-     13
+     5,
+     5
     ],
     "t": [
      "Rift seeker: Can you hear it? The crater hums like a heartbeat. Louder every week."
-    ]
+    ],
+    "stay": true
    },
    {
     "art": "researcher",
     "tile": [
-     5,
-     9
+     1,
+     10
     ],
     "t": [
      "Star watcher: Crystals here grow overnight. I measured one at breakfast and again at dinner. Twice as big."
-    ]
+    ],
+    "stay": true
    },
    {
     "art": "technician",
     "tile": [
-     19,
-     9
+     9,
+     7
     ],
     "t": [
      "Camp tech: The Medic Tent is the dome with the blue cross. Rest your team before the Seedpod Fields."
-    ]
+    ],
+    "stay": true
    },
    {
     "art": "wanderer",
     "tile": [
-     3,
-     4
+     15,
+     12
     ],
     "t": [
      "Old hand: Twenty years back the pods fell right here. Every Alienmon you've ever met came from that sky."
-    ]
+    ],
+    "stay": true
    },
    {
     "art": "strand",
     "tile": [
-     21,
-     5
+     17,
+     7
     ],
     "t": [
      "Ex-Helix grunt: I scratched the logo off my jacket. Whatever Thorne's building down there, I want no part."
-    ]
+    ],
+    "stay": true
    }
   ],
   "137": [
@@ -218,7 +232,7 @@
     "art": "nurse",
     "tile": [
      8,
-     10
+     4
     ],
     "t": [
      "Nurse: Welcome to the Medic Tent. Step up to the counter and I'll patch your team right up."
@@ -229,7 +243,12 @@
     "art": "miner",
     "t": [
      "Injured driller: Got clipped by a crystal-type in the fields. Those shells hide more than dust, kid."
-    ]
+    ],
+    "tile": [
+     9,
+     12
+    ],
+    "stay": true
    }
   ],
   "138": [
@@ -237,13 +256,23 @@
     "art": "researcher",
     "t": [
      "Researcher: Each cracked seedpod is a shell something hatched from. Rare Alienmon hide in the pink weeds."
-    ]
+    ],
+    "tile": [
+     6,
+     6
+    ],
+    "stay": true
    },
    {
     "art": "civilian",
     "t": [
      "Hiker: Out of Stasis Pods already? Weaken them first - a tired Alienmon is much easier to catch."
-    ]
+    ],
+    "tile": [
+     12,
+     3
+    ],
+    "stay": true
    }
   ],
   "139": [
@@ -251,13 +280,23 @@
     "art": "explorer",
     "t": [
      "Rift seeker: Trainers out here spot you from five tiles off. Heal up before you walk their line of sight."
-    ]
+    ],
+    "tile": [
+     12,
+     5
+    ],
+    "stay": true
    },
    {
     "art": "miner",
     "t": [
      "Driller: Helix paid triple to dig here. Then the pods started glowing back. Nobody stayed for the bonus."
-    ]
+    ],
+    "tile": [
+     3,
+     8
+    ],
+    "stay": true
    }
   ],
   "140": [
@@ -265,13 +304,23 @@
     "art": "pilgrim",
     "t": [
      "Pilgrim: They say an explorer camped here waiting for the light to speak. His tent still stands."
-    ]
+    ],
+    "tile": [
+     11,
+     12
+    ],
+    "stay": true
    },
    {
     "art": "wanderer",
     "t": [
      "Wanderer: I leave a fresh cup by the fire each time I pass. Somebody should, for whoever comes home."
-    ]
+    ],
+    "tile": [
+     11,
+     3
+    ],
+    "stay": true
    }
   ],
   "141": [
@@ -279,13 +328,23 @@
     "art": "researcher",
     "t": [
      "Star watcher: Psi and Gravity Alienmon gather near the rim. Bring something sturdy."
-    ]
+    ],
+    "tile": [
+     18,
+     6
+    ],
+    "stay": true
    },
    {
     "art": "guard",
     "t": [
      "Rim guard: The descent's three levels deep. Signal Shards resonate louder the farther down you go."
-    ]
+    ],
+    "tile": [
+     13,
+     8
+    ],
+    "stay": true
    }
   ],
   "142": [
@@ -293,19 +352,25 @@
     "art": "explorer",
     "t": [
      "Caver: Watch the purple cracks. That's not lava, it's starlight. Doesn't burn - just pulls."
-    ]
+    ],
+    "tile": [
+     5,
+     9
+    ],
+    "stay": true
    }
   ],
   "143": [
    {
     "art": "technician",
     "tile": [
-     13,
-     2
+     5,
+     4
     ],
     "t": [
      "Helix tech (lost): My map says the Rift Engine is 'down'. Every tunnel here says 'down'. Help?"
-    ]
+    ],
+    "stay": true
    }
   ],
   "144": [
@@ -313,7 +378,12 @@
     "art": "pilgrim",
     "t": [
      "Pilgrim: The vortex below is breathing. If the Keepers' Shards ever meant anything, it's here."
-    ]
+    ],
+    "tile": [
+     10,
+     5
+    ],
+    "stay": true
    }
   ],
   "145": [
@@ -321,24 +391,26 @@
     "art": "strand",
     "t": [
      "Helix grunt: The Director's up at the Engine. Go ahead - I'm not paid enough to stand between you two."
-    ]
+    ],
+    "tile": [
+     12,
+     5
+    ],
+    "stay": true
    },
    {
     "art": "researcher",
     "t": [
      "Shaken scientist: Containment keeps dropping. That thing isn't a power source. It's a door."
-    ]
+    ],
+    "tile": [
+     5,
+     3
+    ],
+    "stay": true
    }
   ]
  },
- "unlisted": {
-  "136": "Three other domes have doors with no interior (stall dome door 5,5; dome door 10,4; small domes 8,12 and 15,12) - all left blocked.",
-  "138": "Stairs at 9,2-9,3 climb toward the top edge into crystals/void - top tile 9,2 left blocked.",
-  "139": "Path and stairs at col 11 rows 0-3 run off the top edge - 11,0 left blocked; stairs 10,11-10,12 end at a crystal dead-end.",
-  "140": "Stairs/path at cols 11-12 rows 0-1 run off the top edge (row 0 blocked); path at col 11 rows 13-15 runs off the bottom edge (11,15 blocked); stairs 16,12 end at crystals.",
-  "141": "Stairs 18-19,14 lead off the bottom edge into the void (row 15 blocked).",
-  "142": "Stairs 10,5-10,6 climb into a crystal void pit - 10,5 left blocked.",
-  "145": "Gate/hut at 7-8,0-1 above the north stairs and the domed lab doors (10,5; 3,11; 21,15) have no interiors - left blocked. South stairs 17-18,12-13 lead to a red carpet running off the bottom edge (row 14-15 blocked); stairs 6,12 drop toward a floating rock."
- },
+ "unlisted": {},
  "notes": "Rift Engine Platform (145): the art's walkway meets the left edge at rows 6-7, not 7-8, so edge_rows moves that exit to [6,7]. Thorne's keeper tile is 17,7 at the top of the engine stairs; challenge from 17,8. Caves 143/144: ledges joined where moss/stairs suggest a way down; the 144 route from the bottom climbs the west ladder (2,2) onto the north ledge to reach the top exit."
 }

@@ -52,7 +52,7 @@
   },
   "starfall": {
    "section": "136",
-   "why": "atlas exit marked arrival"
+   "why": "V2: the sandbagged landing pad at Rim Camp"
   },
   "apex": {
    "section": "146",
@@ -354,7 +354,7 @@
   },
   "M19:0": {
    "s": "145",
-   "x": 17,
+   "x": 15,
    "y": 7
   },
   "M19:1": {
@@ -954,7 +954,7 @@
   },
   "S97:giver": {
    "s": "138",
-   "x": 9,
+   "x": 8,
    "y": 9
   },
   "S97:0": {
@@ -967,28 +967,28 @@
      8
     ],
     [
-     12,
-     1
+     15,
+     4
     ],
     [
      8,
      5
     ],
     [
-     16,
-     5
+     19,
+     8
     ]
    ]
   },
   "S98:giver": {
    "s": "140",
-   "x": 12,
-   "y": 8
+   "x": 10,
+   "y": 4
   },
   "S98:0": {
    "s": "140",
    "x": 7,
-   "y": 11
+   "y": 9
   },
   "S99:giver": {
    "s": "151",
@@ -1214,8 +1214,8 @@
   },
   "M18:4": {
    "s": "141",
-   "x": 11,
-   "y": 6
+   "x": 10,
+   "y": 5
   },
   "M19b:giver": {
    "s": "004",
@@ -21488,18 +21488,11 @@
    ],
    "notes": "Military cordon camp",
    "edges": {
-    "left": {
-     "to": "arrival",
-     "range": [
-      7,
-      8
-     ]
-    },
     "right": {
      "to": "138",
      "range": [
-      7,
-      8
+      5,
+      10
      ],
      "offset": 0
     }
@@ -21507,65 +21500,86 @@
    "warps": [
     {
      "tile": [
-      17,
-      5
+      9,
+      4
      ],
      "to": "137",
      "at": [
       7,
-      12
+      13
      ],
      "face": "up",
      "kind": "door",
      "edge": "up"
-    },
-    {
-     "tile": [
-      18,
-      5
-     ],
-     "to": "137",
-     "at": [
-      8,
-      12
-     ],
-     "face": "up",
-     "kind": "door",
-     "edge": "up"
-    }
-   ],
-   "objects": [
-    {
-     "tile": [
-      5,
-      5
-     ],
-     "k": "house",
-     "why": "house door: opens the shared Starfall Rift house",
-     "to": "172"
     },
     {
      "tile": [
       10,
       4
      ],
-     "k": "house",
-     "why": "house door: opens the shared Starfall Rift house",
-     "to": "172"
+     "to": "137",
+     "at": [
+      8,
+      13
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
     },
     {
      "tile": [
-      14,
-      12
+      1,
+      7
+     ],
+     "to": "planet:dustara",
+     "at": [
+      1,
+      7
+     ],
+     "face": "up",
+     "kind": "gate",
+     "node": "dustara",
+     "label": "the crater shuttle back to the Shuttle Pad"
+    },
+    {
+     "tile": [
+      1,
+      8
+     ],
+     "to": "planet:dustara",
+     "at": [
+      1,
+      8
+     ],
+     "face": "up",
+     "kind": "gate",
+     "node": "dustara",
+     "label": "the crater shuttle back to the Shuttle Pad"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      4,
+      4
      ],
      "k": "house",
-     "why": "house door: opens the shared Starfall Rift house",
-     "to": "172"
+     "to": "172",
+     "why": "V2: camp tent (shared Starfall home)"
     },
     {
      "tile": [
-      7,
-      6
+      20,
+      4
+     ],
+     "k": "house",
+     "to": "172",
+     "why": "V2: camp tent"
+    },
+    {
+     "tile": [
+      6,
+      4
      ],
      "k": "sign",
      "t": [
@@ -21574,8 +21588,8 @@
     },
     {
      "tile": [
-      14,
-      5
+      13,
+      4
      ],
      "k": "sign",
      "t": [
@@ -21585,7 +21599,7 @@
     },
     {
      "tile": [
-      17,
+      9,
       12
      ],
      "k": "stash",
@@ -21596,12 +21610,12 @@
    ],
    "spawns": {
     "arrival": [
-     1,
-     7
+     3,
+     8
     ],
     "default": [
-     1,
-     7
+     3,
+     8
     ]
    },
    "grid": [
@@ -21611,8 +21625,8 @@
    "pkey": "starfall",
    "npcs": [
     {
-     "x": 10,
-     "y": 9,
+     "x": 11,
+     "y": 11,
      "art": "tamsin",
      "face": "down",
      "t": [
@@ -21625,80 +21639,87 @@
      "src": "n:136:0"
     },
     {
-     "x": 4,
-     "y": 8,
+     "x": 14,
+     "y": 5,
      "art": "guard",
      "face": "down",
      "t": [
       "Cordon guard: Nobody goes past the fields without a reason. Got one? Fine, just don't die down there."
      ],
+     "stay": true,
      "src": "p:136:0"
     },
     {
-     "x": 11,
-     "y": 11,
+     "x": 19,
+     "y": 10,
      "art": "civilian",
      "face": "down",
      "t": [
       "Rig worker: Helix left half its drills running when they ran. You can hear them grinding at night."
      ],
+     "stay": true,
      "src": "p:136:1"
     },
     {
-     "x": 11,
-     "y": 13,
+     "x": 5,
+     "y": 5,
      "art": "explorer",
      "face": "down",
      "t": [
       "Rift seeker: Can you hear it? The crater hums like a heartbeat. Louder every week."
      ],
+     "stay": true,
      "src": "p:136:2"
     },
     {
-     "x": 5,
-     "y": 9,
+     "x": 1,
+     "y": 10,
      "art": "researcher",
      "face": "down",
      "t": [
       "Star watcher: Crystals here grow overnight. I measured one at breakfast and again at dinner. Twice as big."
      ],
+     "stay": true,
      "src": "p:136:3"
     },
     {
-     "x": 19,
-     "y": 9,
+     "x": 9,
+     "y": 7,
      "art": "technician",
      "face": "down",
      "t": [
       "Camp tech: The Medic Tent is the dome with the blue cross. Rest your team before the Seedpod Fields."
      ],
+     "stay": true,
      "src": "p:136:4"
     },
     {
-     "x": 3,
-     "y": 4,
+     "x": 15,
+     "y": 12,
      "art": "wanderer",
      "face": "down",
      "t": [
       "Old hand: Twenty years back the pods fell right here. Every Alienmon you've ever met came from that sky."
      ],
+     "stay": true,
      "src": "p:136:5"
     },
     {
-     "x": 21,
-     "y": 5,
+     "x": 17,
+     "y": 7,
      "art": "strand",
      "face": "down",
      "t": [
       "Ex-Helix grunt: I scratched the logo off my jacket. Whatever Thorne's building down there, I want no part."
      ],
+     "stay": true,
      "src": "p:136:6"
     }
    ],
    "mons": [
     {
-     "x": 13,
-     "y": 3,
+     "x": 6,
+     "y": 12,
      "mon": "Prismite"
     }
    ]
@@ -21720,12 +21741,12 @@
     {
      "tile": [
       7,
-      13
+      14
      ],
      "to": "136",
      "at": [
-      17,
-      6
+      9,
+      5
      ],
      "face": "down",
      "kind": "door"
@@ -21733,12 +21754,12 @@
     {
      "tile": [
       8,
-      13
+      14
      ],
      "to": "136",
      "at": [
-      17,
-      6
+      9,
+      5
      ],
      "face": "down",
      "kind": "door"
@@ -21747,8 +21768,15 @@
    "objects": [
     {
      "tile": [
+      7,
+      4
+     ],
+     "k": "bay"
+    },
+    {
+     "tile": [
       8,
-      10
+      4
      ],
      "k": "bay"
     }
@@ -21756,11 +21784,11 @@
    "spawns": {
     "door": [
      7,
-     12
+     13
     ],
     "default": [
      7,
-     12
+     13
     ]
    },
    "parent": "136",
@@ -21768,7 +21796,7 @@
    "npcs": [
     {
      "x": 8,
-     "y": 10,
+     "y": 4,
      "art": "nurse",
      "face": "down",
      "t": [
@@ -21778,13 +21806,14 @@
      "src": "p:137:0"
     },
     {
-     "x": 7,
-     "y": 6,
+     "x": 9,
+     "y": 12,
      "art": "miner",
      "face": "down",
      "t": [
       "Injured driller: Got clipped by a crystal-type in the fields. Those shells hide more than dust, kid."
      ],
+     "stay": true,
      "src": "p:137:1"
     }
    ]
@@ -21805,16 +21834,16 @@
     "left": {
      "to": "136",
      "range": [
-      7,
-      8
+      5,
+      9
      ],
      "offset": 0
     },
     "right": {
      "to": "139",
      "range": [
-      7,
-      8
+      5,
+      9
      ],
      "offset": 0
     }
@@ -21823,8 +21852,8 @@
    "objects": [
     {
      "tile": [
-      16,
-      14
+      10,
+      13
      ],
      "k": "stash",
      "item": "ether",
@@ -21833,8 +21862,8 @@
     },
     {
      "tile": [
-      11,
-      2
+      18,
+      12
      ],
      "k": "stash",
      "item": "singularity",
@@ -21845,7 +21874,7 @@
    "spawns": {
     "default": [
      1,
-     7
+     5
     ]
    },
    "grid": [
@@ -21855,30 +21884,32 @@
    "pkey": "starfall",
    "npcs": [
     {
-     "x": 19,
-     "y": 9,
+     "x": 6,
+     "y": 6,
      "art": "researcher",
      "face": "down",
      "t": [
       "Researcher: Each cracked seedpod is a shell something hatched from. Rare Alienmon hide in the pink weeds."
      ],
+     "stay": true,
      "src": "p:138:0"
     },
     {
-     "x": 13,
-     "y": 7,
+     "x": 12,
+     "y": 3,
      "art": "civilian",
      "face": "down",
      "t": [
       "Hiker: Out of Stasis Pods already? Weaken them first - a tired Alienmon is much easier to catch."
      ],
+     "stay": true,
      "src": "p:138:1"
     },
     {
-     "x": 6,
-     "y": 6,
+     "x": 15,
+     "y": 9,
      "art": "strand",
-     "face": "down",
+     "face": "up",
      "t": [],
      "id": "sec138_tr2",
      "trainer": {
@@ -21888,8 +21919,8 @@
      }
     },
     {
-     "x": 9,
-     "y": 10,
+     "x": 10,
+     "y": 11,
      "art": "explorer",
      "face": "up",
      "t": [],
@@ -21903,13 +21934,13 @@
    ],
    "mons": [
     {
-     "x": 15,
-     "y": 13,
+     "x": 20,
+     "y": 3,
      "mon": "Novacat"
     },
     {
-     "x": 17,
-     "y": 3,
+     "x": 19,
+     "y": 12,
      "mon": "Prismora"
     }
    ]
@@ -21930,7 +21961,7 @@
     "left": {
      "to": "138",
      "range": [
-      7,
+      5,
       8
      ],
      "offset": 0
@@ -21938,7 +21969,7 @@
     "right": {
      "to": "140",
      "range": [
-      7,
+      5,
       8
      ],
      "offset": 0
@@ -21948,17 +21979,8 @@
    "objects": [
     {
      "tile": [
-      11,
-      0
-     ],
-     "k": "stop",
-     "t": "The stairs are blocked off. You can't go this way.",
-     "why": "dead-end stairs (tools/sections/dead_ends.py)"
-    },
-    {
-     "tile": [
-      18,
-      14
+      10,
+      13
      ],
      "k": "stash",
      "item": "ether",
@@ -21967,8 +21989,8 @@
     },
     {
      "tile": [
-      7,
-      3
+      6,
+      2
      ],
      "k": "stash",
      "item": "dust",
@@ -21979,7 +22001,7 @@
    "spawns": {
     "default": [
      1,
-     7
+     5
     ]
    },
    "grid": [
@@ -21989,28 +22011,30 @@
    "pkey": "starfall",
    "npcs": [
     {
-     "x": 13,
-     "y": 1,
+     "x": 12,
+     "y": 5,
      "art": "explorer",
      "face": "down",
      "t": [
       "Rift seeker: Trainers out here spot you from five tiles off. Heal up before you walk their line of sight."
      ],
+     "stay": true,
      "src": "p:139:0"
     },
     {
-     "x": 18,
-     "y": 9,
+     "x": 3,
+     "y": 8,
      "art": "miner",
      "face": "down",
      "t": [
       "Driller: Helix paid triple to dig here. Then the pods started glowing back. Nobody stayed for the bonus."
      ],
+     "stay": true,
      "src": "p:139:1"
     },
     {
-     "x": 10,
-     "y": 10,
+     "x": 18,
+     "y": 9,
      "art": "explorer",
      "face": "up",
      "t": [],
@@ -22022,10 +22046,10 @@
      }
     },
     {
-     "x": 4,
-     "y": 6,
+     "x": 10,
+     "y": 11,
      "art": "researcher",
-     "face": "down",
+     "face": "up",
      "t": [],
      "id": "sec139_tr3",
      "trainer": {
@@ -22037,13 +22061,13 @@
    ],
    "mons": [
     {
-     "x": 22,
-     "y": 5,
+     "x": 6,
+     "y": 3,
      "mon": "Cometrix"
     },
     {
-     "x": 1,
-     "y": 10,
+     "x": 20,
+     "y": 3,
      "mon": "Quasarus"
     }
    ]
@@ -22064,16 +22088,16 @@
     "left": {
      "to": "139",
      "range": [
-      7,
-      8
+      5,
+      9
      ],
      "offset": 0
     },
     "right": {
      "to": "141",
      "range": [
-      7,
-      8
+      5,
+      9
      ],
      "offset": 0
     }
@@ -22114,8 +22138,8 @@
     },
     {
      "tile": [
-      17,
-      12
+      10,
+      3
      ],
      "k": "stash",
      "item": "dust",
@@ -22126,7 +22150,7 @@
    "spawns": {
     "default": [
      1,
-     7
+     5
     ]
    },
    "grid": [
@@ -22137,34 +22161,36 @@
    "npcs": [
     {
      "x": 11,
-     "y": 8,
+     "y": 12,
      "art": "pilgrim",
      "face": "down",
      "t": [
       "Pilgrim: They say an explorer camped here waiting for the light to speak. His tent still stands."
      ],
+     "stay": true,
      "src": "p:140:0"
     },
     {
-     "x": 13,
-     "y": 9,
+     "x": 11,
+     "y": 3,
      "art": "wanderer",
      "face": "down",
      "t": [
       "Wanderer: I leave a fresh cup by the fire each time I pass. Somebody should, for whoever comes home."
      ],
+     "stay": true,
      "src": "p:140:1"
     }
    ],
    "mons": [
     {
-     "x": 22,
-     "y": 5,
+     "x": 20,
+     "y": 3,
      "mon": "Novacat"
     },
     {
-     "x": 15,
-     "y": 2,
+     "x": 21,
+     "y": 12,
      "mon": "Prismora"
     }
    ]
@@ -22185,7 +22211,7 @@
     "left": {
      "to": "140",
      "range": [
-      7,
+      5,
       8
      ],
      "offset": 0
@@ -22195,7 +22221,21 @@
     {
      "tile": [
       23,
-      7
+      5
+     ],
+     "to": "142",
+     "at": [
+      6,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      6
      ],
      "to": "142",
      "at": [
@@ -22209,11 +22249,25 @@
     {
      "tile": [
       23,
-      8
+      7
      ],
      "to": "142",
      "at": [
       8,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      8
+     ],
+     "to": "142",
+     "at": [
+      9,
       14
      ],
      "face": "up",
@@ -22244,8 +22298,8 @@
     },
     {
      "tile": [
-      19,
-      14
+      6,
+      2
      ],
      "k": "stash",
      "item": "fullgel",
@@ -22256,7 +22310,7 @@
    "spawns": {
     "default": [
      1,
-     7
+     5
     ]
    },
    "grid": [
@@ -22266,8 +22320,8 @@
    "pkey": "starfall",
    "npcs": [
     {
-     "x": 18,
-     "y": 10,
+     "x": 8,
+     "y": 7,
      "art": "ystran",
      "face": "down",
      "t": [],
@@ -22277,13 +22331,14 @@
      "src": "n:141:0"
     },
     {
-     "x": 6,
-     "y": 8,
+     "x": 18,
+     "y": 6,
      "art": "researcher",
      "face": "down",
      "t": [
       "Star watcher: Psi and Gravity Alienmon gather near the rim. Bring something sturdy."
      ],
+     "stay": true,
      "src": "p:141:0"
     },
     {
@@ -22294,13 +22349,14 @@
      "t": [
       "Rim guard: The descent's three levels deep. Signal Shards resonate louder the farther down you go."
      ],
+     "stay": true,
      "src": "p:141:1"
     },
     {
-     "x": 12,
-     "y": 13,
+     "x": 10,
+     "y": 12,
      "art": "strand",
-     "face": "left",
+     "face": "up",
      "t": [],
      "id": "sec141_tr3",
      "trainer": {
@@ -22310,8 +22366,8 @@
      }
     },
     {
-     "x": 10,
-     "y": 6,
+     "x": 4,
+     "y": 4,
      "art": "explorer",
      "face": "down",
      "t": [],
@@ -22325,13 +22381,13 @@
    ],
    "mons": [
     {
-     "x": 1,
-     "y": 4,
+     "x": 4,
+     "y": 11,
      "mon": "Cometrix"
     },
     {
-     "x": 7,
-     "y": 2,
+     "x": 20,
+     "y": 11,
      "mon": "Quasarus"
     }
    ]
@@ -22352,7 +22408,35 @@
    "warps": [
     {
      "tile": [
+      6,
+      15
+     ],
+     "to": "141",
+     "at": [
+      22,
+      5
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
       7,
+      15
+     ],
+     "to": "141",
+     "at": [
+      22,
+      6
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      8,
       15
      ],
      "to": "141",
@@ -22366,7 +22450,7 @@
     },
     {
      "tile": [
-      8,
+      9,
       15
      ],
      "to": "141",
@@ -22380,6 +22464,20 @@
     },
     {
      "tile": [
+      6,
+      0
+     ],
+     "to": "143",
+     "at": [
+      6,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
       7,
       0
      ],
@@ -22400,6 +22498,20 @@
      "to": "143",
      "at": [
       8,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      9,
+      0
+     ],
+     "to": "143",
+     "at": [
+      9,
       14
      ],
      "face": "up",
@@ -22411,7 +22523,7 @@
     {
      "tile": [
       14,
-      5
+      7
      ],
      "k": "stash",
      "item": "fullgel",
@@ -22421,7 +22533,7 @@
    ],
    "spawns": {
     "default": [
-     7,
+     6,
      14
     ]
    },
@@ -22429,17 +22541,18 @@
    "npcs": [
     {
      "x": 5,
-     "y": 3,
+     "y": 9,
      "art": "explorer",
      "face": "down",
      "t": [
       "Caver: Watch the purple cracks. That's not lava, it's starlight. Doesn't burn - just pulls."
      ],
+     "stay": true,
      "src": "p:142:0"
     },
     {
-     "x": 9,
-     "y": 10,
+     "x": 11,
+     "y": 7,
      "art": "explorer",
      "face": "left",
      "t": [],
@@ -22468,6 +22581,20 @@
    "warps": [
     {
      "tile": [
+      6,
+      15
+     ],
+     "to": "142",
+     "at": [
+      6,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
       7,
       15
      ],
@@ -22493,6 +22620,34 @@
      "face": "down",
      "kind": "edge",
      "edge": "bottom"
+    },
+    {
+     "tile": [
+      9,
+      15
+     ],
+     "to": "142",
+     "at": [
+      9,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      6,
+      0
+     ],
+     "to": "144",
+     "at": [
+      6,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
     },
     {
      "tile": [
@@ -22516,6 +22671,20 @@
      "to": "144",
      "at": [
       8,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      9,
+      0
+     ],
+     "to": "144",
+     "at": [
+      9,
       14
      ],
      "face": "up",
@@ -22526,8 +22695,8 @@
    "objects": [
     {
      "tile": [
-      3,
-      7
+      2,
+      10
      ],
      "k": "stash",
      "item": "singularity",
@@ -22536,8 +22705,8 @@
     },
     {
      "tile": [
-      2,
-      4
+      13,
+      9
      ],
      "k": "stash",
      "item": "fullgel",
@@ -22547,20 +22716,21 @@
    ],
    "spawns": {
     "default": [
-     7,
+     6,
      14
     ]
    },
    "pkey": "starfall",
    "npcs": [
     {
-     "x": 13,
-     "y": 2,
+     "x": 5,
+     "y": 4,
      "art": "technician",
      "face": "down",
      "t": [
       "Helix tech (lost): My map says the Rift Engine is 'down'. Every tunnel here says 'down'. Help?"
      ],
+     "stay": true,
      "src": "p:143:0"
     },
     {
@@ -22595,6 +22765,20 @@
    "warps": [
     {
      "tile": [
+      6,
+      15
+     ],
+     "to": "143",
+     "at": [
+      6,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
       7,
       15
      ],
@@ -22615,11 +22799,39 @@
      "to": "143",
      "at": [
       8,
-      0
+      1
      ],
      "face": "down",
      "kind": "edge",
      "edge": "bottom"
+    },
+    {
+     "tile": [
+      9,
+      15
+     ],
+     "to": "143",
+     "at": [
+      9,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      6,
+      0
+     ],
+     "to": "145",
+     "at": [
+      1,
+      5
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "top"
     },
     {
      "tile": [
@@ -22648,13 +22860,27 @@
      "face": "right",
      "kind": "edge",
      "edge": "top"
+    },
+    {
+     "tile": [
+      9,
+      0
+     ],
+     "to": "145",
+     "at": [
+      1,
+      8
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "top"
     }
    ],
    "objects": [
     {
      "tile": [
-      14,
-      5
+      2,
+      10
      ],
      "k": "stash",
      "item": "dust",
@@ -22664,24 +22890,25 @@
    ],
    "spawns": {
     "default": [
-     7,
+     6,
      14
     ]
    },
    "pkey": "starfall",
    "npcs": [
     {
-     "x": 4,
-     "y": 8,
+     "x": 10,
+     "y": 5,
      "art": "pilgrim",
      "face": "down",
      "t": [
       "Pilgrim: The vortex below is breathing. If the Keepers' Shards ever meant anything, it's here."
      ],
+     "stay": true,
      "src": "p:144:0"
     },
     {
-     "x": 11,
+     "x": 5,
      "y": 8,
      "art": "strand",
      "face": "right",
@@ -22712,6 +22939,20 @@
     {
      "tile": [
       0,
+      5
+     ],
+     "to": "144",
+     "at": [
+      6,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
       6
      ],
      "to": "144",
@@ -22736,31 +22977,27 @@
      "face": "down",
      "kind": "edge",
      "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      8
+     ],
+     "to": "144",
+     "at": [
+      9,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "left"
     }
    ],
    "objects": [
     {
      "tile": [
-      9,
-      5
-     ],
-     "k": "house",
-     "why": "house door: opens the shared Starfall Rift house",
-     "to": "172"
-    },
-    {
-     "tile": [
-      3,
-      11
-     ],
-     "k": "house",
-     "to": "172",
-     "why": "house door: path in front opened to match the drawn ground"
-    },
-    {
-     "tile": [
-      19,
-      7
+      15,
+      4
      ],
      "k": "sign",
      "t": [
@@ -22769,8 +23006,8 @@
     },
     {
      "tile": [
-      6,
-      1
+      9,
+      12
      ],
      "k": "stash",
      "item": "maxrevive",
@@ -22781,7 +23018,7 @@
    "spawns": {
     "default": [
      1,
-     6
+     5
     ]
    },
    "grid": [
@@ -22791,35 +23028,37 @@
    "pkey": "starfall",
    "npcs": [
     {
-     "x": 9,
-     "y": 9,
+     "x": 12,
+     "y": 5,
      "art": "strand",
      "face": "down",
      "t": [
       "Helix grunt: The Director's up at the Engine. Go ahead - I'm not paid enough to stand between you two."
      ],
+     "stay": true,
      "src": "p:145:0"
     },
     {
-     "x": 14,
-     "y": 8,
+     "x": 5,
+     "y": 3,
      "art": "researcher",
      "face": "down",
      "t": [
       "Shaken scientist: Containment keeps dropping. That thing isn't a power source. It's a door."
      ],
+     "stay": true,
      "src": "p:145:1"
     }
    ],
    "mons": [
     {
      "x": 6,
-     "y": 7,
+     "y": 10,
      "mon": "Cometrix"
     },
     {
-     "x": 18,
-     "y": 13,
+     "x": 1,
+     "y": 9,
      "mon": "Quasarus"
     }
    ]
@@ -29974,54 +30213,43 @@
   },
   {
    "from_id": "136",
-   "edge": "left",
-   "tile_range": [
-    7,
-    8
-   ],
-   "to_id": "arrival",
-   "to_edge": null,
-   "to_tile": null
-  },
-  {
-   "from_id": "136",
    "edge": "right",
    "tile_range": [
-    7,
-    8
+    5,
+    10
    ],
    "to_id": "138",
    "to_edge": "left",
    "to_tile": [
-    7,
-    8
+    5,
+    9
    ]
   },
   {
    "from_id": "138",
    "edge": "left",
    "tile_range": [
-    7,
-    8
+    5,
+    9
    ],
    "to_id": "136",
    "to_edge": "right",
    "to_tile": [
-    7,
-    8
+    5,
+    10
    ]
   },
   {
    "from_id": "138",
    "edge": "right",
    "tile_range": [
-    7,
-    8
+    5,
+    9
    ],
    "to_id": "139",
    "to_edge": "left",
    "to_tile": [
-    7,
+    5,
     8
    ]
   },
@@ -30029,41 +30257,41 @@
    "from_id": "139",
    "edge": "left",
    "tile_range": [
-    7,
+    5,
     8
    ],
    "to_id": "138",
    "to_edge": "right",
    "to_tile": [
-    7,
-    8
+    5,
+    9
    ]
   },
   {
    "from_id": "139",
    "edge": "right",
    "tile_range": [
-    7,
+    5,
     8
    ],
    "to_id": "140",
    "to_edge": "left",
    "to_tile": [
-    7,
-    8
+    5,
+    9
    ]
   },
   {
    "from_id": "140",
    "edge": "left",
    "tile_range": [
-    7,
-    8
+    5,
+    9
    ],
    "to_id": "139",
    "to_edge": "right",
    "to_tile": [
-    7,
+    5,
     8
    ]
   },
@@ -30071,13 +30299,13 @@
    "from_id": "140",
    "edge": "right",
    "tile_range": [
-    7,
-    8
+    5,
+    9
    ],
    "to_id": "141",
    "to_edge": "left",
    "to_tile": [
-    7,
+    5,
     8
    ]
   },
@@ -30085,41 +30313,41 @@
    "from_id": "141",
    "edge": "left",
    "tile_range": [
-    7,
+    5,
     8
    ],
    "to_id": "140",
    "to_edge": "right",
    "to_tile": [
-    7,
-    8
+    5,
+    9
    ]
   },
   {
    "from_id": "141",
    "edge": "right",
    "tile_range": [
-    7,
+    5,
     8
    ],
    "to_id": "142",
    "to_edge": "bottom",
    "to_tile": [
-    7,
-    8
+    6,
+    9
    ]
   },
   {
    "from_id": "142",
    "edge": "bottom",
    "tile_range": [
-    7,
-    8
+    6,
+    9
    ],
    "to_id": "141",
    "to_edge": "right",
    "to_tile": [
-    7,
+    5,
     8
    ]
   },
@@ -30127,84 +30355,84 @@
    "from_id": "142",
    "edge": "top",
    "tile_range": [
-    7,
-    8
+    6,
+    9
    ],
    "to_id": "143",
    "to_edge": "bottom",
    "to_tile": [
-    7,
-    8
+    6,
+    9
    ]
   },
   {
    "from_id": "143",
    "edge": "bottom",
    "tile_range": [
-    7,
-    8
+    6,
+    9
    ],
    "to_id": "142",
    "to_edge": "top",
    "to_tile": [
-    7,
-    8
+    6,
+    9
    ]
   },
   {
    "from_id": "143",
    "edge": "top",
    "tile_range": [
-    7,
-    8
+    6,
+    9
    ],
    "to_id": "144",
    "to_edge": "bottom",
    "to_tile": [
-    7,
-    8
+    6,
+    9
    ]
   },
   {
    "from_id": "144",
    "edge": "bottom",
    "tile_range": [
-    7,
-    8
+    6,
+    9
    ],
    "to_id": "143",
    "to_edge": "top",
    "to_tile": [
-    7,
-    8
+    6,
+    9
    ]
   },
   {
    "from_id": "144",
    "edge": "top",
    "tile_range": [
-    7,
-    8
+    6,
+    9
    ],
    "to_id": "145",
    "to_edge": "left",
    "to_tile": [
-    6,
-    7
+    5,
+    10
    ]
   },
   {
    "from_id": "145",
    "edge": "left",
    "tile_range": [
-    6,
-    7
+    5,
+    10
    ],
    "to_id": "144",
    "to_edge": "top",
    "to_tile": [
-    7,
-    8
+    6,
+    9
    ]
   },
   {
