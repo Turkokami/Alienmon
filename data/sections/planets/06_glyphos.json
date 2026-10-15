@@ -233,12 +233,13 @@
     "art": "nurse",
     "name": "Nurse",
     "tile": [
-     9,
+     8,
      5
     ],
     "t": [
      "Nurse: Welcome to the Recovery Tent! Step up to the pod and I'll heal your team."
-    ]
+    ],
+    "stay": true
    },
    {
     "art": "explorer",

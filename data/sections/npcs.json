@@ -178,7 +178,8 @@
    ],
    "t": [
     "Nurse: Welcome to the Recovery Bay! Step up to the counter and I'll heal your team."
-   ]
+   ],
+   "stay": true
   },
   {
    "art": "explorer",
@@ -197,12 +198,13 @@
    "art": "shop",
    "name": "Shopkeeper",
    "tile": [
-    4,
+    8,
     5
    ],
    "t": [
     "Shopkeeper: Talk to me at the counter for pods and potions!"
-   ]
+   ],
+   "stay": true
   },
   {
    "art": "civilian",
@@ -1183,8 +1185,8 @@
    "art": "nurse",
    "name": "Nurse",
    "tile": [
-    9,
-    5
+    8,
+    4
    ],
    "t": [
     "Nurse: Welcome to the Rustvale Recovery Bay. Step up to the counter!"
@@ -1208,8 +1210,8 @@
    "art": "shop",
    "name": "Shopkeeper",
    "tile": [
-    9,
-    12
+    8,
+    4
    ],
    "t": [
     "Shopkeeper: Pods, gels, sprays. Talk to me at the counter."

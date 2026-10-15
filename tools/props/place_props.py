@@ -27,6 +27,19 @@ ZONE_TOWN = {'thalassa': [('wall', T(40, 41, 43, 44, 47, 50, 51), 2), ('wall', T
 # Towns are laid out by hand like a real street: lamps in straight evenly spaced rows, stalls in a line along the
 # shopfronts, planters in pairs either side of a door, benches facing each other. (prop, x, y)
 HAND = {
+ # Sporeholm (sheet 03_sporeholm): lantern rows along the boardwalk, market stalls at the plaza ends, bench+planter pairs
+ '041': [('03_sporeholm/53', 8, 4), ('03_sporeholm/53', 13, 4), ('03_sporeholm/53', 18, 4), ('03_sporeholm/99', 17, 9), ('03_sporeholm/04', 10, 10)],
+ '042': [('03_sporeholm/26', 6, 4), ('03_sporeholm/26', 12, 4), ('03_sporeholm/26', 17, 4), ('03_sporeholm/84', 2, 9), ('03_sporeholm/102', 19, 9), ('03_sporeholm/26', 6, 9), ('03_sporeholm/26', 17, 9),
+         ('03_sporeholm/03', 9, 11), ('03_sporeholm/04', 13, 11), ('03_sporeholm/99', 1, 4)],
+ '045': [('03_sporeholm/62', 8, 5), ('03_sporeholm/62', 16, 5)],
+ '046': [('03_sporeholm/62', 6, 5), ('03_sporeholm/62', 18, 5)],
+ '047': [('03_sporeholm/22', 2, 4), ('03_sporeholm/22', 13, 4)],
+ '048': [('03_sporeholm/22', 1, 5), ('03_sporeholm/22', 14, 5)],
+ '049': [('03_sporeholm/62', 5, 5), ('03_sporeholm/62', 18, 5), ('03_sporeholm/03', 14, 9)],
+ '050': [('03_sporeholm/145', 1, 2), ('03_sporeholm/145', 14, 2), ('03_sporeholm/197', 1, 18), ('03_sporeholm/197', 13, 18)],
+ '051': [('03_sporeholm/144', 2, 5), ('03_sporeholm/144', 12, 5), ('03_sporeholm/150', 1, 19), ('03_sporeholm/150', 14, 19)],
+ '043': [('03_sporeholm/117', 2, 5), ('03_sporeholm/117', 13, 5), ('03_sporeholm/04', 2, 8), ('03_sporeholm/04', 11, 8), ('03_sporeholm/112', 10, 5)],
+ '044': [('03_sporeholm/118', 2, 6), ('03_sporeholm/118', 2, 9), ('03_sporeholm/118', 13, 6), ('03_sporeholm/118', 13, 9), ('03_sporeholm/163', 4, 10), ('03_sporeholm/163', 10, 10), ('03_sporeholm/117', 2, 12), ('03_sporeholm/117', 13, 12)],
  # Dustara rooms furnished from the Ferrox house/interior designs: furniture against the walls, the centre aisle, doormat, stairs and counters clear
  '001': [('02_ferrox/240', 13, 9), ('02_ferrox/183', 12, 12), ('02_ferrox/165', 2, 12), ('02_ferrox/203', 2, 10), ('02_ferrox/189', 10, 10, 1, {'solid': False, 'h': 2})],
  '002': [('02_ferrox/179', 12, 9), ('02_ferrox/240', 13, 12), ('02_ferrox/203', 2, 13), ('02_ferrox/189', 9, 10, 1, {'solid': False, 'h': 2})],

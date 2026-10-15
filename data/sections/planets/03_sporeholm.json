@@ -4,45 +4,45 @@
    "interior": "043",
    "parent": "042",
    "door": [
-    17,
-    5
+    8,
+    3
    ],
    "door2": [
-    18,
-    5
+    9,
+    3
    ],
    "mat": [
     [
      7,
-     13
+     14
     ],
     [
      8,
-     13
+     14
     ]
    ],
    "confidence": "high",
-   "why": "White dome with the cyan cross and cyan door at the top right of Mirefen Village"
+   "why": "V2: Mirefen Recovery Bay, the hut with the cyan cross"
   },
   {
    "interior": "044",
    "parent": "042",
    "door": [
-    4,
-    6
+    15,
+    3
    ],
    "mat": [
     [
      7,
-     13
+     14
     ],
     [
      8,
-     13
+     14
     ]
    ],
    "confidence": "high",
-   "why": "Red-and-yellow awning shop front with goods counter on the west side of the main boardwalk"
+   "why": "V2: Mirefen Shop, the striped-awning hut"
   }
  ],
  "objects": {
@@ -50,7 +50,14 @@
    {
     "tile": [
      7,
-     7
+     4
+    ],
+    "k": "bay"
+   },
+   {
+    "tile": [
+     8,
+     4
     ],
     "k": "bay"
    }
@@ -58,8 +65,15 @@
   "044": [
    {
     "tile": [
-     4,
-     7
+     7,
+     4
+    ],
+    "k": "shop"
+   },
+   {
+    "tile": [
+     8,
+     4
     ],
     "k": "shop"
    }
@@ -68,69 +82,9 @@
    {
     "tile": [
      7,
-     2
+     4
     ],
     "k": "keeper"
-   }
-  ],
-  "041": [
-   {
-    "tile": [
-     15,
-     5
-    ],
-    "k": "sign",
-    "t": [
-     "Sporeholm Landing Pad. Mirefen Village lies east along the boardwalk."
-    ]
-   }
-  ],
-  "042": [
-   {
-    "tile": [
-     11,
-     8
-    ],
-    "k": "sign",
-    "t": [
-     "Mirefen Village: stilts deep, lanterns bright. Welcome, traveler."
-    ]
-   }
-  ],
-  "047": [
-   {
-    "tile": [
-     3,
-     3
-    ],
-    "k": "sign",
-    "t": [
-     "A mossy stone shrine. The carving reads: The mist forgets nothing, but it lets you leave."
-    ]
-   }
-  ],
-  "048": [
-   {
-    "tile": [
-     3,
-     3
-    ],
-    "k": "sign",
-    "t": [
-     "Another shrine, just like the one below. Someone scratched an arrow pointing north."
-    ]
-   }
-  ],
-  "050": [
-   {
-    "tile": [
-     8,
-     9
-    ],
-    "k": "sign",
-    "t": [
-     "A glowing spore orb. The plaque reads: Sporeholm Tower, field station of Dr. Lysa Moor."
-    ]
    }
   ]
  },
@@ -185,7 +139,12 @@
     "art": "technician",
     "t": [
      "Dock tech: Ships set down on the pad here. Mirefen Village is just east along the boardwalk."
-    ]
+    ],
+    "tile": [
+     12,
+     3
+    ],
+    "stay": true
    },
    {
     "art": "explorer",
@@ -193,9 +152,10 @@
      "Bog hiker: Stay on the planks. The bog looks like moss, but it's mostly water and bad decisions."
     ],
     "tile": [
-     2,
-     8
-    ]
+     12,
+     12
+    ],
+    "stay": true
    }
   ],
   "042": [
@@ -206,8 +166,9 @@
     ],
     "tile": [
      10,
-     9
-    ]
+     4
+    ],
+    "stay": true
    },
    {
     "art": "researcher",
@@ -215,9 +176,10 @@
      "Botanist: The mushrooms glow brighter near the tower to the east. Dr. Moor says they're listening."
     ],
     "tile": [
-     10,
-     12
-    ]
+     19,
+     8
+    ],
+    "stay": true
    },
    {
     "art": "explorer",
@@ -225,9 +187,10 @@
      "Bog hiker: Toxin-types hide in the reed beds. Carry Cure Spray, or the walk home gets long."
     ],
     "tile": [
-     21,
-     3
-    ]
+     5,
+     10
+    ],
+    "stay": true
    },
    {
     "art": "civilian",
@@ -235,9 +198,10 @@
      "Villager: The dome with the cyan cross is the Recovery Bay. Rest up before you head into the marsh."
     ],
     "tile": [
-     13,
-     9
-    ]
+     3,
+     5
+    ],
+    "stay": true
    },
    {
     "art": "mom",
@@ -245,9 +209,10 @@
      "Grandmother: My grandson swears he was lost in the Mushroom Maze for a whole day. It was an hour."
     ],
     "tile": [
-     21,
-     14
-    ]
+     14,
+     7
+    ],
+    "stay": true
    },
    {
     "art": "pilgrim",
@@ -255,9 +220,10 @@
      "Pilgrim: I came to hear the Spore Choir at the pools. On still nights the spores hum in harmony."
     ],
     "tile": [
-     20,
-     6
-    ]
+     10,
+     10
+    ],
+    "stay": true
    },
    {
     "art": "strand",
@@ -265,9 +231,10 @@
      "Man in a white coat: Helix? Never heard of them. I'm just... sampling the mushrooms. For science."
     ],
     "tile": [
-     14,
-     3
-    ]
+     17,
+     5
+    ],
+    "stay": true
    },
    {
     "art": "wanderer",
@@ -275,45 +242,58 @@
      "Traveler: The Keeper here guards a Signal Shard. Climb her tower and she'll test you herself."
     ],
     "tile": [
-     7,
-     13
-    ]
+     8,
+     7
+    ],
+    "stay": true
    }
   ],
   "043": [
    {
     "art": "nurse",
     "tile": [
-     7,
-     6
+     8,
+     4
     ],
     "t": [
      "Nurse: Welcome to the Mirefen Recovery Bay. Spore-sick or battle-worn, we'll patch your team up."
-    ]
+    ],
+    "stay": true
    },
    {
     "art": "civilian",
     "t": [
      "Visitor: Healing here is free. Step up to the counter whenever your team is hurting."
-    ]
+    ],
+    "tile": [
+     6,
+     5
+    ],
+    "stay": true
    }
   ],
   "044": [
    {
     "art": "shop",
     "tile": [
-     4,
-     6
+     8,
+     4
     ],
     "t": [
      "Clerk: Stasis Pods, Cure Spray, the works. In spore season the Cure Spray sells out fast."
-    ]
+    ],
+    "stay": true
    },
    {
     "art": "sporefolk",
     "t": [
      "Shopper: Weaken a wild alien before you throw a Stasis Pod. Healthy ones just pop right back out."
-    ]
+    ],
+    "tile": [
+     6,
+     5
+    ],
+    "stay": true
    }
   ],
   "045": [
@@ -321,13 +301,23 @@
     "art": "researcher",
     "t": [
      "Botanist: Every lantern in this marsh is a living fungus. Don't pick them. They bite back."
-    ]
+    ],
+    "tile": [
+     10,
+     9
+    ],
+    "stay": true
    },
    {
     "art": "explorer",
     "t": [
      "Bog hiker: Wild aliens jump out of the reeds. Stick to the dirt paths if your team is tired."
-    ]
+    ],
+    "tile": [
+     3,
+     6
+    ],
+    "stay": true
    }
   ],
   "046": [
@@ -335,13 +325,23 @@
     "art": "sporefolk",
     "t": [
      "Spore tender: The Mushroom Maze is just ahead. Left at the glowing caps... or was it right?"
-    ]
+    ],
+    "tile": [
+     14,
+     9
+    ],
+    "stay": true
    },
    {
     "art": "wanderer",
     "t": [
      "Wanderer: Trainers watch the paths. Step into their line of sight and it's a battle."
-    ]
+    ],
+    "tile": [
+     20,
+     5
+    ],
+    "stay": true
    }
   ],
   "047": [
@@ -349,7 +349,12 @@
     "art": "explorer",
     "t": [
      "Lost hiker: I've passed that stone shrine three times. I'm starting to think it follows me."
-    ]
+    ],
+    "tile": [
+     6,
+     9
+    ],
+    "stay": true
    }
   ],
   "048": [
@@ -359,9 +364,10 @@
      "Mycologist: These bridges grow on their own. The mushrooms knit the planks back together each night."
     ],
     "tile": [
-     11,
-     12
-    ]
+     5,
+     9
+    ],
+    "stay": true
    }
   ],
   "049": [
@@ -369,13 +375,23 @@
     "art": "pilgrim",
     "t": [
      "Pilgrim: Listen... the Spore Choir. The pools sing when the spores rise. Some say the tower answers."
-    ]
+    ],
+    "tile": [
+     20,
+     5
+    ],
+    "stay": true
    },
    {
     "art": "sporefolk",
     "t": [
      "Spore tender: The big lily pads hold your weight. Mostly. Hop across them to reach the tower path."
-    ]
+    ],
+    "tile": [
+     10,
+     5
+    ],
+    "stay": true
    }
   ],
   "050": [
@@ -383,7 +399,12 @@
     "art": "researcher",
     "t": [
      "Lab aide: Dr. Moor's apprentices guard this floor. Beat them and the stairs to her lab are yours."
-    ]
+    ],
+    "tile": [
+     10,
+     2
+    ],
+    "stay": true
    }
   ],
   "051": [
@@ -391,17 +412,15 @@
     "art": "technician",
     "t": [
      "Lab aide: Beat Dr. Moor and she'll hand over Sporeholm's Signal Shard. Bring Cure Spray. Trust me."
-    ]
+    ],
+    "tile": [
+     8,
+     5
+    ],
+    "stay": true
    }
   ]
  },
- "unlisted": {
-  "041": "Hut doors at (6,2) and (5,12) and the landing-dome door at (17,4) are drawn but not exits; left blocked.",
-  "042": "Hut doors at (6,2), (5,13) and (20,13); the (5,13) and (20,13) huts also have steps running off the bottom edge. All left blocked.",
-  "046": "Dirt path runs off the top edge at (17,0); blocked at the edge.",
-  "047": "Doorway of the big mushroom house at (12,4); left blocked.",
-  "049": "Moss lane runs off the top edge (10-11,0) and bottom edge (10-11,15); mushroom-house arch at (19,4); all blocked. NW flower islet (1-3,3-4) is ringed by water and left blocked.",
-  "051": "Walkways run off the left/right edges at row 10 ((0,10)/(15,10)); balconies over the waterfalls (rows 17-18) lead nowhere; blocked."
- },
- "notes": "Sporeholm (03). 049 lily pads at (15,4)-(16,4) are deliberately walkable stepping stones (matches the 'mind the lily pads' lore) and are the only link from the west half to the east exit. 050/051: the central planter blocks the straight climb, so both tower floors route around side platforms, stairs and bridges (symmetric)."
+ "unlisted": {},
+ "notes": "Sporeholm (03), V2 maps: positions rewired for the V2 renders (tools/sections/v2)."
 }

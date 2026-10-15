@@ -218,11 +218,12 @@
     "art": "nurse",
     "tile": [
      8,
-     8
+     10
     ],
     "t": [
      "Nurse: Welcome to the Medic Tent. Step up to the counter and I'll patch your team right up."
-    ]
+    ],
+    "stay": true
    },
    {
     "art": "miner",

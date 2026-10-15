@@ -672,77 +672,6 @@
     "why": "dead-end stairs (tools/sections/dead_ends.py)"
    }
   ],
-  "041": [
-   {
-    "tile": [
-     5,
-     12
-    ],
-    "k": "house",
-    "why": "house door: opens the shared Sporeholm house",
-    "to": "173"
-   },
-   {
-    "tile": [
-     17,
-     4
-    ],
-    "k": "house",
-    "to": "184",
-    "why": "walk-in door: landing_dome"
-   }
-  ],
-  "042": [
-   {
-    "tile": [
-     6,
-     2
-    ],
-    "k": "house",
-    "to": "190",
-    "why": "house door: opens the sporeholm house (was a item knock door)"
-   },
-   {
-    "tile": [
-     20,
-     13
-    ],
-    "k": "house",
-    "to": "190",
-    "why": "house door: opens the sporeholm house (was a item knock door)"
-   },
-   {
-    "tile": [
-     5,
-     13
-    ],
-    "k": "house",
-    "to": "173",
-    "why": "house door: path in front opened to match the drawn ground"
-   }
-  ],
-  "047": [
-   {
-    "tile": [
-     12,
-     4
-    ],
-    "k": "house",
-    "to": "185",
-    "why": "walk-in door: mushroom_house"
-   }
-  ],
-  "049": [
-   {
-    "tile": [
-     19,
-     4
-    ],
-    "k": "house",
-    "why": "walk-in door: Mushroom House",
-    "to": "185"
-   }
-  ],
   "052": [
    {
     "tile": [
@@ -1695,6 +1624,58 @@
     "k": "keeper",
     "why": "Keeper's dais in front of the crystal, challenged from (7,5)"
    }
+  ],
+  "041": [
+   {
+    "tile": [
+     3,
+     3
+    ],
+    "k": "house",
+    "to": "184",
+    "why": "V2: the landing dome"
+   },
+   {
+    "tile": [
+     4,
+     3
+    ],
+    "k": "house",
+    "to": "184",
+    "why": "V2: the landing dome"
+   }
+  ],
+  "042": [
+   {
+    "tile": [
+     3,
+     3
+    ],
+    "k": "house",
+    "to": "190",
+    "why": "V2: Mirefen hut (shared Sporeholm home)"
+   },
+   {
+    "tile": [
+     20,
+     3
+    ],
+    "k": "house",
+    "to": "190",
+    "why": "V2: Mirefen hut (shared Sporeholm home)"
+   }
+  ],
+  "047": [],
+  "049": [
+   {
+    "tile": [
+     15,
+     3
+    ],
+    "k": "house",
+    "to": "185",
+    "why": "V2: the mushroom house by the Spore Pools"
+   }
   ]
  },
  "arrival": {
@@ -1705,6 +1686,10 @@
   "ferrox": {
    "section": "029",
    "why": "V2: the Relay Gate ring in Gate Plaza"
+  },
+  "sporeholm": {
+   "section": "041",
+   "why": "V2: the landing circle on the giant mushroom cap"
   }
  },
  "unlisted": {},
@@ -1907,6 +1892,16 @@
    "default": [
     4,
     6
+   ]
+  },
+  "041": {
+   "arrival": [
+    3,
+    7
+   ],
+   "default": [
+    3,
+    7
    ]
   }
  },
@@ -2383,7 +2378,7 @@
    ],
    "face": "down",
    "kind": "door",
-   "parent": "041"
+   "parent": "042"
   },
   {
    "section": "173",
@@ -2398,7 +2393,7 @@
    ],
    "face": "down",
    "kind": "door",
-   "parent": "041"
+   "parent": "042"
   },
   {
    "section": "174",
@@ -2743,7 +2738,7 @@
    ],
    "face": "down",
    "kind": "door",
-   "parent": "047"
+   "parent": "049"
   },
   {
    "section": "185",
@@ -2758,7 +2753,7 @@
    ],
    "face": "down",
    "kind": "door",
-   "parent": "047"
+   "parent": "049"
   },
   {
    "section": "186",
@@ -2938,7 +2933,7 @@
    ],
    "face": "down",
    "kind": "door",
-   "parent": "041"
+   "parent": "042"
   },
   {
    "section": "190",
@@ -2953,7 +2948,7 @@
    ],
    "face": "down",
    "kind": "door",
-   "parent": "041"
+   "parent": "042"
   },
   {
    "section": "191",

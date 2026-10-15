@@ -16,7 +16,7 @@
   },
   "sporeholm": {
    "section": "041",
-   "why": "atlas exit marked arrival"
+   "why": "V2: the landing circle on the giant mushroom cap"
   },
   "thalassa": {
    "section": "052",
@@ -156,7 +156,7 @@
   "M06:giver": {
    "s": "042",
    "x": 12,
-   "y": 7
+   "y": 8
   },
   "M06:0": {
    "s": "026",
@@ -165,13 +165,13 @@
   },
   "M06:1": {
    "s": "049",
-   "x": 14,
-   "y": 8
+   "x": 12,
+   "y": 9
   },
   "M06:2": {
    "s": "051",
    "x": 8,
-   "y": 13
+   "y": 12
   },
   "M07:giver": {
    "s": "018",
@@ -596,42 +596,42 @@
   },
   "S30:giver": {
    "s": "042",
-   "x": 6,
-   "y": 9
+   "x": 8,
+   "y": 11
   },
   "S31:giver": {
    "s": "042",
-   "x": 18,
-   "y": 9
+   "x": 16,
+   "y": 11
   },
   "S31:0": {
    "s": "046",
-   "x": 13,
+   "x": 12,
    "y": 8,
    "pts": [
     [
-     13,
+     12,
      8
     ],
     [
-     8,
-     6
+     12,
+     1
     ],
     [
-     10,
-     12
+     8,
+     5
     ]
    ]
   },
   "S31:1": {
    "s": "046",
    "art": "sporefolk",
-   "x": 18,
-   "y": 6
+   "x": 17,
+   "y": 5
   },
   "S32:giver": {
    "s": "041",
-   "x": 13,
+   "x": 12,
    "y": 9
   },
   "S32:0": {
@@ -1938,7 +1938,8 @@
      "t": [
       "Nurse: Welcome to the Recovery Bay! Step up to the counter and I'll heal your team."
      ],
-     "name": "Nurse"
+     "name": "Nurse",
+     "stay": true
     },
     {
      "x": 3,
@@ -2024,18 +2025,19 @@
    "pkey": "dustara",
    "npcs": [
     {
-     "x": 4,
+     "x": 8,
      "y": 5,
      "art": "shop",
      "face": "down",
      "t": [
       "Shopkeeper: Talk to me at the counter for pods and potions!"
      ],
-     "name": "Shopkeeper"
+     "name": "Shopkeeper",
+     "stay": true
     },
     {
-     "x": 9,
-     "y": 8,
+     "x": 5,
+     "y": 10,
      "art": "civilian",
      "face": "down",
      "t": [
@@ -5418,8 +5420,8 @@
    "pkey": "ferrox",
    "npcs": [
     {
-     "x": 9,
-     "y": 5,
+     "x": 8,
+     "y": 4,
      "art": "nurse",
      "face": "down",
      "t": [
@@ -5513,8 +5515,8 @@
    "pkey": "ferrox",
    "npcs": [
     {
-     "x": 9,
-     "y": 12,
+     "x": 8,
+     "y": 4,
      "art": "shop",
      "face": "down",
      "t": [
@@ -6530,17 +6532,10 @@
    ],
    "notes": "Landing pad on a boardwalk in the bog",
    "edges": {
-    "left": {
-     "to": "arrival",
-     "range": [
-      7,
-      8
-     ]
-    },
     "right": {
      "to": "042",
      "range": [
-      7,
+      5,
       8
      ],
      "offset": 0
@@ -6550,36 +6545,26 @@
    "objects": [
     {
      "tile": [
-      5,
-      12
-     ],
-     "k": "house",
-     "why": "house door: opens the shared Sporeholm house",
-     "to": "173"
-    },
-    {
-     "tile": [
-      17,
-      4
+      3,
+      3
      ],
      "k": "house",
      "to": "184",
-     "why": "walk-in door: landing_dome"
+     "why": "V2: the landing dome"
     },
     {
      "tile": [
-      15,
-      5
+      4,
+      3
      ],
-     "k": "sign",
-     "t": [
-      "Sporeholm Landing Pad. Mirefen Village lies east along the boardwalk."
-     ]
+     "k": "house",
+     "to": "184",
+     "why": "V2: the landing dome"
     },
     {
      "tile": [
-      6,
-      4
+      0,
+      10
      ],
      "k": "stash",
      "item": "stasis",
@@ -6589,11 +6574,11 @@
    ],
    "spawns": {
     "arrival": [
-     1,
+     3,
      7
     ],
     "default": [
-     1,
+     3,
      7
     ]
    },
@@ -6604,33 +6589,35 @@
    "pkey": "sporeholm",
    "npcs": [
     {
-     "x": 18,
-     "y": 9,
+     "x": 12,
+     "y": 3,
      "art": "technician",
      "face": "down",
      "t": [
       "Dock tech: Ships set down on the pad here. Mirefen Village is just east along the boardwalk."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 4,
-     "y": 6,
+     "x": 12,
+     "y": 12,
      "art": "explorer",
      "face": "down",
      "t": [
       "Bog hiker: Stay on the planks. The bog looks like moss, but it's mostly water and bad decisions."
-     ]
+     ],
+     "stay": true
     }
    ],
    "mons": [
     {
-     "x": 5,
-     "y": 6,
+     "x": 0,
+     "y": 9,
      "mon": "Sludgeviper"
     },
     {
-     "x": 9,
-     "y": 12,
+     "x": 6,
+     "y": 10,
      "mon": "Lianarch"
     }
    ]
@@ -6651,16 +6638,16 @@
     "left": {
      "to": "041",
      "range": [
-      7,
-      8
+      5,
+      10
      ],
      "offset": 0
     },
     "right": {
      "to": "045",
      "range": [
-      7,
-      8
+      5,
+      10
      ],
      "offset": 0
     }
@@ -6668,13 +6655,13 @@
    "warps": [
     {
      "tile": [
-      17,
-      5
+      8,
+      3
      ],
      "to": "043",
      "at": [
       7,
-      12
+      13
      ],
      "face": "up",
      "kind": "door",
@@ -6682,13 +6669,13 @@
     },
     {
      "tile": [
-      18,
-      5
+      9,
+      3
      ],
      "to": "043",
      "at": [
       8,
-      12
+      13
      ],
      "face": "up",
      "kind": "door",
@@ -6696,13 +6683,13 @@
     },
     {
      "tile": [
-      4,
-      6
+      15,
+      3
      ],
      "to": "044",
      "at": [
       7,
-      12
+      13
      ],
      "face": "up",
      "kind": "door",
@@ -6712,45 +6699,26 @@
    "objects": [
     {
      "tile": [
-      6,
-      2
+      3,
+      3
      ],
      "k": "house",
      "to": "190",
-     "why": "house door: opens the sporeholm house (was a item knock door)"
+     "why": "V2: Mirefen hut (shared Sporeholm home)"
     },
     {
      "tile": [
       20,
-      13
+      3
      ],
      "k": "house",
      "to": "190",
-     "why": "house door: opens the sporeholm house (was a item knock door)"
+     "why": "V2: Mirefen hut (shared Sporeholm home)"
     },
     {
      "tile": [
-      5,
-      13
-     ],
-     "k": "house",
-     "to": "173",
-     "why": "house door: path in front opened to match the drawn ground"
-    },
-    {
-     "tile": [
-      11,
-      8
-     ],
-     "k": "sign",
-     "t": [
-      "Mirefen Village: stilts deep, lanterns bright. Welcome, traveler."
-     ]
-    },
-    {
-     "tile": [
-      21,
-      5
+      16,
+      12
      ],
      "k": "stash",
      "item": "harmonic",
@@ -6761,7 +6729,7 @@
    "spawns": {
     "default": [
      1,
-     7
+     5
     ]
    },
    "grid": [
@@ -6772,78 +6740,92 @@
    "npcs": [
     {
      "x": 10,
-     "y": 10,
+     "y": 4,
      "art": "sporefolk",
      "face": "down",
      "t": [
       "Spore tender: Mirefen stands on stilts. When the bog breathes, the whole village sways a little."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 17,
-     "y": 13,
+     "x": 19,
+     "y": 8,
      "art": "researcher",
      "face": "down",
      "t": [
       "Botanist: The mushrooms glow brighter near the tower to the east. Dr. Moor says they're listening."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 20,
-     "y": 6,
+     "x": 5,
+     "y": 10,
      "art": "explorer",
      "face": "down",
      "t": [
       "Bog hiker: Toxin-types hide in the reed beds. Carry Cure Spray, or the walk home gets long."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 17,
-     "y": 14,
+     "x": 3,
+     "y": 5,
      "art": "civilian",
      "face": "down",
      "t": [
       "Villager: The dome with the cyan cross is the Recovery Bay. Rest up before you head into the marsh."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 21,
-     "y": 14,
+     "x": 14,
+     "y": 7,
      "art": "mom",
      "face": "down",
      "t": [
       "Grandmother: My grandson swears he was lost in the Mushroom Maze for a whole day. It was an hour."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 19,
-     "y": 6,
+     "x": 10,
+     "y": 10,
      "art": "pilgrim",
      "face": "down",
      "t": [
       "Pilgrim: I came to hear the Spore Choir at the pools. On still nights the spores hum in harmony."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 14,
-     "y": 3,
+     "x": 17,
+     "y": 5,
      "art": "strand",
      "face": "down",
      "t": [
       "Man in a white coat: Helix? Never heard of them. I'm just... sampling the mushrooms. For science."
-     ]
+     ],
+     "stay": true
     },
     {
      "x": 8,
-     "y": 2,
+     "y": 7,
      "art": "wanderer",
      "face": "down",
      "t": [
       "Traveler: The Keeper here guards a Signal Shard. Climb her tower and she'll test you herself."
-     ]
+     ],
+     "stay": true
     }
    ],
-   "mons": []
+   "mons": [
+    {
+     "x": 0,
+     "y": 4,
+     "mon": "Lilypod"
+    }
+   ]
   },
   "043": {
    "id": "043",
@@ -6862,12 +6844,12 @@
     {
      "tile": [
       7,
-      13
+      14
      ],
      "to": "042",
      "at": [
-      17,
-      6
+      8,
+      4
      ],
      "face": "down",
      "kind": "door"
@@ -6875,12 +6857,12 @@
     {
      "tile": [
       8,
-      13
+      14
      ],
      "to": "042",
      "at": [
-      17,
-      6
+      8,
+      4
      ],
      "face": "down",
      "kind": "door"
@@ -6890,7 +6872,14 @@
     {
      "tile": [
       7,
-      7
+      4
+     ],
+     "k": "bay"
+    },
+    {
+     "tile": [
+      8,
+      4
      ],
      "k": "bay"
     }
@@ -6898,33 +6887,35 @@
    "spawns": {
     "door": [
      7,
-     12
+     13
     ],
     "default": [
      7,
-     12
+     13
     ]
    },
    "parent": "042",
    "pkey": "sporeholm",
    "npcs": [
     {
-     "x": 7,
-     "y": 6,
+     "x": 8,
+     "y": 4,
      "art": "nurse",
      "face": "down",
      "t": [
       "Nurse: Welcome to the Mirefen Recovery Bay. Spore-sick or battle-worn, we'll patch your team up."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 9,
-     "y": 10,
+     "x": 6,
+     "y": 5,
      "art": "civilian",
      "face": "down",
      "t": [
       "Visitor: Healing here is free. Step up to the counter whenever your team is hurting."
-     ]
+     ],
+     "stay": true
     }
    ]
   },
@@ -6945,12 +6936,12 @@
     {
      "tile": [
       7,
-      13
+      14
      ],
      "to": "042",
      "at": [
-      4,
-      7
+      15,
+      4
      ],
      "face": "down",
      "kind": "door"
@@ -6958,12 +6949,12 @@
     {
      "tile": [
       8,
-      13
+      14
      ],
      "to": "042",
      "at": [
-      4,
-      7
+      15,
+      4
      ],
      "face": "down",
      "kind": "door"
@@ -6972,8 +6963,15 @@
    "objects": [
     {
      "tile": [
-      4,
-      7
+      7,
+      4
+     ],
+     "k": "shop"
+    },
+    {
+     "tile": [
+      8,
+      4
      ],
      "k": "shop"
     }
@@ -6981,33 +6979,35 @@
    "spawns": {
     "door": [
      7,
-     12
+     13
     ],
     "default": [
      7,
-     12
+     13
     ]
    },
    "parent": "042",
    "pkey": "sporeholm",
    "npcs": [
     {
-     "x": 4,
-     "y": 6,
+     "x": 8,
+     "y": 4,
      "art": "shop",
      "face": "down",
      "t": [
       "Clerk: Stasis Pods, Cure Spray, the works. In spore season the Cure Spray sells out fast."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 9,
-     "y": 10,
+     "x": 6,
+     "y": 5,
      "art": "sporefolk",
      "face": "down",
      "t": [
       "Shopper: Weaken a wild alien before you throw a Stasis Pod. Healthy ones just pop right back out."
-     ]
+     ],
+     "stay": true
     }
    ]
   },
@@ -7027,16 +7027,16 @@
     "left": {
      "to": "042",
      "range": [
-      7,
-      8
+      5,
+      9
      ],
      "offset": 0
     },
     "right": {
      "to": "046",
      "range": [
-      7,
-      8
+      5,
+      9
      ],
      "offset": 0
     }
@@ -7045,8 +7045,8 @@
    "objects": [
     {
      "tile": [
-      16,
-      12
+      19,
+      2
      ],
      "k": "stash",
      "item": "revive",
@@ -7055,8 +7055,8 @@
     },
     {
      "tile": [
-      4,
-      1
+      6,
+      2
      ],
      "k": "stash",
      "item": "revive",
@@ -7067,7 +7067,7 @@
    "spawns": {
     "default": [
      1,
-     7
+     5
     ]
    },
    "grid": [
@@ -7077,26 +7077,28 @@
    "pkey": "sporeholm",
    "npcs": [
     {
-     "x": 6,
+     "x": 10,
      "y": 9,
      "art": "researcher",
      "face": "down",
      "t": [
       "Botanist: Every lantern in this marsh is a living fungus. Don't pick them. They bite back."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 19,
-     "y": 5,
+     "x": 3,
+     "y": 6,
      "art": "explorer",
      "face": "down",
      "t": [
       "Bog hiker: Wild aliens jump out of the reeds. Stick to the dirt paths if your team is tired."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 11,
-     "y": 5,
+     "x": 19,
+     "y": 3,
      "art": "sporefolk",
      "face": "down",
      "t": [],
@@ -7108,10 +7110,10 @@
      }
     },
     {
-     "x": 16,
-     "y": 10,
+     "x": 13,
+     "y": 5,
      "art": "researcher",
-     "face": "right",
+     "face": "down",
      "t": [],
      "id": "sec045_tr3",
      "trainer": {
@@ -7123,13 +7125,13 @@
    ],
    "mons": [
     {
-     "x": 5,
-     "y": 1,
+     "x": 17,
+     "y": 9,
      "mon": "Sludgeviper"
     },
     {
-     "x": 20,
-     "y": 12,
+     "x": 8,
+     "y": 2,
      "mon": "Lianarch"
     }
    ]
@@ -7150,8 +7152,8 @@
     "left": {
      "to": "045",
      "range": [
-      7,
-      8
+      5,
+      9
      ],
      "offset": 0
     }
@@ -7160,7 +7162,21 @@
     {
      "tile": [
       23,
-      7
+      5
+     ],
+     "to": "047",
+     "at": [
+      6,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      6
      ],
      "to": "047",
      "at": [
@@ -7174,11 +7190,25 @@
     {
      "tile": [
       23,
-      8
+      7
      ],
      "to": "047",
      "at": [
       8,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      8
+     ],
+     "to": "047",
+     "at": [
+      9,
       14
      ],
      "face": "up",
@@ -7189,7 +7219,7 @@
    "objects": [
     {
      "tile": [
-      17,
+      11,
       1
      ],
      "k": "stash",
@@ -7199,8 +7229,8 @@
     },
     {
      "tile": [
-      5,
-      11
+      2,
+      2
      ],
      "k": "stash",
      "item": "stasis",
@@ -7211,7 +7241,7 @@
    "spawns": {
     "default": [
      1,
-     7
+     5
     ]
    },
    "grid": [
@@ -7221,26 +7251,28 @@
    "pkey": "sporeholm",
    "npcs": [
     {
-     "x": 16,
-     "y": 6,
+     "x": 14,
+     "y": 9,
      "art": "sporefolk",
      "face": "down",
      "t": [
       "Spore tender: The Mushroom Maze is just ahead. Left at the glowing caps... or was it right?"
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 8,
-     "y": 10,
+     "x": 20,
+     "y": 5,
      "art": "wanderer",
      "face": "down",
      "t": [
       "Wanderer: Trainers watch the paths. Step into their line of sight and it's a battle."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 18,
-     "y": 4,
+     "x": 9,
+     "y": 5,
      "art": "researcher",
      "face": "down",
      "t": [],
@@ -7252,10 +7284,10 @@
      }
     },
     {
-     "x": 10,
-     "y": 11,
+     "x": 4,
+     "y": 4,
      "art": "explorer",
-     "face": "up",
+     "face": "down",
      "t": [],
      "id": "sec046_tr3",
      "trainer": {
@@ -7267,13 +7299,13 @@
    ],
    "mons": [
     {
-     "x": 5,
-     "y": 6,
+     "x": 8,
+     "y": 9,
      "mon": "Miasmoth"
     },
     {
-     "x": 21,
-     "y": 11,
+     "x": 11,
+     "y": 2,
      "mon": "Rotbloom"
     }
    ]
@@ -7294,7 +7326,35 @@
    "warps": [
     {
      "tile": [
+      6,
+      15
+     ],
+     "to": "046",
+     "at": [
+      22,
+      5
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
       7,
+      15
+     ],
+     "to": "046",
+     "at": [
+      22,
+      6
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      8,
       15
      ],
      "to": "046",
@@ -7308,7 +7368,7 @@
     },
     {
      "tile": [
-      8,
+      9,
       15
      ],
      "to": "046",
@@ -7322,6 +7382,20 @@
     },
     {
      "tile": [
+      6,
+      0
+     ],
+     "to": "048",
+     "at": [
+      6,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
       7,
       0
      ],
@@ -7342,6 +7416,20 @@
      "to": "048",
      "at": [
       8,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      9,
+      0
+     ],
+     "to": "048",
+     "at": [
+      9,
       14
      ],
      "face": "up",
@@ -7352,27 +7440,8 @@
    "objects": [
     {
      "tile": [
-      12,
-      4
-     ],
-     "k": "house",
-     "to": "185",
-     "why": "walk-in door: mushroom_house"
-    },
-    {
-     "tile": [
-      3,
-      3
-     ],
-     "k": "sign",
-     "t": [
-      "A mossy stone shrine. The carving reads: The mist forgets nothing, but it lets you leave."
-     ]
-    },
-    {
-     "tile": [
-      1,
-      9
+      13,
+      6
      ],
      "k": "stash",
      "item": "megagel",
@@ -7382,26 +7451,27 @@
    ],
    "spawns": {
     "default": [
-     7,
+     6,
      14
     ]
    },
    "pkey": "sporeholm",
    "npcs": [
     {
-     "x": 9,
-     "y": 8,
+     "x": 6,
+     "y": 9,
      "art": "explorer",
      "face": "down",
      "t": [
       "Lost hiker: I've passed that stone shrine three times. I'm starting to think it follows me."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 4,
-     "y": 5,
+     "x": 10,
+     "y": 4,
      "art": "explorer",
-     "face": "up",
+     "face": "left",
      "t": [],
      "id": "sec047_tr1",
      "trainer": {
@@ -7428,6 +7498,20 @@
    "warps": [
     {
      "tile": [
+      6,
+      15
+     ],
+     "to": "047",
+     "at": [
+      6,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
       7,
       15
      ],
@@ -7453,6 +7537,34 @@
      "face": "down",
      "kind": "edge",
      "edge": "bottom"
+    },
+    {
+     "tile": [
+      9,
+      15
+     ],
+     "to": "047",
+     "at": [
+      9,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      6,
+      0
+     ],
+     "to": "049",
+     "at": [
+      1,
+      6
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "top"
     },
     {
      "tile": [
@@ -7476,7 +7588,7 @@
      "to": "049",
      "at": [
       1,
-      7
+      8
      ],
      "face": "right",
      "kind": "edge",
@@ -7486,17 +7598,7 @@
    "objects": [
     {
      "tile": [
-      3,
-      3
-     ],
-     "k": "sign",
-     "t": [
-      "Another shrine, just like the one below. Someone scratched an arrow pointing north."
-     ]
-    },
-    {
-     "tile": [
-      13,
+      14,
       7
      ],
      "k": "stash",
@@ -7507,23 +7609,24 @@
    ],
    "spawns": {
     "default": [
-     7,
+     6,
      14
     ]
    },
    "pkey": "sporeholm",
    "npcs": [
     {
-     "x": 11,
-     "y": 12,
+     "x": 5,
+     "y": 9,
      "art": "researcher",
      "face": "down",
      "t": [
       "Mycologist: These bridges grow on their own. The mushrooms knit the planks back together each night."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 9,
+     "x": 10,
      "y": 5,
      "art": "sporefolk",
      "face": "left",
@@ -7555,6 +7658,20 @@
     {
      "tile": [
       0,
+      6
+     ],
+     "to": "048",
+     "at": [
+      6,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
       7
      ],
      "to": "048",
@@ -7583,6 +7700,20 @@
     {
      "tile": [
       23,
+      6
+     ],
+     "to": "050",
+     "at": [
+      6,
+      22
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
       7
      ],
      "to": "050",
@@ -7612,17 +7743,17 @@
    "objects": [
     {
      "tile": [
-      19,
-      4
+      15,
+      3
      ],
      "k": "house",
-     "why": "walk-in door: Mushroom House",
-     "to": "185"
+     "to": "185",
+     "why": "V2: the mushroom house by the Spore Pools"
     },
     {
      "tile": [
-      14,
-      12
+      11,
+      14
      ],
      "k": "stash",
      "item": "harmonic",
@@ -7631,7 +7762,7 @@
     },
     {
      "tile": [
-      10,
+      13,
       14
      ],
      "k": "stash",
@@ -7643,7 +7774,7 @@
    "spawns": {
     "default": [
      1,
-     7
+     6
     ]
    },
    "grid": [
@@ -7653,26 +7784,28 @@
    "pkey": "sporeholm",
    "npcs": [
     {
-     "x": 5,
-     "y": 4,
+     "x": 20,
+     "y": 5,
      "art": "pilgrim",
      "face": "down",
      "t": [
       "Pilgrim: Listen... the Spore Choir. The pools sing when the spores rise. Some say the tower answers."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 12,
-     "y": 13,
+     "x": 10,
+     "y": 5,
      "art": "sporefolk",
      "face": "down",
      "t": [
       "Spore tender: The big lily pads hold your weight. Mostly. Hop across them to reach the tower path."
-     ]
+     ],
+     "stay": true
     },
     {
      "x": 13,
-     "y": 6,
+     "y": 9,
      "art": "researcher",
      "face": "up",
      "t": [],
@@ -7685,10 +7818,10 @@
      }
     },
     {
-     "x": 21,
-     "y": 11,
+     "x": 4,
+     "y": 5,
      "art": "explorer",
-     "face": "up",
+     "face": "down",
      "t": [],
      "id": "sec049_tr3",
      "trainer": {
@@ -7700,13 +7833,13 @@
    ],
    "mons": [
     {
-     "x": 7,
-     "y": 11,
+     "x": 10,
+     "y": 14,
      "mon": "Sludgeviper"
     },
     {
-     "x": 10,
-     "y": 1,
+     "x": 1,
+     "y": 9,
      "mon": "Lianarch"
     }
    ]
@@ -7725,6 +7858,20 @@
    "notes": "Keeper Dr. Lysa Moor's tower",
    "edges": {},
    "warps": [
+    {
+     "tile": [
+      6,
+      23
+     ],
+     "to": "049",
+     "at": [
+      22,
+      6
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
     {
      "tile": [
       7,
@@ -7755,6 +7902,20 @@
     },
     {
      "tile": [
+      6,
+      0
+     ],
+     "to": "051",
+     "at": [
+      6,
+      22
+     ],
+     "face": "up",
+     "kind": "stairs",
+     "edge": "top"
+    },
+    {
+     "tile": [
       7,
       0
      ],
@@ -7780,40 +7941,44 @@
      "face": "up",
      "kind": "stairs",
      "edge": "top"
-    }
-   ],
-   "objects": [
+    },
     {
      "tile": [
-      8,
-      9
+      9,
+      0
      ],
-     "k": "sign",
-     "t": [
-      "A glowing spore orb. The plaque reads: Sporeholm Tower, field station of Dr. Lysa Moor."
-     ]
+     "to": "051",
+     "at": [
+      9,
+      22
+     ],
+     "face": "up",
+     "kind": "stairs",
+     "edge": "top"
     }
    ],
+   "objects": [],
    "spawns": {
     "default": [
-     7,
+     6,
      22
     ]
    },
    "pkey": "sporeholm",
    "npcs": [
     {
-     "x": 9,
-     "y": 12,
+     "x": 10,
+     "y": 2,
      "art": "researcher",
      "face": "down",
      "t": [
       "Lab aide: Dr. Moor's apprentices guard this floor. Beat them and the stairs to her lab are yours."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 9,
-     "y": 14,
+     "x": 10,
+     "y": 18,
      "art": "researcher",
      "face": "left",
      "t": [],
@@ -7857,6 +8022,20 @@
    "warps": [
     {
      "tile": [
+      6,
+      23
+     ],
+     "to": "050",
+     "at": [
+      6,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
       7,
       23
      ],
@@ -7882,33 +8061,48 @@
      "face": "down",
      "kind": "edge",
      "edge": "bottom"
+    },
+    {
+     "tile": [
+      9,
+      23
+     ],
+     "to": "050",
+     "at": [
+      9,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
     }
    ],
    "objects": [
     {
      "tile": [
       7,
-      2
+      4
      ],
      "k": "keeper"
     }
    ],
    "spawns": {
     "default": [
-     7,
+     6,
      22
     ]
    },
    "pkey": "sporeholm",
    "npcs": [
     {
-     "x": 12,
-     "y": 12,
+     "x": 8,
+     "y": 5,
      "art": "technician",
      "face": "down",
      "t": [
       "Lab aide: Beat Dr. Moor and she'll hand over Sporeholm's Signal Shard. Bring Cure Spray. Trust me."
-     ]
+     ],
+     "stay": true
     }
    ]
   },
@@ -8412,12 +8606,13 @@
    "npcs": [
     {
      "x": 8,
-     "y": 6,
+     "y": 7,
      "art": "nurse",
      "face": "down",
      "t": [
       "Nurse: Welcome to the Saltreach Recovery Bay. Your Alienmon will be shipshape in no time."
-     ]
+     ],
+     "stay": true
     },
     {
      "x": 5,
@@ -8495,12 +8690,13 @@
    "npcs": [
     {
      "x": 5,
-     "y": 6,
+     "y": 7,
      "art": "shop",
      "face": "down",
      "t": [
       "Clerk: Ahoy! Pods, potions, rope, bait. Everything a Linker needs before the coral route."
-     ]
+     ],
+     "stay": true
     },
     {
      "x": 9,
@@ -9668,12 +9864,13 @@
    "npcs": [
     {
      "x": 8,
-     "y": 6,
+     "y": 7,
      "art": "nurse",
      "face": "down",
      "t": [
       "Nurse: Welcome to the Neonis Recovery Bay! Step up to the counter and we'll recharge your team."
-     ]
+     ],
+     "stay": true
     },
     {
      "x": 6,
@@ -9751,12 +9948,13 @@
    "npcs": [
     {
      "x": 4,
-     "y": 6,
+     "y": 7,
      "art": "shop",
      "face": "down",
      "t": [
       "Clerk: Welcome to the Neonis Shop! Stasis Pods, potions, all the essentials."
-     ]
+     ],
+     "stay": true
     },
     {
      "x": 9,
@@ -10907,14 +11105,15 @@
    "pkey": "glyphos",
    "npcs": [
     {
-     "x": 10,
+     "x": 8,
      "y": 5,
      "art": "nurse",
      "face": "down",
      "t": [
       "Nurse: Welcome to the Recovery Tent! Step up to the pod and I'll heal your team."
      ],
-     "name": "Nurse"
+     "name": "Nurse",
+     "stay": true
     },
     {
      "x": 10,
@@ -12123,12 +12322,13 @@
    "npcs": [
     {
      "x": 8,
-     "y": 5,
+     "y": 7,
      "art": "nurse",
      "face": "down",
      "t": [
       "Nurse: Welcome to the Recovery Bay. We'll have your team patched up and cooled down in no time."
-     ]
+     ],
+     "stay": true
     },
     {
      "x": 5,
@@ -12206,12 +12406,13 @@
    "npcs": [
     {
      "x": 4,
-     "y": 7,
+     "y": 8,
      "art": "shop",
      "face": "down",
      "t": [
       "Clerk: Stasis Pods, burn salve, cooling tonics. Everything a Linker needs down the mines."
-     ]
+     ],
+     "stay": true
     },
     {
      "x": 13,
@@ -13700,13 +13901,14 @@
    "npcs": [
     {
      "x": 7,
-     "y": 6,
+     "y": 7,
      "art": "nurse",
      "face": "down",
      "t": [
       "Nurse: Welcome to the Frostmark Recovery Bay. Let's warm your team right up."
      ],
-     "name": "Nurse"
+     "name": "Nurse",
+     "stay": true
     },
     {
      "x": 12,
@@ -13786,13 +13988,14 @@
    "npcs": [
     {
      "x": 3,
-     "y": 7,
+     "y": 8,
      "art": "shop",
      "face": "down",
      "t": [
       "Clerk: Stasis Pods, gels, warm socks. Okay, not socks. Take a look!"
      ],
-     "name": "Clerk"
+     "name": "Clerk",
+     "stay": true
     },
     {
      "x": 6,
@@ -16413,12 +16616,13 @@
    "npcs": [
     {
      "x": 8,
-     "y": 5,
+     "y": 6,
      "art": "nurse",
      "face": "down",
      "t": [
       "Nurse: Welcome to the Skyreach Recovery Bay. Rest your Alienmon, the thin air tires them out."
-     ]
+     ],
+     "stay": true
     },
     {
      "x": 6,
@@ -16496,12 +16700,13 @@
    "npcs": [
     {
      "x": 4,
-     "y": 6,
+     "y": 7,
      "art": "shop",
      "face": "down",
      "t": [
       "Clerk: Welcome to Skyreach Supply! Stock up now, there's no shop past the plaza."
-     ]
+     ],
+     "stay": true
     },
     {
      "x": 9,
@@ -17555,12 +17760,13 @@
    "npcs": [
     {
      "x": 7,
-     "y": 5,
+     "y": 6,
      "art": "nurse",
      "face": "down",
      "t": [
       "Nurse: Welcome to the Gravewell Recovery Bay. We'll have your Alienmon glowing again."
-     ]
+     ],
+     "stay": true
     },
     {
      "x": 9,
@@ -17638,12 +17844,13 @@
    "npcs": [
     {
      "x": 4,
-     "y": 6,
+     "y": 7,
      "art": "shop",
      "face": "down",
      "t": [
       "Clerk: Lantern oil, Stasis Pods, potions. Everything you need to go down and come back up."
-     ]
+     ],
+     "stay": true
     },
     {
      "x": 9,
@@ -19057,12 +19264,13 @@
    "npcs": [
     {
      "x": 8,
-     "y": 8,
+     "y": 10,
      "art": "nurse",
      "face": "down",
      "t": [
       "Nurse: Welcome to the Medic Tent. Step up to the counter and I'll patch your team right up."
-     ]
+     ],
+     "stay": true
     },
     {
      "x": 7,
@@ -22554,24 +22762,26 @@
      "story": "arena"
     },
     {
-     "x": 1,
+     "x": 2,
      "y": 11,
      "art": "shop",
      "face": "down",
      "t": [
       "Vendor: Pods and gels for the brave!"
      ],
-     "name": "Vendor"
+     "name": "Vendor",
+     "stay": true
     },
     {
-     "x": 22,
+     "x": 21,
      "y": 11,
      "art": "nurse",
      "face": "down",
      "t": [
       "Arena medic: Step up to the stall and I'll patch your team up."
      ],
-     "name": "Arena medic"
+     "name": "Arena medic",
+     "stay": true
     },
     {
      "x": 8,
@@ -23138,7 +23348,7 @@
      12
     ]
    },
-   "parent": "041",
+   "parent": "042",
    "pkey": "sporeholm",
    "npcs": [
     {
@@ -23906,7 +24116,7 @@
      12
     ]
    },
-   "parent": "047",
+   "parent": "049",
    "pkey": "sporeholm",
    "npcs": [
     {
@@ -24265,7 +24475,7 @@
      12
     ]
    },
-   "parent": "041",
+   "parent": "042",
    "pkey": "sporeholm",
    "npcs": [
     {
@@ -25343,40 +25553,29 @@
   },
   {
    "from_id": "041",
-   "edge": "left",
-   "tile_range": [
-    7,
-    8
-   ],
-   "to_id": "arrival",
-   "to_edge": null,
-   "to_tile": null
-  },
-  {
-   "from_id": "041",
    "edge": "right",
    "tile_range": [
-    7,
+    5,
     8
    ],
    "to_id": "042",
    "to_edge": "left",
    "to_tile": [
-    7,
-    8
+    5,
+    10
    ]
   },
   {
    "from_id": "042",
    "edge": "left",
    "tile_range": [
-    7,
-    8
+    5,
+    10
    ],
    "to_id": "041",
    "to_edge": "right",
    "to_tile": [
-    7,
+    5,
     8
    ]
   },
@@ -25384,125 +25583,125 @@
    "from_id": "042",
    "edge": "right",
    "tile_range": [
-    7,
-    8
+    5,
+    10
    ],
    "to_id": "045",
    "to_edge": "left",
    "to_tile": [
-    7,
-    8
+    5,
+    9
    ]
   },
   {
    "from_id": "045",
    "edge": "left",
    "tile_range": [
-    7,
-    8
+    5,
+    9
    ],
    "to_id": "042",
    "to_edge": "right",
    "to_tile": [
-    7,
-    8
+    5,
+    10
    ]
   },
   {
    "from_id": "045",
    "edge": "right",
    "tile_range": [
-    7,
-    8
+    5,
+    9
    ],
    "to_id": "046",
    "to_edge": "left",
    "to_tile": [
-    7,
-    8
+    5,
+    9
    ]
   },
   {
    "from_id": "046",
    "edge": "left",
    "tile_range": [
-    7,
-    8
+    5,
+    9
    ],
    "to_id": "045",
    "to_edge": "right",
    "to_tile": [
-    7,
-    8
+    5,
+    9
    ]
   },
   {
    "from_id": "046",
    "edge": "right",
    "tile_range": [
-    7,
-    8
+    5,
+    9
    ],
    "to_id": "047",
    "to_edge": "bottom",
    "to_tile": [
-    7,
-    8
+    6,
+    9
    ]
   },
   {
    "from_id": "047",
    "edge": "bottom",
    "tile_range": [
-    7,
-    8
+    6,
+    9
    ],
    "to_id": "046",
    "to_edge": "right",
    "to_tile": [
-    7,
-    8
+    5,
+    9
    ]
   },
   {
    "from_id": "047",
    "edge": "top",
    "tile_range": [
-    7,
-    8
+    6,
+    9
    ],
    "to_id": "048",
    "to_edge": "bottom",
    "to_tile": [
-    7,
-    8
+    6,
+    9
    ]
   },
   {
    "from_id": "048",
    "edge": "bottom",
    "tile_range": [
-    7,
-    8
+    6,
+    9
    ],
    "to_id": "047",
    "to_edge": "top",
    "to_tile": [
-    7,
-    8
+    6,
+    9
    ]
   },
   {
    "from_id": "048",
    "edge": "top",
    "tile_range": [
-    7,
-    8
+    6,
+    9
    ],
    "to_id": "049",
    "to_edge": "left",
    "to_tile": [
-    7,
+    6,
     8
    ]
   },
@@ -25510,41 +25709,41 @@
    "from_id": "049",
    "edge": "left",
    "tile_range": [
-    7,
+    6,
     8
    ],
    "to_id": "048",
    "to_edge": "top",
    "to_tile": [
-    7,
-    8
+    6,
+    9
    ]
   },
   {
    "from_id": "049",
    "edge": "right",
    "tile_range": [
-    7,
+    6,
     8
    ],
    "to_id": "050",
    "to_edge": "bottom",
    "to_tile": [
-    7,
-    8
+    6,
+    9
    ]
   },
   {
    "from_id": "050",
    "edge": "bottom",
    "tile_range": [
-    7,
-    8
+    6,
+    9
    ],
    "to_id": "049",
    "to_edge": "right",
    "to_tile": [
-    7,
+    6,
     8
    ]
   },
@@ -25552,28 +25751,28 @@
    "from_id": "050",
    "edge": "top",
    "tile_range": [
-    7,
-    8
+    6,
+    9
    ],
    "to_id": "051",
    "to_edge": "bottom",
    "to_tile": [
-    7,
-    8
+    6,
+    9
    ]
   },
   {
    "from_id": "051",
    "edge": "bottom",
    "tile_range": [
-    7,
-    8
+    6,
+    9
    ],
    "to_id": "050",
    "to_edge": "top",
    "to_tile": [
-    7,
-    8
+    6,
+    9
    ]
   },
   {

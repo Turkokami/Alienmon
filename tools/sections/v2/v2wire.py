@@ -6,7 +6,21 @@ A2={s['id']:s for s in json.load(open(S+'atlas_v2.json',encoding='utf-8'))['sect
 AT=json.load(open('art/sections/atlas.json',encoding='utf-8'));A1={s['id']:s for s in AT['sections']}
 L=json.load(open('data/sections/links.json',encoding='utf-8'))
 H=lambda x,y:{'tile':[x,y]}
-WIRE={'02':{
+WIRE={'03':{
+ 'ids':['%03d'%i for i in range(41,52)],
+ 'doors':[],'stairs':[],
+ 'objects':{
+  '041':[{'tile':[3,3],'k':'house','to':'184','why':'V2: the landing dome'},{'tile':[4,3],'k':'house','to':'184','why':'V2: the landing dome'}],
+  '042':[{'tile':[3,3],'k':'house','to':'190','why':'V2: Mirefen hut (shared Sporeholm home)'},{'tile':[20,3],'k':'house','to':'190','why':'V2: Mirefen hut (shared Sporeholm home)'}],
+  '047':[],
+  '049':[{'tile':[15,3],'k':'house','to':'185','why':'V2: the mushroom house by the Spore Pools'}],
+ },
+ 'warps':[],'gates':{},
+ 'atlas_extra':{'050':['top edge, tile columns 6–9 (stairs up) → Sporeholm Tower 2F']},
+ 'spawns':{'041':{'arrival':[3,7],'default':[3,7]}},
+ 'arrival':{'sporeholm':{'section':'041','why':'V2: the landing circle on the giant mushroom cap'}},
+ 'reparent':{'173':'042','184':'041','185':'049','190':'042'},
+},'02':{
  'ids':['%03d'%i for i in range(29,41)],
  'doors':[('031','030',[8,4],[9,4],'Rustvale Recovery Bay (big dome, cyan cross)'),('032','030',[15,4],None,'Rustvale Shop (gear sign)'),
           ('033','030',[20,4],[21,4],"Grub's Workshop (crossed-tools sign)")],
@@ -83,6 +97,7 @@ for pf in sys.argv[1:]:
     for w in L['warps']:
         if w['section']=='187' and w.get('parent')=='007': w['parent']='018'   # the cottage's only door is now in Port Ember
         if w['section']=='188': w['parent']='030'
+        if w['section'] in W.get('reparent',{}): w['parent']=W['reparent'][w['section']]
     for g in L['gates']:
         if g['section'] in W['gates']: g['tiles']=W['gates'][g['section']]; g['at_dy']=1
     for k,v in W['spawns'].items(): L['spawns'][k]=v

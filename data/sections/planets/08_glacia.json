@@ -332,11 +332,12 @@
     "name": "Nurse",
     "tile": [
      7,
-     6
+     7
     ],
     "t": [
      "Nurse: Welcome to the Frostmark Recovery Bay. Let's warm your team right up."
-    ]
+    ],
+    "stay": true
    },
    {
     "art": "explorer",
@@ -352,11 +353,12 @@
     "name": "Clerk",
     "tile": [
      3,
-     7
+     8
     ],
     "t": [
      "Clerk: Stasis Pods, gels, warm socks. Okay, not socks. Take a look!"
-    ]
+    ],
+    "stay": true
    },
    {
     "art": "researcher",

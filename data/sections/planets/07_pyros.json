@@ -231,11 +231,12 @@
     "art": "nurse",
     "tile": [
      8,
-     5
+     7
     ],
     "t": [
      "Nurse: Welcome to the Recovery Bay. We'll have your team patched up and cooled down in no time."
-    ]
+    ],
+    "stay": true
    },
    {
     "art": "miner",
@@ -249,11 +250,12 @@
     "art": "shop",
     "tile": [
      4,
-     7
+     8
     ],
     "t": [
      "Clerk: Stasis Pods, burn salve, cooling tonics. Everything a Linker needs down the mines."
-    ]
+    ],
+    "stay": true
    },
    {
     "art": "technician",

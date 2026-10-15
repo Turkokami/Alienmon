@@ -459,8 +459,8 @@
    "section": "041",
    "name": "Landing Bog",
    "tile": [
-    6,
-    4
+    0,
+    10
    ],
    "item": "stasis",
    "n": 5,
@@ -470,8 +470,8 @@
    "section": "042",
    "name": "Mirefen Village",
    "tile": [
-    21,
-    5
+    16,
+    12
    ],
    "item": "harmonic",
    "n": 2,
@@ -481,8 +481,8 @@
    "section": "045",
    "name": "Lantern Marsh Part A",
    "tile": [
-    16,
-    12
+    19,
+    2
    ],
    "item": "revive",
    "n": 1,
@@ -492,8 +492,8 @@
    "section": "045",
    "name": "Lantern Marsh Part A",
    "tile": [
-    4,
-    1
+    6,
+    2
    ],
    "item": "revive",
    "n": 1,
@@ -503,7 +503,7 @@
    "section": "046",
    "name": "Lantern Marsh Part B",
    "tile": [
-    17,
+    11,
     1
    ],
    "item": "gel",
@@ -514,8 +514,8 @@
    "section": "046",
    "name": "Lantern Marsh Part B",
    "tile": [
-    5,
-    11
+    2,
+    2
    ],
    "item": "stasis",
    "n": 5,
@@ -525,8 +525,8 @@
    "section": "047",
    "name": "Mushroom Maze 1F",
    "tile": [
-    1,
-    9
+    13,
+    6
    ],
    "item": "megagel",
    "n": 1,
@@ -536,7 +536,7 @@
    "section": "048",
    "name": "Mushroom Maze 2F",
    "tile": [
-    13,
+    14,
     7
    ],
    "item": "gel",
@@ -547,8 +547,8 @@
    "section": "049",
    "name": "Spore Pools",
    "tile": [
-    14,
-    12
+    11,
+    14
    ],
    "item": "harmonic",
    "n": 2,
@@ -558,7 +558,7 @@
    "section": "049",
    "name": "Spore Pools",
    "tile": [
-    10,
+    13,
     14
    ],
    "item": "revive",

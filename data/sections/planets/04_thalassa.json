@@ -270,11 +270,12 @@
     "art": "nurse",
     "tile": [
      8,
-     6
+     7
     ],
     "t": [
      "Nurse: Welcome to the Saltreach Recovery Bay. Your Alienmon will be shipshape in no time."
-    ]
+    ],
+    "stay": true
    },
    {
     "art": "squidsailor",
@@ -288,11 +289,12 @@
     "art": "shop",
     "tile": [
      5,
-     6
+     7
     ],
     "t": [
      "Clerk: Ahoy! Pods, potions, rope, bait. Everything a Linker needs before the coral route."
-    ]
+    ],
+    "stay": true
    },
    {
     "art": "civilian",

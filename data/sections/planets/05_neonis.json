@@ -341,11 +341,12 @@
     "art": "nurse",
     "tile": [
      8,
-     6
+     7
     ],
     "t": [
      "Nurse: Welcome to the Neonis Recovery Bay! Step up to the counter and we'll recharge your team."
-    ]
+    ],
+    "stay": true
    },
    {
     "art": "civilian",
@@ -359,11 +360,12 @@
     "art": "shop",
     "tile": [
      4,
-     6
+     7
     ],
     "t": [
      "Clerk: Welcome to the Neonis Shop! Stasis Pods, potions, all the essentials."
-    ]
+    ],
+    "stay": true
    },
    {
     "art": "explorer",

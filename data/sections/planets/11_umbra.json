@@ -264,11 +264,12 @@
     "art": "nurse",
     "tile": [
      7,
-     5
+     6
     ],
     "t": [
      "Nurse: Welcome to the Gravewell Recovery Bay. We'll have your Alienmon glowing again."
-    ]
+    ],
+    "stay": true
    },
    {
     "art": "explorer",
@@ -282,11 +283,12 @@
     "art": "shop",
     "tile": [
      4,
-     6
+     7
     ],
     "t": [
      "Clerk: Lantern oil, Stasis Pods, potions. Everything you need to go down and come back up."
-    ]
+    ],
+    "stay": true
    },
    {
     "art": "miner",

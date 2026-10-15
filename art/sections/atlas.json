@@ -915,11 +915,11 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → arrival (landing pad / gate)",
-    "right edge, tile rows 7–8 → Mirefen Village"
+    "right edge, tile rows 5–8 → Mirefen Village"
    ],
    "notes": "Landing pad on a boardwalk in the bog",
-   "file": "art/sections/03_sporeholm/041_landing_bog.png"
+   "file": "art/sections/03_sporeholm/041_landing_bog.png",
+   "v2": true
   },
   {
    "id": "042",
@@ -937,11 +937,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Landing Bog",
-    "right edge, tile rows 7–8 → Lantern Marsh Part A"
+    "left edge, tile rows 5–10 → Landing Bog",
+    "right edge, tile rows 5–10 → Lantern Marsh Part A"
    ],
    "notes": "Stilt village of huts on mushroom stalks with rope bridges",
-   "file": "art/sections/03_sporeholm/042_mirefen_village.png"
+   "file": "art/sections/03_sporeholm/042_mirefen_village.png",
+   "v2": true
   },
   {
    "id": "043",
@@ -958,11 +959,10 @@
    ],
    "tile_px_render": 64,
    "tile_px_game": 16,
-   "exits": [
-    "doormat at the bottom center of the room leads back outside"
-   ],
+   "exits": [],
    "notes": "",
-   "file": "art/sections/03_sporeholm/043_mirefen_recovery_bay.png"
+   "file": "art/sections/03_sporeholm/043_mirefen_recovery_bay.png",
+   "v2": true
   },
   {
    "id": "044",
@@ -979,11 +979,10 @@
    ],
    "tile_px_render": 64,
    "tile_px_game": 16,
-   "exits": [
-    "doormat at the bottom center of the room leads back outside"
-   ],
+   "exits": [],
    "notes": "",
-   "file": "art/sections/03_sporeholm/044_mirefen_shop.png"
+   "file": "art/sections/03_sporeholm/044_mirefen_shop.png",
+   "v2": true
   },
   {
    "id": "045",
@@ -1001,11 +1000,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Mirefen Village",
-    "right edge, tile rows 7–8 → Lantern Marsh Part B"
+    "left edge, tile rows 5–9 → Mirefen Village",
+    "right edge, tile rows 5–9 → Lantern Marsh Part B"
    ],
    "notes": "Marsh of glowing lanterns and lily pads",
-   "file": "art/sections/03_sporeholm/045_lantern_marsh_part_a.png"
+   "file": "art/sections/03_sporeholm/045_lantern_marsh_part_a.png",
+   "v2": true
   },
   {
    "id": "046",
@@ -1023,11 +1023,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Lantern Marsh Part A",
-    "right edge, tile rows 7–8 → Mushroom Maze 1F"
+    "left edge, tile rows 5–9 → Lantern Marsh Part A",
+    "right edge, tile rows 5–9 → Mushroom Maze 1F"
    ],
    "notes": "Marsh of glowing lanterns and lily pads",
-   "file": "art/sections/03_sporeholm/046_lantern_marsh_part_b.png"
+   "file": "art/sections/03_sporeholm/046_lantern_marsh_part_b.png",
+   "v2": true
   },
   {
    "id": "047",
@@ -1045,11 +1046,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7–8 → Lantern Marsh Part B",
-    "top edge, tile columns 7–8 → Mushroom Maze 2F"
+    "bottom edge, tile columns 6–9 → Lantern Marsh Part B",
+    "top edge, tile columns 6–9 → Mushroom Maze 2F"
    ],
    "notes": "Maze of giant mushrooms (Lost in the Mist)",
-   "file": "art/sections/03_sporeholm/047_mushroom_maze_1f.png"
+   "file": "art/sections/03_sporeholm/047_mushroom_maze_1f.png",
+   "v2": true
   },
   {
    "id": "048",
@@ -1067,11 +1069,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7–8 → Mushroom Maze 1F",
-    "top edge, tile columns 7–8 → Spore Pools"
+    "bottom edge, tile columns 6–9 → Mushroom Maze 1F",
+    "top edge, tile columns 6–9 → Spore Pools"
    ],
    "notes": "Maze of giant mushrooms (Lost in the Mist)",
-   "file": "art/sections/03_sporeholm/048_mushroom_maze_2f.png"
+   "file": "art/sections/03_sporeholm/048_mushroom_maze_2f.png",
+   "v2": true
   },
   {
    "id": "049",
@@ -1089,11 +1092,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Mushroom Maze 2F",
-    "right edge, tile rows 7–8 → Sporeholm Tower 1F"
+    "left edge, tile rows 6–8 → Mushroom Maze 2F",
+    "right edge, tile rows 6–8 → Sporeholm Tower 1F"
    ],
    "notes": "Glowing spore pools (Spore Choir)",
-   "file": "art/sections/03_sporeholm/049_spore_pools.png"
+   "file": "art/sections/03_sporeholm/049_spore_pools.png",
+   "v2": true
   },
   {
    "id": "050",
@@ -1111,11 +1115,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7–8 → Spore Pools",
-    "top edge, tile columns 7–8 (stairs up) → Sporeholm Tower 2F"
+    "bottom edge, tile columns 6–9 → Spore Pools",
+    "top edge, tile columns 6–9 (stairs up) → Sporeholm Tower 2F"
    ],
    "notes": "Keeper Dr. Lysa Moor's tower",
-   "file": "art/sections/03_sporeholm/050_sporeholm_tower_1f.png"
+   "file": "art/sections/03_sporeholm/050_sporeholm_tower_1f.png",
+   "v2": true
   },
   {
    "id": "051",
@@ -1133,10 +1138,11 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7–8 → Sporeholm Tower 1F"
+    "bottom edge, tile columns 6–9 → Sporeholm Tower 1F"
    ],
    "notes": "Keeper Dr. Lysa Moor's tower",
-   "file": "art/sections/03_sporeholm/051_sporeholm_tower_2f.png"
+   "file": "art/sections/03_sporeholm/051_sporeholm_tower_2f.png",
+   "v2": true
   },
   {
    "id": "052",

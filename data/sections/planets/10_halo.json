@@ -257,11 +257,12 @@
     "art": "nurse",
     "tile": [
      8,
-     5
+     6
     ],
     "t": [
      "Nurse: Welcome to the Skyreach Recovery Bay. Rest your Alienmon, the thin air tires them out."
-    ]
+    ],
+    "stay": true
    },
    {
     "art": "civilian",
@@ -275,11 +276,12 @@
     "art": "shop",
     "tile": [
      4,
-     6
+     7
     ],
     "t": [
      "Clerk: Welcome to Skyreach Supply! Stock up now, there's no shop past the plaza."
-    ]
+    ],
+    "stay": true
    },
    {
     "art": "pilgrim",

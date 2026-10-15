@@ -60,16 +60,16 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 
 | Section | Tile | Item | Tier |
 |---|---|---|---|
-| 041 Landing Bog | 6,4 | 5x Stasis Pod | 2 |
-| 042 Mirefen Village | 21,5 | 2x Harmonic Pod | 2 |
-| 045 Lantern Marsh Part A | 16,12 | 1x Revive Spark | 2 |
-| 045 Lantern Marsh Part A | 4,1 | 1x Revive Spark | 2 |
-| 046 Lantern Marsh Part B | 17,1 | 3x Med Gel | 2 |
-| 046 Lantern Marsh Part B | 5,11 | 5x Stasis Pod | 2 |
-| 047 Mushroom Maze 1F | 1,9 | 1x Mega Gel | 2 |
-| 048 Mushroom Maze 2F | 13,7 | 3x Med Gel | 2 |
-| 049 Spore Pools | 14,12 | 2x Harmonic Pod | 2 |
-| 049 Spore Pools | 10,14 | 1x Revive Spark | 2 |
+| 041 Landing Bog | 0,10 | 5x Stasis Pod | 2 |
+| 042 Mirefen Village | 16,12 | 2x Harmonic Pod | 2 |
+| 045 Lantern Marsh Part A | 19,2 | 1x Revive Spark | 2 |
+| 045 Lantern Marsh Part A | 6,2 | 1x Revive Spark | 2 |
+| 046 Lantern Marsh Part B | 11,1 | 3x Med Gel | 2 |
+| 046 Lantern Marsh Part B | 2,2 | 5x Stasis Pod | 2 |
+| 047 Mushroom Maze 1F | 13,6 | 1x Mega Gel | 2 |
+| 048 Mushroom Maze 2F | 14,7 | 3x Med Gel | 2 |
+| 049 Spore Pools | 11,14 | 2x Harmonic Pod | 2 |
+| 049 Spore Pools | 13,14 | 1x Revive Spark | 2 |
 
 ## Thalassa (7)
 
