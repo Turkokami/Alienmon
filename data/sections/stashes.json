@@ -4,8 +4,8 @@
    "section": "004",
    "name": "Dustmere Plaza",
    "tile": [
-    5,
-    12
+    12,
+    15
    ],
    "item": "dust",
    "n": 150,
@@ -20,6 +20,17 @@
    ],
    "item": "stasis",
    "n": 3,
+   "tier": 1
+  },
+  {
+   "section": "008",
+   "name": "Trading Post",
+   "tile": [
+    9,
+    10
+   ],
+   "item": "cure",
+   "n": 2,
    "tier": 1
   },
   {
@@ -213,8 +224,8 @@
    "section": "018",
    "name": "Molten Frontier: Port Ember",
    "tile": [
-    18,
-    11
+    16,
+    10
    ],
    "item": "dust",
    "n": 150,

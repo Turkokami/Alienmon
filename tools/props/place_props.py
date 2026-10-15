@@ -27,7 +27,12 @@ ZONE_TOWN = {'thalassa': [('wall', T(40, 41, 43, 44, 47, 50, 51), 2), ('wall', T
 # Towns are laid out by hand like a real street: lamps in straight evenly spaced rows, stalls in a line along the
 # shopfronts, planters in pairs either side of a door, benches facing each other. (prop, x, y)
 HAND = {
- '004': [('01_dustara/26', 8, 10), ('01_dustara/26', 15, 10)],
+ '004': [   # owner's mockup: lamps between the houses, two market rows, planter+bench pairs, Bonfire Ring framed by banner lamps
+  ('01_dustara/26', 0, 4), ('01_dustara/26', 9, 4), ('01_dustara/26', 23, 4), ('01_dustara/15', 1, 4), ('01_dustara/19', 4, 4), ('01_dustara/23', 18, 4),
+  ('01_dustara/28', 7, 6), ('01_dustara/44', 8, 6), ('01_dustara/07', 10, 6), ('01_dustara/24', 11, 6),
+  ('01_dustara/36', 14, 6), ('01_dustara/45', 15, 6), ('01_dustara/13', 17, 6), ('01_dustara/43', 18, 6), ('01_dustara/15', 20, 6), ('01_dustara/36', 21, 6),
+  ('01_dustara/02', 8, 8), ('01_dustara/06', 10, 8), ('01_dustara/02', 15, 8), ('01_dustara/06', 17, 8), ('01_dustara/42', 22, 8),
+  ('01_dustara/28', 9, 11), ('01_dustara/36', 14, 11)],
  '008': [('01_dustara/44', 5, 5), ('01_dustara/45', 17, 5), ('01_dustara/13', 11, 5), ('01_dustara/13', 16, 5),
          ('01_dustara/26', 3, 10), ('01_dustara/26', 8, 10), ('01_dustara/26', 13, 10), ('01_dustara/26', 18, 10)],
  '018': [('04_thalassa/40', 12, 5), ('04_thalassa/44', 14, 5), ('04_thalassa/08', 6, 5), ('04_thalassa/08', 11, 5),
@@ -66,10 +71,16 @@ for sid in sys.argv[1:]:
                 if walk(x + a, y + b) and (x + a, y + b) not in seen: seen.add((x + a, y + b)); q.append((x + a, y + b))
         return all(p in seen for p in pts)
     out = []
+    hard = set()
+    for w in s['warps']: hard |= {tuple(w['tile']), tuple(w['at'])}
+    for o in s['objects']:
+        if o.get('k') != 'stash': hard.add(tuple(o['tile']))
+    for v in s['spawns'].values():
+        if v: hard.add(tuple(v))
     if sid in HAND:
         for p, x, y in HAND[sid]:
             w, _ = size(p); fp = [(x + i, y) for i in range(w)]
-            bad = [t for t in fp if not walk(*t) or t in keys]
+            bad = [t for t in fp if t in hard]   # hand layouts may stand on drawn scenery; only doors, warps, counters and spawns are off limits
             old = [rows[b][a] for a, b in fp]
             for a, b in fp: rows[b][a] = '#'
             if bad or not reach_ok():

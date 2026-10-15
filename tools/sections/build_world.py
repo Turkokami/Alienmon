@@ -15,6 +15,26 @@ from collections import defaultdict
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 atlas = json.load(open(os.path.join(ROOT, 'art/sections/atlas.json'), encoding='utf-8'))['sections']
+# props (data/sections/props_layout.json) are solid: every collision file read below sees their footprints as blocked,
+# so NPCs, quest spots, stashes and wild Alienmon are never placed on a prop
+import builtins, io, struct
+_PROPS = json.load(open(os.path.join(ROOT, 'data/sections/props_layout.json'))) if os.path.exists(os.path.join(ROOT, 'data/sections/props_layout.json')) else {}
+_open = builtins.open
+def _prop_w(p):
+    with _open(os.path.join(ROOT, 'art/props', p + '.png'), 'rb') as f: return max(1, round(struct.unpack('>I', f.read(24)[16:20])[0] / 16))
+def open(path, *a, **k):
+    sp = os.path.normpath(str(path)).replace(os.sep, '/')
+    if '/data/collision/' in sp and sp.endswith('.json') and 'w' not in (a[0] if a else k.get('mode', 'r')):
+        sid = os.path.basename(sp)[:-5]
+        if _PROPS.get(sid):
+            d = json.load(_open(path, encoding='utf-8')); R = [list(r) for r in d['rows']]
+            for q in _PROPS[sid]:
+                if q.get('solid') is False or not os.path.exists(os.path.join(ROOT, 'art/props', q['p'] + '.png')): continue
+                for y in range(q['y'], q['y'] + q.get('h', 1)):
+                    for x in range(q['x'], q['x'] + _prop_w(q['p'])):
+                        if 0 <= y < len(R) and 0 <= x < len(R[y]): R[y][x] = '#'
+            d['rows'] = [''.join(r) for r in R]; return io.StringIO(json.dumps(d))
+    return _open(path, *a, **k)
 links = json.load(open(os.path.join(ROOT, 'data/sections/links.json'), encoding='utf-8'))
 PLANET_NPCS = {}
 for pf in sorted(glob.glob(os.path.join(ROOT, 'data/sections/planets/*.json'))):

@@ -54,13 +54,14 @@
     "Bram: The drift grass crackles with blue sparks. That's how you know Alienmon are hiding in it!"
    ],
    "tile": [
-    6,
-    5
+    12,
+    7
    ],
    "pre": [
     "Kid: You're getting your first Alienmon today? Lucky! Dr. Vashti's lab is the dome with the telescope."
    ],
-   "name": "Bram"
+   "name": "Bram",
+   "stay": true
   },
   {
    "art": "abernathy",
@@ -68,7 +69,12 @@
     "Mr. Abernathy: Honey rolls, fresh out of the oven! First one's free for anybody with a brand-new partner.",
     "Mr. Abernathy: I've baked for Dustmere since before the Starfall. Never once burned a loaf. ...Well. Once."
    ],
-   "name": "Mr. Abernathy"
+   "name": "Mr. Abernathy",
+   "stay": true,
+   "tile": [
+    9,
+    7
+   ]
   },
   {
    "art": "rockgirl",
@@ -78,10 +84,11 @@
     "Girl: DX-4 keeps wandering off toward the bridge. Pebblet follows him. I follow Pebblet."
    ],
    "tile": [
-    17,
-    5
+    19,
+    9
    ],
-   "name": "Rock-girl"
+   "name": "Rock-girl",
+   "stay": true
   },
   {
    "art": "explorer",
@@ -89,9 +96,10 @@
     "Linker: Press START to check your team. A tired Alienmon is a fainted Alienmon waiting to happen."
    ],
    "tile": [
-    11,
-    10
-   ]
+    5,
+    9
+   ],
+   "stay": true
   },
   {
    "art": "townsfolk",
@@ -100,9 +108,10 @@
     "Woman: Weaken an Alienmon first. A full-health one just pops right back out."
    ],
    "tile": [
-    4,
-    12
-   ]
+    16,
+    7
+   ],
+   "stay": true
   },
   {
    "art": "guard",
@@ -110,9 +119,10 @@
     "Watchman: West of here is the landing pad. Ships only leave with launch clearance from a Keeper."
    ],
    "tile": [
-    2,
-    8
-   ]
+    20,
+    5
+   ],
+   "stay": true
   },
   {
    "art": "dx4",
@@ -123,9 +133,10 @@
     "DX-4: The bridge crosses the canyon to the east trading post. Mind the lava falls!"
    ],
    "tile": [
-    4,
-    5
-   ]
+    13,
+    9
+   ],
+   "stay": true
   },
   {
    "art": "dusty",
@@ -135,9 +146,10 @@
     "Dusty: That crater past the falls? The seedpods came down hot as stars twenty years back."
    ],
    "tile": [
-    10,
-    5
-   ]
+    11,
+    10
+   ],
+   "stay": true
   },
   {
    "art": "kit",
@@ -149,10 +161,11 @@
     "Kit: Dad gave me his old welding goggles. They're too big. I'm keeping them."
    ],
    "tile": [
-    12,
-    11
+    17,
+    9
    ],
-   "face": "left"
+   "face": "left",
+   "stay": true
   }
  ],
  "005": [

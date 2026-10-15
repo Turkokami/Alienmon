@@ -81,13 +81,13 @@
   },
   "M02:giver": {
    "s": "004",
-   "x": 1,
-   "y": 5
+   "x": 13,
+   "y": 9
   },
   "M02:0": {
    "s": "004",
-   "x": 1,
-   "y": 5
+   "x": 13,
+   "y": 9
   },
   "M02:1": {
    "s": "007",
@@ -102,12 +102,12 @@
   "M03:giver": {
    "s": "008",
    "x": 12,
-   "y": 7
+   "y": 8
   },
   "M03:0": {
    "s": "008",
-   "x": 11,
-   "y": 9
+   "x": 10,
+   "y": 10
   },
   "M04:giver": {
    "s": "014",
@@ -182,7 +182,7 @@
   "M07:0": {
    "s": "018",
    "x": 12,
-   "y": 10
+   "y": 11
   },
   "M07:1": {
    "s": "052",
@@ -427,7 +427,7 @@
   "S01:giver": {
    "s": "008",
    "x": 6,
-   "y": 9
+   "y": 10
   },
   "S01:0": {
    "s": "011",
@@ -436,37 +436,37 @@
   },
   "S02:giver": {
    "s": "004",
-   "x": 1,
-   "y": 5
+   "x": 13,
+   "y": 9
   },
   "S02:0": {
    "s": "008",
    "x": 12,
-   "y": 7,
+   "y": 8,
    "pts": [
     [
      12,
-     7
-    ],
-    [
-     6,
      8
     ],
     [
-     18,
-     8
+     7,
+     6
+    ],
+    [
+     17,
+     6
     ]
    ]
   },
   "S03:giver": {
    "s": "008",
-   "x": 17,
-   "y": 9
+   "x": 14,
+   "y": 10
   },
   "S03:0": {
    "s": "008",
    "x": 17,
-   "y": 10
+   "y": 9
   },
   "S04:giver": {
    "s": "011",
@@ -556,11 +556,11 @@
      5
     ],
     [
-     4,
+     20,
      8
     ],
     [
-     20,
+     3,
      8
     ]
    ]
@@ -1210,8 +1210,8 @@
   "M18:0": {
    "s": "004",
    "art": "strand",
-   "x": 12,
-   "y": 9
+   "x": 15,
+   "y": 11
   },
   "M18:4": {
    "s": "141",
@@ -1226,7 +1226,7 @@
   "M19b:0": {
    "s": "004",
    "art": "wanderer",
-   "x": 9,
+   "x": 10,
    "y": 14
   },
   "M19b:1": {
@@ -1236,8 +1236,8 @@
   },
   "M19b:2": {
    "s": "004",
-   "x": 1,
-   "y": 5
+   "x": 13,
+   "y": 9
   },
   "M19b:4": {
    "s": "169",
@@ -1685,8 +1685,8 @@
    "objects": [
     {
      "tile": [
-      5,
-      12
+      12,
+      15
      ],
      "k": "stash",
      "item": "dust",
@@ -1711,8 +1711,8 @@
    "pkey": "dustara",
    "npcs": [
     {
-     "x": 9,
-     "y": 4,
+     "x": 12,
+     "y": 7,
      "art": "bram",
      "face": "down",
      "t": [
@@ -1722,22 +1722,24 @@
      "name": "Bram",
      "pre": [
       "Kid: You're getting your first Alienmon today? Lucky! Dr. Vashti's lab is the dome with the telescope."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 12,
-     "y": 14,
+     "x": 9,
+     "y": 7,
      "art": "abernathy",
      "face": "down",
      "t": [
       "Mr. Abernathy: Honey rolls, fresh out of the oven! First one's free for anybody with a brand-new partner.",
       "Mr. Abernathy: I've baked for Dustmere since before the Starfall. Never once burned a loaf. ...Well. Once."
      ],
-     "name": "Mr. Abernathy"
+     "name": "Mr. Abernathy",
+     "stay": true
     },
     {
-     "x": 18,
-     "y": 11,
+     "x": 19,
+     "y": 9,
      "art": "rockgirl",
      "face": "down",
      "t": [
@@ -1745,16 +1747,18 @@
       "Girl: When it's sleepy it rolls into the shade. When it's happy it rolls into ME.",
       "Girl: DX-4 keeps wandering off toward the bridge. Pebblet follows him. I follow Pebblet."
      ],
-     "name": "Rock-girl"
+     "name": "Rock-girl",
+     "stay": true
     },
     {
-     "x": 11,
-     "y": 14,
+     "x": 5,
+     "y": 9,
      "art": "explorer",
-     "face": "up",
+     "face": "right",
      "t": [
       "Linker: Press START to check your team. A tired Alienmon is a fainted Alienmon waiting to happen."
      ],
+     "stay": true,
      "id": "sec004_tr3",
      "trainer": {
       "cls": "Linker",
@@ -1763,27 +1767,29 @@
      }
     },
     {
-     "x": 4,
-     "y": 12,
+     "x": 16,
+     "y": 7,
      "art": "townsfolk",
      "face": "down",
      "t": [
       "Woman: The shop dome sells Stasis Pods. You can't catch anything without them!",
       "Woman: Weaken an Alienmon first. A full-health one just pops right back out."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 1,
-     "y": 8,
+     "x": 20,
+     "y": 5,
      "art": "guard",
      "face": "down",
      "t": [
       "Watchman: West of here is the landing pad. Ships only leave with launch clearance from a Keeper."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 1,
-     "y": 5,
+     "x": 13,
+     "y": 9,
      "art": "dx4",
      "face": "down",
      "t": [
@@ -1791,22 +1797,24 @@
       "DX-4: The bridge crosses the canyon to the east trading post. Mind the lava falls!"
      ],
      "name": "DX-4",
-     "wid": "DX-4 robot"
+     "wid": "DX-4 robot",
+     "stay": true
     },
     {
-     "x": 10,
-     "y": 14,
+     "x": 11,
+     "y": 10,
      "art": "dusty",
      "face": "down",
      "t": [
       "Dusty: Name's Dusty. I've lived on this rim since the Starfall.",
       "Dusty: That crater past the falls? The seedpods came down hot as stars twenty years back."
      ],
-     "name": "Old Dusty"
+     "name": "Old Dusty",
+     "stay": true
     },
     {
-     "x": 15,
-     "y": 13,
+     "x": 17,
+     "y": 9,
      "art": "kit",
      "face": "left",
      "t": [
@@ -1815,10 +1823,17 @@
      ],
      "name": "Kit",
      "after": "M19",
-     "until": "P01"
+     "until": "P01",
+     "stay": true
     }
    ],
-   "mons": []
+   "mons": [
+    {
+     "x": 1,
+     "y": 5,
+     "mon": "Pebblet"
+    }
+   ]
   },
   "005": {
    "id": "005",
@@ -2101,7 +2116,7 @@
      ]
     },
     {
-     "x": 8,
+     "x": 15,
      "y": 9,
      "art": "technician",
      "face": "down",
@@ -2112,7 +2127,7 @@
    ],
    "mons": [
     {
-     "x": 15,
+     "x": 8,
      "y": 9,
      "mon": "Kilnback"
     },
@@ -2190,6 +2205,16 @@
      "k": "shop",
      "door": true,
      "why": "Trading Post shop door"
+    },
+    {
+     "tile": [
+      9,
+      10
+     ],
+     "k": "stash",
+     "item": "cure",
+     "n": 2,
+     "tier": 1
     }
    ],
    "spawns": {
@@ -2206,7 +2231,7 @@
    "npcs": [
     {
      "x": 12,
-     "y": 8,
+     "y": 10,
      "art": "snacktrader",
      "face": "down",
      "t": [
@@ -2216,8 +2241,8 @@
      "name": "Snack trader"
     },
     {
-     "x": 5,
-     "y": 7,
+     "x": 4,
+     "y": 10,
      "art": "sheepkid",
      "face": "down",
      "t": [
@@ -2226,10 +2251,28 @@
      "name": "Kid with a lamb"
     },
     {
-     "x": 8,
-     "y": 8,
+     "x": 17,
+     "y": 10,
+     "art": "miner",
+     "face": "down",
+     "t": [
+      "Miner: The Sunset Tunnel past the cactus gardens is the only way through to the Frontier on foot."
+     ]
+    },
+    {
+     "x": 7,
+     "y": 10,
+     "art": "wanderer",
+     "face": "down",
+     "t": [
+      "Drifter: Sola trains out back every morning. Tough kid. Even tougher partner."
+     ]
+    },
+    {
+     "x": 16,
+     "y": 10,
      "art": "explorer",
-     "face": "left",
+     "face": "up",
      "t": [
       "Linker: Trainers on the trail will battle you the moment they spot you. Walk past them if you're feeling brave."
      ],
@@ -2241,8 +2284,8 @@
      }
     },
     {
-     "x": 12,
-     "y": 9,
+     "x": 11,
+     "y": 10,
      "art": "referee",
      "face": "down",
      "t": [
@@ -2252,8 +2295,8 @@
      "name": "Referee"
     },
     {
-     "x": 19,
-     "y": 9,
+     "x": 15,
+     "y": 10,
      "art": "fenna",
      "face": "down",
      "t": [
@@ -3638,8 +3681,8 @@
     },
     {
      "tile": [
-      18,
-      11
+      16,
+      10
      ],
      "k": "stash",
      "item": "dust",
@@ -3662,7 +3705,7 @@
    "npcs": [
     {
      "x": 12,
-     "y": 11,
+     "y": 10,
      "art": "squidsailor",
      "face": "down",
      "t": [
@@ -3670,8 +3713,8 @@
      ]
     },
     {
-     "x": 5,
-     "y": 11,
+     "x": 4,
+     "y": 10,
      "art": "technician",
      "face": "down",
      "t": [
@@ -3679,8 +3722,8 @@
      ]
     },
     {
-     "x": 19,
-     "y": 11,
+     "x": 17,
+     "y": 10,
      "art": "civilian",
      "face": "down",
      "t": [
@@ -3688,8 +3731,8 @@
      ]
     },
     {
-     "x": 16,
-     "y": 11,
+     "x": 7,
+     "y": 10,
      "art": "guard",
      "face": "down",
      "t": [
@@ -3697,8 +3740,8 @@
      ]
     },
     {
-     "x": 8,
-     "y": 11,
+     "x": 15,
+     "y": 10,
      "art": "explorer",
      "face": "up",
      "t": [
@@ -3712,8 +3755,8 @@
      }
     },
     {
-     "x": 7,
-     "y": 11,
+     "x": 9,
+     "y": 10,
      "art": "civilian",
      "face": "down",
      "t": [
@@ -3723,7 +3766,7 @@
     },
     {
      "x": 14,
-     "y": 11,
+     "y": 10,
      "art": "mina",
      "face": "down",
      "t": [
@@ -3735,8 +3778,8 @@
    ],
    "mons": [
     {
-     "x": 0,
-     "y": 11,
+     "x": 16,
+     "y": 5,
      "mon": "Cindermole"
     }
    ]
@@ -4011,7 +4054,7 @@
    "pkey": "dustara",
    "npcs": [
     {
-     "x": 10,
+     "x": 17,
      "y": 9,
      "art": "wanderer",
      "face": "down",
@@ -4330,12 +4373,12 @@
    ],
    "mons": [
     {
-     "x": 6,
-     "y": 4,
+     "x": 18,
+     "y": 9,
      "mon": "Kilnback"
     },
     {
-     "x": 17,
+     "x": 6,
      "y": 10,
      "mon": "Squawktone"
     }
