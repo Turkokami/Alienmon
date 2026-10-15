@@ -126,8 +126,8 @@
   },
   "M04:2": {
    "s": "014",
-   "x": 2,
-   "y": 9
+   "x": 20,
+   "y": 5
   },
   "M05:giver": {
    "s": "022",
@@ -137,7 +137,7 @@
   "M05:0": {
    "s": "022",
    "x": 13,
-   "y": 8
+   "y": 5
   },
   "M05:1": {
    "s": "022",
@@ -162,7 +162,7 @@
   "M06:0": {
    "s": "026",
    "x": 12,
-   "y": 8
+   "y": 7
   },
   "M06:1": {
    "s": "049",
@@ -202,7 +202,7 @@
   "M08:0": {
    "s": "019",
    "x": 17,
-   "y": 6
+   "y": 7
   },
   "M09:giver": {
    "s": "062",
@@ -227,7 +227,7 @@
   "M10:0": {
    "s": "019",
    "x": 17,
-   "y": 6
+   "y": 7
   },
   "M10:1": {
    "s": "081",
@@ -295,8 +295,8 @@
   },
   "M13:0": {
    "s": "023",
-   "x": 14,
-   "y": 6
+   "x": 13,
+   "y": 5
   },
   "M14:giver": {
    "s": "105",
@@ -480,12 +480,12 @@
   },
   "S10:0": {
    "s": "022",
-   "x": 11,
+   "x": 12,
    "y": 9
   },
   "S11:giver": {
    "s": "025",
-   "x": 12,
+   "x": 19,
    "y": 8
   },
   "S11:0": {
@@ -495,13 +495,13 @@
   },
   "S12:giver": {
    "s": "017",
-   "x": 18,
-   "y": 4
+   "x": 10,
+   "y": 7
   },
   "S13:giver": {
    "s": "014",
-   "x": 13,
-   "y": 4
+   "x": 6,
+   "y": 8
   },
   "S13:0": {
    "s": "027",
@@ -510,23 +510,23 @@
   },
   "S14:giver": {
    "s": "019",
-   "x": 17,
-   "y": 7
+   "x": 6,
+   "y": 8
   },
   "S14:0": {
    "s": "019",
-   "x": 17,
-   "y": 7
+   "x": 6,
+   "y": 8
   },
   "S15:giver": {
    "s": "028",
-   "x": 10,
-   "y": 5
+   "x": 8,
+   "y": 8
   },
   "S15:0": {
    "s": "028",
-   "x": 10,
-   "y": 5
+   "x": 8,
+   "y": 8
   },
   "S15:1": {
    "s": "028",
@@ -535,7 +535,7 @@
   },
   "S16:giver": {
    "s": "023",
-   "x": 8,
+   "x": 9,
    "y": 9
   },
   "S16:0": {
@@ -556,11 +556,11 @@
      5
     ],
     [
-     20,
+     4,
      8
     ],
     [
-     3,
+     20,
      8
     ]
    ]
@@ -2080,7 +2080,7 @@
     {
      "tile": [
       11,
-      4
+      9
      ],
      "k": "stash",
      "item": "stasis",
@@ -2101,32 +2101,34 @@
    "pkey": "dustara",
    "npcs": [
     {
-     "x": 12,
-     "y": 4,
+     "x": 16,
+     "y": 8,
      "art": "wanderer",
      "face": "down",
      "t": [
       "Hiker: Don't look down. That canyon goes all the way to the old lava falls."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 15,
-     "y": 9,
+     "x": 6,
+     "y": 8,
      "art": "technician",
      "face": "down",
      "t": [
       "Bridge keeper: This bridge was built by Ferrox steelworkers. Not a single rivet has slipped in forty years."
-     ]
+     ],
+     "stay": true
     }
    ],
    "mons": [
     {
-     "x": 8,
-     "y": 9,
+     "x": 10,
+     "y": 4,
      "mon": "Kilnback"
     },
     {
-     "x": 11,
+     "x": 10,
      "y": 9,
      "mon": "Squawktone"
     }
@@ -2399,25 +2401,27 @@
    "pkey": "dustara",
    "npcs": [
     {
-     "x": 15,
-     "y": 9,
+     "x": 3,
+     "y": 6,
      "art": "explorer",
      "face": "down",
      "t": [
       "Hiker: The Rimwalk Trail hugs the canyon edge. Great view, terrible place to trip."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 7,
-     "y": 4,
+     "x": 15,
+     "y": 8,
      "art": "wanderer",
      "face": "down",
      "t": [
       "Birdwatcher: I've seen Alienmon with wings riding the thermals over the canyon."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 19,
+     "x": 9,
      "y": 4,
      "art": "explorer",
      "face": "down",
@@ -2430,7 +2434,7 @@
      }
     },
     {
-     "x": 11,
+     "x": 19,
      "y": 4,
      "art": "wanderer",
      "face": "down",
@@ -2522,25 +2526,27 @@
    "pkey": "dustara",
    "npcs": [
     {
-     "x": 12,
-     "y": 9,
+     "x": 15,
+     "y": 6,
      "art": "researcher",
      "face": "down",
      "t": [
       "Researcher: Different grass patches hold different Alienmon. Try them all!"
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 17,
-     "y": 4,
+     "x": 9,
+     "y": 8,
      "art": "civilian",
      "face": "down",
      "t": [
       "Camper: If you're low on health, head back to Dustmere. Pride is not a healing item."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 6,
+     "x": 4,
      "y": 4,
      "art": "wanderer",
      "face": "down",
@@ -2553,8 +2559,8 @@
      }
     },
     {
-     "x": 13,
-     "y": 13,
+     "x": 12,
+     "y": 12,
      "art": "technician",
      "face": "up",
      "t": [],
@@ -2568,13 +2574,13 @@
    ],
    "mons": [
     {
-     "x": 18,
-     "y": 11,
+     "x": 20,
+     "y": 3,
      "mon": "Fizzlord"
     },
     {
-     "x": 21,
-     "y": 2,
+     "x": 18,
+     "y": 11,
      "mon": "Skitterdrone"
     }
    ]
@@ -2676,7 +2682,7 @@
     },
     {
      "tile": [
-      18,
+      19,
       12
      ],
      "k": "stash",
@@ -2698,25 +2704,27 @@
    "pkey": "dustara",
    "npcs": [
     {
-     "x": 17,
-     "y": 9,
+     "x": 5,
+     "y": 5,
      "art": "sporefolk",
      "face": "down",
      "t": [
       "Gardener: These cacti store water for months. Some Alienmon nest right inside them."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 5,
-     "y": 4,
+     "x": 13,
+     "y": 5,
      "art": "explorer",
      "face": "down",
      "t": [
       "Explorer: The Sunset Tunnel is just east. Bring light, it's a maze in there."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 10,
+     "x": 18,
      "y": 9,
      "art": "technician",
      "face": "up",
@@ -2729,10 +2737,10 @@
      }
     },
     {
-     "x": 20,
-     "y": 4,
+     "x": 10,
+     "y": 10,
      "art": "explorer",
-     "face": "down",
+     "face": "up",
      "t": [],
      "id": "sec011_tr3",
      "trainer": {
@@ -2744,12 +2752,12 @@
    ],
    "mons": [
     {
-     "x": 15,
-     "y": 2,
+     "x": 20,
+     "y": 3,
      "mon": "Kilnback"
     },
     {
-     "x": 19,
+     "x": 15,
      "y": 12,
      "mon": "Squawktone"
     }
@@ -3197,55 +3205,59 @@
    "pkey": "dustara",
    "npcs": [
     {
-     "x": 12,
-     "y": 9,
+     "x": 2,
+     "y": 5,
      "art": "guard",
      "face": "down",
      "t": [
       "Guard: Welcome to the Molten Frontier. Stick to the trails and stay off anything glowing."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 6,
-     "y": 4,
+     "x": 14,
+     "y": 8,
      "art": "wanderer",
      "face": "down",
      "t": [
       "Traveller: The ash trail east leads to Palm Isle and Port Ember. Rest up there."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 2,
-     "y": 9,
+     "x": 20,
+     "y": 5,
      "art": "guard",
      "face": "down",
      "t": [
       "Guard: You're entering the Molten Frontier.",
       "Helix built their forge fortress at the top of the ridge. Watch yourself up there."
      ],
-     "wid": "mf2"
+     "wid": "mf2",
+     "stay": true
     },
     {
-     "x": 13,
-     "y": 4,
+     "x": 6,
+     "y": 8,
      "art": "miner",
      "face": "down",
      "t": [
       "Miner: That tunnel runs all the way under the sea to Sunset Canyon.",
       "The ground's been rumbling since Helix started digging."
      ],
-     "wid": "mf5"
+     "wid": "mf5",
+     "stay": true
     }
    ],
    "mons": [
     {
-     "x": 20,
+     "x": 9,
      "y": 3,
      "mon": "Fizzlord"
     },
     {
      "x": 19,
-     "y": 11,
+     "y": 12,
      "mon": "Skitterdrone"
     }
    ]
@@ -3317,23 +3329,25 @@
    "pkey": "dustara",
    "npcs": [
     {
-     "x": 12,
-     "y": 9,
+     "x": 11,
+     "y": 5,
      "art": "explorer",
      "face": "down",
      "t": [
       "Ash walker: The ash makes everything look grey, but the Alienmon out here are anything but dull."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 12,
-     "y": 10,
+     "x": 19,
+     "y": 8,
      "art": "sporefolk",
      "face": "down",
      "t": [
       "Sporefolk: Even here, spores find a way. The red blooms feed on lava heat."
      ],
-     "wid": "mf11"
+     "wid": "mf11",
+     "stay": true
     }
    ],
    "mons": [
@@ -3343,8 +3357,8 @@
      "mon": "Kilnback"
     },
     {
-     "x": 17,
-     "y": 3,
+     "x": 14,
+     "y": 12,
      "mon": "Squawktone"
     }
    ]
@@ -3417,31 +3431,34 @@
    "npcs": [
     {
      "x": 12,
-     "y": 9,
+     "y": 5,
      "art": "wanderer",
      "face": "down",
      "t": [
       "Nomad: Magma-types love the warm ground. Hydro moves cool them off fast."
-     ]
+     ],
+     "stay": true
     },
     {
      "x": 5,
-     "y": 9,
+     "y": 7,
      "art": "researcher",
      "face": "down",
      "t": [
       "Geologist: These vents breathe every few minutes. Count to ten and you'll see."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 7,
-     "y": 9,
+     "x": 20,
+     "y": 6,
      "art": "grub",
-     "face": "up",
+     "face": "left",
      "t": [
       "Bug Catcher Grub: Fire bugs! The hottest bugs! Battle me!"
      ],
      "wid": "mf10",
+     "stay": true,
      "id": "mf10",
      "trainer": {
       "frontier": 1,
@@ -3451,13 +3468,13 @@
    ],
    "mons": [
     {
-     "x": 4,
-     "y": 2,
+     "x": 15,
+     "y": 11,
      "mon": "Fizzlord"
     },
     {
-     "x": 15,
-     "y": 2,
+     "x": 8,
+     "y": 12,
      "mon": "Skitterdrone"
     }
    ]
@@ -3538,8 +3555,8 @@
    "pkey": "dustara",
    "npcs": [
     {
-     "x": 16,
-     "y": 9,
+     "x": 15,
+     "y": 4,
      "art": "coral",
      "face": "down",
      "t": [
@@ -3547,6 +3564,7 @@
      ],
      "name": "Nurse Coral",
      "story": "heal",
+     "stay": true,
      "keyline": {
       "k": "nana_badge",
       "t": [
@@ -3557,43 +3575,47 @@
      }
     },
     {
-     "x": 6,
-     "y": 4,
+     "x": 20,
+     "y": 8,
      "art": "civilian",
      "face": "down",
      "t": [
       "Islander: Palm Isle is the only green spot for miles. The Recovery Hut here has saved a lot of Linkers."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 11,
-     "y": 9,
+     "x": 3,
+     "y": 8,
      "art": "sporefolk",
      "face": "down",
      "t": [
       "Fruit picker: Try the fire-coconuts. Crunchy outside, molten inside."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 18,
-     "y": 4,
+     "x": 10,
+     "y": 7,
      "art": "explorer",
      "face": "down",
      "t": [
       "Explorer: The hut here is a Recovery Hut. Rest up before you head into the lava fields.",
       "Weaken a wild Alienmon with a Tether Pulse, shock it with a Stun Spray, then fire the transfer beam!"
      ],
-     "wid": "mf3"
+     "wid": "mf3",
+     "stay": true
     },
     {
-     "x": 8,
-     "y": 4,
+     "x": 14,
+     "y": 8,
      "art": "pilgrim",
-     "face": "down",
+     "face": "left",
      "t": [
       "Pilgrim Sol: The island spirits test every traveler. Let's battle!"
      ],
      "wid": "mf4",
+     "stay": true,
      "id": "mf4",
      "trainer": {
       "frontier": 1,
@@ -3603,13 +3625,13 @@
    ],
    "mons": [
     {
-     "x": 4,
-     "y": 2,
+     "x": 6,
+     "y": 3,
      "mon": "Kilnback"
     },
     {
-     "x": 14,
-     "y": 11,
+     "x": 20,
+     "y": 2,
      "mon": "Squawktone"
     }
    ]
@@ -3878,7 +3900,18 @@
      "label": "the Deep Sea Ferry"
     }
    ],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      4,
+      5
+     ],
+     "k": "stash",
+     "item": "stasis",
+     "n": 5,
+     "tier": 2
+    }
+   ],
    "spawns": {
     "default": [
      1,
@@ -3893,27 +3926,35 @@
    "pkey": "dustara",
    "npcs": [
     {
-     "x": 4,
-     "y": 4,
+     "x": 12,
+     "y": 5,
      "art": "squidsailor",
      "face": "down",
      "t": [
       "Deckhand: Mind the gaps between the planks. The sea down there is hot enough to boil soup."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 17,
-     "y": 7,
+     "x": 6,
+     "y": 8,
      "art": "squidsailor",
      "face": "down",
      "t": [
       "Squid Sailor: The ferry at the end of this dock sails to the Deep Sea Ruins.",
       "Hop aboard whenever you're ready."
      ],
-     "wid": "mf0"
+     "wid": "mf0",
+     "stay": true
     }
    ],
-   "mons": []
+   "mons": [
+    {
+     "x": 3,
+     "y": 6,
+     "mon": "Kilnback"
+    }
+   ]
   },
   "020": {
    "id": "020",
@@ -3949,7 +3990,7 @@
    "objects": [
     {
      "tile": [
-      19,
+      4,
       2
      ],
      "k": "stash",
@@ -3959,8 +4000,8 @@
     },
     {
      "tile": [
-      6,
-      2
+      16,
+      12
      ],
      "k": "stash",
      "item": "stasis",
@@ -3983,22 +4024,24 @@
    "npcs": [
     {
      "x": 12,
-     "y": 10,
+     "y": 5,
      "art": "explorer",
      "face": "down",
      "t": [
       "Climber: The Ridge Path climbs toward the Forge Gate. Helix guards everywhere up there."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 11,
-     "y": 10,
+     "x": 4,
+     "y": 9,
      "art": "researcher",
      "face": "up",
      "t": [
       "Researcher Kel: Lava-forged Alienmon have incredible stats. Let me show you!"
      ],
      "wid": "mf6",
+     "stay": true,
      "id": "mf6",
      "trainer": {
       "frontier": 1,
@@ -4008,13 +4051,13 @@
    ],
    "mons": [
     {
-     "x": 4,
+     "x": 18,
      "y": 2,
      "mon": "Fizzlord"
     },
     {
-     "x": 15,
-     "y": 2,
+     "x": 17,
+     "y": 10,
      "mon": "Skitterdrone"
     }
    ]
@@ -4086,35 +4129,37 @@
    "pkey": "dustara",
    "npcs": [
     {
-     "x": 17,
-     "y": 9,
+     "x": 12,
+     "y": 5,
      "art": "wanderer",
      "face": "down",
      "t": [
       "Scout: I saw Helix grunts hauling crates toward the fortress. Something's being built in there."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 12,
-     "y": 9,
+     "x": 3,
+     "y": 8,
      "art": "wanderer",
      "face": "down",
      "t": [
       "Wanderer: The paths wind down the ridge to the Forge Gate and the shuttle pad.",
       "Wild Alienmon roam the trails between towns. Keep your team healthy."
      ],
-     "wid": "mf9"
+     "wid": "mf9",
+     "stay": true
     }
    ],
    "mons": [
     {
-     "x": 4,
+     "x": 18,
      "y": 2,
      "mon": "Kilnback"
     },
     {
-     "x": 15,
-     "y": 2,
+     "x": 17,
+     "y": 10,
      "mon": "Squawktone"
     }
    ]
@@ -4206,31 +4251,34 @@
    "npcs": [
     {
      "x": 12,
-     "y": 9,
+     "y": 11,
      "art": "miner",
      "face": "down",
      "t": [
       "Forge worker: The Forge Gate opens toward Ferrox once you've proven yourself."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 5,
-     "y": 9,
+     "x": 10,
+     "y": 4,
      "art": "guard",
      "face": "down",
      "t": [
       "Gate guard: No clearance, no passage. Those are the rules."
-     ]
+     ],
+     "stay": true
     },
     {
      "x": 13,
-     "y": 8,
+     "y": 5,
      "art": "miner",
-     "face": "left",
+     "face": "down",
      "t": [
       "Forge Miner Dax: The gate's mine to guard. Beat me first!"
      ],
      "wid": "mf12",
+     "stay": true,
      "id": "mf12",
      "trainer": {
       "frontier": 1,
@@ -4240,13 +4288,13 @@
    ],
    "mons": [
     {
-     "x": 17,
-     "y": 12,
+     "x": 4,
+     "y": 9,
      "mon": "Fizzlord"
     },
     {
-     "x": 17,
-     "y": 4,
+     "x": 19,
+     "y": 10,
      "mon": "Skitterdrone"
     }
    ]
@@ -4341,17 +4389,18 @@
    "pkey": "dustara",
    "npcs": [
     {
-     "x": 12,
-     "y": 9,
+     "x": 18,
+     "y": 8,
      "art": "civilian",
      "face": "down",
      "t": [
       "Refugee: Helix took the old forge and turned it into a fortress. We had to leave everything."
-     ]
+     ],
+     "stay": true
     },
     {
      "x": 13,
-     "y": 9,
+     "y": 5,
      "art": "guard",
      "face": "down",
      "t": [
@@ -4359,19 +4408,21 @@
       "Helix Grunt: Run along, kid. Come back when you're a real Linker, and maybe I'll bother beating you."
      ],
      "name": "Helix Grunt",
-     "until": "M12"
+     "until": "M12",
+     "stay": true
     },
     {
-     "x": 14,
-     "y": 6,
+     "x": 13,
+     "y": 5,
      "art": "guard",
-     "face": "left",
+     "face": "down",
      "t": [
       "Helix Grunt: Halt! This forge belongs to the Helix Directive!"
      ],
      "wid": "mf7",
      "after": "M12",
      "until": "M19",
+     "stay": true,
      "id": "mf7",
      "trainer": {
       "frontier": 1,
@@ -4379,19 +4430,20 @@
      }
     },
     {
-     "x": 14,
-     "y": 6,
+     "x": 13,
+     "y": 5,
      "art": "guard",
      "face": "down",
      "t": [
       "Former Helix worker: Helix is finished. I just want to fix things now."
      ],
      "wid": "mf7",
-     "after": "M19"
+     "after": "M19",
+     "stay": true
     },
     {
-     "x": 9,
-     "y": 9,
+     "x": 7,
+     "y": 8,
      "art": "grub",
      "face": "down",
      "t": [
@@ -4400,17 +4452,18 @@
      ],
      "name": "Grub",
      "after": "M11",
-     "until": "M13"
+     "until": "M13",
+     "stay": true
     }
    ],
    "mons": [
     {
-     "x": 18,
-     "y": 9,
+     "x": 17,
+     "y": 4,
      "mon": "Kilnback"
     },
     {
-     "x": 6,
+     "x": 15,
      "y": 10,
      "mon": "Squawktone"
     }
@@ -4460,7 +4513,18 @@
     20
    ],
    "pkey": "dustara",
-   "npcs": [],
+   "npcs": [
+    {
+     "x": 12,
+     "y": 5,
+     "art": "technician",
+     "face": "down",
+     "t": [
+      "Bridge tech: These lava bridges are cooled by pumps. If they stop, run."
+     ],
+     "stay": true
+    }
+   ],
    "mons": []
   },
   "025": {
@@ -4509,13 +4573,14 @@
    "pkey": "dustara",
    "npcs": [
     {
-     "x": 12,
-     "y": 6,
+     "x": 5,
+     "y": 8,
      "art": "explorer",
      "face": "left",
      "t": [
       "Linker: Almost at the shuttle pad. Ships to the far planets launch from there."
      ],
+     "stay": true,
      "id": "sec025_tr0",
      "trainer": {
       "cls": "Linker",
@@ -4524,7 +4589,7 @@
      }
     },
     {
-     "x": 12,
+     "x": 19,
      "y": 8,
      "art": "technician",
      "face": "down",
@@ -4532,7 +4597,8 @@
       "Technician: This dish relays every signal in the Frontier.",
       "Lately it keeps catching a pulse from the Starfall crater. Same rhythm, every night."
      ],
-     "wid": "mf8"
+     "wid": "mf8",
+     "stay": true
     }
    ],
    "mons": []
@@ -4646,15 +4712,36 @@
    "pkey": "dustara",
    "npcs": [
     {
+     "x": 12,
+     "y": 8,
+     "art": "technician",
+     "face": "down",
+     "t": [
+      "Pad controller: Shuttles leave when the board says so. The board says 'not yet'."
+     ],
+     "stay": true
+    },
+    {
+     "x": 6,
+     "y": 5,
+     "art": "guard",
+     "face": "down",
+     "t": [
+      "Helix deserter: I flew shuttles for Helix. Never again. Ask me nothing about the Director."
+     ],
+     "stay": true
+    },
+    {
      "x": 18,
-     "y": 7,
+     "y": 5,
      "art": "strand",
      "face": "down",
      "t": [
       "Strand: Helix shuttles fly from this pad straight to the Starfall Rift.",
       "Whatever they're hauling out there, they don't want anyone to see."
      ],
-     "wid": "mf13"
+     "wid": "mf13",
+     "stay": true
     }
    ],
    "mons": []
@@ -4762,13 +4849,14 @@
    "pkey": "dustara",
    "npcs": [
     {
-     "x": 12,
-     "y": 9,
+     "x": 16,
+     "y": 5,
      "art": "wanderer",
      "face": "down",
      "t": [
       "Lantern keeper: The Shadow Tunnel leads to Umbra. The dark in there plays tricks on you."
-     ]
+     ],
+     "stay": true
     }
    ],
    "mons": [
@@ -4778,8 +4866,8 @@
      "mon": "Kilnback"
     },
     {
-     "x": 15,
-     "y": 9,
+     "x": 10,
+     "y": 10,
      "mon": "Squawktone"
     }
    ]
@@ -4841,8 +4929,8 @@
    "objects": [
     {
      "tile": [
-      14,
-      12
+      10,
+      3
      ],
      "k": "stash",
      "item": "fullgel",
@@ -4865,23 +4953,25 @@
    "npcs": [
     {
      "x": 12,
-     "y": 10,
+     "y": 3,
      "art": "miner",
      "face": "down",
      "t": [
       "Mine foreman: The Magma Mines run all the way down to Pyros' crust. Hard hats mandatory."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 10,
-     "y": 5,
+     "x": 8,
+     "y": 8,
      "art": "ystran",
      "face": "down",
      "t": [
       "Ystran echo: ...the mountain's heart burns like Ystra's dying sun...",
       "...the Magma Mines go deeper than anyone has dared..."
      ],
-     "wid": "mf14"
+     "wid": "mf14",
+     "stay": true
     }
    ],
    "mons": [
@@ -4891,7 +4981,7 @@
      "mon": "Fizzlord"
     },
     {
-     "x": 16,
+     "x": 14,
      "y": 12,
      "mon": "Skitterdrone"
     }
@@ -22493,8 +22583,8 @@
    "pkey": "dustara",
    "npcs": [
     {
-     "x": 9,
-     "y": 6,
+     "x": 8,
+     "y": 4,
      "art": "sola",
      "face": "down",
      "t": [
@@ -22502,22 +22592,24 @@
       "Sola: It's weird having a normal day. Good weird."
      ],
      "name": "Sola",
-     "after": "M19"
+     "after": "M19",
+     "stay": true
     },
     {
      "x": 9,
-     "y": 10,
+     "y": 13,
      "art": "civilian",
      "face": "down",
      "t": [
       "The house is empty. A sign on the door says: Reserved for the Reyes family."
      ],
      "name": "Moving box",
-     "until": "M19"
+     "until": "M19",
+     "stay": true
     },
     {
-     "x": 10,
-     "y": 9,
+     "x": 3,
+     "y": 11,
      "art": "teo",
      "face": "down",
      "t": [
@@ -22525,7 +22617,8 @@
       "Teo: Lumivex grew up near its light. It keeps watch on the roof now. It doesn't trust doors yet. Neither do I."
      ],
      "name": "Teo",
-     "after": "M19"
+     "after": "M19",
+     "stay": true
     }
    ]
   },

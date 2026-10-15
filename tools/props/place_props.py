@@ -27,6 +27,12 @@ ZONE_TOWN = {'thalassa': [('wall', T(40, 41, 43, 44, 47, 50, 51), 2), ('wall', T
 # Towns are laid out by hand like a real street: lamps in straight evenly spaced rows, stalls in a line along the
 # shopfronts, planters in pairs either side of a door, benches facing each other. (prop, x, y)
 HAND = {
+ # routes and landmarks: no random clutter; only purposeful groups (the map art already carries the scenery)
+ '007': [], '009': [], '011': [], '014': [], '015': [], '016': [], '017': [], '020': [], '021': [], '022': [], '023': [],
+ '024': [], '025': [], '027': [], '028': [],
+ '010': [('01_dustara/42', 14, 5)],   # signpost at the fork
+ '019': [('04_thalassa/37', 3, 5), ('04_thalassa/35', 4, 5), ('04_thalassa/36', 5, 5), ('04_thalassa/35', 18, 5), ('04_thalassa/37', 19, 5), ('04_thalassa/38', 20, 5)],   # cargo by the ferry
+ '026': [('04_thalassa/35', 8, 5), ('04_thalassa/36', 9, 5), ('04_thalassa/35', 14, 5), ('04_thalassa/36', 15, 5)],   # cargo either side of the shuttle ramp
  '004': [   # owner's second mockup (2026-10-15): fountain over the Bonfire Ring, market row with a planter in the middle
   ('01_dustara/26', 0, 4), ('01_dustara/26', 9, 4), ('01_dustara/26', 23, 4),
   ('01_dustara/15', 1, 4), ('01_dustara/19', 8, 4), ('01_dustara/23', 13, 4), ('01_dustara/17', 18, 4),

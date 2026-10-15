@@ -16,7 +16,7 @@
    "name": "Dustmere Bridge",
    "tile": [
     11,
-    4
+    9
    ],
    "item": "stasis",
    "n": 3,
@@ -92,7 +92,7 @@
    "section": "011",
    "name": "Cactus Gardens",
    "tile": [
-    18,
+    19,
     12
    ],
    "item": "cure",
@@ -232,10 +232,21 @@
    "tier": 1
   },
   {
+   "section": "019",
+   "name": "Molten Frontier: Long Dock",
+   "tile": [
+    4,
+    5
+   ],
+   "item": "stasis",
+   "n": 5,
+   "tier": 2
+  },
+  {
    "section": "020",
    "name": "Molten Frontier: Ridge Path Part A",
    "tile": [
-    19,
+    4,
     2
    ],
    "item": "harmonic",
@@ -246,8 +257,8 @@
    "section": "020",
    "name": "Molten Frontier: Ridge Path Part A",
    "tile": [
-    6,
-    2
+    16,
+    12
    ],
    "item": "stasis",
    "n": 5,
@@ -312,8 +323,8 @@
    "section": "028",
    "name": "Molten Frontier: Magma Mines Gate",
    "tile": [
-    14,
-    12
+    10,
+    3
    ],
    "item": "fullgel",
    "n": 1,

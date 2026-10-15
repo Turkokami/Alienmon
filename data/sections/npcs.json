@@ -216,13 +216,23 @@
    "art": "wanderer",
    "t": [
     "Hiker: Don't look down. That canyon goes all the way to the old lava falls."
-   ]
+   ],
+   "tile": [
+    16,
+    8
+   ],
+   "stay": true
   },
   {
    "art": "technician",
    "t": [
     "Bridge keeper: This bridge was built by Ferrox steelworkers. Not a single rivet has slipped in forty years."
-   ]
+   ],
+   "tile": [
+    6,
+    8
+   ],
+   "stay": true
   }
  ],
  "008": [
@@ -316,13 +326,23 @@
    "art": "explorer",
    "t": [
     "Hiker: The Rimwalk Trail hugs the canyon edge. Great view, terrible place to trip."
-   ]
+   ],
+   "tile": [
+    3,
+    6
+   ],
+   "stay": true
   },
   {
    "art": "wanderer",
    "t": [
     "Birdwatcher: I've seen Alienmon with wings riding the thermals over the canyon."
-   ]
+   ],
+   "tile": [
+    15,
+    8
+   ],
+   "stay": true
   }
  ],
  "010": [
@@ -330,13 +350,23 @@
    "art": "researcher",
    "t": [
     "Researcher: Different grass patches hold different Alienmon. Try them all!"
-   ]
+   ],
+   "tile": [
+    15,
+    6
+   ],
+   "stay": true
   },
   {
    "art": "civilian",
    "t": [
     "Camper: If you're low on health, head back to Dustmere. Pride is not a healing item."
-   ]
+   ],
+   "tile": [
+    9,
+    8
+   ],
+   "stay": true
   }
  ],
  "011": [
@@ -344,13 +374,23 @@
    "art": "sporefolk",
    "t": [
     "Gardener: These cacti store water for months. Some Alienmon nest right inside them."
-   ]
+   ],
+   "tile": [
+    5,
+    5
+   ],
+   "stay": true
   },
   {
    "art": "explorer",
    "t": [
     "Explorer: The Sunset Tunnel is just east. Bring light, it's a maze in there."
-   ]
+   ],
+   "tile": [
+    13,
+    5
+   ],
+   "stay": true
   }
  ],
  "012": [
@@ -374,13 +414,23 @@
    "art": "guard",
    "t": [
     "Guard: Welcome to the Molten Frontier. Stick to the trails and stay off anything glowing."
-   ]
+   ],
+   "tile": [
+    2,
+    5
+   ],
+   "stay": true
   },
   {
    "art": "wanderer",
    "t": [
     "Traveller: The ash trail east leads to Palm Isle and Port Ember. Rest up there."
-   ]
+   ],
+   "tile": [
+    14,
+    8
+   ],
+   "stay": true
   },
   {
    "art": "guard",
@@ -392,7 +442,12 @@
    "near": [
     3,
     8
-   ]
+   ],
+   "tile": [
+    20,
+    5
+   ],
+   "stay": true
   },
   {
    "art": "miner",
@@ -404,7 +459,12 @@
    "near": [
     13,
     4
-   ]
+   ],
+   "tile": [
+    6,
+    8
+   ],
+   "stay": true
   }
  ],
  "015": [
@@ -412,7 +472,12 @@
    "art": "explorer",
    "t": [
     "Ash walker: The ash makes everything look grey, but the Alienmon out here are anything but dull."
-   ]
+   ],
+   "tile": [
+    11,
+    5
+   ],
+   "stay": true
   },
   {
    "art": "sporefolk",
@@ -423,7 +488,12 @@
    "near": [
     12,
     10
-   ]
+   ],
+   "tile": [
+    19,
+    8
+   ],
+   "stay": true
   }
  ],
  "016": [
@@ -431,13 +501,23 @@
    "art": "wanderer",
    "t": [
     "Nomad: Magma-types love the warm ground. Hydro moves cool them off fast."
-   ]
+   ],
+   "tile": [
+    12,
+    5
+   ],
+   "stay": true
   },
   {
    "art": "researcher",
    "t": [
     "Geologist: These vents breathe every few minutes. Count to ten and you'll see."
-   ]
+   ],
+   "tile": [
+    5,
+    7
+   ],
+   "stay": true
   },
   {
    "art": "grub",
@@ -451,7 +531,12 @@
    ],
    "trainer": {
     "frontier": 1
-   }
+   },
+   "tile": [
+    20,
+    6
+   ],
+   "stay": true
   }
  ],
  "017": [
@@ -473,19 +558,34 @@
      "Nurse Coral: I was her apprentice at the Dustmere Recovery Bay the night the stars fell. She taught me everything.",
      "Nurse Coral: You've got her eyes. Come here, let me patch your team up. For Wren."
     ]
-   }
+   },
+   "tile": [
+    15,
+    4
+   ],
+   "stay": true
   },
   {
    "art": "civilian",
    "t": [
     "Islander: Palm Isle is the only green spot for miles. The Recovery Hut here has saved a lot of Linkers."
-   ]
+   ],
+   "tile": [
+    20,
+    8
+   ],
+   "stay": true
   },
   {
    "art": "sporefolk",
    "t": [
     "Fruit picker: Try the fire-coconuts. Crunchy outside, molten inside."
-   ]
+   ],
+   "tile": [
+    3,
+    8
+   ],
+   "stay": true
   },
   {
    "art": "explorer",
@@ -497,7 +597,12 @@
    "near": [
     16,
     6
-   ]
+   ],
+   "tile": [
+    10,
+    7
+   ],
+   "stay": true
   },
   {
    "art": "pilgrim",
@@ -511,7 +616,12 @@
    ],
    "trainer": {
     "frontier": 1
-   }
+   },
+   "tile": [
+    14,
+    8
+   ],
+   "stay": true
   }
  ],
  "018": [
@@ -601,7 +711,12 @@
    "art": "squidsailor",
    "t": [
     "Deckhand: Mind the gaps between the planks. The sea down there is hot enough to boil soup."
-   ]
+   ],
+   "tile": [
+    12,
+    5
+   ],
+   "stay": true
   },
   {
    "art": "squidsailor",
@@ -613,7 +728,12 @@
    "near": [
     17,
     7
-   ]
+   ],
+   "tile": [
+    6,
+    8
+   ],
+   "stay": true
   }
  ],
  "020": [
@@ -621,7 +741,12 @@
    "art": "explorer",
    "t": [
     "Climber: The Ridge Path climbs toward the Forge Gate. Helix guards everywhere up there."
-   ]
+   ],
+   "tile": [
+    12,
+    5
+   ],
+   "stay": true
   },
   {
    "art": "researcher",
@@ -635,7 +760,12 @@
    ],
    "trainer": {
     "frontier": 1
-   }
+   },
+   "tile": [
+    4,
+    9
+   ],
+   "stay": true
   }
  ],
  "021": [
@@ -643,7 +773,12 @@
    "art": "wanderer",
    "t": [
     "Scout: I saw Helix grunts hauling crates toward the fortress. Something's being built in there."
-   ]
+   ],
+   "tile": [
+    12,
+    5
+   ],
+   "stay": true
   },
   {
    "art": "wanderer",
@@ -655,7 +790,12 @@
    "near": [
     12,
     8
-   ]
+   ],
+   "tile": [
+    3,
+    8
+   ],
+   "stay": true
   }
  ],
  "022": [
@@ -663,13 +803,23 @@
    "art": "miner",
    "t": [
     "Forge worker: The Forge Gate opens toward Ferrox once you've proven yourself."
-   ]
+   ],
+   "tile": [
+    12,
+    11
+   ],
+   "stay": true
   },
   {
    "art": "guard",
    "t": [
     "Gate guard: No clearance, no passage. Those are the rules."
-   ]
+   ],
+   "tile": [
+    10,
+    4
+   ],
+   "stay": true
   },
   {
    "art": "miner",
@@ -683,7 +833,12 @@
    ],
    "trainer": {
     "frontier": 1
-   }
+   },
+   "tile": [
+    13,
+    5
+   ],
+   "stay": true
   }
  ],
  "023": [
@@ -691,7 +846,12 @@
    "art": "civilian",
    "t": [
     "Refugee: Helix took the old forge and turned it into a fortress. We had to leave everything."
-   ]
+   ],
+   "tile": [
+    18,
+    8
+   ],
+   "stay": true
   },
   {
    "art": "guard",
@@ -704,7 +864,12 @@
    "t": [
     "Helix Grunt: Halt! This forge belongs to the Helix Directive.",
     "Helix Grunt: Run along, kid. Come back when you're a real Linker, and maybe I'll bother beating you."
-   ]
+   ],
+   "tile": [
+    13,
+    5
+   ],
+   "stay": true
   },
   {
    "art": "guard",
@@ -720,7 +885,12 @@
     "frontier": 1
    },
    "until": "M19",
-   "after": "M12"
+   "after": "M12",
+   "tile": [
+    13,
+    5
+   ],
+   "stay": true
   },
   {
    "art": "guard",
@@ -732,7 +902,12 @@
    "after": "M19",
    "t": [
     "Former Helix worker: Helix is finished. I just want to fix things now."
-   ]
+   ],
+   "tile": [
+    13,
+    5
+   ],
+   "stay": true
   },
   {
    "art": "grub",
@@ -746,7 +921,12 @@
    "t": [
     "Grub: Psst. I used to work in that Forge. I know a way in.",
     "Grub: Beat the grunt at the door, then find the control room terminal. The keycard is in there."
-   ]
+   ],
+   "tile": [
+    7,
+    8
+   ],
+   "stay": true
   }
  ],
  "024": [
@@ -754,7 +934,12 @@
    "art": "technician",
    "t": [
     "Bridge tech: These lava bridges are cooled by pumps. If they stop, run."
-   ]
+   ],
+   "tile": [
+    12,
+    5
+   ],
+   "stay": true
   }
  ],
  "025": [
@@ -762,7 +947,12 @@
    "art": "explorer",
    "t": [
     "Linker: Almost at the shuttle pad. Ships to the far planets launch from there."
-   ]
+   ],
+   "tile": [
+    5,
+    8
+   ],
+   "stay": true
   },
   {
    "art": "technician",
@@ -774,7 +964,12 @@
    "near": [
     12,
     8
-   ]
+   ],
+   "tile": [
+    19,
+    8
+   ],
+   "stay": true
   }
  ],
  "026": [
@@ -782,13 +977,23 @@
    "art": "technician",
    "t": [
     "Pad controller: Shuttles leave when the board says so. The board says 'not yet'."
-   ]
+   ],
+   "tile": [
+    12,
+    8
+   ],
+   "stay": true
   },
   {
    "art": "guard",
    "t": [
     "Helix deserter: I flew shuttles for Helix. Never again. Ask me nothing about the Director."
-   ]
+   ],
+   "tile": [
+    6,
+    5
+   ],
+   "stay": true
   },
   {
    "art": "strand",
@@ -800,7 +1005,12 @@
    "near": [
     18,
     7
-   ]
+   ],
+   "tile": [
+    18,
+    5
+   ],
+   "stay": true
   }
  ],
  "027": [
@@ -808,7 +1018,12 @@
    "art": "wanderer",
    "t": [
     "Lantern keeper: The Shadow Tunnel leads to Umbra. The dark in there plays tricks on you."
-   ]
+   ],
+   "tile": [
+    16,
+    5
+   ],
+   "stay": true
   }
  ],
  "028": [
@@ -816,7 +1031,12 @@
    "art": "miner",
    "t": [
     "Mine foreman: The Magma Mines run all the way down to Pyros' crust. Hard hats mandatory."
-   ]
+   ],
+   "tile": [
+    12,
+    3
+   ],
+   "stay": true
   },
   {
    "art": "ystran",
@@ -828,7 +1048,12 @@
    "near": [
     10,
     7
-   ]
+   ],
+   "tile": [
+    8,
+    8
+   ],
+   "stay": true
   }
  ],
  "029": [
@@ -1284,7 +1509,12 @@
    "t": [
     "Sola: I made a cactus-berry pie for your mom. It's... a little burned. A lot burned.",
     "Sola: It's weird having a normal day. Good weird."
-   ]
+   ],
+   "tile": [
+    8,
+    4
+   ],
+   "stay": true
   },
   {
    "art": "civilian",
@@ -1296,7 +1526,12 @@
    ],
    "t": [
     "The house is empty. A sign on the door says: Reserved for the Reyes family."
-   ]
+   ],
+   "tile": [
+    9,
+    13
+   ],
+   "stay": true
   },
   {
    "art": "teo",
@@ -1309,7 +1544,12 @@
    "t": [
     "Teo: I never saw a living Seedmother. Just the empty crater where she stood, and the Heartroot, a little dimmer every year.",
     "Teo: Lumivex grew up near its light. It keeps watch on the roof now. It doesn't trust doors yet. Neither do I."
-   ]
+   ],
+   "tile": [
+    3,
+    11
+   ],
+   "stay": true
   }
  ],
  "153": [
