@@ -42,7 +42,7 @@ function secLos(){if(!G.party.length||!G.party.some(m=>m.hp>0))return false;cons
 // shared houses: one room per planet; the doormat ('back') returns you to the door you came in by
 function secHouse(s,o){if(!SWORLD[o.to])return say('The door is locked. Nobody seems to be home.');G.houseBack={id:s.id,at:[G.sec.x,G.sec.y]};secWarp({to:o.to,at:(SWORLD[o.to].spawns||{}).default||[7,12],face:'up',kind:'door'})}
 function secHouseBack(){const s=SWORLD[G.sec.id],b=G.houseBack&&SWORLD[G.houseBack.id]?G.houseBack:null,p=SWORLD[s.parent];G.houseBack=null;
- SFADE={t:0,go:()=>{if(b)enterSection(b.id,b.at,'down');else if(p)enterSection(p.id,(p.spawns||{}).default||p.spawns.arrival,'down');doorSfx()}}}
+ SFADE={t:0,go:()=>{if(b)enterSection(b.id,b.at,'down');else if(p){const dw=(p.warps||[]).find(w=>w.to===s.id);enterSection(p.id,dw?[dw.tile[0],dw.tile[1]+1]:(p.spawns||{}).default||p.spawns.arrival,'down')}doorSfx()}}}
 function secArrive(){SBLK=null;const s=SWORLD[G.sec.id],w=s.warps.find(w=>w.tile[0]===G.sec.x&&w.tile[1]===G.sec.y);if(w&&w.to==='back')return secHouseBack();if(w&&w.kind==='gate')return secGate(w);if(w&&SWORLD[w.to])return secWarp(w);
  if(G.grace>0)G.grace=Math.max(0,G.grace-15);if(G.jam>0)G.jam=Math.max(0,G.jam-2);stepc++;
  if(eggStep())return;if(secLos())return;

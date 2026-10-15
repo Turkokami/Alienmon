@@ -151,6 +151,10 @@ for d in links['doors']:
     world[i]['parent'] = p
     if d.get('confidence') != 'high':
         report['door placement TODO'].append(f"{i} {world[i]['name']} → {p} door {d['door']}: {d.get('why', '')}")
+for i in links.get('shared_rooms', []):   # rooms several towns' doors open into: the doormat returns you to the door you came in by
+    if i in world:
+        for w in world[i]['warps']:
+            if w.get('kind') == 'door' and w['to'] == world[i].get('parent'): w['to'] = 'back'
 for st in links.get('stairs', []):
     a, b = st['a'], st['b']
     if a in world and b in world:
