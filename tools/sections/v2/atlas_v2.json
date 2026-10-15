@@ -1,0 +1,6520 @@
+{
+ "version": 2,
+ "tile_px_render": 64,
+ "tile_px_game": 16,
+ "screen_tiles": [
+  10,
+  9
+ ],
+ "walkway_rules": {
+  "main_road_tiles": 6,
+  "min_walkway_tiles": 4,
+  "door_tiles": [
+   2,
+   1.5
+  ],
+  "interior_aisle_tiles": 4,
+  "edge_exit_band_rows": [
+   5,
+   10
+  ],
+  "edge_exit_band_cols": [
+   5,
+   10
+  ],
+  "tower_stairs_cols": [
+   6,
+   9
+  ],
+  "interior_doormat": {
+   "cols": [
+    7,
+    8
+   ],
+   "row": 14
+  }
+ },
+ "sections": [
+  {
+   "id": "001",
+   "planet": "Dustara",
+   "name": "Your House 1F",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_interior.png",
+   "exits": [
+    {
+     "kind": "doormat",
+     "where": "a 2-tile-wide doormat in the bottom wall gap at columns 7–8, row 14",
+     "to": "004"
+    },
+    {
+     "kind": "stairs_up",
+     "where": "a 2-tile-wide staircase UP against the back wall in the top-right corner (columns 12–13, rows 3–4)",
+     "to": "002"
+    }
+   ],
+   "look": "the hero's home, ground floor, inside a small round honey-sandstone dome: curved sandstone walls with round windows, a kitchen counter and stove along the back wall, one wooden kitchen table, a dish towel by the door, a warm cinnamon-and-pancakes feel",
+   "story_note": "Hero's home ground floor: Mom's kitchen table, stove, TV, stairs up, door at bottom",
+   "file": "art/sections/01_dustara/001_your_house_1f.png"
+  },
+  {
+   "id": "002",
+   "planet": "Dustara",
+   "name": "Your House 2F",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_interior.png",
+   "exits": [
+    {
+     "kind": "stairs_down",
+     "where": "a 2-tile-wide staircase DOWN against the back wall in the top-right corner (columns 12–13, rows 3–4)",
+     "to": "001"
+    }
+   ],
+   "look": "the hero's small upstairs bedroom inside the sandstone dome: curved walls, a bunk bed with an old quilt against one wall, a round window with a brass telescope standing beside it, a wall calendar crossed off in red, a jacket hook",
+   "story_note": "Hero's bedroom: bed, desk with game console, telescope at the window, poster of the Starfall, stairs down",
+   "file": "art/sections/01_dustara/002_your_house_2f.png"
+  },
+  {
+   "id": "003",
+   "planet": "Dustara",
+   "name": "Vashti's Observatory Lab",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_interior.png",
+   "exits": [
+    {
+     "kind": "doormat",
+     "where": "a 2-tile-wide doormat in the bottom wall gap at columns 7–8, row 14",
+     "to": "004"
+    }
+   ],
+   "look": "Dr. Vashti's round domed Observatory lab at the top of the 112 steps: tall bookshelves of books, scrolls and glowing jars around the curved walls, star charts pinned up, a giant brass telescope under the dome against the back wall, a big brass table by the window with three brass-rimmed glass capsules on velvet cushions, one computer with a round green screen",
+   "story_note": "Domed lab with a big brass telescope, three capsule pedestals for the starters on a table, computers, bookshelves",
+   "file": "art/sections/01_dustara/003_vashti_s_observatory_lab.png"
+  },
+  {
+   "id": "004",
+   "planet": "Dustara",
+   "name": "Dustmere Plaza",
+   "type": "town",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_town_arrival.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "007"
+    },
+    {
+     "kind": "arrival_point",
+     "where": "a round landing pad (6×6 tiles, flat, walkable, no ship drawn) at the left end of the main road where your starship sets down",
+     "note": "replaces the old 'arrival' edge exit, which was a ghost exit"
+    },
+    {
+     "kind": "door",
+     "label": "Hero's house",
+     "to": "001",
+     "building": "4×4"
+    },
+    {
+     "kind": "door",
+     "label": "Reyes house",
+     "to": "166",
+     "building": "4×4"
+    },
+    {
+     "kind": "door",
+     "label": "Recovery Bay",
+     "to": "005",
+     "building": "5×5"
+    },
+    {
+     "kind": "door",
+     "label": "Shop",
+     "to": "006",
+     "building": "4×4"
+    },
+    {
+     "kind": "door",
+     "label": "Observatory",
+     "to": "003",
+     "building": "5×5"
+    }
+   ],
+   "look": "Dustmere, the canyon town where three red canyons meet: a wide sandstone-paved main street, the Recovery Bay dome, a small shop dome, the hero's dome house and the empty dome house next door, and the white Observatory dome at the top of a short wide flight of stone steps; the Bonfire Ring (a flat circle of stones, walkable) in the open plaza below the street",
+   "story_note": "Home town: hero's house, Vashti's observatory dome, Recovery Bay, shop, the bridge exit east, trading post south",
+   "file": "art/sections/01_dustara/004_dustmere_plaza.png"
+  },
+  {
+   "id": "005",
+   "planet": "Dustara",
+   "name": "Dustmere Recovery Bay",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_interior.png",
+   "exits": [
+    {
+     "kind": "doormat",
+     "where": "a 2-tile-wide doormat in the bottom wall gap at columns 7–8, row 14",
+     "to": "004"
+    },
+    {
+     "kind": "ladder_up",
+     "where": "a 2-tile-wide wooden ladder UP to the attic against the back wall in the top-right corner (columns 12–13, rows 3–4)",
+     "to": "165"
+    }
+   ],
+   "look": "Dustmere Recovery Bay inside the round white dome: clean white curved walls, a curved nurse's counter against the back wall, healing machines like giant glass seashells glowing soft gold behind the counter, a PC terminal against a side wall",
+   "story_note": "",
+   "file": "art/sections/01_dustara/005_dustmere_recovery_bay.png"
+  },
+  {
+   "id": "006",
+   "planet": "Dustara",
+   "name": "Dustmere Shop",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_interior.png",
+   "exits": [
+    {
+     "kind": "doormat",
+     "where": "a 2-tile-wide doormat in the bottom wall gap at columns 7–8, row 14",
+     "to": "004"
+    }
+   ],
+   "look": "Dustmere shop inside a small honey-sandstone dome: shelves along the walls with cactus fruit, strings of dried peppers, glittering canyon crystals, jars of honey and spare robot parts; one shop counter against the back wall; warm sandstone floor, brass pipes on the walls",
+   "story_note": "",
+   "file": "art/sections/01_dustara/006_dustmere_shop.png"
+  },
+  {
+   "id": "007",
+   "planet": "Dustara",
+   "name": "Dustmere Bridge",
+   "type": "landmark",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_route.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "004"
+    },
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "008"
+    }
+   ],
+   "look": "the ancient bridge at the bottom of Dustmere's deepest canyon: a long, wide arch of huge pale stone blocks with NO railings, every block carved with swirling marks that glow bright electric blue, spanning a deep dark chasm between two red canyon walls; night-time light, the blue glow lighting the red rock",
+   "story_note": "The humming canyon bridge (story: Zib's signal, M02). Long wooden-and-brass bridge over a deep canyon, glowing rune lamps",
+   "file": "art/sections/01_dustara/007_dustmere_bridge.png"
+  },
+  {
+   "id": "008",
+   "planet": "Dustara",
+   "name": "Trading Post",
+   "type": "town",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_town.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "007"
+    },
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "009"
+    }
+   ],
+   "look": "the Trading Post where the desert road comes into town: a tidy row of wooden market stalls with red-and-yellow striped awnings and patched canvas tents along the top of the map, a big corral of split-rail fence (open, walkable inside) beside the road, a water tower on stilts with a creaky windmill in a corner, red dirt underfoot",
+   "story_note": "Small outpost of stalls and a corral where Sola waits (M03 first rival battle)",
+   "file": "art/sections/01_dustara/008_trading_post.png"
+  },
+  {
+   "id": "009",
+   "planet": "Dustara",
+   "name": "Rimwalk Trail Part A",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_route.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "008"
+    },
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "010"
+    }
+   ],
+   "look": "the Rimwalk Trail along the canyon rim: a wide red-dirt trail, patches of drift grass, a few low one-way rock ledges, red boulders and sage scrub along the edges, the canyon drop as the bottom border",
+   "story_note": "Canyon-rim route with drift grass, ledges you hop down, trainers",
+   "file": "art/sections/01_dustara/009_rimwalk_trail_part_a.png"
+  },
+  {
+   "id": "010",
+   "planet": "Dustara",
+   "name": "Rimwalk Trail Part B",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_route.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "009"
+    },
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "011"
+    }
+   ],
+   "look": "the Rimwalk Trail continued: wide red sandstone trail, drift-grass patches, barrel cacti and sun-baked boulders along the edges, deep red canyon drop along one side",
+   "story_note": "Canyon-rim route with drift grass, ledges you hop down, trainers",
+   "file": "art/sections/01_dustara/010_rimwalk_trail_part_b.png"
+  },
+  {
+   "id": "011",
+   "planet": "Dustara",
+   "name": "Cactus Gardens",
+   "type": "field",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_route.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "010"
+    },
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "012"
+    }
+   ],
+   "look": "the Cactus Gardens, a wide sunny bowl entered between two big red boulders (the Gateposts): giant armed cacti taller than houses, barrel and paddle cacti topped with hot-pink, yellow, purple and cherry-red flowers, all standing in solid blocks along the edges; wide sandy lanes between them; patches of drift grass; one big flat sitting rock",
+   "story_note": "Maze of tall cacti and flowering succulents, drift grass, hidden items",
+   "file": "art/sections/01_dustara/011_cactus_gardens.png"
+  },
+  {
+   "id": "012",
+   "planet": "Dustara",
+   "name": "Sunset Tunnel B1",
+   "type": "cave",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_square_cave.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "bottom",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "011"
+    },
+    {
+     "kind": "edge",
+     "side": "top",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "013"
+    }
+   ],
+   "look": "the Sunset Tunnel through the purple Sunset Range: a wide tunnel of cool, damp old purple-gray stone, lanterns on iron hooks along the walls each burning a small BLUE flame, pools of light on the floor; the entrance is a huge round arch carved with the same swirling marks as the Dustmere bridge",
+   "story_note": "Sandstone tunnel to the Molten Frontier; lantern-lit, boulders",
+   "file": "art/sections/01_dustara/012_sunset_tunnel_b1.png"
+  },
+  {
+   "id": "013",
+   "planet": "Dustara",
+   "name": "Sunset Tunnel B2",
+   "type": "cave",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_square_cave.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "bottom",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "012"
+    },
+    {
+     "kind": "edge",
+     "side": "top",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "014"
+    }
+   ],
+   "look": "the deeper Sunset Tunnel: wide old-stone passage, blue-flame lanterns on iron hooks along the walls, and near the top exit the stone warms to a deep furnace-orange glow",
+   "story_note": "Sandstone tunnel to the Molten Frontier; lantern-lit, boulders",
+   "file": "art/sections/01_dustara/013_sunset_tunnel_b2.png"
+  },
+  {
+   "id": "014",
+   "planet": "Dustara",
+   "name": "Molten Frontier: Tunnel Mouth",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_route.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "013"
+    },
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "015"
+    }
+   ],
+   "look": "the Sunset Tunnel's exit onto a high black cliff above the Molten Frontier: a wide, straight path of flat black stone leading away from the tunnel, lava rivers running down the black rock on either side, steam drifting",
+   "story_note": "Exit of Sunset Tunnel onto volcanic far side",
+   "file": "art/sections/01_dustara/014_molten_frontier_tunnel_mouth.png"
+  },
+  {
+   "id": "015",
+   "planet": "Dustara",
+   "name": "Molten Frontier: Ash Trail Part A",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_route.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "014"
+    },
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "016"
+    }
+   ],
+   "look": "the Ash Trail: flat black volcanic ash ground crossed by cooling lava channels (bridged where the trail crosses them), black rock outcrops, white steam",
+   "story_note": "Ash fields, cooling lava channels",
+   "file": "art/sections/01_dustara/015_molten_frontier_ash_trail_part_a.png"
+  },
+  {
+   "id": "016",
+   "planet": "Dustara",
+   "name": "Molten Frontier: Ash Trail Part B",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_route.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "015"
+    },
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "017"
+    }
+   ],
+   "look": "the Ash Trail continued: black ash flats and cooling lava channels, steam vents, rough basalt boulders, and along one edge black rock meeting the glowing turquoise sea in clouds of steam",
+   "story_note": "Ash fields, cooling lava channels",
+   "file": "art/sections/01_dustara/016_molten_frontier_ash_trail_part_b.png"
+  },
+  {
+   "id": "017",
+   "planet": "Dustara",
+   "name": "Molten Frontier: Palm Isle",
+   "type": "field",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_route.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "016"
+    },
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "018"
+    },
+    {
+     "kind": "door",
+     "label": "Recovery Hut",
+     "to": "menu:recovery",
+     "building": "4×4"
+    }
+   ],
+   "look": "Palm Isle, a round green island in steamy turquoise sea: leaning palms and big red flowers along the edges, a wide causeway of flat stepping stones joined into a solid path, and Nurse Coral's small round white Recovery Hut with a glowing blue cross and a porch of palm-frond hammocks",
+   "story_note": "Tropical island with Recovery Hut, palm trees, turquoise water",
+   "file": "art/sections/01_dustara/017_molten_frontier_palm_isle.png"
+  },
+  {
+   "id": "018",
+   "planet": "Dustara",
+   "name": "Molten Frontier: Port Ember",
+   "type": "town",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_town.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "017"
+    },
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "019"
+    },
+    {
+     "kind": "warp",
+     "where": "the Relay Gate at the harbor end: two barnacled pale-stone pillars and an arch carved with the Lady of the Gate's face, standing in the upper band with a 6-tile-wide plank landing in front of it (warp to Thalassa, 052)"
+    },
+    {
+     "kind": "door",
+     "label": "Healing centre",
+     "to": "menu:recovery",
+     "building": "5×5"
+    },
+    {
+     "kind": "door",
+     "label": "House",
+     "to": "house:dustara",
+     "building": "4×4"
+    }
+   ],
+   "look": "Port Ember, a fishing village on wooden stilts over turquoise water: houses painted yellow, cherry red, sky blue and mint with peeling paint, a wide plank boardwalk street, nets drying on rails, colored-glass lanterns on the roofs, and at the harbor end the Relay Gate: two barnacled pale-stone pillars and an arch rising from the sea, carved with a woman's serene face (the Lady of the Gate)",
+   "story_note": "Harbor village with the harbor Relay Gate (needs 2 Shards)",
+   "file": "art/sections/01_dustara/018_molten_frontier_port_ember.png"
+  },
+  {
+   "id": "019",
+   "planet": "Dustara",
+   "name": "Molten Frontier: Long Dock",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_route.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "018"
+    },
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "020"
+    },
+    {
+     "kind": "warp",
+     "where": "the Deep Sea Ferry moored at the end of the pier with a 4-tile-wide boarding plank (warp to Glyphos, 072)"
+    }
+   ],
+   "look": "the Long Dock past Port Ember's stilt houses: a long, wide plank pier on seaweed-hung posts over dark glassy water, dock lanterns glowing gold in a purple-orange-pink sunset; moored at the pier's end, the Deep Sea Ferry, a round glass bubble boat with brass ribs and a propeller; an upturned barrel on the pier",
+   "story_note": "Long wooden dock where the Deep Sea Ferry berths (M08 Sola's Choice scene)",
+   "file": "art/sections/01_dustara/019_molten_frontier_long_dock.png"
+  },
+  {
+   "id": "020",
+   "planet": "Dustara",
+   "name": "Molten Frontier: Ridge Path Part A",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_route.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "019"
+    },
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "021"
+    }
+   ],
+   "look": "Ridge Path climbing the volcanic ridge: a wide black-rock path, thin lava trickles in channels on both sides, old wooden warning boards (blank) on iron spikes, low one-way rock ledges",
+   "story_note": "Climbing ridge with ledges",
+   "file": "art/sections/01_dustara/020_molten_frontier_ridge_path_part_a.png"
+  },
+  {
+   "id": "021",
+   "planet": "Dustara",
+   "name": "Molten Frontier: Ridge Path Part B",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_route.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "020"
+    },
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "022"
+    }
+   ],
+   "look": "Ridge Path upper stretch: black rock and lava trickles, blank wooden warning boards on iron spikes, mine-cart rails and ore carts appearing along the edge as it nears the mining camp",
+   "story_note": "Climbing ridge with ledges",
+   "file": "art/sections/01_dustara/021_molten_frontier_ridge_path_part_b.png"
+  },
+  {
+   "id": "022",
+   "planet": "Dustara",
+   "name": "Molten Frontier: Forge Gate",
+   "type": "landmark",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_route.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "021"
+    },
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "023"
+    },
+    {
+     "kind": "warp",
+     "where": "the Forge Gate ring standing in the upper band, its opening facing down onto the road (warp to Ferrox, 029)"
+    }
+   ],
+   "look": "the Forge Mining Camp on a rocky shelf: black-stone huts with tin roofs and smoking chimneys (no doors on this side), rail tracks with carts of glittering ore along the edges, and the Forge Gate: a pale-stone ring taller than two houses carved with blue-glowing swirls, wrapped in rope-tied wooden scaffolding, with a stone console box at its base",
+   "story_note": "Ystran Relay Gate to Ferrox, guarded by Forge Miner Dax",
+   "file": "art/sections/01_dustara/022_molten_frontier_forge_gate.png"
+  },
+  {
+   "id": "023",
+   "planet": "Dustara",
+   "name": "Molten Frontier: Fortress Gate",
+   "type": "landmark",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_route.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "022"
+    },
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "024"
+    }
+   ],
+   "look": "outside the Helix Forge Fortress in black volcanic rock: the fortress is a sheer hard-white wall with floodlights, security cameras and the orange ring-and-slash logo (shape only) and NO door or opening on this screen; lava glow behind",
+   "story_note": "Helix Forge Fortress entrance, Helix grunt guard",
+   "file": "art/sections/01_dustara/023_molten_frontier_fortress_gate.png"
+  },
+  {
+   "id": "024",
+   "planet": "Dustara",
+   "name": "Molten Frontier: Lava Bridges Part A",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_route.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "023"
+    },
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "025"
+    }
+   ],
+   "look": "the Lava Bridges: wide iron bridges of riveted plates spanning glowing lava rivers, black basalt islands between channels, white steam",
+   "story_note": "Iron bridges over lava rivers",
+   "file": "art/sections/01_dustara/024_molten_frontier_lava_bridges_part_a.png"
+  },
+  {
+   "id": "025",
+   "planet": "Dustara",
+   "name": "Molten Frontier: Lava Bridges Part B",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_route.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "024"
+    },
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "026"
+    }
+   ],
+   "look": "the Lava Bridges continued: riveted iron bridges over lava, cooling black crust, steam, and the first white Helix fences and floodlights along the far end",
+   "story_note": "Iron bridges over lava rivers",
+   "file": "art/sections/01_dustara/025_molten_frontier_lava_bridges_part_b.png"
+  },
+  {
+   "id": "026",
+   "planet": "Dustara",
+   "name": "Molten Frontier: Shuttle Pad",
+   "type": "landmark",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_route.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "025"
+    },
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "027"
+    },
+    {
+     "kind": "warp",
+     "where": "the Helix shuttle boarding ramp at the back of the landing deck, 4 tiles wide (warp to the Station, 105)"
+    }
+   ],
+   "look": "the Helix Shuttle Pad beside the Forge Fortress: a big white landing deck marked with the orange ring-and-slash logo (shape only), fuel lines and floodlights along the edges, black rock and lava glow around it",
+   "story_note": "Fortress Shuttle Pad to Helix Station",
+   "file": "art/sections/01_dustara/026_molten_frontier_shuttle_pad.png"
+  },
+  {
+   "id": "027",
+   "planet": "Dustara",
+   "name": "Molten Frontier: Shadow Tunnel Mouth",
+   "type": "landmark",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_route.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "026"
+    },
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "028"
+    },
+    {
+     "kind": "warp",
+     "where": "the Shadow Tunnel's dark arch in the upper rock wall, 6 tiles wide (warp to Umbra, 123)"
+    }
+   ],
+   "look": "the Shadow Tunnel mouth on the far Frontier: black rock with a dark tunnel arch faintly carved with swirling marks, cold shadow pouring out of it, against warm lava glow",
+   "story_note": "Dark tunnel mouth leading to Umbra",
+   "file": "art/sections/01_dustara/027_molten_frontier_shadow_tunnel_mouth.png"
+  },
+  {
+   "id": "028",
+   "planet": "Dustara",
+   "name": "Molten Frontier: Magma Mines Gate",
+   "type": "landmark",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_deadend.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "027"
+    },
+    {
+     "kind": "warp",
+     "where": "the sealed red-glowing Ystran gate in the rock face at the end of the road, 6 tiles wide (warp to Pyros, 082)"
+    }
+   ],
+   "look": "deep in Dustara's Magma Mines: black rock walls with timber props and mine rails along the edges, and at the end a sealed pale-stone Ystran gate set into the rock face, its swirling carvings glowing red",
+   "story_note": "Sealed glowing-red Ystran door to Pyros",
+   "file": "art/sections/01_dustara/028_molten_frontier_magma_mines_gate.png"
+  },
+  {
+   "id": "029",
+   "planet": "Ferrox",
+   "name": "Gate Plaza",
+   "type": "landmark",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_arrival.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "030"
+    },
+    {
+     "kind": "arrival_point",
+     "where": "the pale-stone Relay Gate ring (6 tiles wide, standing in the upper band, its opening facing down onto the road) where you arrive from Dustara's Forge Gate",
+     "note": "replaces the old 'arrival' edge exit, which was a ghost exit"
+    },
+    {
+     "kind": "warp",
+     "where": "the same Relay Gate ring (warp back to Dustara's Forge Gate, 022)"
+    }
+   ],
+   "look": "the Gate Plaza among the scrap: a pale-stone Relay Gate ring carved with swirls standing on riveted metal ground, scrap heaps towering around the edges, furnace-orange light",
+   "story_note": "Arrival plaza around the Relay Gate",
+   "file": "art/sections/02_ferrox/029_gate_plaza.png"
+  },
+  {
+   "id": "030",
+   "planet": "Ferrox",
+   "name": "Rustvale",
+   "type": "town",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_town.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "029"
+    },
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "034"
+    },
+    {
+     "kind": "door",
+     "label": "Recovery Bay",
+     "to": "031",
+     "building": "5×5"
+    },
+    {
+     "kind": "door",
+     "label": "Shop",
+     "to": "032",
+     "building": "4×4"
+    },
+    {
+     "kind": "door",
+     "label": "Grub's Workshop",
+     "to": "033",
+     "building": "4×4"
+    },
+    {
+     "kind": "door",
+     "label": "House",
+     "to": "house:ferrox",
+     "building": "4×4"
+    }
+   ],
+   "look": "Rustvale, Ferrox's town: buildings made of curved star-seed shell, pearly under rust; an old red caboose on a short siding as scenery; riveted plate streets; the dark riveted spire of the Relay Tower rising beyond the town edge",
+   "story_note": "Shanty town of shacks and converted rail cars",
+   "file": "art/sections/02_ferrox/030_rustvale.png"
+  },
+  {
+   "id": "031",
+   "planet": "Ferrox",
+   "name": "Rustvale Recovery Bay",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_interior.png",
+   "exits": [
+    {
+     "kind": "doormat",
+     "where": "a 2-tile-wide doormat in the bottom wall gap at columns 7–8, row 14",
+     "to": "030"
+    }
+   ],
+   "look": "Rustvale Recovery Bay inside a curved star-seed shell dome: riveted metal-plate floor, pearly white curved walls, a nurse's counter against the back wall, glass-seashell healing machines glowing gold",
+   "story_note": "",
+   "file": "art/sections/02_ferrox/031_rustvale_recovery_bay.png"
+  },
+  {
+   "id": "032",
+   "planet": "Ferrox",
+   "name": "Rustvale Shop",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_interior.png",
+   "exits": [
+    {
+     "kind": "doormat",
+     "where": "a 2-tile-wide doormat in the bottom wall gap at columns 7–8, row 14",
+     "to": "030"
+    }
+   ],
+   "look": "Rustvale shop inside a riveted star-seed shell building: wall shelves of jars of screws sorted by color, fixed-up toys, spare gears and oil cans; one counter against the back wall; metal plate floor, hanging work lamps",
+   "story_note": "",
+   "file": "art/sections/02_ferrox/032_rustvale_shop.png"
+  },
+  {
+   "id": "033",
+   "planet": "Ferrox",
+   "name": "Grub's Workshop",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_interior.png",
+   "exits": [
+    {
+     "kind": "doormat",
+     "where": "a 2-tile-wide doormat in the bottom wall gap at columns 7–8, row 14",
+     "to": "030"
+    }
+   ],
+   "look": "Grub's scrap workshop: riveted shell walls, one long workbench of tools against the back wall, wall shelves of spare parts and coiled cables, an old engine in one corner, welding sparks",
+   "story_note": "Grub's cluttered scrap workshop",
+   "file": "art/sections/02_ferrox/033_grub_s_workshop.png"
+  },
+  {
+   "id": "034",
+   "planet": "Ferrox",
+   "name": "Scrap Route Part A",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_route.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "030"
+    },
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "035"
+    }
+   ],
+   "look": "the Scrap Route: a long straight road along the bottom of a metal canyon between scrap heaps of rusted pipes, girders, broken wheels and bent gears, a broken Helix crate as an edge prop",
+   "story_note": "Route through scrap mountains",
+   "file": "art/sections/02_ferrox/034_scrap_route_part_a.png"
+  },
+  {
+   "id": "035",
+   "planet": "Ferrox",
+   "name": "Scrap Route Part B",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_route.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "034"
+    },
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "036"
+    }
+   ],
+   "look": "the Scrap Route's far end: towering scrap heaps, iron rails along the edge, a tall water tower, and an old red caboose rusted onto a side track as scenery",
+   "story_note": "Route through scrap mountains",
+   "file": "art/sections/02_ferrox/035_scrap_route_part_b.png"
+  },
+  {
+   "id": "036",
+   "planet": "Ferrox",
+   "name": "Crane Yard",
+   "type": "field",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_route.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "035"
+    },
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "037"
+    }
+   ],
+   "look": "the Crane Yard: huge slow cranes and stacked containers along the edges, criss-crossing iron rails set flush into the riveted plate ground",
+   "story_note": "Swinging cranes, container stacks (Crane Yard Brawl)",
+   "file": "art/sections/02_ferrox/036_crane_yard.png"
+  },
+  {
+   "id": "037",
+   "planet": "Ferrox",
+   "name": "Junk Market",
+   "type": "town",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_town.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "036"
+    },
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "038"
+    },
+    {
+     "kind": "door",
+     "label": "Recovery Bay",
+     "to": "menu:recovery",
+     "building": "5×5"
+    },
+    {
+     "kind": "door",
+     "label": "Big shop stall",
+     "to": "menu:shop",
+     "building": "5×3"
+    }
+   ],
+   "look": "the Junk Market, built under an old rusted bridge: a tidy row of stalls with striped tarps along the top of the map (broken radios, robot legs, jars of shiny screws, fixed-up toys), a Recovery Bay shell dome, and one big shop stall with a counter",
+   "story_note": "Open-air junk market stalls",
+   "file": "art/sections/02_ferrox/037_junk_market.png"
+  },
+  {
+   "id": "038",
+   "planet": "Ferrox",
+   "name": "Furnace Ridge",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_route.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "037"
+    },
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "039"
+    }
+   ],
+   "look": "Furnace Ridge: a ridge of brick-and-iron chimneys and glowing furnace mouths along the edges, slag heaps, furnace-orange smoke; the road leads toward the dark riveted Relay Tower",
+   "story_note": "Ridge of smoking furnaces",
+   "file": "art/sections/02_ferrox/038_furnace_ridge.png"
+  },
+  {
+   "id": "039",
+   "planet": "Ferrox",
+   "name": "Ferrox Tower 1F",
+   "type": "tower",
+   "size_px": [
+    1024,
+    1536
+   ],
+   "tiles": [
+    16,
+    24
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_tall_tower.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "bottom",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "038"
+    },
+    {
+     "kind": "stairs",
+     "side": "top",
+     "cols": [
+      6,
+      9
+     ],
+     "to": "040"
+    }
+   ],
+   "look": "inside the Ferrox Relay Tower, ground floor: a round hall of huge curved star-seed shell plates riveted with bolts as big as a head, pearly under rust, a ringing metal floor",
+   "story_note": "Keeper Hank Briggs's tower, 2 floors",
+   "file": "art/sections/02_ferrox/039_ferrox_tower_1f.png"
+  },
+  {
+   "id": "040",
+   "planet": "Ferrox",
+   "name": "Ferrox Tower 2F",
+   "type": "tower",
+   "size_px": [
+    1024,
+    1536
+   ],
+   "tiles": [
+    16,
+    24
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_tall_keeper.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "bottom",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "039"
+    }
+   ],
+   "look": "the Ferrox Relay Tower top: the Keeper arena, a round riveted metal floor with stands against the walls, and the house-sized glowing blue crystal heart of the tower set against the back wall",
+   "story_note": "Keeper Hank Briggs's tower, 2 floors",
+   "file": "art/sections/02_ferrox/040_ferrox_tower_2f.png"
+  },
+  {
+   "id": "041",
+   "planet": "Sporeholm",
+   "name": "Landing Bog",
+   "type": "landmark",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_arrival.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "042"
+    },
+    {
+     "kind": "arrival_point",
+     "where": "a flat round landing spot on the giant mushroom cap at the left end of the road (6×6 tiles, no ship drawn)",
+     "note": "replaces the old 'arrival' edge exit, which was a ghost exit"
+    },
+    {
+     "kind": "door",
+     "label": "Landing dome",
+     "to": "int_landing_dome",
+     "building": "4×4"
+    }
+   ],
+   "look": "the landing on top of a gigantic glowing mushroom cap as wide as a town plaza: flat, soft, springy and glowing pale green, with hundreds of glowing mushrooms in green, violet, blue and gold around the edges and misty swamp beyond",
+   "story_note": "Landing pad on a boardwalk in the bog",
+   "file": "art/sections/03_sporeholm/041_landing_bog.png"
+  },
+  {
+   "id": "042",
+   "planet": "Sporeholm",
+   "name": "Mirefen Village",
+   "type": "town",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_town.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "041"
+    },
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "045"
+    },
+    {
+     "kind": "door",
+     "label": "Recovery Bay",
+     "to": "043",
+     "building": "5×5"
+    },
+    {
+     "kind": "door",
+     "label": "Shop",
+     "to": "044",
+     "building": "4×4"
+    },
+    {
+     "kind": "door",
+     "label": "House",
+     "to": "house:sporeholm",
+     "building": "4×4"
+    },
+    {
+     "kind": "door",
+     "label": "House",
+     "to": "house:sporeholm",
+     "building": "4×4"
+    }
+   ],
+   "look": "Mirefen Village: round woven-reed huts with moss-thatched roofs sitting on top of giant glowing mushroom caps, wide flat plank bridges joining the caps, and a wide open platform on the tallest central mushroom where the Spore Choir sings",
+   "story_note": "Stilt village of huts on mushroom stalks with rope bridges",
+   "file": "art/sections/03_sporeholm/042_mirefen_village.png"
+  },
+  {
+   "id": "043",
+   "planet": "Sporeholm",
+   "name": "Mirefen Recovery Bay",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_interior.png",
+   "exits": [
+    {
+     "kind": "doormat",
+     "where": "a 2-tile-wide doormat in the bottom wall gap at columns 7–8, row 14",
+     "to": "042"
+    }
+   ],
+   "look": "Mirefen Recovery Bay inside a round woven-reed hut: moss-thatched ceiling, round windows, a nurse's counter against the back wall with glass-seashell healing machines lined with damp moss",
+   "story_note": "",
+   "file": "art/sections/03_sporeholm/043_mirefen_recovery_bay.png"
+  },
+  {
+   "id": "044",
+   "planet": "Sporeholm",
+   "name": "Mirefen Shop",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_interior.png",
+   "exits": [
+    {
+     "kind": "doormat",
+     "where": "a 2-tile-wide doormat in the bottom wall gap at columns 7–8, row 14",
+     "to": "042"
+    }
+   ],
+   "look": "Mirefen shop inside a woven-reed hut: wall baskets of glowing berries, jars of mushroom honey, moss cloaks and mushroom-cap hats on hooks, one counter against the back wall",
+   "story_note": "",
+   "file": "art/sections/03_sporeholm/044_mirefen_shop.png"
+  },
+  {
+   "id": "045",
+   "planet": "Sporeholm",
+   "name": "Lantern Marsh Part A",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_route.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "042"
+    },
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "046"
+    }
+   ],
+   "look": "the Lantern Marsh: still black water with WIDE straight wooden boardwalks on stilts, moss islands and tall reeds along the edges, and hundreds of floating paper lanterns (flowers, boats, birds, moons) glowing gold, pink and green on the water, never on the boardwalk",
+   "story_note": "Marsh of glowing lanterns and lily pads",
+   "file": "art/sections/03_sporeholm/045_lantern_marsh_part_a.png"
+  },
+  {
+   "id": "046",
+   "planet": "Sporeholm",
+   "name": "Lantern Marsh Part B",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_route.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "045"
+    },
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "047"
+    }
+   ],
+   "look": "the Lantern Marsh's end: a big round wooden platform in the black water ringed by floating paper lanterns, and a huge paper-moon lantern on its own raft beside it; reeds and mist along the edges",
+   "story_note": "Marsh of glowing lanterns and lily pads",
+   "file": "art/sections/03_sporeholm/046_lantern_marsh_part_b.png"
+  },
+  {
+   "id": "047",
+   "planet": "Sporeholm",
+   "name": "Mushroom Maze 1F",
+   "type": "dungeon",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_square_cave.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "bottom",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "046"
+    },
+    {
+     "kind": "edge",
+     "side": "top",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "048"
+    }
+   ],
+   "look": "the Mushroom Maze: a forest of giant pale mushroom stalks rising out of shallow water, their caps forming the walls; mossy ground lanes between them; some stalks dull ashy gray and cracked; soft glowing white mist at the edges only",
+   "story_note": "Maze of giant mushrooms (Lost in the Mist)",
+   "file": "art/sections/03_sporeholm/047_mushroom_maze_1f.png"
+  },
+  {
+   "id": "048",
+   "planet": "Sporeholm",
+   "name": "Mushroom Maze 2F",
+   "type": "dungeon",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_square_cave.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "bottom",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "047"
+    },
+    {
+     "kind": "edge",
+     "side": "top",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "049"
+    }
+   ],
+   "look": "the heart of the Mushroom Maze: a clearing with white Helix tents and harsh floodlights along the edges, white boxy spore-vacuum machines with hoses pressed to dying gray mushroom stalks, thick black cables running along the walls to a gray power box",
+   "story_note": "Maze of giant mushrooms (Lost in the Mist)",
+   "file": "art/sections/03_sporeholm/048_mushroom_maze_2f.png"
+  },
+  {
+   "id": "049",
+   "planet": "Sporeholm",
+   "name": "Spore Pools",
+   "type": "field",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_route.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "048"
+    },
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "050"
+    },
+    {
+     "kind": "door",
+     "label": "Mushroom house",
+     "to": "int_mushroom_house",
+     "building": "4×4"
+    }
+   ],
+   "look": "the Spore Pools: big round pools fitted together like honeycomb cells, each glowing green, violet or deep gold, separated by WIDE flat moss paths; the biggest gold pool at the foot of the giant mushroom-stalk tower",
+   "story_note": "Glowing spore pools (Spore Choir)",
+   "file": "art/sections/03_sporeholm/049_spore_pools.png"
+  },
+  {
+   "id": "050",
+   "planet": "Sporeholm",
+   "name": "Sporeholm Tower 1F",
+   "type": "tower",
+   "size_px": [
+    1024,
+    1536
+   ],
+   "tiles": [
+    16,
+    24
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_tall_tower.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "bottom",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "049"
+    },
+    {
+     "kind": "stairs",
+     "side": "top",
+     "cols": [
+      6,
+      9
+     ],
+     "to": "051"
+    }
+   ],
+   "look": "inside the giant mushroom-stalk tower, ground floor: a round, tall lab with curving walls glowing soft pale green, wall shelves of glowing spore jars, potted plants against the walls, and a battle circle marked in glowing moss on the floor",
+   "story_note": "Keeper Dr. Lysa Moor's tower",
+   "file": "art/sections/03_sporeholm/050_sporeholm_tower_1f.png"
+  },
+  {
+   "id": "051",
+   "planet": "Sporeholm",
+   "name": "Sporeholm Tower 2F",
+   "type": "tower",
+   "size_px": [
+    1024,
+    1536
+   ],
+   "tiles": [
+    16,
+    24
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_tall_keeper.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "bottom",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "050"
+    }
+   ],
+   "look": "the mushroom tower's top: the Keeper arena under the cap, glowing green walls, a battle circle of glowing moss, and the tower's crystal heart set into the back wall",
+   "story_note": "Keeper Dr. Lysa Moor's tower",
+   "file": "art/sections/03_sporeholm/051_sporeholm_tower_2f.png"
+  },
+  {
+   "id": "052",
+   "planet": "Thalassa",
+   "name": "Port Saltreach Docks",
+   "type": "town",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_town_arrival.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "053"
+    },
+    {
+     "kind": "arrival_point",
+     "where": "a round stone landing pad (6×6 tiles, no ship drawn) at the left end of the dock street",
+     "note": "replaces the old 'arrival' edge exit, which was a ghost exit"
+    },
+    {
+     "kind": "warp",
+     "where": "the same landing pad doubles as the Relay Gate arrival from Port Ember (018)"
+    },
+    {
+     "kind": "door",
+     "label": "House",
+     "to": "house:thalassa",
+     "building": "4×4"
+    },
+    {
+     "kind": "door",
+     "label": "Ship berth",
+     "to": "167",
+     "building": "8×3 ship"
+    }
+   ],
+   "look": "Port Saltreach docks on the biggest island: wide stone docks and stone streets, white houses with red roofs, a boatyard with wooden sheds and lobster pots as scenery, tall-masted ships with white sails moored along the water edge, clear turquoise water",
+   "story_note": "Fog-bound docks, net sheds, stilt houses",
+   "file": "art/sections/04_thalassa/052_port_saltreach_docks.png"
+  },
+  {
+   "id": "053",
+   "planet": "Thalassa",
+   "name": "Saltreach Market",
+   "type": "town",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_town.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "052"
+    },
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "056"
+    },
+    {
+     "kind": "door",
+     "label": "Recovery Bay",
+     "to": "054",
+     "building": "5×5"
+    },
+    {
+     "kind": "door",
+     "label": "Shop",
+     "to": "055",
+     "building": "4×4"
+    },
+    {
+     "kind": "door",
+     "label": "House",
+     "to": "house:thalassa",
+     "building": "4×4"
+    }
+   ],
+   "look": "Saltreach Market on the stone docks: a fish-market row of stalls with nets and crates, fishing boats tied in rows along the water edge, white houses with red roofs",
+   "story_note": "Harbor market",
+   "file": "art/sections/04_thalassa/053_saltreach_market.png"
+  },
+  {
+   "id": "054",
+   "planet": "Thalassa",
+   "name": "Saltreach Recovery Bay",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_interior.png",
+   "exits": [
+    {
+     "kind": "doormat",
+     "where": "a 2-tile-wide doormat in the bottom wall gap at columns 7–8, row 14",
+     "to": "053"
+    }
+   ],
+   "look": "Saltreach Recovery Bay inside a white stone building: blue tile floor, shells on the walls, round sea windows, a nurse's counter against the back wall with glass-seashell healing machines",
+   "story_note": "",
+   "file": "art/sections/04_thalassa/054_saltreach_recovery_bay.png"
+  },
+  {
+   "id": "055",
+   "planet": "Thalassa",
+   "name": "Saltreach Shop",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_interior.png",
+   "exits": [
+    {
+     "kind": "doormat",
+     "where": "a 2-tile-wide doormat in the bottom wall gap at columns 7–8, row 14",
+     "to": "053"
+    }
+   ],
+   "look": "Saltreach shop inside a white stone building: coils of rope, nets, lanterns, buoys and fish pies on wall shelves, one counter against the back wall, blue tile floor",
+   "story_note": "",
+   "file": "art/sections/04_thalassa/055_saltreach_shop.png"
+  },
+  {
+   "id": "056",
+   "planet": "Thalassa",
+   "name": "Lighthouse",
+   "type": "tower",
+   "size_px": [
+    1024,
+    1536
+   ],
+   "tiles": [
+    16,
+    24
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_tall_tower.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "bottom",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "053"
+    },
+    {
+     "kind": "stairs",
+     "side": "top",
+     "cols": [
+      6,
+      9
+     ],
+     "to": "057"
+    }
+   ],
+   "look": "inside the old Gull Rock lighthouse: a round, salt-stained stone room with a stone staircase built into the wall, small round windows, a dark and quiet interior",
+   "story_note": "Old lighthouse interior spiral (Captain's Log)",
+   "file": "art/sections/04_thalassa/056_lighthouse.png"
+  },
+  {
+   "id": "057",
+   "planet": "Thalassa",
+   "name": "Coral Route Part A",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_route.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "056"
+    },
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "058"
+    }
+   ],
+   "look": "Coral Route: a wide white sandbar route across turquoise shallows so clear you see coral below, tiny white-sand islands with one or two skinny palms along the edges",
+   "story_note": "Sand-bar route over coral shallows",
+   "file": "art/sections/04_thalassa/057_coral_route_part_a.png"
+  },
+  {
+   "id": "058",
+   "planet": "Thalassa",
+   "name": "Coral Route Part B",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_route.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "057"
+    },
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "059"
+    }
+   ],
+   "look": "Coral Route continued: turquoise shallows, coral heads and sandbars, little palm islands along the edges",
+   "story_note": "Sand-bar route over coral shallows",
+   "file": "art/sections/04_thalassa/058_coral_route_part_b.png"
+  },
+  {
+   "id": "059",
+   "planet": "Thalassa",
+   "name": "Sea Arch Cove",
+   "type": "landmark",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_route.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "058"
+    },
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "060"
+    }
+   ],
+   "look": "Sea Arch Cove: a giant stone sea arch standing over deep blue water in a turquoise cove, white sand beach, barnacled rocks along the edges",
+   "story_note": "Giant stone sea arch where Anchorath sleeps",
+   "file": "art/sections/04_thalassa/059_sea_arch_cove.png"
+  },
+  {
+   "id": "060",
+   "planet": "Thalassa",
+   "name": "Harbor Tower 1F",
+   "type": "tower",
+   "size_px": [
+    1024,
+    1536
+   ],
+   "tiles": [
+    16,
+    24
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_tall_tower.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "bottom",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "059"
+    },
+    {
+     "kind": "stairs",
+     "side": "top",
+     "cols": [
+      6,
+      9
+     ],
+     "to": "061"
+    }
+   ],
+   "look": "inside the Harbor Tower, ground floor: a big round tall white room with blue tiles in swirling wave patterns on the floor, round sea windows all around, and a tree-trunk-thick column of sea-blue crystal held by huge brass bolts against the back wall",
+   "story_note": "Captain Marsh's harbor tower",
+   "file": "art/sections/04_thalassa/060_harbor_tower_1f.png"
+  },
+  {
+   "id": "061",
+   "planet": "Thalassa",
+   "name": "Harbor Tower 2F",
+   "type": "tower",
+   "size_px": [
+    1024,
+    1536
+   ],
+   "tiles": [
+    16,
+    24
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_tall_keeper.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "bottom",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "060"
+    }
+   ],
+   "look": "the Harbor Tower top: a round open balcony floor with a railing, blue wave tiles, an empty brass cradle where the sea-blue crystal sits, a brass spyglass on a stand",
+   "story_note": "Captain Marsh's harbor tower",
+   "file": "art/sections/04_thalassa/061_harbor_tower_2f.png"
+  },
+  {
+   "id": "062",
+   "planet": "Neonis",
+   "name": "Neonis Starport",
+   "type": "town",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_town_arrival.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "063"
+    },
+    {
+     "kind": "arrival_point",
+     "where": "the big round landing ring painted on the rooftop deck (6×6 tiles, no ship drawn) at the left end of the road",
+     "note": "replaces the old 'arrival' edge exit, which was a ghost exit"
+    }
+   ],
+   "look": "the Neonis Starport: a rooftop landing deck high among glass-and-steel towers, a big round landing ring painted on the deck, a glass elevator housing as scenery, holograms on the neighboring towers, glittering neon rain",
+   "story_note": "Floating landing deck with orange landing ring (rebuild at new scale)",
+   "file": "art/sections/05_neonis/062_neonis_starport.png"
+  },
+  {
+   "id": "063",
+   "planet": "Neonis",
+   "name": "Neon Boulevard",
+   "type": "town",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_town.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "062"
+    },
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "066"
+    },
+    {
+     "kind": "door",
+     "label": "Recovery Bay",
+     "to": "064",
+     "building": "5×5"
+    },
+    {
+     "kind": "door",
+     "label": "Shop",
+     "to": "065",
+     "building": "4×4"
+    },
+    {
+     "kind": "door",
+     "label": "Courthouse",
+     "to": "170",
+     "building": "5×5"
+    },
+    {
+     "kind": "door",
+     "label": "House",
+     "to": "house:neonis",
+     "building": "4×4"
+    }
+   ],
+   "look": "Neon Boulevard, the main neon street: wet reflective pavement under glittering rain, noodle stands and arcade fronts, holograms on the towers, a small park with a glowing purple fountain",
+   "story_note": "Main neon street",
+   "file": "art/sections/05_neonis/063_neon_boulevard.png"
+  },
+  {
+   "id": "064",
+   "planet": "Neonis",
+   "name": "Neonis Recovery Bay",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_interior.png",
+   "exits": [
+    {
+     "kind": "doormat",
+     "where": "a 2-tile-wide doormat in the bottom wall gap at columns 7–8, row 14",
+     "to": "063"
+    }
+   ],
+   "look": "Neonis Recovery Bay inside a glass city building: white walls lit pink and blue from outside signs, a nurse's counter against the back wall, glass-seashell healing machines",
+   "story_note": "",
+   "file": "art/sections/05_neonis/064_neonis_recovery_bay.png"
+  },
+  {
+   "id": "065",
+   "planet": "Neonis",
+   "name": "Neonis Shop",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_interior.png",
+   "exits": [
+    {
+     "kind": "doormat",
+     "where": "a 2-tile-wide doormat in the bottom wall gap at columns 7–8, row 14",
+     "to": "063"
+    }
+   ],
+   "look": "Neonis shop: wall shelves of glowing sneakers, gadgets and noodle cups, a glass counter against the back wall, a reflective floor",
+   "story_note": "",
+   "file": "art/sections/05_neonis/065_neonis_shop.png"
+  },
+  {
+   "id": "066",
+   "planet": "Neonis",
+   "name": "Arcade District",
+   "type": "field",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_route.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "063"
+    },
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "067"
+    },
+    {
+     "kind": "door",
+     "label": "Arcade hall",
+     "to": "int_arcade_hall",
+     "building": "6×5"
+    }
+   ],
+   "look": "the Arcade District: arcade hall fronts with flashing (wordless) signs, a big plaza of glowing floor tiles, and the Grid Gardens power station of giant coils and sparking towers fenced off along one edge",
+   "story_note": "Arcade halls and plazas (Glitch Hunt)",
+   "file": "art/sections/05_neonis/066_arcade_district.png"
+  },
+  {
+   "id": "067",
+   "planet": "Neonis",
+   "name": "Broadcast Route Part A",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_route.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "066"
+    },
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "068"
+    }
+   ],
+   "look": "Broadcast Route over the rooftops: wide flat gravel rooftops joined by wide metal walkways, air vents, tall antennas and satellite dishes along the edges, a rooftop garden of glowing plants, and DJ Static's little metal antenna shack as scenery",
+   "story_note": "Route of antenna towers and cables (Pirate Radio)",
+   "file": "art/sections/05_neonis/067_broadcast_route_part_a.png"
+  },
+  {
+   "id": "068",
+   "planet": "Neonis",
+   "name": "Broadcast Route Part B",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_route.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "067"
+    },
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "069"
+    }
+   ],
+   "look": "Broadcast Route continued: a chain of rooftop dishes along the edges, wet gravel rooftops and wide walkways leading toward the Voltspire's silver spiral",
+   "story_note": "Route of antenna towers and cables (Pirate Radio)",
+   "file": "art/sections/05_neonis/068_broadcast_route_part_b.png"
+  },
+  {
+   "id": "069",
+   "planet": "Neonis",
+   "name": "Voltspire 1F",
+   "type": "tower",
+   "size_px": [
+    1024,
+    1536
+   ],
+   "tiles": [
+    16,
+    24
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_tall_tower.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "bottom",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "068"
+    },
+    {
+     "kind": "stairs",
+     "side": "top",
+     "cols": [
+      6,
+      9
+     ],
+     "to": "070"
+    }
+   ],
+   "look": "inside the Voltspire, ground floor: glowing glass floor tiles, silver walls, a glass elevator shaft as a solid block against the back wall",
+   "story_note": "Keeper Static's tower, 3 floors",
+   "file": "art/sections/05_neonis/069_voltspire_1f.png"
+  },
+  {
+   "id": "070",
+   "planet": "Neonis",
+   "name": "Voltspire 2F",
+   "type": "tower",
+   "size_px": [
+    1024,
+    1536
+   ],
+   "tiles": [
+    16,
+    24
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_tall_tower.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "bottom",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "069"
+    },
+    {
+     "kind": "stairs",
+     "side": "top",
+     "cols": [
+      6,
+      9
+     ],
+     "to": "071"
+    }
+   ],
+   "look": "Voltspire middle floor: glowing glass floors and walls, cameras and sensors on the walls, neon light bleeding in",
+   "story_note": "Keeper Static's tower, 3 floors",
+   "file": "art/sections/05_neonis/070_voltspire_2f.png"
+  },
+  {
+   "id": "071",
+   "planet": "Neonis",
+   "name": "Voltspire 3F",
+   "type": "tower",
+   "size_px": [
+    1024,
+    1536
+   ],
+   "tiles": [
+    16,
+    24
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_tall_keeper.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "bottom",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "070"
+    }
+   ],
+   "look": "the Voltspire top: an open-air arena with a round stage of flashing light tiles, stands and house-size speakers against the walls, and the huge electric-yellow icicle crystal crackling with lightning inside a cage of silver bars at the back",
+   "story_note": "Keeper Static's tower, 3 floors",
+   "file": "art/sections/05_neonis/071_voltspire_3f.png"
+  },
+  {
+   "id": "072",
+   "planet": "Glyphos",
+   "name": "Sunken Landing",
+   "type": "landmark",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_arrival.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "073"
+    },
+    {
+     "kind": "arrival_point",
+     "where": "a small wooden jetty at the left end of the road where the Deep Sea Ferry surfaces (the ferry is not drawn)",
+     "note": "replaces the old 'arrival' edge exit, which was a ghost exit"
+    },
+    {
+     "kind": "warp",
+     "where": "the same jetty (ferry back to the Long Dock, 019)"
+    }
+   ],
+   "look": "the Sunken Landing: a little wooden jetty on a sand island in a calm glassy green sea, a great half-sunk stone tablet carved with swirls and leaning pillar pairs standing in the water around the edges",
+   "story_note": "Landing among sunken ruins",
+   "file": "art/sections/06_glyphos/072_sunken_landing.png"
+  },
+  {
+   "id": "073",
+   "planet": "Glyphos",
+   "name": "Dig Camp",
+   "type": "town",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_town.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "072"
+    },
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "075"
+    },
+    {
+     "kind": "door",
+     "label": "Recovery Tent",
+     "to": "074",
+     "building": "5×5"
+    },
+    {
+     "kind": "door",
+     "label": "Dig tent",
+     "to": "int_dig_camp_tent",
+     "building": "5×4"
+    }
+   ],
+   "look": "the Dig Camp on a wide flat sand island: white and tan canvas tents with little flags, lanterns on poles, worktables of maps and brushes along the edges, old temple steps nearby",
+   "story_note": "Archaeologists' camp of tents and scaffolding",
+   "file": "art/sections/06_glyphos/073_dig_camp.png"
+  },
+  {
+   "id": "074",
+   "planet": "Glyphos",
+   "name": "Dig Camp Recovery Tent",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_interior.png",
+   "exits": [
+    {
+     "kind": "doormat",
+     "where": "a 2-tile-wide doormat in the bottom wall gap at columns 7–8, row 14",
+     "to": "073"
+    }
+   ],
+   "look": "the Dig Camp Recovery Tent: canvas walls and poles, woven mats on a sand floor, cots along one wall, and a glass-seashell healing machine behind a folding counter at the back",
+   "story_note": "Recovery Bay as a large tent",
+   "file": "art/sections/06_glyphos/074_dig_camp_recovery_tent.png"
+  },
+  {
+   "id": "075",
+   "planet": "Glyphos",
+   "name": "Coral Ruins Part A",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_route.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "073"
+    },
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "076"
+    }
+   ],
+   "look": "Coral Ruins: flooded ruins in calm green water, half-sunk gray-and-gold temples leaning sideways along the edges, toppled pillars, a wide causeway of flat stone slabs",
+   "story_note": "Flooded ruins route",
+   "file": "art/sections/06_glyphos/075_coral_ruins_part_a.png"
+  },
+  {
+   "id": "076",
+   "planet": "Glyphos",
+   "name": "Coral Ruins Part B",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_route.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "075"
+    },
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "077"
+    }
+   ],
+   "look": "Coral Ruins continued: wave-carved temple roofs and sunken windows lapped by the sea along the edges, a wide stone causeway with gold-inlaid swirls",
+   "story_note": "Flooded ruins route",
+   "file": "art/sections/06_glyphos/076_coral_ruins_part_b.png"
+  },
+  {
+   "id": "077",
+   "planet": "Glyphos",
+   "name": "Glyph Hollow",
+   "type": "field",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_route.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "076"
+    },
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "078"
+    }
+   ],
+   "look": "Glyph Hollow: a sandy hollow ringed by brown carved standing stones with glowing cracks, pebbles orbiting them on thin rings of pink light, gold-inlaid swirl carvings on cracked floor tiles",
+   "story_note": "Hollow of glowing glyph stones (Guardian Stones)",
+   "file": "art/sections/06_glyphos/077_glyph_hollow.png"
+  },
+  {
+   "id": "078",
+   "planet": "Glyphos",
+   "name": "Temple of Voices 1F",
+   "type": "tower",
+   "size_px": [
+    1024,
+    1536
+   ],
+   "tiles": [
+    16,
+    24
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_tall_tower.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "bottom",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "077"
+    },
+    {
+     "kind": "stairs",
+     "side": "top",
+     "cols": [
+      6,
+      9
+     ],
+     "to": "079"
+    }
+   ],
+   "look": "inside the Temple of Voices, entrance hall: tall echoing pale-stone halls carved with glowing gold swirls, two tree-trunk columns with stone branches flanking the entrance, small wall crystals; the temple goes DOWN into the ground, so the top exit is a wide stair leading deeper",
+   "story_note": "Ancient Ystran temple (no Keeper), 3 floors (Song of the Chimes)",
+   "file": "art/sections/06_glyphos/078_temple_of_voices_1f.png"
+  },
+  {
+   "id": "079",
+   "planet": "Glyphos",
+   "name": "Temple of Voices 2F",
+   "type": "tower",
+   "size_px": [
+    1024,
+    1536
+   ],
+   "tiles": [
+    16,
+    24
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_tall_tower.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "bottom",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "078"
+    },
+    {
+     "kind": "stairs",
+     "side": "top",
+     "cols": [
+      6,
+      9
+     ],
+     "to": "080"
+    }
+   ],
+   "look": "the Temple of Voices, lower level: tall echoing pale-stone halls, gold-inlaid carvings, small glowing wall crystals, a wide stair at the top leading deeper still",
+   "story_note": "Ancient Ystran temple (no Keeper), 3 floors (Song of the Chimes)",
+   "file": "art/sections/06_glyphos/079_temple_of_voices_2f.png"
+  },
+  {
+   "id": "080",
+   "planet": "Glyphos",
+   "name": "Temple of Voices 3F",
+   "type": "tower",
+   "size_px": [
+    1024,
+    1536
+   ],
+   "tiles": [
+    16,
+    24
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_tall_keeper.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "bottom",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "079"
+    },
+    {
+     "kind": "door",
+     "label": "Mural Hall",
+     "to": "081",
+     "building": "4×4"
+    }
+   ],
+   "look": "the deepest Temple chamber: a vast round domed room, pale smooth walls set with round polished-silver mirrors in carved frames, a single sunbeam making a bright circle on the floor, three tall standing stones against the back wall, and a huge round stone door with a crystal center (the way into the Mural Hall)",
+   "story_note": "Ancient Ystran temple (no Keeper), 3 floors (Song of the Chimes)",
+   "file": "art/sections/06_glyphos/080_temple_of_voices_3f.png"
+  },
+  {
+   "id": "081",
+   "planet": "Glyphos",
+   "name": "Mural Hall",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_interior.png",
+   "exits": [
+    {
+     "kind": "doorway",
+     "where": "the great round stone doorway back to the deepest temple chamber, a 2-tile gap in the bottom wall at columns 7–8, row 14",
+     "to": "080"
+    }
+   ],
+   "look": "the Mural Hall deep in the Temple of Voices: a hall so vast it feels like night, walls covered in house-sized faded murals painted with starlight paint (a crystal forest under a red sun, a great tree, seedpods drifting through space, an eight-star door), cracked and flaking",
+   "story_note": "Great hall of Ystran murals (M10b Vashti's confession)",
+   "file": "art/sections/06_glyphos/081_mural_hall.png"
+  },
+  {
+   "id": "082",
+   "planet": "Pyros",
+   "name": "Cinder Hollow",
+   "type": "town",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_town_arrival.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "085"
+    },
+    {
+     "kind": "arrival_point",
+     "where": "a round landing pad of iron plates (6×6 tiles, no ship drawn) at the left end of the road",
+     "note": "replaces the old 'arrival' edge exit, which was a ghost exit"
+    },
+    {
+     "kind": "door",
+     "label": "Recovery Bay",
+     "to": "083",
+     "building": "5×5"
+    },
+    {
+     "kind": "door",
+     "label": "Shop",
+     "to": "084",
+     "building": "4×4"
+    },
+    {
+     "kind": "door",
+     "label": "House",
+     "to": "house:pyros",
+     "building": "4×4"
+    },
+    {
+     "kind": "door",
+     "label": "House",
+     "to": "house:pyros",
+     "building": "4×4"
+    }
+   ],
+   "look": "Cinder Hollow mining camp: timber shacks with tin roofs and brass furnace chimneys, rope lifts and mine-cart rails as scenery along the edges, lanterns, sulfur haze",
+   "story_note": "Mining camp of timber shacks, brass furnaces, rope lifts",
+   "file": "art/sections/07_pyros/082_cinder_hollow.png"
+  },
+  {
+   "id": "083",
+   "planet": "Pyros",
+   "name": "Cinder Hollow Recovery Bay",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_interior.png",
+   "exits": [
+    {
+     "kind": "doormat",
+     "where": "a 2-tile-wide doormat in the bottom wall gap at columns 7–8, row 14",
+     "to": "082"
+    }
+   ],
+   "look": "Cinder Hollow Recovery Bay: a soot-stained timber-and-brass room, warm furnace light, a nurse's counter against the back wall with glass-seashell healers",
+   "story_note": "",
+   "file": "art/sections/07_pyros/083_cinder_hollow_recovery_bay.png"
+  },
+  {
+   "id": "084",
+   "planet": "Pyros",
+   "name": "Cinder Hollow Shop",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_interior.png",
+   "exits": [
+    {
+     "kind": "doormat",
+     "where": "a 2-tile-wide doormat in the bottom wall gap at columns 7–8, row 14",
+     "to": "082"
+    }
+   ],
+   "look": "Cinder Hollow shop: picks, helmet lamps, lanterns, rope coils and ore samples on wall racks, one counter against the back wall, soot-dark plank floor",
+   "story_note": "",
+   "file": "art/sections/07_pyros/084_cinder_hollow_shop.png"
+  },
+  {
+   "id": "085",
+   "planet": "Pyros",
+   "name": "Lava Rail Part A",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_route.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "082"
+    },
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "086"
+    }
+   ],
+   "look": "the Lava Rail: a wide road beside a mine-cart rail line on trestles over lava, black rock, lava glow",
+   "story_note": "Mine-cart rail line over lava",
+   "file": "art/sections/07_pyros/085_lava_rail_part_a.png"
+  },
+  {
+   "id": "086",
+   "planet": "Pyros",
+   "name": "Lava Rail Part B",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_route.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "085"
+    },
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "087"
+    }
+   ],
+   "look": "the Lava Rail continued: rail switches and buffers along the edges, ore carts, black rock and lava glow",
+   "story_note": "Mine-cart rail line over lava",
+   "file": "art/sections/07_pyros/086_lava_rail_part_b.png"
+  },
+  {
+   "id": "087",
+   "planet": "Pyros",
+   "name": "Deep Mines B1",
+   "type": "cave",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_square_cave.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "bottom",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "086"
+    },
+    {
+     "kind": "edge",
+     "side": "top",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "088"
+    }
+   ],
+   "look": "Deep Mines B1: wide timber-propped tunnels in black rock, mine-cart rails set flush in the floor, lanterns on the props",
+   "story_note": "Deep mines, 3 levels (Teo's Trail 1, Deep Drill)",
+   "file": "art/sections/07_pyros/087_deep_mines_b1.png"
+  },
+  {
+   "id": "088",
+   "planet": "Pyros",
+   "name": "Deep Mines B2",
+   "type": "cave",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_square_cave.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "bottom",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "087"
+    },
+    {
+     "kind": "edge",
+     "side": "top",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "089"
+    }
+   ],
+   "look": "Deep Mines B2: wider lava-lit galleries, lava cracks along the walls (never on the floor), timber props",
+   "story_note": "Deep mines, 3 levels (Teo's Trail 1, Deep Drill)",
+   "file": "art/sections/07_pyros/088_deep_mines_b2.png"
+  },
+  {
+   "id": "089",
+   "planet": "Pyros",
+   "name": "Deep Mines B3",
+   "type": "cave",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_square_cave.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "bottom",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "088"
+    },
+    {
+     "kind": "edge",
+     "side": "top",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "090"
+    }
+   ],
+   "look": "Deep Mines B3: the deepest lava-lit gallery, timber props, and a small hidden ledge in one corner with an old metal cache box (Teo's first cache)",
+   "story_note": "Deep mines, 3 levels (Teo's Trail 1, Deep Drill)",
+   "file": "art/sections/07_pyros/089_deep_mines_b3.png"
+  },
+  {
+   "id": "090",
+   "planet": "Pyros",
+   "name": "Furnace Ridge (Pyros)",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_route.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "089"
+    },
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "091"
+    }
+   ],
+   "look": "Furnace Ridge on Pyros: soot-black rock lined with brass forges and furnace chimneys along the edges, ore carts, ember-red glow; the road leads to the Volcano Tower",
+   "story_note": "Ridge of forges",
+   "file": "art/sections/07_pyros/090_furnace_ridge_pyros.png"
+  },
+  {
+   "id": "091",
+   "planet": "Pyros",
+   "name": "Volcano Tower 1F",
+   "type": "tower",
+   "size_px": [
+    1024,
+    1536
+   ],
+   "tiles": [
+    16,
+    24
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_tall_tower.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "bottom",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "090"
+    },
+    {
+     "kind": "stairs",
+     "side": "top",
+     "cols": [
+      6,
+      9
+     ],
+     "to": "092"
+    }
+   ],
+   "look": "inside the Volcano Tower, ground floor: black volcanic stone floor, lava channels behind grates along the walls, brass braziers, swirling Ystran carvings",
+   "story_note": "Keeper Basalt's tower",
+   "file": "art/sections/07_pyros/091_volcano_tower_1f.png"
+  },
+  {
+   "id": "092",
+   "planet": "Pyros",
+   "name": "Volcano Tower 2F",
+   "type": "tower",
+   "size_px": [
+    1024,
+    1536
+   ],
+   "tiles": [
+    16,
+    24
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_tall_keeper.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "bottom",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "091"
+    }
+   ],
+   "look": "the Volcano Tower top: the Keeper arena on a scorched stone floor, lava glow through the walls, a red crystal heart set into the back wall",
+   "story_note": "Keeper Basalt's tower",
+   "file": "art/sections/07_pyros/092_volcano_tower_2f.png"
+  },
+  {
+   "id": "093",
+   "planet": "Glacia",
+   "name": "Frostmark",
+   "type": "town",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_town_arrival.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "096"
+    },
+    {
+     "kind": "arrival_point",
+     "where": "a round landing pad under the glass dome (6×6 tiles, no ship drawn) at the left end of the road",
+     "note": "replaces the old 'arrival' edge exit, which was a ghost exit"
+    },
+    {
+     "kind": "door",
+     "label": "Recovery Bay",
+     "to": "094",
+     "building": "5×5"
+    },
+    {
+     "kind": "door",
+     "label": "Shop",
+     "to": "095",
+     "building": "4×4"
+    },
+    {
+     "kind": "door",
+     "label": "House",
+     "to": "house:glacia",
+     "building": "4×4"
+    },
+    {
+     "kind": "door",
+     "label": "House",
+     "to": "house:glacia",
+     "building": "4×4"
+    }
+   ],
+   "look": "Frostmark, a research and ice-fishing town under big clear glass domes: packed-snow streets, snug houses with warm windows, round ice-fishing holes fenced off as scenery, and the research lab building",
+   "story_note": "Research town under aurora skies",
+   "file": "art/sections/08_glacia/093_frostmark.png"
+  },
+  {
+   "id": "094",
+   "planet": "Glacia",
+   "name": "Frostmark Recovery Bay",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_interior.png",
+   "exits": [
+    {
+     "kind": "doormat",
+     "where": "a 2-tile-wide doormat in the bottom wall gap at columns 7–8, row 14",
+     "to": "093"
+    }
+   ],
+   "look": "Frostmark Recovery Bay: warm white room under a glass dome, frost on the glass, heaters against the walls, a nurse's counter at the back",
+   "story_note": "",
+   "file": "art/sections/08_glacia/094_frostmark_recovery_bay.png"
+  },
+  {
+   "id": "095",
+   "planet": "Glacia",
+   "name": "Frostmark Shop",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_interior.png",
+   "exits": [
+    {
+     "kind": "doormat",
+     "where": "a 2-tile-wide doormat in the bottom wall gap at columns 7–8, row 14",
+     "to": "093"
+    }
+   ],
+   "look": "Frostmark shop: thick socks, parkas, ice-fishing gear and lanterns on wall shelves, one counter at the back, frosted windows",
+   "story_note": "",
+   "file": "art/sections/08_glacia/095_frostmark_shop.png"
+  },
+  {
+   "id": "096",
+   "planet": "Glacia",
+   "name": "Aurora Route Part A",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_route.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "093"
+    },
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "097"
+    }
+   ],
+   "look": "Aurora Route: a wide packed-snow route, pale ice crazed with silver cracks, wind-carved snowdrifts along the edges, soft aurora light",
+   "story_note": "Snowfield route",
+   "file": "art/sections/08_glacia/096_aurora_route_part_a.png"
+  },
+  {
+   "id": "097",
+   "planet": "Glacia",
+   "name": "Aurora Route Part B",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_route.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "096"
+    },
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "098"
+    }
+   ],
+   "look": "Aurora Route continued: snowdrifts and ice ridges along the edges, Helix ice-cutter tracks in the snow",
+   "story_note": "Snowfield route",
+   "file": "art/sections/08_glacia/097_aurora_route_part_b.png"
+  },
+  {
+   "id": "098",
+   "planet": "Glacia",
+   "name": "Crystal Caverns B1",
+   "type": "cave",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_square_cave.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "bottom",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "097"
+    },
+    {
+     "kind": "edge",
+     "side": "top",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "099"
+    }
+   ],
+   "look": "Crystal Caverns B1: walls of mirror ice reflecting everything, crystal icicles along the walls, a smooth ice floor",
+   "story_note": "Ice caves with crystal icicles, 3 floors",
+   "file": "art/sections/08_glacia/098_crystal_caverns_b1.png"
+  },
+  {
+   "id": "099",
+   "planet": "Glacia",
+   "name": "Crystal Caverns B2",
+   "type": "cave",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_square_cave.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "bottom",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "098"
+    },
+    {
+     "kind": "edge",
+     "side": "top",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "100"
+    }
+   ],
+   "look": "Crystal Caverns B2: wide mirror-ice galleries, icicle clusters along the walls",
+   "story_note": "Ice caves with crystal icicles, 3 floors",
+   "file": "art/sections/08_glacia/099_crystal_caverns_b2.png"
+  },
+  {
+   "id": "100",
+   "planet": "Glacia",
+   "name": "Crystal Caverns B3",
+   "type": "cave",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_square_cave.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "bottom",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "099"
+    },
+    {
+     "kind": "edge",
+     "side": "top",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "101"
+    }
+   ],
+   "look": "Crystal Caverns B3: the deepest mirror-ice chamber, a small metal cache box on a ledge in one corner (Teo's second cache)",
+   "story_note": "Ice caves with crystal icicles, 3 floors",
+   "file": "art/sections/08_glacia/100_crystal_caverns_b3.png"
+  },
+  {
+   "id": "101",
+   "planet": "Glacia",
+   "name": "Fossil Dig",
+   "type": "field",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_route.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "100"
+    },
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "102"
+    }
+   ],
+   "look": "the Fossil Dig at a glacier: a sheer blue ice wall along the top with a giant ancient creature frozen inside it (seen as a dark shape in the ice), ice-cutter trenches and Helix drilling rigs along the edges",
+   "story_note": "Dig site with a giant Ystran creature frozen in the glacier wall (Teeth in the ice)",
+   "file": "art/sections/08_glacia/101_fossil_dig.png"
+  },
+  {
+   "id": "102",
+   "planet": "Glacia",
+   "name": "Frozen Falls",
+   "type": "landmark",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_route.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "101"
+    },
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "103"
+    }
+   ],
+   "look": "Frozen Falls: a towering frozen waterfall as a solid block at the back, icicles, a frozen plunge pool, and the Aurora Tower's entrance beside it",
+   "story_note": "Frozen waterfall (Glaciryx)",
+   "file": "art/sections/08_glacia/102_frozen_falls.png"
+  },
+  {
+   "id": "103",
+   "planet": "Glacia",
+   "name": "Aurora Tower 1F",
+   "type": "tower",
+   "size_px": [
+    1024,
+    1536
+   ],
+   "tiles": [
+    16,
+    24
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_tall_tower.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "bottom",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "102"
+    },
+    {
+     "kind": "stairs",
+     "side": "top",
+     "cols": [
+      6,
+      9
+     ],
+     "to": "104"
+    }
+   ],
+   "look": "inside the Aurora Tower, ground floor: ice-block walls, frost carvings, soft aurora light on a smooth ice floor",
+   "story_note": "Keeper Ingrid's tower",
+   "file": "art/sections/08_glacia/103_aurora_tower_1f.png"
+  },
+  {
+   "id": "104",
+   "planet": "Glacia",
+   "name": "Aurora Tower 2F",
+   "type": "tower",
+   "size_px": [
+    1024,
+    1536
+   ],
+   "tiles": [
+    16,
+    24
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_tall_keeper.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "bottom",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "103"
+    }
+   ],
+   "look": "the Aurora Tower top: the Keeper arena, a battle floor of thick ice, and the tower's crystal heart set into the back wall",
+   "story_note": "Keeper Ingrid's tower",
+   "file": "art/sections/08_glacia/104_aurora_tower_2f.png"
+  },
+  {
+   "id": "105",
+   "planet": "Helix Station",
+   "name": "Docking Ring",
+   "type": "town",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_town_arrival.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "109"
+    },
+    {
+     "kind": "arrival_point",
+     "where": "a docking bay pad (6×6 tiles, no ship drawn) at the left end of the concourse",
+     "note": "replaces the old 'arrival' edge exit, which was a ghost exit"
+    },
+    {
+     "kind": "warp",
+     "where": "the same docking bay pad (shuttle back to the Shuttle Pad, 026)"
+    },
+    {
+     "kind": "door",
+     "label": "Barracks",
+     "to": "106",
+     "building": "4×4"
+    },
+    {
+     "kind": "door",
+     "label": "Labs",
+     "to": "107",
+     "building": "4×4"
+    },
+    {
+     "kind": "door",
+     "label": "Observation Deck",
+     "to": "112",
+     "building": "4×4"
+    }
+   ],
+   "look": "the Station's Docking Ring: a curved white hull concourse, brushed-silver plating, docking bays with long needle-shaped white shuttles along the edges, the orange ring-with-slash logo (shape only) on the walls, cold blue-white light",
+   "story_note": "Station docking ring hub",
+   "file": "art/sections/09_helix/105_docking_ring.png"
+  },
+  {
+   "id": "106",
+   "planet": "Helix Station",
+   "name": "Barracks",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_interior.png",
+   "exits": [
+    {
+     "kind": "doormat",
+     "where": "a 2-tile-wide doormat in the bottom wall gap at columns 7–8, row 14",
+     "to": "105"
+    }
+   ],
+   "look": "Helix grunt barracks: rows of neat white bunks and lockers against the walls, white jumpsuits and dark visors on hooks, a small mess table, cold humming white light",
+   "story_note": "Grunt barracks",
+   "file": "art/sections/09_helix/106_barracks.png"
+  },
+  {
+   "id": "107",
+   "planet": "Helix Station",
+   "name": "Labs 1F",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_interior.png",
+   "exits": [
+    {
+     "kind": "doormat",
+     "where": "a 2-tile-wide doormat in the bottom wall gap at columns 7–8, row 14",
+     "to": "105"
+    },
+    {
+     "kind": "stairs_up",
+     "where": "a 2-tile-wide staircase UP against the back wall in the top-right corner (columns 12–13, rows 3–4)",
+     "to": "108"
+    }
+   ],
+   "look": "Helix lab: white benches and glowing screens against the walls, glass tanks, and in a back bay a dim, flickering sea-blue crystal core wrapped in black chains beside a row of empty brass cradles",
+   "story_note": "Helix labs",
+   "file": "art/sections/09_helix/107_labs_1f.png"
+  },
+  {
+   "id": "108",
+   "planet": "Helix Station",
+   "name": "Labs 2F",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_interior.png",
+   "exits": [
+    {
+     "kind": "stairs_down",
+     "where": "a 2-tile-wide staircase DOWN against the back wall in the top-right corner (columns 12–13, rows 3–4)",
+     "to": "107"
+    }
+   ],
+   "look": "Helix upper lab: white consoles and log terminals against the walls, big screens showing an eight-tower diagram (shapes only), research tables",
+   "story_note": "Helix labs",
+   "file": "art/sections/09_helix/108_labs_2f.png"
+  },
+  {
+   "id": "109",
+   "planet": "Helix Station",
+   "name": "Containment Wing 1F",
+   "type": "dungeon",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_square_cave.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "bottom",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "105"
+    },
+    {
+     "kind": "edge",
+     "side": "top",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "110"
+    }
+   ],
+   "look": "Project Unity, containment wing 1: a long white hall with rows of neat white humming cages along both walls, each with a tag on its closed door, white light and silver trim",
+   "story_note": "Cells with captive Alienmon (The Captives)",
+   "file": "art/sections/09_helix/109_containment_wing_1f.png"
+  },
+  {
+   "id": "110",
+   "planet": "Helix Station",
+   "name": "Containment Wing 2F",
+   "type": "dungeon",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_square_cave.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "bottom",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "109"
+    },
+    {
+     "kind": "edge",
+     "side": "top",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "111"
+    }
+   ],
+   "look": "containment wing 2: more rows of glowing white cages along the walls, cage-control panels and a big release lever, white catwalk floor",
+   "story_note": "Cells with captive Alienmon (The Captives)",
+   "file": "art/sections/09_helix/110_containment_wing_2f.png"
+  },
+  {
+   "id": "111",
+   "planet": "Helix Station",
+   "name": "Engineering",
+   "type": "dungeon",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_square_cave.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "bottom",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "110"
+    },
+    {
+     "kind": "edge",
+     "side": "top",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "113"
+    }
+   ],
+   "look": "reactor engineering: a humming white reactor core behind glass at the back, thick pipes and cables along the walls, coolant glow, hazard stripes in Helix orange",
+   "story_note": "Reactor engineering deck",
+   "file": "art/sections/09_helix/111_engineering.png"
+  },
+  {
+   "id": "112",
+   "planet": "Helix Station",
+   "name": "Observation Deck",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_interior.png",
+   "exits": [
+    {
+     "kind": "doormat",
+     "where": "a 2-tile-wide doormat in the bottom wall gap at columns 7–8, row 14",
+     "to": "105"
+    }
+   ],
+   "look": "the Observation Deck at the top of the Station: a huge round window full of stars along the back wall, a big deck screen, and a wide glass floor panel looking down onto the cage hall",
+   "story_note": "Observation deck (rival battle R4, M14)",
+   "file": "art/sections/09_helix/112_observation_deck.png"
+  },
+  {
+   "id": "113",
+   "planet": "Helix Station",
+   "name": "Vex's Arena",
+   "type": "arena",
+   "size_px": [
+    1024,
+    1536
+   ],
+   "tiles": [
+    16,
+    24
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_tall_keeper.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "bottom",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "111"
+    }
+   ],
+   "look": "Admin Vex's arena: a sleek black floor striped wasp black-and-yellow with silver trim, cold white light, a black-and-yellow command chair on a raised platform",
+   "story_note": "Admin Vex's arena",
+   "file": "art/sections/09_helix/113_vex_s_arena.png"
+  },
+  {
+   "id": "114",
+   "planet": "Halo",
+   "name": "Cloud Dock",
+   "type": "landmark",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_arrival.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "115"
+    },
+    {
+     "kind": "arrival_point",
+     "where": "a round sky-dock landing pad (6×6 tiles, no ship drawn) at the left end of the docks",
+     "note": "replaces the old 'arrival' edge exit, which was a ghost exit"
+    },
+    {
+     "kind": "door",
+     "label": "Dock hall",
+     "to": "int_cloud_dock_hall",
+     "building": "5×4"
+    },
+    {
+     "kind": "door",
+     "label": "Airship",
+     "to": "int_airship_cabin",
+     "building": "6×3 ship"
+    }
+   ],
+   "look": "the Cloud Dock on the edge of a floating island: wide plank docks over open cloud, moored airships along the edges, wind banners and pale stone bollards",
+   "story_note": "Sky dock for airships",
+   "file": "art/sections/10_halo/114_cloud_dock.png"
+  },
+  {
+   "id": "115",
+   "planet": "Halo",
+   "name": "Skyreach Plaza",
+   "type": "town",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_town.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "114"
+    },
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "118"
+    },
+    {
+     "kind": "door",
+     "label": "Recovery Bay",
+     "to": "116",
+     "building": "5×5"
+    },
+    {
+     "kind": "door",
+     "label": "Shop",
+     "to": "117",
+     "building": "4×4"
+    },
+    {
+     "kind": "door",
+     "label": "House",
+     "to": "house:halo",
+     "building": "4×4"
+    },
+    {
+     "kind": "door",
+     "label": "House",
+     "to": "house:halo",
+     "building": "4×4"
+    }
+   ],
+   "look": "Skyreach Plaza on a floating island: pale wind-worn stone paving, a central fountain with a glowing holo-globe, flower boxes and wind chimes, shrine-style rooftops",
+   "story_note": "Plaza with holo-globe fountain (rebuild at new scale)",
+   "file": "art/sections/10_halo/115_skyreach_plaza.png"
+  },
+  {
+   "id": "116",
+   "planet": "Halo",
+   "name": "Skyreach Recovery Bay",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_interior.png",
+   "exits": [
+    {
+     "kind": "doormat",
+     "where": "a 2-tile-wide doormat in the bottom wall gap at columns 7–8, row 14",
+     "to": "115"
+    }
+   ],
+   "look": "Skyreach Recovery Bay: an airy round white room with arched windows onto the sky, wind chimes, a nurse's counter at the back with glass-seashell healers",
+   "story_note": "",
+   "file": "art/sections/10_halo/116_skyreach_recovery_bay.png"
+  },
+  {
+   "id": "117",
+   "planet": "Halo",
+   "name": "Skyreach Shop",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_interior.png",
+   "exits": [
+    {
+     "kind": "doormat",
+     "where": "a 2-tile-wide doormat in the bottom wall gap at columns 7–8, row 14",
+     "to": "115"
+    }
+   ],
+   "look": "Skyreach shop: pale stone and timber, wind charms, kites and rope on wall shelves, potted sky-garden plants in the corners, one counter at the back",
+   "story_note": "",
+   "file": "art/sections/10_halo/117_skyreach_shop.png"
+  },
+  {
+   "id": "118",
+   "planet": "Halo",
+   "name": "Wind Bridges Part A",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_route.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "115"
+    },
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "119"
+    }
+   ],
+   "look": "Wind Bridges: wide plank-and-rope and stone bridges between small grassy floating islands over open cloud, a small open wind shrine on one island as scenery",
+   "story_note": "Bridges between floating islands",
+   "file": "art/sections/10_halo/118_wind_bridges_part_a.png"
+  },
+  {
+   "id": "119",
+   "planet": "Halo",
+   "name": "Wind Bridges Part B",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_route.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "118"
+    },
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "120"
+    }
+   ],
+   "look": "Wind Bridges continued: wide bridges between floating islands, banners snapping in the wind, island edges dropping into cloud",
+   "story_note": "Bridges between floating islands",
+   "file": "art/sections/10_halo/119_wind_bridges_part_b.png"
+  },
+  {
+   "id": "120",
+   "planet": "Halo",
+   "name": "Floating Gardens",
+   "type": "field",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_route.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "119"
+    },
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "121"
+    }
+   ],
+   "look": "Floating Gardens: flower beds and little orchards on drifting garden islands joined by wide short bridges, small waterfalls spilling off the island edges into cloud",
+   "story_note": "Floating garden islands",
+   "file": "art/sections/10_halo/120_floating_gardens.png"
+  },
+  {
+   "id": "121",
+   "planet": "Halo",
+   "name": "Sky Temple 1F",
+   "type": "tower",
+   "size_px": [
+    1024,
+    1536
+   ],
+   "tiles": [
+    16,
+    24
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_tall_tower.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "bottom",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "120"
+    },
+    {
+     "kind": "stairs",
+     "side": "top",
+     "cols": [
+      6,
+      9
+     ],
+     "to": "122"
+    }
+   ],
+   "look": "inside the Sky Temple, ground floor: a pale stone hall in perfect mirrored symmetry, twin pillars and twin shallow pools against the side walls, open arches showing sky",
+   "story_note": "Echo & Iris's temple",
+   "file": "art/sections/10_halo/121_sky_temple_1f.png"
+  },
+  {
+   "id": "122",
+   "planet": "Halo",
+   "name": "Sky Temple 2F",
+   "type": "tower",
+   "size_px": [
+    1024,
+    1536
+   ],
+   "tiles": [
+    16,
+    24
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_tall_keeper.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "bottom",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "121"
+    }
+   ],
+   "look": "the Sky Temple summit: an open-air Keeper arena with twin matching daises on opposite sides, a symmetrical mirrored floor, wind banners",
+   "story_note": "Echo & Iris's temple",
+   "file": "art/sections/10_halo/122_sky_temple_2f.png"
+  },
+  {
+   "id": "123",
+   "planet": "Umbra",
+   "name": "Shadow Tunnel Exit",
+   "type": "cave",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_square_cave_arrival.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "top",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "124"
+    },
+    {
+     "kind": "arrival_point",
+     "where": "the Shadow Tunnel's dark archway at the bottom center of the map (6 tiles wide, set into the bottom rock wall), the warp back to the Shadow Tunnel Mouth on Dustara (027)",
+     "note": "replaces the old 'arrival' edge exit, which was a ghost exit"
+    }
+   ],
+   "look": "the Shadow Tunnel's exit into Umbra: rough black rock walls, a stone arch faintly carved with swirls, cold air, the first iron lantern posts (unlit) along the floor edges",
+   "story_note": "Exit of the Shadow Tunnel",
+   "file": "art/sections/11_umbra/123_shadow_tunnel_exit.png"
+  },
+  {
+   "id": "124",
+   "planet": "Umbra",
+   "name": "Gravewell",
+   "type": "town",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_town.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "123"
+    },
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "127"
+    },
+    {
+     "kind": "door",
+     "label": "Recovery Bay",
+     "to": "125",
+     "building": "5×5"
+    },
+    {
+     "kind": "door",
+     "label": "Shop",
+     "to": "126",
+     "building": "4×4"
+    },
+    {
+     "kind": "door",
+     "label": "House",
+     "to": "house:umbra",
+     "building": "4×4"
+    },
+    {
+     "kind": "door",
+     "label": "House",
+     "to": "house:umbra",
+     "building": "4×4"
+    }
+   ],
+   "look": "Gravewell, the dark lantern city: dark stone streets, close-packed stone buildings, refugee shelters of salvaged white Helix panels as scenery, iron lantern posts glowing warm amber",
+   "story_note": "Dark lantern city",
+   "file": "art/sections/11_umbra/124_gravewell.png"
+  },
+  {
+   "id": "125",
+   "planet": "Umbra",
+   "name": "Gravewell Recovery Bay",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_interior.png",
+   "exits": [
+    {
+     "kind": "doormat",
+     "where": "a 2-tile-wide doormat in the bottom wall gap at columns 7–8, row 14",
+     "to": "124"
+    }
+   ],
+   "look": "Gravewell Recovery Bay: dark stone walls warmed by lantern light, a nurse's counter at the back with glass-seashell healers",
+   "story_note": "",
+   "file": "art/sections/11_umbra/125_gravewell_recovery_bay.png"
+  },
+  {
+   "id": "126",
+   "planet": "Umbra",
+   "name": "Gravewell Shop",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_interior.png",
+   "exits": [
+    {
+     "kind": "doormat",
+     "where": "a 2-tile-wide doormat in the bottom wall gap at columns 7–8, row 14",
+     "to": "124"
+    }
+   ],
+   "look": "Gravewell shop: lantern oil, wicks, glass lantern shades and salvaged gear on wall shelves, one counter at the back, amber light on dark stone",
+   "story_note": "",
+   "file": "art/sections/11_umbra/126_gravewell_shop.png"
+  },
+  {
+   "id": "127",
+   "planet": "Umbra",
+   "name": "Lantern Streets Part A",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_route.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "124"
+    },
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "128"
+    }
+   ],
+   "look": "Lantern Streets: a wide dark stone street lined with iron lantern posts along the edges, some dark, some glowing amber; dark buildings without doors",
+   "story_note": "Lantern-lined streets (Lanterns of Gravewell)",
+   "file": "art/sections/11_umbra/127_lantern_streets_part_a.png"
+  },
+  {
+   "id": "128",
+   "planet": "Umbra",
+   "name": "Lantern Streets Part B",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_route.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "127"
+    },
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "129"
+    }
+   ],
+   "look": "Lantern Streets continued to the city edge, relit amber lanterns along the edges, the road heading toward the Sinkhole",
+   "story_note": "Lantern-lined streets (Lanterns of Gravewell)",
+   "file": "art/sections/11_umbra/128_lantern_streets_part_b.png"
+  },
+  {
+   "id": "129",
+   "planet": "Umbra",
+   "name": "The Sinkhole B1",
+   "type": "cave",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_square_cave.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "bottom",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "128"
+    },
+    {
+     "kind": "edge",
+     "side": "top",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "130"
+    }
+   ],
+   "look": "the Sinkhole B1: a great round pit going down, wide rock ledges, lantern hooks on the walls, dark echoing depths at the sides",
+   "story_note": "The Sinkhole, 4 levels (The well that whispers)",
+   "file": "art/sections/11_umbra/129_the_sinkhole_b1.png"
+  },
+  {
+   "id": "130",
+   "planet": "Umbra",
+   "name": "The Sinkhole B2",
+   "type": "cave",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_square_cave.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "bottom",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "129"
+    },
+    {
+     "kind": "edge",
+     "side": "top",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "131"
+    }
+   ],
+   "look": "the Sinkhole B2: deeper wide ledges and caverns of damp black rock, scattered Helix debris along the walls",
+   "story_note": "The Sinkhole, 4 levels (The well that whispers)",
+   "file": "art/sections/11_umbra/130_the_sinkhole_b2.png"
+  },
+  {
+   "id": "131",
+   "planet": "Umbra",
+   "name": "The Sinkhole B3",
+   "type": "cave",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_square_cave.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "bottom",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "130"
+    },
+    {
+     "kind": "edge",
+     "side": "top",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "132"
+    }
+   ],
+   "look": "the Sinkhole B3: wide caverns, cables trailing down the walls, ruined equipment, a faint violet glow",
+   "story_note": "The Sinkhole, 4 levels (The well that whispers)",
+   "file": "art/sections/11_umbra/131_the_sinkhole_b3.png"
+  },
+  {
+   "id": "132",
+   "planet": "Umbra",
+   "name": "The Sinkhole B4",
+   "type": "cave",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_square_cave.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "bottom",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "131"
+    },
+    {
+     "kind": "edge",
+     "side": "top",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "134"
+    },
+    {
+     "kind": "door",
+     "label": "Kade's Lab",
+     "to": "133",
+     "building": "4×3"
+    }
+   ],
+   "look": "the Sinkhole B4: the bottom, rubble and broken machinery along the walls, and the entrance of a ruined lab built into the rock",
+   "story_note": "The Sinkhole, 4 levels (The well that whispers)",
+   "file": "art/sections/11_umbra/132_the_sinkhole_b4.png"
+  },
+  {
+   "id": "133",
+   "planet": "Umbra",
+   "name": "Kade's Lab",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_interior.png",
+   "exits": [
+    {
+     "kind": "doormat",
+     "where": "a 2-tile-wide doormat in the bottom wall gap at columns 7–8, row 14",
+     "to": "132"
+    }
+   ],
+   "look": "Kade's ruined lab at the bottom of the Sinkhole: wrecked workbenches and broken engine parts against the walls, scattered schematics, dead monitors, dim lantern light",
+   "story_note": "Kade's lab (Kade's Notes)",
+   "file": "art/sections/11_umbra/133_kade_s_lab.png"
+  },
+  {
+   "id": "134",
+   "planet": "Umbra",
+   "name": "Gravewell Tower 1F",
+   "type": "tower",
+   "size_px": [
+    1024,
+    1536
+   ],
+   "tiles": [
+    16,
+    24
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_tall_tower.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "bottom",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "132"
+    },
+    {
+     "kind": "stairs",
+     "side": "top",
+     "cols": [
+      6,
+      9
+     ],
+     "to": "135"
+    }
+   ],
+   "look": "inside the Gravewell Tower, ground floor: dark stone with swirling Ystran carvings, rows of lanterns along the walls",
+   "story_note": "Keeper Kade's tower",
+   "file": "art/sections/11_umbra/134_gravewell_tower_1f.png"
+  },
+  {
+   "id": "135",
+   "planet": "Umbra",
+   "name": "Gravewell Tower 2F",
+   "type": "tower",
+   "size_px": [
+    1024,
+    1536
+   ],
+   "tiles": [
+    16,
+    24
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_tall_keeper.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "bottom",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "134"
+    }
+   ],
+   "look": "the Gravewell Tower top: the Keeper arena of dark stone lit by a ring of lanterns, the tower crystal glowing at the back wall",
+   "story_note": "Keeper Kade's tower",
+   "file": "art/sections/11_umbra/135_gravewell_tower_2f.png"
+  },
+  {
+   "id": "136",
+   "planet": "Starfall Rift",
+   "name": "Rim Camp",
+   "type": "town",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_town_arrival.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "138"
+    },
+    {
+     "kind": "arrival_point",
+     "where": "a round landing pad of packed red earth ringed by sandbags (6×6 tiles, no ship drawn) at the left end of the road",
+     "note": "replaces the old 'arrival' edge exit, which was a ghost exit"
+    },
+    {
+     "kind": "door",
+     "label": "Medic tent",
+     "to": "137",
+     "building": "5×4"
+    },
+    {
+     "kind": "door",
+     "label": "Tent",
+     "to": "house:starfall",
+     "building": "4×4"
+    },
+    {
+     "kind": "door",
+     "label": "Tent",
+     "to": "house:starfall",
+     "building": "4×4"
+    }
+   ],
+   "look": "the Rim Camp, a military cordon on the crater rim: khaki canvas tents, sandbag walls, chain fences and floodlights along the edges, a checkpoint gate (open) on the road, the crater's purple glow",
+   "story_note": "Military cordon camp",
+   "file": "art/sections/12_starfall/136_rim_camp.png"
+  },
+  {
+   "id": "137",
+   "planet": "Starfall Rift",
+   "name": "Rim Camp Medic Tent",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_interior.png",
+   "exits": [
+    {
+     "kind": "doormat",
+     "where": "a 2-tile-wide doormat in the bottom wall gap at columns 7–8, row 14",
+     "to": "136"
+    }
+   ],
+   "look": "the Rim Camp medic tent: canvas walls, cots along the walls, medicine crates, a glass-seashell healer behind a folding counter, red-dust floor",
+   "story_note": "Recovery tent interior",
+   "file": "art/sections/12_starfall/137_rim_camp_medic_tent.png"
+  },
+  {
+   "id": "138",
+   "planet": "Starfall Rift",
+   "name": "Seedpod Fields Part A",
+   "type": "field",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_route.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "136"
+    },
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "139"
+    }
+   ],
+   "look": "the Seedpod Fields: a valley of huge cracked seedpod shells half-buried in red earth, glowing gold, violet and green, standing as solid blocks along the edges; drift grass",
+   "story_note": "Fields of cracked seedpod shells",
+   "file": "art/sections/12_starfall/138_seedpod_fields_part_a.png"
+  },
+  {
+   "id": "139",
+   "planet": "Starfall Rift",
+   "name": "Seedpod Fields Part B",
+   "type": "field",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_route.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "138"
+    },
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "140"
+    }
+   ],
+   "look": "the Seedpod Fields continued: cracked glowing shells of every size, including one small saucer-sized pod shell near the road",
+   "story_note": "Fields of cracked seedpod shells",
+   "file": "art/sections/12_starfall/139_seedpod_fields_part_b.png"
+  },
+  {
+   "id": "140",
+   "planet": "Starfall Rift",
+   "name": "Teo's Old Camp",
+   "type": "landmark",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_route.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "139"
+    },
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "141"
+    }
+   ],
+   "look": "Teo's old camp, abandoned for six years: a sun-bleached weathered tent, a cold fire ring, a mining lantern and a crate with a journal, scattered star charts, red rock",
+   "story_note": "Teo's abandoned camp (Teo's Journal)",
+   "file": "art/sections/12_starfall/140_teo_s_old_camp.png"
+  },
+  {
+   "id": "141",
+   "planet": "Starfall Rift",
+   "name": "Crater Rim",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_route.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "140"
+    },
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "142"
+    }
+   ],
+   "look": "the Crater Rim: a wide red-rock path along the rim of the huge Starfall Crater, the crater's purple glow filling one side as a sheer drop",
+   "story_note": "Rim of the crater",
+   "file": "art/sections/12_starfall/141_crater_rim.png"
+  },
+  {
+   "id": "142",
+   "planet": "Starfall Rift",
+   "name": "Crater Descent B1",
+   "type": "cave",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_square_cave.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "bottom",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "141"
+    },
+    {
+     "kind": "edge",
+     "side": "top",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "143"
+    }
+   ],
+   "look": "Crater Descent B1: wide ledges of glowing purple-lit rock going down, crystal shards along the walls",
+   "story_note": "Descent into the crater, 3 levels",
+   "file": "art/sections/12_starfall/142_crater_descent_b1.png"
+  },
+  {
+   "id": "143",
+   "planet": "Starfall Rift",
+   "name": "Crater Descent B2",
+   "type": "cave",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_square_cave.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "bottom",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "142"
+    },
+    {
+     "kind": "edge",
+     "side": "top",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "144"
+    }
+   ],
+   "look": "Crater Descent B2: brighter glowing rock walls, crystal clusters, a wide flat ledge, wrecked Helix drones along the walls",
+   "story_note": "Descent into the crater, 3 levels",
+   "file": "art/sections/12_starfall/143_crater_descent_b2.png"
+  },
+  {
+   "id": "144",
+   "planet": "Starfall Rift",
+   "name": "Crater Descent B3",
+   "type": "cave",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_square_cave.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "bottom",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "143"
+    },
+    {
+     "kind": "edge",
+     "side": "top",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "145"
+    }
+   ],
+   "look": "Crater Descent B3: the deepest glowing rock and crystal clusters, a disarmed gravity-trap device, a Helix maintenance path",
+   "story_note": "Descent into the crater, 3 levels",
+   "file": "art/sections/12_starfall/144_crater_descent_b3.png"
+  },
+  {
+   "id": "145",
+   "planet": "Starfall Rift",
+   "name": "Rift Engine Platform",
+   "type": "landmark",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_deadend.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "144"
+    }
+   ],
+   "look": "the Rift Engine Platform at the crater bottom: a ring of white Helix machines around a crack in the air glowing purple, a control console, orange ring logos (shape only)",
+   "story_note": "Helix Rift Engine platform (M19 Thorne at the Rift)",
+   "file": "art/sections/12_starfall/145_rift_engine_platform.png"
+  },
+  {
+   "id": "146",
+   "planet": "Apex Array",
+   "name": "Summit Lift",
+   "type": "landmark",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_arrival.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "151"
+    },
+    {
+     "kind": "arrival_point",
+     "where": "the glass lift cabin's platform at the left end of the terrace (6×6 tiles)",
+     "note": "replaces the old 'arrival' edge exit, which was a ghost exit"
+    },
+    {
+     "kind": "door",
+     "label": "Hall of Crystal",
+     "to": "147",
+     "building": "6×5"
+    },
+    {
+     "kind": "door",
+     "label": "Apex Library",
+     "to": "152",
+     "building": "5×4"
+    }
+   ],
+   "look": "the Summit Lift station high on a snowy mountain above the clouds: a glass lift cabin on its track as an arrival platform, a stone-and-glass terrace with brass fittings, the observatory halls and library along the top",
+   "story_note": "Lift station up the mountain",
+   "file": "art/sections/13_apex/146_summit_lift.png"
+  },
+  {
+   "id": "147",
+   "planet": "Apex Array",
+   "name": "Observatory Halls 1F",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_interior.png",
+   "exits": [
+    {
+     "kind": "doormat",
+     "where": "a 2-tile-wide doormat in the bottom wall gap at columns 7–8, row 14",
+     "to": "146"
+    },
+    {
+     "kind": "stairs_up",
+     "where": "a 2-tile-wide staircase UP against the back wall in the top-right corner (columns 12–13, rows 3–4)",
+     "to": "148"
+    }
+   ],
+   "look": "the Hall of Crystal: polished pale stone, glass cases of crystals and faceted crystal pillars against the walls throwing rainbow light, a crystal-inlaid battle floor",
+   "story_note": "Quorum observatory halls, 4 halls",
+   "file": "art/sections/13_apex/147_observatory_halls_1f.png"
+  },
+  {
+   "id": "148",
+   "planet": "Apex Array",
+   "name": "Observatory Halls 2F",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_interior.png",
+   "exits": [
+    {
+     "kind": "stairs_down",
+     "where": "a 2-tile-wide staircase DOWN against the back wall in the top-right corner (columns 12–13, rows 3–4)",
+     "to": "147"
+    },
+    {
+     "kind": "stairs_up",
+     "where": "a 2-tile-wide staircase UP against the back wall in the top-left corner (columns 2–3, rows 3–4)",
+     "to": "149"
+    }
+   ],
+   "look": "the Hall of Sound: a concert-hall chamber with organ pipes and great brass horns built into the walls, framed gold records, a stage-like battle floor",
+   "story_note": "Quorum observatory halls, 4 halls",
+   "file": "art/sections/13_apex/148_observatory_halls_2f.png"
+  },
+  {
+   "id": "149",
+   "planet": "Apex Array",
+   "name": "Observatory Halls 3F",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_interior.png",
+   "exits": [
+    {
+     "kind": "stairs_down",
+     "where": "a 2-tile-wide staircase DOWN against the back wall in the top-left corner (columns 2–3, rows 3–4)",
+     "to": "148"
+    },
+    {
+     "kind": "stairs_up",
+     "where": "a 2-tile-wide staircase UP against the back wall in the top-right corner (columns 12–13, rows 3–4)",
+     "to": "150"
+    }
+   ],
+   "look": "the Hall of Fire: a dark stone hall lit by tall braziers along the walls and a fire channel behind a grate, ember-red banners, a plain dais at the back",
+   "story_note": "Quorum observatory halls, 4 halls",
+   "file": "art/sections/13_apex/149_observatory_halls_3f.png"
+  },
+  {
+   "id": "150",
+   "planet": "Apex Array",
+   "name": "Observatory Halls 4F",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_interior.png",
+   "exits": [
+    {
+     "kind": "stairs_down",
+     "where": "a 2-tile-wide staircase DOWN against the back wall in the top-right corner (columns 12–13, rows 3–4)",
+     "to": "149"
+    }
+   ],
+   "look": "the Hall of Gravity: a heavy dark stone hall with floating stone rings and slowly orbiting pebbles high along the walls, a viewing window toward the Starfall Crater",
+   "story_note": "Quorum observatory halls, 4 halls",
+   "file": "art/sections/13_apex/150_observatory_halls_4f.png"
+  },
+  {
+   "id": "151",
+   "planet": "Apex Array",
+   "name": "Great Telescope",
+   "type": "arena",
+   "size_px": [
+    1024,
+    1536
+   ],
+   "tiles": [
+    16,
+    24
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_tall_keeper.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "bottom",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "146"
+    }
+   ],
+   "look": "the Great Telescope chamber: an enormous brass-and-glass telescope on a raised platform at the back, aimed up through an opening dome, a ring of eight shard sockets around its base, star charts on the walls",
+   "story_note": "Prime Linker Orra's chamber under the Great Telescope",
+   "file": "art/sections/13_apex/151_great_telescope.png"
+  },
+  {
+   "id": "152",
+   "planet": "Apex Array",
+   "name": "Apex Library",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_interior.png",
+   "exits": [
+    {
+     "kind": "doormat",
+     "where": "a 2-tile-wide doormat in the bottom wall gap at columns 7–8, row 14",
+     "to": "146"
+    }
+   ],
+   "look": "the Apex Library: tall wooden shelves of rolled star charts and books against the walls, brass astrolabes and orreries in the corners, one glass-topped map table showing fourteen worlds",
+   "story_note": "Library of star charts (Star Chart)",
+   "file": "art/sections/13_apex/152_apex_library.png"
+  },
+  {
+   "id": "153",
+   "planet": "Ystra",
+   "name": "Arrival Fragment",
+   "type": "landmark",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_arrival.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "154"
+    },
+    {
+     "kind": "arrival_point",
+     "where": "a ring of pale carved stones on the ground where travelers arrive (6×6 tiles, faintly glowing) at the left end of the road",
+     "note": "replaces the old 'arrival' edge exit, which was a ghost exit"
+    },
+    {
+     "kind": "door",
+     "label": "Research dome",
+     "to": "int_arrival_research_dome",
+     "building": "5×5"
+    }
+   ],
+   "look": "the Arrival Fragment: a fragment of dead crystal forest, glass trees thin as spires along the edges, barren gray crystal ground with faint blue moss that no longer glows, a pale research dome",
+   "story_note": "Floating fragment where you arrive",
+   "file": "art/sections/14_ystra/153_arrival_fragment.png"
+  },
+  {
+   "id": "154",
+   "planet": "Ystra",
+   "name": "Floating Continents Part A",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_route.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "153"
+    },
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "155"
+    }
+   ],
+   "look": "Floating Continents: islands of rock and gray crystal drifting over open void, joined by a wide broken Ystran sky-bridge of pale stone (whole where you walk), dead crystal trees on the islands",
+   "story_note": "Floating continents",
+   "file": "art/sections/14_ystra/154_floating_continents_part_a.png"
+  },
+  {
+   "id": "155",
+   "planet": "Ystra",
+   "name": "Floating Continents Part B",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_route.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "154"
+    },
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "156"
+    }
+   ],
+   "look": "Floating Continents continued: larger drifting islands of gray crystal, pale-stone bridge segments, a crumbling island at the edge",
+   "story_note": "Floating continents",
+   "file": "art/sections/14_ystra/155_floating_continents_part_b.png"
+  },
+  {
+   "id": "156",
+   "planet": "Ystra",
+   "name": "Drowned Seas",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_route.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "155"
+    },
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "157"
+    }
+   ],
+   "look": "the Drowned Seas: a shoreline of gray crystal beside glowing water, drowned towers and arches of pale carved stone visible under the surface, a wide stone causeway",
+   "story_note": "Drowned seas",
+   "file": "art/sections/14_ystra/156_drowned_seas.png"
+  },
+  {
+   "id": "157",
+   "planet": "Ystra",
+   "name": "Sun Forge",
+   "type": "landmark",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_route.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "156"
+    },
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "158"
+    }
+   ],
+   "look": "the Sun Forge: a tall pillar-furnace of dark stone and glowing crystal pouring molten light upward, set at the back as a solid block, scorched crystal ground, heat shimmer",
+   "story_note": "Sun Forge pillar",
+   "file": "art/sections/14_ystra/157_sun_forge.png"
+  },
+  {
+   "id": "158",
+   "planet": "Ystra",
+   "name": "Crystal Ruins 1F",
+   "type": "dungeon",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_square_cave.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "bottom",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "157"
+    },
+    {
+     "kind": "edge",
+     "side": "top",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "159"
+    }
+   ],
+   "look": "Crystal Ruins 1F, the broken Choir chamber: a vast hall of shattered crystal pipes along the walls, fallen arches and ringed tiers, swirling carvings",
+   "story_note": "Crystal ruins",
+   "file": "art/sections/14_ystra/158_crystal_ruins_1f.png"
+  },
+  {
+   "id": "159",
+   "planet": "Ystra",
+   "name": "Crystal Ruins 2F",
+   "type": "dungeon",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_square_cave.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "bottom",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "158"
+    },
+    {
+     "kind": "edge",
+     "side": "top",
+     "cols": [
+      5,
+      10
+     ],
+     "to": "160"
+    }
+   ],
+   "look": "Crystal Ruins 2F, the explorers' map room: cracked crystal walls covered in star maps, a carved symbol shaped like a question mark on the back wall, broken pedestals along the walls",
+   "story_note": "Crystal ruins",
+   "file": "art/sections/14_ystra/159_crystal_ruins_2f.png"
+  },
+  {
+   "id": "160",
+   "planet": "Ystra",
+   "name": "Blighted Forest Part A",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_route.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "159"
+    },
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "161"
+    }
+   ],
+   "look": "the Blighted Forest: gray, silent dead crystal trees in solid blocks along the edges, ashen ground, no color",
+   "story_note": "Blighted forest (Blight Cleansing)",
+   "file": "art/sections/14_ystra/160_blighted_forest_part_a.png"
+  },
+  {
+   "id": "161",
+   "planet": "Ystra",
+   "name": "Blighted Forest Part B",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_route.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "160"
+    },
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "162"
+    }
+   ],
+   "look": "the Blighted Forest deeper: gray dead trees thickening along the edges, darkness pooling between them",
+   "story_note": "Blighted forest (Blight Cleansing)",
+   "file": "art/sections/14_ystra/161_blighted_forest_part_b.png"
+  },
+  {
+   "id": "162",
+   "planet": "Ystra",
+   "name": "Edge of the Void",
+   "type": "landmark",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_route.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "161"
+    },
+    {
+     "kind": "edge",
+     "side": "right",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "163"
+    }
+   ],
+   "look": "the Edge of the Void: gray crystal ground that simply stops in a jagged edge, beyond it darkness so complete it has no shape, a faint lip of light along the edge",
+   "story_note": "Edge of the void where Oblivane waits",
+   "file": "art/sections/14_ystra/162_edge_of_the_void.png"
+  },
+  {
+   "id": "163",
+   "planet": "Ystra",
+   "name": "Seedmother's Grove",
+   "type": "landmark",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_deadend.png",
+   "exits": [
+    {
+     "kind": "edge",
+     "side": "left",
+     "rows": [
+      5,
+      10
+     ],
+     "to": "162"
+    }
+   ],
+   "look": "the Seedmother's crater: a vast empty crater floor of gray crystal with one faint warm glow at its center, the Heartroot, the last living root (drawn as a small glowing root knot set in a solid block you walk up to)",
+   "story_note": "The Seedmother's grove (finale)",
+   "file": "art/sections/14_ystra/163_seedmother_s_grove.png"
+  },
+  {
+   "id": "165",
+   "planet": "Dustara",
+   "name": "Recovery Bay Attic",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_interior.png",
+   "exits": [
+    {
+     "kind": "ladder_down",
+     "where": "a 2-tile-wide floor hatch with a ladder DOWN in the bottom-left corner of the floor (columns 2–3, rows 12–13)",
+     "to": "005"
+    }
+   ],
+   "look": "the attic under the Recovery Bay's white dome: low sloping white walls, dusty trunks and boxes against the walls, bandage tins, a knitted blanket, a small window letting in cyan town light, an old journal on a small table",
+   "story_note": "Book 4, Ch 4: Nana Wren's journal. Ladder from 005 Dustmere Recovery Bay (pick a tile behind the counter). Quest M19b step 2 'nana_journal' moves here.",
+   "file": "art/sections/01_dustara/165_recovery_bay_attic.png"
+  },
+  {
+   "id": "166",
+   "planet": "Dustara",
+   "name": "Reyes House",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_interior.png",
+   "exits": [
+    {
+     "kind": "doormat",
+     "where": "a 2-tile-wide doormat in the bottom wall gap at columns 7–8, row 14",
+     "to": "004"
+    }
+   ],
+   "look": "the Reyes family's dome house next door to the hero's: round honey-sandstone walls and round windows, moving-in boxes stacked against the walls, a kitchen table with a slightly burned cactus-berry pie, a cot by a window, an olive-green jacket on a hook, a wall map of the Kessler system with pins and string",
+   "story_note": "Book 4, Ch 1: Teo and Sola move in next door. Door on one of the plaza houses in 004 (check data/connections_report.md for the unused house doors). NPCs Teo and Sola stand here after M19.",
+   "file": "art/sections/01_dustara/166_reyes_house_1f.png"
+  },
+  {
+   "id": "167",
+   "planet": "Thalassa",
+   "name": "Ghost Ship Hold",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_interior.png",
+   "exits": [
+    {
+     "kind": "stairs_down",
+     "where": "a wide metal staircase leading UP and out, set in the bottom wall gap at columns 6–9, row 14",
+     "to": "052"
+    }
+   ],
+   "look": "the hold of a big old dark cargo ship: clanging metal walls stacked floor-to-ceiling with empty metal cages (doors open, tipped food bowls, scratch marks), a desk in one corner under a single bare bulb with a black logbook",
+   "story_note": "Book 1: the howl in the hold is a lost Chirpod (side quest S40). Door or gangplank from 052 Port Saltreach Docks. The S40 cutscene can move here as a walk-in scene.",
+   "file": "art/sections/04_thalassa/167_ghost_ship_hold.png"
+  },
+  {
+   "id": "168",
+   "planet": "Thalassa",
+   "name": "Helix Freighter",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_interior.png",
+   "exits": [
+    {
+     "kind": "gangplank",
+     "where": "a wide gangplank exit set in the bottom wall gap at columns 6–9, row 14",
+     "to": "052"
+    }
+   ],
+   "look": "inside a Helix freighter: white steel deck with orange ring-with-slash logos (shape only), stacked crates and a cargo crane along the walls, a secure vault bay at the back where a sea-blue crystal core sits chained in a cradle",
+   "story_note": "Book 3, Ch 5: Harbor Reclaimed (main quest M17b). Gangplank from 052. The freighter crew battle (M17b:1) and the tower core (M17b:2) move here.",
+   "file": "art/sections/04_thalassa/168_helix_freighter.png"
+  },
+  {
+   "id": "169",
+   "planet": "Thalassa",
+   "name": "Smuggler's Freighter",
+   "type": "landmark",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_wide_deadend.png",
+   "exits": [
+    {
+     "kind": "arrival_point",
+     "where": "the rope gangway at the left end of the deck where Captain Marsh's boat is tied alongside (the boat, not drawn, is the way back to Port Saltreach Docks, 052)",
+     "note": "replaces the old 'arrival' edge exit, which was a ghost exit"
+    }
+   ],
+   "look": "the deck of a battered smuggler's freighter off Thalassa at night: a wide rusty deck, closed cargo hatches, cranes and tarps along the rails, ropes and crates, a wheelhouse at the back; turquoise sea around it",
+   "story_note": "Book 4, Ch 9: Marsh, Pell and the player catch Admin Vex (Homecoming, M19b step 4). Reached by boat from 052.",
+   "file": "art/sections/04_thalassa/169_smugglers_freighter.png"
+  },
+  {
+   "id": "170",
+   "planet": "Neonis",
+   "name": "Neonis Courtroom",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "guide": "scale_guides/guide_interior.png",
+   "exits": [
+    {
+     "kind": "doormat",
+     "where": "a 2-tile-wide doormat in the bottom wall gap at columns 7–8, row 14",
+     "to": "063"
+    }
+   ],
+   "look": "the Neonis courtroom: a tall glass-and-steel chamber lit by neon city light through high windows, rows of benches along both side walls, a raised judge's bench at the back, a witness stand and a dock beside it, broadcast cameras in the corners",
+   "story_note": "Book 4, Ch 7: Thorne's trial (Homecoming, M19b step 3, now a cutscene at 062). Door on Neon Boulevard (063) or Arcade District (066).",
+   "file": "art/sections/05_neonis/170_neonis_courtroom.png"
+  }
+ ]
+}
