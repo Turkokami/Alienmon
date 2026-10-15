@@ -197,7 +197,7 @@ function qDraw(cx,cy,S,cs){for(const e of qEnts()){const x=e.x*S-cx,y=e.y*S-cy;i
   if(e.k==='beacon'){if(frame%30<20){ctx.fillStyle='rgba(95,242,255,0.55)';ctx.beginPath();ctx.ellipse(x,y,6*S/0.22*0.22+3,2.5,0,0,6.283);ctx.fill()}continue}
   if(e.k==='legend'){const im=OWI[e.mon];if(okI(im))ctx.drawImage(im,((frame>>4)&1)*64,0,64,64,Math.round(x-cs*0.6),Math.round(y-cs*1.2),Math.round(cs*1.2),Math.round(cs*1.2))}
   else if(e.art&&!qPainted(e))dchar(e.art,Math.round(x-cs/2),Math.round(y-cs-1),cs,cs);
-  if(e.mark){const my=Math.round(y-cs-9+Math.sin(frame/8)),done=e.k==='turnin'&&qReady(e);box(Math.round(x-4),my,9,9,e.mark==='!'||done?'#ffd23f':'#d8d0e8','#1b1424');txt(e.mark,Math.round(x-2),my+1,'#1b1424',6)}}}
+  if(e.mark){const my=Math.round(y-cs-17+Math.sin(frame/8)*1.5),done=e.k==='turnin'&&qReady(e),c=e.mark==='!'||done?'#ffd23f':'#d8d0e8',bx=Math.round(x-5);ctx.fillStyle='#1b1424';ctx.fillRect(bx,my,11,12);ctx.fillRect(bx+4,my+12,3,2);ctx.fillStyle=c;ctx.fillRect(bx+1,my+1,9,10);ctx.fillRect(bx+5,my+11,1,1);txt(e.mark,bx+3,my+3,'#1b1424',6)}}}
 // a talk target that is already painted into the town art (or is a world NPC) only gets the marker
 function qPainted(e){if(typeof secOn==='function'&&secOn())return!!secNpcAt(SWORLD[G.sec.id],Math.floor(e.x/16),Math.floor(e.y/16));if(scene==='world')return WORLD.npcs.some(n=>Math.hypot(n.x-e.x,n.y-e.y)<30);const P=paintOf();return!!(P&&P.hot.some(h=>(h.k==='talk'||h.k==='npc'||h.k==='mon')&&Math.hypot(h.x-e.x,h.y-e.y)<40))}
 function qReady(e){const o=e.o;if(o.type==='deliver')return G.items[o.target]>0;if(o.type==='show'){const ty=o.target.replace(/^(type|mon):/,'');return G.party.some(m=>o.target.startsWith('mon:')?storyIsMon(m,ty):(D[m.id].t||[]).includes(ty))}return true}

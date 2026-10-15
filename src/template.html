@@ -91,11 +91,13 @@ const FXI=lazyImgs(FXD);
 const SCI=lazyImgs(SCN);
 function cover(img,x,y,w,h,fx){const ir=img.naturalWidth/img.naturalHeight,tr=w/h;let sw=img.naturalWidth,sh=img.naturalHeight,sx=0,sy=0;if(ir>tr){sw=sh*tr;sx=(img.naturalWidth-sw)/2}else{sh=sw/tr;sy=(img.naturalHeight-sh)/2}
  ctx.save();ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';if(fx)ctx.filter=fx;ctx.drawImage(img,sx,sy,sw,sh,x,y,w,h);ctx.restore()}
-const CHI=lazyImgs(CHAR),PORTI=lazyImgs(PORT);
+const CHI=lazyImgs(CHAR),PORTI=lazyImgs(PORT),TALKI=lazyImgs(__TALKPORT__);
 // the speaker fills the screen above the text box: a full portrait when there is one, otherwise their sprite
-function drawPortrait(k,bottom){const im=okI(PORTI[k])?PORTI[k]:okI(CHI[k])?CHI[k]:null;if(!im||bottom<30)return;
- ctx.fillStyle='rgba(18,12,34,0.78)';ctx.fillRect(0,0,160,bottom);const z=Math.min(bottom-2,112);
- ctx.save();ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';if(im===PORTI[k]){const sw=im.naturalWidth,sh=Math.round(im.naturalHeight*0.6),h=bottom-2,w=Math.round(h*sw/sh);ctx.drawImage(im,0,0,sw,sh,Math.round(80-w/2),bottom-h,w,h)}else ctx.drawImage(im,Math.round(80-z/2),bottom-z,z,z);ctx.restore()}
+function drawPortrait(k,bottom){const tk=TALKI[k],im=okI(tk)?tk:okI(PORTI[k])?PORTI[k]:okI(CHI[k])?CHI[k]:null;if(!im||bottom<30)return;
+ ctx.fillStyle='rgba(18,12,34,0.78)';ctx.fillRect(0,0,160,bottom);ctx.save();ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';
+ if(im===tk){const h0=bottom-4,s=Math.min(h0/im.naturalHeight,150/im.naturalWidth),w=im.naturalWidth*s,h=im.naturalHeight*s;ctx.drawImage(im,Math.round(80-w/2),bottom-h,w,h)}   // the sheet's bust illustration, whole
+ else if(im===PORTI[k]){const sw=im.naturalWidth,sh=Math.round(im.naturalHeight*0.6),h=bottom-2,w=Math.round(h*sw/sh);ctx.drawImage(im,0,0,sw,sh,Math.round(80-w/2),bottom-h,w,h)}
+ else{const z=Math.min(bottom-2,112);ctx.drawImage(im,Math.round(80-z/2),bottom-z,z,z)}ctx.restore()}
 const okI=i=>i&&i.complete&&i.naturalWidth;
 function dchar(k,x,y,w,h,flip){const i=CHI[k];if(!okI(i))return false;ctx.save();ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';if(flip){ctx.translate(x+w,y);ctx.scale(-1,1);ctx.drawImage(i,0,0,w,h)}else ctx.drawImage(i,x,y,w,h);ctx.restore();return true}
 const SHIPI=new Image();if(SHIP)SHIPI.src=SHIP;const CUTI=CUTS.map(u=>{const i=new Image();i.src=u;return i});
