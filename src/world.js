@@ -4,8 +4,9 @@
 const WSTATE=__WORLDSTATE__;
 const mDone=id=>!!(G&&G.quests&&G.quests[id]&&G.quests[id].state==='done');
 // Free roam (skip the story locks) exists only in the private beta and local test builds
-const canFreeRoam=()=>!!BETA||(!INLINE&&/^(localhost|127\.|\[::1\])/.test(location.hostname));   // the Android app (inline build) also runs on localhost: no free roam there
-const freeRoam=()=>!!(G&&G.opt&&G.opt.freeRoam&&canFreeRoam());
+const PROTO=__PROTO__;   // maps-v2 prototype build: free roam on by default (Options can still turn it off)
+const canFreeRoam=()=>PROTO||!!BETA||(!INLINE&&/^(localhost|127\.|\[::1\])/.test(location.hostname));   // the Android app (inline build) also runs on localhost: no free roam there
+const freeRoam=()=>!!(G&&canFreeRoam()&&(PROTO?!(G.opt&&G.opt.freeRoam===false):G.opt&&G.opt.freeRoam));
 // leaving a town: worlds joined to the Molten Frontier by a gate walk back through it; Helix Station uses its shuttle
 const exitDoor=key=>key==='helix'?'space':(nodeOf(key)?key:null);
 
