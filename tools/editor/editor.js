@@ -247,18 +247,19 @@ function dragProp(X, Y) {   // X,Y = wanted top-left of the sprite in world pixe
 function panel() {
   const P = $('#panel'), m = S.mode; let h = '';
   if (S.sel) h += selPanel();
+  const PRE = `<div id="preview"><div class="box" id="pbox"></div><div class="cap" id="pcap">Hover over an item to see it large</div><div class="sizes">Item size <input type="range" id="cellsz" min="70" max="300" value="${S.cell || Math.round(Math.max(100, Math.min(200, innerWidth * 0.065)))}"></div></div>`;
   if (m === 'props') {
-    h += `<h3>Props</h3><label>Sheet <select id="sheet">${Object.keys(ED.props).map(d => `<option ${d === S.sheet ? 'selected' : ''}>${d}</option>`).join('')}</select></label>
+    h += PRE + `<h3>Props</h3><label>Sheet <select id="sheet">${Object.keys(ED.props).map(d => `<option ${d === S.sheet ? 'selected' : ''}>${d}</option>`).join('')}</select></label>
       <label class="row"><input type="checkbox" id="flat" ${S.flatNext ? 'checked' : ''}> place as a flat rug (walk over it)</label>
-      <div class="grid">${(ED.props[S.sheet] || []).map(p => { const key = S.sheet + '/' + String(p.n).padStart(2, '0'); return `<button class="pal ${S.stamp && S.stamp.p === key ? 'on' : ''}" data-p="${key}" title="#${p.n}"><img src="${p.url}"></button>`; }).join('')}</div>`;
+      <div class="grid">${(ED.props[S.sheet] || []).map(p => { const key = S.sheet + '/' + String(p.n).padStart(2, '0'); return `<button class="pal ${S.stamp && S.stamp.p === key ? 'on' : ''}" data-p="${key}" data-cap="${S.sheet} #${p.n} · ${p.px[0]}×${p.px[1]} px · about ${Math.max(1, Math.round(p.px[0] / 16))} tile(s) wide" title="#${p.n}"><img src="${p.url}"></button>`; }).join('')}</div>`;
   } else if (m === 'people') {
-    h += `<h3>People</h3><p class="hint">Pick a character, then click the map. Drag anyone to move them.</p>
+    h += PRE + `<h3>People</h3><p class="hint">Pick a character, then click the map. Drag anyone to move them.</p>
       <label>Name (optional) <input id="pname" value="${S.pname || ''}"></label><label>What they say <input id="pline" value="${S.pline || ''}" placeholder="Nice day, isn't it?"></label>
-      <div class="grid">${Object.entries(ED.chars).map(([k, u]) => `<button class="pal ${S.stamp && S.stamp.art === k ? 'on' : ''}" data-c="${k}" title="${k}"><img src="${u}"></button>`).join('')}</div>`;
+      <div class="grid">${Object.entries(ED.chars).map(([k, u]) => `<button class="pal ${S.stamp && S.stamp.art === k ? 'on' : ''}" data-c="${k}" data-cap="${k}" title="${k}"><img src="${u}"></button>`).join('')}</div>`;
   } else if (m === 'mons') {
-    h += `<h3>Wild Alienmon</h3><p class="hint">Roaming Alienmon you can bump into for a battle. Placing one here replaces the automatic ones on that map piece.</p>
+    h += PRE + `<h3>Wild Alienmon</h3><p class="hint">Roaming Alienmon you can bump into for a battle. Placing one here replaces the automatic ones on that map piece.</p>
       <input id="msearch" placeholder="Search Alienmon" value="${S.msearch || ''}">
-      <div class="grid">${Object.entries(ED.mons).filter(([k]) => !S.msearch || k.toLowerCase().includes(S.msearch.toLowerCase())).map(([k, u]) => `<button class="pal mon ${S.stamp && S.stamp.mon === k ? 'on' : ''}" data-m="${k}" title="${k}"><span style="background-image:url(${u})"></span></button>`).join('')}</div>`;
+      <div class="grid">${Object.entries(ED.mons).filter(([k]) => !S.msearch || k.toLowerCase().includes(S.msearch.toLowerCase())).map(([k, u]) => `<button class="pal mon ${S.stamp && S.stamp.mon === k ? 'on' : ''}" data-m="${k}" data-cap="${k}" title="${k}"><span style="background-image:url(${u})"></span></button>`).join('')}</div>`;
   } else if (m === 'walls') {
     h += `<h3>Walls</h3><p class="hint">Paint where you can walk. Red = wall, green = tall grass (wild battles), clear = walkable.</p>
       <div class="row">${[['#', 'Wall'], ['.', 'Walkable'], [',', 'Tall grass']].map(([c, n]) => `<button class="tool ${S.brush === c ? 'on' : ''}" data-b="${c}">${n}</button>`).join('')}</div>`;
@@ -293,8 +294,16 @@ function mapPanel() {
     <p class="hint">The new piece starts fully walkable inside a wall border with the opening cut on the joining edge. Use Walls to paint its walls, then dress it.</p>
     ${MAPS.length ? '<h4>Added this session</h4>' + MAPS.map(m => `<div>${m.id} ${m.name} → ${m.attach.side} of ${m.attach.to}</div>`).join('') : ''}`;
 }
+function showPreview(b) {
+  const box = $('#pbox'), cap = $('#pcap'); if (!box) return;
+  const im = b.querySelector('img'), sp = b.querySelector('span');
+  box.innerHTML = im ? `<img src="${im.src}">` : sp ? `<span style="${sp.getAttribute('style')}"></span>` : ''; cap.textContent = b.dataset.cap || '';
+}
 function wire() {
   const on = (sel, ev, f) => { const el = $(sel); if (el) el.addEventListener(ev, f); };
+  document.querySelectorAll('.pal').forEach(b => { b.addEventListener('mouseenter', () => showPreview(b)); b.addEventListener('focus', () => showPreview(b)); });
+  const cur = document.querySelector('.pal.on'); if (cur) showPreview(cur);
+  on('#cellsz', 'input', e => { S.cell = +e.target.value; document.documentElement.style.setProperty('--cell', S.cell + 'px'); try { localStorage.setItem('ed_cell', S.cell); } catch (x) {} });
   on('#sheet', 'change', e => { S.sheet = e.target.value; panel(); });
   on('#flat', 'change', e => { S.flatNext = e.target.checked; if (S.stamp && S.stamp.kind === 'prop') S.stamp.flat = S.flatNext; });
   document.querySelectorAll('[data-p]').forEach(b => b.onclick = () => { S.stamp = { kind: 'prop', p: b.dataset.p, flat: !!S.flatNext }; S.sel = null; panel(); });
@@ -416,6 +425,11 @@ async function boot() {
   $('#zin').onclick = () => { S.zoom = Math.min(8, S.zoom * 1.25); draw(); }; $('#zout').onclick = () => { S.zoom = Math.max(0.25, S.zoom / 1.25); draw(); }; $('#zfit').onclick = fit;
   $('#undo').onclick = undo; $('#save').onclick = save;
   addEventListener('beforeunload', e => { if (DIRTY.size) { e.preventDefault(); e.returnValue = ''; } });
+  try { const c = +localStorage.getItem('ed_cell'); if (c) { S.cell = c; document.documentElement.style.setProperty('--cell', c + 'px'); } const w = +localStorage.getItem('ed_panel'); if (w) document.documentElement.style.setProperty('--pw', w + 'px'); } catch (x) {}
+  const sz = $('#sizer'); let drag = null;
+  sz.addEventListener('pointerdown', e => { drag = { x: e.clientX, w: $('#panel').getBoundingClientRect().width }; sz.setPointerCapture(e.pointerId); });
+  sz.addEventListener('pointermove', e => { if (!drag) return; const w = Math.max(320, Math.min(innerWidth * 0.75, drag.w + drag.x - e.clientX)); document.documentElement.style.setProperty('--pw', w + 'px'); resize(); });
+  sz.addEventListener('pointerup', () => { if (drag) { try { localStorage.setItem('ed_panel', Math.round($('#panel').getBoundingClientRect().width)); } catch (x) {} } drag = null; });
   addEventListener('resize', resize); views(); panel(); resize(); fit();
 }
 boot().catch(e => { document.body.insertAdjacentHTML('beforeend', `<p style="color:#f66;padding:16px">Could not load the editor data: ${e.message}</p>`); });

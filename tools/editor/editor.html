@@ -12,18 +12,25 @@ button{cursor:pointer}button:hover{border-color:var(--cyan)}button.on{background
 main{display:flex;height:calc(100% - 52px)}#mapwrap{position:relative;flex:1;min-width:0}
 #map{width:100%;height:100%;display:block;touch-action:none;cursor:crosshair}
 #where{position:absolute;left:8px;bottom:8px;background:rgba(0,0,0,.6);padding:2px 8px;border-radius:4px;font:12px monospace;color:var(--muted)}
-#panel{width:340px;overflow:auto;background:var(--panel);border-left:1px solid var(--line);padding:10px 12px}
+#panel{flex:0 0 auto;width:var(--pw,clamp(440px,36vw,1100px));min-width:320px;max-width:75vw;overflow:auto;background:var(--panel);border-left:1px solid var(--line);padding:10px 12px}
 #panel h3{margin:14px 0 6px;color:var(--accent);font-size:14px}#panel label{display:block;margin:6px 0}#panel label input,#panel label select,#panel textarea{width:100%}
 .row{display:flex;gap:6px;align-items:center;flex-wrap:wrap}.hint{color:var(--muted);font-size:12px;margin:4px 0}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(58px,1fr));gap:6px;margin-top:6px}
-.pal{height:62px;padding:3px;display:flex;align-items:flex-end;justify-content:center;background:#d8cfee}
-.pal img{max-width:100%;max-height:100%;image-rendering:pixelated}.pal.on{outline:3px solid var(--accent)}
-.pal.mon span{display:block;width:48px;height:48px;background-size:200% 100%;background-position:0 0;image-rendering:pixelated}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(var(--cell,clamp(100px,6.5vw,200px)),1fr));gap:8px;margin-top:8px}
+.pal{height:var(--cell,clamp(100px,6.5vw,200px));padding:6px;display:flex;align-items:center;justify-content:center;background:#d8cfee;border-radius:8px}
+.pal img{width:100%;height:100%;object-fit:contain;image-rendering:pixelated}.pal.on{outline:3px solid var(--accent)}
+.pal.mon span{display:block;width:100%;height:100%;background-size:200% 100%;background-position:0 0;background-repeat:no-repeat;image-rendering:pixelated}
+#preview{position:sticky;top:-10px;z-index:2;background:var(--panel);padding:8px 0;border-bottom:1px solid var(--line);margin:-10px 0 8px}
+#preview .box{height:clamp(220px,30vh,420px);display:flex;align-items:center;justify-content:center;background:#d8cfee;border-radius:10px}
+#preview .box img{width:92%;height:92%;object-fit:contain;image-rendering:pixelated}
+#preview .box span{width:200px;height:200px;background-size:200% 100%;background-repeat:no-repeat}
+#preview .cap{font-size:13px;color:var(--muted);margin-top:4px;min-height:18px}
+#sizer{width:6px;cursor:col-resize;background:var(--line)}#sizer:hover{background:var(--cyan)}
+.sizes{display:flex;gap:6px;align-items:center;margin:4px 0}
 .sel{background:#2a2046;border:1px solid var(--accent);border-radius:8px;padding:8px;margin-bottom:8px}.sel button{margin-top:6px}
 .good{color:#7dff9a;font-size:12px}.bad{color:#ff8080;font-size:12px}
 #toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#2a2046;border:1px solid var(--accent);padding:8px 14px;border-radius:8px;opacity:0;transition:opacity .2s;pointer-events:none;max-width:90vw}
 #toast.on{opacity:1}
-@media (max-width:760px){main{flex-direction:column}#panel{width:auto;height:45%;border-left:0;border-top:1px solid var(--line)}}
+@media (max-width:760px){main{flex-direction:column}#sizer{display:none}#panel{width:auto;max-width:none;height:55%;border-left:0;border-top:1px solid var(--line)}}
 </style></head><body>
 <header><h1>Alienmon Map Editor</h1>
 <select id="planet"></select><select id="view"></select>
@@ -31,7 +38,7 @@ main{display:flex;height:calc(100% - 52px)}#mapwrap{position:relative;flex:1;min
 <label class="row"><input type="checkbox" id="walls"> show walls</label><label class="row"><input type="checkbox" id="showdoors" checked> doors</label>
 <span class="row"><button id="zout">&minus;</button><button id="zfit">Fit</button><button id="zin">+</button><button id="undo">Undo</button><button id="save">Save</button></span>
 </header>
-<main><div id="mapwrap"><canvas id="map"></canvas><div id="where"></div></div><aside id="panel"></aside></main>
+<main><div id="mapwrap"><canvas id="map"></canvas><div id="where"></div></div><div id="sizer" title="Drag to resize the side panel"></div><aside id="panel"></aside></main>
 <div id="toast"></div>
 <script src="editor.js"></script>
 </body></html>
