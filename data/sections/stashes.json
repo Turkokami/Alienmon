@@ -830,8 +830,8 @@
    "section": "082",
    "name": "Cinder Hollow",
    "tile": [
-    3,
-    5
+    1,
+    12
    ],
    "item": "dust",
    "n": 800,
@@ -841,8 +841,8 @@
    "section": "085",
    "name": "Lava Rail Part A",
    "tile": [
-    7,
-    13
+    14,
+    12
    ],
    "item": "ether",
    "n": 2,
@@ -852,8 +852,8 @@
    "section": "085",
    "name": "Lava Rail Part A",
    "tile": [
-    16,
-    2
+    17,
+    3
    ],
    "item": "revive",
    "n": 2,
@@ -863,8 +863,8 @@
    "section": "086",
    "name": "Lava Rail Part B",
    "tile": [
-    19,
-    12
+    11,
+    13
    ],
    "item": "dust",
    "n": 800,
@@ -874,8 +874,8 @@
    "section": "086",
    "name": "Lava Rail Part B",
    "tile": [
-    9,
-    10
+    6,
+    2
    ],
    "item": "revive",
    "n": 2,
@@ -886,7 +886,7 @@
    "name": "Deep Mines B1",
    "tile": [
     14,
-    12
+    7
    ],
    "item": "dust",
    "n": 800,
@@ -896,8 +896,8 @@
    "section": "088",
    "name": "Deep Mines B2",
    "tile": [
-    12,
-    10
+    2,
+    5
    ],
    "item": "megagel",
    "n": 3,
@@ -907,8 +907,8 @@
    "section": "089",
    "name": "Deep Mines B3",
    "tile": [
-    10,
-    5
+    2,
+    10
    ],
    "item": "fullgel",
    "n": 1,
@@ -918,8 +918,8 @@
    "section": "090",
    "name": "Furnace Ridge (Pyros)",
    "tile": [
-    7,
-    10
+    19,
+    2
    ],
    "item": "revive",
    "n": 2,
@@ -929,8 +929,8 @@
    "section": "090",
    "name": "Furnace Ridge (Pyros)",
    "tile": [
-    10,
-    1
+    6,
+    2
    ],
    "item": "dust",
    "n": 800,

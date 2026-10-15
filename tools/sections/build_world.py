@@ -659,6 +659,7 @@ for key, sp in qsrc.items():
             keys.add((o['tile'][0] + dx, o['tile'][1] + dy))
     keys = {k for k in keys if 0 <= k[0] < W and 0 <= k[1] < H and rows[k[1]][k[0]] in '.,'}
     block = blocked_set(sec) | qtaken[sid]
+    keys = {k for k in keys if k not in block}   # a key under a prop (e.g. beside a sign) would seed the flood from inside it
     lane = lanes(sec, rows) if kind in CHAR_KINDS else set()
     base = reach(rows, W, H, next(iter(keys)), block) if keys else set()
     near = sp.get('near') or [W // 2, H // 2]

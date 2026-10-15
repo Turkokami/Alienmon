@@ -6,7 +6,20 @@ A2={s['id']:s for s in json.load(open(S+'atlas_v2.json',encoding='utf-8'))['sect
 AT=json.load(open('art/sections/atlas.json',encoding='utf-8'));A1={s['id']:s for s in AT['sections']}
 L=json.load(open('data/sections/links.json',encoding='utf-8'))
 H=lambda x,y:{'tile':[x,y]}
-WIRE={'06':{
+WIRE={'07':{
+ 'ids':['%03d'%i for i in range(82,93)],
+ 'doors':[],'stairs':[],
+ 'objects':{
+  '082':[{'tile':[3,4],'k':'house','to':'174','why':'V2: miner shack (shared Pyros home)'},{'tile':[4,4],'k':'house','to':'174','why':'V2: miner shack'},
+         {'tile':[19,4],'k':'house','to':'174','why':'V2: miner shack'},{'tile':[20,4],'k':'house','to':'174','why':'V2: miner shack'}],
+ },
+ 'warps':[],
+ 'gates':{},
+ 'atlas_extra':{'091':['top edge, tile columns 7–9 (stairs up) → Volcano Tower 2F']},
+ 'spawns':{'082':{'arrival':[3,8],'default':[3,8]}},
+ 'arrival':{'pyros':{'section':'082','why':'V2: the iron landing pad at the left end of Cinder Hollow'}},
+ 'reparent':{'174':'082'},
+},'06':{
  'ids':['%03d'%i for i in range(72,82)],
  'doors':[],'stairs':[],
  'objects':{

@@ -1826,11 +1826,11 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → arrival (landing pad / gate)",
-    "right edge, tile rows 7–8 → Lava Rail Part A"
+    "right edge, tile rows 6–9 → Lava Rail Part A"
    ],
    "notes": "Mining camp of timber shacks, brass furnaces, rope lifts",
-   "file": "art/sections/07_pyros/082_cinder_hollow.png"
+   "file": "art/sections/07_pyros/082_cinder_hollow.png",
+   "v2": true
   },
   {
    "id": "083",
@@ -1847,11 +1847,10 @@
    ],
    "tile_px_render": 64,
    "tile_px_game": 16,
-   "exits": [
-    "doormat at the bottom center of the room leads back outside"
-   ],
+   "exits": [],
    "notes": "",
-   "file": "art/sections/07_pyros/083_cinder_hollow_recovery_bay.png"
+   "file": "art/sections/07_pyros/083_cinder_hollow_recovery_bay.png",
+   "v2": true
   },
   {
    "id": "084",
@@ -1868,11 +1867,10 @@
    ],
    "tile_px_render": 64,
    "tile_px_game": 16,
-   "exits": [
-    "doormat at the bottom center of the room leads back outside"
-   ],
+   "exits": [],
    "notes": "",
-   "file": "art/sections/07_pyros/084_cinder_hollow_shop.png"
+   "file": "art/sections/07_pyros/084_cinder_hollow_shop.png",
+   "v2": true
   },
   {
    "id": "085",
@@ -1890,11 +1888,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Cinder Hollow",
-    "right edge, tile rows 7–8 → Lava Rail Part B"
+    "left edge, tile rows 5–9 → Cinder Hollow",
+    "right edge, tile rows 5–9 → Lava Rail Part B"
    ],
    "notes": "Mine-cart rail line over lava",
-   "file": "art/sections/07_pyros/085_lava_rail_part_a.png"
+   "file": "art/sections/07_pyros/085_lava_rail_part_a.png",
+   "v2": true
   },
   {
    "id": "086",
@@ -1912,11 +1911,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Lava Rail Part A",
-    "right edge, tile rows 7–8 → Deep Mines B1"
+    "left edge, tile rows 5–9 → Lava Rail Part A",
+    "right edge, tile rows 5–9 → Deep Mines B1"
    ],
    "notes": "Mine-cart rail line over lava",
-   "file": "art/sections/07_pyros/086_lava_rail_part_b.png"
+   "file": "art/sections/07_pyros/086_lava_rail_part_b.png",
+   "v2": true
   },
   {
    "id": "087",
@@ -1934,11 +1934,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7–8 → Lava Rail Part B",
-    "top edge, tile columns 7–8 → Deep Mines B2"
+    "bottom edge, tile columns 6–9 → Lava Rail Part B",
+    "top edge, tile columns 6–9 → Deep Mines B2"
    ],
    "notes": "Deep mines, 3 levels (Teo's Trail 1, Deep Drill)",
-   "file": "art/sections/07_pyros/087_deep_mines_b1.png"
+   "file": "art/sections/07_pyros/087_deep_mines_b1.png",
+   "v2": true
   },
   {
    "id": "088",
@@ -1956,11 +1957,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7–8 → Deep Mines B1",
-    "top edge, tile columns 7–8 → Deep Mines B3"
+    "bottom edge, tile columns 6–9 → Deep Mines B1",
+    "top edge, tile columns 6–9 → Deep Mines B3"
    ],
    "notes": "Deep mines, 3 levels (Teo's Trail 1, Deep Drill)",
-   "file": "art/sections/07_pyros/088_deep_mines_b2.png"
+   "file": "art/sections/07_pyros/088_deep_mines_b2.png",
+   "v2": true
   },
   {
    "id": "089",
@@ -1978,11 +1980,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7–8 → Deep Mines B2",
-    "top edge, tile columns 7–8 → Furnace Ridge (Pyros)"
+    "bottom edge, tile columns 6–9 → Deep Mines B2",
+    "top edge, tile columns 6–9 → Furnace Ridge (Pyros)"
    ],
    "notes": "Deep mines, 3 levels (Teo's Trail 1, Deep Drill)",
-   "file": "art/sections/07_pyros/089_deep_mines_b3.png"
+   "file": "art/sections/07_pyros/089_deep_mines_b3.png",
+   "v2": true
   },
   {
    "id": "090",
@@ -2000,11 +2003,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Deep Mines B3",
-    "right edge, tile rows 7–8 → Volcano Tower 1F"
+    "left edge, tile rows 5–9 → Deep Mines B3",
+    "right edge, tile rows 5–9 → Volcano Tower 1F"
    ],
    "notes": "Ridge of forges",
-   "file": "art/sections/07_pyros/090_furnace_ridge_pyros.png"
+   "file": "art/sections/07_pyros/090_furnace_ridge_pyros.png",
+   "v2": true
   },
   {
    "id": "091",
@@ -2022,11 +2026,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7–8 → Furnace Ridge (Pyros)",
-    "top edge, tile columns 7–8 (stairs up) → Volcano Tower 2F"
+    "bottom edge, tile columns 6–10 → Furnace Ridge (Pyros)",
+    "top edge, tile columns 7–9 (stairs up) → Volcano Tower 2F"
    ],
    "notes": "Keeper Basalt's tower",
-   "file": "art/sections/07_pyros/091_volcano_tower_1f.png"
+   "file": "art/sections/07_pyros/091_volcano_tower_1f.png",
+   "v2": true
   },
   {
    "id": "092",
@@ -2044,10 +2049,11 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7–8 → Volcano Tower 1F"
+    "bottom edge, tile columns 6–9 → Volcano Tower 1F"
    ],
    "notes": "Keeper Basalt's tower",
-   "file": "art/sections/07_pyros/092_volcano_tower_2f.png"
+   "file": "art/sections/07_pyros/092_volcano_tower_2f.png",
+   "v2": true
   },
   {
    "id": "093",

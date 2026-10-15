@@ -27,6 +27,17 @@ ZONE_TOWN = {'thalassa': [('wall', T(40, 41, 43, 44, 47, 50, 51), 2), ('wall', T
 # Towns are laid out by hand like a real street: lamps in straight evenly spaced rows, stalls in a line along the
 # shopfronts, planters in pairs either side of a door, benches facing each other. (prop, x, y)
 HAND = {
+ '082': [('07_pyros/15', 7, 5), ('07_pyros/24', 10, 5), ('07_pyros/15', 12, 5), ('07_pyros/24', 13, 5), ('07_pyros/24', 16, 5), ('07_pyros/15', 17, 5), ('07_pyros/24', 18, 5), ('07_pyros/24', 21, 5), ('07_pyros/15', 22, 5), ('07_pyros/77', 8, 8), ('07_pyros/78', 12, 8), ('07_pyros/79', 16, 8), ('07_pyros/77', 20, 8), ('07_pyros/84', 9, 11), ('07_pyros/111', 12, 11), ('07_pyros/97', 15, 11), ('07_pyros/109', 17, 11), ('07_pyros/34', 21, 11), ('07_pyros/89', 8, 12), ('07_pyros/27', 20, 12)],
+ '083': [('07_pyros/171', 3, 4), ('07_pyros/171', 12, 4), ('07_pyros/172', 3, 12), ('07_pyros/172', 12, 12)],
+ '084': [('07_pyros/161', 11, 6), ('07_pyros/160', 11, 9), ('07_pyros/89', 3, 12), ('07_pyros/89', 12, 12), ('07_pyros/100', 2, 11)],
+ '085': [('07_pyros/17', 6, 5), ('07_pyros/17', 12, 5), ('07_pyros/17', 18, 5), ('07_pyros/34', 9, 9), ('07_pyros/89', 15, 9), ('07_pyros/123', 4, 9)],
+ '086': [('07_pyros/17', 5, 5), ('07_pyros/17', 17, 5), ('07_pyros/89', 8, 9), ('07_pyros/57', 16, 9), ('07_pyros/57', 12, 13)],
+ '087': [('07_pyros/83', 2, 4), ('07_pyros/83', 13, 4), ('07_pyros/57', 2, 9), ('07_pyros/130', 13, 9)],
+ '088': [('07_pyros/83', 2, 4), ('07_pyros/83', 13, 4), ('07_pyros/34', 3, 9), ('07_pyros/89', 12, 9)],
+ '089': [('07_pyros/83', 2, 4), ('07_pyros/83', 13, 4), ('07_pyros/130', 3, 10), ('07_pyros/57', 12, 10)],
+ '090': [('07_pyros/84', 6, 5), ('07_pyros/85', 12, 5), ('07_pyros/84', 18, 5), ('07_pyros/70', 9, 9), ('07_pyros/89', 15, 9)],
+ '091': [('07_pyros/18', 3, 4), ('07_pyros/18', 12, 4), ('07_pyros/18', 3, 18), ('07_pyros/18', 12, 18)],
+ '092': [('07_pyros/18', 3, 6), ('07_pyros/18', 12, 6), ('07_pyros/18', 3, 19), ('07_pyros/18', 12, 19)],
  # Glyphos (sheet 06_glyphos): camp lanterns and banners, a finds table, cook fire and mess table, dig gear stacked by the tents, glyph stones and braziers in the ruins and temple
  '072': [('06_glyphos/17', 7, 4), ('06_glyphos/17', 15, 4), ('06_glyphos/28', 13, 10), ('06_glyphos/21', 13, 12), ('06_glyphos/26', 5, 9), ('06_glyphos/26', 18, 9)],
  '073': [('06_glyphos/27', 5, 5), ('06_glyphos/35', 6, 5), ('06_glyphos/27', 12, 5), ('06_glyphos/27', 17, 5), ('06_glyphos/35', 18, 5), ('06_glyphos/59', 4, 8), ('06_glyphos/94', 10, 8), ('06_glyphos/114', 15, 8), ('06_glyphos/12', 19, 8), ('06_glyphos/28', 4, 12), ('06_glyphos/28', 5, 12), ('06_glyphos/44', 8, 12), ('06_glyphos/25', 14, 12), ('06_glyphos/02', 18, 12), ('06_glyphos/33', 19, 12)],

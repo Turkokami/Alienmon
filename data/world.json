@@ -32,7 +32,7 @@
   },
   "pyros": {
    "section": "082",
-   "why": "atlas exit marked arrival"
+   "why": "V2: the iron landing pad at the left end of Cinder Hollow"
   },
   "glacia": {
    "section": "093",
@@ -261,7 +261,7 @@
    "s": "082",
    "art": "basalt",
    "x": 11,
-   "y": 8
+   "y": 10
   },
   "M12:giver": {
    "s": "093",
@@ -767,7 +767,7 @@
   "S70:giver": {
    "s": "082",
    "x": 16,
-   "y": 8
+   "y": 10
   },
   "S70:0": {
    "s": "089",
@@ -777,17 +777,17 @@
   "S71:giver": {
    "s": "085",
    "x": 8,
-   "y": 5
+   "y": 9
   },
   "S72:giver": {
    "s": "088",
-   "x": 9,
-   "y": 10
+   "x": 10,
+   "y": 9
   },
   "S72:0": {
    "s": "088",
-   "x": 9,
-   "y": 2
+   "x": 10,
+   "y": 6
   },
   "S80:giver": {
    "s": "093",
@@ -12907,46 +12907,25 @@
    ],
    "notes": "Mining camp of timber shacks, brass furnaces, rope lifts",
    "edges": {
-    "left": {
-     "to": "arrival",
-     "range": [
-      7,
-      8
-     ]
-    },
     "right": {
      "to": "085",
      "range": [
-      7,
-      8
+      6,
+      9
      ],
-     "offset": 0
+     "offset": -1
     }
    },
    "warps": [
     {
      "tile": [
-      14,
+      8,
       4
      ],
      "to": "083",
      "at": [
       7,
-      12
-     ],
-     "face": "up",
-     "kind": "door",
-     "edge": "up"
-    },
-    {
-     "tile": [
-      8,
-      4
-     ],
-     "to": "084",
-     "at": [
-      7,
-      12
+      13
      ],
      "face": "up",
      "kind": "door",
@@ -12957,10 +12936,38 @@
       9,
       4
      ],
+     "to": "083",
+     "at": [
+      8,
+      13
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    },
+    {
+     "tile": [
+      14,
+      4
+     ],
+     "to": "084",
+     "at": [
+      7,
+      13
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    },
+    {
+     "tile": [
+      15,
+      4
+     ],
      "to": "084",
      "at": [
       8,
-      12
+      13
      ],
      "face": "up",
      "kind": "door",
@@ -12970,44 +12977,44 @@
    "objects": [
     {
      "tile": [
-      13,
-      13
-     ],
-     "k": "stop",
-     "t": "The stairs are blocked off. You can't go this way.",
-     "why": "dead-end stairs (tools/sections/dead_ends.py)"
-    },
-    {
-     "tile": [
-      14,
-      13
-     ],
-     "k": "stop",
-     "t": "The stairs are blocked off. You can't go this way.",
-     "why": "dead-end stairs (tools/sections/dead_ends.py)"
-    },
-    {
-     "tile": [
-      7,
-      10
-     ],
-     "k": "house",
-     "to": "174",
-     "why": "house door: opens the pyros house (was a chat knock door)"
-    },
-    {
-     "tile": [
       3,
-      10
+      4
      ],
      "k": "house",
      "to": "174",
-     "why": "house door: path in front opened to match the drawn ground"
+     "why": "V2: miner shack (shared Pyros home)"
     },
     {
      "tile": [
-      13,
-      8
+      4,
+      4
+     ],
+     "k": "house",
+     "to": "174",
+     "why": "V2: miner shack"
+    },
+    {
+     "tile": [
+      19,
+      4
+     ],
+     "k": "house",
+     "to": "174",
+     "why": "V2: miner shack"
+    },
+    {
+     "tile": [
+      20,
+      4
+     ],
+     "k": "house",
+     "to": "174",
+     "why": "V2: miner shack"
+    },
+    {
+     "tile": [
+      12,
+      4
      ],
      "k": "sign",
      "t": [
@@ -13017,7 +13024,7 @@
     },
     {
      "tile": [
-      20,
+      17,
       4
      ],
      "k": "sign",
@@ -13028,8 +13035,8 @@
     },
     {
      "tile": [
-      3,
-      5
+      1,
+      12
      ],
      "k": "stash",
      "item": "dust",
@@ -13039,12 +13046,12 @@
    ],
    "spawns": {
     "arrival": [
-     1,
-     7
+     3,
+     8
     ],
     "default": [
-     1,
-     7
+     3,
+     8
     ]
    },
    "grid": [
@@ -13054,48 +13061,52 @@
    "pkey": "pyros",
    "npcs": [
     {
-     "x": 8,
-     "y": 6,
+     "x": 12,
+     "y": 10,
      "art": "miner",
      "face": "down",
      "t": [
       "Miner: Cinder Hollow sits on the richest ember seam on Pyros. Also the hottest. Mostly the hottest."
      ],
+     "stay": true,
      "src": "p:082:0"
     },
     {
-     "x": 10,
-     "y": 5,
+     "x": 7,
+     "y": 6,
      "art": "technician",
      "face": "down",
      "t": [
       "Smith: Magma-types temper their own hides in the vents.",
       "Bring a Hydro-type if you plan to argue with one."
      ],
+     "stay": true,
      "src": "p:082:1"
     },
     {
-     "x": 5,
+     "x": 17,
      "y": 6,
      "art": "civilian",
      "face": "down",
      "t": [
       "Cook: Nothing beats lava-baked rockroot. Crunchy outside, molten inside. Don't bite too fast."
      ],
+     "stay": true,
      "src": "p:082:2"
     },
     {
-     "x": 5,
-     "y": 12,
+     "x": 20,
+     "y": 10,
      "art": "wanderer",
      "face": "down",
      "t": [
       "Ash walker: The crater's light still flickers some nights. The old-timers won't look at it."
      ],
+     "stay": true,
      "src": "p:082:3"
     },
     {
-     "x": 7,
+     "x": 2,
      "y": 5,
      "art": "miner",
      "face": "down",
@@ -13103,42 +13114,52 @@
       "Old miner: Basalt saw the first pod land, you know. He's been Keeper longer than I've been alive.",
       "Still climbs that tower every morning on those knees."
      ],
+     "stay": true,
      "src": "p:082:4"
     },
     {
-     "x": 4,
-     "y": 6,
+     "x": 6,
+     "y": 11,
      "art": "explorer",
      "face": "down",
      "t": [
       "Traveler: The dome with the cyan cross is the Recovery Bay. Free healing, even for outworlders."
      ],
+     "stay": true,
      "src": "p:082:5"
     },
     {
-     "x": 9,
-     "y": 8,
+     "x": 10,
+     "y": 12,
      "art": "guard",
      "face": "down",
      "t": [
       "Camp watch: Helix suits came through asking about the deep shafts. We told 'em nothing.",
       "Folks who ask about the deep shafts never want ore."
      ],
+     "stay": true,
      "src": "p:082:6"
     },
     {
-     "x": 15,
-     "y": 10,
+     "x": 12,
+     "y": 6,
      "art": "civilian",
      "face": "down",
      "t": [
       "Kid: I'm gonna catch a Cindermole and ride it down the rail line!",
       "Kid: ...Mom says no."
      ],
+     "stay": true,
      "src": "p:082:7"
     }
    ],
-   "mons": []
+   "mons": [
+    {
+     "x": 1,
+     "y": 10,
+     "mon": "Ashpup"
+    }
+   ]
   },
   "083": {
    "id": "083",
@@ -13157,11 +13178,11 @@
     {
      "tile": [
       7,
-      13
+      14
      ],
      "to": "082",
      "at": [
-      14,
+      8,
       5
      ],
      "face": "down",
@@ -13170,11 +13191,11 @@
     {
      "tile": [
       8,
-      13
+      14
      ],
      "to": "082",
      "at": [
-      14,
+      8,
       5
      ],
      "face": "down",
@@ -13184,8 +13205,15 @@
    "objects": [
     {
      "tile": [
+      7,
+      3
+     ],
+     "k": "bay"
+    },
+    {
+     "tile": [
       8,
-      7
+      3
      ],
      "k": "bay"
     }
@@ -13193,11 +13221,11 @@
    "spawns": {
     "door": [
      7,
-     12
+     13
     ],
     "default": [
      7,
-     12
+     13
     ]
    },
    "parent": "082",
@@ -13205,7 +13233,7 @@
    "npcs": [
     {
      "x": 8,
-     "y": 7,
+     "y": 3,
      "art": "nurse",
      "face": "down",
      "t": [
@@ -13215,13 +13243,14 @@
      "src": "p:083:0"
     },
     {
-     "x": 5,
-     "y": 10,
+     "x": 9,
+     "y": 12,
      "art": "miner",
      "face": "down",
      "t": [
       "Miner: Took a cave-in on B2. My Bouldron caught the worst of it, bless him."
      ],
+     "stay": true,
      "src": "p:083:1"
     }
    ]
@@ -13243,11 +13272,11 @@
     {
      "tile": [
       7,
-      13
+      14
      ],
      "to": "082",
      "at": [
-      8,
+      14,
       5
      ],
      "face": "down",
@@ -13256,11 +13285,11 @@
     {
      "tile": [
       8,
-      13
+      14
      ],
      "to": "082",
      "at": [
-      8,
+      14,
       5
      ],
      "face": "down",
@@ -13270,8 +13299,15 @@
    "objects": [
     {
      "tile": [
-      4,
-      8
+      7,
+      3
+     ],
+     "k": "shop"
+    },
+    {
+     "tile": [
+      8,
+      3
      ],
      "k": "shop"
     }
@@ -13279,19 +13315,19 @@
    "spawns": {
     "door": [
      7,
-     12
+     13
     ],
     "default": [
      7,
-     12
+     13
     ]
    },
    "parent": "082",
    "pkey": "pyros",
    "npcs": [
     {
-     "x": 4,
-     "y": 8,
+     "x": 8,
+     "y": 3,
      "art": "shop",
      "face": "down",
      "t": [
@@ -13301,13 +13337,14 @@
      "src": "p:084:0"
     },
     {
-     "x": 13,
-     "y": 9,
+     "x": 9,
+     "y": 12,
      "art": "technician",
      "face": "down",
      "t": [
       "Smith: Heat-proof Stasis Pods? No such thing, kid. They all hold up fine down there."
      ],
+     "stay": true,
      "src": "p:084:1"
     }
    ]
@@ -13328,16 +13365,16 @@
     "left": {
      "to": "082",
      "range": [
-      7,
-      8
+      5,
+      9
      ],
-     "offset": 0
+     "offset": 1
     },
     "right": {
      "to": "086",
      "range": [
-      7,
-      8
+      5,
+      9
      ],
      "offset": 0
     }
@@ -13346,26 +13383,8 @@
    "objects": [
     {
      "tile": [
-      2,
-      9
-     ],
-     "k": "sign",
-     "t": "This old shaft has caved in. There's no way through.",
-     "why": "door plan: mine door with no interior yet"
-    },
-    {
-     "tile": [
-      15,
-      14
-     ],
-     "k": "stop",
-     "t": "This ladder is broken. You can't climb it.",
-     "why": "dead-end ladder (tools/sections/dead_ends.py)"
-    },
-    {
-     "tile": [
-      7,
-      13
+      14,
+      12
      ],
      "k": "stash",
      "item": "ether",
@@ -13374,8 +13393,8 @@
     },
     {
      "tile": [
-      16,
-      2
+      17,
+      3
      ],
      "k": "stash",
      "item": "revive",
@@ -13386,40 +13405,42 @@
    "spawns": {
     "default": [
      1,
-     7
+     5
     ]
    },
    "grid": [
     24,
-    0
+    1
    ],
    "pkey": "pyros",
    "npcs": [
     {
-     "x": 6,
+     "x": 10,
      "y": 5,
      "art": "miner",
      "face": "down",
      "t": [
       "Rail hand: Stay off the tracks when a cart's coming. The carts don't stop, and neither does the lava."
      ],
+     "stay": true,
      "src": "p:085:0"
     },
     {
-     "x": 12,
-     "y": 4,
+     "x": 4,
+     "y": 8,
      "art": "wanderer",
      "face": "down",
      "t": [
       "Ash walker: Wild Alienmon nest in the ember-weed. Stick to the dirt if you want a quiet walk."
      ],
+     "stay": true,
      "src": "p:085:1"
     },
     {
-     "x": 17,
-     "y": 11,
+     "x": 14,
+     "y": 9,
      "art": "technician",
-     "face": "left",
+     "face": "up",
      "t": [],
      "id": "sec085_tr2",
      "trainer": {
@@ -13429,10 +13450,10 @@
      }
     },
     {
-     "x": 4,
-     "y": 3,
+     "x": 19,
+     "y": 4,
      "art": "wanderer",
-     "face": "down",
+     "face": "left",
      "t": [],
      "id": "sec085_tr3",
      "trainer": {
@@ -13444,13 +13465,13 @@
    ],
    "mons": [
     {
-     "x": 6,
+     "x": 19,
      "y": 12,
      "mon": "Obsidrake"
     },
     {
-     "x": 22,
-     "y": 13,
+     "x": 6,
+     "y": 3,
      "mon": "Blazewing"
     }
    ]
@@ -13471,8 +13492,8 @@
     "left": {
      "to": "085",
      "range": [
-      7,
-      8
+      5,
+      9
      ],
      "offset": 0
     }
@@ -13481,7 +13502,21 @@
     {
      "tile": [
       23,
-      7
+      5
+     ],
+     "to": "087",
+     "at": [
+      6,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      6
      ],
      "to": "087",
      "at": [
@@ -13495,11 +13530,25 @@
     {
      "tile": [
       23,
-      8
+      7
      ],
      "to": "087",
      "at": [
       8,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      8
+     ],
+     "to": "087",
+     "at": [
+      9,
       14
      ],
      "face": "up",
@@ -13510,71 +13559,8 @@
    "objects": [
     {
      "tile": [
-      19,
-      1
-     ],
-     "k": "sign",
-     "t": "This old shaft has caved in. There's no way through.",
-     "why": "door plan: mine door with no interior yet"
-    },
-    {
-     "tile": [
-      2,
-      3
-     ],
-     "k": "stop",
-     "t": "This ladder is broken. You can't climb it.",
-     "why": "dead-end ladder (tools/sections/dead_ends.py)"
-    },
-    {
-     "tile": [
-      3,
-      3
-     ],
-     "k": "stop",
-     "t": "This ladder is broken. You can't climb it.",
-     "why": "dead-end ladder (tools/sections/dead_ends.py)"
-    },
-    {
-     "tile": [
-      5,
-      10
-     ],
-     "k": "stop",
-     "t": "The stairs are blocked off. You can't go this way.",
-     "why": "dead-end stairs (tools/sections/dead_ends.py)"
-    },
-    {
-     "tile": [
-      5,
-      11
-     ],
-     "k": "stop",
-     "t": "The stairs are blocked off. You can't go this way.",
-     "why": "dead-end stairs (tools/sections/dead_ends.py)"
-    },
-    {
-     "tile": [
-      5,
+      11,
       13
-     ],
-     "k": "stop",
-     "t": "The stairs are blocked off. You can't go this way.",
-     "why": "dead-end stairs (tools/sections/dead_ends.py)"
-    },
-    {
-     "tile": [
-      6,
-      13
-     ],
-     "k": "stop",
-     "t": "The stairs are blocked off. You can't go this way.",
-     "why": "dead-end stairs (tools/sections/dead_ends.py)"
-    },
-    {
-     "tile": [
-      19,
-      12
      ],
      "k": "stash",
      "item": "dust",
@@ -13583,8 +13569,8 @@
     },
     {
      "tile": [
-      9,
-      10
+      6,
+      2
      ],
      "k": "stash",
      "item": "revive",
@@ -13595,40 +13581,42 @@
    "spawns": {
     "default": [
      1,
-     7
+     5
     ]
    },
    "grid": [
     48,
-    0
+    1
    ],
    "pkey": "pyros",
    "npcs": [
     {
-     "x": 18,
-     "y": 9,
+     "x": 12,
+     "y": 5,
      "art": "technician",
      "face": "down",
      "t": [
       "Rail smith: The Deep Mines start past the east bend. Three levels down, and hotter every level."
      ],
+     "stay": true,
      "src": "p:086:0"
     },
     {
-     "x": 9,
-     "y": 2,
+     "x": 19,
+     "y": 9,
      "art": "explorer",
      "face": "down",
      "t": [
       "Hiker: Trainers out here spot you from five paces. Eyes front, Pods ready."
      ],
+     "stay": true,
      "src": "p:086:1"
     },
     {
-     "x": 17,
-     "y": 3,
+     "x": 7,
+     "y": 10,
      "art": "wanderer",
-     "face": "right",
+     "face": "up",
      "t": [],
      "id": "sec086_tr2",
      "trainer": {
@@ -13638,8 +13626,8 @@
      }
     },
     {
-     "x": 19,
-     "y": 8,
+     "x": 11,
+     "y": 11,
      "art": "miner",
      "face": "up",
      "t": [],
@@ -13653,13 +13641,13 @@
    ],
    "mons": [
     {
-     "x": 15,
-     "y": 11,
+     "x": 4,
+     "y": 2,
      "mon": "Cinderhound"
     },
     {
-     "x": 10,
-     "y": 7,
+     "x": 18,
+     "y": 2,
      "mon": "Pyroclast"
     }
    ]
@@ -13680,7 +13668,35 @@
    "warps": [
     {
      "tile": [
+      6,
+      15
+     ],
+     "to": "086",
+     "at": [
+      22,
+      5
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
       7,
+      15
+     ],
+     "to": "086",
+     "at": [
+      22,
+      6
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      8,
       15
      ],
      "to": "086",
@@ -13694,7 +13710,7 @@
     },
     {
      "tile": [
-      8,
+      9,
       15
      ],
      "to": "086",
@@ -13708,6 +13724,20 @@
     },
     {
      "tile": [
+      6,
+      0
+     ],
+     "to": "088",
+     "at": [
+      6,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
       7,
       0
      ],
@@ -13728,6 +13758,20 @@
      "to": "088",
      "at": [
       8,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      9,
+      0
+     ],
+     "to": "088",
+     "at": [
+      9,
       14
      ],
      "face": "up",
@@ -13738,62 +13782,8 @@
    "objects": [
     {
      "tile": [
-      3,
-      2
-     ],
-     "k": "sign",
-     "t": "This old shaft has caved in. There's no way through.",
-     "why": "door plan: mine door with no interior yet"
-    },
-    {
-     "tile": [
-      3,
-      8
-     ],
-     "k": "sign",
-     "t": "This old shaft has caved in. There's no way through.",
-     "why": "door plan: mine door with no interior yet"
-    },
-    {
-     "tile": [
-      3,
-      9
-     ],
-     "k": "stop",
-     "t": "This shaft has caved in. There's no way through.",
-     "why": "dead-end mine (tools/sections/dead_ends.py)"
-    },
-    {
-     "tile": [
-      4,
-      8
-     ],
-     "k": "stop",
-     "t": "This shaft has caved in. There's no way through.",
-     "why": "dead-end mine (tools/sections/dead_ends.py)"
-    },
-    {
-     "tile": [
-      4,
-      9
-     ],
-     "k": "stop",
-     "t": "This shaft has caved in. There's no way through.",
-     "why": "dead-end mine (tools/sections/dead_ends.py)"
-    },
-    {
-     "tile": [
-      11,
-      8
-     ],
-     "k": "stop",
-     "t": "This ladder is broken. You can't climb it.",
-     "why": "dead-end ladder (tools/sections/dead_ends.py)"
-    },
-    {
-     "tile": [
       14,
-      12
+      7
      ],
      "k": "stash",
      "item": "dust",
@@ -13803,25 +13793,26 @@
    ],
    "spawns": {
     "default": [
-     7,
+     6,
      14
     ]
    },
    "pkey": "pyros",
    "npcs": [
     {
-     "x": 12,
-     "y": 11,
+     "x": 5,
+     "y": 4,
      "art": "miner",
      "face": "down",
      "t": [
       "Miner: Teo Reyes came down this shaft once, chasing some signal. Folks say his tracks go deeper than ours."
      ],
+     "stay": true,
      "src": "p:087:0"
     },
     {
-     "x": 9,
-     "y": 8,
+     "x": 10,
+     "y": 7,
      "art": "miner",
      "face": "left",
      "t": [],
@@ -13850,6 +13841,20 @@
    "warps": [
     {
      "tile": [
+      6,
+      15
+     ],
+     "to": "087",
+     "at": [
+      6,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
       7,
       15
      ],
@@ -13875,6 +13880,34 @@
      "face": "down",
      "kind": "edge",
      "edge": "bottom"
+    },
+    {
+     "tile": [
+      9,
+      15
+     ],
+     "to": "087",
+     "at": [
+      9,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      6,
+      0
+     ],
+     "to": "089",
+     "at": [
+      6,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
     },
     {
      "tile": [
@@ -13898,6 +13931,20 @@
      "to": "089",
      "at": [
       8,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      9,
+      0
+     ],
+     "to": "089",
+     "at": [
+      9,
       14
      ],
      "face": "up",
@@ -13909,25 +13956,7 @@
     {
      "tile": [
       2,
-      1
-     ],
-     "k": "sign",
-     "t": "This old shaft has caved in. There's no way through.",
-     "why": "door plan: mine door with no interior yet"
-    },
-    {
-     "tile": [
-      2,
-      11
-     ],
-     "k": "stop",
-     "t": "This shaft has caved in. There's no way through.",
-     "why": "dead-end mine (tools/sections/dead_ends.py)"
-    },
-    {
-     "tile": [
-      12,
-      10
+      5
      ],
      "k": "stash",
      "item": "megagel",
@@ -13937,28 +13966,29 @@
    ],
    "spawns": {
     "default": [
-     7,
+     6,
      14
     ]
    },
    "pkey": "pyros",
    "npcs": [
     {
-     "x": 4,
-     "y": 12,
+     "x": 10,
+     "y": 4,
      "art": "researcher",
      "face": "down",
      "t": [
       "Geologist: These red crystals hum on the same pulse as the crater.",
       "Signal Shards grow from the same rock, I'd bet my lamp on it."
      ],
+     "stay": true,
      "src": "p:088:0"
     },
     {
-     "x": 9,
-     "y": 3,
+     "x": 4,
+     "y": 6,
      "art": "technician",
-     "face": "left",
+     "face": "right",
      "t": [],
      "id": "sec088_tr1",
      "trainer": {
@@ -13985,6 +14015,20 @@
    "warps": [
     {
      "tile": [
+      6,
+      15
+     ],
+     "to": "088",
+     "at": [
+      6,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
       7,
       15
      ],
@@ -14010,6 +14054,34 @@
      "face": "down",
      "kind": "edge",
      "edge": "bottom"
+    },
+    {
+     "tile": [
+      9,
+      15
+     ],
+     "to": "088",
+     "at": [
+      9,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      6,
+      0
+     ],
+     "to": "090",
+     "at": [
+      1,
+      5
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "top"
     },
     {
      "tile": [
@@ -14019,7 +14091,7 @@
      "to": "090",
      "at": [
       1,
-      7
+      6
      ],
      "face": "right",
      "kind": "edge",
@@ -14034,6 +14106,20 @@
      "at": [
       1,
       7
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      9,
+      0
+     ],
+     "to": "090",
+     "at": [
+      1,
+      8
      ],
      "face": "right",
      "kind": "edge",
@@ -14043,35 +14129,8 @@
    "objects": [
     {
      "tile": [
-      13,
-      3
-     ],
-     "k": "sign",
-     "t": "This old shaft has caved in. There's no way through.",
-     "why": "door plan: mine door with no interior yet"
-    },
-    {
-     "tile": [
-      14,
-      10
-     ],
-     "k": "sign",
-     "t": "This old shaft has caved in. There's no way through.",
-     "why": "door plan: mine door with no interior yet"
-    },
-    {
-     "tile": [
       2,
-      1
-     ],
-     "k": "stop",
-     "t": "This shaft has caved in. There's no way through.",
-     "why": "dead-end mine (tools/sections/dead_ends.py)"
-    },
-    {
-     "tile": [
-      10,
-      5
+      10
      ],
      "k": "stash",
      "item": "fullgel",
@@ -14081,27 +14140,28 @@
    ],
    "spawns": {
     "default": [
-     7,
+     6,
      14
     ]
    },
    "pkey": "pyros",
    "npcs": [
     {
-     "x": 9,
-     "y": 5,
+     "x": 10,
+     "y": 4,
      "art": "miner",
      "face": "down",
      "t": [
       "Deep crew: Furnace Ridge is just above. No Recovery Bay down here, so heal up before you push on."
      ],
+     "stay": true,
      "src": "p:089:0"
     },
     {
      "x": 5,
-     "y": 1,
+     "y": 7,
      "art": "wanderer",
-     "face": "down",
+     "face": "right",
      "t": [],
      "id": "sec089_tr1",
      "trainer": {
@@ -14129,7 +14189,21 @@
     {
      "tile": [
       0,
-      7
+      5
+     ],
+     "to": "089",
+     "at": [
+      6,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      6
      ],
      "to": "089",
      "at": [
@@ -14143,7 +14217,7 @@
     {
      "tile": [
       0,
-      8
+      7
      ],
      "to": "089",
      "at": [
@@ -14156,12 +14230,54 @@
     },
     {
      "tile": [
+      0,
+      8
+     ],
+     "to": "089",
+     "at": [
+      9,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      23,
+      5
+     ],
+     "to": "091",
+     "at": [
+      6,
+      22
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      6
+     ],
+     "to": "091",
+     "at": [
+      7,
+      22
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
       23,
       7
      ],
      "to": "091",
      "at": [
-      7,
+      8,
       22
      ],
      "face": "up",
@@ -14175,7 +14291,21 @@
      ],
      "to": "091",
      "at": [
-      8,
+      9,
+      22
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      9
+     ],
+     "to": "091",
+     "at": [
+      10,
       22
      ],
      "face": "up",
@@ -14186,71 +14316,8 @@
    "objects": [
     {
      "tile": [
-      2,
-      2
-     ],
-     "k": "sign",
-     "t": "This old shaft has caved in. There's no way through.",
-     "why": "door plan: mine door with no interior yet"
-    },
-    {
-     "tile": [
-      19,
-      1
-     ],
-     "k": "stop",
-     "t": "This ladder is broken. You can't climb it.",
-     "why": "dead-end ladder (tools/sections/dead_ends.py)"
-    },
-    {
-     "tile": [
-      19,
-      3
-     ],
-     "k": "stop",
-     "t": "This ladder is broken. You can't climb it.",
-     "why": "dead-end ladder (tools/sections/dead_ends.py)"
-    },
-    {
-     "tile": [
-      20,
-      2
-     ],
-     "k": "stop",
-     "t": "This ladder is broken. You can't climb it.",
-     "why": "dead-end ladder (tools/sections/dead_ends.py)"
-    },
-    {
-     "tile": [
-      14,
-      15
-     ],
-     "k": "stop",
-     "t": "The stairs are blocked off. You can't go this way.",
-     "why": "dead-end stairs (tools/sections/dead_ends.py)"
-    },
-    {
-     "tile": [
-      15,
-      15
-     ],
-     "k": "stop",
-     "t": "The stairs are blocked off. You can't go this way.",
-     "why": "dead-end stairs (tools/sections/dead_ends.py)"
-    },
-    {
-     "tile": [
-      19,
-      14
-     ],
-     "k": "stop",
-     "t": "The stairs are blocked off. You can't go this way.",
-     "why": "dead-end stairs (tools/sections/dead_ends.py)"
-    },
-    {
-     "tile": [
       1,
-      3
+      4
      ],
      "k": "sign",
      "t": [
@@ -14260,8 +14327,8 @@
     },
     {
      "tile": [
-      7,
-      10
+      19,
+      2
      ],
      "k": "stash",
      "item": "revive",
@@ -14270,8 +14337,8 @@
     },
     {
      "tile": [
-      10,
-      1
+      6,
+      2
      ],
      "k": "stash",
      "item": "dust",
@@ -14282,50 +14349,53 @@
    "spawns": {
     "default": [
      1,
-     7
+     5
     ]
    },
    "grid": [
     0,
-    20
+    21
    ],
    "pkey": "pyros",
    "npcs": [
     {
-     "x": 6,
-     "y": 7,
+     "x": 12,
+     "y": 6,
      "art": "technician",
      "face": "down",
      "t": [
       "Forge keeper: Every forge on this ridge was lit from the volcano's heart. Old Basalt lit half of 'em."
      ],
+     "stay": true,
      "src": "p:090:0"
     },
     {
-     "x": 10,
+     "x": 6,
      "y": 9,
      "art": "pilgrim",
      "face": "down",
      "t": [
       "Pilgrim: The Volcano Tower is just east. Keeper Basalt waits at the top. He doesn't go easy on anyone."
      ],
+     "stay": true,
      "src": "p:090:1"
     },
     {
-     "x": 20,
-     "y": 11,
+     "x": 21,
+     "y": 9,
      "art": "strand",
      "face": "down",
      "t": [
       "Helix grunt: Nothing to see here. Just... surveying the ridge. Move along, Linker."
      ],
+     "stay": true,
      "src": "p:090:2"
     },
     {
-     "x": 13,
-     "y": 1,
+     "x": 3,
+     "y": 4,
      "art": "miner",
-     "face": "right",
+     "face": "down",
      "t": [],
      "id": "sec090_tr3",
      "trainer": {
@@ -14335,10 +14405,10 @@
      }
     },
     {
-     "x": 10,
-     "y": 2,
+     "x": 16,
+     "y": 10,
      "art": "technician",
-     "face": "down",
+     "face": "left",
      "t": [],
      "id": "sec090_tr4",
      "trainer": {
@@ -14350,13 +14420,13 @@
    ],
    "mons": [
     {
-     "x": 16,
-     "y": 8,
+     "x": 18,
+     "y": 2,
      "mon": "Cinderhound"
     },
     {
-     "x": 9,
-     "y": 11,
+     "x": 8,
+     "y": 2,
      "mon": "Pyroclast"
     }
    ]
@@ -14377,7 +14447,35 @@
    "warps": [
     {
      "tile": [
+      6,
+      23
+     ],
+     "to": "090",
+     "at": [
+      22,
+      5
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
       7,
+      23
+     ],
+     "to": "090",
+     "at": [
+      22,
+      6
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      8,
       23
      ],
      "to": "090",
@@ -14391,7 +14489,7 @@
     },
     {
      "tile": [
-      8,
+      9,
       23
      ],
      "to": "090",
@@ -14405,7 +14503,35 @@
     },
     {
      "tile": [
+      10,
+      23
+     ],
+     "to": "090",
+     "at": [
+      22,
+      9
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
       7,
+      0
+     ],
+     "to": "092",
+     "at": [
+      6,
+      22
+     ],
+     "face": "up",
+     "kind": "stairs",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      8,
       0
      ],
      "to": "092",
@@ -14419,7 +14545,7 @@
     },
     {
      "tile": [
-      8,
+      9,
       0
      ],
      "to": "092",
@@ -14435,25 +14561,26 @@
    "objects": [],
    "spawns": {
     "default": [
-     7,
+     6,
      22
     ]
    },
    "pkey": "pyros",
    "npcs": [
     {
-     "x": 5,
-     "y": 21,
+     "x": 6,
+     "y": 2,
      "art": "guard",
      "face": "down",
      "t": [
       "Tower guard: Basalt's apprentices hold this floor. Beat them and the stairs are yours."
      ],
+     "stay": true,
      "src": "p:091:0"
     },
     {
-     "x": 6,
-     "y": 4,
+     "x": 3,
+     "y": 12,
      "art": "miner",
      "face": "right",
      "t": [],
@@ -14466,8 +14593,8 @@
      }
     },
     {
-     "x": 9,
-     "y": 10,
+     "x": 12,
+     "y": 12,
      "art": "technician",
      "face": "left",
      "t": [],
@@ -14497,7 +14624,7 @@
    "warps": [
     {
      "tile": [
-      7,
+      6,
       23
      ],
      "to": "091",
@@ -14511,12 +14638,26 @@
     },
     {
      "tile": [
-      8,
+      7,
       23
      ],
      "to": "091",
      "at": [
       8,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      8,
+      23
+     ],
+     "to": "091",
+     "at": [
+      9,
       1
      ],
      "face": "down",
@@ -14527,24 +14668,15 @@
    "objects": [
     {
      "tile": [
-      8,
-      2
-     ],
-     "k": "stop",
-     "t": "The stairs are blocked off. You can't go this way.",
-     "why": "dead-end stairs (tools/sections/dead_ends.py)"
-    },
-    {
-     "tile": [
       7,
-      3
+      4
      ],
      "k": "keeper"
     }
    ],
    "spawns": {
     "default": [
-     7,
+     6,
      22
     ]
    },
@@ -27450,209 +27582,198 @@
   },
   {
    "from_id": "082",
-   "edge": "left",
-   "tile_range": [
-    7,
-    8
-   ],
-   "to_id": "arrival",
-   "to_edge": null,
-   "to_tile": null
-  },
-  {
-   "from_id": "082",
    "edge": "right",
    "tile_range": [
-    7,
-    8
+    6,
+    9
    ],
    "to_id": "085",
    "to_edge": "left",
    "to_tile": [
-    7,
-    8
+    5,
+    9
    ]
   },
   {
    "from_id": "085",
    "edge": "left",
    "tile_range": [
-    7,
-    8
+    5,
+    9
    ],
    "to_id": "082",
    "to_edge": "right",
    "to_tile": [
-    7,
-    8
+    6,
+    9
    ]
   },
   {
    "from_id": "085",
    "edge": "right",
    "tile_range": [
-    7,
-    8
+    5,
+    9
    ],
    "to_id": "086",
    "to_edge": "left",
    "to_tile": [
-    7,
-    8
+    5,
+    9
    ]
   },
   {
    "from_id": "086",
    "edge": "left",
    "tile_range": [
-    7,
-    8
+    5,
+    9
    ],
    "to_id": "085",
    "to_edge": "right",
    "to_tile": [
-    7,
-    8
+    5,
+    9
    ]
   },
   {
    "from_id": "086",
    "edge": "right",
    "tile_range": [
-    7,
-    8
+    5,
+    9
    ],
    "to_id": "087",
    "to_edge": "bottom",
    "to_tile": [
-    7,
-    8
+    6,
+    9
    ]
   },
   {
    "from_id": "087",
    "edge": "bottom",
    "tile_range": [
-    7,
-    8
+    6,
+    9
    ],
    "to_id": "086",
    "to_edge": "right",
    "to_tile": [
-    7,
-    8
+    5,
+    9
    ]
   },
   {
    "from_id": "087",
    "edge": "top",
    "tile_range": [
-    7,
-    8
+    6,
+    9
    ],
    "to_id": "088",
    "to_edge": "bottom",
    "to_tile": [
-    7,
-    8
+    6,
+    9
    ]
   },
   {
    "from_id": "088",
    "edge": "bottom",
    "tile_range": [
-    7,
-    8
+    6,
+    9
    ],
    "to_id": "087",
    "to_edge": "top",
    "to_tile": [
-    7,
-    8
+    6,
+    9
    ]
   },
   {
    "from_id": "088",
    "edge": "top",
    "tile_range": [
-    7,
-    8
+    6,
+    9
    ],
    "to_id": "089",
    "to_edge": "bottom",
    "to_tile": [
-    7,
-    8
+    6,
+    9
    ]
   },
   {
    "from_id": "089",
    "edge": "bottom",
    "tile_range": [
-    7,
-    8
+    6,
+    9
    ],
    "to_id": "088",
    "to_edge": "top",
    "to_tile": [
-    7,
-    8
+    6,
+    9
    ]
   },
   {
    "from_id": "089",
    "edge": "top",
    "tile_range": [
-    7,
-    8
+    6,
+    9
    ],
    "to_id": "090",
    "to_edge": "left",
    "to_tile": [
-    7,
-    8
+    5,
+    9
    ]
   },
   {
    "from_id": "090",
    "edge": "left",
    "tile_range": [
-    7,
-    8
+    5,
+    9
    ],
    "to_id": "089",
    "to_edge": "top",
    "to_tile": [
-    7,
-    8
+    6,
+    9
    ]
   },
   {
    "from_id": "090",
    "edge": "right",
    "tile_range": [
-    7,
-    8
+    5,
+    9
    ],
    "to_id": "091",
    "to_edge": "bottom",
    "to_tile": [
-    7,
-    8
+    6,
+    10
    ]
   },
   {
    "from_id": "091",
    "edge": "bottom",
    "tile_range": [
-    7,
-    8
+    6,
+    10
    ],
    "to_id": "090",
    "to_edge": "right",
    "to_tile": [
-    7,
-    8
+    5,
+    9
    ]
   },
   {
@@ -27660,27 +27781,27 @@
    "edge": "top",
    "tile_range": [
     7,
-    8
+    9
    ],
    "to_id": "092",
    "to_edge": "bottom",
    "to_tile": [
-    7,
-    8
+    6,
+    9
    ]
   },
   {
    "from_id": "092",
    "edge": "bottom",
    "tile_range": [
-    7,
-    8
+    6,
+    9
    ],
    "to_id": "091",
    "to_edge": "top",
    "to_tile": [
     7,
-    8
+    9
    ]
   },
   {

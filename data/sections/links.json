@@ -672,299 +672,6 @@
     "why": "dead-end stairs (tools/sections/dead_ends.py)"
    }
   ],
-  "082": [
-   {
-    "tile": [
-     13,
-     13
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   },
-   {
-    "tile": [
-     14,
-     13
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   },
-   {
-    "tile": [
-     7,
-     10
-    ],
-    "k": "house",
-    "to": "174",
-    "why": "house door: opens the pyros house (was a chat knock door)"
-   },
-   {
-    "tile": [
-     3,
-     10
-    ],
-    "k": "house",
-    "to": "174",
-    "why": "house door: path in front opened to match the drawn ground"
-   }
-  ],
-  "085": [
-   {
-    "tile": [
-     2,
-     9
-    ],
-    "k": "sign",
-    "t": "This old shaft has caved in. There's no way through.",
-    "why": "door plan: mine door with no interior yet"
-   },
-   {
-    "tile": [
-     15,
-     14
-    ],
-    "k": "stop",
-    "t": "This ladder is broken. You can't climb it.",
-    "why": "dead-end ladder (tools/sections/dead_ends.py)"
-   }
-  ],
-  "086": [
-   {
-    "tile": [
-     19,
-     1
-    ],
-    "k": "sign",
-    "t": "This old shaft has caved in. There's no way through.",
-    "why": "door plan: mine door with no interior yet"
-   },
-   {
-    "tile": [
-     2,
-     3
-    ],
-    "k": "stop",
-    "t": "This ladder is broken. You can't climb it.",
-    "why": "dead-end ladder (tools/sections/dead_ends.py)"
-   },
-   {
-    "tile": [
-     3,
-     3
-    ],
-    "k": "stop",
-    "t": "This ladder is broken. You can't climb it.",
-    "why": "dead-end ladder (tools/sections/dead_ends.py)"
-   },
-   {
-    "tile": [
-     5,
-     10
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   },
-   {
-    "tile": [
-     5,
-     11
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   },
-   {
-    "tile": [
-     5,
-     13
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   },
-   {
-    "tile": [
-     6,
-     13
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   }
-  ],
-  "087": [
-   {
-    "tile": [
-     3,
-     2
-    ],
-    "k": "sign",
-    "t": "This old shaft has caved in. There's no way through.",
-    "why": "door plan: mine door with no interior yet"
-   },
-   {
-    "tile": [
-     3,
-     8
-    ],
-    "k": "sign",
-    "t": "This old shaft has caved in. There's no way through.",
-    "why": "door plan: mine door with no interior yet"
-   },
-   {
-    "tile": [
-     3,
-     9
-    ],
-    "k": "stop",
-    "t": "This shaft has caved in. There's no way through.",
-    "why": "dead-end mine (tools/sections/dead_ends.py)"
-   },
-   {
-    "tile": [
-     4,
-     8
-    ],
-    "k": "stop",
-    "t": "This shaft has caved in. There's no way through.",
-    "why": "dead-end mine (tools/sections/dead_ends.py)"
-   },
-   {
-    "tile": [
-     4,
-     9
-    ],
-    "k": "stop",
-    "t": "This shaft has caved in. There's no way through.",
-    "why": "dead-end mine (tools/sections/dead_ends.py)"
-   },
-   {
-    "tile": [
-     11,
-     8
-    ],
-    "k": "stop",
-    "t": "This ladder is broken. You can't climb it.",
-    "why": "dead-end ladder (tools/sections/dead_ends.py)"
-   }
-  ],
-  "088": [
-   {
-    "tile": [
-     2,
-     1
-    ],
-    "k": "sign",
-    "t": "This old shaft has caved in. There's no way through.",
-    "why": "door plan: mine door with no interior yet"
-   },
-   {
-    "tile": [
-     2,
-     11
-    ],
-    "k": "stop",
-    "t": "This shaft has caved in. There's no way through.",
-    "why": "dead-end mine (tools/sections/dead_ends.py)"
-   }
-  ],
-  "089": [
-   {
-    "tile": [
-     13,
-     3
-    ],
-    "k": "sign",
-    "t": "This old shaft has caved in. There's no way through.",
-    "why": "door plan: mine door with no interior yet"
-   },
-   {
-    "tile": [
-     14,
-     10
-    ],
-    "k": "sign",
-    "t": "This old shaft has caved in. There's no way through.",
-    "why": "door plan: mine door with no interior yet"
-   },
-   {
-    "tile": [
-     2,
-     1
-    ],
-    "k": "stop",
-    "t": "This shaft has caved in. There's no way through.",
-    "why": "dead-end mine (tools/sections/dead_ends.py)"
-   }
-  ],
-  "090": [
-   {
-    "tile": [
-     2,
-     2
-    ],
-    "k": "sign",
-    "t": "This old shaft has caved in. There's no way through.",
-    "why": "door plan: mine door with no interior yet"
-   },
-   {
-    "tile": [
-     19,
-     1
-    ],
-    "k": "stop",
-    "t": "This ladder is broken. You can't climb it.",
-    "why": "dead-end ladder (tools/sections/dead_ends.py)"
-   },
-   {
-    "tile": [
-     19,
-     3
-    ],
-    "k": "stop",
-    "t": "This ladder is broken. You can't climb it.",
-    "why": "dead-end ladder (tools/sections/dead_ends.py)"
-   },
-   {
-    "tile": [
-     20,
-     2
-    ],
-    "k": "stop",
-    "t": "This ladder is broken. You can't climb it.",
-    "why": "dead-end ladder (tools/sections/dead_ends.py)"
-   },
-   {
-    "tile": [
-     14,
-     15
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   },
-   {
-    "tile": [
-     15,
-     15
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   },
-   {
-    "tile": [
-     19,
-     14
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   }
-  ],
   "093": [
    {
     "tile": [
@@ -983,17 +690,6 @@
     "k": "house",
     "why": "house door: opens Glacia Ice Lodge",
     "to": "193"
-   }
-  ],
-  "092": [
-   {
-    "tile": [
-     8,
-     2
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
    }
   ],
   "003": [
@@ -1586,6 +1282,44 @@
     "to": "177",
     "why": "V2: expedition tent"
    }
+  ],
+  "082": [
+   {
+    "tile": [
+     3,
+     4
+    ],
+    "k": "house",
+    "to": "174",
+    "why": "V2: miner shack (shared Pyros home)"
+   },
+   {
+    "tile": [
+     4,
+     4
+    ],
+    "k": "house",
+    "to": "174",
+    "why": "V2: miner shack"
+   },
+   {
+    "tile": [
+     19,
+     4
+    ],
+    "k": "house",
+    "to": "174",
+    "why": "V2: miner shack"
+   },
+   {
+    "tile": [
+     20,
+     4
+    ],
+    "k": "house",
+    "to": "174",
+    "why": "V2: miner shack"
+   }
   ]
  },
  "arrival": {
@@ -1612,6 +1346,10 @@
   "glyphos": {
    "section": "072",
    "why": "V2: the jetty at Sunken Landing"
+  },
+  "pyros": {
+   "section": "082",
+   "why": "V2: the iron landing pad at the left end of Cinder Hollow"
   }
  },
  "unlisted": {},
@@ -1854,6 +1592,16 @@
    "default": [
     2,
     7
+   ]
+  },
+  "082": {
+   "arrival": [
+    3,
+    8
+   ],
+   "default": [
+    3,
+    8
    ]
   }
  },
