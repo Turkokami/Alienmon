@@ -94,7 +94,7 @@ function qPassive(){if(!G||!G.quests)return;
   else if(o.type==='xenodex'&&Object.keys(G.caught).length>=(o.count||1))qProgress(q,o.count||1);
   else if(o.type==='cutscene'){if(s.playing||!storyAt(o))continue;const ca=o.scene?[o.scene,o.title||'']:QCUT_ART[o.target],art=ca&&SCI[ca[0]];
    // wait a few seconds for the scene art to download before falling back to text only
-   if(okI(art)&&!DLG&&!CH&&scene!=='battle'){s.playing=1;cut(art,ca[1],()=>{s.playing=0;qNotify(q.id,'scene',storyCutLines(o));qProgress(q,1)})}else if(!okI(art)&&(s.wait=(s.wait||0)+1)>15){qNotify(q.id,'scene',storyCutLines(o));qProgress(q,1)}}
+   const qb=!o.scene&&QBOARD[o.target],bok=qb&&qb.every(([k])=>okI(SCI[k]));if(bok&&!DLG&&!CH&&scene!=='battle'){s.playing=1;cutBoard(qb,()=>{s.playing=0;qNotify(q.id,'scene',storyCutLines(o));qProgress(q,1)})}else if(!qb&&okI(art)&&!DLG&&!CH&&scene!=='battle'){s.playing=1;cut(art,ca[1],()=>{s.playing=0;qNotify(q.id,'scene',storyCutLines(o));qProgress(q,1)})}else if(!(qb?bok:okI(art))&&(s.wait=(s.wait||0)+1)>15){qNotify(q.id,'scene',storyCutLines(o));qProgress(q,1)}}
   else if(o.type==='choice'&&!s.asking&&!DLG&&!CH&&storyAt(o)){s.asking=1;choose(qFmt(o.hint||q.title),o.options.map(qFmt),i=>{s.asking=0;G.flags[o.target]=i+1;qProgress(q,1)});if(o.default!=null&&CH)CH.sel=o.default}
   else if(o.type==='legendary_encounter'&&o.skip_if&&(G.flags[o.skip_if.flag]||0)===o.skip_if.value&&storyAt(o)){qNotify(q.id,'scene',o.skip_if.lines||[]);qProgress(q,1)}
   else if(o.type==='visit'||o.type==='spot_event'){const t=o.target||'';
@@ -105,6 +105,12 @@ function qPassive(){if(!G||!G.quests)return;
 
 // cutscene lines that are not already part of a quest's own dialogue
 const QCUT_ART={zib_joins:['dustara_keyart','A signal from the canyon...'],sola_leaves:['thalassa_keyart','The Deep Sea Ferry dock'],sola_joins:['helix_keyart','Helix Station'],novaryx_awakens:['starfall_keyart','The eight Shards sing'],rift_sealed:['starfall_battle','The Rift closes']};
+// storyboards: pictures with story text, played in place of a single scene image
+const QBOARD={zib_joins:[
+ ['zib_bridge_1',["Night falls over Dustmere. DX-4 sweeps the path outside Mr. Abernathy's bakery, beeping at the canyon.",'Something past the old stone bridge is sending a signal. You grab a flashlight and go, {starter} close behind.']],
+ ['zib_bridge_2',['Halfway across the glowing bridge, the canyon wall bursts open!','A tiny silver saucer rockets out in a shower of red rock.']],
+ ['zib_bridge_3',['It stops right in front of your nose. Inside the glass dome, one huge eye blinks at you.','"Bip."']],
+ ['zib_bridge_4',["{starter} sneezes in surprise. The saucer doesn't flinch. It loops around you, lights flashing gold.","It's an Alienmon called Zib... and it has decided you're its captain."]]]};
 const QCUT={novaryx_awakens:['Your eight Shards rise and resonate. A great signal-winged bird answers the call...']};
 
 function qNotify(q,kind,lines){if(lines&&lines.length)QN.push({q,kind,lines:lines.map(l=>typeof qFmt==='function'?qFmt(l):l)})}
