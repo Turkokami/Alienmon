@@ -24,6 +24,17 @@ NEUTRAL = {'route': [('border', D(11, 12, 14, 16, 18, 20, 22, 24, 38, 42, 50), 2
 T = lambda *ns: [f'04_thalassa/{n:02d}' for n in ns]
 ZONE_TOWN = {'thalassa': [('wall', T(40, 41, 43, 44, 47, 50, 51), 2), ('wall', T(35, 36, 37, 38, 75, 77, 18, 19), 3), ('wall', T(7, 8, 9, 10, 11, 12), 1),
                           ('open', T(0, 1, 2, 3), 1), ('open', T(23, 24, 26, 28), 2), ('open', T(72, 73), 1)]}
+# Towns are laid out by hand like a real street: lamps in straight evenly spaced rows, stalls in a line along the
+# shopfronts, planters in pairs either side of a door, benches facing each other. (prop, x, y)
+HAND = {
+ '004': [('01_dustara/26', 8, 10), ('01_dustara/26', 15, 10)],
+ '008': [('01_dustara/44', 5, 5), ('01_dustara/45', 17, 5), ('01_dustara/13', 11, 5), ('01_dustara/13', 16, 5),
+         ('01_dustara/26', 3, 10), ('01_dustara/26', 8, 10), ('01_dustara/26', 13, 10), ('01_dustara/26', 18, 10)],
+ '018': [('04_thalassa/40', 12, 5), ('04_thalassa/44', 14, 5), ('04_thalassa/08', 6, 5), ('04_thalassa/08', 11, 5),
+         ('04_thalassa/35', 17, 5), ('04_thalassa/37', 18, 5),
+         ('04_thalassa/26', 3, 10), ('04_thalassa/26', 8, 10), ('04_thalassa/26', 13, 10), ('04_thalassa/26', 18, 10),
+         ('04_thalassa/00', 4, 7), ('04_thalassa/00', 17, 7)],
+}
 L = json.load(open('data/sections/props_layout.json'))
 for sid in sys.argv[1:]:
     s = SEC[sid]; rows = [list(r) for r in json.load(open(f'data/collision/{sid}.json'))['rows']]; Wt, Ht = s['tiles']
@@ -55,6 +66,17 @@ for sid in sys.argv[1:]:
                 if walk(x + a, y + b) and (x + a, y + b) not in seen: seen.add((x + a, y + b)); q.append((x + a, y + b))
         return all(p in seen for p in pts)
     out = []
+    if sid in HAND:
+        for p, x, y in HAND[sid]:
+            w, _ = size(p); fp = [(x + i, y) for i in range(w)]
+            bad = [t for t in fp if not walk(*t) or t in keys]
+            old = [rows[b][a] for a, b in fp]
+            for a, b in fp: rows[b][a] = '#'
+            if bad or not reach_ok():
+                print('  SKIP', p, x, y, 'blocked/key' if bad else 'cuts a path', bad)
+                for (a, b), c in zip(fp, old): rows[b][a] = c
+            else: out.append({'p': p, 'x': x, 'y': y})
+        pal = []
     for kind, props, n in pal:
         for _ in range(n):
             p = rnd.choice(props); w, ph = size(p); cand = []
