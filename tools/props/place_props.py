@@ -27,6 +27,14 @@ ZONE_TOWN = {'thalassa': [('wall', T(40, 41, 43, 44, 47, 50, 51), 2), ('wall', T
 # Towns are laid out by hand like a real street: lamps in straight evenly spaced rows, stalls in a line along the
 # shopfronts, planters in pairs either side of a door, benches facing each other. (prop, x, y)
 HAND = {
+ # Dustara rooms furnished from the Ferrox house/interior designs: furniture against the walls, the centre aisle, doormat, stairs and counters clear
+ '001': [('02_ferrox/240', 13, 9), ('02_ferrox/183', 12, 12), ('02_ferrox/165', 2, 12), ('02_ferrox/203', 2, 10), ('02_ferrox/189', 10, 10, 1, {'solid': False, 'h': 2})],
+ '002': [('02_ferrox/179', 12, 9), ('02_ferrox/240', 13, 12), ('02_ferrox/203', 2, 13), ('02_ferrox/189', 9, 10, 1, {'solid': False, 'h': 2})],
+ '003': [('02_ferrox/196', 3, 12), ('02_ferrox/208', 12, 12)],
+ '005': [('02_ferrox/203', 3, 12), ('02_ferrox/203', 12, 12)],
+ '006': [('02_ferrox/214', 3, 12), ('02_ferrox/156', 11, 12)],
+ '165': [('02_ferrox/156', 4, 4), ('02_ferrox/214', 6, 4), ('02_ferrox/157', 9, 4), ('02_ferrox/172', 12, 6), ('02_ferrox/245', 12, 9), ('02_ferrox/244', 12, 10), ('02_ferrox/241', 7, 8, 1, {'solid': False, 'h': 3})],
+ '166': [('02_ferrox/183', 12, 5), ('02_ferrox/180', 12, 8), ('02_ferrox/156', 11, 12), ('02_ferrox/167', 13, 12), ('02_ferrox/155', 3, 5)],
  # Ferrox (sheet 02_ferrox): lamps in straight rows, stalls along the shopfronts, plants either side of doors
  '029': [('02_ferrox/80', 4, 9), ('02_ferrox/80', 8, 9), ('02_ferrox/80', 16, 9), ('02_ferrox/80', 20, 9), ('02_ferrox/66', 18, 4), ('02_ferrox/04', 20, 4)],
  '030': [('02_ferrox/80', 5, 5), ('02_ferrox/30', 7, 5), ('02_ferrox/30', 10, 5), ('02_ferrox/80', 12, 5), ('02_ferrox/66', 13, 5), ('02_ferrox/80', 18, 5), ('02_ferrox/01', 19, 5)],
@@ -95,6 +103,8 @@ for sid in sys.argv[1:]:
         if v: hard.add(tuple(v))
     if sid in HAND:
         for item in HAND[sid]:
+            if len(item) > 4 and item[4].get('solid') is False:
+                out.append({'p': item[0], 'x': item[1], 'y': item[2], **item[4]}); continue
             p, x, y = item[:3]; h = item[3] if len(item) > 3 else 1; ext = item[4] if len(item) > 4 else {}
             w = ext.get('w') or size(p)[0]; fp = [(x + i, y + j) for i in range(w) for j in range(h)]
             bad = [t for t in fp if t in hard]   # hand layouts may stand on drawn scenery; only doors, warps, counters and spawns are off limits
