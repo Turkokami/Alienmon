@@ -521,7 +521,9 @@ function wild(){if(!G.party.some(m=>m.hp>0))return;{const hw=typeof secWildPick=
 let CUT=null;
 function cut(i,text,next,fx){const im=typeof i==='number'?CUTI[i]:i;if(!(im&&im.complete&&im.naturalWidth)){next();return}CUT={im,text,next,t:0,fx,back:scene==='cut'?'planet':scene};scene='cut'}
 // storyboard: a few full-width pictures, each with story text underneath (A turns the page)
-function cutBoard(panels,next){const ps=panels.map(([k,ls])=>({im:SCI[k],pages:(w=>{const o=[];for(let i=0;i<w.length;i+=4)o.push(w.slice(i,i+4));return o})(wrap([].concat(ls).map(qFmt).join(' '),25))}));if(!ps.every(p=>okI(p.im))){next();return}CUT={board:ps,p:0,i:0,c:0,t:0,next,back:scene==='cut'?'planet':scene};scene='cut'}
+// a panel picture can have a version per starter: <key>_<starter name>.jpg (e.g. zib_bridge_1_sporix), else <key>
+function boardImg(k){const st=G&&typeof myStarter==='function'?D[myStarter()].name.toLowerCase():'';return SCN[k+'_'+st]?SCI[k+'_'+st]:SCI[k]}
+function cutBoard(panels,next){const ps=panels.map(([k,ls])=>({im:boardImg(k),pages:(w=>{const o=[];for(let i=0;i<w.length;i+=4)o.push(w.slice(i,i+4));return o})(wrap([].concat(ls).map(qFmt).join(' '),25))}));if(!ps.every(p=>okI(p.im))){next();return}CUT={board:ps,p:0,i:0,c:0,t:0,next,back:scene==='cut'?'planet':scene};scene='cut'}
 function updBoard(){const b=CUT.board[CUT.p],pg=b.pages[CUT.i];CUT.t++;ctx.fillStyle='#0b0716';ctx.fillRect(0,0,160,144);
  const z=1+Math.min(CUT.t,600)*0.00025,iw=b.im.naturalWidth,ih=b.im.naturalHeight,sw=iw/z,sh=ih/z;ctx.save();ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';ctx.globalAlpha=Math.min(1,CUT.t/12);ctx.drawImage(b.im,(iw-sw)/2,(ih-sh)/2,sw,sh,0,8,160,90);ctx.restore();
  box(0,102,160,42);CUT.c=Math.min(999,CUT.c+textSpeed());let left=CUT.c;pg.forEach((l,i)=>{txt(l.slice(0,Math.max(0,left)),6,106+i*9,'#1b1424',6);left-=l.length});if(frame%40<24)rect(150,136,4,4,'#ff8a1e');
