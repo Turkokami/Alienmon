@@ -44,7 +44,7 @@
   },
   "halo": {
    "section": "114",
-   "why": "atlas exit marked arrival"
+   "why": "V2: the round sky-dock landing pad"
   },
   "umbra": {
    "section": "123",
@@ -324,13 +324,13 @@
   },
   "M16:giver": {
    "s": "115",
-   "x": 12,
-   "y": 10
+   "x": 15,
+   "y": 8
   },
   "M16:0": {
    "s": "115",
-   "x": 12,
-   "y": 10
+   "x": 15,
+   "y": 8
   },
   "M17:giver": {
    "s": "027",
@@ -929,18 +929,18 @@
   },
   "S94:giver": {
    "s": "115",
-   "x": 4,
-   "y": 6
+   "x": 5,
+   "y": 11
   },
   "S94:0": {
    "s": "115",
    "x": 6,
-   "y": 9
+   "y": 10
   },
   "S95:giver": {
    "s": "115",
    "x": 18,
-   "y": 12
+   "y": 11
   },
   "S95:0": {
    "s": "141",
@@ -949,8 +949,8 @@
   },
   "S96:giver": {
    "s": "115",
-   "x": 10,
-   "y": 5
+   "x": 12,
+   "y": 11
   },
   "S97:giver": {
    "s": "138",
@@ -1276,7 +1276,7 @@
   },
   "M16:1": {
    "s": "120",
-   "x": 11,
+   "x": 12,
    "y": 8
   },
   "M14:3": {
@@ -18169,32 +18169,43 @@
    ],
    "notes": "Sky dock for airships",
    "edges": {
-    "left": {
-     "to": "arrival",
-     "range": [
-      7,
-      8
-     ]
-    },
     "right": {
      "to": "115",
      "range": [
-      7,
-      8
+      5,
+      10
      ],
-     "offset": 0
+     "offset": 1
     }
    },
    "warps": [],
    "objects": [
     {
      "tile": [
-      4,
-      3
+      10,
+      2
      ],
      "k": "house",
      "to": "182",
-     "why": "walk-in door: cloud_dock_hall"
+     "why": "V2: the Cloud Dock hall"
+    },
+    {
+     "tile": [
+      11,
+      2
+     ],
+     "k": "house",
+     "to": "182",
+     "why": "V2: the Cloud Dock hall"
+    },
+    {
+     "tile": [
+      19,
+      2
+     ],
+     "k": "house",
+     "to": "179",
+     "why": "V2: up the gangway into the airship cabin"
     },
     {
      "tile": [
@@ -18220,7 +18231,7 @@
     {
      "tile": [
       3,
-      12
+      6
      ],
      "k": "stash",
      "item": "fullgel",
@@ -18230,11 +18241,11 @@
    ],
    "spawns": {
     "arrival": [
-     1,
+     3,
      7
     ],
     "default": [
-     1,
+     3,
      7
     ]
    },
@@ -18245,45 +18256,48 @@
    "pkey": "halo",
    "npcs": [
     {
-     "x": 17,
-     "y": 8,
+     "x": 12,
+     "y": 3,
      "art": "pilgrim",
      "face": "down",
      "t": [
       "Pilgrim: I rode the skyliner up from the cloud sea. My ears still haven't popped back."
      ],
+     "stay": true,
      "src": "p:114:0"
     },
     {
-     "x": 20,
-     "y": 8,
+     "x": 12,
+     "y": 14,
      "art": "technician",
      "face": "down",
      "t": [
       "Dock tech: The airships float on Psi-charged crystals. Don't ask me how. I just polish them."
      ],
+     "stay": true,
      "src": "p:114:1"
     },
     {
-     "x": 15,
+     "x": 19,
      "y": 9,
      "art": "civilian",
      "face": "down",
      "t": [
       "Skywatcher: Skyreach Plaza is just east. Heal up at the Recovery Bay before the Wind Bridges."
      ],
+     "stay": true,
      "src": "p:114:2"
     }
    ],
    "mons": [
     {
-     "x": 8,
-     "y": 11,
+     "x": 1,
+     "y": 4,
      "mon": "Cerebrix"
     },
     {
-     "x": 11,
-     "y": 4,
+     "x": 6,
+     "y": 8,
      "mon": "Hummingmind"
     }
    ]
@@ -18304,30 +18318,30 @@
     "left": {
      "to": "114",
      "range": [
-      7,
-      8
+      6,
+      9
      ],
-     "offset": 0
+     "offset": -1
     },
     "right": {
      "to": "118",
      "range": [
-      7,
-      8
+      6,
+      9
      ],
-     "offset": 0
+     "offset": -1
     }
    },
    "warps": [
     {
      "tile": [
-      17,
-      5
+      8,
+      4
      ],
      "to": "116",
      "at": [
       7,
-      12
+      13
      ],
      "face": "up",
      "kind": "door",
@@ -18335,13 +18349,13 @@
     },
     {
      "tile": [
-      18,
-      5
+      9,
+      4
      ],
      "to": "116",
      "at": [
       8,
-      12
+      13
      ],
      "face": "up",
      "kind": "door",
@@ -18349,13 +18363,27 @@
     },
     {
      "tile": [
-      3,
+      14,
       4
      ],
      "to": "117",
      "at": [
       7,
-      12
+      13
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    },
+    {
+     "tile": [
+      15,
+      4
+     ],
+     "to": "117",
+     "at": [
+      8,
+      13
      ],
      "face": "up",
      "kind": "door",
@@ -18365,12 +18393,30 @@
    "objects": [
     {
      "tile": [
-      11,
-      2
+      3,
+      4
      ],
      "k": "house",
-     "why": "house door: opens the shared Halo house",
-     "to": "175"
+     "to": "175",
+     "why": "V2: Skyreach house (shared Halo home)"
+    },
+    {
+     "tile": [
+      19,
+      4
+     ],
+     "k": "house",
+     "to": "175",
+     "why": "V2: Skyreach house"
+    },
+    {
+     "tile": [
+      20,
+      4
+     ],
+     "k": "house",
+     "to": "175",
+     "why": "V2: Skyreach house"
     },
     {
      "tile": [
@@ -18382,52 +18428,115 @@
       "THE HOLO-GLOBE. Fourteen worlds turn in its light.",
       "Look closely: one of them is slowly dimming."
      ]
+    },
+    {
+     "tile": [
+      9,
+      12
+     ],
+     "k": "stash",
+     "item": "ether",
+     "n": 3,
+     "tier": 5
     }
    ],
    "spawns": {
     "default": [
      1,
-     7
+     6
     ]
    },
    "grid": [
     24,
-    0
+    -1
    ],
    "pkey": "halo",
    "npcs": [
     {
+     "x": 16,
+     "y": 9,
+     "art": "pilgrim",
+     "face": "down",
+     "t": [
+      "Pilgrim: The holo-globe shows all fourteen worlds at once. I found my home world spinning in it."
+     ],
+     "stay": true,
+     "src": "p:115:0"
+    },
+    {
      "x": 6,
-     "y": 5,
+     "y": 6,
      "art": "civilian",
      "face": "down",
      "t": [
       "Skywatcher: The islands float on updrafts. Don't look down. Seriously, don't."
      ],
+     "stay": true,
      "src": "p:115:1"
     },
     {
-     "x": 2,
-     "y": 9,
+     "x": 3,
+     "y": 10,
+     "art": "wanderer",
+     "face": "down",
+     "t": [
+      "Mystic: The twins see what you'll do before you do it. They told me you'd come today."
+     ],
+     "stay": true,
+     "src": "p:115:2"
+    },
+    {
+     "x": 20,
+     "y": 6,
      "art": "civilian",
      "face": "down",
      "t": [
       "Kid: I caught a Psi-type with a Stasis Pod! Weaken them first or the pod just pops open."
      ],
+     "stay": true,
      "src": "p:115:3"
     },
     {
-     "x": 9,
-     "y": 3,
+     "x": 19,
+     "y": 12,
      "art": "researcher",
      "face": "down",
      "t": [
       "Star scholar: The Sky Temple sits past the Floating Gardens. Echo and Iris guard Halo's Signal Shard."
      ],
+     "stay": true,
      "src": "p:115:4"
+    },
+    {
+     "x": 12,
+     "y": 10,
+     "art": "guard",
+     "face": "down",
+     "t": [
+      "Plaza guard: Folks in Helix coats kept asking about the temple crystal. Odd questions. I sent them off."
+     ],
+     "stay": true,
+     "src": "p:115:5"
+    },
+    {
+     "x": 14,
+     "y": 12,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Climber: Trainers on the bridges spot you from five tiles off. Slip past their line of sight if you're tired."
+     ],
+     "stay": true,
+     "src": "p:115:6"
     }
    ],
-   "mons": []
+   "mons": [
+    {
+     "x": 22,
+     "y": 11,
+     "mon": "Levitot"
+    }
+   ]
   },
   "116": {
    "id": "116",
@@ -18446,12 +18555,12 @@
     {
      "tile": [
       7,
-      13
+      14
      ],
      "to": "115",
      "at": [
-      17,
-      6
+      8,
+      5
      ],
      "face": "down",
      "kind": "door"
@@ -18459,12 +18568,12 @@
     {
      "tile": [
       8,
-      13
+      14
      ],
      "to": "115",
      "at": [
-      17,
-      6
+      8,
+      5
      ],
      "face": "down",
      "kind": "door"
@@ -18473,8 +18582,15 @@
    "objects": [
     {
      "tile": [
+      7,
+      4
+     ],
+     "k": "bay"
+    },
+    {
+     "tile": [
       8,
-      6
+      4
      ],
      "k": "bay"
     }
@@ -18482,11 +18598,11 @@
    "spawns": {
     "door": [
      7,
-     12
+     13
     ],
     "default": [
      7,
-     12
+     13
     ]
    },
    "parent": "115",
@@ -18494,7 +18610,7 @@
    "npcs": [
     {
      "x": 8,
-     "y": 6,
+     "y": 4,
      "art": "nurse",
      "face": "down",
      "t": [
@@ -18504,13 +18620,14 @@
      "src": "p:116:0"
     },
     {
-     "x": 6,
-     "y": 10,
+     "x": 9,
+     "y": 12,
      "art": "civilian",
      "face": "down",
      "t": [
       "Visitor: Psi-types hit hard up here. Bring something sturdy, or bring plenty of healing gel."
      ],
+     "stay": true,
      "src": "p:116:1"
     }
    ]
@@ -18532,11 +18649,11 @@
     {
      "tile": [
       7,
-      13
+      14
      ],
      "to": "115",
      "at": [
-      3,
+      14,
       5
      ],
      "face": "down",
@@ -18545,11 +18662,11 @@
     {
      "tile": [
       8,
-      13
+      14
      ],
      "to": "115",
      "at": [
-      3,
+      14,
       5
      ],
      "face": "down",
@@ -18559,8 +18676,15 @@
    "objects": [
     {
      "tile": [
-      4,
-      7
+      7,
+      5
+     ],
+     "k": "shop"
+    },
+    {
+     "tile": [
+      8,
+      5
      ],
      "k": "shop"
     }
@@ -18568,19 +18692,19 @@
    "spawns": {
     "door": [
      7,
-     12
+     13
     ],
     "default": [
      7,
-     12
+     13
     ]
    },
    "parent": "115",
    "pkey": "halo",
    "npcs": [
     {
-     "x": 4,
-     "y": 7,
+     "x": 8,
+     "y": 5,
      "art": "shop",
      "face": "down",
      "t": [
@@ -18590,13 +18714,14 @@
      "src": "p:117:0"
     },
     {
-     "x": 9,
-     "y": 10,
+     "x": 6,
+     "y": 12,
      "art": "pilgrim",
      "face": "down",
      "t": [
       "Shopper: I always carry spare Stasis Pods. You never know what drifts out of the clouds."
      ],
+     "stay": true,
      "src": "p:117:1"
     }
    ]
@@ -18617,16 +18742,16 @@
     "left": {
      "to": "115",
      "range": [
-      7,
-      8
+      5,
+      9
      ],
-     "offset": 0
+     "offset": 1
     },
     "right": {
      "to": "119",
      "range": [
-      7,
-      8
+      5,
+      9
      ],
      "offset": 0
     }
@@ -18635,8 +18760,8 @@
    "objects": [
     {
      "tile": [
-      12,
-      10
+      11,
+      14
      ],
      "k": "stash",
      "item": "harmonic",
@@ -18645,8 +18770,8 @@
     },
     {
      "tile": [
-      21,
-      12
+      6,
+      2
      ],
      "k": "stash",
      "item": "fullgel",
@@ -18657,7 +18782,7 @@
    "spawns": {
     "default": [
      1,
-     7
+     5
     ]
    },
    "grid": [
@@ -18667,28 +18792,30 @@
    "pkey": "halo",
    "npcs": [
     {
-     "x": 5,
-     "y": 8,
+     "x": 13,
+     "y": 5,
      "art": "explorer",
      "face": "down",
      "t": [
       "Bridge walker: The ropes creak, but they've held for three hundred years. Probably."
      ],
+     "stay": true,
      "src": "p:118:0"
     },
     {
-     "x": 19,
-     "y": 10,
+     "x": 4,
+     "y": 9,
      "art": "pilgrim",
      "face": "down",
      "t": [
       "Pilgrim: Wild Alienmon hide in the pink blossoms. Step around them if your team is worn out."
      ],
+     "stay": true,
      "src": "p:118:1"
     },
     {
-     "x": 19,
-     "y": 6,
+     "x": 18,
+     "y": 10,
      "art": "civilian",
      "face": "up",
      "t": [],
@@ -18700,10 +18827,10 @@
      }
     },
     {
-     "x": 7,
-     "y": 5,
+     "x": 12,
+     "y": 12,
      "art": "wanderer",
-     "face": "left",
+     "face": "up",
      "t": [],
      "id": "sec118_tr3",
      "trainer": {
@@ -18715,13 +18842,13 @@
    ],
    "mons": [
     {
-     "x": 11,
-     "y": 10,
+     "x": 18,
+     "y": 2,
      "mon": "Cerebrix"
     },
     {
-     "x": 0,
-     "y": 6,
+     "x": 8,
+     "y": 2,
      "mon": "Hummingmind"
     }
    ]
@@ -18742,16 +18869,16 @@
     "left": {
      "to": "118",
      "range": [
-      7,
-      8
+      5,
+      9
      ],
      "offset": 0
     },
     "right": {
      "to": "120",
      "range": [
-      7,
-      8
+      5,
+      9
      ],
      "offset": 0
     }
@@ -18760,17 +18887,8 @@
    "objects": [
     {
      "tile": [
-      4,
-      2
-     ],
-     "k": "sign",
-     "t": "The shrine door is sealed. Old wind still whistles through the cracks.",
-     "why": "door plan: shrine door with no interior yet"
-    },
-    {
-     "tile": [
-      18,
-      11
+      11,
+      14
      ],
      "k": "stash",
      "item": "maxrevive",
@@ -18779,8 +18897,8 @@
     },
     {
      "tile": [
-      14,
-      7
+      6,
+      2
      ],
      "k": "stash",
      "item": "harmonic",
@@ -18791,7 +18909,7 @@
    "spawns": {
     "default": [
      1,
-     7
+     5
     ]
    },
    "grid": [
@@ -18801,27 +18919,29 @@
    "pkey": "halo",
    "npcs": [
     {
-     "x": 8,
-     "y": 6,
+     "x": 13,
+     "y": 5,
      "art": "civilian",
      "face": "down",
      "t": [
       "Skywatcher: See those little islands drifting by? Some of them glitter with Signal Shard dust."
      ],
+     "stay": true,
      "src": "p:119:0"
     },
     {
-     "x": 19,
-     "y": 10,
+     "x": 18,
+     "y": 9,
      "art": "wanderer",
      "face": "down",
      "t": [
       "Mystic: The wind sings louder near the temple. The twins say it is singing your name."
      ],
+     "stay": true,
      "src": "p:119:1"
     },
     {
-     "x": 13,
+     "x": 5,
      "y": 10,
      "art": "wanderer",
      "face": "up",
@@ -18834,10 +18954,10 @@
      }
     },
     {
-     "x": 16,
-     "y": 4,
+     "x": 11,
+     "y": 11,
      "art": "pilgrim",
-     "face": "down",
+     "face": "up",
      "t": [],
      "id": "sec119_tr3",
      "trainer": {
@@ -18849,13 +18969,13 @@
    ],
    "mons": [
     {
-     "x": 11,
-     "y": 4,
+     "x": 4,
+     "y": 2,
      "mon": "Halocene"
     },
     {
-     "x": 7,
-     "y": 10,
+     "x": 20,
+     "y": 3,
      "mon": "Zephyrion"
     }
    ]
@@ -18876,8 +18996,8 @@
     "left": {
      "to": "119",
      "range": [
-      7,
-      8
+      5,
+      9
      ],
      "offset": 0
     }
@@ -18886,7 +19006,21 @@
     {
      "tile": [
       23,
-      7
+      5
+     ],
+     "to": "121",
+     "at": [
+      6,
+      22
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      6
      ],
      "to": "121",
      "at": [
@@ -18900,11 +19034,25 @@
     {
      "tile": [
       23,
-      8
+      7
      ],
      "to": "121",
      "at": [
       8,
+      22
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      8
+     ],
+     "to": "121",
+     "at": [
+      9,
       22
      ],
      "face": "up",
@@ -18915,18 +19063,8 @@
    "objects": [
     {
      "tile": [
-      3,
-      1
-     ],
-     "k": "chest",
-     "item": "fullgel",
-     "n": 2,
-     "why": "treasure chest drawn on the top-left ledge"
-    },
-    {
-     "tile": [
-      18,
-      2
+      11,
+      4
      ],
      "k": "sign",
      "t": [
@@ -18936,8 +19074,8 @@
     },
     {
      "tile": [
-      17,
-      13
+      11,
+      14
      ],
      "k": "stash",
      "item": "singularity",
@@ -18947,7 +19085,7 @@
     {
      "tile": [
       6,
-      12
+      2
      ],
      "k": "stash",
      "item": "dust",
@@ -18958,7 +19096,7 @@
    "spawns": {
     "default": [
      1,
-     7
+     5
     ]
    },
    "grid": [
@@ -18968,27 +19106,29 @@
    "pkey": "halo",
    "npcs": [
     {
-     "x": 18,
-     "y": 10,
+     "x": 13,
+     "y": 5,
      "art": "researcher",
      "face": "down",
      "t": [
       "Botanist: These blossoms only grow above the clouds. Psi-types nest in them when the wind is calm."
      ],
+     "stay": true,
      "src": "p:120:0"
     },
     {
-     "x": 3,
-     "y": 4,
+     "x": 20,
+     "y": 9,
      "art": "pilgrim",
      "face": "down",
      "t": [
       "Pilgrim: The Sky Temple is just east. Echo and Iris accept every challenger, but few leave smiling."
      ],
+     "stay": true,
      "src": "p:120:1"
     },
     {
-     "x": 10,
+     "x": 5,
      "y": 10,
      "art": "pilgrim",
      "face": "up",
@@ -19001,10 +19141,10 @@
      }
     },
     {
-     "x": 17,
-     "y": 4,
+     "x": 10,
+     "y": 11,
      "art": "civilian",
-     "face": "down",
+     "face": "up",
      "t": [],
      "id": "sec120_tr3",
      "trainer": {
@@ -19016,13 +19156,13 @@
    ],
    "mons": [
     {
-     "x": 2,
-     "y": 10,
+     "x": 4,
+     "y": 2,
      "mon": "Cerebrix"
     },
     {
-     "x": 8,
-     "y": 11,
+     "x": 18,
+     "y": 2,
      "mon": "Hummingmind"
     }
    ]
@@ -19043,13 +19183,27 @@
    "warps": [
     {
      "tile": [
+      6,
+      23
+     ],
+     "to": "120",
+     "at": [
+      22,
+      5
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
       7,
       23
      ],
      "to": "120",
      "at": [
       22,
-      7
+      6
      ],
      "face": "left",
      "kind": "edge",
@@ -19071,12 +19225,26 @@
     },
     {
      "tile": [
+      9,
+      23
+     ],
+     "to": "120",
+     "at": [
+      22,
+      8
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
       7,
       0
      ],
      "to": "122",
      "at": [
-      7,
+      6,
       22
      ],
      "face": "up",
@@ -19090,7 +19258,7 @@
      ],
      "to": "122",
      "at": [
-      8,
+      7,
       22
      ],
      "face": "up",
@@ -19099,24 +19267,6 @@
     }
    ],
    "objects": [
-    {
-     "tile": [
-      3,
-      4
-     ],
-     "k": "stop",
-     "t": "The stairs are blocked off. You can't go this way.",
-     "why": "dead-end stairs (tools/sections/dead_ends.py)"
-    },
-    {
-     "tile": [
-      12,
-      4
-     ],
-     "k": "stop",
-     "t": "The stairs are blocked off. You can't go this way.",
-     "why": "dead-end stairs (tools/sections/dead_ends.py)"
-    },
     {
      "tile": [
       7,
@@ -19131,24 +19281,25 @@
    ],
    "spawns": {
     "default": [
-     7,
+     6,
      22
     ]
    },
    "pkey": "halo",
    "npcs": [
     {
-     "x": 10,
-     "y": 15,
+     "x": 9,
+     "y": 2,
      "art": "pilgrim",
      "face": "down",
      "t": [
       "Temple pilgrim: The twins wait upstairs. Their apprentices will test you first."
      ],
+     "stay": true,
      "src": "p:121:0"
     },
     {
-     "x": 10,
+     "x": 11,
      "y": 16,
      "art": "pilgrim",
      "face": "left",
@@ -19162,7 +19313,7 @@
      }
     },
     {
-     "x": 2,
+     "x": 4,
      "y": 6,
      "art": "civilian",
      "face": "right",
@@ -19193,7 +19344,7 @@
    "warps": [
     {
      "tile": [
-      7,
+      6,
       23
      ],
      "to": "121",
@@ -19207,7 +19358,7 @@
     },
     {
      "tile": [
-      8,
+      7,
       23
      ],
      "to": "121",
@@ -19231,7 +19382,7 @@
    ],
    "spawns": {
     "default": [
-     7,
+     6,
      22
     ]
    },
@@ -19239,12 +19390,13 @@
    "npcs": [
     {
      "x": 9,
-     "y": 9,
+     "y": 5,
      "art": "wanderer",
      "face": "down",
      "t": [
       "Mystic: One twin starts a sentence, the other finishes it. Don't let it rattle you."
      ],
+     "stay": true,
      "src": "p:122:0"
     }
    ]
@@ -25474,7 +25626,7 @@
      12
     ]
    },
-   "parent": "114",
+   "parent": "115",
    "pkey": "halo",
    "npcs": [
     {
@@ -28970,153 +29122,142 @@
   },
   {
    "from_id": "114",
-   "edge": "left",
-   "tile_range": [
-    7,
-    8
-   ],
-   "to_id": "arrival",
-   "to_edge": null,
-   "to_tile": null
-  },
-  {
-   "from_id": "114",
    "edge": "right",
    "tile_range": [
-    7,
-    8
+    5,
+    10
    ],
    "to_id": "115",
    "to_edge": "left",
    "to_tile": [
-    7,
-    8
+    6,
+    9
    ]
   },
   {
    "from_id": "115",
    "edge": "left",
    "tile_range": [
-    7,
-    8
+    6,
+    9
    ],
    "to_id": "114",
    "to_edge": "right",
    "to_tile": [
-    7,
-    8
+    5,
+    10
    ]
   },
   {
    "from_id": "115",
    "edge": "right",
    "tile_range": [
-    7,
-    8
+    6,
+    9
    ],
    "to_id": "118",
    "to_edge": "left",
    "to_tile": [
-    7,
-    8
+    5,
+    9
    ]
   },
   {
    "from_id": "118",
    "edge": "left",
    "tile_range": [
-    7,
-    8
+    5,
+    9
    ],
    "to_id": "115",
    "to_edge": "right",
    "to_tile": [
-    7,
-    8
+    6,
+    9
    ]
   },
   {
    "from_id": "118",
    "edge": "right",
    "tile_range": [
-    7,
-    8
+    5,
+    9
    ],
    "to_id": "119",
    "to_edge": "left",
    "to_tile": [
-    7,
-    8
+    5,
+    9
    ]
   },
   {
    "from_id": "119",
    "edge": "left",
    "tile_range": [
-    7,
-    8
+    5,
+    9
    ],
    "to_id": "118",
    "to_edge": "right",
    "to_tile": [
-    7,
-    8
+    5,
+    9
    ]
   },
   {
    "from_id": "119",
    "edge": "right",
    "tile_range": [
-    7,
-    8
+    5,
+    9
    ],
    "to_id": "120",
    "to_edge": "left",
    "to_tile": [
-    7,
-    8
+    5,
+    9
    ]
   },
   {
    "from_id": "120",
    "edge": "left",
    "tile_range": [
-    7,
-    8
+    5,
+    9
    ],
    "to_id": "119",
    "to_edge": "right",
    "to_tile": [
-    7,
-    8
+    5,
+    9
    ]
   },
   {
    "from_id": "120",
    "edge": "right",
    "tile_range": [
-    7,
-    8
+    5,
+    9
    ],
    "to_id": "121",
    "to_edge": "bottom",
    "to_tile": [
-    7,
-    8
+    6,
+    9
    ]
   },
   {
    "from_id": "121",
    "edge": "bottom",
    "tile_range": [
-    7,
-    8
+    6,
+    9
    ],
    "to_id": "120",
    "to_edge": "right",
    "to_tile": [
-    7,
-    8
+    5,
+    9
    ]
   },
   {
@@ -29129,16 +29270,16 @@
    "to_id": "122",
    "to_edge": "bottom",
    "to_tile": [
-    7,
-    8
+    6,
+    9
    ]
   },
   {
    "from_id": "122",
    "edge": "bottom",
    "tile_range": [
-    7,
-    8
+    6,
+    9
    ],
    "to_id": "121",
    "to_edge": "top",

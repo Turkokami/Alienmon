@@ -2532,11 +2532,11 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → arrival (landing pad / gate)",
-    "right edge, tile rows 7–8 → Skyreach Plaza"
+    "right edge, tile rows 5–10 → Skyreach Plaza"
    ],
    "notes": "Sky dock for airships",
-   "file": "art/sections/10_halo/114_cloud_dock.png"
+   "file": "art/sections/10_halo/114_cloud_dock.png",
+   "v2": true
   },
   {
    "id": "115",
@@ -2554,11 +2554,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Cloud Dock",
-    "right edge, tile rows 7–8 → Wind Bridges Part A"
+    "left edge, tile rows 6–9 → Cloud Dock",
+    "right edge, tile rows 6–9 → Wind Bridges Part A"
    ],
    "notes": "Plaza with holo-globe fountain (rebuild at new scale)",
-   "file": "art/sections/10_halo/115_skyreach_plaza.png"
+   "file": "art/sections/10_halo/115_skyreach_plaza.png",
+   "v2": true
   },
   {
    "id": "116",
@@ -2575,11 +2576,10 @@
    ],
    "tile_px_render": 64,
    "tile_px_game": 16,
-   "exits": [
-    "doormat at the bottom center of the room leads back outside"
-   ],
+   "exits": [],
    "notes": "",
-   "file": "art/sections/10_halo/116_skyreach_recovery_bay.png"
+   "file": "art/sections/10_halo/116_skyreach_recovery_bay.png",
+   "v2": true
   },
   {
    "id": "117",
@@ -2596,11 +2596,10 @@
    ],
    "tile_px_render": 64,
    "tile_px_game": 16,
-   "exits": [
-    "doormat at the bottom center of the room leads back outside"
-   ],
+   "exits": [],
    "notes": "",
-   "file": "art/sections/10_halo/117_skyreach_shop.png"
+   "file": "art/sections/10_halo/117_skyreach_shop.png",
+   "v2": true
   },
   {
    "id": "118",
@@ -2618,11 +2617,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Skyreach Plaza",
-    "right edge, tile rows 7–8 → Wind Bridges Part B"
+    "left edge, tile rows 5–9 → Skyreach Plaza",
+    "right edge, tile rows 5–9 → Wind Bridges Part B"
    ],
    "notes": "Bridges between floating islands",
-   "file": "art/sections/10_halo/118_wind_bridges_part_a.png"
+   "file": "art/sections/10_halo/118_wind_bridges_part_a.png",
+   "v2": true
   },
   {
    "id": "119",
@@ -2640,11 +2640,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Wind Bridges Part A",
-    "right edge, tile rows 7–8 → Floating Gardens"
+    "left edge, tile rows 5–9 → Wind Bridges Part A",
+    "right edge, tile rows 5–9 → Floating Gardens"
    ],
    "notes": "Bridges between floating islands",
-   "file": "art/sections/10_halo/119_wind_bridges_part_b.png"
+   "file": "art/sections/10_halo/119_wind_bridges_part_b.png",
+   "v2": true
   },
   {
    "id": "120",
@@ -2662,11 +2663,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Wind Bridges Part B",
-    "right edge, tile rows 7–8 → Sky Temple 1F"
+    "left edge, tile rows 5–9 → Wind Bridges Part B",
+    "right edge, tile rows 5–9 → Sky Temple 1F"
    ],
    "notes": "Floating garden islands",
-   "file": "art/sections/10_halo/120_floating_gardens.png"
+   "file": "art/sections/10_halo/120_floating_gardens.png",
+   "v2": true
   },
   {
    "id": "121",
@@ -2684,11 +2686,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7–8 → Floating Gardens",
+    "bottom edge, tile columns 6–9 → Floating Gardens",
     "top edge, tile columns 7–8 (stairs up) → Sky Temple 2F"
    ],
    "notes": "Echo & Iris's temple",
-   "file": "art/sections/10_halo/121_sky_temple_1f.png"
+   "file": "art/sections/10_halo/121_sky_temple_1f.png",
+   "v2": true
   },
   {
    "id": "122",
@@ -2706,10 +2709,11 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7–8 → Sky Temple 1F"
+    "bottom edge, tile columns 6–9 → Sky Temple 1F"
    ],
    "notes": "Echo & Iris's temple",
-   "file": "art/sections/10_halo/122_sky_temple_2f.png"
+   "file": "art/sections/10_halo/122_sky_temple_2f.png",
+   "v2": true
   },
   {
    "id": "123",

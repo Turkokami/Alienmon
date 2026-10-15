@@ -242,72 +242,6 @@
  ],
  "ignore_mats": {},
  "objects": {
-  "114": [
-   {
-    "tile": [
-     4,
-     3
-    ],
-    "k": "house",
-    "to": "182",
-    "why": "walk-in door: cloud_dock_hall"
-   }
-  ],
-  "115": [
-   {
-    "tile": [
-     11,
-     2
-    ],
-    "k": "house",
-    "why": "house door: opens the shared Halo house",
-    "to": "175"
-   }
-  ],
-  "118": [],
-  "119": [
-   {
-    "tile": [
-     4,
-     2
-    ],
-    "k": "sign",
-    "t": "The shrine door is sealed. Old wind still whistles through the cracks.",
-    "why": "door plan: shrine door with no interior yet"
-   }
-  ],
-  "120": [
-   {
-    "tile": [
-     3,
-     1
-    ],
-    "k": "chest",
-    "item": "fullgel",
-    "n": 2,
-    "why": "treasure chest drawn on the top-left ledge"
-   }
-  ],
-  "121": [
-   {
-    "tile": [
-     3,
-     4
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   },
-   {
-    "tile": [
-     12,
-     4
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   }
-  ],
   "123": [
    {
     "tile": [
@@ -1398,6 +1332,64 @@
      "HELIX STATION - DOCKING RING. All personnel: report unregistered Linkers to Security."
     ]
    }
+  ],
+  "114": [
+   {
+    "tile": [
+     10,
+     2
+    ],
+    "k": "house",
+    "to": "182",
+    "why": "V2: the Cloud Dock hall"
+   },
+   {
+    "tile": [
+     11,
+     2
+    ],
+    "k": "house",
+    "to": "182",
+    "why": "V2: the Cloud Dock hall"
+   },
+   {
+    "tile": [
+     19,
+     2
+    ],
+    "k": "house",
+    "to": "179",
+    "why": "V2: up the gangway into the airship cabin"
+   }
+  ],
+  "115": [
+   {
+    "tile": [
+     3,
+     4
+    ],
+    "k": "house",
+    "to": "175",
+    "why": "V2: Skyreach house (shared Halo home)"
+   },
+   {
+    "tile": [
+     19,
+     4
+    ],
+    "k": "house",
+    "to": "175",
+    "why": "V2: Skyreach house"
+   },
+   {
+    "tile": [
+     20,
+     4
+    ],
+    "k": "house",
+    "to": "175",
+    "why": "V2: Skyreach house"
+   }
   ]
  },
  "arrival": {
@@ -1436,6 +1428,10 @@
   "helix": {
    "section": "105",
    "why": "V2: the docking bay pad on the Docking Ring"
+  },
+  "halo": {
+   "section": "114",
+   "why": "V2: the round sky-dock landing pad"
   }
  },
  "unlisted": {},
@@ -1714,6 +1710,16 @@
    "default": [
     7,
     13
+   ]
+  },
+  "114": {
+   "arrival": [
+    3,
+    7
+   ],
+   "default": [
+    3,
+    7
    ]
   }
  },
@@ -2126,7 +2132,7 @@
    ],
    "face": "down",
    "kind": "door",
-   "parent": "114"
+   "parent": "115"
   },
   {
    "section": "175",
@@ -2141,7 +2147,7 @@
    ],
    "face": "down",
    "kind": "door",
-   "parent": "114"
+   "parent": "115"
   },
   {
    "section": "176",

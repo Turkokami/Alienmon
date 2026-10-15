@@ -4,53 +4,64 @@
    "interior": "116",
    "parent": "115",
    "door": [
-    17,
-    5
+    8,
+    4
    ],
    "door2": [
-    18,
-    5
-   ],
-   "mat": [
-    [
-     7,
-     13
-    ],
-    [
-     8,
-     13
-    ]
-   ],
-   "confidence": "high",
-   "why": "Big domed hall top-right of Skyreach Plaza with the glowing cyan cross over a wide double door"
-  },
-  {
-   "interior": "117",
-   "parent": "115",
-   "door": [
-    3,
+    9,
     4
    ],
    "mat": [
     [
      7,
-     13
+     14
     ],
     [
      8,
-     13
+     14
     ]
    ],
    "confidence": "high",
-   "why": "Top-left building with the red-striped market awning; its blue arched door sits left of the stall"
+   "why": "V2: Skyreach Recovery Bay (dome with the cyan cross)"
+  },
+  {
+   "interior": "117",
+   "parent": "115",
+   "door": [
+    14,
+    4
+   ],
+   "door2": [
+    15,
+    4
+   ],
+   "mat": [
+    [
+     7,
+     14
+    ],
+    [
+     8,
+     14
+    ]
+   ],
+   "confidence": "high",
+   "why": "V2: Skyreach shop (striped awning)"
   }
  ],
  "objects": {
   "116": [
    {
     "tile": [
+     7,
+     4
+    ],
+    "k": "bay"
+   },
+   {
+    "tile": [
      8,
-     6
+     4
     ],
     "k": "bay"
    }
@@ -58,8 +69,15 @@
   "117": [
    {
     "tile": [
-     4,
-     7
+     7,
+     5
+    ],
+    "k": "shop"
+   },
+   {
+    "tile": [
+     8,
+     5
     ],
     "k": "shop"
    }
@@ -112,8 +130,8 @@
   "120": [
    {
     "tile": [
-     18,
-     2
+     11,
+     4
     ],
     "k": "sign",
     "t": [
@@ -144,7 +162,7 @@
    "section": "121",
    "n": 0,
    "tile": [
-    10,
+    11,
     16
    ],
    "face": "left"
@@ -153,7 +171,7 @@
    "section": "121",
    "n": 1,
    "tile": [
-    6,
+    4,
     6
    ],
    "face": "right"
@@ -165,91 +183,113 @@
     "art": "pilgrim",
     "t": [
      "Pilgrim: I rode the skyliner up from the cloud sea. My ears still haven't popped back."
-    ]
+    ],
+    "tile": [
+     12,
+     3
+    ],
+    "stay": true
    },
    {
     "art": "technician",
     "t": [
      "Dock tech: The airships float on Psi-charged crystals. Don't ask me how. I just polish them."
-    ]
+    ],
+    "tile": [
+     12,
+     14
+    ],
+    "stay": true
    },
    {
     "art": "civilian",
     "t": [
      "Skywatcher: Skyreach Plaza is just east. Heal up at the Recovery Bay before the Wind Bridges."
-    ]
+    ],
+    "tile": [
+     19,
+     9
+    ],
+    "stay": true
    }
   ],
   "115": [
    {
     "art": "pilgrim",
     "tile": [
-     4,
-     6
+     16,
+     9
     ],
     "t": [
      "Pilgrim: The holo-globe shows all fourteen worlds at once. I found my home world spinning in it."
-    ]
+    ],
+    "stay": true
    },
    {
     "art": "civilian",
     "tile": [
      6,
-     5
+     6
     ],
     "t": [
      "Skywatcher: The islands float on updrafts. Don't look down. Seriously, don't."
-    ]
+    ],
+    "stay": true
    },
    {
     "art": "wanderer",
     "tile": [
-     16,
-     9
+     3,
+     10
     ],
     "t": [
      "Mystic: The twins see what you'll do before you do it. They told me you'd come today."
-    ]
+    ],
+    "stay": true
    },
    {
     "art": "civilian",
     "tile": [
-     2,
-     9
+     20,
+     6
     ],
     "t": [
      "Kid: I caught a Psi-type with a Stasis Pod! Weaken them first or the pod just pops open."
-    ]
+    ],
+    "stay": true
    },
    {
     "art": "researcher",
     "tile": [
-     10,
-     4
+     19,
+     12
     ],
     "t": [
      "Star scholar: The Sky Temple sits past the Floating Gardens. Echo and Iris guard Halo's Signal Shard."
-    ]
+    ],
+    "stay": true
    },
    {
     "art": "guard",
     "tile": [
-     14,
-     5
+     12,
+     10
     ],
     "t": [
      "Plaza guard: Folks in Helix coats kept asking about the temple crystal. Odd questions. I sent them off."
-    ]
+    ],
+    "stay": true
    },
    {
     "art": "explorer",
     "tile": [
-     11,
-     14
+     14,
+     12
     ],
     "t": [
      "Climber: Trainers on the bridges spot you from five tiles off. Slip past their line of sight if you're tired."
-    ]
+    ],
+    "stay": true
    }
   ],
   "116": [
@@ -257,7 +297,7 @@
     "art": "nurse",
     "tile": [
      8,
-     6
+     4
     ],
     "t": [
      "Nurse: Welcome to the Skyreach Recovery Bay. Rest your Alienmon, the thin air tires them out."
@@ -268,15 +308,20 @@
     "art": "civilian",
     "t": [
      "Visitor: Psi-types hit hard up here. Bring something sturdy, or bring plenty of healing gel."
-    ]
+    ],
+    "tile": [
+     9,
+     12
+    ],
+    "stay": true
    }
   ],
   "117": [
    {
     "art": "shop",
     "tile": [
-     4,
-     7
+     8,
+     5
     ],
     "t": [
      "Clerk: Welcome to Skyreach Supply! Stock up now, there's no shop past the plaza."
@@ -287,7 +332,12 @@
     "art": "pilgrim",
     "t": [
      "Shopper: I always carry spare Stasis Pods. You never know what drifts out of the clouds."
-    ]
+    ],
+    "tile": [
+     6,
+     12
+    ],
+    "stay": true
    }
   ],
   "118": [
@@ -295,13 +345,23 @@
     "art": "explorer",
     "t": [
      "Bridge walker: The ropes creak, but they've held for three hundred years. Probably."
-    ]
+    ],
+    "tile": [
+     13,
+     5
+    ],
+    "stay": true
    },
    {
     "art": "pilgrim",
     "t": [
      "Pilgrim: Wild Alienmon hide in the pink blossoms. Step around them if your team is worn out."
-    ]
+    ],
+    "tile": [
+     4,
+     9
+    ],
+    "stay": true
    }
   ],
   "119": [
@@ -309,13 +369,23 @@
     "art": "civilian",
     "t": [
      "Skywatcher: See those little islands drifting by? Some of them glitter with Signal Shard dust."
-    ]
+    ],
+    "tile": [
+     13,
+     5
+    ],
+    "stay": true
    },
    {
     "art": "wanderer",
     "t": [
      "Mystic: The wind sings louder near the temple. The twins say it is singing your name."
-    ]
+    ],
+    "tile": [
+     18,
+     9
+    ],
+    "stay": true
    }
   ],
   "120": [
@@ -323,13 +393,23 @@
     "art": "researcher",
     "t": [
      "Botanist: These blossoms only grow above the clouds. Psi-types nest in them when the wind is calm."
-    ]
+    ],
+    "tile": [
+     13,
+     5
+    ],
+    "stay": true
    },
    {
     "art": "pilgrim",
     "t": [
      "Pilgrim: The Sky Temple is just east. Echo and Iris accept every challenger, but few leave smiling."
-    ]
+    ],
+    "tile": [
+     20,
+     9
+    ],
+    "stay": true
    }
   ],
   "121": [
@@ -337,7 +417,12 @@
     "art": "pilgrim",
     "t": [
      "Temple pilgrim: The twins wait upstairs. Their apprentices will test you first."
-    ]
+    ],
+    "tile": [
+     9,
+     2
+    ],
+    "stay": true
    }
   ],
   "122": [
@@ -345,17 +430,15 @@
     "art": "wanderer",
     "t": [
      "Mystic: One twin starts a sentence, the other finishes it. Don't let it rattle you."
-    ]
+    ],
+    "tile": [
+     9,
+     5
+    ],
+    "stay": true
    }
   ]
  },
- "unlisted": {
-  "114": "Domed hall door (4,3), the top shrine (11,2), the airship boarding ramp (17,2-3) and the lower-left dome/shop fronts (4-5,9-11) are drawn but lead nowhere; left blocked. The small shrine island (15-18,12) is reachable over the rope bridge.",
-  "115": "Top-centre dome door (11,2), lower-left dome door (4,11), lower-right dome door (18,11) and the grand stairs running off the bottom edge (11,11-15, final tile 11,15 blocked); rope bridge off the top-left edge (0,3). Left blocked.",
-  "118": "Shrine doors at the top-left (5,1) and top-right (18,2) left blocked; their stairs are walkable.",
-  "119": "Shrine door top-left (4,2); the far tower and rope bridge along the top; the lower-right fountain island (19-23,9-13) is fenced off from the path. Left blocked.",
-  "120": "Treasure chest on the top-left ledge (3,1) left blocked (no chest object kind); stairs off the bottom of the garden island (5-6,13) end at a waterfall, blocked.",
-  "121": "Side stairs (3,5) and (12,5) climb toward the lily-pool terraces and dead-end."
- },
+ "unlisted": {},
  "notes": "Halo: 118/119/120 left-edge paths are drawn at rows 6-7 with a railing on row 8; row 8 at the edge is opened so the atlas rows 7-8 work. Pink blossom patches on 118-120 are tall grass. 116/117 doormats are the two red-mat tiles [7,13],[8,13]. Keeper Echo & Iris object stands in front of the crystal on 122 (7,4); player challenges from (7,5) or (8,4)."
 }

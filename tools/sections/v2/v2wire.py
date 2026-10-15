@@ -6,7 +6,22 @@ A2={s['id']:s for s in json.load(open(S+'atlas_v2.json',encoding='utf-8'))['sect
 AT=json.load(open('art/sections/atlas.json',encoding='utf-8'));A1={s['id']:s for s in AT['sections']}
 L=json.load(open('data/sections/links.json',encoding='utf-8'))
 H=lambda x,y:{'tile':[x,y]}
-WIRE={'09':{
+WIRE={'10':{
+ 'ids':['%03d'%i for i in range(114,123)],
+ 'doors':[],'stairs':[],
+ 'objects':{
+  '114':[{'tile':[10,2],'k':'house','to':'182','why':'V2: the Cloud Dock hall'},{'tile':[11,2],'k':'house','to':'182','why':'V2: the Cloud Dock hall'},
+         {'tile':[19,2],'k':'house','to':'179','why':'V2: up the gangway into the airship cabin'}],
+  '115':[{'tile':[3,4],'k':'house','to':'175','why':'V2: Skyreach house (shared Halo home)'},
+         {'tile':[19,4],'k':'house','to':'175','why':'V2: Skyreach house'},{'tile':[20,4],'k':'house','to':'175','why':'V2: Skyreach house'}],
+ },
+ 'warps':[],
+ 'gates':{},
+ 'atlas_extra':{'121':['top edge, tile columns 7–8 (stairs up) → Sky Temple 2F']},
+ 'spawns':{'114':{'arrival':[3,7],'default':[3,7]}},
+ 'arrival':{'halo':{'section':'114','why':'V2: the round sky-dock landing pad'}},
+ 'reparent':{'175':'115','179':'114','182':'114'},
+},'09':{
  'ids':['%03d'%i for i in range(105,114)],
  'doors':[],'stairs':[('107',[12,3],'108',[12,3]),('107',[13,3],'108',[13,3])],
  'objects':{

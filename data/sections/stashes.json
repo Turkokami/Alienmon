@@ -1156,18 +1156,29 @@
    "name": "Cloud Dock",
    "tile": [
     3,
-    12
+    6
    ],
    "item": "fullgel",
    "n": 2,
    "tier": 5
   },
   {
+   "section": "115",
+   "name": "Skyreach Plaza",
+   "tile": [
+    9,
+    12
+   ],
+   "item": "ether",
+   "n": 3,
+   "tier": 5
+  },
+  {
    "section": "118",
    "name": "Wind Bridges Part A",
    "tile": [
-    12,
-    10
+    11,
+    14
    ],
    "item": "harmonic",
    "n": 5,
@@ -1177,8 +1188,8 @@
    "section": "118",
    "name": "Wind Bridges Part A",
    "tile": [
-    21,
-    12
+    6,
+    2
    ],
    "item": "fullgel",
    "n": 2,
@@ -1188,8 +1199,8 @@
    "section": "119",
    "name": "Wind Bridges Part B",
    "tile": [
-    18,
-    11
+    11,
+    14
    ],
    "item": "maxrevive",
    "n": 1,
@@ -1199,8 +1210,8 @@
    "section": "119",
    "name": "Wind Bridges Part B",
    "tile": [
-    14,
-    7
+    6,
+    2
    ],
    "item": "harmonic",
    "n": 5,
@@ -1210,8 +1221,8 @@
    "section": "120",
    "name": "Floating Gardens",
    "tile": [
-    17,
-    13
+    11,
+    14
    ],
    "item": "singularity",
    "n": 1,
@@ -1222,7 +1233,7 @@
    "name": "Floating Gardens",
    "tile": [
     6,
-    12
+    2
    ],
    "item": "dust",
    "n": 1200,
