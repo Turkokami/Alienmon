@@ -21,11 +21,14 @@ AVOID = {'004': [(0, 4, 7, 11), (10, 10, 14, 14)]}   # landing pad, Bonfire Ring
 FRONTIER = {'pyros', 'thalassa'}   # Molten Frontier zones: only neutral gear, no desert plants
 NEUTRAL = {'route': [('border', D(11, 12, 14, 16, 18, 20, 22, 24, 38, 42, 50), 2)], 'field': [('border', D(11, 12, 16, 20, 50), 2)],
            'landmark': [('border', D(25, 26, 31, 11, 12, 16, 20), 2)], 'town': [('wall', D(11, 12, 14, 16, 18, 20, 22, 24), 3), ('wall', D(52, 53), 1), ('open', D(25, 26, 31), 2)]}
+T = lambda *ns: [f'04_thalassa/{n:02d}' for n in ns]
+ZONE_TOWN = {'thalassa': [('wall', T(40, 41, 43, 44, 47, 50, 51), 2), ('wall', T(35, 36, 37, 38, 75, 77, 18, 19), 3), ('wall', T(7, 8, 9, 10, 11, 12), 1),
+                          ('open', T(0, 1, 2, 3), 1), ('open', T(23, 24, 26, 28), 2), ('open', T(72, 73), 1)]}
 L = json.load(open('data/sections/props_layout.json'))
 for sid in sys.argv[1:]:
     s = SEC[sid]; rows = [list(r) for r in json.load(open(f'data/collision/{sid}.json'))['rows']]; Wt, Ht = s['tiles']
     if s['type'] == 'interior': continue
-    pal = NEUTRAL.get(s['type'], []) if s.get('zone') in FRONTIER else PALETTES.get((s['dir'], s['type']), [])
+    pal = ZONE_TOWN[s['zone']] if s['type'] == 'town' and s.get('zone') in ZONE_TOWN else NEUTRAL.get(s['type'], []) if s.get('zone') in FRONTIER else PALETTES.get((s['dir'], s['type']), [])
     rnd = random.Random(int(sid) * 7919)
     walk = lambda x, y: 0 <= x < Wt and 0 <= y < Ht and rows[y][x] in '.,'
     ground = lambda x, y: 0 <= x < Wt and 0 <= y < Ht and rows[y][x] == '.'   # props never stand in tall grass
