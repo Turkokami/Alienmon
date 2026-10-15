@@ -9,7 +9,7 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 
 | Section | Tile | Item | Tier |
 |---|---|---|---|
-| 004 Dustmere Plaza | 13,15 | 150x Stardust | 1 |
+| 004 Dustmere Plaza | 5,12 | 150x Stardust | 1 |
 | 007 Dustmere Bridge | 11,4 | 3x Stasis Pod | 1 |
 | 009 Rimwalk Trail Part A | 6,12 | 2x Med Gel | 1 |
 | 009 Rimwalk Trail Part A | 12,1 | 1x Revive Spark | 1 |
@@ -19,7 +19,7 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 | 011 Cactus Gardens | 18,12 | 2x Cure Spray | 1 |
 | 012 Sunset Tunnel B1 | 14,7 | 1x Stun Spray | 1 |
 | 013 Sunset Tunnel B2 | 14,7 | 3x Stasis Pod | 1 |
-| 013 Sunset Tunnel B2 | 14,8 | 2x Med Gel | 1 |
+| 013 Sunset Tunnel B2 | 14,5 | 2x Med Gel | 1 |
 | 014 Frontier: Tunnel Mouth | 9,12 | 1x Tether Pulse | 1 |
 | 014 Frontier: Tunnel Mouth | 12,1 | 2x Med Gel | 1 |
 | 015 Frontier: Ash Trail Part A | 11,14 | 2x Med Gel | 1 |
@@ -29,7 +29,7 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 | 017 Frontier: Palm Isle | 12,13 | 3x Stasis Pod | 1 |
 | 017 Frontier: Palm Isle | 6,2 | 2x Cure Spray | 1 |
 | 018 Frontier: Port Ember | 18,11 | 150x Stardust | 1 |
-| 020 Frontier: Ridge Path Part A | 11,12 | 2x Harmonic Pod | 2 |
+| 020 Frontier: Ridge Path Part A | 19,2 | 2x Harmonic Pod | 2 |
 | 020 Frontier: Ridge Path Part A | 6,2 | 5x Stasis Pod | 2 |
 | 021 Frontier: Ridge Path Part B | 19,12 | 1x Revive Spark | 2 |
 | 021 Frontier: Ridge Path Part B | 6,2 | 300x Stardust | 2 |
