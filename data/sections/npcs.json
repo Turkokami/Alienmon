@@ -628,6 +628,19 @@
   },
   {
    "art": "guard",
+   "name": "Helix Grunt",
+   "near": [
+    13,
+    6
+   ],
+   "until": "M12",
+   "t": [
+    "Helix Grunt: Halt! This forge belongs to the Helix Directive.",
+    "Helix Grunt: Run along, kid. Come back when you're a real Linker, and maybe I'll bother beating you."
+   ]
+  },
+  {
+   "art": "guard",
    "t": [
     "Helix Grunt: Halt! This forge belongs to the Helix Directive!"
    ],
@@ -639,7 +652,8 @@
    "trainer": {
     "frontier": 1
    },
-   "until": "M19"
+   "until": "M19",
+   "after": "M12"
   },
   {
    "art": "guard",
