@@ -36,7 +36,7 @@
   },
   "glacia": {
    "section": "093",
-   "why": "atlas exit marked arrival"
+   "why": "V2: the landing pad under the glass dome"
   },
   "helix": {
    "section": "105",
@@ -265,25 +265,25 @@
   },
   "M12:giver": {
    "s": "093",
-   "x": 10,
-   "y": 8
+   "x": 12,
+   "y": 7
   },
   "M12:0": {
    "s": "101",
-   "x": 13,
-   "y": 7,
+   "x": 12,
+   "y": 8,
    "pts": [
     [
-     13,
-     7
-    ],
-    [
-     7,
+     12,
      8
     ],
     [
-     11,
-     12
+     10,
+     3
+    ],
+    [
+     16,
+     5
     ]
    ]
   },
@@ -791,8 +791,8 @@
   },
   "S80:giver": {
    "s": "093",
-   "x": 15,
-   "y": 7
+   "x": 18,
+   "y": 10
   },
   "S80:0": {
    "s": "097",
@@ -804,18 +804,18 @@
      8
     ],
     [
-     9,
+     15,
      4
     ],
     [
-     16,
+     8,
      5
     ]
    ]
   },
   "S81:giver": {
    "s": "098",
-   "x": 5,
+   "x": 10,
    "y": 10
   },
   "S81:0": {
@@ -825,13 +825,13 @@
   },
   "S82:giver": {
    "s": "102",
-   "x": 5,
-   "y": 9
+   "x": 8,
+   "y": 10
   },
   "S82:0": {
    "s": "102",
-   "x": 11,
-   "y": 7
+   "x": 12,
+   "y": 8
   },
   "S90:giver": {
    "s": "109",
@@ -14695,32 +14695,25 @@
    ],
    "notes": "Research town under aurora skies",
    "edges": {
-    "left": {
-     "to": "arrival",
-     "range": [
-      7,
-      8
-     ]
-    },
     "right": {
      "to": "096",
      "range": [
-      7,
-      8
+      6,
+      9
      ],
-     "offset": 0
+     "offset": -1
     }
    },
    "warps": [
     {
      "tile": [
-      17,
-      6
+      8,
+      3
      ],
      "to": "094",
      "at": [
       7,
-      12
+      13
      ],
      "face": "up",
      "kind": "door",
@@ -14728,13 +14721,41 @@
     },
     {
      "tile": [
-      7,
-      8
+      9,
+      3
+     ],
+     "to": "094",
+     "at": [
+      8,
+      13
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    },
+    {
+     "tile": [
+      13,
+      3
      ],
      "to": "095",
      "at": [
       7,
-      12
+      13
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    },
+    {
+     "tile": [
+      14,
+      3
+     ],
+     "to": "095",
+     "at": [
+      8,
+      13
      ],
      "face": "up",
      "kind": "door",
@@ -14744,41 +14765,87 @@
    "objects": [
     {
      "tile": [
-      6,
-      5
+      2,
+      3
      ],
      "k": "house",
-     "why": "house door: opens the shared Glacia house",
-     "to": "178"
+     "to": "178",
+     "why": "V2: glass-dome house (shared Glacia home)"
+    },
+    {
+     "tile": [
+      3,
+      3
+     ],
+     "k": "house",
+     "to": "178",
+     "why": "V2: glass-dome house"
     },
     {
      "tile": [
       17,
-      12
+      3
      ],
      "k": "house",
-     "why": "house door: opens Glacia Ice Lodge",
-     "to": "193"
+     "to": "178",
+     "why": "V2: glass-dome house"
     },
     {
      "tile": [
-      12,
-      9
+      18,
+      3
+     ],
+     "k": "house",
+     "to": "178",
+     "why": "V2: glass-dome house"
+    },
+    {
+     "tile": [
+      21,
+      3
+     ],
+     "k": "house",
+     "to": "193",
+     "why": "V2: the Ice Lodge (blue crest)"
+    },
+    {
+     "tile": [
+      22,
+      3
+     ],
+     "k": "house",
+     "to": "193",
+     "why": "V2: the Ice Lodge"
+    },
+    {
+     "tile": [
+      11,
+      4
      ],
      "k": "sign",
      "t": [
       "Frostmark Research Station. The crystal in this fountain was cut from the glacier and never melts.",
       "Founded by survey crews who came for the aurora and stayed for the ice."
      ]
+    },
+    {
+     "tile": [
+      11,
+      14
+     ],
+     "k": "stash",
+     "item": "harmonic",
+     "n": 5,
+     "tier": 4
     }
    ],
    "spawns": {
     "arrival": [
-     1,
+     3,
      7
     ],
     "default": [
-     1,
+     3,
      7
     ]
    },
@@ -14789,85 +14856,92 @@
    "pkey": "glacia",
    "npcs": [
     {
-     "x": 3,
-     "y": 7,
+     "x": 12,
+     "y": 5,
      "art": "researcher",
      "face": "down",
      "t": [
       "Researcher: Something huge is frozen inside the glacier wall past the caverns.",
       "We call it the Teeth in the Ice. Nobody sleeps well near it."
      ],
+     "stay": true,
      "src": "p:093:0"
     },
     {
-     "x": 4,
-     "y": 6,
+     "x": 16,
+     "y": 10,
      "art": "explorer",
      "face": "down",
      "t": [
       "Climber: Ice paths are slick. Jump the cracks, don't walk them.",
       "Aurora Route has frost grass. Wild Alienmon love it."
      ],
+     "stay": true,
      "src": "p:093:1"
     },
     {
-     "x": 11,
-     "y": 6,
+     "x": 6,
+     "y": 10,
      "art": "technician",
      "face": "down",
      "t": [
       "Radio tech: Our antennas pick up signals from the Starfall Rift.",
       "Lately they pulse in sync with the aurora. Spooky, right?"
      ],
+     "stay": true,
      "src": "p:093:2"
     },
     {
-     "x": 11,
-     "y": 7,
+     "x": 2,
+     "y": 5,
      "art": "civilian",
      "face": "down",
      "t": [
       "Townsfolk: The Recovery Bay is the dome with the cyan cross. Heal before the caverns!"
      ],
+     "stay": true,
      "src": "p:093:3"
     },
     {
-     "x": 13,
-     "y": 11,
+     "x": 20,
+     "y": 6,
      "art": "guard",
      "face": "down",
      "t": [
       "Guard: Helix crews keep asking for dig permits. The station keeps saying no.",
       "If you see anyone in a Helix strand-suit near the fossils, tell us."
      ],
+     "stay": true,
      "src": "p:093:4"
     },
     {
-     "x": 15,
-     "y": 14,
+     "x": 10,
+     "y": 9,
      "art": "wanderer",
      "face": "down",
      "t": [
       "Wanderer: Keeper Ingrid lives up in Aurora Tower, past the Frozen Falls.",
       "Win a Signal Shard from her and you'll have really earned it."
      ],
+     "stay": true,
      "src": "p:093:5"
     },
     {
-     "x": 18,
-     "y": 13,
+     "x": 7,
+     "y": 6,
      "art": "mom",
      "face": "down",
      "t": [
       "Mom: My kids want to catch a Cryo-type. I said only after their homework thaws."
      ],
+     "stay": true,
      "src": "p:093:6"
     }
    ],
    "mons": [
     {
-     "x": 9,
-     "y": 3,
+     "x": 13,
+     "y": 14,
      "mon": "Lichling"
     }
    ]
@@ -14889,12 +14963,12 @@
     {
      "tile": [
       7,
-      13
+      14
      ],
      "to": "093",
      "at": [
-      17,
-      7
+      8,
+      4
      ],
      "face": "down",
      "kind": "door"
@@ -14902,12 +14976,12 @@
     {
      "tile": [
       8,
-      13
+      14
      ],
      "to": "093",
      "at": [
-      17,
-      7
+      8,
+      4
      ],
      "face": "down",
      "kind": "door"
@@ -14917,28 +14991,34 @@
     {
      "tile": [
       7,
-      7
+      4
      ],
-     "k": "bay",
-     "why": "Recovery Bay curved counter in front of the healing pods"
+     "k": "bay"
+    },
+    {
+     "tile": [
+      8,
+      4
+     ],
+     "k": "bay"
     }
    ],
    "spawns": {
     "door": [
      7,
-     12
+     13
     ],
     "default": [
      7,
-     12
+     13
     ]
    },
    "parent": "093",
    "pkey": "glacia",
    "npcs": [
     {
-     "x": 7,
-     "y": 7,
+     "x": 8,
+     "y": 4,
      "art": "nurse",
      "face": "down",
      "t": [
@@ -14949,14 +15029,15 @@
      "src": "p:094:0"
     },
     {
-     "x": 12,
-     "y": 9,
+     "x": 9,
+     "y": 12,
      "art": "explorer",
      "face": "down",
      "t": [
       "Climber: Cold doesn't bother Cryo-types, but everyone else hates the caverns.",
       "Heal here before you head out. It's a long walk back."
      ],
+     "stay": true,
      "src": "p:094:1"
     }
    ]
@@ -14978,12 +15059,12 @@
     {
      "tile": [
       7,
-      13
+      14
      ],
      "to": "093",
      "at": [
-      7,
-      9
+      13,
+      4
      ],
      "face": "down",
      "kind": "door"
@@ -14991,12 +15072,12 @@
     {
      "tile": [
       8,
-      13
+      14
      ],
      "to": "093",
      "at": [
-      7,
-      9
+      13,
+      4
      ],
      "face": "down",
      "kind": "door"
@@ -15005,29 +15086,35 @@
    "objects": [
     {
      "tile": [
-      3,
-      8
+      7,
+      5
      ],
-     "k": "shop",
-     "why": "L-shaped shop counter on the left"
+     "k": "shop"
+    },
+    {
+     "tile": [
+      8,
+      5
+     ],
+     "k": "shop"
     }
    ],
    "spawns": {
     "door": [
      7,
-     12
+     13
     ],
     "default": [
      7,
-     12
+     13
     ]
    },
    "parent": "093",
    "pkey": "glacia",
    "npcs": [
     {
-     "x": 3,
-     "y": 8,
+     "x": 8,
+     "y": 5,
      "art": "shop",
      "face": "down",
      "t": [
@@ -15039,12 +15126,13 @@
     },
     {
      "x": 6,
-     "y": 8,
+     "y": 12,
      "art": "researcher",
      "face": "down",
      "t": [
       "Researcher: I buy Stasis Pods by the crate. Cave Alienmon break out a lot."
      ],
+     "stay": true,
      "src": "p:095:1"
     }
    ]
@@ -15065,16 +15153,16 @@
     "left": {
      "to": "093",
      "range": [
-      7,
-      8
+      5,
+      9
      ],
-     "offset": 0
+     "offset": 1
     },
     "right": {
      "to": "097",
      "range": [
-      7,
-      8
+      5,
+      9
      ],
      "offset": 0
     }
@@ -15083,8 +15171,8 @@
    "objects": [
     {
      "tile": [
-      20,
-      10
+      12,
+      4
      ],
      "k": "sign",
      "t": [
@@ -15094,8 +15182,8 @@
     },
     {
      "tile": [
-      5,
-      1
+      14,
+      12
      ],
      "k": "stash",
      "item": "ether",
@@ -15104,8 +15192,8 @@
     },
     {
      "tile": [
-      14,
-      5
+      6,
+      2
      ],
      "k": "stash",
      "item": "harmonic",
@@ -15116,38 +15204,40 @@
    "spawns": {
     "default": [
      1,
-     7
+     5
     ]
    },
    "grid": [
     24,
-    0
+    1
    ],
    "pkey": "glacia",
    "npcs": [
     {
-     "x": 4,
-     "y": 1,
+     "x": 9,
+     "y": 8,
      "art": "explorer",
      "face": "down",
      "t": [
       "Climber: Trainers spot you from a few tiles away. Step out of their line if your team is hurt."
      ],
+     "stay": true,
      "src": "p:096:0"
     },
     {
-     "x": 13,
-     "y": 13,
+     "x": 18,
+     "y": 6,
      "art": "researcher",
      "face": "down",
      "t": [
       "Researcher: The aurora isn't just pretty. It carries a signal. We just can't read it yet."
      ],
+     "stay": true,
      "src": "p:096:1"
     },
     {
-     "x": 15,
-     "y": 7,
+     "x": 11,
+     "y": 5,
      "art": "researcher",
      "face": "down",
      "t": [],
@@ -15160,10 +15250,10 @@
      }
     },
     {
-     "x": 8,
-     "y": 6,
+     "x": 6,
+     "y": 4,
      "art": "explorer",
-     "face": "down",
+     "face": "up",
      "t": [],
      "face_pinned": 1,
      "id": "sec096_tr3",
@@ -15176,13 +15266,13 @@
    ],
    "mons": [
     {
-     "x": 7,
-     "y": 14,
+     "x": 15,
+     "y": 11,
      "mon": "Iceburr"
     },
     {
-     "x": 1,
-     "y": 6,
+     "x": 21,
+     "y": 2,
      "mon": "Glaciarch"
     }
    ]
@@ -15203,13 +15293,41 @@
     "left": {
      "to": "096",
      "range": [
-      7,
-      8
+      5,
+      9
      ],
      "offset": 0
     }
    },
    "warps": [
+    {
+     "tile": [
+      23,
+      5
+     ],
+     "to": "098",
+     "at": [
+      5,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      6
+     ],
+     "to": "098",
+     "at": [
+      6,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
+    },
     {
      "tile": [
       23,
@@ -15237,13 +15355,27 @@
      "face": "up",
      "kind": "edge",
      "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      9
+     ],
+     "to": "098",
+     "at": [
+      9,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
     }
    ],
    "objects": [
     {
      "tile": [
-      4,
-      1
+      11,
+      14
      ],
      "k": "stash",
      "item": "fullgel",
@@ -15252,8 +15384,8 @@
     },
     {
      "tile": [
-      12,
-      5
+      6,
+      2
      ],
      "k": "stash",
      "item": "fullgel",
@@ -15264,38 +15396,40 @@
    "spawns": {
     "default": [
      1,
-     7
+     5
     ]
    },
    "grid": [
     48,
-    0
+    1
    ],
    "pkey": "glacia",
    "npcs": [
     {
-     "x": 10,
-     "y": 6,
+     "x": 12,
+     "y": 5,
      "art": "technician",
      "face": "down",
      "t": [
       "Radio tech: The Crystal Caverns are ahead. Three floors deep, then up into the Fossil Dig."
      ],
+     "stay": true,
      "src": "p:097:0"
     },
     {
-     "x": 6,
-     "y": 2,
+     "x": 16,
+     "y": 10,
      "art": "wanderer",
      "face": "down",
      "t": [
       "Wanderer: Fire melts ice, they say. Bring something hot for Ingrid's team."
      ],
+     "stay": true,
      "src": "p:097:1"
     },
     {
-     "x": 7,
-     "y": 11,
+     "x": 21,
+     "y": 4,
      "art": "explorer",
      "face": "down",
      "t": [],
@@ -15307,10 +15441,10 @@
      }
     },
     {
-     "x": 13,
-     "y": 11,
+     "x": 5,
+     "y": 4,
      "art": "technician",
-     "face": "up",
+     "face": "right",
      "t": [],
      "id": "sec097_tr3",
      "trainer": {
@@ -15322,13 +15456,13 @@
    ],
    "mons": [
     {
-     "x": 17,
-     "y": 5,
+     "x": 21,
+     "y": 13,
      "mon": "Floelord"
     },
     {
-     "x": 4,
-     "y": 8,
+     "x": 16,
+     "y": 2,
      "mon": "Borealix"
     }
    ]
@@ -15349,6 +15483,34 @@
    "warps": [
     {
      "tile": [
+      5,
+      15
+     ],
+     "to": "097",
+     "at": [
+      22,
+      5
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      6,
+      15
+     ],
+     "to": "097",
+     "at": [
+      22,
+      6
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
       7,
       15
      ],
@@ -15377,7 +15539,35 @@
     },
     {
      "tile": [
-      7,
+      9,
+      15
+     ],
+     "to": "097",
+     "at": [
+      22,
+      9
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      5,
+      0
+     ],
+     "to": "099",
+     "at": [
+      6,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      6,
       0
      ],
      "to": "099",
@@ -15391,12 +15581,26 @@
     },
     {
      "tile": [
-      8,
+      7,
       0
      ],
      "to": "099",
      "at": [
       8,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      8,
+      0
+     ],
+     "to": "099",
+     "at": [
+      9,
       14
      ],
      "face": "up",
@@ -15407,7 +15611,7 @@
    "objects": [
     {
      "tile": [
-      1,
+      14,
       7
      ],
      "k": "stash",
@@ -15417,8 +15621,8 @@
     },
     {
      "tile": [
-      13,
-      8
+      1,
+      7
      ],
      "k": "stash",
      "item": "dust",
@@ -15428,14 +15632,14 @@
    ],
    "spawns": {
     "default": [
-     7,
+     5,
      14
     ]
    },
    "pkey": "glacia",
    "npcs": [
     {
-     "x": 11,
+     "x": 12,
      "y": 8,
      "art": "strand",
      "face": "down",
@@ -15449,7 +15653,7 @@
      "src": "n:098:0"
     },
     {
-     "x": 6,
+     "x": 13,
      "y": 8,
      "art": "guard",
      "face": "down",
@@ -15464,19 +15668,20 @@
     },
     {
      "x": 8,
-     "y": 11,
+     "y": 2,
      "art": "miner",
      "face": "down",
      "t": [
       "Miner: These crystals sing when you tap them. Don't. The wild ones hear it too."
      ],
+     "stay": true,
      "src": "p:098:0"
     },
     {
-     "x": 5,
-     "y": 4,
+     "x": 4,
+     "y": 7,
      "art": "technician",
-     "face": "down",
+     "face": "right",
      "t": [],
      "id": "sec098_tr3",
      "trainer": {
@@ -15503,12 +15708,26 @@
    "warps": [
     {
      "tile": [
+      6,
+      15
+     ],
+     "to": "098",
+     "at": [
+      5,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
       7,
       15
      ],
      "to": "098",
      "at": [
-      7,
+      6,
       1
      ],
      "face": "down",
@@ -15522,12 +15741,40 @@
      ],
      "to": "098",
      "at": [
+      7,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      9,
+      15
+     ],
+     "to": "098",
+     "at": [
       8,
       1
      ],
      "face": "down",
      "kind": "edge",
      "edge": "bottom"
+    },
+    {
+     "tile": [
+      6,
+      0
+     ],
+     "to": "100",
+     "at": [
+      6,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
     },
     {
      "tile": [
@@ -15551,6 +15798,20 @@
      "to": "100",
      "at": [
       8,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      9,
+      0
+     ],
+     "to": "100",
+     "at": [
+      9,
       14
      ],
      "face": "up",
@@ -15561,8 +15822,8 @@
    "objects": [
     {
      "tile": [
-      2,
-      8
+      13,
+      6
      ],
      "k": "stash",
      "item": "dust",
@@ -15571,8 +15832,8 @@
     },
     {
      "tile": [
-      3,
-      10
+      2,
+      8
      ],
      "k": "stash",
      "item": "fullgel",
@@ -15582,27 +15843,28 @@
    ],
    "spawns": {
     "default": [
-     7,
+     6,
      14
     ]
    },
    "pkey": "glacia",
    "npcs": [
     {
-     "x": 11,
-     "y": 10,
+     "x": 8,
+     "y": 11,
      "art": "researcher",
      "face": "down",
      "t": [
       "Researcher: My Alienmon fainted in the cold once. Always carry a Revive Spark down here."
      ],
+     "stay": true,
      "src": "p:099:0"
     },
     {
-     "x": 6,
-     "y": 4,
+     "x": 10,
+     "y": 3,
      "art": "researcher",
-     "face": "right",
+     "face": "left",
      "t": [],
      "id": "sec099_tr1",
      "trainer": {
@@ -15629,6 +15891,20 @@
    "warps": [
     {
      "tile": [
+      6,
+      15
+     ],
+     "to": "099",
+     "at": [
+      6,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
       7,
       15
      ],
@@ -15654,6 +15930,34 @@
      "face": "down",
      "kind": "edge",
      "edge": "bottom"
+    },
+    {
+     "tile": [
+      9,
+      15
+     ],
+     "to": "099",
+     "at": [
+      9,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      6,
+      0
+     ],
+     "to": "101",
+     "at": [
+      1,
+      6
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "top"
     },
     {
      "tile": [
@@ -15677,7 +15981,21 @@
      "to": "101",
      "at": [
       1,
-      7
+      8
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      9,
+      0
+     ],
+     "to": "101",
+     "at": [
+      1,
+      9
      ],
      "face": "right",
      "kind": "edge",
@@ -15687,8 +16005,8 @@
    "objects": [
     {
      "tile": [
-      9,
-      5
+      4,
+      3
      ],
      "k": "sign",
      "t": [
@@ -15698,8 +16016,8 @@
     },
     {
      "tile": [
-      2,
-      10
+      14,
+      7
      ],
      "k": "stash",
      "item": "fullgel",
@@ -15708,8 +16026,8 @@
     },
     {
      "tile": [
-      2,
-      2
+      14,
+      9
      ],
      "k": "stash",
      "item": "fullgel",
@@ -15719,27 +16037,28 @@
    ],
    "spawns": {
     "default": [
-     7,
+     6,
      14
     ]
    },
    "pkey": "glacia",
    "npcs": [
     {
-     "x": 5,
-     "y": 5,
+     "x": 4,
+     "y": 6,
      "art": "explorer",
      "face": "down",
      "t": [
       "Climber: The stairs above lead to the Fossil Dig. Look closely at those bite marks."
      ],
+     "stay": true,
      "src": "p:100:0"
     },
     {
-     "x": 6,
-     "y": 12,
+     "x": 10,
+     "y": 8,
      "art": "explorer",
-     "face": "right",
+     "face": "left",
      "t": [],
      "id": "sec100_tr1",
      "trainer": {
@@ -15766,13 +16085,27 @@
     "right": {
      "to": "102",
      "range": [
-      7,
-      8
+      6,
+      9
      ],
      "offset": 0
     }
    },
    "warps": [
+    {
+     "tile": [
+      0,
+      6
+     ],
+     "to": "100",
+     "at": [
+      6,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "left"
+    },
     {
      "tile": [
       0,
@@ -15800,31 +16133,27 @@
      "face": "down",
      "kind": "edge",
      "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      9
+     ],
+     "to": "100",
+     "at": [
+      9,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "left"
     }
    ],
    "objects": [
     {
      "tile": [
-      17,
+      2,
       5
-     ],
-     "k": "stop",
-     "t": "This ladder is broken. You can't climb it.",
-     "why": "dead-end ladder (tools/sections/dead_ends.py)"
-    },
-    {
-     "tile": [
-      17,
-      6
-     ],
-     "k": "stop",
-     "t": "This ladder is broken. You can't climb it.",
-     "why": "dead-end ladder (tools/sections/dead_ends.py)"
-    },
-    {
-     "tile": [
-      6,
-      4
      ],
      "k": "sign",
      "t": [
@@ -15834,8 +16163,8 @@
     },
     {
      "tile": [
-      12,
-      5
+      11,
+      2
      ],
      "k": "sign",
      "t": [
@@ -15845,8 +16174,8 @@
     },
     {
      "tile": [
-      12,
-      8
+      20,
+      5
      ],
      "k": "sign",
      "t": [
@@ -15856,7 +16185,7 @@
     },
     {
      "tile": [
-      8,
+      9,
       10
      ],
      "k": "sign",
@@ -15867,8 +16196,8 @@
     },
     {
      "tile": [
-      11,
-      14
+      10,
+      13
      ],
      "k": "stash",
      "item": "dust",
@@ -15877,8 +16206,8 @@
     },
     {
      "tile": [
-      9,
-      5
+      17,
+      3
      ],
      "k": "stash",
      "item": "revive",
@@ -15889,39 +16218,41 @@
    "spawns": {
     "default": [
      22,
-     7
+     6
     ]
    },
    "grid": [
     0,
-    20
+    21
    ],
    "pkey": "glacia",
    "npcs": [
     {
-     "x": 15,
-     "y": 13,
+     "x": 6,
+     "y": 7,
      "art": "researcher",
      "face": "down",
      "t": [
       "Dig chief: Three fossil sites, same bite pattern every time. Read the markers."
      ],
+     "stay": true,
      "src": "p:101:0"
     },
     {
-     "x": 2,
-     "y": 5,
+     "x": 20,
+     "y": 9,
      "art": "miner",
      "face": "down",
      "t": [
       "Digger: I asked Helix for better drills. They asked where the biggest bones were.",
       "I didn't tell them."
      ],
+     "stay": true,
      "src": "p:101:1"
     },
     {
-     "x": 10,
-     "y": 6,
+     "x": 14,
+     "y": 4,
      "art": "technician",
      "face": "down",
      "t": [],
@@ -15934,7 +16265,7 @@
      }
     },
     {
-     "x": 21,
+     "x": 19,
      "y": 11,
      "art": "researcher",
      "face": "left",
@@ -15951,12 +16282,12 @@
    "mons": [
     {
      "x": 3,
-     "y": 13,
+     "y": 10,
      "mon": "Floelord"
     },
     {
-     "x": 10,
-     "y": 13,
+     "x": 14,
+     "y": 12,
      "mon": "Borealix"
     }
    ]
@@ -15977,13 +16308,27 @@
     "left": {
      "to": "101",
      "range": [
-      7,
-      8
+      6,
+      9
      ],
      "offset": 0
     }
    },
    "warps": [
+    {
+     "tile": [
+      23,
+      6
+     ],
+     "to": "103",
+     "at": [
+      6,
+      22
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
+    },
     {
      "tile": [
       23,
@@ -16011,13 +16356,27 @@
      "face": "up",
      "kind": "edge",
      "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      9
+     ],
+     "to": "103",
+     "at": [
+      9,
+      22
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
     }
    ],
    "objects": [
     {
      "tile": [
       12,
-      6
+      4
      ],
      "k": "sign",
      "t": [
@@ -16027,8 +16386,8 @@
     },
     {
      "tile": [
-      21,
-      2
+      11,
+      14
      ],
      "k": "stash",
      "item": "megagel",
@@ -16039,37 +16398,50 @@
    "spawns": {
     "default": [
      1,
-     7
+     6
     ]
    },
    "grid": [
     24,
-    20
+    21
    ],
    "pkey": "glacia",
    "npcs": [
     {
-     "x": 21,
-     "y": 6,
+     "x": 11,
+     "y": 5,
      "art": "pilgrim",
      "face": "down",
      "t": [
       "Pilgrim: The falls froze the night the aurora turned violet. I come here to listen."
      ],
+     "stay": true,
      "src": "p:102:0"
     },
     {
-     "x": 20,
-     "y": 6,
+     "x": 16,
+     "y": 9,
      "art": "explorer",
      "face": "down",
      "t": [
       "Climber: Aurora Tower is just east. Ingrid trains Cryo-types up top."
      ],
+     "stay": true,
      "src": "p:102:1"
     }
    ],
-   "mons": []
+   "mons": [
+    {
+     "x": 4,
+     "y": 4,
+     "mon": "Iceburr"
+    },
+    {
+     "x": 21,
+     "y": 4,
+     "mon": "Glaciarch"
+    }
+   ]
   },
   "103": {
    "id": "103",
@@ -16087,6 +16459,20 @@
    "warps": [
     {
      "tile": [
+      6,
+      23
+     ],
+     "to": "102",
+     "at": [
+      22,
+      6
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
       7,
       23
      ],
@@ -16115,12 +16501,26 @@
     },
     {
      "tile": [
+      9,
+      23
+     ],
+     "to": "102",
+     "at": [
+      22,
+      9
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
       7,
       0
      ],
      "to": "104",
      "at": [
-      7,
+      6,
       22
      ],
      "face": "up",
@@ -16134,7 +16534,7 @@
      ],
      "to": "104",
      "at": [
-      8,
+      7,
       22
      ],
      "face": "up",
@@ -16157,26 +16557,27 @@
    ],
    "spawns": {
     "default": [
-     7,
+     6,
      22
     ]
    },
    "pkey": "glacia",
    "npcs": [
     {
-     "x": 10,
-     "y": 18,
+     "x": 9,
+     "y": 3,
      "art": "technician",
      "face": "down",
      "t": [
       "Relay tech: This tower boosts the aurora signal across the whole system.",
       "Ingrid's apprentices will test you on the way up."
      ],
+     "stay": true,
      "src": "p:103:0"
     },
     {
-     "x": 6,
-     "y": 19,
+     "x": 3,
+     "y": 14,
      "art": "researcher",
      "face": "right",
      "t": [],
@@ -16189,8 +16590,8 @@
      }
     },
     {
-     "x": 9,
-     "y": 3,
+     "x": 12,
+     "y": 8,
      "art": "explorer",
      "face": "left",
      "t": [],
@@ -16220,7 +16621,7 @@
    "warps": [
     {
      "tile": [
-      7,
+      6,
       23
      ],
      "to": "103",
@@ -16234,7 +16635,7 @@
     },
     {
      "tile": [
-      8,
+      7,
       23
      ],
      "to": "103",
@@ -16250,29 +16651,29 @@
    "objects": [
     {
      "tile": [
-      7,
-      2
+      8,
+      4
      ],
-     "k": "keeper",
-     "why": "Ingrid Vale at the top of Aurora Tower 2F, below the sealed stairs"
+     "k": "keeper"
     }
    ],
    "spawns": {
     "default": [
-     7,
+     6,
      22
     ]
    },
    "pkey": "glacia",
    "npcs": [
     {
-     "x": 8,
-     "y": 8,
+     "x": 6,
+     "y": 4,
      "art": "researcher",
      "face": "down",
      "t": [
       "Researcher: Ingrid reads ice cores like books. She says the ice remembers the Devourer."
      ],
+     "stay": true,
      "src": "p:104:0"
     }
    ]
@@ -27806,237 +28207,226 @@
   },
   {
    "from_id": "093",
-   "edge": "left",
-   "tile_range": [
-    7,
-    8
-   ],
-   "to_id": "arrival",
-   "to_edge": null,
-   "to_tile": null
-  },
-  {
-   "from_id": "093",
    "edge": "right",
    "tile_range": [
-    7,
-    8
+    6,
+    9
    ],
    "to_id": "096",
    "to_edge": "left",
    "to_tile": [
-    7,
-    8
+    5,
+    9
    ]
   },
   {
    "from_id": "096",
    "edge": "left",
    "tile_range": [
-    7,
-    8
+    5,
+    9
    ],
    "to_id": "093",
    "to_edge": "right",
    "to_tile": [
-    7,
-    8
+    6,
+    9
    ]
   },
   {
    "from_id": "096",
    "edge": "right",
    "tile_range": [
-    7,
-    8
+    5,
+    9
    ],
    "to_id": "097",
    "to_edge": "left",
    "to_tile": [
-    7,
-    8
+    5,
+    9
    ]
   },
   {
    "from_id": "097",
    "edge": "left",
    "tile_range": [
-    7,
-    8
+    5,
+    9
    ],
    "to_id": "096",
    "to_edge": "right",
    "to_tile": [
-    7,
-    8
+    5,
+    9
    ]
   },
   {
    "from_id": "097",
    "edge": "right",
    "tile_range": [
-    7,
-    8
+    5,
+    9
    ],
    "to_id": "098",
    "to_edge": "bottom",
    "to_tile": [
-    7,
-    8
+    5,
+    9
    ]
   },
   {
    "from_id": "098",
    "edge": "bottom",
    "tile_range": [
-    7,
-    8
+    5,
+    9
    ],
    "to_id": "097",
    "to_edge": "right",
    "to_tile": [
-    7,
-    8
+    5,
+    9
    ]
   },
   {
    "from_id": "098",
    "edge": "top",
    "tile_range": [
-    7,
-    8
+    5,
+    9
    ],
    "to_id": "099",
    "to_edge": "bottom",
    "to_tile": [
-    7,
-    8
+    6,
+    9
    ]
   },
   {
    "from_id": "099",
    "edge": "bottom",
    "tile_range": [
-    7,
-    8
+    6,
+    9
    ],
    "to_id": "098",
    "to_edge": "top",
    "to_tile": [
-    7,
-    8
+    5,
+    9
    ]
   },
   {
    "from_id": "099",
    "edge": "top",
    "tile_range": [
-    7,
-    8
+    6,
+    10
    ],
    "to_id": "100",
    "to_edge": "bottom",
    "to_tile": [
-    7,
-    8
+    6,
+    9
    ]
   },
   {
    "from_id": "100",
    "edge": "bottom",
    "tile_range": [
-    7,
-    8
+    6,
+    9
    ],
    "to_id": "099",
    "to_edge": "top",
    "to_tile": [
-    7,
-    8
+    6,
+    10
    ]
   },
   {
    "from_id": "100",
    "edge": "top",
    "tile_range": [
-    7,
-    8
+    6,
+    9
    ],
    "to_id": "101",
    "to_edge": "left",
    "to_tile": [
-    7,
-    8
+    6,
+    9
    ]
   },
   {
    "from_id": "101",
    "edge": "left",
    "tile_range": [
-    7,
-    8
+    6,
+    9
    ],
    "to_id": "100",
    "to_edge": "top",
    "to_tile": [
-    7,
-    8
+    6,
+    9
    ]
   },
   {
    "from_id": "101",
    "edge": "right",
    "tile_range": [
-    7,
-    8
+    6,
+    9
    ],
    "to_id": "102",
    "to_edge": "left",
    "to_tile": [
-    7,
-    8
+    6,
+    9
    ]
   },
   {
    "from_id": "102",
    "edge": "left",
    "tile_range": [
-    7,
-    8
+    6,
+    9
    ],
    "to_id": "101",
    "to_edge": "right",
    "to_tile": [
-    7,
-    8
+    6,
+    9
    ]
   },
   {
    "from_id": "102",
    "edge": "right",
    "tile_range": [
-    7,
-    8
+    6,
+    9
    ],
    "to_id": "103",
    "to_edge": "bottom",
    "to_tile": [
-    7,
-    8
+    6,
+    10
    ]
   },
   {
    "from_id": "103",
    "edge": "bottom",
    "tile_range": [
-    7,
-    8
+    6,
+    10
    ],
    "to_id": "102",
    "to_edge": "right",
    "to_tile": [
-    7,
-    8
+    6,
+    9
    ]
   },
   {
@@ -28049,16 +28439,16 @@
    "to_id": "104",
    "to_edge": "bottom",
    "to_tile": [
-    7,
-    8
+    6,
+    9
    ]
   },
   {
    "from_id": "104",
    "edge": "bottom",
    "tile_range": [
-    7,
-    8
+    6,
+    9
    ],
    "to_id": "103",
    "to_edge": "top",

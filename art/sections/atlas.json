@@ -2071,11 +2071,11 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → arrival (landing pad / gate)",
-    "right edge, tile rows 7–8 → Aurora Route Part A"
+    "right edge, tile rows 6–9 → Aurora Route Part A"
    ],
    "notes": "Research town under aurora skies",
-   "file": "art/sections/08_glacia/093_frostmark.png"
+   "file": "art/sections/08_glacia/093_frostmark.png",
+   "v2": true
   },
   {
    "id": "094",
@@ -2092,11 +2092,10 @@
    ],
    "tile_px_render": 64,
    "tile_px_game": 16,
-   "exits": [
-    "doormat at the bottom center of the room leads back outside"
-   ],
+   "exits": [],
    "notes": "",
-   "file": "art/sections/08_glacia/094_frostmark_recovery_bay.png"
+   "file": "art/sections/08_glacia/094_frostmark_recovery_bay.png",
+   "v2": true
   },
   {
    "id": "095",
@@ -2113,11 +2112,10 @@
    ],
    "tile_px_render": 64,
    "tile_px_game": 16,
-   "exits": [
-    "doormat at the bottom center of the room leads back outside"
-   ],
+   "exits": [],
    "notes": "",
-   "file": "art/sections/08_glacia/095_frostmark_shop.png"
+   "file": "art/sections/08_glacia/095_frostmark_shop.png",
+   "v2": true
   },
   {
    "id": "096",
@@ -2135,11 +2133,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Frostmark",
-    "right edge, tile rows 7–8 → Aurora Route Part B"
+    "left edge, tile rows 5–9 → Frostmark",
+    "right edge, tile rows 5–9 → Aurora Route Part B"
    ],
    "notes": "Snowfield route",
-   "file": "art/sections/08_glacia/096_aurora_route_part_a.png"
+   "file": "art/sections/08_glacia/096_aurora_route_part_a.png",
+   "v2": true
   },
   {
    "id": "097",
@@ -2157,11 +2156,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Aurora Route Part A",
-    "right edge, tile rows 7–8 → Crystal Caverns B1"
+    "left edge, tile rows 5–9 → Aurora Route Part A",
+    "right edge, tile rows 5–9 → Crystal Caverns B1"
    ],
    "notes": "Snowfield route",
-   "file": "art/sections/08_glacia/097_aurora_route_part_b.png"
+   "file": "art/sections/08_glacia/097_aurora_route_part_b.png",
+   "v2": true
   },
   {
    "id": "098",
@@ -2179,11 +2179,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7–8 → Aurora Route Part B",
-    "top edge, tile columns 7–8 → Crystal Caverns B2"
+    "bottom edge, tile columns 5–9 → Aurora Route Part B",
+    "top edge, tile columns 5–9 → Crystal Caverns B2"
    ],
    "notes": "Ice caves with crystal icicles, 3 floors",
-   "file": "art/sections/08_glacia/098_crystal_caverns_b1.png"
+   "file": "art/sections/08_glacia/098_crystal_caverns_b1.png",
+   "v2": true
   },
   {
    "id": "099",
@@ -2201,11 +2202,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7–8 → Crystal Caverns B1",
-    "top edge, tile columns 7–8 → Crystal Caverns B3"
+    "bottom edge, tile columns 6–9 → Crystal Caverns B1",
+    "top edge, tile columns 6–10 → Crystal Caverns B3"
    ],
    "notes": "Ice caves with crystal icicles, 3 floors",
-   "file": "art/sections/08_glacia/099_crystal_caverns_b2.png"
+   "file": "art/sections/08_glacia/099_crystal_caverns_b2.png",
+   "v2": true
   },
   {
    "id": "100",
@@ -2223,11 +2225,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7–8 → Crystal Caverns B2",
-    "top edge, tile columns 7–8 → Fossil Dig"
+    "bottom edge, tile columns 6–9 → Crystal Caverns B2",
+    "top edge, tile columns 6–9 → Fossil Dig"
    ],
    "notes": "Ice caves with crystal icicles, 3 floors",
-   "file": "art/sections/08_glacia/100_crystal_caverns_b3.png"
+   "file": "art/sections/08_glacia/100_crystal_caverns_b3.png",
+   "v2": true
   },
   {
    "id": "101",
@@ -2245,11 +2248,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Crystal Caverns B3",
-    "right edge, tile rows 7–8 → Frozen Falls"
+    "left edge, tile rows 6–9 → Crystal Caverns B3",
+    "right edge, tile rows 6–9 → Frozen Falls"
    ],
    "notes": "Dig site with a giant Ystran creature frozen in the glacier wall (Teeth in the ice)",
-   "file": "art/sections/08_glacia/101_fossil_dig.png"
+   "file": "art/sections/08_glacia/101_fossil_dig.png",
+   "v2": true
   },
   {
    "id": "102",
@@ -2267,11 +2271,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Fossil Dig",
-    "right edge, tile rows 7–8 → Aurora Tower 1F"
+    "left edge, tile rows 6–9 → Fossil Dig",
+    "right edge, tile rows 6–9 → Aurora Tower 1F"
    ],
    "notes": "Frozen waterfall (Glaciryx)",
-   "file": "art/sections/08_glacia/102_frozen_falls.png"
+   "file": "art/sections/08_glacia/102_frozen_falls.png",
+   "v2": true
   },
   {
    "id": "103",
@@ -2289,11 +2294,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7–8 → Frozen Falls",
+    "bottom edge, tile columns 6–10 → Frozen Falls",
     "top edge, tile columns 7–8 (stairs up) → Aurora Tower 2F"
    ],
    "notes": "Keeper Ingrid's tower",
-   "file": "art/sections/08_glacia/103_aurora_tower_1f.png"
+   "file": "art/sections/08_glacia/103_aurora_tower_1f.png",
+   "v2": true
   },
   {
    "id": "104",
@@ -2311,10 +2317,11 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7–8 → Aurora Tower 1F"
+    "bottom edge, tile columns 6–9 → Aurora Tower 1F"
    ],
    "notes": "Keeper Ingrid's tower",
-   "file": "art/sections/08_glacia/104_aurora_tower_2f.png"
+   "file": "art/sections/08_glacia/104_aurora_tower_2f.png",
+   "v2": true
   },
   {
    "id": "105",

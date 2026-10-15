@@ -216,26 +216,6 @@
  ],
  "ignore_mats": {},
  "objects": {
-  "101": [
-   {
-    "tile": [
-     17,
-     5
-    ],
-    "k": "stop",
-    "t": "This ladder is broken. You can't climb it.",
-    "why": "dead-end ladder (tools/sections/dead_ends.py)"
-   },
-   {
-    "tile": [
-     17,
-     6
-    ],
-    "k": "stop",
-    "t": "This ladder is broken. You can't climb it.",
-    "why": "dead-end ladder (tools/sections/dead_ends.py)"
-   }
-  ],
   "114": [
    {
     "tile": [
@@ -670,26 +650,6 @@
     "k": "stop",
     "t": "The stairs are blocked off. You can't go this way.",
     "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   }
-  ],
-  "093": [
-   {
-    "tile": [
-     6,
-     5
-    ],
-    "k": "house",
-    "why": "house door: opens the shared Glacia house",
-    "to": "178"
-   },
-   {
-    "tile": [
-     17,
-     12
-    ],
-    "k": "house",
-    "why": "house door: opens Glacia Ice Lodge",
-    "to": "193"
    }
   ],
   "003": [
@@ -1320,6 +1280,62 @@
     "to": "174",
     "why": "V2: miner shack"
    }
+  ],
+  "093": [
+   {
+    "tile": [
+     2,
+     3
+    ],
+    "k": "house",
+    "to": "178",
+    "why": "V2: glass-dome house (shared Glacia home)"
+   },
+   {
+    "tile": [
+     3,
+     3
+    ],
+    "k": "house",
+    "to": "178",
+    "why": "V2: glass-dome house"
+   },
+   {
+    "tile": [
+     17,
+     3
+    ],
+    "k": "house",
+    "to": "178",
+    "why": "V2: glass-dome house"
+   },
+   {
+    "tile": [
+     18,
+     3
+    ],
+    "k": "house",
+    "to": "178",
+    "why": "V2: glass-dome house"
+   },
+   {
+    "tile": [
+     21,
+     3
+    ],
+    "k": "house",
+    "to": "193",
+    "why": "V2: the Ice Lodge (blue crest)"
+   },
+   {
+    "tile": [
+     22,
+     3
+    ],
+    "k": "house",
+    "to": "193",
+    "why": "V2: the Ice Lodge"
+   }
   ]
  },
  "arrival": {
@@ -1350,6 +1366,10 @@
   "pyros": {
    "section": "082",
    "why": "V2: the iron landing pad at the left end of Cinder Hollow"
+  },
+  "glacia": {
+   "section": "093",
+   "why": "V2: the landing pad under the glass dome"
   }
  },
  "unlisted": {},
@@ -1602,6 +1622,16 @@
    "default": [
     3,
     8
+   ]
+  },
+  "093": {
+   "arrival": [
+    3,
+    7
+   ],
+   "default": [
+    3,
+    7
    ]
   }
  },

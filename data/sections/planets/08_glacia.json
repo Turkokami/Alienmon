@@ -4,41 +4,49 @@
    "interior": "094",
    "parent": "093",
    "door": [
-    17,
-    6
+    8,
+    3
+   ],
+   "door2": [
+    9,
+    3
    ],
    "mat": [
     [
      7,
-     13
+     14
     ],
     [
      8,
-     13
+     14
     ]
    ],
    "confidence": "high",
-   "why": "Frostmark Recovery Bay: big white dome top-right with the cyan cross over the door"
+   "why": "V2: Frostmark Recovery Bay (cyan cross)"
   },
   {
    "interior": "095",
    "parent": "093",
    "door": [
-    7,
-    8
+    13,
+    3
+   ],
+   "door2": [
+    14,
+    3
    ],
    "mat": [
     [
      7,
-     13
+     14
     ],
     [
      8,
-     13
+     14
     ]
    ],
    "confidence": "high",
-   "why": "Frostmark Shop: dome with the red-and-gold striped awning left of the plaza"
+   "why": "V2: Frostmark shop (striped awning)"
   }
  ],
  "objects": {
@@ -46,37 +54,48 @@
    {
     "tile": [
      7,
-     7
+     4
     ],
-    "k": "bay",
-    "why": "Recovery Bay curved counter in front of the healing pods"
+    "k": "bay"
+   },
+   {
+    "tile": [
+     8,
+     4
+    ],
+    "k": "bay"
    }
   ],
   "095": [
    {
     "tile": [
-     3,
-     8
+     7,
+     5
     ],
-    "k": "shop",
-    "why": "L-shaped shop counter on the left"
+    "k": "shop"
+   },
+   {
+    "tile": [
+     8,
+     5
+    ],
+    "k": "shop"
    }
   ],
   "104": [
    {
     "tile": [
-     7,
-     2
+     8,
+     4
     ],
-    "k": "keeper",
-    "why": "Ingrid Vale at the top of Aurora Tower 2F, below the sealed stairs"
+    "k": "keeper"
    }
   ],
   "093": [
    {
     "tile": [
-     12,
-     9
+     11,
+     4
     ],
     "k": "sign",
     "t": [
@@ -88,8 +107,8 @@
   "096": [
    {
     "tile": [
-     20,
-     10
+     12,
+     4
     ],
     "k": "sign",
     "t": [
@@ -101,8 +120,8 @@
   "100": [
    {
     "tile": [
-     9,
-     5
+     4,
+     3
     ],
     "k": "sign",
     "t": [
@@ -114,8 +133,8 @@
   "101": [
    {
     "tile": [
-     6,
-     4
+     2,
+     5
     ],
     "k": "sign",
     "t": [
@@ -125,8 +144,8 @@
    },
    {
     "tile": [
-     12,
-     5
+     11,
+     2
     ],
     "k": "sign",
     "t": [
@@ -136,8 +155,8 @@
    },
    {
     "tile": [
-     12,
-     8
+     20,
+     5
     ],
     "k": "sign",
     "t": [
@@ -147,7 +166,7 @@
    },
    {
     "tile": [
-     8,
+     9,
      10
     ],
     "k": "sign",
@@ -161,7 +180,7 @@
    {
     "tile": [
      12,
-     6
+     4
     ],
     "k": "sign",
     "t": [
@@ -192,8 +211,8 @@
    "section": "103",
    "n": 0,
    "tile": [
-    6,
-    19
+    3,
+    14
    ],
    "face": "right"
   },
@@ -201,8 +220,8 @@
    "section": "103",
    "n": 1,
    "tile": [
-    9,
-    3
+    12,
+    8
    ],
    "face": "left"
   },
@@ -210,8 +229,8 @@
    "section": "096",
    "n": 0,
    "tile": [
-    15,
-    7
+    12,
+    6
    ],
    "face": "down"
   },
@@ -219,17 +238,17 @@
    "section": "096",
    "n": 1,
    "tile": [
-    8,
-    6
+    6,
+    9
    ],
-   "face": "down"
+   "face": "up"
   },
   {
    "section": "101",
    "n": 0,
    "tile": [
     14,
-    6
+    7
    ],
    "face": "down"
   },
@@ -237,8 +256,8 @@
    "section": "101",
    "n": 1,
    "tile": [
-    21,
-    6
+    20,
+    8
    ],
    "face": "left"
   }
@@ -252,78 +271,85 @@
   "093": [
    {
     "tile": [
-     7,
-     1
+     12,
+     5
     ],
     "art": "researcher",
     "t": [
      "Researcher: Something huge is frozen inside the glacier wall past the caverns.",
      "We call it the Teeth in the Ice. Nobody sleeps well near it."
-    ]
+    ],
+    "stay": true
    },
    {
     "tile": [
-     4,
-     6
+     16,
+     10
     ],
     "art": "explorer",
     "t": [
      "Climber: Ice paths are slick. Jump the cracks, don't walk them.",
      "Aurora Route has frost grass. Wild Alienmon love it."
-    ]
+    ],
+    "stay": true
    },
    {
     "tile": [
-     11,
-     6
+     6,
+     10
     ],
     "art": "technician",
     "t": [
      "Radio tech: Our antennas pick up signals from the Starfall Rift.",
      "Lately they pulse in sync with the aurora. Spooky, right?"
-    ]
+    ],
+    "stay": true
    },
    {
     "tile": [
-     3,
-     7
+     2,
+     5
     ],
     "art": "civilian",
     "t": [
      "Townsfolk: The Recovery Bay is the dome with the cyan cross. Heal before the caverns!"
-    ]
+    ],
+    "stay": true
    },
    {
     "tile": [
-     13,
-     11
+     20,
+     6
     ],
     "art": "guard",
     "t": [
      "Guard: Helix crews keep asking for dig permits. The station keeps saying no.",
      "If you see anyone in a Helix strand-suit near the fossils, tell us."
-    ]
+    ],
+    "stay": true
    },
    {
     "tile": [
-     17,
-     13
+     10,
+     9
     ],
     "art": "wanderer",
     "t": [
      "Wanderer: Keeper Ingrid lives up in Aurora Tower, past the Frozen Falls.",
      "Win a Signal Shard from her and you'll have really earned it."
-    ]
+    ],
+    "stay": true
    },
    {
     "tile": [
-     18,
-     13
+     7,
+     6
     ],
     "art": "mom",
     "t": [
      "Mom: My kids want to catch a Cryo-type. I said only after their homework thaws."
-    ]
+    ],
+    "stay": true
    }
   ],
   "094": [
@@ -331,8 +357,8 @@
     "art": "nurse",
     "name": "Nurse",
     "tile": [
-     7,
-     7
+     8,
+     4
     ],
     "t": [
      "Nurse: Welcome to the Frostmark Recovery Bay. Let's warm your team right up."
@@ -344,7 +370,12 @@
     "t": [
      "Climber: Cold doesn't bother Cryo-types, but everyone else hates the caverns.",
      "Heal here before you head out. It's a long walk back."
-    ]
+    ],
+    "tile": [
+     9,
+     12
+    ],
+    "stay": true
    }
   ],
   "095": [
@@ -352,8 +383,8 @@
     "art": "shop",
     "name": "Clerk",
     "tile": [
-     3,
-     8
+     8,
+     5
     ],
     "t": [
      "Clerk: Stasis Pods, gels, warm socks. Okay, not socks. Take a look!"
@@ -364,29 +395,36 @@
     "art": "researcher",
     "t": [
      "Researcher: I buy Stasis Pods by the crate. Cave Alienmon break out a lot."
-    ]
+    ],
+    "tile": [
+     6,
+     12
+    ],
+    "stay": true
    }
   ],
   "096": [
    {
     "tile": [
-     4,
-     1
+     9,
+     8
     ],
     "art": "explorer",
     "t": [
      "Climber: Trainers spot you from a few tiles away. Step out of their line if your team is hurt."
-    ]
+    ],
+    "stay": true
    },
    {
     "tile": [
-     13,
-     13
+     18,
+     6
     ],
     "art": "researcher",
     "t": [
      "Researcher: The aurora isn't just pretty. It carries a signal. We just can't read it yet."
-    ]
+    ],
+    "stay": true
    }
   ],
   "097": [
@@ -394,13 +432,23 @@
     "art": "technician",
     "t": [
      "Radio tech: The Crystal Caverns are ahead. Three floors deep, then up into the Fossil Dig."
-    ]
+    ],
+    "tile": [
+     12,
+     5
+    ],
+    "stay": true
    },
    {
     "art": "wanderer",
     "t": [
      "Wanderer: Fire melts ice, they say. Bring something hot for Ingrid's team."
-    ]
+    ],
+    "tile": [
+     16,
+     10
+    ],
+    "stay": true
    }
   ],
   "098": [
@@ -408,7 +456,12 @@
     "art": "miner",
     "t": [
      "Miner: These crystals sing when you tap them. Don't. The wild ones hear it too."
-    ]
+    ],
+    "tile": [
+     8,
+     2
+    ],
+    "stay": true
    }
   ],
   "099": [
@@ -416,7 +469,12 @@
     "art": "researcher",
     "t": [
      "Researcher: My Alienmon fainted in the cold once. Always carry a Revive Spark down here."
-    ]
+    ],
+    "tile": [
+     8,
+     11
+    ],
+    "stay": true
    }
   ],
   "100": [
@@ -424,30 +482,37 @@
     "art": "explorer",
     "t": [
      "Climber: The stairs above lead to the Fossil Dig. Look closely at those bite marks."
-    ]
+    ],
+    "tile": [
+     4,
+     6
+    ],
+    "stay": true
    }
   ],
   "101": [
    {
     "tile": [
-     15,
-     13
+     6,
+     7
     ],
     "art": "researcher",
     "t": [
      "Dig chief: Three fossil sites, same bite pattern every time. Read the markers."
-    ]
+    ],
+    "stay": true
    },
    {
     "tile": [
-     2,
-     5
+     20,
+     9
     ],
     "art": "miner",
     "t": [
      "Digger: I asked Helix for better drills. They asked where the biggest bones were.",
      "I didn't tell them."
-    ]
+    ],
+    "stay": true
    }
   ],
   "102": [
@@ -455,13 +520,23 @@
     "art": "pilgrim",
     "t": [
      "Pilgrim: The falls froze the night the aurora turned violet. I come here to listen."
-    ]
+    ],
+    "tile": [
+     11,
+     5
+    ],
+    "stay": true
    },
    {
     "art": "explorer",
     "t": [
      "Climber: Aurora Tower is just east. Ingrid trains Cryo-types up top."
-    ]
+    ],
+    "tile": [
+     16,
+     9
+    ],
+    "stay": true
    }
   ],
   "103": [
@@ -470,7 +545,12 @@
     "t": [
      "Relay tech: This tower boosts the aurora signal across the whole system.",
      "Ingrid's apprentices will test you on the way up."
-    ]
+    ],
+    "tile": [
+     9,
+     3
+    ],
+    "stay": true
    }
   ],
   "104": [
@@ -478,19 +558,15 @@
     "art": "researcher",
     "t": [
      "Researcher: Ingrid reads ice cores like books. She says the ice remembers the Devourer."
-    ]
+    ],
+    "tile": [
+     6,
+     4
+    ],
+    "stay": true
    }
   ]
  },
- "unlisted": {
-  "093": "Stairs at the top (col 7, row 0) and bottom (col 15, row 15) run off-map; the three plain dome houses (doors ~6,5 / 6,11 / 17,12) have no interiors, so their doors are blocked and the bottom-left fenced yard is blocked.",
-  "097": "Stairs off the top edge (col 4) and off the bottom edge (col 16) lead nowhere; final edge tiles blocked.",
-  "098": "Wooden ladder on the west ledge (1,5) and openings on the left/right edges at rows 7-8 lead nowhere; blocked.",
-  "099": "Wooden ladder on the north-west ledge (3,4) leads nowhere; blocked.",
-  "100": "Wooden ladder on the north-west ledge (3,4) leads nowhere; blocked.",
-  "101": "Ladder on the top-left ledge (4,2), scaffold ladder into the glacier (17,5) and stairs off the bottom edge (col 11) lead nowhere; blocked.",
-  "102": "Stairs off the bottom edge (col 6 and col 12, rows 14-15) lead nowhere; blocked.",
-  "104": "Stairs at the top (cols 7-8, rows 0-1) have no floor above; blocked behind the Keeper."
- },
+ "unlisted": {},
  "notes": "Glacia (08). The Aurora Tower fountains (103, 104) sit in the central corridor; the player walks round them on the ring (cols 6 and 9), which slightly overlaps a lamp and the void edge. On 101 the left exit path runs along a thin snow band at the top edge of a frozen pool (row 7). Quest M12 places the three fossil sites 'in the crystal caverns'; per the lead they are sign objects on Fossil Dig (101), plus one for the giant skeleton pit."
 }

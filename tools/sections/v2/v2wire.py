@@ -6,7 +6,21 @@ A2={s['id']:s for s in json.load(open(S+'atlas_v2.json',encoding='utf-8'))['sect
 AT=json.load(open('art/sections/atlas.json',encoding='utf-8'));A1={s['id']:s for s in AT['sections']}
 L=json.load(open('data/sections/links.json',encoding='utf-8'))
 H=lambda x,y:{'tile':[x,y]}
-WIRE={'07':{
+WIRE={'08':{
+ 'ids':['%03d'%i for i in range(93,105)],
+ 'doors':[],'stairs':[],
+ 'objects':{
+  '093':[{'tile':[2,3],'k':'house','to':'178','why':'V2: glass-dome house (shared Glacia home)'},{'tile':[3,3],'k':'house','to':'178','why':'V2: glass-dome house'},
+         {'tile':[17,3],'k':'house','to':'178','why':'V2: glass-dome house'},{'tile':[18,3],'k':'house','to':'178','why':'V2: glass-dome house'},
+         {'tile':[21,3],'k':'house','to':'193','why':'V2: the Ice Lodge (blue crest)'},{'tile':[22,3],'k':'house','to':'193','why':'V2: the Ice Lodge'}],
+ },
+ 'warps':[],
+ 'gates':{},
+ 'atlas_extra':{'103':['top edge, tile columns 7–8 (stairs up) → Aurora Tower 2F']},
+ 'spawns':{'093':{'arrival':[3,7],'default':[3,7]}},
+ 'arrival':{'glacia':{'section':'093','why':'V2: the landing pad under the glass dome'}},
+ 'reparent':{'178':'093','193':'093'},
+},'07':{
  'ids':['%03d'%i for i in range(82,93)],
  'doors':[],'stairs':[],
  'objects':{

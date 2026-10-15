@@ -939,11 +939,22 @@
  ],
  "Glacia": [
   {
+   "section": "093",
+   "name": "Frostmark",
+   "tile": [
+    11,
+    14
+   ],
+   "item": "harmonic",
+   "n": 5,
+   "tier": 4
+  },
+  {
    "section": "096",
    "name": "Aurora Route Part A",
    "tile": [
-    5,
-    1
+    14,
+    12
    ],
    "item": "ether",
    "n": 2,
@@ -953,8 +964,8 @@
    "section": "096",
    "name": "Aurora Route Part A",
    "tile": [
-    14,
-    5
+    6,
+    2
    ],
    "item": "harmonic",
    "n": 5,
@@ -964,8 +975,8 @@
    "section": "097",
    "name": "Aurora Route Part B",
    "tile": [
-    4,
-    1
+    11,
+    14
    ],
    "item": "fullgel",
    "n": 1,
@@ -975,8 +986,8 @@
    "section": "097",
    "name": "Aurora Route Part B",
    "tile": [
-    12,
-    5
+    6,
+    2
    ],
    "item": "fullgel",
    "n": 1,
@@ -986,7 +997,7 @@
    "section": "098",
    "name": "Crystal Caverns B1",
    "tile": [
-    1,
+    14,
     7
    ],
    "item": "ether",
@@ -997,8 +1008,19 @@
    "section": "098",
    "name": "Crystal Caverns B1",
    "tile": [
+    1,
+    7
+   ],
+   "item": "dust",
+   "n": 800,
+   "tier": 4
+  },
+  {
+   "section": "099",
+   "name": "Crystal Caverns B2",
+   "tile": [
     13,
-    8
+    6
    ],
    "item": "dust",
    "n": 800,
@@ -1011,16 +1033,16 @@
     2,
     8
    ],
-   "item": "dust",
-   "n": 800,
+   "item": "fullgel",
+   "n": 1,
    "tier": 4
   },
   {
-   "section": "099",
-   "name": "Crystal Caverns B2",
+   "section": "100",
+   "name": "Crystal Caverns B3",
    "tile": [
-    3,
-    10
+    14,
+    7
    ],
    "item": "fullgel",
    "n": 1,
@@ -1030,19 +1052,8 @@
    "section": "100",
    "name": "Crystal Caverns B3",
    "tile": [
-    2,
-    10
-   ],
-   "item": "fullgel",
-   "n": 1,
-   "tier": 4
-  },
-  {
-   "section": "100",
-   "name": "Crystal Caverns B3",
-   "tile": [
-    2,
-    2
+    14,
+    9
    ],
    "item": "fullgel",
    "n": 1,
@@ -1052,8 +1063,8 @@
    "section": "101",
    "name": "Fossil Dig",
    "tile": [
-    11,
-    14
+    10,
+    13
    ],
    "item": "dust",
    "n": 800,
@@ -1063,8 +1074,8 @@
    "section": "101",
    "name": "Fossil Dig",
    "tile": [
-    9,
-    5
+    17,
+    3
    ],
    "item": "revive",
    "n": 2,
@@ -1074,8 +1085,8 @@
    "section": "102",
    "name": "Frozen Falls",
    "tile": [
-    21,
-    2
+    11,
+    14
    ],
    "item": "megagel",
    "n": 3,
