@@ -286,6 +286,7 @@ let DIR = null;
 async function save() {
   if (DIRTY.size && !check() && !confirm('Some doors or exits are cut off on the maps listed under Check. Save anyway?')) return;
   const b = bundle();
+  if (!/^(localhost|127\.)/.test(location.hostname)) return webSave(b);   // on the test link: save through Vercel -> GitHub
   if (!window.showDirectoryPicker) { download(b); return; }
   try {
     if (!DIR) { DIR = await showDirectoryPicker({ id: 'alienmon-app', mode: 'readwrite' });
@@ -301,6 +302,15 @@ async function save() {
     DIRTY.clear(); $('#save').classList.remove('hot');
     toast('Saved into the game folder. Run tools\\editor\\apply.cmd (or ask Claude to apply the editor changes) to rebuild and publish.', 9000);
   } catch (e) { if (e.name !== 'AbortError') { console.error(e); toast('Could not save to the folder, downloading the changes instead.'); download(b); } }
+}
+async function webSave(b) {
+  toast('Saving...', 20000);
+  try {
+    const r = await fetch('/api/editor-save', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(b) }), j = await r.json().catch(() => ({}));
+    if (!r.ok || !j.ok) { toast((j.error || 'Save failed (' + r.status + ').') + ' Downloading your changes instead so nothing is lost.', 9000); download(b); return; }
+    DIRTY.clear(); $('#save').classList.remove('hot');
+    toast('Saved. The game rebuilds itself; your changes show on the test link in about 3 to 5 minutes.', 9000);
+  } catch (e) { toast('Could not reach the save service. Downloading your changes instead.', 9000); download(b); }
 }
 function download(b) { const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([JSON.stringify(b)], { type: 'application/json' })); a.download = 'editor_changes.json'; a.click();
   toast('Downloaded editor_changes.json. Send it to Claude, or run: python tools/editor/apply.py --from editor_changes.json', 9000); }

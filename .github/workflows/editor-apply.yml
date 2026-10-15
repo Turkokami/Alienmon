@@ -1,0 +1,37 @@
+# Map editor saves from the web land as data/editor/pending.json on maps-v2 (api/editor-save.js).
+# This applies them: unpack, rebuild the world, run every check, build the game, then commit and push.
+# Vercel picks up the push and republishes the maps-v2 test link.
+name: Apply map editor save
+on:
+  push:
+    branches: [maps-v2]
+    paths: ['data/editor/pending.json']
+permissions:
+  contents: write
+concurrency:
+  group: editor-apply
+  cancel-in-progress: false
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: maps-v2
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Apply the save and rebuild
+        run: python tools/editor/apply.py --from data/editor/pending.json --stage
+      - name: Commit and push
+        run: |
+          git config user.name "Alienmon map editor"
+          git config user.email "turkokami@gmail.com"
+          git rm -q --cached data/editor/pending.json && rm data/editor/pending.json
+          git add data/sections/props_layout.json data/editor data/collision data/world.json art/sections_game \
+                  data/sections/stashes.json docs/LINKER_STASHES.md data/connections_report.md
+          git commit -q -m "Map editor changes (saved from the web)" || echo "nothing to commit"
+          git push -q

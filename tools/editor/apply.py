@@ -3,6 +3,7 @@
     python tools/editor/apply.py                          # changes saved straight into the folder by the editor
     python tools/editor/apply.py --from editor_changes.json   # a download from the editor (phone, or a browser without folder access)
     python tools/editor/apply.py --push                   # also commit and push (only on the maps-v2 test branch)
+    python tools/editor/apply.py --from data/editor/pending.json --stage   # what the GitHub workflow runs for web saves
 
 Writes the editor's files (props layout, people, wild Alienmon, new map pieces and their walls), then runs the usual pipeline:
 build_world -> check_sections -> check_reach -> build.js -> check_build. Stops before pushing if any check fails.
@@ -38,6 +39,8 @@ def unpack(path):
 def main():
     if '--from' in sys.argv:
         unpack(sys.argv[sys.argv.index('--from') + 1])
+    if '--stage' in sys.argv:   # new map images must be tracked or check_build flags them as missing on Vercel
+        subprocess.run(['git', 'add', 'art/sections_game', 'data/collision', 'data/editor', 'data/sections/props_layout.json'])
     steps = [['python', 'tools/sections/build_world.py'], ['python', 'tools/sections/check_sections.py'],
              ['python', 'tools/sections/check_reach.py'], ['node', 'tools/build.js'], ['node', 'tools/check_build.js']]
     bad = False
