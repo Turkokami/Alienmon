@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Alienmon Map Editor</title><meta name="robots" content="noindex">
+<style>
+:root{--bg:#120c22;--panel:#1d1533;--line:#3b2a5c;--text:#e8e0ff;--muted:#a99cc9;--accent:#ffd23f;--cyan:#5ff2ff}
+*{box-sizing:border-box}html,body{margin:0;height:100%;background:var(--bg);color:var(--text);font:14px/1.4 system-ui,sans-serif}
+header{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:8px 12px;background:var(--panel);border-bottom:1px solid var(--line)}
+header h1{font-size:15px;margin:0 8px 0 0;color:var(--accent)}
+select,input,textarea,button{font:inherit;color:var(--text);background:#2a2046;border:1px solid var(--line);border-radius:6px;padding:5px 8px}
+button{cursor:pointer}button:hover{border-color:var(--cyan)}button.on{background:#3b2a5c;border-color:var(--accent);color:var(--accent)}
+#save.hot{background:var(--accent);color:#1b1424;border-color:var(--accent);font-weight:600}
+main{display:flex;height:calc(100% - 52px)}#mapwrap{position:relative;flex:1;min-width:0}
+#map{width:100%;height:100%;display:block;touch-action:none;cursor:crosshair}
+#where{position:absolute;left:8px;bottom:8px;background:rgba(0,0,0,.6);padding:2px 8px;border-radius:4px;font:12px monospace;color:var(--muted)}
+#panel{width:340px;overflow:auto;background:var(--panel);border-left:1px solid var(--line);padding:10px 12px}
+#panel h3{margin:14px 0 6px;color:var(--accent);font-size:14px}#panel label{display:block;margin:6px 0}#panel label input,#panel label select,#panel textarea{width:100%}
+.row{display:flex;gap:6px;align-items:center;flex-wrap:wrap}.hint{color:var(--muted);font-size:12px;margin:4px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(58px,1fr));gap:6px;margin-top:6px}
+.pal{height:62px;padding:3px;display:flex;align-items:flex-end;justify-content:center;background:#d8cfee}
+.pal img{max-width:100%;max-height:100%;image-rendering:pixelated}.pal.on{outline:3px solid var(--accent)}
+.pal.mon span{display:block;width:48px;height:48px;background-size:200% 100%;background-position:0 0;image-rendering:pixelated}
+.sel{background:#2a2046;border:1px solid var(--accent);border-radius:8px;padding:8px;margin-bottom:8px}.sel button{margin-top:6px}
+.good{color:#7dff9a;font-size:12px}.bad{color:#ff8080;font-size:12px}
+#toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#2a2046;border:1px solid var(--accent);padding:8px 14px;border-radius:8px;opacity:0;transition:opacity .2s;pointer-events:none;max-width:90vw}
+#toast.on{opacity:1}
+@media (max-width:760px){main{flex-direction:column}#panel{width:auto;height:45%;border-left:0;border-top:1px solid var(--line)}}
+</style></head><body>
+<header><h1>Alienmon Map Editor</h1>
+<select id="planet"></select><select id="view"></select>
+<span class="row"><button data-mode="props" class="on">Props</button><button data-mode="people">People</button><button data-mode="mons">Alienmon</button><button data-mode="walls">Walls</button><button data-mode="maps">Add map</button></span>
+<label class="row"><input type="checkbox" id="walls"> show walls</label><label class="row"><input type="checkbox" id="showdoors" checked> doors</label>
+<span class="row"><button id="zout">&minus;</button><button id="zfit">Fit</button><button id="zin">+</button><button id="undo">Undo</button><button id="save">Save</button></span>
+</header>
+<main><div id="mapwrap"><canvas id="map"></canvas><div id="where"></div></div><aside id="panel"></aside></main>
+<div id="toast"></div>
+<script src="editor.js"></script>
+</body></html>

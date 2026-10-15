@@ -112,6 +112,24 @@ if(!INLINE)fs.writeFileSync(path.join(www,'asset-manifest.json'),j({build:BUILD,
 // installable PWA: service worker, manifest, icons and the share image
 const copy=(from,to)=>{fs.mkdirSync(path.dirname(path.join(www,to)),{recursive:true});fs.copyFileSync(path.join(root,from),path.join(www,to))};
 for(const f of fs.readdirSync(path.join(root,'art/ui/icons')))copy('art/ui/icons/'+f,'icons/'+f);
+// ---- map editor (prototype builds): www/editor.html + www/editor_data.json ----
+if(PROTO&&!INLINE){
+ const rd=(f,d)=>fs.existsSync(path.join(root,f))?JSON.parse(fs.readFileSync(path.join(root,f),'utf8')):d;
+ const ED={planets:{},sections:{},props:{},chars:{},mons:{},layout:rd('data/sections/props_layout.json',{}),edits:{npcs:rd('data/editor/npcs.json',{}),mons:rd('data/editor/mons.json',{}),maps:rd('data/editor/maps.json',[])}};
+ for(const[id,sec]of Object.entries(SECW.sections)){const cp=path.join(root,'data/collision',id+'.json');if(!sec.img)continue;
+  ED.planets[sec.dir]=sec.planet;
+  ED.sections[id]={id,name:sec.name,planet:sec.planet,dir:sec.dir,type:sec.type,tiles:sec.tiles,grid:sec.grid||null,img:asset(sec.img),
+   rows:fs.existsSync(cp)?JSON.parse(fs.readFileSync(cp,'utf8')).rows:null,edges:sec.edges,
+   warps:sec.warps.map(w=>({tile:w.tile,to:w.to,kind:w.kind})),objects:(sec.objects||[]).map(o=>({tile:o.tile,k:o.k,to:o.to})),
+   spawns:sec.spawns,npcs:(sec.npcs||[]).map(n=>({x:n.x,y:n.y,art:n.art,name:n.name||'',src:n.src||'',trainer:!!n.trainer,t:(n.t||[]).slice(0,1)})),mons:sec.mons||[]}}
+ for(const d of fs.readdirSync(path.join(root,'art/props')).sort()){const cj=path.join(root,'art/props',d,'cut.json');if(!fs.existsSync(cj))continue;
+  ED.props[d]=JSON.parse(fs.readFileSync(cj,'utf8')).map(m=>({n:m.n,px:m.px,url:asset('art/props/'+d+'/'+String(m.n).padStart(2,'0')+'.png')}))}
+ for(const[k,v]of Object.entries(CHAR))if(!/_(up|down|left|right)(_w\d)?$|_big$/.test(k))ED.chars[k]=v;
+ for(const[k,v]of Object.entries(OW))ED.mons[k]=v;
+ fs.writeFileSync(path.join(www,'editor_data.json'),JSON.stringify(ED));
+ fs.copyFileSync(path.join(root,'tools/editor/editor.html'),path.join(www,'editor.html'));
+ fs.copyFileSync(path.join(root,'tools/editor/editor.js'),path.join(www,'editor.js'));
+ console.log('map editor: www/editor.html ('+Object.keys(ED.sections).length+' sections, '+Object.values(ED.props).reduce((a,b)=>a+b.length,0)+' props)')}
 copy('src/manifest.webmanifest','manifest.webmanifest');copy('art/ui/og.jpg','og.jpg');
 if(!INLINE)fs.writeFileSync(path.join(www,'sw.js'),fs.readFileSync(path.join(root,'src/sw.js'),'utf8').replace(/__BUILD__/g,j(BUILD)));
 const mb=b=>(b/1048576).toFixed(1)+' MB';

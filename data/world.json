@@ -1375,7 +1375,8 @@
      "pre": [
       "Mom: Good morning, sleepyhead! Dr. Vashti called. She's waiting for you at her observatory lab.",
       "Mom: It's the big dome with the telescope, across the plaza. Go on, your partner is waiting!"
-     ]
+     ],
+     "src": "n:001:0"
     }
    ]
   },
@@ -1513,7 +1514,8 @@
      ],
      "name": "Dr. Vashti",
      "story": "starter",
-     "until": "M07"
+     "until": "M07",
+     "src": "n:003:0"
     },
     {
      "x": 3,
@@ -1527,7 +1529,8 @@
      "name": "Lab aide",
      "pre": [
       "Lab aide: Dr. Vashti has been waiting for you! She's by the pod table."
-     ]
+     ],
+     "src": "n:003:1"
     }
    ]
   },
@@ -1722,7 +1725,8 @@
      "pre": [
       "Kid: You're getting your first Alienmon today? Lucky! Dr. Vashti's lab is the dome with the telescope."
      ],
-     "stay": true
+     "stay": true,
+     "src": "n:004:0"
     },
     {
      "x": 9,
@@ -1734,7 +1738,8 @@
       "Mr. Abernathy: I've baked for Dustmere since before the Starfall. Never once burned a loaf. ...Well. Once."
      ],
      "name": "Mr. Abernathy",
-     "stay": true
+     "stay": true,
+     "src": "n:004:1"
     },
     {
      "x": 4,
@@ -1747,7 +1752,8 @@
       "Girl: DX-4 keeps wandering off toward the bridge. Pebblet follows him. I follow Pebblet."
      ],
      "name": "Rock-girl",
-     "stay": true
+     "stay": true,
+     "src": "n:004:2"
     },
     {
      "x": 21,
@@ -1758,6 +1764,7 @@
       "Linker: Press START to check your team. A tired Alienmon is a fainted Alienmon waiting to happen."
      ],
      "stay": true,
+     "src": "n:004:3",
      "id": "sec004_tr3",
      "trainer": {
       "cls": "Linker",
@@ -1774,7 +1781,8 @@
       "Woman: The shop dome sells Stasis Pods. You can't catch anything without them!",
       "Woman: Weaken an Alienmon first. A full-health one just pops right back out."
      ],
-     "stay": true
+     "stay": true,
+     "src": "n:004:4"
     },
     {
      "x": 15,
@@ -1784,7 +1792,8 @@
      "t": [
       "Watchman: West of here is the landing pad. Ships only leave with launch clearance from a Keeper."
      ],
-     "stay": true
+     "stay": true,
+     "src": "n:004:5"
     },
     {
      "x": 10,
@@ -1797,7 +1806,8 @@
      ],
      "name": "DX-4",
      "wid": "DX-4 robot",
-     "stay": true
+     "stay": true,
+     "src": "n:004:6"
     },
     {
      "x": 19,
@@ -1809,7 +1819,8 @@
       "Dusty: That crater past the falls? The seedpods came down hot as stars twenty years back."
      ],
      "name": "Old Dusty",
-     "stay": true
+     "stay": true,
+     "src": "n:004:7"
     },
     {
      "x": 13,
@@ -1823,7 +1834,8 @@
      "name": "Kit",
      "after": "M19",
      "until": "P01",
-     "stay": true
+     "stay": true,
+     "src": "n:004:8"
     }
    ],
    "mons": []
@@ -1939,7 +1951,8 @@
       "Nurse: Welcome to the Recovery Bay! Step up to the counter and I'll heal your team."
      ],
      "name": "Nurse",
-     "stay": true
+     "stay": true,
+     "src": "n:005:0"
     },
     {
      "x": 3,
@@ -1948,7 +1961,8 @@
      "face": "right",
      "t": [
       "Trainer: I come here after every route. Healing is free, so there's no excuse to push your luck."
-     ]
+     ],
+     "src": "n:005:1"
     }
    ]
   },
@@ -2033,7 +2047,8 @@
       "Shopkeeper: Talk to me at the counter for pods and potions!"
      ],
      "name": "Shopkeeper",
-     "stay": true
+     "stay": true,
+     "src": "n:006:0"
     },
     {
      "x": 5,
@@ -2042,7 +2057,8 @@
      "face": "down",
      "t": [
       "Shopper: Gels heal, Cure Spray fixes poison and burns. I always carry both."
-     ]
+     ],
+     "src": "n:006:1"
     }
    ]
   },
@@ -2109,7 +2125,8 @@
      "t": [
       "Hiker: Don't look down. That canyon goes all the way to the old lava falls."
      ],
-     "stay": true
+     "stay": true,
+     "src": "n:007:0"
     },
     {
      "x": 6,
@@ -2119,7 +2136,8 @@
      "t": [
       "Bridge keeper: This bridge was built by Ferrox steelworkers. Not a single rivet has slipped in forty years."
      ],
-     "stay": true
+     "stay": true,
+     "src": "n:007:1"
     }
    ],
    "mons": [
@@ -2254,7 +2272,8 @@
       "Trader: Everything here came over the Molten Frontier on a cart. Prices reflect the danger!"
      ],
      "name": "Snack trader",
-     "stay": true
+     "stay": true,
+     "src": "n:008:0"
     },
     {
      "x": 3,
@@ -2265,7 +2284,8 @@
       "Kid: The lemonade stand? That was... an accident. Mostly the lamb's fault."
      ],
      "name": "Kid with a lamb",
-     "stay": true
+     "stay": true,
+     "src": "n:008:1"
     },
     {
      "x": 10,
@@ -2275,7 +2295,8 @@
      "t": [
       "Miner: The Sunset Tunnel past the cactus gardens is the only way through to the Frontier on foot."
      ],
-     "stay": true
+     "stay": true,
+     "src": "n:008:2"
     },
     {
      "x": 15,
@@ -2285,7 +2306,8 @@
      "t": [
       "Drifter: Sola trains out back every morning. Tough kid. Even tougher partner."
      ],
-     "stay": true
+     "stay": true,
+     "src": "n:008:3"
     },
     {
      "x": 12,
@@ -2296,6 +2318,7 @@
       "Linker: Trainers on the trail will battle you the moment they spot you. Walk past them if you're feeling brave."
      ],
      "stay": true,
+     "src": "n:008:4",
      "id": "sec008_tr4",
      "trainer": {
       "cls": "Linker",
@@ -2313,7 +2336,8 @@
       "Referee: ...And no knocking over my lemonade stand AGAIN."
      ],
      "name": "Referee",
-     "stay": true
+     "stay": true,
+     "src": "n:008:5"
     },
     {
      "x": 19,
@@ -2325,7 +2349,8 @@
       "Fenna: Sporeholm grows mushrooms bigger than houses. Bigger than Dustmere, nearly!"
      ],
      "name": "Fenna",
-     "stay": true
+     "stay": true,
+     "src": "n:008:6"
     }
    ],
    "mons": [
@@ -2409,7 +2434,8 @@
      "t": [
       "Hiker: The Rimwalk Trail hugs the canyon edge. Great view, terrible place to trip."
      ],
-     "stay": true
+     "stay": true,
+     "src": "n:009:0"
     },
     {
      "x": 15,
@@ -2419,7 +2445,8 @@
      "t": [
       "Birdwatcher: I've seen Alienmon with wings riding the thermals over the canyon."
      ],
-     "stay": true
+     "stay": true,
+     "src": "n:009:1"
     },
     {
      "x": 9,
@@ -2534,7 +2561,8 @@
      "t": [
       "Researcher: Different grass patches hold different Alienmon. Try them all!"
      ],
-     "stay": true
+     "stay": true,
+     "src": "n:010:0"
     },
     {
      "x": 9,
@@ -2544,7 +2572,8 @@
      "t": [
       "Camper: If you're low on health, head back to Dustmere. Pride is not a healing item."
      ],
-     "stay": true
+     "stay": true,
+     "src": "n:010:1"
     },
     {
      "x": 4,
@@ -2712,7 +2741,8 @@
      "t": [
       "Gardener: These cacti store water for months. Some Alienmon nest right inside them."
      ],
-     "stay": true
+     "stay": true,
+     "src": "n:011:0"
     },
     {
      "x": 13,
@@ -2722,7 +2752,8 @@
      "t": [
       "Explorer: The Sunset Tunnel is just east. Bring light, it's a maze in there."
      ],
-     "stay": true
+     "stay": true,
+     "src": "n:011:1"
     },
     {
      "x": 18,
@@ -2918,7 +2949,8 @@
      "face": "down",
      "t": [
       "Miner: Watch your step. The lanterns down here run on crystal shards."
-     ]
+     ],
+     "src": "n:012:0"
     }
    ]
   },
@@ -3086,7 +3118,8 @@
      "face": "down",
      "t": [
       "Old miner: You can feel the heat from here. The Molten Frontier is right above us."
-     ]
+     ],
+     "src": "n:013:0"
     }
    ]
   },
@@ -3213,7 +3246,8 @@
      "t": [
       "Guard: Welcome to the Molten Frontier. Stick to the trails and stay off anything glowing."
      ],
-     "stay": true
+     "stay": true,
+     "src": "n:014:0"
     },
     {
      "x": 14,
@@ -3223,7 +3257,8 @@
      "t": [
       "Traveller: The ash trail east leads to Palm Isle and Port Ember. Rest up there."
      ],
-     "stay": true
+     "stay": true,
+     "src": "n:014:1"
     },
     {
      "x": 20,
@@ -3235,7 +3270,8 @@
       "Helix built their forge fortress at the top of the ridge. Watch yourself up there."
      ],
      "wid": "mf2",
-     "stay": true
+     "stay": true,
+     "src": "n:014:2"
     },
     {
      "x": 6,
@@ -3247,7 +3283,8 @@
       "The ground's been rumbling since Helix started digging."
      ],
      "wid": "mf5",
-     "stay": true
+     "stay": true,
+     "src": "n:014:3"
     }
    ],
    "mons": [
@@ -3337,7 +3374,8 @@
      "t": [
       "Ash walker: The ash makes everything look grey, but the Alienmon out here are anything but dull."
      ],
-     "stay": true
+     "stay": true,
+     "src": "n:015:0"
     },
     {
      "x": 19,
@@ -3348,7 +3386,8 @@
       "Sporefolk: Even here, spores find a way. The red blooms feed on lava heat."
      ],
      "wid": "mf11",
-     "stay": true
+     "stay": true,
+     "src": "n:015:1"
     }
    ],
    "mons": [
@@ -3438,7 +3477,8 @@
      "t": [
       "Nomad: Magma-types love the warm ground. Hydro moves cool them off fast."
      ],
-     "stay": true
+     "stay": true,
+     "src": "n:016:0"
     },
     {
      "x": 5,
@@ -3448,7 +3488,8 @@
      "t": [
       "Geologist: These vents breathe every few minutes. Count to ten and you'll see."
      ],
-     "stay": true
+     "stay": true,
+     "src": "n:016:1"
     },
     {
      "x": 20,
@@ -3460,6 +3501,7 @@
      ],
      "wid": "mf10",
      "stay": true,
+     "src": "n:016:2",
      "id": "mf10",
      "trainer": {
       "frontier": 1,
@@ -3573,7 +3615,8 @@
        "Nurse Coral: I was her apprentice at the Dustmere Recovery Bay the night the stars fell. She taught me everything.",
        "Nurse Coral: You've got her eyes. Come here, let me patch your team up. For Wren."
       ]
-     }
+     },
+     "src": "n:017:0"
     },
     {
      "x": 20,
@@ -3583,7 +3626,8 @@
      "t": [
       "Islander: Palm Isle is the only green spot for miles. The Recovery Hut here has saved a lot of Linkers."
      ],
-     "stay": true
+     "stay": true,
+     "src": "n:017:1"
     },
     {
      "x": 3,
@@ -3593,7 +3637,8 @@
      "t": [
       "Fruit picker: Try the fire-coconuts. Crunchy outside, molten inside."
      ],
-     "stay": true
+     "stay": true,
+     "src": "n:017:2"
     },
     {
      "x": 10,
@@ -3605,7 +3650,8 @@
       "Weaken a wild Alienmon with a Tether Pulse, shock it with a Stun Spray, then fire the transfer beam!"
      ],
      "wid": "mf3",
-     "stay": true
+     "stay": true,
+     "src": "n:017:3"
     },
     {
      "x": 14,
@@ -3617,6 +3663,7 @@
      ],
      "wid": "mf4",
      "stay": true,
+     "src": "n:017:4",
      "id": "mf4",
      "trainer": {
       "frontier": 1,
@@ -3759,7 +3806,8 @@
      "t": [
       "Sailor: The Deep Sea Ferry leaves from the long dock. Only cleared Linkers ride, though."
      ],
-     "stay": true
+     "stay": true,
+     "src": "n:018:0"
     },
     {
      "x": 7,
@@ -3769,7 +3817,8 @@
      "t": [
       "Dock mechanic: Helix boats have been prowling the harbor. Keep your pods close."
      ],
-     "stay": true
+     "stay": true,
+     "src": "n:018:1"
     },
     {
      "x": 16,
@@ -3779,7 +3828,8 @@
      "t": [
       "Fish seller: Fresh from the ember sea! Well... warm from the ember sea."
      ],
-     "stay": true
+     "stay": true,
+     "src": "n:018:2"
     },
     {
      "x": 20,
@@ -3789,7 +3839,8 @@
      "t": [
       "Harbor guard: Port Ember's been a safe harbor for a hundred years. We intend to keep it that way."
      ],
-     "stay": true
+     "stay": true,
+     "src": "n:018:3"
     },
     {
      "x": 11,
@@ -3800,6 +3851,7 @@
       "Linker: Every Keeper you beat gives you a Signal Shard. Eight of them and something big happens. Nobody agrees on what."
      ],
      "stay": true,
+     "src": "n:018:4",
      "id": "sec018_tr4",
      "trainer": {
       "cls": "Linker",
@@ -3816,7 +3868,8 @@
       "Villager: Welcome to Port Ember, the last calm shore before the lava fields."
      ],
      "wid": "mf1",
-     "stay": true
+     "stay": true,
+     "src": "n:018:5"
     },
     {
      "x": 14,
@@ -3828,7 +3881,8 @@
       "Mina: Cast past the end of the boardwalk and wait. Something on Thalassa always bites back."
      ],
      "name": "Mina",
-     "stay": true
+     "stay": true,
+     "src": "n:018:6"
     }
    ],
    "mons": [
@@ -3934,7 +3988,8 @@
      "t": [
       "Deckhand: Mind the gaps between the planks. The sea down there is hot enough to boil soup."
      ],
-     "stay": true
+     "stay": true,
+     "src": "n:019:0"
     },
     {
      "x": 6,
@@ -3946,7 +4001,8 @@
       "Hop aboard whenever you're ready."
      ],
      "wid": "mf0",
-     "stay": true
+     "stay": true,
+     "src": "n:019:1"
     }
    ],
    "mons": [
@@ -4031,7 +4087,8 @@
      "t": [
       "Climber: The Ridge Path climbs toward the Forge Gate. Helix guards everywhere up there."
      ],
-     "stay": true
+     "stay": true,
+     "src": "n:020:0"
     },
     {
      "x": 4,
@@ -4043,6 +4100,7 @@
      ],
      "wid": "mf6",
      "stay": true,
+     "src": "n:020:1",
      "id": "mf6",
      "trainer": {
       "frontier": 1,
@@ -4137,7 +4195,8 @@
      "t": [
       "Scout: I saw Helix grunts hauling crates toward the fortress. Something's being built in there."
      ],
-     "stay": true
+     "stay": true,
+     "src": "n:021:0"
     },
     {
      "x": 3,
@@ -4149,7 +4208,8 @@
       "Wild Alienmon roam the trails between towns. Keep your team healthy."
      ],
      "wid": "mf9",
-     "stay": true
+     "stay": true,
+     "src": "n:021:1"
     }
    ],
    "mons": [
@@ -4258,7 +4318,8 @@
      "t": [
       "Forge worker: The Forge Gate opens toward Ferrox once you've proven yourself."
      ],
-     "stay": true
+     "stay": true,
+     "src": "n:022:0"
     },
     {
      "x": 10,
@@ -4268,7 +4329,8 @@
      "t": [
       "Gate guard: No clearance, no passage. Those are the rules."
      ],
-     "stay": true
+     "stay": true,
+     "src": "n:022:1"
     },
     {
      "x": 13,
@@ -4280,6 +4342,7 @@
      ],
      "wid": "mf12",
      "stay": true,
+     "src": "n:022:2",
      "id": "mf12",
      "trainer": {
       "frontier": 1,
@@ -4397,7 +4460,8 @@
      "t": [
       "Refugee: Helix took the old forge and turned it into a fortress. We had to leave everything."
      ],
-     "stay": true
+     "stay": true,
+     "src": "n:023:0"
     },
     {
      "x": 13,
@@ -4410,7 +4474,8 @@
      ],
      "name": "Helix Grunt",
      "until": "M12",
-     "stay": true
+     "stay": true,
+     "src": "n:023:1"
     },
     {
      "x": 13,
@@ -4424,6 +4489,7 @@
      "after": "M12",
      "until": "M19",
      "stay": true,
+     "src": "n:023:2",
      "id": "mf7",
      "trainer": {
       "frontier": 1,
@@ -4440,7 +4506,8 @@
      ],
      "wid": "mf7",
      "after": "M19",
-     "stay": true
+     "stay": true,
+     "src": "n:023:3"
     },
     {
      "x": 7,
@@ -4454,7 +4521,8 @@
      "name": "Grub",
      "after": "M11",
      "until": "M13",
-     "stay": true
+     "stay": true,
+     "src": "n:023:4"
     }
    ],
    "mons": [
@@ -4523,7 +4591,8 @@
      "t": [
       "Bridge tech: These lava bridges are cooled by pumps. If they stop, run."
      ],
-     "stay": true
+     "stay": true,
+     "src": "n:024:0"
     }
    ],
    "mons": []
@@ -4582,6 +4651,7 @@
       "Linker: Almost at the shuttle pad. Ships to the far planets launch from there."
      ],
      "stay": true,
+     "src": "n:025:0",
      "id": "sec025_tr0",
      "trainer": {
       "cls": "Linker",
@@ -4599,7 +4669,8 @@
       "Lately it keeps catching a pulse from the Starfall crater. Same rhythm, every night."
      ],
      "wid": "mf8",
-     "stay": true
+     "stay": true,
+     "src": "n:025:1"
     }
    ],
    "mons": []
@@ -4720,7 +4791,8 @@
      "t": [
       "Pad controller: Shuttles leave when the board says so. The board says 'not yet'."
      ],
-     "stay": true
+     "stay": true,
+     "src": "n:026:0"
     },
     {
      "x": 6,
@@ -4730,7 +4802,8 @@
      "t": [
       "Helix deserter: I flew shuttles for Helix. Never again. Ask me nothing about the Director."
      ],
-     "stay": true
+     "stay": true,
+     "src": "n:026:1"
     },
     {
      "x": 18,
@@ -4742,7 +4815,8 @@
       "Whatever they're hauling out there, they don't want anyone to see."
      ],
      "wid": "mf13",
-     "stay": true
+     "stay": true,
+     "src": "n:026:2"
     }
    ],
    "mons": []
@@ -4857,7 +4931,8 @@
      "t": [
       "Lantern keeper: The Shadow Tunnel leads to Umbra. The dark in there plays tricks on you."
      ],
-     "stay": true
+     "stay": true,
+     "src": "n:027:0"
     }
    ],
    "mons": [
@@ -4960,7 +5035,8 @@
      "t": [
       "Mine foreman: The Magma Mines run all the way down to Pyros' crust. Hard hats mandatory."
      ],
-     "stay": true
+     "stay": true,
+     "src": "n:028:0"
     },
     {
      "x": 8,
@@ -4972,7 +5048,8 @@
       "...the Magma Mines go deeper than anyone has dared..."
      ],
      "wid": "mf14",
-     "stay": true
+     "stay": true,
+     "src": "n:028:1"
     }
    ],
    "mons": [
@@ -5078,7 +5155,8 @@
      "t": [
       "Gate guard: Welcome to Ferrox. Mind the rails, the ore carts don't stop for anyone."
      ],
-     "stay": true
+     "stay": true,
+     "src": "n:029:0"
     },
     {
      "x": 17,
@@ -5088,7 +5166,8 @@
      "t": [
       "Porter: Everything that lands here gets weighed, stamped and argued over. That's Ferrox for you."
      ],
-     "stay": true
+     "stay": true,
+     "src": "n:029:1"
     },
     {
      "x": 6,
@@ -5098,7 +5177,8 @@
      "t": [
       "Traveller: First time on Ferrox? Rustvale is just east. Best scrap stew in the system."
      ],
-     "stay": true
+     "stay": true,
+     "src": "n:029:2"
     }
    ],
    "mons": [
@@ -5266,7 +5346,8 @@
      "t": [
       "Scrapper: Everything here is built from junk. Even the Relay Tower."
      ],
-     "stay": true
+     "stay": true,
+     "src": "n:030:0"
     },
     {
      "x": 19,
@@ -5276,7 +5357,8 @@
      "t": [
       "Rail hand: Alloy-types love the rail yard. Bring something that burns."
      ],
-     "stay": true
+     "stay": true,
+     "src": "n:030:1"
     },
     {
      "x": 4,
@@ -5286,7 +5368,8 @@
      "t": [
       "Kid: Hank's Alienmon are tough as old boilers!"
      ],
-     "stay": true
+     "stay": true,
+     "src": "n:030:2"
     },
     {
      "x": 15,
@@ -5296,7 +5379,8 @@
      "t": [
       "Watchman: Helix suits were sniffing around the crane yard last night. Hank's not happy."
      ],
-     "stay": true
+     "stay": true,
+     "src": "n:030:3"
     },
     {
      "x": 8,
@@ -5306,7 +5390,8 @@
      "t": [
       "Old welder: Hank Briggs runs the tower at the end of Furnace Ridge. You'll need a Shard's worth of guts to face him."
      ],
-     "stay": true
+     "stay": true,
+     "src": "n:030:4"
     },
     {
      "x": 5,
@@ -5317,6 +5402,7 @@
       "Linker: Magma moves melt Alloy-types fast. Volt moves just bounce off."
      ],
      "stay": true,
+     "src": "n:030:5",
      "id": "sec030_tr5",
      "trainer": {
       "cls": "Linker",
@@ -5336,7 +5422,8 @@
      "name": "Kit",
      "after": "M04",
      "until": "M19",
-     "stay": true
+     "stay": true,
+     "src": "n:030:6"
     }
    ],
    "mons": [
@@ -5428,7 +5515,8 @@
       "Nurse: Welcome to the Rustvale Recovery Bay. Step up to the counter!"
      ],
      "name": "Nurse",
-     "stay": true
+     "stay": true,
+     "src": "n:031:0"
     },
     {
      "x": 6,
@@ -5438,7 +5526,8 @@
      "t": [
       "Miner: I patch up my Alienmon here after every shift. The nurse doesn't even charge for the soot."
      ],
-     "stay": true
+     "stay": true,
+     "src": "n:031:1"
     }
    ]
   },
@@ -5523,7 +5612,8 @@
       "Shopkeeper: Pods, gels, sprays. Talk to me at the counter."
      ],
      "name": "Shopkeeper",
-     "stay": true
+     "stay": true,
+     "src": "n:032:0"
     },
     {
      "x": 6,
@@ -5533,7 +5623,8 @@
      "t": [
       "Customer: Stun Spray is a lifesaver on the Scrap Route. Those junk-types hit hard."
      ],
-     "stay": true
+     "stay": true,
+     "src": "n:032:1"
     }
    ]
   },
@@ -5601,7 +5692,8 @@
       "Grub: Mind the parts. Half of these are holding the other half together.",
       "Grub: Come back when you've seen a bit more of Ferrox. I might have work for you."
      ],
-     "name": "Grub"
+     "name": "Grub",
+     "src": "n:033:0"
     }
    ]
   },
@@ -5678,7 +5770,8 @@
      "t": [
       "Scavenger: The Scrap Route is all junk piles and loose rails. Alienmon love hiding in the scrap."
      ],
-     "stay": true
+     "stay": true,
+     "src": "n:034:0"
     },
     {
      "x": 14,
@@ -5688,7 +5781,8 @@
      "t": [
       "Hauler: My cart threw a wheel. Again. Third time this week."
      ],
-     "stay": true
+     "stay": true,
+     "src": "n:034:1"
     },
     {
      "x": 19,
@@ -5803,7 +5897,8 @@
      "t": [
       "Hiker: Tall rust-grass is where the wild ones hide. Walk around it if your team is tired."
      ],
-     "stay": true
+     "stay": true,
+     "src": "n:035:0"
     },
     {
      "x": 20,
@@ -5813,7 +5908,8 @@
      "t": [
       "Drifter: The crane yard's next. Watch for falling crates."
      ],
-     "stay": true
+     "stay": true,
+     "src": "n:035:1"
     },
     {
      "x": 12,
@@ -5928,7 +6024,8 @@
      "t": [
       "Crane operator: Three junkers keep jamming my cranes. Hank wants them taught a lesson."
      ],
-     "stay": true
+     "stay": true,
+     "src": "n:036:0"
     },
     {
      "x": 7,
@@ -5938,7 +6035,8 @@
      "t": [
       "Yard guard: No Helix allowed in this yard. Not after what they pulled last month."
      ],
-     "stay": true
+     "stay": true,
+     "src": "n:036:1"
     },
     {
      "x": 19,
@@ -6095,7 +6193,8 @@
      "t": [
       "Junk dealer: One Linker's trash is another Linker's treasure. Mostly it's just trash."
      ],
-     "stay": true
+     "stay": true,
+     "src": "n:037:0"
     },
     {
      "x": 18,
@@ -6105,7 +6204,8 @@
      "t": [
       "Shopper: I came for a bolt and left with a jetpack. It doesn't work, but still."
      ],
-     "stay": true
+     "stay": true,
+     "src": "n:037:1"
     },
     {
      "x": 5,
@@ -6115,7 +6215,8 @@
      "t": [
       "Ore trader: Ferrox ore powers half the ships in the system. Helix wants all of it."
      ],
-     "stay": true
+     "stay": true,
+     "src": "n:037:2"
     },
     {
      "x": 7,
@@ -6125,7 +6226,8 @@
      "t": [
       "Fortune teller: I see... a tower. And a man with a very large wrench."
      ],
-     "stay": true
+     "stay": true,
+     "src": "n:037:3"
     }
    ],
    "mons": [
@@ -6230,7 +6332,8 @@
      "t": [
       "Furnace worker: The heat up here peels paint off ships. Keep your Alienmon hydrated."
      ],
-     "stay": true
+     "stay": true,
+     "src": "n:038:0"
     },
     {
      "x": 4,
@@ -6240,7 +6343,8 @@
      "t": [
       "Guard: Ferrox Tower is just ahead. Hank Briggs is the Keeper. Good luck, kid."
      ],
-     "stay": true
+     "stay": true,
+     "src": "n:038:1"
     },
     {
      "x": 10,
@@ -6398,7 +6502,8 @@
      "t": [
       "Tower engineer: Hank's apprentices train on this floor. The Keeper waits upstairs."
      ],
-     "stay": true
+     "stay": true,
+     "src": "n:039:0"
     },
     {
      "x": 3,
@@ -6596,7 +6701,8 @@
      "t": [
       "Dock tech: Ships set down on the pad here. Mirefen Village is just east along the boardwalk."
      ],
-     "stay": true
+     "stay": true,
+     "src": "p:041:0"
     },
     {
      "x": 12,
@@ -6606,7 +6712,8 @@
      "t": [
       "Bog hiker: Stay on the planks. The bog looks like moss, but it's mostly water and bad decisions."
      ],
-     "stay": true
+     "stay": true,
+     "src": "p:041:1"
     }
    ],
    "mons": [
@@ -6746,7 +6853,8 @@
      "t": [
       "Spore tender: Mirefen stands on stilts. When the bog breathes, the whole village sways a little."
      ],
-     "stay": true
+     "stay": true,
+     "src": "p:042:0"
     },
     {
      "x": 19,
@@ -6756,7 +6864,8 @@
      "t": [
       "Botanist: The mushrooms glow brighter near the tower to the east. Dr. Moor says they're listening."
      ],
-     "stay": true
+     "stay": true,
+     "src": "p:042:1"
     },
     {
      "x": 5,
@@ -6766,7 +6875,8 @@
      "t": [
       "Bog hiker: Toxin-types hide in the reed beds. Carry Cure Spray, or the walk home gets long."
      ],
-     "stay": true
+     "stay": true,
+     "src": "p:042:2"
     },
     {
      "x": 3,
@@ -6776,7 +6886,8 @@
      "t": [
       "Villager: The dome with the cyan cross is the Recovery Bay. Rest up before you head into the marsh."
      ],
-     "stay": true
+     "stay": true,
+     "src": "p:042:3"
     },
     {
      "x": 14,
@@ -6786,7 +6897,8 @@
      "t": [
       "Grandmother: My grandson swears he was lost in the Mushroom Maze for a whole day. It was an hour."
      ],
-     "stay": true
+     "stay": true,
+     "src": "p:042:4"
     },
     {
      "x": 10,
@@ -6796,7 +6908,8 @@
      "t": [
       "Pilgrim: I came to hear the Spore Choir at the pools. On still nights the spores hum in harmony."
      ],
-     "stay": true
+     "stay": true,
+     "src": "p:042:5"
     },
     {
      "x": 17,
@@ -6806,7 +6919,8 @@
      "t": [
       "Man in a white coat: Helix? Never heard of them. I'm just... sampling the mushrooms. For science."
      ],
-     "stay": true
+     "stay": true,
+     "src": "p:042:6"
     },
     {
      "x": 8,
@@ -6816,7 +6930,8 @@
      "t": [
       "Traveler: The Keeper here guards a Signal Shard. Climb her tower and she'll test you herself."
      ],
-     "stay": true
+     "stay": true,
+     "src": "p:042:7"
     }
    ],
    "mons": [
@@ -6905,7 +7020,8 @@
      "t": [
       "Nurse: Welcome to the Mirefen Recovery Bay. Spore-sick or battle-worn, we'll patch your team up."
      ],
-     "stay": true
+     "stay": true,
+     "src": "p:043:0"
     },
     {
      "x": 6,
@@ -6915,7 +7031,8 @@
      "t": [
       "Visitor: Healing here is free. Step up to the counter whenever your team is hurting."
      ],
-     "stay": true
+     "stay": true,
+     "src": "p:043:1"
     }
    ]
   },
@@ -6997,7 +7114,8 @@
      "t": [
       "Clerk: Stasis Pods, Cure Spray, the works. In spore season the Cure Spray sells out fast."
      ],
-     "stay": true
+     "stay": true,
+     "src": "p:044:0"
     },
     {
      "x": 6,
@@ -7007,7 +7125,8 @@
      "t": [
       "Shopper: Weaken a wild alien before you throw a Stasis Pod. Healthy ones just pop right back out."
      ],
-     "stay": true
+     "stay": true,
+     "src": "p:044:1"
     }
    ]
   },
@@ -7084,7 +7203,8 @@
      "t": [
       "Botanist: Every lantern in this marsh is a living fungus. Don't pick them. They bite back."
      ],
-     "stay": true
+     "stay": true,
+     "src": "p:045:0"
     },
     {
      "x": 3,
@@ -7094,7 +7214,8 @@
      "t": [
       "Bog hiker: Wild aliens jump out of the reeds. Stick to the dirt paths if your team is tired."
      ],
-     "stay": true
+     "stay": true,
+     "src": "p:045:1"
     },
     {
      "x": 19,
@@ -7258,7 +7379,8 @@
      "t": [
       "Spore tender: The Mushroom Maze is just ahead. Left at the glowing caps... or was it right?"
      ],
-     "stay": true
+     "stay": true,
+     "src": "p:046:0"
     },
     {
      "x": 20,
@@ -7268,7 +7390,8 @@
      "t": [
       "Wanderer: Trainers watch the paths. Step into their line of sight and it's a battle."
      ],
-     "stay": true
+     "stay": true,
+     "src": "p:046:1"
     },
     {
      "x": 9,
@@ -7465,7 +7588,8 @@
      "t": [
       "Lost hiker: I've passed that stone shrine three times. I'm starting to think it follows me."
      ],
-     "stay": true
+     "stay": true,
+     "src": "p:047:0"
     },
     {
      "x": 10,
@@ -7623,7 +7747,8 @@
      "t": [
       "Mycologist: These bridges grow on their own. The mushrooms knit the planks back together each night."
      ],
-     "stay": true
+     "stay": true,
+     "src": "p:048:0"
     },
     {
      "x": 10,
@@ -7791,7 +7916,8 @@
      "t": [
       "Pilgrim: Listen... the Spore Choir. The pools sing when the spores rise. Some say the tower answers."
      ],
-     "stay": true
+     "stay": true,
+     "src": "p:049:0"
     },
     {
      "x": 10,
@@ -7801,7 +7927,8 @@
      "t": [
       "Spore tender: The big lily pads hold your weight. Mostly. Hop across them to reach the tower path."
      ],
-     "stay": true
+     "stay": true,
+     "src": "p:049:1"
     },
     {
      "x": 13,
@@ -7974,7 +8101,8 @@
      "t": [
       "Lab aide: Dr. Moor's apprentices guard this floor. Beat them and the stairs to her lab are yours."
      ],
-     "stay": true
+     "stay": true,
+     "src": "p:050:0"
     },
     {
      "x": 10,
@@ -8102,7 +8230,8 @@
      "t": [
       "Lab aide: Beat Dr. Moor and she'll hand over Sporeholm's Signal Shard. Bring Cure Spray. Trust me."
      ],
-     "stay": true
+     "stay": true,
+     "src": "p:051:0"
     }
    ]
   },
@@ -8258,7 +8387,8 @@
      "t": [
       "Sailor: Welcome to Port Saltreach! The fog rolls in every morning, thick as chowder."
      ],
-     "stay": true
+     "stay": true,
+     "src": "p:052:0"
     },
     {
      "x": 17,
@@ -8268,7 +8398,8 @@
      "t": [
       "Dockhand: Helix boats were circling the harbor again last night. White coats, no flags. Shady."
      ],
-     "stay": true
+     "stay": true,
+     "src": "p:052:1"
     },
     {
      "x": 7,
@@ -8278,7 +8409,8 @@
      "t": [
       "Swimmer: Hydro types are everywhere here. Bring something with Volt moves and they'll fold fast."
      ],
-     "stay": true
+     "stay": true,
+     "src": "p:052:2"
     },
     {
      "x": 4,
@@ -8288,7 +8420,8 @@
      "t": [
       "Net-mender: The big dome up top is the Recovery Bay. Rest your Alienmon there, it's free."
      ],
-     "stay": true
+     "stay": true,
+     "src": "p:052:3"
     },
     {
      "x": 19,
@@ -8298,7 +8431,8 @@
      "t": [
       "Diver: Tall weeds on the coral bars hide wild Alienmon. The shallows are full of them."
      ],
-     "stay": true
+     "stay": true,
+     "src": "p:052:4"
     },
     {
      "x": 12,
@@ -8308,7 +8442,8 @@
      "t": [
       "Old salt: Thalassa's rings throw rainbows on the water at noon. Best view's from the lighthouse."
      ],
-     "stay": true
+     "stay": true,
+     "src": "p:052:5"
     }
    ],
    "mons": [
@@ -8519,7 +8654,8 @@
      "t": [
       "Fishmonger: Fresh catch! ...No, you can't catch it with a Stasis Pod. It's a fish. It's dead."
      ],
-     "stay": true
+     "stay": true,
+     "src": "p:053:0"
     },
     {
      "x": 20,
@@ -8529,7 +8665,8 @@
      "t": [
       "Sailor: Lighthouse is east, past the market. The old Captain's Log is still up there."
      ],
-     "stay": true
+     "stay": true,
+     "src": "p:053:1"
     },
     {
      "x": 4,
@@ -8539,7 +8676,8 @@
      "t": [
       "Shopper: Stock up on Stasis Pods at the docks shop. A weakened Alienmon is easier to catch."
      ],
-     "stay": true
+     "stay": true,
+     "src": "p:053:2"
     },
     {
      "x": 22,
@@ -8549,7 +8687,8 @@
      "t": [
       "Mechanic: Captain Marsh's tower relays signals for the whole system. Or it did, till Helix came."
      ],
-     "stay": true
+     "stay": true,
+     "src": "p:053:3"
     },
     {
      "x": 12,
@@ -8559,7 +8698,8 @@
      "t": [
       "Traveller: Keepers guard the Relay Towers. Win and they hand you a Signal Shard."
      ],
-     "stay": true
+     "stay": true,
+     "src": "p:053:4"
     },
     {
      "x": 16,
@@ -8569,7 +8709,8 @@
      "t": [
       "Harbor guard: Trainers on the routes will spot you if you walk into their line of sight. Be ready."
      ],
-     "stay": true
+     "stay": true,
+     "src": "p:053:5"
     },
     {
      "x": 11,
@@ -8579,7 +8720,8 @@
      "t": [
       "Storyteller: They say Anchorath sleeps under the sea arch, and the tide turns when it dreams."
      ],
-     "stay": true
+     "stay": true,
+     "src": "p:053:6"
     }
    ],
    "mons": [
@@ -8668,7 +8810,8 @@
      "t": [
       "Nurse: Welcome to the Saltreach Recovery Bay. Your Alienmon will be shipshape in no time."
      ],
-     "stay": true
+     "stay": true,
+     "src": "p:054:0"
     },
     {
      "x": 9,
@@ -8678,7 +8821,8 @@
      "t": [
       "Sailor: I come here after every storm. Even my Alienmon get seasick, believe it or not."
      ],
-     "stay": true
+     "stay": true,
+     "src": "p:054:1"
     }
    ]
   },
@@ -8760,7 +8904,8 @@
      "t": [
       "Clerk: Ahoy! Pods, potions, rope, bait. Everything a Linker needs before the coral route."
      ],
-     "stay": true
+     "stay": true,
+     "src": "p:055:0"
     },
     {
      "x": 9,
@@ -8770,7 +8915,8 @@
      "t": [
       "Shopper: Status cures are worth it out on the islands. Wild bites sting more than you'd think."
      ],
-     "stay": true
+     "stay": true,
+     "src": "p:055:1"
     }
    ]
   },
@@ -8930,7 +9076,8 @@
      "t": [
       "Keeper's aide: The stairs up top lead out onto the coral sand bars. Watch for the tide."
      ],
-     "stay": true
+     "stay": true,
+     "src": "p:056:0"
     },
     {
      "x": 10,
@@ -8940,7 +9087,8 @@
      "t": [
       "Lamp tender: This light guided the fishing fleet for a hundred years. Helix ships ignore it."
      ],
-     "stay": true
+     "stay": true,
+     "src": "p:056:1"
     }
    ]
   },
@@ -9066,7 +9214,8 @@
      "t": [
       "Beachcomber: The coral bars connect at low tide. Hop the bridges and you'll stay dry."
      ],
-     "stay": true
+     "stay": true,
+     "src": "p:057:0"
     },
     {
      "x": 2,
@@ -9076,7 +9225,8 @@
      "t": [
       "Swimmer: My Alienmon love the shallows. Low-level ones, sure, but they never stop splashing."
      ],
-     "stay": true
+     "stay": true,
+     "src": "p:057:1"
     },
     {
      "x": 12,
@@ -9191,7 +9341,8 @@
      "t": [
       "Castaway: Saw an old wreck off the south rocks. Nobody's dared dive it yet."
      ],
-     "stay": true
+     "stay": true,
+     "src": "p:058:0"
     },
     {
      "x": 3,
@@ -9201,7 +9352,8 @@
      "t": [
       "Sailor: Harbor Tower is past the sea arch. Captain Marsh doesn't go easy on anyone."
      ],
-     "stay": true
+     "stay": true,
+     "src": "p:058:1"
     },
     {
      "x": 12,
@@ -9365,7 +9517,8 @@
      "t": [
       "Researcher: Readings spike under the arch at night. Whatever sleeps there is enormous."
      ],
-     "stay": true
+     "stay": true,
+     "src": "p:059:0"
     },
     {
      "x": 17,
@@ -9375,7 +9528,8 @@
      "t": [
       "Pilgrim: Walk softly here. The islanders leave shells at the shrines so Anchorath sleeps on."
      ],
-     "stay": true
+     "stay": true,
+     "src": "p:059:1"
     },
     {
      "x": 4,
@@ -9385,7 +9539,8 @@
      "t": [
       "Lookout: Helix divers were poking around the cove. I chased them off with a bucket."
      ],
-     "stay": true
+     "stay": true,
+     "src": "p:059:2"
     }
    ],
    "mons": [
@@ -9545,7 +9700,8 @@
      "t": [
       "Deckhand: Captain Marsh is upstairs. Helix ripped the core right out of this tower. She's furious."
      ],
-     "stay": true
+     "stay": true,
+     "src": "p:060:0"
     },
     {
      "x": 3,
@@ -9673,7 +9829,8 @@
      "t": [
       "First mate: The Captain fights with the tide behind her. Volt types might give you a chance."
      ],
-     "stay": true
+     "stay": true,
+     "src": "p:061:0"
     }
    ]
   },
@@ -9795,7 +9952,8 @@
      ],
      "name": "Dr. Vashti",
      "wid": "vashti",
-     "after": "M07"
+     "after": "M07",
+     "src": "n:062:0"
     },
     {
      "x": 4,
@@ -9805,7 +9963,8 @@
      "t": [
       "Dock tech: Ships land on that orange ring. Stand clear unless you like being flattened.",
       "Dock tech: The whole deck floats on Volt power. If the lights flicker, hold onto something."
-     ]
+     ],
+     "src": "p:062:0"
     },
     {
      "x": 14,
@@ -9814,7 +9973,8 @@
      "face": "down",
      "t": [
       "Courier: Deliveries are faster across the catwalks. Faster still if your Alienmon can fly."
-     ]
+     ],
+     "src": "p:062:1"
     },
     {
      "x": 11,
@@ -9823,7 +9983,8 @@
      "face": "down",
      "t": [
       "Raver: First time on Neonis? The city never sleeps. Neither do I, apparently."
-     ]
+     ],
+     "src": "p:062:2"
     },
     {
      "x": 13,
@@ -9832,7 +9993,8 @@
      "face": "down",
      "t": [
       "Port guard: Helix freighters docked here last week. Paperwork was clean. Too clean, if you ask me."
-     ]
+     ],
+     "src": "p:062:3"
     },
     {
      "x": 10,
@@ -9841,7 +10003,8 @@
      "face": "down",
      "t": [
       "Signal researcher: Every Relay Tower picks up the same pulse, every eight seconds. Spooky, right?"
-     ]
+     ],
+     "src": "p:062:4"
     },
     {
      "x": 12,
@@ -9850,7 +10013,8 @@
      "face": "down",
      "t": [
       "Traveller: The dome with the cross is the Recovery Bay. It heals your whole team for free. Use it!"
-     ]
+     ],
+     "src": "p:062:5"
     },
     {
      "x": 12,
@@ -9859,7 +10023,8 @@
      "face": "down",
      "t": [
       "Mom: My son wants to be a DJ like Static. I told him to finish his homework first."
-     ]
+     ],
+     "src": "p:062:6"
     }
    ],
    "mons": [
@@ -9974,7 +10139,8 @@
      "face": "down",
      "t": [
       "Raver: The whole city hums with Volt energy. Feel it? That buzz in your teeth?"
-     ]
+     ],
+     "src": "p:063:0"
     },
     {
      "x": 7,
@@ -9983,7 +10149,8 @@
      "face": "down",
      "t": [
       "Coder: Every sign in Neonis runs on Alienmon power. They get paid in snacks. Good snacks."
-     ]
+     ],
+     "src": "p:063:1"
     },
     {
      "x": 20,
@@ -9992,7 +10159,8 @@
      "face": "down",
      "t": [
       "Courier: The Arcade District is east. Trainers there love a surprise battle."
-     ]
+     ],
+     "src": "p:063:2"
     },
     {
      "x": 7,
@@ -10001,7 +10169,8 @@
      "face": "down",
      "t": [
       "Tourist: Volt types hate ground moves. Remember that before you climb Voltspire."
-     ]
+     ],
+     "src": "p:063:3"
     },
     {
      "x": 22,
@@ -10010,7 +10179,8 @@
      "face": "down",
      "t": [
       "Street vendor: Neon noodles! You glow for an hour after eating. Totally safe. Mostly."
-     ]
+     ],
+     "src": "p:063:4"
     },
     {
      "x": 23,
@@ -10019,7 +10189,8 @@
      "face": "down",
      "t": [
       "Archivist: Signal Shards are said to resonate with each other. Collect them and listen closely."
-     ]
+     ],
+     "src": "p:063:5"
     },
     {
      "x": 11,
@@ -10028,7 +10199,8 @@
      "face": "down",
      "t": [
       "Suspicious man: Helix? Never heard of it. I just... like dark uniforms. Move along."
-     ]
+     ],
+     "src": "p:063:6"
     }
    ],
    "mons": []
@@ -10104,7 +10276,8 @@
      "t": [
       "Nurse: Welcome to the Neonis Recovery Bay! Step up to the counter and we'll recharge your team."
      ],
-     "stay": true
+     "stay": true,
+     "src": "p:064:0"
     },
     {
      "x": 6,
@@ -10113,7 +10286,8 @@
      "face": "down",
      "t": [
       "Raver: Three battles in a row at the Arcade. My Alienmon needed a nap. So did I."
-     ]
+     ],
+     "src": "p:064:1"
     }
    ]
   },
@@ -10188,7 +10362,8 @@
      "t": [
       "Clerk: Welcome to the Neonis Shop! Stasis Pods, potions, all the essentials."
      ],
-     "stay": true
+     "stay": true,
+     "src": "p:065:0"
     },
     {
      "x": 9,
@@ -10197,7 +10372,8 @@
      "face": "down",
      "t": [
       "Shopper: Stock up before Voltspire. Static's team hits hard and fast."
-     ]
+     ],
+     "src": "p:065:1"
     }
    ]
   },
@@ -10301,7 +10477,8 @@
      "face": "down",
      "t": [
       "Gamer: High score on Star Saucer 3! ...Okay, second highest. A Coder beat me with a macro."
-     ]
+     ],
+     "src": "p:066:0"
     },
     {
      "x": 4,
@@ -10310,7 +10487,8 @@
      "face": "down",
      "t": [
       "Repair coder: Glitchy Alienmon hide in the static. A weakened one is easier to catch in a Stasis Pod."
-     ]
+     ],
+     "src": "p:066:1"
     },
     {
      "x": 10,
@@ -10319,7 +10497,8 @@
      "face": "down",
      "t": [
       "Courier: Trainers battle you if you walk into their line of sight. Fight, or sneak around them."
-     ]
+     ],
+     "src": "p:066:2"
     },
     {
      "x": 20,
@@ -10441,7 +10620,8 @@
      "face": "down",
      "t": [
       "Dish tech: These antennas relay DJ Static's show to the whole system. Someone keeps hijacking channel 9."
-     ]
+     ],
+     "src": "p:067:0"
     },
     {
      "x": 11,
@@ -10450,7 +10630,8 @@
      "face": "down",
      "t": [
       "Hiker: The glowing grass is full of wild Alienmon. Keep a few Stasis Pods handy."
-     ]
+     ],
+     "src": "p:067:1"
     },
     {
      "x": 4,
@@ -10604,7 +10785,8 @@
      "face": "down",
      "t": [
       "Radio fan: DJ Static picked up a signal coming from the Starfall Rift. It repeats every 8 seconds."
-     ]
+     ],
+     "src": "p:068:0"
     },
     {
      "x": 17,
@@ -10613,7 +10795,8 @@
      "face": "down",
      "t": [
       "Raver: Voltspire is just east. Static's apprentices guard the first floor. They're loud. Really loud."
-     ]
+     ],
+     "src": "p:068:1"
     },
     {
      "x": 12,
@@ -10753,7 +10936,8 @@
      "face": "down",
      "t": [
       "Stage guard: Welcome to Voltspire! The Keeper waits at the top. Heal up before you climb."
-     ]
+     ],
+     "src": "p:069:0"
     },
     {
      "x": 3,
@@ -10872,7 +11056,8 @@
      "face": "down",
      "t": [
       "Sound tech: Feel that bass? That's the reactor below us. Static tunes it like an instrument."
-     ]
+     ],
+     "src": "p:070:0"
     },
     {
      "x": 7,
@@ -11052,7 +11237,8 @@
      "t": [
       "Archaeologist: Welcome to Glyphos! Mind your step, half this place is underwater at high tide.",
       "Dig Camp is just east. They've got a Recovery Tent if your team needs patching up."
-     ]
+     ],
+     "src": "p:072:0"
     },
     {
      "x": 13,
@@ -11061,7 +11247,8 @@
      "face": "down",
      "t": [
       "Ferry hand: The Deep Sea Ferry runs here and back. Nobody else is brave enough to sail these ruins."
-     ]
+     ],
+     "src": "p:072:1"
     }
    ],
    "mons": [
@@ -11209,7 +11396,8 @@
      "face": "down",
      "t": [
       "Archaeologist: These glyphs tell the Alienmon's story. Read the murals and you'll see."
-     ]
+     ],
+     "src": "p:073:0"
     },
     {
      "x": 5,
@@ -11218,7 +11406,8 @@
      "face": "down",
      "t": [
       "Rune scholar: Crystal-types grow in the old courtyards. They love the humming stones."
-     ]
+     ],
+     "src": "p:073:1"
     },
     {
      "x": 18,
@@ -11227,7 +11416,8 @@
      "face": "down",
      "t": [
       "Pilgrim: The obelisks in Glyph Hollow hum when you carry Signal Shards near them."
-     ]
+     ],
+     "src": "p:073:2"
     },
     {
      "x": 10,
@@ -11236,7 +11426,8 @@
      "face": "down",
      "t": [
       "Digger: We found a whole hall of murals past the Coral Ruins. Took us a month to drain the steps."
-     ]
+     ],
+     "src": "p:073:3"
     },
     {
      "x": 22,
@@ -11245,7 +11436,8 @@
      "face": "down",
      "t": [
       "Archaeologist: Trainers out on the ruins will spot you if you walk in their line of sight. Be ready."
-     ]
+     ],
+     "src": "p:073:4"
     },
     {
      "x": 1,
@@ -11254,7 +11446,8 @@
      "face": "down",
      "t": [
       "Camp cook: No shop out here, friend. Stock up on pods and potions before you ride the ferry."
-     ]
+     ],
+     "src": "p:073:5"
     },
     {
      "x": 15,
@@ -11263,7 +11456,8 @@
      "face": "down",
      "t": [
       "Rune scholar: Some Helix folks came asking where the murals were. Wouldn't say why. I didn't like it."
-     ]
+     ],
+     "src": "p:073:6"
     }
    ],
    "mons": [
@@ -11347,7 +11541,8 @@
       "Nurse: Welcome to the Recovery Tent! Step up to the pod and I'll heal your team."
      ],
      "name": "Nurse",
-     "stay": true
+     "stay": true,
+     "src": "p:074:0"
     },
     {
      "x": 10,
@@ -11356,7 +11551,8 @@
      "face": "down",
      "t": [
       "Archaeologist: Dust, damp, and angry Alienmon. This tent has saved my dig crew more times than I can count."
-     ]
+     ],
+     "src": "p:074:1"
     }
    ]
   },
@@ -11441,7 +11637,8 @@
      "face": "down",
      "t": [
       "Wanderer: Tall grass grows thick between the ruins. Wild Alienmon hide in every patch."
-     ]
+     ],
+     "src": "p:075:0"
     },
     {
      "x": 14,
@@ -11573,7 +11770,8 @@
      "face": "down",
      "t": [
       "Rune scholar: The glyph under that pool glows at night. I think the whole valley was once a temple."
-     ]
+     ],
+     "src": "p:076:0"
     },
     {
      "x": 14,
@@ -11582,7 +11780,8 @@
      "face": "down",
      "t": [
       "Pilgrim: Weaken a wild one before you throw a Stasis Pod. A tired Alienmon is an easy catch."
-     ]
+     ],
+     "src": "p:076:1"
     },
     {
      "x": 7,
@@ -11778,7 +11977,8 @@
      "face": "down",
      "t": [
       "Pilgrim: The Guardian Stones circle the hollow. Some say they still guard something sleeping."
-     ]
+     ],
+     "src": "p:077:0"
     },
     {
      "x": 20,
@@ -11787,7 +11987,8 @@
      "face": "down",
      "t": [
       "Archaeologist: The glowing door up the steps leads to the Mural Hall. Go look. Really look."
-     ]
+     ],
+     "src": "p:077:1"
     },
     {
      "x": 10,
@@ -11916,7 +12117,8 @@
      "face": "down",
      "t": [
       "Pilgrim: This is the Temple of Voices. Long ago the bells up top sang every dawn."
-     ]
+     ],
+     "src": "p:078:0"
     },
     {
      "x": 4,
@@ -12039,7 +12241,8 @@
      "face": "down",
      "t": [
       "Rune scholar: Every floor has the same glyph in the floor: a seed with wings. Curious, no?"
-     ]
+     ],
+     "src": "p:079:0"
     },
     {
      "x": 6,
@@ -12127,7 +12330,8 @@
      "face": "down",
      "t": [
       "Pilgrim: The chimes fell silent ages ago. They say a Chimelet's song could wake them."
-     ]
+     ],
+     "src": "p:080:0"
     },
     {
      "x": 6,
@@ -12240,7 +12444,8 @@
      "face": "down",
      "t": [
       "Rune scholar: Three murals. A home, a hunger, a mother. Read them left to right."
-     ]
+     ],
+     "src": "p:081:0"
     },
     {
      "x": 2,
@@ -12249,7 +12454,8 @@
      "face": "down",
      "t": [
       "Pilgrim: If the murals are true, every Alienmon you've met is a refugee. Makes you want to be kinder."
-     ]
+     ],
+     "src": "p:081:1"
     }
    ]
   },
@@ -12419,7 +12625,8 @@
      "face": "down",
      "t": [
       "Miner: Cinder Hollow sits on the richest ember seam on Pyros. Also the hottest. Mostly the hottest."
-     ]
+     ],
+     "src": "p:082:0"
     },
     {
      "x": 10,
@@ -12429,7 +12636,8 @@
      "t": [
       "Smith: Magma-types temper their own hides in the vents.",
       "Bring a Hydro-type if you plan to argue with one."
-     ]
+     ],
+     "src": "p:082:1"
     },
     {
      "x": 5,
@@ -12438,7 +12646,8 @@
      "face": "down",
      "t": [
       "Cook: Nothing beats lava-baked rockroot. Crunchy outside, molten inside. Don't bite too fast."
-     ]
+     ],
+     "src": "p:082:2"
     },
     {
      "x": 5,
@@ -12447,7 +12656,8 @@
      "face": "down",
      "t": [
       "Ash walker: The crater's light still flickers some nights. The old-timers won't look at it."
-     ]
+     ],
+     "src": "p:082:3"
     },
     {
      "x": 7,
@@ -12457,7 +12667,8 @@
      "t": [
       "Old miner: Basalt saw the first pod land, you know. He's been Keeper longer than I've been alive.",
       "Still climbs that tower every morning on those knees."
-     ]
+     ],
+     "src": "p:082:4"
     },
     {
      "x": 4,
@@ -12466,7 +12677,8 @@
      "face": "down",
      "t": [
       "Traveler: The dome with the cyan cross is the Recovery Bay. Free healing, even for outworlders."
-     ]
+     ],
+     "src": "p:082:5"
     },
     {
      "x": 9,
@@ -12476,7 +12688,8 @@
      "t": [
       "Camp watch: Helix suits came through asking about the deep shafts. We told 'em nothing.",
       "Folks who ask about the deep shafts never want ore."
-     ]
+     ],
+     "src": "p:082:6"
     },
     {
      "x": 15,
@@ -12486,7 +12699,8 @@
      "t": [
       "Kid: I'm gonna catch a Cindermole and ride it down the rail line!",
       "Kid: ...Mom says no."
-     ]
+     ],
+     "src": "p:082:7"
     }
    ],
    "mons": []
@@ -12562,7 +12776,8 @@
      "t": [
       "Nurse: Welcome to the Recovery Bay. We'll have your team patched up and cooled down in no time."
      ],
-     "stay": true
+     "stay": true,
+     "src": "p:083:0"
     },
     {
      "x": 5,
@@ -12571,7 +12786,8 @@
      "face": "down",
      "t": [
       "Miner: Took a cave-in on B2. My Bouldron caught the worst of it, bless him."
-     ]
+     ],
+     "src": "p:083:1"
     }
    ]
   },
@@ -12646,7 +12862,8 @@
      "t": [
       "Clerk: Stasis Pods, burn salve, cooling tonics. Everything a Linker needs down the mines."
      ],
-     "stay": true
+     "stay": true,
+     "src": "p:084:0"
     },
     {
      "x": 13,
@@ -12655,7 +12872,8 @@
      "face": "down",
      "t": [
       "Smith: Heat-proof Stasis Pods? No such thing, kid. They all hold up fine down there."
-     ]
+     ],
+     "src": "p:084:1"
     }
    ]
   },
@@ -12749,7 +12967,8 @@
      "face": "down",
      "t": [
       "Rail hand: Stay off the tracks when a cart's coming. The carts don't stop, and neither does the lava."
-     ]
+     ],
+     "src": "p:085:0"
     },
     {
      "x": 12,
@@ -12758,7 +12977,8 @@
      "face": "down",
      "t": [
       "Ash walker: Wild Alienmon nest in the ember-weed. Stick to the dirt if you want a quiet walk."
-     ]
+     ],
+     "src": "p:085:1"
     },
     {
      "x": 17,
@@ -12956,7 +13176,8 @@
      "face": "down",
      "t": [
       "Rail smith: The Deep Mines start past the east bend. Three levels down, and hotter every level."
-     ]
+     ],
+     "src": "p:086:0"
     },
     {
      "x": 9,
@@ -12965,7 +13186,8 @@
      "face": "down",
      "t": [
       "Hiker: Trainers out here spot you from five paces. Eyes front, Pods ready."
-     ]
+     ],
+     "src": "p:086:1"
     },
     {
      "x": 17,
@@ -13159,7 +13381,8 @@
      "face": "down",
      "t": [
       "Miner: Teo Reyes came down this shaft once, chasing some signal. Folks say his tracks go deeper than ours."
-     ]
+     ],
+     "src": "p:087:0"
     },
     {
      "x": 9,
@@ -13293,7 +13516,8 @@
      "t": [
       "Geologist: These red crystals hum on the same pulse as the crater.",
       "Signal Shards grow from the same rock, I'd bet my lamp on it."
-     ]
+     ],
+     "src": "p:088:0"
     },
     {
      "x": 9,
@@ -13435,7 +13659,8 @@
      "face": "down",
      "t": [
       "Deep crew: Furnace Ridge is just above. No Recovery Bay down here, so heal up before you push on."
-     ]
+     ],
+     "src": "p:089:0"
     },
     {
      "x": 5,
@@ -13638,7 +13863,8 @@
      "face": "down",
      "t": [
       "Forge keeper: Every forge on this ridge was lit from the volcano's heart. Old Basalt lit half of 'em."
-     ]
+     ],
+     "src": "p:090:0"
     },
     {
      "x": 10,
@@ -13647,7 +13873,8 @@
      "face": "down",
      "t": [
       "Pilgrim: The Volcano Tower is just east. Keeper Basalt waits at the top. He doesn't go easy on anyone."
-     ]
+     ],
+     "src": "p:090:1"
     },
     {
      "x": 20,
@@ -13656,7 +13883,8 @@
      "face": "down",
      "t": [
       "Helix grunt: Nothing to see here. Just... surveying the ridge. Move along, Linker."
-     ]
+     ],
+     "src": "p:090:2"
     },
     {
      "x": 13,
@@ -13785,7 +14013,8 @@
      "face": "down",
      "t": [
       "Tower guard: Basalt's apprentices hold this floor. Beat them and the stairs are yours."
-     ]
+     ],
+     "src": "p:091:0"
     },
     {
      "x": 6,
@@ -14000,7 +14229,8 @@
      "t": [
       "Researcher: Something huge is frozen inside the glacier wall past the caverns.",
       "We call it the Teeth in the Ice. Nobody sleeps well near it."
-     ]
+     ],
+     "src": "p:093:0"
     },
     {
      "x": 4,
@@ -14010,7 +14240,8 @@
      "t": [
       "Climber: Ice paths are slick. Jump the cracks, don't walk them.",
       "Aurora Route has frost grass. Wild Alienmon love it."
-     ]
+     ],
+     "src": "p:093:1"
     },
     {
      "x": 11,
@@ -14020,7 +14251,8 @@
      "t": [
       "Radio tech: Our antennas pick up signals from the Starfall Rift.",
       "Lately they pulse in sync with the aurora. Spooky, right?"
-     ]
+     ],
+     "src": "p:093:2"
     },
     {
      "x": 11,
@@ -14029,7 +14261,8 @@
      "face": "down",
      "t": [
       "Townsfolk: The Recovery Bay is the dome with the cyan cross. Heal before the caverns!"
-     ]
+     ],
+     "src": "p:093:3"
     },
     {
      "x": 13,
@@ -14039,7 +14272,8 @@
      "t": [
       "Guard: Helix crews keep asking for dig permits. The station keeps saying no.",
       "If you see anyone in a Helix strand-suit near the fossils, tell us."
-     ]
+     ],
+     "src": "p:093:4"
     },
     {
      "x": 15,
@@ -14049,7 +14283,8 @@
      "t": [
       "Wanderer: Keeper Ingrid lives up in Aurora Tower, past the Frozen Falls.",
       "Win a Signal Shard from her and you'll have really earned it."
-     ]
+     ],
+     "src": "p:093:5"
     },
     {
      "x": 18,
@@ -14058,7 +14293,8 @@
      "face": "down",
      "t": [
       "Mom: My kids want to catch a Cryo-type. I said only after their homework thaws."
-     ]
+     ],
+     "src": "p:093:6"
     }
    ],
    "mons": [
@@ -14142,7 +14378,8 @@
       "Nurse: Welcome to the Frostmark Recovery Bay. Let's warm your team right up."
      ],
      "name": "Nurse",
-     "stay": true
+     "stay": true,
+     "src": "p:094:0"
     },
     {
      "x": 12,
@@ -14152,7 +14389,8 @@
      "t": [
       "Climber: Cold doesn't bother Cryo-types, but everyone else hates the caverns.",
       "Heal here before you head out. It's a long walk back."
-     ]
+     ],
+     "src": "p:094:1"
     }
    ]
   },
@@ -14229,7 +14467,8 @@
       "Clerk: Stasis Pods, gels, warm socks. Okay, not socks. Take a look!"
      ],
      "name": "Clerk",
-     "stay": true
+     "stay": true,
+     "src": "p:095:0"
     },
     {
      "x": 6,
@@ -14238,7 +14477,8 @@
      "face": "down",
      "t": [
       "Researcher: I buy Stasis Pods by the crate. Cave Alienmon break out a lot."
-     ]
+     ],
+     "src": "p:095:1"
     }
    ]
   },
@@ -14325,7 +14565,8 @@
      "face": "down",
      "t": [
       "Climber: Trainers spot you from a few tiles away. Step out of their line if your team is hurt."
-     ]
+     ],
+     "src": "p:096:0"
     },
     {
      "x": 13,
@@ -14334,7 +14575,8 @@
      "face": "down",
      "t": [
       "Researcher: The aurora isn't just pretty. It carries a signal. We just can't read it yet."
-     ]
+     ],
+     "src": "p:096:1"
     },
     {
      "x": 15,
@@ -14471,7 +14713,8 @@
      "face": "down",
      "t": [
       "Radio tech: The Crystal Caverns are ahead. Three floors deep, then up into the Fossil Dig."
-     ]
+     ],
+     "src": "p:097:0"
     },
     {
      "x": 6,
@@ -14480,7 +14723,8 @@
      "face": "down",
      "t": [
       "Wanderer: Fire melts ice, they say. Bring something hot for Ingrid's team."
-     ]
+     ],
+     "src": "p:097:1"
     },
     {
      "x": 7,
@@ -14634,7 +14878,8 @@
      ],
      "name": "Strand",
      "after": "M11",
-     "until": "M13"
+     "until": "M13",
+     "src": "n:098:0"
     },
     {
      "x": 6,
@@ -14647,7 +14892,8 @@
      ],
      "name": "Pell",
      "after": "M11",
-     "until": "M13"
+     "until": "M13",
+     "src": "n:098:1"
     },
     {
      "x": 8,
@@ -14656,7 +14902,8 @@
      "face": "down",
      "t": [
       "Miner: These crystals sing when you tap them. Don't. The wild ones hear it too."
-     ]
+     ],
+     "src": "p:098:0"
     },
     {
      "x": 5,
@@ -14781,7 +15028,8 @@
      "face": "down",
      "t": [
       "Researcher: My Alienmon fainted in the cold once. Always carry a Revive Spark down here."
-     ]
+     ],
+     "src": "p:099:0"
     },
     {
      "x": 6,
@@ -14917,7 +15165,8 @@
      "face": "down",
      "t": [
       "Climber: The stairs above lead to the Fossil Dig. Look closely at those bite marks."
-     ]
+     ],
+     "src": "p:100:0"
     },
     {
      "x": 6,
@@ -15089,7 +15338,8 @@
      "face": "down",
      "t": [
       "Dig chief: Three fossil sites, same bite pattern every time. Read the markers."
-     ]
+     ],
+     "src": "p:101:0"
     },
     {
      "x": 2,
@@ -15099,7 +15349,8 @@
      "t": [
       "Digger: I asked Helix for better drills. They asked where the biggest bones were.",
       "I didn't tell them."
-     ]
+     ],
+     "src": "p:101:1"
     },
     {
      "x": 10,
@@ -15237,7 +15488,8 @@
      "face": "down",
      "t": [
       "Pilgrim: The falls froze the night the aurora turned violet. I come here to listen."
-     ]
+     ],
+     "src": "p:102:0"
     },
     {
      "x": 20,
@@ -15246,7 +15498,8 @@
      "face": "down",
      "t": [
       "Climber: Aurora Tower is just east. Ingrid trains Cryo-types up top."
-     ]
+     ],
+     "src": "p:102:1"
     }
    ],
    "mons": []
@@ -15351,7 +15604,8 @@
      "t": [
       "Relay tech: This tower boosts the aurora signal across the whole system.",
       "Ingrid's apprentices will test you on the way up."
-     ]
+     ],
+     "src": "p:103:0"
     },
     {
      "x": 6,
@@ -15451,7 +15705,8 @@
      "face": "down",
      "t": [
       "Researcher: Ingrid reads ice cores like books. She says the ice remembers the Devourer."
-     ]
+     ],
+     "src": "p:104:0"
     }
    ]
   },
@@ -15608,7 +15863,8 @@
      "t": [
       "Guard: Keep moving. Visitors aren't supposed to be on this deck.",
       "Guard: Wait, are you a visitor? We don't get visitors. ...Carry on, I guess."
-     ]
+     ],
+     "src": "p:105:0"
     },
     {
      "x": 3,
@@ -15618,7 +15874,8 @@
      "t": [
       "Helix grunt: I signed up for the free uniform. Nobody said it came with toxic cleanup duty.",
       "Helix grunt: Don't tell Admin Vex you saw me napping by the planters."
-     ]
+     ],
+     "src": "p:105:1"
     },
     {
      "x": 11,
@@ -15628,7 +15885,8 @@
      "t": [
       "Scientist: I just run the tests. Don't look at me like that.",
       "Scientist: The medical dome up top heals anyone. Even intruders. Budget cuts hit the ID scanner."
-     ]
+     ],
+     "src": "p:105:2"
     },
     {
      "x": 12,
@@ -15638,7 +15896,8 @@
      "t": [
       "Engineer: The power cores have been running hot all week. Engineering says it's 'within tolerance'.",
       "Engineer: Containment wing is east. Then 2F, then Engineering, then Vex. Not that I told you."
-     ]
+     ],
+     "src": "p:105:3"
     },
     {
      "x": 5,
@@ -15648,7 +15907,8 @@
      "t": [
       "Guard: Labs are in the right dome, barracks in the left. Not that you're allowed in either.",
       "Guard: Grunts spot you from five tiles out. Walk into their line and you WILL be battling."
-     ]
+     ],
+     "src": "p:105:5"
     },
     {
      "x": 2,
@@ -15658,7 +15918,8 @@
      "t": [
       "Scientist: Stasis Pods work best on a weakened Alienmon. Helix just uses bigger cages.",
       "Scientist: The Director keeps asking about Signal Shards. Why does a space station need Relay keys?"
-     ]
+     ],
+     "src": "p:105:6"
     }
    ],
    "mons": []
@@ -15737,7 +15998,8 @@
      "t": [
       "Off-duty grunt: This is my bunk. That's my bunk too. The new guy snores, so I took his.",
       "Off-duty grunt: Lights out is at 22:00. Battles are at 22:01. Every night."
-     ]
+     ],
+     "src": "p:106:0"
     },
     {
      "x": 11,
@@ -15746,7 +16008,8 @@
      "face": "left",
      "t": [
       "Barracks guard: Mess rule one: nobody sits in Admin Vex's chair. Rule two: see rule one."
-     ]
+     ],
+     "src": "p:106:1"
     }
    ]
   },
@@ -15837,7 +16100,8 @@
      "t": [
       "Lab tech: Those tanks hold Alienmon from every planet you've visited. We call it 'the collection'.",
       "Lab tech: Upstairs is Project Rift. Downstairs is everything we can't explain to HR."
-     ]
+     ],
+     "src": "p:107:0"
     },
     {
      "x": 12,
@@ -15847,7 +16111,8 @@
      "t": [
       "Scientist: Toxin types shrug off poison, but Gravity and Psi moves hit them hard. For science.",
       "Scientist: Please don't free the specimens. I'd have to fill out so many forms."
-     ]
+     ],
+     "src": "p:107:1"
     }
    ]
   },
@@ -15912,7 +16177,8 @@
      "t": [
       "Senior scientist: The Rift engine needs a Singularity core. Admin Vex holds the only one aboard.",
       "Senior scientist: Director Thorne says the Rift is a door. I've seen the numbers. It's a mouth."
-     ]
+     ],
+     "src": "p:108:0"
     },
     {
      "x": 12,
@@ -15921,7 +16187,8 @@
      "face": "left",
      "t": [
       "Lab engineer: Don't touch the blue tank. Or the green ones. Actually, just admire from over there."
-     ]
+     ],
+     "src": "p:108:1"
     }
    ]
   },
@@ -16197,7 +16464,8 @@
      "face": "left",
      "t": [
       "Cage tech: Admin Bronn has the cage codes. He's been acting... odd lately. Almost sympathetic."
-     ]
+     ],
+     "src": "p:110:0"
     },
     {
      "x": 7,
@@ -16348,7 +16616,8 @@
      "t": [
       "Reactor tech: If the core turns white, run. If it's orange, that's normal. It's always orange.",
       "Reactor tech: Vex's arena is straight up the corridor. Heal first. She plays dirty."
-     ]
+     ],
+     "src": "p:111:0"
     },
     {
      "x": 9,
@@ -16453,7 +16722,8 @@
      "face": "up",
      "t": [
       "Deck guard: Best view in the galaxy. Shame we only use it to watch for Relay Keepers' ships."
-     ]
+     ],
+     "src": "p:112:0"
     },
     {
      "x": 13,
@@ -16462,7 +16732,8 @@
      "face": "up",
      "t": [
       "Helix grunt: Sometimes I come up here and wonder if we're the bad guys. Then payday comes."
-     ]
+     ],
+     "src": "p:112:1"
     }
    ]
   },
@@ -16613,7 +16884,8 @@
      "face": "down",
      "t": [
       "Pilgrim: I rode the skyliner up from the cloud sea. My ears still haven't popped back."
-     ]
+     ],
+     "src": "p:114:0"
     },
     {
      "x": 20,
@@ -16622,7 +16894,8 @@
      "face": "down",
      "t": [
       "Dock tech: The airships float on Psi-charged crystals. Don't ask me how. I just polish them."
-     ]
+     ],
+     "src": "p:114:1"
     },
     {
      "x": 15,
@@ -16631,7 +16904,8 @@
      "face": "down",
      "t": [
       "Skywatcher: Skyreach Plaza is just east. Heal up at the Recovery Bay before the Wind Bridges."
-     ]
+     ],
+     "src": "p:114:2"
     }
    ],
    "mons": [
@@ -16762,7 +17036,8 @@
      "face": "down",
      "t": [
       "Skywatcher: The islands float on updrafts. Don't look down. Seriously, don't."
-     ]
+     ],
+     "src": "p:115:1"
     },
     {
      "x": 2,
@@ -16771,7 +17046,8 @@
      "face": "down",
      "t": [
       "Kid: I caught a Psi-type with a Stasis Pod! Weaken them first or the pod just pops open."
-     ]
+     ],
+     "src": "p:115:3"
     },
     {
      "x": 9,
@@ -16780,7 +17056,8 @@
      "face": "down",
      "t": [
       "Star scholar: The Sky Temple sits past the Floating Gardens. Echo and Iris guard Halo's Signal Shard."
-     ]
+     ],
+     "src": "p:115:4"
     }
    ],
    "mons": []
@@ -16856,7 +17133,8 @@
      "t": [
       "Nurse: Welcome to the Skyreach Recovery Bay. Rest your Alienmon, the thin air tires them out."
      ],
-     "stay": true
+     "stay": true,
+     "src": "p:116:0"
     },
     {
      "x": 6,
@@ -16865,7 +17143,8 @@
      "face": "down",
      "t": [
       "Visitor: Psi-types hit hard up here. Bring something sturdy, or bring plenty of healing gel."
-     ]
+     ],
+     "src": "p:116:1"
     }
    ]
   },
@@ -16940,7 +17219,8 @@
      "t": [
       "Clerk: Welcome to Skyreach Supply! Stock up now, there's no shop past the plaza."
      ],
-     "stay": true
+     "stay": true,
+     "src": "p:117:0"
     },
     {
      "x": 9,
@@ -16949,7 +17229,8 @@
      "face": "down",
      "t": [
       "Shopper: I always carry spare Stasis Pods. You never know what drifts out of the clouds."
-     ]
+     ],
+     "src": "p:117:1"
     }
    ]
   },
@@ -17025,7 +17306,8 @@
      "face": "down",
      "t": [
       "Bridge walker: The ropes creak, but they've held for three hundred years. Probably."
-     ]
+     ],
+     "src": "p:118:0"
     },
     {
      "x": 19,
@@ -17034,7 +17316,8 @@
      "face": "down",
      "t": [
       "Pilgrim: Wild Alienmon hide in the pink blossoms. Step around them if your team is worn out."
-     ]
+     ],
+     "src": "p:118:1"
     },
     {
      "x": 19,
@@ -17157,7 +17440,8 @@
      "face": "down",
      "t": [
       "Skywatcher: See those little islands drifting by? Some of them glitter with Signal Shard dust."
-     ]
+     ],
+     "src": "p:119:0"
     },
     {
      "x": 19,
@@ -17166,7 +17450,8 @@
      "face": "down",
      "t": [
       "Mystic: The wind sings louder near the temple. The twins say it is singing your name."
-     ]
+     ],
+     "src": "p:119:1"
     },
     {
      "x": 13,
@@ -17322,7 +17607,8 @@
      "face": "down",
      "t": [
       "Botanist: These blossoms only grow above the clouds. Psi-types nest in them when the wind is calm."
-     ]
+     ],
+     "src": "p:120:0"
     },
     {
      "x": 3,
@@ -17331,7 +17617,8 @@
      "face": "down",
      "t": [
       "Pilgrim: The Sky Temple is just east. Echo and Iris accept every challenger, but few leave smiling."
-     ]
+     ],
+     "src": "p:120:1"
     },
     {
      "x": 10,
@@ -17490,7 +17777,8 @@
      "face": "down",
      "t": [
       "Temple pilgrim: The twins wait upstairs. Their apprentices will test you first."
-     ]
+     ],
+     "src": "p:121:0"
     },
     {
      "x": 10,
@@ -17589,7 +17877,8 @@
      "face": "down",
      "t": [
       "Mystic: One twin starts a sentence, the other finishes it. Don't let it rattle you."
-     ]
+     ],
+     "src": "p:122:0"
     }
    ]
   },
@@ -17684,7 +17973,8 @@
      "face": "down",
      "t": [
       "Traveller: You made it through the Shadow Tunnel? Most folk turn back halfway. Gravewell's just north."
-     ]
+     ],
+     "src": "p:123:0"
     }
    ]
   },
@@ -17861,7 +18151,8 @@
      "t": [
       "Scavenger: Gravewell was a city once, before it tipped into the sinkhole.",
       "Now we just call it home and keep the lanterns full."
-     ]
+     ],
+     "src": "p:124:0"
     },
     {
      "x": 11,
@@ -17871,7 +18162,8 @@
      "t": [
       "Lantern keeper: Keep to the lanterns. The dark plays tricks.",
       "If a light goes out behind you, don't turn around. Just walk faster."
-     ]
+     ],
+     "src": "p:124:1"
     },
     {
      "x": 16,
@@ -17881,7 +18173,8 @@
      "t": [
       "Drifter: Void-types only come out where the light can't reach.",
       "The Sinkhole is full of them. Bring something that hits hard."
-     ]
+     ],
+     "src": "p:124:2"
     },
     {
      "x": 20,
@@ -17890,7 +18183,8 @@
      "face": "down",
      "t": [
       "Old woman: The Recovery Bay is the brightest room in town. We go there to feel warm, not just to heal."
-     ]
+     ],
+     "src": "p:124:3"
     },
     {
      "x": 11,
@@ -17899,7 +18193,8 @@
      "face": "down",
      "t": [
       "Researcher: The black-hole sky pulls on everything here. Even sound falls a little slower."
-     ]
+     ],
+     "src": "p:124:4"
     },
     {
      "x": 18,
@@ -17909,7 +18204,8 @@
      "t": [
       "Helix contractor: Nothing to see here. Just... measuring the sinkhole. For safety.",
       "Move along, Linker."
-     ]
+     ],
+     "src": "p:124:5"
     },
     {
      "x": 15,
@@ -17918,7 +18214,8 @@
      "face": "down",
      "t": [
       "Kid: My big brother says the well whispers your name if you stand at the edge long enough!"
-     ]
+     ],
+     "src": "p:124:6"
     }
    ],
    "mons": [
@@ -18000,7 +18297,8 @@
      "t": [
       "Nurse: Welcome to the Gravewell Recovery Bay. We'll have your Alienmon glowing again."
      ],
-     "stay": true
+     "stay": true,
+     "src": "p:125:0"
     },
     {
      "x": 9,
@@ -18009,7 +18307,8 @@
      "face": "down",
      "t": [
       "Diver: I came up from Sinkhole B3 with every team member fainted. Heal before every level down."
-     ]
+     ],
+     "src": "p:125:1"
     }
    ]
   },
@@ -18084,7 +18383,8 @@
      "t": [
       "Clerk: Lantern oil, Stasis Pods, potions. Everything you need to go down and come back up."
      ],
-     "stay": true
+     "stay": true,
+     "src": "p:126:0"
     },
     {
      "x": 9,
@@ -18093,7 +18393,8 @@
      "face": "down",
      "t": [
       "Shopper: Stock up on Stasis Pods. Void-types are slippery and slip out of a weak throw."
-     ]
+     ],
+     "src": "p:126:1"
     }
    ]
   },
@@ -18187,7 +18488,8 @@
      "face": "down",
      "t": [
       "Lantern keeper: Every lantern on this street is tended by hand. Miss one night and the shadows creep in."
-     ]
+     ],
+     "src": "p:127:0"
     },
     {
      "x": 12,
@@ -18196,7 +18498,8 @@
      "face": "down",
      "t": [
       "Scavenger: Trainers on these streets watch from the dark. Walk into their line of sight and they'll call you out."
-     ]
+     ],
+     "src": "p:127:1"
     },
     {
      "x": 20,
@@ -18349,7 +18652,8 @@
      "face": "down",
      "t": [
       "Pilgrim: The Sinkhole is just east. They say a Signal Shard sleeps at the very bottom."
-     ]
+     ],
+     "src": "p:128:0"
     },
     {
      "x": 10,
@@ -18358,7 +18662,8 @@
      "face": "down",
      "t": [
       "Drifter: Past the Sinkhole stands Gravewell Tower. The Keeper there fights with the dark itself."
-     ]
+     ],
+     "src": "p:128:1"
     },
     {
      "x": 8,
@@ -18526,7 +18831,8 @@
      "face": "down",
      "t": [
       "Miner: B1's the easy floor. Mind the waterfalls; that glow isn't water."
-     ]
+     ],
+     "src": "p:129:0"
     },
     {
      "x": 12,
@@ -18651,7 +18957,8 @@
      "face": "down",
      "t": [
       "Explorer: I've mapped this level three times. The tunnels never quite match my notes."
-     ]
+     ],
+     "src": "p:130:0"
     },
     {
      "x": 13,
@@ -18785,7 +19092,8 @@
      "face": "down",
      "t": [
       "Researcher: Ghost and Void readings double every floor down. Whatever is below, it is awake."
-     ]
+     ],
+     "src": "p:131:0"
     },
     {
      "x": 8,
@@ -18919,7 +19227,8 @@
      "t": [
       "Pilgrim: The well that whispers... listen. Do you hear it too?",
       "Go around the rift. Never across."
-     ]
+     ],
+     "src": "p:132:0"
     },
     {
      "x": 2,
@@ -19019,7 +19328,8 @@
      "face": "down",
      "t": [
       "Lab assistant: The professor left in a hurry years ago. The papers are still exactly where he dropped them."
-     ]
+     ],
+     "src": "p:133:0"
     }
    ]
   },
@@ -19121,7 +19431,8 @@
      "face": "down",
      "t": [
       "Tower guard: Keeper Kade waits upstairs. Beat his apprentices first; he only sees challengers who've earned it."
-     ]
+     ],
+     "src": "p:134:0"
     },
     {
      "x": 13,
@@ -19359,7 +19670,8 @@
      ],
      "name": "Tamsin",
      "after": "M17b",
-     "until": "M19"
+     "until": "M19",
+     "src": "n:136:0"
     },
     {
      "x": 4,
@@ -19368,7 +19680,8 @@
      "face": "down",
      "t": [
       "Cordon guard: Nobody goes past the fields without a reason. Got one? Fine, just don't die down there."
-     ]
+     ],
+     "src": "p:136:0"
     },
     {
      "x": 11,
@@ -19377,7 +19690,8 @@
      "face": "down",
      "t": [
       "Rig worker: Helix left half its drills running when they ran. You can hear them grinding at night."
-     ]
+     ],
+     "src": "p:136:1"
     },
     {
      "x": 11,
@@ -19386,7 +19700,8 @@
      "face": "down",
      "t": [
       "Rift seeker: Can you hear it? The crater hums like a heartbeat. Louder every week."
-     ]
+     ],
+     "src": "p:136:2"
     },
     {
      "x": 5,
@@ -19395,7 +19710,8 @@
      "face": "down",
      "t": [
       "Star watcher: Crystals here grow overnight. I measured one at breakfast and again at dinner. Twice as big."
-     ]
+     ],
+     "src": "p:136:3"
     },
     {
      "x": 19,
@@ -19404,7 +19720,8 @@
      "face": "down",
      "t": [
       "Camp tech: The Medic Tent is the dome with the blue cross. Rest your team before the Seedpod Fields."
-     ]
+     ],
+     "src": "p:136:4"
     },
     {
      "x": 3,
@@ -19413,7 +19730,8 @@
      "face": "down",
      "t": [
       "Old hand: Twenty years back the pods fell right here. Every Alienmon you've ever met came from that sky."
-     ]
+     ],
+     "src": "p:136:5"
     },
     {
      "x": 21,
@@ -19422,7 +19740,8 @@
      "face": "down",
      "t": [
       "Ex-Helix grunt: I scratched the logo off my jacket. Whatever Thorne's building down there, I want no part."
-     ]
+     ],
+     "src": "p:136:6"
     }
    ],
    "mons": [
@@ -19504,7 +19823,8 @@
      "t": [
       "Nurse: Welcome to the Medic Tent. Step up to the counter and I'll patch your team right up."
      ],
-     "stay": true
+     "stay": true,
+     "src": "p:137:0"
     },
     {
      "x": 7,
@@ -19513,7 +19833,8 @@
      "face": "down",
      "t": [
       "Injured driller: Got clipped by a crystal-type in the fields. Those shells hide more than dust, kid."
-     ]
+     ],
+     "src": "p:137:1"
     }
    ]
   },
@@ -19589,7 +19910,8 @@
      "face": "down",
      "t": [
       "Researcher: Each cracked seedpod is a shell something hatched from. Rare Alienmon hide in the pink weeds."
-     ]
+     ],
+     "src": "p:138:0"
     },
     {
      "x": 13,
@@ -19598,7 +19920,8 @@
      "face": "down",
      "t": [
       "Hiker: Out of Stasis Pods already? Weaken them first - a tired Alienmon is much easier to catch."
-     ]
+     ],
+     "src": "p:138:1"
     },
     {
      "x": 6,
@@ -19721,7 +20044,8 @@
      "face": "down",
      "t": [
       "Rift seeker: Trainers out here spot you from five tiles off. Heal up before you walk their line of sight."
-     ]
+     ],
+     "src": "p:139:0"
     },
     {
      "x": 18,
@@ -19730,7 +20054,8 @@
      "face": "down",
      "t": [
       "Driller: Helix paid triple to dig here. Then the pods started glowing back. Nobody stayed for the bonus."
-     ]
+     ],
+     "src": "p:139:1"
     },
     {
      "x": 10,
@@ -19866,7 +20191,8 @@
      "face": "down",
      "t": [
       "Pilgrim: They say an explorer camped here waiting for the light to speak. His tent still stands."
-     ]
+     ],
+     "src": "p:140:0"
     },
     {
      "x": 13,
@@ -19875,7 +20201,8 @@
      "face": "down",
      "t": [
       "Wanderer: I leave a fresh cup by the fire each time I pass. Somebody should, for whoever comes home."
-     ]
+     ],
+     "src": "p:140:1"
     }
    ],
    "mons": [
@@ -19995,7 +20322,8 @@
      "t": [],
      "after": "P04",
      "legend": "Novaryx",
-     "lv": 60
+     "lv": 60,
+     "src": "n:141:0"
     },
     {
      "x": 6,
@@ -20004,7 +20332,8 @@
      "face": "down",
      "t": [
       "Star watcher: Psi and Gravity Alienmon gather near the rim. Bring something sturdy."
-     ]
+     ],
+     "src": "p:141:0"
     },
     {
      "x": 13,
@@ -20013,7 +20342,8 @@
      "face": "down",
      "t": [
       "Rim guard: The descent's three levels deep. Signal Shards resonate louder the farther down you go."
-     ]
+     ],
+     "src": "p:141:1"
     },
     {
      "x": 12,
@@ -20153,7 +20483,8 @@
      "face": "down",
      "t": [
       "Caver: Watch the purple cracks. That's not lava, it's starlight. Doesn't burn - just pulls."
-     ]
+     ],
+     "src": "p:142:0"
     },
     {
      "x": 9,
@@ -20278,7 +20609,8 @@
      "face": "down",
      "t": [
       "Helix tech (lost): My map says the Rift Engine is 'down'. Every tunnel here says 'down'. Help?"
-     ]
+     ],
+     "src": "p:143:0"
     },
     {
      "x": 11,
@@ -20394,7 +20726,8 @@
      "face": "down",
      "t": [
       "Pilgrim: The vortex below is breathing. If the Keepers' Shards ever meant anything, it's here."
-     ]
+     ],
+     "src": "p:144:0"
     },
     {
      "x": 11,
@@ -20513,7 +20846,8 @@
      "face": "down",
      "t": [
       "Helix grunt: The Director's up at the Engine. Go ahead - I'm not paid enough to stand between you two."
-     ]
+     ],
+     "src": "p:145:0"
     },
     {
      "x": 14,
@@ -20522,7 +20856,8 @@
      "face": "down",
      "t": [
       "Shaken scientist: Containment keeps dropping. That thing isn't a power source. It's a door."
-     ]
+     ],
+     "src": "p:145:1"
     }
    ],
    "mons": [
@@ -20701,6 +21036,7 @@
      "t": [
       "Ace Linker: I beat the Quorum once. Then they beat me four times. Heal before every hall."
      ],
+     "src": "p:146:0",
      "id": "sec146_tr0",
      "trainer": {
       "cls": "Ace Linker",
@@ -20715,7 +21051,8 @@
      "face": "down",
      "t": [
       "Astronomer: The thin air up here makes the sky so clear. On a good night you can see the Rift glow."
-     ]
+     ],
+     "src": "p:146:1"
     },
     {
      "x": 15,
@@ -20724,7 +21061,8 @@
      "face": "down",
      "t": [
       "Summit guard: Only Linkers with all eight Signal Shards ride the lift. Go on, you've earned it."
-     ]
+     ],
+     "src": "p:146:2"
     }
    ],
    "mons": [
@@ -20827,7 +21165,8 @@
      "face": "down",
      "t": [
       "Ace Linker: Crystal types shrug off hits but crack under heavy blows. Bring something that hits hard."
-     ]
+     ],
+     "src": "p:147:0"
     }
    ]
   },
@@ -20923,7 +21262,8 @@
      "face": "down",
      "t": [
       "Astronomer: The dome here was tuned to hear radio stars. Now it mostly hears guitar solos."
-     ]
+     ],
+     "src": "p:148:0"
     }
    ]
   },
@@ -21001,7 +21341,8 @@
      "face": "down",
      "t": [
       "Summit guard: Nobody has heard Saga speak. The battle does the talking."
-     ]
+     ],
+     "src": "p:149:0"
     }
    ]
   },
@@ -21066,7 +21407,8 @@
      "face": "down",
      "t": [
       "Ace Linker: Gravity moves hit like a landslide. Lighten your team and keep your Pods ready."
-     ]
+     ],
+     "src": "p:150:0"
     }
    ]
   },
@@ -21169,7 +21511,8 @@
       "Dr. Vashti: Kessler's side of the Vortex is safe with me."
      ],
      "name": "Dr. Vashti",
-     "after": "P01"
+     "after": "P01",
+     "src": "n:151:0"
     },
     {
      "x": 13,
@@ -21182,7 +21525,8 @@
      ],
      "name": "Kit",
      "after": "M21",
-     "until": "P02"
+     "until": "P02",
+     "src": "n:151:1"
     },
     {
      "x": 4,
@@ -21191,7 +21535,8 @@
      "face": "down",
      "t": [
       "Summit guard: Prime Linker Orra Venn bonded the very first Alienmon. Show respect, then show your best."
-     ]
+     ],
+     "src": "p:151:0"
     }
    ]
   },
@@ -21269,7 +21614,8 @@
      "face": "down",
      "t": [
       "Astronomer: Every Signal Shard you carried lit a world on these charts. Helix wanted the map for itself."
-     ]
+     ],
+     "src": "p:152:0"
     },
     {
      "x": 9,
@@ -21278,7 +21624,8 @@
      "face": "down",
      "t": [
       "Archivist: Quiet, please. The star charts are older than the Linker League itself."
-     ]
+     ],
+     "src": "p:152:1"
     }
    ]
   },
@@ -21394,7 +21741,8 @@
      ],
      "name": "Returning echo 1",
      "after": "P01",
-     "flag": "bloom_1"
+     "flag": "bloom_1",
+     "src": "n:153:0"
     },
     {
      "x": 10,
@@ -21405,7 +21753,8 @@
       "Ystran echo: ...welcome home, children of the stars. Rest by the crystal. It still remembers how to heal.",
       "Ystran echo: We were a voice once. Now we are only the echo, waiting for someone to listen."
      ],
-     "name": "Ystran echo"
+     "name": "Ystran echo",
+     "src": "p:153:0"
     },
     {
      "x": 6,
@@ -21415,7 +21764,8 @@
      "t": [
       "Rift walker: Every fragment here was one world, once. The bridges are all that hold the pieces in a line.",
       "Rift walker: Don't look down. There is no down. There's just... more sky."
-     ]
+     ],
+     "src": "p:153:1"
     },
     {
      "x": 11,
@@ -21425,7 +21775,8 @@
      "t": [
       "Seeker: The Alienmon you carry were born here. Watch them. They know the way better than we do.",
       "Seeker: The domes are sealed. Whoever lived in them left in seedpods and never came back."
-     ]
+     ],
+     "src": "p:153:2"
     }
    ],
    "mons": [
@@ -21514,7 +21865,8 @@
      "t": [],
      "legend": "Terravox",
      "lv": 60,
-     "flag": "champ"
+     "flag": "champ",
+     "src": "n:154:0"
     },
     {
      "x": 9,
@@ -21526,7 +21878,8 @@
      ],
      "name": "Returning echo 2",
      "after": "P01",
-     "flag": "bloom_2"
+     "flag": "bloom_2",
+     "src": "n:154:1"
     },
     {
      "x": 3,
@@ -21536,7 +21889,8 @@
      "t": [
       "Rift walker: The continents drift a hand's width a day. Cross the bridges while they still meet.",
       "Rift walker: Gravity types love it out here. Everything floats a little, even your thoughts."
-     ]
+     ],
+     "src": "p:154:0"
     },
     {
      "x": 13,
@@ -21546,7 +21900,8 @@
      "t": [
       "Ystran echo: Terravox carried a forest on its back... these islands were its footsteps.",
       "Ystran echo: ...do you hear the roots? They are still reaching for each other."
-     ]
+     ],
+     "src": "p:154:1"
     },
     {
      "x": 17,
@@ -21661,7 +22016,8 @@
      "t": [
       "Seeker: I came for answers. I found waterfalls that fall forever and never land.",
       "Seeker: Wild Alienmon here are strong. Weaken them first, then throw a Stasis Pod."
-     ]
+     ],
+     "src": "p:155:0"
     },
     {
      "x": 7,
@@ -21670,7 +22026,8 @@
      "face": "down",
      "t": [
       "Rift walker: The trainers out here are postgame tough. Heal at the Arrival crystal if you're running low."
-     ]
+     ],
+     "src": "p:155:1"
     },
     {
      "x": 20,
@@ -21795,7 +22152,8 @@
      "t": [],
      "legend": "Aquelion",
      "lv": 60,
-     "flag": "champ"
+     "flag": "champ",
+     "src": "n:156:0"
     },
     {
      "x": 14,
@@ -21807,7 +22165,8 @@
      ],
      "name": "Returning echo 3",
      "after": "P01",
-     "flag": "bloom_3"
+     "flag": "bloom_3",
+     "src": "n:156:1"
     },
     {
      "x": 3,
@@ -21817,7 +22176,8 @@
      "t": [
       "Ystran echo: These were our seas. Aquelion sang over them... now the water drowns the old roads.",
       "Ystran echo: ...the coral still grows. Grief is not the same as ending."
-     ]
+     ],
+     "src": "p:156:0"
     },
     {
      "x": 17,
@@ -21827,7 +22187,8 @@
      "t": [
       "Rift walker: Hydro types thrive in the drowned basins. Bring something that hits them hard.",
       "Rift walker: Stick to the sand paths. The water here goes down further than any sea should."
-     ]
+     ],
+     "src": "p:156:1"
     },
     {
      "x": 4,
@@ -21963,7 +22324,8 @@
      "t": [],
      "legend": "Ignarch",
      "lv": 60,
-     "flag": "champ"
+     "flag": "champ",
+     "src": "n:157:0"
     },
     {
      "x": 7,
@@ -21973,7 +22335,8 @@
      "t": [
       "Seeker: The Sun Forge. They say Ignarch kept Ystra's red sun burning from this very pillar.",
       "Seeker: The heat here is old heat. It doesn't burn you. It remembers you."
-     ]
+     ],
+     "src": "p:157:0"
     },
     {
      "x": 10,
@@ -21983,7 +22346,8 @@
      "t": [
       "Ystran echo: When the sun began to die, we fed it everything... and still it dimmed.",
       "Ystran echo: ...go north, into the crystal halls. The light there was ours."
-     ]
+     ],
+     "src": "p:157:1"
     }
    ],
    "mons": [
@@ -22120,7 +22484,8 @@
       "Saga: Gather the echoes. They will come if you call them with the old song."
      ],
      "name": "Saga",
-     "after": "P01"
+     "after": "P01",
+     "src": "n:158:0"
     },
     {
      "x": 12,
@@ -22132,7 +22497,8 @@
       "Kit: Give me some time. I can fix this."
      ],
      "name": "Kit",
-     "after": "P01"
+     "after": "P01",
+     "src": "n:158:1"
     },
     {
      "x": 1,
@@ -22144,7 +22510,8 @@
      ],
      "name": "Returning echo 4",
      "after": "P01",
-     "flag": "bloom_4"
+     "flag": "bloom_4",
+     "src": "n:158:2"
     },
     {
      "x": 8,
@@ -22154,7 +22521,8 @@
      "t": [
       "Rift walker: Crystal Ruins. Every pillar is a record. Nobody alive can read them anymore.",
       "Rift walker: Trainers lurk in these halls. Step into their line of sight and they'll challenge you."
-     ]
+     ],
+     "src": "p:158:0"
     },
     {
      "x": 8,
@@ -22292,7 +22660,8 @@
       "Tamsin: A capture isn't taking. It's asking. Same goes for a world, I think."
      ],
      "name": "Tamsin",
-     "after": "P01"
+     "after": "P01",
+     "src": "n:159:0"
     },
     {
      "x": 13,
@@ -22302,7 +22671,8 @@
      "t": [
       "Ystran echo: ...this was a library. We sang knowledge into crystal so it would outlive us. It did.",
       "Ystran echo: Beyond these halls, the forest sickens. The Devourer's shadow touched it first."
-     ]
+     ],
+     "src": "p:159:0"
     },
     {
      "x": 12,
@@ -22434,7 +22804,8 @@
       "Kit: Go on. We've got this. Nobody gets left, remember?"
      ],
      "name": "Kit",
-     "after": "P01"
+     "after": "P01",
+     "src": "n:160:0"
     },
     {
      "x": 17,
@@ -22446,7 +22817,8 @@
      ],
      "name": "Returning echo 5",
      "after": "P01",
-     "flag": "bloom_5"
+     "flag": "bloom_5",
+     "src": "n:160:1"
     },
     {
      "x": 4,
@@ -22456,7 +22828,8 @@
      "t": [
       "Seeker: The blight spreads from the void's edge. Leaves turn to glass, then to dust.",
       "Seeker: Some Bio types here still fight the blight. Help them and they might follow you."
-     ]
+     ],
+     "src": "p:160:0"
     },
     {
      "x": 9,
@@ -22465,7 +22838,8 @@
      "face": "down",
      "t": [
       "Rift walker: Keep to the path. The blighted brush hides wild Alienmon that strike before you see them."
-     ]
+     ],
+     "src": "p:160:1"
     },
     {
      "x": 14,
@@ -22589,7 +22963,8 @@
      "t": [
       "Ystran echo: ...the trees remember being green. If you listen, they will tell you what green sounded like.",
       "Ystran echo: Past the void lies the Heartroot's crater. First, you must look into the hungry one."
-     ]
+     ],
+     "src": "p:161:0"
     },
     {
      "x": 15,
@@ -22598,7 +22973,8 @@
      "face": "down",
      "t": [
       "Seeker: Eight Signal Shards held the Rift shut. Now you walk right through it. Strange, isn't it?"
-     ]
+     ],
+     "src": "p:161:1"
     },
     {
      "x": 20,
@@ -22740,7 +23116,8 @@
      "t": [],
      "after": "P04",
      "legend": "Oblivane",
-     "lv": 70
+     "lv": 70,
+     "src": "n:162:0"
     },
     {
      "x": 11,
@@ -22750,7 +23127,8 @@
      "t": [
       "Rift walker: That's it. The Edge of the Void. Something in there breathes when the wind stops.",
       "Rift walker: Save your strength. Whatever waits on that altar is older than the stars around it."
-     ]
+     ],
+     "src": "p:162:0"
     },
     {
      "x": 20,
@@ -22760,7 +23138,8 @@
      "t": [
       "Ystran echo: The Devourer was never cruel... only hungry, and so very alone.",
       "Ystran echo: ...if you face it, do not hate it. Hate is a kind of hunger too."
-     ]
+     ],
+     "src": "p:162:1"
     }
    ],
    "mons": [
@@ -22889,7 +23268,8 @@
      ],
      "name": "Returning echo 6",
      "after": "P01",
-     "flag": "bloom_6"
+     "flag": "bloom_6",
+     "src": "n:163:0"
     },
     {
      "x": 21,
@@ -22899,7 +23279,8 @@
      "t": [
       "Ystran echo: Her world-tree stood here once. Every seedpod that crossed the stars was a piece of her. Now only the Heartroot remains.",
       "Ystran echo: ...she is tired, Linker. But she waited for you. She always knew someone would come."
-     ]
+     ],
+     "src": "p:163:0"
     },
     {
      "x": 13,
@@ -22908,7 +23289,8 @@
      "face": "down",
      "t": [
       "Seeker: I've walked every fragment of this world. This is the only place that feels like it is still alive."
-     ]
+     ],
+     "src": "p:163:1"
     }
    ],
    "mons": [
@@ -22993,7 +23375,8 @@
       "Arena Master: Welcome to the Star Arena!"
      ],
      "name": "Arena Master",
-     "story": "arena"
+     "story": "arena",
+     "src": "p:164:0"
     },
     {
      "x": 2,
@@ -23004,7 +23387,8 @@
       "Vendor: Pods and gels for the brave!"
      ],
      "name": "Vendor",
-     "stay": true
+     "stay": true,
+     "src": "p:164:1"
     },
     {
      "x": 21,
@@ -23015,7 +23399,8 @@
       "Arena medic: Step up to the stall and I'll patch your team up."
      ],
      "name": "Arena medic",
-     "stay": true
+     "stay": true,
+     "src": "p:164:2"
     },
     {
      "x": 8,
@@ -23025,7 +23410,8 @@
      "t": [
       "Fan: I've watched every Singularity League final. Grand Champion Nyx Horizon has never lost here!"
      ],
-     "stay": 1
+     "stay": 1,
+     "src": "p:164:3"
     },
     {
      "x": 15,
@@ -23035,7 +23421,8 @@
      "t": [
       "Kid: I'm entering the Stardust League with my Lv 12 team! Level caps make it fair for everyone."
      ],
-     "stay": 1
+     "stay": 1,
+     "src": "p:164:4"
     },
     {
      "x": 15,
@@ -23045,7 +23432,8 @@
      "t": [
       "Commentator: Stardust, Comet, Supernova, Singularity. Each league has its own level cap and its own Champion."
      ],
-     "stay": 1
+     "stay": 1,
+     "src": "p:164:5"
     },
     {
      "x": 8,
@@ -23055,7 +23443,8 @@
      "t": [
       "Old fan: Your team is healed before every round. Losing just ends your run, no harm done."
      ],
-     "stay": 1
+     "stay": 1,
+     "src": "p:164:6"
     },
     {
      "x": 9,
@@ -23065,7 +23454,8 @@
      "t": [
       "Scoreboard tech: The board remembers every Linker who clears a Cup."
      ],
-     "stay": 1
+     "stay": 1,
+     "src": "p:164:7"
     }
    ]
   },
@@ -23186,7 +23576,8 @@
      ],
      "name": "Sola",
      "after": "M19",
-     "stay": true
+     "stay": true,
+     "src": "n:166:0"
     },
     {
      "x": 9,
@@ -23198,7 +23589,8 @@
      ],
      "name": "Moving box",
      "until": "M19",
-     "stay": true
+     "stay": true,
+     "src": "n:166:1"
     },
     {
      "x": 3,
@@ -23211,7 +23603,8 @@
      ],
      "name": "Teo",
      "after": "M19",
-     "stay": true
+     "stay": true,
+     "src": "n:166:2"
     }
    ]
   },
@@ -23466,7 +23859,8 @@
       "Fisher: Mind the nets! I just mended them.",
       "Fisher: On calm nights you can hear Gloopa singing under the piers."
      ],
-     "name": "Fisher"
+     "name": "Fisher",
+     "src": "n:171:0"
     }
    ]
   },
@@ -23530,7 +23924,8 @@
       "Rift Scout: Don't touch the crystals. They hum back at you.",
       "Rift Scout: Every night the Rift glows a little brighter. I write it all down."
      ],
-     "name": "Rift Scout"
+     "name": "Rift Scout",
+     "src": "n:172:0"
     }
    ]
   },
@@ -23594,7 +23989,8 @@
       "Bog Keeper: Welcome, welcome! Shoes off, the moss is drying.",
       "Bog Keeper: The mushroom lamps glow brighter when a happy Alienmon is near."
      ],
-     "name": "Bog Keeper"
+     "name": "Bog Keeper",
+     "src": "n:173:0"
     }
    ]
   },
@@ -23658,7 +24054,8 @@
       "Miner: Long shift in the Deep Mines. Come in, it's cooler in here.",
       "Miner: If your helmet lamp flickers, turn back. That's the rule."
      ],
-     "name": "Miner"
+     "name": "Miner",
+     "src": "n:174:0"
     }
    ]
   },
@@ -23722,7 +24119,8 @@
       "Sky Weaver: The clouds drift right past my window. I never get tired of it.",
       "Sky Weaver: Play the harp if you like. The wind shrines answer it, they say."
      ],
-     "name": "Sky Weaver"
+     "name": "Sky Weaver",
+     "src": "n:175:0"
     }
    ]
   },
@@ -23786,7 +24184,8 @@
       "Night DJ: Oh, a visitor! Welcome to my studio. Well, my living room.",
       "Night DJ: DJ Static lives three towers over. I've heard every set."
      ],
-     "name": "Night DJ"
+     "name": "Night DJ",
+     "src": "n:176:0"
     }
    ]
   },
@@ -23850,7 +24249,8 @@
       "Dig Assistant: Careful with the scrolls, they're older than the city.",
       "Dig Assistant: Those glyphs on the wall? Even Dr. Vashti hasn't read them all."
      ],
-     "name": "Dig Assistant"
+     "name": "Dig Assistant",
+     "src": "n:177:0"
     }
    ]
   },
@@ -23914,7 +24314,8 @@
       "Grandma Frost: Come warm up by the fire, dear.",
       "Grandma Frost: Ingrid used to sit right there when she was little."
      ],
-     "name": "Grandma Frost"
+     "name": "Grandma Frost",
+     "src": "n:178:0"
     }
    ]
   },
@@ -23978,7 +24379,8 @@
       "Captain: Welcome aboard! She's docked for repairs, but the view's still free.",
       "Captain: On a clear day you can see every island in the Halo chain from the helm."
      ],
-     "name": "Airship Captain"
+     "name": "Airship Captain",
+     "src": "n:179:0"
     }
    ]
   },
@@ -24042,7 +24444,8 @@
       "Prize Clerk: Welcome to the Neonis Arcade! The machines are being rewired for the big tournament.",
       "Prize Clerk: Come back later and you might win one of those plush Alienmon on the shelf."
      ],
-     "name": "Prize Clerk"
+     "name": "Prize Clerk",
+     "src": "n:180:0"
     }
    ]
   },
@@ -24106,7 +24509,8 @@
       "Field Scientist: Ystra was green once. Every sample we take says so.",
       "Field Scientist: The crater readings change whenever a Linker walks by. Strange, isn't it?"
      ],
-     "name": "Field Scientist"
+     "name": "Field Scientist",
+     "src": "n:181:0"
     }
    ]
   },
@@ -24170,7 +24574,8 @@
       "Dock Attendant: Welcome to the Cloud Dock. Airships leave when the winds allow.",
       "Dock Attendant: Mind the windows, the sky islands drift closer than they look."
      ],
-     "name": "Dock Attendant"
+     "name": "Dock Attendant",
+     "src": "n:182:0"
     }
    ]
   },
@@ -24234,7 +24639,8 @@
       "Dig Chief: Every glyph on that board came out of the ground this week.",
       "Dig Chief: Whoever built these ruins knew the stars far better than we do."
      ],
-     "name": "Dig Chief"
+     "name": "Dig Chief",
+     "src": "n:183:0"
     }
    ]
   },
@@ -24298,7 +24704,8 @@
       "Greeter: Welcome to Sporeholm! Please don't step on the glowing moss. It bruises.",
       "Greeter: The bog is safest on the lit paths. The mushroom lamps show the way."
      ],
-     "name": "Greeter"
+     "name": "Greeter",
+     "src": "n:184:0"
     }
    ]
   },
@@ -24362,7 +24769,8 @@
       "Mushroom Keeper: Oh! A guest inside my mushroom. Mind the jars, they're full of spores.",
       "Mushroom Keeper: This mushroom was growing before my grandmother was born. It's still growing now."
      ],
-     "name": "Mushroom Keeper"
+     "name": "Mushroom Keeper",
+     "src": "n:185:0"
     }
    ]
   },
@@ -24426,7 +24834,8 @@
       "Lamplighter: Come in, come in. On Umbra we keep every lamp lit, all night long.",
       "Lamplighter: The Devourer follows the light, they say. So we never let it go out."
      ],
-     "name": "Lamplighter"
+     "name": "Lamplighter",
+     "src": "n:186:0"
     }
    ]
   },
@@ -24503,7 +24912,8 @@
       "Canyon Guide: Shoes off, the rug's my grandma's. Oven's always warm if you're hungry.",
       "Canyon Guide: When the drift grass crackles at night, the Starfall Crater is glowing."
      ],
-     "name": "Canyon Guide"
+     "name": "Canyon Guide",
+     "src": "n:187:0"
     }
    ]
   },
@@ -24567,7 +24977,8 @@
       "Scrap Welder: Every bolt in this cabin came off a crashed freighter. Hank says it's the sturdiest house on Ferrox.",
       "Scrap Welder: Mind the stove. It runs on old reactor cores."
      ],
-     "name": "Scrap Welder"
+     "name": "Scrap Welder",
+     "src": "n:188:0"
     }
    ]
   },
@@ -24657,7 +25068,8 @@
       "Crystal Keeper: These crystals grew from the old world-tree's sap. They still hum when an Alienmon walks by.",
       "Crystal Keeper: Ystra was green once. Listen closely and you can hear it remembering."
      ],
-     "name": "Crystal Keeper"
+     "name": "Crystal Keeper",
+     "src": "n:189:0"
     }
    ]
   },
@@ -24721,7 +25133,8 @@
       "Moss Tender: The lamps are glowcaps. Pick one and it sulks for a week.",
       "Moss Tender: Sit, sit. The tea is mostly spores, but the good kind."
      ],
-     "name": "Moss Tender"
+     "name": "Moss Tender",
+     "src": "n:190:0"
     }
    ]
   },
@@ -24785,7 +25198,8 @@
       "Old Netmender: You can see the whole bay from that window. Captain Marsh's boat comes in at dawn.",
       "Old Netmender: If you hear singing under the pier, that's just the Gloopa. Probably."
      ],
-     "name": "Old Netmender"
+     "name": "Old Netmender",
+     "src": "n:191:0"
     }
    ]
   },
@@ -24862,7 +25276,8 @@
       "Late-Night Coder: Every screen in this place is tuned to DJ Static's channel. Rent includes the bass.",
       "Late-Night Coder: The crystal on the table charges my phone. Don't tell the landlord."
      ],
-     "name": "Late-Night Coder"
+     "name": "Late-Night Coder",
+     "src": "n:192:0"
     }
    ]
   },
@@ -24939,7 +25354,8 @@
       "Ice Fisher: Fire's always lit. The blue flame burns colder than you'd think, but it keeps the frost off.",
       "Ice Fisher: Ingrid digs fossils all winter. I just dig holes and wait for fish."
      ],
-     "name": "Ice Fisher"
+     "name": "Ice Fisher",
+     "src": "n:193:0"
     }
    ]
   }

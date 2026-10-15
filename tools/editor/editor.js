@@ -1,0 +1,330 @@
+// Alienmon map editor: place props, people and wild Alienmon on the section maps, paint walls, and grow a world with new map pieces.
+// Loads editor_data.json (written by tools/build.js on prototype builds). Saves straight into the alienmon-app folder (Chrome/Edge
+// desktop: File System Access) or downloads editor_changes.json; tools/editor/apply.py turns either into a rebuilt game.
+'use strict';
+const $ = s => document.querySelector(s);
+let ED = null;
+const IMGS = {};
+const img = u => { if (!u) return null; if (!IMGS[u]) { const i = new Image(); i.onload = () => draw(); i.src = u; IMGS[u] = i; } return IMGS[u]; };
+const ok = i => i && i.complete && i.naturalWidth;
+
+// ---------- working state ----------
+const S = { planet: null, view: 'outdoor', mode: 'props', zoom: 2, ox: 40, oy: 40, sheet: null, stamp: null, sel: null, walls: false, brush: '#', drag: null, pan: null };
+let LAYOUT = {}, MOVES = {}, ADDED = {}, REMOVED = {}, MONS = {}, MAPS = [], ROWS = {}, NEWIMG = {};
+const DIRTY = new Set();
+const HIST = [];
+function snap() { HIST.push(JSON.stringify({ LAYOUT, MOVES, ADDED, REMOVED, MONS, ROWS })); if (HIST.length > 60) HIST.shift(); }
+function undo() { const h = HIST.pop(); if (!h) return toast('Nothing to undo'); ({ LAYOUT, MOVES, ADDED, REMOVED, MONS, ROWS } = JSON.parse(h)); S.sel = null; panel(); draw(); }
+function touch(sid) { DIRTY.add(sid); $('#save').classList.add('hot'); }
+
+// ---------- data helpers ----------
+const sec = id => ED.sections[id];
+const rowsOf = id => ROWS[id] || (sec(id).rows || []);
+const planetSecs = () => Object.values(ED.sections).filter(s => s.dir === S.planet);
+const viewSecs = () => S.view === 'outdoor' ? planetSecs().filter(s => s.grid) : [sec(S.view)].filter(Boolean);
+const origin = s => S.view === 'outdoor' ? [s.grid[0] * 16, s.grid[1] * 16] : [0, 0];
+const propInfo = p => { const [d, n] = p.split('/'); const m = (ED.props[d] || []).find(m => String(m.n).padStart(2, '0') === n); return m; };
+function propBox(q) {
+  const m = propInfo(q.p); if (!m) return null; const [pw, ph] = m.px, w = q.w || Math.max(1, Math.round(pw / 16)), h = q.h || 1;
+  const X = q.x * 16 + (w * 16 - pw) / 2 + (q.ox || 0), Y = q.solid === false ? q.y * 16 + Math.round((h * 16 - ph) / 2) : (q.y + h) * 16 - ph;
+  return { X, Y, pw, ph, w, h, url: m.url };
+}
+function npcsOf(id) {
+  const base = (sec(id).npcs || []).filter(n => !(REMOVED[id] || []).includes(n.src)).map(n => {
+    const mv = (MOVES[id] || {})[n.src]; return { ...n, x: mv ? mv[0] : n.x, y: mv ? mv[1] : n.y, ref: { kind: 'npc', sid: id, src: n.src } };
+  });
+  const seen = new Set(); const uniq = base.filter(n => { const k = n.src || Math.random(); if (seen.has(k)) return false; seen.add(k); return true; });
+  return uniq.concat((ADDED[id] || []).map((a, i) => ({ x: a.tile[0], y: a.tile[1], art: a.art, name: a.name, added: true, ref: { kind: 'added', sid: id, i } })));
+}
+const monsOf = id => (MONS[id] || sec(id).mons || []);
+function blockedKeys(id) {   // tiles nothing may stand on: doors, warps, counters, spawns and the exit bands
+  const s = sec(id), k = new Set(), [W, H] = s.tiles, add = (x, y) => k.add(x + ',' + y);
+  for (const w of s.warps) add(...w.tile);
+  for (const o of s.objects) if (o.k !== 'stash') { add(...o.tile); if (['house', 'bay', 'shop'].includes(o.k)) add(o.tile[0], o.tile[1] + 1); }
+  for (const v of Object.values(s.spawns || {})) if (v) add(...v);
+  for (const [side, e] of Object.entries(s.edges || {})) for (let i = e.range[0]; i <= e.range[1]; i++) for (let d = 0; d < 2; d++)
+    add(...({ left: [d, i], right: [W - 1 - d, i], top: [i, d], bottom: [i, H - 1 - d] })[side]);
+  return k;
+}
+
+// ---------- drawing ----------
+const cv = $('#map'), ctx = cv.getContext('2d');
+function resize() { cv.width = cv.clientWidth * devicePixelRatio; cv.height = cv.clientHeight * devicePixelRatio; draw(); }
+function draw() {
+  if (!ED) return;
+  ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.fillStyle = '#0d0a18'; ctx.fillRect(0, 0, cv.width, cv.height);
+  const z = S.zoom * devicePixelRatio; ctx.setTransform(z, 0, 0, z, S.ox * devicePixelRatio, S.oy * devicePixelRatio); ctx.imageSmoothingEnabled = false;
+  const items = [];
+  for (const s of viewSecs()) {
+    const [ox, oy] = origin(s), [W, H] = s.tiles, im = NEWIMG[s.id] ? img(NEWIMG[s.id]) : img(s.img);
+    if (ok(im)) ctx.drawImage(im, ox, oy, W * 16, H * 16); else { ctx.fillStyle = '#222'; ctx.fillRect(ox, oy, W * 16, H * 16); }
+    ctx.strokeStyle = 'rgba(255,255,255,0.35)'; ctx.lineWidth = 1 / S.zoom; ctx.strokeRect(ox, oy, W * 16, H * 16);
+    ctx.fillStyle = 'rgba(0,0,0,0.6)'; ctx.fillRect(ox, oy, Math.min(W * 16, s.name.length * 5 + 26), 9);
+    ctx.fillStyle = '#ffd23f'; ctx.font = '7px monospace'; ctx.fillText(s.id + ' ' + s.name, ox + 2, oy + 7);
+    if (S.walls || S.mode === 'walls') { const R = rowsOf(s.id);
+      for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) { const c = (R[y] || '')[x];
+        if (c === '#') { ctx.fillStyle = 'rgba(255,40,60,0.35)'; ctx.fillRect(ox + x * 16, oy + y * 16, 16, 16); }
+        else if (c === ',') { ctx.fillStyle = 'rgba(60,255,90,0.25)'; ctx.fillRect(ox + x * 16, oy + y * 16, 16, 16); } }
+      ctx.strokeStyle = 'rgba(255,255,255,0.08)'; for (let x = 0; x <= W; x++) { ctx.beginPath(); ctx.moveTo(ox + x * 16, oy); ctx.lineTo(ox + x * 16, oy + H * 16); ctx.stroke(); }
+      for (let y = 0; y <= H; y++) { ctx.beginPath(); ctx.moveTo(ox, oy + y * 16); ctx.lineTo(ox + W * 16, oy + y * 16); ctx.stroke(); } }
+    if ($('#showdoors').checked) for (const w of s.warps) { ctx.strokeStyle = '#5ff2ff'; ctx.lineWidth = 1.5 / S.zoom; ctx.strokeRect(ox + w.tile[0] * 16 + 1, oy + w.tile[1] * 16 + 1, 14, 14); }
+    (LAYOUT[s.id] || []).forEach((q, i) => { const b = propBox(q); if (b) items.push({ y: q.solid === false ? -1e9 : (q.y + b.h - 1) * 16, d: () => { const im = img(b.url); if (ok(im)) ctx.drawImage(im, ox + b.X, oy + b.Y); }, ref: { kind: 'prop', sid: s.id, i }, box: [ox + b.X, oy + b.Y, b.pw, b.ph] }); });
+    for (const n of npcsOf(s.id)) { const u = ED.chars[n.art]; items.push({ y: n.y * 16 + 1, d: () => { const im = img(u); if (ok(im)) ctx.drawImage(im, ox + n.x * 16 - 4, oy + n.y * 16 - 8, 24, 24); else { ctx.fillStyle = '#ff8a1e'; ctx.fillRect(ox + n.x * 16 + 4, oy + n.y * 16 + 2, 8, 12); } }, ref: n.ref, box: [ox + n.x * 16 - 4, oy + n.y * 16 - 8, 24, 24] }); }
+    monsOf(s.id).forEach((m, i) => { const u = ED.mons[m.mon]; items.push({ y: m.y * 16 + 2, d: () => { const im = img(u); if (ok(im)) ctx.drawImage(im, 0, 0, 64, 64, ox + m.x * 16 - 2, oy + m.y * 16 - 5, 20, 20); }, ref: { kind: 'mon', sid: s.id, i }, box: [ox + m.x * 16 - 2, oy + m.y * 16 - 5, 20, 20] }); });
+    for (const o of s.objects) if (o.k === 'stash') { ctx.fillStyle = '#b07cff'; ctx.fillRect(ox + o.tile[0] * 16 + 3, oy + o.tile[1] * 16 + 5, 10, 9); }
+  }
+  items.sort((a, b) => a.y - b.y).forEach(it => it.d());
+  draw.items = items;
+  if (S.sel) { const it = items.find(it => same(it.ref, S.sel)); if (it) { ctx.strokeStyle = '#ffd23f'; ctx.lineWidth = 1.5 / S.zoom; ctx.setLineDash([3 / S.zoom, 2 / S.zoom]); ctx.strokeRect(...it.box); ctx.setLineDash([]); } }
+  if (S.hover && S.stamp) { const [hx, hy] = S.hover; ctx.strokeStyle = 'rgba(255,210,63,0.9)'; ctx.lineWidth = 1 / S.zoom; ctx.strokeRect(hx.ox + hx.x * 16, hx.oy + hx.y * 16, (S.stamp.w || 1) * 16, 16); }
+}
+const same = (a, b) => a && b && a.kind === b.kind && a.sid === b.sid && a.i === b.i && a.src === b.src;
+
+// ---------- picking tiles ----------
+function toWorld(e) { const r = cv.getBoundingClientRect(); return [(e.clientX - r.left - S.ox) / S.zoom, (e.clientY - r.top - S.oy) / S.zoom]; }
+function tileAt(wx, wy) {
+  for (const s of viewSecs()) { const [ox, oy] = origin(s), [W, H] = s.tiles, x = Math.floor((wx - ox) / 16), y = Math.floor((wy - oy) / 16);
+    if (x >= 0 && y >= 0 && x < W && y < H) return { sid: s.id, x, y, ox, oy }; }
+  return null;
+}
+function itemAt(wx, wy) { const its = (draw.items || []).slice().reverse(); return its.find(it => wx >= it.box[0] && wx < it.box[0] + it.box[2] && wy >= it.box[1] && wy < it.box[1] + it.box[3]); }
+
+// ---------- placing / moving ----------
+function canStand(sid, x, y, ignore) {
+  const R = rowsOf(sid), c = (R[y] || '')[x];
+  if (c !== '.' && c !== ',') return 'That tile is a wall.';
+  if (blockedKeys(sid).has(x + ',' + y)) return 'Keep doors, exits and counters clear.';
+  for (const q of LAYOUT[sid] || []) { if (q.solid === false) continue; const b = propBox(q); if (b && x >= q.x && x < q.x + b.w && y >= q.y && y < q.y + b.h) return 'A prop is there.'; }
+  if (npcsOf(sid).some(n => n.x === x && n.y === y && !same(n.ref, ignore))) return 'Someone is standing there.';
+  if (monsOf(sid).some((m, i) => m.x === x && m.y === y && !same({ kind: 'mon', sid, i }, ignore))) return 'An Alienmon is there.';
+  return null;
+}
+function canProp(sid, x, y, w, h, flat) {
+  const k = blockedKeys(sid);
+  for (let j = 0; j < h; j++) for (let i = 0; i < w; i++) { if (k.has((x + i) + ',' + (y + j))) return 'Keep doors, exits and counters clear.';
+    if (!flat && (npcsOf(sid).some(n => n.x === x + i && n.y === y + j))) return 'Someone is standing there.'; }
+  return null;
+}
+function place(t) {
+  if (!S.stamp || !t) return;
+  const st = S.stamp;
+  if (st.kind === 'prop') { const m = propInfo(st.p), w = Math.max(1, Math.round(m.px[0] / 16)), why = canProp(t.sid, t.x, t.y, w, 1, st.flat);
+    if (why) return toast(why); snap(); (LAYOUT[t.sid] = LAYOUT[t.sid] || []).push({ p: st.p, x: t.x, y: t.y, ...(st.flat ? { solid: false, h: 2 } : {}) }); S.sel = { kind: 'prop', sid: t.sid, i: LAYOUT[t.sid].length - 1 }; }
+  else if (st.kind === 'char') { const why = canStand(t.sid, t.x, t.y); if (why) return toast(why); snap();
+    (ADDED[t.sid] = ADDED[t.sid] || []).push({ art: st.art, name: st.name || '', tile: [t.x, t.y], face: 'down', t: [st.line || ((st.name ? st.name + ': ' : '') + 'Nice day, isn\'t it?')] }); S.sel = { kind: 'added', sid: t.sid, i: ADDED[t.sid].length - 1 }; }
+  else if (st.kind === 'mon') { const why = canStand(t.sid, t.x, t.y); if (why) return toast(why); snap();
+    if (!MONS[t.sid]) MONS[t.sid] = (sec(t.sid).mons || []).map(m => ({ ...m })); MONS[t.sid].push({ mon: st.mon, x: t.x, y: t.y }); S.sel = { kind: 'mon', sid: t.sid, i: MONS[t.sid].length - 1 }; }
+  touch(t.sid); panel(); draw();
+}
+function moveSel(t, dx, dy) {   // to tile t, or by dx,dy tiles
+  const r = S.sel; if (!r) return;
+  const cur = selPos(); if (!cur) return; const nx = t ? t.x : cur[0] + dx, ny = t ? t.y : cur[1] + dy; if (t && t.sid !== r.sid) return toast('Move it within its own map piece.');
+  if (r.kind === 'prop') { const q = LAYOUT[r.sid][r.i], b = propBox(q), why = canProp(r.sid, nx, ny, b.w, b.h, q.solid === false); if (why) return toast(why); q.x = nx; q.y = ny; }
+  else { const why = canStand(r.sid, nx, ny, r); if (why) return toast(why);
+    if (r.kind === 'npc') { (MOVES[r.sid] = MOVES[r.sid] || {})[r.src] = [nx, ny]; }
+    else if (r.kind === 'added') ADDED[r.sid][r.i].tile = [nx, ny];
+    else if (r.kind === 'mon') { if (!MONS[r.sid]) MONS[r.sid] = (sec(r.sid).mons || []).map(m => ({ ...m })); MONS[r.sid][r.i].x = nx; MONS[r.sid][r.i].y = ny; } }
+  touch(r.sid); panel(); draw();
+}
+function selPos() { const r = S.sel; if (!r) return null;
+  if (r.kind === 'prop') { const q = (LAYOUT[r.sid] || [])[r.i]; return q && [q.x, q.y]; }
+  if (r.kind === 'mon') { const m = monsOf(r.sid)[r.i]; return m && [m.x, m.y]; }
+  const n = npcsOf(r.sid).find(n => same(n.ref, r)); return n && [n.x, n.y]; }
+function delSel() { const r = S.sel; if (!r) return; snap();
+  if (r.kind === 'prop') LAYOUT[r.sid].splice(r.i, 1);
+  else if (r.kind === 'added') ADDED[r.sid].splice(r.i, 1);
+  else if (r.kind === 'npc') { if (!confirm('Remove this person from the map? (Story characters may be needed by quests.)')) return; (REMOVED[r.sid] = REMOVED[r.sid] || []).push(r.src); }
+  else if (r.kind === 'mon') { if (!MONS[r.sid]) MONS[r.sid] = (sec(r.sid).mons || []).map(m => ({ ...m })); MONS[r.sid].splice(r.i, 1); }
+  touch(r.sid); S.sel = null; panel(); draw(); }
+function paint(t) { if (!t) return; const R = rowsOf(t.sid).slice(), row = R[t.y].split(''); if (row[t.x] === S.brush) return;
+  if (S.brush !== '#' || !blockedKeys(t.sid).has(t.x + ',' + t.y) || confirm('This tile is a door, exit or spawn. Make it a wall anyway?')) { row[t.x] = S.brush; R[t.y] = row.join(''); ROWS[t.sid] = R; touch(t.sid); draw(); } }
+
+// ---------- mouse / keys ----------
+cv.addEventListener('pointerdown', e => {
+  cv.setPointerCapture(e.pointerId); const [wx, wy] = toWorld(e), t = tileAt(wx, wy);
+  if (e.button === 1 || e.button === 2 || e.altKey || !t) { S.pan = [e.clientX - S.ox, e.clientY - S.oy]; return; }
+  if (S.mode === 'walls') { snap(); S.painting = true; paint(t); return; }
+  if (S.stamp) { place(t); if (!e.shiftKey) { /* keep stamping until Esc so rows of lamps are quick */ } return; }
+  const it = itemAt(wx, wy);
+  if (it) { S.sel = it.ref; snap(); S.drag = true; panel(); draw(); } else { S.sel = null; S.pan = [e.clientX - S.ox, e.clientY - S.oy]; panel(); draw(); }
+});
+cv.addEventListener('pointermove', e => {
+  const [wx, wy] = toWorld(e), t = tileAt(wx, wy);
+  if (S.pan) { S.ox = e.clientX - S.pan[0]; S.oy = e.clientY - S.pan[1]; draw(); return; }
+  if (S.painting) { paint(t); return; }
+  if (S.drag && t && S.sel) { const p = selPos(); if (p && (p[0] !== t.x || p[1] !== t.y)) moveSel(t); return; }
+  S.hover = t ? [t] : null; if (S.stamp) { if (t) S.hover = [{ ...t }]; draw(); }
+  $('#where').textContent = t ? `${t.sid} ${sec(t.sid).name}  tile ${t.x},${t.y}` : '';
+});
+addEventListener('pointerup', () => { S.pan = null; S.drag = false; S.painting = false; });
+cv.addEventListener('wheel', e => { e.preventDefault(); const r = cv.getBoundingClientRect(), mx = e.clientX - r.left, my = e.clientY - r.top, z0 = S.zoom;
+  S.zoom = Math.max(0.25, Math.min(8, S.zoom * (e.deltaY < 0 ? 1.15 : 1 / 1.15))); S.ox = mx - (mx - S.ox) * S.zoom / z0; S.oy = my - (my - S.oy) * S.zoom / z0; draw(); }, { passive: false });
+cv.addEventListener('contextmenu', e => e.preventDefault());
+addEventListener('keydown', e => {
+  if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.tagName === 'SELECT') return;
+  if (e.key === 'Escape') { S.stamp = null; S.sel = null; panel(); draw(); }
+  else if (e.key === 'Delete' || e.key === 'Backspace') { e.preventDefault(); delSel(); }
+  else if ((e.ctrlKey || e.metaKey) && e.key === 'z') { e.preventDefault(); undo(); }
+  else if ((e.ctrlKey || e.metaKey) && e.key === 'c' && S.sel && S.sel.kind === 'prop') { const q = LAYOUT[S.sel.sid][S.sel.i]; S.stamp = { kind: 'prop', p: q.p, flat: q.solid === false }; toast('Copied: click to place copies, Esc to stop'); }
+  else if (e.key.startsWith('Arrow') && S.sel) { e.preventDefault(); const d = { ArrowLeft: [-1, 0], ArrowRight: [1, 0], ArrowUp: [0, -1], ArrowDown: [0, 1] }[e.key];
+    snap(); if (e.shiftKey && S.sel.kind === 'prop') { const q = LAYOUT[S.sel.sid][S.sel.i]; q.ox = (q.ox || 0) + d[0]; touch(S.sel.sid); draw(); } else moveSel(null, d[0], d[1]); }
+});
+
+// ---------- side panel ----------
+function panel() {
+  const P = $('#panel'), m = S.mode; let h = '';
+  if (S.sel) h += selPanel();
+  if (m === 'props') {
+    h += `<h3>Props</h3><label>Sheet <select id="sheet">${Object.keys(ED.props).map(d => `<option ${d === S.sheet ? 'selected' : ''}>${d}</option>`).join('')}</select></label>
+      <label class="row"><input type="checkbox" id="flat" ${S.flatNext ? 'checked' : ''}> place as a flat rug (walk over it)</label>
+      <div class="grid">${(ED.props[S.sheet] || []).map(p => { const key = S.sheet + '/' + String(p.n).padStart(2, '0'); return `<button class="pal ${S.stamp && S.stamp.p === key ? 'on' : ''}" data-p="${key}" title="#${p.n}"><img src="${p.url}"></button>`; }).join('')}</div>`;
+  } else if (m === 'people') {
+    h += `<h3>People</h3><p class="hint">Pick a character, then click the map. Drag anyone to move them.</p>
+      <label>Name (optional) <input id="pname" value="${S.pname || ''}"></label><label>What they say <input id="pline" value="${S.pline || ''}" placeholder="Nice day, isn't it?"></label>
+      <div class="grid">${Object.entries(ED.chars).map(([k, u]) => `<button class="pal ${S.stamp && S.stamp.art === k ? 'on' : ''}" data-c="${k}" title="${k}"><img src="${u}"></button>`).join('')}</div>`;
+  } else if (m === 'mons') {
+    h += `<h3>Wild Alienmon</h3><p class="hint">Roaming Alienmon you can bump into for a battle. Placing one here replaces the automatic ones on that map piece.</p>
+      <input id="msearch" placeholder="Search Alienmon" value="${S.msearch || ''}">
+      <div class="grid">${Object.entries(ED.mons).filter(([k]) => !S.msearch || k.toLowerCase().includes(S.msearch.toLowerCase())).map(([k, u]) => `<button class="pal mon ${S.stamp && S.stamp.mon === k ? 'on' : ''}" data-m="${k}" title="${k}"><span style="background-image:url(${u})"></span></button>`).join('')}</div>`;
+  } else if (m === 'walls') {
+    h += `<h3>Walls</h3><p class="hint">Paint where you can walk. Red = wall, green = tall grass (wild battles), clear = walkable.</p>
+      <div class="row">${[['#', 'Wall'], ['.', 'Walkable'], [',', 'Tall grass']].map(([c, n]) => `<button class="tool ${S.brush === c ? 'on' : ''}" data-b="${c}">${n}</button>`).join('')}</div>`;
+  } else if (m === 'maps') h += mapPanel();
+  h += `<h3>Check</h3><button id="check">Check edited maps</button><div id="checkout"></div>`;
+  P.innerHTML = h; wire();
+}
+function selPanel() {
+  const r = S.sel, p = selPos(); if (!p) return '';
+  let name = r.kind === 'prop' ? 'Prop ' + LAYOUT[r.sid][r.i].p : r.kind === 'mon' ? monsOf(r.sid)[r.i].mon : (npcsOf(r.sid).find(n => same(n.ref, r)) || {}).name || 'Townsperson';
+  let extra = '';
+  if (r.kind === 'added') { const a = ADDED[r.sid][r.i]; extra = `<label>Name <input id="ename" value="${a.name || ''}"></label><label>Says <textarea id="eline">${(a.t || []).join('\n')}</textarea></label>`; }
+  return `<div class="sel"><b>${name}</b><div>${r.sid} ${sec(r.sid).name} · tile ${p[0]},${p[1]}</div>${extra}
+    <div class="hint">Drag to move · arrows move a tile${r.kind === 'prop' ? ' · Shift+arrows nudge a pixel · Ctrl+C copy' : ''} · Delete removes</div><button id="del">Remove</button></div>`;
+}
+function mapPanel() {
+  const outs = planetSecs().filter(s => s.grid);
+  return `<h3>Grow this world</h3><p class="hint">Upload a new map render (same style and scale as the others: 64 px per tile, 1536×1024 wide or 1024×1024 square) and attach it to the edge of an existing map piece.</p>
+    <input type="file" id="mfile" accept="image/*">
+    <label>Name <input id="mname" placeholder="e.g. Rimwalk Trail Part C"></label>
+    <label>Kind <select id="mtype"><option>route</option><option>town</option><option>field</option><option>landmark</option></select></label>
+    <label>Attach to <select id="mto">${outs.map(s => `<option value="${s.id}">${s.id} ${s.name}</option>`).join('')}</select></label>
+    <label>On its <select id="mside"><option>right</option><option>left</option><option>top</option><option>bottom</option></select> edge</label>
+    <label>Opening, tiles <input id="mband" value="5-10" size="6"> (rows for left/right, columns for top/bottom)</label>
+    <button id="madd">Add map piece</button>
+    <p class="hint">The new piece starts fully walkable inside a wall border with the opening cut on the joining edge. Use Walls to paint its walls, then dress it.</p>
+    ${MAPS.length ? '<h4>Added this session</h4>' + MAPS.map(m => `<div>${m.id} ${m.name} → ${m.attach.side} of ${m.attach.to}</div>`).join('') : ''}`;
+}
+function wire() {
+  const on = (sel, ev, f) => { const el = $(sel); if (el) el.addEventListener(ev, f); };
+  on('#sheet', 'change', e => { S.sheet = e.target.value; panel(); });
+  on('#flat', 'change', e => { S.flatNext = e.target.checked; if (S.stamp && S.stamp.kind === 'prop') S.stamp.flat = S.flatNext; });
+  document.querySelectorAll('[data-p]').forEach(b => b.onclick = () => { S.stamp = { kind: 'prop', p: b.dataset.p, flat: !!S.flatNext }; S.sel = null; panel(); });
+  document.querySelectorAll('[data-c]').forEach(b => b.onclick = () => { S.stamp = { kind: 'char', art: b.dataset.c, name: S.pname, line: S.pline }; S.sel = null; panel(); });
+  document.querySelectorAll('[data-m]').forEach(b => b.onclick = () => { S.stamp = { kind: 'mon', mon: b.dataset.m }; S.sel = null; panel(); });
+  document.querySelectorAll('[data-b]').forEach(b => b.onclick = () => { S.brush = b.dataset.b; panel(); });
+  on('#pname', 'input', e => { S.pname = e.target.value; if (S.stamp) S.stamp.name = S.pname; });
+  on('#pline', 'input', e => { S.pline = e.target.value; if (S.stamp) S.stamp.line = S.pline; });
+  on('#msearch', 'input', e => { S.msearch = e.target.value; const pos = e.target.selectionStart; panel(); const i = $('#msearch'); i.focus(); i.setSelectionRange(pos, pos); });
+  on('#del', 'click', delSel);
+  on('#ename', 'input', e => { const a = ADDED[S.sel.sid][S.sel.i]; a.name = e.target.value; touch(S.sel.sid); });
+  on('#eline', 'input', e => { const a = ADDED[S.sel.sid][S.sel.i]; a.t = e.target.value.split('\n').filter(Boolean); touch(S.sel.sid); });
+  on('#check', 'click', check);
+  on('#madd', 'click', addMap);
+}
+
+// ---------- checks ----------
+function check() {
+  const out = [];
+  for (const id of DIRTY) { const s = sec(id); if (!s || !rowsOf(id).length) continue; const [W, H] = s.tiles, R = rowsOf(id), block = new Set();
+    for (const q of LAYOUT[id] || []) { if (q.solid === false) continue; const b = propBox(q); if (b) for (let j = 0; j < b.h; j++) for (let i = 0; i < b.w; i++) block.add((q.x + i) + ',' + (q.y + j)); }
+    for (const n of npcsOf(id)) block.add(n.x + ',' + n.y); for (const m of monsOf(id)) block.add(m.x + ',' + m.y);
+    const walk = (x, y) => x >= 0 && y >= 0 && x < W && y < H && '.,'.includes((R[y] || '')[x]) && !block.has(x + ',' + y);
+    const keys = [...blockedKeys(id)].map(k => k.split(',').map(Number)).filter(([x, y]) => walk(x, y) || s.warps.some(w => w.tile[0] === x && w.tile[1] === y));
+    const starts = keys.filter(([x, y]) => walk(x, y)); if (!starts.length) continue;
+    const seen = new Set([starts[0].join(',')]), q = [starts[0]];
+    while (q.length) { const [x, y] = q.shift(); for (const [a, b] of [[1, 0], [-1, 0], [0, 1], [0, -1]]) { const k = (x + a) + ',' + (y + b); if (!seen.has(k) && walk(x + a, y + b)) { seen.add(k); q.push([x + a, y + b]); } } }
+    const cut = starts.filter(k => !seen.has(k.join(',')));
+    out.push(cut.length ? `<div class="bad">${id} ${s.name}: ${cut.length} door/exit tile(s) cut off, e.g. ${cut[0]}</div>` : `<div class="good">${id} ${s.name}: all doors and exits reachable</div>`); }
+  $('#checkout').innerHTML = out.join('') || '<div class="hint">No edited maps yet.</div>';
+  return !out.some(o => o.includes('class="bad"'));
+}
+
+// ---------- growing a world ----------
+async function addMap() {
+  const f = $('#mfile').files[0], name = ($('#mname').value || '').trim(); if (!f || !name) return toast('Choose an image and give it a name.');
+  const to = $('#mto').value, side = $('#mside').value, band = ($('#mband').value || '5-10').split('-').map(Number), t = sec(to);
+  if ((t.edges || {})[side] || MAPS.some(m => m.attach.to === to && m.attach.side === side)) return toast(`${to} already has an exit on its ${side} edge.`);
+  const im = await new Promise((res, rej) => { const i = new Image(); i.onload = () => res(i); i.onerror = rej; i.src = URL.createObjectURL(f); });
+  const per = im.naturalWidth >= 600 ? 64 : 16, W = Math.max(8, Math.round(im.naturalWidth / per)), H = Math.max(8, Math.round(im.naturalHeight / per));
+  const c = document.createElement('canvas'); c.width = W * 16; c.height = H * 16; const g = c.getContext('2d'); g.imageSmoothingQuality = 'high'; g.drawImage(im, 0, 0, W * 16, H * 16);
+  const used = new Set(Object.keys(ED.sections)); let n = 300; while (used.has(String(n))) n++; const id = String(n);
+  const slug = name.toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, ''), dir = t.dir, url = c.toDataURL('image/png');
+  const opp = { left: 'right', right: 'left', top: 'bottom', bottom: 'top' }[side];
+  const R = Array.from({ length: H }, (_, y) => Array.from({ length: W }, (_, x) => (x === 0 || y === 0 || x === W - 1 || y === H - 1) ? '#' : '.'));
+  // cut the opening on that edge and carve inward until it meets walkable ground (at most 8 tiles), so the join is never a dead wall
+  const open = (rows, s2, w, h) => { const [dx, dy] = { left: [1, 0], right: [-1, 0], top: [0, 1], bottom: [0, -1] }[s2];
+    for (let k = band[0]; k <= band[1]; k++) { let [x, y] = { left: [0, k], right: [w - 1, k], top: [k, 0], bottom: [k, h - 1] }[s2];
+      for (let step = 0; step < 8 && rows[y] && rows[y][x] !== undefined; step++) { const was = rows[y][x]; rows[y][x] = '.'; if (step > 0 && was !== '#') break; x += dx; y += dy; } } };
+  open(R, opp, W, H);
+  const TR = rowsOf(to).map(r => r.split('')); open(TR, side, ...t.tiles); ROWS[to] = TR.map(r => r.join('')); touch(to);
+  const grid = t.grid ? { right: [t.grid[0] + t.tiles[0], t.grid[1]], left: [t.grid[0] - W, t.grid[1]], bottom: [t.grid[0], t.grid[1] + t.tiles[1]], top: [t.grid[0], t.grid[1] - H] }[side] : null;
+  ED.sections[id] = { id, name, planet: t.planet, dir, type: $('#mtype').value, tiles: [W, H], grid, img: url, rows: R.map(r => r.join('')), edges: { [opp]: { to, range: band } }, warps: [], objects: [], spawns: {}, npcs: [], mons: [] };
+  t.edges = Object.assign({}, t.edges, { [side]: { to: id, range: band } });
+  ROWS[id] = ED.sections[id].rows; NEWIMG[id] = url; touch(id);
+  MAPS.push({ id, name, dir, planet: t.planet, type: $('#mtype').value, tiles: [W, H], img: `art/sections_game/${dir}/${id}_${slug}.png`, attach: { to, side, band } });
+  toast(`Added ${id} ${name} (${W}×${H} tiles). Paint its walls, then dress it.`); panel(); draw();
+}
+
+// ---------- saving ----------
+function bundle() {
+  const npcs = { moves: MOVES, added: ADDED, removed: REMOVED };
+  const coll = {}; for (const id of Object.keys(ROWS)) coll[id] = { id, name: sec(id).name, tiles: sec(id).tiles, edited: true, legend: { '.': 'walk', '#': 'blocked', ',': 'tall grass' }, rows: ROWS[id] };
+  const images = {}; for (const m of MAPS) images[m.img] = NEWIMG[m.id];
+  return { version: 1, layout: LAYOUT, npcs, mons: MONS, maps: MAPS, collision: coll, images };
+}
+let DIR = null;
+async function save() {
+  if (DIRTY.size && !check() && !confirm('Some doors or exits are cut off on the maps listed under Check. Save anyway?')) return;
+  const b = bundle();
+  if (!window.showDirectoryPicker) { download(b); return; }
+  try {
+    if (!DIR) { DIR = await showDirectoryPicker({ id: 'alienmon-app', mode: 'readwrite' });
+      try { await (await DIR.getDirectoryHandle('tools')).getFileHandle('build.js'); } catch (e) { DIR = null; return toast('Pick the alienmon-app folder (the one with tools and data inside).'); } }
+    const put = async (rel, data) => { const parts = rel.split('/'); let d = DIR; for (const p of parts.slice(0, -1)) d = await d.getDirectoryHandle(p, { create: true });
+      const fh = await d.getFileHandle(parts[parts.length - 1], { create: true }), w = await fh.createWritable(); await w.write(data); await w.close(); };
+    await put('data/sections/props_layout.json', JSON.stringify(b.layout, null, 0));
+    await put('data/editor/npcs.json', JSON.stringify(b.npcs, null, 1));
+    await put('data/editor/mons.json', JSON.stringify(b.mons, null, 1));
+    await put('data/editor/maps.json', JSON.stringify(b.maps, null, 1));
+    for (const [id, c] of Object.entries(b.collision)) await put(`data/collision/${id}.json`, JSON.stringify(c));
+    for (const [rel, url] of Object.entries(b.images)) await put(rel, await (await fetch(url)).blob());
+    DIRTY.clear(); $('#save').classList.remove('hot');
+    toast('Saved into the game folder. Run tools\\editor\\apply.cmd (or ask Claude to apply the editor changes) to rebuild and publish.', 9000);
+  } catch (e) { if (e.name !== 'AbortError') { console.error(e); toast('Could not save to the folder, downloading the changes instead.'); download(b); } }
+}
+function download(b) { const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([JSON.stringify(b)], { type: 'application/json' })); a.download = 'editor_changes.json'; a.click();
+  toast('Downloaded editor_changes.json. Send it to Claude, or run: python tools/editor/apply.py --from editor_changes.json', 9000); }
+
+// ---------- chrome ----------
+let TT = null;
+function toast(t, ms = 3000) { const el = $('#toast'); el.textContent = t; el.classList.add('on'); clearTimeout(TT); TT = setTimeout(() => el.classList.remove('on'), ms); }
+function fit() { const ss = viewSecs(); if (!ss.length) return; let x0 = 1e9, y0 = 1e9, x1 = -1e9, y1 = -1e9;
+  for (const s of ss) { const [ox, oy] = origin(s); x0 = Math.min(x0, ox); y0 = Math.min(y0, oy); x1 = Math.max(x1, ox + s.tiles[0] * 16); y1 = Math.max(y1, oy + s.tiles[1] * 16); }
+  S.zoom = Math.max(0.25, Math.min(6, Math.min(cv.clientWidth / (x1 - x0 + 40), cv.clientHeight / (y1 - y0 + 40)))); S.ox = 20 - x0 * S.zoom; S.oy = 20 - y0 * S.zoom; draw(); }
+function views() { const ss = planetSecs().sort((a, b) => a.id.localeCompare(b.id));
+  $('#view').innerHTML = `<option value="outdoor">Whole world (outdoor maps stitched)</option>` + ss.map(s => `<option value="${s.id}" ${S.view === s.id ? 'selected' : ''}>${s.id} ${s.name}${s.grid ? '' : ' (inside)'}</option>`).join(''); $('#view').value = S.view; }
+async function boot() {
+  ED = await (await fetch('editor_data.json', { cache: 'no-store' })).json();
+  LAYOUT = ED.layout || {}; MOVES = (ED.edits.npcs || {}).moves || {}; ADDED = (ED.edits.npcs || {}).added || {}; REMOVED = (ED.edits.npcs || {}).removed || {}; MONS = ED.edits.mons || {}; MAPS = ED.edits.maps || [];
+  const dirs = Object.keys(ED.planets).sort(); S.planet = dirs[0]; S.sheet = Object.keys(ED.props).find(d => d === S.planet) || Object.keys(ED.props)[0];
+  $('#planet').innerHTML = dirs.map(d => `<option value="${d}">${ED.planets[d]}</option>`).join('');
+  $('#planet').onchange = e => { S.planet = e.target.value; S.view = 'outdoor'; S.sel = null; if (ED.props[S.planet]) S.sheet = S.planet; views(); panel(); fit(); };
+  $('#view').onchange = e => { S.view = e.target.value; S.sel = null; fit(); };
+  document.querySelectorAll('[data-mode]').forEach(b => b.onclick = () => { S.mode = b.dataset.mode; S.stamp = null; document.querySelectorAll('[data-mode]').forEach(x => x.classList.toggle('on', x === b)); panel(); draw(); });
+  $('#walls').onchange = e => { S.walls = e.target.checked; draw(); }; $('#showdoors').onchange = draw;
+  $('#zin').onclick = () => { S.zoom = Math.min(8, S.zoom * 1.25); draw(); }; $('#zout').onclick = () => { S.zoom = Math.max(0.25, S.zoom / 1.25); draw(); }; $('#zfit').onclick = fit;
+  $('#undo').onclick = undo; $('#save').onclick = save;
+  addEventListener('beforeunload', e => { if (DIRTY.size) { e.preventDefault(); e.returnValue = ''; } });
+  addEventListener('resize', resize); views(); panel(); resize(); fit();
+}
+boot().catch(e => { document.body.insertAdjacentHTML('beforeend', `<p style="color:#f66;padding:16px">Could not load the editor data: ${e.message}</p>`); });

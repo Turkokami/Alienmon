@@ -36,6 +36,27 @@ def open(path, *a, **k):
             d['rows'] = [''.join(r) for r in R]; return io.StringIO(json.dumps(d))
     return _open(path, *a, **k)
 links = json.load(open(os.path.join(ROOT, 'data/sections/links.json'), encoding='utf-8'))
+# ---- map editor (www/editor.html -> data/editor/*.json) ----
+def _ed(name, default):
+    pth = os.path.join(ROOT, 'data/editor', name)
+    return json.load(open(pth, encoding='utf-8')) if os.path.exists(pth) else default
+ED_MAPS, ED_NPCS, ED_MONS = _ed('maps.json', []), _ed('npcs.json', {}), _ed('mons.json', {})
+_SIDE_OPP = {'left': 'right', 'right': 'left', 'top': 'bottom', 'bottom': 'top'}
+_by_id = {a['id']: a for a in atlas}
+for m in ED_MAPS:
+    if m['id'] in _by_id:
+        continue
+    t = _by_id.get(m['attach']['to'])
+    entry = {'id': m['id'], 'planet': m.get('planet') or (t or {}).get('planet', ''), 'name': m['name'], 'type': m.get('type', 'route'),
+             'size_px': [m['tiles'][0] * 64, m['tiles'][1] * 64], 'tiles': m['tiles'], 'tile_px_render': 64, 'tile_px_game': 16,
+             'exits': [], 'notes': 'Added in the map editor', 'file': 'art/sections/' + m['dir'] + '/' + os.path.basename(m['img'])}
+    if t:
+        side, (a, b) = m['attach']['side'], m['attach']['band']
+        kind = 'rows' if side in ('left', 'right') else 'columns'
+        t['exits'] = list(t['exits']) + [f"{side} edge, tile {kind} {a}–{b} → {m['name']}"]
+        entry['exits'].append(f"{_SIDE_OPP[side]} edge, tile {kind} {a}–{b} → {t['name']}")
+    atlas.append(entry)
+    _by_id[m['id']] = entry
 PLANET_NPCS = {}
 for pf in sorted(glob.glob(os.path.join(ROOT, 'data/sections/planets/*.json'))):
     try:
@@ -260,8 +281,23 @@ for sec in world.values():
 # townsfolk (data/sections/npcs.json): pinned tiles are kept; the rest go on open ground once a collision file
 # exists, never on an exit, door or spawn, never next to one, spread apart, and never where they would cut a path
 npc_src = json.load(open(os.path.join(ROOT, 'data/sections/npcs.json'), encoding='utf-8'))
+for _k, _v in npc_src.items():
+    if isinstance(_v, list):
+        for _i, _p in enumerate(_v):
+            if isinstance(_p, dict): _p['src'] = f'n:{_k}:{_i}'
 for _k, _v in PLANET_NPCS.items():   # planet townsfolk join the story characters already listed for that section
+    for _i, _p in enumerate(_v):
+        if isinstance(_p, dict): _p['src'] = f'p:{_k}:{_i}'
     npc_src[_k] = npc_src.get(_k, []) + _v
+for _k, _mv in ED_NPCS.get('moves', {}).items():   # map editor: people moved by hand stand exactly there
+    for _p in npc_src.get(_k, []):
+        if isinstance(_p, dict) and _p.get('src') in _mv:
+            _p['tile'] = _mv[_p['src']]; _p['stay'] = True
+for _k, _rm in ED_NPCS.get('removed', {}).items():
+    npc_src[_k] = [_p for _p in npc_src.get(_k, []) if not (isinstance(_p, dict) and _p.get('src') in _rm)]
+for _k, _add in ED_NPCS.get('added', {}).items():
+    for _i, _p in enumerate(_add):
+        npc_src.setdefault(_k, []).append(dict(_p, stay=True, src=f'e:{_k}:{_i}'))
 
 
 def reach(rows, W, H, start, block):
@@ -466,7 +502,7 @@ for sid, sec in world.items():
         taken.add(t)
         if person.get('wid'):
             wid_tile.setdefault(person['wid'], t)
-        o = {'x': t[0], 'y': t[1], 'art': person['art'], 'face': person.get('face', 'down'), 't': person['t'], **({'name': person['name']} if person.get('name') else {}), **({k: person[k] for k in ('pre', 'story', 'wid', 'after', 'until', 'legend', 'lv', 'flag', 'stay', 'keyline', 'por') if person.get(k)})}
+        o = {'x': t[0], 'y': t[1], 'art': person['art'], 'face': person.get('face', 'down'), 't': person['t'], **({'name': person['name']} if person.get('name') else {}), **({k: person[k] for k in ('pre', 'story', 'wid', 'after', 'until', 'legend', 'lv', 'flag', 'stay', 'keyline', 'por', 'src') if person.get(k)})}
         if person.get('trainer'):
             tr = dict(person['trainer'])
             if person.get('face'):
@@ -658,6 +694,9 @@ for sid, sec in world.items():
             base = reach(rows, W, H, next(iter(keys)), block) if keys else set()
             mons.append({'x': best[0], 'y': best[1], 'mon': name})
     sec['mons'] = mons
+for _k, _ms in ED_MONS.items():   # map editor: hand-placed wild Alienmon (an empty list means none)
+    if _k in world:
+        world[_k]['mons'] = [{'x': m['x'], 'y': m['y'], 'mon': m['mon']} for m in _ms]
 
 # ---- Linker Stashes: one-time item caches, better items as the story goes on, tucked away from the travel lanes ----
 TIER = {'dustara': 1, 'ferrox': 1, 'sporeholm': 2, 'thalassa': 2, 'neonis': 3, 'glyphos': 3, 'pyros': 4, 'glacia': 4,
