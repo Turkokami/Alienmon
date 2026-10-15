@@ -100,7 +100,7 @@ export default async function middleware(request) {
     if ((await token(given)) === want) {
       // alienmon.com serves the website and proxies the game under /play/, so send testers back to the path they signed in from
       let back = '/';
-      try { const ref = new URL(request.headers.get('referer') || ''); if (ref.pathname.startsWith('/play')) back = '/play/'; } catch (e) {}
+      try { const ref = new URL(request.headers.get('referer') || ''); if (ref.pathname.startsWith('/play')) back = '/play/'; else if (ref.pathname === '/editor.html') back = '/editor.html'; } catch (e) {}
       const h = new Headers({ Location: back, 'Cache-Control': 'no-store' });
       h.append('Set-Cookie', `${COOKIE}=${want}; Path=/; Max-Age=2592000; HttpOnly; Secure; SameSite=Lax`);
       h.append('Set-Cookie', `${UI_COOKIE}=1; Path=/; Max-Age=2592000; Secure; SameSite=Lax`);
