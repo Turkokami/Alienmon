@@ -129,8 +129,10 @@ if(PROTO&&!INLINE){
  fs.writeFileSync(path.join(www,'editor_data.json'),JSON.stringify(ED));
  fs.copyFileSync(path.join(root,'tools/editor/editor.html'),path.join(www,'editor.html'));
  fs.copyFileSync(path.join(root,'tools/editor/editor.js'),path.join(www,'editor.js'));
+ if(process.env.EDITOR_SITE==='1'){   // the stand-alone editor site (separate Vercel project): the editor is the home page, no game, no service worker
+  fs.copyFileSync(path.join(www,'editor.html'),path.join(www,'index.html'));for(const f of['sw.js','manifest.webmanifest'])fs.rmSync(path.join(www,f),{force:true})}
  console.log('map editor: www/editor.html ('+Object.keys(ED.sections).length+' sections, '+Object.values(ED.props).reduce((a,b)=>a+b.length,0)+' props)')}
 copy('src/manifest.webmanifest','manifest.webmanifest');copy('art/ui/og.jpg','og.jpg');
-if(!INLINE)fs.writeFileSync(path.join(www,'sw.js'),fs.readFileSync(path.join(root,'src/sw.js'),'utf8').replace(/__BUILD__/g,j(BUILD)));
+if(!INLINE&&process.env.EDITOR_SITE!=='1')fs.writeFileSync(path.join(www,'sw.js'),fs.readFileSync(path.join(root,'src/sw.js'),'utf8').replace(/__BUILD__/g,j(BUILD)));
 const mb=b=>(b/1048576).toFixed(1)+' MB';
 console.log('Built www/index.html ('+mb(Buffer.byteLength(html))+(INLINE?', everything inlined':', '+ASSETS.length+' assets in www/assets')+') with',D.length,'Alienmon across',P.length,'planets.');
