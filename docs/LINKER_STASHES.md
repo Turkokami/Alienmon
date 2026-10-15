@@ -113,16 +113,16 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 
 | Section | Tile | Item | Tier |
 |---|---|---|---|
-| 082 Cinder Hollow | 3,5 | 800x Stardust | 4 |
-| 085 Lava Rail Part A | 7,13 | 2x Ether Gel | 4 |
-| 085 Lava Rail Part A | 16,2 | 2x Revive Spark | 4 |
-| 086 Lava Rail Part B | 19,12 | 800x Stardust | 4 |
-| 086 Lava Rail Part B | 9,10 | 2x Revive Spark | 4 |
-| 087 Deep Mines B1 | 14,12 | 800x Stardust | 4 |
-| 088 Deep Mines B2 | 12,10 | 3x Mega Gel | 4 |
-| 089 Deep Mines B3 | 10,5 | 1x Full Gel | 4 |
-| 090 Furnace Ridge (Pyros) | 7,10 | 2x Revive Spark | 4 |
-| 090 Furnace Ridge (Pyros) | 10,1 | 800x Stardust | 4 |
+| 082 Cinder Hollow | 1,12 | 800x Stardust | 4 |
+| 085 Lava Rail Part A | 14,12 | 2x Ether Gel | 4 |
+| 085 Lava Rail Part A | 17,3 | 2x Revive Spark | 4 |
+| 086 Lava Rail Part B | 11,13 | 800x Stardust | 4 |
+| 086 Lava Rail Part B | 6,2 | 2x Revive Spark | 4 |
+| 087 Deep Mines B1 | 14,7 | 800x Stardust | 4 |
+| 088 Deep Mines B2 | 2,5 | 3x Mega Gel | 4 |
+| 089 Deep Mines B3 | 2,10 | 1x Full Gel | 4 |
+| 090 Furnace Ridge (Pyros) | 19,2 | 2x Revive Spark | 4 |
+| 090 Furnace Ridge (Pyros) | 6,2 | 800x Stardust | 4 |
 
 ## Glacia (13)
 
