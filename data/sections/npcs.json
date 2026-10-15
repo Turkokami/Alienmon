@@ -54,8 +54,8 @@
     "Bram: The drift grass crackles with blue sparks. That's how you know Alienmon are hiding in it!"
    ],
    "tile": [
-    12,
-    7
+    9,
+    13
    ],
    "pre": [
     "Kid: You're getting your first Alienmon today? Lucky! Dr. Vashti's lab is the dome with the telescope."
@@ -73,7 +73,7 @@
    "stay": true,
    "tile": [
     9,
-    7
+    8
    ]
   },
   {
@@ -84,8 +84,8 @@
     "Girl: DX-4 keeps wandering off toward the bridge. Pebblet follows him. I follow Pebblet."
    ],
    "tile": [
-    19,
-    9
+    4,
+    5
    ],
    "name": "Rock-girl",
    "stay": true
@@ -96,8 +96,8 @@
     "Linker: Press START to check your team. A tired Alienmon is a fainted Alienmon waiting to happen."
    ],
    "tile": [
-    5,
-    9
+    21,
+    5
    ],
    "stay": true
   },
@@ -109,7 +109,7 @@
    ],
    "tile": [
     16,
-    7
+    8
    ],
    "stay": true
   },
@@ -119,7 +119,7 @@
     "Watchman: West of here is the landing pad. Ships only leave with launch clearance from a Keeper."
    ],
    "tile": [
-    20,
+    15,
     5
    ],
    "stay": true
@@ -133,8 +133,8 @@
     "DX-4: The bridge crosses the canyon to the east trading post. Mind the lava falls!"
    ],
    "tile": [
-    13,
-    9
+    10,
+    5
    ],
    "stay": true
   },
@@ -146,8 +146,8 @@
     "Dusty: That crater past the falls? The seedpods came down hot as stars twenty years back."
    ],
    "tile": [
-    11,
-    10
+    19,
+    11
    ],
    "stay": true
   },
@@ -161,8 +161,8 @@
     "Kit: Dad gave me his old welding goggles. They're too big. I'm keeping them."
    ],
    "tile": [
-    17,
-    9
+    13,
+    8
    ],
    "face": "left",
    "stay": true
