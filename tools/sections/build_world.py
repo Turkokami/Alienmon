@@ -57,6 +57,25 @@ for m in ED_MAPS:
         entry['exits'].append(f"{_SIDE_OPP[side]} edge, tile {kind} {a}–{b} → {t['name']}")
     atlas.append(entry)
     _by_id[m['id']] = entry
+# routes drawn in the editor's Routes tool: an edge link between two map pieces (replaces whatever that side had)
+for r in _ed('routes.json', []):
+    A, B = _by_id.get(r['a']), _by_id.get(r.get('b'))
+    if not A:
+        continue
+    side, opp = r['side'], _SIDE_OPP[r['side']]
+    old = [e for e in A['exits'] if e.startswith(side + ' edge')]
+    A['exits'] = [e for e in A['exits'] if not e.startswith(side + ' edge')]
+    if B is None and old:   # removing: also drop the far side's line that points back here
+        tname = old[0].split('→')[-1].strip().lower()
+        B = next((x for x in atlas if x['name'].lower() == tname), None)
+    if B:
+        B['exits'] = [e for e in B['exits'] if not (e.startswith(opp + ' edge') and e.split('→')[-1].strip().lower() == A['name'].lower())]
+    if r.get('remove') or not B:
+        continue
+    kind = 'rows' if side in ('left', 'right') else 'columns'
+    A['exits'].append(f"{side} edge, tile {kind} {r['band'][0]}–{r['band'][1]} → {B['name']}")
+    B['exits'] = [e for e in B['exits'] if not e.startswith(opp + ' edge')]
+    B['exits'].append(f"{opp} edge, tile {kind} {r['bband'][0]}–{r['bband'][1]} → {A['name']}")
 PLANET_NPCS = {}
 for pf in sorted(glob.glob(os.path.join(ROOT, 'data/sections/planets/*.json'))):
     try:
@@ -162,6 +181,7 @@ for s in sel:
             report['links outside this build'].append(f"{s['id']} → {t['id']} {t['name']}")
             continue
         back = [b for b in parse(t) if b['edge'] not in ('door', '?') and byname.get(norm(b['target'])) is s]
+        back.sort(key=lambda b: b['edge'] != OPP[ex['edge']])   # two pieces can be joined on more than one side: match the facing edge first
         if back:
             to_edge, to_rng = back[0]['edge'], back[0]['range']
         else:
@@ -268,6 +288,8 @@ for s in sel:
     band[d] = max(placed[i][1] + world[i]['tiles'][1] for i in clus) + 4
 for i, g in placed.items():
     world[i]['grid'] = list(g)
+for i, g in _ed('grid.json', {}).items():   # map pieces arranged by hand in the editor
+    if i in world: world[i]['grid'] = list(g)
 for sec in world.values():
     if 'default' not in sec['spawns'] and sec['edges']:   # outdoor: just inside the first edge exit
         side, e = next(iter(sec['edges'].items()))

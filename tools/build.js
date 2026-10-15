@@ -86,7 +86,7 @@ const SECW=fs.existsSync(path.join(root,'data/world.json'))?JSON.parse(fs.readFi
 const PL_=fs.existsSync(path.join(root,'data/sections/props_layout.json'))?JSON.parse(fs.readFileSync(path.join(root,'data/sections/props_layout.json'),'utf8')):{},PROPS={};
 function props(id,rows){const L=PL_[id];if(!L||!L.length)return rows;const R=rows.map(r=>r.split(''));PROPS[id]=[];
  for(const q of L){const f='art/props/'+q.p+'.png';if(!fs.existsSync(f))continue;const b=fs.readFileSync(f),pw=b.readUInt32BE(16),ph=b.readUInt32BE(20),w=q.w||Math.max(1,Math.round(pw/16)),h=q.h||1;
-  PROPS[id].push([asset(f),q.x,q.y,w,h,pw,ph,q.ox||0,q.solid===false?1:0]);if(q.solid!==false)for(let y=q.y;y<q.y+h;y++)for(let x=q.x;x<q.x+w;x++)if(R[y]&&R[y][x]!==undefined)R[y][x]='#'}
+  PROPS[id].push([asset(f),q.x,q.y,w,h,pw,ph,q.ox||0,q.solid===false?1:0,q.oy||0]);if(q.solid!==false)for(let y=q.y;y<q.y+h;y++)for(let x=q.x;x<q.x+w;x++)if(R[y]&&R[y][x]!==undefined)R[y][x]='#'}
  return R.map(r=>r.join(''))}
 const PB=fs.existsSync(path.join(root,'data/sections/pass_behind.json'))?JSON.parse(fs.readFileSync(path.join(root,'data/sections/pass_behind.json'),'utf8')):{},SECOV={};
 function behind(id,rows){const p=PB[id];if(!p)return rows;const R=rows.map(r=>r.split(''));for(const[x,y]of p.tiles)if(R[y]&&R[y][x]==='#')R[y][x]=':';return R.map(r=>r.join(''))}
@@ -115,7 +115,7 @@ for(const f of fs.readdirSync(path.join(root,'art/ui/icons')))copy('art/ui/icons
 // ---- map editor (prototype builds): www/editor.html + www/editor_data.json ----
 if(PROTO&&!INLINE){
  const rd=(f,d)=>fs.existsSync(path.join(root,f))?JSON.parse(fs.readFileSync(path.join(root,f),'utf8')):d;
- const ED={planets:{},sections:{},props:{},chars:{},mons:{},layout:rd('data/sections/props_layout.json',{}),edits:{npcs:rd('data/editor/npcs.json',{}),mons:rd('data/editor/mons.json',{}),maps:rd('data/editor/maps.json',[])}};
+ const ED={planets:{},sections:{},props:{},chars:{},mons:{},layout:rd('data/sections/props_layout.json',{}),edits:{npcs:rd('data/editor/npcs.json',{}),mons:rd('data/editor/mons.json',{}),maps:rd('data/editor/maps.json',[]),grid:rd('data/editor/grid.json',{}),routes:rd('data/editor/routes.json',[])}};
  for(const[id,sec]of Object.entries(SECW.sections)){const cp=path.join(root,'data/collision',id+'.json');if(!sec.img)continue;
   ED.planets[sec.dir]=sec.planet;
   ED.sections[id]={id,name:sec.name,planet:sec.planet,dir:sec.dir,type:sec.type,tiles:sec.tiles,grid:sec.grid||null,img:asset(sec.img),
