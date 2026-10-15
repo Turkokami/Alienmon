@@ -22,11 +22,10 @@
    ],
    "tile_px_render": 64,
    "tile_px_game": 16,
-   "exits": [
-    "doormat at the bottom center of the room leads back outside"
-   ],
+   "exits": [],
    "notes": "Hero's home ground floor: Mom's kitchen table, stove, TV, stairs up, door at bottom",
-   "file": "art/sections/01_dustara/001_your_house_1f.png"
+   "file": "art/sections/01_dustara/001_your_house_1f.png",
+   "v2": true
   },
   {
    "id": "002",
@@ -43,11 +42,10 @@
    ],
    "tile_px_render": 64,
    "tile_px_game": 16,
-   "exits": [
-    "doormat at the bottom center of the room leads back outside"
-   ],
+   "exits": [],
    "notes": "Hero's bedroom: bed, desk with game console, telescope at the window, poster of the Starfall, stairs down",
-   "file": "art/sections/01_dustara/002_your_house_2f.png"
+   "file": "art/sections/01_dustara/002_your_house_2f.png",
+   "v2": true
   },
   {
    "id": "003",
@@ -64,11 +62,10 @@
    ],
    "tile_px_render": 64,
    "tile_px_game": 16,
-   "exits": [
-    "doormat at the bottom center of the room leads back outside"
-   ],
+   "exits": [],
    "notes": "Domed lab with a big brass telescope, three capsule pedestals for the starters on a table, computers, bookshelves",
-   "file": "art/sections/01_dustara/003_vashti_s_observatory_lab.png"
+   "file": "art/sections/01_dustara/003_vashti_s_observatory_lab.png",
+   "v2": true
   },
   {
    "id": "004",
@@ -86,11 +83,11 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → arrival (landing pad / gate)",
-    "right edge, tile rows 7–8 → Dustmere Bridge"
+    "right edge, tile rows 5–10 → Dustmere Bridge"
    ],
    "notes": "Home town: hero's house, Vashti's observatory dome, Recovery Bay, shop, the bridge exit east, trading post south",
-   "file": "art/sections/01_dustara/004_dustmere_plaza.png"
+   "file": "art/sections/01_dustara/004_dustmere_plaza.png",
+   "v2": true
   },
   {
    "id": "005",
@@ -107,11 +104,10 @@
    ],
    "tile_px_render": 64,
    "tile_px_game": 16,
-   "exits": [
-    "doormat at the bottom center of the room leads back outside"
-   ],
+   "exits": [],
    "notes": "",
-   "file": "art/sections/01_dustara/005_dustmere_recovery_bay.png"
+   "file": "art/sections/01_dustara/005_dustmere_recovery_bay.png",
+   "v2": true
   },
   {
    "id": "006",
@@ -128,11 +124,10 @@
    ],
    "tile_px_render": 64,
    "tile_px_game": 16,
-   "exits": [
-    "doormat at the bottom center of the room leads back outside"
-   ],
+   "exits": [],
    "notes": "",
-   "file": "art/sections/01_dustara/006_dustmere_shop.png"
+   "file": "art/sections/01_dustara/006_dustmere_shop.png",
+   "v2": true
   },
   {
    "id": "007",
@@ -150,11 +145,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Dustmere Plaza",
-    "right edge, tile rows 7–8 → Trading Post"
+    "left edge, tile rows 5–8 → Dustmere Plaza",
+    "right edge, tile rows 5–8 → Trading Post"
    ],
    "notes": "The humming canyon bridge (story: Zib's signal, M02). Long wooden-and-brass bridge over a deep canyon, glowing rune lamps",
-   "file": "art/sections/01_dustara/007_dustmere_bridge.png"
+   "file": "art/sections/01_dustara/007_dustmere_bridge.png",
+   "v2": true
   },
   {
    "id": "008",
@@ -172,11 +168,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Dustmere Bridge",
-    "right edge, tile rows 7–8 → Rimwalk Trail Part A"
+    "left edge, tile rows 5–10 → Dustmere Bridge",
+    "right edge, tile rows 5–10 → Rimwalk Trail Part A"
    ],
    "notes": "Small outpost of stalls and a corral where Sola waits (M03 first rival battle)",
-   "file": "art/sections/01_dustara/008_trading_post.png"
+   "file": "art/sections/01_dustara/008_trading_post.png",
+   "v2": true
   },
   {
    "id": "009",
@@ -194,11 +191,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Trading Post",
-    "right edge, tile rows 7–8 → Rimwalk Trail Part B"
+    "left edge, tile rows 5–8 → Trading Post",
+    "right edge, tile rows 5–8 → Rimwalk Trail Part B"
    ],
    "notes": "Canyon-rim route with drift grass, ledges you hop down, trainers",
-   "file": "art/sections/01_dustara/009_rimwalk_trail_part_a.png"
+   "file": "art/sections/01_dustara/009_rimwalk_trail_part_a.png",
+   "v2": true
   },
   {
    "id": "010",
@@ -216,11 +214,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Rimwalk Trail Part A",
-    "right edge, tile rows 7–8 → Cactus Gardens"
+    "left edge, tile rows 5–8 → Rimwalk Trail Part A",
+    "right edge, tile rows 5–8 → Cactus Gardens"
    ],
    "notes": "Canyon-rim route with drift grass, ledges you hop down, trainers",
-   "file": "art/sections/01_dustara/010_rimwalk_trail_part_b.png"
+   "file": "art/sections/01_dustara/010_rimwalk_trail_part_b.png",
+   "v2": true
   },
   {
    "id": "011",
@@ -238,11 +237,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Rimwalk Trail Part B",
-    "right edge, tile rows 7–8 → Sunset Tunnel B1"
+    "left edge, tile rows 5–8 → Rimwalk Trail Part B",
+    "right edge, tile rows 5–8 → Sunset Tunnel B1"
    ],
    "notes": "Maze of tall cacti and flowering succulents, drift grass, hidden items",
-   "file": "art/sections/01_dustara/011_cactus_gardens.png"
+   "file": "art/sections/01_dustara/011_cactus_gardens.png",
+   "v2": true
   },
   {
    "id": "012",
@@ -260,11 +260,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7–8 → Cactus Gardens",
-    "top edge, tile columns 7–8 → Sunset Tunnel B2"
+    "bottom edge, tile columns 6–9 → Cactus Gardens",
+    "top edge, tile columns 6–9 → Sunset Tunnel B2"
    ],
    "notes": "Sandstone tunnel to the Molten Frontier; lantern-lit, boulders",
-   "file": "art/sections/01_dustara/012_sunset_tunnel_b1.png"
+   "file": "art/sections/01_dustara/012_sunset_tunnel_b1.png",
+   "v2": true
   },
   {
    "id": "013",
@@ -282,11 +283,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7–8 → Sunset Tunnel B1",
-    "top edge, tile columns 7–8 → Molten Frontier: Tunnel Mouth"
+    "bottom edge, tile columns 6–9 → Sunset Tunnel B1",
+    "top edge, tile columns 6–9 → Molten Frontier: Tunnel Mouth"
    ],
    "notes": "Sandstone tunnel to the Molten Frontier; lantern-lit, boulders",
-   "file": "art/sections/01_dustara/013_sunset_tunnel_b2.png"
+   "file": "art/sections/01_dustara/013_sunset_tunnel_b2.png",
+   "v2": true
   },
   {
    "id": "014",
@@ -304,11 +306,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Sunset Tunnel B2",
-    "right edge, tile rows 7–8 → Molten Frontier: Ash Trail Part A"
+    "left edge, tile rows 5–9 → Sunset Tunnel B2",
+    "right edge, tile rows 5–9 → Molten Frontier: Ash Trail Part A"
    ],
    "notes": "Exit of Sunset Tunnel onto volcanic far side",
-   "file": "art/sections/01_dustara/014_molten_frontier_tunnel_mouth.png"
+   "file": "art/sections/01_dustara/014_molten_frontier_tunnel_mouth.png",
+   "v2": true
   },
   {
    "id": "015",
@@ -326,11 +329,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Molten Frontier: Tunnel Mouth",
-    "right edge, tile rows 7–8 → Molten Frontier: Ash Trail Part B"
+    "left edge, tile rows 5–9 → Molten Frontier: Tunnel Mouth",
+    "right edge, tile rows 5–9 → Molten Frontier: Ash Trail Part B"
    ],
    "notes": "Ash fields, cooling lava channels",
-   "file": "art/sections/01_dustara/015_molten_frontier_ash_trail_part_a.png"
+   "file": "art/sections/01_dustara/015_molten_frontier_ash_trail_part_a.png",
+   "v2": true
   },
   {
    "id": "016",
@@ -348,11 +352,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Molten Frontier: Ash Trail Part A",
-    "right edge, tile rows 7–8 → Molten Frontier: Palm Isle"
+    "left edge, tile rows 5–8 → Molten Frontier: Ash Trail Part A",
+    "right edge, tile rows 5–8 → Molten Frontier: Palm Isle"
    ],
    "notes": "Ash fields, cooling lava channels",
-   "file": "art/sections/01_dustara/016_molten_frontier_ash_trail_part_b.png"
+   "file": "art/sections/01_dustara/016_molten_frontier_ash_trail_part_b.png",
+   "v2": true
   },
   {
    "id": "017",
@@ -370,11 +375,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Molten Frontier: Ash Trail Part B",
-    "right edge, tile rows 7–8 → Molten Frontier: Port Ember"
+    "left edge, tile rows 5–8 → Molten Frontier: Ash Trail Part B",
+    "right edge, tile rows 5–8 → Molten Frontier: Port Ember"
    ],
    "notes": "Tropical island with Recovery Hut, palm trees, turquoise water",
-   "file": "art/sections/01_dustara/017_molten_frontier_palm_isle.png"
+   "file": "art/sections/01_dustara/017_molten_frontier_palm_isle.png",
+   "v2": true
   },
   {
    "id": "018",
@@ -392,11 +398,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Molten Frontier: Palm Isle",
-    "right edge, tile rows 7–8 → Molten Frontier: Long Dock"
+    "left edge, tile rows 5–10 → Molten Frontier: Palm Isle",
+    "right edge, tile rows 5–10 → Molten Frontier: Long Dock"
    ],
    "notes": "Harbor village with the harbor Relay Gate (needs 2 Shards)",
-   "file": "art/sections/01_dustara/018_molten_frontier_port_ember.png"
+   "file": "art/sections/01_dustara/018_molten_frontier_port_ember.png",
+   "v2": true
   },
   {
    "id": "019",
@@ -414,11 +421,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Molten Frontier: Port Ember",
-    "right edge, tile rows 7–8 → Molten Frontier: Ridge Path Part A"
+    "left edge, tile rows 5–8 → Molten Frontier: Port Ember",
+    "right edge, tile rows 5–8 → Molten Frontier: Ridge Path Part A"
    ],
    "notes": "Long wooden dock where the Deep Sea Ferry berths (M08 Sola's Choice scene)",
-   "file": "art/sections/01_dustara/019_molten_frontier_long_dock.png"
+   "file": "art/sections/01_dustara/019_molten_frontier_long_dock.png",
+   "v2": true
   },
   {
    "id": "020",
@@ -436,11 +444,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Molten Frontier: Long Dock",
-    "right edge, tile rows 7–8 → Molten Frontier: Ridge Path Part B"
+    "left edge, tile rows 5–8 → Molten Frontier: Long Dock",
+    "right edge, tile rows 5–9 → Molten Frontier: Ridge Path Part B"
    ],
    "notes": "Climbing ridge with ledges",
-   "file": "art/sections/01_dustara/020_molten_frontier_ridge_path_part_a.png"
+   "file": "art/sections/01_dustara/020_molten_frontier_ridge_path_part_a.png",
+   "v2": true
   },
   {
    "id": "021",
@@ -458,11 +467,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Molten Frontier: Ridge Path Part A",
-    "right edge, tile rows 7–8 → Molten Frontier: Forge Gate"
+    "left edge, tile rows 5–8 → Molten Frontier: Ridge Path Part A",
+    "right edge, tile rows 5–8 → Molten Frontier: Forge Gate"
    ],
    "notes": "Climbing ridge with ledges",
-   "file": "art/sections/01_dustara/021_molten_frontier_ridge_path_part_b.png"
+   "file": "art/sections/01_dustara/021_molten_frontier_ridge_path_part_b.png",
+   "v2": true
   },
   {
    "id": "022",
@@ -480,11 +490,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Molten Frontier: Ridge Path Part B",
-    "right edge, tile rows 7–8 → Molten Frontier: Fortress Gate"
+    "left edge, tile rows 5–8 → Molten Frontier: Ridge Path Part B",
+    "right edge, tile rows 5–9 → Molten Frontier: Fortress Gate"
    ],
    "notes": "Ystran Relay Gate to Ferrox, guarded by Forge Miner Dax",
-   "file": "art/sections/01_dustara/022_molten_frontier_forge_gate.png"
+   "file": "art/sections/01_dustara/022_molten_frontier_forge_gate.png",
+   "v2": true
   },
   {
    "id": "023",
@@ -502,11 +513,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Molten Frontier: Forge Gate",
-    "right edge, tile rows 7–8 → Molten Frontier: Lava Bridges Part A"
+    "left edge, tile rows 5–8 → Molten Frontier: Forge Gate",
+    "right edge, tile rows 5–8 → Molten Frontier: Lava Bridges Part A"
    ],
    "notes": "Helix Forge Fortress entrance, Helix grunt guard",
-   "file": "art/sections/01_dustara/023_molten_frontier_fortress_gate.png"
+   "file": "art/sections/01_dustara/023_molten_frontier_fortress_gate.png",
+   "v2": true
   },
   {
    "id": "024",
@@ -524,11 +536,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Molten Frontier: Fortress Gate",
-    "right edge, tile rows 7–8 → Molten Frontier: Lava Bridges Part B"
+    "left edge, tile rows 5–8 → Molten Frontier: Fortress Gate",
+    "right edge, tile rows 5–8 → Molten Frontier: Lava Bridges Part B"
    ],
    "notes": "Iron bridges over lava rivers",
-   "file": "art/sections/01_dustara/024_molten_frontier_lava_bridges_part_a.png"
+   "file": "art/sections/01_dustara/024_molten_frontier_lava_bridges_part_a.png",
+   "v2": true
   },
   {
    "id": "025",
@@ -546,11 +559,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Molten Frontier: Lava Bridges Part A",
-    "right edge, tile rows 7–8 → Molten Frontier: Shuttle Pad"
+    "left edge, tile rows 5–8 → Molten Frontier: Lava Bridges Part A",
+    "right edge, tile rows 5–8 → Molten Frontier: Shuttle Pad"
    ],
    "notes": "Iron bridges over lava rivers",
-   "file": "art/sections/01_dustara/025_molten_frontier_lava_bridges_part_b.png"
+   "file": "art/sections/01_dustara/025_molten_frontier_lava_bridges_part_b.png",
+   "v2": true
   },
   {
    "id": "026",
@@ -568,11 +582,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Molten Frontier: Lava Bridges Part B",
-    "right edge, tile rows 7–8 → Molten Frontier: Shadow Tunnel Mouth"
+    "left edge, tile rows 5–8 → Molten Frontier: Lava Bridges Part B",
+    "right edge, tile rows 5–8 → Molten Frontier: Shadow Tunnel Mouth"
    ],
    "notes": "Fortress Shuttle Pad to Helix Station",
-   "file": "art/sections/01_dustara/026_molten_frontier_shuttle_pad.png"
+   "file": "art/sections/01_dustara/026_molten_frontier_shuttle_pad.png",
+   "v2": true
   },
   {
    "id": "027",
@@ -590,11 +605,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Molten Frontier: Shuttle Pad",
-    "right edge, tile rows 7–8 → Molten Frontier: Magma Mines Gate"
+    "left edge, tile rows 5–8 → Molten Frontier: Shuttle Pad",
+    "right edge, tile rows 5–8 → Molten Frontier: Magma Mines Gate"
    ],
    "notes": "Dark tunnel mouth leading to Umbra",
-   "file": "art/sections/01_dustara/027_molten_frontier_shadow_tunnel_mouth.png"
+   "file": "art/sections/01_dustara/027_molten_frontier_shadow_tunnel_mouth.png",
+   "v2": true
   },
   {
    "id": "028",
@@ -612,10 +628,11 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Molten Frontier: Shadow Tunnel Mouth"
+    "left edge, tile rows 6–8 → Molten Frontier: Shadow Tunnel Mouth"
    ],
    "notes": "Sealed glowing-red Ystran door to Pyros",
-   "file": "art/sections/01_dustara/028_molten_frontier_magma_mines_gate.png"
+   "file": "art/sections/01_dustara/028_molten_frontier_magma_mines_gate.png",
+   "v2": true
   },
   {
    "id": "029",
@@ -3582,7 +3599,8 @@
    "tile_px_game": 16,
    "exits": [],
    "notes": "Nana Wren's attic above the Dustmere Recovery Bay: trunks, baskets, the old R.B. sign",
-   "file": "art/sections/01_dustara/165_recovery_bay_attic.png"
+   "file": "art/sections/01_dustara/165_recovery_bay_attic.png",
+   "v2": true
   },
   {
    "id": "166",
@@ -3601,7 +3619,8 @@
    "tile_px_game": 16,
    "exits": [],
    "notes": "Teo and Sola's home by the Trading Post",
-   "file": "art/sections/01_dustara/166_reyes_house_1f.png"
+   "file": "art/sections/01_dustara/166_reyes_house_1f.png",
+   "v2": true
   },
   {
    "id": "167",

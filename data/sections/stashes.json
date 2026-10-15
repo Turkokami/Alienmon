@@ -4,8 +4,8 @@
    "section": "004",
    "name": "Dustmere Plaza",
    "tile": [
-    12,
-    2
+    13,
+    15
    ],
    "item": "dust",
    "n": 150,
@@ -15,30 +15,19 @@
    "section": "007",
    "name": "Dustmere Bridge",
    "tile": [
-    21,
-    9
+    11,
+    4
    ],
    "item": "stasis",
    "n": 3,
    "tier": 1
   },
   {
-   "section": "008",
-   "name": "Trading Post",
-   "tile": [
-    21,
-    9
-   ],
-   "item": "cure",
-   "n": 2,
-   "tier": 1
-  },
-  {
    "section": "009",
    "name": "Rimwalk Trail Part A",
    "tile": [
-    4,
-    2
+    6,
+    12
    ],
    "item": "gel",
    "n": 2,
@@ -48,8 +37,8 @@
    "section": "009",
    "name": "Rimwalk Trail Part A",
    "tile": [
-    17,
-    4
+    12,
+    1
    ],
    "item": "revive",
    "n": 1,
@@ -59,8 +48,8 @@
    "section": "010",
    "name": "Rimwalk Trail Part B",
    "tile": [
-    3,
-    1
+    11,
+    14
    ],
    "item": "gel",
    "n": 2,
@@ -70,8 +59,8 @@
    "section": "010",
    "name": "Rimwalk Trail Part B",
    "tile": [
-    12,
-    13
+    18,
+    12
    ],
    "item": "dust",
    "n": 150,
@@ -81,8 +70,8 @@
    "section": "011",
    "name": "Cactus Gardens",
    "tile": [
-    19,
-    2
+    11,
+    14
    ],
    "item": "tether",
    "n": 1,
@@ -92,8 +81,8 @@
    "section": "011",
    "name": "Cactus Gardens",
    "tile": [
-    7,
-    3
+    18,
+    12
    ],
    "item": "cure",
    "n": 2,
@@ -104,7 +93,7 @@
    "name": "Sunset Tunnel B1",
    "tile": [
     14,
-    2
+    7
    ],
    "item": "stun",
    "n": 1,
@@ -114,8 +103,8 @@
    "section": "013",
    "name": "Sunset Tunnel B2",
    "tile": [
-    13,
-    11
+    14,
+    7
    ],
    "item": "stasis",
    "n": 3,
@@ -126,7 +115,7 @@
    "name": "Sunset Tunnel B2",
    "tile": [
     14,
-    3
+    8
    ],
    "item": "gel",
    "n": 2,
@@ -136,8 +125,8 @@
    "section": "014",
    "name": "Molten Frontier: Tunnel Mouth",
    "tile": [
-    3,
-    1
+    9,
+    12
    ],
    "item": "tether",
    "n": 1,
@@ -147,8 +136,8 @@
    "section": "014",
    "name": "Molten Frontier: Tunnel Mouth",
    "tile": [
-    6,
-    13
+    12,
+    1
    ],
    "item": "gel",
    "n": 2,
@@ -159,7 +148,7 @@
    "name": "Molten Frontier: Ash Trail Part A",
    "tile": [
     11,
-    2
+    14
    ],
    "item": "gel",
    "n": 2,
@@ -169,8 +158,8 @@
    "section": "015",
    "name": "Molten Frontier: Ash Trail Part A",
    "tile": [
-    16,
-    1
+    14,
+    15
    ],
    "item": "cure",
    "n": 2,
@@ -180,8 +169,8 @@
    "section": "016",
    "name": "Molten Frontier: Ash Trail Part B",
    "tile": [
-    11,
-    2
+    9,
+    12
    ],
    "item": "stasis",
    "n": 3,
@@ -191,8 +180,8 @@
    "section": "016",
    "name": "Molten Frontier: Ash Trail Part B",
    "tile": [
-    1,
-    1
+    17,
+    12
    ],
    "item": "revive",
    "n": 1,
@@ -202,8 +191,8 @@
    "section": "017",
    "name": "Molten Frontier: Palm Isle",
    "tile": [
-    18,
-    1
+    12,
+    13
    ],
    "item": "stasis",
    "n": 3,
@@ -213,8 +202,8 @@
    "section": "017",
    "name": "Molten Frontier: Palm Isle",
    "tile": [
-    4,
-    14
+    6,
+    2
    ],
    "item": "cure",
    "n": 2,
@@ -224,41 +213,19 @@
    "section": "018",
    "name": "Molten Frontier: Port Ember",
    "tile": [
-    10,
-    1
+    18,
+    11
    ],
    "item": "dust",
    "n": 150,
    "tier": 1
   },
   {
-   "section": "019",
-   "name": "Molten Frontier: Long Dock",
-   "tile": [
-    15,
-    11
-   ],
-   "item": "stasis",
-   "n": 5,
-   "tier": 2
-  },
-  {
-   "section": "019",
-   "name": "Molten Frontier: Long Dock",
-   "tile": [
-    9,
-    1
-   ],
-   "item": "gel",
-   "n": 3,
-   "tier": 2
-  },
-  {
    "section": "020",
    "name": "Molten Frontier: Ridge Path Part A",
    "tile": [
-    18,
-    1
+    11,
+    12
    ],
    "item": "harmonic",
    "n": 2,
@@ -268,8 +235,8 @@
    "section": "020",
    "name": "Molten Frontier: Ridge Path Part A",
    "tile": [
-    5,
-    1
+    6,
+    2
    ],
    "item": "stasis",
    "n": 5,
@@ -279,8 +246,8 @@
    "section": "021",
    "name": "Molten Frontier: Ridge Path Part B",
    "tile": [
-    11,
-    14
+    19,
+    12
    ],
    "item": "revive",
    "n": 1,
@@ -290,8 +257,8 @@
    "section": "021",
    "name": "Molten Frontier: Ridge Path Part B",
    "tile": [
-    22,
-    14
+    6,
+    2
    ],
    "item": "dust",
    "n": 300,
@@ -301,8 +268,8 @@
    "section": "022",
    "name": "Molten Frontier: Forge Gate",
    "tile": [
-    11,
-    14
+    4,
+    12
    ],
    "item": "harmonic",
    "n": 2,
@@ -312,74 +279,19 @@
    "section": "023",
    "name": "Molten Frontier: Fortress Gate",
    "tile": [
-    3,
-    5
+    7,
+    10
    ],
    "item": "ether",
    "n": 2,
    "tier": 4
   },
   {
-   "section": "024",
-   "name": "Molten Frontier: Lava Bridges Part A",
-   "tile": [
-    17,
-    12
-   ],
-   "item": "megagel",
-   "n": 3,
-   "tier": 4
-  },
-  {
-   "section": "024",
-   "name": "Molten Frontier: Lava Bridges Part A",
-   "tile": [
-    4,
-    9
-   ],
-   "item": "megagel",
-   "n": 3,
-   "tier": 4
-  },
-  {
-   "section": "025",
-   "name": "Molten Frontier: Lava Bridges Part B",
-   "tile": [
-    15,
-    13
-   ],
-   "item": "dust",
-   "n": 800,
-   "tier": 4
-  },
-  {
-   "section": "025",
-   "name": "Molten Frontier: Lava Bridges Part B",
-   "tile": [
-    22,
-    14
-   ],
-   "item": "fullgel",
-   "n": 1,
-   "tier": 4
-  },
-  {
-   "section": "026",
-   "name": "Molten Frontier: Shuttle Pad",
-   "tile": [
-    7,
-    3
-   ],
-   "item": "harmonic",
-   "n": 5,
-   "tier": 4
-  },
-  {
    "section": "027",
    "name": "Molten Frontier: Shadow Tunnel Mouth",
    "tile": [
-    6,
-    14
+    12,
+    10
    ],
    "item": "harmonic",
    "n": 5,
@@ -389,8 +301,8 @@
    "section": "028",
    "name": "Molten Frontier: Magma Mines Gate",
    "tile": [
-    22,
-    10
+    14,
+    12
    ],
    "item": "fullgel",
    "n": 1,

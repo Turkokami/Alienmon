@@ -2,90 +2,6 @@
  "_about": "Hand-placed links the atlas text can't give: which building door on the parent map each interior's doormat leads to, stairs between floors, and objects (counters). Tiles are [col,row] at 16 px. 'confidence': high | todo. tools/sections/build_world.py merges this with art/sections/atlas.json.",
  "doors": [
   {
-   "interior": "001",
-   "parent": "004",
-   "door": [
-    5,
-    4
-   ],
-   "mat": [
-    [
-     7,
-     12
-    ],
-    [
-     8,
-     12
-    ]
-   ],
-   "confidence": "high",
-   "why": "Hero's house: the dome home top-left with the purple doormat"
-  },
-  {
-   "interior": "003",
-   "parent": "004",
-   "door": [
-    16,
-    4
-   ],
-   "mat": [
-    [
-     7,
-     13
-    ],
-    [
-     8,
-     13
-    ]
-   ],
-   "confidence": "high",
-   "why": "Vashti's observatory: the big telescope dome top-right"
-  },
-  {
-   "interior": "005",
-   "parent": "004",
-   "door": [
-    5,
-    10
-   ],
-   "door2": [
-    6,
-    10
-   ],
-   "mat": [
-    [
-     7,
-     13
-    ],
-    [
-     8,
-     13
-    ]
-   ],
-   "confidence": "high",
-   "why": "Recovery Bay: dome with the cyan cross, double door"
-  },
-  {
-   "interior": "006",
-   "parent": "004",
-   "door": [
-    18,
-    10
-   ],
-   "mat": [
-    [
-     7,
-     13
-    ],
-    [
-     8,
-     13
-    ]
-   ],
-   "confidence": "high",
-   "why": "Shop: dome with the striped awning bottom-right"
-  },
-  {
    "interior": "031",
    "parent": "030",
    "door": [
@@ -144,6 +60,122 @@
    ],
    "confidence": "todo",
    "why": "Grub's Workshop: the cluttered workshop top-left with gear signs; atlas doesn't say which building, the nearest-by-id rule would pick Scrap Route A which has no building"
+  },
+  {
+   "interior": "001",
+   "parent": "004",
+   "door": [
+    2,
+    4
+   ],
+   "door2": [
+    3,
+    4
+   ],
+   "mat": [
+    [
+     7,
+     14
+    ],
+    [
+     8,
+     14
+    ]
+   ],
+   "confidence": "high",
+   "why": "V2: Hero's house"
+  },
+  {
+   "interior": "166",
+   "parent": "004",
+   "door": [
+    6,
+    4
+   ],
+   "door2": [
+    7,
+    4
+   ],
+   "mat": [
+    [
+     7,
+     14
+    ],
+    [
+     8,
+     14
+    ]
+   ],
+   "confidence": "high",
+   "why": "V2: Reyes house"
+  },
+  {
+   "interior": "005",
+   "parent": "004",
+   "door": [
+    11,
+    4
+   ],
+   "door2": [
+    12,
+    4
+   ],
+   "mat": [
+    [
+     7,
+     14
+    ],
+    [
+     8,
+     14
+    ]
+   ],
+   "confidence": "high",
+   "why": "V2: Recovery Bay"
+  },
+  {
+   "interior": "006",
+   "parent": "004",
+   "door": [
+    16,
+    4
+   ],
+   "door2": [
+    17,
+    4
+   ],
+   "mat": [
+    [
+     7,
+     14
+    ],
+    [
+     8,
+     14
+    ]
+   ],
+   "confidence": "high",
+   "why": "V2: Shop"
+  },
+  {
+   "interior": "003",
+   "parent": "004",
+   "door": [
+    20,
+    3
+   ],
+   "mat": [
+    [
+     7,
+     14
+    ],
+    [
+     8,
+     14
+    ]
+   ],
+   "confidence": "high",
+   "why": "V2: Vashti's observatory, up the steps"
   }
  ],
  "stairs": [
@@ -156,14 +188,25 @@
    "b": "002",
    "b_tile": [
     11,
+    5
+   ],
+   "why": "V2 stairs"
+  },
+  {
+   "a": "001",
+   "a_tile": [
+    12,
     4
    ],
-   "why": "Your House 1F stairs (top right) up to 2F stairs"
+   "b": "002",
+   "b_tile": [
+    12,
+    5
+   ],
+   "why": "V2 stairs"
   }
  ],
- "ignore_mats": {
-  "002": "2F is upstairs; its drawn doormat can't lead outside, so it is left inert and 2F is reached by the stairs"
- },
+ "ignore_mats": {},
  "objects": {
   "101": [
    {
@@ -621,59 +664,6 @@
     "why": "dead-end stairs (tools/sections/dead_ends.py)"
    }
   ],
-  "005": [
-   {
-    "tile": [
-     7,
-     5
-    ],
-    "k": "bay",
-    "why": "Recovery Bay counter"
-   },
-   {
-    "tile": [
-     8,
-     5
-    ],
-    "k": "bay",
-    "why": "Recovery Bay counter"
-   },
-   {
-    "tile": [
-     12,
-     7
-    ],
-    "k": "ladder",
-    "to": "165",
-    "at": [
-     4,
-     12
-    ],
-    "face": "up",
-    "label": "A ladder hatch in the floor leads up to the attic.",
-    "why": "the attic hatch drawn on the floor"
-   }
-  ],
-  "006": [
-   {
-    "tile": [
-     4,
-     6
-    ],
-    "k": "shop",
-    "why": "shop counter"
-   }
-  ],
-  "003": [
-   {
-    "tile": [
-     8,
-     8
-    ],
-    "k": "lab",
-    "why": "Vashti's starter pods on the lab table"
-   }
-  ],
   "031": [
    {
     "tile": [
@@ -710,187 +700,6 @@
     ],
     "k": "keeper",
     "why": "Keeper's dais at the far end of the arena, challenged from (7,3)"
-   }
-  ],
-  "025": [
-   {
-    "tile": [
-     6,
-     3
-    ],
-    "k": "chest",
-    "item": "megagel",
-    "n": 1,
-    "why": "treasure chest drawn on the mesa"
-   }
-  ],
-  "008": [
-   {
-    "tile": [
-     19,
-     4
-    ],
-    "k": "bay",
-    "why": "Trading Post Recovery Bay door (no interior is drawn, so the door works like the counter)",
-    "door": true
-   },
-   {
-    "tile": [
-     20,
-     4
-    ],
-    "k": "bay",
-    "why": "Trading Post Recovery Bay door, right half",
-    "door": true
-   },
-   {
-    "tile": [
-     5,
-     10
-    ],
-    "k": "shop",
-    "why": "Trading Post shop door (no interior is drawn, so the door works like the counter)",
-    "door": true
-   },
-   {
-    "tile": [
-     7,
-     11
-    ],
-    "k": "shop",
-    "why": "Trading Post shop front",
-    "door": true
-   },
-   {
-    "tile": [
-     8,
-     11
-    ],
-    "k": "shop",
-    "why": "Trading Post shop front",
-    "door": true
-   }
-  ],
-  "007": [
-   {
-    "tile": [
-     22,
-     4
-    ],
-    "k": "house",
-    "why": "house door: opens Dustara Cottage",
-    "to": "187"
-   },
-   {
-    "tile": [
-     4,
-     3
-    ],
-    "k": "house",
-    "to": "187",
-    "why": "house door: path in front opened to match the drawn ground"
-   }
-  ],
-  "014": [
-   {
-    "tile": [
-     14,
-     1
-    ],
-    "k": "sign",
-    "t": "Loose rock blocks the passage.",
-    "why": "door plan: cave door with no interior yet"
-   }
-  ],
-  "017": [
-   {
-    "tile": [
-     16,
-     4
-    ],
-    "k": "bay",
-    "why": "Palm Isle Recovery Hut (no interior yet, so the door works like the counter)",
-    "door": true
-   }
-  ],
-  "018": [
-   {
-    "tile": [
-     18,
-     4
-    ],
-    "k": "bay",
-    "why": "Port Ember healing centre (no interior yet, so the door works like the counter)",
-    "door": true
-   }
-  ],
-  "022": [
-   {
-    "tile": [
-     18,
-     0
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   },
-   {
-    "tile": [
-     3,
-     5
-    ],
-    "k": "house",
-    "to": "187",
-    "why": "house door: opens the dustara house (was a item knock door)"
-   },
-   {
-    "tile": [
-     20,
-     4
-    ],
-    "k": "house",
-    "to": "187",
-    "why": "house door: opens the dustara house (was a item knock door)"
-   }
-  ],
-  "026": [
-   {
-    "tile": [
-     18,
-     15
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   },
-   {
-    "tile": [
-     19,
-     13
-    ],
-    "k": "house",
-    "to": "187",
-    "why": "house door: opens the dustara house (was a chat knock door)"
-   }
-  ],
-  "028": [
-   {
-    "tile": [
-     7,
-     14
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   },
-   {
-    "tile": [
-     8,
-     15
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
    }
   ],
   "029": [
@@ -1648,97 +1457,6 @@
     "to": "193"
    }
   ],
-  "016": [
-   {
-    "tile": [
-     7,
-     11
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   }
-  ],
-  "019": [
-   {
-    "tile": [
-     18,
-     0
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   }
-  ],
-  "023": [
-   {
-    "tile": [
-     11,
-     15
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   },
-   {
-    "tile": [
-     12,
-     15
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   }
-  ],
-  "024": [
-   {
-    "tile": [
-     19,
-     14
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   },
-   {
-    "tile": [
-     20,
-     14
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   }
-  ],
-  "027": [
-   {
-    "tile": [
-     16,
-     12
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   },
-   {
-    "tile": [
-     16,
-     15
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   },
-   {
-    "tile": [
-     17,
-     14
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   }
-  ],
   "057": [],
   "061": [
    {
@@ -1784,14 +1502,165 @@
     "why": "dead-end stairs (tools/sections/dead_ends.py)"
    }
   ],
-  "012": [],
-  "013": []
+  "003": [
+   {
+    "tile": [
+     4,
+     6
+    ],
+    "k": "lab",
+    "why": "Vashti's starter pods on the lab table"
+   }
+  ],
+  "005": [
+   {
+    "tile": [
+     7,
+     4
+    ],
+    "k": "bay",
+    "why": "Recovery Bay counter"
+   },
+   {
+    "tile": [
+     8,
+     4
+    ],
+    "k": "bay",
+    "why": "Recovery Bay counter"
+   },
+   {
+    "tile": [
+     12,
+     4
+    ],
+    "k": "ladder",
+    "to": "165",
+    "at": [
+     4,
+     13
+    ],
+    "face": "up",
+    "label": "A ladder leads up to the attic.",
+    "why": "attic ladder, top right"
+   },
+   {
+    "tile": [
+     13,
+     4
+    ],
+    "k": "ladder",
+    "to": "165",
+    "at": [
+     4,
+     13
+    ],
+    "face": "up",
+    "label": "A ladder leads up to the attic.",
+    "why": "attic ladder, top right"
+   }
+  ],
+  "006": [
+   {
+    "tile": [
+     7,
+     5
+    ],
+    "k": "shop",
+    "why": "shop counter"
+   },
+   {
+    "tile": [
+     8,
+     5
+    ],
+    "k": "shop",
+    "why": "shop counter"
+   }
+  ],
+  "008": [
+   {
+    "tile": [
+     8,
+     4
+    ],
+    "k": "bay",
+    "door": true,
+    "why": "Trading Post Recovery Bay door (works like the counter)"
+   },
+   {
+    "tile": [
+     9,
+     4
+    ],
+    "k": "bay",
+    "door": true,
+    "why": "Recovery Bay door, right half"
+   },
+   {
+    "tile": [
+     13,
+     4
+    ],
+    "k": "shop",
+    "door": true,
+    "why": "Trading Post shop door"
+   },
+   {
+    "tile": [
+     14,
+     4
+    ],
+    "k": "shop",
+    "door": true,
+    "why": "Trading Post shop door"
+   }
+  ],
+  "017": [
+   {
+    "tile": [
+     14,
+     3
+    ],
+    "k": "bay",
+    "door": true,
+    "why": "Palm Isle Recovery Hut (works like the counter)"
+   }
+  ],
+  "018": [
+   {
+    "tile": [
+     8,
+     4
+    ],
+    "k": "bay",
+    "door": true,
+    "why": "Port Ember healing centre"
+   },
+   {
+    "tile": [
+     9,
+     4
+    ],
+    "k": "bay",
+    "door": true,
+    "why": "Port Ember healing centre"
+   },
+   {
+    "tile": [
+     2,
+     4
+    ],
+    "k": "house",
+    "to": "187",
+    "why": "house door: opens Dustara Cottage"
+   }
+  ]
  },
  "arrival": {
   "dustara": {
    "section": "004",
-   "edge": "left",
-   "why": "atlas: 004 left edge -> arrival (landing pad / gate)"
+   "why": "V2: the landing pad at the left end of the main road"
   },
   "ferrox": {
    "section": "029",
@@ -1799,35 +1668,18 @@
    "why": "atlas: 029 left edge -> arrival (landing pad / gate)"
   }
  },
- "unlisted": {
-  "004": "stairs at the top edge (columns 11-12) and a gated path at the bottom edge (columns 11-12) are drawn, but the atlas gives the plaza only left and right exits; the prompt notes say 'trading post south'",
-  "008": "stairs off the top edge at cols 1-2 and 21-22; a path off the bottom edge at col 11; the lower-right dome door (17,12) has no path to it",
-  "010": "stairs off the bottom edge at col 15",
-  "014": "the tunnel mouth is drawn at the top centre (14,1-2), but the atlas puts the way back to Sunset Tunnel B2 on the left edge rows 7-8 (fence/cliff in the art, opened to walk); also a path off the bottom edge at col 11",
-  "016": "stairs at (7,11) lead down toward the lava",
-  "017": "Recovery Hut door (16,4) has no interior in the atlas",
-  "018": "stairs off the top edge at col 11; healing-centre door (18,4) and other doors have no interiors in the atlas",
-  "019": "a sand path at (9,0) and stairs at (18,0-1) run off the top edge",
-  "020": "stairs off the top edge at col 11",
-  "021": "a sand path off the top edge at col 11",
-  "022": "stairs off the top at (4,0-2) and (18,0-3), off the bottom at (11-12,15) and (20-21,14-15); dome doors (3-4,5), (20-21,4), (4,12), (21,12); portal at (11-12,2-4)",
-  "023": "Helix Forge Fortress main doors (11-12,1-4) look enterable (the old game's fortress interior isn't in the atlas); stairs off the bottom at (11-12,15)",
-  "024": "closed portcullis (17-18,6-7) cuts off the top bridge and upper ground; stairs off the top (16,1-2) and bottom (19-20,12-14)",
-  "026": "stairs off the bottom at (6,14-15) and (18,15); dome doors (4,4), (5,11-12), (19,13)",
-  "027": "the Shadow Tunnel mouth (14-18,3-6) looks enterable but the atlas has no section beyond it; stairs off the bottom (16-17,13-14)",
-  "028": "Magma Mines gate (14-17,1-4) and a mine door (20-21,5) look enterable; the bridge at row 10 runs to the right edge; stairs off the bottom (7-8,14)"
- },
+ "unlisted": {},
  "spawns": {
   "165": {
    "default": [
     4,
-    12
+    13
    ]
   },
   "166": {
    "default": [
     7,
-    12
+    13
    ]
   },
   "167": {
@@ -1997,6 +1849,16 @@
     7,
     8
    ]
+  },
+  "004": {
+   "arrival": [
+    3,
+    8
+   ],
+   "default": [
+    3,
+    8
+   ]
   }
  },
  "zones": {
@@ -2023,34 +1885,31 @@
    "tiles": [
     [
      11,
-     4
+     3
     ],
     [
      12,
-     4
+     3
     ]
    ],
    "node": "ferrox",
    "planet": "ferrox",
-   "why": "Forge Gate portal at the top of the stairs (old Forge Gate node -> Ferrox)"
+   "why": "Forge Gate portal at the top of the stairs (old Forge Gate node -> Ferrox)",
+   "at_dy": 1
   },
   {
    "section": "018",
    "tiles": [
     [
-     11,
-     14
+     20,
+     3
     ],
     [
-     12,
-     14
-    ],
-    [
-     13,
-     14
+     21,
+     3
     ]
    ],
-   "at_dy": -1,
+   "at_dy": 1,
    "node": "thalassa",
    "planet": "thalassa",
    "label": "the harbor boat to Thalassa",
@@ -2060,11 +1919,15 @@
    "section": "019",
    "tiles": [
     [
-     18,
-     8
+     13,
+     2
+    ],
+    [
+     14,
+     2
     ]
    ],
-   "at_dy": -1,
+   "at_dy": 1,
    "node": "glyphos",
    "planet": "glyphos",
    "label": "the Deep Sea Ferry",
@@ -2086,18 +1949,19 @@
    "planet": "helix",
    "sub": "fortress",
    "label": "the Helix Forge Fortress",
-   "why": "the fortress main doors (old Helix Forge Fortress node -> the painted fortress interior)"
+   "why": "the fortress main doors (old Helix Forge Fortress node -> the painted fortress interior)",
+   "at_dy": 1
   },
   {
    "section": "026",
    "tiles": [
     [
-     15,
-     4
+     11,
+     2
     ],
     [
-     16,
-     4
+     12,
+     2
     ]
    ],
    "options": [
@@ -2118,41 +1982,48 @@
      "label": "Shuttle to the Star Arena"
     }
    ],
-   "why": "the landing pad (old Fortress Shuttle Pad and Helix Shuttle Pad nodes)"
+   "why": "the landing pad (old Fortress Shuttle Pad and Helix Shuttle Pad nodes)",
+   "at_dy": 1
   },
   {
    "section": "027",
    "tiles": [
     [
-     15,
-     4
+     11,
+     3
     ],
     [
-     16,
-     4
+     12,
+     3
+    ],
+    [
+     13,
+     3
     ]
    ],
    "node": "umbra",
    "planet": "umbra",
    "label": "the Shadow Tunnel",
-   "why": "the tunnel mouth (old Shadow Tunnel node -> Umbra)"
+   "why": "the tunnel mouth (old Shadow Tunnel node -> Umbra)",
+   "at_dy": 1
   },
   {
    "section": "028",
    "tiles": [
     [
-     15,
-     4
+     19,
+     7
     ],
     [
-     16,
-     4
+     19,
+     8
     ]
    ],
    "node": "pyros",
    "planet": "pyros",
    "label": "the Magma Mines",
-   "why": "the mines gate (old Magma Mines node -> Pyros)"
+   "why": "the mines gate (old Magma Mines node -> Pyros)",
+   "at_dy": 1
   }
  ],
  "trainers": {
@@ -2209,65 +2080,6 @@
   }
  ],
  "warps": [
-  {
-   "section": "008",
-   "tile": [
-    4,
-    5
-   ],
-   "to": "166",
-   "at": [
-    7,
-    12
-   ],
-   "face": "up",
-   "kind": "door"
-  },
-  {
-   "section": "166",
-   "tile": [
-    7,
-    13
-   ],
-   "to": "008",
-   "at": [
-    4,
-    6
-   ],
-   "face": "down",
-   "kind": "door",
-   "parent": "008"
-  },
-  {
-   "section": "166",
-   "tile": [
-    8,
-    13
-   ],
-   "to": "008",
-   "at": [
-    4,
-    6
-   ],
-   "face": "down",
-   "kind": "door",
-   "parent": "008"
-  },
-  {
-   "section": "165",
-   "tile": [
-    4,
-    13
-   ],
-   "to": "005",
-   "at": [
-    12,
-    8
-   ],
-   "face": "left",
-   "kind": "stairs",
-   "parent": "005"
-  },
   {
    "section": "052",
    "tile": [
@@ -2925,7 +2737,7 @@
    ],
    "face": "down",
    "kind": "door",
-   "parent": "007"
+   "parent": "018"
   },
   {
    "section": "187",
@@ -2940,7 +2752,7 @@
    ],
    "face": "down",
    "kind": "door",
-   "parent": "007"
+   "parent": "018"
   },
   {
    "section": "187",
@@ -2955,7 +2767,7 @@
    ],
    "face": "down",
    "kind": "door",
-   "parent": "007"
+   "parent": "018"
   },
   {
    "section": "188",
@@ -3196,6 +3008,36 @@
    "face": "down",
    "kind": "door",
    "parent": "093"
+  },
+  {
+   "section": "165",
+   "tile": [
+    2,
+    12
+   ],
+   "to": "005",
+   "at": [
+    12,
+    5
+   ],
+   "face": "down",
+   "kind": "stairs",
+   "parent": "005"
+  },
+  {
+   "section": "165",
+   "tile": [
+    3,
+    12
+   ],
+   "to": "005",
+   "at": [
+    12,
+    5
+   ],
+   "face": "down",
+   "kind": "stairs",
+   "parent": "005"
   }
  ]
 }

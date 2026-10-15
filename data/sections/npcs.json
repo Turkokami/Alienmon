@@ -257,6 +257,18 @@
     "Referee: One-on-one! First partner who can't keep going loses! No hitting trainers, no fighting dirty!",
     "Referee: ...And no knocking over my lemonade stand AGAIN."
    ]
+  },
+  {
+   "art": "fenna",
+   "name": "Fenna",
+   "near": [
+    19,
+    9
+   ],
+   "t": [
+    "Fenna: Spores, roots, a few mushrooms that hum. I trade them for anything shiny.",
+    "Fenna: Sporeholm grows mushrooms bigger than houses. Bigger than Dustmere, nearly!"
+   ]
   }
  ],
  "009": [
@@ -502,6 +514,18 @@
    "near": [
     8,
     9
+   ]
+  },
+  {
+   "art": "mina",
+   "name": "Mina",
+   "near": [
+    14,
+    10
+   ],
+   "t": [
+    "Mina: This hood? It's a shark. Obviously. The fish respect it.",
+    "Mina: Cast past the end of the boardwalk and wait. Something on Thalassa always bites back."
    ]
   }
  ],
