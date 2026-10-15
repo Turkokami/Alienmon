@@ -103,7 +103,7 @@ function ppUse(m,mi){m.ppm=m.ppm||{};m.ppm[mi]=Math.max(0,ppGet(m,mi)-1)}
 const STRUGGLE={n:'Struggle',t:'None',p:50,a:100,fx:{},struggle:1};
 // pick a usable move for the opponent (falls back to Struggle) and spend its PP
 function ppPick(a,mv){let mi=MV.indexOf(mv);if(mi<0||ppGet(a,mi)<=0){mi=a.moves.find(x=>ppGet(a,x)>0);if(mi==null)return STRUGGLE;mv=MV[mi]}ppUse(a,mi);return mv}
-function actPP(a,d,mv){const L=act(a,d,mv);if(mv.struggle&&a.hp>0){const r=Math.max(1,Math.floor(stat(a,0)/4));a.hp=Math.max(0,a.hp-r);L.push(nm(a)+' is hurt by recoil!');if(a.hp<=0)L.push(nm(a)+' fainted!')}return L}
+function actPP(a,d,mv){const L=act(a,d,mv);if(mv.struggle&&a.hp>0){const r=Math.max(1,Math.floor(stat(a,0)/4));a.hp=Math.max(0,a.hp-r);godFix(a);L.push(nm(a)+' is hurt by recoil!');if(a.hp<=0)L.push(nm(a)+' fainted!')}return L}
 
 // running away: classic odds; never from trainers, Keepers, bosses or legendaries
 function tryRun(){const e=EM();if(B.sp&&B.sp.immortal){say('There is nowhere to run. Your team stands firm.');return}if(B.tr){say("You can't run from a trainer battle!");return}
