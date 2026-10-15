@@ -2339,11 +2339,11 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → arrival (landing pad / gate)",
-    "right edge, tile rows 7–8 → Containment Wing 1F"
+    "right edge, tile rows 6–9 → Containment Wing 1F"
    ],
    "notes": "Station docking ring hub",
-   "file": "art/sections/09_helix/105_docking_ring.png"
+   "file": "art/sections/09_helix/105_docking_ring.png",
+   "v2": true
   },
   {
    "id": "106",
@@ -2360,11 +2360,10 @@
    ],
    "tile_px_render": 64,
    "tile_px_game": 16,
-   "exits": [
-    "doormat at the bottom center of the room leads back outside"
-   ],
+   "exits": [],
    "notes": "Grunt barracks",
-   "file": "art/sections/09_helix/106_barracks.png"
+   "file": "art/sections/09_helix/106_barracks.png",
+   "v2": true
   },
   {
    "id": "107",
@@ -2381,11 +2380,10 @@
    ],
    "tile_px_render": 64,
    "tile_px_game": 16,
-   "exits": [
-    "doormat at the bottom center of the room leads back outside"
-   ],
+   "exits": [],
    "notes": "Helix labs",
-   "file": "art/sections/09_helix/107_labs_1f.png"
+   "file": "art/sections/09_helix/107_labs_1f.png",
+   "v2": true
   },
   {
    "id": "108",
@@ -2402,11 +2400,10 @@
    ],
    "tile_px_render": 64,
    "tile_px_game": 16,
-   "exits": [
-    "doormat at the bottom center of the room leads back outside"
-   ],
+   "exits": [],
    "notes": "Helix labs",
-   "file": "art/sections/09_helix/108_labs_2f.png"
+   "file": "art/sections/09_helix/108_labs_2f.png",
+   "v2": true
   },
   {
    "id": "109",
@@ -2424,11 +2421,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7–8 → Docking Ring",
-    "top edge, tile columns 7–8 → Containment Wing 2F"
+    "bottom edge, tile columns 5–10 → Docking Ring",
+    "top edge, tile columns 5–10 → Containment Wing 2F"
    ],
    "notes": "Cells with captive Alienmon (The Captives)",
-   "file": "art/sections/09_helix/109_containment_wing_1f.png"
+   "file": "art/sections/09_helix/109_containment_wing_1f.png",
+   "v2": true
   },
   {
    "id": "110",
@@ -2446,11 +2444,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7–8 → Containment Wing 1F",
-    "top edge, tile columns 7–8 → Engineering"
+    "bottom edge, tile columns 6–9 → Containment Wing 1F",
+    "top edge, tile columns 6–9 → Engineering"
    ],
    "notes": "Cells with captive Alienmon (The Captives)",
-   "file": "art/sections/09_helix/110_containment_wing_2f.png"
+   "file": "art/sections/09_helix/110_containment_wing_2f.png",
+   "v2": true
   },
   {
    "id": "111",
@@ -2468,11 +2467,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7–8 → Containment Wing 2F",
-    "top edge, tile columns 7–8 → Vex's Arena"
+    "bottom edge, tile columns 6–9 → Containment Wing 2F",
+    "top edge, tile columns 6–9 → Vex's Arena"
    ],
    "notes": "Reactor engineering deck",
-   "file": "art/sections/09_helix/111_engineering.png"
+   "file": "art/sections/09_helix/111_engineering.png",
+   "v2": true
   },
   {
    "id": "112",
@@ -2489,11 +2489,10 @@
    ],
    "tile_px_render": 64,
    "tile_px_game": 16,
-   "exits": [
-    "doormat at the bottom center of the room leads back outside"
-   ],
+   "exits": [],
    "notes": "Observation deck (rival battle R4, M14)",
-   "file": "art/sections/09_helix/112_observation_deck.png"
+   "file": "art/sections/09_helix/112_observation_deck.png",
+   "v2": true
   },
   {
    "id": "113",
@@ -2511,10 +2510,11 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7–8 → Engineering"
+    "bottom edge, tile columns 6–9 → Engineering"
    ],
    "notes": "Admin Vex's arena",
-   "file": "art/sections/09_helix/113_vex_s_arena.png"
+   "file": "art/sections/09_helix/113_vex_s_arena.png",
+   "v2": true
   },
   {
    "id": "114",

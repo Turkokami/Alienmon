@@ -27,6 +27,15 @@ ZONE_TOWN = {'thalassa': [('wall', T(40, 41, 43, 44, 47, 50, 51), 2), ('wall', T
 # Towns are laid out by hand like a real street: lamps in straight evenly spaced rows, stalls in a line along the
 # shopfronts, planters in pairs either side of a door, benches facing each other. (prop, x, y)
 HAND = {
+ '105': [('09_helix/16', 3, 4), ('09_helix/16', 9, 4), ('09_helix/16', 15, 4), ('09_helix/16', 21, 4), ('09_helix/184', 8, 8), ('09_helix/43', 10, 8), ('09_helix/44', 13, 8), ('09_helix/184', 16, 8), ('09_helix/170', 2, 11), ('09_helix/172', 3, 11), ('09_helix/196', 18, 11), ('09_helix/36', 20, 11), ('09_helix/36', 21, 11), ('09_helix/69', 8, 12), ('09_helix/69', 15, 12)],
+ '106': [('09_helix/69', 12, 4), ('09_helix/36', 3, 12), ('09_helix/36', 12, 12)],
+ '107': [('09_helix/103', 3, 12), ('09_helix/105', 11, 12)],
+ '108': [('09_helix/104', 4, 12), ('09_helix/106', 11, 12)],
+ '109': [('09_helix/16', 3, 3), ('09_helix/16', 12, 3), ('09_helix/16', 3, 12), ('09_helix/16', 12, 12)],
+ '110': [('09_helix/16', 2, 11), ('09_helix/16', 13, 11)],
+ '111': [('09_helix/196', 11, 11), ('09_helix/36', 3, 12), ('09_helix/36', 4, 12)],
+ '112': [('09_helix/69', 3, 4), ('09_helix/69', 12, 4)],
+ '113': [('09_helix/41', 2, 4), ('09_helix/41', 13, 4), ('09_helix/16', 2, 21), ('09_helix/16', 13, 21)],
  '093': [('08_glacia/86', 7, 5), ('08_glacia/60', 10, 5), ('08_glacia/60', 15, 5), ('08_glacia/60', 20, 5), ('08_glacia/72', 8, 8), ('08_glacia/73', 12, 8), ('08_glacia/74', 16, 8), ('08_glacia/72', 20, 8), ('08_glacia/113', 2, 11), ('08_glacia/61', 5, 11), ('08_glacia/90', 8, 11), ('08_glacia/90', 15, 11), ('08_glacia/113', 18, 11), ('08_glacia/93', 21, 11)],
  '094': [('08_glacia/154', 2, 5), ('08_glacia/154', 13, 5), ('08_glacia/163', 2, 12), ('08_glacia/163', 13, 12)],
  '095': [('08_glacia/154', 3, 12), ('08_glacia/154', 12, 12), ('08_glacia/86', 3, 7)],

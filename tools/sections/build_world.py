@@ -240,7 +240,7 @@ for d in links['doors']:
         mat = d['mat'][min(k, len(d['mat']) - 1)]
         world[p]['warps'].append({'tile': dt, 'to': i, 'at': [mat[0], mat[1] - 1], 'face': 'up', 'kind': 'door', 'edge': 'up'})
     for m in d['mat']:
-        world[i]['warps'].append({'tile': m, 'to': p, 'at': [d['door'][0], d['door'][1] + 1], 'face': 'down', 'kind': 'door'})
+        world[i]['warps'].append({'tile': m, 'to': p, 'at': list(d.get('back_at') or [d['door'][0], d['door'][1] + 1]), 'face': d.get('back_face', 'down'), 'kind': 'door'})   # back_at: a door in a bottom wall returns you above it
     world[i]['spawns']['door'] = [d['mat'][0][0], d['mat'][0][1] - 1]
     world[i]['parent'] = p
     if d.get('confidence') != 'high':

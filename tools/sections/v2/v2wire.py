@@ -6,7 +6,20 @@ A2={s['id']:s for s in json.load(open(S+'atlas_v2.json',encoding='utf-8'))['sect
 AT=json.load(open('art/sections/atlas.json',encoding='utf-8'));A1={s['id']:s for s in AT['sections']}
 L=json.load(open('data/sections/links.json',encoding='utf-8'))
 H=lambda x,y:{'tile':[x,y]}
-WIRE={'08':{
+WIRE={'09':{
+ 'ids':['%03d'%i for i in range(105,114)],
+ 'doors':[],'stairs':[('107',[12,3],'108',[12,3]),('107',[13,3],'108',[13,3])],
+ 'objects':{
+  '105':[{'tile':[17,3],'k':'bay','door':True,'t':["The medical bay's scanner hums. Helix-grade nanites patch up your whole team."],'why':'V2: medical module (cross) works like the counter'},
+         {'tile':[18,3],'k':'bay','door':True,'t':["The medical bay's scanner hums. Helix-grade nanites patch up your whole team."],'why':'V2: medical module'},
+         {'tile':[8,3],'k':'sign','t':['HELIX STATION - DOCKING RING. All personnel: report unregistered Linkers to Security.']}],
+ },
+ 'warps':[],
+ 'gates':{},
+ 'gates_new':[{'section':'105','tiles':[[1,7],[1,8]],'at_dy':0,'node':'dustara','planet':'dustara','label':'the shuttle back to the Shuttle Pad','why':'V2: the docking bay pad is the arrival point and the shuttle home'}],
+ 'spawns':{'105':{'arrival':[3,8],'default':[3,8]},'112':{'default':[7,13]}},
+ 'arrival':{'helix':{'section':'105','why':'V2: the docking bay pad on the Docking Ring'}},
+},'08':{
  'ids':['%03d'%i for i in range(93,105)],
  'doors':[],'stairs':[],
  'objects':{

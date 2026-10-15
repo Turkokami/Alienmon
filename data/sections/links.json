@@ -212,6 +212,32 @@
     5
    ],
    "why": "V2 stairs"
+  },
+  {
+   "a": "107",
+   "a_tile": [
+    12,
+    3
+   ],
+   "b": "108",
+   "b_tile": [
+    12,
+    3
+   ],
+   "why": "V2 stairs"
+  },
+  {
+   "a": "107",
+   "a_tile": [
+    13,
+    3
+   ],
+   "b": "108",
+   "b_tile": [
+    13,
+    3
+   ],
+   "why": "V2 stairs"
   }
  ],
  "ignore_mats": {},
@@ -1336,6 +1362,42 @@
     "to": "193",
     "why": "V2: the Ice Lodge"
    }
+  ],
+  "105": [
+   {
+    "tile": [
+     17,
+     3
+    ],
+    "k": "bay",
+    "door": true,
+    "t": [
+     "The medical bay's scanner hums. Helix-grade nanites patch up your whole team."
+    ],
+    "why": "V2: medical module (cross) works like the counter"
+   },
+   {
+    "tile": [
+     18,
+     3
+    ],
+    "k": "bay",
+    "door": true,
+    "t": [
+     "The medical bay's scanner hums. Helix-grade nanites patch up your whole team."
+    ],
+    "why": "V2: medical module"
+   },
+   {
+    "tile": [
+     8,
+     3
+    ],
+    "k": "sign",
+    "t": [
+     "HELIX STATION - DOCKING RING. All personnel: report unregistered Linkers to Security."
+    ]
+   }
   ]
  },
  "arrival": {
@@ -1370,6 +1432,10 @@
   "glacia": {
    "section": "093",
    "why": "V2: the landing pad under the glass dome"
+  },
+  "helix": {
+   "section": "105",
+   "why": "V2: the docking bay pad on the Docking Ring"
   }
  },
  "unlisted": {},
@@ -1633,6 +1699,22 @@
     3,
     7
    ]
+  },
+  "105": {
+   "arrival": [
+    3,
+    8
+   ],
+   "default": [
+    3,
+    8
+   ]
+  },
+  "112": {
+   "default": [
+    7,
+    13
+   ]
   }
  },
  "zones": {
@@ -1837,6 +1919,24 @@
    "planet": "dustara",
    "label": "the Deep Sea Ferry back to the Long Dock",
    "why": "V2: the jetty is the arrival point and the ferry home"
+  },
+  {
+   "section": "105",
+   "tiles": [
+    [
+     1,
+     7
+    ],
+    [
+     1,
+     8
+    ]
+   ],
+   "at_dy": 0,
+   "node": "dustara",
+   "planet": "dustara",
+   "label": "the shuttle back to the Shuttle Pad",
+   "why": "V2: the docking bay pad is the arrival point and the shuttle home"
   }
  ],
  "trainers": {

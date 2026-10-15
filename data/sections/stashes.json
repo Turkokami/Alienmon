@@ -1095,11 +1095,44 @@
  ],
  "Helix Station": [
   {
+   "section": "105",
+   "name": "Docking Ring",
+   "tile": [
+    20,
+    13
+   ],
+   "item": "maxrevive",
+   "n": 1,
+   "tier": 5
+  },
+  {
+   "section": "109",
+   "name": "Containment Wing 1F",
+   "tile": [
+    14,
+    8
+   ],
+   "item": "singularity",
+   "n": 1,
+   "tier": 5
+  },
+  {
+   "section": "109",
+   "name": "Containment Wing 1F",
+   "tile": [
+    1,
+    8
+   ],
+   "item": "ether",
+   "n": 3,
+   "tier": 5
+  },
+  {
    "section": "110",
    "name": "Containment Wing 2F",
    "tile": [
     2,
-    5
+    10
    ],
    "item": "harmonic",
    "n": 5,
@@ -1110,7 +1143,7 @@
    "name": "Engineering",
    "tile": [
     3,
-    12
+    11
    ],
    "item": "maxrevive",
    "n": 1,
