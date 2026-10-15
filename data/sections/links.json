@@ -672,111 +672,6 @@
     "why": "dead-end stairs (tools/sections/dead_ends.py)"
    }
   ],
-  "052": [
-   {
-    "tile": [
-     12,
-     3
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   },
-   {
-    "tile": [
-     12,
-     4
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   },
-   {
-    "tile": [
-     5,
-     4
-    ],
-    "k": "house",
-    "to": "191",
-    "why": "house door: opens the thalassa house (was a item knock door)"
-   },
-   {
-    "tile": [
-     19,
-     11
-    ],
-    "k": "house",
-    "to": "191",
-    "why": "house door: opens the thalassa house (was a chat knock door)"
-   }
-  ],
-  "053": [
-   {
-    "tile": [
-     16,
-     4
-    ],
-    "k": "bay",
-    "why": "Saltreach second Recovery Bay (no interior yet, so the door works like the counter)",
-    "door": true
-   },
-   {
-    "tile": [
-     6,
-     11
-    ],
-    "k": "house",
-    "to": "171",
-    "why": "house door: opens the shared Thalassa house"
-   },
-   {
-    "tile": [
-     1,
-     0
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   },
-   {
-    "tile": [
-     2,
-     0
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   },
-   {
-    "tile": [
-     20,
-     11
-    ],
-    "k": "house",
-    "to": "191",
-    "why": "house door: opens the thalassa house (was a item knock door)"
-   }
-  ],
-  "059": [
-   {
-    "tile": [
-     1,
-     9
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   },
-   {
-    "tile": [
-     1,
-     10
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   }
-  ],
   "062": [],
   "063": [
    {
@@ -1287,18 +1182,6 @@
     "to": "193"
    }
   ],
-  "057": [],
-  "061": [
-   {
-    "tile": [
-     8,
-     2
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   }
-  ],
   "067": [
    {
     "tile": [
@@ -1676,6 +1559,82 @@
     "to": "185",
     "why": "V2: the mushroom house by the Spore Pools"
    }
+  ],
+  "052": [
+   {
+    "tile": [
+     4,
+     3
+    ],
+    "k": "house",
+    "to": "191",
+    "why": "V2: Saltreach house (shared Thalassa home)"
+   },
+   {
+    "tile": [
+     5,
+     3
+    ],
+    "k": "house",
+    "to": "191",
+    "why": "V2: Saltreach house"
+   },
+   {
+    "tile": [
+     20,
+     3
+    ],
+    "k": "house",
+    "to": "191",
+    "why": "V2: Saltreach house"
+   },
+   {
+    "tile": [
+     10,
+     3
+    ],
+    "k": "house",
+    "to": "054",
+    "why": "V2: the dock Recovery Bay (shared room)"
+   },
+   {
+    "tile": [
+     11,
+     3
+    ],
+    "k": "house",
+    "to": "054",
+    "why": "V2: the dock Recovery Bay"
+   },
+   {
+    "tile": [
+     16,
+     3
+    ],
+    "k": "house",
+    "to": "055",
+    "why": "V2: the dock shop (shared room)"
+   }
+  ],
+  "053": [
+   {
+    "tile": [
+     3,
+     4
+    ],
+    "k": "house",
+    "to": "191",
+    "why": "V2: market house (shared Thalassa home)"
+   },
+   {
+    "tile": [
+     19,
+     4
+    ],
+    "k": "house",
+    "to": "191",
+    "why": "V2: market house"
+   }
   ]
  },
  "arrival": {
@@ -1690,6 +1649,10 @@
   "sporeholm": {
    "section": "041",
    "why": "V2: the landing circle on the giant mushroom cap"
+  },
+  "thalassa": {
+   "section": "052",
+   "why": "V2: the compass landing pad on the Saltreach docks"
   }
  },
  "unlisted": {},
@@ -1709,7 +1672,7 @@
   "167": {
    "default": [
     7,
-    11
+    12
    ]
   },
   "168": {
@@ -1720,8 +1683,8 @@
   },
   "169": {
    "default": [
-    11,
-    13
+    2,
+    7
    ]
   },
   "170": {
@@ -1895,6 +1858,16 @@
    ]
   },
   "041": {
+   "arrival": [
+    3,
+    7
+   ],
+   "default": [
+    3,
+    7
+   ]
+  },
+  "052": {
    "arrival": [
     3,
     7
@@ -2141,126 +2114,6 @@
   }
  ],
  "warps": [
-  {
-   "section": "052",
-   "tile": [
-    11,
-    12
-   ],
-   "to": "167",
-   "at": [
-    7,
-    11
-   ],
-   "face": "up",
-   "kind": "door",
-   "node": "ghost_ship"
-  },
-  {
-   "section": "167",
-   "tile": [
-    7,
-    12
-   ],
-   "to": "052",
-   "at": [
-    10,
-    12
-   ],
-   "face": "left",
-   "kind": "door",
-   "parent": "052"
-  },
-  {
-   "section": "167",
-   "tile": [
-    8,
-    12
-   ],
-   "to": "052",
-   "at": [
-    10,
-    12
-   ],
-   "face": "left",
-   "kind": "door",
-   "parent": "052"
-  },
-  {
-   "section": "052",
-   "tile": [
-    21,
-    12
-   ],
-   "to": "168",
-   "at": [
-    8,
-    12
-   ],
-   "face": "up",
-   "kind": "door",
-   "node": "helix_freighter"
-  },
-  {
-   "section": "168",
-   "tile": [
-    8,
-    13
-   ],
-   "to": "052",
-   "at": [
-    20,
-    12
-   ],
-   "face": "left",
-   "kind": "door",
-   "parent": "052"
-  },
-  {
-   "section": "053",
-   "tile": [
-    12,
-    14
-   ],
-   "to": "169",
-   "at": [
-    11,
-    13
-   ],
-   "face": "up",
-   "kind": "door",
-   "node": "smuggler_freighter"
-  },
-  {
-   "section": "169",
-   "tile": [
-    11,
-    14
-   ],
-   "to": "053",
-   "at": [
-    12,
-    13
-   ],
-   "face": "up",
-   "kind": "door",
-   "parent": "053"
-  },
-  {
-   "section": "169",
-   "tile": [
-    12,
-    14
-   ],
-   "to": "053",
-   "at": [
-    12,
-    13
-   ],
-   "face": "up",
-   "kind": "door",
-   "parent": "053"
-  },
   {
    "section": "063",
    "tile": [
@@ -3099,12 +2952,134 @@
    "face": "down",
    "kind": "stairs",
    "parent": "005"
+  },
+  {
+   "section": "052",
+   "tile": [
+    11,
+    12
+   ],
+   "to": "167",
+   "at": [
+    7,
+    12
+   ],
+   "face": "up",
+   "kind": "door",
+   "node": "ghost_ship"
+  },
+  {
+   "section": "052",
+   "tile": [
+    12,
+    12
+   ],
+   "to": "168",
+   "at": [
+    8,
+    12
+   ],
+   "face": "up",
+   "kind": "door",
+   "node": "helix_freighter"
+  },
+  {
+   "section": "167",
+   "tile": [
+    7,
+    14
+   ],
+   "to": "052",
+   "at": [
+    11,
+    11
+   ],
+   "face": "up",
+   "kind": "door",
+   "parent": "052"
+  },
+  {
+   "section": "167",
+   "tile": [
+    8,
+    14
+   ],
+   "to": "052",
+   "at": [
+    11,
+    11
+   ],
+   "face": "up",
+   "kind": "door",
+   "parent": "052"
+  },
+  {
+   "section": "168",
+   "tile": [
+    7,
+    14
+   ],
+   "to": "052",
+   "at": [
+    12,
+    11
+   ],
+   "face": "up",
+   "kind": "door",
+   "parent": "052"
+  },
+  {
+   "section": "168",
+   "tile": [
+    8,
+    14
+   ],
+   "to": "052",
+   "at": [
+    12,
+    11
+   ],
+   "face": "up",
+   "kind": "door",
+   "parent": "052"
+  },
+  {
+   "section": "053",
+   "tile": [
+    19,
+    12
+   ],
+   "to": "169",
+   "at": [
+    2,
+    7
+   ],
+   "face": "right",
+   "kind": "door",
+   "node": "smuggler_freighter"
+  },
+  {
+   "section": "169",
+   "tile": [
+    0,
+    7
+   ],
+   "to": "053",
+   "at": [
+    19,
+    11
+   ],
+   "face": "up",
+   "kind": "door",
+   "parent": "053"
   }
  ],
  "shared_rooms": [
   "005",
   "006",
   "031",
-  "032"
+  "032",
+  "054",
+  "055"
  ]
 }

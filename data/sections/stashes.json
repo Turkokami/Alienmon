@@ -571,8 +571,8 @@
    "section": "052",
    "name": "Port Saltreach Docks",
    "tile": [
-    20,
-    13
+    0,
+    10
    ],
    "item": "harmonic",
    "n": 2,
@@ -582,8 +582,8 @@
    "section": "053",
    "name": "Saltreach Market",
    "tile": [
-    1,
-    10
+    17,
+    5
    ],
    "item": "megagel",
    "n": 1,
@@ -593,8 +593,8 @@
    "section": "057",
    "name": "Coral Route Part A",
    "tile": [
-    17,
-    1
+    11,
+    14
    ],
    "item": "gel",
    "n": 3,
@@ -604,8 +604,8 @@
    "section": "057",
    "name": "Coral Route Part A",
    "tile": [
-    6,
-    13
+    19,
+    12
    ],
    "item": "revive",
    "n": 1,
@@ -615,8 +615,8 @@
    "section": "058",
    "name": "Coral Route Part B",
    "tile": [
-    5,
-    2
+    10,
+    13
    ],
    "item": "jammer",
    "n": 1,
@@ -626,7 +626,7 @@
    "section": "058",
    "name": "Coral Route Part B",
    "tile": [
-    15,
+    6,
     2
    ],
    "item": "harmonic",
@@ -637,8 +637,8 @@
    "section": "059",
    "name": "Sea Arch Cove",
    "tile": [
-    21,
-    14
+    8,
+    11
    ],
    "item": "megagel",
    "n": 1,

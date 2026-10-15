@@ -2,51 +2,66 @@
  "doors": [
   {
    "interior": "054",
-   "parent": "052",
+   "parent": "053",
    "door": [
-    16,
+    8,
+    4
+   ],
+   "door2": [
+    9,
     4
    ],
    "mat": [
     [
      7,
-     13
+     14
     ],
     [
      8,
-     13
+     14
     ]
    ],
    "confidence": "high",
-   "why": "Big white dome with the cyan cross over its arched door, top centre of the arrival docks (052)"
+   "why": "V2: Saltreach Recovery Bay, white dome with the blue cross"
   },
   {
    "interior": "055",
-   "parent": "052",
+   "parent": "053",
    "door": [
-    8,
-    11
+    13,
+    4
+   ],
+   "door2": [
+    14,
+    4
    ],
    "mat": [
     [
      7,
-     13
+     14
     ],
     [
      8,
-     13
+     14
     ]
    ],
    "confidence": "high",
-   "why": "Dome on the lower-left pier flanked by red/yellow striped awnings and goods tables = shop front (052)"
+   "why": "V2: Saltreach Shop, striped awning"
   }
  ],
  "objects": {
   "054": [
    {
     "tile": [
+     7,
+     3
+    ],
+    "k": "bay"
+   },
+   {
+    "tile": [
      8,
-     7
+     3
     ],
     "k": "bay"
    }
@@ -54,8 +69,15 @@
   "055": [
    {
     "tile": [
-     5,
-     7
+     7,
+     4
+    ],
+    "k": "shop"
+   },
+   {
+    "tile": [
+     8,
+     4
     ],
     "k": "shop"
    }
@@ -64,7 +86,7 @@
    {
     "tile": [
      7,
-     3
+     4
     ],
     "k": "keeper"
    }
@@ -72,24 +94,12 @@
   "052": [
    {
     "tile": [
-     12,
-     7
+     8,
+     10
     ],
     "k": "sign",
     "t": [
-     "PORT SALTREACH DOCKS. Mind the fog, mind the nets, mind the gap between the piers."
-    ]
-   }
-  ],
-  "053": [
-   {
-    "tile": [
-     12,
-     8
-    ],
-    "k": "sign",
-    "t": [
-     "SALTREACH MARKET. Fresh catch at dawn, fair prices till dusk. No haggling with the gulls."
+     "PORT SALTREACH DOCKS. Sunny skies, clear water, and the best fish pies in the Kessler system."
     ]
    }
   ],
@@ -97,7 +107,7 @@
    {
     "tile": [
      3,
-     6
+     4
     ],
     "k": "sign",
     "t": [
@@ -109,24 +119,12 @@
   "059": [
    {
     "tile": [
-     3,
-     9
+     4,
+     4
     ],
     "k": "sign",
     "t": [
      "SEA ARCH COVE. Quiet waters. Something very large sleeps beneath the arch. Please do not wake it."
-    ]
-   }
-  ],
-  "060": [
-   {
-    "tile": [
-     7,
-     11
-    ],
-    "k": "sign",
-    "t": [
-     "Harbor Tower relay housing. The socket is empty and scorched. Someone tore the core out in a hurry."
     ]
    }
   ]
@@ -139,8 +137,8 @@
    "section": "060",
    "n": 0,
    "tile": [
-    2,
-    10
+    3,
+    12
    ],
    "face": "right"
   },
@@ -148,8 +146,8 @@
    "section": "060",
    "n": 1,
    "tile": [
-    13,
-    10
+    12,
+    12
    ],
    "face": "left"
   }
@@ -160,109 +158,146 @@
     "art": "squidsailor",
     "t": [
      "Sailor: Welcome to Port Saltreach! The fog rolls in every morning, thick as chowder."
-    ]
+    ],
+    "tile": [
+     12,
+     5
+    ],
+    "stay": true
    },
    {
     "art": "guard",
     "t": [
      "Dockhand: Helix boats were circling the harbor again last night. White coats, no flags. Shady."
-    ]
+    ],
+    "tile": [
+     17,
+     9
+    ],
+    "stay": true
    },
    {
     "art": "civilian",
     "t": [
      "Swimmer: Hydro types are everywhere here. Bring something with Volt moves and they'll fold fast."
-    ]
+    ],
+    "tile": [
+     7,
+     9
+    ],
+    "stay": true
    },
    {
     "art": "mom",
     "t": [
      "Net-mender: The big dome up top is the Recovery Bay. Rest your Alienmon there, it's free."
-    ]
+    ],
+    "tile": [
+     4,
+     5
+    ],
+    "stay": true
    },
    {
     "art": "explorer",
     "t": [
      "Diver: Tall weeds on the coral bars hide wild Alienmon. The shallows are full of them."
-    ]
+    ],
+    "tile": [
+     19,
+     5
+    ],
+    "stay": true
    },
    {
     "art": "wanderer",
     "t": [
      "Old salt: Thalassa's rings throw rainbows on the water at noon. Best view's from the lighthouse."
-    ]
+    ],
+    "tile": [
+     12,
+     10
+    ],
+    "stay": true
    }
   ],
   "053": [
    {
     "art": "civilian",
     "tile": [
-     5,
-     6
+     8,
+     7
     ],
     "t": [
      "Fishmonger: Fresh catch! ...No, you can't catch it with a Stasis Pod. It's a fish. It's dead."
-    ]
+    ],
+    "stay": true
    },
    {
     "art": "squidsailor",
     "tile": [
-     14,
-     11
+     20,
+     6
     ],
     "t": [
      "Sailor: Lighthouse is east, past the market. The old Captain's Log is still up there."
-    ]
+    ],
+    "stay": true
    },
    {
     "art": "mom",
     "tile": [
-     3,
-     8
+     4,
+     9
     ],
     "t": [
      "Shopper: Stock up on Stasis Pods at the docks shop. A weakened Alienmon is easier to catch."
-    ]
+    ],
+    "stay": true
    },
    {
     "art": "technician",
     "tile": [
-     17,
-     6
+     22,
+     10
     ],
     "t": [
      "Mechanic: Captain Marsh's tower relays signals for the whole system. Or it did, till Helix came."
-    ]
+    ],
+    "stay": true
    },
    {
     "art": "explorer",
     "tile": [
-     7,
-     8
+     12,
+     6
     ],
     "t": [
      "Traveller: Keepers guard the Relay Towers. Win and they hand you a Signal Shard."
-    ]
+    ],
+    "stay": true
    },
    {
     "art": "guard",
     "tile": [
-     4,
-     12
+     16,
+     7
     ],
     "t": [
      "Harbor guard: Trainers on the routes will spot you if you walk into their line of sight. Be ready."
-    ]
+    ],
+    "stay": true
    },
    {
     "art": "wanderer",
     "tile": [
-     22,
-     12
+     11,
+     9
     ],
     "t": [
      "Storyteller: They say Anchorath sleeps under the sea arch, and the tide turns when it dreams."
-    ]
+    ],
+    "stay": true
    }
   ],
   "054": [
@@ -270,7 +305,7 @@
     "art": "nurse",
     "tile": [
      8,
-     7
+     3
     ],
     "t": [
      "Nurse: Welcome to the Saltreach Recovery Bay. Your Alienmon will be shipshape in no time."
@@ -281,15 +316,20 @@
     "art": "squidsailor",
     "t": [
      "Sailor: I come here after every storm. Even my Alienmon get seasick, believe it or not."
-    ]
+    ],
+    "tile": [
+     9,
+     12
+    ],
+    "stay": true
    }
   ],
   "055": [
    {
     "art": "shop",
     "tile": [
-     5,
-     7
+     8,
+     4
     ],
     "t": [
      "Clerk: Ahoy! Pods, potions, rope, bait. Everything a Linker needs before the coral route."
@@ -300,7 +340,12 @@
     "art": "civilian",
     "t": [
      "Shopper: Status cures are worth it out on the islands. Wild bites sting more than you'd think."
-    ]
+    ],
+    "tile": [
+     9,
+     12
+    ],
+    "stay": true
    }
   ],
   "056": [
@@ -308,13 +353,23 @@
     "art": "researcher",
     "t": [
      "Keeper's aide: The stairs up top lead out onto the coral sand bars. Watch for the tide."
-    ]
+    ],
+    "tile": [
+     10,
+     3
+    ],
+    "stay": true
    },
    {
     "art": "squidsailor",
     "t": [
      "Lamp tender: This light guided the fishing fleet for a hundred years. Helix ships ignore it."
-    ]
+    ],
+    "tile": [
+     10,
+     17
+    ],
+    "stay": true
    }
   ],
   "057": [
@@ -322,13 +377,23 @@
     "art": "explorer",
     "t": [
      "Beachcomber: The coral bars connect at low tide. Hop the bridges and you'll stay dry."
-    ]
+    ],
+    "tile": [
+     20,
+     5
+    ],
+    "stay": true
    },
    {
     "art": "civilian",
     "t": [
      "Swimmer: My Alienmon love the shallows. Low-level ones, sure, but they never stop splashing."
-    ]
+    ],
+    "tile": [
+     2,
+     8
+    ],
+    "stay": true
    }
   ],
   "058": [
@@ -336,45 +401,58 @@
     "art": "wanderer",
     "t": [
      "Castaway: Saw an old wreck off the south rocks. Nobody's dared dive it yet."
-    ]
+    ],
+    "tile": [
+     18,
+     5
+    ],
+    "stay": true
    },
    {
     "art": "squidsailor",
     "t": [
      "Sailor: Harbor Tower is past the sea arch. Captain Marsh doesn't go easy on anyone."
-    ]
+    ],
+    "tile": [
+     3,
+     8
+    ],
+    "stay": true
    }
   ],
   "059": [
    {
     "art": "researcher",
     "tile": [
-     5,
-     10
+     12,
+     4
     ],
     "t": [
      "Researcher: Readings spike under the arch at night. Whatever sleeps there is enormous."
-    ]
+    ],
+    "stay": true
    },
    {
     "art": "pilgrim",
     "tile": [
-     21,
-     6
+     17,
+     8
     ],
     "t": [
      "Pilgrim: Walk softly here. The islanders leave shells at the shrines so Anchorath sleeps on."
-    ]
+    ],
+    "stay": true
    },
    {
     "art": "guard",
     "tile": [
-     19,
-     13
+     4,
+     6
     ],
     "t": [
      "Lookout: Helix divers were poking around the cove. I chased them off with a bucket."
-    ]
+    ],
+    "stay": true
    }
   ],
   "060": [
@@ -382,7 +460,12 @@
     "art": "squidsailor",
     "t": [
      "Deckhand: Captain Marsh is upstairs. Helix ripped the core right out of this tower. She's furious."
-    ]
+    ],
+    "tile": [
+     10,
+     4
+    ],
+    "stay": true
    }
   ],
   "061": [
@@ -390,16 +473,15 @@
     "art": "guard",
     "t": [
      "First mate: The Captain fights with the tide behind her. Volt types might give you a chance."
-    ]
+    ],
+    "tile": [
+     10,
+     6
+    ],
+    "stay": true
    }
   ]
  },
- "unlisted": {
-  "057": "Wooden stairs (4,3-4) and (10,4-5) climb the upper sand bar; the bridge (12-15,2) ends on a tiny palm islet (dead end, walkable).",
-  "052": "Small dome house door (5,4) top-left, dome house door (19,11) on the right pier, and the wooden stairs/boardwalk (12-13,1-3) up past the bay lead nowhere; door tiles left blocked.",
-  "053": "Wooden staircase top-left (1-2,0-4) runs off the top edge (kept walkable to row 1, row 0 blocked); dome doors (5,4), (16,4) (second cross dome), (6,11) and (20,11) have no interiors and are blocked.",
-  "059": "Shrine doors at (1,3) and (20,5) and the stone stairs (1,9) dropping into the water are not exits; blocked. ",
-  "061": "Stairs drawn at the top centre (7-8,0-2) lead off-map but 2F has no top exit; blocked. Keeper stands at their foot. Central pier (7-8,10-13) is cut off by water and left blocked."
- },
+ "unlisted": {},
  "notes": "Thalassa: both interiors hang off the arrival docks 052 (cross dome = bay, awning dome = shop); 053 has a second cross dome whose door is left blocked. Harbor Tower 1F (060): the centre pier (7-8,7-10) dead-ends at a pool, so the climb goes up the side bridges (3-4,8)/(11-12,8); I let the tile under each hanging banner (3,6-7)/(12,6-7) count as the bridge's continuation to the anchor decks. Sea Arch Cove (059): the art has no continuous land link between the west shore and the east shore/tower exit, so the middle dock is joined by two short water hops, (11-12,13) west of the dock and (16-17,11) east of it (the docks NPC line says \"jump the short gaps between piers\"). A boat/ferry or a drawn plank would be nicer: owner decision. 2F (061) climbs via side stairs (4-5,7-8)/(10-11,7-8)."
 }

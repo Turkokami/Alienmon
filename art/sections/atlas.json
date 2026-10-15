@@ -1160,11 +1160,11 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → arrival (landing pad / gate)",
-    "right edge, tile rows 7–8 → Saltreach Market"
+    "right edge, tile rows 5–10 → Saltreach Market"
    ],
    "notes": "Fog-bound docks, net sheds, stilt houses",
-   "file": "art/sections/04_thalassa/052_port_saltreach_docks.png"
+   "file": "art/sections/04_thalassa/052_port_saltreach_docks.png",
+   "v2": true
   },
   {
    "id": "053",
@@ -1182,11 +1182,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Port Saltreach Docks",
-    "right edge, tile rows 7–8 → Lighthouse"
+    "left edge, tile rows 5–10 → Port Saltreach Docks",
+    "right edge, tile rows 5–10 → Lighthouse"
    ],
    "notes": "Harbor market",
-   "file": "art/sections/04_thalassa/053_saltreach_market.png"
+   "file": "art/sections/04_thalassa/053_saltreach_market.png",
+   "v2": true
   },
   {
    "id": "054",
@@ -1203,11 +1204,10 @@
    ],
    "tile_px_render": 64,
    "tile_px_game": 16,
-   "exits": [
-    "doormat at the bottom center of the room leads back outside"
-   ],
+   "exits": [],
    "notes": "",
-   "file": "art/sections/04_thalassa/054_saltreach_recovery_bay.png"
+   "file": "art/sections/04_thalassa/054_saltreach_recovery_bay.png",
+   "v2": true
   },
   {
    "id": "055",
@@ -1224,11 +1224,10 @@
    ],
    "tile_px_render": 64,
    "tile_px_game": 16,
-   "exits": [
-    "doormat at the bottom center of the room leads back outside"
-   ],
+   "exits": [],
    "notes": "",
-   "file": "art/sections/04_thalassa/055_saltreach_shop.png"
+   "file": "art/sections/04_thalassa/055_saltreach_shop.png",
+   "v2": true
   },
   {
    "id": "056",
@@ -1246,11 +1245,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7–8 → Saltreach Market",
-    "top edge, tile columns 7–8 (stairs up) → Coral Route Part A"
+    "bottom edge, tile columns 6–9 → Saltreach Market",
+    "top edge, tile columns 6–9 (stairs up) → Coral Route Part A"
    ],
    "notes": "Old lighthouse interior spiral (Captain's Log)",
-   "file": "art/sections/04_thalassa/056_lighthouse.png"
+   "file": "art/sections/04_thalassa/056_lighthouse.png",
+   "v2": true
   },
   {
    "id": "057",
@@ -1268,11 +1268,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Lighthouse",
-    "right edge, tile rows 7–8 → Coral Route Part B"
+    "left edge, tile rows 5–8 → Lighthouse",
+    "right edge, tile rows 5–8 → Coral Route Part B"
    ],
    "notes": "Sand-bar route over coral shallows",
-   "file": "art/sections/04_thalassa/057_coral_route_part_a.png"
+   "file": "art/sections/04_thalassa/057_coral_route_part_a.png",
+   "v2": true
   },
   {
    "id": "058",
@@ -1290,11 +1291,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Coral Route Part A",
-    "right edge, tile rows 7–8 → Sea Arch Cove"
+    "left edge, tile rows 5–8 → Coral Route Part A",
+    "right edge, tile rows 5–8 → Sea Arch Cove"
    ],
    "notes": "Sand-bar route over coral shallows",
-   "file": "art/sections/04_thalassa/058_coral_route_part_b.png"
+   "file": "art/sections/04_thalassa/058_coral_route_part_b.png",
+   "v2": true
   },
   {
    "id": "059",
@@ -1312,11 +1314,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Coral Route Part B",
-    "right edge, tile rows 7–8 → Harbor Tower 1F"
+    "left edge, tile rows 5–8 → Coral Route Part B",
+    "right edge, tile rows 5–8 → Harbor Tower 1F"
    ],
    "notes": "Giant stone sea arch where Anchorath sleeps",
-   "file": "art/sections/04_thalassa/059_sea_arch_cove.png"
+   "file": "art/sections/04_thalassa/059_sea_arch_cove.png",
+   "v2": true
   },
   {
    "id": "060",
@@ -1334,11 +1337,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7–8 → Sea Arch Cove",
-    "top edge, tile columns 7–8 (stairs up) → Harbor Tower 2F"
+    "bottom edge, tile columns 6–9 → Sea Arch Cove",
+    "top edge, tile columns 6–9 (stairs up) → Harbor Tower 2F"
    ],
    "notes": "Captain Marsh's harbor tower",
-   "file": "art/sections/04_thalassa/060_harbor_tower_1f.png"
+   "file": "art/sections/04_thalassa/060_harbor_tower_1f.png",
+   "v2": true
   },
   {
    "id": "061",
@@ -1356,10 +1360,11 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7–8 → Harbor Tower 1F"
+    "bottom edge, tile columns 6–9 → Harbor Tower 1F"
    ],
    "notes": "Captain Marsh's harbor tower",
-   "file": "art/sections/04_thalassa/061_harbor_tower_2f.png"
+   "file": "art/sections/04_thalassa/061_harbor_tower_2f.png",
+   "v2": true
   },
   {
    "id": "062",
@@ -3650,7 +3655,8 @@
    "tile_px_game": 16,
    "exits": [],
    "notes": "The hold of the drifting Helix freighter: empty cages and barred grates",
-   "file": "art/sections/04_thalassa/167_ghost_ship_hold.png"
+   "file": "art/sections/04_thalassa/167_ghost_ship_hold.png",
+   "v2": true
   },
   {
    "id": "168",
@@ -3669,7 +3675,8 @@
    "tile_px_game": 16,
    "exits": [],
    "notes": "Helix cargo freighter at the east pier; Thalassa's tower core is held in the glowing cargo pit",
-   "file": "art/sections/04_thalassa/168_helix_freighter.png"
+   "file": "art/sections/04_thalassa/168_helix_freighter.png",
+   "v2": true
   },
   {
    "id": "169",
@@ -3688,7 +3695,8 @@
    "tile_px_game": 16,
    "exits": [],
    "notes": "A rusty smuggler's freighter at the Saltreach Market pier, where Admin Vex hides",
-   "file": "art/sections/04_thalassa/169_smugglers_freighter.png"
+   "file": "art/sections/04_thalassa/169_smugglers_freighter.png",
+   "v2": true
   },
   {
    "id": "170",

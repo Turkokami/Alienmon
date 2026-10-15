@@ -75,13 +75,13 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 
 | Section | Tile | Item | Tier |
 |---|---|---|---|
-| 052 Port Saltreach Docks | 20,13 | 2x Harmonic Pod | 2 |
-| 053 Saltreach Market | 1,10 | 1x Mega Gel | 2 |
-| 057 Coral Route Part A | 17,1 | 3x Med Gel | 2 |
-| 057 Coral Route Part A | 6,13 | 1x Revive Spark | 2 |
-| 058 Coral Route Part B | 5,2 | 1x Signal Jammer | 2 |
-| 058 Coral Route Part B | 15,2 | 2x Harmonic Pod | 2 |
-| 059 Sea Arch Cove | 21,14 | 1x Mega Gel | 2 |
+| 052 Port Saltreach Docks | 0,10 | 2x Harmonic Pod | 2 |
+| 053 Saltreach Market | 17,5 | 1x Mega Gel | 2 |
+| 057 Coral Route Part A | 11,14 | 3x Med Gel | 2 |
+| 057 Coral Route Part A | 19,12 | 1x Revive Spark | 2 |
+| 058 Coral Route Part B | 10,13 | 1x Signal Jammer | 2 |
+| 058 Coral Route Part B | 6,2 | 2x Harmonic Pod | 2 |
+| 059 Sea Arch Cove | 8,11 | 1x Mega Gel | 2 |
 
 ## Neonis (8)
 

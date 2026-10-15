@@ -20,7 +20,7 @@
   },
   "thalassa": {
    "section": "052",
-   "why": "atlas exit marked arrival"
+   "why": "V2: the compass landing pad on the Saltreach docks"
   },
   "neonis": {
    "section": "062",
@@ -185,12 +185,12 @@
   },
   "M07:1": {
    "s": "052",
-   "x": 11,
-   "y": 8
+   "x": 15,
+   "y": 10
   },
   "M07:2": {
    "s": "061",
-   "x": 12,
+   "x": 8,
    "y": 12
   },
   "M08:giver": {
@@ -641,41 +641,41 @@
   },
   "S40:giver": {
    "s": "052",
-   "x": 8,
-   "y": 8
+   "x": 7,
+   "y": 4
   },
   "S40:0": {
    "s": "052",
    "x": 12,
-   "y": 9,
+   "y": 7,
    "pts": [
     [
      12,
+     7
+    ],
+    [
+     6,
+     8
+    ],
+    [
+     18,
      9
-    ],
-    [
-     10,
-     4
-    ],
-    [
-     16,
-     6
     ]
    ]
   },
   "S41:giver": {
    "s": "057",
-   "x": 8,
-   "y": 7
+   "x": 7,
+   "y": 8
   },
   "S42:giver": {
    "s": "059",
    "x": 8,
-   "y": 6
+   "y": 9
   },
   "S42:0": {
    "s": "059",
-   "x": 8,
+   "x": 12,
    "y": 8
   },
   "S50:giver": {
@@ -1158,12 +1158,12 @@
   "M17b:giver": {
    "s": "052",
    "x": 8,
-   "y": 7
+   "y": 8
   },
   "M17b:0": {
    "s": "052",
    "art": "marsh",
-   "x": 7,
+   "x": 3,
    "y": 8
   },
   "M17b:1": {
@@ -8119,51 +8119,16 @@
    ],
    "notes": "Fog-bound docks, net sheds, stilt houses",
    "edges": {
-    "left": {
-     "to": "arrival",
-     "range": [
-      7,
-      8
-     ]
-    },
     "right": {
      "to": "053",
      "range": [
-      7,
-      8
+      5,
+      10
      ],
      "offset": 0
     }
    },
    "warps": [
-    {
-     "tile": [
-      16,
-      4
-     ],
-     "to": "054",
-     "at": [
-      7,
-      12
-     ],
-     "face": "up",
-     "kind": "door",
-     "edge": "up"
-    },
-    {
-     "tile": [
-      8,
-      11
-     ],
-     "to": "055",
-     "at": [
-      7,
-      12
-     ],
-     "face": "up",
-     "kind": "door",
-     "edge": "up"
-    },
     {
      "tile": [
       11,
@@ -8172,7 +8137,7 @@
      "to": "167",
      "at": [
       7,
-      11
+      12
      ],
      "face": "up",
      "kind": "door",
@@ -8180,7 +8145,7 @@
     },
     {
      "tile": [
-      21,
+      12,
       12
      ],
      "to": "168",
@@ -8196,54 +8161,72 @@
    "objects": [
     {
      "tile": [
-      12,
+      4,
       3
      ],
-     "k": "stop",
-     "t": "The stairs are blocked off. You can't go this way.",
-     "why": "dead-end stairs (tools/sections/dead_ends.py)"
-    },
-    {
-     "tile": [
-      12,
-      4
-     ],
-     "k": "stop",
-     "t": "The stairs are blocked off. You can't go this way.",
-     "why": "dead-end stairs (tools/sections/dead_ends.py)"
+     "k": "house",
+     "to": "191",
+     "why": "V2: Saltreach house (shared Thalassa home)"
     },
     {
      "tile": [
       5,
-      4
+      3
      ],
      "k": "house",
      "to": "191",
-     "why": "house door: opens the thalassa house (was a item knock door)"
-    },
-    {
-     "tile": [
-      19,
-      11
-     ],
-     "k": "house",
-     "to": "191",
-     "why": "house door: opens the thalassa house (was a chat knock door)"
-    },
-    {
-     "tile": [
-      12,
-      7
-     ],
-     "k": "sign",
-     "t": [
-      "PORT SALTREACH DOCKS. Mind the fog, mind the nets, mind the gap between the piers."
-     ]
+     "why": "V2: Saltreach house"
     },
     {
      "tile": [
       20,
-      13
+      3
+     ],
+     "k": "house",
+     "to": "191",
+     "why": "V2: Saltreach house"
+    },
+    {
+     "tile": [
+      10,
+      3
+     ],
+     "k": "house",
+     "to": "054",
+     "why": "V2: the dock Recovery Bay (shared room)"
+    },
+    {
+     "tile": [
+      11,
+      3
+     ],
+     "k": "house",
+     "to": "054",
+     "why": "V2: the dock Recovery Bay"
+    },
+    {
+     "tile": [
+      16,
+      3
+     ],
+     "k": "house",
+     "to": "055",
+     "why": "V2: the dock shop (shared room)"
+    },
+    {
+     "tile": [
+      8,
+      10
+     ],
+     "k": "sign",
+     "t": [
+      "PORT SALTREACH DOCKS. Sunny skies, clear water, and the best fish pies in the Kessler system."
+     ]
+    },
+    {
+     "tile": [
+      0,
+      10
      ],
      "k": "stash",
      "item": "harmonic",
@@ -8253,11 +8236,11 @@
    ],
    "spawns": {
     "arrival": [
-     1,
+     3,
      7
     ],
     "default": [
-     1,
+     3,
      7
     ]
    },
@@ -8268,61 +8251,73 @@
    "pkey": "thalassa",
    "npcs": [
     {
-     "x": 15,
-     "y": 12,
+     "x": 12,
+     "y": 5,
      "art": "squidsailor",
      "face": "down",
      "t": [
       "Sailor: Welcome to Port Saltreach! The fog rolls in every morning, thick as chowder."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 6,
-     "y": 13,
+     "x": 17,
+     "y": 9,
      "art": "guard",
      "face": "down",
      "t": [
       "Dockhand: Helix boats were circling the harbor again last night. White coats, no flags. Shady."
-     ]
+     ],
+     "stay": true
     },
     {
      "x": 7,
-     "y": 13,
+     "y": 9,
      "art": "civilian",
      "face": "down",
      "t": [
       "Swimmer: Hydro types are everywhere here. Bring something with Volt moves and they'll fold fast."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 19,
-     "y": 13,
+     "x": 4,
+     "y": 5,
      "art": "mom",
      "face": "down",
      "t": [
       "Net-mender: The big dome up top is the Recovery Bay. Rest your Alienmon there, it's free."
-     ]
+     ],
+     "stay": true
     },
     {
      "x": 19,
-     "y": 6,
+     "y": 5,
      "art": "explorer",
      "face": "down",
      "t": [
       "Diver: Tall weeds on the coral bars hide wild Alienmon. The shallows are full of them."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 16,
-     "y": 9,
+     "x": 12,
+     "y": 10,
      "art": "wanderer",
      "face": "down",
      "t": [
       "Old salt: Thalassa's rings throw rainbows on the water at noon. Best view's from the lighthouse."
-     ]
+     ],
+     "stay": true
     }
    ],
-   "mons": []
+   "mons": [
+    {
+     "x": 0,
+     "y": 4,
+     "mon": "Bubbub"
+    }
+   ]
   },
   "053": {
    "id": "053",
@@ -8340,8 +8335,8 @@
     "left": {
      "to": "052",
      "range": [
-      7,
-      8
+      5,
+      10
      ],
      "offset": 0
     }
@@ -8350,7 +8345,21 @@
     {
      "tile": [
       23,
-      7
+      5
+     ],
+     "to": "056",
+     "at": [
+      6,
+      22
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      6
      ],
      "to": "056",
      "at": [
@@ -8364,7 +8373,7 @@
     {
      "tile": [
       23,
-      8
+      7
      ],
      "to": "056",
      "at": [
@@ -8377,15 +8386,85 @@
     },
     {
      "tile": [
-      12,
-      14
+      23,
+      8
      ],
-     "to": "169",
+     "to": "056",
      "at": [
-      11,
+      9,
+      22
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      8,
+      4
+     ],
+     "to": "054",
+     "at": [
+      7,
       13
      ],
      "face": "up",
+     "kind": "door",
+     "edge": "up"
+    },
+    {
+     "tile": [
+      9,
+      4
+     ],
+     "to": "054",
+     "at": [
+      8,
+      13
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    },
+    {
+     "tile": [
+      13,
+      4
+     ],
+     "to": "055",
+     "at": [
+      7,
+      13
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    },
+    {
+     "tile": [
+      14,
+      4
+     ],
+     "to": "055",
+     "at": [
+      8,
+      13
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    },
+    {
+     "tile": [
+      19,
+      12
+     ],
+     "to": "169",
+     "at": [
+      2,
+      7
+     ],
+     "face": "right",
      "kind": "door",
      "node": "smuggler_freighter"
     }
@@ -8393,63 +8472,26 @@
    "objects": [
     {
      "tile": [
-      16,
+      3,
       4
-     ],
-     "k": "bay",
-     "why": "Saltreach second Recovery Bay (no interior yet, so the door works like the counter)",
-     "door": true
-    },
-    {
-     "tile": [
-      6,
-      11
-     ],
-     "k": "house",
-     "to": "171",
-     "why": "house door: opens the shared Thalassa house"
-    },
-    {
-     "tile": [
-      1,
-      0
-     ],
-     "k": "stop",
-     "t": "The stairs are blocked off. You can't go this way.",
-     "why": "dead-end stairs (tools/sections/dead_ends.py)"
-    },
-    {
-     "tile": [
-      2,
-      0
-     ],
-     "k": "stop",
-     "t": "The stairs are blocked off. You can't go this way.",
-     "why": "dead-end stairs (tools/sections/dead_ends.py)"
-    },
-    {
-     "tile": [
-      20,
-      11
      ],
      "k": "house",
      "to": "191",
-     "why": "house door: opens the thalassa house (was a item knock door)"
+     "why": "V2: market house (shared Thalassa home)"
     },
     {
      "tile": [
-      12,
-      8
+      19,
+      4
      ],
-     "k": "sign",
-     "t": [
-      "SALTREACH MARKET. Fresh catch at dawn, fair prices till dusk. No haggling with the gulls."
-     ]
+     "k": "house",
+     "to": "191",
+     "why": "V2: market house"
     },
     {
      "tile": [
-      1,
-      10
+      17,
+      5
      ],
      "k": "stash",
      "item": "megagel",
@@ -8460,7 +8502,7 @@
    "spawns": {
     "default": [
      1,
-     7
+     5
     ]
    },
    "grid": [
@@ -8470,73 +8512,80 @@
    "pkey": "thalassa",
    "npcs": [
     {
-     "x": 2,
-     "y": 9,
+     "x": 8,
+     "y": 7,
      "art": "civilian",
      "face": "down",
      "t": [
       "Fishmonger: Fresh catch! ...No, you can't catch it with a Stasis Pod. It's a fish. It's dead."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 12,
-     "y": 11,
+     "x": 20,
+     "y": 6,
      "art": "squidsailor",
      "face": "down",
      "t": [
       "Sailor: Lighthouse is east, past the market. The old Captain's Log is still up there."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 3,
-     "y": 8,
+     "x": 4,
+     "y": 9,
      "art": "mom",
      "face": "down",
      "t": [
       "Shopper: Stock up on Stasis Pods at the docks shop. A weakened Alienmon is easier to catch."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 14,
+     "x": 22,
      "y": 10,
      "art": "technician",
      "face": "down",
      "t": [
       "Mechanic: Captain Marsh's tower relays signals for the whole system. Or it did, till Helix came."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 7,
-     "y": 8,
+     "x": 12,
+     "y": 6,
      "art": "explorer",
      "face": "down",
      "t": [
       "Traveller: Keepers guard the Relay Towers. Win and they hand you a Signal Shard."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 4,
-     "y": 12,
+     "x": 16,
+     "y": 7,
      "art": "guard",
      "face": "down",
      "t": [
       "Harbor guard: Trainers on the routes will spot you if you walk into their line of sight. Be ready."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 22,
-     "y": 12,
+     "x": 11,
+     "y": 9,
      "art": "wanderer",
      "face": "down",
      "t": [
       "Storyteller: They say Anchorath sleeps under the sea arch, and the tide turns when it dreams."
-     ]
+     ],
+     "stay": true
     }
    ],
    "mons": [
     {
-     "x": 19,
-     "y": 13,
+     "x": 14,
+     "y": 10,
      "mon": "Tidepull"
     }
    ]
@@ -8558,11 +8607,11 @@
     {
      "tile": [
       7,
-      13
+      14
      ],
-     "to": "052",
+     "to": "back",
      "at": [
-      16,
+      8,
       5
      ],
      "face": "down",
@@ -8571,11 +8620,11 @@
     {
      "tile": [
       8,
-      13
+      14
      ],
-     "to": "052",
+     "to": "back",
      "at": [
-      16,
+      8,
       5
      ],
      "face": "down",
@@ -8585,8 +8634,15 @@
    "objects": [
     {
      "tile": [
+      7,
+      3
+     ],
+     "k": "bay"
+    },
+    {
+     "tile": [
       8,
-      7
+      3
      ],
      "k": "bay"
     }
@@ -8594,19 +8650,19 @@
    "spawns": {
     "door": [
      7,
-     12
+     13
     ],
     "default": [
      7,
-     12
+     13
     ]
    },
-   "parent": "052",
+   "parent": "053",
    "pkey": "thalassa",
    "npcs": [
     {
      "x": 8,
-     "y": 7,
+     "y": 3,
      "art": "nurse",
      "face": "down",
      "t": [
@@ -8615,13 +8671,14 @@
      "stay": true
     },
     {
-     "x": 5,
-     "y": 11,
+     "x": 9,
+     "y": 12,
      "art": "squidsailor",
      "face": "down",
      "t": [
       "Sailor: I come here after every storm. Even my Alienmon get seasick, believe it or not."
-     ]
+     ],
+     "stay": true
     }
    ]
   },
@@ -8642,12 +8699,12 @@
     {
      "tile": [
       7,
-      13
+      14
      ],
-     "to": "052",
+     "to": "back",
      "at": [
-      8,
-      12
+      13,
+      5
      ],
      "face": "down",
      "kind": "door"
@@ -8655,12 +8712,12 @@
     {
      "tile": [
       8,
-      13
+      14
      ],
-     "to": "052",
+     "to": "back",
      "at": [
-      8,
-      12
+      13,
+      5
      ],
      "face": "down",
      "kind": "door"
@@ -8669,8 +8726,15 @@
    "objects": [
     {
      "tile": [
-      5,
-      7
+      7,
+      4
+     ],
+     "k": "shop"
+    },
+    {
+     "tile": [
+      8,
+      4
      ],
      "k": "shop"
     }
@@ -8678,19 +8742,19 @@
    "spawns": {
     "door": [
      7,
-     12
+     13
     ],
     "default": [
      7,
-     12
+     13
     ]
    },
-   "parent": "052",
+   "parent": "053",
    "pkey": "thalassa",
    "npcs": [
     {
-     "x": 5,
-     "y": 7,
+     "x": 8,
+     "y": 4,
      "art": "shop",
      "face": "down",
      "t": [
@@ -8700,12 +8764,13 @@
     },
     {
      "x": 9,
-     "y": 9,
+     "y": 12,
      "art": "civilian",
      "face": "down",
      "t": [
       "Shopper: Status cures are worth it out on the islands. Wild bites sting more than you'd think."
-     ]
+     ],
+     "stay": true
     }
    ]
   },
@@ -8725,7 +8790,35 @@
    "warps": [
     {
      "tile": [
+      6,
+      23
+     ],
+     "to": "053",
+     "at": [
+      22,
+      5
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
       7,
+      23
+     ],
+     "to": "053",
+     "at": [
+      22,
+      6
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      8,
       23
      ],
      "to": "053",
@@ -8739,7 +8832,7 @@
     },
     {
      "tile": [
-      8,
+      9,
       23
      ],
      "to": "053",
@@ -8753,13 +8846,27 @@
     },
     {
      "tile": [
+      6,
+      0
+     ],
+     "to": "057",
+     "at": [
+      1,
+      5
+     ],
+     "face": "right",
+     "kind": "stairs",
+     "edge": "top"
+    },
+    {
+     "tile": [
       7,
       0
      ],
      "to": "057",
      "at": [
       1,
-      7
+      6
      ],
      "face": "right",
      "kind": "stairs",
@@ -8778,13 +8885,27 @@
      "face": "right",
      "kind": "stairs",
      "edge": "top"
+    },
+    {
+     "tile": [
+      9,
+      0
+     ],
+     "to": "057",
+     "at": [
+      1,
+      8
+     ],
+     "face": "right",
+     "kind": "stairs",
+     "edge": "top"
     }
    ],
    "objects": [
     {
      "tile": [
       3,
-      6
+      4
      ],
      "k": "sign",
      "t": [
@@ -8795,29 +8916,31 @@
    ],
    "spawns": {
     "default": [
-     7,
+     6,
      22
     ]
    },
    "pkey": "thalassa",
    "npcs": [
     {
-     "x": 6,
-     "y": 4,
+     "x": 10,
+     "y": 3,
      "art": "researcher",
      "face": "down",
      "t": [
       "Keeper's aide: The stairs up top lead out onto the coral sand bars. Watch for the tide."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 11,
-     "y": 18,
+     "x": 10,
+     "y": 17,
      "art": "squidsailor",
      "face": "down",
      "t": [
       "Lamp tender: This light guided the fishing fleet for a hundred years. Helix ships ignore it."
-     ]
+     ],
+     "stay": true
     }
    ]
   },
@@ -8837,7 +8960,7 @@
     "right": {
      "to": "058",
      "range": [
-      7,
+      5,
       8
      ],
      "offset": 0
@@ -8847,7 +8970,21 @@
     {
      "tile": [
       0,
-      7
+      5
+     ],
+     "to": "056",
+     "at": [
+      6,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      6
      ],
      "to": "056",
      "at": [
@@ -8861,11 +8998,25 @@
     {
      "tile": [
       0,
-      8
+      7
      ],
      "to": "056",
      "at": [
       8,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      8
+     ],
+     "to": "056",
+     "at": [
+      9,
       1
      ],
      "face": "down",
@@ -8876,8 +9027,8 @@
    "objects": [
     {
      "tile": [
-      17,
-      1
+      11,
+      14
      ],
      "k": "stash",
      "item": "gel",
@@ -8886,8 +9037,8 @@
     },
     {
      "tile": [
-      6,
-      13
+      19,
+      12
      ],
      "k": "stash",
      "item": "revive",
@@ -8898,7 +9049,7 @@
    "spawns": {
     "default": [
      22,
-     7
+     5
     ]
    },
    "grid": [
@@ -8908,28 +9059,30 @@
    "pkey": "thalassa",
    "npcs": [
     {
-     "x": 10,
-     "y": 4,
+     "x": 20,
+     "y": 5,
      "art": "explorer",
      "face": "down",
      "t": [
       "Beachcomber: The coral bars connect at low tide. Hop the bridges and you'll stay dry."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 17,
-     "y": 7,
+     "x": 2,
+     "y": 8,
      "art": "civilian",
      "face": "down",
      "t": [
       "Swimmer: My Alienmon love the shallows. Low-level ones, sure, but they never stop splashing."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 15,
-     "y": 13,
+     "x": 12,
+     "y": 5,
      "art": "squidsailor",
-     "face": "up",
+     "face": "down",
      "t": [],
      "id": "sec057_tr2",
      "trainer": {
@@ -8940,9 +9093,9 @@
     },
     {
      "x": 6,
-     "y": 3,
+     "y": 4,
      "art": "civilian",
-     "face": "right",
+     "face": "down",
      "t": [],
      "id": "sec057_tr3",
      "trainer": {
@@ -8954,13 +9107,13 @@
    ],
    "mons": [
     {
-     "x": 7,
+     "x": 15,
      "y": 11,
      "mon": "Cephalux"
     },
     {
-     "x": 23,
-     "y": 6,
+     "x": 16,
+     "y": 2,
      "mon": "Pearlord"
     }
    ]
@@ -8981,7 +9134,7 @@
     "left": {
      "to": "057",
      "range": [
-      7,
+      5,
       8
      ],
      "offset": 0
@@ -8989,7 +9142,7 @@
     "right": {
      "to": "059",
      "range": [
-      7,
+      5,
       8
      ],
      "offset": 0
@@ -8999,8 +9152,8 @@
    "objects": [
     {
      "tile": [
-      5,
-      2
+      10,
+      13
      ],
      "k": "stash",
      "item": "jammer",
@@ -9009,7 +9162,7 @@
     },
     {
      "tile": [
-      15,
+      6,
       2
      ],
      "k": "stash",
@@ -9021,7 +9174,7 @@
    "spawns": {
     "default": [
      1,
-     7
+     5
     ]
    },
    "grid": [
@@ -9031,28 +9184,30 @@
    "pkey": "thalassa",
    "npcs": [
     {
-     "x": 15,
-     "y": 6,
+     "x": 18,
+     "y": 5,
      "art": "wanderer",
      "face": "down",
      "t": [
       "Castaway: Saw an old wreck off the south rocks. Nobody's dared dive it yet."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 4,
-     "y": 7,
+     "x": 3,
+     "y": 8,
      "art": "squidsailor",
      "face": "down",
      "t": [
       "Sailor: Harbor Tower is past the sea arch. Captain Marsh doesn't go easy on anyone."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 6,
-     "y": 2,
+     "x": 12,
+     "y": 8,
      "art": "civilian",
-     "face": "down",
+     "face": "up",
      "t": [],
      "id": "sec058_tr2",
      "trainer": {
@@ -9062,10 +9217,10 @@
      }
     },
     {
-     "x": 17,
-     "y": 10,
+     "x": 7,
+     "y": 5,
      "art": "guard",
-     "face": "up",
+     "face": "down",
      "t": [],
      "id": "sec058_tr3",
      "trainer": {
@@ -9077,13 +9232,13 @@
    ],
    "mons": [
     {
-     "x": 10,
-     "y": 12,
+     "x": 8,
+     "y": 11,
      "mon": "Bubblorca"
     },
     {
-     "x": 8,
-     "y": 4,
+     "x": 17,
+     "y": 11,
      "mon": "Clawfort"
     }
    ]
@@ -9104,7 +9259,7 @@
     "left": {
      "to": "058",
      "range": [
-      7,
+      5,
       8
      ],
      "offset": 0
@@ -9114,7 +9269,21 @@
     {
      "tile": [
       23,
-      7
+      5
+     ],
+     "to": "060",
+     "at": [
+      6,
+      22
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      6
      ],
      "to": "060",
      "at": [
@@ -9128,11 +9297,25 @@
     {
      "tile": [
       23,
-      8
+      7
      ],
      "to": "060",
      "at": [
       8,
+      22
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      8
+     ],
+     "to": "060",
+     "at": [
+      9,
       22
      ],
      "face": "up",
@@ -9143,26 +9326,8 @@
    "objects": [
     {
      "tile": [
-      1,
-      9
-     ],
-     "k": "stop",
-     "t": "The stairs are blocked off. You can't go this way.",
-     "why": "dead-end stairs (tools/sections/dead_ends.py)"
-    },
-    {
-     "tile": [
-      1,
-      10
-     ],
-     "k": "stop",
-     "t": "The stairs are blocked off. You can't go this way.",
-     "why": "dead-end stairs (tools/sections/dead_ends.py)"
-    },
-    {
-     "tile": [
-      3,
-      9
+      4,
+      4
      ],
      "k": "sign",
      "t": [
@@ -9171,8 +9336,8 @@
     },
     {
      "tile": [
-      21,
-      14
+      8,
+      11
      ],
      "k": "stash",
      "item": "megagel",
@@ -9183,7 +9348,7 @@
    "spawns": {
     "default": [
      1,
-     7
+     5
     ]
    },
    "grid": [
@@ -9193,42 +9358,45 @@
    "pkey": "thalassa",
    "npcs": [
     {
-     "x": 5,
-     "y": 9,
+     "x": 12,
+     "y": 4,
      "art": "researcher",
      "face": "down",
      "t": [
       "Researcher: Readings spike under the arch at night. Whatever sleeps there is enormous."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 21,
-     "y": 6,
+     "x": 17,
+     "y": 8,
      "art": "pilgrim",
      "face": "down",
      "t": [
       "Pilgrim: Walk softly here. The islanders leave shells at the shrines so Anchorath sleeps on."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 19,
-     "y": 13,
+     "x": 4,
+     "y": 6,
      "art": "guard",
      "face": "down",
      "t": [
       "Lookout: Helix divers were poking around the cove. I chased them off with a bucket."
-     ]
+     ],
+     "stay": true
     }
    ],
    "mons": [
     {
-     "x": 10,
-     "y": 14,
+     "x": 20,
+     "y": 3,
      "mon": "Cephalux"
     },
     {
-     "x": 16,
-     "y": 8,
+     "x": 15,
+     "y": 11,
      "mon": "Pearlord"
     }
    ]
@@ -9249,7 +9417,35 @@
    "warps": [
     {
      "tile": [
+      6,
+      23
+     ],
+     "to": "059",
+     "at": [
+      22,
+      5
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
       7,
+      23
+     ],
+     "to": "059",
+     "at": [
+      22,
+      6
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      8,
       23
      ],
      "to": "059",
@@ -9263,7 +9459,7 @@
     },
     {
      "tile": [
-      8,
+      9,
       23
      ],
      "to": "059",
@@ -9277,6 +9473,20 @@
     },
     {
      "tile": [
+      6,
+      0
+     ],
+     "to": "061",
+     "at": [
+      6,
+      22
+     ],
+     "face": "up",
+     "kind": "stairs",
+     "edge": "top"
+    },
+    {
+     "tile": [
       7,
       0
      ],
@@ -9302,40 +9512,44 @@
      "face": "up",
      "kind": "stairs",
      "edge": "top"
-    }
-   ],
-   "objects": [
+    },
     {
      "tile": [
-      7,
-      11
+      9,
+      0
      ],
-     "k": "sign",
-     "t": [
-      "Harbor Tower relay housing. The socket is empty and scorched. Someone tore the core out in a hurry."
-     ]
+     "to": "061",
+     "at": [
+      9,
+      22
+     ],
+     "face": "up",
+     "kind": "stairs",
+     "edge": "top"
     }
    ],
+   "objects": [],
    "spawns": {
     "default": [
-     7,
+     6,
      22
     ]
    },
    "pkey": "thalassa",
    "npcs": [
     {
-     "x": 8,
-     "y": 9,
+     "x": 10,
+     "y": 4,
      "art": "squidsailor",
      "face": "down",
      "t": [
       "Deckhand: Captain Marsh is upstairs. Helix ripped the core right out of this tower. She's furious."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 2,
-     "y": 10,
+     "x": 3,
+     "y": 12,
      "art": "guard",
      "face": "right",
      "t": [],
@@ -9348,8 +9562,8 @@
      }
     },
     {
-     "x": 13,
-     "y": 10,
+     "x": 12,
+     "y": 12,
      "art": "squidsailor",
      "face": "left",
      "t": [],
@@ -9379,6 +9593,20 @@
    "warps": [
     {
      "tile": [
+      6,
+      23
+     ],
+     "to": "060",
+     "at": [
+      6,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
       7,
       23
      ],
@@ -9399,6 +9627,20 @@
      "to": "060",
      "at": [
       8,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      9,
+      23
+     ],
+     "to": "060",
+     "at": [
+      9,
       1
      ],
      "face": "down",
@@ -9409,37 +9651,29 @@
    "objects": [
     {
      "tile": [
-      8,
-      2
-     ],
-     "k": "stop",
-     "t": "The stairs are blocked off. You can't go this way.",
-     "why": "dead-end stairs (tools/sections/dead_ends.py)"
-    },
-    {
-     "tile": [
       7,
-      3
+      4
      ],
      "k": "keeper"
     }
    ],
    "spawns": {
     "default": [
-     7,
+     6,
      22
     ]
    },
    "pkey": "thalassa",
    "npcs": [
     {
-     "x": 8,
-     "y": 16,
+     "x": 10,
+     "y": 6,
      "art": "guard",
      "face": "down",
      "t": [
       "First mate: The Captain fights with the tide behind her. Volt types might give you a chance."
-     ]
+     ],
+     "stay": true
     }
    ]
   },
@@ -22998,27 +23232,27 @@
     {
      "tile": [
       7,
-      12
+      14
      ],
      "to": "052",
      "at": [
-      10,
-      12
+      11,
+      11
      ],
-     "face": "left",
+     "face": "up",
      "kind": "door"
     },
     {
      "tile": [
       8,
-      12
+      14
      ],
      "to": "052",
      "at": [
-      10,
-      12
+      11,
+      11
      ],
-     "face": "left",
+     "face": "up",
      "kind": "door"
     }
    ],
@@ -23026,7 +23260,7 @@
    "spawns": {
     "default": [
      7,
-     11
+     12
     ]
    },
    "parent": "052",
@@ -23048,15 +23282,28 @@
    "warps": [
     {
      "tile": [
-      8,
-      13
+      7,
+      14
      ],
      "to": "052",
      "at": [
-      20,
-      12
+      12,
+      11
      ],
-     "face": "left",
+     "face": "up",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      14
+     ],
+     "to": "052",
+     "at": [
+      12,
+      11
+     ],
+     "face": "up",
      "kind": "door"
     }
    ],
@@ -23086,26 +23333,13 @@
    "warps": [
     {
      "tile": [
-      11,
-      14
+      0,
+      7
      ],
      "to": "053",
      "at": [
-      12,
-      13
-     ],
-     "face": "up",
-     "kind": "door"
-    },
-    {
-     "tile": [
-      12,
-      14
-     ],
-     "to": "053",
-     "at": [
-      12,
-      13
+      19,
+      11
      ],
      "face": "up",
      "kind": "door"
@@ -23114,8 +23348,8 @@
    "objects": [],
    "spawns": {
     "default": [
-     11,
-     13
+     2,
+     7
     ]
    },
    "parent": "053",
@@ -25777,82 +26011,71 @@
   },
   {
    "from_id": "052",
-   "edge": "left",
-   "tile_range": [
-    7,
-    8
-   ],
-   "to_id": "arrival",
-   "to_edge": null,
-   "to_tile": null
-  },
-  {
-   "from_id": "052",
    "edge": "right",
    "tile_range": [
-    7,
-    8
+    5,
+    10
    ],
    "to_id": "053",
    "to_edge": "left",
    "to_tile": [
-    7,
-    8
+    5,
+    10
    ]
   },
   {
    "from_id": "053",
    "edge": "left",
    "tile_range": [
-    7,
-    8
+    5,
+    10
    ],
    "to_id": "052",
    "to_edge": "right",
    "to_tile": [
-    7,
-    8
+    5,
+    10
    ]
   },
   {
    "from_id": "053",
    "edge": "right",
    "tile_range": [
-    7,
-    8
+    5,
+    10
    ],
    "to_id": "056",
    "to_edge": "bottom",
    "to_tile": [
-    7,
-    8
+    6,
+    9
    ]
   },
   {
    "from_id": "056",
    "edge": "bottom",
    "tile_range": [
-    7,
-    8
+    6,
+    9
    ],
    "to_id": "053",
    "to_edge": "right",
    "to_tile": [
-    7,
-    8
+    5,
+    10
    ]
   },
   {
    "from_id": "056",
    "edge": "top",
    "tile_range": [
-    7,
-    8
+    6,
+    9
    ],
    "to_id": "057",
    "to_edge": "left",
    "to_tile": [
-    7,
+    5,
     8
    ]
   },
@@ -25860,27 +26083,27 @@
    "from_id": "057",
    "edge": "left",
    "tile_range": [
-    7,
+    5,
     8
    ],
    "to_id": "056",
    "to_edge": "top",
    "to_tile": [
-    7,
-    8
+    6,
+    9
    ]
   },
   {
    "from_id": "057",
    "edge": "right",
    "tile_range": [
-    7,
+    5,
     8
    ],
    "to_id": "058",
    "to_edge": "left",
    "to_tile": [
-    7,
+    5,
     8
    ]
   },
@@ -25888,13 +26111,13 @@
    "from_id": "058",
    "edge": "left",
    "tile_range": [
-    7,
+    5,
     8
    ],
    "to_id": "057",
    "to_edge": "right",
    "to_tile": [
-    7,
+    5,
     8
    ]
   },
@@ -25902,13 +26125,13 @@
    "from_id": "058",
    "edge": "right",
    "tile_range": [
-    7,
+    5,
     8
    ],
    "to_id": "059",
    "to_edge": "left",
    "to_tile": [
-    7,
+    5,
     8
    ]
   },
@@ -25916,13 +26139,13 @@
    "from_id": "059",
    "edge": "left",
    "tile_range": [
-    7,
+    5,
     8
    ],
    "to_id": "058",
    "to_edge": "right",
    "to_tile": [
-    7,
+    5,
     8
    ]
   },
@@ -25930,27 +26153,27 @@
    "from_id": "059",
    "edge": "right",
    "tile_range": [
-    7,
+    5,
     8
    ],
    "to_id": "060",
    "to_edge": "bottom",
    "to_tile": [
-    7,
-    8
+    6,
+    9
    ]
   },
   {
    "from_id": "060",
    "edge": "bottom",
    "tile_range": [
-    7,
-    8
+    6,
+    9
    ],
    "to_id": "059",
    "to_edge": "right",
    "to_tile": [
-    7,
+    5,
     8
    ]
   },
@@ -25958,28 +26181,28 @@
    "from_id": "060",
    "edge": "top",
    "tile_range": [
-    7,
-    8
+    6,
+    9
    ],
    "to_id": "061",
    "to_edge": "bottom",
    "to_tile": [
-    7,
-    8
+    6,
+    9
    ]
   },
   {
    "from_id": "061",
    "edge": "bottom",
    "tile_range": [
-    7,
-    8
+    6,
+    9
    ],
    "to_id": "060",
    "to_edge": "top",
    "to_tile": [
-    7,
-    8
+    6,
+    9
    ]
   },
   {

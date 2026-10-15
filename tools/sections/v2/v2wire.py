@@ -6,7 +6,28 @@ A2={s['id']:s for s in json.load(open(S+'atlas_v2.json',encoding='utf-8'))['sect
 AT=json.load(open('art/sections/atlas.json',encoding='utf-8'));A1={s['id']:s for s in AT['sections']}
 L=json.load(open('data/sections/links.json',encoding='utf-8'))
 H=lambda x,y:{'tile':[x,y]}
-WIRE={'03':{
+WIRE={'04':{
+ 'ids':['%03d'%i for i in range(52,62)]+['167','168','169'],
+ 'doors':[],'stairs':[],
+ 'objects':{
+  '052':[{'tile':[4,3],'k':'house','to':'191','why':'V2: Saltreach house (shared Thalassa home)'},{'tile':[5,3],'k':'house','to':'191','why':'V2: Saltreach house'},
+         {'tile':[20,3],'k':'house','to':'191','why':'V2: Saltreach house'},{'tile':[10,3],'k':'house','to':'054','why':'V2: the dock Recovery Bay (shared room)'},
+         {'tile':[11,3],'k':'house','to':'054','why':'V2: the dock Recovery Bay'},{'tile':[16,3],'k':'house','to':'055','why':'V2: the dock shop (shared room)'}],
+  '053':[{'tile':[3,4],'k':'house','to':'191','why':'V2: market house (shared Thalassa home)'},{'tile':[19,4],'k':'house','to':'191','why':'V2: market house'}],
+ },
+ 'warps':[{'section':'052','tile':[11,12],'to':'167','at':[7,12],'face':'up','kind':'door','node':'ghost_ship'},
+          {'section':'052','tile':[12,12],'to':'168','at':[8,12],'face':'up','kind':'door','node':'helix_freighter'},
+          {'section':'167','tile':[7,14],'to':'052','at':[11,11],'face':'up','kind':'door','parent':'052'},{'section':'167','tile':[8,14],'to':'052','at':[11,11],'face':'up','kind':'door','parent':'052'},
+          {'section':'168','tile':[7,14],'to':'052','at':[12,11],'face':'up','kind':'door','parent':'052'},{'section':'168','tile':[8,14],'to':'052','at':[12,11],'face':'up','kind':'door','parent':'052'},
+          {'section':'053','tile':[19,12],'to':'169','at':[2,7],'face':'right','kind':'door','node':'smuggler_freighter'},
+          {'section':'169','tile':[0,7],'to':'053','at':[19,11],'face':'up','kind':'door','parent':'053'}],
+ 'gates':{},
+ 'atlas_extra':{'056':['top edge, tile columns 6–9 (stairs up) → Coral Route Part A'],'060':['top edge, tile columns 6–9 (stairs up) → Harbor Tower 2F']},
+ 'spawns':{'052':{'arrival':[3,7],'default':[3,7]},'167':{'default':[7,12]},'168':{'default':[8,12]},'169':{'default':[2,7]}},
+ 'arrival':{'thalassa':{'section':'052','why':'V2: the compass landing pad on the Saltreach docks'}},
+ 'shared':['054','055'],
+ 'reparent':{'171':'052','191':'052'},
+},'03':{
  'ids':['%03d'%i for i in range(41,52)],
  'doors':[],'stairs':[],
  'objects':{
