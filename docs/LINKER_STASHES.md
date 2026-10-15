@@ -44,17 +44,17 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 
 | Section | Tile | Item | Tier |
 |---|---|---|---|
-| 029 Gate Plaza | 11,4 | 2x Cure Spray | 1 |
-| 030 Rustvale | 5,13 | 2x Med Gel | 1 |
-| 034 Scrap Route Part A | 16,14 | 1x Revive Spark | 1 |
-| 034 Scrap Route Part A | 6,2 | 2x Med Gel | 1 |
-| 035 Scrap Route Part B | 9,2 | 2x Med Gel | 1 |
-| 035 Scrap Route Part B | 10,14 | 2x Med Gel | 1 |
-| 036 Crane Yard | 15,13 | 3x Stasis Pod | 1 |
-| 036 Crane Yard | 6,2 | 2x Med Gel | 1 |
-| 037 Junk Market | 11,2 | 2x Cure Spray | 1 |
-| 038 Furnace Ridge | 13,1 | 2x Med Gel | 1 |
-| 038 Furnace Ridge | 3,12 | 3x Stasis Pod | 1 |
+| 029 Gate Plaza | 13,14 | 2x Cure Spray | 1 |
+| 030 Rustvale | 11,14 | 2x Med Gel | 1 |
+| 034 Scrap Route Part A | 11,14 | 1x Revive Spark | 1 |
+| 034 Scrap Route Part A | 10,1 | 2x Med Gel | 1 |
+| 035 Scrap Route Part B | 11,14 | 2x Med Gel | 1 |
+| 035 Scrap Route Part B | 13,14 | 2x Med Gel | 1 |
+| 036 Crane Yard | 8,11 | 3x Stasis Pod | 1 |
+| 036 Crane Yard | 17,3 | 2x Med Gel | 1 |
+| 037 Junk Market | 11,14 | 2x Cure Spray | 1 |
+| 038 Furnace Ridge | 9,12 | 2x Med Gel | 1 |
+| 038 Furnace Ridge | 12,12 | 3x Stasis Pod | 1 |
 
 ## Sporeholm (10)
 

@@ -650,11 +650,11 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → arrival (landing pad / gate)",
-    "right edge, tile rows 7–8 → Rustvale"
+    "right edge, tile rows 6–8 → Rustvale"
    ],
    "notes": "Arrival plaza around the Relay Gate",
-   "file": "art/sections/02_ferrox/029_gate_plaza.png"
+   "file": "art/sections/02_ferrox/029_gate_plaza.png",
+   "v2": true
   },
   {
    "id": "030",
@@ -672,11 +672,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Gate Plaza",
-    "right edge, tile rows 7–8 → Scrap Route Part A"
+    "left edge, tile rows 5–9 → Gate Plaza",
+    "right edge, tile rows 5–9 → Scrap Route Part A"
    ],
    "notes": "Shanty town of shacks and converted rail cars",
-   "file": "art/sections/02_ferrox/030_rustvale.png"
+   "file": "art/sections/02_ferrox/030_rustvale.png",
+   "v2": true
   },
   {
    "id": "031",
@@ -693,11 +694,10 @@
    ],
    "tile_px_render": 64,
    "tile_px_game": 16,
-   "exits": [
-    "doormat at the bottom center of the room leads back outside"
-   ],
+   "exits": [],
    "notes": "",
-   "file": "art/sections/02_ferrox/031_rustvale_recovery_bay.png"
+   "file": "art/sections/02_ferrox/031_rustvale_recovery_bay.png",
+   "v2": true
   },
   {
    "id": "032",
@@ -714,11 +714,10 @@
    ],
    "tile_px_render": 64,
    "tile_px_game": 16,
-   "exits": [
-    "doormat at the bottom center of the room leads back outside"
-   ],
+   "exits": [],
    "notes": "",
-   "file": "art/sections/02_ferrox/032_rustvale_shop.png"
+   "file": "art/sections/02_ferrox/032_rustvale_shop.png",
+   "v2": true
   },
   {
    "id": "033",
@@ -735,11 +734,10 @@
    ],
    "tile_px_render": 64,
    "tile_px_game": 16,
-   "exits": [
-    "doormat at the bottom center of the room leads back outside"
-   ],
+   "exits": [],
    "notes": "Grub's cluttered scrap workshop",
-   "file": "art/sections/02_ferrox/033_grub_s_workshop.png"
+   "file": "art/sections/02_ferrox/033_grub_s_workshop.png",
+   "v2": true
   },
   {
    "id": "034",
@@ -757,11 +755,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Rustvale",
-    "right edge, tile rows 7–8 → Scrap Route Part B"
+    "left edge, tile rows 5–8 → Rustvale",
+    "right edge, tile rows 5–8 → Scrap Route Part B"
    ],
    "notes": "Route through scrap mountains",
-   "file": "art/sections/02_ferrox/034_scrap_route_part_a.png"
+   "file": "art/sections/02_ferrox/034_scrap_route_part_a.png",
+   "v2": true
   },
   {
    "id": "035",
@@ -779,11 +778,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Scrap Route Part A",
-    "right edge, tile rows 7–8 → Crane Yard"
+    "left edge, tile rows 5–8 → Scrap Route Part A",
+    "right edge, tile rows 5–8 → Crane Yard"
    ],
    "notes": "Route through scrap mountains",
-   "file": "art/sections/02_ferrox/035_scrap_route_part_b.png"
+   "file": "art/sections/02_ferrox/035_scrap_route_part_b.png",
+   "v2": true
   },
   {
    "id": "036",
@@ -801,11 +801,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Scrap Route Part B",
-    "right edge, tile rows 7–8 → Junk Market"
+    "left edge, tile rows 5–8 → Scrap Route Part B",
+    "right edge, tile rows 5–8 → Junk Market"
    ],
    "notes": "Swinging cranes, container stacks (Crane Yard Brawl)",
-   "file": "art/sections/02_ferrox/036_crane_yard.png"
+   "file": "art/sections/02_ferrox/036_crane_yard.png",
+   "v2": true
   },
   {
    "id": "037",
@@ -823,11 +824,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Crane Yard",
-    "right edge, tile rows 7–8 → Furnace Ridge"
+    "left edge, tile rows 5–10 → Crane Yard",
+    "right edge, tile rows 5–10 → Furnace Ridge"
    ],
    "notes": "Open-air junk market stalls",
-   "file": "art/sections/02_ferrox/037_junk_market.png"
+   "file": "art/sections/02_ferrox/037_junk_market.png",
+   "v2": true
   },
   {
    "id": "038",
@@ -845,11 +847,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Junk Market",
-    "right edge, tile rows 7–8 → Ferrox Tower 1F"
+    "left edge, tile rows 5–8 → Junk Market",
+    "right edge, tile rows 6–7 → Ferrox Tower 1F"
    ],
    "notes": "Ridge of smoking furnaces",
-   "file": "art/sections/02_ferrox/038_furnace_ridge.png"
+   "file": "art/sections/02_ferrox/038_furnace_ridge.png",
+   "v2": true
   },
   {
    "id": "039",
@@ -867,11 +870,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7–8 → Furnace Ridge",
-    "top edge, tile columns 7–8 (stairs up) → Ferrox Tower 2F"
+    "bottom edge, tile columns 6–9 → Furnace Ridge",
+    "top edge, tile columns 6–9 (stairs up) → Ferrox Tower 2F"
    ],
    "notes": "Keeper Hank Briggs's tower, 2 floors",
-   "file": "art/sections/02_ferrox/039_ferrox_tower_1f.png"
+   "file": "art/sections/02_ferrox/039_ferrox_tower_1f.png",
+   "v2": true
   },
   {
    "id": "040",
@@ -889,10 +893,11 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7–8 → Ferrox Tower 1F"
+    "bottom edge, tile columns 6–9 → Ferrox Tower 1F"
    ],
    "notes": "Keeper Hank Briggs's tower, 2 floors",
-   "file": "art/sections/02_ferrox/040_ferrox_tower_2f.png"
+   "file": "art/sections/02_ferrox/040_ferrox_tower_2f.png",
+   "v2": true
   },
   {
    "id": "041",

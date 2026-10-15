@@ -336,8 +336,8 @@
    "section": "029",
    "name": "Gate Plaza",
    "tile": [
-    11,
-    4
+    13,
+    14
    ],
    "item": "cure",
    "n": 2,
@@ -347,8 +347,8 @@
    "section": "030",
    "name": "Rustvale",
    "tile": [
-    5,
-    13
+    11,
+    14
    ],
    "item": "gel",
    "n": 2,
@@ -358,7 +358,7 @@
    "section": "034",
    "name": "Scrap Route Part A",
    "tile": [
-    16,
+    11,
     14
    ],
    "item": "revive",
@@ -369,29 +369,29 @@
    "section": "034",
    "name": "Scrap Route Part A",
    "tile": [
-    6,
-    2
-   ],
-   "item": "gel",
-   "n": 2,
-   "tier": 1
-  },
-  {
-   "section": "035",
-   "name": "Scrap Route Part B",
-   "tile": [
-    9,
-    2
-   ],
-   "item": "gel",
-   "n": 2,
-   "tier": 1
-  },
-  {
-   "section": "035",
-   "name": "Scrap Route Part B",
-   "tile": [
     10,
+    1
+   ],
+   "item": "gel",
+   "n": 2,
+   "tier": 1
+  },
+  {
+   "section": "035",
+   "name": "Scrap Route Part B",
+   "tile": [
+    11,
+    14
+   ],
+   "item": "gel",
+   "n": 2,
+   "tier": 1
+  },
+  {
+   "section": "035",
+   "name": "Scrap Route Part B",
+   "tile": [
+    13,
     14
    ],
    "item": "gel",
@@ -402,8 +402,8 @@
    "section": "036",
    "name": "Crane Yard",
    "tile": [
-    15,
-    13
+    8,
+    11
    ],
    "item": "stasis",
    "n": 3,
@@ -413,8 +413,8 @@
    "section": "036",
    "name": "Crane Yard",
    "tile": [
-    6,
-    2
+    17,
+    3
    ],
    "item": "gel",
    "n": 2,
@@ -425,7 +425,7 @@
    "name": "Junk Market",
    "tile": [
     11,
-    2
+    14
    ],
    "item": "cure",
    "n": 2,
@@ -435,8 +435,8 @@
    "section": "038",
    "name": "Furnace Ridge",
    "tile": [
-    13,
-    1
+    9,
+    12
    ],
    "item": "gel",
    "n": 2,
@@ -446,7 +446,7 @@
    "section": "038",
    "name": "Furnace Ridge",
    "tile": [
-    3,
+    12,
     12
    ],
    "item": "stasis",

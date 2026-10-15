@@ -12,8 +12,7 @@
   },
   "ferrox": {
    "section": "029",
-   "edge": "left",
-   "why": "atlas: 029 left edge -> arrival (landing pad / gate)"
+   "why": "V2: the Relay Gate ring in Gate Plaza"
   },
   "sporeholm": {
    "section": "041",
@@ -151,8 +150,8 @@
   },
   "M05:3": {
    "s": "040",
-   "x": 9,
-   "y": 11
+   "x": 8,
+   "y": 12
   },
   "M06:giver": {
    "s": "042",
@@ -568,7 +567,7 @@
   "S20:giver": {
    "s": "037",
    "x": 12,
-   "y": 9
+   "y": 10
   },
   "S20:0": {
    "s": "034",
@@ -578,17 +577,17 @@
   "S21:giver": {
    "s": "036",
    "x": 6,
-   "y": 6
+   "y": 9
   },
   "S21:0": {
    "s": "036",
-   "x": 17,
-   "y": 8
+   "x": 16,
+   "y": 9
   },
   "S22:giver": {
    "s": "038",
-   "x": 6,
-   "y": 5
+   "x": 9,
+   "y": 9
   },
   "S22:0": {
    "s": "038",
@@ -1180,12 +1179,12 @@
   "S102:giver": {
    "s": "030",
    "x": 12,
-   "y": 5
+   "y": 10
   },
   "S102:0": {
    "s": "039",
-   "x": 12,
-   "y": 11
+   "x": 10,
+   "y": 12
   },
   "S102:1": {
    "s": "069",
@@ -5000,55 +4999,52 @@
    ],
    "notes": "Arrival plaza around the Relay Gate",
    "edges": {
-    "left": {
-     "to": "arrival",
-     "range": [
-      7,
-      8
-     ]
-    },
     "right": {
      "to": "030",
      "range": [
-      7,
+      6,
       8
      ],
-     "offset": 0
+     "offset": -1
     }
    },
-   "warps": [],
+   "warps": [
+    {
+     "tile": [
+      4,
+      4
+     ],
+     "to": "planet:dustara",
+     "at": [
+      4,
+      5
+     ],
+     "face": "down",
+     "kind": "gate",
+     "node": "dustara",
+     "label": "the Relay Gate back to Dustara"
+    },
+    {
+     "tile": [
+      5,
+      4
+     ],
+     "to": "planet:dustara",
+     "at": [
+      5,
+      5
+     ],
+     "face": "down",
+     "kind": "gate",
+     "node": "dustara",
+     "label": "the Relay Gate back to Dustara"
+    }
+   ],
    "objects": [
     {
      "tile": [
-      6,
-      5
-     ],
-     "k": "house",
-     "why": "house door: opens Ferrox Cabin",
-     "to": "188"
-    },
-    {
-     "tile": [
-      18,
-      5
-     ],
-     "k": "house",
-     "why": "house door: opens Ferrox Cabin",
-     "to": "188"
-    },
-    {
-     "tile": [
-      17,
-      12
-     ],
-     "k": "house",
-     "why": "house door: opens Ferrox Cabin",
-     "to": "188"
-    },
-    {
-     "tile": [
-      11,
-      4
+      13,
+      14
      ],
      "k": "stash",
      "item": "cure",
@@ -5058,12 +5054,12 @@
    ],
    "spawns": {
     "arrival": [
-     1,
-     7
+     4,
+     6
     ],
     "default": [
-     1,
-     7
+     4,
+     6
     ]
    },
    "grid": [
@@ -5073,42 +5069,45 @@
    "pkey": "ferrox",
    "npcs": [
     {
-     "x": 11,
-     "y": 6,
+     "x": 12,
+     "y": 4,
      "art": "guard",
      "face": "down",
      "t": [
       "Gate guard: Welcome to Ferrox. Mind the rails, the ore carts don't stop for anyone."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 13,
-     "y": 14,
+     "x": 17,
+     "y": 10,
      "art": "technician",
      "face": "down",
      "t": [
       "Porter: Everything that lands here gets weighed, stamped and argued over. That's Ferrox for you."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 5,
-     "y": 8,
+     "x": 6,
+     "y": 10,
      "art": "civilian",
      "face": "down",
      "t": [
       "Traveller: First time on Ferrox? Rustvale is just east. Best scrap stew in the system."
-     ]
+     ],
+     "stay": true
     }
    ],
    "mons": [
     {
-     "x": 0,
-     "y": 9,
+     "x": 1,
+     "y": 4,
      "mon": "Anvilox"
     },
     {
-     "x": 14,
-     "y": 9,
+     "x": 11,
+     "y": 14,
      "mon": "Gongorr"
     }
    ]
@@ -5129,16 +5128,16 @@
     "left": {
      "to": "029",
      "range": [
-      7,
-      8
+      5,
+      9
      ],
-     "offset": 0
+     "offset": 1
     },
     "right": {
      "to": "034",
      "range": [
-      7,
-      8
+      5,
+      9
      ],
      "offset": 0
     }
@@ -5146,13 +5145,13 @@
    "warps": [
     {
      "tile": [
-      16,
-      5
+      8,
+      4
      ],
      "to": "031",
      "at": [
       7,
-      12
+      13
      ],
      "face": "up",
      "kind": "door",
@@ -5160,13 +5159,27 @@
     },
     {
      "tile": [
-      6,
-      10
+      9,
+      4
+     ],
+     "to": "031",
+     "at": [
+      8,
+      13
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    },
+    {
+     "tile": [
+      15,
+      4
      ],
      "to": "032",
      "at": [
       7,
-      12
+      13
      ],
      "face": "up",
      "kind": "door",
@@ -5174,13 +5187,27 @@
     },
     {
      "tile": [
-      6,
+      20,
       4
      ],
      "to": "033",
      "at": [
       7,
-      12
+      13
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    },
+    {
+     "tile": [
+      21,
+      4
+     ],
+     "to": "033",
+     "at": [
+      8,
+      13
      ],
      "face": "up",
      "kind": "door",
@@ -5190,17 +5217,26 @@
    "objects": [
     {
      "tile": [
-      17,
-      11
+      2,
+      4
      ],
      "k": "house",
-     "why": "house door: opens Ferrox Cabin",
-     "to": "188"
+     "to": "188",
+     "why": "house door: Rustvale home (shared Ferrox Cabin)"
     },
     {
      "tile": [
-      5,
-      13
+      3,
+      4
+     ],
+     "k": "house",
+     "to": "188",
+     "why": "house door: Rustvale home"
+    },
+    {
+     "tile": [
+      11,
+      14
      ],
      "k": "stash",
      "item": "gel",
@@ -5211,68 +5247,74 @@
    "spawns": {
     "default": [
      1,
-     7
+     5
     ]
    },
    "grid": [
     24,
-    0
+    1
    ],
    "pkey": "ferrox",
    "npcs": [
     {
-     "x": 9,
-     "y": 5,
+     "x": 10,
+     "y": 6,
      "art": "technician",
      "face": "down",
      "t": [
       "Scrapper: Everything here is built from junk. Even the Relay Tower."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 12,
-     "y": 13,
+     "x": 19,
+     "y": 6,
      "art": "miner",
      "face": "down",
      "t": [
       "Rail hand: Alloy-types love the rail yard. Bring something that burns."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 14,
-     "y": 9,
+     "x": 4,
+     "y": 10,
      "art": "civilian",
      "face": "down",
      "t": [
       "Kid: Hank's Alienmon are tough as old boilers!"
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 13,
-     "y": 9,
+     "x": 15,
+     "y": 8,
      "art": "guard",
      "face": "down",
      "t": [
       "Watchman: Helix suits were sniffing around the crane yard last night. Hank's not happy."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 18,
+     "x": 8,
      "y": 12,
      "art": "wanderer",
      "face": "down",
      "t": [
       "Old welder: Hank Briggs runs the tower at the end of Furnace Ridge. You'll need a Shard's worth of guts to face him."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 10,
-     "y": 5,
+     "x": 5,
+     "y": 6,
      "art": "explorer",
-     "face": "down",
+     "face": "left",
      "t": [
       "Linker: Magma moves melt Alloy-types fast. Volt moves just bounce off."
      ],
+     "stay": true,
      "id": "sec030_tr5",
      "trainer": {
       "cls": "Linker",
@@ -5281,8 +5323,8 @@
      }
     },
     {
-     "x": 15,
-     "y": 6,
+     "x": 20,
+     "y": 10,
      "art": "kit",
      "face": "down",
      "t": [
@@ -5291,12 +5333,13 @@
      ],
      "name": "Kit",
      "after": "M04",
-     "until": "M19"
+     "until": "M19",
+     "stay": true
     }
    ],
    "mons": [
     {
-     "x": 5,
+     "x": 16,
      "y": 12,
      "mon": "Magnub"
     }
@@ -5319,12 +5362,12 @@
     {
      "tile": [
       7,
-      13
+      14
      ],
-     "to": "030",
+     "to": "back",
      "at": [
-      16,
-      6
+      8,
+      5
      ],
      "face": "down",
      "kind": "door"
@@ -5332,12 +5375,12 @@
     {
      "tile": [
       8,
-      13
+      14
      ],
-     "to": "030",
+     "to": "back",
      "at": [
-      16,
-      6
+      8,
+      5
      ],
      "face": "down",
      "kind": "door"
@@ -5347,7 +5390,15 @@
     {
      "tile": [
       7,
-      7
+      4
+     ],
+     "k": "bay",
+     "why": "Recovery Bay counter"
+    },
+    {
+     "tile": [
+      8,
+      4
      ],
      "k": "bay",
      "why": "Recovery Bay counter"
@@ -5356,34 +5407,36 @@
    "spawns": {
     "door": [
      7,
-     12
+     13
     ],
     "default": [
      7,
-     12
+     13
     ]
    },
    "parent": "030",
    "pkey": "ferrox",
    "npcs": [
     {
-     "x": 7,
+     "x": 9,
      "y": 5,
      "art": "nurse",
      "face": "down",
      "t": [
       "Nurse: Welcome to the Rustvale Recovery Bay. Step up to the counter!"
      ],
-     "name": "Nurse"
+     "name": "Nurse",
+     "stay": true
     },
     {
-     "x": 9,
-     "y": 10,
+     "x": 6,
+     "y": 11,
      "art": "miner",
      "face": "down",
      "t": [
       "Miner: I patch up my Alienmon here after every shift. The nurse doesn't even charge for the soot."
-     ]
+     ],
+     "stay": true
     }
    ]
   },
@@ -5404,12 +5457,12 @@
     {
      "tile": [
       7,
-      13
+      14
      ],
-     "to": "030",
+     "to": "back",
      "at": [
-      6,
-      11
+      15,
+      5
      ],
      "face": "down",
      "kind": "door"
@@ -5417,12 +5470,12 @@
     {
      "tile": [
       8,
-      13
+      14
      ],
-     "to": "030",
+     "to": "back",
      "at": [
-      6,
-      11
+      15,
+      5
      ],
      "face": "down",
      "kind": "door"
@@ -5431,16 +5484,16 @@
    "objects": [
     {
      "tile": [
-      4,
-      7
+      7,
+      4
      ],
      "k": "shop",
      "why": "shop counter"
     },
     {
      "tile": [
-      5,
-      7
+      8,
+      4
      ],
      "k": "shop",
      "why": "shop counter"
@@ -5449,34 +5502,36 @@
    "spawns": {
     "door": [
      7,
-     12
+     13
     ],
     "default": [
      7,
-     12
+     13
     ]
    },
    "parent": "030",
    "pkey": "ferrox",
    "npcs": [
     {
-     "x": 3,
-     "y": 6,
+     "x": 9,
+     "y": 12,
      "art": "shop",
      "face": "down",
      "t": [
       "Shopkeeper: Pods, gels, sprays. Talk to me at the counter."
      ],
-     "name": "Shopkeeper"
+     "name": "Shopkeeper",
+     "stay": true
     },
     {
-     "x": 7,
-     "y": 7,
+     "x": 6,
+     "y": 5,
      "art": "technician",
      "face": "down",
      "t": [
       "Customer: Stun Spray is a lifesaver on the Scrap Route. Those junk-types hit hard."
-     ]
+     ],
+     "stay": true
     }
    ]
   },
@@ -5497,11 +5552,11 @@
     {
      "tile": [
       7,
-      13
+      14
      ],
      "to": "030",
      "at": [
-      6,
+      20,
       5
      ],
      "face": "down",
@@ -5510,11 +5565,11 @@
     {
      "tile": [
       8,
-      13
+      14
      ],
      "to": "030",
      "at": [
-      6,
+      20,
       5
      ],
      "face": "down",
@@ -5525,19 +5580,19 @@
    "spawns": {
     "door": [
      7,
-     12
+     13
     ],
     "default": [
      7,
-     12
+     13
     ]
    },
    "parent": "030",
    "pkey": "ferrox",
    "npcs": [
     {
-     "x": 7,
-     "y": 9,
+     "x": 8,
+     "y": 8,
      "art": "grub",
      "face": "down",
      "t": [
@@ -5564,7 +5619,7 @@
     "left": {
      "to": "030",
      "range": [
-      7,
+      5,
       8
      ],
      "offset": 0
@@ -5572,7 +5627,7 @@
     "right": {
      "to": "035",
      "range": [
-      7,
+      5,
       8
      ],
      "offset": 0
@@ -5582,7 +5637,7 @@
    "objects": [
     {
      "tile": [
-      16,
+      11,
       14
      ],
      "k": "stash",
@@ -5592,8 +5647,8 @@
     },
     {
      "tile": [
-      6,
-      2
+      10,
+      1
      ],
      "k": "stash",
      "item": "gel",
@@ -5604,38 +5659,40 @@
    "spawns": {
     "default": [
      1,
-     7
+     5
     ]
    },
    "grid": [
     48,
-    0
+    1
    ],
    "pkey": "ferrox",
    "npcs": [
     {
-     "x": 12,
-     "y": 10,
+     "x": 6,
+     "y": 7,
      "art": "technician",
      "face": "down",
      "t": [
       "Scavenger: The Scrap Route is all junk piles and loose rails. Alienmon love hiding in the scrap."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 3,
-     "y": 6,
+     "x": 14,
+     "y": 8,
      "art": "miner",
      "face": "down",
      "t": [
       "Hauler: My cart threw a wheel. Again. Third time this week."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 7,
-     "y": 10,
+     "x": 19,
+     "y": 4,
      "art": "miner",
-     "face": "up",
+     "face": "down",
      "t": [],
      "id": "sec034_tr2",
      "trainer": {
@@ -5645,10 +5702,10 @@
      }
     },
     {
-     "x": 12,
+     "x": 11,
      "y": 3,
      "art": "guard",
-     "face": "left",
+     "face": "down",
      "t": [],
      "id": "sec034_tr3",
      "trainer": {
@@ -5660,13 +5717,13 @@
    ],
    "mons": [
     {
-     "x": 20,
-     "y": 3,
+     "x": 3,
+     "y": 2,
      "mon": "Gearhound"
     },
     {
-     "x": 18,
-     "y": 14,
+     "x": 20,
+     "y": 11,
      "mon": "Coilossus"
     }
    ]
@@ -5687,7 +5744,7 @@
     "left": {
      "to": "034",
      "range": [
-      7,
+      5,
       8
      ],
      "offset": 0
@@ -5695,7 +5752,7 @@
     "right": {
      "to": "036",
      "range": [
-      7,
+      5,
       8
      ],
      "offset": 0
@@ -5705,8 +5762,8 @@
    "objects": [
     {
      "tile": [
-      9,
-      2
+      11,
+      14
      ],
      "k": "stash",
      "item": "gel",
@@ -5715,7 +5772,7 @@
     },
     {
      "tile": [
-      10,
+      13,
       14
      ],
      "k": "stash",
@@ -5727,38 +5784,40 @@
    "spawns": {
     "default": [
      1,
-     7
+     5
     ]
    },
    "grid": [
     72,
-    0
+    1
    ],
    "pkey": "ferrox",
    "npcs": [
     {
-     "x": 15,
-     "y": 6,
+     "x": 6,
+     "y": 8,
      "art": "explorer",
      "face": "down",
      "t": [
       "Hiker: Tall rust-grass is where the wild ones hide. Walk around it if your team is tired."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 7,
-     "y": 4,
+     "x": 20,
+     "y": 8,
      "art": "wanderer",
      "face": "down",
      "t": [
       "Drifter: The crane yard's next. Watch for falling crates."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 9,
-     "y": 12,
+     "x": 12,
+     "y": 4,
      "art": "guard",
-     "face": "left",
+     "face": "down",
      "t": [],
      "id": "sec035_tr2",
      "trainer": {
@@ -5768,10 +5827,10 @@
      }
     },
     {
-     "x": 4,
-     "y": 6,
+     "x": 10,
+     "y": 12,
      "art": "technician",
-     "face": "down",
+     "face": "up",
      "t": [],
      "id": "sec035_tr3",
      "trainer": {
@@ -5783,13 +5842,13 @@
    ],
    "mons": [
     {
-     "x": 20,
-     "y": 10,
+     "x": 4,
+     "y": 2,
      "mon": "Anvilox"
     },
     {
-     "x": 5,
-     "y": 11,
+     "x": 18,
+     "y": 2,
      "mon": "Gongorr"
     }
    ]
@@ -5810,7 +5869,7 @@
     "left": {
      "to": "035",
      "range": [
-      7,
+      5,
       8
      ],
      "offset": 0
@@ -5818,7 +5877,7 @@
     "right": {
      "to": "037",
      "range": [
-      7,
+      5,
       8
      ],
      "offset": 0
@@ -5828,8 +5887,8 @@
    "objects": [
     {
      "tile": [
-      15,
-      13
+      8,
+      11
      ],
      "k": "stash",
      "item": "stasis",
@@ -5838,8 +5897,8 @@
     },
     {
      "tile": [
-      6,
-      2
+      17,
+      3
      ],
      "k": "stash",
      "item": "gel",
@@ -5850,38 +5909,40 @@
    "spawns": {
     "default": [
      1,
-     7
+     5
     ]
    },
    "grid": [
     96,
-    0
+    1
    ],
    "pkey": "ferrox",
    "npcs": [
     {
-     "x": 4,
-     "y": 10,
+     "x": 12,
+     "y": 7,
      "art": "technician",
      "face": "down",
      "t": [
       "Crane operator: Three junkers keep jamming my cranes. Hank wants them taught a lesson."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 9,
-     "y": 4,
+     "x": 7,
+     "y": 5,
      "art": "guard",
      "face": "down",
      "t": [
       "Yard guard: No Helix allowed in this yard. Not after what they pulled last month."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 14,
-     "y": 6,
+     "x": 19,
+     "y": 9,
      "art": "technician",
-     "face": "down",
+     "face": "up",
      "t": [],
      "id": "sec036_tr2",
      "trainer": {
@@ -5891,8 +5952,8 @@
      }
     },
     {
-     "x": 19,
-     "y": 6,
+     "x": 16,
+     "y": 4,
      "art": "miner",
      "face": "down",
      "t": [],
@@ -5906,13 +5967,13 @@
    ],
    "mons": [
     {
-     "x": 10,
-     "y": 14,
+     "x": 4,
+     "y": 3,
      "mon": "Gearhound"
     },
     {
-     "x": 6,
-     "y": 12,
+     "x": 9,
+     "y": 11,
      "mon": "Coilossus"
     }
    ]
@@ -5933,16 +5994,16 @@
     "left": {
      "to": "036",
      "range": [
-      7,
-      8
+      5,
+      10
      ],
      "offset": 0
     },
     "right": {
      "to": "038",
      "range": [
-      7,
-      8
+      5,
+      10
      ],
      "offset": 0
     }
@@ -5951,35 +6012,60 @@
    "objects": [
     {
      "tile": [
-      18,
+      3,
       4
      ],
-     "k": "bay",
-     "why": "Junk Market Recovery Bay (no interior yet, so the door works like the counter)",
-     "door": true
+     "k": "house",
+     "to": "188",
+     "why": "Junk Market home (shared Ferrox Cabin)"
     },
     {
      "tile": [
-      18,
-      12
-     ],
-     "k": "shop",
-     "why": "Junk Market big shop (no interior yet, so the door works like the counter)",
-     "door": true
-    },
-    {
-     "tile": [
-      6,
-      11
+      21,
+      4
      ],
      "k": "house",
-     "why": "house door: opens Ferrox Cabin",
-     "to": "188"
+     "to": "188",
+     "why": "Junk Market home"
+    },
+    {
+     "tile": [
+      8,
+      4
+     ],
+     "k": "house",
+     "to": "031",
+     "why": "Junk Market Recovery Bay (shared room)"
+    },
+    {
+     "tile": [
+      9,
+      4
+     ],
+     "k": "house",
+     "to": "031",
+     "why": "Junk Market Recovery Bay"
+    },
+    {
+     "tile": [
+      15,
+      4
+     ],
+     "k": "shop",
+     "why": "Junk Market big stall counter"
+    },
+    {
+     "tile": [
+      16,
+      4
+     ],
+     "k": "shop",
+     "why": "Junk Market big stall counter"
     },
     {
      "tile": [
       11,
-      2
+      14
      ],
      "k": "stash",
      "item": "cure",
@@ -5990,56 +6076,60 @@
    "spawns": {
     "default": [
      1,
-     7
+     5
     ]
    },
    "grid": [
     120,
-    0
+    1
    ],
    "pkey": "ferrox",
    "npcs": [
     {
-     "x": 16,
-     "y": 11,
+     "x": 12,
+     "y": 6,
      "art": "technician",
      "face": "down",
      "t": [
       "Junk dealer: One Linker's trash is another Linker's treasure. Mostly it's just trash."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 17,
-     "y": 8,
+     "x": 18,
+     "y": 10,
      "art": "civilian",
      "face": "down",
      "t": [
       "Shopper: I came for a bolt and left with a jetpack. It doesn't work, but still."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 15,
-     "y": 11,
+     "x": 5,
+     "y": 10,
      "art": "miner",
      "face": "down",
      "t": [
       "Ore trader: Ferrox ore powers half the ships in the system. Helix wants all of it."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 11,
-     "y": 3,
+     "x": 7,
+     "y": 5,
      "art": "wanderer",
      "face": "down",
      "t": [
       "Fortune teller: I see... a tower. And a man with a very large wrench."
-     ]
+     ],
+     "stay": true
     }
    ],
    "mons": [
     {
-     "x": 2,
-     "y": 1,
+     "x": 9,
+     "y": 14,
      "mon": "Magnub"
     }
    ]
@@ -6060,13 +6150,27 @@
     "left": {
      "to": "037",
      "range": [
-      7,
+      5,
       8
      ],
      "offset": 0
     }
    },
    "warps": [
+    {
+     "tile": [
+      23,
+      6
+     ],
+     "to": "039",
+     "at": [
+      6,
+      22
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
+    },
     {
      "tile": [
       23,
@@ -6080,27 +6184,13 @@
      "face": "up",
      "kind": "edge",
      "edge": "right"
-    },
-    {
-     "tile": [
-      23,
-      8
-     ],
-     "to": "039",
-     "at": [
-      8,
-      22
-     ],
-     "face": "up",
-     "kind": "edge",
-     "edge": "right"
     }
    ],
    "objects": [
     {
      "tile": [
-      13,
-      1
+      9,
+      12
      ],
      "k": "stash",
      "item": "gel",
@@ -6109,7 +6199,7 @@
     },
     {
      "tile": [
-      3,
+      12,
       12
      ],
      "k": "stash",
@@ -6121,38 +6211,40 @@
    "spawns": {
     "default": [
      1,
-     7
+     5
     ]
    },
    "grid": [
     144,
-    0
+    1
    ],
    "pkey": "ferrox",
    "npcs": [
     {
-     "x": 15,
-     "y": 9,
+     "x": 16,
+     "y": 5,
      "art": "miner",
      "face": "down",
      "t": [
       "Furnace worker: The heat up here peels paint off ships. Keep your Alienmon hydrated."
-     ]
+     ],
+     "stay": true
     },
     {
      "x": 4,
-     "y": 8,
+     "y": 5,
      "art": "guard",
      "face": "down",
      "t": [
       "Guard: Ferrox Tower is just ahead. Hank Briggs is the Keeper. Good luck, kid."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 20,
-     "y": 6,
+     "x": 10,
+     "y": 9,
      "art": "guard",
-     "face": "down",
+     "face": "up",
      "t": [],
      "id": "sec038_tr2",
      "trainer": {
@@ -6163,7 +6255,7 @@
     },
     {
      "x": 12,
-     "y": 10,
+     "y": 9,
      "art": "technician",
      "face": "up",
      "t": [],
@@ -6177,13 +6269,13 @@
    ],
    "mons": [
     {
-     "x": 14,
-     "y": 4,
+     "x": 18,
+     "y": 8,
      "mon": "Gearhound"
     },
     {
-     "x": 21,
-     "y": 9,
+     "x": 8,
+     "y": 5,
      "mon": "Coilossus"
     }
    ]
@@ -6204,6 +6296,20 @@
    "warps": [
     {
      "tile": [
+      6,
+      23
+     ],
+     "to": "038",
+     "at": [
+      22,
+      6
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
       7,
       23
      ],
@@ -6218,17 +6324,17 @@
     },
     {
      "tile": [
-      8,
-      23
+      6,
+      0
      ],
-     "to": "038",
+     "to": "040",
      "at": [
-      22,
-      7
+      6,
+      22
      ],
-     "face": "left",
-     "kind": "edge",
-     "edge": "bottom"
+     "face": "up",
+     "kind": "stairs",
+     "edge": "top"
     },
     {
      "tile": [
@@ -6252,6 +6358,20 @@
      "to": "040",
      "at": [
       8,
+      22
+     ],
+     "face": "up",
+     "kind": "stairs",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      9,
+      0
+     ],
+     "to": "040",
+     "at": [
+      9,
       22
      ],
      "face": "up",
@@ -6262,26 +6382,27 @@
    "objects": [],
    "spawns": {
     "default": [
-     7,
+     6,
      22
     ]
    },
    "pkey": "ferrox",
    "npcs": [
     {
-     "x": 11,
-     "y": 16,
+     "x": 10,
+     "y": 3,
      "art": "technician",
      "face": "down",
      "t": [
       "Tower engineer: Hank's apprentices train on this floor. The Keeper waits upstairs."
-     ]
+     ],
+     "stay": true
     },
     {
-     "x": 11,
-     "y": 6,
+     "x": 3,
+     "y": 11,
      "art": "guard",
-     "face": "down",
+     "face": "right",
      "t": [],
      "face_pinned": 1,
      "id": "sec039_app1",
@@ -6292,10 +6413,10 @@
      }
     },
     {
-     "x": 6,
-     "y": 20,
+     "x": 12,
+     "y": 11,
      "art": "technician",
-     "face": "right",
+     "face": "left",
      "t": [],
      "face_pinned": 1,
      "id": "sec039_app2",
@@ -6323,6 +6444,20 @@
    "warps": [
     {
      "tile": [
+      6,
+      23
+     ],
+     "to": "039",
+     "at": [
+      6,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
       7,
       23
      ],
@@ -6348,21 +6483,35 @@
      "face": "down",
      "kind": "edge",
      "edge": "bottom"
+    },
+    {
+     "tile": [
+      9,
+      23
+     ],
+     "to": "039",
+     "at": [
+      9,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
     }
    ],
    "objects": [
     {
      "tile": [
       7,
-      2
+      4
      ],
      "k": "keeper",
-     "why": "Keeper's dais at the far end of the arena, challenged from (7,3)"
+     "why": "Keeper's dais in front of the crystal, challenged from (7,5)"
     }
    ],
    "spawns": {
     "default": [
-     7,
+     6,
      22
     ]
    },
@@ -23962,7 +24111,7 @@
      12
     ]
    },
-   "parent": "029",
+   "parent": "030",
    "pkey": "ferrox",
    "npcs": [
     {
@@ -24970,40 +25119,29 @@
   },
   {
    "from_id": "029",
-   "edge": "left",
-   "tile_range": [
-    7,
-    8
-   ],
-   "to_id": "arrival",
-   "to_edge": null,
-   "to_tile": null
-  },
-  {
-   "from_id": "029",
    "edge": "right",
    "tile_range": [
-    7,
+    6,
     8
    ],
    "to_id": "030",
    "to_edge": "left",
    "to_tile": [
-    7,
-    8
+    5,
+    9
    ]
   },
   {
    "from_id": "030",
    "edge": "left",
    "tile_range": [
-    7,
-    8
+    5,
+    9
    ],
    "to_id": "029",
    "to_edge": "right",
    "to_tile": [
-    7,
+    6,
     8
    ]
   },
@@ -25011,13 +25149,13 @@
    "from_id": "030",
    "edge": "right",
    "tile_range": [
-    7,
-    8
+    5,
+    9
    ],
    "to_id": "034",
    "to_edge": "left",
    "to_tile": [
-    7,
+    5,
     8
    ]
   },
@@ -25025,27 +25163,27 @@
    "from_id": "034",
    "edge": "left",
    "tile_range": [
-    7,
+    5,
     8
    ],
    "to_id": "030",
    "to_edge": "right",
    "to_tile": [
-    7,
-    8
+    5,
+    9
    ]
   },
   {
    "from_id": "034",
    "edge": "right",
    "tile_range": [
-    7,
+    5,
     8
    ],
    "to_id": "035",
    "to_edge": "left",
    "to_tile": [
-    7,
+    5,
     8
    ]
   },
@@ -25053,13 +25191,13 @@
    "from_id": "035",
    "edge": "left",
    "tile_range": [
-    7,
+    5,
     8
    ],
    "to_id": "034",
    "to_edge": "right",
    "to_tile": [
-    7,
+    5,
     8
    ]
   },
@@ -25067,13 +25205,13 @@
    "from_id": "035",
    "edge": "right",
    "tile_range": [
-    7,
+    5,
     8
    ],
    "to_id": "036",
    "to_edge": "left",
    "to_tile": [
-    7,
+    5,
     8
    ]
   },
@@ -25081,13 +25219,13 @@
    "from_id": "036",
    "edge": "left",
    "tile_range": [
-    7,
+    5,
     8
    ],
    "to_id": "035",
    "to_edge": "right",
    "to_tile": [
-    7,
+    5,
     8
    ]
   },
@@ -25095,27 +25233,27 @@
    "from_id": "036",
    "edge": "right",
    "tile_range": [
-    7,
+    5,
     8
    ],
    "to_id": "037",
    "to_edge": "left",
    "to_tile": [
-    7,
-    8
+    5,
+    10
    ]
   },
   {
    "from_id": "037",
    "edge": "left",
    "tile_range": [
-    7,
-    8
+    5,
+    10
    ],
    "to_id": "036",
    "to_edge": "right",
    "to_tile": [
-    7,
+    5,
     8
    ]
   },
@@ -25123,13 +25261,13 @@
    "from_id": "037",
    "edge": "right",
    "tile_range": [
-    7,
-    8
+    5,
+    10
    ],
    "to_id": "038",
    "to_edge": "left",
    "to_tile": [
-    7,
+    5,
     8
    ]
   },
@@ -25137,70 +25275,70 @@
    "from_id": "038",
    "edge": "left",
    "tile_range": [
-    7,
+    5,
     8
    ],
    "to_id": "037",
    "to_edge": "right",
    "to_tile": [
-    7,
-    8
+    5,
+    10
    ]
   },
   {
    "from_id": "038",
    "edge": "right",
    "tile_range": [
-    7,
-    8
+    6,
+    7
    ],
    "to_id": "039",
    "to_edge": "bottom",
    "to_tile": [
-    7,
-    8
+    6,
+    9
    ]
   },
   {
    "from_id": "039",
    "edge": "bottom",
    "tile_range": [
-    7,
-    8
+    6,
+    9
    ],
    "to_id": "038",
    "to_edge": "right",
    "to_tile": [
-    7,
-    8
+    6,
+    7
    ]
   },
   {
    "from_id": "039",
    "edge": "top",
    "tile_range": [
-    7,
-    8
+    6,
+    9
    ],
    "to_id": "040",
    "to_edge": "bottom",
    "to_tile": [
-    7,
-    8
+    6,
+    9
    ]
   },
   {
    "from_id": "040",
    "edge": "bottom",
    "tile_range": [
-    7,
-    8
+    6,
+    9
    ],
    "to_id": "039",
    "to_edge": "top",
    "to_tile": [
-    7,
-    8
+    6,
+    9
    ]
   },
   {

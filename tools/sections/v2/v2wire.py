@@ -6,7 +6,30 @@ A2={s['id']:s for s in json.load(open(S+'atlas_v2.json',encoding='utf-8'))['sect
 AT=json.load(open('art/sections/atlas.json',encoding='utf-8'));A1={s['id']:s for s in AT['sections']}
 L=json.load(open('data/sections/links.json',encoding='utf-8'))
 H=lambda x,y:{'tile':[x,y]}
-WIRE={'01':{
+WIRE={'02':{
+ 'ids':['%03d'%i for i in range(29,41)],
+ 'doors':[('031','030',[8,4],[9,4],'Rustvale Recovery Bay (big dome, cyan cross)'),('032','030',[15,4],None,'Rustvale Shop (gear sign)'),
+          ('033','030',[20,4],[21,4],"Grub's Workshop (crossed-tools sign)")],
+ 'stairs':[],
+ 'objects':{
+  '029':[],
+  '030':[{'tile':[2,4],'k':'house','to':'188','why':'house door: Rustvale home (shared Ferrox Cabin)'},{'tile':[3,4],'k':'house','to':'188','why':'house door: Rustvale home'}],
+  '031':[{'tile':[7,4],'k':'bay','why':'Recovery Bay counter'},{'tile':[8,4],'k':'bay','why':'Recovery Bay counter'}],
+  '032':[{'tile':[7,4],'k':'shop','why':'shop counter'},{'tile':[8,4],'k':'shop','why':'shop counter'}],
+  '037':[{'tile':[3,4],'k':'house','to':'188','why':'Junk Market home (shared Ferrox Cabin)'},{'tile':[21,4],'k':'house','to':'188','why':'Junk Market home'},
+         {'tile':[8,4],'k':'house','to':'031','why':'Junk Market Recovery Bay (shared room)'},{'tile':[9,4],'k':'house','to':'031','why':'Junk Market Recovery Bay'},
+         {'tile':[15,4],'k':'shop','why':'Junk Market big stall counter'},{'tile':[16,4],'k':'shop','why':'Junk Market big stall counter'}],
+  '040':[{'tile':[7,4],'k':'keeper','why':"Keeper's dais in front of the crystal, challenged from (7,5)"}],
+ },
+ 'warps':[],
+ 'gates':{},
+ 'gates_new':[{'section':'029','tiles':[[4,4],[5,4]],'node':'dustara','planet':'dustara','label':'the Relay Gate back to Dustara','why':'V2: the Relay Gate ring is the arrival point and the way home'}],
+ 'atlas_extra':{'039':['top edge, tile columns 6–9 (stairs up) → Ferrox Tower 2F']},
+ 'trainer_tiles':[{'section':'039','n':0,'tile':[3,11],'face':'right'},{'section':'039','n':1,'tile':[12,11],'face':'left'}],
+ 'shared':['031','032'],
+ 'spawns':{'029':{'arrival':[4,6],'default':[4,6]},'188':{'default':[7,12]}},
+ 'arrival':{'ferrox':{'section':'029','why':'V2: the Relay Gate ring in Gate Plaza'}},
+},'01':{
  'ids':['%03d'%i for i in range(1,29)]+['165','166'],
  'doors':[('001','004',[2,4],[3,4],"Hero's house"),('166','004',[6,4],[7,4],'Reyes house'),('005','004',[11,4],[12,4],'Recovery Bay'),
           ('006','004',[16,4],[17,4],'Shop'),('003','004',[20,3],None,"Vashti's observatory, up the steps")],
@@ -48,6 +71,7 @@ for pf in sys.argv[1:]:
         for e in A2[i]['exits']:
             if e['kind']!='edge': continue
             a,b=band(i,e['side'],e.get('rows') or e.get('cols'));ex.append(f"{e['side']} edge, tile {'rows' if 'rows' in e else 'columns'} {a}–{b} → {names[e['to']]}")
+        ex+=W.get('atlas_extra',{}).get(i,[])
         A1[i]['exits']=ex; A1[i]['v2']=True
     keep=lambda e,k='section': e.get(k) not in ids
     L['doors']=[d for d in L['doors'] if d['interior'] not in ids]+[{'interior':i,'parent':p,'door':d,**({'door2':d2} if d2 else {}),'mat':[[7,14],[8,14]],'confidence':'high','why':'V2: '+w} for i,p,d,d2,w in W['doors']]
@@ -58,11 +82,15 @@ for pf in sys.argv[1:]:
     L['warps']=[w for w in L['warps'] if keep(w)]+W['warps']
     for w in L['warps']:
         if w['section']=='187' and w.get('parent')=='007': w['parent']='018'   # the cottage's only door is now in Port Ember
+        if w['section']=='188': w['parent']='030'
     for g in L['gates']:
         if g['section'] in W['gates']: g['tiles']=W['gates'][g['section']]; g['at_dy']=1
     for k,v in W['spawns'].items(): L['spawns'][k]=v
+    if 'gates_new' in W: L['gates']=[g for g in L['gates'] if g['section'] not in {x['section'] for x in W['gates_new']}]+W['gates_new']
+    if 'trainer_tiles' in W: L['trainers']['tiles']=[t for t in L['trainers']['tiles'] if t['section'] not in ids]+W['trainer_tiles']
+    if 'shared' in W: L['shared_rooms']=sorted(set(L.get('shared_rooms',[]))|set(W['shared']))
     L['arrival'].update(W['arrival'])
-    L['shared_rooms']=sorted(set(L.get('shared_rooms',[]))|{'005','006'})
+    if pf=='01': L['shared_rooms']=sorted(set(L.get('shared_rooms',[]))|{'005','006'})
 json.dump(AT,open('art/sections/atlas.json','w',encoding='utf-8'),indent=1,ensure_ascii=False)
 json.dump(L,open('data/sections/links.json','w',encoding='utf-8'),indent=1,ensure_ascii=False)
 print('wired',sys.argv[1:])

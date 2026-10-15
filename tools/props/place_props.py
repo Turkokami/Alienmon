@@ -27,6 +27,15 @@ ZONE_TOWN = {'thalassa': [('wall', T(40, 41, 43, 44, 47, 50, 51), 2), ('wall', T
 # Towns are laid out by hand like a real street: lamps in straight evenly spaced rows, stalls in a line along the
 # shopfronts, planters in pairs either side of a door, benches facing each other. (prop, x, y)
 HAND = {
+ # Ferrox (sheet 02_ferrox): lamps in straight rows, stalls along the shopfronts, plants either side of doors
+ '029': [('02_ferrox/80', 4, 9), ('02_ferrox/80', 8, 9), ('02_ferrox/80', 16, 9), ('02_ferrox/80', 20, 9), ('02_ferrox/66', 18, 4), ('02_ferrox/04', 20, 4)],
+ '030': [('02_ferrox/80', 5, 5), ('02_ferrox/30', 7, 5), ('02_ferrox/30', 10, 5), ('02_ferrox/80', 12, 5), ('02_ferrox/66', 13, 5), ('02_ferrox/80', 18, 5), ('02_ferrox/01', 19, 5)],
+ '037': [('02_ferrox/106', 11, 5), ('02_ferrox/04', 13, 5), ('02_ferrox/01', 17, 5), ('02_ferrox/107', 18, 5),
+         ('02_ferrox/80', 2, 10), ('02_ferrox/80', 7, 10), ('02_ferrox/80', 16, 10), ('02_ferrox/80', 21, 10)],
+ '031': [('02_ferrox/30', 6, 12), ('02_ferrox/30', 9, 12)],
+ '032': [('02_ferrox/01', 3, 12), ('02_ferrox/66', 11, 12)],
+ '033': [('02_ferrox/66', 3, 12), ('02_ferrox/04', 12, 12)],
+ '034': [], '035': [], '036': [], '038': [], '039': [], '040': [],
  # routes and landmarks: no random clutter; only purposeful groups (the map art already carries the scenery)
  '007': [], '009': [], '011': [], '014': [], '015': [], '016': [], '017': [], '020': [], '021': [], '022': [], '023': [],
  '024': [], '025': [], '027': [], '028': [],
@@ -50,7 +59,7 @@ HAND = {
 L = json.load(open('data/sections/props_layout.json'))
 for sid in sys.argv[1:]:
     s = SEC[sid]; rows = [list(r) for r in json.load(open(f'data/collision/{sid}.json'))['rows']]; Wt, Ht = s['tiles']
-    if s['type'] == 'interior': continue
+    if s['type'] == 'interior' and sid not in HAND: continue
     pal = ZONE_TOWN[s['zone']] if s['type'] == 'town' and s.get('zone') in ZONE_TOWN else NEUTRAL.get(s['type'], []) if s.get('zone') in FRONTIER else PALETTES.get((s['dir'], s['type']), [])
     rnd = random.Random(int(sid) * 7919)
     walk = lambda x, y: 0 <= x < Wt and 0 <= y < Ht and rows[y][x] in '.,'
