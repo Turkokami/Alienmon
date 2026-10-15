@@ -78,6 +78,13 @@ const PEOPLE=fs.existsSync(path.join(root,'data/town_people.json'))?fs.readFileS
 // section maps (data/world.json + data/collision/*.json): Gold/Crystal-style screens at 16 px per tile
 const SECW=fs.existsSync(path.join(root,'data/world.json'))?JSON.parse(fs.readFileSync(path.join(root,'data/world.json'),'utf8')):{sections:{},arrival:{}};
 // walk-behind props (tools/sections/pass_behind.py): those tiles become ':' and their cut-out is drawn over the player standing behind them
+// props (data/sections/props_layout.json): {section:[{p:'01_dustara/44',x,y,h?,solid?}]}; x,y = top-left of the footprint (tiles),
+// footprint = sprite width in tiles x h rows (default 1), solid props block it. Drawn bottom-aligned on the footprint, depth-sorted with people.
+const PL_=fs.existsSync(path.join(root,'data/sections/props_layout.json'))?JSON.parse(fs.readFileSync(path.join(root,'data/sections/props_layout.json'),'utf8')):{},PROPS={};
+function props(id,rows){const L=PL_[id];if(!L||!L.length)return rows;const R=rows.map(r=>r.split(''));PROPS[id]=[];
+ for(const q of L){const f='art/props/'+q.p+'.png';if(!fs.existsSync(f))continue;const b=fs.readFileSync(f),pw=b.readUInt32BE(16),ph=b.readUInt32BE(20),w=Math.max(1,Math.round(pw/16)),h=q.h||1;
+  PROPS[id].push([asset(f),q.x,q.y,w,h,pw,ph]);if(q.solid!==false)for(let y=q.y;y<q.y+h;y++)for(let x=q.x;x<q.x+w;x++)if(R[y]&&R[y][x]!==undefined)R[y][x]='#'}
+ return R.map(r=>r.join(''))}
 const PB=fs.existsSync(path.join(root,'data/sections/pass_behind.json'))?JSON.parse(fs.readFileSync(path.join(root,'data/sections/pass_behind.json'),'utf8')):{},SECOV={};
 function behind(id,rows){const p=PB[id];if(!p)return rows;const R=rows.map(r=>r.split(''));for(const[x,y]of p.tiles)if(R[y]&&R[y][x]==='#')R[y][x]=':';return R.map(r=>r.join(''))}
 // habitat encounter tables (data/encounters.json): {section: {h: habitat, e: [[name, weight, min, max, method, time]]}} plus habitat descriptions
@@ -85,7 +92,7 @@ const ENCJ=JSON.parse(fs.readFileSync(path.join(root,'data/encounters.json'),'ut
 const ENC={s:{},h:{}};for(const[id,s]of Object.entries(ENCJ))ENC.s[id]={h:s.habitat,e:s.encounters.map(e=>[e.name,e.weight,e.levels[0],e.levels[1],e.method,e.time])};
 for(const[k,h]of Object.entries(HABJ.habitats))ENC.h[k]=h.description;ENC.r={hab:Object.fromEntries(Object.entries(HABJ.habitats).map(([k,h])=>[k,[h.native,h.tolerated]])),ban:HABJ.hard_bans};
 const SECIMG={},SECS={};for(const[id,sec]of Object.entries(SECW.sections)){const cp=path.join(root,'data/collision',id+'.json');if(!sec.img||!fs.existsSync(cp))continue;
- SECIMG[id]=asset(sec.img);SECS[id]={id,name:sec.name,planet:sec.planet,type:sec.type,tiles:sec.tiles,edges:sec.edges,warps:sec.warps,objects:sec.objects,spawns:sec.spawns,npcs:sec.npcs||[],mons:sec.mons||[],zone:sec.zone,pkey:sec.pkey,grid:sec.grid||null,parent:sec.parent||null,dir:sec.dir,rows:behind(id,fluids(id,JSON.parse(fs.readFileSync(cp,'utf8')).rows)),over:PB[id]?PB[id].pieces:null};
+ SECIMG[id]=asset(sec.img);SECS[id]={id,name:sec.name,planet:sec.planet,type:sec.type,tiles:sec.tiles,edges:sec.edges,warps:sec.warps,objects:sec.objects,spawns:sec.spawns,npcs:sec.npcs||[],mons:sec.mons||[],zone:sec.zone,pkey:sec.pkey,grid:sec.grid||null,parent:sec.parent||null,dir:sec.dir,rows:props(id,behind(id,fluids(id,JSON.parse(fs.readFileSync(cp,'utf8')).rows))),over:PB[id]?PB[id].pieces:null,props:PROPS[id]||null};
  const ov=path.join(root,'art/sections_over',id+'.png');if(PB[id]&&fs.existsSync(ov))SECOV[id]=asset('art/sections_over/'+id+'.png')}
 // open water ('~', Hydro-skiff) and lava ('^', Heat Shield) marked per section in data/sections/fluids/<id>.json; never the outer ring
 function fluids(id,rows){const f=path.join(root,'data/sections/fluids',id+'.json');if(!fs.existsSync(f))return rows;const F=JSON.parse(fs.readFileSync(f,'utf8')),R=rows.map(r=>r.split('')),H=R.length,W=R[0].length;
