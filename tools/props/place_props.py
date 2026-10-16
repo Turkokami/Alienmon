@@ -27,6 +27,13 @@ ZONE_TOWN = {'thalassa': [('wall', T(40, 41, 43, 44, 47, 50, 51), 2), ('wall', T
 # Towns are laid out by hand like a real street: lamps in straight evenly spaced rows, stalls in a line along the
 # shopfronts, planters in pairs either side of a door, benches facing each other. (prop, x, y)
 HAND = {
+ '001': [('int_dustara/97', 9, 12), ('int_dustara/149', 13, 12), ('int_dustara/134', 2, 12), ('int_dustara/116', 2, 10), ('int_dustara/143', 12, 8), ('int_dustara/72', 4, 12)],
+ '002': [('int_dustara/05', 12, 8), ('int_dustara/98', 12, 11), ('int_dustara/47', 5, 12), ('int_dustara/162', 13, 6), ('int_dustara/152', 10, 4)],
+ '003': [('int_dustara/99', 10, 12), ('int_dustara/100', 12, 12), ('int_dustara/77', 13, 12), ('int_dustara/84', 3, 12), ('int_dustara/110', 12, 9)],
+ '005': [('int_dustara/134', 3, 12), ('int_dustara/134', 12, 12), ('int_dustara/115', 3, 8), ('int_dustara/115', 10, 8)],
+ '006': [('int_dustara/26', 2, 12), ('int_dustara/105', 12, 12), ('int_dustara/116', 3, 8), ('int_dustara/116', 12, 8), ('int_dustara/36', 13, 12)],
+ '165': [('int_dustara/170', 4, 4), ('int_dustara/166', 6, 4), ('int_dustara/116', 10, 4), ('int_dustara/116', 11, 4), ('int_dustara/148', 12, 6), ('int_dustara/41', 12, 9), ('int_dustara/170', 7, 8)],
+ '166': [('int_dustara/12', 11, 5), ('int_dustara/05', 3, 5), ('int_dustara/14', 11, 10), ('int_dustara/134', 12, 12), ('int_dustara/36', 4, 12)],
  '153': [('14_ystra/16', 7, 5), ('14_ystra/16', 15, 5), ('14_ystra/16', 21, 5), ('14_ystra/78', 9, 5), ('14_ystra/78', 16, 5), ('14_ystra/37', 18, 9), ('14_ystra/99', 11, 11)],
  '154': [('14_ystra/16', 5, 5), ('14_ystra/16', 12, 5), ('14_ystra/16', 19, 5), ('14_ystra/56', 8, 10)],
  '155': [('14_ystra/16', 5, 5), ('14_ystra/16', 12, 5), ('14_ystra/16', 19, 5), ('14_ystra/46', 16, 9)],
@@ -160,13 +167,6 @@ HAND = {
  '043': [('03_sporeholm/117', 2, 5), ('03_sporeholm/117', 13, 5), ('03_sporeholm/04', 2, 8), ('03_sporeholm/04', 11, 8), ('03_sporeholm/112', 10, 5)],
  '044': [('03_sporeholm/118', 2, 6), ('03_sporeholm/118', 2, 9), ('03_sporeholm/118', 13, 6), ('03_sporeholm/118', 13, 9), ('03_sporeholm/163', 4, 10), ('03_sporeholm/163', 10, 10), ('03_sporeholm/117', 2, 12), ('03_sporeholm/117', 13, 12)],
  # Dustara rooms furnished from the Ferrox house/interior designs: furniture against the walls, the centre aisle, doormat, stairs and counters clear
- '001': [('02_ferrox/240', 13, 9), ('02_ferrox/183', 12, 12), ('02_ferrox/165', 2, 12), ('02_ferrox/203', 2, 10), ('02_ferrox/189', 10, 10, 1, {'solid': False, 'h': 2})],
- '002': [('02_ferrox/179', 12, 9), ('02_ferrox/240', 13, 12), ('02_ferrox/203', 2, 13), ('02_ferrox/189', 9, 10, 1, {'solid': False, 'h': 2})],
- '003': [('02_ferrox/196', 3, 12), ('02_ferrox/208', 12, 12)],
- '005': [('02_ferrox/203', 3, 12), ('02_ferrox/203', 12, 12)],
- '006': [('02_ferrox/214', 3, 12), ('02_ferrox/156', 11, 12)],
- '165': [('02_ferrox/156', 4, 4), ('02_ferrox/214', 6, 4), ('02_ferrox/157', 9, 4), ('02_ferrox/172', 12, 6), ('02_ferrox/245', 12, 9), ('02_ferrox/244', 12, 10), ('02_ferrox/241', 7, 8, 1, {'solid': False, 'h': 3})],
- '166': [('02_ferrox/183', 12, 5), ('02_ferrox/180', 12, 8), ('02_ferrox/156', 11, 12), ('02_ferrox/167', 13, 12), ('02_ferrox/155', 3, 5)],
  # Ferrox (sheet 02_ferrox): lamps in straight rows, stalls along the shopfronts, plants either side of doors
  '029': [('02_ferrox/80', 4, 9), ('02_ferrox/80', 8, 9), ('02_ferrox/80', 16, 9), ('02_ferrox/80', 20, 9), ('02_ferrox/66', 18, 4), ('02_ferrox/04', 20, 4)],
  '030': [('02_ferrox/80', 5, 5), ('02_ferrox/30', 7, 5), ('02_ferrox/30', 10, 5), ('02_ferrox/80', 12, 5), ('02_ferrox/66', 13, 5), ('02_ferrox/80', 18, 5), ('02_ferrox/01', 19, 5)],
