@@ -415,7 +415,7 @@ function panel() {
   } else if (m === 'people') {
     h += PRE + `<h3>People</h3><p class="hint">Pick a character, then click the map. Drag anyone to move them.</p>
       <label>Name (optional) <input id="pname" value="${S.pname || ''}"></label><label>What they say <input id="pline" value="${S.pline || ''}" placeholder="Nice day, isn't it?"></label>
-      <div class="grid">${Object.entries(ED.chars).map(([k, u]) => `<button class="pal ${S.stamp && S.stamp.art === k ? 'on' : ''}" data-c="${k}" data-cap="${k}" title="${k}"><img src="${u}"></button>`).join('')}</div>`;
+      <div class="grid">${Object.entries(ED.chars).map(([k, u]) => `<button class="pal ${S.stamp && S.stamp.art === k ? 'on' : ''}" data-c="${k}" data-cap="${k}" title="${k}"><img src="${(ED.charBig || {})[k] || u}"></button>`).join('')}</div>`;
   } else if (m === 'mons') {
     h += PRE + `<h3>Wild Alienmon</h3><p class="hint">Roaming Alienmon you can bump into for a battle. Placing one here replaces the automatic ones on that map piece.</p>
       <input id="msearch" placeholder="Search Alienmon" value="${S.msearch || ''}">

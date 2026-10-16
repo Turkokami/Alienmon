@@ -130,6 +130,7 @@ if(PROTO&&!INLINE){
  ED.scenes=rd('art/scene_library/index.json',[]).map(x=>({...x,url:asset(x.file)}));   // ready-made scenes the editor can drop onto a world
  for(const[k,v]of Object.entries(CHAR))if(!/_(up|down|left|right)(_w\d)?$|_big$/.test(k))ED.chars[k]=v;
  for(const[k,v]of Object.entries(OW))ED.mons[k]=v;
+ ED.charBig={};for(const k of Object.keys(ED.chars))if(PORTRAITS[k])ED.charBig[k]=PORTRAITS[k];   // crisp full-body art for the People picker (the map keeps the in-game sprite)
  fs.writeFileSync(path.join(www,'editor_data.json'),JSON.stringify(ED));
  fs.copyFileSync(path.join(root,'tools/editor/editor.html'),path.join(www,'editor.html'));
  fs.copyFileSync(path.join(root,'tools/editor/editor.js'),path.join(www,'editor.js'));
