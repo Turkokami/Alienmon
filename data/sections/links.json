@@ -130,16 +130,16 @@
    ],
    "mat": [
     [
-     7,
-     14
+     8,
+     16
     ],
     [
-     8,
-     14
+     11,
+     16
     ]
    ],
    "confidence": "high",
-   "why": "V2: Rustvale Recovery Bay (big dome, cyan cross)"
+   "why": "V3 kit door"
   },
   {
    "interior": "032",
@@ -150,16 +150,16 @@
    ],
    "mat": [
     [
-     7,
-     14
+     9,
+     15
     ],
     [
-     8,
-     14
+     10,
+     15
     ]
    ],
    "confidence": "high",
-   "why": "V2: Rustvale Shop (gear sign)"
+   "why": "V3 kit door"
   },
   {
    "interior": "033",
@@ -183,7 +183,79 @@
     ]
    ],
    "confidence": "high",
-   "why": "V2: Grub's Workshop (crossed-tools sign)"
+   "why": "V3 kit door"
+  },
+  {
+   "interior": "039",
+   "parent": "502",
+   "door": [
+    11,
+    7
+   ],
+   "door2": [
+    12,
+    7
+   ],
+   "mat": [
+    [
+     9,
+     17
+    ],
+    [
+     10,
+     17
+    ]
+   ],
+   "confidence": "high",
+   "why": "V3 kit door"
+  },
+  {
+   "interior": "478",
+   "parent": "476",
+   "door": [
+    11,
+    7
+   ],
+   "door2": [
+    12,
+    7
+   ],
+   "mat": [
+    [
+     9,
+     17
+    ],
+    [
+     10,
+     17
+    ]
+   ],
+   "confidence": "high",
+   "why": "V3 kit door"
+  },
+  {
+   "interior": "496",
+   "parent": "495",
+   "door": [
+    8,
+    6
+   ],
+   "door2": [
+    9,
+    6
+   ],
+   "mat": [
+    [
+     7,
+     16
+    ],
+    [
+     12,
+     16
+    ]
+   ],
+   "confidence": "high",
+   "why": "V3 kit door"
   }
  ],
  "stairs": [
@@ -490,127 +562,6 @@
     "k": "house",
     "to": "005",
     "why": "Port Ember healing centre (shared Recovery Bay room)"
-   }
-  ],
-  "029": [],
-  "030": [
-   {
-    "tile": [
-     2,
-     4
-    ],
-    "k": "house",
-    "to": "188",
-    "why": "house door: Rustvale home (shared Ferrox Cabin)"
-   },
-   {
-    "tile": [
-     3,
-     4
-    ],
-    "k": "house",
-    "to": "188",
-    "why": "house door: Rustvale home"
-   }
-  ],
-  "031": [
-   {
-    "tile": [
-     7,
-     4
-    ],
-    "k": "bay",
-    "why": "Recovery Bay counter"
-   },
-   {
-    "tile": [
-     8,
-     4
-    ],
-    "k": "bay",
-    "why": "Recovery Bay counter"
-   }
-  ],
-  "032": [
-   {
-    "tile": [
-     7,
-     4
-    ],
-    "k": "shop",
-    "why": "shop counter"
-   },
-   {
-    "tile": [
-     8,
-     4
-    ],
-    "k": "shop",
-    "why": "shop counter"
-   }
-  ],
-  "037": [
-   {
-    "tile": [
-     3,
-     4
-    ],
-    "k": "house",
-    "to": "188",
-    "why": "Junk Market home (shared Ferrox Cabin)"
-   },
-   {
-    "tile": [
-     21,
-     4
-    ],
-    "k": "house",
-    "to": "188",
-    "why": "Junk Market home"
-   },
-   {
-    "tile": [
-     8,
-     4
-    ],
-    "k": "house",
-    "to": "031",
-    "why": "Junk Market Recovery Bay (shared room)"
-   },
-   {
-    "tile": [
-     9,
-     4
-    ],
-    "k": "house",
-    "to": "031",
-    "why": "Junk Market Recovery Bay"
-   },
-   {
-    "tile": [
-     15,
-     4
-    ],
-    "k": "shop",
-    "why": "Junk Market big stall counter"
-   },
-   {
-    "tile": [
-     16,
-     4
-    ],
-    "k": "shop",
-    "why": "Junk Market big stall counter"
-   }
-  ],
-  "040": [
-   {
-    "tile": [
-     7,
-     4
-    ],
-    "k": "keeper",
-    "why": "Keeper's dais in front of the crystal, challenged from (7,5)"
    }
   ],
   "041": [
@@ -1188,6 +1139,272 @@
     ],
     "why": "V2: healing stone on the arrival ring"
    }
+  ],
+  "030": [
+   {
+    "tile": [
+     2,
+     4
+    ],
+    "k": "house",
+    "to": "188",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     3,
+     4
+    ],
+    "k": "house",
+    "to": "188",
+    "why": "V3 kit house door"
+   }
+  ],
+  "505": [
+   {
+    "tile": [
+     4,
+     6
+    ],
+    "k": "house",
+    "to": "188",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     5,
+     6
+    ],
+    "k": "house",
+    "to": "188",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     11,
+     5
+    ],
+    "k": "house",
+    "to": "499",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     12,
+     5
+    ],
+    "k": "house",
+    "to": "499",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     19,
+     6
+    ],
+    "k": "house",
+    "to": "500",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     20,
+     6
+    ],
+    "k": "house",
+    "to": "500",
+    "why": "V3 kit house door"
+   }
+  ],
+  "506": [
+   {
+    "tile": [
+     5,
+     4
+    ],
+    "k": "house",
+    "to": "498",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     6,
+     4
+    ],
+    "k": "house",
+    "to": "498",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     11,
+     4
+    ],
+    "k": "house",
+    "to": "188",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     12,
+     4
+    ],
+    "k": "house",
+    "to": "188",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     16,
+     4
+    ],
+    "k": "house",
+    "to": "188",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     17,
+     4
+    ],
+    "k": "house",
+    "to": "188",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     2,
+     12
+    ],
+    "k": "house",
+    "to": "188",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     3,
+     12
+    ],
+    "k": "house",
+    "to": "188",
+    "why": "V3 kit house door"
+   }
+  ],
+  "507": [
+   {
+    "tile": [
+     4,
+     4
+    ],
+    "k": "house",
+    "to": "188",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     5,
+     4
+    ],
+    "k": "house",
+    "to": "188",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     10,
+     5
+    ],
+    "k": "house",
+    "to": "188",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     11,
+     5
+    ],
+    "k": "house",
+    "to": "188",
+    "why": "V3 kit house door"
+   }
+  ],
+  "031": [
+   {
+    "tile": [
+     9,
+     6
+    ],
+    "k": "bay"
+   },
+   {
+    "tile": [
+     10,
+     6
+    ],
+    "k": "bay"
+   }
+  ],
+  "032": [
+   {
+    "tile": [
+     6,
+     9
+    ],
+    "k": "shop"
+   },
+   {
+    "tile": [
+     6,
+     10
+    ],
+    "k": "shop"
+   }
+  ],
+  "040": [
+   {
+    "tile": [
+     12,
+     6
+    ],
+    "k": "keeper",
+    "why": "Keeper on the arena floor, challenged from (12,7)"
+   }
+  ],
+  "497": [
+   {
+    "tile": [
+     15,
+     4
+    ],
+    "k": "chest",
+    "item": "fullgel",
+    "n": 2,
+    "why": "hidden grove reward"
+   }
+  ],
+  "491": [
+   {
+    "tile": [
+     18,
+     14
+    ],
+    "k": "chest",
+    "item": "harmonic",
+    "n": 3,
+    "why": "Railcar Maze dead end reward"
+   }
+  ],
+  "484": [
+   {
+    "tile": [
+     4,
+     11
+    ],
+    "k": "chest",
+    "item": "maxrevive",
+    "n": 1,
+    "why": "Deepcut Mine depths reward"
+   }
   ]
  },
  "arrival": {
@@ -1197,7 +1414,7 @@
   },
   "ferrox": {
    "section": "029",
-   "why": "V2: the Relay Gate ring in Gate Plaza"
+   "why": "V3: the Ferrox spaceport landing pad"
   },
   "sporeholm": {
    "section": "041",
@@ -1388,12 +1605,6 @@
     12
    ]
   },
-  "188": {
-   "default": [
-    7,
-    12
-   ]
-  },
   "189": {
    "default": [
     7,
@@ -1438,16 +1649,6 @@
    "default": [
     3,
     8
-   ]
-  },
-  "029": {
-   "arrival": [
-    4,
-    6
-   ],
-   "default": [
-    4,
-    6
    ]
   },
   "041": {
@@ -1574,6 +1775,70 @@
    "default": [
     3,
     8
+   ]
+  },
+  "188": {
+   "default": [
+    7,
+    12
+   ]
+  },
+  "499": {
+   "default": [
+    9,
+    14
+   ]
+  },
+  "500": {
+   "default": [
+    9,
+    16
+   ]
+  },
+  "498": {
+   "default": [
+    9,
+    14
+   ]
+  },
+  "029": {
+   "arrival": [
+    12,
+    10
+   ],
+   "default": [
+    12,
+    10
+   ]
+  },
+  "040": {
+   "default": [
+    11,
+    12
+   ]
+  },
+  "482": {
+   "default": [
+    5,
+    3
+   ]
+  },
+  "483": {
+   "default": [
+    4,
+    4
+   ]
+  },
+  "484": {
+   "default": [
+    12,
+    12
+   ]
+  },
+  "039": {
+   "default": [
+    9,
+    15
    ]
   }
  },
@@ -1742,23 +2007,6 @@
    "at_dy": 1
   },
   {
-   "section": "029",
-   "tiles": [
-    [
-     4,
-     4
-    ],
-    [
-     5,
-     4
-    ]
-   ],
-   "node": "dustara",
-   "planet": "dustara",
-   "label": "the Relay Gate back to Dustara",
-   "why": "V2: the Relay Gate ring is the arrival point and the way home"
-  },
-  {
    "section": "072",
    "tiles": [
     [
@@ -1833,6 +2081,23 @@
    "planet": "dustara",
    "label": "the crater shuttle back to the Shuttle Pad",
    "why": "V2: the landing pad is the arrival point and the shuttle home"
+  },
+  {
+   "section": "029",
+   "tiles": [
+    [
+     12,
+     8
+    ],
+    [
+     13,
+     8
+    ]
+   ],
+   "node": "dustara",
+   "planet": "dustara",
+   "label": "your ship back to Dustara",
+   "why": "V3: the spaceport is the arrival point and the way home"
   }
  ],
  "trainers": {
@@ -1858,27 +2123,11 @@
   "apprentices": {
    "039": 2
   },
-  "per_section": {},
-  "tiles": [
-   {
-    "section": "039",
-    "n": 0,
-    "tile": [
-     3,
-     11
-    ],
-    "face": "right"
-   },
-   {
-    "section": "039",
-    "n": 1,
-    "tile": [
-     12,
-     11
-    ],
-    "face": "left"
-   }
-  ]
+  "per_section": {
+   "497": 0,
+   "481": 0
+  },
+  "tiles": []
  },
  "locks": [
   {
@@ -2415,36 +2664,6 @@
    "parent": "018"
   },
   {
-   "section": "188",
-   "tile": [
-    7,
-    13
-   ],
-   "to": "back",
-   "at": [
-    7,
-    12
-   ],
-   "face": "down",
-   "kind": "door",
-   "parent": "030"
-  },
-  {
-   "section": "188",
-   "tile": [
-    8,
-    13
-   ],
-   "to": "back",
-   "at": [
-    8,
-    12
-   ],
-   "face": "down",
-   "kind": "door",
-   "parent": "030"
-  },
-  {
    "section": "189",
    "tile": [
     6,
@@ -2919,6 +3138,266 @@
    "face": "down",
    "kind": "door",
    "parent": "080"
+  },
+  {
+   "section": "188",
+   "tile": [
+    7,
+    13
+   ],
+   "to": "back",
+   "at": [
+    7,
+    12
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "030"
+  },
+  {
+   "section": "188",
+   "tile": [
+    8,
+    13
+   ],
+   "to": "back",
+   "at": [
+    8,
+    12
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "030"
+  },
+  {
+   "section": "499",
+   "tile": [
+    9,
+    15
+   ],
+   "to": "back",
+   "at": [
+    9,
+    14
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "505"
+  },
+  {
+   "section": "499",
+   "tile": [
+    10,
+    15
+   ],
+   "to": "back",
+   "at": [
+    10,
+    14
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "505"
+  },
+  {
+   "section": "500",
+   "tile": [
+    9,
+    17
+   ],
+   "to": "back",
+   "at": [
+    9,
+    16
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "505"
+  },
+  {
+   "section": "500",
+   "tile": [
+    10,
+    17
+   ],
+   "to": "back",
+   "at": [
+    10,
+    16
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "505"
+  },
+  {
+   "section": "498",
+   "tile": [
+    9,
+    15
+   ],
+   "to": "back",
+   "at": [
+    9,
+    14
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "506"
+  },
+  {
+   "section": "498",
+   "tile": [
+    10,
+    15
+   ],
+   "to": "back",
+   "at": [
+    10,
+    14
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "506"
+  },
+  {
+   "section": "481",
+   "tile": [
+    11,
+    3
+   ],
+   "to": "482",
+   "at": [
+    5,
+    3
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "482",
+   "tile": [
+    5,
+    2
+   ],
+   "to": "481",
+   "at": [
+    11,
+    4
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "482",
+   "tile": [
+    18,
+    2
+   ],
+   "to": "483",
+   "at": [
+    4,
+    4
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "483",
+   "tile": [
+    4,
+    3
+   ],
+   "to": "482",
+   "at": [
+    18,
+    3
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "483",
+   "tile": [
+    11,
+    13
+   ],
+   "to": "484",
+   "at": [
+    12,
+    12
+   ],
+   "face": "up",
+   "kind": "stairs"
+  },
+  {
+   "section": "484",
+   "tile": [
+    12,
+    13
+   ],
+   "to": "483",
+   "at": [
+    11,
+    12
+   ],
+   "face": "up",
+   "kind": "stairs"
+  },
+  {
+   "section": "039",
+   "tile": [
+    16,
+    3
+   ],
+   "to": "040",
+   "at": [
+    11,
+    12
+   ],
+   "face": "up",
+   "kind": "stairs"
+  },
+  {
+   "section": "040",
+   "tile": [
+    11,
+    14
+   ],
+   "to": "039",
+   "at": [
+    16,
+    4
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "478",
+   "tile": [
+    9,
+    4
+   ],
+   "to": "480",
+   "at": [
+    11,
+    14
+   ],
+   "face": "up",
+   "kind": "stairs"
+  },
+  {
+   "section": "480",
+   "tile": [
+    11,
+    15
+   ],
+   "to": "478",
+   "at": [
+    9,
+    5
+   ],
+   "face": "down",
+   "kind": "stairs"
   }
  ],
  "shared_rooms": [
@@ -2929,6 +3408,10 @@
   "054",
   "055",
   "064",
-  "065"
+  "065",
+  "188",
+  "499",
+  "500",
+  "498"
  ]
 }

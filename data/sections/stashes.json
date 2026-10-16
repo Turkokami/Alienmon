@@ -334,10 +334,10 @@
  "Ferrox": [
   {
    "section": "029",
-   "name": "Gate Plaza",
+   "name": "Ferrox Spaceport",
    "tile": [
-    13,
-    14
+    5,
+    3
    ],
    "item": "cure",
    "n": 2,
@@ -347,73 +347,84 @@
    "section": "030",
    "name": "Rustvale",
    "tile": [
-    11,
-    14
+    21,
+    12
    ],
    "item": "gel",
    "n": 2,
    "tier": 1
   },
   {
-   "section": "034",
-   "name": "Scrap Route Part A",
+   "section": "505",
+   "name": "Rustvale Lane Homes",
    "tile": [
-    11,
-    14
+    5,
+    13
    ],
    "item": "revive",
    "n": 1,
    "tier": 1
   },
   {
-   "section": "034",
-   "name": "Scrap Route Part A",
+   "section": "506",
+   "name": "Rustvale Quiet Court",
    "tile": [
-    10,
-    1
+    1,
+    5
    ],
-   "item": "gel",
-   "n": 2,
+   "item": "revive",
+   "n": 1,
    "tier": 1
   },
   {
-   "section": "035",
-   "name": "Scrap Route Part B",
+   "section": "507",
+   "name": "Rustvale Farmstead",
    "tile": [
-    11,
-    14
-   ],
-   "item": "gel",
-   "n": 2,
-   "tier": 1
-  },
-  {
-   "section": "035",
-   "name": "Scrap Route Part B",
-   "tile": [
-    13,
-    14
-   ],
-   "item": "gel",
-   "n": 2,
-   "tier": 1
-  },
-  {
-   "section": "036",
-   "name": "Crane Yard",
-   "tile": [
-    8,
+    17,
     11
+   ],
+   "item": "gel",
+   "n": 2,
+   "tier": 1
+  },
+  {
+   "section": "485",
+   "name": "Scrapyard Crossing",
+   "tile": [
+    7,
+    9
    ],
    "item": "stasis",
    "n": 3,
    "tier": 1
   },
   {
-   "section": "036",
-   "name": "Crane Yard",
+   "section": "485",
+   "name": "Scrapyard Crossing",
    "tile": [
-    17,
+    6,
+    12
+   ],
+   "item": "cure",
+   "n": 2,
+   "tier": 1
+  },
+  {
+   "section": "489",
+   "name": "Crane Overlook",
+   "tile": [
+    19,
+    12
+   ],
+   "item": "cure",
+   "n": 2,
+   "tier": 1
+  },
+  {
+   "section": "489",
+   "name": "Crane Overlook",
+   "tile": [
+    19,
     3
    ],
    "item": "gel",
@@ -421,33 +432,264 @@
    "tier": 1
   },
   {
-   "section": "037",
-   "name": "Junk Market",
+   "section": "497",
+   "name": "Scrap Hollow Grove",
    "tile": [
-    11,
-    14
-   ],
-   "item": "cure",
-   "n": 2,
-   "tier": 1
-  },
-  {
-   "section": "038",
-   "name": "Furnace Ridge",
-   "tile": [
-    9,
-    12
+    7,
+    10
    ],
    "item": "gel",
    "n": 2,
    "tier": 1
   },
   {
-   "section": "038",
-   "name": "Furnace Ridge",
+   "section": "497",
+   "name": "Scrap Hollow Grove",
    "tile": [
-    12,
-    12
+    3,
+    6
+   ],
+   "item": "cure",
+   "n": 2,
+   "tier": 1
+  },
+  {
+   "section": "481",
+   "name": "Deepcut Mine Entrance",
+   "tile": [
+    19,
+    10
+   ],
+   "item": "dust",
+   "n": 150,
+   "tier": 1
+  },
+  {
+   "section": "481",
+   "name": "Deepcut Mine Entrance",
+   "tile": [
+    19,
+    8
+   ],
+   "item": "cure",
+   "n": 2,
+   "tier": 1
+  },
+  {
+   "section": "482",
+   "name": "Deepcut Mine B1",
+   "tile": [
+    20,
+    13
+   ],
+   "item": "stasis",
+   "n": 3,
+   "tier": 1
+  },
+  {
+   "section": "483",
+   "name": "Deepcut Mine B2",
+   "tile": [
+    14,
+    8
+   ],
+   "item": "gel",
+   "n": 2,
+   "tier": 1
+  },
+  {
+   "section": "483",
+   "name": "Deepcut Mine B2",
+   "tile": [
+    21,
+    7
+   ],
+   "item": "stun",
+   "n": 1,
+   "tier": 1
+  },
+  {
+   "section": "484",
+   "name": "Deepcut Mine Depths",
+   "tile": [
+    4,
+    2
+   ],
+   "item": "dust",
+   "n": 150,
+   "tier": 1
+  },
+  {
+   "section": "484",
+   "name": "Deepcut Mine Depths",
+   "tile": [
+    17,
+    3
+   ],
+   "item": "dust",
+   "n": 150,
+   "tier": 1
+  },
+  {
+   "section": "490",
+   "name": "Coolant Pond",
+   "tile": [
+    16,
+    9
+   ],
+   "item": "gel",
+   "n": 2,
+   "tier": 1
+  },
+  {
+   "section": "490",
+   "name": "Coolant Pond",
+   "tile": [
+    15,
+    2
+   ],
+   "item": "gel",
+   "n": 2,
+   "tier": 1
+  },
+  {
+   "section": "494",
+   "name": "Salvage Flats",
+   "tile": [
+    21,
+    9
+   ],
+   "item": "gel",
+   "n": 2,
+   "tier": 1
+  },
+  {
+   "section": "494",
+   "name": "Salvage Flats",
+   "tile": [
+    19,
+    2
+   ],
+   "item": "revive",
+   "n": 1,
+   "tier": 1
+  },
+  {
+   "section": "476",
+   "name": "Scrapyard Dome",
+   "tile": [
+    5,
+    13
+   ],
+   "item": "cure",
+   "n": 2,
+   "tier": 1
+  },
+  {
+   "section": "487",
+   "name": "Coolant Fork",
+   "tile": [
+    18,
+    14
+   ],
+   "item": "stun",
+   "n": 1,
+   "tier": 1
+  },
+  {
+   "section": "487",
+   "name": "Coolant Fork",
+   "tile": [
+    2,
+    13
+   ],
+   "item": "stasis",
+   "n": 3,
+   "tier": 1
+  },
+  {
+   "section": "502",
+   "name": "Ferrox Relay Tower",
+   "tile": [
+    5,
+    13
+   ],
+   "item": "tether",
+   "n": 1,
+   "tier": 1
+  },
+  {
+   "section": "486",
+   "name": "Railyard Junction",
+   "tile": [
+    21,
+    2
+   ],
+   "item": "stasis",
+   "n": 3,
+   "tier": 1
+  },
+  {
+   "section": "486",
+   "name": "Railyard Junction",
+   "tile": [
+    1,
+    11
+   ],
+   "item": "stasis",
+   "n": 3,
+   "tier": 1
+  },
+  {
+   "section": "488",
+   "name": "Scrap Slope",
+   "tile": [
+    21,
+    10
+   ],
+   "item": "revive",
+   "n": 1,
+   "tier": 1
+  },
+  {
+   "section": "488",
+   "name": "Scrap Slope",
+   "tile": [
+    4,
+    9
+   ],
+   "item": "dust",
+   "n": 150,
+   "tier": 1
+  },
+  {
+   "section": "491",
+   "name": "Railcar Maze",
+   "tile": [
+    21,
+    14
+   ],
+   "item": "dust",
+   "n": 150,
+   "tier": 1
+  },
+  {
+   "section": "491",
+   "name": "Railcar Maze",
+   "tile": [
+    1,
+    5
+   ],
+   "item": "dust",
+   "n": 150,
+   "tier": 1
+  },
+  {
+   "section": "495",
+   "name": "Rustvale Back Lot",
+   "tile": [
+    1,
+    9
    ],
    "item": "stasis",
    "n": 3,

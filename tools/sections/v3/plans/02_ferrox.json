@@ -1,0 +1,1096 @@
+{
+ "_about": "Ferrox, rebuilt on the V3 world kit (Map Logic Pack). Arrive at the spaceport (east). Rustvale town = Lane Homes + the V2 town core (Recovery Bay, shop, Grub's Workshop) + Quiet Court and Farmstead pockets. Scrapyard Crossing is the hub: north to Crane Overlook (Helix scouts), the Secret Grove (hidden reward) and the Deepcut Mine (3 floors); south to Coolant Pond (water edge), Salvage Flats, the Farmstead and the Scrapyard Dome (battle arena); west to Coolant Fork, the Relay Tower (Keeper) and the rail yards (Railcar Maze dead end).",
+ "planet": "ferrox",
+ "arrival": "029",
+ "arrival_why": "the Ferrox spaceport landing pad",
+ "use": {
+  "029": {
+   "kit": "509",
+   "name": "Ferrox Spaceport",
+   "type": "landmark"
+  },
+  "505": {
+   "kit": "505",
+   "name": "Rustvale Lane Homes",
+   "type": "town"
+  },
+  "506": {
+   "kit": "506",
+   "name": "Rustvale Quiet Court",
+   "type": "town"
+  },
+  "507": {
+   "kit": "507",
+   "name": "Rustvale Farmstead",
+   "type": "town"
+  },
+  "485": {
+   "kit": "485",
+   "name": "Scrapyard Crossing",
+   "type": "route"
+  },
+  "489": {
+   "kit": "489",
+   "name": "Crane Overlook",
+   "type": "route"
+  },
+  "497": {
+   "kit": "497",
+   "name": "Scrap Hollow Grove",
+   "type": "field"
+  },
+  "481": {
+   "kit": "481",
+   "name": "Deepcut Mine Entrance",
+   "type": "route"
+  },
+  "482": {
+   "kit": "482",
+   "name": "Deepcut Mine B1",
+   "type": "cave"
+  },
+  "483": {
+   "kit": "483",
+   "name": "Deepcut Mine B2",
+   "type": "cave"
+  },
+  "484": {
+   "kit": "484",
+   "name": "Deepcut Mine Depths",
+   "type": "cave"
+  },
+  "490": {
+   "kit": "490",
+   "name": "Coolant Pond",
+   "type": "route"
+  },
+  "494": {
+   "kit": "494",
+   "name": "Salvage Flats",
+   "type": "route"
+  },
+  "476": {
+   "kit": "476",
+   "name": "Scrapyard Dome",
+   "type": "landmark"
+  },
+  "478": {
+   "kit": "478",
+   "name": "Scrapyard Dome Lobby",
+   "type": "interior"
+  },
+  "480": {
+   "kit": "480",
+   "name": "Scrapyard Dome Arena",
+   "type": "interior"
+  },
+  "487": {
+   "kit": "487",
+   "name": "Coolant Fork",
+   "type": "route"
+  },
+  "502": {
+   "kit": "502",
+   "name": "Ferrox Relay Tower",
+   "type": "landmark"
+  },
+  "039": {
+   "kit": "503",
+   "name": "Relay Tower Trial Floor",
+   "type": "tower"
+  },
+  "040": {
+   "kit": "504",
+   "name": "Relay Tower Keeper Room",
+   "type": "tower"
+  },
+  "486": {
+   "kit": "486",
+   "name": "Railyard Junction",
+   "type": "route"
+  },
+  "488": {
+   "kit": "488",
+   "name": "Scrap Slope",
+   "type": "route"
+  },
+  "491": {
+   "kit": "491",
+   "name": "Railcar Maze",
+   "type": "route"
+  },
+  "495": {
+   "kit": "495",
+   "name": "Rustvale Back Lot",
+   "type": "landmark"
+  },
+  "496": {
+   "kit": "496",
+   "name": "Helix Secret Lab",
+   "type": "interior"
+  },
+  "031": {
+   "kit": "501",
+   "name": "Rustvale Recovery Bay",
+   "type": "interior"
+  },
+  "032": {
+   "kit": "508",
+   "name": "Rustvale Shop",
+   "type": "interior"
+  },
+  "498": {
+   "kit": "498",
+   "name": "Salvage Shop",
+   "type": "interior"
+  },
+  "499": {
+   "kit": "499",
+   "name": "Engine Garage",
+   "type": "interior"
+  },
+  "500": {
+   "kit": "500",
+   "name": "Crane Operator's Bunk",
+   "type": "interior"
+  }
+ },
+ "keep": [
+  "030",
+  "033",
+  "188"
+ ],
+ "drop": [
+  "034",
+  "035",
+  "036",
+  "037",
+  "038"
+ ],
+ "edges": [
+  [
+   "029",
+   "left",
+   "505",
+   "right"
+  ],
+  [
+   "505",
+   "left",
+   "030",
+   "right",
+   null,
+   [
+    5,
+    9
+   ]
+  ],
+  [
+   "030",
+   "left",
+   "485",
+   "right",
+   [
+    5,
+    9
+   ],
+   null
+  ],
+  [
+   "485",
+   "top",
+   "489",
+   "bottom"
+  ],
+  [
+   "489",
+   "left",
+   "497",
+   "right"
+  ],
+  [
+   "489",
+   "top",
+   "481",
+   "bottom"
+  ],
+  [
+   "485",
+   "bottom",
+   "490",
+   "top"
+  ],
+  [
+   "490",
+   "bottom",
+   "494",
+   "top"
+  ],
+  [
+   "494",
+   "bottom",
+   "507",
+   "top"
+  ],
+  [
+   "507",
+   "left",
+   "476",
+   "right"
+  ],
+  [
+   "485",
+   "left",
+   "487",
+   "right"
+  ],
+  [
+   "487",
+   "top",
+   "506",
+   "bottom"
+  ],
+  [
+   "487",
+   "left",
+   "502",
+   "right"
+  ],
+  [
+   "487",
+   "bottom",
+   "486",
+   "top"
+  ],
+  [
+   "486",
+   "bottom",
+   "488",
+   "top"
+  ],
+  [
+   "488",
+   "bottom",
+   "491",
+   "top"
+  ],
+  [
+   "486",
+   "left",
+   "495",
+   "right"
+  ]
+ ],
+ "doors": [
+  [
+   "030",
+   [
+    8,
+    4
+   ],
+   "031",
+   [
+    9,
+    4
+   ]
+  ],
+  [
+   "030",
+   [
+    15,
+    4
+   ],
+   "032"
+  ],
+  [
+   "030",
+   [
+    20,
+    4
+   ],
+   "033",
+   [
+    21,
+    4
+   ]
+  ],
+  [
+   "502",
+   [
+    11,
+    7
+   ],
+   "039",
+   [
+    12,
+    7
+   ]
+  ],
+  [
+   "476",
+   [
+    11,
+    7
+   ],
+   "478",
+   [
+    12,
+    7
+   ]
+  ],
+  [
+   "495",
+   [
+    8,
+    6
+   ],
+   "496",
+   [
+    9,
+    6
+   ]
+  ]
+ ],
+ "houses": [
+  [
+   "030",
+   [
+    2,
+    4
+   ],
+   "188"
+  ],
+  [
+   "030",
+   [
+    3,
+    4
+   ],
+   "188"
+  ],
+  [
+   "505",
+   [
+    4,
+    6
+   ],
+   "188"
+  ],
+  [
+   "505",
+   [
+    5,
+    6
+   ],
+   "188"
+  ],
+  [
+   "505",
+   [
+    11,
+    5
+   ],
+   "499"
+  ],
+  [
+   "505",
+   [
+    12,
+    5
+   ],
+   "499"
+  ],
+  [
+   "505",
+   [
+    19,
+    6
+   ],
+   "500"
+  ],
+  [
+   "505",
+   [
+    20,
+    6
+   ],
+   "500"
+  ],
+  [
+   "506",
+   [
+    5,
+    4
+   ],
+   "498"
+  ],
+  [
+   "506",
+   [
+    6,
+    4
+   ],
+   "498"
+  ],
+  [
+   "506",
+   [
+    11,
+    4
+   ],
+   "188"
+  ],
+  [
+   "506",
+   [
+    12,
+    4
+   ],
+   "188"
+  ],
+  [
+   "506",
+   [
+    16,
+    4
+   ],
+   "188"
+  ],
+  [
+   "506",
+   [
+    17,
+    4
+   ],
+   "188"
+  ],
+  [
+   "506",
+   [
+    2,
+    12
+   ],
+   "188"
+  ],
+  [
+   "506",
+   [
+    3,
+    12
+   ],
+   "188"
+  ],
+  [
+   "507",
+   [
+    4,
+    4
+   ],
+   "188"
+  ],
+  [
+   "507",
+   [
+    5,
+    4
+   ],
+   "188"
+  ],
+  [
+   "507",
+   [
+    10,
+    5
+   ],
+   "188"
+  ],
+  [
+   "507",
+   [
+    11,
+    5
+   ],
+   "188"
+  ]
+ ],
+ "warps": [
+  [
+   "481",
+   [
+    11,
+    3
+   ],
+   "482",
+   [
+    5,
+    2
+   ],
+   [
+    11,
+    4
+   ],
+   "down",
+   [
+    5,
+    3
+   ],
+   "down"
+  ],
+  [
+   "482",
+   [
+    18,
+    2
+   ],
+   "483",
+   [
+    4,
+    3
+   ],
+   [
+    18,
+    3
+   ],
+   "down",
+   [
+    4,
+    4
+   ],
+   "down"
+  ],
+  [
+   "483",
+   [
+    11,
+    13
+   ],
+   "484",
+   [
+    12,
+    13
+   ],
+   [
+    11,
+    12
+   ],
+   "up",
+   [
+    12,
+    12
+   ],
+   "up"
+  ],
+  [
+   "039",
+   [
+    16,
+    3
+   ],
+   "040",
+   [
+    11,
+    14
+   ],
+   [
+    16,
+    4
+   ],
+   "down",
+   [
+    11,
+    12
+   ],
+   "up"
+  ],
+  [
+   "478",
+   [
+    9,
+    4
+   ],
+   "480",
+   [
+    11,
+    15
+   ],
+   [
+    9,
+    5
+   ],
+   "down",
+   [
+    11,
+    14
+   ],
+   "up"
+  ]
+ ],
+ "fix": {
+  "029": {
+   "walk": [
+    [
+     12,
+     8,
+     13,
+     8
+    ]
+   ]
+  },
+  "481": {
+   "walk": [
+    [
+     11,
+     3,
+     12,
+     3
+    ]
+   ]
+  },
+  "482": {
+   "base": "#",
+   "walk": [
+    [
+     4,
+     3,
+     20,
+     13
+    ],
+    [
+     5,
+     2,
+     6,
+     2
+    ],
+    [
+     18,
+     2,
+     18,
+     2
+    ]
+   ],
+   "gr": [
+    [
+     10,
+     10,
+     14,
+     12
+    ]
+   ],
+   "block": [
+    [
+     9,
+     1,
+     14,
+     8
+    ]
+   ]
+  },
+  "483": {
+   "base": "#",
+   "walk": [
+    [
+     2,
+     4,
+     21,
+     8
+    ],
+    [
+     9,
+     9,
+     14,
+     12
+    ],
+    [
+     3,
+     3,
+     6,
+     3
+    ],
+    [
+     10,
+     13,
+     13,
+     13
+    ]
+   ],
+   "gr": [
+    [
+     3,
+     6,
+     8,
+     8
+    ]
+   ],
+   "block": [
+    [
+     15,
+     5,
+     20,
+     8
+    ]
+   ]
+  },
+  "484": {
+   "base": "#",
+   "walk": [
+    [
+     3,
+     2,
+     20,
+     12
+    ],
+    [
+     11,
+     13,
+     13,
+     13
+    ]
+   ],
+   "gr": [
+    [
+     4,
+     8,
+     8,
+     11
+    ],
+    [
+     15,
+     8,
+     19,
+     11
+    ]
+   ],
+   "block": [
+    [
+     9,
+     2,
+     15,
+     6
+    ]
+   ]
+  },
+  "502": {
+   "walk": [
+    [
+     11,
+     7,
+     12,
+     7
+    ]
+   ]
+  },
+  "476": {
+   "walk": [
+    [
+     11,
+     7,
+     12,
+     7
+    ]
+   ]
+  },
+  "495": {
+   "walk": [
+    [
+     8,
+     6,
+     9,
+     6
+    ]
+   ]
+  },
+  "040": {
+   "base": "#",
+   "walk": [
+    [
+     3,
+     3,
+     20,
+     12
+    ],
+    [
+     11,
+     13,
+     12,
+     14
+    ]
+   ]
+  },
+  "478": {
+   "walk": [
+    [
+     9,
+     4,
+     10,
+     4
+    ]
+   ]
+  },
+  "480": {
+   "walk": [
+    [
+     11,
+     15,
+     12,
+     15
+    ]
+   ]
+  },
+  "506": {
+   "walk": [
+    [
+     1,
+     13,
+     4,
+     13
+    ]
+   ]
+  },
+  "497": {
+   "gr": [
+    [
+     13,
+     1,
+     18,
+     3
+    ]
+   ]
+  },
+  "039": {
+   "base": "#",
+   "walk": [
+    [
+     2,
+     4,
+     17,
+     17
+    ],
+    [
+     15,
+     3,
+     16,
+     3
+    ]
+   ],
+   "block": [
+    [
+     2,
+     7,
+     10,
+     8
+    ],
+    [
+     7,
+     10,
+     16,
+     11
+    ],
+    [
+     4,
+     13,
+     6,
+     15
+    ]
+   ]
+  }
+ },
+ "counters": {
+  "031": [
+   [
+    9,
+    6,
+    "bay"
+   ],
+   [
+    10,
+    6,
+    "bay"
+   ]
+  ],
+  "032": [
+   [
+    6,
+    9,
+    "shop"
+   ],
+   [
+    6,
+    10,
+    "shop"
+   ]
+  ]
+ },
+ "objects": {
+  "040": [
+   {
+    "tile": [
+     12,
+     6
+    ],
+    "k": "keeper",
+    "why": "Keeper on the arena floor, challenged from (12,7)"
+   }
+  ],
+  "497": [
+   {
+    "tile": [
+     15,
+     4
+    ],
+    "k": "chest",
+    "item": "fullgel",
+    "n": 2,
+    "why": "hidden grove reward"
+   }
+  ],
+  "491": [
+   {
+    "tile": [
+     18,
+     14
+    ],
+    "k": "chest",
+    "item": "harmonic",
+    "n": 3,
+    "why": "Railcar Maze dead end reward"
+   }
+  ],
+  "484": [
+   {
+    "tile": [
+     4,
+     11
+    ],
+    "k": "chest",
+    "item": "maxrevive",
+    "n": 1,
+    "why": "Deepcut Mine depths reward"
+   }
+  ]
+ },
+ "spawns": {
+  "029": {
+   "arrival": [
+    12,
+    10
+   ],
+   "default": [
+    12,
+    10
+   ]
+  },
+  "040": {
+   "default": [
+    11,
+    12
+   ]
+  },
+  "482": {
+   "default": [
+    5,
+    3
+   ]
+  },
+  "483": {
+   "default": [
+    4,
+    4
+   ]
+  },
+  "484": {
+   "default": [
+    12,
+    12
+   ]
+  },
+  "039": {
+   "default": [
+    9,
+    15
+   ]
+  }
+ },
+ "gate": [
+  {
+   "section": "029",
+   "tiles": [
+    [
+     12,
+     8
+    ],
+    [
+     13,
+     8
+    ]
+   ],
+   "node": "dustara",
+   "planet": "dustara",
+   "label": "your ship back to Dustara",
+   "why": "V3: the spaceport is the arrival point and the way home"
+  }
+ ],
+ "quest_spots": {
+  "M05:2": "489",
+  "S20:giver": "506",
+  "S20:0": "494",
+  "S21:giver": "489",
+  "S21:0": "489",
+  "S22:giver": "502",
+  "S22:0": "502"
+ },
+ "npc_unpin": [
+  "029",
+  "031",
+  "032",
+  "039"
+ ],
+ "npc_move": {
+  "034": "485",
+  "035": "494",
+  "036": "489",
+  "037": "506",
+  "038": "502"
+ },
+ "npc_pins": {
+  "031": [
+   [
+    10,
+    6
+   ]
+  ],
+  "032": [
+   [
+    6,
+    9
+   ]
+  ]
+ },
+ "trainers_per_section": {
+  "497": 0,
+  "481": 0
+ },
+ "encounters": {
+  "485": "034",
+  "490": "034",
+  "494": "035",
+  "486": "035",
+  "489": "036",
+  "497": "036",
+  "488": "036",
+  "491": "038",
+  "487": "038",
+  "481": "036",
+  "482": [
+   "034",
+   "rock_cave"
+  ],
+  "483": [
+   "036",
+   "rock_cave"
+  ],
+  "484": [
+   "038",
+   "rock_cave"
+  ]
+ }
+}

@@ -9,3 +9,5 @@ __pycache__/
 www/*
 !www/fonts/
 .env*
+art/kit/
+tools/sections/v3/review/

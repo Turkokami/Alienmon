@@ -637,7 +637,7 @@
   {
    "id": "029",
    "planet": "Ferrox",
-   "name": "Gate Plaza",
+   "name": "Ferrox Spaceport",
    "type": "landmark",
    "size_px": [
     1536,
@@ -650,11 +650,11 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "right edge, tile rows 6–8 → Rustvale"
+    "left edge, tile rows 12–13 → Rustvale Lane Homes"
    ],
-   "notes": "Arrival plaza around the Relay Gate",
-   "file": "art/sections/02_ferrox/029_gate_plaza.png",
-   "v2": true
+   "v3": true,
+   "kit": "509",
+   "file": "art/sections/02_ferrox/029_ferrox_spaceport.png"
   },
   {
    "id": "030",
@@ -672,8 +672,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 5–9 → Gate Plaza",
-    "right edge, tile rows 5–9 → Scrap Route Part A"
+    "right edge, tile rows 5–9 → Rustvale Lane Homes",
+    "left edge, tile rows 5–9 → Scrapyard Crossing"
    ],
    "notes": "Shanty town of shacks and converted rail cars",
    "file": "art/sections/02_ferrox/030_rustvale.png",
@@ -685,19 +685,19 @@
    "name": "Rustvale Recovery Bay",
    "type": "interior",
    "size_px": [
-    1024,
-    1024
+    1280,
+    1280
    ],
    "tiles": [
-    16,
-    16
+    20,
+    20
    ],
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [],
-   "notes": "",
-   "file": "art/sections/02_ferrox/031_rustvale_recovery_bay.png",
-   "v2": true
+   "v3": true,
+   "kit": "501",
+   "file": "art/sections/02_ferrox/031_rustvale_recovery_bay.png"
   },
   {
    "id": "032",
@@ -705,19 +705,19 @@
    "name": "Rustvale Shop",
    "type": "interior",
    "size_px": [
-    1024,
-    1024
+    1280,
+    1280
    ],
    "tiles": [
-    16,
-    16
+    20,
+    20
    ],
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [],
-   "notes": "",
-   "file": "art/sections/02_ferrox/032_rustvale_shop.png",
-   "v2": true
+   "v3": true,
+   "kit": "508",
+   "file": "art/sections/02_ferrox/032_rustvale_shop.png"
   },
   {
    "id": "033",
@@ -740,164 +740,44 @@
    "v2": true
   },
   {
-   "id": "034",
-   "planet": "Ferrox",
-   "name": "Scrap Route Part A",
-   "type": "route",
-   "size_px": [
-    1536,
-    1024
-   ],
-   "tiles": [
-    24,
-    16
-   ],
-   "tile_px_render": 64,
-   "tile_px_game": 16,
-   "exits": [
-    "left edge, tile rows 5–8 → Rustvale",
-    "right edge, tile rows 5–8 → Scrap Route Part B"
-   ],
-   "notes": "Route through scrap mountains",
-   "file": "art/sections/02_ferrox/034_scrap_route_part_a.png",
-   "v2": true
-  },
-  {
-   "id": "035",
-   "planet": "Ferrox",
-   "name": "Scrap Route Part B",
-   "type": "route",
-   "size_px": [
-    1536,
-    1024
-   ],
-   "tiles": [
-    24,
-    16
-   ],
-   "tile_px_render": 64,
-   "tile_px_game": 16,
-   "exits": [
-    "left edge, tile rows 5–8 → Scrap Route Part A",
-    "right edge, tile rows 5–8 → Crane Yard"
-   ],
-   "notes": "Route through scrap mountains",
-   "file": "art/sections/02_ferrox/035_scrap_route_part_b.png",
-   "v2": true
-  },
-  {
-   "id": "036",
-   "planet": "Ferrox",
-   "name": "Crane Yard",
-   "type": "field",
-   "size_px": [
-    1536,
-    1024
-   ],
-   "tiles": [
-    24,
-    16
-   ],
-   "tile_px_render": 64,
-   "tile_px_game": 16,
-   "exits": [
-    "left edge, tile rows 5–8 → Scrap Route Part B",
-    "right edge, tile rows 5–8 → Junk Market"
-   ],
-   "notes": "Swinging cranes, container stacks (Crane Yard Brawl)",
-   "file": "art/sections/02_ferrox/036_crane_yard.png",
-   "v2": true
-  },
-  {
-   "id": "037",
-   "planet": "Ferrox",
-   "name": "Junk Market",
-   "type": "town",
-   "size_px": [
-    1536,
-    1024
-   ],
-   "tiles": [
-    24,
-    16
-   ],
-   "tile_px_render": 64,
-   "tile_px_game": 16,
-   "exits": [
-    "left edge, tile rows 5–10 → Crane Yard",
-    "right edge, tile rows 5–10 → Furnace Ridge"
-   ],
-   "notes": "Open-air junk market stalls",
-   "file": "art/sections/02_ferrox/037_junk_market.png",
-   "v2": true
-  },
-  {
-   "id": "038",
-   "planet": "Ferrox",
-   "name": "Furnace Ridge",
-   "type": "route",
-   "size_px": [
-    1536,
-    1024
-   ],
-   "tiles": [
-    24,
-    16
-   ],
-   "tile_px_render": 64,
-   "tile_px_game": 16,
-   "exits": [
-    "left edge, tile rows 5–8 → Junk Market",
-    "right edge, tile rows 6–7 → Ferrox Tower 1F"
-   ],
-   "notes": "Ridge of smoking furnaces",
-   "file": "art/sections/02_ferrox/038_furnace_ridge.png",
-   "v2": true
-  },
-  {
    "id": "039",
    "planet": "Ferrox",
-   "name": "Ferrox Tower 1F",
+   "name": "Relay Tower Trial Floor",
    "type": "tower",
    "size_px": [
-    1024,
-    1536
+    1280,
+    1280
    ],
    "tiles": [
-    16,
-    24
+    20,
+    20
    ],
    "tile_px_render": 64,
    "tile_px_game": 16,
-   "exits": [
-    "bottom edge, tile columns 6–9 → Furnace Ridge",
-    "top edge, tile columns 6–9 (stairs up) → Ferrox Tower 2F"
-   ],
-   "notes": "Keeper Hank Briggs's tower, 2 floors",
-   "file": "art/sections/02_ferrox/039_ferrox_tower_1f.png",
-   "v2": true
+   "exits": [],
+   "v3": true,
+   "kit": "503",
+   "file": "art/sections/02_ferrox/039_relay_tower_trial_floor.png"
   },
   {
    "id": "040",
    "planet": "Ferrox",
-   "name": "Ferrox Tower 2F",
+   "name": "Relay Tower Keeper Room",
    "type": "tower",
    "size_px": [
-    1024,
-    1536
+    1536,
+    1024
    ],
    "tiles": [
-    16,
-    24
+    24,
+    16
    ],
    "tile_px_render": 64,
    "tile_px_game": 16,
-   "exits": [
-    "bottom edge, tile columns 6–9 → Ferrox Tower 1F"
-   ],
-   "notes": "Keeper Hank Briggs's tower, 2 floors",
-   "file": "art/sections/02_ferrox/040_ferrox_tower_2f.png",
-   "v2": true
+   "exits": [],
+   "v3": true,
+   "kit": "504",
+   "file": "art/sections/02_ferrox/040_relay_tower_keeper_room.png"
   },
   {
    "id": "041",
@@ -4216,6 +4096,553 @@
    "notes": "House interior on glacia",
    "file": "art/sections/08_glacia/193_glacia_ice_lodge.png",
    "house": "glacia"
+  },
+  {
+   "id": "505",
+   "planet": "Ferrox",
+   "name": "Rustvale Lane Homes",
+   "type": "town",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "right edge, tile rows 9–11 → Ferrox Spaceport",
+    "left edge, tile rows 9–11 → Rustvale"
+   ],
+   "v3": true,
+   "kit": "505",
+   "file": "art/sections/02_ferrox/505_rustvale_lane_homes.png"
+  },
+  {
+   "id": "506",
+   "planet": "Ferrox",
+   "name": "Rustvale Quiet Court",
+   "type": "town",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "bottom edge, tile columns 10–14 → Coolant Fork"
+   ],
+   "v3": true,
+   "kit": "506",
+   "file": "art/sections/02_ferrox/506_rustvale_quiet_court.png"
+  },
+  {
+   "id": "507",
+   "planet": "Ferrox",
+   "name": "Rustvale Farmstead",
+   "type": "town",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "top edge, tile columns 14–18 → Salvage Flats",
+    "left edge, tile rows 7–10 → Scrapyard Dome"
+   ],
+   "v3": true,
+   "kit": "507",
+   "file": "art/sections/02_ferrox/507_rustvale_farmstead.png"
+  },
+  {
+   "id": "485",
+   "planet": "Ferrox",
+   "name": "Scrapyard Crossing",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "right edge, tile rows 5–8 → Rustvale",
+    "top edge, tile columns 10–13 → Crane Overlook",
+    "bottom edge, tile columns 10–14 → Coolant Pond",
+    "left edge, tile rows 5–8 → Coolant Fork"
+   ],
+   "v3": true,
+   "kit": "485",
+   "file": "art/sections/02_ferrox/485_scrapyard_crossing.png"
+  },
+  {
+   "id": "489",
+   "planet": "Ferrox",
+   "name": "Crane Overlook",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "bottom edge, tile columns 10–13 → Scrapyard Crossing",
+    "left edge, tile rows 2–9 → Scrap Hollow Grove",
+    "top edge, tile columns 10–13 → Deepcut Mine Entrance"
+   ],
+   "v3": true,
+   "kit": "489",
+   "file": "art/sections/02_ferrox/489_crane_overlook.png"
+  },
+  {
+   "id": "497",
+   "planet": "Ferrox",
+   "name": "Scrap Hollow Grove",
+   "type": "field",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "right edge, tile rows 9–11 → Crane Overlook"
+   ],
+   "v3": true,
+   "kit": "497",
+   "file": "art/sections/02_ferrox/497_scrap_hollow_grove.png"
+  },
+  {
+   "id": "481",
+   "planet": "Ferrox",
+   "name": "Deepcut Mine Entrance",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "bottom edge, tile columns 10–14 → Crane Overlook"
+   ],
+   "v3": true,
+   "kit": "481",
+   "file": "art/sections/02_ferrox/481_deepcut_mine_entrance.png"
+  },
+  {
+   "id": "482",
+   "planet": "Ferrox",
+   "name": "Deepcut Mine B1",
+   "type": "cave",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "v3": true,
+   "kit": "482",
+   "file": "art/sections/02_ferrox/482_deepcut_mine_b1.png"
+  },
+  {
+   "id": "483",
+   "planet": "Ferrox",
+   "name": "Deepcut Mine B2",
+   "type": "cave",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "v3": true,
+   "kit": "483",
+   "file": "art/sections/02_ferrox/483_deepcut_mine_b2.png"
+  },
+  {
+   "id": "484",
+   "planet": "Ferrox",
+   "name": "Deepcut Mine Depths",
+   "type": "cave",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "v3": true,
+   "kit": "484",
+   "file": "art/sections/02_ferrox/484_deepcut_mine_depths.png"
+  },
+  {
+   "id": "490",
+   "planet": "Ferrox",
+   "name": "Coolant Pond",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "top edge, tile columns 4–9 → Scrapyard Crossing",
+    "bottom edge, tile columns 4–9 → Salvage Flats"
+   ],
+   "v3": true,
+   "kit": "490",
+   "file": "art/sections/02_ferrox/490_coolant_pond.png"
+  },
+  {
+   "id": "494",
+   "planet": "Ferrox",
+   "name": "Salvage Flats",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "top edge, tile columns 5–13 → Coolant Pond",
+    "bottom edge, tile columns 4–9 → Rustvale Farmstead"
+   ],
+   "v3": true,
+   "kit": "494",
+   "file": "art/sections/02_ferrox/494_salvage_flats.png"
+  },
+  {
+   "id": "476",
+   "planet": "Ferrox",
+   "name": "Scrapyard Dome",
+   "type": "landmark",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "right edge, tile rows 9–11 → Rustvale Farmstead"
+   ],
+   "v3": true,
+   "kit": "476",
+   "file": "art/sections/02_ferrox/476_scrapyard_dome.png"
+  },
+  {
+   "id": "478",
+   "planet": "Ferrox",
+   "name": "Scrapyard Dome Lobby",
+   "type": "interior",
+   "size_px": [
+    1280,
+    1280
+   ],
+   "tiles": [
+    20,
+    20
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "v3": true,
+   "kit": "478",
+   "file": "art/sections/02_ferrox/478_scrapyard_dome_lobby.png"
+  },
+  {
+   "id": "480",
+   "planet": "Ferrox",
+   "name": "Scrapyard Dome Arena",
+   "type": "interior",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "v3": true,
+   "kit": "480",
+   "file": "art/sections/02_ferrox/480_scrapyard_dome_arena.png"
+  },
+  {
+   "id": "487",
+   "planet": "Ferrox",
+   "name": "Coolant Fork",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "right edge, tile rows 8–9 → Scrapyard Crossing",
+    "top edge, tile columns 5–10 → Rustvale Quiet Court",
+    "left edge, tile rows 8–9 → Ferrox Relay Tower",
+    "bottom edge, tile columns 6–10 → Railyard Junction"
+   ],
+   "v3": true,
+   "kit": "487",
+   "file": "art/sections/02_ferrox/487_coolant_fork.png"
+  },
+  {
+   "id": "502",
+   "planet": "Ferrox",
+   "name": "Ferrox Relay Tower",
+   "type": "landmark",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "right edge, tile rows 9–12 → Coolant Fork"
+   ],
+   "v3": true,
+   "kit": "502",
+   "file": "art/sections/02_ferrox/502_ferrox_relay_tower.png"
+  },
+  {
+   "id": "486",
+   "planet": "Ferrox",
+   "name": "Railyard Junction",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "top edge, tile columns 4–9 → Coolant Fork",
+    "bottom edge, tile columns 11–19 → Scrap Slope",
+    "left edge, tile rows 3–4 → Rustvale Back Lot"
+   ],
+   "v3": true,
+   "kit": "486",
+   "file": "art/sections/02_ferrox/486_railyard_junction.png"
+  },
+  {
+   "id": "488",
+   "planet": "Ferrox",
+   "name": "Scrap Slope",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "top edge, tile columns 3–8 → Railyard Junction",
+    "bottom edge, tile columns 13–18 → Railcar Maze"
+   ],
+   "v3": true,
+   "kit": "488",
+   "file": "art/sections/02_ferrox/488_scrap_slope.png"
+  },
+  {
+   "id": "491",
+   "planet": "Ferrox",
+   "name": "Railcar Maze",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "top edge, tile columns 4–7 → Scrap Slope"
+   ],
+   "v3": true,
+   "kit": "491",
+   "file": "art/sections/02_ferrox/491_railcar_maze.png"
+  },
+  {
+   "id": "495",
+   "planet": "Ferrox",
+   "name": "Rustvale Back Lot",
+   "type": "landmark",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "right edge, tile rows 8–8 → Railyard Junction"
+   ],
+   "v3": true,
+   "kit": "495",
+   "file": "art/sections/02_ferrox/495_rustvale_back_lot.png"
+  },
+  {
+   "id": "496",
+   "planet": "Ferrox",
+   "name": "Helix Secret Lab",
+   "type": "interior",
+   "size_px": [
+    1280,
+    1280
+   ],
+   "tiles": [
+    20,
+    20
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "v3": true,
+   "kit": "496",
+   "file": "art/sections/02_ferrox/496_helix_secret_lab.png"
+  },
+  {
+   "id": "498",
+   "planet": "Ferrox",
+   "name": "Salvage Shop",
+   "type": "interior",
+   "size_px": [
+    1280,
+    1280
+   ],
+   "tiles": [
+    20,
+    20
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "v3": true,
+   "kit": "498",
+   "file": "art/sections/02_ferrox/498_salvage_shop.png"
+  },
+  {
+   "id": "499",
+   "planet": "Ferrox",
+   "name": "Engine Garage",
+   "type": "interior",
+   "size_px": [
+    1280,
+    1280
+   ],
+   "tiles": [
+    20,
+    20
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "v3": true,
+   "kit": "499",
+   "file": "art/sections/02_ferrox/499_engine_garage.png"
+  },
+  {
+   "id": "500",
+   "planet": "Ferrox",
+   "name": "Crane Operator's Bunk",
+   "type": "interior",
+   "size_px": [
+    1280,
+    1280
+   ],
+   "tiles": [
+    20,
+    20
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "v3": true,
+   "kit": "500",
+   "file": "art/sections/02_ferrox/500_crane_operator_s_bunk.png"
   }
  ]
 }

@@ -881,26 +881,6 @@
    "name": "Molten Frontier: Magma Mines Gate",
    "habitat": "mine_hot"
   },
-  "034": {
-   "planet": "Ferrox",
-   "name": "Scrap Route Part A",
-   "habitat": "scrapyard"
-  },
-  "035": {
-   "planet": "Ferrox",
-   "name": "Scrap Route Part B",
-   "habitat": "scrapyard"
-  },
-  "036": {
-   "planet": "Ferrox",
-   "name": "Crane Yard",
-   "habitat": "scrapyard"
-  },
-  "038": {
-   "planet": "Ferrox",
-   "name": "Furnace Ridge",
-   "habitat": "scrapyard"
-  },
   "045": {
    "planet": "Sporeholm",
    "name": "Lantern Marsh Part A",
@@ -1175,6 +1155,71 @@
    "planet": "Ystra",
    "name": "Edge of the Void",
    "habitat": "void_edge"
+  },
+  "485": {
+   "planet": "Ferrox",
+   "name": "Scrapyard Crossing",
+   "habitat": "scrapyard"
+  },
+  "490": {
+   "planet": "Ferrox",
+   "name": "Coolant Pond",
+   "habitat": "scrapyard"
+  },
+  "494": {
+   "planet": "Ferrox",
+   "name": "Salvage Flats",
+   "habitat": "scrapyard"
+  },
+  "486": {
+   "planet": "Ferrox",
+   "name": "Railyard Junction",
+   "habitat": "scrapyard"
+  },
+  "489": {
+   "planet": "Ferrox",
+   "name": "Crane Overlook",
+   "habitat": "scrapyard"
+  },
+  "497": {
+   "planet": "Ferrox",
+   "name": "Scrap Hollow Grove",
+   "habitat": "scrapyard"
+  },
+  "488": {
+   "planet": "Ferrox",
+   "name": "Scrap Slope",
+   "habitat": "scrapyard"
+  },
+  "491": {
+   "planet": "Ferrox",
+   "name": "Railcar Maze",
+   "habitat": "scrapyard"
+  },
+  "487": {
+   "planet": "Ferrox",
+   "name": "Coolant Fork",
+   "habitat": "scrapyard"
+  },
+  "481": {
+   "planet": "Ferrox",
+   "name": "Deepcut Mine Entrance",
+   "habitat": "scrapyard"
+  },
+  "482": {
+   "planet": "Ferrox",
+   "name": "Deepcut Mine B1",
+   "habitat": "rock_cave"
+  },
+  "483": {
+   "planet": "Ferrox",
+   "name": "Deepcut Mine B2",
+   "habitat": "rock_cave"
+  },
+  "484": {
+   "planet": "Ferrox",
+   "name": "Deepcut Mine Depths",
+   "habitat": "rock_cave"
   }
  }
 }

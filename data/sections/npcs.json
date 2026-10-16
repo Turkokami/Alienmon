@@ -1065,10 +1065,6 @@
    "t": [
     "Gate guard: Welcome to Ferrox. Mind the rails, the ore carts don't stop for anyone."
    ],
-   "tile": [
-    12,
-    4
-   ],
    "stay": true
   },
   {
@@ -1076,20 +1072,12 @@
    "t": [
     "Porter: Everything that lands here gets weighed, stamped and argued over. That's Ferrox for you."
    ],
-   "tile": [
-    17,
-    10
-   ],
    "stay": true
   },
   {
    "art": "civilian",
    "t": [
     "Traveller: First time on Ferrox? Rustvale is just east. Best scrap stew in the system."
-   ],
-   "tile": [
-    6,
-    10
    ],
    "stay": true
   }
@@ -1185,23 +1173,19 @@
   {
    "art": "nurse",
    "name": "Nurse",
-   "tile": [
-    8,
-    4
-   ],
    "t": [
     "Nurse: Welcome to the Rustvale Recovery Bay. Step up to the counter!"
    ],
-   "stay": true
+   "stay": true,
+   "tile": [
+    10,
+    6
+   ]
   },
   {
    "art": "miner",
    "t": [
     "Miner: I patch up my Alienmon here after every shift. The nurse doesn't even charge for the soot."
-   ],
-   "tile": [
-    6,
-    11
    ],
    "stay": true
   }
@@ -1210,23 +1194,19 @@
   {
    "art": "shop",
    "name": "Shopkeeper",
-   "tile": [
-    8,
-    4
-   ],
    "t": [
     "Shopkeeper: Pods, gels, sprays. Talk to me at the counter."
    ],
-   "stay": true
+   "stay": true,
+   "tile": [
+    6,
+    9
+   ]
   },
   {
    "art": "technician",
    "t": [
     "Customer: Stun Spray is a lifesaver on the Scrap Route. Those junk-types hit hard."
-   ],
-   "tile": [
-    6,
-    5
    ],
    "stay": true
   }
@@ -1241,157 +1221,11 @@
    ]
   }
  ],
- "034": [
-  {
-   "art": "technician",
-   "t": [
-    "Scavenger: The Scrap Route is all junk piles and loose rails. Alienmon love hiding in the scrap."
-   ],
-   "tile": [
-    6,
-    7
-   ],
-   "stay": true
-  },
-  {
-   "art": "miner",
-   "t": [
-    "Hauler: My cart threw a wheel. Again. Third time this week."
-   ],
-   "tile": [
-    14,
-    8
-   ],
-   "stay": true
-  }
- ],
- "035": [
-  {
-   "art": "explorer",
-   "t": [
-    "Hiker: Tall rust-grass is where the wild ones hide. Walk around it if your team is tired."
-   ],
-   "tile": [
-    6,
-    8
-   ],
-   "stay": true
-  },
-  {
-   "art": "wanderer",
-   "t": [
-    "Drifter: The crane yard's next. Watch for falling crates."
-   ],
-   "tile": [
-    20,
-    8
-   ],
-   "stay": true
-  }
- ],
- "036": [
-  {
-   "art": "technician",
-   "t": [
-    "Crane operator: Three junkers keep jamming my cranes. Hank wants them taught a lesson."
-   ],
-   "tile": [
-    12,
-    7
-   ],
-   "stay": true
-  },
-  {
-   "art": "guard",
-   "t": [
-    "Yard guard: No Helix allowed in this yard. Not after what they pulled last month."
-   ],
-   "tile": [
-    7,
-    5
-   ],
-   "stay": true
-  }
- ],
- "037": [
-  {
-   "art": "technician",
-   "t": [
-    "Junk dealer: One Linker's trash is another Linker's treasure. Mostly it's just trash."
-   ],
-   "tile": [
-    12,
-    6
-   ],
-   "stay": true
-  },
-  {
-   "art": "civilian",
-   "t": [
-    "Shopper: I came for a bolt and left with a jetpack. It doesn't work, but still."
-   ],
-   "tile": [
-    18,
-    10
-   ],
-   "stay": true
-  },
-  {
-   "art": "miner",
-   "t": [
-    "Ore trader: Ferrox ore powers half the ships in the system. Helix wants all of it."
-   ],
-   "tile": [
-    5,
-    10
-   ],
-   "stay": true
-  },
-  {
-   "art": "wanderer",
-   "t": [
-    "Fortune teller: I see... a tower. And a man with a very large wrench."
-   ],
-   "tile": [
-    7,
-    5
-   ],
-   "stay": true
-  }
- ],
- "038": [
-  {
-   "art": "miner",
-   "t": [
-    "Furnace worker: The heat up here peels paint off ships. Keep your Alienmon hydrated."
-   ],
-   "tile": [
-    16,
-    5
-   ],
-   "stay": true
-  },
-  {
-   "art": "guard",
-   "t": [
-    "Guard: Ferrox Tower is just ahead. Hank Briggs is the Keeper. Good luck, kid."
-   ],
-   "tile": [
-    4,
-    5
-   ],
-   "stay": true
-  }
- ],
  "039": [
   {
    "art": "technician",
    "t": [
     "Tower engineer: Hank's apprentices train on this floor. The Keeper waits upstairs."
-   ],
-   "tile": [
-    10,
-    3
    ],
    "stay": true
   }
@@ -2029,6 +1863,100 @@
     "Ice Fisher: Fire's always lit. The blue flame burns colder than you'd think, but it keeps the frost off.",
     "Ice Fisher: Ingrid digs fossils all winter. I just dig holes and wait for fish."
    ]
+  }
+ ],
+ "485": [
+  {
+   "art": "technician",
+   "t": [
+    "Scavenger: The Scrap Route is all junk piles and loose rails. Alienmon love hiding in the scrap."
+   ],
+   "stay": true
+  },
+  {
+   "art": "miner",
+   "t": [
+    "Hauler: My cart threw a wheel. Again. Third time this week."
+   ],
+   "stay": true
+  }
+ ],
+ "494": [
+  {
+   "art": "explorer",
+   "t": [
+    "Hiker: Tall rust-grass is where the wild ones hide. Walk around it if your team is tired."
+   ],
+   "stay": true
+  },
+  {
+   "art": "wanderer",
+   "t": [
+    "Drifter: The crane yard's next. Watch for falling crates."
+   ],
+   "stay": true
+  }
+ ],
+ "489": [
+  {
+   "art": "technician",
+   "t": [
+    "Crane operator: Three junkers keep jamming my cranes. Hank wants them taught a lesson."
+   ],
+   "stay": true
+  },
+  {
+   "art": "guard",
+   "t": [
+    "Yard guard: No Helix allowed in this yard. Not after what they pulled last month."
+   ],
+   "stay": true
+  }
+ ],
+ "506": [
+  {
+   "art": "technician",
+   "t": [
+    "Junk dealer: One Linker's trash is another Linker's treasure. Mostly it's just trash."
+   ],
+   "stay": true
+  },
+  {
+   "art": "civilian",
+   "t": [
+    "Shopper: I came for a bolt and left with a jetpack. It doesn't work, but still."
+   ],
+   "stay": true
+  },
+  {
+   "art": "miner",
+   "t": [
+    "Ore trader: Ferrox ore powers half the ships in the system. Helix wants all of it."
+   ],
+   "stay": true
+  },
+  {
+   "art": "wanderer",
+   "t": [
+    "Fortune teller: I see... a tower. And a man with a very large wrench."
+   ],
+   "stay": true
+  }
+ ],
+ "502": [
+  {
+   "art": "miner",
+   "t": [
+    "Furnace worker: The heat up here peels paint off ships. Keep your Alienmon hydrated."
+   ],
+   "stay": true
+  },
+  {
+   "art": "guard",
+   "t": [
+    "Guard: Ferrox Tower is just ahead. Hank Briggs is the Keeper. Good luck, kid."
+   ],
+   "stay": true
   }
  ]
 }

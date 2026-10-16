@@ -12,7 +12,7 @@
   },
   "ferrox": {
    "section": "029",
-   "why": "V2: the Relay Gate ring in Gate Plaza"
+   "why": "V3: the Ferrox spaceport landing pad"
   },
   "sporeholm": {
    "section": "041",
@@ -144,14 +144,14 @@
    "y": 8
   },
   "M05:2": {
-   "s": "036",
+   "s": "489",
    "x": 12,
-   "y": 8
+   "y": 7
   },
   "M05:3": {
    "s": "040",
-   "x": 8,
-   "y": 12
+   "x": 12,
+   "y": 8
   },
   "M06:giver": {
    "s": "042",
@@ -565,33 +565,33 @@
    ]
   },
   "S20:giver": {
-   "s": "037",
+   "s": "506",
    "x": 12,
-   "y": 10
+   "y": 8
   },
   "S20:0": {
-   "s": "034",
+   "s": "494",
    "x": 12,
    "y": 8
   },
   "S21:giver": {
-   "s": "036",
-   "x": 6,
-   "y": 9
+   "s": "489",
+   "x": 14,
+   "y": 8
   },
   "S21:0": {
-   "s": "036",
-   "x": 16,
-   "y": 9
+   "s": "489",
+   "x": 14,
+   "y": 7
   },
   "S22:giver": {
-   "s": "038",
-   "x": 9,
-   "y": 9
+   "s": "502",
+   "x": 10,
+   "y": 8
   },
   "S22:0": {
-   "s": "038",
-   "x": 12,
+   "s": "502",
+   "x": 13,
    "y": 8
   },
   "S30:giver": {
@@ -1178,13 +1178,13 @@
   },
   "S102:giver": {
    "s": "030",
-   "x": 12,
-   "y": 10
+   "x": 11,
+   "y": 5
   },
   "S102:0": {
    "s": "039",
-   "x": 10,
-   "y": 12
+   "x": 12,
+   "y": 9
   },
   "S102:1": {
    "s": "069",
@@ -5083,63 +5083,63 @@
   },
   "029": {
    "id": "029",
-   "name": "Gate Plaza",
+   "name": "Ferrox Spaceport",
    "planet": "Ferrox",
    "dir": "02_ferrox",
    "type": "landmark",
-   "img": "art/sections_game/02_ferrox/029_gate_plaza.png",
+   "img": "art/sections_game/02_ferrox/029_ferrox_spaceport.png",
    "tiles": [
     24,
     16
    ],
-   "notes": "Arrival plaza around the Relay Gate",
+   "notes": "",
    "edges": {
-    "right": {
-     "to": "030",
+    "left": {
+     "to": "505",
      "range": [
-      6,
-      8
+      12,
+      13
      ],
-     "offset": -1
+     "offset": -3
     }
    },
    "warps": [
     {
      "tile": [
-      4,
-      4
+      12,
+      8
      ],
      "to": "planet:dustara",
      "at": [
-      4,
-      5
+      12,
+      9
      ],
      "face": "down",
      "kind": "gate",
      "node": "dustara",
-     "label": "the Relay Gate back to Dustara"
+     "label": "your ship back to Dustara"
     },
     {
      "tile": [
-      5,
-      4
+      13,
+      8
      ],
      "to": "planet:dustara",
      "at": [
-      5,
-      5
+      13,
+      9
      ],
      "face": "down",
      "kind": "gate",
      "node": "dustara",
-     "label": "the Relay Gate back to Dustara"
+     "label": "your ship back to Dustara"
     }
    ],
    "objects": [
     {
      "tile": [
-      13,
-      14
+      5,
+      3
      ],
      "k": "stash",
      "item": "cure",
@@ -5149,12 +5149,12 @@
    ],
    "spawns": {
     "arrival": [
-     4,
-     6
+     12,
+     10
     ],
     "default": [
-     4,
-     6
+     12,
+     10
     ]
    },
    "grid": [
@@ -5164,8 +5164,8 @@
    "pkey": "ferrox",
    "npcs": [
     {
-     "x": 12,
-     "y": 4,
+     "x": 7,
+     "y": 10,
      "art": "guard",
      "face": "down",
      "t": [
@@ -5175,7 +5175,7 @@
      "src": "n:029:0"
     },
     {
-     "x": 17,
+     "x": 15,
      "y": 10,
      "art": "technician",
      "face": "down",
@@ -5186,8 +5186,8 @@
      "src": "n:029:1"
     },
     {
-     "x": 6,
-     "y": 10,
+     "x": 5,
+     "y": 4,
      "art": "civilian",
      "face": "down",
      "t": [
@@ -5199,13 +5199,13 @@
    ],
    "mons": [
     {
-     "x": 1,
-     "y": 4,
+     "x": 19,
+     "y": 6,
      "mon": "Anvilox"
     },
     {
-     "x": 11,
-     "y": 14,
+     "x": 19,
+     "y": 11,
      "mon": "Gongorr"
     }
    ]
@@ -5223,16 +5223,16 @@
    ],
    "notes": "Shanty town of shacks and converted rail cars",
    "edges": {
-    "left": {
-     "to": "029",
+    "right": {
+     "to": "505",
      "range": [
       5,
       9
      ],
-     "offset": 1
+     "offset": 4
     },
-    "right": {
-     "to": "034",
+    "left": {
+     "to": "485",
      "range": [
       5,
       9
@@ -5248,8 +5248,8 @@
      ],
      "to": "031",
      "at": [
-      7,
-      13
+      8,
+      15
      ],
      "face": "up",
      "kind": "door",
@@ -5262,8 +5262,8 @@
      ],
      "to": "031",
      "at": [
-      8,
-      13
+      11,
+      15
      ],
      "face": "up",
      "kind": "door",
@@ -5276,8 +5276,8 @@
      ],
      "to": "032",
      "at": [
-      7,
-      13
+      9,
+      14
      ],
      "face": "up",
      "kind": "door",
@@ -5320,7 +5320,7 @@
      ],
      "k": "house",
      "to": "188",
-     "why": "house door: Rustvale home (shared Ferrox Cabin)"
+     "why": "V3 kit house door"
     },
     {
      "tile": [
@@ -5329,12 +5329,12 @@
      ],
      "k": "house",
      "to": "188",
-     "why": "house door: Rustvale home"
+     "why": "V3 kit house door"
     },
     {
      "tile": [
-      11,
-      14
+      21,
+      12
      ],
      "k": "stash",
      "item": "gel",
@@ -5344,13 +5344,13 @@
    ],
    "spawns": {
     "default": [
-     1,
+     22,
      5
     ]
    },
    "grid": [
-    24,
-    1
+    -48,
+    7
    ],
    "pkey": "ferrox",
    "npcs": [
@@ -5458,16 +5458,16 @@
    "type": "interior",
    "img": "art/sections_game/02_ferrox/031_rustvale_recovery_bay.png",
    "tiles": [
-    16,
-    16
+    20,
+    20
    ],
    "notes": "",
    "edges": {},
    "warps": [
     {
      "tile": [
-      7,
-      14
+      8,
+      16
      ],
      "to": "back",
      "at": [
@@ -5479,8 +5479,8 @@
     },
     {
      "tile": [
-      8,
-      14
+      11,
+      16
      ],
      "to": "back",
      "at": [
@@ -5494,37 +5494,35 @@
    "objects": [
     {
      "tile": [
-      7,
-      4
+      9,
+      6
      ],
-     "k": "bay",
-     "why": "Recovery Bay counter"
+     "k": "bay"
     },
     {
      "tile": [
-      8,
-      4
+      10,
+      6
      ],
-     "k": "bay",
-     "why": "Recovery Bay counter"
+     "k": "bay"
     }
    ],
    "spawns": {
     "door": [
-     7,
-     13
+     8,
+     15
     ],
     "default": [
-     7,
-     13
+     8,
+     15
     ]
    },
    "parent": "030",
    "pkey": "ferrox",
    "npcs": [
     {
-     "x": 8,
-     "y": 4,
+     "x": 10,
+     "y": 6,
      "art": "nurse",
      "face": "down",
      "t": [
@@ -5535,8 +5533,8 @@
      "src": "n:031:0"
     },
     {
-     "x": 6,
-     "y": 11,
+     "x": 12,
+     "y": 12,
      "art": "miner",
      "face": "down",
      "t": [
@@ -5555,16 +5553,16 @@
    "type": "interior",
    "img": "art/sections_game/02_ferrox/032_rustvale_shop.png",
    "tiles": [
-    16,
-    16
+    20,
+    20
    ],
    "notes": "",
    "edges": {},
    "warps": [
     {
      "tile": [
-      7,
-      14
+      9,
+      15
      ],
      "to": "back",
      "at": [
@@ -5576,8 +5574,8 @@
     },
     {
      "tile": [
-      8,
-      14
+      10,
+      15
      ],
      "to": "back",
      "at": [
@@ -5591,37 +5589,35 @@
    "objects": [
     {
      "tile": [
-      7,
-      4
+      6,
+      9
      ],
-     "k": "shop",
-     "why": "shop counter"
+     "k": "shop"
     },
     {
      "tile": [
-      8,
-      4
+      6,
+      10
      ],
-     "k": "shop",
-     "why": "shop counter"
+     "k": "shop"
     }
    ],
    "spawns": {
     "door": [
-     7,
-     13
+     9,
+     14
     ],
     "default": [
-     7,
-     13
+     9,
+     14
     ]
    },
    "parent": "030",
    "pkey": "ferrox",
    "npcs": [
     {
-     "x": 8,
-     "y": 4,
+     "x": 6,
+     "y": 9,
      "art": "shop",
      "face": "down",
      "t": [
@@ -5632,8 +5628,8 @@
      "src": "n:032:0"
     },
     {
-     "x": 6,
-     "y": 5,
+     "x": 13,
+     "y": 8,
      "art": "technician",
      "face": "down",
      "t": [
@@ -5713,806 +5709,77 @@
     }
    ]
   },
-  "034": {
-   "id": "034",
-   "name": "Scrap Route Part A",
-   "planet": "Ferrox",
-   "dir": "02_ferrox",
-   "type": "route",
-   "img": "art/sections_game/02_ferrox/034_scrap_route_part_a.png",
-   "tiles": [
-    24,
-    16
-   ],
-   "notes": "Route through scrap mountains",
-   "edges": {
-    "left": {
-     "to": "030",
-     "range": [
-      5,
-      8
-     ],
-     "offset": 0
-    },
-    "right": {
-     "to": "035",
-     "range": [
-      5,
-      8
-     ],
-     "offset": 0
-    }
-   },
-   "warps": [],
-   "objects": [
-    {
-     "tile": [
-      11,
-      14
-     ],
-     "k": "stash",
-     "item": "revive",
-     "n": 1,
-     "tier": 1
-    },
-    {
-     "tile": [
-      10,
-      1
-     ],
-     "k": "stash",
-     "item": "gel",
-     "n": 2,
-     "tier": 1
-    }
-   ],
-   "spawns": {
-    "default": [
-     1,
-     5
-    ]
-   },
-   "grid": [
-    48,
-    1
-   ],
-   "pkey": "ferrox",
-   "npcs": [
-    {
-     "x": 6,
-     "y": 7,
-     "art": "technician",
-     "face": "down",
-     "t": [
-      "Scavenger: The Scrap Route is all junk piles and loose rails. Alienmon love hiding in the scrap."
-     ],
-     "stay": true,
-     "src": "n:034:0"
-    },
-    {
-     "x": 14,
-     "y": 8,
-     "art": "miner",
-     "face": "down",
-     "t": [
-      "Hauler: My cart threw a wheel. Again. Third time this week."
-     ],
-     "stay": true,
-     "src": "n:034:1"
-    },
-    {
-     "x": 19,
-     "y": 4,
-     "art": "miner",
-     "face": "down",
-     "t": [],
-     "id": "sec034_tr2",
-     "trainer": {
-      "cls": "Miner",
-      "route": 1,
-      "name": "Rhee"
-     }
-    },
-    {
-     "x": 11,
-     "y": 3,
-     "art": "guard",
-     "face": "down",
-     "t": [],
-     "id": "sec034_tr3",
-     "trainer": {
-      "cls": "Rail Hand",
-      "route": 1,
-      "name": "Oz"
-     }
-    }
-   ],
-   "mons": [
-    {
-     "x": 3,
-     "y": 2,
-     "mon": "Gearhound"
-    },
-    {
-     "x": 20,
-     "y": 11,
-     "mon": "Coilossus"
-    }
-   ]
-  },
-  "035": {
-   "id": "035",
-   "name": "Scrap Route Part B",
-   "planet": "Ferrox",
-   "dir": "02_ferrox",
-   "type": "route",
-   "img": "art/sections_game/02_ferrox/035_scrap_route_part_b.png",
-   "tiles": [
-    24,
-    16
-   ],
-   "notes": "Route through scrap mountains",
-   "edges": {
-    "left": {
-     "to": "034",
-     "range": [
-      5,
-      8
-     ],
-     "offset": 0
-    },
-    "right": {
-     "to": "036",
-     "range": [
-      5,
-      8
-     ],
-     "offset": 0
-    }
-   },
-   "warps": [],
-   "objects": [
-    {
-     "tile": [
-      11,
-      14
-     ],
-     "k": "stash",
-     "item": "gel",
-     "n": 2,
-     "tier": 1
-    },
-    {
-     "tile": [
-      13,
-      14
-     ],
-     "k": "stash",
-     "item": "gel",
-     "n": 2,
-     "tier": 1
-    }
-   ],
-   "spawns": {
-    "default": [
-     1,
-     5
-    ]
-   },
-   "grid": [
-    72,
-    1
-   ],
-   "pkey": "ferrox",
-   "npcs": [
-    {
-     "x": 6,
-     "y": 8,
-     "art": "explorer",
-     "face": "down",
-     "t": [
-      "Hiker: Tall rust-grass is where the wild ones hide. Walk around it if your team is tired."
-     ],
-     "stay": true,
-     "src": "n:035:0"
-    },
-    {
-     "x": 20,
-     "y": 8,
-     "art": "wanderer",
-     "face": "down",
-     "t": [
-      "Drifter: The crane yard's next. Watch for falling crates."
-     ],
-     "stay": true,
-     "src": "n:035:1"
-    },
-    {
-     "x": 12,
-     "y": 4,
-     "art": "guard",
-     "face": "down",
-     "t": [],
-     "id": "sec035_tr2",
-     "trainer": {
-      "cls": "Rail Hand",
-      "route": 1,
-      "name": "Bo"
-     }
-    },
-    {
-     "x": 10,
-     "y": 12,
-     "art": "technician",
-     "face": "up",
-     "t": [],
-     "id": "sec035_tr3",
-     "trainer": {
-      "cls": "Scrapper",
-      "route": 1,
-      "name": "Dex"
-     }
-    }
-   ],
-   "mons": [
-    {
-     "x": 4,
-     "y": 2,
-     "mon": "Anvilox"
-    },
-    {
-     "x": 18,
-     "y": 2,
-     "mon": "Gongorr"
-    }
-   ]
-  },
-  "036": {
-   "id": "036",
-   "name": "Crane Yard",
-   "planet": "Ferrox",
-   "dir": "02_ferrox",
-   "type": "field",
-   "img": "art/sections_game/02_ferrox/036_crane_yard.png",
-   "tiles": [
-    24,
-    16
-   ],
-   "notes": "Swinging cranes, container stacks (Crane Yard Brawl)",
-   "edges": {
-    "left": {
-     "to": "035",
-     "range": [
-      5,
-      8
-     ],
-     "offset": 0
-    },
-    "right": {
-     "to": "037",
-     "range": [
-      5,
-      8
-     ],
-     "offset": 0
-    }
-   },
-   "warps": [],
-   "objects": [
-    {
-     "tile": [
-      8,
-      11
-     ],
-     "k": "stash",
-     "item": "stasis",
-     "n": 3,
-     "tier": 1
-    },
-    {
-     "tile": [
-      17,
-      3
-     ],
-     "k": "stash",
-     "item": "gel",
-     "n": 2,
-     "tier": 1
-    }
-   ],
-   "spawns": {
-    "default": [
-     1,
-     5
-    ]
-   },
-   "grid": [
-    96,
-    1
-   ],
-   "pkey": "ferrox",
-   "npcs": [
-    {
-     "x": 12,
-     "y": 7,
-     "art": "technician",
-     "face": "down",
-     "t": [
-      "Crane operator: Three junkers keep jamming my cranes. Hank wants them taught a lesson."
-     ],
-     "stay": true,
-     "src": "n:036:0"
-    },
-    {
-     "x": 7,
-     "y": 5,
-     "art": "guard",
-     "face": "down",
-     "t": [
-      "Yard guard: No Helix allowed in this yard. Not after what they pulled last month."
-     ],
-     "stay": true,
-     "src": "n:036:1"
-    },
-    {
-     "x": 19,
-     "y": 9,
-     "art": "technician",
-     "face": "up",
-     "t": [],
-     "id": "sec036_tr2",
-     "trainer": {
-      "cls": "Scrapper",
-      "route": 1,
-      "name": "Sol"
-     }
-    },
-    {
-     "x": 16,
-     "y": 4,
-     "art": "miner",
-     "face": "down",
-     "t": [],
-     "id": "sec036_tr3",
-     "trainer": {
-      "cls": "Miner",
-      "route": 1,
-      "name": "Bo"
-     }
-    }
-   ],
-   "mons": [
-    {
-     "x": 4,
-     "y": 3,
-     "mon": "Gearhound"
-    },
-    {
-     "x": 9,
-     "y": 11,
-     "mon": "Coilossus"
-    }
-   ]
-  },
-  "037": {
-   "id": "037",
-   "name": "Junk Market",
-   "planet": "Ferrox",
-   "dir": "02_ferrox",
-   "type": "town",
-   "img": "art/sections_game/02_ferrox/037_junk_market.png",
-   "tiles": [
-    24,
-    16
-   ],
-   "notes": "Open-air junk market stalls",
-   "edges": {
-    "left": {
-     "to": "036",
-     "range": [
-      5,
-      10
-     ],
-     "offset": 0
-    },
-    "right": {
-     "to": "038",
-     "range": [
-      5,
-      10
-     ],
-     "offset": 0
-    }
-   },
-   "warps": [],
-   "objects": [
-    {
-     "tile": [
-      3,
-      4
-     ],
-     "k": "house",
-     "to": "188",
-     "why": "Junk Market home (shared Ferrox Cabin)"
-    },
-    {
-     "tile": [
-      21,
-      4
-     ],
-     "k": "house",
-     "to": "188",
-     "why": "Junk Market home"
-    },
-    {
-     "tile": [
-      8,
-      4
-     ],
-     "k": "house",
-     "to": "031",
-     "why": "Junk Market Recovery Bay (shared room)"
-    },
-    {
-     "tile": [
-      9,
-      4
-     ],
-     "k": "house",
-     "to": "031",
-     "why": "Junk Market Recovery Bay"
-    },
-    {
-     "tile": [
-      15,
-      4
-     ],
-     "k": "shop",
-     "why": "Junk Market big stall counter"
-    },
-    {
-     "tile": [
-      16,
-      4
-     ],
-     "k": "shop",
-     "why": "Junk Market big stall counter"
-    },
-    {
-     "tile": [
-      11,
-      14
-     ],
-     "k": "stash",
-     "item": "cure",
-     "n": 2,
-     "tier": 1
-    }
-   ],
-   "spawns": {
-    "default": [
-     1,
-     5
-    ]
-   },
-   "grid": [
-    120,
-    1
-   ],
-   "pkey": "ferrox",
-   "npcs": [
-    {
-     "x": 12,
-     "y": 6,
-     "art": "technician",
-     "face": "down",
-     "t": [
-      "Junk dealer: One Linker's trash is another Linker's treasure. Mostly it's just trash."
-     ],
-     "stay": true,
-     "src": "n:037:0"
-    },
-    {
-     "x": 18,
-     "y": 10,
-     "art": "civilian",
-     "face": "down",
-     "t": [
-      "Shopper: I came for a bolt and left with a jetpack. It doesn't work, but still."
-     ],
-     "stay": true,
-     "src": "n:037:1"
-    },
-    {
-     "x": 5,
-     "y": 10,
-     "art": "miner",
-     "face": "down",
-     "t": [
-      "Ore trader: Ferrox ore powers half the ships in the system. Helix wants all of it."
-     ],
-     "stay": true,
-     "src": "n:037:2"
-    },
-    {
-     "x": 7,
-     "y": 5,
-     "art": "wanderer",
-     "face": "down",
-     "t": [
-      "Fortune teller: I see... a tower. And a man with a very large wrench."
-     ],
-     "stay": true,
-     "src": "n:037:3"
-    }
-   ],
-   "mons": [
-    {
-     "x": 9,
-     "y": 14,
-     "mon": "Magnub"
-    }
-   ]
-  },
-  "038": {
-   "id": "038",
-   "name": "Furnace Ridge",
-   "planet": "Ferrox",
-   "dir": "02_ferrox",
-   "type": "route",
-   "img": "art/sections_game/02_ferrox/038_furnace_ridge.png",
-   "tiles": [
-    24,
-    16
-   ],
-   "notes": "Ridge of smoking furnaces",
-   "edges": {
-    "left": {
-     "to": "037",
-     "range": [
-      5,
-      8
-     ],
-     "offset": 0
-    }
-   },
-   "warps": [
-    {
-     "tile": [
-      23,
-      6
-     ],
-     "to": "039",
-     "at": [
-      6,
-      22
-     ],
-     "face": "up",
-     "kind": "edge",
-     "edge": "right"
-    },
-    {
-     "tile": [
-      23,
-      7
-     ],
-     "to": "039",
-     "at": [
-      7,
-      22
-     ],
-     "face": "up",
-     "kind": "edge",
-     "edge": "right"
-    }
-   ],
-   "objects": [
-    {
-     "tile": [
-      9,
-      12
-     ],
-     "k": "stash",
-     "item": "gel",
-     "n": 2,
-     "tier": 1
-    },
-    {
-     "tile": [
-      12,
-      12
-     ],
-     "k": "stash",
-     "item": "stasis",
-     "n": 3,
-     "tier": 1
-    }
-   ],
-   "spawns": {
-    "default": [
-     1,
-     5
-    ]
-   },
-   "grid": [
-    144,
-    1
-   ],
-   "pkey": "ferrox",
-   "npcs": [
-    {
-     "x": 16,
-     "y": 5,
-     "art": "miner",
-     "face": "down",
-     "t": [
-      "Furnace worker: The heat up here peels paint off ships. Keep your Alienmon hydrated."
-     ],
-     "stay": true,
-     "src": "n:038:0"
-    },
-    {
-     "x": 4,
-     "y": 5,
-     "art": "guard",
-     "face": "down",
-     "t": [
-      "Guard: Ferrox Tower is just ahead. Hank Briggs is the Keeper. Good luck, kid."
-     ],
-     "stay": true,
-     "src": "n:038:1"
-    },
-    {
-     "x": 10,
-     "y": 9,
-     "art": "guard",
-     "face": "up",
-     "t": [],
-     "id": "sec038_tr2",
-     "trainer": {
-      "cls": "Rail Hand",
-      "route": 1,
-      "name": "Rook"
-     }
-    },
-    {
-     "x": 12,
-     "y": 9,
-     "art": "technician",
-     "face": "up",
-     "t": [],
-     "id": "sec038_tr3",
-     "trainer": {
-      "cls": "Scrapper",
-      "route": 1,
-      "name": "Kai"
-     }
-    }
-   ],
-   "mons": [
-    {
-     "x": 18,
-     "y": 8,
-     "mon": "Gearhound"
-    },
-    {
-     "x": 8,
-     "y": 5,
-     "mon": "Coilossus"
-    }
-   ]
-  },
   "039": {
    "id": "039",
-   "name": "Ferrox Tower 1F",
+   "name": "Relay Tower Trial Floor",
    "planet": "Ferrox",
    "dir": "02_ferrox",
    "type": "tower",
-   "img": "art/sections_game/02_ferrox/039_ferrox_tower_1f.png",
+   "img": "art/sections_game/02_ferrox/039_relay_tower_trial_floor.png",
    "tiles": [
-    16,
-    24
+    20,
+    20
    ],
-   "notes": "Keeper Hank Briggs's tower, 2 floors",
+   "notes": "",
    "edges": {},
    "warps": [
     {
      "tile": [
-      6,
-      23
-     ],
-     "to": "038",
-     "at": [
-      22,
-      6
-     ],
-     "face": "left",
-     "kind": "edge",
-     "edge": "bottom"
-    },
-    {
-     "tile": [
-      7,
-      23
-     ],
-     "to": "038",
-     "at": [
-      22,
-      7
-     ],
-     "face": "left",
-     "kind": "edge",
-     "edge": "bottom"
-    },
-    {
-     "tile": [
-      6,
-      0
-     ],
-     "to": "040",
-     "at": [
-      6,
-      22
-     ],
-     "face": "up",
-     "kind": "stairs",
-     "edge": "top"
-    },
-    {
-     "tile": [
-      7,
-      0
-     ],
-     "to": "040",
-     "at": [
-      7,
-      22
-     ],
-     "face": "up",
-     "kind": "stairs",
-     "edge": "top"
-    },
-    {
-     "tile": [
-      8,
-      0
-     ],
-     "to": "040",
-     "at": [
-      8,
-      22
-     ],
-     "face": "up",
-     "kind": "stairs",
-     "edge": "top"
-    },
-    {
-     "tile": [
       9,
-      0
+      17
+     ],
+     "to": "502",
+     "at": [
+      11,
+      8
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      10,
+      17
+     ],
+     "to": "502",
+     "at": [
+      11,
+      8
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      16,
+      3
      ],
      "to": "040",
      "at": [
-      9,
-      22
+      11,
+      12
      ],
      "face": "up",
-     "kind": "stairs",
-     "edge": "top"
+     "kind": "stairs"
     }
    ],
    "objects": [],
    "spawns": {
+    "door": [
+     9,
+     16
+    ],
     "default": [
-     6,
-     22
+     9,
+     15
     ]
    },
+   "parent": "502",
    "pkey": "ferrox",
    "npcs": [
     {
-     "x": 10,
-     "y": 3,
+     "x": 11,
+     "y": 14,
      "art": "technician",
      "face": "down",
      "t": [
@@ -6522,12 +5789,11 @@
      "src": "n:039:0"
     },
     {
-     "x": 3,
-     "y": 11,
+     "x": 13,
+     "y": 9,
      "art": "guard",
-     "face": "right",
+     "face": "up",
      "t": [],
-     "face_pinned": 1,
      "id": "sec039_app1",
      "trainer": {
       "cls": "Apprentice",
@@ -6536,12 +5802,11 @@
      }
     },
     {
-     "x": 12,
+     "x": 4,
      "y": 11,
      "art": "technician",
-     "face": "left",
+     "face": "right",
      "t": [],
-     "face_pinned": 1,
      "id": "sec039_app2",
      "trainer": {
       "cls": "Apprentice",
@@ -6553,89 +5818,46 @@
   },
   "040": {
    "id": "040",
-   "name": "Ferrox Tower 2F",
+   "name": "Relay Tower Keeper Room",
    "planet": "Ferrox",
    "dir": "02_ferrox",
    "type": "tower",
-   "img": "art/sections_game/02_ferrox/040_ferrox_tower_2f.png",
+   "img": "art/sections_game/02_ferrox/040_relay_tower_keeper_room.png",
    "tiles": [
-    16,
-    24
+    24,
+    16
    ],
-   "notes": "Keeper Hank Briggs's tower, 2 floors",
+   "notes": "",
    "edges": {},
    "warps": [
     {
      "tile": [
-      6,
-      23
+      11,
+      14
      ],
      "to": "039",
      "at": [
-      6,
-      1
+      16,
+      4
      ],
      "face": "down",
-     "kind": "edge",
-     "edge": "bottom"
-    },
-    {
-     "tile": [
-      7,
-      23
-     ],
-     "to": "039",
-     "at": [
-      7,
-      1
-     ],
-     "face": "down",
-     "kind": "edge",
-     "edge": "bottom"
-    },
-    {
-     "tile": [
-      8,
-      23
-     ],
-     "to": "039",
-     "at": [
-      8,
-      1
-     ],
-     "face": "down",
-     "kind": "edge",
-     "edge": "bottom"
-    },
-    {
-     "tile": [
-      9,
-      23
-     ],
-     "to": "039",
-     "at": [
-      9,
-      1
-     ],
-     "face": "down",
-     "kind": "edge",
-     "edge": "bottom"
+     "kind": "stairs"
     }
    ],
    "objects": [
     {
      "tile": [
-      7,
-      4
+      12,
+      6
      ],
      "k": "keeper",
-     "why": "Keeper's dais in front of the crystal, challenged from (7,5)"
+     "why": "Keeper on the arena floor, challenged from (12,7)"
     }
    ],
    "spawns": {
     "default": [
-     6,
-     22
+     11,
+     12
     ]
    },
    "pkey": "ferrox"
@@ -27723,6 +26945,2306 @@
      "src": "n:193:0"
     }
    ]
+  },
+  "505": {
+   "id": "505",
+   "name": "Rustvale Lane Homes",
+   "planet": "Ferrox",
+   "dir": "02_ferrox",
+   "type": "town",
+   "img": "art/sections_game/02_ferrox/505_rustvale_lane_homes.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "",
+   "edges": {
+    "right": {
+     "to": "029",
+     "range": [
+      9,
+      11
+     ],
+     "offset": 3
+    },
+    "left": {
+     "to": "030",
+     "range": [
+      9,
+      11
+     ],
+     "offset": -4
+    }
+   },
+   "warps": [],
+   "objects": [
+    {
+     "tile": [
+      4,
+      6
+     ],
+     "k": "house",
+     "to": "188",
+     "why": "V3 kit house door"
+    },
+    {
+     "tile": [
+      5,
+      6
+     ],
+     "k": "house",
+     "to": "188",
+     "why": "V3 kit house door"
+    },
+    {
+     "tile": [
+      11,
+      5
+     ],
+     "k": "house",
+     "to": "499",
+     "why": "V3 kit house door"
+    },
+    {
+     "tile": [
+      12,
+      5
+     ],
+     "k": "house",
+     "to": "499",
+     "why": "V3 kit house door"
+    },
+    {
+     "tile": [
+      19,
+      6
+     ],
+     "k": "house",
+     "to": "500",
+     "why": "V3 kit house door"
+    },
+    {
+     "tile": [
+      20,
+      6
+     ],
+     "k": "house",
+     "to": "500",
+     "why": "V3 kit house door"
+    },
+    {
+     "tile": [
+      5,
+      13
+     ],
+     "k": "stash",
+     "item": "revive",
+     "n": 1,
+     "tier": 1
+    }
+   ],
+   "spawns": {
+    "default": [
+     22,
+     9
+    ]
+   },
+   "grid": [
+    -24,
+    3
+   ],
+   "pkey": "ferrox",
+   "mons": [
+    {
+     "x": 10,
+     "y": 12,
+     "mon": "Coilet"
+    }
+   ]
+  },
+  "506": {
+   "id": "506",
+   "name": "Rustvale Quiet Court",
+   "planet": "Ferrox",
+   "dir": "02_ferrox",
+   "type": "town",
+   "img": "art/sections_game/02_ferrox/506_rustvale_quiet_court.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "",
+   "edges": {
+    "bottom": {
+     "to": "487",
+     "range": [
+      10,
+      14
+     ],
+     "offset": -5
+    }
+   },
+   "warps": [],
+   "objects": [
+    {
+     "tile": [
+      5,
+      4
+     ],
+     "k": "house",
+     "to": "498",
+     "why": "V3 kit house door"
+    },
+    {
+     "tile": [
+      6,
+      4
+     ],
+     "k": "house",
+     "to": "498",
+     "why": "V3 kit house door"
+    },
+    {
+     "tile": [
+      11,
+      4
+     ],
+     "k": "house",
+     "to": "188",
+     "why": "V3 kit house door"
+    },
+    {
+     "tile": [
+      12,
+      4
+     ],
+     "k": "house",
+     "to": "188",
+     "why": "V3 kit house door"
+    },
+    {
+     "tile": [
+      16,
+      4
+     ],
+     "k": "house",
+     "to": "188",
+     "why": "V3 kit house door"
+    },
+    {
+     "tile": [
+      17,
+      4
+     ],
+     "k": "house",
+     "to": "188",
+     "why": "V3 kit house door"
+    },
+    {
+     "tile": [
+      2,
+      12
+     ],
+     "k": "house",
+     "to": "188",
+     "why": "V3 kit house door"
+    },
+    {
+     "tile": [
+      3,
+      12
+     ],
+     "k": "house",
+     "to": "188",
+     "why": "V3 kit house door"
+    },
+    {
+     "tile": [
+      1,
+      5
+     ],
+     "k": "stash",
+     "item": "revive",
+     "n": 1,
+     "tier": 1
+    }
+   ],
+   "spawns": {
+    "default": [
+     10,
+     14
+    ]
+   },
+   "grid": [
+    -101,
+    -12
+   ],
+   "pkey": "ferrox",
+   "npcs": [
+    {
+     "x": 11,
+     "y": 8,
+     "art": "technician",
+     "face": "down",
+     "t": [
+      "Junk dealer: One Linker's trash is another Linker's treasure. Mostly it's just trash."
+     ],
+     "stay": true,
+     "src": "n:506:0"
+    },
+    {
+     "x": 4,
+     "y": 6,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Shopper: I came for a bolt and left with a jetpack. It doesn't work, but still."
+     ],
+     "stay": true,
+     "src": "n:506:1"
+    },
+    {
+     "x": 8,
+     "y": 13,
+     "art": "miner",
+     "face": "down",
+     "t": [
+      "Ore trader: Ferrox ore powers half the ships in the system. Helix wants all of it."
+     ],
+     "stay": true,
+     "src": "n:506:2"
+    },
+    {
+     "x": 17,
+     "y": 7,
+     "art": "wanderer",
+     "face": "down",
+     "t": [
+      "Fortune teller: I see... a tower. And a man with a very large wrench."
+     ],
+     "stay": true,
+     "src": "n:506:3"
+    }
+   ],
+   "mons": [
+    {
+     "x": 2,
+     "y": 8,
+     "mon": "Magnub"
+    }
+   ]
+  },
+  "507": {
+   "id": "507",
+   "name": "Rustvale Farmstead",
+   "planet": "Ferrox",
+   "dir": "02_ferrox",
+   "type": "town",
+   "img": "art/sections_game/02_ferrox/507_rustvale_farmstead.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "",
+   "edges": {
+    "top": {
+     "to": "494",
+     "range": [
+      14,
+      18
+     ],
+     "offset": -10
+    },
+    "left": {
+     "to": "476",
+     "range": [
+      7,
+      10
+     ],
+     "offset": 2
+    }
+   },
+   "warps": [],
+   "objects": [
+    {
+     "tile": [
+      4,
+      4
+     ],
+     "k": "house",
+     "to": "188",
+     "why": "V3 kit house door"
+    },
+    {
+     "tile": [
+      5,
+      4
+     ],
+     "k": "house",
+     "to": "188",
+     "why": "V3 kit house door"
+    },
+    {
+     "tile": [
+      10,
+      5
+     ],
+     "k": "house",
+     "to": "188",
+     "why": "V3 kit house door"
+    },
+    {
+     "tile": [
+      11,
+      5
+     ],
+     "k": "house",
+     "to": "188",
+     "why": "V3 kit house door"
+    },
+    {
+     "tile": [
+      17,
+      11
+     ],
+     "k": "stash",
+     "item": "gel",
+     "n": 2,
+     "tier": 1
+    }
+   ],
+   "spawns": {
+    "default": [
+     14,
+     1
+    ]
+   },
+   "grid": [
+    -77,
+    55
+   ],
+   "pkey": "ferrox",
+   "mons": [
+    {
+     "x": 18,
+     "y": 11,
+     "mon": "Gleamgrub"
+    }
+   ]
+  },
+  "485": {
+   "id": "485",
+   "name": "Scrapyard Crossing",
+   "planet": "Ferrox",
+   "dir": "02_ferrox",
+   "type": "route",
+   "img": "art/sections_game/02_ferrox/485_scrapyard_crossing.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "",
+   "edges": {
+    "right": {
+     "to": "030",
+     "range": [
+      5,
+      8
+     ],
+     "offset": 0
+    },
+    "top": {
+     "to": "489",
+     "range": [
+      10,
+      13
+     ],
+     "offset": 0
+    },
+    "bottom": {
+     "to": "490",
+     "range": [
+      10,
+      14
+     ],
+     "offset": -6
+    },
+    "left": {
+     "to": "487",
+     "range": [
+      5,
+      8
+     ],
+     "offset": 3
+    }
+   },
+   "warps": [],
+   "objects": [
+    {
+     "tile": [
+      7,
+      9
+     ],
+     "k": "stash",
+     "item": "stasis",
+     "n": 3,
+     "tier": 1
+    },
+    {
+     "tile": [
+      6,
+      12
+     ],
+     "k": "stash",
+     "item": "cure",
+     "n": 2,
+     "tier": 1
+    }
+   ],
+   "spawns": {
+    "default": [
+     22,
+     5
+    ]
+   },
+   "grid": [
+    -72,
+    7
+   ],
+   "pkey": "ferrox",
+   "npcs": [
+    {
+     "x": 12,
+     "y": 8,
+     "art": "technician",
+     "face": "down",
+     "t": [
+      "Scavenger: The Scrap Route is all junk piles and loose rails. Alienmon love hiding in the scrap."
+     ],
+     "stay": true,
+     "src": "n:485:0"
+    },
+    {
+     "x": 19,
+     "y": 7,
+     "art": "miner",
+     "face": "down",
+     "t": [
+      "Hauler: My cart threw a wheel. Again. Third time this week."
+     ],
+     "stay": true,
+     "src": "n:485:1"
+    },
+    {
+     "x": 6,
+     "y": 3,
+     "art": "guard",
+     "face": "right",
+     "t": [],
+     "id": "sec485_tr2",
+     "trainer": {
+      "cls": "Rail Hand",
+      "route": 1,
+      "name": "Sol"
+     }
+    },
+    {
+     "x": 8,
+     "y": 11,
+     "art": "technician",
+     "face": "right",
+     "t": [],
+     "id": "sec485_tr3",
+     "trainer": {
+      "cls": "Scrapper",
+      "route": 1,
+      "name": "Taro"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 5,
+     "y": 9,
+     "mon": "Anvilox"
+    }
+   ]
+  },
+  "489": {
+   "id": "489",
+   "name": "Crane Overlook",
+   "planet": "Ferrox",
+   "dir": "02_ferrox",
+   "type": "route",
+   "img": "art/sections_game/02_ferrox/489_crane_overlook.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "",
+   "edges": {
+    "bottom": {
+     "to": "485",
+     "range": [
+      10,
+      13
+     ],
+     "offset": 0
+    },
+    "left": {
+     "to": "497",
+     "range": [
+      2,
+      9
+     ],
+     "offset": 7
+    },
+    "top": {
+     "to": "481",
+     "range": [
+      10,
+      13
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [],
+   "objects": [
+    {
+     "tile": [
+      19,
+      12
+     ],
+     "k": "stash",
+     "item": "cure",
+     "n": 2,
+     "tier": 1
+    },
+    {
+     "tile": [
+      19,
+      3
+     ],
+     "k": "stash",
+     "item": "gel",
+     "n": 2,
+     "tier": 1
+    }
+   ],
+   "spawns": {
+    "default": [
+     10,
+     14
+    ]
+   },
+   "grid": [
+    -72,
+    -9
+   ],
+   "pkey": "ferrox",
+   "npcs": [
+    {
+     "x": 12,
+     "y": 8,
+     "art": "technician",
+     "face": "down",
+     "t": [
+      "Crane operator: Three junkers keep jamming my cranes. Hank wants them taught a lesson."
+     ],
+     "stay": true,
+     "src": "n:489:0"
+    },
+    {
+     "x": 4,
+     "y": 7,
+     "art": "guard",
+     "face": "down",
+     "t": [
+      "Yard guard: No Helix allowed in this yard. Not after what they pulled last month."
+     ],
+     "stay": true,
+     "src": "n:489:1"
+    },
+    {
+     "x": 15,
+     "y": 3,
+     "art": "technician",
+     "face": "left",
+     "t": [],
+     "id": "sec489_tr2",
+     "trainer": {
+      "cls": "Scrapper",
+      "route": 1,
+      "name": "Vela"
+     }
+    },
+    {
+     "x": 4,
+     "y": 12,
+     "art": "miner",
+     "face": "up",
+     "t": [],
+     "id": "sec489_tr3",
+     "trainer": {
+      "cls": "Miner",
+      "route": 1,
+      "name": "Yuki"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 22,
+     "y": 13,
+     "mon": "Anvilox"
+    },
+    {
+     "x": 6,
+     "y": 2,
+     "mon": "Gongorr"
+    }
+   ]
+  },
+  "497": {
+   "id": "497",
+   "name": "Scrap Hollow Grove",
+   "planet": "Ferrox",
+   "dir": "02_ferrox",
+   "type": "field",
+   "img": "art/sections_game/02_ferrox/497_scrap_hollow_grove.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "",
+   "edges": {
+    "right": {
+     "to": "489",
+     "range": [
+      9,
+      11
+     ],
+     "offset": -7
+    }
+   },
+   "warps": [],
+   "objects": [
+    {
+     "tile": [
+      15,
+      4
+     ],
+     "k": "chest",
+     "item": "fullgel",
+     "n": 2,
+     "why": "hidden grove reward"
+    },
+    {
+     "tile": [
+      7,
+      10
+     ],
+     "k": "stash",
+     "item": "gel",
+     "n": 2,
+     "tier": 1
+    },
+    {
+     "tile": [
+      3,
+      6
+     ],
+     "k": "stash",
+     "item": "cure",
+     "n": 2,
+     "tier": 1
+    }
+   ],
+   "spawns": {
+    "default": [
+     22,
+     9
+    ]
+   },
+   "grid": [
+    -96,
+    -16
+   ],
+   "pkey": "ferrox",
+   "mons": [
+    {
+     "x": 5,
+     "y": 6,
+     "mon": "Anvilox"
+    },
+    {
+     "x": 10,
+     "y": 10,
+     "mon": "Gongorr"
+    }
+   ]
+  },
+  "481": {
+   "id": "481",
+   "name": "Deepcut Mine Entrance",
+   "planet": "Ferrox",
+   "dir": "02_ferrox",
+   "type": "route",
+   "img": "art/sections_game/02_ferrox/481_deepcut_mine_entrance.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "",
+   "edges": {
+    "bottom": {
+     "to": "489",
+     "range": [
+      10,
+      14
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [
+    {
+     "tile": [
+      11,
+      3
+     ],
+     "to": "482",
+     "at": [
+      5,
+      3
+     ],
+     "face": "down",
+     "kind": "stairs"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      19,
+      10
+     ],
+     "k": "stash",
+     "item": "dust",
+     "n": 150,
+     "tier": 1
+    },
+    {
+     "tile": [
+      19,
+      8
+     ],
+     "k": "stash",
+     "item": "cure",
+     "n": 2,
+     "tier": 1
+    }
+   ],
+   "spawns": {
+    "default": [
+     10,
+     14
+    ]
+   },
+   "grid": [
+    -72,
+    -25
+   ],
+   "pkey": "ferrox",
+   "mons": [
+    {
+     "x": 9,
+     "y": 8,
+     "mon": "Anvilox"
+    },
+    {
+     "x": 17,
+     "y": 10,
+     "mon": "Gongorr"
+    }
+   ]
+  },
+  "482": {
+   "id": "482",
+   "name": "Deepcut Mine B1",
+   "planet": "Ferrox",
+   "dir": "02_ferrox",
+   "type": "cave",
+   "img": "art/sections_game/02_ferrox/482_deepcut_mine_b1.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      5,
+      2
+     ],
+     "to": "481",
+     "at": [
+      11,
+      4
+     ],
+     "face": "down",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      18,
+      2
+     ],
+     "to": "483",
+     "at": [
+      4,
+      4
+     ],
+     "face": "down",
+     "kind": "stairs"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      20,
+      13
+     ],
+     "k": "stash",
+     "item": "stasis",
+     "n": 3,
+     "tier": 1
+    }
+   ],
+   "spawns": {
+    "default": [
+     5,
+     3
+    ]
+   },
+   "pkey": "ferrox"
+  },
+  "483": {
+   "id": "483",
+   "name": "Deepcut Mine B2",
+   "planet": "Ferrox",
+   "dir": "02_ferrox",
+   "type": "cave",
+   "img": "art/sections_game/02_ferrox/483_deepcut_mine_b2.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      4,
+      3
+     ],
+     "to": "482",
+     "at": [
+      18,
+      3
+     ],
+     "face": "down",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      11,
+      13
+     ],
+     "to": "484",
+     "at": [
+      12,
+      12
+     ],
+     "face": "up",
+     "kind": "stairs"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      14,
+      8
+     ],
+     "k": "stash",
+     "item": "gel",
+     "n": 2,
+     "tier": 1
+    },
+    {
+     "tile": [
+      21,
+      7
+     ],
+     "k": "stash",
+     "item": "stun",
+     "n": 1,
+     "tier": 1
+    }
+   ],
+   "spawns": {
+    "default": [
+     4,
+     4
+    ]
+   },
+   "pkey": "ferrox"
+  },
+  "484": {
+   "id": "484",
+   "name": "Deepcut Mine Depths",
+   "planet": "Ferrox",
+   "dir": "02_ferrox",
+   "type": "cave",
+   "img": "art/sections_game/02_ferrox/484_deepcut_mine_depths.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      12,
+      13
+     ],
+     "to": "483",
+     "at": [
+      11,
+      12
+     ],
+     "face": "up",
+     "kind": "stairs"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      4,
+      11
+     ],
+     "k": "chest",
+     "item": "maxrevive",
+     "n": 1,
+     "why": "Deepcut Mine depths reward"
+    },
+    {
+     "tile": [
+      4,
+      2
+     ],
+     "k": "stash",
+     "item": "dust",
+     "n": 150,
+     "tier": 1
+    },
+    {
+     "tile": [
+      17,
+      3
+     ],
+     "k": "stash",
+     "item": "dust",
+     "n": 150,
+     "tier": 1
+    }
+   ],
+   "spawns": {
+    "default": [
+     12,
+     12
+    ]
+   },
+   "pkey": "ferrox"
+  },
+  "490": {
+   "id": "490",
+   "name": "Coolant Pond",
+   "planet": "Ferrox",
+   "dir": "02_ferrox",
+   "type": "route",
+   "img": "art/sections_game/02_ferrox/490_coolant_pond.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "",
+   "edges": {
+    "top": {
+     "to": "485",
+     "range": [
+      4,
+      9
+     ],
+     "offset": 6
+    },
+    "bottom": {
+     "to": "494",
+     "range": [
+      4,
+      9
+     ],
+     "offset": 1
+    }
+   },
+   "warps": [],
+   "objects": [
+    {
+     "tile": [
+      16,
+      9
+     ],
+     "k": "stash",
+     "item": "gel",
+     "n": 2,
+     "tier": 1
+    },
+    {
+     "tile": [
+      15,
+      2
+     ],
+     "k": "stash",
+     "item": "gel",
+     "n": 2,
+     "tier": 1
+    }
+   ],
+   "spawns": {
+    "default": [
+     4,
+     1
+    ]
+   },
+   "grid": [
+    -66,
+    23
+   ],
+   "pkey": "ferrox",
+   "npcs": [
+    {
+     "x": 12,
+     "y": 8,
+     "art": "miner",
+     "face": "left",
+     "t": [],
+     "id": "sec490_tr0",
+     "trainer": {
+      "cls": "Miner",
+      "route": 1,
+      "name": "Bram"
+     }
+    },
+    {
+     "x": 10,
+     "y": 5,
+     "art": "guard",
+     "face": "left",
+     "t": [],
+     "id": "sec490_tr1",
+     "trainer": {
+      "cls": "Rail Hand",
+      "route": 1,
+      "name": "Pell"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 15,
+     "y": 1,
+     "mon": "Gearhound"
+    },
+    {
+     "x": 14,
+     "y": 13,
+     "mon": "Coilossus"
+    }
+   ]
+  },
+  "494": {
+   "id": "494",
+   "name": "Salvage Flats",
+   "planet": "Ferrox",
+   "dir": "02_ferrox",
+   "type": "route",
+   "img": "art/sections_game/02_ferrox/494_salvage_flats.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "",
+   "edges": {
+    "top": {
+     "to": "490",
+     "range": [
+      5,
+      13
+     ],
+     "offset": -1
+    },
+    "bottom": {
+     "to": "507",
+     "range": [
+      4,
+      9
+     ],
+     "offset": 10
+    }
+   },
+   "warps": [],
+   "objects": [
+    {
+     "tile": [
+      21,
+      9
+     ],
+     "k": "stash",
+     "item": "gel",
+     "n": 2,
+     "tier": 1
+    },
+    {
+     "tile": [
+      19,
+      2
+     ],
+     "k": "stash",
+     "item": "revive",
+     "n": 1,
+     "tier": 1
+    }
+   ],
+   "spawns": {
+    "default": [
+     5,
+     1
+    ]
+   },
+   "grid": [
+    -67,
+    39
+   ],
+   "pkey": "ferrox",
+   "npcs": [
+    {
+     "x": 12,
+     "y": 6,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Hiker: Tall rust-grass is where the wild ones hide. Walk around it if your team is tired."
+     ],
+     "stay": true,
+     "src": "n:494:0"
+    },
+    {
+     "x": 7,
+     "y": 10,
+     "art": "wanderer",
+     "face": "down",
+     "t": [
+      "Drifter: The crane yard's next. Watch for falling crates."
+     ],
+     "stay": true,
+     "src": "n:494:1"
+    },
+    {
+     "x": 4,
+     "y": 3,
+     "art": "guard",
+     "face": "right",
+     "t": [],
+     "id": "sec494_tr2",
+     "trainer": {
+      "cls": "Rail Hand",
+      "route": 1,
+      "name": "Dex"
+     }
+    },
+    {
+     "x": 16,
+     "y": 10,
+     "art": "technician",
+     "face": "right",
+     "t": [],
+     "id": "sec494_tr3",
+     "trainer": {
+      "cls": "Scrapper",
+      "route": 1,
+      "name": "Ida"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 18,
+     "y": 2,
+     "mon": "Gearhound"
+    },
+    {
+     "x": 20,
+     "y": 8,
+     "mon": "Coilossus"
+    }
+   ]
+  },
+  "476": {
+   "id": "476",
+   "name": "Scrapyard Dome",
+   "planet": "Ferrox",
+   "dir": "02_ferrox",
+   "type": "landmark",
+   "img": "art/sections_game/02_ferrox/476_scrapyard_dome.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "",
+   "edges": {
+    "right": {
+     "to": "507",
+     "range": [
+      9,
+      11
+     ],
+     "offset": -2
+    }
+   },
+   "warps": [
+    {
+     "tile": [
+      11,
+      7
+     ],
+     "to": "478",
+     "at": [
+      9,
+      16
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    },
+    {
+     "tile": [
+      12,
+      7
+     ],
+     "to": "478",
+     "at": [
+      10,
+      16
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      5,
+      13
+     ],
+     "k": "stash",
+     "item": "cure",
+     "n": 2,
+     "tier": 1
+    }
+   ],
+   "spawns": {
+    "default": [
+     22,
+     9
+    ]
+   },
+   "grid": [
+    -101,
+    53
+   ],
+   "pkey": "ferrox",
+   "mons": [
+    {
+     "x": 9,
+     "y": 8,
+     "mon": "Gearhound"
+    },
+    {
+     "x": 20,
+     "y": 8,
+     "mon": "Coilossus"
+    }
+   ]
+  },
+  "478": {
+   "id": "478",
+   "name": "Scrapyard Dome Lobby",
+   "planet": "Ferrox",
+   "dir": "02_ferrox",
+   "type": "interior",
+   "img": "art/sections_game/02_ferrox/478_scrapyard_dome_lobby.png",
+   "tiles": [
+    20,
+    20
+   ],
+   "notes": "",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      9,
+      17
+     ],
+     "to": "476",
+     "at": [
+      11,
+      8
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      10,
+      17
+     ],
+     "to": "476",
+     "at": [
+      11,
+      8
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      9,
+      4
+     ],
+     "to": "480",
+     "at": [
+      11,
+      14
+     ],
+     "face": "up",
+     "kind": "stairs"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "door": [
+     9,
+     16
+    ],
+    "default": [
+     9,
+     16
+    ]
+   },
+   "parent": "476",
+   "pkey": "ferrox"
+  },
+  "480": {
+   "id": "480",
+   "name": "Scrapyard Dome Arena",
+   "planet": "Ferrox",
+   "dir": "02_ferrox",
+   "type": "interior",
+   "img": "art/sections_game/02_ferrox/480_scrapyard_dome_arena.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      11,
+      15
+     ],
+     "to": "478",
+     "at": [
+      9,
+      5
+     ],
+     "face": "down",
+     "kind": "stairs"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     12,
+     8
+    ]
+   },
+   "pkey": "ferrox"
+  },
+  "487": {
+   "id": "487",
+   "name": "Coolant Fork",
+   "planet": "Ferrox",
+   "dir": "02_ferrox",
+   "type": "route",
+   "img": "art/sections_game/02_ferrox/487_coolant_fork.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "",
+   "edges": {
+    "right": {
+     "to": "485",
+     "range": [
+      8,
+      9
+     ],
+     "offset": -3
+    },
+    "top": {
+     "to": "506",
+     "range": [
+      5,
+      10
+     ],
+     "offset": 5
+    },
+    "left": {
+     "to": "502",
+     "range": [
+      8,
+      9
+     ],
+     "offset": 1
+    },
+    "bottom": {
+     "to": "486",
+     "range": [
+      6,
+      10
+     ],
+     "offset": -2
+    }
+   },
+   "warps": [],
+   "objects": [
+    {
+     "tile": [
+      18,
+      14
+     ],
+     "k": "stash",
+     "item": "stun",
+     "n": 1,
+     "tier": 1
+    },
+    {
+     "tile": [
+      2,
+      13
+     ],
+     "k": "stash",
+     "item": "stasis",
+     "n": 3,
+     "tier": 1
+    }
+   ],
+   "spawns": {
+    "default": [
+     22,
+     8
+    ]
+   },
+   "grid": [
+    -96,
+    4
+   ],
+   "pkey": "ferrox",
+   "npcs": [
+    {
+     "x": 15,
+     "y": 7,
+     "art": "miner",
+     "face": "down",
+     "t": [],
+     "id": "sec487_tr0",
+     "trainer": {
+      "cls": "Miner",
+      "route": 1,
+      "name": "Ines"
+     }
+    },
+    {
+     "x": 13,
+     "y": 7,
+     "art": "guard",
+     "face": "down",
+     "t": [],
+     "id": "sec487_tr1",
+     "trainer": {
+      "cls": "Rail Hand",
+      "route": 1,
+      "name": "Fenn"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 1,
+     "y": 11,
+     "mon": "Anvilox"
+    },
+    {
+     "x": 19,
+     "y": 11,
+     "mon": "Gongorr"
+    }
+   ]
+  },
+  "502": {
+   "id": "502",
+   "name": "Ferrox Relay Tower",
+   "planet": "Ferrox",
+   "dir": "02_ferrox",
+   "type": "landmark",
+   "img": "art/sections_game/02_ferrox/502_ferrox_relay_tower.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "",
+   "edges": {
+    "right": {
+     "to": "487",
+     "range": [
+      9,
+      12
+     ],
+     "offset": -1
+    }
+   },
+   "warps": [
+    {
+     "tile": [
+      11,
+      7
+     ],
+     "to": "039",
+     "at": [
+      9,
+      16
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    },
+    {
+     "tile": [
+      12,
+      7
+     ],
+     "to": "039",
+     "at": [
+      10,
+      16
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      5,
+      13
+     ],
+     "k": "stash",
+     "item": "tether",
+     "n": 1,
+     "tier": 1
+    }
+   ],
+   "spawns": {
+    "default": [
+     22,
+     9
+    ]
+   },
+   "grid": [
+    -120,
+    3
+   ],
+   "pkey": "ferrox",
+   "npcs": [
+    {
+     "x": 12,
+     "y": 10,
+     "art": "miner",
+     "face": "down",
+     "t": [
+      "Furnace worker: The heat up here peels paint off ships. Keep your Alienmon hydrated."
+     ],
+     "stay": true,
+     "src": "n:502:0"
+    },
+    {
+     "x": 4,
+     "y": 11,
+     "art": "guard",
+     "face": "down",
+     "t": [
+      "Guard: Ferrox Tower is just ahead. Hank Briggs is the Keeper. Good luck, kid."
+     ],
+     "stay": true,
+     "src": "n:502:1"
+    }
+   ],
+   "mons": [
+    {
+     "x": 19,
+     "y": 13,
+     "mon": "Gearhound"
+    },
+    {
+     "x": 8,
+     "y": 13,
+     "mon": "Coilossus"
+    }
+   ]
+  },
+  "486": {
+   "id": "486",
+   "name": "Railyard Junction",
+   "planet": "Ferrox",
+   "dir": "02_ferrox",
+   "type": "route",
+   "img": "art/sections_game/02_ferrox/486_railyard_junction.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "",
+   "edges": {
+    "top": {
+     "to": "487",
+     "range": [
+      4,
+      9
+     ],
+     "offset": 2
+    },
+    "bottom": {
+     "to": "488",
+     "range": [
+      11,
+      19
+     ],
+     "offset": -8
+    },
+    "left": {
+     "to": "495",
+     "range": [
+      3,
+      4
+     ],
+     "offset": 5
+    }
+   },
+   "warps": [],
+   "objects": [
+    {
+     "tile": [
+      21,
+      2
+     ],
+     "k": "stash",
+     "item": "stasis",
+     "n": 3,
+     "tier": 1
+    },
+    {
+     "tile": [
+      1,
+      11
+     ],
+     "k": "stash",
+     "item": "stasis",
+     "n": 3,
+     "tier": 1
+    }
+   ],
+   "spawns": {
+    "default": [
+     4,
+     1
+    ]
+   },
+   "grid": [
+    -94,
+    20
+   ],
+   "pkey": "ferrox",
+   "npcs": [
+    {
+     "x": 20,
+     "y": 5,
+     "art": "technician",
+     "face": "left",
+     "t": [],
+     "id": "sec486_tr0",
+     "trainer": {
+      "cls": "Scrapper",
+      "route": 1,
+      "name": "Sol"
+     }
+    },
+    {
+     "x": 5,
+     "y": 11,
+     "art": "miner",
+     "face": "up",
+     "t": [],
+     "id": "sec486_tr1",
+     "trainer": {
+      "cls": "Miner",
+      "route": 1,
+      "name": "Ines"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 1,
+     "y": 12,
+     "mon": "Gearhound"
+    },
+    {
+     "x": 22,
+     "y": 2,
+     "mon": "Coilossus"
+    }
+   ]
+  },
+  "488": {
+   "id": "488",
+   "name": "Scrap Slope",
+   "planet": "Ferrox",
+   "dir": "02_ferrox",
+   "type": "route",
+   "img": "art/sections_game/02_ferrox/488_scrap_slope.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "",
+   "edges": {
+    "top": {
+     "to": "486",
+     "range": [
+      3,
+      8
+     ],
+     "offset": 8
+    },
+    "bottom": {
+     "to": "491",
+     "range": [
+      13,
+      18
+     ],
+     "offset": -9
+    }
+   },
+   "warps": [],
+   "objects": [
+    {
+     "tile": [
+      21,
+      10
+     ],
+     "k": "stash",
+     "item": "revive",
+     "n": 1,
+     "tier": 1
+    },
+    {
+     "tile": [
+      4,
+      9
+     ],
+     "k": "stash",
+     "item": "dust",
+     "n": 150,
+     "tier": 1
+    }
+   ],
+   "spawns": {
+    "default": [
+     3,
+     1
+    ]
+   },
+   "grid": [
+    -86,
+    36
+   ],
+   "pkey": "ferrox",
+   "npcs": [
+    {
+     "x": 7,
+     "y": 10,
+     "art": "guard",
+     "face": "up",
+     "t": [],
+     "id": "sec488_tr0",
+     "trainer": {
+      "cls": "Rail Hand",
+      "route": 1,
+      "name": "Vela"
+     }
+    },
+    {
+     "x": 19,
+     "y": 11,
+     "art": "technician",
+     "face": "down",
+     "t": [],
+     "id": "sec488_tr1",
+     "trainer": {
+      "cls": "Scrapper",
+      "route": 1,
+      "name": "Suri"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 21,
+     "y": 13,
+     "mon": "Gearhound"
+    },
+    {
+     "x": 3,
+     "y": 8,
+     "mon": "Coilossus"
+    }
+   ]
+  },
+  "491": {
+   "id": "491",
+   "name": "Railcar Maze",
+   "planet": "Ferrox",
+   "dir": "02_ferrox",
+   "type": "route",
+   "img": "art/sections_game/02_ferrox/491_railcar_maze.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "",
+   "edges": {
+    "top": {
+     "to": "488",
+     "range": [
+      4,
+      7
+     ],
+     "offset": 9
+    }
+   },
+   "warps": [],
+   "objects": [
+    {
+     "tile": [
+      18,
+      14
+     ],
+     "k": "chest",
+     "item": "harmonic",
+     "n": 3,
+     "why": "Railcar Maze dead end reward"
+    },
+    {
+     "tile": [
+      21,
+      14
+     ],
+     "k": "stash",
+     "item": "dust",
+     "n": 150,
+     "tier": 1
+    },
+    {
+     "tile": [
+      1,
+      5
+     ],
+     "k": "stash",
+     "item": "dust",
+     "n": 150,
+     "tier": 1
+    }
+   ],
+   "spawns": {
+    "default": [
+     4,
+     1
+    ]
+   },
+   "grid": [
+    -77,
+    52
+   ],
+   "pkey": "ferrox",
+   "npcs": [
+    {
+     "x": 12,
+     "y": 5,
+     "art": "guard",
+     "face": "down",
+     "t": [],
+     "id": "sec491_tr0",
+     "trainer": {
+      "cls": "Rail Hand",
+      "route": 1,
+      "name": "Pell"
+     }
+    },
+    {
+     "x": 3,
+     "y": 6,
+     "art": "technician",
+     "face": "right",
+     "t": [],
+     "id": "sec491_tr1",
+     "trainer": {
+      "cls": "Scrapper",
+      "route": 1,
+      "name": "Rhee"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 19,
+     "y": 6,
+     "mon": "Anvilox"
+    },
+    {
+     "x": 8,
+     "y": 11,
+     "mon": "Gongorr"
+    }
+   ]
+  },
+  "495": {
+   "id": "495",
+   "name": "Rustvale Back Lot",
+   "planet": "Ferrox",
+   "dir": "02_ferrox",
+   "type": "landmark",
+   "img": "art/sections_game/02_ferrox/495_rustvale_back_lot.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "",
+   "edges": {
+    "right": {
+     "to": "486",
+     "range": [
+      8,
+      8
+     ],
+     "offset": -5
+    }
+   },
+   "warps": [
+    {
+     "tile": [
+      8,
+      6
+     ],
+     "to": "496",
+     "at": [
+      7,
+      15
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    },
+    {
+     "tile": [
+      9,
+      6
+     ],
+     "to": "496",
+     "at": [
+      12,
+      15
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      1,
+      9
+     ],
+     "k": "stash",
+     "item": "stasis",
+     "n": 3,
+     "tier": 1
+    }
+   ],
+   "spawns": {
+    "default": [
+     22,
+     8
+    ]
+   },
+   "grid": [
+    -118,
+    15
+   ],
+   "pkey": "ferrox",
+   "mons": [
+    {
+     "x": 7,
+     "y": 7,
+     "mon": "Anvilox"
+    },
+    {
+     "x": 18,
+     "y": 7,
+     "mon": "Gongorr"
+    }
+   ]
+  },
+  "496": {
+   "id": "496",
+   "name": "Helix Secret Lab",
+   "planet": "Ferrox",
+   "dir": "02_ferrox",
+   "type": "interior",
+   "img": "art/sections_game/02_ferrox/496_helix_secret_lab.png",
+   "tiles": [
+    20,
+    20
+   ],
+   "notes": "",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      16
+     ],
+     "to": "495",
+     "at": [
+      8,
+      7
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      12,
+      16
+     ],
+     "to": "495",
+     "at": [
+      8,
+      7
+     ],
+     "face": "down",
+     "kind": "door"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "door": [
+     7,
+     15
+    ],
+    "default": [
+     7,
+     15
+    ]
+   },
+   "parent": "495",
+   "pkey": "ferrox"
+  },
+  "498": {
+   "id": "498",
+   "name": "Salvage Shop",
+   "planet": "Ferrox",
+   "dir": "02_ferrox",
+   "type": "interior",
+   "img": "art/sections_game/02_ferrox/498_salvage_shop.png",
+   "tiles": [
+    20,
+    20
+   ],
+   "notes": "",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      9,
+      15
+     ],
+     "to": "back",
+     "at": [
+      9,
+      14
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      10,
+      15
+     ],
+     "to": "back",
+     "at": [
+      10,
+      14
+     ],
+     "face": "down",
+     "kind": "door"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     9,
+     14
+    ]
+   },
+   "parent": "506",
+   "pkey": "ferrox"
+  },
+  "499": {
+   "id": "499",
+   "name": "Engine Garage",
+   "planet": "Ferrox",
+   "dir": "02_ferrox",
+   "type": "interior",
+   "img": "art/sections_game/02_ferrox/499_engine_garage.png",
+   "tiles": [
+    20,
+    20
+   ],
+   "notes": "",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      9,
+      15
+     ],
+     "to": "back",
+     "at": [
+      9,
+      14
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      10,
+      15
+     ],
+     "to": "back",
+     "at": [
+      10,
+      14
+     ],
+     "face": "down",
+     "kind": "door"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     9,
+     14
+    ]
+   },
+   "parent": "505",
+   "pkey": "ferrox"
+  },
+  "500": {
+   "id": "500",
+   "name": "Crane Operator's Bunk",
+   "planet": "Ferrox",
+   "dir": "02_ferrox",
+   "type": "interior",
+   "img": "art/sections_game/02_ferrox/500_crane_operator_s_bunk.png",
+   "tiles": [
+    20,
+    20
+   ],
+   "notes": "",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      9,
+      17
+     ],
+     "to": "back",
+     "at": [
+      9,
+      16
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      10,
+      17
+     ],
+     "to": "back",
+     "at": [
+      10,
+      16
+     ],
+     "face": "down",
+     "kind": "door"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     9,
+     16
+    ]
+   },
+   "parent": "505",
+   "pkey": "ferrox"
   }
  },
  "connections": [
@@ -28344,30 +29866,16 @@
   },
   {
    "from_id": "029",
-   "edge": "right",
-   "tile_range": [
-    6,
-    8
-   ],
-   "to_id": "030",
-   "to_edge": "left",
-   "to_tile": [
-    5,
-    9
-   ]
-  },
-  {
-   "from_id": "030",
    "edge": "left",
    "tile_range": [
-    5,
-    9
+    12,
+    13
    ],
-   "to_id": "029",
+   "to_id": "505",
    "to_edge": "right",
    "to_tile": [
-    6,
-    8
+    9,
+    11
    ]
   },
   {
@@ -28377,193 +29885,25 @@
     5,
     9
    ],
-   "to_id": "034",
+   "to_id": "505",
    "to_edge": "left",
    "to_tile": [
-    5,
-    8
+    9,
+    11
    ]
   },
   {
-   "from_id": "034",
+   "from_id": "030",
    "edge": "left",
    "tile_range": [
     5,
-    8
-   ],
-   "to_id": "030",
-   "to_edge": "right",
-   "to_tile": [
-    5,
     9
-   ]
-  },
-  {
-   "from_id": "034",
-   "edge": "right",
-   "tile_range": [
-    5,
-    8
    ],
-   "to_id": "035",
-   "to_edge": "left",
-   "to_tile": [
-    5,
-    8
-   ]
-  },
-  {
-   "from_id": "035",
-   "edge": "left",
-   "tile_range": [
-    5,
-    8
-   ],
-   "to_id": "034",
+   "to_id": "485",
    "to_edge": "right",
    "to_tile": [
     5,
     8
-   ]
-  },
-  {
-   "from_id": "035",
-   "edge": "right",
-   "tile_range": [
-    5,
-    8
-   ],
-   "to_id": "036",
-   "to_edge": "left",
-   "to_tile": [
-    5,
-    8
-   ]
-  },
-  {
-   "from_id": "036",
-   "edge": "left",
-   "tile_range": [
-    5,
-    8
-   ],
-   "to_id": "035",
-   "to_edge": "right",
-   "to_tile": [
-    5,
-    8
-   ]
-  },
-  {
-   "from_id": "036",
-   "edge": "right",
-   "tile_range": [
-    5,
-    8
-   ],
-   "to_id": "037",
-   "to_edge": "left",
-   "to_tile": [
-    5,
-    10
-   ]
-  },
-  {
-   "from_id": "037",
-   "edge": "left",
-   "tile_range": [
-    5,
-    10
-   ],
-   "to_id": "036",
-   "to_edge": "right",
-   "to_tile": [
-    5,
-    8
-   ]
-  },
-  {
-   "from_id": "037",
-   "edge": "right",
-   "tile_range": [
-    5,
-    10
-   ],
-   "to_id": "038",
-   "to_edge": "left",
-   "to_tile": [
-    5,
-    8
-   ]
-  },
-  {
-   "from_id": "038",
-   "edge": "left",
-   "tile_range": [
-    5,
-    8
-   ],
-   "to_id": "037",
-   "to_edge": "right",
-   "to_tile": [
-    5,
-    10
-   ]
-  },
-  {
-   "from_id": "038",
-   "edge": "right",
-   "tile_range": [
-    6,
-    7
-   ],
-   "to_id": "039",
-   "to_edge": "bottom",
-   "to_tile": [
-    6,
-    9
-   ]
-  },
-  {
-   "from_id": "039",
-   "edge": "bottom",
-   "tile_range": [
-    6,
-    9
-   ],
-   "to_id": "038",
-   "to_edge": "right",
-   "to_tile": [
-    6,
-    7
-   ]
-  },
-  {
-   "from_id": "039",
-   "edge": "top",
-   "tile_range": [
-    6,
-    9
-   ],
-   "to_id": "040",
-   "to_edge": "bottom",
-   "to_tile": [
-    6,
-    9
-   ]
-  },
-  {
-   "from_id": "040",
-   "edge": "bottom",
-   "tile_range": [
-    6,
-    9
-   ],
-   "to_id": "039",
-   "to_edge": "top",
-   "to_tile": [
-    6,
-    9
    ]
   },
   {
@@ -30928,6 +32268,440 @@
    "to_id": "arrival",
    "to_edge": null,
    "to_tile": null
+  },
+  {
+   "from_id": "505",
+   "edge": "right",
+   "tile_range": [
+    9,
+    11
+   ],
+   "to_id": "029",
+   "to_edge": "left",
+   "to_tile": [
+    12,
+    13
+   ]
+  },
+  {
+   "from_id": "505",
+   "edge": "left",
+   "tile_range": [
+    9,
+    11
+   ],
+   "to_id": "030",
+   "to_edge": "right",
+   "to_tile": [
+    5,
+    9
+   ]
+  },
+  {
+   "from_id": "506",
+   "edge": "bottom",
+   "tile_range": [
+    10,
+    14
+   ],
+   "to_id": "487",
+   "to_edge": "top",
+   "to_tile": [
+    5,
+    10
+   ]
+  },
+  {
+   "from_id": "507",
+   "edge": "top",
+   "tile_range": [
+    14,
+    18
+   ],
+   "to_id": "494",
+   "to_edge": "bottom",
+   "to_tile": [
+    4,
+    9
+   ]
+  },
+  {
+   "from_id": "507",
+   "edge": "left",
+   "tile_range": [
+    7,
+    10
+   ],
+   "to_id": "476",
+   "to_edge": "right",
+   "to_tile": [
+    9,
+    11
+   ]
+  },
+  {
+   "from_id": "485",
+   "edge": "right",
+   "tile_range": [
+    5,
+    8
+   ],
+   "to_id": "030",
+   "to_edge": "left",
+   "to_tile": [
+    5,
+    9
+   ]
+  },
+  {
+   "from_id": "485",
+   "edge": "top",
+   "tile_range": [
+    10,
+    13
+   ],
+   "to_id": "489",
+   "to_edge": "bottom",
+   "to_tile": [
+    10,
+    13
+   ]
+  },
+  {
+   "from_id": "485",
+   "edge": "bottom",
+   "tile_range": [
+    10,
+    14
+   ],
+   "to_id": "490",
+   "to_edge": "top",
+   "to_tile": [
+    4,
+    9
+   ]
+  },
+  {
+   "from_id": "485",
+   "edge": "left",
+   "tile_range": [
+    5,
+    8
+   ],
+   "to_id": "487",
+   "to_edge": "right",
+   "to_tile": [
+    8,
+    9
+   ]
+  },
+  {
+   "from_id": "489",
+   "edge": "bottom",
+   "tile_range": [
+    10,
+    13
+   ],
+   "to_id": "485",
+   "to_edge": "top",
+   "to_tile": [
+    10,
+    13
+   ]
+  },
+  {
+   "from_id": "489",
+   "edge": "left",
+   "tile_range": [
+    2,
+    9
+   ],
+   "to_id": "497",
+   "to_edge": "right",
+   "to_tile": [
+    9,
+    11
+   ]
+  },
+  {
+   "from_id": "489",
+   "edge": "top",
+   "tile_range": [
+    10,
+    13
+   ],
+   "to_id": "481",
+   "to_edge": "bottom",
+   "to_tile": [
+    10,
+    14
+   ]
+  },
+  {
+   "from_id": "497",
+   "edge": "right",
+   "tile_range": [
+    9,
+    11
+   ],
+   "to_id": "489",
+   "to_edge": "left",
+   "to_tile": [
+    2,
+    9
+   ]
+  },
+  {
+   "from_id": "481",
+   "edge": "bottom",
+   "tile_range": [
+    10,
+    14
+   ],
+   "to_id": "489",
+   "to_edge": "top",
+   "to_tile": [
+    10,
+    13
+   ]
+  },
+  {
+   "from_id": "490",
+   "edge": "top",
+   "tile_range": [
+    4,
+    9
+   ],
+   "to_id": "485",
+   "to_edge": "bottom",
+   "to_tile": [
+    10,
+    14
+   ]
+  },
+  {
+   "from_id": "490",
+   "edge": "bottom",
+   "tile_range": [
+    4,
+    9
+   ],
+   "to_id": "494",
+   "to_edge": "top",
+   "to_tile": [
+    5,
+    13
+   ]
+  },
+  {
+   "from_id": "494",
+   "edge": "top",
+   "tile_range": [
+    5,
+    13
+   ],
+   "to_id": "490",
+   "to_edge": "bottom",
+   "to_tile": [
+    4,
+    9
+   ]
+  },
+  {
+   "from_id": "494",
+   "edge": "bottom",
+   "tile_range": [
+    4,
+    9
+   ],
+   "to_id": "507",
+   "to_edge": "top",
+   "to_tile": [
+    14,
+    18
+   ]
+  },
+  {
+   "from_id": "476",
+   "edge": "right",
+   "tile_range": [
+    9,
+    11
+   ],
+   "to_id": "507",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    10
+   ]
+  },
+  {
+   "from_id": "487",
+   "edge": "right",
+   "tile_range": [
+    8,
+    9
+   ],
+   "to_id": "485",
+   "to_edge": "left",
+   "to_tile": [
+    5,
+    8
+   ]
+  },
+  {
+   "from_id": "487",
+   "edge": "top",
+   "tile_range": [
+    5,
+    10
+   ],
+   "to_id": "506",
+   "to_edge": "bottom",
+   "to_tile": [
+    10,
+    14
+   ]
+  },
+  {
+   "from_id": "487",
+   "edge": "left",
+   "tile_range": [
+    8,
+    9
+   ],
+   "to_id": "502",
+   "to_edge": "right",
+   "to_tile": [
+    9,
+    12
+   ]
+  },
+  {
+   "from_id": "487",
+   "edge": "bottom",
+   "tile_range": [
+    6,
+    10
+   ],
+   "to_id": "486",
+   "to_edge": "top",
+   "to_tile": [
+    4,
+    9
+   ]
+  },
+  {
+   "from_id": "502",
+   "edge": "right",
+   "tile_range": [
+    9,
+    12
+   ],
+   "to_id": "487",
+   "to_edge": "left",
+   "to_tile": [
+    8,
+    9
+   ]
+  },
+  {
+   "from_id": "486",
+   "edge": "top",
+   "tile_range": [
+    4,
+    9
+   ],
+   "to_id": "487",
+   "to_edge": "bottom",
+   "to_tile": [
+    6,
+    10
+   ]
+  },
+  {
+   "from_id": "486",
+   "edge": "bottom",
+   "tile_range": [
+    11,
+    19
+   ],
+   "to_id": "488",
+   "to_edge": "top",
+   "to_tile": [
+    3,
+    8
+   ]
+  },
+  {
+   "from_id": "486",
+   "edge": "left",
+   "tile_range": [
+    3,
+    4
+   ],
+   "to_id": "495",
+   "to_edge": "right",
+   "to_tile": [
+    8,
+    8
+   ]
+  },
+  {
+   "from_id": "488",
+   "edge": "top",
+   "tile_range": [
+    3,
+    8
+   ],
+   "to_id": "486",
+   "to_edge": "bottom",
+   "to_tile": [
+    11,
+    19
+   ]
+  },
+  {
+   "from_id": "488",
+   "edge": "bottom",
+   "tile_range": [
+    13,
+    18
+   ],
+   "to_id": "491",
+   "to_edge": "top",
+   "to_tile": [
+    4,
+    7
+   ]
+  },
+  {
+   "from_id": "491",
+   "edge": "top",
+   "tile_range": [
+    4,
+    7
+   ],
+   "to_id": "488",
+   "to_edge": "bottom",
+   "to_tile": [
+    13,
+    18
+   ]
+  },
+  {
+   "from_id": "495",
+   "edge": "right",
+   "tile_range": [
+    8,
+    8
+   ],
+   "to_id": "486",
+   "to_edge": "left",
+   "to_tile": [
+    3,
+    4
+   ]
   }
  ]
 }

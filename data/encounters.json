@@ -1672,473 +1672,6 @@
    }
   ]
  },
- "034": {
-  "planet": "Ferrox",
-  "name": "Scrap Route Part A",
-  "habitat": "scrapyard",
-  "encounters": [
-   {
-    "n": 33,
-    "name": "Boltling",
-    "types": [
-     "Alloy"
-    ],
-    "rarity": "uncommon",
-    "weight": 5,
-    "levels": [
-     5,
-     7
-    ],
-    "method": "walk",
-    "time": "any"
-   },
-   {
-    "n": 36,
-    "name": "Coilet",
-    "types": [
-     "Alloy",
-     "Volt"
-    ],
-    "rarity": "uncommon",
-    "weight": 5,
-    "levels": [
-     5,
-     7
-    ],
-    "method": "walk",
-    "time": "any"
-   },
-   {
-    "n": 38,
-    "name": "Rivetoad",
-    "types": [
-     "Alloy"
-    ],
-    "rarity": "uncommon",
-    "weight": 5,
-    "levels": [
-     5,
-     7
-    ],
-    "method": "walk",
-    "time": "any"
-   },
-   {
-    "n": 40,
-    "name": "Gleamgrub",
-    "types": [
-     "Toxin",
-     "Alloy"
-    ],
-    "rarity": "uncommon",
-    "weight": 5,
-    "levels": [
-     5,
-     7
-    ],
-    "method": "walk",
-    "time": "any"
-   },
-   {
-    "n": 44,
-    "name": "Gongit",
-    "types": [
-     "Sonic",
-     "Alloy"
-    ],
-    "rarity": "uncommon",
-    "weight": 5,
-    "levels": [
-     5,
-     7
-    ],
-    "method": "walk",
-    "time": "any"
-   },
-   {
-    "n": 46,
-    "name": "Nutbug",
-    "types": [
-     "Swarm",
-     "Alloy"
-    ],
-    "rarity": "uncommon",
-    "weight": 5,
-    "levels": [
-     5,
-     7
-    ],
-    "method": "walk",
-    "time": "any"
-   },
-   {
-    "n": 48,
-    "name": "Forgemaul",
-    "types": [
-     "Alloy"
-    ],
-    "rarity": "common",
-    "weight": 10,
-    "levels": [
-     5,
-     7
-    ],
-    "method": "walk",
-    "time": "any"
-   }
-  ]
- },
- "035": {
-  "planet": "Ferrox",
-  "name": "Scrap Route Part B",
-  "habitat": "scrapyard",
-  "encounters": [
-   {
-    "n": 34,
-    "name": "Gearhound",
-    "types": [
-     "Alloy"
-    ],
-    "rarity": "uncommon",
-    "weight": 5,
-    "levels": [
-     8,
-     10
-    ],
-    "method": "walk",
-    "time": "any"
-   },
-   {
-    "n": 37,
-    "name": "Coilossus",
-    "types": [
-     "Alloy",
-     "Volt"
-    ],
-    "rarity": "common",
-    "weight": 10,
-    "levels": [
-     8,
-     10
-    ],
-    "method": "walk",
-    "time": "any"
-   },
-   {
-    "n": 39,
-    "name": "Railbeast",
-    "types": [
-     "Alloy"
-    ],
-    "rarity": "common",
-    "weight": 10,
-    "levels": [
-     8,
-     10
-    ],
-    "method": "walk",
-    "time": "any"
-   },
-   {
-    "n": 42,
-    "name": "Smeltpup",
-    "types": [
-     "Magma",
-     "Alloy"
-    ],
-    "rarity": "uncommon",
-    "weight": 5,
-    "levels": [
-     6,
-     8
-    ],
-    "method": "walk",
-    "time": "any"
-   },
-   {
-    "n": 45,
-    "name": "Gongorr",
-    "types": [
-     "Sonic",
-     "Alloy"
-    ],
-    "rarity": "common",
-    "weight": 10,
-    "levels": [
-     8,
-     10
-    ],
-    "method": "walk",
-    "time": "any"
-   },
-   {
-    "n": 48,
-    "name": "Forgemaul",
-    "types": [
-     "Alloy"
-    ],
-    "rarity": "common",
-    "weight": 10,
-    "levels": [
-     6,
-     8
-    ],
-    "method": "walk",
-    "time": "any"
-   },
-   {
-    "n": 49,
-    "name": "Magnub",
-    "types": [
-     "Alloy",
-     "Gravity"
-    ],
-    "rarity": "uncommon",
-    "weight": 5,
-    "levels": [
-     6,
-     8
-    ],
-    "method": "walk",
-    "time": "any"
-   }
-  ]
- },
- "036": {
-  "planet": "Ferrox",
-  "name": "Crane Yard",
-  "habitat": "scrapyard",
-  "encounters": [
-   {
-    "n": 32,
-    "name": "Dynamotor",
-    "types": [
-     "Volt",
-     "Gravity"
-    ],
-    "rarity": "common",
-    "weight": 10,
-    "levels": [
-     9,
-     12
-    ],
-    "method": "walk",
-    "time": "any"
-   },
-   {
-    "n": 35,
-    "name": "Scraptitan",
-    "types": [
-     "Alloy"
-    ],
-    "rarity": "common",
-    "weight": 10,
-    "levels": [
-     9,
-     12
-    ],
-    "method": "walk",
-    "time": "any"
-   },
-   {
-    "n": 39,
-    "name": "Railbeast",
-    "types": [
-     "Alloy"
-    ],
-    "rarity": "common",
-    "weight": 10,
-    "levels": [
-     9,
-     12
-    ],
-    "method": "walk",
-    "time": "any"
-   },
-   {
-    "n": 41,
-    "name": "Corrovore",
-    "types": [
-     "Toxin",
-     "Alloy"
-    ],
-    "rarity": "common",
-    "weight": 10,
-    "levels": [
-     9,
-     12
-    ],
-    "method": "walk",
-    "time": "any"
-   },
-   {
-    "n": 43,
-    "name": "Anvilox",
-    "types": [
-     "Magma",
-     "Alloy"
-    ],
-    "rarity": "common",
-    "weight": 10,
-    "levels": [
-     9,
-     12
-    ],
-    "method": "walk",
-    "time": "any"
-   },
-   {
-    "n": 47,
-    "name": "Screwmantis",
-    "types": [
-     "Swarm",
-     "Alloy"
-    ],
-    "rarity": "rare",
-    "weight": 1,
-    "levels": [
-     9,
-     12
-    ],
-    "method": "walk",
-    "time": "any"
-   },
-   {
-    "n": 50,
-    "name": "Magnaxis",
-    "types": [
-     "Alloy",
-     "Gravity"
-    ],
-    "rarity": "common",
-    "weight": 10,
-    "levels": [
-     9,
-     12
-    ],
-    "method": "walk",
-    "time": "any"
-   }
-  ]
- },
- "038": {
-  "planet": "Ferrox",
-  "name": "Furnace Ridge",
-  "habitat": "scrapyard",
-  "encounters": [
-   {
-    "n": 32,
-    "name": "Dynamotor",
-    "types": [
-     "Volt",
-     "Gravity"
-    ],
-    "rarity": "common",
-    "weight": 10,
-    "levels": [
-     10,
-     12
-    ],
-    "method": "walk",
-    "time": "any"
-   },
-   {
-    "n": 35,
-    "name": "Scraptitan",
-    "types": [
-     "Alloy"
-    ],
-    "rarity": "common",
-    "weight": 10,
-    "levels": [
-     10,
-     12
-    ],
-    "method": "walk",
-    "time": "any"
-   },
-   {
-    "n": 37,
-    "name": "Coilossus",
-    "types": [
-     "Alloy",
-     "Volt"
-    ],
-    "rarity": "common",
-    "weight": 10,
-    "levels": [
-     10,
-     12
-    ],
-    "method": "walk",
-    "time": "any"
-   },
-   {
-    "n": 41,
-    "name": "Corrovore",
-    "types": [
-     "Toxin",
-     "Alloy"
-    ],
-    "rarity": "common",
-    "weight": 10,
-    "levels": [
-     10,
-     12
-    ],
-    "method": "walk",
-    "time": "any"
-   },
-   {
-    "n": 43,
-    "name": "Anvilox",
-    "types": [
-     "Magma",
-     "Alloy"
-    ],
-    "rarity": "common",
-    "weight": 10,
-    "levels": [
-     10,
-     12
-    ],
-    "method": "walk",
-    "time": "any"
-   },
-   {
-    "n": 45,
-    "name": "Gongorr",
-    "types": [
-     "Sonic",
-     "Alloy"
-    ],
-    "rarity": "common",
-    "weight": 10,
-    "levels": [
-     10,
-     12
-    ],
-    "method": "walk",
-    "time": "any"
-   },
-   {
-    "n": 50,
-    "name": "Magnaxis",
-    "types": [
-     "Alloy",
-     "Gravity"
-    ],
-    "rarity": "common",
-    "weight": 10,
-    "levels": [
-     10,
-     12
-    ],
-    "method": "walk",
-    "time": "any"
-   }
-  ]
- },
  "045": {
   "planet": "Sporeholm",
   "name": "Lantern Marsh Part A",
@@ -8977,6 +8510,1461 @@
     "method": "walk",
     "time": "any",
     "fill": true
+   }
+  ]
+ },
+ "485": {
+  "planet": "Ferrox",
+  "name": "Scrapyard Crossing",
+  "habitat": "scrapyard",
+  "encounters": [
+   {
+    "n": 33,
+    "name": "Boltling",
+    "types": [
+     "Alloy"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     5,
+     7
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 36,
+    "name": "Coilet",
+    "types": [
+     "Alloy",
+     "Volt"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     5,
+     7
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 38,
+    "name": "Rivetoad",
+    "types": [
+     "Alloy"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     5,
+     7
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 40,
+    "name": "Gleamgrub",
+    "types": [
+     "Toxin",
+     "Alloy"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     5,
+     7
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 44,
+    "name": "Gongit",
+    "types": [
+     "Sonic",
+     "Alloy"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     5,
+     7
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 46,
+    "name": "Nutbug",
+    "types": [
+     "Swarm",
+     "Alloy"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     5,
+     7
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 48,
+    "name": "Forgemaul",
+    "types": [
+     "Alloy"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     5,
+     7
+    ],
+    "method": "walk",
+    "time": "any"
+   }
+  ]
+ },
+ "490": {
+  "planet": "Ferrox",
+  "name": "Coolant Pond",
+  "habitat": "scrapyard",
+  "encounters": [
+   {
+    "n": 33,
+    "name": "Boltling",
+    "types": [
+     "Alloy"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     5,
+     7
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 36,
+    "name": "Coilet",
+    "types": [
+     "Alloy",
+     "Volt"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     5,
+     7
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 38,
+    "name": "Rivetoad",
+    "types": [
+     "Alloy"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     5,
+     7
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 40,
+    "name": "Gleamgrub",
+    "types": [
+     "Toxin",
+     "Alloy"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     5,
+     7
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 44,
+    "name": "Gongit",
+    "types": [
+     "Sonic",
+     "Alloy"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     5,
+     7
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 46,
+    "name": "Nutbug",
+    "types": [
+     "Swarm",
+     "Alloy"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     5,
+     7
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 48,
+    "name": "Forgemaul",
+    "types": [
+     "Alloy"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     5,
+     7
+    ],
+    "method": "walk",
+    "time": "any"
+   }
+  ]
+ },
+ "494": {
+  "planet": "Ferrox",
+  "name": "Salvage Flats",
+  "habitat": "scrapyard",
+  "encounters": [
+   {
+    "n": 34,
+    "name": "Gearhound",
+    "types": [
+     "Alloy"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     8,
+     10
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 37,
+    "name": "Coilossus",
+    "types": [
+     "Alloy",
+     "Volt"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     8,
+     10
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 39,
+    "name": "Railbeast",
+    "types": [
+     "Alloy"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     8,
+     10
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 42,
+    "name": "Smeltpup",
+    "types": [
+     "Magma",
+     "Alloy"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     6,
+     8
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 45,
+    "name": "Gongorr",
+    "types": [
+     "Sonic",
+     "Alloy"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     8,
+     10
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 48,
+    "name": "Forgemaul",
+    "types": [
+     "Alloy"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     6,
+     8
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 49,
+    "name": "Magnub",
+    "types": [
+     "Alloy",
+     "Gravity"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     6,
+     8
+    ],
+    "method": "walk",
+    "time": "any"
+   }
+  ]
+ },
+ "486": {
+  "planet": "Ferrox",
+  "name": "Railyard Junction",
+  "habitat": "scrapyard",
+  "encounters": [
+   {
+    "n": 34,
+    "name": "Gearhound",
+    "types": [
+     "Alloy"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     8,
+     10
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 37,
+    "name": "Coilossus",
+    "types": [
+     "Alloy",
+     "Volt"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     8,
+     10
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 39,
+    "name": "Railbeast",
+    "types": [
+     "Alloy"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     8,
+     10
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 42,
+    "name": "Smeltpup",
+    "types": [
+     "Magma",
+     "Alloy"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     6,
+     8
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 45,
+    "name": "Gongorr",
+    "types": [
+     "Sonic",
+     "Alloy"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     8,
+     10
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 48,
+    "name": "Forgemaul",
+    "types": [
+     "Alloy"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     6,
+     8
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 49,
+    "name": "Magnub",
+    "types": [
+     "Alloy",
+     "Gravity"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     6,
+     8
+    ],
+    "method": "walk",
+    "time": "any"
+   }
+  ]
+ },
+ "489": {
+  "planet": "Ferrox",
+  "name": "Crane Overlook",
+  "habitat": "scrapyard",
+  "encounters": [
+   {
+    "n": 32,
+    "name": "Dynamotor",
+    "types": [
+     "Volt",
+     "Gravity"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     9,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 35,
+    "name": "Scraptitan",
+    "types": [
+     "Alloy"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     9,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 39,
+    "name": "Railbeast",
+    "types": [
+     "Alloy"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     9,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 41,
+    "name": "Corrovore",
+    "types": [
+     "Toxin",
+     "Alloy"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     9,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 43,
+    "name": "Anvilox",
+    "types": [
+     "Magma",
+     "Alloy"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     9,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 47,
+    "name": "Screwmantis",
+    "types": [
+     "Swarm",
+     "Alloy"
+    ],
+    "rarity": "rare",
+    "weight": 1,
+    "levels": [
+     9,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 50,
+    "name": "Magnaxis",
+    "types": [
+     "Alloy",
+     "Gravity"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     9,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   }
+  ]
+ },
+ "497": {
+  "planet": "Ferrox",
+  "name": "Scrap Hollow Grove",
+  "habitat": "scrapyard",
+  "encounters": [
+   {
+    "n": 32,
+    "name": "Dynamotor",
+    "types": [
+     "Volt",
+     "Gravity"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     9,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 35,
+    "name": "Scraptitan",
+    "types": [
+     "Alloy"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     9,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 39,
+    "name": "Railbeast",
+    "types": [
+     "Alloy"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     9,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 41,
+    "name": "Corrovore",
+    "types": [
+     "Toxin",
+     "Alloy"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     9,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 43,
+    "name": "Anvilox",
+    "types": [
+     "Magma",
+     "Alloy"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     9,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 47,
+    "name": "Screwmantis",
+    "types": [
+     "Swarm",
+     "Alloy"
+    ],
+    "rarity": "rare",
+    "weight": 1,
+    "levels": [
+     9,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 50,
+    "name": "Magnaxis",
+    "types": [
+     "Alloy",
+     "Gravity"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     9,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   }
+  ]
+ },
+ "488": {
+  "planet": "Ferrox",
+  "name": "Scrap Slope",
+  "habitat": "scrapyard",
+  "encounters": [
+   {
+    "n": 32,
+    "name": "Dynamotor",
+    "types": [
+     "Volt",
+     "Gravity"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     9,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 35,
+    "name": "Scraptitan",
+    "types": [
+     "Alloy"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     9,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 39,
+    "name": "Railbeast",
+    "types": [
+     "Alloy"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     9,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 41,
+    "name": "Corrovore",
+    "types": [
+     "Toxin",
+     "Alloy"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     9,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 43,
+    "name": "Anvilox",
+    "types": [
+     "Magma",
+     "Alloy"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     9,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 47,
+    "name": "Screwmantis",
+    "types": [
+     "Swarm",
+     "Alloy"
+    ],
+    "rarity": "rare",
+    "weight": 1,
+    "levels": [
+     9,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 50,
+    "name": "Magnaxis",
+    "types": [
+     "Alloy",
+     "Gravity"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     9,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   }
+  ]
+ },
+ "491": {
+  "planet": "Ferrox",
+  "name": "Railcar Maze",
+  "habitat": "scrapyard",
+  "encounters": [
+   {
+    "n": 32,
+    "name": "Dynamotor",
+    "types": [
+     "Volt",
+     "Gravity"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     10,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 35,
+    "name": "Scraptitan",
+    "types": [
+     "Alloy"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     10,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 37,
+    "name": "Coilossus",
+    "types": [
+     "Alloy",
+     "Volt"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     10,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 41,
+    "name": "Corrovore",
+    "types": [
+     "Toxin",
+     "Alloy"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     10,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 43,
+    "name": "Anvilox",
+    "types": [
+     "Magma",
+     "Alloy"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     10,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 45,
+    "name": "Gongorr",
+    "types": [
+     "Sonic",
+     "Alloy"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     10,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 50,
+    "name": "Magnaxis",
+    "types": [
+     "Alloy",
+     "Gravity"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     10,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   }
+  ]
+ },
+ "487": {
+  "planet": "Ferrox",
+  "name": "Coolant Fork",
+  "habitat": "scrapyard",
+  "encounters": [
+   {
+    "n": 32,
+    "name": "Dynamotor",
+    "types": [
+     "Volt",
+     "Gravity"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     10,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 35,
+    "name": "Scraptitan",
+    "types": [
+     "Alloy"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     10,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 37,
+    "name": "Coilossus",
+    "types": [
+     "Alloy",
+     "Volt"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     10,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 41,
+    "name": "Corrovore",
+    "types": [
+     "Toxin",
+     "Alloy"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     10,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 43,
+    "name": "Anvilox",
+    "types": [
+     "Magma",
+     "Alloy"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     10,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 45,
+    "name": "Gongorr",
+    "types": [
+     "Sonic",
+     "Alloy"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     10,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 50,
+    "name": "Magnaxis",
+    "types": [
+     "Alloy",
+     "Gravity"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     10,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   }
+  ]
+ },
+ "481": {
+  "planet": "Ferrox",
+  "name": "Deepcut Mine Entrance",
+  "habitat": "scrapyard",
+  "encounters": [
+   {
+    "n": 32,
+    "name": "Dynamotor",
+    "types": [
+     "Volt",
+     "Gravity"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     9,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 35,
+    "name": "Scraptitan",
+    "types": [
+     "Alloy"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     9,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 39,
+    "name": "Railbeast",
+    "types": [
+     "Alloy"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     9,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 41,
+    "name": "Corrovore",
+    "types": [
+     "Toxin",
+     "Alloy"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     9,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 43,
+    "name": "Anvilox",
+    "types": [
+     "Magma",
+     "Alloy"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     9,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 47,
+    "name": "Screwmantis",
+    "types": [
+     "Swarm",
+     "Alloy"
+    ],
+    "rarity": "rare",
+    "weight": 1,
+    "levels": [
+     9,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 50,
+    "name": "Magnaxis",
+    "types": [
+     "Alloy",
+     "Gravity"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     9,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   }
+  ]
+ },
+ "482": {
+  "planet": "Ferrox",
+  "name": "Deepcut Mine B1",
+  "habitat": "rock_cave",
+  "encounters": [
+   {
+    "n": 33,
+    "name": "Boltling",
+    "types": [
+     "Alloy"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     5,
+     7
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 38,
+    "name": "Rivetoad",
+    "types": [
+     "Alloy"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     5,
+     7
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 40,
+    "name": "Gleamgrub",
+    "types": [
+     "Toxin",
+     "Alloy"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     5,
+     7
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 44,
+    "name": "Gongit",
+    "types": [
+     "Sonic",
+     "Alloy"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     5,
+     7
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 46,
+    "name": "Nutbug",
+    "types": [
+     "Swarm",
+     "Alloy"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     5,
+     7
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 48,
+    "name": "Forgemaul",
+    "types": [
+     "Alloy"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     5,
+     7
+    ],
+    "method": "walk",
+    "time": "any"
+   }
+  ]
+ },
+ "483": {
+  "planet": "Ferrox",
+  "name": "Deepcut Mine B2",
+  "habitat": "rock_cave",
+  "encounters": [
+   {
+    "n": 35,
+    "name": "Scraptitan",
+    "types": [
+     "Alloy"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     9,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 39,
+    "name": "Railbeast",
+    "types": [
+     "Alloy"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     9,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 41,
+    "name": "Corrovore",
+    "types": [
+     "Toxin",
+     "Alloy"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     9,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 43,
+    "name": "Anvilox",
+    "types": [
+     "Magma",
+     "Alloy"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     9,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 47,
+    "name": "Screwmantis",
+    "types": [
+     "Swarm",
+     "Alloy"
+    ],
+    "rarity": "rare",
+    "weight": 1,
+    "levels": [
+     9,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 50,
+    "name": "Magnaxis",
+    "types": [
+     "Alloy",
+     "Gravity"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     9,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   }
+  ]
+ },
+ "484": {
+  "planet": "Ferrox",
+  "name": "Deepcut Mine Depths",
+  "habitat": "rock_cave",
+  "encounters": [
+   {
+    "n": 35,
+    "name": "Scraptitan",
+    "types": [
+     "Alloy"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     10,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 41,
+    "name": "Corrovore",
+    "types": [
+     "Toxin",
+     "Alloy"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     10,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 43,
+    "name": "Anvilox",
+    "types": [
+     "Magma",
+     "Alloy"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     10,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 45,
+    "name": "Gongorr",
+    "types": [
+     "Sonic",
+     "Alloy"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     10,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 50,
+    "name": "Magnaxis",
+    "types": [
+     "Alloy",
+     "Gravity"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     10,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
    }
   ]
  }
