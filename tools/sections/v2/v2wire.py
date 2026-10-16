@@ -6,7 +6,28 @@ A2={s['id']:s for s in json.load(open(S+'atlas_v2.json',encoding='utf-8'))['sect
 AT=json.load(open('art/sections/atlas.json',encoding='utf-8'));A1={s['id']:s for s in AT['sections']}
 L=json.load(open('data/sections/links.json',encoding='utf-8'))
 H=lambda x,y:{'tile':[x,y]}
-WIRE={'12':{
+WIRE={'14':{
+ 'ids':['%03d'%i for i in range(153,164)],
+ 'doors':[],'stairs':[],
+ 'objects':{
+  '153':[{'tile':[12,3],'k':'house','to':'181','why':'V2: the research dome'},{'tile':[13,3],'k':'house','to':'181','why':'V2: the research dome'},
+         {'tile':[3,5],'k':'bay','door':True,'t':['The carved stone hums. A warm light washes over your team.'],'why':'V2: healing stone on the arrival ring'}],
+ },
+ 'warps':[],
+ 'gates':{},
+ 'spawns':{'153':{'arrival':[3,8],'default':[3,8]}},
+ 'arrival':{'ystra':{'section':'153','why':'V2: the ring of carved stones'}},
+ 'reparent':{'181':'153','189':'153'},
+},'13':{
+ 'ids':['%03d'%i for i in range(146,153)],
+ 'doors':[],
+ 'stairs':[('147',[12,3],'148',[1,3]),('147',[13,3],'148',[2,3]),('148',[12,3],'149',[2,3]),('148',[13,3],'149',[3,3]),('149',[12,3],'150',[12,3]),('149',[13,3],'150',[13,3])],
+ 'objects':{},
+ 'warps':[],
+ 'gates':{},
+ 'spawns':{'146':{'arrival':[3,8],'default':[3,8]}},
+ 'arrival':{'apex':{'section':'146','why':'V2: the glass lift cabin at the left end of the terrace'}},
+},'12':{
  'ids':['%03d'%i for i in range(136,146)],
  'doors':[],'stairs':[],
  'objects':{

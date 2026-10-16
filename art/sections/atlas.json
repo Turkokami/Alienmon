@@ -3244,11 +3244,11 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → arrival (landing pad / gate)",
-    "right edge, tile rows 7–8 → Great Telescope"
+    "right edge, tile rows 5–9 → Great Telescope"
    ],
    "notes": "Lift station up the mountain",
-   "file": "art/sections/13_apex/146_summit_lift.png"
+   "file": "art/sections/13_apex/146_summit_lift.png",
+   "v2": true
   },
   {
    "id": "147",
@@ -3265,11 +3265,10 @@
    ],
    "tile_px_render": 64,
    "tile_px_game": 16,
-   "exits": [
-    "doormat at the bottom center of the room leads back outside"
-   ],
+   "exits": [],
    "notes": "Quorum observatory halls, 4 halls",
-   "file": "art/sections/13_apex/147_observatory_halls_1f.png"
+   "file": "art/sections/13_apex/147_observatory_halls_1f.png",
+   "v2": true
   },
   {
    "id": "148",
@@ -3286,11 +3285,10 @@
    ],
    "tile_px_render": 64,
    "tile_px_game": 16,
-   "exits": [
-    "doormat at the bottom center of the room leads back outside"
-   ],
+   "exits": [],
    "notes": "Quorum observatory halls, 4 halls",
-   "file": "art/sections/13_apex/148_observatory_halls_2f.png"
+   "file": "art/sections/13_apex/148_observatory_halls_2f.png",
+   "v2": true
   },
   {
    "id": "149",
@@ -3307,11 +3305,10 @@
    ],
    "tile_px_render": 64,
    "tile_px_game": 16,
-   "exits": [
-    "doormat at the bottom center of the room leads back outside"
-   ],
+   "exits": [],
    "notes": "Quorum observatory halls, 4 halls",
-   "file": "art/sections/13_apex/149_observatory_halls_3f.png"
+   "file": "art/sections/13_apex/149_observatory_halls_3f.png",
+   "v2": true
   },
   {
    "id": "150",
@@ -3328,11 +3325,10 @@
    ],
    "tile_px_render": 64,
    "tile_px_game": 16,
-   "exits": [
-    "doormat at the bottom center of the room leads back outside"
-   ],
+   "exits": [],
    "notes": "Quorum observatory halls, 4 halls",
-   "file": "art/sections/13_apex/150_observatory_halls_4f.png"
+   "file": "art/sections/13_apex/150_observatory_halls_4f.png",
+   "v2": true
   },
   {
    "id": "151",
@@ -3350,10 +3346,11 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7–8 → Summit Lift"
+    "bottom edge, tile columns 6–9 → Summit Lift"
    ],
    "notes": "Prime Linker Orra's chamber under the Great Telescope",
-   "file": "art/sections/13_apex/151_great_telescope.png"
+   "file": "art/sections/13_apex/151_great_telescope.png",
+   "v2": true
   },
   {
    "id": "152",
@@ -3370,11 +3367,10 @@
    ],
    "tile_px_render": 64,
    "tile_px_game": 16,
-   "exits": [
-    "doormat at the bottom center of the room leads back outside"
-   ],
+   "exits": [],
    "notes": "Library of star charts (Star Chart)",
-   "file": "art/sections/13_apex/152_apex_library.png"
+   "file": "art/sections/13_apex/152_apex_library.png",
+   "v2": true
   },
   {
    "id": "153",
@@ -3392,11 +3388,11 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → arrival (landing pad / gate)",
-    "right edge, tile rows 7–8 → Floating Continents Part A"
+    "right edge, tile rows 5–10 → Floating Continents Part A"
    ],
    "notes": "Floating fragment where you arrive",
-   "file": "art/sections/14_ystra/153_arrival_fragment.png"
+   "file": "art/sections/14_ystra/153_arrival_fragment.png",
+   "v2": true
   },
   {
    "id": "154",
@@ -3414,11 +3410,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Arrival Fragment",
-    "right edge, tile rows 7–8 → Floating Continents Part B"
+    "left edge, tile rows 5–10 → Arrival Fragment",
+    "right edge, tile rows 5–10 → Floating Continents Part B"
    ],
    "notes": "Floating continents",
-   "file": "art/sections/14_ystra/154_floating_continents_part_a.png"
+   "file": "art/sections/14_ystra/154_floating_continents_part_a.png",
+   "v2": true
   },
   {
    "id": "155",
@@ -3436,11 +3433,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Floating Continents Part A",
-    "right edge, tile rows 7–8 → Drowned Seas"
+    "left edge, tile rows 5–9 → Floating Continents Part A",
+    "right edge, tile rows 5–9 → Drowned Seas"
    ],
    "notes": "Floating continents",
-   "file": "art/sections/14_ystra/155_floating_continents_part_b.png"
+   "file": "art/sections/14_ystra/155_floating_continents_part_b.png",
+   "v2": true
   },
   {
    "id": "156",
@@ -3458,11 +3456,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Floating Continents Part B",
-    "right edge, tile rows 7–8 → Sun Forge"
+    "left edge, tile rows 5–9 → Floating Continents Part B",
+    "right edge, tile rows 5–9 → Sun Forge"
    ],
    "notes": "Drowned seas",
-   "file": "art/sections/14_ystra/156_drowned_seas.png"
+   "file": "art/sections/14_ystra/156_drowned_seas.png",
+   "v2": true
   },
   {
    "id": "157",
@@ -3480,11 +3479,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Drowned Seas",
-    "right edge, tile rows 7–8 → Crystal Ruins 1F"
+    "left edge, tile rows 5–8 → Drowned Seas",
+    "right edge, tile rows 5–8 → Crystal Ruins 1F"
    ],
    "notes": "Sun Forge pillar",
-   "file": "art/sections/14_ystra/157_sun_forge.png"
+   "file": "art/sections/14_ystra/157_sun_forge.png",
+   "v2": true
   },
   {
    "id": "158",
@@ -3502,11 +3502,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7–8 → Sun Forge",
-    "top edge, tile columns 7–8 → Crystal Ruins 2F"
+    "bottom edge, tile columns 6–9 → Sun Forge",
+    "top edge, tile columns 6–9 → Crystal Ruins 2F"
    ],
    "notes": "Crystal ruins",
-   "file": "art/sections/14_ystra/158_crystal_ruins_1f.png"
+   "file": "art/sections/14_ystra/158_crystal_ruins_1f.png",
+   "v2": true
   },
   {
    "id": "159",
@@ -3524,11 +3525,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 7–8 → Crystal Ruins 1F",
-    "top edge, tile columns 7–8 → Blighted Forest Part A"
+    "bottom edge, tile columns 6–9 → Crystal Ruins 1F",
+    "top edge, tile columns 6–9 → Blighted Forest Part A"
    ],
    "notes": "Crystal ruins",
-   "file": "art/sections/14_ystra/159_crystal_ruins_2f.png"
+   "file": "art/sections/14_ystra/159_crystal_ruins_2f.png",
+   "v2": true
   },
   {
    "id": "160",
@@ -3546,11 +3548,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Crystal Ruins 2F",
-    "right edge, tile rows 7–8 → Blighted Forest Part B"
+    "left edge, tile rows 5–9 → Crystal Ruins 2F",
+    "right edge, tile rows 5–9 → Blighted Forest Part B"
    ],
    "notes": "Blighted forest (Blight Cleansing)",
-   "file": "art/sections/14_ystra/160_blighted_forest_part_a.png"
+   "file": "art/sections/14_ystra/160_blighted_forest_part_a.png",
+   "v2": true
   },
   {
    "id": "161",
@@ -3568,11 +3571,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Blighted Forest Part A",
-    "right edge, tile rows 7–8 → Edge of the Void"
+    "left edge, tile rows 5–9 → Blighted Forest Part A",
+    "right edge, tile rows 5–9 → Edge of the Void"
    ],
    "notes": "Blighted forest (Blight Cleansing)",
-   "file": "art/sections/14_ystra/161_blighted_forest_part_b.png"
+   "file": "art/sections/14_ystra/161_blighted_forest_part_b.png",
+   "v2": true
   },
   {
    "id": "162",
@@ -3590,11 +3594,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Blighted Forest Part B",
-    "right edge, tile rows 7–8 → Seedmother's Grove"
+    "left edge, tile rows 5–10 → Blighted Forest Part B",
+    "right edge, tile rows 5–10 → Seedmother's Grove"
    ],
    "notes": "Edge of the void where Oblivane waits",
-   "file": "art/sections/14_ystra/162_edge_of_the_void.png"
+   "file": "art/sections/14_ystra/162_edge_of_the_void.png",
+   "v2": true
   },
   {
    "id": "163",
@@ -3612,10 +3617,11 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 7–8 → Edge of the Void"
+    "left edge, tile rows 5–10 → Edge of the Void"
    ],
    "notes": "The Seedmother's grove (finale)",
-   "file": "art/sections/14_ystra/163_seedmother_s_grove.png"
+   "file": "art/sections/14_ystra/163_seedmother_s_grove.png",
+   "v2": true
   },
   {
    "id": "164",

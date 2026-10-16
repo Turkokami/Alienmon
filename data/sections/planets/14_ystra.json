@@ -3,15 +3,8 @@
   "153": [
    {
     "tile": [
-     12,
+     16,
      4
-    ],
-    "k": "bay"
-   },
-   {
-    "tile": [
-     17,
-     7
     ],
     "k": "sign",
     "t": [
@@ -22,8 +15,8 @@
   "156": [
    {
     "tile": [
-     20,
-     2
+     12,
+     4
     ],
     "k": "sign",
     "t": [
@@ -34,8 +27,8 @@
   "157": [
    {
     "tile": [
-     10,
-     8
+     8,
+     4
     ],
     "k": "sign",
     "t": [
@@ -47,7 +40,7 @@
    {
     "tile": [
      2,
-     2
+     3
     ],
     "k": "sign",
     "t": [
@@ -57,7 +50,7 @@
    {
     "tile": [
      13,
-     7
+     3
     ],
     "k": "sign",
     "t": [
@@ -68,8 +61,8 @@
   "159": [
    {
     "tile": [
-     3,
-     3
+     2,
+     2
     ],
     "k": "sign",
     "t": [
@@ -78,8 +71,8 @@
    },
    {
     "tile": [
-     12,
-     3
+     13,
+     2
     ],
     "k": "sign",
     "t": [
@@ -90,8 +83,8 @@
   "162": [
    {
     "tile": [
-     10,
-     6
+     12,
+     4
     ],
     "k": "sign",
     "t": [
@@ -102,8 +95,8 @@
   "163": [
    {
     "tile": [
-     12,
-     3
+     8,
+     4
     ],
     "k": "sign",
     "t": [
@@ -112,8 +105,8 @@
    },
    {
     "tile": [
-     20,
-     9
+     18,
+     7
     ],
     "k": "sign",
     "t": [
@@ -131,28 +124,39 @@
    {
     "art": "ystran",
     "tile": [
-     10,
-     4
+     9,
+     6
     ],
     "name": "Ystran echo",
     "t": [
      "Ystran echo: ...welcome home, children of the stars. Rest by the crystal. It still remembers how to heal.",
      "Ystran echo: We were a voice once. Now we are only the echo, waiting for someone to listen."
-    ]
+    ],
+    "stay": true
    },
    {
     "art": "explorer",
     "t": [
      "Rift walker: Every fragment here was one world, once. The bridges are all that hold the pieces in a line.",
      "Rift walker: Don't look down. There is no down. There's just... more sky."
-    ]
+    ],
+    "tile": [
+     19,
+     5
+    ],
+    "stay": true
    },
    {
     "art": "pilgrim",
     "t": [
      "Seeker: The Alienmon you carry were born here. Watch them. They know the way better than we do.",
      "Seeker: The domes are sealed. Whoever lived in them left in seedpods and never came back."
-    ]
+    ],
+    "tile": [
+     5,
+     10
+    ],
+    "stay": true
    }
   ],
   "154": [
@@ -161,14 +165,24 @@
     "t": [
      "Rift walker: The continents drift a hand's width a day. Cross the bridges while they still meet.",
      "Rift walker: Gravity types love it out here. Everything floats a little, even your thoughts."
-    ]
+    ],
+    "tile": [
+     20,
+     10
+    ],
+    "stay": true
    },
    {
     "art": "ystran",
     "t": [
      "Ystran echo: Terravox carried a forest on its back... these islands were its footsteps.",
      "Ystran echo: ...do you hear the roots? They are still reaching for each other."
-    ]
+    ],
+    "tile": [
+     3,
+     10
+    ],
+    "stay": true
    }
   ],
   "155": [
@@ -177,13 +191,23 @@
     "t": [
      "Seeker: I came for answers. I found waterfalls that fall forever and never land.",
      "Seeker: Wild Alienmon here are strong. Weaken them first, then throw a Stasis Pod."
-    ]
+    ],
+    "tile": [
+     18,
+     9
+    ],
+    "stay": true
    },
    {
     "art": "explorer",
     "t": [
      "Rift walker: The trainers out here are postgame tough. Heal at the Arrival crystal if you're running low."
-    ]
+    ],
+    "tile": [
+     3,
+     5
+    ],
+    "stay": true
    }
   ],
   "156": [
@@ -192,14 +216,24 @@
     "t": [
      "Ystran echo: These were our seas. Aquelion sang over them... now the water drowns the old roads.",
      "Ystran echo: ...the coral still grows. Grief is not the same as ending."
-    ]
+    ],
+    "tile": [
+     3,
+     9
+    ],
+    "stay": true
    },
    {
     "art": "explorer",
     "t": [
      "Rift walker: Hydro types thrive in the drowned basins. Bring something that hits them hard.",
      "Rift walker: Stick to the sand paths. The water here goes down further than any sea should."
-    ]
+    ],
+    "tile": [
+     14,
+     9
+    ],
+    "stay": true
    }
   ],
   "157": [
@@ -208,14 +242,24 @@
     "t": [
      "Seeker: The Sun Forge. They say Ignarch kept Ystra's red sun burning from this very pillar.",
      "Seeker: The heat here is old heat. It doesn't burn you. It remembers you."
-    ]
+    ],
+    "tile": [
+     18,
+     8
+    ],
+    "stay": true
    },
    {
     "art": "ystran",
     "t": [
      "Ystran echo: When the sun began to die, we fed it everything... and still it dimmed.",
      "Ystran echo: ...go north, into the crystal halls. The light there was ours."
-    ]
+    ],
+    "tile": [
+     4,
+     8
+    ],
+    "stay": true
    }
   ],
   "158": [
@@ -224,7 +268,12 @@
     "t": [
      "Rift walker: Crystal Ruins. Every pillar is a record. Nobody alive can read them anymore.",
      "Rift walker: Trainers lurk in these halls. Step into their line of sight and they'll challenge you."
-    ]
+    ],
+    "tile": [
+     7,
+     13
+    ],
+    "stay": true
    }
   ],
   "159": [
@@ -235,9 +284,10 @@
      "Ystran echo: Beyond these halls, the forest sickens. The Devourer's shadow touched it first."
     ],
     "tile": [
-     13,
-     5
-    ]
+     5,
+     3
+    ],
+    "stay": true
    }
   ],
   "160": [
@@ -246,13 +296,23 @@
     "t": [
      "Seeker: The blight spreads from the void's edge. Leaves turn to glass, then to dust.",
      "Seeker: Some Bio types here still fight the blight. Help them and they might follow you."
-    ]
+    ],
+    "tile": [
+     5,
+     6
+    ],
+    "stay": true
    },
    {
     "art": "explorer",
     "t": [
      "Rift walker: Keep to the path. The blighted brush hides wild Alienmon that strike before you see them."
-    ]
+    ],
+    "tile": [
+     20,
+     8
+    ],
+    "stay": true
    }
   ],
   "161": [
@@ -261,13 +321,23 @@
     "t": [
      "Ystran echo: ...the trees remember being green. If you listen, they will tell you what green sounded like.",
      "Ystran echo: Past the void lies the Heartroot's crater. First, you must look into the hungry one."
-    ]
+    ],
+    "tile": [
+     14,
+     9
+    ],
+    "stay": true
    },
    {
     "art": "pilgrim",
     "t": [
      "Seeker: Eight Signal Shards held the Rift shut. Now you walk right through it. Strange, isn't it?"
-    ]
+    ],
+    "tile": [
+     19,
+     5
+    ],
+    "stay": true
    }
   ],
   "162": [
@@ -276,14 +346,24 @@
     "t": [
      "Rift walker: That's it. The Edge of the Void. Something in there breathes when the wind stops.",
      "Rift walker: Save your strength. Whatever waits on that altar is older than the stars around it."
-    ]
+    ],
+    "tile": [
+     4,
+     10
+    ],
+    "stay": true
    },
    {
     "art": "ystran",
     "t": [
      "Ystran echo: The Devourer was never cruel... only hungry, and so very alone.",
      "Ystran echo: ...if you face it, do not hate it. Hate is a kind of hunger too."
-    ]
+    ],
+    "tile": [
+     20,
+     8
+    ],
+    "stay": true
    }
   ],
   "163": [
@@ -292,26 +372,28 @@
     "t": [
      "Ystran echo: Her world-tree stood here once. Every seedpod that crossed the stars was a piece of her. Now only the Heartroot remains.",
      "Ystran echo: ...she is tired, Linker. But she waited for you. She always knew someone would come."
-    ]
+    ],
+    "tile": [
+     12,
+     3
+    ],
+    "stay": true
    },
    {
     "art": "pilgrim",
     "t": [
      "Seeker: I've walked every fragment of this world. This is the only place that feels like it is still alive."
-    ]
+    ],
+    "tile": [
+     4,
+     5
+    ],
+    "stay": true
    }
   ]
  },
  "notes": "Ystra (postgame): no towns, no Keeper, no shop, no interiors. Resting place = 'bay' object at the great crystal shrine on the Arrival Fragment (153) at (12,4), used from the stair landing (12,5); an Ystran echo is pinned beside it at (10,4). Crystal Ruins 1F/2F (158/159) get 1 trainer each. Edge of the Void (162): the art shows three platforms separated by void; they are joined along the bottom ledge row 13, and the narrow dark crack at (16,13) plus the small crystal at (14,13) are treated as walkable so the left and right exits connect (owner may want a drawn bridge there). The void altar rune (12,6) is open floor - a good spot for the Oblivane encounter (quest P02). Seedmother's heart crystal (163) is a sign at (12,3), talked to from (12,4) (quest P03 spot). Stepping stones in the Drowned Seas (156) at (6,6),(7,6) are walkable to link the left shore to the centre.",
- "unlisted": {
-  "153": "Grand domed temple door (19,4) and the two small dome houses (doors ~(4,4) and (4,11), with the waterfall steps below the lower one) are sealed: no interiors on Ystra, door tiles left blocked.",
-  "157": "The upper ring around the forge core (rows 2-4) is lava and gold railing; only the stair landing row 5 is walkable.",
-  "158": "Cross corridor runs off the LEFT edge at row 7 (0,7) - not an exit, left blocked. Top-right and bottom-right crystal pools and the bottom-left crystal room are walled off (no entrance drawn) and blocked.",
-  "160": "Centre path stairs go off the TOP edge (11-12,0-1) and the path runs off the BOTTOM edge (11-12,15); neither is an atlas exit, edge tiles blocked.",
-  "161": "Centre path stairs go off the TOP edge (11,0-1) and the path runs off the BOTTOM edge (11,15); edge tiles blocked. Small stone bridge at (3-4,10) is a dead end.",
-  "162": "Centre path below the void altar runs off the BOTTOM edge (11-12,15); blocked. Top-left stairs (2-3,3-4) end at a small ledge.",
-  "163": "Stairs at the top-left (1-2,2) lead off the LEFT edge at row 2 and the stairs at the bottom (14-15,15) lead off the BOTTOM edge; edge tiles blocked. Small bridge at (4,9) toward the waterfall pool is a dead end."
- },
+ "unlisted": {},
  "trainer_tiles": [
   {
    "section": "159",

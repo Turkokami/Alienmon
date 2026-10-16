@@ -56,11 +56,11 @@
   },
   "apex": {
    "section": "146",
-   "why": "atlas exit marked arrival"
+   "why": "V2: the glass lift cabin at the left end of the terrace"
   },
   "ystra": {
    "section": "153",
-   "why": "atlas exit marked arrival"
+   "why": "V2: the ring of carved stones"
   },
   "arena": {
    "section": "164",
@@ -369,23 +369,23 @@
   },
   "M20:0": {
    "s": "147",
-   "x": 10,
+   "x": 8,
    "y": 7
   },
   "M20:1": {
    "s": "148",
-   "x": 7,
-   "y": 4
+   "x": 8,
+   "y": 9
   },
   "M20:2": {
    "s": "149",
    "x": 8,
-   "y": 10
+   "y": 6
   },
   "M20:3": {
    "s": "150",
-   "x": 7,
-   "y": 10
+   "x": 6,
+   "y": 9
   },
   "M21:giver": {
    "s": "151",
@@ -394,8 +394,8 @@
   },
   "M21:0": {
    "s": "151",
-   "x": 7,
-   "y": 6
+   "x": 8,
+   "y": 5
   },
   "P02:giver": {
    "s": "162",
@@ -405,7 +405,7 @@
   "P02:0": {
    "s": "162",
    "x": 12,
-   "y": 5
+   "y": 11
   },
   "P03:giver": {
    "s": "163",
@@ -415,8 +415,8 @@
   "P03:0": {
    "s": "163",
    "art": "ystran",
-   "x": 11,
-   "y": 5
+   "x": 12,
+   "y": 10
   },
   "P03:1": {
    "s": "163",
@@ -993,7 +993,7 @@
   "S99:giver": {
    "s": "151",
    "x": 8,
-   "y": 13
+   "y": 18
   },
   "S99:0": {
    "s": "151",
@@ -1005,8 +1005,8 @@
      12
     ],
     [
-     5,
-     8
+     7,
+     6
     ],
     [
      12,
@@ -1017,22 +1017,22 @@
   "S100:giver": {
    "s": "146",
    "x": 12,
-   "y": 10
+   "y": 13
   },
   "S100:0": {
    "s": "147",
-   "x": 9,
-   "y": 10
+   "x": 8,
+   "y": 8
   },
   "S101:giver": {
    "s": "152",
    "x": 9,
-   "y": 11
+   "y": 10
   },
   "S110:giver": {
    "s": "158",
-   "x": 8,
-   "y": 12
+   "x": 10,
+   "y": 10
   },
   "S110:0": {
    "s": "158",
@@ -1048,15 +1048,15 @@
      2
     ],
     [
-     3,
-     6
+     12,
+     5
     ]
    ]
   },
   "S111:giver": {
    "s": "160",
    "x": 12,
-   "y": 10
+   "y": 5
   },
   "S111:0": {
    "s": "160",
@@ -1251,8 +1251,8 @@
   "P01:0": {
    "s": "151",
    "art": "vashti",
-   "x": 10,
-   "y": 9
+   "x": 12,
+   "y": 8
   },
   "M19b:3": {
    "s": "170",
@@ -23075,16 +23075,36 @@
     16
    ],
    "notes": "Lift station up the mountain",
-   "edges": {
-    "left": {
-     "to": "arrival",
-     "range": [
-      7,
-      8
-     ]
-    }
-   },
+   "edges": {},
    "warps": [
+    {
+     "tile": [
+      23,
+      5
+     ],
+     "to": "151",
+     "at": [
+      6,
+      22
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      6
+     ],
+     "to": "151",
+     "at": [
+      7,
+      22
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
+    },
     {
      "tile": [
       23,
@@ -23092,7 +23112,7 @@
      ],
      "to": "151",
      "at": [
-      7,
+      8,
       22
      ],
      "face": "up",
@@ -23106,7 +23126,7 @@
      ],
      "to": "151",
      "at": [
-      8,
+      9,
       22
      ],
      "face": "up",
@@ -23115,8 +23135,8 @@
     },
     {
      "tile": [
-      17,
-      4
+      11,
+      3
      ],
      "to": "147",
      "at": [
@@ -23129,8 +23149,8 @@
     },
     {
      "tile": [
-      18,
-      4
+      12,
+      3
      ],
      "to": "147",
      "at": [
@@ -23143,13 +23163,13 @@
     },
     {
      "tile": [
-      5,
-      4
+      20,
+      3
      ],
      "to": "152",
      "at": [
       7,
-      12
+      13
      ],
      "face": "up",
      "kind": "door",
@@ -23159,22 +23179,22 @@
    "objects": [
     {
      "tile": [
-      19,
-      12
+      16,
+      11
      ],
      "k": "bay"
     },
     {
      "tile": [
       6,
-      8
+      6
      ],
      "k": "shop"
     },
     {
      "tile": [
-      20,
-      12
+      16,
+      4
      ],
      "k": "sign",
      "t": [
@@ -23193,8 +23213,8 @@
     },
     {
      "tile": [
-      4,
-      11
+      1,
+      7
      ],
      "k": "stash",
      "item": "singularity",
@@ -23204,12 +23224,12 @@
    ],
    "spawns": {
     "arrival": [
-     1,
-     7
+     3,
+     8
     ],
     "default": [
-     1,
-     7
+     3,
+     8
     ]
    },
    "grid": [
@@ -23219,13 +23239,14 @@
    "pkey": "apex",
    "npcs": [
     {
-     "x": 11,
+     "x": 12,
      "y": 10,
      "art": "explorer",
-     "face": "up",
+     "face": "right",
      "t": [
       "Ace Linker: I beat the Quorum once. Then they beat me four times. Heal before every hall."
      ],
+     "stay": true,
      "src": "p:146:0",
      "id": "sec146_tr0",
      "trainer": {
@@ -23235,35 +23256,37 @@
      }
     },
     {
-     "x": 5,
-     "y": 9,
+     "x": 18,
+     "y": 5,
      "art": "researcher",
      "face": "down",
      "t": [
       "Astronomer: The thin air up here makes the sky so clear. On a good night you can see the Rift glow."
      ],
+     "stay": true,
      "src": "p:146:1"
     },
     {
-     "x": 15,
-     "y": 7,
+     "x": 8,
+     "y": 5,
      "art": "guard",
      "face": "down",
      "t": [
       "Summit guard: Only Linkers with all eight Signal Shards ride the lift. Go on, you've earned it."
      ],
+     "stay": true,
      "src": "p:146:2"
     }
    ],
    "mons": [
     {
-     "x": 20,
-     "y": 7,
+     "x": 1,
+     "y": 9,
      "mon": "Flarehawk"
     },
     {
-     "x": 16,
-     "y": 10,
+     "x": 8,
+     "y": 12,
      "mon": "Diamondillo"
     }
    ]
@@ -23289,8 +23312,8 @@
      ],
      "to": "146",
      "at": [
-      17,
-      5
+      11,
+      4
      ],
      "face": "down",
      "kind": "door"
@@ -23302,21 +23325,34 @@
      ],
      "to": "146",
      "at": [
-      17,
-      5
+      11,
+      4
      ],
      "face": "down",
      "kind": "door"
     },
     {
      "tile": [
-      8,
-      6
+      12,
+      3
      ],
      "to": "148",
      "at": [
-      3,
-      8
+      1,
+      4
+     ],
+     "face": "down",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      13,
+      3
+     ],
+     "to": "148",
+     "at": [
+      2,
+      4
      ],
      "face": "down",
      "kind": "stairs"
@@ -23349,13 +23385,14 @@
    "pkey": "apex",
    "npcs": [
     {
-     "x": 3,
-     "y": 11,
+     "x": 8,
+     "y": 4,
      "art": "explorer",
      "face": "down",
      "t": [
       "Ace Linker: Crystal types shrug off hits but crack under heavy blows. Bring something that hits hard."
      ],
+     "stay": true,
      "src": "p:147:0"
     }
    ]
@@ -23376,13 +23413,26 @@
    "warps": [
     {
      "tile": [
-      3,
-      7
+      1,
+      3
      ],
      "to": "147",
      "at": [
-      8,
-      7
+      12,
+      4
+     ],
+     "face": "down",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      2,
+      3
+     ],
+     "to": "147",
+     "at": [
+      13,
+      4
      ],
      "face": "down",
      "kind": "stairs"
@@ -23390,36 +23440,31 @@
     {
      "tile": [
       12,
-      7
+      3
+     ],
+     "to": "149",
+     "at": [
+      2,
+      4
+     ],
+     "face": "down",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      13,
+      3
      ],
      "to": "149",
      "at": [
       3,
-      8
+      4
      ],
      "face": "down",
      "kind": "stairs"
     }
    ],
    "objects": [
-    {
-     "tile": [
-      7,
-      14
-     ],
-     "k": "stop",
-     "t": "The stairs are blocked off. You can't go this way.",
-     "why": "dead-end stairs (tools/sections/dead_ends.py)"
-    },
-    {
-     "tile": [
-      8,
-      14
-     ],
-     "k": "stop",
-     "t": "The stairs are blocked off. You can't go this way.",
-     "why": "dead-end stairs (tools/sections/dead_ends.py)"
-    },
     {
      "tile": [
       7,
@@ -23434,25 +23479,26 @@
    ],
    "spawns": {
     "stairs": [
-     3,
-     8
+     1,
+     4
     ],
     "default": [
-     3,
-     8
+     1,
+     4
     ]
    },
    "parent": "146",
    "pkey": "apex",
    "npcs": [
     {
-     "x": 11,
-     "y": 6,
+     "x": 8,
+     "y": 4,
      "art": "researcher",
      "face": "down",
      "t": [
       "Astronomer: The dome here was tuned to hear radio stars. Now it mostly hears guitar solos."
      ],
+     "stay": true,
      "src": "p:148:0"
     }
    ]
@@ -23473,13 +23519,26 @@
    "warps": [
     {
      "tile": [
-      3,
-      7
+      2,
+      3
      ],
      "to": "148",
      "at": [
       12,
-      8
+      4
+     ],
+     "face": "down",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      3,
+      3
+     ],
+     "to": "148",
+     "at": [
+      13,
+      4
      ],
      "face": "down",
      "kind": "stairs"
@@ -23487,12 +23546,25 @@
     {
      "tile": [
       12,
-      7
+      3
      ],
      "to": "150",
      "at": [
-      8,
-      9
+      12,
+      4
+     ],
+     "face": "down",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      13,
+      3
+     ],
+     "to": "150",
+     "at": [
+      13,
+      4
      ],
      "face": "down",
      "kind": "stairs"
@@ -23513,25 +23585,26 @@
    ],
    "spawns": {
     "stairs": [
-     3,
-     8
+     2,
+     4
     ],
     "default": [
-     3,
-     8
+     2,
+     4
     ]
    },
    "parent": "146",
    "pkey": "apex",
    "npcs": [
     {
-     "x": 2,
-     "y": 9,
+     "x": 8,
+     "y": 13,
      "art": "guard",
      "face": "down",
      "t": [
       "Summit guard: Nobody has heard Saga speak. The battle does the talking."
      ],
+     "stay": true,
      "src": "p:149:0"
     }
    ]
@@ -23552,13 +23625,26 @@
    "warps": [
     {
      "tile": [
-      8,
-      8
+      12,
+      3
      ],
      "to": "149",
      "at": [
       12,
-      8
+      4
+     ],
+     "face": "down",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      13,
+      3
+     ],
+     "to": "149",
+     "at": [
+      13,
+      4
      ],
      "face": "down",
      "kind": "stairs"
@@ -23579,25 +23665,26 @@
    ],
    "spawns": {
     "stairs": [
-     8,
-     9
+     12,
+     4
     ],
     "default": [
-     8,
-     9
+     12,
+     4
     ]
    },
    "parent": "146",
    "pkey": "apex",
    "npcs": [
     {
-     "x": 1,
-     "y": 9,
+     "x": 8,
+     "y": 4,
      "art": "explorer",
      "face": "down",
      "t": [
       "Ace Linker: Gravity moves hit like a landslide. Lighten your team and keep your Pods ready."
      ],
+     "stay": true,
      "src": "p:150:0"
     }
    ]
@@ -23618,13 +23705,27 @@
    "warps": [
     {
      "tile": [
+      6,
+      23
+     ],
+     "to": "146",
+     "at": [
+      22,
+      5
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
       7,
       23
      ],
      "to": "146",
      "at": [
       22,
-      7
+      6
      ],
      "face": "left",
      "kind": "edge",
@@ -23638,6 +23739,20 @@
      "to": "146",
      "at": [
       22,
+      6
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      9,
+      23
+     ],
+     "to": "146",
+     "at": [
+      22,
       8
      ],
      "face": "left",
@@ -23645,47 +23760,10 @@
      "edge": "bottom"
     }
    ],
-   "objects": [
-    {
-     "tile": [
-      2,
-      5
-     ],
-     "k": "stop",
-     "t": "The stairs are blocked off. You can't go this way.",
-     "why": "dead-end stairs (tools/sections/dead_ends.py)"
-    },
-    {
-     "tile": [
-      2,
-      8
-     ],
-     "k": "stop",
-     "t": "The stairs are blocked off. You can't go this way.",
-     "why": "dead-end stairs (tools/sections/dead_ends.py)"
-    },
-    {
-     "tile": [
-      13,
-      5
-     ],
-     "k": "stop",
-     "t": "The stairs are blocked off. You can't go this way.",
-     "why": "dead-end stairs (tools/sections/dead_ends.py)"
-    },
-    {
-     "tile": [
-      13,
-      8
-     ],
-     "k": "stop",
-     "t": "The stairs are blocked off. You can't go this way.",
-     "why": "dead-end stairs (tools/sections/dead_ends.py)"
-    }
-   ],
+   "objects": [],
    "spawns": {
     "default": [
-     7,
+     6,
      22
     ]
    },
@@ -23693,7 +23771,7 @@
    "npcs": [
     {
      "x": 10,
-     "y": 7,
+     "y": 9,
      "art": "vashti",
      "face": "down",
      "t": [
@@ -23706,7 +23784,7 @@
     },
     {
      "x": 13,
-     "y": 11,
+     "y": 10,
      "art": "kit",
      "face": "down",
      "t": [
@@ -23719,13 +23797,14 @@
      "src": "n:151:1"
     },
     {
-     "x": 4,
-     "y": 15,
+     "x": 10,
+     "y": 21,
      "art": "guard",
      "face": "down",
      "t": [
       "Summit guard: Prime Linker Orra Venn bonded the very first Alienmon. Show respect, then show your best."
      ],
+     "stay": true,
      "src": "p:151:0"
     }
    ]
@@ -23747,12 +23826,12 @@
     {
      "tile": [
       7,
-      13
+      14
      ],
      "to": "146",
      "at": [
-      5,
-      5
+      20,
+      4
      ],
      "face": "down",
      "kind": "door"
@@ -23760,12 +23839,12 @@
     {
      "tile": [
       8,
-      13
+      14
      ],
      "to": "146",
      "at": [
-      5,
-      5
+      20,
+      4
      ],
      "face": "down",
      "kind": "door"
@@ -23787,34 +23866,36 @@
    "spawns": {
     "door": [
      7,
-     12
+     13
     ],
     "default": [
      7,
-     12
+     13
     ]
    },
    "parent": "146",
    "pkey": "apex",
    "npcs": [
     {
-     "x": 6,
-     "y": 8,
+     "x": 9,
+     "y": 12,
      "art": "researcher",
      "face": "down",
      "t": [
       "Astronomer: Every Signal Shard you carried lit a world on these charts. Helix wanted the map for itself."
      ],
+     "stay": true,
      "src": "p:152:0"
     },
     {
-     "x": 9,
-     "y": 8,
+     "x": 7,
+     "y": 4,
      "art": "researcher",
      "face": "down",
      "t": [
       "Archivist: Quiet, please. The star charts are older than the Linker League itself."
      ],
+     "stay": true,
      "src": "p:152:1"
     }
    ]
@@ -23832,18 +23913,11 @@
    ],
    "notes": "Floating fragment where you arrive",
    "edges": {
-    "left": {
-     "to": "arrival",
-     "range": [
-      7,
-      8
-     ]
-    },
     "right": {
      "to": "154",
      "range": [
-      7,
-      8
+      5,
+      10
      ],
      "offset": 0
     }
@@ -23852,42 +23926,38 @@
    "objects": [
     {
      "tile": [
-      19,
-      4
+      12,
+      3
      ],
      "k": "house",
      "to": "181",
-     "why": "walk-in door: arrival_research_dome"
+     "why": "V2: the research dome"
     },
     {
      "tile": [
-      4,
-      4
+      13,
+      3
      ],
      "k": "house",
-     "to": "189",
-     "why": "house door: opens the ystra house (was a chat knock door)"
+     "to": "181",
+     "why": "V2: the research dome"
     },
     {
      "tile": [
-      4,
-      11
+      3,
+      5
      ],
-     "k": "house",
-     "to": "189",
-     "why": "house door: path in front opened to match the drawn ground"
+     "k": "bay",
+     "door": true,
+     "t": [
+      "The carved stone hums. A warm light washes over your team."
+     ],
+     "why": "V2: healing stone on the arrival ring"
     },
     {
      "tile": [
-      12,
+      16,
       4
-     ],
-     "k": "bay"
-    },
-    {
-     "tile": [
-      17,
-      7
      ],
      "k": "sign",
      "t": [
@@ -23896,8 +23966,8 @@
     },
     {
      "tile": [
-      8,
-      2
+      1,
+      5
      ],
      "k": "stash",
      "item": "ether",
@@ -23907,12 +23977,12 @@
    ],
    "spawns": {
     "arrival": [
-     1,
-     7
+     3,
+     8
     ],
     "default": [
-     1,
-     7
+     3,
+     8
     ]
    },
    "grid": [
@@ -23922,7 +23992,7 @@
    "pkey": "ystra",
    "npcs": [
     {
-     "x": 17,
+     "x": 13,
      "y": 11,
      "art": "ystran",
      "face": "down",
@@ -23935,8 +24005,8 @@
      "src": "n:153:0"
     },
     {
-     "x": 10,
-     "y": 4,
+     "x": 9,
+     "y": 6,
      "art": "ystran",
      "face": "down",
      "t": [
@@ -23944,40 +24014,43 @@
       "Ystran echo: We were a voice once. Now we are only the echo, waiting for someone to listen."
      ],
      "name": "Ystran echo",
+     "stay": true,
      "src": "p:153:0"
     },
     {
-     "x": 6,
-     "y": 6,
+     "x": 19,
+     "y": 5,
      "art": "explorer",
      "face": "down",
      "t": [
       "Rift walker: Every fragment here was one world, once. The bridges are all that hold the pieces in a line.",
       "Rift walker: Don't look down. There is no down. There's just... more sky."
      ],
+     "stay": true,
      "src": "p:153:1"
     },
     {
-     "x": 11,
-     "y": 13,
+     "x": 5,
+     "y": 10,
      "art": "pilgrim",
      "face": "down",
      "t": [
       "Seeker: The Alienmon you carry were born here. Watch them. They know the way better than we do.",
       "Seeker: The domes are sealed. Whoever lived in them left in seedpods and never came back."
      ],
+     "stay": true,
      "src": "p:153:2"
     }
    ],
    "mons": [
     {
-     "x": 13,
-     "y": 9,
+     "x": 1,
+     "y": 8,
      "mon": "Riftwalker"
     },
     {
-     "x": 15,
-     "y": 2,
+     "x": 9,
+     "y": 12,
      "mon": "Fractalith"
     }
    ]
@@ -23998,16 +24071,16 @@
     "left": {
      "to": "153",
      "range": [
-      7,
-      8
+      5,
+      10
      ],
      "offset": 0
     },
     "right": {
      "to": "155",
      "range": [
-      7,
-      8
+      5,
+      10
      ],
      "offset": 0
     }
@@ -24016,7 +24089,7 @@
    "objects": [
     {
      "tile": [
-      16,
+      5,
       3
      ],
      "k": "stash",
@@ -24026,8 +24099,8 @@
     },
     {
      "tile": [
-      10,
-      2
+      17,
+      3
      ],
      "k": "stash",
      "item": "maxrevive",
@@ -24038,7 +24111,7 @@
    "spawns": {
     "default": [
      1,
-     7
+     5
     ]
    },
    "grid": [
@@ -24048,8 +24121,8 @@
    "pkey": "ystra",
    "npcs": [
     {
-     "x": 19,
-     "y": 6,
+     "x": 13,
+     "y": 8,
      "art": "ystran",
      "face": "down",
      "t": [],
@@ -24059,8 +24132,8 @@
      "src": "n:154:0"
     },
     {
-     "x": 9,
-     "y": 7,
+     "x": 5,
+     "y": 4,
      "art": "ystran",
      "face": "down",
      "t": [
@@ -24072,32 +24145,34 @@
      "src": "n:154:1"
     },
     {
-     "x": 3,
-     "y": 4,
+     "x": 20,
+     "y": 10,
      "art": "explorer",
      "face": "down",
      "t": [
       "Rift walker: The continents drift a hand's width a day. Cross the bridges while they still meet.",
       "Rift walker: Gravity types love it out here. Everything floats a little, even your thoughts."
      ],
+     "stay": true,
      "src": "p:154:0"
     },
     {
-     "x": 13,
-     "y": 7,
+     "x": 3,
+     "y": 10,
      "art": "ystran",
      "face": "down",
      "t": [
       "Ystran echo: Terravox carried a forest on its back... these islands were its footsteps.",
       "Ystran echo: ...do you hear the roots? They are still reaching for each other."
      ],
+     "stay": true,
      "src": "p:154:1"
     },
     {
-     "x": 17,
-     "y": 10,
+     "x": 18,
+     "y": 5,
      "art": "explorer",
-     "face": "up",
+     "face": "down",
      "t": [],
      "id": "sec154_tr4",
      "trainer": {
@@ -24107,7 +24182,7 @@
      }
     },
     {
-     "x": 7,
+     "x": 9,
      "y": 5,
      "art": "pilgrim",
      "face": "down",
@@ -24122,13 +24197,13 @@
    ],
    "mons": [
     {
-     "x": 4,
-     "y": 11,
+     "x": 10,
+     "y": 12,
      "mon": "Blightroot"
     },
     {
-     "x": 11,
-     "y": 10,
+     "x": 16,
+     "y": 12,
      "mon": "Pulsarion"
     }
    ]
@@ -24149,16 +24224,16 @@
     "left": {
      "to": "154",
      "range": [
-      7,
-      8
+      5,
+      9
      ],
      "offset": 0
     },
     "right": {
      "to": "156",
      "range": [
-      7,
-      8
+      5,
+      9
      ],
      "offset": 0
     }
@@ -24177,7 +24252,7 @@
     },
     {
      "tile": [
-      17,
+      4,
       12
      ],
      "k": "stash",
@@ -24189,7 +24264,7 @@
    "spawns": {
     "default": [
      1,
-     7
+     5
     ]
    },
    "grid": [
@@ -24199,31 +24274,33 @@
    "pkey": "ystra",
    "npcs": [
     {
-     "x": 14,
-     "y": 8,
+     "x": 18,
+     "y": 9,
      "art": "pilgrim",
      "face": "down",
      "t": [
       "Seeker: I came for answers. I found waterfalls that fall forever and never land.",
       "Seeker: Wild Alienmon here are strong. Weaken them first, then throw a Stasis Pod."
      ],
+     "stay": true,
      "src": "p:155:0"
     },
     {
-     "x": 7,
-     "y": 10,
+     "x": 3,
+     "y": 5,
      "art": "explorer",
      "face": "down",
      "t": [
       "Rift walker: The trainers out here are postgame tough. Heal at the Arrival crystal if you're running low."
      ],
+     "stay": true,
      "src": "p:155:1"
     },
     {
-     "x": 20,
-     "y": 10,
+     "x": 9,
+     "y": 5,
      "art": "pilgrim",
-     "face": "up",
+     "face": "down",
      "t": [],
      "id": "sec155_tr2",
      "trainer": {
@@ -24233,10 +24310,10 @@
      }
     },
     {
-     "x": 4,
-     "y": 8,
+     "x": 15,
+     "y": 5,
      "art": "ystran",
-     "face": "up",
+     "face": "down",
      "t": [],
      "id": "sec155_tr3",
      "trainer": {
@@ -24249,11 +24326,11 @@
    "mons": [
     {
      "x": 6,
-     "y": 2,
+     "y": 10,
      "mon": "Fractalith"
     },
     {
-     "x": 10,
+     "x": 18,
      "y": 5,
      "mon": "Riftwalker"
     }
@@ -24275,16 +24352,16 @@
     "left": {
      "to": "155",
      "range": [
-      7,
-      8
+      5,
+      9
      ],
      "offset": 0
     },
     "right": {
      "to": "157",
      "range": [
-      7,
-      8
+      5,
+      9
      ],
      "offset": 0
     }
@@ -24293,8 +24370,8 @@
    "objects": [
     {
      "tile": [
-      20,
-      2
+      12,
+      4
      ],
      "k": "sign",
      "t": [
@@ -24303,8 +24380,8 @@
     },
     {
      "tile": [
-      4,
-      12
+      10,
+      3
      ],
      "k": "stash",
      "item": "dust",
@@ -24313,8 +24390,8 @@
     },
     {
      "tile": [
-      20,
-      11
+      19,
+      3
      ],
      "k": "stash",
      "item": "maxrevive",
@@ -24325,7 +24402,7 @@
    "spawns": {
     "default": [
      1,
-     7
+     5
     ]
    },
    "grid": [
@@ -24335,8 +24412,8 @@
    "pkey": "ystra",
    "npcs": [
     {
-     "x": 19,
-     "y": 10,
+     "x": 9,
+     "y": 7,
      "art": "ystran",
      "face": "down",
      "t": [],
@@ -24346,8 +24423,8 @@
      "src": "n:156:0"
     },
     {
-     "x": 14,
-     "y": 7,
+     "x": 18,
+     "y": 5,
      "art": "ystran",
      "face": "down",
      "t": [
@@ -24367,24 +24444,26 @@
       "Ystran echo: These were our seas. Aquelion sang over them... now the water drowns the old roads.",
       "Ystran echo: ...the coral still grows. Grief is not the same as ending."
      ],
+     "stay": true,
      "src": "p:156:0"
     },
     {
-     "x": 17,
-     "y": 11,
+     "x": 14,
+     "y": 9,
      "art": "explorer",
      "face": "down",
      "t": [
       "Rift walker: Hydro types thrive in the drowned basins. Bring something that hits them hard.",
       "Rift walker: Stick to the sand paths. The water here goes down further than any sea should."
      ],
+     "stay": true,
      "src": "p:156:1"
     },
     {
-     "x": 4,
-     "y": 9,
+     "x": 6,
+     "y": 5,
      "art": "ystran",
-     "face": "up",
+     "face": "down",
      "t": [],
      "id": "sec156_tr4",
      "trainer": {
@@ -24394,10 +24473,10 @@
      }
     },
     {
-     "x": 12,
-     "y": 10,
+     "x": 11,
+     "y": 5,
      "art": "explorer",
-     "face": "right",
+     "face": "down",
      "t": [],
      "id": "sec156_tr5",
      "trainer": {
@@ -24409,13 +24488,13 @@
    ],
    "mons": [
     {
-     "x": 9,
-     "y": 3,
+     "x": 20,
+     "y": 9,
      "mon": "Pulsarion"
     },
     {
-     "x": 6,
-     "y": 11,
+     "x": 21,
+     "y": 3,
      "mon": "Riftwalker"
     }
    ]
@@ -24436,7 +24515,7 @@
     "left": {
      "to": "156",
      "range": [
-      7,
+      5,
       8
      ],
      "offset": 0
@@ -24446,7 +24525,21 @@
     {
      "tile": [
       23,
-      7
+      5
+     ],
+     "to": "158",
+     "at": [
+      6,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      6
      ],
      "to": "158",
      "at": [
@@ -24460,11 +24553,25 @@
     {
      "tile": [
       23,
-      8
+      7
      ],
      "to": "158",
      "at": [
       8,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      8
+     ],
+     "to": "158",
+     "at": [
+      9,
       14
      ],
      "face": "up",
@@ -24475,8 +24582,8 @@
    "objects": [
     {
      "tile": [
-      10,
-      8
+      8,
+      4
      ],
      "k": "sign",
      "t": [
@@ -24485,8 +24592,8 @@
     },
     {
      "tile": [
-      8,
-      5
+      10,
+      3
      ],
      "k": "stash",
      "item": "fullgel",
@@ -24497,7 +24604,7 @@
    "spawns": {
     "default": [
      1,
-     7
+     5
     ]
    },
    "grid": [
@@ -24507,8 +24614,8 @@
    "pkey": "ystra",
    "npcs": [
     {
-     "x": 12,
-     "y": 9,
+     "x": 11,
+     "y": 6,
      "art": "ystran",
      "face": "down",
      "t": [],
@@ -24518,37 +24625,39 @@
      "src": "n:157:0"
     },
     {
-     "x": 7,
-     "y": 10,
+     "x": 18,
+     "y": 8,
      "art": "pilgrim",
      "face": "down",
      "t": [
       "Seeker: The Sun Forge. They say Ignarch kept Ystra's red sun burning from this very pillar.",
       "Seeker: The heat here is old heat. It doesn't burn you. It remembers you."
      ],
+     "stay": true,
      "src": "p:157:0"
     },
     {
-     "x": 10,
-     "y": 11,
+     "x": 4,
+     "y": 8,
      "art": "ystran",
      "face": "down",
      "t": [
       "Ystran echo: When the sun began to die, we fed it everything... and still it dimmed.",
       "Ystran echo: ...go north, into the crystal halls. The light there was ours."
      ],
+     "stay": true,
      "src": "p:157:1"
     }
    ],
    "mons": [
     {
-     "x": 15,
-     "y": 4,
+     "x": 9,
+     "y": 8,
      "mon": "Riftwalker"
     },
     {
-     "x": 3,
-     "y": 6,
+     "x": 13,
+     "y": 8,
      "mon": "Blightroot"
     }
    ]
@@ -24569,7 +24678,35 @@
    "warps": [
     {
      "tile": [
+      6,
+      15
+     ],
+     "to": "157",
+     "at": [
+      22,
+      5
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
       7,
+      15
+     ],
+     "to": "157",
+     "at": [
+      22,
+      6
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      8,
       15
      ],
      "to": "157",
@@ -24583,7 +24720,7 @@
     },
     {
      "tile": [
-      8,
+      9,
       15
      ],
      "to": "157",
@@ -24597,6 +24734,20 @@
     },
     {
      "tile": [
+      6,
+      0
+     ],
+     "to": "159",
+     "at": [
+      6,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
       7,
       0
      ],
@@ -24617,6 +24768,20 @@
      "to": "159",
      "at": [
       8,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      9,
+      0
+     ],
+     "to": "159",
+     "at": [
+      9,
       14
      ],
      "face": "up",
@@ -24628,7 +24793,7 @@
     {
      "tile": [
       2,
-      2
+      3
      ],
      "k": "sign",
      "t": [
@@ -24638,7 +24803,7 @@
     {
      "tile": [
       13,
-      7
+      3
      ],
      "k": "sign",
      "t": [
@@ -24647,7 +24812,7 @@
     },
     {
      "tile": [
-      14,
+      2,
       5
      ],
      "k": "stash",
@@ -24658,15 +24823,15 @@
    ],
    "spawns": {
     "default": [
-     7,
+     6,
      14
     ]
    },
    "pkey": "ystra",
    "npcs": [
     {
-     "x": 3,
-     "y": 8,
+     "x": 12,
+     "y": 9,
      "art": "saga",
      "face": "down",
      "t": [
@@ -24678,8 +24843,8 @@
      "src": "n:158:0"
     },
     {
-     "x": 12,
-     "y": 6,
+     "x": 13,
+     "y": 9,
      "art": "kit",
      "face": "down",
      "t": [
@@ -24691,8 +24856,8 @@
      "src": "n:158:1"
     },
     {
-     "x": 1,
-     "y": 8,
+     "x": 5,
+     "y": 6,
      "art": "ystran",
      "face": "down",
      "t": [
@@ -24704,21 +24869,22 @@
      "src": "n:158:2"
     },
     {
-     "x": 8,
-     "y": 5,
+     "x": 7,
+     "y": 13,
      "art": "explorer",
      "face": "down",
      "t": [
       "Rift walker: Crystal Ruins. Every pillar is a record. Nobody alive can read them anymore.",
       "Rift walker: Trainers lurk in these halls. Step into their line of sight and they'll challenge you."
      ],
+     "stay": true,
      "src": "p:158:0"
     },
     {
-     "x": 8,
-     "y": 6,
+     "x": 4,
+     "y": 9,
      "art": "pilgrim",
-     "face": "down",
+     "face": "right",
      "t": [],
      "id": "sec158_tr4",
      "trainer": {
@@ -24745,6 +24911,20 @@
    "warps": [
     {
      "tile": [
+      6,
+      15
+     ],
+     "to": "158",
+     "at": [
+      6,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
       7,
       15
      ],
@@ -24773,7 +24953,49 @@
     },
     {
      "tile": [
+      9,
+      15
+     ],
+     "to": "158",
+     "at": [
+      9,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      6,
+      0
+     ],
+     "to": "160",
+     "at": [
+      1,
+      5
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
       7,
+      0
+     ],
+     "to": "160",
+     "at": [
+      1,
+      6
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      8,
       0
      ],
      "to": "160",
@@ -24787,7 +25009,7 @@
     },
     {
      "tile": [
-      8,
+      9,
       0
      ],
      "to": "160",
@@ -24803,8 +25025,8 @@
    "objects": [
     {
      "tile": [
-      3,
-      3
+      2,
+      2
      ],
      "k": "sign",
      "t": [
@@ -24813,8 +25035,8 @@
     },
     {
      "tile": [
-      12,
-      3
+      13,
+      2
      ],
      "k": "sign",
      "t": [
@@ -24823,8 +25045,8 @@
     },
     {
      "tile": [
-      12,
-      12
+      14,
+      7
      ],
      "k": "stash",
      "item": "singularity",
@@ -24834,15 +25056,15 @@
    ],
    "spawns": {
     "default": [
-     7,
+     6,
      14
     ]
    },
    "pkey": "ystra",
    "npcs": [
     {
-     "x": 10,
-     "y": 10,
+     "x": 14,
+     "y": 9,
      "art": "tamsin",
      "face": "down",
      "t": [
@@ -24854,19 +25076,20 @@
      "src": "n:159:0"
     },
     {
-     "x": 13,
-     "y": 5,
+     "x": 5,
+     "y": 3,
      "art": "ystran",
      "face": "down",
      "t": [
       "Ystran echo: ...this was a library. We sang knowledge into crystal so it would outlive us. It did.",
       "Ystran echo: Beyond these halls, the forest sickens. The Devourer's shadow touched it first."
      ],
+     "stay": true,
      "src": "p:159:0"
     },
     {
-     "x": 12,
-     "y": 10,
+     "x": 14,
+     "y": 8,
      "art": "ystran",
      "face": "left",
      "t": [],
@@ -24896,8 +25119,8 @@
     "right": {
      "to": "161",
      "range": [
-      7,
-      8
+      5,
+      9
      ],
      "offset": 0
     }
@@ -24906,7 +25129,21 @@
     {
      "tile": [
       0,
-      7
+      5
+     ],
+     "to": "159",
+     "at": [
+      6,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      6
      ],
      "to": "159",
      "at": [
@@ -24920,11 +25157,25 @@
     {
      "tile": [
       0,
-      8
+      7
      ],
      "to": "159",
      "at": [
       8,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      8
+     ],
+     "to": "159",
+     "at": [
+      9,
       1
      ],
      "face": "down",
@@ -24935,26 +25186,8 @@
    "objects": [
     {
      "tile": [
-      11,
-      0
-     ],
-     "k": "stop",
-     "t": "The stairs are blocked off. You can't go this way.",
-     "why": "dead-end stairs (tools/sections/dead_ends.py)"
-    },
-    {
-     "tile": [
-      12,
-      0
-     ],
-     "k": "stop",
-     "t": "The stairs are blocked off. You can't go this way.",
-     "why": "dead-end stairs (tools/sections/dead_ends.py)"
-    },
-    {
-     "tile": [
-      11,
-      14
+      13,
+      2
      ],
      "k": "stash",
      "item": "ether",
@@ -24963,8 +25196,8 @@
     },
     {
      "tile": [
-      4,
-      3
+      16,
+      12
      ],
      "k": "stash",
      "item": "maxrevive",
@@ -24975,7 +25208,7 @@
    "spawns": {
     "default": [
      22,
-     7
+     5
     ]
    },
    "grid": [
@@ -24985,7 +25218,7 @@
    "pkey": "ystra",
    "npcs": [
     {
-     "x": 9,
+     "x": 12,
      "y": 10,
      "art": "kit",
      "face": "down",
@@ -24998,8 +25231,8 @@
      "src": "n:160:0"
     },
     {
-     "x": 17,
-     "y": 10,
+     "x": 15,
+     "y": 5,
      "art": "ystran",
      "face": "down",
      "t": [
@@ -25011,29 +25244,31 @@
      "src": "n:160:1"
     },
     {
-     "x": 4,
-     "y": 5,
+     "x": 5,
+     "y": 6,
      "art": "pilgrim",
      "face": "down",
      "t": [
       "Seeker: The blight spreads from the void's edge. Leaves turn to glass, then to dust.",
       "Seeker: Some Bio types here still fight the blight. Help them and they might follow you."
      ],
+     "stay": true,
      "src": "p:160:0"
     },
     {
-     "x": 9,
-     "y": 4,
+     "x": 20,
+     "y": 8,
      "art": "explorer",
      "face": "down",
      "t": [
       "Rift walker: Keep to the path. The blighted brush hides wild Alienmon that strike before you see them."
      ],
+     "stay": true,
      "src": "p:160:1"
     },
     {
      "x": 14,
-     "y": 11,
+     "y": 10,
      "art": "explorer",
      "face": "up",
      "t": [],
@@ -25045,10 +25280,10 @@
      }
     },
     {
-     "x": 9,
+     "x": 11,
      "y": 5,
      "art": "pilgrim",
-     "face": "right",
+     "face": "down",
      "t": [],
      "id": "sec160_tr5",
      "trainer": {
@@ -25060,13 +25295,13 @@
    ],
    "mons": [
     {
-     "x": 22,
-     "y": 6,
+     "x": 19,
+     "y": 3,
      "mon": "Fractalith"
     },
     {
-     "x": 17,
-     "y": 3,
+     "x": 1,
+     "y": 9,
      "mon": "Riftwalker"
     }
    ]
@@ -25087,16 +25322,16 @@
     "left": {
      "to": "160",
      "range": [
-      7,
-      8
+      5,
+      9
      ],
      "offset": 0
     },
     "right": {
      "to": "162",
      "range": [
-      7,
-      8
+      5,
+      9
      ],
      "offset": 0
     }
@@ -25105,17 +25340,8 @@
    "objects": [
     {
      "tile": [
-      11,
-      0
-     ],
-     "k": "stop",
-     "t": "The stairs are blocked off. You can't go this way.",
-     "why": "dead-end stairs (tools/sections/dead_ends.py)"
-    },
-    {
-     "tile": [
-      18,
-      3
+      10,
+      1
      ],
      "k": "stash",
      "item": "maxrevive",
@@ -25124,8 +25350,8 @@
     },
     {
      "tile": [
-      6,
-      5
+      10,
+      14
      ],
      "k": "stash",
      "item": "fullgel",
@@ -25136,7 +25362,7 @@
    "spawns": {
     "default": [
      1,
-     7
+     5
     ]
    },
    "grid": [
@@ -25146,29 +25372,31 @@
    "pkey": "ystra",
    "npcs": [
     {
-     "x": 5,
-     "y": 7,
+     "x": 14,
+     "y": 9,
      "art": "ystran",
      "face": "down",
      "t": [
       "Ystran echo: ...the trees remember being green. If you listen, they will tell you what green sounded like.",
       "Ystran echo: Past the void lies the Heartroot's crater. First, you must look into the hungry one."
      ],
+     "stay": true,
      "src": "p:161:0"
     },
     {
-     "x": 15,
-     "y": 6,
+     "x": 19,
+     "y": 5,
      "art": "pilgrim",
      "face": "down",
      "t": [
       "Seeker: Eight Signal Shards held the Rift shut. Now you walk right through it. Strange, isn't it?"
      ],
+     "stay": true,
      "src": "p:161:1"
     },
     {
-     "x": 20,
-     "y": 6,
+     "x": 8,
+     "y": 5,
      "art": "pilgrim",
      "face": "down",
      "t": [],
@@ -25181,9 +25409,9 @@
     },
     {
      "x": 12,
-     "y": 12,
+     "y": 3,
      "art": "ystran",
-     "face": "up",
+     "face": "down",
      "t": [],
      "id": "sec161_tr3",
      "trainer": {
@@ -25195,13 +25423,13 @@
    ],
    "mons": [
     {
-     "x": 17,
-     "y": 11,
+     "x": 18,
+     "y": 9,
      "mon": "Pulsarion"
     },
     {
-     "x": 8,
-     "y": 5,
+     "x": 11,
+     "y": 14,
      "mon": "Riftwalker"
     }
    ]
@@ -25222,16 +25450,16 @@
     "left": {
      "to": "161",
      "range": [
-      7,
-      8
+      5,
+      10
      ],
      "offset": 0
     },
     "right": {
      "to": "163",
      "range": [
-      7,
-      8
+      5,
+      10
      ],
      "offset": 0
     }
@@ -25240,35 +25468,8 @@
    "objects": [
     {
      "tile": [
-      2,
-      2
-     ],
-     "k": "stop",
-     "t": "The stairs are blocked off. You can't go this way.",
-     "why": "dead-end stairs (tools/sections/dead_ends.py)"
-    },
-    {
-     "tile": [
-      2,
-      5
-     ],
-     "k": "stop",
-     "t": "The stairs are blocked off. You can't go this way.",
-     "why": "dead-end stairs (tools/sections/dead_ends.py)"
-    },
-    {
-     "tile": [
-      3,
-      2
-     ],
-     "k": "stop",
-     "t": "The stairs are blocked off. You can't go this way.",
-     "why": "dead-end stairs (tools/sections/dead_ends.py)"
-    },
-    {
-     "tile": [
-      10,
-      6
+      12,
+      4
      ],
      "k": "sign",
      "t": [
@@ -25277,8 +25478,8 @@
     },
     {
      "tile": [
-      21,
-      4
+      10,
+      13
      ],
      "k": "stash",
      "item": "maxrevive",
@@ -25289,7 +25490,7 @@
    "spawns": {
     "default": [
      1,
-     7
+     5
     ]
    },
    "grid": [
@@ -25299,8 +25500,8 @@
    "pkey": "ystra",
    "npcs": [
     {
-     "x": 3,
-     "y": 9,
+     "x": 12,
+     "y": 7,
      "art": "ystran",
      "face": "down",
      "t": [],
@@ -25310,37 +25511,39 @@
      "src": "n:162:0"
     },
     {
-     "x": 11,
-     "y": 14,
+     "x": 4,
+     "y": 10,
      "art": "explorer",
      "face": "down",
      "t": [
       "Rift walker: That's it. The Edge of the Void. Something in there breathes when the wind stops.",
       "Rift walker: Save your strength. Whatever waits on that altar is older than the stars around it."
      ],
+     "stay": true,
      "src": "p:162:0"
     },
     {
      "x": 20,
-     "y": 6,
+     "y": 8,
      "art": "ystran",
      "face": "down",
      "t": [
       "Ystran echo: The Devourer was never cruel... only hungry, and so very alone.",
       "Ystran echo: ...if you face it, do not hate it. Hate is a kind of hunger too."
      ],
+     "stay": true,
      "src": "p:162:1"
     }
    ],
    "mons": [
     {
-     "x": 19,
-     "y": 11,
+     "x": 15,
+     "y": 13,
      "mon": "Riftwalker"
     },
     {
-     "x": 5,
-     "y": 7,
+     "x": 9,
+     "y": 13,
      "mon": "Blightroot"
     }
    ]
@@ -25361,8 +25564,8 @@
     "left": {
      "to": "162",
      "range": [
-      7,
-      8
+      5,
+      10
      ],
      "offset": 0
     }
@@ -25371,44 +25574,8 @@
    "objects": [
     {
      "tile": [
-      1,
-      1
-     ],
-     "k": "stop",
-     "t": "The stairs are blocked off. You can't go this way.",
-     "why": "dead-end stairs (tools/sections/dead_ends.py)"
-    },
-    {
-     "tile": [
-      2,
-      1
-     ],
-     "k": "stop",
-     "t": "The stairs are blocked off. You can't go this way.",
-     "why": "dead-end stairs (tools/sections/dead_ends.py)"
-    },
-    {
-     "tile": [
-      14,
-      15
-     ],
-     "k": "stop",
-     "t": "The stairs are blocked off. You can't go this way.",
-     "why": "dead-end stairs (tools/sections/dead_ends.py)"
-    },
-    {
-     "tile": [
-      15,
-      15
-     ],
-     "k": "stop",
-     "t": "The stairs are blocked off. You can't go this way.",
-     "why": "dead-end stairs (tools/sections/dead_ends.py)"
-    },
-    {
-     "tile": [
-      12,
-      3
+      8,
+      4
      ],
      "k": "sign",
      "t": [
@@ -25417,8 +25584,8 @@
     },
     {
      "tile": [
-      20,
-      9
+      18,
+      7
      ],
      "k": "sign",
      "t": [
@@ -25427,8 +25594,8 @@
     },
     {
      "tile": [
-      10,
-      5
+      9,
+      12
      ],
      "k": "stash",
      "item": "maxrevive",
@@ -25439,7 +25606,7 @@
    "spawns": {
     "default": [
      1,
-     7
+     5
     ]
    },
    "grid": [
@@ -25449,8 +25616,8 @@
    "pkey": "ystra",
    "npcs": [
     {
-     "x": 4,
-     "y": 9,
+     "x": 10,
+     "y": 10,
      "art": "ystran",
      "face": "down",
      "t": [
@@ -25462,36 +25629,38 @@
      "src": "n:163:0"
     },
     {
-     "x": 21,
-     "y": 10,
+     "x": 12,
+     "y": 3,
      "art": "ystran",
      "face": "down",
      "t": [
       "Ystran echo: Her world-tree stood here once. Every seedpod that crossed the stars was a piece of her. Now only the Heartroot remains.",
       "Ystran echo: ...she is tired, Linker. But she waited for you. She always knew someone would come."
      ],
+     "stay": true,
      "src": "p:163:0"
     },
     {
-     "x": 13,
-     "y": 6,
+     "x": 4,
+     "y": 5,
      "art": "pilgrim",
      "face": "down",
      "t": [
       "Seeker: I've walked every fragment of this world. This is the only place that feels like it is still alive."
      ],
+     "stay": true,
      "src": "p:163:1"
     }
    ],
    "mons": [
     {
-     "x": 14,
-     "y": 4,
+     "x": 17,
+     "y": 12,
      "mon": "Riftwalker"
     },
     {
-     "x": 9,
-     "y": 4,
+     "x": 6,
+     "y": 10,
      "mon": "Fractalith"
     }
    ]
@@ -30437,149 +30606,127 @@
   },
   {
    "from_id": "146",
-   "edge": "left",
-   "tile_range": [
-    7,
-    8
-   ],
-   "to_id": "arrival",
-   "to_edge": null,
-   "to_tile": null
-  },
-  {
-   "from_id": "146",
    "edge": "right",
    "tile_range": [
-    7,
-    8
+    5,
+    9
    ],
    "to_id": "151",
    "to_edge": "bottom",
    "to_tile": [
-    7,
-    8
+    6,
+    9
    ]
   },
   {
    "from_id": "151",
    "edge": "bottom",
    "tile_range": [
-    7,
-    8
+    6,
+    9
    ],
    "to_id": "146",
    "to_edge": "right",
    "to_tile": [
-    7,
-    8
+    5,
+    9
    ]
-  },
-  {
-   "from_id": "153",
-   "edge": "left",
-   "tile_range": [
-    7,
-    8
-   ],
-   "to_id": "arrival",
-   "to_edge": null,
-   "to_tile": null
   },
   {
    "from_id": "153",
    "edge": "right",
    "tile_range": [
-    7,
-    8
+    5,
+    10
    ],
    "to_id": "154",
    "to_edge": "left",
    "to_tile": [
-    7,
-    8
+    5,
+    10
    ]
   },
   {
    "from_id": "154",
    "edge": "left",
    "tile_range": [
-    7,
-    8
+    5,
+    10
    ],
    "to_id": "153",
    "to_edge": "right",
    "to_tile": [
-    7,
-    8
+    5,
+    10
    ]
   },
   {
    "from_id": "154",
    "edge": "right",
    "tile_range": [
-    7,
-    8
+    5,
+    10
    ],
    "to_id": "155",
    "to_edge": "left",
    "to_tile": [
-    7,
-    8
+    5,
+    9
    ]
   },
   {
    "from_id": "155",
    "edge": "left",
    "tile_range": [
-    7,
-    8
+    5,
+    9
    ],
    "to_id": "154",
    "to_edge": "right",
    "to_tile": [
-    7,
-    8
+    5,
+    10
    ]
   },
   {
    "from_id": "155",
    "edge": "right",
    "tile_range": [
-    7,
-    8
+    5,
+    9
    ],
    "to_id": "156",
    "to_edge": "left",
    "to_tile": [
-    7,
-    8
+    5,
+    9
    ]
   },
   {
    "from_id": "156",
    "edge": "left",
    "tile_range": [
-    7,
-    8
+    5,
+    9
    ],
    "to_id": "155",
    "to_edge": "right",
    "to_tile": [
-    7,
-    8
+    5,
+    9
    ]
   },
   {
    "from_id": "156",
    "edge": "right",
    "tile_range": [
-    7,
-    8
+    5,
+    9
    ],
    "to_id": "157",
    "to_edge": "left",
    "to_tile": [
-    7,
+    5,
     8
    ]
   },
@@ -30587,41 +30734,41 @@
    "from_id": "157",
    "edge": "left",
    "tile_range": [
-    7,
+    5,
     8
    ],
    "to_id": "156",
    "to_edge": "right",
    "to_tile": [
-    7,
-    8
+    5,
+    9
    ]
   },
   {
    "from_id": "157",
    "edge": "right",
    "tile_range": [
-    7,
+    5,
     8
    ],
    "to_id": "158",
    "to_edge": "bottom",
    "to_tile": [
-    7,
-    8
+    6,
+    9
    ]
   },
   {
    "from_id": "158",
    "edge": "bottom",
    "tile_range": [
-    7,
-    8
+    6,
+    9
    ],
    "to_id": "157",
    "to_edge": "right",
    "to_tile": [
-    7,
+    5,
     8
    ]
   },
@@ -30629,140 +30776,140 @@
    "from_id": "158",
    "edge": "top",
    "tile_range": [
-    7,
-    8
+    6,
+    9
    ],
    "to_id": "159",
    "to_edge": "bottom",
    "to_tile": [
-    7,
-    8
+    6,
+    9
    ]
   },
   {
    "from_id": "159",
    "edge": "bottom",
    "tile_range": [
-    7,
-    8
+    6,
+    9
    ],
    "to_id": "158",
    "to_edge": "top",
    "to_tile": [
-    7,
-    8
+    6,
+    9
    ]
   },
   {
    "from_id": "159",
    "edge": "top",
    "tile_range": [
-    7,
-    8
+    6,
+    9
    ],
    "to_id": "160",
    "to_edge": "left",
    "to_tile": [
-    7,
-    8
+    5,
+    9
    ]
   },
   {
    "from_id": "160",
    "edge": "left",
    "tile_range": [
-    7,
-    8
+    5,
+    9
    ],
    "to_id": "159",
    "to_edge": "top",
    "to_tile": [
-    7,
-    8
+    6,
+    9
    ]
   },
   {
    "from_id": "160",
    "edge": "right",
    "tile_range": [
-    7,
-    8
+    5,
+    9
    ],
    "to_id": "161",
    "to_edge": "left",
    "to_tile": [
-    7,
-    8
+    5,
+    9
    ]
   },
   {
    "from_id": "161",
    "edge": "left",
    "tile_range": [
-    7,
-    8
+    5,
+    9
    ],
    "to_id": "160",
    "to_edge": "right",
    "to_tile": [
-    7,
-    8
+    5,
+    9
    ]
   },
   {
    "from_id": "161",
    "edge": "right",
    "tile_range": [
-    7,
-    8
+    5,
+    9
    ],
    "to_id": "162",
    "to_edge": "left",
    "to_tile": [
-    7,
-    8
+    5,
+    10
    ]
   },
   {
    "from_id": "162",
    "edge": "left",
    "tile_range": [
-    7,
-    8
+    5,
+    10
    ],
    "to_id": "161",
    "to_edge": "right",
    "to_tile": [
-    7,
-    8
+    5,
+    9
    ]
   },
   {
    "from_id": "162",
    "edge": "right",
    "tile_range": [
-    7,
-    8
+    5,
+    10
    ],
    "to_id": "163",
    "to_edge": "left",
    "to_tile": [
-    7,
-    8
+    5,
+    10
    ]
   },
   {
    "from_id": "163",
    "edge": "left",
    "tile_range": [
-    7,
-    8
+    5,
+    10
    ],
    "to_id": "162",
    "to_edge": "right",
    "to_tile": [
-    7,
-    8
+    5,
+    10
    ]
   },
   {

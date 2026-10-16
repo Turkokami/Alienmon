@@ -205,25 +205,25 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 
 | Section | Tile | Item | Tier |
 |---|---|---|---|
-| 146 Summit Lift | 4,11 | 2x Singularity Pod | 7 |
+| 146 Summit Lift | 1,7 | 2x Singularity Pod | 7 |
 
 ## Ystra (16)
 
 | Section | Tile | Item | Tier |
 |---|---|---|---|
-| 153 Arrival Fragment | 8,2 | 5x Ether Gel | 7 |
-| 154 Floating Continents Part A | 16,3 | 2x Singularity Pod | 7 |
-| 154 Floating Continents Part A | 10,2 | 2x Max Revive | 7 |
+| 153 Arrival Fragment | 1,5 | 5x Ether Gel | 7 |
+| 154 Floating Continents Part A | 5,3 | 2x Singularity Pod | 7 |
+| 154 Floating Continents Part A | 17,3 | 2x Max Revive | 7 |
 | 155 Floating Continents Part B | 9,12 | 2x Singularity Pod | 7 |
-| 155 Floating Continents Part B | 17,12 | 5x Ether Gel | 7 |
-| 156 Drowned Seas | 4,12 | 2500x Stardust | 7 |
-| 156 Drowned Seas | 20,11 | 2x Max Revive | 7 |
-| 157 Sun Forge | 8,5 | 3x Full Gel | 7 |
-| 158 Crystal Ruins 1F | 14,5 | 2x Max Revive | 7 |
-| 159 Crystal Ruins 2F | 12,12 | 2x Singularity Pod | 7 |
-| 160 Blighted Forest Part A | 11,14 | 5x Ether Gel | 7 |
-| 160 Blighted Forest Part A | 4,3 | 2x Max Revive | 7 |
-| 161 Blighted Forest Part B | 18,3 | 2x Max Revive | 7 |
-| 161 Blighted Forest Part B | 6,5 | 3x Full Gel | 7 |
-| 162 Edge of the Void | 21,4 | 2x Max Revive | 7 |
-| 163 Seedmother's Grove | 10,5 | 2x Max Revive | 7 |
+| 155 Floating Continents Part B | 4,12 | 5x Ether Gel | 7 |
+| 156 Drowned Seas | 10,3 | 2500x Stardust | 7 |
+| 156 Drowned Seas | 19,3 | 2x Max Revive | 7 |
+| 157 Sun Forge | 10,3 | 3x Full Gel | 7 |
+| 158 Crystal Ruins 1F | 2,5 | 2x Max Revive | 7 |
+| 159 Crystal Ruins 2F | 14,7 | 2x Singularity Pod | 7 |
+| 160 Blighted Forest Part A | 13,2 | 5x Ether Gel | 7 |
+| 160 Blighted Forest Part A | 16,12 | 2x Max Revive | 7 |
+| 161 Blighted Forest Part B | 10,1 | 2x Max Revive | 7 |
+| 161 Blighted Forest Part B | 10,14 | 3x Full Gel | 7 |
+| 162 Edge of the Void | 10,13 | 2x Max Revive | 7 |
+| 163 Seedmother's Grove | 9,12 | 2x Max Revive | 7 |

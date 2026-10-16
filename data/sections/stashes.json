@@ -1524,8 +1524,8 @@
    "section": "146",
    "name": "Summit Lift",
    "tile": [
-    4,
-    11
+    1,
+    7
    ],
    "item": "singularity",
    "n": 2,
@@ -1537,8 +1537,8 @@
    "section": "153",
    "name": "Arrival Fragment",
    "tile": [
-    8,
-    2
+    1,
+    5
    ],
    "item": "ether",
    "n": 5,
@@ -1548,7 +1548,7 @@
    "section": "154",
    "name": "Floating Continents Part A",
    "tile": [
-    16,
+    5,
     3
    ],
    "item": "singularity",
@@ -1559,8 +1559,8 @@
    "section": "154",
    "name": "Floating Continents Part A",
    "tile": [
-    10,
-    2
+    17,
+    3
    ],
    "item": "maxrevive",
    "n": 2,
@@ -1581,7 +1581,7 @@
    "section": "155",
    "name": "Floating Continents Part B",
    "tile": [
-    17,
+    4,
     12
    ],
    "item": "ether",
@@ -1592,8 +1592,8 @@
    "section": "156",
    "name": "Drowned Seas",
    "tile": [
-    4,
-    12
+    10,
+    3
    ],
    "item": "dust",
    "n": 2500,
@@ -1603,8 +1603,8 @@
    "section": "156",
    "name": "Drowned Seas",
    "tile": [
-    20,
-    11
+    19,
+    3
    ],
    "item": "maxrevive",
    "n": 2,
@@ -1614,8 +1614,8 @@
    "section": "157",
    "name": "Sun Forge",
    "tile": [
-    8,
-    5
+    10,
+    3
    ],
    "item": "fullgel",
    "n": 3,
@@ -1625,7 +1625,7 @@
    "section": "158",
    "name": "Crystal Ruins 1F",
    "tile": [
-    14,
+    2,
     5
    ],
    "item": "maxrevive",
@@ -1636,8 +1636,8 @@
    "section": "159",
    "name": "Crystal Ruins 2F",
    "tile": [
-    12,
-    12
+    14,
+    7
    ],
    "item": "singularity",
    "n": 2,
@@ -1647,8 +1647,8 @@
    "section": "160",
    "name": "Blighted Forest Part A",
    "tile": [
-    11,
-    14
+    13,
+    2
    ],
    "item": "ether",
    "n": 5,
@@ -1658,8 +1658,8 @@
    "section": "160",
    "name": "Blighted Forest Part A",
    "tile": [
-    4,
-    3
+    16,
+    12
    ],
    "item": "maxrevive",
    "n": 2,
@@ -1669,8 +1669,8 @@
    "section": "161",
    "name": "Blighted Forest Part B",
    "tile": [
-    18,
-    3
+    10,
+    1
    ],
    "item": "maxrevive",
    "n": 2,
@@ -1680,8 +1680,8 @@
    "section": "161",
    "name": "Blighted Forest Part B",
    "tile": [
-    6,
-    5
+    10,
+    14
    ],
    "item": "fullgel",
    "n": 3,
@@ -1691,8 +1691,8 @@
    "section": "162",
    "name": "Edge of the Void",
    "tile": [
-    21,
-    4
+    10,
+    13
    ],
    "item": "maxrevive",
    "n": 2,
@@ -1702,8 +1702,8 @@
    "section": "163",
    "name": "Seedmother's Grove",
    "tile": [
-    10,
-    5
+    9,
+    12
    ],
    "item": "maxrevive",
    "n": 2,

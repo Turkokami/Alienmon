@@ -238,196 +238,88 @@
     3
    ],
    "why": "V2 stairs"
+  },
+  {
+   "a": "147",
+   "a_tile": [
+    12,
+    3
+   ],
+   "b": "148",
+   "b_tile": [
+    1,
+    3
+   ],
+   "why": "V2 stairs"
+  },
+  {
+   "a": "147",
+   "a_tile": [
+    13,
+    3
+   ],
+   "b": "148",
+   "b_tile": [
+    2,
+    3
+   ],
+   "why": "V2 stairs"
+  },
+  {
+   "a": "148",
+   "a_tile": [
+    12,
+    3
+   ],
+   "b": "149",
+   "b_tile": [
+    2,
+    3
+   ],
+   "why": "V2 stairs"
+  },
+  {
+   "a": "148",
+   "a_tile": [
+    13,
+    3
+   ],
+   "b": "149",
+   "b_tile": [
+    3,
+    3
+   ],
+   "why": "V2 stairs"
+  },
+  {
+   "a": "149",
+   "a_tile": [
+    12,
+    3
+   ],
+   "b": "150",
+   "b_tile": [
+    12,
+    3
+   ],
+   "why": "V2 stairs"
+  },
+  {
+   "a": "149",
+   "a_tile": [
+    13,
+    3
+   ],
+   "b": "150",
+   "b_tile": [
+    13,
+    3
+   ],
+   "why": "V2 stairs"
   }
  ],
  "ignore_mats": {},
  "objects": {
-  "146": [],
-  "148": [
-   {
-    "tile": [
-     7,
-     14
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   },
-   {
-    "tile": [
-     8,
-     14
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   }
-  ],
-  "151": [
-   {
-    "tile": [
-     2,
-     5
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   },
-   {
-    "tile": [
-     2,
-     8
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   },
-   {
-    "tile": [
-     13,
-     5
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   },
-   {
-    "tile": [
-     13,
-     8
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   }
-  ],
-  "153": [
-   {
-    "tile": [
-     19,
-     4
-    ],
-    "k": "house",
-    "to": "181",
-    "why": "walk-in door: arrival_research_dome"
-   },
-   {
-    "tile": [
-     4,
-     4
-    ],
-    "k": "house",
-    "to": "189",
-    "why": "house door: opens the ystra house (was a chat knock door)"
-   },
-   {
-    "tile": [
-     4,
-     11
-    ],
-    "k": "house",
-    "to": "189",
-    "why": "house door: path in front opened to match the drawn ground"
-   }
-  ],
-  "160": [
-   {
-    "tile": [
-     11,
-     0
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   },
-   {
-    "tile": [
-     12,
-     0
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   }
-  ],
-  "161": [
-   {
-    "tile": [
-     11,
-     0
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   }
-  ],
-  "162": [
-   {
-    "tile": [
-     2,
-     2
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   },
-   {
-    "tile": [
-     2,
-     5
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   },
-   {
-    "tile": [
-     3,
-     2
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   }
-  ],
-  "163": [
-   {
-    "tile": [
-     1,
-     1
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   },
-   {
-    "tile": [
-     2,
-     1
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   },
-   {
-    "tile": [
-     14,
-     15
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   },
-   {
-    "tile": [
-     15,
-     15
-    ],
-    "k": "stop",
-    "t": "The stairs are blocked off. You can't go this way.",
-    "why": "dead-end stairs (tools/sections/dead_ends.py)"
-   }
-  ],
   "003": [
    {
     "tile": [
@@ -1264,6 +1156,38 @@
     "to": "172",
     "why": "V2: camp tent"
    }
+  ],
+  "153": [
+   {
+    "tile": [
+     12,
+     3
+    ],
+    "k": "house",
+    "to": "181",
+    "why": "V2: the research dome"
+   },
+   {
+    "tile": [
+     13,
+     3
+    ],
+    "k": "house",
+    "to": "181",
+    "why": "V2: the research dome"
+   },
+   {
+    "tile": [
+     3,
+     5
+    ],
+    "k": "bay",
+    "door": true,
+    "t": [
+     "The carved stone hums. A warm light washes over your team."
+    ],
+    "why": "V2: healing stone on the arrival ring"
+   }
   ]
  },
  "arrival": {
@@ -1314,6 +1238,14 @@
   "starfall": {
    "section": "136",
    "why": "V2: the sandbagged landing pad at Rim Camp"
+  },
+  "apex": {
+   "section": "146",
+   "why": "V2: the glass lift cabin at the left end of the terrace"
+  },
+  "ystra": {
+   "section": "153",
+   "why": "V2: the ring of carved stones"
   }
  },
  "unlisted": {},
@@ -1615,6 +1547,26 @@
    ]
   },
   "136": {
+   "arrival": [
+    3,
+    8
+   ],
+   "default": [
+    3,
+    8
+   ]
+  },
+  "146": {
+   "arrival": [
+    3,
+    8
+   ],
+   "default": [
+    3,
+    8
+   ]
+  },
+  "153": {
    "arrival": [
     3,
     8

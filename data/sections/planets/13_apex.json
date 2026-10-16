@@ -4,12 +4,12 @@
    "interior": "147",
    "parent": "146",
    "door": [
-    17,
-    4
+    11,
+    3
    ],
    "door2": [
-    18,
-    4
+    12,
+    3
    ],
    "mat": [
     [
@@ -22,68 +22,27 @@
     ]
    ],
    "confidence": "high",
-   "why": "The grand lift gate at the top of the plaza (lift cabin in the arch, stairs up from the road) carries you up into the Quorum's Observatory Halls."
+   "why": "V2: the domed Observatory Halls at the top of the terrace"
   },
   {
    "interior": "152",
    "parent": "146",
    "door": [
-    5,
-    4
+    20,
+    3
    ],
    "mat": [
     [
      7,
-     13
+     14
     ],
     [
      8,
-     13
+     14
     ]
    ],
    "confidence": "high",
-   "why": "Big radio-dish observatory building top-left with its own stairs up from the road; its lit base panel is the door to the star-chart library."
-  }
- ],
- "stairs": [
-  {
-   "a": "147",
-   "a_tile": [
-    8,
-    6
-   ],
-   "b": "148",
-   "b_tile": [
-    3,
-    7
-   ],
-   "why": "1F Crystal Hall: step into the orrery lift column, arrive on 2F's left staircase"
-  },
-  {
-   "a": "148",
-   "a_tile": [
-    12,
-    7
-   ],
-   "b": "149",
-   "b_tile": [
-    3,
-    7
-   ],
-   "why": "2F Sonic Hall right staircase up to 3F left staircase"
-  },
-  {
-   "a": "149",
-   "a_tile": [
-    12,
-    7
-   ],
-   "b": "150",
-   "b_tile": [
-    8,
-    8
-   ],
-   "why": "3F Plasma Hall right staircase up to the 4F orrery lift (arrive on the star ring in front of it)"
+   "why": "V2: the glass-roofed library on the right"
   }
  ],
  "ignore_mats": {
@@ -95,22 +54,22 @@
   "146": [
    {
     "tile": [
-     19,
-     12
+     16,
+     11
     ],
     "k": "bay"
    },
    {
     "tile": [
      6,
-     8
+     6
     ],
     "k": "shop"
    },
    {
     "tile": [
-     20,
-     12
+     16,
+     4
     ],
     "k": "sign",
     "t": [
@@ -183,8 +142,8 @@
   "151": [
    {
     "tile": [
-     7,
-     6
+     8,
+     5
     ],
     "k": "keeper"
    }
@@ -208,44 +167,48 @@
    {
     "art": "explorer",
     "tile": [
-     11,
+     12,
      10
     ],
     "t": [
      "Ace Linker: I beat the Quorum once. Then they beat me four times. Heal before every hall."
-    ]
+    ],
+    "stay": true
    },
    {
     "art": "researcher",
     "tile": [
-     6,
-     8
+     18,
+     5
     ],
     "t": [
      "Astronomer: The thin air up here makes the sky so clear. On a good night you can see the Rift glow."
-    ]
+    ],
+    "stay": true
    },
    {
     "art": "guard",
     "tile": [
-     15,
-     7
+     8,
+     5
     ],
     "t": [
      "Summit guard: Only Linkers with all eight Signal Shards ride the lift. Go on, you've earned it."
-    ]
+    ],
+    "stay": true
    }
   ],
   "147": [
    {
     "art": "explorer",
     "tile": [
-     3,
-     11
+     8,
+     4
     ],
     "t": [
      "Ace Linker: Crystal types shrug off hits but crack under heavy blows. Bring something that hits hard."
-    ]
+    ],
+    "stay": true
    }
   ],
   "148": [
@@ -253,74 +216,78 @@
     "art": "researcher",
     "t": [
      "Astronomer: The dome here was tuned to hear radio stars. Now it mostly hears guitar solos."
-    ]
+    ],
+    "tile": [
+     8,
+     4
+    ],
+    "stay": true
    }
   ],
   "149": [
    {
     "art": "guard",
     "tile": [
-     4,
-     9
+     8,
+     13
     ],
     "t": [
      "Summit guard: Nobody has heard Saga speak. The battle does the talking."
-    ]
+    ],
+    "stay": true
    }
   ],
   "150": [
    {
     "art": "explorer",
     "tile": [
-     1,
-     9
+     8,
+     4
     ],
     "t": [
      "Ace Linker: Gravity moves hit like a landslide. Lighten your team and keep your Pods ready."
-    ]
+    ],
+    "stay": true
    }
   ],
   "151": [
    {
     "art": "guard",
     "tile": [
-     6,
-     16
+     10,
+     21
     ],
     "t": [
      "Summit guard: Prime Linker Orra Venn bonded the very first Alienmon. Show respect, then show your best."
-    ]
+    ],
+    "stay": true
    }
   ],
   "152": [
    {
     "art": "researcher",
     "tile": [
-     6,
-     8
+     9,
+     12
     ],
     "t": [
      "Astronomer: Every Signal Shard you carried lit a world on these charts. Helix wanted the map for itself."
-    ]
+    ],
+    "stay": true
    },
    {
     "art": "researcher",
     "tile": [
-     9,
-     8
+     7,
+     4
     ],
     "t": [
      "Archivist: Quiet, please. The star charts are older than the Linker League itself."
-    ]
+    ],
+    "stay": true
    }
   ]
  },
- "unlisted": {
-  "146": "Stone stairs at (4,9)-(4,10) lead down to a snowy cliff overlook (walkable dead end); stairs at (13,11) lead to a short bridge over the waterfall (12-15,12) that ends at the cliff (walkable dead end). Small dish hut at (8,11) and the dish on the upper-left plateau (8,4) have no interiors (blocked).",
-  "148": "Bottom entrance carpet/steps (7-8,10-14) are drawn but this floor has no outside door; steps row 14 blocked.",
-  "149": "Bottom entrance carpet/steps drawn but no outside door; steps row 14 blocked.",
-  "150": "Bottom entrance carpet/mat drawn but no outside door; mat walkable, steps row 15 blocked.",
-  "151": "Side staircases (2,6-7) and (13,6-7) lead to tiny balconies by the small orreries; upper telescope dais beside Orra is blocked."
- },
+ "unlisted": {},
  "notes": "Apex Array: Summit Lift (146) is the hub. Lift gate (17-18,4) -> Observatory Halls 1F-4F (Crystal, Sonic, Plasma, Gravity) chained by stairs; 147 uses its orrery column as the up-lift and 150 arrives at its orrery. Library (152) is the dish building top-left (5,4). Recovery terminal ('bay') at the uplink consoles (19,12) bottom-right, shop at the striped stall (2,6); no nurse/clerk pinned because there is no tile behind those outdoor counters. Quorum members are NOT placed (story characters) - the lead should add them as trainers/bosses in 147-150 if wanted (good standing tiles: 147 (8,7)/(7,9), 148 (7,9), 149 (8,5), 150 (7,9)). Orra Venn keeper at 151 (7,6) top of the central steps, challenged from (7,7)."
 }
