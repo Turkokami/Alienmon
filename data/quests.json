@@ -118,6 +118,53 @@
       "x": 850,
       "y": 396,
       "map": "data/painted_maps.json#dustara"
+     },
+     "then": {
+      "gift": {
+       "name": "Zib",
+       "lv": 5
+      },
+      "flags": [
+       "zib_joined"
+      ],
+      "lines": [
+       "Zib zips in a happy loop around your head. Bip!",
+       "Before you leave Dustmere, you should take your new friend home to meet Mom."
+      ]
+     }
+    },
+    {
+     "type": "talk",
+     "target": "mom_home",
+     "count": 1,
+     "hint": "Take Zib home to meet Mom",
+     "location": {
+      "area": "dustmere",
+      "planet": "dustara",
+      "spot": "Mom, at home"
+     },
+     "then": {
+      "art": "mom",
+      "items": {
+       "nana_badge": 1,
+       "mom_backpack": 1
+      },
+      "hide": [
+       "stowaway"
+      ],
+      "lines": [
+       "Mom looks up from the kitchen table... and right into one huge blinking eye.",
+       "Zib: Bip.",
+       "Mom: Well, hello to you too! And who is THIS?",
+       "Mom: A little saucer from the canyon? Any friend of yours is welcome in this house.",
+       "Mom: So it's really happening. Dr. Vashti says you're ready to head out past the bridge.",
+       "Mom: Before you go... this was your Nana Wren's. She wore it every day she ran the Recovery Bay.",
+       "It's a brass cross with a glowing blue core. Stamped on the back: R.B. No. 1.",
+       "Mom: And you're not leaving without this. Your backpack. Snacks, a map, a spare pair of socks. Don't argue.",
+       "Mom: Call home once in a while, Rook. Promise me.",
+       "Unbeknownst to Rook or his mother, someone else had already found that backpack.",
+       "Hidden deep inside, beneath the snacks and the socks, an unknown guest curled up tight... and held its breath."
+      ]
      }
     }
    ],
@@ -129,20 +176,14 @@
      "Keep at it, Linker. You've got this."
     ],
     "complete": [
-     "Zib joined your team! It only ever says one word: Bip."
+     "Time to see what lies beyond Dustmere."
     ]
    },
    "rewards": {
-    "alienmon_gift": {
-     "name": "Zib",
-     "lv": 5
-    },
-    "flags": [
-     "zib_joined"
-    ]
+    "flags": []
    },
    "repeatable": false,
-   "notes": "Zib is the Seedmother's scout. Give as a gift (add to party or storage). Zib follows the story."
+   "notes": "Zib joins at the bridge (objective 2 then.gift). Objective 3: home to Mom, who gives Nana Wren's badge and the backpack; the stowaway rides along unseen."
   },
   {
    "id": "M03",
@@ -205,23 +246,7 @@
     ]
    },
    "repeatable": false,
-   "notes": "Sola uses the starter strong against yours (Sporix→Plazmo, Plazmo→Gloopa, Gloopa→Sporix).",
-   "epilogue": {
-    "art": "mom",
-    "items": {
-     "nana_badge": 1,
-     "stowaway": 1
-    },
-    "lines": [
-     "Mom catches up with you at the trading post, a little out of breath.",
-     "Mom: Before you head out... this was your Nana Wren's. She wore it every day she ran the Recovery Bay.",
-     "It's a brass cross with a glowing blue core. Stamped on the back: R.B. No. 1.",
-     "Mom: She'd want you to have it. Call home once in a while, Linker.",
-     "Later, as you pack your bag for the road, something wriggles inside it.",
-     "A pair of shy eyes blink up at you. It's the {kit} that ran out of Dr. Vashti's lab! It has stowed away in your bag.",
-     "It won't come out... but it won't leave either."
-    ]
-   }
+   "notes": "Sola uses the starter strong against yours (Sporix→Plazmo, Plazmo→Gloopa, Gloopa→Sporix)."
   },
   {
    "id": "M04",

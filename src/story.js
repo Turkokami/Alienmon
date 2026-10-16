@@ -11,10 +11,10 @@
  Section scenes (data/story_scenes.json) play once when you walk into a section at the right point in the story. */
 const STORY=__STORY__;
 Object.assign(KEY_ITEMS,{nana_badge:"Nana Wren's Badge",teo_lantern:"Teo's Lantern",crystal_map:"Teo's Crystal Map",nana_journal:"Nana Wren's Journal",codex_page:'Codex Page'});
-Object.assign(KEY_ITEMS,{stowaway:'Stowaway',teo_journal_page:'Teo\'s Journal Page',prophecy_shrine:'Prophecy Shrine'});Object.assign(KEY_NAME,KEY_ITEMS);
+Object.assign(KEY_ITEMS,{stowaway:'Stowaway',mom_backpack:"Mom's Backpack",teo_journal_page:'Teo\'s Journal Page',prophecy_shrine:'Prophecy Shrine'});Object.assign(KEY_NAME,KEY_ITEMS);
 // Kit Briggs's art: until art/characters/kit.png exists, Kit borrows the Technician sprite
 if(!CHAR.kit&&CHAR.technician)CHAR.kit=CHAR.technician;
-Object.assign(KEY_DESC,{nana_badge:'A brass cross with a glowing blue core, stamped "R.B. No. 1". Mom pinned it on you.',teo_lantern:"Teo Reyes's old mining lantern. It never quite goes out.",
+Object.assign(KEY_DESC,{mom_backpack:'Snacks, a map and a spare pair of socks. It feels a little heavier than it should.',nana_badge:'A brass cross with a glowing blue core, stamped "R.B. No. 1". Mom pinned it on you.',teo_lantern:"Teo Reyes's old mining lantern. It never quite goes out.",
  crystal_map:'Teo\'s crystal map: "the floating gardens beyond the light."',nana_journal:'Nana Wren\'s journal from the night of the Starfall.',codex_page:'A Codex page Thorne copied: "a door that is a road."',teo_journal_page:'A page from Teo\'s journal. He copied one damaged line from Vashti\'s Codex: "She is scattered so she may live..." The rest is gone.',prophecy_shrine:'The Prophecy Shrine at Halo\'s third wind shrine: "She is scattered so she may live. Whoever reunites all her children will let the Seedmother grow again, and her world with her." Reunite, not cage.',stowaway:'The starter nobody picked at Dr. Vashti\'s lab. It hides in your bag and only peeks out for snacks.'});
 Object.assign(QNAME,{sola_2:'Sola',sola_3:'Sola',sola_4:'Sola',sola_5:'Sola',sola_6:'Sola',admin_vex_final:'Admin Vex',helix_freighter_crew:'Helix Freighter Crew',helix_tower_crew:'Helix Tower Crew',helix_broadcast_crew:'Helix Broadcast Crew'});
 Object.assign(QART,{sola_2:'sola',sola_3:'sola',sola_4:'sola',sola_5:'sola',sola_6:'sola',admin_vex_final:'vex',helix_freighter_crew:'guard',helix_tower_crew:'guard',helix_broadcast_crew:'guard'});
@@ -33,6 +33,7 @@ function storyIf(c){if(!c)return true;return Object.entries(c).every(([f,v])=>(G
 function storyThen(q,t){if(!t||!storyIf(t.if))return;const L=(t.lines||[]).slice();storyPick(t,L);
  for(const[f,ls]of Object.entries(t.lines_if||{}))if(G.flags[f])L.push(...ls);
  for(const f of t.flags||[])G.flags[f]=1;
+ for(const k of t.hide||[]){G.key=G.key||{};G.key[k]=1}   // given quietly: nobody knows it's there yet
  for(const[k,n]of Object.entries(t.items||{})){if(KEY_ITEMS[k]){G.key[k]=1;L.push('You received '+KEY_ITEMS[k]+'!')}else if(k in G.pods){G.pods[k]+=n;L.push('You received '+n+'x '+itemName(k)+'!')}else{G.items[k]=(G.items[k]||0)+n;L.push('You received '+n+'x '+itemName(k)+'!')}}
  if(t.gift&&IDX[t.gift.name]!=null){const m=mk(IDX[t.gift.name],t.gift.lv||10);if(t.gift.nick)m.nick=t.gift.nick;const w=addMon(m);L.push(t.gift.name+' joined '+(w==='party'?'your team':'your Storage')+'!')}
  if(t.evolve==='starter'){const ln=starterLine(myStarter()),top=IDX[ln[2]],m=G.party.concat(G.box).find(m=>ln.includes(D[m.id].name));
@@ -95,7 +96,7 @@ function storyTrack(){if(scene==='planet'&&secOn()&&['049','162'].includes(G.sec
 function storyMigrate(){const v=STORY.version||1;if((G.storyv||0)>=v)return;
  if(G.party.length&&(G.storyv||0)<v){for(const sh of STORY.shifts||[]){if((G.storyv||0)>=sh.v)continue;const s=qs(sh.q);if(s&&s.state==='active'&&s.step>=sh.at)s.step+=sh.n}
   for(const nq of STORY.inserted||[]){if((G.storyv||0)>=nq.v)continue;const s=qs(nq.q),nx=qs(nq.next);if(s&&nx&&nx.state!=='locked'){s.state='done';s.step=QI[nq.q].objectives.length}}}
- for(const k of STORY.keys||[])if(mDone(k.after)&&!(G.key&&G.key[k.k])){G.key=G.key||{};G.key[k.k]=1}   // story key items older saves missed
+ for(const k of STORY.keys||[])if(mDone(k.after)&&!(G.key&&G.key[k.k])&&!(k.noflag&&G.flags[k.noflag])){G.key=G.key||{};G.key[k.k]=1}   // story key items older saves missed
  if(v>=7){if(G.key&&G.key.prophecy_mural){delete G.key.prophecy_mural}if(mDone('M16')&&G.key)G.key.prophecy_shrine=1;for(const q of QUESTS){const s=qs(q.id);if(s&&s.state==='active'&&s.step>=q.objectives.length)qComplete(q)}}
  G.storyv=v}
 function storyCutLines(o){const L=(o.lines||QCUT[o.target]||[]).slice();for(const[f,ls]of Object.entries(o.lines_if||{}))if(G.flags[f])L.push(...ls);return L}

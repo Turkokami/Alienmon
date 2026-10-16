@@ -1288,6 +1288,11 @@
    "s": "052",
    "x": 12,
    "y": 7
+  },
+  "M02:3": {
+   "s": "001",
+   "x": 4,
+   "y": 5
   }
  },
  "sections": {
@@ -1386,6 +1391,7 @@
       "Mom: Good morning, sleepyhead! Dr. Vashti called. She's waiting for you at her observatory lab.",
       "Mom: It's the big dome with the telescope, across the plaza. Go on, your partner is waiting!"
      ],
+     "wid": "mom_home",
      "src": "n:001:0"
     }
    ]

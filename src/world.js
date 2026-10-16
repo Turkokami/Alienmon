@@ -121,7 +121,7 @@ const KEY_DESC={helix_keycard:'Opens the Fortress Shuttle Pad to Helix Station.'
  grapple_line:'Linker module: reach cliff ledges and shortcuts.',hydro_skiff:'Linker module: cross deep water.',heat_shield:'Linker module: walk lava-crossing shortcuts.',
  lumen_beacon:'Linker module: light dark caves.',gravity_lift:'Linker module: ride floating platforms.'};
 const KEY_NAME={helix_keycard:'Helix Keycard',ystra_shardlet:'Ystra Shardlet',seedmother_seed:'Seedmother Seed',grapple_line:'Grapple Line',hydro_skiff:'Hydro-skiff',heat_shield:'Heat Shield',lumen_beacon:'Lumen Beacon',gravity_lift:'Gravity Lift'};
-const keyList=()=>Object.keys(G.key||{}).filter(k=>G.key[k]).map(k=>({kind:'key',k,n:KEY_NAME[k]||k,c:1,d:KEY_DESC[k]||'A key item.'}));
+const keyList=()=>Object.keys(G.key||{}).filter(k=>G.key[k]&&k!=='stowaway').map(k=>({kind:'key',k,n:KEY_NAME[k]||k,c:1,d:KEY_DESC[k]||'A key item.'}));
 // Linker Modules arrive with Signal Shards (they open optional areas only, never the main story)
 const MODULES=[[2,'grapple_line'],[4,'hydro_skiff'],[5,'heat_shield'],[6,'lumen_beacon'],[7,'gravity_lift']];
 function grantModules(){G.key=G.key||{};for(const[s,k]of MODULES)if(G.shards>=s&&!G.key[k]){G.key[k]=1;qNotify('MOD','module',['Your Linker resonates with the Shards. New module: '+KEY_NAME[k]+'!',KEY_DESC[k]])}if(typeof extrasBeats==='function')extrasBeats()}
