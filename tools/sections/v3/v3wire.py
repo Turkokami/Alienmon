@@ -60,7 +60,7 @@ def best_run(rows, side):
 def apply_rects(i, rects):
     rows = [list(r) for r in rows_of(i)]
     if rects.get('base'): rows = [[rects['base']] * len(rows[0]) for _ in rows]
-    for k, ch in (('walk', '.'), ('gr', ','), ('block', '#'), ('walk_after', '.')):
+    for k, ch in (('walk', '.'), ('gr', ','), ('block', '#'), ('walk_after', '.'), ('block_after', '#')):
         for x0, y0, x1, y1 in rects.get(k, []):
             for y in range(y0, y1 + 1):
                 for x in range(x0, x1 + 1):
@@ -77,6 +77,46 @@ def mat_of(rows):
         if len(xs) >= 2:
             xs.sort(key=lambda x: abs(x - cx + 0.5)); a, b = sorted(xs[:2]); return [[a, y], [b, y]]
     return [[cx - 1, H - 2], [cx, H - 2]]
+
+
+def seal(sid, d, side, a, b, depth=2):
+    """Close a road end at a map edge: a continuous strip of the blocked terrain beside it is copied across the gap
+    (picture, soft-faded into the road on the inner side) and the gap is walled."""
+    from PIL import Image
+    import numpy as np
+    f = glob.glob(f'art/sections_game/{d}/{sid}_*.png')[0]; im = np.asarray(Image.open(f).convert('RGBA')).astype(float); T = 16
+    rows = [list(r) for r in rows_of(sid)]; H, W = len(rows), len(rows[0])
+    n = W if side in ('top', 'bottom') else H; w = b - a + 1
+    # work in "edge space": axis 0 = depth from the edge, axis 1 = along the edge
+    view = {'top': lambda A: A, 'bottom': lambda A: A[::-1], 'left': lambda A: A.transpose(1, 0, 2), 'right': lambda A: A.transpose(1, 0, 2)[::-1]}[side]
+    E = view(im).copy(); D = (depth + 1) * T
+    blocked = lambda k0: 0 <= k0 and k0 + w <= n and all(rows[{'top': 0, 'bottom': H - 1}.get(side, 0)][k] == '#' if side in ('top', 'bottom') else rows[k][0 if side == 'left' else W - 1] == '#' for k in range(k0, k0 + w))
+    cands = [a - w, b + 1, a - w - 1, b + 2, max(0, a - w), min(n - w, b + 1)]
+    k0 = next((c for c in cands if blocked(c)), cands[-2] if cands[-2] >= 0 else cands[-1])
+    patch = E[:D, k0 * T:(k0 + w) * T].copy()
+    alpha = np.ones((D, 1, 1)); ramp = np.linspace(1, 0, T)[:, None, None]; alpha[depth * T:] = ramp   # last row fades into the road
+    side_fade = np.ones((1, w * T, 1)); f6 = np.linspace(0.3, 1, 6)[None, :, None]; side_fade[:, :6] = f6; side_fade[:, -6:] = f6[:, ::-1]
+    al = np.minimum(alpha, side_fade) if w > 2 else alpha
+    E[:D, a * T:(b + 1) * T] = E[:D, a * T:(b + 1) * T] * (1 - al) + patch * al
+    back = {'top': lambda A: A, 'bottom': lambda A: A[::-1], 'left': lambda A: A.transpose(1, 0, 2), 'right': lambda A: A[::-1].transpose(1, 0, 2)}[side]
+    Image.fromarray(np.clip(back(E), 0, 255).astype('uint8'), 'RGBA').save(f)
+    for j in range(depth):
+        for k in range(a, b + 1):
+            x, y = {'top': (k, j), 'bottom': (k, H - 1 - j), 'left': (j, k), 'right': (W - 1 - j, k)}[side]; rows[y][x] = '#'
+    c = json.load(open(f'data/collision/{sid}.json')); c['rows'] = [''.join(r) for r in rows]; json.dump(c, open(f'data/collision/{sid}.json', 'w'))
+
+
+def grass_fill(sid, x0, y0, x1, y1):
+    from PIL import Image
+    import numpy as np
+    s = glob.glob(f'art/sections_game/*/{sid}_*.png')[0]; rows = [list(r) for r in rows_of(sid)]; H, W = len(rows), len(rows[0])
+    a = np.asarray(Image.open(s).convert('RGB').resize((W * 16, H * 16))).astype(float).reshape(H, 16, W, 16, 3).mean((1, 3))
+    x0, y0, x1, y1 = max(0, x0), max(0, y0), min(W - 1, x1), min(H - 1, y1)
+    med = np.median(a[y0:y1 + 1, x0:x1 + 1].reshape(-1, 3), 0)
+    for y in range(max(1, y0), min(H - 2, y1) + 1):   # never the outer ring (exits live there)
+        for x in range(max(1, x0), min(W - 2, x1) + 1):
+            if rows[y][x] == '#' and np.abs(a[y, x] - med).max() < 34: rows[y][x] = ','
+    c = json.load(open(f'data/collision/{sid}.json')); c['rows'] = [''.join(r) for r in rows]; json.dump(c, open(f'data/collision/{sid}.json', 'w'))
 
 
 def wire(d):
@@ -108,6 +148,27 @@ def wire(d):
     for sid in list(use) + list(drop): PL_.pop(sid, None)
     json.dump(PL_, open('data/sections/props_layout.json', 'w'), indent=0)
     for sid, rects in P.get('fix', {}).items(): apply_rects(sid, rects)
+    # dead-end roads closed off with terrain. Kit pieces are re-copied every run, so they are sealed every run; kept maps' art is
+    # permanent, so each of their seals is done once (tools/sections/v3/sealed_kept.json remembers which)
+    done = load(f'{HERE}/sealed_kept.json', [])
+    for s_ in P.get('seal', []):
+        key = '|'.join(map(str, s_))
+        if s_[0] in use or key not in done:
+            seal(s_[0], d, s_[1], s_[2], s_[3], s_[4] if len(s_) > 4 else 2)
+            if s_[0] not in use: done.append(key)
+        dep = s_[4] if len(s_) > 4 else 2; rr = rows_of(s_[0]); H_, W_ = len(rr), len(rr[0])
+        for o in P.get('objects', {}).get(s_[0], []):   # a reward left at the road end moves to just inside the new wall
+            x, y = o['tile']; side = s_[1]
+            if s_[2] <= (x if side in ('top', 'bottom') else y) <= s_[3]:
+                if side == 'bottom' and y > H_ - 1 - dep: o['tile'] = [x, H_ - 1 - dep]
+                if side == 'top' and y < dep: o['tile'] = [x, dep]
+                if side == 'left' and x < dep: o['tile'] = [dep, y]
+                if side == 'right' and x > W_ - 1 - dep: o['tile'] = [W_ - 1 - dep, y]
+    save(f'{HERE}/sealed_kept.json', done)
+    # painted tall grass the automatic walls missed (only tiles that look like the rest of the patch), and grass/walkable
+    # ground that is really lava, water or railings
+    for sid_, x0, y0, x1, y1 in P.get('grass_fill', []): grass_fill(sid_, x0, y0, x1, y1)
+    for sid_, x0, y0, x1, y1 in P.get('grass_clear', []): apply_rects(sid_, {'block': [[x0, y0, x1, y1]]})
 
     # 2. exits from edges (both directions written)
     redefined = {}

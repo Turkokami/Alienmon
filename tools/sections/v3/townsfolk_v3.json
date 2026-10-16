@@ -1,0 +1,4059 @@
+{
+ "401": [
+  {
+   "art": "apex_folk1",
+   "name": "Ace Linker",
+   "role": "folk",
+   "t": [
+    "Ace Linker: Only the toughest teams get a seat in the Grand Stadium. Heal up before you walk in.",
+    "Ace Linker: The lobby's right through those big doors."
+   ]
+  },
+  {
+   "art": "apex_folk3",
+   "name": "Fan",
+   "role": "folk",
+   "t": [
+    "Fan: I came all the way up from Tarn Fork just to hear the crowd roar!"
+   ]
+  },
+  {
+   "art": "guard",
+   "name": "Summit Guard",
+   "role": "folk",
+   "t": [
+    "Summit Guard: Thin air up here. Your Alienmon tire faster than you think. Stock up first."
+   ]
+  }
+ ],
+ "403": [
+  {
+   "art": "referee",
+   "name": "Receptionist",
+   "role": "folk",
+   "t": [
+    "Receptionist: Welcome to the Summit Grand Stadium! The arena floor is straight ahead.",
+    "Receptionist: Every match here is a big one. Make sure your team is ready."
+   ]
+  },
+  {
+   "art": "apex_folk4",
+   "name": "Fan",
+   "role": "folk",
+   "t": [
+    "Fan: I've got my foam finger and my lucky scarf. Go get 'em, Linker!"
+   ]
+  }
+ ],
+ "405": [
+  {
+   "art": "explorer",
+   "name": "Hiker",
+   "role": "folk",
+   "t": [
+    "Hiker: Icefall Cave is just past this ledge. Bring something warm for your team.",
+    "Hiker: Watch your step on the frozen floor. Sliding is fun until it isn't!"
+   ]
+  },
+  {
+   "art": "apex_folk2",
+   "name": "Astronomer",
+   "role": "folk",
+   "t": [
+    "Astronomer: I come back down from Observatory Terrace when the clouds roll in."
+   ]
+  }
+ ],
+ "406": [
+  {
+   "art": "explorer",
+   "name": "Climber",
+   "role": "folk",
+   "t": [
+    "Climber: The ice walls in here echo. Crystal-types love that sound.",
+    "Climber: The way down to B1 is past the frozen pillars."
+   ]
+  }
+ ],
+ "407": [
+  {
+   "art": "miner",
+   "name": "Ice Cutter",
+   "role": "folk",
+   "t": [
+    "Ice Cutter: It gets colder the deeper you go. The Deep Chamber is just ahead.",
+    "Ice Cutter: I've chipped ice down here for years. Still finding new tunnels!"
+   ]
+  }
+ ],
+ "409": [
+  {
+   "art": "apex_folk5",
+   "name": "Explorer",
+   "role": "folk",
+   "t": [
+    "Explorer: You made it to the Deep Chamber! Even the echoes freeze down here.",
+    "Explorer: Check every corner. Climbers leave supplies behind."
+   ]
+  }
+ ],
+ "415": [
+  {
+   "art": "apex_folk2",
+   "name": "Astronomer",
+   "role": "folk",
+   "t": [
+    "Astronomer: Best view of the stars on the whole mountain. On clear nights you can see other worlds.",
+    "Astronomer: Tarn Fork is back down the trail when you're done gazing."
+   ]
+  },
+  {
+   "art": "civilian",
+   "name": "Stargazer",
+   "role": "folk",
+   "t": [
+    "Stargazer: I brought a blanket and a thermos. The sky does the rest."
+   ]
+  }
+ ],
+ "422": [
+  {
+   "art": "apex_folk6",
+   "name": "Wanderer",
+   "role": "folk",
+   "t": [
+    "Wanderer: Shh! Not many Linkers find this grove. The Relay Tower guards it like a secret.",
+    "Wanderer: Rare Alienmon nap under these pines."
+   ]
+  },
+  {
+   "art": "pilgrim",
+   "name": "Hermit",
+   "role": "folk",
+   "t": [
+    "Hermit: I've lived up here so long the birds bring me gossip."
+   ]
+  }
+ ],
+ "423": [
+  {
+   "art": "apex_folk1",
+   "name": "Ace Linker",
+   "role": "folk",
+   "t": [
+    "Ace Linker: The Linker Lounge is where we rest between big battles. Grab a seat!",
+    "Ace Linker: Swap tips, not just Alienmon. Everyone up here has a story."
+   ]
+  },
+  {
+   "art": "apex_folk3",
+   "name": "Retired Linker",
+   "role": "folk",
+   "t": [
+    "Retired Linker: Back in my day we climbed the whole mountain without a single Recovery Bay. Uphill both ways!"
+   ]
+  }
+ ],
+ "424": [
+  {
+   "art": "researcher",
+   "name": "Astronomer",
+   "role": "folk",
+   "t": [
+    "Astronomer: This telescope can spot a comet before it even sparkles.",
+    "Astronomer: Peek through if you like. Just don't sneeze on the lens!"
+   ]
+  }
+ ],
+ "425": [
+  {
+   "art": "apex_folk2",
+   "name": "Archivist",
+   "role": "folk",
+   "t": [
+    "Archivist: The Quorum keeps records of every great Linker battle here.",
+    "Archivist: Shelves on the left are old. Shelves on the right are older."
+   ]
+  },
+  {
+   "art": "researcher",
+   "name": "Scholar",
+   "role": "folk",
+   "t": [
+    "Scholar: I've been reading the same page for an hour. The words are tiny!"
+   ]
+  }
+ ],
+ "426": [
+  {
+   "art": "nurse",
+   "name": "Nurse",
+   "role": "nurse",
+   "t": [
+    "Nurse: Welcome to the Summit Recovery Bay. Mountain battles are tough, so let us patch up your team.",
+    "Nurse: Your Alienmon are fully rested. Good luck up there!"
+   ]
+  },
+  {
+   "art": "apex_folk4",
+   "name": "Visitor",
+   "role": "folk",
+   "t": [
+    "Visitor: My team was so cold they came in shivering. Now they're snug as can be."
+   ]
+  }
+ ],
+ "427": [
+  {
+   "art": "guard",
+   "name": "Summit Guard",
+   "role": "folk",
+   "t": [
+    "Summit Guard: The Apex Relay Tower. Its Keeper only meets Linkers who climbed every step.",
+    "Summit Guard: Head inside to the trial floor when you're ready."
+   ]
+  },
+  {
+   "art": "apex_folk1",
+   "name": "Ace Linker",
+   "role": "folk",
+   "t": [
+    "Ace Linker: I heard there's a quiet grove hidden behind the tower. Never found it myself."
+   ]
+  },
+  {
+   "art": "apex_folk5",
+   "name": "Fan",
+   "role": "folk",
+   "t": [
+    "Fan: The tower lights glow brighter when a big battle starts!"
+   ]
+  }
+ ],
+ "428": [
+  {
+   "art": "apex_folk6",
+   "name": "Tower Aide",
+   "role": "folk",
+   "t": [
+    "Tower Aide: Welcome to the trial floor! Keep your head high and your team healthy.",
+    "Tower Aide: The Summit Room is just beyond. You've got this!"
+   ]
+  }
+ ],
+ "429": [
+  {
+   "art": "apex_folk2",
+   "name": "Tower Aide",
+   "role": "folk",
+   "t": [
+    "Tower Aide: You reached the Summit Room! The whole mountain feels proud of you."
+   ]
+  }
+ ],
+ "430": [
+  {
+   "art": "apex_folk3",
+   "name": "Resident",
+   "role": "folk",
+   "t": [
+    "Resident: Summit Lane is the coziest street on the mountain. The Recovery Bay is right next door.",
+    "Resident: The supply shop sells warm gear for the climb."
+   ]
+  },
+  {
+   "art": "apex_folk4",
+   "name": "Kid",
+   "role": "folk",
+   "t": [
+    "Kid: The spaceport is down the lane! I wave at every ship that takes off."
+   ]
+  },
+  {
+   "art": "civilian",
+   "name": "Mail Carrier",
+   "role": "folk",
+   "t": [
+    "Mail Carrier: Delivering letters up here means a lot of stairs. My legs are like Alloy-types now!"
+   ]
+  }
+ ],
+ "431": [
+  {
+   "art": "apex_folk5",
+   "name": "Old Resident",
+   "role": "folk",
+   "t": [
+    "Old Resident: Stargazer Quiet Court is peaceful. Just us and the wind.",
+    "Old Resident: Glacier Bend is down the path if you're heading out."
+   ]
+  },
+  {
+   "art": "civilian",
+   "name": "Painter",
+   "role": "folk",
+   "t": [
+    "Painter: I paint the sunrise every morning. It never looks the same twice."
+   ]
+  }
+ ],
+ "432": [
+  {
+   "art": "apex_folk6",
+   "name": "Farmer",
+   "role": "folk",
+   "t": [
+    "Farmer: Mountain potatoes grow slow but taste amazing. Patience is the secret!",
+    "Farmer: Bio-types help pull the weeds. Good helpers, mostly."
+   ]
+  },
+  {
+   "art": "sheepkid",
+   "name": "Shepherd Kid",
+   "role": "folk",
+   "t": [
+    "Shepherd Kid: My fluffy flock loves the cold. They sleep in a big woolly pile!"
+   ]
+  }
+ ],
+ "433": [
+  {
+   "art": "shop",
+   "name": "Clerk",
+   "role": "clerk",
+   "t": [
+    "Clerk: Welcome to the Summit Supply Shop! Potions, Cure Spray, and warm gear for the climb.",
+    "Clerk: Prices are a little higher up here. Hauling stock up the mountain is hard work!"
+   ]
+  }
+ ],
+ "434": [
+  {
+   "art": "technician",
+   "name": "Dock Tech",
+   "role": "folk",
+   "t": [
+    "Dock Tech: Apex Spaceport is the highest landing pad around. Pilots say it's a tricky approach.",
+    "Dock Tech: Summit Lane Homes is just past the gate."
+   ]
+  },
+  {
+   "art": "apex_folk1",
+   "name": "Traveller",
+   "role": "folk",
+   "t": [
+    "Traveller: I flew in just to see the Grand Stadium. Is it as big as they say?"
+   ]
+  }
+ ],
+ "436": [
+  {
+   "art": "dustara_folk1",
+   "name": "Fan",
+   "role": "folk",
+   "t": [
+    "Fan: The Canyon Coliseum is the loudest place in Dustara. You can hear it from the Oasis!",
+    "Fan: The lobby's right inside the gate."
+   ]
+  },
+  {
+   "art": "dustara_folk2",
+   "name": "Canyon Scout",
+   "role": "folk",
+   "t": [
+    "Canyon Scout: Coliseum champs train out on the canyon trails. Sun-baked and battle-ready."
+   ]
+  },
+  {
+   "art": "snacktrader",
+   "name": "Snack Trader",
+   "role": "folk",
+   "t": [
+    "Snack Trader: Cactus chips! Get your cactus chips! Perfect for cheering."
+   ]
+  }
+ ],
+ "438": [
+  {
+   "art": "referee",
+   "name": "Receptionist",
+   "role": "folk",
+   "t": [
+    "Receptionist: Welcome to the Canyon Coliseum! The arena is straight through those doors.",
+    "Receptionist: Heal up before you step in. The crowd loves a good long match!"
+   ]
+  },
+  {
+   "art": "dustara_folk3",
+   "name": "Fan",
+   "role": "folk",
+   "t": [
+    "Fan: I've seen every match this season. Okay, most of them. Okay, three."
+   ]
+  }
+ ],
+ "441": [
+  {
+   "art": "dustara_folk4",
+   "name": "Prospector",
+   "role": "folk",
+   "t": [
+    "Prospector: Red Rock Caves are just ahead. Bring a light, partner.",
+    "Prospector: The rocks glow red when the sun hits 'em. Pretty as a sunset."
+   ]
+  },
+  {
+   "art": "explorer",
+   "name": "Hiker",
+   "role": "folk",
+   "t": [
+    "Hiker: I'm turning back to Mesa Junction. Those caves are too twisty for me!"
+   ]
+  }
+ ],
+ "442": [
+  {
+   "art": "miner",
+   "name": "Miner",
+   "role": "folk",
+   "t": [
+    "Miner: Red Rock B1. Magma-types like the warm walls in here.",
+    "Miner: Keep going down if you're brave. B2's even toastier."
+   ]
+  }
+ ],
+ "443": [
+  {
+   "art": "explorer",
+   "name": "Spelunker",
+   "role": "folk",
+   "t": [
+    "Spelunker: You're in B2. The Depths are just below. I can hear something rumbling!",
+    "Spelunker: Don't forget to check the stash crates along the walls."
+   ]
+  }
+ ],
+ "444": [
+  {
+   "art": "dustara_folk5",
+   "name": "Rock Hound",
+   "role": "folk",
+   "t": [
+    "Rock Hound: Welcome to the Depths! I found three shiny rocks today. Well, two shiny, one kinda dull."
+   ]
+  }
+ ],
+ "465": [
+  {
+   "art": "dustara_folk6",
+   "name": "Oasis Hermit",
+   "role": "folk",
+   "t": [
+    "Oasis Hermit: You found the Hidden Mesa Grove! Not many folks wander off the Oasis Shore this far.",
+    "Oasis Hermit: Rare Bio-types nap in the palm shade."
+   ]
+  },
+  {
+   "art": "wanderer",
+   "name": "Drifter",
+   "role": "folk",
+   "t": [
+    "Drifter: I came here for the quiet. And the coconuts."
+   ]
+  }
+ ],
+ "466": [
+  {
+   "art": "dustara_folk1",
+   "name": "Tea Master",
+   "role": "folk",
+   "t": [
+    "Tea Master: Welcome to the Cactus Tea House. Our prickly pear tea is famous!",
+    "Tea Master: Sip slowly. It's spicier than it looks."
+   ]
+  },
+  {
+   "art": "civilian",
+   "name": "Regular",
+   "role": "folk",
+   "t": [
+    "Regular: I come here every afternoon to dodge the desert heat."
+   ]
+  }
+ ],
+ "467": [
+  {
+   "art": "rockgirl",
+   "name": "Rock Collector",
+   "role": "folk",
+   "t": [
+    "Rock Collector: Welcome to my Den! Every rock here has a name. That one's Gerald.",
+    "Rock Collector: Bring me a rock from the canyons sometime. I love surprises."
+   ]
+  }
+ ],
+ "468": [
+  {
+   "art": "dustara_folk2",
+   "name": "Rune Carver",
+   "role": "folk",
+   "t": [
+    "Rune Carver: The Rune Workshop carves glyphs into canyon stone. Each one is a little story.",
+    "Rune Carver: Mind the dust. It gets everywhere!"
+   ]
+  },
+  {
+   "art": "technician",
+   "name": "Apprentice",
+   "role": "folk",
+   "t": [
+    "Apprentice: I've carved forty runes today. Thirty-nine are crooked."
+   ]
+  }
+ ],
+ "470": [
+  {
+   "art": "dustara_folk3",
+   "name": "Resident",
+   "role": "folk",
+   "t": [
+    "Resident: Dustmere Lane is quiet in the day and busy at sundown. Everyone hides from the heat!",
+    "Resident: The farmstead is just down the road."
+   ]
+  },
+  {
+   "art": "dustara_folk4",
+   "name": "Kid",
+   "role": "folk",
+   "t": [
+    "Kid: I saw a Volt-type spark in the drift grass! Bet you can't catch it!"
+   ]
+  }
+ ],
+ "471": [
+  {
+   "art": "dustara_folk5",
+   "name": "Old Resident",
+   "role": "folk",
+   "t": [
+    "Old Resident: Dustmere Quiet Court is for folks who like a good nap.",
+    "Old Resident: Oasis Fork is just over yonder if you need water."
+   ]
+  },
+  {
+   "art": "civilian",
+   "name": "Gardener",
+   "role": "folk",
+   "t": [
+    "Gardener: Cactus gardens are easy. Just don't hug them."
+   ]
+  }
+ ],
+ "472": [
+  {
+   "art": "dustara_folk6",
+   "name": "Farmer",
+   "role": "folk",
+   "t": [
+    "Farmer: We grow desert melons out here. Sweet as honey and twice as sticky!",
+    "Farmer: The plaza's up the road if you need supplies."
+   ]
+  },
+  {
+   "art": "sheepkid",
+   "name": "Farm Kid",
+   "role": "folk",
+   "t": [
+    "Farm Kid: My chore is chasing Swarm-types out of the melon patch. They always come back!"
+   ]
+  }
+ ],
+ "476": [
+  {
+   "art": "ferrox_folk1",
+   "name": "Fan",
+   "role": "folk",
+   "t": [
+    "Fan: The Scrapyard Dome is built from old train cars. Loudest arena in Rustvale!",
+    "Fan: The lobby's right through the iron gate."
+   ]
+  },
+  {
+   "art": "ferrox_folk2",
+   "name": "Scrapper",
+   "role": "folk",
+   "t": [
+    "Scrapper: Every bolt in that dome came from the junk heaps. Even the seats!"
+   ]
+  },
+  {
+   "art": "snacktrader",
+   "name": "Snack Trader",
+   "role": "folk",
+   "t": [
+    "Snack Trader: Grilled corn on a stick! Great for battle watching!"
+   ]
+  }
+ ],
+ "478": [
+  {
+   "art": "referee",
+   "name": "Receptionist",
+   "role": "folk",
+   "t": [
+    "Receptionist: Welcome to the Scrapyard Dome! The arena is through those doors.",
+    "Receptionist: No climbing on the scrap walls, please. It's for decoration!"
+   ]
+  },
+  {
+   "art": "ferrox_folk3",
+   "name": "Fan",
+   "role": "folk",
+   "t": [
+    "Fan: I've got a sign that says CRUSH IT. Get it? Because Alloy-types?"
+   ]
+  }
+ ],
+ "481": [
+  {
+   "art": "miner",
+   "name": "Miner",
+   "role": "folk",
+   "t": [
+    "Miner: Deepcut Mine is right below. Grab a helmet if you've got one.",
+    "Miner: Crane Overlook is back up the hill."
+   ]
+  },
+  {
+   "art": "ferrox_folk4",
+   "name": "Rail Hand",
+   "role": "folk",
+   "t": [
+    "Rail Hand: The old cart rails go all the way down. Don't ride them. Trust me."
+   ]
+  }
+ ],
+ "482": [
+  {
+   "art": "miner",
+   "name": "Miner",
+   "role": "folk",
+   "t": [
+    "Miner: B1's got the loose rocks. Alloy-types chew on 'em like snacks.",
+    "Miner: Stairs to B2 are deeper in."
+   ]
+  }
+ ],
+ "483": [
+  {
+   "art": "ferrox_folk5",
+   "name": "Tunnel Digger",
+   "role": "folk",
+   "t": [
+    "Tunnel Digger: B2 is hot and dusty. The Depths are just below.",
+    "Tunnel Digger: Keep a Potion handy. Things down there hit hard."
+   ]
+  }
+ ],
+ "484": [
+  {
+   "art": "explorer",
+   "name": "Spelunker",
+   "role": "folk",
+   "t": [
+    "Spelunker: You made it to the Depths! The ore down here sparkles like stars."
+   ]
+  }
+ ],
+ "495": [
+  {
+   "art": "ferrox_folk6",
+   "name": "Scrapper",
+   "role": "folk",
+   "t": [
+    "Scrapper: The Back Lot is where the junk goes to sleep. Some of it snores.",
+    "Scrapper: Funny, that door over there used to be locked."
+   ]
+  },
+  {
+   "art": "technician",
+   "name": "Mechanic",
+   "role": "folk",
+   "t": [
+    "Mechanic: Railyard Junction is back the way you came. Watch for trains!"
+   ]
+  }
+ ],
+ "496": [
+  {
+   "art": "researcher",
+   "name": "Helix Scientist",
+   "role": "folk",
+   "t": [
+    "Helix Scientist: What? This lab is perfectly ordinary. Stop looking at the beakers.",
+    "Helix Scientist: Fine, fine. Touch nothing and we'll get along."
+   ]
+  }
+ ],
+ "497": [
+  {
+   "art": "ferrox_folk2",
+   "name": "Wanderer",
+   "role": "folk",
+   "t": [
+    "Wanderer: Scrap Hollow Grove. Trees growing right through old gears. Isn't it wonderful?",
+    "Wanderer: Swarm-types build nests in the hollow pipes."
+   ]
+  },
+  {
+   "art": "civilian",
+   "name": "Picnicker",
+   "role": "folk",
+   "t": [
+    "Picnicker: Crane Overlook is too windy for lunch. This spot is perfect!"
+   ]
+  }
+ ],
+ "498": [
+  {
+   "art": "ferrox_folk3",
+   "name": "Salvage Trader",
+   "role": "folk",
+   "t": [
+    "Salvage Trader: Welcome to the Salvage Shop! One Linker's junk is another Linker's treasure.",
+    "Salvage Trader: We don't sell this stuff. We just admire it. Mostly."
+   ]
+  }
+ ],
+ "499": [
+  {
+   "art": "technician",
+   "name": "Mechanic",
+   "role": "folk",
+   "t": [
+    "Mechanic: The Engine Garage fixes anything with wheels, gears, or a stubborn attitude.",
+    "Mechanic: Volt-types are great at jump-starting engines!"
+   ]
+  },
+  {
+   "art": "ferrox_folk4",
+   "name": "Apprentice",
+   "role": "folk",
+   "t": [
+    "Apprentice: I'm only allowed to hand over wrenches. Someday I'll fix a whole engine!"
+   ]
+  }
+ ],
+ "500": [
+  {
+   "art": "ferrox_folk5",
+   "name": "Crane Operator",
+   "role": "folk",
+   "t": [
+    "Crane Operator: This is my bunk. Small, but I can see the whole yard from my window.",
+    "Crane Operator: Swinging a crane all day makes for great naps."
+   ]
+  }
+ ],
+ "505": [
+  {
+   "art": "ferrox_folk6",
+   "name": "Resident",
+   "role": "folk",
+   "t": [
+    "Resident: Rustvale Lane Homes are built from old boilers. Warm in winter, toasty in summer!",
+    "Resident: The spaceport's just past the last house."
+   ]
+  },
+  {
+   "art": "ferrox_folk1",
+   "name": "Kid",
+   "role": "folk",
+   "t": [
+    "Kid: I'm building a robot out of spare parts. It doesn't move yet. Or ever."
+   ]
+  },
+  {
+   "art": "civilian",
+   "name": "Neighbour",
+   "role": "folk",
+   "t": [
+    "Neighbour: Rustvale's just down the road if you need the Recovery Bay."
+   ]
+  }
+ ],
+ "507": [
+  {
+   "art": "ferrox_folk2",
+   "name": "Farmer",
+   "role": "folk",
+   "t": [
+    "Farmer: Turnips grow tough in Ferrox soil. Tough enough to dent a wrench!",
+    "Farmer: The Scrapyard Dome is right next door. Noisy neighbors!"
+   ]
+  },
+  {
+   "art": "sheepkid",
+   "name": "Farm Kid",
+   "role": "folk",
+   "t": [
+    "Farm Kid: Our goats eat tin cans. Mom says that's normal here."
+   ]
+  }
+ ],
+ "511": [
+  {
+   "art": "glacia_folk1",
+   "name": "Fan",
+   "role": "folk",
+   "t": [
+    "Fan: Glacier Rink Arena! Battles on ice are slippery and super exciting.",
+    "Fan: The lobby's right inside, and it's heated!"
+   ]
+  },
+  {
+   "art": "glacia_folk2",
+   "name": "Skater",
+   "role": "folk",
+   "t": [
+    "Skater: I skate here before the battles. The ice is perfect today."
+   ]
+  },
+  {
+   "art": "researcher",
+   "name": "Researcher",
+   "role": "folk",
+   "t": [
+    "Researcher: The Research Annex is next door. Lots of buzzing machines over there."
+   ]
+  }
+ ],
+ "512": [
+  {
+   "art": "referee",
+   "name": "Receptionist",
+   "role": "folk",
+   "t": [
+    "Receptionist: Welcome to the Glacier Rink Arena! The Battle Room is just past this lobby.",
+    "Receptionist: Watch your footing in there. The floor is real ice!"
+   ]
+  },
+  {
+   "art": "glacia_folk3",
+   "name": "Fan",
+   "role": "folk",
+   "t": [
+    "Fan: I wore three scarves today. Arena seats get chilly!"
+   ]
+  }
+ ],
+ "514": [
+  {
+   "art": "explorer",
+   "name": "Climber",
+   "role": "folk",
+   "t": [
+    "Climber: The Crystal Caverns are right through that ice arch.",
+    "Climber: Crystal-types glitter in there. Bring something with punch."
+   ]
+  },
+  {
+   "art": "glacia_folk4",
+   "name": "Radio Tech",
+   "role": "folk",
+   "t": [
+    "Radio Tech: I'm checking the cave signal relay. Ice Junction is back the way you came."
+   ]
+  }
+ ],
+ "524": [
+  {
+   "art": "glacia_folk5",
+   "name": "Explorer",
+   "role": "folk",
+   "t": [
+    "Explorer: Crevasse Hollows! Mind the cracks. Jump them, don't walk them.",
+    "Explorer: There's supplies hidden in the hollows if you look."
+   ]
+  },
+  {
+   "art": "explorer",
+   "name": "Climber",
+   "role": "folk",
+   "t": [
+    "Climber: Frostmark Quiet Court is back up the slope if you need a breather."
+   ]
+  }
+ ],
+ "527": [
+  {
+   "art": "researcher",
+   "name": "Researcher",
+   "role": "folk",
+   "t": [
+    "Researcher: The Frozen Research Annex studies ice and the critters living in it.",
+    "Researcher: The arena next door gets loud. Hard to concentrate!"
+   ]
+  },
+  {
+   "art": "glacia_folk6",
+   "name": "Radio Tech",
+   "role": "folk",
+   "t": [
+    "Radio Tech: Some odd signals come from the lab out back. Probably nothing. Probably."
+   ]
+  }
+ ],
+ "528": [
+  {
+   "art": "researcher",
+   "name": "Helix Scientist",
+   "role": "folk",
+   "t": [
+    "Helix Scientist: Ugh, visitors. This lab is cold enough without the door opening.",
+    "Helix Scientist: Look around if you must. Just don't unplug anything."
+   ]
+  }
+ ],
+ "529": [
+  {
+   "art": "glacia_folk1",
+   "name": "Wanderer",
+   "role": "folk",
+   "t": [
+    "Wanderer: The Hidden Ice Grove! Frozen trees that sparkle like crystal.",
+    "Wanderer: Rare Alienmon nap under the snow here."
+   ]
+  },
+  {
+   "art": "civilian",
+   "name": "Snow Painter",
+   "role": "folk",
+   "t": [
+    "Snow Painter: I paint the frost on the branches. It melts before I finish!"
+   ]
+  }
+ ],
+ "530": [
+  {
+   "art": "researcher",
+   "name": "Researcher",
+   "role": "folk",
+   "t": [
+    "Researcher: This Research Lab tracks every snowflake in Glacia. Every. Single. One.",
+    "Researcher: Fun fact: Crystal-types grow faster in the cold!"
+   ]
+  },
+  {
+   "art": "glacia_folk2",
+   "name": "Lab Assistant",
+   "role": "folk",
+   "t": [
+    "Lab Assistant: I've labelled two hundred ice samples today. My fingers are numb!"
+   ]
+  }
+ ],
+ "531": [
+  {
+   "art": "glacia_folk3",
+   "name": "Lodge Keeper",
+   "role": "folk",
+   "t": [
+    "Lodge Keeper: Welcome to the Hot Cocoa Lodge! Warm up by the fire.",
+    "Lodge Keeper: Extra marshmallows on the house today."
+   ]
+  },
+  {
+   "art": "civilian",
+   "name": "Traveller",
+   "role": "folk",
+   "t": [
+    "Traveller: I came in for one cup. That was four cups ago."
+   ]
+  }
+ ],
+ "532": [
+  {
+   "art": "researcher",
+   "name": "Curator",
+   "role": "folk",
+   "t": [
+    "Curator: The Fossil Vault holds ancient Alienmon bones from the glacier.",
+    "Curator: Please don't touch the big one. It's very old and very grumpy-looking."
+   ]
+  },
+  {
+   "art": "glacia_folk4",
+   "name": "Visitor",
+   "role": "folk",
+   "t": [
+    "Visitor: I counted the teeth on that skull. I lost count at forty."
+   ]
+  }
+ ],
+ "534": [
+  {
+   "art": "glacia_folk5",
+   "name": "Tower Fan",
+   "role": "folk",
+   "t": [
+    "Tower Fan: The Aurora Relay Tower glows green and gold at night. So pretty!",
+    "Tower Fan: The trial floor is just inside the doors. Bundle up!"
+   ]
+  },
+  {
+   "art": "guard",
+   "name": "Tower Guard",
+   "role": "folk",
+   "t": [
+    "Tower Guard: Keep your team warm before you climb. The Keeper's battles are chilly."
+   ]
+  }
+ ],
+ "537": [
+  {
+   "art": "glacia_folk6",
+   "name": "Resident",
+   "role": "folk",
+   "t": [
+    "Resident: Frostmark Lane Homes have extra-thick walls. Keeps the blizzards out!",
+    "Resident: The spaceport is down at the end of the lane."
+   ]
+  },
+  {
+   "art": "glacia_folk1",
+   "name": "Kid",
+   "role": "folk",
+   "t": [
+    "Kid: I built a snow Alienmon! Wanna see? It's the lumpy one."
+   ]
+  }
+ ],
+ "538": [
+  {
+   "art": "glacia_folk2",
+   "name": "Old Resident",
+   "role": "folk",
+   "t": [
+    "Old Resident: Frostmark Quiet Court is calm. Snow muffles all the noise.",
+    "Old Resident: Crevasse Hollows is down the slope. Watch for cracks!"
+   ]
+  },
+  {
+   "art": "civilian",
+   "name": "Knitter",
+   "role": "folk",
+   "t": [
+    "Knitter: I knit sweaters for Alienmon. They love the ones with pom-poms."
+   ]
+  }
+ ],
+ "539": [
+  {
+   "art": "glacia_folk3",
+   "name": "Farmer",
+   "role": "folk",
+   "t": [
+    "Farmer: Ice berries grow under the snow. Dig gently and you'll find them!",
+    "Farmer: The arena's right next door if you want to watch a battle."
+   ]
+  },
+  {
+   "art": "sheepkid",
+   "name": "Farm Kid",
+   "role": "folk",
+   "t": [
+    "Farm Kid: My woolly pets are the warmest things in Glacia. Hug one!"
+   ]
+  }
+ ],
+ "541": [
+  {
+   "art": "technician",
+   "name": "Dock Tech",
+   "role": "folk",
+   "t": [
+    "Dock Tech: Glacia Spaceport. Ships need extra de-icing before takeoff.",
+    "Dock Tech: Frostmark Lane Homes is just past the gate."
+   ]
+  },
+  {
+   "art": "glacia_folk4",
+   "name": "Traveller",
+   "role": "folk",
+   "t": [
+    "Traveller: I packed shorts. That was a mistake."
+   ]
+  }
+ ],
+ "543": [
+  {
+   "art": "glyphos_folk1",
+   "name": "Fan",
+   "role": "folk",
+   "t": [
+    "Fan: The Temple of Trials! Battles here have been held for ages and ages.",
+    "Fan: The lobby is through the big stone doors."
+   ]
+  },
+  {
+   "art": "glyphos_folk2",
+   "name": "Pilgrim",
+   "role": "folk",
+   "t": [
+    "Pilgrim: The glyphs on the pillars cheer for every Linker who enters."
+   ]
+  },
+  {
+   "art": "explorer",
+   "name": "Archaeologist",
+   "role": "folk",
+   "t": [
+    "Archaeologist: Glyph Hollow is just around the corner. Worth a look!"
+   ]
+  }
+ ],
+ "545": [
+  {
+   "art": "referee",
+   "name": "Receptionist",
+   "role": "folk",
+   "t": [
+    "Receptionist: Welcome to the Temple of Trials! The arena awaits beyond these halls.",
+    "Receptionist: Battles here are graded by the old glyphs. No pressure!"
+   ]
+  },
+  {
+   "art": "glyphos_folk3",
+   "name": "Fan",
+   "role": "folk",
+   "t": [
+    "Fan: My grandma watched battles here. So did her grandma!"
+   ]
+  }
+ ],
+ "548": [
+  {
+   "art": "explorer",
+   "name": "Archaeologist",
+   "role": "folk",
+   "t": [
+    "Archaeologist: The Drowned Grotto is below. Half the ruins down there are underwater!",
+    "Archaeologist: Hydro-types are everywhere. Bring a Volt-type if you can."
+   ]
+  },
+  {
+   "art": "glyphos_folk4",
+   "name": "Rune Scholar",
+   "role": "folk",
+   "t": [
+    "Rune Scholar: Glyph Steps is back up the stairs. Mind the moss!"
+   ]
+  }
+ ],
+ "549": [
+  {
+   "art": "glyphos_folk5",
+   "name": "Diver",
+   "role": "folk",
+   "t": [
+    "Diver: B1's pools are deeper than they look. Stick to the dry stones.",
+    "Diver: The way down to B2 is past the flooded hall."
+   ]
+  }
+ ],
+ "550": [
+  {
+   "art": "explorer",
+   "name": "Explorer",
+   "role": "folk",
+   "t": [
+    "Explorer: You're in B2. The Deep Chamber is just ahead. Spooky but beautiful!",
+    "Explorer: The glyphs here glow faintly in the water."
+   ]
+  }
+ ],
+ "551": [
+  {
+   "art": "glyphos_folk6",
+   "name": "Treasure Hunter",
+   "role": "folk",
+   "t": [
+    "Treasure Hunter: The Deep Chamber at last! I came for treasure and stayed for the view."
+   ]
+  }
+ ],
+ "557": [
+  {
+   "art": "glyphos_folk1",
+   "name": "Archaeologist",
+   "role": "folk",
+   "t": [
+    "Archaeologist: Tidepool Ruins! The tide covers these pillars twice a day.",
+    "Archaeologist: Check the pools for supplies the waves wash in."
+   ]
+  },
+  {
+   "art": "civilian",
+   "name": "Beachcomber",
+   "role": "folk",
+   "t": [
+    "Beachcomber: I found a shell with a glyph on it! Or maybe it's just a scratch."
+   ]
+  }
+ ],
+ "559": [
+  {
+   "art": "glyphos_folk2",
+   "name": "Boater",
+   "role": "folk",
+   "t": [
+    "Boater: The Sunken Channel was a road once. Now it's a river!",
+    "Boater: Forgotten Forum is just back the way you came."
+   ]
+  },
+  {
+   "art": "explorer",
+   "name": "Swimmer",
+   "role": "folk",
+   "t": [
+    "Swimmer: Hydro-types zip through the channel. Fast little things!"
+   ]
+  }
+ ],
+ "561": [
+  {
+   "art": "glyphos_folk3",
+   "name": "Wanderer",
+   "role": "folk",
+   "t": [
+    "Wanderer: Coral Secret Grove! Coral growing on land. Glyphos is full of surprises.",
+    "Wanderer: Rare Alienmon love the shady reef trees."
+   ]
+  },
+  {
+   "art": "pilgrim",
+   "name": "Pilgrim",
+   "role": "folk",
+   "t": [
+    "Pilgrim: I came here to meditate. A crab pinched my toe. Very calming."
+   ]
+  }
+ ],
+ "562": [
+  {
+   "art": "glyphos_folk4",
+   "name": "Archivist",
+   "role": "folk",
+   "t": [
+    "Archivist: The Archivist's Study holds rubbings of every glyph in Glyphos.",
+    "Archivist: Some glyphs tell jokes. Very old jokes."
+   ]
+  },
+  {
+   "art": "researcher",
+   "name": "Student",
+   "role": "folk",
+   "t": [
+    "Student: I'm learning to read glyphs. So far I know 'sun' and 'snack'."
+   ]
+  }
+ ],
+ "563": [
+  {
+   "art": "explorer",
+   "name": "Dig Leader",
+   "role": "folk",
+   "t": [
+    "Dig Leader: Welcome to the Dig Camp Tent! Maps, brushes, and a lot of sand.",
+    "Dig Leader: We dig carefully. Every pebble could be history."
+   ]
+  },
+  {
+   "art": "glyphos_folk5",
+   "name": "Digger",
+   "role": "folk",
+   "t": [
+    "Digger: I found a pot handle today! Just the handle. Still exciting!"
+   ]
+  }
+ ],
+ "564": [
+  {
+   "art": "glyphos_folk6",
+   "name": "Shrine Keeper",
+   "role": "folk",
+   "t": [
+    "Shrine Keeper: The Shrine Chamber is a quiet place. Speak softly.",
+    "Shrine Keeper: Psi-types feel calm in here. Maybe you will too."
+   ]
+  },
+  {
+   "art": "pilgrim",
+   "name": "Pilgrim",
+   "role": "folk",
+   "t": [
+    "Pilgrim: I come here to think. Mostly about lunch."
+   ]
+  }
+ ],
+ "566": [
+  {
+   "art": "glyphos_folk1",
+   "name": "Resident",
+   "role": "folk",
+   "t": [
+    "Resident: Dig Camp Lane Homes. We live in tents and huts close to the dig.",
+    "Resident: The farmstead is just down the path."
+   ]
+  },
+  {
+   "art": "glyphos_folk2",
+   "name": "Kid",
+   "role": "folk",
+   "t": [
+    "Kid: I dug a hole so deep I found another hole!"
+   ]
+  }
+ ],
+ "567": [
+  {
+   "art": "glyphos_folk3",
+   "name": "Old Resident",
+   "role": "folk",
+   "t": [
+    "Old Resident: Dig Camp Quiet Court is where retired diggers rest their backs.",
+    "Old Resident: Ruin Crossroads is close by if you need to head out."
+   ]
+  },
+  {
+   "art": "civilian",
+   "name": "Storyteller",
+   "role": "folk",
+   "t": [
+    "Storyteller: Sit by the fire tonight and I'll tell you about the old glyph kings."
+   ]
+  }
+ ],
+ "568": [
+  {
+   "art": "glyphos_folk4",
+   "name": "Farmer",
+   "role": "folk",
+   "t": [
+    "Farmer: We grow date palms and sand beans. Desert farming takes patience!",
+    "Farmer: The crossroads is just over the hill."
+   ]
+  },
+  {
+   "art": "sheepkid",
+   "name": "Farm Kid",
+   "role": "folk",
+   "t": [
+    "Farm Kid: My job is to chase Swarm-types off the date palms. They're sneaky!"
+   ]
+  }
+ ],
+ "569": [
+  {
+   "art": "shop",
+   "name": "Clerk",
+   "role": "clerk",
+   "t": [
+    "Clerk: Welcome to the Dig Camp Supply Shop! Brushes, Potions, and Cure Spray.",
+    "Clerk: Sand gets in everything. Buy extra Potions just in case!"
+   ]
+  }
+ ],
+ "570": [
+  {
+   "art": "technician",
+   "name": "Dock Tech",
+   "role": "folk",
+   "t": [
+    "Dock Tech: Glyphos Spaceport! Sand storms make landing an adventure.",
+    "Dock Tech: Ruin Crossroads is right outside the gate."
+   ]
+  },
+  {
+   "art": "glyphos_folk5",
+   "name": "Traveller",
+   "role": "folk",
+   "t": [
+    "Traveller: I came to see the ruins. I brought a hat and three water bottles."
+   ]
+  }
+ ],
+ "573": [
+  {
+   "art": "halo_folk1",
+   "name": "Fan",
+   "role": "folk",
+   "t": [
+    "Fan: The Sky Colosseum floats on the clouds! Best battles in the sky.",
+    "Fan: The lobby's right through the golden arch."
+   ]
+  },
+  {
+   "art": "halo_folk2",
+   "name": "Skywatcher",
+   "role": "folk",
+   "t": [
+    "Skywatcher: Don't look over the edge before a match. Makes your knees wobble."
+   ]
+  },
+  {
+   "art": "pilgrim",
+   "name": "Pilgrim",
+   "role": "folk",
+   "t": [
+    "Pilgrim: The Sky Temple is just next door. The bells ring after every match."
+   ]
+  }
+ ],
+ "575": [
+  {
+   "art": "referee",
+   "name": "Receptionist",
+   "role": "folk",
+   "t": [
+    "Receptionist: Welcome to the Sky Colosseum! The Battle Floor is just past this hall.",
+    "Receptionist: Fliers and Gravity-types love battling up here!"
+   ]
+  },
+  {
+   "art": "halo_folk3",
+   "name": "Fan",
+   "role": "folk",
+   "t": [
+    "Fan: I cheered so loud last match, a cloud floated away."
+   ]
+  }
+ ],
+ "578": [
+  {
+   "art": "explorer",
+   "name": "Explorer",
+   "role": "folk",
+   "t": [
+    "Explorer: Crystal Hollow is right through there. The walls sparkle like stars!",
+    "Explorer: Cloud Fork is back down the path."
+   ]
+  },
+  {
+   "art": "halo_folk4",
+   "name": "Mystic",
+   "role": "folk",
+   "t": [
+    "Mystic: The crystals inside hum softly. Listen closely."
+   ]
+  }
+ ],
+ "579": [
+  {
+   "art": "halo_folk5",
+   "name": "Crystal Hunter",
+   "role": "folk",
+   "t": [
+    "Crystal Hunter: 1F is full of shiny walls. Crystal-types blend right in.",
+    "Crystal Hunter: Climb on to 2F. The crystals get even shinier!"
+   ]
+  }
+ ],
+ "580": [
+  {
+   "art": "explorer",
+   "name": "Spelunker",
+   "role": "folk",
+   "t": [
+    "Spelunker: 2F already! The Heart is just ahead. It glows so bright!"
+   ]
+  }
+ ],
+ "581": [
+  {
+   "art": "halo_folk6",
+   "name": "Wanderer",
+   "role": "folk",
+   "t": [
+    "Wanderer: The Crystal Hollow Heart. I could sit here all day watching it shimmer."
+   ]
+  }
+ ],
+ "588": [
+  {
+   "art": "halo_folk1",
+   "name": "Pilgrim",
+   "role": "folk",
+   "t": [
+    "Pilgrim: Shrine Hollows! Little shrines are tucked into every cloud nook.",
+    "Pilgrim: Cloud Fork is back the way you came."
+   ]
+  },
+  {
+   "art": "civilian",
+   "name": "Bell Ringer",
+   "role": "folk",
+   "t": [
+    "Bell Ringer: I ring the tiny bells here every morning. They sound like rain."
+   ]
+  }
+ ],
+ "591": [
+  {
+   "art": "halo_folk2",
+   "name": "Gardener",
+   "role": "folk",
+   "t": [
+    "Gardener: Hidden Blossom Grove! The petals here float upward instead of down.",
+    "Gardener: Rare Bio-types nap under the blossoms."
+   ]
+  },
+  {
+   "art": "pilgrim",
+   "name": "Pilgrim",
+   "role": "folk",
+   "t": [
+    "Pilgrim: I wandered off Cloud Fork and found this. Best wrong turn ever."
+   ]
+  }
+ ],
+ "592": [
+  {
+   "art": "halo_folk3",
+   "name": "Chapel Keeper",
+   "role": "folk",
+   "t": [
+    "Chapel Keeper: The Skyfarm Chapel blesses each harvest. Even the cloud carrots!",
+    "Chapel Keeper: Sit a while. The wind chimes are very calming."
+   ]
+  }
+ ],
+ "593": [
+  {
+   "art": "halo_folk4",
+   "name": "Librarian",
+   "role": "folk",
+   "t": [
+    "Librarian: The Oracle Library has books about all fourteen worlds.",
+    "Librarian: Quiet, please. The books are sleeping. Just kidding! Mostly."
+   ]
+  },
+  {
+   "art": "researcher",
+   "name": "Scholar",
+   "role": "folk",
+   "t": [
+    "Scholar: I'm reading about Psi-types. They can predict which page I'll turn to next!"
+   ]
+  }
+ ],
+ "594": [
+  {
+   "art": "halo_folk5",
+   "name": "Gardener",
+   "role": "folk",
+   "t": [
+    "Gardener: The Cloud Garden Room grows plants in pure mist. No soil at all!",
+    "Gardener: Water them? No, they water themselves."
+   ]
+  },
+  {
+   "art": "civilian",
+   "name": "Visitor",
+   "role": "folk",
+   "t": [
+    "Visitor: I touched a cloud flower. It felt like a sneeze."
+   ]
+  }
+ ],
+ "597": [
+  {
+   "art": "guard",
+   "name": "Temple Guard",
+   "role": "folk",
+   "t": [
+    "Temple Guard: The Sky Temple. Its trial floor tests Linkers with heart and patience.",
+    "Temple Guard: Head inside when your team is ready."
+   ]
+  },
+  {
+   "art": "halo_folk6",
+   "name": "Pilgrim",
+   "role": "folk",
+   "t": [
+    "Pilgrim: The temple bells ring after every match at the Colosseum next door."
+   ]
+  },
+  {
+   "art": "halo_folk1",
+   "name": "Skywatcher",
+   "role": "folk",
+   "t": [
+    "Skywatcher: Temple Junction is just down the steps if you need a breather."
+   ]
+  }
+ ],
+ "600": [
+  {
+   "art": "halo_folk2",
+   "name": "Resident",
+   "role": "folk",
+   "t": [
+    "Resident: Skyreach Lane Homes float on their own little islands. Bridges connect them all.",
+    "Resident: Halo Spaceport is a short hop down the lane."
+   ]
+  },
+  {
+   "art": "halo_folk3",
+   "name": "Kid",
+   "role": "folk",
+   "t": [
+    "Kid: I jumped from one island to the other! Don't tell my mom!"
+   ]
+  }
+ ],
+ "601": [
+  {
+   "art": "halo_folk4",
+   "name": "Old Resident",
+   "role": "folk",
+   "t": [
+    "Old Resident: Skyreach Quiet Court is peaceful. Just clouds and birdsong.",
+    "Old Resident: Sky Crossroads is right next door."
+   ]
+  },
+  {
+   "art": "civilian",
+   "name": "Cloud Watcher",
+   "role": "folk",
+   "t": [
+    "Cloud Watcher: That cloud looks like an Alienmon! Oh, now it looks like a sandwich."
+   ]
+  }
+ ],
+ "602": [
+  {
+   "art": "halo_folk5",
+   "name": "Farmer",
+   "role": "folk",
+   "t": [
+    "Farmer: Skyfarm Edge grows cloud carrots and sky melons. Very light and fluffy!",
+    "Farmer: Windstep Rise is up the path."
+   ]
+  },
+  {
+   "art": "sheepkid",
+   "name": "Farm Kid",
+   "role": "folk",
+   "t": [
+    "Farm Kid: My fluffy flock floats a little when it's windy. I tie them to the fence!"
+   ]
+  }
+ ],
+ "604": [
+  {
+   "art": "technician",
+   "name": "Dock Tech",
+   "role": "folk",
+   "t": [
+    "Dock Tech: Halo Spaceport. We dock ships right on the clouds! Safer than it sounds.",
+    "Dock Tech: Skyreach Lane Homes is just past the gate."
+   ]
+  },
+  {
+   "art": "halo_folk6",
+   "name": "Traveller",
+   "role": "folk",
+   "t": [
+    "Traveller: First time up here? Don't look down. Okay, maybe once."
+   ]
+  }
+ ],
+ "605": [
+  {
+   "art": "helix_folk1",
+   "name": "Visitor",
+   "role": "folk",
+   "t": [
+    "Visitor: The Helix Proving Grounds used to be off-limits. Now anyone can come watch!",
+    "Visitor: The lobby's right through the blast doors."
+   ]
+  },
+  {
+   "art": "technician",
+   "name": "Engineer",
+   "role": "folk",
+   "t": [
+    "Engineer: We repainted everything. It's way less scary in yellow."
+   ]
+  },
+  {
+   "art": "helix_folk2",
+   "name": "Tour Guide",
+   "role": "folk",
+   "t": [
+    "Tour Guide: The Comms Spire is just next door. Tours every hour!"
+   ]
+  }
+ ],
+ "606": [
+  {
+   "art": "referee",
+   "name": "Receptionist",
+   "role": "folk",
+   "t": [
+    "Receptionist: Welcome to the Proving Grounds! The Battle Room is straight ahead.",
+    "Receptionist: Please keep your hands inside the station at all times."
+   ]
+  },
+  {
+   "art": "helix_folk3",
+   "name": "Fan",
+   "role": "folk",
+   "t": [
+    "Fan: I never thought I'd cheer on a space station. This is great!"
+   ]
+  }
+ ],
+ "608": [
+  {
+   "art": "miner",
+   "name": "Miner",
+   "role": "folk",
+   "t": [
+    "Miner: Rift Rock Mine is just below. The rocks hum a little. Don't worry about it.",
+    "Miner: Hangar Deck is back up the ramp."
+   ]
+  },
+  {
+   "art": "helix_folk4",
+   "name": "Technician",
+   "role": "folk",
+   "t": [
+    "Technician: I'm fixing the mine lights. Half of them blink. The other half wink."
+   ]
+  }
+ ],
+ "609": [
+  {
+   "art": "explorer",
+   "name": "Explorer",
+   "role": "folk",
+   "t": [
+    "Explorer: 1F of the Rift Rock Mine. The rocks float a bit. Gravity-types love it here!",
+    "Explorer: Head deeper in to find the way up to 2F."
+   ]
+  }
+ ],
+ "610": [
+  {
+   "art": "helix_folk5",
+   "name": "Rock Sampler",
+   "role": "folk",
+   "t": [
+    "Rock Sampler: 2F. The Deep Chamber is just ahead. Grab your samples and go!"
+   ]
+  }
+ ],
+ "611": [
+  {
+   "art": "miner",
+   "name": "Old Miner",
+   "role": "folk",
+   "t": [
+    "Old Miner: The Deep Chamber! Even the dust sparkles down here."
+   ]
+  }
+ ],
+ "616": [
+  {
+   "art": "helix_folk6",
+   "name": "Stargazer",
+   "role": "folk",
+   "t": [
+    "Stargazer: Viewport Overlook! You can see whole planets drift by out there.",
+    "Stargazer: The Specimen Annex is back that way."
+   ]
+  },
+  {
+   "art": "civilian",
+   "name": "Visitor",
+   "role": "folk",
+   "t": [
+    "Visitor: I pressed my face to the glass. It's still cold."
+   ]
+  }
+ ],
+ "621": [
+  {
+   "art": "helix_folk1",
+   "name": "Gardener",
+   "role": "folk",
+   "t": [
+    "Gardener: The Hidden Hydro Garden! Plants grow in water pipes up here.",
+    "Gardener: Hydro-types and Bio-types get along great in this garden."
+   ]
+  },
+  {
+   "art": "researcher",
+   "name": "Botanist",
+   "role": "folk",
+   "t": [
+    "Botanist: Hydroponics Edge is just back the way you came."
+   ]
+  }
+ ],
+ "622": [
+  {
+   "art": "researcher",
+   "name": "Helix Scientist",
+   "role": "folk",
+   "t": [
+    "Helix Scientist: This is the Containment Lab. Everything is contained. Very contained. Please go.",
+    "Helix Scientist: Don't tap on the tanks! They hate that. I hate that."
+   ]
+  }
+ ],
+ "623": [
+  {
+   "art": "helix_folk2",
+   "name": "Crewmate",
+   "role": "folk",
+   "t": [
+    "Crewmate: The Crew Quarters. Bunks, snacks, and a lot of snoring.",
+    "Crewmate: Space naps are the best naps."
+   ]
+  },
+  {
+   "art": "helix_folk3",
+   "name": "Cook",
+   "role": "folk",
+   "t": [
+    "Cook: I make space soup. It's soup. In space."
+   ]
+  }
+ ],
+ "624": [
+  {
+   "art": "guard",
+   "name": "Bridge Officer",
+   "role": "folk",
+   "t": [
+    "Bridge Officer: This is the Command Bridge. Don't touch the big red button. Or the small red one.",
+    "Bridge Officer: We steer the whole station from here!"
+   ]
+  },
+  {
+   "art": "helix_folk4",
+   "name": "Navigator",
+   "role": "folk",
+   "t": [
+    "Navigator: I plot our course. Today's course: stay right here."
+   ]
+  }
+ ],
+ "626": [
+  {
+   "art": "helix_folk5",
+   "name": "Visitor",
+   "role": "folk",
+   "t": [
+    "Visitor: The Helix Comms Spire! It used to send secret messages. Now it plays music!",
+    "Visitor: The trial floor is just inside. Mind the blinking floor panels!"
+   ]
+  },
+  {
+   "art": "guard",
+   "name": "Guard",
+   "role": "folk",
+   "t": [
+    "Guard: Linkers only past this point. The Keeper is waiting upstairs."
+   ]
+  }
+ ],
+ "627": [
+  {
+   "art": "helix_folk6",
+   "name": "Tower Aide",
+   "role": "folk",
+   "t": [
+    "Tower Aide: Welcome to the trial floor! Keep calm and battle on.",
+    "Tower Aide: The Uplink Room is just beyond. You're doing great!"
+   ]
+  }
+ ],
+ "628": [
+  {
+   "art": "helix_folk1",
+   "name": "Tower Aide",
+   "role": "folk",
+   "t": [
+    "Tower Aide: You made it to the Uplink Room! Signals from all over the stars come in here."
+   ]
+  }
+ ],
+ "629": [
+  {
+   "art": "helix_folk2",
+   "name": "Resident",
+   "role": "folk",
+   "t": [
+    "Resident: Habitation Row. Little rooms, big windows, and the best view of the stars.",
+    "Resident: The Docking Ring is just down the corridor."
+   ]
+  },
+  {
+   "art": "helix_folk3",
+   "name": "Kid",
+   "role": "folk",
+   "t": [
+    "Kid: I learned to float in zero gravity! Well, for two seconds."
+   ]
+  }
+ ],
+ "630": [
+  {
+   "art": "helix_folk4",
+   "name": "Retired Officer",
+   "role": "folk",
+   "t": [
+    "Retired Officer: Officers Court used to be strict. Now it's mostly naps and card games.",
+    "Retired Officer: Station Coolant Fork is just down the hall."
+   ]
+  },
+  {
+   "art": "civilian",
+   "name": "Neighbour",
+   "role": "folk",
+   "t": [
+    "Neighbour: Shh! The officer next door is trying to sleep."
+   ]
+  }
+ ],
+ "632": [
+  {
+   "art": "helix_folk5",
+   "name": "Gardener",
+   "role": "folk",
+   "t": [
+    "Gardener: Hydroponics Edge grows all the station's food. Even the space carrots!",
+    "Gardener: There's a hidden garden past the pipes. Shhh!"
+   ]
+  },
+  {
+   "art": "researcher",
+   "name": "Botanist",
+   "role": "folk",
+   "t": [
+    "Botanist: Bio-types love the bright grow lamps up here."
+   ]
+  }
+ ],
+ "634": [
+  {
+   "art": "technician",
+   "name": "Dock Tech",
+   "role": "folk",
+   "t": [
+    "Dock Tech: Helix Station Spaceport! The docking clamps are a little loud. Sorry!",
+    "Dock Tech: Deck Crossroads is just past the gate."
+   ]
+  },
+  {
+   "art": "helix_folk6",
+   "name": "Traveller",
+   "role": "folk",
+   "t": [
+    "Traveller: First time on a space station? It's like a giant tin can!"
+   ]
+  }
+ ],
+ "635": [
+  {
+   "art": "neonis_folk1",
+   "name": "Fan",
+   "role": "folk",
+   "t": [
+    "Fan: Neon Megadome! The lights flash with every hit. So cool!",
+    "Fan: The lobby's right through the glowing doors."
+   ]
+  },
+  {
+   "art": "neonis_folk2",
+   "name": "Raver",
+   "role": "folk",
+   "t": [
+    "Raver: I came for the battles. I stayed for the light show."
+   ]
+  },
+  {
+   "art": "snacktrader",
+   "name": "Snack Trader",
+   "role": "folk",
+   "t": [
+    "Snack Trader: Glow pops! Get your glow pops! They sparkle in your mouth!"
+   ]
+  }
+ ],
+ "636": [
+  {
+   "art": "referee",
+   "name": "Receptionist",
+   "role": "folk",
+   "t": [
+    "Receptionist: Welcome to the Neon Megadome! The Battle Floor is just ahead.",
+    "Receptionist: Sunglasses are recommended. The lights are very bright!"
+   ]
+  },
+  {
+   "art": "neonis_folk3",
+   "name": "Fan",
+   "role": "folk",
+   "t": [
+    "Fan: I painted my face with glowing paint. My mom will be thrilled."
+   ]
+  }
+ ],
+ "639": [
+  {
+   "art": "neonis_folk4",
+   "name": "Courier",
+   "role": "folk",
+   "t": [
+    "Courier: The Undercity Tunnels are down there. Dark and full of old wires!",
+    "Courier: Skyline Overlook is back up the stairs."
+   ]
+  },
+  {
+   "art": "technician",
+   "name": "Coder",
+   "role": "folk",
+   "t": [
+    "Coder: I'm fixing the tunnel signs. They keep saying 'ERROR' instead of 'EXIT'."
+   ]
+  }
+ ],
+ "640": [
+  {
+   "art": "explorer",
+   "name": "Explorer",
+   "role": "folk",
+   "t": [
+    "Explorer: B1 of the Undercity. Volt-types chew on the old cables down here.",
+    "Explorer: The stairs to B2 are past the old train car."
+   ]
+  }
+ ],
+ "641": [
+  {
+   "art": "neonis_folk5",
+   "name": "Repair Tech",
+   "role": "folk",
+   "t": [
+    "Repair Tech: B2 already! The Deep Chamber is just ahead. Spooky hum down there."
+   ]
+  }
+ ],
+ "642": [
+  {
+   "art": "neonis_folk6",
+   "name": "Tunnel Rat",
+   "role": "folk",
+   "t": [
+    "Tunnel Rat: The Deep Chamber! I live down here. Rent's cheap."
+   ]
+  }
+ ],
+ "650": [
+  {
+   "art": "neonis_folk1",
+   "name": "Boater",
+   "role": "folk",
+   "t": [
+    "Boater: The Static Canal fizzes with Volt energy. Don't dip your toes in!",
+    "Boater: Arcade Alleys is just back the way you came."
+   ]
+  },
+  {
+   "art": "civilian",
+   "name": "Fisher",
+   "role": "folk",
+   "t": [
+    "Fisher: I fish here every night. I mostly catch glowing boots."
+   ]
+  }
+ ],
+ "652": [
+  {
+   "art": "helix_folk1",
+   "name": "Receptionist",
+   "role": "folk",
+   "t": [
+    "Receptionist: Welcome to the Helix Front Office. Please take a number.",
+    "Receptionist: The lab in the back is for staff only. Supposedly."
+   ]
+  },
+  {
+   "art": "neonis_folk2",
+   "name": "Visitor",
+   "role": "folk",
+   "t": [
+    "Visitor: I came here to complain about the noise. Nobody's listening."
+   ]
+  }
+ ],
+ "653": [
+  {
+   "art": "researcher",
+   "name": "Helix Scientist",
+   "role": "folk",
+   "t": [
+    "Helix Scientist: Oh no, a visitor. Please don't touch the screens. They're very sensitive.",
+    "Helix Scientist: I'm just running a test. Nothing to see. Okay, a little to see."
+   ]
+  }
+ ],
+ "654": [
+  {
+   "art": "neonis_folk3",
+   "name": "Gardener",
+   "role": "folk",
+   "t": [
+    "Gardener: Glowgarden Hideaway! Plants that glow like neon signs!",
+    "Gardener: Rare Alienmon nap under the bright leaves."
+   ]
+  },
+  {
+   "art": "civilian",
+   "name": "Visitor",
+   "role": "folk",
+   "t": [
+    "Visitor: I found this place off Canal Fork. Shhh, keep it a secret!"
+   ]
+  }
+ ],
+ "656": [
+  {
+   "art": "neonis_folk4",
+   "name": "Producer",
+   "role": "folk",
+   "t": [
+    "Producer: The Recording Studio! We record Sonic-type songs here.",
+    "Producer: Listen to that beat! Sonic-types are total naturals."
+   ]
+  },
+  {
+   "art": "neonis_folk5",
+   "name": "Singer",
+   "role": "folk",
+   "t": [
+    "Singer: I'm practicing my high notes. LA LA LAAAA! How was that?"
+   ]
+  }
+ ],
+ "657": [
+  {
+   "art": "neonis_folk6",
+   "name": "Noodle Chef",
+   "role": "folk",
+   "t": [
+    "Noodle Chef: Welcome to the Noodle Bar! Spicy, sweet, or extra glowing?",
+    "Noodle Chef: Slurping is allowed. Encouraged, even!"
+   ]
+  },
+  {
+   "art": "civilian",
+   "name": "Regular",
+   "role": "folk",
+   "t": [
+    "Regular: I come here every night after work. The noodles never disappoint."
+   ]
+  }
+ ],
+ "659": [
+  {
+   "art": "neonis_folk1",
+   "name": "Fan",
+   "role": "folk",
+   "t": [
+    "Fan: Voltspire Plaza! The Relay Tower crackles with lightning.",
+    "Fan: Step through the doors to the trial floor. Sparks fly in there!"
+   ]
+  },
+  {
+   "art": "guard",
+   "name": "Tower Guard",
+   "role": "folk",
+   "t": [
+    "Tower Guard: Volt-types rule this tower. Bring a Gravity-type or something that grounds them!"
+   ]
+  },
+  {
+   "art": "neonis_folk2",
+   "name": "Raver",
+   "role": "folk",
+   "t": [
+    "Raver: The plaza lights pulse to the beat of the tower. Dance with me!"
+   ]
+  }
+ ],
+ "662": [
+  {
+   "art": "neonis_folk3",
+   "name": "Resident",
+   "role": "folk",
+   "t": [
+    "Resident: Neonis Lane Homes. Little apartments with big glowing signs.",
+    "Resident: Neon Boulevard is just down the street."
+   ]
+  },
+  {
+   "art": "neonis_folk4",
+   "name": "Kid",
+   "role": "folk",
+   "t": [
+    "Kid: My window faces a giant sign. It's always daytime in my room!"
+   ]
+  }
+ ],
+ "663": [
+  {
+   "art": "neonis_folk5",
+   "name": "Old Resident",
+   "role": "folk",
+   "t": [
+    "Old Resident: Neonis Quiet Court is the only dark spot in the city. Lovely, isn't it?",
+    "Old Resident: Neon Crossroads is close by."
+   ]
+  },
+  {
+   "art": "civilian",
+   "name": "Cat Owner",
+   "role": "folk",
+   "t": [
+    "Cat Owner: My cat stares at the neon all night. I think it likes the colours."
+   ]
+  }
+ ],
+ "664": [
+  {
+   "art": "neonis_folk6",
+   "name": "Farmer",
+   "role": "folk",
+   "t": [
+    "Farmer: Neonis Farmstead Edge grows glowing lettuce under the city lights!",
+    "Farmer: The Megadome is right next door. Very noisy at night!"
+   ]
+  },
+  {
+   "art": "sheepkid",
+   "name": "Farm Kid",
+   "role": "folk",
+   "t": [
+    "Farm Kid: I feed the glow sheep every morning. They sparkle when they're happy!"
+   ]
+  }
+ ],
+ "666": [
+  {
+   "art": "technician",
+   "name": "Dock Tech",
+   "role": "folk",
+   "t": [
+    "Dock Tech: Neonis Spaceport! Ships land right on the neon pads.",
+    "Dock Tech: The Starport is just through the gate."
+   ]
+  },
+  {
+   "art": "neonis_folk1",
+   "name": "Traveller",
+   "role": "folk",
+   "t": [
+    "Traveller: I came for the arcades. I'm leaving with zero Stardust and a giant plush toy."
+   ]
+  }
+ ],
+ "668": [
+  {
+   "art": "pyros_folk1",
+   "name": "Fan",
+   "role": "folk",
+   "t": [
+    "Fan: Magma Pit Arena! Battles here are scorching hot.",
+    "Fan: The lobby's right through the fire doors."
+   ]
+  },
+  {
+   "art": "pyros_folk2",
+   "name": "Miner",
+   "role": "folk",
+   "t": [
+    "Miner: I watch every match after my shift. Hot battles warm the heart!"
+   ]
+  },
+  {
+   "art": "snacktrader",
+   "name": "Snack Trader",
+   "role": "folk",
+   "t": [
+    "Snack Trader: Lava-roasted nuts! Crunchy, toasty, and only a little bit smoky!"
+   ]
+  }
+ ],
+ "670": [
+  {
+   "art": "referee",
+   "name": "Receptionist",
+   "role": "folk",
+   "t": [
+    "Receptionist: Welcome to the Magma Pit Arena! The Battle Room is just past the lobby.",
+    "Receptionist: Bring something Hydro if you want to stay cool in there."
+   ]
+  },
+  {
+   "art": "pyros_folk3",
+   "name": "Fan",
+   "role": "folk",
+   "t": [
+    "Fan: I wore my fireproof shoes. You never know!"
+   ]
+  }
+ ],
+ "673": [
+  {
+   "art": "miner",
+   "name": "Miner",
+   "role": "folk",
+   "t": [
+    "Miner: The Deep Mines are just below. Hot, dark, and full of Magma-types.",
+    "Miner: Mine Shaft Hollows is back the way you came."
+   ]
+  },
+  {
+   "art": "pyros_folk4",
+   "name": "Ash Walker",
+   "role": "folk",
+   "t": [
+    "Ash Walker: Bring a Hydro-type and lots of water. It's like an oven down there!"
+   ]
+  }
+ ],
+ "686": [
+  {
+   "art": "pyros_folk5",
+   "name": "Old Smith",
+   "role": "folk",
+   "t": [
+    "Old Smith: The Abandoned Smelter hasn't melted a thing in years.",
+    "Old Smith: Funny, I heard machines running in the back last night."
+   ]
+  },
+  {
+   "art": "wanderer",
+   "name": "Ash Walker",
+   "role": "folk",
+   "t": [
+    "Ash Walker: Mine Junction is just down the road if you need to head back."
+   ]
+  }
+ ],
+ "687": [
+  {
+   "art": "researcher",
+   "name": "Helix Scientist",
+   "role": "folk",
+   "t": [
+    "Helix Scientist: You! This lab is way too hot already. Don't make it hotter.",
+    "Helix Scientist: Look, I just watch the gauges. Please stop staring at the gauges."
+   ]
+  }
+ ],
+ "688": [
+  {
+   "art": "pyros_folk6",
+   "name": "Wanderer",
+   "role": "folk",
+   "t": [
+    "Wanderer: Ember Hollow Grove! Trees with leaves like glowing embers.",
+    "Wanderer: Rare Magma-types nap in the warm ashes here."
+   ]
+  },
+  {
+   "art": "civilian",
+   "name": "Picnicker",
+   "role": "folk",
+   "t": [
+    "Picnicker: Cinder Hollow Quiet Court is just back that way. Bring marshmallows next time!"
+   ]
+  }
+ ],
+ "689": [
+  {
+   "art": "pyros_folk1",
+   "name": "Canteen Cook",
+   "role": "folk",
+   "t": [
+    "Canteen Cook: Welcome to the Miners' Canteen! Hot soup for hard workers.",
+    "Canteen Cook: Try the lava stew! It's actually just very spicy beans."
+   ]
+  },
+  {
+   "art": "miner",
+   "name": "Miner",
+   "role": "folk",
+   "t": [
+    "Miner: I eat here every day. The cook remembers everybody's order."
+   ]
+  }
+ ],
+ "690": [
+  {
+   "art": "technician",
+   "name": "Smith",
+   "role": "folk",
+   "t": [
+    "Smith: The Smelter Room melts ore into shiny metal. Stand back from the glow!",
+    "Smith: Magma-types help keep the fires roaring."
+   ]
+  },
+  {
+   "art": "pyros_folk2",
+   "name": "Apprentice",
+   "role": "folk",
+   "t": [
+    "Apprentice: I'm learning to pour molten metal. Very slowly. Very carefully."
+   ]
+  }
+ ],
+ "691": [
+  {
+   "art": "pyros_folk3",
+   "name": "Caretaker",
+   "role": "folk",
+   "t": [
+    "Caretaker: These are the old miner's quarters. Tidy, warm, and full of rock samples.",
+    "Caretaker: Please don't move anything. Every pebble has its spot."
+   ]
+  }
+ ],
+ "693": [
+  {
+   "art": "pyros_folk4",
+   "name": "Fan",
+   "role": "folk",
+   "t": [
+    "Fan: The Volcano Relay Tower! You can feel the heat from here.",
+    "Fan: Head through the doors to the trial floor. It gets hotter every step!"
+   ]
+  },
+  {
+   "art": "guard",
+   "name": "Tower Guard",
+   "role": "folk",
+   "t": [
+    "Tower Guard: Bring your toughest team. The Keeper up there doesn't cool off."
+   ]
+  }
+ ],
+ "696": [
+  {
+   "art": "pyros_folk5",
+   "name": "Resident",
+   "role": "folk",
+   "t": [
+    "Resident: Cinder Hollow Lane Homes have stone walls. The volcano keeps them cozy!",
+    "Resident: Pyros Spaceport is just down the lane. Watch for hot exhaust!"
+   ]
+  },
+  {
+   "art": "pyros_folk6",
+   "name": "Kid",
+   "role": "folk",
+   "t": [
+    "Kid: I can cook an egg on the sidewalk! Mom says not to try."
+   ]
+  }
+ ],
+ "697": [
+  {
+   "art": "pyros_folk1",
+   "name": "Old Resident",
+   "role": "folk",
+   "t": [
+    "Old Resident: Cinder Hollow Quiet Court. Calm, warm, and just a little ashy.",
+    "Old Resident: Ember Hollow Grove is down the path. Lovely glowing trees!"
+   ]
+  },
+  {
+   "art": "civilian",
+   "name": "Neighbour",
+   "role": "folk",
+   "t": [
+    "Neighbour: I sweep ash off my porch every morning. It's my exercise."
+   ]
+  }
+ ],
+ "698": [
+  {
+   "art": "pyros_folk2",
+   "name": "Farmer",
+   "role": "folk",
+   "t": [
+    "Farmer: We grow fire peppers out here. They're spicy enough to make a Magma-type cry!",
+    "Farmer: The arena's next door. Battle cheers at all hours!"
+   ]
+  },
+  {
+   "art": "sheepkid",
+   "name": "Farm Kid",
+   "role": "folk",
+   "t": [
+    "Farm Kid: I water the pepper plants. The water steams right off!"
+   ]
+  }
+ ],
+ "700": [
+  {
+   "art": "technician",
+   "name": "Dock Tech",
+   "role": "folk",
+   "t": [
+    "Dock Tech: Pyros Spaceport! Ships need heat shields to land here.",
+    "Dock Tech: Cinder Hollow Lane Homes is just past the gate."
+   ]
+  },
+  {
+   "art": "pyros_folk3",
+   "name": "Traveller",
+   "role": "folk",
+   "t": [
+    "Traveller: I packed a winter coat. Big mistake."
+   ]
+  }
+ ],
+ "702": [
+  {
+   "art": "sporeholm_folk1",
+   "name": "Fan",
+   "role": "folk",
+   "t": [
+    "Fan: Mycelium Bowl! The arena is made of a giant mushroom cap!",
+    "Fan: The lobby's right inside the stem doors."
+   ]
+  },
+  {
+   "art": "sporefolk",
+   "name": "Spore Tender",
+   "role": "folk",
+   "t": [
+    "Spore Tender: The Relay Tower is next door. It glows extra bright on match nights."
+   ]
+  },
+  {
+   "art": "sporeholm_folk2",
+   "name": "Bog Hiker",
+   "role": "folk",
+   "t": [
+    "Bog Hiker: Capstep Rise is just back up the path."
+   ]
+  }
+ ],
+ "704": [
+  {
+   "art": "referee",
+   "name": "Receptionist",
+   "role": "folk",
+   "t": [
+    "Receptionist: Welcome to the Mycelium Bowl! The arena is just ahead.",
+    "Receptionist: The floor is a little squishy. Mind your step!"
+   ]
+  },
+  {
+   "art": "sporeholm_folk3",
+   "name": "Fan",
+   "role": "folk",
+   "t": [
+    "Fan: I brought spore lanterns to wave! The glow matches my team!"
+   ]
+  }
+ ],
+ "707": [
+  {
+   "art": "sporeholm_folk4",
+   "name": "Bog Hiker",
+   "role": "folk",
+   "t": [
+    "Bog Hiker: Mushroom Maze Cave is just through there. Easy to get lost!",
+    "Bog Hiker: Sporecap Overlook is back up the trail."
+   ]
+  },
+  {
+   "art": "explorer",
+   "name": "Explorer",
+   "role": "folk",
+   "t": [
+    "Explorer: Mark your path with the glowing caps. That's how I get home!"
+   ]
+  }
+ ],
+ "708": [
+  {
+   "art": "sporefolk",
+   "name": "Spore Tender",
+   "role": "folk",
+   "t": [
+    "Spore Tender: Mushroom Maze B1. The glow caps point the way down.",
+    "Spore Tender: Toxin-types hide in the stinky corners. Pack Cure Spray!"
+   ]
+  }
+ ],
+ "710": [
+  {
+   "art": "sporeholm_folk5",
+   "name": "Explorer",
+   "role": "folk",
+   "t": [
+    "Explorer: The Deep Chamber! The biggest mushroom I've ever seen lives down here."
+   ]
+  }
+ ],
+ "718": [
+  {
+   "art": "sporeholm_folk6",
+   "name": "Fisher",
+   "role": "folk",
+   "t": [
+    "Fisher: Bogwater Bend! The water is murky, but the fish are friendly.",
+    "Fisher: Lantern Marsh Shore is just back the way you came."
+   ]
+  },
+  {
+   "art": "explorer",
+   "name": "Bog Hiker",
+   "role": "folk",
+   "t": [
+    "Bog Hiker: Hydro-types and Toxin-types share this bend. Bring a mix!"
+   ]
+  }
+ ],
+ "719": [
+  {
+   "art": "sporeholm_folk1",
+   "name": "Botanist",
+   "role": "folk",
+   "t": [
+    "Botanist: Glowcap Meadow! Every mushroom here glows a different color.",
+    "Botanist: Bog Fork is just down the path."
+   ]
+  },
+  {
+   "art": "civilian",
+   "name": "Picnicker",
+   "role": "folk",
+   "t": [
+    "Picnicker: I lay down here to watch the caps glow. Best show in Sporeholm!"
+   ]
+  }
+ ],
+ "720": [
+  {
+   "art": "sporeholm_folk2",
+   "name": "Wanderer",
+   "role": "folk",
+   "t": [
+    "Wanderer: Mirefen Secret Grove! Hidden right behind the farmstead.",
+    "Wanderer: Rare Bio-types nap under the giant caps here."
+   ]
+  },
+  {
+   "art": "sporefolk",
+   "name": "Spore Tender",
+   "role": "folk",
+   "t": [
+    "Spore Tender: Shhh! The glow moths are sleeping."
+   ]
+  }
+ ],
+ "721": [
+  {
+   "art": "sporeholm_folk3",
+   "name": "Herbalist",
+   "role": "folk",
+   "t": [
+    "Herbalist: Welcome to my Herbalist Hut! Herbs for every sniffle and sneeze.",
+    "Herbalist: Mushroom tea cures almost anything. Except boredom."
+   ]
+  },
+  {
+   "art": "sporefolk",
+   "name": "Helper",
+   "role": "folk",
+   "t": [
+    "Helper: I sort the herbs by smell. Some smell like socks."
+   ]
+  }
+ ],
+ "722": [
+  {
+   "art": "researcher",
+   "name": "Botanist",
+   "role": "folk",
+   "t": [
+    "Botanist: The Spore Lab studies how mushrooms glow. Fascinating stuff!",
+    "Botanist: Please don't sniff the samples. Trust me."
+   ]
+  },
+  {
+   "art": "sporeholm_folk4",
+   "name": "Lab Assistant",
+   "role": "folk",
+   "t": [
+    "Lab Assistant: I counted spores all day. My eyes are glowing now."
+   ]
+  }
+ ],
+ "723": [
+  {
+   "art": "sporeholm_folk5",
+   "name": "Resident",
+   "role": "folk",
+   "t": [
+    "Resident: Welcome to my Marsh Cottage! It's small, but the lily pads out back are lovely.",
+    "Resident: Want some swamp tea? It's better than it sounds."
+   ]
+  }
+ ],
+ "725": [
+  {
+   "art": "sporeholm_folk6",
+   "name": "Fan",
+   "role": "folk",
+   "t": [
+    "Fan: The Sporeholm Relay Tower! The mushrooms around it glow brighter every day.",
+    "Fan: The trial floor is just inside, past the glowing caps."
+   ]
+  },
+  {
+   "art": "guard",
+   "name": "Tower Guard",
+   "role": "folk",
+   "t": [
+    "Tower Guard: Bring a Plasma-type if you have one. Bio-types don't like the heat!"
+   ]
+  }
+ ],
+ "728": [
+  {
+   "art": "sporeholm_folk1",
+   "name": "Resident",
+   "role": "folk",
+   "t": [
+    "Resident: Mirefen Lane Homes are built on stilts above the bog. Dry and cozy!",
+    "Resident: The spaceport and the village are both close by."
+   ]
+  },
+  {
+   "art": "sporeholm_folk2",
+   "name": "Kid",
+   "role": "folk",
+   "t": [
+    "Kid: I jumped from lily pad to lily pad all the way home! Splash!"
+   ]
+  }
+ ],
+ "729": [
+  {
+   "art": "sporeholm_folk3",
+   "name": "Old Resident",
+   "role": "folk",
+   "t": [
+    "Old Resident: Mirefen Quiet Court is peaceful. Just frogs and glow moths.",
+    "Old Resident: Sporelake Shore is just down the path."
+   ]
+  },
+  {
+   "art": "sporefolk",
+   "name": "Neighbour",
+   "role": "folk",
+   "t": [
+    "Neighbour: I hum to my mushrooms. They grow better with a little music."
+   ]
+  }
+ ],
+ "730": [
+  {
+   "art": "sporeholm_folk4",
+   "name": "Farmer",
+   "role": "folk",
+   "t": [
+    "Farmer: Mirefen Farmstead grows bog rice and swamp beans. Wet work!",
+    "Farmer: There's a secret grove out back. Don't tell anyone I told you."
+   ]
+  },
+  {
+   "art": "sheepkid",
+   "name": "Farm Kid",
+   "role": "folk",
+   "t": [
+    "Farm Kid: I wade through the rice paddies every morning. My boots are always squishy!"
+   ]
+  }
+ ],
+ "733": [
+  {
+   "art": "sporeholm_folk5",
+   "name": "Swimmer",
+   "role": "folk",
+   "t": [
+    "Swimmer: Sporelake Shore! The lake glows blue at night.",
+    "Swimmer: Mirefen Quiet Court is just back up the path."
+   ]
+  },
+  {
+   "art": "explorer",
+   "name": "Bog Hiker",
+   "role": "folk",
+   "t": [
+    "Bog Hiker: Hydro-types splash around the shore. Bring a Volt-type!"
+   ]
+  }
+ ],
+ "736": [
+  {
+   "art": "starfall_folk1",
+   "name": "Fan",
+   "role": "folk",
+   "t": [
+    "Fan: Rift Crater Arena! Battles right on the edge of the crater!",
+    "Fan: The lobby's right through the stone gate."
+   ]
+  },
+  {
+   "art": "starfall_folk2",
+   "name": "Rift Seeker",
+   "role": "folk",
+   "t": [
+    "Rift Seeker: The crater hums louder on match nights. Can you feel it?"
+   ]
+  },
+  {
+   "art": "snacktrader",
+   "name": "Snack Trader",
+   "role": "folk",
+   "t": [
+    "Snack Trader: Star crunch bars! Sweet, crunchy, and a little sparkly!"
+   ]
+  }
+ ],
+ "738": [
+  {
+   "art": "referee",
+   "name": "Receptionist",
+   "role": "folk",
+   "t": [
+    "Receptionist: Welcome to the Rift Crater Arena! The arena floor is just ahead.",
+    "Receptionist: Crystal-types love battling here. The glow helps them focus!"
+   ]
+  },
+  {
+   "art": "starfall_folk3",
+   "name": "Fan",
+   "role": "folk",
+   "t": [
+    "Fan: I brought a telescope to watch the battles. Is that weird?"
+   ]
+  }
+ ],
+ "741": [
+  {
+   "art": "explorer",
+   "name": "Rift Seeker",
+   "role": "folk",
+   "t": [
+    "Rift Seeker: Starstone Hollow is just through there. The rocks twinkle like stars!",
+    "Rift Seeker: Craterstep Slope is back up the trail."
+   ]
+  },
+  {
+   "art": "starfall_folk4",
+   "name": "Rock Hound",
+   "role": "folk",
+   "t": [
+    "Rock Hound: I'm collecting starstones. This one's my favorite. And this one. And this one."
+   ]
+  }
+ ],
+ "742": [
+  {
+   "art": "researcher",
+   "name": "Star Watcher",
+   "role": "folk",
+   "t": [
+    "Star Watcher: B1 of Starstone Hollow. Crystal-types grow right out of the walls.",
+    "Star Watcher: The way down to B2 is past the glowing pillar."
+   ]
+  }
+ ],
+ "743": [
+  {
+   "art": "starfall_folk5",
+   "name": "Explorer",
+   "role": "folk",
+   "t": [
+    "Explorer: B2 already! The Deep Chamber is just ahead. The glow gets stronger!"
+   ]
+  }
+ ],
+ "744": [
+  {
+   "art": "starfall_folk6",
+   "name": "Explorer",
+   "role": "folk",
+   "t": [
+    "Explorer: The Deep Chamber! It's like standing inside a star."
+   ]
+  }
+ ],
+ "751": [
+  {
+   "art": "starfall_folk1",
+   "name": "Rift Seeker",
+   "role": "folk",
+   "t": [
+    "Rift Seeker: Rift Edge! Don't lean too far. The crater goes way down.",
+    "Rift Seeker: Rift Fork is just back that way."
+   ]
+  },
+  {
+   "art": "explorer",
+   "name": "Hiker",
+   "role": "folk",
+   "t": [
+    "Hiker: Void-types sometimes peek out from the cracks. Spooky!"
+   ]
+  }
+ ],
+ "752": [
+  {
+   "art": "starfall_folk2",
+   "name": "Seedpod Hunter",
+   "role": "folk",
+   "t": [
+    "Seedpod Hunter: Seedpod Hollows! Old seedpods lie all around here.",
+    "Seedpod Hunter: Some still glow faintly. Pretty, right?"
+   ]
+  },
+  {
+   "art": "researcher",
+   "name": "Star Watcher",
+   "role": "folk",
+   "t": [
+    "Star Watcher: Rift Fork is just back the way you came."
+   ]
+  }
+ ],
+ "755": [
+  {
+   "art": "starfall_folk3",
+   "name": "Wanderer",
+   "role": "folk",
+   "t": [
+    "Wanderer: Starfall Secret Grove! Trees that sparkle like the night sky.",
+    "Wanderer: Rare Alienmon nap under the starry leaves."
+   ]
+  },
+  {
+   "art": "civilian",
+   "name": "Stargazer",
+   "role": "folk",
+   "t": [
+    "Stargazer: I found this place by following a shooting star. True story!"
+   ]
+  }
+ ],
+ "756": [
+  {
+   "art": "researcher",
+   "name": "Greenhouse Keeper",
+   "role": "folk",
+   "t": [
+    "Greenhouse Keeper: The Seedpod Greenhouse grows plants from crater seeds.",
+    "Greenhouse Keeper: Some sprout overnight. Some take years. Patience!"
+   ]
+  },
+  {
+   "art": "starfall_folk4",
+   "name": "Gardener",
+   "role": "folk",
+   "t": [
+    "Gardener: I watered a seedpod and it giggled. I think."
+   ]
+  }
+ ],
+ "757": [
+  {
+   "art": "researcher",
+   "name": "Star Watcher",
+   "role": "folk",
+   "t": [
+    "Star Watcher: The Observation Post watches the crater day and night.",
+    "Star Watcher: Look through the scope! You might spot a shooting star."
+   ]
+  },
+  {
+   "art": "starfall_folk5",
+   "name": "Assistant",
+   "role": "folk",
+   "t": [
+    "Assistant: I write down every twinkle. My notebook is full of dots."
+   ]
+  }
+ ],
+ "758": [
+  {
+   "art": "researcher",
+   "name": "Helix Scientist",
+   "role": "folk",
+   "t": [
+    "Helix Scientist: This is a field office. A perfectly normal field office. Please leave.",
+    "Helix Scientist: Okay, fine, look around. Just don't touch the drill charts."
+   ]
+  }
+ ],
+ "763": [
+  {
+   "art": "starfall_folk6",
+   "name": "Resident",
+   "role": "folk",
+   "t": [
+    "Resident: Starfall Lane Homes are right by Rim Camp. The shop's just around the corner!",
+    "Resident: The crater glows purple on clear nights."
+   ]
+  },
+  {
+   "art": "starfall_folk1",
+   "name": "Kid",
+   "role": "folk",
+   "t": [
+    "Kid: I saw a shooting star last night! I wished for a Gravity-type."
+   ]
+  },
+  {
+   "art": "civilian",
+   "name": "Neighbour",
+   "role": "folk",
+   "t": [
+    "Neighbour: Crater Crossroads is close by if you need to head out."
+   ]
+  }
+ ],
+ "764": [
+  {
+   "art": "starfall_folk2",
+   "name": "Old Resident",
+   "role": "folk",
+   "t": [
+    "Old Resident: Starfall Quiet Court. Quiet, except when the crater hums.",
+    "Old Resident: There's a secret grove down the path. Lovely sparkly trees!"
+   ]
+  },
+  {
+   "art": "civilian",
+   "name": "Stargazer",
+   "role": "folk",
+   "t": [
+    "Stargazer: I count the stars every night. I'm up to seven thousand."
+   ]
+  }
+ ],
+ "765": [
+  {
+   "art": "starfall_folk3",
+   "name": "Farmer",
+   "role": "folk",
+   "t": [
+    "Farmer: Starfall Farmstead Edge grows crater corn. It glows a little when it's ripe!",
+    "Farmer: The arena's right next door. Loud on match nights!"
+   ]
+  },
+  {
+   "art": "sheepkid",
+   "name": "Farm Kid",
+   "role": "folk",
+   "t": [
+    "Farm Kid: I feed the farm critters seedpod crumbs. They love it!"
+   ]
+  }
+ ],
+ "766": [
+  {
+   "art": "shop",
+   "name": "Clerk",
+   "role": "clerk",
+   "t": [
+    "Clerk: Welcome to the Starfall Shop! Potions, Cure Spray, and supplies for the crater.",
+    "Clerk: Rift trails are rocky. Stock up before you head out!"
+   ]
+  }
+ ],
+ "767": [
+  {
+   "art": "technician",
+   "name": "Dock Tech",
+   "role": "folk",
+   "t": [
+    "Dock Tech: Starfall Spaceport! Ships land right near the crater rim.",
+    "Dock Tech: Rift Fork is just past the gate."
+   ]
+  },
+  {
+   "art": "starfall_folk4",
+   "name": "Traveller",
+   "role": "folk",
+   "t": [
+    "Traveller: I came to see the crater glow. It's even better in person!"
+   ]
+  }
+ ],
+ "768": [
+  {
+   "art": "thalassa_folk1",
+   "name": "Fan",
+   "role": "folk",
+   "t": [
+    "Fan: Tidewater Arena! Battles with the sea spray in your face!",
+    "Fan: The lobby's right through the dock doors."
+   ]
+  },
+  {
+   "art": "squidsailor",
+   "name": "Sailor",
+   "role": "folk",
+   "t": [
+    "Sailor: The Harbor Relay Tower is just next door. You can see it from the boats!"
+   ]
+  },
+  {
+   "art": "snacktrader",
+   "name": "Snack Trader",
+   "role": "folk",
+   "t": [
+    "Snack Trader: Fish sticks! Fresh from the harbor! Get 'em while they're hot!"
+   ]
+  }
+ ],
+ "769": [
+  {
+   "art": "referee",
+   "name": "Receptionist",
+   "role": "folk",
+   "t": [
+    "Receptionist: Welcome to Tidewater Arena! The Battle Room is just past the lobby.",
+    "Receptionist: Hydro-types make a big splash here. Literally!"
+   ]
+  },
+  {
+   "art": "thalassa_folk2",
+   "name": "Fan",
+   "role": "folk",
+   "t": [
+    "Fan: I got soaked in the front row last time. Best seats in the house!"
+   ]
+  }
+ ],
+ "772": [
+  {
+   "art": "thalassa_folk3",
+   "name": "Beachcomber",
+   "role": "folk",
+   "t": [
+    "Beachcomber: The Sea Cave is just through there. The tide flows right in!",
+    "Beachcomber: Dune Stairway is back up the path."
+   ]
+  },
+  {
+   "art": "explorer",
+   "name": "Explorer",
+   "role": "folk",
+   "t": [
+    "Explorer: Bring a Volt-type. Hydro-types love those caves."
+   ]
+  }
+ ],
+ "773": [
+  {
+   "art": "squidsailor",
+   "name": "Sailor",
+   "role": "folk",
+   "t": [
+    "Sailor: B1 of the Sea Cave. Mind the puddles. Some of them bite.",
+    "Sailor: The way down to B2 is past the tide pools."
+   ]
+  }
+ ],
+ "774": [
+  {
+   "art": "thalassa_folk4",
+   "name": "Diver",
+   "role": "folk",
+   "t": [
+    "Diver: B2! The Deep Chamber is just ahead. The water glows blue down there."
+   ]
+  }
+ ],
+ "775": [
+  {
+   "art": "thalassa_folk5",
+   "name": "Explorer",
+   "role": "folk",
+   "t": [
+    "Explorer: The Deep Chamber! I can hear the waves crashing above us."
+   ]
+  }
+ ],
+ "783": [
+  {
+   "art": "thalassa_folk6",
+   "name": "Beachcomber",
+   "role": "folk",
+   "t": [
+    "Beachcomber: Driftwood Hollows! The waves wash up all sorts of treasures here.",
+    "Beachcomber: Tidal Inlet is just back the way you came."
+   ]
+  },
+  {
+   "art": "civilian",
+   "name": "Swimmer",
+   "role": "folk",
+   "t": [
+    "Swimmer: I built a fort out of driftwood! Wanna see?"
+   ]
+  }
+ ],
+ "786": [
+  {
+   "art": "squidsailor",
+   "name": "Boat Builder",
+   "role": "folk",
+   "t": [
+    "Boat Builder: Saltreach Boathouse. We build and fix all the boats in the harbor.",
+    "Boat Builder: Hmm, the back door's been open a lot lately. Strange."
+   ]
+  },
+  {
+   "art": "thalassa_folk1",
+   "name": "Dockhand",
+   "role": "folk",
+   "t": [
+    "Dockhand: Dune Junction is just up the path."
+   ]
+  }
+ ],
+ "787": [
+  {
+   "art": "researcher",
+   "name": "Helix Scientist",
+   "role": "folk",
+   "t": [
+    "Helix Scientist: Ugh, the boathouse door again. This lab is very damp and very private.",
+    "Helix Scientist: Look, I just study fish. Mostly fish. Please don't touch the tanks."
+   ]
+  }
+ ],
+ "790": [
+  {
+   "art": "thalassa_folk2",
+   "name": "Wanderer",
+   "role": "folk",
+   "t": [
+    "Wanderer: Saltreach Secret Grove! Palm trees and sea breeze. Perfect!",
+    "Wanderer: Rare Hydro-types nap in the shady pools here."
+   ]
+  },
+  {
+   "art": "civilian",
+   "name": "Picnicker",
+   "role": "folk",
+   "t": [
+    "Picnicker: I found this place behind the Quiet Court. Best picnic spot ever!"
+   ]
+  }
+ ],
+ "791": [
+  {
+   "art": "thalassa_folk3",
+   "name": "Harbormaster",
+   "role": "folk",
+   "t": [
+    "Harbormaster: Welcome to the Harbormaster's Office. I keep track of every boat in port.",
+    "Harbormaster: The harbor's busy today. Three ships in, two out, and one lost hat."
+   ]
+  },
+  {
+   "art": "squidsailor",
+   "name": "Sailor",
+   "role": "folk",
+   "t": [
+    "Sailor: I'm here to sign in my boat. The paperwork takes longer than the trip!"
+   ]
+  }
+ ],
+ "792": [
+  {
+   "art": "thalassa_folk4",
+   "name": "Fishmonger",
+   "role": "folk",
+   "t": [
+    "Fishmonger: Fresh fish! Caught this morning! Well, most of it.",
+    "Fishmonger: My best customers are hungry Alienmon. They pay in smiles."
+   ]
+  },
+  {
+   "art": "civilian",
+   "name": "Shopper",
+   "role": "folk",
+   "t": [
+    "Shopper: I just want one fish. Why are there so many kinds?"
+   ]
+  }
+ ],
+ "793": [
+  {
+   "art": "squidsailor",
+   "name": "Ship's Mate",
+   "role": "folk",
+   "t": [
+    "Ship's Mate: This is the Captain's Cabin. Maps, compasses, and lots of seashells.",
+    "Ship's Mate: The captain's out at sea. I'm keeping things tidy until they're back."
+   ]
+  }
+ ],
+ "795": [
+  {
+   "art": "thalassa_folk5",
+   "name": "Fan",
+   "role": "folk",
+   "t": [
+    "Fan: The Harbor Relay Tower! It lights the way for ships at night.",
+    "Fan: Climb inside to the trial floor. The sea breeze follows you up!"
+   ]
+  },
+  {
+   "art": "guard",
+   "name": "Tower Guard",
+   "role": "folk",
+   "t": [
+    "Tower Guard: Hydro-types rule this tower. Bring Volt or Bio types if you've got 'em!"
+   ]
+  }
+ ],
+ "799": [
+  {
+   "art": "thalassa_folk6",
+   "name": "Resident",
+   "role": "folk",
+   "t": [
+    "Resident: Saltreach Lane Homes face the sea. You can hear the waves all night.",
+    "Resident: Saltreach Market is just down the street."
+   ]
+  },
+  {
+   "art": "thalassa_folk1",
+   "name": "Kid",
+   "role": "folk",
+   "t": [
+    "Kid: I found a crab in my shoe this morning. I named him Pinchy!"
+   ]
+  },
+  {
+   "art": "civilian",
+   "name": "Neighbour",
+   "role": "folk",
+   "t": [
+    "Neighbour: The boardwalk is just around the corner if you want to stroll."
+   ]
+  }
+ ],
+ "800": [
+  {
+   "art": "thalassa_folk2",
+   "name": "Old Resident",
+   "role": "folk",
+   "t": [
+    "Old Resident: Saltreach Quiet Court is peaceful. Just gulls and waves.",
+    "Old Resident: There's a secret grove out back. Lovely palm trees!"
+   ]
+  },
+  {
+   "art": "civilian",
+   "name": "Fisher",
+   "role": "folk",
+   "t": [
+    "Fisher: I fish off my porch every morning. Mostly I catch seaweed."
+   ]
+  }
+ ],
+ "801": [
+  {
+   "art": "thalassa_folk3",
+   "name": "Farmer",
+   "role": "folk",
+   "t": [
+    "Farmer: Saltreach Farmstead grows sea grapes and kelp. Salty and delicious!",
+    "Farmer: Lagoon Fork is just down the path."
+   ]
+  },
+  {
+   "art": "sheepkid",
+   "name": "Farm Kid",
+   "role": "folk",
+   "t": [
+    "Farm Kid: I feed the farm critters seaweed snacks. They love them!"
+   ]
+  }
+ ],
+ "803": [
+  {
+   "art": "technician",
+   "name": "Dock Tech",
+   "role": "folk",
+   "t": [
+    "Dock Tech: Thalassa Spaceport! Ships land right next to the boat docks.",
+    "Dock Tech: Port Saltreach Docks is just past the gate."
+   ]
+  },
+  {
+   "art": "squidsailor",
+   "name": "Traveller",
+   "role": "folk",
+   "t": [
+    "Traveller: I came by spaceship, but I'm leaving by boat. Adventure!"
+   ]
+  }
+ ],
+ "804": [
+  {
+   "art": "thalassa_folk4",
+   "name": "Surfer",
+   "role": "folk",
+   "t": [
+    "Surfer: Open Water Shore! The waves here are perfect for surfing.",
+    "Surfer: Coral Cove is just back that way."
+   ]
+  },
+  {
+   "art": "civilian",
+   "name": "Swimmer",
+   "role": "folk",
+   "t": [
+    "Swimmer: Hydro-types surf the waves right alongside me!"
+   ]
+  }
+ ],
+ "807": [
+  {
+   "art": "umbra_folk1",
+   "name": "Fan",
+   "role": "folk",
+   "t": [
+    "Fan: The Lantern Pit! Battles lit only by lanterns. So spooky and cool!",
+    "Fan: The lobby's right inside the lantern gate."
+   ]
+  },
+  {
+   "art": "umbra_folk2",
+   "name": "Lantern Keeper",
+   "role": "folk",
+   "t": [
+    "Lantern Keeper: Keep to the lanterns. The dark makes everything look bigger."
+   ]
+  },
+  {
+   "art": "wanderer",
+   "name": "Scavenger",
+   "role": "folk",
+   "t": [
+    "Scavenger: Abyss Rim is just back the way you came."
+   ]
+  }
+ ],
+ "809": [
+  {
+   "art": "referee",
+   "name": "Receptionist",
+   "role": "folk",
+   "t": [
+    "Receptionist: Welcome to the Lantern Pit! The arena is just ahead.",
+    "Receptionist: Void-types love the shadows in there. Watch out!"
+   ]
+  },
+  {
+   "art": "umbra_folk3",
+   "name": "Fan",
+   "role": "folk",
+   "t": [
+    "Fan: I brought my own lantern so I can see every move!"
+   ]
+  }
+ ],
+ "812": [
+  {
+   "art": "umbra_folk4",
+   "name": "Drifter",
+   "role": "folk",
+   "t": [
+    "Drifter: The Wailing Cave is just through there. It's called that for a reason!",
+    "Drifter: Shade Hollows is back up the path."
+   ]
+  },
+  {
+   "art": "explorer",
+   "name": "Explorer",
+   "role": "folk",
+   "t": [
+    "Explorer: The wailing is just the wind. Probably."
+   ]
+  }
+ ],
+ "813": [
+  {
+   "art": "umbra_folk5",
+   "name": "Lantern Bearer",
+   "role": "folk",
+   "t": [
+    "Lantern Bearer: B1 of the Wailing Cave. Keep your lantern lit and your team close.",
+    "Lantern Bearer: The way down to B2 is past the moaning tunnel."
+   ]
+  }
+ ],
+ "814": [
+  {
+   "art": "explorer",
+   "name": "Spelunker",
+   "role": "folk",
+   "t": [
+    "Spelunker: B2! The Deep Chamber is just ahead. The wailing gets louder down there!"
+   ]
+  }
+ ],
+ "815": [
+  {
+   "art": "umbra_folk6",
+   "name": "Explorer",
+   "role": "folk",
+   "t": [
+    "Explorer: The Deep Chamber! The wailing stopped. That's either good or very spooky."
+   ]
+  }
+ ],
+ "823": [
+  {
+   "art": "umbra_folk1",
+   "name": "Drifter",
+   "role": "folk",
+   "t": [
+    "Drifter: Mistfall Bend! The mist is so thick you can barely see your feet.",
+    "Drifter: Gloom Commons is just back the way you came."
+   ]
+  },
+  {
+   "art": "civilian",
+   "name": "Lantern Keeper",
+   "role": "folk",
+   "t": [
+    "Lantern Keeper: Hold your lantern high. The mist hides the path."
+   ]
+  }
+ ],
+ "825": [
+  {
+   "art": "umbra_folk2",
+   "name": "Scavenger",
+   "role": "folk",
+   "t": [
+    "Scavenger: The Helix Hideout. They thought nobody could find it in the dark.",
+    "Scavenger: There's a lab in the back. Smells like burnt wires."
+   ]
+  },
+  {
+   "art": "umbra_folk3",
+   "name": "Lantern Keeper",
+   "role": "folk",
+   "t": [
+    "Lantern Keeper: The Relay Tower is close by. Follow the lanterns!"
+   ]
+  }
+ ],
+ "826": [
+  {
+   "art": "researcher",
+   "name": "Helix Scientist",
+   "role": "folk",
+   "t": [
+    "Helix Scientist: Who turned on the lights?! I was working in the dark on purpose.",
+    "Helix Scientist: Fine, look around. Just don't open the shadow jars."
+   ]
+  }
+ ],
+ "827": [
+  {
+   "art": "umbra_folk4",
+   "name": "Wanderer",
+   "role": "folk",
+   "t": [
+    "Wanderer: Gloomshade Grove! Trees with black leaves that glow faintly.",
+    "Wanderer: Rare Void-types nap in the deep shadows here."
+   ]
+  },
+  {
+   "art": "civilian",
+   "name": "Lantern Keeper",
+   "role": "folk",
+   "t": [
+    "Lantern Keeper: I found this place off Abyss Fork. Keep your lantern close!"
+   ]
+  }
+ ],
+ "828": [
+  {
+   "art": "umbra_folk5",
+   "name": "Lantern Maker",
+   "role": "folk",
+   "t": [
+    "Lantern Maker: Welcome to the Lantern Maker's Shop! Every lantern here is handmade.",
+    "Lantern Maker: A good lantern keeps the dark away. And the Void-types guessing!"
+   ]
+  },
+  {
+   "art": "civilian",
+   "name": "Customer",
+   "role": "folk",
+   "t": [
+    "Customer: I'm buying a lantern for every room in my house. Even the closet."
+   ]
+  }
+ ],
+ "829": [
+  {
+   "art": "umbra_folk6",
+   "name": "Innkeeper",
+   "role": "folk",
+   "t": [
+    "Innkeeper: This is the Shadow Inn. Rest your feet and your team!",
+    "Innkeeper: The beds are soft and the lanterns stay on all night."
+   ]
+  },
+  {
+   "art": "wanderer",
+   "name": "Traveller",
+   "role": "folk",
+   "t": [
+    "Traveller: I slept for twelve hours. The dark makes everyone sleepy!"
+   ]
+  }
+ ],
+ "830": [
+  {
+   "art": "umbra_folk1",
+   "name": "Caretaker",
+   "role": "folk",
+   "t": [
+    "Caretaker: This study belongs to someone who loves old books. Lots and lots of old books.",
+    "Caretaker: Please put things back where you found them. They notice."
+   ]
+  }
+ ],
+ "833": [
+  {
+   "art": "umbra_folk2",
+   "name": "Fan",
+   "role": "folk",
+   "t": [
+    "Fan: The Gravewell Relay Tower! The lanterns around it never go out.",
+    "Fan: The trial floor waits inside, lit by a hundred lanterns."
+   ]
+  },
+  {
+   "art": "guard",
+   "name": "Tower Guard",
+   "role": "folk",
+   "t": [
+    "Tower Guard: Void-types rule this tower. Bring your brightest team!"
+   ]
+  }
+ ],
+ "836": [
+  {
+   "art": "umbra_folk3",
+   "name": "Resident",
+   "role": "folk",
+   "t": [
+    "Resident: Gravewell Lane Homes. Every house has a lantern by the door.",
+    "Resident: Gravewell's just down the road."
+   ]
+  },
+  {
+   "art": "umbra_folk4",
+   "name": "Kid",
+   "role": "folk",
+   "t": [
+    "Kid: I'm not scared of the dark! Okay, maybe a little."
+   ]
+  }
+ ],
+ "837": [
+  {
+   "art": "umbra_folk5",
+   "name": "Old Resident",
+   "role": "folk",
+   "t": [
+    "Old Resident: Gravewell Quiet Court. The quietest spot in a very quiet world.",
+    "Old Resident: Even the shadows whisper here."
+   ]
+  },
+  {
+   "art": "civilian",
+   "name": "Neighbour",
+   "role": "folk",
+   "t": [
+    "Neighbour: I polish my lantern every evening. It's my favorite chore."
+   ]
+  }
+ ],
+ "838": [
+  {
+   "art": "umbra_folk6",
+   "name": "Farmer",
+   "role": "folk",
+   "t": [
+    "Farmer: Umbra Farmstead Edge grows shadow mushrooms. They taste like midnight!",
+    "Farmer: Sinkhole Overlook is just up the path."
+   ]
+  },
+  {
+   "art": "sheepkid",
+   "name": "Farm Kid",
+   "role": "folk",
+   "t": [
+    "Farm Kid: My farm critters glow faintly in the dark. Makes them easy to find!"
+   ]
+  }
+ ],
+ "840": [
+  {
+   "art": "technician",
+   "name": "Dock Tech",
+   "role": "folk",
+   "t": [
+    "Dock Tech: Umbra Spaceport! Ships land by lantern light here.",
+    "Dock Tech: Shadow Junction is just past the gate."
+   ]
+  },
+  {
+   "art": "umbra_folk1",
+   "name": "Traveller",
+   "role": "folk",
+   "t": [
+    "Traveller: I came to see the lanterns. They're even prettier than the pictures!"
+   ]
+  }
+ ],
+ "842": [
+  {
+   "art": "ystra_folk1",
+   "name": "Seeker",
+   "role": "folk",
+   "t": [
+    "Seeker: The Ancient Crystal Ring! Battles here echo through the crystal walls.",
+    "Seeker: The lobby is just through the shining arch."
+   ]
+  },
+  {
+   "art": "ystra_folk2",
+   "name": "Rift Walker",
+   "role": "folk",
+   "t": [
+    "Rift Walker: This ring is older than anything else on Ystra. Can you feel it?"
+   ]
+  },
+  {
+   "art": "pilgrim",
+   "name": "Pilgrim",
+   "role": "folk",
+   "t": [
+    "Pilgrim: Glasswood Junction is just back the way you came."
+   ]
+  }
+ ],
+ "843": [
+  {
+   "art": "referee",
+   "name": "Receptionist",
+   "role": "folk",
+   "t": [
+    "Receptionist: Welcome to the Crystal Ring! The arena is just ahead.",
+    "Receptionist: The crystals hum louder during big battles. Listen for it!"
+   ]
+  },
+  {
+   "art": "ystra_folk3",
+   "name": "Fan",
+   "role": "folk",
+   "t": [
+    "Fan: I came all the way from Halo to watch a match here!"
+   ]
+  }
+ ],
+ "845": [
+  {
+   "art": "explorer",
+   "name": "Rift Walker",
+   "role": "folk",
+   "t": [
+    "Rift Walker: Shardheart Cave is just through there. The crystals inside are huge!",
+    "Rift Walker: Void Crack Bend is back up the path."
+   ]
+  },
+  {
+   "art": "ystra_folk4",
+   "name": "Seeker",
+   "role": "folk",
+   "t": [
+    "Seeker: Crystal-types guard the cave. Bring something strong!"
+   ]
+  }
+ ],
+ "846": [
+  {
+   "art": "ystra_folk5",
+   "name": "Crystal Hunter",
+   "role": "folk",
+   "t": [
+    "Crystal Hunter: 1F of Shardheart Cave. The walls sparkle with every step.",
+    "Crystal Hunter: The way down to B1 is past the big crystal pillar."
+   ]
+  }
+ ],
+ "847": [
+  {
+   "art": "explorer",
+   "name": "Explorer",
+   "role": "folk",
+   "t": [
+    "Explorer: B1! The Deep Chamber is just ahead. The crystals glow brighter down there."
+   ]
+  }
+ ],
+ "848": [
+  {
+   "art": "ystra_folk6",
+   "name": "Seeker",
+   "role": "folk",
+   "t": [
+    "Seeker: The Deep Chamber! I've never seen crystals this big."
+   ]
+  }
+ ],
+ "852": [
+  {
+   "art": "ystra_folk1",
+   "name": "Rift Walker",
+   "role": "folk",
+   "t": [
+    "Rift Walker: Shard Slope! Crystal shards cover every step. Watch your feet!",
+    "Rift Walker: Red Sun Overlook is just back up the path."
+   ]
+  },
+  {
+   "art": "explorer",
+   "name": "Hiker",
+   "role": "folk",
+   "t": [
+    "Hiker: The shards ring like bells when the wind blows!"
+   ]
+  }
+ ],
+ "858": [
+  {
+   "art": "ystra_folk2",
+   "name": "Wanderer",
+   "role": "folk",
+   "t": [
+    "Wanderer: Ystra Secret Grove! Crystal trees that chime in the breeze.",
+    "Wanderer: Rare Alienmon nap under the glowing branches."
+   ]
+  },
+  {
+   "art": "pilgrim",
+   "name": "Seeker",
+   "role": "folk",
+   "t": [
+    "Seeker: I found this place off Void Fork. It feels very old."
+   ]
+  }
+ ],
+ "859": [
+  {
+   "art": "ystra_folk3",
+   "name": "Vault Keeper",
+   "role": "folk",
+   "t": [
+    "Vault Keeper: The Seed Vault keeps seeds from every world. Every single one!",
+    "Vault Keeper: Please keep the doors closed. The seeds like it cool."
+   ]
+  },
+  {
+   "art": "researcher",
+   "name": "Researcher",
+   "role": "folk",
+   "t": [
+    "Researcher: I'm cataloguing seeds. Seed number 4,207 looks just like 4,206."
+   ]
+  }
+ ],
+ "860": [
+  {
+   "art": "ystra_folk4",
+   "name": "Caretaker",
+   "role": "folk",
+   "t": [
+    "Caretaker: This Ancient Dwelling is older than anything else on Ystra.",
+    "Caretaker: Someone lived here long, long ago. They liked crystal furniture!"
+   ]
+  }
+ ],
+ "861": [
+  {
+   "art": "ystra_folk5",
+   "name": "Memory Keeper",
+   "role": "folk",
+   "t": [
+    "Memory Keeper: The Memory Hall holds echoes of all the worlds. Listen closely.",
+    "Memory Keeper: Some echoes are happy, some are sad. All are worth hearing."
+   ]
+  },
+  {
+   "art": "pilgrim",
+   "name": "Seeker",
+   "role": "folk",
+   "t": [
+    "Seeker: I came here to remember. I forgot what, though."
+   ]
+  }
+ ],
+ "862": [
+  {
+   "art": "nurse",
+   "name": "Nurse",
+   "role": "nurse",
+   "t": [
+    "Nurse: Welcome to the Fragment Recovery Bay. Your team will feel brand new in no time.",
+    "Nurse: All rested! The crystals hum happily when Alienmon are healthy."
+   ]
+  },
+  {
+   "art": "ystra_folk6",
+   "name": "Visitor",
+   "role": "folk",
+   "t": [
+    "Visitor: My team napped right through the healing. Best rest ever!"
+   ]
+  }
+ ],
+ "863": [
+  {
+   "art": "ystra_folk1",
+   "name": "Resident",
+   "role": "folk",
+   "t": [
+    "Resident: Fragment Lane Homes are built on floating crystal pieces.",
+    "Resident: Crystal Crossroads is just down the path."
+   ]
+  },
+  {
+   "art": "ystra_folk2",
+   "name": "Kid",
+   "role": "folk",
+   "t": [
+    "Kid: I found a crystal that sings! Wanna hear? La la la!"
+   ]
+  },
+  {
+   "art": "civilian",
+   "name": "Neighbour",
+   "role": "folk",
+   "t": [
+    "Neighbour: Arrival Fragment is close by if you just landed."
+   ]
+  }
+ ],
+ "864": [
+  {
+   "art": "ystra_folk3",
+   "name": "Old Resident",
+   "role": "folk",
+   "t": [
+    "Old Resident: Fragment Quiet Court. The Recovery Bay and the shop are right here!",
+    "Old Resident: The crystals hum softly at night. Lovely sound."
+   ]
+  },
+  {
+   "art": "civilian",
+   "name": "Neighbour",
+   "role": "folk",
+   "t": [
+    "Neighbour: I water my crystal garden every morning. They grow so slowly!"
+   ]
+  }
+ ],
+ "865": [
+  {
+   "art": "ystra_folk4",
+   "name": "Farmer",
+   "role": "folk",
+   "t": [
+    "Farmer: Seedfall Farmstead grows plants from seeds that fell from the sky!",
+    "Farmer: Glasswood Hollows is just down the path."
+   ]
+  },
+  {
+   "art": "sheepkid",
+   "name": "Farm Kid",
+   "role": "folk",
+   "t": [
+    "Farm Kid: I feed the farm critters crystal crumbs. They sparkle when they eat!"
+   ]
+  }
+ ],
+ "866": [
+  {
+   "art": "shop",
+   "name": "Clerk",
+   "role": "clerk",
+   "t": [
+    "Clerk: Welcome to the Fragment Shop! Potions, Cure Spray, and supplies for the crystal paths.",
+    "Clerk: Shards are sharp out there. Pack extra Potions!"
+   ]
+  }
+ ],
+ "867": [
+  {
+   "art": "technician",
+   "name": "Dock Tech",
+   "role": "folk",
+   "t": [
+    "Dock Tech: Ystra Spaceport! The oldest landing pad you'll ever see.",
+    "Dock Tech: Glasswood Junction is just past the gate."
+   ]
+  },
+  {
+   "art": "ystra_folk5",
+   "name": "Traveller",
+   "role": "folk",
+   "t": [
+    "Traveller: I made it all the way to Ystra! Now where's the snack stand?"
+   ]
+  }
+ ]
+}

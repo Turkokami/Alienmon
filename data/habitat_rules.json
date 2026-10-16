@@ -1965,6 +1965,31 @@
    "planet": "Starfall Rift",
    "name": "Starstone Hollow Deep Chamber",
    "habitat": "crater"
+  },
+  "733": {
+   "planet": "Sporeholm",
+   "name": "Sporelake Shore",
+   "habitat": "swamp"
+  },
+  "707": {
+   "planet": "Sporeholm",
+   "name": "Mushroom Maze Cave Entrance",
+   "habitat": "fungal"
+  },
+  "772": {
+   "planet": "Thalassa",
+   "name": "Sea Cave Entrance",
+   "habitat": "drowned_sea"
+  },
+  "578": {
+   "planet": "Halo",
+   "name": "Crystal Hollow Entrance",
+   "habitat": "crystal_ruins"
+  },
+  "123": {
+   "planet": "Umbra",
+   "name": "Shadow Tunnel Exit",
+   "habitat": "abyss"
   }
  }
 }

@@ -47,7 +47,9 @@ function secHouseBack(){const s=SWORLD[G.sec.id],b=G.houseBack&&SWORLD[G.houseBa
 function secArrive(){SBLK=null;const s=SWORLD[G.sec.id],w=s.warps.find(w=>w.tile[0]===G.sec.x&&w.tile[1]===G.sec.y);if(w&&w.to==='back')return secHouseBack();if(w&&w.kind==='gate')return secGate(w);if(w&&SWORLD[w.to])return secWarp(w);
  if(G.grace>0)G.grace=Math.max(0,G.grace-15);if(G.jam>0)G.jam=Math.max(0,G.jam-2);stepc++;
  if(eggStep())return;if(secLos())return;
- const ct=secTile(s,G.sec.x,G.sec.y);if(ct===','&&!(G.grace>0)&&R()<0.1)wild();else if(ct==='~'&&!(G.grace>0)&&R()<0.05)wild()}
+ const ct=secTile(s,G.sec.x,G.sec.y);if(ct===','&&!(G.grace>0)&&R()<0.1)wild();else if(ct==='~'&&!(G.grace>0)&&R()<0.05)wild();else if(ct==='.'&&s.type==='cave'&&!secCaveGrass(s)&&!(G.grace>0)&&R()<0.06)wild()}
+// a cave with no marked encounter patches: its whole floor is wild ground (at a lower rate than grass)
+const CAVEG={};function secCaveGrass(s){return s.id in CAVEG?CAVEG[s.id]:(CAVEG[s.id]=s.rows.some(r=>r.includes(',')))}
 // Frontier gates: the story gate decides; through it you arrive at that planet's landing edge (its own sections,
 // or its classic painted town until that planet's sections are built). Walking back out returns you to the gate.
 function secGate(w){if(w.options){const back=()=>{G.sec.x=w.at[0];G.sec.y=w.at[1];face=w.face};

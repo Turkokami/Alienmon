@@ -165,109 +165,148 @@
    "146",
    "right",
    "412",
-   "left"
+   "left",
+   null,
+   null
   ],
   [
    "412",
    "top",
    "421",
-   "bottom"
+   "bottom",
+   null,
+   null
   ],
   [
    "421",
    "top",
    "405",
-   "bottom"
+   "bottom",
+   null,
+   null
   ],
   [
    "412",
    "right",
    "427",
-   "left"
+   "left",
+   [
+    3,
+    9
+   ],
+   null
   ],
   [
    "427",
    "right",
    "422",
-   "left"
+   "left",
+   null,
+   null
   ],
   [
    "412",
    "bottom",
    "432",
-   "top"
+   "top",
+   null,
+   null
   ],
   [
    "432",
    "right",
    "413",
-   "left"
+   "left",
+   null,
+   null
   ],
   [
    "413",
    "top",
    "416",
-   "bottom"
+   "bottom",
+   null,
+   null
   ],
   [
    "416",
    "top",
    "411",
-   "bottom"
+   "bottom",
+   null,
+   null
   ],
   [
    "411",
    "left",
    "430",
-   "right"
+   "right",
+   null,
+   null
   ],
   [
    "430",
    "left",
    "434",
-   "right"
+   "right",
+   null,
+   null
   ],
   [
    "411",
    "top",
    "414",
-   "bottom"
+   "bottom",
+   null,
+   null
   ],
   [
    "414",
    "top",
    "151",
-   "bottom"
+   "bottom",
+   null,
+   null
   ],
   [
    "411",
    "right",
    "419",
-   "left"
+   "left",
+   null,
+   null
   ],
   [
    "419",
    "top",
    "420",
-   "bottom"
+   "bottom",
+   null,
+   null
   ],
   [
    "420",
    "top",
    "431",
-   "bottom"
+   "bottom",
+   null,
+   null
   ],
   [
    "413",
    "right",
    "401",
-   "left"
+   "left",
+   null,
+   null
   ],
   [
    "413",
    "bottom",
    "415",
-   "top"
+   "top",
+   null,
+   null
   ]
  ],
  "doors": [
@@ -368,6 +407,70 @@
     4
    ],
    "425"
+  ],
+  [
+   "431",
+   [
+    6,
+    4
+   ],
+   "424"
+  ],
+  [
+   "431",
+   [
+    7,
+    4
+   ],
+   "424"
+  ],
+  [
+   "431",
+   [
+    20,
+    12
+   ],
+   "425"
+  ],
+  [
+   "431",
+   [
+    21,
+    12
+   ],
+   "425"
+  ],
+  [
+   "432",
+   [
+    12,
+    5
+   ],
+   "423"
+  ],
+  [
+   "432",
+   [
+    13,
+    5
+   ],
+   "423"
+  ],
+  [
+   "432",
+   [
+    18,
+    5
+   ],
+   "423"
+  ],
+  [
+   "432",
+   [
+    19,
+    5
+   ],
+   "423"
   ]
  ],
  "warps": [
@@ -986,6 +1089,17 @@
      7
     ]
    ]
+  },
+  "414": {
+   "walk_after": [],
+   "block_after": [
+    [
+     17,
+     0,
+     20,
+     0
+    ]
+   ]
   }
  },
  "counters": {
@@ -1031,7 +1145,7 @@
    {
     "tile": [
      12,
-     15
+     12
     ],
     "k": "chest",
     "item": "singularity",
@@ -1160,5 +1274,75 @@
   "410 Cave Deep Chamber option 2: alt of 409",
   "417 Instrument Hollows (1): alt of 419",
   "418 Instrument Hollows (2): alt of 419"
+ ],
+ "seal": [
+  [
+   "146",
+   "bottom",
+   10,
+   14
+  ],
+  [
+   "401",
+   "bottom",
+   10,
+   14
+  ],
+  [
+   "415",
+   "bottom",
+   9,
+   15
+  ],
+  [
+   "419",
+   "bottom",
+   2,
+   9
+  ],
+  [
+   "422",
+   "right",
+   9,
+   12
+  ],
+  [
+   "430",
+   "top",
+   13,
+   17
+  ]
+ ],
+ "grass_fill": [
+  [
+   "405",
+   3,
+   6,
+   10,
+   11
+  ],
+  [
+   "405",
+   15,
+   8,
+   21,
+   12
+  ],
+  [
+   "422",
+   14,
+   1,
+   19,
+   3
+  ]
+ ],
+ "grass_clear": [
+  [
+   "421",
+   2,
+   8,
+   6,
+   11
+  ]
  ]
 }

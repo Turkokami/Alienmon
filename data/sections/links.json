@@ -642,54 +642,6 @@
    "why": "V3 kit door"
   },
   {
-   "interior": "606",
-   "parent": "605",
-   "door": [
-    11,
-    7
-   ],
-   "door2": [
-    12,
-    7
-   ],
-   "mat": [
-    [
-     9,
-     18
-    ],
-    [
-     10,
-     18
-    ]
-   ],
-   "confidence": "high",
-   "why": "V3 kit door"
-  },
-  {
-   "interior": "627",
-   "parent": "626",
-   "door": [
-    11,
-    7
-   ],
-   "door2": [
-    12,
-    7
-   ],
-   "mat": [
-    [
-     9,
-     17
-    ],
-    [
-     10,
-     17
-    ]
-   ],
-   "confidence": "high",
-   "why": "V3 kit door"
-  },
-  {
    "interior": "116",
    "parent": "115",
    "door": [
@@ -1280,6 +1232,54 @@
     [
      10,
      18
+    ]
+   ],
+   "confidence": "high",
+   "why": "V3 kit door"
+  },
+  {
+   "interior": "606",
+   "parent": "605",
+   "door": [
+    11,
+    7
+   ],
+   "door2": [
+    12,
+    7
+   ],
+   "mat": [
+    [
+     9,
+     18
+    ],
+    [
+     10,
+     18
+    ]
+   ],
+   "confidence": "high",
+   "why": "V3 kit door"
+  },
+  {
+   "interior": "627",
+   "parent": "626",
+   "door": [
+    11,
+    7
+   ],
+   "door2": [
+    12,
+    7
+   ],
+   "mat": [
+    [
+     9,
+     17
+    ],
+    [
+     10,
+     17
     ]
    ],
    "confidence": "high",
@@ -2433,8 +2433,8 @@
   "718": [
    {
     "tile": [
-     18,
-     14
+     16,
+     12
     ],
     "k": "chest",
     "item": "revive",
@@ -2647,8 +2647,8 @@
   "790": [
    {
     "tile": [
-     14,
-     4
+     15,
+     6
     ],
     "k": "chest",
     "item": "fullgel",
@@ -2671,8 +2671,8 @@
   "783": [
    {
     "tile": [
-     22,
-     13
+     20,
+     12
     ],
     "k": "chest",
     "item": "revive",
@@ -2818,6 +2818,24 @@
     "k": "house",
     "to": "180",
     "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     20,
+     12
+    ],
+    "k": "house",
+    "to": "192",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     21,
+     12
+    ],
+    "k": "house",
+    "to": "192",
+    "why": "V3 kit house door"
    }
   ],
   "664": [
@@ -2904,7 +2922,7 @@
    {
     "tile": [
      16,
-     4
+     6
     ],
     "k": "chest",
     "item": "fullgel",
@@ -2916,7 +2934,7 @@
    {
     "tile": [
      14,
-     15
+     12
     ],
     "k": "chest",
     "item": "harmonic",
@@ -3152,7 +3170,7 @@
    {
     "tile": [
      6,
-     0
+     2
     ],
     "k": "chest",
     "item": "harmonic",
@@ -3164,7 +3182,7 @@
    {
     "tile": [
      8,
-     15
+     12
     ],
     "k": "chest",
     "item": "revive",
@@ -3629,7 +3647,7 @@
    {
     "tile": [
      18,
-     15
+     12
     ],
     "k": "chest",
     "item": "harmonic",
@@ -3647,222 +3665,6 @@
     "item": "maxrevive",
     "n": 1,
     "why": "Crystal Caverns depths shrine reward"
-   }
-  ],
-  "629": [
-   {
-    "tile": [
-     3,
-     6
-    ],
-    "k": "house",
-    "to": "623",
-    "why": "V3 kit house door"
-   },
-   {
-    "tile": [
-     4,
-     6
-    ],
-    "k": "house",
-    "to": "623",
-    "why": "V3 kit house door"
-   },
-   {
-    "tile": [
-     11,
-     6
-    ],
-    "k": "house",
-    "to": "623",
-    "why": "V3 kit house door"
-   },
-   {
-    "tile": [
-     12,
-     6
-    ],
-    "k": "house",
-    "to": "623",
-    "why": "V3 kit house door"
-   },
-   {
-    "tile": [
-     18,
-     6
-    ],
-    "k": "house",
-    "to": "623",
-    "why": "V3 kit house door"
-   },
-   {
-    "tile": [
-     19,
-     6
-    ],
-    "k": "house",
-    "to": "623",
-    "why": "V3 kit house door"
-   }
-  ],
-  "630": [
-   {
-    "tile": [
-     6,
-     4
-    ],
-    "k": "house",
-    "to": "623",
-    "why": "V3 kit house door"
-   },
-   {
-    "tile": [
-     7,
-     4
-    ],
-    "k": "house",
-    "to": "623",
-    "why": "V3 kit house door"
-   },
-   {
-    "tile": [
-     11,
-     4
-    ],
-    "k": "house",
-    "to": "624",
-    "why": "V3 kit house door"
-   },
-   {
-    "tile": [
-     12,
-     4
-    ],
-    "k": "house",
-    "to": "624",
-    "why": "V3 kit house door"
-   },
-   {
-    "tile": [
-     17,
-     4
-    ],
-    "k": "house",
-    "to": "623",
-    "why": "V3 kit house door"
-   },
-   {
-    "tile": [
-     18,
-     4
-    ],
-    "k": "house",
-    "to": "623",
-    "why": "V3 kit house door"
-   },
-   {
-    "tile": [
-     20,
-     12
-    ],
-    "k": "house",
-    "to": "623",
-    "why": "V3 kit house door"
-   },
-   {
-    "tile": [
-     21,
-     12
-    ],
-    "k": "house",
-    "to": "623",
-    "why": "V3 kit house door"
-   }
-  ],
-  "632": [
-   {
-    "tile": [
-     12,
-     5
-    ],
-    "k": "house",
-    "to": "623",
-    "why": "V3 kit house door"
-   },
-   {
-    "tile": [
-     13,
-     5
-    ],
-    "k": "house",
-    "to": "623",
-    "why": "V3 kit house door"
-   },
-   {
-    "tile": [
-     18,
-     4
-    ],
-    "k": "house",
-    "to": "622",
-    "why": "V3 kit house door"
-   },
-   {
-    "tile": [
-     19,
-     4
-    ],
-    "k": "house",
-    "to": "622",
-    "why": "V3 kit house door"
-   }
-  ],
-  "621": [
-   {
-    "tile": [
-     15,
-     4
-    ],
-    "k": "chest",
-    "item": "harmonic",
-    "n": 3,
-    "why": "hidden hydro garden reward (crystal planter)"
-   }
-  ],
-  "616": [
-   {
-    "tile": [
-     21,
-     13
-    ],
-    "k": "chest",
-    "item": "fullgel",
-    "n": 2,
-    "why": "Viewport Overlook dead end reward"
-   }
-  ],
-  "628": [
-   {
-    "tile": [
-     12,
-     2
-    ],
-    "k": "chest",
-    "item": "maxrevive",
-    "n": 1,
-    "why": "Comms Spire uplink dais reward"
-   }
-  ],
-  "611": [
-   {
-    "tile": [
-     12,
-     6
-    ],
-    "k": "chest",
-    "item": "stasis",
-    "n": 2,
-    "why": "Rift Rock crystal pool reward"
    }
   ],
   "600": [
@@ -4079,7 +3881,7 @@
    {
     "tile": [
      15,
-     4
+     6
     ],
     "k": "chest",
     "item": "fullgel",
@@ -4316,7 +4118,7 @@
    {
     "tile": [
      15,
-     4
+     2
     ],
     "k": "chest",
     "item": "maxrevive",
@@ -4328,7 +4130,7 @@
    {
     "tile": [
      15,
-     14
+     13
     ],
     "k": "chest",
     "item": "stasis",
@@ -4534,7 +4336,7 @@
    {
     "tile": [
      15,
-     4
+     6
     ],
     "k": "chest",
     "item": "fullgel",
@@ -4634,6 +4436,80 @@
     "k": "house",
     "to": "425",
     "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     6,
+     4
+    ],
+    "k": "house",
+    "to": "424",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     7,
+     4
+    ],
+    "k": "house",
+    "to": "424",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     20,
+     12
+    ],
+    "k": "house",
+    "to": "425",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     21,
+     12
+    ],
+    "k": "house",
+    "to": "425",
+    "why": "V3 kit house door"
+   }
+  ],
+  "432": [
+   {
+    "tile": [
+     12,
+     5
+    ],
+    "k": "house",
+    "to": "423",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     13,
+     5
+    ],
+    "k": "house",
+    "to": "423",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     18,
+     5
+    ],
+    "k": "house",
+    "to": "423",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     19,
+     5
+    ],
+    "k": "house",
+    "to": "423",
+    "why": "V3 kit house door"
    }
   ],
   "426": [
@@ -4684,7 +4560,7 @@
    {
     "tile": [
      12,
-     15
+     12
     ],
     "k": "chest",
     "item": "singularity",
@@ -4884,7 +4760,7 @@
    {
     "tile": [
      15,
-     4
+     6
     ],
     "k": "chest",
     "item": "maxrevive",
@@ -4896,7 +4772,7 @@
    {
     "tile": [
      15,
-     15
+     12
     ],
     "k": "chest",
     "item": "singularity",
@@ -5142,7 +5018,7 @@
    {
     "tile": [
      18,
-     14
+     13
     ],
     "k": "chest",
     "item": "harmonic",
@@ -5160,6 +5036,222 @@
     "item": "maxrevive",
     "n": 1,
     "why": "Deepcut Mine depths reward"
+   }
+  ],
+  "629": [
+   {
+    "tile": [
+     3,
+     6
+    ],
+    "k": "house",
+    "to": "623",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     4,
+     6
+    ],
+    "k": "house",
+    "to": "623",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     11,
+     6
+    ],
+    "k": "house",
+    "to": "623",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     12,
+     6
+    ],
+    "k": "house",
+    "to": "623",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     18,
+     6
+    ],
+    "k": "house",
+    "to": "623",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     19,
+     6
+    ],
+    "k": "house",
+    "to": "623",
+    "why": "V3 kit house door"
+   }
+  ],
+  "630": [
+   {
+    "tile": [
+     6,
+     4
+    ],
+    "k": "house",
+    "to": "623",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     7,
+     4
+    ],
+    "k": "house",
+    "to": "623",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     11,
+     4
+    ],
+    "k": "house",
+    "to": "624",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     12,
+     4
+    ],
+    "k": "house",
+    "to": "624",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     17,
+     4
+    ],
+    "k": "house",
+    "to": "623",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     18,
+     4
+    ],
+    "k": "house",
+    "to": "623",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     20,
+     12
+    ],
+    "k": "house",
+    "to": "623",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     21,
+     12
+    ],
+    "k": "house",
+    "to": "623",
+    "why": "V3 kit house door"
+   }
+  ],
+  "632": [
+   {
+    "tile": [
+     12,
+     5
+    ],
+    "k": "house",
+    "to": "623",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     13,
+     5
+    ],
+    "k": "house",
+    "to": "623",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     18,
+     4
+    ],
+    "k": "house",
+    "to": "622",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     19,
+     4
+    ],
+    "k": "house",
+    "to": "622",
+    "why": "V3 kit house door"
+   }
+  ],
+  "621": [
+   {
+    "tile": [
+     15,
+     4
+    ],
+    "k": "chest",
+    "item": "harmonic",
+    "n": 3,
+    "why": "hidden hydro garden reward (crystal planter)"
+   }
+  ],
+  "616": [
+   {
+    "tile": [
+     21,
+     13
+    ],
+    "k": "chest",
+    "item": "fullgel",
+    "n": 2,
+    "why": "Viewport Overlook dead end reward"
+   }
+  ],
+  "628": [
+   {
+    "tile": [
+     12,
+     2
+    ],
+    "k": "chest",
+    "item": "maxrevive",
+    "n": 1,
+    "why": "Comms Spire uplink dais reward"
+   }
+  ],
+  "611": [
+   {
+    "tile": [
+     12,
+     6
+    ],
+    "k": "chest",
+    "item": "stasis",
+    "n": 2,
+    "why": "Rift Rock crystal pool reward"
    }
   ],
   "470": [
@@ -5232,6 +5324,24 @@
     "tile": [
      18,
      4
+    ],
+    "k": "house",
+    "to": "187",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     20,
+     13
+    ],
+    "k": "house",
+    "to": "187",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     21,
+     13
     ],
     "k": "house",
     "to": "187",
@@ -6051,78 +6161,6 @@
     13
    ]
   },
-  "623": {
-   "default": [
-    9,
-    15
-   ]
-  },
-  "624": {
-   "default": [
-    9,
-    16
-   ]
-  },
-  "622": {
-   "default": [
-    9,
-    16
-   ]
-  },
-  "634": {
-   "default": [
-    12,
-    10
-   ]
-  },
-  "608": {
-   "default": [
-    11,
-    6
-   ]
-  },
-  "609": {
-   "default": [
-    6,
-    3
-   ]
-  },
-  "610": {
-   "default": [
-    4,
-    4
-   ]
-  },
-  "611": {
-   "default": [
-    11,
-    12
-   ]
-  },
-  "627": {
-   "default": [
-    9,
-    15
-   ]
-  },
-  "628": {
-   "default": [
-    11,
-    12
-   ]
-  },
-  "606": {
-   "default": [
-    9,
-    16
-   ]
-  },
-  "607": {
-   "default": [
-    11,
-    13
-   ]
-  },
   "593": {
    "default": [
     9,
@@ -6451,6 +6489,78 @@
    "default": [
     9,
     15
+   ]
+  },
+  "623": {
+   "default": [
+    9,
+    15
+   ]
+  },
+  "624": {
+   "default": [
+    9,
+    16
+   ]
+  },
+  "622": {
+   "default": [
+    9,
+    16
+   ]
+  },
+  "634": {
+   "default": [
+    12,
+    10
+   ]
+  },
+  "608": {
+   "default": [
+    11,
+    6
+   ]
+  },
+  "609": {
+   "default": [
+    6,
+    3
+   ]
+  },
+  "610": {
+   "default": [
+    4,
+    4
+   ]
+  },
+  "611": {
+   "default": [
+    11,
+    12
+   ]
+  },
+  "627": {
+   "default": [
+    9,
+    15
+   ]
+  },
+  "628": {
+   "default": [
+    11,
+    12
+   ]
+  },
+  "606": {
+   "default": [
+    9,
+    16
+   ]
+  },
+  "607": {
+   "default": [
+    11,
+    13
    ]
   },
   "466": {
@@ -6845,23 +6955,6 @@
    "why": "V3: the spaceport is the arrival point and the way home"
   },
   {
-   "section": "634",
-   "tiles": [
-    [
-     12,
-     8
-    ],
-    [
-     13,
-     8
-    ]
-   ],
-   "node": "dustara",
-   "planet": "dustara",
-   "label": "your ship back to Dustara",
-   "why": "V3: second way home from the station spaceport (the Docking Ring shuttle gate stays)"
-  },
-  {
    "section": "604",
    "tiles": [
     [
@@ -6958,6 +7051,23 @@
    "planet": "dustara",
    "label": "your ship back to Dustara",
    "why": "V3: the spaceport is the arrival point and the way home"
+  },
+  {
+   "section": "634",
+   "tiles": [
+    [
+     12,
+     8
+    ],
+    [
+     13,
+     8
+    ]
+   ],
+   "node": "dustara",
+   "planet": "dustara",
+   "label": "your ship back to Dustara",
+   "why": "V3: second way home from the station spaceport (the Docking Ring shuttle gate stays)"
   }
  ],
  "trainers": {
@@ -8085,6 +8195,76 @@
    "face": "down",
    "kind": "door",
    "parent": "030"
+  },
+  {
+   "section": "129",
+   "tile": [
+    7,
+    15
+   ],
+   "to": "821",
+   "at": [
+    8,
+    7
+   ],
+   "face": "right",
+   "kind": "stairs"
+  },
+  {
+   "section": "129",
+   "tile": [
+    7,
+    15
+   ],
+   "to": "821",
+   "at": [
+    8,
+    7
+   ],
+   "face": "right",
+   "kind": "stairs"
+  },
+  {
+   "section": "129",
+   "tile": [
+    7,
+    15
+   ],
+   "to": "821",
+   "at": [
+    8,
+    7
+   ],
+   "face": "right",
+   "kind": "stairs"
+  },
+  {
+   "section": "129",
+   "tile": [
+    7,
+    15
+   ],
+   "to": "821",
+   "at": [
+    8,
+    7
+   ],
+   "face": "right",
+   "kind": "stairs"
+  },
+  {
+   "section": "129",
+   "tile": [
+    7,
+    15
+   ],
+   "to": "821",
+   "at": [
+    8,
+    7
+   ],
+   "face": "right",
+   "kind": "stairs"
   },
   {
    "section": "129",
@@ -9585,236 +9765,6 @@
    "kind": "stairs"
   },
   {
-   "section": "623",
-   "tile": [
-    9,
-    16
-   ],
-   "to": "back",
-   "at": [
-    9,
-    15
-   ],
-   "face": "down",
-   "kind": "door",
-   "parent": "629"
-  },
-  {
-   "section": "623",
-   "tile": [
-    10,
-    16
-   ],
-   "to": "back",
-   "at": [
-    10,
-    15
-   ],
-   "face": "down",
-   "kind": "door",
-   "parent": "629"
-  },
-  {
-   "section": "624",
-   "tile": [
-    9,
-    17
-   ],
-   "to": "back",
-   "at": [
-    9,
-    16
-   ],
-   "face": "down",
-   "kind": "door",
-   "parent": "630"
-  },
-  {
-   "section": "624",
-   "tile": [
-    10,
-    17
-   ],
-   "to": "back",
-   "at": [
-    10,
-    16
-   ],
-   "face": "down",
-   "kind": "door",
-   "parent": "630"
-  },
-  {
-   "section": "622",
-   "tile": [
-    9,
-    17
-   ],
-   "to": "back",
-   "at": [
-    9,
-    16
-   ],
-   "face": "down",
-   "kind": "door",
-   "parent": "632"
-  },
-  {
-   "section": "622",
-   "tile": [
-    10,
-    17
-   ],
-   "to": "back",
-   "at": [
-    10,
-    16
-   ],
-   "face": "down",
-   "kind": "door",
-   "parent": "632"
-  },
-  {
-   "section": "608",
-   "tile": [
-    11,
-    4
-   ],
-   "to": "609",
-   "at": [
-    6,
-    3
-   ],
-   "face": "down",
-   "kind": "stairs"
-  },
-  {
-   "section": "609",
-   "tile": [
-    6,
-    2
-   ],
-   "to": "608",
-   "at": [
-    11,
-    5
-   ],
-   "face": "down",
-   "kind": "stairs"
-  },
-  {
-   "section": "609",
-   "tile": [
-    18,
-    2
-   ],
-   "to": "610",
-   "at": [
-    4,
-    4
-   ],
-   "face": "down",
-   "kind": "stairs"
-  },
-  {
-   "section": "610",
-   "tile": [
-    4,
-    3
-   ],
-   "to": "609",
-   "at": [
-    18,
-    3
-   ],
-   "face": "down",
-   "kind": "stairs"
-  },
-  {
-   "section": "610",
-   "tile": [
-    11,
-    13
-   ],
-   "to": "611",
-   "at": [
-    11,
-    12
-   ],
-   "face": "up",
-   "kind": "stairs"
-  },
-  {
-   "section": "611",
-   "tile": [
-    11,
-    14
-   ],
-   "to": "610",
-   "at": [
-    11,
-    12
-   ],
-   "face": "up",
-   "kind": "stairs"
-  },
-  {
-   "section": "606",
-   "tile": [
-    9,
-    5
-   ],
-   "to": "607",
-   "at": [
-    11,
-    13
-   ],
-   "face": "up",
-   "kind": "stairs"
-  },
-  {
-   "section": "607",
-   "tile": [
-    11,
-    15
-   ],
-   "to": "606",
-   "at": [
-    9,
-    6
-   ],
-   "face": "down",
-   "kind": "stairs"
-  },
-  {
-   "section": "627",
-   "tile": [
-    15,
-    4
-   ],
-   "to": "628",
-   "at": [
-    11,
-    12
-   ],
-   "face": "up",
-   "kind": "stairs"
-  },
-  {
-   "section": "628",
-   "tile": [
-    11,
-    14
-   ],
-   "to": "627",
-   "at": [
-    15,
-    6
-   ],
-   "face": "down",
-   "kind": "stairs"
-  },
-  {
    "section": "593",
    "tile": [
     9,
@@ -11190,6 +11140,236 @@
    "at": [
     9,
     5
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "623",
+   "tile": [
+    9,
+    16
+   ],
+   "to": "back",
+   "at": [
+    9,
+    15
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "629"
+  },
+  {
+   "section": "623",
+   "tile": [
+    10,
+    16
+   ],
+   "to": "back",
+   "at": [
+    10,
+    15
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "629"
+  },
+  {
+   "section": "624",
+   "tile": [
+    9,
+    17
+   ],
+   "to": "back",
+   "at": [
+    9,
+    16
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "630"
+  },
+  {
+   "section": "624",
+   "tile": [
+    10,
+    17
+   ],
+   "to": "back",
+   "at": [
+    10,
+    16
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "630"
+  },
+  {
+   "section": "622",
+   "tile": [
+    9,
+    17
+   ],
+   "to": "back",
+   "at": [
+    9,
+    16
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "632"
+  },
+  {
+   "section": "622",
+   "tile": [
+    10,
+    17
+   ],
+   "to": "back",
+   "at": [
+    10,
+    16
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "632"
+  },
+  {
+   "section": "608",
+   "tile": [
+    11,
+    4
+   ],
+   "to": "609",
+   "at": [
+    6,
+    3
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "609",
+   "tile": [
+    6,
+    2
+   ],
+   "to": "608",
+   "at": [
+    11,
+    5
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "609",
+   "tile": [
+    18,
+    2
+   ],
+   "to": "610",
+   "at": [
+    4,
+    4
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "610",
+   "tile": [
+    4,
+    3
+   ],
+   "to": "609",
+   "at": [
+    18,
+    3
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "610",
+   "tile": [
+    11,
+    13
+   ],
+   "to": "611",
+   "at": [
+    11,
+    12
+   ],
+   "face": "up",
+   "kind": "stairs"
+  },
+  {
+   "section": "611",
+   "tile": [
+    11,
+    14
+   ],
+   "to": "610",
+   "at": [
+    11,
+    12
+   ],
+   "face": "up",
+   "kind": "stairs"
+  },
+  {
+   "section": "606",
+   "tile": [
+    9,
+    5
+   ],
+   "to": "607",
+   "at": [
+    11,
+    13
+   ],
+   "face": "up",
+   "kind": "stairs"
+  },
+  {
+   "section": "607",
+   "tile": [
+    11,
+    15
+   ],
+   "to": "606",
+   "at": [
+    9,
+    6
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "627",
+   "tile": [
+    15,
+    4
+   ],
+   "to": "628",
+   "at": [
+    11,
+    12
+   ],
+   "face": "up",
+   "kind": "stairs"
+  },
+  {
+   "section": "628",
+   "tile": [
+    11,
+    14
+   ],
+   "to": "627",
+   "at": [
+    15,
+    6
    ],
    "face": "down",
    "kind": "stairs"

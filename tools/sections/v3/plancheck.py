@@ -31,7 +31,7 @@ for i in ids:
     if r is None: probs.append(f'{i}: no collision'); continue
     r = [list(x) for x in r]; f = P.get('fix', {}).get(i, {})
     if f.get('base'): r = [[f['base']] * len(r[0]) for _ in r]
-    for k, ch in (('walk', '.'), ('gr', ','), ('block', '#'), ('walk_after', '.')):
+    for k, ch in (('walk', '.'), ('gr', ','), ('block', '#'), ('walk_after', '.'), ('block_after', '#')):
         for x0, y0, x1, y1 in f.get(k, []):
             for y in range(y0, y1 + 1):
                 for x in range(x0, x1 + 1):

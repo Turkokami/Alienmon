@@ -2429,8 +2429,8 @@
     },
     {
      "tile": [
-      12,
-      1
+      6,
+      2
      ],
      "k": "stash",
      "item": "revive",
@@ -3240,8 +3240,8 @@
     },
     {
      "tile": [
-      12,
-      1
+      18,
+      12
      ],
      "k": "stash",
      "item": "gel",
@@ -3358,8 +3358,8 @@
    "objects": [
     {
      "tile": [
-      11,
-      14
+      12,
+      13
      ],
      "k": "stash",
      "item": "gel",
@@ -3368,8 +3368,8 @@
     },
     {
      "tile": [
-      14,
-      15
+      6,
+      2
      ],
      "k": "stash",
      "item": "cure",
@@ -5341,8 +5341,8 @@
     },
     {
      "tile": [
-      11,
-      14
+      10,
+      13
      ],
      "k": "stash",
      "item": "gel",
@@ -6480,8 +6480,8 @@
      "mon": "Sludgeviper"
     },
     {
-     "x": 2,
-     "y": 13,
+     "x": 19,
+     "y": 5,
      "mon": "Lianarch"
     }
    ]
@@ -14539,6 +14539,71 @@
      ],
      "face": "right",
      "kind": "stairs"
+    },
+    {
+     "tile": [
+      7,
+      15
+     ],
+     "to": "821",
+     "at": [
+      8,
+      7
+     ],
+     "face": "right",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      7,
+      15
+     ],
+     "to": "821",
+     "at": [
+      8,
+      7
+     ],
+     "face": "right",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      7,
+      15
+     ],
+     "to": "821",
+     "at": [
+      8,
+      7
+     ],
+     "face": "right",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      7,
+      15
+     ],
+     "to": "821",
+     "at": [
+      8,
+      7
+     ],
+     "face": "right",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      7,
+      15
+     ],
+     "to": "821",
+     "at": [
+      8,
+      7
+     ],
+     "face": "right",
+     "kind": "stairs"
     }
    ],
    "objects": [
@@ -16808,7 +16873,7 @@
    },
    "grid": [
     0,
-    69
+    56
    ],
    "pkey": "starfall",
    "npcs": [
@@ -19078,8 +19143,8 @@
    "objects": [
     {
      "tile": [
-      10,
-      1
+      9,
+      2
      ],
      "k": "stash",
      "item": "maxrevive",
@@ -19088,8 +19153,8 @@
     },
     {
      "tile": [
-      10,
-      14
+      12,
+      13
      ],
      "k": "stash",
      "item": "fullgel",
@@ -19166,8 +19231,8 @@
      "mon": "Pulsarion"
     },
     {
-     "x": 11,
-     "y": 14,
+     "x": 10,
+     "y": 13,
      "mon": "Riftwalker"
     }
    ]
@@ -21544,7 +21609,7 @@
     },
     {
      "tile": [
-      5,
+      17,
       13
      ],
      "k": "stash",
@@ -21564,9 +21629,45 @@
     3
    ],
    "pkey": "ferrox",
-   "mons": [
+   "npcs": [
+    {
+     "x": 17,
+     "y": 12,
+     "art": "ferrox_folk6",
+     "face": "down",
+     "t": [
+      "Resident: Rustvale Lane Homes are built from old boilers. Warm in winter, toasty in summer!",
+      "Resident: The spaceport's just past the last house."
+     ],
+     "name": "Resident",
+     "src": "n:505:0"
+    },
     {
      "x": 10,
+     "y": 12,
+     "art": "ferrox_folk1",
+     "face": "down",
+     "t": [
+      "Kid: I'm building a robot out of spare parts. It doesn't move yet. Or ever."
+     ],
+     "name": "Kid",
+     "src": "n:505:1"
+    },
+    {
+     "x": 4,
+     "y": 12,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Neighbour: Rustvale's just down the road if you need the Recovery Bay."
+     ],
+     "name": "Neighbour",
+     "src": "n:505:2"
+    }
+   ],
+   "mons": [
+    {
+     "x": 22,
      "y": 12,
      "mon": "Coilet"
     }
@@ -21814,7 +21915,7 @@
     },
     {
      "tile": [
-      17,
+      18,
       11
      ],
      "k": "stash",
@@ -21834,13 +21935,32 @@
     55
    ],
    "pkey": "ferrox",
-   "mons": [
+   "npcs": [
     {
-     "x": 18,
+     "x": 16,
      "y": 11,
-     "mon": "Gleamgrub"
+     "art": "ferrox_folk2",
+     "face": "down",
+     "t": [
+      "Farmer: Turnips grow tough in Ferrox soil. Tough enough to dent a wrench!",
+      "Farmer: The Scrapyard Dome is right next door. Noisy neighbors!"
+     ],
+     "name": "Farmer",
+     "src": "n:507:0"
+    },
+    {
+     "x": 19,
+     "y": 9,
+     "art": "sheepkid",
+     "face": "down",
+     "t": [
+      "Farm Kid: Our goats eat tin cans. Mom says that's normal here."
+     ],
+     "name": "Farm Kid",
+     "src": "n:507:1"
     }
-   ]
+   ],
+   "mons": []
   },
   "485": {
    "id": "485",
@@ -22186,15 +22306,40 @@
     -15
    ],
    "pkey": "ferrox",
-   "mons": [
+   "npcs": [
     {
      "x": 5,
-     "y": 6,
+     "y": 9,
+     "art": "ferrox_folk2",
+     "face": "down",
+     "t": [
+      "Wanderer: Scrap Hollow Grove. Trees growing right through old gears. Isn't it wonderful?",
+      "Wanderer: Swarm-types build nests in the hollow pipes."
+     ],
+     "name": "Wanderer",
+     "src": "n:497:0"
+    },
+    {
+     "x": 14,
+     "y": 9,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Picnicker: Crane Overlook is too windy for lunch. This spot is perfect!"
+     ],
+     "name": "Picnicker",
+     "src": "n:497:1"
+    }
+   ],
+   "mons": [
+    {
+     "x": 19,
+     "y": 12,
      "mon": "Anvilox"
     },
     {
-     "x": 20,
-     "y": 8,
+     "x": 10,
+     "y": 12,
      "mon": "Gongorr"
     }
    ]
@@ -22250,7 +22395,7 @@
     {
      "tile": [
       19,
-      8
+      9
      ],
      "k": "stash",
      "item": "cure",
@@ -22269,15 +22414,40 @@
     -25
    ],
    "pkey": "ferrox",
-   "mons": [
+   "npcs": [
     {
      "x": 9,
      "y": 8,
+     "art": "miner",
+     "face": "down",
+     "t": [
+      "Miner: Deepcut Mine is right below. Grab a helmet if you've got one.",
+      "Miner: Crane Overlook is back up the hill."
+     ],
+     "name": "Miner",
+     "src": "n:481:0"
+    },
+    {
+     "x": 9,
+     "y": 11,
+     "art": "ferrox_folk4",
+     "face": "down",
+     "t": [
+      "Rail Hand: The old cart rails go all the way down. Don't ride them. Trust me."
+     ],
+     "name": "Rail Hand",
+     "src": "n:481:1"
+    }
+   ],
+   "mons": [
+    {
+     "x": 18,
+     "y": 9,
      "mon": "Anvilox"
     },
     {
-     "x": 17,
-     "y": 10,
+     "x": 15,
+     "y": 8,
      "mon": "Gongorr"
     }
    ]
@@ -22341,7 +22511,21 @@
      3
     ]
    },
-   "pkey": "ferrox"
+   "pkey": "ferrox",
+   "npcs": [
+    {
+     "x": 19,
+     "y": 8,
+     "art": "miner",
+     "face": "down",
+     "t": [
+      "Miner: B1's got the loose rocks. Alloy-types chew on 'em like snacks.",
+      "Miner: Stairs to B2 are deeper in."
+     ],
+     "name": "Miner",
+     "src": "n:482:0"
+    }
+   ]
   },
   "483": {
    "id": "483",
@@ -22412,7 +22596,21 @@
      4
     ]
    },
-   "pkey": "ferrox"
+   "pkey": "ferrox",
+   "npcs": [
+    {
+     "x": 13,
+     "y": 7,
+     "art": "ferrox_folk5",
+     "face": "down",
+     "t": [
+      "Tunnel Digger: B2 is hot and dusty. The Depths are just below.",
+      "Tunnel Digger: Keep a Potion handy. Things down there hit hard."
+     ],
+     "name": "Tunnel Digger",
+     "src": "n:483:0"
+    }
+   ]
   },
   "484": {
    "id": "484",
@@ -22480,7 +22678,20 @@
      12
     ]
    },
-   "pkey": "ferrox"
+   "pkey": "ferrox",
+   "npcs": [
+    {
+     "x": 12,
+     "y": 9,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Spelunker: You made it to the Depths! The ore down here sparkles like stars."
+     ],
+     "name": "Spelunker",
+     "src": "n:484:0"
+    }
+   ]
   },
   "490": {
    "id": "490",
@@ -22789,15 +23000,51 @@
     53
    ],
    "pkey": "ferrox",
+   "npcs": [
+    {
+     "x": 13,
+     "y": 11,
+     "art": "ferrox_folk1",
+     "face": "down",
+     "t": [
+      "Fan: The Scrapyard Dome is built from old train cars. Loudest arena in Rustvale!",
+      "Fan: The lobby's right through the iron gate."
+     ],
+     "name": "Fan",
+     "src": "n:476:0"
+    },
+    {
+     "x": 3,
+     "y": 11,
+     "art": "ferrox_folk2",
+     "face": "down",
+     "t": [
+      "Scrapper: Every bolt in that dome came from the junk heaps. Even the seats!"
+     ],
+     "name": "Scrapper",
+     "src": "n:476:1"
+    },
+    {
+     "x": 20,
+     "y": 12,
+     "art": "snacktrader",
+     "face": "down",
+     "t": [
+      "Snack Trader: Grilled corn on a stick! Great for battle watching!"
+     ],
+     "name": "Snack Trader",
+     "src": "n:476:2"
+    }
+   ],
    "mons": [
     {
-     "x": 9,
+     "x": 8,
      "y": 8,
      "mon": "Gearhound"
     },
     {
-     "x": 20,
-     "y": 8,
+     "x": 9,
+     "y": 13,
      "mon": "Coilossus"
     }
    ]
@@ -22868,7 +23115,32 @@
     ]
    },
    "parent": "476",
-   "pkey": "ferrox"
+   "pkey": "ferrox",
+   "npcs": [
+    {
+     "x": 8,
+     "y": 10,
+     "art": "referee",
+     "face": "down",
+     "t": [
+      "Receptionist: Welcome to the Scrapyard Dome! The arena is through those doors.",
+      "Receptionist: No climbing on the scrap walls, please. It's for decoration!"
+     ],
+     "name": "Receptionist",
+     "src": "n:478:0"
+    },
+    {
+     "x": 5,
+     "y": 13,
+     "art": "ferrox_folk3",
+     "face": "down",
+     "t": [
+      "Fan: I've got a sign that says CRUSH IT. Get it? Because Alloy-types?"
+     ],
+     "name": "Fan",
+     "src": "n:478:1"
+    }
+   ]
   },
   "480": {
    "id": "480",
@@ -23385,7 +23657,7 @@
     {
      "tile": [
       18,
-      14
+      13
      ],
      "k": "chest",
      "item": "harmonic",
@@ -23404,8 +23676,8 @@
     },
     {
      "tile": [
-      22,
-      12
+      21,
+      13
      ],
      "k": "stash",
      "item": "dust",
@@ -23540,15 +23812,40 @@
     15
    ],
    "pkey": "ferrox",
+   "npcs": [
+    {
+     "x": 11,
+     "y": 9,
+     "art": "ferrox_folk6",
+     "face": "down",
+     "t": [
+      "Scrapper: The Back Lot is where the junk goes to sleep. Some of it snores.",
+      "Scrapper: Funny, that door over there used to be locked."
+     ],
+     "name": "Scrapper",
+     "src": "n:495:0"
+    },
+    {
+     "x": 3,
+     "y": 9,
+     "art": "technician",
+     "face": "down",
+     "t": [
+      "Mechanic: Railyard Junction is back the way you came. Watch for trains!"
+     ],
+     "name": "Mechanic",
+     "src": "n:495:1"
+    }
+   ],
    "mons": [
     {
-     "x": 7,
-     "y": 7,
+     "x": 20,
+     "y": 10,
      "mon": "Anvilox"
     },
     {
-     "x": 18,
-     "y": 7,
+     "x": 7,
+     "y": 12,
      "mon": "Gongorr"
     }
    ]
@@ -23606,7 +23903,21 @@
     ]
    },
    "parent": "495",
-   "pkey": "ferrox"
+   "pkey": "ferrox",
+   "npcs": [
+    {
+     "x": 11,
+     "y": 13,
+     "art": "researcher",
+     "face": "down",
+     "t": [
+      "Helix Scientist: What? This lab is perfectly ordinary. Stop looking at the beakers.",
+      "Helix Scientist: Fine, fine. Touch nothing and we'll get along."
+     ],
+     "name": "Helix Scientist",
+     "src": "n:496:0"
+    }
+   ]
   },
   "498": {
    "id": "498",
@@ -23657,7 +23968,21 @@
     ]
    },
    "parent": "506",
-   "pkey": "ferrox"
+   "pkey": "ferrox",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 10,
+     "art": "ferrox_folk3",
+     "face": "down",
+     "t": [
+      "Salvage Trader: Welcome to the Salvage Shop! One Linker's junk is another Linker's treasure.",
+      "Salvage Trader: We don't sell this stuff. We just admire it. Mostly."
+     ],
+     "name": "Salvage Trader",
+     "src": "n:498:0"
+    }
+   ]
   },
   "499": {
    "id": "499",
@@ -23708,7 +24033,32 @@
     ]
    },
    "parent": "505",
-   "pkey": "ferrox"
+   "pkey": "ferrox",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 10,
+     "art": "technician",
+     "face": "down",
+     "t": [
+      "Mechanic: The Engine Garage fixes anything with wheels, gears, or a stubborn attitude.",
+      "Mechanic: Volt-types are great at jump-starting engines!"
+     ],
+     "name": "Mechanic",
+     "src": "n:499:0"
+    },
+    {
+     "x": 5,
+     "y": 7,
+     "art": "ferrox_folk4",
+     "face": "down",
+     "t": [
+      "Apprentice: I'm only allowed to hand over wrenches. Someday I'll fix a whole engine!"
+     ],
+     "name": "Apprentice",
+     "src": "n:499:1"
+    }
+   ]
   },
   "500": {
    "id": "500",
@@ -23759,7 +24109,21 @@
     ]
    },
    "parent": "505",
-   "pkey": "ferrox"
+   "pkey": "ferrox",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 9,
+     "art": "ferrox_folk5",
+     "face": "down",
+     "t": [
+      "Crane Operator: This is my bunk. Small, but I can see the whole yard from my window.",
+      "Crane Operator: Swinging a crane all day makes for great naps."
+     ],
+     "name": "Crane Operator",
+     "src": "n:500:0"
+    }
+   ]
   },
   "472": {
    "id": "472",
@@ -23833,10 +24197,35 @@
     16
    ],
    "pkey": "dustara",
+   "npcs": [
+    {
+     "x": 9,
+     "y": 11,
+     "art": "dustara_folk6",
+     "face": "down",
+     "t": [
+      "Farmer: We grow desert melons out here. Sweet as honey and twice as sticky!",
+      "Farmer: The plaza's up the road if you need supplies."
+     ],
+     "name": "Farmer",
+     "src": "n:472:0"
+    },
+    {
+     "x": 7,
+     "y": 11,
+     "art": "sheepkid",
+     "face": "down",
+     "t": [
+      "Farm Kid: My chore is chasing Swarm-types out of the melon patch. They always come back!"
+     ],
+     "name": "Farm Kid",
+     "src": "n:472:1"
+    }
+   ],
    "mons": [
     {
      "x": 8,
-     "y": 11,
+     "y": 13,
      "mon": "Pebblet"
     }
    ]
@@ -23930,13 +24319,32 @@
     14
    ],
    "pkey": "dustara",
-   "mons": [
+   "npcs": [
     {
      "x": 18,
      "y": 12,
-     "mon": "Cindermole"
+     "art": "dustara_folk3",
+     "face": "down",
+     "t": [
+      "Resident: Dustmere Lane is quiet in the day and busy at sundown. Everyone hides from the heat!",
+      "Resident: The farmstead is just down the road."
+     ],
+     "name": "Resident",
+     "src": "n:470:0"
+    },
+    {
+     "x": 5,
+     "y": 9,
+     "art": "dustara_folk4",
+     "face": "down",
+     "t": [
+      "Kid: I saw a Volt-type spark in the drift grass! Bet you can't catch it!"
+     ],
+     "name": "Kid",
+     "src": "n:470:1"
     }
-   ]
+   ],
+   "mons": []
   },
   "447": {
    "id": "447",
@@ -24112,8 +24520,26 @@
     },
     {
      "tile": [
+      20,
+      13
+     ],
+     "k": "house",
+     "to": "187",
+     "why": "V3 kit house door"
+    },
+    {
+     "tile": [
       21,
-      14
+      13
+     ],
+     "k": "house",
+     "to": "187",
+     "why": "V3 kit house door"
+    },
+    {
+     "tile": [
+      22,
+      5
      ],
      "k": "stash",
      "item": "gel",
@@ -24132,10 +24558,35 @@
     0
    ],
    "pkey": "dustara",
+   "npcs": [
+    {
+     "x": 19,
+     "y": 8,
+     "art": "dustara_folk5",
+     "face": "down",
+     "t": [
+      "Old Resident: Dustmere Quiet Court is for folks who like a good nap.",
+      "Old Resident: Oasis Fork is just over yonder if you need water."
+     ],
+     "name": "Old Resident",
+     "src": "n:471:0"
+    },
+    {
+     "x": 19,
+     "y": 7,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Gardener: Cactus gardens are easy. Just don't hug them."
+     ],
+     "name": "Gardener",
+     "src": "n:471:1"
+    }
+   ],
    "mons": [
     {
-     "x": 17,
-     "y": 12,
+     "x": 9,
+     "y": 14,
      "mon": "Shadebit"
     }
    ]
@@ -24424,10 +24875,35 @@
     43
    ],
    "pkey": "dustara",
+   "npcs": [
+    {
+     "x": 6,
+     "y": 9,
+     "art": "dustara_folk6",
+     "face": "down",
+     "t": [
+      "Oasis Hermit: You found the Hidden Mesa Grove! Not many folks wander off the Oasis Shore this far.",
+      "Oasis Hermit: Rare Bio-types nap in the palm shade."
+     ],
+     "name": "Oasis Hermit",
+     "src": "n:465:0"
+    },
+    {
+     "x": 12,
+     "y": 11,
+     "art": "wanderer",
+     "face": "down",
+     "t": [
+      "Drifter: I came here for the quiet. And the coconuts."
+     ],
+     "name": "Drifter",
+     "src": "n:465:1"
+    }
+   ],
    "mons": [
     {
-     "x": 5,
-     "y": 6,
+     "x": 19,
+     "y": 13,
      "mon": "Kilnback"
     },
     {
@@ -24483,8 +24959,8 @@
     },
     {
      "tile": [
-      3,
-      12
+      6,
+      13
      ],
      "k": "stash",
      "item": "gel",
@@ -24505,7 +24981,7 @@
    "pkey": "dustara",
    "npcs": [
     {
-     "x": 9,
+     "x": 10,
      "y": 7,
      "art": "explorer",
      "face": "right",
@@ -24518,8 +24994,8 @@
      }
     },
     {
-     "x": 9,
-     "y": 12,
+     "x": 13,
+     "y": 3,
      "art": "wanderer",
      "face": "right",
      "t": [],
@@ -24533,12 +25009,12 @@
    ],
    "mons": [
     {
-     "x": 13,
-     "y": 3,
+     "x": 4,
+     "y": 9,
      "mon": "Fizzlord"
     },
     {
-     "x": 3,
+     "x": 17,
      "y": 10,
      "mon": "Skitterdrone"
     }
@@ -24627,14 +25103,50 @@
     14
    ],
    "pkey": "dustara",
-   "mons": [
+   "npcs": [
     {
      "x": 14,
-     "y": 7,
+     "y": 9,
+     "art": "dustara_folk1",
+     "face": "down",
+     "t": [
+      "Fan: The Canyon Coliseum is the loudest place in Dustara. You can hear it from the Oasis!",
+      "Fan: The lobby's right inside the gate."
+     ],
+     "name": "Fan",
+     "src": "n:436:0"
+    },
+    {
+     "x": 5,
+     "y": 8,
+     "art": "dustara_folk2",
+     "face": "down",
+     "t": [
+      "Canyon Scout: Coliseum champs train out on the canyon trails. Sun-baked and battle-ready."
+     ],
+     "name": "Canyon Scout",
+     "src": "n:436:1"
+    },
+    {
+     "x": 19,
+     "y": 10,
+     "art": "snacktrader",
+     "face": "down",
+     "t": [
+      "Snack Trader: Cactus chips! Get your cactus chips! Perfect for cheering."
+     ],
+     "name": "Snack Trader",
+     "src": "n:436:2"
+    }
+   ],
+   "mons": [
+    {
+     "x": 3,
+     "y": 12,
      "mon": "Fizzlord"
     },
     {
-     "x": 4,
+     "x": 17,
      "y": 7,
      "mon": "Skitterdrone"
     }
@@ -24706,7 +25218,32 @@
     ]
    },
    "parent": "436",
-   "pkey": "dustara"
+   "pkey": "dustara",
+   "npcs": [
+    {
+     "x": 8,
+     "y": 10,
+     "art": "referee",
+     "face": "down",
+     "t": [
+      "Receptionist: Welcome to the Canyon Coliseum! The arena is straight through those doors.",
+      "Receptionist: Heal up before you step in. The crowd loves a good long match!"
+     ],
+     "name": "Receptionist",
+     "src": "n:438:0"
+    },
+    {
+     "x": 5,
+     "y": 7,
+     "art": "dustara_folk3",
+     "face": "down",
+     "t": [
+      "Fan: I've seen every match this season. Okay, most of them. Okay, three."
+     ],
+     "name": "Fan",
+     "src": "n:438:1"
+    }
+   ]
   },
   "440": {
    "id": "440",
@@ -24852,8 +25389,8 @@
      "mon": "Kilnback"
     },
     {
-     "x": 22,
-     "y": 9,
+     "x": 21,
+     "y": 12,
      "mon": "Squawktone"
     }
    ]
@@ -24904,8 +25441,8 @@
     },
     {
      "tile": [
-      22,
-      6
+      20,
+      11
      ],
      "k": "stash",
      "item": "gel",
@@ -24926,10 +25463,10 @@
    "pkey": "dustara",
    "npcs": [
     {
-     "x": 8,
+     "x": 15,
      "y": 7,
      "art": "technician",
-     "face": "right",
+     "face": "left",
      "t": [],
      "id": "sec464_tr0",
      "trainer": {
@@ -24959,8 +25496,8 @@
      "mon": "Fizzlord"
     },
     {
-     "x": 3,
-     "y": 2,
+     "x": 7,
+     "y": 5,
      "mon": "Skitterdrone"
     }
    ]
@@ -25067,8 +25604,8 @@
    ],
    "mons": [
     {
-     "x": 1,
-     "y": 4,
+     "x": 3,
+     "y": 5,
      "mon": "Fizzlord"
     },
     {
@@ -25124,8 +25661,8 @@
     },
     {
      "tile": [
-      12,
-      14
+      2,
+      13
      ],
      "k": "stash",
      "item": "cure",
@@ -25225,8 +25762,18 @@
    "objects": [
     {
      "tile": [
-      9,
-      6
+      19,
+      12
+     ],
+     "k": "stash",
+     "item": "gel",
+     "n": 2,
+     "tier": 1
+    },
+    {
+     "tile": [
+      19,
+      9
      ],
      "k": "stash",
      "item": "gel",
@@ -25245,11 +25792,41 @@
     16
    ],
    "pkey": "dustara",
+   "npcs": [
+    {
+     "x": 15,
+     "y": 9,
+     "art": "dustara_folk4",
+     "face": "down",
+     "t": [
+      "Prospector: Red Rock Caves are just ahead. Bring a light, partner.",
+      "Prospector: The rocks glow red when the sun hits 'em. Pretty as a sunset."
+     ],
+     "name": "Prospector",
+     "src": "n:441:0"
+    },
+    {
+     "x": 15,
+     "y": 11,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Hiker: I'm turning back to Mesa Junction. Those caves are too twisty for me!"
+     ],
+     "name": "Hiker",
+     "src": "n:441:1"
+    }
+   ],
    "mons": [
     {
-     "x": 9,
-     "y": 5,
+     "x": 10,
+     "y": 7,
      "mon": "Kilnback"
+    },
+    {
+     "x": 10,
+     "y": 10,
+     "mon": "Squawktone"
     }
    ]
   },
@@ -25322,7 +25899,21 @@
      3
     ]
    },
-   "pkey": "dustara"
+   "pkey": "dustara",
+   "npcs": [
+    {
+     "x": 18,
+     "y": 8,
+     "art": "miner",
+     "face": "down",
+     "t": [
+      "Miner: Red Rock B1. Magma-types like the warm walls in here.",
+      "Miner: Keep going down if you're brave. B2's even toastier."
+     ],
+     "name": "Miner",
+     "src": "n:442:0"
+    }
+   ]
   },
   "443": {
    "id": "443",
@@ -25383,7 +25974,21 @@
      4
     ]
    },
-   "pkey": "dustara"
+   "pkey": "dustara",
+   "npcs": [
+    {
+     "x": 12,
+     "y": 6,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Spelunker: You're in B2. The Depths are just below. I can hear something rumbling!",
+      "Spelunker: Don't forget to check the stash crates along the walls."
+     ],
+     "name": "Spelunker",
+     "src": "n:443:0"
+    }
+   ]
   },
   "444": {
    "id": "444",
@@ -25441,7 +26046,20 @@
      13
     ]
    },
-   "pkey": "dustara"
+   "pkey": "dustara",
+   "npcs": [
+    {
+     "x": 12,
+     "y": 9,
+     "art": "dustara_folk5",
+     "face": "down",
+     "t": [
+      "Rock Hound: Welcome to the Depths! I found three shiny rocks today. Well, two shiny, one kinda dull."
+     ],
+     "name": "Rock Hound",
+     "src": "n:444:0"
+    }
+   ]
   },
   "466": {
    "id": "466",
@@ -25492,7 +26110,32 @@
     ]
    },
    "parent": "470",
-   "pkey": "dustara"
+   "pkey": "dustara",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 10,
+     "art": "dustara_folk1",
+     "face": "down",
+     "t": [
+      "Tea Master: Welcome to the Cactus Tea House. Our prickly pear tea is famous!",
+      "Tea Master: Sip slowly. It's spicier than it looks."
+     ],
+     "name": "Tea Master",
+     "src": "n:466:0"
+    },
+    {
+     "x": 5,
+     "y": 13,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Regular: I come here every afternoon to dodge the desert heat."
+     ],
+     "name": "Regular",
+     "src": "n:466:1"
+    }
+   ]
   },
   "467": {
    "id": "467",
@@ -25543,7 +26186,21 @@
     ]
    },
    "parent": "470",
-   "pkey": "dustara"
+   "pkey": "dustara",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 10,
+     "art": "rockgirl",
+     "face": "down",
+     "t": [
+      "Rock Collector: Welcome to my Den! Every rock here has a name. That one's Gerald.",
+      "Rock Collector: Bring me a rock from the canyons sometime. I love surprises."
+     ],
+     "name": "Rock Collector",
+     "src": "n:467:0"
+    }
+   ]
   },
   "468": {
    "id": "468",
@@ -25594,7 +26251,32 @@
     ]
    },
    "parent": "471",
-   "pkey": "dustara"
+   "pkey": "dustara",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 10,
+     "art": "dustara_folk2",
+     "face": "down",
+     "t": [
+      "Rune Carver: The Rune Workshop carves glyphs into canyon stone. Each one is a little story.",
+      "Rune Carver: Mind the dust. It gets everywhere!"
+     ],
+     "name": "Rune Carver",
+     "src": "n:468:0"
+    },
+    {
+     "x": 7,
+     "y": 14,
+     "art": "technician",
+     "face": "down",
+     "t": [
+      "Apprentice: I've carved forty runes today. Thirty-nine are crooked."
+     ],
+     "name": "Apprentice",
+     "src": "n:468:1"
+    }
+   ]
   },
   "728": {
    "id": "728",
@@ -25702,13 +26384,32 @@
     3
    ],
    "pkey": "sporeholm",
-   "mons": [
+   "npcs": [
     {
      "x": 19,
      "y": 12,
-     "mon": "Lilypod"
+     "art": "sporeholm_folk1",
+     "face": "down",
+     "t": [
+      "Resident: Mirefen Lane Homes are built on stilts above the bog. Dry and cozy!",
+      "Resident: The spaceport and the village are both close by."
+     ],
+     "name": "Resident",
+     "src": "n:728:0"
+    },
+    {
+     "x": 15,
+     "y": 4,
+     "art": "sporeholm_folk2",
+     "face": "down",
+     "t": [
+      "Kid: I jumped from lily pad to lily pad all the way home! Splash!"
+     ],
+     "name": "Kid",
+     "src": "n:728:1"
     }
-   ]
+   ],
+   "mons": []
   },
   "729": {
    "id": "729",
@@ -25816,8 +26517,8 @@
     },
     {
      "tile": [
-      21,
-      8
+      1,
+      9
      ],
      "k": "stash",
      "item": "stasis",
@@ -25836,10 +26537,35 @@
     -13
    ],
    "pkey": "sporeholm",
+   "npcs": [
+    {
+     "x": 6,
+     "y": 8,
+     "art": "sporeholm_folk3",
+     "face": "down",
+     "t": [
+      "Old Resident: Mirefen Quiet Court is peaceful. Just frogs and glow moths.",
+      "Old Resident: Sporelake Shore is just down the path."
+     ],
+     "name": "Old Resident",
+     "src": "n:729:0"
+    },
+    {
+     "x": 21,
+     "y": 8,
+     "art": "sporefolk",
+     "face": "down",
+     "t": [
+      "Neighbour: I hum to my mushrooms. They grow better with a little music."
+     ],
+     "name": "Neighbour",
+     "src": "n:729:1"
+    }
+   ],
    "mons": [
     {
-     "x": 22,
-     "y": 8,
+     "x": 9,
+     "y": 14,
      "mon": "Gnatlet"
     }
    ]
@@ -25934,10 +26660,35 @@
     23
    ],
    "pkey": "sporeholm",
-   "mons": [
+   "npcs": [
+    {
+     "x": 13,
+     "y": 10,
+     "art": "sporeholm_folk4",
+     "face": "down",
+     "t": [
+      "Farmer: Mirefen Farmstead grows bog rice and swamp beans. Wet work!",
+      "Farmer: There's a secret grove out back. Don't tell anyone I told you."
+     ],
+     "name": "Farmer",
+     "src": "n:730:0"
+    },
     {
      "x": 5,
-     "y": 6,
+     "y": 7,
+     "art": "sheepkid",
+     "face": "down",
+     "t": [
+      "Farm Kid: I wade through the rice paddies every morning. My boots are always squishy!"
+     ],
+     "name": "Farm Kid",
+     "src": "n:730:1"
+    }
+   ],
+   "mons": [
+    {
+     "x": 20,
+     "y": 10,
      "mon": "Stingmire"
     }
    ]
@@ -25991,7 +26742,32 @@
     ]
    },
    "parent": "728",
-   "pkey": "sporeholm"
+   "pkey": "sporeholm",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 9,
+     "art": "sporeholm_folk3",
+     "face": "down",
+     "t": [
+      "Herbalist: Welcome to my Herbalist Hut! Herbs for every sniffle and sneeze.",
+      "Herbalist: Mushroom tea cures almost anything. Except boredom."
+     ],
+     "name": "Herbalist",
+     "src": "n:721:0"
+    },
+    {
+     "x": 6,
+     "y": 13,
+     "art": "sporefolk",
+     "face": "down",
+     "t": [
+      "Helper: I sort the herbs by smell. Some smell like socks."
+     ],
+     "name": "Helper",
+     "src": "n:721:1"
+    }
+   ]
   },
   "722": {
    "id": "722",
@@ -26042,7 +26818,32 @@
     ]
    },
    "parent": "729",
-   "pkey": "sporeholm"
+   "pkey": "sporeholm",
+   "npcs": [
+    {
+     "x": 9,
+     "y": 10,
+     "art": "researcher",
+     "face": "down",
+     "t": [
+      "Botanist: The Spore Lab studies how mushrooms glow. Fascinating stuff!",
+      "Botanist: Please don't sniff the samples. Trust me."
+     ],
+     "name": "Botanist",
+     "src": "n:722:0"
+    },
+    {
+     "x": 13,
+     "y": 6,
+     "art": "sporeholm_folk4",
+     "face": "down",
+     "t": [
+      "Lab Assistant: I counted spores all day. My eyes are glowing now."
+     ],
+     "name": "Lab Assistant",
+     "src": "n:722:1"
+    }
+   ]
   },
   "723": {
    "id": "723",
@@ -26093,7 +26894,21 @@
     ]
    },
    "parent": "729",
-   "pkey": "sporeholm"
+   "pkey": "sporeholm",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 10,
+     "art": "sporeholm_folk5",
+     "face": "down",
+     "t": [
+      "Resident: Welcome to my Marsh Cottage! It's small, but the lily pads out back are lovely.",
+      "Resident: Want some swamp tea? It's better than it sounds."
+     ],
+     "name": "Resident",
+     "src": "n:723:0"
+    }
+   ]
   },
   "733": {
    "id": "733",
@@ -26161,16 +26976,36 @@
     -16
    ],
    "pkey": "sporeholm",
-   "mons": [
+   "npcs": [
     {
      "x": 2,
-     "y": 8,
-     "mon": "Sludgeviper"
+     "y": 7,
+     "art": "sporeholm_folk5",
+     "face": "down",
+     "t": [
+      "Swimmer: Sporelake Shore! The lake glows blue at night.",
+      "Swimmer: Mirefen Quiet Court is just back up the path."
+     ],
+     "name": "Swimmer",
+     "src": "n:733:0"
     },
+    {
+     "x": 2,
+     "y": 4,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Bog Hiker: Hydro-types splash around the shore. Bring a Volt-type!"
+     ],
+     "name": "Bog Hiker",
+     "src": "n:733:1"
+    }
+   ],
+   "mons": [
     {
      "x": 1,
      "y": 14,
-     "mon": "Lianarch"
+     "mon": "Sludgeviper"
     }
    ]
   },
@@ -26224,8 +27059,8 @@
    "objects": [
     {
      "tile": [
-      19,
-      2
+      17,
+      13
      ],
      "k": "stash",
      "item": "jammer",
@@ -26306,13 +27141,13 @@
    ],
    "mons": [
     {
-     "x": 7,
-     "y": 2,
+     "x": 20,
+     "y": 14,
      "mon": "Sludgeviper"
     },
     {
-     "x": 2,
-     "y": 3,
+     "x": 22,
+     "y": 12,
      "mon": "Lianarch"
     }
    ]
@@ -26462,12 +27297,22 @@
    "objects": [
     {
      "tile": [
-      13,
-      3
+      20,
+      11
      ],
      "k": "stash",
      "item": "dust",
      "n": 300,
+     "tier": 2
+    },
+    {
+     "tile": [
+      20,
+      12
+     ],
+     "k": "stash",
+     "item": "megagel",
+     "n": 1,
      "tier": 2
     }
    ],
@@ -26482,7 +27327,43 @@
     -25
    ],
    "pkey": "sporeholm",
-   "mons": []
+   "npcs": [
+    {
+     "x": 15,
+     "y": 9,
+     "art": "sporeholm_folk4",
+     "face": "down",
+     "t": [
+      "Bog Hiker: Mushroom Maze Cave is just through there. Easy to get lost!",
+      "Bog Hiker: Sporecap Overlook is back up the trail."
+     ],
+     "name": "Bog Hiker",
+     "src": "n:707:0"
+    },
+    {
+     "x": 15,
+     "y": 11,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Explorer: Mark your path with the glowing caps. That's how I get home!"
+     ],
+     "name": "Explorer",
+     "src": "n:707:1"
+    }
+   ],
+   "mons": [
+    {
+     "x": 10,
+     "y": 7,
+     "mon": "Sludgeviper"
+    },
+    {
+     "x": 10,
+     "y": 11,
+     "mon": "Lianarch"
+    }
+   ]
   },
   "708": {
    "id": "708",
@@ -26543,7 +27424,21 @@
      2
     ]
    },
-   "pkey": "sporeholm"
+   "pkey": "sporeholm",
+   "npcs": [
+    {
+     "x": 14,
+     "y": 11,
+     "art": "sporefolk",
+     "face": "down",
+     "t": [
+      "Spore Tender: Mushroom Maze B1. The glow caps point the way down.",
+      "Spore Tender: Toxin-types hide in the stinky corners. Pack Cure Spray!"
+     ],
+     "name": "Spore Tender",
+     "src": "n:708:0"
+    }
+   ]
   },
   "709": {
    "id": "709",
@@ -26688,7 +27583,20 @@
      12
     ]
    },
-   "pkey": "sporeholm"
+   "pkey": "sporeholm",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 9,
+     "art": "sporeholm_folk5",
+     "face": "down",
+     "t": [
+      "Explorer: The Deep Chamber! The biggest mushroom I've ever seen lives down here."
+     ],
+     "name": "Explorer",
+     "src": "n:710:0"
+    }
+   ]
   },
   "720": {
    "id": "720",
@@ -26736,7 +27644,7 @@
     },
     {
      "tile": [
-      22,
+      21,
       11
      ],
      "k": "stash",
@@ -26756,15 +27664,40 @@
     21
    ],
    "pkey": "sporeholm",
-   "mons": [
+   "npcs": [
     {
      "x": 5,
-     "y": 6,
-     "mon": "Miasmoth"
+     "y": 8,
+     "art": "sporeholm_folk2",
+     "face": "down",
+     "t": [
+      "Wanderer: Mirefen Secret Grove! Hidden right behind the farmstead.",
+      "Wanderer: Rare Bio-types nap under the giant caps here."
+     ],
+     "name": "Wanderer",
+     "src": "n:720:0"
     },
+    {
+     "x": 16,
+     "y": 9,
+     "art": "sporefolk",
+     "face": "down",
+     "t": [
+      "Spore Tender: Shhh! The glow moths are sleeping."
+     ],
+     "name": "Spore Tender",
+     "src": "n:720:1"
+    }
+   ],
+   "mons": [
     {
      "x": 14,
      "y": 1,
+     "mon": "Miasmoth"
+    },
+    {
+     "x": 20,
+     "y": 8,
      "mon": "Rotbloom"
     }
    ]
@@ -26811,8 +27744,8 @@
    "objects": [
     {
      "tile": [
-      16,
-      14
+      15,
+      13
      ],
      "k": "stash",
      "item": "stasis",
@@ -26948,15 +27881,40 @@
     -11
    ],
    "pkey": "sporeholm",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 8,
+     "art": "sporeholm_folk1",
+     "face": "down",
+     "t": [
+      "Botanist: Glowcap Meadow! Every mushroom here glows a different color.",
+      "Botanist: Bog Fork is just down the path."
+     ],
+     "name": "Botanist",
+     "src": "n:719:0"
+    },
+    {
+     "x": 16,
+     "y": 1,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Picnicker: I lay down here to watch the caps glow. Best show in Sporeholm!"
+     ],
+     "name": "Picnicker",
+     "src": "n:719:1"
+    }
+   ],
    "mons": [
     {
-     "x": 5,
-     "y": 6,
+     "x": 20,
+     "y": 5,
      "mon": "Sludgeviper"
     },
     {
-     "x": 20,
-     "y": 1,
+     "x": 4,
+     "y": 6,
      "mon": "Lianarch"
     }
    ]
@@ -27048,7 +28006,7 @@
      }
     },
     {
-     "x": 16,
+     "x": 17,
      "y": 2,
      "art": "explorer",
      "face": "down",
@@ -27227,8 +28185,8 @@
    "objects": [
     {
      "tile": [
-      18,
-      14
+      16,
+      12
      ],
      "k": "chest",
      "item": "revive",
@@ -27237,8 +28195,8 @@
     },
     {
      "tile": [
-      20,
-      9
+      17,
+      5
      ],
      "k": "stash",
      "item": "cure",
@@ -27247,8 +28205,8 @@
     },
     {
      "tile": [
-      9,
-      14
+      20,
+      10
      ],
      "k": "stash",
      "item": "dust",
@@ -27267,15 +28225,40 @@
     37
    ],
    "pkey": "sporeholm",
+   "npcs": [
+    {
+     "x": 13,
+     "y": 5,
+     "art": "sporeholm_folk6",
+     "face": "down",
+     "t": [
+      "Fisher: Bogwater Bend! The water is murky, but the fish are friendly.",
+      "Fisher: Lantern Marsh Shore is just back the way you came."
+     ],
+     "name": "Fisher",
+     "src": "n:718:0"
+    },
+    {
+     "x": 12,
+     "y": 6,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Bog Hiker: Hydro-types and Toxin-types share this bend. Bring a mix!"
+     ],
+     "name": "Bog Hiker",
+     "src": "n:718:1"
+    }
+   ],
    "mons": [
     {
-     "x": 11,
-     "y": 2,
+     "x": 9,
+     "y": 14,
      "mon": "Miasmoth"
     },
     {
-     "x": 16,
-     "y": 6,
+     "x": 20,
+     "y": 9,
      "mon": "Rotbloom"
     }
    ]
@@ -27490,10 +28473,46 @@
     -30
    ],
    "pkey": "sporeholm",
-   "mons": [
+   "npcs": [
+    {
+     "x": 9,
+     "y": 10,
+     "art": "sporeholm_folk1",
+     "face": "down",
+     "t": [
+      "Fan: Mycelium Bowl! The arena is made of a giant mushroom cap!",
+      "Fan: The lobby's right inside the stem doors."
+     ],
+     "name": "Fan",
+     "src": "n:702:0"
+    },
+    {
+     "x": 4,
+     "y": 10,
+     "art": "sporefolk",
+     "face": "down",
+     "t": [
+      "Spore Tender: The Relay Tower is next door. It glows extra bright on match nights."
+     ],
+     "name": "Spore Tender",
+     "src": "n:702:1"
+    },
     {
      "x": 19,
      "y": 6,
+     "art": "sporeholm_folk2",
+     "face": "down",
+     "t": [
+      "Bog Hiker: Capstep Rise is just back up the path."
+     ],
+     "name": "Bog Hiker",
+     "src": "n:702:2"
+    }
+   ],
+   "mons": [
+    {
+     "x": 1,
+     "y": 12,
      "mon": "Miasmoth"
     },
     {
@@ -27569,7 +28588,32 @@
     ]
    },
    "parent": "702",
-   "pkey": "sporeholm"
+   "pkey": "sporeholm",
+   "npcs": [
+    {
+     "x": 8,
+     "y": 10,
+     "art": "referee",
+     "face": "down",
+     "t": [
+      "Receptionist: Welcome to the Mycelium Bowl! The arena is just ahead.",
+      "Receptionist: The floor is a little squishy. Mind your step!"
+     ],
+     "name": "Receptionist",
+     "src": "n:704:0"
+    },
+    {
+     "x": 7,
+     "y": 15,
+     "art": "sporeholm_folk3",
+     "face": "down",
+     "t": [
+      "Fan: I brought spore lanterns to wave! The glow matches my team!"
+     ],
+     "name": "Fan",
+     "src": "n:704:1"
+    }
+   ]
   },
   "706": {
    "id": "706",
@@ -27683,14 +28727,39 @@
     -30
    ],
    "pkey": "sporeholm",
+   "npcs": [
+    {
+     "x": 13,
+     "y": 10,
+     "art": "sporeholm_folk6",
+     "face": "down",
+     "t": [
+      "Fan: The Sporeholm Relay Tower! The mushrooms around it glow brighter every day.",
+      "Fan: The trial floor is just inside, past the glowing caps."
+     ],
+     "name": "Fan",
+     "src": "n:725:0"
+    },
+    {
+     "x": 5,
+     "y": 8,
+     "art": "guard",
+     "face": "down",
+     "t": [
+      "Tower Guard: Bring a Plasma-type if you have one. Bio-types don't like the heat!"
+     ],
+     "name": "Tower Guard",
+     "src": "n:725:1"
+    }
+   ],
    "mons": [
     {
-     "x": 18,
-     "y": 9,
+     "x": 22,
+     "y": 11,
      "mon": "Sludgeviper"
     },
     {
-     "x": 6,
+     "x": 18,
      "y": 8,
      "mon": "Lianarch"
     }
@@ -27753,8 +28822,8 @@
    "objects": [
     {
      "tile": [
-      5,
-      13
+      8,
+      6
      ],
      "k": "stash",
      "item": "jammer",
@@ -27773,15 +28842,40 @@
     -1
    ],
    "pkey": "thalassa",
-   "mons": [
+   "npcs": [
+    {
+     "x": 7,
+     "y": 8,
+     "art": "technician",
+     "face": "down",
+     "t": [
+      "Dock Tech: Thalassa Spaceport! Ships land right next to the boat docks.",
+      "Dock Tech: Port Saltreach Docks is just past the gate."
+     ],
+     "name": "Dock Tech",
+     "src": "n:803:0"
+    },
     {
      "x": 5,
-     "y": 6,
+     "y": 12,
+     "art": "squidsailor",
+     "face": "down",
+     "t": [
+      "Traveller: I came by spaceship, but I'm leaving by boat. Adventure!"
+     ],
+     "name": "Traveller",
+     "src": "n:803:1"
+    }
+   ],
+   "mons": [
+    {
+     "x": 15,
+     "y": 11,
      "mon": "Cephalux"
     },
     {
-     "x": 12,
-     "y": 11,
+     "x": 8,
+     "y": 3,
      "mon": "Pearlord"
     }
    ]
@@ -27871,16 +28965,6 @@
      "k": "house",
      "to": "792",
      "why": "V3 kit house door"
-    },
-    {
-     "tile": [
-      14,
-      12
-     ],
-     "k": "stash",
-     "item": "jammer",
-     "n": 1,
-     "tier": 2
     }
    ],
    "spawns": {
@@ -27894,6 +28978,42 @@
     -2
    ],
    "pkey": "thalassa",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 12,
+     "art": "thalassa_folk6",
+     "face": "down",
+     "t": [
+      "Resident: Saltreach Lane Homes face the sea. You can hear the waves all night.",
+      "Resident: Saltreach Market is just down the street."
+     ],
+     "name": "Resident",
+     "src": "n:799:0"
+    },
+    {
+     "x": 4,
+     "y": 12,
+     "art": "thalassa_folk1",
+     "face": "down",
+     "t": [
+      "Kid: I found a crab in my shoe this morning. I named him Pinchy!"
+     ],
+     "name": "Kid",
+     "src": "n:799:1"
+    },
+    {
+     "x": 14,
+     "y": 12,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Neighbour: The boardwalk is just around the corner if you want to stroll."
+     ],
+     "name": "Neighbour",
+     "src": "n:799:2"
+    }
+   ],
    "mons": [
     {
      "x": 7,
@@ -28005,16 +29125,6 @@
      "k": "house",
      "to": "191",
      "why": "V3 kit house door"
-    },
-    {
-     "tile": [
-      1,
-      9
-     ],
-     "k": "stash",
-     "item": "megagel",
-     "n": 1,
-     "tier": 2
     }
    ],
    "spawns": {
@@ -28028,10 +29138,35 @@
     -14
    ],
    "pkey": "thalassa",
-   "mons": [
+   "npcs": [
     {
      "x": 14,
      "y": 14,
+     "art": "thalassa_folk2",
+     "face": "down",
+     "t": [
+      "Old Resident: Saltreach Quiet Court is peaceful. Just gulls and waves.",
+      "Old Resident: There's a secret grove out back. Lovely palm trees!"
+     ],
+     "name": "Old Resident",
+     "src": "n:800:0"
+    },
+    {
+     "x": 1,
+     "y": 4,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Fisher: I fish off my porch every morning. Mostly I catch seaweed."
+     ],
+     "name": "Fisher",
+     "src": "n:800:1"
+    }
+   ],
+   "mons": [
+    {
+     "x": 1,
+     "y": 9,
      "mon": "Fogwisp"
     }
    ]
@@ -28126,10 +29261,35 @@
     16
    ],
    "pkey": "thalassa",
+   "npcs": [
+    {
+     "x": 12,
+     "y": 10,
+     "art": "thalassa_folk3",
+     "face": "down",
+     "t": [
+      "Farmer: Saltreach Farmstead grows sea grapes and kelp. Salty and delicious!",
+      "Farmer: Lagoon Fork is just down the path."
+     ],
+     "name": "Farmer",
+     "src": "n:801:0"
+    },
+    {
+     "x": 16,
+     "y": 10,
+     "art": "sheepkid",
+     "face": "down",
+     "t": [
+      "Farm Kid: I feed the farm critters seaweed snacks. They love them!"
+     ],
+     "name": "Farm Kid",
+     "src": "n:801:1"
+    }
+   ],
    "mons": [
     {
-     "x": 17,
-     "y": 12,
+     "x": 6,
+     "y": 10,
      "mon": "Bubbub"
     }
    ]
@@ -28183,7 +29343,32 @@
     ]
    },
    "parent": "799",
-   "pkey": "thalassa"
+   "pkey": "thalassa",
+   "npcs": [
+    {
+     "x": 11,
+     "y": 10,
+     "art": "thalassa_folk3",
+     "face": "down",
+     "t": [
+      "Harbormaster: Welcome to the Harbormaster's Office. I keep track of every boat in port.",
+      "Harbormaster: The harbor's busy today. Three ships in, two out, and one lost hat."
+     ],
+     "name": "Harbormaster",
+     "src": "n:791:0"
+    },
+    {
+     "x": 6,
+     "y": 7,
+     "art": "squidsailor",
+     "face": "down",
+     "t": [
+      "Sailor: I'm here to sign in my boat. The paperwork takes longer than the trip!"
+     ],
+     "name": "Sailor",
+     "src": "n:791:1"
+    }
+   ]
   },
   "792": {
    "id": "792",
@@ -28234,7 +29419,32 @@
     ]
    },
    "parent": "799",
-   "pkey": "thalassa"
+   "pkey": "thalassa",
+   "npcs": [
+    {
+     "x": 9,
+     "y": 10,
+     "art": "thalassa_folk4",
+     "face": "down",
+     "t": [
+      "Fishmonger: Fresh fish! Caught this morning! Well, most of it.",
+      "Fishmonger: My best customers are hungry Alienmon. They pay in smiles."
+     ],
+     "name": "Fishmonger",
+     "src": "n:792:0"
+    },
+    {
+     "x": 12,
+     "y": 15,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Shopper: I just want one fish. Why are there so many kinds?"
+     ],
+     "name": "Shopper",
+     "src": "n:792:1"
+    }
+   ]
   },
   "793": {
    "id": "793",
@@ -28285,7 +29495,21 @@
     ]
    },
    "parent": "800",
-   "pkey": "thalassa"
+   "pkey": "thalassa",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 10,
+     "art": "squidsailor",
+     "face": "down",
+     "t": [
+      "Ship's Mate: This is the Captain's Cabin. Maps, compasses, and lots of seashells.",
+      "Ship's Mate: The captain's out at sea. I'm keeping things tidy until they're back."
+     ],
+     "name": "Ship's Mate",
+     "src": "n:793:0"
+    }
+   ]
   },
   "776": {
    "id": "776",
@@ -28434,8 +29658,8 @@
    "objects": [
     {
      "tile": [
-      14,
-      4
+      15,
+      6
      ],
      "k": "chest",
      "item": "fullgel",
@@ -28444,8 +29668,8 @@
     },
     {
      "tile": [
-      7,
-      10
+      8,
+      11
      ],
      "k": "stash",
      "item": "stasis",
@@ -28455,7 +29679,7 @@
     {
      "tile": [
       1,
-      11
+      9
      ],
      "k": "stash",
      "item": "harmonic",
@@ -28474,15 +29698,40 @@
     -18
    ],
    "pkey": "thalassa",
-   "mons": [
+   "npcs": [
     {
-     "x": 21,
-     "y": 12,
-     "mon": "Bubblorca"
+     "x": 14,
+     "y": 10,
+     "art": "thalassa_folk2",
+     "face": "down",
+     "t": [
+      "Wanderer: Saltreach Secret Grove! Palm trees and sea breeze. Perfect!",
+      "Wanderer: Rare Hydro-types nap in the shady pools here."
+     ],
+     "name": "Wanderer",
+     "src": "n:790:0"
     },
+    {
+     "x": 7,
+     "y": 10,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Picnicker: I found this place behind the Quiet Court. Best picnic spot ever!"
+     ],
+     "name": "Picnicker",
+     "src": "n:790:1"
+    }
+   ],
+   "mons": [
     {
      "x": 19,
      "y": 6,
+     "mon": "Bubblorca"
+    },
+    {
+     "x": 21,
+     "y": 12,
      "mon": "Clawfort"
     }
    ]
@@ -28816,6 +30065,31 @@
     52
    ],
    "pkey": "thalassa",
+   "npcs": [
+    {
+     "x": 2,
+     "y": 7,
+     "art": "thalassa_folk4",
+     "face": "down",
+     "t": [
+      "Surfer: Open Water Shore! The waves here are perfect for surfing.",
+      "Surfer: Coral Cove is just back that way."
+     ],
+     "name": "Surfer",
+     "src": "n:804:0"
+    },
+    {
+     "x": 1,
+     "y": 11,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Swimmer: Hydro-types surf the waves right alongside me!"
+     ],
+     "name": "Swimmer",
+     "src": "n:804:1"
+    }
+   ],
    "mons": []
   },
   "778": {
@@ -28973,8 +30247,8 @@
    "objects": [
     {
      "tile": [
-      22,
-      12
+      2,
+      10
      ],
      "k": "stash",
      "item": "jammer",
@@ -28983,8 +30257,8 @@
     },
     {
      "tile": [
-      13,
-      4
+      21,
+      11
      ],
      "k": "stash",
      "item": "dust",
@@ -29006,7 +30280,7 @@
    "npcs": [
     {
      "x": 9,
-     "y": 5,
+     "y": 7,
      "art": "wanderer",
      "face": "down",
      "t": [
@@ -29016,8 +30290,8 @@
      "src": "p:779:0"
     },
     {
-     "x": 13,
-     "y": 10,
+     "x": 14,
+     "y": 11,
      "art": "squidsailor",
      "face": "down",
      "t": [
@@ -29027,10 +30301,10 @@
      "src": "p:779:1"
     },
     {
-     "x": 12,
-     "y": 3,
+     "x": 5,
+     "y": 7,
      "art": "guard",
-     "face": "left",
+     "face": "right",
      "t": [],
      "id": "sec779_tr2",
      "trainer": {
@@ -29040,10 +30314,10 @@
      }
     },
     {
-     "x": 10,
-     "y": 2,
+     "x": 12,
+     "y": 3,
      "art": "squidsailor",
-     "face": "down",
+     "face": "left",
      "t": [],
      "id": "sec779_tr3",
      "trainer": {
@@ -29055,9 +30329,14 @@
    ],
    "mons": [
     {
-     "x": 21,
-     "y": 11,
+     "x": 22,
+     "y": 12,
      "mon": "Cephalux"
+    },
+    {
+     "x": 4,
+     "y": 11,
+     "mon": "Pearlord"
     }
    ]
   },
@@ -29098,18 +30377,7 @@
      "kind": "stairs"
     }
    ],
-   "objects": [
-    {
-     "tile": [
-      9,
-      6
-     ],
-     "k": "stash",
-     "item": "revive",
-     "n": 1,
-     "tier": 2
-    }
-   ],
+   "objects": [],
    "spawns": {
     "default": [
      10,
@@ -29121,13 +30389,32 @@
     -32
    ],
    "pkey": "thalassa",
-   "mons": [
+   "npcs": [
+    {
+     "x": 9,
+     "y": 6,
+     "art": "thalassa_folk3",
+     "face": "down",
+     "t": [
+      "Beachcomber: The Sea Cave is just through there. The tide flows right in!",
+      "Beachcomber: Dune Stairway is back up the path."
+     ],
+     "name": "Beachcomber",
+     "src": "n:772:0"
+    },
     {
      "x": 9,
      "y": 5,
-     "mon": "Bubblorca"
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Explorer: Bring a Volt-type. Hydro-types love those caves."
+     ],
+     "name": "Explorer",
+     "src": "n:772:1"
     }
-   ]
+   ],
+   "mons": []
   },
   "773": {
    "id": "773",
@@ -29188,7 +30475,21 @@
      3
     ]
    },
-   "pkey": "thalassa"
+   "pkey": "thalassa",
+   "npcs": [
+    {
+     "x": 18,
+     "y": 8,
+     "art": "squidsailor",
+     "face": "down",
+     "t": [
+      "Sailor: B1 of the Sea Cave. Mind the puddles. Some of them bite.",
+      "Sailor: The way down to B2 is past the tide pools."
+     ],
+     "name": "Sailor",
+     "src": "n:773:0"
+    }
+   ]
   },
   "774": {
    "id": "774",
@@ -29259,7 +30560,20 @@
      4
     ]
    },
-   "pkey": "thalassa"
+   "pkey": "thalassa",
+   "npcs": [
+    {
+     "x": 12,
+     "y": 6,
+     "art": "thalassa_folk4",
+     "face": "down",
+     "t": [
+      "Diver: B2! The Deep Chamber is just ahead. The water glows blue down there."
+     ],
+     "name": "Diver",
+     "src": "n:774:0"
+    }
+   ]
   },
   "775": {
    "id": "775",
@@ -29317,7 +30631,20 @@
      12
     ]
    },
-   "pkey": "thalassa"
+   "pkey": "thalassa",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 9,
+     "art": "thalassa_folk5",
+     "face": "down",
+     "t": [
+      "Explorer: The Deep Chamber! I can hear the waves crashing above us."
+     ],
+     "name": "Explorer",
+     "src": "n:775:0"
+    }
+   ]
   },
   "777": {
    "id": "777",
@@ -29661,15 +30988,51 @@
     -29
    ],
    "pkey": "thalassa",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 9,
+     "art": "thalassa_folk1",
+     "face": "down",
+     "t": [
+      "Fan: Tidewater Arena! Battles with the sea spray in your face!",
+      "Fan: The lobby's right through the dock doors."
+     ],
+     "name": "Fan",
+     "src": "n:768:0"
+    },
+    {
+     "x": 5,
+     "y": 10,
+     "art": "squidsailor",
+     "face": "down",
+     "t": [
+      "Sailor: The Harbor Relay Tower is just next door. You can see it from the boats!"
+     ],
+     "name": "Sailor",
+     "src": "n:768:1"
+    },
+    {
+     "x": 16,
+     "y": 13,
+     "art": "snacktrader",
+     "face": "down",
+     "t": [
+      "Snack Trader: Fish sticks! Fresh from the harbor! Get 'em while they're hot!"
+     ],
+     "name": "Snack Trader",
+     "src": "n:768:2"
+    }
+   ],
    "mons": [
     {
-     "x": 7,
-     "y": 7,
+     "x": 1,
+     "y": 12,
      "mon": "Bubblorca"
     },
     {
-     "x": 1,
-     "y": 9,
+     "x": 7,
+     "y": 7,
      "mon": "Clawfort"
     }
    ]
@@ -29740,7 +31103,32 @@
     ]
    },
    "parent": "768",
-   "pkey": "thalassa"
+   "pkey": "thalassa",
+   "npcs": [
+    {
+     "x": 8,
+     "y": 10,
+     "art": "referee",
+     "face": "down",
+     "t": [
+      "Receptionist: Welcome to Tidewater Arena! The Battle Room is just past the lobby.",
+      "Receptionist: Hydro-types make a big splash here. Literally!"
+     ],
+     "name": "Receptionist",
+     "src": "n:769:0"
+    },
+    {
+     "x": 6,
+     "y": 14,
+     "art": "thalassa_folk2",
+     "face": "down",
+     "t": [
+      "Fan: I got soaked in the front row last time. Best seats in the house!"
+     ],
+     "name": "Fan",
+     "src": "n:769:1"
+    }
+   ]
   },
   "770": {
    "id": "770",
@@ -29834,8 +31222,8 @@
    "objects": [
     {
      "tile": [
-      21,
-      9
+      19,
+      12
      ],
      "k": "stash",
      "item": "gel",
@@ -29854,14 +31242,39 @@
     -29
    ],
    "pkey": "thalassa",
+   "npcs": [
+    {
+     "x": 14,
+     "y": 10,
+     "art": "thalassa_folk5",
+     "face": "down",
+     "t": [
+      "Fan: The Harbor Relay Tower! It lights the way for ships at night.",
+      "Fan: Climb inside to the trial floor. The sea breeze follows you up!"
+     ],
+     "name": "Fan",
+     "src": "n:795:0"
+    },
+    {
+     "x": 4,
+     "y": 12,
+     "art": "guard",
+     "face": "down",
+     "t": [
+      "Tower Guard: Hydro-types rule this tower. Bring Volt or Bio types if you've got 'em!"
+     ],
+     "name": "Tower Guard",
+     "src": "n:795:1"
+    }
+   ],
    "mons": [
     {
-     "x": 16,
-     "y": 8,
+     "x": 21,
+     "y": 9,
      "mon": "Cephalux"
     },
     {
-     "x": 7,
+     "x": 10,
      "y": 12,
      "mon": "Pearlord"
     }
@@ -29942,15 +31355,40 @@
     3
    ],
    "pkey": "thalassa",
-   "mons": [
+   "npcs": [
     {
-     "x": 16,
-     "y": 8,
-     "mon": "Bubblorca"
+     "x": 13,
+     "y": 10,
+     "art": "squidsailor",
+     "face": "down",
+     "t": [
+      "Boat Builder: Saltreach Boathouse. We build and fix all the boats in the harbor.",
+      "Boat Builder: Hmm, the back door's been open a lot lately. Strange."
+     ],
+     "name": "Boat Builder",
+     "src": "n:786:0"
     },
+    {
+     "x": 6,
+     "y": 12,
+     "art": "thalassa_folk1",
+     "face": "down",
+     "t": [
+      "Dockhand: Dune Junction is just up the path."
+     ],
+     "name": "Dockhand",
+     "src": "n:786:1"
+    }
+   ],
+   "mons": [
     {
      "x": 22,
      "y": 11,
+     "mon": "Bubblorca"
+    },
+    {
+     "x": 18,
+     "y": 7,
      "mon": "Clawfort"
     }
    ]
@@ -30008,7 +31446,21 @@
     ]
    },
    "parent": "786",
-   "pkey": "thalassa"
+   "pkey": "thalassa",
+   "npcs": [
+    {
+     "x": 14,
+     "y": 14,
+     "art": "researcher",
+     "face": "down",
+     "t": [
+      "Helix Scientist: Ugh, the boathouse door again. This lab is very damp and very private.",
+      "Helix Scientist: Look, I just study fish. Mostly fish. Please don't touch the tanks."
+     ],
+     "name": "Helix Scientist",
+     "src": "n:787:0"
+    }
+   ]
   },
   "784": {
    "id": "784",
@@ -30044,7 +31496,7 @@
    "objects": [
     {
      "tile": [
-      21,
+      10,
       3
      ],
      "k": "stash",
@@ -30076,10 +31528,10 @@
    "pkey": "thalassa",
    "npcs": [
     {
-     "x": 8,
+     "x": 6,
      "y": 8,
      "art": "civilian",
-     "face": "down",
+     "face": "right",
      "t": [],
      "id": "sec784_tr0",
      "trainer": {
@@ -30089,8 +31541,8 @@
      }
     },
     {
-     "x": 9,
-     "y": 6,
+     "x": 12,
+     "y": 3,
      "art": "guard",
      "face": "right",
      "t": [],
@@ -30109,8 +31561,8 @@
      "mon": "Bubblorca"
     },
     {
-     "x": 6,
-     "y": 9,
+     "x": 21,
+     "y": 3,
      "mon": "Clawfort"
     }
    ]
@@ -30141,8 +31593,8 @@
    "objects": [
     {
      "tile": [
-      22,
-      13
+      20,
+      12
      ],
      "k": "chest",
      "item": "revive",
@@ -30181,15 +31633,40 @@
     35
    ],
    "pkey": "thalassa",
+   "npcs": [
+    {
+     "x": 13,
+     "y": 5,
+     "art": "thalassa_folk6",
+     "face": "down",
+     "t": [
+      "Beachcomber: Driftwood Hollows! The waves wash up all sorts of treasures here.",
+      "Beachcomber: Tidal Inlet is just back the way you came."
+     ],
+     "name": "Beachcomber",
+     "src": "n:783:0"
+    },
+    {
+     "x": 3,
+     "y": 8,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Swimmer: I built a fort out of driftwood! Wanna see?"
+     ],
+     "name": "Swimmer",
+     "src": "n:783:1"
+    }
+   ],
    "mons": [
     {
-     "x": 11,
-     "y": 2,
+     "x": 20,
+     "y": 3,
      "mon": "Cephalux"
     },
     {
-     "x": 19,
-     "y": 4,
+     "x": 7,
+     "y": 12,
      "mon": "Pearlord"
     }
    ]
@@ -30271,6 +31748,31 @@
     0
    ],
    "pkey": "neonis",
+   "npcs": [
+    {
+     "x": 7,
+     "y": 10,
+     "art": "technician",
+     "face": "down",
+     "t": [
+      "Dock Tech: Neonis Spaceport! Ships land right on the neon pads.",
+      "Dock Tech: The Starport is just through the gate."
+     ],
+     "name": "Dock Tech",
+     "src": "n:666:0"
+    },
+    {
+     "x": 17,
+     "y": 8,
+     "art": "neonis_folk1",
+     "face": "down",
+     "t": [
+      "Traveller: I came for the arcades. I'm leaving with zero Stardust and a giant plush toy."
+     ],
+     "name": "Traveller",
+     "src": "n:666:1"
+    }
+   ],
    "mons": [
     {
      "x": 4,
@@ -30382,6 +31884,31 @@
     -3
    ],
    "pkey": "neonis",
+   "npcs": [
+    {
+     "x": 12,
+     "y": 11,
+     "art": "neonis_folk3",
+     "face": "down",
+     "t": [
+      "Resident: Neonis Lane Homes. Little apartments with big glowing signs.",
+      "Resident: Neon Boulevard is just down the street."
+     ],
+     "name": "Resident",
+     "src": "n:662:0"
+    },
+    {
+     "x": 4,
+     "y": 11,
+     "art": "neonis_folk4",
+     "face": "down",
+     "t": [
+      "Kid: My window faces a giant sign. It's always daytime in my room!"
+     ],
+     "name": "Kid",
+     "src": "n:662:1"
+    }
+   ],
    "mons": []
   },
   "663": {
@@ -30455,6 +31982,24 @@
     },
     {
      "tile": [
+      20,
+      12
+     ],
+     "k": "house",
+     "to": "192",
+     "why": "V3 kit house door"
+    },
+    {
+     "tile": [
+      21,
+      12
+     ],
+     "k": "house",
+     "to": "192",
+     "why": "V3 kit house door"
+    },
+    {
+     "tile": [
       21,
       4
      ],
@@ -30475,10 +32020,35 @@
     -16
    ],
    "pkey": "neonis",
-   "mons": [
+   "npcs": [
     {
      "x": 19,
-     "y": 13,
+     "y": 7,
+     "art": "neonis_folk5",
+     "face": "down",
+     "t": [
+      "Old Resident: Neonis Quiet Court is the only dark spot in the city. Lovely, isn't it?",
+      "Old Resident: Neon Crossroads is close by."
+     ],
+     "name": "Old Resident",
+     "src": "n:663:0"
+    },
+    {
+     "x": 19,
+     "y": 6,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Cat Owner: My cat stares at the neon all night. I think it likes the colours."
+     ],
+     "name": "Cat Owner",
+     "src": "n:663:1"
+    }
+   ],
+   "mons": [
+    {
+     "x": 22,
+     "y": 8,
      "mon": "Ampup"
     }
    ]
@@ -30573,9 +32143,34 @@
     16
    ],
    "pkey": "neonis",
+   "npcs": [
+    {
+     "x": 12,
+     "y": 11,
+     "art": "neonis_folk6",
+     "face": "down",
+     "t": [
+      "Farmer: Neonis Farmstead Edge grows glowing lettuce under the city lights!",
+      "Farmer: The Megadome is right next door. Very noisy at night!"
+     ],
+     "name": "Farmer",
+     "src": "n:664:0"
+    },
+    {
+     "x": 7,
+     "y": 11,
+     "art": "sheepkid",
+     "face": "down",
+     "t": [
+      "Farm Kid: I feed the glow sheep every morning. They sparkle when they're happy!"
+     ],
+     "name": "Farm Kid",
+     "src": "n:664:1"
+    }
+   ],
    "mons": [
     {
-     "x": 8,
+     "x": 20,
      "y": 11,
      "mon": "Bulbit"
     }
@@ -31010,15 +32605,40 @@
     -34
    ],
    "pkey": "neonis",
-   "mons": [
+   "npcs": [
+    {
+     "x": 9,
+     "y": 8,
+     "art": "neonis_folk4",
+     "face": "down",
+     "t": [
+      "Courier: The Undercity Tunnels are down there. Dark and full of old wires!",
+      "Courier: Skyline Overlook is back up the stairs."
+     ],
+     "name": "Courier",
+     "src": "n:639:0"
+    },
     {
      "x": 7,
-     "y": 7,
+     "y": 11,
+     "art": "technician",
+     "face": "down",
+     "t": [
+      "Coder: I'm fixing the tunnel signs. They keep saying 'ERROR' instead of 'EXIT'."
+     ],
+     "name": "Coder",
+     "src": "n:639:1"
+    }
+   ],
+   "mons": [
+    {
+     "x": 18,
+     "y": 9,
      "mon": "Amplion"
     },
     {
-     "x": 15,
-     "y": 9,
+     "x": 4,
+     "y": 7,
      "mon": "Transmitron"
     }
    ]
@@ -31092,7 +32712,21 @@
      3
     ]
    },
-   "pkey": "neonis"
+   "pkey": "neonis",
+   "npcs": [
+    {
+     "x": 18,
+     "y": 8,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Explorer: B1 of the Undercity. Volt-types chew on the old cables down here.",
+      "Explorer: The stairs to B2 are past the old train car."
+     ],
+     "name": "Explorer",
+     "src": "n:640:0"
+    }
+   ]
   },
   "641": {
    "id": "641",
@@ -31153,7 +32787,20 @@
      4
     ]
    },
-   "pkey": "neonis"
+   "pkey": "neonis",
+   "npcs": [
+    {
+     "x": 4,
+     "y": 8,
+     "art": "neonis_folk5",
+     "face": "down",
+     "t": [
+      "Repair Tech: B2 already! The Deep Chamber is just ahead. Spooky hum down there."
+     ],
+     "name": "Repair Tech",
+     "src": "n:641:0"
+    }
+   ]
   },
   "642": {
    "id": "642",
@@ -31221,7 +32868,20 @@
      12
     ]
    },
-   "pkey": "neonis"
+   "pkey": "neonis",
+   "npcs": [
+    {
+     "x": 11,
+     "y": 9,
+     "art": "neonis_folk6",
+     "face": "down",
+     "t": [
+      "Tunnel Rat: The Deep Chamber! I live down here. Rent's cheap."
+     ],
+     "name": "Tunnel Rat",
+     "src": "n:642:0"
+    }
+   ]
   },
   "659": {
    "id": "659",
@@ -31298,9 +32958,45 @@
     -8
    ],
    "pkey": "neonis",
+   "npcs": [
+    {
+     "x": 13,
+     "y": 11,
+     "art": "neonis_folk1",
+     "face": "down",
+     "t": [
+      "Fan: Voltspire Plaza! The Relay Tower crackles with lightning.",
+      "Fan: Step through the doors to the trial floor. Sparks fly in there!"
+     ],
+     "name": "Fan",
+     "src": "n:659:0"
+    },
+    {
+     "x": 4,
+     "y": 13,
+     "art": "guard",
+     "face": "down",
+     "t": [
+      "Tower Guard: Volt-types rule this tower. Bring a Gravity-type or something that grounds them!"
+     ],
+     "name": "Tower Guard",
+     "src": "n:659:1"
+    },
+    {
+     "x": 20,
+     "y": 11,
+     "art": "neonis_folk2",
+     "face": "down",
+     "t": [
+      "Raver: The plaza lights pulse to the beat of the tower. Dance with me!"
+     ],
+     "name": "Raver",
+     "src": "n:659:2"
+    }
+   ],
    "mons": [
     {
-     "x": 18,
+     "x": 17,
      "y": 9,
      "mon": "Amplion"
     },
@@ -31559,7 +33255,7 @@
     {
      "tile": [
       16,
-      4
+      6
      ],
      "k": "chest",
      "item": "fullgel",
@@ -31568,8 +33264,8 @@
     },
     {
      "tile": [
-      7,
-      10
+      18,
+      1
      ],
      "k": "stash",
      "item": "ether",
@@ -31578,8 +33274,8 @@
     },
     {
      "tile": [
-      20,
-      1
+      8,
+      9
      ],
      "k": "stash",
      "item": "revive",
@@ -31598,15 +33294,40 @@
     28
    ],
    "pkey": "neonis",
+   "npcs": [
+    {
+     "x": 6,
+     "y": 9,
+     "art": "neonis_folk3",
+     "face": "down",
+     "t": [
+      "Gardener: Glowgarden Hideaway! Plants that glow like neon signs!",
+      "Gardener: Rare Alienmon nap under the bright leaves."
+     ],
+     "name": "Gardener",
+     "src": "n:654:0"
+    },
+    {
+     "x": 15,
+     "y": 10,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Visitor: I found this place off Canal Fork. Shhh, keep it a secret!"
+     ],
+     "name": "Visitor",
+     "src": "n:654:1"
+    }
+   ],
    "mons": [
     {
-     "x": 5,
-     "y": 6,
+     "x": 19,
+     "y": 1,
      "mon": "Filamaw"
     },
     {
-     "x": 10,
-     "y": 10,
+     "x": 14,
+     "y": 2,
      "mon": "Arclume"
     }
    ]
@@ -31686,15 +33407,40 @@
     29
    ],
    "pkey": "neonis",
+   "npcs": [
+    {
+     "x": 13,
+     "y": 10,
+     "art": "helix_folk1",
+     "face": "down",
+     "t": [
+      "Receptionist: Welcome to the Helix Front Office. Please take a number.",
+      "Receptionist: The lab in the back is for staff only. Supposedly."
+     ],
+     "name": "Receptionist",
+     "src": "n:652:0"
+    },
+    {
+     "x": 5,
+     "y": 7,
+     "art": "neonis_folk2",
+     "face": "down",
+     "t": [
+      "Visitor: I came here to complain about the noise. Nobody's listening."
+     ],
+     "name": "Visitor",
+     "src": "n:652:1"
+    }
+   ],
    "mons": [
     {
-     "x": 7,
-     "y": 7,
+     "x": 19,
+     "y": 8,
      "mon": "Filamaw"
     },
     {
-     "x": 18,
-     "y": 7,
+     "x": 21,
+     "y": 12,
      "mon": "Arclume"
     }
    ]
@@ -31752,7 +33498,21 @@
     ]
    },
    "parent": "652",
-   "pkey": "neonis"
+   "pkey": "neonis",
+   "npcs": [
+    {
+     "x": 6,
+     "y": 14,
+     "art": "researcher",
+     "face": "down",
+     "t": [
+      "Helix Scientist: Oh no, a visitor. Please don't touch the screens. They're very sensitive.",
+      "Helix Scientist: I'm just running a test. Nothing to see. Okay, a little to see."
+     ],
+     "name": "Helix Scientist",
+     "src": "n:653:0"
+    }
+   ]
   },
   "648": {
    "id": "648",
@@ -31991,7 +33751,7 @@
     {
      "tile": [
       14,
-      15
+      12
      ],
      "k": "chest",
      "item": "harmonic",
@@ -32030,6 +33790,31 @@
     94
    ],
    "pkey": "neonis",
+   "npcs": [
+    {
+     "x": 7,
+     "y": 11,
+     "art": "neonis_folk1",
+     "face": "down",
+     "t": [
+      "Boater: The Static Canal fizzes with Volt energy. Don't dip your toes in!",
+      "Boater: Arcade Alleys is just back the way you came."
+     ],
+     "name": "Boater",
+     "src": "n:650:0"
+    },
+    {
+     "x": 4,
+     "y": 9,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Fisher: I fish here every night. I mostly catch glowing boots."
+     ],
+     "name": "Fisher",
+     "src": "n:650:1"
+    }
+   ],
    "mons": [
     {
      "x": 7,
@@ -32118,6 +33903,42 @@
     14
    ],
    "pkey": "neonis",
+   "npcs": [
+    {
+     "x": 13,
+     "y": 10,
+     "art": "neonis_folk1",
+     "face": "down",
+     "t": [
+      "Fan: Neon Megadome! The lights flash with every hit. So cool!",
+      "Fan: The lobby's right through the glowing doors."
+     ],
+     "name": "Fan",
+     "src": "n:635:0"
+    },
+    {
+     "x": 10,
+     "y": 13,
+     "art": "neonis_folk2",
+     "face": "down",
+     "t": [
+      "Raver: I came for the battles. I stayed for the light show."
+     ],
+     "name": "Raver",
+     "src": "n:635:1"
+    },
+    {
+     "x": 20,
+     "y": 10,
+     "art": "snacktrader",
+     "face": "down",
+     "t": [
+      "Snack Trader: Glow pops! Get your glow pops! They sparkle in your mouth!"
+     ],
+     "name": "Snack Trader",
+     "src": "n:635:2"
+    }
+   ],
    "mons": [
     {
      "x": 16,
@@ -32125,7 +33946,7 @@
      "mon": "Amplion"
     },
     {
-     "x": 21,
+     "x": 17,
      "y": 12,
      "mon": "Transmitron"
     }
@@ -32197,7 +34018,32 @@
     ]
    },
    "parent": "635",
-   "pkey": "neonis"
+   "pkey": "neonis",
+   "npcs": [
+    {
+     "x": 8,
+     "y": 10,
+     "art": "referee",
+     "face": "down",
+     "t": [
+      "Receptionist: Welcome to the Neon Megadome! The Battle Floor is just ahead.",
+      "Receptionist: Sunglasses are recommended. The lights are very bright!"
+     ],
+     "name": "Receptionist",
+     "src": "n:636:0"
+    },
+    {
+     "x": 6,
+     "y": 14,
+     "art": "neonis_folk3",
+     "face": "down",
+     "t": [
+      "Fan: I painted my face with glowing paint. My mom will be thrilled."
+     ],
+     "name": "Fan",
+     "src": "n:636:1"
+    }
+   ]
   },
   "637": {
    "id": "637",
@@ -32285,7 +34131,32 @@
     ]
    },
    "parent": "663",
-   "pkey": "neonis"
+   "pkey": "neonis",
+   "npcs": [
+    {
+     "x": 9,
+     "y": 13,
+     "art": "neonis_folk4",
+     "face": "down",
+     "t": [
+      "Producer: The Recording Studio! We record Sonic-type songs here.",
+      "Producer: Listen to that beat! Sonic-types are total naturals."
+     ],
+     "name": "Producer",
+     "src": "n:656:0"
+    },
+    {
+     "x": 12,
+     "y": 8,
+     "art": "neonis_folk5",
+     "face": "down",
+     "t": [
+      "Singer: I'm practicing my high notes. LA LA LAAAA! How was that?"
+     ],
+     "name": "Singer",
+     "src": "n:656:1"
+    }
+   ]
   },
   "657": {
    "id": "657",
@@ -32336,7 +34207,32 @@
     ]
    },
    "parent": "662",
-   "pkey": "neonis"
+   "pkey": "neonis",
+   "npcs": [
+    {
+     "x": 9,
+     "y": 9,
+     "art": "neonis_folk6",
+     "face": "down",
+     "t": [
+      "Noodle Chef: Welcome to the Noodle Bar! Spicy, sweet, or extra glowing?",
+      "Noodle Chef: Slurping is allowed. Encouraged, even!"
+     ],
+     "name": "Noodle Chef",
+     "src": "n:657:0"
+    },
+    {
+     "x": 12,
+     "y": 14,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Regular: I come here every night after work. The noodles never disappoint."
+     ],
+     "name": "Regular",
+     "src": "n:657:1"
+    }
+   ]
   },
   "566": {
    "id": "566",
@@ -32446,9 +34342,34 @@
     -4
    ],
    "pkey": "glyphos",
-   "mons": [
+   "npcs": [
     {
      "x": 12,
+     "y": 13,
+     "art": "glyphos_folk1",
+     "face": "down",
+     "t": [
+      "Resident: Dig Camp Lane Homes. We live in tents and huts close to the dig.",
+      "Resident: The farmstead is just down the path."
+     ],
+     "name": "Resident",
+     "src": "n:566:0"
+    },
+    {
+     "x": 6,
+     "y": 13,
+     "art": "glyphos_folk2",
+     "face": "down",
+     "t": [
+      "Kid: I dug a hole so deep I found another hole!"
+     ],
+     "name": "Kid",
+     "src": "n:566:1"
+    }
+   ],
+   "mons": [
+    {
+     "x": 19,
      "y": 13,
      "mon": "Chimelet"
     }
@@ -32544,10 +34465,35 @@
     -2
    ],
    "pkey": "glyphos",
+   "npcs": [
+    {
+     "x": 12,
+     "y": 11,
+     "art": "glyphos_folk4",
+     "face": "down",
+     "t": [
+      "Farmer: We grow date palms and sand beans. Desert farming takes patience!",
+      "Farmer: The crossroads is just over the hill."
+     ],
+     "name": "Farmer",
+     "src": "n:568:0"
+    },
+    {
+     "x": 4,
+     "y": 11,
+     "art": "sheepkid",
+     "face": "down",
+     "t": [
+      "Farm Kid: My job is to chase Swarm-types off the date palms. They're sneaky!"
+     ],
+     "name": "Farm Kid",
+     "src": "n:568:1"
+    }
+   ],
    "mons": [
     {
-     "x": 8,
-     "y": 11,
+     "x": 18,
+     "y": 12,
      "mon": "Monolet"
     }
    ]
@@ -32571,7 +34517,7 @@
       10,
       13
      ],
-     "offset": -10
+     "offset": 0
     }
    },
    "warps": [],
@@ -32666,14 +34612,39 @@
     ]
    },
    "grid": [
-    66,
+    76,
     -34
    ],
    "pkey": "glyphos",
+   "npcs": [
+    {
+     "x": 4,
+     "y": 7,
+     "art": "glyphos_folk3",
+     "face": "down",
+     "t": [
+      "Old Resident: Dig Camp Quiet Court is where retired diggers rest their backs.",
+      "Old Resident: Ruin Crossroads is close by if you need to head out."
+     ],
+     "name": "Old Resident",
+     "src": "n:567:0"
+    },
+    {
+     "x": 4,
+     "y": 6,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Storyteller: Sit by the fire tonight and I'll tell you about the old glyph kings."
+     ],
+     "name": "Storyteller",
+     "src": "n:567:1"
+    }
+   ],
    "mons": [
     {
      "x": 1,
-     "y": 6,
+     "y": 8,
      "mon": "Glyphling"
     }
    ]
@@ -32702,10 +34673,10 @@
     "top": {
      "to": "567",
      "range": [
-      0,
+      10,
       15
      ],
-     "offset": 10
+     "offset": 0
     },
     "right": {
      "to": "570",
@@ -32887,15 +34858,40 @@
     -25
    ],
    "pkey": "glyphos",
+   "npcs": [
+    {
+     "x": 7,
+     "y": 8,
+     "art": "technician",
+     "face": "down",
+     "t": [
+      "Dock Tech: Glyphos Spaceport! Sand storms make landing an adventure.",
+      "Dock Tech: Ruin Crossroads is right outside the gate."
+     ],
+     "name": "Dock Tech",
+     "src": "n:570:0"
+    },
+    {
+     "x": 17,
+     "y": 9,
+     "art": "glyphos_folk5",
+     "face": "down",
+     "t": [
+      "Traveller: I came to see the ruins. I brought a hat and three water bottles."
+     ],
+     "name": "Traveller",
+     "src": "n:570:1"
+    }
+   ],
    "mons": [
     {
-     "x": 6,
+     "x": 19,
      "y": 3,
      "mon": "Runeguard"
     },
     {
-     "x": 17,
-     "y": 3,
+     "x": 5,
+     "y": 2,
      "mon": "Obeliskor"
     }
    ]
@@ -33166,8 +35162,8 @@
    "objects": [
     {
      "tile": [
-      4,
-      7
+      20,
+      8
      ],
      "k": "stash",
      "item": "ether",
@@ -33176,8 +35172,8 @@
     },
     {
      "tile": [
-      20,
-      11
+      4,
+      8
      ],
      "k": "stash",
      "item": "megagel",
@@ -33196,15 +35192,40 @@
     -52
    ],
    "pkey": "glyphos",
+   "npcs": [
+    {
+     "x": 9,
+     "y": 8,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Archaeologist: The Drowned Grotto is below. Half the ruins down there are underwater!",
+      "Archaeologist: Hydro-types are everywhere. Bring a Volt-type if you can."
+     ],
+     "name": "Archaeologist",
+     "src": "n:548:0"
+    },
+    {
+     "x": 9,
+     "y": 12,
+     "art": "glyphos_folk4",
+     "face": "down",
+     "t": [
+      "Rune Scholar: Glyph Steps is back up the stairs. Mind the moss!"
+     ],
+     "name": "Rune Scholar",
+     "src": "n:548:1"
+    }
+   ],
    "mons": [
     {
-     "x": 7,
-     "y": 7,
+     "x": 18,
+     "y": 9,
      "mon": "Runeguard"
     },
     {
-     "x": 20,
-     "y": 8,
+     "x": 4,
+     "y": 10,
      "mon": "Obeliskor"
     }
    ]
@@ -33268,7 +35289,21 @@
      3
     ]
    },
-   "pkey": "glyphos"
+   "pkey": "glyphos",
+   "npcs": [
+    {
+     "x": 18,
+     "y": 8,
+     "art": "glyphos_folk5",
+     "face": "down",
+     "t": [
+      "Diver: B1's pools are deeper than they look. Stick to the dry stones.",
+      "Diver: The way down to B2 is past the flooded hall."
+     ],
+     "name": "Diver",
+     "src": "n:549:0"
+    }
+   ]
   },
   "550": {
    "id": "550",
@@ -33314,8 +35349,8 @@
    "objects": [
     {
      "tile": [
-      20,
-      8
+      21,
+      3
      ],
      "k": "stash",
      "item": "megagel",
@@ -33324,7 +35359,7 @@
     },
     {
      "tile": [
-      19,
+      2,
       8
      ],
      "k": "stash",
@@ -33339,7 +35374,21 @@
      4
     ]
    },
-   "pkey": "glyphos"
+   "pkey": "glyphos",
+   "npcs": [
+    {
+     "x": 14,
+     "y": 8,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Explorer: You're in B2. The Deep Chamber is just ahead. Spooky but beautiful!",
+      "Explorer: The glyphs here glow faintly in the water."
+     ],
+     "name": "Explorer",
+     "src": "n:550:0"
+    }
+   ]
   },
   "551": {
    "id": "551",
@@ -33407,7 +35456,20 @@
      12
     ]
    },
-   "pkey": "glyphos"
+   "pkey": "glyphos",
+   "npcs": [
+    {
+     "x": 13,
+     "y": 9,
+     "art": "glyphos_folk6",
+     "face": "down",
+     "t": [
+      "Treasure Hunter: The Deep Chamber at last! I came for treasure and stayed for the view."
+     ],
+     "name": "Treasure Hunter",
+     "src": "n:551:0"
+    }
+   ]
   },
   "554": {
    "id": "554",
@@ -33549,7 +35611,7 @@
     {
      "tile": [
       6,
-      0
+      2
      ],
      "k": "chest",
      "item": "harmonic",
@@ -33588,15 +35650,40 @@
     -40
    ],
    "pkey": "glyphos",
+   "npcs": [
+    {
+     "x": 12,
+     "y": 8,
+     "art": "glyphos_folk1",
+     "face": "down",
+     "t": [
+      "Archaeologist: Tidepool Ruins! The tide covers these pillars twice a day.",
+      "Archaeologist: Check the pools for supplies the waves wash in."
+     ],
+     "name": "Archaeologist",
+     "src": "n:557:0"
+    },
+    {
+     "x": 10,
+     "y": 5,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Beachcomber: I found a shell with a glyph on it! Or maybe it's just a scratch."
+     ],
+     "name": "Beachcomber",
+     "src": "n:557:1"
+    }
+   ],
    "mons": [
     {
-     "x": 13,
-     "y": 3,
+     "x": 1,
+     "y": 6,
      "mon": "Prismwolf"
     },
     {
-     "x": 2,
-     "y": 6,
+     "x": 15,
+     "y": 2,
      "mon": "Memoria"
     }
    ]
@@ -33857,8 +35944,8 @@
     },
     {
      "tile": [
-      13,
-      2
+      14,
+      1
      ],
      "k": "stash",
      "item": "stun",
@@ -33877,15 +35964,40 @@
     -26
    ],
    "pkey": "glyphos",
+   "npcs": [
+    {
+     "x": 17,
+     "y": 9,
+     "art": "glyphos_folk3",
+     "face": "down",
+     "t": [
+      "Wanderer: Coral Secret Grove! Coral growing on land. Glyphos is full of surprises.",
+      "Wanderer: Rare Alienmon love the shady reef trees."
+     ],
+     "name": "Wanderer",
+     "src": "n:561:0"
+    },
+    {
+     "x": 6,
+     "y": 9,
+     "art": "pilgrim",
+     "face": "down",
+     "t": [
+      "Pilgrim: I came here to meditate. A crab pinched my toe. Very calming."
+     ],
+     "name": "Pilgrim",
+     "src": "n:561:1"
+    }
+   ],
    "mons": [
     {
-     "x": 5,
-     "y": 6,
+     "x": 14,
+     "y": 3,
      "mon": "Prismwolf"
     },
     {
-     "x": 18,
-     "y": 7,
+     "x": 10,
+     "y": 12,
      "mon": "Memoria"
     }
    ]
@@ -34262,7 +36374,7 @@
     {
      "tile": [
       8,
-      15
+      12
      ],
      "k": "chest",
      "item": "revive",
@@ -34301,15 +36413,40 @@
     44
    ],
    "pkey": "glyphos",
-   "mons": [
+   "npcs": [
+    {
+     "x": 12,
+     "y": 3,
+     "art": "glyphos_folk2",
+     "face": "down",
+     "t": [
+      "Boater: The Sunken Channel was a road once. Now it's a river!",
+      "Boater: Forgotten Forum is just back the way you came."
+     ],
+     "name": "Boater",
+     "src": "n:559:0"
+    },
     {
      "x": 13,
      "y": 3,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Swimmer: Hydro-types zip through the channel. Fast little things!"
+     ],
+     "name": "Swimmer",
+     "src": "n:559:1"
+    }
+   ],
+   "mons": [
+    {
+     "x": 22,
+     "y": 1,
      "mon": "Prismwolf"
     },
     {
-     "x": 22,
-     "y": 2,
+     "x": 5,
+     "y": 7,
      "mon": "Memoria"
     }
    ]
@@ -34377,8 +36514,8 @@
    "objects": [
     {
      "tile": [
-      11,
-      14
+      4,
+      6
      ],
      "k": "stash",
      "item": "dust",
@@ -34397,14 +36534,50 @@
     21
    ],
    "pkey": "glyphos",
-   "mons": [
+   "npcs": [
+    {
+     "x": 12,
+     "y": 13,
+     "art": "glyphos_folk1",
+     "face": "down",
+     "t": [
+      "Fan: The Temple of Trials! Battles here have been held for ages and ages.",
+      "Fan: The lobby is through the big stone doors."
+     ],
+     "name": "Fan",
+     "src": "n:543:0"
+    },
+    {
+     "x": 4,
+     "y": 13,
+     "art": "glyphos_folk2",
+     "face": "down",
+     "t": [
+      "Pilgrim: The glyphs on the pillars cheer for every Linker who enters."
+     ],
+     "name": "Pilgrim",
+     "src": "n:543:1"
+    },
     {
      "x": 19,
      "y": 6,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Archaeologist: Glyph Hollow is just around the corner. Worth a look!"
+     ],
+     "name": "Archaeologist",
+     "src": "n:543:2"
+    }
+   ],
+   "mons": [
+    {
+     "x": 6,
+     "y": 7,
      "mon": "Prismwolf"
     },
     {
-     "x": 9,
+     "x": 20,
      "y": 13,
      "mon": "Memoria"
     }
@@ -34476,7 +36649,32 @@
     ]
    },
    "parent": "543",
-   "pkey": "glyphos"
+   "pkey": "glyphos",
+   "npcs": [
+    {
+     "x": 8,
+     "y": 10,
+     "art": "referee",
+     "face": "down",
+     "t": [
+      "Receptionist: Welcome to the Temple of Trials! The arena awaits beyond these halls.",
+      "Receptionist: Battles here are graded by the old glyphs. No pressure!"
+     ],
+     "name": "Receptionist",
+     "src": "n:545:0"
+    },
+    {
+     "x": 6,
+     "y": 14,
+     "art": "glyphos_folk3",
+     "face": "down",
+     "t": [
+      "Fan: My grandma watched battles here. So did her grandma!"
+     ],
+     "name": "Fan",
+     "src": "n:545:1"
+    }
+   ]
   },
   "546": {
    "id": "546",
@@ -34564,7 +36762,32 @@
     ]
    },
    "parent": "567",
-   "pkey": "glyphos"
+   "pkey": "glyphos",
+   "npcs": [
+    {
+     "x": 11,
+     "y": 10,
+     "art": "glyphos_folk4",
+     "face": "down",
+     "t": [
+      "Archivist: The Archivist's Study holds rubbings of every glyph in Glyphos.",
+      "Archivist: Some glyphs tell jokes. Very old jokes."
+     ],
+     "name": "Archivist",
+     "src": "n:562:0"
+    },
+    {
+     "x": 7,
+     "y": 14,
+     "art": "researcher",
+     "face": "down",
+     "t": [
+      "Student: I'm learning to read glyphs. So far I know 'sun' and 'snack'."
+     ],
+     "name": "Student",
+     "src": "n:562:1"
+    }
+   ]
   },
   "563": {
    "id": "563",
@@ -34615,7 +36838,32 @@
     ]
    },
    "parent": "568",
-   "pkey": "glyphos"
+   "pkey": "glyphos",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 10,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Dig Leader: Welcome to the Dig Camp Tent! Maps, brushes, and a lot of sand.",
+      "Dig Leader: We dig carefully. Every pebble could be history."
+     ],
+     "name": "Dig Leader",
+     "src": "n:563:0"
+    },
+    {
+     "x": 8,
+     "y": 14,
+     "art": "glyphos_folk5",
+     "face": "down",
+     "t": [
+      "Digger: I found a pot handle today! Just the handle. Still exciting!"
+     ],
+     "name": "Digger",
+     "src": "n:563:1"
+    }
+   ]
   },
   "564": {
    "id": "564",
@@ -34666,7 +36914,32 @@
     ]
    },
    "parent": "567",
-   "pkey": "glyphos"
+   "pkey": "glyphos",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 10,
+     "art": "glyphos_folk6",
+     "face": "down",
+     "t": [
+      "Shrine Keeper: The Shrine Chamber is a quiet place. Speak softly.",
+      "Shrine Keeper: Psi-types feel calm in here. Maybe you will too."
+     ],
+     "name": "Shrine Keeper",
+     "src": "n:564:0"
+    },
+    {
+     "x": 6,
+     "y": 14,
+     "art": "pilgrim",
+     "face": "down",
+     "t": [
+      "Pilgrim: I come here to think. Mostly about lunch."
+     ],
+     "name": "Pilgrim",
+     "src": "n:564:1"
+    }
+   ]
   },
   "569": {
    "id": "569",
@@ -34732,7 +37005,22 @@
     ]
    },
    "parent": "566",
-   "pkey": "glyphos"
+   "pkey": "glyphos",
+   "npcs": [
+    {
+     "x": 3,
+     "y": 9,
+     "art": "shop",
+     "face": "right",
+     "t": [
+      "Clerk: Welcome to the Dig Camp Supply Shop! Brushes, Potions, and Cure Spray.",
+      "Clerk: Sand gets in everything. Buy extra Potions just in case!"
+     ],
+     "name": "Clerk",
+     "stay": true,
+     "src": "n:569:0"
+    }
+   ]
   },
   "700": {
    "id": "700",
@@ -34815,6 +37103,31 @@
     -6
    ],
    "pkey": "pyros",
+   "npcs": [
+    {
+     "x": 7,
+     "y": 10,
+     "art": "technician",
+     "face": "down",
+     "t": [
+      "Dock Tech: Pyros Spaceport! Ships need heat shields to land here.",
+      "Dock Tech: Cinder Hollow Lane Homes is just past the gate."
+     ],
+     "name": "Dock Tech",
+     "src": "n:700:0"
+    },
+    {
+     "x": 11,
+     "y": 11,
+     "art": "pyros_folk3",
+     "face": "down",
+     "t": [
+      "Traveller: I packed a winter coat. Big mistake."
+     ],
+     "name": "Traveller",
+     "src": "n:700:1"
+    }
+   ],
    "mons": [
     {
      "x": 4,
@@ -34822,8 +37135,8 @@
      "mon": "Cinderhound"
     },
     {
-     "x": 6,
-     "y": 8,
+     "x": 19,
+     "y": 3,
      "mon": "Pyroclast"
     }
    ]
@@ -34926,13 +37239,32 @@
     -3
    ],
    "pkey": "pyros",
-   "mons": [
+   "npcs": [
     {
      "x": 15,
      "y": 12,
-     "mon": "Ashpup"
+     "art": "pyros_folk5",
+     "face": "down",
+     "t": [
+      "Resident: Cinder Hollow Lane Homes have stone walls. The volcano keeps them cozy!",
+      "Resident: Pyros Spaceport is just down the lane. Watch for hot exhaust!"
+     ],
+     "name": "Resident",
+     "src": "n:696:0"
+    },
+    {
+     "x": 4,
+     "y": 9,
+     "art": "pyros_folk6",
+     "face": "down",
+     "t": [
+      "Kid: I can cook an egg on the sidewalk! Mom says not to try."
+     ],
+     "name": "Kid",
+     "src": "n:696:1"
     }
-   ]
+   ],
+   "mons": []
   },
   "697": {
    "id": "697",
@@ -35042,6 +37374,31 @@
     -15
    ],
    "pkey": "pyros",
+   "npcs": [
+    {
+     "x": 14,
+     "y": 4,
+     "art": "pyros_folk1",
+     "face": "down",
+     "t": [
+      "Old Resident: Cinder Hollow Quiet Court. Calm, warm, and just a little ashy.",
+      "Old Resident: Ember Hollow Grove is down the path. Lovely glowing trees!"
+     ],
+     "name": "Old Resident",
+     "src": "n:697:0"
+    },
+    {
+     "x": 20,
+     "y": 4,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Neighbour: I sweep ash off my porch every morning. It's my exercise."
+     ],
+     "name": "Neighbour",
+     "src": "n:697:1"
+    }
+   ],
    "mons": [
     {
      "x": 5,
@@ -35140,6 +37497,31 @@
     49
    ],
    "pkey": "pyros",
+   "npcs": [
+    {
+     "x": 11,
+     "y": 10,
+     "art": "pyros_folk2",
+     "face": "down",
+     "t": [
+      "Farmer: We grow fire peppers out here. They're spicy enough to make a Magma-type cry!",
+      "Farmer: The arena's next door. Battle cheers at all hours!"
+     ],
+     "name": "Farmer",
+     "src": "n:698:0"
+    },
+    {
+     "x": 18,
+     "y": 10,
+     "art": "sheepkid",
+     "face": "down",
+     "t": [
+      "Farm Kid: I water the pepper plants. The water steams right off!"
+     ],
+     "name": "Farm Kid",
+     "src": "n:698:1"
+    }
+   ],
    "mons": [
     {
      "x": 5,
@@ -35432,8 +37814,8 @@
    "objects": [
     {
      "tile": [
-      3,
-      1
+      1,
+      4
      ],
      "k": "stash",
      "item": "harmonic",
@@ -35442,8 +37824,8 @@
     },
     {
      "tile": [
-      2,
-      14
+      11,
+      2
      ],
      "k": "stash",
      "item": "harmonic",
@@ -35477,8 +37859,8 @@
      }
     },
     {
-     "x": 7,
-     "y": 2,
+     "x": 6,
+     "y": 6,
      "art": "wanderer",
      "face": "down",
      "t": [],
@@ -35492,13 +37874,13 @@
    ],
    "mons": [
     {
-     "x": 1,
+     "x": 22,
      "y": 4,
      "mon": "Obsidrake"
     },
     {
-     "x": 22,
-     "y": 2,
+     "x": 7,
+     "y": 14,
      "mon": "Blazewing"
     }
    ]
@@ -35644,8 +38026,8 @@
     },
     {
      "tile": [
-      11,
-      14
+      21,
+      9
      ],
      "k": "stash",
      "item": "fullgel",
@@ -35654,8 +38036,8 @@
     },
     {
      "tile": [
-      18,
-      9
+      9,
+      10
      ],
      "k": "stash",
      "item": "ether",
@@ -36125,8 +38507,8 @@
     },
     {
      "tile": [
-      5,
-      11
+      7,
+      12
      ],
      "k": "stash",
      "item": "dust",
@@ -36180,8 +38562,8 @@
      "mon": "Obsidrake"
     },
     {
-     "x": 3,
-     "y": 10,
+     "x": 13,
+     "y": 12,
      "mon": "Blazewing"
     }
    ]
@@ -36222,8 +38604,8 @@
     },
     {
      "tile": [
-      22,
-      10
+      18,
+      1
      ],
      "k": "stash",
      "item": "harmonic",
@@ -36232,8 +38614,8 @@
     },
     {
      "tile": [
-      4,
-      5
+      21,
+      10
      ],
      "k": "stash",
      "item": "fullgel",
@@ -36252,15 +38634,40 @@
     -18
    ],
    "pkey": "pyros",
-   "mons": [
+   "npcs": [
     {
      "x": 5,
-     "y": 6,
+     "y": 8,
+     "art": "pyros_folk6",
+     "face": "down",
+     "t": [
+      "Wanderer: Ember Hollow Grove! Trees with leaves like glowing embers.",
+      "Wanderer: Rare Magma-types nap in the warm ashes here."
+     ],
+     "name": "Wanderer",
+     "src": "n:688:0"
+    },
+    {
+     "x": 16,
+     "y": 8,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Picnicker: Cinder Hollow Quiet Court is just back that way. Bring marshmallows next time!"
+     ],
+     "name": "Picnicker",
+     "src": "n:688:1"
+    }
+   ],
+   "mons": [
+    {
+     "x": 10,
+     "y": 12,
      "mon": "Cinderhound"
     },
     {
-     "x": 20,
-     "y": 8,
+     "x": 3,
+     "y": 14,
      "mon": "Pyroclast"
     }
    ]
@@ -36340,15 +38747,51 @@
     47
    ],
    "pkey": "pyros",
+   "npcs": [
+    {
+     "x": 13,
+     "y": 9,
+     "art": "pyros_folk1",
+     "face": "down",
+     "t": [
+      "Fan: Magma Pit Arena! Battles here are scorching hot.",
+      "Fan: The lobby's right through the fire doors."
+     ],
+     "name": "Fan",
+     "src": "n:668:0"
+    },
+    {
+     "x": 5,
+     "y": 12,
+     "art": "pyros_folk2",
+     "face": "down",
+     "t": [
+      "Miner: I watch every match after my shift. Hot battles warm the heart!"
+     ],
+     "name": "Miner",
+     "src": "n:668:1"
+    },
+    {
+     "x": 19,
+     "y": 10,
+     "art": "snacktrader",
+     "face": "down",
+     "t": [
+      "Snack Trader: Lava-roasted nuts! Crunchy, toasty, and only a little bit smoky!"
+     ],
+     "name": "Snack Trader",
+     "src": "n:668:2"
+    }
+   ],
    "mons": [
     {
-     "x": 14,
+     "x": 2,
      "y": 7,
      "mon": "Cinderhound"
     },
     {
-     "x": 22,
-     "y": 9,
+     "x": 11,
+     "y": 13,
      "mon": "Pyroclast"
     }
    ]
@@ -36419,7 +38862,32 @@
     ]
    },
    "parent": "668",
-   "pkey": "pyros"
+   "pkey": "pyros",
+   "npcs": [
+    {
+     "x": 8,
+     "y": 9,
+     "art": "referee",
+     "face": "down",
+     "t": [
+      "Receptionist: Welcome to the Magma Pit Arena! The Battle Room is just past the lobby.",
+      "Receptionist: Bring something Hydro if you want to stay cool in there."
+     ],
+     "name": "Receptionist",
+     "src": "n:670:0"
+    },
+    {
+     "x": 5,
+     "y": 12,
+     "art": "pyros_folk3",
+     "face": "down",
+     "t": [
+      "Fan: I wore my fireproof shoes. You never know!"
+     ],
+     "name": "Fan",
+     "src": "n:670:1"
+    }
+   ]
   },
   "672": {
    "id": "672",
@@ -36509,7 +38977,7 @@
     {
      "tile": [
       20,
-      11
+      6
      ],
      "k": "stash",
      "item": "revive",
@@ -36528,15 +38996,40 @@
     -66
    ],
    "pkey": "pyros",
+   "npcs": [
+    {
+     "x": 9,
+     "y": 7,
+     "art": "miner",
+     "face": "down",
+     "t": [
+      "Miner: The Deep Mines are just below. Hot, dark, and full of Magma-types.",
+      "Miner: Mine Shaft Hollows is back the way you came."
+     ],
+     "name": "Miner",
+     "src": "n:673:0"
+    },
+    {
+     "x": 8,
+     "y": 11,
+     "art": "pyros_folk4",
+     "face": "down",
+     "t": [
+      "Ash Walker: Bring a Hydro-type and lots of water. It's like an oven down there!"
+     ],
+     "name": "Ash Walker",
+     "src": "n:673:1"
+    }
+   ],
    "mons": [
     {
-     "x": 7,
-     "y": 7,
+     "x": 16,
+     "y": 8,
      "mon": "Obsidrake"
     },
     {
-     "x": 15,
-     "y": 9,
+     "x": 19,
+     "y": 12,
      "mon": "Blazewing"
     }
    ]
@@ -36616,15 +39109,40 @@
     9
    ],
    "pkey": "pyros",
+   "npcs": [
+    {
+     "x": 13,
+     "y": 9,
+     "art": "pyros_folk5",
+     "face": "down",
+     "t": [
+      "Old Smith: The Abandoned Smelter hasn't melted a thing in years.",
+      "Old Smith: Funny, I heard machines running in the back last night."
+     ],
+     "name": "Old Smith",
+     "src": "n:686:0"
+    },
+    {
+     "x": 20,
+     "y": 9,
+     "art": "wanderer",
+     "face": "down",
+     "t": [
+      "Ash Walker: Mine Junction is just down the road if you need to head back."
+     ],
+     "name": "Ash Walker",
+     "src": "n:686:1"
+    }
+   ],
    "mons": [
     {
-     "x": 16,
-     "y": 8,
+     "x": 5,
+     "y": 7,
      "mon": "Cinderhound"
     },
     {
-     "x": 4,
-     "y": 7,
+     "x": 17,
+     "y": 11,
      "mon": "Pyroclast"
     }
    ]
@@ -36682,7 +39200,21 @@
     ]
    },
    "parent": "686",
-   "pkey": "pyros"
+   "pkey": "pyros",
+   "npcs": [
+    {
+     "x": 6,
+     "y": 13,
+     "art": "researcher",
+     "face": "down",
+     "t": [
+      "Helix Scientist: You! This lab is way too hot already. Don't make it hotter.",
+      "Helix Scientist: Look, I just watch the gauges. Please stop staring at the gauges."
+     ],
+     "name": "Helix Scientist",
+     "src": "n:687:0"
+    }
+   ]
   },
   "693": {
    "id": "693",
@@ -36759,14 +39291,39 @@
     -3
    ],
    "pkey": "pyros",
+   "npcs": [
+    {
+     "x": 13,
+     "y": 10,
+     "art": "pyros_folk4",
+     "face": "down",
+     "t": [
+      "Fan: The Volcano Relay Tower! You can feel the heat from here.",
+      "Fan: Head through the doors to the trial floor. It gets hotter every step!"
+     ],
+     "name": "Fan",
+     "src": "n:693:0"
+    },
+    {
+     "x": 4,
+     "y": 12,
+     "art": "guard",
+     "face": "down",
+     "t": [
+      "Tower Guard: Bring your toughest team. The Keeper up there doesn't cool off."
+     ],
+     "name": "Tower Guard",
+     "src": "n:693:1"
+    }
+   ],
    "mons": [
     {
-     "x": 16,
+     "x": 19,
      "y": 8,
      "mon": "Obsidrake"
     },
     {
-     "x": 7,
+     "x": 22,
      "y": 12,
      "mon": "Blazewing"
     }
@@ -36821,7 +39378,32 @@
     ]
    },
    "parent": "696",
-   "pkey": "pyros"
+   "pkey": "pyros",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 10,
+     "art": "pyros_folk1",
+     "face": "down",
+     "t": [
+      "Canteen Cook: Welcome to the Miners' Canteen! Hot soup for hard workers.",
+      "Canteen Cook: Try the lava stew! It's actually just very spicy beans."
+     ],
+     "name": "Canteen Cook",
+     "src": "n:689:0"
+    },
+    {
+     "x": 7,
+     "y": 15,
+     "art": "miner",
+     "face": "down",
+     "t": [
+      "Miner: I eat here every day. The cook remembers everybody's order."
+     ],
+     "name": "Miner",
+     "src": "n:689:1"
+    }
+   ]
   },
   "690": {
    "id": "690",
@@ -36872,7 +39454,32 @@
     ]
    },
    "parent": "697",
-   "pkey": "pyros"
+   "pkey": "pyros",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 9,
+     "art": "technician",
+     "face": "down",
+     "t": [
+      "Smith: The Smelter Room melts ore into shiny metal. Stand back from the glow!",
+      "Smith: Magma-types help keep the fires roaring."
+     ],
+     "name": "Smith",
+     "src": "n:690:0"
+    },
+    {
+     "x": 6,
+     "y": 13,
+     "art": "pyros_folk2",
+     "face": "down",
+     "t": [
+      "Apprentice: I'm learning to pour molten metal. Very slowly. Very carefully."
+     ],
+     "name": "Apprentice",
+     "src": "n:690:1"
+    }
+   ]
   },
   "691": {
    "id": "691",
@@ -36923,7 +39530,21 @@
     ]
    },
    "parent": "697",
-   "pkey": "pyros"
+   "pkey": "pyros",
+   "npcs": [
+    {
+     "x": 11,
+     "y": 10,
+     "art": "pyros_folk3",
+     "face": "down",
+     "t": [
+      "Caretaker: These are the old miner's quarters. Tidy, warm, and full of rock samples.",
+      "Caretaker: Please don't move anything. Every pebble has its spot."
+     ],
+     "name": "Caretaker",
+     "src": "n:691:0"
+    }
+   ]
   },
   "541": {
    "id": "541",
@@ -36982,8 +39603,8 @@
    "objects": [
     {
      "tile": [
-      18,
-      7
+      17,
+      5
      ],
      "k": "stash",
      "item": "dust",
@@ -37006,15 +39627,40 @@
     -6
    ],
    "pkey": "glacia",
+   "npcs": [
+    {
+     "x": 14,
+     "y": 11,
+     "art": "technician",
+     "face": "down",
+     "t": [
+      "Dock Tech: Glacia Spaceport. Ships need extra de-icing before takeoff.",
+      "Dock Tech: Frostmark Lane Homes is just past the gate."
+     ],
+     "name": "Dock Tech",
+     "src": "n:541:0"
+    },
+    {
+     "x": 16,
+     "y": 9,
+     "art": "glacia_folk4",
+     "face": "down",
+     "t": [
+      "Traveller: I packed shorts. That was a mistake."
+     ],
+     "name": "Traveller",
+     "src": "n:541:1"
+    }
+   ],
    "mons": [
     {
-     "x": 17,
-     "y": 5,
+     "x": 7,
+     "y": 2,
      "mon": "Floelord"
     },
     {
-     "x": 15,
-     "y": 11,
+     "x": 17,
+     "y": 2,
      "mon": "Borealix"
     }
    ]
@@ -37117,6 +39763,31 @@
     -3
    ],
    "pkey": "glacia",
+   "npcs": [
+    {
+     "x": 12,
+     "y": 10,
+     "art": "glacia_folk6",
+     "face": "down",
+     "t": [
+      "Resident: Frostmark Lane Homes have extra-thick walls. Keeps the blizzards out!",
+      "Resident: The spaceport is down at the end of the lane."
+     ],
+     "name": "Resident",
+     "src": "n:537:0"
+    },
+    {
+     "x": 4,
+     "y": 10,
+     "art": "glacia_folk1",
+     "face": "down",
+     "t": [
+      "Kid: I built a snow Alienmon! Wanna see? It's the lumpy one."
+     ],
+     "name": "Kid",
+     "src": "n:537:1"
+    }
+   ],
    "mons": []
   },
   "538": {
@@ -37245,13 +39916,32 @@
     16
    ],
    "pkey": "glacia",
-   "mons": [
+   "npcs": [
     {
      "x": 18,
      "y": 8,
-     "mon": "Hailorb"
+     "art": "glacia_folk2",
+     "face": "down",
+     "t": [
+      "Old Resident: Frostmark Quiet Court is calm. Snow muffles all the noise.",
+      "Old Resident: Crevasse Hollows is down the slope. Watch for cracks!"
+     ],
+     "name": "Old Resident",
+     "src": "n:538:0"
+    },
+    {
+     "x": 2,
+     "y": 4,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Knitter: I knit sweaters for Alienmon. They love the ones with pom-poms."
+     ],
+     "name": "Knitter",
+     "src": "n:538:1"
     }
-   ]
+   ],
+   "mons": []
   },
   "539": {
    "id": "539",
@@ -37334,10 +40024,35 @@
     64
    ],
    "pkey": "glacia",
-   "mons": [
+   "npcs": [
+    {
+     "x": 13,
+     "y": 11,
+     "art": "glacia_folk3",
+     "face": "down",
+     "t": [
+      "Farmer: Ice berries grow under the snow. Dig gently and you'll find them!",
+      "Farmer: The arena's right next door if you want to watch a battle."
+     ],
+     "name": "Farmer",
+     "src": "n:539:0"
+    },
     {
      "x": 19,
-     "y": 6,
+     "y": 4,
+     "art": "sheepkid",
+     "face": "down",
+     "t": [
+      "Farm Kid: My woolly pets are the warmest things in Glacia. Hug one!"
+     ],
+     "name": "Farm Kid",
+     "src": "n:539:1"
+    }
+   ],
+   "mons": [
+    {
+     "x": 1,
+     "y": 11,
      "mon": "Rimeshard"
     }
    ]
@@ -38050,7 +40765,7 @@
     {
      "tile": [
       18,
-      15
+      12
      ],
      "k": "chest",
      "item": "harmonic",
@@ -38089,6 +40804,31 @@
     32
    ],
    "pkey": "glacia",
+   "npcs": [
+    {
+     "x": 13,
+     "y": 5,
+     "art": "glacia_folk5",
+     "face": "down",
+     "t": [
+      "Explorer: Crevasse Hollows! Mind the cracks. Jump them, don't walk them.",
+      "Explorer: There's supplies hidden in the hollows if you look."
+     ],
+     "name": "Explorer",
+     "src": "n:524:0"
+    },
+    {
+     "x": 3,
+     "y": 8,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Climber: Frostmark Quiet Court is back up the slope if you need a breather."
+     ],
+     "name": "Climber",
+     "src": "n:524:1"
+    }
+   ],
    "mons": [
     {
      "x": 18,
@@ -38096,8 +40836,8 @@
      "mon": "Iceburr"
     },
     {
-     "x": 2,
-     "y": 6,
+     "x": 9,
+     "y": 13,
      "mon": "Glaciarch"
     }
    ]
@@ -38299,8 +41039,8 @@
     },
     {
      "tile": [
-      19,
-      12
+      17,
+      11
      ],
      "k": "sign",
      "t": [
@@ -38320,8 +41060,8 @@
     },
     {
      "tile": [
-      11,
-      14
+      1,
+      1
      ],
      "k": "stash",
      "item": "ether",
@@ -38393,7 +41133,7 @@
    ],
    "mons": [
     {
-     "x": 13,
+     "x": 10,
      "y": 12,
      "mon": "Iceburr"
     },
@@ -38450,8 +41190,8 @@
     },
     {
      "tile": [
-      7,
-      5
+      5,
+      6
      ],
      "k": "stash",
      "item": "revive",
@@ -38470,15 +41210,40 @@
     -2
    ],
    "pkey": "glacia",
-   "mons": [
+   "npcs": [
     {
      "x": 5,
-     "y": 6,
+     "y": 8,
+     "art": "glacia_folk1",
+     "face": "down",
+     "t": [
+      "Wanderer: The Hidden Ice Grove! Frozen trees that sparkle like crystal.",
+      "Wanderer: Rare Alienmon nap under the snow here."
+     ],
+     "name": "Wanderer",
+     "src": "n:529:0"
+    },
+    {
+     "x": 18,
+     "y": 10,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Snow Painter: I paint the frost on the branches. It melts before I finish!"
+     ],
+     "name": "Snow Painter",
+     "src": "n:529:1"
+    }
+   ],
+   "mons": [
+    {
+     "x": 13,
+     "y": 3,
      "mon": "Floelord"
     },
     {
-     "x": 22,
-     "y": 9,
+     "x": 7,
+     "y": 5,
      "mon": "Borealix"
     }
    ]
@@ -38546,8 +41311,8 @@
    "objects": [
     {
      "tile": [
-      11,
-      14
+      15,
+      13
      ],
      "k": "stash",
      "item": "harmonic",
@@ -38566,10 +41331,46 @@
     62
    ],
    "pkey": "glacia",
+   "npcs": [
+    {
+     "x": 13,
+     "y": 13,
+     "art": "glacia_folk1",
+     "face": "down",
+     "t": [
+      "Fan: Glacier Rink Arena! Battles on ice are slippery and super exciting.",
+      "Fan: The lobby's right inside, and it's heated!"
+     ],
+     "name": "Fan",
+     "src": "n:511:0"
+    },
+    {
+     "x": 6,
+     "y": 13,
+     "art": "glacia_folk2",
+     "face": "down",
+     "t": [
+      "Skater: I skate here before the battles. The ice is perfect today."
+     ],
+     "name": "Skater",
+     "src": "n:511:1"
+    },
+    {
+     "x": 19,
+     "y": 13,
+     "art": "researcher",
+     "face": "down",
+     "t": [
+      "Researcher: The Research Annex is next door. Lots of buzzing machines over there."
+     ],
+     "name": "Researcher",
+     "src": "n:511:2"
+    }
+   ],
    "mons": [
     {
-     "x": 5,
-     "y": 13,
+     "x": 7,
+     "y": 6,
      "mon": "Floelord"
     },
     {
@@ -38645,7 +41446,32 @@
     ]
    },
    "parent": "511",
-   "pkey": "glacia"
+   "pkey": "glacia",
+   "npcs": [
+    {
+     "x": 8,
+     "y": 9,
+     "art": "referee",
+     "face": "down",
+     "t": [
+      "Receptionist: Welcome to the Glacier Rink Arena! The Battle Room is just past this lobby.",
+      "Receptionist: Watch your footing in there. The floor is real ice!"
+     ],
+     "name": "Receptionist",
+     "src": "n:512:0"
+    },
+    {
+     "x": 6,
+     "y": 13,
+     "art": "glacia_folk3",
+     "face": "down",
+     "t": [
+      "Fan: I wore three scarves today. Arena seats get chilly!"
+     ],
+     "name": "Fan",
+     "src": "n:512:1"
+    }
+   ]
   },
   "513": {
    "id": "513",
@@ -38754,14 +41580,39 @@
     -17
    ],
    "pkey": "glacia",
-   "mons": [
+   "npcs": [
     {
-     "x": 7,
+     "x": 9,
      "y": 7,
-     "mon": "Iceburr"
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Climber: The Crystal Caverns are right through that ice arch.",
+      "Climber: Crystal-types glitter in there. Bring something with punch."
+     ],
+     "name": "Climber",
+     "src": "n:514:0"
     },
     {
      "x": 15,
+     "y": 11,
+     "art": "glacia_folk4",
+     "face": "down",
+     "t": [
+      "Radio Tech: I'm checking the cave signal relay. Ice Junction is back the way you came."
+     ],
+     "name": "Radio Tech",
+     "src": "n:514:1"
+    }
+   ],
+   "mons": [
+    {
+     "x": 4,
+     "y": 10,
+     "mon": "Iceburr"
+    },
+    {
+     "x": 19,
      "y": 9,
      "mon": "Glaciarch"
     }
@@ -38822,8 +41673,8 @@
    "objects": [
     {
      "tile": [
-      2,
-      10
+      1,
+      9
      ],
      "k": "stash",
      "item": "revive",
@@ -38842,15 +41693,40 @@
     63
    ],
    "pkey": "glacia",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 9,
+     "art": "researcher",
+     "face": "down",
+     "t": [
+      "Researcher: The Frozen Research Annex studies ice and the critters living in it.",
+      "Researcher: The arena next door gets loud. Hard to concentrate!"
+     ],
+     "name": "Researcher",
+     "src": "n:527:0"
+    },
+    {
+     "x": 5,
+     "y": 10,
+     "art": "glacia_folk6",
+     "face": "down",
+     "t": [
+      "Radio Tech: Some odd signals come from the lab out back. Probably nothing. Probably."
+     ],
+     "name": "Radio Tech",
+     "src": "n:527:1"
+    }
+   ],
    "mons": [
     {
-     "x": 7,
-     "y": 7,
+     "x": 1,
+     "y": 8,
      "mon": "Floelord"
     },
     {
-     "x": 1,
-     "y": 9,
+     "x": 7,
+     "y": 7,
      "mon": "Borealix"
     }
    ]
@@ -38908,7 +41784,21 @@
     ]
    },
    "parent": "527",
-   "pkey": "glacia"
+   "pkey": "glacia",
+   "npcs": [
+    {
+     "x": 8,
+     "y": 14,
+     "art": "researcher",
+     "face": "down",
+     "t": [
+      "Helix Scientist: Ugh, visitors. This lab is cold enough without the door opening.",
+      "Helix Scientist: Look around if you must. Just don't unplug anything."
+     ],
+     "name": "Helix Scientist",
+     "src": "n:528:0"
+    }
+   ]
   },
   "534": {
    "id": "534",
@@ -38985,15 +41875,40 @@
     13
    ],
    "pkey": "glacia",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 10,
+     "art": "glacia_folk5",
+     "face": "down",
+     "t": [
+      "Tower Fan: The Aurora Relay Tower glows green and gold at night. So pretty!",
+      "Tower Fan: The trial floor is just inside the doors. Bundle up!"
+     ],
+     "name": "Tower Fan",
+     "src": "n:534:0"
+    },
+    {
+     "x": 5,
+     "y": 11,
+     "art": "guard",
+     "face": "down",
+     "t": [
+      "Tower Guard: Keep your team warm before you climb. The Keeper's battles are chilly."
+     ],
+     "name": "Tower Guard",
+     "src": "n:534:1"
+    }
+   ],
    "mons": [
     {
-     "x": 9,
-     "y": 8,
+     "x": 1,
+     "y": 13,
      "mon": "Iceburr"
     },
     {
-     "x": 1,
-     "y": 9,
+     "x": 8,
+     "y": 13,
      "mon": "Glaciarch"
     }
    ]
@@ -39047,7 +41962,32 @@
     ]
    },
    "parent": "538",
-   "pkey": "glacia"
+   "pkey": "glacia",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 9,
+     "art": "researcher",
+     "face": "down",
+     "t": [
+      "Researcher: This Research Lab tracks every snowflake in Glacia. Every. Single. One.",
+      "Researcher: Fun fact: Crystal-types grow faster in the cold!"
+     ],
+     "name": "Researcher",
+     "src": "n:530:0"
+    },
+    {
+     "x": 7,
+     "y": 14,
+     "art": "glacia_folk2",
+     "face": "down",
+     "t": [
+      "Lab Assistant: I've labelled two hundred ice samples today. My fingers are numb!"
+     ],
+     "name": "Lab Assistant",
+     "src": "n:530:1"
+    }
+   ]
   },
   "531": {
    "id": "531",
@@ -39098,7 +42038,32 @@
     ]
    },
    "parent": "537",
-   "pkey": "glacia"
+   "pkey": "glacia",
+   "npcs": [
+    {
+     "x": 9,
+     "y": 10,
+     "art": "glacia_folk3",
+     "face": "down",
+     "t": [
+      "Lodge Keeper: Welcome to the Hot Cocoa Lodge! Warm up by the fire.",
+      "Lodge Keeper: Extra marshmallows on the house today."
+     ],
+     "name": "Lodge Keeper",
+     "src": "n:531:0"
+    },
+    {
+     "x": 14,
+     "y": 13,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Traveller: I came in for one cup. That was four cups ago."
+     ],
+     "name": "Traveller",
+     "src": "n:531:1"
+    }
+   ]
   },
   "532": {
    "id": "532",
@@ -39149,7 +42114,32 @@
     ]
    },
    "parent": "538",
-   "pkey": "glacia"
+   "pkey": "glacia",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 13,
+     "art": "researcher",
+     "face": "down",
+     "t": [
+      "Curator: The Fossil Vault holds ancient Alienmon bones from the glacier.",
+      "Curator: Please don't touch the big one. It's very old and very grumpy-looking."
+     ],
+     "name": "Curator",
+     "src": "n:532:0"
+    },
+    {
+     "x": 8,
+     "y": 7,
+     "art": "glacia_folk4",
+     "face": "down",
+     "t": [
+      "Visitor: I counted the teeth on that skull. I lost count at forty."
+     ],
+     "name": "Visitor",
+     "src": "n:532:1"
+    }
+   ]
   },
   "629": {
    "id": "629",
@@ -39249,6 +42239,31 @@
     -3
    ],
    "pkey": "helix",
+   "npcs": [
+    {
+     "x": 12,
+     "y": 10,
+     "art": "helix_folk2",
+     "face": "down",
+     "t": [
+      "Resident: Habitation Row. Little rooms, big windows, and the best view of the stars.",
+      "Resident: The Docking Ring is just down the corridor."
+     ],
+     "name": "Resident",
+     "src": "n:629:0"
+    },
+    {
+     "x": 4,
+     "y": 10,
+     "art": "helix_folk3",
+     "face": "down",
+     "t": [
+      "Kid: I learned to float in zero gravity! Well, for two seconds."
+     ],
+     "name": "Kid",
+     "src": "n:629:1"
+    }
+   ],
    "mons": []
   },
   "630": {
@@ -39350,7 +42365,7 @@
     {
      "tile": [
       22,
-      5
+      6
      ],
      "k": "stash",
      "item": "harmonic",
@@ -39369,10 +42384,35 @@
     -19
    ],
    "pkey": "helix",
+   "npcs": [
+    {
+     "x": 5,
+     "y": 6,
+     "art": "helix_folk4",
+     "face": "down",
+     "t": [
+      "Retired Officer: Officers Court used to be strict. Now it's mostly naps and card games.",
+      "Retired Officer: Station Coolant Fork is just down the hall."
+     ],
+     "name": "Retired Officer",
+     "src": "n:630:0"
+    },
+    {
+     "x": 19,
+     "y": 7,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Neighbour: Shh! The officer next door is trying to sleep."
+     ],
+     "name": "Neighbour",
+     "src": "n:630:1"
+    }
+   ],
    "mons": [
     {
      "x": 22,
-     "y": 6,
+     "y": 5,
      "mon": "Splicelet"
     }
    ]
@@ -39467,10 +42507,35 @@
     13
    ],
    "pkey": "helix",
+   "npcs": [
+    {
+     "x": 9,
+     "y": 10,
+     "art": "helix_folk5",
+     "face": "down",
+     "t": [
+      "Gardener: Hydroponics Edge grows all the station's food. Even the space carrots!",
+      "Gardener: There's a hidden garden past the pipes. Shhh!"
+     ],
+     "name": "Gardener",
+     "src": "n:632:0"
+    },
+    {
+     "x": 18,
+     "y": 10,
+     "art": "researcher",
+     "face": "down",
+     "t": [
+      "Botanist: Bio-types love the bright grow lamps up here."
+     ],
+     "name": "Botanist",
+     "src": "n:632:1"
+    }
+   ],
    "mons": [
     {
      "x": 4,
-     "y": 9,
+     "y": 6,
      "mon": "Cagebot"
     }
    ]
@@ -39981,6 +43046,31 @@
     17
    ],
    "pkey": "helix",
+   "npcs": [
+    {
+     "x": 13,
+     "y": 11,
+     "art": "technician",
+     "face": "down",
+     "t": [
+      "Dock Tech: Helix Station Spaceport! The docking clamps are a little loud. Sorry!",
+      "Dock Tech: Deck Crossroads is just past the gate."
+     ],
+     "name": "Dock Tech",
+     "src": "n:634:0"
+    },
+    {
+     "x": 6,
+     "y": 10,
+     "art": "helix_folk6",
+     "face": "down",
+     "t": [
+      "Traveller: First time on a space station? It's like a giant tin can!"
+     ],
+     "name": "Traveller",
+     "src": "n:634:1"
+    }
+   ],
    "mons": [
     {
      "x": 4,
@@ -40450,8 +43540,8 @@
     },
     {
      "tile": [
-      11,
-      14
+      10,
+      13
      ],
      "k": "stash",
      "item": "maxrevive",
@@ -40460,8 +43550,8 @@
     },
     {
      "tile": [
-      13,
-      14
+      14,
+      13
      ],
      "k": "stash",
      "item": "maxrevive",
@@ -40480,15 +43570,40 @@
     77
    ],
    "pkey": "helix",
-   "mons": [
+   "npcs": [
     {
-     "x": 10,
-     "y": 12,
-     "mon": "Chimerax"
+     "x": 12,
+     "y": 11,
+     "art": "helix_folk6",
+     "face": "down",
+     "t": [
+      "Stargazer: Viewport Overlook! You can see whole planets drift by out there.",
+      "Stargazer: The Specimen Annex is back that way."
+     ],
+     "name": "Stargazer",
+     "src": "n:616:0"
     },
     {
      "x": 14,
-     "y": 14,
+     "y": 11,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Visitor: I pressed my face to the glass. It's still cold."
+     ],
+     "name": "Visitor",
+     "src": "n:616:1"
+    }
+   ],
+   "mons": [
+    {
+     "x": 9,
+     "y": 13,
+     "mon": "Chimerax"
+    },
+    {
+     "x": 13,
+     "y": 13,
      "mon": "Vialord"
     }
    ]
@@ -40638,8 +43753,8 @@
    "objects": [
     {
      "tile": [
-      19,
-      12
+      4,
+      7
      ],
      "k": "stash",
      "item": "fullgel",
@@ -40648,7 +43763,7 @@
     },
     {
      "tile": [
-      4,
+      19,
       10
      ],
      "k": "stash",
@@ -40668,15 +43783,40 @@
     -35
    ],
    "pkey": "helix",
+   "npcs": [
+    {
+     "x": 15,
+     "y": 8,
+     "art": "miner",
+     "face": "down",
+     "t": [
+      "Miner: Rift Rock Mine is just below. The rocks hum a little. Don't worry about it.",
+      "Miner: Hangar Deck is back up the ramp."
+     ],
+     "name": "Miner",
+     "src": "n:608:0"
+    },
+    {
+     "x": 6,
+     "y": 6,
+     "art": "helix_folk4",
+     "face": "down",
+     "t": [
+      "Technician: I'm fixing the mine lights. Half of them blink. The other half wink."
+     ],
+     "name": "Technician",
+     "src": "n:608:1"
+    }
+   ],
    "mons": [
     {
-     "x": 7,
-     "y": 7,
+     "x": 19,
+     "y": 12,
      "mon": "Vialord"
     },
     {
-     "x": 15,
-     "y": 9,
+     "x": 8,
+     "y": 10,
      "mon": "Splicor"
     }
    ]
@@ -40740,7 +43880,21 @@
      3
     ]
    },
-   "pkey": "helix"
+   "pkey": "helix",
+   "npcs": [
+    {
+     "x": 19,
+     "y": 7,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Explorer: 1F of the Rift Rock Mine. The rocks float a bit. Gravity-types love it here!",
+      "Explorer: Head deeper in to find the way up to 2F."
+     ],
+     "name": "Explorer",
+     "src": "n:609:0"
+    }
+   ]
   },
   "610": {
    "id": "610",
@@ -40786,8 +43940,8 @@
    "objects": [
     {
      "tile": [
-      20,
-      8
+      2,
+      5
      ],
      "k": "stash",
      "item": "fullgel",
@@ -40801,7 +43955,20 @@
      4
     ]
    },
-   "pkey": "helix"
+   "pkey": "helix",
+   "npcs": [
+    {
+     "x": 14,
+     "y": 8,
+     "art": "helix_folk5",
+     "face": "down",
+     "t": [
+      "Rock Sampler: 2F. The Deep Chamber is just ahead. Grab your samples and go!"
+     ],
+     "name": "Rock Sampler",
+     "src": "n:610:0"
+    }
+   ]
   },
   "611": {
    "id": "611",
@@ -40859,7 +44026,20 @@
      12
     ]
    },
-   "pkey": "helix"
+   "pkey": "helix",
+   "npcs": [
+    {
+     "x": 13,
+     "y": 9,
+     "art": "miner",
+     "face": "down",
+     "t": [
+      "Old Miner: The Deep Chamber! Even the dust sparkles down here."
+     ],
+     "name": "Old Miner",
+     "src": "n:611:0"
+    }
+   ]
   },
   "605": {
    "id": "605",
@@ -40925,7 +44105,7 @@
     {
      "tile": [
       11,
-      14
+      13
      ],
      "k": "stash",
      "item": "maxrevive",
@@ -40944,18 +44124,43 @@
     -10
    ],
    "pkey": "helix",
-   "mons": [
+   "npcs": [
     {
      "x": 12,
      "y": 13,
-     "mon": "Splicor"
+     "art": "helix_folk1",
+     "face": "down",
+     "t": [
+      "Visitor: The Helix Proving Grounds used to be off-limits. Now anyone can come watch!",
+      "Visitor: The lobby's right through the blast doors."
+     ],
+     "name": "Visitor",
+     "src": "n:605:0"
     },
     {
      "x": 10,
-     "y": 14,
-     "mon": "Wardenix"
+     "y": 13,
+     "art": "technician",
+     "face": "down",
+     "t": [
+      "Engineer: We repainted everything. It's way less scary in yellow."
+     ],
+     "name": "Engineer",
+     "src": "n:605:1"
+    },
+    {
+     "x": 13,
+     "y": 13,
+     "art": "helix_folk2",
+     "face": "down",
+     "t": [
+      "Tour Guide: The Comms Spire is just next door. Tours every hour!"
+     ],
+     "name": "Tour Guide",
+     "src": "n:605:2"
     }
-   ]
+   ],
+   "mons": []
   },
   "606": {
    "id": "606",
@@ -41023,7 +44228,32 @@
     ]
    },
    "parent": "605",
-   "pkey": "helix"
+   "pkey": "helix",
+   "npcs": [
+    {
+     "x": 8,
+     "y": 10,
+     "art": "referee",
+     "face": "down",
+     "t": [
+      "Receptionist: Welcome to the Proving Grounds! The Battle Room is straight ahead.",
+      "Receptionist: Please keep your hands inside the station at all times."
+     ],
+     "name": "Receptionist",
+     "src": "n:606:0"
+    },
+    {
+     "x": 7,
+     "y": 15,
+     "art": "helix_folk3",
+     "face": "down",
+     "t": [
+      "Fan: I never thought I'd cheer on a space station. This is great!"
+     ],
+     "name": "Fan",
+     "src": "n:606:1"
+    }
+   ]
   },
   "607": {
    "id": "607",
@@ -41137,15 +44367,40 @@
     -9
    ],
    "pkey": "helix",
+   "npcs": [
+    {
+     "x": 13,
+     "y": 10,
+     "art": "helix_folk5",
+     "face": "down",
+     "t": [
+      "Visitor: The Helix Comms Spire! It used to send secret messages. Now it plays music!",
+      "Visitor: The trial floor is just inside. Mind the blinking floor panels!"
+     ],
+     "name": "Visitor",
+     "src": "n:626:0"
+    },
+    {
+     "x": 5,
+     "y": 12,
+     "art": "guard",
+     "face": "down",
+     "t": [
+      "Guard: Linkers only past this point. The Keeper is waiting upstairs."
+     ],
+     "name": "Guard",
+     "src": "n:626:1"
+    }
+   ],
    "mons": [
     {
-     "x": 16,
-     "y": 8,
+     "x": 22,
+     "y": 11,
      "mon": "Chimerax"
     },
     {
-     "x": 7,
-     "y": 12,
+     "x": 8,
+     "y": 7,
      "mon": "Vialord"
     }
    ]
@@ -41216,7 +44471,21 @@
     ]
    },
    "parent": "626",
-   "pkey": "helix"
+   "pkey": "helix",
+   "npcs": [
+    {
+     "x": 12,
+     "y": 14,
+     "art": "helix_folk6",
+     "face": "down",
+     "t": [
+      "Tower Aide: Welcome to the trial floor! Keep calm and battle on.",
+      "Tower Aide: The Uplink Room is just beyond. You're doing great!"
+     ],
+     "name": "Tower Aide",
+     "src": "n:627:0"
+    }
+   ]
   },
   "628": {
    "id": "628",
@@ -41264,7 +44533,20 @@
      12
     ]
    },
-   "pkey": "helix"
+   "pkey": "helix",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 8,
+     "art": "helix_folk1",
+     "face": "down",
+     "t": [
+      "Tower Aide: You made it to the Uplink Room! Signals from all over the stars come in here."
+     ],
+     "name": "Tower Aide",
+     "src": "n:628:0"
+    }
+   ]
   },
   "621": {
    "id": "621",
@@ -41283,7 +44565,7 @@
      "to": "632",
      "range": [
       8,
-      12
+      11
      ],
      "offset": -1
     }
@@ -41332,15 +44614,40 @@
     12
    ],
    "pkey": "helix",
-   "mons": [
+   "npcs": [
     {
      "x": 5,
-     "y": 6,
+     "y": 7,
+     "art": "helix_folk1",
+     "face": "down",
+     "t": [
+      "Gardener: The Hidden Hydro Garden! Plants grow in water pipes up here.",
+      "Gardener: Hydro-types and Bio-types get along great in this garden."
+     ],
+     "name": "Gardener",
+     "src": "n:621:0"
+    },
+    {
+     "x": 16,
+     "y": 9,
+     "art": "researcher",
+     "face": "down",
+     "t": [
+      "Botanist: Hydroponics Edge is just back the way you came."
+     ],
+     "name": "Botanist",
+     "src": "n:621:1"
+    }
+   ],
+   "mons": [
+    {
+     "x": 17,
+     "y": 4,
      "mon": "Chimerax"
     },
     {
-     "x": 21,
-     "y": 12,
+     "x": 22,
+     "y": 11,
      "mon": "Vialord"
     }
    ]
@@ -41394,7 +44701,21 @@
     ]
    },
    "parent": "632",
-   "pkey": "helix"
+   "pkey": "helix",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 9,
+     "art": "researcher",
+     "face": "down",
+     "t": [
+      "Helix Scientist: This is the Containment Lab. Everything is contained. Very contained. Please go.",
+      "Helix Scientist: Don't tap on the tanks! They hate that. I hate that."
+     ],
+     "name": "Helix Scientist",
+     "src": "n:622:0"
+    }
+   ]
   },
   "623": {
    "id": "623",
@@ -41445,7 +44766,32 @@
     ]
    },
    "parent": "629",
-   "pkey": "helix"
+   "pkey": "helix",
+   "npcs": [
+    {
+     "x": 9,
+     "y": 10,
+     "art": "helix_folk2",
+     "face": "down",
+     "t": [
+      "Crewmate: The Crew Quarters. Bunks, snacks, and a lot of snoring.",
+      "Crewmate: Space naps are the best naps."
+     ],
+     "name": "Crewmate",
+     "src": "n:623:0"
+    },
+    {
+     "x": 7,
+     "y": 4,
+     "art": "helix_folk3",
+     "face": "down",
+     "t": [
+      "Cook: I make space soup. It's soup. In space."
+     ],
+     "name": "Cook",
+     "src": "n:623:1"
+    }
+   ]
   },
   "624": {
    "id": "624",
@@ -41496,7 +44842,32 @@
     ]
    },
    "parent": "630",
-   "pkey": "helix"
+   "pkey": "helix",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 10,
+     "art": "guard",
+     "face": "down",
+     "t": [
+      "Bridge Officer: This is the Command Bridge. Don't touch the big red button. Or the small red one.",
+      "Bridge Officer: We steer the whole station from here!"
+     ],
+     "name": "Bridge Officer",
+     "src": "n:624:0"
+    },
+    {
+     "x": 5,
+     "y": 8,
+     "art": "helix_folk4",
+     "face": "down",
+     "t": [
+      "Navigator: I plot our course. Today's course: stay right here."
+     ],
+     "name": "Navigator",
+     "src": "n:624:1"
+    }
+   ]
   },
   "582": {
    "id": "582",
@@ -41739,6 +45110,31 @@
     -4
    ],
    "pkey": "halo",
+   "npcs": [
+    {
+     "x": 12,
+     "y": 11,
+     "art": "halo_folk2",
+     "face": "down",
+     "t": [
+      "Resident: Skyreach Lane Homes float on their own little islands. Bridges connect them all.",
+      "Resident: Halo Spaceport is a short hop down the lane."
+     ],
+     "name": "Resident",
+     "src": "n:600:0"
+    },
+    {
+     "x": 4,
+     "y": 11,
+     "art": "halo_folk3",
+     "face": "down",
+     "t": [
+      "Kid: I jumped from one island to the other! Don't tell my mom!"
+     ],
+     "name": "Kid",
+     "src": "n:600:1"
+    }
+   ],
    "mons": []
   },
   "604": {
@@ -41818,15 +45214,40 @@
     -6
    ],
    "pkey": "halo",
-   "mons": [
+   "npcs": [
+    {
+     "x": 14,
+     "y": 11,
+     "art": "technician",
+     "face": "down",
+     "t": [
+      "Dock Tech: Halo Spaceport. We dock ships right on the clouds! Safer than it sounds.",
+      "Dock Tech: Skyreach Lane Homes is just past the gate."
+     ],
+     "name": "Dock Tech",
+     "src": "n:604:0"
+    },
     {
      "x": 6,
-     "y": 3,
+     "y": 8,
+     "art": "halo_folk6",
+     "face": "down",
+     "t": [
+      "Traveller: First time up here? Don't look down. Okay, maybe once."
+     ],
+     "name": "Traveller",
+     "src": "n:604:1"
+    }
+   ],
+   "mons": [
+    {
+     "x": 19,
+     "y": 6,
      "mon": "Cerebrix"
     },
     {
-     "x": 17,
-     "y": 3,
+     "x": 2,
+     "y": 13,
      "mon": "Hummingmind"
     }
    ]
@@ -41929,8 +45350,8 @@
     },
     {
      "tile": [
-      1,
-      5
+      22,
+      10
      ],
      "k": "stash",
      "item": "harmonic",
@@ -41949,10 +45370,35 @@
     -16
    ],
    "pkey": "halo",
+   "npcs": [
+    {
+     "x": 18,
+     "y": 9,
+     "art": "halo_folk4",
+     "face": "down",
+     "t": [
+      "Old Resident: Skyreach Quiet Court is peaceful. Just clouds and birdsong.",
+      "Old Resident: Sky Crossroads is right next door."
+     ],
+     "name": "Old Resident",
+     "src": "n:601:0"
+    },
+    {
+     "x": 4,
+     "y": 7,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Cloud Watcher: That cloud looks like an Alienmon! Oh, now it looks like a sandwich."
+     ],
+     "name": "Cloud Watcher",
+     "src": "n:601:1"
+    }
+   ],
    "mons": [
     {
-     "x": 1,
-     "y": 6,
+     "x": 21,
+     "y": 14,
      "mon": "Bardlet"
     }
    ]
@@ -42500,7 +45946,7 @@
    "objects": [
     {
      "tile": [
-      9,
+      14,
       12
      ],
      "k": "stash",
@@ -42520,14 +45966,50 @@
     62
    ],
    "pkey": "halo",
+   "npcs": [
+    {
+     "x": 13,
+     "y": 12,
+     "art": "guard",
+     "face": "down",
+     "t": [
+      "Temple Guard: The Sky Temple. Its trial floor tests Linkers with heart and patience.",
+      "Temple Guard: Head inside when your team is ready."
+     ],
+     "name": "Temple Guard",
+     "src": "n:597:0"
+    },
+    {
+     "x": 5,
+     "y": 12,
+     "art": "halo_folk6",
+     "face": "down",
+     "t": [
+      "Pilgrim: The temple bells ring after every match at the Colosseum next door."
+     ],
+     "name": "Pilgrim",
+     "src": "n:597:1"
+    },
+    {
+     "x": 19,
+     "y": 12,
+     "art": "halo_folk1",
+     "face": "down",
+     "t": [
+      "Skywatcher: Temple Junction is just down the steps if you need a breather."
+     ],
+     "name": "Skywatcher",
+     "src": "n:597:2"
+    }
+   ],
    "mons": [
     {
-     "x": 3,
-     "y": 12,
+     "x": 9,
+     "y": 7,
      "mon": "Halocene"
     },
     {
-     "x": 14,
+     "x": 9,
      "y": 12,
      "mon": "Zephyrion"
     }
@@ -42608,15 +46090,51 @@
     63
    ],
    "pkey": "halo",
+   "npcs": [
+    {
+     "x": 13,
+     "y": 9,
+     "art": "halo_folk1",
+     "face": "down",
+     "t": [
+      "Fan: The Sky Colosseum floats on the clouds! Best battles in the sky.",
+      "Fan: The lobby's right through the golden arch."
+     ],
+     "name": "Fan",
+     "src": "n:573:0"
+    },
+    {
+     "x": 5,
+     "y": 12,
+     "art": "halo_folk2",
+     "face": "down",
+     "t": [
+      "Skywatcher: Don't look over the edge before a match. Makes your knees wobble."
+     ],
+     "name": "Skywatcher",
+     "src": "n:573:1"
+    },
+    {
+     "x": 19,
+     "y": 10,
+     "art": "pilgrim",
+     "face": "down",
+     "t": [
+      "Pilgrim: The Sky Temple is just next door. The bells ring after every match."
+     ],
+     "name": "Pilgrim",
+     "src": "n:573:2"
+    }
+   ],
    "mons": [
     {
-     "x": 14,
-     "y": 7,
+     "x": 8,
+     "y": 6,
      "mon": "Halocene"
     },
     {
-     "x": 7,
-     "y": 5,
+     "x": 11,
+     "y": 13,
      "mon": "Zephyrion"
     }
    ]
@@ -42687,7 +46205,32 @@
     ]
    },
    "parent": "573",
-   "pkey": "halo"
+   "pkey": "halo",
+   "npcs": [
+    {
+     "x": 8,
+     "y": 10,
+     "art": "referee",
+     "face": "down",
+     "t": [
+      "Receptionist: Welcome to the Sky Colosseum! The Battle Floor is just past this hall.",
+      "Receptionist: Fliers and Gravity-types love battling up here!"
+     ],
+     "name": "Receptionist",
+     "src": "n:575:0"
+    },
+    {
+     "x": 5,
+     "y": 13,
+     "art": "halo_folk3",
+     "face": "down",
+     "t": [
+      "Fan: I cheered so loud last match, a cloud floated away."
+     ],
+     "name": "Fan",
+     "src": "n:575:1"
+    }
+   ]
   },
   "576": {
    "id": "576",
@@ -42924,7 +46467,7 @@
     {
      "tile": [
       15,
-      4
+      6
      ],
      "k": "chest",
      "item": "fullgel",
@@ -42943,7 +46486,7 @@
     },
     {
      "tile": [
-      4,
+      3,
       5
      ],
      "k": "stash",
@@ -42963,9 +46506,34 @@
     61
    ],
    "pkey": "halo",
+   "npcs": [
+    {
+     "x": 5,
+     "y": 9,
+     "art": "halo_folk2",
+     "face": "down",
+     "t": [
+      "Gardener: Hidden Blossom Grove! The petals here float upward instead of down.",
+      "Gardener: Rare Bio-types nap under the blossoms."
+     ],
+     "name": "Gardener",
+     "src": "n:591:0"
+    },
+    {
+     "x": 14,
+     "y": 9,
+     "art": "pilgrim",
+     "face": "down",
+     "t": [
+      "Pilgrim: I wandered off Cloud Fork and found this. Best wrong turn ever."
+     ],
+     "name": "Pilgrim",
+     "src": "n:591:1"
+    }
+   ],
    "mons": [
     {
-     "x": 3,
+     "x": 17,
      "y": 5,
      "mon": "Halocene"
     },
@@ -43025,6 +46593,31 @@
     47
    ],
    "pkey": "halo",
+   "npcs": [
+    {
+     "x": 12,
+     "y": 8,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Explorer: Crystal Hollow is right through there. The walls sparkle like stars!",
+      "Explorer: Cloud Fork is back down the path."
+     ],
+     "name": "Explorer",
+     "src": "n:578:0"
+    },
+    {
+     "x": 11,
+     "y": 11,
+     "art": "halo_folk4",
+     "face": "down",
+     "t": [
+      "Mystic: The crystals inside hum softly. Listen closely."
+     ],
+     "name": "Mystic",
+     "src": "n:578:1"
+    }
+   ],
    "mons": []
   },
   "579": {
@@ -43096,7 +46689,21 @@
      3
     ]
    },
-   "pkey": "halo"
+   "pkey": "halo",
+   "npcs": [
+    {
+     "x": 19,
+     "y": 7,
+     "art": "halo_folk5",
+     "face": "down",
+     "t": [
+      "Crystal Hunter: 1F is full of shiny walls. Crystal-types blend right in.",
+      "Crystal Hunter: Climb on to 2F. The crystals get even shinier!"
+     ],
+     "name": "Crystal Hunter",
+     "src": "n:579:0"
+    }
+   ]
   },
   "580": {
    "id": "580",
@@ -43142,8 +46749,8 @@
    "objects": [
     {
      "tile": [
-      20,
-      8
+      21,
+      7
      ],
      "k": "stash",
      "item": "singularity",
@@ -43153,7 +46760,7 @@
     {
      "tile": [
       21,
-      6
+      8
      ],
      "k": "stash",
      "item": "fullgel",
@@ -43167,7 +46774,20 @@
      3
     ]
    },
-   "pkey": "halo"
+   "pkey": "halo",
+   "npcs": [
+    {
+     "x": 15,
+     "y": 8,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Spelunker: 2F already! The Heart is just ahead. It glows so bright!"
+     ],
+     "name": "Spelunker",
+     "src": "n:580:0"
+    }
+   ]
   },
   "581": {
    "id": "581",
@@ -43225,7 +46845,20 @@
      12
     ]
    },
-   "pkey": "halo"
+   "pkey": "halo",
+   "npcs": [
+    {
+     "x": 13,
+     "y": 9,
+     "art": "halo_folk6",
+     "face": "down",
+     "t": [
+      "Wanderer: The Crystal Hollow Heart. I could sit here all day watching it shimmer."
+     ],
+     "name": "Wanderer",
+     "src": "n:581:0"
+    }
+   ]
   },
   "588": {
    "id": "588",
@@ -43293,15 +46926,40 @@
     79
    ],
    "pkey": "halo",
+   "npcs": [
+    {
+     "x": 12,
+     "y": 5,
+     "art": "halo_folk1",
+     "face": "down",
+     "t": [
+      "Pilgrim: Shrine Hollows! Little shrines are tucked into every cloud nook.",
+      "Pilgrim: Cloud Fork is back the way you came."
+     ],
+     "name": "Pilgrim",
+     "src": "n:588:0"
+    },
+    {
+     "x": 3,
+     "y": 7,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Bell Ringer: I ring the tiny bells here every morning. They sound like rain."
+     ],
+     "name": "Bell Ringer",
+     "src": "n:588:1"
+    }
+   ],
    "mons": [
     {
-     "x": 13,
+     "x": 20,
      "y": 3,
      "mon": "Cerebrix"
     },
     {
-     "x": 21,
-     "y": 5,
+     "x": 4,
+     "y": 14,
      "mon": "Hummingmind"
     }
    ]
@@ -43446,7 +47104,7 @@
     {
      "tile": [
       22,
-      12
+      10
      ],
      "k": "stash",
      "item": "ether",
@@ -43455,8 +47113,8 @@
     },
     {
      "tile": [
-      14,
-      1
+      3,
+      7
      ],
      "k": "stash",
      "item": "dust",
@@ -43505,13 +47163,13 @@
    ],
    "mons": [
     {
-     "x": 6,
-     "y": 12,
+     "x": 4,
+     "y": 9,
      "mon": "Halocene"
     },
     {
-     "x": 18,
-     "y": 12,
+     "x": 20,
+     "y": 10,
      "mon": "Zephyrion"
     }
    ]
@@ -43598,10 +47256,35 @@
     112
    ],
    "pkey": "halo",
+   "npcs": [
+    {
+     "x": 13,
+     "y": 8,
+     "art": "halo_folk5",
+     "face": "down",
+     "t": [
+      "Farmer: Skyfarm Edge grows cloud carrots and sky melons. Very light and fluffy!",
+      "Farmer: Windstep Rise is up the path."
+     ],
+     "name": "Farmer",
+     "src": "n:602:0"
+    },
+    {
+     "x": 6,
+     "y": 9,
+     "art": "sheepkid",
+     "face": "down",
+     "t": [
+      "Farm Kid: My fluffy flock floats a little when it's windy. I tie them to the fence!"
+     ],
+     "name": "Farm Kid",
+     "src": "n:602:1"
+    }
+   ],
    "mons": [
     {
-     "x": 16,
-     "y": 8,
+     "x": 20,
+     "y": 3,
      "mon": "Dreamwisp"
     }
    ]
@@ -43655,7 +47338,21 @@
     ]
    },
    "parent": "602",
-   "pkey": "halo"
+   "pkey": "halo",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 9,
+     "art": "halo_folk3",
+     "face": "down",
+     "t": [
+      "Chapel Keeper: The Skyfarm Chapel blesses each harvest. Even the cloud carrots!",
+      "Chapel Keeper: Sit a while. The wind chimes are very calming."
+     ],
+     "name": "Chapel Keeper",
+     "src": "n:592:0"
+    }
+   ]
   },
   "593": {
    "id": "593",
@@ -43706,7 +47403,32 @@
     ]
    },
    "parent": "600",
-   "pkey": "halo"
+   "pkey": "halo",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 10,
+     "art": "halo_folk4",
+     "face": "down",
+     "t": [
+      "Librarian: The Oracle Library has books about all fourteen worlds.",
+      "Librarian: Quiet, please. The books are sleeping. Just kidding! Mostly."
+     ],
+     "name": "Librarian",
+     "src": "n:593:0"
+    },
+    {
+     "x": 5,
+     "y": 13,
+     "art": "researcher",
+     "face": "down",
+     "t": [
+      "Scholar: I'm reading about Psi-types. They can predict which page I'll turn to next!"
+     ],
+     "name": "Scholar",
+     "src": "n:593:1"
+    }
+   ]
   },
   "594": {
    "id": "594",
@@ -43757,7 +47479,32 @@
     ]
    },
    "parent": "601",
-   "pkey": "halo"
+   "pkey": "halo",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 10,
+     "art": "halo_folk5",
+     "face": "down",
+     "t": [
+      "Gardener: The Cloud Garden Room grows plants in pure mist. No soil at all!",
+      "Gardener: Water them? No, they water themselves."
+     ],
+     "name": "Gardener",
+     "src": "n:594:0"
+    },
+    {
+     "x": 6,
+     "y": 14,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Visitor: I touched a cloud flower. It felt like a sneeze."
+     ],
+     "name": "Visitor",
+     "src": "n:594:1"
+    }
+   ]
   },
   "434": {
    "id": "434",
@@ -43836,15 +47583,40 @@
     -25
    ],
    "pkey": "apex",
-   "mons": [
+   "npcs": [
     {
      "x": 6,
+     "y": 9,
+     "art": "technician",
+     "face": "down",
+     "t": [
+      "Dock Tech: Apex Spaceport is the highest landing pad around. Pilots say it's a tricky approach.",
+      "Dock Tech: Summit Lane Homes is just past the gate."
+     ],
+     "name": "Dock Tech",
+     "src": "n:434:0"
+    },
+    {
+     "x": 17,
+     "y": 8,
+     "art": "apex_folk1",
+     "face": "down",
+     "t": [
+      "Traveller: I flew in just to see the Grand Stadium. Is it as big as they say?"
+     ],
+     "name": "Traveller",
+     "src": "n:434:1"
+    }
+   ],
+   "mons": [
+    {
+     "x": 4,
      "y": 3,
      "mon": "Cragmajor"
     },
     {
-     "x": 19,
-     "y": 4,
+     "x": 12,
+     "y": 2,
      "mon": "Flarehawk"
     }
    ]
@@ -43978,9 +47750,45 @@
     -23
    ],
    "pkey": "apex",
+   "npcs": [
+    {
+     "x": 12,
+     "y": 13,
+     "art": "apex_folk3",
+     "face": "down",
+     "t": [
+      "Resident: Summit Lane is the coziest street on the mountain. The Recovery Bay is right next door.",
+      "Resident: The supply shop sells warm gear for the climb."
+     ],
+     "name": "Resident",
+     "src": "n:430:0"
+    },
+    {
+     "x": 4,
+     "y": 13,
+     "art": "apex_folk4",
+     "face": "down",
+     "t": [
+      "Kid: The spaceport is down the lane! I wave at every ship that takes off."
+     ],
+     "name": "Kid",
+     "src": "n:430:1"
+    },
+    {
+     "x": 19,
+     "y": 13,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Mail Carrier: Delivering letters up here means a lot of stairs. My legs are like Alloy-types now!"
+     ],
+     "name": "Mail Carrier",
+     "src": "n:430:2"
+    }
+   ],
    "mons": [
     {
-     "x": 5,
+     "x": 8,
      "y": 13,
      "mon": "Gemmling"
     }
@@ -44048,8 +47856,44 @@
     },
     {
      "tile": [
-      5,
-      7
+      6,
+      4
+     ],
+     "k": "house",
+     "to": "424",
+     "why": "V3 kit house door"
+    },
+    {
+     "tile": [
+      7,
+      4
+     ],
+     "k": "house",
+     "to": "424",
+     "why": "V3 kit house door"
+    },
+    {
+     "tile": [
+      20,
+      12
+     ],
+     "k": "house",
+     "to": "425",
+     "why": "V3 kit house door"
+    },
+    {
+     "tile": [
+      21,
+      12
+     ],
+     "k": "house",
+     "to": "425",
+     "why": "V3 kit house door"
+    },
+    {
+     "tile": [
+      22,
+      8
      ],
      "k": "stash",
      "item": "dust",
@@ -44068,10 +47912,35 @@
     -53
    ],
    "pkey": "apex",
+   "npcs": [
+    {
+     "x": 19,
+     "y": 8,
+     "art": "apex_folk5",
+     "face": "down",
+     "t": [
+      "Old Resident: Stargazer Quiet Court is peaceful. Just us and the wind.",
+      "Old Resident: Glacier Bend is down the path if you're heading out."
+     ],
+     "name": "Old Resident",
+     "src": "n:431:0"
+    },
+    {
+     "x": 19,
+     "y": 7,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Painter: I paint the sunrise every morning. It never looks the same twice."
+     ],
+     "name": "Painter",
+     "src": "n:431:1"
+    }
+   ],
    "mons": [
     {
-     "x": 5,
-     "y": 6,
+     "x": 22,
+     "y": 5,
      "mon": "Cragpull"
     }
    ]
@@ -44110,6 +47979,42 @@
    "objects": [
     {
      "tile": [
+      12,
+      5
+     ],
+     "k": "house",
+     "to": "423",
+     "why": "V3 kit house door"
+    },
+    {
+     "tile": [
+      13,
+      5
+     ],
+     "k": "house",
+     "to": "423",
+     "why": "V3 kit house door"
+    },
+    {
+     "tile": [
+      18,
+      5
+     ],
+     "k": "house",
+     "to": "423",
+     "why": "V3 kit house door"
+    },
+    {
+     "tile": [
+      19,
+      5
+     ],
+     "k": "house",
+     "to": "423",
+     "why": "V3 kit house door"
+    },
+    {
+     "tile": [
       9,
       12
      ],
@@ -44130,10 +48035,35 @@
     13
    ],
    "pkey": "apex",
-   "mons": [
+   "npcs": [
     {
      "x": 12,
+     "y": 11,
+     "art": "apex_folk6",
+     "face": "down",
+     "t": [
+      "Farmer: Mountain potatoes grow slow but taste amazing. Patience is the secret!",
+      "Farmer: Bio-types help pull the weeds. Good helpers, mostly."
+     ],
+     "name": "Farmer",
+     "src": "n:432:0"
+    },
+    {
+     "x": 4,
      "y": 6,
+     "art": "sheepkid",
+     "face": "down",
+     "t": [
+      "Shepherd Kid: My fluffy flock loves the cold. They sleep in a big woolly pile!"
+     ],
+     "name": "Shepherd Kid",
+     "src": "n:432:1"
+    }
+   ],
+   "mons": [
+    {
+     "x": 21,
+     "y": 11,
      "mon": "Gemmling"
     }
    ]
@@ -44292,7 +48222,7 @@
      "to": "427",
      "range": [
       9,
-      14
+      9
      ],
      "offset": 0
     },
@@ -44309,8 +48239,8 @@
    "objects": [
     {
      "tile": [
-      1,
-      2
+      22,
+      13
      ],
      "k": "stash",
      "item": "maxrevive",
@@ -44319,8 +48249,8 @@
     },
     {
      "tile": [
-      18,
-      13
+      1,
+      2
      ],
      "k": "stash",
      "item": "ether",
@@ -44354,10 +48284,10 @@
      }
     },
     {
-     "x": 2,
-     "y": 4,
+     "x": 20,
+     "y": 11,
      "art": "guard",
-     "face": "right",
+     "face": "up",
      "t": [],
      "id": "sec412_tr1",
      "trainer": {
@@ -44369,8 +48299,8 @@
    ],
    "mons": [
     {
-     "x": 20,
-     "y": 12,
+     "x": 23,
+     "y": 14,
      "mon": "Riffrex"
     },
     {
@@ -44682,7 +48612,7 @@
     {
      "tile": [
       12,
-      15
+      12
      ],
      "k": "chest",
      "item": "singularity",
@@ -44721,6 +48651,31 @@
     29
    ],
    "pkey": "apex",
+   "npcs": [
+    {
+     "x": 15,
+     "y": 8,
+     "art": "apex_folk2",
+     "face": "down",
+     "t": [
+      "Astronomer: Best view of the stars on the whole mountain. On clear nights you can see other worlds.",
+      "Astronomer: Tarn Fork is back down the trail when you're done gazing."
+     ],
+     "name": "Astronomer",
+     "src": "n:415:0"
+    },
+    {
+     "x": 18,
+     "y": 4,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Stargazer: I brought a blanket and a thermos. The sky does the rest."
+     ],
+     "name": "Stargazer",
+     "src": "n:415:1"
+    }
+   ],
    "mons": [
     {
      "x": 4,
@@ -44728,8 +48683,8 @@
      "mon": "Gemmantle"
     },
     {
-     "x": 21,
-     "y": 5,
+     "x": 22,
+     "y": 9,
      "mon": "Riffrex"
     }
    ]
@@ -44883,7 +48838,7 @@
     },
     {
      "tile": [
-      3,
+      13,
       14
      ],
      "k": "stash",
@@ -45148,8 +49103,8 @@
      "mon": "Flarehawk"
     },
     {
-     "x": 2,
-     "y": 10,
+     "x": 12,
+     "y": 14,
      "mon": "Diamondillo"
     }
    ]
@@ -45190,8 +49145,8 @@
     },
     {
      "tile": [
-      22,
-      10
+      18,
+      1
      ],
      "k": "stash",
      "item": "maxrevive",
@@ -45200,8 +49155,8 @@
     },
     {
      "tile": [
-      20,
-      14
+      21,
+      12
      ],
      "k": "stash",
      "item": "fullgel",
@@ -45220,15 +49175,40 @@
     -2
    ],
    "pkey": "apex",
+   "npcs": [
+    {
+     "x": 16,
+     "y": 10,
+     "art": "apex_folk6",
+     "face": "down",
+     "t": [
+      "Wanderer: Shh! Not many Linkers find this grove. The Relay Tower guards it like a secret.",
+      "Wanderer: Rare Alienmon nap under these pines."
+     ],
+     "name": "Wanderer",
+     "src": "n:422:0"
+    },
+    {
+     "x": 7,
+     "y": 8,
+     "art": "pilgrim",
+     "face": "down",
+     "t": [
+      "Hermit: I've lived up here so long the birds bring me gossip."
+     ],
+     "name": "Hermit",
+     "src": "n:422:1"
+    }
+   ],
    "mons": [
     {
-     "x": 3,
-     "y": 5,
+     "x": 20,
+     "y": 14,
      "mon": "Riffrex"
     },
     {
-     "x": 20,
-     "y": 8,
+     "x": 4,
+     "y": 14,
      "mon": "Cragmajor"
     }
    ]
@@ -45273,8 +49253,8 @@
    "objects": [
     {
      "tile": [
-      17,
-      7
+      21,
+      8
      ],
      "k": "stash",
      "item": "dust",
@@ -45283,8 +49263,8 @@
     },
     {
      "tile": [
-      20,
-      7
+      7,
+      8
      ],
      "k": "stash",
      "item": "fullgel",
@@ -45303,10 +49283,35 @@
     -35
    ],
    "pkey": "apex",
-   "mons": [
+   "npcs": [
+    {
+     "x": 9,
+     "y": 8,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Hiker: Icefall Cave is just past this ledge. Bring something warm for your team.",
+      "Hiker: Watch your step on the frozen floor. Sliding is fun until it isn't!"
+     ],
+     "name": "Hiker",
+     "src": "n:405:0"
+    },
     {
      "x": 19,
-     "y": 6,
+     "y": 7,
+     "art": "apex_folk2",
+     "face": "down",
+     "t": [
+      "Astronomer: I come back down from Observatory Terrace when the clouds roll in."
+     ],
+     "name": "Astronomer",
+     "src": "n:405:1"
+    }
+   ],
+   "mons": [
+    {
+     "x": 8,
+     "y": 10,
      "mon": "Gemmantle"
     },
     {
@@ -45375,7 +49380,21 @@
      3
     ]
    },
-   "pkey": "apex"
+   "pkey": "apex",
+   "npcs": [
+    {
+     "x": 19,
+     "y": 8,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Climber: The ice walls in here echo. Crystal-types love that sound.",
+      "Climber: The way down to B1 is past the frozen pillars."
+     ],
+     "name": "Climber",
+     "src": "n:406:0"
+    }
+   ]
   },
   "407": {
    "id": "407",
@@ -45446,7 +49465,21 @@
      4
     ]
    },
-   "pkey": "apex"
+   "pkey": "apex",
+   "npcs": [
+    {
+     "x": 13,
+     "y": 8,
+     "art": "miner",
+     "face": "down",
+     "t": [
+      "Ice Cutter: It gets colder the deeper you go. The Deep Chamber is just ahead.",
+      "Ice Cutter: I've chipped ice down here for years. Still finding new tunnels!"
+     ],
+     "name": "Ice Cutter",
+     "src": "n:407:0"
+    }
+   ]
   },
   "409": {
    "id": "409",
@@ -45514,7 +49547,21 @@
      12
     ]
    },
-   "pkey": "apex"
+   "pkey": "apex",
+   "npcs": [
+    {
+     "x": 13,
+     "y": 9,
+     "art": "apex_folk5",
+     "face": "down",
+     "t": [
+      "Explorer: You made it to the Deep Chamber! Even the echoes freeze down here.",
+      "Explorer: Check every corner. Climbers leave supplies behind."
+     ],
+     "name": "Explorer",
+     "src": "n:409:0"
+    }
+   ]
   },
   "427": {
    "id": "427",
@@ -45599,15 +49646,57 @@
     -3
    ],
    "pkey": "apex",
+   "npcs": [
+    {
+     "x": 13,
+     "y": 12,
+     "art": "guard",
+     "face": "down",
+     "t": [
+      "Summit Guard: The Apex Relay Tower. Its Keeper only meets Linkers who climbed every step.",
+      "Summit Guard: Head inside to the trial floor when you're ready."
+     ],
+     "name": "Summit Guard",
+     "src": "n:427:0"
+    },
+    {
+     "x": 5,
+     "y": 12,
+     "art": "apex_folk1",
+     "face": "up",
+     "t": [
+      "Ace Linker: I heard there's a quiet grove hidden behind the tower. Never found it myself."
+     ],
+     "name": "Ace Linker",
+     "src": "n:427:1",
+     "id": "sec427_tr1",
+     "trainer": {
+      "cls": "Ace Linker",
+      "linker": 1,
+      "name": "Mara"
+     }
+    },
+    {
+     "x": 19,
+     "y": 12,
+     "art": "apex_folk5",
+     "face": "down",
+     "t": [
+      "Fan: The tower lights glow brighter when a big battle starts!"
+     ],
+     "name": "Fan",
+     "src": "n:427:2"
+    }
+   ],
    "mons": [
     {
-     "x": 3,
-     "y": 12,
+     "x": 9,
+     "y": 7,
      "mon": "Riffrex"
     },
     {
-     "x": 14,
-     "y": 12,
+     "x": 15,
+     "y": 7,
      "mon": "Cragmajor"
     }
    ]
@@ -45678,7 +49767,21 @@
     ]
    },
    "parent": "427",
-   "pkey": "apex"
+   "pkey": "apex",
+   "npcs": [
+    {
+     "x": 12,
+     "y": 14,
+     "art": "apex_folk6",
+     "face": "down",
+     "t": [
+      "Tower Aide: Welcome to the trial floor! Keep your head high and your team healthy.",
+      "Tower Aide: The Summit Room is just beyond. You've got this!"
+     ],
+     "name": "Tower Aide",
+     "src": "n:428:0"
+    }
+   ]
   },
   "429": {
    "id": "429",
@@ -45726,7 +49829,20 @@
      12
     ]
    },
-   "pkey": "apex"
+   "pkey": "apex",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 8,
+     "art": "apex_folk2",
+     "face": "down",
+     "t": [
+      "Tower Aide: You reached the Summit Room! The whole mountain feels proud of you."
+     ],
+     "name": "Tower Aide",
+     "src": "n:429:0"
+    }
+   ]
   },
   "401": {
    "id": "401",
@@ -45803,6 +49919,48 @@
     11
    ],
    "pkey": "apex",
+   "npcs": [
+    {
+     "x": 13,
+     "y": 10,
+     "art": "apex_folk1",
+     "face": "left",
+     "t": [
+      "Ace Linker: Only the toughest teams get a seat in the Grand Stadium. Heal up before you walk in.",
+      "Ace Linker: The lobby's right through those big doors."
+     ],
+     "name": "Ace Linker",
+     "src": "n:401:0",
+     "id": "sec401_tr0",
+     "trainer": {
+      "cls": "Ace Linker",
+      "linker": 1,
+      "name": "Tamsin"
+     }
+    },
+    {
+     "x": 5,
+     "y": 13,
+     "art": "apex_folk3",
+     "face": "down",
+     "t": [
+      "Fan: I came all the way up from Tarn Fork just to hear the crowd roar!"
+     ],
+     "name": "Fan",
+     "src": "n:401:1"
+    },
+    {
+     "x": 19,
+     "y": 11,
+     "art": "guard",
+     "face": "down",
+     "t": [
+      "Summit Guard: Thin air up here. Your Alienmon tire faster than you think. Stock up first."
+     ],
+     "name": "Summit Guard",
+     "src": "n:401:2"
+    }
+   ],
    "mons": [
     {
      "x": 7,
@@ -45810,8 +49968,8 @@
      "mon": "Flarehawk"
     },
     {
-     "x": 20,
-     "y": 8,
+     "x": 17,
+     "y": 7,
      "mon": "Diamondillo"
     }
    ]
@@ -45882,7 +50040,32 @@
     ]
    },
    "parent": "401",
-   "pkey": "apex"
+   "pkey": "apex",
+   "npcs": [
+    {
+     "x": 8,
+     "y": 10,
+     "art": "referee",
+     "face": "down",
+     "t": [
+      "Receptionist: Welcome to the Summit Grand Stadium! The arena floor is straight ahead.",
+      "Receptionist: Every match here is a big one. Make sure your team is ready."
+     ],
+     "name": "Receptionist",
+     "src": "n:403:0"
+    },
+    {
+     "x": 5,
+     "y": 13,
+     "art": "apex_folk4",
+     "face": "down",
+     "t": [
+      "Fan: I've got my foam finger and my lucky scarf. Go get 'em, Linker!"
+     ],
+     "name": "Fan",
+     "src": "n:403:1"
+    }
+   ]
   },
   "404": {
    "id": "404",
@@ -45989,7 +50172,33 @@
     ]
    },
    "parent": "430",
-   "pkey": "apex"
+   "pkey": "apex",
+   "npcs": [
+    {
+     "x": 9,
+     "y": 5,
+     "art": "nurse",
+     "face": "down",
+     "t": [
+      "Nurse: Welcome to the Summit Recovery Bay. Mountain battles are tough, so let us patch up your team.",
+      "Nurse: Your Alienmon are fully rested. Good luck up there!"
+     ],
+     "name": "Nurse",
+     "stay": true,
+     "src": "n:426:0"
+    },
+    {
+     "x": 11,
+     "y": 12,
+     "art": "apex_folk4",
+     "face": "down",
+     "t": [
+      "Visitor: My team was so cold they came in shivering. Now they're snug as can be."
+     ],
+     "name": "Visitor",
+     "src": "n:426:1"
+    }
+   ]
   },
   "433": {
    "id": "433",
@@ -46059,7 +50268,22 @@
     ]
    },
    "parent": "430",
-   "pkey": "apex"
+   "pkey": "apex",
+   "npcs": [
+    {
+     "x": 4,
+     "y": 9,
+     "art": "shop",
+     "face": "right",
+     "t": [
+      "Clerk: Welcome to the Summit Supply Shop! Potions, Cure Spray, and warm gear for the climb.",
+      "Clerk: Prices are a little higher up here. Hauling stock up the mountain is hard work!"
+     ],
+     "name": "Clerk",
+     "stay": true,
+     "src": "n:433:0"
+    }
+   ]
   },
   "423": {
    "id": "423",
@@ -46110,7 +50334,32 @@
     ]
    },
    "parent": "430",
-   "pkey": "apex"
+   "pkey": "apex",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 10,
+     "art": "apex_folk1",
+     "face": "down",
+     "t": [
+      "Ace Linker: The Linker Lounge is where we rest between big battles. Grab a seat!",
+      "Ace Linker: Swap tips, not just Alienmon. Everyone up here has a story."
+     ],
+     "name": "Ace Linker",
+     "src": "n:423:0"
+    },
+    {
+     "x": 6,
+     "y": 6,
+     "art": "apex_folk3",
+     "face": "down",
+     "t": [
+      "Retired Linker: Back in my day we climbed the whole mountain without a single Recovery Bay. Uphill both ways!"
+     ],
+     "name": "Retired Linker",
+     "src": "n:423:1"
+    }
+   ]
   },
   "424": {
    "id": "424",
@@ -46161,7 +50410,21 @@
     ]
    },
    "parent": "431",
-   "pkey": "apex"
+   "pkey": "apex",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 10,
+     "art": "researcher",
+     "face": "down",
+     "t": [
+      "Astronomer: This telescope can spot a comet before it even sparkles.",
+      "Astronomer: Peek through if you like. Just don't sneeze on the lens!"
+     ],
+     "name": "Astronomer",
+     "src": "n:424:0"
+    }
+   ]
   },
   "425": {
    "id": "425",
@@ -46212,7 +50475,32 @@
     ]
    },
    "parent": "431",
-   "pkey": "apex"
+   "pkey": "apex",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 10,
+     "art": "apex_folk2",
+     "face": "down",
+     "t": [
+      "Archivist: The Quorum keeps records of every great Linker battle here.",
+      "Archivist: Shelves on the left are old. Shelves on the right are older."
+     ],
+     "name": "Archivist",
+     "src": "n:425:0"
+    },
+    {
+     "x": 6,
+     "y": 14,
+     "art": "researcher",
+     "face": "down",
+     "t": [
+      "Scholar: I've been reading the same page for an hour. The words are tiny!"
+     ],
+     "name": "Scholar",
+     "src": "n:425:1"
+    }
+   ]
   },
   "863": {
    "id": "863",
@@ -46299,16 +50587,6 @@
      "k": "house",
      "to": "189",
      "why": "V3 kit house door"
-    },
-    {
-     "tile": [
-      11,
-      12
-     ],
-     "k": "stash",
-     "item": "maxrevive",
-     "n": 2,
-     "tier": 7
     }
    ],
    "spawns": {
@@ -46322,13 +50600,43 @@
     -4
    ],
    "pkey": "ystra",
-   "mons": [
+   "npcs": [
+    {
+     "x": 11,
+     "y": 12,
+     "art": "ystra_folk1",
+     "face": "down",
+     "t": [
+      "Resident: Fragment Lane Homes are built on floating crystal pieces.",
+      "Resident: Crystal Crossroads is just down the path."
+     ],
+     "name": "Resident",
+     "src": "n:863:0"
+    },
+    {
+     "x": 5,
+     "y": 12,
+     "art": "ystra_folk2",
+     "face": "down",
+     "t": [
+      "Kid: I found a crystal that sings! Wanna hear? La la la!"
+     ],
+     "name": "Kid",
+     "src": "n:863:1"
+    },
     {
      "x": 18,
      "y": 12,
-     "mon": "Blightling"
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Neighbour: Arrival Fragment is close by if you just landed."
+     ],
+     "name": "Neighbour",
+     "src": "n:863:2"
     }
-   ]
+   ],
+   "mons": []
   },
   "864": {
    "id": "864",
@@ -46469,6 +50777,31 @@
     -15
    ],
    "pkey": "ystra",
+   "npcs": [
+    {
+     "x": 4,
+     "y": 6,
+     "art": "ystra_folk3",
+     "face": "down",
+     "t": [
+      "Old Resident: Fragment Quiet Court. The Recovery Bay and the shop are right here!",
+      "Old Resident: The crystals hum softly at night. Lovely sound."
+     ],
+     "name": "Old Resident",
+     "src": "n:864:0"
+    },
+    {
+     "x": 18,
+     "y": 7,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Neighbour: I water my crystal garden every morning. They grow so slowly!"
+     ],
+     "name": "Neighbour",
+     "src": "n:864:1"
+    }
+   ],
    "mons": [
     {
      "x": 2,
@@ -46547,7 +50880,7 @@
     },
     {
      "tile": [
-      18,
+      8,
       11
      ],
      "k": "stash",
@@ -46567,10 +50900,35 @@
     49
    ],
    "pkey": "ystra",
+   "npcs": [
+    {
+     "x": 12,
+     "y": 10,
+     "art": "ystra_folk4",
+     "face": "down",
+     "t": [
+      "Farmer: Seedfall Farmstead grows plants from seeds that fell from the sky!",
+      "Farmer: Glasswood Hollows is just down the path."
+     ],
+     "name": "Farmer",
+     "src": "n:865:0"
+    },
+    {
+     "x": 16,
+     "y": 10,
+     "art": "sheepkid",
+     "face": "down",
+     "t": [
+      "Farm Kid: I feed the farm critters crystal crumbs. They sparkle when they eat!"
+     ],
+     "name": "Farm Kid",
+     "src": "n:865:1"
+    }
+   ],
    "mons": [
     {
-     "x": 8,
-     "y": 11,
+     "x": 2,
+     "y": 10,
      "mon": "Riftling"
     }
    ]
@@ -46746,8 +51104,8 @@
    "objects": [
     {
      "tile": [
-      3,
-      13
+      1,
+      12
      ],
      "k": "stash",
      "item": "fullgel",
@@ -46757,7 +51115,7 @@
     {
      "tile": [
       1,
-      12
+      13
      ],
      "k": "stash",
      "item": "singularity",
@@ -46811,8 +51169,8 @@
      "mon": "Fractalith"
     },
     {
-     "x": 2,
-     "y": 13,
+     "x": 21,
+     "y": 5,
      "mon": "Riftwalker"
     }
    ]
@@ -46965,7 +51323,7 @@
     {
      "tile": [
       15,
-      15
+      12
      ],
      "k": "chest",
      "item": "singularity",
@@ -47004,15 +51362,40 @@
     113
    ],
    "pkey": "ystra",
+   "npcs": [
+    {
+     "x": 5,
+     "y": 8,
+     "art": "ystra_folk1",
+     "face": "down",
+     "t": [
+      "Rift Walker: Shard Slope! Crystal shards cover every step. Watch your feet!",
+      "Rift Walker: Red Sun Overlook is just back up the path."
+     ],
+     "name": "Rift Walker",
+     "src": "n:852:0"
+    },
+    {
+     "x": 5,
+     "y": 7,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Hiker: The shards ring like bells when the wind blows!"
+     ],
+     "name": "Hiker",
+     "src": "n:852:1"
+    }
+   ],
    "mons": [
     {
-     "x": 4,
-     "y": 9,
+     "x": 22,
+     "y": 11,
      "mon": "Riftwalker"
     },
     {
-     "x": 19,
-     "y": 11,
+     "x": 14,
+     "y": 2,
      "mon": "Blightroot"
     }
    ]
@@ -47477,7 +51860,7 @@
     {
      "tile": [
       20,
-      11
+      7
      ],
      "k": "stash",
      "item": "singularity",
@@ -47531,7 +51914,7 @@
      "mon": "Riftwalker"
     },
     {
-     "x": 19,
+     "x": 13,
      "y": 13,
      "mon": "Blightroot"
     }
@@ -47564,7 +51947,7 @@
     {
      "tile": [
       15,
-      4
+      6
      ],
      "k": "chest",
      "item": "maxrevive",
@@ -47573,8 +51956,8 @@
     },
     {
      "tile": [
-      7,
-      10
+      18,
+      1
      ],
      "k": "stash",
      "item": "singularity",
@@ -47583,8 +51966,8 @@
     },
     {
      "tile": [
-      1,
-      6
+      8,
+      9
      ],
      "k": "stash",
      "item": "maxrevive",
@@ -47603,15 +51986,40 @@
     47
    ],
    "pkey": "ystra",
+   "npcs": [
+    {
+     "x": 6,
+     "y": 9,
+     "art": "ystra_folk2",
+     "face": "down",
+     "t": [
+      "Wanderer: Ystra Secret Grove! Crystal trees that chime in the breeze.",
+      "Wanderer: Rare Alienmon nap under the glowing branches."
+     ],
+     "name": "Wanderer",
+     "src": "n:858:0"
+    },
+    {
+     "x": 14,
+     "y": 9,
+     "art": "pilgrim",
+     "face": "down",
+     "t": [
+      "Seeker: I found this place off Void Fork. It feels very old."
+     ],
+     "name": "Seeker",
+     "src": "n:858:1"
+    }
+   ],
    "mons": [
     {
-     "x": 5,
-     "y": 6,
+     "x": 19,
+     "y": 1,
      "mon": "Riftwalker"
     },
     {
-     "x": 9,
-     "y": 14,
+     "x": 1,
+     "y": 6,
      "mon": "Fractalith"
     }
    ]
@@ -47653,7 +52061,28 @@
      "kind": "stairs"
     }
    ],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      4,
+      7
+     ],
+     "k": "stash",
+     "item": "dust",
+     "n": 2500,
+     "tier": 7
+    },
+    {
+     "tile": [
+      20,
+      11
+     ],
+     "k": "stash",
+     "item": "dust",
+     "n": 2500,
+     "tier": 7
+    }
+   ],
    "spawns": {
     "default": [
      10,
@@ -47665,7 +52094,43 @@
     17
    ],
    "pkey": "ystra",
-   "mons": []
+   "npcs": [
+    {
+     "x": 9,
+     "y": 8,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Rift Walker: Shardheart Cave is just through there. The crystals inside are huge!",
+      "Rift Walker: Void Crack Bend is back up the path."
+     ],
+     "name": "Rift Walker",
+     "src": "n:845:0"
+    },
+    {
+     "x": 15,
+     "y": 11,
+     "art": "ystra_folk4",
+     "face": "down",
+     "t": [
+      "Seeker: Crystal-types guard the cave. Bring something strong!"
+     ],
+     "name": "Seeker",
+     "src": "n:845:1"
+    }
+   ],
+   "mons": [
+    {
+     "x": 4,
+     "y": 10,
+     "mon": "Fractalith"
+    },
+    {
+     "x": 20,
+     "y": 10,
+     "mon": "Riftwalker"
+    }
+   ]
   },
   "846": {
    "id": "846",
@@ -47726,7 +52191,21 @@
      3
     ]
    },
-   "pkey": "ystra"
+   "pkey": "ystra",
+   "npcs": [
+    {
+     "x": 18,
+     "y": 8,
+     "art": "ystra_folk5",
+     "face": "down",
+     "t": [
+      "Crystal Hunter: 1F of Shardheart Cave. The walls sparkle with every step.",
+      "Crystal Hunter: The way down to B1 is past the big crystal pillar."
+     ],
+     "name": "Crystal Hunter",
+     "src": "n:846:0"
+    }
+   ]
   },
   "847": {
    "id": "847",
@@ -47797,7 +52276,20 @@
      4
     ]
    },
-   "pkey": "ystra"
+   "pkey": "ystra",
+   "npcs": [
+    {
+     "x": 12,
+     "y": 8,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Explorer: B1! The Deep Chamber is just ahead. The crystals glow brighter down there."
+     ],
+     "name": "Explorer",
+     "src": "n:847:0"
+    }
+   ]
   },
   "848": {
    "id": "848",
@@ -47855,7 +52347,20 @@
      12
     ]
    },
-   "pkey": "ystra"
+   "pkey": "ystra",
+   "npcs": [
+    {
+     "x": 12,
+     "y": 9,
+     "art": "ystra_folk6",
+     "face": "down",
+     "t": [
+      "Seeker: The Deep Chamber! I've never seen crystals this big."
+     ],
+     "name": "Seeker",
+     "src": "n:848:0"
+    }
+   ]
   },
   "842": {
    "id": "842",
@@ -47912,8 +52417,8 @@
    "objects": [
     {
      "tile": [
-      2,
-      10
+      1,
+      9
      ],
      "k": "stash",
      "item": "dust",
@@ -47932,15 +52437,51 @@
     11
    ],
    "pkey": "ystra",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 10,
+     "art": "ystra_folk1",
+     "face": "down",
+     "t": [
+      "Seeker: The Ancient Crystal Ring! Battles here echo through the crystal walls.",
+      "Seeker: The lobby is just through the shining arch."
+     ],
+     "name": "Seeker",
+     "src": "n:842:0"
+    },
+    {
+     "x": 5,
+     "y": 9,
+     "art": "ystra_folk2",
+     "face": "down",
+     "t": [
+      "Rift Walker: This ring is older than anything else on Ystra. Can you feel it?"
+     ],
+     "name": "Rift Walker",
+     "src": "n:842:1"
+    },
+    {
+     "x": 19,
+     "y": 12,
+     "art": "pilgrim",
+     "face": "down",
+     "t": [
+      "Pilgrim: Glasswood Junction is just back the way you came."
+     ],
+     "name": "Pilgrim",
+     "src": "n:842:2"
+    }
+   ],
    "mons": [
     {
-     "x": 7,
+     "x": 16,
      "y": 7,
      "mon": "Riftwalker"
     },
     {
      "x": 1,
-     "y": 9,
+     "y": 11,
      "mon": "Blightroot"
     }
    ]
@@ -48011,7 +52552,32 @@
     ]
    },
    "parent": "842",
-   "pkey": "ystra"
+   "pkey": "ystra",
+   "npcs": [
+    {
+     "x": 8,
+     "y": 10,
+     "art": "referee",
+     "face": "down",
+     "t": [
+      "Receptionist: Welcome to the Crystal Ring! The arena is just ahead.",
+      "Receptionist: The crystals hum louder during big battles. Listen for it!"
+     ],
+     "name": "Receptionist",
+     "src": "n:843:0"
+    },
+    {
+     "x": 5,
+     "y": 7,
+     "art": "ystra_folk3",
+     "face": "down",
+     "t": [
+      "Fan: I came all the way from Halo to watch a match here!"
+     ],
+     "name": "Fan",
+     "src": "n:843:1"
+    }
+   ]
   },
   "844": {
    "id": "844",
@@ -48112,15 +52678,40 @@
     12
    ],
    "pkey": "ystra",
-   "mons": [
+   "npcs": [
+    {
+     "x": 14,
+     "y": 11,
+     "art": "technician",
+     "face": "down",
+     "t": [
+      "Dock Tech: Ystra Spaceport! The oldest landing pad you'll ever see.",
+      "Dock Tech: Glasswood Junction is just past the gate."
+     ],
+     "name": "Dock Tech",
+     "src": "n:867:0"
+    },
     {
      "x": 6,
-     "y": 3,
+     "y": 8,
+     "art": "ystra_folk5",
+     "face": "down",
+     "t": [
+      "Traveller: I made it all the way to Ystra! Now where's the snack stand?"
+     ],
+     "name": "Traveller",
+     "src": "n:867:1"
+    }
+   ],
+   "mons": [
+    {
+     "x": 18,
+     "y": 6,
      "mon": "Riftwalker"
     },
     {
-     "x": 15,
-     "y": 9,
+     "x": 8,
+     "y": 2,
      "mon": "Blightroot"
     }
    ]
@@ -48193,7 +52784,33 @@
     ]
    },
    "parent": "864",
-   "pkey": "ystra"
+   "pkey": "ystra",
+   "npcs": [
+    {
+     "x": 9,
+     "y": 5,
+     "art": "nurse",
+     "face": "down",
+     "t": [
+      "Nurse: Welcome to the Fragment Recovery Bay. Your team will feel brand new in no time.",
+      "Nurse: All rested! The crystals hum happily when Alienmon are healthy."
+     ],
+     "name": "Nurse",
+     "stay": true,
+     "src": "n:862:0"
+    },
+    {
+     "x": 11,
+     "y": 11,
+     "art": "ystra_folk6",
+     "face": "down",
+     "t": [
+      "Visitor: My team napped right through the healing. Best rest ever!"
+     ],
+     "name": "Visitor",
+     "src": "n:862:1"
+    }
+   ]
   },
   "866": {
    "id": "866",
@@ -48263,7 +52880,22 @@
     ]
    },
    "parent": "864",
-   "pkey": "ystra"
+   "pkey": "ystra",
+   "npcs": [
+    {
+     "x": 3,
+     "y": 9,
+     "art": "shop",
+     "face": "right",
+     "t": [
+      "Clerk: Welcome to the Fragment Shop! Potions, Cure Spray, and supplies for the crystal paths.",
+      "Clerk: Shards are sharp out there. Pack extra Potions!"
+     ],
+     "name": "Clerk",
+     "stay": true,
+     "src": "n:866:0"
+    }
+   ]
   },
   "859": {
    "id": "859",
@@ -48314,7 +52946,32 @@
     ]
    },
    "parent": "863",
-   "pkey": "ystra"
+   "pkey": "ystra",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 10,
+     "art": "ystra_folk3",
+     "face": "down",
+     "t": [
+      "Vault Keeper: The Seed Vault keeps seeds from every world. Every single one!",
+      "Vault Keeper: Please keep the doors closed. The seeds like it cool."
+     ],
+     "name": "Vault Keeper",
+     "src": "n:859:0"
+    },
+    {
+     "x": 5,
+     "y": 13,
+     "art": "researcher",
+     "face": "down",
+     "t": [
+      "Researcher: I'm cataloguing seeds. Seed number 4,207 looks just like 4,206."
+     ],
+     "name": "Researcher",
+     "src": "n:859:1"
+    }
+   ]
   },
   "860": {
    "id": "860",
@@ -48365,7 +53022,21 @@
     ]
    },
    "parent": "864",
-   "pkey": "ystra"
+   "pkey": "ystra",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 9,
+     "art": "ystra_folk4",
+     "face": "down",
+     "t": [
+      "Caretaker: This Ancient Dwelling is older than anything else on Ystra.",
+      "Caretaker: Someone lived here long, long ago. They liked crystal furniture!"
+     ],
+     "name": "Caretaker",
+     "src": "n:860:0"
+    }
+   ]
   },
   "861": {
    "id": "861",
@@ -48416,7 +53087,32 @@
     ]
    },
    "parent": "864",
-   "pkey": "ystra"
+   "pkey": "ystra",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 9,
+     "art": "ystra_folk5",
+     "face": "down",
+     "t": [
+      "Memory Keeper: The Memory Hall holds echoes of all the worlds. Listen closely.",
+      "Memory Keeper: Some echoes are happy, some are sad. All are worth hearing."
+     ],
+     "name": "Memory Keeper",
+     "src": "n:861:0"
+    },
+    {
+     "x": 5,
+     "y": 12,
+     "art": "pilgrim",
+     "face": "down",
+     "t": [
+      "Seeker: I came here to remember. I forgot what, though."
+     ],
+     "name": "Seeker",
+     "src": "n:861:1"
+    }
+   ]
   },
   "836": {
    "id": "836",
@@ -48516,6 +53212,31 @@
     -4
    ],
    "pkey": "umbra",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 9,
+     "art": "umbra_folk3",
+     "face": "down",
+     "t": [
+      "Resident: Gravewell Lane Homes. Every house has a lantern by the door.",
+      "Resident: Gravewell's just down the road."
+     ],
+     "name": "Resident",
+     "src": "n:836:0"
+    },
+    {
+     "x": 18,
+     "y": 9,
+     "art": "umbra_folk4",
+     "face": "down",
+     "t": [
+      "Kid: I'm not scared of the dark! Okay, maybe a little."
+     ],
+     "name": "Kid",
+     "src": "n:836:1"
+    }
+   ],
    "mons": []
   },
   "837": {
@@ -48604,16 +53325,6 @@
      "k": "house",
      "to": "829",
      "why": "V3 kit house door"
-    },
-    {
-     "tile": [
-      10,
-      14
-     ],
-     "k": "stash",
-     "item": "dust",
-     "n": 1600,
-     "tier": 6
     }
    ],
    "spawns": {
@@ -48627,10 +53338,35 @@
     0
    ],
    "pkey": "umbra",
-   "mons": [
+   "npcs": [
+    {
+     "x": 18,
+     "y": 10,
+     "art": "umbra_folk5",
+     "face": "down",
+     "t": [
+      "Old Resident: Gravewell Quiet Court. The quietest spot in a very quiet world.",
+      "Old Resident: Even the shadows whisper here."
+     ],
+     "name": "Old Resident",
+     "src": "n:837:0"
+    },
     {
      "x": 14,
      "y": 14,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Neighbour: I polish my lantern every evening. It's my favorite chore."
+     ],
+     "name": "Neighbour",
+     "src": "n:837:1"
+    }
+   ],
+   "mons": [
+    {
+     "x": 10,
+     "y": 13,
      "mon": "Geopip"
     }
    ]
@@ -48725,10 +53461,35 @@
     -4
    ],
    "pkey": "umbra",
+   "npcs": [
+    {
+     "x": 7,
+     "y": 10,
+     "art": "umbra_folk6",
+     "face": "down",
+     "t": [
+      "Farmer: Umbra Farmstead Edge grows shadow mushrooms. They taste like midnight!",
+      "Farmer: Sinkhole Overlook is just up the path."
+     ],
+     "name": "Farmer",
+     "src": "n:838:0"
+    },
+    {
+     "x": 16,
+     "y": 10,
+     "art": "sheepkid",
+     "face": "down",
+     "t": [
+      "Farm Kid: My farm critters glow faintly in the dark. Makes them easy to find!"
+     ],
+     "name": "Farm Kid",
+     "src": "n:838:1"
+    }
+   ],
    "mons": [
     {
-     "x": 6,
-     "y": 10,
+     "x": 4,
+     "y": 8,
      "mon": "Wellspawn"
     }
    ]
@@ -48814,6 +53575,31 @@
     -36
    ],
    "pkey": "umbra",
+   "npcs": [
+    {
+     "x": 6,
+     "y": 8,
+     "art": "technician",
+     "face": "down",
+     "t": [
+      "Dock Tech: Umbra Spaceport! Ships land by lantern light here.",
+      "Dock Tech: Shadow Junction is just past the gate."
+     ],
+     "name": "Dock Tech",
+     "src": "n:840:0"
+    },
+    {
+     "x": 17,
+     "y": 8,
+     "art": "umbra_folk1",
+     "face": "down",
+     "t": [
+      "Traveller: I came to see the lanterns. They're even prettier than the pictures!"
+     ],
+     "name": "Traveller",
+     "src": "n:840:1"
+    }
+   ],
    "mons": [
     {
      "x": 4,
@@ -48985,10 +53771,10 @@
      }
     },
     {
-     "x": 7,
-     "y": 15,
+     "x": 13,
+     "y": 12,
      "art": "civilian",
-     "face": "right",
+     "face": "left",
      "t": [],
      "id": "sec816_tr3",
      "trainer": {
@@ -48998,7 +53784,18 @@
      }
     }
    ],
-   "mons": []
+   "mons": [
+    {
+     "x": 3,
+     "y": 12,
+     "mon": "Dusklord"
+    },
+    {
+     "x": 20,
+     "y": 2,
+     "mon": "Gloomhulk"
+    }
+   ]
   },
   "817": {
    "id": "817",
@@ -49132,8 +53929,8 @@
    ],
    "mons": [
     {
-     "x": 23,
-     "y": 1,
+     "x": 18,
+     "y": 9,
      "mon": "Wellmaw"
     },
     {
@@ -49358,13 +54155,13 @@
    ],
    "mons": [
     {
-     "x": 1,
-     "y": 8,
+     "x": 8,
+     "y": 2,
      "mon": "Wellmaw"
     },
     {
-     "x": 8,
-     "y": 2,
+     "x": 17,
+     "y": 5,
      "mon": "Geodome"
     }
    ]
@@ -49582,8 +54379,8 @@
    ],
    "mons": [
     {
-     "x": 22,
-     "y": 15,
+     "x": 21,
+     "y": 12,
      "mon": "Wellmaw"
     },
     {
@@ -49725,7 +54522,7 @@
     {
      "tile": [
       15,
-      14
+      13
      ],
      "k": "chest",
      "item": "stasis",
@@ -49764,6 +54561,31 @@
     25
    ],
    "pkey": "umbra",
+   "npcs": [
+    {
+     "x": 16,
+     "y": 9,
+     "art": "umbra_folk1",
+     "face": "down",
+     "t": [
+      "Drifter: Mistfall Bend! The mist is so thick you can barely see your feet.",
+      "Drifter: Gloom Commons is just back the way you came."
+     ],
+     "name": "Drifter",
+     "src": "n:823:0"
+    },
+    {
+     "x": 5,
+     "y": 8,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Lantern Keeper: Hold your lantern high. The mist hides the path."
+     ],
+     "name": "Lantern Keeper",
+     "src": "n:823:1"
+    }
+   ],
    "mons": [
     {
      "x": 9,
@@ -49771,7 +54593,7 @@
      "mon": "Wellmaw"
     },
     {
-     "x": 16,
+     "x": 12,
      "y": 6,
      "mon": "Geodome"
     }
@@ -49909,7 +54731,7 @@
     {
      "tile": [
       15,
-      4
+      2
      ],
      "k": "chest",
      "item": "maxrevive",
@@ -49928,8 +54750,8 @@
     },
     {
      "tile": [
-      22,
-      11
+      18,
+      1
      ],
      "k": "stash",
      "item": "dust",
@@ -49948,10 +54770,35 @@
     -37
    ],
    "pkey": "umbra",
-   "mons": [
+   "npcs": [
     {
      "x": 5,
-     "y": 6,
+     "y": 8,
+     "art": "umbra_folk4",
+     "face": "down",
+     "t": [
+      "Wanderer: Gloomshade Grove! Trees with black leaves that glow faintly.",
+      "Wanderer: Rare Void-types nap in the deep shadows here."
+     ],
+     "name": "Wanderer",
+     "src": "n:827:0"
+    },
+    {
+     "x": 16,
+     "y": 9,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Lantern Keeper: I found this place off Abyss Fork. Keep your lantern close!"
+     ],
+     "name": "Lantern Keeper",
+     "src": "n:827:1"
+    }
+   ],
+   "mons": [
+    {
+     "x": 19,
+     "y": 1,
      "mon": "Wellmaw"
     },
     {
@@ -50044,14 +54891,39 @@
     -6
    ],
    "pkey": "umbra",
+   "npcs": [
+    {
+     "x": 12,
+     "y": 11,
+     "art": "umbra_folk2",
+     "face": "down",
+     "t": [
+      "Scavenger: The Helix Hideout. They thought nobody could find it in the dark.",
+      "Scavenger: There's a lab in the back. Smells like burnt wires."
+     ],
+     "name": "Scavenger",
+     "src": "n:825:0"
+    },
+    {
+     "x": 4,
+     "y": 11,
+     "art": "umbra_folk3",
+     "face": "down",
+     "t": [
+      "Lantern Keeper: The Relay Tower is close by. Follow the lanterns!"
+     ],
+     "name": "Lantern Keeper",
+     "src": "n:825:1"
+    }
+   ],
    "mons": [
     {
-     "x": 1,
+     "x": 22,
      "y": 11,
      "mon": "Wellmaw"
     },
     {
-     "x": 12,
+     "x": 17,
      "y": 11,
      "mon": "Geodome"
     }
@@ -50110,7 +54982,21 @@
     ]
    },
    "parent": "825",
-   "pkey": "umbra"
+   "pkey": "umbra",
+   "npcs": [
+    {
+     "x": 14,
+     "y": 13,
+     "art": "researcher",
+     "face": "down",
+     "t": [
+      "Helix Scientist: Who turned on the lights?! I was working in the dark on purpose.",
+      "Helix Scientist: Fine, look around. Just don't open the shadow jars."
+     ],
+     "name": "Helix Scientist",
+     "src": "n:826:0"
+    }
+   ]
   },
   "807": {
    "id": "807",
@@ -50187,15 +55073,51 @@
     -64
    ],
    "pkey": "umbra",
+   "npcs": [
+    {
+     "x": 14,
+     "y": 9,
+     "art": "umbra_folk1",
+     "face": "down",
+     "t": [
+      "Fan: The Lantern Pit! Battles lit only by lanterns. So spooky and cool!",
+      "Fan: The lobby's right inside the lantern gate."
+     ],
+     "name": "Fan",
+     "src": "n:807:0"
+    },
+    {
+     "x": 19,
+     "y": 10,
+     "art": "umbra_folk2",
+     "face": "down",
+     "t": [
+      "Lantern Keeper: Keep to the lanterns. The dark makes everything look bigger."
+     ],
+     "name": "Lantern Keeper",
+     "src": "n:807:1"
+    },
+    {
+     "x": 4,
+     "y": 10,
+     "art": "wanderer",
+     "face": "down",
+     "t": [
+      "Scavenger: Abyss Rim is just back the way you came."
+     ],
+     "name": "Scavenger",
+     "src": "n:807:2"
+    }
+   ],
    "mons": [
     {
-     "x": 5,
-     "y": 6,
+     "x": 9,
+     "y": 7,
      "mon": "Wellmaw"
     },
     {
-     "x": 15,
-     "y": 9,
+     "x": 5,
+     "y": 6,
      "mon": "Geodome"
     }
    ]
@@ -50266,7 +55188,32 @@
     ]
    },
    "parent": "807",
-   "pkey": "umbra"
+   "pkey": "umbra",
+   "npcs": [
+    {
+     "x": 8,
+     "y": 10,
+     "art": "referee",
+     "face": "down",
+     "t": [
+      "Receptionist: Welcome to the Lantern Pit! The arena is just ahead.",
+      "Receptionist: Void-types love the shadows in there. Watch out!"
+     ],
+     "name": "Receptionist",
+     "src": "n:809:0"
+    },
+    {
+     "x": 6,
+     "y": 14,
+     "art": "umbra_folk3",
+     "face": "down",
+     "t": [
+      "Fan: I brought my own lantern so I can see every move!"
+     ],
+     "name": "Fan",
+     "src": "n:809:1"
+    }
+   ]
   },
   "810": {
    "id": "810",
@@ -50375,15 +55322,40 @@
     -68
    ],
    "pkey": "umbra",
+   "npcs": [
+    {
+     "x": 15,
+     "y": 7,
+     "art": "umbra_folk4",
+     "face": "down",
+     "t": [
+      "Drifter: The Wailing Cave is just through there. It's called that for a reason!",
+      "Drifter: Shade Hollows is back up the path."
+     ],
+     "name": "Drifter",
+     "src": "n:812:0"
+    },
+    {
+     "x": 8,
+     "y": 11,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Explorer: The wailing is just the wind. Probably."
+     ],
+     "name": "Explorer",
+     "src": "n:812:1"
+    }
+   ],
    "mons": [
     {
-     "x": 7,
-     "y": 7,
+     "x": 19,
+     "y": 12,
      "mon": "Dusklord"
     },
     {
-     "x": 15,
-     "y": 9,
+     "x": 4,
+     "y": 7,
      "mon": "Gloomhulk"
     }
    ]
@@ -50457,7 +55429,21 @@
      3
     ]
    },
-   "pkey": "umbra"
+   "pkey": "umbra",
+   "npcs": [
+    {
+     "x": 19,
+     "y": 8,
+     "art": "umbra_folk5",
+     "face": "down",
+     "t": [
+      "Lantern Bearer: B1 of the Wailing Cave. Keep your lantern lit and your team close.",
+      "Lantern Bearer: The way down to B2 is past the moaning tunnel."
+     ],
+     "name": "Lantern Bearer",
+     "src": "n:813:0"
+    }
+   ]
   },
   "814": {
    "id": "814",
@@ -50504,7 +55490,7 @@
     {
      "tile": [
       20,
-      8
+      3
      ],
      "k": "stash",
      "item": "dust",
@@ -50528,7 +55514,20 @@
      4
     ]
    },
-   "pkey": "umbra"
+   "pkey": "umbra",
+   "npcs": [
+    {
+     "x": 15,
+     "y": 8,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Spelunker: B2! The Deep Chamber is just ahead. The wailing gets louder down there!"
+     ],
+     "name": "Spelunker",
+     "src": "n:814:0"
+    }
+   ]
   },
   "815": {
    "id": "815",
@@ -50586,7 +55585,20 @@
      12
     ]
    },
-   "pkey": "umbra"
+   "pkey": "umbra",
+   "npcs": [
+    {
+     "x": 12,
+     "y": 9,
+     "art": "umbra_folk6",
+     "face": "down",
+     "t": [
+      "Explorer: The Deep Chamber! The wailing stopped. That's either good or very spooky."
+     ],
+     "name": "Explorer",
+     "src": "n:815:0"
+    }
+   ]
   },
   "833": {
    "id": "833",
@@ -50671,15 +55683,40 @@
     -7
    ],
    "pkey": "umbra",
+   "npcs": [
+    {
+     "x": 13,
+     "y": 10,
+     "art": "umbra_folk2",
+     "face": "down",
+     "t": [
+      "Fan: The Gravewell Relay Tower! The lanterns around it never go out.",
+      "Fan: The trial floor waits inside, lit by a hundred lanterns."
+     ],
+     "name": "Fan",
+     "src": "n:833:0"
+    },
+    {
+     "x": 20,
+     "y": 10,
+     "art": "guard",
+     "face": "down",
+     "t": [
+      "Tower Guard: Void-types rule this tower. Bring your brightest team!"
+     ],
+     "name": "Tower Guard",
+     "src": "n:833:1"
+    }
+   ],
    "mons": [
     {
-     "x": 14,
+     "x": 9,
      "y": 7,
      "mon": "Wellmaw"
     },
     {
-     "x": 22,
-     "y": 9,
+     "x": 16,
+     "y": 8,
      "mon": "Geodome"
     }
    ]
@@ -50733,7 +55770,32 @@
     ]
    },
    "parent": "836",
-   "pkey": "umbra"
+   "pkey": "umbra",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 10,
+     "art": "umbra_folk5",
+     "face": "down",
+     "t": [
+      "Lantern Maker: Welcome to the Lantern Maker's Shop! Every lantern here is handmade.",
+      "Lantern Maker: A good lantern keeps the dark away. And the Void-types guessing!"
+     ],
+     "name": "Lantern Maker",
+     "src": "n:828:0"
+    },
+    {
+     "x": 6,
+     "y": 13,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Customer: I'm buying a lantern for every room in my house. Even the closet."
+     ],
+     "name": "Customer",
+     "src": "n:828:1"
+    }
+   ]
   },
   "829": {
    "id": "829",
@@ -50784,7 +55846,32 @@
     ]
    },
    "parent": "837",
-   "pkey": "umbra"
+   "pkey": "umbra",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 10,
+     "art": "umbra_folk6",
+     "face": "down",
+     "t": [
+      "Innkeeper: This is the Shadow Inn. Rest your feet and your team!",
+      "Innkeeper: The beds are soft and the lanterns stay on all night."
+     ],
+     "name": "Innkeeper",
+     "src": "n:829:0"
+    },
+    {
+     "x": 4,
+     "y": 12,
+     "art": "wanderer",
+     "face": "down",
+     "t": [
+      "Traveller: I slept for twelve hours. The dark makes everyone sleepy!"
+     ],
+     "name": "Traveller",
+     "src": "n:829:1"
+    }
+   ]
   },
   "830": {
    "id": "830",
@@ -50835,7 +55922,21 @@
     ]
    },
    "parent": "837",
-   "pkey": "umbra"
+   "pkey": "umbra",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 9,
+     "art": "umbra_folk1",
+     "face": "down",
+     "t": [
+      "Caretaker: This study belongs to someone who loves old books. Lots and lots of old books.",
+      "Caretaker: Please put things back where you found them. They notice."
+     ],
+     "name": "Caretaker",
+     "src": "n:830:0"
+    }
+   ]
   },
   "767": {
    "id": "767",
@@ -50918,15 +56019,40 @@
     28
    ],
    "pkey": "starfall",
-   "mons": [
+   "npcs": [
+    {
+     "x": 14,
+     "y": 11,
+     "art": "technician",
+     "face": "down",
+     "t": [
+      "Dock Tech: Starfall Spaceport! Ships land right near the crater rim.",
+      "Dock Tech: Rift Fork is just past the gate."
+     ],
+     "name": "Dock Tech",
+     "src": "n:767:0"
+    },
     {
      "x": 6,
-     "y": 3,
+     "y": 10,
+     "art": "starfall_folk4",
+     "face": "down",
+     "t": [
+      "Traveller: I came to see the crater glow. It's even better in person!"
+     ],
+     "name": "Traveller",
+     "src": "n:767:1"
+    }
+   ],
+   "mons": [
+    {
+     "x": 8,
+     "y": 4,
      "mon": "Cometrix"
     },
     {
-     "x": 16,
-     "y": 6,
+     "x": 17,
+     "y": 5,
      "mon": "Quasarus"
     }
    ]
@@ -51050,9 +56176,45 @@
     -4
    ],
    "pkey": "starfall",
+   "npcs": [
+    {
+     "x": 12,
+     "y": 12,
+     "art": "starfall_folk6",
+     "face": "down",
+     "t": [
+      "Resident: Starfall Lane Homes are right by Rim Camp. The shop's just around the corner!",
+      "Resident: The crater glows purple on clear nights."
+     ],
+     "name": "Resident",
+     "src": "n:763:0"
+    },
+    {
+     "x": 19,
+     "y": 12,
+     "art": "starfall_folk1",
+     "face": "down",
+     "t": [
+      "Kid: I saw a shooting star last night! I wished for a Gravity-type."
+     ],
+     "name": "Kid",
+     "src": "n:763:1"
+    },
+    {
+     "x": 4,
+     "y": 12,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Neighbour: Crater Crossroads is close by if you need to head out."
+     ],
+     "name": "Neighbour",
+     "src": "n:763:2"
+    }
+   ],
    "mons": [
     {
-     "x": 10,
+     "x": 8,
      "y": 12,
      "mon": "Novaling"
     }
@@ -51161,16 +56323,6 @@
      "k": "house",
      "to": "172",
      "why": "V3 kit house door"
-    },
-    {
-     "tile": [
-      16,
-      10
-     ],
-     "k": "stash",
-     "item": "ether",
-     "n": 3,
-     "tier": 6
     }
    ],
    "spawns": {
@@ -51184,6 +56336,31 @@
     -16
    ],
    "pkey": "starfall",
+   "npcs": [
+    {
+     "x": 16,
+     "y": 10,
+     "art": "starfall_folk2",
+     "face": "down",
+     "t": [
+      "Old Resident: Starfall Quiet Court. Quiet, except when the crater hums.",
+      "Old Resident: There's a secret grove down the path. Lovely sparkly trees!"
+     ],
+     "name": "Old Resident",
+     "src": "n:764:0"
+    },
+    {
+     "x": 1,
+     "y": 14,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Stargazer: I count the stars every night. I'm up to seven thousand."
+     ],
+     "name": "Stargazer",
+     "src": "n:764:1"
+    }
+   ],
    "mons": [
     {
      "x": 18,
@@ -51282,10 +56459,35 @@
     16
    ],
    "pkey": "starfall",
+   "npcs": [
+    {
+     "x": 16,
+     "y": 10,
+     "art": "starfall_folk3",
+     "face": "down",
+     "t": [
+      "Farmer: Starfall Farmstead Edge grows crater corn. It glows a little when it's ripe!",
+      "Farmer: The arena's right next door. Loud on match nights!"
+     ],
+     "name": "Farmer",
+     "src": "n:765:0"
+    },
+    {
+     "x": 6,
+     "y": 10,
+     "art": "sheepkid",
+     "face": "down",
+     "t": [
+      "Farm Kid: I feed the farm critters seedpod crumbs. They love it!"
+     ],
+     "name": "Farm Kid",
+     "src": "n:765:1"
+    }
+   ],
    "mons": [
     {
-     "x": 13,
-     "y": 10,
+     "x": 11,
+     "y": 11,
      "mon": "Starsprout"
     }
    ]
@@ -51883,6 +57085,14 @@
       9
      ],
      "offset": 2
+    },
+    "bottom": {
+     "to": "752",
+     "range": [
+      4,
+      10
+     ],
+     "offset": -1
     }
    },
    "warps": [],
@@ -51899,8 +57109,8 @@
     },
     {
      "tile": [
-      8,
-      11
+      15,
+      13
      ],
      "k": "stash",
      "item": "maxrevive",
@@ -51925,19 +57135,44 @@
     ]
    },
    "grid": [
-    98,
-    49
+    71,
+    20
    ],
    "pkey": "starfall",
-   "mons": [
+   "npcs": [
+    {
+     "x": 13,
+     "y": 11,
+     "art": "starfall_folk1",
+     "face": "down",
+     "t": [
+      "Rift Seeker: Rift Edge! Don't lean too far. The crater goes way down.",
+      "Rift Seeker: Rift Fork is just back that way."
+     ],
+     "name": "Rift Seeker",
+     "src": "n:751:0"
+    },
     {
      "x": 3,
-     "y": 5,
+     "y": 10,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Hiker: Void-types sometimes peek out from the cracks. Spooky!"
+     ],
+     "name": "Hiker",
+     "src": "n:751:1"
+    }
+   ],
+   "mons": [
+    {
+     "x": 10,
+     "y": 2,
      "mon": "Cometrix"
     },
     {
-     "x": 14,
-     "y": 12,
+     "x": 2,
+     "y": 5,
      "mon": "Quasarus"
     }
    ]
@@ -51962,6 +57197,14 @@
       8
      ],
      "offset": 3
+    },
+    "top": {
+     "to": "751",
+     "range": [
+      3,
+      8
+     ],
+     "offset": 1
     }
    },
    "warps": [],
@@ -51978,8 +57221,8 @@
     },
     {
      "tile": [
-      7,
-      10
+      15,
+      13
      ],
      "k": "stash",
      "item": "fullgel",
@@ -51988,8 +57231,8 @@
     },
     {
      "tile": [
-      5,
-      1
+      21,
+      13
      ],
      "k": "stash",
      "item": "ether",
@@ -52008,6 +57251,31 @@
     36
    ],
    "pkey": "starfall",
+   "npcs": [
+    {
+     "x": 13,
+     "y": 9,
+     "art": "starfall_folk2",
+     "face": "down",
+     "t": [
+      "Seedpod Hunter: Seedpod Hollows! Old seedpods lie all around here.",
+      "Seedpod Hunter: Some still glow faintly. Pretty, right?"
+     ],
+     "name": "Seedpod Hunter",
+     "src": "n:752:0"
+    },
+    {
+     "x": 5,
+     "y": 9,
+     "art": "researcher",
+     "face": "down",
+     "t": [
+      "Star Watcher: Rift Fork is just back the way you came."
+     ],
+     "name": "Star Watcher",
+     "src": "n:752:1"
+    }
+   ],
    "mons": [
     {
      "x": 2,
@@ -52015,8 +57283,8 @@
      "mon": "Novacat"
     },
     {
-     "x": 11,
-     "y": 13,
+     "x": 19,
+     "y": 11,
      "mon": "Prismora"
     }
    ]
@@ -52264,7 +57532,7 @@
     {
      "tile": [
       15,
-      4
+      6
      ],
      "k": "chest",
      "item": "fullgel",
@@ -52303,9 +57571,34 @@
     -21
    ],
    "pkey": "starfall",
+   "npcs": [
+    {
+     "x": 6,
+     "y": 9,
+     "art": "starfall_folk3",
+     "face": "down",
+     "t": [
+      "Wanderer: Starfall Secret Grove! Trees that sparkle like the night sky.",
+      "Wanderer: Rare Alienmon nap under the starry leaves."
+     ],
+     "name": "Wanderer",
+     "src": "n:755:0"
+    },
+    {
+     "x": 14,
+     "y": 9,
+     "art": "civilian",
+     "face": "down",
+     "t": [
+      "Stargazer: I found this place by following a shooting star. True story!"
+     ],
+     "name": "Stargazer",
+     "src": "n:755:1"
+    }
+   ],
    "mons": [
     {
-     "x": 5,
+     "x": 17,
      "y": 6,
      "mon": "Cometrix"
     },
@@ -52391,15 +57684,51 @@
     14
    ],
    "pkey": "starfall",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 9,
+     "art": "starfall_folk1",
+     "face": "down",
+     "t": [
+      "Fan: Rift Crater Arena! Battles right on the edge of the crater!",
+      "Fan: The lobby's right through the stone gate."
+     ],
+     "name": "Fan",
+     "src": "n:736:0"
+    },
+    {
+     "x": 5,
+     "y": 10,
+     "art": "starfall_folk2",
+     "face": "down",
+     "t": [
+      "Rift Seeker: The crater hums louder on match nights. Can you feel it?"
+     ],
+     "name": "Rift Seeker",
+     "src": "n:736:1"
+    },
+    {
+     "x": 19,
+     "y": 7,
+     "art": "snacktrader",
+     "face": "down",
+     "t": [
+      "Snack Trader: Star crunch bars! Sweet, crunchy, and a little sparkly!"
+     ],
+     "name": "Snack Trader",
+     "src": "n:736:2"
+    }
+   ],
    "mons": [
     {
-     "x": 9,
-     "y": 8,
+     "x": 14,
+     "y": 13,
      "mon": "Novacat"
     },
     {
-     "x": 1,
-     "y": 9,
+     "x": 2,
+     "y": 12,
      "mon": "Prismora"
     }
    ]
@@ -52470,7 +57799,32 @@
     ]
    },
    "parent": "736",
-   "pkey": "starfall"
+   "pkey": "starfall",
+   "npcs": [
+    {
+     "x": 8,
+     "y": 10,
+     "art": "referee",
+     "face": "down",
+     "t": [
+      "Receptionist: Welcome to the Rift Crater Arena! The arena floor is just ahead.",
+      "Receptionist: Crystal-types love battling here. The glow helps them focus!"
+     ],
+     "name": "Receptionist",
+     "src": "n:738:0"
+    },
+    {
+     "x": 5,
+     "y": 7,
+     "art": "starfall_folk3",
+     "face": "down",
+     "t": [
+      "Fan: I brought a telescope to watch the battles. Is that weird?"
+     ],
+     "name": "Fan",
+     "src": "n:738:1"
+    }
+   ]
   },
   "739": {
    "id": "739",
@@ -52579,15 +57933,40 @@
     -63
    ],
    "pkey": "starfall",
-   "mons": [
+   "npcs": [
+    {
+     "x": 9,
+     "y": 8,
+     "art": "explorer",
+     "face": "down",
+     "t": [
+      "Rift Seeker: Starstone Hollow is just through there. The rocks twinkle like stars!",
+      "Rift Seeker: Craterstep Slope is back up the trail."
+     ],
+     "name": "Rift Seeker",
+     "src": "n:741:0"
+    },
     {
      "x": 7,
-     "y": 7,
+     "y": 11,
+     "art": "starfall_folk4",
+     "face": "down",
+     "t": [
+      "Rock Hound: I'm collecting starstones. This one's my favorite. And this one. And this one."
+     ],
+     "name": "Rock Hound",
+     "src": "n:741:1"
+    }
+   ],
+   "mons": [
+    {
+     "x": 18,
+     "y": 9,
      "mon": "Cometrix"
     },
     {
-     "x": 15,
-     "y": 9,
+     "x": 4,
+     "y": 7,
      "mon": "Quasarus"
     }
    ]
@@ -52661,7 +58040,21 @@
      3
     ]
    },
-   "pkey": "starfall"
+   "pkey": "starfall",
+   "npcs": [
+    {
+     "x": 18,
+     "y": 8,
+     "art": "researcher",
+     "face": "down",
+     "t": [
+      "Star Watcher: B1 of Starstone Hollow. Crystal-types grow right out of the walls.",
+      "Star Watcher: The way down to B2 is past the glowing pillar."
+     ],
+     "name": "Star Watcher",
+     "src": "n:742:0"
+    }
+   ]
   },
   "743": {
    "id": "743",
@@ -52722,7 +58115,20 @@
      3
     ]
    },
-   "pkey": "starfall"
+   "pkey": "starfall",
+   "npcs": [
+    {
+     "x": 5,
+     "y": 5,
+     "art": "starfall_folk5",
+     "face": "down",
+     "t": [
+      "Explorer: B2 already! The Deep Chamber is just ahead. The glow gets stronger!"
+     ],
+     "name": "Explorer",
+     "src": "n:743:0"
+    }
+   ]
   },
   "744": {
    "id": "744",
@@ -52780,7 +58186,20 @@
      13
     ]
    },
-   "pkey": "starfall"
+   "pkey": "starfall",
+   "npcs": [
+    {
+     "x": 13,
+     "y": 9,
+     "art": "starfall_folk6",
+     "face": "down",
+     "t": [
+      "Explorer: The Deep Chamber! It's like standing inside a star."
+     ],
+     "name": "Explorer",
+     "src": "n:744:0"
+    }
+   ]
   },
   "766": {
    "id": "766",
@@ -52850,7 +58269,22 @@
     ]
    },
    "parent": "763",
-   "pkey": "starfall"
+   "pkey": "starfall",
+   "npcs": [
+    {
+     "x": 4,
+     "y": 9,
+     "art": "shop",
+     "face": "right",
+     "t": [
+      "Clerk: Welcome to the Starfall Shop! Potions, Cure Spray, and supplies for the crater.",
+      "Clerk: Rift trails are rocky. Stock up before you head out!"
+     ],
+     "name": "Clerk",
+     "stay": true,
+     "src": "n:766:0"
+    }
+   ]
   },
   "756": {
    "id": "756",
@@ -52901,7 +58335,32 @@
     ]
    },
    "parent": "765",
-   "pkey": "starfall"
+   "pkey": "starfall",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 10,
+     "art": "researcher",
+     "face": "down",
+     "t": [
+      "Greenhouse Keeper: The Seedpod Greenhouse grows plants from crater seeds.",
+      "Greenhouse Keeper: Some sprout overnight. Some take years. Patience!"
+     ],
+     "name": "Greenhouse Keeper",
+     "src": "n:756:0"
+    },
+    {
+     "x": 6,
+     "y": 13,
+     "art": "starfall_folk4",
+     "face": "down",
+     "t": [
+      "Gardener: I watered a seedpod and it giggled. I think."
+     ],
+     "name": "Gardener",
+     "src": "n:756:1"
+    }
+   ]
   },
   "757": {
    "id": "757",
@@ -52952,7 +58411,32 @@
     ]
    },
    "parent": "764",
-   "pkey": "starfall"
+   "pkey": "starfall",
+   "npcs": [
+    {
+     "x": 9,
+     "y": 9,
+     "art": "researcher",
+     "face": "down",
+     "t": [
+      "Star Watcher: The Observation Post watches the crater day and night.",
+      "Star Watcher: Look through the scope! You might spot a shooting star."
+     ],
+     "name": "Star Watcher",
+     "src": "n:757:0"
+    },
+    {
+     "x": 13,
+     "y": 13,
+     "art": "starfall_folk5",
+     "face": "down",
+     "t": [
+      "Assistant: I write down every twinkle. My notebook is full of dots."
+     ],
+     "name": "Assistant",
+     "src": "n:757:1"
+    }
+   ]
   },
   "758": {
    "id": "758",
@@ -53003,7 +58487,21 @@
     ]
    },
    "parent": "764",
-   "pkey": "starfall"
+   "pkey": "starfall",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 10,
+     "art": "researcher",
+     "face": "down",
+     "t": [
+      "Helix Scientist: This is a field office. A perfectly normal field office. Please leave.",
+      "Helix Scientist: Okay, fine, look around. Just don't touch the drill charts."
+     ],
+     "name": "Helix Scientist",
+     "src": "n:758:0"
+    }
+   ]
   }
  },
  "connections": [
@@ -53950,7 +59448,7 @@
    "edge": "right",
    "tile_range": [
     5,
-    9
+    8
    ],
    "to_id": "078",
    "to_edge": "bottom",
@@ -53970,7 +59468,7 @@
    "to_edge": "right",
    "to_tile": [
     5,
-    9
+    8
    ]
   },
   {
@@ -54138,7 +59636,7 @@
    "to_edge": "top",
    "to_tile": [
     7,
-    14
+    12
    ]
   },
   {
@@ -54146,7 +59644,7 @@
    "edge": "top",
    "tile_range": [
     5,
-    10
+    8
    ],
    "to_id": "110",
    "to_edge": "bottom",
@@ -54166,7 +59664,7 @@
    "to_edge": "top",
    "to_tile": [
     5,
-    10
+    8
    ]
   },
   {
@@ -54278,7 +59776,7 @@
    "to_edge": "bottom",
    "to_tile": [
     8,
-    13
+    11
    ]
   },
   {
@@ -54376,7 +59874,7 @@
    "to_edge": "bottom",
    "to_tile": [
     5,
-    10
+    9
    ]
   },
   {
@@ -54384,7 +59882,7 @@
    "edge": "bottom",
    "tile_range": [
     5,
-    10
+    9
    ],
    "to_id": "131",
    "to_edge": "top",
@@ -54572,7 +60070,7 @@
    "to_edge": "left",
    "to_tile": [
     5,
-    10
+    8
    ]
   },
   {
@@ -54580,7 +60078,7 @@
    "edge": "left",
    "tile_range": [
     5,
-    10
+    8
    ],
    "to_id": "144",
    "to_edge": "top",
@@ -54614,7 +60112,7 @@
    "to_edge": "top",
    "to_tile": [
     13,
-    20
+    16
    ]
   },
   {
@@ -57200,7 +62698,7 @@
    "to_id": "552",
    "to_edge": "top",
    "to_tile": [
-    0,
+    10,
     15
    ]
   },
@@ -57222,7 +62720,7 @@
    "from_id": "552",
    "edge": "top",
    "tile_range": [
-    0,
+    10,
     15
    ],
    "to_id": "567",
@@ -58657,7 +64155,7 @@
    "to_edge": "left",
    "to_tile": [
     8,
-    12
+    11
    ]
   },
   {
@@ -58679,7 +64177,7 @@
    "edge": "top",
    "tile_range": [
     7,
-    14
+    12
    ],
    "to_id": "109",
    "to_edge": "bottom",
@@ -59057,7 +64555,7 @@
    "edge": "left",
    "tile_range": [
     8,
-    12
+    11
    ],
    "to_id": "632",
    "to_edge": "right",
@@ -59701,7 +65199,7 @@
    "edge": "right",
    "tile_range": [
     9,
-    14
+    9
    ],
    "to_id": "427",
    "to_edge": "left",
@@ -59799,7 +65297,7 @@
    "edge": "top",
    "tile_range": [
     13,
-    20
+    16
    ],
    "to_id": "151",
    "to_edge": "bottom",
@@ -59973,7 +65471,7 @@
    "to_edge": "right",
    "to_tile": [
     9,
-    14
+    9
    ]
   },
   {
@@ -60555,7 +66053,7 @@
    "edge": "bottom",
    "tile_range": [
     8,
-    13
+    11
    ],
    "to_id": "123",
    "to_edge": "top",
@@ -61279,6 +66777,20 @@
    ]
   },
   {
+   "from_id": "751",
+   "edge": "bottom",
+   "tile_range": [
+    4,
+    10
+   ],
+   "to_id": "752",
+   "to_edge": "top",
+   "to_tile": [
+    3,
+    8
+   ]
+  },
+  {
    "from_id": "752",
    "edge": "right",
    "tile_range": [
@@ -61290,6 +66802,20 @@
    "to_tile": [
     7,
     9
+   ]
+  },
+  {
+   "from_id": "752",
+   "edge": "top",
+   "tile_range": [
+    3,
+    8
+   ],
+   "to_id": "751",
+   "to_edge": "bottom",
+   "to_tile": [
+    4,
+    10
    ]
   },
   {

@@ -1285,7 +1285,7 @@
    "tile_px_game": 16,
    "exits": [
     "left edge, tile rows 5–9 → Temple of Trials",
-    "right edge, tile rows 5–9 → Temple of Voices 1F"
+    "right edge, tile rows 5–8 → Temple of Voices 1F"
    ],
    "notes": "Hollow of glowing glyph stones (Guardian Stones)",
    "file": "art/sections/06_glyphos/077_glyph_hollow.png",
@@ -1827,7 +1827,7 @@
    "tile_px_game": 16,
    "exits": [
     "bottom edge, tile columns 5–10 → Deck Crossroads",
-    "top edge, tile columns 5–10 → Containment Wing 2F"
+    "top edge, tile columns 5–8 → Containment Wing 2F"
    ],
    "notes": "Cells with captive Alienmon (The Captives)",
    "file": "art/sections/09_helix/109_containment_wing_1f.png",
@@ -2215,7 +2215,7 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 5–10 → The Sinkhole B3"
+    "bottom edge, tile columns 5–9 → The Sinkhole B3"
    ],
    "notes": "The Sinkhole, 4 levels (The well that whispers)",
    "file": "art/sections/11_umbra/132_the_sinkhole_b4.png",
@@ -2477,7 +2477,7 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 5–10 → Crater Descent B3"
+    "left edge, tile rows 5–8 → Crater Descent B3"
    ],
    "notes": "Helix Rift Engine platform (M19 Thorne at the Rift)",
    "file": "art/sections/12_starfall/145_rift_engine_platform.png",
@@ -6279,7 +6279,7 @@
    "tile_px_game": 16,
    "exits": [
     "bottom edge, tile columns 10–15 → Dig Camp Farmstead",
-    "top edge, tile columns 0–15 → Dig Camp Quiet Court",
+    "top edge, tile columns 10–15 → Dig Camp Quiet Court",
     "right edge, tile rows 5–9 → Glyphos Spaceport",
     "left edge, tile rows 5–9 → Glyph Junction"
    ],
@@ -7937,7 +7937,7 @@
    "tile_px_game": 16,
    "exits": [
     "left edge, tile rows 5–11 → Habitation Row",
-    "top edge, tile columns 7–14 → Containment Wing 1F",
+    "top edge, tile columns 7–12 → Containment Wing 1F",
     "bottom edge, tile columns 6–15 → Helix Station Spaceport",
     "right edge, tile rows 3–11 → Station Coolant Fork"
    ],
@@ -8377,7 +8377,7 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 8–12 → Hydroponics Edge"
+    "left edge, tile rows 8–11 → Hydroponics Edge"
    ],
    "v3": true,
    "kit": "621",
@@ -9146,7 +9146,7 @@
    "exits": [
     "left edge, tile rows 7–12 → Summit Lift",
     "top edge, tile columns 3–20 → Observatory Terrace",
-    "right edge, tile rows 9–14 → Apex Relay Tower",
+    "right edge, tile rows 9–9 → Apex Relay Tower",
     "bottom edge, tile columns 4–10 → Summit Farmstead"
    ],
    "v3": true,
@@ -9195,7 +9195,7 @@
    "tile_px_game": 16,
    "exits": [
     "bottom edge, tile columns 5–10 → Summit Crossroads",
-    "top edge, tile columns 13–20 → Great Telescope"
+    "top edge, tile columns 13–16 → Great Telescope"
    ],
    "v3": true,
    "kit": "414",
@@ -10319,7 +10319,7 @@
    "tile_px_game": 16,
    "exits": [
     "left edge, tile rows 5–8 → Gravewell",
-    "bottom edge, tile columns 8–13 → Shadow Tunnel Exit",
+    "bottom edge, tile columns 8–11 → Shadow Tunnel Exit",
     "top edge, tile columns 8–13 → Lantern Steps"
    ],
    "v3": true,
@@ -11033,7 +11033,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "top edge, tile columns 4–9 → Rift Fork"
+    "top edge, tile columns 4–9 → Rift Fork",
+    "bottom edge, tile columns 4–10 → Seedpod Hollows"
    ],
    "v3": true,
    "kit": "751",
@@ -11055,7 +11056,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "right edge, tile rows 4–8 → Rift Fork"
+    "right edge, tile rows 4–8 → Rift Fork",
+    "top edge, tile columns 3–8 → Rift Edge"
    ],
    "v3": true,
    "kit": "752",

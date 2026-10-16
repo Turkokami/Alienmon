@@ -195,7 +195,9 @@
    "062",
    "right",
    "063",
-   "left"
+   "left",
+   null,
+   null
   ],
   [
    "063",
@@ -215,91 +217,121 @@
    "662",
    "right",
    "643",
-   "left"
+   "left",
+   null,
+   null
   ],
   [
    "643",
    "top",
    "663",
-   "bottom"
+   "bottom",
+   null,
+   null
   ],
   [
    "643",
    "bottom",
    "664",
-   "top"
+   "top",
+   null,
+   null
   ],
   [
    "664",
    "right",
    "635",
-   "left"
+   "left",
+   null,
+   null
   ],
   [
    "643",
    "right",
    "644",
-   "left"
+   "left",
+   null,
+   null
   ],
   [
    "644",
    "top",
    "647",
-   "bottom"
+   "bottom",
+   null,
+   null
   ],
   [
    "647",
    "top",
    "639",
-   "bottom"
+   "bottom",
+   null,
+   null
   ],
   [
    "644",
    "right",
    "659",
-   "left"
+   "left",
+   null,
+   null
   ],
   [
    "644",
    "bottom",
    "646",
-   "top"
+   "top",
+   null,
+   null
   ],
   [
    "646",
    "bottom",
    "645",
-   "top"
+   "top",
+   null,
+   null
   ],
   [
    "645",
    "left",
    "654",
-   "right"
+   "right",
+   null,
+   null
   ],
   [
    "645",
    "right",
    "652",
-   "left"
+   "left",
+   null,
+   null
   ],
   [
    "645",
    "bottom",
    "648",
-   "top"
+   "top",
+   null,
+   null
   ],
   [
    "648",
    "bottom",
    "651",
-   "top"
+   "top",
+   null,
+   null
   ],
   [
    "651",
    "bottom",
    "066",
-   "top"
+   "top",
+   null,
+   null
   ],
   [
    "066",
@@ -535,6 +567,22 @@
     4
    ],
    "176"
+  ],
+  [
+   "663",
+   [
+    20,
+    12
+   ],
+   "192"
+  ],
+  [
+   "663",
+   [
+    21,
+    12
+   ],
+   "192"
   ]
  ],
  "warps": [
@@ -729,6 +777,14 @@
      5,
      22,
      5
+    ]
+   ],
+   "walk_after": [
+    [
+     20,
+     13,
+     21,
+     13
     ]
    ]
   },
@@ -1448,7 +1504,7 @@
    {
     "tile": [
      16,
-     4
+     6
     ],
     "k": "chest",
     "item": "fullgel",
@@ -1460,7 +1516,7 @@
    {
     "tile": [
      14,
-     15
+     12
     ],
     "k": "chest",
     "item": "harmonic",
@@ -1590,5 +1646,47 @@
   "641": "068",
   "642": "066"
  },
- "trainer_tiles": []
+ "trainer_tiles": [],
+ "seal": [
+  [
+   "635",
+   "bottom",
+   10,
+   14
+  ],
+  [
+   "650",
+   "bottom",
+   12,
+   17
+  ],
+  [
+   "652",
+   "right",
+   8,
+   12
+  ],
+  [
+   "654",
+   "left",
+   9,
+   12
+  ],
+  [
+   "662",
+   "top",
+   14,
+   16
+  ]
+ ],
+ "grass_fill": [],
+ "grass_clear": [
+  [
+   "066",
+   1,
+   2,
+   2,
+   4
+  ]
+ ]
 }
