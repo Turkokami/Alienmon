@@ -1,0 +1,540 @@
+[
+ {
+  "plan": "08_glacia.json",
+  "section": "530",
+  "kit": "530",
+  "name": "Research Lab",
+  "counters": [],
+  "objects": [],
+  "warps": []
+ },
+ {
+  "plan": "08_glacia.json",
+  "section": "531",
+  "kit": "531",
+  "name": "Hot Cocoa Lodge",
+  "counters": [],
+  "objects": [],
+  "warps": []
+ },
+ {
+  "plan": "08_glacia.json",
+  "section": "532",
+  "kit": "532",
+  "name": "Fossil Vault",
+  "counters": [],
+  "objects": [],
+  "warps": []
+ },
+ {
+  "plan": "09_helix.json",
+  "section": "606",
+  "kit": "606",
+  "name": "Proving Grounds Lobby",
+  "counters": [],
+  "objects": [],
+  "warps": [
+   [
+    "606",
+    [
+     9,
+     5
+    ],
+    "607",
+    [
+     11,
+     15
+    ],
+    [
+     9,
+     6
+    ],
+    "down",
+    [
+     11,
+     13
+    ],
+    "up"
+   ]
+  ]
+ },
+ {
+  "plan": "09_helix.json",
+  "section": "607",
+  "kit": "607",
+  "name": "Proving Grounds Battle Room",
+  "counters": [],
+  "objects": [],
+  "warps": [
+   [
+    "606",
+    [
+     9,
+     5
+    ],
+    "607",
+    [
+     11,
+     15
+    ],
+    [
+     9,
+     6
+    ],
+    "down",
+    [
+     11,
+     13
+    ],
+    "up"
+   ]
+  ]
+ },
+ {
+  "plan": "10_halo.json",
+  "section": "116",
+  "kit": "596",
+  "name": "Skyreach Recovery Bay",
+  "counters": [
+   [
+    9,
+    6,
+    "bay"
+   ],
+   [
+    10,
+    6,
+    "bay"
+   ]
+  ],
+  "objects": [],
+  "warps": []
+ },
+ {
+  "plan": "10_halo.json",
+  "section": "117",
+  "kit": "603",
+  "name": "Skyreach Shop",
+  "counters": [
+   [
+    5,
+    9,
+    "shop"
+   ],
+   [
+    5,
+    10,
+    "shop"
+   ]
+  ],
+  "objects": [],
+  "warps": []
+ },
+ {
+  "plan": "10_halo.json",
+  "section": "575",
+  "kit": "575",
+  "name": "Sky Colosseum Lobby",
+  "counters": [],
+  "objects": [],
+  "warps": [
+   [
+    "575",
+    [
+     9,
+     4
+    ],
+    "576",
+    [
+     11,
+     14
+    ],
+    [
+     9,
+     5
+    ],
+    "down",
+    [
+     11,
+     12
+    ],
+    "up"
+   ]
+  ]
+ },
+ {
+  "plan": "10_halo.json",
+  "section": "576",
+  "kit": "576",
+  "name": "Sky Colosseum Battle Floor",
+  "counters": [],
+  "objects": [],
+  "warps": [
+   [
+    "575",
+    [
+     9,
+     4
+    ],
+    "576",
+    [
+     11,
+     14
+    ],
+    [
+     9,
+     5
+    ],
+    "down",
+    [
+     11,
+     12
+    ],
+    "up"
+   ],
+   [
+    "576",
+    [
+     11,
+     1
+    ],
+    "577",
+    [
+     11,
+     14
+    ],
+    [
+     11,
+     2
+    ],
+    "down",
+    [
+     11,
+     12
+    ],
+    "up"
+   ]
+  ]
+ },
+ {
+  "plan": "10_halo.json",
+  "section": "577",
+  "kit": "577",
+  "name": "Sky Colosseum Grand Ring",
+  "counters": [],
+  "objects": [],
+  "warps": [
+   [
+    "576",
+    [
+     11,
+     1
+    ],
+    "577",
+    [
+     11,
+     14
+    ],
+    [
+     11,
+     2
+    ],
+    "down",
+    [
+     11,
+     12
+    ],
+    "up"
+   ]
+  ]
+ },
+ {
+  "plan": "10_halo.json",
+  "section": "592",
+  "kit": "592",
+  "name": "Skyfarm Chapel",
+  "counters": [],
+  "objects": [],
+  "warps": []
+ },
+ {
+  "plan": "10_halo.json",
+  "section": "593",
+  "kit": "593",
+  "name": "Oracle Library",
+  "counters": [],
+  "objects": [],
+  "warps": []
+ },
+ {
+  "plan": "10_halo.json",
+  "section": "594",
+  "kit": "594",
+  "name": "Cloud Garden Room",
+  "counters": [],
+  "objects": [],
+  "warps": []
+ },
+ {
+  "plan": "12_starfall.json",
+  "section": "756",
+  "kit": "756",
+  "name": "Seedpod Greenhouse",
+  "counters": [],
+  "objects": [],
+  "warps": []
+ },
+ {
+  "plan": "12_starfall.json",
+  "section": "757",
+  "kit": "757",
+  "name": "Observation Post",
+  "counters": [],
+  "objects": [],
+  "warps": []
+ },
+ {
+  "plan": "12_starfall.json",
+  "section": "758",
+  "kit": "758",
+  "name": "Helix Field Office",
+  "counters": [],
+  "objects": [],
+  "warps": []
+ },
+ {
+  "plan": "13_apex.json",
+  "section": "403",
+  "kit": "403",
+  "name": "Summit Grand Stadium Lobby",
+  "counters": [],
+  "objects": [],
+  "warps": [
+   [
+    "403",
+    [
+     9,
+     4
+    ],
+    "404",
+    [
+     11,
+     14
+    ],
+    [
+     9,
+     5
+    ],
+    "down",
+    [
+     11,
+     13
+    ],
+    "up"
+   ]
+  ]
+ },
+ {
+  "plan": "13_apex.json",
+  "section": "404",
+  "kit": "404",
+  "name": "Summit Grand Stadium Arena",
+  "counters": [],
+  "objects": [],
+  "warps": [
+   [
+    "403",
+    [
+     9,
+     4
+    ],
+    "404",
+    [
+     11,
+     14
+    ],
+    [
+     9,
+     5
+    ],
+    "down",
+    [
+     11,
+     13
+    ],
+    "up"
+   ]
+  ]
+ },
+ {
+  "plan": "13_apex.json",
+  "section": "426",
+  "kit": "426",
+  "name": "Summit Recovery Bay",
+  "counters": [
+   [
+    9,
+    6,
+    "bay"
+   ],
+   [
+    10,
+    6,
+    "bay"
+   ]
+  ],
+  "objects": [],
+  "warps": []
+ },
+ {
+  "plan": "13_apex.json",
+  "section": "433",
+  "kit": "433",
+  "name": "Summit Supply Shop",
+  "counters": [
+   [
+    5,
+    9,
+    "shop"
+   ],
+   [
+    5,
+    10,
+    "shop"
+   ]
+  ],
+  "objects": [],
+  "warps": []
+ },
+ {
+  "plan": "14_ystra.json",
+  "section": "843",
+  "kit": "843",
+  "name": "Crystal Ring Lobby",
+  "counters": [],
+  "objects": [],
+  "warps": [
+   [
+    "843",
+    [
+     9,
+     4
+    ],
+    "844",
+    [
+     11,
+     14
+    ],
+    [
+     9,
+     5
+    ],
+    "down",
+    [
+     11,
+     13
+    ],
+    "up"
+   ]
+  ]
+ },
+ {
+  "plan": "14_ystra.json",
+  "section": "844",
+  "kit": "844",
+  "name": "Crystal Ring Arena",
+  "counters": [],
+  "objects": [],
+  "warps": [
+   [
+    "843",
+    [
+     9,
+     4
+    ],
+    "844",
+    [
+     11,
+     14
+    ],
+    [
+     9,
+     5
+    ],
+    "down",
+    [
+     11,
+     13
+    ],
+    "up"
+   ]
+  ]
+ },
+ {
+  "plan": "14_ystra.json",
+  "section": "862",
+  "kit": "862",
+  "name": "Fragment Recovery Bay",
+  "counters": [
+   [
+    9,
+    6,
+    "bay"
+   ],
+   [
+    10,
+    6,
+    "bay"
+   ]
+  ],
+  "objects": [],
+  "warps": []
+ },
+ {
+  "plan": "14_ystra.json",
+  "section": "866",
+  "kit": "866",
+  "name": "Fragment Shop",
+  "counters": [
+   [
+    4,
+    9,
+    "shop"
+   ],
+   [
+    4,
+    10,
+    "shop"
+   ]
+  ],
+  "objects": [],
+  "warps": []
+ },
+ {
+  "plan": "14_ystra.json",
+  "section": "859",
+  "kit": "859",
+  "name": "Seed Vault",
+  "counters": [],
+  "objects": [],
+  "warps": []
+ },
+ {
+  "plan": "14_ystra.json",
+  "section": "860",
+  "kit": "860",
+  "name": "Ancient Dwelling",
+  "counters": [],
+  "objects": [],
+  "warps": []
+ },
+ {
+  "plan": "14_ystra.json",
+  "section": "861",
+  "kit": "861",
+  "name": "Memory Hall",
+  "counters": [],
+  "objects": [],
+  "warps": []
+ }
+]

@@ -1,0 +1,1164 @@
+{
+ "_report": "Apex Array on the V3 kit, built AROUND the untouched endgame core. Arrive by the glass lift on the Summit Lift terrace (146, kept: bay, shop stall, doors to the Observatory Halls 1F-4F 147-150 with the Quorum, and the Apex Library 152). The terrace road east no longer runs straight into the Great Telescope: it opens onto Observatory Junction (412), the first hub. North: Observatory Terrace (421) to the Icefall Cave (405 entrance, floors 406/407, Deep Chamber 409 with a chest). East: the Apex Relay Tower (427 -> trial floor 428 -> summit room 429 with a chest; no second keeper) and behind it the Secret Grove (422, chest). South: Summit Farmstead (432) to Tarn Fork (413), which leads east to the Summit Grand Stadium (401 -> lobby 403 -> arena 404), south to the Stargazer Overlook dead end (415, chest) and north past Meltwater Tarn (416, water edge) to Summit Crossroads (411). From 411: west Summit Lane Homes (430: kit Recovery Bay 426, Supply Shop 433, Linker Lounge 423) and the Apex Spaceport (434, ship home to Dustara); east Instrument Hollows (419) and Glacier Bend (420, icy water) to the Stargazer Quiet Court pocket (431: Telescope Room 424, Quorum Archive 425); north up the Summit Stairs (414) to the Great Telescope (151, Orra Venn and Dr. Vashti, unchanged), now the last climb. No loop: the world is a tree from 412 (412 -> 432 -> 413 -> 416 -> 411 is the spine). Shut house doors (no room left in the kit): 431 (6-7,4) and (20-21,12), both 432 houses.",
+ "planet": "apex",
+ "arrival": "146",
+ "arrival_why": "the glass lift cabin on the Summit Lift terrace (kept V2 arrival)",
+ "use": {
+  "434": {
+   "kit": "434",
+   "name": "Apex Spaceport",
+   "type": "landmark"
+  },
+  "430": {
+   "kit": "430",
+   "name": "Summit Lane Homes",
+   "type": "town"
+  },
+  "431": {
+   "kit": "431",
+   "name": "Stargazer Quiet Court",
+   "type": "town"
+  },
+  "432": {
+   "kit": "432",
+   "name": "Summit Farmstead",
+   "type": "town"
+  },
+  "411": {
+   "kit": "411",
+   "name": "Summit Crossroads",
+   "type": "route"
+  },
+  "412": {
+   "kit": "412",
+   "name": "Observatory Junction",
+   "type": "route"
+  },
+  "413": {
+   "kit": "413",
+   "name": "Tarn Fork",
+   "type": "route"
+  },
+  "414": {
+   "kit": "414",
+   "name": "Summit Stairs",
+   "type": "route"
+  },
+  "415": {
+   "kit": "415",
+   "name": "Stargazer Overlook",
+   "type": "route"
+  },
+  "416": {
+   "kit": "416",
+   "name": "Meltwater Tarn",
+   "type": "route"
+  },
+  "419": {
+   "kit": "419",
+   "name": "Instrument Hollows",
+   "type": "route"
+  },
+  "420": {
+   "kit": "420",
+   "name": "Glacier Bend",
+   "type": "route"
+  },
+  "421": {
+   "kit": "421",
+   "name": "Observatory Terrace",
+   "type": "route"
+  },
+  "422": {
+   "kit": "422",
+   "name": "Summit Secret Grove",
+   "type": "field"
+  },
+  "405": {
+   "kit": "405",
+   "name": "Icefall Cave Entrance",
+   "type": "route"
+  },
+  "406": {
+   "kit": "406",
+   "name": "Icefall Cave 1F",
+   "type": "cave"
+  },
+  "407": {
+   "kit": "407",
+   "name": "Icefall Cave B1",
+   "type": "cave"
+  },
+  "409": {
+   "kit": "409",
+   "name": "Icefall Deep Chamber",
+   "type": "cave"
+  },
+  "427": {
+   "kit": "427",
+   "name": "Apex Relay Tower",
+   "type": "landmark"
+  },
+  "428": {
+   "kit": "428",
+   "name": "Apex Relay Tower Trial Floor",
+   "type": "tower"
+  },
+  "429": {
+   "kit": "429",
+   "name": "Relay Tower Summit Room",
+   "type": "tower"
+  },
+  "401": {
+   "kit": "401",
+   "name": "Summit Grand Stadium",
+   "type": "landmark"
+  },
+  "403": {
+   "kit": "403",
+   "name": "Summit Grand Stadium Lobby",
+   "type": "interior"
+  },
+  "404": {
+   "kit": "404",
+   "name": "Summit Grand Stadium Arena",
+   "type": "interior"
+  },
+  "426": {
+   "kit": "426",
+   "name": "Summit Recovery Bay",
+   "type": "interior"
+  },
+  "433": {
+   "kit": "433",
+   "name": "Summit Supply Shop",
+   "type": "interior"
+  },
+  "423": {
+   "kit": "423",
+   "name": "Linker Lounge",
+   "type": "interior"
+  },
+  "424": {
+   "kit": "424",
+   "name": "Telescope Room",
+   "type": "interior"
+  },
+  "425": {
+   "kit": "425",
+   "name": "Quorum Archive",
+   "type": "interior"
+  }
+ },
+ "keep": [
+  "146",
+  "147",
+  "148",
+  "149",
+  "150",
+  "151",
+  "152"
+ ],
+ "drop": [],
+ "edges": [
+  [
+   "146",
+   "right",
+   "412",
+   "left"
+  ],
+  [
+   "412",
+   "top",
+   "421",
+   "bottom"
+  ],
+  [
+   "421",
+   "top",
+   "405",
+   "bottom"
+  ],
+  [
+   "412",
+   "right",
+   "427",
+   "left"
+  ],
+  [
+   "427",
+   "right",
+   "422",
+   "left"
+  ],
+  [
+   "412",
+   "bottom",
+   "432",
+   "top"
+  ],
+  [
+   "432",
+   "right",
+   "413",
+   "left"
+  ],
+  [
+   "413",
+   "top",
+   "416",
+   "bottom"
+  ],
+  [
+   "416",
+   "top",
+   "411",
+   "bottom"
+  ],
+  [
+   "411",
+   "left",
+   "430",
+   "right"
+  ],
+  [
+   "430",
+   "left",
+   "434",
+   "right"
+  ],
+  [
+   "411",
+   "top",
+   "414",
+   "bottom"
+  ],
+  [
+   "414",
+   "top",
+   "151",
+   "bottom"
+  ],
+  [
+   "411",
+   "right",
+   "419",
+   "left"
+  ],
+  [
+   "419",
+   "top",
+   "420",
+   "bottom"
+  ],
+  [
+   "420",
+   "top",
+   "431",
+   "bottom"
+  ],
+  [
+   "413",
+   "right",
+   "401",
+   "left"
+  ],
+  [
+   "413",
+   "bottom",
+   "415",
+   "top"
+  ]
+ ],
+ "doors": [
+  [
+   "430",
+   [
+    3,
+    6
+   ],
+   "426",
+   [
+    4,
+    6
+   ]
+  ],
+  [
+   "430",
+   [
+    11,
+    6
+   ],
+   "433",
+   [
+    12,
+    6
+   ]
+  ],
+  [
+   "427",
+   [
+    11,
+    7
+   ],
+   "428",
+   [
+    12,
+    7
+   ]
+  ],
+  [
+   "401",
+   [
+    11,
+    7
+   ],
+   "403",
+   [
+    12,
+    7
+   ]
+  ]
+ ],
+ "houses": [
+  [
+   "430",
+   [
+    19,
+    6
+   ],
+   "423"
+  ],
+  [
+   "430",
+   [
+    20,
+    6
+   ],
+   "423"
+  ],
+  [
+   "431",
+   [
+    11,
+    4
+   ],
+   "424"
+  ],
+  [
+   "431",
+   [
+    12,
+    4
+   ],
+   "424"
+  ],
+  [
+   "431",
+   [
+    17,
+    4
+   ],
+   "425"
+  ],
+  [
+   "431",
+   [
+    18,
+    4
+   ],
+   "425"
+  ]
+ ],
+ "warps": [
+  [
+   "405",
+   [
+    11,
+    3
+   ],
+   "406",
+   [
+    5,
+    2
+   ],
+   [
+    11,
+    4
+   ],
+   "down",
+   [
+    5,
+    3
+   ],
+   "down"
+  ],
+  [
+   "406",
+   [
+    18,
+    2
+   ],
+   "407",
+   [
+    4,
+    3
+   ],
+   [
+    18,
+    3
+   ],
+   "down",
+   [
+    4,
+    4
+   ],
+   "down"
+  ],
+  [
+   "407",
+   [
+    11,
+    13
+   ],
+   "409",
+   [
+    12,
+    13
+   ],
+   [
+    11,
+    12
+   ],
+   "up",
+   [
+    12,
+    12
+   ],
+   "up"
+  ],
+  [
+   "428",
+   [
+    15,
+    4
+   ],
+   "429",
+   [
+    11,
+    14
+   ],
+   [
+    15,
+    6
+   ],
+   "down",
+   [
+    11,
+    12
+   ],
+   "up"
+  ],
+  [
+   "403",
+   [
+    9,
+    4
+   ],
+   "404",
+   [
+    11,
+    14
+   ],
+   [
+    9,
+    5
+   ],
+   "down",
+   [
+    11,
+    13
+   ],
+   "up"
+  ]
+ ],
+ "fix": {
+  "434": {
+   "walk": [
+    [
+     12,
+     8,
+     13,
+     8
+    ]
+   ]
+  },
+  "430": {
+   "walk": [
+    [
+     3,
+     6,
+     4,
+     6
+    ],
+    [
+     11,
+     6,
+     12,
+     6
+    ]
+   ]
+  },
+  "427": {
+   "walk": [
+    [
+     11,
+     7,
+     12,
+     7
+    ]
+   ]
+  },
+  "401": {
+   "walk": [
+    [
+     11,
+     7,
+     12,
+     7
+    ]
+   ]
+  },
+  "405": {
+   "walk": [
+    [
+     10,
+     3,
+     13,
+     4
+    ]
+   ]
+  },
+  "406": {
+   "base": "#",
+   "walk": [
+    [
+     4,
+     3,
+     20,
+     13
+    ],
+    [
+     5,
+     2,
+     6,
+     2
+    ],
+    [
+     18,
+     2,
+     18,
+     2
+    ]
+   ],
+   "gr": [
+    [
+     10,
+     10,
+     14,
+     12
+    ]
+   ],
+   "block": [
+    [
+     9,
+     1,
+     14,
+     8
+    ]
+   ]
+  },
+  "407": {
+   "base": "#",
+   "walk": [
+    [
+     2,
+     4,
+     21,
+     8
+    ],
+    [
+     9,
+     9,
+     14,
+     12
+    ],
+    [
+     3,
+     3,
+     6,
+     3
+    ],
+    [
+     10,
+     13,
+     13,
+     13
+    ]
+   ],
+   "gr": [
+    [
+     3,
+     6,
+     8,
+     8
+    ]
+   ],
+   "block": [
+    [
+     15,
+     5,
+     20,
+     8
+    ]
+   ]
+  },
+  "409": {
+   "base": "#",
+   "walk": [
+    [
+     3,
+     2,
+     20,
+     12
+    ],
+    [
+     10,
+     13,
+     13,
+     13
+    ]
+   ],
+   "gr": [
+    [
+     4,
+     8,
+     8,
+     11
+    ],
+    [
+     15,
+     8,
+     19,
+     11
+    ]
+   ],
+   "block": [
+    [
+     9,
+     2,
+     15,
+     6
+    ]
+   ]
+  },
+  "428": {
+   "base": "#",
+   "walk": [
+    [
+     2,
+     4,
+     17,
+     16
+    ],
+    [
+     8,
+     17,
+     9,
+     17
+    ]
+   ],
+   "block": [
+    [
+     2,
+     7,
+     11,
+     8
+    ],
+    [
+     7,
+     11,
+     17,
+     11
+    ],
+    [
+     4,
+     13,
+     6,
+     15
+    ]
+   ]
+  },
+  "429": {
+   "base": "#",
+   "walk": [
+    [
+     3,
+     3,
+     20,
+     12
+    ],
+    [
+     11,
+     13,
+     12,
+     14
+    ]
+   ]
+  },
+  "403": {
+   "base": "#",
+   "walk": [
+    [
+     3,
+     6,
+     16,
+     16
+    ],
+    [
+     8,
+     4,
+     11,
+     5
+    ],
+    [
+     9,
+     17,
+     10,
+     18
+    ]
+   ],
+   "block": [
+    [
+     7,
+     16,
+     7,
+     16
+    ],
+    [
+     12,
+     16,
+     12,
+     16
+    ]
+   ]
+  },
+  "404": {
+   "base": "#",
+   "walk": [
+    [
+     3,
+     3,
+     20,
+     11
+    ],
+    [
+     11,
+     12,
+     12,
+     14
+    ]
+   ],
+   "block": [
+    [
+     3,
+     3,
+     4,
+     4
+    ],
+    [
+     3,
+     5,
+     3,
+     5
+    ],
+    [
+     19,
+     3,
+     20,
+     4
+    ],
+    [
+     20,
+     5,
+     20,
+     5
+    ],
+    [
+     3,
+     10,
+     4,
+     11
+    ],
+    [
+     19,
+     10,
+     20,
+     11
+    ]
+   ]
+  },
+  "426": {
+   "base": "#",
+   "walk": [
+    [
+     3,
+     5,
+     16,
+     15
+    ],
+    [
+     9,
+     16,
+     10,
+     18
+    ]
+   ],
+   "block": [
+    [
+     5,
+     5,
+     14,
+     6
+    ],
+    [
+     3,
+     7,
+     3,
+     15
+    ],
+    [
+     16,
+     7,
+     16,
+     15
+    ]
+   ]
+  },
+  "433": {
+   "base": "#",
+   "walk": [
+    [
+     3,
+     6,
+     16,
+     15
+    ],
+    [
+     9,
+     16,
+     10,
+     18
+    ]
+   ],
+   "block": [
+    [
+     3,
+     6,
+     4,
+     13
+    ],
+    [
+     5,
+     8,
+     5,
+     12
+    ],
+    [
+     16,
+     6,
+     16,
+     14
+    ]
+   ]
+  },
+  "423": {
+   "base": "#",
+   "walk": [
+    [
+     4,
+     5,
+     16,
+     15
+    ],
+    [
+     9,
+     16,
+     10,
+     16
+    ]
+   ],
+   "block": [
+    [
+     4,
+     11,
+     6,
+     13
+    ],
+    [
+     13,
+     6,
+     16,
+     7
+    ],
+    [
+     13,
+     10,
+     16,
+     13
+    ]
+   ]
+  },
+  "424": {
+   "base": "#",
+   "walk": [
+    [
+     4,
+     5,
+     15,
+     16
+    ],
+    [
+     9,
+     17,
+     10,
+     17
+    ]
+   ],
+   "block": [
+    [
+     8,
+     5,
+     11,
+     5
+    ],
+    [
+     4,
+     12,
+     4,
+     13
+    ],
+    [
+     15,
+     13,
+     15,
+     14
+    ]
+   ]
+  },
+  "425": {
+   "base": "#",
+   "walk": [
+    [
+     4,
+     5,
+     15,
+     16
+    ],
+    [
+     9,
+     17,
+     10,
+     17
+    ]
+   ],
+   "block": [
+    [
+     4,
+     6,
+     6,
+     8
+    ],
+    [
+     14,
+     5,
+     15,
+     7
+    ]
+   ]
+  }
+ },
+ "counters": {
+  "426": [
+   [
+    9,
+    6,
+    "bay"
+   ],
+   [
+    10,
+    6,
+    "bay"
+   ]
+  ],
+  "433": [
+   [
+    5,
+    9,
+    "shop"
+   ],
+   [
+    5,
+    10,
+    "shop"
+   ]
+  ]
+ },
+ "objects": {
+  "422": [
+   {
+    "tile": [
+     15,
+     4
+    ],
+    "k": "chest",
+    "item": "maxrevive",
+    "n": 2,
+    "why": "Secret Grove reward (behind the Relay Tower)"
+   }
+  ],
+  "415": [
+   {
+    "tile": [
+     12,
+     15
+    ],
+    "k": "chest",
+    "item": "singularity",
+    "n": 2,
+    "why": "Stargazer Overlook dead end reward"
+   }
+  ],
+  "409": [
+   {
+    "tile": [
+     2,
+     7
+    ],
+    "k": "chest",
+    "item": "stasis",
+    "n": 3,
+    "why": "Icefall Deep Chamber reward"
+   }
+  ],
+  "429": [
+   {
+    "tile": [
+     12,
+     2
+    ],
+    "k": "chest",
+    "item": "fullgel",
+    "n": 3,
+    "why": "Relay Tower summit reward (the Apex Keeper is Orra Venn at the Great Telescope, so no keeper here)"
+   }
+  ]
+ },
+ "spawns": {
+  "434": {
+   "default": [
+    12,
+    10
+   ]
+  },
+  "406": {
+   "default": [
+    5,
+    3
+   ]
+  },
+  "407": {
+   "default": [
+    4,
+    4
+   ]
+  },
+  "409": {
+   "default": [
+    12,
+    12
+   ]
+  },
+  "428": {
+   "default": [
+    9,
+    15
+   ]
+  },
+  "429": {
+   "default": [
+    11,
+    12
+   ]
+  }
+ },
+ "gate": [
+  {
+   "section": "434",
+   "tiles": [
+    [
+     12,
+     8
+    ],
+    [
+     13,
+     8
+    ]
+   ],
+   "node": "dustara",
+   "planet": "dustara",
+   "label": "your ship back to Dustara",
+   "why": "V3: the Apex spaceport is a way home"
+  }
+ ],
+ "quest_spots": {},
+ "npc_move": {},
+ "trainers_per_section": {
+  "422": 0,
+  "415": 0,
+  "405": 0
+ },
+ "encounters": {
+  "411": "146",
+  "412": "146",
+  "413": "146",
+  "414": "146",
+  "415": "146",
+  "416": "146",
+  "419": "146",
+  "420": "146",
+  "421": "146",
+  "422": "146",
+  "405": "146",
+  "406": [
+   "146",
+   "rock_cave"
+  ],
+  "407": [
+   "146",
+   "rock_cave"
+  ],
+  "409": [
+   "146",
+   "rock_cave"
+  ]
+ },
+ "_unused": [
+  "400 Summit Grand Stadium Exterior (1): alt of 401",
+  "402 Summit Grand Stadium Lobby (1): alt of 403",
+  "408 Cave Floor 2 option 2: alt of 407",
+  "410 Cave Deep Chamber option 2: alt of 409",
+  "417 Instrument Hollows (1): alt of 419",
+  "418 Instrument Hollows (2): alt of 419"
+ ]
+}

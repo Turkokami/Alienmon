@@ -1,0 +1,1482 @@
+{
+ "_report": "Starfall, rebuilt on the V3 world kit. Arrive at Rim Camp (kept: the sandbagged pad, gate home, medic tent swapped to the kit Recovery Bay on id 137, Ostrander/Tamsin scenes). East through Starfall Lane Homes (new shop door) to Crater Crossroads (hub): Quiet Court north (Observation Post, Helix field office, and the hidden Starfall Secret Grove with a chest off its west side), Farmstead Edge south (Seedpod Greenhouse) with the Rift Crater Arena (lobby + battle floor) off its west side, and Seedpod Fields A east (kept, Zib's pod scene). Seedpod Junction (hub) follows: east to Teo's Old Camp and the kept Crater Rim -> Crater Descent B1-B3 -> Rift Engine Platform (Director Thorne) chain; north through Pod Fields (Seedpod Shells collect spot) and Nebula Overlook up Craterstep Slope to the optional Starstone Hollow (entrance + 3 floors, chest); south down Starstream Bend to Rift Fork: the Starfall Spaceport (second way home) east, Seedpod Hollows (dead end, chest) west, Rift Edge (dead end, chest) south.",
+ "planet": "starfall",
+ "arrival": "136",
+ "arrival_why": "the sandbagged landing pad at Rim Camp (kept; story scenes play there); the spaceport 767 is a second way home",
+ "use": {
+  "767": {
+   "kit": "767",
+   "name": "Starfall Spaceport",
+   "type": "landmark"
+  },
+  "763": {
+   "kit": "763",
+   "name": "Starfall Lane Homes",
+   "type": "town"
+  },
+  "764": {
+   "kit": "764",
+   "name": "Starfall Quiet Court",
+   "type": "town"
+  },
+  "765": {
+   "kit": "765",
+   "name": "Starfall Farmstead Edge",
+   "type": "town"
+  },
+  "745": {
+   "kit": "745",
+   "name": "Crater Crossroads",
+   "type": "route"
+  },
+  "746": {
+   "kit": "746",
+   "name": "Seedpod Junction",
+   "type": "route"
+  },
+  "747": {
+   "kit": "747",
+   "name": "Rift Fork",
+   "type": "route"
+  },
+  "748": {
+   "kit": "748",
+   "name": "Craterstep Slope",
+   "type": "route"
+  },
+  "750": {
+   "kit": "750",
+   "name": "Nebula Overlook",
+   "type": "route"
+  },
+  "751": {
+   "kit": "751",
+   "name": "Rift Edge",
+   "type": "route"
+  },
+  "752": {
+   "kit": "752",
+   "name": "Seedpod Hollows",
+   "type": "route"
+  },
+  "753": {
+   "kit": "753",
+   "name": "Starstream Bend",
+   "type": "route"
+  },
+  "754": {
+   "kit": "754",
+   "name": "Pod Fields",
+   "type": "route"
+  },
+  "755": {
+   "kit": "755",
+   "name": "Starfall Secret Grove",
+   "type": "field"
+  },
+  "736": {
+   "kit": "736",
+   "name": "Rift Crater Arena",
+   "type": "landmark"
+  },
+  "738": {
+   "kit": "738",
+   "name": "Rift Crater Arena Lobby",
+   "type": "interior"
+  },
+  "739": {
+   "kit": "739",
+   "name": "Rift Crater Arena Floor",
+   "type": "interior"
+  },
+  "741": {
+   "kit": "741",
+   "name": "Starstone Hollow Entrance",
+   "type": "route"
+  },
+  "742": {
+   "kit": "742",
+   "name": "Starstone Hollow B1",
+   "type": "cave"
+  },
+  "743": {
+   "kit": "743",
+   "name": "Starstone Hollow B2",
+   "type": "cave"
+  },
+  "744": {
+   "kit": "744",
+   "name": "Starstone Hollow Deep Chamber",
+   "type": "cave"
+  },
+  "137": {
+   "kit": "759",
+   "name": "Rim Camp Recovery Bay",
+   "type": "interior"
+  },
+  "766": {
+   "kit": "766",
+   "name": "Starfall Shop",
+   "type": "interior"
+  },
+  "756": {
+   "kit": "756",
+   "name": "Seedpod Greenhouse",
+   "type": "interior"
+  },
+  "757": {
+   "kit": "757",
+   "name": "Observation Post",
+   "type": "interior"
+  },
+  "758": {
+   "kit": "758",
+   "name": "Helix Field Office",
+   "type": "interior"
+  }
+ },
+ "keep": [
+  "136",
+  "138",
+  "140",
+  "141",
+  "142",
+  "143",
+  "144",
+  "145",
+  "172"
+ ],
+ "drop": [
+  "139"
+ ],
+ "edges": [
+  [
+   "136",
+   "right",
+   "763",
+   "left",
+   [
+    5,
+    10
+   ],
+   [
+    9,
+    11
+   ]
+  ],
+  [
+   "763",
+   "right",
+   "745",
+   "left",
+   [
+    9,
+    11
+   ],
+   [
+    5,
+    8
+   ]
+  ],
+  [
+   "764",
+   "bottom",
+   "745",
+   "top",
+   [
+    10,
+    13
+   ],
+   [
+    10,
+    14
+   ]
+  ],
+  [
+   "755",
+   "right",
+   "764",
+   "left",
+   [
+    10,
+    11
+   ],
+   [
+    5,
+    6
+   ]
+  ],
+  [
+   "745",
+   "bottom",
+   "765",
+   "top",
+   [
+    10,
+    14
+   ],
+   [
+    14,
+    18
+   ]
+  ],
+  [
+   "736",
+   "right",
+   "765",
+   "left",
+   [
+    9,
+    12
+   ],
+   [
+    7,
+    9
+   ]
+  ],
+  [
+   "745",
+   "right",
+   "138",
+   "left",
+   [
+    5,
+    8
+   ],
+   [
+    5,
+    9
+   ]
+  ],
+  [
+   "138",
+   "right",
+   "746",
+   "left",
+   [
+    5,
+    9
+   ],
+   [
+    4,
+    7
+   ]
+  ],
+  [
+   "746",
+   "right",
+   "140",
+   "left",
+   [
+    7,
+    9
+   ],
+   [
+    5,
+    9
+   ]
+  ],
+  [
+   "140",
+   "right",
+   "141",
+   "left",
+   [
+    5,
+    9
+   ],
+   [
+    5,
+    8
+   ]
+  ],
+  [
+   "141",
+   "right",
+   "142",
+   "bottom",
+   [
+    5,
+    8
+   ],
+   [
+    6,
+    9
+   ]
+  ],
+  [
+   "142",
+   "top",
+   "143",
+   "bottom",
+   [
+    6,
+    9
+   ],
+   [
+    6,
+    9
+   ]
+  ],
+  [
+   "143",
+   "top",
+   "144",
+   "bottom",
+   [
+    6,
+    9
+   ],
+   [
+    6,
+    9
+   ]
+  ],
+  [
+   "144",
+   "top",
+   "145",
+   "left",
+   [
+    6,
+    9
+   ],
+   [
+    5,
+    10
+   ]
+  ],
+  [
+   "754",
+   "bottom",
+   "746",
+   "top",
+   [
+    4,
+    11
+   ],
+   [
+    4,
+    9
+   ]
+  ],
+  [
+   "750",
+   "bottom",
+   "754",
+   "top",
+   [
+    9,
+    14
+   ],
+   [
+    9,
+    14
+   ]
+  ],
+  [
+   "748",
+   "bottom",
+   "750",
+   "top",
+   [
+    13,
+    18
+   ],
+   [
+    9,
+    17
+   ]
+  ],
+  [
+   "741",
+   "bottom",
+   "748",
+   "top",
+   [
+    10,
+    14
+   ],
+   [
+    3,
+    8
+   ]
+  ],
+  [
+   "746",
+   "bottom",
+   "753",
+   "top",
+   [
+    15,
+    18
+   ],
+   [
+    16,
+    21
+   ]
+  ],
+  [
+   "753",
+   "bottom",
+   "747",
+   "top",
+   [
+    6,
+    11
+   ],
+   [
+    5,
+    10
+   ]
+  ],
+  [
+   "747",
+   "right",
+   "767",
+   "left",
+   [
+    7,
+    10
+   ],
+   [
+    12,
+    13
+   ]
+  ],
+  [
+   "747",
+   "bottom",
+   "751",
+   "top",
+   [
+    6,
+    10
+   ],
+   [
+    4,
+    9
+   ]
+  ],
+  [
+   "752",
+   "right",
+   "747",
+   "left",
+   [
+    4,
+    8
+   ],
+   [
+    7,
+    9
+   ]
+  ]
+ ],
+ "doors": [
+  [
+   "136",
+   [
+    9,
+    4
+   ],
+   "137",
+   [
+    10,
+    4
+   ]
+  ],
+  [
+   "763",
+   [
+    11,
+    6
+   ],
+   "766",
+   [
+    12,
+    6
+   ]
+  ],
+  [
+   "736",
+   [
+    11,
+    6
+   ],
+   "738",
+   [
+    12,
+    6
+   ]
+  ]
+ ],
+ "houses": [
+  [
+   "763",
+   [
+    4,
+    6
+   ],
+   "172"
+  ],
+  [
+   "763",
+   [
+    5,
+    6
+   ],
+   "172"
+  ],
+  [
+   "763",
+   [
+    19,
+    6
+   ],
+   "172"
+  ],
+  [
+   "763",
+   [
+    20,
+    6
+   ],
+   "172"
+  ],
+  [
+   "764",
+   [
+    5,
+    4
+   ],
+   "172"
+  ],
+  [
+   "764",
+   [
+    6,
+    4
+   ],
+   "172"
+  ],
+  [
+   "764",
+   [
+    11,
+    4
+   ],
+   "757"
+  ],
+  [
+   "764",
+   [
+    12,
+    4
+   ],
+   "757"
+  ],
+  [
+   "764",
+   [
+    16,
+    4
+   ],
+   "758"
+  ],
+  [
+   "764",
+   [
+    17,
+    4
+   ],
+   "758"
+  ],
+  [
+   "764",
+   [
+    2,
+    13
+   ],
+   "172"
+  ],
+  [
+   "764",
+   [
+    3,
+    13
+   ],
+   "172"
+  ],
+  [
+   "765",
+   [
+    4,
+    4
+   ],
+   "756"
+  ],
+  [
+   "765",
+   [
+    5,
+    4
+   ],
+   "756"
+  ],
+  [
+   "765",
+   [
+    10,
+    4
+   ],
+   "172"
+  ],
+  [
+   "765",
+   [
+    11,
+    4
+   ],
+   "172"
+  ]
+ ],
+ "warps": [
+  [
+   "741",
+   [
+    11,
+    4
+   ],
+   "742",
+   [
+    5,
+    2
+   ],
+   [
+    11,
+    5
+   ],
+   "down",
+   [
+    5,
+    3
+   ],
+   "down"
+  ],
+  [
+   "742",
+   [
+    17,
+    2
+   ],
+   "743",
+   [
+    4,
+    2
+   ],
+   [
+    17,
+    3
+   ],
+   "down",
+   [
+    4,
+    3
+   ],
+   "down"
+  ],
+  [
+   "743",
+   [
+    11,
+    13
+   ],
+   "744",
+   [
+    12,
+    14
+   ],
+   [
+    11,
+    12
+   ],
+   "up",
+   [
+    12,
+    13
+   ],
+   "up"
+  ],
+  [
+   "738",
+   [
+    9,
+    4
+   ],
+   "739",
+   [
+    11,
+    15
+   ],
+   [
+    9,
+    5
+   ],
+   "down",
+   [
+    11,
+    14
+   ],
+   "up"
+  ]
+ ],
+ "fix": {
+  "767": {
+   "walk": [
+    [
+     8,
+     2,
+     19,
+     11
+    ]
+   ],
+   "block": [
+    [
+     11,
+     3,
+     15,
+     8
+    ],
+    [
+     8,
+     2,
+     19,
+     2
+    ],
+    [
+     8,
+     5,
+     8,
+     7
+    ],
+    [
+     18,
+     4,
+     19,
+     8
+    ],
+    [
+     8,
+     9,
+     9,
+     10
+    ],
+    [
+     18,
+     9,
+     19,
+     10
+    ]
+   ]
+  },
+  "763": {
+   "walk": [
+    [
+     11,
+     6,
+     12,
+     6
+    ]
+   ]
+  },
+  "764": {
+   "walk": [
+    [
+     1,
+     14,
+     8,
+     14
+    ]
+   ]
+  },
+  "765": {
+   "walk": [
+    [
+     10,
+     5,
+     11,
+     5
+    ]
+   ]
+  },
+  "736": {
+   "walk": [
+    [
+     11,
+     6,
+     12,
+     7
+    ],
+    [
+     23,
+     9,
+     23,
+     12
+    ]
+   ]
+  },
+  "752": {
+   "gr": [
+    [
+     22,
+     4,
+     23,
+     8
+    ]
+   ],
+   "block": [
+    [
+     12,
+     4,
+     12,
+     4
+    ]
+   ]
+  },
+  "751": {
+   "block": [
+    [
+     16,
+     4,
+     16,
+     4
+    ]
+   ]
+  },
+  "741": {
+   "base": "#",
+   "walk": [
+    [
+     10,
+     4,
+     14,
+     15
+    ],
+    [
+     3,
+     6,
+     9,
+     12
+    ],
+    [
+     15,
+     6,
+     20,
+     13
+    ]
+   ],
+   "gr": [
+    [
+     4,
+     7,
+     8,
+     10
+    ],
+    [
+     15,
+     9,
+     19,
+     12
+    ]
+   ]
+  },
+  "742": {
+   "base": "#",
+   "walk": [
+    [
+     3,
+     3,
+     8,
+     13
+    ],
+    [
+     15,
+     3,
+     20,
+     13
+    ],
+    [
+     8,
+     9,
+     15,
+     13
+    ],
+    [
+     4,
+     2,
+     7,
+     2
+    ],
+    [
+     16,
+     2,
+     19,
+     2
+    ]
+   ],
+   "gr": [
+    [
+     10,
+     10,
+     13,
+     12
+    ]
+   ]
+  },
+  "743": {
+   "base": "#",
+   "walk": [
+    [
+     2,
+     3,
+     21,
+     8
+    ],
+    [
+     10,
+     9,
+     13,
+     12
+    ],
+    [
+     10,
+     13,
+     13,
+     13
+    ],
+    [
+     3,
+     2,
+     6,
+     2
+    ]
+   ],
+   "gr": [
+    [
+     4,
+     5,
+     8,
+     7
+    ]
+   ],
+   "block": [
+    [
+     14,
+     4,
+     19,
+     7
+    ],
+    [
+     9,
+     5,
+     9,
+     8
+    ]
+   ]
+  },
+  "744": {
+   "base": "#",
+   "walk": [
+    [
+     3,
+     2,
+     20,
+     12
+    ],
+    [
+     10,
+     13,
+     13,
+     14
+    ]
+   ],
+   "gr": [
+    [
+     4,
+     8,
+     8,
+     11
+    ],
+    [
+     15,
+     8,
+     19,
+     11
+    ]
+   ],
+   "block": [
+    [
+     8,
+     2,
+     15,
+     6
+    ],
+    [
+     3,
+     2,
+     3,
+     2
+    ],
+    [
+     20,
+     2,
+     20,
+     6
+    ],
+    [
+     3,
+     7,
+     3,
+     7
+    ]
+   ]
+  },
+  "137": {
+   "base": "#",
+   "walk": [
+    [
+     4,
+     7,
+     15,
+     15
+    ],
+    [
+     8,
+     16,
+     11,
+     16
+    ]
+   ]
+  },
+  "766": {
+   "base": "#",
+   "walk": [
+    [
+     3,
+     6,
+     16,
+     15
+    ],
+    [
+     9,
+     16,
+     10,
+     16
+    ]
+   ],
+   "block": [
+    [
+     2,
+     7,
+     5,
+     13
+    ],
+    [
+     15,
+     7,
+     16,
+     13
+    ]
+   ]
+  },
+  "738": {
+   "base": "#",
+   "walk": [
+    [
+     3,
+     5,
+     16,
+     16
+    ],
+    [
+     9,
+     4,
+     10,
+     4
+    ],
+    [
+     9,
+     17,
+     10,
+     17
+    ]
+   ]
+  },
+  "739": {
+   "base": "#",
+   "walk": [
+    [
+     3,
+     4,
+     20,
+     11
+    ],
+    [
+     11,
+     12,
+     12,
+     15
+    ]
+   ]
+  },
+  "756": {
+   "base": "#",
+   "walk": [
+    [
+     4,
+     5,
+     15,
+     15
+    ],
+    [
+     9,
+     16,
+     10,
+     17
+    ]
+   ],
+   "block": [
+    [
+     4,
+     6,
+     6,
+     7
+    ],
+    [
+     4,
+     8,
+     4,
+     8
+    ],
+    [
+     15,
+     5,
+     15,
+     7
+    ],
+    [
+     15,
+     10,
+     15,
+     12
+    ]
+   ]
+  },
+  "757": {
+   "base": "#",
+   "walk": [
+    [
+     4,
+     5,
+     16,
+     15
+    ],
+    [
+     9,
+     16,
+     10,
+     16
+    ]
+   ],
+   "block": [
+    [
+     4,
+     5,
+     5,
+     5
+    ],
+    [
+     13,
+     5,
+     16,
+     5
+    ],
+    [
+     12,
+     7,
+     16,
+     9
+    ],
+    [
+     13,
+     10,
+     14,
+     10
+    ],
+    [
+     16,
+     10,
+     16,
+     15
+    ]
+   ]
+  },
+  "758": {
+   "base": "#",
+   "walk": [
+    [
+     2,
+     5,
+     17,
+     15
+    ],
+    [
+     9,
+     16,
+     10,
+     16
+    ]
+   ],
+   "block": [
+    [
+     7,
+     5,
+     12,
+     6
+    ],
+    [
+     2,
+     6,
+     2,
+     14
+    ],
+    [
+     3,
+     9,
+     4,
+     12
+    ],
+    [
+     17,
+     6,
+     17,
+     14
+    ],
+    [
+     13,
+     9,
+     14,
+     13
+    ]
+   ]
+  }
+ },
+ "counters": {
+  "137": [
+   [
+    9,
+    6,
+    "bay"
+   ],
+   [
+    10,
+    6,
+    "bay"
+   ]
+  ],
+  "766": [
+   [
+    5,
+    9,
+    "shop"
+   ],
+   [
+    5,
+    10,
+    "shop"
+   ]
+  ]
+ },
+ "objects": {
+  "755": [
+   {
+    "tile": [
+     15,
+     4
+    ],
+    "k": "chest",
+    "item": "fullgel",
+    "n": 2,
+    "why": "hidden grove reward (the stump below the flower bed)"
+   }
+  ],
+  "752": [
+   {
+    "tile": [
+     12,
+     4
+    ],
+    "k": "chest",
+    "item": "harmonic",
+    "n": 3,
+    "why": "Seedpod Hollows dead end reward (top nook)"
+   }
+  ],
+  "751": [
+   {
+    "tile": [
+     16,
+     4
+    ],
+    "k": "chest",
+    "item": "tether",
+    "n": 3,
+    "why": "Rift Edge dead end reward at the lip of the rift"
+   }
+  ],
+  "744": [
+   {
+    "tile": [
+     3,
+     7
+    ],
+    "k": "chest",
+    "item": "maxrevive",
+    "n": 1,
+    "why": "Starstone Hollow deep chamber reward"
+   }
+  ]
+ },
+ "spawns": {
+  "767": {
+   "arrival": [
+    12,
+    11
+   ],
+   "default": [
+    12,
+    11
+   ]
+  },
+  "742": {
+   "default": [
+    5,
+    3
+   ]
+  },
+  "743": {
+   "default": [
+    4,
+    3
+   ]
+  },
+  "744": {
+   "default": [
+    12,
+    13
+   ]
+  }
+ },
+ "gate": [
+  {
+   "section": "767",
+   "tiles": [
+    [
+     12,
+     9
+    ],
+    [
+     13,
+     9
+    ]
+   ],
+   "node": "dustara",
+   "planet": "dustara",
+   "label": "your ship back to Dustara",
+   "why": "V3: the Starfall spaceport, a second way home beside the Rim Camp pad"
+  }
+ ],
+ "quest_spots": {
+  "S97:0": {
+   "s": "754",
+   "n": 4
+  }
+ },
+ "npc_unpin": [
+  "137"
+ ],
+ "npc_move": {
+  "139": "754"
+ },
+ "npc_pins": {
+  "137": [
+   [
+    10,
+    6
+   ]
+  ]
+ },
+ "trainers_per_section": {
+  "755": 0,
+  "752": 0,
+  "751": 0,
+  "741": 0,
+  "767": 0
+ },
+ "encounters": {
+  "745": "138",
+  "746": "139",
+  "754": "139",
+  "752": "139",
+  "755": "138",
+  "750": "141",
+  "748": "141",
+  "753": "141",
+  "747": "141",
+  "751": "141",
+  "741": "141",
+  "742": [
+   "142",
+   "crater"
+  ],
+  "743": [
+   "143",
+   "crater"
+  ],
+  "744": [
+   "144",
+   "crater"
+  ]
+ },
+ "_unused": [
+  {
+   "id": "735",
+   "why": "alt arena exterior; 736 used"
+  },
+  {
+   "id": "737",
+   "why": "alt arena lobby; 738 used"
+  },
+  {
+   "id": "740",
+   "why": "second battle room; the lobby has one door, 739 (Battle Floor) used"
+  },
+  {
+   "id": "749",
+   "why": "alt Nebula Overlook; 750 used"
+  },
+  {
+   "id": "760",
+   "why": "Relay Tower exterior: Starfall's Keeper is Director Thorne on the kept Rift Engine Platform 145, so a tower would be a second Keeper building"
+  },
+  {
+   "id": "761",
+   "why": "Relay Tower trial floor: see 760"
+  },
+  {
+   "id": "762",
+   "why": "Relay Tower keeper room: see 760"
+  }
+ ]
+}

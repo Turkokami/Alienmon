@@ -1,0 +1,529 @@
+[
+ {
+  "plan": "02_ferrox.json",
+  "section": "478",
+  "kit": "478",
+  "name": "Scrapyard Dome Lobby",
+  "counters": [],
+  "objects": [],
+  "warps": [
+   [
+    "478",
+    [
+     9,
+     4
+    ],
+    "480",
+    [
+     11,
+     15
+    ],
+    [
+     9,
+     5
+    ],
+    "down",
+    [
+     11,
+     14
+    ],
+    "up"
+   ]
+  ]
+ },
+ {
+  "plan": "02_ferrox.json",
+  "section": "480",
+  "kit": "480",
+  "name": "Scrapyard Dome Arena",
+  "counters": [],
+  "objects": [],
+  "warps": [
+   [
+    "478",
+    [
+     9,
+     4
+    ],
+    "480",
+    [
+     11,
+     15
+    ],
+    [
+     9,
+     5
+    ],
+    "down",
+    [
+     11,
+     14
+    ],
+    "up"
+   ]
+  ]
+ },
+ {
+  "plan": "02_ferrox.json",
+  "section": "496",
+  "kit": "496",
+  "name": "Helix Secret Lab",
+  "counters": [],
+  "objects": [],
+  "warps": []
+ },
+ {
+  "plan": "02_ferrox.json",
+  "section": "031",
+  "kit": "501",
+  "name": "Rustvale Recovery Bay",
+  "counters": [
+   [
+    9,
+    6,
+    "bay"
+   ],
+   [
+    10,
+    6,
+    "bay"
+   ]
+  ],
+  "objects": [],
+  "warps": []
+ },
+ {
+  "plan": "02_ferrox.json",
+  "section": "032",
+  "kit": "508",
+  "name": "Rustvale Shop",
+  "counters": [
+   [
+    6,
+    9,
+    "shop"
+   ],
+   [
+    6,
+    10,
+    "shop"
+   ]
+  ],
+  "objects": [],
+  "warps": []
+ },
+ {
+  "plan": "02_ferrox.json",
+  "section": "498",
+  "kit": "498",
+  "name": "Salvage Shop",
+  "counters": [],
+  "objects": [],
+  "warps": []
+ },
+ {
+  "plan": "02_ferrox.json",
+  "section": "499",
+  "kit": "499",
+  "name": "Engine Garage",
+  "counters": [],
+  "objects": [],
+  "warps": []
+ },
+ {
+  "plan": "02_ferrox.json",
+  "section": "500",
+  "kit": "500",
+  "name": "Crane Operator's Bunk",
+  "counters": [],
+  "objects": [],
+  "warps": []
+ },
+ {
+  "plan": "03_sporeholm.json",
+  "section": "043",
+  "kit": "724",
+  "name": "Mirefen Recovery Bay",
+  "counters": [
+   [
+    9,
+    5,
+    "bay"
+   ],
+   [
+    10,
+    5,
+    "bay"
+   ]
+  ],
+  "objects": [],
+  "warps": []
+ },
+ {
+  "plan": "03_sporeholm.json",
+  "section": "704",
+  "kit": "704",
+  "name": "Mycelium Bowl Lobby",
+  "counters": [],
+  "objects": [],
+  "warps": [
+   [
+    "704",
+    [
+     9,
+     3
+    ],
+    "706",
+    [
+     11,
+     15
+    ],
+    [
+     9,
+     4
+    ],
+    "down",
+    [
+     11,
+     14
+    ],
+    "up"
+   ]
+  ]
+ },
+ {
+  "plan": "03_sporeholm.json",
+  "section": "706",
+  "kit": "706",
+  "name": "Mycelium Bowl Arena",
+  "counters": [],
+  "objects": [],
+  "warps": [
+   [
+    "704",
+    [
+     9,
+     3
+    ],
+    "706",
+    [
+     11,
+     15
+    ],
+    [
+     9,
+     4
+    ],
+    "down",
+    [
+     11,
+     14
+    ],
+    "up"
+   ]
+  ]
+ },
+ {
+  "plan": "04_thalassa.json",
+  "section": "791",
+  "kit": "791",
+  "name": "Harbormaster's Office",
+  "counters": [],
+  "objects": [],
+  "warps": []
+ },
+ {
+  "plan": "04_thalassa.json",
+  "section": "792",
+  "kit": "792",
+  "name": "Fish Market Stall",
+  "counters": [],
+  "objects": [],
+  "warps": []
+ },
+ {
+  "plan": "04_thalassa.json",
+  "section": "793",
+  "kit": "793",
+  "name": "Captain's Cabin",
+  "counters": [],
+  "objects": [],
+  "warps": []
+ },
+ {
+  "plan": "04_thalassa.json",
+  "section": "769",
+  "kit": "769",
+  "name": "Tidewater Arena Lobby",
+  "counters": [],
+  "objects": [],
+  "warps": [
+   [
+    "769",
+    [
+     9,
+     4
+    ],
+    "770",
+    [
+     11,
+     15
+    ],
+    [
+     9,
+     5
+    ],
+    "down",
+    [
+     11,
+     14
+    ],
+    "up"
+   ]
+  ]
+ },
+ {
+  "plan": "04_thalassa.json",
+  "section": "770",
+  "kit": "770",
+  "name": "Tidewater Arena Battle Room",
+  "counters": [],
+  "objects": [],
+  "warps": [
+   [
+    "769",
+    [
+     9,
+     4
+    ],
+    "770",
+    [
+     11,
+     15
+    ],
+    [
+     9,
+     5
+    ],
+    "down",
+    [
+     11,
+     14
+    ],
+    "up"
+   ]
+  ]
+ },
+ {
+  "plan": "04_thalassa.json",
+  "section": "787",
+  "kit": "787",
+  "name": "Thalassa Helix Lab",
+  "counters": [],
+  "objects": [],
+  "warps": []
+ },
+ {
+  "plan": "06_glyphos.json",
+  "section": "546",
+  "kit": "546",
+  "name": "Temple of Trials Arena",
+  "counters": [],
+  "objects": [],
+  "warps": [
+   [
+    "545",
+    [
+     9,
+     2
+    ],
+    "546",
+    [
+     11,
+     14
+    ],
+    [
+     9,
+     4
+    ],
+    "down",
+    [
+     11,
+     12
+    ],
+    "up"
+   ]
+  ]
+ },
+ {
+  "plan": "07_pyros.json",
+  "section": "670",
+  "kit": "670",
+  "name": "Magma Pit Arena Lobby",
+  "counters": [],
+  "objects": [],
+  "warps": [
+   [
+    "670",
+    [
+     9,
+     4
+    ],
+    "672",
+    [
+     11,
+     15
+    ],
+    [
+     9,
+     5
+    ],
+    "down",
+    [
+     11,
+     14
+    ],
+    "up"
+   ]
+  ]
+ },
+ {
+  "plan": "07_pyros.json",
+  "section": "083",
+  "kit": "692",
+  "name": "Cinder Hollow Recovery Bay",
+  "counters": [
+   [
+    9,
+    5,
+    "bay"
+   ],
+   [
+    10,
+    5,
+    "bay"
+   ]
+  ],
+  "objects": [],
+  "warps": []
+ },
+ {
+  "plan": "07_pyros.json",
+  "section": "084",
+  "kit": "699",
+  "name": "Cinder Hollow Shop",
+  "counters": [
+   [
+    4,
+    10,
+    "shop"
+   ],
+   [
+    4,
+    11,
+    "shop"
+   ]
+  ],
+  "objects": [],
+  "warps": []
+ },
+ {
+  "plan": "07_pyros.json",
+  "section": "689",
+  "kit": "689",
+  "name": "Miners' Canteen",
+  "counters": [],
+  "objects": [],
+  "warps": []
+ },
+ {
+  "plan": "07_pyros.json",
+  "section": "690",
+  "kit": "690",
+  "name": "Smelter Room",
+  "counters": [],
+  "objects": [],
+  "warps": []
+ },
+ {
+  "plan": "08_glacia.json",
+  "section": "512",
+  "kit": "512",
+  "name": "Glacier Rink Arena Lobby",
+  "counters": [],
+  "objects": [],
+  "warps": [
+   [
+    "512",
+    [
+     9,
+     4
+    ],
+    "513",
+    [
+     11,
+     15
+    ],
+    [
+     9,
+     5
+    ],
+    "down",
+    [
+     11,
+     14
+    ],
+    "up"
+   ]
+  ]
+ },
+ {
+  "plan": "08_glacia.json",
+  "section": "528",
+  "kit": "528",
+  "name": "Glacia Helix Lab",
+  "counters": [],
+  "objects": [],
+  "warps": []
+ },
+ {
+  "plan": "08_glacia.json",
+  "section": "094",
+  "kit": "533",
+  "name": "Frostmark Recovery Bay",
+  "counters": [
+   [
+    9,
+    6,
+    "bay"
+   ],
+   [
+    10,
+    6,
+    "bay"
+   ]
+  ],
+  "objects": [],
+  "warps": []
+ },
+ {
+  "plan": "08_glacia.json",
+  "section": "095",
+  "kit": "540",
+  "name": "Frostmark Shop",
+  "counters": [
+   [
+    5,
+    9,
+    "shop"
+   ],
+   [
+    5,
+    10,
+    "shop"
+   ]
+  ],
+  "objects": [],
+  "warps": []
+ }
+]

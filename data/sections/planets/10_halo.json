@@ -1,96 +1,6 @@
 {
- "doors": [
-  {
-   "interior": "116",
-   "parent": "115",
-   "door": [
-    8,
-    4
-   ],
-   "door2": [
-    9,
-    4
-   ],
-   "mat": [
-    [
-     7,
-     14
-    ],
-    [
-     8,
-     14
-    ]
-   ],
-   "confidence": "high",
-   "why": "V2: Skyreach Recovery Bay (dome with the cyan cross)"
-  },
-  {
-   "interior": "117",
-   "parent": "115",
-   "door": [
-    14,
-    4
-   ],
-   "door2": [
-    15,
-    4
-   ],
-   "mat": [
-    [
-     7,
-     14
-    ],
-    [
-     8,
-     14
-    ]
-   ],
-   "confidence": "high",
-   "why": "V2: Skyreach shop (striped awning)"
-  }
- ],
+ "doors": [],
  "objects": {
-  "116": [
-   {
-    "tile": [
-     7,
-     4
-    ],
-    "k": "bay"
-   },
-   {
-    "tile": [
-     8,
-     4
-    ],
-    "k": "bay"
-   }
-  ],
-  "117": [
-   {
-    "tile": [
-     7,
-     5
-    ],
-    "k": "shop"
-   },
-   {
-    "tile": [
-     8,
-     5
-    ],
-    "k": "shop"
-   }
-  ],
-  "122": [
-   {
-    "tile": [
-     7,
-     4
-    ],
-    "k": "keeper"
-   }
-  ],
   "115": [
    {
     "tile": [
@@ -126,57 +36,12 @@
      "Today's departures: none. Enjoy the view!"
     ]
    }
-  ],
-  "120": [
-   {
-    "tile": [
-     11,
-     4
-    ],
-    "k": "sign",
-    "t": [
-     "GARDEN SHRINE. Leave the flowers, take the quiet.",
-     "The Sky Temple lies east, past the last bridge."
-    ]
-   }
-  ],
-  "121": [
-   {
-    "tile": [
-     7,
-     8
-    ],
-    "k": "sign",
-    "t": [
-     "THE SKY CRYSTAL. It hums softly.",
-     "For a moment you feel someone reading your thoughts."
-    ]
-   }
   ]
  },
  "apprentices": {
   "121": 2
  },
- "trainer_tiles": [
-  {
-   "section": "121",
-   "n": 0,
-   "tile": [
-    11,
-    16
-   ],
-   "face": "left"
-  },
-  {
-   "section": "121",
-   "n": 1,
-   "tile": [
-    4,
-    6
-   ],
-   "face": "right"
-  }
- ],
+ "trainer_tiles": [],
  "npcs": {
   "114": [
    {
@@ -296,8 +161,8 @@
    {
     "art": "nurse",
     "tile": [
-     8,
-     4
+     9,
+     5
     ],
     "t": [
      "Nurse: Welcome to the Skyreach Recovery Bay. Rest your Alienmon, the thin air tires them out."
@@ -320,8 +185,8 @@
    {
     "art": "shop",
     "tile": [
-     8,
-     5
+     4,
+     9
     ],
     "t": [
      "Clerk: Welcome to Skyreach Supply! Stock up now, there's no shop past the plaza."
@@ -336,78 +201,6 @@
     "tile": [
      6,
      12
-    ],
-    "stay": true
-   }
-  ],
-  "118": [
-   {
-    "art": "explorer",
-    "t": [
-     "Bridge walker: The ropes creak, but they've held for three hundred years. Probably."
-    ],
-    "tile": [
-     13,
-     5
-    ],
-    "stay": true
-   },
-   {
-    "art": "pilgrim",
-    "t": [
-     "Pilgrim: Wild Alienmon hide in the pink blossoms. Step around them if your team is worn out."
-    ],
-    "tile": [
-     4,
-     9
-    ],
-    "stay": true
-   }
-  ],
-  "119": [
-   {
-    "art": "civilian",
-    "t": [
-     "Skywatcher: See those little islands drifting by? Some of them glitter with Signal Shard dust."
-    ],
-    "tile": [
-     13,
-     5
-    ],
-    "stay": true
-   },
-   {
-    "art": "wanderer",
-    "t": [
-     "Mystic: The wind sings louder near the temple. The twins say it is singing your name."
-    ],
-    "tile": [
-     18,
-     9
-    ],
-    "stay": true
-   }
-  ],
-  "120": [
-   {
-    "art": "researcher",
-    "t": [
-     "Botanist: These blossoms only grow above the clouds. Psi-types nest in them when the wind is calm."
-    ],
-    "tile": [
-     13,
-     5
-    ],
-    "stay": true
-   },
-   {
-    "art": "pilgrim",
-    "t": [
-     "Pilgrim: The Sky Temple is just east. Echo and Iris accept every challenger, but few leave smiling."
-    ],
-    "tile": [
-     20,
-     9
     ],
     "stay": true
    }
@@ -434,6 +227,54 @@
     "tile": [
      9,
      5
+    ],
+    "stay": true
+   }
+  ],
+  "582": [
+   {
+    "art": "explorer",
+    "t": [
+     "Bridge walker: The ropes creak, but they've held for three hundred years. Probably."
+    ],
+    "stay": true
+   },
+   {
+    "art": "pilgrim",
+    "t": [
+     "Pilgrim: Wild Alienmon hide in the pink blossoms. Step around them if your team is worn out."
+    ],
+    "stay": true
+   }
+  ],
+  "587": [
+   {
+    "art": "civilian",
+    "t": [
+     "Skywatcher: See those little islands drifting by? Some of them glitter with Signal Shard dust."
+    ],
+    "stay": true
+   },
+   {
+    "art": "wanderer",
+    "t": [
+     "Mystic: The wind sings louder near the temple. The twins say it is singing your name."
+    ],
+    "stay": true
+   }
+  ],
+  "590": [
+   {
+    "art": "researcher",
+    "t": [
+     "Botanist: These blossoms only grow above the clouds. Psi-types nest in them when the wind is calm."
+    ],
+    "stay": true
+   },
+   {
+    "art": "pilgrim",
+    "t": [
+     "Pilgrim: The Sky Temple is just east. Echo and Iris accept every challenger, but few leave smiling."
     ],
     "stay": true
    }

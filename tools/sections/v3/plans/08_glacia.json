@@ -1,0 +1,1783 @@
+{
+ "_report": "Glacia, rebuilt on the V3 world kit (Map Logic Pack). Arrive at the Glacia Spaceport (east) and walk west through Frostmark Lane Homes into Frostmark (kept V2 town core with its glass-dome houses and Ice Lodge; bottom edge opened at x=10-13 row 15 where the path already runs off the map; Recovery Bay and shop swapped to the kit rooms under their old ids 094/095; M12/S80 givers stay). Frost Crossroads south of town is the hub: east to the Quiet Court (Research Lab, Fossil Vault, houses) and down to Crevasse Hollows (dead end, chest); south via Aurora Overlook (S80 lookouts) and Floe Shore (frozen lake, water edge) to the Farmstead, the Glacier Rink Arena (exterior -> lobby -> battle room) and, west of the arena, the Helix front (Frozen Research Annex -> Helix Secret Lab); west along the kept Aurora Route Part A (096, Kit's Iceburr scene) to Floe Fork (frozen lake). Floe Fork: west to the Aurora Relay Tower (Trial Floor 103 -> Keeper Room 104 with Ingrid); north to Ice Junction -> Crystal Caverns (entrance + B1/B2/Depths reusing old ids 098-100 so S81/M12 spots and trainers stay; chest in the Depths) and the Hidden Ice Grove (chest); south down Frostfall Slope to Frozen Falls (S82, frozen_falls table) and the Fossil Dig Flats (dead end; M12 fossil sites and the four fossil signs moved here from the old Fossil Dig).",
+ "planet": "glacia",
+ "arrival": "541",
+ "arrival_why": "the Glacia spaceport landing pad",
+ "use": {
+  "541": {
+   "kit": "541",
+   "name": "Glacia Spaceport",
+   "type": "landmark"
+  },
+  "537": {
+   "kit": "537",
+   "name": "Frostmark Lane Homes",
+   "type": "town"
+  },
+  "538": {
+   "kit": "538",
+   "name": "Frostmark Quiet Court",
+   "type": "town"
+  },
+  "539": {
+   "kit": "539",
+   "name": "Frostmark Farmstead",
+   "type": "town"
+  },
+  "518": {
+   "kit": "518",
+   "name": "Frost Crossroads",
+   "type": "route"
+  },
+  "519": {
+   "kit": "519",
+   "name": "Ice Junction",
+   "type": "route"
+  },
+  "520": {
+   "kit": "520",
+   "name": "Floe Fork",
+   "type": "route"
+  },
+  "521": {
+   "kit": "521",
+   "name": "Frostfall Slope",
+   "type": "route"
+  },
+  "522": {
+   "kit": "522",
+   "name": "Aurora Overlook",
+   "type": "route"
+  },
+  "523": {
+   "kit": "523",
+   "name": "Floe Shore",
+   "type": "route"
+  },
+  "524": {
+   "kit": "524",
+   "name": "Crevasse Hollows",
+   "type": "route"
+  },
+  "525": {
+   "kit": "525",
+   "name": "Frozen Falls",
+   "type": "route"
+  },
+  "526": {
+   "kit": "526",
+   "name": "Fossil Dig Flats",
+   "type": "field"
+  },
+  "529": {
+   "kit": "529",
+   "name": "Hidden Ice Grove",
+   "type": "field"
+  },
+  "511": {
+   "kit": "511",
+   "name": "Glacier Rink Arena",
+   "type": "landmark"
+  },
+  "512": {
+   "kit": "512",
+   "name": "Glacier Rink Arena Lobby",
+   "type": "interior"
+  },
+  "513": {
+   "kit": "513",
+   "name": "Glacier Rink Arena Battle Room",
+   "type": "interior"
+  },
+  "514": {
+   "kit": "514",
+   "name": "Crystal Caverns Entrance",
+   "type": "route"
+  },
+  "098": {
+   "kit": "515",
+   "name": "Crystal Caverns B1",
+   "type": "cave"
+  },
+  "099": {
+   "kit": "516",
+   "name": "Crystal Caverns B2",
+   "type": "cave"
+  },
+  "100": {
+   "kit": "517",
+   "name": "Crystal Caverns Depths",
+   "type": "cave"
+  },
+  "527": {
+   "kit": "527",
+   "name": "Frozen Research Annex",
+   "type": "landmark"
+  },
+  "528": {
+   "kit": "528",
+   "name": "Glacia Helix Lab",
+   "type": "interior"
+  },
+  "534": {
+   "kit": "534",
+   "name": "Aurora Relay Tower",
+   "type": "landmark"
+  },
+  "103": {
+   "kit": "535",
+   "name": "Aurora Tower Trial Floor",
+   "type": "tower"
+  },
+  "104": {
+   "kit": "536",
+   "name": "Aurora Tower Keeper Room",
+   "type": "tower"
+  },
+  "094": {
+   "kit": "533",
+   "name": "Frostmark Recovery Bay",
+   "type": "interior"
+  },
+  "095": {
+   "kit": "540",
+   "name": "Frostmark Shop",
+   "type": "interior"
+  },
+  "530": {
+   "kit": "530",
+   "name": "Research Lab",
+   "type": "interior"
+  },
+  "531": {
+   "kit": "531",
+   "name": "Hot Cocoa Lodge",
+   "type": "interior"
+  },
+  "532": {
+   "kit": "532",
+   "name": "Fossil Vault",
+   "type": "interior"
+  }
+ },
+ "keep": [
+  "093",
+  "096",
+  "178",
+  "193"
+ ],
+ "drop": [
+  "097",
+  "101",
+  "102"
+ ],
+ "edges": [
+  [
+   "093",
+   "right",
+   "537",
+   "left",
+   [
+    6,
+    9
+   ],
+   [
+    9,
+    11
+   ]
+  ],
+  [
+   "537",
+   "right",
+   "541",
+   "left",
+   [
+    9,
+    12
+   ],
+   [
+    12,
+    13
+   ]
+  ],
+  [
+   "093",
+   "bottom",
+   "518",
+   "top",
+   [
+    10,
+    13
+   ],
+   [
+    10,
+    14
+   ]
+  ],
+  [
+   "518",
+   "right",
+   "538",
+   "left",
+   [
+    5,
+    8
+   ],
+   [
+    5,
+    7
+   ]
+  ],
+  [
+   "538",
+   "bottom",
+   "524",
+   "top",
+   [
+    10,
+    13
+   ],
+   [
+    4,
+    7
+   ]
+  ],
+  [
+   "518",
+   "bottom",
+   "522",
+   "top",
+   [
+    10,
+    14
+   ],
+   [
+    9,
+    14
+   ]
+  ],
+  [
+   "522",
+   "bottom",
+   "523",
+   "top",
+   [
+    9,
+    14
+   ],
+   [
+    4,
+    9
+   ]
+  ],
+  [
+   "523",
+   "bottom",
+   "539",
+   "top",
+   [
+    4,
+    9
+   ],
+   [
+    14,
+    18
+   ]
+  ],
+  [
+   "539",
+   "left",
+   "511",
+   "right",
+   [
+    7,
+    10
+   ],
+   [
+    9,
+    12
+   ]
+  ],
+  [
+   "511",
+   "left",
+   "527",
+   "right",
+   [
+    9,
+    12
+   ],
+   [
+    8,
+    12
+   ]
+  ],
+  [
+   "518",
+   "left",
+   "096",
+   "right",
+   [
+    6,
+    8
+   ],
+   [
+    5,
+    9
+   ]
+  ],
+  [
+   "096",
+   "left",
+   "520",
+   "right",
+   [
+    5,
+    9
+   ],
+   [
+    7,
+    9
+   ]
+  ],
+  [
+   "520",
+   "left",
+   "534",
+   "right",
+   [
+    7,
+    9
+   ],
+   [
+    9,
+    13
+   ]
+  ],
+  [
+   "520",
+   "top",
+   "519",
+   "bottom",
+   [
+    5,
+    10
+   ],
+   [
+    15,
+    18
+   ]
+  ],
+  [
+   "519",
+   "top",
+   "514",
+   "bottom",
+   [
+    4,
+    8
+   ],
+   [
+    9,
+    15
+   ]
+  ],
+  [
+   "519",
+   "right",
+   "529",
+   "left",
+   [
+    8,
+    10
+   ],
+   [
+    9,
+    12
+   ]
+  ],
+  [
+   "520",
+   "bottom",
+   "521",
+   "top",
+   [
+    5,
+    10
+   ],
+   [
+    3,
+    8
+   ]
+  ],
+  [
+   "521",
+   "bottom",
+   "525",
+   "top",
+   [
+    13,
+    18
+   ],
+   [
+    16,
+    21
+   ]
+  ],
+  [
+   "525",
+   "bottom",
+   "526",
+   "top",
+   [
+    6,
+    11
+   ],
+   [
+    9,
+    14
+   ]
+  ]
+ ],
+ "doors": [
+  [
+   "093",
+   [
+    8,
+    3
+   ],
+   "094",
+   [
+    9,
+    3
+   ]
+  ],
+  [
+   "093",
+   [
+    13,
+    3
+   ],
+   "095",
+   [
+    14,
+    3
+   ]
+  ],
+  [
+   "534",
+   [
+    11,
+    7
+   ],
+   "103",
+   [
+    12,
+    7
+   ]
+  ],
+  [
+   "511",
+   [
+    11,
+    6
+   ],
+   "512",
+   [
+    12,
+    6
+   ]
+  ],
+  [
+   "527",
+   [
+    11,
+    6
+   ],
+   "528",
+   [
+    12,
+    6
+   ]
+  ]
+ ],
+ "houses": [
+  [
+   "537",
+   [
+    4,
+    6
+   ],
+   "178"
+  ],
+  [
+   "537",
+   [
+    5,
+    6
+   ],
+   "178"
+  ],
+  [
+   "537",
+   [
+    11,
+    6
+   ],
+   "531"
+  ],
+  [
+   "537",
+   [
+    12,
+    6
+   ],
+   "531"
+  ],
+  [
+   "537",
+   [
+    19,
+    6
+   ],
+   "178"
+  ],
+  [
+   "537",
+   [
+    20,
+    6
+   ],
+   "178"
+  ],
+  [
+   "538",
+   [
+    4,
+    4
+   ],
+   "530"
+  ],
+  [
+   "538",
+   [
+    5,
+    4
+   ],
+   "530"
+  ],
+  [
+   "538",
+   [
+    11,
+    4
+   ],
+   "532"
+  ],
+  [
+   "538",
+   [
+    12,
+    4
+   ],
+   "532"
+  ],
+  [
+   "538",
+   [
+    16,
+    4
+   ],
+   "178"
+  ],
+  [
+   "538",
+   [
+    17,
+    4
+   ],
+   "178"
+  ],
+  [
+   "538",
+   [
+    2,
+    13
+   ],
+   "193"
+  ],
+  [
+   "538",
+   [
+    3,
+    13
+   ],
+   "193"
+  ],
+  [
+   "539",
+   [
+    4,
+    4
+   ],
+   "178"
+  ],
+  [
+   "539",
+   [
+    5,
+    4
+   ],
+   "178"
+  ],
+  [
+   "539",
+   [
+    11,
+    5
+   ],
+   "178"
+  ]
+ ],
+ "warps": [
+  [
+   "514",
+   [
+    11,
+    3
+   ],
+   "098",
+   [
+    5,
+    2
+   ],
+   [
+    11,
+    4
+   ],
+   "down",
+   [
+    5,
+    3
+   ],
+   "down"
+  ],
+  [
+   "098",
+   [
+    17,
+    2
+   ],
+   "099",
+   [
+    4,
+    2
+   ],
+   [
+    17,
+    3
+   ],
+   "down",
+   [
+    4,
+    3
+   ],
+   "down"
+  ],
+  [
+   "099",
+   [
+    11,
+    13
+   ],
+   "100",
+   [
+    11,
+    14
+   ],
+   [
+    11,
+    12
+   ],
+   "up",
+   [
+    11,
+    13
+   ],
+   "up"
+  ],
+  [
+   "103",
+   [
+    15,
+    4
+   ],
+   "104",
+   [
+    11,
+    14
+   ],
+   [
+    15,
+    6
+   ],
+   "down",
+   [
+    11,
+    12
+   ],
+   "up"
+  ],
+  [
+   "512",
+   [
+    9,
+    4
+   ],
+   "513",
+   [
+    11,
+    15
+   ],
+   [
+    9,
+    5
+   ],
+   "down",
+   [
+    11,
+    14
+   ],
+   "up"
+  ]
+ ],
+ "fix": {
+  "541": {
+   "walk": [
+    [
+     12,
+     8,
+     13,
+     8
+    ]
+   ]
+  },
+  "093": {
+   "walk": [
+    [
+     10,
+     15,
+     13,
+     15
+    ]
+   ]
+  },
+  "534": {
+   "walk": [
+    [
+     11,
+     7,
+     12,
+     7
+    ]
+   ]
+  },
+  "511": {
+   "walk": [
+    [
+     11,
+     6,
+     12,
+     6
+    ]
+   ]
+  },
+  "527": {
+   "walk": [
+    [
+     11,
+     6,
+     12,
+     6
+    ]
+   ]
+  },
+  "518": {
+   "block": [
+    [
+     7,
+     0,
+     9,
+     0
+    ],
+    [
+     15,
+     0,
+     16,
+     0
+    ],
+    [
+     15,
+     15,
+     17,
+     15
+    ]
+   ]
+  },
+  "520": {
+   "block": [
+    [
+     4,
+     0,
+     4,
+     0
+    ]
+   ]
+  },
+  "524": {
+   "block": [
+    [
+     16,
+     15,
+     21,
+     15
+    ]
+   ]
+  },
+  "514": {
+   "walk": [
+    [
+     10,
+     3,
+     12,
+     4
+    ]
+   ],
+   "gr": [
+    [
+     4,
+     7,
+     9,
+     10
+    ],
+    [
+     15,
+     9,
+     19,
+     12
+    ]
+   ]
+  },
+  "529": {
+   "walk": [
+    [
+     14,
+     4,
+     17,
+     4
+    ],
+    [
+     13,
+     1,
+     13,
+     3
+    ],
+    [
+     20,
+     2,
+     20,
+     3
+    ]
+   ],
+   "gr": [
+    [
+     14,
+     1,
+     19,
+     3
+    ]
+   ]
+  },
+  "098": {
+   "base": "#",
+   "walk": [
+    [
+     3,
+     3,
+     8,
+     13
+    ],
+    [
+     15,
+     3,
+     20,
+     13
+    ],
+    [
+     3,
+     9,
+     20,
+     13
+    ],
+    [
+     5,
+     2,
+     6,
+     2
+    ],
+    [
+     17,
+     2,
+     18,
+     2
+    ]
+   ],
+   "gr": [
+    [
+     10,
+     10,
+     13,
+     12
+    ]
+   ]
+  },
+  "099": {
+   "base": "#",
+   "walk": [
+    [
+     2,
+     3,
+     21,
+     8
+    ],
+    [
+     9,
+     9,
+     13,
+     12
+    ],
+    [
+     10,
+     13,
+     13,
+     13
+    ],
+    [
+     4,
+     2,
+     5,
+     2
+    ]
+   ],
+   "gr": [
+    [
+     4,
+     5,
+     8,
+     7
+    ]
+   ],
+   "block": [
+    [
+     15,
+     4,
+     19,
+     7
+    ]
+   ]
+  },
+  "100": {
+   "base": "#",
+   "walk": [
+    [
+     4,
+     2,
+     19,
+     12
+    ],
+    [
+     10,
+     13,
+     13,
+     14
+    ]
+   ],
+   "gr": [
+    [
+     5,
+     8,
+     8,
+     11
+    ],
+    [
+     15,
+     8,
+     18,
+     11
+    ]
+   ],
+   "block": [
+    [
+     9,
+     3,
+     14,
+     6
+    ]
+   ]
+  },
+  "103": {
+   "base": "#",
+   "walk": [
+    [
+     2,
+     3,
+     17,
+     16
+    ],
+    [
+     9,
+     17,
+     10,
+     17
+    ]
+   ],
+   "block": [
+    [
+     2,
+     7,
+     11,
+     8
+    ],
+    [
+     7,
+     10,
+     17,
+     11
+    ],
+    [
+     5,
+     13,
+     6,
+     15
+    ],
+    [
+     16,
+     4,
+     16,
+     5
+    ]
+   ]
+  },
+  "104": {
+   "base": "#",
+   "walk": [
+    [
+     3,
+     3,
+     20,
+     12
+    ],
+    [
+     10,
+     2,
+     13,
+     2
+    ],
+    [
+     10,
+     13,
+     13,
+     14
+    ]
+   ]
+  },
+  "513": {
+   "base": "#",
+   "walk": [
+    [
+     3,
+     3,
+     20,
+     12
+    ],
+    [
+     11,
+     13,
+     12,
+     15
+    ]
+   ]
+  },
+  "528": {
+   "base": "#",
+   "walk": [
+    [
+     4,
+     5,
+     15,
+     16
+    ],
+    [
+     9,
+     17,
+     10,
+     18
+    ]
+   ],
+   "block": [
+    [
+     7,
+     8,
+     12,
+     11
+    ]
+   ]
+  },
+  "530": {
+   "base": "#",
+   "walk": [
+    [
+     3,
+     6,
+     16,
+     15
+    ],
+    [
+     9,
+     16,
+     10,
+     16
+    ]
+   ],
+   "block": [
+    [
+     3,
+     6,
+     3,
+     8
+    ],
+    [
+     3,
+     8,
+     4,
+     11
+    ],
+    [
+     3,
+     11,
+     3,
+     15
+    ],
+    [
+     3,
+     13,
+     6,
+     15
+    ],
+    [
+     16,
+     6,
+     16,
+     15
+    ],
+    [
+     14,
+     8,
+     16,
+     10
+    ],
+    [
+     12,
+     12,
+     16,
+     14
+    ]
+   ]
+  },
+  "531": {
+   "base": "#",
+   "walk": [
+    [
+     2,
+     6,
+     17,
+     15
+    ],
+    [
+     9,
+     16,
+     10,
+     17
+    ]
+   ],
+   "block": [
+    [
+     2,
+     7,
+     3,
+     13
+    ],
+    [
+     4,
+     9,
+     4,
+     11
+    ],
+    [
+     12,
+     6,
+     17,
+     10
+    ]
+   ]
+  },
+  "532": {
+   "base": "#",
+   "walk": [
+    [
+     2,
+     6,
+     17,
+     15
+    ],
+    [
+     9,
+     16,
+     10,
+     17
+    ]
+   ],
+   "block": [
+    [
+     2,
+     5,
+     3,
+     15
+    ],
+    [
+     16,
+     5,
+     17,
+     15
+    ],
+    [
+     5,
+     8,
+     7,
+     11
+    ],
+    [
+     12,
+     8,
+     14,
+     11
+    ]
+   ]
+  },
+  "094": {
+   "base": "#",
+   "walk": [
+    [
+     4,
+     5,
+     15,
+     16
+    ],
+    [
+     9,
+     17,
+     10,
+     18
+    ]
+   ],
+   "block": [
+    [
+     6,
+     5,
+     14,
+     6
+    ]
+   ]
+  },
+  "095": {
+   "base": "#",
+   "walk": [
+    [
+     3,
+     5,
+     16,
+     15
+    ],
+    [
+     9,
+     16,
+     10,
+     18
+    ]
+   ],
+   "block": [
+    [
+     3,
+     5,
+     3,
+     5
+    ],
+    [
+     16,
+     5,
+     16,
+     5
+    ],
+    [
+     3,
+     6,
+     4,
+     13
+    ],
+    [
+     5,
+     9,
+     5,
+     10
+    ],
+    [
+     15,
+     6,
+     16,
+     13
+    ],
+    [
+     3,
+     14,
+     3,
+     15
+    ],
+    [
+     16,
+     14,
+     16,
+     15
+    ],
+    [
+     4,
+     9,
+     4,
+     9
+    ],
+    [
+     4,
+     10,
+     4,
+     10
+    ]
+   ],
+   "walk_after": [
+    [
+     5,
+     9,
+     5,
+     9
+    ],
+    [
+     5,
+     10,
+     5,
+     10
+    ]
+   ]
+  },
+  "512": {
+   "base": "#",
+   "walk": [
+    [
+     3,
+     5,
+     16,
+     16
+    ],
+    [
+     9,
+     3,
+     10,
+     4
+    ],
+    [
+     9,
+     17,
+     10,
+     18
+    ]
+   ],
+   "block": [
+    [
+     3,
+     7,
+     3,
+     7
+    ],
+    [
+     3,
+     12,
+     3,
+     12
+    ],
+    [
+     16,
+     7,
+     16,
+     7
+    ],
+    [
+     16,
+     12,
+     16,
+     12
+    ]
+   ]
+  }
+ },
+ "counters": {
+  "094": [
+   [
+    9,
+    6,
+    "bay"
+   ],
+   [
+    10,
+    6,
+    "bay"
+   ]
+  ],
+  "095": [
+   [
+    4,
+    9,
+    "shop"
+   ],
+   [
+    4,
+    10,
+    "shop"
+   ]
+  ]
+ },
+ "objects": {
+  "104": [
+   {
+    "tile": [
+     12,
+     2
+    ],
+    "k": "keeper",
+    "why": "Keeper Ingrid Vale on the upper dais, challenged from (12,3)"
+   }
+  ],
+  "529": [
+   {
+    "tile": [
+     20,
+     1
+    ],
+    "k": "chest",
+    "item": "fullgel",
+    "n": 2,
+    "why": "hidden ice grove reward"
+   }
+  ],
+  "524": [
+   {
+    "tile": [
+     18,
+     15
+    ],
+    "k": "chest",
+    "item": "harmonic",
+    "n": 3,
+    "why": "Crevasse Hollows dead-end reward"
+   }
+  ],
+  "100": [
+   {
+    "tile": [
+     11,
+     6
+    ],
+    "k": "chest",
+    "item": "maxrevive",
+    "n": 1,
+    "why": "Crystal Caverns depths shrine reward"
+   }
+  ]
+ },
+ "planet_objects": {
+  "526": [
+   {
+    "tile": [
+     2,
+     4
+    ],
+    "k": "sign",
+    "t": [
+     "Frozen fossil site #1. A jawbone longer than a shuttle, gouged by teeth from something even bigger.",
+     "The bite marks are ringed with frost that never thaws."
+    ]
+   },
+   {
+    "tile": [
+     8,
+     1
+    ],
+    "k": "sign",
+    "t": [
+     "Frozen fossil site #2. Ribs snapped clean through. The tooth marks are as wide as a road.",
+     "Field tag: 'Predator unknown. Size: impossible.'"
+    ]
+   },
+   {
+    "tile": [
+     21,
+     4
+    ],
+    "k": "sign",
+    "t": [
+     "Frozen fossil site #3. A thighbone with one huge crescent bite taken out of it.",
+     "Three sites, one bite pattern. Whatever ate these was the size of a moon."
+    ]
+   },
+   {
+    "tile": [
+     19,
+     12
+    ],
+    "k": "sign",
+    "t": [
+     "The Teeth in the Ice: a giant Ystran creature, frozen mid-roar in the glacier wall.",
+     "Dig crews say it hums when the aurora is bright."
+    ]
+   }
+  ],
+  "525": [
+   {
+    "tile": [
+     14,
+     12
+    ],
+    "k": "sign",
+    "t": [
+     "Frozen Falls. The water froze mid-plunge, all at once, in a single night.",
+     "Locals swear a Glaciryx nests behind the ice curtain."
+    ]
+   }
+  ],
+  "103": [
+   {
+    "tile": [
+     12,
+     7
+    ],
+    "k": "sign",
+    "t": [
+     "Aurora Relay Crystal. It pulses in time with the sky.",
+     "Plaque: 'Keeper Ingrid Vale awaits challengers on the floor above.'"
+    ]
+   }
+  ]
+ },
+ "spawns": {
+  "541": {
+   "arrival": [
+    12,
+    10
+   ],
+   "default": [
+    12,
+    10
+   ]
+  },
+  "098": {
+   "default": [
+    5,
+    3
+   ]
+  },
+  "099": {
+   "default": [
+    4,
+    3
+   ]
+  },
+  "100": {
+   "default": [
+    11,
+    13
+   ]
+  },
+  "103": {
+   "default": [
+    9,
+    15
+   ]
+  },
+  "104": {
+   "default": [
+    11,
+    12
+   ]
+  },
+  "513": {
+   "default": [
+    11,
+    13
+   ]
+  }
+ },
+ "gate": [
+  {
+   "section": "541",
+   "tiles": [
+    [
+     12,
+     8
+    ],
+    [
+     13,
+     8
+    ]
+   ],
+   "node": "dustara",
+   "planet": "dustara",
+   "label": "your ship back to Dustara",
+   "why": "V3: the spaceport is the arrival point and the way home"
+  }
+ ],
+ "quest_spots": {
+  "S80:0": {
+   "s": "522",
+   "n": 3
+  },
+  "M12:0": {
+   "s": "526",
+   "n": 3
+  },
+  "S82:giver": {
+   "s": "525",
+   "near": [
+    14,
+    9
+   ]
+  },
+  "S82:0": {
+   "s": "525"
+  },
+  "S81:giver": {
+   "s": "098",
+   "near": [
+    8,
+    12
+   ]
+  },
+  "S81:0": {
+   "s": "098",
+   "near": [
+    8,
+    12
+   ]
+  }
+ },
+ "npc_unpin": [
+  "094",
+  "095",
+  "098",
+  "099",
+  "100",
+  "103",
+  "104"
+ ],
+ "npc_move": {
+  "097": "522",
+  "101": "526",
+  "102": "525"
+ },
+ "npc_pins": {
+  "094": [
+   [
+    10,
+    6
+   ]
+  ],
+  "095": [
+   [
+    4,
+    9
+   ]
+  ]
+ },
+ "trainers_per_section": {
+  "529": 0,
+  "514": 0,
+  "524": 0
+ },
+ "encounters": {
+  "518": "097",
+  "520": "097",
+  "522": "097",
+  "529": "097",
+  "519": "096",
+  "514": "096",
+  "521": "101",
+  "523": "101",
+  "524": "101",
+  "526": "101",
+  "525": "102",
+  "098": "098",
+  "099": "099",
+  "100": "100"
+ },
+ "_unused": [
+  {
+   "id": "510",
+   "why": "alt variant of the arena exterior (511 used)"
+  }
+ ],
+ "trainer_tiles": [
+  {
+   "section": "103",
+   "n": 0,
+   "tile": [
+    3,
+    4
+   ],
+   "face": "right"
+  },
+  {
+   "section": "103",
+   "n": 1,
+   "tile": [
+    10,
+    13
+   ],
+   "face": "left"
+  }
+ ],
+ "encounter_add": {
+  "525": [
+   {
+    "n": 180,
+    "name": "Glaciryx",
+    "types": [
+     "Cryo",
+     "Crystal"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     27,
+     30
+    ],
+    "method": "walk",
+    "time": "any"
+   }
+  ]
+ }
+}

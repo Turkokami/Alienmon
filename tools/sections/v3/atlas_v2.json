@@ -1,0 +1,4221 @@
+{
+ "version": 1,
+ "tile_px_render": 64,
+ "tile_px_game": 16,
+ "screen_tiles": [
+  10,
+  9
+ ],
+ "sections": [
+  {
+   "id": "001",
+   "planet": "Dustara",
+   "name": "Your House 1F",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "Hero's home ground floor: Mom's kitchen table, stove, TV, stairs up, door at bottom",
+   "file": "art/sections/01_dustara/001_your_house_1f.png",
+   "v2": true
+  },
+  {
+   "id": "002",
+   "planet": "Dustara",
+   "name": "Your House 2F",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "Hero's bedroom: bed, desk with game console, telescope at the window, poster of the Starfall, stairs down",
+   "file": "art/sections/01_dustara/002_your_house_2f.png",
+   "v2": true
+  },
+  {
+   "id": "003",
+   "planet": "Dustara",
+   "name": "Vashti's Observatory Lab",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "Domed lab with a big brass telescope, three capsule pedestals for the starters on a table, computers, bookshelves",
+   "file": "art/sections/01_dustara/003_vashti_s_observatory_lab.png",
+   "v2": true
+  },
+  {
+   "id": "004",
+   "planet": "Dustara",
+   "name": "Dustmere Plaza",
+   "type": "town",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "right edge, tile rows 5–10 → Dustmere Bridge"
+   ],
+   "notes": "Home town: hero's house, Vashti's observatory dome, Recovery Bay, shop, the bridge exit east, trading post south",
+   "file": "art/sections/01_dustara/004_dustmere_plaza.png",
+   "v2": true
+  },
+  {
+   "id": "005",
+   "planet": "Dustara",
+   "name": "Dustmere Recovery Bay",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "",
+   "file": "art/sections/01_dustara/005_dustmere_recovery_bay.png",
+   "v2": true
+  },
+  {
+   "id": "006",
+   "planet": "Dustara",
+   "name": "Dustmere Shop",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "",
+   "file": "art/sections/01_dustara/006_dustmere_shop.png",
+   "v2": true
+  },
+  {
+   "id": "007",
+   "planet": "Dustara",
+   "name": "Dustmere Bridge",
+   "type": "landmark",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 5–8 → Dustmere Plaza",
+    "right edge, tile rows 5–8 → Trading Post"
+   ],
+   "notes": "The humming canyon bridge (story: Zib's signal, M02). Long wooden-and-brass bridge over a deep canyon, glowing rune lamps",
+   "file": "art/sections/01_dustara/007_dustmere_bridge.png",
+   "v2": true
+  },
+  {
+   "id": "008",
+   "planet": "Dustara",
+   "name": "Trading Post",
+   "type": "town",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 5–10 → Dustmere Bridge",
+    "right edge, tile rows 5–10 → Rimwalk Trail Part A"
+   ],
+   "notes": "Small outpost of stalls and a corral where Sola waits (M03 first rival battle)",
+   "file": "art/sections/01_dustara/008_trading_post.png",
+   "v2": true
+  },
+  {
+   "id": "009",
+   "planet": "Dustara",
+   "name": "Rimwalk Trail Part A",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 5–8 → Trading Post",
+    "right edge, tile rows 5–8 → Rimwalk Trail Part B"
+   ],
+   "notes": "Canyon-rim route with drift grass, ledges you hop down, trainers",
+   "file": "art/sections/01_dustara/009_rimwalk_trail_part_a.png",
+   "v2": true
+  },
+  {
+   "id": "010",
+   "planet": "Dustara",
+   "name": "Rimwalk Trail Part B",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 5–8 → Rimwalk Trail Part A",
+    "right edge, tile rows 5–8 → Cactus Gardens"
+   ],
+   "notes": "Canyon-rim route with drift grass, ledges you hop down, trainers",
+   "file": "art/sections/01_dustara/010_rimwalk_trail_part_b.png",
+   "v2": true
+  },
+  {
+   "id": "011",
+   "planet": "Dustara",
+   "name": "Cactus Gardens",
+   "type": "field",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 5–8 → Rimwalk Trail Part B",
+    "right edge, tile rows 5–8 → Sunset Tunnel B1"
+   ],
+   "notes": "Maze of tall cacti and flowering succulents, drift grass, hidden items",
+   "file": "art/sections/01_dustara/011_cactus_gardens.png",
+   "v2": true
+  },
+  {
+   "id": "012",
+   "planet": "Dustara",
+   "name": "Sunset Tunnel B1",
+   "type": "cave",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "bottom edge, tile columns 6–9 → Cactus Gardens",
+    "top edge, tile columns 6–9 → Sunset Tunnel B2"
+   ],
+   "notes": "Sandstone tunnel to the Molten Frontier; lantern-lit, boulders",
+   "file": "art/sections/01_dustara/012_sunset_tunnel_b1.png",
+   "v2": true
+  },
+  {
+   "id": "013",
+   "planet": "Dustara",
+   "name": "Sunset Tunnel B2",
+   "type": "cave",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "bottom edge, tile columns 6–9 → Sunset Tunnel B1",
+    "top edge, tile columns 6–9 → Molten Frontier: Tunnel Mouth"
+   ],
+   "notes": "Sandstone tunnel to the Molten Frontier; lantern-lit, boulders",
+   "file": "art/sections/01_dustara/013_sunset_tunnel_b2.png",
+   "v2": true
+  },
+  {
+   "id": "014",
+   "planet": "Dustara",
+   "name": "Molten Frontier: Tunnel Mouth",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 5–9 → Sunset Tunnel B2",
+    "right edge, tile rows 5–9 → Molten Frontier: Ash Trail Part A"
+   ],
+   "notes": "Exit of Sunset Tunnel onto volcanic far side",
+   "file": "art/sections/01_dustara/014_molten_frontier_tunnel_mouth.png",
+   "v2": true
+  },
+  {
+   "id": "015",
+   "planet": "Dustara",
+   "name": "Molten Frontier: Ash Trail Part A",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 5–9 → Molten Frontier: Tunnel Mouth",
+    "right edge, tile rows 5–9 → Molten Frontier: Ash Trail Part B"
+   ],
+   "notes": "Ash fields, cooling lava channels",
+   "file": "art/sections/01_dustara/015_molten_frontier_ash_trail_part_a.png",
+   "v2": true
+  },
+  {
+   "id": "016",
+   "planet": "Dustara",
+   "name": "Molten Frontier: Ash Trail Part B",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 5–8 → Molten Frontier: Ash Trail Part A",
+    "right edge, tile rows 5–8 → Molten Frontier: Palm Isle"
+   ],
+   "notes": "Ash fields, cooling lava channels",
+   "file": "art/sections/01_dustara/016_molten_frontier_ash_trail_part_b.png",
+   "v2": true
+  },
+  {
+   "id": "017",
+   "planet": "Dustara",
+   "name": "Molten Frontier: Palm Isle",
+   "type": "field",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 5–8 → Molten Frontier: Ash Trail Part B",
+    "right edge, tile rows 5–8 → Molten Frontier: Port Ember"
+   ],
+   "notes": "Tropical island with Recovery Hut, palm trees, turquoise water",
+   "file": "art/sections/01_dustara/017_molten_frontier_palm_isle.png",
+   "v2": true
+  },
+  {
+   "id": "018",
+   "planet": "Dustara",
+   "name": "Molten Frontier: Port Ember",
+   "type": "town",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 5–10 → Molten Frontier: Palm Isle",
+    "right edge, tile rows 5–10 → Molten Frontier: Long Dock"
+   ],
+   "notes": "Harbor village with the harbor Relay Gate (needs 2 Shards)",
+   "file": "art/sections/01_dustara/018_molten_frontier_port_ember.png",
+   "v2": true
+  },
+  {
+   "id": "019",
+   "planet": "Dustara",
+   "name": "Molten Frontier: Long Dock",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 5–8 → Molten Frontier: Port Ember",
+    "right edge, tile rows 5–8 → Molten Frontier: Ridge Path Part A"
+   ],
+   "notes": "Long wooden dock where the Deep Sea Ferry berths (M08 Sola's Choice scene)",
+   "file": "art/sections/01_dustara/019_molten_frontier_long_dock.png",
+   "v2": true
+  },
+  {
+   "id": "020",
+   "planet": "Dustara",
+   "name": "Molten Frontier: Ridge Path Part A",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 5–8 → Molten Frontier: Long Dock",
+    "right edge, tile rows 5–9 → Molten Frontier: Ridge Path Part B"
+   ],
+   "notes": "Climbing ridge with ledges",
+   "file": "art/sections/01_dustara/020_molten_frontier_ridge_path_part_a.png",
+   "v2": true
+  },
+  {
+   "id": "021",
+   "planet": "Dustara",
+   "name": "Molten Frontier: Ridge Path Part B",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 5–8 → Molten Frontier: Ridge Path Part A",
+    "right edge, tile rows 5–8 → Molten Frontier: Forge Gate"
+   ],
+   "notes": "Climbing ridge with ledges",
+   "file": "art/sections/01_dustara/021_molten_frontier_ridge_path_part_b.png",
+   "v2": true
+  },
+  {
+   "id": "022",
+   "planet": "Dustara",
+   "name": "Molten Frontier: Forge Gate",
+   "type": "landmark",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 5–8 → Molten Frontier: Ridge Path Part B",
+    "right edge, tile rows 5–9 → Molten Frontier: Fortress Gate"
+   ],
+   "notes": "Ystran Relay Gate to Ferrox, guarded by Forge Miner Dax",
+   "file": "art/sections/01_dustara/022_molten_frontier_forge_gate.png",
+   "v2": true
+  },
+  {
+   "id": "023",
+   "planet": "Dustara",
+   "name": "Molten Frontier: Fortress Gate",
+   "type": "landmark",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 5–8 → Molten Frontier: Forge Gate",
+    "right edge, tile rows 5–8 → Molten Frontier: Lava Bridges Part A"
+   ],
+   "notes": "Helix Forge Fortress entrance, Helix grunt guard",
+   "file": "art/sections/01_dustara/023_molten_frontier_fortress_gate.png",
+   "v2": true
+  },
+  {
+   "id": "024",
+   "planet": "Dustara",
+   "name": "Molten Frontier: Lava Bridges Part A",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 5–8 → Molten Frontier: Fortress Gate",
+    "right edge, tile rows 5–8 → Molten Frontier: Lava Bridges Part B"
+   ],
+   "notes": "Iron bridges over lava rivers",
+   "file": "art/sections/01_dustara/024_molten_frontier_lava_bridges_part_a.png",
+   "v2": true
+  },
+  {
+   "id": "025",
+   "planet": "Dustara",
+   "name": "Molten Frontier: Lava Bridges Part B",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 5–8 → Molten Frontier: Lava Bridges Part A",
+    "right edge, tile rows 5–8 → Molten Frontier: Shuttle Pad"
+   ],
+   "notes": "Iron bridges over lava rivers",
+   "file": "art/sections/01_dustara/025_molten_frontier_lava_bridges_part_b.png",
+   "v2": true
+  },
+  {
+   "id": "026",
+   "planet": "Dustara",
+   "name": "Molten Frontier: Shuttle Pad",
+   "type": "landmark",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 5–8 → Molten Frontier: Lava Bridges Part B",
+    "right edge, tile rows 5–8 → Molten Frontier: Shadow Tunnel Mouth"
+   ],
+   "notes": "Fortress Shuttle Pad to Helix Station",
+   "file": "art/sections/01_dustara/026_molten_frontier_shuttle_pad.png",
+   "v2": true
+  },
+  {
+   "id": "027",
+   "planet": "Dustara",
+   "name": "Molten Frontier: Shadow Tunnel Mouth",
+   "type": "landmark",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 5–8 → Molten Frontier: Shuttle Pad",
+    "right edge, tile rows 5–8 → Molten Frontier: Magma Mines Gate"
+   ],
+   "notes": "Dark tunnel mouth leading to Umbra",
+   "file": "art/sections/01_dustara/027_molten_frontier_shadow_tunnel_mouth.png",
+   "v2": true
+  },
+  {
+   "id": "028",
+   "planet": "Dustara",
+   "name": "Molten Frontier: Magma Mines Gate",
+   "type": "landmark",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 6–8 → Molten Frontier: Shadow Tunnel Mouth"
+   ],
+   "notes": "Sealed glowing-red Ystran door to Pyros",
+   "file": "art/sections/01_dustara/028_molten_frontier_magma_mines_gate.png",
+   "v2": true
+  },
+  {
+   "id": "029",
+   "planet": "Ferrox",
+   "name": "Gate Plaza",
+   "type": "landmark",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "right edge, tile rows 6–8 → Rustvale"
+   ],
+   "notes": "Arrival plaza around the Relay Gate",
+   "file": "art/sections/02_ferrox/029_gate_plaza.png",
+   "v2": true
+  },
+  {
+   "id": "030",
+   "planet": "Ferrox",
+   "name": "Rustvale",
+   "type": "town",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 5–9 → Gate Plaza",
+    "right edge, tile rows 5–9 → Scrap Route Part A"
+   ],
+   "notes": "Shanty town of shacks and converted rail cars",
+   "file": "art/sections/02_ferrox/030_rustvale.png",
+   "v2": true
+  },
+  {
+   "id": "031",
+   "planet": "Ferrox",
+   "name": "Rustvale Recovery Bay",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "",
+   "file": "art/sections/02_ferrox/031_rustvale_recovery_bay.png",
+   "v2": true
+  },
+  {
+   "id": "032",
+   "planet": "Ferrox",
+   "name": "Rustvale Shop",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "",
+   "file": "art/sections/02_ferrox/032_rustvale_shop.png",
+   "v2": true
+  },
+  {
+   "id": "033",
+   "planet": "Ferrox",
+   "name": "Grub's Workshop",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "Grub's cluttered scrap workshop",
+   "file": "art/sections/02_ferrox/033_grub_s_workshop.png",
+   "v2": true
+  },
+  {
+   "id": "034",
+   "planet": "Ferrox",
+   "name": "Scrap Route Part A",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 5–8 → Rustvale",
+    "right edge, tile rows 5–8 → Scrap Route Part B"
+   ],
+   "notes": "Route through scrap mountains",
+   "file": "art/sections/02_ferrox/034_scrap_route_part_a.png",
+   "v2": true
+  },
+  {
+   "id": "035",
+   "planet": "Ferrox",
+   "name": "Scrap Route Part B",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 5–8 → Scrap Route Part A",
+    "right edge, tile rows 5–8 → Crane Yard"
+   ],
+   "notes": "Route through scrap mountains",
+   "file": "art/sections/02_ferrox/035_scrap_route_part_b.png",
+   "v2": true
+  },
+  {
+   "id": "036",
+   "planet": "Ferrox",
+   "name": "Crane Yard",
+   "type": "field",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 5–8 → Scrap Route Part B",
+    "right edge, tile rows 5–8 → Junk Market"
+   ],
+   "notes": "Swinging cranes, container stacks (Crane Yard Brawl)",
+   "file": "art/sections/02_ferrox/036_crane_yard.png",
+   "v2": true
+  },
+  {
+   "id": "037",
+   "planet": "Ferrox",
+   "name": "Junk Market",
+   "type": "town",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 5–10 → Crane Yard",
+    "right edge, tile rows 5–10 → Furnace Ridge"
+   ],
+   "notes": "Open-air junk market stalls",
+   "file": "art/sections/02_ferrox/037_junk_market.png",
+   "v2": true
+  },
+  {
+   "id": "038",
+   "planet": "Ferrox",
+   "name": "Furnace Ridge",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 5–8 → Junk Market",
+    "right edge, tile rows 6–7 → Ferrox Tower 1F"
+   ],
+   "notes": "Ridge of smoking furnaces",
+   "file": "art/sections/02_ferrox/038_furnace_ridge.png",
+   "v2": true
+  },
+  {
+   "id": "039",
+   "planet": "Ferrox",
+   "name": "Ferrox Tower 1F",
+   "type": "tower",
+   "size_px": [
+    1024,
+    1536
+   ],
+   "tiles": [
+    16,
+    24
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "bottom edge, tile columns 6–9 → Furnace Ridge",
+    "top edge, tile columns 6–9 (stairs up) → Ferrox Tower 2F"
+   ],
+   "notes": "Keeper Hank Briggs's tower, 2 floors",
+   "file": "art/sections/02_ferrox/039_ferrox_tower_1f.png",
+   "v2": true
+  },
+  {
+   "id": "040",
+   "planet": "Ferrox",
+   "name": "Ferrox Tower 2F",
+   "type": "tower",
+   "size_px": [
+    1024,
+    1536
+   ],
+   "tiles": [
+    16,
+    24
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "bottom edge, tile columns 6–9 → Ferrox Tower 1F"
+   ],
+   "notes": "Keeper Hank Briggs's tower, 2 floors",
+   "file": "art/sections/02_ferrox/040_ferrox_tower_2f.png",
+   "v2": true
+  },
+  {
+   "id": "041",
+   "planet": "Sporeholm",
+   "name": "Landing Bog",
+   "type": "landmark",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "right edge, tile rows 5–8 → Mirefen Village"
+   ],
+   "notes": "Landing pad on a boardwalk in the bog",
+   "file": "art/sections/03_sporeholm/041_landing_bog.png",
+   "v2": true
+  },
+  {
+   "id": "042",
+   "planet": "Sporeholm",
+   "name": "Mirefen Village",
+   "type": "town",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 5–10 → Landing Bog",
+    "right edge, tile rows 5–10 → Lantern Marsh Part A"
+   ],
+   "notes": "Stilt village of huts on mushroom stalks with rope bridges",
+   "file": "art/sections/03_sporeholm/042_mirefen_village.png",
+   "v2": true
+  },
+  {
+   "id": "043",
+   "planet": "Sporeholm",
+   "name": "Mirefen Recovery Bay",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "",
+   "file": "art/sections/03_sporeholm/043_mirefen_recovery_bay.png",
+   "v2": true
+  },
+  {
+   "id": "044",
+   "planet": "Sporeholm",
+   "name": "Mirefen Shop",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "",
+   "file": "art/sections/03_sporeholm/044_mirefen_shop.png",
+   "v2": true
+  },
+  {
+   "id": "045",
+   "planet": "Sporeholm",
+   "name": "Lantern Marsh Part A",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 5–9 → Mirefen Village",
+    "right edge, tile rows 5–9 → Lantern Marsh Part B"
+   ],
+   "notes": "Marsh of glowing lanterns and lily pads",
+   "file": "art/sections/03_sporeholm/045_lantern_marsh_part_a.png",
+   "v2": true
+  },
+  {
+   "id": "046",
+   "planet": "Sporeholm",
+   "name": "Lantern Marsh Part B",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 5–9 → Lantern Marsh Part A",
+    "right edge, tile rows 5–9 → Mushroom Maze 1F"
+   ],
+   "notes": "Marsh of glowing lanterns and lily pads",
+   "file": "art/sections/03_sporeholm/046_lantern_marsh_part_b.png",
+   "v2": true
+  },
+  {
+   "id": "047",
+   "planet": "Sporeholm",
+   "name": "Mushroom Maze 1F",
+   "type": "dungeon",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "bottom edge, tile columns 6–9 → Lantern Marsh Part B",
+    "top edge, tile columns 6–9 → Mushroom Maze 2F"
+   ],
+   "notes": "Maze of giant mushrooms (Lost in the Mist)",
+   "file": "art/sections/03_sporeholm/047_mushroom_maze_1f.png",
+   "v2": true
+  },
+  {
+   "id": "048",
+   "planet": "Sporeholm",
+   "name": "Mushroom Maze 2F",
+   "type": "dungeon",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "bottom edge, tile columns 6–9 → Mushroom Maze 1F",
+    "top edge, tile columns 6–9 → Spore Pools"
+   ],
+   "notes": "Maze of giant mushrooms (Lost in the Mist)",
+   "file": "art/sections/03_sporeholm/048_mushroom_maze_2f.png",
+   "v2": true
+  },
+  {
+   "id": "049",
+   "planet": "Sporeholm",
+   "name": "Spore Pools",
+   "type": "field",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 6–8 → Mushroom Maze 2F",
+    "right edge, tile rows 6–8 → Sporeholm Tower 1F"
+   ],
+   "notes": "Glowing spore pools (Spore Choir)",
+   "file": "art/sections/03_sporeholm/049_spore_pools.png",
+   "v2": true
+  },
+  {
+   "id": "050",
+   "planet": "Sporeholm",
+   "name": "Sporeholm Tower 1F",
+   "type": "tower",
+   "size_px": [
+    1024,
+    1536
+   ],
+   "tiles": [
+    16,
+    24
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "bottom edge, tile columns 6–9 → Spore Pools",
+    "top edge, tile columns 6–9 (stairs up) → Sporeholm Tower 2F"
+   ],
+   "notes": "Keeper Dr. Lysa Moor's tower",
+   "file": "art/sections/03_sporeholm/050_sporeholm_tower_1f.png",
+   "v2": true
+  },
+  {
+   "id": "051",
+   "planet": "Sporeholm",
+   "name": "Sporeholm Tower 2F",
+   "type": "tower",
+   "size_px": [
+    1024,
+    1536
+   ],
+   "tiles": [
+    16,
+    24
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "bottom edge, tile columns 6–9 → Sporeholm Tower 1F"
+   ],
+   "notes": "Keeper Dr. Lysa Moor's tower",
+   "file": "art/sections/03_sporeholm/051_sporeholm_tower_2f.png",
+   "v2": true
+  },
+  {
+   "id": "052",
+   "planet": "Thalassa",
+   "name": "Port Saltreach Docks",
+   "type": "town",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "right edge, tile rows 5–10 → Saltreach Market"
+   ],
+   "notes": "Fog-bound docks, net sheds, stilt houses",
+   "file": "art/sections/04_thalassa/052_port_saltreach_docks.png",
+   "v2": true
+  },
+  {
+   "id": "053",
+   "planet": "Thalassa",
+   "name": "Saltreach Market",
+   "type": "town",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 5–10 → Port Saltreach Docks",
+    "right edge, tile rows 5–10 → Lighthouse"
+   ],
+   "notes": "Harbor market",
+   "file": "art/sections/04_thalassa/053_saltreach_market.png",
+   "v2": true
+  },
+  {
+   "id": "054",
+   "planet": "Thalassa",
+   "name": "Saltreach Recovery Bay",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "",
+   "file": "art/sections/04_thalassa/054_saltreach_recovery_bay.png",
+   "v2": true
+  },
+  {
+   "id": "055",
+   "planet": "Thalassa",
+   "name": "Saltreach Shop",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "",
+   "file": "art/sections/04_thalassa/055_saltreach_shop.png",
+   "v2": true
+  },
+  {
+   "id": "056",
+   "planet": "Thalassa",
+   "name": "Lighthouse",
+   "type": "tower",
+   "size_px": [
+    1024,
+    1536
+   ],
+   "tiles": [
+    16,
+    24
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "bottom edge, tile columns 6–9 → Saltreach Market",
+    "top edge, tile columns 6–9 (stairs up) → Coral Route Part A"
+   ],
+   "notes": "Old lighthouse interior spiral (Captain's Log)",
+   "file": "art/sections/04_thalassa/056_lighthouse.png",
+   "v2": true
+  },
+  {
+   "id": "057",
+   "planet": "Thalassa",
+   "name": "Coral Route Part A",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 5–8 → Lighthouse",
+    "right edge, tile rows 5–8 → Coral Route Part B"
+   ],
+   "notes": "Sand-bar route over coral shallows",
+   "file": "art/sections/04_thalassa/057_coral_route_part_a.png",
+   "v2": true
+  },
+  {
+   "id": "058",
+   "planet": "Thalassa",
+   "name": "Coral Route Part B",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 5–8 → Coral Route Part A",
+    "right edge, tile rows 5–8 → Sea Arch Cove"
+   ],
+   "notes": "Sand-bar route over coral shallows",
+   "file": "art/sections/04_thalassa/058_coral_route_part_b.png",
+   "v2": true
+  },
+  {
+   "id": "059",
+   "planet": "Thalassa",
+   "name": "Sea Arch Cove",
+   "type": "landmark",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 5–8 → Coral Route Part B",
+    "right edge, tile rows 5–8 → Harbor Tower 1F"
+   ],
+   "notes": "Giant stone sea arch where Anchorath sleeps",
+   "file": "art/sections/04_thalassa/059_sea_arch_cove.png",
+   "v2": true
+  },
+  {
+   "id": "060",
+   "planet": "Thalassa",
+   "name": "Harbor Tower 1F",
+   "type": "tower",
+   "size_px": [
+    1024,
+    1536
+   ],
+   "tiles": [
+    16,
+    24
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "bottom edge, tile columns 6–9 → Sea Arch Cove",
+    "top edge, tile columns 6–9 (stairs up) → Harbor Tower 2F"
+   ],
+   "notes": "Captain Marsh's harbor tower",
+   "file": "art/sections/04_thalassa/060_harbor_tower_1f.png",
+   "v2": true
+  },
+  {
+   "id": "061",
+   "planet": "Thalassa",
+   "name": "Harbor Tower 2F",
+   "type": "tower",
+   "size_px": [
+    1024,
+    1536
+   ],
+   "tiles": [
+    16,
+    24
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "bottom edge, tile columns 6–9 → Harbor Tower 1F"
+   ],
+   "notes": "Captain Marsh's harbor tower",
+   "file": "art/sections/04_thalassa/061_harbor_tower_2f.png",
+   "v2": true
+  },
+  {
+   "id": "062",
+   "planet": "Neonis",
+   "name": "Neonis Starport",
+   "type": "town",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "right edge, tile rows 5–10 → Neon Boulevard"
+   ],
+   "notes": "Floating landing deck with orange landing ring (rebuild at new scale)",
+   "file": "art/sections/05_neonis/062_neonis_starport.png",
+   "v2": true
+  },
+  {
+   "id": "063",
+   "planet": "Neonis",
+   "name": "Neon Boulevard",
+   "type": "town",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 5–10 → Neonis Starport",
+    "right edge, tile rows 5–10 → Arcade District"
+   ],
+   "notes": "Main neon street",
+   "file": "art/sections/05_neonis/063_neon_boulevard.png",
+   "v2": true
+  },
+  {
+   "id": "064",
+   "planet": "Neonis",
+   "name": "Neonis Recovery Bay",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "",
+   "file": "art/sections/05_neonis/064_neonis_recovery_bay.png",
+   "v2": true
+  },
+  {
+   "id": "065",
+   "planet": "Neonis",
+   "name": "Neonis Shop",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "",
+   "file": "art/sections/05_neonis/065_neonis_shop.png",
+   "v2": true
+  },
+  {
+   "id": "066",
+   "planet": "Neonis",
+   "name": "Arcade District",
+   "type": "field",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 5–10 → Neon Boulevard",
+    "right edge, tile rows 5–10 → Broadcast Route Part A"
+   ],
+   "notes": "Arcade halls and plazas (Glitch Hunt)",
+   "file": "art/sections/05_neonis/066_arcade_district.png",
+   "v2": true
+  },
+  {
+   "id": "067",
+   "planet": "Neonis",
+   "name": "Broadcast Route Part A",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 5–9 → Arcade District",
+    "right edge, tile rows 5–9 → Broadcast Route Part B"
+   ],
+   "notes": "Route of antenna towers and cables (Pirate Radio)",
+   "file": "art/sections/05_neonis/067_broadcast_route_part_a.png",
+   "v2": true
+  },
+  {
+   "id": "068",
+   "planet": "Neonis",
+   "name": "Broadcast Route Part B",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 5–9 → Broadcast Route Part A",
+    "right edge, tile rows 5–9 → Voltspire 1F"
+   ],
+   "notes": "Route of antenna towers and cables (Pirate Radio)",
+   "file": "art/sections/05_neonis/068_broadcast_route_part_b.png",
+   "v2": true
+  },
+  {
+   "id": "069",
+   "planet": "Neonis",
+   "name": "Voltspire 1F",
+   "type": "tower",
+   "size_px": [
+    1024,
+    1536
+   ],
+   "tiles": [
+    16,
+    24
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "bottom edge, tile columns 6–9 → Broadcast Route Part B",
+    "top edge, tile columns 6–9 (stairs up) → Voltspire 2F"
+   ],
+   "notes": "Keeper Static's tower, 3 floors",
+   "file": "art/sections/05_neonis/069_voltspire_1f.png",
+   "v2": true
+  },
+  {
+   "id": "070",
+   "planet": "Neonis",
+   "name": "Voltspire 2F",
+   "type": "tower",
+   "size_px": [
+    1024,
+    1536
+   ],
+   "tiles": [
+    16,
+    24
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "bottom edge, tile columns 6–9 → Voltspire 1F",
+    "top edge, tile columns 6–9 (stairs up) → Voltspire 3F"
+   ],
+   "notes": "Keeper Static's tower, 3 floors",
+   "file": "art/sections/05_neonis/070_voltspire_2f.png",
+   "v2": true
+  },
+  {
+   "id": "071",
+   "planet": "Neonis",
+   "name": "Voltspire 3F",
+   "type": "tower",
+   "size_px": [
+    1024,
+    1536
+   ],
+   "tiles": [
+    16,
+    24
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "bottom edge, tile columns 6–9 → Voltspire 2F"
+   ],
+   "notes": "Keeper Static's tower, 3 floors",
+   "file": "art/sections/05_neonis/071_voltspire_3f.png",
+   "v2": true
+  },
+  {
+   "id": "072",
+   "planet": "Glyphos",
+   "name": "Sunken Landing",
+   "type": "landmark",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "right edge, tile rows 5–9 → Dig Camp"
+   ],
+   "notes": "Landing among sunken ruins",
+   "file": "art/sections/06_glyphos/072_sunken_landing.png",
+   "v2": true
+  },
+  {
+   "id": "073",
+   "planet": "Glyphos",
+   "name": "Dig Camp",
+   "type": "town",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 5–10 → Sunken Landing",
+    "right edge, tile rows 5–10 → Coral Ruins Part A"
+   ],
+   "notes": "Archaeologists' camp of tents and scaffolding",
+   "file": "art/sections/06_glyphos/073_dig_camp.png",
+   "v2": true
+  },
+  {
+   "id": "074",
+   "planet": "Glyphos",
+   "name": "Dig Camp Recovery Tent",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "Recovery Bay as a large tent",
+   "file": "art/sections/06_glyphos/074_dig_camp_recovery_tent.png",
+   "v2": true
+  },
+  {
+   "id": "075",
+   "planet": "Glyphos",
+   "name": "Coral Ruins Part A",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 5–9 → Dig Camp",
+    "right edge, tile rows 5–9 → Coral Ruins Part B"
+   ],
+   "notes": "Flooded ruins route",
+   "file": "art/sections/06_glyphos/075_coral_ruins_part_a.png",
+   "v2": true
+  },
+  {
+   "id": "076",
+   "planet": "Glyphos",
+   "name": "Coral Ruins Part B",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 5–9 → Coral Ruins Part A",
+    "right edge, tile rows 5–9 → Glyph Hollow"
+   ],
+   "notes": "Flooded ruins route",
+   "file": "art/sections/06_glyphos/076_coral_ruins_part_b.png",
+   "v2": true
+  },
+  {
+   "id": "077",
+   "planet": "Glyphos",
+   "name": "Glyph Hollow",
+   "type": "field",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 5–9 → Coral Ruins Part B",
+    "right edge, tile rows 5–9 → Temple of Voices 1F"
+   ],
+   "notes": "Hollow of glowing glyph stones (Guardian Stones)",
+   "file": "art/sections/06_glyphos/077_glyph_hollow.png",
+   "v2": true
+  },
+  {
+   "id": "078",
+   "planet": "Glyphos",
+   "name": "Temple of Voices 1F",
+   "type": "tower",
+   "size_px": [
+    1024,
+    1536
+   ],
+   "tiles": [
+    16,
+    24
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "bottom edge, tile columns 6–9 → Glyph Hollow",
+    "top edge, tile columns 6–9 (stairs up) → Temple of Voices 2F"
+   ],
+   "notes": "Ancient Ystran temple (no Keeper), 3 floors (Song of the Chimes)",
+   "file": "art/sections/06_glyphos/078_temple_of_voices_1f.png",
+   "v2": true
+  },
+  {
+   "id": "079",
+   "planet": "Glyphos",
+   "name": "Temple of Voices 2F",
+   "type": "tower",
+   "size_px": [
+    1024,
+    1536
+   ],
+   "tiles": [
+    16,
+    24
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "bottom edge, tile columns 6–9 → Temple of Voices 1F",
+    "top edge, tile columns 6–9 (stairs up) → Temple of Voices 3F"
+   ],
+   "notes": "Ancient Ystran temple (no Keeper), 3 floors (Song of the Chimes)",
+   "file": "art/sections/06_glyphos/079_temple_of_voices_2f.png",
+   "v2": true
+  },
+  {
+   "id": "080",
+   "planet": "Glyphos",
+   "name": "Temple of Voices 3F",
+   "type": "tower",
+   "size_px": [
+    1024,
+    1536
+   ],
+   "tiles": [
+    16,
+    24
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "bottom edge, tile columns 6–9 → Temple of Voices 2F"
+   ],
+   "notes": "Ancient Ystran temple (no Keeper), 3 floors (Song of the Chimes)",
+   "file": "art/sections/06_glyphos/080_temple_of_voices_3f.png",
+   "v2": true
+  },
+  {
+   "id": "081",
+   "planet": "Glyphos",
+   "name": "Mural Hall",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "Great hall of Ystran murals (M10b Vashti's confession)",
+   "file": "art/sections/06_glyphos/081_mural_hall.png",
+   "v2": true
+  },
+  {
+   "id": "082",
+   "planet": "Pyros",
+   "name": "Cinder Hollow",
+   "type": "town",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "right edge, tile rows 6–9 → Lava Rail Part A"
+   ],
+   "notes": "Mining camp of timber shacks, brass furnaces, rope lifts",
+   "file": "art/sections/07_pyros/082_cinder_hollow.png",
+   "v2": true
+  },
+  {
+   "id": "083",
+   "planet": "Pyros",
+   "name": "Cinder Hollow Recovery Bay",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "",
+   "file": "art/sections/07_pyros/083_cinder_hollow_recovery_bay.png",
+   "v2": true
+  },
+  {
+   "id": "084",
+   "planet": "Pyros",
+   "name": "Cinder Hollow Shop",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "",
+   "file": "art/sections/07_pyros/084_cinder_hollow_shop.png",
+   "v2": true
+  },
+  {
+   "id": "085",
+   "planet": "Pyros",
+   "name": "Lava Rail Part A",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 5–9 → Cinder Hollow",
+    "right edge, tile rows 5–9 → Lava Rail Part B"
+   ],
+   "notes": "Mine-cart rail line over lava",
+   "file": "art/sections/07_pyros/085_lava_rail_part_a.png",
+   "v2": true
+  },
+  {
+   "id": "086",
+   "planet": "Pyros",
+   "name": "Lava Rail Part B",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 5–9 → Lava Rail Part A",
+    "right edge, tile rows 5–9 → Deep Mines B1"
+   ],
+   "notes": "Mine-cart rail line over lava",
+   "file": "art/sections/07_pyros/086_lava_rail_part_b.png",
+   "v2": true
+  },
+  {
+   "id": "087",
+   "planet": "Pyros",
+   "name": "Deep Mines B1",
+   "type": "cave",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "bottom edge, tile columns 6–9 → Lava Rail Part B",
+    "top edge, tile columns 6–9 → Deep Mines B2"
+   ],
+   "notes": "Deep mines, 3 levels (Teo's Trail 1, Deep Drill)",
+   "file": "art/sections/07_pyros/087_deep_mines_b1.png",
+   "v2": true
+  },
+  {
+   "id": "088",
+   "planet": "Pyros",
+   "name": "Deep Mines B2",
+   "type": "cave",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "bottom edge, tile columns 6–9 → Deep Mines B1",
+    "top edge, tile columns 6–9 → Deep Mines B3"
+   ],
+   "notes": "Deep mines, 3 levels (Teo's Trail 1, Deep Drill)",
+   "file": "art/sections/07_pyros/088_deep_mines_b2.png",
+   "v2": true
+  },
+  {
+   "id": "089",
+   "planet": "Pyros",
+   "name": "Deep Mines B3",
+   "type": "cave",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "bottom edge, tile columns 6–9 → Deep Mines B2",
+    "top edge, tile columns 6–9 → Furnace Ridge (Pyros)"
+   ],
+   "notes": "Deep mines, 3 levels (Teo's Trail 1, Deep Drill)",
+   "file": "art/sections/07_pyros/089_deep_mines_b3.png",
+   "v2": true
+  },
+  {
+   "id": "090",
+   "planet": "Pyros",
+   "name": "Furnace Ridge (Pyros)",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 5–9 → Deep Mines B3",
+    "right edge, tile rows 5–9 → Volcano Tower 1F"
+   ],
+   "notes": "Ridge of forges",
+   "file": "art/sections/07_pyros/090_furnace_ridge_pyros.png",
+   "v2": true
+  },
+  {
+   "id": "091",
+   "planet": "Pyros",
+   "name": "Volcano Tower 1F",
+   "type": "tower",
+   "size_px": [
+    1024,
+    1536
+   ],
+   "tiles": [
+    16,
+    24
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "bottom edge, tile columns 6–10 → Furnace Ridge (Pyros)",
+    "top edge, tile columns 7–9 (stairs up) → Volcano Tower 2F"
+   ],
+   "notes": "Keeper Basalt's tower",
+   "file": "art/sections/07_pyros/091_volcano_tower_1f.png",
+   "v2": true
+  },
+  {
+   "id": "092",
+   "planet": "Pyros",
+   "name": "Volcano Tower 2F",
+   "type": "tower",
+   "size_px": [
+    1024,
+    1536
+   ],
+   "tiles": [
+    16,
+    24
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "bottom edge, tile columns 6–9 → Volcano Tower 1F"
+   ],
+   "notes": "Keeper Basalt's tower",
+   "file": "art/sections/07_pyros/092_volcano_tower_2f.png",
+   "v2": true
+  },
+  {
+   "id": "093",
+   "planet": "Glacia",
+   "name": "Frostmark",
+   "type": "town",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "right edge, tile rows 6–9 → Aurora Route Part A"
+   ],
+   "notes": "Research town under aurora skies",
+   "file": "art/sections/08_glacia/093_frostmark.png",
+   "v2": true
+  },
+  {
+   "id": "094",
+   "planet": "Glacia",
+   "name": "Frostmark Recovery Bay",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "",
+   "file": "art/sections/08_glacia/094_frostmark_recovery_bay.png",
+   "v2": true
+  },
+  {
+   "id": "095",
+   "planet": "Glacia",
+   "name": "Frostmark Shop",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "",
+   "file": "art/sections/08_glacia/095_frostmark_shop.png",
+   "v2": true
+  },
+  {
+   "id": "096",
+   "planet": "Glacia",
+   "name": "Aurora Route Part A",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 5–9 → Frostmark",
+    "right edge, tile rows 5–9 → Aurora Route Part B"
+   ],
+   "notes": "Snowfield route",
+   "file": "art/sections/08_glacia/096_aurora_route_part_a.png",
+   "v2": true
+  },
+  {
+   "id": "097",
+   "planet": "Glacia",
+   "name": "Aurora Route Part B",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 5–9 → Aurora Route Part A",
+    "right edge, tile rows 5–9 → Crystal Caverns B1"
+   ],
+   "notes": "Snowfield route",
+   "file": "art/sections/08_glacia/097_aurora_route_part_b.png",
+   "v2": true
+  },
+  {
+   "id": "098",
+   "planet": "Glacia",
+   "name": "Crystal Caverns B1",
+   "type": "cave",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "bottom edge, tile columns 5–9 → Aurora Route Part B",
+    "top edge, tile columns 5–9 → Crystal Caverns B2"
+   ],
+   "notes": "Ice caves with crystal icicles, 3 floors",
+   "file": "art/sections/08_glacia/098_crystal_caverns_b1.png",
+   "v2": true
+  },
+  {
+   "id": "099",
+   "planet": "Glacia",
+   "name": "Crystal Caverns B2",
+   "type": "cave",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "bottom edge, tile columns 6–9 → Crystal Caverns B1",
+    "top edge, tile columns 6–10 → Crystal Caverns B3"
+   ],
+   "notes": "Ice caves with crystal icicles, 3 floors",
+   "file": "art/sections/08_glacia/099_crystal_caverns_b2.png",
+   "v2": true
+  },
+  {
+   "id": "100",
+   "planet": "Glacia",
+   "name": "Crystal Caverns B3",
+   "type": "cave",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "bottom edge, tile columns 6–9 → Crystal Caverns B2",
+    "top edge, tile columns 6–9 → Fossil Dig"
+   ],
+   "notes": "Ice caves with crystal icicles, 3 floors",
+   "file": "art/sections/08_glacia/100_crystal_caverns_b3.png",
+   "v2": true
+  },
+  {
+   "id": "101",
+   "planet": "Glacia",
+   "name": "Fossil Dig",
+   "type": "field",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 6–9 → Crystal Caverns B3",
+    "right edge, tile rows 6–9 → Frozen Falls"
+   ],
+   "notes": "Dig site with a giant Ystran creature frozen in the glacier wall (Teeth in the ice)",
+   "file": "art/sections/08_glacia/101_fossil_dig.png",
+   "v2": true
+  },
+  {
+   "id": "102",
+   "planet": "Glacia",
+   "name": "Frozen Falls",
+   "type": "landmark",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 6–9 → Fossil Dig",
+    "right edge, tile rows 6–9 → Aurora Tower 1F"
+   ],
+   "notes": "Frozen waterfall (Glaciryx)",
+   "file": "art/sections/08_glacia/102_frozen_falls.png",
+   "v2": true
+  },
+  {
+   "id": "103",
+   "planet": "Glacia",
+   "name": "Aurora Tower 1F",
+   "type": "tower",
+   "size_px": [
+    1024,
+    1536
+   ],
+   "tiles": [
+    16,
+    24
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "bottom edge, tile columns 6–10 → Frozen Falls",
+    "top edge, tile columns 7–8 (stairs up) → Aurora Tower 2F"
+   ],
+   "notes": "Keeper Ingrid's tower",
+   "file": "art/sections/08_glacia/103_aurora_tower_1f.png",
+   "v2": true
+  },
+  {
+   "id": "104",
+   "planet": "Glacia",
+   "name": "Aurora Tower 2F",
+   "type": "tower",
+   "size_px": [
+    1024,
+    1536
+   ],
+   "tiles": [
+    16,
+    24
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "bottom edge, tile columns 6–9 → Aurora Tower 1F"
+   ],
+   "notes": "Keeper Ingrid's tower",
+   "file": "art/sections/08_glacia/104_aurora_tower_2f.png",
+   "v2": true
+  },
+  {
+   "id": "105",
+   "planet": "Helix Station",
+   "name": "Docking Ring",
+   "type": "town",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "right edge, tile rows 6–9 → Containment Wing 1F"
+   ],
+   "notes": "Station docking ring hub",
+   "file": "art/sections/09_helix/105_docking_ring.png",
+   "v2": true
+  },
+  {
+   "id": "106",
+   "planet": "Helix Station",
+   "name": "Barracks",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "Grunt barracks",
+   "file": "art/sections/09_helix/106_barracks.png",
+   "v2": true
+  },
+  {
+   "id": "107",
+   "planet": "Helix Station",
+   "name": "Labs 1F",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "Helix labs",
+   "file": "art/sections/09_helix/107_labs_1f.png",
+   "v2": true
+  },
+  {
+   "id": "108",
+   "planet": "Helix Station",
+   "name": "Labs 2F",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "Helix labs",
+   "file": "art/sections/09_helix/108_labs_2f.png",
+   "v2": true
+  },
+  {
+   "id": "109",
+   "planet": "Helix Station",
+   "name": "Containment Wing 1F",
+   "type": "dungeon",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "bottom edge, tile columns 5–10 → Docking Ring",
+    "top edge, tile columns 5–10 → Containment Wing 2F"
+   ],
+   "notes": "Cells with captive Alienmon (The Captives)",
+   "file": "art/sections/09_helix/109_containment_wing_1f.png",
+   "v2": true
+  },
+  {
+   "id": "110",
+   "planet": "Helix Station",
+   "name": "Containment Wing 2F",
+   "type": "dungeon",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "bottom edge, tile columns 6–9 → Containment Wing 1F",
+    "top edge, tile columns 6–9 → Engineering"
+   ],
+   "notes": "Cells with captive Alienmon (The Captives)",
+   "file": "art/sections/09_helix/110_containment_wing_2f.png",
+   "v2": true
+  },
+  {
+   "id": "111",
+   "planet": "Helix Station",
+   "name": "Engineering",
+   "type": "dungeon",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "bottom edge, tile columns 6–9 → Containment Wing 2F",
+    "top edge, tile columns 6–9 → Vex's Arena"
+   ],
+   "notes": "Reactor engineering deck",
+   "file": "art/sections/09_helix/111_engineering.png",
+   "v2": true
+  },
+  {
+   "id": "112",
+   "planet": "Helix Station",
+   "name": "Observation Deck",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "Observation deck (rival battle R4, M14)",
+   "file": "art/sections/09_helix/112_observation_deck.png",
+   "v2": true
+  },
+  {
+   "id": "113",
+   "planet": "Helix Station",
+   "name": "Vex's Arena",
+   "type": "arena",
+   "size_px": [
+    1024,
+    1536
+   ],
+   "tiles": [
+    16,
+    24
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "bottom edge, tile columns 6–9 → Engineering"
+   ],
+   "notes": "Admin Vex's arena",
+   "file": "art/sections/09_helix/113_vex_s_arena.png",
+   "v2": true
+  },
+  {
+   "id": "114",
+   "planet": "Halo",
+   "name": "Cloud Dock",
+   "type": "landmark",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "right edge, tile rows 5–10 → Skyreach Plaza"
+   ],
+   "notes": "Sky dock for airships",
+   "file": "art/sections/10_halo/114_cloud_dock.png",
+   "v2": true
+  },
+  {
+   "id": "115",
+   "planet": "Halo",
+   "name": "Skyreach Plaza",
+   "type": "town",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 6–9 → Cloud Dock",
+    "right edge, tile rows 6–9 → Wind Bridges Part A"
+   ],
+   "notes": "Plaza with holo-globe fountain (rebuild at new scale)",
+   "file": "art/sections/10_halo/115_skyreach_plaza.png",
+   "v2": true
+  },
+  {
+   "id": "116",
+   "planet": "Halo",
+   "name": "Skyreach Recovery Bay",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "",
+   "file": "art/sections/10_halo/116_skyreach_recovery_bay.png",
+   "v2": true
+  },
+  {
+   "id": "117",
+   "planet": "Halo",
+   "name": "Skyreach Shop",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "",
+   "file": "art/sections/10_halo/117_skyreach_shop.png",
+   "v2": true
+  },
+  {
+   "id": "118",
+   "planet": "Halo",
+   "name": "Wind Bridges Part A",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 5–9 → Skyreach Plaza",
+    "right edge, tile rows 5–9 → Wind Bridges Part B"
+   ],
+   "notes": "Bridges between floating islands",
+   "file": "art/sections/10_halo/118_wind_bridges_part_a.png",
+   "v2": true
+  },
+  {
+   "id": "119",
+   "planet": "Halo",
+   "name": "Wind Bridges Part B",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 5–9 → Wind Bridges Part A",
+    "right edge, tile rows 5–9 → Floating Gardens"
+   ],
+   "notes": "Bridges between floating islands",
+   "file": "art/sections/10_halo/119_wind_bridges_part_b.png",
+   "v2": true
+  },
+  {
+   "id": "120",
+   "planet": "Halo",
+   "name": "Floating Gardens",
+   "type": "field",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 5–9 → Wind Bridges Part B",
+    "right edge, tile rows 5–9 → Sky Temple 1F"
+   ],
+   "notes": "Floating garden islands",
+   "file": "art/sections/10_halo/120_floating_gardens.png",
+   "v2": true
+  },
+  {
+   "id": "121",
+   "planet": "Halo",
+   "name": "Sky Temple 1F",
+   "type": "tower",
+   "size_px": [
+    1024,
+    1536
+   ],
+   "tiles": [
+    16,
+    24
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "bottom edge, tile columns 6–9 → Floating Gardens",
+    "top edge, tile columns 7–8 (stairs up) → Sky Temple 2F"
+   ],
+   "notes": "Echo & Iris's temple",
+   "file": "art/sections/10_halo/121_sky_temple_1f.png",
+   "v2": true
+  },
+  {
+   "id": "122",
+   "planet": "Halo",
+   "name": "Sky Temple 2F",
+   "type": "tower",
+   "size_px": [
+    1024,
+    1536
+   ],
+   "tiles": [
+    16,
+    24
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "bottom edge, tile columns 6–9 → Sky Temple 1F"
+   ],
+   "notes": "Echo & Iris's temple",
+   "file": "art/sections/10_halo/122_sky_temple_2f.png",
+   "v2": true
+  },
+  {
+   "id": "123",
+   "planet": "Umbra",
+   "name": "Shadow Tunnel Exit",
+   "type": "cave",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "top edge, tile columns 6–9 → Gravewell"
+   ],
+   "notes": "Exit of the Shadow Tunnel",
+   "file": "art/sections/11_umbra/123_shadow_tunnel_exit.png",
+   "v2": true
+  },
+  {
+   "id": "124",
+   "planet": "Umbra",
+   "name": "Gravewell",
+   "type": "town",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 5–10 → Shadow Tunnel Exit",
+    "right edge, tile rows 5–10 → Lantern Streets Part A"
+   ],
+   "notes": "Dark lantern city",
+   "file": "art/sections/11_umbra/124_gravewell.png",
+   "v2": true
+  },
+  {
+   "id": "125",
+   "planet": "Umbra",
+   "name": "Gravewell Recovery Bay",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "",
+   "file": "art/sections/11_umbra/125_gravewell_recovery_bay.png",
+   "v2": true
+  },
+  {
+   "id": "126",
+   "planet": "Umbra",
+   "name": "Gravewell Shop",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "",
+   "file": "art/sections/11_umbra/126_gravewell_shop.png",
+   "v2": true
+  },
+  {
+   "id": "127",
+   "planet": "Umbra",
+   "name": "Lantern Streets Part A",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 5–9 → Gravewell",
+    "right edge, tile rows 5–9 → Lantern Streets Part B"
+   ],
+   "notes": "Lantern-lined streets (Lanterns of Gravewell)",
+   "file": "art/sections/11_umbra/127_lantern_streets_part_a.png",
+   "v2": true
+  },
+  {
+   "id": "128",
+   "planet": "Umbra",
+   "name": "Lantern Streets Part B",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 5–9 → Lantern Streets Part A",
+    "right edge, tile rows 5–9 → The Sinkhole B1"
+   ],
+   "notes": "Lantern-lined streets (Lanterns of Gravewell)",
+   "file": "art/sections/11_umbra/128_lantern_streets_part_b.png",
+   "v2": true
+  },
+  {
+   "id": "129",
+   "planet": "Umbra",
+   "name": "The Sinkhole B1",
+   "type": "cave",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "bottom edge, tile columns 5–9 → Lantern Streets Part B",
+    "top edge, tile columns 5–9 → The Sinkhole B2"
+   ],
+   "notes": "The Sinkhole, 4 levels (The well that whispers)",
+   "file": "art/sections/11_umbra/129_the_sinkhole_b1.png",
+   "v2": true
+  },
+  {
+   "id": "130",
+   "planet": "Umbra",
+   "name": "The Sinkhole B2",
+   "type": "cave",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "bottom edge, tile columns 6–10 → The Sinkhole B1",
+    "top edge, tile columns 6–10 → The Sinkhole B3"
+   ],
+   "notes": "The Sinkhole, 4 levels (The well that whispers)",
+   "file": "art/sections/11_umbra/130_the_sinkhole_b2.png",
+   "v2": true
+  },
+  {
+   "id": "131",
+   "planet": "Umbra",
+   "name": "The Sinkhole B3",
+   "type": "cave",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "bottom edge, tile columns 6–10 → The Sinkhole B2",
+    "top edge, tile columns 6–10 → The Sinkhole B4"
+   ],
+   "notes": "The Sinkhole, 4 levels (The well that whispers)",
+   "file": "art/sections/11_umbra/131_the_sinkhole_b3.png",
+   "v2": true
+  },
+  {
+   "id": "132",
+   "planet": "Umbra",
+   "name": "The Sinkhole B4",
+   "type": "cave",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "bottom edge, tile columns 5–10 → The Sinkhole B3",
+    "top edge, tile columns 5–10 → Gravewell Tower 1F"
+   ],
+   "notes": "The Sinkhole, 4 levels (The well that whispers)",
+   "file": "art/sections/11_umbra/132_the_sinkhole_b4.png",
+   "v2": true
+  },
+  {
+   "id": "133",
+   "planet": "Umbra",
+   "name": "Kade's Lab",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "Kade's lab (Kade's Notes)",
+   "file": "art/sections/11_umbra/133_kade_s_lab.png",
+   "v2": true
+  },
+  {
+   "id": "134",
+   "planet": "Umbra",
+   "name": "Gravewell Tower 1F",
+   "type": "tower",
+   "size_px": [
+    1024,
+    1536
+   ],
+   "tiles": [
+    16,
+    24
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "bottom edge, tile columns 6–9 → The Sinkhole B4",
+    "top edge, tile columns 7–8 (stairs up) → Gravewell Tower 2F"
+   ],
+   "notes": "Keeper Kade's tower",
+   "file": "art/sections/11_umbra/134_gravewell_tower_1f.png",
+   "v2": true
+  },
+  {
+   "id": "135",
+   "planet": "Umbra",
+   "name": "Gravewell Tower 2F",
+   "type": "tower",
+   "size_px": [
+    1024,
+    1536
+   ],
+   "tiles": [
+    16,
+    24
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "bottom edge, tile columns 6–9 → Gravewell Tower 1F"
+   ],
+   "notes": "Keeper Kade's tower",
+   "file": "art/sections/11_umbra/135_gravewell_tower_2f.png",
+   "v2": true
+  },
+  {
+   "id": "136",
+   "planet": "Starfall Rift",
+   "name": "Rim Camp",
+   "type": "town",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "right edge, tile rows 5–10 → Seedpod Fields Part A"
+   ],
+   "notes": "Military cordon camp",
+   "file": "art/sections/12_starfall/136_rim_camp.png",
+   "v2": true
+  },
+  {
+   "id": "137",
+   "planet": "Starfall Rift",
+   "name": "Rim Camp Medic Tent",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "Recovery tent interior",
+   "file": "art/sections/12_starfall/137_rim_camp_medic_tent.png",
+   "v2": true
+  },
+  {
+   "id": "138",
+   "planet": "Starfall Rift",
+   "name": "Seedpod Fields Part A",
+   "type": "field",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 5–9 → Rim Camp",
+    "right edge, tile rows 5–9 → Seedpod Fields Part B"
+   ],
+   "notes": "Fields of cracked seedpod shells",
+   "file": "art/sections/12_starfall/138_seedpod_fields_part_a.png",
+   "v2": true
+  },
+  {
+   "id": "139",
+   "planet": "Starfall Rift",
+   "name": "Seedpod Fields Part B",
+   "type": "field",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 5–8 → Seedpod Fields Part A",
+    "right edge, tile rows 5–8 → Teo's Old Camp"
+   ],
+   "notes": "Fields of cracked seedpod shells",
+   "file": "art/sections/12_starfall/139_seedpod_fields_part_b.png",
+   "v2": true
+  },
+  {
+   "id": "140",
+   "planet": "Starfall Rift",
+   "name": "Teo's Old Camp",
+   "type": "landmark",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 5–9 → Seedpod Fields Part B",
+    "right edge, tile rows 5–9 → Crater Rim"
+   ],
+   "notes": "Teo's abandoned camp (Teo's Journal)",
+   "file": "art/sections/12_starfall/140_teo_s_old_camp.png",
+   "v2": true
+  },
+  {
+   "id": "141",
+   "planet": "Starfall Rift",
+   "name": "Crater Rim",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 5–8 → Teo's Old Camp",
+    "right edge, tile rows 5–8 → Crater Descent B1"
+   ],
+   "notes": "Rim of the crater",
+   "file": "art/sections/12_starfall/141_crater_rim.png",
+   "v2": true
+  },
+  {
+   "id": "142",
+   "planet": "Starfall Rift",
+   "name": "Crater Descent B1",
+   "type": "cave",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "bottom edge, tile columns 6–9 → Crater Rim",
+    "top edge, tile columns 6–9 → Crater Descent B2"
+   ],
+   "notes": "Descent into the crater, 3 levels",
+   "file": "art/sections/12_starfall/142_crater_descent_b1.png",
+   "v2": true
+  },
+  {
+   "id": "143",
+   "planet": "Starfall Rift",
+   "name": "Crater Descent B2",
+   "type": "cave",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "bottom edge, tile columns 6–9 → Crater Descent B1",
+    "top edge, tile columns 6–9 → Crater Descent B3"
+   ],
+   "notes": "Descent into the crater, 3 levels",
+   "file": "art/sections/12_starfall/143_crater_descent_b2.png",
+   "v2": true
+  },
+  {
+   "id": "144",
+   "planet": "Starfall Rift",
+   "name": "Crater Descent B3",
+   "type": "cave",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "bottom edge, tile columns 6–9 → Crater Descent B2",
+    "top edge, tile columns 6–9 → Rift Engine Platform"
+   ],
+   "notes": "Descent into the crater, 3 levels",
+   "file": "art/sections/12_starfall/144_crater_descent_b3.png",
+   "v2": true
+  },
+  {
+   "id": "145",
+   "planet": "Starfall Rift",
+   "name": "Rift Engine Platform",
+   "type": "landmark",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 5–10 → Crater Descent B3"
+   ],
+   "notes": "Helix Rift Engine platform (M19 Thorne at the Rift)",
+   "file": "art/sections/12_starfall/145_rift_engine_platform.png",
+   "v2": true
+  },
+  {
+   "id": "146",
+   "planet": "Apex Array",
+   "name": "Summit Lift",
+   "type": "landmark",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "right edge, tile rows 5–9 → Great Telescope"
+   ],
+   "notes": "Lift station up the mountain",
+   "file": "art/sections/13_apex/146_summit_lift.png",
+   "v2": true
+  },
+  {
+   "id": "147",
+   "planet": "Apex Array",
+   "name": "Observatory Halls 1F",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "Quorum observatory halls, 4 halls",
+   "file": "art/sections/13_apex/147_observatory_halls_1f.png",
+   "v2": true
+  },
+  {
+   "id": "148",
+   "planet": "Apex Array",
+   "name": "Observatory Halls 2F",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "Quorum observatory halls, 4 halls",
+   "file": "art/sections/13_apex/148_observatory_halls_2f.png",
+   "v2": true
+  },
+  {
+   "id": "149",
+   "planet": "Apex Array",
+   "name": "Observatory Halls 3F",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "Quorum observatory halls, 4 halls",
+   "file": "art/sections/13_apex/149_observatory_halls_3f.png",
+   "v2": true
+  },
+  {
+   "id": "150",
+   "planet": "Apex Array",
+   "name": "Observatory Halls 4F",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "Quorum observatory halls, 4 halls",
+   "file": "art/sections/13_apex/150_observatory_halls_4f.png",
+   "v2": true
+  },
+  {
+   "id": "151",
+   "planet": "Apex Array",
+   "name": "Great Telescope",
+   "type": "arena",
+   "size_px": [
+    1024,
+    1536
+   ],
+   "tiles": [
+    16,
+    24
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "bottom edge, tile columns 6–9 → Summit Lift"
+   ],
+   "notes": "Prime Linker Orra's chamber under the Great Telescope",
+   "file": "art/sections/13_apex/151_great_telescope.png",
+   "v2": true
+  },
+  {
+   "id": "152",
+   "planet": "Apex Array",
+   "name": "Apex Library",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "Library of star charts (Star Chart)",
+   "file": "art/sections/13_apex/152_apex_library.png",
+   "v2": true
+  },
+  {
+   "id": "153",
+   "planet": "Ystra",
+   "name": "Arrival Fragment",
+   "type": "landmark",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "right edge, tile rows 5–10 → Floating Continents Part A"
+   ],
+   "notes": "Floating fragment where you arrive",
+   "file": "art/sections/14_ystra/153_arrival_fragment.png",
+   "v2": true
+  },
+  {
+   "id": "154",
+   "planet": "Ystra",
+   "name": "Floating Continents Part A",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 5–10 → Arrival Fragment",
+    "right edge, tile rows 5–10 → Floating Continents Part B"
+   ],
+   "notes": "Floating continents",
+   "file": "art/sections/14_ystra/154_floating_continents_part_a.png",
+   "v2": true
+  },
+  {
+   "id": "155",
+   "planet": "Ystra",
+   "name": "Floating Continents Part B",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 5–9 → Floating Continents Part A",
+    "right edge, tile rows 5–9 → Drowned Seas"
+   ],
+   "notes": "Floating continents",
+   "file": "art/sections/14_ystra/155_floating_continents_part_b.png",
+   "v2": true
+  },
+  {
+   "id": "156",
+   "planet": "Ystra",
+   "name": "Drowned Seas",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 5–9 → Floating Continents Part B",
+    "right edge, tile rows 5–9 → Sun Forge"
+   ],
+   "notes": "Drowned seas",
+   "file": "art/sections/14_ystra/156_drowned_seas.png",
+   "v2": true
+  },
+  {
+   "id": "157",
+   "planet": "Ystra",
+   "name": "Sun Forge",
+   "type": "landmark",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 5–8 → Drowned Seas",
+    "right edge, tile rows 5–8 → Crystal Ruins 1F"
+   ],
+   "notes": "Sun Forge pillar",
+   "file": "art/sections/14_ystra/157_sun_forge.png",
+   "v2": true
+  },
+  {
+   "id": "158",
+   "planet": "Ystra",
+   "name": "Crystal Ruins 1F",
+   "type": "dungeon",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "bottom edge, tile columns 6–9 → Sun Forge",
+    "top edge, tile columns 6–9 → Crystal Ruins 2F"
+   ],
+   "notes": "Crystal ruins",
+   "file": "art/sections/14_ystra/158_crystal_ruins_1f.png",
+   "v2": true
+  },
+  {
+   "id": "159",
+   "planet": "Ystra",
+   "name": "Crystal Ruins 2F",
+   "type": "dungeon",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "bottom edge, tile columns 6–9 → Crystal Ruins 1F",
+    "top edge, tile columns 6–9 → Blighted Forest Part A"
+   ],
+   "notes": "Crystal ruins",
+   "file": "art/sections/14_ystra/159_crystal_ruins_2f.png",
+   "v2": true
+  },
+  {
+   "id": "160",
+   "planet": "Ystra",
+   "name": "Blighted Forest Part A",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 5–9 → Crystal Ruins 2F",
+    "right edge, tile rows 5–9 → Blighted Forest Part B"
+   ],
+   "notes": "Blighted forest (Blight Cleansing)",
+   "file": "art/sections/14_ystra/160_blighted_forest_part_a.png",
+   "v2": true
+  },
+  {
+   "id": "161",
+   "planet": "Ystra",
+   "name": "Blighted Forest Part B",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 5–9 → Blighted Forest Part A",
+    "right edge, tile rows 5–9 → Edge of the Void"
+   ],
+   "notes": "Blighted forest (Blight Cleansing)",
+   "file": "art/sections/14_ystra/161_blighted_forest_part_b.png",
+   "v2": true
+  },
+  {
+   "id": "162",
+   "planet": "Ystra",
+   "name": "Edge of the Void",
+   "type": "landmark",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 5–10 → Blighted Forest Part B",
+    "right edge, tile rows 5–10 → Seedmother's Grove"
+   ],
+   "notes": "Edge of the void where Oblivane waits",
+   "file": "art/sections/14_ystra/162_edge_of_the_void.png",
+   "v2": true
+  },
+  {
+   "id": "163",
+   "planet": "Ystra",
+   "name": "Seedmother's Grove",
+   "type": "landmark",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 5–10 → Edge of the Void"
+   ],
+   "notes": "The Seedmother's grove (finale)",
+   "file": "art/sections/14_ystra/163_seedmother_s_grove.png",
+   "v2": true
+  },
+  {
+   "id": "164",
+   "planet": "Star Arena",
+   "name": "Star Arena",
+   "type": "arena",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "bottom edge, tile columns 11–12 → arrival (shuttle back to the Molten Frontier)"
+   ],
+   "notes": "Floating coliseum among the stars: central battle floor, royal box with the Arena Master, vendor stalls left and right, south gate bridge",
+   "file": "art/sections/15_arena/164_star_arena.png"
+  },
+  {
+   "id": "165",
+   "planet": "Dustara",
+   "name": "Recovery Bay Attic",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "Nana Wren's attic above the Dustmere Recovery Bay: trunks, baskets, the old R.B. sign",
+   "file": "art/sections/01_dustara/165_recovery_bay_attic.png",
+   "v2": true
+  },
+  {
+   "id": "166",
+   "planet": "Dustara",
+   "name": "Reyes House",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "Teo and Sola's home by the Trading Post",
+   "file": "art/sections/01_dustara/166_reyes_house_1f.png",
+   "v2": true
+  },
+  {
+   "id": "167",
+   "planet": "Thalassa",
+   "name": "Ghost Ship Hold",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "The hold of the drifting Helix freighter: empty cages and barred grates",
+   "file": "art/sections/04_thalassa/167_ghost_ship_hold.png",
+   "v2": true
+  },
+  {
+   "id": "168",
+   "planet": "Thalassa",
+   "name": "Helix Freighter",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "Helix cargo freighter at the east pier; Thalassa's tower core is held in the glowing cargo pit",
+   "file": "art/sections/04_thalassa/168_helix_freighter.png",
+   "v2": true
+  },
+  {
+   "id": "169",
+   "planet": "Thalassa",
+   "name": "Smuggler's Freighter",
+   "type": "interior",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "A rusty smuggler's freighter at the Saltreach Market pier, where Admin Vex hides",
+   "file": "art/sections/04_thalassa/169_smugglers_freighter.png",
+   "v2": true
+  },
+  {
+   "id": "170",
+   "planet": "Neonis",
+   "name": "Neonis Courtroom",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "The Linker League courtroom on Neon Boulevard",
+   "file": "art/sections/05_neonis/170_neonis_courtroom.png",
+   "v2": true
+  },
+  {
+   "id": "171",
+   "planet": "Thalassa",
+   "name": "Thalassa House",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "Shared house interior: every house door on Thalassa opens here",
+   "file": "art/sections/04_thalassa/171_thalassa_house.png",
+   "house": "thalassa"
+  },
+  {
+   "id": "172",
+   "planet": "Starfall Rift",
+   "name": "Starfall Rift House",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "Shared house interior: every house door on Starfall Rift opens here",
+   "file": "art/sections/12_starfall/172_starfall_house.png",
+   "house": "starfall"
+  },
+  {
+   "id": "173",
+   "planet": "Sporeholm",
+   "name": "Sporeholm House",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "Shared house interior: every house door on Sporeholm opens here",
+   "file": "art/sections/03_sporeholm/173_sporeholm_house.png",
+   "house": "sporeholm"
+  },
+  {
+   "id": "174",
+   "planet": "Pyros",
+   "name": "Pyros House",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "Shared house interior: every house door on Pyros opens here",
+   "file": "art/sections/07_pyros/174_pyros_house.png",
+   "house": "pyros"
+  },
+  {
+   "id": "175",
+   "planet": "Halo",
+   "name": "Halo House",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "Shared house interior: every house door on Halo opens here",
+   "file": "art/sections/10_halo/175_halo_house.png",
+   "house": "halo"
+  },
+  {
+   "id": "176",
+   "planet": "Neonis",
+   "name": "Neonis House",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "Shared house interior: every house door on Neonis opens here",
+   "file": "art/sections/05_neonis/176_neonis_house.png",
+   "house": "neonis"
+  },
+  {
+   "id": "177",
+   "planet": "Glyphos",
+   "name": "Glyphos House",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "Shared house interior: every house door on Glyphos opens here",
+   "file": "art/sections/06_glyphos/177_glyphos_house.png",
+   "house": "glyphos"
+  },
+  {
+   "id": "178",
+   "planet": "Glacia",
+   "name": "Glacia House",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "Shared house interior: every house door on Glacia opens here",
+   "file": "art/sections/08_glacia/178_glacia_house.png",
+   "house": "glacia"
+  },
+  {
+   "id": "179",
+   "planet": "Halo",
+   "name": "Airship Cabin",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "Special interior (airship_cabin)",
+   "file": "art/sections/10_halo/179_airship_cabin.png"
+  },
+  {
+   "id": "180",
+   "planet": "Neonis",
+   "name": "Arcade Hall",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "Special interior (arcade_hall)",
+   "file": "art/sections/05_neonis/180_arcade_hall.png"
+  },
+  {
+   "id": "181",
+   "planet": "Ystra",
+   "name": "Arrival Research Dome",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "Special interior (arrival_research_dome)",
+   "file": "art/sections/14_ystra/181_arrival_research_dome.png"
+  },
+  {
+   "id": "182",
+   "planet": "Halo",
+   "name": "Cloud Dock Hall",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "Special interior (cloud_dock_hall)",
+   "file": "art/sections/10_halo/182_cloud_dock_hall.png"
+  },
+  {
+   "id": "183",
+   "planet": "Glyphos",
+   "name": "Dig Camp HQ Tent",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "Special interior (dig_camp_tent)",
+   "file": "art/sections/06_glyphos/183_dig_camp_tent.png"
+  },
+  {
+   "id": "184",
+   "planet": "Sporeholm",
+   "name": "Landing Dome",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "Special interior (landing_dome)",
+   "file": "art/sections/03_sporeholm/184_landing_dome.png"
+  },
+  {
+   "id": "185",
+   "planet": "Sporeholm",
+   "name": "Mushroom House",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "Special interior (mushroom_house)",
+   "file": "art/sections/03_sporeholm/185_mushroom_house.png"
+  },
+  {
+   "id": "186",
+   "planet": "Umbra",
+   "name": "Umbra House",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "Shared house interior: every house door on Umbra opens here",
+   "file": "art/sections/11_umbra/186_umbra_house.png",
+   "house": "umbra"
+  },
+  {
+   "id": "187",
+   "planet": "Dustara",
+   "name": "Dustara Cottage",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "House interior on dustara",
+   "file": "art/sections/01_dustara/187_dustara_cottage.png",
+   "house": "dustara"
+  },
+  {
+   "id": "188",
+   "planet": "Ferrox",
+   "name": "Ferrox Cabin",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "House interior on ferrox",
+   "file": "art/sections/02_ferrox/188_ferrox_cabin.png",
+   "house": "ferrox"
+  },
+  {
+   "id": "189",
+   "planet": "Ystra",
+   "name": "Ystra Crystal Lodge",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "House interior on ystra",
+   "file": "art/sections/14_ystra/189_ystra_crystal_lodge.png",
+   "house": "ystra"
+  },
+  {
+   "id": "190",
+   "planet": "Sporeholm",
+   "name": "Sporeholm Mushroom Hut",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "House interior on sporeholm",
+   "file": "art/sections/03_sporeholm/190_sporeholm_mushroom_hut.png",
+   "house": "sporeholm"
+  },
+  {
+   "id": "191",
+   "planet": "Thalassa",
+   "name": "Thalassa Seaside Home",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "House interior on thalassa",
+   "file": "art/sections/04_thalassa/191_thalassa_seaside_home.png",
+   "house": "thalassa"
+  },
+  {
+   "id": "192",
+   "planet": "Neonis",
+   "name": "Neonis Apartment",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "House interior on neonis",
+   "file": "art/sections/05_neonis/192_neonis_apartment.png",
+   "house": "neonis"
+  },
+  {
+   "id": "193",
+   "planet": "Glacia",
+   "name": "Glacia Ice Lodge",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "House interior on glacia",
+   "file": "art/sections/08_glacia/193_glacia_ice_lodge.png",
+   "house": "glacia"
+  }
+ ]
+}

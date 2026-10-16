@@ -7399,5 +7399,546 @@
   "b": 1,
   "tr": 55,
   "sig": 29
+ },
+ {
+  "n": 301,
+  "name": "Cogglet",
+  "t": [
+   "Alloy"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Cyclopper",
+  "m": "Level 24",
+  "s": [
+   45,
+   55,
+   65,
+   45,
+   50,
+   50
+  ],
+  "r": "normal",
+  "lore": "A single cog with one curious eye. Packs of them spin through Ferrox scrapyards looking for machines to fix.",
+  "b": 1,
+  "tr": 40,
+  "sig": -1
+ },
+ {
+  "n": 302,
+  "name": "Cyclopper",
+  "t": [
+   "Alloy",
+   "Volt"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Evolves from Cogglet",
+  "s": [
+   70,
+   75,
+   85,
+   85,
+   70,
+   85
+  ],
+  "r": "normal",
+  "lore": "A copper scout that rolls on one wheel. Its single eye sees in the dark of the Deepcut Mine.",
+  "b": 1,
+  "tr": 3,
+  "sig": -1
+ },
+ {
+  "n": 303,
+  "name": "Girderon",
+  "t": [
+   "Alloy",
+   "Gravity"
+  ],
+  "st": 1,
+  "tot": 1,
+  "to": "",
+  "m": "Found in the wild",
+  "s": [
+   80,
+   110,
+   115,
+   45,
+   65,
+   65
+  ],
+  "r": "normal",
+  "lore": "A walking steel girder. Crane crews swear it holds up half the Railyard on its back.",
+  "b": 1,
+  "tr": 8,
+  "sig": -1
+ },
+ {
+  "n": 304,
+  "name": "Rustadillo",
+  "t": [
+   "Alloy"
+  ],
+  "st": 1,
+  "tot": 1,
+  "to": "",
+  "m": "Found in the wild",
+  "s": [
+   75,
+   85,
+   120,
+   45,
+   85,
+   60
+  ],
+  "r": "normal",
+  "lore": "It curls into a ball of rusted plates and sleeps in scrap heaps. The rust is its armour.",
+  "b": 1,
+  "tr": 30,
+  "sig": -1
+ },
+ {
+  "n": 305,
+  "name": "Tinwing",
+  "t": [
+   "Alloy",
+   "Sonic"
+  ],
+  "st": 1,
+  "tot": 1,
+  "to": "",
+  "m": "Found in the wild",
+  "s": [
+   65,
+   90,
+   80,
+   65,
+   70,
+   100
+  ],
+  "r": "normal",
+  "lore": "A tin bird that lifts loose bolts with its crane-hook feet and rings like a bell when it sings.",
+  "b": 1,
+  "tr": 34,
+  "sig": -1
+ },
+ {
+  "n": 306,
+  "name": "Brineback",
+  "t": [
+   "Hydro",
+   "Bio"
+  ],
+  "st": 1,
+  "tot": 1,
+  "to": "",
+  "m": "Found in the wild",
+  "s": [
+   100,
+   70,
+   105,
+   75,
+   90,
+   40
+  ],
+  "r": "normal",
+  "lore": "An old sea turtle carrying a reef on its shell. Fish follow it along the Thalassa coast.",
+  "b": 1,
+  "tr": 36,
+  "sig": -1
+ },
+ {
+  "n": 307,
+  "name": "Fiddlesnap",
+  "t": [
+   "Hydro"
+  ],
+  "st": 1,
+  "tot": 1,
+  "to": "",
+  "m": "Found in the wild",
+  "s": [
+   60,
+   105,
+   90,
+   55,
+   60,
+   100
+  ],
+  "r": "normal",
+  "lore": "A crab with one giant claw that it snaps in rhythm. Dock workers call its clicking the harbour drum.",
+  "b": 1,
+  "tr": 1,
+  "sig": -1
+ },
+ {
+  "n": 308,
+  "name": "Squidmiral",
+  "t": [
+   "Hydro",
+   "Psi"
+  ],
+  "st": 1,
+  "tot": 1,
+  "to": "",
+  "m": "Found in the wild",
+  "s": [
+   80,
+   70,
+   75,
+   95,
+   90,
+   60
+  ],
+  "r": "normal",
+  "lore": "A squid in a sailor hat who blows bubbles from a pipe. It reads the tides like a captain reads a chart.",
+  "b": 1,
+  "tr": 10,
+  "sig": -1
+ },
+ {
+  "n": 309,
+  "name": "The Old One",
+  "t": [
+   "Hydro",
+   "Void"
+  ],
+  "st": 1,
+  "tot": 1,
+  "to": "",
+  "m": "Rare deep-water encounter",
+  "s": [
+   130,
+   100,
+   100,
+   95,
+   105,
+   50
+  ],
+  "r": "legendary",
+  "lore": "A whale older than the harbour. Sailors only glimpse its glowing fins far out where the sea goes dark.",
+  "b": 1,
+  "tr": 13,
+  "sig": -1
+ },
+ {
+  "n": 310,
+  "name": "Glowcroak",
+  "t": [
+   "Bio"
+  ],
+  "st": 1,
+  "tot": 2,
+  "to": "Gloomtoad",
+  "m": "Level 28",
+  "s": [
+   50,
+   45,
+   45,
+   65,
+   55,
+   50
+  ],
+  "r": "normal",
+  "lore": "A frog with a glowing throat that sits on Sporeholm mushrooms and croaks light into the mist.",
+  "b": 1,
+  "tr": 2,
+  "sig": -1
+ },
+ {
+  "n": 311,
+  "name": "Gloomtoad",
+  "t": [
+   "Toxin",
+   "Bio"
+  ],
+  "st": 2,
+  "tot": 2,
+  "to": "",
+  "m": "Evolves from Glowcroak",
+  "s": [
+   95,
+   80,
+   80,
+   90,
+   80,
+   45
+  ],
+  "r": "normal",
+  "lore": "Its glow turns purple and bitter with age. It puffs spore bubbles that make other Alienmon drowsy.",
+  "b": 1,
+  "tr": 26,
+  "sig": -1
+ },
+ {
+  "n": 312,
+  "name": "Mossback",
+  "t": [
+   "Bio",
+   "Hydro"
+  ],
+  "st": 1,
+  "tot": 1,
+  "to": "",
+  "m": "Found in the wild",
+  "s": [
+   105,
+   80,
+   100,
+   65,
+   90,
+   40
+  ],
+  "r": "normal",
+  "lore": "A turtle so still that a whole garden, waterfall and all, has grown on its shell.",
+  "b": 1,
+  "tr": 35,
+  "sig": -1
+ },
+ {
+  "n": 313,
+  "name": "Oozel",
+  "t": [
+   "Toxin"
+  ],
+  "st": 1,
+  "tot": 1,
+  "to": "",
+  "m": "Found in the wild",
+  "s": [
+   100,
+   75,
+   70,
+   70,
+   95,
+   50
+  ],
+  "r": "normal",
+  "lore": "A grinning purple ooze that slides through the bogs, soaking up spores that would choke others.",
+  "b": 1,
+  "tr": 20,
+  "sig": -1
+ },
+ {
+  "n": 314,
+  "name": "Boombastadon",
+  "t": [
+   "Sonic",
+   "Alloy"
+  ],
+  "st": 1,
+  "tot": 1,
+  "to": "",
+  "m": "Found in the wild",
+  "s": [
+   95,
+   100,
+   95,
+   85,
+   60,
+   45
+  ],
+  "r": "normal",
+  "lore": "A mammoth built of speakers. When it stomps, the whole Neonis block feels the bass.",
+  "b": 1,
+  "tr": 11,
+  "sig": -1
+ },
+ {
+  "n": 315,
+  "name": "Squawkbox",
+  "t": [
+   "Sonic",
+   "Volt"
+  ],
+  "st": 1,
+  "tot": 1,
+  "to": "",
+  "m": "Found in the wild",
+  "s": [
+   65,
+   60,
+   60,
+   100,
+   75,
+   105
+  ],
+  "r": "normal",
+  "lore": "A flying radio that picks up every signal in the city and squawks it back out of tune.",
+  "b": 1,
+  "tr": 21,
+  "sig": -1
+ },
+ {
+  "n": 316,
+  "name": "Puffloon",
+  "t": [
+   "Psi"
+  ],
+  "st": 1,
+  "tot": 1,
+  "to": "",
+  "m": "Found in the wild",
+  "s": [
+   95,
+   45,
+   60,
+   90,
+   100,
+   70
+  ],
+  "r": "normal",
+  "lore": "A pink cloud that floats over Halo on a ribbon. Touching it fills you with sleepy calm.",
+  "b": 1,
+  "tr": 44,
+  "sig": -1
+ },
+ {
+  "n": 317,
+  "name": "Stormquill",
+  "t": [
+   "Volt"
+  ],
+  "st": 1,
+  "tot": 1,
+  "to": "",
+  "m": "Found in the wild",
+  "s": [
+   65,
+   85,
+   60,
+   100,
+   65,
+   110
+  ],
+  "r": "normal",
+  "lore": "A bird made of lightning. Its feathers crackle, and storms over Halo follow its flight.",
+  "b": 1,
+  "tr": 17,
+  "sig": -1
+ },
+ {
+  "n": 318,
+  "name": "Lacefin",
+  "t": [
+   "Hydro",
+   "Crystal"
+  ],
+  "st": 1,
+  "tot": 1,
+  "to": "",
+  "m": "Found in the wild",
+  "s": [
+   70,
+   60,
+   70,
+   100,
+   90,
+   85
+  ],
+  "r": "normal",
+  "lore": "A seahorse with fins like lace that drifts through the flooded ruins of Glyphos.",
+  "b": 1,
+  "tr": 9,
+  "sig": -1
+ },
+ {
+  "n": 319,
+  "name": "Vitramoth",
+  "t": [
+   "Crystal",
+   "Swarm"
+  ],
+  "st": 1,
+  "tot": 1,
+  "to": "",
+  "m": "Found in the wild",
+  "s": [
+   70,
+   60,
+   75,
+   105,
+   95,
+   75
+  ],
+  "r": "normal",
+  "lore": "Its wings are stained glass. In the Temple of Voices it rests in the window frames and nobody notices.",
+  "b": 1,
+  "tr": 9,
+  "sig": -1
+ },
+ {
+  "n": 320,
+  "name": "Dunetrot",
+  "t": [
+   "Gravity"
+  ],
+  "st": 1,
+  "tot": 1,
+  "to": "",
+  "m": "Found in the wild",
+  "s": [
+   90,
+   85,
+   100,
+   50,
+   70,
+   75
+  ],
+  "r": "normal",
+  "lore": "A sandstone dinosaur with a friendly grin. It naps in the sun until a sandstorm wakes it.",
+  "b": 1,
+  "tr": 33,
+  "sig": -1
+ },
+ {
+  "n": 321,
+  "name": "Hexcoil",
+  "t": [
+   "Toxin",
+   "Void"
+  ],
+  "st": 1,
+  "tot": 1,
+  "to": "",
+  "m": "Found in the wild",
+  "s": [
+   75,
+   100,
+   70,
+   85,
+   65,
+   80
+  ],
+  "r": "normal",
+  "lore": "A serpent dripping purple venom. Umbra lantern-keepers hang charms to keep it from their doors.",
+  "b": 1,
+  "tr": 6,
+  "sig": -1
+ },
+ {
+  "n": 322,
+  "name": "Rumbler",
+  "t": [
+   "Gravity"
+  ],
+  "st": 1,
+  "tot": 1,
+  "to": "",
+  "m": "Found in the wild",
+  "s": [
+   85,
+   115,
+   110,
+   40,
+   60,
+   70
+  ],
+  "r": "normal",
+  "lore": "A golem of loose boulders. Pyros miners know a cave-in is coming when the Rumblers start walking.",
+  "b": 1,
+  "tr": 12,
+  "sig": -1
  }
 ]

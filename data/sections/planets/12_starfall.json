@@ -1,47 +1,6 @@
 {
- "doors": [
-  {
-   "interior": "137",
-   "parent": "136",
-   "door": [
-    9,
-    4
-   ],
-   "door2": [
-    10,
-    4
-   ],
-   "mat": [
-    [
-     7,
-     14
-    ],
-    [
-     8,
-     14
-    ]
-   ],
-   "confidence": "high",
-   "why": "V2: the medic tent with the cyan cross"
-  }
- ],
+ "doors": [],
  "objects": {
-  "137": [
-   {
-    "tile": [
-     7,
-     4
-    ],
-    "k": "bay"
-   },
-   {
-    "tile": [
-     8,
-     4
-    ],
-    "k": "bay"
-   }
-  ],
   "136": [
    {
     "tile": [
@@ -231,8 +190,8 @@
    {
     "art": "nurse",
     "tile": [
-     8,
-     4
+     10,
+     6
     ],
     "t": [
      "Nurse: Welcome to the Medic Tent. Step up to the counter and I'll patch your team right up."
@@ -271,30 +230,6 @@
     "tile": [
      12,
      3
-    ],
-    "stay": true
-   }
-  ],
-  "139": [
-   {
-    "art": "explorer",
-    "t": [
-     "Rift seeker: Trainers out here spot you from five tiles off. Heal up before you walk their line of sight."
-    ],
-    "tile": [
-     12,
-     5
-    ],
-    "stay": true
-   },
-   {
-    "art": "miner",
-    "t": [
-     "Driller: Helix paid triple to dig here. Then the pods started glowing back. Nobody stayed for the bonus."
-    ],
-    "tile": [
-     3,
-     8
     ],
     "stay": true
    }
@@ -406,6 +341,22 @@
     "tile": [
      5,
      3
+    ],
+    "stay": true
+   }
+  ],
+  "754": [
+   {
+    "art": "explorer",
+    "t": [
+     "Rift seeker: Trainers out here spot you from five tiles off. Heal up before you walk their line of sight."
+    ],
+    "stay": true
+   },
+   {
+    "art": "miner",
+    "t": [
+     "Driller: Helix paid triple to dig here. Then the pods started glowing back. Nobody stayed for the bonus."
     ],
     "stay": true
    }

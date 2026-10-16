@@ -1,137 +1,13 @@
 {
- "doors": [
-  {
-   "interior": "043",
-   "parent": "042",
-   "door": [
-    8,
-    3
-   ],
-   "door2": [
-    9,
-    3
-   ],
-   "mat": [
-    [
-     7,
-     14
-    ],
-    [
-     8,
-     14
-    ]
-   ],
-   "confidence": "high",
-   "why": "V2: Mirefen Recovery Bay, the hut with the cyan cross"
-  },
-  {
-   "interior": "044",
-   "parent": "042",
-   "door": [
-    15,
-    3
-   ],
-   "mat": [
-    [
-     7,
-     14
-    ],
-    [
-     8,
-     14
-    ]
-   ],
-   "confidence": "high",
-   "why": "V2: Mirefen Shop, the striped-awning hut"
-  }
- ],
- "objects": {
-  "043": [
-   {
-    "tile": [
-     7,
-     4
-    ],
-    "k": "bay"
-   },
-   {
-    "tile": [
-     8,
-     4
-    ],
-    "k": "bay"
-   }
-  ],
-  "044": [
-   {
-    "tile": [
-     7,
-     4
-    ],
-    "k": "shop"
-   },
-   {
-    "tile": [
-     8,
-     4
-    ],
-    "k": "shop"
-   }
-  ],
-  "051": [
-   {
-    "tile": [
-     7,
-     4
-    ],
-    "k": "keeper"
-   }
-  ]
- },
+ "doors": [],
+ "objects": {},
  "apprentices": {
   "050": 2
  },
- "trainer_tiles": [
-  {
-   "section": "050",
-   "n": 0,
-   "tile": [
-    9,
-    18
-   ],
-   "face": "left"
-  },
-  {
-   "section": "050",
-   "n": 1,
-   "tile": [
-    4,
-    5
-   ],
-   "face": "down"
-  },
-  {
-   "section": "048",
-   "n": 0,
-   "tile": [
-    9,
-    5
-   ],
-   "face": "left"
-  },
-  {
-   "section": "049",
-   "n": 0,
-   "tile": [
-    13,
-    6
-   ],
-   "face": "up"
-  }
- ],
+ "trainer_tiles": [],
  "trainers_per_section": {
   "047": 1,
-  "048": 1
+  "709": 1
  },
  "npcs": {
   "041": [
@@ -252,8 +128,8 @@
    {
     "art": "nurse",
     "tile": [
-     8,
-     4
+     10,
+     5
     ],
     "t": [
      "Nurse: Welcome to the Mirefen Recovery Bay. Spore-sick or battle-worn, we'll patch your team up."
@@ -276,8 +152,8 @@
    {
     "art": "shop",
     "tile": [
-     8,
-     4
+     4,
+     9
     ],
     "t": [
      "Clerk: Stasis Pods, Cure Spray, the works. In spore season the Cure Spray sells out fast."
@@ -296,54 +172,6 @@
     "stay": true
    }
   ],
-  "045": [
-   {
-    "art": "researcher",
-    "t": [
-     "Botanist: Every lantern in this marsh is a living fungus. Don't pick them. They bite back."
-    ],
-    "tile": [
-     10,
-     9
-    ],
-    "stay": true
-   },
-   {
-    "art": "explorer",
-    "t": [
-     "Bog hiker: Wild aliens jump out of the reeds. Stick to the dirt paths if your team is tired."
-    ],
-    "tile": [
-     3,
-     6
-    ],
-    "stay": true
-   }
-  ],
-  "046": [
-   {
-    "art": "sporefolk",
-    "t": [
-     "Spore tender: The Mushroom Maze is just ahead. Left at the glowing caps... or was it right?"
-    ],
-    "tile": [
-     14,
-     9
-    ],
-    "stay": true
-   },
-   {
-    "art": "wanderer",
-    "t": [
-     "Wanderer: Trainers watch the paths. Step into their line of sight and it's a battle."
-    ],
-    "tile": [
-     20,
-     5
-    ],
-    "stay": true
-   }
-  ],
   "047": [
    {
     "art": "explorer",
@@ -353,43 +181,6 @@
     "tile": [
      6,
      9
-    ],
-    "stay": true
-   }
-  ],
-  "048": [
-   {
-    "art": "researcher",
-    "t": [
-     "Mycologist: These bridges grow on their own. The mushrooms knit the planks back together each night."
-    ],
-    "tile": [
-     5,
-     9
-    ],
-    "stay": true
-   }
-  ],
-  "049": [
-   {
-    "art": "pilgrim",
-    "t": [
-     "Pilgrim: Listen... the Spore Choir. The pools sing when the spores rise. Some say the tower answers."
-    ],
-    "tile": [
-     20,
-     5
-    ],
-    "stay": true
-   },
-   {
-    "art": "sporefolk",
-    "t": [
-     "Spore tender: The big lily pads hold your weight. Mostly. Hop across them to reach the tower path."
-    ],
-    "tile": [
-     10,
-     5
     ],
     "stay": true
    }
@@ -416,6 +207,63 @@
     "tile": [
      8,
      5
+    ],
+    "stay": true
+   }
+  ],
+  "711": [
+   {
+    "art": "researcher",
+    "t": [
+     "Botanist: Every lantern in this marsh is a living fungus. Don't pick them. They bite back."
+    ],
+    "stay": true
+   },
+   {
+    "art": "explorer",
+    "t": [
+     "Bog hiker: Wild aliens jump out of the reeds. Stick to the dirt paths if your team is tired."
+    ],
+    "stay": true
+   }
+  ],
+  "716": [
+   {
+    "art": "sporefolk",
+    "t": [
+     "Spore tender: The Mushroom Maze is just ahead. Left at the glowing caps... or was it right?"
+    ],
+    "stay": true
+   },
+   {
+    "art": "wanderer",
+    "t": [
+     "Wanderer: Trainers watch the paths. Step into their line of sight and it's a battle."
+    ],
+    "stay": true
+   }
+  ],
+  "709": [
+   {
+    "art": "researcher",
+    "t": [
+     "Mycologist: These bridges grow on their own. The mushrooms knit the planks back together each night."
+    ],
+    "stay": true
+   }
+  ],
+  "714": [
+   {
+    "art": "pilgrim",
+    "t": [
+     "Pilgrim: Listen... the Spore Choir. The pools sing when the spores rise. Some say the tower answers."
+    ],
+    "stay": true
+   },
+   {
+    "art": "sporefolk",
+    "t": [
+     "Spore tender: The big lily pads hold your weight. Mostly. Hop across them to reach the tower path."
     ],
     "stay": true
    }

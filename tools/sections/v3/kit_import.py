@@ -92,9 +92,23 @@ def world_roads(d):
     return out
 
 
+def world_grass(d):
+    """Grass colour for a world: the median colour of clearly drawn grass patches in its Crossroads and Extra scenes."""
+    import numpy as np
+    from kitcol import tile_stats
+    K_ = json.load(open(f'{HERE}/kit.json', encoding='utf-8')) if os.path.exists(f'{HERE}/kit.json') else {}
+    cs = []
+    for k, v in K_.items():
+        if v['dir'] != d or v['cat'] not in ('Crossroads', 'Extra scenes') or v['alt'] or not os.path.exists(v['file']): continue
+        g = Image.open(v['file']).convert('RGB'); m, _ = tile_stats(g); rows, _ = auto(g, 'outdoor')
+        cs += [m[y, x] for y, r in enumerate(rows) for x, c in enumerate(r) if c == ',']
+    return [[float(v) for v in np.median(np.array(cs), 0)]] if cs else []
+
+
 def main():
     only = sys.argv[sys.argv.index('--world') + 1] if '--world' in sys.argv else None
     force = '--force' in sys.argv
+    recol = '--recollide' in sys.argv   # recompute collision from the existing art/kit pictures only
     kp = f'{HERE}/kit.json'; kit = json.load(open(kp, encoding='utf-8')) if os.path.exists(kp) else {}
     by_src = {v['src']: k for k, v in kit.items()}
     nxt = max([int(k) for k in kit] + [399]) + 1
@@ -113,14 +127,14 @@ def main():
         W, H = round(im.width / 64), round(im.height / 64)
         name = re.sub(r'^\d+\s*', '', title).strip()
         out = f'art/kit/{d}/{sid}_{slug(cat)}_{slug(name)}.png'
-        if force or not os.path.exists(out):
+        if (force and not recol) or not os.path.exists(out):
             os.makedirs(os.path.dirname(out), exist_ok=True)
             im.resize((W * 16, H * 16), Image.LANCZOS).save(out, optimize=True)
         g = Image.open(out).convert('RGB')
         cp = f'data/collision/{sid}.json'
-        if force or not os.path.exists(cp) or not json.load(open(cp)).get('v3_hand'):
-            if d not in ROADS: ROADS[d] = world_roads(d)
-            rows, _ = auto(g, kind, roads=ROADS[d] if kind in ('outdoor', 'plain') else None)
+        if force or recol or not os.path.exists(cp) or not json.load(open(cp)).get('v3_hand'):
+            if d not in ROADS: ROADS[d] = (world_roads(d), world_grass(d))
+            rows, _ = auto(g, kind, roads=ROADS[d][0] if kind in ('outdoor', 'plain') else None, grass=ROADS[d][1] if kind == 'outdoor' else None)
         else:
             rows = json.load(open(cp))['rows']
         rows = apply_spec(rows, sid)

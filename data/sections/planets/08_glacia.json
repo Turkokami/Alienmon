@@ -1,96 +1,6 @@
 {
- "doors": [
-  {
-   "interior": "094",
-   "parent": "093",
-   "door": [
-    8,
-    3
-   ],
-   "door2": [
-    9,
-    3
-   ],
-   "mat": [
-    [
-     7,
-     14
-    ],
-    [
-     8,
-     14
-    ]
-   ],
-   "confidence": "high",
-   "why": "V2: Frostmark Recovery Bay (cyan cross)"
-  },
-  {
-   "interior": "095",
-   "parent": "093",
-   "door": [
-    13,
-    3
-   ],
-   "door2": [
-    14,
-    3
-   ],
-   "mat": [
-    [
-     7,
-     14
-    ],
-    [
-     8,
-     14
-    ]
-   ],
-   "confidence": "high",
-   "why": "V2: Frostmark shop (striped awning)"
-  }
- ],
+ "doors": [],
  "objects": {
-  "094": [
-   {
-    "tile": [
-     7,
-     4
-    ],
-    "k": "bay"
-   },
-   {
-    "tile": [
-     8,
-     4
-    ],
-    "k": "bay"
-   }
-  ],
-  "095": [
-   {
-    "tile": [
-     7,
-     5
-    ],
-    "k": "shop"
-   },
-   {
-    "tile": [
-     8,
-     5
-    ],
-    "k": "shop"
-   }
-  ],
-  "104": [
-   {
-    "tile": [
-     8,
-     4
-    ],
-    "k": "keeper"
-   }
-  ],
   "093": [
    {
     "tile": [
@@ -117,24 +27,11 @@
     ]
    }
   ],
-  "100": [
-   {
-    "tile": [
-     4,
-     3
-    ],
-    "k": "sign",
-    "t": [
-     "The crystal wall looks almost like a wing... something huge is folded up inside the ice.",
-     "A scratched note: 'Fossil Dig is just above. Mind the stairs.'"
-    ]
-   }
-  ],
-  "101": [
+  "526": [
    {
     "tile": [
      2,
-     5
+     4
     ],
     "k": "sign",
     "t": [
@@ -144,8 +41,8 @@
    },
    {
     "tile": [
-     11,
-     2
+     8,
+     1
     ],
     "k": "sign",
     "t": [
@@ -155,8 +52,8 @@
    },
    {
     "tile": [
-     20,
-     5
+     21,
+     4
     ],
     "k": "sign",
     "t": [
@@ -166,8 +63,8 @@
    },
    {
     "tile": [
-     9,
-     10
+     19,
+     12
     ],
     "k": "sign",
     "t": [
@@ -176,11 +73,11 @@
     ]
    }
   ],
-  "102": [
+  "525": [
    {
     "tile": [
-     12,
-     4
+     14,
+     12
     ],
     "k": "sign",
     "t": [
@@ -192,8 +89,8 @@
   "103": [
    {
     "tile": [
-     7,
-     10
+     12,
+     7
     ],
     "k": "sign",
     "t": [
@@ -207,24 +104,6 @@
   "103": 2
  },
  "trainer_tiles": [
-  {
-   "section": "103",
-   "n": 0,
-   "tile": [
-    3,
-    14
-   ],
-   "face": "right"
-  },
-  {
-   "section": "103",
-   "n": 1,
-   "tile": [
-    12,
-    8
-   ],
-   "face": "left"
-  },
   {
    "section": "096",
    "n": 0,
@@ -242,24 +121,6 @@
     9
    ],
    "face": "up"
-  },
-  {
-   "section": "101",
-   "n": 0,
-   "tile": [
-    14,
-    7
-   ],
-   "face": "down"
-  },
-  {
-   "section": "101",
-   "n": 1,
-   "tile": [
-    20,
-    8
-   ],
-   "face": "left"
   }
  ],
  "trainers_per_section": {
@@ -357,8 +218,8 @@
     "art": "nurse",
     "name": "Nurse",
     "tile": [
-     8,
-     4
+     10,
+     6
     ],
     "t": [
      "Nurse: Welcome to the Frostmark Recovery Bay. Let's warm your team right up."
@@ -383,8 +244,8 @@
     "art": "shop",
     "name": "Clerk",
     "tile": [
-     8,
-     5
+     4,
+     9
     ],
     "t": [
      "Clerk: Stasis Pods, gels, warm socks. Okay, not socks. Take a look!"
@@ -423,30 +284,6 @@
     "art": "researcher",
     "t": [
      "Researcher: The aurora isn't just pretty. It carries a signal. We just can't read it yet."
-    ],
-    "stay": true
-   }
-  ],
-  "097": [
-   {
-    "art": "technician",
-    "t": [
-     "Radio tech: The Crystal Caverns are ahead. Three floors deep, then up into the Fossil Dig."
-    ],
-    "tile": [
-     12,
-     5
-    ],
-    "stay": true
-   },
-   {
-    "art": "wanderer",
-    "t": [
-     "Wanderer: Fire melts ice, they say. Bring something hot for Ingrid's team."
-    ],
-    "tile": [
-     16,
-     10
     ],
     "stay": true
    }
@@ -490,55 +327,6 @@
     "stay": true
    }
   ],
-  "101": [
-   {
-    "tile": [
-     6,
-     7
-    ],
-    "art": "researcher",
-    "t": [
-     "Dig chief: Three fossil sites, same bite pattern every time. Read the markers."
-    ],
-    "stay": true
-   },
-   {
-    "tile": [
-     20,
-     9
-    ],
-    "art": "miner",
-    "t": [
-     "Digger: I asked Helix for better drills. They asked where the biggest bones were.",
-     "I didn't tell them."
-    ],
-    "stay": true
-   }
-  ],
-  "102": [
-   {
-    "art": "pilgrim",
-    "t": [
-     "Pilgrim: The falls froze the night the aurora turned violet. I come here to listen."
-    ],
-    "tile": [
-     11,
-     5
-    ],
-    "stay": true
-   },
-   {
-    "art": "explorer",
-    "t": [
-     "Climber: Aurora Tower is just east. Ingrid trains Cryo-types up top."
-    ],
-    "tile": [
-     16,
-     9
-    ],
-    "stay": true
-   }
-  ],
   "103": [
    {
     "art": "technician",
@@ -562,6 +350,55 @@
     "tile": [
      6,
      4
+    ],
+    "stay": true
+   }
+  ],
+  "522": [
+   {
+    "art": "technician",
+    "t": [
+     "Radio tech: The Crystal Caverns are ahead. Three floors deep, then up into the Fossil Dig."
+    ],
+    "stay": true
+   },
+   {
+    "art": "wanderer",
+    "t": [
+     "Wanderer: Fire melts ice, they say. Bring something hot for Ingrid's team."
+    ],
+    "stay": true
+   }
+  ],
+  "526": [
+   {
+    "art": "researcher",
+    "t": [
+     "Dig chief: Three fossil sites, same bite pattern every time. Read the markers."
+    ],
+    "stay": true
+   },
+   {
+    "art": "miner",
+    "t": [
+     "Digger: I asked Helix for better drills. They asked where the biggest bones were.",
+     "I didn't tell them."
+    ],
+    "stay": true
+   }
+  ],
+  "525": [
+   {
+    "art": "pilgrim",
+    "t": [
+     "Pilgrim: The falls froze the night the aurora turned violet. I come here to listen."
+    ],
+    "stay": true
+   },
+   {
+    "art": "explorer",
+    "t": [
+     "Climber: Aurora Tower is just east. Ingrid trains Cryo-types up top."
     ],
     "stay": true
    }

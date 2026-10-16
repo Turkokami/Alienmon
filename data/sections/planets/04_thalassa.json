@@ -82,15 +82,6 @@
     "k": "shop"
    }
   ],
-  "061": [
-   {
-    "tile": [
-     7,
-     4
-    ],
-    "k": "keeper"
-   }
-  ],
   "052": [
    {
     "tile": [
@@ -102,56 +93,12 @@
      "PORT SALTREACH DOCKS. Sunny skies, clear water, and the best fish pies in the Kessler system."
     ]
    }
-  ],
-  "056": [
-   {
-    "tile": [
-     3,
-     4
-    ],
-    "k": "sign",
-    "t": [
-     "Captain's Log, faded: 'The arch woke again tonight. The water glowed blue all the way to the tower.'",
-     "The rest of the page is water-stained."
-    ]
-   }
-  ],
-  "059": [
-   {
-    "tile": [
-     4,
-     4
-    ],
-    "k": "sign",
-    "t": [
-     "SEA ARCH COVE. Quiet waters. Something very large sleeps beneath the arch. Please do not wake it."
-    ]
-   }
   ]
  },
  "apprentices": {
   "060": 2
  },
- "trainer_tiles": [
-  {
-   "section": "060",
-   "n": 0,
-   "tile": [
-    3,
-    12
-   ],
-   "face": "right"
-  },
-  {
-   "section": "060",
-   "n": 1,
-   "tile": [
-    12,
-    12
-   ],
-   "face": "left"
-  }
- ],
+ "trainer_tiles": [],
  "npcs": {
   "052": [
    {
@@ -348,113 +295,6 @@
     "stay": true
    }
   ],
-  "056": [
-   {
-    "art": "researcher",
-    "t": [
-     "Keeper's aide: The stairs up top lead out onto the coral sand bars. Watch for the tide."
-    ],
-    "tile": [
-     10,
-     3
-    ],
-    "stay": true
-   },
-   {
-    "art": "squidsailor",
-    "t": [
-     "Lamp tender: This light guided the fishing fleet for a hundred years. Helix ships ignore it."
-    ],
-    "tile": [
-     10,
-     17
-    ],
-    "stay": true
-   }
-  ],
-  "057": [
-   {
-    "art": "explorer",
-    "t": [
-     "Beachcomber: The coral bars connect at low tide. Hop the bridges and you'll stay dry."
-    ],
-    "tile": [
-     20,
-     5
-    ],
-    "stay": true
-   },
-   {
-    "art": "civilian",
-    "t": [
-     "Swimmer: My Alienmon love the shallows. Low-level ones, sure, but they never stop splashing."
-    ],
-    "tile": [
-     2,
-     8
-    ],
-    "stay": true
-   }
-  ],
-  "058": [
-   {
-    "art": "wanderer",
-    "t": [
-     "Castaway: Saw an old wreck off the south rocks. Nobody's dared dive it yet."
-    ],
-    "tile": [
-     18,
-     5
-    ],
-    "stay": true
-   },
-   {
-    "art": "squidsailor",
-    "t": [
-     "Sailor: Harbor Tower is past the sea arch. Captain Marsh doesn't go easy on anyone."
-    ],
-    "tile": [
-     3,
-     8
-    ],
-    "stay": true
-   }
-  ],
-  "059": [
-   {
-    "art": "researcher",
-    "tile": [
-     12,
-     4
-    ],
-    "t": [
-     "Researcher: Readings spike under the arch at night. Whatever sleeps there is enormous."
-    ],
-    "stay": true
-   },
-   {
-    "art": "pilgrim",
-    "tile": [
-     17,
-     8
-    ],
-    "t": [
-     "Pilgrim: Walk softly here. The islanders leave shells at the shrines so Anchorath sleeps on."
-    ],
-    "stay": true
-   },
-   {
-    "art": "guard",
-    "tile": [
-     4,
-     6
-    ],
-    "t": [
-     "Lookout: Helix divers were poking around the cove. I chased them off with a bucket."
-    ],
-    "stay": true
-   }
-  ],
   "060": [
    {
     "art": "squidsailor",
@@ -477,6 +317,77 @@
     "tile": [
      10,
      6
+    ],
+    "stay": true
+   }
+  ],
+  "780": [
+   {
+    "art": "researcher",
+    "t": [
+     "Keeper's aide: The stairs up top lead out onto the coral sand bars. Watch for the tide."
+    ],
+    "stay": true
+   },
+   {
+    "art": "squidsailor",
+    "t": [
+     "Lamp tender: This light guided the fishing fleet for a hundred years. Helix ships ignore it."
+    ],
+    "stay": true
+   }
+  ],
+  "785": [
+   {
+    "art": "explorer",
+    "t": [
+     "Beachcomber: The coral bars connect at low tide. Hop the bridges and you'll stay dry."
+    ],
+    "stay": true
+   },
+   {
+    "art": "civilian",
+    "t": [
+     "Swimmer: My Alienmon love the shallows. Low-level ones, sure, but they never stop splashing."
+    ],
+    "stay": true
+   }
+  ],
+  "779": [
+   {
+    "art": "wanderer",
+    "t": [
+     "Castaway: Saw an old wreck off the south rocks. Nobody's dared dive it yet."
+    ],
+    "stay": true
+   },
+   {
+    "art": "squidsailor",
+    "t": [
+     "Sailor: Harbor Tower is past the sea arch. Captain Marsh doesn't go easy on anyone."
+    ],
+    "stay": true
+   }
+  ],
+  "781": [
+   {
+    "art": "researcher",
+    "t": [
+     "Researcher: Readings spike under the arch at night. Whatever sleeps there is enormous."
+    ],
+    "stay": true
+   },
+   {
+    "art": "pilgrim",
+    "t": [
+     "Pilgrim: Walk softly here. The islanders leave shells at the shrines so Anchorath sleeps on."
+    ],
+    "stay": true
+   },
+   {
+    "art": "guard",
+    "t": [
+     "Lookout: Helix divers were poking around the cove. I chased them off with a bucket."
     ],
     "stay": true
    }

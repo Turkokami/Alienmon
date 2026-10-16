@@ -1270,7 +1270,7 @@
      "type": "cutscene",
      "target": "prophecy_shrine",
      "count": 1,
-     "at": "120",
+     "at": "590",
      "scene": "prophecy_mural",
      "title": "The Prophecy Shrine",
      "hint": "Follow Liss to the third wind shrine in the Floating Gardens",

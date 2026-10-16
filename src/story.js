@@ -90,7 +90,7 @@ function enemyWin(){for(const m of B.team)m.hp=0;endBattle(true)}
 /* ---- music: the Spore Choir's hum (Book 1) at the Spore Pools, at the sealing and at the Edge of the Void ---- */
 CHIP.choir={bpm:66,lead:0.5,chords:'F C Dm Bb F C Bb C',leadWave:'tri',drums:'none',arp:1,
  mel:['A4 - - G4 F4 - - -','G4 - - F4 E4 - - -','D4 - F4 - A4 - - G4','F4 - - - . . . .','A4 - - G4 F4 - - -','C5 - - Bb4 A4 - - -','G4 - Bb4 - A4 - G4 -','F4 - - - . . . .']};
-function storyTrack(){if(scene==='planet'&&secOn()&&['049','162'].includes(G.sec.id))return'choir';if(scene==='cut'&&CUT&&/Rift closes|Signal song|Choir/.test(CUT.text||''))return'choir';return null}
+function storyTrack(){if(scene==='planet'&&secOn()&&['714','162'].includes(G.sec.id))return'choir';if(scene==='cut'&&CUT&&/Rift closes|Signal song|Choir/.test(CUT.text||''))return'choir';return null}
 
 /* ---- older saves: objectives inserted into a quest move the step on; new story quests count as done if you're past them ---- */
 function storyMigrate(){const v=STORY.version||1;if((G.storyv||0)>=v)return;

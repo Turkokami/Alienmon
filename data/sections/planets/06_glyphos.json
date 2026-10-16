@@ -1,47 +1,6 @@
 {
- "doors": [
-  {
-   "interior": "074",
-   "parent": "073",
-   "door": [
-    8,
-    4
-   ],
-   "door2": [
-    9,
-    4
-   ],
-   "mat": [
-    [
-     7,
-     14
-    ],
-    [
-     8,
-     14
-    ]
-   ],
-   "confidence": "high",
-   "why": "V2: Dig Camp Recovery Tent (cyan cross)"
-  }
- ],
+ "doors": [],
  "objects": {
-  "074": [
-   {
-    "tile": [
-     7,
-     4
-    ],
-    "k": "bay"
-   },
-   {
-    "tile": [
-     8,
-     4
-    ],
-    "k": "bay"
-   }
-  ],
   "081": [
    {
     "tile": [
@@ -252,7 +211,7 @@
     "art": "nurse",
     "name": "Nurse",
     "tile": [
-     8,
+     10,
      4
     ],
     "t": [
@@ -268,43 +227,6 @@
     ],
     "t": [
      "Archaeologist: Dust, damp, and angry Alienmon. This tent has saved my dig crew more times than I can count."
-    ],
-    "stay": true
-   }
-  ],
-  "075": [
-   {
-    "art": "wanderer",
-    "t": [
-     "Wanderer: Tall grass grows thick between the ruins. Wild Alienmon hide in every patch."
-    ],
-    "tile": [
-     10,
-     6
-    ],
-    "stay": true
-   }
-  ],
-  "076": [
-   {
-    "art": "researcher",
-    "t": [
-     "Rune scholar: The glyph under that pool glows at night. I think the whole valley was once a temple."
-    ],
-    "tile": [
-     12,
-     5
-    ],
-    "stay": true
-   },
-   {
-    "art": "pilgrim",
-    "t": [
-     "Pilgrim: Weaken a wild one before you throw a Stasis Pod. A tired Alienmon is an easy catch."
-    ],
-    "tile": [
-     7,
-     9
     ],
     "stay": true
    }
@@ -395,8 +317,34 @@
     ],
     "stay": true
    }
+  ],
+  "552": [
+   {
+    "art": "wanderer",
+    "t": [
+     "Wanderer: Tall grass grows thick between the ruins. Wild Alienmon hide in every patch."
+    ],
+    "stay": true
+   }
+  ],
+  "556": [
+   {
+    "art": "researcher",
+    "t": [
+     "Rune scholar: The glyph under that pool glows at night. I think the whole valley was once a temple."
+    ],
+    "stay": true
+   },
+   {
+    "art": "pilgrim",
+    "t": [
+     "Pilgrim: Weaken a wild one before you throw a Stasis Pod. A tired Alienmon is an easy catch."
+    ],
+    "stay": true
+   }
   ]
  },
  "unlisted": {},
- "notes": "Glyphos (06): no Keeper and no shop on this planet. Recovery Tent (074) uses the cyan-cross dome in Dig Camp; the interior art is a tent. Nurse pinned beside the healing pod at (9,5) (the pod has no counter to stand behind). Mural Hall (081) hangs off the glyph door at the top of Glyph Hollow (077); the shrine plaza with a doorway at the top right of Coral Ruins B (076, door 20,1) is the alternative if the owner prefers. Murals in 081 left to right: Ystra (4,3), the Seedmother (8,3), the Devourer (12,3) - M10 'examine mural x3'. Temple of Voices floors each get 1 trainer (Archaeologist/Pilgrim/Rune Scholar)."
+ "notes": "Glyphos (06): no Keeper and no shop on this planet. Recovery Tent (074) uses the cyan-cross dome in Dig Camp; the interior art is a tent. Nurse pinned beside the healing pod at (9,5) (the pod has no counter to stand behind). Mural Hall (081) hangs off the glyph door at the top of Glyph Hollow (077); the shrine plaza with a doorway at the top right of Coral Ruins B (076, door 20,1) is the alternative if the owner prefers. Murals in 081 left to right: Ystra (4,3), the Seedmother (8,3), the Devourer (12,3) - M10 'examine mural x3'. Temple of Voices floors each get 1 trainer (Archaeologist/Pilgrim/Rune Scholar).",
+ "trainer_tiles": []
 }

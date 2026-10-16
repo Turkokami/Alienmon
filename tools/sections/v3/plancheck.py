@@ -31,7 +31,7 @@ for i in ids:
     if r is None: probs.append(f'{i}: no collision'); continue
     r = [list(x) for x in r]; f = P.get('fix', {}).get(i, {})
     if f.get('base'): r = [[f['base']] * len(r[0]) for _ in r]
-    for k, ch in (('walk', '.'), ('gr', ','), ('block', '#')):
+    for k, ch in (('walk', '.'), ('gr', ','), ('block', '#'), ('walk_after', '.')):
         for x0, y0, x1, y1 in f.get(k, []):
             for y in range(y0, y1 + 1):
                 for x in range(x0, x1 + 1):
@@ -41,6 +41,14 @@ walk = lambda i, t: i in R and 0 <= t[1] < len(R[i]) and 0 <= t[0] < len(R[i][0]
 typ = lambda i: use[i].get('type', K[use[i]['kit']]['type']) if i in use else D['sections'].get(i, {}).get('type')
 
 G = {i: set() for i in ids}
+redef = {}
+for e in P.get('edges', []): redef.setdefault(e[0], set()).add(e[1]); redef.setdefault(e[2], set()).add(e[3])
+for i in keep:   # kept sections keep their other connections
+    s = D['sections'].get(i, {})
+    for side, t in s.get('edges', {}).items():
+        if side not in redef.get(i, ()) and t not in drop: G[i].add(t); G.setdefault(t, set()).add(i)
+    for t in s.get('warps_to', []):
+        if t not in drop and t != 'back': G[i].add(t); G.setdefault(t, set()).add(i)
 for e in P.get('edges', []):
     a, sa, b, sb = e[:4]
     for x, s in ((a, sa), (b, sb)):

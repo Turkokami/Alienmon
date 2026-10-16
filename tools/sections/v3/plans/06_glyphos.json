@@ -1,0 +1,1475 @@
+{
+ "_report": "Glyphos, rebuilt on the V3 world kit. Arrival stays the ferry jetty Sunken Landing (072, ferry home kept); Dig Camp (073, kept: Recovery Tent door + HQ/house tents) leads east into Dig Camp Lane Homes (566, with a new Dig Camp Supply Shop 569 - Glyphos had no shop) and the Farmstead (568, Dig Camp Tent 563). North of the Farmstead is Ruin Crossroads (552): Quiet Court north (567: Archivist's Study 562, Shrine Chamber 564, shared Glyphos House 177), the kit Spaceport east (570, ship home), Glyph Junction west (553). Glyph Junction: north up Glyph Steps (555) to the Drowned Grotto cave (548 + 549/550/551, maxrevive chest); west to Tidepool Fork (554) -> north Tidepool Ruins (557, dead end, harmonic chest) and west across the Sunken Shallows (571) and Island Chain (572) water route to the Coral Secret Grove (561, hidden dead end, fullgel chest); south along Mural Overlook (556) -> Pillar Hollows (558) -> Forgotten Forum (560) -> south Sunken Channel (559, dead end, revive chest) / east Temple of Trials (543 -> lobby 545 -> arena 546) -> Glyph Hollow (077, kept) -> Temple of Voices 078/079/080 + Mural Hall 081 (kept: M10/S60/S61/S62 story). Recovery Tent 074 swapped to the kit Recovery Bay. Coral Ruins A/B (075/076) dropped; NPCs to 552/556, wild tables reused (water route in drowned_sea, caves in rock_cave).",
+ "_unused": [
+  {
+   "id": "542",
+   "why": "alt Temple of Trials exterior"
+  },
+  {
+   "id": "544",
+   "why": "alt Temple of Trials lobby"
+  },
+  {
+   "id": "547",
+   "why": "Battle Room: one battle room is enough, the Battle Floor (546) is used"
+  }
+ ],
+ "planet": "glyphos",
+ "use": {
+  "074": {
+   "kit": "565",
+   "name": "Dig Camp Recovery Tent",
+   "type": "interior"
+  },
+  "566": {
+   "kit": "566",
+   "name": "Dig Camp Lane Homes",
+   "type": "town"
+  },
+  "568": {
+   "kit": "568",
+   "name": "Dig Camp Farmstead",
+   "type": "town"
+  },
+  "567": {
+   "kit": "567",
+   "name": "Dig Camp Quiet Court",
+   "type": "town"
+  },
+  "552": {
+   "kit": "552",
+   "name": "Ruin Crossroads",
+   "type": "route"
+  },
+  "570": {
+   "kit": "570",
+   "name": "Glyphos Spaceport",
+   "type": "landmark"
+  },
+  "553": {
+   "kit": "553",
+   "name": "Glyph Junction",
+   "type": "route"
+  },
+  "555": {
+   "kit": "555",
+   "name": "Glyph Steps",
+   "type": "route"
+  },
+  "548": {
+   "kit": "548",
+   "name": "Drowned Grotto Entrance",
+   "type": "route"
+  },
+  "549": {
+   "kit": "549",
+   "name": "Drowned Grotto B1",
+   "type": "cave"
+  },
+  "550": {
+   "kit": "550",
+   "name": "Drowned Grotto B2",
+   "type": "cave"
+  },
+  "551": {
+   "kit": "551",
+   "name": "Drowned Grotto Deep Chamber",
+   "type": "cave"
+  },
+  "554": {
+   "kit": "554",
+   "name": "Tidepool Fork",
+   "type": "route"
+  },
+  "557": {
+   "kit": "557",
+   "name": "Tidepool Ruins",
+   "type": "route"
+  },
+  "571": {
+   "kit": "571",
+   "name": "Sunken Shallows",
+   "type": "route"
+  },
+  "572": {
+   "kit": "572",
+   "name": "Island Chain",
+   "type": "route"
+  },
+  "561": {
+   "kit": "561",
+   "name": "Coral Secret Grove",
+   "type": "field"
+  },
+  "556": {
+   "kit": "556",
+   "name": "Mural Overlook",
+   "type": "route"
+  },
+  "558": {
+   "kit": "558",
+   "name": "Pillar Hollows",
+   "type": "route"
+  },
+  "560": {
+   "kit": "560",
+   "name": "Forgotten Forum",
+   "type": "route"
+  },
+  "559": {
+   "kit": "559",
+   "name": "Sunken Channel",
+   "type": "route"
+  },
+  "543": {
+   "kit": "543",
+   "name": "Temple of Trials",
+   "type": "landmark"
+  },
+  "545": {
+   "kit": "545",
+   "name": "Temple of Trials Lobby",
+   "type": "interior"
+  },
+  "546": {
+   "kit": "546",
+   "name": "Temple of Trials Arena",
+   "type": "interior"
+  },
+  "562": {
+   "kit": "562",
+   "name": "Archivist's Study",
+   "type": "interior"
+  },
+  "563": {
+   "kit": "563",
+   "name": "Dig Camp Tent",
+   "type": "interior"
+  },
+  "564": {
+   "kit": "564",
+   "name": "Shrine Chamber",
+   "type": "interior"
+  },
+  "569": {
+   "kit": "569",
+   "name": "Dig Camp Supply Shop",
+   "type": "interior"
+  }
+ },
+ "keep": [
+  "072",
+  "073",
+  "077",
+  "078",
+  "079",
+  "080",
+  "081",
+  "177",
+  "183"
+ ],
+ "drop": [
+  "075",
+  "076"
+ ],
+ "edges": [
+  [
+   "072",
+   "right",
+   "073",
+   "left"
+  ],
+  [
+   "073",
+   "right",
+   "566",
+   "left"
+  ],
+  [
+   "566",
+   "right",
+   "568",
+   "left"
+  ],
+  [
+   "568",
+   "top",
+   "552",
+   "bottom"
+  ],
+  [
+   "552",
+   "top",
+   "567",
+   "bottom"
+  ],
+  [
+   "552",
+   "right",
+   "570",
+   "left",
+   [
+    5,
+    9
+   ],
+   [
+    12,
+    13
+   ]
+  ],
+  [
+   "552",
+   "left",
+   "553",
+   "right",
+   [
+    5,
+    9
+   ],
+   [
+    7,
+    10
+   ]
+  ],
+  [
+   "553",
+   "top",
+   "555",
+   "bottom"
+  ],
+  [
+   "555",
+   "top",
+   "548",
+   "bottom"
+  ],
+  [
+   "553",
+   "left",
+   "554",
+   "right",
+   [
+    3,
+    8
+   ],
+   [
+    7,
+    9
+   ]
+  ],
+  [
+   "554",
+   "top",
+   "557",
+   "bottom"
+  ],
+  [
+   "554",
+   "left",
+   "571",
+   "right",
+   [
+    7,
+    9
+   ],
+   [
+    6,
+    10
+   ]
+  ],
+  [
+   "571",
+   "left",
+   "572",
+   "right",
+   [
+    6,
+    10
+   ],
+   [
+    6,
+    10
+   ]
+  ],
+  [
+   "572",
+   "left",
+   "561",
+   "right",
+   [
+    6,
+    10
+   ],
+   [
+    9,
+    11
+   ]
+  ],
+  [
+   "553",
+   "bottom",
+   "556",
+   "top"
+  ],
+  [
+   "556",
+   "bottom",
+   "558",
+   "top"
+  ],
+  [
+   "558",
+   "bottom",
+   "560",
+   "top",
+   [
+    16,
+    21
+   ],
+   [
+    9,
+    14
+   ]
+  ],
+  [
+   "560",
+   "bottom",
+   "559",
+   "top",
+   [
+    4,
+    9
+   ],
+   [
+    16,
+    20
+   ]
+  ],
+  [
+   "560",
+   "right",
+   "543",
+   "left",
+   [
+    2,
+    3
+   ],
+   [
+    9,
+    12
+   ]
+  ],
+  [
+   "543",
+   "right",
+   "077",
+   "left",
+   [
+    9,
+    12
+   ],
+   [
+    5,
+    9
+   ]
+  ],
+  [
+   "077",
+   "right",
+   "078",
+   "bottom"
+  ],
+  [
+   "078",
+   "top",
+   "079",
+   "bottom"
+  ],
+  [
+   "079",
+   "top",
+   "080",
+   "bottom"
+  ]
+ ],
+ "doors": [
+  [
+   "073",
+   [
+    8,
+    4
+   ],
+   "074",
+   [
+    9,
+    4
+   ]
+  ],
+  [
+   "543",
+   [
+    11,
+    6
+   ],
+   "545",
+   [
+    12,
+    6
+   ]
+  ]
+ ],
+ "houses": [
+  [
+   "566",
+   [
+    4,
+    6
+   ],
+   "177"
+  ],
+  [
+   "566",
+   [
+    5,
+    6
+   ],
+   "177"
+  ],
+  [
+   "566",
+   [
+    11,
+    5
+   ],
+   "569"
+  ],
+  [
+   "566",
+   [
+    12,
+    5
+   ],
+   "569"
+  ],
+  [
+   "566",
+   [
+    19,
+    6
+   ],
+   "177"
+  ],
+  [
+   "566",
+   [
+    20,
+    6
+   ],
+   "177"
+  ],
+  [
+   "567",
+   [
+    5,
+    4
+   ],
+   "562"
+  ],
+  [
+   "567",
+   [
+    6,
+    4
+   ],
+   "562"
+  ],
+  [
+   "567",
+   [
+    11,
+    4
+   ],
+   "177"
+  ],
+  [
+   "567",
+   [
+    12,
+    4
+   ],
+   "177"
+  ],
+  [
+   "567",
+   [
+    16,
+    4
+   ],
+   "564"
+  ],
+  [
+   "567",
+   [
+    17,
+    4
+   ],
+   "564"
+  ],
+  [
+   "567",
+   [
+    2,
+    12
+   ],
+   "177"
+  ],
+  [
+   "567",
+   [
+    3,
+    12
+   ],
+   "177"
+  ],
+  [
+   "568",
+   [
+    4,
+    5
+   ],
+   "563"
+  ],
+  [
+   "568",
+   [
+    5,
+    5
+   ],
+   "563"
+  ],
+  [
+   "568",
+   [
+    10,
+    5
+   ],
+   "177"
+  ],
+  [
+   "568",
+   [
+    11,
+    5
+   ],
+   "177"
+  ]
+ ],
+ "warps": [
+  [
+   "548",
+   [
+    12,
+    3
+   ],
+   "549",
+   [
+    5,
+    2
+   ],
+   [
+    12,
+    4
+   ],
+   "down",
+   [
+    5,
+    3
+   ],
+   "down"
+  ],
+  [
+   "549",
+   [
+    17,
+    2
+   ],
+   "550",
+   [
+    4,
+    3
+   ],
+   [
+    17,
+    3
+   ],
+   "down",
+   [
+    4,
+    4
+   ],
+   "down"
+  ],
+  [
+   "550",
+   [
+    11,
+    13
+   ],
+   "551",
+   [
+    11,
+    14
+   ],
+   [
+    11,
+    12
+   ],
+   "up",
+   [
+    11,
+    12
+   ],
+   "up"
+  ],
+  [
+   "545",
+   [
+    9,
+    2
+   ],
+   "546",
+   [
+    11,
+    14
+   ],
+   [
+    9,
+    4
+   ],
+   "down",
+   [
+    11,
+    12
+   ],
+   "up"
+  ]
+ ],
+ "fix": {
+  "567": {
+   "walk": [
+    [
+     1,
+     13,
+     6,
+     13
+    ]
+   ]
+  },
+  "570": {
+   "walk": [
+    [
+     11,
+     8,
+     12,
+     8
+    ]
+   ]
+  },
+  "548": {
+   "walk": [
+    [
+     11,
+     3,
+     13,
+     4
+    ]
+   ],
+   "gr": [
+    [
+     4,
+     7,
+     9,
+     10
+    ],
+    [
+     15,
+     8,
+     20,
+     11
+    ]
+   ]
+  },
+  "549": {
+   "base": "#",
+   "walk": [
+    [
+     3,
+     3,
+     7,
+     13
+    ],
+    [
+     16,
+     3,
+     20,
+     13
+    ],
+    [
+     3,
+     9,
+     20,
+     13
+    ],
+    [
+     5,
+     2,
+     6,
+     2
+    ],
+    [
+     17,
+     2,
+     18,
+     2
+    ]
+   ],
+   "gr": [
+    [
+     10,
+     10,
+     13,
+     12
+    ]
+   ]
+  },
+  "550": {
+   "base": "#",
+   "walk": [
+    [
+     2,
+     3,
+     21,
+     8
+    ],
+    [
+     9,
+     9,
+     14,
+     12
+    ],
+    [
+     10,
+     13,
+     13,
+     13
+    ]
+   ],
+   "gr": [
+    [
+     4,
+     6,
+     8,
+     8
+    ]
+   ],
+   "block": [
+    [
+     14,
+     5,
+     20,
+     7
+    ]
+   ]
+  },
+  "551": {
+   "base": "#",
+   "walk": [
+    [
+     4,
+     2,
+     19,
+     12
+    ],
+    [
+     10,
+     13,
+     12,
+     14
+    ]
+   ],
+   "gr": [
+    [
+     5,
+     8,
+     8,
+     11
+    ],
+    [
+     15,
+     8,
+     18,
+     11
+    ]
+   ],
+   "block": [
+    [
+     8,
+     2,
+     15,
+     6
+    ],
+    [
+     4,
+     2,
+     4,
+     2
+    ]
+   ]
+  },
+  "571": {
+   "base": "#",
+   "walk": [
+    [
+     0,
+     1,
+     23,
+     14
+    ]
+   ],
+   "gr": [
+    [
+     9,
+     4,
+     11,
+     5
+    ],
+    [
+     14,
+     10,
+     16,
+     11
+    ]
+   ],
+   "block": [
+    [
+     7,
+     1,
+     7,
+     1
+    ],
+    [
+     16,
+     1,
+     16,
+     1
+    ],
+    [
+     3,
+     6,
+     3,
+     6
+    ],
+    [
+     19,
+     6,
+     19,
+     6
+    ],
+    [
+     11,
+     8,
+     11,
+     8
+    ],
+    [
+     4,
+     10,
+     4,
+     10
+    ],
+    [
+     7,
+     12,
+     7,
+     12
+    ],
+    [
+     19,
+     13,
+     19,
+     13
+    ]
+   ]
+  },
+  "572": {
+   "base": "#",
+   "walk": [
+    [
+     0,
+     1,
+     23,
+     14
+    ]
+   ],
+   "gr": [
+    [
+     8,
+     4,
+     11,
+     5
+    ],
+    [
+     7,
+     10,
+     7,
+     11
+    ],
+    [
+     13,
+     10,
+     16,
+     11
+    ]
+   ],
+   "block": [
+    [
+     4,
+     3,
+     4,
+     3
+    ],
+    [
+     17,
+     3,
+     18,
+     3
+    ],
+    [
+     19,
+     6,
+     19,
+     6
+    ],
+    [
+     10,
+     10,
+     10,
+     10
+    ],
+    [
+     8,
+     12,
+     8,
+     12
+    ],
+    [
+     17,
+     12,
+     18,
+     12
+    ]
+   ]
+  },
+  "561": {
+   "walk": [
+    [
+     13,
+     1,
+     13,
+     3
+    ],
+    [
+     20,
+     2,
+     20,
+     3
+    ],
+    [
+     14,
+     4,
+     14,
+     4
+    ],
+    [
+     17,
+     4,
+     17,
+     4
+    ],
+    [
+     14,
+     5,
+     17,
+     8
+    ]
+   ],
+   "gr": [
+    [
+     14,
+     1,
+     19,
+     3
+    ]
+   ],
+   "block": [
+    [
+     15,
+     4,
+     16,
+     4
+    ],
+    [
+     20,
+     1,
+     20,
+     1
+    ]
+   ]
+  },
+  "559": {
+   "block": [
+    [
+     6,
+     15,
+     11,
+     15
+    ]
+   ]
+  },
+  "557": {
+   "block": [
+    [
+     4,
+     0,
+     9,
+     0
+    ]
+   ]
+  },
+  "568": {
+   "block": [
+    [
+     4,
+     5,
+     5,
+     5
+    ]
+   ]
+  },
+  "543": {
+   "walk": [
+    [
+     11,
+     6,
+     12,
+     6
+    ]
+   ]
+  },
+  "545": {
+   "base": "#",
+   "walk": [
+    [
+     4,
+     6,
+     15,
+     16
+    ],
+    [
+     8,
+     2,
+     11,
+     5
+    ],
+    [
+     8,
+     17,
+     11,
+     17
+    ]
+   ]
+  },
+  "074": {
+   "base": "#",
+   "walk": [
+    [
+     4,
+     6,
+     15,
+     15
+    ],
+    [
+     8,
+     16,
+     11,
+     16
+    ],
+    [
+     9,
+     17,
+     10,
+     17
+    ]
+   ]
+  },
+  "569": {
+   "base": "#",
+   "walk": [
+    [
+     5,
+     6,
+     14,
+     15
+    ],
+    [
+     8,
+     16,
+     11,
+     17
+    ]
+   ]
+  },
+  "562": {
+   "base": "#",
+   "walk": [
+    [
+     3,
+     6,
+     16,
+     15
+    ],
+    [
+     7,
+     16,
+     9,
+     16
+    ]
+   ],
+   "block": [
+    [
+     3,
+     8,
+     7,
+     11
+    ],
+    [
+     10,
+     5,
+     14,
+     7
+    ]
+   ]
+  },
+  "563": {
+   "base": "#",
+   "walk": [
+    [
+     5,
+     5,
+     15,
+     15
+    ],
+    [
+     8,
+     16,
+     10,
+     16
+    ]
+   ],
+   "block": [
+    [
+     5,
+     5,
+     6,
+     8
+    ],
+    [
+     5,
+     12,
+     6,
+     15
+    ],
+    [
+     13,
+     12,
+     15,
+     15
+    ],
+    [
+     13,
+     5,
+     15,
+     7
+    ]
+   ]
+  },
+  "564": {
+   "base": "#",
+   "walk": [
+    [
+     4,
+     6,
+     15,
+     15
+    ],
+    [
+     8,
+     16,
+     11,
+     16
+    ]
+   ],
+   "block": [
+    [
+     6,
+     5,
+     13,
+     6
+    ]
+   ]
+  },
+  "546": {
+   "base": "#",
+   "walk": [
+    [
+     4,
+     3,
+     19,
+     11
+    ],
+    [
+     9,
+     12,
+     14,
+     12
+    ],
+    [
+     11,
+     13,
+     12,
+     14
+    ]
+   ],
+   "block": [
+    [
+     4,
+     3,
+     4,
+     3
+    ],
+    [
+     19,
+     3,
+     19,
+     3
+    ],
+    [
+     4,
+     11,
+     4,
+     11
+    ],
+    [
+     19,
+     11,
+     19,
+     11
+    ],
+    [
+     10,
+     4,
+     13,
+     4
+    ],
+    [
+     10,
+     11,
+     13,
+     11
+    ]
+   ]
+  }
+ },
+ "counters": {
+  "074": [
+   [
+    9,
+    5,
+    "bay"
+   ],
+   [
+    10,
+    5,
+    "bay"
+   ]
+  ],
+  "569": [
+   [
+    4,
+    9,
+    "shop"
+   ],
+   [
+    4,
+    10,
+    "shop"
+   ]
+  ]
+ },
+ "objects": {
+  "561": [
+   {
+    "tile": [
+     20,
+     1
+    ],
+    "k": "chest",
+    "item": "fullgel",
+    "n": 2,
+    "why": "secret grove reward beyond the shallows"
+   }
+  ],
+  "557": [
+   {
+    "tile": [
+     6,
+     0
+    ],
+    "k": "chest",
+    "item": "harmonic",
+    "n": 3,
+    "why": "Tidepool Ruins dead end reward"
+   }
+  ],
+  "559": [
+   {
+    "tile": [
+     8,
+     15
+    ],
+    "k": "chest",
+    "item": "revive",
+    "n": 2,
+    "why": "Sunken Channel dead end reward"
+   }
+  ],
+  "551": [
+   {
+    "tile": [
+     4,
+     2
+    ],
+    "k": "chest",
+    "item": "maxrevive",
+    "n": 1,
+    "why": "Drowned Grotto deep chamber reward"
+   }
+  ]
+ },
+ "spawns": {
+  "570": {
+   "default": [
+    12,
+    10
+   ]
+  },
+  "549": {
+   "default": [
+    5,
+    3
+   ]
+  },
+  "550": {
+   "default": [
+    4,
+    4
+   ]
+  },
+  "551": {
+   "default": [
+    11,
+    12
+   ]
+  },
+  "546": {
+   "default": [
+    11,
+    12
+   ]
+  }
+ },
+ "gate": [
+  {
+   "section": "570",
+   "tiles": [
+    [
+     11,
+     8
+    ],
+    [
+     12,
+     8
+    ]
+   ],
+   "node": "dustara",
+   "planet": "dustara",
+   "label": "your ship back to Dustara",
+   "why": "V3: spaceport beside Dig Camp (the ferry jetty stays the arrival)"
+  }
+ ],
+ "quest_spots": {},
+ "npc_unpin": [
+  "074"
+ ],
+ "npc_move": {
+  "075": "552",
+  "076": "556"
+ },
+ "npc_pins": {
+  "074": [
+   [
+    10,
+    4
+   ]
+  ]
+ },
+ "trainers_per_section": {
+  "561": 0,
+  "557": 0,
+  "559": 0,
+  "548": 0
+ },
+ "encounters": {
+  "552": "075",
+  "553": "076",
+  "555": "075",
+  "556": "076",
+  "558": "077",
+  "560": "077",
+  "554": "076",
+  "557": "076",
+  "559": "076",
+  "561": "077",
+  "548": "075",
+  "571": [
+   "076",
+   "drowned_sea"
+  ],
+  "572": [
+   "076",
+   "drowned_sea"
+  ],
+  "549": [
+   "075",
+   "rock_cave"
+  ],
+  "550": [
+   "076",
+   "rock_cave"
+  ],
+  "551": [
+   "077",
+   "rock_cave"
+  ]
+ }
+}

@@ -1,96 +1,6 @@
 {
- "doors": [
-  {
-   "interior": "083",
-   "parent": "082",
-   "door": [
-    8,
-    4
-   ],
-   "door2": [
-    9,
-    4
-   ],
-   "mat": [
-    [
-     7,
-     14
-    ],
-    [
-     8,
-     14
-    ]
-   ],
-   "confidence": "high",
-   "why": "V2: Cinder Hollow Recovery Bay (cyan cross)"
-  },
-  {
-   "interior": "084",
-   "parent": "082",
-   "door": [
-    14,
-    4
-   ],
-   "door2": [
-    15,
-    4
-   ],
-   "mat": [
-    [
-     7,
-     14
-    ],
-    [
-     8,
-     14
-    ]
-   ],
-   "confidence": "high",
-   "why": "V2: Cinder Hollow shop (flask sign)"
-  }
- ],
+ "doors": [],
  "objects": {
-  "083": [
-   {
-    "tile": [
-     7,
-     3
-    ],
-    "k": "bay"
-   },
-   {
-    "tile": [
-     8,
-     3
-    ],
-    "k": "bay"
-   }
-  ],
-  "084": [
-   {
-    "tile": [
-     7,
-     3
-    ],
-    "k": "shop"
-   },
-   {
-    "tile": [
-     8,
-     3
-    ],
-    "k": "shop"
-   }
-  ],
-  "092": [
-   {
-    "tile": [
-     7,
-     4
-    ],
-    "k": "keeper"
-   }
-  ],
   "082": [
    {
     "tile": [
@@ -114,44 +24,12 @@
      "A brass plate reads: 'Lit by Old Basalt.'"
     ]
    }
-  ],
-  "090": [
-   {
-    "tile": [
-     1,
-     4
-    ],
-    "k": "sign",
-    "t": [
-     "SHAFT 4 - CLOSED. Ember rain. Do not enter.",
-     "Volcano Tower: follow the ridge east."
-    ]
-   }
   ]
  },
  "apprentices": {
   "091": 2
  },
- "trainer_tiles": [
-  {
-   "section": "091",
-   "n": 0,
-   "tile": [
-    3,
-    12
-   ],
-   "face": "right"
-  },
-  {
-   "section": "091",
-   "n": 1,
-   "tile": [
-    12,
-    12
-   ],
-   "face": "left"
-  }
- ],
+ "trainer_tiles": [],
  "trainers_per_section": {
   "087": 1,
   "088": 1,
@@ -256,8 +134,8 @@
    {
     "art": "nurse",
     "tile": [
-     8,
-     3
+     10,
+     5
     ],
     "t": [
      "Nurse: Welcome to the Recovery Bay. We'll have your team patched up and cooled down in no time."
@@ -280,8 +158,8 @@
    {
     "art": "shop",
     "tile": [
-     8,
-     3
+     4,
+     10
     ],
     "t": [
      "Clerk: Stasis Pods, burn salve, cooling tonics. Everything a Linker needs down the mines."
@@ -296,54 +174,6 @@
     ],
     "t": [
      "Smith: Heat-proof Stasis Pods? No such thing, kid. They all hold up fine down there."
-    ],
-    "stay": true
-   }
-  ],
-  "085": [
-   {
-    "art": "miner",
-    "t": [
-     "Rail hand: Stay off the tracks when a cart's coming. The carts don't stop, and neither does the lava."
-    ],
-    "tile": [
-     10,
-     5
-    ],
-    "stay": true
-   },
-   {
-    "art": "wanderer",
-    "t": [
-     "Ash walker: Wild Alienmon nest in the ember-weed. Stick to the dirt if you want a quiet walk."
-    ],
-    "tile": [
-     4,
-     8
-    ],
-    "stay": true
-   }
-  ],
-  "086": [
-   {
-    "art": "technician",
-    "t": [
-     "Rail smith: The Deep Mines start past the east bend. Three levels down, and hotter every level."
-    ],
-    "tile": [
-     12,
-     5
-    ],
-    "stay": true
-   },
-   {
-    "art": "explorer",
-    "t": [
-     "Hiker: Trainers out here spot you from five paces. Eyes front, Pods ready."
-    ],
-    "tile": [
-     19,
-     9
     ],
     "stay": true
    }
@@ -388,41 +218,6 @@
     "stay": true
    }
   ],
-  "090": [
-   {
-    "art": "technician",
-    "t": [
-     "Forge keeper: Every forge on this ridge was lit from the volcano's heart. Old Basalt lit half of 'em."
-    ],
-    "tile": [
-     12,
-     6
-    ],
-    "stay": true
-   },
-   {
-    "art": "pilgrim",
-    "t": [
-     "Pilgrim: The Volcano Tower is just east. Keeper Basalt waits at the top. He doesn't go easy on anyone."
-    ],
-    "tile": [
-     6,
-     9
-    ],
-    "stay": true
-   },
-   {
-    "art": "strand",
-    "t": [
-     "Helix grunt: Nothing to see here. Just... surveying the ridge. Move along, Linker."
-    ],
-    "tile": [
-     21,
-     9
-    ],
-    "stay": true
-   }
-  ],
   "091": [
    {
     "art": "guard",
@@ -432,6 +227,61 @@
     ],
     "t": [
      "Tower guard: Basalt's apprentices hold this floor. Beat them and the stairs are yours."
+    ],
+    "stay": true
+   }
+  ],
+  "682": [
+   {
+    "art": "miner",
+    "t": [
+     "Rail hand: Stay off the tracks when a cart's coming. The carts don't stop, and neither does the lava."
+    ],
+    "stay": true
+   },
+   {
+    "art": "wanderer",
+    "t": [
+     "Ash walker: Wild Alienmon nest in the ember-weed. Stick to the dirt if you want a quiet walk."
+    ],
+    "stay": true
+   }
+  ],
+  "684": [
+   {
+    "art": "technician",
+    "t": [
+     "Rail smith: The Deep Mines start past the east bend. Three levels down, and hotter every level."
+    ],
+    "stay": true
+   },
+   {
+    "art": "explorer",
+    "t": [
+     "Hiker: Trainers out here spot you from five paces. Eyes front, Pods ready."
+    ],
+    "stay": true
+   }
+  ],
+  "681": [
+   {
+    "art": "technician",
+    "t": [
+     "Forge keeper: Every forge on this ridge was lit from the volcano's heart. Old Basalt lit half of 'em."
+    ],
+    "stay": true
+   },
+   {
+    "art": "pilgrim",
+    "t": [
+     "Pilgrim: The Volcano Tower is just east. Keeper Basalt waits at the top. He doesn't go easy on anyone."
+    ],
+    "stay": true
+   },
+   {
+    "art": "strand",
+    "t": [
+     "Helix grunt: Nothing to see here. Just... surveying the ridge. Move along, Linker."
     ],
     "stay": true
    }

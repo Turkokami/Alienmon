@@ -1,0 +1,1594 @@
+{
+ "_report": "Neonis, rebuilt on the V3 world kit. The landing ring on the Starport deck (062) stays the arrival; the kit Spaceport (666) sits west of it with the ship home (gate). Town = Starport deck 062 + Neon Boulevard 063 (both kept, story/quest spots, Courtroom door) + Neonis Lane Homes (662), then the Neon Crossroads hub (643) with Quiet Court north (663: apartment, Recording Studio, Arcade Hall 180 reused as kit Arcade Hall) and Farmstead Edge south (664: Neonis House 176) leading east to the Neon Megadome (635 -> lobby 636 -> battle floor 637). Recovery Bay 064 and Shop 065 swapped to the kit rooms (doors from both 062 and 063). East of the hub, Signal Junction (644) branches: north up Skyline Overlook (647) to the Undercity Tunnels cave (639 entrance + 640/641/642, maxrevive chest in the deep chamber); east to Voltspire Plaza (659) whose door opens the Voltspire (069 = kit Trial Floor, 071 = kit Keeper Room, DJ Static keeper at 12,4); south down Bassline Ramp (646) to Canal Fork (645, water edge): west to the Glowgarden Hideaway (654, hidden dead end, fullgel chest), east to the Helix Front Office (652 -> Helix Secret Lab 653), south along Canal Quay (648) -> Broadcast Plaza (651) -> Arcade Alleys (066 reused, keeps S53 quest spots) -> Static Canal (650, dead end, harmonic chest). Broadcast Route A/B (067/068) and Voltspire 2F (070) dropped; their NPCs moved to 644/647/069 and their wild tables reused.",
+ "_unused": [
+  {
+   "id": "638",
+   "why": "Neon Megadome Battle Room: one battle room is enough, the Battle Floor (637) is used"
+  }
+ ],
+ "planet": "neonis",
+ "use": {
+  "666": {
+   "kit": "666",
+   "name": "Neonis Spaceport",
+   "type": "landmark"
+  },
+  "064": {
+   "kit": "658",
+   "name": "Neonis Recovery Bay",
+   "type": "interior"
+  },
+  "065": {
+   "kit": "665",
+   "name": "Neonis Shop",
+   "type": "interior"
+  },
+  "662": {
+   "kit": "662",
+   "name": "Neonis Lane Homes",
+   "type": "town"
+  },
+  "663": {
+   "kit": "663",
+   "name": "Neonis Quiet Court",
+   "type": "town"
+  },
+  "664": {
+   "kit": "664",
+   "name": "Neonis Farmstead Edge",
+   "type": "town"
+  },
+  "643": {
+   "kit": "643",
+   "name": "Neon Crossroads",
+   "type": "route"
+  },
+  "644": {
+   "kit": "644",
+   "name": "Signal Junction",
+   "type": "route"
+  },
+  "647": {
+   "kit": "647",
+   "name": "Skyline Overlook",
+   "type": "route"
+  },
+  "639": {
+   "kit": "639",
+   "name": "Undercity Tunnel Entrance",
+   "type": "route"
+  },
+  "640": {
+   "kit": "640",
+   "name": "Undercity Tunnels B1",
+   "type": "cave"
+  },
+  "641": {
+   "kit": "641",
+   "name": "Undercity Tunnels B2",
+   "type": "cave"
+  },
+  "642": {
+   "kit": "642",
+   "name": "Undercity Deep Chamber",
+   "type": "cave"
+  },
+  "659": {
+   "kit": "659",
+   "name": "Voltspire Plaza",
+   "type": "landmark"
+  },
+  "069": {
+   "kit": "660",
+   "name": "Voltspire Trial Floor",
+   "type": "tower"
+  },
+  "071": {
+   "kit": "661",
+   "name": "Voltspire Keeper Room",
+   "type": "tower"
+  },
+  "646": {
+   "kit": "646",
+   "name": "Bassline Ramp",
+   "type": "route"
+  },
+  "645": {
+   "kit": "645",
+   "name": "Canal Fork",
+   "type": "route"
+  },
+  "654": {
+   "kit": "654",
+   "name": "Glowgarden Hideaway",
+   "type": "field"
+  },
+  "652": {
+   "kit": "652",
+   "name": "Helix Front Office",
+   "type": "landmark"
+  },
+  "653": {
+   "kit": "653",
+   "name": "Neonis Helix Lab",
+   "type": "interior"
+  },
+  "648": {
+   "kit": "648",
+   "name": "Canal Quay",
+   "type": "route"
+  },
+  "651": {
+   "kit": "651",
+   "name": "Broadcast Plaza",
+   "type": "route"
+  },
+  "066": {
+   "kit": "649",
+   "name": "Arcade Alleys",
+   "type": "route"
+  },
+  "650": {
+   "kit": "650",
+   "name": "Static Canal",
+   "type": "route"
+  },
+  "635": {
+   "kit": "635",
+   "name": "Neon Megadome",
+   "type": "landmark"
+  },
+  "636": {
+   "kit": "636",
+   "name": "Neon Megadome Lobby",
+   "type": "interior"
+  },
+  "637": {
+   "kit": "637",
+   "name": "Neon Megadome Battle Floor",
+   "type": "interior"
+  },
+  "180": {
+   "kit": "655",
+   "name": "Arcade Hall",
+   "type": "interior"
+  },
+  "656": {
+   "kit": "656",
+   "name": "Recording Studio",
+   "type": "interior"
+  },
+  "657": {
+   "kit": "657",
+   "name": "Noodle Bar",
+   "type": "interior"
+  }
+ },
+ "keep": [
+  "062",
+  "063",
+  "170",
+  "176",
+  "192"
+ ],
+ "drop": [
+  "067",
+  "068",
+  "070"
+ ],
+ "edges": [
+  [
+   "666",
+   "right",
+   "062",
+   "left",
+   [
+    11,
+    12
+   ],
+   [
+    11,
+    12
+   ]
+  ],
+  [
+   "062",
+   "right",
+   "063",
+   "left"
+  ],
+  [
+   "063",
+   "right",
+   "662",
+   "left",
+   [
+    5,
+    10
+   ],
+   [
+    8,
+    13
+   ]
+  ],
+  [
+   "662",
+   "right",
+   "643",
+   "left"
+  ],
+  [
+   "643",
+   "top",
+   "663",
+   "bottom"
+  ],
+  [
+   "643",
+   "bottom",
+   "664",
+   "top"
+  ],
+  [
+   "664",
+   "right",
+   "635",
+   "left"
+  ],
+  [
+   "643",
+   "right",
+   "644",
+   "left"
+  ],
+  [
+   "644",
+   "top",
+   "647",
+   "bottom"
+  ],
+  [
+   "647",
+   "top",
+   "639",
+   "bottom"
+  ],
+  [
+   "644",
+   "right",
+   "659",
+   "left"
+  ],
+  [
+   "644",
+   "bottom",
+   "646",
+   "top"
+  ],
+  [
+   "646",
+   "bottom",
+   "645",
+   "top"
+  ],
+  [
+   "645",
+   "left",
+   "654",
+   "right"
+  ],
+  [
+   "645",
+   "right",
+   "652",
+   "left"
+  ],
+  [
+   "645",
+   "bottom",
+   "648",
+   "top"
+  ],
+  [
+   "648",
+   "bottom",
+   "651",
+   "top"
+  ],
+  [
+   "651",
+   "bottom",
+   "066",
+   "top"
+  ],
+  [
+   "066",
+   "bottom",
+   "650",
+   "top",
+   [
+    1,
+    8
+   ],
+   null
+  ]
+ ],
+ "doors": [
+  [
+   "659",
+   [
+    11,
+    7
+   ],
+   "069",
+   [
+    12,
+    7
+   ]
+  ],
+  [
+   "652",
+   [
+    11,
+    6
+   ],
+   "653",
+   [
+    12,
+    6
+   ]
+  ],
+  [
+   "635",
+   [
+    11,
+    7
+   ],
+   "636",
+   [
+    12,
+    7
+   ]
+  ]
+ ],
+ "houses": [
+  [
+   "062",
+   [
+    9,
+    4
+   ],
+   "064"
+  ],
+  [
+   "062",
+   [
+    10,
+    4
+   ],
+   "064"
+  ],
+  [
+   "062",
+   [
+    14,
+    4
+   ],
+   "065"
+  ],
+  [
+   "062",
+   [
+    15,
+    4
+   ],
+   "065"
+  ],
+  [
+   "063",
+   [
+    3,
+    4
+   ],
+   "064"
+  ],
+  [
+   "063",
+   [
+    4,
+    4
+   ],
+   "064"
+  ],
+  [
+   "063",
+   [
+    8,
+    4
+   ],
+   "065"
+  ],
+  [
+   "063",
+   [
+    9,
+    4
+   ],
+   "065"
+  ],
+  [
+   "662",
+   [
+    3,
+    6
+   ],
+   "192"
+  ],
+  [
+   "662",
+   [
+    4,
+    6
+   ],
+   "192"
+  ],
+  [
+   "662",
+   [
+    11,
+    6
+   ],
+   "657"
+  ],
+  [
+   "662",
+   [
+    12,
+    6
+   ],
+   "657"
+  ],
+  [
+   "662",
+   [
+    18,
+    6
+   ],
+   "192"
+  ],
+  [
+   "662",
+   [
+    19,
+    6
+   ],
+   "192"
+  ],
+  [
+   "663",
+   [
+    6,
+    4
+   ],
+   "192"
+  ],
+  [
+   "663",
+   [
+    7,
+    4
+   ],
+   "192"
+  ],
+  [
+   "663",
+   [
+    12,
+    4
+   ],
+   "656"
+  ],
+  [
+   "663",
+   [
+    17,
+    4
+   ],
+   "180"
+  ],
+  [
+   "663",
+   [
+    18,
+    4
+   ],
+   "180"
+  ],
+  [
+   "664",
+   [
+    12,
+    4
+   ],
+   "176"
+  ],
+  [
+   "664",
+   [
+    13,
+    4
+   ],
+   "176"
+  ],
+  [
+   "664",
+   [
+    18,
+    4
+   ],
+   "176"
+  ],
+  [
+   "664",
+   [
+    19,
+    4
+   ],
+   "176"
+  ]
+ ],
+ "warps": [
+  [
+   "639",
+   [
+    12,
+    3
+   ],
+   "640",
+   [
+    5,
+    2
+   ],
+   [
+    12,
+    4
+   ],
+   "down",
+   [
+    5,
+    3
+   ],
+   "down"
+  ],
+  [
+   "640",
+   [
+    17,
+    2
+   ],
+   "641",
+   [
+    5,
+    3
+   ],
+   [
+    17,
+    3
+   ],
+   "down",
+   [
+    5,
+    4
+   ],
+   "down"
+  ],
+  [
+   "641",
+   [
+    12,
+    13
+   ],
+   "642",
+   [
+    12,
+    14
+   ],
+   [
+    12,
+    12
+   ],
+   "up",
+   [
+    12,
+    12
+   ],
+   "up"
+  ],
+  [
+   "069",
+   [
+    16,
+    3
+   ],
+   "071",
+   [
+    11,
+    15
+   ],
+   [
+    16,
+    6
+   ],
+   "down",
+   [
+    11,
+    13
+   ],
+   "up"
+  ],
+  [
+   "636",
+   [
+    9,
+    2
+   ],
+   "637",
+   [
+    11,
+    14
+   ],
+   [
+    9,
+    4
+   ],
+   "down",
+   [
+    11,
+    12
+   ],
+   "up"
+  ]
+ ],
+ "fix": {
+  "062": {
+   "block": [
+    [
+     0,
+     5,
+     0,
+     10
+    ]
+   ]
+  },
+  "063": {
+   "block": [
+    [
+     3,
+     4,
+     4,
+     4
+    ],
+    [
+     8,
+     4,
+     9,
+     4
+    ]
+   ]
+  },
+  "666": {
+   "walk": [
+    [
+     11,
+     8,
+     12,
+     8
+    ],
+    [
+     13,
+     11,
+     23,
+     12
+    ]
+   ]
+  },
+  "662": {
+   "walk": [
+    [
+     0,
+     9,
+     23,
+     13
+    ]
+   ],
+   "block": [
+    [
+     23,
+     14,
+     23,
+     15
+    ],
+    [
+     10,
+     6,
+     10,
+     6
+    ]
+   ]
+  },
+  "663": {
+   "walk": [
+    [
+     10,
+     13,
+     13,
+     15
+    ],
+    [
+     5,
+     5,
+     22,
+     5
+    ]
+   ]
+  },
+  "664": {
+   "walk": [
+    [
+     10,
+     5,
+     13,
+     5
+    ],
+    [
+     16,
+     5,
+     20,
+     5
+    ],
+    [
+     20,
+     6,
+     23,
+     10
+    ]
+   ],
+   "block": [
+    [
+     23,
+     11,
+     23,
+     13
+    ]
+   ]
+  },
+  "643": {
+   "base": "#",
+   "walk": [
+    [
+     0,
+     5,
+     23,
+     9
+    ],
+    [
+     8,
+     0,
+     13,
+     15
+    ]
+   ]
+  },
+  "645": {
+   "walk": [
+    [
+     12,
+     0,
+     18,
+     15
+    ],
+    [
+     0,
+     7,
+     23,
+     11
+    ]
+   ]
+  },
+  "647": {
+   "walk": [
+    [
+     9,
+     0,
+     14,
+     15
+    ]
+   ]
+  },
+  "635": {
+   "walk": [
+    [
+     0,
+     8,
+     23,
+     12
+    ],
+    [
+     11,
+     7,
+     12,
+     7
+    ]
+   ]
+  },
+  "652": {
+   "walk": [
+    [
+     0,
+     8,
+     23,
+     12
+    ],
+    [
+     11,
+     6,
+     12,
+     7
+    ]
+   ]
+  },
+  "659": {
+   "walk": [
+    [
+     0,
+     9,
+     23,
+     12
+    ],
+    [
+     10,
+     8,
+     13,
+     8
+    ],
+    [
+     11,
+     7,
+     12,
+     7
+    ]
+   ]
+  },
+  "650": {
+   "block": [
+    [
+     0,
+     3,
+     1,
+     9
+    ],
+    [
+     13,
+     15,
+     16,
+     15
+    ]
+   ]
+  },
+  "654": {
+   "base": "#",
+   "walk": [
+    [
+     0,
+     9,
+     23,
+     12
+    ],
+    [
+     14,
+     5,
+     17,
+     8
+    ],
+    [
+     13,
+     1,
+     13,
+     4
+    ],
+    [
+     14,
+     4,
+     14,
+     4
+    ],
+    [
+     20,
+     1,
+     20,
+     3
+    ]
+   ],
+   "gr": [
+    [
+     14,
+     1,
+     19,
+     3
+    ],
+    [
+     3,
+     6,
+     8,
+     8
+    ]
+   ]
+  },
+  "639": {
+   "base": "#",
+   "walk": [
+    [
+     10,
+     4,
+     14,
+     15
+    ],
+    [
+     12,
+     3,
+     12,
+     3
+    ],
+    [
+     2,
+     11,
+     9,
+     13
+    ],
+    [
+     3,
+     5,
+     9,
+     5
+    ],
+    [
+     15,
+     5,
+     21,
+     7
+    ]
+   ],
+   "gr": [
+    [
+     4,
+     7,
+     9,
+     10
+    ],
+    [
+     15,
+     9,
+     20,
+     12
+    ]
+   ]
+  },
+  "640": {
+   "base": "#",
+   "walk": [
+    [
+     3,
+     3,
+     8,
+     13
+    ],
+    [
+     15,
+     3,
+     20,
+     13
+    ],
+    [
+     3,
+     9,
+     20,
+     13
+    ],
+    [
+     5,
+     2,
+     6,
+     2
+    ],
+    [
+     17,
+     2,
+     18,
+     2
+    ]
+   ],
+   "gr": [
+    [
+     10,
+     10,
+     13,
+     12
+    ]
+   ]
+  },
+  "641": {
+   "base": "#",
+   "walk": [
+    [
+     2,
+     4,
+     21,
+     8
+    ],
+    [
+     7,
+     3,
+     21,
+     3
+    ],
+    [
+     4,
+     3,
+     6,
+     3
+    ],
+    [
+     10,
+     9,
+     14,
+     12
+    ],
+    [
+     11,
+     13,
+     13,
+     13
+    ]
+   ],
+   "gr": [
+    [
+     4,
+     6,
+     9,
+     8
+    ]
+   ],
+   "block": [
+    [
+     15,
+     5,
+     19,
+     8
+    ]
+   ]
+  },
+  "642": {
+   "base": "#",
+   "walk": [
+    [
+     3,
+     2,
+     19,
+     12
+    ],
+    [
+     11,
+     13,
+     12,
+     14
+    ]
+   ],
+   "gr": [
+    [
+     4,
+     8,
+     8,
+     11
+    ],
+    [
+     15,
+     8,
+     19,
+     11
+    ]
+   ],
+   "block": [
+    [
+     8,
+     2,
+     15,
+     6
+    ],
+    [
+     19,
+     2,
+     19,
+     2
+    ]
+   ]
+  },
+  "069": {
+   "base": "#",
+   "walk": [
+    [
+     2,
+     3,
+     17,
+     16
+    ],
+    [
+     8,
+     17,
+     10,
+     17
+    ]
+   ],
+   "block": [
+    [
+     2,
+     7,
+     12,
+     8
+    ],
+    [
+     7,
+     11,
+     17,
+     12
+    ],
+    [
+     5,
+     13,
+     7,
+     15
+    ],
+    [
+     15,
+     3,
+     15,
+     5
+    ],
+    [
+     2,
+     3,
+     14,
+     3
+    ]
+   ]
+  },
+  "071": {
+   "base": "#",
+   "walk": [
+    [
+     4,
+     4,
+     19,
+     12
+    ],
+    [
+     4,
+     3,
+     9,
+     3
+    ],
+    [
+     14,
+     3,
+     19,
+     3
+    ],
+    [
+     10,
+     13,
+     13,
+     15
+    ]
+   ],
+   "block": [
+    [
+     8,
+     10,
+     15,
+     10
+    ]
+   ]
+  },
+  "636": {
+   "base": "#",
+   "walk": [
+    [
+     4,
+     6,
+     15,
+     16
+    ],
+    [
+     8,
+     4,
+     11,
+     5
+    ],
+    [
+     8,
+     1,
+     11,
+     3
+    ],
+    [
+     8,
+     17,
+     11,
+     17
+    ]
+   ]
+  },
+  "637": {
+   "base": "#",
+   "walk": [
+    [
+     3,
+     3,
+     20,
+     12
+    ],
+    [
+     10,
+     13,
+     13,
+     14
+    ]
+   ]
+  },
+  "653": {
+   "base": "#",
+   "walk": [
+    [
+     4,
+     5,
+     15,
+     16
+    ],
+    [
+     8,
+     17,
+     11,
+     17
+    ]
+   ],
+   "block": [
+    [
+     8,
+     8,
+     12,
+     11
+    ]
+   ]
+  },
+  "064": {
+   "base": "#",
+   "walk": [
+    [
+     4,
+     7,
+     15,
+     16
+    ],
+    [
+     9,
+     17,
+     10,
+     17
+    ]
+   ]
+  },
+  "065": {
+   "base": "#",
+   "walk": [
+    [
+     5,
+     5,
+     16,
+     16
+    ],
+    [
+     8,
+     17,
+     11,
+     17
+    ]
+   ]
+  },
+  "180": {
+   "base": "#",
+   "walk": [
+    [
+     4,
+     5,
+     15,
+     14
+    ],
+    [
+     7,
+     15,
+     12,
+     15
+    ],
+    [
+     8,
+     16,
+     11,
+     16
+    ]
+   ],
+   "block": [
+    [
+     13,
+     6,
+     17,
+     8
+    ]
+   ]
+  },
+  "656": {
+   "base": "#",
+   "walk": [
+    [
+     3,
+     7,
+     16,
+     15
+    ],
+    [
+     9,
+     16,
+     10,
+     16
+    ]
+   ],
+   "block": [
+    [
+     3,
+     8,
+     7,
+     12
+    ],
+    [
+     12,
+     9,
+     16,
+     14
+    ],
+    [
+     3,
+     14,
+     5,
+     15
+    ]
+   ]
+  },
+  "657": {
+   "base": "#",
+   "walk": [
+    [
+     5,
+     7,
+     14,
+     15
+    ],
+    [
+     7,
+     16,
+     10,
+     16
+    ]
+   ],
+   "block": [
+    [
+     12,
+     8,
+     15,
+     11
+    ]
+   ]
+  },
+  "644": {
+   "walk": [
+    [
+     17,
+     11,
+     21,
+     15
+    ]
+   ]
+  }
+ },
+ "counters": {
+  "064": [
+   [
+    9,
+    6,
+    "bay"
+   ],
+   [
+    10,
+    6,
+    "bay"
+   ]
+  ],
+  "065": [
+   [
+    4,
+    9,
+    "shop"
+   ],
+   [
+    4,
+    10,
+    "shop"
+   ]
+  ]
+ },
+ "objects": {
+  "071": [
+   {
+    "tile": [
+     12,
+     4
+    ],
+    "k": "keeper",
+    "why": "DJ Static at the decks, challenged from (12,5)"
+   }
+  ],
+  "654": [
+   {
+    "tile": [
+     16,
+     4
+    ],
+    "k": "chest",
+    "item": "fullgel",
+    "n": 2,
+    "why": "hidden glowgarden reward"
+   }
+  ],
+  "650": [
+   {
+    "tile": [
+     14,
+     15
+    ],
+    "k": "chest",
+    "item": "harmonic",
+    "n": 3,
+    "why": "Static Canal dead end reward"
+   }
+  ],
+  "642": [
+   {
+    "tile": [
+     19,
+     2
+    ],
+    "k": "chest",
+    "item": "maxrevive",
+    "n": 1,
+    "why": "Undercity deep chamber reward"
+   }
+  ]
+ },
+ "spawns": {
+  "666": {
+   "default": [
+    11,
+    10
+   ]
+  },
+  "069": {
+   "default": [
+    9,
+    15
+   ]
+  },
+  "071": {
+   "default": [
+    11,
+    12
+   ]
+  },
+  "640": {
+   "default": [
+    5,
+    3
+   ]
+  },
+  "641": {
+   "default": [
+    5,
+    4
+   ]
+  },
+  "642": {
+   "default": [
+    12,
+    12
+   ]
+  },
+  "637": {
+   "default": [
+    11,
+    12
+   ]
+  }
+ },
+ "gate": [
+  {
+   "section": "666",
+   "tiles": [
+    [
+     11,
+     8
+    ],
+    [
+     12,
+     8
+    ]
+   ],
+   "node": "dustara",
+   "planet": "dustara",
+   "label": "your ship back to Dustara",
+   "why": "V3: the spaceport beside the Starport deck is the way home"
+  }
+ ],
+ "quest_spots": {},
+ "npc_unpin": [
+  "064",
+  "065",
+  "066",
+  "069"
+ ],
+ "npc_move": {
+  "067": "644",
+  "068": "647",
+  "070": "069"
+ },
+ "npc_pins": {
+  "064": [
+   [
+    9,
+    5
+   ]
+  ],
+  "065": [
+   [
+    3,
+    9
+   ]
+  ]
+ },
+ "trainers_per_section": {
+  "654": 0,
+  "650": 0,
+  "639": 0
+ },
+ "encounters": {
+  "066": "066",
+  "644": "067",
+  "645": "067",
+  "648": "067",
+  "651": "067",
+  "646": "068",
+  "647": "068",
+  "650": "068",
+  "654": "066",
+  "639": "068",
+  "640": "067",
+  "641": "068",
+  "642": "066"
+ },
+ "trainer_tiles": []
+}

@@ -327,6 +327,19 @@ for sec in world.values():
     if 'default' not in sec['spawns'] and sec['edges']:   # outdoor: just inside the first edge exit
         side, e = next(iter(sec['edges'].items()))
         sec['spawns']['default'] = inward(edge_tiles(sec, side, e['range'])[0], side)[0]
+def _snap(sid, t):   # a spawn on a wall moves to the nearest walkable tile
+    p_ = os.path.join(ROOT, f'data/collision/{sid}.json')
+    if not t or not os.path.exists(p_): return t
+    R_ = json.load(open(p_))['rows']; H_, W_ = len(R_), len(R_[0])
+    ok_ = lambda x, y: 0 <= x < W_ and 0 <= y < H_ and R_[y][x] in '.,'
+    if ok_(*t): return t
+    for r_ in range(1, 8):
+        c_ = [(t[0] + dx, t[1] + dy) for dx in range(-r_, r_ + 1) for dy in range(-r_, r_ + 1) if max(abs(dx), abs(dy)) == r_ and ok_(t[0] + dx, t[1] + dy)]
+        if c_: return list(min(c_, key=lambda q: abs(q[0] - t[0]) + abs(q[1] - t[1])))
+    return t
+for sid_, sec in world.items():
+    for k_, v_ in list(sec['spawns'].items()):
+        if isinstance(v_, list) and len(v_) == 2: sec['spawns'][k_] = _snap(sid_, v_)
 for sec in world.values():
     if 'default' not in sec['spawns']:
         w0 = sec['warps'][0] if sec['warps'] else None   # one step in from this section's own first warp

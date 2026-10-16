@@ -1,0 +1,1468 @@
+{
+ "_report": "Helix Station on the V3 kit. Arrive at the Docking Ring (kept: medical bay, Barracks/Labs/Observation Deck doors, shuttle gate). East through Habitation Row (Lane Homes -> Crew Quarters) to Deck Crossroads, the main hub: north is the story chain Containment Wing 1F -> 2F -> Engineering -> Vex's Arena (all kept, re-joined edge to edge), south the Spaceport (second gate home), east the Coolant Fork. Coolant Fork: north Officers Court (houses, Command Bridge), south the Coolant Basin water edge and a side route Docking Ramp -> Reactor Channel -> Specimen Annex -> Viewport Overlook (dead end, chest); east the Corridor Junction hub. Corridor Junction: north Hangar Deck -> Rift Rock Mine (entrance + 1F/2F/Deep Chamber, chest); east the Helix Proving Grounds (lobby -> battle room) and on to the Comms Spire (trial floor -> uplink room, chest; no keeper, Admin Vex stays the boss in 113); south Hydroponics Edge (houses, Containment Lab) and the Hidden Hydro Garden (chest).",
+ "planet": "helix",
+ "arrival": "105",
+ "arrival_why": "the Docking Ring stays the arrival (story hub with the medical bay, barracks, labs and the Observation Deck gangway)",
+ "use": {
+  "629": {
+   "kit": "629",
+   "name": "Habitation Row",
+   "type": "town"
+  },
+  "630": {
+   "kit": "630",
+   "name": "Officers Court",
+   "type": "town"
+  },
+  "632": {
+   "kit": "632",
+   "name": "Hydroponics Edge",
+   "type": "town"
+  },
+  "612": {
+   "kit": "612",
+   "name": "Deck Crossroads",
+   "type": "route"
+  },
+  "614": {
+   "kit": "614",
+   "name": "Station Coolant Fork",
+   "type": "route"
+  },
+  "613": {
+   "kit": "613",
+   "name": "Corridor Junction",
+   "type": "route"
+  },
+  "634": {
+   "kit": "634",
+   "name": "Helix Station Spaceport",
+   "type": "landmark"
+  },
+  "617": {
+   "kit": "617",
+   "name": "Coolant Basin",
+   "type": "route"
+  },
+  "615": {
+   "kit": "615",
+   "name": "Docking Ramp",
+   "type": "route"
+  },
+  "619": {
+   "kit": "619",
+   "name": "Reactor Channel",
+   "type": "route"
+  },
+  "618": {
+   "kit": "618",
+   "name": "Specimen Annex",
+   "type": "route"
+  },
+  "616": {
+   "kit": "616",
+   "name": "Viewport Overlook",
+   "type": "route"
+  },
+  "620": {
+   "kit": "620",
+   "name": "Hangar Deck",
+   "type": "route"
+  },
+  "608": {
+   "kit": "608",
+   "name": "Rift Rock Mine Entrance",
+   "type": "route"
+  },
+  "609": {
+   "kit": "609",
+   "name": "Rift Rock Mine 1F",
+   "type": "cave"
+  },
+  "610": {
+   "kit": "610",
+   "name": "Rift Rock Mine 2F",
+   "type": "cave"
+  },
+  "611": {
+   "kit": "611",
+   "name": "Rift Rock Deep Chamber",
+   "type": "cave"
+  },
+  "605": {
+   "kit": "605",
+   "name": "Helix Proving Grounds",
+   "type": "landmark"
+  },
+  "606": {
+   "kit": "606",
+   "name": "Proving Grounds Lobby",
+   "type": "interior"
+  },
+  "607": {
+   "kit": "607",
+   "name": "Proving Grounds Battle Room",
+   "type": "interior"
+  },
+  "626": {
+   "kit": "626",
+   "name": "Helix Comms Spire",
+   "type": "landmark"
+  },
+  "627": {
+   "kit": "627",
+   "name": "Comms Spire Trial Floor",
+   "type": "tower"
+  },
+  "628": {
+   "kit": "628",
+   "name": "Comms Spire Uplink Room",
+   "type": "tower"
+  },
+  "621": {
+   "kit": "621",
+   "name": "Hidden Hydro Garden",
+   "type": "field"
+  },
+  "622": {
+   "kit": "622",
+   "name": "Containment Lab",
+   "type": "interior"
+  },
+  "623": {
+   "kit": "623",
+   "name": "Crew Quarters",
+   "type": "interior"
+  },
+  "624": {
+   "kit": "624",
+   "name": "Command Bridge",
+   "type": "interior"
+  }
+ },
+ "keep": [
+  "105",
+  "106",
+  "107",
+  "108",
+  "109",
+  "110",
+  "111",
+  "112",
+  "113"
+ ],
+ "drop": [],
+ "edges": [
+  [
+   "105",
+   "right",
+   "629",
+   "left"
+  ],
+  [
+   "629",
+   "right",
+   "612",
+   "left"
+  ],
+  [
+   "612",
+   "top",
+   "109",
+   "bottom"
+  ],
+  [
+   "109",
+   "top",
+   "110",
+   "bottom"
+  ],
+  [
+   "110",
+   "top",
+   "111",
+   "bottom"
+  ],
+  [
+   "111",
+   "top",
+   "113",
+   "bottom"
+  ],
+  [
+   "612",
+   "bottom",
+   "634",
+   "top"
+  ],
+  [
+   "612",
+   "right",
+   "614",
+   "left"
+  ],
+  [
+   "614",
+   "top",
+   "630",
+   "bottom"
+  ],
+  [
+   "614",
+   "bottom",
+   "617",
+   "top"
+  ],
+  [
+   "617",
+   "bottom",
+   "615",
+   "top",
+   null,
+   [
+    15,
+    20
+   ]
+  ],
+  [
+   "615",
+   "bottom",
+   "619",
+   "top"
+  ],
+  [
+   "619",
+   "bottom",
+   "618",
+   "top"
+  ],
+  [
+   "618",
+   "bottom",
+   "616",
+   "top",
+   [
+    2,
+    7
+   ],
+   [
+    9,
+    14
+   ]
+  ],
+  [
+   "614",
+   "right",
+   "613",
+   "left"
+  ],
+  [
+   "613",
+   "top",
+   "620",
+   "bottom"
+  ],
+  [
+   "620",
+   "top",
+   "608",
+   "bottom"
+  ],
+  [
+   "613",
+   "right",
+   "605",
+   "left"
+  ],
+  [
+   "605",
+   "right",
+   "626",
+   "left"
+  ],
+  [
+   "613",
+   "bottom",
+   "632",
+   "top"
+  ],
+  [
+   "632",
+   "right",
+   "621",
+   "left"
+  ]
+ ],
+ "doors": [
+  [
+   "605",
+   [
+    11,
+    7
+   ],
+   "606",
+   [
+    12,
+    7
+   ]
+  ],
+  [
+   "626",
+   [
+    11,
+    7
+   ],
+   "627",
+   [
+    12,
+    7
+   ]
+  ]
+ ],
+ "houses": [
+  [
+   "629",
+   [
+    3,
+    6
+   ],
+   "623"
+  ],
+  [
+   "629",
+   [
+    4,
+    6
+   ],
+   "623"
+  ],
+  [
+   "629",
+   [
+    11,
+    6
+   ],
+   "623"
+  ],
+  [
+   "629",
+   [
+    12,
+    6
+   ],
+   "623"
+  ],
+  [
+   "629",
+   [
+    18,
+    6
+   ],
+   "623"
+  ],
+  [
+   "629",
+   [
+    19,
+    6
+   ],
+   "623"
+  ],
+  [
+   "630",
+   [
+    6,
+    4
+   ],
+   "623"
+  ],
+  [
+   "630",
+   [
+    7,
+    4
+   ],
+   "623"
+  ],
+  [
+   "630",
+   [
+    11,
+    4
+   ],
+   "624"
+  ],
+  [
+   "630",
+   [
+    12,
+    4
+   ],
+   "624"
+  ],
+  [
+   "630",
+   [
+    17,
+    4
+   ],
+   "623"
+  ],
+  [
+   "630",
+   [
+    18,
+    4
+   ],
+   "623"
+  ],
+  [
+   "630",
+   [
+    20,
+    12
+   ],
+   "623"
+  ],
+  [
+   "630",
+   [
+    21,
+    12
+   ],
+   "623"
+  ],
+  [
+   "632",
+   [
+    12,
+    5
+   ],
+   "623"
+  ],
+  [
+   "632",
+   [
+    13,
+    5
+   ],
+   "623"
+  ],
+  [
+   "632",
+   [
+    18,
+    4
+   ],
+   "622"
+  ],
+  [
+   "632",
+   [
+    19,
+    4
+   ],
+   "622"
+  ]
+ ],
+ "warps": [
+  [
+   "608",
+   [
+    11,
+    4
+   ],
+   "609",
+   [
+    6,
+    2
+   ],
+   [
+    11,
+    5
+   ],
+   "down",
+   [
+    6,
+    3
+   ],
+   "down"
+  ],
+  [
+   "609",
+   [
+    18,
+    2
+   ],
+   "610",
+   [
+    4,
+    3
+   ],
+   [
+    18,
+    3
+   ],
+   "down",
+   [
+    4,
+    4
+   ],
+   "down"
+  ],
+  [
+   "610",
+   [
+    11,
+    13
+   ],
+   "611",
+   [
+    11,
+    14
+   ],
+   [
+    11,
+    12
+   ],
+   "up",
+   [
+    11,
+    12
+   ],
+   "up"
+  ],
+  [
+   "606",
+   [
+    9,
+    5
+   ],
+   "607",
+   [
+    11,
+    15
+   ],
+   [
+    9,
+    6
+   ],
+   "down",
+   [
+    11,
+    13
+   ],
+   "up"
+  ],
+  [
+   "627",
+   [
+    15,
+    4
+   ],
+   "628",
+   [
+    11,
+    14
+   ],
+   [
+    15,
+    6
+   ],
+   "down",
+   [
+    11,
+    12
+   ],
+   "up"
+  ]
+ ],
+ "fix": {
+  "634": {
+   "walk": [
+    [
+     11,
+     0,
+     14,
+     1
+    ],
+    [
+     12,
+     8,
+     13,
+     8
+    ]
+   ]
+  },
+  "626": {
+   "walk": [
+    [
+     11,
+     7,
+     12,
+     7
+    ],
+    [
+     0,
+     9,
+     0,
+     11
+    ]
+   ]
+  },
+  "605": {
+   "walk": [
+    [
+     11,
+     7,
+     12,
+     7
+    ]
+   ]
+  },
+  "606": {
+   "base": "#",
+   "walk": [
+    [
+     5,
+     6,
+     14,
+     16
+    ],
+    [
+     8,
+     5,
+     11,
+     5
+    ],
+    [
+     9,
+     17,
+     10,
+     18
+    ]
+   ],
+   "block": []
+  },
+  "607": {
+   "base": "#",
+   "walk": [
+    [
+     4,
+     4,
+     20,
+     11
+    ],
+    [
+     11,
+     12,
+     12,
+     15
+    ]
+   ],
+   "block": [
+    [
+     4,
+     4,
+     5,
+     4
+    ],
+    [
+     18,
+     4,
+     19,
+     4
+    ],
+    [
+     4,
+     10,
+     5,
+     11
+    ],
+    [
+     18,
+     10,
+     19,
+     11
+    ]
+   ]
+  },
+  "627": {
+   "base": "#",
+   "walk": [
+    [
+     2,
+     3,
+     16,
+     16
+    ],
+    [
+     9,
+     17,
+     10,
+     17
+    ]
+   ],
+   "block": [
+    [
+     2,
+     7,
+     11,
+     8
+    ],
+    [
+     7,
+     10,
+     16,
+     11
+    ],
+    [
+     4,
+     13,
+     6,
+     15
+    ]
+   ]
+  },
+  "628": {
+   "base": "#",
+   "walk": [
+    [
+     3,
+     3,
+     20,
+     12
+    ],
+    [
+     11,
+     13,
+     12,
+     14
+    ]
+   ]
+  },
+  "608": {
+   "base": "#",
+   "walk": [
+    [
+     4,
+     5,
+     19,
+     6
+    ],
+    [
+     9,
+     5,
+     14,
+     15
+    ],
+    [
+     15,
+     7,
+     19,
+     7
+    ],
+    [
+     10,
+     4,
+     13,
+     4
+    ]
+   ],
+   "gr": [
+    [
+     4,
+     7,
+     8,
+     10
+    ],
+    [
+     15,
+     8,
+     19,
+     12
+    ]
+   ]
+  },
+  "609": {
+   "base": "#",
+   "walk": [
+    [
+     3,
+     3,
+     20,
+     13
+    ],
+    [
+     5,
+     2,
+     7,
+     2
+    ],
+    [
+     17,
+     2,
+     19,
+     2
+    ]
+   ],
+   "gr": [
+    [
+     10,
+     10,
+     13,
+     12
+    ]
+   ],
+   "block": [
+    [
+     9,
+     3,
+     14,
+     8
+    ]
+   ]
+  },
+  "610": {
+   "base": "#",
+   "walk": [
+    [
+     2,
+     3,
+     21,
+     8
+    ],
+    [
+     10,
+     9,
+     13,
+     13
+    ]
+   ],
+   "gr": [
+    [
+     4,
+     5,
+     8,
+     8
+    ]
+   ],
+   "block": [
+    [
+     14,
+     4,
+     20,
+     7
+    ]
+   ]
+  },
+  "611": {
+   "base": "#",
+   "walk": [
+    [
+     4,
+     2,
+     20,
+     12
+    ],
+    [
+     10,
+     13,
+     13,
+     14
+    ]
+   ],
+   "gr": [
+    [
+     5,
+     8,
+     8,
+     11
+    ],
+    [
+     15,
+     8,
+     18,
+     11
+    ]
+   ],
+   "block": [
+    [
+     9,
+     3,
+     15,
+     6
+    ]
+   ]
+  },
+  "616": {
+   "base": "#",
+   "walk": [
+    [
+     9,
+     0,
+     14,
+     15
+    ],
+    [
+     15,
+     2,
+     20,
+     4
+    ],
+    [
+     15,
+     5,
+     17,
+     10
+    ],
+    [
+     17,
+     11,
+     21,
+     12
+    ]
+   ],
+   "gr": [
+    [
+     18,
+     5,
+     21,
+     10
+    ]
+   ]
+  },
+  "617": {
+   "base": "#",
+   "walk": [
+    [
+     14,
+     0,
+     19,
+     15
+    ],
+    [
+     7,
+     5,
+     13,
+     10
+    ]
+   ],
+   "gr": [
+    [
+     9,
+     1,
+     13,
+     4
+    ],
+    [
+     8,
+     11,
+     13,
+     13
+    ]
+   ]
+  },
+  "620": {
+   "base": "#",
+   "walk": [
+    [
+     9,
+     0,
+     14,
+     1
+    ],
+    [
+     3,
+     2,
+     4,
+     4
+    ],
+    [
+     9,
+     2,
+     18,
+     3
+    ],
+    [
+     3,
+     4,
+     20,
+     4
+    ],
+    [
+     3,
+     5,
+     3,
+     7
+    ],
+    [
+     9,
+     5,
+     15,
+     8
+    ],
+    [
+     7,
+     8,
+     20,
+     8
+    ],
+    [
+     7,
+     9,
+     7,
+     11
+    ],
+    [
+     13,
+     9,
+     20,
+     11
+    ],
+    [
+     14,
+     12,
+     20,
+     15
+    ]
+   ],
+   "gr": [
+    [
+     4,
+     5,
+     8,
+     7
+    ],
+    [
+     16,
+     5,
+     20,
+     7
+    ],
+    [
+     8,
+     9,
+     12,
+     11
+    ]
+   ]
+  },
+  "613": {
+   "base": "#",
+   "walk": [
+    [
+     14,
+     0,
+     18,
+     2
+    ],
+    [
+     4,
+     3,
+     23,
+     7
+    ],
+    [
+     0,
+     7,
+     23,
+     8
+    ],
+    [
+     0,
+     9,
+     19,
+     10
+    ],
+    [
+     4,
+     11,
+     17,
+     12
+    ],
+    [
+     4,
+     13,
+     9,
+     15
+    ]
+   ],
+   "gr": [
+    [
+     14,
+     5,
+     17,
+     7
+    ],
+    [
+     6,
+     8,
+     9,
+     9
+    ],
+    [
+     18,
+     11,
+     22,
+     12
+    ]
+   ]
+  },
+  "614": {
+   "block": [
+    [
+     3,
+     1,
+     10,
+     4
+    ]
+   ]
+  },
+  "619": {
+   "gr": [
+    [
+     12,
+     6,
+     17,
+     6
+    ],
+    [
+     13,
+     7,
+     18,
+     7
+    ],
+    [
+     14,
+     8,
+     19,
+     9
+    ],
+    [
+     16,
+     10,
+     20,
+     10
+    ]
+   ]
+  },
+  "630": {
+   "base": "#",
+   "walk": [
+    [
+     5,
+     5,
+     23,
+     6
+    ],
+    [
+     6,
+     7,
+     22,
+     7
+    ],
+    [
+     6,
+     8,
+     17,
+     8
+    ],
+    [
+     10,
+     9,
+     16,
+     12
+    ],
+    [
+     10,
+     13,
+     21,
+     13
+    ],
+    [
+     10,
+     14,
+     14,
+     14
+    ],
+    [
+     10,
+     15,
+     13,
+     15
+    ]
+   ]
+  },
+  "622": {
+   "base": "#",
+   "walk": [
+    [
+     5,
+     5,
+     14,
+     16
+    ],
+    [
+     9,
+     17,
+     10,
+     17
+    ]
+   ]
+  },
+  "623": {
+   "base": "#",
+   "walk": [
+    [
+     6,
+     4,
+     11,
+     15
+    ],
+    [
+     9,
+     16,
+     10,
+     16
+    ]
+   ]
+  },
+  "624": {
+   "base": "#",
+   "walk": [
+    [
+     3,
+     6,
+     16,
+     15
+    ],
+    [
+     9,
+     16,
+     10,
+     17
+    ]
+   ],
+   "block": [
+    [
+     2,
+     11,
+     5,
+     15
+    ],
+    [
+     14,
+     11,
+     17,
+     14
+    ]
+   ]
+  }
+ },
+ "objects": {
+  "621": [
+   {
+    "tile": [
+     15,
+     4
+    ],
+    "k": "chest",
+    "item": "harmonic",
+    "n": 3,
+    "why": "hidden hydro garden reward (crystal planter)"
+   }
+  ],
+  "616": [
+   {
+    "tile": [
+     21,
+     13
+    ],
+    "k": "chest",
+    "item": "fullgel",
+    "n": 2,
+    "why": "Viewport Overlook dead end reward"
+   }
+  ],
+  "628": [
+   {
+    "tile": [
+     12,
+     2
+    ],
+    "k": "chest",
+    "item": "maxrevive",
+    "n": 1,
+    "why": "Comms Spire uplink dais reward"
+   }
+  ],
+  "611": [
+   {
+    "tile": [
+     12,
+     6
+    ],
+    "k": "chest",
+    "item": "stasis",
+    "n": 2,
+    "why": "Rift Rock crystal pool reward"
+   }
+  ]
+ },
+ "spawns": {
+  "634": {
+   "default": [
+    12,
+    10
+   ]
+  },
+  "608": {
+   "default": [
+    11,
+    6
+   ]
+  },
+  "609": {
+   "default": [
+    6,
+    3
+   ]
+  },
+  "610": {
+   "default": [
+    4,
+    4
+   ]
+  },
+  "611": {
+   "default": [
+    11,
+    12
+   ]
+  },
+  "627": {
+   "default": [
+    9,
+    15
+   ]
+  },
+  "628": {
+   "default": [
+    11,
+    12
+   ]
+  },
+  "606": {
+   "default": [
+    9,
+    16
+   ]
+  },
+  "607": {
+   "default": [
+    11,
+    13
+   ]
+  }
+ },
+ "gate": [
+  {
+   "section": "634",
+   "tiles": [
+    [
+     12,
+     8
+    ],
+    [
+     13,
+     8
+    ]
+   ],
+   "node": "dustara",
+   "planet": "dustara",
+   "label": "your ship back to Dustara",
+   "why": "V3: second way home from the station spaceport (the Docking Ring shuttle gate stays)"
+  }
+ ],
+ "quest_spots": {},
+ "npc_move": {},
+ "trainers_per_section": {
+  "621": 0,
+  "616": 0,
+  "608": 0,
+  "634": 0
+ },
+ "encounters": {
+  "612": [
+   "109",
+   "containment"
+  ],
+  "614": [
+   "109",
+   "containment"
+  ],
+  "617": [
+   "109",
+   "containment"
+  ],
+  "608": [
+   "109",
+   "containment"
+  ],
+  "613": [
+   "110",
+   "containment"
+  ],
+  "615": [
+   "110",
+   "containment"
+  ],
+  "618": [
+   "110",
+   "containment"
+  ],
+  "620": [
+   "110",
+   "containment"
+  ],
+  "616": [
+   "111",
+   "containment"
+  ],
+  "619": [
+   "111",
+   "containment"
+  ],
+  "621": [
+   "111",
+   "containment"
+  ],
+  "609": [
+   "109",
+   "rock_cave"
+  ],
+  "610": [
+   "110",
+   "rock_cave"
+  ],
+  "611": [
+   "111",
+   "rock_cave"
+  ]
+ },
+ "_unused": [
+  {
+   "id": "625",
+   "why": "kit Recovery Bay: Helix heals at the medical-bay counter on the Docking Ring (105); a second bay would double up"
+  },
+  {
+   "id": "633",
+   "why": "kit Shop: Helix Station has no shop by design (planet notes); adding one changes the economy, lead's call"
+  },
+  {
+   "id": "631",
+   "why": "alt Quiet Court (option 2); option 1 used"
+  }
+ ]
+}

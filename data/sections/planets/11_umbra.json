@@ -1,54 +1,6 @@
 {
  "doors": [
   {
-   "interior": "125",
-   "parent": "124",
-   "door": [
-    8,
-    3
-   ],
-   "door2": [
-    9,
-    3
-   ],
-   "mat": [
-    [
-     7,
-     14
-    ],
-    [
-     8,
-     14
-    ]
-   ],
-   "confidence": "high",
-   "why": "V2: Gravewell Recovery Bay (cyan cross)"
-  },
-  {
-   "interior": "126",
-   "parent": "124",
-   "door": [
-    14,
-    3
-   ],
-   "door2": [
-    15,
-    3
-   ],
-   "mat": [
-    [
-     7,
-     14
-    ],
-    [
-     8,
-     14
-    ]
-   ],
-   "confidence": "high",
-   "why": "V2: Gravewell shop (purple awning)"
-  },
-  {
    "interior": "133",
    "parent": "132",
    "door": [
@@ -70,47 +22,6 @@
   }
  ],
  "objects": {
-  "125": [
-   {
-    "tile": [
-     7,
-     4
-    ],
-    "k": "bay"
-   },
-   {
-    "tile": [
-     8,
-     4
-    ],
-    "k": "bay"
-   }
-  ],
-  "126": [
-   {
-    "tile": [
-     7,
-     4
-    ],
-    "k": "shop"
-   },
-   {
-    "tile": [
-     8,
-     4
-    ],
-    "k": "shop"
-   }
-  ],
-  "135": [
-   {
-    "tile": [
-     7,
-     4
-    ],
-    "k": "keeper"
-   }
-  ],
   "133": [
    {
     "tile": [
@@ -144,42 +55,12 @@
      "The Gravewell Lantern: lit the night the city tipped into the sinkhole. It has never gone out."
     ]
    }
-  ],
-  "134": [
-   {
-    "tile": [
-     7,
-     10
-    ],
-    "k": "sign",
-    "t": [
-     "A void crystal hums on the altar. Your shadow leans toward it."
-    ]
-   }
   ]
  },
  "apprentices": {
   "134": 2
  },
  "trainer_tiles": [
-  {
-   "section": "134",
-   "n": 0,
-   "tile": [
-    12,
-    10
-   ],
-   "face": "left"
-  },
-  {
-   "section": "134",
-   "n": 1,
-   "tile": [
-    3,
-    14
-   ],
-   "face": "right"
-  },
   {
    "section": "129",
    "n": 0,
@@ -284,8 +165,8 @@
    {
     "art": "nurse",
     "tile": [
-     8,
-     4
+     10,
+     6
     ],
     "t": [
      "Nurse: Welcome to the Gravewell Recovery Bay. We'll have your Alienmon glowing again."
@@ -308,8 +189,8 @@
    {
     "art": "shop",
     "tile": [
-     8,
-     4
+     4,
+     10
     ],
     "t": [
      "Clerk: Lantern oil, Stasis Pods, potions. Everything you need to go down and come back up."
@@ -337,54 +218,6 @@
     "tile": [
      8,
      4
-    ],
-    "stay": true
-   }
-  ],
-  "127": [
-   {
-    "art": "civilian",
-    "t": [
-     "Lantern keeper: Every lantern on this street is tended by hand. Miss one night and the shadows creep in."
-    ],
-    "tile": [
-     12,
-     5
-    ],
-    "stay": true
-   },
-   {
-    "art": "wanderer",
-    "t": [
-     "Scavenger: Trainers on these streets watch from the dark. Walk into their line of sight and they'll call you out."
-    ],
-    "tile": [
-     6,
-     9
-    ],
-    "stay": true
-   }
-  ],
-  "128": [
-   {
-    "art": "pilgrim",
-    "t": [
-     "Pilgrim: The Sinkhole is just east. They say a Signal Shard sleeps at the very bottom."
-    ],
-    "tile": [
-     12,
-     5
-    ],
-    "stay": true
-   },
-   {
-    "art": "explorer",
-    "t": [
-     "Drifter: Past the Sinkhole stands Gravewell Tower. The Keeper there fights with the dark itself."
-    ],
-    "tile": [
-     6,
-     9
     ],
     "stay": true
    }
@@ -464,6 +297,38 @@
     "tile": [
      9,
      3
+    ],
+    "stay": true
+   }
+  ],
+  "816": [
+   {
+    "art": "civilian",
+    "t": [
+     "Lantern keeper: Every lantern on this street is tended by hand. Miss one night and the shadows creep in."
+    ],
+    "stay": true
+   },
+   {
+    "art": "wanderer",
+    "t": [
+     "Scavenger: Trainers on these streets watch from the dark. Walk into their line of sight and they'll call you out."
+    ],
+    "stay": true
+   }
+  ],
+  "817": [
+   {
+    "art": "pilgrim",
+    "t": [
+     "Pilgrim: The Sinkhole is just east. They say a Signal Shard sleeps at the very bottom."
+    ],
+    "stay": true
+   },
+   {
+    "art": "explorer",
+    "t": [
+     "Drifter: Past the Sinkhole stands Gravewell Tower. The Keeper there fights with the dark itself."
     ],
     "stay": true
    }

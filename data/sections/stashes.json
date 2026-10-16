@@ -329,6 +329,292 @@
    "item": "fullgel",
    "n": 1,
    "tier": 4
+  },
+  {
+   "section": "472",
+   "name": "Dustmere Farmstead",
+   "tile": [
+    7,
+    13
+   ],
+   "item": "stasis",
+   "n": 3,
+   "tier": 1
+  },
+  {
+   "section": "447",
+   "name": "Oasis Fork",
+   "tile": [
+    22,
+    3
+   ],
+   "item": "gel",
+   "n": 2,
+   "tier": 1
+  },
+  {
+   "section": "447",
+   "name": "Oasis Fork",
+   "tile": [
+    7,
+    13
+   ],
+   "item": "dust",
+   "n": 150,
+   "tier": 1
+  },
+  {
+   "section": "471",
+   "name": "Dustmere Quiet Court",
+   "tile": [
+    21,
+    14
+   ],
+   "item": "gel",
+   "n": 2,
+   "tier": 1
+  },
+  {
+   "section": "453",
+   "name": "Sunstep Slope",
+   "tile": [
+    21,
+    9
+   ],
+   "item": "gel",
+   "n": 2,
+   "tier": 1
+  },
+  {
+   "section": "453",
+   "name": "Sunstep Slope",
+   "tile": [
+    1,
+    7
+   ],
+   "item": "dust",
+   "n": 150,
+   "tier": 1
+  },
+  {
+   "section": "458",
+   "name": "Oasis Shore",
+   "tile": [
+    16,
+    9
+   ],
+   "item": "stasis",
+   "n": 3,
+   "tier": 1
+  },
+  {
+   "section": "458",
+   "name": "Oasis Shore",
+   "tile": [
+    15,
+    14
+   ],
+   "item": "revive",
+   "n": 1,
+   "tier": 1
+  },
+  {
+   "section": "465",
+   "name": "Hidden Mesa Grove",
+   "tile": [
+    7,
+    10
+   ],
+   "item": "gel",
+   "n": 2,
+   "tier": 1
+  },
+  {
+   "section": "465",
+   "name": "Hidden Mesa Grove",
+   "tile": [
+    19,
+    1
+   ],
+   "item": "stasis",
+   "n": 3,
+   "tier": 1
+  },
+  {
+   "section": "462",
+   "name": "Red River Bend",
+   "tile": [
+    3,
+    9
+   ],
+   "item": "gel",
+   "n": 2,
+   "tier": 1
+  },
+  {
+   "section": "462",
+   "name": "Red River Bend",
+   "tile": [
+    3,
+    12
+   ],
+   "item": "gel",
+   "n": 2,
+   "tier": 1
+  },
+  {
+   "section": "436",
+   "name": "Canyon Coliseum",
+   "tile": [
+    21,
+    9
+   ],
+   "item": "gel",
+   "n": 2,
+   "tier": 1
+  },
+  {
+   "section": "445",
+   "name": "Canyon Crossroads",
+   "tile": [
+    21,
+    9
+   ],
+   "item": "stasis",
+   "n": 3,
+   "tier": 1
+  },
+  {
+   "section": "445",
+   "name": "Canyon Crossroads",
+   "tile": [
+    19,
+    1
+   ],
+   "item": "stasis",
+   "n": 3,
+   "tier": 1
+  },
+  {
+   "section": "464",
+   "name": "Mirage Flats",
+   "tile": [
+    3,
+    6
+   ],
+   "item": "stasis",
+   "n": 3,
+   "tier": 1
+  },
+  {
+   "section": "464",
+   "name": "Mirage Flats",
+   "tile": [
+    22,
+    6
+   ],
+   "item": "gel",
+   "n": 2,
+   "tier": 1
+  },
+  {
+   "section": "446",
+   "name": "Mesa Junction",
+   "tile": [
+    21,
+    14
+   ],
+   "item": "stasis",
+   "n": 3,
+   "tier": 1
+  },
+  {
+   "section": "446",
+   "name": "Mesa Junction",
+   "tile": [
+    1,
+    2
+   ],
+   "item": "tether",
+   "n": 1,
+   "tier": 1
+  },
+  {
+   "section": "460",
+   "name": "Hoodoo Hollows",
+   "tile": [
+    2,
+    3
+   ],
+   "item": "stasis",
+   "n": 3,
+   "tier": 1
+  },
+  {
+   "section": "460",
+   "name": "Hoodoo Hollows",
+   "tile": [
+    12,
+    14
+   ],
+   "item": "cure",
+   "n": 2,
+   "tier": 1
+  },
+  {
+   "section": "441",
+   "name": "Red Rock Caves Entrance",
+   "tile": [
+    9,
+    6
+   ],
+   "item": "gel",
+   "n": 2,
+   "tier": 1
+  },
+  {
+   "section": "442",
+   "name": "Red Rock Caves B1",
+   "tile": [
+    20,
+    13
+   ],
+   "item": "gel",
+   "n": 2,
+   "tier": 1
+  },
+  {
+   "section": "442",
+   "name": "Red Rock Caves B1",
+   "tile": [
+    3,
+    13
+   ],
+   "item": "tether",
+   "n": 1,
+   "tier": 1
+  },
+  {
+   "section": "443",
+   "name": "Red Rock Caves B2",
+   "tile": [
+    21,
+    4
+   ],
+   "item": "stasis",
+   "n": 3,
+   "tier": 1
+  },
+  {
+   "section": "444",
+   "name": "Red Rock Caves Depths",
+   "tile": [
+    4,
+    2
+   ],
+   "item": "revive",
+   "n": 1,
+   "tier": 1
   }
  ],
  "Ferrox": [
@@ -347,8 +633,8 @@
    "section": "030",
    "name": "Rustvale",
    "tile": [
-    21,
-    12
+    11,
+    14
    ],
    "item": "gel",
    "n": 2,
@@ -391,8 +677,8 @@
    "section": "485",
    "name": "Scrapyard Crossing",
    "tile": [
-    7,
-    9
+    5,
+    13
    ],
    "item": "stasis",
    "n": 3,
@@ -402,8 +688,8 @@
    "section": "485",
    "name": "Scrapyard Crossing",
    "tile": [
-    6,
-    12
+    15,
+    1
    ],
    "item": "cure",
    "n": 2,
@@ -413,8 +699,8 @@
    "section": "489",
    "name": "Crane Overlook",
    "tile": [
-    19,
-    12
+    20,
+    13
    ],
    "item": "cure",
    "n": 2,
@@ -446,8 +732,8 @@
    "section": "497",
    "name": "Scrap Hollow Grove",
    "tile": [
-    3,
-    6
+    13,
+    1
    ],
    "item": "cure",
    "n": 2,
@@ -546,7 +832,7 @@
    "name": "Coolant Pond",
    "tile": [
     15,
-    2
+    1
    ],
    "item": "gel",
    "n": 2,
@@ -557,7 +843,7 @@
    "name": "Salvage Flats",
    "tile": [
     21,
-    9
+    4
    ],
    "item": "gel",
    "n": 2,
@@ -567,8 +853,8 @@
    "section": "494",
    "name": "Salvage Flats",
    "tile": [
-    19,
-    2
+    20,
+    11
    ],
    "item": "revive",
    "n": 1,
@@ -600,8 +886,8 @@
    "section": "487",
    "name": "Coolant Fork",
    "tile": [
-    2,
-    13
+    1,
+    2
    ],
    "item": "stasis",
    "n": 3,
@@ -622,8 +908,8 @@
    "section": "486",
    "name": "Railyard Junction",
    "tile": [
-    21,
-    2
+    1,
+    13
    ],
    "item": "stasis",
    "n": 3,
@@ -633,8 +919,8 @@
    "section": "486",
    "name": "Railyard Junction",
    "tile": [
-    1,
-    11
+    22,
+    2
    ],
    "item": "stasis",
    "n": 3,
@@ -667,7 +953,7 @@
    "name": "Railcar Maze",
    "tile": [
     21,
-    14
+    3
    ],
    "item": "dust",
    "n": 150,
@@ -677,8 +963,8 @@
    "section": "491",
    "name": "Railcar Maze",
    "tile": [
-    1,
-    5
+    22,
+    12
    ],
    "item": "dust",
    "n": 150,
@@ -699,10 +985,10 @@
  "Sporeholm": [
   {
    "section": "041",
-   "name": "Landing Bog",
+   "name": "Sporeholm Spaceport",
    "tile": [
-    0,
-    10
+    19,
+    2
    ],
    "item": "stasis",
    "n": 5,
@@ -720,32 +1006,219 @@
    "tier": 2
   },
   {
-   "section": "045",
-   "name": "Lantern Marsh Part A",
+   "section": "047",
+   "name": "Mushroom Maze",
+   "tile": [
+    5,
+    13
+   ],
+   "item": "megagel",
+   "n": 1,
+   "tier": 2
+  },
+  {
+   "section": "047",
+   "name": "Mushroom Maze",
+   "tile": [
+    15,
+    11
+   ],
+   "item": "dust",
+   "n": 300,
+   "tier": 2
+  },
+  {
+   "section": "729",
+   "name": "Mirefen Quiet Court",
+   "tile": [
+    21,
+    8
+   ],
+   "item": "stasis",
+   "n": 5,
+   "tier": 2
+  },
+  {
+   "section": "730",
+   "name": "Mirefen Farmstead",
+   "tile": [
+    5,
+    11
+   ],
+   "item": "dust",
+   "n": 300,
+   "tier": 2
+  },
+  {
+   "section": "733",
+   "name": "Sporelake Shore",
+   "tile": [
+    2,
+    14
+   ],
+   "item": "cure",
+   "n": 2,
+   "tier": 2
+  },
+  {
+   "section": "733",
+   "name": "Sporelake Shore",
+   "tile": [
+    2,
+    3
+   ],
+   "item": "gel",
+   "n": 3,
+   "tier": 2
+  },
+  {
+   "section": "711",
+   "name": "Mushroom Crossroads",
    "tile": [
     19,
     2
    ],
-   "item": "revive",
+   "item": "jammer",
    "n": 1,
    "tier": 2
   },
   {
-   "section": "045",
-   "name": "Lantern Marsh Part A",
+   "section": "711",
+   "name": "Mushroom Crossroads",
    "tile": [
     6,
     2
+   ],
+   "item": "dust",
+   "n": 300,
+   "tier": 2
+  },
+  {
+   "section": "715",
+   "name": "Sporecap Overlook",
+   "tile": [
+    21,
+    9
+   ],
+   "item": "gel",
+   "n": 3,
+   "tier": 2
+  },
+  {
+   "section": "715",
+   "name": "Sporecap Overlook",
+   "tile": [
+    3,
+    4
+   ],
+   "item": "gel",
+   "n": 3,
+   "tier": 2
+  },
+  {
+   "section": "707",
+   "name": "Mushroom Maze Cave Entrance",
+   "tile": [
+    13,
+    3
+   ],
+   "item": "dust",
+   "n": 300,
+   "tier": 2
+  },
+  {
+   "section": "708",
+   "name": "Mushroom Maze Cave B1",
+   "tile": [
+    20,
+    13
+   ],
+   "item": "cure",
+   "n": 2,
+   "tier": 2
+  },
+  {
+   "section": "709",
+   "name": "Mushroom Maze Cave B2",
+   "tile": [
+    21,
+    4
    ],
    "item": "revive",
    "n": 1,
    "tier": 2
   },
   {
-   "section": "046",
-   "name": "Lantern Marsh Part B",
+   "section": "710",
+   "name": "Mushroom Maze Deep Chamber",
    "tile": [
-    11,
+    4,
+    2
+   ],
+   "item": "harmonic",
+   "n": 2,
+   "tier": 2
+  },
+  {
+   "section": "720",
+   "name": "Mirefen Secret Grove",
+   "tile": [
+    21,
+    9
+   ],
+   "item": "megagel",
+   "n": 1,
+   "tier": 2
+  },
+  {
+   "section": "720",
+   "name": "Mirefen Secret Grove",
+   "tile": [
+    22,
+    11
+   ],
+   "item": "gel",
+   "n": 3,
+   "tier": 2
+  },
+  {
+   "section": "713",
+   "name": "Bog Fork",
+   "tile": [
+    16,
+    14
+   ],
+   "item": "stasis",
+   "n": 5,
+   "tier": 2
+  },
+  {
+   "section": "713",
+   "name": "Bog Fork",
+   "tile": [
+    22,
+    3
+   ],
+   "item": "gel",
+   "n": 3,
+   "tier": 2
+  },
+  {
+   "section": "719",
+   "name": "Glowcap Meadow",
+   "tile": [
+    4,
+    7
+   ],
+   "item": "harmonic",
+   "n": 2,
+   "tier": 2
+  },
+  {
+   "section": "719",
+   "name": "Glowcap Meadow",
+   "tile": [
+    6,
     1
    ],
    "item": "gel",
@@ -753,55 +1226,110 @@
    "tier": 2
   },
   {
-   "section": "046",
-   "name": "Lantern Marsh Part B",
+   "section": "712",
+   "name": "Root Junction",
    "tile": [
-    2,
-    2
-   ],
-   "item": "stasis",
-   "n": 5,
-   "tier": 2
-  },
-  {
-   "section": "047",
-   "name": "Mushroom Maze 1F",
-   "tile": [
-    13,
-    6
-   ],
-   "item": "megagel",
-   "n": 1,
-   "tier": 2
-  },
-  {
-   "section": "048",
-   "name": "Mushroom Maze 2F",
-   "tile": [
-    14,
-    7
+    22,
+    13
    ],
    "item": "gel",
    "n": 3,
    "tier": 2
   },
   {
-   "section": "049",
-   "name": "Spore Pools",
+   "section": "712",
+   "name": "Root Junction",
    "tile": [
-    11,
-    14
+    1,
+    2
    ],
-   "item": "harmonic",
+   "item": "revive",
+   "n": 1,
+   "tier": 2
+  },
+  {
+   "section": "716",
+   "name": "Lantern Marsh Shore",
+   "tile": [
+    7,
+    10
+   ],
+   "item": "gel",
+   "n": 3,
+   "tier": 2
+  },
+  {
+   "section": "716",
+   "name": "Lantern Marsh Shore",
+   "tile": [
+    8,
+    3
+   ],
+   "item": "jammer",
+   "n": 1,
+   "tier": 2
+  },
+  {
+   "section": "718",
+   "name": "Bogwater Bend",
+   "tile": [
+    20,
+    9
+   ],
+   "item": "cure",
    "n": 2,
    "tier": 2
   },
   {
-   "section": "049",
-   "name": "Spore Pools",
+   "section": "718",
+   "name": "Bogwater Bend",
    "tile": [
-    13,
+    9,
     14
+   ],
+   "item": "dust",
+   "n": 300,
+   "tier": 2
+  },
+  {
+   "section": "714",
+   "name": "Capstep Rise",
+   "tile": [
+    1,
+    10
+   ],
+   "item": "gel",
+   "n": 3,
+   "tier": 2
+  },
+  {
+   "section": "714",
+   "name": "Capstep Rise",
+   "tile": [
+    8,
+    4
+   ],
+   "item": "revive",
+   "n": 1,
+   "tier": 2
+  },
+  {
+   "section": "702",
+   "name": "Mycelium Bowl",
+   "tile": [
+    1,
+    9
+   ],
+   "item": "cure",
+   "n": 2,
+   "tier": 2
+  },
+  {
+   "section": "725",
+   "name": "Sporeholm Relay Tower",
+   "tile": [
+    21,
+    9
    ],
    "item": "revive",
    "n": 1,
@@ -813,8 +1341,8 @@
    "section": "052",
    "name": "Port Saltreach Docks",
    "tile": [
-    0,
-    10
+    18,
+    4
    ],
    "item": "harmonic",
    "n": 2,
@@ -832,32 +1360,10 @@
    "tier": 2
   },
   {
-   "section": "057",
-   "name": "Coral Route Part A",
+   "section": "803",
+   "name": "Thalassa Spaceport",
    "tile": [
-    11,
-    14
-   ],
-   "item": "gel",
-   "n": 3,
-   "tier": 2
-  },
-  {
-   "section": "057",
-   "name": "Coral Route Part A",
-   "tile": [
-    19,
-    12
-   ],
-   "item": "revive",
-   "n": 1,
-   "tier": 2
-  },
-  {
-   "section": "058",
-   "name": "Coral Route Part B",
-   "tile": [
-    10,
+    5,
     13
    ],
    "item": "jammer",
@@ -865,24 +1371,343 @@
    "tier": 2
   },
   {
-   "section": "058",
-   "name": "Coral Route Part B",
+   "section": "799",
+   "name": "Saltreach Lane Homes",
+   "tile": [
+    14,
+    12
+   ],
+   "item": "jammer",
+   "n": 1,
+   "tier": 2
+  },
+  {
+   "section": "800",
+   "name": "Saltreach Quiet Court",
+   "tile": [
+    1,
+    9
+   ],
+   "item": "megagel",
+   "n": 1,
+   "tier": 2
+  },
+  {
+   "section": "801",
+   "name": "Saltreach Farmstead",
+   "tile": [
+    19,
+    11
+   ],
+   "item": "megagel",
+   "n": 1,
+   "tier": 2
+  },
+  {
+   "section": "776",
+   "name": "Boardwalk Crossing",
+   "tile": [
+    1,
+    1
+   ],
+   "item": "megagel",
+   "n": 1,
+   "tier": 2
+  },
+  {
+   "section": "776",
+   "name": "Boardwalk Crossing",
    "tile": [
     6,
-    2
+    12
+   ],
+   "item": "cure",
+   "n": 2,
+   "tier": 2
+  },
+  {
+   "section": "790",
+   "name": "Saltreach Secret Grove",
+   "tile": [
+    7,
+    10
+   ],
+   "item": "stasis",
+   "n": 5,
+   "tier": 2
+  },
+  {
+   "section": "790",
+   "name": "Saltreach Secret Grove",
+   "tile": [
+    1,
+    11
    ],
    "item": "harmonic",
    "n": 2,
    "tier": 2
   },
   {
-   "section": "059",
-   "name": "Sea Arch Cove",
+   "section": "785",
+   "name": "Shell Flats",
    "tile": [
-    8,
-    11
+    2,
+    3
+   ],
+   "item": "harmonic",
+   "n": 2,
+   "tier": 2
+  },
+  {
+   "section": "785",
+   "name": "Shell Flats",
+   "tile": [
+    13,
+    13
+   ],
+   "item": "jammer",
+   "n": 1,
+   "tier": 2
+  },
+  {
+   "section": "781",
+   "name": "Coral Cove",
+   "tile": [
+    1,
+    7
+   ],
+   "item": "gel",
+   "n": 3,
+   "tier": 2
+  },
+  {
+   "section": "781",
+   "name": "Coral Cove",
+   "tile": [
+    13,
+    13
+   ],
+   "item": "cure",
+   "n": 2,
+   "tier": 2
+  },
+  {
+   "section": "778",
+   "name": "Lagoon Fork",
+   "tile": [
+    1,
+    2
    ],
    "item": "megagel",
+   "n": 1,
+   "tier": 2
+  },
+  {
+   "section": "778",
+   "name": "Lagoon Fork",
+   "tile": [
+    17,
+    13
+   ],
+   "item": "gel",
+   "n": 3,
+   "tier": 2
+  },
+  {
+   "section": "779",
+   "name": "Dune Stairway",
+   "tile": [
+    22,
+    12
+   ],
+   "item": "jammer",
+   "n": 1,
+   "tier": 2
+  },
+  {
+   "section": "779",
+   "name": "Dune Stairway",
+   "tile": [
+    13,
+    4
+   ],
+   "item": "dust",
+   "n": 300,
+   "tier": 2
+  },
+  {
+   "section": "772",
+   "name": "Sea Cave Entrance",
+   "tile": [
+    9,
+    6
+   ],
+   "item": "revive",
+   "n": 1,
+   "tier": 2
+  },
+  {
+   "section": "773",
+   "name": "Sea Cave B1",
+   "tile": [
+    19,
+    13
+   ],
+   "item": "megagel",
+   "n": 1,
+   "tier": 2
+  },
+  {
+   "section": "774",
+   "name": "Sea Cave B2",
+   "tile": [
+    13,
+    8
+   ],
+   "item": "dust",
+   "n": 300,
+   "tier": 2
+  },
+  {
+   "section": "774",
+   "name": "Sea Cave B2",
+   "tile": [
+    21,
+    7
+   ],
+   "item": "revive",
+   "n": 1,
+   "tier": 2
+  },
+  {
+   "section": "775",
+   "name": "Sea Cave Deep Chamber",
+   "tile": [
+    4,
+    2
+   ],
+   "item": "gel",
+   "n": 3,
+   "tier": 2
+  },
+  {
+   "section": "777",
+   "name": "Dune Junction",
+   "tile": [
+    22,
+    2
+   ],
+   "item": "dust",
+   "n": 300,
+   "tier": 2
+  },
+  {
+   "section": "777",
+   "name": "Dune Junction",
+   "tile": [
+    1,
+    12
+   ],
+   "item": "megagel",
+   "n": 1,
+   "tier": 2
+  },
+  {
+   "section": "780",
+   "name": "Lighthouse Bluff",
+   "tile": [
+    3,
+    6
+   ],
+   "item": "harmonic",
+   "n": 2,
+   "tier": 2
+  },
+  {
+   "section": "780",
+   "name": "Lighthouse Bluff",
+   "tile": [
+    2,
+    13
+   ],
+   "item": "cure",
+   "n": 2,
+   "tier": 2
+  },
+  {
+   "section": "768",
+   "name": "Tidewater Arena",
+   "tile": [
+    2,
+    10
+   ],
+   "item": "cure",
+   "n": 2,
+   "tier": 2
+  },
+  {
+   "section": "795",
+   "name": "Harbor Relay Tower",
+   "tile": [
+    21,
+    9
+   ],
+   "item": "gel",
+   "n": 3,
+   "tier": 2
+  },
+  {
+   "section": "786",
+   "name": "Saltreach Boathouse",
+   "tile": [
+    21,
+    9
+   ],
+   "item": "megagel",
+   "n": 1,
+   "tier": 2
+  },
+  {
+   "section": "784",
+   "name": "Tidal Inlet",
+   "tile": [
+    21,
+    3
+   ],
+   "item": "gel",
+   "n": 3,
+   "tier": 2
+  },
+  {
+   "section": "784",
+   "name": "Tidal Inlet",
+   "tile": [
+    19,
+    9
+   ],
+   "item": "cure",
+   "n": 2,
+   "tier": 2
+  },
+  {
+   "section": "783",
+   "name": "Driftwood Hollows",
+   "tile": [
+    2,
+    13
+   ],
+   "item": "gel",
+   "n": 3,
+   "tier": 2
+  },
+  {
+   "section": "783",
+   "name": "Driftwood Hollows",
+   "tile": [
+    13,
+    2
+   ],
+   "item": "revive",
    "n": 1,
    "tier": 2
   }
@@ -892,7 +1717,7 @@
    "section": "062",
    "name": "Neonis Starport",
    "tile": [
-    0,
+    4,
     12
    ],
    "item": "stun",
@@ -912,10 +1737,10 @@
   },
   {
    "section": "066",
-   "name": "Arcade District",
+   "name": "Arcade Alleys",
    "tile": [
     21,
-    4
+    14
    ],
    "item": "ether",
    "n": 1,
@@ -923,20 +1748,64 @@
   },
   {
    "section": "066",
-   "name": "Arcade District",
+   "name": "Arcade Alleys",
    "tile": [
-    3,
-    4
+    4,
+    5
    ],
    "item": "dust",
    "n": 500,
    "tier": 3
   },
   {
-   "section": "067",
-   "name": "Broadcast Route Part A",
+   "section": "666",
+   "name": "Neonis Spaceport",
    "tile": [
-    11,
+    5,
+    3
+   ],
+   "item": "dust",
+   "n": 500,
+   "tier": 3
+  },
+  {
+   "section": "663",
+   "name": "Neonis Quiet Court",
+   "tile": [
+    21,
+    4
+   ],
+   "item": "harmonic",
+   "n": 3,
+   "tier": 3
+  },
+  {
+   "section": "664",
+   "name": "Neonis Farmstead Edge",
+   "tile": [
+    15,
+    13
+   ],
+   "item": "stun",
+   "n": 2,
+   "tier": 3
+  },
+  {
+   "section": "644",
+   "name": "Signal Junction",
+   "tile": [
+    2,
+    2
+   ],
+   "item": "stun",
+   "n": 2,
+   "tier": 3
+  },
+  {
+   "section": "644",
+   "name": "Signal Junction",
+   "tile": [
+    8,
     14
    ],
    "item": "revive",
@@ -944,36 +1813,267 @@
    "tier": 3
   },
   {
-   "section": "067",
-   "name": "Broadcast Route Part A",
+   "section": "647",
+   "name": "Skyline Overlook",
    "tile": [
-    10,
-    1
+    21,
+    9
    ],
    "item": "megagel",
    "n": 2,
    "tier": 3
   },
   {
-   "section": "068",
-   "name": "Broadcast Route Part B",
+   "section": "647",
+   "name": "Skyline Overlook",
    "tile": [
-    11,
-    14
+    3,
+    5
+   ],
+   "item": "revive",
+   "n": 2,
+   "tier": 3
+  },
+  {
+   "section": "639",
+   "name": "Undercity Tunnel Entrance",
+   "tile": [
+    3,
+    11
+   ],
+   "item": "stun",
+   "n": 2,
+   "tier": 3
+  },
+  {
+   "section": "639",
+   "name": "Undercity Tunnel Entrance",
+   "tile": [
+    20,
+    11
+   ],
+   "item": "revive",
+   "n": 2,
+   "tier": 3
+  },
+  {
+   "section": "640",
+   "name": "Undercity Tunnels B1",
+   "tile": [
+    20,
+    13
    ],
    "item": "dust",
    "n": 500,
    "tier": 3
   },
   {
-   "section": "068",
-   "name": "Broadcast Route Part B",
+   "section": "640",
+   "name": "Undercity Tunnels B1",
    "tile": [
-    11,
-    0
+    3,
+    13
+   ],
+   "item": "stun",
+   "n": 2,
+   "tier": 3
+  },
+  {
+   "section": "641",
+   "name": "Undercity Tunnels B2",
+   "tile": [
+    20,
+    8
+   ],
+   "item": "harmonic",
+   "n": 3,
+   "tier": 3
+  },
+  {
+   "section": "642",
+   "name": "Undercity Deep Chamber",
+   "tile": [
+    4,
+    2
+   ],
+   "item": "harmonic",
+   "n": 3,
+   "tier": 3
+  },
+  {
+   "section": "642",
+   "name": "Undercity Deep Chamber",
+   "tile": [
+    5,
+    11
+   ],
+   "item": "stun",
+   "n": 2,
+   "tier": 3
+  },
+  {
+   "section": "659",
+   "name": "Voltspire Plaza",
+   "tile": [
+    21,
+    9
+   ],
+   "item": "stun",
+   "n": 2,
+   "tier": 3
+  },
+  {
+   "section": "646",
+   "name": "Bassline Ramp",
+   "tile": [
+    4,
+    13
    ],
    "item": "megagel",
    "n": 2,
+   "tier": 3
+  },
+  {
+   "section": "646",
+   "name": "Bassline Ramp",
+   "tile": [
+    12,
+    2
+   ],
+   "item": "harmonic",
+   "n": 3,
+   "tier": 3
+  },
+  {
+   "section": "645",
+   "name": "Canal Fork",
+   "tile": [
+    22,
+    3
+   ],
+   "item": "revive",
+   "n": 2,
+   "tier": 3
+  },
+  {
+   "section": "645",
+   "name": "Canal Fork",
+   "tile": [
+    7,
+    13
+   ],
+   "item": "dust",
+   "n": 500,
+   "tier": 3
+  },
+  {
+   "section": "654",
+   "name": "Glowgarden Hideaway",
+   "tile": [
+    7,
+    10
+   ],
+   "item": "ether",
+   "n": 1,
+   "tier": 3
+  },
+  {
+   "section": "654",
+   "name": "Glowgarden Hideaway",
+   "tile": [
+    20,
+    1
+   ],
+   "item": "revive",
+   "n": 2,
+   "tier": 3
+  },
+  {
+   "section": "652",
+   "name": "Helix Front Office",
+   "tile": [
+    21,
+    9
+   ],
+   "item": "harmonic",
+   "n": 3,
+   "tier": 3
+  },
+  {
+   "section": "648",
+   "name": "Canal Quay",
+   "tile": [
+    7,
+    10
+   ],
+   "item": "jammer",
+   "n": 1,
+   "tier": 3
+  },
+  {
+   "section": "648",
+   "name": "Canal Quay",
+   "tile": [
+    8,
+    4
+   ],
+   "item": "revive",
+   "n": 2,
+   "tier": 3
+  },
+  {
+   "section": "651",
+   "name": "Broadcast Plaza",
+   "tile": [
+    3,
+    4
+   ],
+   "item": "harmonic",
+   "n": 3,
+   "tier": 3
+  },
+  {
+   "section": "651",
+   "name": "Broadcast Plaza",
+   "tile": [
+    7,
+    10
+   ],
+   "item": "harmonic",
+   "n": 3,
+   "tier": 3
+  },
+  {
+   "section": "650",
+   "name": "Static Canal",
+   "tile": [
+    17,
+    13
+   ],
+   "item": "harmonic",
+   "n": 3,
+   "tier": 3
+  },
+  {
+   "section": "650",
+   "name": "Static Canal",
+   "tile": [
+    9,
+    2
+   ],
+   "item": "stun",
+   "n": 2,
+   "tier": 3
+  },
+  {
+   "section": "635",
+   "name": "Neon Megadome",
+   "tile": [
+    21,
+    9
+   ],
+   "item": "harmonic",
+   "n": 3,
    "tier": 3
   }
  ],
@@ -1001,50 +2101,6 @@
    "tier": 3
   },
   {
-   "section": "075",
-   "name": "Coral Ruins Part A",
-   "tile": [
-    11,
-    14
-   ],
-   "item": "jammer",
-   "n": 1,
-   "tier": 3
-  },
-  {
-   "section": "075",
-   "name": "Coral Ruins Part A",
-   "tile": [
-    17,
-    12
-   ],
-   "item": "revive",
-   "n": 2,
-   "tier": 3
-  },
-  {
-   "section": "076",
-   "name": "Coral Ruins Part B",
-   "tile": [
-    11,
-    14
-   ],
-   "item": "stun",
-   "n": 2,
-   "tier": 3
-  },
-  {
-   "section": "076",
-   "name": "Coral Ruins Part B",
-   "tile": [
-    13,
-    14
-   ],
-   "item": "harmonic",
-   "n": 3,
-   "tier": 3
-  },
-  {
    "section": "077",
    "name": "Glyph Hollow",
    "tile": [
@@ -1065,6 +2121,402 @@
    "item": "harmonic",
    "n": 3,
    "tier": 3
+  },
+  {
+   "section": "566",
+   "name": "Dig Camp Lane Homes",
+   "tile": [
+    20,
+    13
+   ],
+   "item": "dust",
+   "n": 500,
+   "tier": 3
+  },
+  {
+   "section": "568",
+   "name": "Dig Camp Farmstead",
+   "tile": [
+    16,
+    12
+   ],
+   "item": "dust",
+   "n": 500,
+   "tier": 3
+  },
+  {
+   "section": "567",
+   "name": "Dig Camp Quiet Court",
+   "tile": [
+    1,
+    7
+   ],
+   "item": "ether",
+   "n": 1,
+   "tier": 3
+  },
+  {
+   "section": "552",
+   "name": "Ruin Crossroads",
+   "tile": [
+    4,
+    13
+   ],
+   "item": "dust",
+   "n": 500,
+   "tier": 3
+  },
+  {
+   "section": "552",
+   "name": "Ruin Crossroads",
+   "tile": [
+    20,
+    12
+   ],
+   "item": "harmonic",
+   "n": 3,
+   "tier": 3
+  },
+  {
+   "section": "570",
+   "name": "Glyphos Spaceport",
+   "tile": [
+    17,
+    5
+   ],
+   "item": "revive",
+   "n": 2,
+   "tier": 3
+  },
+  {
+   "section": "553",
+   "name": "Glyph Junction",
+   "tile": [
+    3,
+    13
+   ],
+   "item": "dust",
+   "n": 500,
+   "tier": 3
+  },
+  {
+   "section": "553",
+   "name": "Glyph Junction",
+   "tile": [
+    22,
+    2
+   ],
+   "item": "megagel",
+   "n": 2,
+   "tier": 3
+  },
+  {
+   "section": "555",
+   "name": "Glyph Steps",
+   "tile": [
+    22,
+    10
+   ],
+   "item": "ether",
+   "n": 1,
+   "tier": 3
+  },
+  {
+   "section": "555",
+   "name": "Glyph Steps",
+   "tile": [
+    16,
+    6
+   ],
+   "item": "revive",
+   "n": 2,
+   "tier": 3
+  },
+  {
+   "section": "548",
+   "name": "Drowned Grotto Entrance",
+   "tile": [
+    4,
+    7
+   ],
+   "item": "ether",
+   "n": 1,
+   "tier": 3
+  },
+  {
+   "section": "548",
+   "name": "Drowned Grotto Entrance",
+   "tile": [
+    20,
+    11
+   ],
+   "item": "megagel",
+   "n": 2,
+   "tier": 3
+  },
+  {
+   "section": "549",
+   "name": "Drowned Grotto B1",
+   "tile": [
+    20,
+    13
+   ],
+   "item": "harmonic",
+   "n": 3,
+   "tier": 3
+  },
+  {
+   "section": "550",
+   "name": "Drowned Grotto B2",
+   "tile": [
+    20,
+    8
+   ],
+   "item": "megagel",
+   "n": 2,
+   "tier": 3
+  },
+  {
+   "section": "550",
+   "name": "Drowned Grotto B2",
+   "tile": [
+    19,
+    8
+   ],
+   "item": "megagel",
+   "n": 2,
+   "tier": 3
+  },
+  {
+   "section": "551",
+   "name": "Drowned Grotto Deep Chamber",
+   "tile": [
+    17,
+    5
+   ],
+   "item": "harmonic",
+   "n": 3,
+   "tier": 3
+  },
+  {
+   "section": "551",
+   "name": "Drowned Grotto Deep Chamber",
+   "tile": [
+    19,
+    12
+   ],
+   "item": "harmonic",
+   "n": 3,
+   "tier": 3
+  },
+  {
+   "section": "554",
+   "name": "Tidepool Fork",
+   "tile": [
+    16,
+    2
+   ],
+   "item": "dust",
+   "n": 500,
+   "tier": 3
+  },
+  {
+   "section": "554",
+   "name": "Tidepool Fork",
+   "tile": [
+    13,
+    14
+   ],
+   "item": "ether",
+   "n": 1,
+   "tier": 3
+  },
+  {
+   "section": "557",
+   "name": "Tidepool Ruins",
+   "tile": [
+    15,
+    13
+   ],
+   "item": "megagel",
+   "n": 2,
+   "tier": 3
+  },
+  {
+   "section": "557",
+   "name": "Tidepool Ruins",
+   "tile": [
+    15,
+    1
+   ],
+   "item": "stun",
+   "n": 2,
+   "tier": 3
+  },
+  {
+   "section": "571",
+   "name": "Sunken Shallows",
+   "tile": [
+    3,
+    1
+   ],
+   "item": "harmonic",
+   "n": 3,
+   "tier": 3
+  },
+  {
+   "section": "571",
+   "name": "Sunken Shallows",
+   "tile": [
+    15,
+    1
+   ],
+   "item": "stun",
+   "n": 2,
+   "tier": 3
+  },
+  {
+   "section": "572",
+   "name": "Island Chain",
+   "tile": [
+    3,
+    1
+   ],
+   "item": "stun",
+   "n": 2,
+   "tier": 3
+  },
+  {
+   "section": "572",
+   "name": "Island Chain",
+   "tile": [
+    20,
+    1
+   ],
+   "item": "megagel",
+   "n": 2,
+   "tier": 3
+  },
+  {
+   "section": "561",
+   "name": "Coral Secret Grove",
+   "tile": [
+    7,
+    10
+   ],
+   "item": "ether",
+   "n": 1,
+   "tier": 3
+  },
+  {
+   "section": "561",
+   "name": "Coral Secret Grove",
+   "tile": [
+    13,
+    2
+   ],
+   "item": "stun",
+   "n": 2,
+   "tier": 3
+  },
+  {
+   "section": "556",
+   "name": "Mural Overlook",
+   "tile": [
+    3,
+    6
+   ],
+   "item": "revive",
+   "n": 2,
+   "tier": 3
+  },
+  {
+   "section": "556",
+   "name": "Mural Overlook",
+   "tile": [
+    19,
+    13
+   ],
+   "item": "megagel",
+   "n": 2,
+   "tier": 3
+  },
+  {
+   "section": "558",
+   "name": "Pillar Hollows",
+   "tile": [
+    1,
+    14
+   ],
+   "item": "megagel",
+   "n": 2,
+   "tier": 3
+  },
+  {
+   "section": "558",
+   "name": "Pillar Hollows",
+   "tile": [
+    13,
+    2
+   ],
+   "item": "revive",
+   "n": 2,
+   "tier": 3
+  },
+  {
+   "section": "560",
+   "name": "Forgotten Forum",
+   "tile": [
+    1,
+    9
+   ],
+   "item": "megagel",
+   "n": 2,
+   "tier": 3
+  },
+  {
+   "section": "560",
+   "name": "Forgotten Forum",
+   "tile": [
+    14,
+    11
+   ],
+   "item": "ether",
+   "n": 1,
+   "tier": 3
+  },
+  {
+   "section": "559",
+   "name": "Sunken Channel",
+   "tile": [
+    5,
+    8
+   ],
+   "item": "jammer",
+   "n": 1,
+   "tier": 3
+  },
+  {
+   "section": "559",
+   "name": "Sunken Channel",
+   "tile": [
+    11,
+    1
+   ],
+   "item": "harmonic",
+   "n": 3,
+   "tier": 3
+  },
+  {
+   "section": "543",
+   "name": "Temple of Trials",
+   "tile": [
+    11,
+    14
+   ],
+   "item": "dust",
+   "n": 500,
+   "tier": 3
   }
  ],
  "Pyros": [
@@ -1072,63 +2524,19 @@
    "section": "082",
    "name": "Cinder Hollow",
    "tile": [
-    1,
+    4,
     12
    ],
    "item": "dust",
    "n": 800,
-   "tier": 4
-  },
-  {
-   "section": "085",
-   "name": "Lava Rail Part A",
-   "tile": [
-    14,
-    12
-   ],
-   "item": "ether",
-   "n": 2,
-   "tier": 4
-  },
-  {
-   "section": "085",
-   "name": "Lava Rail Part A",
-   "tile": [
-    17,
-    3
-   ],
-   "item": "revive",
-   "n": 2,
-   "tier": 4
-  },
-  {
-   "section": "086",
-   "name": "Lava Rail Part B",
-   "tile": [
-    11,
-    13
-   ],
-   "item": "dust",
-   "n": 800,
-   "tier": 4
-  },
-  {
-   "section": "086",
-   "name": "Lava Rail Part B",
-   "tile": [
-    6,
-    2
-   ],
-   "item": "revive",
-   "n": 2,
    "tier": 4
   },
   {
    "section": "087",
    "name": "Deep Mines B1",
    "tile": [
-    14,
-    7
+    19,
+    13
    ],
    "item": "dust",
    "n": 800,
@@ -1138,8 +2546,8 @@
    "section": "088",
    "name": "Deep Mines B2",
    "tile": [
-    2,
-    5
+    21,
+    7
    ],
    "item": "megagel",
    "n": 3,
@@ -1147,20 +2555,130 @@
   },
   {
    "section": "089",
-   "name": "Deep Mines B3",
+   "name": "Deep Mines Depths",
    "tile": [
-    2,
-    10
+    4,
+    2
    ],
    "item": "fullgel",
    "n": 1,
    "tier": 4
   },
   {
-   "section": "090",
-   "name": "Furnace Ridge (Pyros)",
+   "section": "700",
+   "name": "Pyros Spaceport",
    "tile": [
-    19,
+    5,
+    3
+   ],
+   "item": "ether",
+   "n": 2,
+   "tier": 4
+  },
+  {
+   "section": "697",
+   "name": "Cinder Hollow Quiet Court",
+   "tile": [
+    22,
+    13
+   ],
+   "item": "megagel",
+   "n": 3,
+   "tier": 4
+  },
+  {
+   "section": "698",
+   "name": "Cinder Hollow Farmstead",
+   "tile": [
+    5,
+    12
+   ],
+   "item": "megagel",
+   "n": 3,
+   "tier": 4
+  },
+  {
+   "section": "677",
+   "name": "Basalt Crossroads",
+   "tile": [
+    20,
+    13
+   ],
+   "item": "megagel",
+   "n": 3,
+   "tier": 4
+  },
+  {
+   "section": "677",
+   "name": "Basalt Crossroads",
+   "tile": [
+    21,
+    2
+   ],
+   "item": "megagel",
+   "n": 3,
+   "tier": 4
+  },
+  {
+   "section": "678",
+   "name": "Mine Junction",
+   "tile": [
+    22,
+    12
+   ],
+   "item": "megagel",
+   "n": 3,
+   "tier": 4
+  },
+  {
+   "section": "678",
+   "name": "Mine Junction",
+   "tile": [
+    1,
+    12
+   ],
+   "item": "revive",
+   "n": 2,
+   "tier": 4
+  },
+  {
+   "section": "679",
+   "name": "Lava Fork",
+   "tile": [
+    3,
+    1
+   ],
+   "item": "harmonic",
+   "n": 5,
+   "tier": 4
+  },
+  {
+   "section": "679",
+   "name": "Lava Fork",
+   "tile": [
+    2,
+    14
+   ],
+   "item": "harmonic",
+   "n": 5,
+   "tier": 4
+  },
+  {
+   "section": "680",
+   "name": "Cinder Slope",
+   "tile": [
+    21,
+    10
+   ],
+   "item": "harmonic",
+   "n": 5,
+   "tier": 4
+  },
+  {
+   "section": "680",
+   "name": "Cinder Slope",
+   "tile": [
+    7,
     2
    ],
    "item": "revive",
@@ -1168,14 +2686,190 @@
    "tier": 4
   },
   {
-   "section": "090",
-   "name": "Furnace Ridge (Pyros)",
+   "section": "681",
+   "name": "Furnace Ridge Overlook",
    "tile": [
-    6,
+    11,
+    14
+   ],
+   "item": "fullgel",
+   "n": 1,
+   "tier": 4
+  },
+  {
+   "section": "681",
+   "name": "Furnace Ridge Overlook",
+   "tile": [
+    18,
+    9
+   ],
+   "item": "ether",
+   "n": 2,
+   "tier": 4
+  },
+  {
+   "section": "682",
+   "name": "Lava Lake Shore",
+   "tile": [
+    7,
+    10
+   ],
+   "item": "revive",
+   "n": 2,
+   "tier": 4
+  },
+  {
+   "section": "682",
+   "name": "Lava Lake Shore",
+   "tile": [
+    8,
+    4
+   ],
+   "item": "revive",
+   "n": 2,
+   "tier": 4
+  },
+  {
+   "section": "683",
+   "name": "Mine Shaft Hollows",
+   "tile": [
+    9,
     2
+   ],
+   "item": "megagel",
+   "n": 3,
+   "tier": 4
+  },
+  {
+   "section": "683",
+   "name": "Mine Shaft Hollows",
+   "tile": [
+    1,
+    3
+   ],
+   "item": "harmonic",
+   "n": 5,
+   "tier": 4
+  },
+  {
+   "section": "684",
+   "name": "Magma Flow Bend",
+   "tile": [
+    9,
+    2
+   ],
+   "item": "revive",
+   "n": 2,
+   "tier": 4
+  },
+  {
+   "section": "684",
+   "name": "Magma Flow Bend",
+   "tile": [
+    4,
+    9
+   ],
+   "item": "revive",
+   "n": 2,
+   "tier": 4
+  },
+  {
+   "section": "685",
+   "name": "Ashfall Flats",
+   "tile": [
+    3,
+    6
+   ],
+   "item": "ether",
+   "n": 2,
+   "tier": 4
+  },
+  {
+   "section": "685",
+   "name": "Ashfall Flats",
+   "tile": [
+    5,
+    11
    ],
    "item": "dust",
    "n": 800,
+   "tier": 4
+  },
+  {
+   "section": "688",
+   "name": "Ember Hollow Grove",
+   "tile": [
+    22,
+    10
+   ],
+   "item": "harmonic",
+   "n": 5,
+   "tier": 4
+  },
+  {
+   "section": "688",
+   "name": "Ember Hollow Grove",
+   "tile": [
+    4,
+    5
+   ],
+   "item": "fullgel",
+   "n": 1,
+   "tier": 4
+  },
+  {
+   "section": "668",
+   "name": "Magma Pit Arena",
+   "tile": [
+    21,
+    9
+   ],
+   "item": "megagel",
+   "n": 3,
+   "tier": 4
+  },
+  {
+   "section": "673",
+   "name": "Deep Mines Entrance",
+   "tile": [
+    3,
+    6
+   ],
+   "item": "revive",
+   "n": 2,
+   "tier": 4
+  },
+  {
+   "section": "673",
+   "name": "Deep Mines Entrance",
+   "tile": [
+    20,
+    11
+   ],
+   "item": "revive",
+   "n": 2,
+   "tier": 4
+  },
+  {
+   "section": "686",
+   "name": "Abandoned Smelter",
+   "tile": [
+    21,
+    9
+   ],
+   "item": "dust",
+   "n": 800,
+   "tier": 4
+  },
+  {
+   "section": "693",
+   "name": "Volcano Relay Tower",
+   "tile": [
+    21,
+    9
+   ],
+   "item": "ether",
+   "n": 2,
    "tier": 4
   }
  ],
@@ -1184,8 +2878,8 @@
    "section": "093",
    "name": "Frostmark",
    "tile": [
-    11,
-    14
+    9,
+    12
    ],
    "item": "harmonic",
    "n": 5,
@@ -1214,33 +2908,11 @@
    "tier": 4
   },
   {
-   "section": "097",
-   "name": "Aurora Route Part B",
-   "tile": [
-    11,
-    14
-   ],
-   "item": "fullgel",
-   "n": 1,
-   "tier": 4
-  },
-  {
-   "section": "097",
-   "name": "Aurora Route Part B",
-   "tile": [
-    6,
-    2
-   ],
-   "item": "fullgel",
-   "n": 1,
-   "tier": 4
-  },
-  {
    "section": "098",
    "name": "Crystal Caverns B1",
    "tile": [
-    14,
-    7
+    20,
+    13
    ],
    "item": "ether",
    "n": 2,
@@ -1250,8 +2922,8 @@
    "section": "098",
    "name": "Crystal Caverns B1",
    "tile": [
-    1,
-    7
+    3,
+    13
    ],
    "item": "dust",
    "n": 800,
@@ -1261,7 +2933,7 @@
    "section": "099",
    "name": "Crystal Caverns B2",
    "tile": [
-    13,
+    20,
     6
    ],
    "item": "dust",
@@ -1272,7 +2944,7 @@
    "section": "099",
    "name": "Crystal Caverns B2",
    "tile": [
-    2,
+    21,
     8
    ],
    "item": "fullgel",
@@ -1281,10 +2953,10 @@
   },
   {
    "section": "100",
-   "name": "Crystal Caverns B3",
+   "name": "Crystal Caverns Depths",
    "tile": [
-    14,
-    7
+    4,
+    2
    ],
    "item": "fullgel",
    "n": 1,
@@ -1292,43 +2964,318 @@
   },
   {
    "section": "100",
-   "name": "Crystal Caverns B3",
+   "name": "Crystal Caverns Depths",
    "tile": [
-    14,
-    9
+    17,
+    3
    ],
    "item": "fullgel",
    "n": 1,
    "tier": 4
   },
   {
-   "section": "101",
-   "name": "Fossil Dig",
+   "section": "541",
+   "name": "Glacia Spaceport",
    "tile": [
-    10,
-    13
+    18,
+    7
    ],
    "item": "dust",
    "n": 800,
    "tier": 4
   },
   {
-   "section": "101",
-   "name": "Fossil Dig",
+   "section": "538",
+   "name": "Frostmark Quiet Court",
    "tile": [
-    17,
-    3
+    18,
+    7
    ],
    "item": "revive",
    "n": 2,
    "tier": 4
   },
   {
-   "section": "102",
+   "section": "539",
+   "name": "Frostmark Farmstead",
+   "tile": [
+    14,
+    12
+   ],
+   "item": "megagel",
+   "n": 3,
+   "tier": 4
+  },
+  {
+   "section": "518",
+   "name": "Frost Crossroads",
+   "tile": [
+    1,
+    11
+   ],
+   "item": "ether",
+   "n": 2,
+   "tier": 4
+  },
+  {
+   "section": "518",
+   "name": "Frost Crossroads",
+   "tile": [
+    8,
+    15
+   ],
+   "item": "ether",
+   "n": 2,
+   "tier": 4
+  },
+  {
+   "section": "519",
+   "name": "Ice Junction",
+   "tile": [
+    1,
+    12
+   ],
+   "item": "fullgel",
+   "n": 1,
+   "tier": 4
+  },
+  {
+   "section": "519",
+   "name": "Ice Junction",
+   "tile": [
+    2,
+    14
+   ],
+   "item": "harmonic",
+   "n": 5,
+   "tier": 4
+  },
+  {
+   "section": "520",
+   "name": "Floe Fork",
+   "tile": [
+    15,
+    14
+   ],
+   "item": "dust",
+   "n": 800,
+   "tier": 4
+  },
+  {
+   "section": "520",
+   "name": "Floe Fork",
+   "tile": [
+    1,
+    3
+   ],
+   "item": "megagel",
+   "n": 3,
+   "tier": 4
+  },
+  {
+   "section": "521",
+   "name": "Frostfall Slope",
+   "tile": [
+    22,
+    10
+   ],
+   "item": "revive",
+   "n": 2,
+   "tier": 4
+  },
+  {
+   "section": "521",
+   "name": "Frostfall Slope",
+   "tile": [
+    15,
+    2
+   ],
+   "item": "jammer",
+   "n": 2,
+   "tier": 4
+  },
+  {
+   "section": "522",
+   "name": "Aurora Overlook",
+   "tile": [
+    3,
+    6
+   ],
+   "item": "ether",
+   "n": 2,
+   "tier": 4
+  },
+  {
+   "section": "522",
+   "name": "Aurora Overlook",
+   "tile": [
+    2,
+    13
+   ],
+   "item": "megagel",
+   "n": 3,
+   "tier": 4
+  },
+  {
+   "section": "523",
+   "name": "Floe Shore",
+   "tile": [
+    16,
+    9
+   ],
+   "item": "revive",
+   "n": 2,
+   "tier": 4
+  },
+  {
+   "section": "523",
+   "name": "Floe Shore",
+   "tile": [
+    15,
+    2
+   ],
+   "item": "ether",
+   "n": 2,
+   "tier": 4
+  },
+  {
+   "section": "524",
+   "name": "Crevasse Hollows",
+   "tile": [
+    1,
+    14
+   ],
+   "item": "revive",
+   "n": 2,
+   "tier": 4
+  },
+  {
+   "section": "524",
+   "name": "Crevasse Hollows",
+   "tile": [
+    22,
+    3
+   ],
+   "item": "harmonic",
+   "n": 5,
+   "tier": 4
+  },
+  {
+   "section": "525",
    "name": "Frozen Falls",
+   "tile": [
+    2,
+    10
+   ],
+   "item": "ether",
+   "n": 2,
+   "tier": 4
+  },
+  {
+   "section": "525",
+   "name": "Frozen Falls",
+   "tile": [
+    19,
+    10
+   ],
+   "item": "revive",
+   "n": 2,
+   "tier": 4
+  },
+  {
+   "section": "526",
+   "name": "Fossil Dig Flats",
+   "tile": [
+    1,
+    14
+   ],
+   "item": "fullgel",
+   "n": 1,
+   "tier": 4
+  },
+  {
+   "section": "526",
+   "name": "Fossil Dig Flats",
    "tile": [
     11,
     14
+   ],
+   "item": "ether",
+   "n": 2,
+   "tier": 4
+  },
+  {
+   "section": "529",
+   "name": "Hidden Ice Grove",
+   "tile": [
+    22,
+    10
+   ],
+   "item": "dust",
+   "n": 800,
+   "tier": 4
+  },
+  {
+   "section": "529",
+   "name": "Hidden Ice Grove",
+   "tile": [
+    7,
+    5
+   ],
+   "item": "revive",
+   "n": 2,
+   "tier": 4
+  },
+  {
+   "section": "511",
+   "name": "Glacier Rink Arena",
+   "tile": [
+    11,
+    14
+   ],
+   "item": "harmonic",
+   "n": 5,
+   "tier": 4
+  },
+  {
+   "section": "514",
+   "name": "Crystal Caverns Entrance",
+   "tile": [
+    4,
+    7
+   ],
+   "item": "jammer",
+   "n": 2,
+   "tier": 4
+  },
+  {
+   "section": "514",
+   "name": "Crystal Caverns Entrance",
+   "tile": [
+    19,
+    10
+   ],
+   "item": "dust",
+   "n": 800,
+   "tier": 4
+  },
+  {
+   "section": "527",
+   "name": "Frozen Research Annex",
+   "tile": [
+    2,
+    10
+   ],
+   "item": "revive",
+   "n": 2,
+   "tier": 4
+  },
+  {
+   "section": "534",
+   "name": "Aurora Relay Tower",
+   "tile": [
+    5,
+    13
    ],
    "item": "megagel",
    "n": 3,
@@ -1390,6 +3337,336 @@
    "item": "maxrevive",
    "n": 1,
    "tier": 5
+  },
+  {
+   "section": "630",
+   "name": "Officers Court",
+   "tile": [
+    22,
+    5
+   ],
+   "item": "harmonic",
+   "n": 5,
+   "tier": 5
+  },
+  {
+   "section": "632",
+   "name": "Hydroponics Edge",
+   "tile": [
+    6,
+    12
+   ],
+   "item": "harmonic",
+   "n": 5,
+   "tier": 5
+  },
+  {
+   "section": "612",
+   "name": "Deck Crossroads",
+   "tile": [
+    2,
+    1
+   ],
+   "item": "fullgel",
+   "n": 2,
+   "tier": 5
+  },
+  {
+   "section": "612",
+   "name": "Deck Crossroads",
+   "tile": [
+    21,
+    1
+   ],
+   "item": "harmonic",
+   "n": 5,
+   "tier": 5
+  },
+  {
+   "section": "614",
+   "name": "Station Coolant Fork",
+   "tile": [
+    2,
+    2
+   ],
+   "item": "dust",
+   "n": 1200,
+   "tier": 5
+  },
+  {
+   "section": "614",
+   "name": "Station Coolant Fork",
+   "tile": [
+    1,
+    3
+   ],
+   "item": "ether",
+   "n": 3,
+   "tier": 5
+  },
+  {
+   "section": "613",
+   "name": "Corridor Junction",
+   "tile": [
+    19,
+    11
+   ],
+   "item": "fullgel",
+   "n": 2,
+   "tier": 5
+  },
+  {
+   "section": "613",
+   "name": "Corridor Junction",
+   "tile": [
+    22,
+    12
+   ],
+   "item": "fullgel",
+   "n": 2,
+   "tier": 5
+  },
+  {
+   "section": "634",
+   "name": "Helix Station Spaceport",
+   "tile": [
+    5,
+    13
+   ],
+   "item": "ether",
+   "n": 3,
+   "tier": 5
+  },
+  {
+   "section": "617",
+   "name": "Coolant Basin",
+   "tile": [
+    7,
+    10
+   ],
+   "item": "harmonic",
+   "n": 5,
+   "tier": 5
+  },
+  {
+   "section": "617",
+   "name": "Coolant Basin",
+   "tile": [
+    9,
+    2
+   ],
+   "item": "fullgel",
+   "n": 2,
+   "tier": 5
+  },
+  {
+   "section": "615",
+   "name": "Docking Ramp",
+   "tile": [
+    2,
+    14
+   ],
+   "item": "dust",
+   "n": 1200,
+   "tier": 5
+  },
+  {
+   "section": "615",
+   "name": "Docking Ramp",
+   "tile": [
+    21,
+    1
+   ],
+   "item": "maxrevive",
+   "n": 1,
+   "tier": 5
+  },
+  {
+   "section": "619",
+   "name": "Reactor Channel",
+   "tile": [
+    21,
+    12
+   ],
+   "item": "dust",
+   "n": 1200,
+   "tier": 5
+  },
+  {
+   "section": "619",
+   "name": "Reactor Channel",
+   "tile": [
+    4,
+    9
+   ],
+   "item": "maxrevive",
+   "n": 1,
+   "tier": 5
+  },
+  {
+   "section": "618",
+   "name": "Specimen Annex",
+   "tile": [
+    22,
+    14
+   ],
+   "item": "fullgel",
+   "n": 2,
+   "tier": 5
+  },
+  {
+   "section": "618",
+   "name": "Specimen Annex",
+   "tile": [
+    6,
+    2
+   ],
+   "item": "maxrevive",
+   "n": 1,
+   "tier": 5
+  },
+  {
+   "section": "616",
+   "name": "Viewport Overlook",
+   "tile": [
+    11,
+    14
+   ],
+   "item": "maxrevive",
+   "n": 1,
+   "tier": 5
+  },
+  {
+   "section": "616",
+   "name": "Viewport Overlook",
+   "tile": [
+    13,
+    14
+   ],
+   "item": "maxrevive",
+   "n": 1,
+   "tier": 5
+  },
+  {
+   "section": "620",
+   "name": "Hangar Deck",
+   "tile": [
+    3,
+    6
+   ],
+   "item": "ether",
+   "n": 3,
+   "tier": 5
+  },
+  {
+   "section": "620",
+   "name": "Hangar Deck",
+   "tile": [
+    3,
+    2
+   ],
+   "item": "maxrevive",
+   "n": 1,
+   "tier": 5
+  },
+  {
+   "section": "608",
+   "name": "Rift Rock Mine Entrance",
+   "tile": [
+    19,
+    12
+   ],
+   "item": "fullgel",
+   "n": 2,
+   "tier": 5
+  },
+  {
+   "section": "608",
+   "name": "Rift Rock Mine Entrance",
+   "tile": [
+    4,
+    10
+   ],
+   "item": "ether",
+   "n": 3,
+   "tier": 5
+  },
+  {
+   "section": "609",
+   "name": "Rift Rock Mine 1F",
+   "tile": [
+    20,
+    13
+   ],
+   "item": "fullgel",
+   "n": 2,
+   "tier": 5
+  },
+  {
+   "section": "610",
+   "name": "Rift Rock Mine 2F",
+   "tile": [
+    20,
+    8
+   ],
+   "item": "fullgel",
+   "n": 2,
+   "tier": 5
+  },
+  {
+   "section": "611",
+   "name": "Rift Rock Deep Chamber",
+   "tile": [
+    4,
+    2
+   ],
+   "item": "dust",
+   "n": 1200,
+   "tier": 5
+  },
+  {
+   "section": "605",
+   "name": "Helix Proving Grounds",
+   "tile": [
+    11,
+    14
+   ],
+   "item": "maxrevive",
+   "n": 1,
+   "tier": 5
+  },
+  {
+   "section": "626",
+   "name": "Helix Comms Spire",
+   "tile": [
+    21,
+    9
+   ],
+   "item": "fullgel",
+   "n": 2,
+   "tier": 5
+  },
+  {
+   "section": "621",
+   "name": "Hidden Hydro Garden",
+   "tile": [
+    21,
+    9
+   ],
+   "item": "fullgel",
+   "n": 2,
+   "tier": 5
+  },
+  {
+   "section": "621",
+   "name": "Hidden Hydro Garden",
+   "tile": [
+    13,
+    1
+   ],
+   "item": "maxrevive",
+   "n": 1,
+   "tier": 5
   }
  ],
  "Halo": [
@@ -1416,21 +3693,10 @@
    "tier": 5
   },
   {
-   "section": "118",
-   "name": "Wind Bridges Part A",
+   "section": "582",
+   "name": "Sky Crossroads",
    "tile": [
-    11,
-    14
-   ],
-   "item": "harmonic",
-   "n": 5,
-   "tier": 5
-  },
-  {
-   "section": "118",
-   "name": "Wind Bridges Part A",
-   "tile": [
-    6,
+    4,
     2
    ],
    "item": "fullgel",
@@ -1438,47 +3704,322 @@
    "tier": 5
   },
   {
-   "section": "119",
-   "name": "Wind Bridges Part B",
+   "section": "582",
+   "name": "Sky Crossroads",
    "tile": [
-    11,
-    14
-   ],
-   "item": "maxrevive",
-   "n": 1,
-   "tier": 5
-  },
-  {
-   "section": "119",
-   "name": "Wind Bridges Part B",
-   "tile": [
-    6,
-    2
-   ],
-   "item": "harmonic",
-   "n": 5,
-   "tier": 5
-  },
-  {
-   "section": "120",
-   "name": "Floating Gardens",
-   "tile": [
-    11,
-    14
+    4,
+    13
    ],
    "item": "singularity",
    "n": 1,
    "tier": 5
   },
   {
-   "section": "120",
+   "section": "604",
+   "name": "Halo Spaceport",
+   "tile": [
+    5,
+    3
+   ],
+   "item": "ether",
+   "n": 3,
+   "tier": 5
+  },
+  {
+   "section": "601",
+   "name": "Skyreach Quiet Court",
+   "tile": [
+    1,
+    5
+   ],
+   "item": "harmonic",
+   "n": 5,
+   "tier": 5
+  },
+  {
+   "section": "586",
+   "name": "Sky Temple Overlook",
+   "tile": [
+    3,
+    6
+   ],
+   "item": "fullgel",
+   "n": 2,
+   "tier": 5
+  },
+  {
+   "section": "586",
+   "name": "Sky Temple Overlook",
+   "tile": [
+    19,
+    5
+   ],
+   "item": "fullgel",
+   "n": 2,
+   "tier": 5
+  },
+  {
+   "section": "590",
    "name": "Floating Gardens",
    "tile": [
-    6,
+    20,
+    3
+   ],
+   "item": "ether",
+   "n": 3,
+   "tier": 5
+  },
+  {
+   "section": "590",
+   "name": "Floating Gardens",
+   "tile": [
+    20,
+    7
+   ],
+   "item": "ether",
+   "n": 3,
+   "tier": 5
+  },
+  {
+   "section": "587",
+   "name": "Cloudbreak Edge",
+   "tile": [
+    16,
+    9
+   ],
+   "item": "ether",
+   "n": 3,
+   "tier": 5
+  },
+  {
+   "section": "587",
+   "name": "Cloudbreak Edge",
+   "tile": [
+    15,
+    4
+   ],
+   "item": "dust",
+   "n": 1200,
+   "tier": 5
+  },
+  {
+   "section": "583",
+   "name": "Temple Junction",
+   "tile": [
+    1,
+    12
+   ],
+   "item": "fullgel",
+   "n": 2,
+   "tier": 5
+  },
+  {
+   "section": "583",
+   "name": "Temple Junction",
+   "tile": [
+    22,
     2
    ],
    "item": "dust",
    "n": 1200,
+   "tier": 5
+  },
+  {
+   "section": "597",
+   "name": "Sky Temple",
+   "tile": [
+    9,
+    12
+   ],
+   "item": "harmonic",
+   "n": 5,
+   "tier": 5
+  },
+  {
+   "section": "573",
+   "name": "Sky Colosseum",
+   "tile": [
+    21,
+    9
+   ],
+   "item": "fullgel",
+   "n": 2,
+   "tier": 5
+  },
+  {
+   "section": "584",
+   "name": "Cloud Fork",
+   "tile": [
+    16,
+    14
+   ],
+   "item": "dust",
+   "n": 1200,
+   "tier": 5
+  },
+  {
+   "section": "584",
+   "name": "Cloud Fork",
+   "tile": [
+    2,
+    14
+   ],
+   "item": "ether",
+   "n": 3,
+   "tier": 5
+  },
+  {
+   "section": "591",
+   "name": "Hidden Blossom Grove",
+   "tile": [
+    7,
+    10
+   ],
+   "item": "maxrevive",
+   "n": 1,
+   "tier": 5
+  },
+  {
+   "section": "591",
+   "name": "Hidden Blossom Grove",
+   "tile": [
+    4,
+    5
+   ],
+   "item": "maxrevive",
+   "n": 1,
+   "tier": 5
+  },
+  {
+   "section": "579",
+   "name": "Crystal Hollow 1F",
+   "tile": [
+    20,
+    13
+   ],
+   "item": "ether",
+   "n": 3,
+   "tier": 5
+  },
+  {
+   "section": "579",
+   "name": "Crystal Hollow 1F",
+   "tile": [
+    3,
+    13
+   ],
+   "item": "fullgel",
+   "n": 2,
+   "tier": 5
+  },
+  {
+   "section": "580",
+   "name": "Crystal Hollow 2F",
+   "tile": [
+    20,
+    8
+   ],
+   "item": "singularity",
+   "n": 1,
+   "tier": 5
+  },
+  {
+   "section": "580",
+   "name": "Crystal Hollow 2F",
+   "tile": [
+    21,
+    6
+   ],
+   "item": "fullgel",
+   "n": 2,
+   "tier": 5
+  },
+  {
+   "section": "581",
+   "name": "Crystal Hollow Heart",
+   "tile": [
+    4,
+    2
+   ],
+   "item": "fullgel",
+   "n": 2,
+   "tier": 5
+  },
+  {
+   "section": "588",
+   "name": "Shrine Hollows",
+   "tile": [
+    21,
+    3
+   ],
+   "item": "singularity",
+   "n": 1,
+   "tier": 5
+  },
+  {
+   "section": "588",
+   "name": "Shrine Hollows",
+   "tile": [
+    2,
+    13
+   ],
+   "item": "dust",
+   "n": 1200,
+   "tier": 5
+  },
+  {
+   "section": "589",
+   "name": "Cloud River Bend",
+   "tile": [
+    12,
+    3
+   ],
+   "item": "harmonic",
+   "n": 5,
+   "tier": 5
+  },
+  {
+   "section": "589",
+   "name": "Cloud River Bend",
+   "tile": [
+    4,
+    10
+   ],
+   "item": "harmonic",
+   "n": 5,
+   "tier": 5
+  },
+  {
+   "section": "585",
+   "name": "Windstep Rise",
+   "tile": [
+    22,
+    12
+   ],
+   "item": "ether",
+   "n": 3,
+   "tier": 5
+  },
+  {
+   "section": "585",
+   "name": "Windstep Rise",
+   "tile": [
+    14,
+    1
+   ],
+   "item": "dust",
+   "n": 1200,
+   "tier": 5
+  },
+  {
+   "section": "602",
+   "name": "Skyfarm Edge",
+   "tile": [
+    2,
+    11
+   ],
+   "item": "maxrevive",
+   "n": 1,
    "tier": 5
   }
  ],
@@ -1498,55 +4039,11 @@
    "section": "124",
    "name": "Gravewell",
    "tile": [
-    8,
-    11
+    9,
+    10
    ],
    "item": "maxrevive",
    "n": 1,
-   "tier": 6
-  },
-  {
-   "section": "127",
-   "name": "Lantern Streets Part A",
-   "tile": [
-    11,
-    14
-   ],
-   "item": "maxrevive",
-   "n": 1,
-   "tier": 6
-  },
-  {
-   "section": "127",
-   "name": "Lantern Streets Part A",
-   "tile": [
-    17,
-    12
-   ],
-   "item": "maxrevive",
-   "n": 1,
-   "tier": 6
-  },
-  {
-   "section": "128",
-   "name": "Lantern Streets Part B",
-   "tile": [
-    11,
-    14
-   ],
-   "item": "fullgel",
-   "n": 3,
-   "tier": 6
-  },
-  {
-   "section": "128",
-   "name": "Lantern Streets Part B",
-   "tile": [
-    6,
-    0
-   ],
-   "item": "fullgel",
-   "n": 3,
    "tier": 6
   },
   {
@@ -1614,6 +4111,369 @@
    "item": "ether",
    "n": 3,
    "tier": 6
+  },
+  {
+   "section": "837",
+   "name": "Gravewell Quiet Court",
+   "tile": [
+    10,
+    14
+   ],
+   "item": "dust",
+   "n": 1600,
+   "tier": 6
+  },
+  {
+   "section": "838",
+   "name": "Umbra Farmstead Edge",
+   "tile": [
+    8,
+    11
+   ],
+   "item": "fullgel",
+   "n": 3,
+   "tier": 6
+  },
+  {
+   "section": "840",
+   "name": "Umbra Spaceport",
+   "tile": [
+    19,
+    2
+   ],
+   "item": "dust",
+   "n": 1600,
+   "tier": 6
+  },
+  {
+   "section": "816",
+   "name": "Lantern Crossroads",
+   "tile": [
+    19,
+    2
+   ],
+   "item": "ether",
+   "n": 3,
+   "tier": 6
+  },
+  {
+   "section": "816",
+   "name": "Lantern Crossroads",
+   "tile": [
+    18,
+    12
+   ],
+   "item": "fullgel",
+   "n": 3,
+   "tier": 6
+  },
+  {
+   "section": "817",
+   "name": "Shadow Junction",
+   "tile": [
+    1,
+    3
+   ],
+   "item": "dust",
+   "n": 1600,
+   "tier": 6
+  },
+  {
+   "section": "817",
+   "name": "Shadow Junction",
+   "tile": [
+    21,
+    1
+   ],
+   "item": "dust",
+   "n": 1600,
+   "tier": 6
+  },
+  {
+   "section": "818",
+   "name": "Abyss Fork",
+   "tile": [
+    5,
+    14
+   ],
+   "item": "maxrevive",
+   "n": 1,
+   "tier": 6
+  },
+  {
+   "section": "818",
+   "name": "Abyss Fork",
+   "tile": [
+    11,
+    3
+   ],
+   "item": "fullgel",
+   "n": 3,
+   "tier": 6
+  },
+  {
+   "section": "819",
+   "name": "Lantern Steps",
+   "tile": [
+    3,
+    6
+   ],
+   "item": "singularity",
+   "n": 1,
+   "tier": 6
+  },
+  {
+   "section": "819",
+   "name": "Lantern Steps",
+   "tile": [
+    7,
+    3
+   ],
+   "item": "fullgel",
+   "n": 3,
+   "tier": 6
+  },
+  {
+   "section": "820",
+   "name": "Sinkhole Overlook",
+   "tile": [
+    20,
+    8
+   ],
+   "item": "dust",
+   "n": 1600,
+   "tier": 6
+  },
+  {
+   "section": "820",
+   "name": "Sinkhole Overlook",
+   "tile": [
+    4,
+    5
+   ],
+   "item": "ether",
+   "n": 3,
+   "tier": 6
+  },
+  {
+   "section": "821",
+   "name": "Abyss Rim",
+   "tile": [
+    22,
+    10
+   ],
+   "item": "maxrevive",
+   "n": 1,
+   "tier": 6
+  },
+  {
+   "section": "821",
+   "name": "Abyss Rim",
+   "tile": [
+    21,
+    3
+   ],
+   "item": "dust",
+   "n": 1600,
+   "tier": 6
+  },
+  {
+   "section": "822",
+   "name": "Shade Hollows",
+   "tile": [
+    21,
+    14
+   ],
+   "item": "fullgel",
+   "n": 3,
+   "tier": 6
+  },
+  {
+   "section": "822",
+   "name": "Shade Hollows",
+   "tile": [
+    2,
+    3
+   ],
+   "item": "maxrevive",
+   "n": 1,
+   "tier": 6
+  },
+  {
+   "section": "823",
+   "name": "Mistfall Bend",
+   "tile": [
+    20,
+    9
+   ],
+   "item": "singularity",
+   "n": 1,
+   "tier": 6
+  },
+  {
+   "section": "823",
+   "name": "Mistfall Bend",
+   "tile": [
+    11,
+    1
+   ],
+   "item": "ether",
+   "n": 3,
+   "tier": 6
+  },
+  {
+   "section": "824",
+   "name": "Gloom Commons",
+   "tile": [
+    4,
+    7
+   ],
+   "item": "fullgel",
+   "n": 3,
+   "tier": 6
+  },
+  {
+   "section": "824",
+   "name": "Gloom Commons",
+   "tile": [
+    2,
+    3
+   ],
+   "item": "maxrevive",
+   "n": 1,
+   "tier": 6
+  },
+  {
+   "section": "827",
+   "name": "Gloomshade Grove",
+   "tile": [
+    21,
+    9
+   ],
+   "item": "ether",
+   "n": 3,
+   "tier": 6
+  },
+  {
+   "section": "827",
+   "name": "Gloomshade Grove",
+   "tile": [
+    22,
+    11
+   ],
+   "item": "dust",
+   "n": 1600,
+   "tier": 6
+  },
+  {
+   "section": "825",
+   "name": "Helix Hideout",
+   "tile": [
+    8,
+    11
+   ],
+   "item": "ether",
+   "n": 3,
+   "tier": 6
+  },
+  {
+   "section": "807",
+   "name": "Lantern Pit",
+   "tile": [
+    22,
+    10
+   ],
+   "item": "fullgel",
+   "n": 3,
+   "tier": 6
+  },
+  {
+   "section": "812",
+   "name": "Wailing Cave Entrance",
+   "tile": [
+    20,
+    8
+   ],
+   "item": "fullgel",
+   "n": 3,
+   "tier": 6
+  },
+  {
+   "section": "812",
+   "name": "Wailing Cave Entrance",
+   "tile": [
+    4,
+    10
+   ],
+   "item": "fullgel",
+   "n": 3,
+   "tier": 6
+  },
+  {
+   "section": "813",
+   "name": "Wailing Cave B1",
+   "tile": [
+    19,
+    13
+   ],
+   "item": "maxrevive",
+   "n": 1,
+   "tier": 6
+  },
+  {
+   "section": "813",
+   "name": "Wailing Cave B1",
+   "tile": [
+    7,
+    13
+   ],
+   "item": "maxrevive",
+   "n": 1,
+   "tier": 6
+  },
+  {
+   "section": "814",
+   "name": "Wailing Cave B2",
+   "tile": [
+    20,
+    8
+   ],
+   "item": "dust",
+   "n": 1600,
+   "tier": 6
+  },
+  {
+   "section": "814",
+   "name": "Wailing Cave B2",
+   "tile": [
+    2,
+    8
+   ],
+   "item": "dust",
+   "n": 1600,
+   "tier": 6
+  },
+  {
+   "section": "815",
+   "name": "Wailing Cave Deep Chamber",
+   "tile": [
+    4,
+    2
+   ],
+   "item": "fullgel",
+   "n": 3,
+   "tier": 6
+  },
+  {
+   "section": "833",
+   "name": "Gravewell Relay Tower",
+   "tile": [
+    21,
+    9
+   ],
+   "item": "dust",
+   "n": 1600,
+   "tier": 6
   }
  ],
  "Starfall Rift": [
@@ -1648,28 +4508,6 @@
    ],
    "item": "singularity",
    "n": 1,
-   "tier": 6
-  },
-  {
-   "section": "139",
-   "name": "Seedpod Fields Part B",
-   "tile": [
-    10,
-    13
-   ],
-   "item": "ether",
-   "n": 3,
-   "tier": 6
-  },
-  {
-   "section": "139",
-   "name": "Seedpod Fields Part B",
-   "tile": [
-    6,
-    2
-   ],
-   "item": "dust",
-   "n": 1600,
    "tier": 6
   },
   {
@@ -1759,6 +4597,347 @@
    "item": "maxrevive",
    "n": 1,
    "tier": 6
+  },
+  {
+   "section": "767",
+   "name": "Starfall Spaceport",
+   "tile": [
+    5,
+    3
+   ],
+   "item": "maxrevive",
+   "n": 1,
+   "tier": 6
+  },
+  {
+   "section": "763",
+   "name": "Starfall Lane Homes",
+   "tile": [
+    9,
+    12
+   ],
+   "item": "maxrevive",
+   "n": 1,
+   "tier": 6
+  },
+  {
+   "section": "764",
+   "name": "Starfall Quiet Court",
+   "tile": [
+    16,
+    10
+   ],
+   "item": "ether",
+   "n": 3,
+   "tier": 6
+  },
+  {
+   "section": "765",
+   "name": "Starfall Farmstead Edge",
+   "tile": [
+    18,
+    11
+   ],
+   "item": "fullgel",
+   "n": 3,
+   "tier": 6
+  },
+  {
+   "section": "745",
+   "name": "Crater Crossroads",
+   "tile": [
+    5,
+    14
+   ],
+   "item": "ether",
+   "n": 3,
+   "tier": 6
+  },
+  {
+   "section": "745",
+   "name": "Crater Crossroads",
+   "tile": [
+    20,
+    2
+   ],
+   "item": "singularity",
+   "n": 1,
+   "tier": 6
+  },
+  {
+   "section": "746",
+   "name": "Seedpod Junction",
+   "tile": [
+    18,
+    1
+   ],
+   "item": "ether",
+   "n": 3,
+   "tier": 6
+  },
+  {
+   "section": "746",
+   "name": "Seedpod Junction",
+   "tile": [
+    1,
+    10
+   ],
+   "item": "dust",
+   "n": 1600,
+   "tier": 6
+  },
+  {
+   "section": "747",
+   "name": "Rift Fork",
+   "tile": [
+    14,
+    14
+   ],
+   "item": "fullgel",
+   "n": 3,
+   "tier": 6
+  },
+  {
+   "section": "747",
+   "name": "Rift Fork",
+   "tile": [
+    13,
+    3
+   ],
+   "item": "maxrevive",
+   "n": 1,
+   "tier": 6
+  },
+  {
+   "section": "748",
+   "name": "Craterstep Slope",
+   "tile": [
+    21,
+    10
+   ],
+   "item": "singularity",
+   "n": 1,
+   "tier": 6
+  },
+  {
+   "section": "748",
+   "name": "Craterstep Slope",
+   "tile": [
+    14,
+    3
+   ],
+   "item": "fullgel",
+   "n": 3,
+   "tier": 6
+  },
+  {
+   "section": "750",
+   "name": "Nebula Overlook",
+   "tile": [
+    3,
+    6
+   ],
+   "item": "dust",
+   "n": 1600,
+   "tier": 6
+  },
+  {
+   "section": "750",
+   "name": "Nebula Overlook",
+   "tile": [
+    19,
+    13
+   ],
+   "item": "fullgel",
+   "n": 3,
+   "tier": 6
+  },
+  {
+   "section": "751",
+   "name": "Rift Edge",
+   "tile": [
+    8,
+    11
+   ],
+   "item": "maxrevive",
+   "n": 1,
+   "tier": 6
+  },
+  {
+   "section": "751",
+   "name": "Rift Edge",
+   "tile": [
+    1,
+    9
+   ],
+   "item": "dust",
+   "n": 1600,
+   "tier": 6
+  },
+  {
+   "section": "752",
+   "name": "Seedpod Hollows",
+   "tile": [
+    7,
+    10
+   ],
+   "item": "fullgel",
+   "n": 3,
+   "tier": 6
+  },
+  {
+   "section": "752",
+   "name": "Seedpod Hollows",
+   "tile": [
+    5,
+    1
+   ],
+   "item": "ether",
+   "n": 3,
+   "tier": 6
+  },
+  {
+   "section": "753",
+   "name": "Starstream Bend",
+   "tile": [
+    12,
+    3
+   ],
+   "item": "fullgel",
+   "n": 3,
+   "tier": 6
+  },
+  {
+   "section": "753",
+   "name": "Starstream Bend",
+   "tile": [
+    19,
+    10
+   ],
+   "item": "ether",
+   "n": 3,
+   "tier": 6
+  },
+  {
+   "section": "754",
+   "name": "Pod Fields",
+   "tile": [
+    20,
+    4
+   ],
+   "item": "maxrevive",
+   "n": 1,
+   "tier": 6
+  },
+  {
+   "section": "754",
+   "name": "Pod Fields",
+   "tile": [
+    17,
+    11
+   ],
+   "item": "maxrevive",
+   "n": 1,
+   "tier": 6
+  },
+  {
+   "section": "755",
+   "name": "Starfall Secret Grove",
+   "tile": [
+    7,
+    10
+   ],
+   "item": "ether",
+   "n": 3,
+   "tier": 6
+  },
+  {
+   "section": "755",
+   "name": "Starfall Secret Grove",
+   "tile": [
+    3,
+    6
+   ],
+   "item": "maxrevive",
+   "n": 1,
+   "tier": 6
+  },
+  {
+   "section": "736",
+   "name": "Rift Crater Arena",
+   "tile": [
+    2,
+    10
+   ],
+   "item": "fullgel",
+   "n": 3,
+   "tier": 6
+  },
+  {
+   "section": "741",
+   "name": "Starstone Hollow Entrance",
+   "tile": [
+    3,
+    6
+   ],
+   "item": "fullgel",
+   "n": 3,
+   "tier": 6
+  },
+  {
+   "section": "741",
+   "name": "Starstone Hollow Entrance",
+   "tile": [
+    20,
+    11
+   ],
+   "item": "fullgel",
+   "n": 3,
+   "tier": 6
+  },
+  {
+   "section": "742",
+   "name": "Starstone Hollow B1",
+   "tile": [
+    20,
+    13
+   ],
+   "item": "fullgel",
+   "n": 3,
+   "tier": 6
+  },
+  {
+   "section": "742",
+   "name": "Starstone Hollow B1",
+   "tile": [
+    3,
+    13
+   ],
+   "item": "dust",
+   "n": 1600,
+   "tier": 6
+  },
+  {
+   "section": "743",
+   "name": "Starstone Hollow B2",
+   "tile": [
+    20,
+    8
+   ],
+   "item": "singularity",
+   "n": 1,
+   "tier": 6
+  },
+  {
+   "section": "744",
+   "name": "Starstone Hollow Deep Chamber",
+   "tile": [
+    4,
+    2
+   ],
+   "item": "singularity",
+   "n": 1,
+   "tier": 6
   }
  ],
  "Apex Array": [
@@ -1770,6 +4949,369 @@
     7
    ],
    "item": "singularity",
+   "n": 2,
+   "tier": 7
+  },
+  {
+   "section": "434",
+   "name": "Apex Spaceport",
+   "tile": [
+    5,
+    3
+   ],
+   "item": "dust",
+   "n": 2500,
+   "tier": 7
+  },
+  {
+   "section": "430",
+   "name": "Summit Lane Homes",
+   "tile": [
+    15,
+    13
+   ],
+   "item": "maxrevive",
+   "n": 2,
+   "tier": 7
+  },
+  {
+   "section": "431",
+   "name": "Stargazer Quiet Court",
+   "tile": [
+    5,
+    7
+   ],
+   "item": "dust",
+   "n": 2500,
+   "tier": 7
+  },
+  {
+   "section": "432",
+   "name": "Summit Farmstead",
+   "tile": [
+    9,
+    12
+   ],
+   "item": "maxrevive",
+   "n": 2,
+   "tier": 7
+  },
+  {
+   "section": "411",
+   "name": "Summit Crossroads",
+   "tile": [
+    18,
+    13
+   ],
+   "item": "dust",
+   "n": 2500,
+   "tier": 7
+  },
+  {
+   "section": "411",
+   "name": "Summit Crossroads",
+   "tile": [
+    21,
+    3
+   ],
+   "item": "dust",
+   "n": 2500,
+   "tier": 7
+  },
+  {
+   "section": "412",
+   "name": "Observatory Junction",
+   "tile": [
+    1,
+    2
+   ],
+   "item": "maxrevive",
+   "n": 2,
+   "tier": 7
+  },
+  {
+   "section": "412",
+   "name": "Observatory Junction",
+   "tile": [
+    18,
+    13
+   ],
+   "item": "ether",
+   "n": 5,
+   "tier": 7
+  },
+  {
+   "section": "413",
+   "name": "Tarn Fork",
+   "tile": [
+    6,
+    14
+   ],
+   "item": "fullgel",
+   "n": 3,
+   "tier": 7
+  },
+  {
+   "section": "413",
+   "name": "Tarn Fork",
+   "tile": [
+    22,
+    14
+   ],
+   "item": "dust",
+   "n": 2500,
+   "tier": 7
+  },
+  {
+   "section": "414",
+   "name": "Summit Stairs",
+   "tile": [
+    1,
+    10
+   ],
+   "item": "dust",
+   "n": 2500,
+   "tier": 7
+  },
+  {
+   "section": "414",
+   "name": "Summit Stairs",
+   "tile": [
+    20,
+    1
+   ],
+   "item": "maxrevive",
+   "n": 2,
+   "tier": 7
+  },
+  {
+   "section": "415",
+   "name": "Stargazer Overlook",
+   "tile": [
+    21,
+    9
+   ],
+   "item": "fullgel",
+   "n": 3,
+   "tier": 7
+  },
+  {
+   "section": "415",
+   "name": "Stargazer Overlook",
+   "tile": [
+    2,
+    3
+   ],
+   "item": "dust",
+   "n": 2500,
+   "tier": 7
+  },
+  {
+   "section": "416",
+   "name": "Meltwater Tarn",
+   "tile": [
+    7,
+    5
+   ],
+   "item": "fullgel",
+   "n": 3,
+   "tier": 7
+  },
+  {
+   "section": "416",
+   "name": "Meltwater Tarn",
+   "tile": [
+    7,
+    11
+   ],
+   "item": "maxrevive",
+   "n": 2,
+   "tier": 7
+  },
+  {
+   "section": "419",
+   "name": "Instrument Hollows",
+   "tile": [
+    21,
+    14
+   ],
+   "item": "fullgel",
+   "n": 3,
+   "tier": 7
+  },
+  {
+   "section": "419",
+   "name": "Instrument Hollows",
+   "tile": [
+    3,
+    14
+   ],
+   "item": "singularity",
+   "n": 2,
+   "tier": 7
+  },
+  {
+   "section": "420",
+   "name": "Glacier Bend",
+   "tile": [
+    22,
+    8
+   ],
+   "item": "dust",
+   "n": 2500,
+   "tier": 7
+  },
+  {
+   "section": "420",
+   "name": "Glacier Bend",
+   "tile": [
+    2,
+    8
+   ],
+   "item": "fullgel",
+   "n": 3,
+   "tier": 7
+  },
+  {
+   "section": "421",
+   "name": "Observatory Terrace",
+   "tile": [
+    3,
+    6
+   ],
+   "item": "singularity",
+   "n": 2,
+   "tier": 7
+  },
+  {
+   "section": "421",
+   "name": "Observatory Terrace",
+   "tile": [
+    1,
+    1
+   ],
+   "item": "maxrevive",
+   "n": 2,
+   "tier": 7
+  },
+  {
+   "section": "422",
+   "name": "Summit Secret Grove",
+   "tile": [
+    22,
+    10
+   ],
+   "item": "maxrevive",
+   "n": 2,
+   "tier": 7
+  },
+  {
+   "section": "422",
+   "name": "Summit Secret Grove",
+   "tile": [
+    20,
+    14
+   ],
+   "item": "fullgel",
+   "n": 3,
+   "tier": 7
+  },
+  {
+   "section": "405",
+   "name": "Icefall Cave Entrance",
+   "tile": [
+    17,
+    7
+   ],
+   "item": "dust",
+   "n": 2500,
+   "tier": 7
+  },
+  {
+   "section": "405",
+   "name": "Icefall Cave Entrance",
+   "tile": [
+    20,
+    7
+   ],
+   "item": "fullgel",
+   "n": 3,
+   "tier": 7
+  },
+  {
+   "section": "406",
+   "name": "Icefall Cave 1F",
+   "tile": [
+    20,
+    13
+   ],
+   "item": "dust",
+   "n": 2500,
+   "tier": 7
+  },
+  {
+   "section": "407",
+   "name": "Icefall Cave B1",
+   "tile": [
+    14,
+    8
+   ],
+   "item": "maxrevive",
+   "n": 2,
+   "tier": 7
+  },
+  {
+   "section": "407",
+   "name": "Icefall Cave B1",
+   "tile": [
+    21,
+    7
+   ],
+   "item": "fullgel",
+   "n": 3,
+   "tier": 7
+  },
+  {
+   "section": "409",
+   "name": "Icefall Deep Chamber",
+   "tile": [
+    17,
+    5
+   ],
+   "item": "maxrevive",
+   "n": 2,
+   "tier": 7
+  },
+  {
+   "section": "409",
+   "name": "Icefall Deep Chamber",
+   "tile": [
+    20,
+    12
+   ],
+   "item": "ether",
+   "n": 5,
+   "tier": 7
+  },
+  {
+   "section": "427",
+   "name": "Apex Relay Tower",
+   "tile": [
+    9,
+    12
+   ],
+   "item": "dust",
+   "n": 2500,
+   "tier": 7
+  },
+  {
+   "section": "401",
+   "name": "Summit Grand Stadium",
+   "tile": [
+    21,
+    9
+   ],
+   "item": "maxrevive",
    "n": 2,
    "tier": 7
   }
@@ -1949,6 +5491,325 @@
    ],
    "item": "maxrevive",
    "n": 2,
+   "tier": 7
+  },
+  {
+   "section": "863",
+   "name": "Fragment Lane Homes",
+   "tile": [
+    11,
+    12
+   ],
+   "item": "maxrevive",
+   "n": 2,
+   "tier": 7
+  },
+  {
+   "section": "864",
+   "name": "Fragment Quiet Court",
+   "tile": [
+    2,
+    5
+   ],
+   "item": "maxrevive",
+   "n": 2,
+   "tier": 7
+  },
+  {
+   "section": "865",
+   "name": "Seedfall Farmstead",
+   "tile": [
+    18,
+    11
+   ],
+   "item": "ether",
+   "n": 5,
+   "tier": 7
+  },
+  {
+   "section": "849",
+   "name": "Crystal Crossroads",
+   "tile": [
+    1,
+    12
+   ],
+   "item": "fullgel",
+   "n": 3,
+   "tier": 7
+  },
+  {
+   "section": "849",
+   "name": "Crystal Crossroads",
+   "tile": [
+    22,
+    1
+   ],
+   "item": "maxrevive",
+   "n": 2,
+   "tier": 7
+  },
+  {
+   "section": "850",
+   "name": "Glasswood Junction",
+   "tile": [
+    3,
+    13
+   ],
+   "item": "fullgel",
+   "n": 3,
+   "tier": 7
+  },
+  {
+   "section": "850",
+   "name": "Glasswood Junction",
+   "tile": [
+    1,
+    12
+   ],
+   "item": "singularity",
+   "n": 2,
+   "tier": 7
+  },
+  {
+   "section": "851",
+   "name": "Void Fork",
+   "tile": [
+    1,
+    14
+   ],
+   "item": "ether",
+   "n": 5,
+   "tier": 7
+  },
+  {
+   "section": "851",
+   "name": "Void Fork",
+   "tile": [
+    19,
+    14
+   ],
+   "item": "maxrevive",
+   "n": 2,
+   "tier": 7
+  },
+  {
+   "section": "852",
+   "name": "Shard Slope",
+   "tile": [
+    22,
+    10
+   ],
+   "item": "ether",
+   "n": 5,
+   "tier": 7
+  },
+  {
+   "section": "852",
+   "name": "Shard Slope",
+   "tile": [
+    21,
+    14
+   ],
+   "item": "fullgel",
+   "n": 3,
+   "tier": 7
+  },
+  {
+   "section": "853",
+   "name": "Red Sun Overlook",
+   "tile": [
+    19,
+    12
+   ],
+   "item": "fullgel",
+   "n": 3,
+   "tier": 7
+  },
+  {
+   "section": "853",
+   "name": "Red Sun Overlook",
+   "tile": [
+    19,
+    3
+   ],
+   "item": "singularity",
+   "n": 2,
+   "tier": 7
+  },
+  {
+   "section": "854",
+   "name": "Still Crystal Pool",
+   "tile": [
+    16,
+    9
+   ],
+   "item": "maxrevive",
+   "n": 2,
+   "tier": 7
+  },
+  {
+   "section": "854",
+   "name": "Still Crystal Pool",
+   "tile": [
+    14,
+    2
+   ],
+   "item": "maxrevive",
+   "n": 2,
+   "tier": 7
+  },
+  {
+   "section": "855",
+   "name": "Glasswood Hollows",
+   "tile": [
+    1,
+    14
+   ],
+   "item": "singularity",
+   "n": 2,
+   "tier": 7
+  },
+  {
+   "section": "855",
+   "name": "Glasswood Hollows",
+   "tile": [
+    21,
+    1
+   ],
+   "item": "singularity",
+   "n": 2,
+   "tier": 7
+  },
+  {
+   "section": "856",
+   "name": "Void Crack Bend",
+   "tile": [
+    5,
+    9
+   ],
+   "item": "ether",
+   "n": 5,
+   "tier": 7
+  },
+  {
+   "section": "856",
+   "name": "Void Crack Bend",
+   "tile": [
+    19,
+    8
+   ],
+   "item": "singularity",
+   "n": 2,
+   "tier": 7
+  },
+  {
+   "section": "857",
+   "name": "Seedmother Flats",
+   "tile": [
+    21,
+    2
+   ],
+   "item": "dust",
+   "n": 2500,
+   "tier": 7
+  },
+  {
+   "section": "857",
+   "name": "Seedmother Flats",
+   "tile": [
+    20,
+    11
+   ],
+   "item": "singularity",
+   "n": 2,
+   "tier": 7
+  },
+  {
+   "section": "858",
+   "name": "Ystra Secret Grove",
+   "tile": [
+    7,
+    10
+   ],
+   "item": "singularity",
+   "n": 2,
+   "tier": 7
+  },
+  {
+   "section": "858",
+   "name": "Ystra Secret Grove",
+   "tile": [
+    1,
+    6
+   ],
+   "item": "maxrevive",
+   "n": 2,
+   "tier": 7
+  },
+  {
+   "section": "846",
+   "name": "Shardheart Cave 1F",
+   "tile": [
+    20,
+    13
+   ],
+   "item": "singularity",
+   "n": 2,
+   "tier": 7
+  },
+  {
+   "section": "847",
+   "name": "Shardheart Cave B1",
+   "tile": [
+    21,
+    4
+   ],
+   "item": "fullgel",
+   "n": 3,
+   "tier": 7
+  },
+  {
+   "section": "847",
+   "name": "Shardheart Cave B1",
+   "tile": [
+    14,
+    10
+   ],
+   "item": "fullgel",
+   "n": 3,
+   "tier": 7
+  },
+  {
+   "section": "848",
+   "name": "Shardheart Deep Chamber",
+   "tile": [
+    17,
+    5
+   ],
+   "item": "dust",
+   "n": 2500,
+   "tier": 7
+  },
+  {
+   "section": "842",
+   "name": "Ancient Crystal Ring",
+   "tile": [
+    2,
+    10
+   ],
+   "item": "dust",
+   "n": 2500,
+   "tier": 7
+  },
+  {
+   "section": "867",
+   "name": "Ystra Spaceport",
+   "tile": [
+    19,
+    12
+   ],
+   "item": "dust",
+   "n": 2500,
    "tier": 7
   }
  ]

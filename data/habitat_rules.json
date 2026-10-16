@@ -881,85 +881,20 @@
    "name": "Molten Frontier: Magma Mines Gate",
    "habitat": "mine_hot"
   },
-  "045": {
-   "planet": "Sporeholm",
-   "name": "Lantern Marsh Part A",
-   "habitat": "swamp"
-  },
-  "046": {
-   "planet": "Sporeholm",
-   "name": "Lantern Marsh Part B",
-   "habitat": "swamp"
-  },
   "047": {
    "planet": "Sporeholm",
-   "name": "Mushroom Maze 1F",
+   "name": "Mushroom Maze",
    "habitat": "fungal"
-  },
-  "048": {
-   "planet": "Sporeholm",
-   "name": "Mushroom Maze 2F",
-   "habitat": "fungal"
-  },
-  "049": {
-   "planet": "Sporeholm",
-   "name": "Spore Pools",
-   "habitat": "swamp"
-  },
-  "057": {
-   "planet": "Thalassa",
-   "name": "Coral Route Part A",
-   "habitat": "coast"
-  },
-  "058": {
-   "planet": "Thalassa",
-   "name": "Coral Route Part B",
-   "habitat": "coast"
-  },
-  "059": {
-   "planet": "Thalassa",
-   "name": "Sea Arch Cove",
-   "habitat": "thermal_vent"
   },
   "066": {
    "planet": "Neonis",
-   "name": "Arcade District",
+   "name": "Arcade Alleys",
    "habitat": "neon_city"
-  },
-  "067": {
-   "planet": "Neonis",
-   "name": "Broadcast Route Part A",
-   "habitat": "neon_city"
-  },
-  "068": {
-   "planet": "Neonis",
-   "name": "Broadcast Route Part B",
-   "habitat": "neon_city"
-  },
-  "075": {
-   "planet": "Glyphos",
-   "name": "Coral Ruins Part A",
-   "habitat": "ruins"
-  },
-  "076": {
-   "planet": "Glyphos",
-   "name": "Coral Ruins Part B",
-   "habitat": "ruins"
   },
   "077": {
    "planet": "Glyphos",
    "name": "Glyph Hollow",
    "habitat": "ruins"
-  },
-  "085": {
-   "planet": "Pyros",
-   "name": "Lava Rail Part A",
-   "habitat": "volcano"
-  },
-  "086": {
-   "planet": "Pyros",
-   "name": "Lava Rail Part B",
-   "habitat": "volcano"
   },
   "087": {
    "planet": "Pyros",
@@ -973,22 +908,12 @@
   },
   "089": {
    "planet": "Pyros",
-   "name": "Deep Mines B3",
+   "name": "Deep Mines Depths",
    "habitat": "mine_hot"
-  },
-  "090": {
-   "planet": "Pyros",
-   "name": "Furnace Ridge (Pyros)",
-   "habitat": "volcano"
   },
   "096": {
    "planet": "Glacia",
    "name": "Aurora Route Part A",
-   "habitat": "aurora"
-  },
-  "097": {
-   "planet": "Glacia",
-   "name": "Aurora Route Part B",
    "habitat": "aurora"
   },
   "098": {
@@ -1003,18 +928,8 @@
   },
   "100": {
    "planet": "Glacia",
-   "name": "Crystal Caverns B3",
+   "name": "Crystal Caverns Depths",
    "habitat": "ice_cave"
-  },
-  "101": {
-   "planet": "Glacia",
-   "name": "Fossil Dig",
-   "habitat": "tundra"
-  },
-  "102": {
-   "planet": "Glacia",
-   "name": "Frozen Falls",
-   "habitat": "frozen_falls"
   },
   "109": {
    "planet": "Helix Station",
@@ -1030,31 +945,6 @@
    "planet": "Helix Station",
    "name": "Engineering",
    "habitat": "containment"
-  },
-  "118": {
-   "planet": "Halo",
-   "name": "Wind Bridges Part A",
-   "habitat": "sky"
-  },
-  "119": {
-   "planet": "Halo",
-   "name": "Wind Bridges Part B",
-   "habitat": "sky"
-  },
-  "120": {
-   "planet": "Halo",
-   "name": "Floating Gardens",
-   "habitat": "sky_garden"
-  },
-  "127": {
-   "planet": "Umbra",
-   "name": "Lantern Streets Part A",
-   "habitat": "dark_city"
-  },
-  "128": {
-   "planet": "Umbra",
-   "name": "Lantern Streets Part B",
-   "habitat": "dark_city"
   },
   "129": {
    "planet": "Umbra",
@@ -1079,11 +969,6 @@
   "138": {
    "planet": "Starfall Rift",
    "name": "Seedpod Fields Part A",
-   "habitat": "seedpod_field"
-  },
-  "139": {
-   "planet": "Starfall Rift",
-   "name": "Seedpod Fields Part B",
    "habitat": "seedpod_field"
   },
   "141": {
@@ -1220,6 +1105,866 @@
    "planet": "Ferrox",
    "name": "Deepcut Mine Depths",
    "habitat": "rock_cave"
+  },
+  "447": {
+   "planet": "Dustara",
+   "name": "Oasis Fork",
+   "habitat": "canyon"
+  },
+  "453": {
+   "planet": "Dustara",
+   "name": "Sunstep Slope",
+   "habitat": "canyon"
+  },
+  "458": {
+   "planet": "Dustara",
+   "name": "Oasis Shore",
+   "habitat": "canyon"
+  },
+  "462": {
+   "planet": "Dustara",
+   "name": "Red River Bend",
+   "habitat": "canyon"
+  },
+  "464": {
+   "planet": "Dustara",
+   "name": "Mirage Flats",
+   "habitat": "canyon"
+  },
+  "445": {
+   "planet": "Dustara",
+   "name": "Canyon Crossroads",
+   "habitat": "canyon"
+  },
+  "446": {
+   "planet": "Dustara",
+   "name": "Mesa Junction",
+   "habitat": "canyon"
+  },
+  "460": {
+   "planet": "Dustara",
+   "name": "Hoodoo Hollows",
+   "habitat": "canyon"
+  },
+  "465": {
+   "planet": "Dustara",
+   "name": "Hidden Mesa Grove",
+   "habitat": "canyon"
+  },
+  "441": {
+   "planet": "Dustara",
+   "name": "Red Rock Caves Entrance",
+   "habitat": "canyon"
+  },
+  "442": {
+   "planet": "Dustara",
+   "name": "Red Rock Caves B1",
+   "habitat": "rock_cave"
+  },
+  "443": {
+   "planet": "Dustara",
+   "name": "Red Rock Caves B2",
+   "habitat": "rock_cave"
+  },
+  "444": {
+   "planet": "Dustara",
+   "name": "Red Rock Caves Depths",
+   "habitat": "rock_cave"
+  },
+  "711": {
+   "planet": "Sporeholm",
+   "name": "Mushroom Crossroads",
+   "habitat": "swamp"
+  },
+  "712": {
+   "planet": "Sporeholm",
+   "name": "Root Junction",
+   "habitat": "swamp"
+  },
+  "713": {
+   "planet": "Sporeholm",
+   "name": "Bog Fork",
+   "habitat": "swamp"
+  },
+  "715": {
+   "planet": "Sporeholm",
+   "name": "Sporecap Overlook",
+   "habitat": "swamp"
+  },
+  "719": {
+   "planet": "Sporeholm",
+   "name": "Glowcap Meadow",
+   "habitat": "swamp"
+  },
+  "714": {
+   "planet": "Sporeholm",
+   "name": "Capstep Rise",
+   "habitat": "swamp"
+  },
+  "716": {
+   "planet": "Sporeholm",
+   "name": "Lantern Marsh Shore",
+   "habitat": "swamp"
+  },
+  "718": {
+   "planet": "Sporeholm",
+   "name": "Bogwater Bend",
+   "habitat": "swamp"
+  },
+  "720": {
+   "planet": "Sporeholm",
+   "name": "Mirefen Secret Grove",
+   "habitat": "fungal"
+  },
+  "708": {
+   "planet": "Sporeholm",
+   "name": "Mushroom Maze Cave B1",
+   "habitat": "fungal"
+  },
+  "709": {
+   "planet": "Sporeholm",
+   "name": "Mushroom Maze Cave B2",
+   "habitat": "fungal"
+  },
+  "710": {
+   "planet": "Sporeholm",
+   "name": "Mushroom Maze Deep Chamber",
+   "habitat": "fungal"
+  },
+  "776": {
+   "planet": "Thalassa",
+   "name": "Boardwalk Crossing",
+   "habitat": "coast"
+  },
+  "778": {
+   "planet": "Thalassa",
+   "name": "Lagoon Fork",
+   "habitat": "coast"
+  },
+  "777": {
+   "planet": "Thalassa",
+   "name": "Dune Junction",
+   "habitat": "coast"
+  },
+  "790": {
+   "planet": "Thalassa",
+   "name": "Saltreach Secret Grove",
+   "habitat": "coast"
+  },
+  "785": {
+   "planet": "Thalassa",
+   "name": "Shell Flats",
+   "habitat": "coast"
+  },
+  "781": {
+   "planet": "Thalassa",
+   "name": "Coral Cove",
+   "habitat": "coast"
+  },
+  "779": {
+   "planet": "Thalassa",
+   "name": "Dune Stairway",
+   "habitat": "coast"
+  },
+  "780": {
+   "planet": "Thalassa",
+   "name": "Lighthouse Bluff",
+   "habitat": "coast"
+  },
+  "804": {
+   "planet": "Thalassa",
+   "name": "Open Water Shore",
+   "habitat": "coast"
+  },
+  "784": {
+   "planet": "Thalassa",
+   "name": "Tidal Inlet",
+   "habitat": "thermal_vent"
+  },
+  "783": {
+   "planet": "Thalassa",
+   "name": "Driftwood Hollows",
+   "habitat": "thermal_vent"
+  },
+  "773": {
+   "planet": "Thalassa",
+   "name": "Sea Cave B1",
+   "habitat": "drowned_sea"
+  },
+  "774": {
+   "planet": "Thalassa",
+   "name": "Sea Cave B2",
+   "habitat": "drowned_sea"
+  },
+  "775": {
+   "planet": "Thalassa",
+   "name": "Sea Cave Deep Chamber",
+   "habitat": "drowned_sea"
+  },
+  "644": {
+   "planet": "Neonis",
+   "name": "Signal Junction",
+   "habitat": "neon_city"
+  },
+  "645": {
+   "planet": "Neonis",
+   "name": "Canal Fork",
+   "habitat": "neon_city"
+  },
+  "648": {
+   "planet": "Neonis",
+   "name": "Canal Quay",
+   "habitat": "neon_city"
+  },
+  "651": {
+   "planet": "Neonis",
+   "name": "Broadcast Plaza",
+   "habitat": "neon_city"
+  },
+  "646": {
+   "planet": "Neonis",
+   "name": "Bassline Ramp",
+   "habitat": "neon_city"
+  },
+  "647": {
+   "planet": "Neonis",
+   "name": "Skyline Overlook",
+   "habitat": "neon_city"
+  },
+  "650": {
+   "planet": "Neonis",
+   "name": "Static Canal",
+   "habitat": "neon_city"
+  },
+  "654": {
+   "planet": "Neonis",
+   "name": "Glowgarden Hideaway",
+   "habitat": "neon_city"
+  },
+  "639": {
+   "planet": "Neonis",
+   "name": "Undercity Tunnel Entrance",
+   "habitat": "neon_city"
+  },
+  "640": {
+   "planet": "Neonis",
+   "name": "Undercity Tunnels B1",
+   "habitat": "neon_city"
+  },
+  "641": {
+   "planet": "Neonis",
+   "name": "Undercity Tunnels B2",
+   "habitat": "neon_city"
+  },
+  "642": {
+   "planet": "Neonis",
+   "name": "Undercity Deep Chamber",
+   "habitat": "neon_city"
+  },
+  "552": {
+   "planet": "Glyphos",
+   "name": "Ruin Crossroads",
+   "habitat": "ruins"
+  },
+  "553": {
+   "planet": "Glyphos",
+   "name": "Glyph Junction",
+   "habitat": "ruins"
+  },
+  "555": {
+   "planet": "Glyphos",
+   "name": "Glyph Steps",
+   "habitat": "ruins"
+  },
+  "556": {
+   "planet": "Glyphos",
+   "name": "Mural Overlook",
+   "habitat": "ruins"
+  },
+  "558": {
+   "planet": "Glyphos",
+   "name": "Pillar Hollows",
+   "habitat": "ruins"
+  },
+  "560": {
+   "planet": "Glyphos",
+   "name": "Forgotten Forum",
+   "habitat": "ruins"
+  },
+  "554": {
+   "planet": "Glyphos",
+   "name": "Tidepool Fork",
+   "habitat": "ruins"
+  },
+  "557": {
+   "planet": "Glyphos",
+   "name": "Tidepool Ruins",
+   "habitat": "ruins"
+  },
+  "559": {
+   "planet": "Glyphos",
+   "name": "Sunken Channel",
+   "habitat": "ruins"
+  },
+  "561": {
+   "planet": "Glyphos",
+   "name": "Coral Secret Grove",
+   "habitat": "ruins"
+  },
+  "548": {
+   "planet": "Glyphos",
+   "name": "Drowned Grotto Entrance",
+   "habitat": "ruins"
+  },
+  "571": {
+   "planet": "Glyphos",
+   "name": "Sunken Shallows",
+   "habitat": "drowned_sea"
+  },
+  "572": {
+   "planet": "Glyphos",
+   "name": "Island Chain",
+   "habitat": "drowned_sea"
+  },
+  "549": {
+   "planet": "Glyphos",
+   "name": "Drowned Grotto B1",
+   "habitat": "rock_cave"
+  },
+  "550": {
+   "planet": "Glyphos",
+   "name": "Drowned Grotto B2",
+   "habitat": "rock_cave"
+  },
+  "551": {
+   "planet": "Glyphos",
+   "name": "Drowned Grotto Deep Chamber",
+   "habitat": "rock_cave"
+  },
+  "677": {
+   "planet": "Pyros",
+   "name": "Basalt Crossroads",
+   "habitat": "volcano"
+  },
+  "679": {
+   "planet": "Pyros",
+   "name": "Lava Fork",
+   "habitat": "volcano"
+  },
+  "682": {
+   "planet": "Pyros",
+   "name": "Lava Lake Shore",
+   "habitat": "volcano"
+  },
+  "680": {
+   "planet": "Pyros",
+   "name": "Cinder Slope",
+   "habitat": "volcano"
+  },
+  "683": {
+   "planet": "Pyros",
+   "name": "Mine Shaft Hollows",
+   "habitat": "volcano"
+  },
+  "684": {
+   "planet": "Pyros",
+   "name": "Magma Flow Bend",
+   "habitat": "volcano"
+  },
+  "673": {
+   "planet": "Pyros",
+   "name": "Deep Mines Entrance",
+   "habitat": "volcano"
+  },
+  "685": {
+   "planet": "Pyros",
+   "name": "Ashfall Flats",
+   "habitat": "volcano"
+  },
+  "681": {
+   "planet": "Pyros",
+   "name": "Furnace Ridge Overlook",
+   "habitat": "volcano"
+  },
+  "678": {
+   "planet": "Pyros",
+   "name": "Mine Junction",
+   "habitat": "volcano"
+  },
+  "688": {
+   "planet": "Pyros",
+   "name": "Ember Hollow Grove",
+   "habitat": "volcano"
+  },
+  "518": {
+   "planet": "Glacia",
+   "name": "Frost Crossroads",
+   "habitat": "aurora"
+  },
+  "520": {
+   "planet": "Glacia",
+   "name": "Floe Fork",
+   "habitat": "aurora"
+  },
+  "522": {
+   "planet": "Glacia",
+   "name": "Aurora Overlook",
+   "habitat": "aurora"
+  },
+  "529": {
+   "planet": "Glacia",
+   "name": "Hidden Ice Grove",
+   "habitat": "aurora"
+  },
+  "519": {
+   "planet": "Glacia",
+   "name": "Ice Junction",
+   "habitat": "aurora"
+  },
+  "514": {
+   "planet": "Glacia",
+   "name": "Crystal Caverns Entrance",
+   "habitat": "aurora"
+  },
+  "521": {
+   "planet": "Glacia",
+   "name": "Frostfall Slope",
+   "habitat": "tundra"
+  },
+  "523": {
+   "planet": "Glacia",
+   "name": "Floe Shore",
+   "habitat": "tundra"
+  },
+  "524": {
+   "planet": "Glacia",
+   "name": "Crevasse Hollows",
+   "habitat": "tundra"
+  },
+  "526": {
+   "planet": "Glacia",
+   "name": "Fossil Dig Flats",
+   "habitat": "tundra"
+  },
+  "525": {
+   "planet": "Glacia",
+   "name": "Frozen Falls",
+   "habitat": "frozen_falls"
+  },
+  "612": {
+   "planet": "Helix Station",
+   "name": "Deck Crossroads",
+   "habitat": "containment"
+  },
+  "614": {
+   "planet": "Helix Station",
+   "name": "Station Coolant Fork",
+   "habitat": "containment"
+  },
+  "617": {
+   "planet": "Helix Station",
+   "name": "Coolant Basin",
+   "habitat": "containment"
+  },
+  "608": {
+   "planet": "Helix Station",
+   "name": "Rift Rock Mine Entrance",
+   "habitat": "containment"
+  },
+  "613": {
+   "planet": "Helix Station",
+   "name": "Corridor Junction",
+   "habitat": "containment"
+  },
+  "615": {
+   "planet": "Helix Station",
+   "name": "Docking Ramp",
+   "habitat": "containment"
+  },
+  "618": {
+   "planet": "Helix Station",
+   "name": "Specimen Annex",
+   "habitat": "containment"
+  },
+  "620": {
+   "planet": "Helix Station",
+   "name": "Hangar Deck",
+   "habitat": "containment"
+  },
+  "616": {
+   "planet": "Helix Station",
+   "name": "Viewport Overlook",
+   "habitat": "containment"
+  },
+  "619": {
+   "planet": "Helix Station",
+   "name": "Reactor Channel",
+   "habitat": "containment"
+  },
+  "621": {
+   "planet": "Helix Station",
+   "name": "Hidden Hydro Garden",
+   "habitat": "containment"
+  },
+  "609": {
+   "planet": "Helix Station",
+   "name": "Rift Rock Mine 1F",
+   "habitat": "rock_cave"
+  },
+  "610": {
+   "planet": "Helix Station",
+   "name": "Rift Rock Mine 2F",
+   "habitat": "rock_cave"
+  },
+  "611": {
+   "planet": "Helix Station",
+   "name": "Rift Rock Deep Chamber",
+   "habitat": "rock_cave"
+  },
+  "582": {
+   "planet": "Halo",
+   "name": "Sky Crossroads",
+   "habitat": "sky"
+  },
+  "586": {
+   "planet": "Halo",
+   "name": "Sky Temple Overlook",
+   "habitat": "sky"
+  },
+  "587": {
+   "planet": "Halo",
+   "name": "Cloudbreak Edge",
+   "habitat": "sky"
+  },
+  "583": {
+   "planet": "Halo",
+   "name": "Temple Junction",
+   "habitat": "sky"
+  },
+  "584": {
+   "planet": "Halo",
+   "name": "Cloud Fork",
+   "habitat": "sky"
+  },
+  "590": {
+   "planet": "Halo",
+   "name": "Floating Gardens",
+   "habitat": "sky_garden"
+  },
+  "589": {
+   "planet": "Halo",
+   "name": "Cloud River Bend",
+   "habitat": "sky_garden"
+  },
+  "585": {
+   "planet": "Halo",
+   "name": "Windstep Rise",
+   "habitat": "sky_garden"
+  },
+  "588": {
+   "planet": "Halo",
+   "name": "Shrine Hollows",
+   "habitat": "sky_garden"
+  },
+  "591": {
+   "planet": "Halo",
+   "name": "Hidden Blossom Grove",
+   "habitat": "sky_garden"
+  },
+  "579": {
+   "planet": "Halo",
+   "name": "Crystal Hollow 1F",
+   "habitat": "crystal_ruins"
+  },
+  "580": {
+   "planet": "Halo",
+   "name": "Crystal Hollow 2F",
+   "habitat": "crystal_ruins"
+  },
+  "581": {
+   "planet": "Halo",
+   "name": "Crystal Hollow Heart",
+   "habitat": "crystal_ruins"
+  },
+  "411": {
+   "planet": "Apex Array",
+   "name": "Summit Crossroads",
+   "habitat": "summit"
+  },
+  "412": {
+   "planet": "Apex Array",
+   "name": "Observatory Junction",
+   "habitat": "summit"
+  },
+  "413": {
+   "planet": "Apex Array",
+   "name": "Tarn Fork",
+   "habitat": "summit"
+  },
+  "414": {
+   "planet": "Apex Array",
+   "name": "Summit Stairs",
+   "habitat": "summit"
+  },
+  "415": {
+   "planet": "Apex Array",
+   "name": "Stargazer Overlook",
+   "habitat": "summit"
+  },
+  "416": {
+   "planet": "Apex Array",
+   "name": "Meltwater Tarn",
+   "habitat": "summit"
+  },
+  "419": {
+   "planet": "Apex Array",
+   "name": "Instrument Hollows",
+   "habitat": "summit"
+  },
+  "420": {
+   "planet": "Apex Array",
+   "name": "Glacier Bend",
+   "habitat": "summit"
+  },
+  "421": {
+   "planet": "Apex Array",
+   "name": "Observatory Terrace",
+   "habitat": "summit"
+  },
+  "422": {
+   "planet": "Apex Array",
+   "name": "Summit Secret Grove",
+   "habitat": "summit"
+  },
+  "405": {
+   "planet": "Apex Array",
+   "name": "Icefall Cave Entrance",
+   "habitat": "summit"
+  },
+  "406": {
+   "planet": "Apex Array",
+   "name": "Icefall Cave 1F",
+   "habitat": "rock_cave"
+  },
+  "407": {
+   "planet": "Apex Array",
+   "name": "Icefall Cave B1",
+   "habitat": "rock_cave"
+  },
+  "409": {
+   "planet": "Apex Array",
+   "name": "Icefall Deep Chamber",
+   "habitat": "rock_cave"
+  },
+  "849": {
+   "planet": "Ystra",
+   "name": "Crystal Crossroads",
+   "habitat": "floating_land"
+  },
+  "850": {
+   "planet": "Ystra",
+   "name": "Glasswood Junction",
+   "habitat": "blighted_forest"
+  },
+  "855": {
+   "planet": "Ystra",
+   "name": "Glasswood Hollows",
+   "habitat": "floating_land"
+  },
+  "851": {
+   "planet": "Ystra",
+   "name": "Void Fork",
+   "habitat": "void_edge"
+  },
+  "856": {
+   "planet": "Ystra",
+   "name": "Void Crack Bend",
+   "habitat": "void_edge"
+  },
+  "857": {
+   "planet": "Ystra",
+   "name": "Seedmother Flats",
+   "habitat": "floating_land"
+  },
+  "854": {
+   "planet": "Ystra",
+   "name": "Still Crystal Pool",
+   "habitat": "drowned_sea"
+  },
+  "853": {
+   "planet": "Ystra",
+   "name": "Red Sun Overlook",
+   "habitat": "blighted_forest"
+  },
+  "852": {
+   "planet": "Ystra",
+   "name": "Shard Slope",
+   "habitat": "blighted_forest"
+  },
+  "858": {
+   "planet": "Ystra",
+   "name": "Ystra Secret Grove",
+   "habitat": "floating_land"
+  },
+  "845": {
+   "planet": "Ystra",
+   "name": "Shardheart Cave Entrance",
+   "habitat": "void_edge"
+  },
+  "846": {
+   "planet": "Ystra",
+   "name": "Shardheart Cave 1F",
+   "habitat": "crystal_ruins"
+  },
+  "847": {
+   "planet": "Ystra",
+   "name": "Shardheart Cave B1",
+   "habitat": "crystal_ruins"
+  },
+  "848": {
+   "planet": "Ystra",
+   "name": "Shardheart Deep Chamber",
+   "habitat": "crystal_ruins"
+  },
+  "816": {
+   "planet": "Umbra",
+   "name": "Lantern Crossroads",
+   "habitat": "dark_city"
+  },
+  "817": {
+   "planet": "Umbra",
+   "name": "Shadow Junction",
+   "habitat": "dark_city"
+  },
+  "818": {
+   "planet": "Umbra",
+   "name": "Abyss Fork",
+   "habitat": "dark_city"
+  },
+  "819": {
+   "planet": "Umbra",
+   "name": "Lantern Steps",
+   "habitat": "dark_city"
+  },
+  "820": {
+   "planet": "Umbra",
+   "name": "Sinkhole Overlook",
+   "habitat": "dark_city"
+  },
+  "821": {
+   "planet": "Umbra",
+   "name": "Abyss Rim",
+   "habitat": "dark_city"
+  },
+  "822": {
+   "planet": "Umbra",
+   "name": "Shade Hollows",
+   "habitat": "dark_city"
+  },
+  "823": {
+   "planet": "Umbra",
+   "name": "Mistfall Bend",
+   "habitat": "dark_city"
+  },
+  "824": {
+   "planet": "Umbra",
+   "name": "Gloom Commons",
+   "habitat": "dark_city"
+  },
+  "827": {
+   "planet": "Umbra",
+   "name": "Gloomshade Grove",
+   "habitat": "dark_city"
+  },
+  "812": {
+   "planet": "Umbra",
+   "name": "Wailing Cave Entrance",
+   "habitat": "dark_city"
+  },
+  "813": {
+   "planet": "Umbra",
+   "name": "Wailing Cave B1",
+   "habitat": "rock_cave"
+  },
+  "814": {
+   "planet": "Umbra",
+   "name": "Wailing Cave B2",
+   "habitat": "rock_cave"
+  },
+  "815": {
+   "planet": "Umbra",
+   "name": "Wailing Cave Deep Chamber",
+   "habitat": "rock_cave"
+  },
+  "745": {
+   "planet": "Starfall Rift",
+   "name": "Crater Crossroads",
+   "habitat": "seedpod_field"
+  },
+  "746": {
+   "planet": "Starfall Rift",
+   "name": "Seedpod Junction",
+   "habitat": "seedpod_field"
+  },
+  "754": {
+   "planet": "Starfall Rift",
+   "name": "Pod Fields",
+   "habitat": "seedpod_field"
+  },
+  "752": {
+   "planet": "Starfall Rift",
+   "name": "Seedpod Hollows",
+   "habitat": "seedpod_field"
+  },
+  "755": {
+   "planet": "Starfall Rift",
+   "name": "Starfall Secret Grove",
+   "habitat": "seedpod_field"
+  },
+  "750": {
+   "planet": "Starfall Rift",
+   "name": "Nebula Overlook",
+   "habitat": "crater"
+  },
+  "748": {
+   "planet": "Starfall Rift",
+   "name": "Craterstep Slope",
+   "habitat": "crater"
+  },
+  "753": {
+   "planet": "Starfall Rift",
+   "name": "Starstream Bend",
+   "habitat": "crater"
+  },
+  "747": {
+   "planet": "Starfall Rift",
+   "name": "Rift Fork",
+   "habitat": "crater"
+  },
+  "751": {
+   "planet": "Starfall Rift",
+   "name": "Rift Edge",
+   "habitat": "crater"
+  },
+  "741": {
+   "planet": "Starfall Rift",
+   "name": "Starstone Hollow Entrance",
+   "habitat": "crater"
+  },
+  "742": {
+   "planet": "Starfall Rift",
+   "name": "Starstone Hollow B1",
+   "habitat": "crater"
+  },
+  "743": {
+   "planet": "Starfall Rift",
+   "name": "Starstone Hollow B2",
+   "habitat": "crater"
+  },
+  "744": {
+   "planet": "Starfall Rift",
+   "name": "Starstone Hollow Deep Chamber",
+   "habitat": "crater"
   }
  }
 }

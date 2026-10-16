@@ -118,6 +118,1034 @@
    "why": "V2: Vashti's observatory, up the steps"
   },
   {
+   "interior": "043",
+   "parent": "042",
+   "door": [
+    8,
+    3
+   ],
+   "door2": [
+    9,
+    3
+   ],
+   "mat": [
+    [
+     9,
+     18
+    ],
+    [
+     10,
+     18
+    ]
+   ],
+   "confidence": "high",
+   "why": "V3 kit door"
+  },
+  {
+   "interior": "044",
+   "parent": "042",
+   "door": [
+    15,
+    3
+   ],
+   "mat": [
+    [
+     9,
+     17
+    ],
+    [
+     10,
+     17
+    ]
+   ],
+   "confidence": "high",
+   "why": "V3 kit door"
+  },
+  {
+   "interior": "704",
+   "parent": "702",
+   "door": [
+    11,
+    6
+   ],
+   "door2": [
+    12,
+    6
+   ],
+   "mat": [
+    [
+     9,
+     18
+    ],
+    [
+     10,
+     18
+    ]
+   ],
+   "confidence": "high",
+   "why": "V3 kit door"
+  },
+  {
+   "interior": "050",
+   "parent": "725",
+   "door": [
+    11,
+    6
+   ],
+   "door2": [
+    12,
+    6
+   ],
+   "mat": [
+    [
+     9,
+     18
+    ],
+    [
+     10,
+     18
+    ]
+   ],
+   "confidence": "high",
+   "why": "V3 kit door"
+  },
+  {
+   "interior": "769",
+   "parent": "768",
+   "door": [
+    11,
+    6
+   ],
+   "door2": [
+    12,
+    6
+   ],
+   "mat": [
+    [
+     9,
+     18
+    ],
+    [
+     10,
+     18
+    ]
+   ],
+   "confidence": "high",
+   "why": "V3 kit door"
+  },
+  {
+   "interior": "060",
+   "parent": "795",
+   "door": [
+    12,
+    7
+   ],
+   "door2": [
+    13,
+    7
+   ],
+   "mat": [
+    [
+     9,
+     17
+    ],
+    [
+     10,
+     17
+    ]
+   ],
+   "confidence": "high",
+   "why": "V3 kit door"
+  },
+  {
+   "interior": "787",
+   "parent": "786",
+   "door": [
+    10,
+    6
+   ],
+   "door2": [
+    11,
+    6
+   ],
+   "mat": [
+    [
+     9,
+     18
+    ],
+    [
+     10,
+     18
+    ]
+   ],
+   "confidence": "high",
+   "why": "V3 kit door"
+  },
+  {
+   "interior": "069",
+   "parent": "659",
+   "door": [
+    11,
+    7
+   ],
+   "door2": [
+    12,
+    7
+   ],
+   "mat": [
+    [
+     9,
+     17
+    ],
+    [
+     10,
+     17
+    ]
+   ],
+   "confidence": "high",
+   "why": "V3 kit door"
+  },
+  {
+   "interior": "653",
+   "parent": "652",
+   "door": [
+    11,
+    6
+   ],
+   "door2": [
+    12,
+    6
+   ],
+   "mat": [
+    [
+     9,
+     17
+    ],
+    [
+     10,
+     17
+    ]
+   ],
+   "confidence": "high",
+   "why": "V3 kit door"
+  },
+  {
+   "interior": "636",
+   "parent": "635",
+   "door": [
+    11,
+    7
+   ],
+   "door2": [
+    12,
+    7
+   ],
+   "mat": [
+    [
+     9,
+     17
+    ],
+    [
+     10,
+     17
+    ]
+   ],
+   "confidence": "high",
+   "why": "V3 kit door"
+  },
+  {
+   "interior": "074",
+   "parent": "073",
+   "door": [
+    8,
+    4
+   ],
+   "door2": [
+    9,
+    4
+   ],
+   "mat": [
+    [
+     9,
+     17
+    ],
+    [
+     10,
+     17
+    ]
+   ],
+   "confidence": "high",
+   "why": "V3 kit door"
+  },
+  {
+   "interior": "545",
+   "parent": "543",
+   "door": [
+    11,
+    6
+   ],
+   "door2": [
+    12,
+    6
+   ],
+   "mat": [
+    [
+     9,
+     17
+    ],
+    [
+     10,
+     17
+    ]
+   ],
+   "confidence": "high",
+   "why": "V3 kit door"
+  },
+  {
+   "interior": "083",
+   "parent": "082",
+   "door": [
+    8,
+    4
+   ],
+   "door2": [
+    9,
+    4
+   ],
+   "mat": [
+    [
+     9,
+     18
+    ],
+    [
+     10,
+     18
+    ]
+   ],
+   "confidence": "high",
+   "why": "V3 kit door"
+  },
+  {
+   "interior": "084",
+   "parent": "082",
+   "door": [
+    14,
+    4
+   ],
+   "door2": [
+    15,
+    4
+   ],
+   "mat": [
+    [
+     9,
+     18
+    ],
+    [
+     10,
+     18
+    ]
+   ],
+   "confidence": "high",
+   "why": "V3 kit door"
+  },
+  {
+   "interior": "091",
+   "parent": "693",
+   "door": [
+    11,
+    6
+   ],
+   "door2": [
+    12,
+    6
+   ],
+   "mat": [
+    [
+     9,
+     17
+    ],
+    [
+     10,
+     17
+    ]
+   ],
+   "confidence": "high",
+   "why": "V3 kit door"
+  },
+  {
+   "interior": "670",
+   "parent": "668",
+   "door": [
+    11,
+    6
+   ],
+   "door2": [
+    12,
+    6
+   ],
+   "mat": [
+    [
+     9,
+     18
+    ],
+    [
+     10,
+     18
+    ]
+   ],
+   "confidence": "high",
+   "why": "V3 kit door"
+  },
+  {
+   "interior": "687",
+   "parent": "686",
+   "door": [
+    11,
+    6
+   ],
+   "door2": [
+    12,
+    6
+   ],
+   "mat": [
+    [
+     9,
+     16
+    ],
+    [
+     10,
+     16
+    ]
+   ],
+   "confidence": "high",
+   "why": "V3 kit door"
+  },
+  {
+   "interior": "094",
+   "parent": "093",
+   "door": [
+    8,
+    3
+   ],
+   "door2": [
+    9,
+    3
+   ],
+   "mat": [
+    [
+     9,
+     18
+    ],
+    [
+     10,
+     18
+    ]
+   ],
+   "confidence": "high",
+   "why": "V3 kit door"
+  },
+  {
+   "interior": "095",
+   "parent": "093",
+   "door": [
+    13,
+    3
+   ],
+   "door2": [
+    14,
+    3
+   ],
+   "mat": [
+    [
+     9,
+     18
+    ],
+    [
+     10,
+     18
+    ]
+   ],
+   "confidence": "high",
+   "why": "V3 kit door"
+  },
+  {
+   "interior": "103",
+   "parent": "534",
+   "door": [
+    11,
+    7
+   ],
+   "door2": [
+    12,
+    7
+   ],
+   "mat": [
+    [
+     9,
+     17
+    ],
+    [
+     10,
+     17
+    ]
+   ],
+   "confidence": "high",
+   "why": "V3 kit door"
+  },
+  {
+   "interior": "512",
+   "parent": "511",
+   "door": [
+    11,
+    6
+   ],
+   "door2": [
+    12,
+    6
+   ],
+   "mat": [
+    [
+     9,
+     18
+    ],
+    [
+     10,
+     18
+    ]
+   ],
+   "confidence": "high",
+   "why": "V3 kit door"
+  },
+  {
+   "interior": "528",
+   "parent": "527",
+   "door": [
+    11,
+    6
+   ],
+   "door2": [
+    12,
+    6
+   ],
+   "mat": [
+    [
+     9,
+     18
+    ],
+    [
+     10,
+     18
+    ]
+   ],
+   "confidence": "high",
+   "why": "V3 kit door"
+  },
+  {
+   "interior": "606",
+   "parent": "605",
+   "door": [
+    11,
+    7
+   ],
+   "door2": [
+    12,
+    7
+   ],
+   "mat": [
+    [
+     9,
+     18
+    ],
+    [
+     10,
+     18
+    ]
+   ],
+   "confidence": "high",
+   "why": "V3 kit door"
+  },
+  {
+   "interior": "627",
+   "parent": "626",
+   "door": [
+    11,
+    7
+   ],
+   "door2": [
+    12,
+    7
+   ],
+   "mat": [
+    [
+     9,
+     17
+    ],
+    [
+     10,
+     17
+    ]
+   ],
+   "confidence": "high",
+   "why": "V3 kit door"
+  },
+  {
+   "interior": "116",
+   "parent": "115",
+   "door": [
+    8,
+    4
+   ],
+   "door2": [
+    9,
+    4
+   ],
+   "mat": [
+    [
+     9,
+     18
+    ],
+    [
+     10,
+     18
+    ]
+   ],
+   "confidence": "high",
+   "why": "V3 kit door"
+  },
+  {
+   "interior": "117",
+   "parent": "115",
+   "door": [
+    14,
+    4
+   ],
+   "door2": [
+    15,
+    4
+   ],
+   "mat": [
+    [
+     9,
+     17
+    ],
+    [
+     10,
+     17
+    ]
+   ],
+   "confidence": "high",
+   "why": "V3 kit door"
+  },
+  {
+   "interior": "121",
+   "parent": "597",
+   "door": [
+    11,
+    7
+   ],
+   "door2": [
+    12,
+    7
+   ],
+   "mat": [
+    [
+     9,
+     17
+    ],
+    [
+     10,
+     17
+    ]
+   ],
+   "confidence": "high",
+   "why": "V3 kit door"
+  },
+  {
+   "interior": "575",
+   "parent": "573",
+   "door": [
+    11,
+    6
+   ],
+   "door2": [
+    12,
+    6
+   ],
+   "mat": [
+    [
+     9,
+     17
+    ],
+    [
+     10,
+     17
+    ]
+   ],
+   "confidence": "high",
+   "why": "V3 kit door"
+  },
+  {
+   "interior": "125",
+   "parent": "124",
+   "door": [
+    8,
+    3
+   ],
+   "door2": [
+    9,
+    3
+   ],
+   "mat": [
+    [
+     9,
+     18
+    ],
+    [
+     10,
+     18
+    ]
+   ],
+   "confidence": "high",
+   "why": "V3 kit door"
+  },
+  {
+   "interior": "126",
+   "parent": "124",
+   "door": [
+    14,
+    3
+   ],
+   "door2": [
+    15,
+    3
+   ],
+   "mat": [
+    [
+     9,
+     17
+    ],
+    [
+     10,
+     17
+    ]
+   ],
+   "confidence": "high",
+   "why": "V3 kit door"
+  },
+  {
+   "interior": "134",
+   "parent": "833",
+   "door": [
+    11,
+    7
+   ],
+   "door2": [
+    12,
+    7
+   ],
+   "mat": [
+    [
+     9,
+     18
+    ],
+    [
+     10,
+     18
+    ]
+   ],
+   "confidence": "high",
+   "why": "V3 kit door"
+  },
+  {
+   "interior": "809",
+   "parent": "807",
+   "door": [
+    11,
+    6
+   ],
+   "door2": [
+    12,
+    6
+   ],
+   "mat": [
+    [
+     9,
+     17
+    ],
+    [
+     10,
+     17
+    ]
+   ],
+   "confidence": "high",
+   "why": "V3 kit door"
+  },
+  {
+   "interior": "826",
+   "parent": "825",
+   "door": [
+    11,
+    5
+   ],
+   "door2": [
+    12,
+    5
+   ],
+   "mat": [
+    [
+     9,
+     17
+    ],
+    [
+     10,
+     17
+    ]
+   ],
+   "confidence": "high",
+   "why": "V3 kit door"
+  },
+  {
+   "interior": "137",
+   "parent": "136",
+   "door": [
+    9,
+    4
+   ],
+   "door2": [
+    10,
+    4
+   ],
+   "mat": [
+    [
+     9,
+     16
+    ],
+    [
+     10,
+     16
+    ]
+   ],
+   "confidence": "high",
+   "why": "V3 kit door"
+  },
+  {
+   "interior": "766",
+   "parent": "763",
+   "door": [
+    11,
+    6
+   ],
+   "door2": [
+    12,
+    6
+   ],
+   "mat": [
+    [
+     9,
+     16
+    ],
+    [
+     10,
+     16
+    ]
+   ],
+   "confidence": "high",
+   "why": "V3 kit door"
+  },
+  {
+   "interior": "738",
+   "parent": "736",
+   "door": [
+    11,
+    6
+   ],
+   "door2": [
+    12,
+    6
+   ],
+   "mat": [
+    [
+     9,
+     17
+    ],
+    [
+     10,
+     17
+    ]
+   ],
+   "confidence": "high",
+   "why": "V3 kit door"
+  },
+  {
+   "interior": "426",
+   "parent": "430",
+   "door": [
+    3,
+    6
+   ],
+   "door2": [
+    4,
+    6
+   ],
+   "mat": [
+    [
+     9,
+     18
+    ],
+    [
+     10,
+     18
+    ]
+   ],
+   "confidence": "high",
+   "why": "V3 kit door"
+  },
+  {
+   "interior": "433",
+   "parent": "430",
+   "door": [
+    11,
+    6
+   ],
+   "door2": [
+    12,
+    6
+   ],
+   "mat": [
+    [
+     9,
+     18
+    ],
+    [
+     10,
+     18
+    ]
+   ],
+   "confidence": "high",
+   "why": "V3 kit door"
+  },
+  {
+   "interior": "428",
+   "parent": "427",
+   "door": [
+    11,
+    7
+   ],
+   "door2": [
+    12,
+    7
+   ],
+   "mat": [
+    [
+     8,
+     17
+    ],
+    [
+     9,
+     17
+    ]
+   ],
+   "confidence": "high",
+   "why": "V3 kit door"
+  },
+  {
+   "interior": "403",
+   "parent": "401",
+   "door": [
+    11,
+    7
+   ],
+   "door2": [
+    12,
+    7
+   ],
+   "mat": [
+    [
+     9,
+     18
+    ],
+    [
+     10,
+     18
+    ]
+   ],
+   "confidence": "high",
+   "why": "V3 kit door"
+  },
+  {
+   "interior": "862",
+   "parent": "864",
+   "door": [
+    5,
+    4
+   ],
+   "door2": [
+    6,
+    4
+   ],
+   "mat": [
+    [
+     9,
+     18
+    ],
+    [
+     10,
+     18
+    ]
+   ],
+   "confidence": "high",
+   "why": "V3 kit door"
+  },
+  {
+   "interior": "866",
+   "parent": "864",
+   "door": [
+    11,
+    4
+   ],
+   "door2": [
+    12,
+    4
+   ],
+   "mat": [
+    [
+     9,
+     18
+    ],
+    [
+     10,
+     18
+    ]
+   ],
+   "confidence": "high",
+   "why": "V3 kit door"
+  },
+  {
+   "interior": "843",
+   "parent": "842",
+   "door": [
+    11,
+    7
+   ],
+   "door2": [
+    12,
+    7
+   ],
+   "mat": [
+    [
+     9,
+     18
+    ],
+    [
+     10,
+     18
+    ]
+   ],
+   "confidence": "high",
+   "why": "V3 kit door"
+  },
+  {
    "interior": "031",
    "parent": "030",
    "door": [
@@ -130,12 +1158,12 @@
    ],
    "mat": [
     [
-     8,
-     16
+     9,
+     18
     ],
     [
-     11,
-     16
+     10,
+     18
     ]
    ],
    "confidence": "high",
@@ -151,11 +1179,11 @@
    "mat": [
     [
      9,
-     15
+     18
     ],
     [
      10,
-     15
+     18
     ]
    ],
    "confidence": "high",
@@ -246,12 +1274,36 @@
    ],
    "mat": [
     [
-     7,
-     16
+     9,
+     18
     ],
     [
-     12,
-     16
+     10,
+     18
+    ]
+   ],
+   "confidence": "high",
+   "why": "V3 kit door"
+  },
+  {
+   "interior": "438",
+   "parent": "436",
+   "door": [
+    10,
+    6
+   ],
+   "door2": [
+    11,
+    6
+   ],
+   "mat": [
+    [
+     9,
+     17
+    ],
+    [
+     10,
+     17
     ]
    ],
    "confidence": "high",
@@ -564,26 +1616,6 @@
     "why": "Port Ember healing centre (shared Recovery Bay room)"
    }
   ],
-  "041": [
-   {
-    "tile": [
-     3,
-     3
-    ],
-    "k": "house",
-    "to": "184",
-    "why": "V2: the landing dome"
-   },
-   {
-    "tile": [
-     4,
-     3
-    ],
-    "k": "house",
-    "to": "184",
-    "why": "V2: the landing dome"
-   }
-  ],
   "042": [
    {
     "tile": [
@@ -602,18 +1634,6 @@
     "k": "house",
     "to": "190",
     "why": "V2: Mirefen hut (shared Sporeholm home)"
-   }
-  ],
-  "047": [],
-  "049": [
-   {
-    "tile": [
-     15,
-     3
-    ],
-    "k": "house",
-    "to": "185",
-    "why": "V2: the mushroom house by the Spore Pools"
    }
   ],
   "052": [
@@ -713,42 +1733,6 @@
    },
    {
     "tile": [
-     9,
-     4
-    ],
-    "k": "house",
-    "to": "064",
-    "why": "V2: Starport Recovery Bay (shared room)"
-   },
-   {
-    "tile": [
-     10,
-     4
-    ],
-    "k": "house",
-    "to": "064",
-    "why": "V2: Starport Recovery Bay"
-   },
-   {
-    "tile": [
-     14,
-     4
-    ],
-    "k": "house",
-    "to": "065",
-    "why": "V2: Starport shop (shared room)"
-   },
-   {
-    "tile": [
-     15,
-     4
-    ],
-    "k": "house",
-    "to": "065",
-    "why": "V2: Starport shop"
-   },
-   {
-    "tile": [
      19,
      4
     ],
@@ -764,6 +1748,42 @@
     "k": "house",
     "to": "192",
     "why": "V2: Starport apartment"
+   },
+   {
+    "tile": [
+     9,
+     4
+    ],
+    "k": "house",
+    "to": "064",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     10,
+     4
+    ],
+    "k": "house",
+    "to": "064",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     14,
+     4
+    ],
+    "k": "house",
+    "to": "065",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     15,
+     4
+    ],
+    "k": "house",
+    "to": "065",
+    "why": "V3 kit house door"
    }
   ],
   "063": [
@@ -784,26 +1804,42 @@
     "k": "house",
     "to": "192",
     "why": "V2: Boulevard apartment"
-   }
-  ],
-  "066": [
-   {
-    "tile": [
-     11,
-     3
-    ],
-    "k": "house",
-    "to": "180",
-    "why": "V2: the arcade hall"
    },
    {
     "tile": [
-     12,
-     3
+     3,
+     4
     ],
     "k": "house",
-    "to": "180",
-    "why": "V2: the arcade hall"
+    "to": "064",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     4,
+     4
+    ],
+    "k": "house",
+    "to": "064",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     8,
+     4
+    ],
+    "k": "house",
+    "to": "065",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     9,
+     4
+    ],
+    "k": "house",
+    "to": "065",
+    "why": "V3 kit house door"
    }
   ],
   "073": [
@@ -1160,6 +2196,2726 @@
     "why": "V3 kit house door"
    }
   ],
+  "728": [
+   {
+    "tile": [
+     3,
+     6
+    ],
+    "k": "house",
+    "to": "184",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     4,
+     6
+    ],
+    "k": "house",
+    "to": "184",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     11,
+     6
+    ],
+    "k": "house",
+    "to": "190",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     12,
+     6
+    ],
+    "k": "house",
+    "to": "190",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     18,
+     6
+    ],
+    "k": "house",
+    "to": "721",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     19,
+     6
+    ],
+    "k": "house",
+    "to": "721",
+    "why": "V3 kit house door"
+   }
+  ],
+  "729": [
+   {
+    "tile": [
+     6,
+     4
+    ],
+    "k": "house",
+    "to": "722",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     7,
+     4
+    ],
+    "k": "house",
+    "to": "722",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     11,
+     4
+    ],
+    "k": "house",
+    "to": "173",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     12,
+     4
+    ],
+    "k": "house",
+    "to": "173",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     17,
+     4
+    ],
+    "k": "house",
+    "to": "190",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     18,
+     4
+    ],
+    "k": "house",
+    "to": "190",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     20,
+     12
+    ],
+    "k": "house",
+    "to": "723",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     21,
+     12
+    ],
+    "k": "house",
+    "to": "723",
+    "why": "V3 kit house door"
+   }
+  ],
+  "730": [
+   {
+    "tile": [
+     12,
+     5
+    ],
+    "k": "house",
+    "to": "185",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     13,
+     5
+    ],
+    "k": "house",
+    "to": "185",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     18,
+     4
+    ],
+    "k": "house",
+    "to": "190",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     19,
+     4
+    ],
+    "k": "house",
+    "to": "190",
+    "why": "V3 kit house door"
+   }
+  ],
+  "043": [
+   {
+    "tile": [
+     9,
+     5
+    ],
+    "k": "bay"
+   },
+   {
+    "tile": [
+     10,
+     5
+    ],
+    "k": "bay"
+   }
+  ],
+  "044": [
+   {
+    "tile": [
+     4,
+     9
+    ],
+    "k": "shop"
+   },
+   {
+    "tile": [
+     4,
+     10
+    ],
+    "k": "shop"
+   }
+  ],
+  "051": [
+   {
+    "tile": [
+     11,
+     4
+    ],
+    "k": "keeper",
+    "why": "Keeper below the spore pool, challenged from (11,5)"
+   }
+  ],
+  "733": [
+   {
+    "tile": [
+     1,
+     1
+    ],
+    "k": "chest",
+    "item": "tether",
+    "n": 3,
+    "why": "Sporelake Shore dead end reward"
+   }
+  ],
+  "720": [
+   {
+    "tile": [
+     20,
+     2
+    ],
+    "k": "chest",
+    "item": "harmonic",
+    "n": 2,
+    "why": "hidden grove reward"
+   }
+  ],
+  "718": [
+   {
+    "tile": [
+     18,
+     14
+    ],
+    "k": "chest",
+    "item": "revive",
+    "n": 2,
+    "why": "Bogwater Bend dead end reward"
+   }
+  ],
+  "719": [
+   {
+    "tile": [
+     11,
+     1
+    ],
+    "k": "chest",
+    "item": "ether",
+    "n": 2,
+    "why": "Glowcap Meadow dead end reward"
+   }
+  ],
+  "710": [
+   {
+    "tile": [
+     19,
+     3
+    ],
+    "k": "chest",
+    "item": "maxrevive",
+    "n": 1,
+    "why": "Mushroom Maze deep chamber reward"
+   }
+  ],
+  "799": [
+   {
+    "tile": [
+     4,
+     6
+    ],
+    "k": "house",
+    "to": "791",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     5,
+     6
+    ],
+    "k": "house",
+    "to": "791",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     11,
+     6
+    ],
+    "k": "house",
+    "to": "191",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     12,
+     6
+    ],
+    "k": "house",
+    "to": "191",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     18,
+     6
+    ],
+    "k": "house",
+    "to": "792",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     19,
+     6
+    ],
+    "k": "house",
+    "to": "792",
+    "why": "V3 kit house door"
+   }
+  ],
+  "800": [
+   {
+    "tile": [
+     5,
+     3
+    ],
+    "k": "house",
+    "to": "793",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     6,
+     3
+    ],
+    "k": "house",
+    "to": "793",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     11,
+     3
+    ],
+    "k": "house",
+    "to": "171",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     12,
+     3
+    ],
+    "k": "house",
+    "to": "171",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     16,
+     3
+    ],
+    "k": "house",
+    "to": "191",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     17,
+     3
+    ],
+    "k": "house",
+    "to": "191",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     2,
+     12
+    ],
+    "k": "house",
+    "to": "191",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     3,
+     12
+    ],
+    "k": "house",
+    "to": "191",
+    "why": "V3 kit house door"
+   }
+  ],
+  "801": [
+   {
+    "tile": [
+     4,
+     4
+    ],
+    "k": "house",
+    "to": "191",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     5,
+     4
+    ],
+    "k": "house",
+    "to": "191",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     10,
+     5
+    ],
+    "k": "house",
+    "to": "171",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     11,
+     5
+    ],
+    "k": "house",
+    "to": "171",
+    "why": "V3 kit house door"
+   }
+  ],
+  "061": [
+   {
+    "tile": [
+     11,
+     10
+    ],
+    "k": "keeper",
+    "why": "Keeper on the pool steps, challenged from (11,11)"
+   }
+  ],
+  "790": [
+   {
+    "tile": [
+     14,
+     4
+    ],
+    "k": "chest",
+    "item": "fullgel",
+    "n": 2,
+    "why": "hidden grove reward"
+   }
+  ],
+  "804": [
+   {
+    "tile": [
+     1,
+     14
+    ],
+    "k": "chest",
+    "item": "harmonic",
+    "n": 3,
+    "why": "Open Water Shore dead end reward"
+   }
+  ],
+  "783": [
+   {
+    "tile": [
+     22,
+     13
+    ],
+    "k": "chest",
+    "item": "revive",
+    "n": 2,
+    "why": "Driftwood Hollows dead end reward"
+   }
+  ],
+  "775": [
+   {
+    "tile": [
+     18,
+     3
+    ],
+    "k": "chest",
+    "item": "maxrevive",
+    "n": 1,
+    "why": "Sea Cave deep chamber reward"
+   }
+  ],
+  "781": [
+   {
+    "tile": [
+     15,
+     4
+    ],
+    "k": "sign",
+    "t": [
+     "SEA ARCH COVE. Quiet waters. Something very large sleeps beneath the arch. Please do not wake it."
+    ]
+   }
+  ],
+  "780": [
+   {
+    "tile": [
+     7,
+     4
+    ],
+    "k": "sign",
+    "t": [
+     "Captain's Log, faded: 'The arch woke again tonight. The water glowed blue all the way to the tower.'",
+     "The rest of the page is water-stained."
+    ]
+   }
+  ],
+  "662": [
+   {
+    "tile": [
+     3,
+     6
+    ],
+    "k": "house",
+    "to": "192",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     4,
+     6
+    ],
+    "k": "house",
+    "to": "192",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     11,
+     6
+    ],
+    "k": "house",
+    "to": "657",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     12,
+     6
+    ],
+    "k": "house",
+    "to": "657",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     18,
+     6
+    ],
+    "k": "house",
+    "to": "192",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     19,
+     6
+    ],
+    "k": "house",
+    "to": "192",
+    "why": "V3 kit house door"
+   }
+  ],
+  "663": [
+   {
+    "tile": [
+     6,
+     4
+    ],
+    "k": "house",
+    "to": "192",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     7,
+     4
+    ],
+    "k": "house",
+    "to": "192",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     12,
+     4
+    ],
+    "k": "house",
+    "to": "656",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     17,
+     4
+    ],
+    "k": "house",
+    "to": "180",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     18,
+     4
+    ],
+    "k": "house",
+    "to": "180",
+    "why": "V3 kit house door"
+   }
+  ],
+  "664": [
+   {
+    "tile": [
+     12,
+     4
+    ],
+    "k": "house",
+    "to": "176",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     13,
+     4
+    ],
+    "k": "house",
+    "to": "176",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     18,
+     4
+    ],
+    "k": "house",
+    "to": "176",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     19,
+     4
+    ],
+    "k": "house",
+    "to": "176",
+    "why": "V3 kit house door"
+   }
+  ],
+  "064": [
+   {
+    "tile": [
+     9,
+     6
+    ],
+    "k": "bay"
+   },
+   {
+    "tile": [
+     10,
+     6
+    ],
+    "k": "bay"
+   }
+  ],
+  "065": [
+   {
+    "tile": [
+     4,
+     9
+    ],
+    "k": "shop"
+   },
+   {
+    "tile": [
+     4,
+     10
+    ],
+    "k": "shop"
+   }
+  ],
+  "071": [
+   {
+    "tile": [
+     12,
+     4
+    ],
+    "k": "keeper",
+    "why": "DJ Static at the decks, challenged from (12,5)"
+   }
+  ],
+  "654": [
+   {
+    "tile": [
+     16,
+     4
+    ],
+    "k": "chest",
+    "item": "fullgel",
+    "n": 2,
+    "why": "hidden glowgarden reward"
+   }
+  ],
+  "650": [
+   {
+    "tile": [
+     14,
+     15
+    ],
+    "k": "chest",
+    "item": "harmonic",
+    "n": 3,
+    "why": "Static Canal dead end reward"
+   }
+  ],
+  "642": [
+   {
+    "tile": [
+     19,
+     2
+    ],
+    "k": "chest",
+    "item": "maxrevive",
+    "n": 1,
+    "why": "Undercity deep chamber reward"
+   }
+  ],
+  "566": [
+   {
+    "tile": [
+     4,
+     6
+    ],
+    "k": "house",
+    "to": "177",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     5,
+     6
+    ],
+    "k": "house",
+    "to": "177",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     11,
+     5
+    ],
+    "k": "house",
+    "to": "569",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     12,
+     5
+    ],
+    "k": "house",
+    "to": "569",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     19,
+     6
+    ],
+    "k": "house",
+    "to": "177",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     20,
+     6
+    ],
+    "k": "house",
+    "to": "177",
+    "why": "V3 kit house door"
+   }
+  ],
+  "567": [
+   {
+    "tile": [
+     5,
+     4
+    ],
+    "k": "house",
+    "to": "562",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     6,
+     4
+    ],
+    "k": "house",
+    "to": "562",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     11,
+     4
+    ],
+    "k": "house",
+    "to": "177",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     12,
+     4
+    ],
+    "k": "house",
+    "to": "177",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     16,
+     4
+    ],
+    "k": "house",
+    "to": "564",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     17,
+     4
+    ],
+    "k": "house",
+    "to": "564",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     2,
+     12
+    ],
+    "k": "house",
+    "to": "177",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     3,
+     12
+    ],
+    "k": "house",
+    "to": "177",
+    "why": "V3 kit house door"
+   }
+  ],
+  "568": [
+   {
+    "tile": [
+     4,
+     5
+    ],
+    "k": "house",
+    "to": "563",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     5,
+     5
+    ],
+    "k": "house",
+    "to": "563",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     10,
+     5
+    ],
+    "k": "house",
+    "to": "177",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     11,
+     5
+    ],
+    "k": "house",
+    "to": "177",
+    "why": "V3 kit house door"
+   }
+  ],
+  "074": [
+   {
+    "tile": [
+     9,
+     5
+    ],
+    "k": "bay"
+   },
+   {
+    "tile": [
+     10,
+     5
+    ],
+    "k": "bay"
+   }
+  ],
+  "569": [
+   {
+    "tile": [
+     4,
+     9
+    ],
+    "k": "shop"
+   },
+   {
+    "tile": [
+     4,
+     10
+    ],
+    "k": "shop"
+   }
+  ],
+  "561": [
+   {
+    "tile": [
+     20,
+     1
+    ],
+    "k": "chest",
+    "item": "fullgel",
+    "n": 2,
+    "why": "secret grove reward beyond the shallows"
+   }
+  ],
+  "557": [
+   {
+    "tile": [
+     6,
+     0
+    ],
+    "k": "chest",
+    "item": "harmonic",
+    "n": 3,
+    "why": "Tidepool Ruins dead end reward"
+   }
+  ],
+  "559": [
+   {
+    "tile": [
+     8,
+     15
+    ],
+    "k": "chest",
+    "item": "revive",
+    "n": 2,
+    "why": "Sunken Channel dead end reward"
+   }
+  ],
+  "551": [
+   {
+    "tile": [
+     4,
+     2
+    ],
+    "k": "chest",
+    "item": "maxrevive",
+    "n": 1,
+    "why": "Drowned Grotto deep chamber reward"
+   }
+  ],
+  "696": [
+   {
+    "tile": [
+     3,
+     6
+    ],
+    "k": "house",
+    "to": "174",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     4,
+     6
+    ],
+    "k": "house",
+    "to": "174",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     11,
+     6
+    ],
+    "k": "house",
+    "to": "689",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     12,
+     6
+    ],
+    "k": "house",
+    "to": "689",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     18,
+     6
+    ],
+    "k": "house",
+    "to": "174",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     19,
+     6
+    ],
+    "k": "house",
+    "to": "174",
+    "why": "V3 kit house door"
+   }
+  ],
+  "697": [
+   {
+    "tile": [
+     6,
+     4
+    ],
+    "k": "house",
+    "to": "174",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     11,
+     4
+    ],
+    "k": "house",
+    "to": "691",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     12,
+     4
+    ],
+    "k": "house",
+    "to": "691",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     17,
+     4
+    ],
+    "k": "house",
+    "to": "690",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     18,
+     4
+    ],
+    "k": "house",
+    "to": "690",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     20,
+     12
+    ],
+    "k": "house",
+    "to": "174",
+    "why": "V3 kit house door"
+   }
+  ],
+  "698": [
+   {
+    "tile": [
+     12,
+     5
+    ],
+    "k": "house",
+    "to": "174",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     13,
+     5
+    ],
+    "k": "house",
+    "to": "174",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     18,
+     5
+    ],
+    "k": "house",
+    "to": "174",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     19,
+     5
+    ],
+    "k": "house",
+    "to": "174",
+    "why": "V3 kit house door"
+   }
+  ],
+  "083": [
+   {
+    "tile": [
+     9,
+     5
+    ],
+    "k": "bay"
+   },
+   {
+    "tile": [
+     10,
+     5
+    ],
+    "k": "bay"
+   }
+  ],
+  "084": [
+   {
+    "tile": [
+     4,
+     10
+    ],
+    "k": "shop"
+   },
+   {
+    "tile": [
+     4,
+     11
+    ],
+    "k": "shop"
+   }
+  ],
+  "092": [
+   {
+    "tile": [
+     12,
+     3
+    ],
+    "k": "keeper",
+    "why": "Keeper Old Basalt on the upper dais, challenged from (12,4)"
+   }
+  ],
+  "688": [
+   {
+    "tile": [
+     15,
+     4
+    ],
+    "k": "chest",
+    "item": "fullgel",
+    "n": 2,
+    "why": "hidden grove shrine reward"
+   }
+  ],
+  "681": [
+   {
+    "tile": [
+     19,
+     2
+    ],
+    "k": "chest",
+    "item": "harmonic",
+    "n": 3,
+    "why": "Furnace Ridge Overlook dead-end alcove reward"
+   }
+  ],
+  "089": [
+   {
+    "tile": [
+     12,
+     6
+    ],
+    "k": "chest",
+    "item": "maxrevive",
+    "n": 1,
+    "why": "Deep Mines depths altar reward"
+   }
+  ],
+  "537": [
+   {
+    "tile": [
+     4,
+     6
+    ],
+    "k": "house",
+    "to": "178",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     5,
+     6
+    ],
+    "k": "house",
+    "to": "178",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     11,
+     6
+    ],
+    "k": "house",
+    "to": "531",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     12,
+     6
+    ],
+    "k": "house",
+    "to": "531",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     19,
+     6
+    ],
+    "k": "house",
+    "to": "178",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     20,
+     6
+    ],
+    "k": "house",
+    "to": "178",
+    "why": "V3 kit house door"
+   }
+  ],
+  "538": [
+   {
+    "tile": [
+     4,
+     4
+    ],
+    "k": "house",
+    "to": "530",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     5,
+     4
+    ],
+    "k": "house",
+    "to": "530",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     11,
+     4
+    ],
+    "k": "house",
+    "to": "532",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     12,
+     4
+    ],
+    "k": "house",
+    "to": "532",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     16,
+     4
+    ],
+    "k": "house",
+    "to": "178",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     17,
+     4
+    ],
+    "k": "house",
+    "to": "178",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     2,
+     13
+    ],
+    "k": "house",
+    "to": "193",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     3,
+     13
+    ],
+    "k": "house",
+    "to": "193",
+    "why": "V3 kit house door"
+   }
+  ],
+  "539": [
+   {
+    "tile": [
+     4,
+     4
+    ],
+    "k": "house",
+    "to": "178",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     5,
+     4
+    ],
+    "k": "house",
+    "to": "178",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     11,
+     5
+    ],
+    "k": "house",
+    "to": "178",
+    "why": "V3 kit house door"
+   }
+  ],
+  "094": [
+   {
+    "tile": [
+     9,
+     6
+    ],
+    "k": "bay"
+   },
+   {
+    "tile": [
+     10,
+     6
+    ],
+    "k": "bay"
+   }
+  ],
+  "095": [
+   {
+    "tile": [
+     4,
+     9
+    ],
+    "k": "shop"
+   },
+   {
+    "tile": [
+     4,
+     10
+    ],
+    "k": "shop"
+   }
+  ],
+  "104": [
+   {
+    "tile": [
+     12,
+     2
+    ],
+    "k": "keeper",
+    "why": "Keeper Ingrid Vale on the upper dais, challenged from (12,3)"
+   }
+  ],
+  "529": [
+   {
+    "tile": [
+     20,
+     1
+    ],
+    "k": "chest",
+    "item": "fullgel",
+    "n": 2,
+    "why": "hidden ice grove reward"
+   }
+  ],
+  "524": [
+   {
+    "tile": [
+     18,
+     15
+    ],
+    "k": "chest",
+    "item": "harmonic",
+    "n": 3,
+    "why": "Crevasse Hollows dead-end reward"
+   }
+  ],
+  "100": [
+   {
+    "tile": [
+     11,
+     6
+    ],
+    "k": "chest",
+    "item": "maxrevive",
+    "n": 1,
+    "why": "Crystal Caverns depths shrine reward"
+   }
+  ],
+  "629": [
+   {
+    "tile": [
+     3,
+     6
+    ],
+    "k": "house",
+    "to": "623",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     4,
+     6
+    ],
+    "k": "house",
+    "to": "623",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     11,
+     6
+    ],
+    "k": "house",
+    "to": "623",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     12,
+     6
+    ],
+    "k": "house",
+    "to": "623",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     18,
+     6
+    ],
+    "k": "house",
+    "to": "623",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     19,
+     6
+    ],
+    "k": "house",
+    "to": "623",
+    "why": "V3 kit house door"
+   }
+  ],
+  "630": [
+   {
+    "tile": [
+     6,
+     4
+    ],
+    "k": "house",
+    "to": "623",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     7,
+     4
+    ],
+    "k": "house",
+    "to": "623",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     11,
+     4
+    ],
+    "k": "house",
+    "to": "624",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     12,
+     4
+    ],
+    "k": "house",
+    "to": "624",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     17,
+     4
+    ],
+    "k": "house",
+    "to": "623",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     18,
+     4
+    ],
+    "k": "house",
+    "to": "623",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     20,
+     12
+    ],
+    "k": "house",
+    "to": "623",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     21,
+     12
+    ],
+    "k": "house",
+    "to": "623",
+    "why": "V3 kit house door"
+   }
+  ],
+  "632": [
+   {
+    "tile": [
+     12,
+     5
+    ],
+    "k": "house",
+    "to": "623",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     13,
+     5
+    ],
+    "k": "house",
+    "to": "623",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     18,
+     4
+    ],
+    "k": "house",
+    "to": "622",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     19,
+     4
+    ],
+    "k": "house",
+    "to": "622",
+    "why": "V3 kit house door"
+   }
+  ],
+  "621": [
+   {
+    "tile": [
+     15,
+     4
+    ],
+    "k": "chest",
+    "item": "harmonic",
+    "n": 3,
+    "why": "hidden hydro garden reward (crystal planter)"
+   }
+  ],
+  "616": [
+   {
+    "tile": [
+     21,
+     13
+    ],
+    "k": "chest",
+    "item": "fullgel",
+    "n": 2,
+    "why": "Viewport Overlook dead end reward"
+   }
+  ],
+  "628": [
+   {
+    "tile": [
+     12,
+     2
+    ],
+    "k": "chest",
+    "item": "maxrevive",
+    "n": 1,
+    "why": "Comms Spire uplink dais reward"
+   }
+  ],
+  "611": [
+   {
+    "tile": [
+     12,
+     6
+    ],
+    "k": "chest",
+    "item": "stasis",
+    "n": 2,
+    "why": "Rift Rock crystal pool reward"
+   }
+  ],
+  "600": [
+   {
+    "tile": [
+     4,
+     6
+    ],
+    "k": "house",
+    "to": "175",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     5,
+     6
+    ],
+    "k": "house",
+    "to": "175",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     11,
+     5
+    ],
+    "k": "house",
+    "to": "593",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     12,
+     5
+    ],
+    "k": "house",
+    "to": "593",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     19,
+     6
+    ],
+    "k": "house",
+    "to": "175",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     20,
+     6
+    ],
+    "k": "house",
+    "to": "175",
+    "why": "V3 kit house door"
+   }
+  ],
+  "601": [
+   {
+    "tile": [
+     5,
+     4
+    ],
+    "k": "house",
+    "to": "175",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     6,
+     4
+    ],
+    "k": "house",
+    "to": "175",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     11,
+     4
+    ],
+    "k": "house",
+    "to": "594",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     12,
+     4
+    ],
+    "k": "house",
+    "to": "594",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     16,
+     4
+    ],
+    "k": "house",
+    "to": "175",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     17,
+     4
+    ],
+    "k": "house",
+    "to": "175",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     2,
+     12
+    ],
+    "k": "house",
+    "to": "175",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     3,
+     12
+    ],
+    "k": "house",
+    "to": "175",
+    "why": "V3 kit house door"
+   }
+  ],
+  "602": [
+   {
+    "tile": [
+     4,
+     4
+    ],
+    "k": "house",
+    "to": "175",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     5,
+     4
+    ],
+    "k": "house",
+    "to": "175",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     10,
+     5
+    ],
+    "k": "house",
+    "to": "592",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     11,
+     5
+    ],
+    "k": "house",
+    "to": "592",
+    "why": "V3 kit house door"
+   }
+  ],
+  "116": [
+   {
+    "tile": [
+     9,
+     6
+    ],
+    "k": "bay"
+   },
+   {
+    "tile": [
+     10,
+     6
+    ],
+    "k": "bay"
+   }
+  ],
+  "117": [
+   {
+    "tile": [
+     5,
+     9
+    ],
+    "k": "shop"
+   },
+   {
+    "tile": [
+     5,
+     10
+    ],
+    "k": "shop"
+   }
+  ],
+  "122": [
+   {
+    "tile": [
+     11,
+     4
+    ],
+    "k": "keeper",
+    "why": "Keepers Echo & Iris in front of the crystal thrones, challenged from (11,5)"
+   }
+  ],
+  "591": [
+   {
+    "tile": [
+     15,
+     4
+    ],
+    "k": "chest",
+    "item": "fullgel",
+    "n": 2,
+    "why": "hidden blossom grove reward"
+   }
+  ],
+  "588": [
+   {
+    "tile": [
+     18,
+     14
+    ],
+    "k": "chest",
+    "item": "harmonic",
+    "n": 3,
+    "why": "Shrine Hollows dead end reward"
+   }
+  ],
+  "581": [
+   {
+    "tile": [
+     12,
+     6
+    ],
+    "k": "chest",
+    "item": "singularity",
+    "n": 1,
+    "why": "Crystal Hollow heart reward (replaces the Floating Gardens singularity stash)"
+   }
+  ],
+  "836": [
+   {
+    "tile": [
+     3,
+     6
+    ],
+    "k": "house",
+    "to": "186",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     4,
+     6
+    ],
+    "k": "house",
+    "to": "186",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     11,
+     6
+    ],
+    "k": "house",
+    "to": "828",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     12,
+     6
+    ],
+    "k": "house",
+    "to": "828",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     18,
+     6
+    ],
+    "k": "house",
+    "to": "186",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     19,
+     6
+    ],
+    "k": "house",
+    "to": "186",
+    "why": "V3 kit house door"
+   }
+  ],
+  "837": [
+   {
+    "tile": [
+     6,
+     4
+    ],
+    "k": "house",
+    "to": "186",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     7,
+     4
+    ],
+    "k": "house",
+    "to": "186",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     11,
+     4
+    ],
+    "k": "house",
+    "to": "830",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     12,
+     4
+    ],
+    "k": "house",
+    "to": "830",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     17,
+     4
+    ],
+    "k": "house",
+    "to": "186",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     18,
+     4
+    ],
+    "k": "house",
+    "to": "186",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     20,
+     12
+    ],
+    "k": "house",
+    "to": "829",
+    "why": "V3 kit house door"
+   }
+  ],
+  "838": [
+   {
+    "tile": [
+     12,
+     4
+    ],
+    "k": "house",
+    "to": "186",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     13,
+     4
+    ],
+    "k": "house",
+    "to": "186",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     17,
+     4
+    ],
+    "k": "house",
+    "to": "186",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     18,
+     4
+    ],
+    "k": "house",
+    "to": "186",
+    "why": "V3 kit house door"
+   }
+  ],
+  "125": [
+   {
+    "tile": [
+     9,
+     6
+    ],
+    "k": "bay"
+   },
+   {
+    "tile": [
+     10,
+     6
+    ],
+    "k": "bay"
+   }
+  ],
+  "126": [
+   {
+    "tile": [
+     4,
+     10
+    ],
+    "k": "shop"
+   },
+   {
+    "tile": [
+     4,
+     11
+    ],
+    "k": "shop"
+   }
+  ],
+  "135": [
+   {
+    "tile": [
+     12,
+     6
+    ],
+    "k": "keeper",
+    "why": "Keeper inside the railed arena, challenged from (12,7)"
+   }
+  ],
+  "827": [
+   {
+    "tile": [
+     15,
+     4
+    ],
+    "k": "chest",
+    "item": "maxrevive",
+    "n": 1,
+    "why": "hidden grove reward (rock before the blue flower bed)"
+   }
+  ],
+  "823": [
+   {
+    "tile": [
+     15,
+     14
+    ],
+    "k": "chest",
+    "item": "stasis",
+    "n": 2,
+    "why": "Mistfall Bend dead end reward"
+   }
+  ],
+  "815": [
+   {
+    "tile": [
+     4,
+     11
+    ],
+    "k": "chest",
+    "item": "singularity",
+    "n": 1,
+    "why": "Wailing Cave deep chamber reward"
+   }
+  ],
+  "763": [
+   {
+    "tile": [
+     4,
+     6
+    ],
+    "k": "house",
+    "to": "172",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     5,
+     6
+    ],
+    "k": "house",
+    "to": "172",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     19,
+     6
+    ],
+    "k": "house",
+    "to": "172",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     20,
+     6
+    ],
+    "k": "house",
+    "to": "172",
+    "why": "V3 kit house door"
+   }
+  ],
+  "764": [
+   {
+    "tile": [
+     5,
+     4
+    ],
+    "k": "house",
+    "to": "172",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     6,
+     4
+    ],
+    "k": "house",
+    "to": "172",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     11,
+     4
+    ],
+    "k": "house",
+    "to": "757",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     12,
+     4
+    ],
+    "k": "house",
+    "to": "757",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     16,
+     4
+    ],
+    "k": "house",
+    "to": "758",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     17,
+     4
+    ],
+    "k": "house",
+    "to": "758",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     2,
+     13
+    ],
+    "k": "house",
+    "to": "172",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     3,
+     13
+    ],
+    "k": "house",
+    "to": "172",
+    "why": "V3 kit house door"
+   }
+  ],
+  "765": [
+   {
+    "tile": [
+     4,
+     4
+    ],
+    "k": "house",
+    "to": "756",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     5,
+     4
+    ],
+    "k": "house",
+    "to": "756",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     10,
+     4
+    ],
+    "k": "house",
+    "to": "172",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     11,
+     4
+    ],
+    "k": "house",
+    "to": "172",
+    "why": "V3 kit house door"
+   }
+  ],
+  "137": [
+   {
+    "tile": [
+     9,
+     6
+    ],
+    "k": "bay"
+   },
+   {
+    "tile": [
+     10,
+     6
+    ],
+    "k": "bay"
+   }
+  ],
+  "766": [
+   {
+    "tile": [
+     5,
+     9
+    ],
+    "k": "shop"
+   },
+   {
+    "tile": [
+     5,
+     10
+    ],
+    "k": "shop"
+   }
+  ],
+  "755": [
+   {
+    "tile": [
+     15,
+     4
+    ],
+    "k": "chest",
+    "item": "fullgel",
+    "n": 2,
+    "why": "hidden grove reward (the stump below the flower bed)"
+   }
+  ],
+  "752": [
+   {
+    "tile": [
+     12,
+     4
+    ],
+    "k": "chest",
+    "item": "harmonic",
+    "n": 3,
+    "why": "Seedpod Hollows dead end reward (top nook)"
+   }
+  ],
+  "751": [
+   {
+    "tile": [
+     16,
+     4
+    ],
+    "k": "chest",
+    "item": "tether",
+    "n": 3,
+    "why": "Rift Edge dead end reward at the lip of the rift"
+   }
+  ],
+  "744": [
+   {
+    "tile": [
+     3,
+     7
+    ],
+    "k": "chest",
+    "item": "maxrevive",
+    "n": 1,
+    "why": "Starstone Hollow deep chamber reward"
+   }
+  ],
+  "430": [
+   {
+    "tile": [
+     19,
+     6
+    ],
+    "k": "house",
+    "to": "423",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     20,
+     6
+    ],
+    "k": "house",
+    "to": "423",
+    "why": "V3 kit house door"
+   }
+  ],
+  "431": [
+   {
+    "tile": [
+     11,
+     4
+    ],
+    "k": "house",
+    "to": "424",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     12,
+     4
+    ],
+    "k": "house",
+    "to": "424",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     17,
+     4
+    ],
+    "k": "house",
+    "to": "425",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     18,
+     4
+    ],
+    "k": "house",
+    "to": "425",
+    "why": "V3 kit house door"
+   }
+  ],
+  "426": [
+   {
+    "tile": [
+     9,
+     6
+    ],
+    "k": "bay"
+   },
+   {
+    "tile": [
+     10,
+     6
+    ],
+    "k": "bay"
+   }
+  ],
+  "433": [
+   {
+    "tile": [
+     5,
+     9
+    ],
+    "k": "shop"
+   },
+   {
+    "tile": [
+     5,
+     10
+    ],
+    "k": "shop"
+   }
+  ],
+  "422": [
+   {
+    "tile": [
+     15,
+     4
+    ],
+    "k": "chest",
+    "item": "maxrevive",
+    "n": 2,
+    "why": "Secret Grove reward (behind the Relay Tower)"
+   }
+  ],
+  "415": [
+   {
+    "tile": [
+     12,
+     15
+    ],
+    "k": "chest",
+    "item": "singularity",
+    "n": 2,
+    "why": "Stargazer Overlook dead end reward"
+   }
+  ],
+  "409": [
+   {
+    "tile": [
+     2,
+     7
+    ],
+    "k": "chest",
+    "item": "stasis",
+    "n": 3,
+    "why": "Icefall Deep Chamber reward"
+   }
+  ],
+  "429": [
+   {
+    "tile": [
+     12,
+     2
+    ],
+    "k": "chest",
+    "item": "fullgel",
+    "n": 3,
+    "why": "Relay Tower summit reward (the Apex Keeper is Orra Venn at the Great Telescope, so no keeper here)"
+   }
+  ],
+  "863": [
+   {
+    "tile": [
+     4,
+     6
+    ],
+    "k": "house",
+    "to": "859",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     5,
+     6
+    ],
+    "k": "house",
+    "to": "859",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     11,
+     6
+    ],
+    "k": "house",
+    "to": "189",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     12,
+     6
+    ],
+    "k": "house",
+    "to": "189",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     19,
+     6
+    ],
+    "k": "house",
+    "to": "189",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     20,
+     6
+    ],
+    "k": "house",
+    "to": "189",
+    "why": "V3 kit house door"
+   }
+  ],
+  "864": [
+   {
+    "tile": [
+     16,
+     4
+    ],
+    "k": "house",
+    "to": "861",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     17,
+     4
+    ],
+    "k": "house",
+    "to": "861",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     3,
+     11
+    ],
+    "k": "house",
+    "to": "860",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     4,
+     11
+    ],
+    "k": "house",
+    "to": "860",
+    "why": "V3 kit house door"
+   }
+  ],
+  "865": [
+   {
+    "tile": [
+     4,
+     4
+    ],
+    "k": "house",
+    "to": "189",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     5,
+     4
+    ],
+    "k": "house",
+    "to": "189",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     10,
+     5
+    ],
+    "k": "house",
+    "to": "189",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     11,
+     5
+    ],
+    "k": "house",
+    "to": "189",
+    "why": "V3 kit house door"
+   }
+  ],
+  "862": [
+   {
+    "tile": [
+     9,
+     6
+    ],
+    "k": "bay"
+   },
+   {
+    "tile": [
+     10,
+     6
+    ],
+    "k": "bay"
+   }
+  ],
+  "866": [
+   {
+    "tile": [
+     4,
+     9
+    ],
+    "k": "shop"
+   },
+   {
+    "tile": [
+     4,
+     10
+    ],
+    "k": "shop"
+   }
+  ],
+  "858": [
+   {
+    "tile": [
+     15,
+     4
+    ],
+    "k": "chest",
+    "item": "maxrevive",
+    "n": 2,
+    "why": "Secret Grove reward (the seedpod shrine)"
+   }
+  ],
+  "852": [
+   {
+    "tile": [
+     15,
+     15
+    ],
+    "k": "chest",
+    "item": "singularity",
+    "n": 2,
+    "why": "Shard Slope dead end reward"
+   }
+  ],
+  "848": [
+   {
+    "tile": [
+     3,
+     7
+    ],
+    "k": "chest",
+    "item": "harmonic",
+    "n": 3,
+    "why": "Shardheart Deep Chamber reward"
+   }
+  ],
   "505": [
    {
     "tile": [
@@ -1332,14 +5088,14 @@
    {
     "tile": [
      9,
-     6
+     5
     ],
     "k": "bay"
    },
    {
     "tile": [
      10,
-     6
+     5
     ],
     "k": "bay"
    }
@@ -1347,14 +5103,14 @@
   "032": [
    {
     "tile": [
-     6,
+     5,
      9
     ],
     "k": "shop"
    },
    {
     "tile": [
-     6,
+     5,
      10
     ],
     "k": "shop"
@@ -1405,6 +5161,162 @@
     "n": 1,
     "why": "Deepcut Mine depths reward"
    }
+  ],
+  "470": [
+   {
+    "tile": [
+     4,
+     6
+    ],
+    "k": "house",
+    "to": "466",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     11,
+     6
+    ],
+    "k": "house",
+    "to": "467",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     12,
+     6
+    ],
+    "k": "house",
+    "to": "467",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     18,
+     6
+    ],
+    "k": "house",
+    "to": "187",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     19,
+     6
+    ],
+    "k": "house",
+    "to": "187",
+    "why": "V3 kit house door"
+   }
+  ],
+  "471": [
+   {
+    "tile": [
+     6,
+     4
+    ],
+    "k": "house",
+    "to": "468",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     12,
+     4
+    ],
+    "k": "house",
+    "to": "187",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     18,
+     4
+    ],
+    "k": "house",
+    "to": "187",
+    "why": "V3 kit house door"
+   }
+  ],
+  "472": [
+   {
+    "tile": [
+     12,
+     5
+    ],
+    "k": "house",
+    "to": "187",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     18,
+     4
+    ],
+    "k": "house",
+    "to": "187",
+    "why": "V3 kit house door"
+   }
+  ],
+  "465": [
+   {
+    "tile": [
+     15,
+     4
+    ],
+    "k": "chest",
+    "item": "fullgel",
+    "n": 2,
+    "why": "hidden grove reward"
+   }
+  ],
+  "462": [
+   {
+    "tile": [
+     11,
+     13
+    ],
+    "k": "chest",
+    "item": "maxrevive",
+    "n": 2,
+    "why": "dead end reward"
+   }
+  ],
+  "464": [
+   {
+    "tile": [
+     14,
+     13
+    ],
+    "k": "chest",
+    "item": "harmonic",
+    "n": 2,
+    "why": "dead end reward"
+   }
+  ],
+  "460": [
+   {
+    "tile": [
+     6,
+     13
+    ],
+    "k": "chest",
+    "item": "revive",
+    "n": 2,
+    "why": "dead end reward"
+   }
+  ],
+  "444": [
+   {
+    "tile": [
+     4,
+     11
+    ],
+    "k": "chest",
+    "item": "singularity",
+    "n": 1,
+    "why": "cave depths reward"
+   }
   ]
  },
  "arrival": {
@@ -1418,11 +5330,11 @@
   },
   "sporeholm": {
    "section": "041",
-   "why": "V2: the landing circle on the giant mushroom cap"
+   "why": "V3: the Sporeholm spaceport landing pad (old landing circle id)"
   },
   "thalassa": {
    "section": "052",
-   "why": "V2: the compass landing pad on the Saltreach docks"
+   "why": "V3: the compass landing pad on the Saltreach docks (harbor boat from Dustara)"
   },
   "neonis": {
    "section": "062",
@@ -1433,36 +5345,36 @@
    "why": "V2: the jetty at Sunken Landing"
   },
   "pyros": {
-   "section": "082",
-   "why": "V2: the iron landing pad at the left end of Cinder Hollow"
+   "section": "700",
+   "why": "V3: the Pyros spaceport landing pad"
   },
   "glacia": {
-   "section": "093",
-   "why": "V2: the landing pad under the glass dome"
+   "section": "541",
+   "why": "V3: the Glacia spaceport landing pad"
   },
   "helix": {
    "section": "105",
-   "why": "V2: the docking bay pad on the Docking Ring"
+   "why": "V3: the Docking Ring stays the arrival (story hub with the medical bay, barracks, labs and the Observation Deck gangway)"
   },
   "halo": {
    "section": "114",
-   "why": "V2: the round sky-dock landing pad"
+   "why": "V3: the Cloud Dock stays the arrival (sky-dock with the Cloud Dock Hall and Airship Cabin doors)"
   },
   "umbra": {
    "section": "123",
-   "why": "V2: out of the Shadow Tunnel archway"
+   "why": "V3: out of the Shadow Tunnel archway (kept); the spaceport 840 is a second way home"
   },
   "starfall": {
    "section": "136",
-   "why": "V2: the sandbagged landing pad at Rim Camp"
+   "why": "V3: the sandbagged landing pad at Rim Camp (kept; story scenes play there); the spaceport 767 is a second way home"
   },
   "apex": {
    "section": "146",
-   "why": "V2: the glass lift cabin at the left end of the terrace"
+   "why": "V3: the glass lift cabin on the Summit Lift terrace (kept V2 arrival)"
   },
   "ystra": {
    "section": "153",
-   "why": "V2: the ring of carved stones"
+   "why": "V3: the ring of carved stones on the Arrival Fragment (kept V2 arrival)"
   }
  },
  "unlisted": {},
@@ -1557,12 +5469,6 @@
     12
    ]
   },
-  "180": {
-   "default": [
-    7,
-    12
-   ]
-  },
   "181": {
    "default": [
     7,
@@ -1649,16 +5555,6 @@
    "default": [
     3,
     8
-   ]
-  },
-  "041": {
-   "arrival": [
-    3,
-    7
-   ],
-   "default": [
-    3,
-    7
    ]
   },
   "052": {
@@ -1783,22 +5679,738 @@
     12
    ]
   },
-  "499": {
+  "132": {
    "default": [
-    9,
-    14
+    7,
+    8
    ]
   },
-  "500": {
+  "721": {
+   "default": [
+    9,
+    15
+   ]
+  },
+  "722": {
+   "default": [
+    9,
+    15
+   ]
+  },
+  "723": {
    "default": [
     9,
     16
    ]
   },
+  "041": {
+   "arrival": [
+    12,
+    10
+   ],
+   "default": [
+    12,
+    10
+   ]
+  },
+  "050": {
+   "default": [
+    9,
+    16
+   ]
+  },
+  "051": {
+   "default": [
+    11,
+    13
+   ]
+  },
+  "708": {
+   "default": [
+    5,
+    2
+   ]
+  },
+  "709": {
+   "default": [
+    5,
+    3
+   ]
+  },
+  "710": {
+   "default": [
+    11,
+    12
+   ]
+  },
+  "791": {
+   "default": [
+    9,
+    16
+   ]
+  },
+  "792": {
+   "default": [
+    9,
+    16
+   ]
+  },
+  "793": {
+   "default": [
+    9,
+    17
+   ]
+  },
+  "803": {
+   "default": [
+    13,
+    10
+   ]
+  },
+  "060": {
+   "default": [
+    9,
+    16
+   ]
+  },
+  "061": {
+   "default": [
+    11,
+    13
+   ]
+  },
+  "773": {
+   "default": [
+    5,
+    3
+   ]
+  },
+  "774": {
+   "default": [
+    4,
+    4
+   ]
+  },
+  "775": {
+   "default": [
+    11,
+    12
+   ]
+  },
+  "064": {
+   "default": [
+    9,
+    16
+   ]
+  },
+  "065": {
+   "default": [
+    9,
+    16
+   ]
+  },
+  "657": {
+   "default": [
+    9,
+    15
+   ]
+  },
+  "656": {
+   "default": [
+    9,
+    15
+   ]
+  },
+  "180": {
+   "default": [
+    9,
+    15
+   ]
+  },
+  "666": {
+   "default": [
+    11,
+    10
+   ]
+  },
+  "069": {
+   "default": [
+    9,
+    15
+   ]
+  },
+  "071": {
+   "default": [
+    11,
+    12
+   ]
+  },
+  "640": {
+   "default": [
+    5,
+    3
+   ]
+  },
+  "641": {
+   "default": [
+    5,
+    4
+   ]
+  },
+  "642": {
+   "default": [
+    12,
+    12
+   ]
+  },
+  "637": {
+   "default": [
+    11,
+    12
+   ]
+  },
+  "569": {
+   "default": [
+    9,
+    16
+   ]
+  },
+  "562": {
+   "default": [
+    8,
+    15
+   ]
+  },
+  "564": {
+   "default": [
+    9,
+    15
+   ]
+  },
+  "563": {
+   "default": [
+    9,
+    15
+   ]
+  },
+  "570": {
+   "default": [
+    12,
+    10
+   ]
+  },
+  "549": {
+   "default": [
+    5,
+    3
+   ]
+  },
+  "550": {
+   "default": [
+    4,
+    4
+   ]
+  },
+  "551": {
+   "default": [
+    11,
+    12
+   ]
+  },
+  "546": {
+   "default": [
+    11,
+    12
+   ]
+  },
+  "689": {
+   "default": [
+    9,
+    16
+   ]
+  },
+  "691": {
+   "default": [
+    9,
+    15
+   ]
+  },
+  "690": {
+   "default": [
+    9,
+    16
+   ]
+  },
+  "700": {
+   "arrival": [
+    12,
+    10
+   ],
+   "default": [
+    12,
+    10
+   ]
+  },
+  "087": {
+   "default": [
+    5,
+    3
+   ]
+  },
+  "088": {
+   "default": [
+    4,
+    3
+   ]
+  },
+  "089": {
+   "default": [
+    11,
+    13
+   ]
+  },
+  "091": {
+   "default": [
+    9,
+    15
+   ]
+  },
+  "092": {
+   "default": [
+    11,
+    12
+   ]
+  },
+  "672": {
+   "default": [
+    11,
+    13
+   ]
+  },
+  "531": {
+   "default": [
+    9,
+    16
+   ]
+  },
+  "530": {
+   "default": [
+    9,
+    15
+   ]
+  },
+  "532": {
+   "default": [
+    9,
+    16
+   ]
+  },
+  "541": {
+   "arrival": [
+    12,
+    10
+   ],
+   "default": [
+    12,
+    10
+   ]
+  },
+  "098": {
+   "default": [
+    5,
+    3
+   ]
+  },
+  "099": {
+   "default": [
+    4,
+    3
+   ]
+  },
+  "100": {
+   "default": [
+    11,
+    13
+   ]
+  },
+  "103": {
+   "default": [
+    9,
+    15
+   ]
+  },
+  "104": {
+   "default": [
+    11,
+    12
+   ]
+  },
+  "513": {
+   "default": [
+    11,
+    13
+   ]
+  },
+  "623": {
+   "default": [
+    9,
+    15
+   ]
+  },
+  "624": {
+   "default": [
+    9,
+    16
+   ]
+  },
+  "622": {
+   "default": [
+    9,
+    16
+   ]
+  },
+  "634": {
+   "default": [
+    12,
+    10
+   ]
+  },
+  "608": {
+   "default": [
+    11,
+    6
+   ]
+  },
+  "609": {
+   "default": [
+    6,
+    3
+   ]
+  },
+  "610": {
+   "default": [
+    4,
+    4
+   ]
+  },
+  "611": {
+   "default": [
+    11,
+    12
+   ]
+  },
+  "627": {
+   "default": [
+    9,
+    15
+   ]
+  },
+  "628": {
+   "default": [
+    11,
+    12
+   ]
+  },
+  "606": {
+   "default": [
+    9,
+    16
+   ]
+  },
+  "607": {
+   "default": [
+    11,
+    13
+   ]
+  },
+  "593": {
+   "default": [
+    9,
+    16
+   ]
+  },
+  "594": {
+   "default": [
+    9,
+    16
+   ]
+  },
+  "592": {
+   "default": [
+    9,
+    16
+   ]
+  },
+  "604": {
+   "default": [
+    12,
+    10
+   ]
+  },
+  "121": {
+   "default": [
+    9,
+    15
+   ]
+  },
+  "122": {
+   "default": [
+    11,
+    12
+   ]
+  },
+  "579": {
+   "default": [
+    5,
+    3
+   ]
+  },
+  "580": {
+   "default": [
+    4,
+    3
+   ]
+  },
+  "581": {
+   "default": [
+    11,
+    12
+   ]
+  },
+  "575": {
+   "default": [
+    9,
+    15
+   ]
+  },
+  "576": {
+   "default": [
+    11,
+    12
+   ]
+  },
+  "577": {
+   "default": [
+    11,
+    12
+   ]
+  },
+  "828": {
+   "default": [
+    9,
+    15
+   ]
+  },
+  "830": {
+   "default": [
+    9,
+    15
+   ]
+  },
+  "829": {
+   "default": [
+    9,
+    16
+   ]
+  },
+  "840": {
+   "arrival": [
+    11,
+    10
+   ],
+   "default": [
+    11,
+    10
+   ]
+  },
+  "134": {
+   "default": [
+    9,
+    16
+   ]
+  },
+  "135": {
+   "default": [
+    11,
+    12
+   ]
+  },
+  "813": {
+   "default": [
+    5,
+    3
+   ]
+  },
+  "814": {
+   "default": [
+    4,
+    4
+   ]
+  },
+  "815": {
+   "default": [
+    12,
+    12
+   ]
+  },
+  "757": {
+   "default": [
+    9,
+    15
+   ]
+  },
+  "758": {
+   "default": [
+    9,
+    15
+   ]
+  },
+  "756": {
+   "default": [
+    9,
+    16
+   ]
+  },
+  "767": {
+   "arrival": [
+    12,
+    11
+   ],
+   "default": [
+    12,
+    11
+   ]
+  },
+  "742": {
+   "default": [
+    5,
+    3
+   ]
+  },
+  "743": {
+   "default": [
+    4,
+    3
+   ]
+  },
+  "744": {
+   "default": [
+    12,
+    13
+   ]
+  },
+  "423": {
+   "default": [
+    9,
+    15
+   ]
+  },
+  "424": {
+   "default": [
+    9,
+    16
+   ]
+  },
+  "425": {
+   "default": [
+    9,
+    16
+   ]
+  },
+  "434": {
+   "default": [
+    12,
+    10
+   ]
+  },
+  "406": {
+   "default": [
+    5,
+    3
+   ]
+  },
+  "407": {
+   "default": [
+    4,
+    4
+   ]
+  },
+  "409": {
+   "default": [
+    12,
+    12
+   ]
+  },
+  "428": {
+   "default": [
+    9,
+    15
+   ]
+  },
+  "429": {
+   "default": [
+    11,
+    12
+   ]
+  },
+  "859": {
+   "default": [
+    9,
+    17
+   ]
+  },
+  "861": {
+   "default": [
+    9,
+    16
+   ]
+  },
+  "860": {
+   "default": [
+    9,
+    16
+   ]
+  },
+  "867": {
+   "default": [
+    13,
+    10
+   ]
+  },
+  "846": {
+   "default": [
+    5,
+    3
+   ]
+  },
+  "847": {
+   "default": [
+    5,
+    4
+   ]
+  },
+  "848": {
+   "default": [
+    11,
+    12
+   ]
+  },
+  "499": {
+   "default": [
+    9,
+    16
+   ]
+  },
+  "500": {
+   "default": [
+    9,
+    17
+   ]
+  },
   "498": {
    "default": [
     9,
-    14
+    16
    ]
   },
   "029": {
@@ -1839,6 +6451,54 @@
    "default": [
     9,
     15
+   ]
+  },
+  "466": {
+   "default": [
+    9,
+    15
+   ]
+  },
+  "467": {
+   "default": [
+    8,
+    15
+   ]
+  },
+  "468": {
+   "default": [
+    9,
+    15
+   ]
+  },
+  "442": {
+   "default": [
+    5,
+    3
+   ]
+  },
+  "443": {
+   "default": [
+    4,
+    4
+   ]
+  },
+  "444": {
+   "default": [
+    11,
+    13
+   ]
+  },
+  "440": {
+   "default": [
+    11,
+    13
+   ]
+  },
+  "438": {
+   "default": [
+    9,
+    16
    ]
   }
  },
@@ -2083,6 +6743,206 @@
    "why": "V2: the landing pad is the arrival point and the shuttle home"
   },
   {
+   "section": "041",
+   "tiles": [
+    [
+     12,
+     8
+    ],
+    [
+     13,
+     8
+    ]
+   ],
+   "node": "dustara",
+   "planet": "dustara",
+   "label": "your ship back to Dustara",
+   "why": "V3: the spaceport is the arrival point and the way home"
+  },
+  {
+   "section": "803",
+   "tiles": [
+    [
+     13,
+     9
+    ],
+    [
+     14,
+     9
+    ]
+   ],
+   "node": "dustara",
+   "planet": "dustara",
+   "label": "your ship back to Dustara",
+   "why": "V3: the spaceport beside the docks is a second way home"
+  },
+  {
+   "section": "666",
+   "tiles": [
+    [
+     11,
+     8
+    ],
+    [
+     12,
+     8
+    ]
+   ],
+   "node": "dustara",
+   "planet": "dustara",
+   "label": "your ship back to Dustara",
+   "why": "V3: the spaceport beside the Starport deck is the way home"
+  },
+  {
+   "section": "570",
+   "tiles": [
+    [
+     11,
+     8
+    ],
+    [
+     12,
+     8
+    ]
+   ],
+   "node": "dustara",
+   "planet": "dustara",
+   "label": "your ship back to Dustara",
+   "why": "V3: spaceport beside Dig Camp (the ferry jetty stays the arrival)"
+  },
+  {
+   "section": "700",
+   "tiles": [
+    [
+     12,
+     8
+    ],
+    [
+     13,
+     8
+    ]
+   ],
+   "node": "dustara",
+   "planet": "dustara",
+   "label": "your ship back to Dustara",
+   "why": "V3: the spaceport is the arrival point and the way home"
+  },
+  {
+   "section": "541",
+   "tiles": [
+    [
+     12,
+     8
+    ],
+    [
+     13,
+     8
+    ]
+   ],
+   "node": "dustara",
+   "planet": "dustara",
+   "label": "your ship back to Dustara",
+   "why": "V3: the spaceport is the arrival point and the way home"
+  },
+  {
+   "section": "634",
+   "tiles": [
+    [
+     12,
+     8
+    ],
+    [
+     13,
+     8
+    ]
+   ],
+   "node": "dustara",
+   "planet": "dustara",
+   "label": "your ship back to Dustara",
+   "why": "V3: second way home from the station spaceport (the Docking Ring shuttle gate stays)"
+  },
+  {
+   "section": "604",
+   "tiles": [
+    [
+     12,
+     8
+    ],
+    [
+     13,
+     8
+    ]
+   ],
+   "node": "dustara",
+   "planet": "dustara",
+   "label": "your ship back to Dustara",
+   "why": "V3: the Halo spaceport is the way home (the Cloud Dock stays the arrival)"
+  },
+  {
+   "section": "840",
+   "tiles": [
+    [
+     11,
+     8
+    ],
+    [
+     12,
+     8
+    ]
+   ],
+   "node": "dustara",
+   "planet": "dustara",
+   "label": "your ship back to Dustara",
+   "why": "V3: the Umbra spaceport, a second way home beside the Shadow Tunnel"
+  },
+  {
+   "section": "767",
+   "tiles": [
+    [
+     12,
+     9
+    ],
+    [
+     13,
+     9
+    ]
+   ],
+   "node": "dustara",
+   "planet": "dustara",
+   "label": "your ship back to Dustara",
+   "why": "V3: the Starfall spaceport, a second way home beside the Rim Camp pad"
+  },
+  {
+   "section": "434",
+   "tiles": [
+    [
+     12,
+     8
+    ],
+    [
+     13,
+     8
+    ]
+   ],
+   "node": "dustara",
+   "planet": "dustara",
+   "label": "your ship back to Dustara",
+   "why": "V3: the Apex spaceport is a way home"
+  },
+  {
+   "section": "867",
+   "tiles": [
+    [
+     13,
+     8
+    ]
+   ],
+   "node": "dustara",
+   "planet": "dustara",
+   "label": "your ship back to Dustara",
+   "why": "V3: the Ystra spaceport is a way home"
+  },
+  {
    "section": "029",
    "tiles": [
     [
@@ -2125,9 +6985,96 @@
   },
   "per_section": {
    "497": 0,
-   "481": 0
+   "481": 0,
+   "465": 0,
+   "441": 0,
+   "471": 0,
+   "470": 0,
+   "472": 0,
+   "720": 0,
+   "733": 0,
+   "707": 0,
+   "718": 0,
+   "719": 0,
+   "790": 0,
+   "804": 0,
+   "772": 0,
+   "783": 0,
+   "654": 0,
+   "650": 0,
+   "639": 0,
+   "561": 0,
+   "557": 0,
+   "559": 0,
+   "548": 0,
+   "688": 0,
+   "673": 0,
+   "681": 0,
+   "529": 0,
+   "514": 0,
+   "524": 0,
+   "621": 0,
+   "616": 0,
+   "608": 0,
+   "634": 0,
+   "591": 0,
+   "588": 0,
+   "578": 0,
+   "604": 0,
+   "422": 0,
+   "415": 0,
+   "405": 0,
+   "858": 0,
+   "852": 0,
+   "845": 0,
+   "827": 0,
+   "812": 0,
+   "823": 0,
+   "840": 0,
+   "755": 0,
+   "752": 0,
+   "751": 0,
+   "741": 0,
+   "767": 0
   },
-  "tiles": []
+  "tiles": [
+   {
+    "section": "060",
+    "n": 0,
+    "tile": [
+     4,
+     14
+    ],
+    "face": "right"
+   },
+   {
+    "section": "060",
+    "n": 1,
+    "tile": [
+     15,
+     15
+    ],
+    "face": "left"
+   },
+   {
+    "section": "103",
+    "n": 0,
+    "tile": [
+     3,
+     4
+    ],
+    "face": "right"
+   },
+   {
+    "section": "103",
+    "n": 1,
+    "tile": [
+     10,
+     13
+    ],
+    "face": "left"
+   }
+  ]
  },
  "locks": [
   {
@@ -2407,36 +7354,6 @@
    "face": "down",
    "kind": "door",
    "parent": "114"
-  },
-  {
-   "section": "180",
-   "tile": [
-    7,
-    13
-   ],
-   "to": "back",
-   "at": [
-    7,
-    12
-   ],
-   "face": "down",
-   "kind": "door",
-   "parent": "066"
-  },
-  {
-   "section": "180",
-   "tile": [
-    8,
-    13
-   ],
-   "to": "back",
-   "at": [
-    8,
-    12
-   ],
-   "face": "down",
-   "kind": "door",
-   "parent": "066"
   },
   {
    "section": "181",
@@ -3170,37 +8087,2885 @@
    "parent": "030"
   },
   {
-   "section": "499",
+   "section": "129",
+   "tile": [
+    7,
+    15
+   ],
+   "to": "821",
+   "at": [
+    8,
+    7
+   ],
+   "face": "right",
+   "kind": "stairs"
+  },
+  {
+   "section": "129",
+   "tile": [
+    7,
+    15
+   ],
+   "to": "821",
+   "at": [
+    8,
+    7
+   ],
+   "face": "right",
+   "kind": "stairs"
+  },
+  {
+   "section": "129",
+   "tile": [
+    7,
+    15
+   ],
+   "to": "821",
+   "at": [
+    8,
+    7
+   ],
+   "face": "right",
+   "kind": "stairs"
+  },
+  {
+   "section": "129",
+   "tile": [
+    7,
+    15
+   ],
+   "to": "821",
+   "at": [
+    8,
+    7
+   ],
+   "face": "right",
+   "kind": "stairs"
+  },
+  {
+   "section": "721",
    "tile": [
     9,
-    15
+    16
    ],
    "to": "back",
    "at": [
     9,
-    14
+    15
    ],
    "face": "down",
    "kind": "door",
-   "parent": "505"
+   "parent": "728"
   },
   {
-   "section": "499",
+   "section": "721",
    "tile": [
     10,
-    15
+    16
    ],
    "to": "back",
    "at": [
     10,
-    14
+    15
    ],
    "face": "down",
    "kind": "door",
-   "parent": "505"
+   "parent": "728"
   },
   {
-   "section": "500",
+   "section": "722",
+   "tile": [
+    9,
+    16
+   ],
+   "to": "back",
+   "at": [
+    9,
+    15
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "729"
+  },
+  {
+   "section": "722",
+   "tile": [
+    10,
+    16
+   ],
+   "to": "back",
+   "at": [
+    10,
+    15
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "729"
+  },
+  {
+   "section": "723",
+   "tile": [
+    9,
+    17
+   ],
+   "to": "back",
+   "at": [
+    9,
+    16
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "729"
+  },
+  {
+   "section": "723",
+   "tile": [
+    10,
+    17
+   ],
+   "to": "back",
+   "at": [
+    10,
+    16
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "729"
+  },
+  {
+   "section": "707",
+   "tile": [
+    12,
+    3
+   ],
+   "to": "708",
+   "at": [
+    5,
+    2
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "708",
+   "tile": [
+    5,
+    1
+   ],
+   "to": "707",
+   "at": [
+    12,
+    4
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "708",
+   "tile": [
+    18,
+    1
+   ],
+   "to": "709",
+   "at": [
+    5,
+    3
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "709",
+   "tile": [
+    5,
+    2
+   ],
+   "to": "708",
+   "at": [
+    18,
+    2
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "709",
+   "tile": [
+    11,
+    13
+   ],
+   "to": "710",
+   "at": [
+    11,
+    12
+   ],
+   "face": "up",
+   "kind": "stairs"
+  },
+  {
+   "section": "710",
+   "tile": [
+    11,
+    13
+   ],
+   "to": "709",
+   "at": [
+    11,
+    12
+   ],
+   "face": "up",
+   "kind": "stairs"
+  },
+  {
+   "section": "050",
+   "tile": [
+    16,
+    4
+   ],
+   "to": "051",
+   "at": [
+    11,
+    13
+   ],
+   "face": "up",
+   "kind": "stairs"
+  },
+  {
+   "section": "051",
+   "tile": [
+    11,
+    15
+   ],
+   "to": "050",
+   "at": [
+    16,
+    6
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "704",
+   "tile": [
+    9,
+    3
+   ],
+   "to": "706",
+   "at": [
+    11,
+    14
+   ],
+   "face": "up",
+   "kind": "stairs"
+  },
+  {
+   "section": "706",
+   "tile": [
+    11,
+    15
+   ],
+   "to": "704",
+   "at": [
+    9,
+    4
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "791",
+   "tile": [
+    9,
+    17
+   ],
+   "to": "back",
+   "at": [
+    9,
+    16
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "799"
+  },
+  {
+   "section": "791",
+   "tile": [
+    10,
+    17
+   ],
+   "to": "back",
+   "at": [
+    10,
+    16
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "799"
+  },
+  {
+   "section": "792",
+   "tile": [
+    9,
+    17
+   ],
+   "to": "back",
+   "at": [
+    9,
+    16
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "799"
+  },
+  {
+   "section": "792",
+   "tile": [
+    10,
+    17
+   ],
+   "to": "back",
+   "at": [
+    10,
+    16
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "799"
+  },
+  {
+   "section": "793",
+   "tile": [
+    9,
+    18
+   ],
+   "to": "back",
+   "at": [
+    9,
+    17
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "800"
+  },
+  {
+   "section": "793",
+   "tile": [
+    10,
+    18
+   ],
+   "to": "back",
+   "at": [
+    10,
+    17
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "800"
+  },
+  {
+   "section": "772",
+   "tile": [
+    12,
+    4
+   ],
+   "to": "773",
+   "at": [
+    5,
+    3
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "773",
+   "tile": [
+    5,
+    2
+   ],
+   "to": "772",
+   "at": [
+    12,
+    5
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "773",
+   "tile": [
+    17,
+    2
+   ],
+   "to": "774",
+   "at": [
+    4,
+    4
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "774",
+   "tile": [
+    4,
+    3
+   ],
+   "to": "773",
+   "at": [
+    17,
+    3
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "774",
+   "tile": [
+    11,
+    13
+   ],
+   "to": "775",
+   "at": [
+    11,
+    13
+   ],
+   "face": "up",
+   "kind": "stairs"
+  },
+  {
+   "section": "775",
+   "tile": [
+    11,
+    14
+   ],
+   "to": "774",
+   "at": [
+    11,
+    12
+   ],
+   "face": "up",
+   "kind": "stairs"
+  },
+  {
+   "section": "060",
+   "tile": [
+    15,
+    4
+   ],
+   "to": "061",
+   "at": [
+    11,
+    13
+   ],
+   "face": "up",
+   "kind": "stairs"
+  },
+  {
+   "section": "061",
+   "tile": [
+    11,
+    15
+   ],
+   "to": "060",
+   "at": [
+    15,
+    5
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "769",
+   "tile": [
+    9,
+    4
+   ],
+   "to": "770",
+   "at": [
+    11,
+    14
+   ],
+   "face": "up",
+   "kind": "stairs"
+  },
+  {
+   "section": "770",
+   "tile": [
+    11,
+    15
+   ],
+   "to": "769",
+   "at": [
+    9,
+    5
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "064",
+   "tile": [
+    9,
+    17
+   ],
+   "to": "back",
+   "at": [
+    9,
+    16
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "062"
+  },
+  {
+   "section": "064",
+   "tile": [
+    10,
+    17
+   ],
+   "to": "back",
+   "at": [
+    10,
+    16
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "062"
+  },
+  {
+   "section": "065",
+   "tile": [
+    9,
+    17
+   ],
+   "to": "back",
+   "at": [
+    9,
+    16
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "062"
+  },
+  {
+   "section": "065",
+   "tile": [
+    10,
+    17
+   ],
+   "to": "back",
+   "at": [
+    10,
+    16
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "062"
+  },
+  {
+   "section": "657",
+   "tile": [
+    9,
+    16
+   ],
+   "to": "back",
+   "at": [
+    9,
+    15
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "662"
+  },
+  {
+   "section": "657",
+   "tile": [
+    10,
+    16
+   ],
+   "to": "back",
+   "at": [
+    10,
+    15
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "662"
+  },
+  {
+   "section": "656",
+   "tile": [
+    9,
+    16
+   ],
+   "to": "back",
+   "at": [
+    9,
+    15
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "663"
+  },
+  {
+   "section": "656",
+   "tile": [
+    10,
+    16
+   ],
+   "to": "back",
+   "at": [
+    10,
+    15
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "663"
+  },
+  {
+   "section": "180",
+   "tile": [
+    9,
+    16
+   ],
+   "to": "back",
+   "at": [
+    9,
+    15
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "663"
+  },
+  {
+   "section": "180",
+   "tile": [
+    10,
+    16
+   ],
+   "to": "back",
+   "at": [
+    10,
+    15
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "663"
+  },
+  {
+   "section": "639",
+   "tile": [
+    12,
+    3
+   ],
+   "to": "640",
+   "at": [
+    5,
+    3
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "640",
+   "tile": [
+    5,
+    2
+   ],
+   "to": "639",
+   "at": [
+    12,
+    4
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "640",
+   "tile": [
+    17,
+    2
+   ],
+   "to": "641",
+   "at": [
+    5,
+    4
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "641",
+   "tile": [
+    5,
+    3
+   ],
+   "to": "640",
+   "at": [
+    17,
+    3
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "641",
+   "tile": [
+    12,
+    13
+   ],
+   "to": "642",
+   "at": [
+    12,
+    12
+   ],
+   "face": "up",
+   "kind": "stairs"
+  },
+  {
+   "section": "642",
+   "tile": [
+    12,
+    14
+   ],
+   "to": "641",
+   "at": [
+    12,
+    12
+   ],
+   "face": "up",
+   "kind": "stairs"
+  },
+  {
+   "section": "069",
+   "tile": [
+    16,
+    3
+   ],
+   "to": "071",
+   "at": [
+    11,
+    13
+   ],
+   "face": "up",
+   "kind": "stairs"
+  },
+  {
+   "section": "071",
+   "tile": [
+    11,
+    15
+   ],
+   "to": "069",
+   "at": [
+    16,
+    6
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "636",
+   "tile": [
+    9,
+    2
+   ],
+   "to": "637",
+   "at": [
+    11,
+    12
+   ],
+   "face": "up",
+   "kind": "stairs"
+  },
+  {
+   "section": "637",
+   "tile": [
+    11,
+    14
+   ],
+   "to": "636",
+   "at": [
+    9,
+    4
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "569",
+   "tile": [
+    9,
+    17
+   ],
+   "to": "back",
+   "at": [
+    9,
+    16
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "566"
+  },
+  {
+   "section": "569",
+   "tile": [
+    10,
+    17
+   ],
+   "to": "back",
+   "at": [
+    10,
+    16
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "566"
+  },
+  {
+   "section": "562",
+   "tile": [
+    8,
+    16
+   ],
+   "to": "back",
+   "at": [
+    8,
+    15
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "567"
+  },
+  {
+   "section": "562",
+   "tile": [
+    9,
+    16
+   ],
+   "to": "back",
+   "at": [
+    9,
+    15
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "567"
+  },
+  {
+   "section": "564",
+   "tile": [
+    9,
+    16
+   ],
+   "to": "back",
+   "at": [
+    9,
+    15
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "567"
+  },
+  {
+   "section": "564",
+   "tile": [
+    10,
+    16
+   ],
+   "to": "back",
+   "at": [
+    10,
+    15
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "567"
+  },
+  {
+   "section": "563",
+   "tile": [
+    9,
+    16
+   ],
+   "to": "back",
+   "at": [
+    9,
+    15
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "568"
+  },
+  {
+   "section": "563",
+   "tile": [
+    10,
+    16
+   ],
+   "to": "back",
+   "at": [
+    10,
+    15
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "568"
+  },
+  {
+   "section": "548",
+   "tile": [
+    12,
+    3
+   ],
+   "to": "549",
+   "at": [
+    5,
+    3
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "549",
+   "tile": [
+    5,
+    2
+   ],
+   "to": "548",
+   "at": [
+    12,
+    4
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "549",
+   "tile": [
+    17,
+    2
+   ],
+   "to": "550",
+   "at": [
+    4,
+    4
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "550",
+   "tile": [
+    4,
+    3
+   ],
+   "to": "549",
+   "at": [
+    17,
+    3
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "550",
+   "tile": [
+    11,
+    13
+   ],
+   "to": "551",
+   "at": [
+    11,
+    12
+   ],
+   "face": "up",
+   "kind": "stairs"
+  },
+  {
+   "section": "551",
+   "tile": [
+    11,
+    14
+   ],
+   "to": "550",
+   "at": [
+    11,
+    12
+   ],
+   "face": "up",
+   "kind": "stairs"
+  },
+  {
+   "section": "545",
+   "tile": [
+    9,
+    2
+   ],
+   "to": "546",
+   "at": [
+    11,
+    12
+   ],
+   "face": "up",
+   "kind": "stairs"
+  },
+  {
+   "section": "546",
+   "tile": [
+    11,
+    14
+   ],
+   "to": "545",
+   "at": [
+    9,
+    4
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "689",
+   "tile": [
+    9,
+    17
+   ],
+   "to": "back",
+   "at": [
+    9,
+    16
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "696"
+  },
+  {
+   "section": "689",
+   "tile": [
+    10,
+    17
+   ],
+   "to": "back",
+   "at": [
+    10,
+    16
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "696"
+  },
+  {
+   "section": "691",
+   "tile": [
+    9,
+    16
+   ],
+   "to": "back",
+   "at": [
+    9,
+    15
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "697"
+  },
+  {
+   "section": "691",
+   "tile": [
+    10,
+    16
+   ],
+   "to": "back",
+   "at": [
+    10,
+    15
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "697"
+  },
+  {
+   "section": "690",
+   "tile": [
+    9,
+    17
+   ],
+   "to": "back",
+   "at": [
+    9,
+    16
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "697"
+  },
+  {
+   "section": "690",
+   "tile": [
+    10,
+    17
+   ],
+   "to": "back",
+   "at": [
+    10,
+    16
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "697"
+  },
+  {
+   "section": "673",
+   "tile": [
+    12,
+    3
+   ],
+   "to": "087",
+   "at": [
+    5,
+    3
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "087",
+   "tile": [
+    5,
+    2
+   ],
+   "to": "673",
+   "at": [
+    12,
+    4
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "087",
+   "tile": [
+    17,
+    2
+   ],
+   "to": "088",
+   "at": [
+    4,
+    3
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "088",
+   "tile": [
+    4,
+    2
+   ],
+   "to": "087",
+   "at": [
+    17,
+    3
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "088",
+   "tile": [
+    11,
+    14
+   ],
+   "to": "089",
+   "at": [
+    11,
+    13
+   ],
+   "face": "up",
+   "kind": "stairs"
+  },
+  {
+   "section": "089",
+   "tile": [
+    11,
+    14
+   ],
+   "to": "088",
+   "at": [
+    11,
+    13
+   ],
+   "face": "up",
+   "kind": "stairs"
+  },
+  {
+   "section": "091",
+   "tile": [
+    15,
+    4
+   ],
+   "to": "092",
+   "at": [
+    11,
+    12
+   ],
+   "face": "up",
+   "kind": "stairs"
+  },
+  {
+   "section": "092",
+   "tile": [
+    11,
+    14
+   ],
+   "to": "091",
+   "at": [
+    15,
+    6
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "670",
+   "tile": [
+    9,
+    4
+   ],
+   "to": "672",
+   "at": [
+    11,
+    14
+   ],
+   "face": "up",
+   "kind": "stairs"
+  },
+  {
+   "section": "672",
+   "tile": [
+    11,
+    15
+   ],
+   "to": "670",
+   "at": [
+    9,
+    5
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "531",
+   "tile": [
+    9,
+    17
+   ],
+   "to": "back",
+   "at": [
+    9,
+    16
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "537"
+  },
+  {
+   "section": "531",
+   "tile": [
+    10,
+    17
+   ],
+   "to": "back",
+   "at": [
+    10,
+    16
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "537"
+  },
+  {
+   "section": "530",
+   "tile": [
+    9,
+    16
+   ],
+   "to": "back",
+   "at": [
+    9,
+    15
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "538"
+  },
+  {
+   "section": "530",
+   "tile": [
+    10,
+    16
+   ],
+   "to": "back",
+   "at": [
+    10,
+    15
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "538"
+  },
+  {
+   "section": "532",
+   "tile": [
+    9,
+    17
+   ],
+   "to": "back",
+   "at": [
+    9,
+    16
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "538"
+  },
+  {
+   "section": "532",
+   "tile": [
+    10,
+    17
+   ],
+   "to": "back",
+   "at": [
+    10,
+    16
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "538"
+  },
+  {
+   "section": "514",
+   "tile": [
+    11,
+    3
+   ],
+   "to": "098",
+   "at": [
+    5,
+    3
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "098",
+   "tile": [
+    5,
+    2
+   ],
+   "to": "514",
+   "at": [
+    11,
+    4
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "098",
+   "tile": [
+    17,
+    2
+   ],
+   "to": "099",
+   "at": [
+    4,
+    3
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "099",
+   "tile": [
+    4,
+    2
+   ],
+   "to": "098",
+   "at": [
+    17,
+    3
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "099",
+   "tile": [
+    11,
+    13
+   ],
+   "to": "100",
+   "at": [
+    11,
+    13
+   ],
+   "face": "up",
+   "kind": "stairs"
+  },
+  {
+   "section": "100",
+   "tile": [
+    11,
+    14
+   ],
+   "to": "099",
+   "at": [
+    11,
+    12
+   ],
+   "face": "up",
+   "kind": "stairs"
+  },
+  {
+   "section": "103",
+   "tile": [
+    15,
+    4
+   ],
+   "to": "104",
+   "at": [
+    11,
+    12
+   ],
+   "face": "up",
+   "kind": "stairs"
+  },
+  {
+   "section": "104",
+   "tile": [
+    11,
+    14
+   ],
+   "to": "103",
+   "at": [
+    15,
+    6
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "512",
+   "tile": [
+    9,
+    4
+   ],
+   "to": "513",
+   "at": [
+    11,
+    14
+   ],
+   "face": "up",
+   "kind": "stairs"
+  },
+  {
+   "section": "513",
+   "tile": [
+    11,
+    15
+   ],
+   "to": "512",
+   "at": [
+    9,
+    5
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "623",
+   "tile": [
+    9,
+    16
+   ],
+   "to": "back",
+   "at": [
+    9,
+    15
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "629"
+  },
+  {
+   "section": "623",
+   "tile": [
+    10,
+    16
+   ],
+   "to": "back",
+   "at": [
+    10,
+    15
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "629"
+  },
+  {
+   "section": "624",
+   "tile": [
+    9,
+    17
+   ],
+   "to": "back",
+   "at": [
+    9,
+    16
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "630"
+  },
+  {
+   "section": "624",
+   "tile": [
+    10,
+    17
+   ],
+   "to": "back",
+   "at": [
+    10,
+    16
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "630"
+  },
+  {
+   "section": "622",
+   "tile": [
+    9,
+    17
+   ],
+   "to": "back",
+   "at": [
+    9,
+    16
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "632"
+  },
+  {
+   "section": "622",
+   "tile": [
+    10,
+    17
+   ],
+   "to": "back",
+   "at": [
+    10,
+    16
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "632"
+  },
+  {
+   "section": "608",
+   "tile": [
+    11,
+    4
+   ],
+   "to": "609",
+   "at": [
+    6,
+    3
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "609",
+   "tile": [
+    6,
+    2
+   ],
+   "to": "608",
+   "at": [
+    11,
+    5
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "609",
+   "tile": [
+    18,
+    2
+   ],
+   "to": "610",
+   "at": [
+    4,
+    4
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "610",
+   "tile": [
+    4,
+    3
+   ],
+   "to": "609",
+   "at": [
+    18,
+    3
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "610",
+   "tile": [
+    11,
+    13
+   ],
+   "to": "611",
+   "at": [
+    11,
+    12
+   ],
+   "face": "up",
+   "kind": "stairs"
+  },
+  {
+   "section": "611",
+   "tile": [
+    11,
+    14
+   ],
+   "to": "610",
+   "at": [
+    11,
+    12
+   ],
+   "face": "up",
+   "kind": "stairs"
+  },
+  {
+   "section": "606",
+   "tile": [
+    9,
+    5
+   ],
+   "to": "607",
+   "at": [
+    11,
+    13
+   ],
+   "face": "up",
+   "kind": "stairs"
+  },
+  {
+   "section": "607",
+   "tile": [
+    11,
+    15
+   ],
+   "to": "606",
+   "at": [
+    9,
+    6
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "627",
+   "tile": [
+    15,
+    4
+   ],
+   "to": "628",
+   "at": [
+    11,
+    12
+   ],
+   "face": "up",
+   "kind": "stairs"
+  },
+  {
+   "section": "628",
+   "tile": [
+    11,
+    14
+   ],
+   "to": "627",
+   "at": [
+    15,
+    6
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "593",
+   "tile": [
+    9,
+    17
+   ],
+   "to": "back",
+   "at": [
+    9,
+    16
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "600"
+  },
+  {
+   "section": "593",
+   "tile": [
+    10,
+    17
+   ],
+   "to": "back",
+   "at": [
+    10,
+    16
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "600"
+  },
+  {
+   "section": "594",
+   "tile": [
+    9,
+    17
+   ],
+   "to": "back",
+   "at": [
+    9,
+    16
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "601"
+  },
+  {
+   "section": "594",
+   "tile": [
+    10,
+    17
+   ],
+   "to": "back",
+   "at": [
+    10,
+    16
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "601"
+  },
+  {
+   "section": "592",
+   "tile": [
+    9,
+    17
+   ],
+   "to": "back",
+   "at": [
+    9,
+    16
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "602"
+  },
+  {
+   "section": "592",
+   "tile": [
+    10,
+    17
+   ],
+   "to": "back",
+   "at": [
+    10,
+    16
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "602"
+  },
+  {
+   "section": "578",
+   "tile": [
+    11,
+    4
+   ],
+   "to": "579",
+   "at": [
+    5,
+    3
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "579",
+   "tile": [
+    5,
+    2
+   ],
+   "to": "578",
+   "at": [
+    11,
+    5
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "579",
+   "tile": [
+    18,
+    2
+   ],
+   "to": "580",
+   "at": [
+    4,
+    3
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "580",
+   "tile": [
+    4,
+    2
+   ],
+   "to": "579",
+   "at": [
+    18,
+    3
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "580",
+   "tile": [
+    11,
+    13
+   ],
+   "to": "581",
+   "at": [
+    11,
+    12
+   ],
+   "face": "up",
+   "kind": "stairs"
+  },
+  {
+   "section": "581",
+   "tile": [
+    11,
+    14
+   ],
+   "to": "580",
+   "at": [
+    11,
+    12
+   ],
+   "face": "up",
+   "kind": "stairs"
+  },
+  {
+   "section": "121",
+   "tile": [
+    15,
+    4
+   ],
+   "to": "122",
+   "at": [
+    11,
+    12
+   ],
+   "face": "up",
+   "kind": "stairs"
+  },
+  {
+   "section": "122",
+   "tile": [
+    11,
+    14
+   ],
+   "to": "121",
+   "at": [
+    15,
+    6
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "575",
+   "tile": [
+    9,
+    4
+   ],
+   "to": "576",
+   "at": [
+    11,
+    12
+   ],
+   "face": "up",
+   "kind": "stairs"
+  },
+  {
+   "section": "576",
+   "tile": [
+    11,
+    14
+   ],
+   "to": "575",
+   "at": [
+    9,
+    5
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "576",
+   "tile": [
+    11,
+    1
+   ],
+   "to": "577",
+   "at": [
+    11,
+    12
+   ],
+   "face": "up",
+   "kind": "stairs"
+  },
+  {
+   "section": "577",
+   "tile": [
+    11,
+    14
+   ],
+   "to": "576",
+   "at": [
+    11,
+    2
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "828",
+   "tile": [
+    9,
+    16
+   ],
+   "to": "back",
+   "at": [
+    9,
+    15
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "836"
+  },
+  {
+   "section": "828",
+   "tile": [
+    10,
+    16
+   ],
+   "to": "back",
+   "at": [
+    10,
+    15
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "836"
+  },
+  {
+   "section": "830",
+   "tile": [
+    9,
+    16
+   ],
+   "to": "back",
+   "at": [
+    9,
+    15
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "837"
+  },
+  {
+   "section": "830",
+   "tile": [
+    10,
+    16
+   ],
+   "to": "back",
+   "at": [
+    10,
+    15
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "837"
+  },
+  {
+   "section": "829",
+   "tile": [
+    9,
+    17
+   ],
+   "to": "back",
+   "at": [
+    9,
+    16
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "837"
+  },
+  {
+   "section": "829",
+   "tile": [
+    10,
+    17
+   ],
+   "to": "back",
+   "at": [
+    10,
+    16
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "837"
+  },
+  {
+   "section": "821",
+   "tile": [
+    7,
+    7
+   ],
+   "to": "129",
+   "at": [
+    7,
+    14
+   ],
+   "face": "up",
+   "kind": "stairs"
+  },
+  {
+   "section": "129",
+   "tile": [
+    7,
+    15
+   ],
+   "to": "821",
+   "at": [
+    8,
+    7
+   ],
+   "face": "right",
+   "kind": "stairs"
+  },
+  {
+   "section": "812",
+   "tile": [
+    11,
+    3
+   ],
+   "to": "813",
+   "at": [
+    5,
+    3
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "813",
+   "tile": [
+    5,
+    2
+   ],
+   "to": "812",
+   "at": [
+    11,
+    4
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "813",
+   "tile": [
+    18,
+    2
+   ],
+   "to": "814",
+   "at": [
+    4,
+    4
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "814",
+   "tile": [
+    4,
+    3
+   ],
+   "to": "813",
+   "at": [
+    18,
+    3
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "814",
+   "tile": [
+    11,
+    13
+   ],
+   "to": "815",
+   "at": [
+    12,
+    12
+   ],
+   "face": "up",
+   "kind": "stairs"
+  },
+  {
+   "section": "815",
+   "tile": [
+    12,
+    13
+   ],
+   "to": "814",
+   "at": [
+    11,
+    12
+   ],
+   "face": "up",
+   "kind": "stairs"
+  },
+  {
+   "section": "134",
+   "tile": [
+    16,
+    4
+   ],
+   "to": "135",
+   "at": [
+    11,
+    12
+   ],
+   "face": "up",
+   "kind": "stairs"
+  },
+  {
+   "section": "135",
+   "tile": [
+    11,
+    14
+   ],
+   "to": "134",
+   "at": [
+    16,
+    6
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "809",
+   "tile": [
+    9,
+    4
+   ],
+   "to": "810",
+   "at": [
+    11,
+    14
+   ],
+   "face": "up",
+   "kind": "stairs"
+  },
+  {
+   "section": "810",
+   "tile": [
+    11,
+    15
+   ],
+   "to": "809",
+   "at": [
+    9,
+    5
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "757",
+   "tile": [
+    9,
+    16
+   ],
+   "to": "back",
+   "at": [
+    9,
+    15
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "764"
+  },
+  {
+   "section": "757",
+   "tile": [
+    10,
+    16
+   ],
+   "to": "back",
+   "at": [
+    10,
+    15
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "764"
+  },
+  {
+   "section": "758",
+   "tile": [
+    9,
+    16
+   ],
+   "to": "back",
+   "at": [
+    9,
+    15
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "764"
+  },
+  {
+   "section": "758",
+   "tile": [
+    10,
+    16
+   ],
+   "to": "back",
+   "at": [
+    10,
+    15
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "764"
+  },
+  {
+   "section": "756",
+   "tile": [
+    9,
+    17
+   ],
+   "to": "back",
+   "at": [
+    9,
+    16
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "765"
+  },
+  {
+   "section": "756",
+   "tile": [
+    10,
+    17
+   ],
+   "to": "back",
+   "at": [
+    10,
+    16
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "765"
+  },
+  {
+   "section": "741",
+   "tile": [
+    11,
+    4
+   ],
+   "to": "742",
+   "at": [
+    5,
+    3
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "742",
+   "tile": [
+    5,
+    2
+   ],
+   "to": "741",
+   "at": [
+    11,
+    5
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "742",
+   "tile": [
+    17,
+    2
+   ],
+   "to": "743",
+   "at": [
+    4,
+    3
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "743",
+   "tile": [
+    4,
+    2
+   ],
+   "to": "742",
+   "at": [
+    17,
+    3
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "743",
+   "tile": [
+    11,
+    13
+   ],
+   "to": "744",
+   "at": [
+    12,
+    13
+   ],
+   "face": "up",
+   "kind": "stairs"
+  },
+  {
+   "section": "744",
+   "tile": [
+    12,
+    14
+   ],
+   "to": "743",
+   "at": [
+    11,
+    12
+   ],
+   "face": "up",
+   "kind": "stairs"
+  },
+  {
+   "section": "738",
+   "tile": [
+    9,
+    4
+   ],
+   "to": "739",
+   "at": [
+    11,
+    14
+   ],
+   "face": "up",
+   "kind": "stairs"
+  },
+  {
+   "section": "739",
+   "tile": [
+    11,
+    15
+   ],
+   "to": "738",
+   "at": [
+    9,
+    5
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "423",
+   "tile": [
+    9,
+    16
+   ],
+   "to": "back",
+   "at": [
+    9,
+    15
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "430"
+  },
+  {
+   "section": "423",
+   "tile": [
+    10,
+    16
+   ],
+   "to": "back",
+   "at": [
+    10,
+    15
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "430"
+  },
+  {
+   "section": "424",
+   "tile": [
+    9,
+    17
+   ],
+   "to": "back",
+   "at": [
+    9,
+    16
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "431"
+  },
+  {
+   "section": "424",
+   "tile": [
+    10,
+    17
+   ],
+   "to": "back",
+   "at": [
+    10,
+    16
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "431"
+  },
+  {
+   "section": "425",
+   "tile": [
+    9,
+    17
+   ],
+   "to": "back",
+   "at": [
+    9,
+    16
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "431"
+  },
+  {
+   "section": "425",
+   "tile": [
+    10,
+    17
+   ],
+   "to": "back",
+   "at": [
+    10,
+    16
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "431"
+  },
+  {
+   "section": "405",
+   "tile": [
+    11,
+    3
+   ],
+   "to": "406",
+   "at": [
+    5,
+    3
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "406",
+   "tile": [
+    5,
+    2
+   ],
+   "to": "405",
+   "at": [
+    11,
+    4
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "406",
+   "tile": [
+    18,
+    2
+   ],
+   "to": "407",
+   "at": [
+    4,
+    4
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "407",
+   "tile": [
+    4,
+    3
+   ],
+   "to": "406",
+   "at": [
+    18,
+    3
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "407",
+   "tile": [
+    11,
+    13
+   ],
+   "to": "409",
+   "at": [
+    12,
+    12
+   ],
+   "face": "up",
+   "kind": "stairs"
+  },
+  {
+   "section": "409",
+   "tile": [
+    12,
+    13
+   ],
+   "to": "407",
+   "at": [
+    11,
+    12
+   ],
+   "face": "up",
+   "kind": "stairs"
+  },
+  {
+   "section": "428",
+   "tile": [
+    15,
+    4
+   ],
+   "to": "429",
+   "at": [
+    11,
+    12
+   ],
+   "face": "up",
+   "kind": "stairs"
+  },
+  {
+   "section": "429",
+   "tile": [
+    11,
+    14
+   ],
+   "to": "428",
+   "at": [
+    15,
+    6
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "403",
+   "tile": [
+    9,
+    4
+   ],
+   "to": "404",
+   "at": [
+    11,
+    13
+   ],
+   "face": "up",
+   "kind": "stairs"
+  },
+  {
+   "section": "404",
+   "tile": [
+    11,
+    14
+   ],
+   "to": "403",
+   "at": [
+    9,
+    5
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "859",
+   "tile": [
+    9,
+    18
+   ],
+   "to": "back",
+   "at": [
+    9,
+    17
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "863"
+  },
+  {
+   "section": "859",
+   "tile": [
+    10,
+    18
+   ],
+   "to": "back",
+   "at": [
+    10,
+    17
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "863"
+  },
+  {
+   "section": "861",
+   "tile": [
+    9,
+    17
+   ],
+   "to": "back",
+   "at": [
+    9,
+    16
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "864"
+  },
+  {
+   "section": "861",
+   "tile": [
+    10,
+    17
+   ],
+   "to": "back",
+   "at": [
+    10,
+    16
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "864"
+  },
+  {
+   "section": "860",
+   "tile": [
+    9,
+    17
+   ],
+   "to": "back",
+   "at": [
+    9,
+    16
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "864"
+  },
+  {
+   "section": "860",
+   "tile": [
+    10,
+    17
+   ],
+   "to": "back",
+   "at": [
+    10,
+    16
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "864"
+  },
+  {
+   "section": "845",
+   "tile": [
+    11,
+    4
+   ],
+   "to": "846",
+   "at": [
+    5,
+    3
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "846",
+   "tile": [
+    5,
+    2
+   ],
+   "to": "845",
+   "at": [
+    11,
+    5
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "846",
+   "tile": [
+    17,
+    2
+   ],
+   "to": "847",
+   "at": [
+    5,
+    4
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "847",
+   "tile": [
+    5,
+    3
+   ],
+   "to": "846",
+   "at": [
+    17,
+    3
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "847",
+   "tile": [
+    11,
+    13
+   ],
+   "to": "848",
+   "at": [
+    11,
+    12
+   ],
+   "face": "up",
+   "kind": "stairs"
+  },
+  {
+   "section": "848",
+   "tile": [
+    11,
+    13
+   ],
+   "to": "847",
+   "at": [
+    11,
+    12
+   ],
+   "face": "up",
+   "kind": "stairs"
+  },
+  {
+   "section": "843",
+   "tile": [
+    9,
+    4
+   ],
+   "to": "844",
+   "at": [
+    11,
+    13
+   ],
+   "face": "up",
+   "kind": "stairs"
+  },
+  {
+   "section": "844",
+   "tile": [
+    11,
+    14
+   ],
+   "to": "843",
+   "at": [
+    9,
+    5
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "499",
    "tile": [
     9,
     17
@@ -3215,7 +10980,7 @@
    "parent": "505"
   },
   {
-   "section": "500",
+   "section": "499",
    "tile": [
     10,
     17
@@ -3224,6 +10989,36 @@
    "at": [
     10,
     16
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "505"
+  },
+  {
+   "section": "500",
+   "tile": [
+    9,
+    18
+   ],
+   "to": "back",
+   "at": [
+    9,
+    17
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "505"
+  },
+  {
+   "section": "500",
+   "tile": [
+    10,
+    18
+   ],
+   "to": "back",
+   "at": [
+    10,
+    17
    ],
    "face": "down",
    "kind": "door",
@@ -3233,12 +11028,12 @@
    "section": "498",
    "tile": [
     9,
-    15
+    17
    ],
    "to": "back",
    "at": [
     9,
-    14
+    16
    ],
    "face": "down",
    "kind": "door",
@@ -3248,12 +11043,12 @@
    "section": "498",
    "tile": [
     10,
-    15
+    17
    ],
    "to": "back",
    "at": [
     10,
-    14
+    16
    ],
    "face": "down",
    "kind": "door",
@@ -3398,6 +11193,208 @@
    ],
    "face": "down",
    "kind": "stairs"
+  },
+  {
+   "section": "466",
+   "tile": [
+    9,
+    16
+   ],
+   "to": "back",
+   "at": [
+    9,
+    15
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "470"
+  },
+  {
+   "section": "466",
+   "tile": [
+    10,
+    16
+   ],
+   "to": "back",
+   "at": [
+    10,
+    15
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "470"
+  },
+  {
+   "section": "467",
+   "tile": [
+    8,
+    16
+   ],
+   "to": "back",
+   "at": [
+    8,
+    15
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "470"
+  },
+  {
+   "section": "467",
+   "tile": [
+    9,
+    16
+   ],
+   "to": "back",
+   "at": [
+    9,
+    15
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "470"
+  },
+  {
+   "section": "468",
+   "tile": [
+    9,
+    16
+   ],
+   "to": "back",
+   "at": [
+    9,
+    15
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "471"
+  },
+  {
+   "section": "468",
+   "tile": [
+    10,
+    16
+   ],
+   "to": "back",
+   "at": [
+    10,
+    15
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "471"
+  },
+  {
+   "section": "441",
+   "tile": [
+    11,
+    3
+   ],
+   "to": "442",
+   "at": [
+    5,
+    3
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "442",
+   "tile": [
+    5,
+    2
+   ],
+   "to": "441",
+   "at": [
+    11,
+    4
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "442",
+   "tile": [
+    17,
+    2
+   ],
+   "to": "443",
+   "at": [
+    4,
+    4
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "443",
+   "tile": [
+    4,
+    3
+   ],
+   "to": "442",
+   "at": [
+    17,
+    3
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "443",
+   "tile": [
+    11,
+    13
+   ],
+   "to": "444",
+   "at": [
+    11,
+    13
+   ],
+   "face": "up",
+   "kind": "stairs"
+  },
+  {
+   "section": "444",
+   "tile": [
+    11,
+    14
+   ],
+   "to": "443",
+   "at": [
+    11,
+    12
+   ],
+   "face": "up",
+   "kind": "stairs"
+  },
+  {
+   "section": "438",
+   "tile": [
+    9,
+    3
+   ],
+   "to": "440",
+   "at": [
+    11,
+    13
+   ],
+   "face": "up",
+   "kind": "stairs"
+  },
+  {
+   "section": "440",
+   "tile": [
+    11,
+    14
+   ],
+   "to": "438",
+   "at": [
+    9,
+    4
+   ],
+   "face": "down",
+   "kind": "stairs"
   }
  ],
  "shared_rooms": [
@@ -3412,6 +11409,63 @@
   "188",
   "499",
   "500",
-  "498"
+  "498",
+  "466",
+  "467",
+  "187",
+  "468",
+  "184",
+  "190",
+  "721",
+  "722",
+  "173",
+  "723",
+  "185",
+  "791",
+  "191",
+  "792",
+  "793",
+  "171",
+  "192",
+  "657",
+  "656",
+  "180",
+  "176",
+  "177",
+  "569",
+  "562",
+  "564",
+  "563",
+  "174",
+  "689",
+  "691",
+  "690",
+  "178",
+  "531",
+  "530",
+  "532",
+  "193",
+  "623",
+  "624",
+  "622",
+  "175",
+  "593",
+  "594",
+  "592",
+  "423",
+  "424",
+  "425",
+  "859",
+  "189",
+  "861",
+  "860",
+  "186",
+  "828",
+  "830",
+  "829",
+  "172",
+  "757",
+  "758",
+  "756"
  ]
 }

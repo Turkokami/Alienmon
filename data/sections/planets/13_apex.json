@@ -289,5 +289,6 @@
   ]
  },
  "unlisted": {},
- "notes": "Apex Array: Summit Lift (146) is the hub. Lift gate (17-18,4) -> Observatory Halls 1F-4F (Crystal, Sonic, Plasma, Gravity) chained by stairs; 147 uses its orrery column as the up-lift and 150 arrives at its orrery. Library (152) is the dish building top-left (5,4). Recovery terminal ('bay') at the uplink consoles (19,12) bottom-right, shop at the striped stall (2,6); no nurse/clerk pinned because there is no tile behind those outdoor counters. Quorum members are NOT placed (story characters) - the lead should add them as trainers/bosses in 147-150 if wanted (good standing tiles: 147 (8,7)/(7,9), 148 (7,9), 149 (8,5), 150 (7,9)). Orra Venn keeper at 151 (7,6) top of the central steps, challenged from (7,7)."
+ "notes": "Apex Array: Summit Lift (146) is the hub. Lift gate (17-18,4) -> Observatory Halls 1F-4F (Crystal, Sonic, Plasma, Gravity) chained by stairs; 147 uses its orrery column as the up-lift and 150 arrives at its orrery. Library (152) is the dish building top-left (5,4). Recovery terminal ('bay') at the uplink consoles (19,12) bottom-right, shop at the striped stall (2,6); no nurse/clerk pinned because there is no tile behind those outdoor counters. Quorum members are NOT placed (story characters) - the lead should add them as trainers/bosses in 147-150 if wanted (good standing tiles: 147 (8,7)/(7,9), 148 (7,9), 149 (8,5), 150 (7,9)). Orra Venn keeper at 151 (7,6) top of the central steps, challenged from (7,7).",
+ "trainer_tiles": []
 }

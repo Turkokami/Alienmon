@@ -60,7 +60,7 @@ def best_run(rows, side):
 def apply_rects(i, rects):
     rows = [list(r) for r in rows_of(i)]
     if rects.get('base'): rows = [[rects['base']] * len(rows[0]) for _ in rows]
-    for k, ch in (('walk', '.'), ('gr', ','), ('block', '#')):
+    for k, ch in (('walk', '.'), ('gr', ','), ('block', '#'), ('walk_after', '.')):
         for x0, y0, x1, y1 in rects.get(k, []):
             for y in range(y0, y1 + 1):
                 for x in range(x0, x1 + 1):
@@ -99,20 +99,40 @@ def wire(d):
         A[sid] = {'id': sid, 'planet': planet_name, 'name': u['name'], 'type': u.get('type', k['type']), 'size_px': [k['tiles'][0] * 64, k['tiles'][1] * 64],
                   'tiles': k['tiles'], 'tile_px_render': 64, 'tile_px_game': 16, 'exits': [], 'v3': True, 'kit': u['kit'],
                   'file': f'art/sections/{d}/' + os.path.basename(dst)}
+    P['_dropped_names'] = [A[x]['name'] for x in drop if x in A]
     for sid in drop:
         A.pop(sid, None)
         if os.path.exists(f'data/collision/{sid}.json'): os.remove(f'data/collision/{sid}.json')
         for f in glob.glob(f'art/sections_game/{d}/{sid}_*.png'): os.remove(f)
+    PL_ = load('data/sections/props_layout.json', {})   # a kit piece brings its own drawn props: old placed props of a replaced map go
+    for sid in list(use) + list(drop): PL_.pop(sid, None)
+    json.dump(PL_, open('data/sections/props_layout.json', 'w'), indent=0)
     for sid, rects in P.get('fix', {}).items(): apply_rects(sid, rects)
 
     # 2. exits from edges (both directions written)
-    for sid in ids: A[sid]['exits'] = [e for e in A[sid]['exits'] if 'edge' not in e]
+    redefined = {}
+    for e in P.get('edges', []): redefined.setdefault(e[0], set()).add(e[1]); redefined.setdefault(e[2], set()).add(e[3])
+    dropnames = {A[x]['name'] for x in drop if x in A} | {n for n in P.get('_dropped_names', [])}
+    V2 = {x['id']: x for x in load(f'{HERE}/atlas_v2.json')['sections']}   # exits as they were before the V3 rebuild (re-runs start from here)
+    for sid in ids:   # kit pieces start clean; kept sections lose only the edges this plan redefines or that lead to dropped sections
+        if sid in V2 and sid not in use: A[sid]['exits'] = list(V2[sid]['exits'])
+        for side in P.get('remove_exits', {}).get(sid, []): A[sid]['exits'] = [e for e in A[sid]['exits'] if not e.startswith(side + ' edge')]
+        if sid in use: A[sid]['exits'] = [e for e in A[sid]['exits'] if 'edge' not in e]
+        else: A[sid]['exits'] = [e for e in A[sid]['exits'] if not ('edge' in e and (e.split(' ')[0] in redefined.get(sid, ()) or any(e.endswith('→ ' + n) for n in dropnames)))]
     for e in P.get('edges', []):
         a, sa, b, sb = e[:4]
-        ra = e[4] if len(e) > 4 and e[4] else best_run(rows_of(a), sa)
-        rb = e[5] if len(e) > 5 and e[5] else best_run(rows_of(b), sb)
+        def clip(rows, side, r):   # an explicit range keeps only its walkable part (collision may have changed since the plan was written)
+            if not r: return best_run(rows, side)
+            ov = [[max(x0, r[0]), min(x1, r[1])] for x0, x1 in runs_on(rows, side) if x0 <= r[1] and x1 >= r[0]]
+            return max(ov, key=lambda q: q[1] - q[0]) if ov else best_run(rows, side)
+        ra = clip(rows_of(a), sa, e[4] if len(e) > 4 else None)
+        rb = clip(rows_of(b), sb, e[5] if len(e) > 5 else None)
         A[a]['exits'].append(f"{sa} edge, tile {SIDES[sa]} {ra[0]}–{ra[1]} → {A[b]['name']}")
         A[b]['exits'].append(f"{sb} edge, tile {SIDES[sb]} {rb[0]}–{rb[1]} → {A[a]['name']}")
+    from collections import Counter
+    mine = {A[x]['name'] for x in ids if x in A}
+    dup = [n for n, k in Counter(x['name'] for x in A.values()).items() if k > 1 and n in mine]
+    if dup: raise SystemExit(f'map names must be unique across all worlds (exits connect by name): {dup}')
     AT['sections'] = list(A.values()); save('art/sections/atlas.json', AT)
     # no ghost exits: a road that runs off an edge with nothing wired there is walled off (reported, so a blocker prop can go there)
     wired = {}
@@ -169,7 +189,17 @@ def wire(d):
     for sid, sp in P.get('spawns', {}).items(): L['spawns'][sid] = sp
     L['gates'] += P.get('gate', [])
     L['trainers'].setdefault('per_section', {}).update(P.get('trainers_per_section', {}))
+    L['trainers']['tiles'] += P.get('trainer_tiles', [])
     if P.get('arrival'): L['arrival'][P['planet']] = {'section': P['arrival'], 'why': 'V3: ' + P.get('arrival_why', 'world kit arrival')}
+    # warp and stair tiles must be walkable (you step onto them)
+    need = {}
+    for a_, at_, b_, bt_, aa_, af_, ba_, bf_ in P.get('warps', []): need.setdefault(a_, []).extend([at_, aa_]); need.setdefault(b_, []).extend([bt_, ba_])
+    for a_, at_, b_, bt_ in P.get('stairs', []): need.setdefault(a_, []).append(at_); need.setdefault(b_, []).append(bt_)
+    for sid_, ts in need.items():
+        c = json.load(open(f'data/collision/{sid_}.json')); R_ = [list(r) for r in c['rows']]
+        for x, y in ts:
+            if 0 <= y < len(R_) and 0 <= x < len(R_[0]) and R_[y][x] == '#': R_[y][x] = '.'
+        c['rows'] = [''.join(r) for r in R_]; json.dump(c, open(f'data/collision/{sid_}.json', 'w'))
     save('data/sections/links.json', L)
 
     # 4. NPCs, trainers and quest spots follow their sections
@@ -223,6 +253,8 @@ def wire(d):
         if t['encounters']:
             E[new] = t; HR['sections'][new] = {'planet': t['planet'], 'name': t['name'], 'habitat': t['habitat']}
         else: print('  no species fit', new, hab)
+    for sid, extra in P.get('encounter_add', {}).items():
+        if sid in E: E[sid]['encounters'] += [x for x in extra if x['name'] not in {e['name'] for e in E[sid]['encounters']}]
     for sid in drop:
         E.pop(sid, None); HR['sections'].pop(sid, None)
     save('data/encounters.json', E); save('data/habitat_rules.json', HR)

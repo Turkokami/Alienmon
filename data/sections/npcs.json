@@ -55,8 +55,8 @@
     "Bram: The drift grass crackles with blue sparks. That's how you know Alienmon are hiding in it!"
    ],
    "tile": [
-    9,
-    13
+    5,
+    9
    ],
    "pre": [
     "Kid: You're getting your first Alienmon today? Lucky! Dr. Vashti's lab is the dome with the telescope."
@@ -1178,8 +1178,8 @@
    ],
    "stay": true,
    "tile": [
-    10,
-    6
+    9,
+    5
    ]
   },
   {
@@ -1199,7 +1199,7 @@
    ],
    "stay": true,
    "tile": [
-    6,
+    5,
     9
    ]
   },

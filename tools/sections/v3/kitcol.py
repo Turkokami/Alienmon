@@ -80,6 +80,17 @@ def grass_patches(m, tex, walk, k=6):
     return out
 
 
+def grass_by_colour(m, tex, walk, cols, thr=13):
+    """Wild-grass tiles: busy tiles in the world's grass colours (learned from its clearly drawn grass patches),
+    grown out from the road so walled-off scenery is never opened."""
+    H, W = walk.shape; ok = np.zeros((H, W), bool)
+    for c in cols: ok |= np.linalg.norm(m - np.array(c), axis=-1) < thr
+    ok &= ~walk
+    near = np.zeros_like(walk)
+    P = np.pad(walk, 1); near = P[:-2, 1:-1] | P[2:, 1:-1] | P[1:-1, :-2] | P[1:-1, 2:]
+    return flood(ok, [(x, y) for y in range(H) for x in range(W) if ok[y, x] and near[y, x]])
+
+
 def runs(line):
     out, cur = [], []
     for i, v in enumerate(line):
@@ -89,7 +100,7 @@ def runs(line):
     return out
 
 
-def auto(img, kind='outdoor', thr=None, texthr=None, roads=None):
+def auto(img, kind='outdoor', thr=None, texthr=None, roads=None, grass=None):
     m, tex = tile_stats(img); H, W = m.shape[:2]
     thr = thr or (16 if kind in ('outdoor', 'plain') else 12); texthr = texthr or (np.percentile(tex, 55) + 2)
     from scipy import ndimage
@@ -131,6 +142,7 @@ def auto(img, kind='outdoor', thr=None, texthr=None, roads=None):
     grid[walk] = '.'
     if kind == 'outdoor':
         grid[grass_patches(m, tex, walk)] = ','
+        if grass: grid[grass_by_colour(m, tex, walk, grass)] = ','
     rows = [''.join(r) for r in grid]
     exits = {}
     for side, line in (('left', [rows[y][0] in '.,' for y in range(H)]), ('right', [rows[y][W - 1] in '.,' for y in range(H)]),

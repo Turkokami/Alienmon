@@ -1,0 +1,1539 @@
+{
+ "_report": "Thalassa, rebuilt on the V3 world kit (Map Logic Pack). Arrival stays the Port Saltreach Docks (052: harbor boat from Dustara, Ghost Ship Hold + Helix Freighter warps, M07/M17b/S40 spots); the kit Spaceport sits west of the docks as an extra section with its own ship home. Saltreach town = the docks + Saltreach Market (053, Recovery Bay/shop doors and the Smuggler's Freighter, all kept) + Saltreach Lane Homes (Harbormaster's Office, Fish Market Stall) east of the market. Boardwalk Crossing is the hub: north to the Saltreach Quiet Court (Captain's Cabin) with the Secret Grove (hidden reward) behind it; south to Shell Flats (S41 beach kid) -> Coral Cove (sea arch, S42 Anchorath) -> Open Water shore (water-edge dead end, chest); east to Lagoon Fork. Lagoon Fork: north up the Dune Stairway to the Sea Cave (entrance + 3 floors, chest in the Deep Chamber); south to the Saltreach Farmstead, which loops back west to Shell Flats; east to Dune Junction. Dune Junction: north up Lighthouse Bluff to the Tidewater Arena (battle arena) and the Harbor Relay Tower (Trial Floor 060 -> Keeper Room 061); east to the Helix hideout (disguised boathouse -> secret lab); south to Tidal Inlet -> Driftwood Hollows (dead end, chest).",
+ "planet": "thalassa",
+ "arrival": "052",
+ "arrival_why": "the compass landing pad on the Saltreach docks (harbor boat from Dustara)",
+ "use": {
+  "803": {
+   "kit": "803",
+   "name": "Thalassa Spaceport",
+   "type": "landmark"
+  },
+  "799": {
+   "kit": "799",
+   "name": "Saltreach Lane Homes",
+   "type": "town"
+  },
+  "800": {
+   "kit": "800",
+   "name": "Saltreach Quiet Court",
+   "type": "town"
+  },
+  "801": {
+   "kit": "801",
+   "name": "Saltreach Farmstead",
+   "type": "town"
+  },
+  "791": {
+   "kit": "791",
+   "name": "Harbormaster's Office",
+   "type": "interior"
+  },
+  "792": {
+   "kit": "792",
+   "name": "Fish Market Stall",
+   "type": "interior"
+  },
+  "793": {
+   "kit": "793",
+   "name": "Captain's Cabin",
+   "type": "interior"
+  },
+  "776": {
+   "kit": "776",
+   "name": "Boardwalk Crossing",
+   "type": "route"
+  },
+  "790": {
+   "kit": "790",
+   "name": "Saltreach Secret Grove",
+   "type": "field"
+  },
+  "785": {
+   "kit": "785",
+   "name": "Shell Flats",
+   "type": "route"
+  },
+  "781": {
+   "kit": "781",
+   "name": "Coral Cove",
+   "type": "route"
+  },
+  "804": {
+   "kit": "804",
+   "name": "Open Water Shore",
+   "type": "route"
+  },
+  "778": {
+   "kit": "778",
+   "name": "Lagoon Fork",
+   "type": "route"
+  },
+  "779": {
+   "kit": "779",
+   "name": "Dune Stairway",
+   "type": "route"
+  },
+  "772": {
+   "kit": "772",
+   "name": "Sea Cave Entrance",
+   "type": "route"
+  },
+  "773": {
+   "kit": "773",
+   "name": "Sea Cave B1",
+   "type": "cave"
+  },
+  "774": {
+   "kit": "774",
+   "name": "Sea Cave B2",
+   "type": "cave"
+  },
+  "775": {
+   "kit": "775",
+   "name": "Sea Cave Deep Chamber",
+   "type": "cave"
+  },
+  "777": {
+   "kit": "777",
+   "name": "Dune Junction",
+   "type": "route"
+  },
+  "780": {
+   "kit": "780",
+   "name": "Lighthouse Bluff",
+   "type": "route"
+  },
+  "768": {
+   "kit": "768",
+   "name": "Tidewater Arena",
+   "type": "landmark"
+  },
+  "769": {
+   "kit": "769",
+   "name": "Tidewater Arena Lobby",
+   "type": "interior"
+  },
+  "770": {
+   "kit": "770",
+   "name": "Tidewater Arena Battle Room",
+   "type": "interior"
+  },
+  "795": {
+   "kit": "795",
+   "name": "Harbor Relay Tower",
+   "type": "landmark"
+  },
+  "060": {
+   "kit": "797",
+   "name": "Thalassa Relay Tower Trial Floor",
+   "type": "tower"
+  },
+  "061": {
+   "kit": "798",
+   "name": "Thalassa Relay Tower Keeper Room",
+   "type": "tower"
+  },
+  "786": {
+   "kit": "786",
+   "name": "Saltreach Boathouse",
+   "type": "landmark"
+  },
+  "787": {
+   "kit": "787",
+   "name": "Thalassa Helix Lab",
+   "type": "interior"
+  },
+  "784": {
+   "kit": "784",
+   "name": "Tidal Inlet",
+   "type": "route"
+  },
+  "783": {
+   "kit": "783",
+   "name": "Driftwood Hollows",
+   "type": "route"
+  }
+ },
+ "keep": [
+  "052",
+  "053",
+  "054",
+  "055",
+  "167",
+  "168",
+  "169",
+  "171",
+  "191"
+ ],
+ "drop": [
+  "056",
+  "057",
+  "058",
+  "059"
+ ],
+ "edges": [
+  [
+   "803",
+   "right",
+   "052",
+   "left",
+   [
+    9,
+    10
+   ],
+   [
+    8,
+    10
+   ]
+  ],
+  [
+   "052",
+   "right",
+   "053",
+   "left"
+  ],
+  [
+   "053",
+   "right",
+   "799",
+   "left"
+  ],
+  [
+   "799",
+   "right",
+   "776",
+   "left"
+  ],
+  [
+   "776",
+   "top",
+   "800",
+   "bottom"
+  ],
+  [
+   "800",
+   "left",
+   "790",
+   "right"
+  ],
+  [
+   "776",
+   "bottom",
+   "785",
+   "top"
+  ],
+  [
+   "785",
+   "bottom",
+   "781",
+   "top"
+  ],
+  [
+   "781",
+   "bottom",
+   "804",
+   "top",
+   null,
+   [
+    1,
+    2
+   ]
+  ],
+  [
+   "785",
+   "right",
+   "801",
+   "left"
+  ],
+  [
+   "776",
+   "right",
+   "778",
+   "left",
+   null,
+   [
+    7,
+    9
+   ]
+  ],
+  [
+   "778",
+   "bottom",
+   "801",
+   "top"
+  ],
+  [
+   "778",
+   "top",
+   "779",
+   "bottom"
+  ],
+  [
+   "779",
+   "top",
+   "772",
+   "bottom"
+  ],
+  [
+   "778",
+   "right",
+   "777",
+   "left"
+  ],
+  [
+   "777",
+   "top",
+   "780",
+   "bottom"
+  ],
+  [
+   "780",
+   "top",
+   "768",
+   "bottom"
+  ],
+  [
+   "768",
+   "right",
+   "795",
+   "left"
+  ],
+  [
+   "777",
+   "right",
+   "786",
+   "left"
+  ],
+  [
+   "777",
+   "bottom",
+   "784",
+   "top"
+  ],
+  [
+   "784",
+   "bottom",
+   "783",
+   "top"
+  ]
+ ],
+ "doors": [
+  [
+   "768",
+   [
+    11,
+    6
+   ],
+   "769",
+   [
+    12,
+    6
+   ]
+  ],
+  [
+   "795",
+   [
+    12,
+    7
+   ],
+   "060",
+   [
+    13,
+    7
+   ]
+  ],
+  [
+   "786",
+   [
+    10,
+    6
+   ],
+   "787",
+   [
+    11,
+    6
+   ]
+  ]
+ ],
+ "houses": [
+  [
+   "799",
+   [
+    4,
+    6
+   ],
+   "791"
+  ],
+  [
+   "799",
+   [
+    5,
+    6
+   ],
+   "791"
+  ],
+  [
+   "799",
+   [
+    11,
+    6
+   ],
+   "191"
+  ],
+  [
+   "799",
+   [
+    12,
+    6
+   ],
+   "191"
+  ],
+  [
+   "799",
+   [
+    18,
+    6
+   ],
+   "792"
+  ],
+  [
+   "799",
+   [
+    19,
+    6
+   ],
+   "792"
+  ],
+  [
+   "800",
+   [
+    5,
+    3
+   ],
+   "793"
+  ],
+  [
+   "800",
+   [
+    6,
+    3
+   ],
+   "793"
+  ],
+  [
+   "800",
+   [
+    11,
+    3
+   ],
+   "171"
+  ],
+  [
+   "800",
+   [
+    12,
+    3
+   ],
+   "171"
+  ],
+  [
+   "800",
+   [
+    16,
+    3
+   ],
+   "191"
+  ],
+  [
+   "800",
+   [
+    17,
+    3
+   ],
+   "191"
+  ],
+  [
+   "800",
+   [
+    2,
+    12
+   ],
+   "191"
+  ],
+  [
+   "800",
+   [
+    3,
+    12
+   ],
+   "191"
+  ],
+  [
+   "801",
+   [
+    4,
+    4
+   ],
+   "191"
+  ],
+  [
+   "801",
+   [
+    5,
+    4
+   ],
+   "191"
+  ],
+  [
+   "801",
+   [
+    10,
+    5
+   ],
+   "171"
+  ],
+  [
+   "801",
+   [
+    11,
+    5
+   ],
+   "171"
+  ]
+ ],
+ "warps": [
+  [
+   "772",
+   [
+    12,
+    4
+   ],
+   "773",
+   [
+    5,
+    2
+   ],
+   [
+    12,
+    5
+   ],
+   "down",
+   [
+    5,
+    3
+   ],
+   "down"
+  ],
+  [
+   "773",
+   [
+    17,
+    2
+   ],
+   "774",
+   [
+    4,
+    3
+   ],
+   [
+    17,
+    3
+   ],
+   "down",
+   [
+    4,
+    4
+   ],
+   "down"
+  ],
+  [
+   "774",
+   [
+    11,
+    13
+   ],
+   "775",
+   [
+    11,
+    14
+   ],
+   [
+    11,
+    12
+   ],
+   "up",
+   [
+    11,
+    13
+   ],
+   "up"
+  ],
+  [
+   "060",
+   [
+    15,
+    4
+   ],
+   "061",
+   [
+    11,
+    15
+   ],
+   [
+    15,
+    5
+   ],
+   "down",
+   [
+    11,
+    13
+   ],
+   "up"
+  ],
+  [
+   "769",
+   [
+    9,
+    4
+   ],
+   "770",
+   [
+    11,
+    15
+   ],
+   [
+    9,
+    5
+   ],
+   "down",
+   [
+    11,
+    14
+   ],
+   "up"
+  ]
+ ],
+ "fix": {
+  "052": {
+   "block": [
+    [
+     0,
+     4,
+     0,
+     7
+    ]
+   ]
+  },
+  "053": {
+   "block": [
+    [
+     23,
+     5,
+     23,
+     7
+    ]
+   ]
+  },
+  "803": {
+   "walk": [
+    [
+     19,
+     9,
+     23,
+     10
+    ],
+    [
+     13,
+     9,
+     14,
+     9
+    ]
+   ]
+  },
+  "800": {
+   "walk": [
+    [
+     4,
+     4,
+     17,
+     4
+    ],
+    [
+     2,
+     13,
+     6,
+     13
+    ]
+   ]
+  },
+  "786": {
+   "walk": [
+    [
+     10,
+     6,
+     11,
+     6
+    ]
+   ]
+  },
+  "795": {
+   "walk": [
+    [
+     0,
+     9,
+     0,
+     11
+    ],
+    [
+     12,
+     7,
+     13,
+     7
+    ]
+   ]
+  },
+  "787": {
+   "base": "#",
+   "walk": [
+    [
+     4,
+     5,
+     15,
+     16
+    ],
+    [
+     3,
+     16,
+     16,
+     16
+    ],
+    [
+     9,
+     17,
+     10,
+     18
+    ]
+   ],
+   "block": [
+    [
+     9,
+     5,
+     10,
+     5
+    ],
+    [
+     7,
+     9,
+     12,
+     11
+    ]
+   ]
+  },
+  "770": {
+   "base": "#",
+   "walk": [
+    [
+     3,
+     4,
+     20,
+     11
+    ],
+    [
+     11,
+     12,
+     12,
+     15
+    ]
+   ],
+   "block": [
+    [
+     3,
+     4,
+     4,
+     11
+    ],
+    [
+     20,
+     4,
+     20,
+     11
+    ],
+    [
+     10,
+     4,
+     13,
+     4
+    ],
+    [
+     10,
+     10,
+     13,
+     10
+    ]
+   ]
+  },
+  "772": {
+   "walk": [
+    [
+     11,
+     4,
+     13,
+     4
+    ]
+   ]
+  },
+  "773": {
+   "base": "#",
+   "walk": [
+    [
+     4,
+     3,
+     7,
+     13
+    ],
+    [
+     15,
+     3,
+     19,
+     13
+    ],
+    [
+     8,
+     9,
+     14,
+     13
+    ],
+    [
+     4,
+     2,
+     7,
+     2
+    ],
+    [
+     16,
+     2,
+     19,
+     2
+    ]
+   ],
+   "gr": [
+    [
+     10,
+     10,
+     13,
+     12
+    ]
+   ]
+  },
+  "774": {
+   "base": "#",
+   "walk": [
+    [
+     2,
+     4,
+     21,
+     8
+    ],
+    [
+     10,
+     9,
+     13,
+     12
+    ],
+    [
+     3,
+     3,
+     6,
+     3
+    ],
+    [
+     10,
+     13,
+     13,
+     13
+    ]
+   ],
+   "gr": [
+    [
+     4,
+     5,
+     8,
+     8
+    ]
+   ],
+   "block": [
+    [
+     14,
+     5,
+     20,
+     8
+    ]
+   ]
+  },
+  "775": {
+   "base": "#",
+   "walk": [
+    [
+     4,
+     2,
+     19,
+     12
+    ],
+    [
+     10,
+     13,
+     13,
+     14
+    ]
+   ],
+   "gr": [
+    [
+     5,
+     8,
+     8,
+     11
+    ],
+    [
+     15,
+     8,
+     18,
+     11
+    ]
+   ],
+   "block": [
+    [
+     7,
+     2,
+     15,
+     6
+    ],
+    [
+     18,
+     3,
+     18,
+     3
+    ]
+   ]
+  },
+  "804": {
+   "base": "#",
+   "walk": [
+    [
+     1,
+     0,
+     2,
+     14
+    ]
+   ],
+   "block": [
+    [
+     1,
+     14,
+     1,
+     14
+    ]
+   ]
+  },
+  "060": {
+   "base": "#",
+   "walk": [
+    [
+     3,
+     4,
+     16,
+     16
+    ],
+    [
+     8,
+     17,
+     10,
+     17
+    ],
+    [
+     15,
+     4,
+     16,
+     5
+    ]
+   ],
+   "block": [
+    [
+     3,
+     5,
+     8,
+     7
+    ],
+    [
+     10,
+     5,
+     13,
+     7
+    ],
+    [
+     6,
+     8,
+     13,
+     10
+    ],
+    [
+     15,
+     7,
+     15,
+     10
+    ],
+    [
+     3,
+     11,
+     9,
+     13
+    ],
+    [
+     7,
+     14,
+     7,
+     15
+    ],
+    [
+     3,
+     15,
+     6,
+     15
+    ],
+    [
+     12,
+     11,
+     15,
+     13
+    ],
+    [
+     3,
+     8,
+     5,
+     10
+    ]
+   ]
+  },
+  "061": {
+   "base": "#",
+   "walk": [
+    [
+     2,
+     2,
+     9,
+     3
+    ],
+    [
+     15,
+     2,
+     21,
+     3
+    ],
+    [
+     2,
+     2,
+     3,
+     13
+    ],
+    [
+     20,
+     2,
+     21,
+     13
+    ],
+    [
+     2,
+     12,
+     21,
+     13
+    ],
+    [
+     10,
+     11,
+     13,
+     11
+    ],
+    [
+     11,
+     14,
+     12,
+     15
+    ]
+   ]
+  },
+  "791": {
+   "base": "#",
+   "walk": [
+    [
+     3,
+     5,
+     16,
+     15
+    ],
+    [
+     9,
+     16,
+     10,
+     17
+    ]
+   ],
+   "block": [
+    [
+     3,
+     5,
+     5,
+     5
+    ],
+    [
+     12,
+     5,
+     16,
+     7
+    ],
+    [
+     3,
+     7,
+     3,
+     10
+    ],
+    [
+     3,
+     11,
+     3,
+     15
+    ],
+    [
+     4,
+     14,
+     4,
+     15
+    ],
+    [
+     16,
+     8,
+     16,
+     15
+    ],
+    [
+     15,
+     14,
+     15,
+     15
+    ]
+   ]
+  },
+  "792": {
+   "base": "#",
+   "walk": [
+    [
+     3,
+     7,
+     16,
+     15
+    ],
+    [
+     9,
+     16,
+     10,
+     17
+    ]
+   ],
+   "block": [
+    [
+     3,
+     7,
+     4,
+     13
+    ],
+    [
+     3,
+     14,
+     5,
+     15
+    ],
+    [
+     12,
+     10,
+     14,
+     12
+    ],
+    [
+     15,
+     7,
+     16,
+     15
+    ],
+    [
+     14,
+     14,
+     14,
+     15
+    ]
+   ]
+  },
+  "793": {
+   "base": "#",
+   "walk": [
+    [
+     2,
+     5,
+     17,
+     15
+    ],
+    [
+     9,
+     16,
+     10,
+     18
+    ]
+   ],
+   "block": [
+    [
+     2,
+     5,
+     6,
+     5
+    ],
+    [
+     13,
+     5,
+     17,
+     5
+    ],
+    [
+     13,
+     6,
+     13,
+     6
+    ],
+    [
+     16,
+     6,
+     17,
+     6
+    ],
+    [
+     2,
+     6,
+     3,
+     8
+    ],
+    [
+     2,
+     9,
+     3,
+     12
+    ],
+    [
+     2,
+     14,
+     3,
+     15
+    ],
+    [
+     16,
+     7,
+     17,
+     12
+    ],
+    [
+     16,
+     14,
+     17,
+     15
+    ]
+   ]
+  },
+  "769": {
+   "base": "#",
+   "walk": [
+    [
+     4,
+     5,
+     15,
+     16
+    ],
+    [
+     9,
+     3,
+     10,
+     4
+    ],
+    [
+     9,
+     17,
+     10,
+     18
+    ]
+   ],
+   "block": [
+    [
+     8,
+     16,
+     8,
+     16
+    ],
+    [
+     11,
+     16,
+     11,
+     16
+    ]
+   ]
+  }
+ },
+ "objects": {
+  "061": [
+   {
+    "tile": [
+     11,
+     10
+    ],
+    "k": "keeper",
+    "why": "Keeper on the pool steps, challenged from (11,11)"
+   }
+  ],
+  "790": [
+   {
+    "tile": [
+     14,
+     4
+    ],
+    "k": "chest",
+    "item": "fullgel",
+    "n": 2,
+    "why": "hidden grove reward"
+   }
+  ],
+  "804": [
+   {
+    "tile": [
+     1,
+     14
+    ],
+    "k": "chest",
+    "item": "harmonic",
+    "n": 3,
+    "why": "Open Water Shore dead end reward"
+   }
+  ],
+  "783": [
+   {
+    "tile": [
+     22,
+     13
+    ],
+    "k": "chest",
+    "item": "revive",
+    "n": 2,
+    "why": "Driftwood Hollows dead end reward"
+   }
+  ],
+  "775": [
+   {
+    "tile": [
+     18,
+     3
+    ],
+    "k": "chest",
+    "item": "maxrevive",
+    "n": 1,
+    "why": "Sea Cave deep chamber reward"
+   }
+  ],
+  "781": [
+   {
+    "tile": [
+     15,
+     4
+    ],
+    "k": "sign",
+    "t": [
+     "SEA ARCH COVE. Quiet waters. Something very large sleeps beneath the arch. Please do not wake it."
+    ]
+   }
+  ],
+  "780": [
+   {
+    "tile": [
+     7,
+     4
+    ],
+    "k": "sign",
+    "t": [
+     "Captain's Log, faded: 'The arch woke again tonight. The water glowed blue all the way to the tower.'",
+     "The rest of the page is water-stained."
+    ]
+   }
+  ]
+ },
+ "spawns": {
+  "803": {
+   "default": [
+    13,
+    10
+   ]
+  },
+  "060": {
+   "default": [
+    9,
+    16
+   ]
+  },
+  "061": {
+   "default": [
+    11,
+    13
+   ]
+  },
+  "773": {
+   "default": [
+    5,
+    3
+   ]
+  },
+  "774": {
+   "default": [
+    4,
+    4
+   ]
+  },
+  "775": {
+   "default": [
+    11,
+    12
+   ]
+  }
+ },
+ "gate": [
+  {
+   "section": "803",
+   "tiles": [
+    [
+     13,
+     9
+    ],
+    [
+     14,
+     9
+    ]
+   ],
+   "node": "dustara",
+   "planet": "dustara",
+   "label": "your ship back to Dustara",
+   "why": "V3: the spaceport beside the docks is a second way home"
+  }
+ ],
+ "quest_spots": {
+  "S41:giver": {
+   "s": "785",
+   "near": [
+    10,
+    4
+   ]
+  },
+  "S42:0": "781",
+  "S42:giver": {
+   "s": "781",
+   "near": [
+    14,
+    7
+   ]
+  }
+ },
+ "npc_unpin": [
+  "060",
+  "061"
+ ],
+ "npc_move": {
+  "056": "780",
+  "057": "785",
+  "058": "779",
+  "059": "781"
+ },
+ "trainers_per_section": {
+  "790": 0,
+  "804": 0,
+  "772": 0,
+  "783": 0
+ },
+ "encounters": {
+  "776": "057",
+  "778": "057",
+  "777": "057",
+  "790": "057",
+  "785": "058",
+  "781": "058",
+  "779": "058",
+  "780": "058",
+  "804": "058",
+  "784": "059",
+  "783": "059",
+  "773": [
+   "057",
+   "drowned_sea"
+  ],
+  "774": [
+   "058",
+   "drowned_sea"
+  ],
+  "775": [
+   "058",
+   "drowned_sea"
+  ]
+ },
+ "_unused": [
+  [
+   "771",
+   "alt art of the arena battle room (770 used)"
+  ],
+  [
+   "782",
+   "alt art of Driftwood Hollows (783 used)"
+  ],
+  [
+   "788",
+   "alt art of the Secret Grove (790 used)"
+  ],
+  [
+   "789",
+   "alt art of the Secret Grove (790 used)"
+  ],
+  [
+   "796",
+   "alt art of the Trial Floor (797 used)"
+  ],
+  [
+   "794",
+   "kit Recovery Bay: not swapped in; the old bay 054 is a shared room entered both from the docks (house doors) and the market (door), swapping it would rewire both"
+  ],
+  [
+   "802",
+   "kit Shop: not swapped in, same reason as 794 (old shop 055)"
+  ],
+  [
+   "805",
+   "Island Chain: second water piece; with no surf its islands are unreachable, one water dead end (804) is enough"
+  ]
+ ],
+ "trainer_tiles": [
+  {
+   "section": "060",
+   "n": 0,
+   "tile": [
+    4,
+    14
+   ],
+   "face": "right"
+  },
+  {
+   "section": "060",
+   "n": 1,
+   "tile": [
+    15,
+    15
+   ],
+   "face": "left"
+  }
+ ]
+}

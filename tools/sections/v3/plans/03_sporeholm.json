@@ -1,0 +1,1570 @@
+{
+ "_report": "Sporeholm, rebuilt on the V3 world kit (Map Logic Pack). Arrive at the Sporeholm Spaceport (041, the old landing circle, reused so the S32 Zib spots stay). Mirefen town = Mirefen Lane Homes + the V2 village core 042 (Recovery Bay + shop swapped to the kit rooms, ids 043/044 kept) + Mirefen Quiet Court (north of the Lane Homes: Spore Lab, Marsh Cottage, old Sporeholm House) whose east side opens onto Sporelake Shore (water-edge dead end, chest). East of the village Mushroom Crossroads is the hub: north up Sporecap Overlook to the Mushroom Maze cave (entrance + 3 floors, chest in the Deep Chamber); south to the Mirefen Farmstead (Mushroom House) and behind it the Secret Grove (hidden reward); east to Bog Fork. Bog Fork: north to Glowcap Meadow (spore pools, dead end, chest); east to Root Junction, which drops south to Lantern Marsh Shore (pond, S31 mist quest) and Bogwater Bend (dead end, chest), and continues east into Mushroom Maze (047 keeps the Strand scene, now drawn with the Mycel Hollows art) -> Capstep Rise (M06 spore grunts) -> Mycelium Bowl (battle arena) -> Sporeholm Relay Tower (Trial Floor 050 -> Keeper Room 051).",
+ "planet": "sporeholm",
+ "arrival": "041",
+ "arrival_why": "the Sporeholm spaceport landing pad (old landing circle id)",
+ "use": {
+  "041": {
+   "kit": "732",
+   "name": "Sporeholm Spaceport",
+   "type": "landmark"
+  },
+  "728": {
+   "kit": "728",
+   "name": "Mirefen Lane Homes",
+   "type": "town"
+  },
+  "729": {
+   "kit": "729",
+   "name": "Mirefen Quiet Court",
+   "type": "town"
+  },
+  "730": {
+   "kit": "730",
+   "name": "Mirefen Farmstead",
+   "type": "town"
+  },
+  "043": {
+   "kit": "724",
+   "name": "Mirefen Recovery Bay",
+   "type": "interior"
+  },
+  "044": {
+   "kit": "731",
+   "name": "Mirefen Shop",
+   "type": "interior"
+  },
+  "721": {
+   "kit": "721",
+   "name": "Herbalist Hut",
+   "type": "interior"
+  },
+  "722": {
+   "kit": "722",
+   "name": "Spore Lab",
+   "type": "interior"
+  },
+  "723": {
+   "kit": "723",
+   "name": "Marsh Cottage",
+   "type": "interior"
+  },
+  "733": {
+   "kit": "733",
+   "name": "Sporelake Shore",
+   "type": "route"
+  },
+  "711": {
+   "kit": "711",
+   "name": "Mushroom Crossroads",
+   "type": "route"
+  },
+  "715": {
+   "kit": "715",
+   "name": "Sporecap Overlook",
+   "type": "route"
+  },
+  "707": {
+   "kit": "707",
+   "name": "Mushroom Maze Cave Entrance",
+   "type": "route"
+  },
+  "708": {
+   "kit": "708",
+   "name": "Mushroom Maze Cave B1",
+   "type": "cave"
+  },
+  "709": {
+   "kit": "709",
+   "name": "Mushroom Maze Cave B2",
+   "type": "cave"
+  },
+  "710": {
+   "kit": "710",
+   "name": "Mushroom Maze Deep Chamber",
+   "type": "cave"
+  },
+  "720": {
+   "kit": "720",
+   "name": "Mirefen Secret Grove",
+   "type": "field"
+  },
+  "713": {
+   "kit": "713",
+   "name": "Bog Fork",
+   "type": "route"
+  },
+  "719": {
+   "kit": "719",
+   "name": "Glowcap Meadow",
+   "type": "route"
+  },
+  "712": {
+   "kit": "712",
+   "name": "Root Junction",
+   "type": "route"
+  },
+  "716": {
+   "kit": "716",
+   "name": "Lantern Marsh Shore",
+   "type": "route"
+  },
+  "718": {
+   "kit": "718",
+   "name": "Bogwater Bend",
+   "type": "route"
+  },
+  "047": {
+   "kit": "717",
+   "name": "Mushroom Maze",
+   "type": "route"
+  },
+  "714": {
+   "kit": "714",
+   "name": "Capstep Rise",
+   "type": "route"
+  },
+  "702": {
+   "kit": "702",
+   "name": "Mycelium Bowl",
+   "type": "landmark"
+  },
+  "704": {
+   "kit": "704",
+   "name": "Mycelium Bowl Lobby",
+   "type": "interior"
+  },
+  "706": {
+   "kit": "706",
+   "name": "Mycelium Bowl Arena",
+   "type": "interior"
+  },
+  "725": {
+   "kit": "725",
+   "name": "Sporeholm Relay Tower",
+   "type": "landmark"
+  },
+  "050": {
+   "kit": "726",
+   "name": "Sporeholm Relay Tower Trial Floor",
+   "type": "tower"
+  },
+  "051": {
+   "kit": "727",
+   "name": "Sporeholm Relay Tower Keeper Room",
+   "type": "tower"
+  }
+ },
+ "keep": [
+  "042",
+  "173",
+  "184",
+  "185",
+  "190"
+ ],
+ "drop": [
+  "045",
+  "046",
+  "048",
+  "049"
+ ],
+ "edges": [
+  [
+   "041",
+   "right",
+   "728",
+   "left"
+  ],
+  [
+   "728",
+   "right",
+   "042",
+   "left"
+  ],
+  [
+   "728",
+   "top",
+   "729",
+   "bottom"
+  ],
+  [
+   "729",
+   "right",
+   "733",
+   "left"
+  ],
+  [
+   "042",
+   "right",
+   "711",
+   "left"
+  ],
+  [
+   "711",
+   "top",
+   "715",
+   "bottom"
+  ],
+  [
+   "715",
+   "top",
+   "707",
+   "bottom"
+  ],
+  [
+   "711",
+   "bottom",
+   "730",
+   "top"
+  ],
+  [
+   "730",
+   "right",
+   "720",
+   "left"
+  ],
+  [
+   "711",
+   "right",
+   "713",
+   "left"
+  ],
+  [
+   "713",
+   "top",
+   "719",
+   "bottom"
+  ],
+  [
+   "713",
+   "right",
+   "712",
+   "left"
+  ],
+  [
+   "712",
+   "bottom",
+   "716",
+   "top"
+  ],
+  [
+   "716",
+   "bottom",
+   "718",
+   "top"
+  ],
+  [
+   "712",
+   "right",
+   "047",
+   "left"
+  ],
+  [
+   "047",
+   "top",
+   "714",
+   "bottom"
+  ],
+  [
+   "714",
+   "top",
+   "702",
+   "bottom"
+  ],
+  [
+   "702",
+   "right",
+   "725",
+   "left"
+  ]
+ ],
+ "doors": [
+  [
+   "042",
+   [
+    8,
+    3
+   ],
+   "043",
+   [
+    9,
+    3
+   ]
+  ],
+  [
+   "042",
+   [
+    15,
+    3
+   ],
+   "044"
+  ],
+  [
+   "702",
+   [
+    11,
+    6
+   ],
+   "704",
+   [
+    12,
+    6
+   ]
+  ],
+  [
+   "725",
+   [
+    11,
+    6
+   ],
+   "050",
+   [
+    12,
+    6
+   ]
+  ]
+ ],
+ "houses": [
+  [
+   "728",
+   [
+    3,
+    6
+   ],
+   "184"
+  ],
+  [
+   "728",
+   [
+    4,
+    6
+   ],
+   "184"
+  ],
+  [
+   "728",
+   [
+    11,
+    6
+   ],
+   "190"
+  ],
+  [
+   "728",
+   [
+    12,
+    6
+   ],
+   "190"
+  ],
+  [
+   "728",
+   [
+    18,
+    6
+   ],
+   "721"
+  ],
+  [
+   "728",
+   [
+    19,
+    6
+   ],
+   "721"
+  ],
+  [
+   "729",
+   [
+    6,
+    4
+   ],
+   "722"
+  ],
+  [
+   "729",
+   [
+    7,
+    4
+   ],
+   "722"
+  ],
+  [
+   "729",
+   [
+    11,
+    4
+   ],
+   "173"
+  ],
+  [
+   "729",
+   [
+    12,
+    4
+   ],
+   "173"
+  ],
+  [
+   "729",
+   [
+    17,
+    4
+   ],
+   "190"
+  ],
+  [
+   "729",
+   [
+    18,
+    4
+   ],
+   "190"
+  ],
+  [
+   "729",
+   [
+    20,
+    12
+   ],
+   "723"
+  ],
+  [
+   "729",
+   [
+    21,
+    12
+   ],
+   "723"
+  ],
+  [
+   "730",
+   [
+    12,
+    5
+   ],
+   "185"
+  ],
+  [
+   "730",
+   [
+    13,
+    5
+   ],
+   "185"
+  ],
+  [
+   "730",
+   [
+    18,
+    4
+   ],
+   "190"
+  ],
+  [
+   "730",
+   [
+    19,
+    4
+   ],
+   "190"
+  ]
+ ],
+ "warps": [
+  [
+   "707",
+   [
+    12,
+    3
+   ],
+   "708",
+   [
+    5,
+    1
+   ],
+   [
+    12,
+    4
+   ],
+   "down",
+   [
+    5,
+    2
+   ],
+   "down"
+  ],
+  [
+   "708",
+   [
+    18,
+    1
+   ],
+   "709",
+   [
+    5,
+    2
+   ],
+   [
+    18,
+    2
+   ],
+   "down",
+   [
+    5,
+    3
+   ],
+   "down"
+  ],
+  [
+   "709",
+   [
+    11,
+    13
+   ],
+   "710",
+   [
+    11,
+    13
+   ],
+   [
+    11,
+    12
+   ],
+   "up",
+   [
+    11,
+    12
+   ],
+   "up"
+  ],
+  [
+   "050",
+   [
+    16,
+    4
+   ],
+   "051",
+   [
+    11,
+    15
+   ],
+   [
+    16,
+    6
+   ],
+   "down",
+   [
+    11,
+    13
+   ],
+   "up"
+  ],
+  [
+   "704",
+   [
+    9,
+    3
+   ],
+   "706",
+   [
+    11,
+    15
+   ],
+   [
+    9,
+    4
+   ],
+   "down",
+   [
+    11,
+    14
+   ],
+   "up"
+  ]
+ ],
+ "fix": {
+  "041": {
+   "walk": [
+    [
+     4,
+     2,
+     19,
+     11
+    ],
+    [
+     5,
+     12,
+     23,
+     12
+    ],
+    [
+     18,
+     13,
+     23,
+     13
+    ]
+   ],
+   "block": [
+    [
+     7,
+     3,
+     8,
+     5
+    ],
+    [
+     8,
+     6,
+     18,
+     7
+    ],
+    [
+     8,
+     8,
+     11,
+     8
+    ],
+    [
+     14,
+     8,
+     18,
+     8
+    ]
+   ]
+  },
+  "728": {
+   "walk": [
+    [
+     13,
+     0,
+     16,
+     8
+    ]
+   ]
+  },
+  "729": {
+   "walk": [
+    [
+     18,
+     13,
+     22,
+     13
+    ]
+   ]
+  },
+  "733": {
+   "base": "#",
+   "walk": [
+    [
+     1,
+     1,
+     2,
+     14
+    ],
+    [
+     0,
+     9,
+     0,
+     13
+    ]
+   ],
+   "block": [
+    [
+     1,
+     1,
+     1,
+     1
+    ]
+   ]
+  },
+  "707": {
+   "walk": [
+    [
+     12,
+     3,
+     13,
+     3
+    ]
+   ]
+  },
+  "708": {
+   "base": "#",
+   "walk": [
+    [
+     3,
+     2,
+     20,
+     13
+    ],
+    [
+     5,
+     1,
+     6,
+     1
+    ],
+    [
+     17,
+     1,
+     18,
+     1
+    ]
+   ],
+   "gr": [
+    [
+     10,
+     10,
+     13,
+     12
+    ]
+   ],
+   "block": [
+    [
+     8,
+     2,
+     14,
+     8
+    ]
+   ]
+  },
+  "709": {
+   "base": "#",
+   "walk": [
+    [
+     2,
+     3,
+     21,
+     8
+    ],
+    [
+     10,
+     9,
+     13,
+     13
+    ],
+    [
+     4,
+     2,
+     6,
+     2
+    ]
+   ],
+   "gr": [
+    [
+     4,
+     6,
+     8,
+     8
+    ]
+   ],
+   "block": [
+    [
+     15,
+     4,
+     20,
+     7
+    ]
+   ]
+  },
+  "710": {
+   "base": "#",
+   "walk": [
+    [
+     4,
+     2,
+     19,
+     12
+    ],
+    [
+     10,
+     13,
+     13,
+     13
+    ]
+   ],
+   "gr": [
+    [
+     5,
+     8,
+     8,
+     11
+    ],
+    [
+     15,
+     8,
+     18,
+     11
+    ]
+   ],
+   "block": [
+    [
+     8,
+     3,
+     15,
+     6
+    ],
+    [
+     9,
+     2,
+     14,
+     2
+    ],
+    [
+     19,
+     2,
+     19,
+     3
+    ]
+   ]
+  },
+  "719": {
+   "block": [
+    [
+     11,
+     1,
+     11,
+     1
+    ]
+   ]
+  },
+  "725": {
+   "walk": [
+    [
+     11,
+     6,
+     12,
+     6
+    ]
+   ]
+  },
+  "706": {
+   "base": "#",
+   "walk": [
+    [
+     3,
+     3,
+     20,
+     11
+    ],
+    [
+     10,
+     12,
+     13,
+     12
+    ],
+    [
+     11,
+     13,
+     12,
+     15
+    ]
+   ],
+   "block": [
+    [
+     3,
+     3,
+     4,
+     4
+    ],
+    [
+     20,
+     3,
+     20,
+     4
+    ],
+    [
+     3,
+     10,
+     4,
+     11
+    ],
+    [
+     20,
+     10,
+     20,
+     11
+    ],
+    [
+     10,
+     4,
+     13,
+     4
+    ],
+    [
+     10,
+     10,
+     13,
+     10
+    ]
+   ]
+  },
+  "050": {
+   "base": "#",
+   "walk": [
+    [
+     2,
+     4,
+     17,
+     17
+    ],
+    [
+     9,
+     18,
+     10,
+     18
+    ]
+   ],
+   "block": [
+    [
+     2,
+     6,
+     3,
+     8
+    ],
+    [
+     4,
+     7,
+     12,
+     8
+    ],
+    [
+     7,
+     10,
+     16,
+     12
+    ],
+    [
+     4,
+     13,
+     7,
+     16
+    ]
+   ]
+  },
+  "051": {
+   "base": "#",
+   "walk": [
+    [
+     3,
+     3,
+     20,
+     13
+    ],
+    [
+     11,
+     14,
+     12,
+     15
+    ]
+   ],
+   "block": [
+    [
+     10,
+     3,
+     13,
+     3
+    ],
+    [
+     10,
+     11,
+     13,
+     11
+    ]
+   ]
+  },
+  "043": {
+   "base": "#",
+   "walk": [
+    [
+     4,
+     5,
+     15,
+     15
+    ],
+    [
+     5,
+     16,
+     14,
+     16
+    ],
+    [
+     9,
+     17,
+     10,
+     18
+    ]
+   ],
+   "block": [
+    [
+     6,
+     5,
+     13,
+     5
+    ]
+   ]
+  },
+  "044": {
+   "base": "#",
+   "walk": [
+    [
+     2,
+     5,
+     17,
+     16
+    ],
+    [
+     9,
+     17,
+     10,
+     17
+    ]
+   ],
+   "block": [
+    [
+     2,
+     6,
+     4,
+     12
+    ],
+    [
+     7,
+     6,
+     8,
+     8
+    ],
+    [
+     11,
+     6,
+     12,
+     8
+    ],
+    [
+     7,
+     10,
+     8,
+     12
+    ],
+    [
+     11,
+     10,
+     12,
+     12
+    ],
+    [
+     16,
+     6,
+     17,
+     14
+    ]
+   ]
+  },
+  "721": {
+   "base": "#",
+   "walk": [
+    [
+     3,
+     5,
+     17,
+     15
+    ],
+    [
+     8,
+     16,
+     10,
+     16
+    ]
+   ],
+   "block": [
+    [
+     3,
+     5,
+     3,
+     14
+    ],
+    [
+     4,
+     8,
+     4,
+     10
+    ],
+    [
+     12,
+     5,
+     17,
+     5
+    ],
+    [
+     17,
+     6,
+     17,
+     13
+    ],
+    [
+     13,
+     9,
+     16,
+     11
+    ],
+    [
+     15,
+     13,
+     17,
+     15
+    ]
+   ]
+  },
+  "722": {
+   "base": "#",
+   "walk": [
+    [
+     2,
+     4,
+     17,
+     15
+    ],
+    [
+     9,
+     16,
+     10,
+     16
+    ]
+   ],
+   "block": [
+    [
+     2,
+     4,
+     6,
+     6
+    ],
+    [
+     2,
+     7,
+     3,
+     7
+    ],
+    [
+     2,
+     9,
+     5,
+     13
+    ],
+    [
+     12,
+     4,
+     17,
+     5
+    ],
+    [
+     16,
+     6,
+     17,
+     11
+    ],
+    [
+     15,
+     7,
+     15,
+     7
+    ],
+    [
+     12,
+     9,
+     14,
+     12
+    ],
+    [
+     13,
+     13,
+     13,
+     13
+    ],
+    [
+     2,
+     14,
+     7,
+     15
+    ],
+    [
+     13,
+     14,
+     17,
+     15
+    ]
+   ]
+  },
+  "723": {
+   "base": "#",
+   "walk": [
+    [
+     2,
+     4,
+     17,
+     16
+    ],
+    [
+     9,
+     17,
+     10,
+     17
+    ]
+   ],
+   "block": [
+    [
+     2,
+     4,
+     4,
+     4
+    ],
+    [
+     2,
+     5,
+     5,
+     9
+    ],
+    [
+     6,
+     4,
+     6,
+     5
+    ],
+    [
+     15,
+     4,
+     17,
+     5
+    ],
+    [
+     2,
+     10,
+     2,
+     13
+    ],
+    [
+     17,
+     7,
+     17,
+     10
+    ],
+    [
+     14,
+     11,
+     17,
+     13
+    ]
+   ]
+  },
+  "704": {
+   "base": "#",
+   "walk": [
+    [
+     4,
+     5,
+     15,
+     15
+    ],
+    [
+     9,
+     3,
+     10,
+     4
+    ],
+    [
+     9,
+     16,
+     10,
+     18
+    ]
+   ],
+   "block": [
+    [
+     4,
+     5,
+     6,
+     5
+    ],
+    [
+     14,
+     5,
+     15,
+     5
+    ],
+    [
+     5,
+     6,
+     6,
+     8
+    ],
+    [
+     5,
+     12,
+     6,
+     14
+    ],
+    [
+     13,
+     6,
+     14,
+     8
+    ],
+    [
+     13,
+     12,
+     14,
+     14
+    ]
+   ]
+  }
+ },
+ "counters": {
+  "043": [
+   [
+    9,
+    5,
+    "bay"
+   ],
+   [
+    10,
+    5,
+    "bay"
+   ]
+  ],
+  "044": [
+   [
+    4,
+    9,
+    "shop"
+   ],
+   [
+    4,
+    10,
+    "shop"
+   ]
+  ]
+ },
+ "objects": {
+  "051": [
+   {
+    "tile": [
+     11,
+     4
+    ],
+    "k": "keeper",
+    "why": "Keeper below the spore pool, challenged from (11,5)"
+   }
+  ],
+  "733": [
+   {
+    "tile": [
+     1,
+     1
+    ],
+    "k": "chest",
+    "item": "tether",
+    "n": 3,
+    "why": "Sporelake Shore dead end reward"
+   }
+  ],
+  "720": [
+   {
+    "tile": [
+     20,
+     2
+    ],
+    "k": "chest",
+    "item": "harmonic",
+    "n": 2,
+    "why": "hidden grove reward"
+   }
+  ],
+  "718": [
+   {
+    "tile": [
+     18,
+     14
+    ],
+    "k": "chest",
+    "item": "revive",
+    "n": 2,
+    "why": "Bogwater Bend dead end reward"
+   }
+  ],
+  "719": [
+   {
+    "tile": [
+     11,
+     1
+    ],
+    "k": "chest",
+    "item": "ether",
+    "n": 2,
+    "why": "Glowcap Meadow dead end reward"
+   }
+  ],
+  "710": [
+   {
+    "tile": [
+     19,
+     3
+    ],
+    "k": "chest",
+    "item": "maxrevive",
+    "n": 1,
+    "why": "Mushroom Maze deep chamber reward"
+   }
+  ]
+ },
+ "spawns": {
+  "041": {
+   "arrival": [
+    12,
+    10
+   ],
+   "default": [
+    12,
+    10
+   ]
+  },
+  "050": {
+   "default": [
+    9,
+    16
+   ]
+  },
+  "051": {
+   "default": [
+    11,
+    13
+   ]
+  },
+  "708": {
+   "default": [
+    5,
+    2
+   ]
+  },
+  "709": {
+   "default": [
+    5,
+    3
+   ]
+  },
+  "710": {
+   "default": [
+    11,
+    12
+   ]
+  }
+ },
+ "gate": [
+  {
+   "section": "041",
+   "tiles": [
+    [
+     12,
+     8
+    ],
+    [
+     13,
+     8
+    ]
+   ],
+   "node": "dustara",
+   "planet": "dustara",
+   "label": "your ship back to Dustara",
+   "why": "V3: the spaceport is the arrival point and the way home"
+  }
+ ],
+ "quest_spots": {
+  "S31:0": {
+   "s": "716",
+   "n": 3
+  },
+  "S31:1": {
+   "s": "716",
+   "near": [
+    16,
+    6
+   ],
+   "art": "sporefolk"
+  },
+  "M06:1": {
+   "s": "714",
+   "near": [
+    12,
+    6
+   ]
+  }
+ },
+ "npc_unpin": [
+  "041",
+  "043",
+  "044",
+  "047",
+  "050",
+  "051"
+ ],
+ "npc_move": {
+  "045": "711",
+  "046": "716",
+  "048": "709",
+  "049": "714"
+ },
+ "npc_pins": {
+  "043": [
+   [
+    10,
+    5
+   ]
+  ],
+  "044": [
+   [
+    4,
+    9
+   ]
+  ]
+ },
+ "trainers_per_section": {
+  "720": 0,
+  "733": 0,
+  "707": 0,
+  "718": 0,
+  "719": 0
+ },
+ "encounters": {
+  "711": "045",
+  "712": "045",
+  "713": "046",
+  "715": "046",
+  "719": "046",
+  "714": "049",
+  "716": "049",
+  "718": "049",
+  "047": [
+   "047",
+   "fungal"
+  ],
+  "720": [
+   "048",
+   "fungal"
+  ],
+  "708": "047",
+  "709": "048",
+  "710": "048"
+ },
+ "_unused": [
+  [
+   "701",
+   "alt art of the Mycelium Bowl exterior (702 used)"
+  ],
+  [
+   "703",
+   "alt art of the Mycelium Bowl lobby (704 used)"
+  ],
+  [
+   "705",
+   "Battle Floor: second battle-room option, 706 used as the arena room"
+  ],
+  [
+   "734",
+   "Island Chain: second water piece; with no surf its islands are unreachable, one water dead end (733) is enough"
+  ]
+ ]
+}
