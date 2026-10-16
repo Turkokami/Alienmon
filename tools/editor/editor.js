@@ -195,7 +195,14 @@ function paint(t) { if (!t) return; const R = rowsOf(t.sid).slice(), row = R[t.y
   if (S.brush !== '#' || !blockedKeys(t.sid).has(t.x + ',' + t.y) || confirm('This tile is a door, exit or spawn. Make it a wall anyway?')) { row[t.x] = S.brush; R[t.y] = row.join(''); ROWS[t.sid] = R; touch(t.sid); draw(); } }
 
 // ---------- mouse / keys ----------
+const TOUCH = new Map(); let PINCH = null;
+function pinchStart() { const [a, b] = [...TOUCH.values()]; PINCH = { d: Math.hypot(a.x - b.x, a.y - b.y) || 1, mx: (a.x + b.x) / 2, my: (a.y + b.y) / 2, z: S.zoom, ox: S.ox, oy: S.oy }; }
+function cancelGesture() {   // a second finger turns whatever the first finger started into a pan/zoom
+  if (S.pieceDrag || S.drag || S.stampDrag) { const keep = S.sel; undo(); S.sel = keep; panel(); }
+  S.wallRect = S.clipRect = S.routeDrag = null; S.pan = null; S.drag = false; S.pieceDrag = null; S.propGrab = null; S.stampDrag = null; S.painting = false;
+}
 cv.addEventListener('pointerdown', e => {
+  if (e.pointerType === 'touch') { TOUCH.set(e.pointerId, { x: e.clientX, y: e.clientY }); if (TOUCH.size === 2) { cancelGesture(); pinchStart(); cv.setPointerCapture(e.pointerId); draw(); return; } if (TOUCH.size > 2) return; }
   cv.setPointerCapture(e.pointerId); const [wx, wy] = toWorld(e), t = tileAt(wx, wy);
   if (e.button === 1 || e.button === 2 || e.altKey || !t) { S.pan = [e.clientX - S.ox, e.clientY - S.oy]; return; }
   if (S.mode === 'walls') { S.wallRect = { sid: t.sid, x0: t.x, y0: t.y, x1: t.x, y1: t.y }; draw(); return; }
@@ -222,6 +229,11 @@ cv.addEventListener('pointerdown', e => {
   if (it) { S.sel = it.ref; snap(); S.drag = true; if (it.ref.kind === 'prop') S.propGrab = { dx: wx - it.box[0], dy: wy - it.box[1] }; panel(); draw(); } else { S.sel = null; S.pan = [e.clientX - S.ox, e.clientY - S.oy]; panel(); draw(); }
 });
 cv.addEventListener('pointermove', e => {
+  if (e.pointerType === 'touch' && TOUCH.has(e.pointerId)) { TOUCH.set(e.pointerId, { x: e.clientX, y: e.clientY });
+    if (PINCH && TOUCH.size >= 2) { const [a, b] = [...TOUCH.values()], r = cv.getBoundingClientRect(), d = Math.hypot(a.x - b.x, a.y - b.y) || 1, mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2;
+      const z = Math.max(0.25, Math.min(8, PINCH.z * d / PINCH.d)), wx0 = (PINCH.mx - r.left - PINCH.ox) / PINCH.z, wy0 = (PINCH.my - r.top - PINCH.oy) / PINCH.z;
+      S.zoom = z; S.ox = mx - r.left - wx0 * z; S.oy = my - r.top - wy0 * z; draw(); return; }
+    if (PINCH) return; }
   const [wx, wy] = toWorld(e), t = tileAt(wx, wy);
   if (S.pan) { S.ox = e.clientX - S.pan[0]; S.oy = e.clientY - S.pan[1]; draw(); return; }
   if (S.painting) { paint(t); return; }
@@ -235,7 +247,9 @@ cv.addEventListener('pointermove', e => {
   S.hover = t ? [t] : null; if (S.stamp) { if (t) S.hover = [{ ...t }]; draw(); }
   $('#where').textContent = t ? `${t.sid} ${sec(t.sid).name}  tile ${t.x},${t.y}` : '';
 });
-addEventListener('pointerup', () => { if (S.clipRect) makeClip(); if (S.stampDrag) { const id = S.sel && S.sel.sid; S.stampDrag = null; if (id) stampRows(id); } if (S.wallRect) fillRect(); if (S.routeDrag) finishRoute(); S.pan = null; S.drag = false; S.painting = false; S.pieceDrag = null; S.propGrab = null; });
+const touchEnd = e => { if (e.pointerType !== 'touch') return; TOUCH.delete(e.pointerId); if (TOUCH.size < 2 && PINCH) { PINCH = null; if (TOUCH.size === 1) { const [p] = [...TOUCH.values()]; S.pan = [p.x - S.ox, p.y - S.oy]; } } };
+cv.addEventListener('pointercancel', touchEnd);
+addEventListener('pointerup', e => { const wasPinch = !!PINCH; touchEnd(e); if (wasPinch || PINCH || TOUCH.size) return; if (S.clipRect) makeClip(); if (S.stampDrag) { const id = S.sel && S.sel.sid; S.stampDrag = null; if (id) stampRows(id); } if (S.wallRect) fillRect(); if (S.routeDrag) finishRoute(); S.pan = null; S.drag = false; S.painting = false; S.pieceDrag = null; S.propGrab = null; });
 cv.addEventListener('wheel', e => { e.preventDefault(); const r = cv.getBoundingClientRect(), mx = e.clientX - r.left, my = e.clientY - r.top, z0 = S.zoom;
   S.zoom = Math.max(0.25, Math.min(8, S.zoom * (e.deltaY < 0 ? 1.15 : 1 / 1.15))); S.ox = mx - (mx - S.ox) * S.zoom / z0; S.oy = my - (my - S.oy) * S.zoom / z0; draw(); }, { passive: false });
 cv.addEventListener('contextmenu', e => e.preventDefault());
@@ -245,10 +259,21 @@ addEventListener('keydown', e => {
   else if (e.key === 'Delete' || e.key === 'Backspace') { e.preventDefault(); delSel(); }
   else if ((e.ctrlKey || e.metaKey) && e.key === 'z') { e.preventDefault(); undo(); }
   else if ((e.ctrlKey || e.metaKey) && e.key === 'c' && S.sel && S.sel.kind === 'prop') { const q = LAYOUT[S.sel.sid][S.sel.i]; S.stamp = { kind: 'prop', p: q.p, flat: q.solid === false }; toast('Copied: click to place copies, Esc to stop'); }
-  else if (e.key.startsWith('Arrow') && S.sel) { e.preventDefault(); const d = { ArrowLeft: [-1, 0], ArrowRight: [1, 0], ArrowUp: [0, -1], ArrowDown: [0, 1] }[e.key];
-    snap(); if (e.shiftKey && S.sel.kind === 'prop') { const q = LAYOUT[S.sel.sid][S.sel.i]; q.ox = (q.ox || 0) + d[0]; q.oy = (q.oy || 0) + d[1]; touch(S.sel.sid); panel(); draw(); }
-    else if (S.sel.kind === 'piece') { const g = gridOf(sec(S.sel.sid)).slice(); GRID[S.sel.sid] = [g[0] + d[0], g[1] + d[1]]; touch(S.sel.sid); draw(); } else moveSel(null, d[0], d[1]); }
+  else if (e.key.startsWith('Arrow') && S.sel) { e.preventDefault(); const d = { ArrowLeft: [-1, 0], ArrowRight: [1, 0], ArrowUp: [0, -1], ArrowDown: [0, 1] }[e.key]; nudge(d[0], d[1], e.shiftKey); }
 });
+function nudge(dx, dy, fine) {   // arrows: one tile (a whole scene moves one tile); fine: one pixel for props, four tiles for scenes
+  const r = S.sel; if (!r) return; snap();
+  if (r.kind === 'prop' && fine) { const q = LAYOUT[r.sid][r.i]; q.ox = (q.ox || 0) + dx; q.oy = (q.oy || 0) + dy; if (!q.ox) delete q.ox; if (!q.oy) delete q.oy; touch(r.sid); panel(); draw(); }
+  else if (r.kind === 'piece') { const g = gridOf(sec(r.sid)).slice(), k = fine ? 4 : 1; GRID[r.sid] = [g[0] + dx * k, g[1] + dy * k]; touch(r.sid); panel(); draw(); }
+  else if (r.kind === 'stamp') { const st = builtMap(r.sid).stamps[r.i]; st.x += dx; st.y += dy; bake(r.sid); stampRows(r.sid); panel(); }
+  else moveSel(null, dx, dy);
+}
+function padHtml(fineLabel) {
+  const arrow = { '0,-1': '&#9650;', '0,1': '&#9660;', '-1,0': '&#9664;', '1,0': '&#9654;' };
+  const b = (dx, dy, f, t) => `<button data-nudge="${dx},${dy},${f ? 1 : 0}" title="${t}">${arrow[dx + ',' + dy]}</button>`;
+  const pad = (f, label) => `<div><h4>${label}</h4><div class="pad"><span></span>${b(0, -1, f, label)}<span></span>${b(-1, 0, f, label)}<span class="c">${label}</span>${b(1, 0, f, label)}<span></span>${b(0, 1, f, label)}<span></span></div></div>`;
+  return `<div class="padrow">${pad(false, '1 tile')}${fineLabel ? pad(true, fineLabel) : ''}</div>`;
+}
 
 // ---------- doors ----------
 function doorAt(sid, x, y) {
@@ -338,7 +363,7 @@ function dragProp(X, Y) {   // X,Y = wanted top-left of the sprite in world pixe
 function panel() {
   const P = $('#panel'), m = S.mode; let h = '';
   if (S.sel) h += selPanel();
-  const PRE = `<div id="preview"><div class="box" id="pbox"></div><div class="cap" id="pcap">Hover over an item to see it large</div><div class="sizes">Item size <input type="range" id="cellsz" min="70" max="300" value="${S.cell || Math.round(Math.max(100, Math.min(200, innerWidth * 0.065)))}"></div></div>`;
+  const PRE = `<div id="preview"><div class="box" id="pbox"></div><div class="cap" id="pcap">${matchMedia('(pointer:coarse)').matches ? 'Tap an item to see it large' : 'Hover over an item to see it large'}</div><div class="sizes">Item size <input type="range" id="cellsz" min="70" max="300" value="${S.cell || Math.round(Math.max(100, Math.min(200, innerWidth * 0.065)))}"></div></div>`;
   if (m === 'props') {
     h += PRE + `<h3>Props</h3><p class="hint"><b>Add:</b> pick an item below, then press on the map and drag it to the exact spot before letting go. <b>Move or remove:</b> click any item already on the map (including the ones Claude placed), drag it anywhere, or press Remove / Delete.</p>${S.stamp ? '<button id="stopstamp">Stop placing (Esc)</button>' : ''}<label>Sheet <select id="sheet">${Object.keys(ED.props).map(d => `<option ${d === S.sheet ? 'selected' : ''}>${d}</option>`).join('')}</select></label>
       <label class="row"><input type="checkbox" id="flat" ${S.flatNext ? 'checked' : ''}> place as a flat rug (walk over it)</label>
@@ -360,7 +385,8 @@ function panel() {
   } else if (m === 'maps') h += mapPanel();
   else if (m === 'clips') h += (S.mode === 'clips' ? `<div id="preview"><div class="box" id="pbox"></div><div class="cap" id="pcap">Hover over a clip to see it large</div></div>` : '') + clipsPanel();
   else if (m === 'doors') h += `<h3>Doors</h3><p class="hint">Click a door on the map, then choose what it opens. Cyan = doors the game already has, yellow = doors you set, grey = story doors (fixed). Any number of doors can open the same room: leaving it takes the player back out the door they came in by. To add a new Alienmon centre or house, place a building from the Props sheet, then click its door here and pick that world's Recovery Bay or house room.</p>`;
-  else if (m === 'arrange') h += `<h3>Arrange the world</h3><p class="hint">Press on any map piece and drag it to move the whole scene. It snaps flush against the piece beside, above or below it and lines up with it. Arrows nudge the selected piece one tile. A red outline means two pieces overlap. Moving pieces only changes the layout: use Routes to let the player walk between them.</p>`;
+  else if (m === 'arrange') h += `<h3>Move scenes</h3><p class="hint">Every outdoor map of this world is laid out together. <b>Tap a scene</b> on the map or in the list, then <b>drag it</b> or use the <b>arrows</b> to move it. Scenes snap flush to the one beside, above or below. A <span class="bad">red outline</span> means two scenes overlap. Moving only changes the layout: use <b>Routes</b> to let the player walk across. Two fingers pan and zoom.</p>
+      <div class="scenes">${planetSecs().filter(s => s.grid).sort((a, b) => a.id.localeCompare(b.id)).map(s => `<button data-scene="${s.id}" class="${S.sel && S.sel.kind === 'piece' && S.sel.sid === s.id ? 'on' : ''}">${s.id} ${s.name}</button>`).join('')}</div>`;
   else if (m === 'routes') h += `<h3>Travel routes</h3><p class="hint">Blue bars are the ways across between map pieces. To add one, press on the edge of a piece where it touches the next piece and drag along that edge to set how wide the opening is (a road is usually 4 to 6 tiles). The opening is cut through the walls on both sides. Click a bar to select it; Delete removes it. Each side of a piece can have one route.</p>
     ${ROUTES.filter(r => !r.remove).map(r => `<div>${r.a} ${r.side} ${r.band[0]}-${r.band[1]} to ${r.b}</div>`).join('')}`;
   h += `<h3>Check</h3><button id="check">Check edited maps</button><div id="checkout"></div>`;
@@ -374,8 +400,9 @@ function selPanel() {
       <label>Opens <select id="doorto"><option value="">Choose a room...</option>${roomChoices()}</select></label>
       <div class="row"><button id="doorset">Set door</button>${d ? '<button id="doorrm">Remove door</button>' : ''}${d && d.to && sec(d.to) ? `<button id="dooropen">Open ${doorName(d.to)}</button>` : ''}</div>
       <div class="hint">The door tile becomes solid (you walk into it to go in). The tile in front of it must be walkable.</div></div>`; }
-  if (r && r.kind === 'stamp') { const st = builtMap(r.sid).stamps[r.i], c = clipById(st.c); return `<div class="sel"><b>Stamp: ${c ? c.name : st.c}</b><div>at ${st.x},${st.y}</div><div class="hint">Drag to move, Delete removes</div></div>`; }
-  if (r && r.kind === 'piece') { const s = sec(r.sid), g = gridOf(s); return `<div class="sel"><b>${s.id} ${s.name}</b><div>at ${g[0]}, ${g[1]} (tiles), ${s.tiles[0]}x${s.tiles[1]}</div><div class="hint">Drag to move, arrows nudge a tile</div></div>`; }
+  if (r && r.kind === 'stamp') { const st = builtMap(r.sid).stamps[r.i], c = clipById(st.c); return `<div class="sel"><b>Stamp: ${c ? c.name : st.c}</b><div>at ${st.x},${st.y}</div><div class="hint">Drag to move, or use the arrows</div>${padHtml('')}<button id="del">Remove</button></div>`; }
+  if (r && r.kind === 'piece') { const s = sec(r.sid), g = gridOf(s), bad = viewSecs().some(o => o !== s && overlap(s, o)); return `<div class="sel"><b>Moving: ${s.id} ${s.name}</b><div>at ${g[0]}, ${g[1]} (tiles), ${s.tiles[0]}x${s.tiles[1]} ${bad ? '<span class="bad">overlaps another scene</span>' : '<span class="good">no overlap</span>'}</div>
+    <div class="hint">Drag it on the map with one finger, or use the arrows. It snaps flush to the scene beside, above or below it.</div>${padHtml('4 tiles')}<div class="row"><button id="pdone">Done</button><button id="pfind">Show it</button></div></div>`; }
   if (r && r.kind === 'route') { const s = sec(r.sid), e = (s.edges || {})[r.side]; return e ? `<div class="sel"><b>Route</b><div>${s.name}, ${r.side} edge ${e.range[0]}-${e.range[1]}, to ${(sec(e.to) || {}).name || e.to}</div><button id="del">Remove route</button></div>` : ''; }
   const p = selPos(); if (!p) return '';
   let name = r.kind === 'prop' ? 'Prop ' + LAYOUT[r.sid][r.i].p : r.kind === 'mon' ? monsOf(r.sid)[r.i].mon : (npcsOf(r.sid).find(n => same(n.ref, r)) || {}).name || 'Townsperson';
@@ -383,7 +410,7 @@ function selPanel() {
   if (r.kind === 'prop') { const q = LAYOUT[r.sid][r.i]; extra = `<label>Solid rows (for buildings: how many tiles deep it blocks) <input id="ph" type="number" min="1" max="8" value="${q.h || 1}"></label>`; }
   if (r.kind === 'added') { const a = ADDED[r.sid][r.i]; extra = `<label>Name <input id="ename" value="${a.name || ''}"></label><label>Says <textarea id="eline">${(a.t || []).join('\n')}</textarea></label>`; }
   return `<div class="sel"><b>${name}</b><div>${r.sid} ${sec(r.sid).name} · tile ${p[0]},${p[1]}</div>${extra}
-    <div class="hint">Drag to move${r.kind === 'prop' ? ' anywhere, to the pixel (its solid footprint follows the tile under its base)' : ''} · arrows move a tile${r.kind === 'prop' ? ' · Shift+arrows nudge a pixel · Ctrl+C copy' : ''} · Delete removes</div><button id="del">Remove</button></div>`;
+    ${padHtml(r.kind === 'prop' ? '1 pixel' : '')}<div class="hint">Drag to move${r.kind === 'prop' ? ' anywhere, to the pixel (its solid footprint follows the tile under its base)' : ''} · arrows move a tile${r.kind === 'prop' ? ' · Shift+arrows nudge a pixel · Ctrl+C copy' : ''} · Delete removes</div><button id="del">Remove</button></div>`;
 }
 function mapPanel() {
   const outs = planetSecs().filter(s => s.grid);
@@ -418,6 +445,10 @@ function wire() {
   on('#pline', 'input', e => { S.pline = e.target.value; if (S.stamp) S.stamp.line = S.pline; });
   on('#msearch', 'input', e => { S.msearch = e.target.value; const pos = e.target.selectionStart; panel(); const i = $('#msearch'); i.focus(); i.setSelectionRange(pos, pos); });
   on('#del', 'click', delSel);
+  document.querySelectorAll('[data-nudge]').forEach(b => b.onclick = () => { const [dx, dy, f] = b.dataset.nudge.split(',').map(Number); nudge(dx, dy, !!f); });
+  document.querySelectorAll('[data-scene]').forEach(b => b.onclick = () => { if (S.view !== 'outdoor') { S.view = 'outdoor'; views(); } S.sel = { kind: 'piece', sid: b.dataset.scene }; centerOn(b.dataset.scene); panel(); });
+  on('#pdone', 'click', () => { S.sel = null; panel(); draw(); }); on('#pfind', 'click', () => S.sel && centerOn(S.sel.sid));
+  { const cur = document.querySelector('.pal.on'); if (cur) showPreview(cur); }
   on('#stopstamp', 'click', () => { S.stamp = null; panel(); draw(); });
   on('#ename', 'input', e => { const a = ADDED[S.sel.sid][S.sel.i]; a.name = e.target.value; touch(S.sel.sid); });
   on('#eline', 'input', e => { const a = ADDED[S.sel.sid][S.sel.i]; a.t = e.target.value.split('\n').filter(Boolean); touch(S.sel.sid); });
@@ -605,6 +636,7 @@ function download(b) { const a = document.createElement('a'); a.href = URL.creat
 // ---------- chrome ----------
 let TT = null;
 function toast(t, ms = 3000) { const el = $('#toast'); el.textContent = t; el.classList.add('on'); clearTimeout(TT); TT = setTimeout(() => el.classList.remove('on'), ms); }
+function centerOn(id) { const s = sec(id); if (!s) return; const [ox, oy] = origin(s), [W, H] = s.tiles; S.ox = cv.clientWidth / 2 - (ox + W * 8) * S.zoom; S.oy = cv.clientHeight / 2 - (oy + H * 8) * S.zoom; draw(); }
 function fit() { const ss = viewSecs(); if (!ss.length) return; let x0 = 1e9, y0 = 1e9, x1 = -1e9, y1 = -1e9;
   for (const s of ss) { const [ox, oy] = origin(s); x0 = Math.min(x0, ox); y0 = Math.min(y0, oy); x1 = Math.max(x1, ox + s.tiles[0] * 16); y1 = Math.max(y1, oy + s.tiles[1] * 16); }
   S.zoom = Math.max(0.25, Math.min(6, Math.min(cv.clientWidth / (x1 - x0 + 40), cv.clientHeight / (y1 - y0 + 40)))); S.ox = 20 - x0 * S.zoom; S.oy = 20 - y0 * S.zoom; draw(); }
@@ -617,16 +649,25 @@ async function boot() {
   $('#planet').innerHTML = dirs.map(d => `<option value="${d}">${ED.planets[d]}</option>`).join('');
   $('#planet').onchange = e => { S.planet = e.target.value; S.view = 'outdoor'; S.sel = null; if (ED.props[S.planet]) S.sheet = S.planet; views(); panel(); fit(); };
   $('#view').onchange = e => { S.view = e.target.value; S.sel = null; fit(); };
-  document.querySelectorAll('[data-mode]').forEach(b => b.onclick = () => { S.mode = b.dataset.mode; S.stamp = null; document.querySelectorAll('[data-mode]').forEach(x => x.classList.toggle('on', x === b)); if ((S.mode === 'arrange' || S.mode === 'routes') && S.view !== 'outdoor') toWorldView(); panel(); draw(); });
+  document.querySelectorAll('[data-mode]').forEach(b => b.onclick = () => { b.scrollIntoView({ block: 'nearest', inline: 'center' }); S.mode = b.dataset.mode; S.stamp = null; document.querySelectorAll('[data-mode]').forEach(x => x.classList.toggle('on', x === b)); if ((S.mode === 'arrange' || S.mode === 'routes') && S.view !== 'outdoor') toWorldView(); panel(); draw(); });
   $('#walls').onchange = e => { S.walls = e.target.checked; draw(); }; $('#showdoors').onchange = draw;
   $('#zin').onclick = () => { S.zoom = Math.min(8, S.zoom * 1.25); draw(); }; $('#zout').onclick = () => { S.zoom = Math.max(0.25, S.zoom / 1.25); draw(); }; $('#zfit').onclick = fit;
   $('#undo').onclick = undo; $('#save').onclick = save;
   addEventListener('beforeunload', e => { if (DIRTY.size) { e.preventDefault(); e.returnValue = ''; } });
   try { const c = +localStorage.getItem('ed_cell'); if (c) { S.cell = c; document.documentElement.style.setProperty('--cell', c + 'px'); } const w = +localStorage.getItem('ed_panel'); if (w) document.documentElement.style.setProperty('--pw', w + 'px'); } catch (x) {}
   const sz = $('#sizer'); let drag = null;
-  sz.addEventListener('pointerdown', e => { drag = { x: e.clientX, w: $('#panel').getBoundingClientRect().width }; sz.setPointerCapture(e.pointerId); });
-  sz.addEventListener('pointermove', e => { if (!drag) return; const w = Math.max(320, Math.min(innerWidth * 0.75, drag.w + drag.x - e.clientX)); document.documentElement.style.setProperty('--pw', w + 'px'); resize(); });
-  sz.addEventListener('pointerup', () => { if (drag) { try { localStorage.setItem('ed_panel', Math.round($('#panel').getBoundingClientRect().width)); } catch (x) {} } drag = null; });
-  addEventListener('resize', resize); views(); panel(); resize(); fit();
+  const vertical = () => getComputedStyle(sz).cursor === 'row-resize';   // phone layout: the grip resizes the bottom panel
+  try { const ph = +localStorage.getItem('ed_ph'); if (ph) document.documentElement.style.setProperty('--ph', ph + 'px'); } catch (x) {}
+  sz.addEventListener('pointerdown', e => { const pr = $('#panel').getBoundingClientRect(); drag = { x: e.clientX, y: e.clientY, w: pr.width, h: pr.height, moved: false }; sz.setPointerCapture(e.pointerId); });
+  sz.addEventListener('pointermove', e => { if (!drag) return;
+    if (vertical()) { if (Math.abs(e.clientY - drag.y) > 4) drag.moved = true; const h = Math.max(90, Math.min(innerHeight * 0.8, drag.h + drag.y - e.clientY)); document.documentElement.style.setProperty('--ph', h + 'px'); }
+    else { const w = Math.max(320, Math.min(innerWidth * 0.75, drag.w + drag.x - e.clientX)); document.documentElement.style.setProperty('--pw', w + 'px'); }
+    resize(); });
+  sz.addEventListener('pointerup', () => { if (!drag) return;
+    if (vertical()) { if (!drag.moved) { const steps = [0.22, 0.44, 0.68].map(f => Math.round(innerHeight * f)), nx = steps.find(v => v > drag.h + 10) || steps[0]; document.documentElement.style.setProperty('--ph', nx + 'px'); resize(); }   // a tap steps small / half / tall
+      try { localStorage.setItem('ed_ph', Math.round($('#panel').getBoundingClientRect().height)); } catch (x) {} }
+    else { try { localStorage.setItem('ed_panel', Math.round($('#panel').getBoundingClientRect().width)); } catch (x) {} }
+    drag = null; });
+  addEventListener('resize', resize); new ResizeObserver(resize).observe($('#mapwrap')); views(); panel(); resize(); fit();
 }
 boot().catch(e => { document.body.insertAdjacentHTML('beforeend', `<p style="color:#f66;padding:16px">Could not load the editor data: ${e.message}</p>`); });
