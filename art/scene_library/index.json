@@ -429,6 +429,28 @@
 "file": "art/scene_library/02_ferrox/01_salvage_shop.png"
 },
 {
+"id": "02_ferrox/02_engine_garage",
+"dir": "02_ferrox",
+"name": "Engine Garage",
+"kind": "interior",
+"tiles": [
+16,
+16
+],
+"file": "art/scene_library/02_ferrox/02_engine_garage.png"
+},
+{
+"id": "02_ferrox/03_crane_operator_s_bunk",
+"dir": "02_ferrox",
+"name": "Crane Operator's Bunk",
+"kind": "interior",
+"tiles": [
+16,
+16
+],
+"file": "art/scene_library/02_ferrox/03_crane_operator_s_bunk.png"
+},
+{
 "id": "08_glacia/01_frostfall_slope",
 "dir": "08_glacia",
 "name": "Frostfall Slope",
@@ -493,6 +515,17 @@
 16
 ],
 "file": "art/scene_library/08_glacia/06_tundra_flats.png"
+},
+{
+"id": "08_glacia/01_research_lab",
+"dir": "08_glacia",
+"name": "Research Lab",
+"kind": "interior",
+"tiles": [
+16,
+16
+],
+"file": "art/scene_library/08_glacia/01_research_lab.png"
 },
 {
 "id": "06_glyphos/01_glyph_steps",
@@ -913,6 +946,28 @@
 "file": "art/scene_library/07_pyros/01_miners_canteen.png"
 },
 {
+"id": "07_pyros/02_smelter_room",
+"dir": "07_pyros",
+"name": "Smelter Room",
+"kind": "interior",
+"tiles": [
+16,
+16
+],
+"file": "art/scene_library/07_pyros/02_smelter_room.png"
+},
+{
+"id": "07_pyros/03_old_basalt_s_quarters",
+"dir": "07_pyros",
+"name": "Old Basalt's Quarters",
+"kind": "interior",
+"tiles": [
+16,
+16
+],
+"file": "art/scene_library/07_pyros/03_old_basalt_s_quarters.png"
+},
+{
 "id": "03_sporeholm/01_capstep_rise",
 "dir": "03_sporeholm",
 "name": "Capstep Rise",
@@ -977,6 +1032,28 @@
 16
 ],
 "file": "art/scene_library/03_sporeholm/06_glowcap_meadow.png"
+},
+{
+"id": "03_sporeholm/01_herbalist_hut",
+"dir": "03_sporeholm",
+"name": "Herbalist Hut",
+"kind": "interior",
+"tiles": [
+16,
+16
+],
+"file": "art/scene_library/03_sporeholm/01_herbalist_hut.png"
+},
+{
+"id": "03_sporeholm/02_spore_lab",
+"dir": "03_sporeholm",
+"name": "Spore Lab",
+"kind": "interior",
+"tiles": [
+16,
+16
+],
+"file": "art/scene_library/03_sporeholm/02_spore_lab.png"
 },
 {
 "id": "12_starfall/01_craterstep_slope",
@@ -1054,6 +1131,39 @@
 16
 ],
 "file": "art/scene_library/12_starfall/06_pod_fields.png"
+},
+{
+"id": "12_starfall/01_seedpod_greenhouse",
+"dir": "12_starfall",
+"name": "Seedpod Greenhouse",
+"kind": "interior",
+"tiles": [
+16,
+16
+],
+"file": "art/scene_library/12_starfall/01_seedpod_greenhouse.png"
+},
+{
+"id": "12_starfall/02_observation_post",
+"dir": "12_starfall",
+"name": "Observation Post",
+"kind": "interior",
+"tiles": [
+16,
+16
+],
+"file": "art/scene_library/12_starfall/02_observation_post.png"
+},
+{
+"id": "12_starfall/03_thorne_s_office",
+"dir": "12_starfall",
+"name": "Thorne's Office",
+"kind": "interior",
+"tiles": [
+16,
+16
+],
+"file": "art/scene_library/12_starfall/03_thorne_s_office.png"
 },
 {
 "id": "04_thalassa/01_dune_stairway",
@@ -1219,6 +1329,17 @@
 16
 ],
 "file": "art/scene_library/11_umbra/02_shadow_inn_room.png"
+},
+{
+"id": "11_umbra/03_kade_s_study",
+"dir": "11_umbra",
+"name": "Kade's Study",
+"kind": "interior",
+"tiles": [
+16,
+16
+],
+"file": "art/scene_library/11_umbra/03_kade_s_study.png"
 },
 {
 "id": "14_ystra/01_shard_slope",
