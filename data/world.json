@@ -14604,6 +14604,19 @@
      ],
      "face": "right",
      "kind": "stairs"
+    },
+    {
+     "tile": [
+      7,
+      15
+     ],
+     "to": "821",
+     "at": [
+      8,
+      7
+     ],
+     "face": "right",
+     "kind": "stairs"
     }
    ],
    "objects": [
