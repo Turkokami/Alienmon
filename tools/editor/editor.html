@@ -60,6 +60,7 @@ main{height:calc(100% - 96px)}
  #panel button,#panel select,#panel input{min-height:36px}
  #toast{bottom:80px}
 }
+.grid.wide{grid-template-columns:repeat(auto-fill,minmax(calc(var(--cell,clamp(100px,6.5vw,200px)) * 1.5),1fr))}.grid.wide .pal{height:var(--cell,clamp(100px,6.5vw,200px))}
 </style></head><body>
 <header><h1>Alienmon Map Editor</h1>
 <select id="planet" title="World"></select><select id="view" title="Which map"></select>
@@ -70,6 +71,7 @@ main{height:calc(100% - 96px)}
 <button data-mode="people"><i>&#129485;</i><span>People</span></button>
 <button data-mode="mons"><i>&#128126;</i><span>Alienmon</span></button>
 <button data-mode="arrange" title="Move whole map scenes: drag them to stitch side by side or top to bottom"><i>&#10021;</i><span>Move scenes</span></button>
+<button data-mode="scenes" title="Ready-made scenes: drop one onto the world map or add it as a room"><i>&#128444;</i><span>Scenes</span></button>
 <button data-mode="routes"><i>&#128739;</i><span>Routes</span></button>
 <button data-mode="walls"><i>&#129521;</i><span>Walls</span></button>
 <button data-mode="doors"><i>&#128682;</i><span>Doors</span></button>

@@ -1,0 +1,1289 @@
+[
+{
+"id": "13_apex/01_summit_stairs",
+"dir": "13_apex",
+"name": "Summit Stairs",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/13_apex/01_summit_stairs.png"
+},
+{
+"id": "13_apex/02_stargazer_overlook",
+"dir": "13_apex",
+"name": "Stargazer Overlook",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/13_apex/02_stargazer_overlook.png"
+},
+{
+"id": "13_apex/03_meltwater_tarn",
+"dir": "13_apex",
+"name": "Meltwater Tarn",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/13_apex/03_meltwater_tarn.png"
+},
+{
+"id": "13_apex/04_instrument_hollows_1",
+"dir": "13_apex",
+"name": "Instrument Hollows (1)",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/13_apex/04_instrument_hollows_1.png"
+},
+{
+"id": "13_apex/04_instrument_hollows_2",
+"dir": "13_apex",
+"name": "Instrument Hollows (2)",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/13_apex/04_instrument_hollows_2.png"
+},
+{
+"id": "13_apex/04_instrument_hollows",
+"dir": "13_apex",
+"name": "Instrument Hollows",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/13_apex/04_instrument_hollows.png"
+},
+{
+"id": "13_apex/05_glacier_bend",
+"dir": "13_apex",
+"name": "Glacier Bend",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/13_apex/05_glacier_bend.png"
+},
+{
+"id": "13_apex/06_observatory_terrace_1",
+"dir": "13_apex",
+"name": "Observatory Terrace (1)",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/13_apex/06_observatory_terrace_1.png"
+},
+{
+"id": "13_apex/06_observatory_terrace_2",
+"dir": "13_apex",
+"name": "Observatory Terrace (2)",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/13_apex/06_observatory_terrace_2.png"
+},
+{
+"id": "13_apex/06_observatory_terrace",
+"dir": "13_apex",
+"name": "Observatory Terrace",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/13_apex/06_observatory_terrace.png"
+},
+{
+"id": "01_dustara/01_mesa_pass",
+"dir": "01_dustara",
+"name": "Mesa Pass",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/01_dustara/01_mesa_pass.png"
+},
+{
+"id": "01_dustara/02_dry_wash_crossing_test",
+"dir": "01_dustara",
+"name": "Dry Wash Crossing (test)",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/01_dustara/02_dry_wash_crossing_test.png"
+},
+{
+"id": "01_dustara/02_sunset_overlook_organic_a",
+"dir": "01_dustara",
+"name": "Sunset Overlook (organic A)",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/01_dustara/02_sunset_overlook_organic_a.png"
+},
+{
+"id": "01_dustara/02_sunset_overlook_organic_b",
+"dir": "01_dustara",
+"name": "Sunset Overlook (organic B)",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/01_dustara/02_sunset_overlook_organic_b.png"
+},
+{
+"id": "01_dustara/02_sunset_overlook_organic_undefined",
+"dir": "01_dustara",
+"name": "Sunset Overlook (organic undefined)",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/01_dustara/02_sunset_overlook_organic_undefined.png"
+},
+{
+"id": "01_dustara/03_sunstep_slope_organic",
+"dir": "01_dustara",
+"name": "Sunstep Slope (organic)",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/01_dustara/03_sunstep_slope_organic.png"
+},
+{
+"id": "01_dustara/03_sunstep_slope",
+"dir": "01_dustara",
+"name": "Sunstep Slope",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/01_dustara/03_sunstep_slope.png"
+},
+{
+"id": "01_dustara/04_sunset_overlook_organic_option_1",
+"dir": "01_dustara",
+"name": "Sunset Overlook (organic) option 1",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/01_dustara/04_sunset_overlook_organic_option_1.png"
+},
+{
+"id": "01_dustara/04_sunset_overlook_organic_option_2",
+"dir": "01_dustara",
+"name": "Sunset Overlook (organic) option 2",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/01_dustara/04_sunset_overlook_organic_option_2.png"
+},
+{
+"id": "01_dustara/04_sunset_overlook",
+"dir": "01_dustara",
+"name": "Sunset Overlook",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/01_dustara/04_sunset_overlook.png"
+},
+{
+"id": "01_dustara/05_oasis_shore_organic",
+"dir": "01_dustara",
+"name": "Oasis Shore (organic)",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/01_dustara/05_oasis_shore_organic.png"
+},
+{
+"id": "01_dustara/05_oasis_shore",
+"dir": "01_dustara",
+"name": "Oasis Shore",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/01_dustara/05_oasis_shore.png"
+},
+{
+"id": "01_dustara/06_hoodoo_hollows_organic",
+"dir": "01_dustara",
+"name": "Hoodoo Hollows (organic)",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/01_dustara/06_hoodoo_hollows_organic.png"
+},
+{
+"id": "01_dustara/06_hoodoo_hollows",
+"dir": "01_dustara",
+"name": "Hoodoo Hollows",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/01_dustara/06_hoodoo_hollows.png"
+},
+{
+"id": "01_dustara/07_red_river_bend_organic",
+"dir": "01_dustara",
+"name": "Red River Bend (organic)",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/01_dustara/07_red_river_bend_organic.png"
+},
+{
+"id": "01_dustara/07_red_river_bend",
+"dir": "01_dustara",
+"name": "Red River Bend",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/01_dustara/07_red_river_bend.png"
+},
+{
+"id": "01_dustara/08_mirage_flats_organic",
+"dir": "01_dustara",
+"name": "Mirage Flats (organic)",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/01_dustara/08_mirage_flats_organic.png"
+},
+{
+"id": "01_dustara/08_mirage_flats",
+"dir": "01_dustara",
+"name": "Mirage Flats",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/01_dustara/08_mirage_flats.png"
+},
+{
+"id": "01_dustara/01_cactus_tea_house",
+"dir": "01_dustara",
+"name": "Cactus Tea House",
+"kind": "interior",
+"tiles": [
+16,
+16
+],
+"file": "art/scene_library/01_dustara/01_cactus_tea_house.png"
+},
+{
+"id": "01_dustara/02_rock_collector_s_den",
+"dir": "01_dustara",
+"name": "Rock Collector's Den",
+"kind": "interior",
+"tiles": [
+16,
+16
+],
+"file": "art/scene_library/01_dustara/02_rock_collector_s_den.png"
+},
+{
+"id": "01_dustara/03_rune_workshop",
+"dir": "01_dustara",
+"name": "Rune Workshop",
+"kind": "interior",
+"tiles": [
+16,
+16
+],
+"file": "art/scene_library/01_dustara/03_rune_workshop.png"
+},
+{
+"id": "02_ferrox/01_scrap_slope",
+"dir": "02_ferrox",
+"name": "Scrap Slope",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/02_ferrox/01_scrap_slope.png"
+},
+{
+"id": "02_ferrox/02_crane_overlook",
+"dir": "02_ferrox",
+"name": "Crane Overlook",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/02_ferrox/02_crane_overlook.png"
+},
+{
+"id": "02_ferrox/03_coolant_pond",
+"dir": "02_ferrox",
+"name": "Coolant Pond",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/02_ferrox/03_coolant_pond.png"
+},
+{
+"id": "02_ferrox/04_railcar_maze",
+"dir": "02_ferrox",
+"name": "Railcar Maze",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/02_ferrox/04_railcar_maze.png"
+},
+{
+"id": "02_ferrox/05_runoff_channel_1",
+"dir": "02_ferrox",
+"name": "Runoff Channel (1)",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/02_ferrox/05_runoff_channel_1.png"
+},
+{
+"id": "02_ferrox/05_runoff_channel",
+"dir": "02_ferrox",
+"name": "Runoff Channel",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/02_ferrox/05_runoff_channel.png"
+},
+{
+"id": "02_ferrox/06_salvage_flats",
+"dir": "02_ferrox",
+"name": "Salvage Flats",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/02_ferrox/06_salvage_flats.png"
+},
+{
+"id": "02_ferrox/01_salvage_shop",
+"dir": "02_ferrox",
+"name": "Salvage Shop",
+"kind": "interior",
+"tiles": [
+16,
+16
+],
+"file": "art/scene_library/02_ferrox/01_salvage_shop.png"
+},
+{
+"id": "08_glacia/01_frostfall_slope",
+"dir": "08_glacia",
+"name": "Frostfall Slope",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/08_glacia/01_frostfall_slope.png"
+},
+{
+"id": "08_glacia/02_aurora_overlook",
+"dir": "08_glacia",
+"name": "Aurora Overlook",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/08_glacia/02_aurora_overlook.png"
+},
+{
+"id": "08_glacia/03_floe_shore",
+"dir": "08_glacia",
+"name": "Floe Shore",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/08_glacia/03_floe_shore.png"
+},
+{
+"id": "08_glacia/04_crevasse_hollows",
+"dir": "08_glacia",
+"name": "Crevasse Hollows",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/08_glacia/04_crevasse_hollows.png"
+},
+{
+"id": "08_glacia/05_meltwater_bend",
+"dir": "08_glacia",
+"name": "Meltwater Bend",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/08_glacia/05_meltwater_bend.png"
+},
+{
+"id": "08_glacia/06_tundra_flats",
+"dir": "08_glacia",
+"name": "Tundra Flats",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/08_glacia/06_tundra_flats.png"
+},
+{
+"id": "06_glyphos/01_glyph_steps",
+"dir": "06_glyphos",
+"name": "Glyph Steps",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/06_glyphos/01_glyph_steps.png"
+},
+{
+"id": "06_glyphos/02_mural_overlook",
+"dir": "06_glyphos",
+"name": "Mural Overlook",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/06_glyphos/02_mural_overlook.png"
+},
+{
+"id": "06_glyphos/03_tidepool_ruins",
+"dir": "06_glyphos",
+"name": "Tidepool Ruins",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/06_glyphos/03_tidepool_ruins.png"
+},
+{
+"id": "06_glyphos/04_pillar_hollows",
+"dir": "06_glyphos",
+"name": "Pillar Hollows",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/06_glyphos/04_pillar_hollows.png"
+},
+{
+"id": "06_glyphos/05_sunken_channel",
+"dir": "06_glyphos",
+"name": "Sunken Channel",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/06_glyphos/05_sunken_channel.png"
+},
+{
+"id": "06_glyphos/06_forgotten_forum",
+"dir": "06_glyphos",
+"name": "Forgotten Forum",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/06_glyphos/06_forgotten_forum.png"
+},
+{
+"id": "06_glyphos/01_archivist_s_study",
+"dir": "06_glyphos",
+"name": "Archivist's Study",
+"kind": "interior",
+"tiles": [
+16,
+16
+],
+"file": "art/scene_library/06_glyphos/01_archivist_s_study.png"
+},
+{
+"id": "06_glyphos/02_dig_camp_tent",
+"dir": "06_glyphos",
+"name": "Dig Camp Tent",
+"kind": "interior",
+"tiles": [
+16,
+16
+],
+"file": "art/scene_library/06_glyphos/02_dig_camp_tent.png"
+},
+{
+"id": "06_glyphos/03_shrine_chamber",
+"dir": "06_glyphos",
+"name": "Shrine Chamber",
+"kind": "interior",
+"tiles": [
+16,
+16
+],
+"file": "art/scene_library/06_glyphos/03_shrine_chamber.png"
+},
+{
+"id": "10_halo/01_windstep_rise",
+"dir": "10_halo",
+"name": "Windstep Rise",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/10_halo/01_windstep_rise.png"
+},
+{
+"id": "10_halo/02_sky_temple_overlook",
+"dir": "10_halo",
+"name": "Sky Temple Overlook",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/10_halo/02_sky_temple_overlook.png"
+},
+{
+"id": "10_halo/03_cloudbreak_edge",
+"dir": "10_halo",
+"name": "Cloudbreak Edge",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/10_halo/03_cloudbreak_edge.png"
+},
+{
+"id": "10_halo/04_shrine_hollows",
+"dir": "10_halo",
+"name": "Shrine Hollows",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/10_halo/04_shrine_hollows.png"
+},
+{
+"id": "10_halo/05_cloud_river_bend",
+"dir": "10_halo",
+"name": "Cloud River Bend",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/10_halo/05_cloud_river_bend.png"
+},
+{
+"id": "10_halo/06_petal_meadow",
+"dir": "10_halo",
+"name": "Petal Meadow",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/10_halo/06_petal_meadow.png"
+},
+{
+"id": "10_halo/02_oracle_library",
+"dir": "10_halo",
+"name": "Oracle Library",
+"kind": "interior",
+"tiles": [
+16,
+16
+],
+"file": "art/scene_library/10_halo/02_oracle_library.png"
+},
+{
+"id": "10_halo/03_cloud_garden_room_option_1",
+"dir": "10_halo",
+"name": "Cloud Garden Room option 1",
+"kind": "interior",
+"tiles": [
+16,
+16
+],
+"file": "art/scene_library/10_halo/03_cloud_garden_room_option_1.png"
+},
+{
+"id": "10_halo/03_cloud_garden_room_option_2",
+"dir": "10_halo",
+"name": "Cloud Garden Room option 2",
+"kind": "interior",
+"tiles": [
+16,
+16
+],
+"file": "art/scene_library/10_halo/03_cloud_garden_room_option_2.png"
+},
+{
+"id": "09_helix/01_docking_ramp",
+"dir": "09_helix",
+"name": "Docking Ramp",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/09_helix/01_docking_ramp.png"
+},
+{
+"id": "09_helix/02_viewport_overlook",
+"dir": "09_helix",
+"name": "Viewport Overlook",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/09_helix/02_viewport_overlook.png"
+},
+{
+"id": "09_helix/03_coolant_basin",
+"dir": "09_helix",
+"name": "Coolant Basin",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/09_helix/03_coolant_basin.png"
+},
+{
+"id": "09_helix/04_containment_wing",
+"dir": "09_helix",
+"name": "Containment Wing",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/09_helix/04_containment_wing.png"
+},
+{
+"id": "09_helix/05_reactor_channel",
+"dir": "09_helix",
+"name": "Reactor Channel",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/09_helix/05_reactor_channel.png"
+},
+{
+"id": "09_helix/06_hangar_deck",
+"dir": "09_helix",
+"name": "Hangar Deck",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/09_helix/06_hangar_deck.png"
+},
+{
+"id": "05_neonis/01_bassline_ramp",
+"dir": "05_neonis",
+"name": "Bassline Ramp",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/05_neonis/01_bassline_ramp.png"
+},
+{
+"id": "05_neonis/02_skyline_overlook",
+"dir": "05_neonis",
+"name": "Skyline Overlook",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/05_neonis/02_skyline_overlook.png"
+},
+{
+"id": "05_neonis/03_canal_quay",
+"dir": "05_neonis",
+"name": "Canal Quay",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/05_neonis/03_canal_quay.png"
+},
+{
+"id": "05_neonis/04_arcade_alleys",
+"dir": "05_neonis",
+"name": "Arcade Alleys",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/05_neonis/04_arcade_alleys.png"
+},
+{
+"id": "05_neonis/05_static_canal",
+"dir": "05_neonis",
+"name": "Static Canal",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/05_neonis/05_static_canal.png"
+},
+{
+"id": "05_neonis/06_broadcast_plaza",
+"dir": "05_neonis",
+"name": "Broadcast Plaza",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/05_neonis/06_broadcast_plaza.png"
+},
+{
+"id": "05_neonis/03_noodle_bar",
+"dir": "05_neonis",
+"name": "Noodle Bar",
+"kind": "interior",
+"tiles": [
+16,
+16
+],
+"file": "art/scene_library/05_neonis/03_noodle_bar.png"
+},
+{
+"id": "07_pyros/01_cinder_slope",
+"dir": "07_pyros",
+"name": "Cinder Slope",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/07_pyros/01_cinder_slope.png"
+},
+{
+"id": "07_pyros/02_furnace_ridge_overlook",
+"dir": "07_pyros",
+"name": "Furnace Ridge Overlook",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/07_pyros/02_furnace_ridge_overlook.png"
+},
+{
+"id": "07_pyros/03_lava_lake_shore",
+"dir": "07_pyros",
+"name": "Lava Lake Shore",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/07_pyros/03_lava_lake_shore.png"
+},
+{
+"id": "07_pyros/04_mine_shaft_hollows",
+"dir": "07_pyros",
+"name": "Mine Shaft Hollows",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/07_pyros/04_mine_shaft_hollows.png"
+},
+{
+"id": "07_pyros/05_magma_flow_bend",
+"dir": "07_pyros",
+"name": "Magma Flow Bend",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/07_pyros/05_magma_flow_bend.png"
+},
+{
+"id": "07_pyros/06_ashfall_flats",
+"dir": "07_pyros",
+"name": "Ashfall Flats",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/07_pyros/06_ashfall_flats.png"
+},
+{
+"id": "07_pyros/01_miners_canteen",
+"dir": "07_pyros",
+"name": "Miners' Canteen",
+"kind": "interior",
+"tiles": [
+16,
+16
+],
+"file": "art/scene_library/07_pyros/01_miners_canteen.png"
+},
+{
+"id": "03_sporeholm/01_capstep_rise",
+"dir": "03_sporeholm",
+"name": "Capstep Rise",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/03_sporeholm/01_capstep_rise.png"
+},
+{
+"id": "03_sporeholm/02_sporecap_overlook",
+"dir": "03_sporeholm",
+"name": "Sporecap Overlook",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/03_sporeholm/02_sporecap_overlook.png"
+},
+{
+"id": "03_sporeholm/03_lantern_marsh_shore",
+"dir": "03_sporeholm",
+"name": "Lantern Marsh Shore",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/03_sporeholm/03_lantern_marsh_shore.png"
+},
+{
+"id": "03_sporeholm/04_mycel_hollows",
+"dir": "03_sporeholm",
+"name": "Mycel Hollows",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/03_sporeholm/04_mycel_hollows.png"
+},
+{
+"id": "03_sporeholm/05_bogwater_bend",
+"dir": "03_sporeholm",
+"name": "Bogwater Bend",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/03_sporeholm/05_bogwater_bend.png"
+},
+{
+"id": "03_sporeholm/06_glowcap_meadow",
+"dir": "03_sporeholm",
+"name": "Glowcap Meadow",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/03_sporeholm/06_glowcap_meadow.png"
+},
+{
+"id": "12_starfall/01_craterstep_slope",
+"dir": "12_starfall",
+"name": "Craterstep Slope",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/12_starfall/01_craterstep_slope.png"
+},
+{
+"id": "12_starfall/02_nebula_overlook_1",
+"dir": "12_starfall",
+"name": "Nebula Overlook (1)",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/12_starfall/02_nebula_overlook_1.png"
+},
+{
+"id": "12_starfall/02_nebula_overlook",
+"dir": "12_starfall",
+"name": "Nebula Overlook",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/12_starfall/02_nebula_overlook.png"
+},
+{
+"id": "12_starfall/03_rift_edge",
+"dir": "12_starfall",
+"name": "Rift Edge",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/12_starfall/03_rift_edge.png"
+},
+{
+"id": "12_starfall/04_seedpod_hollows",
+"dir": "12_starfall",
+"name": "Seedpod Hollows",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/12_starfall/04_seedpod_hollows.png"
+},
+{
+"id": "12_starfall/05_starstream_bend",
+"dir": "12_starfall",
+"name": "Starstream Bend",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/12_starfall/05_starstream_bend.png"
+},
+{
+"id": "12_starfall/06_pod_fields",
+"dir": "12_starfall",
+"name": "Pod Fields",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/12_starfall/06_pod_fields.png"
+},
+{
+"id": "04_thalassa/01_dune_stairway",
+"dir": "04_thalassa",
+"name": "Dune Stairway",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/04_thalassa/01_dune_stairway.png"
+},
+{
+"id": "04_thalassa/02_lighthouse_bluff",
+"dir": "04_thalassa",
+"name": "Lighthouse Bluff",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/04_thalassa/02_lighthouse_bluff.png"
+},
+{
+"id": "04_thalassa/03_coral_cove",
+"dir": "04_thalassa",
+"name": "Coral Cove",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/04_thalassa/03_coral_cove.png"
+},
+{
+"id": "04_thalassa/04_driftwood_hollows_1",
+"dir": "04_thalassa",
+"name": "Driftwood Hollows (1)",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/04_thalassa/04_driftwood_hollows_1.png"
+},
+{
+"id": "04_thalassa/04_driftwood_hollows",
+"dir": "04_thalassa",
+"name": "Driftwood Hollows",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/04_thalassa/04_driftwood_hollows.png"
+},
+{
+"id": "04_thalassa/05_tidal_inlet",
+"dir": "04_thalassa",
+"name": "Tidal Inlet",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/04_thalassa/05_tidal_inlet.png"
+},
+{
+"id": "04_thalassa/06_shell_flats",
+"dir": "04_thalassa",
+"name": "Shell Flats",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/04_thalassa/06_shell_flats.png"
+},
+{
+"id": "11_umbra/01_lantern_steps",
+"dir": "11_umbra",
+"name": "Lantern Steps",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/11_umbra/01_lantern_steps.png"
+},
+{
+"id": "11_umbra/02_sinkhole_overlook",
+"dir": "11_umbra",
+"name": "Sinkhole Overlook",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/11_umbra/02_sinkhole_overlook.png"
+},
+{
+"id": "11_umbra/03_abyss_rim",
+"dir": "11_umbra",
+"name": "Abyss Rim",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/11_umbra/03_abyss_rim.png"
+},
+{
+"id": "11_umbra/04_shade_hollows",
+"dir": "11_umbra",
+"name": "Shade Hollows",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/11_umbra/04_shade_hollows.png"
+},
+{
+"id": "11_umbra/05_mistfall_bend",
+"dir": "11_umbra",
+"name": "Mistfall Bend",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/11_umbra/05_mistfall_bend.png"
+},
+{
+"id": "11_umbra/06_gloom_commons",
+"dir": "11_umbra",
+"name": "Gloom Commons",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/11_umbra/06_gloom_commons.png"
+},
+{
+"id": "11_umbra/01_lantern_maker_s_shop",
+"dir": "11_umbra",
+"name": "Lantern Maker's Shop",
+"kind": "interior",
+"tiles": [
+16,
+16
+],
+"file": "art/scene_library/11_umbra/01_lantern_maker_s_shop.png"
+},
+{
+"id": "11_umbra/02_shadow_inn_room",
+"dir": "11_umbra",
+"name": "Shadow Inn Room",
+"kind": "interior",
+"tiles": [
+16,
+16
+],
+"file": "art/scene_library/11_umbra/02_shadow_inn_room.png"
+},
+{
+"id": "14_ystra/01_shard_slope",
+"dir": "14_ystra",
+"name": "Shard Slope",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/14_ystra/01_shard_slope.png"
+},
+{
+"id": "14_ystra/02_red_sun_overlook",
+"dir": "14_ystra",
+"name": "Red Sun Overlook",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/14_ystra/02_red_sun_overlook.png"
+},
+{
+"id": "14_ystra/03_still_crystal_pool",
+"dir": "14_ystra",
+"name": "Still Crystal Pool",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/14_ystra/03_still_crystal_pool.png"
+},
+{
+"id": "14_ystra/04_glasswood_hollows",
+"dir": "14_ystra",
+"name": "Glasswood Hollows",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/14_ystra/04_glasswood_hollows.png"
+},
+{
+"id": "14_ystra/05_void_crack_bend",
+"dir": "14_ystra",
+"name": "Void Crack Bend",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/14_ystra/05_void_crack_bend.png"
+},
+{
+"id": "14_ystra/06_seedmother_flats",
+"dir": "14_ystra",
+"name": "Seedmother Flats",
+"kind": "outdoor",
+"tiles": [
+24,
+16
+],
+"file": "art/scene_library/14_ystra/06_seedmother_flats.png"
+}
+]

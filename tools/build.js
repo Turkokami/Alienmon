@@ -124,6 +124,7 @@ if(PROTO&&!INLINE){
    spawns:sec.spawns,npcs:(sec.npcs||[]).map(n=>({x:n.x,y:n.y,art:n.art,name:n.name||'',src:n.src||'',trainer:!!n.trainer,t:(n.t||[]).slice(0,1)})),mons:sec.mons||[]}}
  for(const d of fs.readdirSync(path.join(root,'art/props')).sort()){const cj=path.join(root,'art/props',d,'cut.json');if(!fs.existsSync(cj))continue;
   ED.props[d]=JSON.parse(fs.readFileSync(cj,'utf8')).map(m=>({n:m.n,px:m.px,url:asset('art/props/'+d+'/'+String(m.n).padStart(2,'0')+'.png')}))}
+ ED.scenes=rd('art/scene_library/index.json',[]).map(x=>({...x,url:asset(x.file)}));   // ready-made scenes the editor can drop onto a world
  for(const[k,v]of Object.entries(CHAR))if(!/_(up|down|left|right)(_w\d)?$|_big$/.test(k))ED.chars[k]=v;
  for(const[k,v]of Object.entries(OW))ED.mons[k]=v;
  fs.writeFileSync(path.join(www,'editor_data.json'),JSON.stringify(ED));

@@ -15,7 +15,7 @@ const DIRTY = new Set();
 const HIST = [];
 const edgeSnap = () => Object.fromEntries(Object.values(ED.sections).map(s => [s.id, s.edges]));
 function snap() { HIST.push(JSON.stringify({ LAYOUT, MOVES, ADDED, REMOVED, MONS, ROWS, GRID, ROUTES, DOORS, CLIPS, MAPS, EDGES: edgeSnap() })); if (HIST.length > 60) HIST.shift(); }
-function undo() { const h = HIST.pop(); if (!h) return toast('Nothing to undo'); let E; ({ LAYOUT, MOVES, ADDED, REMOVED, MONS, ROWS, GRID, ROUTES, DOORS, CLIPS, MAPS, EDGES: E } = JSON.parse(h)); for (const m of MAPS) if (m.built && ED.sections[m.id]) bake(m.id); for (const [k, v] of Object.entries(E || {})) if (ED.sections[k]) ED.sections[k].edges = v; S.sel = null; panel(); draw(); }
+function undo() { const h = HIST.pop(); if (!h) return toast('Nothing to undo'); let E; ({ LAYOUT, MOVES, ADDED, REMOVED, MONS, ROWS, GRID, ROUTES, DOORS, CLIPS, MAPS, EDGES: E } = JSON.parse(h)); for (const m of MAPS) if (m.built && ED.sections[m.id]) bake(m.id); for (const k of Object.keys(ED.sections)) if (ED.sections[k]._new && !MAPS.some(m => m.id === k)) { delete ED.sections[k]; if (S.view === k) S.view = 'outdoor'; views(); } for (const [k, v] of Object.entries(E || {})) if (ED.sections[k]) ED.sections[k].edges = v; S.sel = null; panel(); draw(); }
 function touch(sid) { DIRTY.add(sid); $('#save').classList.add('hot'); }
 
 // ---------- data helpers ----------
@@ -204,6 +204,7 @@ function cancelGesture() {   // a second finger turns whatever the first finger 
 cv.addEventListener('pointerdown', e => {
   if (e.pointerType === 'touch') { TOUCH.set(e.pointerId, { x: e.clientX, y: e.clientY }); if (TOUCH.size === 2) { cancelGesture(); pinchStart(); cv.setPointerCapture(e.pointerId); draw(); return; } if (TOUCH.size > 2) return; }
   cv.setPointerCapture(e.pointerId); const [wx, wy] = toWorld(e), t = tileAt(wx, wy);
+  if (S.stamp && S.stamp.kind === 'scene' && e.button === 0 && !e.altKey) { dropScene(wx, wy); return; }
   if (e.button === 1 || e.button === 2 || e.altKey || !t) { S.pan = [e.clientX - S.ox, e.clientY - S.oy]; return; }
   if (S.mode === 'walls') { S.wallRect = { sid: t.sid, x0: t.x, y0: t.y, x1: t.x, y1: t.y }; draw(); return; }
   if (S.mode === 'clips') {
@@ -304,6 +305,41 @@ function roomChoices() {   // rooms on this world first, then everything else
 
 // ---------- arranging map pieces ----------
 function overlap(a, b) { const [ax, ay] = gridOf(a), [bx, by] = gridOf(b); return ax < bx + b.tiles[0] && bx < ax + a.tiles[0] && ay < by + b.tiles[1] && by < ay + a.tiles[1]; }
+// ---------- ready-made scenes (art/scene_library) ----------
+const sceneById = id => (ED.scenes || []).find(x => x.id === id);
+function newId() { const used = new Set(Object.keys(ED.sections)); let n = 300; while (used.has(String(n))) n++; return String(n); }
+function dropScene(wx, wy) {   // outdoor scene: becomes a new map piece where you tap, then follows your finger until you let go
+  const lib = sceneById(S.stamp.id); if (!lib) return;
+  if (S.view !== 'outdoor') { toWorldView(); return toast('Now tap the world map where the scene should go.'); }
+  snap(); const [W, H] = lib.tiles, id = newId(), dir = S.planet, slug = lib.id.split('/')[1];
+  const R = Array.from({ length: H }, (_, y) => Array.from({ length: W }, (_, x) => (x === 0 || y === 0 || x === W - 1 || y === H - 1) ? '#' : '.').join(''));
+  const grid = [Math.round(wx / 16 - W / 2), Math.round(wy / 16 - H / 2)];
+  ED.sections[id] = { id, name: lib.name, planet: ED.planets[dir], dir, type: 'route', tiles: [W, H], grid, img: lib.url, rows: R, edges: {}, warps: [], objects: [], spawns: {}, npcs: [], mons: [], _new: true };
+  GRID[id] = grid; ROWS[id] = R; NEWIMG[id] = lib.url; touch(id);
+  MAPS.push({ id, name: lib.name, dir, planet: ED.planets[dir], type: 'route', tiles: [W, H], img: `art/sections_game/${dir}/${id}_${slug}.png`, src: lib.file });
+  S.stamp = null; S.sel = { kind: 'piece', sid: id }; S.pieceDrag = { sid: id, dx: W * 8, dy: H * 8 }; movePiece(wx, wy);
+  toast(`${lib.name} added as ${id}. Drag it into place (it snaps to the scene beside it), then use Routes to join it and Walls to paint where you can walk.`, 9000); panel(); draw();
+}
+function addSceneRoom(lib) {   // interior scene: a new room with a 2-tile doormat in the middle of the bottom wall; point a door at it with Doors
+  snap(); const [W, H] = lib.tiles, id = newId(), dir = S.planet, slug = lib.id.split('/')[1], cx = Math.floor(W / 2) - 1;
+  const R = Array.from({ length: H }, (_, y) => Array.from({ length: W }, (_, x) => (x <= 1 || y <= 3 || x >= W - 2 || y >= H - 1) ? '#' : '.'));
+  R[H - 1][cx] = R[H - 1][cx + 1] = '.';
+  ED.sections[id] = { id, name: lib.name, planet: ED.planets[dir], dir, type: 'interior', tiles: [W, H], grid: null, img: lib.url, rows: R.map(r => r.join('')), edges: {},
+    warps: [{ tile: [cx, H - 1], to: 'back', kind: 'door' }, { tile: [cx + 1, H - 1], to: 'back', kind: 'door' }], objects: [], spawns: { default: [cx, H - 2] }, npcs: [], mons: [], _new: true };
+  ROWS[id] = ED.sections[id].rows; NEWIMG[id] = lib.url; touch(id);
+  MAPS.push({ id, name: lib.name, dir, planet: ED.planets[dir], type: 'interior', tiles: [W, H], img: `art/sections_game/${dir}/${id}_${slug}.png`, src: lib.file });
+  S.stamp = null; S.view = id; views(); fit(); S.mode = 'walls'; document.querySelectorAll('[data-mode]').forEach(x => x.classList.toggle('on', x.dataset.mode === 'walls'));
+  toast(`Room ${id} ${lib.name} added. Paint its walls and furniture as walls, then use Doors to point a door at it.`, 9000); panel(); draw();
+}
+function scenesPanel() {
+  const dirs = [...new Set((ED.scenes || []).map(x => x.dir))].sort(); if (!S.sceneDir || !dirs.includes(S.sceneDir)) S.sceneDir = dirs.includes(S.planet) ? S.planet : dirs[0];
+  const list = (ED.scenes || []).filter(x => x.dir === S.sceneDir), cur = S.stamp && S.stamp.kind === 'scene' ? sceneById(S.stamp.id) : null;
+  return `<h3>Scenes</h3><p class="hint">Ready-made scenes. <b>Outdoor:</b> tap one, then tap the world map where it should go and drag it into place; it snaps to the scene beside it. Then use <b>Routes</b> to join it and <b>Walls</b> to paint where you can walk. <b>Rooms:</b> tap one, then <b>Add as a room</b>, and point a door at it with <b>Doors</b>. New scenes join ${ED.planets[S.planet]}.</p>
+    ${cur ? `<div class="sel"><b>${cur.name}</b> <span class="hint">${cur.kind === 'interior' ? 'room' : 'outdoor'}, ${cur.tiles[0]}x${cur.tiles[1]} tiles</span><div class="row">${cur.kind === 'interior' ? '<button id="sroom">Add as a room</button>' : '<span class="good">Now tap the world map where it should go</span>'}<button id="scancel">Cancel</button></div></div>` : ''}
+    <label>Scenes from <select id="sdir">${dirs.map(d => `<option value="${d}" ${d === S.sceneDir ? 'selected' : ''}>${ED.planets[d] || d}</option>`).join('')}</select></label>
+    <h4>Outdoor</h4><div class="grid wide">${list.filter(x => x.kind !== 'interior').map(x => `<button class="pal ${cur && cur.id === x.id ? 'on' : ''}" data-libscene="${x.id}" data-cap="${x.name} · outdoor · ${x.tiles[0]}x${x.tiles[1]} tiles" title="${x.name}"><img src="${x.url}" loading="lazy"></button>`).join('') || '<span class="hint">None for this world.</span>'}</div>
+    <h4>Rooms</h4><div class="grid">${list.filter(x => x.kind === 'interior').map(x => `<button class="pal ${cur && cur.id === x.id ? 'on' : ''}" data-libscene="${x.id}" data-cap="${x.name} · room · ${x.tiles[0]}x${x.tiles[1]} tiles" title="${x.name}"><img src="${x.url}" loading="lazy"></button>`).join('') || '<span class="hint">None for this world.</span>'}</div>`;
+}
 function toWorldView() {   // moving scenes and drawing routes happen with every outdoor map of the planet laid out together
   S.view = 'outdoor'; S.sel = null; views(); fit(); panel(); draw(); toast('Showing the whole planet. Drag any map piece to move it.');
 }
@@ -383,6 +419,7 @@ function panel() {
       <span style="color:#ff6070">red</span> = wall, <span style="color:#b48cff">purple</span> = ground under a prop or person.</div>
       <div class="row">${[['#', 'Wall'], ['.', 'Walkable'], [',', 'Tall grass']].map(([c, n]) => `<button class="tool ${S.brush === c ? 'on' : ''}" data-b="${c}">${n}</button>`).join('')}</div>`;
   } else if (m === 'maps') h += mapPanel();
+  else if (m === 'scenes') h += `<div id="preview"><div class="box" id="pbox"></div><div class="cap" id="pcap">Tap a scene to see it large</div></div>` + scenesPanel();
   else if (m === 'clips') h += (S.mode === 'clips' ? `<div id="preview"><div class="box" id="pbox"></div><div class="cap" id="pcap">Hover over a clip to see it large</div></div>` : '') + clipsPanel();
   else if (m === 'doors') h += `<h3>Doors</h3><p class="hint">Click a door on the map, then choose what it opens. Cyan = doors the game already has, yellow = doors you set, grey = story doors (fixed). Any number of doors can open the same room: leaving it takes the player back out the door they came in by. To add a new Alienmon centre or house, place a building from the Props sheet, then click its door here and pick that world's Recovery Bay or house room.</p>`;
   else if (m === 'arrange') h += `<h3>Move scenes</h3><p class="hint">Every outdoor map of this world is laid out together. <b>Tap a scene</b> on the map or in the list, then <b>drag it</b> or use the <b>arrows</b> to move it. Scenes snap flush to the one beside, above or below. A <span class="bad">red outline</span> means two scenes overlap. Moving only changes the layout: use <b>Routes</b> to let the player walk across. Two fingers pan and zoom.</p>
@@ -445,6 +482,9 @@ function wire() {
   on('#pline', 'input', e => { S.pline = e.target.value; if (S.stamp) S.stamp.line = S.pline; });
   on('#msearch', 'input', e => { S.msearch = e.target.value; const pos = e.target.selectionStart; panel(); const i = $('#msearch'); i.focus(); i.setSelectionRange(pos, pos); });
   on('#del', 'click', delSel);
+  document.querySelectorAll('[data-libscene]').forEach(b => b.onclick = () => { const x = sceneById(b.dataset.libscene); S.stamp = { kind: 'scene', id: x.id }; if (x.kind !== 'interior' && S.view !== 'outdoor') toWorldView(); panel(); });
+  on('#sdir', 'change', e => { S.sceneDir = e.target.value; panel(); });
+  on('#sroom', 'click', () => addSceneRoom(sceneById(S.stamp.id))); on('#scancel', 'click', () => { S.stamp = null; panel(); });
   document.querySelectorAll('[data-nudge]').forEach(b => b.onclick = () => { const [dx, dy, f] = b.dataset.nudge.split(',').map(Number); nudge(dx, dy, !!f); });
   document.querySelectorAll('[data-scene]').forEach(b => b.onclick = () => { if (S.view !== 'outdoor') { S.view = 'outdoor'; views(); } S.sel = { kind: 'piece', sid: b.dataset.scene }; centerOn(b.dataset.scene); panel(); });
   on('#pdone', 'click', () => { S.sel = null; panel(); draw(); }); on('#pfind', 'click', () => S.sel && centerOn(S.sel.sid));

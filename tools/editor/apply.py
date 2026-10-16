@@ -8,7 +8,7 @@
 Writes the editor's files (props layout, people, wild Alienmon, new map pieces and their walls), then runs the usual pipeline:
 build_world -> check_sections -> check_reach -> build.js -> check_build. Stops before pushing if any check fails.
 """
-import base64, json, os, subprocess, sys
+import base64, json, os, shutil, subprocess, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 os.chdir(ROOT)
@@ -33,6 +33,10 @@ def unpack(path):
     json.dump(b.get('clips', []), open('data/editor/clips.json', 'w', encoding='utf-8'), indent=1, ensure_ascii=False)
     for sid, c in b.get('collision', {}).items():
         json.dump(c, open(f'data/collision/{sid}.json', 'w'))
+    for m in b.get('maps', []):   # scenes dropped from the scene library: copy the library picture into place
+        if m.get('src') and os.path.exists(m['src']) and not os.path.exists(m['img']):
+            os.makedirs(os.path.dirname(m['img']), exist_ok=True)
+            shutil.copyfile(m['src'], m['img'])
     for rel, url in b.get('images', {}).items():
         if url and url.startswith('data:image/png;base64,'):
             os.makedirs(os.path.dirname(rel), exist_ok=True)
