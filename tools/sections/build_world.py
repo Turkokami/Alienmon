@@ -687,6 +687,8 @@ for key, sp in qsrc.items():
                     continue
                 if base and (x, y) not in base:   # only ground the player can actually reach
                     continue
+                if kind not in CHAR_KINDS and any(abs(x - n['x']) + abs(y - n['y']) <= 1 for n in sec.get('npcs', [])):
+                    continue   # an item to find is never drawn on (or right beside) a person
                 if pts:   # several points: spread them out, each a few tiles from the others
                     gap = min(abs(x - a) + abs(y - b) for a, b in pts)
                     if gap < 3:
@@ -738,6 +740,7 @@ for sid, sec in world.items():
                 keys.add({'left': (d, k), 'right': (W - 1 - d, k), 'top': (k, d), 'bottom': (k, H - 1 - d)}[side])
     keys = {k for k in keys if 0 <= k[0] < W and 0 <= k[1] < H and rows[k[1]][k[0]] in '.,'}
     block = blocked_set(sec) | qtaken[sid] | {(s2['x'], s2['y']) for s2 in spots.values() if s2['s'] == sid}
+    block |= {tuple(p) for s2 in spots.values() if s2['s'] == sid for p in s2.get('pts', [])}   # keep off items to find
     mlane = lanes(sec, rows)
     base = reach(rows, W, H, next(iter(keys)), block) if keys else set()
     mons = []

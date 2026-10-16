@@ -152,7 +152,7 @@ const QSPREAD=[[0,0],[34,10],[-30,14],[12,-26],[-14,30],[40,-18]];
 let qEntCache=null,qEntFrame=-1;
 function qEnts(){if(qEntFrame===frame&&qEntCache)return qEntCache;qEntFrame=frame;const E=[];if(!G||!G.quests){return qEntCache=E}
  for(const q of QUESTS){const s=qs(q.id);
-  if(q.type==='side'&&s.state==='available'&&qPrereqsDone(q)){const l=qLoc(q.id,'giver',q.location);if(l&&l.x!=null&&qSameArea(l))E.push({k:'giver',q,x:l.x,y:l.y,art:q.giver&&q.giver.art,mark:'!'})}
+  if(q.type==='side'&&s.state==='available'&&qPrereqsDone(q)){const l=qLoc(q.id,'giver',q.location);if(l&&l.x!=null&&qSameArea(l))E.push({k:'giver',q,x:l.x,y:l.y,art:q.giver&&q.giver.art,mon:q.giver&&q.giver.mon,mark:'!'})}
   if(s.state!=='active')continue;const o=qObj(q);if(!o)continue;const l=qLoc(q.id,s.step,o.location);
   if(o.type==='deliver'||o.type==='show'){const g=qLoc(q.id,'giver',q.location);if(g&&g.x!=null&&qSameArea(g))E.push({k:'turnin',q,o,x:g.x,y:g.y,art:q.giver&&q.giver.art,mark:'?'});continue}
   if(!l||l.x==null||!qSameArea(l))continue;
@@ -196,6 +196,7 @@ function qDraw(cx,cy,S,cs){for(const e of qEnts()){const x=e.x*S-cx,y=e.y*S-cy;i
   if(e.k==='prop'){const t=(frame+e.i*7)%40;ctx.fillStyle=t<20?'#fff7a8':'#5ff2ff';ctx.fillRect(Math.round(x)-1,Math.round(y-4),3,3);ctx.fillRect(Math.round(x),Math.round(y-7),1,9);ctx.fillRect(Math.round(x-4),Math.round(y-3),9,1);continue}
   if(e.k==='beacon'){if(frame%30<20){ctx.fillStyle='rgba(95,242,255,0.55)';ctx.beginPath();ctx.ellipse(x,y,6*S/0.22*0.22+3,2.5,0,0,6.283);ctx.fill()}continue}
   if(e.k==='legend'){const im=OWI[e.mon];if(okI(im))ctx.drawImage(im,((frame>>4)&1)*64,0,64,64,Math.round(x-cs*0.6),Math.round(y-cs*1.2),Math.round(cs*1.2),Math.round(cs*1.2))}
+  else if(e.mon){const im=OWI[e.mon];if(okI(im))ctx.drawImage(im,((frame>>4)&1)*64,0,64,64,Math.round(x-cs/2),Math.round(y-cs-1),cs,cs)}   // a quest giver that is an Alienmon
   else if(e.art&&!qPainted(e))dchar(e.art,Math.round(x-cs/2),Math.round(y-cs-1),cs,cs);
   if(e.mark){const my=Math.round(y-cs-17+Math.sin(frame/8)*1.5),done=e.k==='turnin'&&qReady(e),c=e.mark==='!'||done?'#ffd23f':'#d8d0e8',bx=Math.round(x-5);ctx.fillStyle='#1b1424';ctx.fillRect(bx,my,11,12);ctx.fillRect(bx+4,my+12,3,2);ctx.fillStyle=c;ctx.fillRect(bx+1,my+1,9,10);ctx.fillRect(bx+5,my+11,1,1);txt(e.mark,bx+3,my+3,'#1b1424',6)}}}
 // a talk target that is already painted into the town art (or is a world NPC) only gets the marker

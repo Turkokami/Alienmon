@@ -2104,7 +2104,7 @@
    "section": "077",
    "name": "Glyph Hollow",
    "tile": [
-    10,
+    9,
     12
    ],
    "item": "megagel",
@@ -2115,7 +2115,7 @@
    "section": "077",
    "name": "Glyph Hollow",
    "tile": [
-    15,
+    16,
     3
    ],
    "item": "harmonic",
@@ -4834,7 +4834,7 @@
    "name": "Pod Fields",
    "tile": [
     17,
-    11
+    12
    ],
    "item": "maxrevive",
    "n": 1,
