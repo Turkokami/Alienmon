@@ -22,8 +22,10 @@ function touch(sid) { DIRTY.add(sid); $('#save').classList.add('hot'); }
 const sec = id => ED.sections[id];
 const rowsOf = id => ROWS[id] || (sec(id).rows || []);
 const planetSecs = () => Object.values(ED.sections).filter(s => s.dir === S.planet);
-const viewSecs = () => S.view === 'outdoor' ? planetSecs().filter(s => s.grid) : [sec(S.view)].filter(Boolean);
-const gridOf = s => GRID[s.id] || s.grid;
+const onWorld = s => !!(GRID[s.id] || s.grid || s.vgrid);   // stitched outdoor maps, plus caves/towers shown in a row underneath
+const passage = s => !s.grid && s.type !== 'interior';      // reached through a passage, not edge to edge
+const viewSecs = () => S.view === 'outdoor' ? planetSecs().filter(onWorld) : [sec(S.view)].filter(Boolean);
+const gridOf = s => GRID[s.id] || s.grid || s.vgrid;
 const origin = s => S.view === 'outdoor' ? [gridOf(s)[0] * 16, gridOf(s)[1] * 16] : [0, 0];
 const propInfo = p => { const [d, n] = p.split('/'); const m = (ED.props[d] || []).find(m => String(m.n).padStart(2, '0') === n); return m; };
 function propBox(q) {
@@ -57,12 +59,18 @@ function draw() {
   ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.fillStyle = '#0d0a18'; ctx.fillRect(0, 0, cv.width, cv.height);
   const z = S.zoom * devicePixelRatio; ctx.setTransform(z, 0, 0, z, S.ox * devicePixelRatio, S.oy * devicePixelRatio); ctx.imageSmoothingEnabled = false;
   const items = [];
+  if (S.view === 'outdoor') { const vs = viewSecs(), here = new Set(vs.map(s => s.id)); ctx.save(); ctx.setLineDash([5, 5]); ctx.strokeStyle = 'rgba(95,242,255,0.7)'; ctx.lineWidth = 1.5 / S.zoom;
+    const drawn = new Set(); for (const s of vs) for (const w of s.warps || []) { const t = sec(w.to), pair = [s.id, w.to].sort().join('-'); if (!t || !here.has(t.id) || !(passage(s) || passage(t)) || drawn.has(pair)) continue; drawn.add(pair);
+      const [ax, ay] = origin(s), [bx, by] = origin(t); ctx.beginPath(); ctx.moveTo(ax + w.tile[0] * 16 + 8, ay + w.tile[1] * 16 + 8); ctx.lineTo(bx + t.tiles[0] * 8, by + t.tiles[1] * 8); ctx.stroke(); }
+    ctx.restore(); }
   for (const s of viewSecs()) {
     const [ox, oy] = origin(s), [W, H] = s.tiles, im = NEWIMG[s.id] ? img(NEWIMG[s.id]) : img(s.img);
     if (ok(im)) ctx.drawImage(im, ox, oy, W * 16, H * 16); else { ctx.fillStyle = '#222'; ctx.fillRect(ox, oy, W * 16, H * 16); }
     ctx.strokeStyle = 'rgba(255,255,255,0.35)'; ctx.lineWidth = 1 / S.zoom; ctx.strokeRect(ox, oy, W * 16, H * 16);
     ctx.fillStyle = 'rgba(0,0,0,0.6)'; ctx.fillRect(ox, oy, Math.min(W * 16, s.name.length * 5 + 26), 9);
     ctx.fillStyle = '#ffd23f'; ctx.font = '7px monospace'; ctx.fillText(s.id + ' ' + s.name, ox + 2, oy + 7);
+    if (S.view === 'outdoor' && passage(s)) { ctx.save(); ctx.setLineDash([6, 4]); ctx.strokeStyle = '#5ff2ff'; ctx.lineWidth = 2 / S.zoom; ctx.strokeRect(ox, oy, W * 16, H * 16); ctx.restore();
+      ctx.fillStyle = 'rgba(0,0,0,0.6)'; ctx.fillRect(ox, oy + 9, 120, 9); ctx.fillStyle = '#5ff2ff'; ctx.font = '6px monospace'; ctx.fillText(s.type + ' · reached through a passage', ox + 2, oy + 16); }
     if (S.walls || S.mode === 'walls') { const R = rowsOf(s.id), RE = reachOf(s.id);
       for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) { const c = (R[y] || '')[x], k = x + ',' + y;
         if (c === '#') ctx.fillStyle = 'rgba(255,40,60,0.38)';
@@ -215,7 +223,7 @@ cv.addEventListener('pointerdown', e => {
     S.clipRect = { sid: t.sid, x0: t.x, y0: t.y, x1: t.x, y1: t.y }; draw(); return; }
   if (S.mode === 'doors') { S.sel = { kind: 'door', sid: t.sid, x: t.x, y: t.y }; panel(); draw(); return; }
   if (S.mode === 'arrange') { if (S.view !== 'outdoor') { toWorldView(); return; } const s = sec(t.sid), [ox, oy] = origin(s); snap(); S.sel = { kind: 'piece', sid: t.sid }; S.pieceDrag = { sid: t.sid, dx: wx - ox, dy: wy - oy }; panel(); draw(); return; }
-  if (S.mode === 'routes') { if (S.view !== 'outdoor') { toWorldView(); return; } const s = sec(t.sid), [W, H] = s.tiles, side = t.x === 0 ? 'left' : t.x === W - 1 ? 'right' : t.y === 0 ? 'top' : t.y === H - 1 ? 'bottom' : null;
+  if (S.mode === 'routes') { if (S.view !== 'outdoor') { toWorldView(); return; } if (passage(sec(t.sid))) return toast('Caves, towers and dungeons are reached through passages (the dashed lines), not routes.'); const s = sec(t.sid), [W, H] = s.tiles, side = t.x === 0 ? 'left' : t.x === W - 1 ? 'right' : t.y === 0 ? 'top' : t.y === H - 1 ? 'bottom' : null;
     if (!side) return toast('Start a route on the edge of a map piece, where it meets the next one.');
     const ex = (s.edges || {})[side], k = side === 'left' || side === 'right' ? t.y : t.x; if (ex && k >= ex.range[0] && k <= ex.range[1]) { S.sel = { kind: 'route', sid: s.id, side }; panel(); draw(); return; }
     S.routeDrag = { sid: s.id, side, k0: k, k1: k }; draw(); return; }
@@ -423,7 +431,7 @@ function panel() {
   else if (m === 'clips') h += (S.mode === 'clips' ? `<div id="preview"><div class="box" id="pbox"></div><div class="cap" id="pcap">Hover over a clip to see it large</div></div>` : '') + clipsPanel();
   else if (m === 'doors') h += `<h3>Doors</h3><p class="hint">Click a door on the map, then choose what it opens. Cyan = doors the game already has, yellow = doors you set, grey = story doors (fixed). Any number of doors can open the same room: leaving it takes the player back out the door they came in by. To add a new Alienmon centre or house, place a building from the Props sheet, then click its door here and pick that world's Recovery Bay or house room.</p>`;
   else if (m === 'arrange') h += `<h3>Move scenes</h3><p class="hint">Every outdoor map of this world is laid out together. <b>Tap a scene</b> on the map or in the list, then <b>drag it</b> or use the <b>arrows</b> to move it. Scenes snap flush to the one beside, above or below. A <span class="bad">red outline</span> means two scenes overlap. Moving only changes the layout: use <b>Routes</b> to let the player walk across. Two fingers pan and zoom.</p>
-      <div class="scenes">${planetSecs().filter(s => s.grid).sort((a, b) => a.id.localeCompare(b.id)).map(s => `<button data-scene="${s.id}" class="${S.sel && S.sel.kind === 'piece' && S.sel.sid === s.id ? 'on' : ''}">${s.id} ${s.name}</button>`).join('')}</div>`;
+      <div class="scenes">${planetSecs().filter(onWorld).sort((a, b) => a.id.localeCompare(b.id)).map(s => `<button data-scene="${s.id}" class="${S.sel && S.sel.kind === 'piece' && S.sel.sid === s.id ? 'on' : ''}">${s.id} ${s.name}</button>`).join('')}</div>`;
   else if (m === 'routes') h += `<h3>Travel routes</h3><p class="hint">Blue bars are the ways across between map pieces. To add one, press on the edge of a piece where it touches the next piece and drag along that edge to set how wide the opening is (a road is usually 4 to 6 tiles). The opening is cut through the walls on both sides. Click a bar to select it; Delete removes it. Each side of a piece can have one route.</p>
     ${ROUTES.filter(r => !r.remove).map(r => `<div>${r.a} ${r.side} ${r.band[0]}-${r.band[1]} to ${r.b}</div>`).join('')}`;
   h += `<h3>Check</h3><button id="check">Check edited maps</button><div id="checkout"></div>`;
@@ -681,7 +689,7 @@ function fit() { const ss = viewSecs(); if (!ss.length) return; let x0 = 1e9, y0
   for (const s of ss) { const [ox, oy] = origin(s); x0 = Math.min(x0, ox); y0 = Math.min(y0, oy); x1 = Math.max(x1, ox + s.tiles[0] * 16); y1 = Math.max(y1, oy + s.tiles[1] * 16); }
   S.zoom = Math.max(0.25, Math.min(6, Math.min(cv.clientWidth / (x1 - x0 + 40), cv.clientHeight / (y1 - y0 + 40)))); S.ox = 20 - x0 * S.zoom; S.oy = 20 - y0 * S.zoom; draw(); }
 function views() { const ss = planetSecs().sort((a, b) => a.id.localeCompare(b.id));
-  $('#view').innerHTML = `<option value="outdoor">Whole world (outdoor maps stitched)</option>` + ss.map(s => `<option value="${s.id}" ${S.view === s.id ? 'selected' : ''}>${s.id} ${s.name}${s.grid ? '' : ' (inside)'}</option>`).join(''); $('#view').value = S.view; }
+  $('#view').innerHTML = `<option value="outdoor">Whole world (outdoor maps stitched)</option>` + ss.map(s => `<option value="${s.id}" ${S.view === s.id ? 'selected' : ''}>${s.id} ${s.name}${s.grid ? '' : s.type === 'interior' ? ' (inside)' : ' (' + s.type + ')'}</option>`).join(''); $('#view').value = S.view; }
 async function boot() {
   ED = await (await fetch('editor_data.json', { cache: 'no-store' })).json();
   LAYOUT = ED.layout || {}; MOVES = (ED.edits.npcs || {}).moves || {}; ADDED = (ED.edits.npcs || {}).added || {}; REMOVED = (ED.edits.npcs || {}).removed || {}; MONS = ED.edits.mons || {}; MAPS = ED.edits.maps || []; GRID = ED.edits.grid || {}; ROUTES = ED.edits.routes || []; DOORS = ED.edits.doors || {}; CLIPS = ED.edits.clips || [];
