@@ -1,0 +1,2009 @@
+{
+ "dir": "02_ferrox",
+ "arrival": {
+  "ferrox": {
+   "section": "029",
+   "why": "V3: the Ferrox spaceport landing pad"
+  }
+ },
+ "sections": {
+  "029": {
+   "name": "Ferrox Spaceport",
+   "type": "landmark",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": "509",
+   "edges": {
+    "left": "505"
+   },
+   "warps_to": [
+    "planet:dustara"
+   ],
+   "objects": [
+    {
+     "tile": [
+      5,
+      3
+     ],
+     "k": "stash",
+     "item": "cure"
+    }
+   ],
+   "gates": [
+    {
+     "section": "029",
+     "tiles": [
+      [
+       12,
+       8
+      ],
+      [
+       13,
+       8
+      ]
+     ],
+     "node": "dustara",
+     "planet": "dustara",
+     "label": "your ship back to Dustara",
+     "why": "V3: the spaceport is the arrival point and the way home"
+    }
+   ],
+   "quest_spots": [],
+   "story_scenes": [
+    {
+     "id": "kit_meet",
+     "when": {
+      "after": "M04",
+      "key": "stowaway"
+     }
+    },
+    {
+     "id": "kit_meet_plain",
+     "when": {
+      "after": "M04",
+      "noflag": "kit_met"
+     }
+    }
+   ],
+   "npcs": 3,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "030": {
+   "name": "Rustvale",
+   "type": "town",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "right": "505",
+    "left": "485"
+   },
+   "warps_to": [
+    "031",
+    "032",
+    "033"
+   ],
+   "objects": [
+    {
+     "tile": [
+      2,
+      4
+     ],
+     "k": "house",
+     "to": "188"
+    },
+    {
+     "tile": [
+      3,
+      4
+     ],
+     "k": "house",
+     "to": "188"
+    },
+    {
+     "tile": [
+      21,
+      12
+     ],
+     "k": "stash",
+     "item": "gel"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [
+    "S102:giver"
+   ],
+   "story_scenes": [],
+   "npcs": 7,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "031": {
+   "name": "Rustvale Recovery Bay",
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "kit": "501",
+   "edges": {},
+   "warps_to": [
+    "back"
+   ],
+   "objects": [
+    {
+     "tile": [
+      9,
+      6
+     ],
+     "k": "bay"
+    },
+    {
+     "tile": [
+      10,
+      6
+     ],
+     "k": "bay"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 2,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "032": {
+   "name": "Rustvale Shop",
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "kit": "508",
+   "edges": {},
+   "warps_to": [
+    "back"
+   ],
+   "objects": [
+    {
+     "tile": [
+      6,
+      9
+     ],
+     "k": "shop"
+    },
+    {
+     "tile": [
+      6,
+      10
+     ],
+     "k": "shop"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 2,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "033": {
+   "name": "Grub's Workshop",
+   "type": "interior",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "030"
+   ],
+   "objects": [],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 1,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "039": {
+   "name": "Relay Tower Trial Floor",
+   "type": "tower",
+   "tiles": [
+    20,
+    20
+   ],
+   "kit": "503",
+   "edges": {},
+   "warps_to": [
+    "040",
+    "502"
+   ],
+   "objects": [],
+   "gates": [],
+   "quest_spots": [
+    "S102:0"
+   ],
+   "story_scenes": [],
+   "npcs": 1,
+   "wild_table": null,
+   "apprentices": 2
+  },
+  "040": {
+   "name": "Relay Tower Keeper Room",
+   "type": "tower",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": "504",
+   "edges": {},
+   "warps_to": [
+    "039"
+   ],
+   "objects": [
+    {
+     "tile": [
+      12,
+      6
+     ],
+     "k": "keeper"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [
+    "M05:3"
+   ],
+   "story_scenes": [],
+   "npcs": 0,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "188": {
+   "name": "Ferrox Cabin",
+   "type": "interior",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "back"
+   ],
+   "objects": [],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 1,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "476": {
+   "name": "Scrapyard Dome",
+   "type": "landmark",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": "476",
+   "edges": {
+    "right": "507"
+   },
+   "warps_to": [
+    "478"
+   ],
+   "objects": [
+    {
+     "tile": [
+      5,
+      13
+     ],
+     "k": "stash",
+     "item": "cure"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 0,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "478": {
+   "name": "Scrapyard Dome Lobby",
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "kit": "478",
+   "edges": {},
+   "warps_to": [
+    "476",
+    "480"
+   ],
+   "objects": [],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 0,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "480": {
+   "name": "Scrapyard Dome Arena",
+   "type": "interior",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": "480",
+   "edges": {},
+   "warps_to": [
+    "478"
+   ],
+   "objects": [],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 0,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "481": {
+   "name": "Deepcut Mine Entrance",
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": "481",
+   "edges": {
+    "bottom": "489"
+   },
+   "warps_to": [
+    "482"
+   ],
+   "objects": [
+    {
+     "tile": [
+      19,
+      10
+     ],
+     "k": "stash",
+     "item": "dust"
+    },
+    {
+     "tile": [
+      19,
+      8
+     ],
+     "k": "stash",
+     "item": "cure"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 0,
+   "wild_table": "scrapyard",
+   "apprentices": null
+  },
+  "482": {
+   "name": "Deepcut Mine B1",
+   "type": "cave",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": "482",
+   "edges": {},
+   "warps_to": [
+    "481",
+    "483"
+   ],
+   "objects": [
+    {
+     "tile": [
+      20,
+      13
+     ],
+     "k": "stash",
+     "item": "stasis"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 0,
+   "wild_table": "rock_cave",
+   "apprentices": null
+  },
+  "483": {
+   "name": "Deepcut Mine B2",
+   "type": "cave",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": "483",
+   "edges": {},
+   "warps_to": [
+    "482",
+    "484"
+   ],
+   "objects": [
+    {
+     "tile": [
+      14,
+      8
+     ],
+     "k": "stash",
+     "item": "gel"
+    },
+    {
+     "tile": [
+      21,
+      7
+     ],
+     "k": "stash",
+     "item": "stun"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 0,
+   "wild_table": "rock_cave",
+   "apprentices": null
+  },
+  "484": {
+   "name": "Deepcut Mine Depths",
+   "type": "cave",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": "484",
+   "edges": {},
+   "warps_to": [
+    "483"
+   ],
+   "objects": [
+    {
+     "tile": [
+      4,
+      11
+     ],
+     "k": "chest",
+     "item": "maxrevive"
+    },
+    {
+     "tile": [
+      4,
+      2
+     ],
+     "k": "stash",
+     "item": "dust"
+    },
+    {
+     "tile": [
+      17,
+      3
+     ],
+     "k": "stash",
+     "item": "dust"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 0,
+   "wild_table": "rock_cave",
+   "apprentices": null
+  },
+  "485": {
+   "name": "Scrapyard Crossing",
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": "485",
+   "edges": {
+    "right": "030",
+    "top": "489",
+    "bottom": "490",
+    "left": "487"
+   },
+   "warps_to": [],
+   "objects": [
+    {
+     "tile": [
+      7,
+      9
+     ],
+     "k": "stash",
+     "item": "stasis"
+    },
+    {
+     "tile": [
+      6,
+      12
+     ],
+     "k": "stash",
+     "item": "cure"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 2,
+   "wild_table": "scrapyard",
+   "apprentices": null
+  },
+  "486": {
+   "name": "Railyard Junction",
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": "486",
+   "edges": {
+    "top": "487",
+    "bottom": "488",
+    "left": "495"
+   },
+   "warps_to": [],
+   "objects": [
+    {
+     "tile": [
+      21,
+      2
+     ],
+     "k": "stash",
+     "item": "stasis"
+    },
+    {
+     "tile": [
+      1,
+      11
+     ],
+     "k": "stash",
+     "item": "stasis"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 0,
+   "wild_table": "scrapyard",
+   "apprentices": null
+  },
+  "487": {
+   "name": "Coolant Fork",
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": "487",
+   "edges": {
+    "right": "485",
+    "top": "506",
+    "left": "502",
+    "bottom": "486"
+   },
+   "warps_to": [],
+   "objects": [
+    {
+     "tile": [
+      18,
+      14
+     ],
+     "k": "stash",
+     "item": "stun"
+    },
+    {
+     "tile": [
+      2,
+      13
+     ],
+     "k": "stash",
+     "item": "stasis"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 0,
+   "wild_table": "scrapyard",
+   "apprentices": null
+  },
+  "488": {
+   "name": "Scrap Slope",
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": "488",
+   "edges": {
+    "top": "486",
+    "bottom": "491"
+   },
+   "warps_to": [],
+   "objects": [
+    {
+     "tile": [
+      21,
+      10
+     ],
+     "k": "stash",
+     "item": "revive"
+    },
+    {
+     "tile": [
+      4,
+      9
+     ],
+     "k": "stash",
+     "item": "dust"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 0,
+   "wild_table": "scrapyard",
+   "apprentices": null
+  },
+  "489": {
+   "name": "Crane Overlook",
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": "489",
+   "edges": {
+    "bottom": "485",
+    "left": "497",
+    "top": "481"
+   },
+   "warps_to": [],
+   "objects": [
+    {
+     "tile": [
+      19,
+      12
+     ],
+     "k": "stash",
+     "item": "cure"
+    },
+    {
+     "tile": [
+      19,
+      3
+     ],
+     "k": "stash",
+     "item": "gel"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [
+    "M05:2",
+    "S21:0",
+    "S21:giver"
+   ],
+   "story_scenes": [],
+   "npcs": 2,
+   "wild_table": "scrapyard",
+   "apprentices": null
+  },
+  "490": {
+   "name": "Coolant Pond",
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": "490",
+   "edges": {
+    "top": "485",
+    "bottom": "494"
+   },
+   "warps_to": [],
+   "objects": [
+    {
+     "tile": [
+      16,
+      9
+     ],
+     "k": "stash",
+     "item": "gel"
+    },
+    {
+     "tile": [
+      15,
+      2
+     ],
+     "k": "stash",
+     "item": "gel"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 0,
+   "wild_table": "scrapyard",
+   "apprentices": null
+  },
+  "491": {
+   "name": "Railcar Maze",
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": "491",
+   "edges": {
+    "top": "488"
+   },
+   "warps_to": [],
+   "objects": [
+    {
+     "tile": [
+      18,
+      14
+     ],
+     "k": "chest",
+     "item": "harmonic"
+    },
+    {
+     "tile": [
+      21,
+      14
+     ],
+     "k": "stash",
+     "item": "dust"
+    },
+    {
+     "tile": [
+      1,
+      5
+     ],
+     "k": "stash",
+     "item": "dust"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 0,
+   "wild_table": "scrapyard",
+   "apprentices": null
+  },
+  "494": {
+   "name": "Salvage Flats",
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": "494",
+   "edges": {
+    "top": "490",
+    "bottom": "507"
+   },
+   "warps_to": [],
+   "objects": [
+    {
+     "tile": [
+      21,
+      9
+     ],
+     "k": "stash",
+     "item": "gel"
+    },
+    {
+     "tile": [
+      19,
+      2
+     ],
+     "k": "stash",
+     "item": "revive"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [
+    "S20:0"
+   ],
+   "story_scenes": [],
+   "npcs": 2,
+   "wild_table": "scrapyard",
+   "apprentices": null
+  },
+  "495": {
+   "name": "Rustvale Back Lot",
+   "type": "landmark",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": "495",
+   "edges": {
+    "right": "486"
+   },
+   "warps_to": [
+    "496"
+   ],
+   "objects": [
+    {
+     "tile": [
+      1,
+      9
+     ],
+     "k": "stash",
+     "item": "stasis"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 0,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "496": {
+   "name": "Helix Secret Lab",
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "kit": "496",
+   "edges": {},
+   "warps_to": [
+    "495"
+   ],
+   "objects": [],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 0,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "497": {
+   "name": "Scrap Hollow Grove",
+   "type": "field",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": "497",
+   "edges": {
+    "right": "489"
+   },
+   "warps_to": [],
+   "objects": [
+    {
+     "tile": [
+      15,
+      4
+     ],
+     "k": "chest",
+     "item": "fullgel"
+    },
+    {
+     "tile": [
+      7,
+      10
+     ],
+     "k": "stash",
+     "item": "gel"
+    },
+    {
+     "tile": [
+      3,
+      6
+     ],
+     "k": "stash",
+     "item": "cure"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 0,
+   "wild_table": "scrapyard",
+   "apprentices": null
+  },
+  "498": {
+   "name": "Salvage Shop",
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "kit": "498",
+   "edges": {},
+   "warps_to": [
+    "back"
+   ],
+   "objects": [],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 0,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "499": {
+   "name": "Engine Garage",
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "kit": "499",
+   "edges": {},
+   "warps_to": [
+    "back"
+   ],
+   "objects": [],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 0,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "500": {
+   "name": "Crane Operator's Bunk",
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "kit": "500",
+   "edges": {},
+   "warps_to": [
+    "back"
+   ],
+   "objects": [],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 0,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "502": {
+   "name": "Ferrox Relay Tower",
+   "type": "landmark",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": "502",
+   "edges": {
+    "right": "487"
+   },
+   "warps_to": [
+    "039"
+   ],
+   "objects": [
+    {
+     "tile": [
+      5,
+      13
+     ],
+     "k": "stash",
+     "item": "tether"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [
+    "S22:0",
+    "S22:giver"
+   ],
+   "story_scenes": [],
+   "npcs": 2,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "505": {
+   "name": "Rustvale Lane Homes",
+   "type": "town",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": "505",
+   "edges": {
+    "right": "029",
+    "left": "030"
+   },
+   "warps_to": [],
+   "objects": [
+    {
+     "tile": [
+      4,
+      6
+     ],
+     "k": "house",
+     "to": "188"
+    },
+    {
+     "tile": [
+      5,
+      6
+     ],
+     "k": "house",
+     "to": "188"
+    },
+    {
+     "tile": [
+      11,
+      5
+     ],
+     "k": "house",
+     "to": "499"
+    },
+    {
+     "tile": [
+      12,
+      5
+     ],
+     "k": "house",
+     "to": "499"
+    },
+    {
+     "tile": [
+      19,
+      6
+     ],
+     "k": "house",
+     "to": "500"
+    },
+    {
+     "tile": [
+      20,
+      6
+     ],
+     "k": "house",
+     "to": "500"
+    },
+    {
+     "tile": [
+      5,
+      13
+     ],
+     "k": "stash",
+     "item": "revive"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 0,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "506": {
+   "name": "Rustvale Quiet Court",
+   "type": "town",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": "506",
+   "edges": {
+    "bottom": "487"
+   },
+   "warps_to": [],
+   "objects": [
+    {
+     "tile": [
+      5,
+      4
+     ],
+     "k": "house",
+     "to": "498"
+    },
+    {
+     "tile": [
+      6,
+      4
+     ],
+     "k": "house",
+     "to": "498"
+    },
+    {
+     "tile": [
+      11,
+      4
+     ],
+     "k": "house",
+     "to": "188"
+    },
+    {
+     "tile": [
+      12,
+      4
+     ],
+     "k": "house",
+     "to": "188"
+    },
+    {
+     "tile": [
+      16,
+      4
+     ],
+     "k": "house",
+     "to": "188"
+    },
+    {
+     "tile": [
+      17,
+      4
+     ],
+     "k": "house",
+     "to": "188"
+    },
+    {
+     "tile": [
+      2,
+      12
+     ],
+     "k": "house",
+     "to": "188"
+    },
+    {
+     "tile": [
+      3,
+      12
+     ],
+     "k": "house",
+     "to": "188"
+    },
+    {
+     "tile": [
+      1,
+      5
+     ],
+     "k": "stash",
+     "item": "revive"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [
+    "S20:giver"
+   ],
+   "story_scenes": [],
+   "npcs": 4,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "507": {
+   "name": "Rustvale Farmstead",
+   "type": "town",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": "507",
+   "edges": {
+    "top": "494",
+    "left": "476"
+   },
+   "warps_to": [],
+   "objects": [
+    {
+     "tile": [
+      4,
+      4
+     ],
+     "k": "house",
+     "to": "188"
+    },
+    {
+     "tile": [
+      5,
+      4
+     ],
+     "k": "house",
+     "to": "188"
+    },
+    {
+     "tile": [
+      10,
+      5
+     ],
+     "k": "house",
+     "to": "188"
+    },
+    {
+     "tile": [
+      11,
+      5
+     ],
+     "k": "house",
+     "to": "188"
+    },
+    {
+     "tile": [
+      17,
+      11
+     ],
+     "k": "stash",
+     "item": "gel"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 0,
+   "wild_table": null,
+   "apprentices": null
+  }
+ },
+ "kit": {
+  "475": {
+   "cat": "Battle Arena",
+   "name": "Scrapyard Dome Exterior (1)",
+   "alt": true,
+   "type": "landmark",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "bottom": [
+     [
+      10,
+      13
+     ]
+    ]
+   }
+  },
+  "476": {
+   "cat": "Battle Arena",
+   "name": "Scrapyard Dome Exterior",
+   "alt": false,
+   "type": "landmark",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      9,
+      11
+     ]
+    ],
+    "right": [
+     [
+      9,
+      11
+     ]
+    ],
+    "bottom": [
+     [
+      10,
+      13
+     ]
+    ]
+   }
+  },
+  "477": {
+   "cat": "Battle Arena",
+   "name": "Scrapyard Dome Lobby (1)",
+   "alt": true,
+   "type": "arena",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "478": {
+   "cat": "Battle Arena",
+   "name": "Scrapyard Dome Lobby",
+   "alt": false,
+   "type": "arena",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "479": {
+   "cat": "Battle Arena",
+   "name": "Scrapyard Dome Battle Floor",
+   "alt": false,
+   "type": "arena",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      0,
+      15
+     ]
+    ],
+    "right": [
+     [
+      0,
+      15
+     ]
+    ],
+    "top": [
+     [
+      0,
+      9
+     ],
+     [
+      14,
+      23
+     ]
+    ],
+    "bottom": [
+     [
+      0,
+      9
+     ],
+     [
+      14,
+      23
+     ]
+    ]
+   }
+  },
+  "480": {
+   "cat": "Battle Arena",
+   "name": "Scrapyard Dome Battle Room",
+   "alt": false,
+   "type": "arena",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "bottom": [
+     [
+      7,
+      16
+     ]
+    ]
+   }
+  },
+  "481": {
+   "cat": "Cave",
+   "name": "Entrance",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "bottom": [
+     [
+      10,
+      14
+     ]
+    ]
+   }
+  },
+  "482": {
+   "cat": "Cave",
+   "name": "Floor 1",
+   "alt": false,
+   "type": "cave",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      0,
+      15
+     ]
+    ],
+    "right": [
+     [
+      0,
+      15
+     ]
+    ],
+    "top": [
+     [
+      0,
+      23
+     ]
+    ],
+    "bottom": [
+     [
+      0,
+      23
+     ]
+    ]
+   }
+  },
+  "483": {
+   "cat": "Cave",
+   "name": "Floor 2",
+   "alt": false,
+   "type": "cave",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {}
+  },
+  "484": {
+   "cat": "Cave",
+   "name": "Deep Chamber",
+   "alt": false,
+   "type": "cave",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {}
+  },
+  "485": {
+   "cat": "Crossroads",
+   "name": "Scrapyard Crossing",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      5,
+      8
+     ]
+    ],
+    "right": [
+     [
+      5,
+      8
+     ]
+    ],
+    "top": [
+     [
+      10,
+      13
+     ]
+    ],
+    "bottom": [
+     [
+      10,
+      14
+     ]
+    ]
+   }
+  },
+  "486": {
+   "cat": "Crossroads",
+   "name": "Railyard Junction",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      3,
+      4
+     ]
+    ],
+    "right": [
+     [
+      7,
+      8
+     ]
+    ],
+    "top": [
+     [
+      4,
+      9
+     ],
+     [
+      15,
+      20
+     ]
+    ],
+    "bottom": [
+     [
+      11,
+      19
+     ]
+    ]
+   }
+  },
+  "487": {
+   "cat": "Crossroads",
+   "name": "Coolant Fork",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      8,
+      9
+     ]
+    ],
+    "right": [
+     [
+      8,
+      9
+     ]
+    ],
+    "top": [
+     [
+      5,
+      10
+     ]
+    ],
+    "bottom": [
+     [
+      6,
+      10
+     ]
+    ]
+   }
+  },
+  "488": {
+   "cat": "Extra scenes",
+   "name": "Scrap Slope",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      3,
+      8
+     ]
+    ],
+    "bottom": [
+     [
+      13,
+      18
+     ]
+    ]
+   }
+  },
+  "489": {
+   "cat": "Extra scenes",
+   "name": "Crane Overlook",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      2,
+      9
+     ]
+    ],
+    "top": [
+     [
+      10,
+      13
+     ]
+    ],
+    "bottom": [
+     [
+      10,
+      13
+     ]
+    ]
+   }
+  },
+  "490": {
+   "cat": "Extra scenes",
+   "name": "Coolant Pond",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      4,
+      9
+     ]
+    ],
+    "bottom": [
+     [
+      4,
+      9
+     ]
+    ]
+   }
+  },
+  "491": {
+   "cat": "Extra scenes",
+   "name": "Railcar Maze",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      4,
+      7
+     ]
+    ],
+    "bottom": [
+     [
+      16,
+      21
+     ]
+    ]
+   }
+  },
+  "492": {
+   "cat": "Extra scenes",
+   "name": "Runoff Channel (1)",
+   "alt": true,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      16,
+      21
+     ]
+    ],
+    "bottom": [
+     [
+      6,
+      11
+     ],
+     [
+      18,
+      19
+     ]
+    ]
+   }
+  },
+  "493": {
+   "cat": "Extra scenes",
+   "name": "Runoff Channel",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      16,
+      21
+     ]
+    ],
+    "bottom": [
+     [
+      6,
+      11
+     ],
+     [
+      18,
+      19
+     ]
+    ]
+   }
+  },
+  "494": {
+   "cat": "Extra scenes",
+   "name": "Salvage Flats",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      2,
+      5
+     ]
+    ],
+    "top": [
+     [
+      5,
+      13
+     ]
+    ],
+    "bottom": [
+     [
+      4,
+      9
+     ]
+    ]
+   }
+  },
+  "495": {
+   "cat": "Helix Hideout",
+   "name": "Disguised Entrance",
+   "alt": false,
+   "type": "landmark",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {}
+  },
+  "496": {
+   "cat": "Helix Hideout",
+   "name": "Secret Lab",
+   "alt": false,
+   "type": "dungeon",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "497": {
+   "cat": "Hidden Area",
+   "name": "Secret Grove",
+   "alt": false,
+   "type": "field",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      9,
+      11
+     ]
+    ],
+    "right": [
+     [
+      9,
+      11
+     ]
+    ]
+   }
+  },
+  "498": {
+   "cat": "Interior rooms",
+   "name": "Salvage Shop",
+   "alt": false,
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "499": {
+   "cat": "Interior rooms",
+   "name": "Engine Garage",
+   "alt": false,
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "500": {
+   "cat": "Interior rooms",
+   "name": "Crane Operator's Bunk",
+   "alt": false,
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "501": {
+   "cat": "Recovery Bay",
+   "name": "Interior",
+   "alt": false,
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "502": {
+   "cat": "Relay Tower",
+   "name": "Exterior",
+   "alt": false,
+   "type": "landmark",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      9,
+      12
+     ]
+    ],
+    "right": [
+     [
+      9,
+      12
+     ]
+    ]
+   }
+  },
+  "503": {
+   "cat": "Relay Tower",
+   "name": "Trial Floor",
+   "alt": false,
+   "type": "tower",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "504": {
+   "cat": "Relay Tower",
+   "name": "Keeper Room",
+   "alt": false,
+   "type": "tower",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {}
+  },
+  "505": {
+   "cat": "Residential",
+   "name": "Ferrox Lane Homes",
+   "alt": false,
+   "type": "town",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      9,
+      11
+     ]
+    ],
+    "right": [
+     [
+      9,
+      11
+     ]
+    ]
+   }
+  },
+  "506": {
+   "cat": "Residential",
+   "name": "Ferrox Quiet Court",
+   "alt": false,
+   "type": "town",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      5,
+      6
+     ]
+    ],
+    "bottom": [
+     [
+      10,
+      14
+     ]
+    ]
+   }
+  },
+  "507": {
+   "cat": "Residential",
+   "name": "Ferrox Farmstead Edge",
+   "alt": false,
+   "type": "town",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      7,
+      10
+     ]
+    ],
+    "top": [
+     [
+      14,
+      18
+     ]
+    ]
+   }
+  },
+  "508": {
+   "cat": "Shop",
+   "name": "Interior",
+   "alt": false,
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "509": {
+   "cat": "Spaceport",
+   "name": "Landing Pad",
+   "alt": false,
+   "type": "landmark",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      12,
+      13
+     ]
+    ]
+   }
+  }
+ }
+}

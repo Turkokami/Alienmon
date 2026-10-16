@@ -1,0 +1,1226 @@
+{
+ "dir": "03_sporeholm",
+ "arrival": {
+  "sporeholm": {
+   "section": "041",
+   "why": "V2: the landing circle on the giant mushroom cap"
+  }
+ },
+ "sections": {
+  "041": {
+   "name": "Landing Bog",
+   "type": "landmark",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "right": "042"
+   },
+   "warps_to": [],
+   "objects": [
+    {
+     "tile": [
+      3,
+      3
+     ],
+     "k": "house",
+     "to": "184"
+    },
+    {
+     "tile": [
+      4,
+      3
+     ],
+     "k": "house",
+     "to": "184"
+    },
+    {
+     "tile": [
+      0,
+      10
+     ],
+     "k": "stash",
+     "item": "stasis"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [
+    "S32:0",
+    "S32:giver"
+   ],
+   "story_scenes": [],
+   "npcs": 2,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "042": {
+   "name": "Mirefen Village",
+   "type": "town",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "left": "041",
+    "right": "045"
+   },
+   "warps_to": [
+    "043",
+    "044"
+   ],
+   "objects": [
+    {
+     "tile": [
+      3,
+      3
+     ],
+     "k": "house",
+     "to": "190"
+    },
+    {
+     "tile": [
+      20,
+      3
+     ],
+     "k": "house",
+     "to": "190"
+    },
+    {
+     "tile": [
+      16,
+      12
+     ],
+     "k": "stash",
+     "item": "harmonic"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [
+    "M06:giver",
+    "S30:giver",
+    "S31:giver"
+   ],
+   "story_scenes": [],
+   "npcs": 8,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "043": {
+   "name": "Mirefen Recovery Bay",
+   "type": "interior",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "042"
+   ],
+   "objects": [
+    {
+     "tile": [
+      7,
+      4
+     ],
+     "k": "bay"
+    },
+    {
+     "tile": [
+      8,
+      4
+     ],
+     "k": "bay"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 2,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "044": {
+   "name": "Mirefen Shop",
+   "type": "interior",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "042"
+   ],
+   "objects": [
+    {
+     "tile": [
+      7,
+      4
+     ],
+     "k": "shop"
+    },
+    {
+     "tile": [
+      8,
+      4
+     ],
+     "k": "shop"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 2,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "045": {
+   "name": "Lantern Marsh Part A",
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "left": "042",
+    "right": "046"
+   },
+   "warps_to": [],
+   "objects": [
+    {
+     "tile": [
+      19,
+      2
+     ],
+     "k": "stash",
+     "item": "revive"
+    },
+    {
+     "tile": [
+      6,
+      2
+     ],
+     "k": "stash",
+     "item": "revive"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 2,
+   "wild_table": "swamp",
+   "apprentices": null
+  },
+  "046": {
+   "name": "Lantern Marsh Part B",
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "left": "045"
+   },
+   "warps_to": [
+    "047"
+   ],
+   "objects": [
+    {
+     "tile": [
+      11,
+      1
+     ],
+     "k": "stash",
+     "item": "gel"
+    },
+    {
+     "tile": [
+      2,
+      2
+     ],
+     "k": "stash",
+     "item": "stasis"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [
+    "S31:0",
+    "S31:1"
+   ],
+   "story_scenes": [],
+   "npcs": 2,
+   "wild_table": "swamp",
+   "apprentices": null
+  },
+  "047": {
+   "name": "Mushroom Maze 1F",
+   "type": "dungeon",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "046",
+    "048"
+   ],
+   "objects": [
+    {
+     "tile": [
+      13,
+      6
+     ],
+     "k": "stash",
+     "item": "megagel"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [
+    {
+     "id": "strand_sporeling",
+     "when": {
+      "active": "M06"
+     }
+    }
+   ],
+   "npcs": 1,
+   "wild_table": "fungal",
+   "apprentices": null
+  },
+  "048": {
+   "name": "Mushroom Maze 2F",
+   "type": "dungeon",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "047",
+    "049"
+   ],
+   "objects": [
+    {
+     "tile": [
+      14,
+      7
+     ],
+     "k": "stash",
+     "item": "gel"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 1,
+   "wild_table": "fungal",
+   "apprentices": null
+  },
+  "049": {
+   "name": "Spore Pools",
+   "type": "field",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "048",
+    "050"
+   ],
+   "objects": [
+    {
+     "tile": [
+      15,
+      3
+     ],
+     "k": "house",
+     "to": "185"
+    },
+    {
+     "tile": [
+      11,
+      14
+     ],
+     "k": "stash",
+     "item": "harmonic"
+    },
+    {
+     "tile": [
+      13,
+      14
+     ],
+     "k": "stash",
+     "item": "revive"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [
+    "M06:1"
+   ],
+   "story_scenes": [],
+   "npcs": 2,
+   "wild_table": "swamp",
+   "apprentices": null
+  },
+  "050": {
+   "name": "Sporeholm Tower 1F",
+   "type": "tower",
+   "tiles": [
+    16,
+    24
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "049",
+    "051"
+   ],
+   "objects": [],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 1,
+   "wild_table": null,
+   "apprentices": 2
+  },
+  "051": {
+   "name": "Sporeholm Tower 2F",
+   "type": "tower",
+   "tiles": [
+    16,
+    24
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "050"
+   ],
+   "objects": [
+    {
+     "tile": [
+      7,
+      4
+     ],
+     "k": "keeper"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [
+    "M06:2"
+   ],
+   "story_scenes": [],
+   "npcs": 1,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "173": {
+   "name": "Sporeholm House",
+   "type": "interior",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "back"
+   ],
+   "objects": [],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 1,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "184": {
+   "name": "Landing Dome",
+   "type": "interior",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "back"
+   ],
+   "objects": [],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 1,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "185": {
+   "name": "Mushroom House",
+   "type": "interior",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "back"
+   ],
+   "objects": [],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 1,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "190": {
+   "name": "Sporeholm Mushroom Hut",
+   "type": "interior",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "back"
+   ],
+   "objects": [],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 1,
+   "wild_table": null,
+   "apprentices": null
+  }
+ },
+ "kit": {
+  "701": {
+   "cat": "Battle Arena",
+   "name": "Mycelium Bowl Exterior (1)",
+   "alt": true,
+   "type": "landmark",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      9,
+      10
+     ]
+    ],
+    "right": [
+     [
+      9,
+      10
+     ]
+    ],
+    "bottom": [
+     [
+      10,
+      13
+     ]
+    ]
+   }
+  },
+  "702": {
+   "cat": "Battle Arena",
+   "name": "Mycelium Bowl Exterior",
+   "alt": false,
+   "type": "landmark",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      9,
+      12
+     ]
+    ],
+    "right": [
+     [
+      9,
+      12
+     ]
+    ],
+    "bottom": [
+     [
+      10,
+      13
+     ]
+    ]
+   }
+  },
+  "703": {
+   "cat": "Battle Arena",
+   "name": "Mycelium Bowl Lobby (1)",
+   "alt": true,
+   "type": "arena",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "704": {
+   "cat": "Battle Arena",
+   "name": "Mycelium Bowl Lobby",
+   "alt": false,
+   "type": "arena",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "705": {
+   "cat": "Battle Arena",
+   "name": "Mycelium Bowl Battle Floor",
+   "alt": false,
+   "type": "arena",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      11,
+      12
+     ]
+    ]
+   }
+  },
+  "706": {
+   "cat": "Battle Arena",
+   "name": "Mycelium Bowl Battle Room",
+   "alt": false,
+   "type": "arena",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {}
+  },
+  "707": {
+   "cat": "Cave",
+   "name": "Entrance",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "bottom": [
+     [
+      10,
+      14
+     ]
+    ]
+   }
+  },
+  "708": {
+   "cat": "Cave",
+   "name": "Floor 1",
+   "alt": false,
+   "type": "cave",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      0,
+      15
+     ]
+    ],
+    "right": [
+     [
+      0,
+      15
+     ]
+    ],
+    "top": [
+     [
+      0,
+      16
+     ],
+     [
+      19,
+      23
+     ]
+    ],
+    "bottom": [
+     [
+      0,
+      23
+     ]
+    ]
+   }
+  },
+  "709": {
+   "cat": "Cave",
+   "name": "Floor 2",
+   "alt": false,
+   "type": "cave",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {}
+  },
+  "710": {
+   "cat": "Cave",
+   "name": "Deep Chamber",
+   "alt": false,
+   "type": "cave",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {}
+  },
+  "711": {
+   "cat": "Crossroads",
+   "name": "Mushroom Crossroads",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      5,
+      8
+     ]
+    ],
+    "right": [
+     [
+      5,
+      8
+     ]
+    ],
+    "top": [
+     [
+      9,
+      13
+     ]
+    ],
+    "bottom": [
+     [
+      8,
+      13
+     ]
+    ]
+   }
+  },
+  "712": {
+   "cat": "Crossroads",
+   "name": "Root Junction",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      7,
+      8
+     ]
+    ],
+    "right": [
+     [
+      3,
+      7
+     ]
+    ],
+    "top": [
+     [
+      14,
+      18
+     ]
+    ],
+    "bottom": [
+     [
+      4,
+      9
+     ]
+    ]
+   }
+  },
+  "713": {
+   "cat": "Crossroads",
+   "name": "Bog Fork",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      7,
+      9
+     ]
+    ],
+    "right": [
+     [
+      7,
+      9
+     ]
+    ],
+    "top": [
+     [
+      4,
+      18
+     ]
+    ],
+    "bottom": [
+     [
+      13,
+      17
+     ]
+    ]
+   }
+  },
+  "714": {
+   "cat": "Extra scenes",
+   "name": "Capstep Rise",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      15,
+      20
+     ]
+    ],
+    "bottom": [
+     [
+      5,
+      10
+     ]
+    ]
+   }
+  },
+  "715": {
+   "cat": "Extra scenes",
+   "name": "Sporecap Overlook",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      9,
+      14
+     ]
+    ],
+    "bottom": [
+     [
+      9,
+      14
+     ]
+    ]
+   }
+  },
+  "716": {
+   "cat": "Extra scenes",
+   "name": "Lantern Marsh Shore",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      14,
+      19
+     ]
+    ],
+    "bottom": [
+     [
+      14,
+      19
+     ]
+    ]
+   }
+  },
+  "717": {
+   "cat": "Extra scenes",
+   "name": "Mycel Hollows",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      6,
+      12
+     ]
+    ],
+    "top": [
+     [
+      15,
+      19
+     ]
+    ],
+    "bottom": [
+     [
+      2,
+      7
+     ]
+    ]
+   }
+  },
+  "718": {
+   "cat": "Extra scenes",
+   "name": "Bogwater Bend",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      3,
+      6
+     ]
+    ],
+    "bottom": [
+     [
+      13,
+      17
+     ]
+    ]
+   }
+  },
+  "719": {
+   "cat": "Extra scenes",
+   "name": "Glowcap Meadow",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      6,
+      13
+     ],
+     [
+      19,
+      20
+     ]
+    ],
+    "bottom": [
+     [
+      12,
+      19
+     ]
+    ]
+   }
+  },
+  "720": {
+   "cat": "Hidden Area",
+   "name": "Secret Grove",
+   "alt": false,
+   "type": "field",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      9,
+      11
+     ]
+    ],
+    "right": [
+     [
+      9,
+      11
+     ]
+    ]
+   }
+  },
+  "721": {
+   "cat": "Interior rooms",
+   "name": "Herbalist Hut",
+   "alt": false,
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "722": {
+   "cat": "Interior rooms",
+   "name": "Spore Lab",
+   "alt": false,
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "723": {
+   "cat": "Interior rooms",
+   "name": "Marsh Cottage",
+   "alt": false,
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "724": {
+   "cat": "Recovery Bay",
+   "name": "Interior",
+   "alt": false,
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "725": {
+   "cat": "Relay Tower",
+   "name": "Exterior",
+   "alt": false,
+   "type": "landmark",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      9,
+      12
+     ]
+    ],
+    "right": [
+     [
+      9,
+      12
+     ]
+    ]
+   }
+  },
+  "726": {
+   "cat": "Relay Tower",
+   "name": "Trial Floor",
+   "alt": false,
+   "type": "tower",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "727": {
+   "cat": "Relay Tower",
+   "name": "Keeper Room",
+   "alt": false,
+   "type": "tower",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      6,
+      7
+     ],
+     [
+      15,
+      17
+     ]
+    ]
+   }
+  },
+  "728": {
+   "cat": "Residential",
+   "name": "Sporeholm Lane Homes",
+   "alt": false,
+   "type": "town",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      9,
+      11
+     ]
+    ],
+    "right": [
+     [
+      9,
+      11
+     ]
+    ]
+   }
+  },
+  "729": {
+   "cat": "Residential",
+   "name": "Sporeholm Quiet Court",
+   "alt": false,
+   "type": "town",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "right": [
+     [
+      6,
+      7
+     ]
+    ],
+    "bottom": [
+     [
+      10,
+      12
+     ]
+    ]
+   }
+  },
+  "730": {
+   "cat": "Residential",
+   "name": "Sporeholm Farmstead Edge",
+   "alt": false,
+   "type": "town",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "right": [
+     [
+      7,
+      9
+     ]
+    ],
+    "top": [
+     [
+      5,
+      8
+     ]
+    ]
+   }
+  },
+  "731": {
+   "cat": "Shop",
+   "name": "Interior",
+   "alt": false,
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "732": {
+   "cat": "Spaceport",
+   "name": "Landing Pad",
+   "alt": false,
+   "type": "landmark",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {}
+  },
+  "733": {
+   "cat": "Water Route",
+   "name": "Open Water Route",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      0,
+      10
+     ],
+     [
+      12,
+      23
+     ]
+    ]
+   }
+  },
+  "734": {
+   "cat": "Water Route",
+   "name": "Island Chain",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      0,
+      6
+     ],
+     [
+      12,
+      17
+     ]
+    ]
+   }
+  }
+ }
+}

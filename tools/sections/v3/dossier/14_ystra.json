@@ -1,0 +1,1038 @@
+{
+ "dir": "14_ystra",
+ "arrival": {
+  "ystra": {
+   "section": "153",
+   "why": "V2: the ring of carved stones"
+  }
+ },
+ "sections": {
+  "153": {
+   "name": "Arrival Fragment",
+   "type": "landmark",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "right": "154"
+   },
+   "warps_to": [],
+   "objects": [
+    {
+     "tile": [
+      12,
+      3
+     ],
+     "k": "house",
+     "to": "181"
+    },
+    {
+     "tile": [
+      13,
+      3
+     ],
+     "k": "house",
+     "to": "181"
+    },
+    {
+     "tile": [
+      3,
+      5
+     ],
+     "k": "bay"
+    },
+    {
+     "tile": [
+      1,
+      5
+     ],
+     "k": "stash",
+     "item": "ether"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 4,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "154": {
+   "name": "Floating Continents Part A",
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "left": "153",
+    "right": "155"
+   },
+   "warps_to": [],
+   "objects": [
+    {
+     "tile": [
+      5,
+      3
+     ],
+     "k": "stash",
+     "item": "singularity"
+    },
+    {
+     "tile": [
+      17,
+      3
+     ],
+     "k": "stash",
+     "item": "maxrevive"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 4,
+   "wild_table": "floating_land",
+   "apprentices": null
+  },
+  "155": {
+   "name": "Floating Continents Part B",
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "left": "154",
+    "right": "156"
+   },
+   "warps_to": [],
+   "objects": [
+    {
+     "tile": [
+      9,
+      12
+     ],
+     "k": "stash",
+     "item": "singularity"
+    },
+    {
+     "tile": [
+      4,
+      12
+     ],
+     "k": "stash",
+     "item": "ether"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 2,
+   "wild_table": "floating_land",
+   "apprentices": null
+  },
+  "156": {
+   "name": "Drowned Seas",
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "left": "155",
+    "right": "157"
+   },
+   "warps_to": [],
+   "objects": [
+    {
+     "tile": [
+      10,
+      3
+     ],
+     "k": "stash",
+     "item": "dust"
+    },
+    {
+     "tile": [
+      19,
+      3
+     ],
+     "k": "stash",
+     "item": "maxrevive"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 4,
+   "wild_table": "drowned_sea",
+   "apprentices": null
+  },
+  "157": {
+   "name": "Sun Forge",
+   "type": "landmark",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "left": "156"
+   },
+   "warps_to": [
+    "158"
+   ],
+   "objects": [
+    {
+     "tile": [
+      10,
+      3
+     ],
+     "k": "stash",
+     "item": "fullgel"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 3,
+   "wild_table": "sun_forge",
+   "apprentices": null
+  },
+  "158": {
+   "name": "Crystal Ruins 1F",
+   "type": "dungeon",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "157",
+    "159"
+   ],
+   "objects": [
+    {
+     "tile": [
+      2,
+      5
+     ],
+     "k": "stash",
+     "item": "maxrevive"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [
+    "S110:0",
+    "S110:giver"
+   ],
+   "story_scenes": [
+    {
+     "id": "saga_reveal",
+     "when": {
+      "after": "P01"
+     }
+    }
+   ],
+   "npcs": 4,
+   "wild_table": "crystal_ruins",
+   "apprentices": null
+  },
+  "159": {
+   "name": "Crystal Ruins 2F",
+   "type": "dungeon",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "158",
+    "160"
+   ],
+   "objects": [
+    {
+     "tile": [
+      14,
+      7
+     ],
+     "k": "stash",
+     "item": "singularity"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [
+    {
+     "id": "tamsin_map_room",
+     "when": {
+      "after": "P01"
+     }
+    }
+   ],
+   "npcs": 2,
+   "wild_table": "crystal_ruins",
+   "apprentices": null
+  },
+  "160": {
+   "name": "Blighted Forest Part A",
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "right": "161"
+   },
+   "warps_to": [
+    "159"
+   ],
+   "objects": [
+    {
+     "tile": [
+      13,
+      2
+     ],
+     "k": "stash",
+     "item": "ether"
+    },
+    {
+     "tile": [
+      16,
+      12
+     ],
+     "k": "stash",
+     "item": "maxrevive"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [
+    "S111:0",
+    "S111:giver"
+   ],
+   "story_scenes": [
+    {
+     "id": "blight_begging",
+     "when": {
+      "after": "P01"
+     }
+    }
+   ],
+   "npcs": 4,
+   "wild_table": "blighted_forest",
+   "apprentices": null
+  },
+  "161": {
+   "name": "Blighted Forest Part B",
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "left": "160",
+    "right": "162"
+   },
+   "warps_to": [],
+   "objects": [
+    {
+     "tile": [
+      10,
+      1
+     ],
+     "k": "stash",
+     "item": "maxrevive"
+    },
+    {
+     "tile": [
+      10,
+      14
+     ],
+     "k": "stash",
+     "item": "fullgel"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 2,
+   "wild_table": "blighted_forest",
+   "apprentices": null
+  },
+  "162": {
+   "name": "Edge of the Void",
+   "type": "landmark",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "left": "161",
+    "right": "163"
+   },
+   "warps_to": [],
+   "objects": [
+    {
+     "tile": [
+      10,
+      13
+     ],
+     "k": "stash",
+     "item": "maxrevive"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [
+    "P02:0",
+    "P02:giver"
+   ],
+   "story_scenes": [],
+   "npcs": 3,
+   "wild_table": "void_edge",
+   "apprentices": null
+  },
+  "163": {
+   "name": "Seedmother's Grove",
+   "type": "landmark",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "left": "162"
+   },
+   "warps_to": [],
+   "objects": [
+    {
+     "tile": [
+      9,
+      12
+     ],
+     "k": "stash",
+     "item": "maxrevive"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [
+    "P03:0",
+    "P03:1",
+    "P03:giver"
+   ],
+   "story_scenes": [],
+   "npcs": 3,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "181": {
+   "name": "Arrival Research Dome",
+   "type": "interior",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "back"
+   ],
+   "objects": [],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 1,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "189": {
+   "name": "Ystra Crystal Lodge",
+   "type": "interior",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "back"
+   ],
+   "objects": [],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 1,
+   "wild_table": null,
+   "apprentices": null
+  }
+ },
+ "kit": {
+  "842": {
+   "cat": "Battle Arena",
+   "name": "Ancient Crystal Ring Exterior",
+   "alt": false,
+   "type": "landmark",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      9,
+      11
+     ]
+    ],
+    "right": [
+     [
+      9,
+      10
+     ]
+    ],
+    "bottom": [
+     [
+      10,
+      13
+     ]
+    ]
+   }
+  },
+  "843": {
+   "cat": "Battle Arena",
+   "name": "Ancient Crystal Ring Lobby",
+   "alt": false,
+   "type": "arena",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "844": {
+   "cat": "Battle Arena",
+   "name": "Ancient Crystal Ring Battle Room",
+   "alt": false,
+   "type": "arena",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {}
+  },
+  "845": {
+   "cat": "Cave",
+   "name": "Entrance",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "bottom": [
+     [
+      10,
+      14
+     ]
+    ]
+   }
+  },
+  "846": {
+   "cat": "Cave",
+   "name": "Floor 1",
+   "alt": false,
+   "type": "cave",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      0,
+      15
+     ]
+    ],
+    "right": [
+     [
+      0,
+      15
+     ]
+    ],
+    "top": [
+     [
+      0,
+      23
+     ]
+    ],
+    "bottom": [
+     [
+      0,
+      23
+     ]
+    ]
+   }
+  },
+  "847": {
+   "cat": "Cave",
+   "name": "Floor 2",
+   "alt": false,
+   "type": "cave",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {}
+  },
+  "848": {
+   "cat": "Cave",
+   "name": "Deep Chamber",
+   "alt": false,
+   "type": "cave",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {}
+  },
+  "849": {
+   "cat": "Crossroads",
+   "name": "Crystal Crossroads",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      5,
+      7
+     ]
+    ],
+    "right": [
+     [
+      5,
+      7
+     ]
+    ],
+    "top": [
+     [
+      10,
+      14
+     ]
+    ],
+    "bottom": [
+     [
+      10,
+      15
+     ]
+    ]
+   }
+  },
+  "850": {
+   "cat": "Crossroads",
+   "name": "Glasswood Junction",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      4,
+      5
+     ]
+    ],
+    "top": [
+     [
+      5,
+      8
+     ]
+    ],
+    "bottom": [
+     [
+      14,
+      18
+     ]
+    ]
+   }
+  },
+  "851": {
+   "cat": "Crossroads",
+   "name": "Void Fork",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      7,
+      9
+     ]
+    ],
+    "right": [
+     [
+      7,
+      9
+     ]
+    ],
+    "top": [
+     [
+      5,
+      10
+     ]
+    ],
+    "bottom": [
+     [
+      6,
+      10
+     ]
+    ]
+   }
+  },
+  "852": {
+   "cat": "Extra scenes",
+   "name": "Shard Slope",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      14,
+      15
+     ]
+    ],
+    "top": [
+     [
+      3,
+      8
+     ]
+    ],
+    "bottom": [
+     [
+      0,
+      4
+     ],
+     [
+      13,
+      18
+     ]
+    ]
+   }
+  },
+  "853": {
+   "cat": "Extra scenes",
+   "name": "Red Sun Overlook",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      5,
+      14
+     ]
+    ],
+    "bottom": [
+     [
+      9,
+      14
+     ]
+    ]
+   }
+  },
+  "854": {
+   "cat": "Extra scenes",
+   "name": "Still Crystal Pool",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      4,
+      8
+     ]
+    ],
+    "bottom": [
+     [
+      4,
+      9
+     ]
+    ]
+   }
+  },
+  "855": {
+   "cat": "Extra scenes",
+   "name": "Glasswood Hollows",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      0,
+      3
+     ],
+     [
+      8,
+      15
+     ]
+    ],
+    "right": [
+     [
+      10,
+      15
+     ]
+    ],
+    "top": [
+     [
+      0,
+      1
+     ],
+     [
+      4,
+      7
+     ]
+    ],
+    "bottom": [
+     [
+      0,
+      7
+     ],
+     [
+      17,
+      20
+     ]
+    ]
+   }
+  },
+  "856": {
+   "cat": "Extra scenes",
+   "name": "Void Crack Bend",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      16,
+      21
+     ]
+    ],
+    "bottom": [
+     [
+      6,
+      11
+     ]
+    ]
+   }
+  },
+  "857": {
+   "cat": "Extra scenes",
+   "name": "Seedmother Flats",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      2,
+      15
+     ]
+    ],
+    "bottom": [
+     [
+      2,
+      11
+     ]
+    ]
+   }
+  },
+  "858": {
+   "cat": "Hidden Area",
+   "name": "Secret Grove",
+   "alt": false,
+   "type": "field",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      9,
+      12
+     ]
+    ]
+   }
+  },
+  "859": {
+   "cat": "Interior rooms",
+   "name": "Seed Vault",
+   "alt": false,
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "860": {
+   "cat": "Interior rooms",
+   "name": "Ancient Dwelling",
+   "alt": false,
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "861": {
+   "cat": "Interior rooms",
+   "name": "Memory Hall",
+   "alt": false,
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "862": {
+   "cat": "Recovery Bay",
+   "name": "Interior",
+   "alt": false,
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "863": {
+   "cat": "Residential",
+   "name": "Ystra Lane Homes",
+   "alt": false,
+   "type": "town",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      9,
+      11
+     ]
+    ],
+    "right": [
+     [
+      9,
+      11
+     ]
+    ]
+   }
+  },
+  "864": {
+   "cat": "Residential",
+   "name": "Ystra Quiet Court",
+   "alt": false,
+   "type": "town",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "bottom": [
+     [
+      11,
+      13
+     ]
+    ]
+   }
+  },
+  "865": {
+   "cat": "Residential",
+   "name": "Ystra Farmstead Edge",
+   "alt": false,
+   "type": "town",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      7,
+      9
+     ]
+    ],
+    "top": [
+     [
+      14,
+      18
+     ]
+    ]
+   }
+  },
+  "866": {
+   "cat": "Shop",
+   "name": "Interior",
+   "alt": false,
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "867": {
+   "cat": "Spaceport",
+   "name": "Landing Pad",
+   "alt": false,
+   "type": "landmark",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {}
+  }
+ }
+}

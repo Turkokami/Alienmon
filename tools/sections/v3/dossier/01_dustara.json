@@ -1,0 +1,2205 @@
+{
+ "dir": "01_dustara",
+ "arrival": {
+  "dustara": {
+   "section": "004",
+   "why": "V2: the landing pad at the left end of the main road"
+  }
+ },
+ "sections": {
+  "001": {
+   "name": "Your House 1F",
+   "type": "interior",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "002",
+    "004"
+   ],
+   "objects": [],
+   "gates": [],
+   "quest_spots": [
+    "M02:3"
+   ],
+   "story_scenes": [],
+   "npcs": 1,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "002": {
+   "name": "Your House 2F",
+   "type": "interior",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "001"
+   ],
+   "objects": [],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 0,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "003": {
+   "name": "Vashti's Observatory Lab",
+   "type": "interior",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "004"
+   ],
+   "objects": [
+    {
+     "tile": [
+      4,
+      6
+     ],
+     "k": "lab"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [
+    "M01:0",
+    "M01:giver"
+   ],
+   "story_scenes": [],
+   "npcs": 2,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "004": {
+   "name": "Dustmere Plaza",
+   "type": "town",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "right": "007"
+   },
+   "warps_to": [
+    "001",
+    "003",
+    "005",
+    "006",
+    "166"
+   ],
+   "objects": [
+    {
+     "tile": [
+      5,
+      12
+     ],
+     "k": "stash",
+     "item": "dust"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [
+    "M02:0",
+    "M02:giver",
+    "M18:0",
+    "M18:giver",
+    "M19b:0",
+    "M19b:2",
+    "M19b:giver",
+    "S02:giver"
+   ],
+   "story_scenes": [],
+   "npcs": 9,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "005": {
+   "name": "Dustmere Recovery Bay",
+   "type": "interior",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "back"
+   ],
+   "objects": [
+    {
+     "tile": [
+      7,
+      4
+     ],
+     "k": "bay"
+    },
+    {
+     "tile": [
+      8,
+      4
+     ],
+     "k": "bay"
+    },
+    {
+     "tile": [
+      12,
+      4
+     ],
+     "k": "ladder",
+     "to": "165"
+    },
+    {
+     "tile": [
+      13,
+      4
+     ],
+     "k": "ladder",
+     "to": "165"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 2,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "006": {
+   "name": "Dustmere Shop",
+   "type": "interior",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "back"
+   ],
+   "objects": [
+    {
+     "tile": [
+      7,
+      5
+     ],
+     "k": "shop"
+    },
+    {
+     "tile": [
+      8,
+      5
+     ],
+     "k": "shop"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 2,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "007": {
+   "name": "Dustmere Bridge",
+   "type": "landmark",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "left": "004",
+    "right": "008"
+   },
+   "warps_to": [],
+   "objects": [
+    {
+     "tile": [
+      11,
+      9
+     ],
+     "k": "stash",
+     "item": "stasis"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [
+    "M02:1",
+    "M02:2"
+   ],
+   "story_scenes": [],
+   "npcs": 2,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "008": {
+   "name": "Trading Post",
+   "type": "town",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "left": "007",
+    "right": "009"
+   },
+   "warps_to": [],
+   "objects": [
+    {
+     "tile": [
+      3,
+      4
+     ],
+     "k": "house",
+     "to": "187"
+    },
+    {
+     "tile": [
+      18,
+      4
+     ],
+     "k": "house",
+     "to": "187"
+    },
+    {
+     "tile": [
+      8,
+      4
+     ],
+     "k": "house",
+     "to": "005"
+    },
+    {
+     "tile": [
+      9,
+      4
+     ],
+     "k": "house",
+     "to": "005"
+    },
+    {
+     "tile": [
+      13,
+      4
+     ],
+     "k": "house",
+     "to": "006"
+    },
+    {
+     "tile": [
+      14,
+      4
+     ],
+     "k": "house",
+     "to": "006"
+    },
+    {
+     "tile": [
+      7,
+      10
+     ],
+     "k": "stash",
+     "item": "cure"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [
+    "M03:0",
+    "M03:giver",
+    "S01:giver",
+    "S02:0",
+    "S03:0",
+    "S03:giver"
+   ],
+   "story_scenes": [],
+   "npcs": 7,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "009": {
+   "name": "Rimwalk Trail Part A",
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "left": "008",
+    "right": "010"
+   },
+   "warps_to": [],
+   "objects": [
+    {
+     "tile": [
+      6,
+      12
+     ],
+     "k": "stash",
+     "item": "gel"
+    },
+    {
+     "tile": [
+      12,
+      1
+     ],
+     "k": "stash",
+     "item": "revive"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 2,
+   "wild_table": "canyon",
+   "apprentices": null
+  },
+  "010": {
+   "name": "Rimwalk Trail Part B",
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "left": "009",
+    "right": "011"
+   },
+   "warps_to": [],
+   "objects": [
+    {
+     "tile": [
+      11,
+      14
+     ],
+     "k": "stash",
+     "item": "gel"
+    },
+    {
+     "tile": [
+      18,
+      12
+     ],
+     "k": "stash",
+     "item": "dust"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 2,
+   "wild_table": "canyon",
+   "apprentices": null
+  },
+  "011": {
+   "name": "Cactus Gardens",
+   "type": "field",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "left": "010"
+   },
+   "warps_to": [
+    "012"
+   ],
+   "objects": [
+    {
+     "tile": [
+      11,
+      14
+     ],
+     "k": "stash",
+     "item": "tether"
+    },
+    {
+     "tile": [
+      19,
+      12
+     ],
+     "k": "stash",
+     "item": "cure"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [
+    "S01:0",
+    "S04:giver"
+   ],
+   "story_scenes": [],
+   "npcs": 2,
+   "wild_table": "canyon",
+   "apprentices": null
+  },
+  "012": {
+   "name": "Sunset Tunnel B1",
+   "type": "cave",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "011",
+    "013"
+   ],
+   "objects": [
+    {
+     "tile": [
+      14,
+      7
+     ],
+     "k": "stash",
+     "item": "stun"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 1,
+   "wild_table": "rock_cave",
+   "apprentices": null
+  },
+  "013": {
+   "name": "Sunset Tunnel B2",
+   "type": "cave",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "012",
+    "014"
+   ],
+   "objects": [
+    {
+     "tile": [
+      14,
+      7
+     ],
+     "k": "stash",
+     "item": "stasis"
+    },
+    {
+     "tile": [
+      14,
+      5
+     ],
+     "k": "stash",
+     "item": "gel"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 1,
+   "wild_table": "rock_cave",
+   "apprentices": null
+  },
+  "014": {
+   "name": "Molten Frontier: Tunnel Mouth",
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "right": "015"
+   },
+   "warps_to": [
+    "013"
+   ],
+   "objects": [
+    {
+     "tile": [
+      9,
+      12
+     ],
+     "k": "stash",
+     "item": "tether"
+    },
+    {
+     "tile": [
+      12,
+      1
+     ],
+     "k": "stash",
+     "item": "gel"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [
+    "M04:0",
+    "M04:2",
+    "M04:giver",
+    "S13:giver"
+   ],
+   "story_scenes": [],
+   "npcs": 4,
+   "wild_table": "volcanic",
+   "apprentices": null
+  },
+  "015": {
+   "name": "Molten Frontier: Ash Trail Part A",
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "left": "014",
+    "right": "016"
+   },
+   "warps_to": [],
+   "objects": [
+    {
+     "tile": [
+      11,
+      14
+     ],
+     "k": "stash",
+     "item": "gel"
+    },
+    {
+     "tile": [
+      14,
+      15
+     ],
+     "k": "stash",
+     "item": "cure"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 2,
+   "wild_table": "ash_trail",
+   "apprentices": null
+  },
+  "016": {
+   "name": "Molten Frontier: Ash Trail Part B",
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "left": "015",
+    "right": "017"
+   },
+   "warps_to": [],
+   "objects": [
+    {
+     "tile": [
+      9,
+      12
+     ],
+     "k": "stash",
+     "item": "stasis"
+    },
+    {
+     "tile": [
+      17,
+      12
+     ],
+     "k": "stash",
+     "item": "revive"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 3,
+   "wild_table": "ash_trail",
+   "apprentices": null
+  },
+  "017": {
+   "name": "Molten Frontier: Palm Isle",
+   "type": "field",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "left": "016",
+    "right": "018"
+   },
+   "warps_to": [],
+   "objects": [
+    {
+     "tile": [
+      14,
+      3
+     ],
+     "k": "bay"
+    },
+    {
+     "tile": [
+      12,
+      13
+     ],
+     "k": "stash",
+     "item": "stasis"
+    },
+    {
+     "tile": [
+      6,
+      2
+     ],
+     "k": "stash",
+     "item": "cure"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [
+    "M04:1",
+    "S12:giver"
+   ],
+   "story_scenes": [],
+   "npcs": 5,
+   "wild_table": "tropical_shore",
+   "apprentices": null
+  },
+  "018": {
+   "name": "Molten Frontier: Port Ember",
+   "type": "town",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "left": "017",
+    "right": "019"
+   },
+   "warps_to": [
+    "planet:thalassa"
+   ],
+   "objects": [
+    {
+     "tile": [
+      2,
+      4
+     ],
+     "k": "house",
+     "to": "187"
+    },
+    {
+     "tile": [
+      8,
+      4
+     ],
+     "k": "house",
+     "to": "005"
+    },
+    {
+     "tile": [
+      9,
+      4
+     ],
+     "k": "house",
+     "to": "005"
+    },
+    {
+     "tile": [
+      7,
+      10
+     ],
+     "k": "stash",
+     "item": "dust"
+    }
+   ],
+   "gates": [
+    {
+     "section": "018",
+     "tiles": [
+      [
+       20,
+       3
+      ],
+      [
+       21,
+       3
+      ]
+     ],
+     "at_dy": 1,
+     "node": "thalassa",
+     "planet": "thalassa",
+     "label": "the harbor boat to Thalassa",
+     "why": "end of Port Ember's pier (old Port Ember node -> Thalassa)"
+    }
+   ],
+   "quest_spots": [
+    "M07:0",
+    "M07:giver"
+   ],
+   "story_scenes": [],
+   "npcs": 7,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "019": {
+   "name": "Molten Frontier: Long Dock",
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "left": "018",
+    "right": "020"
+   },
+   "warps_to": [
+    "planet:glyphos"
+   ],
+   "objects": [
+    {
+     "tile": [
+      4,
+      5
+     ],
+     "k": "stash",
+     "item": "stasis"
+    }
+   ],
+   "gates": [
+    {
+     "section": "019",
+     "tiles": [
+      [
+       13,
+       2
+      ],
+      [
+       14,
+       2
+      ]
+     ],
+     "at_dy": 1,
+     "node": "glyphos",
+     "planet": "glyphos",
+     "label": "the Deep Sea Ferry",
+     "why": "the ferry's gangway on the Long Dock (old Deep Sea Ferry node -> Glyphos)"
+    }
+   ],
+   "quest_spots": [
+    "M08:0",
+    "M08:giver",
+    "M10:0",
+    "S14:0",
+    "S14:giver"
+   ],
+   "story_scenes": [],
+   "npcs": 2,
+   "wild_table": "tropical_shore",
+   "apprentices": null
+  },
+  "020": {
+   "name": "Molten Frontier: Ridge Path Part A",
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "left": "019",
+    "right": "021"
+   },
+   "warps_to": [],
+   "objects": [
+    {
+     "tile": [
+      4,
+      2
+     ],
+     "k": "stash",
+     "item": "harmonic"
+    },
+    {
+     "tile": [
+      16,
+      12
+     ],
+     "k": "stash",
+     "item": "stasis"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 2,
+   "wild_table": "volcanic",
+   "apprentices": null
+  },
+  "021": {
+   "name": "Molten Frontier: Ridge Path Part B",
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "left": "020",
+    "right": "022"
+   },
+   "warps_to": [],
+   "objects": [
+    {
+     "tile": [
+      19,
+      12
+     ],
+     "k": "stash",
+     "item": "revive"
+    },
+    {
+     "tile": [
+      6,
+      2
+     ],
+     "k": "stash",
+     "item": "dust"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 2,
+   "wild_table": "volcanic",
+   "apprentices": null
+  },
+  "022": {
+   "name": "Molten Frontier: Forge Gate",
+   "type": "landmark",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "left": "021",
+    "right": "023"
+   },
+   "warps_to": [
+    "planet:ferrox"
+   ],
+   "objects": [
+    {
+     "tile": [
+      4,
+      12
+     ],
+     "k": "stash",
+     "item": "harmonic"
+    }
+   ],
+   "gates": [
+    {
+     "section": "022",
+     "tiles": [
+      [
+       11,
+       3
+      ],
+      [
+       12,
+       3
+      ]
+     ],
+     "node": "ferrox",
+     "planet": "ferrox",
+     "why": "Forge Gate portal at the top of the stairs (old Forge Gate node -> Ferrox)",
+     "at_dy": 1
+    }
+   ],
+   "quest_spots": [
+    "M05:0",
+    "M05:1",
+    "M05:giver",
+    "S10:0"
+   ],
+   "story_scenes": [],
+   "npcs": 3,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "023": {
+   "name": "Molten Frontier: Fortress Gate",
+   "type": "landmark",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "left": "022",
+    "right": "024"
+   },
+   "warps_to": [
+    "planet:helix"
+   ],
+   "objects": [
+    {
+     "tile": [
+      7,
+      10
+     ],
+     "k": "stash",
+     "item": "ether"
+    }
+   ],
+   "gates": [
+    {
+     "section": "023",
+     "tiles": [
+      [
+       11,
+       4
+      ],
+      [
+       12,
+       4
+      ]
+     ],
+     "node": "helix",
+     "planet": "helix",
+     "sub": "fortress",
+     "label": "the Helix Forge Fortress",
+     "why": "the fortress main doors (old Helix Forge Fortress node -> the painted fortress interior)",
+     "at_dy": 1
+    }
+   ],
+   "quest_spots": [
+    "M13:0",
+    "M13:giver",
+    "S16:giver"
+   ],
+   "story_scenes": [],
+   "npcs": 5,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "024": {
+   "name": "Molten Frontier: Lava Bridges Part A",
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "left": "023",
+    "right": "025"
+   },
+   "warps_to": [],
+   "objects": [],
+   "gates": [],
+   "quest_spots": [
+    "S11:0",
+    "S16:0"
+   ],
+   "story_scenes": [],
+   "npcs": 1,
+   "wild_table": "volcanic",
+   "apprentices": null
+  },
+  "025": {
+   "name": "Molten Frontier: Lava Bridges Part B",
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "left": "024",
+    "right": "026"
+   },
+   "warps_to": [],
+   "objects": [],
+   "gates": [],
+   "quest_spots": [
+    "S11:giver"
+   ],
+   "story_scenes": [],
+   "npcs": 2,
+   "wild_table": "volcanic",
+   "apprentices": null
+  },
+  "026": {
+   "name": "Molten Frontier: Shuttle Pad",
+   "type": "landmark",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "left": "025",
+    "right": "027"
+   },
+   "warps_to": [
+    "planet:helix"
+   ],
+   "objects": [],
+   "gates": [
+    {
+     "section": "026",
+     "tiles": [
+      [
+       11,
+       2
+      ],
+      [
+       12,
+       2
+      ]
+     ],
+     "options": [
+      {
+       "node": "space",
+       "planet": "helix",
+       "label": "Shuttle to Helix Station"
+      },
+      {
+       "node": "starfall",
+       "planet": "starfall",
+       "label": "Crater shuttle to Starfall"
+      },
+      {
+       "node": "arena",
+       "planet": "arena",
+       "section": "164",
+       "label": "Shuttle to the Star Arena"
+      }
+     ],
+     "why": "the landing pad (old Fortress Shuttle Pad and Helix Shuttle Pad nodes)",
+     "at_dy": 1
+    }
+   ],
+   "quest_spots": [
+    "M06:0",
+    "M18:1",
+    "S10:giver"
+   ],
+   "story_scenes": [],
+   "npcs": 3,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "027": {
+   "name": "Molten Frontier: Shadow Tunnel Mouth",
+   "type": "landmark",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "left": "026",
+    "right": "028"
+   },
+   "warps_to": [
+    "planet:umbra"
+   ],
+   "objects": [
+    {
+     "tile": [
+      12,
+      10
+     ],
+     "k": "stash",
+     "item": "harmonic"
+    }
+   ],
+   "gates": [
+    {
+     "section": "027",
+     "tiles": [
+      [
+       11,
+       3
+      ],
+      [
+       12,
+       3
+      ],
+      [
+       13,
+       3
+      ]
+     ],
+     "node": "umbra",
+     "planet": "umbra",
+     "label": "the Shadow Tunnel",
+     "why": "the tunnel mouth (old Shadow Tunnel node -> Umbra)",
+     "at_dy": 1
+    }
+   ],
+   "quest_spots": [
+    "M17:0",
+    "M17:giver",
+    "S13:0"
+   ],
+   "story_scenes": [],
+   "npcs": 1,
+   "wild_table": "rock_cave",
+   "apprentices": null
+  },
+  "028": {
+   "name": "Molten Frontier: Magma Mines Gate",
+   "type": "landmark",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "left": "027"
+   },
+   "warps_to": [
+    "planet:pyros"
+   ],
+   "objects": [
+    {
+     "tile": [
+      10,
+      3
+     ],
+     "k": "stash",
+     "item": "fullgel"
+    }
+   ],
+   "gates": [
+    {
+     "section": "028",
+     "tiles": [
+      [
+       19,
+       7
+      ],
+      [
+       19,
+       8
+      ]
+     ],
+     "node": "pyros",
+     "planet": "pyros",
+     "label": "the Magma Mines",
+     "why": "the mines gate (old Magma Mines node -> Pyros)",
+     "at_dy": 1
+    }
+   ],
+   "quest_spots": [
+    "M11:0",
+    "M11:giver",
+    "S15:0",
+    "S15:1",
+    "S15:giver"
+   ],
+   "story_scenes": [],
+   "npcs": 2,
+   "wild_table": "mine_hot",
+   "apprentices": null
+  },
+  "165": {
+   "name": "Recovery Bay Attic",
+   "type": "interior",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "005"
+   ],
+   "objects": [],
+   "gates": [],
+   "quest_spots": [
+    "M19b:1"
+   ],
+   "story_scenes": [],
+   "npcs": 0,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "166": {
+   "name": "Reyes House",
+   "type": "interior",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "004"
+   ],
+   "objects": [],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 3,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "187": {
+   "name": "Dustara Cottage",
+   "type": "interior",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "back"
+   ],
+   "objects": [],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 1,
+   "wild_table": null,
+   "apprentices": null
+  }
+ },
+ "kit": {
+  "435": {
+   "cat": "Battle Arena",
+   "name": "Canyon Coliseum Exterior (1)",
+   "alt": true,
+   "type": "landmark",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      9,
+      11
+     ]
+    ],
+    "right": [
+     [
+      9,
+      11
+     ]
+    ],
+    "bottom": [
+     [
+      10,
+      13
+     ]
+    ]
+   }
+  },
+  "436": {
+   "cat": "Battle Arena",
+   "name": "Canyon Coliseum Exterior",
+   "alt": false,
+   "type": "landmark",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      9,
+      11
+     ]
+    ],
+    "right": [
+     [
+      9,
+      11
+     ]
+    ],
+    "bottom": [
+     [
+      10,
+      13
+     ]
+    ]
+   }
+  },
+  "437": {
+   "cat": "Battle Arena",
+   "name": "Canyon Coliseum Lobby (1)",
+   "alt": true,
+   "type": "arena",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "438": {
+   "cat": "Battle Arena",
+   "name": "Canyon Coliseum Lobby",
+   "alt": false,
+   "type": "arena",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "439": {
+   "cat": "Battle Arena",
+   "name": "Canyon Coliseum Battle Floor",
+   "alt": false,
+   "type": "arena",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "bottom": [
+     [
+      8,
+      9
+     ],
+     [
+      14,
+      15
+     ]
+    ]
+   }
+  },
+  "440": {
+   "cat": "Battle Arena",
+   "name": "Canyon Coliseum Battle Room",
+   "alt": false,
+   "type": "arena",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "bottom": [
+     [
+      11,
+      12
+     ]
+    ]
+   }
+  },
+  "441": {
+   "cat": "Cave",
+   "name": "Entrance",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "bottom": [
+     [
+      9,
+      14
+     ]
+    ]
+   }
+  },
+  "442": {
+   "cat": "Cave",
+   "name": "Floor 1",
+   "alt": false,
+   "type": "cave",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      0,
+      12
+     ],
+     [
+      14,
+      15
+     ]
+    ],
+    "right": [
+     [
+      0,
+      15
+     ]
+    ],
+    "top": [
+     [
+      0,
+      12
+     ],
+     [
+      15,
+      23
+     ]
+    ],
+    "bottom": [
+     [
+      0,
+      23
+     ]
+    ]
+   }
+  },
+  "443": {
+   "cat": "Cave",
+   "name": "Floor 2",
+   "alt": false,
+   "type": "cave",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {}
+  },
+  "444": {
+   "cat": "Cave",
+   "name": "Deep Chamber",
+   "alt": false,
+   "type": "cave",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {}
+  },
+  "445": {
+   "cat": "Crossroads",
+   "name": "Canyon Crossroads",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      5,
+      8
+     ]
+    ],
+    "right": [
+     [
+      5,
+      8
+     ]
+    ],
+    "top": [
+     [
+      8,
+      13
+     ]
+    ],
+    "bottom": [
+     [
+      8,
+      13
+     ]
+    ]
+   }
+  },
+  "446": {
+   "cat": "Crossroads",
+   "name": "Mesa Junction",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      7,
+      9
+     ]
+    ],
+    "right": [
+     [
+      3,
+      8
+     ]
+    ],
+    "top": [
+     [
+      14,
+      18
+     ]
+    ],
+    "bottom": [
+     [
+      4,
+      9
+     ]
+    ]
+   }
+  },
+  "447": {
+   "cat": "Crossroads",
+   "name": "Oasis Fork",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      7,
+      9
+     ]
+    ],
+    "right": [
+     [
+      7,
+      9
+     ]
+    ],
+    "top": [
+     [
+      13,
+      17
+     ]
+    ],
+    "bottom": [
+     [
+      13,
+      17
+     ]
+    ]
+   }
+  },
+  "448": {
+   "cat": "Extra scenes",
+   "name": "Mesa Pass",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      5,
+      9
+     ]
+    ],
+    "bottom": [
+     [
+      14,
+      19
+     ]
+    ]
+   }
+  },
+  "449": {
+   "cat": "Extra scenes",
+   "name": "Dry Wash Crossing (test)",
+   "alt": true,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      15,
+      19
+     ]
+    ],
+    "bottom": [
+     [
+      5,
+      9
+     ]
+    ]
+   }
+  },
+  "450": {
+   "cat": "Extra scenes",
+   "name": "Sunset Overlook (organic B)",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      9,
+      14
+     ]
+    ],
+    "bottom": [
+     [
+      9,
+      14
+     ]
+    ]
+   }
+  },
+  "451": {
+   "cat": "Extra scenes",
+   "name": "Sunset Overlook (organic undefined)",
+   "alt": true,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      9,
+      13
+     ]
+    ],
+    "bottom": [
+     [
+      4,
+      13
+     ]
+    ]
+   }
+  },
+  "452": {
+   "cat": "Extra scenes",
+   "name": "Sunstep Slope (organic)",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      3,
+      8
+     ]
+    ],
+    "bottom": [
+     [
+      13,
+      18
+     ]
+    ]
+   }
+  },
+  "453": {
+   "cat": "Extra scenes",
+   "name": "Sunstep Slope",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      3,
+      8
+     ]
+    ],
+    "bottom": [
+     [
+      13,
+      18
+     ]
+    ]
+   }
+  },
+  "454": {
+   "cat": "Extra scenes",
+   "name": "Sunset Overlook (organic) option 1",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      9,
+      14
+     ]
+    ],
+    "bottom": [
+     [
+      9,
+      14
+     ]
+    ]
+   }
+  },
+  "455": {
+   "cat": "Extra scenes",
+   "name": "Sunset Overlook (organic) option 2",
+   "alt": true,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      9,
+      13
+     ]
+    ],
+    "bottom": [
+     [
+      4,
+      13
+     ]
+    ]
+   }
+  },
+  "456": {
+   "cat": "Extra scenes",
+   "name": "Sunset Overlook",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      9,
+      14
+     ]
+    ],
+    "bottom": [
+     [
+      7,
+      14
+     ]
+    ]
+   }
+  },
+  "457": {
+   "cat": "Extra scenes",
+   "name": "Oasis Shore (organic)",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      2,
+      3
+     ]
+    ],
+    "top": [
+     [
+      4,
+      9
+     ]
+    ],
+    "bottom": [
+     [
+      3,
+      9
+     ]
+    ]
+   }
+  },
+  "458": {
+   "cat": "Extra scenes",
+   "name": "Oasis Shore",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      4,
+      5
+     ]
+    ],
+    "top": [
+     [
+      4,
+      9
+     ]
+    ],
+    "bottom": [
+     [
+      4,
+      9
+     ]
+    ]
+   }
+  },
+  "459": {
+   "cat": "Extra scenes",
+   "name": "Hoodoo Hollows (organic)",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "right": [
+     [
+      10,
+      11
+     ]
+    ],
+    "top": [
+     [
+      15,
+      20
+     ]
+    ],
+    "bottom": [
+     [
+      2,
+      7
+     ]
+    ]
+   }
+  },
+  "460": {
+   "cat": "Extra scenes",
+   "name": "Hoodoo Hollows",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      15,
+      19
+     ]
+    ],
+    "bottom": [
+     [
+      2,
+      6
+     ]
+    ]
+   }
+  },
+  "461": {
+   "cat": "Extra scenes",
+   "name": "Red River Bend (organic)",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      16,
+      21
+     ]
+    ],
+    "bottom": [
+     [
+      6,
+      11
+     ]
+    ]
+   }
+  },
+  "462": {
+   "cat": "Extra scenes",
+   "name": "Red River Bend",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      16,
+      21
+     ]
+    ],
+    "bottom": [
+     [
+      6,
+      11
+     ]
+    ]
+   }
+  },
+  "463": {
+   "cat": "Extra scenes",
+   "name": "Mirage Flats (organic)",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      10,
+      14
+     ]
+    ],
+    "bottom": [
+     [
+      14,
+      19
+     ]
+    ]
+   }
+  },
+  "464": {
+   "cat": "Extra scenes",
+   "name": "Mirage Flats",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      9,
+      14
+     ]
+    ],
+    "bottom": [
+     [
+      14,
+      19
+     ]
+    ]
+   }
+  },
+  "465": {
+   "cat": "Hidden Area",
+   "name": "Secret Grove",
+   "alt": false,
+   "type": "field",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      9,
+      12
+     ]
+    ],
+    "right": [
+     [
+      9,
+      12
+     ]
+    ]
+   }
+  },
+  "466": {
+   "cat": "Interior rooms",
+   "name": "Cactus Tea House",
+   "alt": false,
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "467": {
+   "cat": "Interior rooms",
+   "name": "Rock Collector's Den",
+   "alt": false,
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "468": {
+   "cat": "Interior rooms",
+   "name": "Rune Workshop",
+   "alt": false,
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "469": {
+   "cat": "Recovery Bay",
+   "name": "Interior",
+   "alt": false,
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "470": {
+   "cat": "Residential",
+   "name": "Dustara Lane Homes",
+   "alt": false,
+   "type": "town",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      9,
+      11
+     ]
+    ],
+    "right": [
+     [
+      9,
+      11
+     ]
+    ]
+   }
+  },
+  "471": {
+   "cat": "Residential",
+   "name": "Dustara Quiet Court",
+   "alt": false,
+   "type": "town",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "right": [
+     [
+      5,
+      7
+     ]
+    ],
+    "bottom": [
+     [
+      10,
+      14
+     ]
+    ]
+   }
+  },
+  "472": {
+   "cat": "Residential",
+   "name": "Dustara Farmstead Edge",
+   "alt": false,
+   "type": "town",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "right": [
+     [
+      7,
+      10
+     ]
+    ],
+    "top": [
+     [
+      4,
+      9
+     ]
+    ]
+   }
+  },
+  "473": {
+   "cat": "Shop",
+   "name": "Interior",
+   "alt": false,
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "474": {
+   "cat": "Spaceport",
+   "name": "Landing Pad",
+   "alt": false,
+   "type": "landmark",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "right": [
+     [
+      12,
+      13
+     ]
+    ]
+   }
+  }
+ }
+}

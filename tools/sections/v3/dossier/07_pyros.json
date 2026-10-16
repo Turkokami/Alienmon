@@ -1,0 +1,1211 @@
+{
+ "dir": "07_pyros",
+ "arrival": {
+  "pyros": {
+   "section": "082",
+   "why": "V2: the iron landing pad at the left end of Cinder Hollow"
+  }
+ },
+ "sections": {
+  "082": {
+   "name": "Cinder Hollow",
+   "type": "town",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "right": "085"
+   },
+   "warps_to": [
+    "083",
+    "084"
+   ],
+   "objects": [
+    {
+     "tile": [
+      3,
+      4
+     ],
+     "k": "house",
+     "to": "174"
+    },
+    {
+     "tile": [
+      4,
+      4
+     ],
+     "k": "house",
+     "to": "174"
+    },
+    {
+     "tile": [
+      19,
+      4
+     ],
+     "k": "house",
+     "to": "174"
+    },
+    {
+     "tile": [
+      20,
+      4
+     ],
+     "k": "house",
+     "to": "174"
+    },
+    {
+     "tile": [
+      1,
+      12
+     ],
+     "k": "stash",
+     "item": "dust"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [
+    "M11:1",
+    "S70:giver"
+   ],
+   "story_scenes": [],
+   "npcs": 8,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "083": {
+   "name": "Cinder Hollow Recovery Bay",
+   "type": "interior",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "082"
+   ],
+   "objects": [
+    {
+     "tile": [
+      7,
+      3
+     ],
+     "k": "bay"
+    },
+    {
+     "tile": [
+      8,
+      3
+     ],
+     "k": "bay"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 2,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "084": {
+   "name": "Cinder Hollow Shop",
+   "type": "interior",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "082"
+   ],
+   "objects": [
+    {
+     "tile": [
+      7,
+      3
+     ],
+     "k": "shop"
+    },
+    {
+     "tile": [
+      8,
+      3
+     ],
+     "k": "shop"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 2,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "085": {
+   "name": "Lava Rail Part A",
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "left": "082",
+    "right": "086"
+   },
+   "warps_to": [],
+   "objects": [
+    {
+     "tile": [
+      14,
+      12
+     ],
+     "k": "stash",
+     "item": "ether"
+    },
+    {
+     "tile": [
+      17,
+      3
+     ],
+     "k": "stash",
+     "item": "revive"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [
+    "S71:giver"
+   ],
+   "story_scenes": [],
+   "npcs": 2,
+   "wild_table": "volcano",
+   "apprentices": null
+  },
+  "086": {
+   "name": "Lava Rail Part B",
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "left": "085"
+   },
+   "warps_to": [
+    "087"
+   ],
+   "objects": [
+    {
+     "tile": [
+      11,
+      13
+     ],
+     "k": "stash",
+     "item": "dust"
+    },
+    {
+     "tile": [
+      6,
+      2
+     ],
+     "k": "stash",
+     "item": "revive"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 2,
+   "wild_table": "volcano",
+   "apprentices": null
+  },
+  "087": {
+   "name": "Deep Mines B1",
+   "type": "cave",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "086",
+    "088"
+   ],
+   "objects": [
+    {
+     "tile": [
+      14,
+      7
+     ],
+     "k": "stash",
+     "item": "dust"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 1,
+   "wild_table": "mine_hot",
+   "apprentices": null
+  },
+  "088": {
+   "name": "Deep Mines B2",
+   "type": "cave",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "087",
+    "089"
+   ],
+   "objects": [
+    {
+     "tile": [
+      2,
+      5
+     ],
+     "k": "stash",
+     "item": "megagel"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [
+    "M11:2",
+    "S72:0",
+    "S72:giver"
+   ],
+   "story_scenes": [],
+   "npcs": 1,
+   "wild_table": "mine_hot",
+   "apprentices": null
+  },
+  "089": {
+   "name": "Deep Mines B3",
+   "type": "cave",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "088",
+    "090"
+   ],
+   "objects": [
+    {
+     "tile": [
+      2,
+      10
+     ],
+     "k": "stash",
+     "item": "fullgel"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [
+    "S70:0"
+   ],
+   "story_scenes": [],
+   "npcs": 1,
+   "wild_table": "mine_hot",
+   "apprentices": null
+  },
+  "090": {
+   "name": "Furnace Ridge (Pyros)",
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "089",
+    "091"
+   ],
+   "objects": [
+    {
+     "tile": [
+      19,
+      2
+     ],
+     "k": "stash",
+     "item": "revive"
+    },
+    {
+     "tile": [
+      6,
+      2
+     ],
+     "k": "stash",
+     "item": "dust"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 3,
+   "wild_table": "volcano",
+   "apprentices": null
+  },
+  "091": {
+   "name": "Volcano Tower 1F",
+   "type": "tower",
+   "tiles": [
+    16,
+    24
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "090",
+    "092"
+   ],
+   "objects": [],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 1,
+   "wild_table": null,
+   "apprentices": 2
+  },
+  "092": {
+   "name": "Volcano Tower 2F",
+   "type": "tower",
+   "tiles": [
+    16,
+    24
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "091"
+   ],
+   "objects": [
+    {
+     "tile": [
+      7,
+      4
+     ],
+     "k": "keeper"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [
+    "M11:3"
+   ],
+   "story_scenes": [],
+   "npcs": 0,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "174": {
+   "name": "Pyros House",
+   "type": "interior",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "back"
+   ],
+   "objects": [],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 1,
+   "wild_table": null,
+   "apprentices": null
+  }
+ },
+ "kit": {
+  "667": {
+   "cat": "Battle Arena",
+   "name": "Magma Pit Arena Exterior (1)",
+   "alt": true,
+   "type": "landmark",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      9,
+      10
+     ]
+    ],
+    "right": [
+     [
+      9,
+      10
+     ]
+    ],
+    "bottom": [
+     [
+      9,
+      14
+     ]
+    ]
+   }
+  },
+  "668": {
+   "cat": "Battle Arena",
+   "name": "Magma Pit Arena Exterior",
+   "alt": false,
+   "type": "landmark",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      9,
+      11
+     ]
+    ],
+    "right": [
+     [
+      9,
+      11
+     ]
+    ],
+    "bottom": [
+     [
+      10,
+      13
+     ]
+    ]
+   }
+  },
+  "669": {
+   "cat": "Battle Arena",
+   "name": "Magma Pit Arena Lobby (1)",
+   "alt": true,
+   "type": "arena",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "670": {
+   "cat": "Battle Arena",
+   "name": "Magma Pit Arena Lobby",
+   "alt": false,
+   "type": "arena",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "671": {
+   "cat": "Battle Arena",
+   "name": "Magma Pit Arena Battle Floor",
+   "alt": false,
+   "type": "arena",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      3,
+      15
+     ]
+    ],
+    "right": [
+     [
+      3,
+      15
+     ]
+    ],
+    "top": [
+     [
+      5,
+      9
+     ],
+     [
+      14,
+      18
+     ]
+    ],
+    "bottom": [
+     [
+      0,
+      12
+     ],
+     [
+      14,
+      23
+     ]
+    ]
+   }
+  },
+  "672": {
+   "cat": "Battle Arena",
+   "name": "Magma Pit Arena Battle Room",
+   "alt": false,
+   "type": "arena",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      0,
+      14
+     ]
+    ],
+    "right": [
+     [
+      0,
+      14
+     ]
+    ],
+    "top": [
+     [
+      0,
+      23
+     ]
+    ],
+    "bottom": [
+     [
+      1,
+      9
+     ],
+     [
+      14,
+      22
+     ]
+    ]
+   }
+  },
+  "673": {
+   "cat": "Cave",
+   "name": "Entrance",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {}
+  },
+  "674": {
+   "cat": "Cave",
+   "name": "Floor 1",
+   "alt": false,
+   "type": "cave",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      0,
+      15
+     ]
+    ],
+    "right": [
+     [
+      0,
+      15
+     ]
+    ],
+    "top": [
+     [
+      0,
+      23
+     ]
+    ],
+    "bottom": [
+     [
+      0,
+      23
+     ]
+    ]
+   }
+  },
+  "675": {
+   "cat": "Cave",
+   "name": "Floor 2",
+   "alt": false,
+   "type": "cave",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {}
+  },
+  "676": {
+   "cat": "Cave",
+   "name": "Deep Chamber",
+   "alt": false,
+   "type": "cave",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "bottom": [
+     [
+      11,
+      12
+     ]
+    ]
+   }
+  },
+  "677": {
+   "cat": "Crossroads",
+   "name": "Basalt Crossroads",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      5,
+      9
+     ]
+    ],
+    "right": [
+     [
+      5,
+      8
+     ]
+    ],
+    "top": [
+     [
+      8,
+      13
+     ]
+    ],
+    "bottom": [
+     [
+      8,
+      13
+     ]
+    ]
+   }
+  },
+  "678": {
+   "cat": "Crossroads",
+   "name": "Mine Junction",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      7,
+      13
+     ]
+    ],
+    "right": [
+     [
+      0,
+      5
+     ]
+    ],
+    "top": [
+     [
+      14,
+      21
+     ]
+    ],
+    "bottom": [
+     [
+      2,
+      14
+     ]
+    ]
+   }
+  },
+  "679": {
+   "cat": "Crossroads",
+   "name": "Lava Fork",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      4,
+      5
+     ],
+     [
+      8,
+      9
+     ]
+    ],
+    "right": [
+     [
+      8,
+      9
+     ]
+    ],
+    "top": [
+     [
+      13,
+      18
+     ]
+    ],
+    "bottom": [
+     [
+      13,
+      18
+     ]
+    ]
+   }
+  },
+  "680": {
+   "cat": "Extra scenes",
+   "name": "Cinder Slope",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      14,
+      15
+     ]
+    ],
+    "top": [
+     [
+      15,
+      20
+     ]
+    ],
+    "bottom": [
+     [
+      0,
+      10
+     ]
+    ]
+   }
+  },
+  "681": {
+   "cat": "Extra scenes",
+   "name": "Furnace Ridge Overlook",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      9,
+      14
+     ]
+    ],
+    "bottom": [
+     [
+      4,
+      18
+     ]
+    ]
+   }
+  },
+  "682": {
+   "cat": "Extra scenes",
+   "name": "Lava Lake Shore",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      14,
+      19
+     ]
+    ],
+    "bottom": [
+     [
+      12,
+      19
+     ]
+    ]
+   }
+  },
+  "683": {
+   "cat": "Extra scenes",
+   "name": "Mine Shaft Hollows",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      15,
+      20
+     ]
+    ],
+    "bottom": [
+     [
+      2,
+      7
+     ]
+    ]
+   }
+  },
+  "684": {
+   "cat": "Extra scenes",
+   "name": "Magma Flow Bend",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      2,
+      7
+     ]
+    ],
+    "bottom": [
+     [
+      12,
+      17
+     ]
+    ]
+   }
+  },
+  "685": {
+   "cat": "Extra scenes",
+   "name": "Ashfall Flats",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      9,
+      14
+     ]
+    ],
+    "bottom": [
+     [
+      14,
+      19
+     ]
+    ]
+   }
+  },
+  "686": {
+   "cat": "Helix Hideout",
+   "name": "Disguised Entrance",
+   "alt": false,
+   "type": "landmark",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      8,
+      11
+     ]
+    ],
+    "right": [
+     [
+      8,
+      11
+     ]
+    ]
+   }
+  },
+  "687": {
+   "cat": "Helix Hideout",
+   "name": "Secret Lab",
+   "alt": false,
+   "type": "dungeon",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "688": {
+   "cat": "Hidden Area",
+   "name": "Secret Grove",
+   "alt": false,
+   "type": "field",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      9,
+      11
+     ]
+    ],
+    "right": [
+     [
+      9,
+      11
+     ]
+    ]
+   }
+  },
+  "689": {
+   "cat": "Interior rooms",
+   "name": "Miners' Canteen",
+   "alt": false,
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "690": {
+   "cat": "Interior rooms",
+   "name": "Smelter Room",
+   "alt": false,
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "691": {
+   "cat": "Interior rooms",
+   "name": "Old Basalt's Quarters",
+   "alt": false,
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "692": {
+   "cat": "Recovery Bay",
+   "name": "Interior",
+   "alt": false,
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "693": {
+   "cat": "Relay Tower",
+   "name": "Exterior",
+   "alt": false,
+   "type": "landmark",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      9,
+      11
+     ]
+    ],
+    "right": [
+     [
+      9,
+      11
+     ]
+    ]
+   }
+  },
+  "694": {
+   "cat": "Relay Tower",
+   "name": "Trial Floor",
+   "alt": false,
+   "type": "tower",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "695": {
+   "cat": "Relay Tower",
+   "name": "Keeper Room",
+   "alt": false,
+   "type": "tower",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      3,
+      4
+     ]
+    ],
+    "right": [
+     [
+      3,
+      4
+     ]
+    ],
+    "top": [
+     [
+      2,
+      10
+     ],
+     [
+      13,
+      21
+     ]
+    ]
+   }
+  },
+  "696": {
+   "cat": "Residential",
+   "name": "Pyros Lane Homes",
+   "alt": false,
+   "type": "town",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      9,
+      12
+     ]
+    ],
+    "right": [
+     [
+      9,
+      11
+     ]
+    ]
+   }
+  },
+  "697": {
+   "cat": "Residential",
+   "name": "Pyros Quiet Court",
+   "alt": false,
+   "type": "town",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "right": [
+     [
+      6,
+      7
+     ]
+    ],
+    "bottom": [
+     [
+      10,
+      13
+     ]
+    ]
+   }
+  },
+  "698": {
+   "cat": "Residential",
+   "name": "Pyros Farmstead Edge",
+   "alt": false,
+   "type": "town",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "right": [
+     [
+      7,
+      9
+     ]
+    ],
+    "top": [
+     [
+      4,
+      8
+     ]
+    ]
+   }
+  },
+  "699": {
+   "cat": "Shop",
+   "name": "Interior",
+   "alt": false,
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "700": {
+   "cat": "Spaceport",
+   "name": "Landing Pad",
+   "alt": false,
+   "type": "landmark",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "right": [
+     [
+      12,
+      13
+     ]
+    ]
+   }
+  }
+ }
+}

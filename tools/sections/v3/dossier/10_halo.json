@@ -1,0 +1,1079 @@
+{
+ "dir": "10_halo",
+ "arrival": {
+  "halo": {
+   "section": "114",
+   "why": "V2: the round sky-dock landing pad"
+  }
+ },
+ "sections": {
+  "114": {
+   "name": "Cloud Dock",
+   "type": "landmark",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "right": "115"
+   },
+   "warps_to": [],
+   "objects": [
+    {
+     "tile": [
+      10,
+      2
+     ],
+     "k": "house",
+     "to": "182"
+    },
+    {
+     "tile": [
+      11,
+      2
+     ],
+     "k": "house",
+     "to": "182"
+    },
+    {
+     "tile": [
+      19,
+      2
+     ],
+     "k": "house",
+     "to": "179"
+    },
+    {
+     "tile": [
+      3,
+      6
+     ],
+     "k": "stash",
+     "item": "fullgel"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 3,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "115": {
+   "name": "Skyreach Plaza",
+   "type": "town",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "left": "114",
+    "right": "118"
+   },
+   "warps_to": [
+    "116",
+    "117"
+   ],
+   "objects": [
+    {
+     "tile": [
+      3,
+      4
+     ],
+     "k": "house",
+     "to": "175"
+    },
+    {
+     "tile": [
+      19,
+      4
+     ],
+     "k": "house",
+     "to": "175"
+    },
+    {
+     "tile": [
+      20,
+      4
+     ],
+     "k": "house",
+     "to": "175"
+    },
+    {
+     "tile": [
+      9,
+      12
+     ],
+     "k": "stash",
+     "item": "ether"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [
+    "M16:0",
+    "M16:giver",
+    "S94:0",
+    "S94:giver",
+    "S95:giver",
+    "S96:giver"
+   ],
+   "story_scenes": [],
+   "npcs": 7,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "116": {
+   "name": "Skyreach Recovery Bay",
+   "type": "interior",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "115"
+   ],
+   "objects": [
+    {
+     "tile": [
+      7,
+      4
+     ],
+     "k": "bay"
+    },
+    {
+     "tile": [
+      8,
+      4
+     ],
+     "k": "bay"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 2,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "117": {
+   "name": "Skyreach Shop",
+   "type": "interior",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "115"
+   ],
+   "objects": [
+    {
+     "tile": [
+      7,
+      5
+     ],
+     "k": "shop"
+    },
+    {
+     "tile": [
+      8,
+      5
+     ],
+     "k": "shop"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 2,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "118": {
+   "name": "Wind Bridges Part A",
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "left": "115",
+    "right": "119"
+   },
+   "warps_to": [],
+   "objects": [
+    {
+     "tile": [
+      11,
+      14
+     ],
+     "k": "stash",
+     "item": "harmonic"
+    },
+    {
+     "tile": [
+      6,
+      2
+     ],
+     "k": "stash",
+     "item": "fullgel"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 2,
+   "wild_table": "sky",
+   "apprentices": null
+  },
+  "119": {
+   "name": "Wind Bridges Part B",
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "left": "118",
+    "right": "120"
+   },
+   "warps_to": [],
+   "objects": [
+    {
+     "tile": [
+      11,
+      14
+     ],
+     "k": "stash",
+     "item": "maxrevive"
+    },
+    {
+     "tile": [
+      6,
+      2
+     ],
+     "k": "stash",
+     "item": "harmonic"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 2,
+   "wild_table": "sky",
+   "apprentices": null
+  },
+  "120": {
+   "name": "Floating Gardens",
+   "type": "field",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "left": "119"
+   },
+   "warps_to": [
+    "121"
+   ],
+   "objects": [
+    {
+     "tile": [
+      11,
+      14
+     ],
+     "k": "stash",
+     "item": "singularity"
+    },
+    {
+     "tile": [
+      6,
+      2
+     ],
+     "k": "stash",
+     "item": "dust"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [
+    "M16:1"
+   ],
+   "story_scenes": [],
+   "npcs": 2,
+   "wild_table": "sky_garden",
+   "apprentices": null
+  },
+  "121": {
+   "name": "Sky Temple 1F",
+   "type": "tower",
+   "tiles": [
+    16,
+    24
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "120",
+    "122"
+   ],
+   "objects": [],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 1,
+   "wild_table": null,
+   "apprentices": 2
+  },
+  "122": {
+   "name": "Sky Temple 2F",
+   "type": "tower",
+   "tiles": [
+    16,
+    24
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "121"
+   ],
+   "objects": [
+    {
+     "tile": [
+      7,
+      4
+     ],
+     "k": "keeper"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [
+    "M16:2"
+   ],
+   "story_scenes": [],
+   "npcs": 1,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "175": {
+   "name": "Halo House",
+   "type": "interior",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "back"
+   ],
+   "objects": [],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 1,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "179": {
+   "name": "Airship Cabin",
+   "type": "interior",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "back"
+   ],
+   "objects": [],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 1,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "182": {
+   "name": "Cloud Dock Hall",
+   "type": "interior",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "back"
+   ],
+   "objects": [],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 1,
+   "wild_table": null,
+   "apprentices": null
+  }
+ },
+ "kit": {
+  "573": {
+   "cat": "Battle Arena",
+   "name": "Sky Colosseum Exterior",
+   "alt": false,
+   "type": "landmark",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      8,
+      12
+     ]
+    ],
+    "right": [
+     [
+      8,
+      12
+     ]
+    ],
+    "bottom": [
+     [
+      9,
+      13
+     ]
+    ]
+   }
+  },
+  "574": {
+   "cat": "Battle Arena",
+   "name": "Sky Colosseum Lobby (1)",
+   "alt": true,
+   "type": "arena",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "575": {
+   "cat": "Battle Arena",
+   "name": "Sky Colosseum Lobby",
+   "alt": false,
+   "type": "arena",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "576": {
+   "cat": "Battle Arena",
+   "name": "Sky Colosseum Battle Floor",
+   "alt": false,
+   "type": "arena",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {}
+  },
+  "577": {
+   "cat": "Battle Arena",
+   "name": "Sky Colosseum Battle Room",
+   "alt": false,
+   "type": "arena",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {}
+  },
+  "578": {
+   "cat": "Cave",
+   "name": "Entrance",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "bottom": [
+     [
+      9,
+      14
+     ]
+    ]
+   }
+  },
+  "579": {
+   "cat": "Cave",
+   "name": "Floor 1",
+   "alt": false,
+   "type": "cave",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      0,
+      15
+     ]
+    ],
+    "right": [
+     [
+      14,
+      15
+     ]
+    ],
+    "top": [
+     [
+      0,
+      6
+     ],
+     [
+      8,
+      14
+     ]
+    ],
+    "bottom": [
+     [
+      0,
+      23
+     ]
+    ]
+   }
+  },
+  "580": {
+   "cat": "Cave",
+   "name": "Floor 2",
+   "alt": false,
+   "type": "cave",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {}
+  },
+  "581": {
+   "cat": "Cave",
+   "name": "Deep Chamber",
+   "alt": false,
+   "type": "cave",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "bottom": [
+     [
+      11,
+      13
+     ]
+    ]
+   }
+  },
+  "582": {
+   "cat": "Crossroads",
+   "name": "Sky Crossroads",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      5,
+      8
+     ]
+    ],
+    "right": [
+     [
+      5,
+      8
+     ]
+    ],
+    "top": [
+     [
+      10,
+      14
+     ],
+     [
+      16,
+      18
+     ]
+    ],
+    "bottom": [
+     [
+      8,
+      15
+     ]
+    ]
+   }
+  },
+  "583": {
+   "cat": "Crossroads",
+   "name": "Temple Junction",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      3,
+      5
+     ]
+    ],
+    "right": [
+     [
+      7,
+      10
+     ]
+    ],
+    "top": [
+     [
+      4,
+      9
+     ]
+    ],
+    "bottom": [
+     [
+      14,
+      19
+     ]
+    ]
+   }
+  },
+  "584": {
+   "cat": "Crossroads",
+   "name": "Cloud Fork",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      7,
+      10
+     ]
+    ],
+    "right": [
+     [
+      4,
+      10
+     ]
+    ],
+    "top": [
+     [
+      6,
+      10
+     ]
+    ],
+    "bottom": [
+     [
+      6,
+      9
+     ]
+    ]
+   }
+  },
+  "585": {
+   "cat": "Extra scenes",
+   "name": "Windstep Rise",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      3,
+      7
+     ],
+     [
+      9,
+      10
+     ]
+    ],
+    "bottom": [
+     [
+      13,
+      18
+     ]
+    ]
+   }
+  },
+  "586": {
+   "cat": "Extra scenes",
+   "name": "Sky Temple Overlook",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      9,
+      14
+     ]
+    ],
+    "bottom": [
+     [
+      9,
+      14
+     ]
+    ]
+   }
+  },
+  "587": {
+   "cat": "Extra scenes",
+   "name": "Cloudbreak Edge",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      4,
+      9
+     ]
+    ],
+    "bottom": [
+     [
+      4,
+      9
+     ]
+    ]
+   }
+  },
+  "588": {
+   "cat": "Extra scenes",
+   "name": "Shrine Hollows",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      4,
+      7
+     ]
+    ],
+    "bottom": [
+     [
+      17,
+      20
+     ]
+    ]
+   }
+  },
+  "589": {
+   "cat": "Extra scenes",
+   "name": "Cloud River Bend",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      16,
+      20
+     ]
+    ],
+    "bottom": [
+     [
+      4,
+      11
+     ]
+    ]
+   }
+  },
+  "590": {
+   "cat": "Extra scenes",
+   "name": "Petal Meadow",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      3,
+      5
+     ],
+     [
+      9,
+      14
+     ]
+    ],
+    "bottom": [
+     [
+      4,
+      9
+     ]
+    ]
+   }
+  },
+  "591": {
+   "cat": "Hidden Area",
+   "name": "Secret Grove",
+   "alt": false,
+   "type": "field",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      9,
+      11
+     ]
+    ],
+    "right": [
+     [
+      9,
+      11
+     ]
+    ]
+   }
+  },
+  "592": {
+   "cat": "Interior rooms",
+   "name": "Sky Temple Sanctum",
+   "alt": false,
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "593": {
+   "cat": "Interior rooms",
+   "name": "Oracle Library",
+   "alt": false,
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "594": {
+   "cat": "Interior rooms",
+   "name": "Cloud Garden Room option 1",
+   "alt": false,
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "595": {
+   "cat": "Interior rooms",
+   "name": "Cloud Garden Room option 2",
+   "alt": true,
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "596": {
+   "cat": "Recovery Bay",
+   "name": "Interior",
+   "alt": false,
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "597": {
+   "cat": "Relay Tower",
+   "name": "Exterior",
+   "alt": false,
+   "type": "landmark",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      9,
+      11
+     ]
+    ],
+    "right": [
+     [
+      9,
+      11
+     ]
+    ]
+   }
+  },
+  "598": {
+   "cat": "Relay Tower",
+   "name": "Trial Floor",
+   "alt": false,
+   "type": "tower",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "599": {
+   "cat": "Relay Tower",
+   "name": "Keeper Room",
+   "alt": false,
+   "type": "tower",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {}
+  },
+  "600": {
+   "cat": "Residential",
+   "name": "Halo Lane Homes",
+   "alt": false,
+   "type": "town",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      9,
+      13
+     ]
+    ],
+    "right": [
+     [
+      9,
+      12
+     ]
+    ]
+   }
+  },
+  "601": {
+   "cat": "Residential",
+   "name": "Halo Quiet Court",
+   "alt": false,
+   "type": "town",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      5,
+      6
+     ]
+    ],
+    "bottom": [
+     [
+      10,
+      13
+     ]
+    ]
+   }
+  },
+  "602": {
+   "cat": "Residential",
+   "name": "Halo Farmstead Edge",
+   "alt": false,
+   "type": "town",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      7,
+      8
+     ]
+    ],
+    "top": [
+     [
+      14,
+      18
+     ]
+    ]
+   }
+  },
+  "603": {
+   "cat": "Shop",
+   "name": "Interior",
+   "alt": false,
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "604": {
+   "cat": "Spaceport",
+   "name": "Landing Pad",
+   "alt": false,
+   "type": "landmark",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      11,
+      12
+     ]
+    ]
+   }
+  }
+ }
+}

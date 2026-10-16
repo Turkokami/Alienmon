@@ -136,7 +136,7 @@ def wire(d):
             print('  closed', sid, A[sid]['name'], closed)
 
     # 3. links: clear everything positional for this world's sections, then rebuild
-    allids = ids | drop
+    allids = set(use) | drop   # kept sections keep their doors, objects and spawns; only their exits are rewritten
     kill = lambda x: x in allids
     L['doors'] = [x for x in L.get('doors', []) if not (kill(x['interior']) or kill(x['parent']))]
     L['stairs'] = [x for x in L.get('stairs', []) if not (kill(x['a']) or kill(x['b']))]
@@ -147,8 +147,10 @@ def wire(d):
     L['trainers']['tiles'] = [t for t in L['trainers']['tiles'] if not kill(t['section'])]
     for d_ in P.get('doors', []):
         par, t, room = d_[:3]; rr = rows_of(room)
+        L['doors'] = [x for x in L['doors'] if not (x['parent'] == par and x['door'] == t)]
         L['doors'].append({'interior': room, 'parent': par, 'door': t, **({'door2': d_[3]} if len(d_) > 3 else {}), 'mat': mat_of(rr), 'confidence': 'high', 'why': 'V3 kit door'})
     for par, t, room in P.get('houses', []):
+        L['objects'][par] = [o for o in L['objects'].get(par, []) if o['tile'] != t]
         L['objects'].setdefault(par, []).append({'tile': t, 'k': 'house', 'to': room, 'why': 'V3 kit house door'})
         if room not in L.get('shared_rooms', []): L.setdefault('shared_rooms', []).append(room)
         if not any(w['section'] == room and w['to'] == 'back' for w in L['warps']):   # a new room: its doormat leads back out
@@ -162,7 +164,8 @@ def wire(d):
         L['stairs'].append({'a': a, 'a_tile': at, 'b': b, 'b_tile': bt, 'why': 'V3 kit stairs'})
     for room, cs in P.get('counters', {}).items():
         for x, y, kk in cs: L['objects'].setdefault(room, []).append({'tile': [x, y], 'k': kk})
-    for sid, objs in P.get('objects', {}).items(): L['objects'].setdefault(sid, []).extend(objs)
+    for sid, objs in P.get('objects', {}).items():
+        tiles = [o['tile'] for o in objs]; L['objects'][sid] = [o for o in L['objects'].get(sid, []) if o['tile'] not in tiles] + objs
     for sid, sp in P.get('spawns', {}).items(): L['spawns'][sid] = sp
     L['gates'] += P.get('gate', [])
     L['trainers'].setdefault('per_section', {}).update(P.get('trainers_per_section', {}))
@@ -202,9 +205,7 @@ def wire(d):
     save('data/sections/quest_spots.json', QS)
     # 5. wild Alienmon: tables follow the plan (new id <- old id, optionally into another habitat); dropped sections lose theirs
     E = load('data/encounters.json'); HR = load('data/habitat_rules.json'); src = {k: json.loads(json.dumps(v)) for k, v in E.items()}
-    import subprocess   # tables of sections this or an earlier run removed: read them from the last commit
-    try: src = {**json.loads(subprocess.run(['git', 'show', 'HEAD:data/encounters.json'], capture_output=True, text=True, encoding='utf-8').stdout), **src}
-    except Exception: pass
+    src = {**load(f'{HERE}/encounters_v2.json', {}), **src}   # tables from before the V3 rebuild (sections the rebuild removed)
     def fits(types, hab):
         h = HR['habitats'].get(hab)
         if not h: return False
@@ -228,4 +229,5 @@ def wire(d):
     print('wired', d, len(ids), 'sections,', len(P.get('edges', [])), 'edges')
 
 
-for d in sys.argv[1:]: wire(d)
+if __name__ == '__main__':
+    for d in sys.argv[1:]: wire(d)

@@ -1,0 +1,1287 @@
+{
+ "dir": "04_thalassa",
+ "arrival": {
+  "thalassa": {
+   "section": "052",
+   "why": "V2: the compass landing pad on the Saltreach docks"
+  }
+ },
+ "sections": {
+  "052": {
+   "name": "Port Saltreach Docks",
+   "type": "town",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "right": "053"
+   },
+   "warps_to": [
+    "167",
+    "168"
+   ],
+   "objects": [
+    {
+     "tile": [
+      4,
+      3
+     ],
+     "k": "house",
+     "to": "191"
+    },
+    {
+     "tile": [
+      5,
+      3
+     ],
+     "k": "house",
+     "to": "191"
+    },
+    {
+     "tile": [
+      20,
+      3
+     ],
+     "k": "house",
+     "to": "191"
+    },
+    {
+     "tile": [
+      10,
+      3
+     ],
+     "k": "house",
+     "to": "054"
+    },
+    {
+     "tile": [
+      11,
+      3
+     ],
+     "k": "house",
+     "to": "054"
+    },
+    {
+     "tile": [
+      16,
+      3
+     ],
+     "k": "house",
+     "to": "055"
+    },
+    {
+     "tile": [
+      0,
+      10
+     ],
+     "k": "stash",
+     "item": "harmonic"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [
+    "M07:1",
+    "M17b:0",
+    "M17b:3",
+    "M17b:giver",
+    "S40:0",
+    "S40:giver"
+   ],
+   "story_scenes": [],
+   "npcs": 6,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "053": {
+   "name": "Saltreach Market",
+   "type": "town",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "left": "052"
+   },
+   "warps_to": [
+    "054",
+    "055",
+    "056",
+    "169"
+   ],
+   "objects": [
+    {
+     "tile": [
+      3,
+      4
+     ],
+     "k": "house",
+     "to": "191"
+    },
+    {
+     "tile": [
+      19,
+      4
+     ],
+     "k": "house",
+     "to": "191"
+    },
+    {
+     "tile": [
+      17,
+      5
+     ],
+     "k": "stash",
+     "item": "megagel"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 7,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "054": {
+   "name": "Saltreach Recovery Bay",
+   "type": "interior",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "back"
+   ],
+   "objects": [
+    {
+     "tile": [
+      7,
+      3
+     ],
+     "k": "bay"
+    },
+    {
+     "tile": [
+      8,
+      3
+     ],
+     "k": "bay"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 2,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "055": {
+   "name": "Saltreach Shop",
+   "type": "interior",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "back"
+   ],
+   "objects": [
+    {
+     "tile": [
+      7,
+      4
+     ],
+     "k": "shop"
+    },
+    {
+     "tile": [
+      8,
+      4
+     ],
+     "k": "shop"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 2,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "056": {
+   "name": "Lighthouse",
+   "type": "tower",
+   "tiles": [
+    16,
+    24
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "053",
+    "057"
+   ],
+   "objects": [],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 2,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "057": {
+   "name": "Coral Route Part A",
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "right": "058"
+   },
+   "warps_to": [
+    "056"
+   ],
+   "objects": [
+    {
+     "tile": [
+      11,
+      14
+     ],
+     "k": "stash",
+     "item": "gel"
+    },
+    {
+     "tile": [
+      19,
+      12
+     ],
+     "k": "stash",
+     "item": "revive"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [
+    "S41:giver"
+   ],
+   "story_scenes": [],
+   "npcs": 2,
+   "wild_table": "coast",
+   "apprentices": null
+  },
+  "058": {
+   "name": "Coral Route Part B",
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "left": "057",
+    "right": "059"
+   },
+   "warps_to": [],
+   "objects": [
+    {
+     "tile": [
+      10,
+      13
+     ],
+     "k": "stash",
+     "item": "jammer"
+    },
+    {
+     "tile": [
+      6,
+      2
+     ],
+     "k": "stash",
+     "item": "harmonic"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 2,
+   "wild_table": "coast",
+   "apprentices": null
+  },
+  "059": {
+   "name": "Sea Arch Cove",
+   "type": "landmark",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "left": "058"
+   },
+   "warps_to": [
+    "060"
+   ],
+   "objects": [
+    {
+     "tile": [
+      8,
+      11
+     ],
+     "k": "stash",
+     "item": "megagel"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [
+    "S42:0",
+    "S42:giver"
+   ],
+   "story_scenes": [],
+   "npcs": 3,
+   "wild_table": "thermal_vent",
+   "apprentices": null
+  },
+  "060": {
+   "name": "Harbor Tower 1F",
+   "type": "tower",
+   "tiles": [
+    16,
+    24
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "059",
+    "061"
+   ],
+   "objects": [],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 1,
+   "wild_table": null,
+   "apprentices": 2
+  },
+  "061": {
+   "name": "Harbor Tower 2F",
+   "type": "tower",
+   "tiles": [
+    16,
+    24
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "060"
+   ],
+   "objects": [
+    {
+     "tile": [
+      7,
+      4
+     ],
+     "k": "keeper"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [
+    "M07:2"
+   ],
+   "story_scenes": [],
+   "npcs": 1,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "167": {
+   "name": "Ghost Ship Hold",
+   "type": "interior",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "052"
+   ],
+   "objects": [],
+   "gates": [],
+   "quest_spots": [
+    "S40:1"
+   ],
+   "story_scenes": [],
+   "npcs": 0,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "168": {
+   "name": "Helix Freighter",
+   "type": "interior",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "052"
+   ],
+   "objects": [],
+   "gates": [],
+   "quest_spots": [
+    "M17b:1",
+    "M17b:2"
+   ],
+   "story_scenes": [],
+   "npcs": 0,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "169": {
+   "name": "Smuggler's Freighter",
+   "type": "interior",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "053"
+   ],
+   "objects": [],
+   "gates": [],
+   "quest_spots": [
+    "M19b:4"
+   ],
+   "story_scenes": [],
+   "npcs": 0,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "171": {
+   "name": "Thalassa House",
+   "type": "interior",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "back"
+   ],
+   "objects": [],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 1,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "191": {
+   "name": "Thalassa Seaside Home",
+   "type": "interior",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "back"
+   ],
+   "objects": [],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 1,
+   "wild_table": null,
+   "apprentices": null
+  }
+ },
+ "kit": {
+  "768": {
+   "cat": "Battle Arena",
+   "name": "Tidewater Arena Exterior",
+   "alt": false,
+   "type": "landmark",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      9,
+      11
+     ]
+    ],
+    "right": [
+     [
+      9,
+      11
+     ]
+    ],
+    "bottom": [
+     [
+      11,
+      12
+     ]
+    ]
+   }
+  },
+  "769": {
+   "cat": "Battle Arena",
+   "name": "Tidewater Arena Lobby",
+   "alt": false,
+   "type": "arena",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "770": {
+   "cat": "Battle Arena",
+   "name": "Tidewater Arena Battle Room option 1",
+   "alt": false,
+   "type": "arena",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {}
+  },
+  "771": {
+   "cat": "Battle Arena",
+   "name": "Tidewater Arena Battle Room option 2",
+   "alt": true,
+   "type": "arena",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {}
+  },
+  "772": {
+   "cat": "Cave",
+   "name": "Entrance",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "bottom": [
+     [
+      10,
+      14
+     ]
+    ]
+   }
+  },
+  "773": {
+   "cat": "Cave",
+   "name": "Floor 1",
+   "alt": false,
+   "type": "cave",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      0,
+      15
+     ]
+    ],
+    "right": [
+     [
+      0,
+      15
+     ]
+    ],
+    "top": [
+     [
+      0,
+      23
+     ]
+    ],
+    "bottom": [
+     [
+      0,
+      23
+     ]
+    ]
+   }
+  },
+  "774": {
+   "cat": "Cave",
+   "name": "Floor 2",
+   "alt": false,
+   "type": "cave",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {}
+  },
+  "775": {
+   "cat": "Cave",
+   "name": "Deep Chamber",
+   "alt": false,
+   "type": "cave",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {}
+  },
+  "776": {
+   "cat": "Crossroads",
+   "name": "Boardwalk Crossing",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      5,
+      9
+     ]
+    ],
+    "right": [
+     [
+      5,
+      9
+     ]
+    ],
+    "top": [
+     [
+      10,
+      14
+     ]
+    ],
+    "bottom": [
+     [
+      10,
+      14
+     ]
+    ]
+   }
+  },
+  "777": {
+   "cat": "Crossroads",
+   "name": "Dune Junction",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      4,
+      7
+     ]
+    ],
+    "right": [
+     [
+      8,
+      10
+     ]
+    ],
+    "top": [
+     [
+      4,
+      9
+     ]
+    ],
+    "bottom": [
+     [
+      14,
+      19
+     ]
+    ]
+   }
+  },
+  "778": {
+   "cat": "Crossroads",
+   "name": "Lagoon Fork",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      7,
+      9
+     ],
+     [
+      13,
+      15
+     ]
+    ],
+    "right": [
+     [
+      7,
+      9
+     ]
+    ],
+    "top": [
+     [
+      5,
+      10
+     ]
+    ],
+    "bottom": [
+     [
+      0,
+      10
+     ]
+    ]
+   }
+  },
+  "779": {
+   "cat": "Extra scenes",
+   "name": "Dune Stairway",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      3,
+      8
+     ]
+    ],
+    "bottom": [
+     [
+      13,
+      18
+     ]
+    ]
+   }
+  },
+  "780": {
+   "cat": "Extra scenes",
+   "name": "Lighthouse Bluff",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      9,
+      14
+     ]
+    ],
+    "bottom": [
+     [
+      9,
+      14
+     ]
+    ]
+   }
+  },
+  "781": {
+   "cat": "Extra scenes",
+   "name": "Coral Cove",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      2,
+      9
+     ]
+    ],
+    "bottom": [
+     [
+      4,
+      9
+     ]
+    ]
+   }
+  },
+  "782": {
+   "cat": "Extra scenes",
+   "name": "Driftwood Hollows (1)",
+   "alt": true,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      4,
+      7
+     ]
+    ],
+    "bottom": [
+     [
+      17,
+      20
+     ],
+     [
+      22,
+      23
+     ]
+    ]
+   }
+  },
+  "783": {
+   "cat": "Extra scenes",
+   "name": "Driftwood Hollows",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      4,
+      7
+     ]
+    ],
+    "bottom": [
+     [
+      17,
+      20
+     ],
+     [
+      22,
+      23
+     ]
+    ]
+   }
+  },
+  "784": {
+   "cat": "Extra scenes",
+   "name": "Tidal Inlet",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      16,
+      20
+     ]
+    ],
+    "bottom": [
+     [
+      6,
+      10
+     ]
+    ]
+   }
+  },
+  "785": {
+   "cat": "Extra scenes",
+   "name": "Shell Flats",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "right": [
+     [
+      4,
+      8
+     ]
+    ],
+    "top": [
+     [
+      9,
+      13
+     ]
+    ],
+    "bottom": [
+     [
+      4,
+      9
+     ]
+    ]
+   }
+  },
+  "786": {
+   "cat": "Helix Hideout",
+   "name": "Disguised Entrance",
+   "alt": false,
+   "type": "landmark",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      8,
+      11
+     ]
+    ],
+    "right": [
+     [
+      8,
+      11
+     ]
+    ]
+   }
+  },
+  "787": {
+   "cat": "Helix Hideout",
+   "name": "Secret Lab",
+   "alt": false,
+   "type": "dungeon",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "788": {
+   "cat": "Hidden Area",
+   "name": "Secret Grove (1)",
+   "alt": true,
+   "type": "field",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      9,
+      11
+     ]
+    ],
+    "right": [
+     [
+      9,
+      11
+     ]
+    ]
+   }
+  },
+  "789": {
+   "cat": "Hidden Area",
+   "name": "Secret Grove (2)",
+   "alt": true,
+   "type": "field",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      9,
+      11
+     ]
+    ],
+    "right": [
+     [
+      9,
+      11
+     ]
+    ]
+   }
+  },
+  "790": {
+   "cat": "Hidden Area",
+   "name": "Secret Grove",
+   "alt": false,
+   "type": "field",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      9,
+      11
+     ]
+    ],
+    "right": [
+     [
+      9,
+      11
+     ]
+    ]
+   }
+  },
+  "791": {
+   "cat": "Interior rooms",
+   "name": "Harbormaster's Office",
+   "alt": false,
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "792": {
+   "cat": "Interior rooms",
+   "name": "Fish Market Stall",
+   "alt": false,
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "793": {
+   "cat": "Interior rooms",
+   "name": "Captain's Cabin",
+   "alt": false,
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "794": {
+   "cat": "Recovery Bay",
+   "name": "Interior",
+   "alt": false,
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "795": {
+   "cat": "Relay Tower",
+   "name": "Exterior",
+   "alt": false,
+   "type": "landmark",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {}
+  },
+  "796": {
+   "cat": "Relay Tower",
+   "name": "Trial Floor (1)",
+   "alt": true,
+   "type": "tower",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "797": {
+   "cat": "Relay Tower",
+   "name": "Trial Floor",
+   "alt": false,
+   "type": "tower",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "798": {
+   "cat": "Relay Tower",
+   "name": "Keeper Room",
+   "alt": false,
+   "type": "tower",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "bottom": [
+     [
+      11,
+      12
+     ]
+    ]
+   }
+  },
+  "799": {
+   "cat": "Residential",
+   "name": "Thalassa Lane Homes",
+   "alt": false,
+   "type": "town",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      9,
+      11
+     ]
+    ],
+    "right": [
+     [
+      9,
+      11
+     ]
+    ]
+   }
+  },
+  "800": {
+   "cat": "Residential",
+   "name": "Thalassa Quiet Court",
+   "alt": false,
+   "type": "town",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      5,
+      8
+     ]
+    ],
+    "bottom": [
+     [
+      9,
+      13
+     ]
+    ]
+   }
+  },
+  "801": {
+   "cat": "Residential",
+   "name": "Thalassa Farmstead Edge",
+   "alt": false,
+   "type": "town",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      8,
+      9
+     ]
+    ],
+    "top": [
+     [
+      14,
+      18
+     ]
+    ]
+   }
+  },
+  "802": {
+   "cat": "Shop",
+   "name": "Interior",
+   "alt": false,
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "803": {
+   "cat": "Spaceport",
+   "name": "Landing Pad",
+   "alt": false,
+   "type": "landmark",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {}
+  },
+  "804": {
+   "cat": "Water Route",
+   "name": "Open Water Route",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      0,
+      23
+     ]
+    ],
+    "bottom": [
+     [
+      0,
+      23
+     ]
+    ]
+   }
+  },
+  "805": {
+   "cat": "Water Route",
+   "name": "Island Chain",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      1,
+      6
+     ],
+     [
+      8,
+      18
+     ]
+    ]
+   }
+  }
+ }
+}

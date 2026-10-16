@@ -1,0 +1,49 @@
+{
+ "dir": "15_arena",
+ "arrival": {},
+ "sections": {
+  "164": {
+   "name": "Star Arena",
+   "type": "arena",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "bottom": "arrival"
+   },
+   "warps_to": [],
+   "objects": [
+    {
+     "tile": [
+      2,
+      11
+     ],
+     "k": "shop"
+    },
+    {
+     "tile": [
+      21,
+      11
+     ],
+     "k": "bay"
+    },
+    {
+     "tile": [
+      12,
+      3
+     ],
+     "k": "arena"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 8,
+   "wild_table": null,
+   "apprentices": null
+  }
+ },
+ "kit": {}
+}

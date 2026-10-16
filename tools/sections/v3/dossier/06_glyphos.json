@@ -1,0 +1,1122 @@
+{
+ "dir": "06_glyphos",
+ "arrival": {
+  "glyphos": {
+   "section": "072",
+   "why": "V2: the jetty at Sunken Landing"
+  }
+ },
+ "sections": {
+  "072": {
+   "name": "Sunken Landing",
+   "type": "landmark",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "right": "073"
+   },
+   "warps_to": [
+    "planet:dustara"
+   ],
+   "objects": [
+    {
+     "tile": [
+      10,
+      13
+     ],
+     "k": "stash",
+     "item": "ether"
+    }
+   ],
+   "gates": [
+    {
+     "section": "072",
+     "tiles": [
+      [
+       0,
+       6
+      ],
+      [
+       0,
+       7
+      ],
+      [
+       0,
+       8
+      ]
+     ],
+     "at_dy": 0,
+     "node": "dustara",
+     "planet": "dustara",
+     "label": "the Deep Sea Ferry back to the Long Dock",
+     "why": "V2: the jetty is the arrival point and the ferry home"
+    }
+   ],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 2,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "073": {
+   "name": "Dig Camp",
+   "type": "town",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "left": "072",
+    "right": "075"
+   },
+   "warps_to": [
+    "074"
+   ],
+   "objects": [
+    {
+     "tile": [
+      2,
+      4
+     ],
+     "k": "house",
+     "to": "177"
+    },
+    {
+     "tile": [
+      3,
+      4
+     ],
+     "k": "house",
+     "to": "177"
+    },
+    {
+     "tile": [
+      14,
+      4
+     ],
+     "k": "house",
+     "to": "183"
+    },
+    {
+     "tile": [
+      15,
+      4
+     ],
+     "k": "house",
+     "to": "183"
+    },
+    {
+     "tile": [
+      19,
+      4
+     ],
+     "k": "house",
+     "to": "177"
+    },
+    {
+     "tile": [
+      20,
+      4
+     ],
+     "k": "house",
+     "to": "177"
+    },
+    {
+     "tile": [
+      9,
+      12
+     ],
+     "k": "stash",
+     "item": "megagel"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 7,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "074": {
+   "name": "Dig Camp Recovery Tent",
+   "type": "interior",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "073"
+   ],
+   "objects": [
+    {
+     "tile": [
+      7,
+      4
+     ],
+     "k": "bay"
+    },
+    {
+     "tile": [
+      8,
+      4
+     ],
+     "k": "bay"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 2,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "075": {
+   "name": "Coral Ruins Part A",
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "left": "073",
+    "right": "076"
+   },
+   "warps_to": [],
+   "objects": [
+    {
+     "tile": [
+      11,
+      14
+     ],
+     "k": "stash",
+     "item": "jammer"
+    },
+    {
+     "tile": [
+      17,
+      12
+     ],
+     "k": "stash",
+     "item": "revive"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 1,
+   "wild_table": "ruins",
+   "apprentices": null
+  },
+  "076": {
+   "name": "Coral Ruins Part B",
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "left": "075",
+    "right": "077"
+   },
+   "warps_to": [],
+   "objects": [
+    {
+     "tile": [
+      11,
+      14
+     ],
+     "k": "stash",
+     "item": "stun"
+    },
+    {
+     "tile": [
+      13,
+      14
+     ],
+     "k": "stash",
+     "item": "harmonic"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 2,
+   "wild_table": "ruins",
+   "apprentices": null
+  },
+  "077": {
+   "name": "Glyph Hollow",
+   "type": "field",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "left": "076"
+   },
+   "warps_to": [
+    "078"
+   ],
+   "objects": [
+    {
+     "tile": [
+      10,
+      12
+     ],
+     "k": "stash",
+     "item": "megagel"
+    },
+    {
+     "tile": [
+      15,
+      3
+     ],
+     "k": "stash",
+     "item": "harmonic"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [
+    "S60:0"
+   ],
+   "story_scenes": [],
+   "npcs": 2,
+   "wild_table": "ruins",
+   "apprentices": null
+  },
+  "078": {
+   "name": "Temple of Voices 1F",
+   "type": "tower",
+   "tiles": [
+    16,
+    24
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "077",
+    "079"
+   ],
+   "objects": [],
+   "gates": [],
+   "quest_spots": [
+    "M10:giver",
+    "S60:giver"
+   ],
+   "story_scenes": [],
+   "npcs": 1,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "079": {
+   "name": "Temple of Voices 2F",
+   "type": "tower",
+   "tiles": [
+    16,
+    24
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "078",
+    "080"
+   ],
+   "objects": [],
+   "gates": [],
+   "quest_spots": [
+    "S61:giver",
+    "S62:1"
+   ],
+   "story_scenes": [],
+   "npcs": 1,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "080": {
+   "name": "Temple of Voices 3F",
+   "type": "tower",
+   "tiles": [
+    16,
+    24
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "079",
+    "081"
+   ],
+   "objects": [],
+   "gates": [],
+   "quest_spots": [
+    "S62:0",
+    "S62:giver"
+   ],
+   "story_scenes": [],
+   "npcs": 1,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "081": {
+   "name": "Mural Hall",
+   "type": "interior",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "080"
+   ],
+   "objects": [],
+   "gates": [],
+   "quest_spots": [
+    "M10:1"
+   ],
+   "story_scenes": [],
+   "npcs": 2,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "177": {
+   "name": "Glyphos House",
+   "type": "interior",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "back"
+   ],
+   "objects": [],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 1,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "183": {
+   "name": "Dig Camp HQ Tent",
+   "type": "interior",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "back"
+   ],
+   "objects": [],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 1,
+   "wild_table": null,
+   "apprentices": null
+  }
+ },
+ "kit": {
+  "542": {
+   "cat": "Battle Arena",
+   "name": "Temple of Trials Exterior (1)",
+   "alt": true,
+   "type": "landmark",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      9,
+      10
+     ]
+    ],
+    "right": [
+     [
+      9,
+      10
+     ]
+    ],
+    "bottom": [
+     [
+      10,
+      13
+     ]
+    ]
+   }
+  },
+  "543": {
+   "cat": "Battle Arena",
+   "name": "Temple of Trials Exterior",
+   "alt": false,
+   "type": "landmark",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      9,
+      12
+     ]
+    ],
+    "right": [
+     [
+      9,
+      12
+     ]
+    ],
+    "bottom": [
+     [
+      10,
+      13
+     ]
+    ]
+   }
+  },
+  "544": {
+   "cat": "Battle Arena",
+   "name": "Temple of Trials Lobby (1)",
+   "alt": true,
+   "type": "arena",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "545": {
+   "cat": "Battle Arena",
+   "name": "Temple of Trials Lobby",
+   "alt": false,
+   "type": "arena",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "546": {
+   "cat": "Battle Arena",
+   "name": "Temple of Trials Battle Floor",
+   "alt": false,
+   "type": "arena",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "bottom": [
+     [
+      11,
+      12
+     ]
+    ]
+   }
+  },
+  "547": {
+   "cat": "Battle Arena",
+   "name": "Temple of Trials Battle Room",
+   "alt": false,
+   "type": "arena",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {}
+  },
+  "548": {
+   "cat": "Cave",
+   "name": "Entrance",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "bottom": [
+     [
+      10,
+      14
+     ]
+    ]
+   }
+  },
+  "549": {
+   "cat": "Cave",
+   "name": "Floor 1",
+   "alt": false,
+   "type": "cave",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      0,
+      15
+     ]
+    ],
+    "right": [
+     [
+      0,
+      15
+     ]
+    ],
+    "top": [
+     [
+      0,
+      23
+     ]
+    ],
+    "bottom": [
+     [
+      0,
+      23
+     ]
+    ]
+   }
+  },
+  "550": {
+   "cat": "Cave",
+   "name": "Floor 2",
+   "alt": false,
+   "type": "cave",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {}
+  },
+  "551": {
+   "cat": "Cave",
+   "name": "Deep Chamber",
+   "alt": false,
+   "type": "cave",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {}
+  },
+  "552": {
+   "cat": "Crossroads",
+   "name": "Ruin Crossroads",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      0,
+      9
+     ]
+    ],
+    "right": [
+     [
+      5,
+      9
+     ]
+    ],
+    "top": [
+     [
+      0,
+      15
+     ]
+    ],
+    "bottom": [
+     [
+      10,
+      15
+     ]
+    ]
+   }
+  },
+  "553": {
+   "cat": "Crossroads",
+   "name": "Glyph Junction",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      3,
+      8
+     ]
+    ],
+    "right": [
+     [
+      7,
+      10
+     ],
+     [
+      12,
+      13
+     ]
+    ],
+    "top": [
+     [
+      4,
+      9
+     ]
+    ],
+    "bottom": [
+     [
+      15,
+      19
+     ]
+    ]
+   }
+  },
+  "554": {
+   "cat": "Crossroads",
+   "name": "Tidepool Fork",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      7,
+      9
+     ]
+    ],
+    "right": [
+     [
+      7,
+      9
+     ],
+     [
+      12,
+      13
+     ]
+    ],
+    "top": [
+     [
+      6,
+      9
+     ]
+    ],
+    "bottom": [
+     [
+      6,
+      12
+     ]
+    ]
+   }
+  },
+  "555": {
+   "cat": "Extra scenes",
+   "name": "Glyph Steps",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      3,
+      8
+     ]
+    ],
+    "bottom": [
+     [
+      13,
+      18
+     ]
+    ]
+   }
+  },
+  "556": {
+   "cat": "Extra scenes",
+   "name": "Mural Overlook",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      9,
+      14
+     ]
+    ],
+    "bottom": [
+     [
+      9,
+      14
+     ]
+    ]
+   }
+  },
+  "557": {
+   "cat": "Extra scenes",
+   "name": "Tidepool Ruins",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      4,
+      9
+     ]
+    ],
+    "bottom": [
+     [
+      4,
+      9
+     ]
+    ]
+   }
+  },
+  "558": {
+   "cat": "Extra scenes",
+   "name": "Pillar Hollows",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      3,
+      8
+     ]
+    ],
+    "bottom": [
+     [
+      16,
+      21
+     ]
+    ]
+   }
+  },
+  "559": {
+   "cat": "Extra scenes",
+   "name": "Sunken Channel",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "right": [
+     [
+      0,
+      2
+     ]
+    ],
+    "top": [
+     [
+      10,
+      14
+     ],
+     [
+      16,
+      20
+     ],
+     [
+      22,
+      23
+     ]
+    ],
+    "bottom": [
+     [
+      6,
+      11
+     ]
+    ]
+   }
+  },
+  "560": {
+   "cat": "Extra scenes",
+   "name": "Forgotten Forum",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      5,
+      7
+     ],
+     [
+      9,
+      10
+     ]
+    ],
+    "right": [
+     [
+      2,
+      3
+     ]
+    ],
+    "top": [
+     [
+      5,
+      6
+     ],
+     [
+      9,
+      14
+     ]
+    ],
+    "bottom": [
+     [
+      4,
+      9
+     ]
+    ]
+   }
+  },
+  "561": {
+   "cat": "Hidden Area",
+   "name": "Secret Grove",
+   "alt": false,
+   "type": "field",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      9,
+      11
+     ]
+    ],
+    "right": [
+     [
+      9,
+      11
+     ]
+    ]
+   }
+  },
+  "562": {
+   "cat": "Interior rooms",
+   "name": "Archivist's Study",
+   "alt": false,
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "563": {
+   "cat": "Interior rooms",
+   "name": "Dig Camp Tent",
+   "alt": false,
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "564": {
+   "cat": "Interior rooms",
+   "name": "Shrine Chamber",
+   "alt": false,
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "565": {
+   "cat": "Recovery Bay",
+   "name": "Interior",
+   "alt": false,
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "566": {
+   "cat": "Residential",
+   "name": "Glyphos Lane Homes",
+   "alt": false,
+   "type": "town",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      9,
+      12
+     ]
+    ],
+    "right": [
+     [
+      9,
+      12
+     ]
+    ]
+   }
+  },
+  "567": {
+   "cat": "Residential",
+   "name": "Glyphos Quiet Court",
+   "alt": false,
+   "type": "town",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      5,
+      8
+     ]
+    ],
+    "bottom": [
+     [
+      10,
+      13
+     ]
+    ]
+   }
+  },
+  "568": {
+   "cat": "Residential",
+   "name": "Glyphos Farmstead Edge",
+   "alt": false,
+   "type": "town",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      7,
+      10
+     ]
+    ],
+    "top": [
+     [
+      14,
+      18
+     ]
+    ]
+   }
+  },
+  "569": {
+   "cat": "Shop",
+   "name": "Interior",
+   "alt": false,
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "570": {
+   "cat": "Spaceport",
+   "name": "Landing Pad",
+   "alt": false,
+   "type": "landmark",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      12,
+      13
+     ]
+    ]
+   }
+  },
+  "571": {
+   "cat": "Water Route",
+   "name": "Open Water Route",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      0,
+      11
+     ],
+     [
+      13,
+      23
+     ]
+    ],
+    "bottom": [
+     [
+      0,
+      23
+     ]
+    ]
+   }
+  },
+  "572": {
+   "cat": "Water Route",
+   "name": "Island Chain",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {}
+  }
+ }
+}

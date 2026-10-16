@@ -1,0 +1,944 @@
+{
+ "dir": "09_helix",
+ "arrival": {
+  "helix": {
+   "section": "105",
+   "why": "V2: the docking bay pad on the Docking Ring"
+  }
+ },
+ "sections": {
+  "105": {
+   "name": "Docking Ring",
+   "type": "town",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "106",
+    "107",
+    "109",
+    "112",
+    "planet:dustara"
+   ],
+   "objects": [
+    {
+     "tile": [
+      17,
+      3
+     ],
+     "k": "bay"
+    },
+    {
+     "tile": [
+      18,
+      3
+     ],
+     "k": "bay"
+    },
+    {
+     "tile": [
+      20,
+      13
+     ],
+     "k": "stash",
+     "item": "maxrevive"
+    }
+   ],
+   "gates": [
+    {
+     "section": "105",
+     "tiles": [
+      [
+       1,
+       7
+      ],
+      [
+       1,
+       8
+      ]
+     ],
+     "at_dy": 0,
+     "node": "dustara",
+     "planet": "dustara",
+     "label": "the shuttle back to the Shuttle Pad",
+     "why": "V2: the docking bay pad is the arrival point and the shuttle home"
+    }
+   ],
+   "quest_spots": [
+    "M14:0",
+    "M14:giver"
+   ],
+   "story_scenes": [],
+   "npcs": 7,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "106": {
+   "name": "Barracks",
+   "type": "interior",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "105"
+   ],
+   "objects": [],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 2,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "107": {
+   "name": "Labs 1F",
+   "type": "interior",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "105",
+    "108"
+   ],
+   "objects": [],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 2,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "108": {
+   "name": "Labs 2F",
+   "type": "interior",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "107"
+   ],
+   "objects": [],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 2,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "109": {
+   "name": "Containment Wing 1F",
+   "type": "dungeon",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "105",
+    "110"
+   ],
+   "objects": [
+    {
+     "tile": [
+      14,
+      8
+     ],
+     "k": "stash",
+     "item": "singularity"
+    },
+    {
+     "tile": [
+      1,
+      8
+     ],
+     "k": "stash",
+     "item": "ether"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [
+    "S90:giver"
+   ],
+   "story_scenes": [
+    {
+     "id": "project_unity_sign",
+     "when": {
+      "after": "M13"
+     }
+    }
+   ],
+   "npcs": 1,
+   "wild_table": "containment",
+   "apprentices": null
+  },
+  "110": {
+   "name": "Containment Wing 2F",
+   "type": "dungeon",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "109",
+    "111"
+   ],
+   "objects": [
+    {
+     "tile": [
+      2,
+      10
+     ],
+     "k": "stash",
+     "item": "harmonic"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [
+    "S90:0"
+   ],
+   "story_scenes": [],
+   "npcs": 1,
+   "wild_table": "containment",
+   "apprentices": null
+  },
+  "111": {
+   "name": "Engineering",
+   "type": "dungeon",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "110",
+    "113"
+   ],
+   "objects": [
+    {
+     "tile": [
+      3,
+      11
+     ],
+     "k": "stash",
+     "item": "maxrevive"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [
+    "M14:1",
+    "S91:0",
+    "S91:giver"
+   ],
+   "story_scenes": [],
+   "npcs": 1,
+   "wild_table": "containment",
+   "apprentices": null
+  },
+  "112": {
+   "name": "Observation Deck",
+   "type": "interior",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "105"
+   ],
+   "objects": [],
+   "gates": [],
+   "quest_spots": [
+    "M14:2",
+    "M14:3",
+    "M15:0",
+    "M15:giver"
+   ],
+   "story_scenes": [],
+   "npcs": 2,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "113": {
+   "name": "Vex's Arena",
+   "type": "arena",
+   "tiles": [
+    16,
+    24
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "111"
+   ],
+   "objects": [],
+   "gates": [],
+   "quest_spots": [
+    "M15:1"
+   ],
+   "story_scenes": [],
+   "npcs": 0,
+   "wild_table": null,
+   "apprentices": null
+  }
+ },
+ "kit": {
+  "605": {
+   "cat": "Battle Arena",
+   "name": "Helix Proving Grounds Exterior",
+   "alt": false,
+   "type": "landmark",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      10,
+      12
+     ]
+    ],
+    "right": [
+     [
+      10,
+      12
+     ]
+    ],
+    "bottom": [
+     [
+      10,
+      13
+     ]
+    ]
+   }
+  },
+  "606": {
+   "cat": "Battle Arena",
+   "name": "Helix Proving Grounds Lobby",
+   "alt": false,
+   "type": "arena",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "607": {
+   "cat": "Battle Arena",
+   "name": "Helix Proving Grounds Battle Room",
+   "alt": false,
+   "type": "arena",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {}
+  },
+  "608": {
+   "cat": "Cave",
+   "name": "Entrance",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      8,
+      15
+     ]
+    ],
+    "bottom": [
+     [
+      0,
+      8
+     ]
+    ]
+   }
+  },
+  "609": {
+   "cat": "Cave",
+   "name": "Floor 1",
+   "alt": false,
+   "type": "cave",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      0,
+      15
+     ]
+    ],
+    "right": [
+     [
+      0,
+      15
+     ]
+    ],
+    "top": [
+     [
+      0,
+      23
+     ]
+    ],
+    "bottom": [
+     [
+      0,
+      23
+     ]
+    ]
+   }
+  },
+  "610": {
+   "cat": "Cave",
+   "name": "Floor 2",
+   "alt": false,
+   "type": "cave",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {}
+  },
+  "611": {
+   "cat": "Cave",
+   "name": "Deep Chamber",
+   "alt": false,
+   "type": "cave",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {}
+  },
+  "612": {
+   "cat": "Crossroads",
+   "name": "Deck Crossroads",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      5,
+      9
+     ]
+    ],
+    "right": [
+     [
+      5,
+      9
+     ]
+    ],
+    "top": [
+     [
+      8,
+      13
+     ]
+    ],
+    "bottom": [
+     [
+      8,
+      13
+     ]
+    ]
+   }
+  },
+  "613": {
+   "cat": "Crossroads",
+   "name": "Corridor Junction",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      7,
+      15
+     ]
+    ],
+    "right": [
+     [
+      0,
+      7
+     ]
+    ],
+    "top": [
+     [
+      14,
+      23
+     ]
+    ],
+    "bottom": [
+     [
+      0,
+      9
+     ]
+    ]
+   }
+  },
+  "614": {
+   "cat": "Crossroads",
+   "name": "Coolant Fork",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      7,
+      11
+     ]
+    ],
+    "right": [
+     [
+      7,
+      11
+     ]
+    ],
+    "top": [
+     [
+      13,
+      17
+     ]
+    ],
+    "bottom": [
+     [
+      13,
+      17
+     ]
+    ]
+   }
+  },
+  "615": {
+   "cat": "Extra scenes",
+   "name": "Docking Ramp",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      15,
+      20
+     ]
+    ],
+    "bottom": [
+     [
+      5,
+      13
+     ]
+    ]
+   }
+  },
+  "616": {
+   "cat": "Extra scenes",
+   "name": "Viewport Overlook",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "right": [
+     [
+      4,
+      5
+     ]
+    ],
+    "top": [
+     [
+      2,
+      3
+     ],
+     [
+      7,
+      8
+     ],
+     [
+      10,
+      13
+     ],
+     [
+      15,
+      22
+     ]
+    ],
+    "bottom": [
+     [
+      10,
+      13
+     ],
+     [
+      15,
+      17
+     ]
+    ]
+   }
+  },
+  "617": {
+   "cat": "Extra scenes",
+   "name": "Coolant Basin",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "right": [
+     [
+      0,
+      15
+     ]
+    ],
+    "top": [
+     [
+      14,
+      23
+     ]
+    ],
+    "bottom": [
+     [
+      14,
+      23
+     ]
+    ]
+   }
+  },
+  "618": {
+   "cat": "Extra scenes",
+   "name": "Containment Wing",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "right": [
+     [
+      12,
+      13
+     ]
+    ],
+    "top": [
+     [
+      15,
+      20
+     ]
+    ],
+    "bottom": [
+     [
+      2,
+      7
+     ],
+     [
+      21,
+      23
+     ]
+    ]
+   }
+  },
+  "619": {
+   "cat": "Extra scenes",
+   "name": "Reactor Channel",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      3,
+      6
+     ]
+    ],
+    "bottom": [
+     [
+      13,
+      19
+     ]
+    ]
+   }
+  },
+  "620": {
+   "cat": "Extra scenes",
+   "name": "Hangar Deck",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      10,
+      13
+     ]
+    ],
+    "bottom": [
+     [
+      15,
+      18
+     ]
+    ]
+   }
+  },
+  "621": {
+   "cat": "Hidden Area",
+   "name": "Secret Grove",
+   "alt": false,
+   "type": "field",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      9,
+      12
+     ]
+    ],
+    "right": [
+     [
+      5,
+      7
+     ],
+     [
+      9,
+      12
+     ]
+    ]
+   }
+  },
+  "622": {
+   "cat": "Interior rooms",
+   "name": "Containment Lab",
+   "alt": false,
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "623": {
+   "cat": "Interior rooms",
+   "name": "Crew Quarters",
+   "alt": false,
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "624": {
+   "cat": "Interior rooms",
+   "name": "Command Bridge",
+   "alt": false,
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "625": {
+   "cat": "Recovery Bay",
+   "name": "Interior",
+   "alt": false,
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "626": {
+   "cat": "Relay Tower",
+   "name": "Exterior",
+   "alt": false,
+   "type": "landmark",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {}
+  },
+  "627": {
+   "cat": "Relay Tower",
+   "name": "Trial Floor",
+   "alt": false,
+   "type": "tower",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "628": {
+   "cat": "Relay Tower",
+   "name": "Keeper Room",
+   "alt": false,
+   "type": "tower",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {}
+  },
+  "629": {
+   "cat": "Residential",
+   "name": "Helix Lane Homes",
+   "alt": false,
+   "type": "town",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      9,
+      12
+     ]
+    ],
+    "right": [
+     [
+      9,
+      12
+     ]
+    ]
+   }
+  },
+  "630": {
+   "cat": "Residential",
+   "name": "Helix Quiet Court option 1",
+   "alt": false,
+   "type": "town",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "right": [
+     [
+      5,
+      6
+     ]
+    ],
+    "bottom": [
+     [
+      10,
+      13
+     ]
+    ]
+   }
+  },
+  "631": {
+   "cat": "Residential",
+   "name": "Helix Quiet Court option 2",
+   "alt": true,
+   "type": "town",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "bottom": [
+     [
+      11,
+      13
+     ]
+    ]
+   }
+  },
+  "632": {
+   "cat": "Residential",
+   "name": "Helix Farmstead Edge",
+   "alt": false,
+   "type": "town",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "right": [
+     [
+      7,
+      9
+     ]
+    ],
+    "top": [
+     [
+      5,
+      9
+     ]
+    ]
+   }
+  },
+  "633": {
+   "cat": "Shop",
+   "name": "Interior",
+   "alt": false,
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "634": {
+   "cat": "Spaceport",
+   "name": "Landing Pad",
+   "alt": false,
+   "type": "landmark",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {}
+  }
+ }
+}

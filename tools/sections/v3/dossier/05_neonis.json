@@ -1,0 +1,1217 @@
+{
+ "dir": "05_neonis",
+ "arrival": {
+  "neonis": {
+   "section": "062",
+   "why": "V2: the landing ring on the starport deck"
+  }
+ },
+ "sections": {
+  "062": {
+   "name": "Neonis Starport",
+   "type": "town",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "right": "063"
+   },
+   "warps_to": [],
+   "objects": [
+    {
+     "tile": [
+      3,
+      4
+     ],
+     "k": "house",
+     "to": "192"
+    },
+    {
+     "tile": [
+      4,
+      4
+     ],
+     "k": "house",
+     "to": "192"
+    },
+    {
+     "tile": [
+      9,
+      4
+     ],
+     "k": "house",
+     "to": "064"
+    },
+    {
+     "tile": [
+      10,
+      4
+     ],
+     "k": "house",
+     "to": "064"
+    },
+    {
+     "tile": [
+      14,
+      4
+     ],
+     "k": "house",
+     "to": "065"
+    },
+    {
+     "tile": [
+      15,
+      4
+     ],
+     "k": "house",
+     "to": "065"
+    },
+    {
+     "tile": [
+      19,
+      4
+     ],
+     "k": "house",
+     "to": "192"
+    },
+    {
+     "tile": [
+      20,
+      4
+     ],
+     "k": "house",
+     "to": "192"
+    },
+    {
+     "tile": [
+      0,
+      12
+     ],
+     "k": "stash",
+     "item": "stun"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [
+    "M09:0",
+    "M09:giver",
+    "S50:0",
+    "S50:giver",
+    "S52:giver"
+   ],
+   "story_scenes": [],
+   "npcs": 8,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "063": {
+   "name": "Neon Boulevard",
+   "type": "town",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "left": "062",
+    "right": "066"
+   },
+   "warps_to": [
+    "064",
+    "065",
+    "170"
+   ],
+   "objects": [
+    {
+     "tile": [
+      20,
+      4
+     ],
+     "k": "house",
+     "to": "192"
+    },
+    {
+     "tile": [
+      21,
+      4
+     ],
+     "k": "house",
+     "to": "192"
+    },
+    {
+     "tile": [
+      4,
+      12
+     ],
+     "k": "stash",
+     "item": "dust"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [
+    "S51:giver",
+    "S52:0",
+    "S53:giver"
+   ],
+   "story_scenes": [],
+   "npcs": 7,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "064": {
+   "name": "Neonis Recovery Bay",
+   "type": "interior",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "back"
+   ],
+   "objects": [
+    {
+     "tile": [
+      7,
+      4
+     ],
+     "k": "bay"
+    },
+    {
+     "tile": [
+      8,
+      4
+     ],
+     "k": "bay"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 2,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "065": {
+   "name": "Neonis Shop",
+   "type": "interior",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "back"
+   ],
+   "objects": [
+    {
+     "tile": [
+      7,
+      4
+     ],
+     "k": "shop"
+    },
+    {
+     "tile": [
+      8,
+      4
+     ],
+     "k": "shop"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 2,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "066": {
+   "name": "Arcade District",
+   "type": "field",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "left": "063",
+    "right": "067"
+   },
+   "warps_to": [],
+   "objects": [
+    {
+     "tile": [
+      11,
+      3
+     ],
+     "k": "house",
+     "to": "180"
+    },
+    {
+     "tile": [
+      12,
+      3
+     ],
+     "k": "house",
+     "to": "180"
+    },
+    {
+     "tile": [
+      21,
+      4
+     ],
+     "k": "stash",
+     "item": "ether"
+    },
+    {
+     "tile": [
+      3,
+      4
+     ],
+     "k": "stash",
+     "item": "dust"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [
+    "S53:0",
+    "S53:1"
+   ],
+   "story_scenes": [],
+   "npcs": 3,
+   "wild_table": "neon_city",
+   "apprentices": null
+  },
+  "067": {
+   "name": "Broadcast Route Part A",
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "left": "066",
+    "right": "068"
+   },
+   "warps_to": [],
+   "objects": [
+    {
+     "tile": [
+      11,
+      14
+     ],
+     "k": "stash",
+     "item": "revive"
+    },
+    {
+     "tile": [
+      10,
+      1
+     ],
+     "k": "stash",
+     "item": "megagel"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 2,
+   "wild_table": "neon_city",
+   "apprentices": null
+  },
+  "068": {
+   "name": "Broadcast Route Part B",
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "left": "067"
+   },
+   "warps_to": [
+    "069"
+   ],
+   "objects": [
+    {
+     "tile": [
+      11,
+      14
+     ],
+     "k": "stash",
+     "item": "dust"
+    },
+    {
+     "tile": [
+      11,
+      0
+     ],
+     "k": "stash",
+     "item": "megagel"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 2,
+   "wild_table": "neon_city",
+   "apprentices": null
+  },
+  "069": {
+   "name": "Voltspire 1F",
+   "type": "tower",
+   "tiles": [
+    16,
+    24
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "068",
+    "070"
+   ],
+   "objects": [],
+   "gates": [],
+   "quest_spots": [
+    "S102:1"
+   ],
+   "story_scenes": [],
+   "npcs": 1,
+   "wild_table": null,
+   "apprentices": 2
+  },
+  "070": {
+   "name": "Voltspire 2F",
+   "type": "tower",
+   "tiles": [
+    16,
+    24
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "069",
+    "071"
+   ],
+   "objects": [],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 1,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "071": {
+   "name": "Voltspire 3F",
+   "type": "tower",
+   "tiles": [
+    16,
+    24
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "070"
+   ],
+   "objects": [
+    {
+     "tile": [
+      7,
+      4
+     ],
+     "k": "keeper"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [
+    "M09:1"
+   ],
+   "story_scenes": [],
+   "npcs": 0,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "170": {
+   "name": "Neonis Courtroom",
+   "type": "interior",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "063"
+   ],
+   "objects": [],
+   "gates": [],
+   "quest_spots": [
+    "M19b:3"
+   ],
+   "story_scenes": [],
+   "npcs": 0,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "176": {
+   "name": "Neonis House",
+   "type": "interior",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "back"
+   ],
+   "objects": [],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 1,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "180": {
+   "name": "Arcade Hall",
+   "type": "interior",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "back"
+   ],
+   "objects": [],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 1,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "192": {
+   "name": "Neonis Apartment",
+   "type": "interior",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "back"
+   ],
+   "objects": [],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 1,
+   "wild_table": null,
+   "apprentices": null
+  }
+ },
+ "kit": {
+  "635": {
+   "cat": "Battle Arena",
+   "name": "Neon Megadome Exterior",
+   "alt": false,
+   "type": "landmark",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {}
+  },
+  "636": {
+   "cat": "Battle Arena",
+   "name": "Neon Megadome Lobby",
+   "alt": false,
+   "type": "arena",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "637": {
+   "cat": "Battle Arena",
+   "name": "Neon Megadome Battle Floor",
+   "alt": false,
+   "type": "arena",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      0,
+      5
+     ]
+    ],
+    "right": [
+     [
+      0,
+      5
+     ],
+     [
+      11,
+      15
+     ]
+    ],
+    "top": [
+     [
+      0,
+      2
+     ],
+     [
+      21,
+      23
+     ]
+    ],
+    "bottom": [
+     [
+      14,
+      23
+     ]
+    ]
+   }
+  },
+  "638": {
+   "cat": "Battle Arena",
+   "name": "Neon Megadome Battle Room",
+   "alt": false,
+   "type": "arena",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      0,
+      4
+     ],
+     [
+      8,
+      15
+     ]
+    ],
+    "right": [
+     [
+      0,
+      4
+     ],
+     [
+      8,
+      15
+     ]
+    ],
+    "top": [
+     [
+      0,
+      6
+     ],
+     [
+      16,
+      23
+     ]
+    ],
+    "bottom": [
+     [
+      0,
+      9
+     ],
+     [
+      14,
+      23
+     ]
+    ]
+   }
+  },
+  "639": {
+   "cat": "Cave",
+   "name": "Entrance",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      0,
+      12
+     ],
+     [
+      14,
+      15
+     ]
+    ],
+    "top": [
+     [
+      0,
+      1
+     ],
+     [
+      3,
+      10
+     ]
+    ],
+    "bottom": [
+     [
+      0,
+      9
+     ]
+    ]
+   }
+  },
+  "640": {
+   "cat": "Cave",
+   "name": "Floor 1",
+   "alt": false,
+   "type": "cave",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      0,
+      15
+     ]
+    ],
+    "right": [
+     [
+      0,
+      15
+     ]
+    ],
+    "top": [
+     [
+      0,
+      23
+     ]
+    ],
+    "bottom": [
+     [
+      0,
+      23
+     ]
+    ]
+   }
+  },
+  "641": {
+   "cat": "Cave",
+   "name": "Floor 2",
+   "alt": false,
+   "type": "cave",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {}
+  },
+  "642": {
+   "cat": "Cave",
+   "name": "Deep Chamber",
+   "alt": false,
+   "type": "cave",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {}
+  },
+  "643": {
+   "cat": "Crossroads",
+   "name": "Neon Crossroads",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {}
+  },
+  "644": {
+   "cat": "Crossroads",
+   "name": "Signal Junction",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      7,
+      10
+     ]
+    ],
+    "right": [
+     [
+      3,
+      6
+     ]
+    ],
+    "top": [
+     [
+      14,
+      18
+     ]
+    ],
+    "bottom": [
+     [
+      5,
+      8
+     ],
+     [
+      17,
+      21
+     ]
+    ]
+   }
+  },
+  "645": {
+   "cat": "Crossroads",
+   "name": "Canal Fork",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "bottom": [
+     [
+      12,
+      13
+     ]
+    ]
+   }
+  },
+  "646": {
+   "cat": "Extra scenes",
+   "name": "Bassline Ramp",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      15,
+      20
+     ]
+    ],
+    "bottom": [
+     [
+      5,
+      10
+     ]
+    ]
+   }
+  },
+  "647": {
+   "cat": "Extra scenes",
+   "name": "Skyline Overlook",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      9,
+      13
+     ]
+    ],
+    "bottom": [
+     [
+      10,
+      13
+     ],
+     [
+      19,
+      20
+     ]
+    ]
+   }
+  },
+  "648": {
+   "cat": "Extra scenes",
+   "name": "Canal Quay",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      14,
+      18
+     ]
+    ],
+    "bottom": [
+     [
+      14,
+      22
+     ]
+    ]
+   }
+  },
+  "649": {
+   "cat": "Extra scenes",
+   "name": "Arcade Alleys",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      2,
+      3
+     ]
+    ],
+    "top": [
+     [
+      11,
+      12
+     ],
+     [
+      16,
+      20
+     ]
+    ],
+    "bottom": [
+     [
+      0,
+      8
+     ]
+    ]
+   }
+  },
+  "650": {
+   "cat": "Extra scenes",
+   "name": "Static Canal",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      4,
+      5
+     ]
+    ],
+    "top": [
+     [
+      2,
+      6
+     ]
+    ],
+    "bottom": [
+     [
+      13,
+      16
+     ]
+    ]
+   }
+  },
+  "651": {
+   "cat": "Extra scenes",
+   "name": "Broadcast Plaza",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      9,
+      14
+     ]
+    ],
+    "bottom": [
+     [
+      14,
+      18
+     ]
+    ]
+   }
+  },
+  "652": {
+   "cat": "Helix Hideout",
+   "name": "Disguised Entrance",
+   "alt": false,
+   "type": "landmark",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      10,
+      11
+     ]
+    ],
+    "right": [
+     [
+      10,
+      11
+     ]
+    ]
+   }
+  },
+  "653": {
+   "cat": "Helix Hideout",
+   "name": "Secret Lab",
+   "alt": false,
+   "type": "dungeon",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "654": {
+   "cat": "Hidden Area",
+   "name": "Secret Grove",
+   "alt": false,
+   "type": "field",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      3,
+      4
+     ]
+    ],
+    "right": [
+     [
+      13,
+      14
+     ]
+    ],
+    "top": [
+     [
+      2,
+      5
+     ],
+     [
+      11,
+      12
+     ]
+    ],
+    "bottom": [
+     [
+      3,
+      5
+     ],
+     [
+      13,
+      20
+     ]
+    ]
+   }
+  },
+  "655": {
+   "cat": "Interior rooms",
+   "name": "Arcade Hall",
+   "alt": false,
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "656": {
+   "cat": "Interior rooms",
+   "name": "Recording Studio",
+   "alt": false,
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "657": {
+   "cat": "Interior rooms",
+   "name": "Noodle Bar",
+   "alt": false,
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "658": {
+   "cat": "Recovery Bay",
+   "name": "Interior",
+   "alt": false,
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "659": {
+   "cat": "Relay Tower",
+   "name": "Exterior",
+   "alt": false,
+   "type": "landmark",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {}
+  },
+  "660": {
+   "cat": "Relay Tower",
+   "name": "Trial Floor",
+   "alt": false,
+   "type": "tower",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "661": {
+   "cat": "Relay Tower",
+   "name": "Keeper Room",
+   "alt": false,
+   "type": "tower",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {}
+  },
+  "662": {
+   "cat": "Residential",
+   "name": "Neonis Lane Homes",
+   "alt": false,
+   "type": "town",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      10,
+      12
+     ]
+    ],
+    "right": [
+     [
+      10,
+      15
+     ]
+    ]
+   }
+  },
+  "663": {
+   "cat": "Residential",
+   "name": "Neonis Quiet Court",
+   "alt": false,
+   "type": "town",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "bottom": [
+     [
+      11,
+      12
+     ]
+    ]
+   }
+  },
+  "664": {
+   "cat": "Residential",
+   "name": "Neonis Farmstead Edge",
+   "alt": false,
+   "type": "town",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "right": [
+     [
+      10,
+      13
+     ]
+    ],
+    "top": [
+     [
+      5,
+      9
+     ]
+    ]
+   }
+  },
+  "665": {
+   "cat": "Shop",
+   "name": "Interior",
+   "alt": false,
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "666": {
+   "cat": "Spaceport",
+   "name": "Landing Pad",
+   "alt": false,
+   "type": "landmark",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {}
+  }
+ }
+}

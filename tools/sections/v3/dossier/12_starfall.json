@@ -1,0 +1,1226 @@
+{
+ "dir": "12_starfall",
+ "arrival": {
+  "starfall": {
+   "section": "136",
+   "why": "V2: the sandbagged landing pad at Rim Camp"
+  }
+ },
+ "sections": {
+  "136": {
+   "name": "Rim Camp",
+   "type": "town",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "right": "138"
+   },
+   "warps_to": [
+    "137",
+    "planet:dustara"
+   ],
+   "objects": [
+    {
+     "tile": [
+      4,
+      4
+     ],
+     "k": "house",
+     "to": "172"
+    },
+    {
+     "tile": [
+      20,
+      4
+     ],
+     "k": "house",
+     "to": "172"
+    },
+    {
+     "tile": [
+      9,
+      12
+     ],
+     "k": "stash",
+     "item": "dust"
+    }
+   ],
+   "gates": [
+    {
+     "section": "136",
+     "tiles": [
+      [
+       1,
+       7
+      ],
+      [
+       1,
+       8
+      ]
+     ],
+     "at_dy": 0,
+     "node": "dustara",
+     "planet": "dustara",
+     "label": "the crater shuttle back to the Shuttle Pad",
+     "why": "V2: the landing pad is the arrival point and the shuttle home"
+    }
+   ],
+   "quest_spots": [],
+   "story_scenes": [
+    {
+     "id": "rim_ostrander",
+     "when": {
+      "active": "M18"
+     }
+    },
+    {
+     "id": "rim_tamsin",
+     "when": {
+      "active": "M18"
+     }
+    }
+   ],
+   "npcs": 8,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "137": {
+   "name": "Rim Camp Medic Tent",
+   "type": "interior",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "136"
+   ],
+   "objects": [
+    {
+     "tile": [
+      7,
+      4
+     ],
+     "k": "bay"
+    },
+    {
+     "tile": [
+      8,
+      4
+     ],
+     "k": "bay"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 2,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "138": {
+   "name": "Seedpod Fields Part A",
+   "type": "field",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "left": "136",
+    "right": "139"
+   },
+   "warps_to": [],
+   "objects": [
+    {
+     "tile": [
+      10,
+      13
+     ],
+     "k": "stash",
+     "item": "ether"
+    },
+    {
+     "tile": [
+      18,
+      12
+     ],
+     "k": "stash",
+     "item": "singularity"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [
+    "S97:giver"
+   ],
+   "story_scenes": [
+    {
+     "id": "zib_pod",
+     "when": {
+      "after": "M17b",
+      "until": "M19"
+     }
+    }
+   ],
+   "npcs": 2,
+   "wild_table": "seedpod_field",
+   "apprentices": null
+  },
+  "139": {
+   "name": "Seedpod Fields Part B",
+   "type": "field",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "left": "138",
+    "right": "140"
+   },
+   "warps_to": [],
+   "objects": [
+    {
+     "tile": [
+      10,
+      13
+     ],
+     "k": "stash",
+     "item": "ether"
+    },
+    {
+     "tile": [
+      6,
+      2
+     ],
+     "k": "stash",
+     "item": "dust"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [
+    "S97:0"
+   ],
+   "story_scenes": [],
+   "npcs": 2,
+   "wild_table": "seedpod_field",
+   "apprentices": null
+  },
+  "140": {
+   "name": "Teo's Old Camp",
+   "type": "landmark",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "left": "139",
+    "right": "141"
+   },
+   "warps_to": [],
+   "objects": [
+    {
+     "tile": [
+      10,
+      3
+     ],
+     "k": "stash",
+     "item": "dust"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [
+    "S98:0",
+    "S98:giver"
+   ],
+   "story_scenes": [],
+   "npcs": 2,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "141": {
+   "name": "Crater Rim",
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "left": "140"
+   },
+   "warps_to": [
+    "142"
+   ],
+   "objects": [
+    {
+     "tile": [
+      10,
+      13
+     ],
+     "k": "stash",
+     "item": "maxrevive"
+    },
+    {
+     "tile": [
+      6,
+      2
+     ],
+     "k": "stash",
+     "item": "fullgel"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [
+    "M18:2",
+    "M18:3",
+    "M18:4",
+    "S95:0"
+   ],
+   "story_scenes": [
+    {
+     "id": "pell_refuses",
+     "when": {
+      "active": "M18"
+     }
+    }
+   ],
+   "npcs": 3,
+   "wild_table": "crater",
+   "apprentices": null
+  },
+  "142": {
+   "name": "Crater Descent B1",
+   "type": "cave",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "141",
+    "143"
+   ],
+   "objects": [
+    {
+     "tile": [
+      14,
+      7
+     ],
+     "k": "stash",
+     "item": "fullgel"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [
+    {
+     "id": "kit_gravity_trap",
+     "when": {
+      "active": "M19"
+     }
+    }
+   ],
+   "npcs": 1,
+   "wild_table": "crater",
+   "apprentices": null
+  },
+  "143": {
+   "name": "Crater Descent B2",
+   "type": "cave",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "142",
+    "144"
+   ],
+   "objects": [
+    {
+     "tile": [
+      2,
+      10
+     ],
+     "k": "stash",
+     "item": "singularity"
+    },
+    {
+     "tile": [
+      13,
+      9
+     ],
+     "k": "stash",
+     "item": "fullgel"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 1,
+   "wild_table": "crater",
+   "apprentices": null
+  },
+  "144": {
+   "name": "Crater Descent B3",
+   "type": "cave",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "143",
+    "145"
+   ],
+   "objects": [
+    {
+     "tile": [
+      2,
+      10
+     ],
+     "k": "stash",
+     "item": "dust"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 1,
+   "wild_table": "crater",
+   "apprentices": null
+  },
+  "145": {
+   "name": "Rift Engine Platform",
+   "type": "landmark",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "144"
+   ],
+   "objects": [
+    {
+     "tile": [
+      9,
+      12
+     ],
+     "k": "stash",
+     "item": "maxrevive"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [
+    "M19:0",
+    "M19:1",
+    "M19:giver"
+   ],
+   "story_scenes": [],
+   "npcs": 2,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "172": {
+   "name": "Starfall Rift House",
+   "type": "interior",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "back"
+   ],
+   "objects": [],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 1,
+   "wild_table": null,
+   "apprentices": null
+  }
+ },
+ "kit": {
+  "735": {
+   "cat": "Battle Arena",
+   "name": "Rift Crater Arena Exterior (1)",
+   "alt": true,
+   "type": "landmark",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      9,
+      11
+     ]
+    ],
+    "right": [
+     [
+      9,
+      11
+     ]
+    ],
+    "bottom": [
+     [
+      10,
+      13
+     ]
+    ]
+   }
+  },
+  "736": {
+   "cat": "Battle Arena",
+   "name": "Rift Crater Arena Exterior",
+   "alt": false,
+   "type": "landmark",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      9,
+      12
+     ]
+    ],
+    "bottom": [
+     [
+      11,
+      12
+     ]
+    ]
+   }
+  },
+  "737": {
+   "cat": "Battle Arena",
+   "name": "Rift Crater Arena Lobby (1)",
+   "alt": true,
+   "type": "arena",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "738": {
+   "cat": "Battle Arena",
+   "name": "Rift Crater Arena Lobby",
+   "alt": false,
+   "type": "arena",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "739": {
+   "cat": "Battle Arena",
+   "name": "Rift Crater Arena Battle Floor",
+   "alt": false,
+   "type": "arena",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      1,
+      7
+     ],
+     [
+      14,
+      22
+     ]
+    ]
+   }
+  },
+  "740": {
+   "cat": "Battle Arena",
+   "name": "Rift Crater Arena Battle Room",
+   "alt": false,
+   "type": "arena",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      4,
+      13
+     ]
+    ],
+    "right": [
+     [
+      0,
+      3
+     ],
+     [
+      6,
+      13
+     ]
+    ],
+    "top": [
+     [
+      16,
+      17
+     ]
+    ],
+    "bottom": [
+     [
+      10,
+      13
+     ]
+    ]
+   }
+  },
+  "741": {
+   "cat": "Cave",
+   "name": "Entrance",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "bottom": [
+     [
+      10,
+      14
+     ]
+    ]
+   }
+  },
+  "742": {
+   "cat": "Cave",
+   "name": "Floor 1",
+   "alt": false,
+   "type": "cave",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      0,
+      15
+     ]
+    ],
+    "right": [
+     [
+      0,
+      15
+     ]
+    ],
+    "top": [
+     [
+      0,
+      5
+     ],
+     [
+      7,
+      14
+     ],
+     [
+      18,
+      23
+     ]
+    ],
+    "bottom": [
+     [
+      0,
+      23
+     ]
+    ]
+   }
+  },
+  "743": {
+   "cat": "Cave",
+   "name": "Floor 2",
+   "alt": false,
+   "type": "cave",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {}
+  },
+  "744": {
+   "cat": "Cave",
+   "name": "Deep Chamber",
+   "alt": false,
+   "type": "cave",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {}
+  },
+  "745": {
+   "cat": "Crossroads",
+   "name": "Crater Crossroads",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      5,
+      8
+     ]
+    ],
+    "right": [
+     [
+      5,
+      8
+     ]
+    ],
+    "top": [
+     [
+      8,
+      14
+     ]
+    ],
+    "bottom": [
+     [
+      5,
+      14
+     ]
+    ]
+   }
+  },
+  "746": {
+   "cat": "Crossroads",
+   "name": "Seedpod Junction",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      4,
+      7
+     ]
+    ],
+    "right": [
+     [
+      7,
+      9
+     ]
+    ],
+    "top": [
+     [
+      4,
+      9
+     ],
+     [
+      18,
+      19
+     ]
+    ],
+    "bottom": [
+     [
+      11,
+      12
+     ],
+     [
+      15,
+      18
+     ]
+    ]
+   }
+  },
+  "747": {
+   "cat": "Crossroads",
+   "name": "Rift Fork",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      0,
+      9
+     ]
+    ],
+    "right": [
+     [
+      7,
+      10
+     ]
+    ],
+    "top": [
+     [
+      5,
+      10
+     ]
+    ],
+    "bottom": [
+     [
+      6,
+      14
+     ]
+    ]
+   }
+  },
+  "748": {
+   "cat": "Extra scenes",
+   "name": "Craterstep Slope",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      3,
+      8
+     ]
+    ],
+    "bottom": [
+     [
+      13,
+      18
+     ]
+    ]
+   }
+  },
+  "749": {
+   "cat": "Extra scenes",
+   "name": "Nebula Overlook (1)",
+   "alt": true,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      9,
+      17
+     ]
+    ],
+    "bottom": [
+     [
+      9,
+      14
+     ]
+    ]
+   }
+  },
+  "750": {
+   "cat": "Extra scenes",
+   "name": "Nebula Overlook",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      9,
+      17
+     ]
+    ],
+    "bottom": [
+     [
+      9,
+      14
+     ]
+    ]
+   }
+  },
+  "751": {
+   "cat": "Extra scenes",
+   "name": "Rift Edge",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      4,
+      9
+     ]
+    ],
+    "bottom": [
+     [
+      4,
+      9
+     ]
+    ]
+   }
+  },
+  "752": {
+   "cat": "Extra scenes",
+   "name": "Seedpod Hollows",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "right": [
+     [
+      4,
+      5
+     ]
+    ],
+    "top": [
+     [
+      3,
+      8
+     ]
+    ],
+    "bottom": [
+     [
+      16,
+      21
+     ]
+    ]
+   }
+  },
+  "753": {
+   "cat": "Extra scenes",
+   "name": "Starstream Bend",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      16,
+      21
+     ]
+    ],
+    "bottom": [
+     [
+      6,
+      11
+     ]
+    ]
+   }
+  },
+  "754": {
+   "cat": "Extra scenes",
+   "name": "Pod Fields",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      9,
+      14
+     ]
+    ],
+    "bottom": [
+     [
+      4,
+      11
+     ]
+    ]
+   }
+  },
+  "755": {
+   "cat": "Hidden Area",
+   "name": "Secret Grove",
+   "alt": false,
+   "type": "field",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      10,
+      11
+     ]
+    ],
+    "right": [
+     [
+      10,
+      11
+     ]
+    ]
+   }
+  },
+  "756": {
+   "cat": "Interior rooms",
+   "name": "Seedpod Greenhouse",
+   "alt": false,
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "757": {
+   "cat": "Interior rooms",
+   "name": "Observation Post",
+   "alt": false,
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "758": {
+   "cat": "Interior rooms",
+   "name": "Thorne's Office",
+   "alt": false,
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "759": {
+   "cat": "Recovery Bay",
+   "name": "Interior",
+   "alt": false,
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "760": {
+   "cat": "Relay Tower",
+   "name": "Exterior",
+   "alt": false,
+   "type": "landmark",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      9,
+      12
+     ]
+    ],
+    "right": [
+     [
+      9,
+      12
+     ]
+    ]
+   }
+  },
+  "761": {
+   "cat": "Relay Tower",
+   "name": "Trial Floor",
+   "alt": false,
+   "type": "tower",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "762": {
+   "cat": "Relay Tower",
+   "name": "Keeper Room",
+   "alt": false,
+   "type": "tower",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      0,
+      8
+     ],
+     [
+      10,
+      13
+     ]
+    ],
+    "right": [
+     [
+      0,
+      13
+     ]
+    ],
+    "top": [
+     [
+      0,
+      8
+     ],
+     [
+      10,
+      13
+     ],
+     [
+      19,
+      23
+     ]
+    ],
+    "bottom": [
+     [
+      6,
+      10
+     ],
+     [
+      13,
+      17
+     ]
+    ]
+   }
+  },
+  "763": {
+   "cat": "Residential",
+   "name": "Starfall Lane Homes",
+   "alt": false,
+   "type": "town",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      9,
+      11
+     ]
+    ],
+    "right": [
+     [
+      9,
+      11
+     ]
+    ]
+   }
+  },
+  "764": {
+   "cat": "Residential",
+   "name": "Starfall Quiet Court",
+   "alt": false,
+   "type": "town",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      5,
+      6
+     ]
+    ],
+    "bottom": [
+     [
+      10,
+      13
+     ]
+    ]
+   }
+  },
+  "765": {
+   "cat": "Residential",
+   "name": "Starfall Farmstead Edge",
+   "alt": false,
+   "type": "town",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      7,
+      9
+     ]
+    ],
+    "top": [
+     [
+      14,
+      18
+     ]
+    ]
+   }
+  },
+  "766": {
+   "cat": "Shop",
+   "name": "Interior",
+   "alt": false,
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "767": {
+   "cat": "Spaceport",
+   "name": "Landing Pad",
+   "alt": false,
+   "type": "landmark",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      12,
+      13
+     ]
+    ]
+   }
+  }
+ }
+}

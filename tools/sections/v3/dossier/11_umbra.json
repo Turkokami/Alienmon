@@ -1,0 +1,1351 @@
+{
+ "dir": "11_umbra",
+ "arrival": {
+  "umbra": {
+   "section": "123",
+   "why": "V2: out of the Shadow Tunnel archway"
+  }
+ },
+ "sections": {
+  "123": {
+   "name": "Shadow Tunnel Exit",
+   "type": "cave",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "124",
+    "planet:dustara"
+   ],
+   "objects": [
+    {
+     "tile": [
+      2,
+      5
+     ],
+     "k": "stash",
+     "item": "dust"
+    }
+   ],
+   "gates": [
+    {
+     "section": "123",
+     "tiles": [
+      [
+       7,
+       14
+      ],
+      [
+       8,
+       14
+      ]
+     ],
+     "at_dy": -1,
+     "node": "dustara",
+     "planet": "dustara",
+     "label": "the Shadow Tunnel back to the Frontier",
+     "why": "V2: the tunnel archway is the arrival point and the way home"
+    }
+   ],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 1,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "124": {
+   "name": "Gravewell",
+   "type": "town",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "right": "127"
+   },
+   "warps_to": [
+    "123",
+    "125",
+    "126"
+   ],
+   "objects": [
+    {
+     "tile": [
+      3,
+      3
+     ],
+     "k": "house",
+     "to": "186"
+    },
+    {
+     "tile": [
+      4,
+      3
+     ],
+     "k": "house",
+     "to": "186"
+    },
+    {
+     "tile": [
+      20,
+      3
+     ],
+     "k": "house",
+     "to": "186"
+    },
+    {
+     "tile": [
+      21,
+      3
+     ],
+     "k": "house",
+     "to": "186"
+    },
+    {
+     "tile": [
+      8,
+      11
+     ],
+     "k": "stash",
+     "item": "maxrevive"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [
+    "S92:giver"
+   ],
+   "story_scenes": [],
+   "npcs": 7,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "125": {
+   "name": "Gravewell Recovery Bay",
+   "type": "interior",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "124"
+   ],
+   "objects": [
+    {
+     "tile": [
+      7,
+      4
+     ],
+     "k": "bay"
+    },
+    {
+     "tile": [
+      8,
+      4
+     ],
+     "k": "bay"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 2,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "126": {
+   "name": "Gravewell Shop",
+   "type": "interior",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "124"
+   ],
+   "objects": [
+    {
+     "tile": [
+      7,
+      4
+     ],
+     "k": "shop"
+    },
+    {
+     "tile": [
+      8,
+      4
+     ],
+     "k": "shop"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 2,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "127": {
+   "name": "Lantern Streets Part A",
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "left": "124",
+    "right": "128"
+   },
+   "warps_to": [],
+   "objects": [
+    {
+     "tile": [
+      11,
+      14
+     ],
+     "k": "stash",
+     "item": "maxrevive"
+    },
+    {
+     "tile": [
+      17,
+      12
+     ],
+     "k": "stash",
+     "item": "maxrevive"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [
+    "S92:0"
+   ],
+   "story_scenes": [],
+   "npcs": 2,
+   "wild_table": "dark_city",
+   "apprentices": null
+  },
+  "128": {
+   "name": "Lantern Streets Part B",
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "kit": null,
+   "edges": {
+    "left": "127"
+   },
+   "warps_to": [
+    "129"
+   ],
+   "objects": [
+    {
+     "tile": [
+      11,
+      14
+     ],
+     "k": "stash",
+     "item": "fullgel"
+    },
+    {
+     "tile": [
+      6,
+      0
+     ],
+     "k": "stash",
+     "item": "fullgel"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 2,
+   "wild_table": "dark_city",
+   "apprentices": null
+  },
+  "129": {
+   "name": "The Sinkhole B1",
+   "type": "cave",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "128",
+    "130"
+   ],
+   "objects": [
+    {
+     "tile": [
+      14,
+      7
+     ],
+     "k": "stash",
+     "item": "maxrevive"
+    },
+    {
+     "tile": [
+      1,
+      8
+     ],
+     "k": "stash",
+     "item": "fullgel"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 1,
+   "wild_table": "abyss",
+   "apprentices": null
+  },
+  "130": {
+   "name": "The Sinkhole B2",
+   "type": "cave",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "129",
+    "131"
+   ],
+   "objects": [
+    {
+     "tile": [
+      1,
+      4
+     ],
+     "k": "stash",
+     "item": "fullgel"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 1,
+   "wild_table": "abyss",
+   "apprentices": null
+  },
+  "131": {
+   "name": "The Sinkhole B3",
+   "type": "cave",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "130",
+    "132"
+   ],
+   "objects": [
+    {
+     "tile": [
+      1,
+      9
+     ],
+     "k": "stash",
+     "item": "dust"
+    },
+    {
+     "tile": [
+      14,
+      6
+     ],
+     "k": "stash",
+     "item": "fullgel"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 1,
+   "wild_table": "abyss",
+   "apprentices": null
+  },
+  "132": {
+   "name": "The Sinkhole B4",
+   "type": "cave",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "131",
+    "133",
+    "134"
+   ],
+   "objects": [
+    {
+     "tile": [
+      1,
+      9
+     ],
+     "k": "stash",
+     "item": "ether"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 1,
+   "wild_table": "abyss",
+   "apprentices": null
+  },
+  "133": {
+   "name": "Kade's Lab",
+   "type": "interior",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "132"
+   ],
+   "objects": [],
+   "gates": [],
+   "quest_spots": [
+    "M17:1",
+    "S93:0",
+    "S93:giver"
+   ],
+   "story_scenes": [],
+   "npcs": 1,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "134": {
+   "name": "Gravewell Tower 1F",
+   "type": "tower",
+   "tiles": [
+    16,
+    24
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "132",
+    "135"
+   ],
+   "objects": [],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 1,
+   "wild_table": null,
+   "apprentices": 2
+  },
+  "135": {
+   "name": "Gravewell Tower 2F",
+   "type": "tower",
+   "tiles": [
+    16,
+    24
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "134"
+   ],
+   "objects": [
+    {
+     "tile": [
+      7,
+      4
+     ],
+     "k": "keeper"
+    }
+   ],
+   "gates": [],
+   "quest_spots": [
+    "M17:3"
+   ],
+   "story_scenes": [],
+   "npcs": 0,
+   "wild_table": null,
+   "apprentices": null
+  },
+  "186": {
+   "name": "Umbra House",
+   "type": "interior",
+   "tiles": [
+    16,
+    16
+   ],
+   "kit": null,
+   "edges": {},
+   "warps_to": [
+    "back"
+   ],
+   "objects": [],
+   "gates": [],
+   "quest_spots": [],
+   "story_scenes": [],
+   "npcs": 1,
+   "wild_table": null,
+   "apprentices": null
+  }
+ },
+ "kit": {
+  "806": {
+   "cat": "Battle Arena",
+   "name": "Lantern Pit Exterior (1)",
+   "alt": true,
+   "type": "landmark",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      9,
+      10
+     ]
+    ],
+    "right": [
+     [
+      9,
+      10
+     ]
+    ],
+    "bottom": [
+     [
+      9,
+      14
+     ]
+    ]
+   }
+  },
+  "807": {
+   "cat": "Battle Arena",
+   "name": "Lantern Pit Exterior",
+   "alt": false,
+   "type": "landmark",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "bottom": [
+     [
+      10,
+      13
+     ]
+    ]
+   }
+  },
+  "808": {
+   "cat": "Battle Arena",
+   "name": "Lantern Pit Lobby (1)",
+   "alt": true,
+   "type": "arena",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "809": {
+   "cat": "Battle Arena",
+   "name": "Lantern Pit Lobby",
+   "alt": false,
+   "type": "arena",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {
+    "left": [
+     [
+      0,
+      19
+     ]
+    ],
+    "right": [
+     [
+      0,
+      19
+     ]
+    ],
+    "top": [
+     [
+      0,
+      19
+     ]
+    ],
+    "bottom": [
+     [
+      0,
+      19
+     ]
+    ]
+   }
+  },
+  "810": {
+   "cat": "Battle Arena",
+   "name": "Lantern Pit Battle Floor",
+   "alt": false,
+   "type": "arena",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      0,
+      15
+     ]
+    ],
+    "right": [
+     [
+      0,
+      15
+     ]
+    ],
+    "top": [
+     [
+      0,
+      7
+     ],
+     [
+      16,
+      23
+     ]
+    ],
+    "bottom": [
+     [
+      0,
+      23
+     ]
+    ]
+   }
+  },
+  "811": {
+   "cat": "Battle Arena",
+   "name": "Lantern Pit Battle Room",
+   "alt": false,
+   "type": "arena",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      0,
+      5
+     ],
+     [
+      7,
+      11
+     ]
+    ],
+    "right": [
+     [
+      0,
+      15
+     ]
+    ],
+    "top": [
+     [
+      0,
+      23
+     ]
+    ],
+    "bottom": [
+     [
+      13,
+      23
+     ]
+    ]
+   }
+  },
+  "812": {
+   "cat": "Cave",
+   "name": "Entrance",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      0,
+      1
+     ],
+     [
+      6,
+      9
+     ],
+     [
+      12,
+      14
+     ]
+    ],
+    "right": [
+     [
+      0,
+      6
+     ],
+     [
+      9,
+      13
+     ]
+    ],
+    "top": [
+     [
+      3,
+      6
+     ],
+     [
+      9,
+      23
+     ]
+    ],
+    "bottom": [
+     [
+      1,
+      8
+     ]
+    ]
+   }
+  },
+  "813": {
+   "cat": "Cave",
+   "name": "Floor 1",
+   "alt": false,
+   "type": "cave",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      0,
+      15
+     ]
+    ],
+    "right": [
+     [
+      0,
+      15
+     ]
+    ],
+    "top": [
+     [
+      0,
+      23
+     ]
+    ],
+    "bottom": [
+     [
+      0,
+      23
+     ]
+    ]
+   }
+  },
+  "814": {
+   "cat": "Cave",
+   "name": "Floor 2",
+   "alt": false,
+   "type": "cave",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {}
+  },
+  "815": {
+   "cat": "Cave",
+   "name": "Deep Chamber",
+   "alt": false,
+   "type": "cave",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {}
+  },
+  "816": {
+   "cat": "Crossroads",
+   "name": "Lantern Crossroads",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      5,
+      8
+     ]
+    ],
+    "right": [
+     [
+      5,
+      8
+     ]
+    ],
+    "top": [
+     [
+      8,
+      13
+     ]
+    ],
+    "bottom": [
+     [
+      8,
+      13
+     ]
+    ]
+   }
+  },
+  "817": {
+   "cat": "Crossroads",
+   "name": "Shadow Junction",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      8,
+      9
+     ],
+     [
+      11,
+      15
+     ]
+    ],
+    "right": [
+     [
+      0,
+      4
+     ]
+    ],
+    "top": [
+     [
+      14,
+      17
+     ],
+     [
+      19,
+      23
+     ]
+    ],
+    "bottom": [
+     [
+      0,
+      1
+     ],
+     [
+      3,
+      9
+     ]
+    ]
+   }
+  },
+  "818": {
+   "cat": "Crossroads",
+   "name": "Abyss Fork",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      14,
+      16
+     ]
+    ]
+   }
+  },
+  "819": {
+   "cat": "Extra scenes",
+   "name": "Lantern Steps",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      0,
+      1
+     ]
+    ],
+    "top": [
+     [
+      0,
+      5
+     ],
+     [
+      15,
+      20
+     ]
+    ],
+    "bottom": [
+     [
+      5,
+      9
+     ]
+    ]
+   }
+  },
+  "820": {
+   "cat": "Extra scenes",
+   "name": "Sinkhole Overlook",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      10,
+      13
+     ]
+    ],
+    "bottom": [
+     [
+      9,
+      13
+     ],
+     [
+      15,
+      22
+     ]
+    ]
+   }
+  },
+  "821": {
+   "cat": "Extra scenes",
+   "name": "Abyss Rim",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      14,
+      19
+     ]
+    ],
+    "bottom": [
+     [
+      14,
+      15
+     ],
+     [
+      18,
+      19
+     ]
+    ]
+   }
+  },
+  "822": {
+   "cat": "Extra scenes",
+   "name": "Shade Hollows",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      11,
+      15
+     ]
+    ],
+    "top": [
+     [
+      16,
+      19
+     ]
+    ],
+    "bottom": [
+     [
+      3,
+      6
+     ]
+    ]
+   }
+  },
+  "823": {
+   "cat": "Extra scenes",
+   "name": "Mistfall Bend",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      2,
+      6
+     ]
+    ],
+    "bottom": [
+     [
+      5,
+      6
+     ],
+     [
+      13,
+      17
+     ]
+    ]
+   }
+  },
+  "824": {
+   "cat": "Extra scenes",
+   "name": "Gloom Commons",
+   "alt": false,
+   "type": "route",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "top": [
+     [
+      10,
+      12
+     ]
+    ],
+    "bottom": [
+     [
+      14,
+      19
+     ]
+    ]
+   }
+  },
+  "825": {
+   "cat": "Helix Hideout",
+   "name": "Disguised Entrance",
+   "alt": false,
+   "type": "landmark",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      0,
+      1
+     ],
+     [
+      5,
+      6
+     ]
+    ],
+    "right": [
+     [
+      1,
+      4
+     ]
+    ],
+    "top": [
+     [
+      0,
+      16
+     ],
+     [
+      19,
+      21
+     ]
+    ],
+    "bottom": [
+     [
+      5,
+      6
+     ],
+     [
+      17,
+      18
+     ]
+    ]
+   }
+  },
+  "826": {
+   "cat": "Helix Hideout",
+   "name": "Secret Lab",
+   "alt": false,
+   "type": "dungeon",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "827": {
+   "cat": "Hidden Area",
+   "name": "Secret Grove",
+   "alt": false,
+   "type": "field",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {}
+  },
+  "828": {
+   "cat": "Interior rooms",
+   "name": "Lantern Maker's Shop",
+   "alt": false,
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "829": {
+   "cat": "Interior rooms",
+   "name": "Shadow Inn Room",
+   "alt": false,
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "830": {
+   "cat": "Interior rooms",
+   "name": "Kade's Study",
+   "alt": false,
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "831": {
+   "cat": "Recovery Bay",
+   "name": "Interior option 1",
+   "alt": false,
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "832": {
+   "cat": "Recovery Bay",
+   "name": "Interior option 2",
+   "alt": true,
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "833": {
+   "cat": "Relay Tower",
+   "name": "Exterior",
+   "alt": false,
+   "type": "landmark",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      10,
+      11
+     ]
+    ],
+    "right": [
+     [
+      10,
+      11
+     ]
+    ]
+   }
+  },
+  "834": {
+   "cat": "Relay Tower",
+   "name": "Trial Floor",
+   "alt": false,
+   "type": "tower",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "835": {
+   "cat": "Relay Tower",
+   "name": "Keeper Room",
+   "alt": false,
+   "type": "tower",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      0,
+      15
+     ]
+    ],
+    "right": [
+     [
+      0,
+      15
+     ]
+    ],
+    "top": [
+     [
+      0,
+      23
+     ]
+    ],
+    "bottom": [
+     [
+      3,
+      20
+     ]
+    ]
+   }
+  },
+  "836": {
+   "cat": "Residential",
+   "name": "Umbra Lane Homes",
+   "alt": false,
+   "type": "town",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "left": [
+     [
+      9,
+      11
+     ]
+    ],
+    "right": [
+     [
+      9,
+      11
+     ]
+    ]
+   }
+  },
+  "837": {
+   "cat": "Residential",
+   "name": "Umbra Quiet Court",
+   "alt": false,
+   "type": "town",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {}
+  },
+  "838": {
+   "cat": "Residential",
+   "name": "Umbra Farmstead Edge",
+   "alt": false,
+   "type": "town",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {}
+  },
+  "839": {
+   "cat": "Shop",
+   "name": "Interior",
+   "alt": false,
+   "type": "interior",
+   "tiles": [
+    20,
+    20
+   ],
+   "exits": {}
+  },
+  "840": {
+   "cat": "Spaceport",
+   "name": "Landing Pad option 1",
+   "alt": false,
+   "type": "landmark",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {}
+  },
+  "841": {
+   "cat": "Spaceport",
+   "name": "Landing Pad option 2",
+   "alt": true,
+   "type": "landmark",
+   "tiles": [
+    24,
+    16
+   ],
+   "exits": {
+    "right": [
+     [
+      12,
+      13
+     ]
+    ]
+   }
+  }
+ }
+}
