@@ -150,6 +150,13 @@ function secArrival(planetKey){const a=(__SECARRIVAL__)[planetKey];if(!a||!SWORL
 // section maps: on for playtest builds with ?sections in the address or the Options toggle, and for any save already inside one
 const SEC_URL=/[?&]sections/.test(location.search);
 // the section maps are the game's maps now (the site is tester-only); Options > New maps can switch back to the classic maps
+// a save from before a map rebuild: if its map is gone, land at that world's arrival; if its tile is now solid, step to the nearest open tile
+const SEC_GONE={"034":"ferrox","035":"ferrox","036":"ferrox","037":"ferrox","038":"ferrox","045":"sporeholm","046":"sporeholm","048":"sporeholm","049":"sporeholm","056":"thalassa","057":"thalassa","058":"thalassa","059":"thalassa","067":"neonis","068":"neonis","070":"neonis","075":"glyphos","076":"glyphos","085":"pyros","086":"pyros","090":"pyros","097":"glacia","101":"glacia","102":"glacia","118":"halo","119":"halo","120":"halo","127":"umbra","128":"umbra","139":"starfall"};
+function secRescue(){if(!G||!G.sec)return;
+ if(!SWORLD[G.sec.id]){const a=secArrival(SEC_GONE[G.sec.id]||(PL[G.planet]&&PL[G.planet].key))||['002',SWORLD['002'].spawns.default];G.sec={id:a[0],x:a[1][0],y:a[1][1]};G.houseBack=null;return}
+ const s=SWORLD[G.sec.id],ok=(x,y)=>{const c=secTile(s,x,y);return(c==='.'||c===',')&&!secNpcAt(s,x,y)};if(ok(G.sec.x,G.sec.y))return;
+ const seen=new Set([G.sec.x+','+G.sec.y]),q=[[G.sec.x,G.sec.y]];while(q.length){const[x,y]=q.shift();for(const[dx,dy]of[[1,0],[-1,0],[0,1],[0,-1]]){const nx=x+dx,ny=y+dy,k=nx+','+ny;if(nx<0||ny<0||nx>=s.tiles[0]||ny>=s.tiles[1]||seen.has(k))continue;seen.add(k);if(ok(nx,ny)){G.sec.x=nx;G.sec.y=ny;return}q.push([nx,ny])}}
+ const d=s.spawns.default||s.spawns.arrival;if(d){G.sec.x=d[0];G.sec.y=d[1]}}
 function secEnabled(){if(!G)return false;if(G.sec)return true;return!(G.opt&&G.opt.secMaps===false)}
 // apprentices in a planet's tower sections must be beaten before its Keeper battles (classic towns keep their own list)
 function secApprentices(k){let n=0,any=false;for(const s of Object.values(SWORLD))if(s.pkey===k)for(const p of s.npcs||[])if(p.trainer&&p.trainer.app){any=true;if(!G.beaten[p.id])n++}return any?n:null}

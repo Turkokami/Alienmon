@@ -259,7 +259,7 @@ function genMap(pi){if(MAPS[pi])return MAPS[pi];const r=rng(hash(PL[pi].key)),m=
 
 /* ---------- game state ---------- */
 let G=null, scene='title', DLG=null, frame=0;
-function newGame(){G={v:2,sys:1,dust:200,party:[],box:[],pods:{stasis:10,harmonic:5,singularity:2},items:{...START_ITEMS},shards:0,beaten:{},flags:{},seen:{},caught:{},planet:0,px:15,py:20,ship:{x:PL[0].x,y:PL[0].y+40,vx:0,vy:0,a:-Math.PI/2}}}
+function newGame(){G={v:2,mapv:3,sys:1,dust:200,party:[],box:[],pods:{stasis:10,harmonic:5,singularity:2},items:{...START_ITEMS},shards:0,beaten:{},flags:{},seen:{},caught:{},planet:0,px:15,py:20,ship:{x:PL[0].x,y:PL[0].y+40,vx:0,vy:0,a:-Math.PI/2}}}
 function save(){G.lastScene=PREV==='world'?'world':'planet';try{localStorage.setItem('alienmon_save_v2',JSON.stringify(G));return true}catch(e){return false}}
 // back up the save to a file and restore it, e.g. to move a game to another browser or device
 function exportSave(){save();try{const blob=new Blob([JSON.stringify({game:'alienmon',version:2,exported:new Date().toISOString(),save:G})],{type:'application/json'}),a=document.createElement('a');
@@ -271,7 +271,9 @@ function importSave(){if(newOnly())return say('The demo always starts a fresh ga
   if(!g||!Array.isArray(g.party)||!Array.isArray(g.box)){say('That file is not an Alienmon save.');return}
   choose('Replace your current game?',['Replace','Cancel'],k=>{if(k!==0)return;try{localStorage.setItem('alienmon_save_v2',JSON.stringify(g));say('Backup restored! Restarting...',()=>location.reload())}catch(e){say('Could not store the save.')}})})};
  inp.click();say('Choose your backup file.')}
-function loadSave(){try{const s=localStorage.getItem('alienmon_save_v2');if(!s)return null;const g=JSON.parse(s);g.party.concat(g.box).forEach(m=>{m.st=m.st||null;resetStages(m)});g.items=g.items||{...START_ITEMS};return progMigrate(renameMigrate(g))}catch(e){return null}}
+const MAPV=3;   // saves from before the V3 map rebuild start over (kept aside as alienmon_save_v2_premaps3, not deleted)
+function loadSave(){try{const s=localStorage.getItem('alienmon_save_v2');if(!s)return null;const g=JSON.parse(s);
+ if((g.mapv||0)<MAPV){try{if(!localStorage.getItem('alienmon_save_v2_premaps3'))localStorage.setItem('alienmon_save_v2_premaps3',s);localStorage.removeItem('alienmon_save_v2')}catch(e){}return null}g.party.concat(g.box).forEach(m=>{m.st=m.st||null;resetStages(m)});g.items=g.items||{...START_ITEMS};return progMigrate(renameMigrate(g))}catch(e){return null}}
 function say(lines,cb,por){const pages=[];for(const l of[].concat(lines)){const w=wrap(l);for(let i=0;i<w.length;i+=2)pages.push(w.slice(i,i+2))}DLG={pages,i:0,cb,por}}
 function healAll(){for(const m of G.party.concat(G.box)){m.hp=stat(m,0);m.ppm={};m.st=null;resetStages(m)}if(!G.pods.stasis&&!G.pods.harmonic&&!G.pods.singularity&&G.dust<20)G.pods.stasis=5}
 const UNLOCK_ALL=false   // playtesters use START > Options > Free roam instead; // playtest: every planet is open
@@ -298,7 +300,7 @@ function startIntro(){scene='intro';say(["Twenty years ago, the sky fell.","Seed
 const STARTERS=[IDX['Sporix'],IDX['Plazmo'],IDX['Gloopa']];
 function updTitle(){const sv=newOnly()?null:loadSave();const opts=sv?['Continue','New game']:['New game'];
  if(P_('up')||P_('down')||P_('left')||P_('right'))tsel=(tsel+1)%opts.length;
- if(P_('a')){if(opts[tsel]==='Continue'){G=sv;G.gender='boy';if(G.arenaParty){G.party=G.arenaParty;G.box=G.arenaBox||G.box;delete G.arenaParty;delete G.arenaBox}scene=G.lastScene==='world'?'world':'planet';say('Welcome back, Linker.')}else{newGame();G.gender='boy';if(secEnabled()&&SWORLD['002'])secWakeUp();else startIntro()}}
+ if(P_('a')){if(opts[tsel]==='Continue'){G=sv;G.gender='boy';if(G.arenaParty){G.party=G.arenaParty;G.box=G.arenaBox||G.box;delete G.arenaParty;delete G.arenaBox}scene=G.lastScene==='world'?'world':'planet';if(typeof secRescue==='function')secRescue();say('Welcome back, Linker.')}else{newGame();G.gender='boy';if(secEnabled()&&SWORLD['002'])secWakeUp();else startIntro()}}
 
  frame++;
  if(TITLEI.complete&&TITLEI.naturalWidth){ctx.save();ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';ctx.drawImage(TITLEI,0,0,160,144);ctx.restore();
