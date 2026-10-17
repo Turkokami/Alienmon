@@ -532,8 +532,8 @@
    "section": "446",
    "name": "Mesa Junction",
    "tile": [
-    21,
-    14
+    20,
+    13
    ],
    "item": "stasis",
    "n": 3,
@@ -543,8 +543,8 @@
    "section": "446",
    "name": "Mesa Junction",
    "tile": [
-    22,
-    13
+    1,
+    2
    ],
    "item": "tether",
    "n": 1,
@@ -653,8 +653,19 @@
    "section": "879",
    "name": "Oasis Islands",
    "tile": [
+    21,
+    10
+   ],
+   "item": "stasis",
+   "n": 3,
+   "tier": 1
+  },
+  {
+   "section": "879",
+   "name": "Oasis Islands",
+   "tile": [
     22,
-    8
+    7
    ],
    "item": "gel",
    "n": 2,
@@ -1052,7 +1063,7 @@
    "name": "Reservoir Islands",
    "tile": [
     1,
-    10
+    4
    ],
    "item": "gel",
    "n": 2,
@@ -1063,7 +1074,7 @@
    "name": "Reservoir Islands",
    "tile": [
     1,
-    3
+    10
    ],
    "item": "stasis",
    "n": 3,
@@ -3483,8 +3494,8 @@
    "section": "883",
    "name": "Fjord Islands",
    "tile": [
-    1,
-    9
+    2,
+    3
    ],
    "item": "revive",
    "n": 2,
@@ -3494,8 +3505,8 @@
    "section": "883",
    "name": "Fjord Islands",
    "tile": [
-    2,
-    1
+    1,
+    9
    ],
    "item": "fullgel",
    "n": 1,
@@ -4534,8 +4545,8 @@
    "section": "823",
    "name": "Mistfall Bend",
    "tile": [
-    11,
-    1
+    4,
+    8
    ],
    "item": "ether",
    "n": 3,
@@ -4693,6 +4704,28 @@
    ],
    "item": "dust",
    "n": 1600,
+   "tier": 6
+  },
+  {
+   "section": "907",
+   "name": "Mirror Lake Islands",
+   "tile": [
+    1,
+    9
+   ],
+   "item": "dust",
+   "n": 1600,
+   "tier": 6
+  },
+  {
+   "section": "907",
+   "name": "Mirror Lake Islands",
+   "tile": [
+    1,
+    5
+   ],
+   "item": "maxrevive",
+   "n": 1,
    "tier": 6
   },
   {

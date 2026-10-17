@@ -8,7 +8,14 @@
 - 149 Observatory Halls 3F: upper floor; reached by stairs, bottom entrance is decorative
 - 150 Observatory Halls 4F: top floor; reached by the orrery lift, bottom entrance is decorative
 
-## moved or dropped to keep everything reachable (28)
+## npcs with no room (4)
+
+- 907 Mirror Lake Islands: Lantern Keeper
+- 907 Mirror Lake Islands: Drifter
+- 879 Oasis Islands: Linker
+- 879 Oasis Islands: Canyon Scout
+
+## moved or dropped to keep everything reachable (19)
 
 - 897 Lava Sea: dropped npc at (7, 12)
 - 897 Lava Sea: dropped npc at (7, 4)
@@ -29,20 +36,13 @@
 - 893 Hydro Tank: dropped npc at (9, 8)
 - 893 Hydro Tank: dropped mon at (18, 11)
 - 893 Hydro Tank: dropped mon at (17, 3)
-- 907 Mirror Lake Islands: dropped npc at (12, 6)
-- 907 Mirror Lake Islands: dropped npc at (5, 3)
-- 907 Mirror Lake Islands: dropped mon at (20, 3)
-- 907 Mirror Lake Islands: dropped mon at (9, 13)
-- 879 Oasis Islands: dropped npc at (12, 5)
-- 879 Oasis Islands: dropped npc at (20, 5)
-- 879 Oasis Islands: dropped mon at (6, 3)
-- 879 Oasis Islands: dropped mon at (16, 13)
-- 879 Oasis Islands: dropped stash at (22, 7)
 
-## warp landings moved off a wall (5)
+## warp landings moved off a wall (7)
 
 - 107 -> 108: [13, 4] -> [13, 3]
 - 108 -> 107: [13, 4] -> [13, 3]
 - 123 -> 816: [8, 14] -> [9, 14]
 - 151 -> 414: [13, 1] -> [13, 0]
 - 151 -> 414: [14, 1] -> [14, 0]
+- 856 -> 908: [22, 10] -> [22, 9]
+- 856 -> 908: [22, 10] -> [22, 9]

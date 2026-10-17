@@ -2659,17 +2659,66 @@
       8
      ],
      "offset": 0
-    },
-    "right": {
-     "to": "874",
-     "range": [
-      5,
-      8
-     ],
-     "offset": 1
     }
    },
-   "warps": [],
+   "warps": [
+    {
+     "tile": [
+      23,
+      5
+     ],
+     "to": "874",
+     "at": [
+      1,
+      6
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      6
+     ],
+     "to": "874",
+     "at": [
+      1,
+      6
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      7
+     ],
+     "to": "874",
+     "at": [
+      1,
+      7
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      8
+     ],
+     "to": "874",
+     "at": [
+      1,
+      7
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "right"
+    }
+   ],
    "objects": [
     {
      "tile": [
@@ -2988,7 +3037,7 @@
      "to": "014",
      "at": [
       1,
-      7
+      8
      ],
      "face": "right",
      "kind": "edge",
@@ -3002,7 +3051,7 @@
      "to": "014",
      "at": [
       1,
-      8
+      9
      ],
      "face": "right",
      "kind": "edge",
@@ -3120,6 +3169,20 @@
      "tile": [
       0,
       8
+     ],
+     "to": "013",
+     "at": [
+      8,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      9
      ],
      "to": "013",
      "at": [
@@ -16660,7 +16723,7 @@
    },
    "grid": [
     0,
-    72
+    56
    ],
    "pkey": "starfall",
    "npcs": [
@@ -18591,7 +18654,7 @@
      "to": "160",
      "at": [
       1,
-      7
+      8
      ],
      "face": "right",
      "kind": "edge",
@@ -18605,7 +18668,7 @@
      "to": "160",
      "at": [
       1,
-      8
+      9
      ],
      "face": "right",
      "kind": "edge",
@@ -18765,6 +18828,20 @@
      ],
      "to": "159",
      "at": [
+      8,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      9
+     ],
+     "to": "159",
+     "at": [
       9,
       1
      ],
@@ -18803,7 +18880,7 @@
    },
    "grid": [
     0,
-    149
+    133
    ],
    "pkey": "ystra",
    "npcs": [
@@ -18890,8 +18967,8 @@
      "mon": "Fractalith"
     },
     {
-     "x": 1,
-     "y": 9,
+     "x": 8,
+     "y": 3,
      "mon": "Riftwalker"
     }
    ]
@@ -18957,7 +19034,7 @@
    },
    "grid": [
     24,
-    149
+    133
    ],
    "pkey": "ystra",
    "npcs": [
@@ -19085,7 +19162,7 @@
    },
    "grid": [
     48,
-    149
+    133
    ],
    "pkey": "ystra",
    "npcs": [
@@ -19201,7 +19278,7 @@
    },
    "grid": [
     72,
-    149
+    133
    ],
    "pkey": "ystra",
    "npcs": [
@@ -23538,7 +23615,7 @@
      "to": "881",
      "at": [
       1,
-      4
+      5
      ],
      "face": "right",
      "kind": "edge",
@@ -23552,7 +23629,7 @@
      "to": "881",
      "at": [
       1,
-      5
+      6
      ],
      "face": "right",
      "kind": "edge",
@@ -23566,7 +23643,7 @@
      "to": "881",
      "at": [
       1,
-      6
+      7
      ],
      "face": "right",
      "kind": "edge",
@@ -23580,7 +23657,7 @@
      "to": "881",
      "at": [
       1,
-      7
+      9
      ],
      "face": "right",
      "kind": "edge",
@@ -23594,7 +23671,7 @@
      "to": "881",
      "at": [
       1,
-      8
+      10
      ],
      "face": "right",
      "kind": "edge",
@@ -25271,17 +25348,80 @@
       9
      ],
      "offset": -2
-    },
-    "right": {
-     "to": "875",
-     "range": [
-      5,
-      9
-     ],
-     "offset": 3
     }
    },
-   "warps": [],
+   "warps": [
+    {
+     "tile": [
+      23,
+      5
+     ],
+     "to": "875",
+     "at": [
+      1,
+      8
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      6
+     ],
+     "to": "875",
+     "at": [
+      1,
+      8
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      7
+     ],
+     "to": "875",
+     "at": [
+      1,
+      8
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      8
+     ],
+     "to": "875",
+     "at": [
+      1,
+      9
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      9
+     ],
+     "to": "875",
+     "at": [
+      1,
+      9
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "right"
+    }
+   ],
    "objects": [
     {
      "tile": [
@@ -25499,22 +25639,141 @@
       9
      ],
      "offset": 11
-    },
-    "left": {
-     "to": "879",
-     "range": [
-      3,
-      11
-     ],
-     "offset": 7
     }
    },
-   "warps": [],
+   "warps": [
+    {
+     "tile": [
+      0,
+      3
+     ],
+     "to": "879",
+     "at": [
+      22,
+      10
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      4
+     ],
+     "to": "879",
+     "at": [
+      22,
+      10
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      5
+     ],
+     "to": "879",
+     "at": [
+      22,
+      10
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      6
+     ],
+     "to": "879",
+     "at": [
+      22,
+      10
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      7
+     ],
+     "to": "879",
+     "at": [
+      22,
+      10
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      8
+     ],
+     "to": "879",
+     "at": [
+      22,
+      11
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      9
+     ],
+     "to": "879",
+     "at": [
+      22,
+      11
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      10
+     ],
+     "to": "879",
+     "at": [
+      22,
+      11
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      11
+     ],
+     "to": "879",
+     "at": [
+      22,
+      11
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    }
+   ],
    "objects": [
     {
      "tile": [
-      21,
-      14
+      20,
+      13
      ],
      "k": "stash",
      "item": "stasis",
@@ -25523,8 +25782,8 @@
     },
     {
      "tile": [
-      22,
-      13
+      1,
+      2
      ],
      "k": "stash",
      "item": "tether",
@@ -25578,8 +25837,8 @@
      "mon": "Fizzlord"
     },
     {
-     "x": 22,
-     "y": 11,
+     "x": 21,
+     "y": 14,
      "mon": "Skitterdrone"
     }
    ]
@@ -27940,17 +28199,122 @@
       7
      ],
      "offset": 3
-    },
-    "top": {
-     "to": "899",
-     "range": [
-      12,
-      19
-     ],
-     "offset": -1
     }
    },
-   "warps": [],
+   "warps": [
+    {
+     "tile": [
+      12,
+      0
+     ],
+     "to": "899",
+     "at": [
+      11,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      13,
+      0
+     ],
+     "to": "899",
+     "at": [
+      11,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      14,
+      0
+     ],
+     "to": "899",
+     "at": [
+      11,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      15,
+      0
+     ],
+     "to": "899",
+     "at": [
+      11,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      16,
+      0
+     ],
+     "to": "899",
+     "at": [
+      12,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      17,
+      0
+     ],
+     "to": "899",
+     "at": [
+      12,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      18,
+      0
+     ],
+     "to": "899",
+     "at": [
+      12,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      19,
+      0
+     ],
+     "to": "899",
+     "at": [
+      12,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    }
+   ],
    "objects": [
     {
      "tile": [
@@ -27999,10 +28363,10 @@
      }
     },
     {
-     "x": 19,
-     "y": 11,
+     "x": 14,
+     "y": 12,
      "art": "explorer",
-     "face": "left",
+     "face": "up",
      "t": [],
      "id": "sec712_tr1",
      "trainer": {
@@ -33749,17 +34113,94 @@
       6
      ],
      "offset": -1
-    },
-    "bottom": {
-     "to": "896",
-     "range": [
-      12,
-      17
-     ],
-     "offset": -11
     }
    },
-   "warps": [],
+   "warps": [
+    {
+     "tile": [
+      12,
+      15
+     ],
+     "to": "896",
+     "at": [
+      1,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      13,
+      15
+     ],
+     "to": "896",
+     "at": [
+      1,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      14,
+      15
+     ],
+     "to": "896",
+     "at": [
+      1,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      15,
+      15
+     ],
+     "to": "896",
+     "at": [
+      2,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      16,
+      15
+     ],
+     "to": "896",
+     "at": [
+      2,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      17,
+      15
+     ],
+     "to": "896",
+     "at": [
+      2,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    }
+   ],
    "objects": [
     {
      "tile": [
@@ -33833,11 +34274,6 @@
      "x": 7,
      "y": 3,
      "mon": "Filamaw"
-    },
-    {
-     "x": 1,
-     "y": 1,
-     "mon": "Arclume"
     }
    ]
   },
@@ -33861,17 +34297,79 @@
       12
      ],
      "offset": -2
-    },
-    "bottom": {
-     "to": "895",
-     "range": [
-      10,
-      14
-     ],
-     "offset": -9
     }
    },
    "warps": [
+    {
+     "tile": [
+      10,
+      15
+     ],
+     "to": "895",
+     "at": [
+      1,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      11,
+      15
+     ],
+     "to": "895",
+     "at": [
+      1,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      12,
+      15
+     ],
+     "to": "895",
+     "at": [
+      1,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      13,
+      15
+     ],
+     "to": "895",
+     "at": [
+      2,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      14,
+      15
+     ],
+     "to": "895",
+     "at": [
+      2,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
     {
      "tile": [
       11,
@@ -34283,17 +34781,94 @@
       12
      ],
      "offset": -2
-    },
-    "top": {
-     "to": "886",
-     "range": [
-      5,
-      10
-     ],
-     "offset": 6
     }
    },
-   "warps": [],
+   "warps": [
+    {
+     "tile": [
+      5,
+      0
+     ],
+     "to": "886",
+     "at": [
+      11,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      6,
+      0
+     ],
+     "to": "886",
+     "at": [
+      11,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      7,
+      0
+     ],
+     "to": "886",
+     "at": [
+      11,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      8,
+      0
+     ],
+     "to": "886",
+     "at": [
+      12,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      9,
+      0
+     ],
+     "to": "886",
+     "at": [
+      12,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      10,
+      0
+     ],
+     "to": "886",
+     "at": [
+      12,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    }
+   ],
    "objects": [
     {
      "tile": [
@@ -36528,6 +37103,34 @@
     {
      "tile": [
       11,
+      15
+     ],
+     "to": "884",
+     "at": [
+      1,
+      9
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      12,
+      15
+     ],
+     "to": "884",
+     "at": [
+      1,
+      10
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      13,
       15
      ],
      "to": "884",
@@ -38773,17 +39376,93 @@
       11
      ],
      "offset": -2
-    },
-    "bottom": {
-     "to": "897",
-     "range": [
-      9,
-      14
-     ],
-     "offset": -8
     }
    },
    "warps": [
+    {
+     "tile": [
+      9,
+      15
+     ],
+     "to": "897",
+     "at": [
+      1,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      10,
+      15
+     ],
+     "to": "897",
+     "at": [
+      1,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      11,
+      15
+     ],
+     "to": "897",
+     "at": [
+      1,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      12,
+      15
+     ],
+     "to": "897",
+     "at": [
+      1,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      13,
+      15
+     ],
+     "to": "897",
+     "at": [
+      1,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      14,
+      15
+     ],
+     "to": "897",
+     "at": [
+      1,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
     {
      "tile": [
       11,
@@ -40894,7 +41573,7 @@
      "to": "883",
      "at": [
       1,
-      2
+      3
      ],
      "face": "right",
      "kind": "edge",
@@ -40908,7 +41587,7 @@
      "to": "883",
      "at": [
       1,
-      3
+      4
      ],
      "face": "right",
      "kind": "edge",
@@ -40922,7 +41601,7 @@
      "to": "883",
      "at": [
       1,
-      4
+      6
      ],
      "face": "right",
      "kind": "edge",
@@ -40936,7 +41615,7 @@
      "to": "883",
      "at": [
       1,
-      5
+      7
      ],
      "face": "right",
      "kind": "edge",
@@ -40950,7 +41629,7 @@
      "to": "883",
      "at": [
       1,
-      6
+      9
      ],
      "face": "right",
      "kind": "edge",
@@ -41472,17 +42151,65 @@
       12
      ],
      "offset": -1
-    },
-    "bottom": {
-     "to": "882",
-     "range": [
-      10,
-      13
-     ],
-     "offset": -9
     }
    },
    "warps": [
+    {
+     "tile": [
+      10,
+      15
+     ],
+     "to": "882",
+     "at": [
+      1,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      11,
+      15
+     ],
+     "to": "882",
+     "at": [
+      1,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      12,
+      15
+     ],
+     "to": "882",
+     "at": [
+      1,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      13,
+      15
+     ],
+     "to": "882",
+     "at": [
+      1,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
     {
      "tile": [
       11,
@@ -43706,17 +44433,94 @@
       14
      ],
      "offset": -7
-    },
-    "bottom": {
-     "to": "894",
-     "range": [
-      9,
-      14
-     ],
-     "offset": -8
     }
    },
-   "warps": [],
+   "warps": [
+    {
+     "tile": [
+      9,
+      15
+     ],
+     "to": "894",
+     "at": [
+      1,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      10,
+      15
+     ],
+     "to": "894",
+     "at": [
+      1,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      11,
+      15
+     ],
+     "to": "894",
+     "at": [
+      1,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      12,
+      15
+     ],
+     "to": "894",
+     "at": [
+      1,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      13,
+      15
+     ],
+     "to": "894",
+     "at": [
+      1,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      14,
+      15
+     ],
+     "to": "894",
+     "at": [
+      1,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    }
+   ],
    "objects": [
     {
      "tile": [
@@ -44228,17 +45032,65 @@
       12
      ],
      "offset": -1
-    },
-    "bottom": {
-     "to": "893",
-     "range": [
-      10,
-      13
-     ],
-     "offset": -9
     }
    },
    "warps": [
+    {
+     "tile": [
+      10,
+      15
+     ],
+     "to": "893",
+     "at": [
+      1,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      11,
+      15
+     ],
+     "to": "893",
+     "at": [
+      1,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      12,
+      15
+     ],
+     "to": "893",
+     "at": [
+      1,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      13,
+      15
+     ],
+     "to": "893",
+     "at": [
+      1,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
     {
      "tile": [
       11,
@@ -45196,17 +46048,94 @@
       12
      ],
      "offset": 2
-    },
-    "top": {
-     "to": "889",
-     "range": [
-      5,
-      10
-     ],
-     "offset": 6
     }
    },
-   "warps": [],
+   "warps": [
+    {
+     "tile": [
+      5,
+      0
+     ],
+     "to": "889",
+     "at": [
+      11,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      6,
+      0
+     ],
+     "to": "889",
+     "at": [
+      11,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      7,
+      0
+     ],
+     "to": "889",
+     "at": [
+      12,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      8,
+      0
+     ],
+     "to": "889",
+     "at": [
+      12,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      9,
+      0
+     ],
+     "to": "889",
+     "at": [
+      13,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      10,
+      0
+     ],
+     "to": "889",
+     "at": [
+      13,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    }
+   ],
    "objects": [
     {
      "tile": [
@@ -45302,7 +46231,7 @@
    "mons": [
     {
      "x": 10,
-     "y": 3,
+     "y": 2,
      "mon": "Zephyrling"
     }
    ]
@@ -46205,17 +47134,79 @@
       12
      ],
      "offset": 1
-    },
-    "bottom": {
-     "to": "891",
-     "range": [
-      10,
-      14
-     ],
-     "offset": -9
     }
    },
    "warps": [
+    {
+     "tile": [
+      10,
+      15
+     ],
+     "to": "891",
+     "at": [
+      1,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      11,
+      15
+     ],
+     "to": "891",
+     "at": [
+      1,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      12,
+      15
+     ],
+     "to": "891",
+     "at": [
+      1,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      13,
+      15
+     ],
+     "to": "891",
+     "at": [
+      1,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      14,
+      15
+     ],
+     "to": "891",
+     "at": [
+      1,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
     {
      "tile": [
       11,
@@ -50708,17 +51699,80 @@
       11
      ],
      "offset": -5
-    },
-    "top": {
-     "to": "910",
-     "range": [
-      6,
-      10
-     ],
-     "offset": 5
     }
    },
-   "warps": [],
+   "warps": [
+    {
+     "tile": [
+      6,
+      0
+     ],
+     "to": "910",
+     "at": [
+      11,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      7,
+      0
+     ],
+     "to": "910",
+     "at": [
+      11,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      8,
+      0
+     ],
+     "to": "910",
+     "at": [
+      11,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      9,
+      0
+     ],
+     "to": "910",
+     "at": [
+      12,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      10,
+      0
+     ],
+     "to": "910",
+     "at": [
+      12,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    }
+   ],
    "objects": [
     {
      "tile": [
@@ -50835,7 +51889,7 @@
    "mons": [
     {
      "x": 6,
-     "y": 3,
+     "y": 1,
      "mon": "Blightling"
     }
    ]
@@ -51518,17 +52572,94 @@
       8
      ],
      "offset": 6
-    },
-    "bottom": {
-     "to": "914",
-     "range": [
-      13,
-      18
-     ],
-     "offset": -12
     }
    },
-   "warps": [],
+   "warps": [
+    {
+     "tile": [
+      13,
+      15
+     ],
+     "to": "914",
+     "at": [
+      1,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      14,
+      15
+     ],
+     "to": "914",
+     "at": [
+      1,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      15,
+      15
+     ],
+     "to": "914",
+     "at": [
+      1,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      16,
+      15
+     ],
+     "to": "914",
+     "at": [
+      2,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      17,
+      15
+     ],
+     "to": "914",
+     "at": [
+      2,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      18,
+      15
+     ],
+     "to": "914",
+     "at": [
+      2,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    }
+   ],
    "objects": [
     {
      "tile": [
@@ -51953,17 +53084,66 @@
       21
      ],
      "offset": -6
-    },
-    "left": {
-     "to": "908",
-     "range": [
-      3,
-      6
-     ],
-     "offset": 6
     }
    },
-   "warps": [],
+   "warps": [
+    {
+     "tile": [
+      0,
+      3
+     ],
+     "to": "908",
+     "at": [
+      22,
+      9
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      4
+     ],
+     "to": "908",
+     "at": [
+      22,
+      9
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      5
+     ],
+     "to": "908",
+     "at": [
+      22,
+      9
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      6
+     ],
+     "to": "908",
+     "at": [
+      22,
+      9
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    }
+   ],
    "objects": [
     {
      "tile": [
@@ -52600,17 +53780,93 @@
       11
      ],
      "offset": -6
-    },
-    "bottom": {
-     "to": "913",
-     "range": [
-      10,
-      15
-     ],
-     "offset": -9
     }
    },
    "warps": [
+    {
+     "tile": [
+      10,
+      15
+     ],
+     "to": "913",
+     "at": [
+      1,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      11,
+      15
+     ],
+     "to": "913",
+     "at": [
+      1,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      12,
+      15
+     ],
+     "to": "913",
+     "at": [
+      1,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      13,
+      15
+     ],
+     "to": "913",
+     "at": [
+      2,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      14,
+      15
+     ],
+     "to": "913",
+     "at": [
+      2,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      15,
+      15
+     ],
+     "to": "913",
+     "at": [
+      2,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
     {
      "tile": [
       11,
@@ -53368,17 +54624,94 @@
       11
      ],
      "offset": -4
-    },
-    "top": {
-     "to": "906",
-     "range": [
-      13,
-      18
-     ],
-     "offset": -12
     }
    },
-   "warps": [],
+   "warps": [
+    {
+     "tile": [
+      13,
+      0
+     ],
+     "to": "906",
+     "at": [
+      1,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      14,
+      0
+     ],
+     "to": "906",
+     "at": [
+      1,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      15,
+      0
+     ],
+     "to": "906",
+     "at": [
+      1,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      16,
+      0
+     ],
+     "to": "906",
+     "at": [
+      2,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      17,
+      0
+     ],
+     "to": "906",
+     "at": [
+      2,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      18,
+      0
+     ],
+     "to": "906",
+     "at": [
+      2,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    }
+   ],
    "objects": [
     {
      "tile": [
@@ -53885,14 +55218,6 @@
       13
      ],
      "offset": -3
-    },
-    "right": {
-     "to": "907",
-     "range": [
-      5,
-      8
-     ],
-     "offset": -1
     }
    },
    "warps": [
@@ -53951,6 +55276,62 @@
      "face": "down",
      "kind": "edge",
      "edge": "bottom"
+    },
+    {
+     "tile": [
+      23,
+      5
+     ],
+     "to": "907",
+     "at": [
+      1,
+      4
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      6
+     ],
+     "to": "907",
+     "at": [
+      1,
+      6
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      7
+     ],
+     "to": "907",
+     "at": [
+      1,
+      9
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      8
+     ],
+     "to": "907",
+     "at": [
+      1,
+      11
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "right"
     }
    ],
    "objects": [
@@ -54023,10 +55404,10 @@
      }
     },
     {
-     "x": 3,
-     "y": 12,
+     "x": 19,
+     "y": 10,
      "art": "civilian",
-     "face": "right",
+     "face": "left",
      "t": [],
      "id": "sec816_tr3",
      "trainer": {
@@ -54038,13 +55419,13 @@
    ],
    "mons": [
     {
-     "x": 20,
-     "y": 2,
+     "x": 3,
+     "y": 12,
      "mon": "Dusklord"
     },
     {
-     "x": 19,
-     "y": 12,
+     "x": 20,
+     "y": 2,
      "mon": "Gloomhulk"
     }
    ]
@@ -54753,17 +56134,80 @@
       6
      ],
      "offset": 12
-    },
-    "bottom": {
-     "to": "905",
-     "range": [
-      13,
-      17
-     ],
-     "offset": -3
     }
    },
-   "warps": [],
+   "warps": [
+    {
+     "tile": [
+      13,
+      15
+     ],
+     "to": "905",
+     "at": [
+      10,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      14,
+      15
+     ],
+     "to": "905",
+     "at": [
+      10,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      15,
+      15
+     ],
+     "to": "905",
+     "at": [
+      10,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      16,
+      15
+     ],
+     "to": "905",
+     "at": [
+      11,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      17,
+      15
+     ],
+     "to": "905",
+     "at": [
+      11,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    }
+   ],
    "objects": [
     {
      "tile": [
@@ -54787,8 +56231,8 @@
     },
     {
      "tile": [
-      11,
-      1
+      4,
+      8
      ],
      "k": "stash",
      "item": "ether",
@@ -57450,17 +58894,108 @@
       8
      ],
      "offset": 1
-    },
-    "bottom": {
-     "to": "904",
-     "range": [
-      16,
-      22
-     ],
-     "offset": -15
     }
    },
-   "warps": [],
+   "warps": [
+    {
+     "tile": [
+      16,
+      15
+     ],
+     "to": "904",
+     "at": [
+      1,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      17,
+      15
+     ],
+     "to": "904",
+     "at": [
+      1,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      18,
+      15
+     ],
+     "to": "904",
+     "at": [
+      1,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      19,
+      15
+     ],
+     "to": "904",
+     "at": [
+      1,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      20,
+      15
+     ],
+     "to": "904",
+     "at": [
+      2,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      21,
+      15
+     ],
+     "to": "904",
+     "at": [
+      2,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      22,
+      15
+     ],
+     "to": "904",
+     "at": [
+      2,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    }
+   ],
    "objects": [
     {
      "tile": [
@@ -57882,25 +59417,135 @@
       12
      ],
      "offset": -2
-    },
-    "left": {
-     "to": "901",
-     "range": [
-      9,
-      12
-     ],
-     "offset": -1
-    },
-    "bottom": {
-     "to": "903",
-     "range": [
-      10,
-      14
-     ],
-     "offset": -9
     }
    },
    "warps": [
+    {
+     "tile": [
+      0,
+      9
+     ],
+     "to": "901",
+     "at": [
+      22,
+      8
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      10
+     ],
+     "to": "901",
+     "at": [
+      22,
+      8
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      11
+     ],
+     "to": "901",
+     "at": [
+      22,
+      9
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      12
+     ],
+     "to": "901",
+     "at": [
+      22,
+      9
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      10,
+      15
+     ],
+     "to": "903",
+     "at": [
+      1,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      11,
+      15
+     ],
+     "to": "903",
+     "at": [
+      1,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      12,
+      15
+     ],
+     "to": "903",
+     "at": [
+      1,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      13,
+      15
+     ],
+     "to": "903",
+     "at": [
+      1,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      14,
+      15
+     ],
+     "to": "903",
+     "at": [
+      1,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
     {
      "tile": [
       11,
@@ -58762,17 +60407,36 @@
     16
    ],
    "notes": "",
-   "edges": {
-    "bottom": {
-     "to": "712",
-     "range": [
-      11,
-      12
-     ],
-     "offset": 1
-    }
-   },
+   "edges": {},
    "warps": [
+    {
+     "tile": [
+      11,
+      15
+     ],
+     "to": "712",
+     "at": [
+      12,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      12,
+      15
+     ],
+     "to": "712",
+     "at": [
+      19,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
     {
      "tile": [
       11,
@@ -58821,8 +60485,8 @@
     ]
    },
    "grid": [
-    121,
-    -11
+    0,
+    57
    ],
    "pkey": "sporeholm",
    "npcs": [
@@ -58968,17 +60632,37 @@
     16
    ],
    "notes": "",
-   "edges": {
-    "top": {
-     "to": "650",
-     "range": [
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
       1,
-      2
+      0
      ],
-     "offset": 11
+     "to": "650",
+     "at": [
+      12,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      2,
+      0
+     ],
+     "to": "650",
+     "at": [
+      17,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
     }
-   },
-   "warps": [],
+   ],
    "objects": [
     {
      "tile": [
@@ -59008,8 +60692,8 @@
     ]
    },
    "grid": [
-    104,
-    110
+    0,
+    114
    ],
    "pkey": "neonis",
    "npcs": [
@@ -59065,17 +60749,37 @@
     16
    ],
    "notes": "",
-   "edges": {
-    "top": {
-     "to": "635",
-     "range": [
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
       1,
-      2
+      0
      ],
-     "offset": 9
+     "to": "635",
+     "at": [
+      10,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      2,
+      0
+     ],
+     "to": "635",
+     "at": [
+      14,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
     }
-   },
-   "warps": [],
+   ],
    "objects": [
     {
      "tile": [
@@ -59105,8 +60809,8 @@
     ]
    },
    "grid": [
-    108,
-    30
+    0,
+    134
    ],
    "pkey": "neonis",
    "npcs": [
@@ -59173,17 +60877,36 @@
     16
    ],
    "notes": "",
-   "edges": {
-    "bottom": {
-     "to": "566",
-     "range": [
-      11,
-      12
-     ],
-     "offset": -6
-    }
-   },
+   "edges": {},
    "warps": [
+    {
+     "tile": [
+      11,
+      15
+     ],
+     "to": "566",
+     "at": [
+      5,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      12,
+      15
+     ],
+     "to": "566",
+     "at": [
+      10,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
     {
      "tile": [
       11,
@@ -59232,8 +60955,8 @@
     ]
    },
    "grid": [
-    42,
-    -20
+    0,
+    64
    ],
    "pkey": "glyphos",
    "npcs": [
@@ -59585,7 +61308,7 @@
      ],
      "to": "543",
      "at": [
-      11,
+      13,
       14
      ],
      "face": "up",
@@ -59641,7 +61364,7 @@
    },
    "grid": [
     0,
-    64
+    84
    ],
    "pkey": "glyphos",
    "npcs": [
@@ -59682,17 +61405,23 @@
     16
    ],
    "notes": "",
-   "edges": {
-    "top": {
-     "to": "668",
-     "range": [
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
       1,
-      1
+      0
      ],
-     "offset": 8
+     "to": "668",
+     "at": [
+      9,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
     }
-   },
-   "warps": [],
+   ],
    "objects": [],
    "spawns": {
     "default": [
@@ -59701,8 +61430,8 @@
     ]
    },
    "grid": [
-    65,
-    63
+    0,
+    69
    ],
    "pkey": "pyros",
    "npcs": [
@@ -59807,7 +61536,7 @@
      ],
      "to": "524",
      "at": [
-      18,
+      17,
       14
      ],
      "face": "up",
@@ -59821,7 +61550,7 @@
      ],
      "to": "524",
      "at": [
-      19,
+      18,
       14
      ],
      "face": "up",
@@ -59835,7 +61564,7 @@
      ],
      "to": "524",
      "at": [
-      20,
+      18,
       14
      ],
      "face": "up",
@@ -59846,6 +61575,48 @@
      "tile": [
       0,
       6
+     ],
+     "to": "524",
+     "at": [
+      19,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      7
+     ],
+     "to": "524",
+     "at": [
+      20,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      8
+     ],
+     "to": "524",
+     "at": [
+      20,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      9
      ],
      "to": "524",
      "at": [
@@ -59860,8 +61631,8 @@
    "objects": [
     {
      "tile": [
-      1,
-      9
+      2,
+      3
      ],
      "k": "stash",
      "item": "revive",
@@ -59870,8 +61641,8 @@
     },
     {
      "tile": [
-      2,
-      1
+      1,
+      9
      ],
      "k": "stash",
      "item": "fullgel",
@@ -59887,7 +61658,7 @@
    },
    "grid": [
     0,
-    98
+    84
    ],
    "pkey": "glacia",
    "npcs": [
@@ -59921,11 +61692,11 @@
    "mons": [
     {
      "x": 2,
-     "y": 3,
+     "y": 2,
      "mon": "Floelord"
     },
     {
-     "x": 2,
+     "x": 1,
      "y": 2,
      "mon": "Borealix"
     }
@@ -59943,17 +61714,23 @@
     16
    ],
    "notes": "",
-   "edges": {
-    "top": {
-     "to": "511",
-     "range": [
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
       1,
-      1
+      0
      ],
-     "offset": 9
+     "to": "511",
+     "at": [
+      10,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
     }
-   },
-   "warps": [],
+   ],
    "objects": [],
    "spawns": {
     "default": [
@@ -59962,8 +61739,8 @@
     ]
    },
    "grid": [
-    -19,
-    78
+    0,
+    104
    ],
    "pkey": "glacia",
    "npcs": [
@@ -59993,17 +61770,23 @@
     16
    ],
    "notes": "",
-   "edges": {
-    "top": {
-     "to": "616",
-     "range": [
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
       1,
-      1
+      0
      ],
-     "offset": 8
+     "to": "616",
+     "at": [
+      9,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
     }
-   },
-   "warps": [],
+   ],
    "objects": [],
    "spawns": {
     "default": [
@@ -60012,8 +61795,8 @@
     ]
    },
    "grid": [
-    71,
-    93
+    0,
+    97
    ],
    "pkey": "helix",
    "npcs": [
@@ -60045,17 +61828,23 @@
     16
    ],
    "notes": "",
-   "edges": {
-    "top": {
-     "to": "605",
-     "range": [
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
       1,
-      1
+      0
      ],
-     "offset": 9
+     "to": "605",
+     "at": [
+      10,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
     }
-   },
-   "warps": [],
+   ],
    "objects": [],
    "spawns": {
     "default": [
@@ -60064,8 +61853,8 @@
     ]
    },
    "grid": [
-    129,
-    6
+    0,
+    117
    ],
    "pkey": "helix",
    "npcs": [
@@ -60095,17 +61884,50 @@
     16
    ],
    "notes": "",
-   "edges": {
-    "bottom": {
-     "to": "600",
-     "range": [
-      11,
-      13
-     ],
-     "offset": -6
-    }
-   },
+   "edges": {},
    "warps": [
+    {
+     "tile": [
+      11,
+      15
+     ],
+     "to": "600",
+     "at": [
+      5,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      12,
+      15
+     ],
+     "to": "600",
+     "at": [
+      7,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      13,
+      15
+     ],
+     "to": "600",
+     "at": [
+      10,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
     {
      "tile": [
       11,
@@ -60154,8 +61976,8 @@
     ]
    },
    "grid": [
-    66,
-    -20
+    0,
+    132
    ],
    "pkey": "halo",
    "npcs": [
@@ -60197,14 +62019,6 @@
    ],
    "notes": "",
    "edges": {
-    "top": {
-     "to": "573",
-     "range": [
-      1,
-      1
-     ],
-     "offset": 9
-    },
     "bottom": {
      "to": "892",
      "range": [
@@ -60214,17 +62028,32 @@
      "offset": -1
     }
    },
-   "warps": [],
+   "warps": [
+    {
+     "tile": [
+      1,
+      0
+     ],
+     "to": "573",
+     "at": [
+      10,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    }
+   ],
    "objects": [],
    "spawns": {
     "default": [
-     1,
-     1
+     2,
+     14
     ]
    },
    "grid": [
-    104,
-    79
+    0,
+    152
    ],
    "pkey": "halo",
    "npcs": [
@@ -60436,8 +62265,8 @@
     ]
    },
    "grid": [
-    105,
-    95
+    1,
+    168
    ],
    "pkey": "halo",
    "npcs": [
@@ -60493,18 +62322,143 @@
     16
    ],
    "notes": "",
-   "edges": {
-    "left": {
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      0,
+      4
+     ],
      "to": "816",
-     "range": [
-      4,
+     "at": [
+      22,
+      5
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      5
+     ],
+     "to": "816",
+     "at": [
+      22,
+      5
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      6
+     ],
+     "to": "816",
+     "at": [
+      22,
+      6
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      7
+     ],
+     "to": "816",
+     "at": [
+      22,
+      6
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      8
+     ],
+     "to": "816",
+     "at": [
+      22,
+      7
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      9
+     ],
+     "to": "816",
+     "at": [
+      22,
+      7
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      10
+     ],
+     "to": "816",
+     "at": [
+      22,
+      8
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
       11
      ],
-     "offset": 1
+     "to": "816",
+     "at": [
+      22,
+      8
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
     }
-   },
-   "warps": [],
-   "objects": [],
+   ],
+   "objects": [
+    {
+     "tile": [
+      1,
+      9
+     ],
+     "k": "stash",
+     "item": "dust",
+     "n": 1600,
+     "tier": 6
+    },
+    {
+     "tile": [
+      1,
+      5
+     ],
+     "k": "stash",
+     "item": "maxrevive",
+     "n": 1,
+     "tier": 6
+    }
+   ],
    "spawns": {
     "default": [
      1,
@@ -60512,8 +62466,8 @@
     ]
    },
    "grid": [
-    48,
-    1
+    0,
+    45
    ],
    "pkey": "umbra",
    "npcs": [],
@@ -60531,17 +62485,37 @@
     16
    ],
    "notes": "",
-   "edges": {
-    "bottom": {
-     "to": "836",
-     "range": [
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
       1,
-      2
+      15
      ],
-     "offset": 12
+     "to": "836",
+     "at": [
+      13,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      2,
+      15
+     ],
+     "to": "836",
+     "at": [
+      18,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
     }
-   },
-   "warps": [],
+   ],
    "objects": [
     {
      "tile": [
@@ -60571,8 +62545,8 @@
     ]
    },
    "grid": [
-    -12,
-    -20
+    0,
+    65
    ],
    "pkey": "umbra",
    "npcs": [
@@ -60639,17 +62613,36 @@
     16
    ],
    "notes": "",
-   "edges": {
-    "top": {
-     "to": "823",
-     "range": [
-      10,
-      11
-     ],
-     "offset": 3
-    }
-   },
+   "edges": {},
    "warps": [
+    {
+     "tile": [
+      10,
+      0
+     ],
+     "to": "823",
+     "at": [
+      13,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      11,
+      0
+     ],
+     "to": "823",
+     "at": [
+      17,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
     {
      "tile": [
       11,
@@ -60693,8 +62686,8 @@
     ]
    },
    "grid": [
-    135,
-    41
+    0,
+    85
    ],
    "pkey": "umbra",
    "npcs": [
@@ -60866,17 +62859,23 @@
     16
    ],
    "notes": "",
-   "edges": {
-    "top": {
-     "to": "736",
-     "range": [
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
       1,
-      1
+      0
      ],
-     "offset": 9
+     "to": "736",
+     "at": [
+      10,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
     }
-   },
-   "warps": [],
+   ],
    "objects": [],
    "spawns": {
     "default": [
@@ -60885,8 +62884,8 @@
     ]
    },
    "grid": [
-    29,
-    30
+    0,
+    76
    ],
    "pkey": "starfall",
    "npcs": [
@@ -60953,17 +62952,36 @@
     16
    ],
    "notes": "",
-   "edges": {
-    "right": {
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      23,
+      8
+     ],
      "to": "736",
-     "range": [
-      8,
+     "at": [
+      1,
       9
      ],
-     "offset": 1
-    }
-   },
-   "warps": [
+     "face": "right",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      9
+     ],
+     "to": "736",
+     "at": [
+      1,
+      12
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "right"
+    },
     {
      "tile": [
       11,
@@ -61012,8 +63030,8 @@
     ]
    },
    "grid": [
-    -4,
-    15
+    0,
+    96
    ],
    "pkey": "starfall",
    "npcs": [
@@ -61054,17 +63072,37 @@
     16
    ],
    "notes": "",
-   "edges": {
-    "top": {
-     "to": "752",
-     "range": [
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
       1,
-      2
+      0
      ],
-     "offset": 15
+     "to": "752",
+     "at": [
+      16,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      2,
+      0
+     ],
+     "to": "752",
+     "at": [
+      22,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
     }
-   },
-   "warps": [],
+   ],
    "objects": [
     {
      "tile": [
@@ -61094,8 +63132,8 @@
     ]
    },
    "grid": [
-    87,
-    52
+    0,
+    116
    ],
    "pkey": "starfall",
    "npcs": [
@@ -61129,7 +63167,7 @@
    "mons": [
     {
      "x": 2,
-     "y": 3,
+     "y": 2,
      "mon": "Novacat"
     },
     {
@@ -61271,17 +63309,36 @@
     16
    ],
    "notes": "",
-   "edges": {
-    "right": {
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      23,
+      9
+     ],
      "to": "856",
-     "range": [
-      9,
+     "at": [
+      1,
+      3
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
       10
      ],
-     "offset": -6
-    }
-   },
-   "warps": [
+     "to": "856",
+     "at": [
+      1,
+      6
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "right"
+    },
     {
      "tile": [
       12,
@@ -61316,8 +63373,8 @@
     ]
    },
    "grid": [
-    17,
-    27
+    0,
+    153
    ],
    "pkey": "ystra",
    "npcs": [
@@ -61358,17 +63415,37 @@
     16
    ],
    "notes": "",
-   "edges": {
-    "top": {
-     "to": "842",
-     "range": [
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
       1,
-      2
+      0
      ],
-     "offset": 9
+     "to": "842",
+     "at": [
+      10,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      2,
+      0
+     ],
+     "to": "842",
+     "at": [
+      15,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
     }
-   },
-   "warps": [],
+   ],
    "objects": [
     {
      "tile": [
@@ -61398,8 +63475,8 @@
     ]
    },
    "grid": [
-    38,
-    27
+    0,
+    173
    ],
    "pkey": "ystra",
    "npcs": [
@@ -61529,17 +63606,37 @@
     16
    ],
    "notes": "",
-   "edges": {
-    "top": {
-     "to": "852",
-     "range": [
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
       1,
-      2
+      0
      ],
-     "offset": 12
+     "to": "852",
+     "at": [
+      13,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      2,
+      0
+     ],
+     "to": "852",
+     "at": [
+      18,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
     }
-   },
-   "warps": [],
+   ],
    "objects": [
     {
      "tile": [
@@ -61569,8 +63666,8 @@
     ]
    },
    "grid": [
-    61,
-    129
+    0,
+    193
    ],
    "pkey": "ystra",
    "npcs": [
@@ -61609,7 +63706,7 @@
     },
     {
      "x": 2,
-     "y": 4,
+     "y": 2,
      "mon": "Pulsarion"
     }
    ]
@@ -61626,17 +63723,36 @@
     16
    ],
    "notes": "",
-   "edges": {
-    "bottom": {
-     "to": "863",
-     "range": [
-      11,
-      12
-     ],
-     "offset": -5
-    }
-   },
+   "edges": {},
    "warps": [
+    {
+     "tile": [
+      11,
+      15
+     ],
+     "to": "863",
+     "at": [
+      6,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      12,
+      15
+     ],
+     "to": "863",
+     "at": [
+      10,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
     {
      "tile": [
       11,
@@ -61685,8 +63801,8 @@
     ]
    },
    "grid": [
-    19,
-    -20
+    0,
+    213
    ],
    "pkey": "ystra",
    "npcs": [
@@ -61883,7 +63999,7 @@
      ],
      "to": "491",
      "at": [
-      18,
+      17,
       14
      ],
      "face": "up",
@@ -61897,7 +64013,7 @@
      ],
      "to": "491",
      "at": [
-      19,
+      18,
       14
      ],
      "face": "up",
@@ -61911,7 +64027,7 @@
      ],
      "to": "491",
      "at": [
-      20,
+      19,
       14
      ],
      "face": "up",
@@ -61922,6 +64038,34 @@
      "tile": [
       0,
       8
+     ],
+     "to": "491",
+     "at": [
+      19,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      9
+     ],
+     "to": "491",
+     "at": [
+      20,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      10
      ],
      "to": "491",
      "at": [
@@ -61937,7 +64081,7 @@
     {
      "tile": [
       1,
-      10
+      4
      ],
      "k": "stash",
      "item": "gel",
@@ -61947,7 +64091,7 @@
     {
      "tile": [
       1,
-      3
+      10
      ],
      "k": "stash",
      "item": "stasis",
@@ -61981,10 +64125,10 @@
      }
     },
     {
-     "x": 0,
-     "y": 10,
+     "x": 1,
+     "y": 9,
      "art": "technician",
-     "face": "up",
+     "face": "down",
      "t": [],
      "id": "sec881_tr1",
      "trainer": {
@@ -61997,7 +64141,7 @@
    "mons": [
     {
      "x": 1,
-     "y": 4,
+     "y": 3,
      "mon": "Anvilox"
     },
     {
@@ -62175,17 +64319,36 @@
     16
    ],
    "notes": "",
-   "edges": {
-    "left": {
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      0,
+      8
+     ],
      "to": "445",
-     "range": [
-      8,
+     "at": [
+      22,
+      5
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
       9
      ],
-     "offset": -3
-    }
-   },
-   "warps": [
+     "to": "445",
+     "at": [
+      22,
+      9
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    },
     {
      "tile": [
       11,
@@ -62234,8 +64397,8 @@
     ]
    },
    "grid": [
-    104,
-    27
+    0,
+    104
    ],
    "pkey": "dustara",
    "npcs": [
@@ -62339,22 +64502,52 @@
     16
    ],
    "notes": "",
-   "edges": {
-    "right": {
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      23,
+      10
+     ],
      "to": "446",
-     "range": [
-      10,
+     "at": [
+      1,
+      3
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
       11
      ],
-     "offset": -7
+     "to": "446",
+     "at": [
+      1,
+      11
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "right"
     }
-   },
-   "warps": [],
+   ],
    "objects": [
     {
      "tile": [
+      21,
+      10
+     ],
+     "k": "stash",
+     "item": "stasis",
+     "n": 3,
+     "tier": 1
+    },
+    {
+     "tile": [
       22,
-      8
+      7
      ],
      "k": "stash",
      "item": "gel",
@@ -62369,8 +64562,8 @@
     ]
    },
    "grid": [
-    32,
-    25
+    0,
+    124
    ],
    "pkey": "dustara",
    "npcs": [],
@@ -62508,17 +64701,36 @@
     16
    ],
    "notes": "",
-   "edges": {
-    "left": {
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      0,
+      6
+     ],
      "to": "011",
-     "range": [
-      6,
+     "at": [
+      22,
+      5
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
       7
      ],
-     "offset": -1
-    }
-   },
-   "warps": [
+     "to": "011",
+     "at": [
+      22,
+      8
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    },
     {
      "tile": [
       21,
@@ -62562,8 +64774,8 @@
     ]
    },
    "grid": [
-    144,
-    -1
+    0,
+    144
    ],
    "pkey": "dustara",
    "npcs": [

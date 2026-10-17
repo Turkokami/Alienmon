@@ -221,10 +221,14 @@ for s in sel:
             to_edge, to_rng = OPP[ex['edge']], ex['range']
             report['one-way exit (arrival edge assumed opposite)'].append(f"{s['id']} {s['name']} {ex['edge']} → {t['id']} {t['name']}: target lists no exit back")
         conns.append({'from_id': s['id'], 'edge': ex['edge'], 'tile_range': ex['range'], 'to_id': t['id'], 'to_edge': to_edge, 'to_tile': to_rng})
-        if s['type'] in OUTDOOR and t['type'] in OUTDOOR and OPP[ex['edge']] == to_edge:
+        wa, wb = ex['range'][1] - ex['range'][0] + 1, to_rng[1] - to_rng[0] + 1
+        lined_up = (int(s['id']) < 868 and int(t['id']) < 868) or (abs(wa - wb) <= 1 and abs((ex['range'][0] + ex['range'][1]) - (to_rng[0] + to_rng[1])) <= 4)   # the later kit pieces join former dead ends: openings rarely match
+        if s['type'] in OUTDOOR and t['type'] in OUTDOOR and OPP[ex['edge']] == to_edge and lined_up:
             sec['edges'][ex['edge']] = {'to': t['id'], 'range': ex['range'], 'offset': to_rng[0] - ex['range'][0]}
-        else:
-            for a, b in zip(edge_tiles(s, ex['edge'], ex['range']), edge_tiles(byid[t['id']], to_edge, to_rng)):
+        else:   # openings that don't line up: step across with a fade instead of showing a mismatched seam
+            A_, B_ = edge_tiles(s, ex['edge'], ex['range']), edge_tiles(byid[t['id']], to_edge, to_rng)
+            for i_, a in enumerate(A_):
+                b = B_[round(i_ * (len(B_) - 1) / max(1, len(A_) - 1))]
                 at, face = inward(b, to_edge)
                 sec['warps'].append({'tile': a, 'to': t['id'], 'at': at, 'face': face, 'kind': 'stairs' if ex['stairs'] else 'edge', 'edge': ex['edge']})
 
@@ -337,14 +341,14 @@ def _snap(sid, t):   # a spawn on a wall moves to the nearest walkable tile
         c_ = [(t[0] + dx, t[1] + dy) for dx in range(-r_, r_ + 1) for dy in range(-r_, r_ + 1) if max(abs(dx), abs(dy)) == r_ and ok_(t[0] + dx, t[1] + dy)]
         if c_: return list(min(c_, key=lambda q: abs(q[0] - t[0]) + abs(q[1] - t[1])))
     return t
-for sid_, sec in world.items():
-    for k_, v_ in list(sec['spawns'].items()):
-        if isinstance(v_, list) and len(v_) == 2: sec['spawns'][k_] = _snap(sid_, v_)
 for sec in world.values():
     if 'default' not in sec['spawns']:
         w0 = sec['warps'][0] if sec['warps'] else None   # one step in from this section's own first warp
         own = (inward(w0['tile'], w0['edge'])[0] if w0['edge'] in OPP else [w0['tile'][0], w0['tile'][1] - 1]) if w0 and w0.get('edge') else None
         sec['spawns']['default'] = next(iter(sec['spawns'].values()), None) or own or [sec['tiles'][0] // 2, sec['tiles'][1] // 2]
+for sid_, sec in world.items():
+    for k_, v_ in list(sec['spawns'].items()):
+        if isinstance(v_, list) and len(v_) == 2: sec['spawns'][k_] = _snap(sid_, v_)
 
 # townsfolk (data/sections/npcs.json): pinned tiles are kept; the rest go on open ground once a collision file
 # exists, never on an exit, door or spawn, never next to one, spread apart, and never where they would cut a path
