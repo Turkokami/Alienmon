@@ -1,7 +1,7 @@
 // Writes the Linker Arena render prompt pack from the game data (plain Node, built-ins only).
 // Output: docs/arena/prompts/{sprites,scenes,fx,ui}/*.md and docs/arena/render_tracker.csv
 // Re-run after adding Alienmon or moves: node tools/arena_prompts.js
-// Arena shapes below are design proposals for the real-time mode; power and accuracy always come from the battle data.
+// Arena shapes are design proposals for the real-time mode; power and accuracy always come from the battle data.
 const fs=require('fs'),path=require('path');
 const root=path.join(__dirname,'..'),out=path.join(root,'docs/arena/prompts');
 const core=JSON.parse(fs.readFileSync(path.join(root,'data/core_battle.json')));
@@ -52,32 +52,12 @@ const SHAPE={
  FIELD:{what:'a lingering patch on the ground that affects anyone standing in it',row1:'4 frames of a looping ground patch, seen from top-down 3/4 (an ellipse twice as wide as it is tall), gently animated'},
  AURA:{what:'a self buff or heal shown around the user',row1:'4 frames of a looping aura ring around an EMPTY center (the creature is drawn by the game), seen from top-down 3/4'}};
 
-// [move name, shape, the picture]
-const MOVES={
- Plasma:[['Ember Pulse','PROJ','a small hot fireball with a white core and a flickering tail'],['Flare Lance','BEAM','a narrow lance of solar fire with a white-gold core'],['Solar Burst','BURST','a miniature sun exploding in a golden ring of flame'],['Corona Charge','AURA','a golden corona of flame rays circling like a sun halo']],
- Hydro:[['Bubble Jet','PROJ','a tight cluster of three glossy bubbles'],['Tide Lash','ARC','a whip of water curling into a crashing crescent'],['Abyss Surge','WAVE','a dark blue wave wall with a white foam crest'],['Healing Tide','AURA','a gentle swirl of clear water and rising bubbles']],
- Bio:[['Spore Shot','PROJ','a puffy green-and-purple spore ball trailing tiny spores'],['Root Drain','ZONE','gnarled glowing roots bursting up from the ground and coiling'],['Bloom Cannon','BEAM','a blast of light-green energy full of swirling petals'],['Photosynth','AURA','floating sun motes and spinning leaves rising in a ring']],
- Volt:[['Static Zap','PROJ','a small crackling ball of yellow-and-cyan sparks'],['Arc Bolt','CHAIN','a jagged yellow lightning arc with cyan edges'],['Thunder Coil','ZONE','a coil of lightning spiraling down from above onto a spot'],['Static Field','FIELD','a ring of crackling static sparks on the ground']],
- Cryo:[['Frost Bite','ARC','icy snapping jaws made of frost with glittering shards'],['Ice Shard','PROJ','a spinning spear of clear blue ice'],['Glacier Crush','ZONE','a huge glacier slab slamming down and cracking into frost'],['Frost Armor','AURA','hexagonal plates of frost forming a shell ring']],
- Magma:[['Cinder Spit','LOB','a glowing lava glob dripping cinders'],['Lava Fist','DASH','a streak of molten orange heat and flying cinders'],['Eruption Wave','WAVE','a rolling wall of lava cracking the ground with black basalt chunks'],['Wildfire Glare','CONE','a wedge of shimmering heat and burning sparks']],
- Toxin:[['Acid Drip','LOB','a bubbling lime acid drop'],['Venom Fang','ARC','two purple fang-shaped slashes dripping lime venom'],['Miasma Cloud','ZONE','a heavy purple-and-lime poison cloud billowing up'],['Toxic Mist','FIELD','a thin swirling purple mist with lime bubbles']],
- Swarm:[['Skitter Rush','DASH','a dusty amber streak with tiny insect wings'],['Sting Volley','PROJ','three amber stingers flying side by side'],['Hive Storm','RAIN','a buzzing cloud of tiny amber alien bugs diving down'],['Swarm Dance','AURA','a ring of tiny glowing insects circling with honeycomb glints']],
- Alloy:[['Bolt Bash','ARC','a heavy steel crescent swing with orange metal sparks'],['Gear Grind','PROJ','a spinning copper saw gear with sparks'],['Iron Avalanche','RAIN','steel girders and iron blocks crashing down'],['Plate Up','AURA','riveted steel plates snapping into a ring']],
- Crystal:[['Shard Flick','PROJ','a fan of three sharp magenta crystal shards'],['Prism Beam','BEAM','a magenta beam with thin rainbow edges'],['Crystal Nova','BURST','gem shards exploding outward in a magenta ring'],['Prism Ward','AURA','a ring of hexagonal lilac crystal panels']],
- Psi:[['Mind Poke','PROJ','a small glowing pink orb with a violet ring'],['Psi Wave','WAVE','concentric pink-and-violet rings rolling forward'],['Neural Storm','ZONE','a crackling storm of pink psychic lightning over a spot'],['Mind Fog','FIELD','a swirling pink-violet fog with faint spiral sigils']],
- Sonic:[['Chirp Blast','PROJ','a single bright teal sound ring'],['Echo Pulse','BURST','teal and pink sound rings pulsing outward'],['Sonic Boom','CONE','a cone of shockwave rings with equalizer bars'],['Shriek','CONE','short jagged hot-pink screech lines']],
- Gravity:[['Pebble Pull','PROJ','three pebbles orbiting a tiny dark core'],['Mass Slam','DASH','a heavy brown dust streak with bent space lines'],['Gravity Well','ZONE','a dark swirling vortex with rocks spiraling inward'],['Heavy Field','FIELD','a warped grid of slate-blue lines sagging into the ground']],
- Void:[['Shade Claw','ARC','three violet shadow claw slashes'],['Null Bite','DASH','a blink trail of dark smoke with violet sparks'],['Event Horizon','ZONE','a small black hole with a bright violet accretion ring'],['Shadow Veil','FIELD','drifting dark smoke that dims everything inside it']]};
-
-// signature moves, indexed like core_battle.json signature_moves
-const SIG_SHAPE=[['ZONE','a giant mycelium fist bursting up from the ground'],['BEAM','a star-shaped flare that fires a white-gold beam'],['ZONE','a glowing deep-sea lure that pulls the foe in before water jaws snap shut'],['PROJ','a spinning flying-saucer-shaped disc of sparks that curves back like a boomerang'],
- ['DASH','a steel horn charge with a shower of sparks'],['BURST','a spinning ring of purple spores'],['ZONE','a huge anchor of water slamming down from above'],['BURST','a booming speaker-cone shockwave'],
- ['RAIN','lava bombs launched from a volcano and falling over an area'],['DASH','an icy charge that leaves a trail of frozen spikes'],['ARC','giant ancient frozen jaws snapping'],['PROJ','three venom globs flying in a spread'],
- ['ARC','a pair of hydraulic press claws clamping shut'],['ZONE','a rift tearing open in the ground and collapsing'],['AURA','a dark reflective mirror ring that bounces projectiles'],['AURA','a bright hopeful mirror ring that bounces projectiles and sparkles'],
- ['CONE','a howl of violet darkness spreading in a wedge'],['RAIN','a storm of spinning gems'],['PROJ','a looping volley of sound-note shards'],['AURA','a veil of fire that burns anyone who touches it'],
- ['ZONE','a fortress wall of stone slamming down'],['BEAM','a pillar of dawn light'],['ZONE','a hungry swirl of void that tugs foes inward'],['ZONE','a slab of ground lifting up and crashing back down'],
- ['WAVE','a crown of waves expanding outward in a ring'],['RAIN','fragments of sunlight falling like meteors'],['BURST','chiming rings of teal light'],['BURST','an expanding nova of signal light'],
- ['ZONE','a vast swirling void vortex (spooky but kid-friendly, no teeth, no gore)'],['BURST','a blossoming bloom of life energy and petals']];
+// every move's arena shape and effect picture live in data/arena.json (the game reads the same shapes)
+const AJ=JSON.parse(fs.readFileSync(path.join(root,'data/arena.json')));
+const MOVEFX=JSON.parse(fs.readFileSync(path.join(root,'data/moves_fx.json')));
+const TM_NAMES=JSON.parse(fs.readFileSync(path.join(root,'src/template.html'),'utf8').match(/const TM=\{([\s\S]*?)\};/)[1].replace(/(\w+):\[\[/g,'"$1":[[').replace(/'/g,'"').replace(/\{[^{}]*(\{[^{}]*\})?[^{}]*\}/g,'0').replace(/^/,'{')+'}');
+const MOVES={};for(const t of Object.keys(TYPE))MOVES[t]=TM_NAMES[t].map(m=>m[0]).concat((MOVEFX.new[t]||[]).map(m=>m[0])).map(n=>{if(!AJ.moves[n])throw new Error('data/arena.json has no shape for '+n);return[n,...AJ.moves[n]]});
+const SIG_SHAPE=core.signature_moves.map(m=>{if(!AJ.signature[m.n])throw new Error('data/arena.json has no shape for '+m.n);return AJ.signature[m.n]});
 
 // ---------- helpers ----------
 const pad=n=>String(n).padStart(3,'0');

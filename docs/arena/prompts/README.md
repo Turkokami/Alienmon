@@ -3,7 +3,7 @@
 Every image the real-time Arena mode needs, as copy-paste ChatGPT prompts, split into batches you can render one at a time.
 The build plan is `docs/arena/ARENA_BUILD_PLAN.md`. Every file to render, and whether it exists yet, is listed in `docs/arena/render_tracker.csv`.
 
-These files are generated from the game data by `node tools/arena_prompts.js`. Don't hand-edit the batch files. Change the generator and re-run it, for example after Batch 2 Alienmon are added. Re-running also refreshes the tracker's `done` / `todo` column.
+These files are generated from the game data by `node tools/arena_prompts.js`. Don't hand-edit the batch files. Change the generator (or a move's shape and picture in `data/arena.json`) and re-run it, for example after Batch 2 Alienmon are added. Re-running also refreshes the tracker's `done` / `todo` column.
 
 "Linker Arena", the practice court and the cup names are working titles. They need the owner's OK before they appear in game text (CLAUDE.md: no new canon names without asking).
 
@@ -14,11 +14,11 @@ These files are generated from the game data by `node tools/arena_prompts.js`. D
 | Alienmon pose sheets (6 poses each) | `sprites/sprites_batch_01.md` ... `_17.md` | 322 | `art/arena/raw/<Name>_arena.png` |
 | Missing back sprite (Oblivane) | `sprites/sprites_extra.md` | 1 | `art/raw/` then `art/sprites_back/` |
 | Arena floors, terrain tiles, hazards | `scenes/arena_scenes_A.md`, `_B.md`, `_C.md` | 47 | `art/arena/scenes/`, `art/arena/raw/tiles/`, `art/arena/raw/hazards/` |
-| Type move effects (14 types x 4) | `fx/fx_batch_1` ... `fx_batch_4` | 56 | `art/arena/raw/fx/` |
+| Type move effects (14 types x 7, including the 42 moves added in `data/moves_fx.json`) | `fx/fx_batch_1` ... `fx_batch_4` | 98 | `art/arena/raw/fx/` |
 | Signature move effects | `fx/fx_batch_5`, `fx_batch_6` | 30 | `art/arena/raw/fx/sig_*.png` |
 | Common and status effects | `fx/fx_batch_7_common_and_status.md` | 10 | `art/arena/raw/fx/common_*.png` |
 | UI (logo, icons, HUD, banners, cups) | `ui/ui_batch_1.md` | 10 | `art/arena/ui/` |
-| **Total** | | **476** | |
+| **Total** | | **518** | |
 
 ## Render order (matches the build phases)
 

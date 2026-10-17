@@ -1,0 +1,551 @@
+{
+ "_note": "Linker Arena (docs/arena/ARENA_BUILD_PLAN.md). shapes: how each move behaves in the real-time arena, plus the picture used for its effect prompt (tools/arena_prompts.js). Damage, accuracy and effects always come from the battle data. match.scale shrinks every HP change (hits, burn, poison, healing) so a real-time match lasts about as long as a round, not a few seconds.",
+ "tiers": [
+  {
+   "max": 45,
+   "cd": 27,
+   "wind": 0
+  },
+  {
+   "max": 80,
+   "cd": 180,
+   "wind": 9
+  },
+  {
+   "max": 100,
+   "cd": 420,
+   "wind": 30
+  },
+  {
+   "max": 999,
+   "cd": 600,
+   "wind": 42
+  }
+ ],
+ "status": {
+  "cd": 480,
+  "wind": 12
+ },
+ "match": {
+  "level": 50,
+  "time": 99,
+  "countdown": 120,
+  "scale": 0.12
+ },
+ "moves": {
+  "Ember Pulse": [
+   "PROJ",
+   "a small hot fireball with a white core and a flickering tail"
+  ],
+  "Flare Lance": [
+   "BEAM",
+   "a narrow lance of solar fire with a white-gold core"
+  ],
+  "Solar Burst": [
+   "BURST",
+   "a miniature sun exploding in a golden ring of flame"
+  ],
+  "Corona Charge": [
+   "AURA",
+   "a golden corona of flame rays circling like a sun halo"
+  ],
+  "Bubble Jet": [
+   "PROJ",
+   "a tight cluster of three glossy bubbles"
+  ],
+  "Tide Lash": [
+   "ARC",
+   "a whip of water curling into a crashing crescent"
+  ],
+  "Abyss Surge": [
+   "WAVE",
+   "a dark blue wave wall with a white foam crest"
+  ],
+  "Healing Tide": [
+   "AURA",
+   "a gentle swirl of clear water and rising bubbles"
+  ],
+  "Spore Shot": [
+   "PROJ",
+   "a puffy green-and-purple spore ball trailing tiny spores"
+  ],
+  "Root Drain": [
+   "ZONE",
+   "gnarled glowing roots bursting up from the ground and coiling"
+  ],
+  "Bloom Cannon": [
+   "BEAM",
+   "a blast of light-green energy full of swirling petals"
+  ],
+  "Photosynth": [
+   "AURA",
+   "floating sun motes and spinning leaves rising in a ring"
+  ],
+  "Static Zap": [
+   "PROJ",
+   "a small crackling ball of yellow-and-cyan sparks"
+  ],
+  "Arc Bolt": [
+   "CHAIN",
+   "a jagged yellow lightning arc with cyan edges"
+  ],
+  "Thunder Coil": [
+   "ZONE",
+   "a coil of lightning spiraling down from above onto a spot"
+  ],
+  "Static Field": [
+   "FIELD",
+   "a ring of crackling static sparks on the ground"
+  ],
+  "Frost Bite": [
+   "ARC",
+   "icy snapping jaws made of frost with glittering shards"
+  ],
+  "Ice Shard": [
+   "PROJ",
+   "a spinning spear of clear blue ice"
+  ],
+  "Glacier Crush": [
+   "ZONE",
+   "a huge glacier slab slamming down and cracking into frost"
+  ],
+  "Frost Armor": [
+   "AURA",
+   "hexagonal plates of frost forming a shell ring"
+  ],
+  "Cinder Spit": [
+   "LOB",
+   "a glowing lava glob dripping cinders"
+  ],
+  "Lava Fist": [
+   "DASH",
+   "a streak of molten orange heat and flying cinders"
+  ],
+  "Eruption Wave": [
+   "WAVE",
+   "a rolling wall of lava cracking the ground with black basalt chunks"
+  ],
+  "Wildfire Glare": [
+   "CONE",
+   "a wedge of shimmering heat and burning sparks"
+  ],
+  "Acid Drip": [
+   "LOB",
+   "a bubbling lime acid drop"
+  ],
+  "Venom Fang": [
+   "ARC",
+   "two purple fang-shaped slashes dripping lime venom"
+  ],
+  "Miasma Cloud": [
+   "ZONE",
+   "a heavy purple-and-lime poison cloud billowing up"
+  ],
+  "Toxic Mist": [
+   "FIELD",
+   "a thin swirling purple mist with lime bubbles"
+  ],
+  "Skitter Rush": [
+   "DASH",
+   "a dusty amber streak with tiny insect wings"
+  ],
+  "Sting Volley": [
+   "PROJ",
+   "three amber stingers flying side by side"
+  ],
+  "Hive Storm": [
+   "RAIN",
+   "a buzzing cloud of tiny amber alien bugs diving down"
+  ],
+  "Swarm Dance": [
+   "AURA",
+   "a ring of tiny glowing insects circling with honeycomb glints"
+  ],
+  "Bolt Bash": [
+   "ARC",
+   "a heavy steel crescent swing with orange metal sparks"
+  ],
+  "Gear Grind": [
+   "PROJ",
+   "a spinning copper saw gear with sparks"
+  ],
+  "Iron Avalanche": [
+   "RAIN",
+   "steel girders and iron blocks crashing down"
+  ],
+  "Plate Up": [
+   "AURA",
+   "riveted steel plates snapping into a ring"
+  ],
+  "Shard Flick": [
+   "PROJ",
+   "a fan of three sharp magenta crystal shards"
+  ],
+  "Prism Beam": [
+   "BEAM",
+   "a magenta beam with thin rainbow edges"
+  ],
+  "Crystal Nova": [
+   "BURST",
+   "gem shards exploding outward in a magenta ring"
+  ],
+  "Prism Ward": [
+   "AURA",
+   "a ring of hexagonal lilac crystal panels"
+  ],
+  "Mind Poke": [
+   "PROJ",
+   "a small glowing pink orb with a violet ring"
+  ],
+  "Psi Wave": [
+   "WAVE",
+   "concentric pink-and-violet rings rolling forward"
+  ],
+  "Neural Storm": [
+   "ZONE",
+   "a crackling storm of pink psychic lightning over a spot"
+  ],
+  "Mind Fog": [
+   "FIELD",
+   "a swirling pink-violet fog with faint spiral sigils"
+  ],
+  "Chirp Blast": [
+   "PROJ",
+   "a single bright teal sound ring"
+  ],
+  "Echo Pulse": [
+   "BURST",
+   "teal and pink sound rings pulsing outward"
+  ],
+  "Sonic Boom": [
+   "CONE",
+   "a cone of shockwave rings with equalizer bars"
+  ],
+  "Shriek": [
+   "CONE",
+   "short jagged hot-pink screech lines"
+  ],
+  "Pebble Pull": [
+   "PROJ",
+   "three pebbles orbiting a tiny dark core"
+  ],
+  "Mass Slam": [
+   "DASH",
+   "a heavy brown dust streak with bent space lines"
+  ],
+  "Gravity Well": [
+   "ZONE",
+   "a dark swirling vortex with rocks spiraling inward"
+  ],
+  "Heavy Field": [
+   "FIELD",
+   "a warped grid of slate-blue lines sagging into the ground"
+  ],
+  "Shade Claw": [
+   "ARC",
+   "three violet shadow claw slashes"
+  ],
+  "Null Bite": [
+   "DASH",
+   "a blink trail of dark smoke with violet sparks"
+  ],
+  "Event Horizon": [
+   "ZONE",
+   "a small black hole with a bright violet accretion ring"
+  ],
+  "Shadow Veil": [
+   "FIELD",
+   "drifting dark smoke that dims everything inside it"
+  ],
+  "Sun Spark": [
+   "PROJ",
+   "a quick spark of sunfire with a bright white core"
+  ],
+  "Meteor Shower": [
+   "RAIN",
+   "small blazing meteors streaking down"
+  ],
+  "Supernova": [
+   "BURST",
+   "a blinding white-gold star explosion with flaming rays"
+  ],
+  "Bubble Barrage": [
+   "PROJ",
+   "a stream of five small glossy bubbles"
+  ],
+  "Riptide Spiral": [
+   "ZONE",
+   "a spinning whirlpool of water rising from the ground"
+  ],
+  "Tidal Wall": [
+   "WAVE",
+   "a towering wall of deep blue water with a white crest"
+  ],
+  "Leafwing Cut": [
+   "ARC",
+   "a sweeping slash of sharp green leaves"
+  ],
+  "Thorn Vine": [
+   "BEAM",
+   "a thorny green vine whipping out in a straight line"
+  ],
+  "World Tree": [
+   "ZONE",
+   "a giant glowing tree bursting up from the ground and blooming"
+  ],
+  "Spark Orb": [
+   "PROJ",
+   "a buzzing orb of yellow lightning"
+  ],
+  "Chain Lightning": [
+   "CHAIN",
+   "a bright zig-zag bolt that forks"
+  ],
+  "Thunderfall": [
+   "RAIN",
+   "several lightning bolts striking down from above"
+  ],
+  "Snowflake Storm": [
+   "PROJ",
+   "a spinning cluster of sharp snowflakes"
+  ],
+  "Frost Lance": [
+   "BEAM",
+   "a long lance of blue ice with frost trailing"
+  ],
+  "Absolute Zero": [
+   "BURST",
+   "a ring of white frost freezing outward with ice spikes"
+  ],
+  "Magma Bomb": [
+   "LOB",
+   "a heavy glowing magma ball with a black crust"
+  ],
+  "Fissure Flare": [
+   "WAVE",
+   "a crack of lava racing along the ground with flames bursting up"
+  ],
+  "Volcanic Fury": [
+   "RAIN",
+   "volcanic rocks and lava bombs raining down"
+  ],
+  "Slime Shot": [
+   "PROJ",
+   "a wobbly glob of lime slime"
+  ],
+  "Acid Geyser": [
+   "ZONE",
+   "a geyser of bubbling acid spraying up from the ground"
+  ],
+  "Toxic Bloom": [
+   "BURST",
+   "a giant poisonous flower blooming and puffing purple spores"
+  ],
+  "Barb Swarm": [
+   "PROJ",
+   "a tight swarm of barbed amber bugs"
+  ],
+  "Night Wing": [
+   "DASH",
+   "a dark streak of beating insect wings"
+  ],
+  "Hive Eclipse": [
+   "RAIN",
+   "a dark swarm blotting out the light and diving down"
+  ],
+  "Steel Star": [
+   "PROJ",
+   "a spinning four-point steel throwing star"
+  ],
+  "Hex Matrix": [
+   "FIELD",
+   "a glowing grid of copper hexagons on the ground"
+  ],
+  "Scrap Storm": [
+   "RAIN",
+   "a whirl of scrap metal pieces crashing down"
+  ],
+  "Gem Dart": [
+   "PROJ",
+   "a single fast faceted gem dart"
+  ],
+  "Crystal Spire": [
+   "ZONE",
+   "a tall crystal spire erupting from the ground"
+  ],
+  "Prismatic Burst": [
+   "BURST",
+   "a rainbow-edged explosion of crystal light"
+  ],
+  "Third Eye": [
+   "PROJ",
+   "a glowing pink sigil-ring that flies forward (no real eye)"
+  ],
+  "Halo Ray": [
+   "BEAM",
+   "a soft pink-and-violet halo beam"
+  ],
+  "Astral Sigil": [
+   "ZONE",
+   "a large glowing star sigil drawn on the ground that flashes"
+  ],
+  "Gale Feather": [
+   "PROJ",
+   "a sharp feather of teal wind"
+  ],
+  "Resonance Wave": [
+   "WAVE",
+   "layered teal-and-pink sound waves rolling forward"
+  ],
+  "Cyclone Roar": [
+   "CONE",
+   "a roaring spiral of wind and sound rings"
+  ],
+  "Orbit Stones": [
+   "PROJ",
+   "a ring of small stones orbiting a dark core"
+  ],
+  "Sand Vortex": [
+   "FIELD",
+   "a swirling sand vortex on the ground"
+  ],
+  "Galaxy Crush": [
+   "ZONE",
+   "a spinning mini galaxy slamming down onto a spot"
+  ],
+  "Umbral Orb": [
+   "PROJ",
+   "an orb of dark violet shadow with a bright rim"
+  ],
+  "Black Hole": [
+   "ZONE",
+   "a small black hole that tugs everything inward"
+  ],
+  "Void Rupture": [
+   "BURST",
+   "space cracking open in a ring of violet light"
+  ]
+ },
+ "signature": {
+  "Mycel Crush": [
+   "ZONE",
+   "a giant mycelium fist bursting up from the ground"
+  ],
+  "Star Flare": [
+   "BEAM",
+   "a star-shaped flare that fires a white-gold beam"
+  ],
+  "Abyssal Lure": [
+   "ZONE",
+   "a glowing deep-sea lure that pulls the foe in before water jaws snap shut"
+  ],
+  "Saucer Spark": [
+   "PROJ",
+   "a spinning flying-saucer-shaped disc of sparks that curves back like a boomerang"
+  ],
+  "Hammer Horn": [
+   "DASH",
+   "a steel horn charge with a shower of sparks"
+  ],
+  "Spore Dance": [
+   "BURST",
+   "a spinning ring of purple spores"
+  ],
+  "Anchor Drop": [
+   "ZONE",
+   "a huge anchor of water slamming down from above"
+  ],
+  "Bass Drop": [
+   "BURST",
+   "a booming speaker-cone shockwave"
+  ],
+  "Volcano Shell": [
+   "RAIN",
+   "lava bombs launched from a volcano and falling over an area"
+  ],
+  "Tusk Avalanche": [
+   "DASH",
+   "an icy charge that leaves a trail of frozen spikes"
+  ],
+  "Ancient Bite": [
+   "ARC",
+   "giant ancient frozen jaws snapping"
+  ],
+  "Triple Venom": [
+   "PROJ",
+   "three venom globs flying in a spread"
+  ],
+  "Hydraulic Crush": [
+   "ARC",
+   "a pair of hydraulic press claws clamping shut"
+  ],
+  "Rift Collapse": [
+   "ZONE",
+   "a rift tearing open in the ground and collapsing"
+  ],
+  "Fear Mirror": [
+   "AURA",
+   "a dark reflective mirror ring that bounces projectiles"
+  ],
+  "Hope Mirror": [
+   "AURA",
+   "a bright hopeful mirror ring that bounces projectiles and sparkles"
+  ],
+  "Horizon Howl": [
+   "CONE",
+   "a howl of violet darkness spreading in a wedge"
+  ],
+  "Gemstorm": [
+   "RAIN",
+   "a storm of spinning gems"
+  ],
+  "Encore Riff": [
+   "PROJ",
+   "a looping volley of sound-note shards"
+  ],
+  "Pyre Veil": [
+   "AURA",
+   "a veil of fire that burns anyone who touches it"
+  ],
+  "Bastion Slam": [
+   "ZONE",
+   "a fortress wall of stone slamming down"
+  ],
+  "First Light": [
+   "BEAM",
+   "a pillar of dawn light"
+  ],
+  "Hungry Void": [
+   "ZONE",
+   "a hungry swirl of void that tugs foes inward"
+  ],
+  "Continent Lift": [
+   "ZONE",
+   "a slab of ground lifting up and crashing back down"
+  ],
+  "Tidal Crown": [
+   "WAVE",
+   "a crown of waves expanding outward in a ring"
+  ],
+  "Sunfall": [
+   "RAIN",
+   "fragments of sunlight falling like meteors"
+  ],
+  "Harmonic Chime": [
+   "BURST",
+   "chiming rings of teal light"
+  ],
+  "Signal Nova": [
+   "BURST",
+   "an expanding nova of signal light"
+  ],
+  "Devour": [
+   "ZONE",
+   "a vast swirling void vortex (spooky but kid-friendly, no teeth, no gore)"
+  ],
+  "Genesis Bloom": [
+   "BURST",
+   "a blossoming bloom of life energy and petals"
+  ]
+ }
+}
