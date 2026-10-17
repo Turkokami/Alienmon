@@ -272,7 +272,7 @@ function importSave(){if(newOnly())return say('The demo always starts a fresh ga
   choose('Replace your current game?',['Replace','Cancel'],k=>{if(k!==0)return;try{localStorage.setItem('alienmon_save_v2',JSON.stringify(g));say('Backup restored! Restarting...',()=>location.reload())}catch(e){say('Could not store the save.')}})})};
  inp.click();say('Choose your backup file.')}
 const MAPV=3;   // saves from before the V3 map rebuild start over (kept aside as alienmon_save_v2_premaps3, not deleted)
-function loadSave(){try{const s=localStorage.getItem('alienmon_save_v2');if(!s)return null;const g=JSON.parse(s);
+function loadSave(){try{const s=localStorage.getItem('alienmon_save_v2');if(!s)return null;const g=JSON.parse(s);for(const m of(g.party||[]).concat(g.box||[]))if(m&&m.pri){g.pri=g.pri||{};g.pri[m.id]=1}
  if((g.mapv||0)<MAPV){try{if(!localStorage.getItem('alienmon_save_v2_premaps3'))localStorage.setItem('alienmon_save_v2_premaps3',s);localStorage.removeItem('alienmon_save_v2')}catch(e){}return null}g.party.concat(g.box).forEach(m=>{m.st=m.st||null;resetStages(m)});g.items=g.items||{...START_ITEMS};return progMigrate(renameMigrate(g))}catch(e){return null}}
 function say(lines,cb,por){const pages=[];for(const l of[].concat(lines)){const w=wrap(l);for(let i=0;i<w.length;i+=2)pages.push(w.slice(i,i+2))}DLG={pages,i:0,cb,por}}
 function healAll(){for(const m of G.party.concat(G.box)){m.hp=stat(m,0);m.ppm={};m.st=null;resetStages(m)}if(!G.pods.stasis&&!G.pods.harmonic&&!G.pods.singularity&&G.dust<20)G.pods.stasis=5}
@@ -282,17 +282,17 @@ function unlocked(pi){if(UNLOCK_ALL)return true;return canLand(PL[pi].key)}
 const STATL=['HP','Atk','Def','SpA','SpD','Spe'];
 function dexChime(){try{if(!AC||musicMode==='off')return;const t=AC.currentTime;[523,659,784,1047].forEach((f,i)=>{const o=AC.createOscillator(),g=AC.createGain();o.type='square';o.frequency.value=f;g.gain.setValueAtTime(0.03,t+i*0.09);g.gain.exponentialRampToValueAtTime(0.001,t+i*0.09+0.16);o.connect(g).connect(AC.destination);o.start(t+i*0.09);o.stop(t+i*0.09+0.17)})}catch(e){}}
 function drawDexReg(){const id=CH.mon,d=D[id],tr=TR(id),k=Math.min(1,(frame-CH.t0)/30);box(0,0,160,144);rect(0,0,160,14,'#1b1424');txt('Registered to the Xenodex!',4,4,'#5ff2ff',6);
- rect(4,18,52,52,'#d9d0ee');ctx.save();ctx.globalAlpha=k;dspr(id,6,20,3);ctx.restore();if(k<1)rect(4,18,52,52,'rgba(255,255,255,'+(1-k).toFixed(2)+')');
- txt('No.'+String(d.n).padStart(3,'0'),60,19,'#3b2a5c',6);txtFit(d.name,60,28,'#1b1424',96);
+ rect(4,18,52,52,'#d9d0ee');ctx.save();ctx.globalAlpha=k;dspr(id,6,20,3,false,CH.mo);ctx.filter='none';if(CH.mo&&CH.mo.pri)priTwinkle(6,20,3);ctx.restore();if(k<1)rect(4,18,52,52,'rgba(255,255,255,'+(1-k).toFixed(2)+')');
+ txt('No.'+String(d.n).padStart(3,'0'),60,19,'#3b2a5c',6);if(CH.mo&&CH.mo.pri)txt('PRISMATIC',101,19,'#b14fd8',6);txtFit(d.name,60,28,'#1b1424',96);
  let x=60;d.t.forEach(t=>{const w=t.length*6+4;rect(x,40,w,9,TC[t][0]);txt(t,x+2,41,'#1b1424',6);x+=w+3});
  txtFit(tr.name,60,53,'#7a1f6a',96,6);if(d.to)txtFit('Evolves: '+d.to,60,62,'#3b2a5c',96,6);
  const sum=d.s.reduce((a,b)=>a+b,0);d.s.forEach((v,i)=>{const y=74+i*8;txt(STATL[i],5,y,'#3b2a5c',6);rect(28,y+1,92,5,'#e8e0ff');rect(28,y+1,Math.round(92*Math.min(1,v/160)*k),5,v>=100?'#3fae49':v>=70?'#ffd23f':'#ff8a1e');txtR(String(v),155,y,'#1b1424',6)});
  txt('Total '+sum,5,124,'#7a1f6a',6);txt('A: Xenodex notes',5,134,'#3b2a5c',6);if(frame%40<24)rect(150,134,4,4,'#ff8a1e')}
 function drawDexLore(){const id=CH.mon,d=D[id],lv=livesIn(id);box(0,0,160,144);rect(0,0,160,14,'#1b1424');txt('Xenodex notes',4,4,'#5ff2ff',6);
- rect(4,18,52,52,'#d9d0ee');dspr(id,6,20,3);txt('No.'+String(d.n).padStart(3,'0'),60,22,'#3b2a5c',6);txtFit(d.name,60,32,'#1b1424',96);txtFit(d.t.join(' / '),60,44,TC[d.t[0]][2],96,6);
+ rect(4,18,52,52,'#d9d0ee');dspr(id,6,20,3,false,CH.mo);ctx.filter='none';if(CH.mo&&CH.mo.pri)priTwinkle(6,20,3);txt('No.'+String(d.n).padStart(3,'0'),60,22,'#3b2a5c',6);txtFit(d.name,60,32,'#1b1424',96);txtFit(d.t.join(' / '),60,44,TC[d.t[0]][2],96,6);
  {const LL=wrap(d.lore,25).slice(0,7),sp=LL.length>5?7:9;LL.forEach((l,i)=>txt(l,5,(LL.length>6?73:LL.length>5?75:76)+i*sp,'#1b1424',6))}const hb=typeof habitatsOf==='function'?habitatsOf(id):[];if(hb.length)txtFit('Habitat: '+[...new Set(hb.map(h=>habName(h.h)))].slice(0,2).join(', '),5,123,'#2e8b57',150,6);if(lv.length)txtFit('Lives in: '+lv.slice(0,2).join(', '),5,132,'#2e86de',150,6);if(frame%40<24)rect(150,134,4,4,'#ff8a1e')}
-function dexRegister(id,cb){dexChime();const lore=()=>{choose('Xenodex',['OK'],()=>cb(),()=>cb());CH.draw=drawDexLore;CH.mon=id};choose('Xenodex',['OK'],lore,lore);CH.draw=drawDexReg;CH.mon=id;CH.t0=frame}
-function addMon(m){G.seen[m.id]=1;G.caught[m.id]=1;if(G.party.length<6){G.party.push(m);return'party'}G.box.push(m);return'box'}
+function dexRegister(id,cb,mo){dexChime();const lore=()=>{choose('Xenodex',['OK'],()=>cb(),()=>cb());CH.draw=drawDexLore;CH.mon=id;CH.mo=mo};choose('Xenodex',['OK'],lore,lore);CH.draw=drawDexReg;CH.mon=id;CH.mo=mo;CH.t0=frame}
+function addMon(m){G.seen[m.id]=1;G.caught[m.id]=1;if(m.pri){G.pri=G.pri||{};G.pri[m.id]=1}if(G.party.length<6){G.party.push(m);return'party'}G.box.push(m);return'box'}
 
 /* ---------- title / starter ---------- */
 let tsel=0,ssel=0;
@@ -698,7 +698,7 @@ function startSync(pod){const e=EM(),d=D[e.id],tr=TR(e.id);G.pods[pod.k]=Math.ma
 function lockSync(){const S=B.sync,e=EM(),d=D[e.id];const dist=Math.abs(S.x-S.c);let tier,ch;
  if(dist<=2){tier='Perfect Sync!';ch=d.r==='mythic'?0.8:1}else if(dist<=S.w/2){tier='Signal locked!';ch={legendary:0.45,mythic:0.3}[d.r]||0.8}else{tier='The signal slipped...';ch=0.08}
  let ok=R()<ch;const need=(PROG.legendaries[d.name]||{}).syncs||1;if(need>1){B.syncs=ok?(B.syncs||0)+1:0;if(ok&&B.syncs<need){ok=false;S.partial=B.syncs+'/'+need}}turn(Object.assign(next=>playTransfer(ok,()=>{const L=['You tuned your Linker to '+d.name+'\'s frequency.',tier,'Transfer beam fired!'];const hums=ok?3:ri(0,2);for(let i=0;i<hums;i++)L.push('...the beam holds...');
-  if(ok){L.push('Transferred! '+d.name+' beamed aboard your ship and joined your crew!');e.st=null;e.cf=0;const first=!G.caught[e.id];const where=addMon(e);qEvent('catch',d.name);if(where==='box')L.push(d.name+' was beamed to the ship\'s storage.');const st=[];progAward(e,false,st,e);const after=()=>nickPrompt(e,()=>progRun(st,()=>{B.over=true;endBattle(false)}));say(L,()=>first?dexRegister(e.id,after):after())}
+  if(ok){L.push('Transferred! '+d.name+' beamed aboard your ship and joined your crew!');e.st=null;e.cf=0;const first=!G.caught[e.id];const where=addMon(e);qEvent('catch',d.name);if(where==='box')L.push(d.name+' was beamed to the ship\'s storage.');const st=[];progAward(e,false,st,e);const after=()=>nickPrompt(e,()=>progRun(st,()=>{B.over=true;endBattle(false)}));say(L,()=>first?dexRegister(e.id,after,e):after())}
   else{L.push(S.partial?'Sync '+S.partial+' held! Lock on again to finish the transfer.':d.name+' broke the signal!');say(L,next)}}),{pri:1}))}
 function updBattle(){const opts=['FIGHT','BAG','SWAP',storyRunLabel()];
  if(B.anim){animStep();drawBattle();return}
@@ -856,7 +856,7 @@ function drawUnder(){if(PREV==='space'){rect(0,0,160,144,'#0c0818')}else if(PREV
 function drawDex(){box(0,0,160,144);txt('Xenodex',6,5,'#1b1424');if(heartOpen())txt('A: Heartroot',88,5,'#2e8b57',6);const start=Math.max(0,Math.min(dsel-5,D.length-12));
  for(let i=0;i<12&&start+i<D.length;i++){const id=start+i,d=D[id],y=16+i*10,seen=G.seen[id];if(id===dsel)rect(3,y-1,86,10,'#ffe0c0');
   txt(String(d.n).padStart(3,'0')+' '+(seen?d.name.slice(0,7):'???'),5,y,G.caught[id]?'#1b1424':'#8a7aa8',6)}
- const d=D[dsel];if(G.seen[dsel]){dspr(dsel,104,14,3);txt(d.t.join('/'),92,64,TC[d.t[0]][2],6);txt(TR(dsel).name,92,74,'#7a1f6a',6);const lv=G.caught[dsel]?livesIn(dsel):[];wrap(d.lore,11).slice(0,lv.length?4:6).forEach((l,i)=>txt(l,92,86+i*9,'#3b2a5c',6));if(lv.length){txt('Lives in:',92,124,'#2e86de',6);txt(lv.slice(0,2).join(', ').slice(0,16),92,133,'#2e86de',6)}}
+ const d=D[dsel];if(G.seen[dsel]){const pr=G.pri&&G.pri[dsel]?{pri:1}:null;dspr(dsel,104,14,3,false,pr);ctx.filter='none';if(pr){priTwinkle(104,14,3);txt('PRISMATIC',101,58,'#b14fd8',6)}txt(d.t.join('/'),92,64,TC[d.t[0]][2],6);txt(TR(dsel).name,92,74,'#7a1f6a',6);const lv=G.caught[dsel]?livesIn(dsel):[];wrap(d.lore,11).slice(0,lv.length?4:6).forEach((l,i)=>txt(l,92,86+i*9,'#3b2a5c',6));if(lv.length){txt('Lives in:',92,124,'#2e86de',6);txt(lv.slice(0,2).join(', ').slice(0,16),92,133,'#2e86de',6)}}
  else{rect(108,18,40,40,'#d9d0ee');txt('?',122,30,'#8a7aa8',16)}}
 
 /* ---------- main loop ---------- */
