@@ -478,7 +478,7 @@
    "name": "Canyon Crossroads",
    "tile": [
     21,
-    9
+    1
    ],
    "item": "stasis",
    "n": 3,
@@ -488,8 +488,8 @@
    "section": "445",
    "name": "Canyon Crossroads",
    "tile": [
-    19,
-    1
+    21,
+    12
    ],
    "item": "stasis",
    "n": 3,
@@ -532,8 +532,8 @@
    "section": "446",
    "name": "Mesa Junction",
    "tile": [
-    1,
-    2
+    22,
+    13
    ],
    "item": "tether",
    "n": 1,
@@ -625,6 +625,50 @@
    ],
    "item": "revive",
    "n": 1,
+   "tier": 1
+  },
+  {
+   "section": "875",
+   "name": "Dustmere Relay Tower",
+   "tile": [
+    20,
+    8
+   ],
+   "item": "revive",
+   "n": 1,
+   "tier": 1
+  },
+  {
+   "section": "879",
+   "name": "Oasis Islands",
+   "tile": [
+    22,
+    8
+   ],
+   "item": "gel",
+   "n": 2,
+   "tier": 1
+  },
+  {
+   "section": "874",
+   "name": "Sunset Tunnel Mouth",
+   "tile": [
+    5,
+    8
+   ],
+   "item": "tether",
+   "n": 1,
+   "tier": 1
+  },
+  {
+   "section": "874",
+   "name": "Sunset Tunnel Mouth",
+   "tile": [
+    14,
+    8
+   ],
+   "item": "cure",
+   "n": 2,
    "tier": 1
   }
  ],
@@ -875,8 +919,8 @@
    "section": "476",
    "name": "Scrapyard Dome",
    "tile": [
-    5,
-    13
+    2,
+    10
    ],
    "item": "cure",
    "n": 2,
@@ -963,8 +1007,8 @@
    "section": "491",
    "name": "Railcar Maze",
    "tile": [
-    21,
-    3
+    12,
+    2
    ],
    "item": "dust",
    "n": 150,
@@ -975,7 +1019,7 @@
    "name": "Railcar Maze",
    "tile": [
     21,
-    13
+    3
    ],
    "item": "dust",
    "n": 150,
@@ -990,6 +1034,50 @@
    ],
    "item": "stasis",
    "n": 3,
+   "tier": 1
+  },
+  {
+   "section": "881",
+   "name": "Reservoir Islands",
+   "tile": [
+    1,
+    10
+   ],
+   "item": "gel",
+   "n": 2,
+   "tier": 1
+  },
+  {
+   "section": "881",
+   "name": "Reservoir Islands",
+   "tile": [
+    1,
+    3
+   ],
+   "item": "stasis",
+   "n": 3,
+   "tier": 1
+  },
+  {
+   "section": "880",
+   "name": "Coolant Reservoir",
+   "tile": [
+    21,
+    11
+   ],
+   "item": "tether",
+   "n": 1,
+   "tier": 1
+  },
+  {
+   "section": "880",
+   "name": "Coolant Reservoir",
+   "tile": [
+    21,
+    4
+   ],
+   "item": "dust",
+   "n": 150,
    "tier": 1
   }
  ],
@@ -1251,8 +1339,8 @@
    "section": "712",
    "name": "Root Junction",
    "tile": [
-    22,
-    13
+    1,
+    2
    ],
    "item": "gel",
    "n": 3,
@@ -1262,8 +1350,8 @@
    "section": "712",
    "name": "Root Junction",
    "tile": [
-    1,
-    2
+    21,
+    13
    ],
    "item": "revive",
    "n": 1,
@@ -1355,6 +1443,17 @@
    ],
    "item": "revive",
    "n": 1,
+   "tier": 2
+  },
+  {
+   "section": "899",
+   "name": "Mossy Herbalist Cottage",
+   "tile": [
+    3,
+    9
+   ],
+   "item": "cure",
+   "n": 2,
    "tier": 2
   }
  ],
@@ -2036,8 +2135,8 @@
    "section": "650",
    "name": "Static Canal",
    "tile": [
-    17,
-    13
+    9,
+    2
    ],
    "item": "harmonic",
    "n": 3,
@@ -2047,8 +2146,8 @@
    "section": "650",
    "name": "Static Canal",
    "tile": [
-    9,
-    2
+    5,
+    11
    ],
    "item": "stun",
    "n": 2,
@@ -2060,6 +2159,50 @@
    "tile": [
     21,
     9
+   ],
+   "item": "harmonic",
+   "n": 3,
+   "tier": 3
+  },
+  {
+   "section": "896",
+   "name": "Canal Islands",
+   "tile": [
+    8,
+    11
+   ],
+   "item": "dust",
+   "n": 500,
+   "tier": 3
+  },
+  {
+   "section": "896",
+   "name": "Canal Islands",
+   "tile": [
+    6,
+    2
+   ],
+   "item": "harmonic",
+   "n": 3,
+   "tier": 3
+  },
+  {
+   "section": "895",
+   "name": "Canal Basin",
+   "tile": [
+    9,
+    2
+   ],
+   "item": "revive",
+   "n": 2,
+   "tier": 3
+  },
+  {
+   "section": "895",
+   "name": "Canal Basin",
+   "tile": [
+    6,
+    12
    ],
    "item": "harmonic",
    "n": 3,
@@ -2501,7 +2644,29 @@
    "name": "Temple of Trials",
    "tile": [
     4,
-    6
+    7
+   ],
+   "item": "dust",
+   "n": 500,
+   "tier": 3
+  },
+  {
+   "section": "886",
+   "name": "Glyphos Relay Tower",
+   "tile": [
+    3,
+    9
+   ],
+   "item": "ether",
+   "n": 1,
+   "tier": 3
+  },
+  {
+   "section": "884",
+   "name": "Dig Camp Storehouse",
+   "tile": [
+    20,
+    8
    ],
    "item": "dust",
    "n": 500,
@@ -2623,8 +2788,8 @@
    "section": "678",
    "name": "Mine Junction",
    "tile": [
-    1,
-    12
+    12,
+    14
    ],
    "item": "revive",
    "n": 2,
@@ -3142,8 +3307,8 @@
    "section": "524",
    "name": "Crevasse Hollows",
    "tile": [
-    22,
-    3
+    12,
+    1
    ],
    "item": "harmonic",
    "n": 5,
@@ -3216,17 +3381,6 @@
    "tier": 4
   },
   {
-   "section": "511",
-   "name": "Glacier Rink Arena",
-   "tile": [
-    15,
-    13
-   ],
-   "item": "harmonic",
-   "n": 5,
-   "tier": 4
-  },
-  {
    "section": "514",
    "name": "Crystal Caverns Entrance",
    "tile": [
@@ -3268,6 +3422,28 @@
    ],
    "item": "megagel",
    "n": 3,
+   "tier": 4
+  },
+  {
+   "section": "883",
+   "name": "Fjord Islands",
+   "tile": [
+    1,
+    9
+   ],
+   "item": "revive",
+   "n": 2,
+   "tier": 4
+  },
+  {
+   "section": "883",
+   "name": "Fjord Islands",
+   "tile": [
+    2,
+    1
+   ],
+   "item": "fullgel",
+   "n": 1,
    "tier": 4
   }
  ],
@@ -3515,28 +3691,6 @@
    "tier": 5
   },
   {
-   "section": "616",
-   "name": "Viewport Overlook",
-   "tile": [
-    10,
-    13
-   ],
-   "item": "maxrevive",
-   "n": 1,
-   "tier": 5
-  },
-  {
-   "section": "616",
-   "name": "Viewport Overlook",
-   "tile": [
-    14,
-    13
-   ],
-   "item": "maxrevive",
-   "n": 1,
-   "tier": 5
-  },
-  {
    "section": "620",
    "name": "Hangar Deck",
    "tile": [
@@ -3611,17 +3765,6 @@
    ],
    "item": "dust",
    "n": 1200,
-   "tier": 5
-  },
-  {
-   "section": "605",
-   "name": "Helix Proving Grounds",
-   "tile": [
-    11,
-    13
-   ],
-   "item": "maxrevive",
-   "n": 1,
    "tier": 5
   },
   {
@@ -4010,6 +4153,39 @@
    "item": "maxrevive",
    "n": 1,
    "tier": 5
+  },
+  {
+   "section": "889",
+   "name": "Cloud Chapel",
+   "tile": [
+    20,
+    8
+   ],
+   "item": "harmonic",
+   "n": 5,
+   "tier": 5
+  },
+  {
+   "section": "892",
+   "name": "Lagoon Islands",
+   "tile": [
+    1,
+    9
+   ],
+   "item": "ether",
+   "n": 3,
+   "tier": 5
+  },
+  {
+   "section": "892",
+   "name": "Lagoon Islands",
+   "tile": [
+    3,
+    13
+   ],
+   "item": "dust",
+   "n": 1200,
+   "tier": 5
   }
  ],
  "Umbra": [
@@ -4127,8 +4303,8 @@
    "section": "816",
    "name": "Lantern Crossroads",
    "tile": [
-    19,
-    2
+    2,
+    10
    ],
    "item": "ether",
    "n": 3,
@@ -4138,8 +4314,8 @@
    "section": "816",
    "name": "Lantern Crossroads",
    "tile": [
-    18,
-    12
+    4,
+    1
    ],
    "item": "fullgel",
    "n": 3,
@@ -4237,8 +4413,8 @@
    "section": "821",
    "name": "Abyss Rim",
    "tile": [
-    22,
-    10
+    7,
+    5
    ],
    "item": "maxrevive",
    "n": 1,
@@ -4248,8 +4424,8 @@
    "section": "821",
    "name": "Abyss Rim",
    "tile": [
-    21,
-    3
+    9,
+    13
    ],
    "item": "dust",
    "n": 1600,
@@ -4451,6 +4627,50 @@
    ],
    "item": "dust",
    "n": 1600,
+   "tier": 6
+  },
+  {
+   "section": "906",
+   "name": "Mirror Lake",
+   "tile": [
+    2,
+    5
+   ],
+   "item": "ether",
+   "n": 3,
+   "tier": 6
+  },
+  {
+   "section": "906",
+   "name": "Mirror Lake",
+   "tile": [
+    1,
+    1
+   ],
+   "item": "dust",
+   "n": 1600,
+   "tier": 6
+  },
+  {
+   "section": "905",
+   "name": "Abyss Rim Descent",
+   "tile": [
+    19,
+    7
+   ],
+   "item": "singularity",
+   "n": 1,
+   "tier": 6
+  },
+  {
+   "section": "905",
+   "name": "Abyss Rim Descent",
+   "tile": [
+    14,
+    6
+   ],
+   "item": "ether",
+   "n": 3,
    "tier": 6
   }
  ],
@@ -4745,8 +4965,8 @@
    "section": "752",
    "name": "Seedpod Hollows",
    "tile": [
-    15,
-    13
+    9,
+    12
    ],
    "item": "fullgel",
    "n": 3,
@@ -4756,8 +4976,8 @@
    "section": "752",
    "name": "Seedpod Hollows",
    "tile": [
-    21,
-    13
+    14,
+    3
    ],
    "item": "ether",
    "n": 3,
@@ -4830,17 +5050,6 @@
    "tier": 6
   },
   {
-   "section": "736",
-   "name": "Rift Crater Arena",
-   "tile": [
-    2,
-    10
-   ],
-   "item": "fullgel",
-   "n": 3,
-   "tier": 6
-  },
-  {
    "section": "741",
    "name": "Starstone Hollow Entrance",
    "tile": [
@@ -4901,6 +5110,39 @@
    "tile": [
     4,
     2
+   ],
+   "item": "singularity",
+   "n": 1,
+   "tier": 6
+  },
+  {
+   "section": "901",
+   "name": "Crater Field Station",
+   "tile": [
+    5,
+    8
+   ],
+   "item": "maxrevive",
+   "n": 1,
+   "tier": 6
+  },
+  {
+   "section": "904",
+   "name": "Crater Lake Islands",
+   "tile": [
+    1,
+    9
+   ],
+   "item": "ether",
+   "n": 3,
+   "tier": 6
+  },
+  {
+   "section": "904",
+   "name": "Crater Lake Islands",
+   "tile": [
+    2,
+    14
    ],
    "item": "singularity",
    "n": 1,
@@ -5099,8 +5341,8 @@
    "section": "419",
    "name": "Instrument Hollows",
    "tile": [
-    21,
-    14
+    2,
+    15
    ],
    "item": "fullgel",
    "n": 3,
@@ -5110,8 +5352,8 @@
    "section": "419",
    "name": "Instrument Hollows",
    "tile": [
-    13,
-    14
+    22,
+    13
    ],
    "item": "singularity",
    "n": 2,
@@ -5563,8 +5805,8 @@
    "section": "852",
    "name": "Shard Slope",
    "tile": [
-    21,
-    14
+    3,
+    7
    ],
    "item": "fullgel",
    "n": 3,
@@ -5788,6 +6030,72 @@
    ],
    "item": "dust",
    "n": 2500,
+   "tier": 7
+  },
+  {
+   "section": "908",
+   "name": "Abandoned Dwelling",
+   "tile": [
+    7,
+    10
+   ],
+   "item": "ether",
+   "n": 5,
+   "tier": 7
+  },
+  {
+   "section": "913",
+   "name": "Crystal Lake",
+   "tile": [
+    1,
+    9
+   ],
+   "item": "dust",
+   "n": 2500,
+   "tier": 7
+  },
+  {
+   "section": "913",
+   "name": "Crystal Lake",
+   "tile": [
+    3,
+    14
+   ],
+   "item": "maxrevive",
+   "n": 2,
+   "tier": 7
+  },
+  {
+   "section": "914",
+   "name": "Crystal Lake Islands",
+   "tile": [
+    1,
+    9
+   ],
+   "item": "ether",
+   "n": 5,
+   "tier": 7
+  },
+  {
+   "section": "914",
+   "name": "Crystal Lake Islands",
+   "tile": [
+    3,
+    14
+   ],
+   "item": "fullgel",
+   "n": 3,
+   "tier": 7
+  },
+  {
+   "section": "910",
+   "name": "Ystra Relay Tower",
+   "tile": [
+    20,
+    8
+   ],
+   "item": "ether",
+   "n": 5,
    "tier": 7
   }
  ]

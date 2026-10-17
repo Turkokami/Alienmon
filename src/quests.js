@@ -25,7 +25,7 @@ const qPrereqsDone=q=>(q.prereq||[]).every(p=>qs(p)&&qs(p).state==='done');
 function qUnlock(){let again=true;while(again){again=false;
  for(const q of QUESTS){const s=qs(q.id);if(s.state==='locked'&&qPrereqsDone(q)){s.state='available';if(q.type==='main'){qActivate(q);again=true}}}}}
 
-function qActivate(q){const s=qs(q.id);s.state='active';s.step=0;s.n=0;s.got=[];
+function qActivate(q){const s=qs(q.id);s.state='active';s.step=0;s.n=0;s.got=[];if(q.id==='M01')qPic('intro',0,'start');qPic(q.id,0,'start');
  if(G.qtrack==null||!qs(G.qtrack)||qs(G.qtrack).state!=='active')G.qtrack=q.id;
  qNotify(q.id,'start',['New '+(q.type==='main'?'story quest':'side mission')+': '+q.title].concat(q.dialogue&&q.dialogue.start||[]));qPassive()}
 
@@ -62,7 +62,7 @@ function qEvent(type,target,info){if(!G||!G.quests)return false;info=info||{};le
  return hit}
 
 function qProgress(q,n){const s=qs(q.id),o=qObj(q);s.n+=n;
- if(s.n>=(o.count||1)){s.step++;s.n=0;s.got=[];if(o.then)storyThen(q,o.then);
+ if(s.n>=(o.count||1)){qPic(q.id,s.step,'done');s.step++;s.n=0;s.got=[];if(o.then)storyThen(q,o.then);if(s.step<q.objectives.length)qPic(q.id,s.step,'start');
   if(s.step>=q.objectives.length)qComplete(q);
   else{qNotify(q.id,'step',['Objective complete! Next: '+qText(q)]);if(q.type==='main')autosave();qPassive()}}}
 
@@ -94,7 +94,7 @@ function qPassive(){if(!G||!G.quests)return;
   else if(o.type==='xenodex'&&Object.keys(G.caught).length>=(o.count||1))qProgress(q,o.count||1);
   else if(o.type==='cutscene'){if(s.playing||!storyAt(o))continue;const ca=o.scene?[o.scene,o.title||'']:QCUT_ART[o.target],art=ca&&SCI[ca[0]];
    // wait a few seconds for the scene art to download before falling back to text only
-   const qb=!o.scene&&QBOARD[o.target],bok=qb&&qb.every(([k])=>okI(boardImg(k)));if(bok&&!DLG&&!CH&&scene!=='battle'){s.playing=1;cutBoard(qb,()=>{s.playing=0;qNotify(q.id,'scene',storyCutLines(o));qProgress(q,1)})}else if(!qb&&okI(art)&&!DLG&&!CH&&scene!=='battle'){s.playing=1;cut(art,ca[1],()=>{s.playing=0;qNotify(q.id,'scene',storyCutLines(o));qProgress(q,1)})}else if(!(qb?bok:okI(art))&&(s.wait=(s.wait||0)+1)>15){qNotify(q.id,'scene',storyCutLines(o));qProgress(q,1)}}
+   const qb=!o.scene&&QBOARD[o.target],bok=qb&&qb.every(([k])=>okI(boardImg(k)));if(bok&&!DLG&&!CH&&scene!=='battle'&&scene!=='cut'&&!CUTQ.length){s.playing=1;cutBoard(qb,()=>{s.playing=0;qNotify(q.id,'scene',storyCutLines(o));qProgress(q,1)})}else if(!qb&&okI(art)&&!DLG&&!CH&&scene!=='battle'&&scene!=='cut'&&!CUTQ.length){s.playing=1;cut(art,ca[1],()=>{s.playing=0;qNotify(q.id,'scene',storyCutLines(o));qProgress(q,1)})}else if(!(qb?bok:okI(art))&&(s.wait=(s.wait||0)+1)>15){qNotify(q.id,'scene',storyCutLines(o));qProgress(q,1)}}
   else if(o.type==='choice'&&!s.asking&&!DLG&&!CH&&storyAt(o)){s.asking=1;choose(qFmt(o.hint||q.title),o.options.map(qFmt),i=>{s.asking=0;G.flags[o.target]=i+1;qProgress(q,1)});if(o.default!=null&&CH)CH.sel=o.default}
   else if(o.type==='legendary_encounter'&&o.skip_if&&(G.flags[o.skip_if.flag]||0)===o.skip_if.value&&storyAt(o)){qNotify(q.id,'scene',o.skip_if.lines||[]);qProgress(q,1)}
   else if(o.type==='visit'||o.type==='spot_event'){const t=o.target||'';
@@ -104,7 +104,7 @@ function qPassive(){if(!G||!G.quests)return;
    else if(loc&&qSameArea(loc)){const p=qPos(),pp=loc.pts&&loc.pts[Math.min(s.n,loc.pts.length-1)],lx=pp?pp[0]*16+8:loc.x,ly=pp?pp[1]*16+15:loc.y;if(lx==null||(p&&Math.hypot(lx-p[0],ly-p[1])<(pp?20:44)))qProgress(q,1)}}}}
 
 // cutscene lines that are not already part of a quest's own dialogue
-const QCUT_ART={zib_joins:['dustara_keyart','A signal from the canyon...'],sola_leaves:['thalassa_keyart','The Deep Sea Ferry dock'],sola_joins:['helix_keyart','Helix Station'],novaryx_awakens:['starfall_keyart','The eight Shards sing'],rift_sealed:['starfall_battle','The Rift closes']};
+const QCUT_ART={zib_joins:['dustara_keyart','A signal from the canyon...'],sola_leaves:['cut_26','The Deep Sea Ferry dock'],sola_joins:['helix_keyart','Helix Station'],novaryx_awakens:['starfall_keyart','The eight Shards sing'],rift_sealed:['starfall_battle','The Rift closes']};
 // storyboards: pictures with story text, played in place of a single scene image
 const QBOARD={zib_joins:[
  ['zib_bridge_1',["Night falls over Dustmere. DX-4 sweeps the path outside Mr. Abernathy's bakery, beeping at the canyon.",'Something past the old stone bridge is sending a signal. You grab a flashlight and go, {starter} close behind.']],
@@ -115,7 +115,14 @@ const QCUT={novaryx_awakens:['Your eight Shards rise and resonate. A great signa
 
 function qNotify(q,kind,lines){if(lines&&lines.length)QN.push({q,kind,lines:lines.map(l=>typeof qFmt==='function'?qFmt(l):l)})}
 // show waiting quest messages when nothing else is on screen
-function qFlush(){if(QN.length&&!DLG&&!CH&&(scene==='planet'||scene==='world')&&!(typeof SFADE!=='undefined'&&SFADE)&&!(typeof SM!=='undefined'&&SM)){const m=QN.shift();const giver=QI[m.q]&&QI[m.q].giver;say(m.lines,null,m.art||giver&&giver.art||undefined)}}
+// story pictures (data/cutscenes.json): shown full screen with their narration when a quest step starts or is done.
+// A picture can have a version per starter (<key>_<starter>), picked by boardImg. Each is shown once per save.
+const CUTPIC=__CUTPICS__;let CUTQ=[];
+function qPic(qid,o,w){if(!G)return;G.seenCut=G.seenCut||{};for(const c of CUTPIC)if(c.q===qid&&c.o===o&&c.w===w&&!G.seenCut[c.k]){if(c.st&&!(typeof myStarter==='function'&&G.party&&G.party.length&&D[myStarter()].name.toLowerCase()===c.st))continue;G.seenCut[c.k]=1;CUTQ.push(c)}}
+function qPicFlush(){if(!CUTQ.length||DLG||CH||!(scene==='planet'||scene==='world')||(typeof SFADE!=='undefined'&&SFADE))return false;
+ const c=CUTQ[0];if(okI(boardImg(c.k))){CUTQ.shift();cutBoard([[c.k,[c.cap].concat(c.lines||[])]],()=>{});return true}
+ if((c.wait=(c.wait||0)+1)>240)CUTQ.shift();return true}   // give the picture ~4 s to download, else skip it
+function qFlush(){if(qPicFlush())return;if(QN.length&&!DLG&&!CH&&(scene==='planet'||scene==='world')&&!(typeof SFADE!=='undefined'&&SFADE)&&!(typeof SM!=='undefined'&&SM)){const m=QN.shift();const giver=QI[m.q]&&QI[m.q].giver;say(m.lines,null,m.art||giver&&giver.art||undefined)}}
 
 /* ---- quest log text ---- */
 function qText(q){const s=qs(q.id),o=qObj(q);if(!o)return'Done';const l=qLoc(q.id,s.step,o.location)||{},spot=l.spot||'',c=o.count||1,cnt=c>1?' ('+s.n+'/'+c+')':'',t=o.target||'';

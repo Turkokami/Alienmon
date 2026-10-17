@@ -67,8 +67,9 @@ const fill={__DATA__:j(D),__PLANETS__:j(P),__TRAITS__:j(core.traits),__SIGS__:j(
  __MUSIC__:j(MUSIC),__TITLEMUSIC__:j(TITLEMUSIC),__BATTLEMUSIC__:j(BATTLEMUSIC),__PLANETART__:j(PLANART),__BUILD__:j(BUILD),__INLINE__:j(INLINE),__SITE__:SITE,__PLAYURL__:PLAY,__BETA__:j(BETA),__PROTO__:j(PROTO),__NEWONLY__:j(NEWONLY),__MOVEFX__:fs.readFileSync(path.join(root,'data/moves_fx.json'),'utf8')};
 // quests: the engine (src/quests.js) is filled in first and then inlined into the template
 const QUESTS=JSON.parse(fs.readFileSync(path.join(root,'data/quests.json'),'utf8')).quests;
+const CUTPICS=fs.existsSync(path.join(root,'data/cutscenes.json'))?JSON.parse(fs.readFileSync(path.join(root,'data/cutscenes.json'),'utf8')).pictures:[];   // story pictures (see qPic in src/quests.js)
 const qp=path.join(root,'data/quest_places.json'),QPLACE=fs.existsSync(qp)?fs.readFileSync(qp,'utf8'):'{}';
-fill.__QUESTENGINE__=fs.readFileSync(path.join(root,'src/quests.js'),'utf8').replace(/__[A-Z]+__/g,k=>({__QUESTS__:j(QUESTS),__QPLACE__:QPLACE})[k]||k);
+fill.__QUESTENGINE__=fs.readFileSync(path.join(root,'src/quests.js'),'utf8').replace(/__[A-Z]+__/g,k=>({__QUESTS__:j(QUESTS),__QPLACE__:QPLACE,__CUTPICS__:j(CUTPICS)})[k]||k);
 // progression (docs/PROGRESSION_AND_LEVELING.md): species curves/yields/evolutions, wild tables, Keeper and boss levels
 const PROGJ=JSON.parse(fs.readFileSync(path.join(root,'data/progression.json'),'utf8'));
 const PROGMIN={species:Object.fromEntries(Object.entries(PROGJ.species).map(([k,v])=>[k,{curve:v.curve,base_yield:v.base_yield,stage:v.stage,stages:v.stages,rarity:v.rarity,evolves:v.evolves,capture_mod:v.capture_mod}])),

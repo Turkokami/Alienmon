@@ -239,6 +239,7 @@ def wire(d):
             for t in mt: L['warps'].append({'section': room, 'tile': t, 'to': 'back', 'at': [t[0], t[1] - 1], 'face': 'down', 'kind': 'door', 'parent': par})
             L['spawns'][room] = {'default': [mt[0][0], mt[0][1] - 1]}
     for a, at, b, bt, a_arr, a_face, b_arr, b_face in P.get('warps', []):   # stairs with explicit landings
+        L['warps'] = [w for w in L['warps'] if not ((w['section'] == a and w['tile'] == at) or (w['section'] == b and w['tile'] == bt))]   # re-runs replace, never pile up
         L['warps'].append({'section': a, 'tile': at, 'to': b, 'at': b_arr, 'face': b_face, 'kind': 'stairs'})
         L['warps'].append({'section': b, 'tile': bt, 'to': a, 'at': a_arr, 'face': a_face, 'kind': 'stairs'})
     for a, at, b, bt in P.get('stairs', []):

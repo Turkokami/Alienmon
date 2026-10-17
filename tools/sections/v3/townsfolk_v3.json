@@ -4055,5 +4055,333 @@
     "Traveller: I made it all the way to Ystra! Now where's the snack stand?"
    ]
   }
+ ],
+ "874": [
+  {
+   "art": "dustara_folk2",
+   "name": "Lantern keeper",
+   "role": "folk",
+   "t": [
+    "Lantern keeper: The Sunset Tunnel runs under the whole canyon. Keep your lantern lit and your partner close."
+   ]
+  }
+ ],
+ "875": [
+  {
+   "art": "dustara_folk4",
+   "name": "Tower aide",
+   "role": "folk",
+   "t": [
+    "Tower aide: This old relay tower isn't on any Keeper's circuit. Just trainers who like a climb, and a prize at the top."
+   ]
+  }
+ ],
+ "876": [
+  {
+   "art": "dustara_folk1",
+   "name": "Climber",
+   "role": "folk",
+   "t": [
+    "Climber: Sandbags, crates, cactus pots... the stairs are top-right, if you can find the way through!"
+   ]
+  }
+ ],
+ "884": [
+  {
+   "art": "glyphos_folk3",
+   "name": "Dig hand",
+   "role": "folk",
+   "t": [
+    "Dig hand: That storehouse? Always locked at night. Funny, I never see anyone carry crates in."
+   ]
+  }
+ ],
+ "886": [
+  {
+   "art": "glyphos_folk1",
+   "name": "Tower aide",
+   "role": "folk",
+   "t": [
+    "Tower aide: The ruin tower opened again! Climb it, beat the trainers, and see what waits on top."
+   ]
+  }
+ ],
+ "887": [
+  {
+   "art": "glyphos_folk6",
+   "name": "Rune reader",
+   "role": "folk",
+   "t": [
+    "Rune reader: The glyphs on these blocks say 'patience'. Or maybe 'potatoes'. Still learning."
+   ]
+  }
+ ],
+ "910": [
+  {
+   "art": "ystra_folk2",
+   "name": "Spire warden",
+   "role": "folk",
+   "t": [
+    "Spire warden: The crystal spire hums for anyone brave enough to climb it. Few reach the top."
+   ]
+  }
+ ],
+ "911": [
+  {
+   "art": "ystra_folk4",
+   "name": "Crystal climber",
+   "role": "folk",
+   "t": [
+    "Crystal climber: Follow the soft glow. The shards light the way up."
+   ]
+  }
+ ],
+ "899": [
+  {
+   "art": "sporeholm_folk2",
+   "name": "Bog walker",
+   "role": "folk",
+   "t": [
+    "Bog walker: Odd cottage, that one. The herbalist inside never buys any herbs."
+   ]
+  }
+ ],
+ "889": [
+  {
+   "art": "halo_folk3",
+   "name": "Pilgrim",
+   "role": "folk",
+   "t": [
+    "Pilgrim: A chapel this far out on the clouds? I don't remember it being built."
+   ]
+  }
+ ],
+ "901": [
+  {
+   "art": "starfall_folk1",
+   "name": "Crater ranger",
+   "role": "folk",
+   "t": [
+    "Crater ranger: That field station appeared after the pods fell. No one I know works there."
+   ]
+  }
+ ],
+ "868": [
+  {
+   "art": "apex_folk2",
+   "name": "Lift engineer",
+   "role": "folk",
+   "t": [
+    "Lift engineer: Maintenance hut? We never asked for one. And it has better locks than the observatory!"
+   ]
+  }
+ ],
+ "908": [
+  {
+   "art": "ystra_folk5",
+   "name": "Wanderer",
+   "role": "folk",
+   "t": [
+    "Wanderer: Someone's been living in that old dwelling. The footprints are new... and very tidy."
+   ]
+  }
+ ],
+ "870": [
+  {
+   "art": "apex_folk1",
+   "name": "Mom",
+   "role": "folk",
+   "t": [
+    "Mom: Wipe your boots! The snow gets everywhere up here."
+   ]
+  },
+  {
+   "art": "apex_folk5",
+   "name": "Kid",
+   "role": "folk",
+   "t": [
+    "Kid: Our star-map rug shows where the Linkers came from. Dad drew the dots!"
+   ]
+  }
+ ],
+ "871": [
+  {
+   "art": "apex_folk3",
+   "name": "Stargazer",
+   "role": "folk",
+   "t": [
+    "Stargazer: On clear nights the whole Kessler system lines up over this window. Want a look? Maybe later."
+   ]
+  }
+ ],
+ "905": [
+  {
+   "art": "umbra_folk2",
+   "name": "Lantern bearer",
+   "role": "folk",
+   "t": [
+    "Lantern bearer: The stairs go all the way down to the Sinkhole. Hold the rail. The mist lies about how deep it is."
+   ]
+  }
+ ],
+ "880": [
+  {
+   "art": "ferrox_folk3",
+   "name": "Pipe fitter",
+   "role": "folk",
+   "t": [
+    "Pipe fitter: The coolant reservoir's safe to skiff across. Mostly. Don't drink it."
+   ]
+  }
+ ],
+ "895": [
+  {
+   "art": "neonis_folk4",
+   "name": "Canal courier",
+   "role": "folk",
+   "t": [
+    "Canal courier: Fastest way across the basin is by skiff. The neon makes the water glow all night."
+   ]
+  }
+ ],
+ "897": [
+  {
+   "art": "pyros_folk2",
+   "name": "Heat suit tester",
+   "role": "folk",
+   "t": [
+    "Tester: With a Heat Shield you can cross the lava sea. Without one... please don't try."
+   ]
+  }
+ ],
+ "882": [
+  {
+   "art": "glacia_folk3",
+   "name": "Fjord guide",
+   "role": "folk",
+   "t": [
+    "Fjord guide: Ice floes block the boat lanes. Pick your path before you push off."
+   ]
+  }
+ ],
+ "893": [
+  {
+   "art": "helix_folk4",
+   "name": "Tank tech",
+   "role": "folk",
+   "t": [
+    "Tank tech: This hydro tank used to cool the whole station. Now it's full of water Alienmon!"
+   ]
+  }
+ ],
+ "891": [
+  {
+   "art": "halo_folk5",
+   "name": "Cloud sailor",
+   "role": "folk",
+   "t": [
+    "Cloud sailor: The lagoon looks like sky, but it's water. Soft, warm water!"
+   ]
+  }
+ ],
+ "906": [
+  {
+   "art": "umbra_folk4",
+   "name": "Lake watcher",
+   "role": "folk",
+   "t": [
+    "Lake watcher: The mirror lake shows a second sky. Some say a second you, too."
+   ]
+  }
+ ],
+ "903": [
+  {
+   "art": "starfall_folk4",
+   "name": "Researcher",
+   "role": "folk",
+   "t": [
+    "Researcher: The crater lake glows violet because of the rift. Seedpods float right on top."
+   ]
+  }
+ ],
+ "872": [
+  {
+   "art": "apex_folk6",
+   "name": "Hiker",
+   "role": "folk",
+   "t": [
+    "Hiker: Meltwater tarn! Cold enough to wake you up for a week."
+   ]
+  }
+ ],
+ "913": [
+  {
+   "art": "ystra_folk1",
+   "name": "Shard diver",
+   "role": "folk",
+   "t": [
+    "Shard diver: The crystal lake is so still you can see the reefs from the shore."
+   ]
+  }
+ ],
+ "900": [
+  {
+   "art": "researcher",
+   "name": "Helix Scientist",
+   "role": "folk",
+   "t": [
+    "Helix scientist: H-how did you find this place? This lab is... a spore weather station. Yes. Please leave."
+   ]
+  }
+ ],
+ "885": [
+  {
+   "art": "researcher",
+   "name": "Helix Scientist",
+   "role": "folk",
+   "t": [
+    "Helix scientist: H-how did you find this place? This lab is... a dig-site weather station. Yes. Please leave."
+   ]
+  }
+ ],
+ "890": [
+  {
+   "art": "researcher",
+   "name": "Helix Scientist",
+   "role": "folk",
+   "t": [
+    "Helix scientist: H-how did you find this place? This lab is... a cloud weather station. Yes. Please leave."
+   ]
+  }
+ ],
+ "902": [
+  {
+   "art": "researcher",
+   "name": "Helix Scientist",
+   "role": "folk",
+   "t": [
+    "Helix scientist: H-how did you find this place? This lab is... a crater weather station. Yes. Please leave."
+   ]
+  }
+ ],
+ "869": [
+  {
+   "art": "researcher",
+   "name": "Helix Scientist",
+   "role": "folk",
+   "t": [
+    "Helix scientist: H-how did you find this place? This lab is... a summit weather station. Yes. Please leave."
+   ]
+  }
+ ],
+ "909": [
+  {
+   "art": "researcher",
+   "name": "Helix Scientist",
+   "role": "folk",
+   "t": [
+    "Helix scientist: H-how did you find this place? This lab is... a crystal weather station. Yes. Please leave."
+   ]
+  }
  ]
 }

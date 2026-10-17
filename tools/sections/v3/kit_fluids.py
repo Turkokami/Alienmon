@@ -11,7 +11,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 SKIP = ('interior', 'tower', 'arena')
 NOT = {'409', '420', '551', '775', '747', '753', '818', '823'}   # checked by eye: crystal shrines, void cracks, snow
 WET = ('Shore', 'Lake', 'Lagoon', 'Canal', 'Bog', 'Marsh', 'Falls', 'Tarn', 'Pool', 'Channel', 'Shallows', 'Grotto', 'Sea ', 'River', 'Inlet', 'Cove',
-       'Tide', 'Water', 'Oasis', 'Coolant', 'Floe', 'Fen', 'Mire', 'Island', 'Bend', 'Stream', 'Hydro', 'Fork')
+       'Tide', 'Water', 'Oasis', 'Reservoir', 'Basin', 'Islands', 'Fjord', 'Tank', 'Mirror', 'Sea', 'Lava', 'Coolant', 'Floe', 'Fen', 'Mire', 'Island', 'Bend', 'Stream', 'Hydro', 'Fork')
 SURF = {k for k, v in json.load(open('data/encounters.json', encoding='utf-8')).items() if any(e['method'] == 'surf' for e in v['encounters'])}
 
 

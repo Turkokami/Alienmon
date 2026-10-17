@@ -1,0 +1,458 @@
+{
+ "_about": "Story pictures shown when a quest step starts or is done (src/quests.js qPic). st = only for that starter (the art shows the book pairing).",
+ "pictures": [
+  {
+   "k": "cut_01",
+   "q": "intro",
+   "o": 0,
+   "w": "start",
+   "cap": "A dream of crystal trees",
+   "lines": [
+    "You dream of crystal trees under a huge red sun that is slowly going out.",
+    "The wind moves through the branches like a sad song.",
+    "A whisper, soft as leaves: Find the one who listens."
+   ],
+   "src": "Cutscene 01 - Ch 1 - The Dream of Ystra (Ystra).png"
+  },
+  {
+   "k": "cut_02",
+   "q": "M01",
+   "o": 0,
+   "w": "start",
+   "cap": "Choose with your heart",
+   "lines": [
+    "Three capsules glow on Dr. Vashti's brass table: Sporix, Plazmo and Gloopa.",
+    "Dr. Vashti: Don't pick with your head. Choose with your heart."
+   ],
+   "src": "Cutscene 02 - Ch 1 - Choose With Your Heart (Dustara).png"
+  },
+  {
+   "k": "cut_03",
+   "q": "M02",
+   "o": 2,
+   "w": "start",
+   "cap": "A signal from the canyon...",
+   "lines": [
+    "The bridge lights go still. A tiny silver saucer wobbles down out of the stars.",
+    "It settles on your shoulder. One huge eye blinks at you.",
+    "Zib: Bip!"
+   ],
+   "st": "plazmo",
+   "src": "Cutscene 03 - Ch 2 - Zib Falls From the Sky (Dustara).png"
+  },
+  {
+   "k": "cut_04",
+   "q": "M02",
+   "o": 3,
+   "w": "done",
+   "cap": "Hello again, little one",
+   "lines": [
+    "Up at the Observatory, Dr. Vashti watches the old canyon bridge.",
+    "She holds a faded photo: four kids in the desert, under the stars.",
+    "Dr. Vashti (quietly): After twenty years... Hello again, little one."
+   ],
+   "src": "Cutscene 04 - Ch 2 - Hello Again, Little One (Dustara) (1).png"
+  },
+  {
+   "k": "cut_05",
+   "q": "M03",
+   "o": 0,
+   "w": "done",
+   "cap": "First rival battle",
+   "lines": [
+    "Mud everywhere. {starter} is worn out, and you scoop it up gently.",
+    "Sola turns away fast. For a second, her eyes look shiny."
+   ],
+   "st": "plazmo",
+   "src": "Cutscene 05 - Ch 3 - First Rival Battle (Dustara).png"
+  },
+  {
+   "k": "cut_06",
+   "q": "S04",
+   "o": 2,
+   "w": "start",
+   "cap": "Cactling takes the hit",
+   "lines": [
+    "A rock cracks loose from the canyon wall and tumbles at Zib!",
+    "A grumpy Cactling leaps in front, curls into a spiky ball and takes the hit. THUNK.",
+    "It folds its stubby arms and stares at you. Well? Are you going to ask?"
+   ],
+   "st": "plazmo",
+   "src": "Cutscene 06 - Ch 4 - Cactling Takes the Hit (Dustara).png"
+  },
+  {
+   "k": "cut_07",
+   "q": "M04",
+   "o": 0,
+   "w": "done",
+   "cap": "Ambush in the Sunset Tunnel",
+   "lines": [
+    "Deep in the Sunset Tunnel, the lanterns snuff out one by one.",
+    "Two Helix agents in white step out of the dark. A crackling net flies at Zib!",
+    "{starter} throws itself in the way. When the dust clears, the agents are gone."
+   ],
+   "st": "plazmo",
+   "src": "Cutscene 07 - Ch 5 - Ambush in the Sunset Tunnel (Dustara).png"
+  },
+  {
+   "k": "cut_08",
+   "q": "M04",
+   "o": 1,
+   "w": "start",
+   "cap": "Something in the bag...",
+   "lines": [
+    "At the tunnel's far end, the Molten Frontier spreads out below you.",
+    "Your backpack wriggles. Two round eyes blink up at you from behind your sandwich.",
+    "Then whoever it is ducks back down under the socks."
+   ],
+   "st": "plazmo",
+   "src": "Cutscene 08 - Ch 6 - The Stowaway (Molten Frontier).png"
+  },
+  {
+   "k": "cut_09",
+   "q": "M05",
+   "o": 1,
+   "w": "done",
+   "cap": "It picked Kit!",
+   "lines": [
+    "Your bag wriggles, and your little stowaway leaps straight into Kit's arms.",
+    "It snuggles in and won't let go. It has made up its mind."
+   ],
+   "st": "plazmo",
+   "src": "Cutscene 09 - Ch 7 - Sporix Picks Kit (Molten Frontier).png"
+  },
+  {
+   "k": "cut_10",
+   "q": "M05",
+   "o": 0,
+   "w": "done",
+   "cap": "The boulder beast topples",
+   "lines": [
+    "Dax's giant boulder beast raises one huge foot over {starter}.",
+    "You shout NOW! {starter} blasts the cracked ground, and the rock gives way.",
+    "The giant topples. THOOOM. Forge Miner Dax just laughs."
+   ],
+   "st": "plazmo",
+   "src": "Cutscene 10 - Ch 7 - Rumbler Topples (Molten Frontier).png"
+  },
+  {
+   "k": "cut_11",
+   "q": "M05",
+   "o": 3,
+   "w": "start",
+   "cap": "The Iron Wall of Ferrox",
+   "lines": [
+    "Up in the Ferrox Relay Tower, the crowd is roaring.",
+    "Hank Briggs and his Anvilox, the Iron Wall of Ferrox, are waiting for you."
+   ],
+   "st": "plazmo",
+   "src": "Cutscene 11 - Ch 9 - The Welder Flame (Ferrox).png"
+  },
+  {
+   "k": "cut_12",
+   "q": "M05",
+   "o": 3,
+   "w": "done",
+   "cap": "That's my kid!",
+   "lines": [
+    "The whole tower cheers. Hank scoops Kit into a hug so big Kit's goggles fly off.",
+    "Hank Briggs: THAT'S MY KID!",
+    "In your hand, your first Signal Shard hums, warm and blue."
+   ],
+   "st": "plazmo",
+   "src": "Cutscene 12 - Ch 9 - That's My Kid! (Ferrox).png"
+  },
+  {
+   "k": "cut_13",
+   "q": "M06",
+   "o": 0,
+   "w": "start",
+   "cap": "Zib remembers",
+   "lines": [
+    "Zib floats over the humming Shard, and its big eye begins to glow.",
+    "It paints a picture in the air: a deep red world, launching glowing seeds into space.",
+    "You whisper: Was that... your home? Zib's lights go very quiet."
+   ],
+   "src": "Cutscene 13 - Ch 9 - The Red Planet Memory (Ferrox).png"
+  },
+  {
+   "k": "cut_14",
+   "q": "M06",
+   "o": 0,
+   "w": "done",
+   "cap": "Escape through the ice",
+   "lines": [
+    "Halfway to Sporeholm, an orange tractor beam locks onto Nana Wren's little ship.",
+    "You dive between tumbling chunks of ice, and one snaps the beam clean in half!",
+    "The Helix shuttle limps away, a row of empty cages in its open belly."
+   ],
+   "src": "Cutscene 14 - Ch 10 - Escape Through the Ice (Space).png"
+  },
+  {
+   "k": "cut_15",
+   "q": "M06",
+   "o": 1,
+   "w": "start",
+   "cap": "The Spore Choir's song",
+   "lines": [
+    "In the misty marsh outside Mirefen, a baby Mossback shivers under a fern.",
+    "Zib floats close and hums a soft, swaying tune. Hmm-mm-mmm.",
+    "The little Mossback opens its eyes, wobbles out... and hums along."
+   ],
+   "st": "plazmo",
+   "src": "Cutscene 15 - Ch 11 - Zib Sings the Spore Choir Song (Sporeholm).png"
+  },
+  {
+   "k": "cut_17",
+   "q": "M06",
+   "o": 1,
+   "w": "start",
+   "cap": "Shhh.",
+   "lines": [
+    "Behind a giant mushroom, a Helix grunt flips open a little cage.",
+    "Grunt (whispering): Go home. Quickly.",
+    "He sees you watching... and puts a finger to his lips."
+   ],
+   "src": "Cutscene 17 - Ch 13 - Strand Opens the Cage (Sporeholm).png"
+  },
+  {
+   "k": "cut_18",
+   "q": "M06",
+   "o": 2,
+   "w": "done",
+   "cap": "Brighter than the Spore Pools",
+   "lines": [
+    "Dr. Moor's poison has {starter} covered in spots and hanging still...",
+    "You shout NOW! Your partner blazes brighter than the Spore Pools and wins the day."
+   ],
+   "st": "plazmo",
+   "src": "Cutscene 18 - Ch 14 - Plazmet Ignites (Sporeholm).png"
+  },
+  {
+   "k": "cut_19",
+   "q": "M07",
+   "o": 0,
+   "w": "start",
+   "cap": "A face in the spore pool",
+   "lines": [
+    "Beside Dr. Moor, a spore pool pulses like a heartbeat.",
+    "Zib's eye fills the air with a giant gentle face of leaves and branches, eyes closed.",
+    "Zib: ...Bip. It sounds like it misses her."
+   ],
+   "st": "plazmo",
+   "src": "Cutscene 19 - Ch 14 - The Tree-Mother's Face (Sporeholm).png"
+  },
+  {
+   "k": "cut_20",
+   "q": "M07",
+   "o": 0,
+   "w": "done",
+   "cap": "The Harbor Gate wakes",
+   "lines": [
+    "You hold up two Signal Shards, and the harbor gate's carvings light up blue.",
+    "A shimmering doorway opens onto Thalassa's turquoise seas.",
+    "On the dock, the Squid Sailor puffs his bubble pipe as kids ride Bubbub past."
+   ],
+   "src": "Cutscene 20 - Ch 15 - The Harbor Gate Wakes (Molten Frontier).png"
+  },
+  {
+   "k": "cut_21",
+   "q": "S40",
+   "o": 1,
+   "w": "done",
+   "cap": "The ghost ship's cages",
+   "lines": [
+    "A logbook lies open, stamped with an orange slashed ring: Approved, Admin V.",
+    "In the very last cage: a knitted blanket and a note, signed with just one letter. S."
+   ],
+   "src": "Cutscene 21 - Ch 16 - The Ghost Ship's Cages (Thalassa).png"
+  },
+  {
+   "k": "cut_22",
+   "q": "M07",
+   "o": 1,
+   "w": "start",
+   "cap": "Admin Vex",
+   "lines": [
+    "On the docks, Helix crews are hauling the Harbor Tower's crystal core away.",
+    "A woman in a black-and-yellow cape turns. Her eyes are pale as ice.",
+    "Admin Vex: Take the core. Leave the children to Hexcoil."
+   ],
+   "st": "plazmo",
+   "src": "Cutscene 22 - Ch 17 - Admin Vex (Thalassa).png"
+  },
+  {
+   "k": "cut_23",
+   "q": "M07",
+   "o": 1,
+   "w": "done",
+   "cap": "Kit's partner stands firm",
+   "lines": [
+    "Knocked flat, Kit's {kit} gets up and plants itself in front of Kit again.",
+    "It glows... and grows into {kit2}! Roots burst up and wrap the Hexcoil tight."
+   ],
+   "st": "plazmo",
+   "src": "Cutscene 23 - Ch 17 - Sporix Becomes Mycelith (Thalassa).png"
+  },
+  {
+   "k": "cut_24",
+   "q": "M07",
+   "o": 2,
+   "w": "done",
+   "cap": "Old Barnaby surfaces",
+   "lines": [
+    "Captain Marsh's Old Barnaby, a huge barnacled Brineback, rises to breathe.",
+    "Your partner has waited for exactly this moment. It streaks in and strikes!"
+   ],
+   "st": "plazmo",
+   "src": "Cutscene 24 - Ch 18 - Old Barnaby Surfaces (Thalassa).png"
+  },
+  {
+   "k": "cut_25",
+   "q": "M08",
+   "o": 0,
+   "w": "start",
+   "cap": "You got good",
+   "lines": [
+    "At the end of the Long Dock, Sola kneels beside her tired partner.",
+    "Sola: You got good. That's why I need to do this alone."
+   ],
+   "st": "plazmo",
+   "src": "Cutscene 25 - Ch 19 - Rook Finally Wins (Molten Frontier).png"
+  },
+  {
+   "k": "cut_27",
+   "q": "S53",
+   "o": 0,
+   "w": "done",
+   "cap": "The Glitchbug swarm",
+   "lines": [
+    "The Helix crate bursts open, and hundreds of Glitchbugs pour out!",
+    "Signs flash backwards, trains freeze in midair, and a hot dog stand plays opera.",
+    "One cheeky Glitchbug zaps the top of your head."
+   ],
+   "st": "plazmo",
+   "src": "Cutscene 27 - Ch 20 - The Glitchbug Swarm (Neonis).png"
+  },
+  {
+   "k": "cut_28",
+   "q": "M09",
+   "o": 0,
+   "w": "done",
+   "cap": "The quiet voice",
+   "lines": [
+    "On the highest rooftop in Neonis, Kit plugs the last wire into an old broadcast dish.",
+    "Through the static comes Sola's tired voice: Is my dad there?",
+    "Then a calm, quiet man: Phase Three begins when the eighth tower cracks."
+   ],
+   "st": "plazmo",
+   "src": "Cutscene 28 - Ch 21 - The Quiet Voice (Neonis).png"
+  },
+  {
+   "k": "cut_29",
+   "q": "M09",
+   "o": 1,
+   "w": "done",
+   "cap": "Battle night at the Voltspire",
+   "lines": [
+    "Under the strobe lights, DJ Static's giant speaker-beast pounds out the beat.",
+    "Your team finds the one gap in the rhythm and strikes. BWAAAMP!",
+    "The giant speaker sits down, and the whole crowd goes wild."
+   ],
+   "st": "plazmo",
+   "src": "Cutscene 29 - Ch 22 - Battle Night at the Voltspire (Neonis).png"
+  },
+  {
+   "k": "cut_30",
+   "q": "M10",
+   "o": 0,
+   "w": "start",
+   "cap": "The seal of eight towers",
+   "lines": [
+    "Above the fourth Shard, Zib's eye glows brighter than ever before.",
+    "Eight towers on eight worlds light up, one by one, in a ring around the sun.",
+    "Kit: They're not just towers. They're a seal. In the corner, Dr. Vashti goes quiet."
+   ],
+   "src": "Cutscene 30 - Ch 22 - The Seal of Eight Towers (Neonis).png"
+  },
+  {
+   "k": "cut_31",
+   "q": "M10",
+   "o": 0,
+   "w": "done",
+   "cap": "Little scout, you came back",
+   "lines": [
+    "On Glyphos, a crystal in the biggest temple wall begins to glow.",
+    "A soft, chiming voice: Little scout. You came back.",
+    "Zib's lights flash every color at once."
+   ],
+   "src": "Cutscene 31 - Ch 23 - Little Scout, You Came Back (Glyphos).png"
+  },
+  {
+   "k": "cut_32",
+   "q": "S62",
+   "o": 2,
+   "w": "done",
+   "cap": "The temple sings",
+   "lines": [
+    "A sunbeam zigzags from mirror to mirror onto the door crystal.",
+    "The Monolets bow low, and the little Chimelet swings out one pure note. Dinnnng.",
+    "Every wall hums, and the great doors swing slowly open."
+   ],
+   "st": "plazmo",
+   "src": "Cutscene 32 - Ch 24 - The Temple Sings (Glyphos).png"
+  },
+  {
+   "k": "cut_33",
+   "q": "M10",
+   "o": 1,
+   "w": "done",
+   "cap": "The murals of Ystra",
+   "lines": [
+    "Before the tree-mother's mural, Zib pulses sadly in your hands.",
+    "You hold it close. You've got a home now. You've got us.",
+    "At the end of the hall, a newer mural shows four small figures around a cracked seedpod."
+   ],
+   "src": "Cutscene 33 - Ch 25 - The Murals of Ystra (Glyphos).png"
+  },
+  {
+   "k": "cut_34",
+   "q": "M19b",
+   "o": 3,
+   "w": "start",
+   "cap": "The Crater Four",
+   "lines": [
+    "Before the trial, Dr. Vashti asks you and Kit up to her lab on Neonis.",
+    "Dr. Vashti: The four kids in the crater were me, Kael, Orra... and Teo Reyes.",
+    "Zib floats up and bumps its saucer gently against her cheek."
+   ],
+   "st": "plazmo",
+   "src": "Cutscene 34 - Ch 26 - The Crater Four (Neonis).png"
+  },
+  {
+   "k": "cut_35",
+   "q": "M10",
+   "o": 1,
+   "w": "done",
+   "cap": "Begin Phase Three",
+   "lines": [
+    "Far away, on Helix Station, Sola stands at a window full of stars.",
+    "Below the glass floor, rows of caged Alienmon glow in the dark.",
+    "Director Thorne: Begin Phase Three. Sola's hands slowly curl into fists."
+   ],
+   "src": "Cutscene 35 - Ch 26 - Begin Phase Three (Helix Station).png"
+  },
+  {
+   "k": "cut_36",
+   "q": "M10",
+   "o": 1,
+   "w": "done",
+   "cap": "The eye opens",
+   "lines": [
+    "...Back on Glyphos, Zib blinks.",
+    "For a split second, its big eye reflects something enormous: a giant dark eye, opening."
+   ],
+   "src": "Cutscene 36 - Ch 26 - The Eye Opens (Space).png"
+  }
+ ]
+}

@@ -25,7 +25,7 @@ DIRS = {'Dustara': '01_dustara', 'Ferrox': '02_ferrox', 'Sporeholm': '03_sporeho
         'Starfall Rift': '12_starfall', 'Apex Array': '13_apex', 'Ystra': '14_ystra'}
 # category -> (section type, collision kind)
 CATS = {'Spaceport': ('landmark', 'outdoor'), 'Residential': ('town', 'outdoor'), 'Crossroads': ('route', 'outdoor'), 'Extra scenes': ('route', 'outdoor'),
-        'Water Route': ('route', 'outdoor'), 'Hidden Area': ('field', 'outdoor'), 'Cave': ('cave', 'cave'), 'Relay Tower': ('tower', 'interior'),
+        'Water Route': ('route', 'outdoor'), 'Lava Route': ('route', 'outdoor'), 'Hidden Area': ('field', 'outdoor'), 'Cave': ('cave', 'cave'), 'Relay Tower': ('tower', 'interior'),
         'Battle Arena': ('arena', 'interior'), 'Helix Hideout': ('dungeon', 'interior'), 'Recovery Bay': ('interior', 'interior'),
         'Shop': ('interior', 'interior'), 'Interior rooms': ('interior', 'interior')}
 
@@ -118,7 +118,7 @@ def main():
         if not p: continue
         d, world, cat, title, alt = p
         if only and d != only: continue
-        sid = by_src.get(f)
+        sid = by_src.get(f); new = not sid
         if not sid: sid = str(nxt); nxt += 1
         typ, kind = CATS[cat]
         if outdoorish(cat, title): typ, kind = ('landmark' if cat != 'Cave' else 'route'), 'plain'
@@ -132,7 +132,7 @@ def main():
             im.resize((W * 16, H * 16), Image.LANCZOS).save(out, optimize=True)
         g = Image.open(out).convert('RGB')
         cp = f'data/collision/{sid}.json'
-        if force or recol or not os.path.exists(cp) or not json.load(open(cp)).get('v3_hand'):
+        if force or recol or new or not os.path.exists(cp):   # existing pieces keep their collision (plans and hand fixes build on it)
             if d not in ROADS: ROADS[d] = (world_roads(d), world_grass(d))
             rows, _ = auto(g, kind, roads=ROADS[d][0] if kind in ('outdoor', 'plain') else None, grass=ROADS[d][1] if kind == 'outdoor' else None)
         else:

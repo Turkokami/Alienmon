@@ -1990,6 +1990,76 @@
    "planet": "Umbra",
    "name": "Shadow Tunnel Exit",
    "habitat": "abyss"
+  },
+  "899": {
+   "planet": "Sporeholm",
+   "name": "Mossy Herbalist Cottage",
+   "habitat": "swamp"
+  },
+  "896": {
+   "planet": "Neonis",
+   "name": "Canal Islands",
+   "habitat": "neon_city"
+  },
+  "898": {
+   "planet": "Pyros",
+   "name": "Lava Islands",
+   "habitat": "volcano"
+  },
+  "883": {
+   "planet": "Glacia",
+   "name": "Fjord Islands",
+   "habitat": "tundra"
+  },
+  "894": {
+   "planet": "Helix Station",
+   "name": "Hydro Tank Islands",
+   "habitat": "containment"
+  },
+  "905": {
+   "planet": "Umbra",
+   "name": "Abyss Rim Descent",
+   "habitat": "dark_city"
+  },
+  "907": {
+   "planet": "Umbra",
+   "name": "Mirror Lake Islands",
+   "habitat": "dark_city"
+  },
+  "904": {
+   "planet": "Starfall Rift",
+   "name": "Crater Lake Islands",
+   "habitat": "seedpod_field"
+  },
+  "908": {
+   "planet": "Ystra",
+   "name": "Abandoned Dwelling",
+   "habitat": "void_edge"
+  },
+  "914": {
+   "planet": "Ystra",
+   "name": "Crystal Lake Islands",
+   "habitat": "blighted_forest"
+  },
+  "881": {
+   "planet": "Ferrox",
+   "name": "Reservoir Islands",
+   "habitat": "scrapyard"
+  },
+  "875": {
+   "planet": "Dustara",
+   "name": "Dustmere Relay Tower",
+   "habitat": "canyon"
+  },
+  "879": {
+   "planet": "Dustara",
+   "name": "Oasis Islands",
+   "habitat": "canyon"
+  },
+  "874": {
+   "planet": "Dustara",
+   "name": "Sunset Tunnel Mouth",
+   "habitat": "canyon"
   }
  }
 }

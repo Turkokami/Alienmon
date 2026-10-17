@@ -54,18 +54,6 @@
      9,
      12
     ]
-   ],
-   "right": [
-    [
-     9,
-     12
-    ]
-   ],
-   "bottom": [
-    [
-     9,
-     14
-    ]
    ]
   }
  },
@@ -154,36 +142,7 @@
    16
   ],
   "file": "art/kit/13_apex/406_cave_floor_1.png",
-  "exits": {
-   "left": [
-    [
-     0,
-     3
-    ],
-    [
-     6,
-     15
-    ]
-   ],
-   "right": [
-    [
-     0,
-     15
-    ]
-   ],
-   "top": [
-    [
-     0,
-     23
-    ]
-   ],
-   "bottom": [
-    [
-     0,
-     23
-    ]
-   ]
-  }
+  "exits": {}
  },
  "407": {
   "src": "Apex Array - Cave - 03 Floor 2 option 1.png",
@@ -314,22 +273,14 @@
   "exits": {
    "left": [
     [
-     1,
-     5
-    ],
-    [
      7,
      12
     ]
    ],
    "right": [
     [
-     3,
-     7
-    ],
-    [
      9,
-     15
+     14
     ]
    ],
    "top": [
@@ -405,7 +356,7 @@
    "top": [
     [
      13,
-     20
+     16
     ]
    ],
    "bottom": [
@@ -431,21 +382,9 @@
   ],
   "file": "art/kit/13_apex/415_extra_scenes_stargazer_overlook.png",
   "exits": {
-   "right": [
-    [
-     11,
-     15
-    ]
-   ],
    "top": [
     [
      6,
-     14
-    ]
-   ],
-   "bottom": [
-    [
-     9,
      14
     ]
    ]
@@ -466,16 +405,6 @@
   ],
   "file": "art/kit/13_apex/416_extra_scenes_meltwater_tarn.png",
   "exits": {
-   "right": [
-    [
-     3,
-     5
-    ],
-    [
-     7,
-     10
-    ]
-   ],
    "top": [
     [
      13,
@@ -483,10 +412,6 @@
     ]
    ],
    "bottom": [
-    [
-     11,
-     12
-    ],
     [
      14,
      21
@@ -617,38 +542,14 @@
   "exits": {
    "left": [
     [
-     3,
-     4
-    ],
-    [
      7,
      11
-    ]
-   ],
-   "right": [
-    [
-     5,
-     7
     ]
    ],
    "top": [
     [
      13,
      20
-    ]
-   ],
-   "bottom": [
-    [
-     2,
-     7
-    ],
-    [
-     11,
-     13
-    ],
-    [
-     15,
-     19
     ]
    ]
   }
@@ -697,17 +598,7 @@
   ],
   "file": "art/kit/13_apex/421_extra_scenes_observatory_terrace.png",
   "exits": {
-   "left": [
-    [
-     0,
-     1
-    ]
-   ],
    "top": [
-    [
-     0,
-     3
-    ],
     [
      9,
      14
@@ -740,22 +631,6 @@
     [
      8,
      14
-    ]
-   ],
-   "right": [
-    [
-     9,
-     12
-    ]
-   ],
-   "top": [
-    [
-     14,
-     16
-    ],
-    [
-     18,
-     19
     ]
    ]
   }
@@ -883,20 +758,7 @@
    16
   ],
   "file": "art/kit/13_apex/429_relay_tower_keeper_room.png",
-  "exits": {
-   "left": [
-    [
-     1,
-     2
-    ]
-   ],
-   "top": [
-    [
-     1,
-     6
-    ]
-   ]
-  }
+  "exits": {}
  },
  "430": {
   "src": "Apex Array - Residential - 01 Apex Lane Homes.png",
@@ -942,12 +804,6 @@
   ],
   "file": "art/kit/13_apex/431_residential_apex_quiet_court.png",
   "exits": {
-   "right": [
-    [
-     5,
-     7
-    ]
-   ],
    "bottom": [
     [
      11,
@@ -1080,12 +936,6 @@
      11
     ]
    ],
-   "right": [
-    [
-     9,
-     11
-    ]
-   ],
    "bottom": [
     [
      10,
@@ -1170,7 +1020,7 @@
   "exits": {
    "bottom": [
     [
-     11,
+     10,
      12
     ]
    ]
@@ -1213,40 +1063,7 @@
    16
   ],
   "file": "art/kit/01_dustara/442_cave_floor_1.png",
-  "exits": {
-   "left": [
-    [
-     0,
-     12
-    ],
-    [
-     14,
-     15
-    ]
-   ],
-   "right": [
-    [
-     0,
-     15
-    ]
-   ],
-   "top": [
-    [
-     0,
-     12
-    ],
-    [
-     15,
-     23
-    ]
-   ],
-   "bottom": [
-    [
-     0,
-     23
-    ]
-   ]
-  }
+  "exits": {}
  },
  "443": {
   "src": "Dustara - Cave - 03 Floor 2.png",
@@ -1301,12 +1118,6 @@
      9
     ]
    ],
-   "right": [
-    [
-     5,
-     8
-    ]
-   ],
    "top": [
     [
      8,
@@ -1336,12 +1147,6 @@
   ],
   "file": "art/kit/01_dustara/446_crossroads_mesa_junction.png",
   "exits": {
-   "left": [
-    [
-     7,
-     9
-    ]
-   ],
    "right": [
     [
      3,
@@ -1718,10 +1523,6 @@
     [
      4,
      5
-    ],
-    [
-     8,
-     9
     ]
    ],
    "top": [
@@ -1734,10 +1535,6 @@
     [
      4,
      10
-    ],
-    [
-     12,
-     13
     ]
    ]
   }
@@ -1797,12 +1594,6 @@
      15,
      19
     ]
-   ],
-   "bottom": [
-    [
-     2,
-     6
-    ]
    ]
   }
  },
@@ -1854,12 +1645,6 @@
     [
      16,
      21
-    ]
-   ],
-   "bottom": [
-    [
-     6,
-     11
     ]
    ]
   }
@@ -1913,12 +1698,6 @@
      9,
      14
     ]
-   ],
-   "bottom": [
-    [
-     13,
-     19
-    ]
    ]
   }
  },
@@ -1937,12 +1716,6 @@
   ],
   "file": "art/kit/01_dustara/465_hidden_area_secret_grove.png",
   "exits": {
-   "left": [
-    [
-     9,
-     13
-    ]
-   ],
    "right": [
     [
      9,
@@ -2059,12 +1832,6 @@
   ],
   "file": "art/kit/01_dustara/471_residential_dustara_quiet_court.png",
   "exits": {
-   "right": [
-    [
-     5,
-     7
-    ]
-   ],
    "bottom": [
     [
      10,
@@ -2179,22 +1946,10 @@
   ],
   "file": "art/kit/02_ferrox/476_battle_arena_scrapyard_dome_exterior.png",
   "exits": {
-   "left": [
-    [
-     9,
-     11
-    ]
-   ],
    "right": [
     [
      9,
      11
-    ]
-   ],
-   "bottom": [
-    [
-     10,
-     13
     ]
    ]
   }
@@ -2297,8 +2052,8 @@
   "exits": {
    "bottom": [
     [
-     7,
-     16
+     11,
+     12
     ]
    ]
   }
@@ -2340,32 +2095,7 @@
    16
   ],
   "file": "art/kit/02_ferrox/482_cave_floor_1.png",
-  "exits": {
-   "left": [
-    [
-     0,
-     15
-    ]
-   ],
-   "right": [
-    [
-     0,
-     15
-    ]
-   ],
-   "top": [
-    [
-     0,
-     23
-    ]
-   ],
-   "bottom": [
-    [
-     0,
-     23
-    ]
-   ]
-  }
+  "exits": {}
  },
  "483": {
   "src": "Ferrox - Cave - 03 Floor 2.png",
@@ -2461,24 +2191,10 @@
      7
     ]
    ],
-   "right": [
-    [
-     2,
-     3
-    ],
-    [
-     7,
-     9
-    ]
-   ],
    "top": [
     [
      4,
      10
-    ],
-    [
-     15,
-     20
     ]
    ],
    "bottom": [
@@ -2638,30 +2354,10 @@
   ],
   "file": "art/kit/02_ferrox/491_extra_scenes_railcar_maze.png",
   "exits": {
-   "right": [
-    [
-     3,
-     4
-    ],
-    [
-     12,
-     13
-    ]
-   ],
    "top": [
-    [
-     0,
-     2
-    ],
     [
      4,
      7
-    ]
-   ],
-   "bottom": [
-    [
-     16,
-     21
     ]
    ]
   }
@@ -2747,12 +2443,6 @@
   ],
   "file": "art/kit/02_ferrox/494_extra_scenes_salvage_flats.png",
   "exits": {
-   "left": [
-    [
-     2,
-     5
-    ]
-   ],
    "top": [
     [
      5,
@@ -2814,12 +2504,6 @@
   ],
   "file": "art/kit/02_ferrox/497_hidden_area_secret_grove.png",
   "exits": {
-   "left": [
-    [
-     7,
-     11
-    ]
-   ],
    "right": [
     [
      8,
@@ -2907,12 +2591,6 @@
   ],
   "file": "art/kit/02_ferrox/502_relay_tower_exterior.png",
   "exits": {
-   "left": [
-    [
-     9,
-     12
-    ]
-   ],
    "right": [
     [
      9,
@@ -2997,12 +2675,6 @@
   ],
   "file": "art/kit/02_ferrox/506_residential_ferrox_quiet_court.png",
   "exits": {
-   "left": [
-    [
-     5,
-     6
-    ]
-   ],
    "bottom": [
     [
      10,
@@ -3140,12 +2812,6 @@
      9,
      12
     ]
-   ],
-   "bottom": [
-    [
-     10,
-     13
-    ]
    ]
   }
  },
@@ -3179,7 +2845,14 @@
    16
   ],
   "file": "art/kit/08_glacia/513_battle_arena_glacier_rink_arena_battle_room.png",
-  "exits": {}
+  "exits": {
+   "bottom": [
+    [
+     11,
+     12
+    ]
+   ]
+  }
  },
  "514": {
   "src": "Glacia - Cave - 01 Entrance.png",
@@ -3306,18 +2979,14 @@
    ],
    "top": [
     [
-     7,
-     16
-    ],
-    [
-     18,
-     21
+     10,
+     14
     ]
    ],
    "bottom": [
     [
      8,
-     17
+     14
     ]
    ]
   }
@@ -3337,12 +3006,6 @@
   ],
   "file": "art/kit/08_glacia/519_crossroads_ice_junction.png",
   "exits": {
-   "left": [
-    [
-     4,
-     5
-    ]
-   ],
    "right": [
     [
      8,
@@ -3353,10 +3016,6 @@
     [
      3,
      10
-    ],
-    [
-     21,
-     22
     ]
    ],
    "bottom": [
@@ -3384,10 +3043,6 @@
   "exits": {
    "left": [
     [
-     1,
-     3
-    ],
-    [
      7,
      9
     ]
@@ -3400,11 +3055,7 @@
    ],
    "top": [
     [
-     1,
-     2
-    ],
-    [
-     4,
+     5,
      10
     ]
    ],
@@ -3438,10 +3089,6 @@
     ]
    ],
    "bottom": [
-    [
-     6,
-     11
-    ],
     [
      13,
      18
@@ -3522,26 +3169,10 @@
   ],
   "file": "art/kit/08_glacia/524_extra_scenes_crevasse_hollows.png",
   "exits": {
-   "right": [
-    [
-     2,
-     6
-    ],
-    [
-     14,
-     15
-    ]
-   ],
    "top": [
     [
      4,
      7
-    ]
-   ],
-   "bottom": [
-    [
-     15,
-     23
     ]
    ]
   }
@@ -3590,26 +3221,10 @@
   ],
   "file": "art/kit/08_glacia/526_extra_scenes_tundra_flats.png",
   "exits": {
-   "left": [
-    [
-     7,
-     9
-    ]
-   ],
    "top": [
-    [
-     0,
-     3
-    ],
     [
      9,
      15
-    ]
-   ],
-   "bottom": [
-    [
-     4,
-     9
     ]
    ]
   }
@@ -3629,12 +3244,6 @@
   ],
   "file": "art/kit/08_glacia/527_helix_hideout_disguised_entrance.png",
   "exits": {
-   "left": [
-    [
-     8,
-     12
-    ]
-   ],
    "right": [
     [
      8,
@@ -3675,12 +3284,6 @@
   "file": "art/kit/08_glacia/529_hidden_area_secret_grove.png",
   "exits": {
    "left": [
-    [
-     9,
-     12
-    ]
-   ],
-   "right": [
     [
      9,
      12
@@ -3767,12 +3370,6 @@
   ],
   "file": "art/kit/08_glacia/534_relay_tower_exterior.png",
   "exits": {
-   "left": [
-    [
-     9,
-     12
-    ]
-   ],
    "right": [
     [
      9,
@@ -4000,12 +3597,6 @@
      9,
      12
     ]
-   ],
-   "bottom": [
-    [
-     10,
-     13
-    ]
    ]
   }
  },
@@ -4055,14 +3646,7 @@
    16
   ],
   "file": "art/kit/06_glyphos/546_battle_arena_temple_of_trials_battle_floor.png",
-  "exits": {
-   "bottom": [
-    [
-     11,
-     12
-    ]
-   ]
-  }
+  "exits": {}
  },
  "547": {
   "src": "Glyphos - Battle Arena - 03 Temple of Trials Battle Room.png",
@@ -4117,32 +3701,7 @@
    16
   ],
   "file": "art/kit/06_glyphos/549_cave_floor_1.png",
-  "exits": {
-   "left": [
-    [
-     0,
-     15
-    ]
-   ],
-   "right": [
-    [
-     0,
-     15
-    ]
-   ],
-   "top": [
-    [
-     0,
-     23
-    ]
-   ],
-   "bottom": [
-    [
-     0,
-     23
-    ]
-   ]
-  }
+  "exits": {}
  },
  "550": {
   "src": "Glyphos - Cave - 03 Floor 2.png",
@@ -4242,10 +3801,6 @@
     [
      7,
      10
-    ],
-    [
-     12,
-     13
     ]
    ],
    "top": [
@@ -4287,22 +3842,12 @@
     [
      7,
      9
-    ],
-    [
-     12,
-     13
     ]
    ],
    "top": [
     [
      6,
      9
-    ]
-   ],
-   "bottom": [
-    [
-     6,
-     12
     ]
    ]
   }
@@ -4380,12 +3925,6 @@
   ],
   "file": "art/kit/06_glyphos/557_extra_scenes_tidepool_ruins.png",
   "exits": {
-   "top": [
-    [
-     4,
-     9
-    ]
-   ],
    "bottom": [
     [
      4,
@@ -4438,30 +3977,10 @@
   ],
   "file": "art/kit/06_glyphos/559_extra_scenes_sunken_channel.png",
   "exits": {
-   "right": [
-    [
-     0,
-     2
-    ]
-   ],
    "top": [
-    [
-     10,
-     14
-    ],
     [
      16,
      20
-    ],
-    [
-     22,
-     23
-    ]
-   ],
-   "bottom": [
-    [
-     6,
-     11
     ]
    ]
   }
@@ -4481,16 +4000,6 @@
   ],
   "file": "art/kit/06_glyphos/560_extra_scenes_forgotten_forum.png",
   "exits": {
-   "left": [
-    [
-     5,
-     7
-    ],
-    [
-     9,
-     10
-    ]
-   ],
    "right": [
     [
      2,
@@ -4498,10 +4007,6 @@
     ]
    ],
    "top": [
-    [
-     5,
-     6
-    ],
     [
      9,
      14
@@ -4530,12 +4035,6 @@
   ],
   "file": "art/kit/06_glyphos/561_hidden_area_secret_grove.png",
   "exits": {
-   "left": [
-    [
-     9,
-     11
-    ]
-   ],
    "right": [
     [
      9,
@@ -4652,12 +4151,6 @@
   ],
   "file": "art/kit/06_glyphos/567_residential_glyphos_quiet_court.png",
   "exits": {
-   "left": [
-    [
-     5,
-     8
-    ]
-   ],
    "bottom": [
     [
      10,
@@ -4749,20 +4242,16 @@
   ],
   "file": "art/kit/06_glyphos/571_water_route_open_water_route.png",
   "exits": {
-   "top": [
+   "left": [
     [
-     0,
-     11
-    ],
-    [
-     13,
-     23
+     1,
+     14
     ]
    ],
-   "bottom": [
+   "right": [
     [
-     0,
-     23
+     1,
+     14
     ]
    ]
   }
@@ -4781,7 +4270,20 @@
    16
   ],
   "file": "art/kit/06_glyphos/572_water_route_island_chain.png",
-  "exits": {}
+  "exits": {
+   "left": [
+    [
+     1,
+     14
+    ]
+   ],
+   "right": [
+    [
+     1,
+     14
+    ]
+   ]
+  }
  },
  "573": {
   "src": "Halo - Battle Arena - 01 Sky Colosseum Exterior.png",
@@ -4802,18 +4304,6 @@
     [
      8,
      12
-    ]
-   ],
-   "right": [
-    [
-     8,
-     12
-    ]
-   ],
-   "bottom": [
-    [
-     9,
-     13
     ]
    ]
   }
@@ -4919,36 +4409,7 @@
    16
   ],
   "file": "art/kit/10_halo/579_cave_floor_1.png",
-  "exits": {
-   "left": [
-    [
-     0,
-     15
-    ]
-   ],
-   "right": [
-    [
-     14,
-     15
-    ]
-   ],
-   "top": [
-    [
-     0,
-     6
-    ],
-    [
-     8,
-     14
-    ]
-   ],
-   "bottom": [
-    [
-     0,
-     23
-    ]
-   ]
-  }
+  "exits": {}
  },
  "580": {
   "src": "Halo - Cave - 03 Floor 2.png",
@@ -4980,14 +4441,7 @@
    16
   ],
   "file": "art/kit/10_halo/581_cave_deep_chamber.png",
-  "exits": {
-   "bottom": [
-    [
-     11,
-     13
-    ]
-   ]
-  }
+  "exits": {}
  },
  "582": {
   "src": "Halo - Crossroads - 01 Sky Crossroads.png",
@@ -5020,10 +4474,6 @@
     [
      10,
      14
-    ],
-    [
-     16,
-     18
     ]
    ],
    "bottom": [
@@ -5135,10 +4585,6 @@
     [
      3,
      7
-    ],
-    [
-     9,
-     10
     ]
    ],
    "bottom": [
@@ -5227,12 +4673,6 @@
      4,
      7
     ]
-   ],
-   "bottom": [
-    [
-     17,
-     20
-    ]
    ]
   }
  },
@@ -5282,10 +4722,6 @@
   "exits": {
    "top": [
     [
-     3,
-     5
-    ],
-    [
      9,
      14
     ]
@@ -5313,12 +4749,6 @@
   ],
   "file": "art/kit/10_halo/591_hidden_area_secret_grove.png",
   "exits": {
-   "left": [
-    [
-     9,
-     11
-    ]
-   ],
    "right": [
     [
      9,
@@ -5512,12 +4942,6 @@
   ],
   "file": "art/kit/10_halo/601_residential_halo_quiet_court.png",
   "exits": {
-   "left": [
-    [
-     5,
-     6
-    ]
-   ],
    "bottom": [
     [
      10,
@@ -5541,12 +4965,6 @@
   ],
   "file": "art/kit/10_halo/602_residential_halo_farmstead_edge.png",
   "exits": {
-   "left": [
-    [
-     7,
-     8
-    ]
-   ],
    "top": [
     [
      14,
@@ -5620,12 +5038,6 @@
      10,
      12
     ]
-   ],
-   "bottom": [
-    [
-     10,
-     13
-    ]
    ]
   }
  },
@@ -5659,7 +5071,14 @@
    16
   ],
   "file": "art/kit/09_helix/607_battle_arena_helix_proving_grounds_battle_room.png",
-  "exits": {}
+  "exits": {
+   "bottom": [
+    [
+     11,
+     12
+    ]
+   ]
+  }
  },
  "608": {
   "src": "Helix Station - Cave - 01 Entrance.png",
@@ -5676,16 +5095,10 @@
   ],
   "file": "art/kit/09_helix/608_cave_entrance.png",
   "exits": {
-   "left": [
-    [
-     8,
-     15
-    ]
-   ],
    "bottom": [
     [
-     0,
-     8
+     9,
+     14
     ]
    ]
   }
@@ -5704,32 +5117,7 @@
    16
   ],
   "file": "art/kit/09_helix/609_cave_floor_1.png",
-  "exits": {
-   "left": [
-    [
-     0,
-     15
-    ]
-   ],
-   "right": [
-    [
-     0,
-     15
-    ]
-   ],
-   "top": [
-    [
-     0,
-     23
-    ]
-   ],
-   "bottom": [
-    [
-     0,
-     23
-    ]
-   ]
-  }
+  "exits": {}
  },
  "610": {
   "src": "Helix Station - Cave - 03 Floor 2.png",
@@ -5793,17 +5181,13 @@
    "top": [
     [
      7,
-     14
+     12
     ]
    ],
    "bottom": [
     [
      6,
      15
-    ],
-    [
-     18,
-     20
     ]
    ]
   }
@@ -5826,41 +5210,25 @@
    "left": [
     [
      7,
-     15
+     10
     ]
    ],
    "right": [
     [
-     0,
-     7
+     3,
+     8
     ]
    ],
    "top": [
     [
-     4,
-     6
-    ],
-    [
-     9,
-     12
-    ],
-    [
      14,
-     23
+     18
     ]
    ],
    "bottom": [
     [
-     0,
-     10
-    ],
-    [
-     14,
-     19
-    ],
-    [
-     21,
-     22
+     4,
+     9
     ]
    ]
   }
@@ -5882,37 +5250,17 @@
   "exits": {
    "left": [
     [
-     0,
-     3
-    ],
-    [
      7,
-     15
+     14
     ]
    ],
    "right": [
     [
-     2,
-     4
-    ],
-    [
      7,
      12
-    ],
-    [
-     14,
-     15
     ]
    ],
    "top": [
-    [
-     3,
-     7
-    ],
-    [
-     9,
-     10
-    ],
     [
      12,
      18
@@ -5920,24 +5268,8 @@
    ],
    "bottom": [
     [
-     0,
-     1
-    ],
-    [
-     3,
-     4
-    ],
-    [
-     6,
-     7
-    ],
-    [
      12,
      20
-    ],
-    [
-     22,
-     23
     ]
    ]
   }
@@ -5986,48 +5318,10 @@
   ],
   "file": "art/kit/09_helix/616_extra_scenes_viewport_overlook.png",
   "exits": {
-   "left": [
-    [
-     3,
-     5
-    ]
-   ],
-   "right": [
-    [
-     4,
-     5
-    ]
-   ],
    "top": [
     [
-     2,
-     5
-    ],
-    [
-     7,
-     8
-    ],
-    [
-     10,
-     13
-    ],
-    [
-     15,
-     22
-    ]
-   ],
-   "bottom": [
-    [
-     10,
-     13
-    ],
-    [
-     15,
-     17
-    ],
-    [
-     21,
-     22
+     9,
+     14
     ]
    ]
   }
@@ -6047,26 +5341,16 @@
   ],
   "file": "art/kit/09_helix/617_extra_scenes_coolant_basin.png",
   "exits": {
-   "right": [
-    [
-     0,
-     15
-    ]
-   ],
    "top": [
     [
-     5,
-     10
-    ],
-    [
-     12,
-     23
+     14,
+     19
     ]
    ],
    "bottom": [
     [
      14,
-     23
+     19
     ]
    ]
   }
@@ -6086,30 +5370,6 @@
   ],
   "file": "art/kit/09_helix/618_extra_scenes_containment_wing.png",
   "exits": {
-   "left": [
-    [
-     5,
-     7
-    ],
-    [
-     9,
-     11
-    ],
-    [
-     13,
-     14
-    ]
-   ],
-   "right": [
-    [
-     1,
-     3
-    ],
-    [
-     6,
-     13
-    ]
-   ],
    "top": [
     [
      14,
@@ -6119,11 +5379,7 @@
    "bottom": [
     [
      1,
-     11
-    ],
-    [
-     21,
-     23
+     7
     ]
    ]
   }
@@ -6174,18 +5430,14 @@
   "exits": {
    "top": [
     [
-     7,
-     8
-    ],
-    [
-     10,
-     13
+     9,
+     14
     ]
    ],
    "bottom": [
     [
-     15,
-     18
+     14,
+     20
     ]
    ]
   }
@@ -6208,19 +5460,7 @@
    "left": [
     [
      8,
-     12
-    ]
-   ],
-   "right": [
-    [
-     5,
-     12
-    ]
-   ],
-   "top": [
-    [
-     13,
-     20
+     11
     ]
    ]
   }
@@ -6303,7 +5543,14 @@
    16
   ],
   "file": "art/kit/09_helix/626_relay_tower_exterior.png",
-  "exits": {}
+  "exits": {
+   "left": [
+    [
+     9,
+     11
+    ]
+   ]
+  }
  },
  "627": {
   "src": "Helix Station - Relay Tower - 02 Trial Floor.png",
@@ -6381,12 +5628,6 @@
   ],
   "file": "art/kit/09_helix/630_residential_helix_quiet_court_option_1.png",
   "exits": {
-   "right": [
-    [
-     5,
-     6
-    ]
-   ],
    "bottom": [
     [
      10,
@@ -6477,7 +5718,14 @@
    16
   ],
   "file": "art/kit/09_helix/634_spaceport_landing_pad.png",
-  "exits": {}
+  "exits": {
+   "top": [
+    [
+     11,
+     14
+    ]
+   ]
+  }
  },
  "635": {
   "src": "Neonis - Battle Arena - 01 Neon Megadome Exterior.png",
@@ -6493,7 +5741,14 @@
    16
   ],
   "file": "art/kit/05_neonis/635_battle_arena_neon_megadome_exterior.png",
-  "exits": {}
+  "exits": {
+   "left": [
+    [
+     8,
+     12
+    ]
+   ]
+  }
  },
  "636": {
   "src": "Neonis - Battle Arena - 02 Neon Megadome Lobby.png",
@@ -6525,40 +5780,7 @@
    16
   ],
   "file": "art/kit/05_neonis/637_battle_arena_neon_megadome_battle_floor.png",
-  "exits": {
-   "left": [
-    [
-     0,
-     5
-    ]
-   ],
-   "right": [
-    [
-     0,
-     5
-    ],
-    [
-     11,
-     15
-    ]
-   ],
-   "top": [
-    [
-     0,
-     2
-    ],
-    [
-     21,
-     23
-    ]
-   ],
-   "bottom": [
-    [
-     14,
-     23
-    ]
-   ]
-  }
+  "exits": {}
  },
  "638": {
   "src": "Neonis - Battle Arena - 03 Neon Megadome Battle Room.png",
@@ -6632,30 +5854,10 @@
   ],
   "file": "art/kit/05_neonis/639_cave_entrance.png",
   "exits": {
-   "left": [
-    [
-     0,
-     12
-    ],
-    [
-     14,
-     15
-    ]
-   ],
-   "top": [
-    [
-     0,
-     1
-    ],
-    [
-     3,
-     10
-    ]
-   ],
    "bottom": [
     [
-     0,
-     9
+     10,
+     14
     ]
    ]
   }
@@ -6674,32 +5876,7 @@
    16
   ],
   "file": "art/kit/05_neonis/640_cave_floor_1.png",
-  "exits": {
-   "left": [
-    [
-     0,
-     15
-    ]
-   ],
-   "right": [
-    [
-     0,
-     15
-    ]
-   ],
-   "top": [
-    [
-     0,
-     23
-    ]
-   ],
-   "bottom": [
-    [
-     0,
-     23
-    ]
-   ]
-  }
+  "exits": {}
  },
  "641": {
   "src": "Neonis - Cave - 03 Floor 2.png",
@@ -6747,7 +5924,32 @@
    16
   ],
   "file": "art/kit/05_neonis/643_crossroads_neon_crossroads.png",
-  "exits": {}
+  "exits": {
+   "left": [
+    [
+     5,
+     9
+    ]
+   ],
+   "right": [
+    [
+     5,
+     9
+    ]
+   ],
+   "top": [
+    [
+     8,
+     13
+    ]
+   ],
+   "bottom": [
+    [
+     8,
+     13
+    ]
+   ]
+  }
  },
  "644": {
   "src": "Neonis - Crossroads - 02 Signal Junction.png",
@@ -6784,10 +5986,6 @@
    ],
    "bottom": [
     [
-     5,
-     8
-    ],
-    [
      17,
      21
     ]
@@ -6809,10 +6007,28 @@
   ],
   "file": "art/kit/05_neonis/645_crossroads_canal_fork.png",
   "exits": {
+   "left": [
+    [
+     7,
+     11
+    ]
+   ],
+   "right": [
+    [
+     7,
+     11
+    ]
+   ],
+   "top": [
+    [
+     12,
+     18
+    ]
+   ],
    "bottom": [
     [
      12,
-     13
+     18
     ]
    ]
   }
@@ -6864,17 +6080,13 @@
    "top": [
     [
      9,
-     13
+     14
     ]
    ],
    "bottom": [
     [
-     10,
-     13
-    ],
-    [
-     19,
-     20
+     9,
+     14
     ]
    ]
   }
@@ -6962,22 +6174,10 @@
   ],
   "file": "art/kit/05_neonis/650_extra_scenes_static_canal.png",
   "exits": {
-   "left": [
-    [
-     4,
-     5
-    ]
-   ],
    "top": [
     [
      2,
      6
-    ]
-   ],
-   "bottom": [
-    [
-     13,
-     16
     ]
    ]
   }
@@ -7028,14 +6228,8 @@
   "exits": {
    "left": [
     [
-     10,
-     11
-    ]
-   ],
-   "right": [
-    [
-     10,
-     11
+     8,
+     12
     ]
    ]
   }
@@ -7071,36 +6265,10 @@
   ],
   "file": "art/kit/05_neonis/654_hidden_area_secret_grove.png",
   "exits": {
-   "left": [
-    [
-     3,
-     4
-    ]
-   ],
    "right": [
     [
-     13,
-     14
-    ]
-   ],
-   "top": [
-    [
-     2,
-     5
-    ],
-    [
-     11,
+     9,
      12
-    ]
-   ],
-   "bottom": [
-    [
-     3,
-     5
-    ],
-    [
-     13,
-     20
     ]
    ]
   }
@@ -7183,7 +6351,14 @@
    16
   ],
   "file": "art/kit/05_neonis/659_relay_tower_exterior.png",
-  "exits": {}
+  "exits": {
+   "left": [
+    [
+     9,
+     12
+    ]
+   ]
+  }
  },
  "660": {
   "src": "Neonis - Relay Tower - 02 Trial Floor.png",
@@ -7234,14 +6409,14 @@
   "exits": {
    "left": [
     [
-     10,
-     12
+     8,
+     13
     ]
    ],
    "right": [
     [
-     10,
-     15
+     8,
+     13
     ]
    ]
   }
@@ -7263,8 +6438,8 @@
   "exits": {
    "bottom": [
     [
-     11,
-     12
+     10,
+     13
     ]
    ]
   }
@@ -7286,8 +6461,8 @@
   "exits": {
    "right": [
     [
-     10,
-     13
+     6,
+     10
     ]
    ],
    "top": [
@@ -7328,7 +6503,14 @@
    16
   ],
   "file": "art/kit/05_neonis/666_spaceport_landing_pad.png",
-  "exits": {}
+  "exits": {
+   "right": [
+    [
+     11,
+     12
+    ]
+   ]
+  }
  },
  "667": {
   "src": "Pyros - Battle Arena - 01 Magma Pit Arena Exterior (1).png",
@@ -7384,18 +6566,6 @@
     [
      9,
      11
-    ]
-   ],
-   "right": [
-    [
-     9,
-     11
-    ]
-   ],
-   "bottom": [
-    [
-     10,
-     13
     ]
    ]
   }
@@ -7496,32 +6666,10 @@
   ],
   "file": "art/kit/07_pyros/672_battle_arena_magma_pit_arena_battle_room.png",
   "exits": {
-   "left": [
-    [
-     0,
-     14
-    ]
-   ],
-   "right": [
-    [
-     0,
-     14
-    ]
-   ],
-   "top": [
-    [
-     0,
-     23
-    ]
-   ],
    "bottom": [
     [
-     1,
-     9
-    ],
-    [
-     14,
-     22
+     11,
+     12
     ]
    ]
   }
@@ -7540,7 +6688,14 @@
    16
   ],
   "file": "art/kit/07_pyros/673_cave_entrance.png",
-  "exits": {}
+  "exits": {
+   "bottom": [
+    [
+     10,
+     14
+    ]
+   ]
+  }
  },
  "674": {
   "src": "Pyros - Cave - 02 Floor 1.png",
@@ -7639,10 +6794,6 @@
   "exits": {
    "left": [
     [
-     2,
-     3
-    ],
-    [
      5,
      9
     ]
@@ -7660,10 +6811,6 @@
     ]
    ],
    "bottom": [
-    [
-     5,
-     6
-    ],
     [
      8,
      13
@@ -7686,15 +6833,9 @@
   ],
   "file": "art/kit/07_pyros/678_crossroads_mine_junction.png",
   "exits": {
-   "left": [
-    [
-     7,
-     13
-    ]
-   ],
    "right": [
     [
-     0,
+     3,
      5
     ]
    ],
@@ -7706,8 +6847,8 @@
    ],
    "bottom": [
     [
-     2,
-     14
+     4,
+     9
     ]
    ]
   }
@@ -7729,23 +6870,11 @@
   "exits": {
    "left": [
     [
-     4,
-     6
-    ],
-    [
      8,
      10
-    ],
-    [
-     12,
-     14
     ]
    ],
    "right": [
-    [
-     3,
-     6
-    ],
     [
      8,
      10
@@ -7758,10 +6887,6 @@
     ]
    ],
    "bottom": [
-    [
-     1,
-     3
-    ],
     [
      9,
      19
@@ -7784,18 +6909,6 @@
   ],
   "file": "art/kit/07_pyros/680_extra_scenes_cinder_slope.png",
   "exits": {
-   "left": [
-    [
-     13,
-     15
-    ]
-   ],
-   "right": [
-    [
-     12,
-     13
-    ]
-   ],
    "top": [
     [
      15,
@@ -7804,7 +6917,7 @@
    ],
    "bottom": [
     [
-     0,
+     5,
      11
     ]
    ]
@@ -7825,22 +6938,10 @@
   ],
   "file": "art/kit/07_pyros/681_extra_scenes_furnace_ridge_overlook.png",
   "exits": {
-   "right": [
-    [
-     11,
-     12
-    ]
-   ],
    "top": [
     [
      7,
      14
-    ]
-   ],
-   "bottom": [
-    [
-     4,
-     21
     ]
    ]
   }
@@ -7860,12 +6961,6 @@
   ],
   "file": "art/kit/07_pyros/682_extra_scenes_lava_lake_shore.png",
   "exits": {
-   "right": [
-    [
-     8,
-     9
-    ]
-   ],
    "top": [
     [
      14,
@@ -7874,7 +6969,7 @@
    ],
    "bottom": [
     [
-     12,
+     14,
      20
     ]
    ]
@@ -7987,12 +7082,6 @@
      8,
      11
     ]
-   ],
-   "right": [
-    [
-     8,
-     11
-    ]
    ]
   }
  },
@@ -8031,12 +7120,6 @@
     [
      9,
      11
-    ]
-   ],
-   "right": [
-    [
-     7,
-     12
     ]
    ]
   }
@@ -8121,12 +7204,6 @@
   "file": "art/kit/07_pyros/693_relay_tower_exterior.png",
   "exits": {
    "left": [
-    [
-     9,
-     11
-    ]
-   ],
-   "right": [
     [
      9,
      11
@@ -8365,12 +7442,6 @@
   ],
   "file": "art/kit/03_sporeholm/702_battle_arena_mycelium_bowl_exterior.png",
   "exits": {
-   "left": [
-    [
-     9,
-     12
-    ]
-   ],
    "right": [
     [
      9,
@@ -8454,7 +7525,14 @@
    16
   ],
   "file": "art/kit/03_sporeholm/706_battle_arena_mycelium_bowl_battle_room.png",
-  "exits": {}
+  "exits": {
+   "bottom": [
+    [
+     11,
+     12
+    ]
+   ]
+  }
  },
  "707": {
   "src": "Sporeholm - Cave - 01 Entrance.png",
@@ -8493,36 +7571,7 @@
    16
   ],
   "file": "art/kit/03_sporeholm/708_cave_floor_1.png",
-  "exits": {
-   "left": [
-    [
-     0,
-     15
-    ]
-   ],
-   "right": [
-    [
-     0,
-     15
-    ]
-   ],
-   "top": [
-    [
-     0,
-     16
-    ],
-    [
-     19,
-     23
-    ]
-   ],
-   "bottom": [
-    [
-     0,
-     23
-    ]
-   ]
-  }
+  "exits": {}
  },
  "709": {
   "src": "Sporeholm - Cave - 03 Floor 2.png",
@@ -8624,12 +7673,6 @@
      7
     ]
    ],
-   "top": [
-    [
-     14,
-     18
-    ]
-   ],
    "bottom": [
     [
      4,
@@ -8669,12 +7712,6 @@
     [
      4,
      18
-    ]
-   ],
-   "bottom": [
-    [
-     13,
-     17
     ]
    ]
   }
@@ -8821,12 +7858,6 @@
      3,
      6
     ]
-   ],
-   "bottom": [
-    [
-     13,
-     17
-    ]
    ]
   }
  },
@@ -8845,16 +7876,6 @@
   ],
   "file": "art/kit/03_sporeholm/719_extra_scenes_glowcap_meadow.png",
   "exits": {
-   "top": [
-    [
-     6,
-     13
-    ],
-    [
-     19,
-     20
-    ]
-   ],
    "bottom": [
     [
      12,
@@ -8882,12 +7903,6 @@
     [
      9,
      12
-    ]
-   ],
-   "right": [
-    [
-     9,
-     11
     ]
    ]
   }
@@ -8976,12 +7991,6 @@
      9,
      12
     ]
-   ],
-   "right": [
-    [
-     9,
-     12
-    ]
    ]
   }
  },
@@ -9053,6 +8062,12 @@
     [
      9,
      11
+    ]
+   ],
+   "top": [
+    [
+     13,
+     16
     ]
    ]
   }
@@ -9162,14 +8177,10 @@
   ],
   "file": "art/kit/03_sporeholm/733_water_route_open_water_route.png",
   "exits": {
-   "top": [
+   "left": [
     [
-     0,
-     10
-    ],
-    [
-     12,
-     23
+     9,
+     13
     ]
    ]
   }
@@ -9251,15 +8262,9 @@
   ],
   "file": "art/kit/12_starfall/736_battle_arena_rift_crater_arena_exterior.png",
   "exits": {
-   "left": [
+   "right": [
     [
      9,
-     12
-    ]
-   ],
-   "bottom": [
-    [
-     11,
      12
     ]
    ]
@@ -9312,14 +8317,10 @@
   ],
   "file": "art/kit/12_starfall/739_battle_arena_rift_crater_arena_battle_floor.png",
   "exits": {
-   "top": [
+   "bottom": [
     [
-     1,
-     7
-    ],
-    [
-     14,
-     22
+     11,
+     12
     ]
    ]
   }
@@ -9406,40 +8407,7 @@
    16
   ],
   "file": "art/kit/12_starfall/742_cave_floor_1.png",
-  "exits": {
-   "left": [
-    [
-     0,
-     15
-    ]
-   ],
-   "right": [
-    [
-     0,
-     15
-    ]
-   ],
-   "top": [
-    [
-     0,
-     5
-    ],
-    [
-     7,
-     14
-    ],
-    [
-     18,
-     23
-    ]
-   ],
-   "bottom": [
-    [
-     0,
-     23
-    ]
-   ]
-  }
+  "exits": {}
  },
  "743": {
   "src": "Starfall Rift - Cave - 03 Floor 2.png",
@@ -9545,19 +8513,11 @@
     [
      4,
      9
-    ],
-    [
-     12,
-     13
-    ],
-    [
-     18,
-     19
     ]
    ],
    "bottom": [
     [
-     11,
+     15,
      20
     ]
    ]
@@ -9580,7 +8540,7 @@
   "exits": {
    "left": [
     [
-     0,
+     1,
      9
     ]
    ],
@@ -9715,7 +8675,7 @@
    "bottom": [
     [
      4,
-     9
+     10
     ]
    ]
   }
@@ -9738,19 +8698,13 @@
    "right": [
     [
      4,
-     5
+     8
     ]
    ],
    "top": [
     [
      3,
      8
-    ]
-   ],
-   "bottom": [
-    [
-     16,
-     21
     ]
    ]
   }
@@ -9828,12 +8782,6 @@
   ],
   "file": "art/kit/12_starfall/755_hidden_area_secret_grove.png",
   "exits": {
-   "left": [
-    [
-     10,
-     11
-    ]
-   ],
    "right": [
     [
      10,
@@ -10149,12 +9097,6 @@
   ],
   "file": "art/kit/04_thalassa/768_battle_arena_tidewater_arena_exterior.png",
   "exits": {
-   "left": [
-    [
-     9,
-     11
-    ]
-   ],
    "right": [
     [
      9,
@@ -10199,7 +9141,14 @@
    16
   ],
   "file": "art/kit/04_thalassa/770_battle_arena_tidewater_arena_battle_room_option_1.png",
-  "exits": {}
+  "exits": {
+   "bottom": [
+    [
+     11,
+     12
+    ]
+   ]
+  }
  },
  "771": {
   "src": "Thalassa - Battle Arena - 03 Tidewater Arena Battle Room option 2.png",
@@ -10254,32 +9203,7 @@
    16
   ],
   "file": "art/kit/04_thalassa/773_cave_floor_1.png",
-  "exits": {
-   "left": [
-    [
-     0,
-     15
-    ]
-   ],
-   "right": [
-    [
-     0,
-     15
-    ]
-   ],
-   "top": [
-    [
-     0,
-     23
-    ]
-   ],
-   "bottom": [
-    [
-     0,
-     23
-    ]
-   ]
-  }
+  "exits": {}
  },
  "774": {
   "src": "Thalassa - Cave - 03 Floor 2.png",
@@ -10414,10 +9338,6 @@
     [
      7,
      9
-    ],
-    [
-     13,
-     15
     ]
    ],
    "right": [
@@ -10434,7 +9354,7 @@
    ],
    "bottom": [
     [
-     0,
+     1,
      10
     ]
    ]
@@ -10580,16 +9500,6 @@
      4,
      7
     ]
-   ],
-   "bottom": [
-    [
-     17,
-     20
-    ],
-    [
-     22,
-     23
-    ]
    ]
   }
  },
@@ -10673,12 +9583,6 @@
   "file": "art/kit/04_thalassa/786_helix_hideout_disguised_entrance.png",
   "exits": {
    "left": [
-    [
-     8,
-     11
-    ]
-   ],
-   "right": [
     [
      8,
      11
@@ -10775,12 +9679,6 @@
   ],
   "file": "art/kit/04_thalassa/790_hidden_area_secret_grove.png",
   "exits": {
-   "left": [
-    [
-     9,
-     11
-    ]
-   ],
    "right": [
     [
      9,
@@ -10867,7 +9765,14 @@
    16
   ],
   "file": "art/kit/04_thalassa/795_relay_tower_exterior.png",
-  "exits": {}
+  "exits": {
+   "left": [
+    [
+     9,
+     11
+    ]
+   ]
+  }
  },
  "796": {
   "src": "Thalassa - Relay Tower - 02 Trial Floor (1).png",
@@ -11041,7 +9946,14 @@
    16
   ],
   "file": "art/kit/04_thalassa/803_spaceport_landing_pad.png",
-  "exits": {}
+  "exits": {
+   "right": [
+    [
+     9,
+     10
+    ]
+   ]
+  }
  },
  "804": {
   "src": "Thalassa - Water Route - 01 Open Water Route.png",
@@ -11060,14 +9972,8 @@
   "exits": {
    "top": [
     [
-     0,
-     23
-    ]
-   ],
-   "bottom": [
-    [
-     0,
-     23
+     1,
+     2
     ]
    ]
   }
@@ -11187,32 +10093,7 @@
    20
   ],
   "file": "art/kit/11_umbra/809_battle_arena_lantern_pit_lobby.png",
-  "exits": {
-   "left": [
-    [
-     0,
-     19
-    ]
-   ],
-   "right": [
-    [
-     0,
-     19
-    ]
-   ],
-   "top": [
-    [
-     0,
-     19
-    ]
-   ],
-   "bottom": [
-    [
-     0,
-     19
-    ]
-   ]
-  }
+  "exits": {}
  },
  "810": {
   "src": "Umbra - Battle Arena - 03 Lantern Pit Battle Floor.png",
@@ -11229,32 +10110,10 @@
   ],
   "file": "art/kit/11_umbra/810_battle_arena_lantern_pit_battle_floor.png",
   "exits": {
-   "left": [
-    [
-     0,
-     15
-    ]
-   ],
-   "right": [
-    [
-     0,
-     15
-    ]
-   ],
-   "top": [
-    [
-     0,
-     7
-    ],
-    [
-     16,
-     23
-    ]
-   ],
    "bottom": [
     [
-     0,
-     23
+     10,
+     13
     ]
    ]
   }
@@ -11319,44 +10178,10 @@
   ],
   "file": "art/kit/11_umbra/812_cave_entrance.png",
   "exits": {
-   "left": [
-    [
-     0,
-     1
-    ],
-    [
-     6,
-     9
-    ],
-    [
-     12,
-     14
-    ]
-   ],
-   "right": [
-    [
-     0,
-     6
-    ],
-    [
-     9,
-     13
-    ]
-   ],
-   "top": [
-    [
-     3,
-     6
-    ],
-    [
-     9,
-     23
-    ]
-   ],
    "bottom": [
     [
-     1,
-     8
+     9,
+     14
     ]
    ]
   }
@@ -11375,32 +10200,7 @@
    16
   ],
   "file": "art/kit/11_umbra/813_cave_floor_1.png",
-  "exits": {
-   "left": [
-    [
-     0,
-     15
-    ]
-   ],
-   "right": [
-    [
-     0,
-     15
-    ]
-   ],
-   "top": [
-    [
-     0,
-     23
-    ]
-   ],
-   "bottom": [
-    [
-     0,
-     23
-    ]
-   ]
-  }
+  "exits": {}
  },
  "814": {
   "src": "Umbra - Cave - 03 Floor 2.png",
@@ -11455,12 +10255,6 @@
      8
     ]
    ],
-   "right": [
-    [
-     5,
-     8
-    ]
-   ],
    "top": [
     [
      8,
@@ -11469,8 +10263,8 @@
    ],
    "bottom": [
     [
-     7,
-     14
+     8,
+     11
     ]
    ]
   }
@@ -11494,15 +10288,11 @@
     [
      8,
      9
-    ],
-    [
-     11,
-     15
     ]
    ],
    "right": [
     [
-     0,
+     3,
      4
     ]
    ],
@@ -11510,17 +10300,9 @@
     [
      14,
      17
-    ],
-    [
-     19,
-     23
     ]
    ],
    "bottom": [
-    [
-     0,
-     1
-    ],
     [
      3,
      9
@@ -11543,10 +10325,28 @@
   ],
   "file": "art/kit/11_umbra/818_crossroads_abyss_fork.png",
   "exits": {
+   "left": [
+    [
+     7,
+     9
+    ]
+   ],
+   "right": [
+    [
+     8,
+     9
+    ]
+   ],
    "top": [
     [
      14,
      16
+    ]
+   ],
+   "bottom": [
+    [
+     14,
+     17
     ]
    ]
   }
@@ -11566,17 +10366,7 @@
   ],
   "file": "art/kit/11_umbra/819_extra_scenes_lantern_steps.png",
   "exits": {
-   "left": [
-    [
-     0,
-     1
-    ]
-   ],
    "top": [
-    [
-     0,
-     5
-    ],
     [
      15,
      20
@@ -11615,10 +10405,6 @@
     [
      9,
      13
-    ],
-    [
-     15,
-     22
     ]
    ]
   }
@@ -11647,11 +10433,7 @@
    "bottom": [
     [
      14,
-     15
-    ],
-    [
-     18,
-     22
+     19
     ]
    ]
   }
@@ -11671,12 +10453,6 @@
   ],
   "file": "art/kit/11_umbra/822_extra_scenes_shade_hollows.png",
   "exits": {
-   "left": [
-    [
-     11,
-     15
-    ]
-   ],
    "top": [
     [
      16,
@@ -11710,16 +10486,6 @@
     [
      2,
      6
-    ]
-   ],
-   "bottom": [
-    [
-     5,
-     6
-    ],
-    [
-     13,
-     17
     ]
    ]
   }
@@ -11770,38 +10536,14 @@
   "exits": {
    "left": [
     [
-     0,
-     1
-    ],
-    [
-     5,
-     6
+     9,
+     10
     ]
    ],
    "right": [
     [
-     1,
-     4
-    ]
-   ],
-   "top": [
-    [
-     0,
-     16
-    ],
-    [
-     19,
-     21
-    ]
-   ],
-   "bottom": [
-    [
-     5,
-     6
-    ],
-    [
-     17,
-     18
+     9,
+     10
     ]
    ]
   }
@@ -11836,7 +10578,14 @@
    16
   ],
   "file": "art/kit/11_umbra/827_hidden_area_secret_grove.png",
-  "exits": {}
+  "exits": {
+   "left": [
+    [
+     9,
+     11
+    ]
+   ]
+  }
  },
  "828": {
   "src": "Umbra - Interior rooms - 01 Lantern Maker's Shop.png",
@@ -11939,10 +10688,10 @@
      11
     ]
    ],
-   "right": [
+   "bottom": [
     [
-     10,
-     11
+     11,
+     12
     ]
    ]
   }
@@ -12047,7 +10796,14 @@
    16
   ],
   "file": "art/kit/11_umbra/837_residential_umbra_quiet_court.png",
-  "exits": {}
+  "exits": {
+   "right": [
+    [
+     5,
+     7
+    ]
+   ]
+  }
  },
  "838": {
   "src": "Umbra - Residential - 03 Umbra Farmstead Edge.png",
@@ -12063,7 +10819,20 @@
    16
   ],
   "file": "art/kit/11_umbra/838_residential_umbra_farmstead_edge.png",
-  "exits": {}
+  "exits": {
+   "right": [
+    [
+     7,
+     9
+    ]
+   ],
+   "top": [
+    [
+     5,
+     8
+    ]
+   ]
+  }
  },
  "839": {
   "src": "Umbra - Shop - Interior.png",
@@ -12095,7 +10864,14 @@
    16
   ],
   "file": "art/kit/11_umbra/840_spaceport_landing_pad_option_1.png",
-  "exits": {}
+  "exits": {
+   "right": [
+    [
+     12,
+     13
+    ]
+   ]
+  }
  },
  "841": {
   "src": "Umbra - Spaceport - Landing Pad option 2.png",
@@ -12135,22 +10911,10 @@
   ],
   "file": "art/kit/14_ystra/842_battle_arena_ancient_crystal_ring_exterior.png",
   "exits": {
-   "left": [
-    [
-     9,
-     11
-    ]
-   ],
    "right": [
     [
      9,
-     10
-    ]
-   ],
-   "bottom": [
-    [
-     10,
-     13
+     11
     ]
    ]
   }
@@ -12224,32 +10988,7 @@
    16
   ],
   "file": "art/kit/14_ystra/846_cave_floor_1.png",
-  "exits": {
-   "left": [
-    [
-     0,
-     15
-    ]
-   ],
-   "right": [
-    [
-     0,
-     15
-    ]
-   ],
-   "top": [
-    [
-     0,
-     23
-    ]
-   ],
-   "bottom": [
-    [
-     0,
-     23
-    ]
-   ]
-  }
+  "exits": {}
  },
  "847": {
   "src": "Ystra - Cave - 03 Floor 2.png",
@@ -12341,8 +11080,14 @@
   "exits": {
    "left": [
     [
-     4,
+     3,
      5
+    ]
+   ],
+   "right": [
+    [
+     7,
+     9
     ]
    ],
    "top": [
@@ -12415,26 +11160,10 @@
   ],
   "file": "art/kit/14_ystra/852_extra_scenes_shard_slope.png",
   "exits": {
-   "left": [
-    [
-     14,
-     15
-    ]
-   ],
    "top": [
     [
      3,
      8
-    ]
-   ],
-   "bottom": [
-    [
-     0,
-     4
-    ],
-    [
-     13,
-     18
     ]
    ]
   }
@@ -12512,37 +11241,13 @@
   ],
   "file": "art/kit/14_ystra/855_extra_scenes_glasswood_hollows.png",
   "exits": {
-   "left": [
-    [
-     0,
-     3
-    ],
-    [
-     8,
-     15
-    ]
-   ],
-   "right": [
-    [
-     10,
-     15
-    ]
-   ],
    "top": [
-    [
-     0,
-     1
-    ],
     [
      4,
      8
     ]
    ],
    "bottom": [
-    [
-     0,
-     7
-    ],
     [
      16,
      21
@@ -12623,7 +11328,7 @@
   ],
   "file": "art/kit/14_ystra/858_hidden_area_secret_grove.png",
   "exits": {
-   "left": [
+   "right": [
     [
      9,
      12
@@ -12806,6 +11511,1492 @@
    16
   ],
   "file": "art/kit/14_ystra/867_spaceport_landing_pad.png",
+  "exits": {
+   "left": [
+    [
+     12,
+     13
+    ]
+   ]
+  }
+ },
+ "868": {
+  "src": "Apex Array - Helix Hideout - 01 Disguised Entrance.png",
+  "dir": "13_apex",
+  "world": "Apex Array",
+  "cat": "Helix Hideout",
+  "title": "01 Disguised Entrance",
+  "name": "Disguised Entrance",
+  "alt": false,
+  "type": "landmark",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/13_apex/868_helix_hideout_disguised_entrance.png",
+  "exits": {
+   "bottom": [
+    [
+     3,
+     4
+    ],
+    [
+     8,
+     15
+    ],
+    [
+     18,
+     19
+    ]
+   ]
+  }
+ },
+ "869": {
+  "src": "Apex Array - Helix Hideout - 02 Secret Lab.png",
+  "dir": "13_apex",
+  "world": "Apex Array",
+  "cat": "Helix Hideout",
+  "title": "02 Secret Lab",
+  "name": "Secret Lab",
+  "alt": false,
+  "type": "dungeon",
+  "tiles": [
+   20,
+   20
+  ],
+  "file": "art/kit/13_apex/869_helix_hideout_secret_lab.png",
+  "exits": {
+   "left": [
+    [
+     0,
+     1
+    ],
+    [
+     5,
+     10
+    ],
+    [
+     14,
+     18
+    ]
+   ],
+   "right": [
+    [
+     0,
+     10
+    ],
+    [
+     14,
+     19
+    ]
+   ],
+   "top": [
+    [
+     0,
+     4
+    ],
+    [
+     8,
+     19
+    ]
+   ],
+   "bottom": [
+    [
+     7,
+     8
+    ],
+    [
+     11,
+     12
+    ],
+    [
+     15,
+     19
+    ]
+   ]
+  }
+ },
+ "870": {
+  "src": "Apex Array - Interior rooms - 04 Family Home.png",
+  "dir": "13_apex",
+  "world": "Apex Array",
+  "cat": "Interior rooms",
+  "title": "04 Family Home",
+  "name": "Family Home",
+  "alt": false,
+  "type": "interior",
+  "tiles": [
+   20,
+   20
+  ],
+  "file": "art/kit/13_apex/870_interior_rooms_family_home.png",
+  "exits": {
+   "left": [
+    [
+     1,
+     18
+    ]
+   ],
+   "right": [
+    [
+     1,
+     18
+    ]
+   ],
+   "top": [
+    [
+     1,
+     18
+    ]
+   ],
+   "bottom": [
+    [
+     7,
+     8
+    ],
+    [
+     11,
+     12
+    ]
+   ]
+  }
+ },
+ "871": {
+  "src": "Apex Array - Interior rooms - 05 Stargazer Cottage.png",
+  "dir": "13_apex",
+  "world": "Apex Array",
+  "cat": "Interior rooms",
+  "title": "05 Stargazer Cottage",
+  "name": "Stargazer Cottage",
+  "alt": false,
+  "type": "interior",
+  "tiles": [
+   20,
+   20
+  ],
+  "file": "art/kit/13_apex/871_interior_rooms_stargazer_cottage.png",
+  "exits": {
+   "left": [
+    [
+     1,
+     19
+    ]
+   ],
+   "right": [
+    [
+     1,
+     19
+    ]
+   ],
+   "top": [
+    [
+     1,
+     18
+    ]
+   ],
+   "bottom": [
+    [
+     7,
+     8
+    ],
+    [
+     11,
+     12
+    ],
+    [
+     18,
+     19
+    ]
+   ]
+  }
+ },
+ "872": {
+  "src": "Apex Array - Water Route - 01 Open Water Route.png",
+  "dir": "13_apex",
+  "world": "Apex Array",
+  "cat": "Water Route",
+  "title": "01 Open Water Route",
+  "name": "Open Water Route",
+  "alt": false,
+  "type": "route",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/13_apex/872_water_route_open_water_route.png",
+  "exits": {
+   "top": [
+    [
+     7,
+     12
+    ],
+    [
+     15,
+     16
+    ],
+    [
+     19,
+     21
+    ]
+   ],
+   "bottom": [
+    [
+     10,
+     12
+    ],
+    [
+     16,
+     19
+    ]
+   ]
+  }
+ },
+ "873": {
+  "src": "Apex Array - Water Route - 02 Island Chain.png",
+  "dir": "13_apex",
+  "world": "Apex Array",
+  "cat": "Water Route",
+  "title": "02 Island Chain",
+  "name": "Island Chain",
+  "alt": false,
+  "type": "route",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/13_apex/873_water_route_island_chain.png",
+  "exits": {
+   "top": [
+    [
+     9,
+     17
+    ]
+   ],
+   "bottom": [
+    [
+     10,
+     17
+    ]
+   ]
+  }
+ },
+ "874": {
+  "src": "Dustara - Extra scenes - 07 Sunset Tunnel Mouth.png",
+  "dir": "01_dustara",
+  "world": "Dustara",
+  "cat": "Extra scenes",
+  "title": "07 Sunset Tunnel Mouth",
+  "name": "Sunset Tunnel Mouth",
+  "alt": false,
+  "type": "route",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/01_dustara/874_extra_scenes_sunset_tunnel_mouth.png",
+  "exits": {
+   "left": [
+    [
+     5,
+     6
+    ]
+   ]
+  }
+ },
+ "875": {
+  "src": "Dustara - Relay Tower - 01 Exterior.png",
+  "dir": "01_dustara",
+  "world": "Dustara",
+  "cat": "Relay Tower",
+  "title": "01 Exterior",
+  "name": "Exterior",
+  "alt": false,
+  "type": "landmark",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/01_dustara/875_relay_tower_exterior.png",
+  "exits": {
+   "left": [
+    [
+     8,
+     9
+    ]
+   ],
+   "right": [
+    [
+     8,
+     9
+    ]
+   ]
+  }
+ },
+ "876": {
+  "src": "Dustara - Relay Tower - 02 Trial Floor.png",
+  "dir": "01_dustara",
+  "world": "Dustara",
+  "cat": "Relay Tower",
+  "title": "02 Trial Floor",
+  "name": "Trial Floor",
+  "alt": false,
+  "type": "tower",
+  "tiles": [
+   20,
+   20
+  ],
+  "file": "art/kit/01_dustara/876_relay_tower_trial_floor.png",
+  "exits": {
+   "left": [
+    [
+     4,
+     17
+    ]
+   ],
+   "right": [
+    [
+     4,
+     17
+    ]
+   ],
+   "top": [
+    [
+     2,
+     8
+    ],
+    [
+     11,
+     17
+    ]
+   ],
+   "bottom": [
+    [
+     5,
+     12
+    ]
+   ]
+  }
+ },
+ "877": {
+  "src": "Dustara - Relay Tower - 03 Keeper Room.png",
+  "dir": "01_dustara",
+  "world": "Dustara",
+  "cat": "Relay Tower",
+  "title": "03 Keeper Room",
+  "name": "Keeper Room",
+  "alt": false,
+  "type": "tower",
+  "tiles": [
+   20,
+   20
+  ],
+  "file": "art/kit/01_dustara/877_relay_tower_keeper_room.png",
+  "exits": {
+   "left": [
+    [
+     13,
+     14
+    ]
+   ]
+  }
+ },
+ "878": {
+  "src": "Dustara - Water Route - 01 Open Water Route.png",
+  "dir": "01_dustara",
+  "world": "Dustara",
+  "cat": "Water Route",
+  "title": "01 Open Water Route",
+  "name": "Open Water Route",
+  "alt": false,
+  "type": "route",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/01_dustara/878_water_route_open_water_route.png",
+  "exits": {
+   "bottom": [
+    [
+     10,
+     12
+    ]
+   ]
+  }
+ },
+ "879": {
+  "src": "Dustara - Water Route - 02 Island Chain.png",
+  "dir": "01_dustara",
+  "world": "Dustara",
+  "cat": "Water Route",
+  "title": "02 Island Chain",
+  "name": "Island Chain",
+  "alt": false,
+  "type": "route",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/01_dustara/879_water_route_island_chain.png",
+  "exits": {
+   "right": [
+    [
+     1,
+     2
+    ]
+   ]
+  }
+ },
+ "880": {
+  "src": "Ferrox - Water Route - 01 Open Water Route.png",
+  "dir": "02_ferrox",
+  "world": "Ferrox",
+  "cat": "Water Route",
+  "title": "01 Open Water Route",
+  "name": "Open Water Route",
+  "alt": false,
+  "type": "route",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/02_ferrox/880_water_route_open_water_route.png",
+  "exits": {
+   "right": [
+    [
+     7,
+     8
+    ]
+   ]
+  }
+ },
+ "881": {
+  "src": "Ferrox - Water Route - 02 Island Chain.png",
+  "dir": "02_ferrox",
+  "world": "Ferrox",
+  "cat": "Water Route",
+  "title": "02 Island Chain",
+  "name": "Island Chain",
+  "alt": false,
+  "type": "route",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/02_ferrox/881_water_route_island_chain.png",
+  "exits": {
+   "bottom": [
+    [
+     5,
+     8
+    ],
+    [
+     11,
+     19
+    ]
+   ]
+  }
+ },
+ "882": {
+  "src": "Glacia - Water Route - 01 Open Water Route.png",
+  "dir": "08_glacia",
+  "world": "Glacia",
+  "cat": "Water Route",
+  "title": "01 Open Water Route",
+  "name": "Open Water Route",
+  "alt": false,
+  "type": "route",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/08_glacia/882_water_route_open_water_route.png",
+  "exits": {
+   "right": [
+    [
+     6,
+     9
+    ]
+   ],
+   "top": [
+    [
+     14,
+     23
+    ]
+   ],
+   "bottom": [
+    [
+     8,
+     11
+    ]
+   ]
+  }
+ },
+ "883": {
+  "src": "Glacia - Water Route - 02 Island Chain.png",
+  "dir": "08_glacia",
+  "world": "Glacia",
+  "cat": "Water Route",
+  "title": "02 Island Chain",
+  "name": "Island Chain",
+  "alt": false,
+  "type": "route",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/08_glacia/883_water_route_island_chain.png",
+  "exits": {
+   "top": [
+    [
+     8,
+     10
+    ],
+    [
+     13,
+     15
+    ]
+   ],
+   "bottom": [
+    [
+     2,
+     3
+    ],
+    [
+     6,
+     16
+    ]
+   ]
+  }
+ },
+ "884": {
+  "src": "Glyphos - Helix Hideout - 01 Disguised Entrance.png",
+  "dir": "06_glyphos",
+  "world": "Glyphos",
+  "cat": "Helix Hideout",
+  "title": "01 Disguised Entrance",
+  "name": "Disguised Entrance",
+  "alt": false,
+  "type": "landmark",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/06_glyphos/884_helix_hideout_disguised_entrance.png",
+  "exits": {
+   "left": [
+    [
+     9,
+     10
+    ]
+   ],
+   "right": [
+    [
+     8,
+     10
+    ]
+   ]
+  }
+ },
+ "885": {
+  "src": "Glyphos - Helix Hideout - 02 Secret Lab.png",
+  "dir": "06_glyphos",
+  "world": "Glyphos",
+  "cat": "Helix Hideout",
+  "title": "02 Secret Lab",
+  "name": "Secret Lab",
+  "alt": false,
+  "type": "dungeon",
+  "tiles": [
+   20,
+   20
+  ],
+  "file": "art/kit/06_glyphos/885_helix_hideout_secret_lab.png",
+  "exits": {
+   "bottom": [
+    [
+     6,
+     13
+    ]
+   ]
+  }
+ },
+ "886": {
+  "src": "Glyphos - Relay Tower - 01 Exterior.png",
+  "dir": "06_glyphos",
+  "world": "Glyphos",
+  "cat": "Relay Tower",
+  "title": "01 Exterior",
+  "name": "Exterior",
+  "alt": false,
+  "type": "landmark",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/06_glyphos/886_relay_tower_exterior.png",
+  "exits": {
+   "right": [
+    [
+     3,
+     5
+    ],
+    [
+     8,
+     14
+    ]
+   ],
+   "bottom": [
+    [
+     15,
+     17
+    ],
+    [
+     21,
+     22
+    ]
+   ]
+  }
+ },
+ "887": {
+  "src": "Glyphos - Relay Tower - 02 Trial Floor.png",
+  "dir": "06_glyphos",
+  "world": "Glyphos",
+  "cat": "Relay Tower",
+  "title": "02 Trial Floor",
+  "name": "Trial Floor",
+  "alt": false,
+  "type": "tower",
+  "tiles": [
+   20,
+   20
+  ],
+  "file": "art/kit/06_glyphos/887_relay_tower_trial_floor.png",
+  "exits": {
+   "left": [
+    [
+     1,
+     2
+    ],
+    [
+     4,
+     19
+    ]
+   ],
+   "right": [
+    [
+     2,
+     19
+    ]
+   ],
+   "top": [
+    [
+     1,
+     18
+    ]
+   ],
+   "bottom": [
+    [
+     0,
+     8
+    ],
+    [
+     11,
+     19
+    ]
+   ]
+  }
+ },
+ "888": {
+  "src": "Glyphos - Relay Tower - 03 Keeper Room.png",
+  "dir": "06_glyphos",
+  "world": "Glyphos",
+  "cat": "Relay Tower",
+  "title": "03 Keeper Room",
+  "name": "Keeper Room",
+  "alt": false,
+  "type": "tower",
+  "tiles": [
+   20,
+   20
+  ],
+  "file": "art/kit/06_glyphos/888_relay_tower_keeper_room.png",
   "exits": {}
+ },
+ "889": {
+  "src": "Halo - Helix Hideout - 01 Disguised Entrance.png",
+  "dir": "10_halo",
+  "world": "Halo",
+  "cat": "Helix Hideout",
+  "title": "01 Disguised Entrance",
+  "name": "Disguised Entrance",
+  "alt": false,
+  "type": "landmark",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/10_halo/889_helix_hideout_disguised_entrance.png",
+  "exits": {}
+ },
+ "890": {
+  "src": "Halo - Helix Hideout - 02 Secret Lab.png",
+  "dir": "10_halo",
+  "world": "Halo",
+  "cat": "Helix Hideout",
+  "title": "02 Secret Lab",
+  "name": "Secret Lab",
+  "alt": false,
+  "type": "dungeon",
+  "tiles": [
+   20,
+   20
+  ],
+  "file": "art/kit/10_halo/890_helix_hideout_secret_lab.png",
+  "exits": {
+   "left": [
+    [
+     8,
+     11
+    ]
+   ],
+   "right": [
+    [
+     8,
+     11
+    ],
+    [
+     13,
+     17
+    ]
+   ],
+   "bottom": [
+    [
+     5,
+     8
+    ],
+    [
+     11,
+     13
+    ]
+   ]
+  }
+ },
+ "891": {
+  "src": "Halo - Water Route - 01 Open Water Route.png",
+  "dir": "10_halo",
+  "world": "Halo",
+  "cat": "Water Route",
+  "title": "01 Open Water Route",
+  "name": "Open Water Route",
+  "alt": false,
+  "type": "route",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/10_halo/891_water_route_open_water_route.png",
+  "exits": {
+   "bottom": [
+    [
+     6,
+     14
+    ],
+    [
+     17,
+     19
+    ]
+   ]
+  }
+ },
+ "892": {
+  "src": "Halo - Water Route - 02 Island Chain.png",
+  "dir": "10_halo",
+  "world": "Halo",
+  "cat": "Water Route",
+  "title": "02 Island Chain",
+  "name": "Island Chain",
+  "alt": false,
+  "type": "route",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/10_halo/892_water_route_island_chain.png",
+  "exits": {
+   "top": [
+    [
+     11,
+     16
+    ]
+   ]
+  }
+ },
+ "893": {
+  "src": "Helix Station - Water Route - 01 Open Water Route.png",
+  "dir": "09_helix",
+  "world": "Helix Station",
+  "cat": "Water Route",
+  "title": "01 Open Water Route",
+  "name": "Open Water Route",
+  "alt": false,
+  "type": "route",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/09_helix/893_water_route_open_water_route.png",
+  "exits": {
+   "bottom": [
+    [
+     6,
+     14
+    ]
+   ]
+  }
+ },
+ "894": {
+  "src": "Helix Station - Water Route - 02 Island Chain.png",
+  "dir": "09_helix",
+  "world": "Helix Station",
+  "cat": "Water Route",
+  "title": "02 Island Chain",
+  "name": "Island Chain",
+  "alt": false,
+  "type": "route",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/09_helix/894_water_route_island_chain.png",
+  "exits": {
+   "bottom": [
+    [
+     5,
+     17
+    ]
+   ]
+  }
+ },
+ "895": {
+  "src": "Neonis - Water Route - 01 Open Water Route.png",
+  "dir": "05_neonis",
+  "world": "Neonis",
+  "cat": "Water Route",
+  "title": "01 Open Water Route",
+  "name": "Open Water Route",
+  "alt": false,
+  "type": "route",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/05_neonis/895_water_route_open_water_route.png",
+  "exits": {
+   "bottom": [
+    [
+     10,
+     15
+    ],
+    [
+     19,
+     20
+    ]
+   ]
+  }
+ },
+ "896": {
+  "src": "Neonis - Water Route - 02 Island Chain.png",
+  "dir": "05_neonis",
+  "world": "Neonis",
+  "cat": "Water Route",
+  "title": "02 Island Chain",
+  "name": "Island Chain",
+  "alt": false,
+  "type": "route",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/05_neonis/896_water_route_island_chain.png",
+  "exits": {
+   "right": [
+    [
+     2,
+     3
+    ]
+   ],
+   "bottom": [
+    [
+     6,
+     9
+    ]
+   ]
+  }
+ },
+ "897": {
+  "src": "Pyros - Lava Route - 01 Open Lava Route.png",
+  "dir": "07_pyros",
+  "world": "Pyros",
+  "cat": "Lava Route",
+  "title": "01 Open Lava Route",
+  "name": "Open Lava Route",
+  "alt": false,
+  "type": "route",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/07_pyros/897_lava_route_open_lava_route.png",
+  "exits": {
+   "right": [
+    [
+     0,
+     13
+    ]
+   ],
+   "top": [
+    [
+     22,
+     23
+    ]
+   ],
+   "bottom": [
+    [
+     20,
+     22
+    ]
+   ]
+  }
+ },
+ "898": {
+  "src": "Pyros - Lava Route - 02 Island Chain.png",
+  "dir": "07_pyros",
+  "world": "Pyros",
+  "cat": "Lava Route",
+  "title": "02 Island Chain",
+  "name": "Island Chain",
+  "alt": false,
+  "type": "route",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/07_pyros/898_lava_route_island_chain.png",
+  "exits": {
+   "left": [
+    [
+     1,
+     13
+    ]
+   ],
+   "bottom": [
+    [
+     0,
+     3
+    ]
+   ]
+  }
+ },
+ "899": {
+  "src": "Sporeholm - Helix Hideout - 01 Disguised Entrance.png",
+  "dir": "03_sporeholm",
+  "world": "Sporeholm",
+  "cat": "Helix Hideout",
+  "title": "01 Disguised Entrance",
+  "name": "Disguised Entrance",
+  "alt": false,
+  "type": "landmark",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/03_sporeholm/899_helix_hideout_disguised_entrance.png",
+  "exits": {}
+ },
+ "900": {
+  "src": "Sporeholm - Helix Hideout - 02 Secret Lab.png",
+  "dir": "03_sporeholm",
+  "world": "Sporeholm",
+  "cat": "Helix Hideout",
+  "title": "02 Secret Lab",
+  "name": "Secret Lab",
+  "alt": false,
+  "type": "dungeon",
+  "tiles": [
+   20,
+   20
+  ],
+  "file": "art/kit/03_sporeholm/900_helix_hideout_secret_lab.png",
+  "exits": {
+   "bottom": [
+    [
+     4,
+     15
+    ]
+   ]
+  }
+ },
+ "901": {
+  "src": "Starfall Rift - Helix Hideout - 01 Disguised Entrance.png",
+  "dir": "12_starfall",
+  "world": "Starfall Rift",
+  "cat": "Helix Hideout",
+  "title": "01 Disguised Entrance",
+  "name": "Disguised Entrance",
+  "alt": false,
+  "type": "landmark",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/12_starfall/901_helix_hideout_disguised_entrance.png",
+  "exits": {
+   "right": [
+    [
+     8,
+     9
+    ]
+   ],
+   "bottom": [
+    [
+     14,
+     15
+    ]
+   ]
+  }
+ },
+ "902": {
+  "src": "Starfall Rift - Helix Hideout - 02 Secret Lab.png",
+  "dir": "12_starfall",
+  "world": "Starfall Rift",
+  "cat": "Helix Hideout",
+  "title": "02 Secret Lab",
+  "name": "Secret Lab",
+  "alt": false,
+  "type": "dungeon",
+  "tiles": [
+   20,
+   20
+  ],
+  "file": "art/kit/12_starfall/902_helix_hideout_secret_lab.png",
+  "exits": {
+   "left": [
+    [
+     1,
+     10
+    ]
+   ],
+   "right": [
+    [
+     3,
+     10
+    ]
+   ],
+   "top": [
+    [
+     2,
+     17
+    ]
+   ],
+   "bottom": [
+    [
+     7,
+     12
+    ]
+   ]
+  }
+ },
+ "903": {
+  "src": "Starfall Rift - Water Route - 01 Open Water Route.png",
+  "dir": "12_starfall",
+  "world": "Starfall Rift",
+  "cat": "Water Route",
+  "title": "01 Open Water Route",
+  "name": "Open Water Route",
+  "alt": false,
+  "type": "route",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/12_starfall/903_water_route_open_water_route.png",
+  "exits": {
+   "top": [
+    [
+     6,
+     12
+    ],
+    [
+     15,
+     17
+    ]
+   ],
+   "bottom": [
+    [
+     7,
+     14
+    ]
+   ]
+  }
+ },
+ "904": {
+  "src": "Starfall Rift - Water Route - 02 Island Chain.png",
+  "dir": "12_starfall",
+  "world": "Starfall Rift",
+  "cat": "Water Route",
+  "title": "02 Island Chain",
+  "name": "Island Chain",
+  "alt": false,
+  "type": "route",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/12_starfall/904_water_route_island_chain.png",
+  "exits": {
+   "right": [
+    [
+     2,
+     4
+    ],
+    [
+     7,
+     8
+    ],
+    [
+     12,
+     13
+    ]
+   ],
+   "top": [
+    [
+     4,
+     21
+    ]
+   ],
+   "bottom": [
+    [
+     4,
+     19
+    ]
+   ]
+  }
+ },
+ "905": {
+  "src": "Umbra - Extra scenes - 07 Abyss Rim Descent.png",
+  "dir": "11_umbra",
+  "world": "Umbra",
+  "cat": "Extra scenes",
+  "title": "07 Abyss Rim Descent",
+  "name": "Abyss Rim Descent",
+  "alt": false,
+  "type": "route",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/11_umbra/905_extra_scenes_abyss_rim_descent.png",
+  "exits": {
+   "left": [
+    [
+     1,
+     2
+    ]
+   ],
+   "right": [
+    [
+     1,
+     3
+    ]
+   ],
+   "top": [
+    [
+     14,
+     22
+    ]
+   ]
+  }
+ },
+ "906": {
+  "src": "Umbra - Water Route - 01 Open Water Route.png",
+  "dir": "11_umbra",
+  "world": "Umbra",
+  "cat": "Water Route",
+  "title": "01 Open Water Route",
+  "name": "Open Water Route",
+  "alt": false,
+  "type": "route",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/11_umbra/906_water_route_open_water_route.png",
+  "exits": {
+   "top": [
+    [
+     2,
+     4
+    ],
+    [
+     8,
+     14
+    ]
+   ],
+   "bottom": [
+    [
+     3,
+     5
+    ],
+    [
+     7,
+     10
+    ],
+    [
+     13,
+     23
+    ]
+   ]
+  }
+ },
+ "907": {
+  "src": "Umbra - Water Route - 02 Island Chain.png",
+  "dir": "11_umbra",
+  "world": "Umbra",
+  "cat": "Water Route",
+  "title": "02 Island Chain",
+  "name": "Island Chain",
+  "alt": false,
+  "type": "route",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/11_umbra/907_water_route_island_chain.png",
+  "exits": {
+   "left": [
+    [
+     4,
+     7
+    ],
+    [
+     9,
+     11
+    ],
+    [
+     13,
+     15
+    ]
+   ],
+   "right": [
+    [
+     0,
+     7
+    ],
+    [
+     12,
+     15
+    ]
+   ],
+   "top": [
+    [
+     2,
+     19
+    ],
+    [
+     22,
+     23
+    ]
+   ],
+   "bottom": [
+    [
+     0,
+     12
+    ],
+    [
+     15,
+     23
+    ]
+   ]
+  }
+ },
+ "908": {
+  "src": "Ystra - Helix Hideout - 01 Disguised Entrance.png",
+  "dir": "14_ystra",
+  "world": "Ystra",
+  "cat": "Helix Hideout",
+  "title": "01 Disguised Entrance",
+  "name": "Disguised Entrance",
+  "alt": false,
+  "type": "landmark",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/14_ystra/908_helix_hideout_disguised_entrance.png",
+  "exits": {}
+ },
+ "909": {
+  "src": "Ystra - Helix Hideout - 02 Secret Lab.png",
+  "dir": "14_ystra",
+  "world": "Ystra",
+  "cat": "Helix Hideout",
+  "title": "02 Secret Lab",
+  "name": "Secret Lab",
+  "alt": false,
+  "type": "dungeon",
+  "tiles": [
+   20,
+   20
+  ],
+  "file": "art/kit/14_ystra/909_helix_hideout_secret_lab.png",
+  "exits": {
+   "bottom": [
+    [
+     4,
+     5
+    ]
+   ]
+  }
+ },
+ "910": {
+  "src": "Ystra - Relay Tower - 01 Exterior.png",
+  "dir": "14_ystra",
+  "world": "Ystra",
+  "cat": "Relay Tower",
+  "title": "01 Exterior",
+  "name": "Exterior",
+  "alt": false,
+  "type": "landmark",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/14_ystra/910_relay_tower_exterior.png",
+  "exits": {}
+ },
+ "911": {
+  "src": "Ystra - Relay Tower - 02 Trial Floor.png",
+  "dir": "14_ystra",
+  "world": "Ystra",
+  "cat": "Relay Tower",
+  "title": "02 Trial Floor",
+  "name": "Trial Floor",
+  "alt": false,
+  "type": "tower",
+  "tiles": [
+   20,
+   20
+  ],
+  "file": "art/kit/14_ystra/911_relay_tower_trial_floor.png",
+  "exits": {
+   "left": [
+    [
+     0,
+     3
+    ],
+    [
+     6,
+     10
+    ],
+    [
+     13,
+     17
+    ]
+   ],
+   "right": [
+    [
+     2,
+     3
+    ],
+    [
+     6,
+     17
+    ]
+   ],
+   "top": [
+    [
+     0,
+     8
+    ],
+    [
+     11,
+     17
+    ]
+   ],
+   "bottom": [
+    [
+     5,
+     14
+    ]
+   ]
+  }
+ },
+ "912": {
+  "src": "Ystra - Relay Tower - 03 Keeper Room.png",
+  "dir": "14_ystra",
+  "world": "Ystra",
+  "cat": "Relay Tower",
+  "title": "03 Keeper Room",
+  "name": "Keeper Room",
+  "alt": false,
+  "type": "tower",
+  "tiles": [
+   20,
+   20
+  ],
+  "file": "art/kit/14_ystra/912_relay_tower_keeper_room.png",
+  "exits": {}
+ },
+ "913": {
+  "src": "Ystra - Water Route - 01 Open Water Route.png",
+  "dir": "14_ystra",
+  "world": "Ystra",
+  "cat": "Water Route",
+  "title": "01 Open Water Route",
+  "name": "Open Water Route",
+  "alt": false,
+  "type": "route",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/14_ystra/913_water_route_open_water_route.png",
+  "exits": {
+   "bottom": [
+    [
+     6,
+     17
+    ]
+   ]
+  }
+ },
+ "914": {
+  "src": "Ystra - Water Route - 02 Island Chain.png",
+  "dir": "14_ystra",
+  "world": "Ystra",
+  "cat": "Water Route",
+  "title": "02 Island Chain",
+  "name": "Island Chain",
+  "alt": false,
+  "type": "route",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/14_ystra/914_water_route_island_chain.png",
+  "exits": {
+   "top": [
+    [
+     11,
+     13
+    ]
+   ],
+   "bottom": [
+    [
+     6,
+     18
+    ]
+   ]
+  }
  }
 }
