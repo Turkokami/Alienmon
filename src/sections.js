@@ -138,7 +138,8 @@ function drawSec(){const s=SWORLD[G.sec.id],p=SM?SM.t/SM.n:0,jp=SJ?SJ.t/SEC_JUMP
  txt('◆'+G.shards,128,134,'#fff')}
 // 16x24 figure standing on its tile (feet on the tile's bottom edge)
 function secDrawChar(art,f,x,y,step,me){ctx.fillStyle='rgba(20,10,20,0.35)';ctx.beginPath();ctx.ellipse(x+8,y+15,6,2,0,0,6.283);ctx.fill();
- const k=art+'_'+f,b=step?1:0,X=Math.round(x-4),Y=Math.round(y-9-b);if(!(me&&step&&dchar(k+'_w'+(1+(stepc&1)),X,Y,24,24))&&!dchar(k,X,Y,24,24)&&!dchar(art,X,Y,24,24))kid(Math.round(x+2),Math.round(y-2),f==='left',f==='up',step)}
+ const k=art+'_'+f,b=step?1:0,X=Math.round(x-4),Y=Math.round(y-9-b);if(me&&G.sec&&secTile(SWORLD[G.sec.id],G.sec.x,G.sec.y)==='~'&&dchar(art+'_swim_'+f+((frame>>4)&1?'_w1':''),X,Y+4,24,24)){}   // on water (Hydro-skiff): swimming
+ else if(!(me&&step&&dchar(k+'_w'+(1+(stepc&1)),X,Y,24,24))&&!dchar(k,X,Y,24,24)&&!dchar(art,X,Y,24,24))kid(Math.round(x+2),Math.round(y-2),f==='left',f==='up',step)}
 function drawSecDebug(s,cx,cy){ctx.save();for(let y=0;y<s.tiles[1];y++)for(let x=0;x<s.tiles[0];x++){const c=s.rows[y][x],X=x*16-cx,Y=y*16-cy;if(X<-16||Y<-16||X>160||Y>144)continue;
   if(c==='#'){ctx.fillStyle='rgba(255,0,0,0.33)';ctx.fillRect(X,Y,16,16)}else if(c===','){ctx.fillStyle='rgba(0,255,0,0.25)';ctx.fillRect(X,Y,16,16)}
   ctx.strokeStyle='rgba(255,0,255,0.35)';ctx.lineWidth=0.5;ctx.strokeRect(X+0.25,Y+0.25,15.5,15.5)}
