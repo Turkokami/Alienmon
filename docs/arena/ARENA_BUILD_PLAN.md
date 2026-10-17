@@ -2,7 +2,7 @@
 
 A real-time arena battle mode for Alienmon. It's inspired by fan games like *Pokemon Arena 2D* (real-time 2D sprite battles, several creatures at once, terrain that deforms) and by *Pokemon Stadium* (cups, rental teams, a battle hub), but built only from Alienmon's own creatures, rules and art.
 
-Status: **planned**. The render prompts are ready in `docs/arena/prompts/`, and the importer is `tools/import_arena_sheet.py`.
+Status: **Phase 0 and the Phase 1 prototype are built.** START > Arena opens a playable 1v1 against the computer (`src/arena.js`). The render prompts are ready in `docs/arena/prompts/`, and the importer is `tools/import_arena_sheet.py`. Until art is rendered, the arena uses the existing battle sprites, battle backgrounds and move effects.
 Working titles that need owner approval before they appear in game text: **Linker Arena**, **Link Battle Court**, and the six cup names.
 
 ---
@@ -28,7 +28,9 @@ You pick Alienmon from your party, or rentals, and drop into a top-down arena on
 **Stats** (`s` in `alienmon.json` = HP, Atk, Def, SpA, SpD, Spe; computed at level 50):
 - HP is HP.
 - Atk/SpA and Def/SpD go into the existing damage formula unchanged.
-- Spe sets walk speed: 90 + Spe x 0.6 px/s at a 64 px tile, so the slowest Alienmon is about 0.5x the fastest. Spe also sets cooldown recovery: up to 15% faster for the fastest Alienmon.
+- Spe (after stat stages, shock and Traits) sets walk speed: 0.45 + Spe/260 screen pixels per frame, capped at Spe 160, so the slowest Alienmon moves at about half the speed of the fastest. Spe also shortens cooldowns by Spe/1000, up to 15%.
+
+**HP scale:** turn-based damage would end a real-time match in seconds, so every HP change in the arena (hits, burn, poison, healing) is multiplied by `match.scale` in `data/arena.json` (0.12; at least 1 point). A player who never dodges lasts about 30 seconds against Normal.
 
 **Moves** come from each Alienmon's own learned moves (up to 4). The cooldown and wind-up follow from power, so every move works with no per-move tuning:
 
@@ -40,8 +42,8 @@ You pick Alienmon from your party, or rentals, and drop into a top-down arena on
 | 101+ (signature, legendary) | ultimate | 10 s | 0.7 s, with a warning marker |
 | 0 (status) | buff, debuff, heal | 8 s | 0.2 s |
 
-- **Accuracy:** a real-time hit either connects or misses on its own. Accuracy below 100 shrinks the hitbox instead: 85 accuracy gives a 15% smaller hitbox.
-- **Move shapes:** each move gets a shape that sets how it travels: PROJ, LOB, BEAM, CHAIN, WAVE, CONE, ARC, DASH, BURST, ZONE, RAIN, FIELD or AURA. All 86 assignments (56 type moves plus 30 signatures) are in `tools/arena_prompts.js` (`MOVES`, `SIG_SHAPE`). Those same tables write the effect prompts, so art and behaviour always match.
+- **Accuracy:** a real-time hit either connects or misses on its own, so move accuracy is ignored and dodging takes its place. Shrinking the hitbox of low-accuracy moves is a P2-07 balance option.
+- **Move shapes:** each move gets a shape that sets how it travels: PROJ, LOB, BEAM, CHAIN, WAVE, CONE, ARC, DASH, BURST, ZONE, RAIN, FIELD or AURA. All 128 assignments (98 type moves, including the 42 added in `data/moves_fx.json`, plus 30 signatures) live in `data/arena.json`. The game and the prompt generator both read that file, so art and behaviour always match. A move missing from the file gets a shape from its power and category, and the prompt generator fails until it is added.
 
 **Status conditions:**
 
@@ -74,10 +76,10 @@ Each phase ends with something playable. Ticket IDs follow the repo's commit sty
 
 | Ticket | Work | Done when |
 |---|---|---|
-| P0-01 | Prompt pack + generator (`tools/arena_prompts.js`, `docs/arena/prompts/`) | **Done.** 476 renders listed in `docs/arena/render_tracker.csv` |
+| P0-01 | Prompt pack + generator (`tools/arena_prompts.js`, `docs/arena/prompts/`) | **Done.** 518 renders listed in `docs/arena/render_tracker.csv` |
 | P0-02 | Importer (`tools/import_arena_sheet.py`): pose sheets -> 6 aligned 192 px poses; effects/tiles/hazards -> transparent webp | **Done.** Tested on synthetic sheets; re-test on the first real batch |
-| P0-03 | `tools/build.js` loads `art/arena/{poses,fx,tiles,hazards,scenes,ui}` with the existing `folder()` helper into `__ARENA__` | The build lists the arena asset counts; a missing folder is not an error |
-| P0-04 | Lazy loading | Arena images load only when a match starts (the fighters, the arena and their move effects), never at title. The `--inline` Android build includes them but only decodes on use. |
+| P0-03 | `tools/build.js` loads `art/arena/{poses,scenes,fx,tiles,hazards,ui}` with the existing `folder()` helper into `__ARENAART__`, and `data/arena.json` into `__ARENA__` | **Done.** The build prints the arena art counts; missing folders are fine |
+| P0-04 | Lazy loading | **Done** for the web build: arena images go through `lazyImgs`, so they load only when a match draws them. Android `--inline` size is still an owner decision (section 7) |
 
 ### Phase 1: Prototype, 1v1 against the computer
 
@@ -85,23 +87,23 @@ Assets needed first: `sprites_batch_01`, `fx_batch_7`, `fx_batch_1`, the Dustara
 
 | Ticket | Work | Done when |
 |---|---|---|
-| P1-01 | `src/arena.js` skeleton: `arenaStart(teamA, teamB, arenaKey, rules)`, its own update/draw called from `loop()` while `G.mode==='arena'`, and `arenaEnd()` returning to the menu | You can enter and leave an empty arena with no console errors |
-| P1-02 | Movement: 8-way keyboard / d-pad / gamepad (the engine already reads `getGamepads`) and the touch stick; collision with the arena border; pose choice (side_a/b mirrored, front, back) with a bob when there is no sheet yet | All 4 directions animate; walking speed follows Spe |
-| P1-03 | 4 move buttons, cooldowns and wind-ups from the power table; the touch buttons from `ui/move_buttons` | Every button fires, greys out and refills |
-| P1-04 | Shapes PROJ, BEAM, ARC, AURA, BURST (the starter moves) with circle and line hitboxes | All 16 starter-type moves (Plasma, Hydro, Bio, Volt) hit correctly |
-| P1-05 | Damage through the shared formula + `eff()`; hit sparks for normal, super-effective, resisted and critical hits; knockback; hurt pose with a white flash; screen shake on heavy hits | Super-effective visibly hits harder; numbers match turn-based for the same matchup |
-| P1-06 | KO: KO pose + poof, result banner, back to menu | A full match plays start to finish |
-| P1-07 | Computer opponent v1: approach / keep distance / dodge warning markers / use heavy moves when the target is in range; Easy, Normal and Hard set by reaction delay (450/250/120 ms) | Normal beats a new player sometimes and loses to a careful one |
-| P1-08 | HUD: HP bars, portraits from the front sprite, timer (99 s), countdown 3-2-1-GO | Matches the UI sheets |
-| P1-09 | Entry point: "Arena" on the title menu (playtest only, behind `UNLOCK_ALL`) | Owner can playtest from the live build |
+| P1-01 | `src/arena.js`: `rtaMenu()`, `rtaStart()`, `rtaUpd()`/`rtaDraw()` run from `loop()` while `scene==='rta'`, `rtaLeave()` back to the START menu. Fighters are level-50 copies, so the save's party never changes | **Done** |
+| P1-02 | Movement: 8-way d-pad / keyboard / gamepad, speed from Spe, arena border, bodies push apart; pose choice (side_a/b mirrored, attack, hurt, KO poses when imported; otherwise front/back sprites with a walking bob) | **Done**. The analog touch stick waits for the UI sheet |
+| P1-03 | Moves: A uses the selected move, B selects the next, keys 1-4 / J K L I fire directly; cooldowns and wind-ups from the power table; move bar with cooldown fill | **Done** |
+| P1-04 | Shapes | **Done for all 13 shapes**, ahead of plan (P2-01): PROJ, LOB, WAVE, BEAM, CHAIN, ARC, CONE, BURST, DASH, ZONE, RAIN, FIELD, AURA. CHAIN hits its one target for now |
+| P1-05 | Damage through `act()` (type chart, Traits, crits, status, drain, contact Traits), scaled by `match.scale`; floating numbers, SUPER! / resist / CRIT!, knockback, hurt flash, screen shake | **Done** |
+| P1-06 | KO, VICTORY! / TRY AGAIN! / DRAW, then Rematch / New foe / Leave; a win/loss/draw record in `G.rta` | **Done** |
+| P1-07 | Computer opponent: keeps its best move's range, strafes, sidesteps shots and warning rings, aims with an error set by difficulty; Easy, Normal and Hard decide every 27/15/7 frames | **Done**. Balance pass is P2-07 |
+| P1-08 | HUD: names, HP bars, 99 s timer, 3-2-1-GO, message strip for Trait and status lines | **Done** with drawn shapes; swap in the UI sheets when rendered |
+| P1-09 | Entry point: **Arena** in the START menu, shown as "Arena (beta)" | **Done**. It is visible to every player; say if it should be hidden until a story point |
 
 ### Phase 2: Every move, every Trait, every arena
 
 | Ticket | Work |
 |---|---|
-| P2-01 | Remaining shapes: LOB, CHAIN, WAVE, CONE, DASH, ZONE, RAIN, FIELD, so all 56 type moves and 30 signature moves work |
-| P2-02 | Status conditions in real time (table above) with the status effects |
-| P2-03 | All 55 Traits (rules above), each with the gold Trait-trigger flash and the name shown in a small toast |
+| P2-01 | Arena effect sheets replace the borrowed battle effects (`art/arena/fx`), and CHAIN jumps to a second target in multi-fighter modes |
+| P2-02 | Status effect sprites (burn, poison and the rest already work in game logic: burn and poison tick every 2 s, freeze holds for 1.5 s then gives 3 s of immunity, shock and confusion can spoil a move) |
+| P2-03 | Trait trigger flash. Traits already work through `act()`, `entry()` and the 3-second Trait tick; their messages show in the message strip |
 | P2-04 | Terrain grid + deformation + 20 s recovery, drawn with each arena's tile sheet |
 | P2-05 | 14 planet arenas + practice court, each with its hazard (dust devils, geysers, lava flares, icicles, wind gusts, rift portals...) on a timer, always shown by the warning marker first |
 | P2-06 | Arena select screen using the existing `art/scenes/<planet>_battle.jpg` as cards |
@@ -134,7 +136,7 @@ Real-time online play is harder than the turn-based plan in `PVP_PLAN.md`. Turns
 
 | Ticket | Work |
 |---|---|
-| P5-01 | Deterministic simulation: a fixed 20 Hz logic tick, seeded RNG (`rng(roomSeed + tick)`), no `Math.random` or frame-time maths inside `arena.js` logic. Drawing interpolates between ticks. **Build this rule in from Phase 1** so nothing has to be rewritten. |
+| P5-01 | Deterministic simulation. The arena already steps once per fixed 60 fps frame and its own choices use a seeded `rng` (`RTA.r`). Still to do: `act()`, `canAct()` and `mk()` use `Math.random`, so they need a seeded random source passed in. **Build this rule in from Phase 1** so nothing has to be rewritten. |
 | P5-02 | Lockstep over Supabase Realtime: each client sends `{tick, inputs}`; 3-tick (150 ms) input delay; stalls show "Waiting for opponent" |
 | P5-03 | Rooms: reuse the `pvp_rooms` table and 4-letter codes from `PVP_PLAN.md`; server-side team validation |
 | P5-04 | Replays: store the seed plus both input lists, which also settles disputes |
@@ -150,11 +152,11 @@ Real-time online play is harder than the turn-based plan in `PVP_PLAN.md`. Turns
 | Terrain damage tile sheets | 15 | same | P2 |
 | Hazard sheets | 15 | same | P2 |
 | Arena lobby exterior + interior | 2 | `arena_scenes_C.md` | P3 |
-| Type move effects | 56 | `prompts/fx/fx_batch_1..4` | Batch 1 in P1 |
+| Type move effects | 98 | `prompts/fx/fx_batch_1..4` | Batch 1 in P1 |
 | Signature move effects | 30 | `prompts/fx/fx_batch_5..6` | P2 |
 | Common + status effects | 10 | `prompts/fx/fx_batch_7` | P1 |
 | UI sheets | 10 | `prompts/ui/ui_batch_1.md` | P1 |
-| **Total renders** | **476** | | |
+| **Total renders** | **518** | | |
 
 **Audio:** no prompts are needed. Arena music uses the code-synthesized `CHIP` tracks: one new fast battle loop per tier (practice, cup, final), plus the existing `battle_spark.mp3`. The sound effects list (hit, super-effective hit, critical hit, KO, countdown beep, GO, wind-up charge, swap) can be synthesized the same way.
 

@@ -88,3 +88,8 @@ Dustmere Breeze (towns), Starlight Drift (space) and Battle Spark (battles). The
 `src/template.html`: each has a tempo, a chord per bar, and an 8-step melody per bar (`-` holds, `.` rests), so
 new tracks are easy to write. The START menu Music option cycles Chip / Song / Off (M key too).
 `CHIP_VOL` sets the chiptune volume.
+
+## Linker Arena (beta)
+START > Arena opens a real-time 1v1 against the computer at level 50 (`src/arena.js`). Both Alienmon are copies, so the party is never changed; only a win/loss record is saved (`G.rta`).
+Move shapes, cooldown tiers and the HP scale are in `data/arena.json`. The full plan is `docs/arena/ARENA_BUILD_PLAN.md`, and the render prompts are in `docs/arena/prompts/`.
+Imported arena art (`python3 tools/import_arena_sheet.py`) lands in `art/arena/` and is picked up by the build automatically. Until then the arena uses the battle sprites, battle backgrounds and move effects.
