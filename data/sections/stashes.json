@@ -312,8 +312,8 @@
    "section": "027",
    "name": "Molten Frontier: Shadow Tunnel Mouth",
    "tile": [
-    12,
-    10
+    15,
+    13
    ],
    "item": "harmonic",
    "n": 5,
@@ -336,6 +336,17 @@
    "tile": [
     6,
     14
+   ],
+   "item": "stasis",
+   "n": 3,
+   "tier": 1
+  },
+  {
+   "section": "470",
+   "name": "Dustmere Lane Homes",
+   "tile": [
+    17,
+    3
    ],
    "item": "stasis",
    "n": 3,
@@ -677,8 +688,8 @@
    "section": "029",
    "name": "Ferrox Spaceport",
    "tile": [
-    5,
-    3
+    21,
+    9
    ],
    "item": "cure",
    "n": 2,
@@ -710,8 +721,8 @@
    "section": "506",
    "name": "Rustvale Quiet Court",
    "tile": [
-    1,
-    5
+    22,
+    4
    ],
    "item": "revive",
    "n": 1,
@@ -721,8 +732,8 @@
    "section": "507",
    "name": "Rustvale Farmstead",
    "tile": [
-    18,
-    11
+    2,
+    1
    ],
    "item": "gel",
    "n": 2,
@@ -1127,6 +1138,17 @@
    "tier": 2
   },
   {
+   "section": "728",
+   "name": "Mirefen Lane Homes",
+   "tile": [
+    6,
+    2
+   ],
+   "item": "dust",
+   "n": 300,
+   "tier": 2
+  },
+  {
    "section": "729",
    "name": "Mirefen Quiet Court",
    "tile": [
@@ -1141,8 +1163,8 @@
    "section": "730",
    "name": "Mirefen Farmstead",
    "tile": [
-    5,
-    11
+    11,
+    14
    ],
    "item": "dust",
    "n": 300,
@@ -1492,11 +1514,22 @@
    "tier": 2
   },
   {
+   "section": "800",
+   "name": "Saltreach Quiet Court",
+   "tile": [
+    22,
+    8
+   ],
+   "item": "megagel",
+   "n": 1,
+   "tier": 2
+  },
+  {
    "section": "801",
    "name": "Saltreach Farmstead",
    "tile": [
-    19,
-    11
+    9,
+    12
    ],
    "item": "megagel",
    "n": 1,
@@ -1528,8 +1561,8 @@
    "section": "790",
    "name": "Saltreach Secret Grove",
    "tile": [
-    8,
-    11
+    7,
+    10
    ],
    "item": "stasis",
    "n": 5,
@@ -1539,8 +1572,8 @@
    "section": "790",
    "name": "Saltreach Secret Grove",
    "tile": [
-    1,
-    9
+    3,
+    6
    ],
    "item": "harmonic",
    "n": 2,
@@ -1860,7 +1893,7 @@
    "section": "663",
    "name": "Neonis Quiet Court",
    "tile": [
-    21,
+    1,
     4
    ],
    "item": "harmonic",
@@ -2214,7 +2247,7 @@
    "section": "072",
    "name": "Sunken Landing",
    "tile": [
-    10,
+    15,
     13
    ],
    "item": "ether",
@@ -2247,7 +2280,7 @@
    "section": "077",
    "name": "Glyph Hollow",
    "tile": [
-    16,
+    14,
     3
    ],
    "item": "harmonic",
@@ -2258,8 +2291,8 @@
    "section": "566",
    "name": "Dig Camp Lane Homes",
    "tile": [
-    20,
-    13
+    17,
+    2
    ],
    "item": "dust",
    "n": 500,
@@ -2269,8 +2302,8 @@
    "section": "568",
    "name": "Dig Camp Farmstead",
    "tile": [
-    16,
-    12
+    11,
+    14
    ],
    "item": "dust",
    "n": 500,
@@ -2280,8 +2313,8 @@
    "section": "567",
    "name": "Dig Camp Quiet Court",
    "tile": [
-    1,
-    7
+    21,
+    9
    ],
    "item": "ether",
    "n": 1,
@@ -2730,11 +2763,22 @@
    "tier": 4
   },
   {
+   "section": "696",
+   "name": "Cinder Hollow Lane Homes",
+   "tile": [
+    9,
+    2
+   ],
+   "item": "ether",
+   "n": 2,
+   "tier": 4
+  },
+  {
    "section": "697",
    "name": "Cinder Hollow Quiet Court",
    "tile": [
-    22,
-    13
+    1,
+    9
    ],
    "item": "megagel",
    "n": 3,
@@ -2744,8 +2788,8 @@
    "section": "698",
    "name": "Cinder Hollow Farmstead",
    "tile": [
-    5,
-    12
+    11,
+    14
    ],
    "item": "megagel",
    "n": 3,
@@ -3139,11 +3183,22 @@
    "tier": 4
   },
   {
+   "section": "537",
+   "name": "Frostmark Lane Homes",
+   "tile": [
+    16,
+    4
+   ],
+   "item": "jammer",
+   "n": 2,
+   "tier": 4
+  },
+  {
    "section": "538",
    "name": "Frostmark Quiet Court",
    "tile": [
-    18,
-    7
+    22,
+    4
    ],
    "item": "revive",
    "n": 2,
@@ -3153,8 +3208,8 @@
    "section": "539",
    "name": "Frostmark Farmstead",
    "tile": [
-    14,
-    12
+    2,
+    1
    ],
    "item": "megagel",
    "n": 3,
@@ -3507,8 +3562,8 @@
    "section": "630",
    "name": "Officers Court",
    "tile": [
-    22,
-    6
+    1,
+    4
    ],
    "item": "harmonic",
    "n": 5,
@@ -3862,7 +3917,7 @@
    "name": "Skyreach Quiet Court",
    "tile": [
     22,
-    10
+    4
    ],
    "item": "harmonic",
    "n": 5,
@@ -4147,8 +4202,8 @@
    "section": "602",
    "name": "Skyfarm Edge",
    "tile": [
-    2,
-    11
+    11,
+    14
    ],
    "item": "maxrevive",
    "n": 1,
@@ -4278,6 +4333,17 @@
    "tier": 6
   },
   {
+   "section": "837",
+   "name": "Gravewell Quiet Court",
+   "tile": [
+    1,
+    9
+   ],
+   "item": "dust",
+   "n": 1600,
+   "tier": 6
+  },
+  {
    "section": "838",
    "name": "Umbra Farmstead Edge",
    "tile": [
@@ -4292,7 +4358,7 @@
    "section": "840",
    "name": "Umbra Spaceport",
    "tile": [
-    19,
+    4,
     2
    ],
    "item": "dust",
@@ -4800,8 +4866,8 @@
    "section": "767",
    "name": "Starfall Spaceport",
    "tile": [
-    5,
-    3
+    21,
+    9
    ],
    "item": "maxrevive",
    "n": 1,
@@ -4819,11 +4885,22 @@
    "tier": 6
   },
   {
+   "section": "764",
+   "name": "Starfall Quiet Court",
+   "tile": [
+    22,
+    10
+   ],
+   "item": "ether",
+   "n": 3,
+   "tier": 6
+  },
+  {
    "section": "765",
    "name": "Starfall Farmstead Edge",
    "tile": [
-    18,
-    11
+    11,
+    14
    ],
    "item": "fullgel",
    "n": 3,
@@ -5176,8 +5253,8 @@
    "section": "430",
    "name": "Summit Lane Homes",
    "tile": [
-    15,
-    13
+    8,
+    2
    ],
    "item": "maxrevive",
    "n": 2,
@@ -5187,8 +5264,8 @@
    "section": "431",
    "name": "Stargazer Quiet Court",
    "tile": [
-    22,
-    8
+    1,
+    4
    ],
    "item": "dust",
    "n": 2500,
@@ -5198,8 +5275,8 @@
    "section": "432",
    "name": "Summit Farmstead",
    "tile": [
-    9,
-    12
+    1,
+    4
    ],
    "item": "maxrevive",
    "n": 2,
@@ -5703,11 +5780,22 @@
    "tier": 7
   },
   {
+   "section": "863",
+   "name": "Fragment Lane Homes",
+   "tile": [
+    16,
+    1
+   ],
+   "item": "maxrevive",
+   "n": 2,
+   "tier": 7
+  },
+  {
    "section": "864",
    "name": "Fragment Quiet Court",
    "tile": [
-    2,
-    5
+    22,
+    14
    ],
    "item": "maxrevive",
    "n": 2,
@@ -5717,8 +5805,8 @@
    "section": "865",
    "name": "Seedfall Farmstead",
    "tile": [
-    8,
-    11
+    11,
+    14
    ],
    "item": "ether",
    "n": 5,
@@ -6025,8 +6113,8 @@
    "section": "867",
    "name": "Ystra Spaceport",
    "tile": [
-    19,
-    12
+    21,
+    9
    ],
    "item": "dust",
    "n": 2500,

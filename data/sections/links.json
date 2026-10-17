@@ -690,126 +690,6 @@
    "why": "V3 kit door"
   },
   {
-   "interior": "094",
-   "parent": "093",
-   "door": [
-    8,
-    3
-   ],
-   "door2": [
-    9,
-    3
-   ],
-   "mat": [
-    [
-     9,
-     18
-    ],
-    [
-     10,
-     18
-    ]
-   ],
-   "confidence": "high",
-   "why": "V3 kit door"
-  },
-  {
-   "interior": "095",
-   "parent": "093",
-   "door": [
-    13,
-    3
-   ],
-   "door2": [
-    14,
-    3
-   ],
-   "mat": [
-    [
-     9,
-     18
-    ],
-    [
-     10,
-     18
-    ]
-   ],
-   "confidence": "high",
-   "why": "V3 kit door"
-  },
-  {
-   "interior": "103",
-   "parent": "534",
-   "door": [
-    11,
-    7
-   ],
-   "door2": [
-    12,
-    7
-   ],
-   "mat": [
-    [
-     9,
-     17
-    ],
-    [
-     10,
-     17
-    ]
-   ],
-   "confidence": "high",
-   "why": "V3 kit door"
-  },
-  {
-   "interior": "512",
-   "parent": "511",
-   "door": [
-    11,
-    6
-   ],
-   "door2": [
-    12,
-    6
-   ],
-   "mat": [
-    [
-     9,
-     18
-    ],
-    [
-     10,
-     18
-    ]
-   ],
-   "confidence": "high",
-   "why": "V3 kit door"
-  },
-  {
-   "interior": "528",
-   "parent": "527",
-   "door": [
-    11,
-    6
-   ],
-   "door2": [
-    12,
-    6
-   ],
-   "mat": [
-    [
-     9,
-     18
-    ],
-    [
-     10,
-     18
-    ]
-   ],
-   "confidence": "high",
-   "why": "V3 kit door"
-  },
-  {
    "interior": "606",
    "parent": "605",
    "door": [
@@ -1434,6 +1314,126 @@
    ],
    "door2": [
     9,
+    6
+   ],
+   "mat": [
+    [
+     9,
+     18
+    ],
+    [
+     10,
+     18
+    ]
+   ],
+   "confidence": "high",
+   "why": "V3 kit door"
+  },
+  {
+   "interior": "094",
+   "parent": "093",
+   "door": [
+    8,
+    3
+   ],
+   "door2": [
+    9,
+    3
+   ],
+   "mat": [
+    [
+     9,
+     18
+    ],
+    [
+     10,
+     18
+    ]
+   ],
+   "confidence": "high",
+   "why": "V3 kit door"
+  },
+  {
+   "interior": "095",
+   "parent": "093",
+   "door": [
+    13,
+    3
+   ],
+   "door2": [
+    14,
+    3
+   ],
+   "mat": [
+    [
+     9,
+     18
+    ],
+    [
+     10,
+     18
+    ]
+   ],
+   "confidence": "high",
+   "why": "V3 kit door"
+  },
+  {
+   "interior": "103",
+   "parent": "534",
+   "door": [
+    11,
+    7
+   ],
+   "door2": [
+    12,
+    7
+   ],
+   "mat": [
+    [
+     9,
+     17
+    ],
+    [
+     10,
+     17
+    ]
+   ],
+   "confidence": "high",
+   "why": "V3 kit door"
+  },
+  {
+   "interior": "512",
+   "parent": "511",
+   "door": [
+    11,
+    6
+   ],
+   "door2": [
+    12,
+    6
+   ],
+   "mat": [
+    [
+     9,
+     18
+    ],
+    [
+     10,
+     18
+    ]
+   ],
+   "confidence": "high",
+   "why": "V3 kit door"
+  },
+  {
+   "interior": "528",
+   "parent": "527",
+   "door": [
+    11,
+    6
+   ],
+   "door2": [
+    12,
     6
    ],
    "mat": [
@@ -3866,243 +3866,6 @@
     "why": "Deep Mines depths altar reward"
    }
   ],
-  "537": [
-   {
-    "tile": [
-     4,
-     6
-    ],
-    "k": "house",
-    "to": "178",
-    "why": "V3 kit house door"
-   },
-   {
-    "tile": [
-     5,
-     6
-    ],
-    "k": "house",
-    "to": "178",
-    "why": "V3 kit house door"
-   },
-   {
-    "tile": [
-     11,
-     6
-    ],
-    "k": "house",
-    "to": "531",
-    "why": "V3 kit house door"
-   },
-   {
-    "tile": [
-     12,
-     6
-    ],
-    "k": "house",
-    "to": "531",
-    "why": "V3 kit house door"
-   },
-   {
-    "tile": [
-     19,
-     6
-    ],
-    "k": "house",
-    "to": "178",
-    "why": "V3 kit house door"
-   },
-   {
-    "tile": [
-     20,
-     6
-    ],
-    "k": "house",
-    "to": "178",
-    "why": "V3 kit house door"
-   }
-  ],
-  "538": [
-   {
-    "tile": [
-     4,
-     4
-    ],
-    "k": "house",
-    "to": "530",
-    "why": "V3 kit house door"
-   },
-   {
-    "tile": [
-     5,
-     4
-    ],
-    "k": "house",
-    "to": "530",
-    "why": "V3 kit house door"
-   },
-   {
-    "tile": [
-     11,
-     4
-    ],
-    "k": "house",
-    "to": "532",
-    "why": "V3 kit house door"
-   },
-   {
-    "tile": [
-     12,
-     4
-    ],
-    "k": "house",
-    "to": "532",
-    "why": "V3 kit house door"
-   },
-   {
-    "tile": [
-     16,
-     4
-    ],
-    "k": "house",
-    "to": "178",
-    "why": "V3 kit house door"
-   },
-   {
-    "tile": [
-     17,
-     4
-    ],
-    "k": "house",
-    "to": "178",
-    "why": "V3 kit house door"
-   },
-   {
-    "tile": [
-     2,
-     13
-    ],
-    "k": "house",
-    "to": "193",
-    "why": "V3 kit house door"
-   },
-   {
-    "tile": [
-     3,
-     13
-    ],
-    "k": "house",
-    "to": "193",
-    "why": "V3 kit house door"
-   }
-  ],
-  "539": [
-   {
-    "tile": [
-     4,
-     4
-    ],
-    "k": "house",
-    "to": "178",
-    "why": "V3 kit house door"
-   },
-   {
-    "tile": [
-     5,
-     4
-    ],
-    "k": "house",
-    "to": "178",
-    "why": "V3 kit house door"
-   },
-   {
-    "tile": [
-     11,
-     5
-    ],
-    "k": "house",
-    "to": "178",
-    "why": "V3 kit house door"
-   }
-  ],
-  "094": [
-   {
-    "tile": [
-     9,
-     6
-    ],
-    "k": "bay"
-   },
-   {
-    "tile": [
-     10,
-     6
-    ],
-    "k": "bay"
-   }
-  ],
-  "095": [
-   {
-    "tile": [
-     4,
-     9
-    ],
-    "k": "shop"
-   },
-   {
-    "tile": [
-     4,
-     10
-    ],
-    "k": "shop"
-   }
-  ],
-  "104": [
-   {
-    "tile": [
-     12,
-     2
-    ],
-    "k": "keeper",
-    "why": "Keeper Ingrid Vale on the upper dais, challenged from (12,3)"
-   }
-  ],
-  "529": [
-   {
-    "tile": [
-     20,
-     1
-    ],
-    "k": "chest",
-    "item": "fullgel",
-    "n": 2,
-    "why": "hidden ice grove reward"
-   }
-  ],
-  "524": [
-   {
-    "tile": [
-     18,
-     12
-    ],
-    "k": "chest",
-    "item": "harmonic",
-    "n": 3,
-    "why": "Crevasse Hollows dead-end reward"
-   }
-  ],
-  "100": [
-   {
-    "tile": [
-     11,
-     6
-    ],
-    "k": "chest",
-    "item": "maxrevive",
-    "n": 1,
-    "why": "Crystal Caverns depths shrine reward"
-   }
-  ],
   "629": [
    {
     "tile": [
@@ -5526,6 +5289,243 @@
     "why": "Deepcut Mine depths reward"
    }
   ],
+  "537": [
+   {
+    "tile": [
+     4,
+     6
+    ],
+    "k": "house",
+    "to": "178",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     5,
+     6
+    ],
+    "k": "house",
+    "to": "178",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     11,
+     6
+    ],
+    "k": "house",
+    "to": "531",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     12,
+     6
+    ],
+    "k": "house",
+    "to": "531",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     19,
+     6
+    ],
+    "k": "house",
+    "to": "178",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     20,
+     6
+    ],
+    "k": "house",
+    "to": "178",
+    "why": "V3 kit house door"
+   }
+  ],
+  "538": [
+   {
+    "tile": [
+     4,
+     4
+    ],
+    "k": "house",
+    "to": "530",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     5,
+     4
+    ],
+    "k": "house",
+    "to": "530",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     11,
+     4
+    ],
+    "k": "house",
+    "to": "532",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     12,
+     4
+    ],
+    "k": "house",
+    "to": "532",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     16,
+     4
+    ],
+    "k": "house",
+    "to": "178",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     17,
+     4
+    ],
+    "k": "house",
+    "to": "178",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     2,
+     13
+    ],
+    "k": "house",
+    "to": "193",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     3,
+     13
+    ],
+    "k": "house",
+    "to": "193",
+    "why": "V3 kit house door"
+   }
+  ],
+  "539": [
+   {
+    "tile": [
+     4,
+     4
+    ],
+    "k": "house",
+    "to": "178",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     5,
+     4
+    ],
+    "k": "house",
+    "to": "178",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     11,
+     5
+    ],
+    "k": "house",
+    "to": "178",
+    "why": "V3 kit house door"
+   }
+  ],
+  "094": [
+   {
+    "tile": [
+     9,
+     6
+    ],
+    "k": "bay"
+   },
+   {
+    "tile": [
+     10,
+     6
+    ],
+    "k": "bay"
+   }
+  ],
+  "095": [
+   {
+    "tile": [
+     4,
+     9
+    ],
+    "k": "shop"
+   },
+   {
+    "tile": [
+     4,
+     10
+    ],
+    "k": "shop"
+   }
+  ],
+  "104": [
+   {
+    "tile": [
+     12,
+     2
+    ],
+    "k": "keeper",
+    "why": "Keeper Ingrid Vale on the upper dais, challenged from (12,3)"
+   }
+  ],
+  "529": [
+   {
+    "tile": [
+     20,
+     1
+    ],
+    "k": "chest",
+    "item": "fullgel",
+    "n": 2,
+    "why": "hidden ice grove reward"
+   }
+  ],
+  "524": [
+   {
+    "tile": [
+     18,
+     12
+    ],
+    "k": "chest",
+    "item": "harmonic",
+    "n": 3,
+    "why": "Crevasse Hollows dead-end reward"
+   }
+  ],
+  "100": [
+   {
+    "tile": [
+     11,
+     6
+    ],
+    "k": "chest",
+    "item": "maxrevive",
+    "n": 1,
+    "why": "Crystal Caverns depths shrine reward"
+   }
+  ],
   "470": [
    {
     "tile": [
@@ -6453,70 +6453,6 @@
     13
    ]
   },
-  "531": {
-   "default": [
-    9,
-    16
-   ]
-  },
-  "530": {
-   "default": [
-    9,
-    15
-   ]
-  },
-  "532": {
-   "default": [
-    9,
-    16
-   ]
-  },
-  "541": {
-   "arrival": [
-    12,
-    10
-   ],
-   "default": [
-    12,
-    10
-   ]
-  },
-  "098": {
-   "default": [
-    5,
-    3
-   ]
-  },
-  "099": {
-   "default": [
-    4,
-    3
-   ]
-  },
-  "100": {
-   "default": [
-    11,
-    13
-   ]
-  },
-  "103": {
-   "default": [
-    9,
-    15
-   ]
-  },
-  "104": {
-   "default": [
-    11,
-    12
-   ]
-  },
-  "513": {
-   "default": [
-    11,
-    13
-   ]
-  },
   "623": {
    "default": [
     9,
@@ -6887,6 +6823,70 @@
    "default": [
     9,
     15
+   ]
+  },
+  "531": {
+   "default": [
+    9,
+    16
+   ]
+  },
+  "530": {
+   "default": [
+    9,
+    15
+   ]
+  },
+  "532": {
+   "default": [
+    9,
+    16
+   ]
+  },
+  "541": {
+   "arrival": [
+    12,
+    10
+   ],
+   "default": [
+    12,
+    10
+   ]
+  },
+  "098": {
+   "default": [
+    5,
+    3
+   ]
+  },
+  "099": {
+   "default": [
+    4,
+    3
+   ]
+  },
+  "100": {
+   "default": [
+    11,
+    13
+   ]
+  },
+  "103": {
+   "default": [
+    9,
+    15
+   ]
+  },
+  "104": {
+   "default": [
+    11,
+    12
+   ]
+  },
+  "513": {
+   "default": [
+    11,
+    13
    ]
   },
   "466": {
@@ -7287,23 +7287,6 @@
    "why": "V3: the spaceport is the arrival point and the way home"
   },
   {
-   "section": "541",
-   "tiles": [
-    [
-     12,
-     8
-    ],
-    [
-     13,
-     8
-    ]
-   ],
-   "node": "dustara",
-   "planet": "dustara",
-   "label": "your ship back to Dustara",
-   "why": "V3: the spaceport is the arrival point and the way home"
-  },
-  {
    "section": "634",
    "tiles": [
     [
@@ -7386,6 +7369,23 @@
   },
   {
    "section": "029",
+   "tiles": [
+    [
+     12,
+     8
+    ],
+    [
+     13,
+     8
+    ]
+   ],
+   "node": "dustara",
+   "planet": "dustara",
+   "label": "your ship back to Dustara",
+   "why": "V3: the spaceport is the arrival point and the way home"
+  },
+  {
+   "section": "541",
    "tiles": [
     [
      12,
@@ -10010,236 +10010,6 @@
    "kind": "stairs"
   },
   {
-   "section": "531",
-   "tile": [
-    9,
-    17
-   ],
-   "to": "back",
-   "at": [
-    9,
-    16
-   ],
-   "face": "down",
-   "kind": "door",
-   "parent": "537"
-  },
-  {
-   "section": "531",
-   "tile": [
-    10,
-    17
-   ],
-   "to": "back",
-   "at": [
-    10,
-    16
-   ],
-   "face": "down",
-   "kind": "door",
-   "parent": "537"
-  },
-  {
-   "section": "530",
-   "tile": [
-    9,
-    16
-   ],
-   "to": "back",
-   "at": [
-    9,
-    15
-   ],
-   "face": "down",
-   "kind": "door",
-   "parent": "538"
-  },
-  {
-   "section": "530",
-   "tile": [
-    10,
-    16
-   ],
-   "to": "back",
-   "at": [
-    10,
-    15
-   ],
-   "face": "down",
-   "kind": "door",
-   "parent": "538"
-  },
-  {
-   "section": "532",
-   "tile": [
-    9,
-    17
-   ],
-   "to": "back",
-   "at": [
-    9,
-    16
-   ],
-   "face": "down",
-   "kind": "door",
-   "parent": "538"
-  },
-  {
-   "section": "532",
-   "tile": [
-    10,
-    17
-   ],
-   "to": "back",
-   "at": [
-    10,
-    16
-   ],
-   "face": "down",
-   "kind": "door",
-   "parent": "538"
-  },
-  {
-   "section": "514",
-   "tile": [
-    11,
-    3
-   ],
-   "to": "098",
-   "at": [
-    5,
-    3
-   ],
-   "face": "down",
-   "kind": "stairs"
-  },
-  {
-   "section": "098",
-   "tile": [
-    5,
-    2
-   ],
-   "to": "514",
-   "at": [
-    11,
-    4
-   ],
-   "face": "down",
-   "kind": "stairs"
-  },
-  {
-   "section": "098",
-   "tile": [
-    17,
-    2
-   ],
-   "to": "099",
-   "at": [
-    4,
-    3
-   ],
-   "face": "down",
-   "kind": "stairs"
-  },
-  {
-   "section": "099",
-   "tile": [
-    4,
-    2
-   ],
-   "to": "098",
-   "at": [
-    17,
-    3
-   ],
-   "face": "down",
-   "kind": "stairs"
-  },
-  {
-   "section": "099",
-   "tile": [
-    11,
-    13
-   ],
-   "to": "100",
-   "at": [
-    11,
-    13
-   ],
-   "face": "up",
-   "kind": "stairs"
-  },
-  {
-   "section": "100",
-   "tile": [
-    11,
-    14
-   ],
-   "to": "099",
-   "at": [
-    11,
-    12
-   ],
-   "face": "up",
-   "kind": "stairs"
-  },
-  {
-   "section": "103",
-   "tile": [
-    15,
-    4
-   ],
-   "to": "104",
-   "at": [
-    11,
-    12
-   ],
-   "face": "up",
-   "kind": "stairs"
-  },
-  {
-   "section": "104",
-   "tile": [
-    11,
-    14
-   ],
-   "to": "103",
-   "at": [
-    15,
-    6
-   ],
-   "face": "down",
-   "kind": "stairs"
-  },
-  {
-   "section": "512",
-   "tile": [
-    9,
-    4
-   ],
-   "to": "513",
-   "at": [
-    11,
-    14
-   ],
-   "face": "up",
-   "kind": "stairs"
-  },
-  {
-   "section": "513",
-   "tile": [
-    11,
-    15
-   ],
-   "to": "512",
-   "at": [
-    9,
-    5
-   ],
-   "face": "down",
-   "kind": "stairs"
-  },
-  {
    "section": "623",
    "tile": [
     9,
@@ -11640,6 +11410,236 @@
     15
    ],
    "to": "478",
+   "at": [
+    9,
+    5
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "531",
+   "tile": [
+    9,
+    17
+   ],
+   "to": "back",
+   "at": [
+    9,
+    16
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "537"
+  },
+  {
+   "section": "531",
+   "tile": [
+    10,
+    17
+   ],
+   "to": "back",
+   "at": [
+    10,
+    16
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "537"
+  },
+  {
+   "section": "530",
+   "tile": [
+    9,
+    16
+   ],
+   "to": "back",
+   "at": [
+    9,
+    15
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "538"
+  },
+  {
+   "section": "530",
+   "tile": [
+    10,
+    16
+   ],
+   "to": "back",
+   "at": [
+    10,
+    15
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "538"
+  },
+  {
+   "section": "532",
+   "tile": [
+    9,
+    17
+   ],
+   "to": "back",
+   "at": [
+    9,
+    16
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "538"
+  },
+  {
+   "section": "532",
+   "tile": [
+    10,
+    17
+   ],
+   "to": "back",
+   "at": [
+    10,
+    16
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "538"
+  },
+  {
+   "section": "514",
+   "tile": [
+    11,
+    3
+   ],
+   "to": "098",
+   "at": [
+    5,
+    3
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "098",
+   "tile": [
+    5,
+    2
+   ],
+   "to": "514",
+   "at": [
+    11,
+    4
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "098",
+   "tile": [
+    17,
+    2
+   ],
+   "to": "099",
+   "at": [
+    4,
+    3
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "099",
+   "tile": [
+    4,
+    2
+   ],
+   "to": "098",
+   "at": [
+    17,
+    3
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "099",
+   "tile": [
+    11,
+    13
+   ],
+   "to": "100",
+   "at": [
+    11,
+    13
+   ],
+   "face": "up",
+   "kind": "stairs"
+  },
+  {
+   "section": "100",
+   "tile": [
+    11,
+    14
+   ],
+   "to": "099",
+   "at": [
+    11,
+    12
+   ],
+   "face": "up",
+   "kind": "stairs"
+  },
+  {
+   "section": "103",
+   "tile": [
+    15,
+    4
+   ],
+   "to": "104",
+   "at": [
+    11,
+    12
+   ],
+   "face": "up",
+   "kind": "stairs"
+  },
+  {
+   "section": "104",
+   "tile": [
+    11,
+    14
+   ],
+   "to": "103",
+   "at": [
+    15,
+    6
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "512",
+   "tile": [
+    9,
+    4
+   ],
+   "to": "513",
+   "at": [
+    11,
+    14
+   ],
+   "face": "up",
+   "kind": "stairs"
+  },
+  {
+   "section": "513",
+   "tile": [
+    11,
+    15
+   ],
+   "to": "512",
    "at": [
     9,
     5

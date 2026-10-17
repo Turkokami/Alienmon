@@ -17,6 +17,7 @@ for sid, people in NEW.items():
     walk = lambda x, y: 0 <= x < Wd and 0 <= y < H and rows[y][x] in '.,'
     for p in people:
         e = {'art': p['art'], 'name': p.get('name', ''), 't': p['t'], 'v3': True}
+        if p.get('tile'): e.update(tile=p['tile'], stay=True)   # placed by hand
         kind = {'clerk': 'shop', 'nurse': 'bay'}.get(p.get('role'))
         if kind:
             c = next((o['tile'] for o in s['objects'] if o['k'] == kind), None)

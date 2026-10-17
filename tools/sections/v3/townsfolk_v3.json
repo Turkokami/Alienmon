@@ -3383,6 +3383,10 @@
    "t": [
     "Old Resident: Saltreach Quiet Court is peaceful. Just gulls and waves.",
     "Old Resident: There's a secret grove out back. Lovely palm trees!"
+   ],
+   "tile": [
+    9,
+    9
    ]
   },
   {
@@ -3391,6 +3395,10 @@
    "role": "folk",
    "t": [
     "Fisher: I fish off my porch every morning. Mostly I catch seaweed."
+   ],
+   "tile": [
+    11,
+    11
    ]
   }
  ],
