@@ -118,7 +118,7 @@ HAND = {
  '092': [('07_pyros/18', 3, 6), ('07_pyros/18', 12, 6), ('07_pyros/18', 3, 19), ('07_pyros/18', 12, 19)],
  # Glyphos (sheet 06_glyphos): camp lanterns and banners, a finds table, cook fire and mess table, dig gear stacked by the tents, glyph stones and braziers in the ruins and temple
  '072': [('06_glyphos/17', 7, 4), ('06_glyphos/17', 15, 4), ('06_glyphos/28', 13, 10), ('06_glyphos/21', 13, 12), ('06_glyphos/26', 5, 9), ('06_glyphos/26', 18, 9)],
- '073': [('06_glyphos/27', 5, 5), ('06_glyphos/35', 6, 5), ('06_glyphos/27', 12, 5), ('06_glyphos/27', 17, 5), ('06_glyphos/35', 18, 5), ('06_glyphos/59', 4, 8), ('06_glyphos/94', 10, 8), ('06_glyphos/114', 15, 8), ('06_glyphos/12', 19, 8), ('06_glyphos/28', 4, 12), ('06_glyphos/28', 5, 12), ('06_glyphos/44', 8, 12), ('06_glyphos/25', 14, 12), ('06_glyphos/02', 18, 12), ('06_glyphos/33', 19, 12)],
+ '073': [('06_glyphos/27', 5, 5), ('06_glyphos/35', 6, 5), ('06_glyphos/27', 12, 5), ('06_glyphos/27', 17, 5), ('06_glyphos/35', 21, 5), ('06_glyphos/59', 4, 8), ('06_glyphos/94', 10, 8), ('06_glyphos/114', 15, 8), ('06_glyphos/12', 19, 8), ('06_glyphos/28', 4, 12), ('06_glyphos/28', 5, 12), ('06_glyphos/44', 8, 12), ('06_glyphos/25', 14, 12), ('06_glyphos/02', 18, 12), ('06_glyphos/33', 19, 12)],
  '074': [('06_glyphos/121', 5, 5), ('06_glyphos/121', 10, 5), ('06_glyphos/132', 4, 12), ('06_glyphos/132', 11, 12)],
  '075': [('06_glyphos/35', 6, 5), ('06_glyphos/35', 17, 5), ('06_glyphos/47', 3, 9), ('06_glyphos/47', 20, 9), ('06_glyphos/16', 9, 5)],
  '076': [('06_glyphos/35', 6, 5), ('06_glyphos/35', 17, 5), ('06_glyphos/26', 4, 9), ('06_glyphos/26', 19, 9)],
@@ -189,7 +189,7 @@ HAND = {
   ('01_dustara/36', 14, 7), ('01_dustara/13', 15, 7), ('01_dustara/45', 16, 7), ('01_dustara/43', 18, 7), ('01_dustara/15', 20, 7), ('01_dustara/36', 21, 7),
   ('01_dustara/02', 9, 9), ('01_dustara/02', 15, 9), ('01_dustara/06', 17, 9), ('01_dustara/42', 22, 9),
   ('01_dustara/28', 8, 12), ('01_dustara/36', 15, 13), ('01_dustara/67', 10, 12, 2, {'w': 4})],
- '008': [('01_dustara/44', 5, 5), ('01_dustara/45', 17, 5), ('01_dustara/13', 11, 5), ('01_dustara/13', 16, 5),
+ '008': [('01_dustara/44', 5, 5), ('01_dustara/45', 20, 5), ('01_dustara/13', 11, 5), ('01_dustara/13', 16, 5),
          ('01_dustara/26', 3, 10), ('01_dustara/26', 8, 10), ('01_dustara/26', 13, 10), ('01_dustara/26', 18, 10)],
  '018': [('04_thalassa/40', 12, 5), ('04_thalassa/44', 14, 5), ('04_thalassa/08', 6, 5), ('04_thalassa/08', 11, 5),
          ('04_thalassa/35', 17, 5), ('04_thalassa/37', 18, 5),
