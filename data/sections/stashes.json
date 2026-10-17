@@ -334,8 +334,8 @@
    "section": "472",
    "name": "Dustmere Farmstead",
    "tile": [
-    7,
-    13
+    6,
+    14
    ],
    "item": "stasis",
    "n": 3,
@@ -367,8 +367,8 @@
    "section": "471",
    "name": "Dustmere Quiet Court",
    "tile": [
-    22,
-    5
+    1,
+    4
    ],
    "item": "gel",
    "n": 2,
