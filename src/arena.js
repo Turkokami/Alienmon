@@ -8,7 +8,10 @@
  art/arena/scenes/<planet>_arena.jpg when rendered, otherwise the planet's battle background.
  Online play (Phase 5) needs act() to take a seeded random source; the arena's own choices already use RTA.r. */
 const ARJ=__ARENA__,ARA=__ARENAART__;
-const ARPI=lazyImgs(ARA.poses),ARSI=lazyImgs(ARA.scenes);const ARFI=lazyImgs(ARA.fx);
+const ARPI=lazyImgs(ARA.poses),ARSI=lazyImgs(ARA.scenes);const ARFI=lazyImgs(ARA.fx),ARUI=lazyImgs(ARA.uicut||{});
+// the owner's arena UI pieces (tools/arena_ui_cut.py -> art/arena/uicut): drawn when loaded, otherwise the plain HUD
+function rUi(k,x,y,w,h,a){const i=ARUI[k];if(!okI(i))return false;ctx.save();if(a!=null)ctx.globalAlpha=a;ctx.imageSmoothingEnabled=true;ctx.drawImage(i,x,y,w,h===undefined?w*i.naturalHeight/i.naturalWidth:h);ctx.restore();return true}
+const rUiOk=(...ks)=>ks.every(k=>okI(ARUI[k]));
 // the owner's arena effect sheets (art/arena/fx/<move>.webp, sig_<move> for signatures): 4x2 cells of 192x256,
 // row 1 = the move travelling (projectile loop, or beam start/middle/end), row 2 = the 4-frame impact
 function rArtFx(mv){const k=String(mv.n||'').toLowerCase().replace(/[^a-z0-9]+/g,'_').replace(/^_+|_+$/g,''),s=mv.sig?'sig_'+k:k;return s in ARA.fx?ARFI[s]:k in ARA.fx?ARFI[k]:null}
@@ -57,7 +60,7 @@ function rtaUpd(){const A=RTA;A.t++;
  const[p,e]=A.f;rControl(p);rAI(e,p);for(const f of A.f)rStep(f);rShots();rAreas();rTick();rStepFx();
  const left=ARJ.match.time*60-(A.t-A.t0),fr=m=>m.hp/stat(m,0);
  if(p.m.hp<=0||e.m.hp<=0)rtaOver(p.m.hp<=0&&e.m.hp<=0?2:p.m.hp<=0?1:0);
- else if(left<=0)rtaOver(Math.abs(fr(p.m)-fr(e.m))<0.01?2:fr(p.m)>fr(e.m)?0:1);
+ else if(left<=0){A.timeout=1;rtaOver(Math.abs(fr(p.m)-fr(e.m))<0.01?2:fr(p.m)>fr(e.m)?0:1);}
  rtaDraw()}
 function rtaOver(win){const A=RTA;if(A.phase==='over')return;A.phase='over';A.ot=0;A.win=win;A.shots=[];A.areas=A.areas.filter(z=>z.kind==='beam');
  G.rta=G.rta||{w:0,l:0,d:0};G.rta[['w','l','d'][win]]++}
@@ -185,12 +188,53 @@ function rtaDraw(){const A=RTA,pl=PL[A.pl],sx=A.shake>0?(A.shake--%2?1:-1):0,im=
  for(const x of A.fx){const k=x.t/x.dur;rFxCell(x.mv,'i',k,x.x,x.y,(x.big?40:26)*(0.55+0.45*Math.min(1,k*3)),false,k>0.7?(1-k)/0.3:1)}
  for(const x of A.fl){ctx.save();ctx.globalAlpha=x.t>30?(45-x.t)/15:1;txt(x.s,Math.round(x.x-x.s.length*2.5),Math.round(x.y-x.t*0.4),'#1b1424',5);txt(x.s,Math.round(x.x-x.s.length*2.5)-1,Math.round(x.y-x.t*0.4)-1,x.c,5);ctx.restore()}
  ctx.restore();rHud()}
-function rHud(){const A=RTA,[p,e]=A.f;rect(0,0,160,18,'#120c22');
- txtFit(nm(p.m),2,2,'#e8e0ff',58,6);hpbar(2,10,64,p.m);txtFit(nm(e.m),94,2,'#e8e0ff',58,6);hpbar(94,10,64,e.m);
- const left=A.phase==='count'?ARJ.match.time*60:Math.max(0,ARJ.match.time*60-(A.t-A.t0));txt(String(Math.ceil(left/60)).padStart(2,'0'),72,5,left<600?'#ff8a1e':'#ffd23f',8);
- rect(0,129,160,15,'#120c22');p.m.moves.forEach((mi,i)=>{const x=1+i*40,mv=MV[mi],c=rCol(mv),k=p.cd[i]/p.cdm[i];
-  rect(x,130,38,13,i===p.sel?'#ffd23f':'#3b2a5c');rect(x+1,131,36,11,'#1b1424');rect(x+1,131,Math.round(36*(1-k)),11,k>0?c[2]:c[0]);txtFit(mv.n,x+2,134,k>0?'#a99cc8':'#ffffff',34,5)});
+function rHud(){const A=RTA,[p,e]=A.f;
+ if(rUiOk('panel_l','panel_r','bar_g','bar_y','bar_r','timer'))for(const[f,x,flip]of[[p,0,false],[e,96,true]])rPanel(f,x,flip);
+ else{rect(0,0,160,18,'#120c22');txtFit(nm(p.m),2,2,'#e8e0ff',58,6);hpbar(2,10,64,p.m);txtFit(nm(e.m),94,2,'#e8e0ff',58,6);hpbar(94,10,64,e.m)}
+ const left=A.phase==='count'?ARJ.match.time*60:Math.max(0,ARJ.match.time*60-(A.t-A.t0)),ts=String(Math.ceil(left/60)).padStart(2,'0');
+ if(rUi('timer',69,0,22,22))txt(ts,80-ts.length*3,8,left<600?'#ff8a1e':'#ffd23f',6);else txt(ts,72,5,left<600?'#ff8a1e':'#ffd23f',8);
+ rect(0,126,160,18,'#120c22');const art=rUiOk('btn_ready','btn_cool');
+ p.m.moves.forEach((mi,i)=>{const x=i*40,mv=MV[mi],c=rCol(mv),k=p.cd[i]/p.cdm[i];
+  if(art){rUi(k>0?'btn_cool':i===p.sel?'btn_pressed':'btn_ready',x+1,127,16,16);rUi('ty_'+String(mv.t).toLowerCase(),x+4,130,10,10,k>0?0.45:1);
+   if(k>0){ctx.save();ctx.globalAlpha=0.55;ctx.fillStyle='#120c22';ctx.beginPath();ctx.moveTo(x+9,135);ctx.arc(x+9,135,7,-Math.PI/2,-Math.PI/2+Math.PI*2*k);ctx.closePath();ctx.fill();ctx.restore()}
+   if(i===p.sel)rect(x+18,141,20,1,'#ffd23f');txtFit(mv.n,x+18,131,k>0?'#a99cc8':'#ffffff',21,5)}
+  else{rect(x+1,130,38,13,i===p.sel?'#ffd23f':'#3b2a5c');rect(x+2,131,36,11,'#1b1424');rect(x+2,131,Math.round(36*(1-k)),11,k>0?c[2]:c[0]);txtFit(mv.n,x+3,134,k>0?'#a99cc8':'#ffffff',34,5)}});
  if(A.log){const w=wrap(A.log.s,29).slice(0,2);box(4,121-w.length*7,152,7+w.length*7,'#f8f4ff');w.forEach((l,i)=>txt(l,7,125-w.length*7+i*7,'#1b1424',5))}
- if(A.phase==='count'){const n=3-Math.floor(A.t/(ARJ.match.countdown/4)),s=n>0?String(n):'GO!';txt(s,80-s.length*8+1,61,'#1b1424',16);txt(s,80-s.length*8,60,'#ffd23f',16)}
- if(A.phase==='fight'&&A.t-A.t0<30)txt('GO!',57,60,'#ffd23f',16);
- if(A.phase==='over'){const s=['VICTORY!','TRY AGAIN!','DRAW'][A.win];box(80-s.length*4-10,52,s.length*8+20,30,'#3b2a5c','#ffd23f');txt(s,80-s.length*4,58,'#ffd23f');if(A.ot>50&&frame%40<28)txt('A: continue',47,70,'#e8e0ff',5)}}
+ if(A.phase==='count'){const n=3-Math.floor(A.t/(ARJ.match.countdown/4)),s=n>0?String(n):'GO!';if(!rUi(n>0?'cd_'+n:'cd_go',56,44,48)){txt(s,80-s.length*8+1,61,'#1b1424',16);txt(s,80-s.length*8,60,'#ffd23f',16)}}
+ if(A.phase==='fight'&&A.t-A.t0<30&&!rUi('cd_go',56,44,48))txt('GO!',57,60,'#ffd23f',16);
+ if(A.phase==='over'){if(A.ot<45&&rUi(A.timeout?'cd_time':'cd_ko',52,40,56)){}else{const s=['VICTORY!','TRY AGAIN!','DRAW'][A.win];
+  if(!rUi(['res_win','res_lose','res_draw'][A.win],16,48,128)){box(80-s.length*4-10,52,s.length*8+20,30,'#3b2a5c','#ffd23f');txt(s,80-s.length*4,58,'#ffd23f')}
+  if(A.ot>50&&frame%40<28)txt('A: continue',47,84,'#e8e0ff',5)}}}
+// one HUD panel: portrait in the frame, HP in the slot, team pips (filled for the Alienmon still standing)
+function rPanel(f,x,flip){const W=64,H=28,m=f.m,r=Math.max(0,m.hp/stat(m,0));rUi(flip?'panel_r':'panel_l',x,0,W,H);
+ const sx=x+(flip?0.054:0.396)*W,sy=0.352*H,sw=0.55*W,sh=0.172*H,bar=ARUI[r>0.5?'bar_g':r>0.2?'bar_y':'bar_r'];
+ if(okI(bar)&&r>0){ctx.save();ctx.imageSmoothingEnabled=true;ctx.drawImage(bar,0,0,bar.naturalWidth*r,bar.naturalHeight,flip?sx+sw*(1-r):sx,sy,sw*r,sh);ctx.restore()}
+ const im=ARTI[D[m.id].name],px=x+(flip?0.70:0.045)*W,py=0.14*H,ps=0.26*W;if(okI(im))ctx.drawImage(im,px,py,ps,ps);
+ txtFit(nm(m),flip?x+2:x+26,H+1,'#e8e0ff',36,5)}
+
+/* ---- touch controls for the arena: four round move buttons replace A/B while a match runs, and the d-pad wears the
+ analog-stick art (the owner's move_buttons sheet). Everything returns to normal when the match ends. ---- */
+const RTAB=(()=>{const dev=document.querySelector('.device'),ab=document.querySelector('.ab');if(!dev||!ab)return null;
+ const u=k=>ARA.uicut&&ARA.uicut[k]?'url('+ARA.uicut[k]+')':'none';
+ const st=document.createElement('style');st.textContent=
+  'body.in-rta .ab{display:none}.rtab{display:none;grid-area:ab;justify-self:center;align-self:center;grid-template-columns:62px 62px;gap:4px 8px}'+
+  'body.in-rta .rtab{display:grid}.rtab button{position:relative;width:62px;height:72px;border:0;background:none;padding:0;font:inherit;color:#e8e0ff;touch-action:none}'+
+  '.rtab .ring{position:absolute;left:3px;top:0;width:56px;height:56px;background:'+u('btn_ready')+' center/contain no-repeat}'+
+  '.rtab .cool .ring{background-image:'+u('btn_cool')+'}.rtab .on .ring{background-image:'+u('btn_pressed')+'}'+
+  '.rtab .ty{position:absolute;left:17px;top:14px;width:28px;height:28px;background:center/contain no-repeat}'+
+  '.rtab .cd{position:absolute;left:9px;top:6px;width:44px;height:44px;border-radius:50%;pointer-events:none}'+
+  '.rtab .nm{position:absolute;left:-4px;right:-4px;top:57px;font-size:7px;line-height:1;text-align:center;white-space:nowrap;overflow:hidden}'+
+  'body.in-rta .dpad{background:'+u('stick')+' center/120% no-repeat;box-shadow:none}body.in-rta .dpad button{color:transparent}body.in-rta .dpad .c{background:none;box-shadow:none}';
+ document.head.appendChild(st);
+ const box=document.createElement('div');box.className='rtab';ab.after(box);
+ const B=[0,1,2,3].map(i=>{const b=document.createElement('button');b.innerHTML='<div class="ring"></div><div class="ty"></div><div class="cd"></div><div class="nm"></div>';
+  b.addEventListener('pointerdown',e=>{e.preventDefault();pressed['m'+i]=true;b.classList.add('on')});
+  const up=()=>b.classList.remove('on');b.addEventListener('pointerup',up);b.addEventListener('pointercancel',up);box.appendChild(b);
+  return{b,ty:b.querySelector('.ty'),cd:b.querySelector('.cd'),nm:b.querySelector('.nm'),last:''}});
+ return{B,on:false}})();
+function rTouchUpd(){if(!RTAB)return;const on=scene==='rta'&&!!RTA;if(on!==RTAB.on){document.body.classList.toggle('in-rta',on);RTAB.on=on}if(!on)return;
+ const p=RTA.f[0];RTAB.B.forEach((x,i)=>{const mi=p.m.moves[i];x.b.style.visibility=mi==null?'hidden':'visible';if(mi==null)return;
+  const mv=MV[mi],k=p.cd[i]/p.cdm[i],key=mv.n+'|'+mv.t;
+  if(x.last!==key){x.last=key;x.nm.textContent=mv.n;const t=ARA.uicut&&ARA.uicut['ty_'+String(mv.t).toLowerCase()];x.ty.style.backgroundImage=t?'url('+t+')':'none'}
+  x.b.classList.toggle('cool',k>0);x.cd.style.background=k>0?'conic-gradient(rgba(18,12,34,0.65) '+Math.round(k*360)+'deg,transparent 0)':'none';
+  x.b.style.outline=i===p.sel?'':'';x.ty.style.opacity=k>0?0.45:1})}
