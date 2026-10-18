@@ -625,7 +625,7 @@ if(fx.drain&&a.hp<stat(a,0)){a.hp=Math.min(stat(a,0),a.hp+Math.max(1,Math.floor(
  if(fx.self&&R()<(fx.c||1))stages(a,fx.self,lines);
  if(ph&&dt.k==='contact'&&a.hp>0){if(dt.v==='recoil'){const r=Math.max(1,Math.floor(stat(a,0)/8));a.hp=Math.max(0,a.hp-r);godFix(a);lines.push(nm(a)+' was hurt by '+nm(d)+"'s "+dt.name+'!')}
   else if(R()<(dt.v==='freeze'?0.15:0.3)){const L=[];inflict(a,dt.v,L);if(L.length)lines.push(nm(d)+"'s "+dt.name+'!',...L)}}
- if(d.hp<=0&&B&&B.sp&&B.sp.immortal&&d===EM()){d.hp=Math.ceil(stat(d,0)*0.5);lines.push(nm(d)+' swallows the blow and grows even hungrier!')}else if(d.hp<=0)lines.push(nm(d)+' fainted!');if(a.hp<=0)lines.push(nm(a)+' fainted!');return lines}
+ if(d.hp<=0&&B&&B.sp&&B.sp.immortal&&d===EM()){d.hp=Math.ceil(stat(d,0)*0.5);lines.push(nm(d)+' swallows the blow and grows even hungrier!')}else if(d.hp<=0&&!lcPending(d))lines.push(nm(d)+' fainted!');if(a.hp<=0)lines.push(nm(a)+' fainted!');return lines}
 function aiMove(a,d){let best=a.moves[0],bv=-1;for(const mi of a.moves){const mv=MV[mi];let v;
   if(!mv.p){const fx=mv.fx;v=fx.heal?(a.hp<stat(a,0)*0.4?140:0):fx.s?((d.st||immune(d,fx.s)||(fx.s==='confuse'&&d.cf))?0:55):fx.self?(Object.keys(fx.self).some(k=>k!=='c'&&a.bs[k]>=2)?0:45):45;v*=0.6+R()*0.8}
   else{const dt=TR(d.id);v=mv.p*eff(mv.t,D[d.id].t)*(D[a.id].t.includes(mv.t)?1.5:1)*(0.7+R()*0.6);if(dt.k==='absorb'&&dt.v===mv.t)v=0;if(dt.k==='float'&&mv.t==='Gravity')v=0}
@@ -637,7 +637,12 @@ function startBattle(team,trainer){if(!trainer)for(const m of team)if(!m.pri&&R(
  if(B.trShow){say(L[0],()=>{B.trShow=false;say(L.slice(1),()=>B.phase='menu')})}else say(L,()=>B.phase='menu')}
 const PM=()=>G.party[B.pi],EM=()=>B.team[B.ei];
 function runSteps(steps,done){if(!B||B.over)return;if(!steps.length)return done();const s=steps.shift();s(()=>runSteps(steps,done))}
-function afterAct(next){if(!B||B.over)return;storyImmortal();if(EM().hp<=0||PM().hp<=0)return resolveFaints();next()}
+function afterAct(next){if(!B||B.over)return;storyImmortal();if(lastChance())return;if(EM().hp<=0||PM().hp<=0)return resolveFaints();next()}
+const lcPending=d=>scene==='battle'&&B&&d===EM()&&!B.tr&&!B.sp&&!B.lc&&PM().hp>0&&Object.values(G.pods||{}).some(n=>n>0);
+// Deploy Linker: a wild Alienmon that would be knocked out hangs on at 1 HP once per battle, so a lucky hit never costs a catch
+function lastChance(){const e=EM();if(B.tr||B.sp||B.lc||e.hp>0||PM().hp<=0||!Object.values(G.pods||{}).some(n=>n>0))return false;
+ B.lc=1;e.hp=1;B.phase='wait';const ko=()=>{e.hp=0;say(nm(e)+' fainted!',resolveFaints)};
+ say([nm(e)+' is barely hanging on!'],()=>choose('Deploy Linker?',['Yes','No'],k=>{if(k!==0)return ko();const L=bagList(true),i=L.findIndex(x=>x.kind==='pod'&&x.c);B.bsel=Math.max(0,i);B.phase='bag';B.bagLock=frame+12},ko));return true}
 function turn(pact){B.phase='wait';const em=ppPick(EM(),aiMove(EM(),PM()));
  const eStep=next=>{const e=EM(),p=PM();if(e.hp<=0||p.hp<=0)return next();const L=actPP(e,p,em);playFx(()=>say(L,()=>afterAct(next)))};
  const pStep=next=>pact(()=>afterAct(next));
@@ -649,7 +654,7 @@ function endTurn(){const L=[];if(B.sp)B.sp.turns++;for(const m of[PM(),EM()]){if
   if(m.hp>0&&tr.k==='genesis')heal(m,1/8,L,'restored HP with '+tr.name+'!');
   if(m.hp>0&&tr.k==='speed'&&m.bs.spe<6){m.bs.spe++;L.push(nm(m)+"'s "+tr.name+' raised its Speed!')}
   if(m.hp<=0)L.push(nm(m)+' fainted!')}
- const fin=()=>{if(EM().hp<=0||PM().hp<=0)resolveFaints();else B.phase='menu'};if(L.length)say(L,fin);else fin()}
+ const fin=()=>{if(lastChance())return;if(EM().hp<=0||PM().hp<=0)resolveFaints();else B.phase='menu'};if(L.length)say(L.filter(l=>!(EM().hp<=0&&l===nm(EM())+' fainted!'&&lcPending(EM()))),fin);else fin()}
 function resolveFaints(){const pDead=PM().hp<=0;if(EM().hp<=0)enemyFaint(()=>{if(pDead)playerFaint();else B.phase='menu'});else playerFaint()}
 function enemyFaint(cont){const e=EM(),steps=[];if(!(B.tr&&B.tr.arena))progAward(e,!!B.tr,steps);   // league battles give no EXP (level caps stay fair)
  progRun(steps,()=>{if(B.tr&&B.ei<B.team.length-1){B.ei++;const n=EM();G.seen[n.id]=1;resetStages(n);const L=[B.tr.name+' sent out '+nm(n)+'!'];entry(n,PM(),L);say(L,cont)}else endBattle(true)})}
@@ -711,6 +716,7 @@ function updBattle(){const opts=['FIGHT','BAG','SWAP',storyRunLabel()];
  else if(B.phase==='moves'){const n=PM().moves.length;if(P_('up'))B.msel=(B.msel+n-1)%n;if(P_('down'))B.msel=(B.msel+1)%n;if(P_('b'))B.phase='menu';
   if(P_('a')){const p=PM();if(p.moves.every(x=>ppGet(p,x)<=0))turn(next=>{const L=actPP(PM(),EM(),STRUGGLE);playFx(()=>say([nm(p)+' has no PP left!'].concat(L),next))});else{const mi=p.moves[B.msel];if(ppGet(p,mi)<=0)say('There is no PP left for this move!');else{ppUse(p,mi);turn(next=>{const L=actPP(PM(),EM(),MV[mi]);playFx(()=>say(L,next))})}}}}
  else if(B.phase==='bag'){const list=bagList(true),n=list.length;if(P_('up'))B.bsel=(B.bsel+n-1)%n;if(P_('down'))B.bsel=(B.bsel+1)%n;if(P_('b'))B.phase='menu';
+  if(frame<(B.bagLock||0))pressed.a=false;   // the press that answered 'Deploy Linker?' must not also throw a pod
   if(P_('a')){const e=list[B.bsel];if(!e.c)say('You have no '+e.n+' left. Buy more at a Recovery Bay.');
    else if(e.kind==='pod'){if(B.sp&&B.sp.immortal)say('Oblivane is far too vast for any pod. Hold on...');else if(B.tr)say("A Keeper's partner is already bonded. You can't Sync with it!");else startSync(e.it)}
    else if(e.kind==='heal'){B.itemUse=e.it;B.phase='party';B.forced=false;B.psel=B.pi}
