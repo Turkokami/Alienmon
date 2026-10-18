@@ -211,15 +211,10 @@ function rTerTick(){const A=RTA;if(!A.ter||!A.ter.length)return;for(const c of A
  if(A.t%60)return;for(const f of A.f){const c=rTerAt(f.x,f.y),m=f.m;if(!c||m.hp<=0)continue;
   if(c.k==='lava'){rScaled([m],()=>{m.hp=Math.max(0,m.hp-Math.max(1,Math.floor(stat(m,0)/24)))});rFloat(f,'hot!','#ff8a1e');if(!m.st&&!immune(m,'burn')&&A.r()<0.15)m.st='burn'}
   if(c.k==='spore'&&!m.st&&!immune(m,'poison')&&A.r()<0.2){m.st='poison';rFloat(f,'poisoned','#b45cff')}}}
-// tile cells are square chunks of floor; give each a soft oval edge so the patch blends into the arena
-const RTERS={};function rTerSprite(im,col,row){const key=im.src+'|'+col+'|'+row;if(RTERS[key])return RTERS[key];
- const c=document.createElement('canvas');c.width=c.height=96;const g=c.getContext('2d');g.drawImage(im,col*128,row*128,128,128,0,0,96,96);
- g.globalCompositeOperation='destination-in';const rg=g.createRadialGradient(48,48,18,48,48,48);rg.addColorStop(0,'rgba(0,0,0,1)');rg.addColorStop(0.7,'rgba(0,0,0,0.9)');rg.addColorStop(1,'rgba(0,0,0,0)');
- g.fillStyle=rg;g.fillRect(0,0,96,96);return RTERS[key]=c}
 function rTerDraw(){const A=RTA;if(!A.ter||!A.ter.length)return;const im=ARTLI[(A.key||'court')+'_tiles'],ok=okI(im);
- for(const c of A.ter){const a=c.t>1020?(1200-c.t)/180:1,w=c.r*2.3,h=c.r*1.7;
-  if(ok){const row=c.k==='crater'?0:2,col=row===2?Math.floor((A.t/8+c.v))%4:(1+c.v%2);
-   drawCell(rTerSprite(im,col,row),[0,0,96,96],c.x,c.y,w,h,false,a);if(row===2)rEll(c.x,c.y,c.r*0.8,c.r*0.5,RTERC[c.k],0.25*a)}
+ for(const c of A.ter){const a=c.t>1020?(1200-c.t)/180:1,w=c.r*2.8;
+  if(ok){const row=c.k==='crater'?0:2,col=row===2?Math.floor((A.t/8+c.v))%4:(c.r>=16?2:1);
+   rFrame(im,4,4,156.75,156.75,col,row,c.x,c.y,w,w,false,a);if(row===2)rEll(c.x,c.y,c.r*0.8,c.r*0.5,RTERC[c.k],0.25*a)}
   else rEll(c.x,c.y,c.r,c.r*0.65,RTERC[c.k],0.55*a)}}
 
 /* ---- planet hazards (P2-05): one on a timer, always shown by its warning marker first ---- */
@@ -245,14 +240,16 @@ function rHazTick(){const A=RTA,H=RHAZ[A.key];if(!H||A.phase!=='fight')return;if
 function rHazDraw(top){const A=RTA;if(!A.hz)return;const im=ARHZI[A.key+'_hazard'],ok=okI(im);
  for(const h of A.hz.list){const live=h.t>h.warn,pts=h.H.e==='portal'?[[h.x,h.y],[h.bx,h.by]]:[[h.x,h.y]];
   for(const[x,y]of pts){
-   if(!live){if(top)continue;if(ok)drawCell(im,[(Math.floor(h.t/6)%4)*192,256,192,256],x,y-h.H.r*0.8,h.H.r*3,h.H.r*4,false,0.9);else rRing(x,y,h.H.r,h.H.r*0.5,'#ff7a3a',0.8,1)}
+   if(!live){if(top)continue;if(ok)rFrame(im,4,2,192,256,Math.floor(h.t/6)%4,1,x,y-h.H.r*0.8,h.H.r*3,h.H.r*4,false,0.9);else rRing(x,y,h.H.r,h.H.r*0.5,'#ff7a3a',0.8,1)}
    else{if(!top&&h.H.e!=='dark')continue;const k=h.H.e==='portal'?Math.floor(h.t/6)%4:Math.min(3,Math.floor((h.t-h.warn)/h.act*4));
     if(h.H.e==='dark'){if(top)rEll(x,y,h.H.r+4,(h.H.r+4)*0.7,'#05030c',0.82)}
-    else if(ok)drawCell(im,[k*192,0,192,256],x,y-h.H.r*1.4,h.H.r*3.2,h.H.r*4.3,false,1);else rEll(x,y,h.H.r,h.H.r*0.5,'#ff5a3a',0.5)}}}}
+    else if(ok)rFrame(im,4,2,192,256,k,0,x,y-h.H.r*1.4,h.H.r*3.2,h.H.r*4.3,false,1);else rEll(x,y,h.H.r,h.H.r*0.5,'#ff5a3a',0.5)}}}}
 
 /* ---- effects and messages ---- */
 // the owner's common effect sheets (fx/common_*): 4x2 cells of 192x256, row 0 / row 1 as in prompts/fx/fx_batch_7
-function rCF(sheet,row,fr,x,y,w,a,flip){const im=ARFI[sheet];if(!okI(im))return false;drawCell(im,[fr*192,row*256,192,256],x,y,w,w*4/3,!!flip,a==null?1:a);return true}
+// sheets are repacked so each frame sits whole in a roomier cell; the cell size comes from the image, and w/h are the sizes for the nominal cell (nw x nh)
+function rFrame(im,cols,rows,nw,nh,col,row,x,y,w,h,flip,a){const cw=(im.naturalWidth||im.width)/cols,ch=(im.naturalHeight||im.height)/rows;drawCell(im,[col*cw,row*ch,cw,ch],x,y,w*cw/nw,h*ch/nh,flip,a)}
+function rCF(sheet,row,fr,x,y,w,a,flip){const im=ARFI[sheet];if(!okI(im))return false;rFrame(im,4,2,192,256,fr,row,x,y,w,w*4/3,!!flip,a==null?1:a);return true}
 function rCpush(sheet,row,x,y,w,dur,flip){if(RTA&&ARFI[sheet])RTA.cfx.push({sheet,row,x,y,w,t:0,dur:dur||16,flip})}
 const rBs=m=>Object.values(m.bs||{}).reduce((a,b)=>a+b,0);
 function rBuffFx(f,before){const d=rBs(f.m)-before;if(d)rCpush('common_buffs',d>0?0:1,f.x,f.y-14,26,30)}
@@ -284,7 +281,7 @@ function rDrawF(f){const m=f.m,name=D[m.id].name,S=26,pose=k=>{const i=ARPI[name
  let drawn=m.hp>0&&SF&&rCF(SF[0],SF[1],m.st==='freeze'?1+(Math.floor(RTA.t/20)%2):lf,f.x,f.y-12,30,0.9);
  if(m.cf>0&&m.hp>0&&rCF('common_status_confuse_ko',0,lf,f.x,f.y-30,18,1))drawn=drawn||'cf';
  if(m.st&&m.hp>0&&!SF)rect(Math.round(f.x)-2,Math.round(f.y)-30,4,4,STC[m.st][1]);if(m.st&&m.hp>0&&SF&&!drawn)rect(Math.round(f.x)-2,Math.round(f.y)-30,4,4,STC[m.st][1]);if(m.cf>0&&m.hp>0&&drawn!=='cf'&&!okI(ARFI.common_status_confuse_ko))txt('?',Math.round(f.x)+5,Math.round(f.y)-31,'#ff74c4',6)}
-function rFxCell(mv,which,k,x,y,w,flip,a){const af=rArtFx(mv);if(okI(af)){const r=which==='i'?1:0,f=which==='i'?Math.min(3,Math.floor(k*4)):Math.floor(k*4)%4;drawCell(af,[f*192,r*256,192,256],x,y,w*1.5,w*2,which==='i'?false:flip,a);return}
+function rFxCell(mv,which,k,x,y,w,flip,a){const af=rArtFx(mv);if(okI(af)){const r=which==='i'?1:0,f=which==='i'?Math.min(3,Math.floor(k*4)):Math.floor(k*4)%4;rFrame(af,4,2,192,256,f,r,x,y,w*1.5,w*2,which==='i'?false:flip,a);return}
  const an=mv.an,im=an&&FXI['mv_'+an.r],R=an&&MOVEFX.rows[an.r];
  if(!okI(im)||!R||!R[which]||!R[which].length){const c=rCol(mv);rEll(x,y,w/3,w/3,c[0],a*0.8);rEll(x,y,w/6,w/6,c[1],a);return}
  const L=R[which],c=which==='i'?L[Math.min(an.i,L.length-1)]:L[Math.floor(k*L.length)%L.length];drawCell(im,c,x,y,w*c[2]/Math.max(c[2],c[3]),w*c[3]/Math.max(c[2],c[3]),flip,a)}

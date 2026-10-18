@@ -55,6 +55,32 @@ def poses(src,name,holes=False):
         q.save(os.path.join(out,f'{name}_{pose}.png'),optimize=True)
     print(name,'->',', '.join(p for p,c in zip(POSES,cells) if c))
 
+def repack(out,grid):
+    """Lift every frame out whole and put it in a roomier cell. Renders often spill past the nominal grid lines
+    (spray, wave crests, particles), so slicing the sheet on the grid clipped pieces and pulled in bits of neighbours.
+    Each separate blob goes to the cell its centre sits in; every cell keeps its nominal centre, so animations stay
+    aligned. The new cell size (sheet width / cols) tells the game how much bigger than nominal each cell is."""
+    cols,rows=grid; H,W=out.shape[:2]; nw,nh=W/cols,H/rows
+    out=out.copy(); out[...,3]=np.where(out[...,3]<8,0,out[...,3])
+    lab,n=ndimage.label(ndimage.binary_dilation(out[...,3]>0,iterations=2)); lab=np.where(out[...,3]>0,lab,0)
+    slot=np.zeros(n+1,int)-1
+    for i,(cy,cx) in enumerate(ndimage.center_of_mass(out[...,3]>0,lab,range(1,n+1)),1):
+        if cy==cy: slot[i]=min(rows-1,int(cy//nh))*cols+min(cols-1,int(cx//nw))
+    # a blob wider or taller than a cell is frames touching each other (beams, waves): split those on the grid lines
+    for i,b in enumerate(ndimage.find_objects(lab),1):
+        if b and (b[1].stop-b[1].start>1.15*nw or b[0].stop-b[0].start>1.15*nh): slot[i]=-2
+    S=slot[lab]; S[lab==0]=-1
+    gy,gx=np.nonzero(S==-2); S[gy,gx]=np.minimum(rows-1,(gy//nh).astype(int))*cols+np.minimum(cols-1,(gx//nw).astype(int))
+    ys,xs=np.nonzero(S>=0); s=S[ys,xs]
+    ccx=(s%cols+0.5)*nw; ccy=(s//cols+0.5)*nh
+    keep=(np.abs(xs-ccx)<nw*0.8)&(np.abs(ys-ccy)<nh*0.8); ys,xs,s,ccx,ccy=ys[keep],xs[keep],s[keep],ccx[keep],ccy[keep]   # cells grow at most 60%
+    ex=max(nw/2,np.abs(xs-ccx).max()+3) if len(xs) else nw/2; ey=max(nh/2,np.abs(ys-ccy).max()+3) if len(ys) else nh/2
+    cw,ch=int(np.ceil(ex))*2,int(np.ceil(ey))*2; cw+=cw%2; ch+=ch%2   # even, so halving keeps the grid exact
+    new=np.zeros((ch*rows,cw*cols,4),np.uint8)
+    nx=((s%cols)*cw+cw/2+(xs-ccx)).astype(int); ny=((s//cols)*ch+ch/2+(ys-ccy)).astype(int)
+    new[ny,nx]=out[ys,xs]
+    return new
+
 def fx(src,key):
     im=Image.open(src).convert('RGBA'); a=np.asarray(im).astype(int)
     if a[...,3].min()<250: alpha=a[...,3]   # already transparent
@@ -66,8 +92,9 @@ def fx(src,key):
         spill=np.argmax(corner); rgb[...,spill]=np.where(m,np.minimum(rgb[...,spill],rgb[...,[c for c in range(3) if c!=spill]].max(axis=2)),rgb[...,spill])
         a[...,:3]=rgb
     out=np.dstack([a[...,:3],alpha]).astype(np.uint8)
+    out=repack(out,(4,4) if key.startswith('tiles/') else (4,2))
     dst=os.path.join(ROOT,'art/arena',key+'.webp'); os.makedirs(os.path.dirname(dst),exist_ok=True)
-    Image.fromarray(out,'RGBA').resize((im.size[0]//2,im.size[1]//2),Image.LANCZOS).save(dst,quality=88,method=6)
+    Image.fromarray(out,'RGBA').resize((out.shape[1]//2,out.shape[0]//2),Image.LANCZOS).save(dst,quality=88,method=6)
     print(key,'-> art/arena/'+key+'.webp')
 
 if __name__=='__main__':
