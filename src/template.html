@@ -55,6 +55,11 @@ display:flex;align-items:center;justify-content:center;overflow:hidden;user-sele
 .grille{display:flex;gap:3px}.grille i{width:3px;height:16px;background:#1b1424;border-radius:2px}
 .bezel{grid-area:screen;background:var(--bezel);padding:10px;clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px);box-shadow:inset 0 0 0 2px #5ff2ff55,inset 0 0 18px #5ff2ff22}
 canvas{display:block;width:100%;aspect-ratio:160/144;image-rendering:pixelated;background:#000}
+.bugrep{position:fixed;inset:0;z-index:50;background:#0009;display:flex;align-items:center;justify-content:center;padding:16px}
+.bugbox{width:min(420px,100%);background:#241838;border:2px solid #5ff2ff;border-radius:12px;padding:14px;color:#e8e0ff;font-size:11px;line-height:1.6}
+.bugbox textarea{width:100%;box-sizing:border-box;font:14px/1.4 system-ui,sans-serif;border-radius:8px;border:1px solid #6b5a9a;background:#120c22;color:#fff;padding:8px}
+.bugbox div{display:flex;gap:10px;justify-content:flex-end}.bugbox button{font:inherit;padding:10px 16px;border-radius:8px;border:0;background:#3b2a5c;color:#e8e0ff}.bugbox .bsend{background:#ff8a1e;color:#1b1424}
+.bugmsg{min-height:1em;color:#ffd23f}
 .beta{position:fixed;left:50%;bottom:calc(6px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);font-size:9px;color:#1b1424;background:#ffd23f;padding:6px 10px;border-radius:8px;text-decoration:none;box-shadow:0 2px 0 #0006}
 .dpad{grid-area:dpad;justify-self:center;position:relative;width:132px;height:132px;border-radius:50%;background:radial-gradient(circle,#2e2342 0 30%,var(--dpad) 31% 100%);box-shadow:inset 0 0 0 3px #5ff2ff33,0 4px 0 #0006}
 .dpad button{position:absolute;width:44px;height:44px;background:transparent;border:0;border-radius:50%;color:var(--b);font:inherit;font-size:10px}
@@ -122,7 +127,7 @@ function rect(x,y,w,h,c){ctx.fillStyle=c;ctx.fillRect(x,y,w,h)}
 /* ---------- input ---------- */
 const held={},pressed={};
 const KEYMAP={ArrowUp:'up',KeyW:'up',ArrowDown:'down',KeyS:'down',ArrowLeft:'left',KeyA:'left',ArrowRight:'right',KeyD:'right',KeyZ:'a',Enter:'a',Space:'a',KeyX:'b',Backspace:'b',Escape:'start',KeyP:'start'};
-addEventListener('keydown',e=>{if(e.code==='KeyG'&&typeof canFreeRoam==='function'&&canFreeRoam())pressed.g=true;const k=KEYMAP[e.code];if(!k)return;e.preventDefault();if(!held[k])pressed[k]=true;held[k]=true});
+addEventListener('keydown',e=>{if(typingIn(e))return;if(e.code==='KeyG'&&typeof canFreeRoam==='function'&&canFreeRoam())pressed.g=true;const k=KEYMAP[e.code];if(!k)return;e.preventDefault();if(!held[k])pressed[k]=true;held[k]=true});
 addEventListener('keyup',e=>{const k=KEYMAP[e.code];if(k)held[k]=false});
 document.querySelectorAll('[data-k]').forEach(b=>{const k=b.dataset.k;
  b.addEventListener('pointerdown',e=>{e.preventDefault();if(!held[k])pressed[k]=true;held[k]=true;b.classList.add('on');try{b.setPointerCapture(e.pointerId)}catch(_){}});
@@ -452,7 +457,7 @@ function setMusicMode(m){musicMode=m;musicOn=m!=='off';try{localStorage.setItem(
 function setMusic(on){setMusicMode(on?'chip':'off')}
 ['pointerdown','keydown','touchstart'].forEach(ev=>window.addEventListener(ev,musicTry,{passive:true}));
 document.addEventListener('visibilitychange',()=>{if(document.hidden){BGM.pause();TITLEM.pause();BATTLEM.pause();if(AC)AC.suspend()}else{if(AC)AC.resume();curTrack=null;musicTry()}});setInterval(musicTick,50);
-window.addEventListener('keydown',e=>{if(e.code==='KeyM')setMusicMode(musicMode==='chip'?'song':musicMode==='song'?'off':'chip')});
+window.addEventListener('keydown',e=>{if(typingIn(e))return;if(e.code==='KeyM')setMusicMode(musicMode==='chip'?'song':musicMode==='song'?'off':'chip')});
 
 /* ---------- world map (on-foot travel between regions) ---------- */
 const WORLD=__WORLD__;const WMI=new Image();WMI.src=__WORLDIMG__;let wmask=null,wmove=0,wacc=0,wnear=null,wregion=-1,wbanner=0;
@@ -655,7 +660,7 @@ function runSteps(steps,done){if(!B||B.over)return;if(!steps.length)return done(
 function afterAct(next){if(!B||B.over)return;storyImmortal();if(lastChance())return;if(EM().hp<=0||PM().hp<=0)return resolveFaints();next()}
 const lcPending=d=>scene==='battle'&&B&&d===EM()&&!B.tr&&!B.sp&&!B.lc&&PM().hp>0&&Object.values(G.pods||{}).some(n=>n>0);
 // Deploy Linker: a wild Alienmon that would be knocked out hangs on at 1 HP once per battle, so a lucky hit never costs a catch
-function lastChance(){const e=EM();if(B.tr||B.sp||B.lc||e.hp>0||PM().hp<=0||!Object.values(G.pods||{}).some(n=>n>0))return false;
+function lastChance(){const e=EM();if(B.tr||B.sp||B.lc||!e.pri||e.hp>0||PM().hp<=0||!Object.values(G.pods||{}).some(n=>n>0))return false;
  B.lc=1;e.hp=1;B.phase='wait';const ko=()=>{e.hp=0;say(nm(e)+' fainted!',resolveFaints)};
  say([nm(e)+' is barely hanging on!'],()=>choose('Deploy Linker?',['Yes','No'],k=>{if(k!==0)return ko();const L=bagList(true),i=L.findIndex(x=>x.kind==='pod'&&x.c);B.bsel=Math.max(0,i);B.phase='bag';B.bagLock=frame+12},ko));return true}
 function turn(pact){B.phase='wait';const em=ppPick(EM(),aiMove(EM(),PM()));
@@ -822,7 +827,7 @@ function drawBox(sel,title){box(0,0,160,144);txt(title,6,5,'#1b1424');if(!G.box.
 let menuSel=0,menuMode='root',dsel=0,prevScene='planet';
 function updMenu(){if(menuMode==='quests'){qLogUpd();if(menuMode==='quests')qLogDraw();return}const opts=['Party','Quests','Storage','Bag','Gear','Map','Ship','Xenodex','Arena','Options','Save','Close'];
  if(menuMode==='root'){if(P_('up'))menuSel=(menuSel+opts.length-1)%opts.length;if(P_('down'))menuSel=(menuSel+1)%opts.length;if(P_('b')||P_('start')){prevBack();return}
-  if(P_('a')){const o=opts[menuSel];if(o==='Party'){menuMode='party';B={psel:0}}else if(o==='Quests'){menuMode='quests';B={qtab:0,qsel:0}}else if(o==='Bag'){menuMode='bag';B={bsel:0,psel:0}}else if(o==='Options'){const opt=()=>{G.opt=G.opt||{expLink:true};choose('Options',['Music: '+({chip:'Chiptune',song:'Song',off:'Off'})[musicMode],'EXP Link: '+(G.opt.expLink!==false?'On':'Off (Classic)'),(canFreeRoam()?'Free roam: '+(G.opt.freeRoam?'On':'Off')+' (playtest)':'Story mode'),'Text: '+(G.opt.text||'instant'),'Volume: '+(['Low','Normal','High'][G.opt.vol??1]),'Battle anims: '+(G.opt.noAnim?'Off':'On'),'Controls'].concat(['New maps: '+(secEnabled()?'On':'Off')]).concat(['Buddy walk: '+(G.opt.follow?'On':'Off')]).concat(godOn()||(typeof PROTO!=='undefined'&&PROTO)?['Invincible: '+(G.opt.god===false?'Off':'On')+' (test)']:[]).concat(['Back']),k=>{if(k===9&&typeof PROTO!=='undefined'&&PROTO){G.opt.god=G.opt.god===false;return say(G.opt.god===false?'Invincible off. Battles hurt again.':'Invincible on. Your Alienmon cannot be hurt.',opt)}if(k===8){G.opt.follow=!G.opt.follow;return say(G.opt.follow?'Your lead Alienmon will walk behind you.':'Your Alienmon will ride in its pod.',opt)}if(k===7){G.opt.secMaps=!secEnabled();if(!G.opt.secMaps&&G.sec){G.sec=null;G.secBack=null;say('New maps off. You will be back on the classic maps the next time you land.',opt)}else say(G.opt.secMaps?'New maps on. They start the next time you land on a planet.':'New maps off.',opt);return}if(k===2){if(!canFreeRoam())return say('Travel follows the story. Free roam is only for playtest builds.',opt);G.opt.freeRoam=!G.opt.freeRoam;return opt()}if(k===3){G.opt.text={instant:'fast',fast:'slow',slow:'instant'}[G.opt.text||'instant'];return opt()}if(k===4){G.opt.vol=((G.opt.vol??1)+1)%3;return opt()}if(k===5){G.opt.noAnim=!G.opt.noAnim;return opt()}if(k===6)return say(['Move: arrows / WASD / d-pad. A: Z, Enter or Space. B: X (jump, back).','START: Esc or P opens the menu. M switches music. Gamepads work too.'],opt);if(k===0){setMusicMode(musicMode==='chip'?'song':musicMode==='song'?'off':'chip');opt()}else if(k===1){G.opt.expLink=G.opt.expLink===false;opt()}})};opt()}else if(o==='Ship'){if(!shipOK())say(SHIP_NO);else if(PREV==='space')say("You're already aboard your ship.");else choose('Teleport to your ship?',['Teleport','Cancel'],k=>{if(k===0)teleportToShip()})}else if(o==='Storage'){tip('storage');menuMode='storage';B={bxsel:0,psel:0}}else if(o==='Map'&&!secOn()&&PREV==='space'&&secEnabled()){say('Map: fly to a planet and press A to land. Dustara\'s landing pad leads to Dustmere and the Molten Frontier.')}
+  if(P_('a')){const o=opts[menuSel];if(o==='Party'){menuMode='party';B={psel:0}}else if(o==='Quests'){menuMode='quests';B={qtab:0,qsel:0}}else if(o==='Bag'){menuMode='bag';B={bsel:0,psel:0}}else if(o==='Options'){const opt=()=>{G.opt=G.opt||{expLink:true};const OL=['Music: '+({chip:'Chiptune',song:'Song',off:'Off'})[musicMode],'EXP Link: '+(G.opt.expLink!==false?'On':'Off (Classic)'),(canFreeRoam()?'Free roam: '+(G.opt.freeRoam?'On':'Off')+' (playtest)':'Story mode'),'Text: '+(G.opt.text||'instant'),'Volume: '+(['Low','Normal','High'][G.opt.vol??1]),'Battle anims: '+(G.opt.noAnim?'Off':'On'),'Controls'].concat(['New maps: '+(secEnabled()?'On':'Off')]).concat(['Buddy walk: '+(G.opt.follow?'On':'Off')]).concat(godOn()||(typeof PROTO!=='undefined'&&PROTO)?['Invincible: '+(G.opt.god===false?'Off':'On')+' (test)']:[]).concat(['Report a bug','Back']);choose('Options',OL,k=>{if(OL[k]==='Report a bug')return bugReport(opt);if(k===9&&typeof PROTO!=='undefined'&&PROTO){G.opt.god=G.opt.god===false;return say(G.opt.god===false?'Invincible off. Battles hurt again.':'Invincible on. Your Alienmon cannot be hurt.',opt)}if(k===8){G.opt.follow=!G.opt.follow;return say(G.opt.follow?'Your lead Alienmon will walk behind you.':'Your Alienmon will ride in its pod.',opt)}if(k===7){G.opt.secMaps=!secEnabled();if(!G.opt.secMaps&&G.sec){G.sec=null;G.secBack=null;say('New maps off. You will be back on the classic maps the next time you land.',opt)}else say(G.opt.secMaps?'New maps on. They start the next time you land on a planet.':'New maps off.',opt);return}if(k===2){if(!canFreeRoam())return say('Travel follows the story. Free roam is only for playtest builds.',opt);G.opt.freeRoam=!G.opt.freeRoam;return opt()}if(k===3){G.opt.text={instant:'fast',fast:'slow',slow:'instant'}[G.opt.text||'instant'];return opt()}if(k===4){G.opt.vol=((G.opt.vol??1)+1)%3;return opt()}if(k===5){G.opt.noAnim=!G.opt.noAnim;return opt()}if(k===6)return say(['Move: arrows / WASD / d-pad. A: Z, Enter or Space. B: X (jump, back).','START: Esc or P opens the menu. M switches music. Gamepads work too.'],opt);if(k===0){setMusicMode(musicMode==='chip'?'song':musicMode==='song'?'off':'chip');opt()}else if(k===1){G.opt.expLink=G.opt.expLink===false;opt()}})};opt()}else if(o==='Ship'){if(!shipOK())say(SHIP_NO);else if(PREV==='space')say("You're already aboard your ship.");else choose('Teleport to your ship?',['Teleport','Cancel'],k=>{if(k===0)teleportToShip()})}else if(o==='Storage'){tip('storage');menuMode='storage';B={bxsel:0,psel:0}}else if(o==='Map'&&!secOn()&&PREV==='space'&&secEnabled()){say('Map: fly to a planet and press A to land. Dustara\'s landing pad leads to Dustmere and the Molten Frontier.')}
   else if(o==='Gear')gearMenu();
   else if(o==='Arena')rtaMenu();
   else if(o==='Map'&&secOn()&&!secAnchor(G.sec.id)){const sc=SWORLD[G.sec.id];say(['You are at '+sc.name.replace(/^Molten Frontier: /,'')+(sc.pkey==='arena'?', floating among the stars.':SEC_FRONTIER.has(sc.id)?', on the Molten Frontier.':', on '+PL[G.planet].name+'.')].concat(areaInfo(sc.id),['Walk the paths between areas, or take your ship to another world.']))}
@@ -906,6 +911,25 @@ __SECENGINE__
 __ARENAENGINE__
 
 /* ---------- boot: loading screen, background prefetch, offline support ---------- */
+// Options > Report a bug: the tester types what went wrong; it is filed as a GitHub issue (api/bug-report.js) with the
+// build, map, position, party and save attached. If sending fails the report is copied so it can be pasted to the owner.
+function typingIn(e){const n=e.target&&e.target.tagName;return n==='TEXTAREA'||n==='INPUT'}
+function bugContext(){const c={build:BUILD,branch:PROTO?'maps-v2 (test)':'main (live)',scene,device:navigator.userAgent,view:innerWidth+'x'+innerHeight};
+ try{c.planet=PL[G.planet]&&PL[G.planet].name;if(G.sec&&typeof SWORLD!=='undefined'&&SWORLD[G.sec.id]){c.sec=G.sec.id;c.place=SWORLD[G.sec.id].name}
+  c.pos=G.sec?(G.sec.x+','+G.sec.y):(G.px+','+G.py);c.party=(G.party||[]).map(m=>D[m.id].name+(m.pri?'*':'')+' L'+m.lv).join(', ');
+  c.story='Keepers beaten '+Object.keys(G.beaten||{}).length+', caught '+Object.keys(G.caught||{}).length;c.save=JSON.stringify(G)}catch(e){}
+ return c}
+function bugReport(back){const ctx=bugContext(),ov=document.createElement('div');ov.className='bugrep';
+ ov.innerHTML='<div class="bugbox"><b>Report a bug</b><p>What went wrong? Where were you, and what did you expect to happen?</p><textarea maxlength="4000" rows="6"></textarea><p class="bugmsg"></p><div><button class="bcancel">Cancel</button><button class="bsend">Send</button></div></div>';
+ document.body.appendChild(ov);const ta=ov.querySelector('textarea'),msg=ov.querySelector('.bugmsg'),send=ov.querySelector('.bsend');setTimeout(()=>ta.focus(),50);
+ const close=m=>{ov.remove();for(const k in held)held[k]=false;say(m||'Report cancelled.',back)};
+ ov.querySelector('.bcancel').onclick=()=>close();
+ send.onclick=async()=>{const text=ta.value.trim();if(!text){msg.textContent='Type a few words about the bug first.';return}send.disabled=true;msg.textContent='Sending...';
+  for(const u of['api/bug-report','/api/bug-report']){try{const r=await fetch(u,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text,ctx})});
+   const j=await r.json().catch(()=>({}));if(r.ok&&j.ok)return close('Thanks! Bug report #'+j.number+' was sent to the developer.');if(r.status!==404)break}catch(e){}}
+  const copy='Alienmon bug report\n\n'+text+'\n\n'+Object.entries(ctx).filter(([k])=>k!=='save').map(([k,v])=>k+': '+v).join('\n');
+  try{await navigator.clipboard.writeText(copy);close('The report could not be sent, so it was copied. Paste it in a message to the developer.')}
+  catch(e){msg.textContent='Could not send. Please screenshot this box and send it to the developer.';send.disabled=false}}}
 // private beta: a feedback link that opens an email with the build and where the tester is
 if(BETA){const m=document.createElement('meta');m.name='robots';m.content='noindex';document.head.appendChild(m);
  const a=document.createElement('a');a.className='beta';a.textContent='BETA · Send feedback';a.href='#';
