@@ -48,14 +48,15 @@ function rtaStart(fid){const me=G.party[RTO.pick],pl=PL[RTO.arena],r=rng(hash('r
  if(fid===undefined){const ban=i=>!D[i]||['legendary','mythic'].includes(D[i].r)||i===me.id;let pool=pl.pool.c.concat(pl.pool.e,pl.pool.r).filter(i=>!ban(i));
   if(!pool.length)pool=D.map((d,i)=>i).filter(i=>!ban(i));fid=pool[Math.floor(r()*pool.length)]}
  const f=[rFighter(me,0),rFighter(mk(fid,ARJ.match.level),1)];
- RTA={key:pl.key,pl:RTO.arena,fid,r,t:0,t0:0,phase:'count',f,shots:[],areas:[],fx:[],fl:[],log:null,shake:0,diff:RDIFF[RTO.diff],win:-1};
+ RTA={key:pl.key,pl:RTO.arena,fid,r,t:0,t0:0,phase:'count',f,shots:[],areas:[],fx:[],cfx:[],fl:[],log:null,shake:0,diff:RDIFF[RTO.diff],win:-1};
  warm(ARTI,f.map(x=>D[x.m.id].name));warm(ARTBI,f.map(x=>D[x.m.id].name));
+ for(const x of f)rCpush('common_release',0,x.x,x.y-12,34,30);
  const L=[];entry(f[0].m,f[1].m,L);entry(f[1].m,f[0].m,L);rLog(L);scene='rta'}
 
 /* ---- update ---- */
 function rtaUpd(){const A=RTA;A.t++;
  if(A.phase!=='over'&&P_('start')){choose('Paused',['Resume','Forfeit'],k=>{if(k===1)rtaOver(1)},()=>{});rtaDraw();return}
- if(A.phase==='count'){if(A.t>=ARJ.match.countdown){A.phase='fight';A.t0=A.t}rtaDraw();return}
+ if(A.phase==='count'){if(A.t>=ARJ.match.countdown){A.phase='fight';A.t0=A.t}A.cfx=A.cfx.filter(x=>++x.t<x.dur);rtaDraw();return}
  if(A.phase==='over'){A.ot++;rStepFx();if(A.ot>50&&(P_('a')||P_('b')))rtaResult();rtaDraw();return}
  const[p,e]=A.f;rControl(p);rAI(e,p);for(const f of A.f)rStep(f);rShots();rAreas();rTick();rStepFx();
  const left=ARJ.match.time*60-(A.t-A.t0),fr=m=>m.hp/stat(m,0);
@@ -84,7 +85,7 @@ function rStep(f){const m=f.m;if(m.hp<=0)return;
  if(m.st==='freeze'){if(f.imm>0)m.st=null;else{if(!f.frz)f.frz=90;if(--f.frz<=0){m.st=null;f.imm=180;rFloat(f,'thawed','#9fd8ff')}}}
  f.x+=f.kb[0];f.y+=f.kb[1];f.kb[0]*=0.82;f.kb[1]*=0.82;
  if(f.dash){f.x+=f.dash.vx;f.y+=f.dash.vy;rHitAt(f.dash.atk,f.x,f.y,10,true);if(--f.dash.t<=0)f.dash=null}
- else if(m.st!=='freeze'&&!f.wind){const l=Math.hypot(f.mx,f.my);if(l){const s=rSpeed(f);f.x+=f.mx/l*s;f.y+=f.my/l*s;f.ax=f.mx/l;f.ay=f.my/l;f.step++;
+ else if(m.st!=='freeze'&&!f.wind){const l=Math.hypot(f.mx,f.my);if(l){const s=rSpeed(f);f.x+=f.mx/l*s;f.y+=f.my/l*s;f.ax=f.mx/l;f.ay=f.my/l;f.step++;if(f.step%16===0)rCpush('common_movement',1,f.x,f.y-2,12,14);
   f.face=Math.abs(f.mx)>=Math.abs(f.my)?(f.mx<0?'left':'right'):(f.my<0?'up':'down')}}
  if(f.wind&&--f.wind.t<=0)rRelease(f);
  const o=rFoe(f);if(o.m.hp>0){const dx=f.x-o.x,dy=f.y-o.y,d=Math.hypot(dx,dy);if(d<12&&d>0){f.x+=dx/d*0.6;f.y+=dy/d*0.6}}   // bodies don't overlap
@@ -93,7 +94,7 @@ function rStep(f){const m=f.m;if(m.hp<=0)return;
 /* ---- attacks: one attack object per use, each target hit at most once ---- */
 function rFire(f,i,ax,ay){const A=RTA,mv=MV[f.m.moves[i]],sh=rShape(mv),atk={f,mv,hit:new Set()},foe=rFoe(f);
  const reach=Math.min(Math.hypot(foe.x-f.x,foe.y-f.y),RREACH[sh]),tx=f.x+ax*reach,ty=f.y+ay*reach;
- if(sh==='AURA'){const h=f.m.hp;rLog(rScaled([f.m,foe.m],()=>act(f.m,foe.m,mv)));if(f.m.hp>h)rFloat(f,'+'+(f.m.hp-h),'#9be36b');f.aura=36;return}
+ if(sh==='AURA'){const h=f.m.hp,b0=rBs(f.m),b1=rBs(foe.m);rLog(rScaled([f.m,foe.m],()=>act(f.m,foe.m,mv)));if(f.m.hp>h){rFloat(f,'+'+(f.m.hp-h),'#9be36b');rCpush('common_heal_shield',0,f.x,f.y-12,28,24)}rBuffFx(f,b0);rBuffFx(foe,b1);f.aura=36;return}
  if(sh==='PROJ'||sh==='LOB')A.shots.push({x:f.x+ax*8,y:f.y-8+ay*8,vx:ax*2.6,vy:ay*2.6,r:4,life:60,t:0,lob:sh==='LOB',atk});
  else if(sh==='WAVE')A.shots.push({x:f.x+ax*8,y:f.y-8+ay*8,vx:ax*1.8,vy:ay*1.8,r:11,life:75,t:0,wave:1,atk});
  else if(sh==='BEAM'||sh==='CHAIN'){const L=RREACH[sh],ex=f.x+ax*L,ey=f.y-8+ay*L;A.areas.push({kind:'beam',x:f.x,y:f.y-8,ex,ey,t:0,dur:16,atk});
@@ -101,20 +102,22 @@ function rFire(f,i,ax,ay){const A=RTA,mv=MV[f.m.moves[i]],sh=rShape(mv),atk={f,m
  else if(sh==='ARC')rHitAt(atk,f.x+ax*14,f.y-8+ay*14,12,false,true);
  else if(sh==='CONE')rHitAt(atk,f.x+ax*20,f.y-8+ay*20,16,false,true);
  else if(sh==='BURST'){rHitAt(atk,f.x,f.y-8,26,false);rImpact(atk,f.x,f.y-8,1)}
- else if(sh==='DASH')f.dash={vx:ax*3.4,vy:ay*3.4,t:14,atk};
+ else if(sh==='DASH'){f.dash={vx:ax*3.4,vy:ay*3.4,t:14,atk};rCpush('common_movement',0,f.x-ax*10,f.y-6,24,16,ax<0)}
  else if(sh==='ZONE')A.areas.push({kind:'zone',x:tx,y:ty,r:16,t:0,delay:30,atk});
  else if(sh==='RAIN')for(let j=0;j<3;j++)A.areas.push({kind:'zone',x:tx+(A.r()-0.5)*30,y:ty+(A.r()-0.5)*18,r:11,t:-j*8,delay:30,atk});
  else A.areas.push({kind:'field',x:tx,y:ty,r:18,t:0,dur:240,atk})}
 // ground: test against the feet (zones and fields) instead of the body; fx: show the impact even on a miss
 function rHitAt(atk,x,y,r,ground,fx){const t=rFoe(atk.f);if(fx)rImpact(atk,x,y);if(t.m.hp<=0||atk.hit.has(t))return;
  if(Math.hypot(t.x-x,(ground?t.y:t.y-8)-y)<r+7)rHit(atk,t)}
-function rHit(atk,t){atk.hit.add(t);const a=atk.f.m,d=t.m,mv=atk.mv,hp0=d.hp;
+function rHit(atk,t){atk.hit.add(t);const a=atk.f.m,d=t.m,mv=atk.mv,hp0=d.hp,ba=rBs(a),bd=rBs(d);
  const sh=a.st==='shock',cf=a.cf;if(sh)a.st=null;a.cf=0;   // already checked when the move was used
  const L=rScaled([a,d],()=>act(a,d,{...mv,a:1e9}));if(sh&&!a.st)a.st='shock';if(!a.cf)a.cf=cf;   // accuracy is the hitbox's job in real time
- const dmg=hp0-d.hp;rImpact(atk,t.x,t.y-8);
+ const dmg=hp0-d.hp;rImpact(atk,t.x,t.y-8);rBuffFx(atk.f,ba);rBuffFx(t,bd);
+ if(dmg>0){const e=eff(mv.t,D[d.id].t),cr=L.includes('A critical hit!');rCpush(cr||e<1?'common_hit_weak':'common_hit_normal',cr?1:e>1?1:0,t.x,t.y-10,e>1||cr?30:22,14)}
+ if(hp0>0&&d.hp<=0)rCpush('common_status_confuse_ko',1,t.x,t.y-8,40,28);
  if(dmg>0){t.hurt=14;const k=Math.min(3,0.8+(mv.p||40)/50),dx=t.x-atk.f.x,dy=t.y-atk.f.y,l=Math.hypot(dx,dy)||1;t.kb=[dx/l*k,dy/l*k];rFloat(t,'-'+dmg,'#ffffff');
   const e=eff(mv.t,D[d.id].t);if(e>1){rFloat(t,'SUPER!','#ffd23f');RTA.shake=8}else if(e<1)rFloat(t,'resist','#a99cc8');if(L.includes('A critical hit!'))rFloat(t,'CRIT!','#ff8a1e');if((mv.p||0)>80)RTA.shake=Math.max(RTA.shake,6)}
- else if(d.hp>hp0)rFloat(t,'+'+(d.hp-hp0),'#9be36b');
+ else if(d.hp>hp0){rFloat(t,'+'+(d.hp-hp0),'#9be36b');rCpush('common_heal_shield',0,t.x,t.y-12,28,24)}
  rLog(L)}
 function rShots(){const A=RTA;A.shots=A.shots.filter(s=>{s.t++;s.x+=s.vx;s.y+=s.vy;const t=rFoe(s.atk.f);
  if(t.m.hp>0&&!s.atk.hit.has(t)&&Math.hypot(t.x-s.x,t.y-8-s.y)<s.r+7){rHit(s.atk,t);if(!s.wave)return false}
@@ -146,10 +149,16 @@ function rAI(f,foe){const A=RTA,ai=f.ai,r=A.r;f.mx=ai.mx;f.my=ai.my;if(f.m.hp<=0
  if(best>=0&&bv>0&&d<=RREACH[rShape(MV[f.m.moves[best]])]){const ang=Math.atan2(dy,dx)+(r()-0.5)*2*A.diff[2];rUse(f,best,Math.cos(ang),Math.sin(ang))}}
 
 /* ---- effects and messages ---- */
+// the owner's common effect sheets (fx/common_*): 4x2 cells of 192x256, row 0 / row 1 as in prompts/fx/fx_batch_7
+function rCF(sheet,row,fr,x,y,w,a,flip){const im=ARFI[sheet];if(!okI(im))return false;drawCell(im,[fr*192,row*256,192,256],x,y,w,w*4/3,!!flip,a==null?1:a);return true}
+function rCpush(sheet,row,x,y,w,dur,flip){if(RTA&&ARFI[sheet])RTA.cfx.push({sheet,row,x,y,w,t:0,dur:dur||16,flip})}
+const rBs=m=>Object.values(m.bs||{}).reduce((a,b)=>a+b,0);
+function rBuffFx(f,before){const d=rBs(f.m)-before;if(d)rCpush('common_buffs',d>0?0:1,f.x,f.y-14,26,30)}
 function rImpact(atk,x,y,big){RTA.fx.push({x,y,t:0,dur:big?26:20,big,mv:atk.mv})}
 function rFloat(f,s,c){RTA.fl.push({x:f.x,y:f.y-26,s,c,t:0})}
-function rLog(L){const s=(L||[]).filter(l=>!/ used /.test(l)&&!/fainted!$/.test(l));if(s.length)RTA.log={s:s[s.length-1],t:150}}
-function rStepFx(){const A=RTA;A.fx=A.fx.filter(x=>++x.t<x.dur);A.fl=A.fl.filter(x=>++x.t<45);if(A.log&&--A.log.t<=0)A.log=null;
+function rLog(L){if(RTA&&L&&L.length)for(const f of RTA.f){const n=TR(f.m.id).name;if(n&&L.some(l=>l.includes(n)))rCpush('common_trait_telegraph',0,f.x,f.y-12,34,22)}
+ const s=(L||[]).filter(l=>!/ used /.test(l)&&!/fainted!$/.test(l));if(s.length)RTA.log={s:s[s.length-1],t:150}}
+function rStepFx(){const A=RTA;A.fx=A.fx.filter(x=>++x.t<x.dur);A.cfx=(A.cfx||[]).filter(x=>++x.t<x.dur);A.fl=A.fl.filter(x=>++x.t<45);if(A.log&&--A.log.t<=0)A.log=null;
  if(A.phase==='over')A.areas=A.areas.filter(z=>++z.t<z.dur)}
 
 /* ---- drawing ---- */
@@ -169,7 +178,10 @@ function rDrawF(f){const m=f.m,name=D[m.id].name,S=26,pose=k=>{const i=ARPI[name
  if(m.hp<=0)ctx.globalAlpha=0.75;if(f.hurt>0&&f.hurt%4<2)ctx.filter='brightness(2.6)';else if(m.st==='freeze')ctx.filter='saturate(0.3) brightness(1.5)';
  if(flip)ctx.scale(-1,1);if(rot){ctx.translate(0,-S/4);ctx.rotate(rot)}ctx.drawImage(im,-S/2,-S,S,S);ctx.restore();
  if(f.aura)rRing(f.x,f.y-4,14-f.aura/6,6,rCol(MV[m.moves[f.sel]])[1],f.aura/36,2);
- if(m.st&&m.hp>0)rect(Math.round(f.x)-2,Math.round(f.y)-30,4,4,STC[m.st][1]);if(m.cf>0&&m.hp>0)txt('?',Math.round(f.x)+5,Math.round(f.y)-31,'#ff74c4',6)}
+ const SF={burn:['common_status_burn_poison',0],poison:['common_status_burn_poison',1],shock:['common_status_shock_freeze',0],freeze:['common_status_shock_freeze',1]}[m.st],lf=Math.floor(RTA.t/6)%4;
+ let drawn=m.hp>0&&SF&&rCF(SF[0],SF[1],m.st==='freeze'?1+(Math.floor(RTA.t/20)%2):lf,f.x,f.y-12,30,0.9);
+ if(m.cf>0&&m.hp>0&&rCF('common_status_confuse_ko',0,lf,f.x,f.y-30,18,1))drawn=drawn||'cf';
+ if(m.st&&m.hp>0&&!SF)rect(Math.round(f.x)-2,Math.round(f.y)-30,4,4,STC[m.st][1]);if(m.st&&m.hp>0&&SF&&!drawn)rect(Math.round(f.x)-2,Math.round(f.y)-30,4,4,STC[m.st][1]);if(m.cf>0&&m.hp>0&&drawn!=='cf'&&!okI(ARFI.common_status_confuse_ko))txt('?',Math.round(f.x)+5,Math.round(f.y)-31,'#ff74c4',6)}
 function rFxCell(mv,which,k,x,y,w,flip,a){const af=rArtFx(mv);if(okI(af)){const r=which==='i'?1:0,f=which==='i'?Math.min(3,Math.floor(k*4)):Math.floor(k*4)%4;drawCell(af,[f*192,r*256,192,256],x,y,w*1.5,w*2,which==='i'?false:flip,a);return}
  const an=mv.an,im=an&&FXI['mv_'+an.r],R=an&&MOVEFX.rows[an.r];
  if(!okI(im)||!R||!R[which]||!R[which].length){const c=rCol(mv);rEll(x,y,w/3,w/3,c[0],a*0.8);rEll(x,y,w/6,w/6,c[1],a);return}
@@ -179,13 +191,14 @@ function rtaDraw(){const A=RTA,pl=PL[A.pl],sx=A.shake>0?(A.shake--%2?1:-1):0,im=
  else{const e=ENV[pl.env]||ENV.desert;rect(0,0,160,144,e.o2);for(let y=RF.y0;y<RF.y1;y+=16)for(let x=RF.x0;x<RF.x1;x+=16)rect(x,y,Math.min(16,RF.x1-x),Math.min(16,RF.y1-y),((x+y)/16)%2?e.g:e.g2)}
  ctx.save();ctx.translate(sx,0);ctx.strokeStyle='rgba(95,242,255,0.55)';ctx.strokeRect(RF.x0+0.5,RF.y0+0.5,RF.x1-RF.x0-1,RF.y1-RF.y0-1);
  for(const z of A.areas){const c=rCol(z.atk.mv);
-  if(z.kind==='zone'&&z.t>=0&&z.t<z.delay){const k=z.t/z.delay;rEll(z.x,z.y,z.r,z.r*0.5,'#ff5a3a',0.15+0.25*k);rRing(z.x,z.y,z.r*(1.4-0.4*k),z.r*0.5*(1.4-0.4*k),'#ff7a3a',0.9,1)}
+  if(z.kind==='zone'&&z.t>=0&&z.t<z.delay){const k=z.t/z.delay;if(!rCF('common_trait_telegraph',1,Math.floor(A.t/5)%4,z.x,z.y-z.r*0.6,z.r*2.6,0.55+0.45*k)){rEll(z.x,z.y,z.r,z.r*0.5,'#ff5a3a',0.15+0.25*k);rRing(z.x,z.y,z.r*(1.4-0.4*k),z.r*0.5*(1.4-0.4*k),'#ff7a3a',0.9,1)}}
   if(z.kind==='field'){rEll(z.x,z.y,z.r,z.r*0.5,c[0],0.28+0.08*Math.sin(z.t/6));rRing(z.x,z.y,z.r,z.r*0.5,c[1],0.6,1)}}
  const ord=A.f.slice().sort((a,b)=>a.y-b.y);for(const f of ord)rDrawF(f);
  for(const s of A.shots){const c=rCol(s.atk.mv),y=s.lob?s.y-Math.sin(Math.PI*s.t/s.life)*14:s.y;
   if(s.wave){rEll(s.x,s.y+6,s.r,s.r*0.45,c[0],0.55);rRing(s.x,s.y+6,s.r,s.r*0.45,c[1],0.9,2)}else{rEll(s.x,s.y+8,3,1.2,'#000',0.3);rFxCell(s.atk.mv,'p',s.t/8,s.x,y,12,s.vx<0,1)}}
  for(const z of A.areas)if(z.kind==='beam'){const c=rCol(z.atk.mv),a=1-z.t/z.dur;ctx.save();ctx.globalAlpha=a;ctx.lineCap='round';ctx.strokeStyle=c[0];ctx.lineWidth=5;ctx.beginPath();ctx.moveTo(z.x,z.y);ctx.lineTo(z.ex,z.ey);ctx.stroke();ctx.strokeStyle=c[1];ctx.lineWidth=2;ctx.stroke();ctx.restore()}
  for(const x of A.fx){const k=x.t/x.dur;rFxCell(x.mv,'i',k,x.x,x.y,(x.big?40:26)*(0.55+0.45*Math.min(1,k*3)),false,k>0.7?(1-k)/0.3:1)}
+ for(const x of A.cfx||[])rCF(x.sheet,x.row,Math.min(3,Math.floor(x.t/x.dur*4)),x.x,x.y,x.w,x.t>x.dur*0.75?(x.dur-x.t)/(x.dur*0.25):1,x.flip);
  for(const x of A.fl){ctx.save();ctx.globalAlpha=x.t>30?(45-x.t)/15:1;txt(x.s,Math.round(x.x-x.s.length*2.5),Math.round(x.y-x.t*0.4),'#1b1424',5);txt(x.s,Math.round(x.x-x.s.length*2.5)-1,Math.round(x.y-x.t*0.4)-1,x.c,5);ctx.restore()}
  ctx.restore();rHud()}
 function rHud(){const A=RTA,[p,e]=A.f;
