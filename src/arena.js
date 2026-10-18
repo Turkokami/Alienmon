@@ -19,7 +19,7 @@ const RF={x0:6,y0:20,x1:154,y1:128};   // the arena floor on the 160x144 screen
 const RDIFF=[['Easy',27,0.35],['Normal',15,0.18],['Hard',7,0.06]];   // name, ticks between decisions, aim error (radians)
 const RREACH={PROJ:100,LOB:90,WAVE:110,BEAM:110,CHAIN:110,ARC:22,CONE:34,BURST:28,DASH:50,ZONE:80,RAIN:80,FIELD:70,AURA:999};
 let RTA=null;const RTO={diff:1,arena:0,pick:0};
-addEventListener('keydown',e=>{if(scene!=='rta')return;const k={Digit1:0,Digit2:1,Digit3:2,Digit4:3,KeyJ:0,KeyK:1,KeyL:2,KeyI:3}[e.code];if(k!==undefined){pressed['m'+k]=true;e.preventDefault()}});
+addEventListener('keydown',e=>{if(scene!=='rta')return;if(e.code==='KeyQ'||e.code==='Tab'){pressed.sw=true;e.preventDefault();return}const k={Digit1:0,Digit2:1,Digit3:2,Digit4:3,KeyJ:0,KeyK:1,KeyL:2,KeyI:3}[e.code];if(k!==undefined){pressed['m'+k]=true;e.preventDefault()}});
 // tapping a move in the bar along the bottom of the screen fires it, so phones get all four moves without the B cycle
 cv.addEventListener('pointerdown',e=>{if(scene!=='rta'||!RTA||CH||DLG)return;const r=cv.getBoundingClientRect(),x=(e.clientX-r.left)/r.width*160,y=(e.clientY-r.top)/r.height*144;
  if(y>=126){const i=Math.max(0,Math.min(3,Math.floor(x/40)));pressed['m'+i]=true;e.preventDefault()}});
@@ -33,42 +33,89 @@ const rFoe=f=>RTA.f[1-f.side];
 function rScaled(ms,fn){const h0=ms.map(m=>m.hp),r=fn();ms.forEach((m,i)=>{const dh=m.hp-h0[i];if(dh)m.hp=Math.max(0,Math.min(stat(m,0),h0[i]+Math.sign(dh)*Math.max(1,Math.round(Math.abs(dh)*ARJ.match.scale))))});return r}
 
 /* ---- menu and match setup ---- */
-function rtaMenu(){if(!G.party.length)return say('You need an Alienmon to enter the Arena.');RTO.pick=Math.min(RTO.pick,G.party.length-1);
- choose('Arena (beta)',['Fight!','Partner: '+nm(G.party[RTO.pick]),'CPU: '+RDIFF[RTO.diff][0],'Arena: '+PL[RTO.arena].name,'Record','How to play','Back'],k=>{
+const RMODES=['1v1','3v3'];
+const rBan=i=>!D[i]||['legendary','mythic'].includes(D[i].r);
+// the player's team: chosen party members, or a rental team of three (level 50 copies either way, the save is never touched)
+function rMyTeam(){if(RTO.rental){const r=rng(hash('rent'+(RTO.rentSeed||1)));const pool=D.map((d,i)=>i).filter(i=>!rBan(i));const out=[];while(out.length<3){const i=pool[Math.floor(r()*pool.length)];if(!out.includes(i))out.push(i)}return out.map(i=>mk(i,ARJ.match.level))}
+ const n=RTO.mode==='3v3'?3:1;let ix=(RTO.team||[]).filter(i=>G.party[i]);if(!ix.length)ix=[RTO.pick];for(let i=0;ix.length<n&&i<G.party.length;i++)if(!ix.includes(i))ix.push(i);return ix.slice(0,n).map(i=>G.party[i])}
+function rFoeTeam(n,r,arena,avoid){const pl=PL[arena]||PL[0];let pool=pl.pool.c.concat(pl.pool.e,pl.pool.r).filter(i=>!rBan(i)&&!avoid.includes(i));if(pool.length<n)pool=D.map((d,i)=>i).filter(i=>!rBan(i)&&!avoid.includes(i));
+ const out=[];while(out.length<n){const i=pool[Math.floor(r()*pool.length)];if(!out.includes(i)||pool.length<n)out.push(i)}return out}
+function rtaMenu(){if(!G.party.length)return say('You need an Alienmon to enter the Arena.');RTO.pick=Math.min(RTO.pick,G.party.length-1);RTO.mode=RTO.mode||'1v1';
+ const team=RTO.rental?'Rental team':rMyTeam().map(m=>nm(m)).join(', ');
+ choose('Linker Arena',['Fight!','Mode: '+RTO.mode,'Team: '+team,'CPU: '+RDIFF[RTO.diff][0],'Arena: '+rArenaName(RTO.arena),'Cups','Record','How to play','Back'],k=>{
   if(k===0)rtaStart();
-  else if(k===1)choose('Partner',G.party.map(m=>nm(m)+' L'+m.lv),i=>{RTO.pick=i;rtaMenu()},rtaMenu);
-  else if(k===2){RTO.diff=(RTO.diff+1)%RDIFF.length;rtaMenu()}
-  else if(k===3){RTO.arena=(RTO.arena+1)%PL.length;rtaMenu()}
-  else if(k===4){const r=G.rta||{w:0,l:0,d:0};say(['Arena record: '+r.w+' wins, '+r.l+' losses, '+r.d+' draws.'],rtaMenu)}
-  else if(k===5)say(['Arena battles happen in real time. Both Alienmon fight at level 50.','D-pad moves. Tap a move at the bottom of the screen to use it, or press A for the selected move and B to select the next one. Keys 1-4 fire a move too.','Strong moves need time to recharge, and the biggest ones glow before they hit. Watch for red rings on the ground and dodge!','Types, Traits and status all work like normal battles.'],rtaMenu)},()=>{})}
+  else if(k===1){RTO.mode=RMODES[(RMODES.indexOf(RTO.mode)+1)%RMODES.length];rtaMenu()}
+  else if(k===2)rTeamMenu();
+  else if(k===3){RTO.diff=(RTO.diff+1)%RDIFF.length;rtaMenu()}
+  else if(k===4)rArenaMenu();
+  else if(k===5)rCupMenu();
+  else if(k===6)rRecord();
+  else if(k===7)say(['Arena battles happen in real time. Every Alienmon fights at level 50.','Slide your thumb on the pad to move in any direction. Tap a move button to use it; moves aim at your foe when you face it.','Strong moves need time to recharge, and the biggest ones glow before they hit. Watch for warning rings on the ground and dodge!','In 3v3, press SWAP (or Q) to switch Alienmon. When one is knocked out, the next one beams in.','Heavy hits crack the floor, and every planet has its own hazard. Types, Traits and status all work like normal battles.'],rtaMenu)},()=>{})}
+function rTeamMenu(){const n=RTO.mode==='3v3'?3:1;RTO.team=(RTO.team||[RTO.pick]).filter(i=>G.party[i]);
+ const opts=G.party.map((m,i)=>(RTO.team.includes(i)?'* ':'  ')+nm(m)+' L'+m.lv).concat([RTO.rental?'* Rental team':'  Rental team','Done']);
+ choose('Pick '+n+' Alienmon',opts,k=>{if(k===opts.length-1)return rtaMenu();
+  if(k===G.party.length){RTO.rental=!RTO.rental;if(RTO.rental)RTO.rentSeed=(RTO.rentSeed||1)+1;return rTeamMenu()}
+  RTO.rental=false;const at=RTO.team.indexOf(k);if(at>=0)RTO.team.splice(at,1);else{RTO.team.push(k);if(RTO.team.length>n)RTO.team.shift()}RTO.pick=RTO.team.length?RTO.team[0]:RTO.pick;rTeamMenu()},rtaMenu)}
+const rArenaName=i=>i>=PL.length?'Practice court':PL[i].name;
+function rArenaMenu(){choose('Arena',PL.map(p=>p.name).concat(['Practice court']),i=>{RTO.arena=i;rtaMenu()},rtaMenu)}
+function rRecord(){const r=G.rta||{w:0,l:0,d:0},c=(r.cups||{});const won=Object.keys(c).filter(k=>c[k]);
+ say(['Arena record: '+r.w+' wins, '+r.l+' losses, '+r.d+' draws.','Cups won: '+(won.length?won.map(k=>(RCUPS.find(x=>x.k===k)||{n:k}).n).join(', '):'none yet')+'.'],rtaMenu)}
 function rFighter(m,side){const c={...m,lv:ARJ.match.level,st:null,cf:0,moves:(m.moves&&m.moves.length?m.moves:[0]).slice(0,4)};resetStages(c);c.hp=stat(c,0);
  return{m:c,side,x:side?RF.x1-28:RF.x0+28,y:(RF.y0+RF.y1)/2+12,face:side?'left':'right',ax:side?-1:1,ay:0,mx:0,my:0,
-  cd:c.moves.map(()=>0),cdm:c.moves.map(()=>1),sel:0,wind:null,atkT:0,hurt:0,kb:[0,0],dash:null,frz:0,imm:0,step:0,aura:0,ai:{t:0,mx:0,my:0,str:1}}}
-function rtaStart(fid){const me=G.party[RTO.pick],pl=PL[RTO.arena],r=rng(hash('rta'+Date.now()));
- if(fid===undefined){const ban=i=>!D[i]||['legendary','mythic'].includes(D[i].r)||i===me.id;let pool=pl.pool.c.concat(pl.pool.e,pl.pool.r).filter(i=>!ban(i));
-  if(!pool.length)pool=D.map((d,i)=>i).filter(i=>!ban(i));fid=pool[Math.floor(r()*pool.length)]}
- const f=[rFighter(me,0),rFighter(mk(fid,ARJ.match.level),1)];
- RTA={key:pl.key,pl:RTO.arena,fid,r,t:0,t0:0,phase:'count',f,shots:[],areas:[],fx:[],cfx:[],fl:[],log:null,shake:0,diff:RDIFF[RTO.diff],win:-1};
- warm(ARTI,f.map(x=>D[x.m.id].name));warm(ARTBI,f.map(x=>D[x.m.id].name));
+  cd:c.moves.map(()=>0),cdm:c.moves.map(()=>1),sel:0,wind:null,atkT:0,hurt:0,kb:[0,0],dash:null,frz:0,imm:0,step:0,aura:0,swapCd:0,next:0,ai:{t:0,mx:0,my:0,str:1}}}
+// opts: {mine:[mon], foe:[id or mon], arena, diff, cup:{k,round}}; with no opts the menu's settings are used
+function rtaStart(opts){if(typeof opts==='number')opts={foe:[opts]};opts=opts||{};const r=rng(hash('rta'+Date.now())),arena=opts.arena!=null?opts.arena:RTO.arena,pl=PL[arena];
+ const mine=opts.mine||rMyTeam(),n=mine.length,foe=(opts.foe||rFoeTeam(n,r,arena,mine.map(m=>m.id))).map(x=>typeof x==='number'?mk(x,ARJ.match.level):x);
+ const tm=[mine.map(m=>rFighter(m,0)),foe.map(m=>rFighter(m,1))],f=[tm[0][0],tm[1][0]];
+ RTA={key:pl?pl.key:'court',pl:arena,foeIds:foe.map(m=>m.id),opts,r,t:0,t0:0,phase:'count',f,tm,shots:[],areas:[],fx:[],cfx:[],fl:[],log:null,shake:0,diff:RDIFF[opts.diff!=null?opts.diff:RTO.diff],win:-1};
+ const names=tm[0].concat(tm[1]).map(x=>D[x.m.id].name);warm(ARTI,names);warm(ARTBI,names);
  for(const x of f)rCpush('common_release',0,x.x,x.y-12,34,30);
  const L=[];entry(f[0].m,f[1].m,L);entry(f[1].m,f[0].m,L);rLog(L);scene='rta'}
+// tag battles: bring the next Alienmon in where the last one stood (its cooldowns are kept from when it left)
+const rAlive=side=>RTA.tm[side].filter(x=>x.m.hp>0);
+function rSwap(side,to){const A=RTA,old=A.f[side],nx=to||A.tm[side].find(x=>x!==old&&x.m.hp>0);if(!nx||nx===old)return false;
+ nx.x=old.x;nx.y=old.y;nx.face=old.face;nx.ax=old.ax;nx.ay=old.ay;nx.kb=[0,0];nx.wind=null;nx.dash=null;nx.swapCd=90;nx.next=0;old.wind=null;old.dash=null;
+ if(old.m.hp>0)rCpush('common_release',1,old.x,old.y-12,30,18);A.f[side]=nx;rCpush('common_release',0,nx.x,nx.y-12,34,26);
+ const L=['Go, '+nm(nx.m)+'!'];entry(nx.m,A.f[1-side].m,L);rLog(L);return true}
+
+/* ---- cups (P3-03): four 3v3 rounds against themed teams, harder each round; a win gives the cup's trophy ---- */
+const RCUPS=[{k:'canyon',n:'Canyon Cup',a:'dustara',ty:null},{k:'tide',n:'Tide Cup',a:'thalassa',ty:['Hydro']},{k:'thunder',n:'Thunder Cup',a:'neonis',ty:['Volt','Sonic']},
+ {k:'frost',n:'Frost Cup',a:'glacia',ty:['Cryo','Crystal']},{k:'nebula',n:'Nebula Cup',a:'starfall',ty:['Void','Psi','Gravity']},{k:'summit',n:'Summit Cup',a:'apex',ty:null,top:1}];
+const rCupDone=k=>!!(G.rta&&G.rta.cups&&G.rta.cups[k]);
+function rCupMenu(){const opts=RCUPS.map(c=>(rCupDone(c.k)?'* ':'  ')+c.n+(c.top&&!rCupLocked()?'':c.top?' (locked)':''));
+ choose('Cups',opts.concat(['Back']),i=>{if(i>=RCUPS.length)return rtaMenu();const c=RCUPS[i];
+  if(c.top&&rCupLocked())return say(['The Summit Cup opens once you win the other five cups.'],rCupMenu);
+  say([c.n+': four 3v3 rounds in a row. Your team stays the same, and each round is tougher than the last.'],()=>rCupRound(c,0))},rtaMenu)}
+const rCupLocked=()=>RCUPS.some(c=>!c.top&&!rCupDone(c.k));
+function rCupFoes(c,round){const r=rng(hash('cup'+c.k+round)),total=s=>D[s].s?D[s].s.reduce((a,b)=>a+b,0):0;
+ let pool=D.map((d,i)=>i).filter(i=>!rBan(i)&&(!c.ty||D[i].t.some(x=>c.ty.includes(x))));
+ if(c.top)pool=pool.sort((a,b)=>total(b)-total(a)).slice(0,60);else if(round<2)pool=pool.sort((a,b)=>total(a)-total(b)).slice(0,Math.max(12,Math.floor(pool.length*0.6)));
+ const out=[];while(out.length<3&&pool.length){const i=pool[Math.floor(r()*pool.length)];if(!out.includes(i))out.push(i)}return out}
+function rCupRound(c,round){const keep=RTO.mode;RTO.mode='3v3';const mine=rMyTeam();RTO.mode=keep;const arena=PL.findIndex(p=>p.key===c.a);
+ rtaStart({mine,foe:rCupFoes(c,round),arena:arena<0?0:arena,diff:[0,1,1,2][round],cup:{k:c.k,round}})}
+function rCupNext(){const A=RTA,cu=A.opts.cup,c=RCUPS.find(x=>x.k===cu.k);
+ if(A.win!==0)return say([c.n+': knocked out in round '+(cu.round+1)+'. Train up and try again!'],rtaLeave);
+ if(cu.round<3)return say(['Round '+(cu.round+1)+' won! Round '+(cu.round+2)+' of 4 is next.'],()=>rCupRound(c,cu.round+1));
+ G.rta.cups=G.rta.cups||{};const first=!G.rta.cups[c.k];G.rta.cups[c.k]=1;if(typeof autosave==='function')autosave();
+ say(['You won the '+c.n+'!',first?'The '+c.n+' trophy is yours.':'Another win for the record.'].concat(c.top?['You are the Linker Arena champion!']:[]),rtaLeave)}
 
 /* ---- update ---- */
 function rtaUpd(){const A=RTA;A.t++;
  if(A.phase!=='over'&&P_('start')){choose('Paused',['Resume','Forfeit'],k=>{if(k===1)rtaOver(1)},()=>{});rtaDraw();return}
  if(A.phase==='count'){if(A.t>=ARJ.match.countdown){A.phase='fight';A.t0=A.t}A.cfx=A.cfx.filter(x=>++x.t<x.dur);rtaDraw();return}
  if(A.phase==='over'){A.ot++;rStepFx();if(A.ot>50&&(P_('a')||P_('b')))rtaResult();rtaDraw();return}
+ for(const s of[0,1]){const f=A.f[s];if(f.m.hp<=0&&rAlive(s).length){if(!f.next)f.next=60;else if(--f.next<=0)rSwap(s)}}
  const[p,e]=A.f;rControl(p);rAI(e,p);for(const f of A.f)rStep(f);rShots();rAreas();rTick();rTerTick();rHazTick();rStepFx();
- const left=ARJ.match.time*60-(A.t-A.t0),fr=m=>m.hp/stat(m,0);
- if(p.m.hp<=0||e.m.hp<=0)rtaOver(p.m.hp<=0&&e.m.hp<=0?2:p.m.hp<=0?1:0);
- else if(left<=0){A.timeout=1;rtaOver(Math.abs(fr(p.m)-fr(e.m))<0.01?2:fr(p.m)>fr(e.m)?0:1);}
+ const left=ARJ.match.time*60*(A.tm[0].length>1?2:1)-(A.t-A.t0),fr=s=>A.tm[s].reduce((a,x)=>a+x.m.hp/stat(x.m,0),0)/A.tm[s].length,out=[0,1].map(s=>!rAlive(s).length);
+ if(out[0]||out[1])rtaOver(out[0]&&out[1]?2:out[0]?1:0);
+ else if(left<=0){A.timeout=1;rtaOver(Math.abs(fr(0)-fr(1))<0.01?2:fr(0)>fr(1)?0:1)}
  rtaDraw()}
 function rtaOver(win){const A=RTA;if(A.phase==='over')return;A.phase='over';A.ot=0;A.win=win;A.shots=[];A.areas=A.areas.filter(z=>z.kind==='beam');
  G.rta=G.rta||{w:0,l:0,d:0};G.rta[['w','l','d'][win]]++}
-function rtaResult(){choose('Arena',['Rematch','New foe','Leave'],k=>{if(k===0)rtaStart(RTA.fid);else if(k===1)rtaStart();else rtaLeave()},rtaLeave)}
+function rtaResult(){if(RTA.opts.cup)return rCupNext();choose('Linker Arena',['Rematch','New foe','Leave'],k=>{if(k===0)rtaStart({foe:RTA.foeIds,arena:RTA.pl});else if(k===1)rtaStart();else rtaLeave()},rtaLeave)}
 function rtaLeave(){RTA=null;scene='menu';menuMode='root'}
 
-function rControl(f){if(PADJ.on){f.mx=PADJ.x;f.my=PADJ.y}else{f.mx=(held.right?1:0)-(held.left?1:0);f.my=(held.down?1:0)-(held.up?1:0)}
+function rControl(f){if(f.swapCd>0)f.swapCd--;if(P_('sw')&&f.swapCd<=0&&f.m.hp>0)rSwap(0);if(PADJ.on){f.mx=PADJ.x;f.my=PADJ.y}else{f.mx=(held.right?1:0)-(held.left?1:0);f.my=(held.down?1:0)-(held.up?1:0)}
  if(P_('b'))f.sel=(f.sel+1)%f.m.moves.length;let use=P_('a')?f.sel:-1;
  for(let i=0;i<4;i++)if(P_('m'+i)&&i<f.m.moves.length){use=i;f.sel=i}
  if(use<0)return;const foe=rFoe(f),dx=foe.x-f.x,dy=foe.y-f.y,d=Math.hypot(dx,dy)||1;let ax=f.ax,ay=f.ay;
@@ -133,7 +180,7 @@ function rTick(){const A=RTA,t=A.t-A.t0;for(const f of A.f){const m=f.m;if(m.hp<
   if(tr.k==='speed'&&m.bs.spe<6){m.bs.spe++;L.push(nm(m)+"'s "+tr.name+' raised its Speed!')}rLog(L)}}}
 
 /* ---- computer opponent: keep its best move's range, strafe, sidestep shots and warning rings ---- */
-function rAI(f,foe){const A=RTA,ai=f.ai,r=A.r;f.mx=ai.mx;f.my=ai.my;if(f.m.hp<=0||foe.m.hp<=0||--ai.t>0)return;ai.t=A.diff[1];
+function rAI(f,foe){const A=RTA,ai=f.ai,r=A.r;if(f.swapCd>0)f.swapCd--;if(f.m.hp>0&&f.swapCd<=0&&f.m.hp<stat(f.m,0)*0.3&&rAlive(f.side).length>1&&r()<0.004){rSwap(f.side);return}f.mx=ai.mx;f.my=ai.my;if(f.m.hp<=0||foe.m.hp<=0||--ai.t>0)return;ai.t=A.diff[1];
  const dx=foe.x-f.x,dy=foe.y-f.y,d=Math.hypot(dx,dy)||1;let best=-1,bv=0;
  f.m.moves.forEach((mi,i)=>{if(f.cd[i]>0)return;const mv=MV[mi],sh=rShape(mv);let v;
   if(!mv.p){const fx=mv.fx||{};v=fx.heal?(f.m.hp<stat(f.m,0)*0.5?120:0):fx.s?((foe.m.st||immune(foe.m,fx.s))?0:50):fx.self?(Object.keys(fx.self).some(k=>k!=='c'&&f.m.bs[k]>=2)?0:40):fx.foe?35:0}
@@ -252,7 +299,7 @@ function rtaDraw(){const A=RTA,pl=PL[A.pl],sx=A.shake>0?(A.shake--%2?1:-1):0,im=
 function rHud(){const A=RTA,[p,e]=A.f;
  if(rUiOk('panel_l','panel_r','bar_g','bar_y','bar_r','timer'))for(const[f,x,flip]of[[p,0,false],[e,96,true]])rPanel(f,x,flip);
  else{rect(0,0,160,18,'#120c22');txtFit(nm(p.m),2,2,'#e8e0ff',58,6);hpbar(2,10,64,p.m);txtFit(nm(e.m),94,2,'#e8e0ff',58,6);hpbar(94,10,64,e.m)}
- const left=A.phase==='count'?ARJ.match.time*60:Math.max(0,ARJ.match.time*60-(A.t-A.t0)),ts=String(Math.ceil(left/60)).padStart(2,'0');
+ const T0=ARJ.match.time*60*(A.tm&&A.tm[0].length>1?2:1),left=A.phase==='count'?T0:Math.max(0,T0-(A.t-A.t0)),ts=String(Math.ceil(left/60)).padStart(2,'0');
  if(rUi('timer',69,0,22,22))txt(ts,80-ts.length*3,8,left<600?'#ff8a1e':'#ffd23f',6);else txt(ts,72,5,left<600?'#ff8a1e':'#ffd23f',8);
  rect(0,126,160,18,'#120c22');const art=rUiOk('btn_ready','btn_cool');
  p.m.moves.forEach((mi,i)=>{const x=i*40,mv=MV[mi],c=rCol(mv),k=p.cd[i]/p.cdm[i];
@@ -268,6 +315,7 @@ function rHud(){const A=RTA,[p,e]=A.f;
   if(A.ot>50&&frame%40<28)txt('A: continue',47,84,'#e8e0ff',5)}}}
 // one HUD panel: portrait in the frame, HP in the slot, team pips (filled for the Alienmon still standing)
 function rPanel(f,x,flip){const W=64,H=28,m=f.m,r=Math.max(0,m.hp/stat(m,0));rUi(flip?'panel_r':'panel_l',x,0,W,H);
+ const tm=RTA.tm?RTA.tm[f.side]:[f];if(tm.length>1)tm.forEach((q,i)=>{const px=x+((flip?[0.358,0.465,0.568]:[0.432,0.533,0.640])[i])*W,py=0.833*H;rEll(px,py,1.6,1.6,q.m.hp<=0?'#3b2a5c':q===f?'#5ff2ff':'#9be36b',1)});
  const sx=x+(flip?0.054:0.396)*W,sy=0.352*H,sw=0.55*W,sh=0.172*H,bar=ARUI[r>0.5?'bar_g':r>0.2?'bar_y':'bar_r'];
  if(okI(bar)&&r>0){ctx.save();ctx.imageSmoothingEnabled=true;ctx.drawImage(bar,0,0,bar.naturalWidth*r,bar.naturalHeight,flip?sx+sw*(1-r):sx,sy,sw*r,sh);ctx.restore()}
  const im=ARTI[D[m.id].name],px=x+(flip?0.70:0.045)*W,py=0.14*H,ps=0.26*W;if(okI(im))ctx.drawImage(im,px,py,ps,ps);
@@ -292,8 +340,11 @@ const RTAB=(()=>{const dev=document.querySelector('.device'),ab=document.querySe
   b.addEventListener('pointerdown',e=>{e.preventDefault();pressed['m'+i]=true;b.classList.add('on')});
   const up=()=>b.classList.remove('on');b.addEventListener('pointerup',up);b.addEventListener('pointercancel',up);box.appendChild(b);
   return{b,ty:b.querySelector('.ty'),cd:b.querySelector('.cd'),nm:b.querySelector('.nm'),last:''}});
- return{B,on:false}})();
-function rTouchUpd(){if(!RTAB)return;const on=scene==='rta'&&!!RTA;if(on!==RTAB.on){document.body.classList.toggle('in-rta',on);RTAB.on=on}if(!on)return;
+ const sw=document.createElement('button');sw.className='sw';sw.innerHTML='<div class="ring"></div><div class="nm">Swap</div>';
+ sw.addEventListener('pointerdown',e=>{e.preventDefault();pressed.sw=true});box.appendChild(sw);
+ st.textContent+='.rtab .sw{grid-column:1/3;justify-self:center;height:56px;display:none}.rtab .sw .ring{left:9px;width:44px;height:44px;background:'+u('swap')+' center/contain no-repeat}.rtab .sw .nm{top:44px;border:0}body.in-rta.rta-team .rtab .sw{display:block}';
+ return{B,on:false,sw}})();
+function rTouchUpd(){if(!RTAB)return;const on=scene==='rta'&&!!RTA;if(on!==RTAB.on){document.body.classList.toggle('in-rta',on);RTAB.on=on}document.body.classList.toggle('rta-team',on&&RTA.tm[0].length>1);if(!on)return;
  const p=RTA.f[0];RTAB.B.forEach((x,i)=>{const mi=p.m.moves[i];x.b.style.visibility=mi==null?'hidden':'visible';if(mi==null)return;
   const mv=MV[mi],k=p.cd[i]/p.cdm[i],key=mv.n+'|'+mv.t;
   if(x.last!==key){x.last=key;x.nm.textContent=mv.n;x.b.style.setProperty('--tc',(TC[mv.t]||['#5ff2ff'])[0]);const t=ARA.uicut&&ARA.uicut['ty_'+String(mv.t).toLowerCase()];x.ty.style.backgroundImage=t?'url('+t+')':'none'}
