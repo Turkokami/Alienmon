@@ -199,21 +199,28 @@ function rAI(f,foe){const A=RTA,ai=f.ai,r=A.r;if(f.swapCd>0)f.swapCd--;if(f.m.hp
 /* ---- terrain (P2-04): heavy hits change the floor; the planet sets the tile art, the move's type the effect; cells heal after 20 s ---- */
 const RCELL=12,RTERK={Plasma:'lava',Magma:'lava',Cryo:'ice',Toxin:'spore',Bio:'spore',Hydro:'puddle'};
 const RTERC={crater:'#5a3a22',lava:'#ff5a1e',ice:'#9fe6ff',spore:'#b45cff',puddle:'#2e86de'};
-function rTerHit(x,y,r,mv){const A=RTA;if(!A.ter)A.ter={};const k=RTERK[mv.t]||'crater';
- for(let cx=Math.floor((x-r-RF.x0)/RCELL);cx<=Math.floor((x+r-RF.x0)/RCELL);cx++)for(let cy=Math.floor((y-r-RF.y0)/RCELL);cy<=Math.floor((y+r-RF.y0)/RCELL);cy++){
-  const px=RF.x0+cx*RCELL+RCELL/2,py=RF.y0+cy*RCELL+RCELL/2;if(cx<0||cy<0||px>RF.x1||py>RF.y1||Math.hypot(px-x,py-y)>r+4)continue;
-  A.ter[cx+','+cy]={k,x:px,y:py,t:0,v:Math.floor(A.r()*4),big:(mv.p||0)>100}}}
-const rTerAt=(x,y)=>RTA.ter&&RTA.ter[Math.floor((x-RF.x0)/RCELL)+','+Math.floor((y-RF.y0)/RCELL)];
+// one big patch per heavy hit; a hit near an existing patch of the same kind refreshes and grows it instead of stacking
+function rTerHit(x,y,r,mv){const A=RTA;if(!Array.isArray(A.ter))A.ter=[];const k=RTERK[mv.t]||'crater',big=(mv.p||0)>100;
+ x=Math.max(RF.x0+r,Math.min(RF.x1-r,x));y=Math.max(RF.y0+r*0.7,Math.min(RF.y1-r*0.7,y));
+ const near=A.ter.find(c=>c.k===k&&Math.hypot(c.x-x,c.y-y)<c.r*0.9);
+ if(near){near.t=0;near.r=Math.min(26,near.r+2);near.big=near.big||big;return}
+ A.ter.push({k,x,y,r,t:0,v:Math.floor(A.r()*4),big});if(A.ter.length>6)A.ter.shift()}
+const rTerAt=(x,y)=>RTA.ter&&RTA.ter.length?RTA.ter.find(c=>((x-c.x)/c.r)**2+((y-c.y)/(c.r*0.7))**2<1):null;
 const rTerSpeed=f=>{const c=rTerAt(f.x,f.y);return!c?1:c.k==='crater'?0.6:c.k==='puddle'?0.75:c.k==='ice'?1.3:1};
-function rTerTick(){const A=RTA;if(!A.ter)return;for(const k in A.ter)if(++A.ter[k].t>1200)delete A.ter[k];
+function rTerTick(){const A=RTA;if(!A.ter||!A.ter.length)return;for(const c of A.ter)c.t++;A.ter=A.ter.filter(c=>c.t<=1200);
  if(A.t%60)return;for(const f of A.f){const c=rTerAt(f.x,f.y),m=f.m;if(!c||m.hp<=0)continue;
   if(c.k==='lava'){rScaled([m],()=>{m.hp=Math.max(0,m.hp-Math.max(1,Math.floor(stat(m,0)/24)))});rFloat(f,'hot!','#ff8a1e');if(!m.st&&!immune(m,'burn')&&A.r()<0.15)m.st='burn'}
   if(c.k==='spore'&&!m.st&&!immune(m,'poison')&&A.r()<0.2){m.st='poison';rFloat(f,'poisoned','#b45cff')}}}
-function rTerDraw(){const A=RTA;if(!A.ter)return;const im=ARTLI[(A.key||'court')+'_tiles'],ok=okI(im);
- for(const c of Object.values(A.ter)){const a=c.t>1020?(1200-c.t)/180:1;
-  if(ok){const row=c.k==='crater'?0:c.k==='lava'||c.k==='spore'||c.k==='ice'||c.k==='puddle'?2:1,col=row===2?Math.floor((A.t/8+c.v))%4:row===0?(c.big?3:1+c.v%2):c.v;
-   drawCell(im,[col*128,row*128,128,128],c.x,c.y,RCELL*1.7,RCELL*1.7,false,a);if(row===2)rEll(c.x,c.y,RCELL*0.55,RCELL*0.35,RTERC[c.k],0.28*a)}
-  else rEll(c.x,c.y,RCELL*0.6,RCELL*0.4,RTERC[c.k],0.55*a)}}
+// tile cells are square chunks of floor; give each a soft oval edge so the patch blends into the arena
+const RTERS={};function rTerSprite(im,col,row){const key=im.src+'|'+col+'|'+row;if(RTERS[key])return RTERS[key];
+ const c=document.createElement('canvas');c.width=c.height=96;const g=c.getContext('2d');g.drawImage(im,col*128,row*128,128,128,0,0,96,96);
+ g.globalCompositeOperation='destination-in';const rg=g.createRadialGradient(48,48,18,48,48,48);rg.addColorStop(0,'rgba(0,0,0,1)');rg.addColorStop(0.7,'rgba(0,0,0,0.9)');rg.addColorStop(1,'rgba(0,0,0,0)');
+ g.fillStyle=rg;g.fillRect(0,0,96,96);return RTERS[key]=c}
+function rTerDraw(){const A=RTA;if(!A.ter||!A.ter.length)return;const im=ARTLI[(A.key||'court')+'_tiles'],ok=okI(im);
+ for(const c of A.ter){const a=c.t>1020?(1200-c.t)/180:1,w=c.r*2.3,h=c.r*1.7;
+  if(ok){const row=c.k==='crater'?0:2,col=row===2?Math.floor((A.t/8+c.v))%4:(1+c.v%2);
+   drawCell(rTerSprite(im,col,row),[0,0,96,96],c.x,c.y,w,h,false,a);if(row===2)rEll(c.x,c.y,c.r*0.8,c.r*0.5,RTERC[c.k],0.25*a)}
+  else rEll(c.x,c.y,c.r,c.r*0.65,RTERC[c.k],0.55*a)}}
 
 /* ---- planet hazards (P2-05): one on a timer, always shown by its warning marker first ---- */
 const RHAZ={dustara:{e:'slow',r:14},ferrox:{e:'hit',r:12},sporeholm:{e:'poison',r:14},thalassa:{e:'push',r:13},neonis:{e:'shock',r:14},glyphos:{e:'hit',r:10},
@@ -344,7 +351,8 @@ const RTAB=(()=>{const dev=document.querySelector('.device'),ab=document.querySe
  sw.addEventListener('pointerdown',e=>{e.preventDefault();pressed.sw=true});box.appendChild(sw);
  st.textContent+='.rtab .sw{grid-column:1/3;justify-self:center;height:56px;display:none}.rtab .sw .ring{left:9px;width:44px;height:44px;background:'+u('swap')+' center/contain no-repeat}.rtab .sw .nm{top:44px;border:0}body.in-rta.rta-team .rtab .sw{display:block}';
  return{B,on:false,sw}})();
-function rTouchUpd(){if(!RTAB)return;const on=scene==='rta'&&!!RTA;if(on!==RTAB.on){document.body.classList.toggle('in-rta',on);RTAB.on=on}document.body.classList.toggle('rta-team',on&&RTA.tm[0].length>1);if(!on)return;
+function rTouchUpd(){if(!RTAB)return;const on=scene==='rta'&&!!RTA&&RTA.phase!=='over'&&!DLG&&!CH;   // results, messages and menus need the normal A/B buttons
+if(on!==RTAB.on){document.body.classList.toggle('in-rta',on);RTAB.on=on}document.body.classList.toggle('rta-team',on&&RTA.tm[0].length>1);if(!on)return;
  const p=RTA.f[0];RTAB.B.forEach((x,i)=>{const mi=p.m.moves[i];x.b.style.visibility=mi==null?'hidden':'visible';if(mi==null)return;
   const mv=MV[mi],k=p.cd[i]/p.cdm[i],key=mv.n+'|'+mv.t;
   if(x.last!==key){x.last=key;x.nm.textContent=mv.n;x.b.style.setProperty('--tc',(TC[mv.t]||['#5ff2ff'])[0]);const t=ARA.uicut&&ARA.uicut['ty_'+String(mv.t).toLowerCase()];x.ty.style.backgroundImage=t?'url('+t+')':'none'}
