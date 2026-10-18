@@ -913,6 +913,10 @@ if(!INLINE&&/^https?:$/.test(location.protocol)&&!/^(localhost|127\.|\[::1\])/.t
 if(!INLINE&&'serviceWorker' in navigator&&/^https?:$/.test(location.protocol))addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
 document.fonts&&document.fonts.load('8px "Press Start 2P"').finally(()=>requestAnimationFrame(bootLoop));
 if(!document.fonts)requestAnimationFrame(bootLoop);
+// phones: grow the console to fill the screen (also covers Chrome's "Desktop site" mode, where the page is laid out ~980 px wide)
+function fitDevice(){const d=document.querySelector('.device');if(!d||!matchMedia('(pointer:coarse)').matches)return;d.style.zoom='';const r=d.getBoundingClientRect();
+ const k=Math.min(innerWidth*0.98/r.width,innerHeight*0.98/r.height);if(k>1.04)d.style.zoom=k.toFixed(3)}
+addEventListener('resize',fitDevice);addEventListener('orientationchange',()=>setTimeout(fitDevice,200));addEventListener('load',fitDevice);setTimeout(fitDevice,50);
 </script>
 </body>
 </html>
