@@ -8,7 +8,10 @@
  art/arena/scenes/<planet>_arena.jpg when rendered, otherwise the planet's battle background.
  Online play (Phase 5) needs act() to take a seeded random source; the arena's own choices already use RTA.r. */
 const ARJ=__ARENA__,ARA=__ARENAART__;
-const ARPI=lazyImgs(ARA.poses),ARSI=lazyImgs(ARA.scenes);
+const ARPI=lazyImgs(ARA.poses),ARSI=lazyImgs(ARA.scenes);const ARFI=lazyImgs(ARA.fx);
+// the owner's arena effect sheets (art/arena/fx/<move>.webp, sig_<move> for signatures): 4x2 cells of 192x256,
+// row 1 = the move travelling (projectile loop, or beam start/middle/end), row 2 = the 4-frame impact
+function rArtFx(mv){const k=String(mv.n||'').toLowerCase().replace(/[^a-z0-9]+/g,'_').replace(/^_+|_+$/g,''),s=mv.sig?'sig_'+k:k;return s in ARA.fx?ARFI[s]:k in ARA.fx?ARFI[k]:null}
 const RF={x0:6,y0:20,x1:154,y1:128};   // the arena floor on the 160x144 screen
 const RDIFF=[['Easy',27,0.35],['Normal',15,0.18],['Hard',7,0.06]];   // name, ticks between decisions, aim error (radians)
 const RREACH={PROJ:100,LOB:90,WAVE:110,BEAM:110,CHAIN:110,ARC:22,CONE:34,BURST:28,DASH:50,ZONE:80,RAIN:80,FIELD:70,AURA:999};
@@ -164,7 +167,8 @@ function rDrawF(f){const m=f.m,name=D[m.id].name,S=26,pose=k=>{const i=ARPI[name
  if(flip)ctx.scale(-1,1);if(rot){ctx.translate(0,-S/4);ctx.rotate(rot)}ctx.drawImage(im,-S/2,-S,S,S);ctx.restore();
  if(f.aura)rRing(f.x,f.y-4,14-f.aura/6,6,rCol(MV[m.moves[f.sel]])[1],f.aura/36,2);
  if(m.st&&m.hp>0)rect(Math.round(f.x)-2,Math.round(f.y)-30,4,4,STC[m.st][1]);if(m.cf>0&&m.hp>0)txt('?',Math.round(f.x)+5,Math.round(f.y)-31,'#ff74c4',6)}
-function rFxCell(mv,which,k,x,y,w,flip,a){const an=mv.an,im=an&&FXI['mv_'+an.r],R=an&&MOVEFX.rows[an.r];
+function rFxCell(mv,which,k,x,y,w,flip,a){const af=rArtFx(mv);if(okI(af)){const r=which==='i'?1:0,f=which==='i'?Math.min(3,Math.floor(k*4)):Math.floor(k*4)%4;drawCell(af,[f*192,r*256,192,256],x,y,w*1.5,w*2,which==='i'?false:flip,a);return}
+ const an=mv.an,im=an&&FXI['mv_'+an.r],R=an&&MOVEFX.rows[an.r];
  if(!okI(im)||!R||!R[which]||!R[which].length){const c=rCol(mv);rEll(x,y,w/3,w/3,c[0],a*0.8);rEll(x,y,w/6,w/6,c[1],a);return}
  const L=R[which],c=which==='i'?L[Math.min(an.i,L.length-1)]:L[Math.floor(k*L.length)%L.length];drawCell(im,c,x,y,w*c[2]/Math.max(c[2],c[3]),w*c[3]/Math.max(c[2],c[3]),flip,a)}
 function rtaDraw(){const A=RTA,pl=PL[A.pl],sx=A.shake>0?(A.shake--%2?1:-1):0,im=ARSI[A.key+'_arena'],bg=okI(im)?im:SCI[A.key+'_battle'];
