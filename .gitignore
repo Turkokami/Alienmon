@@ -11,3 +11,6 @@ www/*
 .env*
 art/kit/
 tools/sections/v3/review/
+
+# Linker Arena: full-size renders stay local; tools/import_arena_sheet.py cuts them into art/arena/poses
+art/arena/raw/
