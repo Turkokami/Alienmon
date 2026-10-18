@@ -2,7 +2,8 @@
  Phase 1: 1v1 against the computer at level 50, entered from START > Arena. Both Alienmon are copies, so the save's
  party is never touched. Moves fire from the Alienmon's own moveset; cooldowns, wind-ups and shapes come from
  data/arena.json. Damage, type matchups, Traits and status all run through the turn-based act(), so balance has one home.
- Controls: d-pad moves, A uses the selected move, B selects the next move, START pauses; keys 1-4 (or J K L I) fire a move.
+ Controls: d-pad moves, tap a move in the bottom bar (or keys 1-4 / J K L I) to fire it, A uses the selected move,
+ B selects the next move, START pauses.
  Art: art/arena/poses/<Name>_<pose>.png when imported (tools/import_arena_sheet.py), otherwise the battle sprites;
  art/arena/scenes/<planet>_arena.jpg when rendered, otherwise the planet's battle background.
  Online play (Phase 5) needs act() to take a seeded random source; the arena's own choices already use RTA.r. */
@@ -13,6 +14,9 @@ const RDIFF=[['Easy',27,0.35],['Normal',15,0.18],['Hard',7,0.06]];   // name, ti
 const RREACH={PROJ:100,LOB:90,WAVE:110,BEAM:110,CHAIN:110,ARC:22,CONE:34,BURST:28,DASH:50,ZONE:80,RAIN:80,FIELD:70,AURA:999};
 let RTA=null;const RTO={diff:1,arena:0,pick:0};
 addEventListener('keydown',e=>{if(scene!=='rta')return;const k={Digit1:0,Digit2:1,Digit3:2,Digit4:3,KeyJ:0,KeyK:1,KeyL:2,KeyI:3}[e.code];if(k!==undefined){pressed['m'+k]=true;e.preventDefault()}});
+// tapping a move in the bar along the bottom of the screen fires it, so phones get all four moves without the B cycle
+cv.addEventListener('pointerdown',e=>{if(scene!=='rta'||!RTA||CH||DLG)return;const r=cv.getBoundingClientRect(),x=(e.clientX-r.left)/r.width*160,y=(e.clientY-r.top)/r.height*144;
+ if(y>=126){const i=Math.max(0,Math.min(3,Math.floor(x/40)));pressed['m'+i]=true;e.preventDefault()}});
 
 function rShape(mv){const s=(mv.sig?ARJ.signature:ARJ.moves)[mv.n];if(s)return s[0];const fx=mv.fx||{};
  if(!mv.p)return(fx.self||fx.heal)&&!fx.foe&&!fx.s?'AURA':'FIELD';return mv.p<=45?'PROJ':mv.p<=80?(PHYS.has(mv.t)?'ARC':'PROJ'):'ZONE'}
@@ -30,7 +34,7 @@ function rtaMenu(){if(!G.party.length)return say('You need an Alienmon to enter 
   else if(k===2){RTO.diff=(RTO.diff+1)%RDIFF.length;rtaMenu()}
   else if(k===3){RTO.arena=(RTO.arena+1)%PL.length;rtaMenu()}
   else if(k===4){const r=G.rta||{w:0,l:0,d:0};say(['Arena record: '+r.w+' wins, '+r.l+' losses, '+r.d+' draws.'],rtaMenu)}
-  else if(k===5)say(['Arena battles happen in real time. Both Alienmon fight at level 50.','D-pad moves. A uses the selected move, B selects the next one (keys 1-4 fire a move directly).','Strong moves need time to recharge, and the biggest ones glow before they hit. Watch for red rings on the ground and dodge!','Types, Traits and status all work like normal battles.'],rtaMenu)},()=>{})}
+  else if(k===5)say(['Arena battles happen in real time. Both Alienmon fight at level 50.','D-pad moves. Tap a move at the bottom of the screen to use it, or press A for the selected move and B to select the next one. Keys 1-4 fire a move too.','Strong moves need time to recharge, and the biggest ones glow before they hit. Watch for red rings on the ground and dodge!','Types, Traits and status all work like normal battles.'],rtaMenu)},()=>{})}
 function rFighter(m,side){const c={...m,lv:ARJ.match.level,st:null,cf:0,moves:(m.moves&&m.moves.length?m.moves:[0]).slice(0,4)};resetStages(c);c.hp=stat(c,0);
  return{m:c,side,x:side?RF.x1-28:RF.x0+28,y:(RF.y0+RF.y1)/2+12,face:side?'left':'right',ax:side?-1:1,ay:0,mx:0,my:0,
   cd:c.moves.map(()=>0),cdm:c.moves.map(()=>1),sel:0,wind:null,atkT:0,hurt:0,kb:[0,0],dash:null,frz:0,imm:0,step:0,aura:0,ai:{t:0,mx:0,my:0,str:1}}}
