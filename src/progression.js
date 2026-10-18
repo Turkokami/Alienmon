@@ -91,14 +91,38 @@ function moveArchive(){const L=G.party.map(m=>nm(m)+' Lv'+m.lv);choose('Move Arc
  choose('Relearn which move?',opts.map(mi=>MV[mi].n).concat(['Back']),j=>{if(j>=opts.length)return moveArchive();if(G.dust<100)return say('You need 100 stardust.',moveArchive);
   G.dust-=100;learnPrompt(m,opts[j],moveArchive)},moveArchive)},bayMenu)}
 
+/* evolution animation: the old form glows white and flickers with the new one's outline, faster and faster,
+   then a flash reveals the new form with sparkles. A skips ahead once the reveal has started. */
+let EVO=null;const EVO_T=260;
+function evoAnim(m,into,done){warm(ARTI,[D[m.id].name,D[into].name]);EVO={a:m.id,b:into,pri:m.pri,t:0,done,sp:[],last:-1}}
+const EVOS={};function evoSil(id){const im=ARTI[D[id].name];if(!okI(im))return null;if(EVOS[id])return EVOS[id];const c=document.createElement('canvas');c.width=im.naturalWidth;c.height=im.naturalHeight;
+ const g=c.getContext('2d');g.drawImage(im,0,0);g.globalCompositeOperation='source-in';g.fillStyle='#f4fbff';g.fillRect(0,0,c.width,c.height);return EVOS[id]=c}
+function evoTone(f,d){try{if(typeof AC!=='undefined'&&AC&&typeof chipTone==='function')chipTone(AC.currentTime,f,d,0.18,'square')}catch(e){}}
+function drawEvo(){const E=EVO,t=++E.t,cx=80,cy=62,s=4.2,z=16*s*1.15;
+ const bg=ctx.createRadialGradient(cx,cy,4,cx,cy,110);bg.addColorStop(0,t>200?'#3b6a8a':'#2a1d4a');bg.addColorStop(1,'#0b0716');ctx.fillStyle=bg;ctx.fillRect(0,0,160,144);
+ for(let i=0;i<14;i++){const a=i/14*Math.PI*2+t*0.01,r=40+((t*0.6+i*23)%50);ctx.fillStyle='rgba(160,230,255,'+(0.15+0.2*Math.sin(t*0.1+i))+')';ctx.fillRect(cx+Math.cos(a)*r,cy+Math.sin(a)*r*0.8,1,1)}
+ const pulse=1+Math.sin(t*0.15)*0.03;
+ const drawAt=(id,sil,k)=>{const w=z*k,x=cx-w/2,y=cy-w/2,im=sil?evoSil(id):ARTI[D[id].name];if(!okI(im)&&!(im&&im.getContext))return dspr(id,cx-8*s,cy-8*s,s,false,{pri:E.pri});
+  ctx.save();ctx.imageSmoothingEnabled=true;if(!sil)monFilter({pri:E.pri});ctx.drawImage(im,x,y,w,w);ctx.restore()};
+ if(t<50){drawAt(E.a,false,1);if(t>20){ctx.globalAlpha=(t-20)/30;drawAt(E.a,true,1);ctx.globalAlpha=1}}
+ else if(t<200){const k=(t-50)/150,per=Math.max(2,Math.round(26*(1-k)**1.6)),ph=Math.floor((t-50)/per)%2;
+  if(ph!==E.last){E.last=ph;evoTone(260+k*700+(ph?60:0),0.07)}
+  const glow=ctx.createRadialGradient(cx,cy,2,cx,cy,44);glow.addColorStop(0,'rgba(255,255,255,'+(0.25+k*0.5)+')');glow.addColorStop(1,'rgba(120,220,255,0)');ctx.fillStyle=glow;ctx.fillRect(0,0,160,144);
+  drawAt(ph?E.b:E.a,true,pulse*(ph?1.04:1))}
+ else{if(t===200){evoTone(880,0.15);evoTone(1320,0.3);for(let i=0;i<26;i++){const a=Math.random()*Math.PI*2,v=0.6+Math.random()*1.6;E.sp.push({x:cx,y:cy,vx:Math.cos(a)*v,vy:Math.sin(a)*v,l:40+Math.random()*30})}}
+  drawAt(E.b,false,1);
+  for(const p of E.sp){if(p.l<=0)continue;p.x+=p.vx;p.y+=p.vy;p.vy+=0.02;p.l--;ctx.fillStyle=p.l%6<3?'#ffffff':'#ffe27a';ctx.fillRect(p.x,p.y,2,2);ctx.fillRect(p.x-1,p.y+0.5,4,1)}
+  if(t<222){ctx.fillStyle='rgba(255,255,255,'+(1-(t-200)/22)+')';ctx.fillRect(0,0,160,144)}}
+ if(t>=EVO_T||(t>215&&(P_('a')||P_('b')))){const d=E.done;EVO=null;d()}}
+
 /* evolution: level or Resonance; B cancels */
 function evoReady(m){const ev=spOf(m.id).evolves;if(!ev||!ev.into||IDX[ev.into]==null||m.hp<=0||m.lv<(ev.level||999))return false;const how=ev.method||'';
  if(how.startsWith('Level'))return true;if(/Signal Shard 4/.test(how))return G.shards>=4;if(/all 8/.test(how))return G.shards>=8;
  const here=(PL[G.planet]||{}).key;if(/Halo/.test(how))return m.lvUp&&here==='halo'&&nearTower();if(/Rift/.test(how))return m.lvUp&&here==='starfall'&&nearTower();return false}
 function evoSteps(steps){for(const m of G.party)if(evoReady(m))steps.push({fn:cb=>{const into=IDX[spOf(m.id).evolves.into],old=nm(m);
   say('What? '+old+' is evolving!',()=>choose('Let '+old+' evolve?',['Evolve','Stop'],i=>{if(i!==0)return say('Huh? '+old+' stopped evolving!',cb);
-   const r=m.hp/stat(m,0);m.id=into;m.hp=Math.max(1,Math.round(stat(m,0)*r));G.seen[m.id]=G.caught[m.id]=1;
-   const L=[];say(old+' evolved into '+nm(m)+'!',()=>progRun(learnset(m.id).filter(([l,mi])=>l<=m.lv&&MV[mi].sig).map(([l,mi])=>({fn:c=>learnPrompt(m,mi,c)})),cb))},()=>say('Huh? '+old+' stopped evolving!',cb)))}});
+   evoAnim(m,into,()=>{const r=m.hp/stat(m,0);m.id=into;m.hp=Math.max(1,Math.round(stat(m,0)*r));G.seen[m.id]=G.caught[m.id]=1;
+   say(old+' evolved into '+nm(m)+'!',()=>progRun(learnset(m.id).filter(([l,mi])=>l<=m.lv&&MV[mi].sig).map(([l,mi])=>({fn:c=>learnPrompt(m,mi,c)})),cb))})},()=>say('Huh? '+old+' stopped evolving!',cb)))}});
  for(const m of G.party)m.lvUp=0}
 
 /* Shard Sync Limit: gifted, traded and legendary Alienmon above the limit ignore 25% of commands */
