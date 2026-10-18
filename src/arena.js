@@ -68,11 +68,11 @@ function rtaOver(win){const A=RTA;if(A.phase==='over')return;A.phase='over';A.ot
 function rtaResult(){choose('Arena',['Rematch','New foe','Leave'],k=>{if(k===0)rtaStart(RTA.fid);else if(k===1)rtaStart();else rtaLeave()},rtaLeave)}
 function rtaLeave(){RTA=null;scene='menu';menuMode='root'}
 
-function rControl(f){f.mx=(held.right?1:0)-(held.left?1:0);f.my=(held.down?1:0)-(held.up?1:0);
+function rControl(f){if(PADJ.on){f.mx=PADJ.x;f.my=PADJ.y}else{f.mx=(held.right?1:0)-(held.left?1:0);f.my=(held.down?1:0)-(held.up?1:0)}
  if(P_('b'))f.sel=(f.sel+1)%f.m.moves.length;let use=P_('a')?f.sel:-1;
  for(let i=0;i<4;i++)if(P_('m'+i)&&i<f.m.moves.length){use=i;f.sel=i}
  if(use<0)return;const foe=rFoe(f),dx=foe.x-f.x,dy=foe.y-f.y,d=Math.hypot(dx,dy)||1;let ax=f.ax,ay=f.ay;
- if(ax*dx/d+ay*dy/d>0.82){ax=dx/d;ay=dy/d}   // inside a ~35 degree cone the shot snaps onto the foe
+ if(!f.mx&&!f.my||ax*dx/d+ay*dy/d>0.5){ax=dx/d;ay=dy/d}   // standing still, or steering within ~60 degrees of the foe: the shot snaps onto it
  rUse(f,use,ax,ay)}
 function rUse(f,i,ax,ay){if(f.cd[i]>0||f.wind||f.dash||f.m.st==='freeze'||f.m.hp<=0)return false;const mv=MV[f.m.moves[i]],tier=rTier(mv);
  f.cdm[i]=f.cd[i]=Math.round(tier.cd*(1-Math.min(0.15,es(f.m,'spe')/1000)));
@@ -230,13 +230,13 @@ function rPanel(f,x,flip){const W=64,H=28,m=f.m,r=Math.max(0,m.hp/stat(m,0));rUi
 const RTAB=(()=>{const dev=document.querySelector('.device'),ab=document.querySelector('.ab');if(!dev||!ab)return null;
  const u=k=>ARA.uicut&&ARA.uicut[k]?'url('+ARA.uicut[k]+')':'none';
  const st=document.createElement('style');st.textContent=
-  'body.in-rta .ab{display:none}.rtab{display:none;grid-area:ab;justify-self:center;align-self:center;grid-template-columns:62px 62px;gap:4px 8px}'+
-  'body.in-rta .rtab{display:grid}.rtab button{position:relative;width:62px;height:72px;border:0;background:none;padding:0;font:inherit;color:#e8e0ff;touch-action:none}'+
+  'body.in-rta .ab{display:none}.rtab{display:none;grid-area:ab;justify-self:center;align-self:center;grid-template-columns:62px 62px;gap:2px 14px}'+
+  'body.in-rta .rtab{display:grid}.rtab button{position:relative;width:62px;height:80px;border:0;background:none;padding:0;font:inherit;color:#e8e0ff;touch-action:none}'+
   '.rtab .ring{position:absolute;left:3px;top:0;width:56px;height:56px;background:'+u('btn_ready')+' center/contain no-repeat}'+
   '.rtab .cool .ring{background-image:'+u('btn_cool')+'}.rtab .on .ring{background-image:'+u('btn_pressed')+'}'+
   '.rtab .ty{position:absolute;left:17px;top:14px;width:28px;height:28px;background:center/contain no-repeat}'+
   '.rtab .cd{position:absolute;left:9px;top:6px;width:44px;height:44px;border-radius:50%;pointer-events:none}'+
-  '.rtab .nm{position:absolute;left:-4px;right:-4px;top:57px;font-size:7px;line-height:1;text-align:center;white-space:nowrap;overflow:hidden}'+
+  '.rtab .nm{position:absolute;left:-10px;right:-10px;top:56px;font-size:8px;line-height:1.15;text-align:center;white-space:normal;word-break:break-word;color:#fff;text-shadow:0 1px 0 #000;border-top:2px solid var(--tc,#5ff2ff);padding-top:2px}'+
   'body.in-rta .dpad{background:'+u('stick')+' center/120% no-repeat;box-shadow:none}body.in-rta .dpad button{color:transparent}body.in-rta .dpad .c{background:none;box-shadow:none}';
  document.head.appendChild(st);
  const box=document.createElement('div');box.className='rtab';ab.after(box);
@@ -248,6 +248,6 @@ const RTAB=(()=>{const dev=document.querySelector('.device'),ab=document.querySe
 function rTouchUpd(){if(!RTAB)return;const on=scene==='rta'&&!!RTA;if(on!==RTAB.on){document.body.classList.toggle('in-rta',on);RTAB.on=on}if(!on)return;
  const p=RTA.f[0];RTAB.B.forEach((x,i)=>{const mi=p.m.moves[i];x.b.style.visibility=mi==null?'hidden':'visible';if(mi==null)return;
   const mv=MV[mi],k=p.cd[i]/p.cdm[i],key=mv.n+'|'+mv.t;
-  if(x.last!==key){x.last=key;x.nm.textContent=mv.n;const t=ARA.uicut&&ARA.uicut['ty_'+String(mv.t).toLowerCase()];x.ty.style.backgroundImage=t?'url('+t+')':'none'}
+  if(x.last!==key){x.last=key;x.nm.textContent=mv.n;x.b.style.setProperty('--tc',(TC[mv.t]||['#5ff2ff'])[0]);const t=ARA.uicut&&ARA.uicut['ty_'+String(mv.t).toLowerCase()];x.ty.style.backgroundImage=t?'url('+t+')':'none'}
   x.b.classList.toggle('cool',k>0);x.cd.style.background=k>0?'conic-gradient(rgba(18,12,34,0.65) '+Math.round(k*360)+'deg,transparent 0)':'none';
   x.b.style.outline=i===p.sel?'':'';x.ty.style.opacity=k>0?0.45:1})}

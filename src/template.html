@@ -127,6 +127,21 @@ addEventListener('keyup',e=>{const k=KEYMAP[e.code];if(k)held[k]=false});
 document.querySelectorAll('[data-k]').forEach(b=>{const k=b.dataset.k;
  b.addEventListener('pointerdown',e=>{e.preventDefault();if(!held[k])pressed[k]=true;held[k]=true;b.classList.add('on');try{b.setPointerCapture(e.pointerId)}catch(_){}});
  const up=()=>{held[k]=false;b.classList.remove('on')};b.addEventListener('pointerup',up);b.addEventListener('pointercancel',up);b.addEventListener('lostpointercapture',up)});
+// the d-pad is a thumb pad: press anywhere on it and slide; the direction follows your thumb. In the arena it is a full
+// analog stick (PADJ, any angle); everywhere else it picks the nearest of up/down/left/right, so sliding turns you
+const PADJ={x:0,y:0,on:false};
+(()=>{const pad=document.querySelector('.dpad');if(!pad)return;const bs={};pad.querySelectorAll('[data-k]').forEach(b=>{bs[b.dataset.k]=b;b.style.pointerEvents='none'});
+ const D4=['up','down','left','right'];let pid=null;
+ const set=e=>{const r=pad.getBoundingClientRect(),dx=e.clientX-(r.left+r.width/2),dy=e.clientY-(r.top+r.height/2),d=Math.hypot(dx,dy),w={};
+  if(d>r.width*0.1){const x=dx/d,y=dy/d;PADJ.x=x;PADJ.y=y;PADJ.on=true;
+   if(typeof scene!=='undefined'&&scene==='rta'){if(x>0.38)w.right=1;if(x<-0.38)w.left=1;if(y>0.38)w.down=1;if(y<-0.38)w.up=1}
+   else w[Math.abs(x)>=Math.abs(y)?(x>0?'right':'left'):(y>0?'down':'up')]=1}
+  else PADJ.on=false;
+  for(const k of D4){const v=!!w[k];if(v&&!held[k])pressed[k]=true;held[k]=v;if(bs[k])bs[k].classList.toggle('on',v)}};
+ pad.addEventListener('pointerdown',e=>{e.preventDefault();pid=e.pointerId;try{pad.setPointerCapture(pid)}catch(_){}set(e)});
+ pad.addEventListener('pointermove',e=>{if(e.pointerId===pid){e.preventDefault();set(e)}});
+ const end=e=>{if(e.pointerId!==pid)return;pid=null;PADJ.on=false;for(const k of D4){held[k]=false;if(bs[k])bs[k].classList.remove('on')}};
+ ['pointerup','pointercancel','lostpointercapture'].forEach(ev=>pad.addEventListener(ev,end));pad.style.touchAction='none'})();
 try{const A=window.Capacitor&&window.Capacitor.Plugins&&window.Capacitor.Plugins.App;if(A)A.addListener('backButton',()=>{pressed.b=true})}catch(e){}
 const P_=k=>{const v=pressed[k];pressed[k]=false;return v};
 
