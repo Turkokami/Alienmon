@@ -8,7 +8,7 @@
  art/arena/scenes/<planet>_arena.jpg when rendered, otherwise the planet's battle background.
  Online play (Phase 5) needs act() to take a seeded random source; the arena's own choices already use RTA.r. */
 const ARJ=__ARENA__,ARA=__ARENAART__;
-const ARPI=lazyImgs(ARA.poses),ARSI=lazyImgs(ARA.scenes);const ARFI=lazyImgs(ARA.fx),ARUI=lazyImgs(ARA.uicut||{});
+const ARTLI=lazyImgs(ARA.tiles||{}),ARHZI=lazyImgs(ARA.hazards||{}),ARPI=lazyImgs(ARA.poses),ARSI=lazyImgs(ARA.scenes);const ARFI=lazyImgs(ARA.fx),ARUI=lazyImgs(ARA.uicut||{});
 // the owner's arena UI pieces (tools/arena_ui_cut.py -> art/arena/uicut): drawn when loaded, otherwise the plain HUD
 function rUi(k,x,y,w,h,a){const i=ARUI[k];if(!okI(i))return false;ctx.save();if(a!=null)ctx.globalAlpha=a;ctx.imageSmoothingEnabled=true;ctx.drawImage(i,x,y,w,h===undefined?w*i.naturalHeight/i.naturalWidth:h);ctx.restore();return true}
 const rUiOk=(...ks)=>ks.every(k=>okI(ARUI[k]));
@@ -27,7 +27,7 @@ cv.addEventListener('pointerdown',e=>{if(scene!=='rta'||!RTA||CH||DLG)return;con
 function rShape(mv){const s=(mv.sig?ARJ.signature:ARJ.moves)[mv.n];if(s)return s[0];const fx=mv.fx||{};
  if(!mv.p)return(fx.self||fx.heal)&&!fx.foe&&!fx.s?'AURA':'FIELD';return mv.p<=45?'PROJ':mv.p<=80?(PHYS.has(mv.t)?'ARC':'PROJ'):'ZONE'}
 const rTier=mv=>mv.p?ARJ.tiers.find(t=>mv.p<=t.max):ARJ.status;
-const rSpeed=f=>0.45+Math.min(160,es(f.m,'spe'))/260;   // px per tick
+const rSpeed=f=>(0.45+Math.min(160,es(f.m,'spe'))/260)*(RTA&&RTA.ter?rTerSpeed(f):1)*(f.hzSlow>0?(f.hzSlow--,0.5):1);   // px per tick
 const rFoe=f=>RTA.f[1-f.side];
 // every HP change in the arena is scaled (data/arena.json match.scale), never below 1 point
 function rScaled(ms,fn){const h0=ms.map(m=>m.hp),r=fn();ms.forEach((m,i)=>{const dh=m.hp-h0[i];if(dh)m.hp=Math.max(0,Math.min(stat(m,0),h0[i]+Math.sign(dh)*Math.max(1,Math.round(Math.abs(dh)*ARJ.match.scale))))});return r}
@@ -58,7 +58,7 @@ function rtaUpd(){const A=RTA;A.t++;
  if(A.phase!=='over'&&P_('start')){choose('Paused',['Resume','Forfeit'],k=>{if(k===1)rtaOver(1)},()=>{});rtaDraw();return}
  if(A.phase==='count'){if(A.t>=ARJ.match.countdown){A.phase='fight';A.t0=A.t}A.cfx=A.cfx.filter(x=>++x.t<x.dur);rtaDraw();return}
  if(A.phase==='over'){A.ot++;rStepFx();if(A.ot>50&&(P_('a')||P_('b')))rtaResult();rtaDraw();return}
- const[p,e]=A.f;rControl(p);rAI(e,p);for(const f of A.f)rStep(f);rShots();rAreas();rTick();rStepFx();
+ const[p,e]=A.f;rControl(p);rAI(e,p);for(const f of A.f)rStep(f);rShots();rAreas();rTick();rTerTick();rHazTick();rStepFx();
  const left=ARJ.match.time*60-(A.t-A.t0),fr=m=>m.hp/stat(m,0);
  if(p.m.hp<=0||e.m.hp<=0)rtaOver(p.m.hp<=0&&e.m.hp<=0?2:p.m.hp<=0?1:0);
  else if(left<=0){A.timeout=1;rtaOver(Math.abs(fr(p.m)-fr(e.m))<0.01?2:fr(p.m)>fr(e.m)?0:1);}
@@ -143,10 +143,58 @@ function rAI(f,foe){const A=RTA,ai=f.ai,r=A.r;f.mx=ai.mx;f.my=ai.my;if(f.m.hp<=0
  if(d>want+6){mx=dx/d;my=dy/d}else if(d<want-10){mx=-dx/d;my=-dy/d}
  if(r()<0.15)ai.str=-ai.str;mx+=-dy/d*0.7*ai.str;my+=dx/d*0.7*ai.str;
  for(const s of A.shots)if(s.atk.f!==f){const sx=f.x-s.x,sy=f.y-8-s.y;if(Math.hypot(sx,sy)<40&&s.vx*sx+s.vy*sy>0){mx-=s.vy*0.8;my+=s.vx*0.8}}
+ for(const h of(A.hz&&A.hz.list)||[])if(h.H.e!=='heal'){const zx=f.x-h.x,zy=f.y-h.y,zd=Math.hypot(zx,zy)||1;if(zd<h.H.r+14){mx+=zx/zd*1.5;my+=zy/zd*1.5}}
  for(const z of A.areas)if(z.atk.f!==f&&z.kind!=='beam'){const zx=f.x-z.x,zy=f.y-z.y,zd=Math.hypot(zx,zy)||1;if(zd<z.r+12){mx+=zx/zd*1.5;my+=zy/zd*1.5}}
  if(f.x<RF.x0+16)mx+=1;if(f.x>RF.x1-16)mx-=1;if(f.y<RF.y0+24)my+=1;if(f.y>RF.y1-8)my-=1;
  ai.mx=Math.abs(mx)<0.3?0:Math.sign(mx);ai.my=Math.abs(my)<0.3?0:Math.sign(my);
  if(best>=0&&bv>0&&d<=RREACH[rShape(MV[f.m.moves[best]])]){const ang=Math.atan2(dy,dx)+(r()-0.5)*2*A.diff[2];rUse(f,best,Math.cos(ang),Math.sin(ang))}}
+
+/* ---- terrain (P2-04): heavy hits change the floor; the planet sets the tile art, the move's type the effect; cells heal after 20 s ---- */
+const RCELL=12,RTERK={Plasma:'lava',Magma:'lava',Cryo:'ice',Toxin:'spore',Bio:'spore',Hydro:'puddle'};
+const RTERC={crater:'#5a3a22',lava:'#ff5a1e',ice:'#9fe6ff',spore:'#b45cff',puddle:'#2e86de'};
+function rTerHit(x,y,r,mv){const A=RTA;if(!A.ter)A.ter={};const k=RTERK[mv.t]||'crater';
+ for(let cx=Math.floor((x-r-RF.x0)/RCELL);cx<=Math.floor((x+r-RF.x0)/RCELL);cx++)for(let cy=Math.floor((y-r-RF.y0)/RCELL);cy<=Math.floor((y+r-RF.y0)/RCELL);cy++){
+  const px=RF.x0+cx*RCELL+RCELL/2,py=RF.y0+cy*RCELL+RCELL/2;if(cx<0||cy<0||px>RF.x1||py>RF.y1||Math.hypot(px-x,py-y)>r+4)continue;
+  A.ter[cx+','+cy]={k,x:px,y:py,t:0,v:Math.floor(A.r()*4),big:(mv.p||0)>100}}}
+const rTerAt=(x,y)=>RTA.ter&&RTA.ter[Math.floor((x-RF.x0)/RCELL)+','+Math.floor((y-RF.y0)/RCELL)];
+const rTerSpeed=f=>{const c=rTerAt(f.x,f.y);return!c?1:c.k==='crater'?0.6:c.k==='puddle'?0.75:c.k==='ice'?1.3:1};
+function rTerTick(){const A=RTA;if(!A.ter)return;for(const k in A.ter)if(++A.ter[k].t>1200)delete A.ter[k];
+ if(A.t%60)return;for(const f of A.f){const c=rTerAt(f.x,f.y),m=f.m;if(!c||m.hp<=0)continue;
+  if(c.k==='lava'){rScaled([m],()=>{m.hp=Math.max(0,m.hp-Math.max(1,Math.floor(stat(m,0)/24)))});rFloat(f,'hot!','#ff8a1e');if(!m.st&&!immune(m,'burn')&&A.r()<0.15)m.st='burn'}
+  if(c.k==='spore'&&!m.st&&!immune(m,'poison')&&A.r()<0.2){m.st='poison';rFloat(f,'poisoned','#b45cff')}}}
+function rTerDraw(){const A=RTA;if(!A.ter)return;const im=ARTLI[(A.key||'court')+'_tiles'],ok=okI(im);
+ for(const c of Object.values(A.ter)){const a=c.t>1020?(1200-c.t)/180:1;
+  if(ok){const row=c.k==='crater'?0:c.k==='lava'||c.k==='spore'||c.k==='ice'||c.k==='puddle'?2:1,col=row===2?Math.floor((A.t/8+c.v))%4:row===0?(c.big?3:1+c.v%2):c.v;
+   drawCell(im,[col*128,row*128,128,128],c.x,c.y,RCELL*1.7,RCELL*1.7,false,a);if(row===2)rEll(c.x,c.y,RCELL*0.55,RCELL*0.35,RTERC[c.k],0.28*a)}
+  else rEll(c.x,c.y,RCELL*0.6,RCELL*0.4,RTERC[c.k],0.55*a)}}
+
+/* ---- planet hazards (P2-05): one on a timer, always shown by its warning marker first ---- */
+const RHAZ={dustara:{e:'slow',r:14},ferrox:{e:'hit',r:12},sporeholm:{e:'poison',r:14},thalassa:{e:'push',r:13},neonis:{e:'shock',r:14},glyphos:{e:'hit',r:10},
+ pyros:{e:'burn',r:12},glacia:{e:'hit',r:11},helix:{e:'hit',r:12},halo:{e:'gust',r:16},umbra:{e:'dark',r:18},starfall:{e:'portal',r:9},ystra:{e:'heal',r:16}};
+function rHazTick(){const A=RTA,H=RHAZ[A.key];if(!H||A.phase!=='fight')return;if(!A.hz)A.hz={next:360,list:[]};const Z=A.hz;
+ if(--Z.next<=0){Z.next=420+Math.floor(A.r()*300);const sp=()=>({x:RF.x0+24+A.r()*(RF.x1-RF.x0-48),y:RF.y0+30+A.r()*(RF.y1-RF.y0-40)});
+  const h={...sp(),t:0,warn:70,act:48,H,hit:new Set(),gx:A.r()<0.5?-1:1};if(H.e==='portal'){const b=sp();h.bx=b.x;h.by=b.y;h.act=360}Z.list.push(h)}
+ Z.list=Z.list.filter(h=>{h.t++;const live=h.t>h.warn;
+  if(live)for(const f of A.f){const m=f.m;if(m.hp<=0)continue;const inA=Math.hypot(f.x-h.x,(f.y-h.y)*1.4)<h.H.r+6;
+   if(h.H.e==='portal'){if((f.ptp||0)>0){f.ptp--;continue}const inB=Math.hypot(f.x-h.bx,(f.y-h.by)*1.4)<h.H.r+6;if(inA||inB){f.x=inA?h.bx:h.x;f.y=inA?h.by:h.y;f.ptp=60;rCpush('common_release',0,f.x,f.y-12,26,18)}continue}
+   if(!inA)continue;
+   if(h.H.e==='slow')f.hzSlow=8;
+   else if(h.H.e==='gust')f.kb[0]+=h.gx*0.5;
+   else if(h.H.e==='dark'){}
+   else if(!h.hit.has(f)){h.hit.add(f);const mx=stat(m,0);
+    if(h.H.e==='heal'){const h0=m.hp;m.hp=Math.min(mx,m.hp+Math.max(1,Math.floor(mx/14)));if(m.hp>h0)rFloat(f,'+'+(m.hp-h0),'#9be36b')}
+    else{const h0=m.hp;m.hp=Math.max(0,m.hp-Math.max(1,Math.floor(mx/14)));f.hurt=12;rFloat(f,'-'+(h0-m.hp),'#ffffff');
+     if(h.H.e==='push'){const dx=f.x-h.x,dy=f.y-h.y,l=Math.hypot(dx,dy)||1;f.kb=[dx/l*3,dy/l*3]}
+     if(h.H.e==='poison'&&!m.st&&!immune(m,'poison'))m.st='poison';if(h.H.e==='burn'&&!m.st&&!immune(m,'burn'))m.st='burn';
+     if(h.H.e==='shock'&&!m.st&&!immune(m,'shock'))m.st='shock'}}}
+  return h.t<h.warn+h.act})}
+function rHazDraw(top){const A=RTA;if(!A.hz)return;const im=ARHZI[A.key+'_hazard'],ok=okI(im);
+ for(const h of A.hz.list){const live=h.t>h.warn,pts=h.H.e==='portal'?[[h.x,h.y],[h.bx,h.by]]:[[h.x,h.y]];
+  for(const[x,y]of pts){
+   if(!live){if(top)continue;if(ok)drawCell(im,[(Math.floor(h.t/6)%4)*192,256,192,256],x,y-h.H.r*0.8,h.H.r*3,h.H.r*4,false,0.9);else rRing(x,y,h.H.r,h.H.r*0.5,'#ff7a3a',0.8,1)}
+   else{if(!top&&h.H.e!=='dark')continue;const k=h.H.e==='portal'?Math.floor(h.t/6)%4:Math.min(3,Math.floor((h.t-h.warn)/h.act*4));
+    if(h.H.e==='dark'){if(top)rEll(x,y,h.H.r+4,(h.H.r+4)*0.7,'#05030c',0.82)}
+    else if(ok)drawCell(im,[k*192,0,192,256],x,y-h.H.r*1.4,h.H.r*3.2,h.H.r*4.3,false,1);else rEll(x,y,h.H.r,h.H.r*0.5,'#ff5a3a',0.5)}}}}
 
 /* ---- effects and messages ---- */
 // the owner's common effect sheets (fx/common_*): 4x2 cells of 192x256, row 0 / row 1 as in prompts/fx/fx_batch_7
@@ -154,7 +202,7 @@ function rCF(sheet,row,fr,x,y,w,a,flip){const im=ARFI[sheet];if(!okI(im))return 
 function rCpush(sheet,row,x,y,w,dur,flip){if(RTA&&ARFI[sheet])RTA.cfx.push({sheet,row,x,y,w,t:0,dur:dur||16,flip})}
 const rBs=m=>Object.values(m.bs||{}).reduce((a,b)=>a+b,0);
 function rBuffFx(f,before){const d=rBs(f.m)-before;if(d)rCpush('common_buffs',d>0?0:1,f.x,f.y-14,26,30)}
-function rImpact(atk,x,y,big){RTA.fx.push({x,y,t:0,dur:big?26:20,big,mv:atk.mv})}
+function rImpact(atk,x,y,big){if((atk.mv.p||0)>=80)rTerHit(x,y+8,big||(atk.mv.p||0)>100?18:12,atk.mv);RTA.fx.push({x,y,t:0,dur:big?26:20,big,mv:atk.mv})}
 function rFloat(f,s,c){RTA.fl.push({x:f.x,y:f.y-26,s,c,t:0})}
 function rLog(L){if(RTA&&L&&L.length)for(const f of RTA.f){const n=TR(f.m.id).name;if(n&&L.some(l=>l.includes(n)))rCpush('common_trait_telegraph',0,f.x,f.y-12,34,22)}
  const s=(L||[]).filter(l=>!/ used /.test(l)&&!/fainted!$/.test(l));if(s.length)RTA.log={s:s[s.length-1],t:150}}
@@ -189,11 +237,11 @@ function rFxCell(mv,which,k,x,y,w,flip,a){const af=rArtFx(mv);if(okI(af)){const 
 function rtaDraw(){const A=RTA,pl=PL[A.pl],sx=A.shake>0?(A.shake--%2?1:-1):0,im=ARSI[A.key+'_arena'],bg=okI(im)?im:SCI[A.key+'_battle'];
  if(okI(bg)){cover(bg,0,0,160,144);if(bg!==im){ctx.fillStyle='rgba(18,12,34,0.4)';ctx.fillRect(0,0,160,144)}}
  else{const e=ENV[pl.env]||ENV.desert;rect(0,0,160,144,e.o2);for(let y=RF.y0;y<RF.y1;y+=16)for(let x=RF.x0;x<RF.x1;x+=16)rect(x,y,Math.min(16,RF.x1-x),Math.min(16,RF.y1-y),((x+y)/16)%2?e.g:e.g2)}
- ctx.save();ctx.translate(sx,0);ctx.strokeStyle='rgba(95,242,255,0.55)';ctx.strokeRect(RF.x0+0.5,RF.y0+0.5,RF.x1-RF.x0-1,RF.y1-RF.y0-1);
+ ctx.save();ctx.translate(sx,0);ctx.strokeStyle='rgba(95,242,255,0.55)';ctx.strokeRect(RF.x0+0.5,RF.y0+0.5,RF.x1-RF.x0-1,RF.y1-RF.y0-1);rTerDraw();rHazDraw(false);
  for(const z of A.areas){const c=rCol(z.atk.mv);
   if(z.kind==='zone'&&z.t>=0&&z.t<z.delay){const k=z.t/z.delay;if(!rCF('common_trait_telegraph',1,Math.floor(A.t/5)%4,z.x,z.y-z.r*0.6,z.r*2.6,0.55+0.45*k)){rEll(z.x,z.y,z.r,z.r*0.5,'#ff5a3a',0.15+0.25*k);rRing(z.x,z.y,z.r*(1.4-0.4*k),z.r*0.5*(1.4-0.4*k),'#ff7a3a',0.9,1)}}
   if(z.kind==='field'){rEll(z.x,z.y,z.r,z.r*0.5,c[0],0.28+0.08*Math.sin(z.t/6));rRing(z.x,z.y,z.r,z.r*0.5,c[1],0.6,1)}}
- const ord=A.f.slice().sort((a,b)=>a.y-b.y);for(const f of ord)rDrawF(f);
+ const ord=A.f.slice().sort((a,b)=>a.y-b.y);for(const f of ord)rDrawF(f);rHazDraw(true);
  for(const s of A.shots){const c=rCol(s.atk.mv),y=s.lob?s.y-Math.sin(Math.PI*s.t/s.life)*14:s.y;
   if(s.wave){rEll(s.x,s.y+6,s.r,s.r*0.45,c[0],0.55);rRing(s.x,s.y+6,s.r,s.r*0.45,c[1],0.9,2)}else{rEll(s.x,s.y+8,3,1.2,'#000',0.3);rFxCell(s.atk.mv,'p',s.t/8,s.x,y,12,s.vx<0,1)}}
  for(const z of A.areas)if(z.kind==='beam'){const c=rCol(z.atk.mv),a=1-z.t/z.dur;ctx.save();ctx.globalAlpha=a;ctx.lineCap='round';ctx.strokeStyle=c[0];ctx.lineWidth=5;ctx.beginPath();ctx.moveTo(z.x,z.y);ctx.lineTo(z.ex,z.ey);ctx.stroke();ctx.strokeStyle=c[1];ctx.lineWidth=2;ctx.stroke();ctx.restore()}
