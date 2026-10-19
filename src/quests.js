@@ -127,6 +127,9 @@ function qFlush(){if(qPicFlush())return;if(QN.length&&!DLG&&!CH&&(scene==='plane
 
 /* ---- quest log text ---- */
 function qText(q){const s=qs(q.id),o=qObj(q);if(!o)return'Done';const l=qLoc(q.id,s.step,o.location)||{},spot=l.spot||'',c=o.count||1,cnt=c>1?' ('+s.n+'/'+c+')':'',t=o.target||'';
+ const atName=o.at&&typeof SWORLD!=='undefined'&&SWORLD[o.at]?SWORLD[o.at].name.replace(/^Molten Frontier: /,''):'';
+ if(o.type==='choice')return atName?'Go to '+atName:'Decide: '+(o.hint||'what to do');
+ if(o.type==='cutscene')return atName?'Go to '+atName:(o.title||'Keep going');
  if(o.hint)return o.hint+cnt;
  switch(o.type){
   case'choose_starter':return'Choose your partner';
