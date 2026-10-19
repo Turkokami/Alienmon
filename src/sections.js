@@ -7,7 +7,7 @@
 const PROPC={};function PROPI(u){return PROPC[u]||(PROPC[u]=Object.assign(new Image(),{src:u}))}
 const ENC=__ENC__,SWORLD=__SWORLD__,SECI=lazyImgs(__SECIMG__),SECOVI=lazyImgs(__SECOV__),SECQ=__SECQ__;
 const SEC_STEP=12;              // frames per tile at 60 updates a second (the Hover Board halves it)
-let SJ=null,SJBUF=0,SM=null,SFADE=null,SBANNER=0,SDEBUG=false,SBUMP=0,SNEAR=null;
+let STRICK=null,SJ=null,SJBUF=0,SM=null,SFADE=null,SBANNER=0,SDEBUG=false,SBUMP=0,SNEAR=null;
 const secOn=()=>!!(G&&G.sec&&SWORLD[G.sec.id]);
 const secTile=(s,x,y)=>x<0||y<0||x>=s.tiles[0]||y>=s.tiles[1]?null:s.rows[y][x];
 const DIRS={up:[0,-1],down:[0,1],left:[-1,0],right:[1,0]};
@@ -92,7 +92,7 @@ function updSec(){const s=SWORLD[G.sec.id];if(SBUMP>0)SBUMP--;if(MODHINT>0)MODHI
  if(SFADE){SFADE.t++;if(SFADE.t===10){SFADE.go();if(!secOn()){SFADE=null;return}}if(SFADE.t>=20)SFADE=null;drawSec();return}   // a fade can hand over to a painted map (the Forge Fortress)
  if(SM){if(pressed.b)SJBUF=12;SM.t++;if(SM.t>=SM.n){const a=SM.to;SM=null;if(a.s.id!==G.sec.id)enterSection(a.s.id,[a.x,a.y],null);else{G.sec.x=a.x;G.sec.y=a.y}secArrive()}
   if(!SM&&!SFADE&&!DLG&&!CH&&!SJ&&!SSPOT){if(SJBUF>0){SJBUF=0;secJump()}else secStepHeld()}drawSec();return}
- if(SJ){SJ.t++;if(SJ.t>=SEC_JUMP_T){G.sec.x=SJ.to[0];G.sec.y=SJ.to[1];SJ=null;secArrive()}drawSec();return}
+ if(SJ){SJ.t++;if(SJ.t>=(SJ.dur||SEC_JUMP_T)){G.sec.x=SJ.to[0];G.sec.y=SJ.to[1];if(SJ.trick){face=SJ.face0;STRICK={n:{spin:'360!',kickflip:'Kickflip!',shuvit:'Shove-it!'}[SJ.trick],t:0}}SJ=null;secArrive()}drawSec();return}
  if(P_('start')){scene='menu';menuSel=0;return}
  if(SJBUF>0)SJBUF--;
  if(P_('b')){SJBUF=0;secJump();drawSec();return}
@@ -122,7 +122,7 @@ let SECBD=null;function secBackdrop(id){const im=SECI[id];if(!okI(im))return nul
  for(let j=-1;j<=1;j++)for(let i=-1;i<=1;i++){g.save();g.translate(W*(i+1)+(i?W:0)*(i<0?1:0)+(i>0?W:0),H*(j+1)+(j<0?H:0)+(j>0?H:0));g.scale(i?-1:1,j?-1:1);g.drawImage(im,0,0);g.restore()}
  g.fillStyle='rgba(12,8,24,0.35)';g.fillRect(0,0,W*3,H);g.fillRect(0,H*2,W*3,H);g.fillRect(0,H,W,H);g.fillRect(W*2,H,W,H);
  SECBD={id,c};return c}
-function drawSec(){const s=SWORLD[G.sec.id],p=SM?SM.t/SM.n:0,jp=SJ?SJ.t/SEC_JUMP_T:0,px=SJ?(SJ.from[0]+(SJ.to[0]-SJ.from[0])*jp)*16:G.sec.x*16+(SM?SM.dx*16*p:0),py=SJ?(SJ.from[1]+(SJ.to[1]-SJ.from[1])*jp)*16:G.sec.y*16+(SM?SM.dy*16*p:0),[cx,cy]=secCam(s,px,py),hop=SJ?Math.round(Math.sin(Math.PI*jp)*10):0;
+function drawSec(){const s=SWORLD[G.sec.id],p=SM?SM.t/SM.n:0,jp=SJ?SJ.t/(SJ.dur||SEC_JUMP_T):0,px=SJ?(SJ.from[0]+(SJ.to[0]-SJ.from[0])*jp)*16:G.sec.x*16+(SM?SM.dx*16*p:0),py=SJ?(SJ.from[1]+(SJ.to[1]-SJ.from[1])*jp)*16:G.sec.y*16+(SM?SM.dy*16*p:0),[cx,cy]=secCam(s,px,py),hop=SJ?Math.round(Math.sin(Math.PI*jp)*(SJ.trick?16:10)):0;
  const indoor=s.type==='interior'||s.type==='cave';rect(0,0,160,144,indoor?'#000':'#1d1433');ctx.save();ctx.imageSmoothingEnabled=false;
  if(!indoor){const bd=secBackdrop(s.id);if(bd)ctx.drawImage(bd,-s.tiles[0]*16-cx,-s.tiles[1]*16-cy)}
  secDrawImg(s.id,-cx,-cy);
@@ -132,7 +132,7 @@ function drawSec(){const s=SWORLD[G.sec.id],p=SM?SM.t/SM.n:0,jp=SJ?SJ.t/SEC_JUMP
  ctx.restore();
  const people=secNpcs(s).map(n=>({y:n.y*16+(n.oy||0),draw:()=>n.legend?secDrawLegend(n.legend,n.x*16-cx,n.y*16-cy):secDrawChar(n.art,n.face||'down',n.x*16+(n.ox||0)-cx,n.y*16+(n.oy||0)-cy,(n.ox||n.oy)&&((frame>>3)&1)?1:0)}));
  const kp=PL[G.planet]&&PL[G.planet].keeper;for(const o of s.objects||[])if(o.k==='keeper'&&kp)people.push({y:o.tile[1]*16,draw:()=>secDrawChar(kp.art,'down',o.tile[0]*16-cx,o.tile[1]*16-cy,0)});
- people.push({y:py,me:1,draw:()=>{const k=(G.gender||'boy');if(hop){ctx.fillStyle='rgba(20,10,20,0.3)';ctx.beginPath();ctx.ellipse(px-cx+8,py-cy+15,5,2,0,0,6.283);ctx.fill()}const rd=secDrawRide(s,px-cx,py-cy-hop),hv=!rd&&secHoverOn(s);if(hv)secDrawBoard(px-cx,py-cy-hop);secDrawChar(k,face,px-cx,py-cy-hop-(hv?3:0)-rd,hv?0:SM&&p>0.25&&p<0.75?1:0,true)}});
+ people.push({y:py,me:1,draw:()=>{const k=(G.gender||'boy');if(hop){ctx.fillStyle='rgba(20,10,20,0.3)';ctx.beginPath();ctx.ellipse(px-cx+8,py-cy+15,5,2,0,0,6.283);ctx.fill()}const rd=secDrawRide(s,px-cx,py-cy-hop),hv=!rd&&secHoverOn(s);if(hv)secDrawBoard(px-cx,py-cy-hop,SJ&&SJ.trick,jp);const fc=SJ&&SJ.trick==='spin'?['down','left','up','right'][(['down','left','up','right'].indexOf(SJ.face0)+Math.floor(jp*4))%4]:face;secDrawChar(k,fc,px-cx,py-cy-hop-(hv?3:0)-rd,hv?0:SM&&p>0.25&&p<0.75?1:0,true);if(typeof secDrawTrick==='function')secDrawTrick(px-cx,py-cy)}});
  // walk-behind props: each cut-out sorts with the people by its base row, so whoever stands behind it is drawn first
  if(s.props)for(const[u,x,y,w,h,pw,ph,ox,flat,oy]of s.props){const im=PROPI(u),X=Math.round(x*16+(w*16-pw)/2+(ox||0)-cx),Y=(flat?y*16+Math.round((h*16-ph)/2)-cy:(y+h)*16-ph-cy)+(oy||0);if(X>160||X+pw<0||Y>144||Y+ph<0)continue;people.push({y:flat?-1e9:(y+h-1)*16+1,draw:()=>{if(okI(im))ctx.drawImage(im,X,Y)}})}
  if(s.over){const ov=SECOVI[s.id];if(okI(ov))for(const[x,y0,h,by]of s.over){const X=x*16-cx,Y=y0*16-cy;if(X<-16||X>160||Y>144||Y+h*16<0)continue;people.push({y:by*16+1,draw:()=>ctx.drawImage(ov,x*16,y0*16,16,h*16,X,Y,16,h*16)})}}
@@ -232,7 +232,9 @@ function secJump(){const s=SWORLD[G.sec.id],[dx,dy]=DIRS[face];
  // two tiles is a normal hop; three clears a wider gap; nothing to land on is a bump
  const n=[2,3].concat(modHas('grapple_line')?[4]:[],modHas('gravity_lift')?[5]:[]).find(k=>ok(G.sec.x+dx*k,G.sec.y+dy*k)&&!(k>=3&&ok(G.sec.x+dx,G.sec.y+dy)&&ok(G.sec.x+dx*2,G.sec.y+dy*2)));
  if(!n){bumpSfx();return}
- SFOL=null;SJ={t:0,from:[G.sec.x,G.sec.y],to:[G.sec.x+dx*n,G.sec.y+dy*n]};jumpSfx()}
+ SFOL=null;SJ={t:0,from:[G.sec.x,G.sec.y],to:[G.sec.x+dx*n,G.sec.y+dy*n]};
+ if(secHoverOn(s)){const T_=['spin','kickflip','shuvit'];SJ.trick=T_[Math.floor(Math.random()*T_.length)];SJ.dur=26;SJ.face0=face}   // hover board: a trick in the air
+ jumpSfx()}
 
 // a Linker Stash on the ground: a little gold-and-violet capsule with a cyan light (drawn, so every world gets the same look)
 const STASHI=__STASHART__.map(u=>u?Object.assign(new Image(),{src:u}):null);

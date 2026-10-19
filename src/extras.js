@@ -39,8 +39,13 @@ const secHoverOn=s=>!!(G.hover&&G.key&&G.key.hover_board&&s&&secOutdoors(s));
 const secStepN=s=>secHoverOn(s)?SEC_STEP/2:SEC_STEP;
 GEAR.push({k:'hover_board',has:()=>!!G.key.hover_board,label:()=>'Hover Board: '+(G.hover?'On':'Off'),use(){G.hover=!G.hover;
  say(G.hover?'You hopped on the Hover Board!'+(secOn()&&!secOutdoors(SWORLD[G.sec.id])?' (It works once you are back outdoors.)':''):'You put the Hover Board away.')}});
-function secDrawBoard(x,y){const b=Math.round(Math.sin(frame/8));ctx.fillStyle='rgba(20,10,20,0.3)';ctx.beginPath();ctx.ellipse(x+8,y+16,7,2,0,0,6.283);ctx.fill();
- ctx.fillStyle='#1b1424';ctx.fillRect(x+1,y+12+b,14,3);ctx.fillStyle='#5ff2ff';ctx.fillRect(x+2,y+12+b,12,1);ctx.fillStyle=frame%20<10?'#ff8a1e':'#ffd23f';ctx.fillRect(x+2,y+15+b,2,1);ctx.fillRect(x+12,y+15+b,2,1)}
+// tricks in the air: 360 spin (board turns a full circle), kickflip (flips over its length), shove-it (spins flat under the feet)
+function secDrawBoard(x,y,trick,jp){const b=trick?0:Math.round(Math.sin(frame/8));if(!trick){ctx.fillStyle='rgba(20,10,20,0.3)';ctx.beginPath();ctx.ellipse(x+8,y+16,7,2,0,0,6.283);ctx.fill()}
+ ctx.save();ctx.translate(x+8,y+13.5+b-(trick==='kickflip'?Math.sin(Math.PI*jp)*5:0));
+ if(trick==='spin')ctx.rotate(jp*Math.PI*2);else if(trick==='shuvit')ctx.rotate(jp*Math.PI);else if(trick==='kickflip')ctx.scale(1,Math.cos(jp*Math.PI*2)||0.05);
+ ctx.fillStyle='#1b1424';ctx.fillRect(-7,-1.5,14,3);ctx.fillStyle='#5ff2ff';ctx.fillRect(-6,-1.5,12,1);ctx.fillStyle=frame%20<10?'#ff8a1e':'#ffd23f';ctx.fillRect(-6,1.5,2,1);ctx.fillRect(4,1.5,2,1);ctx.restore()}
+// the trick's name pops up over the player for a moment after landing
+function secDrawTrick(x,y){if(!STRICK)return;const t=++STRICK.t;if(t>40){STRICK=null;return}const a=t>28?(40-t)/12:1;ctx.save();ctx.globalAlpha=a;txt(STRICK.n,Math.round(x+8-STRICK.n.length*3),Math.round(y-14-t/4),'#ffd23f',6);ctx.restore()}
 
 /* ---- the town map: the planet's outdoor sections laid out by their grid, with fog over places you have not been ---- */
 const SANCH={};
