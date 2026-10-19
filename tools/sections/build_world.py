@@ -1088,6 +1088,25 @@ for sid, sec in world.items():
                 sec['warps'].append(dict(w, tile=[a, b])); have.add((a, b))
                 report['exits widened to the whole doorway'].append(f"{sid} {sec['name']}: {w['tile']} also from {[a, b]}")
 
+# a one-tile cave mouth or stairway whose neighbour is a dead-end pocket in the same opening (rock above and beside,
+# open only behind): stepping into that pocket enters too (Red Rock Caves: walking up the right half of the mouth did nothing)
+for sid, sec in world.items():
+    R = _rows(sid)
+    if not R: continue
+    W, H = sec['tiles']
+    have = {tuple(w['tile']) for w in sec['warps']}
+    op = lambda x, y: 0 <= x < W and 0 <= y < H and R[y][x] in '.,'
+    for w in list(sec['warps']):
+        if w.get('kind') not in ('stairs', 'door'): continue
+        tx, ty = w['tile']
+        if ty == 0 or op(tx, ty - 1): continue
+        if any(tuple(o['tile']) in ((tx - 1, ty), (tx + 1, ty)) and o['to'] == w['to'] for o in sec['warps']): continue   # already a wide doorway
+        for a in (tx - 1, tx + 1):
+            if not op(a, ty) or (a, ty) in have or op(a, ty - 1): continue
+            if sum(op(a + dx, ty + dy) and (a + dx, ty + dy) != (tx, ty) for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1))) > 1: continue   # not a pocket: a walkway
+            sec['warps'].append(dict(w, tile=[a, ty])); have.add((a, ty))
+            report['one-tile entrances widened into their pocket'].append(f"{sid} {sec['name']}: {w['tile']} also from {[a, ty]}")
+
 json.dump({'version': 1, 'tile': 16, 'screen_tiles': [10, 9], 'arrival': arrivals, 'quest_spots': spots, 'sections': world, 'connections': conns},
           open(os.path.join(ROOT, OUT or 'data/world.json'), 'w', encoding='utf-8'), indent=1, ensure_ascii=False)
 lines = ['# Section connections report', '',
