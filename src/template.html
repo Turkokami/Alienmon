@@ -687,7 +687,7 @@ function endBattle(won){storyAllyLeave();const tr=B&&B.tr,lines=[];
  if(won){const pk=PL[G.planet]&&PL[G.planet].key;if(tr&&tr.bkey)qEvent('trainer',tr.bkey);else if(tr&&tr===PL[G.planet].keeper)qEvent('keeper',pk);else if(!tr&&B.team.length){qEvent('win',D[B.team[B.team.length-1].id].name,{area:QWILD});noteLegendWin(B.team[B.team.length-1])}}QWILD=null;
  if(won){const e=B.team[B.team.length-1];const dust=payout(tr,e);G.dust+=dust;lines.push('You collected '+dust+' stardust.');
   if(!tr){if(R()<0.05){G.items.gel=(G.items.gel||0)+1;lines.push('You found a Med Gel!')}else if(R()<0.03){G.pods.stasis++;lines.push('You found a Stasis Pod!')}}}
- if(won&&tr&&!tr.arena){B.trShow=true;G.beaten[tr.bkey||PL[G.planet].key]=1;lines.push(tr.name+': '+tr.lose);if(tr.shard){G.shards++;lines.push('You received a Signal Shard! ('+G.shards+'/8)')}
+ if(won&&tr&&!tr.arena){B.trShow=true;G.beaten[tr.bkey||PL[G.planet].key]=1;lines.push(tr.name+': '+tr.lose);if(tr.shard){G.shards++;lines.push('You received a Signal Shard! ('+G.shards+'/8)');if(typeof keeperDisc==='function'){const kd=keeperDisc(EM());if(kd!=null)lines.push(tr.name+' also gave you a Tech Disc: '+MV[kd].n+'! Teach it from Bag > Tech Discs.')}}
   if(tr.flag){G.flags[tr.flag]=1;lines.push(tr.flagMsg)}}
  for(const m of G.party)m.cf=0;
  const back=B&&B.from||'planet';if(B)B.over=true;const shard=!!(won&&tr&&tr.shard);const fin=()=>{scene=back;B=null;G.grace=60;if(shard)autosave();if(tr&&tr.arena)arenaAfter(won)};const steps=[];if(lines.length)steps.push({say:lines});evoSteps(steps);progRun(steps,fin)}
