@@ -107,7 +107,7 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 | 488 Scrap Slope | 8,9 | 150x Stardust | 1 |
 | 491 Railcar Maze | 13,3 | 150x Stardust | 1 |
 | 491 Railcar Maze | 21,5 | 150x Stardust | 1 |
-| 495 Rustvale Back Lot | 5,9 | 3x Stasis Pod | 1 |
+| 495 Rustvale Back Lot | 7,10 | 3x Stasis Pod | 1 |
 | 881 Reservoir Islands | 1,4 | 2x Med Gel | 1 |
 | 880 Coolant Reservoir | 22,10 | 1x Tether Pulse | 1 |
 
