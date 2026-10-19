@@ -281,10 +281,31 @@ function arenaTrainer(L,round){const champ=round===3,r=rng(hash(L.k+round+frame)
  const cls=(['Rookie Linker','Arena Ace','Star Duelist','Veteran Linker','Rival Linker','Cosmic Scout'])[Math.floor(r()*6)],art=['explorer','guard','technician','wanderer','pilgrim','researcher'][Math.floor(r()*6)],
   name=['Kai','Rhee','Juno','Vela','Corin','Wren','Nyx','Sol','Yuki','Zora','Milo','Quill'][Math.floor(r()*12)];
  return{name:cls+' '+name,art,intro:['Round 1! Let\'s give the crowd a show!','Round 2! You won\'t get past me so easily!','Final round before the Champion! Bring it!'][round],lose:'What a battle! The crowd loves you!',after:'Good luck out there!',team,bkey:'arena_'+L.k,arena:1}}
-function arenaRound(){const L=ARENA.L,tr=arenaTrainer(L,ARENA.round);healAll();
+/* ---- Exhibition matches (START > Arena): one of your Alienmon against one opponent, for Stardust. Turn-based, no EXP ---- */
+const EXHIB_FEE=50,EXHIB=[{k:'rookie',n:'Rookie',d:-3,prize:100},{k:'ace',n:'Ace',d:0,prize:160},{k:'star',n:'Star',d:3,prize:250}];
+function exhibMenu(){G.arena=G.arena||{};const rec=G.arena.exhib||{wins:0,losses:0};
+ const opts=EXHIB.map(x=>x.n+' match (win '+x.prize+')').concat(['Records'],typeof rtaMenu==='function'?['Linker Arena (test)']:[],['Not now']);
+ choose('Exhibition: '+EXHIB_FEE+' Stardust to enter',opts,i=>{const x=EXHIB[i];
+  if(!x){const o=opts[i];if(o==='Records')return say(['Exhibition record: '+rec.wins+' win'+(rec.wins===1?'':'s')+', '+rec.losses+' loss'+(rec.losses===1?'':'es')+'.','Best win streak: '+(rec.best||0)+'.'],exhibMenu);if(o==='Linker Arena (test)')return rtaMenu();return}
+  if(G.dust<EXHIB_FEE)return say('You need '+EXHIB_FEE+' Stardust to enter. You have '+G.dust+'.',exhibMenu);
+  const ok=G.party.filter(m=>m.hp>0);if(!ok.length)return say('Your team needs rest first. Visit a Recovery Bay.');
+  choose('Who fights the '+x.n+' match?',ok.map(m=>nm(m)+' Lv'+m.lv).concat(['Back']),j=>{const m=ok[j];if(!m)return exhibMenu();
+   G.dust-=EXHIB_FEE;arenaStart({k:'exhib',n:x.n+' Exhibition',exhib:x,lead:m.lv},[m])},exhibMenu)},()=>{})}
+function exhibTrainer(L){const x=L.exhib,r=rng(hash('exhib'+frame+G.dust)),lv=Math.max(2,Math.min(100,L.lead+x.d)),P=PL[G.planet]||PL[0];
+ let pool=P.pool.c.concat(P.pool.e,P.pool.r).filter(id=>wildOK(D[id].name));if(!pool.length)pool=STARTERS.slice();
+ const id=evolvedAt(pool[Math.floor(r()*pool.length)],lv),cls={rookie:'Rookie Linker',ace:'Arena Ace',star:'Star Duelist'}[x.k],
+  name=['Kai','Rhee','Juno','Vela','Corin','Nyx','Sol','Yuki','Zora','Milo','Quill','Tamsin'][Math.floor(r()*12)],art=['explorer','guard','technician','wanderer','pilgrim','researcher'][Math.floor(r()*6)];
+ return{name:cls+' '+name,art,intro:['Let\'s put on a show for the crowd!','One on one. No holding back!','The crowd came to see a real battle!'][Math.floor(r()*3)],lose:'What a match! The crowd loves you!',after:'Good match!',team:[[id,lv]],bkey:'arena_exhib',arena:1}}
+function arenaRound(){const L=ARENA.L;if(L.exhib){const tr=exhibTrainer(L);healAll();
+  return say(['Announcer: '+L.n+' match!',tr.name+' steps onto the floor!'],()=>say(tr.name+': '+tr.intro,()=>startBattle(tr.team.map(([id,lv])=>mk(id,lv)),tr),tr.art))}
+ const tr=arenaTrainer(L,ARENA.round);healAll();
  const call=ARENA.round===3?['Announcer: The '+L.n+' Championship!',tr.name+' takes the floor!']:['Announcer: '+L.n+', round '+(ARENA.round+1)+' of 3!',tr.name+' steps onto the floor!'];
  say(call,()=>say(tr.name+': '+tr.intro,()=>startBattle(tr.team.map(([id,lv])=>mk(id,lv)),tr),tr.art))}
-function arenaAfter(won){const a=ARENA;if(!a)return;healAll();const L=a.L;G.arena=G.arena||{};const rec=G.arena[L.k]=G.arena[L.k]||{wins:0,streak:0,best:0};
+function arenaAfter(won){const a=ARENA;if(!a)return;healAll();const L=a.L;G.arena=G.arena||{};
+ if(L.exhib){const rec=G.arena.exhib=G.arena.exhib||{wins:0,losses:0,streak:0,best:0};arenaEnd();
+  if(!won){rec.losses++;rec.streak=0;autosave();return say(['Announcer: And the match goes to the challenger!','Better luck next time, Linker. Your Alienmon has been healed.'],null,'guard')}
+  rec.wins++;rec.streak=(rec.streak||0)+1;rec.best=Math.max(rec.best||0,rec.streak);G.dust+=L.exhib.prize;autosave();
+  return say(['Announcer: What a win!','You received '+L.exhib.prize+' Stardust!'+(rec.streak>1?' Win streak: '+rec.streak+'.':'')],null,'guard')}const rec=G.arena[L.k]=G.arena[L.k]||{wins:0,streak:0,best:0};
  if(!won){rec.streak=0;arenaEnd();return say(['Announcer: And that\'s the end of the run!','Arena Master: Heal up and try the '+L.n+' again any time, Linker.'],null,'guard')}
  a.round++;if(a.round<4)return say(a.round===3?'Announcer: Three wins! Now for the League Champion!':'Announcer: A win! On to round '+(a.round+1)+'!',arenaRound);
  const first=!rec.wins;rec.wins++;rec.streak++;rec.best=Math.max(rec.best,rec.streak);arenaEnd();G.dust+=L.dust;
