@@ -5078,6 +5078,82 @@
    },
    "repeatable": false,
    "notes": "Book 1: a crashed Helix shuttle releases Glitchbugs across Neonis; the last one joins the player."
+  },
+  {
+   "id": "S112",
+   "type": "side",
+   "act": "Thalassa",
+   "title": "Splodge's Big Splash",
+   "location": {
+    "area": "thalassa_town",
+    "planet": "thalassa",
+    "spot": "Port Saltreach docks"
+   },
+   "giver": {
+    "name": "Mina",
+    "art": "mina"
+   },
+   "prereq": [
+    "M07"
+   ],
+   "objectives": [
+    {
+     "type": "cutscene",
+     "target": "splodge_found",
+     "count": 1,
+     "at": "781",
+     "scene": "thalassa_landmark",
+     "title": "Find Splodge at Coral Cove",
+     "lines": [
+      "Something giggles out in the shallows. A huge shiny bubble bobs over the waves, bouncing off the rocks like a beach ball.",
+      "Inside it sits a little round Bubbub with two flippers and a big happy grin. Splodge!",
+      "Splodge gurgles, rolls straight up the beach and bumps into your legs. He has decided to follow you home."
+     ]
+    },
+    {
+     "type": "catch_type",
+     "target": "Hydro",
+     "count": 1,
+     "location": {
+      "area": "thalassa_town",
+      "planet": "thalassa",
+      "spot": "any water or shore"
+     }
+    },
+    {
+     "type": "talk",
+     "target": "Mina",
+     "count": 1,
+     "location": {
+      "area": "thalassa_town",
+      "planet": "thalassa",
+      "spot": "Mina at the docks"
+     }
+    }
+   ],
+   "dialogue": {
+    "start": [
+     "Mina: This hood? It's a shark. Obviously. And I need your help.",
+     "Mina: Splodge, my Bubbub, chased a wave all the way out past the point and didn't come back. He always ends up at Coral Cove.",
+     "Mina: Bring him home? And show me you can look after a water Alienmon of your own. Then we'll talk about rides."
+    ],
+    "progress": [
+     "Mina: Splodge loves Coral Cove. Look for a giggling bubble in the shallows!"
+    ],
+    "complete": [
+     "Mina: SPLODGE! You silly bubble. Thank you, Linker!",
+     "Mina: You know what? He likes you. Keep him. Walk out onto deep water and Splodge will carry you anywhere.",
+     "Mina: Just don't pop him."
+    ]
+   },
+   "rewards": {
+    "dust": 200,
+    "flags": [
+     "bubbub_ride"
+    ]
+   },
+   "repeatable": false,
+   "notes": "Earns the Bubbub Ride (the water module, key hydro_skiff), as in the book where Mina lends Rook her Bubbub Splodge."
   }
  ]
 }
