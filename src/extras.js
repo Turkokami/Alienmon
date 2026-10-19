@@ -266,7 +266,7 @@ Object.assign(KEY_DESC,{grapple_line:'Linker module: your jumps (B) reach up to 
  heat_shield:'Linker module: walk across lava flows unharmed.',lumen_beacon:'Linker module: lights up dark caves.',gravity_lift:'Linker module: your jumps (B) reach up to 5 tiles.'});
 const fluidOK=c=>c==='~'?modHas('hydro_skiff'):c==='^'?modHas('heat_shield'):false;
 let MODHINT=0;
-function modHint(c){if(MODHINT>0)return;MODHINT=240;toast(c==='~'?'Deep water. With a Bubbub to ride, you could cross it.':'Lava! A Heat Shield module could cross it.')}
+function modHint(c){if(MODHINT>0)return;MODHINT=240;toast(c==='~'?(mDone('M07')?'Deep water. Mina at the Port Saltreach docks knows about Bubbub rides.':'Deep water. With a Bubbub to ride, you could cross it.'):'Lava! A Heat Shield module could cross it.')}
 function secDrawRide(s,x,y){const c=SM?secTile(SM.to.s,SM.to.x,SM.to.y):secTile(s,G.sec.x,G.sec.y),c0=secTile(s,G.sec.x,G.sec.y),w=c==='~'||c0==='~'&&SM,l=c==='^'||c0==='^'&&SM;
  if(w){const bo=Math.sin(frame/10)*1.5,cx=x+8,cy=y+8+bo,im=OWI.Bubbub;ctx.save();
   ctx.fillStyle='rgba(255,255,255,0.45)';ctx.fillRect(cx-12,y+17,24,1);   // wake on the water
