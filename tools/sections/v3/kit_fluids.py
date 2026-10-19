@@ -13,7 +13,8 @@ NOT = {'409', '420', '551', '775', '747', '753', '818', '823'}   # checked by ey
 WET = ('Shore', 'Lake', 'Lagoon', 'Canal', 'Bog', 'Marsh', 'Falls', 'Tarn', 'Pool', 'Channel', 'Shallows', 'Grotto', 'Sea ', 'River', 'Inlet', 'Cove',
        'Tide', 'Water', 'Oasis', 'Reservoir', 'Basin', 'Islands', 'Fjord', 'Tank', 'Mirror', 'Sea', 'Lava', 'Coolant', 'Floe', 'Fen', 'Mire', 'Island', 'Bend', 'Stream', 'Hydro', 'Fork')
 # water routes whose water the strict colour test misses (ice floes break up Icy Fjord's water; Cloud Lagoon's is pale): a looser test
-RELAX = {'882', '883', '891', '892', '913'}
+RELAX = {'882', '883', '891', '892', '913', '520', '523', '525', '768', '778', '781', '784'}
+TURQ = {'447', '458'}   # bright turquoise oasis ponds
 SURF = {k for k, v in json.load(open('data/encounters.json', encoding='utf-8')).items() if any(e['method'] == 'surf' for e in v['encounters'])}
 
 
@@ -25,6 +26,7 @@ def classify(img, rows, world='', wet=True, relax=False):
     blocked = np.array([[c == '#' for c in row] for row in rows])
     water = wet & blocked & (r < 125) & (b > r + 40) & (b > 70) & (sd < 42) & ~((g > b + 10))   # blue/teal open water, fairly smooth
     if relax: water = wet & blocked & (b > r + 18) & (b > 85) & (sd < 62) & ~((g > b + 10)) & ~((r > 200) & (g > 200))   # bluer than it is red, not white ice
+    if relax == 'turq': water = wet & blocked & (b > r + 35) & (g > r + 15) & (b > 110) & (sd < 85)
     lava = (world == 'pyros') & blocked & (r > 170) & (r - b > 110) & (g > 50) & (g < 190) & (sd < 60)
     walk = ~blocked
     out = {}
@@ -70,7 +72,7 @@ def main():
         rows = json.load(open(f'data/collision/{sid}.json'))['rows']
         img = Image.open(s['img'])
         wet = sid in SURF or any(w in s['name'] for w in WET)
-        c = classify(img, rows, s.get('pkey', ''), wet, sid in RELAX)
+        c = classify(img, rows, s.get('pkey', ''), wet, 'turq' if sid in TURQ else sid in RELAX)
         F = {'water': rects(c['water']), 'lava': rects(c['lava']), 'auto': True}
         if F['water'] or F['lava']:
             json.dump(F, open(f, 'w')); n += 1

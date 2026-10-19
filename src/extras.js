@@ -259,16 +259,22 @@ function knockDoor(s,d){const i=KNOCK[s.id].indexOf(d),key=s.id+':'+i,kind=knock
  say(['*Knock knock*',KNOCK_CHAT[Math.floor(r()*KNOCK_CHAT.length)]])}
 
 /* ---- Linker Modules on the section maps ----
- Hydro-skiff: ride across open water ('~').  Heat Shield: cross lava ('^').  Grapple Line: jumps reach 4 tiles.
+ Bubbub Ride (key hydro_skiff): ride Splodge the Bubbub across open water ('~').  Heat Shield: cross lava ('^').  Grapple Line: jumps reach 4 tiles.
  Gravity Lift: jumps reach 5 tiles.  Lumen Beacon: lights up the dark caves on the outer worlds. */
 const modHas=k=>!!(G&&G.key&&G.key[k]);
-Object.assign(KEY_DESC,{grapple_line:'Linker module: your jumps (B) reach up to 4 tiles, over wider gaps.',hydro_skiff:'Linker module: walk onto open water to ride across it.',
+Object.assign(KEY_DESC,{grapple_line:'Linker module: your jumps (B) reach up to 4 tiles, over wider gaps.',hydro_skiff:'Walk onto deep water and Splodge the Bubbub carries you across in its bubble.',
  heat_shield:'Linker module: walk across lava flows unharmed.',lumen_beacon:'Linker module: lights up dark caves.',gravity_lift:'Linker module: your jumps (B) reach up to 5 tiles.'});
 const fluidOK=c=>c==='~'?modHas('hydro_skiff'):c==='^'?modHas('heat_shield'):false;
 let MODHINT=0;
-function modHint(c){if(MODHINT>0)return;MODHINT=240;toast(c==='~'?'Deep water. A Hydro-skiff module could cross it.':'Lava! A Heat Shield module could cross it.')}
+function modHint(c){if(MODHINT>0)return;MODHINT=240;toast(c==='~'?'Deep water. With a Bubbub to ride, you could cross it.':'Lava! A Heat Shield module could cross it.')}
 function secDrawRide(s,x,y){const c=SM?secTile(SM.to.s,SM.to.x,SM.to.y):secTile(s,G.sec.x,G.sec.y),c0=secTile(s,G.sec.x,G.sec.y),w=c==='~'||c0==='~'&&SM,l=c==='^'||c0==='^'&&SM;
- if(w){const b=Math.round(Math.sin(frame/9));ctx.fillStyle='rgba(255,255,255,0.5)';ctx.fillRect(x-1,y+14+b,18,1);ctx.fillStyle='#1b1424';ctx.fillRect(x,y+8+b,16,7);ctx.fillStyle='#ff8a1e';ctx.fillRect(x+1,y+9+b,14,4);ctx.fillStyle='#5ff2ff';ctx.fillRect(x+2,y+9+b,12,1);return 3}
+ if(w){const bo=Math.sin(frame/10)*1.5,cx=x+8,cy=y+8+bo,im=OWI.Bubbub;ctx.save();
+  ctx.fillStyle='rgba(255,255,255,0.45)';ctx.fillRect(cx-12,y+17,24,1);   // wake on the water
+  const g=ctx.createRadialGradient(cx-3,cy-3,1,cx,cy,11);g.addColorStop(0,'rgba(255,255,255,0.55)');g.addColorStop(0.6,'rgba(150,230,255,0.28)');g.addColorStop(1,'rgba(90,190,255,0.5)');
+  ctx.fillStyle=g;ctx.beginPath();ctx.ellipse(cx,cy,12,9,0,0,6.283);ctx.fill();
+  if(okI(im)){ctx.imageSmoothingEnabled=true;ctx.drawImage(im,((frame>>4)&1)*64,0,64,64,cx-7,cy-5,14,14)}
+  ctx.strokeStyle='rgba(220,250,255,0.8)';ctx.lineWidth=1;ctx.beginPath();ctx.ellipse(cx,cy,12,9,0,0,6.283);ctx.stroke();ctx.fillStyle='rgba(255,255,255,0.9)';ctx.fillRect(cx-7,cy-6,2,2);
+  ctx.restore();return 11}   // Rook sits on top of the bubble
  if(l){ctx.save();ctx.globalAlpha=0.35+0.15*Math.sin(frame/6);ctx.strokeStyle='#ffd23f';ctx.lineWidth=1;ctx.beginPath();ctx.ellipse(x+8,y+4,10,13,0,0,6.283);ctx.stroke();ctx.restore();return 0}return 0}
 // dark caves: past Dustara and the Frontier, caves are pitch dark without the Lumen Beacon (you still see a little around you)
 function secDark(s,px,py){if(s.type!=='cave'||secTier(s)<1||modHas('lumen_beacon'))return;ctx.save();ctx.fillStyle='rgba(4,2,10,0.86)';ctx.beginPath();ctx.rect(0,0,160,144);ctx.arc(px+8,py+8,30+Math.sin(frame/15),0,6.283,true);ctx.fill('evenodd');ctx.restore()}
