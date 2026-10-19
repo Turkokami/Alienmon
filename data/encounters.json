@@ -232,6 +232,21 @@
     ],
     "method": "walk",
     "time": "any"
+   },
+   {
+    "n": 25,
+    "name": "Cactling",
+    "types": [
+     "Bio"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     3,
+     5
+    ],
+    "method": "walk",
+    "time": "any"
    }
   ]
  },
@@ -362,6 +377,21 @@
     "levels": [
      2,
      6
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 25,
+    "name": "Cactling",
+    "types": [
+     "Bio"
+    ],
+    "rarity": "common",
+    "weight": 14,
+    "levels": [
+     3,
+     5
     ],
     "method": "walk",
     "time": "any"
