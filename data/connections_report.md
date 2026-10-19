@@ -119,3 +119,17 @@
 - 855 bottom -> 865: [17, 20] -> [17, 21]
 - 746 bottom -> 753: [15, 18] -> [15, 20]
 - 747 bottom -> 751: [6, 10] -> [6, 11]
+
+## exits widened to the whole doorway (11)
+
+- 169 Smuggler's Freighter: [0, 7] also from [0, 6]
+- 169 Smuggler's Freighter: [0, 7] also from [0, 8]
+- 480 Scrapyard Dome Arena: [11, 15] also from [12, 15]
+- 706 Mycelium Bowl Arena: [11, 15] also from [12, 15]
+- 770 Tidewater Arena Battle Room: [11, 15] also from [12, 15]
+- 672 Magma Pit Arena Battle Room: [11, 15] also from [12, 15]
+- 513 Glacier Rink Arena Battle Room: [11, 15] also from [12, 15]
+- 607 Proving Grounds Battle Room: [11, 15] also from [12, 15]
+- 810 Lantern Pit Arena: [11, 15] also from [10, 15]
+- 810 Lantern Pit Arena: [11, 15] also from [12, 15]
+- 739 Rift Crater Arena Floor: [11, 15] also from [12, 15]
