@@ -13,7 +13,8 @@ function fit(types,hab){const h=H.habitats[hab];if(!h)return 0;let tol=h.tolerat
 const names=new Set(A.map(m=>m.name)),bad=[];let slots=0;
 for(const[sid,sec]of Object.entries(E)){if(!W[sid])bad.push(sid+': not a map section');
  for(const e of sec.encounters){slots++;if(!names.has(e.name))bad.push(`${sid} ${sec.name}: unknown Alienmon ${e.name}`);
-  else if(!fit(e.types,sec.habitat))bad.push(`${sid} ${sec.name} (${sec.habitat}): ${e.name} ${e.types.join('/')}`);
+  else if(!(fit(e.types,sec.habitat)||(e.method==='surf'&&(e.types||[]).includes('Hydro'))))   // anything you surf into is a water type, whatever the shore is like
+ bad.push(`${sid} ${sec.name} (${sec.habitat}): ${e.name} ${e.types.join('/')}`);
   if(sec.planet==='Pyros'&&e.types.some(t=>t==='Hydro'||t==='Cryo'))bad.push(`water or ice type on Pyros: ${e.name}`)}}
 const habs={};for(const sec of Object.values(H.sections))(habs[sec.planet.toLowerCase().replace(/ station| rift| array/,'')]||(habs[sec.planet.toLowerCase().replace(/ station| rift| array/,'')]=new Set())).add(sec.habitat);
 for(const p of P){const hs=habs[p.key];if(!hs)continue;for(const t of['c','e','r'])for(const i of p.pool[t]){const m=A[i];if(m&&![...hs].some(h=>fit(m.t,h)))bad.push(`${p.name} wild pool: ${m.name} ${m.t.join('/')} fits none of ${[...hs].join(', ')}`)}}

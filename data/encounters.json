@@ -1207,6 +1207,54 @@
     ],
     "method": "walk",
     "time": "any"
+   },
+   {
+    "n": 58,
+    "name": "Bogeel",
+    "types": [
+     "Hydro",
+     "Toxin"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     4,
+     7
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 74,
+    "name": "Drippit",
+    "types": [
+     "Toxin",
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     4,
+     7
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 75,
+    "name": "Goozilla",
+    "types": [
+     "Toxin",
+     "Hydro"
+    ],
+    "rarity": "uncommon",
+    "weight": 3,
+    "levels": [
+     4,
+     7
+    ],
+    "method": "surf",
+    "time": "any"
    }
   ]
  },
@@ -4936,6 +4984,53 @@
     "method": "walk",
     "time": "any",
     "fill": true
+   },
+   {
+    "n": 75,
+    "name": "Goozilla",
+    "types": [
+     "Toxin",
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     57,
+     61
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 77,
+    "name": "Bubblorca",
+    "types": [
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     57,
+     61
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 79,
+    "name": "Clawfort",
+    "types": [
+     "Hydro",
+     "Alloy"
+    ],
+    "rarity": "uncommon",
+    "weight": 3,
+    "levels": [
+     57,
+     61
+    ],
+    "method": "surf",
+    "time": "any"
    }
   ]
  },
@@ -11185,6 +11280,54 @@
     ],
     "method": "walk",
     "time": "any"
+   },
+   {
+    "n": 312,
+    "name": "Mossback",
+    "types": [
+     "Bio",
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     14,
+     18
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 59,
+    "name": "Sludgeviper",
+    "types": [
+     "Hydro",
+     "Toxin"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     14,
+     18
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 66,
+    "name": "Lilypod",
+    "types": [
+     "Hydro",
+     "Bio"
+    ],
+    "rarity": "uncommon",
+    "weight": 3,
+    "levels": [
+     14,
+     18
+    ],
+    "method": "surf",
+    "time": "any"
    }
   ]
  },
@@ -16516,6 +16659,51 @@
     ],
     "method": "walk",
     "time": "any"
+   },
+   {
+    "n": 76,
+    "name": "Bubbub",
+    "types": [
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     13,
+     18
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 92,
+    "name": "Barnacub",
+    "types": [
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     13,
+     18
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 307,
+    "name": "Fiddlesnap",
+    "types": [
+     "Hydro"
+    ],
+    "rarity": "uncommon",
+    "weight": 3,
+    "levels": [
+     13,
+     18
+    ],
+    "method": "surf",
+    "time": "any"
    }
   ]
  },
@@ -16808,6 +16996,51 @@
      19
     ],
     "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 76,
+    "name": "Bubbub",
+    "types": [
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     15,
+     19
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 92,
+    "name": "Barnacub",
+    "types": [
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     15,
+     19
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 307,
+    "name": "Fiddlesnap",
+    "types": [
+     "Hydro"
+    ],
+    "rarity": "uncommon",
+    "weight": 3,
+    "levels": [
+     15,
+     19
+    ],
+    "method": "surf",
     "time": "any"
    }
   ]
@@ -17528,6 +17761,53 @@
     ],
     "method": "walk",
     "time": "any"
+   },
+   {
+    "n": 75,
+    "name": "Goozilla",
+    "types": [
+     "Toxin",
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     19,
+     23
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 77,
+    "name": "Bubblorca",
+    "types": [
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     19,
+     23
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 79,
+    "name": "Clawfort",
+    "types": [
+     "Hydro",
+     "Alloy"
+    ],
+    "rarity": "uncommon",
+    "weight": 3,
+    "levels": [
+     19,
+     23
+    ],
+    "method": "surf",
+    "time": "any"
    }
   ]
  },
@@ -17740,6 +18020,53 @@
      23
     ],
     "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 75,
+    "name": "Goozilla",
+    "types": [
+     "Toxin",
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     19,
+     23
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 77,
+    "name": "Bubblorca",
+    "types": [
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     19,
+     23
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 79,
+    "name": "Clawfort",
+    "types": [
+     "Hydro",
+     "Alloy"
+    ],
+    "rarity": "uncommon",
+    "weight": 3,
+    "levels": [
+     19,
+     23
+    ],
+    "method": "surf",
     "time": "any"
    }
   ]
@@ -18589,6 +18916,53 @@
      24
     ],
     "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 75,
+    "name": "Goozilla",
+    "types": [
+     "Toxin",
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     20,
+     24
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 77,
+    "name": "Bubblorca",
+    "types": [
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     20,
+     24
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 79,
+    "name": "Clawfort",
+    "types": [
+     "Hydro",
+     "Alloy"
+    ],
+    "rarity": "uncommon",
+    "weight": 3,
+    "levels": [
+     20,
+     24
+    ],
+    "method": "surf",
     "time": "any"
    }
   ]
@@ -20847,6 +21221,54 @@
     ],
     "method": "walk",
     "time": "any"
+   },
+   {
+    "n": 318,
+    "name": "Lacefin",
+    "types": [
+     "Hydro",
+     "Crystal"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     24,
+     27
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 283,
+    "name": "Croakoustic",
+    "types": [
+     "Hydro",
+     "Sonic"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     24,
+     27
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 75,
+    "name": "Goozilla",
+    "types": [
+     "Toxin",
+     "Hydro"
+    ],
+    "rarity": "uncommon",
+    "weight": 3,
+    "levels": [
+     24,
+     27
+    ],
+    "method": "surf",
+    "time": "any"
    }
   ]
  },
@@ -21027,6 +21449,54 @@
     ],
     "method": "walk",
     "time": "any"
+   },
+   {
+    "n": 318,
+    "name": "Lacefin",
+    "types": [
+     "Hydro",
+     "Crystal"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     24,
+     27
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 283,
+    "name": "Croakoustic",
+    "types": [
+     "Hydro",
+     "Sonic"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     24,
+     27
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 75,
+    "name": "Goozilla",
+    "types": [
+     "Toxin",
+     "Hydro"
+    ],
+    "rarity": "uncommon",
+    "weight": 3,
+    "levels": [
+     24,
+     27
+    ],
+    "method": "surf",
+    "time": "any"
    }
   ]
  },
@@ -21206,6 +21676,54 @@
      27
     ],
     "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 318,
+    "name": "Lacefin",
+    "types": [
+     "Hydro",
+     "Crystal"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     24,
+     27
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 283,
+    "name": "Croakoustic",
+    "types": [
+     "Hydro",
+     "Sonic"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     24,
+     27
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 75,
+    "name": "Goozilla",
+    "types": [
+     "Toxin",
+     "Hydro"
+    ],
+    "rarity": "uncommon",
+    "weight": 3,
+    "levels": [
+     24,
+     27
+    ],
+    "method": "surf",
     "time": "any"
    }
   ]
@@ -21549,6 +22067,54 @@
      23
     ],
     "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 318,
+    "name": "Lacefin",
+    "types": [
+     "Hydro",
+     "Crystal"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     20,
+     23
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 283,
+    "name": "Croakoustic",
+    "types": [
+     "Hydro",
+     "Sonic"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     20,
+     23
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 75,
+    "name": "Goozilla",
+    "types": [
+     "Toxin",
+     "Hydro"
+    ],
+    "rarity": "uncommon",
+    "weight": 3,
+    "levels": [
+     20,
+     23
+    ],
+    "method": "surf",
     "time": "any"
    }
   ]
@@ -21964,6 +22530,54 @@
     ],
     "method": "walk",
     "time": "any"
+   },
+   {
+    "n": 318,
+    "name": "Lacefin",
+    "types": [
+     "Hydro",
+     "Crystal"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     20,
+     23
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 283,
+    "name": "Croakoustic",
+    "types": [
+     "Hydro",
+     "Sonic"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     20,
+     23
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 75,
+    "name": "Goozilla",
+    "types": [
+     "Toxin",
+     "Hydro"
+    ],
+    "rarity": "uncommon",
+    "weight": 3,
+    "levels": [
+     20,
+     23
+    ],
+    "method": "surf",
+    "time": "any"
    }
   ]
  },
@@ -22111,6 +22725,54 @@
      27
     ],
     "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 318,
+    "name": "Lacefin",
+    "types": [
+     "Hydro",
+     "Crystal"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     24,
+     27
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 283,
+    "name": "Croakoustic",
+    "types": [
+     "Hydro",
+     "Sonic"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     24,
+     27
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 75,
+    "name": "Goozilla",
+    "types": [
+     "Toxin",
+     "Hydro"
+    ],
+    "rarity": "uncommon",
+    "weight": 3,
+    "levels": [
+     24,
+     27
+    ],
+    "method": "surf",
     "time": "any"
    }
   ]
@@ -24942,6 +25604,53 @@
     "method": "walk",
     "time": "any",
     "fill": true
+   },
+   {
+    "n": 75,
+    "name": "Goozilla",
+    "types": [
+     "Toxin",
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     30,
+     33
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 77,
+    "name": "Bubblorca",
+    "types": [
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     30,
+     33
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 79,
+    "name": "Clawfort",
+    "types": [
+     "Hydro",
+     "Alloy"
+    ],
+    "rarity": "uncommon",
+    "weight": 3,
+    "levels": [
+     30,
+     33
+    ],
+    "method": "surf",
+    "time": "any"
    }
   ]
  },
@@ -25045,6 +25754,53 @@
     "method": "walk",
     "time": "any",
     "fill": true
+   },
+   {
+    "n": 75,
+    "name": "Goozilla",
+    "types": [
+     "Toxin",
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     30,
+     33
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 77,
+    "name": "Bubblorca",
+    "types": [
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     30,
+     33
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 79,
+    "name": "Clawfort",
+    "types": [
+     "Hydro",
+     "Alloy"
+    ],
+    "rarity": "uncommon",
+    "weight": 3,
+    "levels": [
+     30,
+     33
+    ],
+    "method": "surf",
+    "time": "any"
    }
   ]
  },
@@ -29087,6 +29843,53 @@
     ],
     "method": "walk",
     "time": "any"
+   },
+   {
+    "n": 75,
+    "name": "Goozilla",
+    "types": [
+     "Toxin",
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     46,
+     54
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 77,
+    "name": "Bubblorca",
+    "types": [
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     46,
+     54
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 79,
+    "name": "Clawfort",
+    "types": [
+     "Hydro",
+     "Alloy"
+    ],
+    "rarity": "uncommon",
+    "weight": 3,
+    "levels": [
+     46,
+     54
+    ],
+    "method": "surf",
+    "time": "any"
    }
   ]
  },
@@ -29791,6 +30594,53 @@
      52
     ],
     "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 75,
+    "name": "Goozilla",
+    "types": [
+     "Toxin",
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     46,
+     54
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 77,
+    "name": "Bubblorca",
+    "types": [
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     46,
+     54
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 79,
+    "name": "Clawfort",
+    "types": [
+     "Hydro",
+     "Alloy"
+    ],
+    "rarity": "uncommon",
+    "weight": 3,
+    "levels": [
+     46,
+     54
+    ],
+    "method": "surf",
     "time": "any"
    }
   ]
@@ -37175,6 +38025,53 @@
     ],
     "method": "walk",
     "time": "any"
+   },
+   {
+    "n": 75,
+    "name": "Goozilla",
+    "types": [
+     "Toxin",
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     20,
+     24
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 77,
+    "name": "Bubblorca",
+    "types": [
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     20,
+     24
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 79,
+    "name": "Clawfort",
+    "types": [
+     "Hydro",
+     "Alloy"
+    ],
+    "rarity": "uncommon",
+    "weight": 3,
+    "levels": [
+     20,
+     24
+    ],
+    "method": "surf",
+    "time": "any"
    }
   ]
  },
@@ -37393,6 +38290,54 @@
     ],
     "method": "walk",
     "time": "any"
+   },
+   {
+    "n": 166,
+    "name": "Floepup",
+    "types": [
+     "Cryo",
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     31,
+     35
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 167,
+    "name": "Floelord",
+    "types": [
+     "Cryo",
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     31,
+     35
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 75,
+    "name": "Goozilla",
+    "types": [
+     "Toxin",
+     "Hydro"
+    ],
+    "rarity": "uncommon",
+    "weight": 3,
+    "levels": [
+     31,
+     35
+    ],
+    "method": "surf",
+    "time": "any"
    }
   ]
  },
@@ -37479,6 +38424,53 @@
     ],
     "method": "walk",
     "time": "night x2"
+   },
+   {
+    "n": 75,
+    "name": "Goozilla",
+    "types": [
+     "Toxin",
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     36,
+     38
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 77,
+    "name": "Bubblorca",
+    "types": [
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     36,
+     38
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 79,
+    "name": "Clawfort",
+    "types": [
+     "Hydro",
+     "Alloy"
+    ],
+    "rarity": "uncommon",
+    "weight": 3,
+    "levels": [
+     36,
+     38
+    ],
+    "method": "surf",
+    "time": "any"
    }
   ]
  },
@@ -37685,6 +38677,53 @@
     ],
     "method": "walk",
     "time": "any"
+   },
+   {
+    "n": 75,
+    "name": "Goozilla",
+    "types": [
+     "Toxin",
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     37,
+     41
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 77,
+    "name": "Bubblorca",
+    "types": [
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     37,
+     41
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 79,
+    "name": "Clawfort",
+    "types": [
+     "Hydro",
+     "Alloy"
+    ],
+    "rarity": "uncommon",
+    "weight": 3,
+    "levels": [
+     37,
+     41
+    ],
+    "method": "surf",
+    "time": "any"
    }
   ]
  },
@@ -37816,6 +38855,53 @@
     ],
     "method": "walk",
     "time": "day x2"
+   },
+   {
+    "n": 75,
+    "name": "Goozilla",
+    "types": [
+     "Toxin",
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     43,
+     47
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 77,
+    "name": "Bubblorca",
+    "types": [
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     43,
+     47
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 79,
+    "name": "Clawfort",
+    "types": [
+     "Hydro",
+     "Alloy"
+    ],
+    "rarity": "uncommon",
+    "weight": 3,
+    "levels": [
+     43,
+     47
+    ],
+    "method": "surf",
+    "time": "any"
    }
   ]
  },
@@ -38014,6 +39100,53 @@
     "method": "walk",
     "time": "any",
     "fill": true
+   },
+   {
+    "n": 75,
+    "name": "Goozilla",
+    "types": [
+     "Toxin",
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     62,
+     66
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 77,
+    "name": "Bubblorca",
+    "types": [
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     62,
+     66
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 79,
+    "name": "Clawfort",
+    "types": [
+     "Hydro",
+     "Alloy"
+    ],
+    "rarity": "uncommon",
+    "weight": 3,
+    "levels": [
+     62,
+     66
+    ],
+    "method": "surf",
+    "time": "any"
    }
   ]
  },
@@ -38209,6 +39342,53 @@
      14
     ],
     "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 75,
+    "name": "Goozilla",
+    "types": [
+     "Toxin",
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     10,
+     14
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 77,
+    "name": "Bubblorca",
+    "types": [
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     10,
+     14
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 79,
+    "name": "Clawfort",
+    "types": [
+     "Hydro",
+     "Alloy"
+    ],
+    "rarity": "uncommon",
+    "weight": 3,
+    "levels": [
+     10,
+     14
+    ],
+    "method": "surf",
     "time": "any"
    }
   ]
@@ -38461,6 +39641,54 @@
     ],
     "method": "walk",
     "time": "any"
+   },
+   {
+    "n": 58,
+    "name": "Bogeel",
+    "types": [
+     "Hydro",
+     "Toxin"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     2,
+     5
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 74,
+    "name": "Drippit",
+    "types": [
+     "Toxin",
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     2,
+     5
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 75,
+    "name": "Goozilla",
+    "types": [
+     "Toxin",
+     "Hydro"
+    ],
+    "rarity": "uncommon",
+    "weight": 3,
+    "levels": [
+     2,
+     5
+    ],
+    "method": "surf",
+    "time": "any"
    }
   ]
  },
@@ -38593,6 +39821,3098 @@
      6
     ],
     "method": "walk",
+    "time": "any"
+   }
+  ]
+ },
+ "018": {
+  "planet": "Dustara",
+  "name": "Molten Frontier: Port Ember",
+  "habitat": "tropical_shore",
+  "encounters": [
+   {
+    "n": 25,
+    "name": "Cactling",
+    "types": [
+     "Bio"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     4,
+     5
+    ],
+    "method": "walk",
+    "time": "day x2"
+   },
+   {
+    "n": 26,
+    "name": "Spinelord",
+    "types": [
+     "Bio"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     5,
+     7
+    ],
+    "method": "walk",
+    "time": "day x2"
+   },
+   {
+    "n": 14,
+    "name": "Skitterdrone",
+    "types": [
+     "Swarm"
+    ],
+    "rarity": "rare",
+    "weight": 1,
+    "levels": [
+     5,
+     7
+    ],
+    "method": "walk",
+    "time": "any",
+    "note": "spillover"
+   },
+   {
+    "n": 19,
+    "name": "Blinkit",
+    "types": [
+     "Psi"
+    ],
+    "rarity": "rare",
+    "weight": 1,
+    "levels": [
+     4,
+     5
+    ],
+    "method": "walk",
+    "time": "night x2",
+    "note": "spillover"
+   },
+   {
+    "n": 58,
+    "name": "Bogeel",
+    "types": [
+     "Hydro",
+     "Toxin"
+    ],
+    "rarity": "rare",
+    "weight": 2,
+    "levels": [
+     4,
+     7
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
+   },
+   {
+    "n": 74,
+    "name": "Drippit",
+    "types": [
+     "Toxin",
+     "Hydro"
+    ],
+    "rarity": "rare",
+    "weight": 2,
+    "levels": [
+     4,
+     7
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
+   },
+   {
+    "n": 320,
+    "name": "Dunetrot",
+    "types": [
+     "Gravity"
+    ],
+    "rarity": "uncommon",
+    "weight": 2,
+    "levels": [
+     4,
+     7
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 58,
+    "name": "Bogeel",
+    "types": [
+     "Hydro",
+     "Toxin"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     4,
+     7
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 74,
+    "name": "Drippit",
+    "types": [
+     "Toxin",
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     4,
+     7
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 75,
+    "name": "Goozilla",
+    "types": [
+     "Toxin",
+     "Hydro"
+    ],
+    "rarity": "uncommon",
+    "weight": 3,
+    "levels": [
+     4,
+     7
+    ],
+    "method": "surf",
+    "time": "any"
+   }
+  ]
+ },
+ "041": {
+  "planet": "Sporeholm",
+  "name": "Sporeholm Spaceport",
+  "habitat": "fungal",
+  "encounters": [
+   {
+    "n": 52,
+    "name": "Neonmire",
+    "types": [
+     "Toxin"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     13,
+     15
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 55,
+    "name": "Rotbloom",
+    "types": [
+     "Bio",
+     "Toxin"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     13,
+     15
+    ],
+    "method": "walk",
+    "time": "day x2"
+   },
+   {
+    "n": 60,
+    "name": "Vinewisp",
+    "types": [
+     "Bio"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     11,
+     13
+    ],
+    "method": "walk",
+    "time": "day x2"
+   },
+   {
+    "n": 61,
+    "name": "Lianarch",
+    "types": [
+     "Bio"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     13,
+     15
+    ],
+    "method": "walk",
+    "time": "day x2"
+   },
+   {
+    "n": 68,
+    "name": "Murkling",
+    "types": [
+     "Void",
+     "Toxin"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     11,
+     13
+    ],
+    "method": "walk",
+    "time": "night x2"
+   },
+   {
+    "n": 70,
+    "name": "Mycora",
+    "types": [
+     "Toxin",
+     "Bio"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     11,
+     13
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 73,
+    "name": "Lunaweaver",
+    "types": [
+     "Swarm",
+     "Bio"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     13,
+     15
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 311,
+    "name": "Gloomtoad",
+    "types": [
+     "Toxin",
+     "Bio"
+    ],
+    "rarity": "rare",
+    "weight": 2,
+    "levels": [
+     13,
+     17
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 313,
+    "name": "Oozel",
+    "types": [
+     "Toxin"
+    ],
+    "rarity": "common",
+    "weight": 5,
+    "levels": [
+     11,
+     17
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 310,
+    "name": "Glowcroak",
+    "types": [
+     "Bio"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     11,
+     15
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 312,
+    "name": "Mossback",
+    "types": [
+     "Bio",
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     11,
+     17
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 59,
+    "name": "Sludgeviper",
+    "types": [
+     "Hydro",
+     "Toxin"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     11,
+     17
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 66,
+    "name": "Lilypod",
+    "types": [
+     "Hydro",
+     "Bio"
+    ],
+    "rarity": "uncommon",
+    "weight": 3,
+    "levels": [
+     11,
+     17
+    ],
+    "method": "surf",
+    "time": "any"
+   }
+  ]
+ },
+ "042": {
+  "planet": "Sporeholm",
+  "name": "Mirefen Village",
+  "habitat": "swamp",
+  "encounters": [
+   {
+    "n": 51,
+    "name": "Lumislug",
+    "types": [
+     "Toxin"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     9,
+     11
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 56,
+    "name": "Gnatlet",
+    "types": [
+     "Swarm"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     9,
+     11
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 62,
+    "name": "Moodshroom",
+    "types": [
+     "Psi",
+     "Bio"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     9,
+     11
+    ],
+    "method": "walk",
+    "time": "night x2"
+   },
+   {
+    "n": 64,
+    "name": "Stingmire",
+    "types": [
+     "Toxin",
+     "Swarm"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     9,
+     11
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 70,
+    "name": "Mycora",
+    "types": [
+     "Toxin",
+     "Bio"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     9,
+     11
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 71,
+    "name": "Silkpup",
+    "types": [
+     "Swarm",
+     "Bio"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     9,
+     11
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 310,
+    "name": "Glowcroak",
+    "types": [
+     "Bio"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     9,
+     11
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 311,
+    "name": "Gloomtoad",
+    "types": [
+     "Toxin",
+     "Bio"
+    ],
+    "rarity": "rare",
+    "weight": 2,
+    "levels": [
+     9,
+     13
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 312,
+    "name": "Mossback",
+    "types": [
+     "Bio",
+     "Hydro"
+    ],
+    "rarity": "uncommon",
+    "weight": 4,
+    "levels": [
+     9,
+     13
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 313,
+    "name": "Oozel",
+    "types": [
+     "Toxin"
+    ],
+    "rarity": "common",
+    "weight": 5,
+    "levels": [
+     9,
+     13
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 312,
+    "name": "Mossback",
+    "types": [
+     "Bio",
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     9,
+     13
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 59,
+    "name": "Sludgeviper",
+    "types": [
+     "Hydro",
+     "Toxin"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     9,
+     13
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 66,
+    "name": "Lilypod",
+    "types": [
+     "Hydro",
+     "Bio"
+    ],
+    "rarity": "uncommon",
+    "weight": 3,
+    "levels": [
+     9,
+     13
+    ],
+    "method": "surf",
+    "time": "any"
+   }
+  ]
+ },
+ "052": {
+  "planet": "Thalassa",
+  "name": "Port Saltreach Docks",
+  "habitat": "coast",
+  "encounters": [
+   {
+    "n": 97,
+    "name": "Gullwhistle",
+    "types": [
+     "Sonic"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     13,
+     16
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 98,
+    "name": "Galecry",
+    "types": [
+     "Sonic"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     15,
+     18
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 281,
+    "name": "Chronocrick",
+    "types": [
+     "Sonic",
+     "Swarm"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     15,
+     18
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 289,
+    "name": "Rustlegrove",
+    "types": [
+     "Bio",
+     "Sonic"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     15,
+     18
+    ],
+    "method": "walk",
+    "time": "day x2"
+   },
+   {
+    "n": 78,
+    "name": "Crabot",
+    "types": [
+     "Hydro",
+     "Alloy"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     13,
+     18
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
+   },
+   {
+    "n": 294,
+    "name": "Drizzlit",
+    "types": [
+     "Volt",
+     "Hydro"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     13,
+     18
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
+   },
+   {
+    "n": 306,
+    "name": "Brineback",
+    "types": [
+     "Hydro",
+     "Bio"
+    ],
+    "rarity": "uncommon",
+    "weight": 4,
+    "levels": [
+     13,
+     18
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 307,
+    "name": "Fiddlesnap",
+    "types": [
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     13,
+     18
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 308,
+    "name": "Squidmiral",
+    "types": [
+     "Hydro",
+     "Psi"
+    ],
+    "rarity": "uncommon",
+    "weight": 4,
+    "levels": [
+     13,
+     18
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 76,
+    "name": "Bubbub",
+    "types": [
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     13,
+     18
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 92,
+    "name": "Barnacub",
+    "types": [
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     13,
+     18
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 307,
+    "name": "Fiddlesnap",
+    "types": [
+     "Hydro"
+    ],
+    "rarity": "uncommon",
+    "weight": 3,
+    "levels": [
+     13,
+     18
+    ],
+    "method": "surf",
+    "time": "any"
+   }
+  ]
+ },
+ "053": {
+  "planet": "Thalassa",
+  "name": "Saltreach Market",
+  "habitat": "coast",
+  "encounters": [
+   {
+    "n": 97,
+    "name": "Gullwhistle",
+    "types": [
+     "Sonic"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     13,
+     16
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 98,
+    "name": "Galecry",
+    "types": [
+     "Sonic"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     15,
+     18
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 281,
+    "name": "Chronocrick",
+    "types": [
+     "Sonic",
+     "Swarm"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     15,
+     18
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 289,
+    "name": "Rustlegrove",
+    "types": [
+     "Bio",
+     "Sonic"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     15,
+     18
+    ],
+    "method": "walk",
+    "time": "day x2"
+   },
+   {
+    "n": 78,
+    "name": "Crabot",
+    "types": [
+     "Hydro",
+     "Alloy"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     13,
+     18
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
+   },
+   {
+    "n": 294,
+    "name": "Drizzlit",
+    "types": [
+     "Volt",
+     "Hydro"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     13,
+     18
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
+   },
+   {
+    "n": 306,
+    "name": "Brineback",
+    "types": [
+     "Hydro",
+     "Bio"
+    ],
+    "rarity": "uncommon",
+    "weight": 4,
+    "levels": [
+     13,
+     18
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 307,
+    "name": "Fiddlesnap",
+    "types": [
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     13,
+     18
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 308,
+    "name": "Squidmiral",
+    "types": [
+     "Hydro",
+     "Psi"
+    ],
+    "rarity": "uncommon",
+    "weight": 4,
+    "levels": [
+     13,
+     18
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 76,
+    "name": "Bubbub",
+    "types": [
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     13,
+     18
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 92,
+    "name": "Barnacub",
+    "types": [
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     13,
+     18
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 307,
+    "name": "Fiddlesnap",
+    "types": [
+     "Hydro"
+    ],
+    "rarity": "uncommon",
+    "weight": 3,
+    "levels": [
+     13,
+     18
+    ],
+    "method": "surf",
+    "time": "any"
+   }
+  ]
+ },
+ "072": {
+  "planet": "Glyphos",
+  "name": "Sunken Landing",
+  "habitat": "ruins",
+  "encounters": [
+   {
+    "n": 123,
+    "name": "Glyphling",
+    "types": [
+     "Crystal",
+     "Psi"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     20,
+     23
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 125,
+    "name": "Monolet",
+    "types": [
+     "Gravity",
+     "Psi"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     20,
+     23
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 127,
+    "name": "Shardpup",
+    "types": [
+     "Crystal"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     20,
+     23
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 130,
+    "name": "Echoshade",
+    "types": [
+     "Void",
+     "Psi"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     20,
+     23
+    ],
+    "method": "walk",
+    "time": "night x2"
+   },
+   {
+    "n": 132,
+    "name": "Fossilily",
+    "types": [
+     "Bio",
+     "Crystal"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     20,
+     23
+    ],
+    "method": "walk",
+    "time": "day x2"
+   },
+   {
+    "n": 134,
+    "name": "Chimelet",
+    "types": [
+     "Sonic",
+     "Crystal"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     20,
+     23
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 136,
+    "name": "Vortiny",
+    "types": [
+     "Gravity"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     20,
+     23
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 138,
+    "name": "Oracub",
+    "types": [
+     "Psi"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     20,
+     23
+    ],
+    "method": "walk",
+    "time": "night x2"
+   },
+   {
+    "n": 284,
+    "name": "Tarbit",
+    "types": [
+     "Toxin",
+     "Gravity"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     20,
+     23
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 318,
+    "name": "Lacefin",
+    "types": [
+     "Hydro",
+     "Crystal"
+    ],
+    "rarity": "common",
+    "weight": 5,
+    "levels": [
+     20,
+     23
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 318,
+    "name": "Lacefin",
+    "types": [
+     "Hydro",
+     "Crystal"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     20,
+     23
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 283,
+    "name": "Croakoustic",
+    "types": [
+     "Hydro",
+     "Sonic"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     20,
+     23
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 75,
+    "name": "Goozilla",
+    "types": [
+     "Toxin",
+     "Hydro"
+    ],
+    "rarity": "uncommon",
+    "weight": 3,
+    "levels": [
+     20,
+     23
+    ],
+    "method": "surf",
+    "time": "any"
+   }
+  ]
+ },
+ "728": {
+  "planet": "Sporeholm",
+  "name": "Mirefen Lane Homes",
+  "habitat": "fungal",
+  "encounters": [
+   {
+    "n": 52,
+    "name": "Neonmire",
+    "types": [
+     "Toxin"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     13,
+     15
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 55,
+    "name": "Rotbloom",
+    "types": [
+     "Bio",
+     "Toxin"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     13,
+     15
+    ],
+    "method": "walk",
+    "time": "day x2"
+   },
+   {
+    "n": 60,
+    "name": "Vinewisp",
+    "types": [
+     "Bio"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     11,
+     13
+    ],
+    "method": "walk",
+    "time": "day x2"
+   },
+   {
+    "n": 61,
+    "name": "Lianarch",
+    "types": [
+     "Bio"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     13,
+     15
+    ],
+    "method": "walk",
+    "time": "day x2"
+   },
+   {
+    "n": 68,
+    "name": "Murkling",
+    "types": [
+     "Void",
+     "Toxin"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     11,
+     13
+    ],
+    "method": "walk",
+    "time": "night x2"
+   },
+   {
+    "n": 70,
+    "name": "Mycora",
+    "types": [
+     "Toxin",
+     "Bio"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     11,
+     13
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 73,
+    "name": "Lunaweaver",
+    "types": [
+     "Swarm",
+     "Bio"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     13,
+     15
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 311,
+    "name": "Gloomtoad",
+    "types": [
+     "Toxin",
+     "Bio"
+    ],
+    "rarity": "rare",
+    "weight": 2,
+    "levels": [
+     13,
+     17
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 313,
+    "name": "Oozel",
+    "types": [
+     "Toxin"
+    ],
+    "rarity": "common",
+    "weight": 5,
+    "levels": [
+     11,
+     17
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 310,
+    "name": "Glowcroak",
+    "types": [
+     "Bio"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     11,
+     15
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 312,
+    "name": "Mossback",
+    "types": [
+     "Bio",
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     11,
+     17
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 59,
+    "name": "Sludgeviper",
+    "types": [
+     "Hydro",
+     "Toxin"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     11,
+     17
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 66,
+    "name": "Lilypod",
+    "types": [
+     "Hydro",
+     "Bio"
+    ],
+    "rarity": "uncommon",
+    "weight": 3,
+    "levels": [
+     11,
+     17
+    ],
+    "method": "surf",
+    "time": "any"
+   }
+  ]
+ },
+ "880": {
+  "planet": "Ferrox",
+  "name": "Coolant Reservoir",
+  "habitat": "scrapyard",
+  "encounters": [
+   {
+    "n": 33,
+    "name": "Boltling",
+    "types": [
+     "Alloy"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     5,
+     7
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 36,
+    "name": "Coilet",
+    "types": [
+     "Alloy",
+     "Volt"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     5,
+     7
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 38,
+    "name": "Rivetoad",
+    "types": [
+     "Alloy"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     5,
+     7
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 40,
+    "name": "Gleamgrub",
+    "types": [
+     "Toxin",
+     "Alloy"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     5,
+     7
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 44,
+    "name": "Gongit",
+    "types": [
+     "Sonic",
+     "Alloy"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     5,
+     7
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 46,
+    "name": "Nutbug",
+    "types": [
+     "Swarm",
+     "Alloy"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     5,
+     7
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 48,
+    "name": "Forgemaul",
+    "types": [
+     "Alloy"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     5,
+     7
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 301,
+    "name": "Cogglet",
+    "types": [
+     "Alloy"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     5,
+     7
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 302,
+    "name": "Cyclopper",
+    "types": [
+     "Alloy",
+     "Volt"
+    ],
+    "rarity": "rare",
+    "weight": 2,
+    "levels": [
+     5,
+     9
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 303,
+    "name": "Girderon",
+    "types": [
+     "Alloy",
+     "Gravity"
+    ],
+    "rarity": "uncommon",
+    "weight": 4,
+    "levels": [
+     5,
+     9
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 304,
+    "name": "Rustadillo",
+    "types": [
+     "Alloy"
+    ],
+    "rarity": "uncommon",
+    "weight": 4,
+    "levels": [
+     5,
+     9
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 305,
+    "name": "Tinwing",
+    "types": [
+     "Alloy",
+     "Sonic"
+    ],
+    "rarity": "common",
+    "weight": 5,
+    "levels": [
+     5,
+     9
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 75,
+    "name": "Goozilla",
+    "types": [
+     "Toxin",
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     5,
+     9
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 77,
+    "name": "Bubblorca",
+    "types": [
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     5,
+     9
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 79,
+    "name": "Clawfort",
+    "types": [
+     "Hydro",
+     "Alloy"
+    ],
+    "rarity": "uncommon",
+    "weight": 3,
+    "levels": [
+     5,
+     9
+    ],
+    "method": "surf",
+    "time": "any"
+   }
+  ]
+ },
+ "882": {
+  "planet": "Glacia",
+  "name": "Icy Fjord",
+  "habitat": "aurora",
+  "encounters": [
+   {
+    "n": 161,
+    "name": "Snoblet",
+    "types": [
+     "Cryo"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     27,
+     29
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 166,
+    "name": "Floepup",
+    "types": [
+     "Cryo",
+     "Hydro"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     27,
+     29
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 172,
+    "name": "Frostmite",
+    "types": [
+     "Cryo",
+     "Swarm"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     27,
+     29
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 180,
+    "name": "Glaciryx",
+    "types": [
+     "Cryo",
+     "Crystal"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     27,
+     29
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 286,
+    "name": "Frostflare",
+    "types": [
+     "Cryo",
+     "Plasma"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     27,
+     29
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 287,
+    "name": "Cryoblaze",
+    "types": [
+     "Cryo",
+     "Plasma"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     29,
+     31
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 168,
+    "name": "Auroralet",
+    "types": [
+     "Cryo",
+     "Psi"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     27,
+     31
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
+   },
+   {
+    "n": 166,
+    "name": "Floepup",
+    "types": [
+     "Cryo",
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     27,
+     31
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 167,
+    "name": "Floelord",
+    "types": [
+     "Cryo",
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     27,
+     31
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 75,
+    "name": "Goozilla",
+    "types": [
+     "Toxin",
+     "Hydro"
+    ],
+    "rarity": "uncommon",
+    "weight": 3,
+    "levels": [
+     27,
+     31
+    ],
+    "method": "surf",
+    "time": "any"
+   }
+  ]
+ },
+ "891": {
+  "planet": "Halo",
+  "name": "Cloud Lagoon",
+  "habitat": "sky",
+  "encounters": [
+   {
+    "n": 195,
+    "name": "Thornvoid",
+    "types": [
+     "Gravity",
+     "Void"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     33,
+     36
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 198,
+    "name": "Cerebralux",
+    "types": [
+     "Psi"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     35,
+     38
+    ],
+    "method": "walk",
+    "time": "night x2"
+   },
+   {
+    "n": 199,
+    "name": "Humlet",
+    "types": [
+     "Psi",
+     "Sonic"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     33,
+     36
+    ],
+    "method": "walk",
+    "time": "night x2"
+   },
+   {
+    "n": 201,
+    "name": "Levitot",
+    "types": [
+     "Psi",
+     "Gravity"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     33,
+     36
+    ],
+    "method": "walk",
+    "time": "night x2"
+   },
+   {
+    "n": 203,
+    "name": "Haloette",
+    "types": [
+     "Psi",
+     "Crystal"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     33,
+     36
+    ],
+    "method": "walk",
+    "time": "night x2"
+   },
+   {
+    "n": 205,
+    "name": "Zephyrling",
+    "types": [
+     "Sonic",
+     "Gravity"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     33,
+     36
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 206,
+    "name": "Zephyrion",
+    "types": [
+     "Sonic",
+     "Gravity"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     35,
+     38
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 208,
+    "name": "Nightmarra",
+    "types": [
+     "Psi",
+     "Void"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     35,
+     38
+    ],
+    "method": "walk",
+    "time": "night x2"
+   },
+   {
+    "n": 212,
+    "name": "Reflix",
+    "types": [
+     "Psi",
+     "Crystal"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     33,
+     36
+    ],
+    "method": "walk",
+    "time": "night x2"
+   },
+   {
+    "n": 316,
+    "name": "Puffloon",
+    "types": [
+     "Psi"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     33,
+     38
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 317,
+    "name": "Stormquill",
+    "types": [
+     "Volt"
+    ],
+    "rarity": "uncommon",
+    "weight": 1,
+    "levels": [
+     33,
+     38
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 295,
+    "name": "Thunderhead",
+    "types": [
+     "Volt",
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     33,
+     38
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 75,
+    "name": "Goozilla",
+    "types": [
+     "Toxin",
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     33,
+     38
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 77,
+    "name": "Bubblorca",
+    "types": [
+     "Hydro"
+    ],
+    "rarity": "uncommon",
+    "weight": 3,
+    "levels": [
+     33,
+     38
+    ],
+    "method": "surf",
+    "time": "any"
+   }
+  ]
+ },
+ "892": {
+  "planet": "Halo",
+  "name": "Lagoon Islands",
+  "habitat": "sky",
+  "encounters": [
+   {
+    "n": 195,
+    "name": "Thornvoid",
+    "types": [
+     "Gravity",
+     "Void"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     33,
+     36
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 198,
+    "name": "Cerebralux",
+    "types": [
+     "Psi"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     35,
+     38
+    ],
+    "method": "walk",
+    "time": "night x2"
+   },
+   {
+    "n": 199,
+    "name": "Humlet",
+    "types": [
+     "Psi",
+     "Sonic"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     33,
+     36
+    ],
+    "method": "walk",
+    "time": "night x2"
+   },
+   {
+    "n": 201,
+    "name": "Levitot",
+    "types": [
+     "Psi",
+     "Gravity"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     33,
+     36
+    ],
+    "method": "walk",
+    "time": "night x2"
+   },
+   {
+    "n": 203,
+    "name": "Haloette",
+    "types": [
+     "Psi",
+     "Crystal"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     33,
+     36
+    ],
+    "method": "walk",
+    "time": "night x2"
+   },
+   {
+    "n": 205,
+    "name": "Zephyrling",
+    "types": [
+     "Sonic",
+     "Gravity"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     33,
+     36
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 206,
+    "name": "Zephyrion",
+    "types": [
+     "Sonic",
+     "Gravity"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     35,
+     38
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 208,
+    "name": "Nightmarra",
+    "types": [
+     "Psi",
+     "Void"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     35,
+     38
+    ],
+    "method": "walk",
+    "time": "night x2"
+   },
+   {
+    "n": 212,
+    "name": "Reflix",
+    "types": [
+     "Psi",
+     "Crystal"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     33,
+     36
+    ],
+    "method": "walk",
+    "time": "night x2"
+   },
+   {
+    "n": 316,
+    "name": "Puffloon",
+    "types": [
+     "Psi"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     33,
+     38
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 317,
+    "name": "Stormquill",
+    "types": [
+     "Volt"
+    ],
+    "rarity": "uncommon",
+    "weight": 1,
+    "levels": [
+     33,
+     38
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 295,
+    "name": "Thunderhead",
+    "types": [
+     "Volt",
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     33,
+     38
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 75,
+    "name": "Goozilla",
+    "types": [
+     "Toxin",
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     33,
+     38
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 77,
+    "name": "Bubblorca",
+    "types": [
+     "Hydro"
+    ],
+    "rarity": "uncommon",
+    "weight": 3,
+    "levels": [
+     33,
+     38
+    ],
+    "method": "surf",
+    "time": "any"
+   }
+  ]
+ },
+ "893": {
+  "planet": "Helix Station",
+  "name": "Hydro Tank",
+  "habitat": "containment",
+  "encounters": [
+   {
+    "n": 184,
+    "name": "Splicelet",
+    "types": [
+     "Alloy",
+     "Psi"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     30,
+     33
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 187,
+    "name": "Vialit",
+    "types": [
+     "Toxin",
+     "Volt"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     30,
+     33
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 189,
+    "name": "Cagebot",
+    "types": [
+     "Alloy",
+     "Gravity"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     30,
+     33
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 191,
+    "name": "Nullbot",
+    "types": [
+     "Void",
+     "Alloy"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     30,
+     33
+    ],
+    "method": "walk",
+    "time": "night x2"
+   },
+   {
+    "n": 193,
+    "name": "Vexhydra",
+    "types": [
+     "Toxin"
+    ],
+    "rarity": "rare",
+    "weight": 1,
+    "levels": [
+     30,
+     33
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 185,
+    "name": "Splicor",
+    "types": [
+     "Alloy",
+     "Psi"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     30,
+     33
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
+   },
+   {
+    "n": 75,
+    "name": "Goozilla",
+    "types": [
+     "Toxin",
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     30,
+     33
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 77,
+    "name": "Bubblorca",
+    "types": [
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     30,
+     33
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 79,
+    "name": "Clawfort",
+    "types": [
+     "Hydro",
+     "Alloy"
+    ],
+    "rarity": "uncommon",
+    "weight": 3,
+    "levels": [
+     30,
+     33
+    ],
+    "method": "surf",
+    "time": "any"
+   }
+  ]
+ },
+ "895": {
+  "planet": "Neonis",
+  "name": "Canal Basin",
+  "habitat": "neon_city",
+  "encounters": [
+   {
+    "n": 101,
+    "name": "Bulbit",
+    "types": [
+     "Volt"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     17,
+     20
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 104,
+    "name": "Pixbot",
+    "types": [
+     "Volt",
+     "Alloy"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     17,
+     20
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 106,
+    "name": "Ampup",
+    "types": [
+     "Volt",
+     "Sonic"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     17,
+     20
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 108,
+    "name": "Signalet",
+    "types": [
+     "Volt",
+     "Psi"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     17,
+     20
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 110,
+    "name": "Glitchbug",
+    "types": [
+     "Volt",
+     "Swarm"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     17,
+     20
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 112,
+    "name": "Blackwatt",
+    "types": [
+     "Void",
+     "Volt"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     17,
+     20
+    ],
+    "method": "walk",
+    "time": "night x2"
+   },
+   {
+    "n": 114,
+    "name": "Neonewt",
+    "types": [
+     "Volt"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     17,
+     20
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 116,
+    "name": "Holopup",
+    "types": [
+     "Psi",
+     "Volt"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     17,
+     20
+    ],
+    "method": "walk",
+    "time": "night x2"
+   },
+   {
+    "n": 118,
+    "name": "Bassquake",
+    "types": [
+     "Volt",
+     "Sonic"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     17,
+     20
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 121,
+    "name": "Turbinit",
+    "types": [
+     "Volt",
+     "Gravity"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     17,
+     20
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 314,
+    "name": "Boombastadon",
+    "types": [
+     "Sonic",
+     "Alloy"
+    ],
+    "rarity": "uncommon",
+    "weight": 4,
+    "levels": [
+     17,
+     20
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 315,
+    "name": "Squawkbox",
+    "types": [
+     "Sonic",
+     "Volt"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     17,
+     20
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 75,
+    "name": "Goozilla",
+    "types": [
+     "Toxin",
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     17,
+     20
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 77,
+    "name": "Bubblorca",
+    "types": [
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     17,
+     20
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 79,
+    "name": "Clawfort",
+    "types": [
+     "Hydro",
+     "Alloy"
+    ],
+    "rarity": "uncommon",
+    "weight": 3,
+    "levels": [
+     17,
+     20
+    ],
+    "method": "surf",
+    "time": "any"
+   }
+  ]
+ },
+ "903": {
+  "planet": "Starfall Rift",
+  "name": "Crater Lake",
+  "habitat": "crater",
+  "encounters": [
+   {
+    "n": 230,
+    "name": "Horizar",
+    "types": [
+     "Void"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     44,
+     46
+    ],
+    "method": "walk",
+    "time": "night x2"
+   },
+   {
+    "n": 237,
+    "name": "Prismora",
+    "types": [
+     "Plasma",
+     "Crystal"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     46,
+     48
+    ],
+    "method": "walk",
+    "time": "day x2"
+   },
+   {
+    "n": 238,
+    "name": "Eclipsit",
+    "types": [
+     "Plasma",
+     "Void"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     44,
+     46
+    ],
+    "method": "walk",
+    "time": "day x2"
+   },
+   {
+    "n": 245,
+    "name": "Solarswarm",
+    "types": [
+     "Plasma",
+     "Swarm"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     46,
+     48
+    ],
+    "method": "walk",
+    "time": "day x2"
+   },
+   {
+    "n": 251,
+    "name": "Foldling",
+    "types": [
+     "Gravity",
+     "Void"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     44,
+     46
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 240,
+    "name": "Cometlet",
+    "types": [
+     "Gravity",
+     "Plasma"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     44,
+     48
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
+   },
+   {
+    "n": 75,
+    "name": "Goozilla",
+    "types": [
+     "Toxin",
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     44,
+     48
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 77,
+    "name": "Bubblorca",
+    "types": [
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     44,
+     48
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 79,
+    "name": "Clawfort",
+    "types": [
+     "Hydro",
+     "Alloy"
+    ],
+    "rarity": "uncommon",
+    "weight": 3,
+    "levels": [
+     44,
+     48
+    ],
+    "method": "surf",
+    "time": "any"
+   }
+  ]
+ },
+ "906": {
+  "planet": "Umbra",
+  "name": "Mirror Lake",
+  "habitat": "dark_city",
+  "encounters": [
+   {
+    "n": 215,
+    "name": "Sulklet",
+    "types": [
+     "Void"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     37,
+     39
+    ],
+    "method": "walk",
+    "time": "night x2"
+   },
+   {
+    "n": 220,
+    "name": "Ruinbot",
+    "types": [
+     "Gravity",
+     "Alloy"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     37,
+     39
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 221,
+    "name": "Ruinmech",
+    "types": [
+     "Gravity",
+     "Alloy"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     39,
+     41
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 228,
+    "name": "Rotroot",
+    "types": [
+     "Void",
+     "Bio"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     37,
+     39
+    ],
+    "method": "walk",
+    "time": "night x2"
+   },
+   {
+    "n": 222,
+    "name": "Duskmite",
+    "types": [
+     "Void",
+     "Swarm"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     37,
+     41
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
+   },
+   {
+    "n": 321,
+    "name": "Hexcoil",
+    "types": [
+     "Toxin",
+     "Void"
+    ],
+    "rarity": "common",
+    "weight": 5,
+    "levels": [
+     37,
+     41
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 75,
+    "name": "Goozilla",
+    "types": [
+     "Toxin",
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     37,
+     41
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 77,
+    "name": "Bubblorca",
+    "types": [
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     37,
+     41
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 79,
+    "name": "Clawfort",
+    "types": [
+     "Hydro",
+     "Alloy"
+    ],
+    "rarity": "uncommon",
+    "weight": 3,
+    "levels": [
+     37,
+     41
+    ],
+    "method": "surf",
+    "time": "any"
+   }
+  ]
+ },
+ "913": {
+  "planet": "Ystra",
+  "name": "Crystal Lake",
+  "habitat": "floating_land",
+  "encounters": [
+   {
+    "n": 270,
+    "name": "Riftling",
+    "types": [
+     "Gravity",
+     "Psi"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     55,
+     57
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 272,
+    "name": "Blightling",
+    "types": [
+     "Bio",
+     "Void"
+    ],
+    "rarity": "rare",
+    "weight": 1,
+    "levels": [
+     55,
+     57
+    ],
+    "method": "walk",
+    "time": "day x2",
+    "note": "spillover"
+   },
+   {
+    "n": 271,
+    "name": "Riftwalker",
+    "types": [
+     "Gravity",
+     "Psi"
+    ],
+    "rarity": "rare",
+    "weight": 1,
+    "levels": [
+     57,
+     59
+    ],
+    "method": "walk",
+    "time": "any",
+    "note": "spillover"
+   },
+   {
+    "n": 273,
+    "name": "Blightroot",
+    "types": [
+     "Bio",
+     "Void"
+    ],
+    "rarity": "rare",
+    "weight": 1,
+    "levels": [
+     57,
+     59
+    ],
+    "method": "walk",
+    "time": "day x2",
+    "note": "spillover"
+   },
+   {
+    "n": 257,
+    "name": "Cragpull",
+    "types": [
+     "Gravity"
+    ],
+    "rarity": "rare",
+    "weight": 2,
+    "levels": [
+     55,
+     59
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
+   },
+   {
+    "n": 75,
+    "name": "Goozilla",
+    "types": [
+     "Toxin",
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     55,
+     59
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 77,
+    "name": "Bubblorca",
+    "types": [
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     55,
+     59
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 79,
+    "name": "Clawfort",
+    "types": [
+     "Hydro",
+     "Alloy"
+    ],
+    "rarity": "uncommon",
+    "weight": 3,
+    "levels": [
+     55,
+     59
+    ],
+    "method": "surf",
     "time": "any"
    }
   ]
