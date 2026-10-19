@@ -51,16 +51,32 @@ function secQuestMarks(){const M={};for(const q of QUESTS){const st=qs(q.id);let
   if(st.state==='active'){const o=qObj(q);key=o&&(o.type==='deliver'||o.type==='show')?q.id+':giver':q.id+':'+st.step}else if(q.type==='side'&&st.state==='available'&&qPrereqsDone(q))key=q.id+':giver';
   const sp=key&&SECQ[key];if(!sp)continue;const a=secAnchor(sp.s);if(a)M[a]=Math.max(M[a]||0,G.qtrack===q.id?2:1)}return M}
 function secMapOpen(){const a=secAnchor(G.sec.id);if(!a){const sc=SWORLD[G.sec.id];return say('You are at '+sc.name+(sc.pkey==='arena'?', floating among the stars.':'.'))}
- const grp=secGroup(a),L=Object.values(SWORLD).filter(s=>s.grid&&secGroup(s.id)===grp);
- let W=0,H=0;for(const s of L){W=Math.max(W,s.grid[0]+s.tiles[0]);H=Math.max(H,s.grid[1]+s.tiles[1])}
- menuMode='secmap';B={L,sel:a,here:a,W,H,marks:secQuestMarks(),title:grp.endsWith('/frontier')?'Molten Frontier':SWORLD[a].planet}}
-function secMapGeo(s){const k=Math.min(152/B.W,96/B.H),ox=Math.round((160-B.W*k)/2),oy=Math.round(18+(98-B.H*k)/2);return{k,x:ox+s.grid[0]*k,y:oy+s.grid[1]*k,w:s.tiles[0]*k,h:s.tiles[1]*k}}
-function secMapUpd(){if(P_('b')||P_('a')||P_('start')){menuMode='root';B=null;return}
- for(const d of['left','right','up','down'])if(P_(d)){const c=secMapGeo(SWORLD[B.sel]),cx=c.x+c.w/2,cy=c.y+c.h/2;let best=null,bd=1e9;
+ const grp=secGroup(a),L=Object.values(SWORLD).filter(s=>s.grid&&secGroup(s.id)===grp),ids=new Set(L.map(s=>s.id)),P={};
+ // lay the areas out from how they really join (edge + offset), starting from here; pieces joined by a fade-crossing go beside the area they lead to
+ const place=(s,t,side,o)=>{const[sx,sy]=P[s.id],[sw,sh]=s.tiles,[tw,th]=t.tiles;return side==='right'?[sx+sw,sy-o]:side==='left'?[sx-tw,sy-o]:side==='bottom'?[sx-o,sy+sh]:[sx-o,sy-th]};
+ const opp={left:'right',right:'left',top:'bottom',bottom:'top'};P[a]=[0,0];const q=[a];
+ while(q.length){const s=SWORLD[q.shift()];
+  for(const[side,e]of Object.entries(s.edges||{}))if(ids.has(e.to)&&!P[e.to]){P[e.to]=place(s,SWORLD[e.to],side,e.offset||0);q.push(e.to)}
+  for(const o of L)if(!P[o.id])for(const[side,e]of Object.entries(o.edges||{}))if(e.to===s.id){const[sx,sy]=P[s.id],[ow,oh]=o.tiles,off=e.offset||0;P[o.id]=side==='right'?[sx-ow,sy+off]:side==='left'?[sx+s.tiles[0],sy+off]:side==='bottom'?[sx+off,sy-oh]:[sx+off,sy+s.tiles[1]];q.push(o.id);break}
+  for(const w of s.warps||[])if(w.kind==='edge'&&ids.has(w.to)&&!P[w.to]&&w.edge){P[w.to]=place(s,SWORLD[w.to],w.edge,0);const t=SWORLD[w.to];if(w.edge==='left'||w.edge==='right')P[w.to][1]=P[s.id][1]+(s.tiles[1]-t.tiles[1])/2;else P[w.to][0]=P[s.id][0]+(s.tiles[0]-t.tiles[0])/2;q.push(w.to)}
+  for(const o of L)if(!P[o.id])for(const w of o.warps||[])if(w.kind==='edge'&&w.to===s.id&&w.edge){const[sx,sy]=P[s.id],[ow,oh]=o.tiles,[sw,sh]=s.tiles;P[o.id]=w.edge==='right'?[sx-ow,sy+(sh-oh)/2]:w.edge==='left'?[sx+sw,sy+(sh-oh)/2]:w.edge==='bottom'?[sx+(sw-ow)/2,sy-oh]:[sx+(sw-ow)/2,sy+sh];q.push(o.id);break}}
+ // anything still unplaced (reached only by doors or stairs) keeps its old spot relative to here
+ for(const s of L)if(!P[s.id])P[s.id]=[s.grid[0]-SWORLD[a].grid[0],s.grid[1]-SWORLD[a].grid[1]];
+ // where two areas still land on each other (loops that don't quite close), slide the later one clear
+ const hit=(a,b)=>P[a.id][0]<P[b.id][0]+b.tiles[0]-0.5&&P[b.id][0]<P[a.id][0]+a.tiles[0]-0.5&&P[a.id][1]<P[b.id][1]+b.tiles[1]-0.5&&P[b.id][1]<P[a.id][1]+a.tiles[1]-0.5;
+ for(let i=1;i<L.length;i++){const s=L[i];for(let n=0;n<20&&L.slice(0,i).some(o=>hit(s,o));n++)P[s.id][1]+=s.tiles[1]/2}
+ let x0=1e9,y0=1e9,x1=-1e9,y1=-1e9;for(const s of L){const[x,y]=P[s.id];x0=Math.min(x0,x);y0=Math.min(y0,y);x1=Math.max(x1,x+s.tiles[0]);y1=Math.max(y1,y+s.tiles[1])}
+ menuMode='secmap';B={L,P,sel:a,here:a,x0,y0,W:x1-x0,H:y1-y0,z:2,marks:secQuestMarks(),title:grp.endsWith('/frontier')?'Molten Frontier':SWORLD[a].planet}}
+const SMV={x:0,y:17,w:160,h:100};   // the map's window between the title bar and the info box
+function secMapGeo(s){const k=Math.min((SMV.w-8)/B.W,(SMV.h-4)/B.H)*B.z,p=B.P[s.id];let cx=B.x0+B.W/2,cy=B.y0+B.H/2;
+ if(B.z>1){const q=SWORLD[B.sel],qp=B.P[q.id];cx=qp[0]+q.tiles[0]/2;cy=qp[1]+q.tiles[1]/2}
+ return{k,x:SMV.x+SMV.w/2+(p[0]-cx)*k,y:SMV.y+SMV.h/2+(p[1]-cy)*k,w:s.tiles[0]*k,h:s.tiles[1]*k}}
+function secMapUpd(){if(P_('b')||P_('start')){menuMode='root';B=null;return}if(P_('a'))B.z=B.z>=4?1:B.z*2;
+ for(const d of['left','right','up','down'])if(P_(d)){const z=B.z;B.z=1;const c=secMapGeo(SWORLD[B.sel]),cx=c.x+c.w/2,cy=c.y+c.h/2;let best=null,bd=1e9;
   for(const s of B.L){if(s.id===B.sel)continue;const g=secMapGeo(s),dx=g.x+g.w/2-cx,dy=g.y+g.h/2-cy,al=d==='left'?-dx:d==='right'?dx:d==='up'?-dy:dy,side=d==='left'||d==='right'?Math.abs(dy):Math.abs(dx);
-   if(al<=0.5)continue;const sc=al+side*2;if(sc<bd){bd=sc;best=s.id}}if(best)B.sel=best}
+   if(al<=0.5)continue;const sc=al+side*2;if(sc<bd){bd=sc;best=s.id}}B.z=z;if(best)B.sel=best}
  secMapDraw()}
-function secMapDraw(){rect(0,0,160,144,'#120c22');box(0,0,160,16,'#1b1424','#5ff2ff');txt('Map: '+B.title,5,4,'#5ff2ff',7);const V=G.visited||{};
+function secMapDraw(){rect(0,0,160,144,'#120c22');const V=G.visited||{};ctx.save();ctx.beginPath();ctx.rect(SMV.x,SMV.y,SMV.w,SMV.h);ctx.clip();
  for(const s of B.L){const g=secMapGeo(s),x=Math.round(g.x),y=Math.round(g.y),w=Math.max(2,Math.round(g.w)),h=Math.max(2,Math.round(g.h));
   if(V[s.id]&&okI(SECI[s.id])){ctx.save();ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';ctx.drawImage(SECI[s.id],x,y,w,h);ctx.restore()}
   else{rect(x,y,w,h,V[s.id]?'#3b2a5c':'#221836');ctx.strokeStyle='#3b2a5c';ctx.lineWidth=0.5;ctx.strokeRect(x+0.25,y+0.25,w-0.5,h-0.5)}
@@ -68,8 +84,9 @@ function secMapDraw(){rect(0,0,160,144,'#120c22');box(0,0,160,16,'#1b1424','#5ff
  const sg=secMapGeo(SWORLD[B.sel]);ctx.strokeStyle='#ffd23f';ctx.lineWidth=1;ctx.strokeRect(Math.round(sg.x)+0.5,Math.round(sg.y)+0.5,Math.round(sg.w)-1,Math.round(sg.h)-1);
  const hs=SWORLD[B.here],hg=secMapGeo(hs),inside=B.here===G.sec.id;
  if(frame%30<20){const px=Math.round(inside?hg.x+(G.sec.x+0.5)*hg.k:hg.x+hg.w/2),py=Math.round(inside?hg.y+(G.sec.y+0.5)*hg.k:hg.y+hg.h/2);rect(px-2,py-2,5,5,'#ffffff');rect(px-1,py-1,3,3,'#d7262e')}
+ ctx.restore();box(0,0,160,16,'#1b1424','#5ff2ff');txt('Map: '+B.title,5,4,'#5ff2ff',7);txt('x'+B.z,140,4,'#ffd23f',7);
  const sel=SWORLD[B.sel],known=V[sel.id];box(0,118,160,26,'#1b1424','#5ff2ff');txt(known?sel.name.replace(/^Molten Frontier: /,'').slice(0,26):'???',4,122,'#ffd23f',7);
- txt(B.marks[sel.id]?(B.marks[sel.id]===2?'Tracked quest here!':'A quest waits here.'):(B.sel===B.here?'You are here.':'Arrows: browse  B: back'),4,132,'#e8e0ff',6)}
+ txt(B.marks[sel.id]?(B.marks[sel.id]===2?'Tracked quest here!':'A quest waits here.'):(B.sel===B.here?'You are here.  A: zoom':'Arrows: browse  A: zoom'),4,132,'#e8e0ff',6)}
 
 /* ---- Bag pockets: Items / Pods / Key Items / Tech Discs (left and right switch pockets) ---- */
 const POCKETS=['Items','Pods','Key Items','Tech Discs'];
