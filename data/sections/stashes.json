@@ -5,7 +5,7 @@
    "name": "Dustmere Plaza",
    "tile": [
     5,
-    12
+    9
    ],
    "item": "dust",
    "n": 150,
@@ -16,7 +16,7 @@
    "name": "Dustmere Bridge",
    "tile": [
     11,
-    9
+    8
    ],
    "item": "stasis",
    "n": 3,
@@ -27,7 +27,7 @@
    "name": "Trading Post",
    "tile": [
     7,
-    10
+    7
    ],
    "item": "cure",
    "n": 2,
@@ -38,7 +38,7 @@
    "name": "Rimwalk Trail Part A",
    "tile": [
     6,
-    12
+    9
    ],
    "item": "gel",
    "n": 2,
@@ -49,7 +49,7 @@
    "name": "Rimwalk Trail Part A",
    "tile": [
     6,
-    2
+    3
    ],
    "item": "revive",
    "n": 1,
@@ -60,7 +60,7 @@
    "name": "Rimwalk Trail Part B",
    "tile": [
     11,
-    14
+    10
    ],
    "item": "gel",
    "n": 2,
@@ -70,8 +70,8 @@
    "section": "010",
    "name": "Rimwalk Trail Part B",
    "tile": [
-    18,
-    12
+    17,
+    11
    ],
    "item": "dust",
    "n": 150,
@@ -82,7 +82,7 @@
    "name": "Cactus Gardens",
    "tile": [
     11,
-    14
+    13
    ],
    "item": "tether",
    "n": 1,
@@ -92,8 +92,8 @@
    "section": "011",
    "name": "Cactus Gardens",
    "tile": [
-    19,
-    12
+    18,
+    11
    ],
    "item": "cure",
    "n": 2,
@@ -103,8 +103,8 @@
    "section": "012",
    "name": "Sunset Tunnel B1",
    "tile": [
-    14,
-    7
+    13,
+    8
    ],
    "item": "stun",
    "n": 1,
@@ -114,7 +114,7 @@
    "section": "013",
    "name": "Sunset Tunnel B2",
    "tile": [
-    14,
+    13,
     7
    ],
    "item": "stasis",
@@ -125,7 +125,7 @@
    "section": "013",
    "name": "Sunset Tunnel B2",
    "tile": [
-    14,
+    10,
     5
    ],
    "item": "gel",
@@ -136,8 +136,8 @@
    "section": "014",
    "name": "Molten Frontier: Tunnel Mouth",
    "tile": [
-    9,
-    12
+    8,
+    11
    ],
    "item": "tether",
    "n": 1,
@@ -147,8 +147,8 @@
    "section": "014",
    "name": "Molten Frontier: Tunnel Mouth",
    "tile": [
-    18,
-    12
+    17,
+    11
    ],
    "item": "gel",
    "n": 2,
@@ -159,7 +159,7 @@
    "name": "Molten Frontier: Ash Trail Part A",
    "tile": [
     12,
-    13
+    12
    ],
    "item": "gel",
    "n": 2,
@@ -170,7 +170,7 @@
    "name": "Molten Frontier: Ash Trail Part A",
    "tile": [
     6,
-    2
+    3
    ],
    "item": "cure",
    "n": 2,
@@ -181,7 +181,7 @@
    "name": "Molten Frontier: Ash Trail Part B",
    "tile": [
     9,
-    12
+    11
    ],
    "item": "stasis",
    "n": 3,
@@ -192,7 +192,7 @@
    "name": "Molten Frontier: Ash Trail Part B",
    "tile": [
     17,
-    12
+    9
    ],
    "item": "revive",
    "n": 1,
@@ -203,7 +203,7 @@
    "name": "Molten Frontier: Palm Isle",
    "tile": [
     12,
-    13
+    9
    ],
    "item": "stasis",
    "n": 3,
@@ -213,8 +213,8 @@
    "section": "017",
    "name": "Molten Frontier: Palm Isle",
    "tile": [
-    6,
-    2
+    8,
+    4
    ],
    "item": "cure",
    "n": 2,
@@ -235,8 +235,8 @@
    "section": "019",
    "name": "Molten Frontier: Long Dock",
    "tile": [
-    4,
-    5
+    5,
+    6
    ],
    "item": "stasis",
    "n": 5,
@@ -246,8 +246,8 @@
    "section": "020",
    "name": "Molten Frontier: Ridge Path Part A",
    "tile": [
-    4,
-    2
+    5,
+    3
    ],
    "item": "harmonic",
    "n": 2,
@@ -257,8 +257,8 @@
    "section": "020",
    "name": "Molten Frontier: Ridge Path Part A",
    "tile": [
-    16,
-    12
+    15,
+    11
    ],
    "item": "stasis",
    "n": 5,
@@ -269,7 +269,7 @@
    "name": "Molten Frontier: Ridge Path Part B",
    "tile": [
     19,
-    12
+    10
    ],
    "item": "revive",
    "n": 1,
@@ -280,7 +280,7 @@
    "name": "Molten Frontier: Ridge Path Part B",
    "tile": [
     6,
-    2
+    3
    ],
    "item": "dust",
    "n": 300,
@@ -290,8 +290,8 @@
    "section": "022",
    "name": "Molten Frontier: Forge Gate",
    "tile": [
-    4,
-    12
+    5,
+    11
    ],
    "item": "harmonic",
    "n": 2,
@@ -302,7 +302,7 @@
    "name": "Molten Frontier: Fortress Gate",
    "tile": [
     7,
-    10
+    9
    ],
    "item": "ether",
    "n": 2,
@@ -313,7 +313,7 @@
    "name": "Molten Frontier: Shadow Tunnel Mouth",
    "tile": [
     15,
-    13
+    9
    ],
    "item": "harmonic",
    "n": 5,
@@ -323,8 +323,8 @@
    "section": "028",
    "name": "Molten Frontier: Magma Mines Gate",
    "tile": [
-    10,
-    3
+    11,
+    4
    ],
    "item": "fullgel",
    "n": 1,
@@ -334,8 +334,8 @@
    "section": "472",
    "name": "Dustmere Farmstead",
    "tile": [
-    6,
-    14
+    8,
+    13
    ],
    "item": "stasis",
    "n": 3,
@@ -346,7 +346,7 @@
    "name": "Dustmere Lane Homes",
    "tile": [
     17,
-    3
+    7
    ],
    "item": "stasis",
    "n": 3,
@@ -356,7 +356,7 @@
    "section": "447",
    "name": "Oasis Fork",
    "tile": [
-    22,
+    17,
     3
    ],
    "item": "gel",
@@ -368,7 +368,7 @@
    "name": "Oasis Fork",
    "tile": [
     7,
-    13
+    12
    ],
    "item": "dust",
    "n": 150,
@@ -378,7 +378,7 @@
    "section": "471",
    "name": "Dustmere Quiet Court",
    "tile": [
-    1,
+    2,
     4
    ],
    "item": "gel",
@@ -389,8 +389,8 @@
    "section": "453",
    "name": "Sunstep Slope",
    "tile": [
-    21,
-    9
+    20,
+    10
    ],
    "item": "gel",
    "n": 2,
@@ -400,8 +400,8 @@
    "section": "453",
    "name": "Sunstep Slope",
    "tile": [
-    1,
-    7
+    2,
+    9
    ],
    "item": "dust",
    "n": 150,
@@ -411,7 +411,7 @@
    "section": "458",
    "name": "Oasis Shore",
    "tile": [
-    16,
+    15,
     9
    ],
    "item": "stasis",
@@ -422,8 +422,8 @@
    "section": "458",
    "name": "Oasis Shore",
    "tile": [
-    15,
-    14
+    14,
+    13
    ],
    "item": "revive",
    "n": 1,
@@ -444,8 +444,8 @@
    "section": "465",
    "name": "Hidden Mesa Grove",
    "tile": [
-    19,
-    1
+    18,
+    2
    ],
    "item": "stasis",
    "n": 3,
@@ -455,7 +455,7 @@
    "section": "462",
    "name": "Red River Bend",
    "tile": [
-    3,
+    7,
     9
    ],
    "item": "gel",
@@ -466,8 +466,8 @@
    "section": "462",
    "name": "Red River Bend",
    "tile": [
-    6,
-    13
+    7,
+    12
    ],
    "item": "gel",
    "n": 2,
@@ -478,7 +478,7 @@
    "name": "Canyon Coliseum",
    "tile": [
     21,
-    9
+    10
    ],
    "item": "gel",
    "n": 2,
@@ -488,8 +488,8 @@
    "section": "445",
    "name": "Canyon Crossroads",
    "tile": [
-    21,
-    1
+    20,
+    2
    ],
    "item": "stasis",
    "n": 3,
@@ -499,7 +499,7 @@
    "section": "445",
    "name": "Canyon Crossroads",
    "tile": [
-    21,
+    18,
     12
    ],
    "item": "stasis",
@@ -544,7 +544,7 @@
    "name": "Mesa Junction",
    "tile": [
     1,
-    2
+    3
    ],
    "item": "tether",
    "n": 1,
@@ -554,8 +554,8 @@
    "section": "460",
    "name": "Hoodoo Hollows",
    "tile": [
-    2,
-    3
+    3,
+    4
    ],
    "item": "stasis",
    "n": 3,
@@ -565,8 +565,8 @@
    "section": "460",
    "name": "Hoodoo Hollows",
    "tile": [
-    2,
-    13
+    3,
+    12
    ],
    "item": "cure",
    "n": 2,
@@ -576,8 +576,8 @@
    "section": "441",
    "name": "Red Rock Caves Entrance",
    "tile": [
-    19,
-    12
+    10,
+    7
    ],
    "item": "gel",
    "n": 2,
@@ -587,7 +587,7 @@
    "section": "441",
    "name": "Red Rock Caves Entrance",
    "tile": [
-    19,
+    15,
     9
    ],
    "item": "gel",
@@ -598,8 +598,8 @@
    "section": "442",
    "name": "Red Rock Caves B1",
    "tile": [
-    20,
-    13
+    19,
+    12
    ],
    "item": "gel",
    "n": 2,
@@ -609,8 +609,8 @@
    "section": "442",
    "name": "Red Rock Caves B1",
    "tile": [
-    3,
-    13
+    4,
+    12
    ],
    "item": "tether",
    "n": 1,
@@ -620,8 +620,8 @@
    "section": "443",
    "name": "Red Rock Caves B2",
    "tile": [
-    21,
-    4
+    20,
+    5
    ],
    "item": "stasis",
    "n": 3,
@@ -631,8 +631,8 @@
    "section": "444",
    "name": "Red Rock Caves Depths",
    "tile": [
-    4,
-    2
+    5,
+    3
    ],
    "item": "revive",
    "n": 1,
@@ -642,41 +642,19 @@
    "section": "875",
    "name": "Dustmere Relay Tower",
    "tile": [
-    20,
-    8
+    16,
+    9
    ],
    "item": "revive",
    "n": 1,
    "tier": 1
   },
   {
-   "section": "879",
-   "name": "Oasis Islands",
-   "tile": [
-    21,
-    10
-   ],
-   "item": "stasis",
-   "n": 3,
-   "tier": 1
-  },
-  {
-   "section": "879",
-   "name": "Oasis Islands",
-   "tile": [
-    22,
-    7
-   ],
-   "item": "gel",
-   "n": 2,
-   "tier": 1
-  },
-  {
    "section": "874",
    "name": "Sunset Tunnel Mouth",
    "tile": [
-    5,
-    8
+    18,
+    6
    ],
    "item": "tether",
    "n": 1,
@@ -686,8 +664,8 @@
    "section": "874",
    "name": "Sunset Tunnel Mouth",
    "tile": [
-    14,
-    8
+    20,
+    6
    ],
    "item": "cure",
    "n": 2,
@@ -699,7 +677,7 @@
    "section": "029",
    "name": "Ferrox Spaceport",
    "tile": [
-    21,
+    20,
     9
    ],
    "item": "cure",
@@ -711,7 +689,7 @@
    "name": "Rustvale",
    "tile": [
     10,
-    13
+    12
    ],
    "item": "gel",
    "n": 2,
@@ -722,7 +700,7 @@
    "name": "Rustvale Lane Homes",
    "tile": [
     17,
-    13
+    12
    ],
    "item": "revive",
    "n": 1,
@@ -732,8 +710,8 @@
    "section": "506",
    "name": "Rustvale Quiet Court",
    "tile": [
-    22,
-    4
+    21,
+    5
    ],
    "item": "revive",
    "n": 1,
@@ -743,8 +721,8 @@
    "section": "507",
    "name": "Rustvale Farmstead",
    "tile": [
-    2,
-    1
+    3,
+    7
    ],
    "item": "gel",
    "n": 2,
@@ -755,7 +733,7 @@
    "name": "Scrapyard Crossing",
    "tile": [
     5,
-    13
+    12
    ],
    "item": "stasis",
    "n": 3,
@@ -766,7 +744,7 @@
    "name": "Scrapyard Crossing",
    "tile": [
     15,
-    1
+    2
    ],
    "item": "cure",
    "n": 2,
@@ -787,7 +765,7 @@
    "section": "489",
    "name": "Crane Overlook",
    "tile": [
-    19,
+    17,
     3
    ],
    "item": "gel",
@@ -809,8 +787,8 @@
    "section": "497",
    "name": "Scrap Hollow Grove",
    "tile": [
-    13,
-    1
+    14,
+    2
    ],
    "item": "cure",
    "n": 2,
@@ -820,7 +798,7 @@
    "section": "481",
    "name": "Deepcut Mine Entrance",
    "tile": [
-    19,
+    14,
     10
    ],
    "item": "dust",
@@ -831,8 +809,8 @@
    "section": "481",
    "name": "Deepcut Mine Entrance",
    "tile": [
-    19,
-    9
+    13,
+    8
    ],
    "item": "cure",
    "n": 2,
@@ -842,8 +820,8 @@
    "section": "482",
    "name": "Deepcut Mine B1",
    "tile": [
-    20,
-    13
+    19,
+    12
    ],
    "item": "stasis",
    "n": 3,
@@ -853,8 +831,8 @@
    "section": "483",
    "name": "Deepcut Mine B2",
    "tile": [
-    14,
-    8
+    13,
+    9
    ],
    "item": "gel",
    "n": 2,
@@ -864,8 +842,8 @@
    "section": "483",
    "name": "Deepcut Mine B2",
    "tile": [
-    21,
-    7
+    14,
+    5
    ],
    "item": "stun",
    "n": 1,
@@ -876,7 +854,7 @@
    "name": "Deepcut Mine Depths",
    "tile": [
     4,
-    2
+    3
    ],
    "item": "dust",
    "n": 150,
@@ -897,7 +875,7 @@
    "section": "490",
    "name": "Coolant Pond",
    "tile": [
-    16,
+    15,
     9
    ],
    "item": "gel",
@@ -909,7 +887,7 @@
    "name": "Coolant Pond",
    "tile": [
     15,
-    1
+    5
    ],
    "item": "gel",
    "n": 2,
@@ -919,7 +897,7 @@
    "section": "494",
    "name": "Salvage Flats",
    "tile": [
-    21,
+    20,
     4
    ],
    "item": "gel",
@@ -931,7 +909,7 @@
    "name": "Salvage Flats",
    "tile": [
     20,
-    11
+    7
    ],
    "item": "revive",
    "n": 1,
@@ -952,8 +930,8 @@
    "section": "487",
    "name": "Coolant Fork",
    "tile": [
-    18,
-    14
+    17,
+    13
    ],
    "item": "stun",
    "n": 1,
@@ -963,8 +941,8 @@
    "section": "487",
    "name": "Coolant Fork",
    "tile": [
-    1,
-    2
+    5,
+    3
    ],
    "item": "stasis",
    "n": 3,
@@ -975,7 +953,7 @@
    "name": "Ferrox Relay Tower",
    "tile": [
     5,
-    13
+    12
    ],
    "item": "tether",
    "n": 1,
@@ -985,8 +963,8 @@
    "section": "486",
    "name": "Railyard Junction",
    "tile": [
-    1,
-    13
+    2,
+    12
    ],
    "item": "stasis",
    "n": 3,
@@ -996,7 +974,7 @@
    "section": "486",
    "name": "Railyard Junction",
    "tile": [
-    22,
+    21,
     2
    ],
    "item": "stasis",
@@ -1007,7 +985,7 @@
    "section": "488",
    "name": "Scrap Slope",
    "tile": [
-    21,
+    14,
     10
    ],
    "item": "revive",
@@ -1018,7 +996,7 @@
    "section": "488",
    "name": "Scrap Slope",
    "tile": [
-    4,
+    8,
     9
    ],
    "item": "dust",
@@ -1029,8 +1007,8 @@
    "section": "491",
    "name": "Railcar Maze",
    "tile": [
-    12,
-    2
+    13,
+    3
    ],
    "item": "dust",
    "n": 150,
@@ -1041,7 +1019,7 @@
    "name": "Railcar Maze",
    "tile": [
     21,
-    3
+    5
    ],
    "item": "dust",
    "n": 150,
@@ -1051,7 +1029,7 @@
    "section": "495",
    "name": "Rustvale Back Lot",
    "tile": [
-    1,
+    5,
     9
    ],
    "item": "stasis",
@@ -1070,36 +1048,14 @@
    "tier": 1
   },
   {
-   "section": "881",
-   "name": "Reservoir Islands",
-   "tile": [
-    1,
-    10
-   ],
-   "item": "stasis",
-   "n": 3,
-   "tier": 1
-  },
-  {
    "section": "880",
    "name": "Coolant Reservoir",
    "tile": [
-    21,
-    11
+    22,
+    10
    ],
    "item": "tether",
    "n": 1,
-   "tier": 1
-  },
-  {
-   "section": "880",
-   "name": "Coolant Reservoir",
-   "tile": [
-    21,
-    4
-   ],
-   "item": "dust",
-   "n": 150,
    "tier": 1
   }
  ],
@@ -1108,8 +1064,8 @@
    "section": "041",
    "name": "Sporeholm Spaceport",
    "tile": [
-    19,
-    2
+    16,
+    3
    ],
    "item": "stasis",
    "n": 5,
@@ -1120,7 +1076,7 @@
    "name": "Mirefen Village",
    "tile": [
     16,
-    12
+    9
    ],
    "item": "harmonic",
    "n": 2,
@@ -1130,7 +1086,7 @@
    "section": "047",
    "name": "Mushroom Maze",
    "tile": [
-    5,
+    16,
     13
    ],
    "item": "megagel",
@@ -1141,8 +1097,8 @@
    "section": "047",
    "name": "Mushroom Maze",
    "tile": [
-    15,
-    11
+    6,
+    12
    ],
    "item": "dust",
    "n": 300,
@@ -1153,7 +1109,7 @@
    "name": "Mirefen Lane Homes",
    "tile": [
     6,
-    2
+    8
    ],
    "item": "dust",
    "n": 300,
@@ -1163,7 +1119,7 @@
    "section": "729",
    "name": "Mirefen Quiet Court",
    "tile": [
-    1,
+    2,
     9
    ],
    "item": "stasis",
@@ -1175,40 +1131,18 @@
    "name": "Mirefen Farmstead",
    "tile": [
     11,
-    14
+    12
    ],
    "item": "dust",
    "n": 300,
    "tier": 2
   },
   {
-   "section": "733",
-   "name": "Sporelake Shore",
-   "tile": [
-    2,
-    14
-   ],
-   "item": "cure",
-   "n": 2,
-   "tier": 2
-  },
-  {
-   "section": "733",
-   "name": "Sporelake Shore",
-   "tile": [
-    2,
-    3
-   ],
-   "item": "gel",
-   "n": 3,
-   "tier": 2
-  },
-  {
    "section": "711",
    "name": "Mushroom Crossroads",
    "tile": [
-    17,
-    13
+    19,
+    6
    ],
    "item": "jammer",
    "n": 1,
@@ -1218,8 +1152,8 @@
    "section": "711",
    "name": "Mushroom Crossroads",
    "tile": [
-    6,
-    2
+    5,
+    3
    ],
    "item": "dust",
    "n": 300,
@@ -1229,7 +1163,7 @@
    "section": "715",
    "name": "Sporecap Overlook",
    "tile": [
-    21,
+    20,
     9
    ],
    "item": "gel",
@@ -1240,7 +1174,7 @@
    "section": "715",
    "name": "Sporecap Overlook",
    "tile": [
-    3,
+    4,
     4
    ],
    "item": "gel",
@@ -1251,8 +1185,8 @@
    "section": "707",
    "name": "Mushroom Maze Cave Entrance",
    "tile": [
-    20,
-    11
+    5,
+    8
    ],
    "item": "dust",
    "n": 300,
@@ -1262,8 +1196,8 @@
    "section": "707",
    "name": "Mushroom Maze Cave Entrance",
    "tile": [
-    20,
-    12
+    15,
+    9
    ],
    "item": "megagel",
    "n": 1,
@@ -1273,8 +1207,8 @@
    "section": "708",
    "name": "Mushroom Maze Cave B1",
    "tile": [
-    20,
-    13
+    19,
+    12
    ],
    "item": "cure",
    "n": 2,
@@ -1284,7 +1218,7 @@
    "section": "709",
    "name": "Mushroom Maze Cave B2",
    "tile": [
-    21,
+    14,
     4
    ],
    "item": "revive",
@@ -1295,8 +1229,8 @@
    "section": "710",
    "name": "Mushroom Maze Deep Chamber",
    "tile": [
-    4,
-    2
+    5,
+    3
    ],
    "item": "harmonic",
    "n": 2,
@@ -1306,8 +1240,8 @@
    "section": "720",
    "name": "Mirefen Secret Grove",
    "tile": [
-    21,
-    9
+    16,
+    7
    ],
    "item": "megagel",
    "n": 1,
@@ -1317,8 +1251,8 @@
    "section": "720",
    "name": "Mirefen Secret Grove",
    "tile": [
-    21,
-    11
+    14,
+    10
    ],
    "item": "gel",
    "n": 3,
@@ -1329,7 +1263,7 @@
    "name": "Bog Fork",
    "tile": [
     15,
-    13
+    12
    ],
    "item": "stasis",
    "n": 5,
@@ -1339,7 +1273,7 @@
    "section": "713",
    "name": "Bog Fork",
    "tile": [
-    22,
+    18,
     3
    ],
    "item": "gel",
@@ -1350,7 +1284,7 @@
    "section": "719",
    "name": "Glowcap Meadow",
    "tile": [
-    4,
+    6,
     7
    ],
    "item": "harmonic",
@@ -1361,8 +1295,8 @@
    "section": "719",
    "name": "Glowcap Meadow",
    "tile": [
-    6,
-    1
+    8,
+    2
    ],
    "item": "gel",
    "n": 3,
@@ -1372,7 +1306,7 @@
    "section": "712",
    "name": "Root Junction",
    "tile": [
-    1,
+    7,
     2
    ],
    "item": "gel",
@@ -1384,7 +1318,7 @@
    "name": "Root Junction",
    "tile": [
     21,
-    13
+    12
    ],
    "item": "revive",
    "n": 1,
@@ -1394,7 +1328,7 @@
    "section": "716",
    "name": "Lantern Marsh Shore",
    "tile": [
-    7,
+    8,
     10
    ],
    "item": "gel",
@@ -1406,7 +1340,7 @@
    "name": "Lantern Marsh Shore",
    "tile": [
     8,
-    3
+    4
    ],
    "item": "jammer",
    "n": 1,
@@ -1416,8 +1350,8 @@
    "section": "718",
    "name": "Bogwater Bend",
    "tile": [
-    17,
-    5
+    16,
+    6
    ],
    "item": "cure",
    "n": 2,
@@ -1427,7 +1361,7 @@
    "section": "718",
    "name": "Bogwater Bend",
    "tile": [
-    20,
+    15,
     10
    ],
    "item": "dust",
@@ -1438,8 +1372,8 @@
    "section": "714",
    "name": "Capstep Rise",
    "tile": [
-    1,
-    10
+    5,
+    11
    ],
    "item": "gel",
    "n": 3,
@@ -1449,8 +1383,8 @@
    "section": "714",
    "name": "Capstep Rise",
    "tile": [
-    8,
-    4
+    11,
+    7
    ],
    "item": "revive",
    "n": 1,
@@ -1460,8 +1394,8 @@
    "section": "702",
    "name": "Mycelium Bowl",
    "tile": [
-    1,
-    9
+    4,
+    8
    ],
    "item": "cure",
    "n": 2,
@@ -1471,7 +1405,7 @@
    "section": "725",
    "name": "Sporeholm Relay Tower",
    "tile": [
-    21,
+    20,
     9
    ],
    "item": "revive",
@@ -1482,8 +1416,8 @@
    "section": "899",
    "name": "Mossy Herbalist Cottage",
    "tile": [
-    3,
-    9
+    11,
+    10
    ],
    "item": "cure",
    "n": 2,
@@ -1495,8 +1429,8 @@
    "section": "052",
    "name": "Port Saltreach Docks",
    "tile": [
-    18,
-    4
+    19,
+    5
    ],
    "item": "harmonic",
    "n": 2,
@@ -1506,8 +1440,8 @@
    "section": "053",
    "name": "Saltreach Market",
    "tile": [
-    17,
-    5
+    16,
+    6
    ],
    "item": "megagel",
    "n": 1,
@@ -1517,7 +1451,7 @@
    "section": "803",
    "name": "Thalassa Spaceport",
    "tile": [
-    8,
+    7,
     6
    ],
    "item": "jammer",
@@ -1528,8 +1462,8 @@
    "section": "800",
    "name": "Saltreach Quiet Court",
    "tile": [
-    22,
-    8
+    21,
+    9
    ],
    "item": "megagel",
    "n": 1,
@@ -1539,8 +1473,8 @@
    "section": "801",
    "name": "Saltreach Farmstead",
    "tile": [
-    9,
-    12
+    17,
+    5
    ],
    "item": "megagel",
    "n": 1,
@@ -1550,8 +1484,8 @@
    "section": "776",
    "name": "Boardwalk Crossing",
    "tile": [
-    1,
-    1
+    3,
+    5
    ],
    "item": "megagel",
    "n": 1,
@@ -1562,7 +1496,7 @@
    "name": "Boardwalk Crossing",
    "tile": [
     6,
-    12
+    11
    ],
    "item": "cure",
    "n": 2,
@@ -1572,8 +1506,8 @@
    "section": "790",
    "name": "Saltreach Secret Grove",
    "tile": [
-    7,
-    10
+    16,
+    2
    ],
    "item": "stasis",
    "n": 5,
@@ -1583,8 +1517,8 @@
    "section": "790",
    "name": "Saltreach Secret Grove",
    "tile": [
-    3,
-    6
+    8,
+    9
    ],
    "item": "harmonic",
    "n": 2,
@@ -1594,7 +1528,7 @@
    "section": "785",
    "name": "Shell Flats",
    "tile": [
-    2,
+    3,
     3
    ],
    "item": "harmonic",
@@ -1606,7 +1540,7 @@
    "name": "Shell Flats",
    "tile": [
     13,
-    13
+    11
    ],
    "item": "jammer",
    "n": 1,
@@ -1616,7 +1550,7 @@
    "section": "781",
    "name": "Coral Cove",
    "tile": [
-    1,
+    5,
     7
    ],
    "item": "gel",
@@ -1627,8 +1561,8 @@
    "section": "781",
    "name": "Coral Cove",
    "tile": [
-    13,
-    13
+    12,
+    12
    ],
    "item": "cure",
    "n": 2,
@@ -1638,8 +1572,8 @@
    "section": "778",
    "name": "Lagoon Fork",
    "tile": [
-    1,
-    2
+    2,
+    3
    ],
    "item": "megagel",
    "n": 1,
@@ -1650,7 +1584,7 @@
    "name": "Lagoon Fork",
    "tile": [
     17,
-    13
+    12
    ],
    "item": "gel",
    "n": 3,
@@ -1660,8 +1594,8 @@
    "section": "779",
    "name": "Dune Stairway",
    "tile": [
-    2,
-    10
+    7,
+    9
    ],
    "item": "jammer",
    "n": 1,
@@ -1671,7 +1605,7 @@
    "section": "779",
    "name": "Dune Stairway",
    "tile": [
-    21,
+    15,
     11
    ],
    "item": "dust",
@@ -1682,8 +1616,8 @@
    "section": "773",
    "name": "Sea Cave B1",
    "tile": [
-    19,
-    13
+    18,
+    12
    ],
    "item": "megagel",
    "n": 1,
@@ -1693,7 +1627,7 @@
    "section": "774",
    "name": "Sea Cave B2",
    "tile": [
-    13,
+    12,
     8
    ],
    "item": "dust",
@@ -1704,7 +1638,7 @@
    "section": "774",
    "name": "Sea Cave B2",
    "tile": [
-    21,
+    10,
     7
    ],
    "item": "revive",
@@ -1715,8 +1649,8 @@
    "section": "775",
    "name": "Sea Cave Deep Chamber",
    "tile": [
-    4,
-    2
+    5,
+    3
    ],
    "item": "gel",
    "n": 3,
@@ -1726,7 +1660,7 @@
    "section": "777",
    "name": "Dune Junction",
    "tile": [
-    22,
+    19,
     2
    ],
    "item": "dust",
@@ -1737,8 +1671,8 @@
    "section": "777",
    "name": "Dune Junction",
    "tile": [
-    1,
-    12
+    5,
+    11
    ],
    "item": "megagel",
    "n": 1,
@@ -1759,8 +1693,8 @@
    "section": "780",
    "name": "Lighthouse Bluff",
    "tile": [
-    2,
-    13
+    3,
+    12
    ],
    "item": "cure",
    "n": 2,
@@ -1771,7 +1705,7 @@
    "name": "Tidewater Arena",
    "tile": [
     2,
-    10
+    11
    ],
    "item": "cure",
    "n": 2,
@@ -1782,7 +1716,7 @@
    "name": "Harbor Relay Tower",
    "tile": [
     19,
-    12
+    11
    ],
    "item": "gel",
    "n": 3,
@@ -1804,7 +1738,7 @@
    "name": "Tidal Inlet",
    "tile": [
     10,
-    3
+    6
    ],
    "item": "gel",
    "n": 3,
@@ -1814,8 +1748,8 @@
    "section": "784",
    "name": "Tidal Inlet",
    "tile": [
-    19,
-    9
+    16,
+    8
    ],
    "item": "cure",
    "n": 2,
@@ -1825,7 +1759,7 @@
    "section": "783",
    "name": "Driftwood Hollows",
    "tile": [
-    2,
+    3,
     13
    ],
    "item": "gel",
@@ -1837,7 +1771,7 @@
    "name": "Driftwood Hollows",
    "tile": [
     13,
-    2
+    3
    ],
    "item": "revive",
    "n": 1,
@@ -1849,8 +1783,8 @@
    "section": "062",
    "name": "Neonis Starport",
    "tile": [
-    4,
-    12
+    5,
+    11
    ],
    "item": "stun",
    "n": 2,
@@ -1860,8 +1794,8 @@
    "section": "063",
    "name": "Neon Boulevard",
    "tile": [
-    4,
-    12
+    5,
+    11
    ],
    "item": "dust",
    "n": 500,
@@ -1871,8 +1805,8 @@
    "section": "066",
    "name": "Arcade Alleys",
    "tile": [
-    21,
-    14
+    20,
+    13
    ],
    "item": "ether",
    "n": 1,
@@ -1882,8 +1816,8 @@
    "section": "066",
    "name": "Arcade Alleys",
    "tile": [
-    4,
-    5
+    8,
+    4
    ],
    "item": "dust",
    "n": 500,
@@ -1904,7 +1838,7 @@
    "section": "663",
    "name": "Neonis Quiet Court",
    "tile": [
-    1,
+    2,
     4
    ],
    "item": "harmonic",
@@ -1916,7 +1850,7 @@
    "name": "Neonis Farmstead Edge",
    "tile": [
     15,
-    13
+    11
    ],
    "item": "stun",
    "n": 2,
@@ -1926,8 +1860,8 @@
    "section": "644",
    "name": "Signal Junction",
    "tile": [
-    2,
-    2
+    7,
+    3
    ],
    "item": "stun",
    "n": 2,
@@ -1938,7 +1872,7 @@
    "name": "Signal Junction",
    "tile": [
     8,
-    14
+    13
    ],
    "item": "revive",
    "n": 2,
@@ -1959,8 +1893,8 @@
    "section": "647",
    "name": "Skyline Overlook",
    "tile": [
-    3,
-    5
+    4,
+    4
    ],
    "item": "revive",
    "n": 2,
@@ -1981,7 +1915,7 @@
    "section": "639",
    "name": "Undercity Tunnel Entrance",
    "tile": [
-    20,
+    16,
     11
    ],
    "item": "revive",
@@ -1992,8 +1926,8 @@
    "section": "640",
    "name": "Undercity Tunnels B1",
    "tile": [
-    20,
-    13
+    19,
+    12
    ],
    "item": "dust",
    "n": 500,
@@ -2003,8 +1937,8 @@
    "section": "640",
    "name": "Undercity Tunnels B1",
    "tile": [
-    3,
-    13
+    4,
+    12
    ],
    "item": "stun",
    "n": 2,
@@ -2015,7 +1949,7 @@
    "name": "Undercity Tunnels B2",
    "tile": [
     20,
-    8
+    5
    ],
    "item": "harmonic",
    "n": 3,
@@ -2026,7 +1960,7 @@
    "name": "Undercity Deep Chamber",
    "tile": [
     4,
-    2
+    3
    ],
    "item": "harmonic",
    "n": 3,
@@ -2047,8 +1981,8 @@
    "section": "659",
    "name": "Voltspire Plaza",
    "tile": [
-    21,
-    9
+    18,
+    12
    ],
    "item": "stun",
    "n": 2,
@@ -2058,8 +1992,8 @@
    "section": "646",
    "name": "Bassline Ramp",
    "tile": [
-    4,
-    13
+    9,
+    12
    ],
    "item": "megagel",
    "n": 2,
@@ -2069,8 +2003,8 @@
    "section": "646",
    "name": "Bassline Ramp",
    "tile": [
-    12,
-    2
+    13,
+    3
    ],
    "item": "harmonic",
    "n": 3,
@@ -2080,7 +2014,7 @@
    "section": "645",
    "name": "Canal Fork",
    "tile": [
-    22,
+    18,
     3
    ],
    "item": "revive",
@@ -2091,8 +2025,8 @@
    "section": "645",
    "name": "Canal Fork",
    "tile": [
-    7,
-    13
+    5,
+    12
    ],
    "item": "dust",
    "n": 500,
@@ -2103,7 +2037,7 @@
    "name": "Glowgarden Hideaway",
    "tile": [
     18,
-    1
+    2
    ],
    "item": "ether",
    "n": 1,
@@ -2124,8 +2058,8 @@
    "section": "652",
    "name": "Helix Front Office",
    "tile": [
-    21,
-    9
+    18,
+    10
    ],
    "item": "harmonic",
    "n": 3,
@@ -2135,8 +2069,8 @@
    "section": "648",
    "name": "Canal Quay",
    "tile": [
-    7,
-    10
+    8,
+    9
    ],
    "item": "jammer",
    "n": 1,
@@ -2147,7 +2081,7 @@
    "name": "Canal Quay",
    "tile": [
     8,
-    4
+    5
    ],
    "item": "revive",
    "n": 2,
@@ -2157,8 +2091,8 @@
    "section": "651",
    "name": "Broadcast Plaza",
    "tile": [
-    3,
-    4
+    9,
+    3
    ],
    "item": "harmonic",
    "n": 3,
@@ -2168,8 +2102,8 @@
    "section": "651",
    "name": "Broadcast Plaza",
    "tile": [
-    7,
-    10
+    8,
+    9
    ],
    "item": "harmonic",
    "n": 3,
@@ -2179,8 +2113,8 @@
    "section": "650",
    "name": "Static Canal",
    "tile": [
-    9,
-    2
+    8,
+    5
    ],
    "item": "harmonic",
    "n": 3,
@@ -2191,7 +2125,7 @@
    "name": "Static Canal",
    "tile": [
     5,
-    11
+    6
    ],
    "item": "stun",
    "n": 2,
@@ -2213,7 +2147,7 @@
    "name": "Canal Islands",
    "tile": [
     8,
-    11
+    12
    ],
    "item": "dust",
    "n": 500,
@@ -2223,8 +2157,8 @@
    "section": "896",
    "name": "Canal Islands",
    "tile": [
-    6,
-    2
+    17,
+    4
    ],
    "item": "harmonic",
    "n": 3,
@@ -2234,8 +2168,8 @@
    "section": "895",
    "name": "Canal Basin",
    "tile": [
-    9,
-    2
+    8,
+    3
    ],
    "item": "revive",
    "n": 2,
@@ -2259,7 +2193,7 @@
    "name": "Sunken Landing",
    "tile": [
     15,
-    13
+    9
    ],
    "item": "ether",
    "n": 1,
@@ -2270,7 +2204,7 @@
    "name": "Dig Camp",
    "tile": [
     9,
-    12
+    11
    ],
    "item": "megagel",
    "n": 2,
@@ -2281,7 +2215,7 @@
    "name": "Glyph Hollow",
    "tile": [
     9,
-    12
+    10
    ],
    "item": "megagel",
    "n": 2,
@@ -2291,8 +2225,8 @@
    "section": "077",
    "name": "Glyph Hollow",
    "tile": [
-    14,
-    3
+    13,
+    4
    ],
    "item": "harmonic",
    "n": 3,
@@ -2302,8 +2236,8 @@
    "section": "566",
    "name": "Dig Camp Lane Homes",
    "tile": [
-    17,
-    2
+    15,
+    6
    ],
    "item": "dust",
    "n": 500,
@@ -2313,8 +2247,8 @@
    "section": "568",
    "name": "Dig Camp Farmstead",
    "tile": [
-    11,
-    14
+    12,
+    13
    ],
    "item": "dust",
    "n": 500,
@@ -2335,8 +2269,8 @@
    "section": "552",
    "name": "Ruin Crossroads",
    "tile": [
-    4,
-    13
+    7,
+    10
    ],
    "item": "dust",
    "n": 500,
@@ -2347,7 +2281,7 @@
    "name": "Ruin Crossroads",
    "tile": [
     20,
-    12
+    9
    ],
    "item": "harmonic",
    "n": 3,
@@ -2357,7 +2291,7 @@
    "section": "570",
    "name": "Glyphos Spaceport",
    "tile": [
-    17,
+    18,
     5
    ],
    "item": "revive",
@@ -2369,7 +2303,7 @@
    "name": "Glyph Junction",
    "tile": [
     3,
-    13
+    8
    ],
    "item": "dust",
    "n": 500,
@@ -2379,8 +2313,8 @@
    "section": "553",
    "name": "Glyph Junction",
    "tile": [
-    22,
-    2
+    17,
+    3
    ],
    "item": "megagel",
    "n": 2,
@@ -2390,8 +2324,8 @@
    "section": "555",
    "name": "Glyph Steps",
    "tile": [
-    22,
-    10
+    18,
+    12
    ],
    "item": "ether",
    "n": 1,
@@ -2401,7 +2335,7 @@
    "section": "555",
    "name": "Glyph Steps",
    "tile": [
-    16,
+    12,
     6
    ],
    "item": "revive",
@@ -2412,8 +2346,8 @@
    "section": "548",
    "name": "Drowned Grotto Entrance",
    "tile": [
-    20,
-    8
+    16,
+    9
    ],
    "item": "ether",
    "n": 1,
@@ -2423,8 +2357,8 @@
    "section": "548",
    "name": "Drowned Grotto Entrance",
    "tile": [
-    4,
-    8
+    8,
+    10
    ],
    "item": "megagel",
    "n": 2,
@@ -2434,8 +2368,8 @@
    "section": "549",
    "name": "Drowned Grotto B1",
    "tile": [
-    20,
-    13
+    19,
+    12
    ],
    "item": "harmonic",
    "n": 3,
@@ -2445,8 +2379,8 @@
    "section": "550",
    "name": "Drowned Grotto B2",
    "tile": [
-    21,
-    3
+    20,
+    4
    ],
    "item": "megagel",
    "n": 2,
@@ -2456,8 +2390,8 @@
    "section": "550",
    "name": "Drowned Grotto B2",
    "tile": [
-    2,
-    8
+    3,
+    7
    ],
    "item": "megagel",
    "n": 2,
@@ -2478,8 +2412,8 @@
    "section": "551",
    "name": "Drowned Grotto Deep Chamber",
    "tile": [
-    19,
-    12
+    18,
+    11
    ],
    "item": "harmonic",
    "n": 3,
@@ -2490,7 +2424,7 @@
    "name": "Tidepool Fork",
    "tile": [
     16,
-    2
+    8
    ],
    "item": "dust",
    "n": 500,
@@ -2501,7 +2435,7 @@
    "name": "Tidepool Fork",
    "tile": [
     13,
-    14
+    13
    ],
    "item": "ether",
    "n": 1,
@@ -2511,8 +2445,8 @@
    "section": "557",
    "name": "Tidepool Ruins",
    "tile": [
-    15,
-    13
+    14,
+    12
    ],
    "item": "megagel",
    "n": 2,
@@ -2522,8 +2456,8 @@
    "section": "557",
    "name": "Tidepool Ruins",
    "tile": [
-    15,
-    1
+    13,
+    3
    ],
    "item": "stun",
    "n": 2,
@@ -2533,8 +2467,8 @@
    "section": "571",
    "name": "Sunken Shallows",
    "tile": [
-    3,
-    1
+    4,
+    2
    ],
    "item": "harmonic",
    "n": 3,
@@ -2545,7 +2479,7 @@
    "name": "Sunken Shallows",
    "tile": [
     15,
-    1
+    2
    ],
    "item": "stun",
    "n": 2,
@@ -2556,7 +2490,7 @@
    "name": "Island Chain",
    "tile": [
     3,
-    1
+    2
    ],
    "item": "stun",
    "n": 2,
@@ -2567,7 +2501,7 @@
    "name": "Island Chain",
    "tile": [
     20,
-    1
+    2
    ],
    "item": "megagel",
    "n": 2,
@@ -2588,8 +2522,8 @@
    "section": "561",
    "name": "Coral Secret Grove",
    "tile": [
-    14,
-    1
+    16,
+    2
    ],
    "item": "stun",
    "n": 2,
@@ -2610,7 +2544,7 @@
    "section": "556",
    "name": "Mural Overlook",
    "tile": [
-    19,
+    15,
     13
    ],
    "item": "megagel",
@@ -2621,8 +2555,8 @@
    "section": "558",
    "name": "Pillar Hollows",
    "tile": [
-    1,
-    14
+    2,
+    13
    ],
    "item": "megagel",
    "n": 2,
@@ -2632,8 +2566,8 @@
    "section": "558",
    "name": "Pillar Hollows",
    "tile": [
-    13,
-    2
+    16,
+    6
    ],
    "item": "revive",
    "n": 2,
@@ -2643,8 +2577,8 @@
    "section": "560",
    "name": "Forgotten Forum",
    "tile": [
-    1,
-    9
+    2,
+    10
    ],
    "item": "megagel",
    "n": 2,
@@ -2654,8 +2588,8 @@
    "section": "560",
    "name": "Forgotten Forum",
    "tile": [
-    14,
-    11
+    15,
+    10
    ],
    "item": "ether",
    "n": 1,
@@ -2665,8 +2599,8 @@
    "section": "559",
    "name": "Sunken Channel",
    "tile": [
-    5,
-    8
+    6,
+    9
    ],
    "item": "jammer",
    "n": 1,
@@ -2676,7 +2610,7 @@
    "section": "559",
    "name": "Sunken Channel",
    "tile": [
-    11,
+    15,
     1
    ],
    "item": "harmonic",
@@ -2687,7 +2621,7 @@
    "section": "543",
    "name": "Temple of Trials",
    "tile": [
-    4,
+    5,
     7
    ],
    "item": "dust",
@@ -2698,7 +2632,7 @@
    "section": "886",
    "name": "Glyphos Relay Tower",
    "tile": [
-    3,
+    8,
     9
    ],
    "item": "ether",
@@ -2709,7 +2643,7 @@
    "section": "884",
    "name": "Dig Camp Storehouse",
    "tile": [
-    20,
+    16,
     8
    ],
    "item": "dust",
@@ -2723,7 +2657,7 @@
    "name": "Cinder Hollow",
    "tile": [
     4,
-    12
+    11
    ],
    "item": "dust",
    "n": 800,
@@ -2734,7 +2668,7 @@
    "name": "Deep Mines B1",
    "tile": [
     19,
-    13
+    12
    ],
    "item": "dust",
    "n": 800,
@@ -2744,7 +2678,7 @@
    "section": "088",
    "name": "Deep Mines B2",
    "tile": [
-    21,
+    20,
     7
    ],
    "item": "megagel",
@@ -2755,8 +2689,8 @@
    "section": "089",
    "name": "Deep Mines Depths",
    "tile": [
-    4,
-    2
+    5,
+    3
    ],
    "item": "fullgel",
    "n": 1,
@@ -2777,8 +2711,8 @@
    "section": "696",
    "name": "Cinder Hollow Lane Homes",
    "tile": [
-    9,
-    2
+    8,
+    6
    ],
    "item": "ether",
    "n": 2,
@@ -2788,7 +2722,7 @@
    "section": "697",
    "name": "Cinder Hollow Quiet Court",
    "tile": [
-    1,
+    2,
     9
    ],
    "item": "megagel",
@@ -2800,17 +2734,6 @@
    "name": "Cinder Hollow Farmstead",
    "tile": [
     11,
-    14
-   ],
-   "item": "megagel",
-   "n": 3,
-   "tier": 4
-  },
-  {
-   "section": "677",
-   "name": "Basalt Crossroads",
-   "tile": [
-    20,
     13
    ],
    "item": "megagel",
@@ -2821,8 +2744,19 @@
    "section": "677",
    "name": "Basalt Crossroads",
    "tile": [
+    19,
+    11
+   ],
+   "item": "megagel",
+   "n": 3,
+   "tier": 4
+  },
+  {
+   "section": "677",
+   "name": "Basalt Crossroads",
+   "tile": [
     21,
-    2
+    4
    ],
    "item": "megagel",
    "n": 3,
@@ -2832,7 +2766,7 @@
    "section": "678",
    "name": "Mine Junction",
    "tile": [
-    22,
+    21,
     12
    ],
    "item": "megagel",
@@ -2844,7 +2778,7 @@
    "name": "Mine Junction",
    "tile": [
     12,
-    14
+    10
    ],
    "item": "revive",
    "n": 2,
@@ -2855,7 +2789,7 @@
    "name": "Lava Fork",
    "tile": [
     1,
-    4
+    7
    ],
    "item": "harmonic",
    "n": 5,
@@ -2865,7 +2799,7 @@
    "section": "679",
    "name": "Lava Fork",
    "tile": [
-    11,
+    12,
     2
    ],
    "item": "harmonic",
@@ -2876,8 +2810,8 @@
    "section": "680",
    "name": "Cinder Slope",
    "tile": [
-    21,
-    10
+    20,
+    9
    ],
    "item": "harmonic",
    "n": 5,
@@ -2887,8 +2821,8 @@
    "section": "680",
    "name": "Cinder Slope",
    "tile": [
-    7,
-    2
+    8,
+    4
    ],
    "item": "revive",
    "n": 2,
@@ -2920,8 +2854,8 @@
    "section": "682",
    "name": "Lava Lake Shore",
    "tile": [
-    7,
-    10
+    8,
+    8
    ],
    "item": "revive",
    "n": 2,
@@ -2942,8 +2876,8 @@
    "section": "683",
    "name": "Mine Shaft Hollows",
    "tile": [
-    9,
-    2
+    10,
+    3
    ],
    "item": "megagel",
    "n": 3,
@@ -2953,8 +2887,8 @@
    "section": "683",
    "name": "Mine Shaft Hollows",
    "tile": [
-    1,
-    3
+    2,
+    4
    ],
    "item": "harmonic",
    "n": 5,
@@ -2964,8 +2898,8 @@
    "section": "684",
    "name": "Magma Flow Bend",
    "tile": [
-    9,
-    2
+    7,
+    3
    ],
    "item": "revive",
    "n": 2,
@@ -2975,8 +2909,8 @@
    "section": "684",
    "name": "Magma Flow Bend",
    "tile": [
-    4,
-    9
+    5,
+    7
    ],
    "item": "revive",
    "n": 2,
@@ -2997,8 +2931,8 @@
    "section": "685",
    "name": "Ashfall Flats",
    "tile": [
-    7,
-    12
+    8,
+    9
    ],
    "item": "dust",
    "n": 800,
@@ -3009,7 +2943,7 @@
    "name": "Ember Hollow Grove",
    "tile": [
     18,
-    1
+    2
    ],
    "item": "harmonic",
    "n": 5,
@@ -3042,7 +2976,7 @@
    "name": "Deep Mines Entrance",
    "tile": [
     3,
-    6
+    7
    ],
    "item": "revive",
    "n": 2,
@@ -3052,7 +2986,7 @@
    "section": "673",
    "name": "Deep Mines Entrance",
    "tile": [
-    20,
+    19,
     6
    ],
    "item": "revive",
@@ -3074,8 +3008,8 @@
    "section": "693",
    "name": "Volcano Relay Tower",
    "tile": [
-    21,
-    9
+    19,
+    11
    ],
    "item": "ether",
    "n": 2,
@@ -3088,7 +3022,7 @@
    "name": "Frostmark",
    "tile": [
     9,
-    12
+    10
    ],
    "item": "harmonic",
    "n": 5,
@@ -3099,7 +3033,7 @@
    "name": "Aurora Route Part A",
    "tile": [
     14,
-    12
+    8
    ],
    "item": "ether",
    "n": 2,
@@ -3109,8 +3043,8 @@
    "section": "096",
    "name": "Aurora Route Part A",
    "tile": [
-    6,
-    2
+    4,
+    3
    ],
    "item": "harmonic",
    "n": 5,
@@ -3120,8 +3054,8 @@
    "section": "098",
    "name": "Crystal Caverns B1",
    "tile": [
-    20,
-    13
+    19,
+    12
    ],
    "item": "ether",
    "n": 2,
@@ -3131,8 +3065,8 @@
    "section": "098",
    "name": "Crystal Caverns B1",
    "tile": [
-    3,
-    13
+    4,
+    12
    ],
    "item": "dust",
    "n": 800,
@@ -3143,7 +3077,7 @@
    "name": "Crystal Caverns B2",
    "tile": [
     20,
-    6
+    4
    ],
    "item": "dust",
    "n": 800,
@@ -3153,8 +3087,8 @@
    "section": "099",
    "name": "Crystal Caverns B2",
    "tile": [
-    21,
-    8
+    20,
+    7
    ],
    "item": "fullgel",
    "n": 1,
@@ -3164,8 +3098,8 @@
    "section": "100",
    "name": "Crystal Caverns Depths",
    "tile": [
-    4,
-    2
+    5,
+    3
    ],
    "item": "fullgel",
    "n": 1,
@@ -3186,8 +3120,8 @@
    "section": "541",
    "name": "Glacia Spaceport",
    "tile": [
-    17,
-    5
+    8,
+    11
    ],
    "item": "dust",
    "n": 800,
@@ -3197,8 +3131,8 @@
    "section": "537",
    "name": "Frostmark Lane Homes",
    "tile": [
-    16,
-    4
+    3,
+    9
    ],
    "item": "jammer",
    "n": 2,
@@ -3208,8 +3142,8 @@
    "section": "538",
    "name": "Frostmark Quiet Court",
    "tile": [
-    22,
-    4
+    21,
+    5
    ],
    "item": "revive",
    "n": 2,
@@ -3220,7 +3154,7 @@
    "name": "Frostmark Farmstead",
    "tile": [
     2,
-    1
+    5
    ],
    "item": "megagel",
    "n": 3,
@@ -3230,7 +3164,7 @@
    "section": "518",
    "name": "Frost Crossroads",
    "tile": [
-    1,
+    4,
     11
    ],
    "item": "ether",
@@ -3241,8 +3175,8 @@
    "section": "518",
    "name": "Frost Crossroads",
    "tile": [
-    8,
-    15
+    6,
+    13
    ],
    "item": "ether",
    "n": 2,
@@ -3252,7 +3186,7 @@
    "section": "519",
    "name": "Ice Junction",
    "tile": [
-    1,
+    5,
     12
    ],
    "item": "fullgel",
@@ -3263,8 +3197,8 @@
    "section": "519",
    "name": "Ice Junction",
    "tile": [
-    2,
-    14
+    3,
+    13
    ],
    "item": "harmonic",
    "n": 5,
@@ -3274,8 +3208,8 @@
    "section": "520",
    "name": "Floe Fork",
    "tile": [
-    15,
-    14
+    14,
+    13
    ],
    "item": "dust",
    "n": 800,
@@ -3285,8 +3219,8 @@
    "section": "520",
    "name": "Floe Fork",
    "tile": [
-    1,
-    3
+    2,
+    4
    ],
    "item": "megagel",
    "n": 3,
@@ -3296,8 +3230,8 @@
    "section": "521",
    "name": "Frostfall Slope",
    "tile": [
-    22,
-    10
+    21,
+    11
    ],
    "item": "revive",
    "n": 2,
@@ -3307,7 +3241,7 @@
    "section": "521",
    "name": "Frostfall Slope",
    "tile": [
-    15,
+    11,
     2
    ],
    "item": "jammer",
@@ -3329,8 +3263,8 @@
    "section": "522",
    "name": "Aurora Overlook",
    "tile": [
-    2,
-    13
+    3,
+    12
    ],
    "item": "megagel",
    "n": 3,
@@ -3340,7 +3274,7 @@
    "section": "523",
    "name": "Floe Shore",
    "tile": [
-    16,
+    15,
     9
    ],
    "item": "revive",
@@ -3351,7 +3285,7 @@
    "section": "523",
    "name": "Floe Shore",
    "tile": [
-    15,
+    14,
     2
    ],
    "item": "ether",
@@ -3362,8 +3296,8 @@
    "section": "524",
    "name": "Crevasse Hollows",
    "tile": [
-    1,
-    14
+    2,
+    13
    ],
    "item": "revive",
    "n": 2,
@@ -3374,7 +3308,7 @@
    "name": "Crevasse Hollows",
    "tile": [
     12,
-    1
+    2
    ],
    "item": "harmonic",
    "n": 5,
@@ -3384,7 +3318,7 @@
    "section": "525",
    "name": "Frozen Falls",
    "tile": [
-    2,
+    7,
     10
    ],
    "item": "ether",
@@ -3395,8 +3329,8 @@
    "section": "525",
    "name": "Frozen Falls",
    "tile": [
-    19,
-    10
+    17,
+    7
    ],
    "item": "revive",
    "n": 2,
@@ -3406,8 +3340,8 @@
    "section": "526",
    "name": "Fossil Dig Flats",
    "tile": [
-    1,
-    14
+    3,
+    13
    ],
    "item": "fullgel",
    "n": 1,
@@ -3417,8 +3351,8 @@
    "section": "526",
    "name": "Fossil Dig Flats",
    "tile": [
-    1,
-    1
+    10,
+    12
    ],
    "item": "ether",
    "n": 2,
@@ -3428,7 +3362,7 @@
    "section": "529",
    "name": "Hidden Ice Grove",
    "tile": [
-    22,
+    21,
     10
    ],
    "item": "dust",
@@ -3439,7 +3373,7 @@
    "section": "529",
    "name": "Hidden Ice Grove",
    "tile": [
-    5,
+    6,
     6
    ],
    "item": "revive",
@@ -3450,7 +3384,7 @@
    "section": "514",
    "name": "Crystal Caverns Entrance",
    "tile": [
-    4,
+    7,
     7
    ],
    "item": "jammer",
@@ -3461,8 +3395,8 @@
    "section": "514",
    "name": "Crystal Caverns Entrance",
    "tile": [
-    19,
-    10
+    15,
+    9
    ],
    "item": "dust",
    "n": 800,
@@ -3472,8 +3406,8 @@
    "section": "527",
    "name": "Frozen Research Annex",
    "tile": [
-    1,
-    9
+    2,
+    10
    ],
    "item": "revive",
    "n": 2,
@@ -3484,7 +3418,7 @@
    "name": "Aurora Relay Tower",
    "tile": [
     5,
-    13
+    9
    ],
    "item": "megagel",
    "n": 3,
@@ -3494,22 +3428,11 @@
    "section": "883",
    "name": "Fjord Islands",
    "tile": [
-    2,
+    1,
     3
    ],
    "item": "revive",
    "n": 2,
-   "tier": 4
-  },
-  {
-   "section": "883",
-   "name": "Fjord Islands",
-   "tile": [
-    1,
-    9
-   ],
-   "item": "fullgel",
-   "n": 1,
    "tier": 4
   }
  ],
@@ -3519,7 +3442,7 @@
    "name": "Docking Ring",
    "tile": [
     20,
-    13
+    9
    ],
    "item": "maxrevive",
    "n": 1,
@@ -3529,7 +3452,7 @@
    "section": "109",
    "name": "Containment Wing 1F",
    "tile": [
-    14,
+    13,
     8
    ],
    "item": "singularity",
@@ -3540,8 +3463,8 @@
    "section": "109",
    "name": "Containment Wing 1F",
    "tile": [
-    1,
-    8
+    2,
+    6
    ],
    "item": "ether",
    "n": 3,
@@ -3551,7 +3474,7 @@
    "section": "110",
    "name": "Containment Wing 2F",
    "tile": [
-    2,
+    3,
     10
    ],
    "item": "harmonic",
@@ -3562,7 +3485,7 @@
    "section": "111",
    "name": "Engineering",
    "tile": [
-    3,
+    7,
     11
    ],
    "item": "maxrevive",
@@ -3573,7 +3496,7 @@
    "section": "630",
    "name": "Officers Court",
    "tile": [
-    1,
+    2,
     4
    ],
    "item": "harmonic",
@@ -3585,7 +3508,7 @@
    "name": "Hydroponics Edge",
    "tile": [
     6,
-    12
+    11
    ],
    "item": "harmonic",
    "n": 5,
@@ -3595,8 +3518,8 @@
    "section": "612",
    "name": "Deck Crossroads",
    "tile": [
-    2,
-    1
+    4,
+    2
    ],
    "item": "fullgel",
    "n": 2,
@@ -3606,8 +3529,8 @@
    "section": "612",
    "name": "Deck Crossroads",
    "tile": [
-    21,
-    1
+    19,
+    4
    ],
    "item": "harmonic",
    "n": 5,
@@ -3617,8 +3540,8 @@
    "section": "614",
    "name": "Station Coolant Fork",
    "tile": [
-    2,
-    2
+    3,
+    11
    ],
    "item": "dust",
    "n": 1200,
@@ -3628,8 +3551,8 @@
    "section": "614",
    "name": "Station Coolant Fork",
    "tile": [
-    1,
-    3
+    2,
+    4
    ],
    "item": "ether",
    "n": 3,
@@ -3650,8 +3573,8 @@
    "section": "613",
    "name": "Corridor Junction",
    "tile": [
-    22,
-    12
+    20,
+    7
    ],
    "item": "fullgel",
    "n": 2,
@@ -3662,7 +3585,7 @@
    "name": "Helix Station Spaceport",
    "tile": [
     5,
-    13
+    12
    ],
    "item": "ether",
    "n": 3,
@@ -3672,7 +3595,7 @@
    "section": "617",
    "name": "Coolant Basin",
    "tile": [
-    7,
+    8,
     10
    ],
    "item": "harmonic",
@@ -3684,7 +3607,7 @@
    "name": "Coolant Basin",
    "tile": [
     9,
-    2
+    4
    ],
    "item": "fullgel",
    "n": 2,
@@ -3694,8 +3617,8 @@
    "section": "615",
    "name": "Docking Ramp",
    "tile": [
-    2,
-    14
+    8,
+    9
    ],
    "item": "dust",
    "n": 1200,
@@ -3705,8 +3628,8 @@
    "section": "615",
    "name": "Docking Ramp",
    "tile": [
-    21,
-    1
+    4,
+    13
    ],
    "item": "maxrevive",
    "n": 1,
@@ -3716,8 +3639,8 @@
    "section": "619",
    "name": "Reactor Channel",
    "tile": [
-    21,
-    12
+    19,
+    9
    ],
    "item": "dust",
    "n": 1200,
@@ -3727,7 +3650,7 @@
    "section": "619",
    "name": "Reactor Channel",
    "tile": [
-    4,
+    6,
     9
    ],
    "item": "maxrevive",
@@ -3738,8 +3661,8 @@
    "section": "618",
    "name": "Specimen Annex",
    "tile": [
-    22,
-    14
+    21,
+    11
    ],
    "item": "fullgel",
    "n": 2,
@@ -3749,8 +3672,8 @@
    "section": "618",
    "name": "Specimen Annex",
    "tile": [
-    6,
-    2
+    7,
+    3
    ],
    "item": "maxrevive",
    "n": 1,
@@ -3760,8 +3683,8 @@
    "section": "620",
    "name": "Hangar Deck",
    "tile": [
-    3,
-    6
+    4,
+    4
    ],
    "item": "ether",
    "n": 3,
@@ -3771,8 +3694,8 @@
    "section": "620",
    "name": "Hangar Deck",
    "tile": [
-    3,
-    2
+    10,
+    3
    ],
    "item": "maxrevive",
    "n": 1,
@@ -3782,8 +3705,8 @@
    "section": "608",
    "name": "Rift Rock Mine Entrance",
    "tile": [
-    4,
-    7
+    5,
+    8
    ],
    "item": "fullgel",
    "n": 2,
@@ -3793,8 +3716,8 @@
    "section": "608",
    "name": "Rift Rock Mine Entrance",
    "tile": [
-    19,
-    10
+    18,
+    9
    ],
    "item": "ether",
    "n": 3,
@@ -3804,8 +3727,8 @@
    "section": "609",
    "name": "Rift Rock Mine 1F",
    "tile": [
-    20,
-    13
+    19,
+    12
    ],
    "item": "fullgel",
    "n": 2,
@@ -3815,7 +3738,7 @@
    "section": "610",
    "name": "Rift Rock Mine 2F",
    "tile": [
-    2,
+    3,
     5
    ],
    "item": "fullgel",
@@ -3826,8 +3749,8 @@
    "section": "611",
    "name": "Rift Rock Deep Chamber",
    "tile": [
-    4,
-    2
+    5,
+    3
    ],
    "item": "dust",
    "n": 1200,
@@ -3837,7 +3760,7 @@
    "section": "626",
    "name": "Helix Comms Spire",
    "tile": [
-    21,
+    20,
     9
    ],
    "item": "fullgel",
@@ -3849,7 +3772,7 @@
    "name": "Hidden Hydro Garden",
    "tile": [
     21,
-    9
+    10
    ],
    "item": "fullgel",
    "n": 2,
@@ -3859,8 +3782,8 @@
    "section": "621",
    "name": "Hidden Hydro Garden",
    "tile": [
-    13,
-    1
+    15,
+    7
    ],
    "item": "maxrevive",
    "n": 1,
@@ -3884,7 +3807,7 @@
    "name": "Skyreach Plaza",
    "tile": [
     9,
-    12
+    11
    ],
    "item": "ether",
    "n": 3,
@@ -3894,8 +3817,8 @@
    "section": "582",
    "name": "Sky Crossroads",
    "tile": [
-    4,
-    2
+    3,
+    5
    ],
    "item": "fullgel",
    "n": 2,
@@ -3905,10 +3828,21 @@
    "section": "582",
    "name": "Sky Crossroads",
    "tile": [
-    4,
-    13
+    5,
+    12
    ],
    "item": "singularity",
+   "n": 1,
+   "tier": 5
+  },
+  {
+   "section": "600",
+   "name": "Skyreach Lane Homes",
+   "tile": [
+    6,
+    3
+   ],
+   "item": "maxrevive",
    "n": 1,
    "tier": 5
   },
@@ -3917,7 +3851,7 @@
    "name": "Halo Spaceport",
    "tile": [
     5,
-    3
+    4
    ],
    "item": "ether",
    "n": 3,
@@ -3927,8 +3861,8 @@
    "section": "601",
    "name": "Skyreach Quiet Court",
    "tile": [
-    22,
-    4
+    21,
+    5
    ],
    "item": "harmonic",
    "n": 5,
@@ -3949,8 +3883,8 @@
    "section": "586",
    "name": "Sky Temple Overlook",
    "tile": [
-    19,
-    5
+    18,
+    4
    ],
    "item": "fullgel",
    "n": 2,
@@ -3960,7 +3894,7 @@
    "section": "590",
    "name": "Floating Gardens",
    "tile": [
-    20,
+    19,
     3
    ],
    "item": "ether",
@@ -3971,8 +3905,8 @@
    "section": "590",
    "name": "Floating Gardens",
    "tile": [
-    20,
-    7
+    19,
+    6
    ],
    "item": "ether",
    "n": 3,
@@ -3982,7 +3916,7 @@
    "section": "587",
    "name": "Cloudbreak Edge",
    "tile": [
-    16,
+    15,
     9
    ],
    "item": "ether",
@@ -4004,7 +3938,7 @@
    "section": "583",
    "name": "Temple Junction",
    "tile": [
-    1,
+    5,
     12
    ],
    "item": "fullgel",
@@ -4015,8 +3949,8 @@
    "section": "583",
    "name": "Temple Junction",
    "tile": [
-    22,
-    2
+    20,
+    5
    ],
    "item": "dust",
    "n": 1200,
@@ -4026,8 +3960,8 @@
    "section": "597",
    "name": "Sky Temple",
    "tile": [
-    14,
-    12
+    15,
+    11
    ],
    "item": "harmonic",
    "n": 5,
@@ -4049,7 +3983,7 @@
    "name": "Cloud Fork",
    "tile": [
     16,
-    14
+    13
    ],
    "item": "dust",
    "n": 1200,
@@ -4059,8 +3993,8 @@
    "section": "584",
    "name": "Cloud Fork",
    "tile": [
-    2,
-    14
+    3,
+    10
    ],
    "item": "ether",
    "n": 3,
@@ -4081,8 +4015,8 @@
    "section": "591",
    "name": "Hidden Blossom Grove",
    "tile": [
-    3,
-    5
+    15,
+    2
    ],
    "item": "maxrevive",
    "n": 1,
@@ -4092,8 +4026,8 @@
    "section": "579",
    "name": "Crystal Hollow 1F",
    "tile": [
-    20,
-    13
+    19,
+    12
    ],
    "item": "ether",
    "n": 3,
@@ -4103,8 +4037,8 @@
    "section": "579",
    "name": "Crystal Hollow 1F",
    "tile": [
-    3,
-    13
+    4,
+    12
    ],
    "item": "fullgel",
    "n": 2,
@@ -4114,8 +4048,8 @@
    "section": "580",
    "name": "Crystal Hollow 2F",
    "tile": [
-    21,
-    7
+    20,
+    4
    ],
    "item": "singularity",
    "n": 1,
@@ -4125,8 +4059,8 @@
    "section": "580",
    "name": "Crystal Hollow 2F",
    "tile": [
-    21,
-    8
+    20,
+    7
    ],
    "item": "fullgel",
    "n": 2,
@@ -4136,8 +4070,8 @@
    "section": "581",
    "name": "Crystal Hollow Heart",
    "tile": [
-    4,
-    2
+    5,
+    3
    ],
    "item": "fullgel",
    "n": 2,
@@ -4148,7 +4082,7 @@
    "name": "Shrine Hollows",
    "tile": [
     21,
-    3
+    4
    ],
    "item": "singularity",
    "n": 1,
@@ -4158,8 +4092,8 @@
    "section": "588",
    "name": "Shrine Hollows",
    "tile": [
-    2,
-    13
+    4,
+    11
    ],
    "item": "dust",
    "n": 1200,
@@ -4169,7 +4103,7 @@
    "section": "589",
    "name": "Cloud River Bend",
    "tile": [
-    12,
+    16,
     3
    ],
    "item": "harmonic",
@@ -4180,7 +4114,7 @@
    "section": "589",
    "name": "Cloud River Bend",
    "tile": [
-    4,
+    5,
     10
    ],
    "item": "harmonic",
@@ -4191,7 +4125,7 @@
    "section": "585",
    "name": "Windstep Rise",
    "tile": [
-    22,
+    21,
     10
    ],
    "item": "ether",
@@ -4202,7 +4136,7 @@
    "section": "585",
    "name": "Windstep Rise",
    "tile": [
-    3,
+    5,
     7
    ],
    "item": "dust",
@@ -4214,7 +4148,7 @@
    "name": "Skyfarm Edge",
    "tile": [
     11,
-    14
+    13
    ],
    "item": "maxrevive",
    "n": 1,
@@ -4224,7 +4158,7 @@
    "section": "889",
    "name": "Cloud Chapel",
    "tile": [
-    20,
+    19,
     8
    ],
    "item": "harmonic",
@@ -4232,11 +4166,33 @@
    "tier": 5
   },
   {
+   "section": "891",
+   "name": "Cloud Lagoon",
+   "tile": [
+    10,
+    7
+   ],
+   "item": "fullgel",
+   "n": 2,
+   "tier": 5
+  },
+  {
+   "section": "891",
+   "name": "Cloud Lagoon",
+   "tile": [
+    15,
+    7
+   ],
+   "item": "singularity",
+   "n": 1,
+   "tier": 5
+  },
+  {
    "section": "892",
    "name": "Lagoon Islands",
    "tile": [
-    1,
-    9
+    6,
+    3
    ],
    "item": "ether",
    "n": 3,
@@ -4246,8 +4202,8 @@
    "section": "892",
    "name": "Lagoon Islands",
    "tile": [
-    3,
-    13
+    17,
+    3
    ],
    "item": "dust",
    "n": 1200,
@@ -4259,7 +4215,7 @@
    "section": "123",
    "name": "Shadow Tunnel Exit",
    "tile": [
-    2,
+    3,
     5
    ],
    "item": "dust",
@@ -4281,7 +4237,7 @@
    "section": "129",
    "name": "The Sinkhole B1",
    "tile": [
-    14,
+    13,
     7
    ],
    "item": "maxrevive",
@@ -4292,8 +4248,8 @@
    "section": "129",
    "name": "The Sinkhole B1",
    "tile": [
-    1,
-    8
+    2,
+    7
    ],
    "item": "fullgel",
    "n": 3,
@@ -4303,8 +4259,8 @@
    "section": "130",
    "name": "The Sinkhole B2",
    "tile": [
-    1,
-    4
+    2,
+    5
    ],
    "item": "fullgel",
    "n": 3,
@@ -4314,8 +4270,8 @@
    "section": "131",
    "name": "The Sinkhole B3",
    "tile": [
-    1,
-    9
+    2,
+    8
    ],
    "item": "dust",
    "n": 1600,
@@ -4325,7 +4281,7 @@
    "section": "131",
    "name": "The Sinkhole B3",
    "tile": [
-    14,
+    13,
     6
    ],
    "item": "fullgel",
@@ -4336,8 +4292,8 @@
    "section": "132",
    "name": "The Sinkhole B4",
    "tile": [
-    1,
-    9
+    2,
+    8
    ],
    "item": "ether",
    "n": 3,
@@ -4347,7 +4303,7 @@
    "section": "837",
    "name": "Gravewell Quiet Court",
    "tile": [
-    1,
+    2,
     9
    ],
    "item": "dust",
@@ -4358,8 +4314,8 @@
    "section": "838",
    "name": "Umbra Farmstead Edge",
    "tile": [
-    8,
-    11
+    9,
+    10
    ],
    "item": "fullgel",
    "n": 3,
@@ -4369,8 +4325,8 @@
    "section": "840",
    "name": "Umbra Spaceport",
    "tile": [
-    4,
-    2
+    5,
+    3
    ],
    "item": "dust",
    "n": 1600,
@@ -4380,8 +4336,8 @@
    "section": "816",
    "name": "Lantern Crossroads",
    "tile": [
-    2,
-    10
+    4,
+    9
    ],
    "item": "ether",
    "n": 3,
@@ -4391,8 +4347,8 @@
    "section": "816",
    "name": "Lantern Crossroads",
    "tile": [
-    4,
-    1
+    3,
+    2
    ],
    "item": "fullgel",
    "n": 3,
@@ -4402,8 +4358,8 @@
    "section": "817",
    "name": "Shadow Junction",
    "tile": [
-    1,
-    3
+    20,
+    13
    ],
    "item": "dust",
    "n": 1600,
@@ -4413,8 +4369,8 @@
    "section": "817",
    "name": "Shadow Junction",
    "tile": [
-    21,
-    1
+    18,
+    12
    ],
    "item": "dust",
    "n": 1600,
@@ -4425,7 +4381,7 @@
    "name": "Abyss Fork",
    "tile": [
     5,
-    14
+    10
    ],
    "item": "maxrevive",
    "n": 1,
@@ -4435,7 +4391,7 @@
    "section": "818",
    "name": "Abyss Fork",
    "tile": [
-    11,
+    13,
     3
    ],
    "item": "fullgel",
@@ -4446,8 +4402,8 @@
    "section": "819",
    "name": "Lantern Steps",
    "tile": [
-    3,
-    6
+    20,
+    9
    ],
    "item": "singularity",
    "n": 1,
@@ -4457,7 +4413,7 @@
    "section": "819",
    "name": "Lantern Steps",
    "tile": [
-    7,
+    9,
     3
    ],
    "item": "fullgel",
@@ -4479,7 +4435,7 @@
    "section": "820",
    "name": "Sinkhole Overlook",
    "tile": [
-    4,
+    7,
     5
    ],
    "item": "ether",
@@ -4490,7 +4446,7 @@
    "section": "821",
    "name": "Abyss Rim",
    "tile": [
-    7,
+    8,
     5
    ],
    "item": "maxrevive",
@@ -4501,7 +4457,7 @@
    "section": "821",
    "name": "Abyss Rim",
    "tile": [
-    9,
+    10,
     13
    ],
    "item": "dust",
@@ -4512,8 +4468,8 @@
    "section": "822",
    "name": "Shade Hollows",
    "tile": [
-    21,
-    14
+    20,
+    13
    ],
    "item": "fullgel",
    "n": 3,
@@ -4523,8 +4479,8 @@
    "section": "822",
    "name": "Shade Hollows",
    "tile": [
-    2,
-    3
+    3,
+    4
    ],
    "item": "maxrevive",
    "n": 1,
@@ -4534,7 +4490,7 @@
    "section": "823",
    "name": "Mistfall Bend",
    "tile": [
-    20,
+    7,
     9
    ],
    "item": "singularity",
@@ -4545,8 +4501,8 @@
    "section": "823",
    "name": "Mistfall Bend",
    "tile": [
-    4,
-    8
+    19,
+    9
    ],
    "item": "ether",
    "n": 3,
@@ -4557,7 +4513,7 @@
    "name": "Gloom Commons",
    "tile": [
     4,
-    7
+    6
    ],
    "item": "fullgel",
    "n": 3,
@@ -4567,7 +4523,7 @@
    "section": "824",
    "name": "Gloom Commons",
    "tile": [
-    2,
+    7,
     3
    ],
    "item": "maxrevive",
@@ -4578,8 +4534,8 @@
    "section": "827",
    "name": "Gloomshade Grove",
    "tile": [
-    21,
-    9
+    20,
+    10
    ],
    "item": "ether",
    "n": 3,
@@ -4589,8 +4545,8 @@
    "section": "827",
    "name": "Gloomshade Grove",
    "tile": [
-    18,
-    1
+    15,
+    4
    ],
    "item": "dust",
    "n": 1600,
@@ -4601,7 +4557,7 @@
    "name": "Helix Hideout",
    "tile": [
     8,
-    11
+    10
    ],
    "item": "ether",
    "n": 3,
@@ -4611,8 +4567,8 @@
    "section": "807",
    "name": "Lantern Pit",
    "tile": [
-    22,
-    10
+    21,
+    11
    ],
    "item": "fullgel",
    "n": 3,
@@ -4622,7 +4578,7 @@
    "section": "812",
    "name": "Wailing Cave Entrance",
    "tile": [
-    20,
+    19,
     8
    ],
    "item": "fullgel",
@@ -4633,7 +4589,7 @@
    "section": "812",
    "name": "Wailing Cave Entrance",
    "tile": [
-    4,
+    5,
     10
    ],
    "item": "fullgel",
@@ -4644,8 +4600,8 @@
    "section": "813",
    "name": "Wailing Cave B1",
    "tile": [
-    19,
-    13
+    18,
+    12
    ],
    "item": "maxrevive",
    "n": 1,
@@ -4656,7 +4612,7 @@
    "name": "Wailing Cave B1",
    "tile": [
     7,
-    13
+    12
    ],
    "item": "maxrevive",
    "n": 1,
@@ -4666,8 +4622,8 @@
    "section": "814",
    "name": "Wailing Cave B2",
    "tile": [
-    20,
-    3
+    19,
+    4
    ],
    "item": "dust",
    "n": 1600,
@@ -4677,8 +4633,8 @@
    "section": "814",
    "name": "Wailing Cave B2",
    "tile": [
-    2,
-    8
+    3,
+    7
    ],
    "item": "dust",
    "n": 1600,
@@ -4688,8 +4644,8 @@
    "section": "815",
    "name": "Wailing Cave Deep Chamber",
    "tile": [
-    4,
-    2
+    5,
+    3
    ],
    "item": "fullgel",
    "n": 3,
@@ -4700,76 +4656,10 @@
    "name": "Gravewell Relay Tower",
    "tile": [
     21,
-    9
+    10
    ],
    "item": "dust",
    "n": 1600,
-   "tier": 6
-  },
-  {
-   "section": "907",
-   "name": "Mirror Lake Islands",
-   "tile": [
-    1,
-    9
-   ],
-   "item": "dust",
-   "n": 1600,
-   "tier": 6
-  },
-  {
-   "section": "907",
-   "name": "Mirror Lake Islands",
-   "tile": [
-    1,
-    5
-   ],
-   "item": "maxrevive",
-   "n": 1,
-   "tier": 6
-  },
-  {
-   "section": "906",
-   "name": "Mirror Lake",
-   "tile": [
-    2,
-    5
-   ],
-   "item": "ether",
-   "n": 3,
-   "tier": 6
-  },
-  {
-   "section": "906",
-   "name": "Mirror Lake",
-   "tile": [
-    1,
-    1
-   ],
-   "item": "dust",
-   "n": 1600,
-   "tier": 6
-  },
-  {
-   "section": "905",
-   "name": "Abyss Rim Descent",
-   "tile": [
-    19,
-    7
-   ],
-   "item": "singularity",
-   "n": 1,
-   "tier": 6
-  },
-  {
-   "section": "905",
-   "name": "Abyss Rim Descent",
-   "tile": [
-    14,
-    6
-   ],
-   "item": "ether",
-   "n": 3,
    "tier": 6
   }
  ],
@@ -4778,8 +4668,8 @@
    "section": "136",
    "name": "Rim Camp",
    "tile": [
-    9,
-    12
+    8,
+    11
    ],
    "item": "dust",
    "n": 1600,
@@ -4790,7 +4680,7 @@
    "name": "Seedpod Fields Part A",
    "tile": [
     10,
-    13
+    9
    ],
    "item": "ether",
    "n": 3,
@@ -4800,8 +4690,8 @@
    "section": "138",
    "name": "Seedpod Fields Part A",
    "tile": [
-    18,
-    12
+    16,
+    11
    ],
    "item": "singularity",
    "n": 1,
@@ -4811,8 +4701,8 @@
    "section": "140",
    "name": "Teo's Old Camp",
    "tile": [
-    10,
-    3
+    12,
+    4
    ],
    "item": "dust",
    "n": 1600,
@@ -4822,8 +4712,8 @@
    "section": "141",
    "name": "Crater Rim",
    "tile": [
-    10,
-    13
+    12,
+    12
    ],
    "item": "maxrevive",
    "n": 1,
@@ -4834,7 +4724,7 @@
    "name": "Crater Rim",
    "tile": [
     6,
-    2
+    3
    ],
    "item": "fullgel",
    "n": 3,
@@ -4844,7 +4734,7 @@
    "section": "142",
    "name": "Crater Descent B1",
    "tile": [
-    14,
+    13,
     7
    ],
    "item": "fullgel",
@@ -4855,8 +4745,8 @@
    "section": "143",
    "name": "Crater Descent B2",
    "tile": [
-    2,
-    10
+    3,
+    9
    ],
    "item": "singularity",
    "n": 1,
@@ -4866,8 +4756,8 @@
    "section": "143",
    "name": "Crater Descent B2",
    "tile": [
-    13,
-    9
+    12,
+    6
    ],
    "item": "fullgel",
    "n": 3,
@@ -4877,8 +4767,8 @@
    "section": "144",
    "name": "Crater Descent B3",
    "tile": [
-    2,
-    10
+    3,
+    9
    ],
    "item": "dust",
    "n": 1600,
@@ -4889,7 +4779,7 @@
    "name": "Rift Engine Platform",
    "tile": [
     9,
-    12
+    11
    ],
    "item": "maxrevive",
    "n": 1,
@@ -4899,8 +4789,8 @@
    "section": "767",
    "name": "Starfall Spaceport",
    "tile": [
-    21,
-    9
+    18,
+    11
    ],
    "item": "maxrevive",
    "n": 1,
@@ -4911,7 +4801,7 @@
    "name": "Starfall Lane Homes",
    "tile": [
     9,
-    12
+    11
    ],
    "item": "maxrevive",
    "n": 1,
@@ -4921,8 +4811,8 @@
    "section": "764",
    "name": "Starfall Quiet Court",
    "tile": [
-    22,
-    10
+    21,
+    9
    ],
    "item": "ether",
    "n": 3,
@@ -4933,7 +4823,7 @@
    "name": "Starfall Farmstead Edge",
    "tile": [
     11,
-    14
+    13
    ],
    "item": "fullgel",
    "n": 3,
@@ -4944,7 +4834,7 @@
    "name": "Crater Crossroads",
    "tile": [
     5,
-    14
+    9
    ],
    "item": "ether",
    "n": 3,
@@ -4955,7 +4845,7 @@
    "name": "Crater Crossroads",
    "tile": [
     20,
-    2
+    3
    ],
    "item": "singularity",
    "n": 1,
@@ -4965,8 +4855,8 @@
    "section": "746",
    "name": "Seedpod Junction",
    "tile": [
-    18,
-    1
+    16,
+    4
    ],
    "item": "ether",
    "n": 3,
@@ -4976,8 +4866,8 @@
    "section": "746",
    "name": "Seedpod Junction",
    "tile": [
-    1,
-    10
+    3,
+    7
    ],
    "item": "dust",
    "n": 1600,
@@ -4988,7 +4878,7 @@
    "name": "Rift Fork",
    "tile": [
     14,
-    14
+    10
    ],
    "item": "fullgel",
    "n": 3,
@@ -4998,8 +4888,8 @@
    "section": "747",
    "name": "Rift Fork",
    "tile": [
-    13,
-    3
+    11,
+    2
    ],
    "item": "maxrevive",
    "n": 1,
@@ -5009,8 +4899,8 @@
    "section": "748",
    "name": "Craterstep Slope",
    "tile": [
-    21,
-    10
+    17,
+    12
    ],
    "item": "singularity",
    "n": 1,
@@ -5020,8 +4910,8 @@
    "section": "748",
    "name": "Craterstep Slope",
    "tile": [
-    14,
-    3
+    12,
+    6
    ],
    "item": "fullgel",
    "n": 3,
@@ -5042,8 +4932,8 @@
    "section": "750",
    "name": "Nebula Overlook",
    "tile": [
-    19,
-    13
+    18,
+    12
    ],
    "item": "fullgel",
    "n": 3,
@@ -5054,7 +4944,7 @@
    "name": "Rift Edge",
    "tile": [
     15,
-    13
+    12
    ],
    "item": "maxrevive",
    "n": 1,
@@ -5064,8 +4954,8 @@
    "section": "751",
    "name": "Rift Edge",
    "tile": [
-    1,
-    9
+    3,
+    7
    ],
    "item": "dust",
    "n": 1600,
@@ -5076,7 +4966,7 @@
    "name": "Seedpod Hollows",
    "tile": [
     9,
-    12
+    11
    ],
    "item": "fullgel",
    "n": 3,
@@ -5087,7 +4977,7 @@
    "name": "Seedpod Hollows",
    "tile": [
     14,
-    3
+    7
    ],
    "item": "ether",
    "n": 3,
@@ -5098,7 +4988,7 @@
    "name": "Starstream Bend",
    "tile": [
     12,
-    3
+    6
    ],
    "item": "fullgel",
    "n": 3,
@@ -5108,8 +4998,8 @@
    "section": "753",
    "name": "Starstream Bend",
    "tile": [
-    19,
-    10
+    16,
+    9
    ],
    "item": "ether",
    "n": 3,
@@ -5119,7 +5009,7 @@
    "section": "754",
    "name": "Pod Fields",
    "tile": [
-    20,
+    16,
     4
    ],
    "item": "maxrevive",
@@ -5130,8 +5020,8 @@
    "section": "754",
    "name": "Pod Fields",
    "tile": [
-    17,
-    12
+    16,
+    11
    ],
    "item": "maxrevive",
    "n": 1,
@@ -5141,8 +5031,8 @@
    "section": "755",
    "name": "Starfall Secret Grove",
    "tile": [
-    7,
-    10
+    15,
+    2
    ],
    "item": "ether",
    "n": 3,
@@ -5152,8 +5042,8 @@
    "section": "755",
    "name": "Starfall Secret Grove",
    "tile": [
-    3,
-    6
+    8,
+    9
    ],
    "item": "maxrevive",
    "n": 1,
@@ -5163,8 +5053,8 @@
    "section": "741",
    "name": "Starstone Hollow Entrance",
    "tile": [
-    3,
-    6
+    4,
+    9
    ],
    "item": "fullgel",
    "n": 3,
@@ -5174,7 +5064,7 @@
    "section": "741",
    "name": "Starstone Hollow Entrance",
    "tile": [
-    20,
+    19,
     11
    ],
    "item": "fullgel",
@@ -5185,8 +5075,8 @@
    "section": "742",
    "name": "Starstone Hollow B1",
    "tile": [
-    20,
-    13
+    19,
+    12
    ],
    "item": "fullgel",
    "n": 3,
@@ -5196,8 +5086,8 @@
    "section": "742",
    "name": "Starstone Hollow B1",
    "tile": [
-    3,
-    13
+    4,
+    12
    ],
    "item": "dust",
    "n": 1600,
@@ -5208,7 +5098,7 @@
    "name": "Starstone Hollow B2",
    "tile": [
     20,
-    8
+    7
    ],
    "item": "singularity",
    "n": 1,
@@ -5219,7 +5109,7 @@
    "name": "Starstone Hollow Deep Chamber",
    "tile": [
     4,
-    2
+    3
    ],
    "item": "singularity",
    "n": 1,
@@ -5229,32 +5119,10 @@
    "section": "901",
    "name": "Crater Field Station",
    "tile": [
-    5,
-    8
+    10,
+    6
    ],
    "item": "maxrevive",
-   "n": 1,
-   "tier": 6
-  },
-  {
-   "section": "904",
-   "name": "Crater Lake Islands",
-   "tile": [
-    1,
-    9
-   ],
-   "item": "ether",
-   "n": 3,
-   "tier": 6
-  },
-  {
-   "section": "904",
-   "name": "Crater Lake Islands",
-   "tile": [
-    2,
-    14
-   ],
-   "item": "singularity",
    "n": 1,
    "tier": 6
   }
@@ -5264,7 +5132,7 @@
    "section": "146",
    "name": "Summit Lift",
    "tile": [
-    1,
+    5,
     7
    ],
    "item": "singularity",
@@ -5276,7 +5144,7 @@
    "name": "Apex Spaceport",
    "tile": [
     5,
-    3
+    7
    ],
    "item": "dust",
    "n": 2500,
@@ -5286,8 +5154,8 @@
    "section": "430",
    "name": "Summit Lane Homes",
    "tile": [
-    8,
-    2
+    7,
+    6
    ],
    "item": "maxrevive",
    "n": 2,
@@ -5297,7 +5165,7 @@
    "section": "431",
    "name": "Stargazer Quiet Court",
    "tile": [
-    1,
+    2,
     4
    ],
    "item": "dust",
@@ -5308,7 +5176,7 @@
    "section": "432",
    "name": "Summit Farmstead",
    "tile": [
-    1,
+    2,
     4
    ],
    "item": "maxrevive",
@@ -5319,8 +5187,8 @@
    "section": "411",
    "name": "Summit Crossroads",
    "tile": [
-    18,
-    13
+    17,
+    12
    ],
    "item": "dust",
    "n": 2500,
@@ -5330,8 +5198,8 @@
    "section": "411",
    "name": "Summit Crossroads",
    "tile": [
-    21,
-    3
+    20,
+    5
    ],
    "item": "dust",
    "n": 2500,
@@ -5352,8 +5220,8 @@
    "section": "412",
    "name": "Observatory Junction",
    "tile": [
-    1,
-    2
+    2,
+    1
    ],
    "item": "ether",
    "n": 5,
@@ -5363,8 +5231,8 @@
    "section": "413",
    "name": "Tarn Fork",
    "tile": [
-    6,
-    14
+    7,
+    13
    ],
    "item": "fullgel",
    "n": 3,
@@ -5374,18 +5242,7 @@
    "section": "413",
    "name": "Tarn Fork",
    "tile": [
-    22,
-    14
-   ],
-   "item": "dust",
-   "n": 2500,
-   "tier": 7
-  },
-  {
-   "section": "414",
-   "name": "Summit Stairs",
-   "tile": [
-    1,
+    21,
     10
    ],
    "item": "dust",
@@ -5396,8 +5253,19 @@
    "section": "414",
    "name": "Summit Stairs",
    "tile": [
-    20,
-    1
+    7,
+    11
+   ],
+   "item": "dust",
+   "n": 2500,
+   "tier": 7
+  },
+  {
+   "section": "414",
+   "name": "Summit Stairs",
+   "tile": [
+    19,
+    2
    ],
    "item": "maxrevive",
    "n": 2,
@@ -5418,7 +5286,7 @@
    "section": "415",
    "name": "Stargazer Overlook",
    "tile": [
-    2,
+    6,
     3
    ],
    "item": "dust",
@@ -5429,7 +5297,7 @@
    "section": "416",
    "name": "Meltwater Tarn",
    "tile": [
-    7,
+    8,
     5
    ],
    "item": "fullgel",
@@ -5440,8 +5308,8 @@
    "section": "416",
    "name": "Meltwater Tarn",
    "tile": [
-    7,
-    11
+    8,
+    10
    ],
    "item": "maxrevive",
    "n": 2,
@@ -5452,7 +5320,7 @@
    "name": "Instrument Hollows",
    "tile": [
     2,
-    15
+    14
    ],
    "item": "fullgel",
    "n": 3,
@@ -5462,7 +5330,7 @@
    "section": "419",
    "name": "Instrument Hollows",
    "tile": [
-    22,
+    21,
     13
    ],
    "item": "singularity",
@@ -5473,8 +5341,8 @@
    "section": "420",
    "name": "Glacier Bend",
    "tile": [
-    22,
-    8
+    16,
+    9
    ],
    "item": "dust",
    "n": 2500,
@@ -5484,8 +5352,8 @@
    "section": "420",
    "name": "Glacier Bend",
    "tile": [
-    2,
-    8
+    4,
+    9
    ],
    "item": "fullgel",
    "n": 3,
@@ -5506,8 +5374,8 @@
    "section": "421",
    "name": "Observatory Terrace",
    "tile": [
-    1,
-    1
+    3,
+    4
    ],
    "item": "maxrevive",
    "n": 2,
@@ -5518,7 +5386,7 @@
    "name": "Summit Secret Grove",
    "tile": [
     18,
-    1
+    2
    ],
    "item": "maxrevive",
    "n": 2,
@@ -5528,8 +5396,8 @@
    "section": "422",
    "name": "Summit Secret Grove",
    "tile": [
-    21,
-    12
+    20,
+    10
    ],
    "item": "fullgel",
    "n": 3,
@@ -5539,8 +5407,8 @@
    "section": "405",
    "name": "Icefall Cave Entrance",
    "tile": [
-    21,
-    8
+    5,
+    7
    ],
    "item": "dust",
    "n": 2500,
@@ -5550,8 +5418,8 @@
    "section": "405",
    "name": "Icefall Cave Entrance",
    "tile": [
-    7,
-    8
+    20,
+    9
    ],
    "item": "fullgel",
    "n": 3,
@@ -5561,8 +5429,8 @@
    "section": "406",
    "name": "Icefall Cave 1F",
    "tile": [
-    20,
-    13
+    19,
+    12
    ],
    "item": "dust",
    "n": 2500,
@@ -5572,8 +5440,8 @@
    "section": "407",
    "name": "Icefall Cave B1",
    "tile": [
-    14,
-    8
+    13,
+    10
    ],
    "item": "maxrevive",
    "n": 2,
@@ -5583,8 +5451,8 @@
    "section": "407",
    "name": "Icefall Cave B1",
    "tile": [
-    21,
-    7
+    14,
+    5
    ],
    "item": "fullgel",
    "n": 3,
@@ -5605,8 +5473,8 @@
    "section": "409",
    "name": "Icefall Deep Chamber",
    "tile": [
-    20,
-    12
+    19,
+    11
    ],
    "item": "ether",
    "n": 5,
@@ -5617,7 +5485,7 @@
    "name": "Apex Relay Tower",
    "tile": [
     9,
-    12
+    11
    ],
    "item": "dust",
    "n": 2500,
@@ -5640,8 +5508,8 @@
    "section": "153",
    "name": "Arrival Fragment",
    "tile": [
-    1,
-    5
+    2,
+    6
    ],
    "item": "ether",
    "n": 5,
@@ -5652,7 +5520,7 @@
    "name": "Floating Continents Part A",
    "tile": [
     5,
-    3
+    6
    ],
    "item": "singularity",
    "n": 2,
@@ -5662,8 +5530,8 @@
    "section": "154",
    "name": "Floating Continents Part A",
    "tile": [
-    17,
-    3
+    16,
+    4
    ],
    "item": "maxrevive",
    "n": 2,
@@ -5673,8 +5541,8 @@
    "section": "155",
    "name": "Floating Continents Part B",
    "tile": [
-    9,
-    12
+    13,
+    6
    ],
    "item": "singularity",
    "n": 2,
@@ -5684,8 +5552,8 @@
    "section": "155",
    "name": "Floating Continents Part B",
    "tile": [
-    4,
-    12
+    7,
+    3
    ],
    "item": "ether",
    "n": 5,
@@ -5695,8 +5563,8 @@
    "section": "156",
    "name": "Drowned Seas",
    "tile": [
-    10,
-    3
+    11,
+    7
    ],
    "item": "dust",
    "n": 2500,
@@ -5706,8 +5574,8 @@
    "section": "156",
    "name": "Drowned Seas",
    "tile": [
-    19,
-    3
+    16,
+    4
    ],
    "item": "maxrevive",
    "n": 2,
@@ -5718,7 +5586,7 @@
    "name": "Sun Forge",
    "tile": [
     10,
-    3
+    4
    ],
    "item": "fullgel",
    "n": 3,
@@ -5728,7 +5596,7 @@
    "section": "158",
    "name": "Crystal Ruins 1F",
    "tile": [
-    2,
+    3,
     5
    ],
    "item": "maxrevive",
@@ -5739,8 +5607,8 @@
    "section": "159",
    "name": "Crystal Ruins 2F",
    "tile": [
-    14,
-    7
+    13,
+    5
    ],
    "item": "singularity",
    "n": 2,
@@ -5751,7 +5619,7 @@
    "name": "Blighted Forest Part A",
    "tile": [
     13,
-    2
+    7
    ],
    "item": "ether",
    "n": 5,
@@ -5762,6 +5630,17 @@
    "name": "Blighted Forest Part A",
    "tile": [
     16,
+    8
+   ],
+   "item": "maxrevive",
+   "n": 2,
+   "tier": 7
+  },
+  {
+   "section": "161",
+   "name": "Blighted Forest Part B",
+   "tile": [
+    15,
     12
    ],
    "item": "maxrevive",
@@ -5773,18 +5652,7 @@
    "name": "Blighted Forest Part B",
    "tile": [
     9,
-    2
-   ],
-   "item": "maxrevive",
-   "n": 2,
-   "tier": 7
-  },
-  {
-   "section": "161",
-   "name": "Blighted Forest Part B",
-   "tile": [
-    12,
-    13
+    3
    ],
    "item": "fullgel",
    "n": 3,
@@ -5795,7 +5663,7 @@
    "name": "Edge of the Void",
    "tile": [
     10,
-    13
+    9
    ],
    "item": "maxrevive",
    "n": 2,
@@ -5805,8 +5673,8 @@
    "section": "163",
    "name": "Seedmother's Grove",
    "tile": [
-    9,
-    12
+    8,
+    10
    ],
    "item": "maxrevive",
    "n": 2,
@@ -5816,8 +5684,8 @@
    "section": "863",
    "name": "Fragment Lane Homes",
    "tile": [
-    16,
-    1
+    7,
+    2
    ],
    "item": "maxrevive",
    "n": 2,
@@ -5827,8 +5695,8 @@
    "section": "864",
    "name": "Fragment Quiet Court",
    "tile": [
-    22,
-    14
+    20,
+    13
    ],
    "item": "maxrevive",
    "n": 2,
@@ -5839,7 +5707,7 @@
    "name": "Seedfall Farmstead",
    "tile": [
     11,
-    14
+    13
    ],
    "item": "ether",
    "n": 5,
@@ -5849,7 +5717,7 @@
    "section": "849",
    "name": "Crystal Crossroads",
    "tile": [
-    1,
+    3,
     12
    ],
    "item": "fullgel",
@@ -5860,8 +5728,8 @@
    "section": "849",
    "name": "Crystal Crossroads",
    "tile": [
-    22,
-    1
+    21,
+    3
    ],
    "item": "maxrevive",
    "n": 2,
@@ -5871,7 +5739,7 @@
    "section": "850",
    "name": "Glasswood Junction",
    "tile": [
-    1,
+    3,
     12
    ],
    "item": "fullgel",
@@ -5882,8 +5750,8 @@
    "section": "850",
    "name": "Glasswood Junction",
    "tile": [
-    1,
-    13
+    5,
+    9
    ],
    "item": "singularity",
    "n": 2,
@@ -5893,8 +5761,8 @@
    "section": "851",
    "name": "Void Fork",
    "tile": [
-    1,
-    14
+    2,
+    13
    ],
    "item": "ether",
    "n": 5,
@@ -5904,8 +5772,8 @@
    "section": "851",
    "name": "Void Fork",
    "tile": [
-    19,
-    14
+    18,
+    13
    ],
    "item": "maxrevive",
    "n": 2,
@@ -5915,8 +5783,8 @@
    "section": "852",
    "name": "Shard Slope",
    "tile": [
-    22,
-    10
+    18,
+    12
    ],
    "item": "ether",
    "n": 5,
@@ -5926,7 +5794,7 @@
    "section": "852",
    "name": "Shard Slope",
    "tile": [
-    3,
+    7,
     7
    ],
    "item": "fullgel",
@@ -5937,7 +5805,7 @@
    "section": "853",
    "name": "Red Sun Overlook",
    "tile": [
-    19,
+    15,
     12
    ],
    "item": "fullgel",
@@ -5948,7 +5816,7 @@
    "section": "853",
    "name": "Red Sun Overlook",
    "tile": [
-    19,
+    17,
     3
    ],
    "item": "singularity",
@@ -5959,7 +5827,7 @@
    "section": "854",
    "name": "Still Crystal Pool",
    "tile": [
-    16,
+    15,
     9
    ],
    "item": "maxrevive",
@@ -5970,7 +5838,7 @@
    "section": "854",
    "name": "Still Crystal Pool",
    "tile": [
-    14,
+    13,
     2
    ],
    "item": "maxrevive",
@@ -5981,8 +5849,8 @@
    "section": "855",
    "name": "Glasswood Hollows",
    "tile": [
-    1,
-    14
+    2,
+    13
    ],
    "item": "singularity",
    "n": 2,
@@ -5993,7 +5861,7 @@
    "name": "Glasswood Hollows",
    "tile": [
     21,
-    1
+    5
    ],
    "item": "singularity",
    "n": 2,
@@ -6003,8 +5871,8 @@
    "section": "856",
    "name": "Void Crack Bend",
    "tile": [
-    5,
-    9
+    6,
+    11
    ],
    "item": "ether",
    "n": 5,
@@ -6014,8 +5882,8 @@
    "section": "856",
    "name": "Void Crack Bend",
    "tile": [
-    19,
-    8
+    17,
+    6
    ],
    "item": "singularity",
    "n": 2,
@@ -6026,7 +5894,7 @@
    "name": "Seedmother Flats",
    "tile": [
     21,
-    2
+    3
    ],
    "item": "dust",
    "n": 2500,
@@ -6036,8 +5904,8 @@
    "section": "857",
    "name": "Seedmother Flats",
    "tile": [
-    20,
-    7
+    19,
+    6
    ],
    "item": "singularity",
    "n": 2,
@@ -6048,7 +5916,7 @@
    "name": "Ystra Secret Grove",
    "tile": [
     18,
-    1
+    2
    ],
    "item": "singularity",
    "n": 2,
@@ -6069,8 +5937,8 @@
    "section": "845",
    "name": "Shardheart Cave Entrance",
    "tile": [
-    4,
-    7
+    7,
+    8
    ],
    "item": "dust",
    "n": 2500,
@@ -6080,8 +5948,8 @@
    "section": "845",
    "name": "Shardheart Cave Entrance",
    "tile": [
-    20,
-    11
+    19,
+    12
    ],
    "item": "dust",
    "n": 2500,
@@ -6091,8 +5959,8 @@
    "section": "846",
    "name": "Shardheart Cave 1F",
    "tile": [
-    20,
-    13
+    19,
+    12
    ],
    "item": "singularity",
    "n": 2,
@@ -6102,8 +5970,8 @@
    "section": "847",
    "name": "Shardheart Cave B1",
    "tile": [
-    21,
-    4
+    12,
+    5
    ],
    "item": "fullgel",
    "n": 3,
@@ -6113,7 +5981,7 @@
    "section": "847",
    "name": "Shardheart Cave B1",
    "tile": [
-    14,
+    13,
     10
    ],
    "item": "fullgel",
@@ -6135,7 +6003,7 @@
    "section": "842",
    "name": "Ancient Crystal Ring",
    "tile": [
-    1,
+    2,
     9
    ],
    "item": "dust",
@@ -6146,8 +6014,8 @@
    "section": "867",
    "name": "Ystra Spaceport",
    "tile": [
-    21,
-    9
+    20,
+    8
    ],
    "item": "dust",
    "n": 2500,
@@ -6157,8 +6025,8 @@
    "section": "908",
    "name": "Abandoned Dwelling",
    "tile": [
-    7,
-    10
+    13,
+    8
    ],
    "item": "ether",
    "n": 5,
@@ -6168,8 +6036,8 @@
    "section": "913",
    "name": "Crystal Lake",
    "tile": [
-    1,
-    9
+    5,
+    3
    ],
    "item": "dust",
    "n": 2500,
@@ -6179,40 +6047,18 @@
    "section": "913",
    "name": "Crystal Lake",
    "tile": [
-    3,
-    14
+    17,
+    3
    ],
    "item": "maxrevive",
    "n": 2,
    "tier": 7
   },
   {
-   "section": "914",
-   "name": "Crystal Lake Islands",
-   "tile": [
-    1,
-    9
-   ],
-   "item": "ether",
-   "n": 5,
-   "tier": 7
-  },
-  {
-   "section": "914",
-   "name": "Crystal Lake Islands",
-   "tile": [
-    3,
-    14
-   ],
-   "item": "fullgel",
-   "n": 3,
-   "tier": 7
-  },
-  {
    "section": "910",
    "name": "Ystra Relay Tower",
    "tile": [
-    20,
+    11,
     8
    ],
    "item": "ether",

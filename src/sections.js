@@ -22,8 +22,12 @@ function secMonAt(s,x,y){return(s.mons||[]).find(m=>m.x===x&&m.y===y&&!(G.monGon
 // the section and tile you'd stand on if you stepped from (x,y) in direction d (crossing a seamless edge if needed)
 function secAhead(s,x,y,d){const[dx,dy]=DIRS[d],nx=x+dx,ny=y+dy;if(secTile(s,nx,ny)!==null)return{s,x:nx,y:ny};
  const side=dx>0?'right':dx<0?'left':dy>0?'bottom':'top',e=s.edges[side],along=dx?y:x;
- if(!e||along<e.range[0]||along>e.range[1])return null;if(e.to==='arrival')return{arrival:true,side};const t=SWORLD[e.to];if(!t)return null;
- const k=along+(e.offset||0);return side==='right'?{s:t,x:0,y:k}:side==='left'?{s:t,x:t.tiles[0]-1,y:k}:side==='bottom'?{s:t,x:k,y:0}:{s:t,x:k,y:t.tiles[1]-1}}
+ if(!e)return null;const out=along<e.range[0]?e.range[0]-along:along>e.range[1]?along-e.range[1]:0;if(out>3)return null;   // a few rows past the opening still cross (art roads run wider than the plan)
+ if(e.to==='arrival')return out?null:{arrival:true,side};const t=SWORLD[e.to];if(!t)return null;
+ const at=k=>side==='right'?{s:t,x:0,y:k}:side==='left'?{s:t,x:t.tiles[0]-1,y:k}:side==='bottom'?{s:t,x:k,y:0}:{s:t,x:k,y:t.tiles[1]-1},ok=p=>{const c=secTile(p.s,p.x,p.y);return c==='.'||c===','||c===':'||fluidOK(c)};
+ const k0=along+(e.offset||0),first=at(k0);if(!out&&ok(first))return first;
+ for(let d=1;d<=out+3+e.range[1]-e.range[0];d++)for(const k of[k0-d,k0+d]){const a=k-(e.offset||0);if(a<e.range[0]||a>e.range[1])continue;const p=at(k);if(ok(p))return p}   // slide onto the nearest open tile of the crossing
+ return out?null:first}
 function secPrefetch(id){const s=SWORLD[id];if(!s)return;SECI[id];if(s.over)SECOVI[id];const g=(G&&G.gender)||'boy';for(const f of['down','up','left','right'])CHI[g+'_'+f];for(const n of s.npcs||[])CHI[n.art];for(const e of Object.values(s.edges))if(SWORLD[e.to])SECI[e.to];for(const w of s.warps)SECI[w.to]}
 function enterSection(id,at,f,quiet){const prev=G.sec&&G.sec.id;G.sec={id,x:at[0],y:at[1]};if(f)face=f;SM=null;SJ=null;SJBUF=0;SSPOT=null;secPrefetch(id);secVisit(id);storyEnter(id);
  const s=SWORLD[id];if(!quiet&&(!prev||!SWORLD[prev]||SWORLD[prev].name!==s.name))SBANNER=100}
