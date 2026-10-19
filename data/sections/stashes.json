@@ -334,8 +334,8 @@
    "section": "472",
    "name": "Dustmere Farmstead",
    "tile": [
-    8,
-    13
+    2,
+    12
    ],
    "item": "stasis",
    "n": 3,
@@ -721,8 +721,8 @@
    "section": "507",
    "name": "Rustvale Farmstead",
    "tile": [
-    3,
-    7
+    21,
+    13
    ],
    "item": "gel",
    "n": 2,
@@ -1130,8 +1130,8 @@
    "section": "730",
    "name": "Mirefen Farmstead",
    "tile": [
-    11,
-    12
+    5,
+    9
    ],
    "item": "dust",
    "n": 300,
@@ -1473,8 +1473,8 @@
    "section": "801",
    "name": "Saltreach Farmstead",
    "tile": [
-    17,
-    5
+    20,
+    12
    ],
    "item": "megagel",
    "n": 1,
@@ -1849,8 +1849,8 @@
    "section": "664",
    "name": "Neonis Farmstead Edge",
    "tile": [
-    15,
-    11
+    2,
+    12
    ],
    "item": "stun",
    "n": 2,
@@ -2247,7 +2247,7 @@
    "section": "568",
    "name": "Dig Camp Farmstead",
    "tile": [
-    12,
+    21,
     13
    ],
    "item": "dust",
@@ -2733,8 +2733,8 @@
    "section": "698",
    "name": "Cinder Hollow Farmstead",
    "tile": [
-    11,
-    13
+    2,
+    12
    ],
    "item": "megagel",
    "n": 3,
@@ -3153,8 +3153,8 @@
    "section": "539",
    "name": "Frostmark Farmstead",
    "tile": [
-    2,
-    5
+    21,
+    13
    ],
    "item": "megagel",
    "n": 3,
@@ -4314,8 +4314,8 @@
    "section": "838",
    "name": "Umbra Farmstead Edge",
    "tile": [
-    9,
-    10
+    2,
+    12
    ],
    "item": "fullgel",
    "n": 3,
@@ -4822,8 +4822,8 @@
    "section": "765",
    "name": "Starfall Farmstead Edge",
    "tile": [
-    11,
-    13
+    20,
+    11
    ],
    "item": "fullgel",
    "n": 3,
@@ -5177,7 +5177,7 @@
    "name": "Summit Farmstead",
    "tile": [
     2,
-    4
+    12
    ],
    "item": "maxrevive",
    "n": 2,
@@ -5706,7 +5706,7 @@
    "section": "865",
    "name": "Seedfall Farmstead",
    "tile": [
-    11,
+    21,
     13
    ],
    "item": "ether",

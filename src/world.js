@@ -85,7 +85,9 @@ function nurseTip(){const q=QUESTS.find(q=>q.type==='main'&&G.quests&&G.quests[q
 
 // one-off story beats tied to stages
 function worldBeats(){if(!G||!G.quests)return;grantModules();
- if(mDone('M05')&&!G.flags.ship_clear){G.flags.ship_clear=1;qNotify('M05','ship',[WSTATE.ship.grant_text])}
+ if(mDone('M05')&&!G.flags.ship_clear){G.flags.ship_clear=1;   // Hank hands over Nana Wren's ship: the hangar picture, then his line
+  if(typeof CUTQ!=='undefined'&&SCN.hangar)CUTQ.push({k:'hangar',cap:"Nana Wren's starship",lines:['Hank leads you behind the Relay Tower to his hangar and pulls a dusty tarp off something big.','Underneath sits a little round starship: cream-coloured, pink engines, a bubble cockpit.',"It's Nana Wren's ship."]});
+  qNotify('M05','ship',[WSTATE.ship.grant_text])}
  const F=PAINT.fortress;if(F){const post=mDone('M19');F.town=post?'Reclaimed Forge':'Helix Forge Fortress';
   if(post&&!F.hot.some(h=>h.k==='shop'))F.hot.push({x:600,y:560,r:24,k:'shop',hint:"Grub's shop",art:'grub',draw:true})}}
 

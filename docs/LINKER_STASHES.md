@@ -39,7 +39,7 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 | 023 Frontier: Fortress Gate | 7,9 | 2x Ether Gel | 4 |
 | 027 Frontier: Shadow Tunnel Mouth | 15,9 | 5x Harmonic Pod | 4 |
 | 028 Frontier: Magma Mines Gate | 11,4 | 1x Full Gel | 4 |
-| 472 Dustmere Farmstead | 8,13 | 3x Stasis Pod | 1 |
+| 472 Dustmere Farmstead | 2,12 | 3x Stasis Pod | 1 |
 | 470 Dustmere Lane Homes | 17,7 | 3x Stasis Pod | 1 |
 | 447 Oasis Fork | 17,3 | 2x Med Gel | 1 |
 | 447 Oasis Fork | 7,12 | 150x Stardust | 1 |
@@ -79,7 +79,7 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 | 030 Rustvale | 10,12 | 2x Med Gel | 1 |
 | 505 Rustvale Lane Homes | 17,12 | 1x Revive Spark | 1 |
 | 506 Rustvale Quiet Court | 21,5 | 1x Revive Spark | 1 |
-| 507 Rustvale Farmstead | 3,7 | 2x Med Gel | 1 |
+| 507 Rustvale Farmstead | 21,13 | 2x Med Gel | 1 |
 | 485 Scrapyard Crossing | 5,12 | 3x Stasis Pod | 1 |
 | 485 Scrapyard Crossing | 15,2 | 2x Cure Spray | 1 |
 | 489 Crane Overlook | 20,13 | 2x Cure Spray | 1 |
@@ -121,7 +121,7 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 | 047 Mushroom Maze | 6,12 | 300x Stardust | 2 |
 | 728 Mirefen Lane Homes | 6,8 | 300x Stardust | 2 |
 | 729 Mirefen Quiet Court | 2,9 | 5x Stasis Pod | 2 |
-| 730 Mirefen Farmstead | 11,12 | 300x Stardust | 2 |
+| 730 Mirefen Farmstead | 5,9 | 300x Stardust | 2 |
 | 711 Mushroom Crossroads | 19,6 | 1x Signal Jammer | 2 |
 | 711 Mushroom Crossroads | 5,3 | 300x Stardust | 2 |
 | 715 Sporecap Overlook | 20,9 | 3x Med Gel | 2 |
@@ -157,7 +157,7 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 | 053 Saltreach Market | 16,6 | 1x Mega Gel | 2 |
 | 803 Thalassa Spaceport | 7,6 | 1x Signal Jammer | 2 |
 | 800 Saltreach Quiet Court | 21,9 | 1x Mega Gel | 2 |
-| 801 Saltreach Farmstead | 17,5 | 1x Mega Gel | 2 |
+| 801 Saltreach Farmstead | 20,12 | 1x Mega Gel | 2 |
 | 776 Boardwalk Crossing | 3,5 | 1x Mega Gel | 2 |
 | 776 Boardwalk Crossing | 6,11 | 2x Cure Spray | 2 |
 | 790 Saltreach Secret Grove | 16,2 | 5x Stasis Pod | 2 |
@@ -196,7 +196,7 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 | 066 Arcade Alleys | 8,4 | 500x Stardust | 3 |
 | 666 Neonis Spaceport | 5,3 | 500x Stardust | 3 |
 | 663 Neonis Quiet Court | 2,4 | 3x Harmonic Pod | 3 |
-| 664 Neonis Farmstead Edge | 15,11 | 2x Stun Spray | 3 |
+| 664 Neonis Farmstead Edge | 2,12 | 2x Stun Spray | 3 |
 | 644 Signal Junction | 7,3 | 2x Stun Spray | 3 |
 | 644 Signal Junction | 8,13 | 2x Revive Spark | 3 |
 | 647 Skyline Overlook | 21,9 | 2x Mega Gel | 3 |
@@ -237,7 +237,7 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 | 077 Glyph Hollow | 9,10 | 2x Mega Gel | 3 |
 | 077 Glyph Hollow | 13,4 | 3x Harmonic Pod | 3 |
 | 566 Dig Camp Lane Homes | 15,6 | 500x Stardust | 3 |
-| 568 Dig Camp Farmstead | 12,13 | 500x Stardust | 3 |
+| 568 Dig Camp Farmstead | 21,13 | 500x Stardust | 3 |
 | 567 Dig Camp Quiet Court | 21,9 | 1x Ether Gel | 3 |
 | 552 Ruin Crossroads | 7,10 | 500x Stardust | 3 |
 | 552 Ruin Crossroads | 20,9 | 3x Harmonic Pod | 3 |
@@ -286,7 +286,7 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 | 700 Pyros Spaceport | 5,3 | 2x Ether Gel | 4 |
 | 696 Cinder Hollow Lane Homes | 8,6 | 2x Ether Gel | 4 |
 | 697 Cinder Hollow Quiet Court | 2,9 | 3x Mega Gel | 4 |
-| 698 Cinder Hollow Farmstead | 11,13 | 3x Mega Gel | 4 |
+| 698 Cinder Hollow Farmstead | 2,12 | 3x Mega Gel | 4 |
 | 677 Basalt Crossroads | 19,11 | 3x Mega Gel | 4 |
 | 677 Basalt Crossroads | 21,4 | 3x Mega Gel | 4 |
 | 678 Mine Junction | 21,12 | 3x Mega Gel | 4 |
@@ -329,7 +329,7 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 | 541 Glacia Spaceport | 8,11 | 800x Stardust | 4 |
 | 537 Frostmark Lane Homes | 3,9 | 2x Signal Jammer | 4 |
 | 538 Frostmark Quiet Court | 21,5 | 2x Revive Spark | 4 |
-| 539 Frostmark Farmstead | 2,5 | 3x Mega Gel | 4 |
+| 539 Frostmark Farmstead | 21,13 | 3x Mega Gel | 4 |
 | 518 Frost Crossroads | 4,11 | 2x Ether Gel | 4 |
 | 518 Frost Crossroads | 6,13 | 2x Ether Gel | 4 |
 | 519 Ice Junction | 5,12 | 1x Full Gel | 4 |
@@ -449,7 +449,7 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 | 131 The Sinkhole B3 | 13,6 | 3x Full Gel | 6 |
 | 132 The Sinkhole B4 | 2,8 | 3x Ether Gel | 6 |
 | 837 Gravewell Quiet Court | 2,9 | 1600x Stardust | 6 |
-| 838 Umbra Farmstead Edge | 9,10 | 3x Full Gel | 6 |
+| 838 Umbra Farmstead Edge | 2,12 | 3x Full Gel | 6 |
 | 840 Umbra Spaceport | 5,3 | 1600x Stardust | 6 |
 | 816 Lantern Crossroads | 4,9 | 3x Ether Gel | 6 |
 | 816 Lantern Crossroads | 3,2 | 3x Full Gel | 6 |
@@ -500,7 +500,7 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 | 767 Starfall Spaceport | 18,11 | 1x Max Revive | 6 |
 | 763 Starfall Lane Homes | 9,11 | 1x Max Revive | 6 |
 | 764 Starfall Quiet Court | 21,9 | 3x Ether Gel | 6 |
-| 765 Starfall Farmstead Edge | 11,13 | 3x Full Gel | 6 |
+| 765 Starfall Farmstead Edge | 20,11 | 3x Full Gel | 6 |
 | 745 Crater Crossroads | 5,9 | 3x Ether Gel | 6 |
 | 745 Crater Crossroads | 20,3 | 1x Singularity Pod | 6 |
 | 746 Seedpod Junction | 16,4 | 3x Ether Gel | 6 |
@@ -537,7 +537,7 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 | 434 Apex Spaceport | 5,7 | 2500x Stardust | 7 |
 | 430 Summit Lane Homes | 7,6 | 2x Max Revive | 7 |
 | 431 Stargazer Quiet Court | 2,4 | 2500x Stardust | 7 |
-| 432 Summit Farmstead | 2,4 | 2x Max Revive | 7 |
+| 432 Summit Farmstead | 2,12 | 2x Max Revive | 7 |
 | 411 Summit Crossroads | 17,12 | 2500x Stardust | 7 |
 | 411 Summit Crossroads | 20,5 | 2500x Stardust | 7 |
 | 412 Observatory Junction | 22,13 | 2x Max Revive | 7 |
@@ -590,7 +590,7 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 | 163 Seedmother's Grove | 8,10 | 2x Max Revive | 7 |
 | 863 Fragment Lane Homes | 7,2 | 2x Max Revive | 7 |
 | 864 Fragment Quiet Court | 20,13 | 2x Max Revive | 7 |
-| 865 Seedfall Farmstead | 11,13 | 5x Ether Gel | 7 |
+| 865 Seedfall Farmstead | 21,13 | 5x Ether Gel | 7 |
 | 849 Crystal Crossroads | 3,12 | 3x Full Gel | 7 |
 | 849 Crystal Crossroads | 21,3 | 2x Max Revive | 7 |
 | 850 Glasswood Junction | 3,12 | 3x Full Gel | 7 |
