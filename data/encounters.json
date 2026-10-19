@@ -8088,6 +8088,54 @@
     ],
     "method": "walk",
     "time": "any"
+   },
+   {
+    "n": 58,
+    "name": "Bogeel",
+    "types": [
+     "Hydro",
+     "Toxin"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     2,
+     6
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 74,
+    "name": "Drippit",
+    "types": [
+     "Toxin",
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     2,
+     6
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 75,
+    "name": "Goozilla",
+    "types": [
+     "Toxin",
+     "Hydro"
+    ],
+    "rarity": "uncommon",
+    "weight": 3,
+    "levels": [
+     2,
+     6
+    ],
+    "method": "surf",
+    "time": "any"
    }
   ]
  },
@@ -8338,6 +8386,54 @@
      6
     ],
     "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 58,
+    "name": "Bogeel",
+    "types": [
+     "Hydro",
+     "Toxin"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     2,
+     6
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 74,
+    "name": "Drippit",
+    "types": [
+     "Toxin",
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     2,
+     6
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 75,
+    "name": "Goozilla",
+    "types": [
+     "Toxin",
+     "Hydro"
+    ],
+    "rarity": "uncommon",
+    "weight": 3,
+    "levels": [
+     2,
+     6
+    ],
+    "method": "surf",
     "time": "any"
    }
   ]
@@ -16704,6 +16800,22 @@
     ],
     "method": "surf",
     "time": "any"
+   },
+   {
+    "n": 309,
+    "name": "The Old One",
+    "types": [
+     "Hydro",
+     "Void"
+    ],
+    "rarity": "rare",
+    "weight": 1,
+    "levels": [
+     26,
+     30
+    ],
+    "method": "surf",
+    "time": "any"
    }
   ]
  },
@@ -17039,6 +17151,22 @@
     "levels": [
      15,
      19
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 309,
+    "name": "The Old One",
+    "types": [
+     "Hydro",
+     "Void"
+    ],
+    "rarity": "rare",
+    "weight": 1,
+    "levels": [
+     27,
+     31
     ],
     "method": "surf",
     "time": "any"
@@ -24425,6 +24553,54 @@
     "method": "walk",
     "time": "any",
     "fill": true
+   },
+   {
+    "n": 166,
+    "name": "Floepup",
+    "types": [
+     "Cryo",
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     28,
+     32
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 167,
+    "name": "Floelord",
+    "types": [
+     "Cryo",
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     28,
+     32
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 75,
+    "name": "Goozilla",
+    "types": [
+     "Toxin",
+     "Hydro"
+    ],
+    "rarity": "uncommon",
+    "weight": 3,
+    "levels": [
+     28,
+     32
+    ],
+    "method": "surf",
+    "time": "any"
    }
   ]
  },
@@ -25074,6 +25250,54 @@
      35
     ],
     "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 166,
+    "name": "Floepup",
+    "types": [
+     "Cryo",
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     31,
+     35
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 167,
+    "name": "Floelord",
+    "types": [
+     "Cryo",
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     31,
+     35
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 75,
+    "name": "Goozilla",
+    "types": [
+     "Toxin",
+     "Hydro"
+    ],
+    "rarity": "uncommon",
+    "weight": 3,
+    "levels": [
+     31,
+     35
+    ],
+    "method": "surf",
     "time": "any"
    }
   ]
@@ -40604,6 +40828,22 @@
     ],
     "method": "surf",
     "time": "any"
+   },
+   {
+    "n": 309,
+    "name": "The Old One",
+    "types": [
+     "Hydro",
+     "Void"
+    ],
+    "rarity": "rare",
+    "weight": 1,
+    "levels": [
+     26,
+     30
+    ],
+    "method": "surf",
+    "time": "any"
    }
   ]
  },
@@ -40796,6 +41036,22 @@
     "levels": [
      13,
      18
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 309,
+    "name": "The Old One",
+    "types": [
+     "Hydro",
+     "Void"
+    ],
+    "rarity": "rare",
+    "weight": 1,
+    "levels": [
+     26,
+     30
     ],
     "method": "surf",
     "time": "any"
@@ -42911,6 +43167,200 @@
     "levels": [
      55,
      59
+    ],
+    "method": "surf",
+    "time": "any"
+   }
+  ]
+ },
+ "768": {
+  "planet": "Thalassa",
+  "name": "Tidewater Arena",
+  "habitat": "coast",
+  "encounters": [
+   {
+    "n": 98,
+    "name": "Galecry",
+    "types": [
+     "Sonic"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     17,
+     19
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 281,
+    "name": "Chronocrick",
+    "types": [
+     "Sonic",
+     "Swarm"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     17,
+     19
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 288,
+    "name": "Rustlit",
+    "types": [
+     "Bio",
+     "Sonic"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     15,
+     17
+    ],
+    "method": "walk",
+    "time": "day x2"
+   },
+   {
+    "n": 289,
+    "name": "Rustlegrove",
+    "types": [
+     "Bio",
+     "Sonic"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     17,
+     19
+    ],
+    "method": "walk",
+    "time": "day x2"
+   },
+   {
+    "n": 92,
+    "name": "Barnacub",
+    "types": [
+     "Hydro"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     15,
+     19
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
+   },
+   {
+    "n": 76,
+    "name": "Bubbub",
+    "types": [
+     "Hydro"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     15,
+     19
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
+   },
+   {
+    "n": 306,
+    "name": "Brineback",
+    "types": [
+     "Hydro",
+     "Bio"
+    ],
+    "rarity": "uncommon",
+    "weight": 4,
+    "levels": [
+     15,
+     19
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 307,
+    "name": "Fiddlesnap",
+    "types": [
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     15,
+     19
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 308,
+    "name": "Squidmiral",
+    "types": [
+     "Hydro",
+     "Psi"
+    ],
+    "rarity": "uncommon",
+    "weight": 4,
+    "levels": [
+     15,
+     19
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 307,
+    "name": "Fiddlesnap",
+    "types": [
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     15,
+     19
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 76,
+    "name": "Bubbub",
+    "types": [
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     15,
+     19
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 92,
+    "name": "Barnacub",
+    "types": [
+     "Hydro"
+    ],
+    "rarity": "uncommon",
+    "weight": 3,
+    "levels": [
+     15,
+     19
     ],
     "method": "surf",
     "time": "any"

@@ -120,13 +120,13 @@ function nickMenu(){choose('Nickname which Alienmon?',G.party.map(m=>nm(m)).conc
 
 // key items: their own Bag entries; can't be used up, sold or thrown away
 const KEY_DESC={helix_keycard:'Opens the Fortress Shuttle Pad to Helix Station.',ystra_shardlet:'A sliver of Ystra that hums near the Heartroot.',seedmother_seed:'A seed from the new world-tree of the Seedmother.',
- grapple_line:'Linker module: reach cliff ledges and shortcuts.',hydro_skiff:'Linker module: cross deep water.',heat_shield:'Linker module: walk lava-crossing shortcuts.',
+ grapple_line:'Linker module: reach cliff ledges and shortcuts.',hydro_skiff:'Splodge the Bubbub carries you across deep water in its bubble.',heat_shield:'Linker module: walk lava-crossing shortcuts.',
  lumen_beacon:'Linker module: light dark caves.',gravity_lift:'Linker module: ride floating platforms.'};
-const KEY_NAME={helix_keycard:'Helix Keycard',ystra_shardlet:'Ystra Shardlet',seedmother_seed:'Seedmother Seed',grapple_line:'Grapple Line',hydro_skiff:'Hydro-skiff',heat_shield:'Heat Shield',lumen_beacon:'Lumen Beacon',gravity_lift:'Gravity Lift'};
+const KEY_NAME={helix_keycard:'Helix Keycard',ystra_shardlet:'Ystra Shardlet',seedmother_seed:'Seedmother Seed',grapple_line:'Grapple Line',hydro_skiff:'Bubbub Ride',heat_shield:'Heat Shield',lumen_beacon:'Lumen Beacon',gravity_lift:'Gravity Lift'};
 const keyList=()=>Object.keys(G.key||{}).filter(k=>G.key[k]&&k!=='stowaway').map(k=>({kind:'key',k,n:KEY_NAME[k]||k,c:1,d:KEY_DESC[k]||'A key item.'}));
 // Linker Modules arrive with Signal Shards (they open optional areas only, never the main story)
 const MODULES=[[2,'grapple_line'],[4,'hydro_skiff'],[5,'heat_shield'],[6,'lumen_beacon'],[7,'gravity_lift']];
-function grantModules(){G.key=G.key||{};for(const[s,k]of MODULES)if(G.shards>=s&&!G.key[k]){G.key[k]=1;qNotify('MOD','module',['Your Linker resonates with the Shards. New module: '+KEY_NAME[k]+'!',KEY_DESC[k]])}if(typeof extrasBeats==='function')extrasBeats()}
+function grantModules(){G.key=G.key||{};for(const[s,k]of MODULES)if(G.shards>=s&&!G.key[k]){G.key[k]=1;qNotify('MOD','module',k==='hydro_skiff'?['Your Linker buzzes. A message from Mina at the harbor!',"Mina: Splodge won't stop bouncing! He wants to give you rides. Just walk out onto deep water and he'll come carry you, as long as you don't pop him.",'You can now ride Splodge the Bubbub across deep water!']:['Your Linker resonates with the Shards. New module: '+KEY_NAME[k]+'!',KEY_DESC[k]])}if(typeof extrasBeats==='function')extrasBeats()}
 
 // autosave after story steps and Signal Shards (never mid-battle)
 function autosave(){if(!G||!G.party||!G.party.length)return;if(scene==='battle'||CUT){G._as=1;return}G._as=0;if(save())toast('Saved')}
