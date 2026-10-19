@@ -37,9 +37,11 @@ function storyThen(q,t){if(!t||!storyIf(t.if))return;const L=(t.lines||[]).slice
  for(const[k,n]of Object.entries(t.items||{})){if(KEY_ITEMS[k]){G.key[k]=1;L.push('You received '+KEY_ITEMS[k]+'!')}else if(k in G.pods){G.pods[k]+=n;L.push('You received '+n+'x '+itemName(k)+'!')}else{G.items[k]=(G.items[k]||0)+n;L.push('You received '+n+'x '+itemName(k)+'!')}}
  if(t.gift&&IDX[t.gift.name]!=null){const m=mk(IDX[t.gift.name],t.gift.lv||10);if(t.gift.nick)m.nick=t.gift.nick;const w=addMon(m);L.push(t.gift.name+' joined '+(w==='party'?'your team':'your Storage')+'!')}
  if(t.evolve==='starter'){const ln=starterLine(myStarter()),top=IDX[ln[2]],m=G.party.concat(G.box).find(m=>ln.includes(D[m.id].name));
-  if(m&&m.id!==top){const was=nm(m);m.id=top;if(!m.nick){}m.hp=stat(m,0);G.seen[top]=G.caught[top]=1;L.push('...'+was+' is glowing!',was+' evolved into '+D[top].name+'!')}}
+  if(m&&m.id!==top){const was=nm(m),from=m.id;m.id=top;m.hp=stat(m,0);G.seen[top]=G.caught[top]=1;L.push('...'+was+' is glowing!');
+   QEVO={q:q.id,kind:'evo',evo:[from,top,m.pri],lines:[was+' evolved into '+D[top].name+'!']}}}
  if(t.go&&SWORLD[t.go]){const g=SWORLD[t.go],go=()=>{G.sub=null;G.secBack=null;const p=pidx(g.pkey);if(p>=0)G.planet=p;enterSection(g.id,g.spawns.arrival||g.spawns.default,'down');scene='planet';PREV='planet'};if(secOn())SFADE={t:0,go};else go()}   // walk through to another place (the Vortex to Ystra)
- if(L.length)QN.push({q:q.id,kind:'then',lines:L.map(qFmt),art:t.art})}
+ if(L.length)QN.push({q:q.id,kind:'then',lines:L.map(qFmt),art:t.art});if(QEVO){QN.push(QEVO);QEVO=null}}
+let QEVO=null;   // a story evolution plays its animation after the lines that lead up to it
 
 /* ---- section scenes: walk in at the right moment and the scene plays once ---- */
 function storyWhen(w){if(!w)return true;if(w.active){const q=QI[w.active];if(!q||qs(w.active).state!=='active')return false;if(w.step!=null&&qs(w.active).step!==w.step)return false}

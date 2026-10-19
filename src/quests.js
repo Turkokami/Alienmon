@@ -123,7 +123,7 @@ function qPicFlush(){if(G&&!(G.seenCut&&G.seenCut._intro)&&G.quests&&qs('M01').s
  if(!CUTQ.length||DLG||CH||!(scene==='planet'||scene==='world')||(typeof SFADE!=='undefined'&&SFADE))return false;
  const c=CUTQ[0];if(okI(boardImg(c.k))){CUTQ.shift();cutBoard([[c.k,[/[.!?…]$/.test(c.cap)?c.cap:c.cap+'.'].concat(c.lines||[])]],()=>{});return true}
  if((c.wait=(c.wait||0)+1)>240)CUTQ.shift();return true}   // give the picture ~4 s to download, else skip it
-function qFlush(){if(qPicFlush())return;if(QN.length&&!DLG&&!CH&&(scene==='planet'||scene==='world')&&!(typeof SFADE!=='undefined'&&SFADE)&&!(typeof SM!=='undefined'&&SM)){const m=QN.shift();const giver=QI[m.q]&&QI[m.q].giver;say(m.lines,null,m.art||giver&&giver.art||undefined)}}
+function qFlush(){if(qPicFlush())return;if(QN.length&&!DLG&&!CH&&(scene==='planet'||scene==='world')&&!(typeof SFADE!=='undefined'&&SFADE)&&!(typeof SM!=='undefined'&&SM)){const m=QN.shift();if(m.evo&&typeof evoAnimIds==='function'){evoAnimIds(m.evo[0],m.evo[1],m.evo[2],()=>say(m.lines));return}const giver=QI[m.q]&&QI[m.q].giver;say(m.lines,null,m.art||giver&&giver.art||undefined)}}
 
 /* ---- quest log text ---- */
 function qText(q){const s=qs(q.id),o=qObj(q);if(!o)return'Done';const l=qLoc(q.id,s.step,o.location)||{},spot=l.spot||'',c=o.count||1,cnt=c>1?' ('+s.n+'/'+c+')':'',t=o.target||'';
