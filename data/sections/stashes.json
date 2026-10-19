@@ -1029,8 +1029,8 @@
    "section": "495",
    "name": "Rustvale Back Lot",
    "tile": [
-    5,
-    9
+    7,
+    10
    ],
    "item": "stasis",
    "n": 3,
