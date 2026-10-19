@@ -143,7 +143,7 @@ function keeperTeam(key,k){const t=PROG.keepers[key];if(!t)return k.team;const b
 function trainerLevels(key){const a=PROG.areas[key];return a&&a.trainer_levels?a.trainer_levels:null}
 function payout(tr,e){const ev=typeof evMul==='function'?evMul('dust'):1;if(!tr)return ri(2,6)*ev;const lv=Math.max(...tr.team.map(x=>x[1]));return(tr.shard?60*lv:20*lv)*ev}
 // shop stock grows with Signal Shards
-const SHOP_TIERS=[[0,['stasis','gel','cure']],[1,['tether','stun']],[2,['harmonic','megagel','ether','jammer']],[3,['revive']],[5,['fullgel']],[6,['singularity']],[8,['maxrevive']]];
+const SHOP_TIERS=[[0,['stasis','gel','cure','revive']],[1,['tether','stun']],[2,['harmonic','megagel','ether','jammer']],[5,['fullgel']],[6,['singularity']],[8,['maxrevive']]];
 const SHOP_PRICE={ether:60,jammer:35,stasis:50,gel:15,cure:20,tether:30,stun:30,harmonic:150,megagel:45,revive:80,fullgel:120,singularity:400,maxrevive:300};
 const shopOpen=k=>SHOP_TIERS.some(([s,ks])=>ks.includes(k)&&(G.shards||0)>=s);
 
