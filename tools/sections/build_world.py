@@ -918,14 +918,21 @@ def repair(sid, sec):
         pts_bad = [p for p, adj in use_pts if not (p in seen or (adj and any((p[0] + dx, p[1] + dy) in seen for dx, dy in N4)))]
         return out, pts_bad
 
+    # nobody stands in a narrow strip (a 2-3 tile shore or lane): they line up in single file and wall the player in
+    N8 = [(dx, dy) for dx in (-1, 0, 1) for dy in (-1, 0, 1) if dx or dy]
+    narrow = lambda p, occ: sum(1 for dx, dy in N8 if ground(p[0] + dx, p[1] + dy) and (p[0] + dx, p[1] + dy) not in occ) < 6 or any((p[0] + dx, p[1] + dy) in occ - fixed for dx, dy in N8)   # ...or right beside someone else
+    left_crowded = set()
+
     reserved = {p for p, _ in use_pts}
-    for _ in range(60):
+    for _ in range(120):
         occ = {pos(t) for t in things} | fixed
         seen = reachable(occ)
         bad_things, bad_pts = problems(occ, seen)
         # something standing on a quest point is the first thing to move
         on_pt = [t for t in things if pos(t) in reserved or pos(t) in keys]
-        target = (on_pt or bad_things or [None])[0]
+        crowd = [t for t in things if id(t) not in left_crowded and narrow(pos(t), occ - {pos(t)})]
+        target = (on_pt or bad_things or crowd or [None])[0]
+        crowding = target is not None and not on_pt and not bad_things
         if target is None and bad_pts:
             p = bad_pts[0]   # a point walled off: move whoever stands nearest it
             target = min(things, key=lambda t: abs(pos(t)[0] - p[0]) + abs(pos(t)[1] - p[1]), default=None)
@@ -935,7 +942,7 @@ def repair(sid, sec):
         others = occ - {here}
         base_seen = reachable(others)
         base_exits = {k for k in exits if k in base_seen}
-        cands = sorted((c for c in base_seen if c not in keys and c not in reserved and c != here and ground(*c)),
+        cands = sorted((c for c in base_seen if c not in keys and c not in reserved and c != here and ground(*c) and not (crowding and narrow(c, others))),
                        key=lambda c: abs(c[0] - here[0]) + abs(c[1] - here[1]))
         moved = False
         for c in cands[:120]:
@@ -959,6 +966,10 @@ def repair(sid, sec):
             (sec['npcs'].remove(b[1]) if b[0] == 'npc' else sec['mons'].remove(b[1]) if b[0] == 'mon' else sec['objects'].remove(b[1]))
             things.remove(b)
             report['moved or dropped to keep everything reachable'].append(f"{sid} {sec['name']}: dropped {b[0]} at {pos(b)} (was crowding a quest figure)")
+            continue
+        if crowding and not target[2]:   # a named or quest figure with no open ground to go to: leave it be
+            left_crowded.add(id(target))
+            report['left in a narrow spot (no open ground)'].append(f"{sid} {sec['name']}: {target[0]} at {here}")
             continue
         if target[2]:   # a flavour townsperson, roaming Alienmon or stash with nowhere to go
             if target[0] == 'npc':
@@ -1034,6 +1045,32 @@ for sid, sec in world.items():
             if not ok(n['x'] + dx, n['y'] + dy):
                 best = max(D4, key=lambda d: sum(1 for k in range(1, 6) if all(ok(n['x'] + D4[d][0] * j, n['y'] + D4[d][1] * j) for j in range(1, k + 1))))
                 n['face'] = best
+
+# widen each join to every row where the road is open on both sides: art roads are often a tile or two wider than
+# the planned opening, and the extra rows were invisible walls (tester: "blocked from this path" at the Trading Post)
+def _rows(i):
+    cp = os.path.join(ROOT, 'data/collision', i + '.json')
+    return json.load(open(cp))['rows'] if os.path.exists(cp) else None
+for sid, sec in world.items():
+    for side, e in sec.get('edges', {}).items():
+        t_ = world.get(e.get('to'))
+        if not t_ or 'offset' not in e: continue
+        A, B = _rows(sid), _rows(e['to'])
+        if not A or not B: continue
+        (W, H), (TW, TH) = sec['tiles'], t_['tiles']
+        def both(a):
+            k = a + e['offset']
+            if side in ('left', 'right'):
+                if not (0 <= a < H and 0 <= k < TH): return False
+                return A[a][0 if side == 'left' else W - 1] in '.,:' and B[k][TW - 1 if side == 'left' else 0] in '.,:'
+            if not (0 <= a < W and 0 <= k < TW): return False
+            return A[0 if side == 'top' else H - 1][a] in '.,:' and B[TH - 1 if side == 'top' else 0][k] in '.,:'
+        lo, hi = e['range']
+        while both(lo - 1): lo -= 1
+        while both(hi + 1): hi += 1
+        if [lo, hi] != e['range']:
+            report.setdefault('joins widened to the open road', []).append(f"{sid} {side} -> {e['to']}: {e['range']} -> {[lo, hi]}")
+            e['range'] = [lo, hi]
 
 json.dump({'version': 1, 'tile': 16, 'screen_tiles': [10, 9], 'arrival': arrivals, 'quest_spots': spots, 'sections': world, 'connections': conns},
           open(os.path.join(ROOT, OUT or 'data/world.json'), 'w', encoding='utf-8'), indent=1, ensure_ascii=False)

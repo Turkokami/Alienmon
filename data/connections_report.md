@@ -15,27 +15,83 @@
 - 879 Oasis Islands: Linker
 - 879 Oasis Islands: Canyon Scout
 
-## moved or dropped to keep everything reachable (19)
+## moved or dropped to keep everything reachable (64)
 
-- 897 Lava Sea: dropped npc at (7, 12)
+- 733 Sporelake Shore: dropped stash at (2, 3) (was crowding a quest figure)
+- 733 Sporelake Shore: dropped mon at (1, 14)
+- 733 Sporelake Shore: dropped stash at (2, 14)
 - 897 Lava Sea: dropped npc at (7, 4)
 - 897 Lava Sea: dropped mon at (18, 2)
 - 897 Lava Sea: dropped mon at (18, 11)
+- 897 Lava Sea: dropped npc at (1, 14)
 - 898 Lava Islands: dropped npc at (12, 7)
 - 898 Lava Islands: dropped npc at (7, 12)
 - 898 Lava Islands: dropped mon at (18, 2)
 - 898 Lava Islands: dropped mon at (17, 10)
+- 883 Fjord Islands: dropped npc at (1, 7)
+- 883 Fjord Islands: dropped npc at (1, 8)
+- 883 Fjord Islands: dropped mon at (2, 2)
+- 883 Fjord Islands: dropped mon at (1, 2)
+- 883 Fjord Islands: dropped stash at (1, 9)
 - 882 Icy Fjord: dropped npc at (18, 5)
 - 882 Icy Fjord: dropped npc at (19, 12)
 - 882 Icy Fjord: dropped mon at (7, 2)
 - 882 Icy Fjord: dropped mon at (7, 12)
-- 894 Hydro Tank Islands: dropped npc at (7, 10)
 - 894 Hydro Tank Islands: dropped mon at (6, 3)
 - 894 Hydro Tank Islands: dropped mon at (17, 3)
-- 893 Hydro Tank: dropped npc at (7, 3)
+- 894 Hydro Tank Islands: dropped npc at (2, 4)
+- 894 Hydro Tank Islands: dropped npc at (1, 14)
 - 893 Hydro Tank: dropped npc at (9, 8)
 - 893 Hydro Tank: dropped mon at (18, 11)
 - 893 Hydro Tank: dropped mon at (17, 3)
+- 893 Hydro Tank: dropped npc at (1, 14)
+- 907 Mirror Lake Islands: dropped stash at (1, 9)
+- 907 Mirror Lake Islands: dropped stash at (1, 5)
+- 906 Mirror Lake: dropped stash at (2, 5) (was crowding a quest figure)
+- 906 Mirror Lake: dropped npc at (2, 4)
+- 906 Mirror Lake: dropped npc at (2, 10)
+- 906 Mirror Lake: dropped mon at (2, 3)
+- 906 Mirror Lake: dropped mon at (2, 11)
+- 906 Mirror Lake: dropped stash at (1, 1)
+- 905 Abyss Rim Descent: dropped mon at (14, 12)
+- 905 Abyss Rim Descent: dropped stash at (19, 7)
+- 905 Abyss Rim Descent: dropped stash at (14, 6)
+- 903 Crater Lake: dropped mon at (2, 5) (was crowding a quest figure)
+- 903 Crater Lake: dropped npc at (2, 8)
+- 904 Crater Lake Islands: dropped npc at (2, 6)
+- 904 Crater Lake Islands: dropped npc at (2, 11)
+- 904 Crater Lake Islands: dropped mon at (2, 2)
+- 904 Crater Lake Islands: dropped mon at (2, 12)
+- 904 Crater Lake Islands: dropped stash at (1, 9)
+- 904 Crater Lake Islands: dropped stash at (2, 14)
+- 914 Crystal Lake Islands: dropped npc at (2, 7)
+- 914 Crystal Lake Islands: dropped npc at (3, 12)
+- 914 Crystal Lake Islands: dropped mon at (2, 3)
+- 914 Crystal Lake Islands: dropped mon at (2, 2)
+- 914 Crystal Lake Islands: dropped stash at (1, 9)
+- 914 Crystal Lake Islands: dropped stash at (3, 14)
+- 881 Reservoir Islands: dropped npc at (1, 7)
+- 881 Reservoir Islands: dropped npc at (1, 9)
+- 881 Reservoir Islands: dropped mon at (1, 4)
+- 881 Reservoir Islands: dropped mon at (1, 5)
+- 881 Reservoir Islands: dropped stash at (1, 10)
+- 880 Coolant Reservoir: dropped npc at (21, 8) (was crowding a quest figure)
+- 880 Coolant Reservoir: dropped npc at (21, 10)
+- 880 Coolant Reservoir: dropped mon at (20, 8)
+- 880 Coolant Reservoir: dropped stash at (21, 4)
+- 879 Oasis Islands: dropped stash at (21, 10)
+- 879 Oasis Islands: dropped stash at (22, 7)
+
+## left in a narrow spot (no open ground) (8)
+
+- 733 Sporelake Shore: npc at (2, 4)
+- 804 Open Water Shore: npc at (2, 7)
+- 804 Open Water Shore: npc at (1, 11)
+- 897 Lava Sea: npc at (2, 1)
+- 882 Icy Fjord: npc at (1, 14)
+- 893 Hydro Tank: npc at (3, 5)
+- 906 Mirror Lake: npc at (2, 7)
+- 903 Crater Lake: npc at (2, 4)
 
 ## warp landings moved off a wall (7)
 
@@ -46,3 +102,20 @@
 - 151 -> 414: [14, 1] -> [14, 0]
 - 856 -> 908: [22, 10] -> [22, 9]
 - 856 -> 908: [22, 10] -> [22, 9]
+
+## joins widened to the open road (14)
+
+- 571 left -> 572: [6, 10] -> [1, 14]
+- 572 right -> 571: [6, 10] -> [1, 14]
+- 678 top -> 679: [14, 18] -> [14, 20]
+- 679 left -> 677: [8, 9] -> [8, 10]
+- 679 right -> 693: [8, 9] -> [8, 10]
+- 679 top -> 680: [13, 18] -> [13, 19]
+- 679 bottom -> 678: [13, 18] -> [13, 19]
+- 680 bottom -> 679: [5, 10] -> [5, 11]
+- 518 left -> 096: [6, 8] -> [6, 10]
+- 519 top -> 514: [4, 8] -> [4, 10]
+- 412 right -> 427: [9, 9] -> [9, 11]
+- 855 bottom -> 865: [17, 20] -> [17, 21]
+- 746 bottom -> 753: [15, 18] -> [15, 20]
+- 747 bottom -> 751: [6, 10] -> [6, 11]
