@@ -115,9 +115,16 @@ function secStepHeld(){const d=held.up?'up':held.down?'down':held.left?'left':he
 function secCam(s,px,py){const W=s.tiles[0]*16,H=s.tiles[1]*16,e=s.edges,open=k=>e[k]&&SWORLD[e[k].to];
  let cx=px+8-80,cy=py+8-76;if(!open('left'))cx=Math.max(0,cx);if(!open('right'))cx=Math.min(W-160,cx);if(!open('top'))cy=Math.max(0,cy);if(!open('bottom'))cy=Math.min(H-144,cy);
  if(W<160)cx=(W-160)/2;if(H<144)cy=(H-144)/2;return[Math.round(cx),Math.round(cy)]}
-function secDrawImg(id,ox,oy){const im=SECI[id];if(okI(im))ctx.drawImage(im,ox,oy);else{const s=SWORLD[id];rect(ox,oy,s.tiles[0]*16,s.tiles[1]*16,'#1d1433')}}
+function secDrawImg(id,ox,oy){const im=SECI[id];if(okI(im))ctx.drawImage(im,ox,oy)}   // not loaded yet: the backdrop shows through
+// outdoors, the map is mirrored (and dimmed) on every side, so offset neighbours and diagonal corners never leave an empty dark block
+let SECBD=null;function secBackdrop(id){const im=SECI[id];if(!okI(im))return null;if(SECBD&&SECBD.id===id)return SECBD.c;
+ const W=im.naturalWidth||im.width,H=im.naturalHeight||im.height,c=document.createElement('canvas');c.width=W*3;c.height=H*3;const g=c.getContext('2d');
+ for(let j=-1;j<=1;j++)for(let i=-1;i<=1;i++){g.save();g.translate(W*(i+1)+(i?W:0)*(i<0?1:0)+(i>0?W:0),H*(j+1)+(j<0?H:0)+(j>0?H:0));g.scale(i?-1:1,j?-1:1);g.drawImage(im,0,0);g.restore()}
+ g.fillStyle='rgba(12,8,24,0.35)';g.fillRect(0,0,W*3,H);g.fillRect(0,H*2,W*3,H);g.fillRect(0,H,W,H);g.fillRect(W*2,H,W,H);
+ SECBD={id,c};return c}
 function drawSec(){const s=SWORLD[G.sec.id],p=SM?SM.t/SM.n:0,jp=SJ?SJ.t/SEC_JUMP_T:0,px=SJ?(SJ.from[0]+(SJ.to[0]-SJ.from[0])*jp)*16:G.sec.x*16+(SM?SM.dx*16*p:0),py=SJ?(SJ.from[1]+(SJ.to[1]-SJ.from[1])*jp)*16:G.sec.y*16+(SM?SM.dy*16*p:0),[cx,cy]=secCam(s,px,py),hop=SJ?Math.round(Math.sin(Math.PI*jp)*10):0;
- rect(0,0,160,144,s.type==='interior'||s.type==='cave'?'#000':'#1d1433');ctx.save();ctx.imageSmoothingEnabled=false;
+ const indoor=s.type==='interior'||s.type==='cave';rect(0,0,160,144,indoor?'#000':'#1d1433');ctx.save();ctx.imageSmoothingEnabled=false;
+ if(!indoor){const bd=secBackdrop(s.id);if(bd)ctx.drawImage(bd,-s.tiles[0]*16-cx,-s.tiles[1]*16-cy)}
  secDrawImg(s.id,-cx,-cy);
  for(const[k,e]of Object.entries(s.edges)){const t=SWORLD[e.to];if(!t)continue;const o=(e.offset||0)*16;
   if(k==='right')secDrawImg(t.id,s.tiles[0]*16-cx,-o-cy);else if(k==='left')secDrawImg(t.id,-t.tiles[0]*16-cx,-o-cy);else if(k==='bottom')secDrawImg(t.id,-o-cx,s.tiles[1]*16-cy);else secDrawImg(t.id,-o-cx,-t.tiles[1]*16-cy)}
