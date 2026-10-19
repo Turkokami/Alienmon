@@ -934,6 +934,12 @@ function bootLoop(t){const ok=BOOT.filter(i=>i.complete).length;
  rect(0,0,160,144,'#120c22');txt('ALIENMON',48,52,'#7dff6a',8);txt('Loading...',52,72,'#ffffff',7);
  box(30,86,100,8,'#1b1424','#5ff2ff');rect(32,88,Math.round(96*ok/BOOT.length),4,'#5ff2ff');requestAnimationFrame(bootLoop)}
 if(!INLINE&&/^https?:$/.test(location.protocol)&&!/^(localhost|127\.|\[::1\])/.test(location.hostname)){window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};const s=document.createElement('script');s.defer=true;s.src='/_vercel/insights/script.js';document.head.appendChild(s)}
+// a tab left open keeps running the old game: every few minutes check for a newer build and offer to reload (saving first)
+if(!INLINE&&/^https?:$/.test(location.protocol)){let upd=null;const check=()=>{if(upd)return show();fetch('asset-manifest.json?'+Date.now(),{cache:'no-store'}).then(r=>r.ok?r.json():null).then(m=>{if(m&&m.build&&m.build!==BUILD){upd=m.build;show()}}).catch(()=>{})};
+ const show=()=>{if(document.getElementById('updbar'))return;if(typeof scene!=='undefined'&&(scene==='battle'||scene==='rta'||scene==='cut'))return setTimeout(show,5000);
+  const b=document.createElement('button');b.id='updbar';b.textContent='Update ready — tap to reload';b.style.cssText='position:fixed;top:calc(8px + env(safe-area-inset-top,0px));left:50%;transform:translateX(-50%);z-index:60;font:12px/1.2 system-ui,sans-serif;padding:10px 16px;border:0;border-radius:20px;background:#ffd23f;color:#1b1424;box-shadow:0 2px 8px #0008';
+  b.onclick=()=>{try{if(G&&G.party&&G.party.length&&typeof save==='function')save()}catch(e){}location.reload()};document.body.appendChild(b)};
+ setInterval(check,180000);document.addEventListener('visibilitychange',()=>{if(!document.hidden)check()})}
 if(!INLINE&&'serviceWorker' in navigator&&/^https?:$/.test(location.protocol))addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
 document.fonts&&document.fonts.load('8px "Press Start 2P"').finally(()=>requestAnimationFrame(bootLoop));
 if(!document.fonts)requestAnimationFrame(bootLoop);
