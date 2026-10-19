@@ -94,7 +94,8 @@ function moveArchive(){const L=G.party.map(m=>nm(m)+' Lv'+m.lv);choose('Move Arc
 /* evolution animation: the old form glows white and flickers with the new one's outline, faster and faster,
    then a flash reveals the new form with sparkles. A skips ahead once the reveal has started. */
 let EVO=null;const EVO_T=260;
-function evoAnim(m,into,done){warm(ARTI,[D[m.id].name,D[into].name]);EVO={a:m.id,b:into,pri:m.pri,t:0,done,sp:[],last:-1}}
+function evoAnim(m,into,done){evoAnimIds(m.id,into,m.pri,done)}
+function evoAnimIds(a,b,pri,done){warm(ARTI,[D[a].name,D[b].name]);EVO={a,b,pri,t:0,done,sp:[],last:-1}}
 const EVOS={};function evoSil(id){const im=ARTI[D[id].name];if(!okI(im))return null;if(EVOS[id])return EVOS[id];const c=document.createElement('canvas');c.width=im.naturalWidth;c.height=im.naturalHeight;
  const g=c.getContext('2d');g.drawImage(im,0,0);g.globalCompositeOperation='source-in';g.fillStyle='#f4fbff';g.fillRect(0,0,c.width,c.height);return EVOS[id]=c}
 function evoTone(f,d){try{if(typeof AC!=='undefined'&&AC&&typeof chipTone==='function')chipTone(AC.currentTime,f,d,0.18,'square')}catch(e){}}
