@@ -40,7 +40,7 @@ for sid, t in E.items():
         placed[name] = placed.get(name, 0) + 1
 # quest Alienmon pinned where their missions send the player (testers could not find them otherwise):
 # section -> [(name, weight, levels)]; the weight is kept up to date on every run
-PINNED = {'011': [('Cactling', 4.5, [3, 5])],   # Dusty's "Cactling bloom" mission points at Cactus Gardens
+PINNED = {'011': [('Cactling', 10.25, [3, 5])],   # Dusty's "Cactling bloom" mission points at Cactus Gardens
           '010': [('Cactling', 2, [3, 5])]}
 for sid, pins in PINNED.items():
     t = E.get(sid)
