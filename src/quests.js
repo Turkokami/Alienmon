@@ -131,7 +131,7 @@ function qText(q){const s=qs(q.id),o=qObj(q);if(!o)return'Done';const l=qLoc(q.i
  switch(o.type){
   case'choose_starter':return'Choose your partner';
   case'talk':return'Talk: '+(spot||t);
-  case'visit':case'spot_event':return'Go to '+(spot||t.replace(/^(planet|node):/,''));
+  case'visit':case'spot_event':if(/^planet:/.test(t)){const pk=t.slice(7),p=PL.find(x=>x.key===pk);return'Fly to '+(p?p.name:pk)+' (START > Ship)'}return'Go to '+(spot||t.replace(/^(planet|node):/,''));
   case'examine':return'Examine '+(spot||t.replace(/_/g,' '))+cnt;
   case'collect':return'Find '+t.replace(/_/g,' ')+cnt;
   case'catch':return'Catch '+t+cnt;case'catch_any':return'Catch any Alienmon'+cnt;case'catch_type':return'Catch a '+t+'-type'+cnt;
