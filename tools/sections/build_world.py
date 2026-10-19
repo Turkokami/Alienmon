@@ -1107,6 +1107,28 @@ for sid, sec in world.items():
             sec['warps'].append(dict(w, tile=[a, ty])); have.add((a, ty))
             report['one-tile entrances widened into their pocket'].append(f"{sid} {sec['name']}: {w['tile']} also from {[a, ty]}")
 
+# every entrance works across its whole opening: the run of open tiles in its row with rock above (or below, for
+# openings facing down), closed in by rock at both ends and no wider than 5 tiles (wider is a walkway, not a doorway)
+for sid, sec in world.items():
+    R = _rows(sid)
+    if not R: continue
+    W, H = sec['tiles']
+    have = {tuple(w['tile']) for w in sec['warps']}
+    op = lambda x, y: 0 <= x < W and 0 <= y < H and R[y][x] in '.,'
+    for w in list(sec['warps']):
+        if w.get('kind') not in ('stairs', 'door', 'gate'): continue
+        tx, ty = w['tile']
+        for dy in (-1, 1):
+            if op(tx, ty + dy): continue   # not facing that way
+            lo = hi = tx
+            while op(lo - 1, ty) and not op(lo - 1, ty + dy): lo -= 1
+            while op(hi + 1, ty) and not op(hi + 1, ty + dy): hi += 1
+            if hi - lo + 1 > 5 or op(lo - 1, ty) or op(hi + 1, ty): continue   # too wide, or opens onto more floor: a walkway
+            for a in range(lo, hi + 1):
+                if (a, ty) in have: continue
+                sec['warps'].append(dict(w, tile=[a, ty])); have.add((a, ty))
+                report['entrances widened to the whole opening'].append(f"{sid} {sec['name']}: {w['tile']} also from {[a, ty]}")
+
 json.dump({'version': 1, 'tile': 16, 'screen_tiles': [10, 9], 'arrival': arrivals, 'quest_spots': spots, 'sections': world, 'connections': conns},
           open(os.path.join(ROOT, OUT or 'data/world.json'), 'w', encoding='utf-8'), indent=1, ensure_ascii=False)
 lines = ['# Section connections report', '',
