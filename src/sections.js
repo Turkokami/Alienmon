@@ -128,6 +128,7 @@ function drawSec(){const s=SWORLD[G.sec.id],p=SM?SM.t/SM.n:0,jp=SJ?SJ.t/SEC_JUMP
  secDrawImg(s.id,-cx,-cy);
  for(const[k,e]of Object.entries(s.edges)){const t=SWORLD[e.to];if(!t)continue;const o=(e.offset||0)*16;
   if(k==='right')secDrawImg(t.id,s.tiles[0]*16-cx,-o-cy);else if(k==='left')secDrawImg(t.id,-t.tiles[0]*16-cx,-o-cy);else if(k==='bottom')secDrawImg(t.id,-o-cx,s.tiles[1]*16-cy);else secDrawImg(t.id,-o-cx,-t.tiles[1]*16-cy)}
+ if((s.type==='interior'||s.type==='tower')&&typeof hidLeft==='function')for(const h of hidLeft(s)){const f=(frame+h.x*13+h.y*7)%110;if(f<14){const x=h.x*16+8-cx,y=h.y*16+6-cy,r=f<7?f/2:(14-f)/2;ctx.fillStyle='#fff8d0';ctx.fillRect(x-r,y,r*2+1,1);ctx.fillRect(x,y-r,1,r*2+1)}}   // a twinkle where something is tucked away indoors
  ctx.restore();
  const people=secNpcs(s).map(n=>({y:n.y*16+(n.oy||0),draw:()=>n.legend?secDrawLegend(n.legend,n.x*16-cx,n.y*16-cy):secDrawChar(n.art,n.face||'down',n.x*16+(n.ox||0)-cx,n.y*16+(n.oy||0)-cy,(n.ox||n.oy)&&((frame>>3)&1)?1:0)}));
  const kp=PL[G.planet]&&PL[G.planet].keeper;for(const o of s.objects||[])if(o.k==='keeper'&&kp)people.push({y:o.tile[1]*16,draw:()=>secDrawChar(kp.art,'down',o.tile[0]*16-cx,o.tile[1]*16-cy,0)});

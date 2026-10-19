@@ -160,21 +160,22 @@ const HID={};
 const HID_LOOT=[[['gel',2],['cure',2],['stasis',3],['dust',150],['jammer',1]],[['megagel',2],['revive',1],['harmonic',2],['ether',1],['dust',400]],
  [['fullgel',1],['maxrevive',1],['harmonic',3],['jammer',2],['dust',900]],[['singularity',1],['maxrevive',2],['fullgel',2],['dust',2000]]];
 const secTier=s=>Math.min(3,Math.floor(Math.max(0,pidx(s.pkey==='arena'?'dustara':s.pkey))/4)+(SEC_FRONTIER.has(s.id)?0:0));
-function secHidden(s){if(s.id in HID)return HID[s.id];if(s.type==='interior'||s.type==='arena')return HID[s.id]=[];
+function secHidden(s){if(s.id in HID)return HID[s.id];const home=s.type==='interior'&&!(s.objects||[]).some(o=>o.k==='bay'||o.k==='shop'||o.k==='lab');if((s.type==='interior'&&!home)||s.type==='arena')return HID[s.id]=[];
  const r=rng(hash('hid'+s.id)),main=secMain(s),busy=new Set();for(const w of s.warps){busy.add(w.tile+'');busy.add(w.at+'')}for(const n of s.npcs||[])busy.add(n.x+','+n.y);for(const m of s.mons||[])busy.add(m.x+','+m.y);
  for(const o of s.objects||[])busy.add(o.tile+'');for(const v of Object.values(s.spawns||{}))if(v)busy.add(v+'');for(const sp of Object.values(SECQ))if(sp.s===s.id){busy.add(sp.x+','+sp.y);for(const p of sp.pts||[])busy.add(p+'')}
  const ok=[...main].filter(k=>{const[x,y]=k.split(',').map(Number);return s.rows[y][x]==='.'&&x>0&&y>0&&x<s.tiles[0]-1&&y<s.tiles[1]-1&&!busy.has(k)}).sort();
- const n=Math.min(ok.length,s.tiles[0]*s.tiles[1]>400?2:1),out=[],tier=secTier(s);
+ const n=Math.min(ok.length,!home&&s.tiles[0]*s.tiles[1]>400?2:1),out=[],tier=secTier(s);
  for(let i=0;i<n;i++){const k=ok.splice(Math.floor(r()*ok.length),1)[0];if(!k)break;const[x,y]=k.split(',').map(Number);
-  const disc=r()<(s.type==='cave'||s.type==='landmark'||s.type==='tower'?0.45:0.2),L=HID_LOOT[tier][Math.floor(r()*HID_LOOT[tier].length)];
+  const disc=r()<(s.type==='tower'&&i===0?1:home?0.35:s.type==='cave'||s.type==='landmark'||s.type==='tower'?0.45:0.2),L=HID_LOOT[tier][Math.floor(r()*HID_LOOT[tier].length)];
   out.push({x,y,item:disc?'disc':L[0],n:disc?1:L[1],disc:disc?discPick(r,tier):null})}
+ if(home)return HID[s.id]=out;
  const pk=secFluidPockets(s).filter(([x,y])=>!busy.has(x+','+y));if(pk.length){const[x,y]=pk[Math.floor(r()*pk.length)],t2=Math.min(3,tier+1),disc=r()<0.5,L=HID_LOOT[t2][Math.floor(r()*HID_LOOT[t2].length)];
   out.push({x,y,item:disc?'disc':L[0],n:disc?1:L[1],disc:disc?discPick(r,t2):null,far:1})}
  return HID[s.id]=out}
 const hidLeft=s=>secHidden(s).filter(h=>!(G.hid&&G.hid[s.id+':'+h.x+','+h.y]));
 function secFieldA(s,x,y){const kd=(KNOCK[s.id]||[]).find(d=>d[0]===x&&d[1]===y);if(kd)return knockDoor(s,kd);
  const h=hidLeft(s).find(h=>h.x===x&&h.y===y);if(!h)return;G.hid=G.hid||{};G.hid[s.id+':'+x+','+y]=1;stashSfx();
- if(h.disc!=null){G.discs=G.discs||{};const had=G.discs[h.disc];G.discs[h.disc]=1;return say(['You found something hidden on the ground!','It\'s a Tech Disc: '+MV[h.disc].n+'!'+(had?' (You already had it, so you sold the spare for 300 Stardust.)':' Teach it from Bag > Tech Discs.')],()=>{if(had)G.dust+=300})}
+ if(h.disc!=null){G.discs=G.discs||{};const had=G.discs[h.disc];G.discs[h.disc]=1;return say([s.type==='interior'?'You search around the room... and find something tucked away!':'You found something hidden on the ground!','It\'s a Tech Disc: '+MV[h.disc].n+'!'+(had?' (You already had it, so you sold the spare for 300 Stardust.)':' Teach it from Bag > Tech Discs.')],()=>{if(had)G.dust+=300})}
  if(h.item==='dust'){G.dust+=h.n;return say(['You found something hidden on the ground!',h.n+' Stardust!'])}
  const L=giveAll({[h.item]:h.n},['You found something hidden on the ground!']);say(L)}
 GEAR.push({k:'signal_finder',has:()=>!!G.key.signal_finder,label:()=>'Signal Finder',use(){if(!onSurface())return say('The Signal Finder only works on a world\'s surface.');
@@ -191,6 +192,9 @@ function discPick(r,tier){const A=discAll().slice().sort((a,b)=>MV[a].p-MV[b].p)
 const discFits=(mi,m)=>(D[m.id].t||[]).includes(MV[mi].t);
 function discList(){return Object.keys(G.discs||{}).map(Number).filter(mi=>MV[mi]).sort((a,b)=>MV[a].t.localeCompare(MV[b].t)||MV[a].n.localeCompare(MV[b].n))
  .map(mi=>({kind:'disc',mi,n:MV[mi].n,c:'',d:'Tech Disc ('+MV[mi].t+', power '+MV[mi].p+'). Teaches any '+MV[mi].t+'-type Alienmon. Never used up.'}))}
+// Keepers hand over a Tech Disc of their own type with each Shard, stronger as the Shards add up
+function keeperDisc(lead){const t=lead&&D[lead.id]&&D[lead.id].t[0];G.discs=G.discs||{};let L=discAll().filter(mi=>MV[mi].t===t&&!G.discs[mi]).sort((a,b)=>MV[a].p-MV[b].p);
+ if(!L.length)L=discAll().filter(mi=>!G.discs[mi]).sort((a,b)=>MV[a].p-MV[b].p);if(!L.length)return null;const mi=L[Math.min(L.length-1,Math.floor(L.length*Math.min(1,(G.shards||1)/8)))];G.discs[mi]=1;return mi}
 function discUse(e){const mi=e.mi,ok=G.party.filter(m=>discFits(mi,m)&&!m.moves.includes(mi));
  if(!ok.length)return say('None of your team can learn '+MV[mi].n+'. Only '+MV[mi].t+'-type Alienmon can (and not ones that already know it).');
  choose('Teach '+MV[mi].n+' to:',ok.map(m=>nm(m)+' Lv'+m.lv).concat(['Cancel']),i=>{const m=ok[i];if(!m)return;
@@ -235,10 +239,14 @@ const KNOCK=__KNOCK__;
 const KNOCK_CHAT=['Who is it? ...Oh, a Linker! Good luck on your journey!','*A sleepy voice*: Come back later, I\'m napping...','Grandma: In my day we caught Alienmon with our bare hands! ...Well, almost.',
  'Kid: Mom says I can get my own Alienmon next year!','Inventor: Don\'t open the door! My experiment is very, very fragile!','*Nobody answers. You can hear a TV playing an Arena match inside.*',
  'Collector: Did you know some Alienmon only come out at night?','Chef: Something smells good? That\'s Stardust stew. Secret recipe!'];
-function knockKind(s,i){const h=hash('knock'+s.id+':'+i)%10;return h<3?'item':h<5?'trade':h<6?'rater':'chat'}
+function knockKind(s,i){const h=hash('knock'+s.id+':'+i)%20;return h<8?'item':h<11?'disc':h<14?'trade':h<15?'rater':'chat'}
 function knockDoor(s,d){const i=KNOCK[s.id].indexOf(d),key=s.id+':'+i,kind=knockKind(s,i),r=rng(hash('kn'+key));G.knock=G.knock||{};doorSfx();
  if(kind==='item'){if(G.knock[key])return say('*Knock knock* Resident: Did you use what I gave you? Good luck!');G.knock[key]=1;const L=HID_LOOT[secTier(s)][Math.floor(r()*4)];
   return say(['*Knock knock*','Resident: Oh! A visitor! Here, take this. I never use it anyway.'].concat(L[0]==='dust'?giveAll({dust:L[1]},[]):giveAll({[L[0]]:L[1]},[])))}
+ if(kind==='disc'){if(G.knock[key])return say('*Knock knock* Resident: That Tech Disc treating you well?');G.knock[key]=1;G.discs=G.discs||{};
+  const own=discAll().filter(mi=>!G.discs[mi]).sort((a,b)=>MV[a].p-MV[b].p),mi=own.length?own[Math.min(own.length-1,Math.floor(own.length*(secTier(s)/4+r()*0.25)))]:null;
+  if(mi==null){G.dust+=300;return say(['*Knock knock*','Resident: Here, have some Stardust for the road! (+300)'])}
+  G.discs[mi]=1;return say(['*Knock knock*',"Resident: A Linker! I found this Tech Disc and I don't even have an Alienmon. It's yours!",'You got a Tech Disc: '+MV[mi].n+' ('+MV[mi].t+')! Teach it from Bag > Tech Discs.'])}
  if(kind==='rater'){const n=Object.keys(G.caught||{}).length;return say(['*Knock knock*','Professor Lyle: Ah, a Linker! Let me rate your Xenodex.','You have registered '+n+' Alienmon. '+(n<10?'A fine start! Get out there and catch more!':n<50?'Impressive progress! Keep it up!':n<150?'Remarkable! Dr. Vashti must be proud.':n<300?'Astonishing! Only a few more to go!':'A complete Xenodex! You are a living legend!')])}
  if(kind==='trade'){if(G.knock[key])return say('*Knock knock* Resident: My new partner and I are so happy. Thank you again!');
   const pool=(wildTable(s.pkey==='arena'?'dustara':s.pkey)||[]).map(x=>x.name).filter(x=>IDX[x]!=null),want=pool[Math.floor(r()*pool.length)];
