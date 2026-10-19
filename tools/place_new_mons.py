@@ -38,5 +38,18 @@ for sid, t in E.items():
         t['encounters'].append({'n': m['n'], 'name': name, 'types': m['t'], 'rarity': 'rare' if w <= 2 else 'uncommon' if f == 1 or w < 5 else 'common',
                                 'weight': w if f == 2 else max(1, w // 2), 'levels': [lo, hi], 'method': meth, 'time': 'any'})
         placed[name] = placed.get(name, 0) + 1
+# quest Alienmon pinned where their missions send the player (testers could not find them otherwise):
+# section -> [(name, weight, levels)]; the weight is kept up to date on every run
+PINNED = {'011': [('Cactling', 14, [3, 5])],   # Dusty's "Cactling bloom" mission points at Cactus Gardens
+          '010': [('Cactling', 6, [3, 5])]}
+for sid, pins in PINNED.items():
+    t = E.get(sid)
+    if not t: continue
+    for name, w, lv in pins:
+        ex = next((e for e in t['encounters'] if e['name'] == name), None)
+        if ex: ex.update(weight=w, levels=lv, time='any'); continue
+        m = A.get(name) or next(e for s in E.values() for e in s['encounters'] if e['name'] == name)
+        t['encounters'].append({'n': m['n'], 'name': name, 'types': m.get('t') or m.get('types'), 'rarity': 'common', 'weight': w, 'levels': lv, 'method': 'walk', 'time': 'any'})
+        placed[name] = placed.get(name, 0) + 1
 json.dump(E, open('data/encounters.json', 'w', encoding='utf-8'), indent=1, ensure_ascii=False)
 print('added', placed)
