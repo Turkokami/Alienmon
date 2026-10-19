@@ -1072,6 +1072,22 @@ for sid, sec in world.items():
             report.setdefault('joins widened to the open road', []).append(f"{sid} {side} -> {e['to']}: {e['range']} -> {[lo, hi]}")
             e['range'] = [lo, hi]
 
+# a stairs/door exit on the map border also works from the open tiles beside it in the same doorway
+# (arena tunnels are 2 wide but the exit sat on one tile: walking down the other side trapped you)
+for sid, sec in world.items():
+    R = _rows(sid)
+    if not R: continue
+    W, H = sec['tiles']
+    have = {tuple(w['tile']) for w in sec['warps']}
+    for w in list(sec['warps']):
+        if w.get('kind') not in ('stairs', 'door'): continue
+        tx, ty = w['tile']
+        if not (ty in (0, H - 1) or tx in (0, W - 1)): continue
+        for a, b in ([(tx - 1, ty), (tx + 1, ty)] if ty in (0, H - 1) else [(tx, ty - 1), (tx, ty + 1)]):
+            if 0 <= a < W and 0 <= b < H and R[b][a] in '.,' and (a, b) not in have:
+                sec['warps'].append(dict(w, tile=[a, b])); have.add((a, b))
+                report['exits widened to the whole doorway'].append(f"{sid} {sec['name']}: {w['tile']} also from {[a, b]}")
+
 json.dump({'version': 1, 'tile': 16, 'screen_tiles': [10, 9], 'arrival': arrivals, 'quest_spots': spots, 'sections': world, 'connections': conns},
           open(os.path.join(ROOT, OUT or 'data/world.json'), 'w', encoding='utf-8'), indent=1, ensure_ascii=False)
 lines = ['# Section connections report', '',
