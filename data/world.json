@@ -5830,6 +5830,19 @@
      ],
      "face": "down",
      "kind": "stairs"
+    },
+    {
+     "tile": [
+      12,
+      14
+     ],
+     "to": "039",
+     "at": [
+      16,
+      4
+     ],
+     "face": "down",
+     "kind": "stairs"
     }
    ],
    "objects": [
@@ -6972,6 +6985,20 @@
      "face": "right",
      "kind": "door",
      "node": "smuggler_freighter"
+    },
+    {
+     "tile": [
+      20,
+      12
+     ],
+     "to": "169",
+     "at": [
+      2,
+      7
+     ],
+     "face": "right",
+     "kind": "door",
+     "node": "smuggler_freighter"
     }
    ],
    "objects": [
@@ -7349,6 +7376,19 @@
      ],
      "face": "up",
      "kind": "stairs"
+    },
+    {
+     "tile": [
+      8,
+      17
+     ],
+     "to": "795",
+     "at": [
+      12,
+      8
+     ],
+     "face": "down",
+     "kind": "door"
     }
    ],
    "objects": [],
@@ -8063,6 +8103,32 @@
      ],
      "face": "down",
      "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      17
+     ],
+     "to": "back",
+     "at": [
+      9,
+      16
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      11,
+      17
+     ],
+     "to": "back",
+     "at": [
+      9,
+      16
+     ],
+     "face": "down",
+     "kind": "door"
     }
    ],
    "objects": [
@@ -8317,6 +8383,19 @@
      ],
      "face": "up",
      "kind": "stairs"
+    },
+    {
+     "tile": [
+      8,
+      17
+     ],
+     "to": "659",
+     "at": [
+      11,
+      8
+     ],
+     "face": "down",
+     "kind": "door"
     }
    ],
    "objects": [],
@@ -10310,6 +10389,45 @@
      ],
      "face": "down",
      "kind": "stairs"
+    },
+    {
+     "tile": [
+      10,
+      14
+     ],
+     "to": "089",
+     "at": [
+      11,
+      13
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      12,
+      14
+     ],
+     "to": "089",
+     "at": [
+      11,
+      13
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      13,
+      14
+     ],
+     "to": "089",
+     "at": [
+      11,
+      13
+     ],
+     "face": "up",
+     "kind": "stairs"
     }
    ],
    "objects": [
@@ -10376,6 +10494,45 @@
     {
      "tile": [
       11,
+      14
+     ],
+     "to": "088",
+     "at": [
+      11,
+      13
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      10,
+      14
+     ],
+     "to": "088",
+     "at": [
+      11,
+      13
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      12,
+      14
+     ],
+     "to": "088",
+     "at": [
+      11,
+      13
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      13,
       14
      ],
      "to": "088",
@@ -10567,6 +10724,45 @@
     {
      "tile": [
       11,
+      14
+     ],
+     "to": "091",
+     "at": [
+      15,
+      6
+     ],
+     "face": "down",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      10,
+      14
+     ],
+     "to": "091",
+     "at": [
+      15,
+      6
+     ],
+     "face": "down",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      12,
+      14
+     ],
+     "to": "091",
+     "at": [
+      15,
+      6
+     ],
+     "face": "down",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      13,
       14
      ],
      "to": "091",
@@ -11402,6 +11598,45 @@
      ],
      "face": "down",
      "kind": "stairs"
+    },
+    {
+     "tile": [
+      10,
+      13
+     ],
+     "to": "100",
+     "at": [
+      11,
+      13
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      12,
+      13
+     ],
+     "to": "100",
+     "at": [
+      11,
+      13
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      13,
+      13
+     ],
+     "to": "100",
+     "at": [
+      11,
+      13
+     ],
+     "face": "up",
+     "kind": "stairs"
     }
    ],
    "objects": [
@@ -11477,6 +11712,45 @@
     {
      "tile": [
       11,
+      14
+     ],
+     "to": "099",
+     "at": [
+      11,
+      12
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      10,
+      14
+     ],
+     "to": "099",
+     "at": [
+      11,
+      12
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      12,
+      14
+     ],
+     "to": "099",
+     "at": [
+      11,
+      12
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      13,
       14
      ],
      "to": "099",
@@ -11693,6 +11967,45 @@
     {
      "tile": [
       11,
+      14
+     ],
+     "to": "103",
+     "at": [
+      15,
+      6
+     ],
+     "face": "down",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      10,
+      14
+     ],
+     "to": "103",
+     "at": [
+      15,
+      6
+     ],
+     "face": "down",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      12,
+      14
+     ],
+     "to": "103",
+     "at": [
+      15,
+      6
+     ],
+     "face": "down",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      13,
       14
      ],
      "to": "103",
@@ -13887,6 +14200,45 @@
      ],
      "face": "down",
      "kind": "stairs"
+    },
+    {
+     "tile": [
+      10,
+      14
+     ],
+     "to": "121",
+     "at": [
+      15,
+      6
+     ],
+     "face": "down",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      12,
+      14
+     ],
+     "to": "121",
+     "at": [
+      15,
+      6
+     ],
+     "face": "down",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      13,
+      14
+     ],
+     "to": "121",
+     "at": [
+      15,
+      6
+     ],
+     "face": "down",
+     "kind": "stairs"
     }
    ],
    "objects": [
@@ -14013,6 +14365,36 @@
      "to": "planet:dustara",
      "at": [
       8,
+      13
+     ],
+     "face": "up",
+     "kind": "gate",
+     "node": "dustara",
+     "label": "the Shadow Tunnel back to the Frontier"
+    },
+    {
+     "tile": [
+      6,
+      14
+     ],
+     "to": "planet:dustara",
+     "at": [
+      7,
+      13
+     ],
+     "face": "up",
+     "kind": "gate",
+     "node": "dustara",
+     "label": "the Shadow Tunnel back to the Frontier"
+    },
+    {
+     "tile": [
+      9,
+      14
+     ],
+     "to": "planet:dustara",
+     "at": [
+      7,
       13
      ],
      "face": "up",
@@ -15436,6 +15818,45 @@
      ],
      "face": "down",
      "kind": "stairs"
+    },
+    {
+     "tile": [
+      10,
+      14
+     ],
+     "to": "134",
+     "at": [
+      16,
+      6
+     ],
+     "face": "down",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      12,
+      14
+     ],
+     "to": "134",
+     "at": [
+      16,
+      6
+     ],
+     "face": "down",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      13,
+      14
+     ],
+     "to": "134",
+     "at": [
+      16,
+      6
+     ],
+     "face": "down",
+     "kind": "stairs"
     }
    ],
    "objects": [
@@ -15735,6 +16156,32 @@
     {
      "tile": [
       10,
+      16
+     ],
+     "to": "136",
+     "at": [
+      9,
+      5
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      16
+     ],
+     "to": "136",
+     "at": [
+      9,
+      5
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      11,
       16
      ],
      "to": "136",
@@ -19816,6 +20263,32 @@
      ],
      "face": "up",
      "kind": "door"
+    },
+    {
+     "tile": [
+      6,
+      14
+     ],
+     "to": "052",
+     "at": [
+      11,
+      11
+     ],
+     "face": "up",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      9,
+      14
+     ],
+     "to": "052",
+     "at": [
+      11,
+      11
+     ],
+     "face": "up",
+     "kind": "door"
     }
    ],
    "objects": [],
@@ -19858,6 +20331,32 @@
     {
      "tile": [
       8,
+      14
+     ],
+     "to": "052",
+     "at": [
+      12,
+      11
+     ],
+     "face": "up",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      6,
+      14
+     ],
+     "to": "052",
+     "at": [
+      12,
+      11
+     ],
+     "face": "up",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      9,
       14
      ],
      "to": "052",
@@ -20614,6 +21113,32 @@
      "to": "back",
      "at": [
       10,
+      15
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      16
+     ],
+     "to": "back",
+     "at": [
+      9,
+      15
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      11,
+      16
+     ],
+     "to": "back",
+     "at": [
+      9,
       15
      ],
      "face": "down",
@@ -22644,6 +23169,71 @@
      ],
      "face": "down",
      "kind": "stairs"
+    },
+    {
+     "tile": [
+      5,
+      3
+     ],
+     "to": "482",
+     "at": [
+      18,
+      3
+     ],
+     "face": "down",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      6,
+      3
+     ],
+     "to": "482",
+     "at": [
+      18,
+      3
+     ],
+     "face": "down",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      10,
+      13
+     ],
+     "to": "484",
+     "at": [
+      12,
+      12
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      12,
+      13
+     ],
+     "to": "484",
+     "at": [
+      12,
+      12
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      13,
+      13
+     ],
+     "to": "484",
+     "at": [
+      12,
+      12
+     ],
+     "face": "up",
+     "kind": "stairs"
     }
    ],
    "objects": [
@@ -22707,6 +23297,32 @@
     {
      "tile": [
       12,
+      13
+     ],
+     "to": "483",
+     "at": [
+      11,
+      12
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      11,
+      13
+     ],
+     "to": "483",
+     "at": [
+      11,
+      12
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      13,
       13
      ],
      "to": "483",
@@ -23109,6 +23725,34 @@
      "face": "up",
      "kind": "door",
      "edge": "up"
+    },
+    {
+     "tile": [
+      10,
+      7
+     ],
+     "to": "478",
+     "at": [
+      9,
+      16
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    },
+    {
+     "tile": [
+      13,
+      7
+     ],
+     "to": "478",
+     "at": [
+      9,
+      16
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
     }
    ],
    "objects": [
@@ -23239,6 +23883,32 @@
     {
      "tile": [
       8,
+      4
+     ],
+     "to": "480",
+     "at": [
+      11,
+      14
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      10,
+      4
+     ],
+     "to": "480",
+     "at": [
+      11,
+      14
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      11,
       4
      ],
      "to": "480",
@@ -26396,6 +27066,58 @@
      ],
      "face": "down",
      "kind": "stairs"
+    },
+    {
+     "tile": [
+      6,
+      2
+     ],
+     "to": "441",
+     "at": [
+      11,
+      4
+     ],
+     "face": "down",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      7,
+      2
+     ],
+     "to": "441",
+     "at": [
+      11,
+      4
+     ],
+     "face": "down",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      18,
+      2
+     ],
+     "to": "443",
+     "at": [
+      4,
+      4
+     ],
+     "face": "down",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      19,
+      2
+     ],
+     "to": "443",
+     "at": [
+      4,
+      4
+     ],
+     "face": "down",
+     "kind": "stairs"
     }
    ],
    "objects": [
@@ -26494,6 +27216,71 @@
      ],
      "face": "down",
      "kind": "stairs"
+    },
+    {
+     "tile": [
+      5,
+      3
+     ],
+     "to": "442",
+     "at": [
+      17,
+      3
+     ],
+     "face": "down",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      6,
+      3
+     ],
+     "to": "442",
+     "at": [
+      17,
+      3
+     ],
+     "face": "down",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      10,
+      13
+     ],
+     "to": "444",
+     "at": [
+      11,
+      13
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      12,
+      13
+     ],
+     "to": "444",
+     "at": [
+      11,
+      13
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      13,
+      13
+     ],
+     "to": "444",
+     "at": [
+      11,
+      13
+     ],
+     "face": "up",
+     "kind": "stairs"
     }
    ],
    "objects": [
@@ -26547,6 +27334,45 @@
     {
      "tile": [
       11,
+      14
+     ],
+     "to": "443",
+     "at": [
+      11,
+      12
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      10,
+      14
+     ],
+     "to": "443",
+     "at": [
+      11,
+      12
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      12,
+      14
+     ],
+     "to": "443",
+     "at": [
+      11,
+      12
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      13,
       14
      ],
      "to": "443",
@@ -27284,6 +28110,19 @@
      "to": "back",
      "at": [
       10,
+      15
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      16
+     ],
+     "to": "back",
+     "at": [
+      9,
       15
      ],
      "face": "down",
@@ -28074,6 +28913,45 @@
      ],
      "face": "down",
      "kind": "stairs"
+    },
+    {
+     "tile": [
+      10,
+      13
+     ],
+     "to": "710",
+     "at": [
+      11,
+      12
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      12,
+      13
+     ],
+     "to": "710",
+     "at": [
+      11,
+      12
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      13,
+      13
+     ],
+     "to": "710",
+     "at": [
+      11,
+      12
+     ],
+     "face": "up",
+     "kind": "stairs"
     }
    ],
    "objects": [
@@ -28139,6 +29017,45 @@
     {
      "tile": [
       11,
+      13
+     ],
+     "to": "709",
+     "at": [
+      11,
+      12
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      10,
+      13
+     ],
+     "to": "709",
+     "at": [
+      11,
+      12
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      12,
+      13
+     ],
+     "to": "709",
+     "at": [
+      11,
+      12
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      13,
       13
      ],
      "to": "709",
@@ -31253,6 +32170,58 @@
      ],
      "face": "down",
      "kind": "stairs"
+    },
+    {
+     "tile": [
+      6,
+      2
+     ],
+     "to": "772",
+     "at": [
+      12,
+      5
+     ],
+     "face": "down",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      7,
+      2
+     ],
+     "to": "772",
+     "at": [
+      12,
+      5
+     ],
+     "face": "down",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      18,
+      2
+     ],
+     "to": "774",
+     "at": [
+      4,
+      4
+     ],
+     "face": "down",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      19,
+      2
+     ],
+     "to": "774",
+     "at": [
+      4,
+      4
+     ],
+     "face": "down",
+     "kind": "stairs"
     }
    ],
    "objects": [
@@ -31341,6 +32310,71 @@
      ],
      "face": "down",
      "kind": "stairs"
+    },
+    {
+     "tile": [
+      5,
+      3
+     ],
+     "to": "773",
+     "at": [
+      17,
+      3
+     ],
+     "face": "down",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      6,
+      3
+     ],
+     "to": "773",
+     "at": [
+      17,
+      3
+     ],
+     "face": "down",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      10,
+      13
+     ],
+     "to": "775",
+     "at": [
+      11,
+      13
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      12,
+      13
+     ],
+     "to": "775",
+     "at": [
+      11,
+      13
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      13,
+      13
+     ],
+     "to": "775",
+     "at": [
+      11,
+      13
+     ],
+     "face": "up",
+     "kind": "stairs"
     }
    ],
    "objects": [
@@ -31403,6 +32437,45 @@
     {
      "tile": [
       11,
+      14
+     ],
+     "to": "774",
+     "at": [
+      11,
+      12
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      10,
+      14
+     ],
+     "to": "774",
+     "at": [
+      11,
+      12
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      12,
+      14
+     ],
+     "to": "774",
+     "at": [
+      11,
+      12
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      13,
       14
      ],
      "to": "774",
@@ -33630,6 +34703,32 @@
      ],
      "face": "down",
      "kind": "stairs"
+    },
+    {
+     "tile": [
+      11,
+      13
+     ],
+     "to": "642",
+     "at": [
+      12,
+      12
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      13,
+      13
+     ],
+     "to": "642",
+     "at": [
+      12,
+      12
+     ],
+     "face": "up",
+     "kind": "stairs"
     }
    ],
    "objects": [
@@ -33682,6 +34781,19 @@
     {
      "tile": [
       12,
+      14
+     ],
+     "to": "641",
+     "at": [
+      12,
+      12
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      11,
       14
      ],
      "to": "641",
@@ -34338,6 +35450,32 @@
     {
      "tile": [
       10,
+      17
+     ],
+     "to": "652",
+     "at": [
+      11,
+      7
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      17
+     ],
+     "to": "652",
+     "at": [
+      11,
+      7
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      11,
       17
      ],
      "to": "652",
@@ -35017,6 +36155,32 @@
      ],
      "face": "up",
      "kind": "stairs"
+    },
+    {
+     "tile": [
+      8,
+      17
+     ],
+     "to": "635",
+     "at": [
+      11,
+      8
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      11,
+      17
+     ],
+     "to": "635",
+     "at": [
+      11,
+      8
+     ],
+     "face": "down",
+     "kind": "door"
     }
    ],
    "objects": [],
@@ -35075,6 +36239,45 @@
     {
      "tile": [
       11,
+      14
+     ],
+     "to": "636",
+     "at": [
+      9,
+      4
+     ],
+     "face": "down",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      10,
+      14
+     ],
+     "to": "636",
+     "at": [
+      9,
+      4
+     ],
+     "face": "down",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      12,
+      14
+     ],
+     "to": "636",
+     "at": [
+      9,
+      4
+     ],
+     "face": "down",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      13,
       14
      ],
      "to": "636",
@@ -35206,6 +36409,32 @@
      "to": "back",
      "at": [
       10,
+      15
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      7,
+      16
+     ],
+     "to": "back",
+     "at": [
+      9,
+      15
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      16
+     ],
+     "to": "back",
+     "at": [
+      9,
       15
      ],
      "face": "down",
@@ -36494,6 +37723,45 @@
      ],
      "face": "up",
      "kind": "stairs"
+    },
+    {
+     "tile": [
+      10,
+      13
+     ],
+     "to": "551",
+     "at": [
+      11,
+      12
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      12,
+      13
+     ],
+     "to": "551",
+     "at": [
+      11,
+      12
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      13,
+      13
+     ],
+     "to": "551",
+     "at": [
+      11,
+      12
+     ],
+     "face": "up",
+     "kind": "stairs"
     }
    ],
    "objects": [
@@ -36557,6 +37825,32 @@
     {
      "tile": [
       11,
+      14
+     ],
+     "to": "550",
+     "at": [
+      11,
+      12
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      10,
+      14
+     ],
+     "to": "550",
+     "at": [
+      11,
+      12
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      12,
       14
      ],
      "to": "550",
@@ -37854,6 +39148,58 @@
      ],
      "face": "up",
      "kind": "stairs"
+    },
+    {
+     "tile": [
+      8,
+      17
+     ],
+     "to": "543",
+     "at": [
+      11,
+      7
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      11,
+      17
+     ],
+     "to": "543",
+     "at": [
+      11,
+      7
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      10,
+      2
+     ],
+     "to": "546",
+     "at": [
+      11,
+      12
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      11,
+      2
+     ],
+     "to": "546",
+     "at": [
+      11,
+      12
+     ],
+     "face": "up",
+     "kind": "stairs"
     }
    ],
    "objects": [],
@@ -37921,6 +39267,19 @@
      ],
      "face": "down",
      "kind": "stairs"
+    },
+    {
+     "tile": [
+      12,
+      14
+     ],
+     "to": "545",
+     "at": [
+      9,
+      4
+     ],
+     "face": "down",
+     "kind": "stairs"
     }
    ],
    "objects": [],
@@ -37967,6 +39326,19 @@
      "to": "back",
      "at": [
       9,
+      15
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      7,
+      16
+     ],
+     "to": "back",
+     "at": [
+      8,
       15
      ],
      "face": "down",
@@ -38047,6 +39419,19 @@
      ],
      "face": "down",
      "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      16
+     ],
+     "to": "back",
+     "at": [
+      9,
+      15
+     ],
+     "face": "down",
+     "kind": "door"
     }
    ],
    "objects": [],
@@ -38123,6 +39508,32 @@
      ],
      "face": "down",
      "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      16
+     ],
+     "to": "back",
+     "at": [
+      9,
+      15
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      11,
+      16
+     ],
+     "to": "back",
+     "at": [
+      9,
+      15
+     ],
+     "face": "down",
+     "kind": "door"
     }
    ],
    "objects": [],
@@ -38195,6 +39606,32 @@
      "to": "back",
      "at": [
       10,
+      16
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      17
+     ],
+     "to": "back",
+     "at": [
+      9,
+      16
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      11,
+      17
+     ],
+     "to": "back",
+     "at": [
+      9,
       16
      ],
      "face": "down",
@@ -45361,6 +46798,32 @@
      ],
      "face": "down",
      "kind": "stairs"
+    },
+    {
+     "tile": [
+      12,
+      4
+     ],
+     "to": "609",
+     "at": [
+      6,
+      3
+     ],
+     "face": "down",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      13,
+      4
+     ],
+     "to": "609",
+     "at": [
+      6,
+      3
+     ],
+     "face": "down",
+     "kind": "stairs"
     }
    ],
    "objects": [
@@ -45600,6 +47063,45 @@
      ],
      "face": "up",
      "kind": "stairs"
+    },
+    {
+     "tile": [
+      10,
+      13
+     ],
+     "to": "611",
+     "at": [
+      11,
+      12
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      12,
+      13
+     ],
+     "to": "611",
+     "at": [
+      11,
+      12
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      13,
+      13
+     ],
+     "to": "611",
+     "at": [
+      11,
+      12
+     ],
+     "face": "up",
+     "kind": "stairs"
     }
    ],
    "objects": [
@@ -45652,6 +47154,45 @@
     {
      "tile": [
       11,
+      14
+     ],
+     "to": "610",
+     "at": [
+      11,
+      12
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      10,
+      14
+     ],
+     "to": "610",
+     "at": [
+      11,
+      12
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      12,
+      14
+     ],
+     "to": "610",
+     "at": [
+      11,
+      12
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      13,
       14
      ],
      "to": "610",
@@ -45928,6 +47469,32 @@
     {
      "tile": [
       8,
+      5
+     ],
+     "to": "607",
+     "at": [
+      11,
+      13
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      10,
+      5
+     ],
+     "to": "607",
+     "at": [
+      11,
+      13
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      11,
       5
      ],
      "to": "607",
@@ -46240,6 +47807,19 @@
     {
      "tile": [
       11,
+      14
+     ],
+     "to": "627",
+     "at": [
+      15,
+      6
+     ],
+     "face": "down",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      12,
       14
      ],
      "to": "627",
@@ -48204,6 +49784,19 @@
      ],
      "face": "up",
      "kind": "stairs"
+    },
+    {
+     "tile": [
+      12,
+      14
+     ],
+     "to": "575",
+     "at": [
+      9,
+      5
+     ],
+     "face": "down",
+     "kind": "stairs"
     }
    ],
    "objects": [],
@@ -48232,6 +49825,19 @@
     {
      "tile": [
       11,
+      14
+     ],
+     "to": "576",
+     "at": [
+      11,
+      2
+     ],
+     "face": "down",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      12,
       14
      ],
      "to": "576",
@@ -48690,6 +50296,45 @@
      ],
      "face": "up",
      "kind": "stairs"
+    },
+    {
+     "tile": [
+      10,
+      13
+     ],
+     "to": "581",
+     "at": [
+      11,
+      12
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      12,
+      13
+     ],
+     "to": "581",
+     "at": [
+      11,
+      12
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      13,
+      13
+     ],
+     "to": "581",
+     "at": [
+      11,
+      12
+     ],
+     "face": "up",
+     "kind": "stairs"
     }
    ],
    "objects": [
@@ -48752,6 +50397,45 @@
     {
      "tile": [
       11,
+      14
+     ],
+     "to": "580",
+     "at": [
+      11,
+      12
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      10,
+      14
+     ],
+     "to": "580",
+     "at": [
+      11,
+      12
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      12,
+      14
+     ],
+     "to": "580",
+     "at": [
+      11,
+      12
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      13,
       14
      ],
      "to": "580",
@@ -51207,6 +52891,32 @@
      ],
      "face": "down",
      "kind": "stairs"
+    },
+    {
+     "tile": [
+      12,
+      3
+     ],
+     "to": "406",
+     "at": [
+      5,
+      3
+     ],
+     "face": "down",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      13,
+      3
+     ],
+     "to": "406",
+     "at": [
+      5,
+      3
+     ],
+     "face": "down",
+     "kind": "stairs"
     }
    ],
    "objects": [
@@ -51420,6 +53130,71 @@
      ],
      "face": "down",
      "kind": "stairs"
+    },
+    {
+     "tile": [
+      5,
+      3
+     ],
+     "to": "406",
+     "at": [
+      18,
+      3
+     ],
+     "face": "down",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      6,
+      3
+     ],
+     "to": "406",
+     "at": [
+      18,
+      3
+     ],
+     "face": "down",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      10,
+      13
+     ],
+     "to": "409",
+     "at": [
+      12,
+      12
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      12,
+      13
+     ],
+     "to": "409",
+     "at": [
+      12,
+      12
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      13,
+      13
+     ],
+     "to": "409",
+     "at": [
+      12,
+      12
+     ],
+     "face": "up",
+     "kind": "stairs"
     }
    ],
    "objects": [
@@ -51483,6 +53258,45 @@
     {
      "tile": [
       12,
+      13
+     ],
+     "to": "407",
+     "at": [
+      11,
+      12
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      10,
+      13
+     ],
+     "to": "407",
+     "at": [
+      11,
+      12
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      11,
+      13
+     ],
+     "to": "407",
+     "at": [
+      11,
+      12
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      13,
       13
      ],
      "to": "407",
@@ -51794,6 +53608,19 @@
      ],
      "face": "down",
      "kind": "stairs"
+    },
+    {
+     "tile": [
+      12,
+      14
+     ],
+     "to": "428",
+     "at": [
+      15,
+      6
+     ],
+     "face": "down",
+     "kind": "stairs"
     }
    ],
    "objects": [
@@ -52024,6 +53851,32 @@
      ],
      "face": "up",
      "kind": "stairs"
+    },
+    {
+     "tile": [
+      10,
+      4
+     ],
+     "to": "404",
+     "at": [
+      11,
+      13
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      11,
+      4
+     ],
+     "to": "404",
+     "at": [
+      11,
+      13
+     ],
+     "face": "up",
+     "kind": "stairs"
     }
    ],
    "objects": [],
@@ -52082,6 +53935,19 @@
     {
      "tile": [
       11,
+      14
+     ],
+     "to": "403",
+     "at": [
+      9,
+      5
+     ],
+     "face": "down",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      12,
       14
      ],
      "to": "403",
@@ -54538,6 +56404,32 @@
      ],
      "face": "down",
      "kind": "stairs"
+    },
+    {
+     "tile": [
+      10,
+      13
+     ],
+     "to": "848",
+     "at": [
+      11,
+      12
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      12,
+      13
+     ],
+     "to": "848",
+     "at": [
+      11,
+      12
+     ],
+     "face": "up",
+     "kind": "stairs"
     }
    ],
    "objects": [
@@ -54600,6 +56492,45 @@
     {
      "tile": [
       11,
+      13
+     ],
+     "to": "847",
+     "at": [
+      11,
+      12
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      10,
+      13
+     ],
+     "to": "847",
+     "at": [
+      11,
+      12
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      12,
+      13
+     ],
+     "to": "847",
+     "at": [
+      11,
+      12
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      13,
       13
      ],
      "to": "847",
@@ -54985,6 +56916,19 @@
     {
      "tile": [
       11,
+      14
+     ],
+     "to": "843",
+     "at": [
+      9,
+      5
+     ],
+     "face": "down",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      12,
       14
      ],
      "to": "843",
@@ -57866,6 +59810,19 @@
      ],
      "face": "down",
      "kind": "stairs"
+    },
+    {
+     "tile": [
+      13,
+      15
+     ],
+     "to": "809",
+     "at": [
+      9,
+      5
+     ],
+     "face": "down",
+     "kind": "stairs"
     }
    ],
    "objects": [],
@@ -58148,6 +60105,45 @@
      ],
      "face": "up",
      "kind": "stairs"
+    },
+    {
+     "tile": [
+      10,
+      13
+     ],
+     "to": "815",
+     "at": [
+      12,
+      12
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      12,
+      13
+     ],
+     "to": "815",
+     "at": [
+      12,
+      12
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      13,
+      13
+     ],
+     "to": "815",
+     "at": [
+      12,
+      12
+     ],
+     "face": "up",
+     "kind": "stairs"
     }
    ],
    "objects": [
@@ -58210,6 +60206,45 @@
     {
      "tile": [
       12,
+      13
+     ],
+     "to": "814",
+     "at": [
+      11,
+      12
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      10,
+      13
+     ],
+     "to": "814",
+     "at": [
+      11,
+      12
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      11,
+      13
+     ],
+     "to": "814",
+     "at": [
+      11,
+      12
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      13,
       13
      ],
      "to": "814",
@@ -60814,6 +62849,45 @@
      ],
      "face": "down",
      "kind": "stairs"
+    },
+    {
+     "tile": [
+      12,
+      4
+     ],
+     "to": "742",
+     "at": [
+      5,
+      3
+     ],
+     "face": "down",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      13,
+      4
+     ],
+     "to": "742",
+     "at": [
+      5,
+      3
+     ],
+     "face": "down",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      14,
+      4
+     ],
+     "to": "742",
+     "at": [
+      5,
+      3
+     ],
+     "face": "down",
+     "kind": "stairs"
     }
    ],
    "objects": [
@@ -60952,6 +63026,58 @@
      ],
      "face": "down",
      "kind": "stairs"
+    },
+    {
+     "tile": [
+      6,
+      2
+     ],
+     "to": "741",
+     "at": [
+      11,
+      5
+     ],
+     "face": "down",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      7,
+      2
+     ],
+     "to": "741",
+     "at": [
+      11,
+      5
+     ],
+     "face": "down",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      18,
+      2
+     ],
+     "to": "743",
+     "at": [
+      4,
+      3
+     ],
+     "face": "down",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      19,
+      2
+     ],
+     "to": "743",
+     "at": [
+      4,
+      3
+     ],
+     "face": "down",
+     "kind": "stairs"
     }
    ],
    "objects": [
@@ -61050,6 +63176,71 @@
      ],
      "face": "down",
      "kind": "stairs"
+    },
+    {
+     "tile": [
+      5,
+      2
+     ],
+     "to": "742",
+     "at": [
+      17,
+      3
+     ],
+     "face": "down",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      6,
+      2
+     ],
+     "to": "742",
+     "at": [
+      17,
+      3
+     ],
+     "face": "down",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      10,
+      13
+     ],
+     "to": "744",
+     "at": [
+      12,
+      13
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      12,
+      13
+     ],
+     "to": "744",
+     "at": [
+      12,
+      13
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      13,
+      13
+     ],
+     "to": "744",
+     "at": [
+      12,
+      13
+     ],
+     "face": "up",
+     "kind": "stairs"
     }
    ],
    "objects": [
@@ -61102,6 +63293,45 @@
     {
      "tile": [
       12,
+      14
+     ],
+     "to": "743",
+     "at": [
+      11,
+      12
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      10,
+      14
+     ],
+     "to": "743",
+     "at": [
+      11,
+      12
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      11,
+      14
+     ],
+     "to": "743",
+     "at": [
+      11,
+      12
+     ],
+     "face": "up",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      13,
       14
      ],
      "to": "743",
@@ -64401,6 +66631,19 @@
     {
      "tile": [
       9,
+      18
+     ],
+     "to": "911",
+     "at": [
+      17,
+      4
+     ],
+     "face": "down",
+     "kind": "stairs"
+    },
+    {
+     "tile": [
+      10,
       18
      ],
      "to": "911",
