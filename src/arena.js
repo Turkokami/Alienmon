@@ -73,7 +73,9 @@ function rtaStart(opts){if(typeof opts==='number')opts={foe:[opts]};opts=opts||{
  if(opts.ffa){const cx=(RF.x0+RF.x1)/2,cy=(RF.y0+RF.y1)/2+8,P=[[RF.x0+22,cy],[RF.x1-22,RF.y0+30],[RF.x1-22,RF.y1-12],[cx,RF.y0+28],[cx,RF.y1-10]];
   f.forEach((x,i)=>{x.x=P[i][0];x.y=P[i][1];const dx=cx-x.x,dy=cy-x.y,l=Math.hypot(dx,dy)||1;x.ax=dx/l;x.ay=dy/l;x.face=Math.abs(dx)>=Math.abs(dy)?(dx<0?'left':'right'):(dy<0?'up':'down')})}
  RTA={key:pl?pl.key:'court',pl:arena,foeIds:foe.map(m=>m.id),opts,r,t:0,t0:0,phase:'count',f,tm,shots:[],areas:[],fx:[],cfx:[],fl:[],log:null,shake:0,diff:RDIFF[opts.diff!=null?opts.diff:RTO.diff],win:-1};
- const names=tm[0].concat(tm[1]).map(x=>D[x.m.id].name);warm(ARTI,names);warm(ARTBI,names);
+ const names=tm.flat().map(x=>D[x.m.id].name);warm(ARTI,names);warm(ARTBI,names);
+ RTA.pk=names.flatMap(n=>['side_a','side_b','atk_front','atk_back','hurt','ko'].map(p=>n+'_'+p)).filter(k=>k in ARA.poses);warm(ARPI,RTA.pk);RTA.wait=0;
+ RTA.pk2=[[ARSI,RTA.key+'_arena'],...['panel_l','panel_r','bar_g','bar_y','bar_r','timer','btn_ready','btn_cool','btn_pressed','cd_3','cd_2','cd_1','cd_go'].map(k=>[ARUI,k])].filter(([o,k])=>o===ARSI?k in ARA.scenes:ARA.uicut&&k in ARA.uicut);for(const[o,k]of RTA.pk2)o[k];   // the arena poses load before the countdown runs
  for(const x of f)rCpush('common_release',0,x.x,x.y-12,34,30);
  const L=[];if(!opts.ffa){entry(f[0].m,f[1].m,L);entry(f[1].m,f[0].m,L)}rLog(opts.ffa?['Free-for-all! Last Alienmon standing wins.']:opts.code?[opts.code.name+"'s team steps into the arena!"].concat(L):L);scene='rta'}
 // tag battles: bring the next Alienmon in where the last one stood (its cooldowns are kept from when it left)
@@ -180,7 +182,8 @@ function rCodeFight(){tradePanel("Fight a friend's team",'<p style="margin:0 0 8
 /* ---- update ---- */
 function rtaUpd(){if(!RTA)return rHubUpd();const A=RTA;A.t++;
  if(A.phase!=='over'&&P_('start')){choose('Paused',['Resume','Forfeit'],k=>{if(k===1)rtaOver(1)},()=>{});rtaDraw();return}
- if(A.phase==='count'){if(A.t>=ARJ.match.countdown){A.phase='fight';A.t0=A.t}A.cfx=A.cfx.filter(x=>++x.t<x.dur);rtaDraw();return}
+ if(A.phase==='count'){if(A.pk&&A.wait<180&&!(A.pk.every(k=>okI(ARPI[k]))&&A.pk2.every(([o,k])=>okI(o[k])))){A.wait++;A.t=0}   // hold on '3' (up to 3 s) until every fighter's art is in
+  if(A.t>=ARJ.match.countdown){A.phase='fight';A.t0=A.t}A.cfx=A.cfx.filter(x=>++x.t<x.dur);rtaDraw();return}
  if(A.phase==='over'){A.ot++;rStepFx();if(A.ot>50&&(P_('a')||P_('b')))rtaResult();rtaDraw();return}
  for(let s=0;s<A.f.length;s++){const f=A.f[s];if(f.m.hp<=0&&rAlive(s).length){if(!f.next)f.next=60;else if(--f.next<=0)rSwap(s)}}
  rControl(A.f[0]);for(const e of A.f.slice(1))rAI(e,rFoe(e));for(const f of A.f)rStep(f);rShots();rAreas();rTick();rTerTick();rHazTick();rStepFx();
