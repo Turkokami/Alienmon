@@ -289,7 +289,7 @@ function arenaTrainer(L,round){const champ=round===3,r=rng(hash(L.k+round+frame)
 /* ---- Exhibition matches (START > Arena): one of your Alienmon against one opponent, for Stardust. Turn-based, no EXP ---- */
 // every arena lobby's receptionist (and the Dustmere lobby desk): the Linker Arena on this world's floor, or an exhibition match
 function arenaDesk(s){const pi=PL.findIndex(p=>p.key===s.pkey);if(typeof rtaHub!=='function')return say('Receptionist: Welcome! Fancy an exhibition match?',exhibMenu,'referee');
- if(typeof RTO!=='undefined')RTO.arena=s.id==='915'||pi<0?PL.length:pi;
+ if(typeof RTO!=='undefined')RTO.arena=s.id==='915'?Math.max(0,PL.findIndex(p=>p.key==='dustara')):pi<0?PL.length:pi;   // the Dustmere dome fights on Dustara's arena
  choose('Receptionist: Welcome to the Linker Arena!',['Linker Arena (real-time)','Exhibition match','Not now'],i=>{if(i===0)rtaHub('planet');else if(i===1)exhibMenu()},null,'referee')}
 const EXHIB_FEE=50,EXHIB=[{k:'rookie',n:'Rookie',d:-3,prize:100},{k:'ace',n:'Ace',d:0,prize:160},{k:'star',n:'Star',d:3,prize:250}];
 function exhibMenu(){G.arena=G.arena||{};const rec=G.arena.exhib||{wins:0,losses:0};

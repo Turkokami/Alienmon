@@ -370,7 +370,7 @@ function rFxCell(mv,which,k,x,y,w,flip,a){const af=rArtFx(mv);if(okI(af)){const 
  const L=R[which],c=which==='i'?L[Math.min(an.i,L.length-1)]:L[Math.floor(k*L.length)%L.length];drawCell(im,c,x,y,w*c[2]/Math.max(c[2],c[3]),w*c[3]/Math.max(c[2],c[3]),flip,a)}
 function rtaDraw(){if(!RTA)return rHubDraw();const A=RTA,pl=PL[A.pl],sx=A.shake>0?(A.shake--%2?1:-1):0,im=ARSI[A.key+'_arena'],bg=okI(im)?im:SCI[A.key+'_battle'];
  if(okI(bg)){cover(bg,0,0,160,144);if(bg!==im){ctx.fillStyle='rgba(18,12,34,0.4)';ctx.fillRect(0,0,160,144)}}
- else{const e=ENV[pl.env]||ENV.desert;rect(0,0,160,144,e.o2);for(let y=RF.y0;y<RF.y1;y+=16)for(let x=RF.x0;x<RF.x1;x+=16)rect(x,y,Math.min(16,RF.x1-x),Math.min(16,RF.y1-y),((x+y)/16)%2?e.g:e.g2)}
+ else{const e=(pl&&ENV[pl.env])||ENV.desert;rect(0,0,160,144,e.o2);for(let y=RF.y0;y<RF.y1;y+=16)for(let x=RF.x0;x<RF.x1;x+=16)rect(x,y,Math.min(16,RF.x1-x),Math.min(16,RF.y1-y),((x+y)/16)%2?e.g:e.g2)}
  ctx.save();ctx.translate(sx,0);ctx.strokeStyle='rgba(95,242,255,0.55)';ctx.strokeRect(RF.x0+0.5,RF.y0+0.5,RF.x1-RF.x0-1,RF.y1-RF.y0-1);rTerDraw();rHazDraw(false);
  for(const z of A.areas){const c=rCol(z.atk.mv);
   if(z.kind==='zone'&&z.t>=0&&z.t<z.delay){const k=z.t/z.delay;if(!rCF('common_trait_telegraph',1,Math.floor(A.t/5)%4,z.x,z.y-z.r*0.6,z.r*2.6,0.55+0.45*k)){rEll(z.x,z.y,z.r,z.r*0.5,'#ff5a3a',0.15+0.25*k);rRing(z.x,z.y,z.r*(1.4-0.4*k),z.r*0.5*(1.4-0.4*k),'#ff7a3a',0.9,1)}}
@@ -432,6 +432,7 @@ const RTAB=(()=>{const dev=document.querySelector('.device'),ab=document.querySe
  sw.addEventListener('pointerdown',e=>{e.preventDefault();pressed.sw=true});box.appendChild(sw);
  st.textContent+='.rtab .sw{grid-column:1/3;justify-self:center;height:56px;display:none}.rtab .sw .ring{left:9px;width:44px;height:44px;background:'+u('swap')+' center/contain no-repeat}.rtab .sw .nm{top:44px;border:0}body.in-rta.rta-team .rtab .sw{display:block}';
  return{B,on:false,sw}})();
+addEventListener('error',()=>{document.body.classList.remove('in-rta');if(RTAB)RTAB.on=false});   // a crash must never leave the player without A/B
 function rTouchUpd(){if(!RTAB)return;const on=scene==='rta'&&!!RTA&&RTA.phase!=='over'&&!DLG&&!CH;   // results, messages and menus need the normal A/B buttons
 if(on!==RTAB.on){document.body.classList.toggle('in-rta',on);RTAB.on=on}document.body.classList.toggle('rta-team',on&&RTA.tm[0].length>1);if(!on)return;
  const p=RTA.f[0];RTAB.B.forEach((x,i)=>{const mi=p.m.moves[i];x.b.style.visibility=mi==null?'hidden':'visible';if(mi==null)return;
