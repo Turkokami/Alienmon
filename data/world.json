@@ -25089,7 +25089,36 @@
      "offset": 2
     }
    },
-   "warps": [],
+   "warps": [
+    {
+     "tile": [
+      17,
+      5
+     ],
+     "to": "915",
+     "at": [
+      9,
+      17
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    },
+    {
+     "tile": [
+      18,
+      5
+     ],
+     "to": "915",
+     "at": [
+      10,
+      17
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    }
+   ],
    "objects": [
     {
      "tile": [
@@ -67770,6 +67799,164 @@
      "x": 10,
      "y": 7,
      "mon": "Skitterdrone"
+    }
+   ]
+  },
+  "915": {
+   "id": "915",
+   "name": "Linker Arena Lobby",
+   "planet": "Dustara",
+   "dir": "01_dustara",
+   "type": "interior",
+   "img": "art/sections_game/01_dustara/915_linker_arena_lobby.png",
+   "tiles": [
+    20,
+    20
+   ],
+   "notes": "",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      9,
+      18
+     ],
+     "to": "472",
+     "at": [
+      17,
+      6
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      10,
+      18
+     ],
+     "to": "472",
+     "at": [
+      17,
+      6
+     ],
+     "face": "down",
+     "kind": "door"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      8,
+      7
+     ],
+     "k": "desk",
+     "why": "sign-up counter: the Linker Arena menu"
+    },
+    {
+     "tile": [
+      9,
+      7
+     ],
+     "k": "desk",
+     "why": "sign-up counter: the Linker Arena menu"
+    },
+    {
+     "tile": [
+      10,
+      7
+     ],
+     "k": "desk",
+     "why": "sign-up counter: the Linker Arena menu"
+    },
+    {
+     "tile": [
+      11,
+      7
+     ],
+     "k": "desk",
+     "why": "sign-up counter: the Linker Arena menu"
+    },
+    {
+     "tile": [
+      2,
+      2
+     ],
+     "k": "rta_go",
+     "why": "crossed-swords arch: straight to the arena cards"
+    },
+    {
+     "tile": [
+      3,
+      2
+     ],
+     "k": "rta_go",
+     "why": "crossed-swords arch: straight to the arena cards"
+    },
+    {
+     "tile": [
+      16,
+      2
+     ],
+     "k": "rta_cups",
+     "why": "star arch: the cups"
+    },
+    {
+     "tile": [
+      17,
+      2
+     ],
+     "k": "rta_cups",
+     "why": "star arch: the cups"
+    },
+    {
+     "tile": [
+      4,
+      8
+     ],
+     "k": "trophies",
+     "why": "trophy cabinet"
+    },
+    {
+     "tile": [
+      4,
+      9
+     ],
+     "k": "trophies",
+     "why": "trophy cabinet"
+    },
+    {
+     "tile": [
+      4,
+      10
+     ],
+     "k": "trophies",
+     "why": "trophy cabinet"
+    }
+   ],
+   "spawns": {
+    "door": [
+     9,
+     17
+    ],
+    "default": [
+     9,
+     17
+    ]
+   },
+   "parent": "472",
+   "pkey": "dustara",
+   "npcs": [
+    {
+     "x": 9,
+     "y": 5,
+     "art": "referee",
+     "face": "down",
+     "t": [
+      "Receptionist: Welcome to the Linker Arena, home of real-time battles!"
+     ],
+     "name": "Receptionist",
+     "stay": true,
+     "src": "n:915:0"
     }
    ]
   }
