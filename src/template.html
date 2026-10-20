@@ -89,7 +89,11 @@ button:focus-visible{outline:2px solid var(--b);outline-offset:2px}
 'use strict';
 const D=__DATA__, PL=__PLANETS__, TRAITS=__TRAITS__, SIGS=__SIGS__, SYS=__SYS__, ART=__ART__, ARTB=__ARTB__, OW=__OW__, TITLE=__TITLE__, SHIP=__SHIP__, CUTS=__CUTS__, CHAR=__CHAR__, PORT=__PORTRAITS__, SCN=__SCENES__, FXD=__FX__,BPOSE=__BPOSE__,BFXD=__BFX__, PLANART=__PLANETART__, BUILD=__BUILD__, INLINE=__INLINE__, BETA=__BETA__, NEWONLY_BUILD=__NEWONLY__, MOVEFX=__MOVEFX__;
 // art is loaded on first use (the web build serves each image as its own cached file), so the game starts fast
-function lazyImgs(src){return new Proxy({},{get(t,k){if(typeof k!=='string')return undefined;if(!(k in t)&&src[k]){const i=new Image();i.decoding='async';i.src=src[k];t[k]=i}return t[k]},has:(t,k)=>k in src})}
+// a picture that 404s means this page is from an older build (a new one went live while the tab was open):
+// save and reload once to pick up the new build, instead of showing black maps
+function assetGone(){try{const k='alienmon_reloaded',t0=+sessionStorage.getItem(k)||0;if(Date.now()-t0<120000)return;sessionStorage.setItem(k,String(Date.now()))}catch(e){return}
+ try{if(typeof G!=='undefined'&&G&&typeof autosave==='function')autosave()}catch(e){}location.reload()}
+function lazyImgs(src){return new Proxy({},{get(t,k){if(typeof k!=='string')return undefined;if(!(k in t)&&src[k]){const i=new Image();i.decoding='async';if(!INLINE&&/^https?:/.test(location.protocol)&&/(^|\/)assets\//.test(src[k]))i.onerror=assetGone;i.src=src[k];t[k]=i}return t[k]},has:(t,k)=>k in src})}
 function warm(imgs,keys){for(const k of keys)imgs[k]}
 const PLI=lazyImgs(PLANART);
 const FXI=lazyImgs(FXD);
