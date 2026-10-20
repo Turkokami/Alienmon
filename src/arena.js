@@ -28,7 +28,11 @@ function rShape(mv){const s=(mv.sig?ARJ.signature:ARJ.moves)[mv.n];if(s)return s
  if(!mv.p)return(fx.self||fx.heal)&&!fx.foe&&!fx.s?'AURA':'FIELD';return mv.p<=45?'PROJ':mv.p<=80?(PHYS.has(mv.t)?'ARC':'PROJ'):'ZONE'}
 const rTier=mv=>mv.p?ARJ.tiers.find(t=>mv.p<=t.max):ARJ.status;
 const rSpeed=f=>(0.45+Math.min(160,es(f.m,'spe'))/260)*(RTA&&RTA.ter?rTerSpeed(f):1)*(f.hzSlow>0?(f.hzSlow--,0.5):1);   // px per tick
-const rFoe=f=>RTA.f[1-f.side];
+const rFoes=f=>RTA.f.filter(o=>o.side!==f.side);
+// the foe a fighter aims at: the other side in 1v1/3v3, the nearest one still standing in a free-for-all
+const rFoe=f=>{let b=null,bd=1e9;for(const o of rFoes(f)){const d=(o.m.hp>0?0:1e6)+Math.hypot(o.x-f.x,o.y-f.y);if(d<bd){bd=d;b=o}}return b};
+const RSIDEC=['#5ff2ff','#ff5a3a','#ffd23f','#9be36b','#ff74c4'];   // free-for-all: a coloured ring under each fighter
+const rT0=()=>ARJ.match.time*60*(RTA.opts.ffa||RTA.tm[0].length>1?2:1);
 // every HP change in the arena is scaled (data/arena.json match.scale), never below 1 point
 function rScaled(ms,fn){const h0=ms.map(m=>m.hp),r=fn();ms.forEach((m,i)=>{const dh=m.hp-h0[i];if(dh)m.hp=Math.max(0,Math.min(stat(m,0),h0[i]+Math.sign(dh)*Math.max(1,Math.round(Math.abs(dh)*ARJ.match.scale))))});return r}
 
@@ -58,18 +62,20 @@ function rTeamMenu(){const n=RTO.mode==='3v3'?3:1;RTO.team=(RTO.team||[RTO.pick]
 const rArenaName=i=>i>=PL.length?'Practice court':PL[i].name;
 function rArenaMenu(){choose('Arena',PL.map(p=>p.name).concat(['Practice court']),i=>{RTO.arena=i;rtaMenu()},rtaMenu)}
 function rRecord(){const r=G.rta||{w:0,l:0,d:0},c=(r.cups||{});const won=Object.keys(c).filter(k=>c[k]);
- say(['Arena record: '+r.w+' wins, '+r.l+' losses, '+r.d+' draws.','Cups won: '+(won.length?won.map(k=>(RCUPS.find(x=>x.k===k)||{n:k}).n).join(', '):'none yet')+'.'],rtaMenu)}
+ say(['Arena record: '+r.w+' wins, '+r.l+' losses, '+r.d+' draws.','Free-for-all wins: '+(r.ffa||0)+'. Battle Code wins: '+(r.codes||0)+'.','Cups won: '+(won.length?won.map(k=>(RCUPS.find(x=>x.k===k)||{n:k}).n).join(', '):'none yet')+'.'],rtaMenu)}
 function rFighter(m,side){const c={...m,lv:ARJ.match.level,st:null,cf:0,moves:(m.moves&&m.moves.length?m.moves:[0]).slice(0,4)};resetStages(c);c.hp=stat(c,0);
  return{m:c,side,x:side?RF.x1-28:RF.x0+28,y:(RF.y0+RF.y1)/2+12,face:side?'left':'right',ax:side?-1:1,ay:0,mx:0,my:0,
   cd:c.moves.map(()=>0),cdm:c.moves.map(()=>1),sel:0,wind:null,atkT:0,hurt:0,kb:[0,0],dash:null,frz:0,imm:0,step:0,aura:0,swapCd:0,next:0,ai:{t:0,mx:0,my:0,str:1}}}
 // opts: {mine:[mon], foe:[id or mon], arena, diff, cup:{k,round}}; with no opts the menu's settings are used
 function rtaStart(opts){if(typeof opts==='number')opts={foe:[opts]};opts=opts||{};const r=rng(hash('rta'+Date.now())),arena=opts.arena!=null?opts.arena:RTO.arena,pl=PL[arena];
- const mine=opts.mine||rMyTeam(),n=mine.length,foe=(opts.foe||rFoeTeam(n,r,arena,mine.map(m=>m.id))).map(x=>typeof x==='number'?mk(x,ARJ.match.level):x);
- const tm=[mine.map(m=>rFighter(m,0)),foe.map(m=>rFighter(m,1))],f=[tm[0][0],tm[1][0]];
+ const mine=(opts.ffa?(opts.mine||rMyTeam()).slice(0,1):opts.mine||rMyTeam()),n=opts.ffa?4:mine.length,foe=(opts.foe||rFoeTeam(n,r,arena,mine.map(m=>m.id))).map(x=>typeof x==='number'?mk(x,ARJ.match.level):x);
+ const tm=opts.ffa?[[rFighter(mine[0],0)]].concat(foe.map((m,i)=>[rFighter(m,i+1)])):[mine.map(m=>rFighter(m,0)),foe.map(m=>rFighter(m,1))],f=tm.map(t=>t[0]);
+ if(opts.ffa){const cx=(RF.x0+RF.x1)/2,cy=(RF.y0+RF.y1)/2+8,P=[[RF.x0+22,cy],[RF.x1-22,RF.y0+30],[RF.x1-22,RF.y1-12],[cx,RF.y0+28],[cx,RF.y1-10]];
+  f.forEach((x,i)=>{x.x=P[i][0];x.y=P[i][1];const dx=cx-x.x,dy=cy-x.y,l=Math.hypot(dx,dy)||1;x.ax=dx/l;x.ay=dy/l;x.face=Math.abs(dx)>=Math.abs(dy)?(dx<0?'left':'right'):(dy<0?'up':'down')})}
  RTA={key:pl?pl.key:'court',pl:arena,foeIds:foe.map(m=>m.id),opts,r,t:0,t0:0,phase:'count',f,tm,shots:[],areas:[],fx:[],cfx:[],fl:[],log:null,shake:0,diff:RDIFF[opts.diff!=null?opts.diff:RTO.diff],win:-1};
  const names=tm[0].concat(tm[1]).map(x=>D[x.m.id].name);warm(ARTI,names);warm(ARTBI,names);
  for(const x of f)rCpush('common_release',0,x.x,x.y-12,34,30);
- const L=[];entry(f[0].m,f[1].m,L);entry(f[1].m,f[0].m,L);rLog(L);scene='rta'}
+ const L=[];if(!opts.ffa){entry(f[0].m,f[1].m,L);entry(f[1].m,f[0].m,L)}rLog(opts.ffa?['Free-for-all! Last Alienmon standing wins.']:opts.code?[opts.code.name+"'s team steps into the arena!"].concat(L):L);scene='rta'}
 // tag battles: bring the next Alienmon in where the last one stood (its cooldowns are kept from when it left)
 const rAlive=side=>RTA.tm[side].filter(x=>x.m.hp>0);
 function rSwap(side,to){const A=RTA,old=A.f[side],nx=to||A.tm[side].find(x=>x!==old&&x.m.hp>0);if(!nx||nx===old)return false;
@@ -101,8 +107,8 @@ function rCupNext(){const A=RTA,cu=A.opts.cup,c=RCUPS.find(x=>x.k===cu.k);
 
 /* ---- the arena card screen (P3-06): the owner's mode cards; START opens settings, B leaves ---- */
 let RHUB=null;
-const RCARDS=[{k:'card_1v1',n:'1 vs 1',go:()=>{RTO.mode='1v1';rtaStart()}},{k:'card_3v3',n:'3 vs 3',go:()=>{RTO.mode='3v3';rtaStart()}},{k:'card_ffa',n:'Free-for-all',soon:1},
- {k:'card_cups',n:'Cups',go:()=>rCupMenu()},{k:'card_code',n:'Battle Code',soon:1},{k:'card_practice',n:'Practice',go:()=>{const k=RTO.mode;RTO.mode='1v1';rtaStart({arena:PL.length,diff:0});RTO.mode=k}}];
+const RCARDS=[{k:'card_1v1',n:'1 vs 1',go:()=>{RTO.mode='1v1';rtaStart()}},{k:'card_3v3',n:'3 vs 3',go:()=>{RTO.mode='3v3';rtaStart()}},{k:'card_ffa',n:'Free-for-all',go:()=>rtaStart({ffa:1})},
+ {k:'card_cups',n:'Cups',go:()=>rCupMenu()},{k:'card_code',n:'Battle Code',go:()=>rCodeMenu()},{k:'card_practice',n:'Practice',go:()=>{const k=RTO.mode;RTO.mode='1v1';rtaStart({arena:PL.length,diff:0});RTO.mode=k}}];
 // back: where B returns to ('planet' from a lobby or Recovery Bay, else the START menu)
 function rtaHub(back){if(!G.party.length)return say('You need an Alienmon to enter the Arena.');if(back)RTO.back=back;RTA=null;RHUB={sel:RHUB?RHUB.sel:0,t:0};scene='rta'}
 function rtaExit(){RHUB=null;RTA=null;if(RTO.back==='planet'){RTO.back=null;scene='planet'}else{scene='menu';menuMode='root'}}
@@ -147,20 +153,46 @@ function rKeeperDone(){const A=RTA,kp=A.opts.keeper;G.rta=G.rta||{w:0,l:0,d:0};G
  const lead=A.tm[0][0].m.id,lines=[kp.name+': You beat me at full strength. You really are something, Linker!'].concat(first?['You received 500 Stardust!']:[]);
  if(first)return rPodium('trophy_gold','Keeper rematch won: '+kp.name+'!',lead,()=>say(lines,rtaLeave));say(lines,rtaLeave)}
 
+/* ---- Battle Codes (P3-05): share your team as a code; a friend pastes it and fights it, the computer steering your
+ team. Everything is level 50 and stays on the friend's device. Same checksum idea as trade codes. ---- */
+function rCodeEncode(ms){const p=JSON.stringify([1,'Linker '+linkerId(),ms.map(m=>[m.id,m.moves.slice(0,4),m.nick||'',m.pot||null,m.tm||0])]);
+ const b=btoa(unescape(encodeURIComponent(p))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');return'ARENA-'+b+'.'+tradeSum('arena:'+b)}
+function rCodeDecode(code){const c=String(code||'').replace(/\s+/g,''),mt=/^ARENA-([A-Za-z0-9_-]+)\.([a-z0-9]+)$/.exec(c);
+ if(!mt)return{err:/^AMON-/.test(c)?'That is a trade code. Battle Codes start with ARENA-.':'That does not look like a Battle Code.'};
+ if(tradeSum('arena:'+mt[1])!==mt[2])return{err:'That code is damaged or was changed. Ask your friend to copy it again.'};
+ let a;try{a=JSON.parse(decodeURIComponent(escape(atob(mt[1].replace(/-/g,'+').replace(/_/g,'/')))))}catch(e){return{err:'That code could not be read.'}}
+ const[v,name,team]=a;if(v!==1||!Array.isArray(team)||!team.length||team.length>3)return{err:'That code could not be read.'};
+ const ms=[];for(const[id,moves,nick,pot,tm]of team){if(!D[id]||rBan(id)||!Array.isArray(moves)||!moves.length||moves.length>4||moves.some(x=>!MV[x]))return{err:'That team has an Alienmon the Linker Arena does not allow.'};
+  const m=mk(id,ARJ.match.level);m.moves=moves.slice(0,4);if(nick)m.nick=String(nick).slice(0,12);if(Array.isArray(pot)&&pot.length===6)m.pot=pot.map(x=>Math.max(0,Math.min(31,x|0)));
+  if(typeof TEMPS!=='undefined')m.tm=Math.max(0,Math.min(TEMPS.length-1,tm|0));m.hp=stat(m,0);resetStages(m);ms.push(m)}
+ return{name:String(name||'A friend').slice(0,16),ms}}
+function rCodeMenu(){choose('Battle Code',["Fight a friend's code",'Share my team code','How it works','Back to cards'],k=>{
+  if(k===0)return rCodeFight();if(k===1)return rCodeShare();
+  if(k===2)return say(['Share: your three arena Alienmon (START > Team) become a code. Send it to a friend however you like.',"Fight: paste a friend's code and battle their team. The computer steers it, on Hard.",'Your team never leaves your save, and codes can be used again and again.'],rCodeMenu);rtaHub()},()=>rtaHub())}
+function rCodeShare(){if(RTO.rental)return say('Pick your own Alienmon first (START > Team). Rental teams cannot be shared.',rCodeMenu);
+ const keep=RTO.mode;RTO.mode='3v3';const ms=rMyTeam();RTO.mode=keep;if(ms.some(m=>rBan(m.id)))return say('Legendary Alienmon cannot enter the Linker Arena. Pick a different team (START > Team).',rCodeMenu);
+ const code=rCodeEncode(ms);tradePanel('Your Battle Code','<p style="margin:0 0 8px">'+ms.map(m=>nm(m)).join(', ')+'. Send this code to a friend so they can battle your team.</p><textarea readonly style="'+TA+'">'+code+'</textarea><div class="msg" style="min-height:14px;color:#9be36b"></div>',
+  [['Copy code',async b=>{const t=b.querySelector('textarea');t.select();try{await navigator.clipboard.writeText(code);b.querySelector('.msg').textContent='Copied!'}catch(e){document.execCommand&&document.execCommand('copy');b.querySelector('.msg').textContent='Select the code and copy it.'}},true],['Done',(b,close)=>{close();rCodeMenu()}]])}
+function rCodeFight(){tradePanel("Fight a friend's team",'<p style="margin:0 0 8px">Paste the Battle Code your friend sent you.</p><textarea style="'+TA+'" placeholder="ARENA-..."></textarea><div class="msg" style="min-height:14px;color:#ff8a1e"></div>',
+ [['Battle!',(b,close)=>{const r=rCodeDecode(b.querySelector('textarea').value);if(r.err){b.querySelector('.msg').textContent=r.err;return}close();
+   const keep=RTO.mode;RTO.mode=r.ms.length>1?'3v3':'1v1';const mine=rMyTeam().slice(0,r.ms.length);RTO.mode=keep;rtaStart({mine,foe:r.ms,diff:2,code:{name:r.name}})},true],['Cancel',(b,close)=>{close();rCodeMenu()}]])}
+
 /* ---- update ---- */
 function rtaUpd(){if(!RTA)return rHubUpd();const A=RTA;A.t++;
  if(A.phase!=='over'&&P_('start')){choose('Paused',['Resume','Forfeit'],k=>{if(k===1)rtaOver(1)},()=>{});rtaDraw();return}
  if(A.phase==='count'){if(A.t>=ARJ.match.countdown){A.phase='fight';A.t0=A.t}A.cfx=A.cfx.filter(x=>++x.t<x.dur);rtaDraw();return}
  if(A.phase==='over'){A.ot++;rStepFx();if(A.ot>50&&(P_('a')||P_('b')))rtaResult();rtaDraw();return}
- for(const s of[0,1]){const f=A.f[s];if(f.m.hp<=0&&rAlive(s).length){if(!f.next)f.next=60;else if(--f.next<=0)rSwap(s)}}
- const[p,e]=A.f;rControl(p);rAI(e,p);for(const f of A.f)rStep(f);rShots();rAreas();rTick();rTerTick();rHazTick();rStepFx();
- const left=ARJ.match.time*60*(A.tm[0].length>1?2:1)-(A.t-A.t0),fr=s=>A.tm[s].reduce((a,x)=>a+x.m.hp/stat(x.m,0),0)/A.tm[s].length,out=[0,1].map(s=>!rAlive(s).length);
- if(out[0]||out[1])rtaOver(out[0]&&out[1]?2:out[0]?1:0);
- else if(left<=0){A.timeout=1;rtaOver(Math.abs(fr(0)-fr(1))<0.01?2:fr(0)>fr(1)?0:1)}
+ for(let s=0;s<A.f.length;s++){const f=A.f[s];if(f.m.hp<=0&&rAlive(s).length){if(!f.next)f.next=60;else if(--f.next<=0)rSwap(s)}}
+ rControl(A.f[0]);for(const e of A.f.slice(1))rAI(e,rFoe(e));for(const f of A.f)rStep(f);rShots();rAreas();rTick();rTerTick();rHazTick();rStepFx();
+ const left=rT0()-(A.t-A.t0),fr=s=>A.tm[s].reduce((a,x)=>a+x.m.hp/stat(x.m,0),0)/A.tm[s].length,me=!rAlive(0).length,rest=A.tm.slice(1).every((t,i)=>!rAlive(i+1).length);
+ if(me||rest)rtaOver(me&&rest?2:me?1:0);
+ else if(left<=0){A.timeout=1;const best=Math.max(...A.tm.slice(1).map((t,i)=>fr(i+1)));rtaOver(Math.abs(fr(0)-best)<0.01?2:fr(0)>best?0:1)}
  rtaDraw()}
 function rtaOver(win){const A=RTA;if(A.phase==='over')return;A.phase='over';A.ot=0;A.win=win;A.shots=[];A.areas=A.areas.filter(z=>z.kind==='beam');
- G.rta=G.rta||{w:0,l:0,d:0};G.rta[['w','l','d'][win]]++}
-function rtaResult(){if(RTA.opts.cup)return rCupNext();if(RTA.opts.keeper)return rKeeperDone();choose('Linker Arena',['Rematch','New foe','Leave'],k=>{if(k===0)rtaStart({foe:RTA.foeIds,arena:RTA.pl});else if(k===1)rtaStart();else rtaLeave()},rtaLeave)}
+ G.rta=G.rta||{w:0,l:0,d:0};G.rta[['w','l','d'][win]]++;if(A.opts.ffa&&win===0)G.rta.ffa=(G.rta.ffa||0)+1;if(A.opts.code&&win===0)G.rta.codes=(G.rta.codes||0)+1}
+function rtaResult(){if(RTA.opts.cup)return rCupNext();if(RTA.opts.keeper)return rKeeperDone();if(RTA.opts.ffa||RTA.opts.code){const o={...RTA.opts,mine:null},tag=o.code?o.code.name+"'s team":'Free-for-all';
+  return choose(tag,[o.ffa?'Again (new foes)':'Rematch','Leave'],k=>{if(k===0)rtaStart(o.ffa?{ffa:1,arena:o.arena}:o);else rtaLeave()},rtaLeave)}
+ choose('Linker Arena',['Rematch','New foe','Leave'],k=>{if(k===0)rtaStart({foe:RTA.foeIds,arena:RTA.pl});else if(k===1)rtaStart();else rtaLeave()},rtaLeave)}
 function rtaLeave(){RTA=null;rtaHub()}   // after a match: back to the cards
 
 function rControl(f){if(f.swapCd>0)f.swapCd--;if(P_('sw')&&f.swapCd<=0&&f.m.hp>0)rSwap(0);if(PADJ.on){f.mx=PADJ.x;f.my=PADJ.y}else{f.mx=(held.right?1:0)-(held.left?1:0);f.my=(held.down?1:0)-(held.up?1:0)}
@@ -183,7 +215,7 @@ function rStep(f){const m=f.m;if(m.hp<=0)return;
  else if(m.st!=='freeze'&&!f.wind){const l=Math.hypot(f.mx,f.my);if(l){const s=rSpeed(f);f.x+=f.mx/l*s;f.y+=f.my/l*s;f.ax=f.mx/l;f.ay=f.my/l;f.step++;if(f.step%16===0)rCpush('common_movement',1,f.x,f.y-2,12,14);
   f.face=Math.abs(f.mx)>=Math.abs(f.my)?(f.mx<0?'left':'right'):(f.my<0?'up':'down')}}
  if(f.wind&&--f.wind.t<=0)rRelease(f);
- const o=rFoe(f);if(o.m.hp>0){const dx=f.x-o.x,dy=f.y-o.y,d=Math.hypot(dx,dy);if(d<12&&d>0){f.x+=dx/d*0.6;f.y+=dy/d*0.6}}   // bodies don't overlap
+ for(const o of rFoes(f))if(o.m.hp>0){const dx=f.x-o.x,dy=f.y-o.y,d=Math.hypot(dx,dy);if(d<12&&d>0){f.x+=dx/d*0.6;f.y+=dy/d*0.6}}   // bodies don't overlap
  f.x=Math.max(RF.x0+8,Math.min(RF.x1-8,f.x));f.y=Math.max(RF.y0+20,Math.min(RF.y1-2,f.y))}
 
 /* ---- attacks: one attack object per use, each target hit at most once ---- */
@@ -193,7 +225,7 @@ function rFire(f,i,ax,ay){const A=RTA,mv=MV[f.m.moves[i]],sh=rShape(mv),atk={f,m
  if(sh==='PROJ'||sh==='LOB')A.shots.push({x:f.x+ax*8,y:f.y-8+ay*8,vx:ax*2.6,vy:ay*2.6,r:4,life:60,t:0,lob:sh==='LOB',atk});
  else if(sh==='WAVE')A.shots.push({x:f.x+ax*8,y:f.y-8+ay*8,vx:ax*1.8,vy:ay*1.8,r:11,life:75,t:0,wave:1,atk});
  else if(sh==='BEAM'||sh==='CHAIN'){const L=RREACH[sh],ex=f.x+ax*L,ey=f.y-8+ay*L;A.areas.push({kind:'beam',x:f.x,y:f.y-8,ex,ey,t:0,dur:16,atk});
-  const px=foe.x-f.x,py=foe.y-8-(f.y-8),k=Math.max(0,Math.min(L,px*ax+py*ay));if(Math.hypot(px-ax*k,py-ay*k)<9)rHit(atk,foe)}
+  for(const o of rFoes(f)){if(o.m.hp<=0)continue;const px=o.x-f.x,py=o.y-8-(f.y-8),k=Math.max(0,Math.min(L,px*ax+py*ay));if(Math.hypot(px-ax*k,py-ay*k)<9)rHit(atk,o)}}
  else if(sh==='ARC')rHitAt(atk,f.x+ax*14,f.y-8+ay*14,12,false,true);
  else if(sh==='CONE')rHitAt(atk,f.x+ax*20,f.y-8+ay*20,16,false,true);
  else if(sh==='BURST'){rHitAt(atk,f.x,f.y-8,26,false);rImpact(atk,f.x,f.y-8,1)}
@@ -202,8 +234,8 @@ function rFire(f,i,ax,ay){const A=RTA,mv=MV[f.m.moves[i]],sh=rShape(mv),atk={f,m
  else if(sh==='RAIN')for(let j=0;j<3;j++)A.areas.push({kind:'zone',x:tx+(A.r()-0.5)*30,y:ty+(A.r()-0.5)*18,r:11,t:-j*8,delay:30,atk});
  else A.areas.push({kind:'field',x:tx,y:ty,r:18,t:0,dur:240,atk})}
 // ground: test against the feet (zones and fields) instead of the body; fx: show the impact even on a miss
-function rHitAt(atk,x,y,r,ground,fx){const t=rFoe(atk.f);if(fx)rImpact(atk,x,y);if(t.m.hp<=0||atk.hit.has(t))return;
- if(Math.hypot(t.x-x,(ground?t.y:t.y-8)-y)<r+7)rHit(atk,t)}
+function rHitAt(atk,x,y,r,ground,fx){if(fx)rImpact(atk,x,y);for(const t of rFoes(atk.f)){if(t.m.hp<=0||atk.hit.has(t))continue;
+ if(Math.hypot(t.x-x,(ground?t.y:t.y-8)-y)<r+7)rHit(atk,t)}}
 function rHit(atk,t){atk.hit.add(t);const a=atk.f.m,d=t.m,mv=atk.mv,hp0=d.hp,ba=rBs(a),bd=rBs(d);
  const sh=a.st==='shock',cf=a.cf;if(sh)a.st=null;a.cf=0;   // already checked when the move was used
  const L=rScaled([a,d],()=>act(a,d,{...mv,a:1e9}));if(sh&&!a.st)a.st='shock';if(!a.cf)a.cf=cf;   // accuracy is the hitbox's job in real time
@@ -214,8 +246,8 @@ function rHit(atk,t){atk.hit.add(t);const a=atk.f.m,d=t.m,mv=atk.mv,hp0=d.hp,ba=
   const e=eff(mv.t,D[d.id].t);if(e>1){rFloat(t,'SUPER!','#ffd23f');RTA.shake=8}else if(e<1)rFloat(t,'resist','#a99cc8');if(L.includes('A critical hit!'))rFloat(t,'CRIT!','#ff8a1e');if((mv.p||0)>80)RTA.shake=Math.max(RTA.shake,6)}
  else if(d.hp>hp0){rFloat(t,'+'+(d.hp-hp0),'#9be36b');rCpush('common_heal_shield',0,t.x,t.y-12,28,24)}
  rLog(L)}
-function rShots(){const A=RTA;A.shots=A.shots.filter(s=>{s.t++;s.x+=s.vx;s.y+=s.vy;const t=rFoe(s.atk.f);
- if(t.m.hp>0&&!s.atk.hit.has(t)&&Math.hypot(t.x-s.x,t.y-8-s.y)<s.r+7){rHit(s.atk,t);if(!s.wave)return false}
+function rShots(){const A=RTA;A.shots=A.shots.filter(s=>{s.t++;s.x+=s.vx;s.y+=s.vy;
+ for(const t of rFoes(s.atk.f))if(t.m.hp>0&&!s.atk.hit.has(t)&&Math.hypot(t.x-s.x,t.y-8-s.y)<s.r+7){rHit(s.atk,t);if(!s.wave)return false}
  return s.t<s.life&&s.x>RF.x0-8&&s.x<RF.x1+8&&s.y>RF.y0-16&&s.y<RF.y1+8})}
 function rAreas(){const A=RTA;A.areas=A.areas.filter(z=>{z.t++;
  if(z.kind==='zone'){if(z.t===z.delay){rHitAt(z.atk,z.x,z.y,z.r,true);rImpact(z.atk,z.x,z.y-6,1)}return z.t<z.delay+4}
@@ -313,7 +345,7 @@ function rEll(x,y,rx,ry,c,a){ctx.save();ctx.globalAlpha=a;ctx.fillStyle=c;ctx.be
 function rRing(x,y,rx,ry,c,a,w){ctx.save();ctx.globalAlpha=a;ctx.strokeStyle=c;ctx.lineWidth=w||1;ctx.beginPath();ctx.ellipse(x,y,rx,ry,0,0,Math.PI*2);ctx.stroke();ctx.restore()}
 const rCol=mv=>TC[mv.t]||['#e8e0ff','#ffffff','#a99cc8'];
 function rDrawF(f){const m=f.m,name=D[m.id].name,S=26,pose=k=>{const i=ARPI[name+'_'+k];return okI(i)?i:null};
- rEll(f.x,f.y,8,3,'#000',0.35);if(f.wind)rRing(f.x,f.y-10,13+Math.sin(RTA.t/2)*1.5,13,rCol(MV[m.moves[f.wind.i]])[1],0.9,2);
+ rEll(f.x,f.y,8,3,'#000',0.35);if(RTA.opts.ffa&&m.hp>0)rRing(f.x,f.y,9,3.5,RSIDEC[f.side],0.9,1);if(f.wind)rRing(f.x,f.y-10,13+Math.sin(RTA.t/2)*1.5,13,rCol(MV[m.moves[f.wind.i]])[1],0.9,2);
  let im=null,flip=false,rot=0;const atk=f.wind||f.atkT>0;
  if(m.hp<=0){im=pose('ko');if(!im){im=ARTI[name];rot=Math.PI/2}}else if(f.hurt>0)im=pose('hurt');
  if(!im){if(f.face==='up')im=(atk&&pose('atk_back'))||(okI(ARTBI[name])?ARTBI[name]:null);
@@ -348,10 +380,11 @@ function rtaDraw(){if(!RTA)return rHubDraw();const A=RTA,pl=PL[A.pl],sx=A.shake>
  for(const x of A.cfx||[])rCF(x.sheet,x.row,Math.min(3,Math.floor(x.t/x.dur*4)),x.x,x.y,x.w,x.t>x.dur*0.75?(x.dur-x.t)/(x.dur*0.25):1,x.flip);
  for(const x of A.fl){ctx.save();ctx.globalAlpha=x.t>30?(45-x.t)/15:1;txt(x.s,Math.round(x.x-x.s.length*2.5),Math.round(x.y-x.t*0.4),'#1b1424',5);txt(x.s,Math.round(x.x-x.s.length*2.5)-1,Math.round(x.y-x.t*0.4)-1,x.c,5);ctx.restore()}
  ctx.restore();rHud()}
-function rHud(){const A=RTA,[p,e]=A.f;
+function rHud(){const A=RTA,p=A.f[0],e=A.opts.ffa?rFoe(p):A.f[1];
  if(rUiOk('panel_l','panel_r','bar_g','bar_y','bar_r','timer'))for(const[f,x,flip]of[[p,0,false],[e,96,true]])rPanel(f,x,flip);
  else{rect(0,0,160,18,'#120c22');txtFit(nm(p.m),2,2,'#e8e0ff',58,6);hpbar(2,10,64,p.m);txtFit(nm(e.m),94,2,'#e8e0ff',58,6);hpbar(94,10,64,e.m)}
- const T0=ARJ.match.time*60*(A.tm&&A.tm[0].length>1?2:1),left=A.phase==='count'?T0:Math.max(0,T0-(A.t-A.t0)),ts=String(Math.ceil(left/60)).padStart(2,'0');
+ if(A.opts.ffa){const n=A.f.slice(1).filter(x=>x.m.hp>0).length;txt(n+' left',70,22,'#ffd23f',5)}
+ const T0=rT0(),left=A.phase==='count'?T0:Math.max(0,T0-(A.t-A.t0)),ts=String(Math.ceil(left/60)).padStart(2,'0');
  if(rUi('timer',69,0,22,22))txt(ts,80-ts.length*3,8,left<600?'#ff8a1e':'#ffd23f',6);else txt(ts,72,5,left<600?'#ff8a1e':'#ffd23f',8);
  rect(0,126,160,18,'#120c22');const art=rUiOk('btn_ready','btn_cool');
  p.m.moves.forEach((mi,i)=>{const x=i*40,mv=MV[mi],c=rCol(mv),k=p.cd[i]/p.cdm[i];
