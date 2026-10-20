@@ -650,7 +650,7 @@ function aiMove(a,d){let best=a.moves[0],bv=-1;for(const mi of a.moves){const mv
   if(!mv.p){const fx=mv.fx;v=fx.heal?(a.hp<stat(a,0)*0.4?140:0):fx.s?((d.st||immune(d,fx.s)||(fx.s==='confuse'&&d.cf))?0:55):fx.self?(Object.keys(fx.self).some(k=>k!=='c'&&a.bs[k]>=2)?0:45):45;v*=0.6+R()*0.8}
   else{const dt=TR(d.id);v=mv.p*eff(mv.t,D[d.id].t)*(D[a.id].t.includes(mv.t)?1.5:1)*(0.7+R()*0.6);if(dt.k==='absorb'&&dt.v===mv.t)v=0;if(dt.k==='float'&&mv.t==='Gravity')v=0}
   if(v>bv){bv=v;best=mi}}return MV[best]}
-function startBattle(team,trainer){if(!trainer)for(const m of team)if(!m.pri&&R()<priOdds())m.pri=1;if(typeof SJBUF!=='undefined'){SJBUF=0;SJ=null}if(!trainer&&G.jam>0&&team.length&&team[0].lv<(G.party.find(m=>m.hp>0)||{lv:0}).lv){return}warm(ARTI,team.map(m=>D[m.id].name));warm(ARTBI,G.party.map(m=>D[m.id].name));const pi=G.party.findIndex(m=>m.hp>0);team.forEach(m=>{G.seen[m.id]=1;resetStages(m)});G.party.forEach(resetStages);
+function startBattle(team,trainer){if(!trainer)for(const m of team)if(!m.pri&&R()<priOdds())m.pri=1;if(typeof SJBUF!=='undefined'){SJBUF=0;SJ=null}if(!trainer&&G.jam>0&&team.length&&team[0].lv<(G.party.find(m=>m.hp>0)||{lv:0}).lv){return}warm(ARTI,team.map(m=>D[m.id].name));warm(ARTBI,G.party.map(m=>D[m.id].name));if(typeof bfxWarm==='function')bfxWarm(team.concat(G.party));const pi=G.party.findIndex(m=>m.hp>0);team.forEach(m=>{G.seen[m.id]=1;resetStages(m)});G.party.forEach(resetStages);
  B={from:scene==='world'?'world':'planet',team,ei:0,tr:trainer,pi,part:new Set([pi]),phase:'wait',sel:0,psel:0,podsel:0,captured:false,anim:null,trShow:!!(trainer&&trainer.art)};scene='battle';const L=trainer?[trainer.name+' wants to battle!',trainer.name+' sent out '+nm(team[0])+'!']:['A wild '+nm(team[0])+' appeared!'];if(!trainer&&team[0].pri){L[0]='A Prismatic '+nm(team[0])+' appeared!';L.push('Its colours shimmer like nothing you have seen!');priSfx()}
  storyBattleStart(trainer,L);const tw=TR(team[0].id);if(!trainer&&tw.k==='sync')L.push(nm(team[0])+"'s signal feels "+(tw.v>1?'calm and friendly.':'jumpy and skittish.'));
  L.push('Go, '+nm(G.party[pi])+'!');entry(team[0],G.party[pi],L);entry(G.party[pi],team[0],L);
@@ -785,6 +785,9 @@ function drawMove2(A){const im=FXI['mv_'+A.an.r],R=MOVEFX.rows[A.an.r];if(!okI(i
  const wide=c[2]>c[3]*1.5,cy=wide?ty+16-h/2:ty;drawCell(im,c,tx,cy,w,h,flip&&!wide,k>0.7?(1-k)/0.3:1)}
 // the owner's move sheets (4x2 cells, repacked roomy: row 0 travel, row 1 impact) and pose art in normal battles
 const BFXI=lazyImgs(BFXD),BPOSI=lazyImgs(BPOSE);
+// load each fighter's move sheets and poses as the battle starts, so the first hit already uses them
+function bfxWarm(mons){const k=mv=>{const n=String(mv.n||'').toLowerCase().replace(/[^a-z0-9]+/g,'_').replace(/^_+|_+$/g,''),s=mv.sig?'sig_'+n:n;return s in BFXD?s:n in BFXD?n:null};
+ warm(BFXI,mons.flatMap(m=>(m.moves||[]).map(i=>MV[i]&&k(MV[i]))).filter(Boolean));warm(BPOSI,mons.flatMap(m=>['atk_front','atk_back','hurt','ko'].map(s=>D[m.id].name+'_'+s)))}
 function bfxSheet(mv){const k=String(mv.n||'').toLowerCase().replace(/[^a-z0-9]+/g,'_').replace(/^_+|_+$/g,''),s=mv.sig?'sig_'+k:k,key=s in BFXD?s:k in BFXD?k:null;if(!key)return null;const im=BFXI[key];return okI(im)?im:null}
 function bfxCell(im,col,row,x,y,w,flip,a){const cw=(im.naturalWidth||im.width)/4,ch=(im.naturalHeight||im.height)/2;drawCell(im,[col*cw,row*ch,cw,ch],x,y,w*cw/192,w*4/3*ch/256,flip,a)}
 function drawMove3(A){const im=A.sheet,[fx0,fy0]=A.from,[tx,ty]=A.to,flip=tx<fx0;
