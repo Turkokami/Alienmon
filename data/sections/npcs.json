@@ -6637,5 +6637,19 @@
    ],
    "v3": true
   }
+ ],
+ "915": [
+  {
+   "art": "referee",
+   "name": "Receptionist",
+   "stay": true,
+   "tile": [
+    9,
+    5
+   ],
+   "t": [
+    "Receptionist: Welcome to the Linker Arena, home of real-time battles!"
+   ]
+  }
  ]
 }

@@ -12239,6 +12239,26 @@
    "v3": true,
    "kit": "874",
    "file": "art/sections/01_dustara/874_sunset_tunnel_mouth.png"
+  },
+  {
+   "id": "915",
+   "planet": "Dustara",
+   "name": "Linker Arena Lobby",
+   "type": "interior",
+   "size_px": [
+    1280,
+    1280
+   ],
+   "tiles": [
+    20,
+    20
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "v3": true,
+   "kit": "915",
+   "file": "art/sections/01_dustara/915_linker_arena_lobby.png"
   }
  ]
 }

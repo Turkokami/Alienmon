@@ -24,7 +24,9 @@ SHEETS = {
                     + [('stick', (0, 430, 640, 1024), 128), ('swap', (640, 430, 1088, 1024), 96), ('pause', (1088, 430, 1536, 1024), 96)],
     'hud': None,   # irregular layout: separate blobs
     'cups': grid(['cup_%d' % i for i in range(1, 7)], 3, 2, 96),
-    'trophies': grid(['trophy_%d' % i for i in range(1, 7)], 3, 2, 96),
+    'trophies': grid(['trophy_bronze', 'trophy_silver', 'trophy_gold', 'trophy_prism'], 4, 1, 120),
+    'mode_cards': grid(['card_1v1', 'card_3v3', 'card_ffa', 'card_cups', 'card_code', 'card_practice'], 3, 2, 200),
+    'results_bg': [('podium_bg', (0, 0, 1536, 1024), 480)],
     'logo': [('logo', (0, 0, 1536, 1024), 320)],
 }
 HUD = (['panel_l', 'panel_r', 'bar_g', 'bar_y', 'bar_r', 'timer', 'pips'], 2, 240)

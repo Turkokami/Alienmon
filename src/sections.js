@@ -69,9 +69,12 @@ function secInteract(){const s=SWORLD[G.sec.id],[dx,dy]=DIRS[face],x=G.sec.x+dx,
  const own=secQAt(G.sec.x,G.sec.y,false);if(own&&own.k==='prop')return qInteract(own);   // a quest pickup under your feet counts too
  const qe=secQAt(x,y,false);if(qe&&(!secNpcAt(s,x,y)||qe.k==='giver'||qe.k==='turnin'))return qInteract(qe);   // a townsperson who offers or takes back a mission
  const wm=secMonAt(s,x,y);if(wm)return secMonBattle(s,wm);
- const n=secNpcAt(s,x,y);if(n){n.face=({up:'down',down:'up',left:'right',right:'left'})[face];if(n.legend)return storyLegend(n);if(n.trainer)return secTrainerTalk(n);if(n.wid){const q0=QN.length;qEvent('talk',n.wid,{x:n.x*16+8,y:n.y*16+15});if(QN.length>q0)return}if(n.story==='starter'&&!G.party.length)return secStarterTalk();if(storyNpc(n))return;if(n.story==='arena')return arenaMenu();return say(!G.party.length&&n.pre?n.pre:n.t,null,n.por||(n.name&&(PORT[n.art]||TALKI[n.art])?n.art:undefined))}
+ const n=secNpcAt(s,x,y);if(n){n.face=({up:'down',down:'up',left:'right',right:'left'})[face];if(n.legend)return storyLegend(n);if(n.trainer)return secTrainerTalk(n);if(n.wid){const q0=QN.length;qEvent('talk',n.wid,{x:n.x*16+8,y:n.y*16+15});if(QN.length>q0)return}if(n.story==='starter'&&!G.party.length)return secStarterTalk();if(storyNpc(n))return;if(n.story==='arena')return arenaMenu();if(n.name==='Receptionist'&&/Lobby/.test(s.name))return arenaDesk(s);return say(!G.party.length&&n.pre?n.pre:n.t,null,n.por||(n.name&&(PORT[n.art]||TALKI[n.art])?n.art:undefined))}
  const o=(s.objects||[]).find(o=>o.tile[0]===x&&o.tile[1]===y);if(!o)return secFieldA(s,x,y);
  if(o.k==='arena')return arenaMenu();
+ if(o.k==='desk')return arenaDesk(s);if(o.k==='rta_go')return typeof rtaHub==='function'?rtaHub('planet'):exhibMenu();
+ if(o.k==='rta_cups')return typeof rCupMenu==='function'?(rtaHub('planet'),rCupMenu()):say('The cups open with the Linker Arena. Coming soon!');
+ if(o.k==='trophies')return typeof rCabinet==='function'?rCabinet():say(['A cabinet of glittering trophies, waiting for champions.']);
  if(o.k==='house')return secHouse(s,o);
  if(o.k==='ladder')return say(o.label||'A ladder.',()=>choose('Climb up?',['Climb','Not now'],i=>{if(i===0)secWarp({to:o.to,at:o.at,face:o.face||'up',kind:'stairs'})}));
  if(o.k==='keeper')return keeperTalk(PL[G.planet]);
@@ -284,11 +287,15 @@ function arenaTrainer(L,round){const champ=round===3,r=rng(hash(L.k+round+frame)
   name=['Kai','Rhee','Juno','Vela','Corin','Wren','Nyx','Sol','Yuki','Zora','Milo','Quill'][Math.floor(r()*12)];
  return{name:cls+' '+name,art,intro:['Round 1! Let\'s give the crowd a show!','Round 2! You won\'t get past me so easily!','Final round before the Champion! Bring it!'][round],lose:'What a battle! The crowd loves you!',after:'Good luck out there!',team,bkey:'arena_'+L.k,arena:1}}
 /* ---- Exhibition matches (START > Arena): one of your Alienmon against one opponent, for Stardust. Turn-based, no EXP ---- */
+// every arena lobby's receptionist (and the Dustmere lobby desk): the Linker Arena on this world's floor, or an exhibition match
+function arenaDesk(s){const pi=PL.findIndex(p=>p.key===s.pkey);if(typeof rtaHub!=='function')return say('Receptionist: Welcome! Fancy an exhibition match?',exhibMenu,'referee');
+ if(typeof RTO!=='undefined')RTO.arena=s.id==='915'||pi<0?PL.length:pi;
+ choose('Receptionist: Welcome to the Linker Arena!',['Linker Arena (real-time)','Exhibition match','Not now'],i=>{if(i===0)rtaHub('planet');else if(i===1)exhibMenu()},null,'referee')}
 const EXHIB_FEE=50,EXHIB=[{k:'rookie',n:'Rookie',d:-3,prize:100},{k:'ace',n:'Ace',d:0,prize:160},{k:'star',n:'Star',d:3,prize:250}];
 function exhibMenu(){G.arena=G.arena||{};const rec=G.arena.exhib||{wins:0,losses:0};
  const opts=EXHIB.map(x=>x.n+' match (win '+x.prize+')').concat(['Records'],typeof rtaMenu==='function'?['Linker Arena (test)']:[],['Not now']);
  choose('Exhibition: '+EXHIB_FEE+' Stardust to enter',opts,i=>{const x=EXHIB[i];
-  if(!x){const o=opts[i];if(o==='Records')return say(['Exhibition record: '+rec.wins+' win'+(rec.wins===1?'':'s')+', '+rec.losses+' loss'+(rec.losses===1?'':'es')+'.','Best win streak: '+(rec.best||0)+'.'],exhibMenu);if(o==='Linker Arena (test)')return rtaMenu();return}
+  if(!x){const o=opts[i];if(o==='Records')return say(['Exhibition record: '+rec.wins+' win'+(rec.wins===1?'':'s')+', '+rec.losses+' loss'+(rec.losses===1?'':'es')+'.','Best win streak: '+(rec.best||0)+'.'],exhibMenu);if(o==='Linker Arena (test)')return rtaHub();return}
   if(G.dust<EXHIB_FEE)return say('You need '+EXHIB_FEE+' Stardust to enter. You have '+G.dust+'.',exhibMenu);
   const ok=G.party.filter(m=>m.hp>0);if(!ok.length)return say('Your team needs rest first. Visit a Recovery Bay.');
   choose('Who fights the '+x.n+' match?',ok.map(m=>nm(m)+' Lv'+m.lv).concat(['Back']),j=>{const m=ok[j];if(!m)return exhibMenu();

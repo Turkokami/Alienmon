@@ -1496,6 +1496,30 @@
    ],
    "confidence": "high",
    "why": "V3 kit door"
+  },
+  {
+   "interior": "915",
+   "parent": "472",
+   "door": [
+    17,
+    5
+   ],
+   "door2": [
+    18,
+    5
+   ],
+   "mat": [
+    [
+     9,
+     18
+    ],
+    [
+     10,
+     18
+    ]
+   ],
+   "confidence": "high",
+   "why": "Linker Arena dome (owner art: lobby_exterior / lobby_interior)"
   }
  ],
  "stairs": [
@@ -5710,6 +5734,96 @@
     "item": "revive",
     "n": 3,
     "why": "bonus tower summit reward"
+   }
+  ],
+  "915": [
+   {
+    "tile": [
+     8,
+     7
+    ],
+    "k": "desk",
+    "why": "sign-up counter: the Linker Arena menu"
+   },
+   {
+    "tile": [
+     9,
+     7
+    ],
+    "k": "desk",
+    "why": "sign-up counter: the Linker Arena menu"
+   },
+   {
+    "tile": [
+     10,
+     7
+    ],
+    "k": "desk",
+    "why": "sign-up counter: the Linker Arena menu"
+   },
+   {
+    "tile": [
+     11,
+     7
+    ],
+    "k": "desk",
+    "why": "sign-up counter: the Linker Arena menu"
+   },
+   {
+    "tile": [
+     2,
+     2
+    ],
+    "k": "rta_go",
+    "why": "crossed-swords arch: straight to the arena cards"
+   },
+   {
+    "tile": [
+     3,
+     2
+    ],
+    "k": "rta_go",
+    "why": "crossed-swords arch: straight to the arena cards"
+   },
+   {
+    "tile": [
+     16,
+     2
+    ],
+    "k": "rta_cups",
+    "why": "star arch: the cups"
+   },
+   {
+    "tile": [
+     17,
+     2
+    ],
+    "k": "rta_cups",
+    "why": "star arch: the cups"
+   },
+   {
+    "tile": [
+     4,
+     8
+    ],
+    "k": "trophies",
+    "why": "trophy cabinet"
+   },
+   {
+    "tile": [
+     4,
+     9
+    ],
+    "k": "trophies",
+    "why": "trophy cabinet"
+   },
+   {
+    "tile": [
+     4,
+     10
+    ],
+    "k": "trophies",
+    "why": "trophy cabinet"
    }
   ]
  },

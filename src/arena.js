@@ -42,15 +42,14 @@ function rFoeTeam(n,r,arena,avoid){const pl=PL[arena]||PL[0];let pool=pl.pool.c.
  const out=[];while(out.length<n){const i=pool[Math.floor(r()*pool.length)];if(!out.includes(i)||pool.length<n)out.push(i)}return out}
 function rtaMenu(){if(!G.party.length)return say('You need an Alienmon to enter the Arena.');RTO.pick=Math.min(RTO.pick,G.party.length-1);RTO.mode=RTO.mode||'1v1';
  const team=RTO.rental?'Rental team':rMyTeam().map(m=>nm(m)).join(', ');
- choose('Linker Arena',['Fight!','Mode: '+RTO.mode,'Team: '+team,'CPU: '+RDIFF[RTO.diff][0],'Arena: '+rArenaName(RTO.arena),'Cups','Record','How to play','Back'],k=>{
-  if(k===0)rtaStart();
-  else if(k===1){RTO.mode=RMODES[(RMODES.indexOf(RTO.mode)+1)%RMODES.length];rtaMenu()}
-  else if(k===2)rTeamMenu();
-  else if(k===3){RTO.diff=(RTO.diff+1)%RDIFF.length;rtaMenu()}
-  else if(k===4)rArenaMenu();
-  else if(k===5)rCupMenu();
-  else if(k===6)rRecord();
-  else if(k===7)say(['Arena battles happen in real time. Every Alienmon fights at level 50.','Slide your thumb on the pad to move in any direction. Tap a move button to use it; moves aim at your foe when you face it.','Strong moves need time to recharge, and the biggest ones glow before they hit. Watch for warning rings on the ground and dodge!','In 3v3, press SWAP (or Q) to switch Alienmon. When one is knocked out, the next one beams in.','Heavy hits crack the floor, and every planet has its own hazard. Types, Traits and status all work like normal battles.'],rtaMenu)},()=>{})}
+ choose('Arena settings',['Team: '+team,'CPU: '+RDIFF[RTO.diff][0],'Arena: '+rArenaName(RTO.arena),'Keeper rematch','Record','How to play','Back to cards'],k=>{
+  if(k===0)rTeamMenu();
+  else if(k===1){RTO.diff=(RTO.diff+1)%RDIFF.length;rtaMenu()}
+  else if(k===2)rArenaMenu();
+  else if(k===3)rKeeperMenu();
+  else if(k===4)rRecord();
+  else if(k===5)say(['Arena battles happen in real time. Every Alienmon fights at level 50.','Slide your thumb on the pad to move in any direction. Tap a move button to use it; moves aim at your foe when you face it.','Strong moves need time to recharge, and the biggest ones glow before they hit. Watch for warning rings on the ground and dodge!','In 3 vs 3, press SWAP (or Q) to switch Alienmon. When one is knocked out, the next one beams in.','Heavy hits crack the floor, and every planet has its own hazard. Types, Traits and status all work like normal battles.'],rtaMenu);
+  else rtaHub()},()=>rtaHub())}
 function rTeamMenu(){const n=RTO.mode==='3v3'?3:1;RTO.team=(RTO.team||[RTO.pick]).filter(i=>G.party[i]);
  const opts=G.party.map((m,i)=>(RTO.team.includes(i)?'* ':'  ')+nm(m)+' L'+m.lv).concat([RTO.rental?'* Rental team':'  Rental team','Done']);
  choose('Pick '+n+' Alienmon',opts,k=>{if(k===opts.length-1)return rtaMenu();
@@ -97,10 +96,59 @@ function rCupNext(){const A=RTA,cu=A.opts.cup,c=RCUPS.find(x=>x.k===cu.k);
  if(A.win!==0)return say([c.n+': knocked out in round '+(cu.round+1)+'. Train up and try again!'],rtaLeave);
  if(cu.round<3)return say(['Round '+(cu.round+1)+' won! Round '+(cu.round+2)+' of 4 is next.'],()=>rCupRound(c,cu.round+1));
  G.rta.cups=G.rta.cups||{};const first=!G.rta.cups[c.k];G.rta.cups[c.k]=1;if(typeof autosave==='function')autosave();
- say(['You won the '+c.n+'!',first?'The '+c.n+' trophy is yours.':'Another win for the record.'].concat(c.top?['You are the Linker Arena champion!']:[]),rtaLeave)}
+ const L=['You won the '+c.n+'!',first?'The '+c.n+' trophy is yours.':'Another win for the record.'].concat(c.top?['You are the Linker Arena champion!']:[]);
+ rPodium(RTROPHY[c.k]||'trophy_gold',c.n+' Champion!',A.tm[0][0].m.id,()=>say(L,rtaLeave))}
+
+/* ---- the arena card screen (P3-06): the owner's mode cards; START opens settings, B leaves ---- */
+let RHUB=null;
+const RCARDS=[{k:'card_1v1',n:'1 vs 1',go:()=>{RTO.mode='1v1';rtaStart()}},{k:'card_3v3',n:'3 vs 3',go:()=>{RTO.mode='3v3';rtaStart()}},{k:'card_ffa',n:'Free-for-all',soon:1},
+ {k:'card_cups',n:'Cups',go:()=>rCupMenu()},{k:'card_code',n:'Battle Code',soon:1},{k:'card_practice',n:'Practice',go:()=>{const k=RTO.mode;RTO.mode='1v1';rtaStart({arena:PL.length,diff:0});RTO.mode=k}}];
+// back: where B returns to ('planet' from a lobby or Recovery Bay, else the START menu)
+function rtaHub(back){if(!G.party.length)return say('You need an Alienmon to enter the Arena.');if(back)RTO.back=back;RTA=null;RHUB={sel:RHUB?RHUB.sel:0,t:0};scene='rta'}
+function rtaExit(){RHUB=null;RTA=null;if(RTO.back==='planet'){RTO.back=null;scene='planet'}else{scene='menu';menuMode='root'}}
+function rHubUpd(){const H=RHUB;if(!H)return rtaExit();H.t++;
+ if(H.pod){if(H.pod.t++>30&&(P_('a')||P_('b'))){const cb=H.pod.cb;H.pod=null;if(cb)cb()}return}
+ if(H.cab){if(H.cab.t++>10&&(P_('a')||P_('b'))){H.cab=null;if(H.cab0==='exit')return rtaExit()}return}
+ if(P_('left'))H.sel=(H.sel+5)%6;if(P_('right'))H.sel=(H.sel+1)%6;if(P_('up')||P_('down'))H.sel=(H.sel+3)%6;
+ if(P_('start'))return rtaMenu();if(P_('b'))return rtaExit();
+ if(P_('a')){const c=RCARDS[H.sel];if(c.soon)return say(c.n+' is coming soon to the Linker Arena!');c.go()}}
+function rHubDraw(){const H=RHUB;if(!H){rect(0,0,160,144,'#120c22');return}
+ if(H.pod)return rPodDraw(H.pod);if(H.cab)return rCabDraw();
+ rect(0,0,160,144,'#120c22');for(let i=0;i<24;i++)rect((i*53+frame/4)%160,(i*37)%104,1,1,'#3b2a5c');
+ if(!rUi('logo',48,1,64))txt('LINKER ARENA',44,4,'#ffd23f',7);
+ RCARDS.forEach((c,i)=>{const x=6+(i%3)*51,y=24+Math.floor(i/3)*42,on=i===H.sel;ctx.save();if(c.soon)ctx.globalAlpha=0.45;
+  if(!rUi(c.k,x,y,46,38))rect(x,y,46,38,'#3b2a5c');ctx.restore();if(c.soon)txt('SOON',x+12,y+15,'#ffd23f',6);
+  if(on){ctx.strokeStyle=frame%30<20?'#ffd23f':'#ff8a1e';ctx.lineWidth=2;ctx.strokeRect(x-1,y-1,48,40)}});
+ box(0,110,160,34);txt(RCARDS[H.sel].n+(RCARDS[H.sel].soon?' (soon)':''),6,115,'#1b1424',7);txt('A: pick  START: setup  B: back',6,128,'#3b2a5c',5)}
+// the winners' podium: a trophy on the top step and your lead Alienmon beside it
+const RTROPHY={canyon:'trophy_bronze',tide:'trophy_bronze',thunder:'trophy_silver',frost:'trophy_silver',nebula:'trophy_gold',summit:'trophy_prism'};
+function rPodium(trophy,title,lead,cb){scene='rta';RTA=null;RHUB=RHUB||{sel:0,t:0};RHUB.pod={trophy,title,lead,cb,t:0}}
+function rPodDraw(P){if(!rUi('podium_bg',0,0,160,107))rect(0,0,160,107,'#241838');const b=Math.round(Math.sin(P.t/8)*2);
+ rUi(P.trophy,70,26+b,20);if(P.lead!=null)dspr(P.lead,26,40,2.2,false,null);
+ box(0,107,160,37);wrap(P.title,24).slice(0,2).forEach((l,i)=>txt(l,6,113+i*11,'#1b1424',7));if(P.t>30&&frame%40<28)txt('A',150,134,'#ff8a1e',6)}
+// the trophy cabinet in the Dustmere lobby: every cup, lit up once it is won
+function rCabinet(){scene='rta';RTA=null;RHUB={sel:0,t:0,cab:{t:0},cab0:'exit'};RTO.back='planet'}
+function rCabDraw(){rect(0,0,160,144,'#1b1424');txt('Trophy cabinet',36,4,'#ffd23f',7);const won=(G.rta&&G.rta.cups)||{};
+ RCUPS.forEach((c,i)=>{const x=10+(i%3)*50,y=18+Math.floor(i/3)*44,got=won[c.k];ctx.save();if(!got){ctx.globalAlpha=0.25}rUi(RTROPHY[c.k],x+12,y,18);ctx.restore();txt(c.n.replace(' Cup',''),x+2,y+36,got?'#ffd23f':'#6b5a9a',5)});
+ const kp=Object.keys((G.rta&&G.rta.keepers)||{}).length,r=G.rta||{w:0,l:0};box(0,110,160,34);txt('Keeper rematches won: '+kp+'/8',6,115,'#1b1424',6);txt('Record: '+(r.w||0)+' W / '+(r.l||0)+' L',6,127,'#1b1424',6)}
+
+/* ---- Keeper rematch (P3-04): every Keeper you have beaten in the story, 3v3 with their story Alienmon at level 50 ---- */
+function rKeeperList(){return PL.map((p,i)=>({p,i})).filter(x=>x.p.keeper&&G.beaten&&G.beaten[x.p.key])}
+function rKeeperMenu(){const L=rKeeperList(),won=(G.rta&&G.rta.keepers)||{};
+ if(!L.length)return say('Beat a Keeper in the story first. Then they will accept a rematch here.',rtaMenu);
+ choose('Keeper rematch: 3 vs 3, Lv 50',L.map(x=>(won[x.p.key]?'* ':'  ')+x.p.keeper.name+' ('+x.p.name+')').concat(['Back']),i=>{const x=L[i];if(!x)return rtaMenu();
+  const k=x.p.keeper,base=(typeof keeperTeam==='function'?keeperTeam(x.p.key,k):k.team||[]).map(([id])=>id),extra=x.p.pool.r.concat(x.p.pool.e,x.p.pool.c);
+  const foe=[],seen=new Set();for(const id of base.concat(extra)){if(foe.length>=3)break;const m=evolvedAt(id,ARJ.match.level);if(!seen.has(m)){seen.add(m);foe.push(m)}}   // no repeats once evolved
+  const keep=RTO.mode;RTO.mode='3v3';const mine=rMyTeam();RTO.mode=keep;
+  say([k.name+': A rematch, here in the Linker Arena? At full strength this time. Let\'s go!'],()=>rtaStart({mine,foe,arena:x.i,diff:2,keeper:{key:x.p.key,name:k.name}}),k.art)},rtaMenu)}
+function rKeeperDone(){const A=RTA,kp=A.opts.keeper;G.rta=G.rta||{w:0,l:0,d:0};G.rta.keepers=G.rta.keepers||{};
+ if(A.win!==0)return say([kp.name+': Not bad! Come back when you are ready for another round.'],rtaLeave);
+ const first=!G.rta.keepers[kp.key];G.rta.keepers[kp.key]=1;if(first)G.dust+=500;if(typeof autosave==='function')autosave();
+ const lead=A.tm[0][0].m.id,lines=[kp.name+': You beat me at full strength. You really are something, Linker!'].concat(first?['You received 500 Stardust!']:[]);
+ if(first)return rPodium('trophy_gold','Keeper rematch won: '+kp.name+'!',lead,()=>say(lines,rtaLeave));say(lines,rtaLeave)}
 
 /* ---- update ---- */
-function rtaUpd(){const A=RTA;A.t++;
+function rtaUpd(){if(!RTA)return rHubUpd();const A=RTA;A.t++;
  if(A.phase!=='over'&&P_('start')){choose('Paused',['Resume','Forfeit'],k=>{if(k===1)rtaOver(1)},()=>{});rtaDraw();return}
  if(A.phase==='count'){if(A.t>=ARJ.match.countdown){A.phase='fight';A.t0=A.t}A.cfx=A.cfx.filter(x=>++x.t<x.dur);rtaDraw();return}
  if(A.phase==='over'){A.ot++;rStepFx();if(A.ot>50&&(P_('a')||P_('b')))rtaResult();rtaDraw();return}
@@ -112,8 +160,8 @@ function rtaUpd(){const A=RTA;A.t++;
  rtaDraw()}
 function rtaOver(win){const A=RTA;if(A.phase==='over')return;A.phase='over';A.ot=0;A.win=win;A.shots=[];A.areas=A.areas.filter(z=>z.kind==='beam');
  G.rta=G.rta||{w:0,l:0,d:0};G.rta[['w','l','d'][win]]++}
-function rtaResult(){if(RTA.opts.cup)return rCupNext();choose('Linker Arena',['Rematch','New foe','Leave'],k=>{if(k===0)rtaStart({foe:RTA.foeIds,arena:RTA.pl});else if(k===1)rtaStart();else rtaLeave()},rtaLeave)}
-function rtaLeave(){RTA=null;scene='menu';menuMode='root'}
+function rtaResult(){if(RTA.opts.cup)return rCupNext();if(RTA.opts.keeper)return rKeeperDone();choose('Linker Arena',['Rematch','New foe','Leave'],k=>{if(k===0)rtaStart({foe:RTA.foeIds,arena:RTA.pl});else if(k===1)rtaStart();else rtaLeave()},rtaLeave)}
+function rtaLeave(){RTA=null;rtaHub()}   // after a match: back to the cards
 
 function rControl(f){if(f.swapCd>0)f.swapCd--;if(P_('sw')&&f.swapCd<=0&&f.m.hp>0)rSwap(0);if(PADJ.on){f.mx=PADJ.x;f.my=PADJ.y}else{f.mx=(held.right?1:0)-(held.left?1:0);f.my=(held.down?1:0)-(held.up?1:0)}
  if(P_('b'))f.sel=(f.sel+1)%f.m.moves.length;let use=P_('a')?f.sel:-1;
@@ -285,7 +333,7 @@ function rFxCell(mv,which,k,x,y,w,flip,a){const af=rArtFx(mv);if(okI(af)){const 
  const an=mv.an,im=an&&FXI['mv_'+an.r],R=an&&MOVEFX.rows[an.r];
  if(!okI(im)||!R||!R[which]||!R[which].length){const c=rCol(mv);rEll(x,y,w/3,w/3,c[0],a*0.8);rEll(x,y,w/6,w/6,c[1],a);return}
  const L=R[which],c=which==='i'?L[Math.min(an.i,L.length-1)]:L[Math.floor(k*L.length)%L.length];drawCell(im,c,x,y,w*c[2]/Math.max(c[2],c[3]),w*c[3]/Math.max(c[2],c[3]),flip,a)}
-function rtaDraw(){const A=RTA,pl=PL[A.pl],sx=A.shake>0?(A.shake--%2?1:-1):0,im=ARSI[A.key+'_arena'],bg=okI(im)?im:SCI[A.key+'_battle'];
+function rtaDraw(){if(!RTA)return rHubDraw();const A=RTA,pl=PL[A.pl],sx=A.shake>0?(A.shake--%2?1:-1):0,im=ARSI[A.key+'_arena'],bg=okI(im)?im:SCI[A.key+'_battle'];
  if(okI(bg)){cover(bg,0,0,160,144);if(bg!==im){ctx.fillStyle='rgba(18,12,34,0.4)';ctx.fillRect(0,0,160,144)}}
  else{const e=ENV[pl.env]||ENV.desert;rect(0,0,160,144,e.o2);for(let y=RF.y0;y<RF.y1;y+=16)for(let x=RF.x0;x<RF.x1;x+=16)rect(x,y,Math.min(16,RF.x1-x),Math.min(16,RF.y1-y),((x+y)/16)%2?e.g:e.g2)}
  ctx.save();ctx.translate(sx,0);ctx.strokeStyle='rgba(95,242,255,0.55)';ctx.strokeRect(RF.x0+0.5,RF.y0+0.5,RF.x1-RF.x0-1,RF.y1-RF.y0-1);rTerDraw();rHazDraw(false);
