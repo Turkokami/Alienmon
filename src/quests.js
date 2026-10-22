@@ -6,13 +6,14 @@ const QUESTS=__QUESTS__,QI={};QUESTS.forEach(q=>QI[q.id]=q);
 const QPLACE=__QPLACE__;   // where quest NPCs, props and trainers stand in each town (tools/place_quests.py)
 const KEY_ITEMS={helix_keycard:'Helix Keycard',ystra_shardlet:'Ystra Shardlet',seedmother_seed:'Seedmother Seed'};
 let QN=[];                 // quest messages waiting for a quiet moment to show
-const qs=id=>G.quests[id];
+// a quest added after this save was made has no entry yet: start it as locked instead of crashing
+const qs=id=>G.quests[id]||(G.quests[id]={state:'locked',step:0,n:0,got:[]});
 
 // set up quest state for a new or loaded game (called from the main loop once G exists)
 function qInit(){G.quests=G.quests||{};G.key=G.key||{};G.flags=G.flags||{};
  for(const q of QUESTS)if(!G.quests[q.id])G.quests[q.id]={state:'locked',step:0,n:0,got:[]};
  if(!G.qmig){G.qmig=1;qMigrate()}
- if(G.qtrack===undefined)G.qtrack=null;if(typeof storyMigrate==='function')storyMigrate();qUnlock()}
+ if(G.qtrack===undefined)G.qtrack=null;if(typeof storyMigrate==='function')storyMigrate();G._qv=QUESTS.length;qUnlock()}
 
 // older saves: credit what the player already did, without paying rewards twice
 function qMigrate(){const done=id=>{const s=qs(id);if(s){s.state='done';s.step=QI[id].objectives.length}};
