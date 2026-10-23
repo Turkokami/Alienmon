@@ -2192,8 +2192,8 @@
    "section": "072",
    "name": "Sunken Landing",
    "tile": [
-    15,
-    9
+    10,
+    12
    ],
    "item": "ether",
    "n": 1,
@@ -3783,7 +3783,7 @@
    "name": "Hidden Hydro Garden",
    "tile": [
     15,
-    7
+    6
    ],
    "item": "maxrevive",
    "n": 1,
@@ -3839,7 +3839,7 @@
    "section": "600",
    "name": "Skyreach Lane Homes",
    "tile": [
-    6,
+    17,
     3
    ],
    "item": "maxrevive",

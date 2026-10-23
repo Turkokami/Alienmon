@@ -232,7 +232,7 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 
 | Section | Tile | Item | Tier |
 |---|---|---|---|
-| 072 Sunken Landing | 15,9 | 1x Ether Gel | 3 |
+| 072 Sunken Landing | 10,12 | 1x Ether Gel | 3 |
 | 073 Dig Camp | 9,11 | 2x Mega Gel | 3 |
 | 077 Glyph Hollow | 9,10 | 2x Mega Gel | 3 |
 | 077 Glyph Hollow | 13,4 | 3x Harmonic Pod | 3 |
@@ -391,7 +391,7 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 | 611 Rift Rock Deep Chamber | 5,3 | 1200x Stardust | 5 |
 | 626 Helix Comms Spire | 20,9 | 2x Full Gel | 5 |
 | 621 Hidden Hydro Garden | 21,10 | 2x Full Gel | 5 |
-| 621 Hidden Hydro Garden | 15,7 | 1x Max Revive | 5 |
+| 621 Hidden Hydro Garden | 15,6 | 1x Max Revive | 5 |
 
 ## Halo (38)
 
@@ -401,7 +401,7 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 | 115 Skyreach Plaza | 9,11 | 3x Ether Gel | 5 |
 | 582 Sky Crossroads | 3,5 | 2x Full Gel | 5 |
 | 582 Sky Crossroads | 5,12 | 1x Singularity Pod | 5 |
-| 600 Skyreach Lane Homes | 6,3 | 1x Max Revive | 5 |
+| 600 Skyreach Lane Homes | 17,3 | 1x Max Revive | 5 |
 | 604 Halo Spaceport | 5,4 | 3x Ether Gel | 5 |
 | 601 Skyreach Quiet Court | 21,5 | 5x Harmonic Pod | 5 |
 | 586 Sky Temple Overlook | 3,6 | 2x Full Gel | 5 |
