@@ -28,11 +28,21 @@ function rShape(mv){const s=(mv.sig?ARJ.signature:ARJ.moves)[mv.n];if(s)return s
  if(!mv.p)return(fx.self||fx.heal)&&!fx.foe&&!fx.s?'AURA':'FIELD';return mv.p<=45?'PROJ':mv.p<=80?(PHYS.has(mv.t)?'ARC':'PROJ'):'ZONE'}
 const rTier=mv=>mv.p?ARJ.tiers.find(t=>mv.p<=t.max):ARJ.status;
 const rSpeed=f=>(0.45+Math.min(160,es(f.m,'spe'))/260)*(RTA&&RTA.ter?rTerSpeed(f):1)*(f.hzSlow>0?(f.hzSlow--,0.5):1);   // px per tick
-const rFoes=f=>RTA.f.filter(o=>o.side!==f.side);
+const rFoes=f=>RTA.f.filter(o=>o.team!==f.team);
 // the foe a fighter aims at: the other side in 1v1/3v3, the nearest one still standing in a free-for-all
 const rFoe=f=>{let b=null,bd=1e9;for(const o of rFoes(f)){const d=(o.m.hp>0?0:1e6)+Math.hypot(o.x-f.x,o.y-f.y);if(d<bd){bd=d;b=o}}return b};
 const RSIDEC=['#5ff2ff','#ff5a3a','#ffd23f','#9be36b','#ff74c4'];   // free-for-all: a coloured ring under each fighter
-const rT0=()=>ARJ.match.time*60*(RTA.opts.ffa||RTA.tm[0].length>1?2:1);
+const rT0=()=>ARJ.match.time*60*(RTA.opts.ffa||RTA.opts.rift||RTA.tm[0].length>1?2:1);
+// Rift Breach (src/skyfall.js): you and three Linkers' Alienmon (one team) against a corrupted giant that takes a sixth of the damage
+function rRiftTm(o){const lead=G.party.find(m=>m.hp>0)||G.party[0],r=rng(hash('riftally:'+o.w)),pool=D.map((d,i)=>i).filter(i=>!rBan(i)&&i!==o.boss),al=[];
+ while(al.length<3){const i=pool[Math.floor(r()*pool.length)];if(!al.includes(i))al.push(i)}
+ const tm=[[rFighter(lead,0)]].concat(al.map((i,k)=>[rFighter(mk(i,ARJ.match.level),k+1)]),[[rFighter(mk(o.boss,ARJ.match.level),4)]]);
+ const cy=(RF.y0+RF.y1)/2+8,P=[[RF.x0+30,cy],[RF.x0+44,RF.y0+30],[RF.x0+44,RF.y1-12],[RF.x0+62,cy],[RF.x1-34,cy]];
+ tm.forEach((t,i)=>{const x=t[0];x.team=i===4?1:0;x.x=P[i][0];x.y=P[i][1];x.face=i===4?'left':'right';x.ax=i===4?-1:1;if(i===4)x.boss=1});return tm}
+function rRiftDone(){const A=RTA,o=A.opts.rift,name=D[o.boss].name,out=()=>{RTA=null;RTO.back='planet';rtaExit()};G.rift=G.rift||{};
+ if(A.win!==0)return say(['The '+name+' retreats into the Rift.','The breach is still open. Heal up and try again!'],out);
+ G.rift[o.w]=1;const m=mk(o.boss,Math.min(100,Math.max(...G.party.map(x=>x.lv)))),where=addMon(m);if(typeof autosave==='function')autosave();
+ say(['The '+name+' calms down. The corruption fades from its eyes.',name+' wants to come with you!',where==='party'?name+' joined your team!':name+' was sent to Storage.'],out)}
 // every HP change in the arena is scaled (data/arena.json match.scale), never below 1 point
 function rScaled(ms,fn){const h0=ms.map(m=>m.hp),r=fn();ms.forEach((m,i)=>{const dh=m.hp-h0[i];if(dh)m.hp=Math.max(0,Math.min(stat(m,0),h0[i]+Math.sign(dh)*Math.max(1,Math.round(Math.abs(dh)*ARJ.match.scale))))});return r}
 
@@ -64,12 +74,12 @@ function rArenaMenu(){choose('Arena',PL.map(p=>p.name).concat(['Practice court']
 function rRecord(){const r=G.rta||{w:0,l:0,d:0},c=(r.cups||{});const won=Object.keys(c).filter(k=>c[k]);
  say(['Arena record: '+r.w+' wins, '+r.l+' losses, '+r.d+' draws.','Free-for-all wins: '+(r.ffa||0)+'. Battle Code wins: '+(r.codes||0)+'.','Cups won: '+(won.length?won.map(k=>(RCUPS.find(x=>x.k===k)||{n:k}).n).join(', '):'none yet')+'.'],rtaMenu)}
 function rFighter(m,side){const c={...m,lv:ARJ.match.level,st:null,cf:0,moves:(m.moves&&m.moves.length?m.moves:[0]).slice(0,4)};resetStages(c);c.hp=stat(c,0);
- return{m:c,side,x:side?RF.x1-28:RF.x0+28,y:(RF.y0+RF.y1)/2+12,face:side?'left':'right',ax:side?-1:1,ay:0,mx:0,my:0,
+ return{m:c,side,team:side,x:side?RF.x1-28:RF.x0+28,y:(RF.y0+RF.y1)/2+12,face:side?'left':'right',ax:side?-1:1,ay:0,mx:0,my:0,
   cd:c.moves.map(()=>0),cdm:c.moves.map(()=>1),sel:0,wind:null,atkT:0,hurt:0,kb:[0,0],dash:null,frz:0,imm:0,step:0,aura:0,swapCd:0,next:0,ai:{t:0,mx:0,my:0,str:1}}}
 // opts: {mine:[mon], foe:[id or mon], arena, diff, cup:{k,round}}; with no opts the menu's settings are used
 function rtaStart(opts){if(typeof opts==='number')opts={foe:[opts]};opts=opts||{};const r=rng(hash('rta'+Date.now())),arena=opts.arena!=null?opts.arena:RTO.arena,pl=PL[arena];
  const mine=(opts.ffa?(opts.mine||rMyTeam()).slice(0,1):opts.mine||rMyTeam()),n=opts.ffa?4:mine.length,foe=(opts.foe||rFoeTeam(n,r,arena,mine.map(m=>m.id))).map(x=>typeof x==='number'?mk(x,ARJ.match.level):x);
- const tm=opts.ffa?[[rFighter(mine[0],0)]].concat(foe.map((m,i)=>[rFighter(m,i+1)])):[mine.map(m=>rFighter(m,0)),foe.map(m=>rFighter(m,1))],f=tm.map(t=>t[0]);
+ const tm=opts.rift?rRiftTm(opts.rift):opts.ffa?[[rFighter(mine[0],0)]].concat(foe.map((m,i)=>[rFighter(m,i+1)])):[mine.map(m=>rFighter(m,0)),foe.map(m=>rFighter(m,1))],f=tm.map(t=>t[0]);
  if(opts.ffa){const cx=(RF.x0+RF.x1)/2,cy=(RF.y0+RF.y1)/2+8,P=[[RF.x0+22,cy],[RF.x1-22,RF.y0+30],[RF.x1-22,RF.y1-12],[cx,RF.y0+28],[cx,RF.y1-10]];
   f.forEach((x,i)=>{x.x=P[i][0];x.y=P[i][1];const dx=cx-x.x,dy=cy-x.y,l=Math.hypot(dx,dy)||1;x.ax=dx/l;x.ay=dy/l;x.face=Math.abs(dx)>=Math.abs(dy)?(dx<0?'left':'right'):(dy<0?'up':'down')})}
  RTA={key:pl?pl.key:'court',pl:arena,foeIds:foe.map(m=>m.id),opts,r,t:0,t0:0,phase:'count',f,tm,shots:[],areas:[],fx:[],cfx:[],fl:[],log:null,shake:0,diff:RDIFF[opts.diff!=null?opts.diff:RTO.diff],win:-1};
@@ -77,7 +87,7 @@ function rtaStart(opts){if(typeof opts==='number')opts={foe:[opts]};opts=opts||{
  RTA.pk=names.flatMap(n=>['side_a','side_b','atk_front','atk_back','hurt','ko'].map(p=>n+'_'+p)).filter(k=>k in ARA.poses);warm(ARPI,RTA.pk);RTA.wait=0;
  RTA.pk2=[[ARSI,RTA.key+'_arena'],...['panel_l','panel_r','bar_g','bar_y','bar_r','timer','btn_ready','btn_cool','btn_pressed','cd_3','cd_2','cd_1','cd_go'].map(k=>[ARUI,k])].filter(([o,k])=>o===ARSI?k in ARA.scenes:ARA.uicut&&k in ARA.uicut);for(const[o,k]of RTA.pk2)o[k];   // the arena poses load before the countdown runs
  for(const x of f)rCpush('common_release',0,x.x,x.y-12,34,30);
- const L=[];if(!opts.ffa){entry(f[0].m,f[1].m,L);entry(f[1].m,f[0].m,L)}rLog(opts.ffa?['Free-for-all! Last Alienmon standing wins.']:opts.code?[opts.code.name+"'s team steps into the arena!"].concat(L):L);scene='rta'}
+ const L=[];if(!opts.ffa&&!opts.rift){entry(f[0].m,f[1].m,L);entry(f[1].m,f[0].m,L)}rLog(opts.rift?['Stabilise the '+D[opts.rift.boss].name+'! Your allies will help.']:opts.ffa?['Free-for-all! Last Alienmon standing wins.']:opts.code?[opts.code.name+"'s team steps into the arena!"].concat(L):L);scene='rta'}
 // tag battles: bring the next Alienmon in where the last one stood (its cooldowns are kept from when it left)
 const rAlive=side=>RTA.tm[side].filter(x=>x.m.hp>0);
 function rSwap(side,to){const A=RTA,old=A.f[side],nx=to||A.tm[side].find(x=>x!==old&&x.m.hp>0);if(!nx||nx===old)return false;
@@ -187,13 +197,14 @@ function rtaUpd(){if(!RTA)return rHubUpd();const A=RTA;A.t++;
  if(A.phase==='over'){A.ot++;rStepFx();if(A.ot>50&&(P_('a')||P_('b')))rtaResult();rtaDraw();return}
  for(let s=0;s<A.f.length;s++){const f=A.f[s];if(f.m.hp<=0&&rAlive(s).length){if(!f.next)f.next=60;else if(--f.next<=0)rSwap(s)}}
  rControl(A.f[0]);for(const e of A.f.slice(1))rAI(e,rFoe(e));for(const f of A.f)rStep(f);rShots();rAreas();rTick();rTerTick();rHazTick();rStepFx();
- const left=rT0()-(A.t-A.t0),fr=s=>A.tm[s].reduce((a,x)=>a+x.m.hp/stat(x.m,0),0)/A.tm[s].length,me=!rAlive(0).length,rest=A.tm.slice(1).every((t,i)=>!rAlive(i+1).length);
+ const left=rT0()-(A.t-A.t0),fr=s=>A.tm[s].reduce((a,x)=>a+x.m.hp/stat(x.m,0),0)/A.tm[s].length,me=A.f.every((x,i)=>x.team!==0||!rAlive(i).length),rest=A.f.every((x,i)=>x.team===0||!rAlive(i).length);
  if(me||rest)rtaOver(me&&rest?2:me?1:0);
+ else if(left<=0&&A.opts.rift){A.timeout=1;rtaOver(1)}
  else if(left<=0){A.timeout=1;const best=Math.max(...A.tm.slice(1).map((t,i)=>fr(i+1)));rtaOver(Math.abs(fr(0)-best)<0.01?2:fr(0)>best?0:1)}
  rtaDraw()}
 function rtaOver(win){const A=RTA;if(A.phase==='over')return;A.phase='over';A.ot=0;A.win=win;A.shots=[];A.areas=A.areas.filter(z=>z.kind==='beam');
  G.rta=G.rta||{w:0,l:0,d:0};G.rta[['w','l','d'][win]]++;if(A.opts.ffa&&win===0)G.rta.ffa=(G.rta.ffa||0)+1;if(A.opts.code&&win===0)G.rta.codes=(G.rta.codes||0)+1}
-function rtaResult(){if(RTA.opts.cup)return rCupNext();if(RTA.opts.keeper)return rKeeperDone();if(RTA.opts.ffa||RTA.opts.code){const o={...RTA.opts,mine:null},tag=o.code?o.code.name+"'s team":'Free-for-all';
+function rtaResult(){if(RTA.opts.cup)return rCupNext();if(RTA.opts.keeper)return rKeeperDone();if(RTA.opts.rift)return rRiftDone();if(RTA.opts.ffa||RTA.opts.code){const o={...RTA.opts,mine:null},tag=o.code?o.code.name+"'s team":'Free-for-all';
   return choose(tag,[o.ffa?'Again (new foes)':'Rematch','Leave'],k=>{if(k===0)rtaStart(o.ffa?{ffa:1,arena:o.arena}:o);else rtaLeave()},rtaLeave)}
  choose('Linker Arena',['Rematch','New foe','Leave'],k=>{if(k===0)rtaStart({foe:RTA.foeIds,arena:RTA.pl});else if(k===1)rtaStart();else rtaLeave()},rtaLeave)}
 function rtaLeave(){RTA=null;rtaHub()}   // after a match: back to the cards
@@ -242,7 +253,7 @@ function rHitAt(atk,x,y,r,ground,fx){if(fx)rImpact(atk,x,y);for(const t of rFoes
 function rHit(atk,t){atk.hit.add(t);const a=atk.f.m,d=t.m,mv=atk.mv,hp0=d.hp,ba=rBs(a),bd=rBs(d);
  const sh=a.st==='shock',cf=a.cf;if(sh)a.st=null;a.cf=0;   // already checked when the move was used
  const L=rScaled([a,d],()=>act(a,d,{...mv,a:1e9}));if(sh&&!a.st)a.st='shock';if(!a.cf)a.cf=cf;   // accuracy is the hitbox's job in real time
- const dmg=hp0-d.hp;rImpact(atk,t.x,t.y-8);rBuffFx(atk.f,ba);rBuffFx(t,bd);
+ if(t.boss&&d.hp<hp0)d.hp=Math.max(0,hp0-Math.max(1,Math.round((hp0-d.hp)/6)));const dmg=hp0-d.hp;rImpact(atk,t.x,t.y-8);rBuffFx(atk.f,ba);rBuffFx(t,bd);
  if(dmg>0){const e=eff(mv.t,D[d.id].t),cr=L.includes('A critical hit!');rCpush(cr||e<1?'common_hit_weak':'common_hit_normal',cr?1:e>1?1:0,t.x,t.y-10,e>1||cr?30:22,14)}
  if(hp0>0&&d.hp<=0)rCpush('common_status_confuse_ko',1,t.x,t.y-8,40,28);
  if(dmg>0){t.hurt=14;const k=Math.min(3,0.8+(mv.p||40)/50),dx=t.x-atk.f.x,dy=t.y-atk.f.y,l=Math.hypot(dx,dy)||1;t.kb=[dx/l*k,dy/l*k];rFloat(t,'-'+dmg,'#ffffff');
@@ -347,8 +358,8 @@ function rStepFx(){const A=RTA;A.fx=A.fx.filter(x=>++x.t<x.dur);A.cfx=(A.cfx||[]
 function rEll(x,y,rx,ry,c,a){ctx.save();ctx.globalAlpha=a;ctx.fillStyle=c;ctx.beginPath();ctx.ellipse(x,y,rx,ry,0,0,Math.PI*2);ctx.fill();ctx.restore()}
 function rRing(x,y,rx,ry,c,a,w){ctx.save();ctx.globalAlpha=a;ctx.strokeStyle=c;ctx.lineWidth=w||1;ctx.beginPath();ctx.ellipse(x,y,rx,ry,0,0,Math.PI*2);ctx.stroke();ctx.restore()}
 const rCol=mv=>TC[mv.t]||['#e8e0ff','#ffffff','#a99cc8'];
-function rDrawF(f){const m=f.m,name=D[m.id].name,S=26,pose=k=>{const i=ARPI[name+'_'+k];return okI(i)?i:null};
- rEll(f.x,f.y,8,3,'#000',0.35);if(RTA.opts.ffa&&m.hp>0)rRing(f.x,f.y,9,3.5,RSIDEC[f.side],0.9,1);if(f.wind)rRing(f.x,f.y-10,13+Math.sin(RTA.t/2)*1.5,13,rCol(MV[m.moves[f.wind.i]])[1],0.9,2);
+function rDrawF(f){const m=f.m,name=D[m.id].name,S=f.boss?44:26,pose=k=>{const i=ARPI[name+'_'+k];return okI(i)?i:null};
+ rEll(f.x,f.y,8,3,'#000',0.35);if(RTA.opts.ffa&&m.hp>0)rRing(f.x,f.y,9,3.5,RSIDEC[f.side],0.9,1);if(RTA.opts.rift&&m.hp>0)rRing(f.x,f.y,f.boss?16:9,f.boss?6:3.5,RSIDEC[f.team?1:0],0.9,1);if(f.wind)rRing(f.x,f.y-10,13+Math.sin(RTA.t/2)*1.5,13,rCol(MV[m.moves[f.wind.i]])[1],0.9,2);
  let im=null,flip=false,rot=0;const atk=f.wind||f.atkT>0;
  if(m.hp<=0){im=pose('ko');if(!im){im=ARTI[name];rot=Math.PI/2}}else if(f.hurt>0)im=pose('hurt');
  if(!im){if(f.face==='up')im=(atk&&pose('atk_back'))||(okI(ARTBI[name])?ARTBI[name]:null);
@@ -357,7 +368,7 @@ function rDrawF(f){const m=f.m,name=D[m.id].name,S=26,pose=k=>{const i=ARPI[name
   if(!okI(im)){im=ARTI[name];flip=f.face==='right'}}
  if(!okI(im)){dspr(m.id,f.x-12,f.y-24,1.5,f.face==='up',m);return}
  const bob=f.mx||f.my?Math.abs(Math.sin(f.step/4))*1.5:0;ctx.save();ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';ctx.translate(Math.round(f.x),Math.round(f.y-bob));
- if(m.hp<=0)ctx.globalAlpha=0.75;if(f.hurt>0&&f.hurt%4<2)ctx.filter='brightness(2.6)';else if(m.st==='freeze')ctx.filter='saturate(0.3) brightness(1.5)';
+ if(m.hp<=0)ctx.globalAlpha=0.75;if(f.hurt>0&&f.hurt%4<2)ctx.filter='brightness(2.6)';else if(f.boss)ctx.filter='hue-rotate(250deg) saturate(1.6) brightness(0.8)';else if(m.st==='freeze')ctx.filter='saturate(0.3) brightness(1.5)';
  if(flip)ctx.scale(-1,1);if(rot){ctx.translate(0,-S/4);ctx.rotate(rot)}ctx.drawImage(im,-S/2,-S,S,S);ctx.restore();
  if(f.aura)rRing(f.x,f.y-4,14-f.aura/6,6,rCol(MV[m.moves[f.sel]])[1],f.aura/36,2);
  const SF={burn:['common_status_burn_poison',0],poison:['common_status_burn_poison',1],shock:['common_status_shock_freeze',0],freeze:['common_status_shock_freeze',1]}[m.st],lf=Math.floor(RTA.t/6)%4;
@@ -383,7 +394,7 @@ function rtaDraw(){if(!RTA)return rHubDraw();const A=RTA,pl=PL[A.pl],sx=A.shake>
  for(const x of A.cfx||[])rCF(x.sheet,x.row,Math.min(3,Math.floor(x.t/x.dur*4)),x.x,x.y,x.w,x.t>x.dur*0.75?(x.dur-x.t)/(x.dur*0.25):1,x.flip);
  for(const x of A.fl){ctx.save();ctx.globalAlpha=x.t>30?(45-x.t)/15:1;txt(x.s,Math.round(x.x-x.s.length*2.5),Math.round(x.y-x.t*0.4),'#1b1424',5);txt(x.s,Math.round(x.x-x.s.length*2.5)-1,Math.round(x.y-x.t*0.4)-1,x.c,5);ctx.restore()}
  ctx.restore();rHud()}
-function rHud(){const A=RTA,p=A.f[0],e=A.opts.ffa?rFoe(p):A.f[1];
+function rHud(){const A=RTA,p=A.f[0],e=A.opts.ffa||A.opts.rift?rFoe(p):A.f[1];
  if(rUiOk('panel_l','panel_r','bar_g','bar_y','bar_r','timer'))for(const[f,x,flip]of[[p,0,false],[e,96,true]])rPanel(f,x,flip);
  else{rect(0,0,160,18,'#120c22');txtFit(nm(p.m),2,2,'#e8e0ff',58,6);hpbar(2,10,64,p.m);txtFit(nm(e.m),94,2,'#e8e0ff',58,6);hpbar(94,10,64,e.m)}
  if(A.opts.ffa){const n=A.f.slice(1).filter(x=>x.m.hp>0).length;txt(n+' left',70,22,'#ffd23f',5)}
