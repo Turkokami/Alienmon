@@ -1129,6 +1129,25 @@ for sid, sec in world.items():
                 sec['warps'].append(dict(w, tile=[a, ty])); have.add((a, ty))
                 report['entrances widened to the whole opening'].append(f"{sid} {sec['name']}: {w['tile']} also from {[a, ty]}")
 
+# ---- last pass: a stash never sits under someone (NPCs can be moved by the repairs above); slide it to the nearest free open tile ----
+for sid, sec in world.items():
+    cp = os.path.join(ROOT, 'data/collision', sid + '.json')
+    if not os.path.exists(cp): continue
+    rows = json.load(open(cp))['rows']; H, Wd = len(rows), len(rows[0])
+    people = {(n['x'], n['y']) for n in sec.get('npcs', []) if 'x' in n} | {(m['x'], m['y']) for m in sec.get('mons', [])}
+    taken = people | {tuple(o['tile']) for o in sec['objects']} | {tuple(w['tile']) for w in sec['warps']} | {tuple(w['at']) for w in sec['warps']}
+    for o in sec['objects']:
+        if o['k'] != 'stash' or tuple(o['tile']) not in people: continue
+        x0, y0 = o['tile']; best = None
+        for r in range(1, 6):
+            ring = [(x0 + dx, y0 + dy) for dx in range(-r, r + 1) for dy in range(-r, r + 1) if max(abs(dx), abs(dy)) == r]
+            ok = [(x, y) for x, y in ring if 0 < x < Wd - 1 and 0 < y < H - 1 and rows[y][x] in '.,' and (x, y) not in taken
+                  and not any((x + dx, y + dy) in people for dx in (-1, 0, 1) for dy in (-1, 0, 1))]
+            if ok: best = min(ok, key=lambda p: (abs(p[0] - x0) + abs(p[1] - y0), p)); break
+        if best:
+            report.setdefault('stashes moved off an NPC', []).append(f"{sid} {sec['name']}: {o['tile']} -> {list(best)}")
+            taken.discard(tuple(o['tile'])); o['tile'] = list(best); taken.add(best)
+
 json.dump({'version': 1, 'tile': 16, 'screen_tiles': [10, 9], 'arrival': arrivals, 'quest_spots': spots, 'sections': world, 'connections': conns},
           open(os.path.join(ROOT, OUT or 'data/world.json'), 'w', encoding='utf-8'), indent=1, ensure_ascii=False)
 lines = ['# Section connections report', '',
