@@ -35,10 +35,12 @@ const OW=folder('art/overworld','.png');
 // World-Echo forms (data/echoes.json) then Holopup's world line (data/holopup_line.json), appended after the 322 in a FIXED order:
 // saves store species by position, so every entry is always built. An Echo without its own front art yet borrows its base's
 // sprite and never appears in the wild (echo.noart) until the art lands in art/echo (tools/echo_cut.py).
+const PROG0=JSON.parse(fs.readFileSync(path.join(root,'data/progression.json'),'utf8')).species,EVOOF=n=>PROG0[n]&&PROG0[n].evolves&&PROG0[n].evolves.into||null;
+const ECHON=(sp,e)=>sp+' ('+e.worldName.split(' ')[0]+')';   /* an Echo's name: its species plus its world */
 const ECHOES=JSON.parse(fs.readFileSync(path.join(root,'data/echoes.json'),'utf8')).echoes.map(e=>{
  const b=D.find(d=>d.name===e.base);if(!b)throw new Error('echo base missing: '+e.base);const name=e.base+' ('+e.worldName.split(' ')[0]+')',t=[...new Set([e.type,b.t[0]])].slice(0,2);
  const art=fs.existsSync(path.join(root,'art/echo',e.art+'.png'));
- const d={...b,n:D.length+1,name,t,st:1,tot:1,m:'World Echo: wild on '+e.worldName,lore:e.lore,sig:-1,echo:{base:e.base,w:e.world}};delete d.to;if(!art)d.echo.noart=1;D.push(d);
+ const nx=EVOOF(e.base),d={...b,n:D.length+1,name,t,to:nx?ECHON(nx,e):'',m:'World Echo: wild on '+e.worldName,lore:e.lore,sig:-1,echo:{base:e.base,w:e.world}};if(!art)d.echo.noart=1;D.push(d);
  ART[name]=art?asset('art/echo/'+e.art+'.png'):ART[e.base];if(fs.existsSync(path.join(root,'art/echo_back',e.art+'.png')))ARTB[name]=asset('art/echo_back/'+e.art+'.png');else if(ARTB[e.base])ARTB[name]=ARTB[e.base];if(OW[e.base])OW[name]=OW[e.base];
  return{name,base:e.base,n:d.n}});console.log('world echoes:',ECHOES.length,'with art:',ECHOES.length-D.filter(d=>d.echo&&d.echo.noart).length);
 const HOLO=JSON.parse(fs.readFileSync(path.join(root,'data/holopup_line.json'),'utf8')),HOLOP=D.find(d=>d.name==='Holopup');
@@ -46,6 +48,15 @@ for(const e of HOLO.line)for(const st of[2,3]){const name=st===2?e.stage2:e.stag
  D.push({n:D.length+1,name,t:[e.type],st,tot:3,to:st===2?e.stage3:'',m:st===2?'Holopup + the '+e.worldName+' Shard':'Level '+HOLO.evolveLevel,s:st===2?e.stats2:e.stats3,r:'normal',lore:st===2?e.lore2:e.lore3,b:1,tr:HOLOP.tr,sig:-1,holo:{w:e.world}});
  for(const[A,dir]of[[ART,'art/holo'],[ARTB,'art/holo_back']])if(fs.existsSync(path.join(root,dir,name+'.png')))A[name]=asset(dir+'/'+name+'.png');if(OW.Holopup)OW[name]=OW.Holopup}
 console.log('holopup line:',HOLO.line.length*2);
+// evolved World-Echo forms (#365 on): each Echo follows its original's evolution chain, keeping the Echo's world type and look
+const ECHOEVO=[];for(const e of JSON.parse(fs.readFileSync(path.join(root,'data/echoes.json'),'utf8')).echoes){let sp=EVOOF(e.base);
+ while(sp){const b=D.find(d=>d.name===sp),name=ECHON(sp,e),nx=EVOOF(sp),art=sp+'_Echo_'+e.worldName.split(' ')[0];
+  D.push({...b,n:D.length+1,name,t:[...new Set([e.type,b.t[0]])].slice(0,2),to:nx?ECHON(nx,e):'',m:'Evolves from '+ECHON(PROG0[sp]?Object.keys(PROG0).find(k=>EVOOF(k)===sp):e.base,e),
+   lore:sp+"'s "+e.worldName+' Echo. '+e.lore.split('. ').slice(1).join('. '),sig:-1,echo:{base:sp,w:e.world,evo:1}});
+  if(fs.existsSync(path.join(root,'art/echo',art+'.png')))ART[name]=asset('art/echo/'+art+'.png');else ART[name]=ART[sp];
+  if(fs.existsSync(path.join(root,'art/echo_back',art+'.png')))ARTB[name]=asset('art/echo_back/'+art+'.png');else if(ARTB[sp])ARTB[name]=ARTB[sp];if(OW[sp])OW[name]=OW[sp];
+  ECHOEVO.push({name,sp,n:D.length,next:nx?ECHON(nx,e):null});sp=nx}}
+console.log('evolved echoes:',ECHOEVO.length);
 const TITLE=asset('art/ui/title.jpg');
 const SHIP=asset('art/ui/ship.png'),CUTS=[0,1,2].map(i=>asset('art/ui/cut_'+i+'.jpg')).filter(Boolean);
 const CHAR=folder('art/characters','.png');
@@ -86,7 +97,10 @@ const qp=path.join(root,'data/quest_places.json'),QPLACE=fs.existsSync(qp)?fs.re
 fill.__QUESTENGINE__=fs.readFileSync(path.join(root,'src/quests.js'),'utf8').replace(/__[A-Z]+__/g,k=>({__QUESTS__:j(QUESTS),__QPLACE__:QPLACE,__CUTPICS__:j(CUTPICS)})[k]||k);
 // progression (docs/PROGRESSION_AND_LEVELING.md): species curves/yields/evolutions, wild tables, Keeper and boss levels
 const PROGJ=JSON.parse(fs.readFileSync(path.join(root,'data/progression.json'),'utf8'));
-for(const e of ECHOES)PROGJ.species[e.name]={...PROGJ.species[e.base],n:e.n,stage:1,stages:1,evolves:null};   /* Echoes grow like their base and stay as they are */
+/* Echoes grow and evolve like their originals, into their own Echo forms */
+const ECHOEV=(sp,next)=>{const v=PROGJ.species[sp].evolves;return v&&next?{...v,into:next}:null};
+for(const e of ECHOES){const nx=D.find(d=>d.name===e.name).to;PROGJ.species[e.name]={...PROGJ.species[e.base],n:e.n,evolves:ECHOEV(e.base,nx)}}
+for(const e of ECHOEVO)PROGJ.species[e.name]={...PROGJ.species[e.sp],n:e.n,evolves:ECHOEV(e.sp,e.next)};
 for(const e of HOLO.line){const hp=PROGJ.species.Holopup,n=D.findIndex(d=>d.name===e.stage2)+1;   /* the world line grows like Holopup */
  PROGJ.species[e.stage2]={...hp,n,base_yield:150,stage:2,stages:3,bst:e.stats2.reduce((a,b)=>a+b,0),evolves:{into:e.stage3,level:HOLO.evolveLevel,method:'Level '+HOLO.evolveLevel},capture_mod:0.7};
  PROGJ.species[e.stage3]={...hp,n:n+1,base_yield:230,stage:3,stages:3,bst:e.stats3.reduce((a,b)=>a+b,0),evolves:null,capture_mod:0.45}}

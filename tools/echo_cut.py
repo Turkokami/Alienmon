@@ -1,4 +1,4 @@
-# World-Echo sprites: the owner's renders (art/raw/echo/<Name>/<Name>[_back].png, never modified) -> 192x192 game sprites
+# World-Echo sprites: the owner's renders (art/raw/echo and art/raw/echo_evo, <Name>/<Name>[_back].png, never modified) -> 192x192 game sprites
 # in art/echo (front) and art/echo_back (back), white background removed. Damaged (truncated) files are skipped and listed.
 import os, json
 from PIL import Image, ImageDraw
@@ -18,16 +18,19 @@ def cutout(im):
     return im
 
 done, bad = [], []
-for e in json.load(open(APP + '/data/echoes.json', encoding='utf-8'))['echoes']:
+arts = [(RAW, e['art']) for e in json.load(open(APP + '/data/echoes.json', encoding='utf-8'))['echoes']]
+EVO = APP + '/art/raw/echo_evo'   # evolved Echoes: one folder per form, e.g. Bouldron_Echo_Glacia
+if os.path.isdir(EVO): arts += [(EVO, d) for d in sorted(os.listdir(EVO)) if os.path.isdir(f'{EVO}/{d}')]
+for base, art in arts:
     for suf, out in OUT.items():
-        p = f"{RAW}/{e['art']}/{e['art']}{suf}.png"
-        if not os.path.exists(p): bad.append(p[len(RAW) + 1:] + ' (missing)'); continue
+        p = f"{base}/{art}/{art}{suf}.png"
+        if not os.path.exists(p): bad.append(art + suf + ' (missing)'); continue
         try:
             im = Image.open(p); im.load()
         except Exception:
-            bad.append(p[len(RAW) + 1:] + ' (damaged)'); continue
+            bad.append(art + suf + ' (damaged)'); continue
         im = cutout(im); im = im.crop(im.getbbox())
         k = 180 / max(im.size); im = im.resize((max(1, round(im.width * k)), max(1, round(im.height * k))), Image.LANCZOS)
         c = Image.new('RGBA', (192, 192), (0, 0, 0, 0)); c.alpha_composite(im, ((192 - im.width) // 2, 192 - 6 - im.height))
-        c.save(f"{out}/{e['art']}.png", optimize=True); done.append(e['art'] + suf)
+        c.save(f"{out}/{art}.png", optimize=True); done.append(art + suf)
 print(len(done), 'sprites written'); print('skipped:', bad)

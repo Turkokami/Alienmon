@@ -167,7 +167,7 @@ function rEllS(x,y,rx,ry,c,a){ctx.save();ctx.globalAlpha=a;ctx.fillStyle=c;ctx.b
 /* ---- World-Echo forms: Alienmon whose seedpods landed on another world (built by tools/build.js from data/echoes.json) ---- */
 const ECHOS=D.map((d,i)=>d.echo?i:-1).filter(i=>i>=0);
 function echoWild(L,water){const s=SWORLD[G.sec.id];if(!secOut(s))return;const w=skyKey(s),lo=Math.min(...L.map(e=>e[2])),hi=Math.max(...L.map(e=>e[3]));
- for(const i of ECHOS){const d=D[i];if(d.echo.w!==w||d.echo.noart||(d.t[0]==='Hydro')!==water)continue;L.push([d.name,Math.max(0.2,L.reduce((a,e)=>a+e[1],0)*0.035),lo,hi,water?'surf':'walk','any'])}}   /* about 1 in 30 encounters on its world */
+ for(const i of ECHOS){const d=D[i];if(d.echo.w!==w||d.echo.noart||d.echo.evo||(d.t[0]==='Hydro')!==water)continue;L.push([d.name,Math.max(0.2,L.reduce((a,e)=>a+e[1],0)*0.035),lo,hi,water?'surf':'walk','any'])}}   /* about 1 in 30 encounters on its world */
 
 /* ---- Holopup's world line: attune a Holopup to an earned Shard (party menu) and it becomes that world's form ---- */
 const holoCan=m=>!!m&&D[m.id].name==='Holopup';
