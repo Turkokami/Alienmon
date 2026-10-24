@@ -1,0 +1,102 @@
+{
+ "dustara": [
+  "canyon_courier",
+  "crater_stargazer",
+  "dune_farmer",
+  "spice_vendor",
+  "sand_ranger",
+  "seedpod_hunter",
+  "mesa_mechanic",
+  "desert_elder"
+ ],
+ "ferrox": [
+  "crane_operator",
+  "scrap_picker",
+  "rail_conductor",
+  "forge_smith",
+  "rust_tinkerer",
+  "salvage_trader",
+  "weld_apprentice",
+  "ferrox_foreman"
+ ],
+ "sporeholm": [
+  "mushroom_forager",
+  "spore_researcher",
+  "bog_fisher",
+  "swamp_herbalist",
+  "firefly_kid",
+  "moss_ranger",
+  "stilt_builder",
+  "spore_singer"
+ ],
+ "thalassa": [
+  "dock_hand",
+  "fishmonger",
+  "pearl_diver",
+  "lighthouse_keeper",
+  "harbor_sailor",
+  "beach_kid",
+  "shipwright",
+  "coral_researcher"
+ ],
+ "neonis": [
+  "neon_raver",
+  "holo_promoter",
+  "neon_skater",
+  "arcade_kid",
+  "cable_tech",
+  "noodle_cook",
+  "glitch_hunter",
+  "night_courier"
+ ],
+ "glyphos": [
+  "archaeologist",
+  "mural_copyist",
+  "chime_keeper",
+  "camp_cook",
+  "relic_porter",
+  "rune_scholar",
+  "jungle_guide",
+  "ruins_kid"
+ ],
+ "pyros": [
+  "lava_miner",
+  "lamplighter",
+  "drill_operator",
+  "obsidian_carver",
+  "fire_warden",
+  "cinder_kid",
+  "spring_keeper",
+  "ash_elder"
+ ],
+ "glacia": [
+  "ice_fisher",
+  "aurora_watcher",
+  "sled_courier",
+  "snow_researcher",
+  "fur_trader",
+  "snowball_kid",
+  "ice_climber",
+  "frost_baker"
+ ],
+ "helix": [
+  "station_engineer",
+  "lab_assistant",
+  "hydro_gardener",
+  "docking_pilot",
+  "service_droid",
+  "helix_grunt",
+  "freed_captive",
+  "station_kid"
+ ],
+ "halo": [
+  "sky_pilgrim",
+  "cloud_farmer",
+  "wind_glider",
+  "bellringer",
+  "sky_postman",
+  "kite_kid",
+  "starwatch_monk",
+  "feather_weaver"
+ ]
+}
