@@ -1,0 +1,117 @@
+{
+ "notes": "World-Echo forms (docs/SKYFALL_PLAN.md): built from their base species by tools/build.js; only Echoes whose art exists in art/echo are added. Name shown: '<Base> (<World>)'.",
+ "echoes": [
+  {
+   "base": "Pebblet",
+   "world": "glacia",
+   "worldName": "Glacia",
+   "type": "Cryo",
+   "art": "Pebblet_Echo_Glacia",
+   "lore": "Pebblet's seedpod fell on Glacia long ago. Frost has crept into its cracks: the indigo crystals are now pale-blue ice, its brown stone is frosted white on top, and icicles hang from its edges."
+  },
+  {
+   "base": "Rivetoad",
+   "world": "helix",
+   "worldName": "Helix Station",
+   "type": "Bio",
+   "art": "Rivetoad_Echo_Helix",
+   "lore": "Rivetoad's seedpod fell on Helix Station long ago. Moss and tiny ferns grow between its rivets, a vine coils around one leg, and small glowing seed pods sprout along its back where bolts used to be."
+  },
+  {
+   "base": "Lumislug",
+   "world": "halo",
+   "worldName": "Halo",
+   "type": "Sonic",
+   "art": "Lumislug_Echo_Halo",
+   "lore": "Lumislug's seedpod fell on Halo long ago. Its glow pulses in rhythm like a speaker, its eyestalks end in little bell shapes, and its slime trail leaves faint ripples of sound."
+  },
+  {
+   "base": "Bubbub",
+   "world": "umbra",
+   "worldName": "Umbra",
+   "type": "Void",
+   "art": "Bubbub_Echo_Umbra",
+   "lore": "Bubbub's seedpod fell on Umbra long ago. Its bubble has turned smoky violet-black with tiny stars drifting inside, its flippers fade into wisps of shadow at the tips, and its happy grin glows faintly in the dark."
+  },
+  {
+   "base": "Bulbit",
+   "world": "starfall",
+   "worldName": "Starfall Rift",
+   "type": "Plasma",
+   "art": "Bulbit_Echo_Starfall",
+   "lore": "Bulbit's seedpod fell on Starfall Rift long ago. Its bulb now holds a tiny swirling star of magenta plasma instead of electric light, with comet sparks trailing off it."
+  },
+  {
+   "base": "Monolet",
+   "world": "apex",
+   "worldName": "Apex Array",
+   "type": "Crystal",
+   "art": "Monolet_Echo_Apex",
+   "lore": "Monolet's seedpod fell on Apex Array long ago. Its carved stone has turned into faceted see-through crystal that splits light into rainbows, its glyphs now glow like circuit lines, and a small prism spire grows from its top."
+  },
+  {
+   "base": "Ashpup",
+   "world": "ystra",
+   "worldName": "Ystra",
+   "type": "Gravity",
+   "art": "Ashpup_Echo_Ystra",
+   "lore": "Ashpup's seedpod fell on Ystra long ago. Its ash fur floats upward as if gravity is weaker around it, small rock fragments orbit its head, and its embers have cooled to deep indigo with starlight-silver flecks."
+  },
+  {
+   "base": "Snoblet",
+   "world": "dustara",
+   "worldName": "Dustara",
+   "type": "Swarm",
+   "art": "Snoblet_Echo_Dustara",
+   "lore": "Snoblet's seedpod fell on Dustara long ago. Its snow has turned to packed sand-gold dust, and a small swarm of glowing sand-bugs lives in it like snowflakes, buzzing around it in a cloud."
+  },
+  {
+   "base": "Vialit",
+   "world": "ferrox",
+   "worldName": "Ferrox",
+   "type": "Alloy",
+   "art": "Vialit_Echo_Ferrox",
+   "lore": "Vialit's seedpod fell on Ferrox long ago. Its glass vial body is now riveted brass and copper with a pressure gauge on its side, pipes and valves replace its tubes, and its toxic liquid glows through small porthole windows."
+  },
+  {
+   "base": "Mindlet",
+   "world": "sporeholm",
+   "worldName": "Sporeholm",
+   "type": "Toxin",
+   "art": "Mindlet_Echo_Sporeholm",
+   "lore": "Mindlet's seedpod fell on Sporeholm long ago. Glowing purple-and-lime mushroom caps sprout from its head where its psychic halo was, toxic spores drift from it like thoughts, and its colours turn swampy violet and green."
+  },
+  {
+   "base": "Sulklet",
+   "world": "thalassa",
+   "worldName": "Thalassa",
+   "type": "Hydro",
+   "art": "Sulklet_Echo_Thalassa",
+   "lore": "Sulklet's seedpod fell on Thalassa long ago. Its shadow body has become deep ocean-blue water with bubbles rising through it, its sulky eyes glow like bioluminescent sea creatures, and a little fin curls from its back."
+  },
+  {
+   "base": "Novaling",
+   "world": "neonis",
+   "worldName": "Neonis",
+   "type": "Volt",
+   "art": "Novaling_Echo_Neonis",
+   "lore": "Novaling's seedpod fell on Neonis long ago. Its plasma flame has turned into crackling electric neon in yellow and cyan, outlined like a glowing sign, with small lightning arcs jumping off it."
+  },
+  {
+   "base": "Gemmling",
+   "world": "glyphos",
+   "worldName": "Glyphos",
+   "type": "Psi",
+   "art": "Gemmling_Echo_Glyphos",
+   "lore": "Gemmling's seedpod fell on Glyphos long ago. Its gems have weathered into ancient violet crystal carved with glowing runes, a small third-eye gem opens on its brow, and two tiny rune rings float around it."
+  },
+  {
+   "base": "Riftling",
+   "world": "pyros",
+   "worldName": "Pyros",
+   "type": "Magma",
+   "art": "Riftling_Echo_Pyros",
+   "lore": "Riftling's seedpod fell on Pyros long ago. Its rift-energy has filled with molten lava: glowing orange cracks run through it, its edges are dark obsidian, and embers rise from it instead of floating debris."
+  }
+ ]
+}

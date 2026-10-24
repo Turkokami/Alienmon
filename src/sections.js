@@ -377,6 +377,7 @@ function secWildPick(){if(!secOn())return null;const T=ENC.s[G.sec.id];if(!T)ret
  // still thin (story Alienmon like Zib are left out): add this world's usual wild species that suit the habitat, at low weight
  if(!water&&new Set(L.map(e=>D[clampWild(IDX[e[0]],e[3],0)[0]].name)).size<4){const s=SWORLD[G.sec.id],have=new Set(L.map(e=>e[0])),lv=L.length?[Math.min(...L.map(e=>e[2])),Math.max(...L.map(e=>e[3]))]:(PL[G.planet].lv||[2,5]);
   for(const x of wildTable(s.zone||s.pkey)||[])if(!have.has(x.name)&&IDX[x.name]!=null&&wildOK(x.name)&&habFit(D[IDX[x.name]].t,T.h)){have.add(x.name);L.push([x.name,3,lv[0],lv[1],'walk','any'])}}
+ if(L.length&&typeof echoWild==='function')echoWild(L,water);   /* World-Echo forms: rare, only on their own world */
  if(!L.length)return null;
  const skf=typeof frontHere==='function'&&frontHere(),wt=([nm0,w,,,m,t])=>(shore&&m==='surf'?w/2:w)*(t==='night x2'?(n?2:1):t==='day x2'?(n?1:2):1)*(skf&&IDX[nm0]!=null&&D[IDX[nm0]].t.some(x=>skf.t.includes(x))?2:1);let r=L.reduce((a,e)=>a+wt(e),0)*R(),e=L[0];for(const x of L){r-=wt(x);if(r<=0){e=x;break}}
  return clampWild(IDX[e[0]],ri(e[2],e[3]),0)}

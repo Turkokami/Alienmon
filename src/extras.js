@@ -127,7 +127,7 @@ function giveAll(gift,L){for(const[k,n]of Object.entries(gift)){if(k==='dust'){G
 Object.assign(GEAR_NAME,{signal_finder:'Signal Finder',prism_charm:'Prismatic Charm',gold_dex:'Golden Xenodex'});
 Object.assign(GEAR_DESC,{signal_finder:'Beeps when a hidden item is near. START > Gear.',prism_charm:'Prismatic Alienmon appear three times as often.',gold_dex:'Proof you registered every Alienmon. Dr. Vashti is speechless.'});
 Object.assign(KEY_NAME,GEAR_NAME);Object.assign(KEY_DESC,GEAR_DESC);
-const DEX_MS=[[10,{harmonic:5}],[25,{signal_finder:1,dust:1000}],[50,{maxrevive:3,singularity:2}],[100,{prism_charm:1}],[150,{fullgel:5,dust:5000}],[200,{singularity:10}],[250,{maxrevive:5,dust:10000}],[D.length,{gold_dex:1}]];   // the last one: every species in the game
+const DEX_MS=[[10,{harmonic:5}],[25,{signal_finder:1,dust:1000}],[50,{maxrevive:3,singularity:2}],[100,{prism_charm:1}],[150,{fullgel:5,dust:5000}],[200,{singularity:10}],[250,{maxrevive:5,dust:10000}],[D.filter(d=>!d.echo).length,{gold_dex:1}]];   // the last one: every species in the game
 function dexBeats(){const n=Object.keys(G.caught||{}).length;G.dexms=G.dexms||0;for(const[k,gift]of DEX_MS){if(n<k||G.dexms>=k)continue;G.dexms=k;
   qNotify('DEX','gear',giveAll(gift,['Dr. Vashti is calling on your Linker!','"'+k+' Alienmon registered in your Xenodex! Here, you\'ve earned this."']))}}
 

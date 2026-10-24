@@ -826,7 +826,8 @@ function drawBattle(){const e=curEnv(),p=PM(),en=EM(),pl=PL[G.planet],ar=B.tr&&(
  if(B.trShow&&B.tr)dchar(B.tr.art,100,0,52,52);
  else if(B.captured){}else if(enemyAlpha()>0){const ep=bpose(en,true);if(en.hp>0||ep||(B.anim&&B.anim.tgt===en)){ctx.save();ctx.globalAlpha=enemyAlpha();if(ep)drawPose(ep,102+shakeOf(en),4,3,en);else dspr(en.id,102+shakeOf(en),4,3,false,en);if(en.pri&&en.hp>0)priTwinkle(102,4,3);ctx.restore()}}
  {const pp=bpose(p,false);if(pp)drawPose(pp,10+shakeOf(p),48,3,p);else if(p.hp>0||(B.anim&&B.anim.tgt===p))dspr(p.id,10+shakeOf(p),48,3,true,p)}
- if(!B.trShow){box(2,4,96,26);const elv='Lv'+en.lv;txtR(elv,95,9,'#1b1424',6);txtFit(nm(en),6,8,'#1b1424',89-elv.length*6-4);hpbar(6,20,64,en);stTag(en,72,19)}else{box(2,4,96,16);txt(B.tr.name.slice(0,11),6,8,'#1b1424')}if(G.caught[en.id]&&!B.tr)rect(92,9,4,4,'#ff8a1e');
+ if(!B.trShow){box(2,4,96,26);const elv='Lv'+en.lv;txtR(elv,95,9,'#1b1424',6);{const ec=D[en.id].echo&&!en.nick&&D[en.id].echo,wd=89-elv.length*6-4;txtFit(ec?ec.base:nm(en),6,8,'#1b1424',ec?wd-11:wd);if(ec&&typeof skyImg==='function')skyImg('front_'+ec.w,6+wd-10,6,9,9)}   /* an Echo shows its base name plus its world's icon */
+ hpbar(6,20,64,en);stTag(en,72,19)}else{box(2,4,96,16);txt(B.tr.name.slice(0,11),6,8,'#1b1424')}if(G.caught[en.id]&&!B.tr)rect(92,9,4,4,'#ff8a1e');
  box(70,66,88,34);txtFit(nm(p),74,70,'#1b1424',80);txt('Lv'+p.lv,74,80,'#3b2a5c',7);hpbar(110,81,44,p);txtR(p.hp+'/'+stat(p,0),155,88,'#3b2a5c',6);stTag(p,74,88);expbar(74,96,80,p);
  if(B.phase==='menu'){box(0,104,160,40);txt('What will',6,109,'#1b1424');txtFit(nm(p),6,120,'#1b1424',72);txt('do?',6,131,'#1b1424');
   box(80,104,80,40,'#f8f4ff','#ff8a1e');['FIGHT','BAG','SWAP',storyRunLabel()].forEach((o,i)=>txt((i===B.sel?'>':' ')+o,84+(i%2)*38,112+Math.floor(i/2)*14,'#1b1424',7))}

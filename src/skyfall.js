@@ -163,6 +163,11 @@ function skyDraw(s,cx,cy){const t=frame;
   if(F.streak)ctx.fillRect(Math.round(X),Math.round(Y),1,F.s*4);else if(F.glyph)txt(f.fx==='notes'?'~':'+',Math.round(X),Math.round(Y),F.c[h%F.c.length],5);else ctx.fillRect(Math.round(X),Math.round(Y),F.s,F.s)}}
 function rEllS(x,y,rx,ry,c,a){ctx.save();ctx.globalAlpha=a;ctx.fillStyle=c;ctx.beginPath();ctx.ellipse(x,y,Math.max(0.5,rx),Math.max(0.5,ry),0,0,Math.PI*2);ctx.fill();ctx.restore()}
 
+/* ---- World-Echo forms: Alienmon whose seedpods landed on another world (built by tools/build.js from data/echoes.json) ---- */
+const ECHOS=D.map((d,i)=>d.echo?i:-1).filter(i=>i>=0);
+function echoWild(L,water){const s=SWORLD[G.sec.id];if(!secOut(s))return;const w=skyKey(s),lo=Math.min(...L.map(e=>e[2])),hi=Math.max(...L.map(e=>e[3]));
+ for(const i of ECHOS){const d=D[i];if(d.echo.w!==w||(d.t[0]==='Hydro')!==water)continue;L.push([d.name,Math.max(0.2,L.reduce((a,e)=>a+e[1],0)*0.035),lo,hi,water?'surf':'walk','any'])}}   /* about 1 in 30 encounters on its world */
+
 /* ---- Gear: Sky Report and Signal Dive ---- */
 GEAR.push({k:'skyreport',has:()=>true,label:()=>'Sky Report',use(){const w=skyWin(),left=Math.ceil(((w+1)*2*SKY_H-Date.now())/6e4);
  const on=PL.filter(p=>frontOn(p.key)&&skyOpenPL(p,1)).map(p=>p.name+': '+FRONTS[p.key].n+' ('+FRONTS[p.key].t.join('/')+')');
