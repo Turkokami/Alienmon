@@ -3559,17 +3559,37 @@
      "offset": 0
     }
    },
-   "warps": [],
-   "objects": [
+   "warps": [
     {
      "tile": [
       14,
       3
      ],
-     "k": "bay",
-     "door": true,
-     "why": "Palm Isle Recovery Hut (works like the counter)"
+     "to": "916",
+     "at": [
+      7,
+      13
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
     },
+    {
+     "tile": [
+      15,
+      3
+     ],
+     "to": "916",
+     "at": [
+      8,
+      13
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    }
+   ],
+   "objects": [
     {
      "tile": [
       12,
@@ -3582,8 +3602,8 @@
     },
     {
      "tile": [
-      8,
-      4
+      6,
+      3
      ],
      "k": "stash",
      "item": "cure",
@@ -3678,18 +3698,7 @@
      }
     }
    ],
-   "mons": [
-    {
-     "x": 6,
-     "y": 4,
-     "mon": "Kilnback"
-    },
-    {
-     "x": 19,
-     "y": 3,
-     "mon": "Squawktone"
-    }
-   ]
+   "mons": []
   },
   "018": {
    "id": "018",
@@ -67957,6 +67966,102 @@
      "name": "Receptionist",
      "stay": true,
      "src": "n:915:0"
+    }
+   ]
+  },
+  "916": {
+   "id": "916",
+   "name": "Palm Isle Recovery Bay",
+   "planet": "Dustara",
+   "dir": "01_dustara",
+   "type": "interior",
+   "img": "art/sections_game/01_dustara/916_palm_isle_recovery_bay.png",
+   "tiles": [
+    16,
+    16
+   ],
+   "notes": "uses the Dustmere Recovery Bay room",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      7,
+      14
+     ],
+     "to": "017",
+     "at": [
+      14,
+      4
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      8,
+      14
+     ],
+     "to": "017",
+     "at": [
+      14,
+      4
+     ],
+     "face": "down",
+     "kind": "door"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      7,
+      4
+     ],
+     "k": "bay",
+     "why": "Recovery Bay counter"
+    },
+    {
+     "tile": [
+      8,
+      4
+     ],
+     "k": "bay",
+     "why": "Recovery Bay counter"
+    }
+   ],
+   "spawns": {
+    "door": [
+     7,
+     13
+    ],
+    "default": [
+     7,
+     13
+    ]
+   },
+   "parent": "017",
+   "pkey": "dustara",
+   "npcs": [
+    {
+     "x": 8,
+     "y": 4,
+     "art": "nurse",
+     "face": "down",
+     "t": [
+      "Nurse: Welcome to the Palm Isle Recovery Bay! Step up to the counter and I'll heal your team."
+     ],
+     "name": "Nurse",
+     "stay": true,
+     "src": "n:916:0"
+    },
+    {
+     "x": 4,
+     "y": 9,
+     "art": "explorer",
+     "face": "right",
+     "t": [
+      "Trainer: Out here on the Molten Frontier, this little bay is a lifesaver."
+     ],
+     "src": "n:916:1"
     }
    ]
   }

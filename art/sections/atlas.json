@@ -12259,6 +12259,26 @@
    "v3": true,
    "kit": "915",
    "file": "art/sections/01_dustara/915_linker_arena_lobby.png"
+  },
+  {
+   "id": "916",
+   "planet": "Dustara",
+   "name": "Palm Isle Recovery Bay",
+   "type": "interior",
+   "size_px": [
+    1024,
+    1024
+   ],
+   "tiles": [
+    16,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "notes": "uses the Dustmere Recovery Bay room",
+   "file": "art/sections/01_dustara/916_palm_isle_recovery_bay.png",
+   "v2": true
   }
  ]
 }
