@@ -131,7 +131,8 @@ function skyDiveDone(V){if(!V.hits)return say('The signal faded into the deep.')
  skyFight(i2,lv,[V.hits===3?'A perfect lock! Something rises fast...':'You reel the signal in...','A wild '+D[i2].name+' surfaces!'],V.hits===3?2:1)}
 
 /* ---- Shard Resonance (battle Bag) ---- */
-function skyShards(){return PL.filter(p=>FRONTS[p.key]&&G.beaten&&G.beaten[p.key])}
+/* a world's Shard is yours once you beat its Keeper; Dustara, Glyphos and Ystra have no Keeper, so theirs come with reaching them */
+function skyShards(){return PL.filter(p=>FRONTS[p.key]&&(p.keeper?!!(G.beaten&&G.beaten[p.key]):skyOpenPL(p)))}
 function skyReso(){if(B.reso)return say('You already resonated a Shard this battle.');const L=skyShards();if(!L.length)return say('Earn a Signal Shard from a Keeper first.');
  choose('Resonate which Shard?',L.map(p=>p.name+': '+FRONTS[p.key].n).concat(['Back']),i=>{const p=L[i];if(!p){B.phase='bag';return}
   B.reso=1;B.field={k:p.key,turns:5};B.phase='wait';const f=FRONTS[p.key];say(['Your '+p.name+' Shard resonates!','The '+f.n+' sweeps in! '+f.t.join(' and ')+' moves are boosted for 5 turns.'],()=>B.phase='menu')},()=>{B.phase='bag'})}
@@ -166,7 +167,17 @@ function rEllS(x,y,rx,ry,c,a){ctx.save();ctx.globalAlpha=a;ctx.fillStyle=c;ctx.b
 /* ---- World-Echo forms: Alienmon whose seedpods landed on another world (built by tools/build.js from data/echoes.json) ---- */
 const ECHOS=D.map((d,i)=>d.echo?i:-1).filter(i=>i>=0);
 function echoWild(L,water){const s=SWORLD[G.sec.id];if(!secOut(s))return;const w=skyKey(s),lo=Math.min(...L.map(e=>e[2])),hi=Math.max(...L.map(e=>e[3]));
- for(const i of ECHOS){const d=D[i];if(d.echo.w!==w||(d.t[0]==='Hydro')!==water)continue;L.push([d.name,Math.max(0.2,L.reduce((a,e)=>a+e[1],0)*0.035),lo,hi,water?'surf':'walk','any'])}}   /* about 1 in 30 encounters on its world */
+ for(const i of ECHOS){const d=D[i];if(d.echo.w!==w||d.echo.noart||(d.t[0]==='Hydro')!==water)continue;L.push([d.name,Math.max(0.2,L.reduce((a,e)=>a+e[1],0)*0.035),lo,hi,water?'surf':'walk','any'])}}   /* about 1 in 30 encounters on its world */
+
+/* ---- Holopup's world line: attune a Holopup to an earned Shard (party menu) and it becomes that world's form ---- */
+const holoCan=m=>!!m&&D[m.id].name==='Holopup';
+function holoAttune(m){const L=skyShards().map(p=>[p,D.findIndex(d=>d.holo&&d.holo.w===p.key&&d.st===2)]).filter(x=>x[1]>=0);
+ if(!L.length)return say('Holopup tilts its head. Earn a Signal Shard first, then try again.');
+ choose('Attune '+nm(m)+' to which Shard?',L.map(([p,i])=>p.name+': '+D[i].name+' ('+D[i].t[0]+')').concat(['Cancel']),k=>{const x=L[k];if(!x)return;const[p,into]=x,old=nm(m);
+  choose(old+' will become '+D[into].name+' for good. Attune?',['Attune','Not now'],c=>{if(c!==0)return;
+   say(['You hold the '+p.name+' Shard up to '+old+'.',old+' is glowing with the light of '+p.name+'!'],()=>evoAnim(m,into,()=>{const r=m.hp/stat(m,0);m.id=into;m.hp=Math.max(1,Math.round(stat(m,0)*r));G.seen[m.id]=G.caught[m.id]=1;if(typeof autosave==='function')autosave();
+    const ty=D[into].t[0],nu=learnset(m.id).filter(([l,mi])=>l<=m.lv&&MV[mi]&&MV[mi].t===ty&&!m.moves.includes(mi)).map(x=>x[1]).slice(-2);   /* up to two moves of its new type */
+    say(old+' became '+D[into].name+'!',()=>progRun(nu.map(mi=>({fn:c=>learnPrompt(m,mi,c)})),()=>{}))}))})})}
 
 /* ---- Gear: Sky Report and Signal Dive ---- */
 GEAR.push({k:'skyreport',has:()=>true,label:()=>'Sky Report',use(){const w=skyWin(),left=Math.ceil(((w+1)*2*SKY_H-Date.now())/6e4);

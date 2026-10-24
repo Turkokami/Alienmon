@@ -32,13 +32,20 @@ function folder(dir,ext){const m={},p=path.join(root,dir);if(fs.existsSync(p))fo
 const ART=folder('art/sprites','.png');console.log('art sprites:',Object.keys(ART).length);
 const ARTB=folder('art/sprites_back','.png');console.log('back sprites:',Object.keys(ARTB).length);
 const OW=folder('art/overworld','.png');
-// World-Echo forms (data/echoes.json, docs/SKYFALL_PLAN.md): each Echo is built from its base species with the Echo's types, art and
-// Xenodex text; it never evolves. Only Echoes whose front art exists in art/echo (tools/echo_cut.py) are added.
-const ECHOES=JSON.parse(fs.readFileSync(path.join(root,'data/echoes.json'),'utf8')).echoes.filter(e=>fs.existsSync(path.join(root,'art/echo',e.art+'.png'))).map(e=>{
+// World-Echo forms (data/echoes.json) then Holopup's world line (data/holopup_line.json), appended after the 322 in a FIXED order:
+// saves store species by position, so every entry is always built. An Echo without its own front art yet borrows its base's
+// sprite and never appears in the wild (echo.noart) until the art lands in art/echo (tools/echo_cut.py).
+const ECHOES=JSON.parse(fs.readFileSync(path.join(root,'data/echoes.json'),'utf8')).echoes.map(e=>{
  const b=D.find(d=>d.name===e.base);if(!b)throw new Error('echo base missing: '+e.base);const name=e.base+' ('+e.worldName.split(' ')[0]+')',t=[...new Set([e.type,b.t[0]])].slice(0,2);
- const d={...b,n:D.length+1,name,t,st:1,tot:1,m:'World Echo: wild on '+e.worldName,lore:e.lore,sig:-1,echo:{base:e.base,w:e.world}};delete d.to;D.push(d);
- ART[name]=asset('art/echo/'+e.art+'.png');if(fs.existsSync(path.join(root,'art/echo_back',e.art+'.png')))ARTB[name]=asset('art/echo_back/'+e.art+'.png');else if(ARTB[e.base])ARTB[name]=ARTB[e.base];if(OW[e.base])OW[name]=OW[e.base];
- return{name,base:e.base,n:d.n}});console.log('world echoes:',ECHOES.length);
+ const art=fs.existsSync(path.join(root,'art/echo',e.art+'.png'));
+ const d={...b,n:D.length+1,name,t,st:1,tot:1,m:'World Echo: wild on '+e.worldName,lore:e.lore,sig:-1,echo:{base:e.base,w:e.world}};delete d.to;if(!art)d.echo.noart=1;D.push(d);
+ ART[name]=art?asset('art/echo/'+e.art+'.png'):ART[e.base];if(fs.existsSync(path.join(root,'art/echo_back',e.art+'.png')))ARTB[name]=asset('art/echo_back/'+e.art+'.png');else if(ARTB[e.base])ARTB[name]=ARTB[e.base];if(OW[e.base])OW[name]=OW[e.base];
+ return{name,base:e.base,n:d.n}});console.log('world echoes:',ECHOES.length,'with art:',ECHOES.length-D.filter(d=>d.echo&&d.echo.noart).length);
+const HOLO=JSON.parse(fs.readFileSync(path.join(root,'data/holopup_line.json'),'utf8')),HOLOP=D.find(d=>d.name==='Holopup');
+for(const e of HOLO.line)for(const st of[2,3]){const name=st===2?e.stage2:e.stage3;
+ D.push({n:D.length+1,name,t:[e.type],st,tot:3,to:st===2?e.stage3:'',m:st===2?'Holopup + the '+e.worldName+' Shard':'Level '+HOLO.evolveLevel,s:st===2?e.stats2:e.stats3,r:'normal',lore:st===2?e.lore2:e.lore3,b:1,tr:HOLOP.tr,sig:-1,holo:{w:e.world}});
+ for(const[A,dir]of[[ART,'art/holo'],[ARTB,'art/holo_back']])if(fs.existsSync(path.join(root,dir,name+'.png')))A[name]=asset(dir+'/'+name+'.png');if(OW.Holopup)OW[name]=OW.Holopup}
+console.log('holopup line:',HOLO.line.length*2);
 const TITLE=asset('art/ui/title.jpg');
 const SHIP=asset('art/ui/ship.png'),CUTS=[0,1,2].map(i=>asset('art/ui/cut_'+i+'.jpg')).filter(Boolean);
 const CHAR=folder('art/characters','.png');
@@ -80,6 +87,9 @@ fill.__QUESTENGINE__=fs.readFileSync(path.join(root,'src/quests.js'),'utf8').rep
 // progression (docs/PROGRESSION_AND_LEVELING.md): species curves/yields/evolutions, wild tables, Keeper and boss levels
 const PROGJ=JSON.parse(fs.readFileSync(path.join(root,'data/progression.json'),'utf8'));
 for(const e of ECHOES)PROGJ.species[e.name]={...PROGJ.species[e.base],n:e.n,stage:1,stages:1,evolves:null};   /* Echoes grow like their base and stay as they are */
+for(const e of HOLO.line){const hp=PROGJ.species.Holopup,n=D.findIndex(d=>d.name===e.stage2)+1;   /* the world line grows like Holopup */
+ PROGJ.species[e.stage2]={...hp,n,base_yield:150,stage:2,stages:3,bst:e.stats2.reduce((a,b)=>a+b,0),evolves:{into:e.stage3,level:HOLO.evolveLevel,method:'Level '+HOLO.evolveLevel},capture_mod:0.7};
+ PROGJ.species[e.stage3]={...hp,n:n+1,base_yield:230,stage:3,stages:3,bst:e.stats3.reduce((a,b)=>a+b,0),evolves:null,capture_mod:0.45}}
 const PROGMIN={species:Object.fromEntries(Object.entries(PROGJ.species).map(([k,v])=>[k,{curve:v.curve,base_yield:v.base_yield,stage:v.stage,stages:v.stages,rarity:v.rarity,evolves:v.evolves,capture_mod:v.capture_mod}])),
  areas:Object.fromEntries(Object.entries(PROGJ.areas).map(([k,a])=>{const t=l=>l&&l.map(x=>({name:x.name,min:x.min,max:x.max,weight:x.weight}));return[k,{levels:a.levels,tier1:t(a.tier1),tier2_after_4_shards:t(a.tier2_after_4_shards),tier3_after_champion:t(a.tier3_after_champion),trainer_levels:a.trainer_levels,trainer_team_size:a.trainer_team_size}]})),
  keepers:PROGJ.keepers,bosses:PROGJ.bosses,rival:PROGJ.rival,legendaries:PROGJ.legendaries};
