@@ -98,5 +98,45 @@
   "kite_kid",
   "starwatch_monk",
   "feather_weaver"
+ ],
+ "umbra": [
+  "lantern_lighter",
+  "gravekeeper",
+  "shadow_mapper",
+  "night_vendor",
+  "veiled_mourner",
+  "ghost_story_kid",
+  "void_researcher",
+  "mine_watchman"
+ ],
+ "starfall": [
+  "rift_surveyor",
+  "seedpod_collector",
+  "camp_medic",
+  "meteor_prospector",
+  "rim_cook",
+  "signal_operator",
+  "containment_officer",
+  "starchart_kid"
+ ],
+ "apex": [
+  "telescope_tech",
+  "summit_climber",
+  "star_scholar",
+  "relay_engineer",
+  "quorum_delegate",
+  "mountain_porter",
+  "prime_hopeful",
+  "observatory_kid"
+ ],
+ "ystra": [
+  "ystran_elder",
+  "seedkeeper",
+  "ystran_scout",
+  "echo_child",
+  "blight_cleanser",
+  "ystran_artisan",
+  "fragment_wanderer",
+  "memory_keeper"
  ]
 }
