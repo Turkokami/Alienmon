@@ -9,6 +9,9 @@
  Rift Breaches: at Starfall Rift a tear opens every other window; a corrupted giant comes through (real-time Linker Arena,
                 three Linkers at your side). Calm it and it joins you. */
 const SKY_H=36e5,OUTDOOR=new Set(['town','landmark','route','field']);
+const SKYI=lazyImgs(__SKYART__);   /* the owner's Skyfall art (art/skyfall, cut by tools from art/raw/skyfall); plain shapes until it loads */
+const skyImg=(k,x,y,w,h,a)=>{const i=SKYI[k];if(!okI(i))return false;ctx.save();if(a!=null)ctx.globalAlpha=a;ctx.imageSmoothingEnabled=true;ctx.drawImage(i,Math.round(x),Math.round(y),w,h||w*i.naturalHeight/i.naturalWidth);ctx.restore();return true};
+let SKYTAG=null;   /* a front's icon in the corner for a moment when you walk into its weather */
 const FRONTS={
  dustara:{n:'Dust Tide',t:['Swarm','Gravity'],tint:'rgba(214,170,90,0.16)',fx:'dust',d:'Sand rolls across the canyons.'},
  ferrox:{n:'Magnet Storm',t:['Alloy','Volt'],tint:'rgba(120,150,190,0.14)',fx:'sparks',d:'Scrap shivers and sparks jump between the heaps.'},
@@ -43,8 +46,9 @@ function skyCache(name,key,fn){const c=SKYC[name];if(c&&c.key===key)return c.v;c
 function skyTileIn(s,seed,ok){const r=rng(hash(seed));for(let i=0;i<60;i++){const x=Math.floor(r()*s.tiles[0]),y=Math.floor(r()*s.tiles[1]);if(ok(secTile(s,x,y)))return{x,y}}return null}
 
 /* ---- Skyfall pods ---- */
-function skyPod(s){if(!secOut(s)||!frontOn(skyKey(s)))return null;const w=skyWin(),id='p'+w+':'+s.id;if(G.skyp&&G.skyp[id])return null;
+function skyPodAt(s){if(!secOut(s)||!frontOn(skyKey(s)))return null;const w=skyWin(),id='p'+w+':'+s.id;
  return skyCache('pod',id,()=>hash('pod:'+id)%100<45?Object.assign({id},skyTileIn(s,'podxy:'+id,c=>c==='.'||c===',')||{x:-1,y:-1}):null)}
+function skyPod(s){const p=skyPodAt(s);return p&&!(G.skyp&&G.skyp[p.id])?p:null}
 function skyOpenPod(s,p){G.skyp=G.skyp||{};const w='p'+skyWin()+':';for(const k in G.skyp)if(!k.startsWith(w))delete G.skyp[k];G.skyp[p.id]=1;
  const pl=PL[skyPI(skyKey(s))],f=FRONTS[skyKey(s)];
  if(pl&&R()<0.6){const pool=pl.pool.r.concat(pl.pool.e).filter(i=>D[i]&&!['legendary','mythic'].includes(D[i].r));const id=pool[Math.floor(R()*pool.length)];
@@ -87,7 +91,7 @@ function skyStep(s,ct){skyBeats();
  return false}
 // news on the Linker: a new front on this world, a new storm, an open rift (each once per window)
 function skyBeats(){if(!G||!G.sec)return;const s=SWORLD[G.sec.id],f=frontHere(),w=skyWin();
- if(f&&G.skyn!==f.k+w){G.skyn=f.k+w;toast(f.n+'! '+f.t.join(' & ')+' boosted')}
+ if(f&&G.skyn!==f.k+w){G.skyn=f.k+w;toast(f.n+'! '+f.t.join(' & ')+' boosted');SKYTAG={k:'front_'+f.k,t:0}}
  const st=stormNow();if(st&&G.stormSeen!==st.w){G.stormSeen=st.w;qNotify('SKY','event',['Linker alert! Strong signal: a '+st.name+' colony on '+st.pname+'.','It moves to a new area every hour. Check START > Gear > Sky Report to track it.'])}
  if(riftOpen()&&G.riftSeen!==w&&(G.shards||0)>=9&&typeof rtaStart==='function'){G.riftSeen=w;qNotify('SKY','event',['Linker alert! A Rift Breach is open at Starfall Rift.','Something huge is coming through. Linkers are gathering!'])}
  const t=skyAntenna();if(G.key&&G.key.hydro_skiff&&(G.antenna||0)<t){const up=(G.antenna||0)>0;G.antenna=t;
@@ -115,12 +119,12 @@ function skyDiveUpd(){const V=DIVE;if(!V){scene='planet';return}V.t++;drawPlanet
   if(V.round>=3)V.end=40;else skyDiveZone()}
  skyDiveDraw()}
 function skyDiveDraw(){const V=DIVE,x0=20,y0=52,ty=D[IDX[V.target[0]]].t[0],hz=(hash(ty)%5)+2;
- box(8,34,144,76,'#120c22','#5ff2ff');txt('Signal Dive  Mk '+V.tier,14,39,'#5ff2ff',6);
+ if(!skyImg('dive_panel',8,34,144,72))box(8,34,144,76,'#120c22','#5ff2ff');skyImg('antenna_'+V.tier,128,84,14);txt('Signal Dive  Mk '+V.tier,14,39,'#5ff2ff',6);
  ctx.save();ctx.strokeStyle='#2e86de';ctx.lineWidth=1;ctx.beginPath();for(let i=0;i<=120;i++){const y=y0+14+Math.sin((i+V.t*1.5)/hz)*(ty==='Volt'?9*((i%6)<3?1:-1):8)*(V.round>0?1:0.4);i?ctx.lineTo(x0+i,y):ctx.moveTo(x0+i,y)}ctx.stroke();ctx.restore();
  if(!V.end){rect(x0+V.zone,y0,V.zw,28,'rgba(95,242,255,0.25)');rect(x0+Math.round(V.x),y0-2,2,32,'#ffd23f')}
- for(let i=0;i<3;i++)rect(126+i*8,39,6,5,i<V.round?(i<V.hits?'#9be36b':'#ff5a3a'):'#3b2a5c');
- txt(V.round>0?'Signal type: '+ty:'Press A in the bright band',14,86,'#e8e0ff',5);
- txt(V.end?(V.hits?'Pulling it up...':'It slipped away...'):(V.msg||'B: let go'),14,96,V.msg==='Missed...'?'#ff8a1e':'#9be36b',5)}
+ const art=okI(SKYI.dive_panel);for(let i=0;i<3;i++){const c=i<V.round?(i<V.hits?'#9be36b':'#ff5a3a'):null;if(art){if(c)rEllS(128+i*8.6,41.5,2.6,2.6,c,1)}else rect(126+i*8,39,6,5,c||'#3b2a5c')}
+ txt(V.round>0?'Signal type: '+ty:'Press A in the bright band',14,83,'#e8e0ff',5);
+ txt(V.end?(V.hits?'Pulling it up...':'It slipped away...'):(V.msg||'B: let go'),14,92,V.msg==='Missed...'?'#ff8a1e':'#9be36b',5)}
 function skyDiveDone(V){if(!V.hits)return say('The signal faded into the deep.');
  const tg=V.hits>=2?skyDivePick(V.tier,V.hits-1)||V.target:V.target,id=IDX[tg[0]];if(id==null)return;
  const[i2,lv]=clampWild(id,ri(tg[2],tg[3])+(V.hits===3?2:0),V.hits===3?2:0);
@@ -142,11 +146,15 @@ const SKYFX={dust:{c:['#e8c27a','#c9a35c'],vx:1.4,vy:0.2,n:26,s:1},sparks:{c:['#
  embers:{c:['#ff8a1e','#ffd23f'],vx:0.3,vy:-0.8,n:24,s:1},aurora:{c:['#ffffff'],vx:0.3,vy:0.6,n:20,s:1,band:1},leaves:{c:['#6be38a','#c7f26b'],vx:0.7,vy:0.5,n:16,s:2},
  notes:{c:['#ffffff','#ffb3dc'],vx:0.6,vy:-0.3,n:10,s:2,glyph:1},shadow:{c:['#3b1a5c'],vx:-0.4,vy:0,n:14,s:3},stars:{c:['#ffffff','#ff9be9','#ffd23f'],vx:2.2,vy:1.1,n:12,s:1,streak:1},
  prism:{c:['#ff5a5a','#ffd23f','#5ff2ff','#b45cff'],vx:0,vy:0.4,n:18,s:1,blink:1},motes:{c:['#c9c2ff','#8a7cd8'],vx:0,vy:-0.25,n:14,s:2}};
-function skyGround(s,cx,cy){const p=skyPod(s),r=riftHere(s),t=frame;
- if(p&&p.x>=0){const X=p.x*16-cx+8,Y=p.y*16-cy+11,g=0.5+0.5*Math.sin(t/8);rEllS(X,Y+3,6,2,'#000',0.3);rEllS(X,Y-2-g,4,5,'#ffd23f',0.95);rEllS(X,Y-3-g,2,3,'#ffffff',0.9);rEllS(X,Y-2-g,8+g*2,8+g*2,'#ffd23f',0.15)}
- if(r&&r.x>=0){const X=r.x*16-cx+8,Y=r.y*16-cy+6;for(let i=0;i<3;i++)rEllS(X,Y,5+i*3+Math.sin(t/6+i)*1.5,10+i*3,['#b45cff','#ff3fa6','#2a0a3c'][i],0.5-i*0.12);rEllS(X,Y,2,7,'#ffffff',0.8)}
+function skyGround(s,cx,cy){const pa=skyPodAt(s),p=skyPod(s),r=riftHere(s),t=frame;
+ if(pa&&!p&&pa.x>=0)skyImg('pod_open',pa.x*16-cx+1,pa.y*16-cy+5,14);
+ if(p&&p.x>=0&&skyImg('pod_'+(Math.floor(t/10)%4),p.x*16-cx+2,p.y*16-cy+1,12)){}else if(p&&p.x>=0){const X=p.x*16-cx+8,Y=p.y*16-cy+11,g=0.5+0.5*Math.sin(t/8);rEllS(X,Y+3,6,2,'#000',0.3);rEllS(X,Y-2-g,4,5,'#ffd23f',0.95);rEllS(X,Y-3-g,2,3,'#ffffff',0.9);rEllS(X,Y-2-g,8+g*2,8+g*2,'#ffd23f',0.15)}
+ if(r&&r.x>=0&&skyImg('rift_'+(Math.floor(t/8)%4),r.x*16-cx-2,r.y*16-cy-14,20)){}else if(r&&r.x>=0){const X=r.x*16-cx+8,Y=r.y*16-cy+6;for(let i=0;i<3;i++)rEllS(X,Y,5+i*3+Math.sin(t/6+i)*1.5,10+i*3,['#b45cff','#ff3fa6','#2a0a3c'][i],0.5-i*0.12);rEllS(X,Y,2,7,'#ffffff',0.8)}
 }
-function skyDraw(s,cx,cy){const t=frame;if(!secOut(s))return;const f=frontOn(skyKey(s))&&FRONTS[skyKey(s)];if(!f)return;const F=SKYFX[f.fx];
+function skyDraw(s,cx,cy){const t=frame;
+ if(SKYTAG&&++SKYTAG.t<180){const a=SKYTAG.t<15?SKYTAG.t/15:SKYTAG.t>150?(180-SKYTAG.t)/30:1;skyImg(SKYTAG.k,136,38,20,20,a)}else SKYTAG=null;
+ const st=stormNow();if(st&&stormSec(st)===s.id)skyImg('storm',4,40,14,14,0.6+0.4*Math.sin(t/12));
+ if(!secOut(s))return;const f=frontOn(skyKey(s))&&FRONTS[skyKey(s)];if(!f)return;const F=SKYFX[f.fx];
  ctx.fillStyle=f.tint;ctx.fillRect(0,0,160,144);
  if(F.band){for(let i=0;i<3;i++){ctx.save();ctx.globalAlpha=0.16;ctx.fillStyle=['#6bffb8','#5ff2ff','#b45cff'][i];ctx.beginPath();ctx.moveTo(0,10+i*8);for(let x=0;x<=160;x+=8)ctx.lineTo(x,10+i*8+Math.sin(x/20+t/40+i)*5);ctx.lineTo(160,0);ctx.lineTo(0,0);ctx.fill();ctx.restore()}}
  if(f.fx==='blackout'&&(t%180<6||t%180>170)){ctx.fillStyle='rgba(0,0,0,0.5)';ctx.fillRect(0,0,160,144)}
