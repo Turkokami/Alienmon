@@ -47,7 +47,11 @@ let QEVO=null;   // a story evolution plays its animation after the lines that l
 function storyWhen(w){if(!w)return true;if(w.active){const q=QI[w.active];if(!q||qs(w.active).state!=='active')return false;if(w.step!=null&&qs(w.active).step!==w.step)return false}
  if(w.after&&!mDone(w.after))return false;if(w.until&&mDone(w.until))return false;if(w.flag&&!G.flags[w.flag])return false;if(w.key&&!(G.key&&G.key[w.key]))return false;if(w.noflag&&G.flags[w.noflag])return false;if(w.nokey&&G.key&&G.key[w.nokey])return false;return true}
 function storyEnter(id){if(!G||!G.quests)return;G.sseen=G.sseen||{};for(const sc of STORY.scenes||[]){if(sc.sec!==id||G.sseen[sc.id]||!storyWhen(sc.when))continue;G.sseen[sc.id]=1;
-  for(const f of sc.flags||[])G.flags[f]=1;for(const k of sc.take||[])if(G.key)delete G.key[k];QN.push({q:sc.id,kind:'scene',lines:sc.lines.map(qFmt),art:sc.art})}}
+  for(const f of sc.flags||[])G.flags[f]=1;for(const k of sc.take||[])if(G.key)delete G.key[k];G.seenCut=G.seenCut||{};
+  const pc=sc.pic&&CUTPIC.find(c=>c.k===sc.pic.k),L=sc.lines.map(qFmt);   /* a story picture inside the scene replaces the lines it shows (skip) */
+  if(pc&&!G.seenCut[pc.k]&&(!pc.st||(typeof myStarter==='function'&&G.party&&G.party.length&&D[myStarter()].name.toLowerCase()===pc.st))){G.seenCut[pc.k]=1;const sk=new Set(sc.pic.skip||[]),a=L.filter((l,i)=>i<sc.pic.at&&!sk.has(i)),b=L.filter((l,i)=>i>=sc.pic.at&&!sk.has(i));
+   if(a.length)QN.push({q:sc.id,kind:'scene',lines:a,art:sc.art});QN.push({q:sc.id,kind:'pic',pic:pc,lines:L.filter((l,i)=>sk.has(i)),art:sc.art});if(b.length)QN.push({q:sc.id,kind:'scene',lines:b,art:sc.art})}
+  else QN.push({q:sc.id,kind:'scene',lines:L,art:sc.art})}}
 
 /* ---- townsfolk with story extras: a line for when you carry a key item, and nurses who heal ---- */
 function storyNpc(n){if(n.keyline&&G.key&&G.key[n.keyline.k]){if(n.story==='heal'){healAll();noteHeal()}say(n.keyline.t.map(qFmt).concat(n.story==='heal'?['Your team is fully healed!']:[]),null,n.por);return true}

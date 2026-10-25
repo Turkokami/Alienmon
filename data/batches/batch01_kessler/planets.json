@@ -114,16 +114,7 @@
    "shard": true,
    "flag": null,
    "flagMsg": null,
-   "team": [
-    [
-     33,
-     10
-    ],
-    [
-     47,
-     12
-    ]
-   ]
+   "team": [[33, 10], [42, 12]]
   },
   "npcArt": "technician",
   "ring": false,
@@ -287,20 +278,7 @@
    "shard": true,
    "flag": null,
    "flagMsg": null,
-   "team": [
-    [
-     76,
-     19
-    ],
-    [
-     78,
-     19
-    ],
-    [
-     95,
-     21
-    ]
-   ]
+   "team": [[76, 19], [78, 19], [305, 21]]
   },
   "npcArt": "squidsailor",
   "scene": "beach",

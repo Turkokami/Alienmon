@@ -34,9 +34,9 @@ for world, roles in ROSTER.items():
             c = Image.new('RGBA', (128, 128), (0, 0, 0, 0)); c.alpha_composite(b, ((128 - b.width) // 2, 128 - 3 - b.height))
             c.save(f'{OUT}/{world}_{role}{suf}.png', optimize=True); made.append(f'{world}_{role}{suf}')
 print(len(made), 'sprites:', ', '.join(sorted({m.rsplit('_up', 1)[0] for m in made})))
-# single-character replacements (art/raw/npcs/rook_fix/<sprite>[_up].png, one figure per image) win over the sheet cut
-FIX = APP + '/art/raw/npcs/rook_fix'
-if os.path.isdir(FIX):
+# single-character replacements (art/raw/npcs/rook_fix and art/raw/npcs/singles, <sprite>[_up].png, one figure per image) win over the sheet cut
+for FIX in (APP + '/art/raw/npcs/rook_fix', APP + '/art/raw/npcs/singles'):
+    if not os.path.isdir(FIX): continue
     for f in sorted(os.listdir(FIX)):
         if not f.endswith('.png'): continue
         im = cutout(Image.open(f'{FIX}/{f}')); b = im.crop(im.getbbox()); k = 122 / b.height

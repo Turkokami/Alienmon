@@ -536,7 +536,17 @@
       "planet": "thalassa",
       "spot": "Port Saltreach docks",
       "note": "tile map or future painted map; place this spot when building"
-     }
+     },
+     "team": [
+      [
+       "Krillswarm",
+       17
+      ],
+      [
+       "Hexcoil",
+       18
+      ]
+     ]
     },
     {
      "type": "defeat_keeper",

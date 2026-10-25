@@ -1,0 +1,334 @@
+[
+ {
+  "k": "cut_40",
+  "cap": "Into the light",
+  "lines": [
+   "Old Basalt points his pick at the glowing crater.",
+   "Old Basalt: Teo stood right there, smiling. Then he walked into the light."
+  ],
+  "src": "cut_40.png (render pack 2026-10-25c)",
+  "q": "M11",
+  "o": 1,
+  "w": "done"
+ },
+ {
+  "k": "cut_41",
+  "cap": "Teeth in the ice",
+  "lines": [
+   "Inside the glacier, Ingrid holds up her lantern.",
+   "The fossil in the ice has a bite mark bigger than a house."
+  ],
+  "src": "cut_41.png (render pack 2026-10-25c)",
+  "q": "M12",
+  "o": 0,
+  "w": "done"
+ },
+ {
+  "k": "cut_42",
+  "cap": "A spiky new friend",
+  "lines": [
+   "In the snow, a little Iceburr is stuck, one leg frozen into the ice.",
+   "Kit melts it free with a heater coil off his tool belt... and it hops onto his shoulder."
+  ],
+  "src": "cut_42.png (render pack 2026-10-25c)",
+  "q": "scene",
+  "o": 0,
+  "w": "scene",
+  "scene": "kit_iceburr",
+  "pic": {
+   "k": "cut_42",
+   "at": 0,
+   "skip": [
+    0,
+    1,
+    2
+   ]
+  }
+ },
+ {
+  "k": "cut_43",
+  "cap": "Project Unity",
+  "lines": [
+   "A cold white sign hangs over endless rows of cages: PROJECT UNITY. ONE OF EVERY SPECIES.",
+   "Every cage has a label and a number, like a museum."
+  ],
+  "src": "cut_43.png (render pack 2026-10-25c)",
+  "q": "scene",
+  "o": 0,
+  "w": "scene",
+  "scene": "project_unity_sign",
+  "pic": {
+   "k": "cut_43",
+   "at": 0,
+   "skip": [
+    0,
+    1
+   ]
+  }
+ },
+ {
+  "k": "cut_44",
+  "cap": "An acceptable loss",
+  "lines": [
+   "The big screen goes dark. Sola does not move.",
+   "Her fists are shaking."
+  ],
+  "src": "cut_44.png (render pack 2026-10-25c)",
+  "q": "M14",
+  "o": 3,
+  "w": "done"
+ },
+ {
+  "k": "cut_45",
+  "cap": "He's my dad",
+  "lines": [
+   "Sola tears the Helix patch off her sleeve.",
+   "Sola: I'm with you. Let's finish this, together."
+  ],
+  "src": "cut_45.png (render pack 2026-10-25c)",
+  "q": "M15",
+  "o": 0,
+  "w": "done"
+ },
+ {
+  "k": "cut_46",
+  "cap": "She is scattered so she may live",
+  "lines": [
+   "The whole shrine wall is one great carving.",
+   "A great tree breaks into a thousand glowing seeds and scatters across the stars."
+  ],
+  "src": "cut_46.png (render pack 2026-10-25c)",
+  "q": "M16",
+  "o": 1,
+  "w": "done"
+ },
+ {
+  "k": "cut_47",
+  "cap": "The man who built the engine",
+  "lines": [
+   "Mortimer Kade spreads the Rift engine plans across the table.",
+   "Kade: I scratched the logo off my coat the day I understood what it would wake."
+  ],
+  "src": "cut_47.png (render pack 2026-10-25c)",
+  "q": "M17",
+  "o": 1,
+  "w": "done"
+ },
+ {
+  "k": "cut_48",
+  "cap": "Every boat sounds its horn",
+  "lines": [
+   "The Harbor Tower blazes back to life.",
+   "Every boat in Port Saltreach sounds its horn."
+  ],
+  "src": "cut_48.png (render pack 2026-10-25c)",
+  "q": "M17b",
+  "o": 3,
+  "w": "done"
+ },
+ {
+  "k": "cut_49",
+  "cap": "Zib's pod",
+  "lines": [
+   "In a valley of cracked seedpods, Zib stops at one small shell.",
+   "It sits inside for a long, quiet minute. This was Zib's pod."
+  ],
+  "src": "cut_49.png (render pack 2026-10-25c)",
+  "q": "scene",
+  "o": 0,
+  "w": "scene",
+  "scene": "zib_pod",
+  "pic": {
+   "k": "cut_49",
+   "at": 0,
+   "skip": [
+    0,
+    1,
+    2,
+    3
+   ]
+  }
+ },
+ {
+  "k": "cut_50",
+  "cap": "...No.",
+  "lines": [
+   "Pell raises the net gun at Zib. His hands are shaking.",
+   "Then he throws it over the rim, down into the crater's light."
+  ],
+  "src": "cut_50.png (render pack 2026-10-25c)",
+  "q": "scene",
+  "o": 0,
+  "w": "scene",
+  "scene": "pell_refuses",
+  "pic": {
+   "k": "cut_50",
+   "at": 1,
+   "skip": [
+    1,
+    3
+   ]
+  }
+ },
+ {
+  "k": "cut_51",
+  "cap": "Novaryx",
+  "lines": [
+   "Your eight Shards rise and sing.",
+   "A great signal-winged bird answers the call."
+  ],
+  "src": "cut_51.png (render pack 2026-10-25c)",
+  "q": "M18",
+  "o": 2,
+  "w": "done"
+ },
+ {
+  "k": "cut_52",
+  "cap": "Freeze the coils!",
+  "lines": [
+   "A Helix gravity trap pins everyone flat to the glowing rock.",
+   "Kit: Iceburr, freeze the coils! Now!"
+  ],
+  "src": "cut_52.png (render pack 2026-10-25c)",
+  "q": "scene",
+  "o": 0,
+  "w": "scene",
+  "scene": "kit_gravity_trap",
+  "pic": {
+   "k": "cut_52",
+   "at": 2,
+   "skip": [
+    0,
+    2
+   ]
+  }
+ },
+ {
+  "k": "cut_53",
+  "cap": "You're so tall",
+  "lines": [
+   "The Rift folds shut. From the last of its light steps Teo Reyes.",
+   "Sola runs to him."
+  ],
+  "src": "cut_53.png (render pack 2026-10-25c)",
+  "q": "M19",
+  "o": 1,
+  "w": "done"
+ },
+ {
+  "k": "cut_54",
+  "cap": "The Starfall Festival",
+  "lines": [
+   "All of Dustmere is out at the Bonfire Ring tonight.",
+   "Old Dusty tells the story of the night the seedpods fell."
+  ],
+  "src": "cut_54.png (render pack 2026-10-25c)",
+  "q": "M19b",
+  "o": 0,
+  "w": "done"
+ },
+ {
+  "k": "cut_55",
+  "cap": "The trial",
+  "lines": [
+   "In the Linker League courtroom, Director Thorne pleads guilty.",
+   "He looks at no one."
+  ],
+  "src": "cut_55.png (render pack 2026-10-25c)",
+  "q": "M19b",
+  "o": 3,
+  "w": "done"
+ },
+ {
+  "k": "cut_56",
+  "cap": "Prime Linker",
+  "lines": [
+   "Under the Great Telescope, Orra Venn bows.",
+   "Orra: The Kessler system has a new Prime Linker."
+  ],
+  "src": "cut_56.png (render pack 2026-10-25c)",
+  "q": "M21",
+  "o": 0,
+  "w": "done"
+ },
+ {
+  "k": "cut_57",
+  "cap": "The road of light",
+  "lines": [
+   "The sky above the telescope folds open into a spinning road of light.",
+   "Dr. Vashti: Go. I'll hold the road open from this side."
+  ],
+  "src": "cut_57.png (render pack 2026-10-25c)",
+  "q": "P01",
+  "o": 1,
+  "w": "done"
+ },
+ {
+  "k": "cut_58",
+  "cap": "Ystra",
+  "lines": [
+   "A huge, tired red sun hangs over a grey world.",
+   "Far off, at the bottom of an empty crater, one faint green glow: the Heartroot."
+  ],
+  "src": "cut_58.png (render pack 2026-10-25c)",
+  "q": "P01",
+  "o": 2,
+  "w": "done"
+ },
+ {
+  "k": "cut_59",
+  "cap": "Saga's face",
+  "lines": [
+   "Saga lowers the hood.",
+   "Underneath is a face like clear crystal, flickering at the edges."
+  ],
+  "src": "cut_59.png (render pack 2026-10-25c)",
+  "q": "scene",
+  "o": 0,
+  "w": "scene",
+  "scene": "saga_reveal",
+  "pic": {
+   "k": "cut_59",
+   "at": 1,
+   "skip": [
+    1
+   ]
+  }
+ },
+ {
+  "k": "cut_60",
+  "cap": "Small and silver",
+  "lines": [
+   "The darkness folds in on itself... and Oblivane is calm at last.",
+   "Small and silver, it curls up like a sleepy moon."
+  ],
+  "src": "cut_60.png (render pack 2026-10-25c)",
+  "q": "P02",
+  "o": 0,
+  "w": "done"
+ },
+ {
+  "k": "cut_61",
+  "cap": "The Seedmother grows again",
+  "lines": [
+   "A world-tree of crystal and leaves rises out of the crater.",
+   "Oblivane sleeps in her branches like a little silver moon."
+  ],
+  "src": "cut_61.png (render pack 2026-10-25c)",
+  "q": "P03",
+  "o": 1,
+  "w": "done"
+ },
+ {
+  "k": "cut_62",
+  "cap": "A road between two worlds",
+  "lines": [
+   "The Warp Gate's runes blaze cyan and pink.",
+   "A road between two worlds, open at last."
+  ],
+  "src": "cut_62.png (render pack 2026-10-25c)",
+  "q": "P04",
+  "o": 0,
+  "w": "done"
+ }
+]
