@@ -1,0 +1,214 @@
+file,quest,quest_title,beat,speaker,voice,text
+s102_001_hank.mp3,S102,The Keepers' Call,quest start,Hank Briggs,hank,"Helix crews are hitting the towers, trying to crack them before you reach the crater."
+s102_002_kit.mp3,S102,The Keepers' Call,quest start,Kit Briggs,kit,"I rigged a Shard relay out of Nana Wren's old ship radio. Now your Shards can talk to every tower, and Static can call every Keeper!"
+s102_003_hank.mp3,S102,The Keepers' Call,quest start,Hank Briggs,hank,"Ferrox first. Then Static's tower on Neonis. Kit, you're with the Linker."
+s102_004_static.mp3,S102,The Keepers' Call,scene: Static goes live,DJ Static,static,"This is Static, live on every frequency in the Kessler system. You need to hear this."
+s102_005_thorne.mp3,S102,The Keepers' Call,scene: Static goes live,Director Kael Thorne,thorne,[log] Reyes was an acceptable loss.
+s102_006_static.mp3,S102,The Keepers' Call,scene: Static goes live,DJ Static,static,"And this: Project Unity. Helix has been caging one of every Alienmon to force the Seedmother's power. Look at these cages, people."
+s102_007_narrator.mp3,S102,The Keepers' Call,scene: Static goes live,Narrator,narrator,"On every world, people stop and listen. By morning, nobody believes Helix anymore."
+s102_008_static.mp3,S102,The Keepers' Call,scene: Static goes live,DJ Static,static,"The Keepers are with you, Linker. When you need us, just call. We'll sing."
+s102_009_hank.mp3,S102,The Keepers' Call,reminder,Hank Briggs,hank,The towers won't hold themselves!
+s102_010_hank.mp3,S102,The Keepers' Call,quest complete,Hank Briggs,hank,"Every Keeper's on the line now. Whatever happens at that crater, you won't be alone."
+s01_011_dusty.mp3,S01,Dusty's Cactus Garden,quest start,Old Dusty,dusty,Haven't seen a Cactling bloom in years. Catch one and show me?
+s01_012_narrator.mp3,S01,Dusty's Cactus Garden,reminder,Narrator,narrator,"Keep at it, Linker. You've got this."
+s01_013_dusty.mp3,S01,Dusty's Cactus Garden,quest complete,Old Dusty,dusty,"Look at those petals! Here, a little something for your trouble."
+s02_014_dx4.mp3,S02,DX-4's Missing Parts,quest start,DX-4,dx4,Bzzt. Three of my bolts rolled away in the Starfall wind. Retrieve them?
+s02_015_narrator.mp3,S02,DX-4's Missing Parts,reminder,Narrator,narrator,"Keep at it, Linker. You've got this."
+s02_016_dx4.mp3,S02,DX-4's Missing Parts,quest complete,DX-4,dx4,"Systems at 100%! Accept this Stun Spray, Linker."
+s03_017_narrator.mp3,S03,Pink Gills,quest start,Narrator,narrator,The pink Alienmon puffs up its gills. It looks like it wants a rematch... again and again.
+s03_018_narrator.mp3,S03,Pink Gills,reminder,Narrator,narrator,"Keep at it, Linker. You've got this."
+s03_019_narrator.mp3,S03,Pink Gills,quest complete,Narrator,narrator,After its third loss it happily hands you a shiny stone it was guarding.
+s04_020_tamsin.mp3,S04,Explorer's Field Test,quest start,Tamsin,tamsin,Name's Tamsin. Explorer. (She tips a battered straw hat. Her vest is covered in patches from a hundred places.)
+s04_021_tamsin.mp3,S04,Explorer's Field Test,quest start,Tamsin,tamsin,This one? (She taps a patch shaped like a question mark.) That's the world I never found.
+s04_022_tamsin.mp3,S04,Explorer's Field Test,quest start,Tamsin,tamsin,"Now, your field test. First rule: a capture isn't taking. It's asking."
+s04_023_tamsin.mp3,S04,Explorer's Field Test,quest start,Tamsin,tamsin,"Weaken it gently with a Tether Pulse, calm it with a Stun Spray, then ask with your beam."
+s04_024_narrator.mp3,S04,Explorer's Field Test,reminder,Narrator,narrator,"Keep at it, Linker. You've got this."
+s04_025_tamsin.mp3,S04,Explorer's Field Test,quest complete,Tamsin,tamsin,Textbook! See? It said yes.
+s04_026_tamsin.mp3,S04,Explorer's Field Test,quest complete,Tamsin,tamsin,"Keep these. And if you ever find a world nobody has mapped, come and tell me about it."
+s10_027_dax.mp3,S10,Frontier Gauntlet,quest start,Forge Miner Dax,dax,Beat every trainer on the Frontier and you'll earn a Frontier Badge of honor.
+s10_028_narrator.mp3,S10,Frontier Gauntlet,reminder,Narrator,narrator,"Keep at it, Linker. You've got this."
+s10_029_dax.mp3,S10,Frontier Gauntlet,quest complete,Forge Miner Dax,dax,"All five! Here, a Singularity Cell. Don't waste it."
+s11_030_technician.mp3,S11,Signal Static,quest start,Technician (townsfolk),technician,Wild Alienmon keep chewing my relay cables. Thin them out a little?
+s11_031_narrator.mp3,S11,Signal Static,reminder,Narrator,narrator,"Keep at it, Linker. You've got this."
+s11_032_technician.mp3,S11,Signal Static,quest complete,Technician (townsfolk),technician,Signal's clean again. Thanks! Take some Tether Pulses.
+s12_033_explorer.mp3,S12,Palm Isle Herbs,quest start,Explorer (townsfolk),explorer,The hut needs fresh herbs. A Bio-type Alienmon could grow them. Catch one?
+s12_034_narrator.mp3,S12,Palm Isle Herbs,reminder,Narrator,narrator,"Keep at it, Linker. You've got this."
+s12_035_explorer.mp3,S12,Palm Isle Herbs,quest complete,Explorer (townsfolk),explorer,Perfect! The hut will stay stocked for weeks. Here's a Revive Spark.
+s13_036_miner.mp3,S13,The Miner's Lost Pick,quest start,Miner (townsfolk),miner,Dropped my lucky pick near the Shadow Tunnel. Too spooky to go back alone.
+s13_037_narrator.mp3,S13,The Miner's Lost Pick,reminder,Narrator,narrator,"Keep at it, Linker. You've got this."
+s13_038_miner.mp3,S13,The Miner's Lost Pick,quest complete,Miner (townsfolk),miner,My lucky pick! You're a lifesaver.
+s14_039_squid.mp3,S14,Ferry Fare,quest start,Squid Sailor,squid,The ferry crew's been working double shifts. A Mega Gel for them would go a long way.
+s14_040_narrator.mp3,S14,Ferry Fare,reminder,Narrator,narrator,"Keep at it, Linker. You've got this."
+s14_041_squid.mp3,S14,Ferry Fare,quest complete,Squid Sailor,squid,"Crew says thanks! You ride free, forever."
+s15_042_narrator.mp3,S15,Echo in the Mountain,quest start,Narrator,narrator,Ystran echo: ...the mountain's heart remembers Ystra... go deeper...
+s15_043_narrator.mp3,S15,Echo in the Mountain,reminder,Narrator,narrator,"Keep at it, Linker. You've got this."
+s15_044_narrator.mp3,S15,Echo in the Mountain,quest complete,Narrator,narrator,Deep in the Magma Mines a crystal hums with the echo's voice. You take the Ystra Shardlet.
+s16_045_grub.mp3,S16,Grub's Bargain,quest start,Grub,grub,Bring me five scrap cogs from the lava trails and I'll trade you something special.
+s16_046_narrator.mp3,S16,Grub's Bargain,reminder,Narrator,narrator,"Keep at it, Linker. You've got this."
+s16_047_grub.mp3,S16,Grub's Bargain,quest complete,Grub,grub,"Heh, pleasure doing business. One Singularity Cell, as promised."
+s20_048_grub.mp3,S20,Scrap for Grub,quest start,Grub,grub,A Gleamgrub eats rust and spits out polish. I need one for my shop!
+s20_049_narrator.mp3,S20,Scrap for Grub,reminder,Narrator,narrator,"Keep at it, Linker. You've got this."
+s20_050_grub.mp3,S20,Scrap for Grub,quest complete,Grub,grub,Shiny! Here's your cut.
+s21_051_hank.mp3,S21,Crane Yard Brawl,quest start,Hank Briggs,hank,Three junkers keep jamming my cranes. Teach 'em some manners.
+s21_052_narrator.mp3,S21,Crane Yard Brawl,reminder,Narrator,narrator,"Keep at it, Linker. You've got this."
+s21_053_hank.mp3,S21,Crane Yard Brawl,quest complete,Hank Briggs,hank,Cranes are running smooth. You're welcome back anytime.
+s22_054_scrapper.mp3,S22,Forgemaul Sighting,quest start,Scrapper (townsfolk),scrapper,A Forgemaul's been hammering in the furnace ridge at night. Nobody's caught one.
+s22_055_narrator.mp3,S22,Forgemaul Sighting,reminder,Narrator,narrator,"Keep at it, Linker. You've got this."
+s22_056_scrapper.mp3,S22,Forgemaul Sighting,quest complete,Scrapper (townsfolk),scrapper,You actually did it! Legend.
+s30_057_moor.mp3,S30,Glow Samples,quest start,Dr. Lysa Moor,moor,I need two glowing specimens: a Lumislug and a Puffspore.
+s30_058_narrator.mp3,S30,Glow Samples,reminder,Narrator,narrator,"Keep at it, Linker. You've got this."
+s30_059_moor.mp3,S30,Glow Samples,quest complete,Dr. Lysa Moor,moor,Their glow matches the Starfall pods exactly. Fascinating!
+s31_060_narrator.mp3,S31,Lost in the Mist,quest start,Narrator,narrator,Sporefolk elder: Our little one wandered into the mist. Follow the glowing mushrooms!
+s31_061_narrator.mp3,S31,Lost in the Mist,reminder,Narrator,narrator,"Keep at it, Linker. You've got this."
+s31_062_narrator.mp3,S31,Lost in the Mist,quest complete,Narrator,narrator,The little sporeling clings to you all the way home. The elder gives you a woven charm.
+s32_063_narrator.mp3,S32,Zib's Cousin,quest start,Narrator,narrator,Zib beeps excitedly. Another saucer signal pings from the bog.
+s32_064_narrator.mp3,S32,Zib's Cousin,reminder,Narrator,narrator,"Keep at it, Linker. You've got this."
+s32_065_narrator.mp3,S32,Zib's Cousin,quest complete,Narrator,narrator,Two Zibs! They blink at each other in perfect sync.
+s40_066_marsh.mp3,S40,Captain's Log,quest start,Captain Delia Marsh,marsh,Helix scattered my logbook to the wind. Three pages are still out there.
+s40_067_marsh.mp3,S40,Captain's Log,quest start,Captain Delia Marsh,marsh,And there's a Helix freighter drifting off the docks with nobody aboard. The crews call it the ghost ship. Something in its hold howls at night.
+s40_068_narrator.mp3,S40,Captain's Log,scene: The ghost ship,Narrator,narrator,You climb down into the ghost ship's hold. Rows of empty cages rattle in the swell.
+s40_069_narrator.mp3,S40,Captain's Log,scene: The ghost ship,Narrator,narrator,"The howl comes from the very last cage. It isn't a ghost at all. It's a lost little Chirpod, calling and calling for anyone to answer."
+s40_070_narrator.mp3,S40,Captain's Log,scene: The ghost ship,Narrator,narrator,You open the cage. The Chirpod hops onto your arm and won't let go.
+s40_071_narrator.mp3,S40,Captain's Log,reminder,Narrator,narrator,"Keep at it, Linker. You've got this."
+s40_072_marsh.mp3,S40,Captain's Log,quest complete,Captain Delia Marsh,marsh,The last page... it shows where they took the core: the Helix Forge Fortress.
+s41_073_kid.mp3,S41,Bubble Trouble,quest start,Kid (townsfolk),kid,I want a Bubbub for the tide pool! Pleeease?
+s41_074_narrator.mp3,S41,Bubble Trouble,reminder,Narrator,narrator,"Keep at it, Linker. You've got this."
+s41_075_kid.mp3,S41,Bubble Trouble,quest complete,Kid (townsfolk),kid,It blew a bubble on my nose! Best day ever!
+s42_076_squid.mp3,S42,Anchorath of the Deep,quest start,Squid Sailor,squid,Old sailors say an anchor-beast sleeps under the sea arch.
+s42_077_narrator.mp3,S42,Anchorath of the Deep,reminder,Narrator,narrator,"Keep at it, Linker. You've got this."
+s42_078_squid.mp3,S42,Anchorath of the Deep,quest complete,Squid Sailor,squid,By the tides... you caught the legend!
+s50_079_static.mp3,S50,Encore!,quest start,DJ Static,static,My backup dancers want a battle-off. Three rounds. You in?
+s50_080_narrator.mp3,S50,Encore!,reminder,Narrator,narrator,"Keep at it, Linker. You've got this."
+s50_081_static.mp3,S50,Encore!,quest complete,DJ Static,static,The crowd LOVES you! Here's a VIP pass and some cash.
+s51_082_technician.mp3,S51,Glitch Hunt,quest start,Technician (townsfolk),technician,Glitchbugs keep crashing the starport. Collect three and I'll rehome them.
+s51_083_narrator.mp3,S51,Glitch Hunt,reminder,Narrator,narrator,"Keep at it, Linker. You've got this."
+s51_084_technician.mp3,S51,Glitch Hunt,quest complete,Technician (townsfolk),technician,"Systems stable. Thanks, Linker!"
+s52_085_vashti.mp3,S52,Lost Signal,quest start,Dr. Imogen Vashti,vashti,Retune three city antennas to the crater pulse and we'll triangulate the source.
+s52_086_narrator.mp3,S52,Lost Signal,reminder,Narrator,narrator,"Keep at it, Linker. You've got this."
+s52_087_vashti.mp3,S52,Lost Signal,quest complete,Dr. Imogen Vashti,vashti,"Triangulated. The pulse comes from INSIDE the crater, from somewhere else entirely."
+s60_088_researcher.mp3,S60,Mural Rubbings,quest start,Researcher (townsfolk),researcher,Make rubbings of five carved stones. They may be a map.
+s60_089_narrator.mp3,S60,Mural Rubbings,reminder,Narrator,narrator,"Keep at it, Linker. You've got this."
+s60_090_researcher.mp3,S60,Mural Rubbings,quest complete,Researcher (townsfolk),researcher,"It IS a map, of the Relay Towers!"
+s61_091_pilgrim.mp3,S61,Song of the Chimes,quest start,Pilgrim (townsfolk),pilgrim,The bell court's song fell silent. A Chimelet could bring it back.
+s61_092_narrator.mp3,S61,Song of the Chimes,reminder,Narrator,narrator,"Keep at it, Linker. You've got this."
+s61_093_narrator.mp3,S61,Song of the Chimes,quest complete,Narrator,narrator,The bells ring again. The pilgrim weeps with joy.
+s62_094_narrator.mp3,S62,The Great Doors,quest start,Narrator,narrator,Ystran echo: ...the great doors sleep... guardians of stone keep the halls...
+s62_095_narrator.mp3,S62,The Great Doors,quest start,Narrator,narrator,Ystran echo: ...turn the light toward the doors... and only a Chimelet's note can wake them...
+s62_096_narrator.mp3,S62,The Great Doors,reminder,Narrator,narrator,"Keep at it, Linker. You've got this."
+s62_097_narrator.mp3,S62,The Great Doors,quest complete,Narrator,narrator,"The Chimelet sings one clear note. The great doors shiver, then swing slowly open."
+s62_098_narrator.mp3,S62,The Great Doors,quest complete,Narrator,narrator,"Behind them, the oldest mural of all: tiny crystal people waving goodbye to a sky full of seedpods."
+s62_099_narrator.mp3,S62,The Great Doors,quest complete,Narrator,narrator,Ystran echo: ...you listened... thank you...
+s70_100_basalt.mp3,S70,Basalt's Lantern,quest start,Old Basalt,basalt,My old lantern's down the deep shaft. Fetch it? These knees won't.
+s70_101_narrator.mp3,S70,Basalt's Lantern,reminder,Narrator,narrator,"Keep at it, Linker. You've got this."
+s70_102_basalt.mp3,S70,Basalt's Lantern,quest complete,Old Basalt,basalt,"Still burning after forty years. Thank you, youngster."
+s71_103_miner.mp3,S71,Ember Rain,quest start,Miner (townsfolk),miner,Kindleflies light the tunnels for us. Catch two for the night shift?
+s71_104_narrator.mp3,S71,Ember Rain,reminder,Narrator,narrator,"Keep at it, Linker. You've got this."
+s71_105_miner.mp3,S71,Ember Rain,quest complete,Miner (townsfolk),miner,The tunnels are glowing again. Great work!
+s72_106_dax.mp3,S72,Deep Drill,quest start,Forge Miner Dax,dax,The deep crew thinks they're the toughest Linkers on Pyros. Prove 'em wrong.
+s72_107_narrator.mp3,S72,Deep Drill,reminder,Narrator,narrator,"Keep at it, Linker. You've got this."
+s72_108_dax.mp3,S72,Deep Drill,quest complete,Forge Miner Dax,dax,Ha! They'll be talking about this for years.
+s80_109_ingrid.mp3,S80,Aurora Watch,quest start,Ingrid Vale,ingrid,The aurora is acting strangely. Check it from three lookouts.
+s80_110_narrator.mp3,S80,Aurora Watch,reminder,Narrator,narrator,"Keep at it, Linker. You've got this."
+s80_111_ingrid.mp3,S80,Aurora Watch,quest complete,Ingrid Vale,ingrid,It pulses with the crater signal. The whole system is listening.
+s81_112_researcher.mp3,S81,Frozen Cargo,quest start,Researcher (townsfolk),researcher,My Alienmon fainted in the cold. Do you have a Revive Spark?
+s81_113_narrator.mp3,S81,Frozen Cargo,reminder,Narrator,narrator,"Keep at it, Linker. You've got this."
+s81_114_researcher.mp3,S81,Frozen Cargo,quest complete,Researcher (townsfolk),researcher,You saved us both. Take my field notes and these supplies.
+s82_115_ingrid.mp3,S82,The Glaciryx Hunt,quest start,Ingrid Vale,ingrid,A Glaciryx nests behind the frozen waterfall. Only the bravest try.
+s82_116_narrator.mp3,S82,The Glaciryx Hunt,reminder,Narrator,narrator,"Keep at it, Linker. You've got this."
+s82_117_ingrid.mp3,S82,The Glaciryx Hunt,quest complete,Ingrid Vale,ingrid,Incredible. You have the coldest nerve I've ever seen.
+s90_118_bronn.mp3,S90,Free the Captives,quest start,Admin Bronn,bronn,"This whole wing is Project Unity: one of every species Helix has found, catalogued like museum pieces."
+s90_119_bronn.mp3,S90,Free the Captives,quest start,Admin Bronn,bronn,Open the cages and Thorne's collection is broken.
+s90_120_narrator.mp3,S90,Free the Captives,reminder,Narrator,narrator,"Keep at it, Linker. You've got this."
+s90_121_narrator.mp3,S90,Free the Captives,quest complete,Narrator,narrator,The freed Alienmon chirp their thanks. Several follow your transfer beam to your ship's storage.
+s90_122_narrator.mp3,S90,Free the Captives,quest complete,Narrator,narrator,Kit refuses to leave until every cage is open. Kit's {kit3} digs in and roots the last stuck doors wide open.
+s90_123_kit.mp3,S90,Free the Captives,quest complete,Kit Briggs,kit,[shaking] Nobody gets left.
+s90_124_narrator.mp3,S90,Free the Captives,quest complete,Narrator,narrator,Project Unity is broken. Helix's collection is gone.
+s91_125_strand.mp3,S91,Nullbot Override,quest start,Strand,strand,The Nullbots guard Thorne's files. Beat three and the server unlocks.
+s91_126_narrator.mp3,S91,Nullbot Override,reminder,Narrator,narrator,"Keep at it, Linker. You've got this."
+s91_127_strand.mp3,S91,Nullbot Override,quest complete,Strand,strand,Thorne's files... the Rift engine schematics. This proves everything.
+s92_128_kade.mp3,S92,Lantern Lighting,quest start,Mortimer Kade,kade,Light the four old lanterns. The Wailshades fear warm light.
+s92_129_narrator.mp3,S92,Lantern Lighting,reminder,Narrator,narrator,"Keep at it, Linker. You've got this."
+s92_130_narrator.mp3,S92,Lantern Lighting,quest complete,Narrator,narrator,Gravewell glows amber again. The children come out to play.
+s93_131_kade.mp3,S93,Kade's Notes,quest start,Mortimer Kade,kade,My old notes are in the ruined lab. They prove Thorne knew the Devourer was real.
+s93_132_narrator.mp3,S93,Kade's Notes,reminder,Narrator,narrator,"Keep at it, Linker. You've got this."
+s93_133_kade.mp3,S93,Kade's Notes,quest complete,Mortimer Kade,kade,Now everyone will know the truth about Helix.
+s94_134_kid.mp3,S94,A Kid's Dream,quest start,Kid (townsfolk),kid,Can I see a Psi-type up close? Pleeeease!
+s94_135_narrator.mp3,S94,A Kid's Dream,reminder,Narrator,narrator,"Keep at it, Linker. You've got this."
+s94_136_kid.mp3,S94,A Kid's Dream,quest complete,Kid (townsfolk),kid,"Its eyes glow! I'm gonna be a Linker someday, just like you!"
+s95_137_wanderer.mp3,S95,Wind Wanderer,quest start,Wanderer (townsfolk),wanderer,"I chased a Novaling all the way up here. If you ever catch one, show me?"
+s95_138_narrator.mp3,S95,Wind Wanderer,reminder,Narrator,narrator,"Keep at it, Linker. You've got this."
+s95_139_wanderer.mp3,S95,Wind Wanderer,quest complete,Wanderer (townsfolk),wanderer,A real Novaling! It's like holding a star.
+s96_140_echoiris.mp3,S96,Mirror Match,quest start,Echo & Iris,echoiris,Two reflections live in the clouds: Mirrix and Reflix. Catch both.
+s96_141_narrator.mp3,S96,Mirror Match,reminder,Narrator,narrator,"Keep at it, Linker. You've got this."
+s96_142_echoiris.mp3,S96,Mirror Match,quest complete,Echo & Iris,echoiris,We saw you'd do it. But it's still nice to watch.
+s97_143_teo.mp3,S97,Seedpod Shells,quest start,Teo Reyes,teo,Each shell holds a memory of Ystra. Help me gather five.
+s97_144_narrator.mp3,S97,Seedpod Shells,reminder,Narrator,narrator,"Keep at it, Linker. You've got this."
+s97_145_teo.mp3,S97,Seedpod Shells,quest complete,Teo Reyes,teo,Lumivex can hear them singing. Thank you.
+s98_146_sola.mp3,S98,Teo's Journal,quest start,Sola Reyes,sola,Dad left his journal at his old camp. Can we find it together?
+s98_147_narrator.mp3,S98,Teo's Journal,reminder,Narrator,narrator,"Keep at it, Linker. You've got this."
+s98_148_sola.mp3,S98,Teo's Journal,quest complete,Sola Reyes,sola,"""Day one: the light is beautiful."" ...Thanks for coming with me."
+s99_149_technician.mp3,S99,Telescope Alignment,quest start,Technician (townsfolk),technician,Align the three nodes and we can see the Warp Gate from here.
+s99_150_narrator.mp3,S99,Telescope Alignment,reminder,Narrator,narrator,"Keep at it, Linker. You've got this."
+s99_151_narrator.mp3,S99,Telescope Alignment,quest complete,Narrator,narrator,"Through the lens, the far Warp Gate flickers... like it's breathing."
+s100_152_orra.mp3,S100,Quorum Rematch,quest start,Orra Venn,orra,"The Quorum wants a rematch, stronger than before. Weekly."
+s100_153_narrator.mp3,S100,Quorum Rematch,reminder,Narrator,narrator,"Keep at it, Linker. You've got this."
+s100_154_orra.mp3,S100,Quorum Rematch,quest complete,Orra Venn,orra,Still the Prime Linker. Impressive.
+s101_155_vashti.mp3,S101,Star Chart,quest start,Dr. Imogen Vashti,vashti,Register 150 Alienmon in your Xenodex and I'll give you my rarest cell.
+s101_156_narrator.mp3,S101,Star Chart,reminder,Narrator,narrator,"Keep at it, Linker. You've got this."
+s101_157_vashti.mp3,S101,Star Chart,quest complete,Dr. Imogen Vashti,vashti,Half the system catalogued! You've earned this.
+s110_158_narrator.mp3,S110,Echoes of Home,quest start,Narrator,narrator,Ystran echo: ...gather our voices... so the Seedmother can hear...
+s110_159_narrator.mp3,S110,Echoes of Home,reminder,Narrator,narrator,"Keep at it, Linker. You've got this."
+s110_160_narrator.mp3,S110,Echoes of Home,quest complete,Narrator,narrator,The echoes merge into one clear song. Their song drifts across the bare land toward the Heartroot's crater.
+s111_161_liss.mp3,S111,Blight Cleansing,quest start,Liss,liss,The little shadows in this forest are pieces of Oblivane's hunger. They are not attacking you. They are begging.
+s111_162_liss.mp3,S111,Blight Cleansing,quest start,Liss,liss,"Meet them gently. Kit's {kit3} can heal a little of the blight, tree by tree."
+s111_163_narrator.mp3,S111,Blight Cleansing,reminder,Narrator,narrator,"Keep at it, Linker. You've got this."
+s111_164_narrator.mp3,S111,Blight Cleansing,quest complete,Narrator,narrator,"The little shadow creatures settle, one by one, like birds coming home to roost."
+s111_165_narrator.mp3,S111,Blight Cleansing,quest complete,Narrator,narrator,A few crystal leaves bloom... but nothing will truly grow until the Heartroot does.
+s53_166_technician.mp3,S53,Glitchbug Outbreak,quest start,Technician (townsfolk),technician,"A Helix shuttle just crashed in the Arcade District! Its cargo hold burst open, and now there are Glitchbugs everywhere."
+s53_167_technician.mp3,S53,Glitchbug Outbreak,quest start,Technician (townsfolk),technician,They're scrambling every screen in the city. Can you round them up before the whole grid goes dark?
+s53_168_technician.mp3,S53,Glitchbug Outbreak,reminder,Technician (townsfolk),technician,Still more out there! Listen for the buzzing.
+s53_169_technician.mp3,S53,Glitchbug Outbreak,quest complete,Technician (townsfolk),technician,That's the last of them! The grid is back up.
+s53_170_technician.mp3,S53,Glitchbug Outbreak,quest complete,Technician (townsfolk),technician,Huh. That last little one won't leave your side. I think it's picked you.
+s112_171_mina.mp3,S112,Splodge's Big Splash,quest start,Mina,mina,This hood? It's a shark. Obviously. And I need your help.
+s112_172_mina.mp3,S112,Splodge's Big Splash,quest start,Mina,mina,"Splodge, my Bubbub, chased a wave all the way out past the point and didn't come back. He always ends up at Coral Cove."
+s112_173_mina.mp3,S112,Splodge's Big Splash,quest start,Mina,mina,Bring him home? And show me you can look after a water Alienmon of your own. Then we'll talk about rides.
+s112_174_narrator.mp3,S112,Splodge's Big Splash,scene: Find Splodge at Coral Cove,Narrator,narrator,"Something giggles out in the shallows. A huge shiny bubble bobs over the waves, bouncing off the rocks like a beach ball."
+s112_175_narrator.mp3,S112,Splodge's Big Splash,scene: Find Splodge at Coral Cove,Narrator,narrator,Inside it sits a little round Bubbub with two flippers and a big happy grin. Splodge!
+s112_176_narrator.mp3,S112,Splodge's Big Splash,scene: Find Splodge at Coral Cove,Narrator,narrator,"Splodge gurgles, rolls straight up the beach and bumps into your legs. He has decided to follow you home."
+s112_177_mina.mp3,S112,Splodge's Big Splash,reminder,Mina,mina,Splodge loves Coral Cove. Look for a giggling bubble in the shallows!
+s112_178_mina.mp3,S112,Splodge's Big Splash,quest complete,Mina,mina,"SPLODGE! You silly bubble. Thank you, Linker!"
+s112_179_mina.mp3,S112,Splodge's Big Splash,quest complete,Mina,mina,You know what? He likes you. Keep him. Walk out onto deep water and Splodge will carry you anywhere.
+s112_180_mina.mp3,S112,Splodge's Big Splash,quest complete,Mina,mina,Just don't pop him.
+keeper_ferrox_intro_hank.mp3,KEEPER,Keeper battle: Ferrox,intro,Hank Briggs,hank,"Think you can dent my armor, kid? Let's see."
+keeper_ferrox_lose_hank.mp3,KEEPER,Keeper battle: Ferrox,lose,Hank Briggs,hank,Ha! You've got grit. Take the shard.
+keeper_ferrox_after_hank.mp3,KEEPER,Keeper battle: Ferrox,after,Hank Briggs,hank,Keep that Linker oiled.
+keeper_sporeholm_intro_moor.mp3,KEEPER,Keeper battle: Sporeholm,intro,Dr. Lysa Moor,moor,Let me show you how patient poison can be.
+keeper_sporeholm_lose_moor.mp3,KEEPER,Keeper battle: Sporeholm,lose,Dr. Lysa Moor,moor,Fascinating. You adapted quickly.
+keeper_sporeholm_after_moor.mp3,KEEPER,Keeper battle: Sporeholm,after,Dr. Lysa Moor,moor,The spores glow brighter when you're near. Curious.
+keeper_thalassa_intro_marsh.mp3,KEEPER,Keeper battle: Thalassa,intro,Captain Delia Marsh,marsh,The tide waits for no one. Battle stations!
+keeper_thalassa_lose_marsh.mp3,KEEPER,Keeper battle: Thalassa,lose,Captain Delia Marsh,marsh,You sailed through that storm. Well done.
+keeper_thalassa_after_marsh.mp3,KEEPER,Keeper battle: Thalassa,after,Captain Delia Marsh,marsh,Watch out for Helix. They're after the tower cores.
+keeper_neonis_intro_static.mp3,KEEPER,Keeper battle: Neonis,intro,DJ Static,static,Turn it up! This battle's going live!
+keeper_neonis_lose_static.mp3,KEEPER,Keeper battle: Neonis,lose,DJ Static,static,That's a wrap. You rocked the stage.
+keeper_neonis_after_static.mp3,KEEPER,Keeper battle: Neonis,after,DJ Static,static,That signal from the Rift? It sounds like a lullaby.
+keeper_pyros_intro_basalt.mp3,KEEPER,Keeper battle: Pyros,intro,Old Basalt,basalt,Sixty years in the mines. Show me your fire.
+keeper_pyros_lose_basalt.mp3,KEEPER,Keeper battle: Pyros,lose,Old Basalt,basalt,Hmph. The fire in you burns true.
+keeper_pyros_after_basalt.mp3,KEEPER,Keeper battle: Pyros,after,Old Basalt,basalt,Find Teo's girl. She deserves to know.
+keeper_glacia_intro_ingrid.mp3,KEEPER,Keeper battle: Glacia,intro,Ingrid Vale,ingrid,Let's see if you can keep your cool.
+keeper_glacia_lose_ingrid.mp3,KEEPER,Keeper battle: Glacia,lose,Ingrid Vale,ingrid,You thawed my best defense. Impressive.
+keeper_glacia_after_ingrid.mp3,KEEPER,Keeper battle: Glacia,after,Ingrid Vale,ingrid,Whatever made those bite marks is still out there.
+keeper_helix_intro_vex.mp3,KEEPER,Keeper battle: Helix Station,intro,Admin Vex,vex,A kid with a Linker? Thorne will love this.
+keeper_helix_lose_vex.mp3,KEEPER,Keeper battle: Helix Station,lose,Admin Vex,vex,Tch. Thorne won't care. He's already at the Rift.
+keeper_helix_after_vex.mp3,KEEPER,Keeper battle: Helix Station,after,Admin Vex,vex,"Go ahead, chase him. You'll never stop it."
+keeper_halo_intro_echoiris.mp3,KEEPER,Keeper battle: Halo,intro,Echo & Iris,echoiris,We already saw this battle. Shall we see how it ends?
+keeper_halo_lose_echoiris.mp3,KEEPER,Keeper battle: Halo,lose,Echo & Iris,echoiris,The vision changed. Because of you.
+keeper_halo_after_echoiris.mp3,KEEPER,Keeper battle: Halo,after,Echo & Iris,echoiris,The Rift. The shadow. A girl and her father. We saw it all.
+keeper_umbra_intro_kade.mp3,KEEPER,Keeper battle: Umbra,intro,Mortimer Kade,kade,The Devourer follows the light. Prove you can stand in the dark.
+keeper_umbra_lose_kade.mp3,KEEPER,Keeper battle: Umbra,lose,Mortimer Kade,kade,You're ready. Take the last shard.
+keeper_umbra_after_kade.mp3,KEEPER,Keeper battle: Umbra,after,Mortimer Kade,kade,"With 8 shards, the Rift will let you land. Stop Thorne."
+keeper_starfall_intro_thorne.mp3,KEEPER,Keeper battle: Starfall Rift,intro,Director Kael Thorne,thorne,The Rift is mine. Unlimited Alienmon. Unlimited power. Move aside!
+keeper_starfall_lose_thorne.mp3,KEEPER,Keeper battle: Starfall Rift,lose,Director Kael Thorne,thorne,No... the shadow... it's coming through!
+keeper_starfall_after_thorne.mp3,KEEPER,Keeper battle: Starfall Rift,after,Director Kael Thorne,thorne,The Rift is sealed. Teo Reyes is home. ...I was wrong.
+keeper_apex_intro_orra.mp3,KEEPER,Keeper battle: Apex Array,intro,Orra Venn,orra,I bonded the very first Alienmon. Show me what you've built.
+keeper_apex_lose_orra.mp3,KEEPER,Keeper battle: Apex Array,lose,Orra Venn,orra,You're the Prime Linker now. Vashti and I always suspected the truth. The towers were a seal.
+keeper_apex_after_orra.mp3,KEEPER,Keeper battle: Apex Array,after,Orra Venn,orra,Ystra's fragments drift in the old Rift. Go see where they came from.

@@ -1,0 +1,14 @@
+# 893 Hydro Tank (Helix Station)
+
+- **Attach:** `references/893_layout_guide.png` and `references/893_current_art.png`
+- **Save as:** `893_hydro_tank.png` (1536x1024)
+- **New:** joins Hydro Tank Islands (894) through the opening on the right edge.
+
+## Prompt
+```
+Top-down 3/4 view pixel-art game map for the Alienmon game, in the same style as the attached 893_current_art.png: crisp detailed pixel art, the same world, colours and palette. This map is "Hydro Tank" on Helix Station, a giant hydroponics water tank inside a space station: clear blue water, steel walkways, glowing pipes.
+
+Follow the attached 893_layout_guide.png EXACTLY for where everything goes. Layout guide colours: dark red-brown = cliffs, rocks and walls (NOT walkable); tan = walkable ground and paths; green = walkable tall grass; cyan = the lake (water or lava); grey = walkable bridges or walkways over it; brown = small docks. Each square is one 64x64 tile. Openings outlined in red on the guide are exits to other maps: the path must reach that edge of the image there.
+
+Canvas 1536x1024 (24 x 16 tiles of 64 px), landscape, filled edge to edge. No characters, no creatures, no text, no UI, no grid lines, no ball or capsule emblems.
+```
