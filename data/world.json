@@ -13544,7 +13544,106 @@
      "offset": 1
     }
    },
-   "warps": [],
+   "warps": [
+    {
+     "tile": [
+      0,
+      4
+     ],
+     "to": "935",
+     "at": [
+      22,
+      7
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      5
+     ],
+     "to": "935",
+     "at": [
+      22,
+      7
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      6
+     ],
+     "to": "935",
+     "at": [
+      22,
+      8
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      7
+     ],
+     "to": "935",
+     "at": [
+      22,
+      8
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      8
+     ],
+     "to": "935",
+     "at": [
+      22,
+      8
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      9
+     ],
+     "to": "935",
+     "at": [
+      22,
+      9
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      10
+     ],
+     "to": "935",
+     "at": [
+      22,
+      9
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    }
+   ],
    "objects": [
     {
      "tile": [
@@ -13596,8 +13695,8 @@
     },
     {
      "tile": [
-      3,
-      6
+      11,
+      12
      ],
      "k": "stash",
      "item": "fullgel",
@@ -13657,13 +13756,13 @@
    ],
    "mons": [
     {
-     "x": 5,
-     "y": 5,
+     "x": 7,
+     "y": 9,
      "mon": "Cerebrix"
     },
     {
-     "x": 6,
-     "y": 8,
+     "x": 20,
+     "y": 5,
      "mon": "Hummingmind"
     }
    ]
@@ -18190,7 +18289,92 @@
      "offset": 4
     }
    },
-   "warps": [],
+   "warps": [
+    {
+     "tile": [
+      0,
+      5
+     ],
+     "to": "943",
+     "at": [
+      22,
+      6
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      6
+     ],
+     "to": "943",
+     "at": [
+      22,
+      6
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      7
+     ],
+     "to": "943",
+     "at": [
+      22,
+      6
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      8
+     ],
+     "to": "943",
+     "at": [
+      22,
+      7
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      9
+     ],
+     "to": "943",
+     "at": [
+      22,
+      7
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      10
+     ],
+     "to": "943",
+     "at": [
+      22,
+      7
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    }
+   ],
    "objects": [
     {
      "tile": [
@@ -18234,8 +18418,8 @@
     },
     {
      "tile": [
-      2,
-      6
+      15,
+      10
      ],
      "k": "stash",
      "item": "ether",
@@ -18261,7 +18445,7 @@
    "npcs": [
     {
      "x": 13,
-     "y": 11,
+     "y": 10,
      "art": "ystran",
      "face": "down",
      "t": [
@@ -18312,13 +18496,13 @@
    ],
    "mons": [
     {
-     "x": 2,
-     "y": 8,
+     "x": 9,
+     "y": 11,
      "mon": "Riftwalker"
     },
     {
-     "x": 9,
-     "y": 11,
+     "x": 6,
+     "y": 6,
      "mon": "Fractalith"
     }
    ]
@@ -22851,7 +23035,92 @@
      "offset": -6
     }
    },
-   "warps": [],
+   "warps": [
+    {
+     "tile": [
+      13,
+      0
+     ],
+     "to": "919",
+     "at": [
+      11,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      14,
+      0
+     ],
+     "to": "919",
+     "at": [
+      11,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      15,
+      0
+     ],
+     "to": "919",
+     "at": [
+      12,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      16,
+      0
+     ],
+     "to": "919",
+     "at": [
+      12,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      17,
+      0
+     ],
+     "to": "919",
+     "at": [
+      13,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      18,
+      0
+     ],
+     "to": "919",
+     "at": [
+      13,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    }
+   ],
    "objects": [
     {
      "tile": [
@@ -22875,8 +23144,8 @@
     },
     {
      "tile": [
-      14,
-      2
+      3,
+      7
      ],
      "k": "stash",
      "item": "cure",
@@ -22909,7 +23178,7 @@
      "src": "n:497:0"
     },
     {
-     "x": 14,
+     "x": 13,
      "y": 9,
      "art": "civilian",
      "face": "down",
@@ -22927,7 +23196,7 @@
      "mon": "Anvilox"
     },
     {
-     "x": 10,
+     "x": 3,
      "y": 11,
      "mon": "Gongorr"
     }
@@ -24505,6 +24774,14 @@
       7
      ],
      "offset": 9
+    },
+    "right": {
+     "to": "920",
+     "range": [
+      10,
+      12
+     ],
+     "offset": -1
     }
    },
    "warps": [
@@ -24665,10 +24942,10 @@
      }
     },
     {
-     "x": 21,
-     "y": 11,
+     "x": 18,
+     "y": 5,
      "art": "technician",
-     "face": "left",
+     "face": "down",
      "t": [],
      "id": "sec491_tr1",
      "trainer": {
@@ -25819,7 +26096,92 @@
      "offset": -5
     }
    },
-   "warps": [],
+   "warps": [
+    {
+     "tile": [
+      14,
+      0
+     ],
+     "to": "918",
+     "at": [
+      11,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      15,
+      0
+     ],
+     "to": "918",
+     "at": [
+      12,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      16,
+      0
+     ],
+     "to": "918",
+     "at": [
+      13,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      17,
+      0
+     ],
+     "to": "918",
+     "at": [
+      13,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      18,
+      0
+     ],
+     "to": "918",
+     "at": [
+      14,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      19,
+      0
+     ],
+     "to": "918",
+     "at": [
+      15,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    }
+   ],
    "objects": [
     {
      "tile": [
@@ -25843,8 +26205,8 @@
     },
     {
      "tile": [
-      18,
-      2
+      3,
+      7
      ],
      "k": "stash",
      "item": "stasis",
@@ -26849,7 +27211,92 @@
      "offset": -11
     }
    },
-   "warps": [],
+   "warps": [
+    {
+     "tile": [
+      23,
+      3
+     ],
+     "to": "917",
+     "at": [
+      1,
+      3
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      4
+     ],
+     "to": "917",
+     "at": [
+      1,
+      3
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      5
+     ],
+     "to": "917",
+     "at": [
+      1,
+      3
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      6
+     ],
+     "to": "917",
+     "at": [
+      1,
+      5
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      7
+     ],
+     "to": "917",
+     "at": [
+      1,
+      5
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      8
+     ],
+     "to": "917",
+     "at": [
+      1,
+      6
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "right"
+    }
+   ],
    "objects": [
     {
      "tile": [
@@ -26895,10 +27342,10 @@
    "pkey": "dustara",
    "npcs": [
     {
-     "x": 20,
-     "y": 6,
+     "x": 12,
+     "y": 5,
      "art": "wanderer",
-     "face": "left",
+     "face": "down",
      "t": [],
      "id": "sec460_tr0",
      "trainer": {
@@ -26923,13 +27370,13 @@
    ],
    "mons": [
     {
-     "x": 11,
-     "y": 3,
+     "x": 13,
+     "y": 12,
      "mon": "Fizzlord"
     },
     {
-     "x": 13,
-     "y": 12,
+     "x": 5,
+     "y": 4,
      "mon": "Skitterdrone"
     }
    ]
@@ -29186,7 +29633,92 @@
      "offset": -2
     }
    },
-   "warps": [],
+   "warps": [
+    {
+     "tile": [
+      14,
+      0
+     ],
+     "to": "922",
+     "at": [
+      13,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      15,
+      0
+     ],
+     "to": "922",
+     "at": [
+      13,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      16,
+      0
+     ],
+     "to": "922",
+     "at": [
+      13,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      17,
+      0
+     ],
+     "to": "922",
+     "at": [
+      14,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      18,
+      0
+     ],
+     "to": "922",
+     "at": [
+      14,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      19,
+      0
+     ],
+     "to": "922",
+     "at": [
+      14,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    }
+   ],
    "objects": [
     {
      "tile": [
@@ -29200,8 +29732,8 @@
     },
     {
      "tile": [
-      16,
-      7
+      14,
+      9
      ],
      "k": "stash",
      "item": "megagel",
@@ -29210,8 +29742,8 @@
     },
     {
      "tile": [
-      14,
-      10
+      7,
+      7
      ],
      "k": "stash",
      "item": "gel",
@@ -29257,13 +29789,13 @@
    ],
    "mons": [
     {
-     "x": 15,
-     "y": 2,
+     "x": 19,
+     "y": 10,
      "mon": "Miasmoth"
     },
     {
-     "x": 19,
-     "y": 9,
+     "x": 16,
+     "y": 7,
      "mon": "Rotbloom"
     }
    ]
@@ -29403,7 +29935,78 @@
      "offset": -8
     }
    },
-   "warps": [],
+   "warps": [
+    {
+     "tile": [
+      16,
+      0
+     ],
+     "to": "921",
+     "at": [
+      13,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      17,
+      0
+     ],
+     "to": "921",
+     "at": [
+      13,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      18,
+      0
+     ],
+     "to": "921",
+     "at": [
+      13,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      19,
+      0
+     ],
+     "to": "921",
+     "at": [
+      14,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      20,
+      0
+     ],
+     "to": "921",
+     "at": [
+      14,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    }
+   ],
    "objects": [
     {
      "tile": [
@@ -29461,7 +30064,7 @@
      "src": "n:719:0"
     },
     {
-     "x": 16,
+     "x": 14,
      "y": 2,
      "art": "civilian",
      "face": "down",
@@ -31371,7 +31974,50 @@
      "offset": -4
     }
    },
-   "warps": [],
+   "warps": [
+    {
+     "tile": [
+      0,
+      9
+     ],
+     "to": "924",
+     "at": [
+      22,
+      6
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      10
+     ],
+     "to": "924",
+     "at": [
+      22,
+      7
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      11
+     ],
+     "to": "924",
+     "at": [
+      22,
+      7
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    }
+   ],
    "objects": [
     {
      "tile": [
@@ -31395,8 +32041,8 @@
     },
     {
      "tile": [
-      8,
-      9
+      14,
+      8
      ],
      "k": "stash",
      "item": "harmonic",
@@ -31418,7 +32064,7 @@
    "npcs": [
     {
      "x": 5,
-     "y": 9,
+     "y": 8,
      "art": "thalassa_folk2",
      "face": "down",
      "t": [
@@ -31429,8 +32075,8 @@
      "src": "n:790:0"
     },
     {
-     "x": 14,
-     "y": 10,
+     "x": 16,
+     "y": 11,
      "art": "civilian",
      "face": "down",
      "t": [
@@ -33538,6 +34184,14 @@
       7
      ],
      "offset": 2
+    },
+    "bottom": {
+     "to": "923",
+     "range": [
+      9,
+      11
+     ],
+     "offset": 2
     }
    },
    "warps": [],
@@ -33554,8 +34208,8 @@
     },
     {
      "tile": [
-      3,
-      13
+      13,
+      3
      ],
      "k": "stash",
      "item": "gel",
@@ -33564,8 +34218,8 @@
     },
     {
      "tile": [
-      13,
-      3
+      3,
+      13
      ],
      "k": "stash",
      "item": "revive",
@@ -34389,12 +35043,55 @@
      "offset": 1
     }
    },
-   "warps": [],
+   "warps": [
+    {
+     "tile": [
+      23,
+      10
+     ],
+     "to": "926",
+     "at": [
+      1,
+      7
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      11
+     ],
+     "to": "926",
+     "at": [
+      1,
+      7
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      12
+     ],
+     "to": "926",
+     "at": [
+      1,
+      8
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "right"
+    }
+   ],
    "objects": [
     {
      "tile": [
-      21,
-      9
+      4,
+      4
      ],
      "k": "stash",
      "item": "megagel",
@@ -34403,8 +35100,8 @@
     },
     {
      "tile": [
-      4,
-      4
+      5,
+      12
      ],
      "k": "stash",
      "item": "revive",
@@ -34448,7 +35145,7 @@
     },
     {
      "x": 19,
-     "y": 12,
+     "y": 13,
      "art": "explorer",
      "face": "up",
      "t": [],
@@ -35279,7 +35976,120 @@
      "offset": -2
     }
    },
-   "warps": [],
+   "warps": [
+    {
+     "tile": [
+      13,
+      0
+     ],
+     "to": "925",
+     "at": [
+      10,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      14,
+      0
+     ],
+     "to": "925",
+     "at": [
+      10,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      15,
+      0
+     ],
+     "to": "925",
+     "at": [
+      11,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      16,
+      0
+     ],
+     "to": "925",
+     "at": [
+      11,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      17,
+      0
+     ],
+     "to": "925",
+     "at": [
+      12,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      18,
+      0
+     ],
+     "to": "925",
+     "at": [
+      12,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      19,
+      0
+     ],
+     "to": "925",
+     "at": [
+      13,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      20,
+      0
+     ],
+     "to": "925",
+     "at": [
+      13,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    }
+   ],
    "objects": [
     {
      "tile": [
@@ -35293,8 +36103,8 @@
     },
     {
      "tile": [
-      18,
-      2
+      7,
+      10
      ],
      "k": "stash",
      "item": "ether",
@@ -35303,8 +36113,8 @@
     },
     {
      "tile": [
-      8,
-      9
+      3,
+      8
      ],
      "k": "stash",
      "item": "revive",
@@ -35325,7 +36135,7 @@
    "pkey": "neonis",
    "npcs": [
     {
-     "x": 6,
+     "x": 5,
      "y": 9,
      "art": "neonis_folk3",
      "face": "down",
@@ -35337,7 +36147,7 @@
      "src": "n:654:0"
     },
     {
-     "x": 15,
+     "x": 13,
      "y": 10,
      "art": "civilian",
      "face": "down",
@@ -35350,13 +36160,13 @@
    ],
    "mons": [
     {
-     "x": 16,
-     "y": 2,
+     "x": 5,
+     "y": 7,
      "mon": "Filamaw"
     },
     {
-     "x": 14,
-     "y": 2,
+     "x": 7,
+     "y": 7,
      "mon": "Arclume"
     }
    ]
@@ -38104,7 +38914,64 @@
      "offset": 2
     }
    },
-   "warps": [],
+   "warps": [
+    {
+     "tile": [
+      0,
+      6
+     ],
+     "to": "927",
+     "at": [
+      22,
+      7
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      7
+     ],
+     "to": "927",
+     "at": [
+      22,
+      7
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      8
+     ],
+     "to": "927",
+     "at": [
+      22,
+      8
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      9
+     ],
+     "to": "927",
+     "at": [
+      22,
+      8
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    }
+   ],
    "objects": [
     {
      "tile": [
@@ -38118,8 +38985,8 @@
     },
     {
      "tile": [
-      14,
-      12
+      15,
+      9
      ],
      "k": "stash",
      "item": "megagel",
@@ -38175,8 +39042,8 @@
    ],
    "mons": [
     {
-     "x": 3,
-     "y": 7,
+     "x": 14,
+     "y": 12,
      "mon": "Prismwolf"
     },
     {
@@ -38418,7 +39285,106 @@
      "offset": -3
     }
    },
-   "warps": [],
+   "warps": [
+    {
+     "tile": [
+      13,
+      0
+     ],
+     "to": "928",
+     "at": [
+      13,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      14,
+      0
+     ],
+     "to": "928",
+     "at": [
+      13,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      15,
+      0
+     ],
+     "to": "928",
+     "at": [
+      14,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      16,
+      0
+     ],
+     "to": "928",
+     "at": [
+      14,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      17,
+      0
+     ],
+     "to": "928",
+     "at": [
+      14,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      18,
+      0
+     ],
+     "to": "928",
+     "at": [
+      14,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      19,
+      0
+     ],
+     "to": "928",
+     "at": [
+      14,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    }
+   ],
    "objects": [
     {
      "tile": [
@@ -38442,8 +39408,8 @@
     },
     {
      "tile": [
-      16,
-      2
+      4,
+      6
      ],
      "k": "stash",
      "item": "stun",
@@ -38464,7 +39430,7 @@
    "pkey": "glyphos",
    "npcs": [
     {
-     "x": 17,
+     "x": 13,
      "y": 9,
      "art": "glyphos_folk3",
      "face": "down",
@@ -38489,12 +39455,12 @@
    ],
    "mons": [
     {
-     "x": 14,
-     "y": 3,
+     "x": 18,
+     "y": 10,
      "mon": "Prismwolf"
     },
     {
-     "x": 10,
+     "x": 3,
      "y": 10,
      "mon": "Memoria"
     }
@@ -40746,7 +41712,78 @@
      "offset": -5
     }
    },
-   "warps": [],
+   "warps": [
+    {
+     "tile": [
+      15,
+      15
+     ],
+     "to": "929",
+     "at": [
+      15,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      16,
+      15
+     ],
+     "to": "929",
+     "at": [
+      15,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      17,
+      15
+     ],
+     "to": "929",
+     "at": [
+      16,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      18,
+      15
+     ],
+     "to": "929",
+     "at": [
+      17,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      19,
+      15
+     ],
+     "to": "929",
+     "at": [
+      17,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    }
+   ],
    "objects": [
     {
      "tile": [
@@ -40760,8 +41797,8 @@
     },
     {
      "tile": [
-      21,
-      9
+      7,
+      13
      ],
      "k": "stash",
      "item": "fullgel",
@@ -40770,8 +41807,8 @@
     },
     {
      "tile": [
-      9,
-      10
+      5,
+      4
      ],
      "k": "stash",
      "item": "ether",
@@ -41324,7 +42361,64 @@
      "offset": -3
     }
    },
-   "warps": [],
+   "warps": [
+    {
+     "tile": [
+      23,
+      9
+     ],
+     "to": "930",
+     "at": [
+      1,
+      8
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      10
+     ],
+     "to": "930",
+     "at": [
+      1,
+      8
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      11
+     ],
+     "to": "930",
+     "at": [
+      1,
+      9
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      12
+     ],
+     "to": "930",
+     "at": [
+      1,
+      9
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "right"
+    }
+   ],
    "objects": [
     {
      "tile": [
@@ -41348,8 +42442,8 @@
     },
     {
      "tile": [
-      21,
-      10
+      3,
+      9
      ],
      "k": "stash",
      "item": "fullgel",
@@ -41371,7 +42465,7 @@
    "npcs": [
     {
      "x": 5,
-     "y": 8,
+     "y": 7,
      "art": "pyros_folk6",
      "face": "down",
      "t": [
@@ -41382,8 +42476,8 @@
      "src": "n:688:0"
     },
     {
-     "x": 16,
-     "y": 8,
+     "x": 19,
+     "y": 9,
      "art": "civilian",
      "face": "down",
      "t": [
@@ -41400,8 +42494,8 @@
      "mon": "Cinderhound"
     },
     {
-     "x": 3,
-     "y": 10,
+     "x": 4,
+     "y": 11,
      "mon": "Pyroclast"
     }
    ]
@@ -43966,7 +45060,50 @@
      "offset": -3
     }
    },
-   "warps": [],
+   "warps": [
+    {
+     "tile": [
+      10,
+      15
+     ],
+     "to": "931",
+     "at": [
+      22,
+      7
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      11,
+      15
+     ],
+     "to": "931",
+     "at": [
+      22,
+      7
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      12,
+      15
+     ],
+     "to": "931",
+     "at": [
+      22,
+      8
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "bottom"
+    }
+   ],
    "objects": [
     {
      "tile": [
@@ -44015,7 +45152,7 @@
     {
      "tile": [
       3,
-      13
+      10
      ],
      "k": "stash",
      "item": "fullgel",
@@ -44024,8 +45161,8 @@
     },
     {
      "tile": [
-      10,
-      12
+      2,
+      2
      ],
      "k": "stash",
      "item": "ether",
@@ -44069,10 +45206,10 @@
      "src": "p:526:1"
     },
     {
-     "x": 5,
-     "y": 12,
+     "x": 3,
+     "y": 8,
      "art": "explorer",
-     "face": "up",
+     "face": "right",
      "t": [],
      "id": "sec526_tr2",
      "trainer": {
@@ -44097,13 +45234,13 @@
    ],
    "mons": [
     {
-     "x": 13,
-     "y": 10,
+     "x": 3,
+     "y": 13,
      "mon": "Iceburr"
     },
     {
-     "x": 2,
-     "y": 8,
+     "x": 13,
+     "y": 10,
      "mon": "Glaciarch"
     }
    ]
@@ -44130,7 +45267,64 @@
      "offset": -1
     }
    },
-   "warps": [],
+   "warps": [
+    {
+     "tile": [
+      23,
+      9
+     ],
+     "to": "932",
+     "at": [
+      1,
+      9
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      10
+     ],
+     "to": "932",
+     "at": [
+      1,
+      9
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      11
+     ],
+     "to": "932",
+     "at": [
+      1,
+      9
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      12
+     ],
+     "to": "932",
+     "at": [
+      1,
+      9
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "right"
+    }
+   ],
    "objects": [
     {
      "tile": [
@@ -44144,8 +45338,8 @@
     },
     {
      "tile": [
-      21,
-      10
+      6,
+      6
      ],
      "k": "stash",
      "item": "dust",
@@ -44154,8 +45348,8 @@
     },
     {
      "tile": [
-      6,
-      6
+      14,
+      4
      ],
      "k": "stash",
      "item": "revive",
@@ -44188,8 +45382,8 @@
      "src": "n:529:0"
     },
     {
-     "x": 18,
-     "y": 10,
+     "x": 15,
+     "y": 2,
      "art": "civilian",
      "face": "down",
      "t": [
@@ -44201,12 +45395,12 @@
    ],
    "mons": [
     {
-     "x": 14,
-     "y": 3,
+     "x": 7,
+     "y": 8,
      "mon": "Floelord"
     },
     {
-     "x": 7,
+     "x": 3,
      "y": 8,
      "mon": "Borealix"
     }
@@ -46466,12 +47660,111 @@
      "offset": 7
     }
    },
-   "warps": [],
+   "warps": [
+    {
+     "tile": [
+      0,
+      9
+     ],
+     "to": "934",
+     "at": [
+      22,
+      9
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      10
+     ],
+     "to": "934",
+     "at": [
+      22,
+      9
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      11
+     ],
+     "to": "934",
+     "at": [
+      22,
+      10
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      12
+     ],
+     "to": "934",
+     "at": [
+      22,
+      10
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      13
+     ],
+     "to": "934",
+     "at": [
+      22,
+      10
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      14
+     ],
+     "to": "934",
+     "at": [
+      22,
+      11
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      15
+     ],
+     "to": "934",
+     "at": [
+      22,
+      11
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    }
+   ],
    "objects": [
     {
      "tile": [
-      21,
-      11
+      7,
+      3
      ],
      "k": "stash",
      "item": "fullgel",
@@ -46480,8 +47773,8 @@
     },
     {
      "tile": [
-      7,
-      3
+      21,
+      9
      ],
      "k": "stash",
      "item": "maxrevive",
@@ -46535,8 +47828,8 @@
      "mon": "Vialord"
     },
     {
-     "x": 2,
-     "y": 9,
+     "x": 21,
+     "y": 11,
      "mon": "Splicor"
     }
    ]
@@ -47940,7 +49233,50 @@
      "offset": -1
     }
    },
-   "warps": [],
+   "warps": [
+    {
+     "tile": [
+      23,
+      9
+     ],
+     "to": "933",
+     "at": [
+      1,
+      6
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      10
+     ],
+     "to": "933",
+     "at": [
+      1,
+      7
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      11
+     ],
+     "to": "933",
+     "at": [
+      1,
+      8
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "right"
+    }
+   ],
    "objects": [
     {
      "tile": [
@@ -47954,8 +49290,8 @@
     },
     {
      "tile": [
-      21,
-      10
+      17,
+      8
      ],
      "k": "stash",
      "item": "fullgel",
@@ -47964,8 +49300,8 @@
     },
     {
      "tile": [
-      15,
-      6
+      12,
+      9
      ],
      "k": "stash",
      "item": "maxrevive",
@@ -47999,7 +49335,7 @@
     },
     {
      "x": 16,
-     "y": 9,
+     "y": 6,
      "art": "researcher",
      "face": "down",
      "t": [
@@ -48011,13 +49347,13 @@
    ],
    "mons": [
     {
-     "x": 19,
-     "y": 10,
+     "x": 14,
+     "y": 8,
      "mon": "Chimerax"
     },
     {
-     "x": 14,
-     "y": 8,
+     "x": 7,
+     "y": 7,
      "mon": "Vialord"
     }
    ]
@@ -50564,6 +51900,14 @@
       7
      ],
      "offset": 2
+    },
+    "bottom": {
+     "to": "936",
+     "range": [
+      17,
+      20
+     ],
+     "offset": -1
     }
    },
    "warps": [],
@@ -50580,8 +51924,8 @@
     },
     {
      "tile": [
-      21,
-      4
+      13,
+      3
      ],
      "k": "stash",
      "item": "singularity",
@@ -50590,8 +51934,8 @@
     },
     {
      "tile": [
-      4,
-      11
+      3,
+      13
      ],
      "k": "stash",
      "item": "dust",
@@ -50635,18 +51979,7 @@
      "src": "n:588:1"
     }
    ],
-   "mons": [
-    {
-     "x": 19,
-     "y": 4,
-     "mon": "Cerebrix"
-    },
-    {
-     "x": 4,
-     "y": 13,
-     "mon": "Hummingmind"
-    }
-   ]
+   "mons": []
   },
   "589": {
    "id": "589",
@@ -52289,6 +53622,14 @@
       14
      ],
      "offset": 7
+    },
+    "right": {
+     "to": "941",
+     "range": [
+      9,
+      14
+     ],
+     "offset": -1
     }
    },
    "warps": [],
@@ -52305,8 +53646,8 @@
     },
     {
      "tile": [
-      21,
-      9
+      6,
+      4
      ],
      "k": "stash",
      "item": "fullgel",
@@ -52315,8 +53656,8 @@
     },
     {
      "tile": [
-      6,
-      3
+      4,
+      12
      ],
      "k": "stash",
      "item": "dust",
@@ -52337,7 +53678,7 @@
    "pkey": "apex",
    "npcs": [
     {
-     "x": 15,
+     "x": 9,
      "y": 8,
      "art": "apex_folk2",
      "face": "down",
@@ -52349,8 +53690,8 @@
      "src": "n:415:0"
     },
     {
-     "x": 18,
-     "y": 4,
+     "x": 17,
+     "y": 3,
      "art": "civilian",
      "face": "down",
      "t": [
@@ -52367,8 +53708,8 @@
      "mon": "Gemmantle"
     },
     {
-     "x": 19,
-     "y": 9,
+     "x": 21,
+     "y": 4,
      "mon": "Riffrex"
     }
    ]
@@ -52815,7 +54156,92 @@
      "offset": 1
     }
    },
-   "warps": [],
+   "warps": [
+    {
+     "tile": [
+      14,
+      0
+     ],
+     "to": "942",
+     "at": [
+      10,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      15,
+      0
+     ],
+     "to": "942",
+     "at": [
+      11,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      16,
+      0
+     ],
+     "to": "942",
+     "at": [
+      11,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      17,
+      0
+     ],
+     "to": "942",
+     "at": [
+      12,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      18,
+      0
+     ],
+     "to": "942",
+     "at": [
+      12,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      19,
+      0
+     ],
+     "to": "942",
+     "at": [
+      13,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    }
+   ],
    "objects": [
     {
      "tile": [
@@ -52829,8 +54255,8 @@
     },
     {
      "tile": [
-      18,
-      2
+      20,
+      12
      ],
      "k": "stash",
      "item": "maxrevive",
@@ -52840,7 +54266,7 @@
     {
      "tile": [
       20,
-      10
+      9
      ],
      "k": "stash",
      "item": "fullgel",
@@ -52861,7 +54287,7 @@
    "pkey": "apex",
    "npcs": [
     {
-     "x": 16,
+     "x": 17,
      "y": 10,
      "art": "apex_folk6",
      "face": "down",
@@ -52887,7 +54313,7 @@
    "mons": [
     {
      "x": 19,
-     "y": 12,
+     "y": 7,
      "mon": "Riffrex"
     },
     {
@@ -56089,7 +57515,92 @@
      "offset": -2
     }
    },
-   "warps": [],
+   "warps": [
+    {
+     "tile": [
+      14,
+      0
+     ],
+     "to": "944",
+     "at": [
+      13,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      15,
+      0
+     ],
+     "to": "944",
+     "at": [
+      13,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      16,
+      0
+     ],
+     "to": "944",
+     "at": [
+      13,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      17,
+      0
+     ],
+     "to": "944",
+     "at": [
+      14,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      18,
+      0
+     ],
+     "to": "944",
+     "at": [
+      14,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      19,
+      0
+     ],
+     "to": "944",
+     "at": [
+      14,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    }
+   ],
    "objects": [
     {
      "tile": [
@@ -56103,8 +57614,8 @@
     },
     {
      "tile": [
-      18,
-      2
+      7,
+      10
      ],
      "k": "stash",
      "item": "singularity",
@@ -56113,8 +57624,8 @@
     },
     {
      "tile": [
-      8,
-      9
+      3,
+      10
      ],
      "k": "stash",
      "item": "maxrevive",
@@ -56135,7 +57646,7 @@
    "pkey": "ystra",
    "npcs": [
     {
-     "x": 6,
+     "x": 5,
      "y": 9,
      "art": "ystra_folk2",
      "face": "down",
@@ -56160,13 +57671,13 @@
    ],
    "mons": [
     {
-     "x": 16,
-     "y": 2,
+     "x": 3,
+     "y": 8,
      "mon": "Riftwalker"
     },
     {
-     "x": 3,
-     "y": 8,
+     "x": 10,
+     "y": 12,
      "mon": "Fractalith"
     }
    ]
@@ -58837,6 +60348,14 @@
       19
      ],
      "offset": -4
+    },
+    "right": {
+     "to": "938",
+     "range": [
+      8,
+      10
+     ],
+     "offset": -1
     }
    },
    "warps": [],
@@ -58908,8 +60427,8 @@
      "mon": "Wellmaw"
     },
     {
-     "x": 21,
-     "y": 5,
+     "x": 18,
+     "y": 12,
      "mon": "Geodome"
     }
    ]
@@ -59310,7 +60829,92 @@
      "offset": -1
     }
    },
-   "warps": [],
+   "warps": [
+    {
+     "tile": [
+      14,
+      0
+     ],
+     "to": "937",
+     "at": [
+      15,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      15,
+      0
+     ],
+     "to": "937",
+     "at": [
+      15,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      16,
+      0
+     ],
+     "to": "937",
+     "at": [
+      15,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      17,
+      0
+     ],
+     "to": "937",
+     "at": [
+      16,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      18,
+      0
+     ],
+     "to": "937",
+     "at": [
+      16,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      19,
+      0
+     ],
+     "to": "937",
+     "at": [
+      16,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    }
+   ],
    "objects": [
     {
      "tile": [
@@ -59324,8 +60928,8 @@
     },
     {
      "tile": [
-      20,
-      10
+      15,
+      8
      ],
      "k": "stash",
      "item": "ether",
@@ -59334,8 +60938,8 @@
     },
     {
      "tile": [
-      15,
-      4
+      5,
+      10
      ],
      "k": "stash",
      "item": "dust",
@@ -59368,7 +60972,7 @@
      "src": "n:827:0"
     },
     {
-     "x": 16,
+     "x": 17,
      "y": 9,
      "art": "civilian",
      "face": "down",
@@ -59381,12 +60985,12 @@
    ],
    "mons": [
     {
-     "x": 17,
-     "y": 3,
+     "x": 14,
+     "y": 10,
      "mon": "Wellmaw"
     },
     {
-     "x": 14,
+     "x": 19,
      "y": 10,
      "mon": "Geodome"
     }
@@ -62389,7 +63993,92 @@
      "offset": -5
     }
    },
-   "warps": [],
+   "warps": [
+    {
+     "tile": [
+      14,
+      0
+     ],
+     "to": "939",
+     "at": [
+      15,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      15,
+      0
+     ],
+     "to": "939",
+     "at": [
+      15,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      16,
+      0
+     ],
+     "to": "939",
+     "at": [
+      16,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      17,
+      0
+     ],
+     "to": "939",
+     "at": [
+      16,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      18,
+      0
+     ],
+     "to": "939",
+     "at": [
+      17,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      19,
+      0
+     ],
+     "to": "939",
+     "at": [
+      17,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    }
+   ],
    "objects": [
     {
      "tile": [
@@ -62403,8 +64092,8 @@
     },
     {
      "tile": [
-      15,
-      2
+      7,
+      10
      ],
      "k": "stash",
      "item": "ether",
@@ -62413,7 +64102,7 @@
     },
     {
      "tile": [
-      8,
+      3,
       9
      ],
      "k": "stash",
@@ -62435,7 +64124,7 @@
    "pkey": "starfall",
    "npcs": [
     {
-     "x": 6,
+     "x": 5,
      "y": 9,
      "art": "starfall_folk3",
      "face": "down",
@@ -62460,8 +64149,8 @@
    ],
    "mons": [
     {
-     "x": 17,
-     "y": 3,
+     "x": 7,
+     "y": 8,
      "mon": "Cometrix"
     },
     {
@@ -68064,6 +69753,3448 @@
      "src": "n:916:1"
     }
    ]
+  },
+  "917": {
+   "id": "917",
+   "name": "Seedpod Dig Site",
+   "planet": "Dustara",
+   "dir": "01_dustara",
+   "type": "field",
+   "img": "art/sections_game/01_dustara/917_seedpod_dig_site.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "world expansion (owner render X01_dustara_seedpod_dig_site.png)",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      0,
+      3
+     ],
+     "to": "460",
+     "at": [
+      22,
+      3
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      4
+     ],
+     "to": "460",
+     "at": [
+      22,
+      5
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      5
+     ],
+     "to": "460",
+     "at": [
+      22,
+      6
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      6
+     ],
+     "to": "460",
+     "at": [
+      22,
+      8
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      18,
+      4
+     ],
+     "k": "stash",
+     "item": "stun",
+     "n": 1,
+     "tier": 1
+    },
+    {
+     "tile": [
+      7,
+      4
+     ],
+     "k": "stash",
+     "item": "gel",
+     "n": 2,
+     "tier": 1
+    }
+   ],
+   "spawns": {
+    "default": [
+     1,
+     3
+    ]
+   },
+   "grid": [
+    0,
+    164
+   ],
+   "pkey": "dustara",
+   "npcs": [
+    {
+     "x": 5,
+     "y": 7,
+     "art": "technician",
+     "face": "up",
+     "t": [],
+     "id": "sec917_tr0",
+     "trainer": {
+      "cls": "Mechanic",
+      "route": 1,
+      "name": "Remy"
+     }
+    },
+    {
+     "x": 18,
+     "y": 11,
+     "art": "explorer",
+     "face": "right",
+     "t": [],
+     "id": "sec917_tr1",
+     "trainer": {
+      "cls": "Linker",
+      "route": 1,
+      "name": "Pell"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 20,
+     "y": 3,
+     "mon": "Kilnback"
+    },
+    {
+     "x": 13,
+     "y": 8,
+     "mon": "Squawktone"
+    }
+   ]
+  },
+  "918": {
+   "id": "918",
+   "name": "Old Observatory Ruins",
+   "planet": "Dustara",
+   "dir": "01_dustara",
+   "type": "field",
+   "img": "art/sections_game/01_dustara/918_old_observatory_ruins.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "world expansion (owner render X02_dustara_old_observatory_ruins.png)",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      11,
+      15
+     ],
+     "to": "465",
+     "at": [
+      14,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      12,
+      15
+     ],
+     "to": "465",
+     "at": [
+      15,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      13,
+      15
+     ],
+     "to": "465",
+     "at": [
+      16,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      14,
+      15
+     ],
+     "to": "465",
+     "at": [
+      18,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      15,
+      15
+     ],
+     "to": "465",
+     "at": [
+      19,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      7,
+      10
+     ],
+     "k": "stash",
+     "item": "stun",
+     "n": 1,
+     "tier": 1
+    },
+    {
+     "tile": [
+      5,
+      2
+     ],
+     "k": "stash",
+     "item": "stasis",
+     "n": 3,
+     "tier": 1
+    }
+   ],
+   "spawns": {
+    "default": [
+     11,
+     14
+    ]
+   },
+   "grid": [
+    0,
+    184
+   ],
+   "pkey": "dustara",
+   "npcs": [
+    {
+     "x": 12,
+     "y": 13,
+     "art": "explorer",
+     "face": "down",
+     "t": [],
+     "id": "sec918_tr0",
+     "trainer": {
+      "cls": "Linker",
+      "route": 1,
+      "name": "Sol"
+     }
+    },
+    {
+     "x": 15,
+     "y": 6,
+     "art": "wanderer",
+     "face": "right",
+     "t": [],
+     "id": "sec918_tr1",
+     "trainer": {
+      "cls": "Canyon Scout",
+      "route": 1,
+      "name": "Tamsin"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 3,
+     "y": 2,
+     "mon": "Fizzlord"
+    },
+    {
+     "x": 6,
+     "y": 8,
+     "mon": "Skitterdrone"
+    }
+   ]
+  },
+  "919": {
+   "id": "919",
+   "name": "Junkyard Throne",
+   "planet": "Ferrox",
+   "dir": "02_ferrox",
+   "type": "field",
+   "img": "art/sections_game/02_ferrox/919_junkyard_throne.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "world expansion (owner render X03_ferrox_junkyard_throne.png)",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      11,
+      15
+     ],
+     "to": "497",
+     "at": [
+      13,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      12,
+      15
+     ],
+     "to": "497",
+     "at": [
+      15,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      13,
+      15
+     ],
+     "to": "497",
+     "at": [
+      18,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      13,
+      8
+     ],
+     "k": "stash",
+     "item": "stasis",
+     "n": 3,
+     "tier": 1
+    },
+    {
+     "tile": [
+      7,
+      4
+     ],
+     "k": "stash",
+     "item": "revive",
+     "n": 1,
+     "tier": 1
+    }
+   ],
+   "spawns": {
+    "default": [
+     11,
+     14
+    ]
+   },
+   "grid": [
+    0,
+    115
+   ],
+   "pkey": "ferrox",
+   "npcs": [
+    {
+     "x": 11,
+     "y": 10,
+     "art": "miner",
+     "face": "down",
+     "t": [],
+     "id": "sec919_tr0",
+     "trainer": {
+      "cls": "Miner",
+      "route": 1,
+      "name": "Rhee"
+     }
+    },
+    {
+     "x": 5,
+     "y": 6,
+     "art": "guard",
+     "face": "down",
+     "t": [],
+     "id": "sec919_tr1",
+     "trainer": {
+      "cls": "Rail Hand",
+      "route": 1,
+      "name": "Ash"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 17,
+     "y": 9,
+     "mon": "Anvilox"
+    },
+    {
+     "x": 3,
+     "y": 9,
+     "mon": "Gongorr"
+    }
+   ]
+  },
+  "920": {
+   "id": "920",
+   "name": "Abandoned Foundry",
+   "planet": "Ferrox",
+   "dir": "02_ferrox",
+   "type": "field",
+   "img": "art/sections_game/02_ferrox/920_abandoned_foundry.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "world expansion (owner render X04_ferrox_abandoned_foundry.png)",
+   "edges": {
+    "left": {
+     "to": "491",
+     "range": [
+      9,
+      10
+     ],
+     "offset": 1
+    }
+   },
+   "warps": [],
+   "objects": [
+    {
+     "tile": [
+      7,
+      9
+     ],
+     "k": "stash",
+     "item": "stasis",
+     "n": 3,
+     "tier": 1
+    },
+    {
+     "tile": [
+      17,
+      7
+     ],
+     "k": "stash",
+     "item": "stasis",
+     "n": 3,
+     "tier": 1
+    }
+   ],
+   "spawns": {
+    "default": [
+     1,
+     9
+    ]
+   },
+   "grid": [
+    -54,
+    53
+   ],
+   "pkey": "ferrox",
+   "npcs": [
+    {
+     "x": 4,
+     "y": 7,
+     "art": "guard",
+     "face": "right",
+     "t": [],
+     "id": "sec920_tr0",
+     "trainer": {
+      "cls": "Rail Hand",
+      "route": 1,
+      "name": "Zora"
+     }
+    },
+    {
+     "x": 19,
+     "y": 10,
+     "art": "technician",
+     "face": "down",
+     "t": [],
+     "id": "sec920_tr1",
+     "trainer": {
+      "cls": "Scrapper",
+      "route": 1,
+      "name": "Wren"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 20,
+     "y": 7,
+     "mon": "Gearhound"
+    },
+    {
+     "x": 10,
+     "y": 9,
+     "mon": "Coilossus"
+    }
+   ]
+  },
+  "921": {
+   "id": "921",
+   "name": "Canopy Walkways",
+   "planet": "Sporeholm",
+   "dir": "03_sporeholm",
+   "type": "field",
+   "img": "art/sections_game/03_sporeholm/921_canopy_walkways.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "world expansion (owner render X05_sporeholm_canopy_walkways.png)",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      13,
+      15
+     ],
+     "to": "719",
+     "at": [
+      16,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      14,
+      15
+     ],
+     "to": "719",
+     "at": [
+      20,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      10,
+      9
+     ],
+     "k": "stash",
+     "item": "stasis",
+     "n": 5,
+     "tier": 2
+    },
+    {
+     "tile": [
+      21,
+      5
+     ],
+     "k": "stash",
+     "item": "gel",
+     "n": 3,
+     "tier": 2
+    }
+   ],
+   "spawns": {
+    "default": [
+     13,
+     14
+    ]
+   },
+   "grid": [
+    0,
+    77
+   ],
+   "pkey": "sporeholm",
+   "npcs": [
+    {
+     "x": 12,
+     "y": 5,
+     "art": "sporefolk",
+     "face": "down",
+     "t": [],
+     "id": "sec921_tr0",
+     "trainer": {
+      "cls": "Spore Tender",
+      "route": 1,
+      "name": "Vela"
+     }
+    },
+    {
+     "x": 14,
+     "y": 11,
+     "art": "researcher",
+     "face": "down",
+     "t": [],
+     "id": "sec921_tr1",
+     "trainer": {
+      "cls": "Botanist",
+      "route": 1,
+      "name": "Ines"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 8,
+     "y": 8,
+     "mon": "Sludgeviper"
+    },
+    {
+     "x": 19,
+     "y": 9,
+     "mon": "Lianarch"
+    }
+   ]
+  },
+  "922": {
+   "id": "922",
+   "name": "Spore Choir Amphitheatre",
+   "planet": "Sporeholm",
+   "dir": "03_sporeholm",
+   "type": "field",
+   "img": "art/sections_game/03_sporeholm/922_spore_choir_amphitheatre.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "world expansion (owner render X06_sporeholm_spore_choir_amphitheatre.png)",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      13,
+      15
+     ],
+     "to": "720",
+     "at": [
+      14,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      14,
+      15
+     ],
+     "to": "720",
+     "at": [
+      19,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      8,
+      9
+     ],
+     "k": "stash",
+     "item": "stasis",
+     "n": 5,
+     "tier": 2
+    },
+    {
+     "tile": [
+      11,
+      3
+     ],
+     "k": "stash",
+     "item": "stasis",
+     "n": 5,
+     "tier": 2
+    }
+   ],
+   "spawns": {
+    "default": [
+     13,
+     14
+    ]
+   },
+   "grid": [
+    0,
+    97
+   ],
+   "pkey": "sporeholm",
+   "npcs": [
+    {
+     "x": 18,
+     "y": 8,
+     "art": "researcher",
+     "face": "left",
+     "t": [],
+     "id": "sec922_tr0",
+     "trainer": {
+      "cls": "Botanist",
+      "route": 1,
+      "name": "Pip"
+     }
+    },
+    {
+     "x": 11,
+     "y": 7,
+     "art": "explorer",
+     "face": "left",
+     "t": [],
+     "id": "sec922_tr1",
+     "trainer": {
+      "cls": "Bog Hiker",
+      "route": 1,
+      "name": "Corin"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 6,
+     "y": 8,
+     "mon": "Miasmoth"
+    },
+    {
+     "x": 21,
+     "y": 5,
+     "mon": "Rotbloom"
+    }
+   ]
+  },
+  "923": {
+   "id": "923",
+   "name": "Coral Tide Pools",
+   "planet": "Thalassa",
+   "dir": "04_thalassa",
+   "type": "field",
+   "img": "art/sections_game/04_thalassa/923_coral_tide_pools.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "world expansion (owner render X07_thalassa_coral_tide_pools.png)",
+   "edges": {
+    "top": {
+     "to": "783",
+     "range": [
+      11,
+      12
+     ],
+     "offset": -2
+    }
+   },
+   "warps": [],
+   "objects": [
+    {
+     "tile": [
+      17,
+      6
+     ],
+     "k": "stash",
+     "item": "stasis",
+     "n": 5,
+     "tier": 2
+    },
+    {
+     "tile": [
+      5,
+      6
+     ],
+     "k": "stash",
+     "item": "stasis",
+     "n": 5,
+     "tier": 2
+    }
+   ],
+   "spawns": {
+    "default": [
+     11,
+     1
+    ]
+   },
+   "grid": [
+    118,
+    51
+   ],
+   "pkey": "thalassa",
+   "npcs": [
+    {
+     "x": 7,
+     "y": 6,
+     "art": "guard",
+     "face": "down",
+     "t": [],
+     "id": "sec923_tr0",
+     "trainer": {
+      "cls": "Dockhand",
+      "route": 1,
+      "name": "Tamsin"
+     }
+    },
+    {
+     "x": 13,
+     "y": 3,
+     "art": "squidsailor",
+     "face": "left",
+     "t": [],
+     "id": "sec923_tr1",
+     "trainer": {
+      "cls": "Sailor",
+      "route": 1,
+      "name": "Bo"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 19,
+     "y": 6,
+     "mon": "Cephalux"
+    },
+    {
+     "x": 3,
+     "y": 10,
+     "mon": "Pearlord"
+    }
+   ]
+  },
+  "924": {
+   "id": "924",
+   "name": "Shipwreck Cove",
+   "planet": "Thalassa",
+   "dir": "04_thalassa",
+   "type": "field",
+   "img": "art/sections_game/04_thalassa/924_shipwreck_cove.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "world expansion (owner render X08_thalassa_shipwreck_cove.png)",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      23,
+      6
+     ],
+     "to": "790",
+     "at": [
+      1,
+      9
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      7
+     ],
+     "to": "790",
+     "at": [
+      1,
+      10
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      8
+     ],
+     "to": "790",
+     "at": [
+      1,
+      11
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "right"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      11,
+      9
+     ],
+     "k": "stash",
+     "item": "gel",
+     "n": 3,
+     "tier": 2
+    },
+    {
+     "tile": [
+      14,
+      3
+     ],
+     "k": "stash",
+     "item": "gel",
+     "n": 3,
+     "tier": 2
+    }
+   ],
+   "spawns": {
+    "default": [
+     22,
+     6
+    ]
+   },
+   "grid": [
+    0,
+    72
+   ],
+   "pkey": "thalassa",
+   "npcs": [
+    {
+     "x": 14,
+     "y": 9,
+     "art": "squidsailor",
+     "face": "left",
+     "t": [],
+     "id": "sec924_tr0",
+     "trainer": {
+      "cls": "Sailor",
+      "route": 1,
+      "name": "Hale"
+     }
+    },
+    {
+     "x": 11,
+     "y": 4,
+     "art": "civilian",
+     "face": "right",
+     "t": [],
+     "id": "sec924_tr1",
+     "trainer": {
+      "cls": "Swimmer",
+      "route": 1,
+      "name": "Rhee"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 19,
+     "y": 7,
+     "mon": "Bubblorca"
+    },
+    {
+     "x": 18,
+     "y": 10,
+     "mon": "Clawfort"
+    }
+   ]
+  },
+  "925": {
+   "id": "925",
+   "name": "Rooftop Billboards",
+   "planet": "Neonis",
+   "dir": "05_neonis",
+   "type": "field",
+   "img": "art/sections_game/05_neonis/925_rooftop_billboards.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "world expansion (owner render X09_neonis_rooftop_billboards.png)",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      10,
+      15
+     ],
+     "to": "654",
+     "at": [
+      13,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      11,
+      15
+     ],
+     "to": "654",
+     "at": [
+      15,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      12,
+      15
+     ],
+     "to": "654",
+     "at": [
+      18,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      13,
+      15
+     ],
+     "to": "654",
+     "at": [
+      20,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      18,
+      6
+     ],
+     "k": "stash",
+     "item": "harmonic",
+     "n": 3,
+     "tier": 3
+    },
+    {
+     "tile": [
+      9,
+      4
+     ],
+     "k": "stash",
+     "item": "dust",
+     "n": 500,
+     "tier": 3
+    }
+   ],
+   "spawns": {
+    "default": [
+     10,
+     14
+    ]
+   },
+   "grid": [
+    0,
+    154
+   ],
+   "pkey": "neonis",
+   "npcs": [
+    {
+     "x": 12,
+     "y": 9,
+     "art": "technician",
+     "face": "down",
+     "t": [],
+     "id": "sec925_tr0",
+     "trainer": {
+      "cls": "Coder",
+      "route": 1,
+      "name": "Pell"
+     }
+    },
+    {
+     "x": 16,
+     "y": 5,
+     "art": "explorer",
+     "face": "left",
+     "t": [],
+     "id": "sec925_tr1",
+     "trainer": {
+      "cls": "Courier",
+      "route": 1,
+      "name": "Oz"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 7,
+     "y": 2,
+     "mon": "Amplion"
+    },
+    {
+     "x": 20,
+     "y": 6,
+     "mon": "Transmitron"
+    }
+   ]
+  },
+  "926": {
+   "id": "926",
+   "name": "Arcade Underground",
+   "planet": "Neonis",
+   "dir": "05_neonis",
+   "type": "field",
+   "img": "art/sections_game/05_neonis/926_arcade_underground.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "world expansion (owner render X10_neonis_arcade_underground.png)",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      0,
+      7
+     ],
+     "to": "647",
+     "at": [
+      22,
+      10
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      8
+     ],
+     "to": "647",
+     "at": [
+      22,
+      12
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      7,
+      10
+     ],
+     "k": "stash",
+     "item": "megagel",
+     "n": 2,
+     "tier": 3
+    },
+    {
+     "tile": [
+      11,
+      3
+     ],
+     "k": "stash",
+     "item": "harmonic",
+     "n": 3,
+     "tier": 3
+    }
+   ],
+   "spawns": {
+    "default": [
+     1,
+     7
+    ]
+   },
+   "grid": [
+    0,
+    174
+   ],
+   "pkey": "neonis",
+   "npcs": [
+    {
+     "x": 11,
+     "y": 8,
+     "art": "explorer",
+     "face": "left",
+     "t": [],
+     "id": "sec926_tr0",
+     "trainer": {
+      "cls": "Courier",
+      "route": 1,
+      "name": "Wren"
+     }
+    },
+    {
+     "x": 18,
+     "y": 11,
+     "art": "civilian",
+     "face": "left",
+     "t": [],
+     "id": "sec926_tr1",
+     "trainer": {
+      "cls": "Raver",
+      "route": 1,
+      "name": "Ash"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 16,
+     "y": 5,
+     "mon": "Filamaw"
+    },
+    {
+     "x": 2,
+     "y": 7,
+     "mon": "Arclume"
+    }
+   ]
+  },
+  "927": {
+   "id": "927",
+   "name": "Sunken Temple Court",
+   "planet": "Glyphos",
+   "dir": "06_glyphos",
+   "type": "field",
+   "img": "art/sections_game/06_glyphos/927_sunken_temple_court.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "world expansion (owner render X11_glyphos_sunken_temple_court.png)",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      23,
+      7
+     ],
+     "to": "557",
+     "at": [
+      1,
+      6
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      8
+     ],
+     "to": "557",
+     "at": [
+      1,
+      9
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "right"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      6,
+      5
+     ],
+     "k": "stash",
+     "item": "harmonic",
+     "n": 3,
+     "tier": 3
+    },
+    {
+     "tile": [
+      17,
+      9
+     ],
+     "k": "stash",
+     "item": "jammer",
+     "n": 1,
+     "tier": 3
+    }
+   ],
+   "spawns": {
+    "default": [
+     22,
+     7
+    ]
+   },
+   "grid": [
+    0,
+    104
+   ],
+   "pkey": "glyphos",
+   "npcs": [
+    {
+     "x": 13,
+     "y": 7,
+     "art": "explorer",
+     "face": "down",
+     "t": [],
+     "id": "sec927_tr0",
+     "trainer": {
+      "cls": "Archaeologist",
+      "route": 1,
+      "name": "Milo"
+     }
+    },
+    {
+     "x": 8,
+     "y": 5,
+     "art": "pilgrim",
+     "face": "right",
+     "t": [],
+     "id": "sec927_tr1",
+     "trainer": {
+      "cls": "Pilgrim",
+      "route": 1,
+      "name": "Rhee"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 15,
+     "y": 11,
+     "mon": "Prismwolf"
+    },
+    {
+     "x": 14,
+     "y": 3,
+     "mon": "Memoria"
+    }
+   ]
+  },
+  "928": {
+   "id": "928",
+   "name": "Vine Bridge Canopy",
+   "planet": "Glyphos",
+   "dir": "06_glyphos",
+   "type": "field",
+   "img": "art/sections_game/06_glyphos/928_vine_bridge_canopy.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "world expansion (owner render X12_glyphos_vine_bridge_canopy.png)",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      13,
+      15
+     ],
+     "to": "561",
+     "at": [
+      13,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      14,
+      15
+     ],
+     "to": "561",
+     "at": [
+      16,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      15,
+      15
+     ],
+     "to": "561",
+     "at": [
+      19,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      4,
+      4
+     ],
+     "k": "stash",
+     "item": "dust",
+     "n": 500,
+     "tier": 3
+    },
+    {
+     "tile": [
+      16,
+      10
+     ],
+     "k": "stash",
+     "item": "megagel",
+     "n": 2,
+     "tier": 3
+    }
+   ],
+   "spawns": {
+    "default": [
+     13,
+     14
+    ]
+   },
+   "grid": [
+    0,
+    124
+   ],
+   "pkey": "glyphos",
+   "npcs": [
+    {
+     "x": 11,
+     "y": 9,
+     "art": "pilgrim",
+     "face": "right",
+     "t": [],
+     "id": "sec928_tr0",
+     "trainer": {
+      "cls": "Pilgrim",
+      "route": 1,
+      "name": "Ines"
+     }
+    },
+    {
+     "x": 20,
+     "y": 3,
+     "art": "researcher",
+     "face": "left",
+     "t": [],
+     "id": "sec928_tr1",
+     "trainer": {
+      "cls": "Rune Scholar",
+      "route": 1,
+      "name": "Dex"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 3,
+     "y": 2,
+     "mon": "Runeguard"
+    },
+    {
+     "x": 11,
+     "y": 2,
+     "mon": "Obeliskor"
+    }
+   ]
+  },
+  "929": {
+   "id": "929",
+   "name": "Obsidian Glass Fields",
+   "planet": "Pyros",
+   "dir": "07_pyros",
+   "type": "field",
+   "img": "art/sections_game/07_pyros/929_obsidian_glass_fields.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "world expansion (owner render X13_pyros_obsidian_glass_fields.png)",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      15,
+      0
+     ],
+     "to": "681",
+     "at": [
+      15,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      16,
+      0
+     ],
+     "to": "681",
+     "at": [
+      17,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      17,
+      0
+     ],
+     "to": "681",
+     "at": [
+      19,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      7,
+      10
+     ],
+     "k": "stash",
+     "item": "harmonic",
+     "n": 5,
+     "tier": 4
+    },
+    {
+     "tile": [
+      16,
+      11
+     ],
+     "k": "stash",
+     "item": "megagel",
+     "n": 3,
+     "tier": 4
+    }
+   ],
+   "spawns": {
+    "default": [
+     15,
+     1
+    ]
+   },
+   "grid": [
+    0,
+    89
+   ],
+   "pkey": "pyros",
+   "npcs": [
+    {
+     "x": 14,
+     "y": 10,
+     "art": "wanderer",
+     "face": "left",
+     "t": [],
+     "id": "sec929_tr0",
+     "trainer": {
+      "cls": "Ash Walker",
+      "route": 1,
+      "name": "Kai"
+     }
+    },
+    {
+     "x": 7,
+     "y": 6,
+     "art": "miner",
+     "face": "right",
+     "t": [],
+     "id": "sec929_tr1",
+     "trainer": {
+      "cls": "Miner",
+      "route": 1,
+      "name": "Oz"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 20,
+     "y": 7,
+     "mon": "Obsidrake"
+    },
+    {
+     "x": 15,
+     "y": 2,
+     "mon": "Blazewing"
+    }
+   ]
+  },
+  "930": {
+   "id": "930",
+   "name": "Hot Spring Terraces",
+   "planet": "Pyros",
+   "dir": "07_pyros",
+   "type": "field",
+   "img": "art/sections_game/07_pyros/930_hot_spring_terraces.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "world expansion (owner render X14_pyros_hot_spring_terraces.png)",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      0,
+      8
+     ],
+     "to": "688",
+     "at": [
+      22,
+      9
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      9
+     ],
+     "to": "688",
+     "at": [
+      22,
+      12
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      19,
+      2
+     ],
+     "k": "stash",
+     "item": "harmonic",
+     "n": 5,
+     "tier": 4
+    },
+    {
+     "tile": [
+      9,
+      10
+     ],
+     "k": "stash",
+     "item": "jammer",
+     "n": 2,
+     "tier": 4
+    }
+   ],
+   "spawns": {
+    "default": [
+     1,
+     8
+    ]
+   },
+   "grid": [
+    0,
+    109
+   ],
+   "pkey": "pyros",
+   "npcs": [
+    {
+     "x": 11,
+     "y": 9,
+     "art": "miner",
+     "face": "right",
+     "t": [],
+     "id": "sec930_tr0",
+     "trainer": {
+      "cls": "Miner",
+      "route": 1,
+      "name": "Milo"
+     }
+    },
+    {
+     "x": 3,
+     "y": 7,
+     "art": "technician",
+     "face": "right",
+     "t": [],
+     "id": "sec930_tr1",
+     "trainer": {
+      "cls": "Smith",
+      "route": 1,
+      "name": "Corin"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 21,
+     "y": 2,
+     "mon": "Cinderhound"
+    },
+    {
+     "x": 19,
+     "y": 6,
+     "mon": "Pyroclast"
+    }
+   ]
+  },
+  "931": {
+   "id": "931",
+   "name": "Frozen Waterfall",
+   "planet": "Glacia",
+   "dir": "08_glacia",
+   "type": "field",
+   "img": "art/sections_game/08_glacia/931_frozen_waterfall.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "world expansion (owner render X15_glacia_frozen_waterfall.png)",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      23,
+      7
+     ],
+     "to": "526",
+     "at": [
+      10,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      8
+     ],
+     "to": "526",
+     "at": [
+      12,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "right"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      9,
+      8
+     ],
+     "k": "stash",
+     "item": "harmonic",
+     "n": 5,
+     "tier": 4
+    },
+    {
+     "tile": [
+      14,
+      8
+     ],
+     "k": "stash",
+     "item": "ether",
+     "n": 2,
+     "tier": 4
+    }
+   ],
+   "spawns": {
+    "default": [
+     22,
+     7
+    ]
+   },
+   "grid": [
+    0,
+    124
+   ],
+   "pkey": "glacia",
+   "npcs": [
+    {
+     "x": 12,
+     "y": 9,
+     "art": "explorer",
+     "face": "down",
+     "t": [],
+     "id": "sec931_tr0",
+     "trainer": {
+      "cls": "Climber",
+      "route": 1,
+      "name": "Oz"
+     }
+    },
+    {
+     "x": 20,
+     "y": 7,
+     "art": "technician",
+     "face": "down",
+     "t": [],
+     "id": "sec931_tr1",
+     "trainer": {
+      "cls": "Radio Tech",
+      "route": 1,
+      "name": "Pell"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 9,
+     "y": 13,
+     "mon": "Floelord"
+    },
+    {
+     "x": 8,
+     "y": 11,
+     "mon": "Borealix"
+    }
+   ]
+  },
+  "932": {
+   "id": "932",
+   "name": "Aurora Snowfield",
+   "planet": "Glacia",
+   "dir": "08_glacia",
+   "type": "field",
+   "img": "art/sections_game/08_glacia/932_aurora_snowfield.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "world expansion (owner render X16_glacia_aurora_snowfield.png)",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      0,
+      9
+     ],
+     "to": "529",
+     "at": [
+      22,
+      9
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      7,
+      8
+     ],
+     "k": "stash",
+     "item": "harmonic",
+     "n": 5,
+     "tier": 4
+    },
+    {
+     "tile": [
+      12,
+      11
+     ],
+     "k": "stash",
+     "item": "jammer",
+     "n": 2,
+     "tier": 4
+    }
+   ],
+   "spawns": {
+    "default": [
+     1,
+     9
+    ]
+   },
+   "grid": [
+    0,
+    144
+   ],
+   "pkey": "glacia",
+   "npcs": [
+    {
+     "x": 10,
+     "y": 10,
+     "art": "technician",
+     "face": "up",
+     "t": [],
+     "id": "sec932_tr0",
+     "trainer": {
+      "cls": "Radio Tech",
+      "route": 1,
+      "name": "Rook"
+     }
+    },
+    {
+     "x": 14,
+     "y": 6,
+     "art": "researcher",
+     "face": "left",
+     "t": [],
+     "id": "sec932_tr1",
+     "trainer": {
+      "cls": "Researcher",
+      "route": 1,
+      "name": "Bo"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 6,
+     "y": 6,
+     "mon": "Iceburr"
+    },
+    {
+     "x": 21,
+     "y": 10,
+     "mon": "Glaciarch"
+    }
+   ]
+  },
+  "933": {
+   "id": "933",
+   "name": "Arboretum Dome",
+   "planet": "Helix Station",
+   "dir": "09_helix",
+   "type": "field",
+   "img": "art/sections_game/09_helix/933_arboretum_dome.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "world expansion (owner render X17_helix_arboretum_dome.png)",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      0,
+      6
+     ],
+     "to": "621",
+     "at": [
+      22,
+      9
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      7
+     ],
+     "to": "621",
+     "at": [
+      22,
+      10
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      8
+     ],
+     "to": "621",
+     "at": [
+      22,
+      11
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      16,
+      3
+     ],
+     "k": "stash",
+     "item": "dust",
+     "n": 1200,
+     "tier": 5
+    },
+    {
+     "tile": [
+      4,
+      2
+     ],
+     "k": "stash",
+     "item": "ether",
+     "n": 3,
+     "tier": 5
+    }
+   ],
+   "spawns": {
+    "default": [
+     1,
+     6
+    ]
+   },
+   "grid": [
+    0,
+    137
+   ],
+   "pkey": "helix",
+   "npcs": [
+    {
+     "x": 4,
+     "y": 9,
+     "art": "strand",
+     "face": "up",
+     "t": [],
+     "id": "sec933_tr0",
+     "trainer": {
+      "cls": "Helix Grunt",
+      "route": 1,
+      "name": "Nyx"
+     }
+    },
+    {
+     "x": 17,
+     "y": 6,
+     "art": "researcher",
+     "face": "down",
+     "t": [],
+     "id": "sec933_tr1",
+     "trainer": {
+      "cls": "Scientist",
+      "route": 1,
+      "name": "Quill"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 6,
+     "y": 3,
+     "mon": "Vialord"
+    },
+    {
+     "x": 18,
+     "y": 11,
+     "mon": "Splicor"
+    }
+   ]
+  },
+  "934": {
+   "id": "934",
+   "name": "Cargo Bay",
+   "planet": "Helix Station",
+   "dir": "09_helix",
+   "type": "field",
+   "img": "art/sections_game/09_helix/934_cargo_bay.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "world expansion (owner render X18_helix_cargo_bay.png)",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      23,
+      9
+     ],
+     "to": "618",
+     "at": [
+      1,
+      9
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      10
+     ],
+     "to": "618",
+     "at": [
+      1,
+      12
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      11
+     ],
+     "to": "618",
+     "at": [
+      1,
+      15
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "right"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      17,
+      5
+     ],
+     "k": "stash",
+     "item": "dust",
+     "n": 1200,
+     "tier": 5
+    },
+    {
+     "tile": [
+      9,
+      9
+     ],
+     "k": "stash",
+     "item": "fullgel",
+     "n": 2,
+     "tier": 5
+    }
+   ],
+   "spawns": {
+    "default": [
+     22,
+     9
+    ]
+   },
+   "grid": [
+    0,
+    157
+   ],
+   "pkey": "helix",
+   "npcs": [
+    {
+     "x": 11,
+     "y": 10,
+     "art": "researcher",
+     "face": "right",
+     "t": [],
+     "id": "sec934_tr0",
+     "trainer": {
+      "cls": "Scientist",
+      "route": 1,
+      "name": "Ines"
+     }
+    },
+    {
+     "x": 15,
+     "y": 4,
+     "art": "guard",
+     "face": "right",
+     "t": [],
+     "id": "sec934_tr1",
+     "trainer": {
+      "cls": "Guard",
+      "route": 1,
+      "name": "Lio"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 4,
+     "y": 9,
+     "mon": "Nulltron"
+    },
+    {
+     "x": 18,
+     "y": 11,
+     "mon": "Chimerax"
+    }
+   ]
+  },
+  "935": {
+   "id": "935",
+   "name": "Floating Isle Gardens",
+   "planet": "Halo",
+   "dir": "10_halo",
+   "type": "field",
+   "img": "art/sections_game/10_halo/935_floating_isle_gardens.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "world expansion (owner render X19_halo_floating_isle_gardens.png)",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      23,
+      7
+     ],
+     "to": "114",
+     "at": [
+      1,
+      4
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      8
+     ],
+     "to": "114",
+     "at": [
+      1,
+      7
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      9
+     ],
+     "to": "114",
+     "at": [
+      1,
+      10
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "right"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      11,
+      12
+     ],
+     "k": "stash",
+     "item": "fullgel",
+     "n": 2,
+     "tier": 5
+    },
+    {
+     "tile": [
+      5,
+      1
+     ],
+     "k": "stash",
+     "item": "harmonic",
+     "n": 5,
+     "tier": 5
+    }
+   ],
+   "spawns": {
+    "default": [
+     22,
+     7
+    ]
+   },
+   "grid": [
+    0,
+    188
+   ],
+   "pkey": "halo",
+   "npcs": [
+    {
+     "x": 16,
+     "y": 10,
+     "art": "wanderer",
+     "face": "up",
+     "t": [],
+     "id": "sec935_tr0",
+     "trainer": {
+      "cls": "Mystic",
+      "route": 1,
+      "name": "Ash"
+     }
+    },
+    {
+     "x": 6,
+     "y": 8,
+     "art": "pilgrim",
+     "face": "up",
+     "t": [],
+     "id": "sec935_tr1",
+     "trainer": {
+      "cls": "Pilgrim",
+      "route": 1,
+      "name": "Hale"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 7,
+     "y": 1,
+     "mon": "Halocene"
+    },
+    {
+     "x": 15,
+     "y": 2,
+     "mon": "Zephyrion"
+    }
+   ]
+  },
+  "936": {
+   "id": "936",
+   "name": "Wind Temple Steps",
+   "planet": "Halo",
+   "dir": "10_halo",
+   "type": "field",
+   "img": "art/sections_game/10_halo/936_wind_temple_steps.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "world expansion (owner render X20_halo_wind_temple_steps.png)",
+   "edges": {
+    "top": {
+     "to": "588",
+     "range": [
+      16,
+      19
+     ],
+     "offset": 1
+    }
+   },
+   "warps": [],
+   "objects": [
+    {
+     "tile": [
+      11,
+      14
+     ],
+     "k": "stash",
+     "item": "dust",
+     "n": 1200,
+     "tier": 5
+    },
+    {
+     "tile": [
+      6,
+      4
+     ],
+     "k": "stash",
+     "item": "ether",
+     "n": 3,
+     "tier": 5
+    }
+   ],
+   "spawns": {
+    "default": [
+     16,
+     1
+    ]
+   },
+   "grid": [
+    26,
+    95
+   ],
+   "pkey": "halo",
+   "npcs": [
+    {
+     "x": 18,
+     "y": 8,
+     "art": "pilgrim",
+     "face": "left",
+     "t": [],
+     "id": "sec936_tr0",
+     "trainer": {
+      "cls": "Pilgrim",
+      "route": 1,
+      "name": "Pip"
+     }
+    },
+    {
+     "x": 11,
+     "y": 7,
+     "art": "civilian",
+     "face": "down",
+     "t": [],
+     "id": "sec936_tr1",
+     "trainer": {
+      "cls": "Skywatcher",
+      "route": 1,
+      "name": "Hale"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 4,
+     "y": 3,
+     "mon": "Cerebrix"
+    },
+    {
+     "x": 17,
+     "y": 3,
+     "mon": "Hummingmind"
+    }
+   ]
+  },
+  "937": {
+   "id": "937",
+   "name": "Lantern Festival Street",
+   "planet": "Umbra",
+   "dir": "11_umbra",
+   "type": "field",
+   "img": "art/sections_game/11_umbra/937_lantern_festival_street.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "world expansion (owner render X21_umbra_lantern_festival_street.png)",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      15,
+      15
+     ],
+     "to": "827",
+     "at": [
+      14,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      16,
+      15
+     ],
+     "to": "827",
+     "at": [
+      19,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      20,
+      10
+     ],
+     "k": "stash",
+     "item": "dust",
+     "n": 1600,
+     "tier": 6
+    },
+    {
+     "tile": [
+      5,
+      11
+     ],
+     "k": "stash",
+     "item": "fullgel",
+     "n": 3,
+     "tier": 6
+    }
+   ],
+   "spawns": {
+    "default": [
+     15,
+     14
+    ]
+   },
+   "grid": [
+    0,
+    105
+   ],
+   "pkey": "umbra",
+   "npcs": [
+    {
+     "x": 17,
+     "y": 11,
+     "art": "civilian",
+     "face": "left",
+     "t": [],
+     "id": "sec937_tr0",
+     "trainer": {
+      "cls": "Lantern Keeper",
+      "route": 1,
+      "name": "Rhee"
+     }
+    },
+    {
+     "x": 10,
+     "y": 3,
+     "art": "explorer",
+     "face": "right",
+     "t": [],
+     "id": "sec937_tr1",
+     "trainer": {
+      "cls": "Drifter",
+      "route": 1,
+      "name": "Vela"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 4,
+     "y": 9,
+     "mon": "Wellmaw"
+    },
+    {
+     "x": 16,
+     "y": 2,
+     "mon": "Geodome"
+    }
+   ]
+  },
+  "938": {
+   "id": "938",
+   "name": "Moonlit Garden",
+   "planet": "Umbra",
+   "dir": "11_umbra",
+   "type": "field",
+   "img": "art/sections_game/11_umbra/938_moonlit_garden.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "world expansion (owner render X22_umbra_moonlit_garden.png)",
+   "edges": {
+    "left": {
+     "to": "821",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 1
+    }
+   },
+   "warps": [],
+   "objects": [
+    {
+     "tile": [
+      11,
+      9
+     ],
+     "k": "stash",
+     "item": "maxrevive",
+     "n": 1,
+     "tier": 6
+    },
+    {
+     "tile": [
+      21,
+      2
+     ],
+     "k": "stash",
+     "item": "maxrevive",
+     "n": 1,
+     "tier": 6
+    }
+   ],
+   "spawns": {
+    "default": [
+     1,
+     7
+    ]
+   },
+   "grid": [
+    63,
+    -47
+   ],
+   "pkey": "umbra",
+   "npcs": [
+    {
+     "x": 15,
+     "y": 11,
+     "art": "explorer",
+     "face": "right",
+     "t": [],
+     "id": "sec938_tr0",
+     "trainer": {
+      "cls": "Drifter",
+      "route": 1,
+      "name": "Pip"
+     }
+    },
+    {
+     "x": 10,
+     "y": 6,
+     "art": "wanderer",
+     "face": "up",
+     "t": [],
+     "id": "sec938_tr1",
+     "trainer": {
+      "cls": "Scavenger",
+      "route": 1,
+      "name": "Vela"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 19,
+     "y": 3,
+     "mon": "Dusklord"
+    },
+    {
+     "x": 20,
+     "y": 12,
+     "mon": "Gloomhulk"
+    }
+   ]
+  },
+  "939": {
+   "id": "939",
+   "name": "Meteor Fields",
+   "planet": "Starfall Rift",
+   "dir": "12_starfall",
+   "type": "field",
+   "img": "art/sections_game/12_starfall/939_meteor_fields.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "world expansion (owner render X23_starfall_meteor_fields.png)",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      15,
+      15
+     ],
+     "to": "755",
+     "at": [
+      14,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      16,
+      15
+     ],
+     "to": "755",
+     "at": [
+      16,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      17,
+      15
+     ],
+     "to": "755",
+     "at": [
+      19,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      15,
+      0
+     ],
+     "to": "940",
+     "at": [
+      11,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      16,
+      0
+     ],
+     "to": "940",
+     "at": [
+      11,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      17,
+      0
+     ],
+     "to": "940",
+     "at": [
+      12,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      7,
+      10
+     ],
+     "k": "stash",
+     "item": "singularity",
+     "n": 1,
+     "tier": 6
+    },
+    {
+     "tile": [
+      3,
+      4
+     ],
+     "k": "stash",
+     "item": "ether",
+     "n": 3,
+     "tier": 6
+    }
+   ],
+   "spawns": {
+    "default": [
+     15,
+     14
+    ]
+   },
+   "grid": [
+    0,
+    136
+   ],
+   "pkey": "starfall",
+   "npcs": [
+    {
+     "x": 9,
+     "y": 10,
+     "art": "strand",
+     "face": "left",
+     "t": [],
+     "id": "sec939_tr0",
+     "trainer": {
+      "cls": "Helix Driller",
+      "route": 1,
+      "name": "Tamsin"
+     }
+    },
+    {
+     "x": 5,
+     "y": 5,
+     "art": "explorer",
+     "face": "down",
+     "t": [],
+     "id": "sec939_tr1",
+     "trainer": {
+      "cls": "Rift Seeker",
+      "route": 1,
+      "name": "Zora"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 19,
+     "y": 6,
+     "mon": "Cometrix"
+    },
+    {
+     "x": 12,
+     "y": 6,
+     "mon": "Quasarus"
+    }
+   ]
+  },
+  "940": {
+   "id": "940",
+   "name": "Seedpod Nursery",
+   "planet": "Starfall Rift",
+   "dir": "12_starfall",
+   "type": "field",
+   "img": "art/sections_game/12_starfall/940_seedpod_nursery.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "world expansion (owner render X24_starfall_seedpod_nursery.png)",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      11,
+      15
+     ],
+     "to": "939",
+     "at": [
+      15,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      12,
+      15
+     ],
+     "to": "939",
+     "at": [
+      17,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      7,
+      10
+     ],
+     "k": "stash",
+     "item": "fullgel",
+     "n": 3,
+     "tier": 6
+    },
+    {
+     "tile": [
+      17,
+      3
+     ],
+     "k": "stash",
+     "item": "fullgel",
+     "n": 3,
+     "tier": 6
+    }
+   ],
+   "spawns": {
+    "default": [
+     11,
+     14
+    ]
+   },
+   "grid": [
+    0,
+    156
+   ],
+   "pkey": "starfall",
+   "npcs": [
+    {
+     "x": 9,
+     "y": 10,
+     "art": "explorer",
+     "face": "left",
+     "t": [],
+     "id": "sec940_tr0",
+     "trainer": {
+      "cls": "Rift Seeker",
+      "route": 1,
+      "name": "Quill"
+     }
+    },
+    {
+     "x": 16,
+     "y": 9,
+     "art": "researcher",
+     "face": "down",
+     "t": [],
+     "id": "sec940_tr1",
+     "trainer": {
+      "cls": "Star Watcher",
+      "route": 1,
+      "name": "Lio"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 19,
+     "y": 3,
+     "mon": "Novacat"
+    },
+    {
+     "x": 4,
+     "y": 7,
+     "mon": "Prismora"
+    }
+   ]
+  },
+  "941": {
+   "id": "941",
+   "name": "Telescope Ridge",
+   "planet": "Apex Array",
+   "dir": "13_apex",
+   "type": "field",
+   "img": "art/sections_game/13_apex/941_telescope_ridge.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "world expansion (owner render X25_apex_telescope_ridge.png)",
+   "edges": {
+    "left": {
+     "to": "415",
+     "range": [
+      8,
+      12
+     ],
+     "offset": 1
+    }
+   },
+   "warps": [],
+   "objects": [
+    {
+     "tile": [
+      13,
+      13
+     ],
+     "k": "stash",
+     "item": "maxrevive",
+     "n": 2,
+     "tier": 7
+    },
+    {
+     "tile": [
+      8,
+      4
+     ],
+     "k": "stash",
+     "item": "maxrevive",
+     "n": 2,
+     "tier": 7
+    }
+   ],
+   "spawns": {
+    "default": [
+     1,
+     8
+    ]
+   },
+   "grid": [
+    79,
+    30
+   ],
+   "pkey": "apex",
+   "npcs": [
+    {
+     "x": 12,
+     "y": 7,
+     "art": "guard",
+     "face": "down",
+     "t": [],
+     "id": "sec941_tr0",
+     "trainer": {
+      "cls": "Summit Guard",
+      "route": 1,
+      "name": "Milo"
+     }
+    },
+    {
+     "x": 15,
+     "y": 12,
+     "art": "explorer",
+     "face": "left",
+     "t": [],
+     "id": "sec941_tr1",
+     "trainer": {
+      "cls": "Ace Linker",
+      "route": 1,
+      "name": "Kai"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 19,
+     "y": 8,
+     "mon": "Flarehawk"
+    },
+    {
+     "x": 11,
+     "y": 12,
+     "mon": "Diamondillo"
+    }
+   ]
+  },
+  "942": {
+   "id": "942",
+   "name": "Hall of Champions Plaza",
+   "planet": "Apex Array",
+   "dir": "13_apex",
+   "type": "field",
+   "img": "art/sections_game/13_apex/942_hall_of_champions_plaza.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "world expansion (owner render X26_apex_hall_of_champions_plaza.png)",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      10,
+      15
+     ],
+     "to": "422",
+     "at": [
+      14,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      11,
+      15
+     ],
+     "to": "422",
+     "at": [
+      16,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      12,
+      15
+     ],
+     "to": "422",
+     "at": [
+      17,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      13,
+      15
+     ],
+     "to": "422",
+     "at": [
+      19,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      21,
+      9
+     ],
+     "k": "stash",
+     "item": "fullgel",
+     "n": 3,
+     "tier": 7
+    },
+    {
+     "tile": [
+      8,
+      9
+     ],
+     "k": "stash",
+     "item": "maxrevive",
+     "n": 2,
+     "tier": 7
+    }
+   ],
+   "spawns": {
+    "default": [
+     10,
+     14
+    ]
+   },
+   "grid": [
+    0,
+    50
+   ],
+   "pkey": "apex",
+   "npcs": [
+    {
+     "x": 7,
+     "y": 7,
+     "art": "explorer",
+     "face": "left",
+     "t": [],
+     "id": "sec942_tr0",
+     "trainer": {
+      "cls": "Ace Linker",
+      "route": 1,
+      "name": "Bram"
+     }
+    },
+    {
+     "x": 17,
+     "y": 8,
+     "art": "researcher",
+     "face": "right",
+     "t": [],
+     "id": "sec942_tr1",
+     "trainer": {
+      "cls": "Astronomer",
+      "route": 1,
+      "name": "Rook"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 12,
+     "y": 13,
+     "mon": "Riffrex"
+    },
+    {
+     "x": 12,
+     "y": 4,
+     "mon": "Cragmajor"
+    }
+   ]
+  },
+  "943": {
+   "id": "943",
+   "name": "Floating Fragment Gardens",
+   "planet": "Ystra",
+   "dir": "14_ystra",
+   "type": "field",
+   "img": "art/sections_game/14_ystra/943_floating_fragment_gardens.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "world expansion (owner render X27_ystra_floating_fragment_gardens.png)",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      23,
+      6
+     ],
+     "to": "153",
+     "at": [
+      1,
+      5
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      7
+     ],
+     "to": "153",
+     "at": [
+      1,
+      10
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "right"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      12,
+      13
+     ],
+     "k": "stash",
+     "item": "dust",
+     "n": 2500,
+     "tier": 7
+    },
+    {
+     "tile": [
+      3,
+      11
+     ],
+     "k": "stash",
+     "item": "dust",
+     "n": 2500,
+     "tier": 7
+    }
+   ],
+   "spawns": {
+    "default": [
+     22,
+     6
+    ]
+   },
+   "grid": [
+    0,
+    233
+   ],
+   "pkey": "ystra",
+   "npcs": [
+    {
+     "x": 13,
+     "y": 5,
+     "art": "explorer",
+     "face": "down",
+     "t": [],
+     "id": "sec943_tr0",
+     "trainer": {
+      "cls": "Rift Walker",
+      "route": 1,
+      "name": "Mara"
+     }
+    },
+    {
+     "x": 20,
+     "y": 5,
+     "art": "pilgrim",
+     "face": "down",
+     "t": [],
+     "id": "sec943_tr1",
+     "trainer": {
+      "cls": "Seeker",
+      "route": 1,
+      "name": "Rhee"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 10,
+     "y": 12,
+     "mon": "Riftwalker"
+    },
+    {
+     "x": 6,
+     "y": 7,
+     "mon": "Fractalith"
+    }
+   ]
+  },
+  "944": {
+   "id": "944",
+   "name": "Memory Crystal Grove",
+   "planet": "Ystra",
+   "dir": "14_ystra",
+   "type": "field",
+   "img": "art/sections_game/14_ystra/944_memory_crystal_grove.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "world expansion (owner render X28_ystra_memory_crystal_grove.png)",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      13,
+      15
+     ],
+     "to": "858",
+     "at": [
+      14,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      14,
+      15
+     ],
+     "to": "858",
+     "at": [
+      19,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      5,
+      4
+     ],
+     "k": "stash",
+     "item": "maxrevive",
+     "n": 2,
+     "tier": 7
+    },
+    {
+     "tile": [
+      18,
+      9
+     ],
+     "k": "stash",
+     "item": "maxrevive",
+     "n": 2,
+     "tier": 7
+    }
+   ],
+   "spawns": {
+    "default": [
+     13,
+     14
+    ]
+   },
+   "grid": [
+    0,
+    253
+   ],
+   "pkey": "ystra",
+   "npcs": [
+    {
+     "x": 14,
+     "y": 10,
+     "art": "pilgrim",
+     "face": "down",
+     "t": [],
+     "id": "sec944_tr0",
+     "trainer": {
+      "cls": "Seeker",
+      "route": 1,
+      "name": "Quill"
+     }
+    },
+    {
+     "x": 19,
+     "y": 7,
+     "art": "ystran",
+     "face": "down",
+     "t": [],
+     "id": "sec944_tr1",
+     "trainer": {
+      "cls": "Ystran Echo",
+      "route": 1,
+      "name": "Vela"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 7,
+     "y": 4,
+     "mon": "Blightroot"
+    },
+    {
+     "x": 13,
+     "y": 2,
+     "mon": "Pulsarion"
+    }
+   ]
   }
  },
  "connections": [
@@ -69286,6 +74417,20 @@
    ]
   },
   {
+   "from_id": "114",
+   "edge": "left",
+   "tile_range": [
+    4,
+    10
+   ],
+   "to_id": "935",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    9
+   ]
+  },
+  {
    "from_id": "115",
    "edge": "left",
    "tile_range": [
@@ -69675,6 +74820,20 @@
    "to_tile": [
     9,
     11
+   ]
+  },
+  {
+   "from_id": "153",
+   "edge": "left",
+   "tile_range": [
+    5,
+    10
+   ],
+   "to_id": "943",
+   "to_edge": "right",
+   "to_tile": [
+    6,
+    7
    ]
   },
   {
@@ -70137,6 +75296,20 @@
    ]
   },
   {
+   "from_id": "497",
+   "edge": "top",
+   "tile_range": [
+    13,
+    18
+   ],
+   "to_id": "919",
+   "to_edge": "bottom",
+   "to_tile": [
+    11,
+    13
+   ]
+  },
+  {
    "from_id": "481",
    "edge": "bottom",
    "tile_range": [
@@ -70403,6 +75576,20 @@
    ]
   },
   {
+   "from_id": "491",
+   "edge": "right",
+   "tile_range": [
+    10,
+    12
+   ],
+   "to_id": "920",
+   "to_edge": "left",
+   "to_tile": [
+    9,
+    10
+   ]
+  },
+  {
    "from_id": "495",
    "edge": "right",
    "tile_range": [
@@ -70627,6 +75814,20 @@
    ]
   },
   {
+   "from_id": "465",
+   "edge": "top",
+   "tile_range": [
+    14,
+    19
+   ],
+   "to_id": "918",
+   "to_edge": "bottom",
+   "to_tile": [
+    11,
+    15
+   ]
+  },
+  {
    "from_id": "462",
    "edge": "top",
    "tile_range": [
@@ -70806,6 +76007,20 @@
    "to_tile": [
     4,
     9
+   ]
+  },
+  {
+   "from_id": "460",
+   "edge": "right",
+   "tile_range": [
+    3,
+    8
+   ],
+   "to_id": "917",
+   "to_edge": "left",
+   "to_tile": [
+    3,
+    6
    ]
   },
   {
@@ -71047,6 +76262,20 @@
    ]
   },
   {
+   "from_id": "720",
+   "edge": "top",
+   "tile_range": [
+    14,
+    19
+   ],
+   "to_id": "922",
+   "to_edge": "bottom",
+   "to_tile": [
+    13,
+    14
+   ]
+  },
+  {
    "from_id": "713",
    "edge": "left",
    "tile_range": [
@@ -71100,6 +76329,20 @@
    "to_tile": [
     4,
     18
+   ]
+  },
+  {
+   "from_id": "719",
+   "edge": "top",
+   "tile_range": [
+    16,
+    20
+   ],
+   "to_id": "921",
+   "to_edge": "bottom",
+   "to_tile": [
+    13,
+    14
    ]
   },
   {
@@ -71435,6 +76678,20 @@
    "to_edge": "left",
    "to_tile": [
     5,
+    8
+   ]
+  },
+  {
+   "from_id": "790",
+   "edge": "left",
+   "tile_range": [
+    9,
+    11
+   ],
+   "to_id": "924",
+   "to_edge": "right",
+   "to_tile": [
+    6,
     8
    ]
   },
@@ -71803,6 +77060,20 @@
    ]
   },
   {
+   "from_id": "783",
+   "edge": "bottom",
+   "tile_range": [
+    9,
+    11
+   ],
+   "to_id": "923",
+   "to_edge": "top",
+   "to_tile": [
+    11,
+    12
+   ]
+  },
+  {
    "from_id": "666",
    "edge": "right",
    "tile_range": [
@@ -72027,6 +77298,20 @@
    ]
   },
   {
+   "from_id": "647",
+   "edge": "right",
+   "tile_range": [
+    10,
+    12
+   ],
+   "to_id": "926",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
    "from_id": "639",
    "edge": "bottom",
    "tile_range": [
@@ -72150,6 +77435,20 @@
    "to_tile": [
     7,
     11
+   ]
+  },
+  {
+   "from_id": "654",
+   "edge": "top",
+   "tile_range": [
+    13,
+    20
+   ],
+   "to_id": "925",
+   "to_edge": "bottom",
+   "to_tile": [
+    10,
+    13
    ]
   },
   {
@@ -72587,6 +77886,20 @@
    ]
   },
   {
+   "from_id": "557",
+   "edge": "left",
+   "tile_range": [
+    6,
+    9
+   ],
+   "to_id": "927",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
    "from_id": "571",
    "edge": "right",
    "tile_range": [
@@ -72654,6 +77967,20 @@
    "to_tile": [
     6,
     10
+   ]
+  },
+  {
+   "from_id": "561",
+   "edge": "top",
+   "tile_range": [
+    13,
+    19
+   ],
+   "to_id": "928",
+   "to_edge": "bottom",
+   "to_tile": [
+    13,
+    15
    ]
   },
   {
@@ -73119,6 +78446,20 @@
    ]
   },
   {
+   "from_id": "681",
+   "edge": "bottom",
+   "tile_range": [
+    15,
+    19
+   ],
+   "to_id": "929",
+   "to_edge": "top",
+   "to_tile": [
+    15,
+    17
+   ]
+  },
+  {
    "from_id": "682",
    "edge": "top",
    "tile_range": [
@@ -73242,6 +78583,20 @@
    "to_tile": [
     6,
     7
+   ]
+  },
+  {
+   "from_id": "688",
+   "edge": "right",
+   "tile_range": [
+    9,
+    12
+   ],
+   "to_id": "930",
+   "to_edge": "left",
+   "to_tile": [
+    8,
+    9
    ]
   },
   {
@@ -73721,6 +79076,20 @@
    ]
   },
   {
+   "from_id": "526",
+   "edge": "bottom",
+   "tile_range": [
+    10,
+    12
+   ],
+   "to_id": "931",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
    "from_id": "529",
    "edge": "left",
    "tile_range": [
@@ -73732,6 +79101,20 @@
    "to_tile": [
     8,
     10
+   ]
+  },
+  {
+   "from_id": "529",
+   "edge": "right",
+   "tile_range": [
+    9,
+    12
+   ],
+   "to_id": "932",
+   "to_edge": "left",
+   "to_tile": [
+    9,
+    9
    ]
   },
   {
@@ -74183,6 +79566,20 @@
    ]
   },
   {
+   "from_id": "618",
+   "edge": "left",
+   "tile_range": [
+    9,
+    15
+   ],
+   "to_id": "934",
+   "to_edge": "right",
+   "to_tile": [
+    9,
+    11
+   ]
+  },
+  {
    "from_id": "616",
    "edge": "top",
    "tile_range": [
@@ -74320,6 +79717,20 @@
    "to_tile": [
     7,
     9
+   ]
+  },
+  {
+   "from_id": "621",
+   "edge": "right",
+   "tile_range": [
+    9,
+    11
+   ],
+   "to_id": "933",
+   "to_edge": "left",
+   "to_tile": [
+    6,
+    8
    ]
   },
   {
@@ -74743,6 +80154,20 @@
    ]
   },
   {
+   "from_id": "588",
+   "edge": "bottom",
+   "tile_range": [
+    17,
+    20
+   ],
+   "to_id": "936",
+   "to_edge": "top",
+   "to_tile": [
+    16,
+    19
+   ]
+  },
+  {
    "from_id": "589",
    "edge": "top",
    "tile_range": [
@@ -75107,6 +80532,20 @@
    ]
   },
   {
+   "from_id": "415",
+   "edge": "right",
+   "tile_range": [
+    9,
+    14
+   ],
+   "to_id": "941",
+   "to_edge": "left",
+   "to_tile": [
+    8,
+    12
+   ]
+  },
+  {
    "from_id": "416",
    "edge": "bottom",
    "tile_range": [
@@ -75230,6 +80669,20 @@
    "to_tile": [
     9,
     11
+   ]
+  },
+  {
+   "from_id": "422",
+   "edge": "top",
+   "tile_range": [
+    14,
+    19
+   ],
+   "to_id": "942",
+   "to_edge": "bottom",
+   "to_tile": [
+    10,
+    13
    ]
   },
   {
@@ -75737,6 +81190,20 @@
    ]
   },
   {
+   "from_id": "858",
+   "edge": "top",
+   "tile_range": [
+    14,
+    19
+   ],
+   "to_id": "944",
+   "to_edge": "bottom",
+   "to_tile": [
+    13,
+    14
+   ]
+  },
+  {
    "from_id": "845",
    "edge": "bottom",
    "tile_range": [
@@ -76143,6 +81610,20 @@
    ]
   },
   {
+   "from_id": "821",
+   "edge": "right",
+   "tile_range": [
+    8,
+    10
+   ],
+   "to_id": "938",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
    "from_id": "822",
    "edge": "bottom",
    "tile_range": [
@@ -76238,6 +81719,20 @@
    "to_tile": [
     8,
     9
+   ]
+  },
+  {
+   "from_id": "827",
+   "edge": "top",
+   "tile_range": [
+    14,
+    19
+   ],
+   "to_id": "937",
+   "to_edge": "bottom",
+   "to_tile": [
+    15,
+    16
    ]
   },
   {
@@ -76787,6 +82282,20 @@
    ]
   },
   {
+   "from_id": "755",
+   "edge": "top",
+   "tile_range": [
+    14,
+    19
+   ],
+   "to_id": "939",
+   "to_edge": "bottom",
+   "to_tile": [
+    15,
+    17
+   ]
+  },
+  {
    "from_id": "736",
    "edge": "right",
    "tile_range": [
@@ -77260,6 +82769,412 @@
    "to_tile": [
     5,
     8
+   ]
+  },
+  {
+   "from_id": "917",
+   "edge": "left",
+   "tile_range": [
+    3,
+    6
+   ],
+   "to_id": "460",
+   "to_edge": "right",
+   "to_tile": [
+    3,
+    8
+   ]
+  },
+  {
+   "from_id": "918",
+   "edge": "bottom",
+   "tile_range": [
+    11,
+    15
+   ],
+   "to_id": "465",
+   "to_edge": "top",
+   "to_tile": [
+    14,
+    19
+   ]
+  },
+  {
+   "from_id": "919",
+   "edge": "bottom",
+   "tile_range": [
+    11,
+    13
+   ],
+   "to_id": "497",
+   "to_edge": "top",
+   "to_tile": [
+    13,
+    18
+   ]
+  },
+  {
+   "from_id": "920",
+   "edge": "left",
+   "tile_range": [
+    9,
+    10
+   ],
+   "to_id": "491",
+   "to_edge": "right",
+   "to_tile": [
+    10,
+    12
+   ]
+  },
+  {
+   "from_id": "921",
+   "edge": "bottom",
+   "tile_range": [
+    13,
+    14
+   ],
+   "to_id": "719",
+   "to_edge": "top",
+   "to_tile": [
+    16,
+    20
+   ]
+  },
+  {
+   "from_id": "922",
+   "edge": "bottom",
+   "tile_range": [
+    13,
+    14
+   ],
+   "to_id": "720",
+   "to_edge": "top",
+   "to_tile": [
+    14,
+    19
+   ]
+  },
+  {
+   "from_id": "923",
+   "edge": "top",
+   "tile_range": [
+    11,
+    12
+   ],
+   "to_id": "783",
+   "to_edge": "bottom",
+   "to_tile": [
+    9,
+    11
+   ]
+  },
+  {
+   "from_id": "924",
+   "edge": "right",
+   "tile_range": [
+    6,
+    8
+   ],
+   "to_id": "790",
+   "to_edge": "left",
+   "to_tile": [
+    9,
+    11
+   ]
+  },
+  {
+   "from_id": "925",
+   "edge": "bottom",
+   "tile_range": [
+    10,
+    13
+   ],
+   "to_id": "654",
+   "to_edge": "top",
+   "to_tile": [
+    13,
+    20
+   ]
+  },
+  {
+   "from_id": "926",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "647",
+   "to_edge": "right",
+   "to_tile": [
+    10,
+    12
+   ]
+  },
+  {
+   "from_id": "927",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "557",
+   "to_edge": "left",
+   "to_tile": [
+    6,
+    9
+   ]
+  },
+  {
+   "from_id": "928",
+   "edge": "bottom",
+   "tile_range": [
+    13,
+    15
+   ],
+   "to_id": "561",
+   "to_edge": "top",
+   "to_tile": [
+    13,
+    19
+   ]
+  },
+  {
+   "from_id": "929",
+   "edge": "top",
+   "tile_range": [
+    15,
+    17
+   ],
+   "to_id": "681",
+   "to_edge": "bottom",
+   "to_tile": [
+    15,
+    19
+   ]
+  },
+  {
+   "from_id": "930",
+   "edge": "left",
+   "tile_range": [
+    8,
+    9
+   ],
+   "to_id": "688",
+   "to_edge": "right",
+   "to_tile": [
+    9,
+    12
+   ]
+  },
+  {
+   "from_id": "931",
+   "edge": "right",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "526",
+   "to_edge": "bottom",
+   "to_tile": [
+    10,
+    12
+   ]
+  },
+  {
+   "from_id": "932",
+   "edge": "left",
+   "tile_range": [
+    9,
+    9
+   ],
+   "to_id": "529",
+   "to_edge": "right",
+   "to_tile": [
+    9,
+    12
+   ]
+  },
+  {
+   "from_id": "933",
+   "edge": "left",
+   "tile_range": [
+    6,
+    8
+   ],
+   "to_id": "621",
+   "to_edge": "right",
+   "to_tile": [
+    9,
+    11
+   ]
+  },
+  {
+   "from_id": "934",
+   "edge": "right",
+   "tile_range": [
+    9,
+    11
+   ],
+   "to_id": "618",
+   "to_edge": "left",
+   "to_tile": [
+    9,
+    15
+   ]
+  },
+  {
+   "from_id": "935",
+   "edge": "right",
+   "tile_range": [
+    7,
+    9
+   ],
+   "to_id": "114",
+   "to_edge": "left",
+   "to_tile": [
+    4,
+    10
+   ]
+  },
+  {
+   "from_id": "936",
+   "edge": "top",
+   "tile_range": [
+    16,
+    19
+   ],
+   "to_id": "588",
+   "to_edge": "bottom",
+   "to_tile": [
+    17,
+    20
+   ]
+  },
+  {
+   "from_id": "937",
+   "edge": "bottom",
+   "tile_range": [
+    15,
+    16
+   ],
+   "to_id": "827",
+   "to_edge": "top",
+   "to_tile": [
+    14,
+    19
+   ]
+  },
+  {
+   "from_id": "938",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "821",
+   "to_edge": "right",
+   "to_tile": [
+    8,
+    10
+   ]
+  },
+  {
+   "from_id": "939",
+   "edge": "bottom",
+   "tile_range": [
+    15,
+    17
+   ],
+   "to_id": "755",
+   "to_edge": "top",
+   "to_tile": [
+    14,
+    19
+   ]
+  },
+  {
+   "from_id": "939",
+   "edge": "top",
+   "tile_range": [
+    15,
+    17
+   ],
+   "to_id": "940",
+   "to_edge": "bottom",
+   "to_tile": [
+    11,
+    12
+   ]
+  },
+  {
+   "from_id": "940",
+   "edge": "bottom",
+   "tile_range": [
+    11,
+    12
+   ],
+   "to_id": "939",
+   "to_edge": "top",
+   "to_tile": [
+    15,
+    17
+   ]
+  },
+  {
+   "from_id": "941",
+   "edge": "left",
+   "tile_range": [
+    8,
+    12
+   ],
+   "to_id": "415",
+   "to_edge": "right",
+   "to_tile": [
+    9,
+    14
+   ]
+  },
+  {
+   "from_id": "942",
+   "edge": "bottom",
+   "tile_range": [
+    10,
+    13
+   ],
+   "to_id": "422",
+   "to_edge": "top",
+   "to_tile": [
+    14,
+    19
+   ]
+  },
+  {
+   "from_id": "943",
+   "edge": "right",
+   "tile_range": [
+    6,
+    7
+   ],
+   "to_id": "153",
+   "to_edge": "left",
+   "to_tile": [
+    5,
+    10
+   ]
+  },
+  {
+   "from_id": "944",
+   "edge": "bottom",
+   "tile_range": [
+    13,
+    14
+   ],
+   "to_id": "858",
+   "to_edge": "top",
+   "to_tile": [
+    14,
+    19
    ]
   }
  ]

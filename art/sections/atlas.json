@@ -1936,7 +1936,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "right edge, tile rows 5–10 → Skyreach Plaza"
+    "right edge, tile rows 5–10 → Skyreach Plaza",
+    "left edge, tile rows 4–10 → Floating Isle Gardens"
    ],
    "notes": "Sky dock for airships",
    "file": "art/sections/10_halo/114_cloud_dock.png",
@@ -2642,7 +2643,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "right edge, tile rows 5–10 → Fragment Lane Homes"
+    "right edge, tile rows 5–10 → Fragment Lane Homes",
+    "left edge, tile rows 5–10 → Floating Fragment Gardens"
    ],
    "notes": "Floating fragment where you arrive",
    "file": "art/sections/14_ystra/153_arrival_fragment.png",
@@ -3605,7 +3607,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "right edge, tile rows 8–11 → Crane Overlook"
+    "right edge, tile rows 8–11 → Crane Overlook",
+    "top edge, tile columns 13–18 → Junkyard Throne"
    ],
    "v3": true,
    "kit": "497",
@@ -3913,7 +3916,8 @@
    "tile_px_game": 16,
    "exits": [
     "top edge, tile columns 4–7 → Scrap Slope",
-    "bottom edge, tile columns 15–21 → Reservoir Islands"
+    "bottom edge, tile columns 15–21 → Reservoir Islands",
+    "right edge, tile rows 10–12 → Abandoned Foundry"
    ],
    "v3": true,
    "kit": "491",
@@ -4177,7 +4181,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "right edge, tile rows 9–12 → Oasis Shore"
+    "right edge, tile rows 9–12 → Oasis Shore",
+    "top edge, tile columns 14–19 → Old Observatory Ruins"
    ],
    "v3": true,
    "kit": "465",
@@ -4356,7 +4361,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "top edge, tile columns 15–19 → Mesa Junction"
+    "top edge, tile columns 15–19 → Mesa Junction",
+    "right edge, tile rows 3–8 → Seedpod Dig Site"
    ],
    "v3": true,
    "kit": "460",
@@ -4802,7 +4808,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 9–12 → Mirefen Farmstead"
+    "left edge, tile rows 9–12 → Mirefen Farmstead",
+    "top edge, tile columns 14–19 → Spore Choir Amphitheatre"
    ],
    "v3": true,
    "kit": "720",
@@ -4848,7 +4855,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 12–19 → Bog Fork"
+    "bottom edge, tile columns 12–19 → Bog Fork",
+    "top edge, tile columns 16–20 → Canopy Walkways"
    ],
    "v3": true,
    "kit": "719",
@@ -5224,7 +5232,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "right edge, tile rows 9–11 → Saltreach Quiet Court"
+    "right edge, tile rows 9–11 → Saltreach Quiet Court",
+    "left edge, tile rows 9–11 → Shipwreck Cove"
    ],
    "v3": true,
    "kit": "790",
@@ -5643,7 +5652,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "top edge, tile columns 4–7 → Tidal Inlet"
+    "top edge, tile columns 4–7 → Tidal Inlet",
+    "bottom edge, tile columns 9–11 → Coral Tide Pools"
    ],
    "v3": true,
    "kit": "783",
@@ -5806,7 +5816,8 @@
    "tile_px_game": 16,
    "exits": [
     "bottom edge, tile columns 9–14 → Signal Junction",
-    "top edge, tile columns 9–14 → Undercity Tunnel Entrance"
+    "top edge, tile columns 9–14 → Undercity Tunnel Entrance",
+    "right edge, tile rows 10–12 → Arcade Underground"
    ],
    "v3": true,
    "kit": "647",
@@ -5980,7 +5991,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "right edge, tile rows 9–12 → Canal Fork"
+    "right edge, tile rows 9–12 → Canal Fork",
+    "top edge, tile columns 13–20 → Rooftop Billboards"
    ],
    "v3": true,
    "kit": "654",
@@ -6486,7 +6498,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 4–9 → Tidepool Fork"
+    "bottom edge, tile columns 4–9 → Tidepool Fork",
+    "left edge, tile rows 6–9 → Sunken Temple Court"
    ],
    "v3": true,
    "kit": "557",
@@ -6554,7 +6567,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "right edge, tile rows 9–11 → Island Chain"
+    "right edge, tile rows 9–11 → Island Chain",
+    "top edge, tile columns 13–19 → Vine Bridge Canopy"
    ],
    "v3": true,
    "kit": "561",
@@ -7001,7 +7015,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "top edge, tile columns 9–14 → Mine Junction"
+    "top edge, tile columns 9–14 → Mine Junction",
+    "bottom edge, tile columns 15–19 → Obsidian Glass Fields"
    ],
    "v3": true,
    "kit": "681",
@@ -7115,7 +7130,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 9–11 → Cinder Hollow Quiet Court"
+    "left edge, tile rows 9–11 → Cinder Hollow Quiet Court",
+    "right edge, tile rows 9–12 → Hot Spring Terraces"
    ],
    "v3": true,
    "kit": "688",
@@ -7626,7 +7642,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "top edge, tile columns 9–14 → Frozen Falls"
+    "top edge, tile columns 9–14 → Frozen Falls",
+    "bottom edge, tile columns 10–12 → Frozen Waterfall"
    ],
    "v3": true,
    "kit": "526",
@@ -7648,7 +7665,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 9–12 → Ice Junction"
+    "left edge, tile rows 9–12 → Ice Junction",
+    "right edge, tile rows 9–12 → Aurora Snowfield"
    ],
    "v3": true,
    "kit": "529",
@@ -8115,7 +8133,8 @@
    "tile_px_game": 16,
    "exits": [
     "top edge, tile columns 14–21 → Reactor Channel",
-    "bottom edge, tile columns 2–7 → Viewport Overlook"
+    "bottom edge, tile columns 2–7 → Viewport Overlook",
+    "left edge, tile rows 9–15 → Cargo Bay"
    ],
    "v3": true,
    "kit": "618",
@@ -8391,7 +8410,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 8–11 → Hydroponics Edge"
+    "left edge, tile rows 8–11 → Hydroponics Edge",
+    "right edge, tile rows 9–11 → Arboretum Dome"
    ],
    "v3": true,
    "kit": "621",
@@ -8895,7 +8915,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "top edge, tile columns 4–7 → Cloud Fork"
+    "top edge, tile columns 4–7 → Cloud Fork",
+    "bottom edge, tile columns 17–20 → Wind Temple Steps"
    ],
    "v3": true,
    "kit": "588",
@@ -9233,7 +9254,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "top edge, tile columns 6–14 → Tarn Fork"
+    "top edge, tile columns 6–14 → Tarn Fork",
+    "right edge, tile rows 9–14 → Telescope Ridge"
    ],
    "v3": true,
    "kit": "415",
@@ -9347,7 +9369,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 8–14 → Apex Relay Tower"
+    "left edge, tile rows 8–14 → Apex Relay Tower",
+    "top edge, tile columns 14–19 → Hall of Champions Plaza"
    ],
    "v3": true,
    "kit": "422",
@@ -9959,7 +9982,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "right edge, tile rows 9–12 → Void Fork"
+    "right edge, tile rows 9–12 → Void Fork",
+    "top edge, tile columns 14–19 → Memory Crystal Grove"
    ],
    "v3": true,
    "kit": "858",
@@ -10461,7 +10485,8 @@
    "tile_px_game": 16,
    "exits": [
     "bottom edge, tile columns 14–19 → Shadow Junction",
-    "top edge, tile columns 14–19 → Lantern Pit"
+    "top edge, tile columns 14–19 → Lantern Pit",
+    "right edge, tile rows 8–10 → Moonlit Garden"
    ],
    "v3": true,
    "kit": "821",
@@ -10552,7 +10577,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 9–11 → Abyss Fork"
+    "left edge, tile rows 9–11 → Abyss Fork",
+    "top edge, tile columns 14–19 → Lantern Festival Street"
    ],
    "v3": true,
    "kit": "827",
@@ -11149,7 +11175,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "right edge, tile rows 10–11 → Starfall Quiet Court"
+    "right edge, tile rows 10–11 → Starfall Quiet Court",
+    "top edge, tile columns 14–19 → Meteor Fields"
    ],
    "v3": true,
    "kit": "755",
@@ -12279,6 +12306,651 @@
    "notes": "uses the Dustmere Recovery Bay room",
    "file": "art/sections/01_dustara/916_palm_isle_recovery_bay.png",
    "v2": true
+  },
+  {
+   "id": "917",
+   "planet": "Dustara",
+   "name": "Seedpod Dig Site",
+   "type": "field",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 3–6 → Hoodoo Hollows"
+   ],
+   "notes": "world expansion (owner render X01_dustara_seedpod_dig_site.png)",
+   "v3": true,
+   "kit": "917",
+   "file": "art/kit/01_dustara/917_hidden_area_seedpod_dig_site.png"
+  },
+  {
+   "id": "918",
+   "planet": "Dustara",
+   "name": "Old Observatory Ruins",
+   "type": "field",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "bottom edge, tile columns 11–15 → Hidden Mesa Grove"
+   ],
+   "notes": "world expansion (owner render X02_dustara_old_observatory_ruins.png)",
+   "v3": true,
+   "kit": "918",
+   "file": "art/kit/01_dustara/918_hidden_area_old_observatory_ruins.png"
+  },
+  {
+   "id": "919",
+   "planet": "Ferrox",
+   "name": "Junkyard Throne",
+   "type": "field",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "bottom edge, tile columns 11–13 → Scrap Hollow Grove"
+   ],
+   "notes": "world expansion (owner render X03_ferrox_junkyard_throne.png)",
+   "v3": true,
+   "kit": "919",
+   "file": "art/kit/02_ferrox/919_hidden_area_junkyard_throne.png"
+  },
+  {
+   "id": "920",
+   "planet": "Ferrox",
+   "name": "Abandoned Foundry",
+   "type": "field",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 9–10 → Railcar Maze"
+   ],
+   "notes": "world expansion (owner render X04_ferrox_abandoned_foundry.png)",
+   "v3": true,
+   "kit": "920",
+   "file": "art/kit/02_ferrox/920_hidden_area_abandoned_foundry.png"
+  },
+  {
+   "id": "921",
+   "planet": "Sporeholm",
+   "name": "Canopy Walkways",
+   "type": "field",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "bottom edge, tile columns 13–14 → Glowcap Meadow"
+   ],
+   "notes": "world expansion (owner render X05_sporeholm_canopy_walkways.png)",
+   "v3": true,
+   "kit": "921",
+   "file": "art/kit/03_sporeholm/921_hidden_area_canopy_walkways.png"
+  },
+  {
+   "id": "922",
+   "planet": "Sporeholm",
+   "name": "Spore Choir Amphitheatre",
+   "type": "field",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "bottom edge, tile columns 13–14 → Mirefen Secret Grove"
+   ],
+   "notes": "world expansion (owner render X06_sporeholm_spore_choir_amphitheatre.png)",
+   "v3": true,
+   "kit": "922",
+   "file": "art/kit/03_sporeholm/922_hidden_area_spore_choir_amphitheatre.png"
+  },
+  {
+   "id": "923",
+   "planet": "Thalassa",
+   "name": "Coral Tide Pools",
+   "type": "field",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "top edge, tile columns 11–12 → Driftwood Hollows"
+   ],
+   "notes": "world expansion (owner render X07_thalassa_coral_tide_pools.png)",
+   "v3": true,
+   "kit": "923",
+   "file": "art/kit/04_thalassa/923_hidden_area_coral_tide_pools.png"
+  },
+  {
+   "id": "924",
+   "planet": "Thalassa",
+   "name": "Shipwreck Cove",
+   "type": "field",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "right edge, tile rows 6–8 → Saltreach Secret Grove"
+   ],
+   "notes": "world expansion (owner render X08_thalassa_shipwreck_cove.png)",
+   "v3": true,
+   "kit": "924",
+   "file": "art/kit/04_thalassa/924_hidden_area_shipwreck_cove.png"
+  },
+  {
+   "id": "925",
+   "planet": "Neonis",
+   "name": "Rooftop Billboards",
+   "type": "field",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "bottom edge, tile columns 10–13 → Glowgarden Hideaway"
+   ],
+   "notes": "world expansion (owner render X09_neonis_rooftop_billboards.png)",
+   "v3": true,
+   "kit": "925",
+   "file": "art/kit/05_neonis/925_hidden_area_rooftop_billboards.png"
+  },
+  {
+   "id": "926",
+   "planet": "Neonis",
+   "name": "Arcade Underground",
+   "type": "field",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 7–8 → Skyline Overlook"
+   ],
+   "notes": "world expansion (owner render X10_neonis_arcade_underground.png)",
+   "v3": true,
+   "kit": "926",
+   "file": "art/kit/05_neonis/926_hidden_area_arcade_underground.png"
+  },
+  {
+   "id": "927",
+   "planet": "Glyphos",
+   "name": "Sunken Temple Court",
+   "type": "field",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "right edge, tile rows 7–8 → Tidepool Ruins"
+   ],
+   "notes": "world expansion (owner render X11_glyphos_sunken_temple_court.png)",
+   "v3": true,
+   "kit": "927",
+   "file": "art/kit/06_glyphos/927_hidden_area_sunken_temple_court.png"
+  },
+  {
+   "id": "928",
+   "planet": "Glyphos",
+   "name": "Vine Bridge Canopy",
+   "type": "field",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "bottom edge, tile columns 13–15 → Coral Secret Grove"
+   ],
+   "notes": "world expansion (owner render X12_glyphos_vine_bridge_canopy.png)",
+   "v3": true,
+   "kit": "928",
+   "file": "art/kit/06_glyphos/928_hidden_area_vine_bridge_canopy.png"
+  },
+  {
+   "id": "929",
+   "planet": "Pyros",
+   "name": "Obsidian Glass Fields",
+   "type": "field",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "top edge, tile columns 15–17 → Furnace Ridge Overlook"
+   ],
+   "notes": "world expansion (owner render X13_pyros_obsidian_glass_fields.png)",
+   "v3": true,
+   "kit": "929",
+   "file": "art/kit/07_pyros/929_hidden_area_obsidian_glass_fields.png"
+  },
+  {
+   "id": "930",
+   "planet": "Pyros",
+   "name": "Hot Spring Terraces",
+   "type": "field",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 8–9 → Ember Hollow Grove"
+   ],
+   "notes": "world expansion (owner render X14_pyros_hot_spring_terraces.png)",
+   "v3": true,
+   "kit": "930",
+   "file": "art/kit/07_pyros/930_hidden_area_hot_spring_terraces.png"
+  },
+  {
+   "id": "931",
+   "planet": "Glacia",
+   "name": "Frozen Waterfall",
+   "type": "field",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "right edge, tile rows 7–8 → Fossil Dig Flats"
+   ],
+   "notes": "world expansion (owner render X15_glacia_frozen_waterfall.png)",
+   "v3": true,
+   "kit": "931",
+   "file": "art/kit/08_glacia/931_hidden_area_frozen_waterfall.png"
+  },
+  {
+   "id": "932",
+   "planet": "Glacia",
+   "name": "Aurora Snowfield",
+   "type": "field",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 9–9 → Hidden Ice Grove"
+   ],
+   "notes": "world expansion (owner render X16_glacia_aurora_snowfield.png)",
+   "v3": true,
+   "kit": "932",
+   "file": "art/kit/08_glacia/932_hidden_area_aurora_snowfield.png"
+  },
+  {
+   "id": "933",
+   "planet": "Helix Station",
+   "name": "Arboretum Dome",
+   "type": "field",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 6–8 → Hidden Hydro Garden"
+   ],
+   "notes": "world expansion (owner render X17_helix_arboretum_dome.png)",
+   "v3": true,
+   "kit": "933",
+   "file": "art/kit/09_helix/933_hidden_area_arboretum_dome.png"
+  },
+  {
+   "id": "934",
+   "planet": "Helix Station",
+   "name": "Cargo Bay",
+   "type": "field",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "right edge, tile rows 9–11 → Specimen Annex"
+   ],
+   "notes": "world expansion (owner render X18_helix_cargo_bay.png)",
+   "v3": true,
+   "kit": "934",
+   "file": "art/kit/09_helix/934_hidden_area_cargo_bay.png"
+  },
+  {
+   "id": "935",
+   "planet": "Halo",
+   "name": "Floating Isle Gardens",
+   "type": "field",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "right edge, tile rows 7–9 → Cloud Dock"
+   ],
+   "notes": "world expansion (owner render X19_halo_floating_isle_gardens.png)",
+   "v3": true,
+   "kit": "935",
+   "file": "art/kit/10_halo/935_hidden_area_floating_isle_gardens.png"
+  },
+  {
+   "id": "936",
+   "planet": "Halo",
+   "name": "Wind Temple Steps",
+   "type": "field",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "top edge, tile columns 16–19 → Shrine Hollows"
+   ],
+   "notes": "world expansion (owner render X20_halo_wind_temple_steps.png)",
+   "v3": true,
+   "kit": "936",
+   "file": "art/kit/10_halo/936_hidden_area_wind_temple_steps.png"
+  },
+  {
+   "id": "937",
+   "planet": "Umbra",
+   "name": "Lantern Festival Street",
+   "type": "field",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "bottom edge, tile columns 15–16 → Gloomshade Grove"
+   ],
+   "notes": "world expansion (owner render X21_umbra_lantern_festival_street.png)",
+   "v3": true,
+   "kit": "937",
+   "file": "art/kit/11_umbra/937_hidden_area_lantern_festival_street.png"
+  },
+  {
+   "id": "938",
+   "planet": "Umbra",
+   "name": "Moonlit Garden",
+   "type": "field",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 7–8 → Abyss Rim"
+   ],
+   "notes": "world expansion (owner render X22_umbra_moonlit_garden.png)",
+   "v3": true,
+   "kit": "938",
+   "file": "art/kit/11_umbra/938_hidden_area_moonlit_garden.png"
+  },
+  {
+   "id": "939",
+   "planet": "Starfall Rift",
+   "name": "Meteor Fields",
+   "type": "field",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "bottom edge, tile columns 15–17 → Starfall Secret Grove",
+    "top edge, tile columns 15–17 → Seedpod Nursery"
+   ],
+   "notes": "world expansion (owner render X23_starfall_meteor_fields.png)",
+   "v3": true,
+   "kit": "939",
+   "file": "art/kit/12_starfall/939_hidden_area_meteor_fields.png"
+  },
+  {
+   "id": "940",
+   "planet": "Starfall Rift",
+   "name": "Seedpod Nursery",
+   "type": "field",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "bottom edge, tile columns 11–12 → Meteor Fields"
+   ],
+   "notes": "world expansion (owner render X24_starfall_seedpod_nursery.png)",
+   "v3": true,
+   "kit": "940",
+   "file": "art/kit/12_starfall/940_hidden_area_seedpod_nursery.png"
+  },
+  {
+   "id": "941",
+   "planet": "Apex Array",
+   "name": "Telescope Ridge",
+   "type": "field",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 8–12 → Stargazer Overlook"
+   ],
+   "notes": "world expansion (owner render X25_apex_telescope_ridge.png)",
+   "v3": true,
+   "kit": "941",
+   "file": "art/kit/13_apex/941_hidden_area_telescope_ridge.png"
+  },
+  {
+   "id": "942",
+   "planet": "Apex Array",
+   "name": "Hall of Champions Plaza",
+   "type": "field",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "bottom edge, tile columns 10–13 → Summit Secret Grove"
+   ],
+   "notes": "world expansion (owner render X26_apex_hall_of_champions_plaza.png)",
+   "v3": true,
+   "kit": "942",
+   "file": "art/kit/13_apex/942_hidden_area_hall_of_champions_plaza.png"
+  },
+  {
+   "id": "943",
+   "planet": "Ystra",
+   "name": "Floating Fragment Gardens",
+   "type": "field",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "right edge, tile rows 6–7 → Arrival Fragment"
+   ],
+   "notes": "world expansion (owner render X27_ystra_floating_fragment_gardens.png)",
+   "v3": true,
+   "kit": "943",
+   "file": "art/kit/14_ystra/943_hidden_area_floating_fragment_gardens.png"
+  },
+  {
+   "id": "944",
+   "planet": "Ystra",
+   "name": "Memory Crystal Grove",
+   "type": "field",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "bottom edge, tile columns 13–14 → Ystra Secret Grove"
+   ],
+   "notes": "world expansion (owner render X28_ystra_memory_crystal_grove.png)",
+   "v3": true,
+   "kit": "944",
+   "file": "art/kit/14_ystra/944_hidden_area_memory_crystal_grove.png"
   }
  ]
 }
