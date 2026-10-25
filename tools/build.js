@@ -17,7 +17,7 @@ for(const d of dirs){const b=path.join(root,'data/batches',d);
  SYS.push({id:meta.system.id,name:meta.system.name,batch:meta.batch});
  console.log('batch',meta.batch,meta.system.name);}
 
-const MIME={'.png':'image/png','.jpg':'image/jpeg','.webp':'image/webp','.mp3':'audio/mpeg'};
+const MIME={'.png':'image/png','.jpg':'image/jpeg','.webp':'image/webp','.mp3':'audio/mpeg','.mp4':'video/mp4'};
 const ASSETS=[];   // every emitted asset URL, for the service worker's offline download
 const assetDir=path.join(www,'assets');
 if(!INLINE){fs.rmSync(assetDir,{recursive:true,force:true});fs.mkdirSync(assetDir,{recursive:true})}
@@ -107,7 +107,7 @@ for(const e of HOLO.line){const hp=PROGJ.species.Holopup,n=D.findIndex(d=>d.name
 const PROGMIN={species:Object.fromEntries(Object.entries(PROGJ.species).map(([k,v])=>[k,{curve:v.curve,base_yield:v.base_yield,stage:v.stage,stages:v.stages,rarity:v.rarity,evolves:v.evolves,capture_mod:v.capture_mod}])),
  areas:Object.fromEntries(Object.entries(PROGJ.areas).map(([k,a])=>{const t=l=>l&&l.map(x=>({name:x.name,min:x.min,max:x.max,weight:x.weight}));return[k,{levels:a.levels,tier1:t(a.tier1),tier2_after_4_shards:t(a.tier2_after_4_shards),tier3_after_champion:t(a.tier3_after_champion),trainer_levels:a.trainer_levels,trainer_team_size:a.trainer_team_size}]})),
  keepers:PROGJ.keepers,bosses:PROGJ.bosses,rival:PROGJ.rival,legendaries:PROGJ.legendaries};
-fill.__PROGENGINE__=fs.readFileSync(path.join(root,'src/progression.js'),'utf8').replace(/__PROGRESSION__/g,j(PROGMIN));
+fill.__PROGENGINE__=fs.readFileSync(path.join(root,'src/progression.js'),'utf8').replace(/__PROGRESSION__/g,j(PROGMIN)).replace(/__EVOVID__/g,()=>j(folder('art/evo_video','.mp4')));
 // world logic (docs/world/STORY_PROGRESSION_MASTER.md): gate messages and the ship rules
 const WS=JSON.parse(fs.readFileSync(path.join(root,'data/world_state.json'),'utf8'));
 const PEOPLE=fs.existsSync(path.join(root,'data/town_people.json'))?fs.readFileSync(path.join(root,'data/town_people.json'),'utf8'):'{}';

@@ -95,11 +95,20 @@ function moveArchive(){const L=G.party.map(m=>nm(m)+' Lv'+m.lv);choose('Move Arc
    then a flash reveals the new form with sparkles. A skips ahead once the reveal has started. */
 let EVO=null;const EVO_T=260;
 function evoAnim(m,into,done){evoAnimIds(m.id,into,m.pri,done)}
-function evoAnimIds(a,b,pri,done){warm(ARTI,[D[a].name,D[b].name]);EVO={a,b,pri,t:0,done,sp:[],last:-1}}
+function evoAnimIds(a,b,pri,done){warm(ARTI,[D[a].name,D[b].name]);EVO={a,b,pri,t:0,done,sp:[],last:-1};evoVideo(EVO)}
+/* evolution videos (art/evo_video/<From>_<To>.mp4, owner renders): full-quality clip over the screen, then the usual reveal; A or B skips */
+const EVOVID=__EVOVID__;
+function evoVideo(E){const src=EVOVID[D[E.a].name+'_'+D[E.b].name];if(!src||(G&&G.opt&&G.opt.evoVideo===false))return;
+ const v=document.createElement('video');v.src=src;v.muted=true;v.playsInline=true;v.setAttribute('playsinline','');v.preload='auto';
+ v.style.cssText='position:absolute;inset:10px;width:calc(100% - 20px);height:calc(100% - 20px);object-fit:cover;background:#0b0716;z-index:2;pointer-events:none';
+ const host=cv.parentNode;if(getComputedStyle(host).position==='static')host.style.position='relative';host.appendChild(v);E.vid=v;E.vt=0;
+ const end=()=>{if(E.vid!==v)return;E.vid=null;v.remove();if(EVO===E)E.t=199};v.onended=end;v.onerror=end;E.vend=end;
+ const p=v.play();if(p&&p.catch)p.catch(end)}
 const EVOS={};function evoSil(id){const im=ARTI[D[id].name];if(!okI(im))return null;if(EVOS[id])return EVOS[id];const c=document.createElement('canvas');c.width=im.naturalWidth;c.height=im.naturalHeight;
  const g=c.getContext('2d');g.drawImage(im,0,0);g.globalCompositeOperation='source-in';g.fillStyle='#f4fbff';g.fillRect(0,0,c.width,c.height);return EVOS[id]=c}
 function evoTone(f,d){try{if(typeof AC!=='undefined'&&AC&&typeof chipTone==='function')chipTone(AC.currentTime,f,d,0.18,'square')}catch(e){}}
-function drawEvo(){const E=EVO,t=++E.t,cx=80,cy=62,s=4.2,z=16*s*1.15;
+function drawEvo(){const E=EVO;if(E.vid){E.vt++;ctx.fillStyle='#0b0716';ctx.fillRect(0,0,160,144);if(E.vt>40&&(P_('a')||P_('b')))E.vend();else if(E.vt>900)E.vend();return}
+ const t=++E.t,cx=80,cy=62,s=4.2,z=16*s*1.15;
  const bg=ctx.createRadialGradient(cx,cy,4,cx,cy,110);bg.addColorStop(0,t>200?'#3b6a8a':'#2a1d4a');bg.addColorStop(1,'#0b0716');ctx.fillStyle=bg;ctx.fillRect(0,0,160,144);
  for(let i=0;i<14;i++){const a=i/14*Math.PI*2+t*0.01,r=40+((t*0.6+i*23)%50);ctx.fillStyle='rgba(160,230,255,'+(0.15+0.2*Math.sin(t*0.1+i))+')';ctx.fillRect(cx+Math.cos(a)*r,cy+Math.sin(a)*r*0.8,1,1)}
  const pulse=1+Math.sin(t*0.15)*0.03;
