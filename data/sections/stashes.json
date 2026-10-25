@@ -532,8 +532,8 @@
    "section": "446",
    "name": "Mesa Junction",
    "tile": [
-    20,
-    13
+    18,
+    9
    ],
    "item": "stasis",
    "n": 3,
@@ -543,8 +543,8 @@
    "section": "446",
    "name": "Mesa Junction",
    "tile": [
-    1,
-    3
+    21,
+    12
    ],
    "item": "tether",
    "n": 1,
@@ -2322,7 +2322,7 @@
    "section": "896",
    "name": "Canal Islands",
    "tile": [
-    8,
+    5,
     12
    ],
    "item": "dust",
@@ -2333,8 +2333,8 @@
    "section": "896",
    "name": "Canal Islands",
    "tile": [
-    17,
-    4
+    21,
+    3
    ],
    "item": "harmonic",
    "n": 3,
@@ -2344,8 +2344,8 @@
    "section": "895",
    "name": "Canal Basin",
    "tile": [
-    8,
-    3
+    18,
+    2
    ],
    "item": "revive",
    "n": 2,
@@ -2355,8 +2355,8 @@
    "section": "895",
    "name": "Canal Basin",
    "tile": [
-    6,
-    12
+    13,
+    13
    ],
    "item": "harmonic",
    "n": 3,
@@ -3280,6 +3280,50 @@
    "tier": 4
   },
   {
+   "section": "897",
+   "name": "Lava Sea",
+   "tile": [
+    19,
+    3
+   ],
+   "item": "harmonic",
+   "n": 5,
+   "tier": 4
+  },
+  {
+   "section": "897",
+   "name": "Lava Sea",
+   "tile": [
+    3,
+    5
+   ],
+   "item": "revive",
+   "n": 2,
+   "tier": 4
+  },
+  {
+   "section": "898",
+   "name": "Lava Islands",
+   "tile": [
+    4,
+    3
+   ],
+   "item": "revive",
+   "n": 2,
+   "tier": 4
+  },
+  {
+   "section": "898",
+   "name": "Lava Islands",
+   "tile": [
+    22,
+    10
+   ],
+   "item": "megagel",
+   "n": 3,
+   "tier": 4
+  },
+  {
    "section": "929",
    "name": "Obsidian Glass Fields",
    "tile": [
@@ -3736,8 +3780,41 @@
    "section": "883",
    "name": "Fjord Islands",
    "tile": [
-    1,
-    3
+    13,
+    11
+   ],
+   "item": "revive",
+   "n": 2,
+   "tier": 4
+  },
+  {
+   "section": "883",
+   "name": "Fjord Islands",
+   "tile": [
+    16,
+    12
+   ],
+   "item": "fullgel",
+   "n": 1,
+   "tier": 4
+  },
+  {
+   "section": "882",
+   "name": "Icy Fjord",
+   "tile": [
+    5,
+    4
+   ],
+   "item": "dust",
+   "n": 800,
+   "tier": 4
+  },
+  {
+   "section": "882",
+   "name": "Icy Fjord",
+   "tile": [
+    21,
+    9
    ],
    "item": "revive",
    "n": 2,
@@ -4136,6 +4213,28 @@
    "tile": [
     12,
     9
+   ],
+   "item": "maxrevive",
+   "n": 1,
+   "tier": 5
+  },
+  {
+   "section": "894",
+   "name": "Hydro Tank Islands",
+   "tile": [
+    13,
+    11
+   ],
+   "item": "maxrevive",
+   "n": 1,
+   "tier": 5
+  },
+  {
+   "section": "894",
+   "name": "Hydro Tank Islands",
+   "tile": [
+    7,
+    3
    ],
    "item": "maxrevive",
    "n": 1,
@@ -4565,8 +4664,8 @@
    "section": "891",
    "name": "Cloud Lagoon",
    "tile": [
-    10,
-    7
+    11,
+    12
    ],
    "item": "fullgel",
    "n": 2,
@@ -4576,33 +4675,11 @@
    "section": "891",
    "name": "Cloud Lagoon",
    "tile": [
-    15,
+    11,
     7
    ],
    "item": "singularity",
    "n": 1,
-   "tier": 5
-  },
-  {
-   "section": "892",
-   "name": "Lagoon Islands",
-   "tile": [
-    6,
-    3
-   ],
-   "item": "ether",
-   "n": 3,
-   "tier": 5
-  },
-  {
-   "section": "892",
-   "name": "Lagoon Islands",
-   "tile": [
-    17,
-    3
-   ],
-   "item": "dust",
-   "n": 1200,
    "tier": 5
   },
   {
@@ -5097,6 +5174,50 @@
    "tile": [
     21,
     10
+   ],
+   "item": "dust",
+   "n": 1600,
+   "tier": 6
+  },
+  {
+   "section": "907",
+   "name": "Mirror Lake Islands",
+   "tile": [
+    18,
+    2
+   ],
+   "item": "dust",
+   "n": 1600,
+   "tier": 6
+  },
+  {
+   "section": "907",
+   "name": "Mirror Lake Islands",
+   "tile": [
+    5,
+    11
+   ],
+   "item": "maxrevive",
+   "n": 1,
+   "tier": 6
+  },
+  {
+   "section": "906",
+   "name": "Mirror Lake",
+   "tile": [
+    16,
+    10
+   ],
+   "item": "ether",
+   "n": 3,
+   "tier": 6
+  },
+  {
+   "section": "906",
+   "name": "Mirror Lake",
+   "tile": [
+    12,
+    7
    ],
    "item": "dust",
    "n": 1600,
@@ -5600,6 +5721,28 @@
    "tier": 6
   },
   {
+   "section": "903",
+   "name": "Crater Lake",
+   "tile": [
+    3,
+    7
+   ],
+   "item": "fullgel",
+   "n": 3,
+   "tier": 6
+  },
+  {
+   "section": "903",
+   "name": "Crater Lake",
+   "tile": [
+    9,
+    3
+   ],
+   "item": "fullgel",
+   "n": 3,
+   "tier": 6
+  },
+  {
    "section": "901",
    "name": "Crater Field Station",
    "tile": [
@@ -5607,6 +5750,28 @@
     6
    ],
    "item": "maxrevive",
+   "n": 1,
+   "tier": 6
+  },
+  {
+   "section": "904",
+   "name": "Crater Lake Islands",
+   "tile": [
+    7,
+    10
+   ],
+   "item": "ether",
+   "n": 3,
+   "tier": 6
+  },
+  {
+   "section": "904",
+   "name": "Crater Lake Islands",
+   "tile": [
+    16,
+    12
+   ],
+   "item": "singularity",
    "n": 1,
    "tier": 6
   },
@@ -6608,8 +6773,8 @@
    "section": "913",
    "name": "Crystal Lake",
    "tile": [
-    5,
-    3
+    21,
+    9
    ],
    "item": "dust",
    "n": 2500,
@@ -6624,6 +6789,28 @@
    ],
    "item": "maxrevive",
    "n": 2,
+   "tier": 7
+  },
+  {
+   "section": "914",
+   "name": "Crystal Lake Islands",
+   "tile": [
+    21,
+    9
+   ],
+   "item": "ether",
+   "n": 5,
+   "tier": 7
+  },
+  {
+   "section": "914",
+   "name": "Crystal Lake Islands",
+   "tile": [
+    19,
+    2
+   ],
+   "item": "fullgel",
+   "n": 3,
    "tier": 7
   },
   {

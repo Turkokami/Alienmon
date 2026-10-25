@@ -11466,11 +11466,13 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "top edge, tile columns 1–2 → Static Canal"
+    "top edge, tile columns 1–2 → Static Canal",
+    "left edge, tile rows 7–7 → Canal Basin"
    ],
    "v3": true,
    "kit": "896",
-   "file": "art/sections/05_neonis/896_canal_islands.png"
+   "file": "art/sections/05_neonis/896_canal_islands.png",
+   "notes": "lake re-render (owner art 896_canal_islands.png)"
   },
   {
    "id": "895",
@@ -11488,11 +11490,13 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "top edge, tile columns 1–2 → Neon Megadome"
+    "top edge, tile columns 1–2 → Neon Megadome",
+    "right edge, tile rows 6–8 → Canal Islands"
    ],
    "v3": true,
    "kit": "895",
-   "file": "art/sections/05_neonis/895_canal_basin.png"
+   "file": "art/sections/05_neonis/895_canal_basin.png",
+   "notes": "lake re-render (owner art 895_canal_basin.png)"
   },
   {
    "id": "886",
@@ -11614,11 +11618,13 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "top edge, tile columns 1–1 → Magma Pit Arena"
+    "top edge, tile columns 2–2 → Magma Pit Arena",
+    "bottom edge, tile columns 10–12 → Lava Islands"
    ],
    "v3": true,
    "kit": "897",
-   "file": "art/sections/07_pyros/897_lava_sea.png"
+   "file": "art/sections/07_pyros/897_lava_sea.png",
+   "notes": "lake re-render (owner art 897_lava_sea.png)"
   },
   {
    "id": "898",
@@ -11636,11 +11642,13 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "right edge, tile rows 5–9 → Mine Junction"
+    "top edge, tile columns 11–12 → Lava Sea",
+    "right edge, tile rows 9–10 → Mine Junction"
    ],
    "v3": true,
    "kit": "898",
-   "file": "art/sections/07_pyros/898_lava_islands.png"
+   "file": "art/sections/07_pyros/898_lava_islands.png",
+   "notes": "lake re-render (owner art 898_lava_islands.png)"
   },
   {
    "id": "883",
@@ -11658,11 +11666,13 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 1–9 → Crevasse Hollows"
+    "left edge, tile rows 1–10 → Crevasse Hollows",
+    "top edge, tile columns 11–12 → Icy Fjord"
    ],
    "v3": true,
    "kit": "883",
-   "file": "art/sections/08_glacia/883_fjord_islands.png"
+   "file": "art/sections/08_glacia/883_fjord_islands.png",
+   "notes": "lake re-render (owner art 883_fjord_islands.png)"
   },
   {
    "id": "882",
@@ -11680,11 +11690,13 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "top edge, tile columns 1–1 → Glacier Rink Arena"
+    "top edge, tile columns 1–1 → Glacier Rink Arena",
+    "bottom edge, tile columns 11–12 → Fjord Islands"
    ],
    "v3": true,
    "kit": "882",
-   "file": "art/sections/08_glacia/882_icy_fjord.png"
+   "file": "art/sections/08_glacia/882_icy_fjord.png",
+   "notes": "lake re-render (owner art 882_icy_fjord.png)"
   },
   {
    "id": "894",
@@ -11702,11 +11714,13 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "top edge, tile columns 1–1 → Viewport Overlook"
+    "top edge, tile columns 1–1 → Viewport Overlook",
+    "left edge, tile rows 5–8 → Hydro Tank"
    ],
    "v3": true,
    "kit": "894",
-   "file": "art/sections/09_helix/894_hydro_tank_islands.png"
+   "file": "art/sections/09_helix/894_hydro_tank_islands.png",
+   "notes": "lake re-render (owner art 894_hydro_tank_islands.png)"
   },
   {
    "id": "893",
@@ -11724,11 +11738,13 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "top edge, tile columns 1–1 → Helix Proving Grounds"
+    "top edge, tile columns 1–2 → Helix Proving Grounds",
+    "right edge, tile rows 6–8 → Hydro Tank Islands"
    ],
    "v3": true,
    "kit": "893",
-   "file": "art/sections/09_helix/893_hydro_tank.png"
+   "file": "art/sections/09_helix/893_hydro_tank.png",
+   "notes": "lake re-render (owner art 893_hydro_tank.png)"
   },
   {
    "id": "889",
@@ -11768,12 +11784,13 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "top edge, tile columns 1–1 → Sky Colosseum",
-    "bottom edge, tile columns 2–3 → Lagoon Islands"
+    "top edge, tile columns 1–2 → Sky Colosseum",
+    "bottom edge, tile columns 10–10 → Lagoon Islands"
    ],
    "v3": true,
    "kit": "891",
-   "file": "art/sections/10_halo/891_cloud_lagoon.png"
+   "file": "art/sections/10_halo/891_cloud_lagoon.png",
+   "notes": "lake re-render (owner art 891_cloud_lagoon.png)"
   },
   {
    "id": "890",
@@ -11811,11 +11828,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "top edge, tile columns 1–2 → Cloud Lagoon"
+    "top edge, tile columns 2–2 → Cloud Lagoon"
    ],
    "v3": true,
    "kit": "892",
-   "file": "art/sections/10_halo/892_lagoon_islands.png"
+   "file": "art/sections/10_halo/892_lagoon_islands.png",
+   "notes": "lake re-render (owner art 892_lagoon_islands.png)"
   },
   {
    "id": "907",
@@ -11833,11 +11851,13 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 4–11 → Lantern Crossroads"
+    "left edge, tile rows 5–5 → Lantern Crossroads",
+    "top edge, tile columns 11–12 → Mirror Lake"
    ],
    "v3": true,
    "kit": "907",
-   "file": "art/sections/11_umbra/907_mirror_lake_islands.png"
+   "file": "art/sections/11_umbra/907_mirror_lake_islands.png",
+   "notes": "lake re-render (owner art 907_mirror_lake_islands.png)"
   },
   {
    "id": "906",
@@ -11855,11 +11875,13 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 1–2 → Gravewell Lane Homes"
+    "bottom edge, tile columns 1–2 → Gravewell Lane Homes",
+    "top edge, tile columns 12–13 → Mirror Lake Islands"
    ],
    "v3": true,
    "kit": "906",
-   "file": "art/sections/11_umbra/906_mirror_lake.png"
+   "file": "art/sections/11_umbra/906_mirror_lake.png",
+   "notes": "lake re-render (owner art 906_mirror_lake.png)"
   },
   {
    "id": "905",
@@ -11919,11 +11941,13 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "top edge, tile columns 1–1 → Rift Crater Arena"
+    "top edge, tile columns 1–1 → Rift Crater Arena",
+    "right edge, tile rows 4–5 → Crater Lake Islands"
    ],
    "v3": true,
    "kit": "903",
-   "file": "art/sections/12_starfall/903_crater_lake.png"
+   "file": "art/sections/12_starfall/903_crater_lake.png",
+   "notes": "lake re-render (owner art 903_crater_lake.png)"
   },
   {
    "id": "901",
@@ -11963,11 +11987,13 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "top edge, tile columns 1–2 → Seedpod Hollows"
+    "top edge, tile columns 1–2 → Seedpod Hollows",
+    "top edge, tile columns 20–21 → Crater Lake"
    ],
    "v3": true,
    "kit": "904",
-   "file": "art/sections/12_starfall/904_crater_lake_islands.png"
+   "file": "art/sections/12_starfall/904_crater_lake_islands.png",
+   "notes": "lake re-render (owner art 904_crater_lake_islands.png)"
   },
   {
    "id": "911",
@@ -12027,11 +12053,13 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "top edge, tile columns 1–2 → Ancient Crystal Ring"
+    "top edge, tile columns 1–2 → Ancient Crystal Ring",
+    "bottom edge, tile columns 2–2 → Crystal Lake Islands"
    ],
    "v3": true,
    "kit": "913",
-   "file": "art/sections/14_ystra/913_crystal_lake.png"
+   "file": "art/sections/14_ystra/913_crystal_lake.png",
+   "notes": "lake re-render (owner art 913_crystal_lake.png)"
   },
   {
    "id": "912",
@@ -12069,11 +12097,13 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "top edge, tile columns 1–2 → Shard Slope"
+    "top edge, tile columns 1–1 → Shard Slope",
+    "left edge, tile rows 6–7 → Crystal Lake"
    ],
    "v3": true,
    "kit": "914",
-   "file": "art/sections/14_ystra/914_crystal_lake_islands.png"
+   "file": "art/sections/14_ystra/914_crystal_lake_islands.png",
+   "notes": "lake re-render (owner art 914_crystal_lake_islands.png)"
   },
   {
    "id": "910",
@@ -12219,11 +12249,12 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "right edge, tile rows 10–11 → Mesa Junction"
+    "right edge, tile rows 7–7 → Mesa Junction"
    ],
    "v3": true,
    "kit": "879",
-   "file": "art/sections/01_dustara/879_oasis_islands.png"
+   "file": "art/sections/01_dustara/879_oasis_islands.png",
+   "notes": "lake re-render (owner art 879_oasis_islands.png)"
   },
   {
    "id": "876",

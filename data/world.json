@@ -26996,7 +26996,7 @@
      "to": "879",
      "at": [
       22,
-      10
+      7
      ],
      "face": "left",
      "kind": "edge",
@@ -27010,7 +27010,7 @@
      "to": "879",
      "at": [
       22,
-      10
+      7
      ],
      "face": "left",
      "kind": "edge",
@@ -27024,7 +27024,7 @@
      "to": "879",
      "at": [
       22,
-      10
+      7
      ],
      "face": "left",
      "kind": "edge",
@@ -27038,7 +27038,7 @@
      "to": "879",
      "at": [
       22,
-      10
+      7
      ],
      "face": "left",
      "kind": "edge",
@@ -27052,7 +27052,7 @@
      "to": "879",
      "at": [
       22,
-      10
+      7
      ],
      "face": "left",
      "kind": "edge",
@@ -27066,7 +27066,7 @@
      "to": "879",
      "at": [
       22,
-      11
+      7
      ],
      "face": "left",
      "kind": "edge",
@@ -27080,7 +27080,7 @@
      "to": "879",
      "at": [
       22,
-      11
+      7
      ],
      "face": "left",
      "kind": "edge",
@@ -27094,7 +27094,7 @@
      "to": "879",
      "at": [
       22,
-      11
+      7
      ],
      "face": "left",
      "kind": "edge",
@@ -27108,7 +27108,7 @@
      "to": "879",
      "at": [
       22,
-      11
+      7
      ],
      "face": "left",
      "kind": "edge",
@@ -27118,8 +27118,8 @@
    "objects": [
     {
      "tile": [
-      20,
-      13
+      18,
+      9
      ],
      "k": "stash",
      "item": "stasis",
@@ -27128,8 +27128,8 @@
     },
     {
      "tile": [
-      1,
-      3
+      21,
+      12
      ],
      "k": "stash",
      "item": "tether",
@@ -27163,8 +27163,8 @@
      }
     },
     {
-     "x": 17,
-     "y": 10,
+     "x": 19,
+     "y": 12,
      "art": "explorer",
      "face": "right",
      "t": [],
@@ -27183,8 +27183,8 @@
      "mon": "Fizzlord"
     },
     {
-     "x": 19,
-     "y": 11,
+     "x": 20,
+     "y": 8,
      "mon": "Skitterdrone"
     }
    ]
@@ -41379,17 +41379,80 @@
       9
      ],
      "offset": 5
-    },
-    "left": {
-     "to": "898",
-     "range": [
-      7,
-      11
-     ],
-     "offset": -2
     }
    },
-   "warps": [],
+   "warps": [
+    {
+     "tile": [
+      0,
+      7
+     ],
+     "to": "898",
+     "at": [
+      22,
+      9
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      8
+     ],
+     "to": "898",
+     "at": [
+      22,
+      9
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      9
+     ],
+     "to": "898",
+     "at": [
+      22,
+      9
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      10
+     ],
+     "to": "898",
+     "at": [
+      22,
+      10
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      11
+     ],
+     "to": "898",
+     "at": [
+      22,
+      10
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
+    }
+   ],
    "objects": [
     {
      "tile": [
@@ -42530,7 +42593,7 @@
      ],
      "to": "897",
      "at": [
-      1,
+      2,
       1
      ],
      "face": "down",
@@ -42544,7 +42607,7 @@
      ],
      "to": "897",
      "at": [
-      1,
+      2,
       1
      ],
      "face": "down",
@@ -42558,7 +42621,7 @@
      ],
      "to": "897",
      "at": [
-      1,
+      2,
       1
      ],
      "face": "down",
@@ -42572,7 +42635,7 @@
      ],
      "to": "897",
      "at": [
-      1,
+      2,
       1
      ],
      "face": "down",
@@ -42586,7 +42649,7 @@
      ],
      "to": "897",
      "at": [
-      1,
+      2,
       1
      ],
      "face": "down",
@@ -42600,7 +42663,7 @@
      ],
      "to": "897",
      "at": [
-      1,
+      2,
       1
      ],
      "face": "down",
@@ -44769,8 +44832,8 @@
      ],
      "to": "883",
      "at": [
-      1,
-      4
+      0,
+      5
      ],
      "face": "right",
      "kind": "edge",
@@ -44783,7 +44846,7 @@
      ],
      "to": "883",
      "at": [
-      1,
+      0,
       6
      ],
      "face": "right",
@@ -44797,8 +44860,8 @@
      ],
      "to": "883",
      "at": [
-      1,
-      7
+      0,
+      8
      ],
      "face": "right",
      "kind": "edge",
@@ -44811,8 +44874,8 @@
      ],
      "to": "883",
      "at": [
-      1,
-      9
+      0,
+      10
      ],
      "face": "right",
      "kind": "edge",
@@ -48660,7 +48723,7 @@
      ],
      "to": "893",
      "at": [
-      1,
+      2,
       1
      ],
      "face": "down",
@@ -48674,7 +48737,7 @@
      ],
      "to": "893",
      "at": [
-      1,
+      2,
       1
      ],
      "face": "down",
@@ -50894,7 +50957,7 @@
      ],
      "to": "891",
      "at": [
-      1,
+      2,
       1
      ],
      "face": "down",
@@ -50908,7 +50971,7 @@
      ],
      "to": "891",
      "at": [
-      1,
+      2,
       1
      ],
      "face": "down",
@@ -56799,7 +56862,7 @@
      ],
      "to": "914",
      "at": [
-      2,
+      1,
       1
      ],
      "face": "down",
@@ -56813,7 +56876,7 @@
      ],
      "to": "914",
      "at": [
-      2,
+      1,
       1
      ],
      "face": "down",
@@ -56827,7 +56890,7 @@
      ],
      "to": "914",
      "at": [
-      2,
+      1,
       1
      ],
      "face": "down",
@@ -59701,7 +59764,7 @@
      "to": "907",
      "at": [
       1,
-      4
+      5
      ],
      "face": "right",
      "kind": "edge",
@@ -59715,7 +59778,7 @@
      "to": "907",
      "at": [
       1,
-      6
+      5
      ],
      "face": "right",
      "kind": "edge",
@@ -59729,7 +59792,7 @@
      "to": "907",
      "at": [
       1,
-      9
+      5
      ],
      "face": "right",
      "kind": "edge",
@@ -59743,7 +59806,7 @@
      "to": "907",
      "at": [
       1,
-      11
+      5
      ],
      "face": "right",
      "kind": "edge",
@@ -65667,7 +65730,7 @@
     24,
     16
    ],
-   "notes": "",
+   "notes": "lake re-render (owner art 896_canal_islands.png)",
    "edges": {},
    "warps": [
     {
@@ -65697,12 +65760,26 @@
      "face": "up",
      "kind": "edge",
      "edge": "top"
+    },
+    {
+     "tile": [
+      0,
+      7
+     ],
+     "to": "895",
+     "at": [
+      22,
+      6
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "left"
     }
    ],
    "objects": [
     {
      "tile": [
-      8,
+      5,
       12
      ],
      "k": "stash",
@@ -65712,8 +65789,8 @@
     },
     {
      "tile": [
-      17,
-      4
+      21,
+      3
      ],
      "k": "stash",
      "item": "harmonic",
@@ -65734,7 +65811,7 @@
    "pkey": "neonis",
    "npcs": [
     {
-     "x": 12,
+     "x": 5,
      "y": 6,
      "art": "explorer",
      "face": "down",
@@ -65747,10 +65824,10 @@
      }
     },
     {
-     "x": 20,
-     "y": 4,
+     "x": 15,
+     "y": 3,
      "art": "civilian",
-     "face": "left",
+     "face": "down",
      "t": [],
      "id": "sec896_tr1",
      "trainer": {
@@ -65762,13 +65839,13 @@
    ],
    "mons": [
     {
-     "x": 6,
-     "y": 3,
+     "x": 13,
+     "y": 12,
      "mon": "Filamaw"
     },
     {
-     "x": 6,
-     "y": 12,
+     "x": 17,
+     "y": 11,
      "mon": "Arclume"
     }
    ]
@@ -65784,7 +65861,7 @@
     24,
     16
    ],
-   "notes": "",
+   "notes": "lake re-render (owner art 895_canal_basin.png)",
    "edges": {},
    "warps": [
     {
@@ -65814,13 +65891,55 @@
      "face": "up",
      "kind": "edge",
      "edge": "top"
+    },
+    {
+     "tile": [
+      23,
+      6
+     ],
+     "to": "896",
+     "at": [
+      1,
+      7
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      7
+     ],
+     "to": "896",
+     "at": [
+      1,
+      7
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      8
+     ],
+     "to": "896",
+     "at": [
+      1,
+      7
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "right"
     }
    ],
    "objects": [
     {
      "tile": [
-      8,
-      3
+      18,
+      2
      ],
      "k": "stash",
      "item": "revive",
@@ -65829,8 +65948,8 @@
     },
     {
      "tile": [
-      6,
-      12
+      13,
+      13
      ],
      "k": "stash",
      "item": "harmonic",
@@ -65851,8 +65970,8 @@
    "pkey": "neonis",
    "npcs": [
     {
-     "x": 2,
-     "y": 4,
+     "x": 5,
+     "y": 9,
      "art": "neonis_folk4",
      "face": "down",
      "t": [
@@ -65862,8 +65981,8 @@
      "src": "n:895:0"
     },
     {
-     "x": 2,
-     "y": 12,
+     "x": 13,
+     "y": 11,
      "art": "technician",
      "face": "left",
      "t": [],
@@ -65875,10 +65994,10 @@
      }
     },
     {
-     "x": 2,
+     "x": 20,
      "y": 2,
      "art": "explorer",
-     "face": "left",
+     "face": "down",
      "t": [],
      "id": "sec895_tr2",
      "trainer": {
@@ -65890,13 +66009,13 @@
    ],
    "mons": [
     {
-     "x": 6,
-     "y": 3,
+     "x": 20,
+     "y": 4,
      "mon": "Amplion"
     },
     {
-     "x": 8,
-     "y": 12,
+     "x": 16,
+     "y": 2,
      "mon": "Transmitron"
     }
    ]
@@ -66440,12 +66559,21 @@
     24,
     16
    ],
-   "notes": "",
-   "edges": {},
+   "notes": "lake re-render (owner art 897_lava_sea.png)",
+   "edges": {
+    "bottom": {
+     "to": "898",
+     "range": [
+      10,
+      12
+     ],
+     "offset": 1
+    }
+   },
    "warps": [
     {
      "tile": [
-      1,
+      2,
       0
      ],
      "to": "668",
@@ -66458,11 +66586,32 @@
      "edge": "top"
     }
    ],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      19,
+      3
+     ],
+     "k": "stash",
+     "item": "harmonic",
+     "n": 5,
+     "tier": 4
+    },
+    {
+     "tile": [
+      3,
+      5
+     ],
+     "k": "stash",
+     "item": "revive",
+     "n": 2,
+     "tier": 4
+    }
+   ],
    "spawns": {
     "default": [
-     1,
-     1
+     10,
+     14
     ]
    },
    "grid": [
@@ -66472,8 +66621,8 @@
    "pkey": "pyros",
    "npcs": [
     {
-     "x": 2,
-     "y": 1,
+     "x": 3,
+     "y": 8,
      "art": "pyros_folk2",
      "face": "down",
      "t": [
@@ -66481,9 +66630,46 @@
      ],
      "name": "Heat suit tester",
      "src": "n:897:0"
+    },
+    {
+     "x": 16,
+     "y": 3,
+     "art": "miner",
+     "face": "right",
+     "t": [],
+     "id": "sec897_tr1",
+     "trainer": {
+      "cls": "Miner",
+      "route": 1,
+      "name": "Rook"
+     }
+    },
+    {
+     "x": 5,
+     "y": 4,
+     "art": "technician",
+     "face": "left",
+     "t": [],
+     "id": "sec897_tr2",
+     "trainer": {
+      "cls": "Smith",
+      "route": 1,
+      "name": "Fenn"
+     }
     }
    ],
-   "mons": []
+   "mons": [
+    {
+     "x": 5,
+     "y": 6,
+     "mon": "Obsidrake"
+    },
+    {
+     "x": 6,
+     "y": 9,
+     "mon": "Blazewing"
+    }
+   ]
   },
   "898": {
    "id": "898",
@@ -66496,32 +66682,120 @@
     24,
     16
    ],
-   "notes": "",
+   "notes": "lake re-render (owner art 898_lava_islands.png)",
    "edges": {
-    "right": {
-     "to": "678",
+    "top": {
+     "to": "897",
      "range": [
-      5,
-      9
+      11,
+      12
      ],
-     "offset": 2
+     "offset": -1
     }
    },
-   "warps": [],
-   "objects": [],
+   "warps": [
+    {
+     "tile": [
+      23,
+      9
+     ],
+     "to": "678",
+     "at": [
+      1,
+      7
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      10
+     ],
+     "to": "678",
+     "at": [
+      1,
+      11
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "right"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      4,
+      3
+     ],
+     "k": "stash",
+     "item": "revive",
+     "n": 2,
+     "tier": 4
+    },
+    {
+     "tile": [
+      22,
+      10
+     ],
+     "k": "stash",
+     "item": "megagel",
+     "n": 3,
+     "tier": 4
+    }
+   ],
    "spawns": {
     "default": [
-     22,
-     5
+     11,
+     1
     ]
    },
    "grid": [
-    23,
-    16
+    -1,
+    85
    ],
    "pkey": "pyros",
-   "npcs": [],
-   "mons": []
+   "npcs": [
+    {
+     "x": 9,
+     "y": 9,
+     "art": "technician",
+     "face": "right",
+     "t": [],
+     "id": "sec898_tr0",
+     "trainer": {
+      "cls": "Smith",
+      "route": 1,
+      "name": "Quill"
+     }
+    },
+    {
+     "x": 4,
+     "y": 6,
+     "art": "wanderer",
+     "face": "down",
+     "t": [],
+     "id": "sec898_tr1",
+     "trainer": {
+      "cls": "Ash Walker",
+      "route": 1,
+      "name": "Suri"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 19,
+     "y": 3,
+     "mon": "Cinderhound"
+    },
+    {
+     "x": 20,
+     "y": 10,
+     "mon": "Pyroclast"
+    }
+   ]
   },
   "883": {
    "id": "883",
@@ -66534,8 +66808,17 @@
     24,
     16
    ],
-   "notes": "",
-   "edges": {},
+   "notes": "lake re-render (owner art 883_fjord_islands.png)",
+   "edges": {
+    "top": {
+     "to": "882",
+     "range": [
+      11,
+      12
+     ],
+     "offset": 0
+    }
+   },
    "warps": [
     {
      "tile": [
@@ -66628,7 +66911,7 @@
      ],
      "to": "524",
      "at": [
-      20,
+      19,
       14
      ],
      "face": "up",
@@ -66656,6 +66939,20 @@
      ],
      "to": "524",
      "at": [
+      20,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      10
+     ],
+     "to": "524",
+     "at": [
       21,
       14
      ],
@@ -66667,18 +66964,28 @@
    "objects": [
     {
      "tile": [
-      1,
-      3
+      13,
+      11
      ],
      "k": "stash",
      "item": "revive",
      "n": 2,
      "tier": 4
+    },
+    {
+     "tile": [
+      16,
+      12
+     ],
+     "k": "stash",
+     "item": "fullgel",
+     "n": 1,
+     "tier": 4
     }
    ],
    "spawns": {
     "default": [
-     1,
+     11,
      1
     ]
    },
@@ -66687,8 +66994,46 @@
     84
    ],
    "pkey": "glacia",
-   "npcs": [],
-   "mons": []
+   "npcs": [
+    {
+     "x": 18,
+     "y": 11,
+     "art": "explorer",
+     "face": "left",
+     "t": [],
+     "id": "sec883_tr0",
+     "trainer": {
+      "cls": "Climber",
+      "route": 1,
+      "name": "Corin"
+     }
+    },
+    {
+     "x": 20,
+     "y": 6,
+     "art": "technician",
+     "face": "left",
+     "t": [],
+     "id": "sec883_tr1",
+     "trainer": {
+      "cls": "Radio Tech",
+      "route": 1,
+      "name": "Dex"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 11,
+     "y": 3,
+     "mon": "Floelord"
+    },
+    {
+     "x": 5,
+     "y": 11,
+     "mon": "Borealix"
+    }
+   ]
   },
   "882": {
    "id": "882",
@@ -66701,8 +67046,17 @@
     24,
     16
    ],
-   "notes": "",
-   "edges": {},
+   "notes": "lake re-render (owner art 882_icy_fjord.png)",
+   "edges": {
+    "bottom": {
+     "to": "883",
+     "range": [
+      11,
+      12
+     ],
+     "offset": 0
+    }
+   },
    "warps": [
     {
      "tile": [
@@ -66719,22 +67073,43 @@
      "edge": "top"
     }
    ],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      5,
+      4
+     ],
+     "k": "stash",
+     "item": "dust",
+     "n": 800,
+     "tier": 4
+    },
+    {
+     "tile": [
+      21,
+      9
+     ],
+     "k": "stash",
+     "item": "revive",
+     "n": 2,
+     "tier": 4
+    }
+   ],
    "spawns": {
     "default": [
-     1,
-     1
+     11,
+     14
     ]
    },
    "grid": [
     0,
-    104
+    68
    ],
    "pkey": "glacia",
    "npcs": [
     {
-     "x": 1,
-     "y": 14,
+     "x": 19,
+     "y": 9,
      "art": "glacia_folk3",
      "face": "down",
      "t": [
@@ -66742,9 +67117,46 @@
      ],
      "name": "Fjord guide",
      "src": "n:882:0"
+    },
+    {
+     "x": 15,
+     "y": 3,
+     "art": "researcher",
+     "face": "down",
+     "t": [],
+     "id": "sec882_tr1",
+     "trainer": {
+      "cls": "Researcher",
+      "route": 1,
+      "name": "Yuki"
+     }
+    },
+    {
+     "x": 18,
+     "y": 12,
+     "art": "explorer",
+     "face": "left",
+     "t": [],
+     "id": "sec882_tr2",
+     "trainer": {
+      "cls": "Climber",
+      "route": 1,
+      "name": "Wren"
+     }
     }
    ],
-   "mons": []
+   "mons": [
+    {
+     "x": 3,
+     "y": 4,
+     "mon": "Iceburr"
+    },
+    {
+     "x": 21,
+     "y": 5,
+     "mon": "Glaciarch"
+    }
+   ]
   },
   "894": {
    "id": "894",
@@ -66757,8 +67169,17 @@
     24,
     16
    ],
-   "notes": "",
-   "edges": {},
+   "notes": "lake re-render (owner art 894_hydro_tank_islands.png)",
+   "edges": {
+    "left": {
+     "to": "893",
+     "range": [
+      5,
+      8
+     ],
+     "offset": 1
+    }
+   },
    "warps": [
     {
      "tile": [
@@ -66775,11 +67196,32 @@
      "edge": "top"
     }
    ],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      13,
+      11
+     ],
+     "k": "stash",
+     "item": "maxrevive",
+     "n": 1,
+     "tier": 5
+    },
+    {
+     "tile": [
+      7,
+      3
+     ],
+     "k": "stash",
+     "item": "maxrevive",
+     "n": 1,
+     "tier": 5
+    }
+   ],
    "spawns": {
     "default": [
      1,
-     1
+     5
     ]
    },
    "grid": [
@@ -66787,8 +67229,46 @@
     97
    ],
    "pkey": "helix",
-   "npcs": [],
-   "mons": []
+   "npcs": [
+    {
+     "x": 5,
+     "y": 4,
+     "art": "strand",
+     "face": "down",
+     "t": [],
+     "id": "sec894_tr0",
+     "trainer": {
+      "cls": "Helix Grunt",
+      "route": 1,
+      "name": "Ines"
+     }
+    },
+    {
+     "x": 19,
+     "y": 11,
+     "art": "researcher",
+     "face": "left",
+     "t": [],
+     "id": "sec894_tr1",
+     "trainer": {
+      "cls": "Scientist",
+      "route": 1,
+      "name": "Mara"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 17,
+     "y": 11,
+     "mon": "Nulltron"
+    },
+    {
+     "x": 15,
+     "y": 11,
+     "mon": "Chimerax"
+    }
+   ]
   },
   "893": {
    "id": "893",
@@ -66801,8 +67281,17 @@
     24,
     16
    ],
-   "notes": "",
-   "edges": {},
+   "notes": "lake re-render (owner art 893_hydro_tank.png)",
+   "edges": {
+    "right": {
+     "to": "894",
+     "range": [
+      6,
+      8
+     ],
+     "offset": -1
+    }
+   },
    "warps": [
     {
      "tile": [
@@ -66817,33 +67306,35 @@
      "face": "up",
      "kind": "edge",
      "edge": "top"
+    },
+    {
+     "tile": [
+      2,
+      0
+     ],
+     "to": "605",
+     "at": [
+      13,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
     }
    ],
    "objects": [],
    "spawns": {
     "default": [
-     1,
-     1
+     22,
+     6
     ]
    },
    "grid": [
-    0,
-    117
+    -24,
+    96
    ],
    "pkey": "helix",
-   "npcs": [
-    {
-     "x": 3,
-     "y": 5,
-     "art": "helix_folk4",
-     "face": "down",
-     "t": [
-      "Tank tech: This hydro tank used to cool the whole station. Now it's full of water Alienmon!"
-     ],
-     "name": "Tank tech",
-     "src": "n:893:0"
-    }
-   ],
+   "npcs": [],
    "mons": []
   },
   "889": {
@@ -66991,17 +67482,8 @@
     24,
     16
    ],
-   "notes": "",
-   "edges": {
-    "bottom": {
-     "to": "892",
-     "range": [
-      2,
-      3
-     ],
-     "offset": -1
-    }
-   },
+   "notes": "lake re-render (owner art 891_cloud_lagoon.png)",
+   "edges": {},
    "warps": [
     {
      "tile": [
@@ -67016,13 +67498,41 @@
      "face": "up",
      "kind": "edge",
      "edge": "top"
+    },
+    {
+     "tile": [
+      2,
+      0
+     ],
+     "to": "573",
+     "at": [
+      14,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      10,
+      15
+     ],
+     "to": "892",
+     "at": [
+      2,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
     }
    ],
    "objects": [
     {
      "tile": [
-      10,
-      7
+      11,
+      12
      ],
      "k": "stash",
      "item": "fullgel",
@@ -67031,7 +67541,7 @@
     },
     {
      "tile": [
-      15,
+      11,
       7
      ],
      "k": "stash",
@@ -67042,8 +67552,8 @@
    ],
    "spawns": {
     "default": [
-     2,
-     14
+     1,
+     1
     ]
    },
    "grid": [
@@ -67053,8 +67563,8 @@
    "pkey": "halo",
    "npcs": [
     {
-     "x": 12,
-     "y": 6,
+     "x": 9,
+     "y": 10,
      "art": "halo_folk5",
      "face": "down",
      "t": [
@@ -67064,8 +67574,8 @@
      "src": "n:891:0"
     },
     {
-     "x": 18,
-     "y": 11,
+     "x": 4,
+     "y": 5,
      "art": "pilgrim",
      "face": "down",
      "t": [],
@@ -67077,10 +67587,10 @@
      }
     },
     {
-     "x": 7,
-     "y": 11,
+     "x": 13,
+     "y": 8,
      "art": "civilian",
-     "face": "down",
+     "face": "left",
      "t": [],
      "id": "sec891_tr2",
      "trainer": {
@@ -67092,13 +67602,13 @@
    ],
    "mons": [
     {
-     "x": 17,
-     "y": 3,
+     "x": 14,
+     "y": 12,
      "mon": "Halocene"
     },
     {
-     "x": 2,
-     "y": 4,
+     "x": 9,
+     "y": 13,
      "mon": "Zephyrion"
     }
    ]
@@ -67219,57 +67729,42 @@
     24,
     16
    ],
-   "notes": "",
-   "edges": {
-    "top": {
+   "notes": "lake re-render (owner art 892_lagoon_islands.png)",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      2,
+      0
+     ],
      "to": "891",
-     "range": [
-      1,
-      2
+     "at": [
+      10,
+      14
      ],
-     "offset": 1
-    }
-   },
-   "warps": [],
-   "objects": [
-    {
-     "tile": [
-      6,
-      3
-     ],
-     "k": "stash",
-     "item": "ether",
-     "n": 3,
-     "tier": 5
-    },
-    {
-     "tile": [
-      17,
-      3
-     ],
-     "k": "stash",
-     "item": "dust",
-     "n": 1200,
-     "tier": 5
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
     }
    ],
+   "objects": [],
    "spawns": {
     "default": [
-     1,
+     2,
      1
     ]
    },
    "grid": [
-    1,
-    168
+    0,
+    172
    ],
    "pkey": "halo",
    "npcs": [
     {
-     "x": 12,
-     "y": 6,
+     "x": 4,
+     "y": 8,
      "art": "civilian",
-     "face": "right",
+     "face": "down",
      "t": [],
      "id": "sec892_tr0",
      "trainer": {
@@ -67279,10 +67774,10 @@
      }
     },
     {
-     "x": 7,
-     "y": 11,
+     "x": 19,
+     "y": 4,
      "art": "wanderer",
-     "face": "down",
+     "face": "up",
      "t": [],
      "id": "sec892_tr1",
      "trainer": {
@@ -67294,13 +67789,13 @@
    ],
    "mons": [
     {
-     "x": 15,
-     "y": 4,
+     "x": 5,
+     "y": 2,
      "mon": "Cerebrix"
     },
     {
-     "x": 15,
-     "y": 7,
+     "x": 18,
+     "y": 11,
      "mon": "Hummingmind"
     }
    ]
@@ -67316,26 +67811,12 @@
     24,
     16
    ],
-   "notes": "",
+   "notes": "lake re-render (owner art 907_mirror_lake_islands.png)",
    "edges": {},
    "warps": [
     {
      "tile": [
       0,
-      4
-     ],
-     "to": "816",
-     "at": [
-      22,
-      5
-     ],
-     "face": "left",
-     "kind": "edge",
-     "edge": "left"
-    },
-    {
-     "tile": [
-      0,
       5
      ],
      "to": "816",
@@ -67349,94 +67830,59 @@
     },
     {
      "tile": [
-      0,
-      6
+      11,
+      0
      ],
-     "to": "816",
+     "to": "906",
      "at": [
-      22,
-      6
+      12,
+      1
      ],
-     "face": "left",
+     "face": "down",
      "kind": "edge",
-     "edge": "left"
+     "edge": "top"
     },
     {
      "tile": [
-      0,
-      7
+      12,
+      0
      ],
-     "to": "816",
+     "to": "906",
      "at": [
-      22,
-      6
+      13,
+      1
      ],
-     "face": "left",
+     "face": "down",
      "kind": "edge",
-     "edge": "left"
-    },
-    {
-     "tile": [
-      0,
-      8
-     ],
-     "to": "816",
-     "at": [
-      22,
-      7
-     ],
-     "face": "left",
-     "kind": "edge",
-     "edge": "left"
-    },
-    {
-     "tile": [
-      0,
-      9
-     ],
-     "to": "816",
-     "at": [
-      22,
-      7
-     ],
-     "face": "left",
-     "kind": "edge",
-     "edge": "left"
-    },
-    {
-     "tile": [
-      0,
-      10
-     ],
-     "to": "816",
-     "at": [
-      22,
-      8
-     ],
-     "face": "left",
-     "kind": "edge",
-     "edge": "left"
-    },
-    {
-     "tile": [
-      0,
-      11
-     ],
-     "to": "816",
-     "at": [
-      22,
-      8
-     ],
-     "face": "left",
-     "kind": "edge",
-     "edge": "left"
+     "edge": "top"
     }
    ],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      18,
+      2
+     ],
+     "k": "stash",
+     "item": "dust",
+     "n": 1600,
+     "tier": 6
+    },
+    {
+     "tile": [
+      5,
+      11
+     ],
+     "k": "stash",
+     "item": "maxrevive",
+     "n": 1,
+     "tier": 6
+    }
+   ],
    "spawns": {
     "default": [
      1,
-     4
+     5
     ]
    },
    "grid": [
@@ -67444,8 +67890,46 @@
     45
    ],
    "pkey": "umbra",
-   "npcs": [],
-   "mons": []
+   "npcs": [
+    {
+     "x": 7,
+     "y": 3,
+     "art": "civilian",
+     "face": "up",
+     "t": [],
+     "id": "sec907_tr0",
+     "trainer": {
+      "cls": "Lantern Keeper",
+      "route": 1,
+      "name": "Juno"
+     }
+    },
+    {
+     "x": 19,
+     "y": 4,
+     "art": "explorer",
+     "face": "down",
+     "t": [],
+     "id": "sec907_tr1",
+     "trainer": {
+      "cls": "Drifter",
+      "route": 1,
+      "name": "Wren"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 5,
+     "y": 7,
+     "mon": "Wellmaw"
+    },
+    {
+     "x": 20,
+     "y": 6,
+     "mon": "Geodome"
+    }
+   ]
   },
   "906": {
    "id": "906",
@@ -67458,7 +67942,7 @@
     24,
     16
    ],
-   "notes": "",
+   "notes": "lake re-render (owner art 906_mirror_lake.png)",
    "edges": {},
    "warps": [
     {
@@ -67488,9 +67972,58 @@
      "face": "down",
      "kind": "edge",
      "edge": "bottom"
+    },
+    {
+     "tile": [
+      12,
+      0
+     ],
+     "to": "907",
+     "at": [
+      11,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      13,
+      0
+     ],
+     "to": "907",
+     "at": [
+      12,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "top"
     }
    ],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      16,
+      10
+     ],
+     "k": "stash",
+     "item": "ether",
+     "n": 3,
+     "tier": 6
+    },
+    {
+     "tile": [
+      12,
+      7
+     ],
+     "k": "stash",
+     "item": "dust",
+     "n": 1600,
+     "tier": 6
+    }
+   ],
    "spawns": {
     "default": [
      1,
@@ -67504,7 +68037,7 @@
    "pkey": "umbra",
    "npcs": [
     {
-     "x": 2,
+     "x": 14,
      "y": 7,
      "art": "umbra_folk4",
      "face": "down",
@@ -67513,9 +68046,46 @@
      ],
      "name": "Lake watcher",
      "src": "n:906:0"
+    },
+    {
+     "x": 22,
+     "y": 4,
+     "art": "wanderer",
+     "face": "left",
+     "t": [],
+     "id": "sec906_tr1",
+     "trainer": {
+      "cls": "Scavenger",
+      "route": 1,
+      "name": "Rhee"
+     }
+    },
+    {
+     "x": 12,
+     "y": 13,
+     "art": "civilian",
+     "face": "left",
+     "t": [],
+     "id": "sec906_tr2",
+     "trainer": {
+      "cls": "Lantern Keeper",
+      "route": 1,
+      "name": "Oz"
+     }
     }
    ],
-   "mons": []
+   "mons": [
+    {
+     "x": 12,
+     "y": 2,
+     "mon": "Dusklord"
+    },
+    {
+     "x": 2,
+     "y": 14,
+     "mon": "Gloomhulk"
+    }
+   ]
   },
   "905": {
    "id": "905",
@@ -67748,7 +68318,7 @@
     24,
     16
    ],
-   "notes": "",
+   "notes": "lake re-render (owner art 903_crater_lake.png)",
    "edges": {},
    "warps": [
     {
@@ -67764,9 +68334,58 @@
      "face": "up",
      "kind": "edge",
      "edge": "top"
+    },
+    {
+     "tile": [
+      23,
+      4
+     ],
+     "to": "904",
+     "at": [
+      20,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "right"
+    },
+    {
+     "tile": [
+      23,
+      5
+     ],
+     "to": "904",
+     "at": [
+      21,
+      0
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "right"
     }
    ],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      3,
+      7
+     ],
+     "k": "stash",
+     "item": "fullgel",
+     "n": 3,
+     "tier": 6
+    },
+    {
+     "tile": [
+      9,
+      3
+     ],
+     "k": "stash",
+     "item": "fullgel",
+     "n": 3,
+     "tier": 6
+    }
+   ],
    "spawns": {
     "default": [
      1,
@@ -67780,8 +68399,8 @@
    "pkey": "starfall",
    "npcs": [
     {
-     "x": 2,
-     "y": 4,
+     "x": 3,
+     "y": 9,
      "art": "starfall_folk4",
      "face": "down",
      "t": [
@@ -67791,10 +68410,23 @@
      "src": "n:903:0"
     },
     {
-     "x": 2,
-     "y": 9,
-     "art": "explorer",
+     "x": 11,
+     "y": 2,
+     "art": "strand",
      "face": "down",
+     "t": [],
+     "id": "sec903_tr1",
+     "trainer": {
+      "cls": "Helix Driller",
+      "route": 1,
+      "name": "Ash"
+     }
+    },
+    {
+     "x": 5,
+     "y": 4,
+     "art": "explorer",
+     "face": "up",
      "t": [],
      "id": "sec903_tr2",
      "trainer": {
@@ -67806,7 +68438,12 @@
    ],
    "mons": [
     {
-     "x": 2,
+     "x": 13,
+     "y": 2,
+     "mon": "Cometrix"
+    },
+    {
+     "x": 3,
      "y": 11,
      "mon": "Quasarus"
     }
@@ -67943,7 +68580,7 @@
     24,
     16
    ],
-   "notes": "",
+   "notes": "lake re-render (owner art 904_crater_lake_islands.png)",
    "edges": {},
    "warps": [
     {
@@ -67973,9 +68610,58 @@
      "face": "up",
      "kind": "edge",
      "edge": "top"
+    },
+    {
+     "tile": [
+      20,
+      0
+     ],
+     "to": "903",
+     "at": [
+      22,
+      4
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      21,
+      0
+     ],
+     "to": "903",
+     "at": [
+      22,
+      5
+     ],
+     "face": "left",
+     "kind": "edge",
+     "edge": "top"
     }
    ],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      7,
+      10
+     ],
+     "k": "stash",
+     "item": "ether",
+     "n": 3,
+     "tier": 6
+    },
+    {
+     "tile": [
+      16,
+      12
+     ],
+     "k": "stash",
+     "item": "singularity",
+     "n": 1,
+     "tier": 6
+    }
+   ],
    "spawns": {
     "default": [
      1,
@@ -67987,8 +68673,46 @@
     116
    ],
    "pkey": "starfall",
-   "npcs": [],
-   "mons": []
+   "npcs": [
+    {
+     "x": 8,
+     "y": 12,
+     "art": "explorer",
+     "face": "left",
+     "t": [],
+     "id": "sec904_tr0",
+     "trainer": {
+      "cls": "Rift Seeker",
+      "route": 1,
+      "name": "Ash"
+     }
+    },
+    {
+     "x": 8,
+     "y": 4,
+     "art": "researcher",
+     "face": "up",
+     "t": [],
+     "id": "sec904_tr1",
+     "trainer": {
+      "cls": "Star Watcher",
+      "route": 1,
+      "name": "Bo"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 18,
+     "y": 12,
+     "mon": "Novacat"
+    },
+    {
+     "x": 20,
+     "y": 7,
+     "mon": "Prismora"
+    }
+   ]
   },
   "911": {
    "id": "911",
@@ -68240,7 +68964,7 @@
     24,
     16
    ],
-   "notes": "",
+   "notes": "lake re-render (owner art 913_crystal_lake.png)",
    "edges": {},
    "warps": [
     {
@@ -68270,13 +68994,27 @@
      "face": "up",
      "kind": "edge",
      "edge": "top"
+    },
+    {
+     "tile": [
+      2,
+      15
+     ],
+     "to": "914",
+     "at": [
+      1,
+      6
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "bottom"
     }
    ],
    "objects": [
     {
      "tile": [
-      5,
-      3
+      21,
+      9
      ],
      "k": "stash",
      "item": "dust",
@@ -68307,7 +69045,7 @@
    "pkey": "ystra",
    "npcs": [
     {
-     "x": 12,
+     "x": 13,
      "y": 6,
      "art": "ystra_folk1",
      "face": "down",
@@ -68318,10 +69056,10 @@
      "src": "n:913:0"
     },
     {
-     "x": 7,
-     "y": 4,
+     "x": 19,
+     "y": 8,
      "art": "explorer",
-     "face": "right",
+     "face": "down",
      "t": [],
      "id": "sec913_tr1",
      "trainer": {
@@ -68331,10 +69069,10 @@
      }
     },
     {
-     "x": 14,
-     "y": 7,
+     "x": 15,
+     "y": 11,
      "art": "pilgrim",
-     "face": "down",
+     "face": "right",
      "t": [],
      "id": "sec913_tr2",
      "trainer": {
@@ -68347,12 +69085,12 @@
    "mons": [
     {
      "x": 2,
-     "y": 3,
+     "y": 11,
      "mon": "Riftwalker"
     },
     {
-     "x": 19,
-     "y": 3,
+     "x": 20,
+     "y": 2,
      "mon": "Fractalith"
     }
    ]
@@ -68444,7 +69182,7 @@
     24,
     16
    ],
-   "notes": "",
+   "notes": "lake re-render (owner art 914_crystal_lake_islands.png)",
    "edges": {},
    "warps": [
     {
@@ -68463,20 +69201,55 @@
     },
     {
      "tile": [
-      2,
-      0
+      0,
+      6
      ],
-     "to": "852",
+     "to": "913",
      "at": [
-      18,
+      2,
       14
      ],
      "face": "up",
      "kind": "edge",
-     "edge": "top"
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      7
+     ],
+     "to": "913",
+     "at": [
+      2,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "left"
     }
    ],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      21,
+      9
+     ],
+     "k": "stash",
+     "item": "ether",
+     "n": 5,
+     "tier": 7
+    },
+    {
+     "tile": [
+      19,
+      2
+     ],
+     "k": "stash",
+     "item": "fullgel",
+     "n": 3,
+     "tier": 7
+    }
+   ],
    "spawns": {
     "default": [
      1,
@@ -68488,8 +69261,46 @@
     193
    ],
    "pkey": "ystra",
-   "npcs": [],
-   "mons": []
+   "npcs": [
+    {
+     "x": 16,
+     "y": 8,
+     "art": "pilgrim",
+     "face": "left",
+     "t": [],
+     "id": "sec914_tr0",
+     "trainer": {
+      "cls": "Seeker",
+      "route": 1,
+      "name": "Milo"
+     }
+    },
+    {
+     "x": 21,
+     "y": 4,
+     "art": "ystran",
+     "face": "left",
+     "t": [],
+     "id": "sec914_tr1",
+     "trainer": {
+      "cls": "Ystran Echo",
+      "route": 1,
+      "name": "Ida"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 8,
+     "y": 11,
+     "mon": "Blightroot"
+    },
+    {
+     "x": 21,
+     "y": 11,
+     "mon": "Pulsarion"
+    }
+   ]
   },
   "910": {
    "id": "910",
@@ -69192,32 +70003,18 @@
     24,
     16
    ],
-   "notes": "",
+   "notes": "lake re-render (owner art 879_oasis_islands.png)",
    "edges": {},
    "warps": [
     {
      "tile": [
       23,
-      10
+      7
      ],
      "to": "446",
      "at": [
       1,
       3
-     ],
-     "face": "right",
-     "kind": "edge",
-     "edge": "right"
-    },
-    {
-     "tile": [
-      23,
-      11
-     ],
-     "to": "446",
-     "at": [
-      1,
-      11
      ],
      "face": "right",
      "kind": "edge",
@@ -69228,7 +70025,7 @@
    "spawns": {
     "default": [
      22,
-     10
+     7
     ]
    },
    "grid": [
@@ -69236,8 +70033,46 @@
     124
    ],
    "pkey": "dustara",
-   "npcs": [],
-   "mons": []
+   "npcs": [
+    {
+     "x": 4,
+     "y": 10,
+     "art": "explorer",
+     "face": "down",
+     "t": [],
+     "id": "sec879_tr0",
+     "trainer": {
+      "cls": "Linker",
+      "route": 1,
+      "name": "Hale"
+     }
+    },
+    {
+     "x": 20,
+     "y": 7,
+     "art": "wanderer",
+     "face": "left",
+     "t": [],
+     "id": "sec879_tr1",
+     "trainer": {
+      "cls": "Canyon Scout",
+      "route": 1,
+      "name": "Quill"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 4,
+     "y": 2,
+     "mon": "Kilnback"
+    },
+    {
+     "x": 12,
+     "y": 11,
+     "mon": "Squawktone"
+    }
+   ]
   },
   "876": {
    "id": "876",
@@ -71345,7 +72180,7 @@
    },
    "grid": [
     0,
-    89
+    105
    ],
    "pkey": "pyros",
    "npcs": [
@@ -71462,7 +72297,7 @@
    },
    "grid": [
     0,
-    109
+    125
    ],
    "pkey": "pyros",
    "npcs": [
@@ -71579,7 +72414,7 @@
    },
    "grid": [
     0,
-    124
+    104
    ],
    "pkey": "glacia",
    "npcs": [
@@ -71682,7 +72517,7 @@
    },
    "grid": [
     0,
-    144
+    124
    ],
    "pkey": "glacia",
    "npcs": [
@@ -71813,7 +72648,7 @@
    },
    "grid": [
     0,
-    137
+    117
    ],
    "pkey": "helix",
    "npcs": [
@@ -71944,7 +72779,7 @@
    },
    "grid": [
     0,
-    157
+    137
    ],
    "pkey": "helix",
    "npcs": [
@@ -72075,7 +72910,7 @@
    },
    "grid": [
     0,
-    188
+    192
    ],
    "pkey": "halo",
    "npcs": [
@@ -75991,8 +76826,8 @@
    "to_id": "879",
    "to_edge": "right",
    "to_tile": [
-    10,
-    11
+    7,
+    7
    ]
   },
   {
@@ -78343,8 +79178,8 @@
    "to_id": "898",
    "to_edge": "right",
    "to_tile": [
-    5,
-    9
+    9,
+    10
    ]
   },
   {
@@ -78623,8 +79458,8 @@
    "to_id": "897",
    "to_edge": "top",
    "to_tile": [
-    1,
-    1
+    2,
+    2
    ]
   },
   {
@@ -79030,7 +79865,7 @@
    "to_edge": "left",
    "to_tile": [
     1,
-    9
+    10
    ]
   },
   {
@@ -79688,7 +80523,7 @@
    "to_edge": "top",
    "to_tile": [
     1,
-    1
+    2
    ]
   },
   {
@@ -80052,7 +80887,7 @@
    "to_edge": "top",
    "to_tile": [
     1,
-    1
+    2
    ]
   },
   {
@@ -81018,7 +81853,7 @@
    "to_edge": "top",
    "to_tile": [
     1,
-    2
+    1
    ]
   },
   {
@@ -81409,8 +82244,8 @@
    "to_id": "907",
    "to_edge": "left",
    "to_tile": [
-    4,
-    11
+    5,
+    5
    ]
   },
   {
@@ -82380,6 +83215,20 @@
    ]
   },
   {
+   "from_id": "896",
+   "edge": "left",
+   "tile_range": [
+    7,
+    7
+   ],
+   "to_id": "895",
+   "to_edge": "right",
+   "to_tile": [
+    6,
+    8
+   ]
+  },
+  {
    "from_id": "895",
    "edge": "top",
    "tile_range": [
@@ -82391,6 +83240,20 @@
    "to_tile": [
     10,
     14
+   ]
+  },
+  {
+   "from_id": "895",
+   "edge": "right",
+   "tile_range": [
+    6,
+    8
+   ],
+   "to_id": "896",
+   "to_edge": "left",
+   "to_tile": [
+    7,
+    7
    ]
   },
   {
@@ -82425,8 +83288,8 @@
    "from_id": "897",
    "edge": "top",
    "tile_range": [
-    1,
-    1
+    2,
+    2
    ],
    "to_id": "668",
    "to_edge": "bottom",
@@ -82436,11 +83299,39 @@
    ]
   },
   {
+   "from_id": "897",
+   "edge": "bottom",
+   "tile_range": [
+    10,
+    12
+   ],
+   "to_id": "898",
+   "to_edge": "top",
+   "to_tile": [
+    11,
+    12
+   ]
+  },
+  {
+   "from_id": "898",
+   "edge": "top",
+   "tile_range": [
+    11,
+    12
+   ],
+   "to_id": "897",
+   "to_edge": "bottom",
+   "to_tile": [
+    10,
+    12
+   ]
+  },
+  {
    "from_id": "898",
    "edge": "right",
    "tile_range": [
-    5,
-    9
+    9,
+    10
    ],
    "to_id": "678",
    "to_edge": "left",
@@ -82454,13 +83345,27 @@
    "edge": "left",
    "tile_range": [
     1,
-    9
+    10
    ],
    "to_id": "524",
    "to_edge": "bottom",
    "to_tile": [
     16,
     21
+   ]
+  },
+  {
+   "from_id": "883",
+   "edge": "top",
+   "tile_range": [
+    11,
+    12
+   ],
+   "to_id": "882",
+   "to_edge": "bottom",
+   "to_tile": [
+    11,
+    12
    ]
   },
   {
@@ -82478,6 +83383,20 @@
    ]
   },
   {
+   "from_id": "882",
+   "edge": "bottom",
+   "tile_range": [
+    11,
+    12
+   ],
+   "to_id": "883",
+   "to_edge": "top",
+   "to_tile": [
+    11,
+    12
+   ]
+  },
+  {
    "from_id": "894",
    "edge": "top",
    "tile_range": [
@@ -82492,17 +83411,45 @@
    ]
   },
   {
+   "from_id": "894",
+   "edge": "left",
+   "tile_range": [
+    5,
+    8
+   ],
+   "to_id": "893",
+   "to_edge": "right",
+   "to_tile": [
+    6,
+    8
+   ]
+  },
+  {
    "from_id": "893",
    "edge": "top",
    "tile_range": [
     1,
-    1
+    2
    ],
    "to_id": "605",
    "to_edge": "bottom",
    "to_tile": [
     10,
     13
+   ]
+  },
+  {
+   "from_id": "893",
+   "edge": "right",
+   "tile_range": [
+    6,
+    8
+   ],
+   "to_id": "894",
+   "to_edge": "left",
+   "to_tile": [
+    5,
+    8
    ]
   },
   {
@@ -82524,7 +83471,7 @@
    "edge": "top",
    "tile_range": [
     1,
-    1
+    2
    ],
    "to_id": "573",
    "to_edge": "bottom",
@@ -82537,13 +83484,13 @@
    "from_id": "891",
    "edge": "bottom",
    "tile_range": [
-    2,
-    3
+    10,
+    10
    ],
    "to_id": "892",
    "to_edge": "top",
    "to_tile": [
-    1,
+    2,
     2
    ]
   },
@@ -82551,28 +83498,42 @@
    "from_id": "892",
    "edge": "top",
    "tile_range": [
-    1,
+    2,
     2
    ],
    "to_id": "891",
    "to_edge": "bottom",
    "to_tile": [
-    2,
-    3
+    10,
+    10
    ]
   },
   {
    "from_id": "907",
    "edge": "left",
    "tile_range": [
-    4,
-    11
+    5,
+    5
    ],
    "to_id": "816",
    "to_edge": "right",
    "to_tile": [
     5,
     8
+   ]
+  },
+  {
+   "from_id": "907",
+   "edge": "top",
+   "tile_range": [
+    11,
+    12
+   ],
+   "to_id": "906",
+   "to_edge": "top",
+   "to_tile": [
+    12,
+    13
    ]
   },
   {
@@ -82587,6 +83548,20 @@
    "to_tile": [
     13,
     18
+   ]
+  },
+  {
+   "from_id": "906",
+   "edge": "top",
+   "tile_range": [
+    12,
+    13
+   ],
+   "to_id": "907",
+   "to_edge": "top",
+   "to_tile": [
+    11,
+    12
    ]
   },
   {
@@ -82618,6 +83593,20 @@
    ]
   },
   {
+   "from_id": "903",
+   "edge": "right",
+   "tile_range": [
+    4,
+    5
+   ],
+   "to_id": "904",
+   "to_edge": "top",
+   "to_tile": [
+    20,
+    21
+   ]
+  },
+  {
    "from_id": "901",
    "edge": "right",
    "tile_range": [
@@ -82643,6 +83632,20 @@
    "to_tile": [
     16,
     22
+   ]
+  },
+  {
+   "from_id": "904",
+   "edge": "top",
+   "tile_range": [
+    20,
+    21
+   ],
+   "to_id": "903",
+   "to_edge": "right",
+   "to_tile": [
+    4,
+    5
    ]
   },
   {
@@ -82674,17 +83677,45 @@
    ]
   },
   {
+   "from_id": "913",
+   "edge": "bottom",
+   "tile_range": [
+    2,
+    2
+   ],
+   "to_id": "914",
+   "to_edge": "left",
+   "to_tile": [
+    6,
+    7
+   ]
+  },
+  {
    "from_id": "914",
    "edge": "top",
    "tile_range": [
     1,
-    2
+    1
    ],
    "to_id": "852",
    "to_edge": "bottom",
    "to_tile": [
     13,
     18
+   ]
+  },
+  {
+   "from_id": "914",
+   "edge": "left",
+   "tile_range": [
+    6,
+    7
+   ],
+   "to_id": "913",
+   "to_edge": "bottom",
+   "to_tile": [
+    2,
+    2
    ]
   },
   {
@@ -82747,8 +83778,8 @@
    "from_id": "879",
    "edge": "right",
    "tile_range": [
-    10,
-    11
+    7,
+    7
    ],
    "to_id": "446",
    "to_edge": "left",
