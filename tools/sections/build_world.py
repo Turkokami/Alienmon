@@ -494,7 +494,7 @@ for sid, sec in world.items():
     if sec['type'] != 'interior':
         for p in npc_src[sid]:
             role = (p.get('t') or [''])[0].split(':')[0].strip()
-            if not p.get('trainer') and not p.get('wid') and not p.get('story') and 'Linker' in role and len(role) < 24:
+            if not p.get('trainer') and not p.get('wid') and not p.get('story') and not p.get('talk_only') and 'Linker' in role and len(role) < 24:
                 p['trainer'] = {'cls': role, 'linker': 1}
 for t in tr_rules.get('tiles', []):
     lst = [p for p in npc_src.get(t['section'], []) if p.get('trainer')]

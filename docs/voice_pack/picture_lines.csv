@@ -99,3 +99,128 @@ pic_cut_61_03_narrator.mp3,P03,The Seedmother grows again,story picture,Narrator
 pic_cut_62_01_narrator.mp3,P04,A road between two worlds,story picture,Narrator,narrator,A road between two worlds.
 pic_cut_62_02_narrator.mp3,P04,A road between two worlds,story picture,Narrator,narrator,The Warp Gate's runes blaze cyan and pink.
 pic_cut_62_03_narrator.mp3,P04,A road between two worlds,story picture,Narrator,narrator,"A road between two worlds, open at last."
+q_m02_001_narrator.mp3,M02,Zib's Signal,objectives.lines,Narrator,narrator,Zib zips in a happy loop around your head. Bip!
+q_m02_002_narrator.mp3,M02,Zib's Signal,objectives.lines,Narrator,narrator,"Before you leave Dustmere, you should take your new friend home to meet Mom."
+q_m02_003_narrator.mp3,M02,Zib's Signal,objectives.lines,Narrator,narrator,Mom looks up from the kitchen table... and right into one huge blinking eye.
+q_m02_005_mom.mp3,M02,Zib's Signal,objectives.lines,Mom,mom,"Well, hello to you too! And who is THIS?"
+q_m02_006_mom.mp3,M02,Zib's Signal,objectives.lines,Mom,mom,A little saucer from the canyon? Any friend of yours is welcome in this house.
+q_m02_007_mom.mp3,M02,Zib's Signal,objectives.lines,Mom,mom,So it's really happening. Dr. Vashti says you're ready to head out past the bridge.
+q_m02_008_mom.mp3,M02,Zib's Signal,objectives.lines,Mom,mom,Before you go... this was your Nana Wren's. She wore it every day she ran the Recovery Bay.
+q_m02_009_narrator.mp3,M02,Zib's Signal,objectives.lines,Narrator,narrator,It's a brass cross with a glowing blue core. Stamped on the back: R.B. No. 1.
+q_m02_010_mom.mp3,M02,Zib's Signal,objectives.lines,Mom,mom,"And you're not leaving without this. Your backpack. Snacks, a map, a spare pair of socks. Don't argue."
+q_m02_011_mom.mp3,M02,Zib's Signal,objectives.lines,Mom,mom,"Call home once in a while, Rook. Promise me."
+q_m02_012_narrator.mp3,M02,Zib's Signal,objectives.lines,Narrator,narrator,"Unbeknownst to Rook or his mother, someone else had already found that backpack."
+q_m02_013_narrator.mp3,M02,Zib's Signal,objectives.lines,Narrator,narrator,"Hidden deep inside, beneath the snacks and the socks, an unknown guest curled up tight... and held its breath."
+q_m10_004_narrator.mp3,M10,Murals of Ystra,epilogue.lines,Narrator,narrator,"Far away, on Helix Station, Sola stands beside Director Thorne at a window full of stars."
+q_m10_006_narrator.mp3,M10,Murals of Ystra,epilogue.lines,Narrator,narrator,"...Back on Glyphos, Zib blinks. For a split second, its big eye reflects something enormous: a giant dark eye, slowly opening."
+q_m11_001_basalt.mp3,M11,The Light in the Crater,objectives.lines,Old Basalt,basalt,"That badge... R.B. No. 1. Wren's. I knew a man who wore a jacket too big for him, and a woman who wore that badge. Good people."
+q_m11_002_basalt.mp3,M11,The Light in the Crater,objectives.lines,Old Basalt,basalt,Here. Teo left his old mining lantern with me. It never quite goes out. Take it down the Deep Mines.
+q_m11_003_basalt.mp3,M11,The Light in the Crater,objectives.lines,Old Basalt,basalt,"And catch yourself an Ashpup. Those sooty pups love lantern light, and they can sniff out a hidden ledge."
+q_m11_004_narrator.mp3,M11,The Light in the Crater,objectives.lines,Narrator,narrator,"Behind a hidden ledge, Teo's lantern flares. There's a little crystal recorder wedged in the rock."
+q_m11_005_teo.mp3,M11,The Light in the Crater,objectives.lines,Teo Reyes,teo,"[recording] If you find this, Sola, I'm not lost. I'm following them home."
+q_m11_006_narrator.mp3,M11,The Light in the Crater,objectives.lines,Narrator,narrator,"Tucked under the recorder is a page torn from Teo's journal. He copied one line from Imogen Vashti's Codex pages, and the stone it came from was damaged:"
+q_m11_007_narrator.mp3,M11,The Light in the Crater,objectives.lines,Narrator,narrator,"""She is scattered so she may live..."" The rest of the line is gone."
+q_m11_008_teo.mp3,M11,The Light in the Crater,objectives.lines,Teo Reyes,teo,[note] Imogen never told us how it ends. I think it's the most important line in the whole Codex.
+q_m11_009_narrator.mp3,M11,The Light in the Crater,objectives.lines,Narrator,narrator,You'd better keep the recording safe for Sola.
+q_m12_001_narrator.mp3,M12,Teeth in the Ice,objectives.lines,Narrator,narrator,Frozen into the mirror ice is a second little cache. Inside: a map carved from crystal.
+q_m12_002_narrator.mp3,M12,Teeth in the Ice,objectives.lines,Narrator,narrator,"Scratched along its edge in Teo's handwriting: ""the floating gardens beyond the light."""
+q_m14_001_sola.mp3,M14,Helix Station,battle intro,Sola Reyes,sola,You came all this way to stop me? I'm SO close to finding my dad!
+q_m14_002_sola.mp3,M14,Helix Station,battle lose,Sola Reyes,sola,...Fine. You win. But Helix is going to find him. They promised.
+q_m15_004_vex.mp3,M15,Sola Turns,battle intro,Admin Vex,vex,Two brats for the price of one? The Director will be thrilled.
+q_m15_005_vex.mp3,M15,Sola Turns,battle lose,Admin Vex,vex,Ugh! Fine. The Director already has what he needs.
+q_m15_010_narrator.mp3,M15,Sola Turns,epilogue.lines,Narrator,narrator,"On the way out, the freed captives flood past you. One stays behind: a tiny crystal hatchling that glows like Teo's lantern."
+q_m15_011_narrator.mp3,M15,Sola Turns,epilogue.lines,Narrator,narrator,"It's a Lumivex hatchling. It looks at Sola for a long moment, then climbs into her jacket pocket."
+q_m15_012_sola.mp3,M15,Sola Turns,epilogue.lines,Sola Reyes,sola,"...Hi. Hi, little one. Okay. You can come with me."
+q_m15_013_narrator.mp3,M15,Sola Turns,epilogue.lines,Narrator,narrator,"On the shuttle home, Sola falls asleep against your shoulder, the hatchling glowing softly in her pocket."
+q_m16_010_narrator.mp3,M16,Twin Visions,epilogue.lines,Narrator,narrator,"At the last wind shrine, the Ystran echo Liss is clearer than ever."
+q_m16_011_liss.mp3,M16,Twin Visions,epilogue.lines,Liss,liss,"I launched the last seedpod. The one carrying Zib. The fold was closing, and someone had to push it through."
+q_m16_012_liss.mp3,M16,Twin Visions,epilogue.lines,Liss,liss,I stayed behind on purpose. Someone had to sing it on its way.
+q_m16_013_narrator.mp3,M16,Twin Visions,epilogue.lines,Narrator,narrator,"Zib's lights flicker through every color, then go soft and blue. It's crying in lights."
+q_m17_001_kade.mp3,M17,Voices in the Dark,objectives.lines,Mortimer Kade,kade,I built Thorne's Rift engine. Look at the key slot. It's tuned to one frequency.
+q_m17_002_kade.mp3,M17,Voices in the Dark,objectives.lines,Mortimer Kade,kade,"The eighth tower's resonance. The moment you win Shard 8, Thorne gets his key."
+q_m17_003_kade.mp3,M17,Voices in the Dark,objectives.lines,Mortimer Kade,kade,"But if you don't, the cracked seal fails on its own. There is no safe answer."
+q_m17_004_sola.mp3,M17,Voices in the Dark,objectives.lines,Sola Reyes,sola,Then we do it together. And we stop him at the other end.
+q_m17_005_kade.mp3,M17,Voices in the Dark,objectives.lines,Mortimer Kade,kade,...All right. Gravewell Tower. I'll be waiting.
+q_m17_009_narrator.mp3,M17,Voices in the Dark,epilogue.lines,Narrator,narrator,"All eight Shards ring at once. Zib rises into the air, and its big eye projects a soft, shimmering light."
+q_m17_010_narrator.mp3,M17,Voices in the Dark,epilogue.lines,Narrator,narrator,"A woman's voice fills the room, warm and huge, and you know it before she says a word."
+q_m17_011_seedmother.mp3,M17,Voices in the Dark,epilogue.lines,Seedmother,seedmother,"If you hear this, my scout found a true listener."
+q_m17_012_seedmother.mp3,M17,Voices in the Dark,epilogue.lines,Seedmother,seedmother,"I am not gone. I am in every one of you, scattered so I may live."
+q_m17_013_seedmother.mp3,M17,Voices in the Dark,epilogue.lines,Seedmother,seedmother,"Heal the one who hungers, my sibling who took in too much. Then bring my children home together, and I will grow again."
+q_m17b_001_marsh.mp3,M17b,Harbor Reclaimed,objectives.lines,Captain Marsh,marsh,A Helix freighter just tied up at the end of my east pier for repairs. Guess what's in its hold?
+q_m17b_002_marsh.mp3,M17b,Harbor Reclaimed,objectives.lines,Captain Marsh,marsh,"My tower core. The one Vex stole. We're taking it back, tonight."
+q_m17b_003_grunt.mp3,M17b,Harbor Reclaimed,battle intro,Helix Grunt,grunt,Helix Directive! This freighter is restricted!
+q_m17b_004_grunt.mp3,M17b,Harbor Reclaimed,battle lose,Helix Grunt,grunt,Abandon ship! Abandon ship!
+q_m17b_009_marsh.mp3,M17b,Harbor Reclaimed,dialogue.progress,Captain Marsh,marsh,The freighter won't wait forever. Move!
+q_s102_001_grunt.mp3,S102,The Keepers' Call,battle intro,Helix Grunt,grunt,"Helix Directive! Stand aside, this tower is ours now!"
+q_s102_002_grunt.mp3,S102,The Keepers' Call,battle lose,Helix Grunt,grunt,Retreat! The scrappers won't quit!
+q_s102_003_hank.mp3,S102,The Keepers' Call,objectives.lines,Hank Briggs,hank,"That's my kid. Battling beside me, not behind me."
+q_s102_004_grunt.mp3,S102,The Keepers' Call,battle intro,Helix Grunt,grunt,Helix Directive! Shut that broadcast down!
+q_s102_005_grunt.mp3,S102,The Keepers' Call,battle lose,Helix Grunt,grunt,They're... they're still on the air!
+q_m18_001_narrator.mp3,M18,Eight Shards Sing,objectives.lines,Narrator,narrator,A battered Helix shuttle drops into Dustmere's plaza. The hatch opens. It's Strand.
+q_m18_002_strand.mp3,M18,Eight Shards Sing,objectives.lines,Strand,strand,Field Division. Second Class. ...Resigning.
+q_m18_003_strand.mp3,M18,Eight Shards Sing,objectives.lines,Strand,strand,Ostrander's soldiers have the crater sealed tight. But nobody stops a Helix shuttle. Get in. I'll fly you past the cordon.
+q_m18_004_narrator.mp3,M18,Eight Shards Sing,objectives.lines,Narrator,narrator,"You don't reach for a pod. You just hold out your hand, the way Tamsin taught you: a capture isn't taking, it's asking."
+q_m18_005_narrator.mp3,M18,Eight Shards Sing,objectives.lines,Narrator,narrator,Novaryx tilts its great signal wings and looks at you for a long time.
+q_m18_006_narrator.mp3,M18,Eight Shards Sing,objectives.lines,Narrator,narrator,"Then it lowers its head until its glow touches Zib. Zib bips, very softly."
+q_m18_007_narrator.mp3,M18,Eight Shards Sing,objectives.lines,Narrator,narrator,Novaryx will guide you down into the crater. Its light shows the way.
+q_m19_001_thorne.mp3,M19,Seal the Rift,battle intro,Director Thorne,thorne,Do you know what infinite energy means? It means no accident is ever final.
+q_m19_002_thorne.mp3,M19,Seal the Rift,battle lose,Director Thorne,thorne,...Elena isn't in there. There's nothing in there but hunger.
+q_m19_008_narrator.mp3,M19,Seal the Rift,objectives.lines,Narrator,narrator,"Every Alienmon's song folds into one voice: a woman's, warm and huge. For a heartbeat the Seedmother is whole."
+q_m19_009_narrator_sporix.mp3,M19,Seal the Rift,objectives.lines,Narrator,narrator,Fungaroth blazes like a small star and pushes the Rift closed with light.
+q_m19_009_narrator_plazmo.mp3,M19,Seal the Rift,objectives.lines,Narrator,narrator,Solarach blazes like a small star and pushes the Rift closed with light.
+q_m19_009_narrator_gloopa.mp3,M19,Seal the Rift,objectives.lines,Narrator,narrator,Abyssor blazes like a small star and pushes the Rift closed with light.
+q_m19b_001_narrator.mp3,M19b,Homecoming,objectives.lines,Narrator,narrator,Dustmere is celebrating twenty years since the Starfall. The bridge glows all on its own.
+q_m19b_002_dusty.mp3,M19b,Homecoming,objectives.lines,Dusty,dusty,"Twenty years ago, four kids climbed down into that crater and found the Mother Pod. I always told it like a fairy tale. Tonight I'll tell it true."
+q_m19b_003_dusty.mp3,M19b,Homecoming,objectives.lines,Dusty,dusty,Imogen Vashti. Kael Thorne. Orra Venn. And Teo Reyes.
+q_m19b_004_narrator.mp3,M19b,Homecoming,objectives.lines,Narrator,narrator,Everybody around the fire turns and looks at Teo. He just smiles and pokes the coals.
+q_m19b_005_narrator.mp3,M19b,Homecoming,objectives.lines,Narrator,narrator,"Up in the Recovery Bay attic, under a dusty blanket, you find Nana Wren's journal."
+q_m19b_006_wren.mp3,M19b,Homecoming,objectives.lines,Nana Wren,wren,"[journal] The night the stars fell, three pods of baby saucers came to my door. Little things with one big eye, like scouts."
+q_m19b_007_wren.mp3,M19b,Homecoming,objectives.lines,Nana Wren,wren,"[journal] I nursed them all night. And I heard a voice singing, far away and so tired. So I sang back."
+q_m19b_008_wren.mp3,M19b,Homecoming,objectives.lines,Nana Wren,wren,[journal] Every pod sang a different note of the same song. I think they're all pieces of one mother. So I sang the missing notes back.
+q_m19b_009_narrator.mp3,M19b,Homecoming,objectives.lines,Narrator,narrator,Zib chose you because the same Signal runs in your family.
+q_m19b_010_wren.mp3,M19b,Homecoming,objectives.lines,Nana Wren,wren,"[journal, last page] I built a little robot to listen for the scout's frequency, and to watch over my grandchild when I can't."
+q_m19b_011_wren.mp3,M19b,Homecoming,objectives.lines,Nana Wren,wren,[journal] I taught him my favorite word. Probably.
+q_m19b_012_narrator.mp3,M19b,Homecoming,objectives.lines,Narrator,narrator,"DX-4 is quiet for a long, long time."
+q_m19b_013_dx4.mp3,M19b,Homecoming,objectives.lines,DX-4,dx4,I KNEW THAT. PROBABLY.
+q_m19b_020_vex.mp3,M19b,Homecoming,battle intro,Admin Vex,vex,You again?! I'm not going back to that Director. I'm not going ANYWHERE!
+q_m19b_021_vex.mp3,M19b,Homecoming,battle lose,Admin Vex,vex,"No... no, no, no!"
+q_m19b_022_narrator.mp3,M19b,Homecoming,objectives.lines,Narrator,narrator,Captain Marsh clamps the cuffs on Admin Vex. Marsh: That's for my tower. And my harbor. And my logbook.
+q_m19b_023_narrator.mp3,M19b,Homecoming,objectives.lines,Narrator,narrator,"Pell steps up onto the deck, chest out. Pell: Helix Directive! Field Division! ..."
+q_m19b_024_pell.mp3,M19b,Homecoming,objectives.lines,Pell,pell,...Former.
+q_m19b_025_marsh.mp3,M19b,Homecoming,objectives.lines,Captain Marsh,marsh,"Not bad, kid. There's room on my crew for a man who knows when to quit."
+q_m19b_030_mom.mp3,M19b,Homecoming,dialogue.progress,Mom,mom,"Go on, enjoy the festival. You've earned it."
+q_m19b_032_narrator.mp3,M19b,Homecoming,epilogue.lines,Narrator,narrator,"Before you leave for the Summit, Hank hands Kit a Gearhound and his old welding goggles."
+q_m19b_033_hank.mp3,M19b,Homecoming,epilogue.lines,Hank Briggs,hank,"You fix everything for everybody, kid. Let somebody look after you for once."
+q_m19b_034_narrator.mp3,M19b,Homecoming,epilogue.lines,Narrator,narrator,Kit puts the goggles on. They're much too big. Kit doesn't take them off for a week.
+q_m20_001_marisol.mp3,M20,The Summit,objectives.lines,Marisol Fenn,marisol,"This crystal cut the first Signal Shard. Twenty years ago, four kids built the very first Linker around it."
+q_m20_002_marisol.mp3,M20,The Summit,objectives.lines,Marisol Fenn,marisol,"Vashti did the biology, Orra the signal, Kael the engineering. Teo just kept saying it would work. It did."
+q_m20_003_harrow.mp3,M20,The Summit,objectives.lines,Duke Harrow,harrow,I wrote the anthem they played the day the Linker League was founded.
+q_m20_004_harrow.mp3,M20,The Summit,objectives.lines,Duke Harrow,harrow,"That same night, Orra and Vashti locked the Codex away in this mountain. I watched them do it. Nobody sang about that part."
+q_m20_005_narrator.mp3,M20,The Summit,objectives.lines,Narrator,narrator,"As Saga's last Alienmon falls, Saga leans close and whispers one word. It isn't any language you know."
+q_m20_006_narrator.mp3,M20,The Summit,objectives.lines,Narrator,narrator,Zib's lights flash every color at once. Nobody else seems to notice.
+q_m20_007_ostrander.mp3,M20,The Summit,objectives.lines,General Ostrander,ostrander,I guarded that crater for twenty years. I'll tell you something I never put in a report.
+q_m20_008_ostrander.mp3,M20,The Summit,objectives.lines,General Ostrander,ostrander,Six years ago I saw Teo Reyes walk into the light. I could have stopped him. He looked so happy. So I let him go.
+q_m21_001_orra.mp3,M21,Prime Linker,battle intro,Orra Venn,orra,My first Linker still works. Let's see if yours can carry what mine carried.
+q_m21_002_orra.mp3,M21,Prime Linker,objectives.lines,Orra Venn,orra,I kept the Codex locked up for nineteen years and called it protecting people.
+q_m21_003_orra.mp3,M21,Prime Linker,objectives.lines,Orra Venn,orra,"You carried the truth across fourteen worlds, in the open. That's the difference."
+q_m21_004_orra.mp3,M21,Prime Linker,objectives.lines,Orra Venn,orra,"Tonight Imogen and I will tell every world the whole prophecy, in the open. They should know what the Reunion is."
+q_p01_001_vashti.mp3,P01,Through the Vortex,objectives.lines,Dr. Vashti,vashti,"Thorne's Codex page. ""A door that is a road, opened only by a scout and a listener together."""
+q_p01_002_vashti.mp3,P01,Through the Vortex,objectives.lines,Dr. Vashti,vashti,"The Great Telescope can focus all eight Shards into a Vortex, if the lens is right. So Kit and I built one from Teo's crystal map."
+q_p01_003_vashti.mp3,P01,Through the Vortex,objectives.lines,Dr. Vashti,vashti,"The Shards are set. Nothing's happening. ...A scout and a listener. Of course. You and Zib, together."
+q_p01_004_vashti.mp3,P01,Through the Vortex,objectives.lines,Dr. Vashti,vashti,"And every Keeper has promised: when the call comes, they'll bring their Alienmon through."
+q_p03_001_narrator.mp3,P03,The Reunion,objectives.lines,Narrator,narrator,"At the bottom of the empty crater, the Heartroot glows very faintly. It's almost dark."
+q_p03_002_narrator.mp3,P03,The Reunion,objectives.lines,Narrator,narrator,"You understand all at once: one team isn't enough. The legend needs every Alienmon. All of her children, together."
+q_p03_015_seedmother.mp3,P03,The Reunion,epilogue.lines,Seedmother,seedmother,"Little scout. Your mission is done. You can stay home now, with me."
+q_p03_016_narrator.mp3,P03,The Reunion,epilogue.lines,Narrator,narrator,"Zib looks up at the Seedmother. Then it looks at you, for a long time."
+q_p03_018_seedmother.mp3,P03,The Reunion,epilogue.lines,Seedmother,seedmother,A scout's job is to find a home. You found one.
+q_p03_019_narrator.mp3,P03,The Reunion,epilogue.lines,Narrator,narrator,"Zib zips back to your shoulder, every light glowing gold."
+q_p04_004_narrator.mp3,P04,The Warp Gate Hums,epilogue.lines,Narrator,narrator,One year later.
+q_p04_005_narrator.mp3,P04,The Warp Gate Hums,epilogue.lines,Narrator,narrator,"The Warp Gate hums over Dustmere. Through it, green against Ystra's new sky, you can see the Seedmother's tree."
+q_p04_006_narrator.mp3,P04,The Warp Gate Hums,epilogue.lines,Narrator,narrator,Tamsin is still exploring Ystra. Teo and Dr. Vashti run a research station between the worlds.
+q_p04_007_narrator.mp3,P04,The Warp Gate Hums,epilogue.lines,Narrator,narrator,"Admin Vex is still in prison, and Captain Marsh still visits just to gloat."
+q_p04_008_narrator.mp3,P04,The Warp Gate Hums,epilogue.lines,Narrator,narrator,"A letter arrives from Kael Thorne: ""I wanted to own her. You set her free. Elena would have liked you. Tell your Zib thank you."""
+q_p04_009_narrator.mp3,P04,The Warp Gate Hums,epilogue.lines,Narrator,narrator,"At the Observatory, a nervous new thirteen-year-old is choosing a first partner."
+q_p04_010_narrator.mp3,P04,The Warp Gate Hums,epilogue.lines,Narrator,narrator,"Over on the table, one shy capsule sits all alone. Nobody picked it. You walk over to it."
+q_p04_011_narrator.mp3,P04,The Warp Gate Hums,epilogue.lines,Narrator,narrator,THE END of the Alienmon Chronicles. (Every Alienmon is a piece of her. Open the Xenodex and press A to see the Heartroot.)
+q_s40_004_narrator.mp3,S40,Captain's Log,objectives.lines,Narrator,narrator,The Chirpod chirps happily and tucks itself under your collar.
+q_s40_009_narrator.mp3,S40,Captain's Log,epilogue.lines,Narrator,narrator,"The Chirpod circles you three times, then flies off over the harbor, singing."

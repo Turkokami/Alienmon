@@ -159,6 +159,7 @@ function townTrainer(h){const key=(PL[G.planet]||{}).key,a=PROG.areas[key]||{},t
  const size=hi<=15?[1,2]:hi<=35?[2,3]:[3,4],r=rng(hash(h.id)),n=h.app?size[1]:size[0]+Math.floor(r()*(size[1]-size[0]+1));
  const t=(wildTable(key)||[]).filter(x=>wildOK(x.name)&&IDX[x.name]!=null);
  const team=Array.from({length:n},(_,i)=>[IDX[t.length?t[Math.floor(r()*t.length)].name:'Fizzle'],(h.app?Math.max(tl[0],hi-2):Math.max(tl[0],Math.min(hi,tl[0]+Math.floor(r()*(hi-tl[0]+1))+i)))+(h.route?2:0)]);
+ if(typeof mDone==='function'&&!mDone('M03')&&key==='dustara')team.splice(1,9),team[0][1]=Math.min(team[0][1],4);   /* before the first rival battle: one gentle Lv4 partner, a fair fight for a brand-new starter */
  return{name:h.cls+' '+h.name,art:h.art,intro:h.app?"You'll need to get past us to reach the Keeper!":"Our eyes met! That means a battle!",
   lose:h.app?'Go on, the Keeper is waiting.':'Wow, you two are in sync!',after:h.app?'The Keeper is just ahead.':'Good battle! Keep training out here.',team,bkey:h.id}}
 function trainerTalk(h){const tr=townTrainer(h);if(G.beaten[h.id])return say(tr.name+': '+tr.after,null,h.art);
