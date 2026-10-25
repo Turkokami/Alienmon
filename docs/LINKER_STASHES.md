@@ -28,7 +28,7 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 | 016 Frontier: Ash Trail Part B | 9,11 | 3x Stasis Pod | 1 |
 | 016 Frontier: Ash Trail Part B | 17,9 | 1x Revive Spark | 1 |
 | 017 Frontier: Palm Isle | 12,9 | 3x Stasis Pod | 1 |
-| 017 Frontier: Palm Isle | 8,4 | 2x Cure Spray | 1 |
+| 017 Frontier: Palm Isle | 6,3 | 2x Cure Spray | 1 |
 | 018 Frontier: Port Ember | 7,10 | 150x Stardust | 1 |
 | 019 Frontier: Long Dock | 5,6 | 5x Stasis Pod | 2 |
 | 020 Frontier: Ridge Path Part A | 5,3 | 2x Harmonic Pod | 2 |

@@ -1,0 +1,519 @@
+batch_file,kind,name,output,status
+sprites/sprites_batch_01.md,pose sheet,Sporix,art/arena/raw/Sporix_arena.png,todo
+sprites/sprites_batch_01.md,pose sheet,Mycelith,art/arena/raw/Mycelith_arena.png,todo
+sprites/sprites_batch_01.md,pose sheet,Fungaroth,art/arena/raw/Fungaroth_arena.png,todo
+sprites/sprites_batch_01.md,pose sheet,Plazmo,art/arena/raw/Plazmo_arena.png,todo
+sprites/sprites_batch_01.md,pose sheet,Plazmet,art/arena/raw/Plazmet_arena.png,todo
+sprites/sprites_batch_01.md,pose sheet,Solarach,art/arena/raw/Solarach_arena.png,todo
+sprites/sprites_batch_01.md,pose sheet,Gloopa,art/arena/raw/Gloopa_arena.png,todo
+sprites/sprites_batch_01.md,pose sheet,Tidaloid,art/arena/raw/Tidaloid_arena.png,todo
+sprites/sprites_batch_01.md,pose sheet,Abyssor,art/arena/raw/Abyssor_arena.png,todo
+sprites/sprites_batch_01.md,pose sheet,Zib,art/arena/raw/Zib_arena.png,todo
+sprites/sprites_batch_01.md,pose sheet,Forgemaul,art/arena/raw/Forgemaul_arena.png,todo
+sprites/sprites_batch_01.md,pose sheet,Mycora,art/arena/raw/Mycora_arena.png,todo
+sprites/sprites_batch_01.md,pose sheet,Anchorath,art/arena/raw/Anchorath_arena.png,todo
+sprites/sprites_batch_01.md,pose sheet,Bassquake,art/arena/raw/Bassquake_arena.png,todo
+sprites/sprites_batch_01.md,pose sheet,Basaltor,art/arena/raw/Basaltor_arena.png,todo
+sprites/sprites_batch_01.md,pose sheet,Glaciryx,art/arena/raw/Glaciryx_arena.png,todo
+sprites/sprites_batch_01.md,pose sheet,Vexhydra,art/arena/raw/Vexhydra_arena.png,todo
+sprites/sprites_batch_01.md,pose sheet,Bronnix,art/arena/raw/Bronnix_arena.png,todo
+sprites/sprites_batch_01.md,pose sheet,Thornvoid,art/arena/raw/Thornvoid_arena.png,todo
+sprites/sprites_batch_02.md,pose sheet,Mirrix,art/arena/raw/Mirrix_arena.png,todo
+sprites/sprites_batch_02.md,pose sheet,Reflix,art/arena/raw/Reflix_arena.png,todo
+sprites/sprites_batch_02.md,pose sheet,Horizar,art/arena/raw/Horizar_arena.png,todo
+sprites/sprites_batch_02.md,pose sheet,Facetrix,art/arena/raw/Facetrix_arena.png,todo
+sprites/sprites_batch_02.md,pose sheet,Encorex,art/arena/raw/Encorex_arena.png,todo
+sprites/sprites_batch_02.md,pose sheet,Pyrelyth,art/arena/raw/Pyrelyth_arena.png,todo
+sprites/sprites_batch_02.md,pose sheet,Citadrake,art/arena/raw/Citadrake_arena.png,todo
+sprites/sprites_batch_02.md,pose sheet,Firstlight,art/arena/raw/Firstlight_arena.png,todo
+sprites/sprites_batch_02.md,pose sheet,Oblivite,art/arena/raw/Oblivite_arena.png,todo
+sprites/sprites_batch_02.md,pose sheet,Lumivex,art/arena/raw/Lumivex_arena.png,todo
+sprites/sprites_batch_02.md,pose sheet,Fizzle,art/arena/raw/Fizzle_arena.png,todo
+sprites/sprites_batch_02.md,pose sheet,Fizzlord,art/arena/raw/Fizzlord_arena.png,todo
+sprites/sprites_batch_02.md,pose sheet,Skitterbit,art/arena/raw/Skitterbit_arena.png,todo
+sprites/sprites_batch_02.md,pose sheet,Skitterdrone,art/arena/raw/Skitterdrone_arena.png,todo
+sprites/sprites_batch_02.md,pose sheet,Hivemaw,art/arena/raw/Hivemaw_arena.png,todo
+sprites/sprites_batch_02.md,pose sheet,Pebblet,art/arena/raw/Pebblet_arena.png,todo
+sprites/sprites_batch_02.md,pose sheet,Bouldron,art/arena/raw/Bouldron_arena.png,todo
+sprites/sprites_batch_02.md,pose sheet,Orbitusk,art/arena/raw/Orbitusk_arena.png,todo
+sprites/sprites_batch_02.md,pose sheet,Blinkit,art/arena/raw/Blinkit_arena.png,todo
+sprites/sprites_batch_03.md,pose sheet,Grayvision,art/arena/raw/Grayvision_arena.png,todo
+sprites/sprites_batch_03.md,pose sheet,Cindermole,art/arena/raw/Cindermole_arena.png,todo
+sprites/sprites_batch_03.md,pose sheet,Kilnback,art/arena/raw/Kilnback_arena.png,todo
+sprites/sprites_batch_03.md,pose sheet,Chirpod,art/arena/raw/Chirpod_arena.png,todo
+sprites/sprites_batch_03.md,pose sheet,Squawktone,art/arena/raw/Squawktone_arena.png,todo
+sprites/sprites_batch_03.md,pose sheet,Cactling,art/arena/raw/Cactling_arena.png,todo
+sprites/sprites_batch_03.md,pose sheet,Spinelord,art/arena/raw/Spinelord_arena.png,todo
+sprites/sprites_batch_03.md,pose sheet,Shadebit,art/arena/raw/Shadebit_arena.png,todo
+sprites/sprites_batch_03.md,pose sheet,Umbrask,art/arena/raw/Umbrask_arena.png,todo
+sprites/sprites_batch_03.md,pose sheet,Liftant,art/arena/raw/Liftant_arena.png,todo
+sprites/sprites_batch_03.md,pose sheet,Hoistant,art/arena/raw/Hoistant_arena.png,todo
+sprites/sprites_batch_03.md,pose sheet,Spindyn,art/arena/raw/Spindyn_arena.png,todo
+sprites/sprites_batch_03.md,pose sheet,Dynamotor,art/arena/raw/Dynamotor_arena.png,todo
+sprites/sprites_batch_03.md,pose sheet,Boltling,art/arena/raw/Boltling_arena.png,todo
+sprites/sprites_batch_03.md,pose sheet,Gearhound,art/arena/raw/Gearhound_arena.png,todo
+sprites/sprites_batch_03.md,pose sheet,Scraptitan,art/arena/raw/Scraptitan_arena.png,todo
+sprites/sprites_batch_03.md,pose sheet,Coilet,art/arena/raw/Coilet_arena.png,todo
+sprites/sprites_batch_03.md,pose sheet,Coilossus,art/arena/raw/Coilossus_arena.png,todo
+sprites/sprites_batch_03.md,pose sheet,Rivetoad,art/arena/raw/Rivetoad_arena.png,todo
+sprites/sprites_batch_04.md,pose sheet,Railbeast,art/arena/raw/Railbeast_arena.png,todo
+sprites/sprites_batch_04.md,pose sheet,Gleamgrub,art/arena/raw/Gleamgrub_arena.png,todo
+sprites/sprites_batch_04.md,pose sheet,Corrovore,art/arena/raw/Corrovore_arena.png,todo
+sprites/sprites_batch_04.md,pose sheet,Smeltpup,art/arena/raw/Smeltpup_arena.png,todo
+sprites/sprites_batch_04.md,pose sheet,Anvilox,art/arena/raw/Anvilox_arena.png,todo
+sprites/sprites_batch_04.md,pose sheet,Gongit,art/arena/raw/Gongit_arena.png,todo
+sprites/sprites_batch_04.md,pose sheet,Gongorr,art/arena/raw/Gongorr_arena.png,todo
+sprites/sprites_batch_04.md,pose sheet,Nutbug,art/arena/raw/Nutbug_arena.png,todo
+sprites/sprites_batch_04.md,pose sheet,Screwmantis,art/arena/raw/Screwmantis_arena.png,todo
+sprites/sprites_batch_04.md,pose sheet,Magnub,art/arena/raw/Magnub_arena.png,todo
+sprites/sprites_batch_04.md,pose sheet,Magnaxis,art/arena/raw/Magnaxis_arena.png,todo
+sprites/sprites_batch_04.md,pose sheet,Lumislug,art/arena/raw/Lumislug_arena.png,todo
+sprites/sprites_batch_04.md,pose sheet,Neonmire,art/arena/raw/Neonmire_arena.png,todo
+sprites/sprites_batch_04.md,pose sheet,Puffspore,art/arena/raw/Puffspore_arena.png,todo
+sprites/sprites_batch_04.md,pose sheet,Miasmoth,art/arena/raw/Miasmoth_arena.png,todo
+sprites/sprites_batch_04.md,pose sheet,Rotbloom,art/arena/raw/Rotbloom_arena.png,todo
+sprites/sprites_batch_04.md,pose sheet,Gnatlet,art/arena/raw/Gnatlet_arena.png,todo
+sprites/sprites_batch_04.md,pose sheet,Gnatcloud,art/arena/raw/Gnatcloud_arena.png,todo
+sprites/sprites_batch_04.md,pose sheet,Bogeel,art/arena/raw/Bogeel_arena.png,todo
+sprites/sprites_batch_05.md,pose sheet,Sludgeviper,art/arena/raw/Sludgeviper_arena.png,todo
+sprites/sprites_batch_05.md,pose sheet,Vinewisp,art/arena/raw/Vinewisp_arena.png,todo
+sprites/sprites_batch_05.md,pose sheet,Lianarch,art/arena/raw/Lianarch_arena.png,todo
+sprites/sprites_batch_05.md,pose sheet,Moodshroom,art/arena/raw/Moodshroom_arena.png,todo
+sprites/sprites_batch_05.md,pose sheet,Dreamcap,art/arena/raw/Dreamcap_arena.png,todo
+sprites/sprites_batch_05.md,pose sheet,Stingmire,art/arena/raw/Stingmire_arena.png,todo
+sprites/sprites_batch_05.md,pose sheet,Venomarch,art/arena/raw/Venomarch_arena.png,todo
+sprites/sprites_batch_05.md,pose sheet,Lilypod,art/arena/raw/Lilypod_arena.png,todo
+sprites/sprites_batch_05.md,pose sheet,Lotudrake,art/arena/raw/Lotudrake_arena.png,todo
+sprites/sprites_batch_05.md,pose sheet,Murkling,art/arena/raw/Murkling_arena.png,todo
+sprites/sprites_batch_05.md,pose sheet,Murkwraith,art/arena/raw/Murkwraith_arena.png,todo
+sprites/sprites_batch_05.md,pose sheet,Silkpup,art/arena/raw/Silkpup_arena.png,todo
+sprites/sprites_batch_05.md,pose sheet,Cocoonix,art/arena/raw/Cocoonix_arena.png,todo
+sprites/sprites_batch_05.md,pose sheet,Lunaweaver,art/arena/raw/Lunaweaver_arena.png,todo
+sprites/sprites_batch_05.md,pose sheet,Drippit,art/arena/raw/Drippit_arena.png,todo
+sprites/sprites_batch_05.md,pose sheet,Goozilla,art/arena/raw/Goozilla_arena.png,todo
+sprites/sprites_batch_05.md,pose sheet,Bubbub,art/arena/raw/Bubbub_arena.png,todo
+sprites/sprites_batch_05.md,pose sheet,Bubblorca,art/arena/raw/Bubblorca_arena.png,todo
+sprites/sprites_batch_05.md,pose sheet,Crabot,art/arena/raw/Crabot_arena.png,todo
+sprites/sprites_batch_06.md,pose sheet,Clawfort,art/arena/raw/Clawfort_arena.png,todo
+sprites/sprites_batch_06.md,pose sheet,Zapfin,art/arena/raw/Zapfin_arena.png,todo
+sprites/sprites_batch_06.md,pose sheet,Stormray,art/arena/raw/Stormray_arena.png,todo
+sprites/sprites_batch_06.md,pose sheet,Inklet,art/arena/raw/Inklet_arena.png,todo
+sprites/sprites_batch_06.md,pose sheet,Cephalux,art/arena/raw/Cephalux_arena.png,todo
+sprites/sprites_batch_06.md,pose sheet,Conchlet,art/arena/raw/Conchlet_arena.png,todo
+sprites/sprites_batch_06.md,pose sheet,Pearlord,art/arena/raw/Pearlord_arena.png,todo
+sprites/sprites_batch_06.md,pose sheet,Echofin,art/arena/raw/Echofin_arena.png,todo
+sprites/sprites_batch_06.md,pose sheet,Echoleviah,art/arena/raw/Echoleviah_arena.png,todo
+sprites/sprites_batch_06.md,pose sheet,Tidepull,art/arena/raw/Tidepull_arena.png,todo
+sprites/sprites_batch_06.md,pose sheet,Tidemoon,art/arena/raw/Tidemoon_arena.png,todo
+sprites/sprites_batch_06.md,pose sheet,Fogwisp,art/arena/raw/Fogwisp_arena.png,todo
+sprites/sprites_batch_06.md,pose sheet,Mistphantom,art/arena/raw/Mistphantom_arena.png,todo
+sprites/sprites_batch_06.md,pose sheet,Barnacub,art/arena/raw/Barnacub_arena.png,todo
+sprites/sprites_batch_06.md,pose sheet,Barnacolos,art/arena/raw/Barnacolos_arena.png,todo
+sprites/sprites_batch_06.md,pose sheet,Krillo,art/arena/raw/Krillo_arena.png,todo
+sprites/sprites_batch_06.md,pose sheet,Krillswarm,art/arena/raw/Krillswarm_arena.png,todo
+sprites/sprites_batch_06.md,pose sheet,Gullwhistle,art/arena/raw/Gullwhistle_arena.png,todo
+sprites/sprites_batch_06.md,pose sheet,Galecry,art/arena/raw/Galecry_arena.png,todo
+sprites/sprites_batch_07.md,pose sheet,Ventlet,art/arena/raw/Ventlet_arena.png,todo
+sprites/sprites_batch_07.md,pose sheet,Thermoctus,art/arena/raw/Thermoctus_arena.png,todo
+sprites/sprites_batch_07.md,pose sheet,Bulbit,art/arena/raw/Bulbit_arena.png,todo
+sprites/sprites_batch_07.md,pose sheet,Filamaw,art/arena/raw/Filamaw_arena.png,todo
+sprites/sprites_batch_07.md,pose sheet,Arclume,art/arena/raw/Arclume_arena.png,todo
+sprites/sprites_batch_07.md,pose sheet,Pixbot,art/arena/raw/Pixbot_arena.png,todo
+sprites/sprites_batch_07.md,pose sheet,Datadron,art/arena/raw/Datadron_arena.png,todo
+sprites/sprites_batch_07.md,pose sheet,Ampup,art/arena/raw/Ampup_arena.png,todo
+sprites/sprites_batch_07.md,pose sheet,Amplion,art/arena/raw/Amplion_arena.png,todo
+sprites/sprites_batch_07.md,pose sheet,Signalet,art/arena/raw/Signalet_arena.png,todo
+sprites/sprites_batch_07.md,pose sheet,Transmitron,art/arena/raw/Transmitron_arena.png,todo
+sprites/sprites_batch_07.md,pose sheet,Glitchbug,art/arena/raw/Glitchbug_arena.png,todo
+sprites/sprites_batch_07.md,pose sheet,Glitchmoth,art/arena/raw/Glitchmoth_arena.png,todo
+sprites/sprites_batch_07.md,pose sheet,Blackwatt,art/arena/raw/Blackwatt_arena.png,todo
+sprites/sprites_batch_07.md,pose sheet,Nullgrid,art/arena/raw/Nullgrid_arena.png,todo
+sprites/sprites_batch_07.md,pose sheet,Neonewt,art/arena/raw/Neonewt_arena.png,todo
+sprites/sprites_batch_07.md,pose sheet,Neonagon,art/arena/raw/Neonagon_arena.png,todo
+sprites/sprites_batch_07.md,pose sheet,Holopup,art/arena/raw/Holopup_arena.png,todo
+sprites/sprites_batch_07.md,pose sheet,Holofox,art/arena/raw/Holofox_arena.png,todo
+sprites/sprites_batch_08.md,pose sheet,Quartzle,art/arena/raw/Quartzle_arena.png,todo
+sprites/sprites_batch_08.md,pose sheet,Piezorn,art/arena/raw/Piezorn_arena.png,todo
+sprites/sprites_batch_08.md,pose sheet,Turbinit,art/arena/raw/Turbinit_arena.png,todo
+sprites/sprites_batch_08.md,pose sheet,Turbinox,art/arena/raw/Turbinox_arena.png,todo
+sprites/sprites_batch_08.md,pose sheet,Glyphling,art/arena/raw/Glyphling_arena.png,todo
+sprites/sprites_batch_08.md,pose sheet,Runeguard,art/arena/raw/Runeguard_arena.png,todo
+sprites/sprites_batch_08.md,pose sheet,Monolet,art/arena/raw/Monolet_arena.png,todo
+sprites/sprites_batch_08.md,pose sheet,Obeliskor,art/arena/raw/Obeliskor_arena.png,todo
+sprites/sprites_batch_08.md,pose sheet,Shardpup,art/arena/raw/Shardpup_arena.png,todo
+sprites/sprites_batch_08.md,pose sheet,Shardwolf,art/arena/raw/Shardwolf_arena.png,todo
+sprites/sprites_batch_08.md,pose sheet,Prismwolf,art/arena/raw/Prismwolf_arena.png,todo
+sprites/sprites_batch_08.md,pose sheet,Echoshade,art/arena/raw/Echoshade_arena.png,todo
+sprites/sprites_batch_08.md,pose sheet,Memoria,art/arena/raw/Memoria_arena.png,todo
+sprites/sprites_batch_08.md,pose sheet,Fossilily,art/arena/raw/Fossilily_arena.png,todo
+sprites/sprites_batch_08.md,pose sheet,Ambroot,art/arena/raw/Ambroot_arena.png,todo
+sprites/sprites_batch_08.md,pose sheet,Chimelet,art/arena/raw/Chimelet_arena.png,todo
+sprites/sprites_batch_08.md,pose sheet,Chimeral,art/arena/raw/Chimeral_arena.png,todo
+sprites/sprites_batch_08.md,pose sheet,Vortiny,art/arena/raw/Vortiny_arena.png,todo
+sprites/sprites_batch_08.md,pose sheet,Vortexus,art/arena/raw/Vortexus_arena.png,todo
+sprites/sprites_batch_09.md,pose sheet,Oracub,art/arena/raw/Oracub_arena.png,todo
+sprites/sprites_batch_09.md,pose sheet,Oraclaw,art/arena/raw/Oraclaw_arena.png,todo
+sprites/sprites_batch_09.md,pose sheet,Mosaik,art/arena/raw/Mosaik_arena.png,todo
+sprites/sprites_batch_09.md,pose sheet,Ashpup,art/arena/raw/Ashpup_arena.png,todo
+sprites/sprites_batch_09.md,pose sheet,Cinderhound,art/arena/raw/Cinderhound_arena.png,todo
+sprites/sprites_batch_09.md,pose sheet,Pyroclast,art/arena/raw/Pyroclast_arena.png,todo
+sprites/sprites_batch_09.md,pose sheet,Lavorb,art/arena/raw/Lavorb_arena.png,todo
+sprites/sprites_batch_09.md,pose sheet,Coremantle,art/arena/raw/Coremantle_arena.png,todo
+sprites/sprites_batch_09.md,pose sheet,Obsidimp,art/arena/raw/Obsidimp_arena.png,todo
+sprites/sprites_batch_09.md,pose sheet,Obsidrake,art/arena/raw/Obsidrake_arena.png,todo
+sprites/sprites_batch_09.md,pose sheet,Kindlefly,art/arena/raw/Kindlefly_arena.png,todo
+sprites/sprites_batch_09.md,pose sheet,Blazewing,art/arena/raw/Blazewing_arena.png,todo
+sprites/sprites_batch_09.md,pose sheet,Drillit,art/arena/raw/Drillit_arena.png,todo
+sprites/sprites_batch_09.md,pose sheet,Drillcrag,art/arena/raw/Drillcrag_arena.png,todo
+sprites/sprites_batch_09.md,pose sheet,Smoglet,art/arena/raw/Smoglet_arena.png,todo
+sprites/sprites_batch_09.md,pose sheet,Smogshade,art/arena/raw/Smogshade_arena.png,todo
+sprites/sprites_batch_09.md,pose sheet,Rumblet,art/arena/raw/Rumblet_arena.png,todo
+sprites/sprites_batch_09.md,pose sheet,Tremoroar,art/arena/raw/Tremoroar_arena.png,todo
+sprites/sprites_batch_09.md,pose sheet,Scorchscale,art/arena/raw/Scorchscale_arena.png,todo
+sprites/sprites_batch_10.md,pose sheet,Scorchwyrm,art/arena/raw/Scorchwyrm_arena.png,todo
+sprites/sprites_batch_10.md,pose sheet,Charsprout,art/arena/raw/Charsprout_arena.png,todo
+sprites/sprites_batch_10.md,pose sheet,Phoenixia,art/arena/raw/Phoenixia_arena.png,todo
+sprites/sprites_batch_10.md,pose sheet,Snoblet,art/arena/raw/Snoblet_arena.png,todo
+sprites/sprites_batch_10.md,pose sheet,Iceburr,art/arena/raw/Iceburr_arena.png,todo
+sprites/sprites_batch_10.md,pose sheet,Glaciarch,art/arena/raw/Glaciarch_arena.png,todo
+sprites/sprites_batch_10.md,pose sheet,Rimeshard,art/arena/raw/Rimeshard_arena.png,todo
+sprites/sprites_batch_10.md,pose sheet,Rimecrown,art/arena/raw/Rimecrown_arena.png,todo
+sprites/sprites_batch_10.md,pose sheet,Floepup,art/arena/raw/Floepup_arena.png,todo
+sprites/sprites_batch_10.md,pose sheet,Floelord,art/arena/raw/Floelord_arena.png,todo
+sprites/sprites_batch_10.md,pose sheet,Auroralet,art/arena/raw/Auroralet_arena.png,todo
+sprites/sprites_batch_10.md,pose sheet,Borealix,art/arena/raw/Borealix_arena.png,todo
+sprites/sprites_batch_10.md,pose sheet,Hailorb,art/arena/raw/Hailorb_arena.png,todo
+sprites/sprites_batch_10.md,pose sheet,Hailbringer,art/arena/raw/Hailbringer_arena.png,todo
+sprites/sprites_batch_10.md,pose sheet,Frostmite,art/arena/raw/Frostmite_arena.png,todo
+sprites/sprites_batch_10.md,pose sheet,Frostcolony,art/arena/raw/Frostcolony_arena.png,todo
+sprites/sprites_batch_10.md,pose sheet,Chillshade,art/arena/raw/Chillshade_arena.png,todo
+sprites/sprites_batch_10.md,pose sheet,Whiteout,art/arena/raw/Whiteout_arena.png,todo
+sprites/sprites_batch_10.md,pose sheet,Lichling,art/arena/raw/Lichling_arena.png,todo
+sprites/sprites_batch_11.md,pose sheet,Lichenoth,art/arena/raw/Lichenoth_arena.png,todo
+sprites/sprites_batch_11.md,pose sheet,Shatterling,art/arena/raw/Shatterling_arena.png,todo
+sprites/sprites_batch_11.md,pose sheet,Shatterhorn,art/arena/raw/Shatterhorn_arena.png,todo
+sprites/sprites_batch_11.md,pose sheet,Thawmaw,art/arena/raw/Thawmaw_arena.png,todo
+sprites/sprites_batch_11.md,pose sheet,Icicub,art/arena/raw/Icicub_arena.png,todo
+sprites/sprites_batch_11.md,pose sheet,Stalactrix,art/arena/raw/Stalactrix_arena.png,todo
+sprites/sprites_batch_11.md,pose sheet,Splicelet,art/arena/raw/Splicelet_arena.png,todo
+sprites/sprites_batch_11.md,pose sheet,Splicor,art/arena/raw/Splicor_arena.png,todo
+sprites/sprites_batch_11.md,pose sheet,Chimerax,art/arena/raw/Chimerax_arena.png,todo
+sprites/sprites_batch_11.md,pose sheet,Vialit,art/arena/raw/Vialit_arena.png,todo
+sprites/sprites_batch_11.md,pose sheet,Vialord,art/arena/raw/Vialord_arena.png,todo
+sprites/sprites_batch_11.md,pose sheet,Cagebot,art/arena/raw/Cagebot_arena.png,todo
+sprites/sprites_batch_11.md,pose sheet,Wardenix,art/arena/raw/Wardenix_arena.png,todo
+sprites/sprites_batch_11.md,pose sheet,Nullbot,art/arena/raw/Nullbot_arena.png,todo
+sprites/sprites_batch_11.md,pose sheet,Nulltron,art/arena/raw/Nulltron_arena.png,todo
+sprites/sprites_batch_11.md,pose sheet,Mindlet,art/arena/raw/Mindlet_arena.png,todo
+sprites/sprites_batch_11.md,pose sheet,Cerebrix,art/arena/raw/Cerebrix_arena.png,todo
+sprites/sprites_batch_11.md,pose sheet,Cerebralux,art/arena/raw/Cerebralux_arena.png,todo
+sprites/sprites_batch_11.md,pose sheet,Humlet,art/arena/raw/Humlet_arena.png,todo
+sprites/sprites_batch_12.md,pose sheet,Hummingmind,art/arena/raw/Hummingmind_arena.png,todo
+sprites/sprites_batch_12.md,pose sheet,Levitot,art/arena/raw/Levitot_arena.png,todo
+sprites/sprites_batch_12.md,pose sheet,Levitaur,art/arena/raw/Levitaur_arena.png,todo
+sprites/sprites_batch_12.md,pose sheet,Haloette,art/arena/raw/Haloette_arena.png,todo
+sprites/sprites_batch_12.md,pose sheet,Halocene,art/arena/raw/Halocene_arena.png,todo
+sprites/sprites_batch_12.md,pose sheet,Zephyrling,art/arena/raw/Zephyrling_arena.png,todo
+sprites/sprites_batch_12.md,pose sheet,Zephyrion,art/arena/raw/Zephyrion_arena.png,todo
+sprites/sprites_batch_12.md,pose sheet,Dreamwisp,art/arena/raw/Dreamwisp_arena.png,todo
+sprites/sprites_batch_12.md,pose sheet,Nightmarra,art/arena/raw/Nightmarra_arena.png,todo
+sprites/sprites_batch_12.md,pose sheet,Astrochick,art/arena/raw/Astrochick_arena.png,todo
+sprites/sprites_batch_12.md,pose sheet,Astrowl,art/arena/raw/Astrowl_arena.png,todo
+sprites/sprites_batch_12.md,pose sheet,Bardlet,art/arena/raw/Bardlet_arena.png,todo
+sprites/sprites_batch_12.md,pose sheet,Bardseer,art/arena/raw/Bardseer_arena.png,todo
+sprites/sprites_batch_12.md,pose sheet,Sulklet,art/arena/raw/Sulklet_arena.png,todo
+sprites/sprites_batch_12.md,pose sheet,Gloomhaunt,art/arena/raw/Gloomhaunt_arena.png,todo
+sprites/sprites_batch_12.md,pose sheet,Gloomhulk,art/arena/raw/Gloomhulk_arena.png,todo
+sprites/sprites_batch_12.md,pose sheet,Wellspawn,art/arena/raw/Wellspawn_arena.png,todo
+sprites/sprites_batch_12.md,pose sheet,Wellmaw,art/arena/raw/Wellmaw_arena.png,todo
+sprites/sprites_batch_12.md,pose sheet,Ruinbot,art/arena/raw/Ruinbot_arena.png,todo
+sprites/sprites_batch_13.md,pose sheet,Ruinmech,art/arena/raw/Ruinmech_arena.png,todo
+sprites/sprites_batch_13.md,pose sheet,Duskmite,art/arena/raw/Duskmite_arena.png,todo
+sprites/sprites_batch_13.md,pose sheet,Dusklord,art/arena/raw/Dusklord_arena.png,todo
+sprites/sprites_batch_13.md,pose sheet,Wailshade,art/arena/raw/Wailshade_arena.png,todo
+sprites/sprites_batch_13.md,pose sheet,Banshriek,art/arena/raw/Banshriek_arena.png,todo
+sprites/sprites_batch_13.md,pose sheet,Geopip,art/arena/raw/Geopip_arena.png,todo
+sprites/sprites_batch_13.md,pose sheet,Geodome,art/arena/raw/Geodome_arena.png,todo
+sprites/sprites_batch_13.md,pose sheet,Rotroot,art/arena/raw/Rotroot_arena.png,todo
+sprites/sprites_batch_13.md,pose sheet,Gravebloom,art/arena/raw/Gravebloom_arena.png,todo
+sprites/sprites_batch_13.md,pose sheet,Novaling,art/arena/raw/Novaling_arena.png,todo
+sprites/sprites_batch_13.md,pose sheet,Novacat,art/arena/raw/Novacat_arena.png,todo
+sprites/sprites_batch_13.md,pose sheet,Supernovyx,art/arena/raw/Supernovyx_arena.png,todo
+sprites/sprites_batch_13.md,pose sheet,Quasarling,art/arena/raw/Quasarling_arena.png,todo
+sprites/sprites_batch_13.md,pose sheet,Quasarus,art/arena/raw/Quasarus_arena.png,todo
+sprites/sprites_batch_13.md,pose sheet,Prismite,art/arena/raw/Prismite_arena.png,todo
+sprites/sprites_batch_13.md,pose sheet,Prismora,art/arena/raw/Prismora_arena.png,todo
+sprites/sprites_batch_13.md,pose sheet,Eclipsit,art/arena/raw/Eclipsit_arena.png,todo
+sprites/sprites_batch_13.md,pose sheet,Eclipsor,art/arena/raw/Eclipsor_arena.png,todo
+sprites/sprites_batch_13.md,pose sheet,Cometlet,art/arena/raw/Cometlet_arena.png,todo
+sprites/sprites_batch_14.md,pose sheet,Cometrix,art/arena/raw/Cometrix_arena.png,todo
+sprites/sprites_batch_14.md,pose sheet,Meteorb,art/arena/raw/Meteorb_arena.png,todo
+sprites/sprites_batch_14.md,pose sheet,Meteorox,art/arena/raw/Meteorox_arena.png,todo
+sprites/sprites_batch_14.md,pose sheet,Sunbug,art/arena/raw/Sunbug_arena.png,todo
+sprites/sprites_batch_14.md,pose sheet,Solarswarm,art/arena/raw/Solarswarm_arena.png,todo
+sprites/sprites_batch_14.md,pose sheet,Starsprout,art/arena/raw/Starsprout_arena.png,todo
+sprites/sprites_batch_14.md,pose sheet,Starbloom,art/arena/raw/Starbloom_arena.png,todo
+sprites/sprites_batch_14.md,pose sheet,Podlet,art/arena/raw/Podlet_arena.png,todo
+sprites/sprites_batch_14.md,pose sheet,Podspawn,art/arena/raw/Podspawn_arena.png,todo
+sprites/sprites_batch_14.md,pose sheet,Podsentinel,art/arena/raw/Podsentinel_arena.png,todo
+sprites/sprites_batch_14.md,pose sheet,Foldling,art/arena/raw/Foldling_arena.png,todo
+sprites/sprites_batch_14.md,pose sheet,Foldarch,art/arena/raw/Foldarch_arena.png,todo
+sprites/sprites_batch_14.md,pose sheet,Gemmling,art/arena/raw/Gemmling_arena.png,todo
+sprites/sprites_batch_14.md,pose sheet,Gemmantle,art/arena/raw/Gemmantle_arena.png,todo
+sprites/sprites_batch_14.md,pose sheet,Riffling,art/arena/raw/Riffling_arena.png,todo
+sprites/sprites_batch_14.md,pose sheet,Riffrex,art/arena/raw/Riffrex_arena.png,todo
+sprites/sprites_batch_14.md,pose sheet,Cragpull,art/arena/raw/Cragpull_arena.png,todo
+sprites/sprites_batch_14.md,pose sheet,Cragmajor,art/arena/raw/Cragmajor_arena.png,todo
+sprites/sprites_batch_14.md,pose sheet,Flarechick,art/arena/raw/Flarechick_arena.png,todo
+sprites/sprites_batch_15.md,pose sheet,Flarehawk,art/arena/raw/Flarehawk_arena.png,todo
+sprites/sprites_batch_15.md,pose sheet,Diamite,art/arena/raw/Diamite_arena.png,todo
+sprites/sprites_batch_15.md,pose sheet,Diamondillo,art/arena/raw/Diamondillo_arena.png,todo
+sprites/sprites_batch_15.md,pose sheet,Fractling,art/arena/raw/Fractling_arena.png,todo
+sprites/sprites_batch_15.md,pose sheet,Fractalith,art/arena/raw/Fractalith_arena.png,todo
+sprites/sprites_batch_15.md,pose sheet,Riftling,art/arena/raw/Riftling_arena.png,todo
+sprites/sprites_batch_15.md,pose sheet,Riftwalker,art/arena/raw/Riftwalker_arena.png,todo
+sprites/sprites_batch_15.md,pose sheet,Blightling,art/arena/raw/Blightling_arena.png,todo
+sprites/sprites_batch_15.md,pose sheet,Blightroot,art/arena/raw/Blightroot_arena.png,todo
+sprites/sprites_batch_15.md,pose sheet,Pulsito,art/arena/raw/Pulsito_arena.png,todo
+sprites/sprites_batch_15.md,pose sheet,Pulsarion,art/arena/raw/Pulsarion_arena.png,todo
+sprites/sprites_batch_15.md,pose sheet,Tiktrill,art/arena/raw/Tiktrill_arena.png,todo
+sprites/sprites_batch_15.md,pose sheet,Chronocrick,art/arena/raw/Chronocrick_arena.png,todo
+sprites/sprites_batch_15.md,pose sheet,Croakle,art/arena/raw/Croakle_arena.png,todo
+sprites/sprites_batch_15.md,pose sheet,Croakoustic,art/arena/raw/Croakoustic_arena.png,todo
+sprites/sprites_batch_15.md,pose sheet,Tarbit,art/arena/raw/Tarbit_arena.png,todo
+sprites/sprites_batch_15.md,pose sheet,Tarpitan,art/arena/raw/Tarpitan_arena.png,todo
+sprites/sprites_batch_15.md,pose sheet,Frostflare,art/arena/raw/Frostflare_arena.png,todo
+sprites/sprites_batch_15.md,pose sheet,Cryoblaze,art/arena/raw/Cryoblaze_arena.png,todo
+sprites/sprites_batch_16.md,pose sheet,Rustlit,art/arena/raw/Rustlit_arena.png,todo
+sprites/sprites_batch_16.md,pose sheet,Rustlegrove,art/arena/raw/Rustlegrove_arena.png,todo
+sprites/sprites_batch_16.md,pose sheet,Divebot,art/arena/raw/Divebot_arena.png,todo
+sprites/sprites_batch_16.md,pose sheet,Divekraken,art/arena/raw/Divekraken_arena.png,todo
+sprites/sprites_batch_16.md,pose sheet,Venomite,art/arena/raw/Venomite_arena.png,todo
+sprites/sprites_batch_16.md,pose sheet,Venomineral,art/arena/raw/Venomineral_arena.png,todo
+sprites/sprites_batch_16.md,pose sheet,Drizzlit,art/arena/raw/Drizzlit_arena.png,todo
+sprites/sprites_batch_16.md,pose sheet,Thunderhead,art/arena/raw/Thunderhead_arena.png,todo
+sprites/sprites_batch_16.md,pose sheet,Stompadon,art/arena/raw/Stompadon_arena.png,todo
+sprites/sprites_batch_16.md,pose sheet,Cogglet,art/arena/raw/Cogglet_arena.png,todo
+sprites/sprites_batch_16.md,pose sheet,Cyclopper,art/arena/raw/Cyclopper_arena.png,todo
+sprites/sprites_batch_16.md,pose sheet,Girderon,art/arena/raw/Girderon_arena.png,todo
+sprites/sprites_batch_16.md,pose sheet,Rustadillo,art/arena/raw/Rustadillo_arena.png,todo
+sprites/sprites_batch_16.md,pose sheet,Tinwing,art/arena/raw/Tinwing_arena.png,todo
+sprites/sprites_batch_16.md,pose sheet,Brineback,art/arena/raw/Brineback_arena.png,todo
+sprites/sprites_batch_16.md,pose sheet,Fiddlesnap,art/arena/raw/Fiddlesnap_arena.png,todo
+sprites/sprites_batch_16.md,pose sheet,Squidmiral,art/arena/raw/Squidmiral_arena.png,todo
+sprites/sprites_batch_16.md,pose sheet,Glowcroak,art/arena/raw/Glowcroak_arena.png,todo
+sprites/sprites_batch_16.md,pose sheet,Gloomtoad,art/arena/raw/Gloomtoad_arena.png,todo
+sprites/sprites_batch_17.md,pose sheet,Mossback,art/arena/raw/Mossback_arena.png,todo
+sprites/sprites_batch_17.md,pose sheet,Oozel,art/arena/raw/Oozel_arena.png,todo
+sprites/sprites_batch_17.md,pose sheet,Boombastadon,art/arena/raw/Boombastadon_arena.png,todo
+sprites/sprites_batch_17.md,pose sheet,Squawkbox,art/arena/raw/Squawkbox_arena.png,todo
+sprites/sprites_batch_17.md,pose sheet,Puffloon,art/arena/raw/Puffloon_arena.png,todo
+sprites/sprites_batch_17.md,pose sheet,Stormquill,art/arena/raw/Stormquill_arena.png,todo
+sprites/sprites_batch_17.md,pose sheet,Lacefin,art/arena/raw/Lacefin_arena.png,todo
+sprites/sprites_batch_17.md,pose sheet,Vitramoth,art/arena/raw/Vitramoth_arena.png,todo
+sprites/sprites_batch_17.md,pose sheet,Dunetrot,art/arena/raw/Dunetrot_arena.png,todo
+sprites/sprites_batch_17.md,pose sheet,Hexcoil,art/arena/raw/Hexcoil_arena.png,todo
+sprites/sprites_batch_17.md,pose sheet,Rumbler,art/arena/raw/Rumbler_arena.png,todo
+sprites/sprites_batch_17.md,pose sheet,Terravox,art/arena/raw/Terravox_arena.png,todo
+sprites/sprites_batch_17.md,pose sheet,Aquelion,art/arena/raw/Aquelion_arena.png,todo
+sprites/sprites_batch_17.md,pose sheet,Ignarch,art/arena/raw/Ignarch_arena.png,todo
+sprites/sprites_batch_17.md,pose sheet,Novaryx,art/arena/raw/Novaryx_arena.png,todo
+sprites/sprites_batch_17.md,pose sheet,Oblivane,art/arena/raw/Oblivane_arena.png,todo
+sprites/sprites_batch_17.md,pose sheet,Seedmother,art/arena/raw/Seedmother_arena.png,todo
+sprites/sprites_batch_17.md,pose sheet,The Old One,art/arena/raw/The Old One_arena.png,todo
+scenes/arena_scenes_A.md,arena floor,Dustara,art/arena/scenes/dustara_arena.jpg,todo
+scenes/arena_scenes_A.md,arena tiles,Dustara,art/arena/raw/tiles/dustara_tiles.png,todo
+scenes/arena_scenes_A.md,arena hazard,Dustara,art/arena/raw/hazards/dustara_hazard.png,todo
+scenes/arena_scenes_A.md,arena floor,Ferrox,art/arena/scenes/ferrox_arena.jpg,todo
+scenes/arena_scenes_A.md,arena tiles,Ferrox,art/arena/raw/tiles/ferrox_tiles.png,todo
+scenes/arena_scenes_A.md,arena hazard,Ferrox,art/arena/raw/hazards/ferrox_hazard.png,todo
+scenes/arena_scenes_A.md,arena floor,Sporeholm,art/arena/scenes/sporeholm_arena.jpg,todo
+scenes/arena_scenes_A.md,arena tiles,Sporeholm,art/arena/raw/tiles/sporeholm_tiles.png,todo
+scenes/arena_scenes_A.md,arena hazard,Sporeholm,art/arena/raw/hazards/sporeholm_hazard.png,todo
+scenes/arena_scenes_A.md,arena floor,Thalassa,art/arena/scenes/thalassa_arena.jpg,todo
+scenes/arena_scenes_A.md,arena tiles,Thalassa,art/arena/raw/tiles/thalassa_tiles.png,todo
+scenes/arena_scenes_A.md,arena hazard,Thalassa,art/arena/raw/hazards/thalassa_hazard.png,todo
+scenes/arena_scenes_A.md,arena floor,Neonis,art/arena/scenes/neonis_arena.jpg,todo
+scenes/arena_scenes_A.md,arena tiles,Neonis,art/arena/raw/tiles/neonis_tiles.png,todo
+scenes/arena_scenes_A.md,arena hazard,Neonis,art/arena/raw/hazards/neonis_hazard.png,todo
+scenes/arena_scenes_A.md,arena floor,Glyphos,art/arena/scenes/glyphos_arena.jpg,todo
+scenes/arena_scenes_A.md,arena tiles,Glyphos,art/arena/raw/tiles/glyphos_tiles.png,todo
+scenes/arena_scenes_A.md,arena hazard,Glyphos,art/arena/raw/hazards/glyphos_hazard.png,todo
+scenes/arena_scenes_A.md,arena floor,Pyros,art/arena/scenes/pyros_arena.jpg,todo
+scenes/arena_scenes_A.md,arena tiles,Pyros,art/arena/raw/tiles/pyros_tiles.png,todo
+scenes/arena_scenes_A.md,arena hazard,Pyros,art/arena/raw/hazards/pyros_hazard.png,todo
+scenes/arena_scenes_B.md,arena floor,Glacia,art/arena/scenes/glacia_arena.jpg,todo
+scenes/arena_scenes_B.md,arena tiles,Glacia,art/arena/raw/tiles/glacia_tiles.png,todo
+scenes/arena_scenes_B.md,arena hazard,Glacia,art/arena/raw/hazards/glacia_hazard.png,todo
+scenes/arena_scenes_B.md,arena floor,Helix Station,art/arena/scenes/helix_arena.jpg,todo
+scenes/arena_scenes_B.md,arena tiles,Helix Station,art/arena/raw/tiles/helix_tiles.png,todo
+scenes/arena_scenes_B.md,arena hazard,Helix Station,art/arena/raw/hazards/helix_hazard.png,todo
+scenes/arena_scenes_B.md,arena floor,Halo,art/arena/scenes/halo_arena.jpg,todo
+scenes/arena_scenes_B.md,arena tiles,Halo,art/arena/raw/tiles/halo_tiles.png,todo
+scenes/arena_scenes_B.md,arena hazard,Halo,art/arena/raw/hazards/halo_hazard.png,todo
+scenes/arena_scenes_B.md,arena floor,Umbra,art/arena/scenes/umbra_arena.jpg,todo
+scenes/arena_scenes_B.md,arena tiles,Umbra,art/arena/raw/tiles/umbra_tiles.png,todo
+scenes/arena_scenes_B.md,arena hazard,Umbra,art/arena/raw/hazards/umbra_hazard.png,todo
+scenes/arena_scenes_B.md,arena floor,Starfall Rift,art/arena/scenes/starfall_arena.jpg,todo
+scenes/arena_scenes_B.md,arena tiles,Starfall Rift,art/arena/raw/tiles/starfall_tiles.png,todo
+scenes/arena_scenes_B.md,arena hazard,Starfall Rift,art/arena/raw/hazards/starfall_hazard.png,todo
+scenes/arena_scenes_B.md,arena floor,Apex Array,art/arena/scenes/apex_arena.jpg,todo
+scenes/arena_scenes_B.md,arena tiles,Apex Array,art/arena/raw/tiles/apex_tiles.png,todo
+scenes/arena_scenes_B.md,arena hazard,Apex Array,art/arena/raw/hazards/apex_hazard.png,todo
+scenes/arena_scenes_B.md,arena floor,Ystra,art/arena/scenes/ystra_arena.jpg,todo
+scenes/arena_scenes_B.md,arena tiles,Ystra,art/arena/raw/tiles/ystra_tiles.png,todo
+scenes/arena_scenes_B.md,arena hazard,Ystra,art/arena/raw/hazards/ystra_hazard.png,todo
+scenes/arena_scenes_C.md,arena floor,Court,art/arena/scenes/court_arena.jpg,todo
+scenes/arena_scenes_C.md,arena tiles,Court,art/arena/raw/tiles/court_tiles.png,todo
+scenes/arena_scenes_C.md,arena hazard,Court,art/arena/raw/hazards/court_hazard.png,todo
+scenes/arena_scenes_C.md,building,Arena lobby exterior,art/arena/scenes/lobby_exterior.png,todo
+scenes/arena_scenes_C.md,room,Arena lobby interior,art/arena/scenes/lobby_interior.png,todo
+fx/fx_batch_1_plasma_hydro_bio_volt.md,move fx,Ember Pulse,art/arena/raw/fx/ember_pulse.png,todo
+fx/fx_batch_1_plasma_hydro_bio_volt.md,move fx,Flare Lance,art/arena/raw/fx/flare_lance.png,todo
+fx/fx_batch_1_plasma_hydro_bio_volt.md,move fx,Solar Burst,art/arena/raw/fx/solar_burst.png,todo
+fx/fx_batch_1_plasma_hydro_bio_volt.md,move fx,Corona Charge,art/arena/raw/fx/corona_charge.png,todo
+fx/fx_batch_1_plasma_hydro_bio_volt.md,move fx,Sun Spark,art/arena/raw/fx/sun_spark.png,todo
+fx/fx_batch_1_plasma_hydro_bio_volt.md,move fx,Meteor Shower,art/arena/raw/fx/meteor_shower.png,todo
+fx/fx_batch_1_plasma_hydro_bio_volt.md,move fx,Supernova,art/arena/raw/fx/supernova.png,todo
+fx/fx_batch_1_plasma_hydro_bio_volt.md,move fx,Bubble Jet,art/arena/raw/fx/bubble_jet.png,todo
+fx/fx_batch_1_plasma_hydro_bio_volt.md,move fx,Tide Lash,art/arena/raw/fx/tide_lash.png,todo
+fx/fx_batch_1_plasma_hydro_bio_volt.md,move fx,Abyss Surge,art/arena/raw/fx/abyss_surge.png,todo
+fx/fx_batch_1_plasma_hydro_bio_volt.md,move fx,Healing Tide,art/arena/raw/fx/healing_tide.png,todo
+fx/fx_batch_1_plasma_hydro_bio_volt.md,move fx,Bubble Barrage,art/arena/raw/fx/bubble_barrage.png,todo
+fx/fx_batch_1_plasma_hydro_bio_volt.md,move fx,Riptide Spiral,art/arena/raw/fx/riptide_spiral.png,todo
+fx/fx_batch_1_plasma_hydro_bio_volt.md,move fx,Tidal Wall,art/arena/raw/fx/tidal_wall.png,todo
+fx/fx_batch_1_plasma_hydro_bio_volt.md,move fx,Spore Shot,art/arena/raw/fx/spore_shot.png,todo
+fx/fx_batch_1_plasma_hydro_bio_volt.md,move fx,Root Drain,art/arena/raw/fx/root_drain.png,todo
+fx/fx_batch_1_plasma_hydro_bio_volt.md,move fx,Bloom Cannon,art/arena/raw/fx/bloom_cannon.png,todo
+fx/fx_batch_1_plasma_hydro_bio_volt.md,move fx,Photosynth,art/arena/raw/fx/photosynth.png,todo
+fx/fx_batch_1_plasma_hydro_bio_volt.md,move fx,Leafwing Cut,art/arena/raw/fx/leafwing_cut.png,todo
+fx/fx_batch_1_plasma_hydro_bio_volt.md,move fx,Thorn Vine,art/arena/raw/fx/thorn_vine.png,todo
+fx/fx_batch_1_plasma_hydro_bio_volt.md,move fx,World Tree,art/arena/raw/fx/world_tree.png,todo
+fx/fx_batch_1_plasma_hydro_bio_volt.md,move fx,Static Zap,art/arena/raw/fx/static_zap.png,todo
+fx/fx_batch_1_plasma_hydro_bio_volt.md,move fx,Arc Bolt,art/arena/raw/fx/arc_bolt.png,todo
+fx/fx_batch_1_plasma_hydro_bio_volt.md,move fx,Thunder Coil,art/arena/raw/fx/thunder_coil.png,todo
+fx/fx_batch_1_plasma_hydro_bio_volt.md,move fx,Static Field,art/arena/raw/fx/static_field.png,todo
+fx/fx_batch_1_plasma_hydro_bio_volt.md,move fx,Spark Orb,art/arena/raw/fx/spark_orb.png,todo
+fx/fx_batch_1_plasma_hydro_bio_volt.md,move fx,Chain Lightning,art/arena/raw/fx/chain_lightning.png,todo
+fx/fx_batch_1_plasma_hydro_bio_volt.md,move fx,Thunderfall,art/arena/raw/fx/thunderfall.png,todo
+fx/fx_batch_2_cryo_magma_toxin_swarm.md,move fx,Frost Bite,art/arena/raw/fx/frost_bite.png,todo
+fx/fx_batch_2_cryo_magma_toxin_swarm.md,move fx,Ice Shard,art/arena/raw/fx/ice_shard.png,todo
+fx/fx_batch_2_cryo_magma_toxin_swarm.md,move fx,Glacier Crush,art/arena/raw/fx/glacier_crush.png,todo
+fx/fx_batch_2_cryo_magma_toxin_swarm.md,move fx,Frost Armor,art/arena/raw/fx/frost_armor.png,todo
+fx/fx_batch_2_cryo_magma_toxin_swarm.md,move fx,Snowflake Storm,art/arena/raw/fx/snowflake_storm.png,todo
+fx/fx_batch_2_cryo_magma_toxin_swarm.md,move fx,Frost Lance,art/arena/raw/fx/frost_lance.png,todo
+fx/fx_batch_2_cryo_magma_toxin_swarm.md,move fx,Absolute Zero,art/arena/raw/fx/absolute_zero.png,todo
+fx/fx_batch_2_cryo_magma_toxin_swarm.md,move fx,Cinder Spit,art/arena/raw/fx/cinder_spit.png,todo
+fx/fx_batch_2_cryo_magma_toxin_swarm.md,move fx,Lava Fist,art/arena/raw/fx/lava_fist.png,todo
+fx/fx_batch_2_cryo_magma_toxin_swarm.md,move fx,Eruption Wave,art/arena/raw/fx/eruption_wave.png,todo
+fx/fx_batch_2_cryo_magma_toxin_swarm.md,move fx,Wildfire Glare,art/arena/raw/fx/wildfire_glare.png,todo
+fx/fx_batch_2_cryo_magma_toxin_swarm.md,move fx,Magma Bomb,art/arena/raw/fx/magma_bomb.png,todo
+fx/fx_batch_2_cryo_magma_toxin_swarm.md,move fx,Fissure Flare,art/arena/raw/fx/fissure_flare.png,todo
+fx/fx_batch_2_cryo_magma_toxin_swarm.md,move fx,Volcanic Fury,art/arena/raw/fx/volcanic_fury.png,todo
+fx/fx_batch_2_cryo_magma_toxin_swarm.md,move fx,Acid Drip,art/arena/raw/fx/acid_drip.png,todo
+fx/fx_batch_2_cryo_magma_toxin_swarm.md,move fx,Venom Fang,art/arena/raw/fx/venom_fang.png,todo
+fx/fx_batch_2_cryo_magma_toxin_swarm.md,move fx,Miasma Cloud,art/arena/raw/fx/miasma_cloud.png,todo
+fx/fx_batch_2_cryo_magma_toxin_swarm.md,move fx,Toxic Mist,art/arena/raw/fx/toxic_mist.png,todo
+fx/fx_batch_2_cryo_magma_toxin_swarm.md,move fx,Slime Shot,art/arena/raw/fx/slime_shot.png,todo
+fx/fx_batch_2_cryo_magma_toxin_swarm.md,move fx,Acid Geyser,art/arena/raw/fx/acid_geyser.png,todo
+fx/fx_batch_2_cryo_magma_toxin_swarm.md,move fx,Toxic Bloom,art/arena/raw/fx/toxic_bloom.png,todo
+fx/fx_batch_2_cryo_magma_toxin_swarm.md,move fx,Skitter Rush,art/arena/raw/fx/skitter_rush.png,todo
+fx/fx_batch_2_cryo_magma_toxin_swarm.md,move fx,Sting Volley,art/arena/raw/fx/sting_volley.png,todo
+fx/fx_batch_2_cryo_magma_toxin_swarm.md,move fx,Hive Storm,art/arena/raw/fx/hive_storm.png,todo
+fx/fx_batch_2_cryo_magma_toxin_swarm.md,move fx,Swarm Dance,art/arena/raw/fx/swarm_dance.png,todo
+fx/fx_batch_2_cryo_magma_toxin_swarm.md,move fx,Barb Swarm,art/arena/raw/fx/barb_swarm.png,todo
+fx/fx_batch_2_cryo_magma_toxin_swarm.md,move fx,Night Wing,art/arena/raw/fx/night_wing.png,todo
+fx/fx_batch_2_cryo_magma_toxin_swarm.md,move fx,Hive Eclipse,art/arena/raw/fx/hive_eclipse.png,todo
+fx/fx_batch_3_alloy_crystal_psi.md,move fx,Bolt Bash,art/arena/raw/fx/bolt_bash.png,todo
+fx/fx_batch_3_alloy_crystal_psi.md,move fx,Gear Grind,art/arena/raw/fx/gear_grind.png,todo
+fx/fx_batch_3_alloy_crystal_psi.md,move fx,Iron Avalanche,art/arena/raw/fx/iron_avalanche.png,todo
+fx/fx_batch_3_alloy_crystal_psi.md,move fx,Plate Up,art/arena/raw/fx/plate_up.png,todo
+fx/fx_batch_3_alloy_crystal_psi.md,move fx,Steel Star,art/arena/raw/fx/steel_star.png,todo
+fx/fx_batch_3_alloy_crystal_psi.md,move fx,Hex Matrix,art/arena/raw/fx/hex_matrix.png,todo
+fx/fx_batch_3_alloy_crystal_psi.md,move fx,Scrap Storm,art/arena/raw/fx/scrap_storm.png,todo
+fx/fx_batch_3_alloy_crystal_psi.md,move fx,Shard Flick,art/arena/raw/fx/shard_flick.png,todo
+fx/fx_batch_3_alloy_crystal_psi.md,move fx,Prism Beam,art/arena/raw/fx/prism_beam.png,todo
+fx/fx_batch_3_alloy_crystal_psi.md,move fx,Crystal Nova,art/arena/raw/fx/crystal_nova.png,todo
+fx/fx_batch_3_alloy_crystal_psi.md,move fx,Prism Ward,art/arena/raw/fx/prism_ward.png,todo
+fx/fx_batch_3_alloy_crystal_psi.md,move fx,Gem Dart,art/arena/raw/fx/gem_dart.png,todo
+fx/fx_batch_3_alloy_crystal_psi.md,move fx,Crystal Spire,art/arena/raw/fx/crystal_spire.png,todo
+fx/fx_batch_3_alloy_crystal_psi.md,move fx,Prismatic Burst,art/arena/raw/fx/prismatic_burst.png,todo
+fx/fx_batch_3_alloy_crystal_psi.md,move fx,Mind Poke,art/arena/raw/fx/mind_poke.png,todo
+fx/fx_batch_3_alloy_crystal_psi.md,move fx,Psi Wave,art/arena/raw/fx/psi_wave.png,todo
+fx/fx_batch_3_alloy_crystal_psi.md,move fx,Neural Storm,art/arena/raw/fx/neural_storm.png,todo
+fx/fx_batch_3_alloy_crystal_psi.md,move fx,Mind Fog,art/arena/raw/fx/mind_fog.png,todo
+fx/fx_batch_3_alloy_crystal_psi.md,move fx,Third Eye,art/arena/raw/fx/third_eye.png,todo
+fx/fx_batch_3_alloy_crystal_psi.md,move fx,Halo Ray,art/arena/raw/fx/halo_ray.png,todo
+fx/fx_batch_3_alloy_crystal_psi.md,move fx,Astral Sigil,art/arena/raw/fx/astral_sigil.png,todo
+fx/fx_batch_4_sonic_gravity_void.md,move fx,Chirp Blast,art/arena/raw/fx/chirp_blast.png,todo
+fx/fx_batch_4_sonic_gravity_void.md,move fx,Echo Pulse,art/arena/raw/fx/echo_pulse.png,todo
+fx/fx_batch_4_sonic_gravity_void.md,move fx,Sonic Boom,art/arena/raw/fx/sonic_boom.png,todo
+fx/fx_batch_4_sonic_gravity_void.md,move fx,Shriek,art/arena/raw/fx/shriek.png,todo
+fx/fx_batch_4_sonic_gravity_void.md,move fx,Gale Feather,art/arena/raw/fx/gale_feather.png,todo
+fx/fx_batch_4_sonic_gravity_void.md,move fx,Resonance Wave,art/arena/raw/fx/resonance_wave.png,todo
+fx/fx_batch_4_sonic_gravity_void.md,move fx,Cyclone Roar,art/arena/raw/fx/cyclone_roar.png,todo
+fx/fx_batch_4_sonic_gravity_void.md,move fx,Pebble Pull,art/arena/raw/fx/pebble_pull.png,todo
+fx/fx_batch_4_sonic_gravity_void.md,move fx,Mass Slam,art/arena/raw/fx/mass_slam.png,todo
+fx/fx_batch_4_sonic_gravity_void.md,move fx,Gravity Well,art/arena/raw/fx/gravity_well.png,todo
+fx/fx_batch_4_sonic_gravity_void.md,move fx,Heavy Field,art/arena/raw/fx/heavy_field.png,todo
+fx/fx_batch_4_sonic_gravity_void.md,move fx,Orbit Stones,art/arena/raw/fx/orbit_stones.png,todo
+fx/fx_batch_4_sonic_gravity_void.md,move fx,Sand Vortex,art/arena/raw/fx/sand_vortex.png,todo
+fx/fx_batch_4_sonic_gravity_void.md,move fx,Galaxy Crush,art/arena/raw/fx/galaxy_crush.png,todo
+fx/fx_batch_4_sonic_gravity_void.md,move fx,Shade Claw,art/arena/raw/fx/shade_claw.png,todo
+fx/fx_batch_4_sonic_gravity_void.md,move fx,Null Bite,art/arena/raw/fx/null_bite.png,todo
+fx/fx_batch_4_sonic_gravity_void.md,move fx,Event Horizon,art/arena/raw/fx/event_horizon.png,todo
+fx/fx_batch_4_sonic_gravity_void.md,move fx,Shadow Veil,art/arena/raw/fx/shadow_veil.png,todo
+fx/fx_batch_4_sonic_gravity_void.md,move fx,Umbral Orb,art/arena/raw/fx/umbral_orb.png,todo
+fx/fx_batch_4_sonic_gravity_void.md,move fx,Black Hole,art/arena/raw/fx/black_hole.png,todo
+fx/fx_batch_4_sonic_gravity_void.md,move fx,Void Rupture,art/arena/raw/fx/void_rupture.png,todo
+fx/fx_batch_5_signature_1.md,signature fx,Mycel Crush,art/arena/raw/fx/sig_mycel_crush.png,todo
+fx/fx_batch_5_signature_1.md,signature fx,Star Flare,art/arena/raw/fx/sig_star_flare.png,todo
+fx/fx_batch_5_signature_1.md,signature fx,Abyssal Lure,art/arena/raw/fx/sig_abyssal_lure.png,todo
+fx/fx_batch_5_signature_1.md,signature fx,Saucer Spark,art/arena/raw/fx/sig_saucer_spark.png,todo
+fx/fx_batch_5_signature_1.md,signature fx,Hammer Horn,art/arena/raw/fx/sig_hammer_horn.png,todo
+fx/fx_batch_5_signature_1.md,signature fx,Spore Dance,art/arena/raw/fx/sig_spore_dance.png,todo
+fx/fx_batch_5_signature_1.md,signature fx,Anchor Drop,art/arena/raw/fx/sig_anchor_drop.png,todo
+fx/fx_batch_5_signature_1.md,signature fx,Bass Drop,art/arena/raw/fx/sig_bass_drop.png,todo
+fx/fx_batch_5_signature_1.md,signature fx,Volcano Shell,art/arena/raw/fx/sig_volcano_shell.png,todo
+fx/fx_batch_5_signature_1.md,signature fx,Tusk Avalanche,art/arena/raw/fx/sig_tusk_avalanche.png,todo
+fx/fx_batch_5_signature_1.md,signature fx,Ancient Bite,art/arena/raw/fx/sig_ancient_bite.png,todo
+fx/fx_batch_5_signature_1.md,signature fx,Triple Venom,art/arena/raw/fx/sig_triple_venom.png,todo
+fx/fx_batch_5_signature_1.md,signature fx,Hydraulic Crush,art/arena/raw/fx/sig_hydraulic_crush.png,todo
+fx/fx_batch_5_signature_1.md,signature fx,Rift Collapse,art/arena/raw/fx/sig_rift_collapse.png,todo
+fx/fx_batch_5_signature_1.md,signature fx,Fear Mirror,art/arena/raw/fx/sig_fear_mirror.png,todo
+fx/fx_batch_6_signature_2.md,signature fx,Hope Mirror,art/arena/raw/fx/sig_hope_mirror.png,todo
+fx/fx_batch_6_signature_2.md,signature fx,Horizon Howl,art/arena/raw/fx/sig_horizon_howl.png,todo
+fx/fx_batch_6_signature_2.md,signature fx,Gemstorm,art/arena/raw/fx/sig_gemstorm.png,todo
+fx/fx_batch_6_signature_2.md,signature fx,Encore Riff,art/arena/raw/fx/sig_encore_riff.png,todo
+fx/fx_batch_6_signature_2.md,signature fx,Pyre Veil,art/arena/raw/fx/sig_pyre_veil.png,todo
+fx/fx_batch_6_signature_2.md,signature fx,Bastion Slam,art/arena/raw/fx/sig_bastion_slam.png,todo
+fx/fx_batch_6_signature_2.md,signature fx,First Light,art/arena/raw/fx/sig_first_light.png,todo
+fx/fx_batch_6_signature_2.md,signature fx,Hungry Void,art/arena/raw/fx/sig_hungry_void.png,todo
+fx/fx_batch_6_signature_2.md,signature fx,Continent Lift,art/arena/raw/fx/sig_continent_lift.png,todo
+fx/fx_batch_6_signature_2.md,signature fx,Tidal Crown,art/arena/raw/fx/sig_tidal_crown.png,todo
+fx/fx_batch_6_signature_2.md,signature fx,Sunfall,art/arena/raw/fx/sig_sunfall.png,todo
+fx/fx_batch_6_signature_2.md,signature fx,Harmonic Chime,art/arena/raw/fx/sig_harmonic_chime.png,todo
+fx/fx_batch_6_signature_2.md,signature fx,Signal Nova,art/arena/raw/fx/sig_signal_nova.png,todo
+fx/fx_batch_6_signature_2.md,signature fx,Devour,art/arena/raw/fx/sig_devour.png,todo
+fx/fx_batch_6_signature_2.md,signature fx,Genesis Bloom,art/arena/raw/fx/sig_genesis_bloom.png,todo
+fx/fx_batch_7_common_and_status.md,common fx,Hit sparks,art/arena/raw/fx/common_hit_normal.png,todo
+fx/fx_batch_7_common_and_status.md,common fx,Resisted hit and critical hit,art/arena/raw/fx/common_hit_weak.png,todo
+fx/fx_batch_7_common_and_status.md,common fx,Status: burn and poison,art/arena/raw/fx/common_status_burn_poison.png,todo
+fx/fx_batch_7_common_and_status.md,common fx,Status: shock and freeze,art/arena/raw/fx/common_status_shock_freeze.png,todo
+fx/fx_batch_7_common_and_status.md,common fx,Status: confusion and KO,art/arena/raw/fx/common_status_confuse_ko.png,todo
+fx/fx_batch_7_common_and_status.md,common fx,Stat up and stat down,art/arena/raw/fx/common_buffs.png,todo
+fx/fx_batch_7_common_and_status.md,common fx,Heal and shield,art/arena/raw/fx/common_heal_shield.png,todo
+fx/fx_batch_7_common_and_status.md,common fx,Movement,art/arena/raw/fx/common_movement.png,todo
+fx/fx_batch_7_common_and_status.md,common fx,Linker release and recall,art/arena/raw/fx/common_release.png,todo
+fx/fx_batch_7_common_and_status.md,common fx,Trait trigger and attack warning,art/arena/raw/fx/common_trait_telegraph.png,todo
+ui/ui_batch_1.md,ui,Arena logo (title pending owner approval),art/arena/ui/logo.png,todo
+ui/ui_batch_1.md,ui,Type icons,art/arena/ui/type_icons.png,todo
+ui/ui_batch_1.md,ui,Move buttons and cooldown,art/arena/ui/move_buttons.png,todo
+ui/ui_batch_1.md,ui,HUD panels,art/arena/ui/hud.png,todo
+ui/ui_batch_1.md,ui,Round countdown and banners,art/arena/ui/countdown.png,todo
+ui/ui_batch_1.md,ui,Result banners,art/arena/ui/results.png,todo
+ui/ui_batch_1.md,ui,Cup emblems (cup names pending owner approval),art/arena/ui/cups.png,todo
+ui/ui_batch_1.md,ui,Trophies,art/arena/ui/trophies.png,todo
+ui/ui_batch_1.md,ui,Mode select cards,art/arena/ui/mode_cards.png,todo
+ui/ui_batch_1.md,ui,Results screen backdrop,art/arena/ui/results_bg.png,todo
+sprites/sprites_extra.md,back sprite,Oblivane,art/sprites_back/Oblivane.png,todo

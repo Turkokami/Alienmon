@@ -84,6 +84,7 @@ function secMapUpd(){if(P_('b')||P_('start')){menuMode='root';B=null;return}if(P
 function secMapDraw(){rect(0,0,160,144,'#120c22');const V=G.visited||{};ctx.save();ctx.beginPath();ctx.rect(SMV.x,SMV.y,SMV.w,SMV.h);ctx.clip();
  for(const s of B.L){const g=secMapGeo(s),x=Math.round(g.x),y=Math.round(g.y),w=Math.max(2,Math.round(g.w)),h=Math.max(2,Math.round(g.h));
   if(V[s.id]&&okI(SECI[s.id])){ctx.save();ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';ctx.drawImage(SECI[s.id],x,y,w,h);ctx.restore()}
+  else if(!V[s.id]&&okI(SECI[s.id])){ctx.save();ctx.imageSmoothingEnabled=true;ctx.filter='grayscale(1) brightness(0.32) contrast(1.1)';ctx.drawImage(SECI[s.id],x,y,w,h);ctx.restore();ctx.strokeStyle='#3b2a5c';ctx.lineWidth=0.5;ctx.strokeRect(x+0.25,y+0.25,w-0.5,h-0.5)}   /* not visited yet: a dark grey preview, not an empty box */
   else{rect(x,y,w,h,V[s.id]?'#3b2a5c':'#221836');ctx.strokeStyle='#3b2a5c';ctx.lineWidth=0.5;ctx.strokeRect(x+0.25,y+0.25,w-0.5,h-0.5)}
   const mk=B.marks[s.id];if(mk&&frame%40<30){box(x+w/2-3,y+h/2-4,7,9,mk===2?'#ffd23f':'#5ff2ff','#1b1424');txt('!',x+w/2-1,y+h/2-3,'#1b1424',6)}}
  const sg=secMapGeo(SWORLD[B.sel]);ctx.strokeStyle='#ffd23f';ctx.lineWidth=1;ctx.strokeRect(Math.round(sg.x)+0.5,Math.round(sg.y)+0.5,Math.round(sg.w)-1,Math.round(sg.h)-1);
@@ -127,7 +128,7 @@ function giveAll(gift,L){for(const[k,n]of Object.entries(gift)){if(k==='dust'){G
 Object.assign(GEAR_NAME,{signal_finder:'Signal Finder',prism_charm:'Prismatic Charm',gold_dex:'Golden Xenodex'});
 Object.assign(GEAR_DESC,{signal_finder:'Beeps when a hidden item is near. START > Gear.',prism_charm:'Prismatic Alienmon appear three times as often.',gold_dex:'Proof you registered every Alienmon. Dr. Vashti is speechless.'});
 Object.assign(KEY_NAME,GEAR_NAME);Object.assign(KEY_DESC,GEAR_DESC);
-const DEX_MS=[[10,{harmonic:5}],[25,{signal_finder:1,dust:1000}],[50,{maxrevive:3,singularity:2}],[100,{prism_charm:1}],[150,{fullgel:5,dust:5000}],[200,{singularity:10}],[250,{maxrevive:5,dust:10000}],[D.length,{gold_dex:1}]];   // the last one: every species in the game
+const DEX_MS=[[10,{harmonic:5}],[25,{signal_finder:1,dust:1000}],[50,{maxrevive:3,singularity:2}],[100,{prism_charm:1}],[150,{fullgel:5,dust:5000}],[200,{singularity:10}],[250,{maxrevive:5,dust:10000}],[D.filter(d=>!d.echo).length,{gold_dex:1}]];   // the last one: every species in the game
 function dexBeats(){const n=Object.keys(G.caught||{}).length;G.dexms=G.dexms||0;for(const[k,gift]of DEX_MS){if(n<k||G.dexms>=k)continue;G.dexms=k;
   qNotify('DEX','gear',giveAll(gift,['Dr. Vashti is calling on your Linker!','"'+k+' Alienmon registered in your Xenodex! Here, you\'ve earned this."']))}}
 
@@ -299,4 +300,7 @@ function secNeighbours(s,people,cx,cy){for(const[k,e]of Object.entries(s.edges))
  for(const n of secNpcs(t)){const X=n.x*16+ox-cx,Y=n.y*16+oy-cy;if(X<-32||Y<-40||X>176||Y>170)continue;
   people.push({y:n.y*16+oy,draw:()=>n.legend?secDrawLegend(n.legend,X,Y):secDrawChar(n.art,n.face||'down',X,Y,0)})}
  for(const m of t.mons||[]){if(G.monGone&&(t.id+':'+m.x+','+m.y) in G.monGone)continue;const im=OWI[shownMon(m.mon,0)];const X=m.x*16+ox-cx,Y=m.y*16+oy-cy;if(!okI(im)||X<-24||Y<-24||X>176||Y>160)continue;
-  people.push({y:m.y*16+oy,draw:()=>{ctx.fillStyle='rgba(20,10,20,0.35)';ctx.beginPath();ctx.ellipse(X+8,Y+15,6,2,0,0,6.283);ctx.fill();ctx.save();ctx.imageSmoothingEnabled=true;ctx.drawImage(im,((frame>>4)&1)*64,0,64,64,X-2,Y-5,20,20);ctx.restore()}})}}}
+  people.push({y:m.y*16+oy,draw:()=>{ctx.fillStyle='rgba(20,10,20,0.35)';ctx.beginPath();ctx.ellipse(X+8,Y+15,6,2,0,0,6.283);ctx.fill();ctx.save();ctx.imageSmoothingEnabled=true;ctx.drawImage(im,((frame>>4)&1)*64,0,64,64,X-2,Y-5,20,20);ctx.restore()}})}
+ /* the neighbour's props and stashes too, so nothing pops into view when you cross over */
+ if(t.props)for(const[u,x,y,w,h,pw,ph,pox,flat,poy]of t.props){const im=PROPI(u),X=Math.round(x*16+(w*16-pw)/2+(pox||0)+ox-cx),Y=(flat?y*16+Math.round((h*16-ph)/2)-cy:(y+h)*16-ph-cy)+(poy||0)+oy;if(X>160||X+pw<0||Y>144||Y+ph<0)continue;people.push({y:flat?-1e9:(y+h-1)*16+1+oy,draw:()=>{if(okI(im))ctx.drawImage(im,X,Y)}})}
+ for(const ob of t.objects||[])if(ob.k==='stash'){const X=ob.tile[0]*16+ox-cx,Y=ob.tile[1]*16+oy-cy;if(X<-16||Y<-16||X>160||Y>144)continue;people.push({y:-1e9+1,draw:()=>secDrawStash(X,Y,G.opened&&G.opened[t.id+':'+ob.tile])})}}}

@@ -136,6 +136,21 @@ addEventListener('keyup',e=>{const k=KEYMAP[e.code];if(k)held[k]=false});
 document.querySelectorAll('[data-k]').forEach(b=>{const k=b.dataset.k;
  b.addEventListener('pointerdown',e=>{e.preventDefault();if(!held[k])pressed[k]=true;held[k]=true;b.classList.add('on');try{b.setPointerCapture(e.pointerId)}catch(_){}});
  const up=()=>{held[k]=false;b.classList.remove('on')};b.addEventListener('pointerup',up);b.addEventListener('pointercancel',up);b.addEventListener('lostpointercapture',up)});
+// the d-pad is a thumb pad: press anywhere on it and slide; the direction follows your thumb. In the arena it is a full
+// analog stick (PADJ, any angle); everywhere else it picks the nearest of up/down/left/right, so sliding turns you
+const PADJ={x:0,y:0,on:false};
+(()=>{const pad=document.querySelector('.dpad');if(!pad)return;const bs={};pad.querySelectorAll('[data-k]').forEach(b=>{bs[b.dataset.k]=b;b.style.pointerEvents='none'});
+ const D4=['up','down','left','right'];let pid=null;
+ const set=e=>{const r=pad.getBoundingClientRect(),dx=e.clientX-(r.left+r.width/2),dy=e.clientY-(r.top+r.height/2),d=Math.hypot(dx,dy),w={};
+  if(d>r.width*0.1){const x=dx/d,y=dy/d;PADJ.x=x;PADJ.y=y;PADJ.on=true;
+   if(typeof scene!=='undefined'&&scene==='rta'){if(x>0.38)w.right=1;if(x<-0.38)w.left=1;if(y>0.38)w.down=1;if(y<-0.38)w.up=1}
+   else w[Math.abs(x)>=Math.abs(y)?(x>0?'right':'left'):(y>0?'down':'up')]=1}
+  else PADJ.on=false;
+  for(const k of D4){const v=!!w[k];if(v&&!held[k])pressed[k]=true;held[k]=v;if(bs[k])bs[k].classList.toggle('on',v)}};
+ pad.addEventListener('pointerdown',e=>{e.preventDefault();pid=e.pointerId;try{pad.setPointerCapture(pid)}catch(_){}set(e)});
+ pad.addEventListener('pointermove',e=>{if(e.pointerId===pid){e.preventDefault();set(e)}});
+ const end=e=>{if(e.pointerId!==pid)return;pid=null;PADJ.on=false;for(const k of D4){held[k]=false;if(bs[k])bs[k].classList.remove('on')}};
+ ['pointerup','pointercancel','lostpointercapture'].forEach(ev=>pad.addEventListener(ev,end));pad.style.touchAction='none'})();
 try{const A=window.Capacitor&&window.Capacitor.Plugins&&window.Capacitor.Plugins.App;if(A)A.addListener('backButton',()=>{pressed.b=true})}catch(e){}
 const P_=k=>{const v=pressed[k];pressed[k]=false;return v};
 
@@ -433,9 +448,9 @@ const MUSIC_VOL=0.18,CHIP_VOL=0.11;let musicMode='chip';try{const v=localStorage
 let musicOn=musicMode!=='off';
 const BGM=new Audio(__MUSIC__),TITLEM=new Audio(__TITLEMUSIC__),BATTLEM=new Audio(__BATTLEMUSIC__);[BGM,TITLEM,BATTLEM].forEach(a=>{a.loop=true;a.volume=0;a.preload='auto'});
 const TITLE_SCENES=['title','intro','starter'];let curTrack=null,lastArea='frontier';
-function areaTrack(){if(scene==='cut'&&CUT&&CUT.board)return'wonder';if(typeof storyTrack==='function'){const st=storyTrack();if(st)return st}if(scene==='battle')return'battle';if(scene==='space')return'space';if(scene==='planet')return typeof secOn==='function'&&secOn()&&SEC_FRONTIER.has(G.sec.id)?'frontier':'town';if(scene==='world')return'frontier';
+function areaTrack(){if(scene==='cut'&&CUT&&CUT.board)return'wonder';if(typeof storyTrack==='function'){const st=storyTrack();if(st)return st}if(scene==='battle'||scene==='rta')return'battle';if(scene==='space')return'space';if(scene==='planet')return typeof secOn==='function'&&secOn()&&SEC_FRONTIER.has(G.sec.id)?'frontier':'town';if(scene==='world')return'frontier';
  if(scene==='menu'||scene==='cut'){return PREV==='space'?'space':PREV==='world'?'frontier':PREV==='planet'?'town':lastArea}return lastArea}
-function wantTrack(){if(TITLE_SCENES.includes(scene))return TITLEM;if(scene==='cut'&&CUT&&CUT.board)return'chip';if(scene==='battle'||(LVP&&B))return BATTLEM;return musicMode==='song'?BGM:'chip'}
+function wantTrack(){if(TITLE_SCENES.includes(scene))return TITLEM;if(scene==='cut'&&CUT&&CUT.board)return'chip';if(scene==='battle'||scene==='rta'||(LVP&&B))return BATTLEM;return musicMode==='song'?BGM:'chip'}
 function musicTry(){if(musicMode==='off'||document.hidden)return;const t=wantTrack();if(t!==curTrack){if(t===TITLEM)TITLEM.currentTime=0;if(t===BATTLEM)BATTLEM.currentTime=0;curTrack=t}
  if(t==='chip'){chipInit();if(AC&&AC.state==='suspended')AC.resume()}else if(t.paused){const p=t.play();if(p&&p.catch)p.catch(()=>{})}}
 function musicTick(){if(musicMode==='off')return;const t=wantTrack();if(t!==curTrack)musicTry();
@@ -619,7 +634,7 @@ function act(a,d,mv){LAST=null;const lines=[];if(a.hp<=0)return lines;if(disobey
  if(dt.k==='absorb'&&dt.v===mv.t){lines.push(nm(d)+"'s "+dt.name+' absorbed the attack!');heal(d,0.25,lines);return lines}
  if(dt.k==='float'&&mv.t==='Gravity'){lines.push(nm(d)+' floats above the attack! ('+dt.name+')');return lines}
  const ph=PHYS.has(mv.t);const A=es(a,ph?'atk':'spa'),Df=es(d,ph?'def':'spd');let e=eff(mv.t,D[d.id].t);
- let stab=D[a.id].t.includes(mv.t)?(at.k==='stab'?1.8:1.5):1;let mod=1;
+ let stab=D[a.id].t.includes(mv.t)?(at.k==='stab'?1.8:1.5):1;let mod=typeof skyMod==='function'?skyMod(mv.t):1;
  if(at.k==='low'&&at.v===mv.t&&a.hp<=stat(a,0)/3)mod*=1.5;if(at.k==='pride')mod*=1.2;if(at.k==='harmonic'&&(mv.t==='Sonic'||mv.t==='Crystal'))mod*=1.3;
  if(dt.k==='thick'&&(mv.t==='Plasma'||mv.t==='Cryo'))mod*=0.5;if(dt.k==='guardian'||dt.k==='devourer')mod*=0.75;
  let cc=0.06;if(fx.crit)cc*=3;if(at.k==='crit')cc*=3;const crit=R()<cc?1.5:1;
@@ -641,7 +656,7 @@ function aiMove(a,d){let best=a.moves[0],bv=-1;for(const mi of a.moves){const mv
   if(v>bv){bv=v;best=mi}}return MV[best]}
 function startBattle(team,trainer){if(!trainer)for(const m of team)if(!m.pri&&R()<priOdds())m.pri=1;if(typeof SJBUF!=='undefined'){SJBUF=0;SJ=null}if(!trainer&&G.jam>0&&team.length&&team[0].lv<(G.party.find(m=>m.hp>0)||{lv:0}).lv){return}warm(ARTI,team.map(m=>D[m.id].name));warm(ARTBI,G.party.map(m=>D[m.id].name));if(typeof bfxWarm==='function')bfxWarm(team.concat(G.party));const pi=G.party.findIndex(m=>m.hp>0);team.forEach(m=>{G.seen[m.id]=1;resetStages(m)});G.party.forEach(resetStages);
  B={from:scene==='world'?'world':'planet',team,ei:0,tr:trainer,pi,part:new Set([pi]),phase:'wait',sel:0,psel:0,podsel:0,captured:false,anim:null,trShow:!!(trainer&&trainer.art)};scene='battle';const L=trainer?[trainer.name+' wants to battle!',trainer.name+' sent out '+nm(team[0])+'!']:['A wild '+nm(team[0])+' appeared!'];if(!trainer&&team[0].pri){L[0]='A Prismatic '+nm(team[0])+' appeared!';L.push('Its colours shimmer like nothing you have seen!');priSfx()}
- storyBattleStart(trainer,L);const tw=TR(team[0].id);if(!trainer&&tw.k==='sync')L.push(nm(team[0])+"'s signal feels "+(tw.v>1?'calm and friendly.':'jumpy and skittish.'));
+ if(typeof skyBattleStart==='function')skyBattleStart(L);storyBattleStart(trainer,L);const tw=TR(team[0].id);if(!trainer&&tw.k==='sync')L.push(nm(team[0])+"'s signal feels "+(tw.v>1?'calm and friendly.':'jumpy and skittish.'));
  L.push('Go, '+nm(G.party[pi])+'!');entry(team[0],G.party[pi],L);entry(G.party[pi],team[0],L);
  if(B.trShow){say(L[0],()=>{B.trShow=false;say(L.slice(1),()=>B.phase='menu')})}else say(L,()=>B.phase='menu')}
 const PM=()=>G.party[B.pi],EM=()=>B.team[B.ei];
@@ -656,7 +671,7 @@ function turn(pact){B.phase='wait';const em=ppPick(EM(),aiMove(EM(),PM()));
  const eStep=next=>{const e=EM(),p=PM();if(e.hp<=0||p.hp<=0)return next();const L=actPP(e,p,em);playFx(()=>say(L,()=>afterAct(next)))};
  const pStep=next=>pact(()=>afterAct(next));
  const pFirst=pact.pri||es(PM(),'spe')>=es(EM(),'spe');runSteps(pFirst?[pStep,eStep]:[eStep,pStep],endTurn)}
-function endTurn(){const L=[];if(B.sp)B.sp.turns++;for(const m of[PM(),EM()]){if(m.hp<=0)continue;const mx=stat(m,0),tr=TR(m.id);
+function endTurn(){const L=[];if(typeof skyEndTurn==='function')skyEndTurn(L);if(B.sp)B.sp.turns++;for(const m of[PM(),EM()]){if(m.hp<=0)continue;const mx=stat(m,0),tr=TR(m.id);
   if(m.st==='burn'){m.hp=Math.max(0,m.hp-Math.max(1,Math.floor(mx/16)));godFix(m);L.push(nm(m)+' is hurt by its burn!')}
   if(m.st==='poison'){m.hp=Math.max(0,m.hp-Math.max(1,Math.floor(mx/8)));godFix(m);L.push(nm(m)+' is hurt by poison!')}
   if(m.hp>0&&['heal','guardian','harmonic'].includes(tr.k))heal(m,1/16,L,'restored HP with '+tr.name+'!');
@@ -698,7 +713,8 @@ function useOn(it,m,lines){const mx=stat(m,0);
  if(it.cure){if(!m.st){lines.push(nm(m)+' has no status to cure.');return false}m.st=null;lines.push(nm(m)+' was cured!');return true}
  return false}
 function bagList(inBattle){const L=[];if(inBattle)PODS.forEach(p=>L.push({kind:'pod',it:p,n:p.n,c:G.pods[p.k],d:'Starts a Linker Sync capture. Wild Alienmon only.'}));
- ITEMS.forEach(it=>{if(inBattle||!it.battle)L.push({kind:it.battle?'gadget':'heal',it,n:it.n,c:G.items[it.k]||0,d:it.d})});return L}
+ ITEMS.forEach(it=>{if(inBattle||!it.battle)L.push({kind:it.battle?'gadget':'heal',it,n:it.n,c:G.items[it.k]||0,d:it.d})});
+ if(inBattle&&typeof skyShards==='function'&&skyShards().length)L.push({kind:'reso',it:{k:'reso',n:'Shard Resonance'},n:'Shard Resonance',c:B&&B.reso?0:1,d:"Once per battle: call down a Shard world's sky for 5 turns."});return L}
 function drawBag(list,sel,title){box(0,0,160,144);txt(title,6,5,'#1b1424');const st=Math.max(0,Math.min(sel-6,list.length-9));
  for(let i=0;i<9&&st+i<list.length;i++){const e=list[st+i],y=18+i*10;if(st+i===sel)rect(3,y-1,154,10,'#ffe0c0');txt(e.n,6,y,e.c?'#1b1424':'#a99cc8',7);txt('x'+e.c,136,y,'#3b2a5c',7)}
  const e=list[sel];if(e){box(0,110,160,34,'#f8f4ff','#3b2a5c');wrap(e.d,24).slice(0,3).forEach((l,i)=>txt(l,5,115+i*9,'#3b2a5c',6))}}
@@ -726,7 +742,7 @@ function updBattle(){const opts=['FIGHT','BAG','SWAP',storyRunLabel()];
   if(P_('a')){const p=PM();if(p.moves.every(x=>ppGet(p,x)<=0))turn(next=>{const L=actPP(PM(),EM(),STRUGGLE);playFx(()=>say([nm(p)+' has no PP left!'].concat(L),next))});else{const mi=p.moves[B.msel];if(ppGet(p,mi)<=0)say('There is no PP left for this move!');else{ppUse(p,mi);turn(next=>{const L=actPP(PM(),EM(),MV[mi]);playFx(()=>say(L,next))})}}}}
  else if(B.phase==='bag'){const list=bagList(true),n=list.length;if(P_('up'))B.bsel=(B.bsel+n-1)%n;if(P_('down'))B.bsel=(B.bsel+1)%n;if(P_('b'))B.phase='menu';
   if(frame<(B.bagLock||0))pressed.a=false;   // the press that answered 'Deploy Linker?' must not also throw a pod
-  if(P_('a')){const e=list[B.bsel];if(!e.c)say('You have no '+e.n+' left. Buy more at a Recovery Bay.');
+  if(P_('a')){const e=list[B.bsel];if(e.kind==='reso')skyReso();else if(!e.c)say('You have no '+e.n+' left. Buy more at a Recovery Bay.');
    else if(e.kind==='pod'){if(B.sp&&B.sp.immortal)say('Oblivane is far too vast for any pod. Hold on...');else if(B.tr)say("A Keeper's partner is already bonded. You can't Sync with it!");else startSync(e.it)}
    else if(e.kind==='heal'){B.itemUse=e.it;B.phase='party';B.forced=false;B.psel=B.pi}
    else{const it=e.it,en=EM();G.items[it.k]--;qEvent('use',it.battle);turn(Object.assign(next=>{const L=['You used a '+it.n+'!'];
@@ -810,9 +826,10 @@ function drawBattle(){const e=curEnv(),p=PM(),en=EM(),pl=PL[G.planet],ar=B.tr&&(
  if(B.trShow&&B.tr)dchar(B.tr.art,100,0,52,52);
  else if(B.captured){}else if(enemyAlpha()>0){const ep=bpose(en,true);if(en.hp>0||ep||(B.anim&&B.anim.tgt===en)){ctx.save();ctx.globalAlpha=enemyAlpha();if(ep)drawPose(ep,102+shakeOf(en),4,3,en);else dspr(en.id,102+shakeOf(en),4,3,false,en);if(en.pri&&en.hp>0)priTwinkle(102,4,3);ctx.restore()}}
  {const pp=bpose(p,false);if(pp)drawPose(pp,10+shakeOf(p),48,3,p);else if(p.hp>0||(B.anim&&B.anim.tgt===p))dspr(p.id,10+shakeOf(p),48,3,true,p)}
- if(!B.trShow){box(2,4,96,26);const elv='Lv'+en.lv;txtR(elv,95,9,'#1b1424',6);txtFit(nm(en),6,8,'#1b1424',89-elv.length*6-4);hpbar(6,20,64,en);stTag(en,72,19)}else{box(2,4,96,16);txt(B.tr.name.slice(0,11),6,8,'#1b1424')}if(G.caught[en.id]&&!B.tr)rect(92,9,4,4,'#ff8a1e');
- box(70,66,88,34);txtFit(nm(p),74,70,'#1b1424',80);txt('Lv'+p.lv,74,80,'#3b2a5c',7);hpbar(110,81,44,p);txtR(p.hp+'/'+stat(p,0),155,88,'#3b2a5c',6);stTag(p,74,88);expbar(74,96,80,p);
- if(B.phase==='menu'){box(0,104,160,40);txt('What will',6,109,'#1b1424');txtFit(nm(p),6,120,'#1b1424',72);txt('do?',6,131,'#1b1424');
+ if(!B.trShow){box(2,4,96,26);const elv='Lv'+en.lv;txtR(elv,95,9,'#1b1424',6);{const ec=D[en.id].echo&&!en.nick&&D[en.id].echo,wd=89-elv.length*6-4;txtFit(ec?ec.base:nm(en),6,8,'#1b1424',ec?wd-11:wd);if(ec&&typeof skyImg==='function')skyImg('front_'+ec.w,6+wd-10,6,9,9)}   /* an Echo shows its base name plus its world's icon */
+ hpbar(6,20,64,en);stTag(en,72,19)}else{box(2,4,96,16);txt(B.tr.name.slice(0,11),6,8,'#1b1424')}if(G.caught[en.id]&&!B.tr)rect(92,9,4,4,'#ff8a1e');
+ box(70,66,88,34);{const ec=D[p.id].echo&&!p.nick&&D[p.id].echo;txtFit(ec?ec.base:nm(p),74,70,'#1b1424',ec?69:80);if(ec&&typeof skyImg==='function')skyImg('front_'+ec.w,145,68,9,9)}txt('Lv'+p.lv,74,80,'#3b2a5c',7);hpbar(110,81,44,p);txtR(p.hp+'/'+stat(p,0),155,88,'#3b2a5c',6);stTag(p,74,88);expbar(74,96,80,p);
+ if(B.phase==='menu'){box(0,104,160,40);txt('What will',6,109,'#1b1424');txtFit(D[p.id].echo&&!p.nick?D[p.id].echo.base:nm(p),6,120,'#1b1424',72);txt('do?',6,131,'#1b1424');
   box(80,104,80,40,'#f8f4ff','#ff8a1e');['FIGHT','BAG','SWAP',storyRunLabel()].forEach((o,i)=>txt((i===B.sel?'>':' ')+o,84+(i%2)*38,112+Math.floor(i/2)*14,'#1b1424',7))}
  else if(B.phase==='moves'){box(0,104,160,40);p.moves.forEach((mi,i)=>{const m=MV[mi];txt((i===B.msel?'>':' ')+m.n.slice(0,13),4,108+i*8,i===B.msel?'#d7262e':m.sig?'#7a1f6a':'#1b1424',7)});
   const m=MV[p.moves[B.msel]];txt(m.t==='None'?'Basic':m.t,116,108,m.t==='None'?'#3b2a5c':TC[m.t][2],6);txt(m.p?'PWR '+m.p:'STATUS',116,118,'#3b2a5c',6);const pp=ppGet(p,p.moves[B.msel]);txt('PP '+pp+'/'+maxPP(p.moves[B.msel]),116,128,pp?'#3b2a5c':'#d7262e',6)}
@@ -842,9 +859,9 @@ function updMenu(){if(menuMode==='quests'){qLogUpd();if(menuMode==='quests')qLog
   else if(o==='Map'&&secOn()&&!secAnchor(G.sec.id)){const sc=SWORLD[G.sec.id];say(['You are at '+sc.name.replace(/^Molten Frontier: /,'')+(sc.pkey==='arena'?', floating among the stars.':SEC_FRONTIER.has(sc.id)?', on the Molten Frontier.':', on '+PL[G.planet].name+'.')].concat(areaInfo(sc.id),['Walk the paths between areas, or take your ship to another world.']))}
   else if(o==='Map'&&secOn())secMapOpen();
   else if(o==='Map'){tip('map');menuMode='map';B={msel:Math.max(0,WORLD.nodes.indexOf(G.wpos?nearestNode(G.wpos[0],G.wpos[1])[0]:nodeOf(PL[G.planet].key)||WORLD.nodes[0]))}}else if(o==='Xenodex')menuMode='dex';else if(o==='Save')choose('Save',['Save now','Save slots','Export backup','Import backup','Cancel'],k=>{if(k===1)return slotMenu();if(k>1)k--;if(k===0)say(save()?'Game saved to this browser.':'Saving is unavailable in this browser.');else if(k===1)exportSave();else if(k===2)importSave()});else{prevBack()}}
-  drawUnder();box(96,4,62,118);opts.forEach((o,i)=>txt((i===menuSel?'>':' ')+o,100,9+i*10,'#1b1424',7));box(2,98,92,44);txt('Shards '+G.shards+'/8',6,104,'#1b1424',6);txt('Caught '+Object.keys(G.caught).length+'/'+D.length,6,114,'#1b1424',6);txt('Stardust '+G.dust,6,124,'#1b1424',6);txt('Pods '+G.pods.stasis+'/'+G.pods.harmonic+'/'+G.pods.singularity,6,134,'#1b1424',6)}
+  drawUnder();box(96,4,62,118);opts.forEach((o,i)=>txt((i===menuSel?'>':' ')+o,100,8+i*9,'#1b1424',7));box(2,98,92,44);txt('Shards '+G.shards+'/8',6,104,'#1b1424',6);txt('Caught '+Object.keys(G.caught).length+'/'+D.length,6,114,'#1b1424',6);txt('Stardust '+G.dust,6,124,'#1b1424',6);txt('Pods '+G.pods.stasis+'/'+G.pods.harmonic+'/'+G.pods.singularity,6,134,'#1b1424',6)}
  else if(menuMode==='party'){const n=G.party.length;if(P_('up'))B.psel=(B.psel+n-1)%n;if(P_('down'))B.psel=(B.psel+1)%n;if(P_('b')){menuMode='root';B=null;return}
-  if(P_('a')){const i=B.psel,m=G.party[i];choose(nm(m),['Summary','Make lead','Send to storage','Cancel'],k=>{
+  if(P_('a')){const i=B.psel,m=G.party[i],ho=typeof holoCan==='function'&&holoCan(m);choose(nm(m),['Summary','Make lead','Send to storage'].concat(ho?['Attune a Shard']:[],['Cancel']),k=>{if(ho&&k===3)return holoAttune(m);
     if(k===0)menuMode='sum';else if(k===1){if(i>0){G.party.splice(i,1);G.party.unshift(m);B.psel=0}say(nm(m)+' is now your lead. It goes out first in battle.')}
     else if(k===2){if(G.party.length<=1)say('You need at least one Alienmon with you.');else{G.party.splice(i,1);G.box.push(m);B.psel=Math.min(i,G.party.length-1);say(nm(m)+' was beamed to your ship\'s storage.')}}})}
   if(menuMode==='party')drawParty(B.psel,'Party (A: options)')}
@@ -904,17 +921,17 @@ let LOOPT=0;
 // prototype test build: your Alienmon can't be hurt (Options > Invincible turns it off)
 function godOn(){return typeof PROTO!=='undefined'&&PROTO&&G&&!(G.opt&&G.opt.god===false)}
 function godFix(m){if(godOn()&&m&&G.party&&G.party.includes(m)){m.hp=stat(m,0);m.st=null}}
-// one bad frame must never freeze the game: log the error, show it on screen (testers can screenshot it), keep running
-function loop(now){try{loopBody(now)}catch(e){console.error(e);const msg=String(e&&e.message||e).slice(0,90)+' @'+(String(e&&e.stack||'').split(String.fromCharCode(10))[1]||'').trim().slice(0,60);
+// one bad frame must never freeze the game: log the error, show it briefly (testers can screenshot it), keep running
+function loop(now){try{loopBody(now)}catch(e){console.error(e);const msg=String(e&&e.message||e).slice(0,90)+' @'+String(e&&e.stack||'').split(String.fromCharCode(10))[1]?.trim().slice(0,60);
  try{localStorage.setItem('alienmon_lasterr',scene+' '+(G&&G.sec?G.sec.id+' '+G.sec.x+','+G.sec.y:'')+' | '+msg)}catch(x){}
  try{const w=wrap('Error: '+msg,30).slice(0,3);box(2,142-w.length*7-6,156,w.length*7+6,'#ffe0e0');w.forEach((l,i)=>txt(l,5,142-w.length*7-3+i*7,'#7a0010',5))}catch(x){}
  for(const k in pressed)pressed[k]=false;requestAnimationFrame(loop)}}
-function loopBody(now){if(godOn()&&G.party)for(const m of G.party)if(m.hp<stat(m,0))m.hp=stat(m,0);if(typeof now==='number'){if(!LOOPT||now-LOOPT>250)LOOPT=now-16.667;if(now-LOOPT<15.5){requestAnimationFrame(loop);return}LOOPT=Math.max(LOOPT+16.667,now-16.667)}frame++;pollPad();if(G&&G.party&&(!G.quests||G._qv!==QUESTS.length))qInit();   /* also when this build has quests the save has never seen */if(G&&G.quests){if(frame%20===0)qPassive();if(frame%10===0)worldStage();qFlush();if(G._as&&scene!=='battle'&&!CUT&&!DLG)autosave()}if(typeof EVO!=='undefined'&&EVO){drawEvo();for(const k in pressed)pressed[k]=false;requestAnimationFrame(loop);return}if(LVP){if(scene==='battle')drawBattle();drawLvPanel();if(P_('a')||P_('b')){const c=LVP.cb;LVP=null;c()}for(const k in pressed)pressed[k]=false;requestAnimationFrame(loop);return}
- if(CH&&!DLG){if(scene==='world')drawWorld();else if(scene==='menu')drawMenuScreen();else if(scene==='battle')drawBattle();else drawPlanet();drawChoose();updChoose()}
- else if(DLG){ if(scene==='battle')drawBattle();else if(scene==='planet')drawPlanet();else if(scene==='space')updSpaceDraw();else if(scene==='world')drawWorld();else if(scene==='menu')drawMenuScreen();else if(scene==='intro'||scene==='title')rect(0,0,160,144,'#120c22');
+function loopBody(now){if(typeof rTouchUpd==='function')rTouchUpd();if(godOn()&&G.party)for(const m of G.party)if(m.hp<stat(m,0))m.hp=stat(m,0);if(typeof now==='number'){if(!LOOPT||now-LOOPT>250)LOOPT=now-16.667;if(now-LOOPT<15.5){requestAnimationFrame(loop);return}LOOPT=Math.max(LOOPT+16.667,now-16.667)}frame++;pollPad();if(G&&G.party&&(!G.quests||G._qv!==QUESTS.length))qInit();   /* also when this build has quests the save has never seen */if(G&&G.quests){if(frame%20===0)qPassive();if(frame%10===0)worldStage();qFlush();if(G._as&&scene!=='battle'&&!CUT&&!DLG)autosave()}if(typeof EVO!=='undefined'&&EVO){drawEvo();for(const k in pressed)pressed[k]=false;requestAnimationFrame(loop);return}if(LVP){if(scene==='battle')drawBattle();drawLvPanel();if(P_('a')||P_('b')){const c=LVP.cb;LVP=null;c()}for(const k in pressed)pressed[k]=false;requestAnimationFrame(loop);return}
+ if(CH&&!DLG){if(scene==='world')drawWorld();else if(scene==='menu')drawMenuScreen();else if(scene==='battle')drawBattle();else if(scene==='rta')rtaDraw();else drawPlanet();drawChoose();updChoose()}
+ else if(DLG){ if(scene==='battle')drawBattle();else if(scene==='rta')rtaDraw();else if(scene==='planet')drawPlanet();else if(scene==='space')updSpaceDraw();else if(scene==='world')drawWorld();else if(scene==='menu')drawMenuScreen();else if(scene==='intro'||scene==='title')rect(0,0,160,144,'#120c22');
   if(DLG.por)drawPortrait(DLG.por,104);box(0,104,160,40);const pg=DLG.pages[DLG.i];DLG.c=Math.min(999,(DLG.c||0)+textSpeed());let left=DLG.c;pg.forEach((l,i)=>{txt(l.slice(0,Math.max(0,left)),6,111+i*12,'#1b1424');left-=l.length});if(frame%40<24)rect(150,134,4,4,'#ff8a1e');
   if(P_('a')||P_('b')){if(DLG.c<pg.reduce((a,l)=>a+l.length,0))DLG.c=999;else{DLG.i++;DLG.c=0;if(DLG.i>=DLG.pages.length){const cb=DLG.cb;DLG=null;if(cb)cb()}}}}
- else{if(scene==='title')updTitle();else if(scene==='starter')updStarter();else if(scene==='planet'){PREV='planet';updPlanet()}else if(scene==='space'){PREV='space';updSpace()}else if(scene==='world'){PREV='world';updWorld()}else if(scene==='battle')updBattle();else if(scene==='menu')updMenu();else if(scene==='intro')rect(0,0,160,144,'#120c22');else if(scene==='cut')updCut();}
+ else{if(scene==='title')updTitle();else if(scene==='starter')updStarter();else if(scene==='planet'){PREV='planet';updPlanet()}else if(scene==='dive'){if(typeof skyDiveUpd==='function')skyDiveUpd();else scene='planet'}else if(scene==='space'){PREV='space';updSpace()}else if(scene==='world'){PREV='world';updWorld()}else if(scene==='battle')updBattle();else if(scene==='rta')rtaUpd();else if(scene==='menu')updMenu();else if(scene==='intro')rect(0,0,160,144,'#120c22');else if(scene==='cut')updCut();}
  drawToast();for(const k in pressed)pressed[k]=false;requestAnimationFrame(loop)}
 function updSpaceDraw(){const sv={...held};for(const k in held)held[k]=false;const pa=pressed.a;pressed.a=false;const ps=pressed.start;pressed.start=false;updSpace();Object.assign(held,sv);pressed.a=pa;pressed.start=ps}
 __QUESTENGINE__
@@ -922,6 +939,7 @@ let QWILD=null;   // tags the current wild battle for win_battle objectives
 __PROGENGINE__
 __WORLDENGINE__
 __SECENGINE__
+__ARENAENGINE__
 
 /* ---------- boot: loading screen, background prefetch, offline support ---------- */
 // Options > Report a bug: the tester types what went wrong; it is filed as a GitHub issue (api/bug-report.js) with the

@@ -1520,6 +1520,30 @@
    ],
    "confidence": "high",
    "why": "Linker Arena dome (owner art: lobby_exterior / lobby_interior)"
+  },
+  {
+   "interior": "916",
+   "parent": "017",
+   "door": [
+    14,
+    3
+   ],
+   "door2": [
+    15,
+    3
+   ],
+   "mat": [
+    [
+     7,
+     14
+    ],
+    [
+     8,
+     14
+    ]
+   ],
+   "confidence": "high",
+   "why": "Palm Isle Recovery Bay dome (was an outdoor counter)"
   }
  ],
  "stairs": [
@@ -1786,17 +1810,6 @@
     "k": "house",
     "to": "006",
     "why": "Trading Post shop (shared room)"
-   }
-  ],
-  "017": [
-   {
-    "tile": [
-     14,
-     3
-    ],
-    "k": "bay",
-    "door": true,
-    "why": "Palm Isle Recovery Hut (works like the counter)"
    }
   ],
   "018": [
@@ -5824,6 +5837,24 @@
     ],
     "k": "trophies",
     "why": "trophy cabinet"
+   }
+  ],
+  "916": [
+   {
+    "tile": [
+     7,
+     4
+    ],
+    "k": "bay",
+    "why": "Recovery Bay counter"
+   },
+   {
+    "tile": [
+     8,
+     4
+    ],
+    "k": "bay",
+    "why": "Recovery Bay counter"
    }
   ]
  },

@@ -6651,5 +6651,30 @@
     "Receptionist: Welcome to the Linker Arena, home of real-time battles!"
    ]
   }
+ ],
+ "916": [
+  {
+   "art": "nurse",
+   "name": "Nurse",
+   "tile": [
+    8,
+    4
+   ],
+   "stay": true,
+   "t": [
+    "Nurse: Welcome to the Palm Isle Recovery Bay! Step up to the counter and I'll heal your team."
+   ]
+  },
+  {
+   "art": "explorer",
+   "tile": [
+    3,
+    9
+   ],
+   "face": "right",
+   "t": [
+    "Trainer: Out here on the Molten Frontier, this little bay is a lifesaver."
+   ]
+  }
  ]
 }

@@ -30,11 +30,11 @@
    "k": "cut_03",
    "q": "M02",
    "o": 2,
-   "w": "start",
-   "cap": "A signal from the canyon...",
+   "w": "done",
+   "cap": "Zib picks a captain",
    "lines": [
-    "The bridge lights go still. A tiny silver saucer wobbles down out of the stars.",
-    "It settles on your shoulder. One huge eye blinks at you.",
+    "Zib settles on your shoulder, its lights still flashing gold.",
+    "One huge eye blinks at you, then at Plazmo.",
     "Zib: Bip!"
    ],
    "st": "plazmo",

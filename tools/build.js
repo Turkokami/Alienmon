@@ -32,6 +32,31 @@ function folder(dir,ext){const m={},p=path.join(root,dir);if(fs.existsSync(p))fo
 const ART=folder('art/sprites','.png');console.log('art sprites:',Object.keys(ART).length);
 const ARTB=folder('art/sprites_back','.png');console.log('back sprites:',Object.keys(ARTB).length);
 const OW=folder('art/overworld','.png');
+// World-Echo forms (data/echoes.json) then Holopup's world line (data/holopup_line.json), appended after the 322 in a FIXED order:
+// saves store species by position, so every entry is always built. An Echo without its own front art yet borrows its base's
+// sprite and never appears in the wild (echo.noart) until the art lands in art/echo (tools/echo_cut.py).
+const PROG0=JSON.parse(fs.readFileSync(path.join(root,'data/progression.json'),'utf8')).species,EVOOF=n=>PROG0[n]&&PROG0[n].evolves&&PROG0[n].evolves.into||null;
+const ECHON=(sp,e)=>sp+' ('+e.worldName.split(' ')[0]+')';   /* an Echo's name: its species plus its world */
+const ECHOES=JSON.parse(fs.readFileSync(path.join(root,'data/echoes.json'),'utf8')).echoes.map(e=>{
+ const b=D.find(d=>d.name===e.base);if(!b)throw new Error('echo base missing: '+e.base);const name=e.base+' ('+e.worldName.split(' ')[0]+')',t=[...new Set([e.type,b.t[0]])].slice(0,2);
+ const art=fs.existsSync(path.join(root,'art/echo',e.art+'.png'));
+ const nx=EVOOF(e.base),d={...b,n:D.length+1,name,t,to:nx?ECHON(nx,e):'',m:'World Echo: wild on '+e.worldName,lore:e.lore,sig:-1,echo:{base:e.base,w:e.world}};if(!art)d.echo.noart=1;D.push(d);
+ ART[name]=art?asset('art/echo/'+e.art+'.png'):ART[e.base];if(fs.existsSync(path.join(root,'art/echo_back',e.art+'.png')))ARTB[name]=asset('art/echo_back/'+e.art+'.png');else if(ARTB[e.base])ARTB[name]=ARTB[e.base];if(OW[e.base])OW[name]=OW[e.base];
+ return{name,base:e.base,n:d.n}});console.log('world echoes:',ECHOES.length,'with art:',ECHOES.length-D.filter(d=>d.echo&&d.echo.noart).length);
+const HOLO=JSON.parse(fs.readFileSync(path.join(root,'data/holopup_line.json'),'utf8')),HOLOP=D.find(d=>d.name==='Holopup');
+for(const e of HOLO.line)for(const st of[2,3]){const name=st===2?e.stage2:e.stage3;
+ D.push({n:D.length+1,name,t:[e.type],st,tot:3,to:st===2?e.stage3:'',m:st===2?'Holopup + the '+e.worldName+' Shard':'Level '+HOLO.evolveLevel,s:st===2?e.stats2:e.stats3,r:'normal',lore:st===2?e.lore2:e.lore3,b:1,tr:HOLOP.tr,sig:-1,holo:{w:e.world}});
+ for(const[A,dir]of[[ART,'art/holo'],[ARTB,'art/holo_back']])if(fs.existsSync(path.join(root,dir,name+'.png')))A[name]=asset(dir+'/'+name+'.png');if(OW.Holopup)OW[name]=OW.Holopup}
+console.log('holopup line:',HOLO.line.length*2);
+// evolved World-Echo forms (#365 on): each Echo follows its original's evolution chain, keeping the Echo's world type and look
+const ECHOEVO=[];for(const e of JSON.parse(fs.readFileSync(path.join(root,'data/echoes.json'),'utf8')).echoes){let sp=EVOOF(e.base);
+ while(sp){const b=D.find(d=>d.name===sp),name=ECHON(sp,e),nx=EVOOF(sp),art=sp+'_Echo_'+e.worldName.split(' ')[0];
+  D.push({...b,n:D.length+1,name,t:[...new Set([e.type,b.t[0]])].slice(0,2),to:nx?ECHON(nx,e):'',m:'Evolves from '+ECHON(PROG0[sp]?Object.keys(PROG0).find(k=>EVOOF(k)===sp):e.base,e),
+   lore:sp+"'s "+e.worldName+' Echo. '+e.lore.split('. ').slice(1).join('. '),sig:-1,echo:{base:sp,w:e.world,evo:1}});
+  if(fs.existsSync(path.join(root,'art/echo',art+'.png')))ART[name]=asset('art/echo/'+art+'.png');else ART[name]=ART[sp];
+  if(fs.existsSync(path.join(root,'art/echo_back',art+'.png')))ARTB[name]=asset('art/echo_back/'+art+'.png');else if(ARTB[sp])ARTB[name]=ARTB[sp];if(OW[sp])OW[name]=OW[sp];
+  ECHOEVO.push({name,sp,n:D.length,next:nx?ECHON(nx,e):null});sp=nx}}
+console.log('evolved echoes:',ECHOEVO.length);
 const TITLE=asset('art/ui/title.jpg');
 const SHIP=asset('art/ui/ship.png'),CUTS=[0,1,2].map(i=>asset('art/ui/cut_'+i+'.jpg')).filter(Boolean);
 const CHAR=folder('art/characters','.png');
@@ -61,7 +86,7 @@ const BETA=process.env.PRIVATE_TESTING==='1'?{email:process.env.FEEDBACK_EMAIL||
 const SITE=(process.env.SITE_URL||'https://alienmon.vercel.app').replace(/\/$/,'');
 // the game's own page: alienmon.com serves the website and the game lives under /play/ (override with PLAY_URL)
 const PLAY=(process.env.PLAY_URL||(/^https:\/\/(www\.)?alienmon\.com$/.test(SITE)?SITE+'/play/':SITE+'/'));
-const BUILD=crypto.createHash('sha1').update(fs.readFileSync(path.join(root,'src/template.html'))).update(fs.readFileSync(path.join(root,'src/quests.js'))).update(fs.readFileSync(path.join(root,'src/progression.js'))).update(fs.readFileSync(path.join(root,'src/world.js'))).update(fs.readFileSync(path.join(root,'src/sections.js'))).update(fs.readFileSync(path.join(root,'src/extras.js'))).update(fs.readFileSync(path.join(root,'src/story.js'))).update(fs.readFileSync(path.join(root,'data/story.json'))).update(fluidDump()).update(['data/world.json','data/encounters.json','data/quests.json',...(fs.existsSync(path.join(root,'data/collision'))?fs.readdirSync(path.join(root,'data/collision')).sort().map(f=>'data/collision/'+f):[])].filter(f=>fs.existsSync(path.join(root,f))).map(f=>fs.readFileSync(path.join(root,f),'utf8')).join('')).update(j([D,P,PAINT,WORLDJ,ASSETS])).digest('hex').slice(0,10);
+const BUILD=crypto.createHash('sha1').update(fs.readFileSync(path.join(root,'src/template.html'))).update(fs.readFileSync(path.join(root,'src/quests.js'))).update(fs.readFileSync(path.join(root,'src/progression.js'))).update(fs.readFileSync(path.join(root,'src/world.js'))).update(fs.readFileSync(path.join(root,'src/sections.js'))).update(fs.readFileSync(path.join(root,'src/extras.js'))).update(fs.readFileSync(path.join(root,'src/story.js'))).update(fs.readFileSync(path.join(root,'data/arena.json'))).update(fs.readFileSync(path.join(root,'data/story.json'))).update(fluidDump()).update(['data/world.json','data/encounters.json','data/quests.json',...(fs.existsSync(path.join(root,'data/collision'))?fs.readdirSync(path.join(root,'data/collision')).sort().map(f=>'data/collision/'+f):[])].filter(f=>fs.existsSync(path.join(root,f))).map(f=>fs.readFileSync(path.join(root,f),'utf8')).join('')).update(j([D,P,PAINT,WORLDJ,ASSETS])).digest('hex').slice(0,10);
 const fill={__DATA__:j(D),__PLANETS__:j(P),__TRAITS__:j(core.traits),__SIGS__:j(core.signature_moves),__SYS__:j(SYS),__ART__:j(ART),__ARTB__:j(ARTB),__OW__:j(OW),
  __TITLE__:j(TITLE),__SHIP__:j(SHIP),__CUTS__:j(CUTS),__CHAR__:j(CHAR),__PORTRAITS__:j(PORTRAITS),__TALKPORT__:j(TALKPORT),__SCENES__:j(SCN),__FX__:j(FX),__BPOSE__:j(folder('art/arena/poses','.png')),__BFX__:j(folder('art/arena/fx','.webp')),__PAINT__:PAINT,__WORLD__:WORLDJ,__WORLDIMG__:j(WORLDIMG),
  __MUSIC__:j(MUSIC),__TITLEMUSIC__:j(TITLEMUSIC),__BATTLEMUSIC__:j(BATTLEMUSIC),__PLANETART__:j(PLANART),__BUILD__:j(BUILD),__INLINE__:j(INLINE),__SITE__:SITE,__PLAYURL__:PLAY,__BETA__:j(BETA),__PROTO__:j(PROTO),__NEWONLY__:j(NEWONLY),__MOVEFX__:fs.readFileSync(path.join(root,'data/moves_fx.json'),'utf8')};
@@ -72,6 +97,13 @@ const qp=path.join(root,'data/quest_places.json'),QPLACE=fs.existsSync(qp)?fs.re
 fill.__QUESTENGINE__=fs.readFileSync(path.join(root,'src/quests.js'),'utf8').replace(/__[A-Z]+__/g,k=>({__QUESTS__:j(QUESTS),__QPLACE__:QPLACE,__CUTPICS__:j(CUTPICS)})[k]||k);
 // progression (docs/PROGRESSION_AND_LEVELING.md): species curves/yields/evolutions, wild tables, Keeper and boss levels
 const PROGJ=JSON.parse(fs.readFileSync(path.join(root,'data/progression.json'),'utf8'));
+/* Echoes grow and evolve like their originals, into their own Echo forms */
+const ECHOEV=(sp,next)=>{const v=PROGJ.species[sp].evolves;return v&&next?{...v,into:next}:null};
+for(const e of ECHOES){const nx=D.find(d=>d.name===e.name).to;PROGJ.species[e.name]={...PROGJ.species[e.base],n:e.n,evolves:ECHOEV(e.base,nx)}}
+for(const e of ECHOEVO)PROGJ.species[e.name]={...PROGJ.species[e.sp],n:e.n,evolves:ECHOEV(e.sp,e.next)};
+for(const e of HOLO.line){const hp=PROGJ.species.Holopup,n=D.findIndex(d=>d.name===e.stage2)+1;   /* the world line grows like Holopup */
+ PROGJ.species[e.stage2]={...hp,n,base_yield:150,stage:2,stages:3,bst:e.stats2.reduce((a,b)=>a+b,0),evolves:{into:e.stage3,level:HOLO.evolveLevel,method:'Level '+HOLO.evolveLevel},capture_mod:0.7};
+ PROGJ.species[e.stage3]={...hp,n:n+1,base_yield:230,stage:3,stages:3,bst:e.stats3.reduce((a,b)=>a+b,0),evolves:null,capture_mod:0.45}}
 const PROGMIN={species:Object.fromEntries(Object.entries(PROGJ.species).map(([k,v])=>[k,{curve:v.curve,base_yield:v.base_yield,stage:v.stage,stages:v.stages,rarity:v.rarity,evolves:v.evolves,capture_mod:v.capture_mod}])),
  areas:Object.fromEntries(Object.entries(PROGJ.areas).map(([k,a])=>{const t=l=>l&&l.map(x=>({name:x.name,min:x.min,max:x.max,weight:x.weight}));return[k,{levels:a.levels,tier1:t(a.tier1),tier2_after_4_shards:t(a.tier2_after_4_shards),tier3_after_champion:t(a.tier3_after_champion),trainer_levels:a.trainer_levels,trainer_team_size:a.trainer_team_size}]})),
  keepers:PROGJ.keepers,bosses:PROGJ.bosses,rival:PROGJ.rival,legendaries:PROGJ.legendaries};
@@ -95,15 +127,22 @@ function behind(id,rows){const p=PB[id];if(!p)return rows;const R=rows.map(r=>r.
 const ENCJ=JSON.parse(fs.readFileSync(path.join(root,'data/encounters.json'),'utf8')),HABJ=JSON.parse(fs.readFileSync(path.join(root,'data/habitat_rules.json'),'utf8'));
 const ENC={s:{},h:{}};for(const[id,s]of Object.entries(ENCJ))ENC.s[id]={h:s.habitat,e:s.encounters.map(e=>[e.name,e.weight,e.levels[0],e.levels[1],e.method,e.time])};
 for(const[k,h]of Object.entries(HABJ.habitats))ENC.h[k]=h.description;ENC.r={hab:Object.fromEntries(Object.entries(HABJ.habitats).map(([k,h])=>[k,[h.native,h.tolerated]])),ban:HABJ.hard_bans};
+// each world's own townsfolk (data/world_folk.json, tools/npc_cut.py): about two thirds of the generic people on its outdoor maps become
+// that world's characters, picked by position so the same person always stands in the same spot; named and story characters are never touched
+const FOLK=fs.existsSync(path.join(root,'data/world_folk.json'))?JSON.parse(fs.readFileSync(path.join(root,'data/world_folk.json'),'utf8')):{},GENERIC=new Set(['explorer','wanderer','civilian','technician','miner','researcher','pilgrim','townsfolk']);
+function localFolk(id,sec){const L=sec.npcs||[],f=FOLK[sec.pkey];if(!f||!f.length||sec.type==='interior')return L;
+ return L.map((n,i)=>{if(!GENERIC.has(n.art)||n.name)return n;const h=parseInt(crypto.createHash('md5').update(id+':'+i).digest('hex').slice(0,8),16);return h%3===2?n:{...n,art:sec.pkey+'_'+f[h%f.length]}})}
 const SECIMG={},SECS={};for(const[id,sec]of Object.entries(SECW.sections)){const cp=path.join(root,'data/collision',id+'.json');if(!sec.img||!fs.existsSync(cp))continue;
- SECIMG[id]=asset(sec.img);SECS[id]={id,name:sec.name,planet:sec.planet,type:sec.type,tiles:sec.tiles,edges:sec.edges,warps:sec.warps,objects:sec.objects,spawns:sec.spawns,npcs:sec.npcs||[],mons:sec.mons||[],zone:sec.zone,pkey:sec.pkey,grid:sec.grid||null,parent:sec.parent||null,dir:sec.dir,rows:props(id,behind(id,fluids(id,JSON.parse(fs.readFileSync(cp,'utf8')).rows))),over:PB[id]?PB[id].pieces:null,props:PROPS[id]||null};
+ SECIMG[id]=asset(sec.img);SECS[id]={id,name:sec.name,planet:sec.planet,type:sec.type,tiles:sec.tiles,edges:sec.edges,warps:sec.warps,objects:sec.objects,spawns:sec.spawns,npcs:localFolk(id,sec),mons:sec.mons||[],zone:sec.zone,pkey:sec.pkey,grid:sec.grid||null,parent:sec.parent||null,dir:sec.dir,rows:props(id,behind(id,fluids(id,JSON.parse(fs.readFileSync(cp,'utf8')).rows))),over:PB[id]?PB[id].pieces:null,props:PROPS[id]||null};
  const ov=path.join(root,'art/sections_over',id+'.png');if(PB[id]&&fs.existsSync(ov))SECOV[id]=asset('art/sections_over/'+id+'.png')}
 // open water ('~', Hydro-skiff) and lava ('^', Heat Shield) marked per section in data/sections/fluids/<id>.json; never the outer ring
 function fluids(id,rows){const f=path.join(root,'data/sections/fluids',id+'.json');if(!fs.existsSync(f))return rows;const F=JSON.parse(fs.readFileSync(f,'utf8')),R=rows.map(r=>r.split('')),H=R.length,W=R[0].length;
  for(const[k,ch]of[['water','~'],['lava','^']])for(const[x0,y0,x1,y1]of F[k]||[])for(let y=Math.max(1,y0);y<=Math.min(H-2,y1);y++)for(let x=Math.max(1,x0);x<=Math.min(W-2,x1);x++)if(R[y][x]==='#')R[y][x]=ch;return R.map(r=>r.join(''))}
 function fluidDump(){const d=path.join(root,'data/sections/fluids');return fs.existsSync(d)?fs.readdirSync(d).sort().map(f=>fs.readFileSync(path.join(d,f),'utf8')).join(''):''}
 console.log('section maps:',Object.keys(SECS).length);
-fill.__SECENGINE__=(fs.readFileSync(path.join(root,'src/sections.js'),'utf8')+'\n'+fs.readFileSync(path.join(root,'src/extras.js'),'utf8')+'\n'+fs.readFileSync(path.join(root,'src/story.js'),'utf8')).replace(/__SWORLD__/g,j(SECS)).replace(/__SECIMG__/g,j(SECIMG)).replace(/__SECOV__/g,j(SECOV)).replace(/__ENC__/g,j(ENC)).replace(/__SECARRIVAL__/g,j(SECW.arrival||{})).replace(/__SECQ__/g,j(SECW.quest_spots||{})).replace(/__STASHART__/g,j([asset('art/ui/stash_closed.png'),asset('art/ui/stash_open.png')])).replace(/__STORY__/g,j(JSON.parse(fs.readFileSync(path.join(root,'data/story.json'),'utf8')))).replace(/__RENAMES__/g,j(JSON.parse(fs.readFileSync(path.join(root,'data/renames.json'),'utf8')))).replace(/__KNOCK__/g,j(fs.existsSync(path.join(root,'data/sections/knock_doors.json'))?JSON.parse(fs.readFileSync(path.join(root,'data/sections/knock_doors.json'),'utf8')):{}));
+fill.__SECENGINE__=(fs.readFileSync(path.join(root,'src/sections.js'),'utf8')+'\n'+fs.readFileSync(path.join(root,'src/extras.js'),'utf8')+'\n'+fs.readFileSync(path.join(root,'src/story.js'),'utf8')+'\n'+fs.readFileSync(path.join(root,'src/skyfall.js'),'utf8')).replace(/__SKYART__/g,()=>j(folder('art/skyfall','.png'))).replace(/__SWORLD__/g,j(SECS)).replace(/__SECIMG__/g,j(SECIMG)).replace(/__SECOV__/g,j(SECOV)).replace(/__ENC__/g,j(ENC)).replace(/__SECARRIVAL__/g,j(SECW.arrival||{})).replace(/__SECQ__/g,j(SECW.quest_spots||{})).replace(/__STASHART__/g,j([asset('art/ui/stash_closed.png'),asset('art/ui/stash_open.png')])).replace(/__STORY__/g,j(JSON.parse(fs.readFileSync(path.join(root,'data/story.json'),'utf8')))).replace(/__RENAMES__/g,j(JSON.parse(fs.readFileSync(path.join(root,'data/renames.json'),'utf8')))).replace(/__KNOCK__/g,j(fs.existsSync(path.join(root,'data/sections/knock_doors.json'))?JSON.parse(fs.readFileSync(path.join(root,'data/sections/knock_doors.json'),'utf8')):{}));
+// Linker Arena: real-time arena code stays on the test branch only (live has exhibition matches)
+fill.__ARENAENGINE__='';
 fill.__WORLDENGINE__=fs.readFileSync(path.join(root,'src/world.js'),'utf8').replace(/__PROTO__/g,j(PROTO)).replace(/__WORLDSTATE__/g,j({gates:WS.gates,ship:WS.ship})).replace(/__PEOPLE__/g,PEOPLE).replace(/__SPACE__/g,j(SPACEART));
 // function replacer: data can contain "$&"-style sequences that a string replacement would expand
 let html=fs.readFileSync(path.join(root,'src/template.html'),'utf8').replace(/__[A-Z]+__/g,k=>k in fill?fill[k]:k);
