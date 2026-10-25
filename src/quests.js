@@ -120,7 +120,7 @@ function qNotify(q,kind,lines){if(lines&&lines.length)QN.push({q,kind,lines:line
 // A picture can have a version per starter (<key>_<starter>), picked by boardImg. Each is shown once per save.
 const CUTPIC=__CUTPICS__;let CUTQ=[];
 function qPic(qid,o,w){if(!G)return;G.seenCut=G.seenCut||{};for(const c of CUTPIC)if(c.q===qid&&c.o===o&&c.w===w&&!G.seenCut[c.k]){if(c.st&&!(typeof myStarter==='function'&&G.party&&G.party.length&&D[myStarter()].name.toLowerCase()===c.st))continue;G.seenCut[c.k]=1;CUTQ.push(c)}}
-function qPicFlush(){if(G&&!(G.seenCut&&G.seenCut._intro)&&G.quests&&qs('M01').state==='active'&&qs('M01').step===0){G.seenCut=G.seenCut||{};G.seenCut._intro=1;qPic('intro',0,'start');qPic('M01',0,'start')}   // the opening pictures: the first quest starts before the save exists
+function qPicFlush(){if(G&&!(G.seenCut&&G.seenCut._intro)&&G.quests&&qs('M01').state==='active'&&qs('M01').step===0){G.seenCut=G.seenCut||{};G.seenCut._intro=1;qPic('intro',0,'start')}   // Dr. Vashti's pods picture waits for her talk in the lab (secStarterTalk)   // the opening pictures: the first quest starts before the save exists
  if(!CUTQ.length||DLG||CH||!(scene==='planet'||scene==='world')||(typeof SFADE!=='undefined'&&SFADE))return false;
  const c=CUTQ[0];if(okI(boardImg(c.k))){CUTQ.shift();cutBoard([[c.k,[/[.!?…]$/.test(c.cap)?c.cap:c.cap+'.'].concat(c.lines||[])]],()=>{});return true}
  if((c.wait=(c.wait||0)+1)>240)CUTQ.shift();return true}   // give the picture ~4 s to download, else skip it

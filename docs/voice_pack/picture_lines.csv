@@ -1,0 +1,101 @@
+file,quest,quest_title,beat,speaker,voice,text
+pic_cut_01_01_narrator.mp3,intro,A dream of crystal trees,story picture,Narrator,narrator,A dream of crystal trees.
+pic_cut_01_02_narrator.mp3,intro,A dream of crystal trees,story picture,Narrator,narrator,You dream of crystal trees under a huge red sun that is slowly going out.
+pic_cut_01_03_narrator.mp3,intro,A dream of crystal trees,story picture,Narrator,narrator,The wind moves through the branches like a sad song.
+pic_cut_01_04_narrator.mp3,intro,A dream of crystal trees,story picture,Narrator,narrator,"A whisper, soft as leaves: Find the one who listens."
+pic_cut_05_02_narrator_sporix.mp3,M03,First rival battle,story picture,Narrator,narrator,"Mud everywhere. Sporix is worn out, and you scoop it up gently."
+pic_cut_05_02_narrator_plazmo.mp3,M03,First rival battle,story picture,Narrator,narrator,"Mud everywhere. Plazmo is worn out, and you scoop it up gently."
+pic_cut_05_02_narrator_gloopa.mp3,M03,First rival battle,story picture,Narrator,narrator,"Mud everywhere. Gloopa is worn out, and you scoop it up gently."
+pic_cut_06_01_narrator.mp3,S04,Cactling takes the hit,story picture,Narrator,narrator,Cactling takes the hit.
+pic_cut_06_02_narrator.mp3,S04,Cactling takes the hit,story picture,Narrator,narrator,A rock cracks loose from the canyon wall and tumbles at Zib!
+pic_cut_06_03_narrator.mp3,S04,Cactling takes the hit,story picture,Narrator,narrator,"A grumpy Cactling leaps in front, curls into a spiky ball and takes the hit. THUNK."
+pic_cut_06_04_narrator.mp3,S04,Cactling takes the hit,story picture,Narrator,narrator,It folds its stubby arms and stares at you. Well? Are you going to ask?
+pic_cut_07_04_narrator_sporix.mp3,M04,Ambush in the Sunset Tunnel,story picture,Narrator,narrator,"Sporix throws itself in the way. When the dust clears, the agents are gone."
+pic_cut_07_04_narrator_plazmo.mp3,M04,Ambush in the Sunset Tunnel,story picture,Narrator,narrator,"Plazmo throws itself in the way. When the dust clears, the agents are gone."
+pic_cut_07_04_narrator_gloopa.mp3,M04,Ambush in the Sunset Tunnel,story picture,Narrator,narrator,"Gloopa throws itself in the way. When the dust clears, the agents are gone."
+pic_cut_10_02_narrator_sporix.mp3,M05,The boulder beast topples,story picture,Narrator,narrator,Dax's giant boulder beast raises one huge foot over Sporix.
+pic_cut_10_02_narrator_plazmo.mp3,M05,The boulder beast topples,story picture,Narrator,narrator,Dax's giant boulder beast raises one huge foot over Plazmo.
+pic_cut_10_02_narrator_gloopa.mp3,M05,The boulder beast topples,story picture,Narrator,narrator,Dax's giant boulder beast raises one huge foot over Gloopa.
+pic_cut_10_03_narrator_sporix.mp3,M05,The boulder beast topples,story picture,Narrator,narrator,"You shout NOW! Sporix blasts the cracked ground, and the rock gives way."
+pic_cut_10_03_narrator_plazmo.mp3,M05,The boulder beast topples,story picture,Narrator,narrator,"You shout NOW! Plazmo blasts the cracked ground, and the rock gives way."
+pic_cut_10_03_narrator_gloopa.mp3,M05,The boulder beast topples,story picture,Narrator,narrator,"You shout NOW! Gloopa blasts the cracked ground, and the rock gives way."
+pic_cut_18_02_narrator_sporix.mp3,M06,Brighter than the Spore Pools,story picture,Narrator,narrator,Dr. Moor's poison has Sporix covered in spots and hanging still...
+pic_cut_18_02_narrator_plazmo.mp3,M06,Brighter than the Spore Pools,story picture,Narrator,narrator,Dr. Moor's poison has Plazmo covered in spots and hanging still...
+pic_cut_18_02_narrator_gloopa.mp3,M06,Brighter than the Spore Pools,story picture,Narrator,narrator,Dr. Moor's poison has Gloopa covered in spots and hanging still...
+pic_cut_21_01_narrator.mp3,S40,The ghost ship's cages,story picture,Narrator,narrator,The ghost ship's cages.
+pic_cut_21_02_narrator.mp3,S40,The ghost ship's cages,story picture,Narrator,narrator,"A logbook lies open, stamped with an orange slashed ring: Approved, Admin V."
+pic_cut_21_03_narrator.mp3,S40,The ghost ship's cages,story picture,Narrator,narrator,"In the very last cage: a knitted blanket and a note, signed with just one letter. S."
+pic_cut_27_01_narrator.mp3,S53,The Glitchbug swarm,story picture,Narrator,narrator,The Glitchbug swarm.
+pic_cut_27_02_narrator.mp3,S53,The Glitchbug swarm,story picture,Narrator,narrator,"The Helix crate bursts open, and hundreds of Glitchbugs pour out!"
+pic_cut_27_03_narrator.mp3,S53,The Glitchbug swarm,story picture,Narrator,narrator,"Signs flash backwards, trains freeze in midair, and a hot dog stand plays opera."
+pic_cut_27_04_narrator.mp3,S53,The Glitchbug swarm,story picture,Narrator,narrator,One cheeky Glitchbug zaps the top of your head.
+pic_cut_32_01_narrator.mp3,S62,The temple sings,story picture,Narrator,narrator,The temple sings.
+pic_cut_32_02_narrator.mp3,S62,The temple sings,story picture,Narrator,narrator,A sunbeam zigzags from mirror to mirror onto the door crystal.
+pic_cut_32_03_narrator.mp3,S62,The temple sings,story picture,Narrator,narrator,"The Monolets bow low, and the little Chimelet swings out one pure note. Dinnnng."
+pic_cut_32_04_narrator.mp3,S62,The temple sings,story picture,Narrator,narrator,"Every wall hums, and the great doors swing slowly open."
+pic_cut_40_01_narrator.mp3,M11,Into the light,story picture,Narrator,narrator,Into the light.
+pic_cut_40_02_narrator.mp3,M11,Into the light,story picture,Narrator,narrator,Old Basalt points his pick at the glowing crater.
+pic_cut_40_03_basalt.mp3,M11,Into the light,story picture,Old Basalt,basalt,"Teo stood right there, smiling. Then he walked into the light."
+pic_cut_41_01_narrator.mp3,M12,Teeth in the ice,story picture,Narrator,narrator,Teeth in the ice.
+pic_cut_41_02_narrator.mp3,M12,Teeth in the ice,story picture,Narrator,narrator,"Inside the glacier, Ingrid holds up her lantern."
+pic_cut_41_03_narrator.mp3,M12,Teeth in the ice,story picture,Narrator,narrator,The fossil in the ice has a bite mark bigger than a house.
+pic_cut_42_01_narrator.mp3,scene,A spiky new friend,story picture,Narrator,narrator,A spiky new friend.
+pic_cut_42_02_narrator.mp3,scene,A spiky new friend,story picture,Narrator,narrator,"In the snow, a little Iceburr is stuck, one leg frozen into the ice."
+pic_cut_42_03_narrator.mp3,scene,A spiky new friend,story picture,Narrator,narrator,Kit melts it free with a heater coil off his tool belt... and it hops onto his shoulder.
+pic_cut_43_01_narrator.mp3,scene,Project Unity,story picture,Narrator,narrator,Project Unity.
+pic_cut_43_02_narrator.mp3,scene,Project Unity,story picture,Narrator,narrator,A cold white sign hangs over endless rows of cages: PROJECT UNITY. ONE OF EVERY SPECIES.
+pic_cut_43_03_narrator.mp3,scene,Project Unity,story picture,Narrator,narrator,"Every cage has a label and a number, like a museum."
+pic_cut_44_01_narrator.mp3,M14,An acceptable loss,story picture,Narrator,narrator,An acceptable loss.
+pic_cut_44_02_narrator.mp3,M14,An acceptable loss,story picture,Narrator,narrator,The big screen goes dark. Sola does not move.
+pic_cut_44_03_narrator.mp3,M14,An acceptable loss,story picture,Narrator,narrator,Her fists are shaking.
+pic_cut_45_01_narrator.mp3,M15,He's my dad,story picture,Narrator,narrator,He's my dad.
+pic_cut_45_02_narrator.mp3,M15,He's my dad,story picture,Narrator,narrator,Sola tears the Helix patch off her sleeve.
+pic_cut_46_01_narrator.mp3,M16,She is scattered so she may live,story picture,Narrator,narrator,She is scattered so she may live.
+pic_cut_46_02_narrator.mp3,M16,She is scattered so she may live,story picture,Narrator,narrator,The whole shrine wall is one great carving.
+pic_cut_46_03_narrator.mp3,M16,She is scattered so she may live,story picture,Narrator,narrator,A great tree breaks into a thousand glowing seeds and scatters across the stars.
+pic_cut_47_01_narrator.mp3,M17,The man who built the engine,story picture,Narrator,narrator,The man who built the engine.
+pic_cut_47_02_narrator.mp3,M17,The man who built the engine,story picture,Narrator,narrator,Mortimer Kade spreads the Rift engine plans across the table.
+pic_cut_47_03_kade.mp3,M17,The man who built the engine,story picture,Kade,kade,I scratched the logo off my coat the day I understood what it would wake.
+pic_cut_48_01_narrator.mp3,M17b,Every boat sounds its horn,story picture,Narrator,narrator,Every boat sounds its horn.
+pic_cut_48_02_narrator.mp3,M17b,Every boat sounds its horn,story picture,Narrator,narrator,The Harbor Tower blazes back to life.
+pic_cut_48_03_narrator.mp3,M17b,Every boat sounds its horn,story picture,Narrator,narrator,Every boat in Port Saltreach sounds its horn.
+pic_cut_49_01_narrator.mp3,scene,Zib's pod,story picture,Narrator,narrator,Zib's pod.
+pic_cut_49_02_narrator.mp3,scene,Zib's pod,story picture,Narrator,narrator,"In a valley of cracked seedpods, Zib stops at one small shell."
+pic_cut_49_03_narrator.mp3,scene,Zib's pod,story picture,Narrator,narrator,"It sits inside for a long, quiet minute. This was Zib's pod."
+pic_cut_50_01_narrator.mp3,scene,...No.,story picture,Narrator,narrator,...No.
+pic_cut_50_02_narrator.mp3,scene,...No.,story picture,Narrator,narrator,Pell raises the net gun at Zib. His hands are shaking.
+pic_cut_50_03_narrator.mp3,scene,...No.,story picture,Narrator,narrator,"Then he throws it over the rim, down into the crater's light."
+pic_cut_51_01_narrator.mp3,M18,Novaryx,story picture,Narrator,narrator,Novaryx.
+pic_cut_51_02_narrator.mp3,M18,Novaryx,story picture,Narrator,narrator,Your eight Shards rise and sing.
+pic_cut_51_03_narrator.mp3,M18,Novaryx,story picture,Narrator,narrator,A great signal-winged bird answers the call.
+pic_cut_52_01_narrator.mp3,scene,Freeze the coils!,story picture,Narrator,narrator,Freeze the coils!
+pic_cut_52_02_narrator.mp3,scene,Freeze the coils!,story picture,Narrator,narrator,A Helix gravity trap pins everyone flat to the glowing rock.
+pic_cut_53_01_narrator.mp3,M19,You're so tall,story picture,Narrator,narrator,You're so tall.
+pic_cut_53_02_narrator.mp3,M19,You're so tall,story picture,Narrator,narrator,The Rift folds shut. From the last of its light steps Teo Reyes.
+pic_cut_53_03_narrator.mp3,M19,You're so tall,story picture,Narrator,narrator,Sola runs to him.
+pic_cut_54_01_narrator.mp3,M19b,The Starfall Festival,story picture,Narrator,narrator,The Starfall Festival.
+pic_cut_54_02_narrator.mp3,M19b,The Starfall Festival,story picture,Narrator,narrator,All of Dustmere is out at the Bonfire Ring tonight.
+pic_cut_54_03_narrator.mp3,M19b,The Starfall Festival,story picture,Narrator,narrator,Old Dusty tells the story of the night the seedpods fell.
+pic_cut_55_01_narrator.mp3,M19b,The trial,story picture,Narrator,narrator,The trial.
+pic_cut_55_02_narrator.mp3,M19b,The trial,story picture,Narrator,narrator,"In the Linker League courtroom, Director Thorne pleads guilty."
+pic_cut_55_03_narrator.mp3,M19b,The trial,story picture,Narrator,narrator,He looks at no one.
+pic_cut_56_01_narrator.mp3,M21,Prime Linker,story picture,Narrator,narrator,Prime Linker.
+pic_cut_56_02_narrator.mp3,M21,Prime Linker,story picture,Narrator,narrator,"Under the Great Telescope, Orra Venn bows."
+pic_cut_56_03_orra.mp3,M21,Prime Linker,story picture,Orra Venn,orra,The Kessler system has a new Prime Linker.
+pic_cut_57_01_narrator.mp3,P01,The road of light,story picture,Narrator,narrator,The road of light.
+pic_cut_57_03_vashti.mp3,P01,The road of light,story picture,Dr. Vashti,vashti,Go. I'll hold the road open from this side.
+pic_cut_58_01_narrator.mp3,P01,Ystra,story picture,Narrator,narrator,Ystra.
+pic_cut_58_02_narrator.mp3,P01,Ystra,story picture,Narrator,narrator,"A huge, tired red sun hangs over a grey world."
+pic_cut_58_03_narrator.mp3,P01,Ystra,story picture,Narrator,narrator,"Far off, at the bottom of an empty crater, one faint green glow: the Heartroot."
+pic_cut_59_01_narrator.mp3,scene,Saga's face,story picture,Narrator,narrator,Saga's face.
+pic_cut_59_02_narrator.mp3,scene,Saga's face,story picture,Narrator,narrator,Saga lowers the hood.
+pic_cut_59_03_narrator.mp3,scene,Saga's face,story picture,Narrator,narrator,"Underneath is a face like clear crystal, flickering at the edges."
+pic_cut_60_01_narrator.mp3,P02,Small and silver,story picture,Narrator,narrator,Small and silver.
+pic_cut_60_02_narrator.mp3,P02,Small and silver,story picture,Narrator,narrator,The darkness folds in on itself... and Oblivane is calm at last.
+pic_cut_60_03_narrator.mp3,P02,Small and silver,story picture,Narrator,narrator,"Small and silver, it curls up like a sleepy moon."
+pic_cut_61_01_narrator.mp3,P03,The Seedmother grows again,story picture,Narrator,narrator,The Seedmother grows again.
+pic_cut_61_02_narrator.mp3,P03,The Seedmother grows again,story picture,Narrator,narrator,A world-tree of crystal and leaves rises out of the crater.
+pic_cut_61_03_narrator.mp3,P03,The Seedmother grows again,story picture,Narrator,narrator,Oblivane sleeps in her branches like a little silver moon.
+pic_cut_62_01_narrator.mp3,P04,A road between two worlds,story picture,Narrator,narrator,A road between two worlds.
+pic_cut_62_02_narrator.mp3,P04,A road between two worlds,story picture,Narrator,narrator,The Warp Gate's runes blaze cyan and pink.
+pic_cut_62_03_narrator.mp3,P04,A road between two worlds,story picture,Narrator,narrator,"A road between two worlds, open at last."
