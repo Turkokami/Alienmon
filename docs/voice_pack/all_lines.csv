@@ -1,0 +1,328 @@
+file,quest,quest_title,beat,speaker,voice,direction,text
+m01_001_vashti.mp3,M01,A Partner From the Stars,opening (Dr. Vashti's lab),Dr. Imogen Vashti,vashti,,"There you are! Come, come."
+m01_002_narrator.mp3,M01,A Partner From the Stars,opening (Dr. Vashti's lab),Narrator,narrator,,"Twenty years ago, the sky fell."
+m01_003_narrator.mp3,M01,A Partner From the Stars,opening (Dr. Vashti's lab),Narrator,narrator,,"Seedpods scattered across the whole Kessler system, onto every world."
+m01_004_narrator.mp3,M01,A Partner From the Stars,opening (Dr. Vashti's lab),Narrator,narrator,,What hatched were Alienmon: refugees from a dying planet called Ystra.
+m01_005_narrator.mp3,M01,A Partner From the Stars,opening (Dr. Vashti's lab),Narrator,narrator,,"Your Linker can bond with them. Three pods hatched this week, and one of them is yours."
+m01_006_narrator.mp3,M01,A Partner From the Stars,opening (Dr. Vashti's lab),Narrator,narrator,,Choose your first partner.
+m01_007_vashti.mp3,M01,A Partner From the Stars,quest start,Dr. Imogen Vashti,vashti,,"Twenty years ago the Starfall brought them here. Today, one of them chooses you."
+m01_008_narrator.mp3,M01,A Partner From the Stars,quest start,Narrator,narrator,,"Pick your partner: Sporix, Plazmo or Gloopa."
+m01_009_narrator.mp3,M01,A Partner From the Stars,picture: Choose with your heart,Narrator,narrator,,Choose with your heart.
+m01_010_narrator.mp3,M01,A Partner From the Stars,picture: Choose with your heart,Narrator,narrator,,"Three capsules glow on Dr. Vashti's brass table: Sporix, Plazmo and Gloopa."
+m01_011_vashti.mp3,M01,A Partner From the Stars,picture: Choose with your heart,Dr. Imogen Vashti,vashti,,Don't pick with your head. Choose with your heart.
+m01_012_vashti.mp3,M01,A Partner From the Stars,quest complete,Dr. Imogen Vashti,vashti,,"A perfect match! Your Linker is synced. Take these Stasis Pods, and be kind to your partner."
+m02_013_dx4.mp3,M02,Zib's Signal,quest start,DX-4,dx4,,Bzzt! Unknown signal on the canyon bridge. Frequency... friendly?
+m02_014_narrator.mp3,M02,Zib's Signal,story panel: zib_bridge_1,Narrator,narrator,,"Night falls over Dustmere. DX-4 sweeps the path outside Mr. Abernathy's bakery, beeping at the canyon."
+m02_015_narrator_sporix.mp3,M02,Zib's Signal,story panel: zib_bridge_1,Narrator,narrator,,"Something past the old stone bridge is sending a signal. You grab a flashlight and go, Sporix close behind."
+m02_015_narrator_plazmo.mp3,M02,Zib's Signal,story panel: zib_bridge_1,Narrator,narrator,,"Something past the old stone bridge is sending a signal. You grab a flashlight and go, Plazmo close behind."
+m02_015_narrator_gloopa.mp3,M02,Zib's Signal,story panel: zib_bridge_1,Narrator,narrator,,"Something past the old stone bridge is sending a signal. You grab a flashlight and go, Gloopa close behind."
+m02_016_narrator.mp3,M02,Zib's Signal,story panel: zib_bridge_2,Narrator,narrator,,"Halfway across the glowing bridge, the canyon wall bursts open!"
+m02_017_narrator.mp3,M02,Zib's Signal,story panel: zib_bridge_2,Narrator,narrator,,A tiny silver saucer rockets out in a shower of red rock.
+m02_018_narrator.mp3,M02,Zib's Signal,story panel: zib_bridge_3,Narrator,narrator,,"It stops right in front of your nose. Inside the glass dome, one huge eye blinks at you."
+m02_019_zib.mp3,M02,Zib's Signal,story panel: zib_bridge_3,Zib,zib,,Bip.
+m02_020_narrator_sporix.mp3,M02,Zib's Signal,story panel: zib_bridge_4,Narrator,narrator,,"Sporix jumps back in surprise. The saucer doesn't flinch. It loops around you, lights flashing gold."
+m02_020_narrator_plazmo.mp3,M02,Zib's Signal,story panel: zib_bridge_4,Narrator,narrator,,"Plazmo jumps back in surprise. The saucer doesn't flinch. It loops around you, lights flashing gold."
+m02_020_narrator_gloopa.mp3,M02,Zib's Signal,story panel: zib_bridge_4,Narrator,narrator,,"Gloopa jumps back in surprise. The saucer doesn't flinch. It loops around you, lights flashing gold."
+m02_021_narrator.mp3,M02,Zib's Signal,story panel: zib_bridge_4,Narrator,narrator,,It's an Alienmon called Zib... and it has decided you're its captain.
+m02_022_narrator.mp3,M02,Zib's Signal,picture: Zib picks a captain (plazmo starter only),Narrator,narrator,,Zib picks a captain.
+m02_023_narrator.mp3,M02,Zib's Signal,picture: Zib picks a captain (plazmo starter only),Narrator,narrator,,"Zib settles on your shoulder, its lights still flashing gold."
+m02_024_narrator.mp3,M02,Zib's Signal,picture: Zib picks a captain (plazmo starter only),Narrator,narrator,,"One huge eye blinks at you, then at Plazmo."
+m02_025_zib.mp3,M02,Zib's Signal,picture: Zib picks a captain (plazmo starter only),Zib,zib,,Bip!
+m02_026_narrator.mp3,M02,Zib's Signal,"picture: Hello again, little one",Narrator,narrator,,"Hello again, little one."
+m02_027_narrator.mp3,M02,Zib's Signal,"picture: Hello again, little one",Narrator,narrator,,"Up at the Observatory, Dr. Vashti watches the old canyon bridge."
+m02_028_narrator.mp3,M02,Zib's Signal,"picture: Hello again, little one",Narrator,narrator,,"She holds a faded photo: four kids in the desert, under the stars."
+m02_029_vashti.mp3,M02,Zib's Signal,"picture: Hello again, little one",Dr. Imogen Vashti,vashti,quietly,"[softly] After twenty years... Hello again, little one."
+m02_030_narrator.mp3,M02,Zib's Signal,quest complete,Narrator,narrator,,Time to see what lies beyond Dustmere.
+m03_031_sola.mp3,M03,First Rival,quest start,Sola Reyes,sola,,"Took the slow starter, huh? Let's see who's the better Linker."
+m03_032_narrator.mp3,M03,First Rival,picture: First rival battle (plazmo starter only),Narrator,narrator,,First rival battle.
+m03_033_narrator_sporix.mp3,M03,First Rival,picture: First rival battle (plazmo starter only),Narrator,narrator,,"Mud everywhere. Sporix is worn out, and you scoop it up gently."
+m03_033_narrator_plazmo.mp3,M03,First Rival,picture: First rival battle (plazmo starter only),Narrator,narrator,,"Mud everywhere. Plazmo is worn out, and you scoop it up gently."
+m03_033_narrator_gloopa.mp3,M03,First Rival,picture: First rival battle (plazmo starter only),Narrator,narrator,,"Mud everywhere. Gloopa is worn out, and you scoop it up gently."
+m03_034_narrator.mp3,M03,First Rival,picture: First rival battle (plazmo starter only),Narrator,narrator,,"Sola turns away fast. For a second, her eyes look shiny."
+m03_035_sola.mp3,M03,First Rival,quest complete,Sola Reyes,sola,,Not bad... for a beginner. My dad would've liked you.
+m03_036_sola.mp3,M03,First Rival,quest complete,Sola Reyes,sola,,He walked into the crater light six years ago. I was seven. Everyone says he got lost.
+m03_037_sola.mp3,M03,First Rival,quest complete,Sola Reyes,sola,,I'm going to find him. Don't fall behind!
+m04_038_dusty.mp3,M04,Into the Molten Frontier,quest start,Old Dusty,dusty,,The tunnel at the bottom of town runs clear under the sea to the Molten Frontier. Every Linker's road starts there.
+m04_039_narrator.mp3,M04,Into the Molten Frontier,picture: Ambush in the Sunset Tunnel (plazmo starter only),Narrator,narrator,,Ambush in the Sunset Tunnel.
+m04_040_narrator.mp3,M04,Into the Molten Frontier,picture: Ambush in the Sunset Tunnel (plazmo starter only),Narrator,narrator,,"Deep in the Sunset Tunnel, the lanterns snuff out one by one."
+m04_041_narrator.mp3,M04,Into the Molten Frontier,picture: Ambush in the Sunset Tunnel (plazmo starter only),Narrator,narrator,,Two Helix agents in white step out of the dark. A crackling net flies at Zib!
+m04_042_narrator_sporix.mp3,M04,Into the Molten Frontier,picture: Ambush in the Sunset Tunnel (plazmo starter only),Narrator,narrator,,"Sporix throws itself in the way. When the dust clears, the agents are gone."
+m04_042_narrator_plazmo.mp3,M04,Into the Molten Frontier,picture: Ambush in the Sunset Tunnel (plazmo starter only),Narrator,narrator,,"Plazmo throws itself in the way. When the dust clears, the agents are gone."
+m04_042_narrator_gloopa.mp3,M04,Into the Molten Frontier,picture: Ambush in the Sunset Tunnel (plazmo starter only),Narrator,narrator,,"Gloopa throws itself in the way. When the dust clears, the agents are gone."
+m04_043_narrator.mp3,M04,Into the Molten Frontier,picture: Something in the bag... (plazmo starter only),Narrator,narrator,,Something in the bag...
+m04_044_narrator.mp3,M04,Into the Molten Frontier,picture: Something in the bag... (plazmo starter only),Narrator,narrator,,"At the tunnel's far end, the Molten Frontier spreads out below you."
+m04_045_narrator.mp3,M04,Into the Molten Frontier,picture: Something in the bag... (plazmo starter only),Narrator,narrator,,Your backpack wriggles. Two round eyes blink up at you from behind your sandwich.
+m04_046_narrator.mp3,M04,Into the Molten Frontier,picture: Something in the bag... (plazmo starter only),Narrator,narrator,,Then whoever it is ducks back down under the socks.
+m04_047_guard.mp3,M04,Into the Molten Frontier,quest complete,Guard / Helix Grunt (generic),guard,,So you're the new Linker. Helix runs a forge fortress up the ridge. Stay sharp out here.
+m04_048_narrator.mp3,M04,Into the Molten Frontier,scene: kit_meet,Narrator,narrator,,"A pair of legs sticks out from under a scrap cart. A kid rolls out, oversized welding goggles pushed up on his forehead."
+m04_049_kit.mp3,M04,Into the Molten Frontier,scene: kit_meet,Kit Briggs,kit,,Hey! You're the one Dad's been talking about. I'm Kit. Kit Briggs. Hank's kid.
+m04_050_narrator.mp3,M04,Into the Molten Frontier,scene: kit_meet,Narrator,narrator,,Your bag wriggles. The {kit} pokes its head out... and leaps straight into Kit's arms.
+m04_051_kit.mp3,M04,Into the Molten Frontier,scene: kit_meet,Kit Briggs,kit,,Whoa! Hi! Where did YOU come from?
+m04_052_narrator.mp3,M04,Into the Molten Frontier,scene: kit_meet,Narrator,narrator,,The {kit} snuggles in and won't let go. It has chosen Kit.
+m04_053_kit.mp3,M04,Into the Molten Frontier,scene: kit_meet,Kit Briggs,kit,,It... picked me? Nobody ever picks me first.
+m04_054_kit.mp3,M04,Into the Molten Frontier,scene: kit_meet,Kit Briggs,kit,,Okay. I'm coming with you. Somebody has to fix whatever you two break.
+m04_055_narrator.mp3,M04,Into the Molten Frontier,scene: kit_meet_plain,Narrator,narrator,,"A pair of legs sticks out from under a scrap cart. A kid rolls out, oversized welding goggles pushed up on his forehead."
+m04_056_kit.mp3,M04,Into the Molten Frontier,scene: kit_meet_plain,Kit Briggs,kit,,Hey! You're the one Dad's been talking about. I'm Kit. Kit Briggs. Hank's kid.
+m04_057_narrator.mp3,M04,Into the Molten Frontier,scene: kit_meet_plain,Narrator,narrator,,A little {kit} peeks out from behind Kit's tool belt.
+m04_058_kit.mp3,M04,Into the Molten Frontier,scene: kit_meet_plain,Kit Briggs,kit,,Found this one curled up in a scrap pod. It picked me. Nobody ever picks me first!
+m04_059_kit.mp3,M04,Into the Molten Frontier,scene: kit_meet_plain,Kit Briggs,kit,,I'm coming with you. Somebody has to fix whatever you break.
+m05_060_dax.mp3,M05,Sparks on Ferrox,quest start,Forge Miner Dax,dax,,Hank's tower is past this gate. Beat me and I'll let you through.
+m05_061_narrator.mp3,M05,Sparks on Ferrox,picture: The boulder beast topples (plazmo starter only),Narrator,narrator,,The boulder beast topples.
+m05_062_narrator_sporix.mp3,M05,Sparks on Ferrox,picture: The boulder beast topples (plazmo starter only),Narrator,narrator,,Dax's giant boulder beast raises one huge foot over Sporix.
+m05_062_narrator_plazmo.mp3,M05,Sparks on Ferrox,picture: The boulder beast topples (plazmo starter only),Narrator,narrator,,Dax's giant boulder beast raises one huge foot over Plazmo.
+m05_062_narrator_gloopa.mp3,M05,Sparks on Ferrox,picture: The boulder beast topples (plazmo starter only),Narrator,narrator,,Dax's giant boulder beast raises one huge foot over Gloopa.
+m05_063_narrator_sporix.mp3,M05,Sparks on Ferrox,picture: The boulder beast topples (plazmo starter only),Narrator,narrator,,"You shout NOW! Sporix blasts the cracked ground, and the rock gives way."
+m05_063_narrator_plazmo.mp3,M05,Sparks on Ferrox,picture: The boulder beast topples (plazmo starter only),Narrator,narrator,,"You shout NOW! Plazmo blasts the cracked ground, and the rock gives way."
+m05_063_narrator_gloopa.mp3,M05,Sparks on Ferrox,picture: The boulder beast topples (plazmo starter only),Narrator,narrator,,"You shout NOW! Gloopa blasts the cracked ground, and the rock gives way."
+m05_064_narrator.mp3,M05,Sparks on Ferrox,picture: The boulder beast topples (plazmo starter only),Narrator,narrator,,The giant topples. THOOOM. Forge Miner Dax just laughs.
+m05_065_narrator.mp3,M05,Sparks on Ferrox,picture: It picked Kit! (plazmo starter only),Narrator,narrator,,It picked Kit!
+m05_066_narrator.mp3,M05,Sparks on Ferrox,picture: It picked Kit! (plazmo starter only),Narrator,narrator,,"Your bag wriggles, and your little stowaway leaps straight into Kit's arms."
+m05_067_narrator.mp3,M05,Sparks on Ferrox,picture: It picked Kit! (plazmo starter only),Narrator,narrator,,It snuggles in and won't let go. It has made up its mind.
+m05_068_narrator.mp3,M05,Sparks on Ferrox,picture: The Iron Wall of Ferrox (plazmo starter only),Narrator,narrator,,The Iron Wall of Ferrox.
+m05_069_narrator.mp3,M05,Sparks on Ferrox,picture: The Iron Wall of Ferrox (plazmo starter only),Narrator,narrator,,"Up in the Ferrox Relay Tower, the crowd is roaring."
+m05_070_narrator.mp3,M05,Sparks on Ferrox,picture: The Iron Wall of Ferrox (plazmo starter only),Narrator,narrator,,"Hank Briggs and his Anvilox, the Iron Wall of Ferrox, are waiting for you."
+m05_071_hank.mp3,M05,Sparks on Ferrox,Keeper battle: Ferrox,Hank Briggs,hank,,"Think you can dent my armor, kid? Let's see."
+m05_072_hank.mp3,M05,Sparks on Ferrox,Keeper battle: Ferrox,Hank Briggs,hank,,Ha! You've got grit. Take the shard.
+m05_073_hank.mp3,M05,Sparks on Ferrox,Keeper battle: Ferrox,Hank Briggs,hank,,Keep that Linker oiled.
+m05_074_narrator.mp3,M05,Sparks on Ferrox,picture: That's my kid! (plazmo starter only),Narrator,narrator,,That's my kid!
+m05_075_narrator.mp3,M05,Sparks on Ferrox,picture: That's my kid! (plazmo starter only),Narrator,narrator,,The whole tower cheers. Hank scoops Kit into a hug so big Kit's goggles fly off.
+m05_076_hank.mp3,M05,Sparks on Ferrox,picture: That's my kid! (plazmo starter only),Hank Briggs,hank,,THAT'S MY KID!
+m05_077_narrator.mp3,M05,Sparks on Ferrox,picture: That's my kid! (plazmo starter only),Narrator,narrator,,"In your hand, your first Signal Shard hums, warm and blue."
+m05_078_hank.mp3,M05,Sparks on Ferrox,quest complete,Hank Briggs,hank,,"You've got grit, kid. Here's your first Signal Shard. And watch those Helix suits poking around my yard."
+m05_079_hank.mp3,M05,Sparks on Ferrox,quest complete,Hank Briggs,hank,,Hold on. That badge on your jacket... R.B. No. 1. You're Wren's grandkid! Then I've got something of hers for you.
+m06_080_moor.mp3,M06,The Glowing Swamp,quest start,Dr. Lysa Moor,moor,,"Helix is siphoning my spore pools! Run them off, then show me what you've learned."
+m06_081_narrator.mp3,M06,The Glowing Swamp,scene: strand_sporeling,Narrator,narrator,,"Behind a giant mushroom, a Helix grunt kneels beside a little cage."
+m06_082_narrator.mp3,M06,The Glowing Swamp,scene: strand_sporeling,Narrator,narrator,,He flips the latch. A tiny glowing sporeling hops out and bounces away into the mist.
+m06_083_narrator.mp3,M06,The Glowing Swamp,scene: strand_sporeling,Narrator,narrator,,He looks up and sees you watching... then puts a finger to his lips.
+m06_084_strand.mp3,M06,The Glowing Swamp,scene: strand_sporeling,Strand,strand,,"...You didn't see that, and I didn't see you. Name's Strand."
+m06_085_narrator.mp3,M06,The Glowing Swamp,picture: Zib remembers,Narrator,narrator,,Zib remembers.
+m06_086_narrator.mp3,M06,The Glowing Swamp,picture: Zib remembers,Narrator,narrator,,"Zib floats over the humming Shard, and its big eye begins to glow."
+m06_087_narrator.mp3,M06,The Glowing Swamp,picture: Zib remembers,Narrator,narrator,,"It paints a picture in the air: a deep red world, launching glowing seeds into space."
+m06_088_narrator.mp3,M06,The Glowing Swamp,picture: Zib remembers,Narrator,narrator,,You whisper: Was that... your home? Zib's lights go very quiet.
+m06_089_narrator.mp3,M06,The Glowing Swamp,picture: Escape through the ice,Narrator,narrator,,Escape through the ice.
+m06_090_narrator.mp3,M06,The Glowing Swamp,picture: Escape through the ice,Narrator,narrator,,"Halfway to Sporeholm, an orange tractor beam locks onto Nana Wren's little ship."
+m06_091_narrator.mp3,M06,The Glowing Swamp,picture: Escape through the ice,Narrator,narrator,,"You dive between tumbling chunks of ice, and one snaps the beam clean in half!"
+m06_092_narrator.mp3,M06,The Glowing Swamp,picture: Escape through the ice,Narrator,narrator,,"The Helix shuttle limps away, a row of empty cages in its open belly."
+m06_093_narrator.mp3,M06,The Glowing Swamp,picture: The Spore Choir's song (plazmo starter only),Narrator,narrator,,The Spore Choir's song.
+m06_094_narrator.mp3,M06,The Glowing Swamp,picture: The Spore Choir's song (plazmo starter only),Narrator,narrator,,"In the misty marsh outside Mirefen, a baby Mossback shivers under a fern."
+m06_095_narrator.mp3,M06,The Glowing Swamp,picture: The Spore Choir's song (plazmo starter only),Narrator,narrator,,"Zib floats close and hums a soft, swaying tune. Hmm-mm-mmm."
+m06_096_narrator.mp3,M06,The Glowing Swamp,picture: The Spore Choir's song (plazmo starter only),Narrator,narrator,,"The little Mossback opens its eyes, wobbles out... and hums along."
+m06_097_narrator.mp3,M06,The Glowing Swamp,picture: Shhh.,Narrator,narrator,,Shhh.
+m06_098_narrator.mp3,M06,The Glowing Swamp,picture: Shhh.,Narrator,narrator,,"Behind a giant mushroom, a Helix grunt flips open a little cage."
+m06_099_guard.mp3,M06,The Glowing Swamp,picture: Shhh.,Guard / Helix Grunt (generic),guard,whispering,[whispering] Go home. Quickly.
+m06_100_narrator.mp3,M06,The Glowing Swamp,picture: Shhh.,Narrator,narrator,,He sees you watching... and puts a finger to his lips.
+m06_101_moor.mp3,M06,The Glowing Swamp,Keeper battle: Sporeholm,Dr. Lysa Moor,moor,,Let me show you how patient poison can be.
+m06_102_moor.mp3,M06,The Glowing Swamp,Keeper battle: Sporeholm,Dr. Lysa Moor,moor,,Fascinating. You adapted quickly.
+m06_103_moor.mp3,M06,The Glowing Swamp,Keeper battle: Sporeholm,Dr. Lysa Moor,moor,,The spores glow brighter when you're near. Curious.
+m06_104_narrator.mp3,M06,The Glowing Swamp,picture: Brighter than the Spore Pools (plazmo starter only),Narrator,narrator,,Brighter than the Spore Pools.
+m06_105_narrator_sporix.mp3,M06,The Glowing Swamp,picture: Brighter than the Spore Pools (plazmo starter only),Narrator,narrator,,Dr. Moor's poison has Sporix covered in spots and hanging still...
+m06_105_narrator_plazmo.mp3,M06,The Glowing Swamp,picture: Brighter than the Spore Pools (plazmo starter only),Narrator,narrator,,Dr. Moor's poison has Plazmo covered in spots and hanging still...
+m06_105_narrator_gloopa.mp3,M06,The Glowing Swamp,picture: Brighter than the Spore Pools (plazmo starter only),Narrator,narrator,,Dr. Moor's poison has Gloopa covered in spots and hanging still...
+m06_106_narrator.mp3,M06,The Glowing Swamp,picture: Brighter than the Spore Pools (plazmo starter only),Narrator,narrator,,You shout NOW! Your partner blazes brighter than the Spore Pools and wins the day.
+m06_107_moor.mp3,M06,The Glowing Swamp,quest complete,Dr. Lysa Moor,moor,,"The swamp is breathing easy again. Take the Shard, and this sample. Something in it glows like the Starfall."
+m07_108_marsh.mp3,M07,Harbor Under Siege,quest start,Captain Delia Marsh,marsh,,Helix stormed my tower and ripped out its core! Help me clear the docks first.
+m07_109_narrator.mp3,M07,Harbor Under Siege,picture: A face in the spore pool (plazmo starter only),Narrator,narrator,,A face in the spore pool.
+m07_110_narrator.mp3,M07,Harbor Under Siege,picture: A face in the spore pool (plazmo starter only),Narrator,narrator,,"Beside Dr. Moor, a spore pool pulses like a heartbeat."
+m07_111_narrator.mp3,M07,Harbor Under Siege,picture: A face in the spore pool (plazmo starter only),Narrator,narrator,,"Zib's eye fills the air with a giant gentle face of leaves and branches, eyes closed."
+m07_112_zib.mp3,M07,Harbor Under Siege,picture: A face in the spore pool (plazmo starter only),Zib,zib,,...Bip. It sounds like it misses her.
+m07_113_narrator.mp3,M07,Harbor Under Siege,picture: The Harbor Gate wakes,Narrator,narrator,,The Harbor Gate wakes.
+m07_114_narrator.mp3,M07,Harbor Under Siege,picture: The Harbor Gate wakes,Narrator,narrator,,"You hold up two Signal Shards, and the harbor gate's carvings light up blue."
+m07_115_narrator.mp3,M07,Harbor Under Siege,picture: The Harbor Gate wakes,Narrator,narrator,,A shimmering doorway opens onto Thalassa's turquoise seas.
+m07_116_narrator.mp3,M07,Harbor Under Siege,picture: The Harbor Gate wakes,Narrator,narrator,,"On the dock, the Squid Sailor puffs his bubble pipe as kids ride Bubbub past."
+m07_117_narrator.mp3,M07,Harbor Under Siege,picture: Admin Vex (plazmo starter only),Narrator,narrator,,Admin Vex.
+m07_118_narrator.mp3,M07,Harbor Under Siege,picture: Admin Vex (plazmo starter only),Narrator,narrator,,"On the docks, Helix crews are hauling the Harbor Tower's crystal core away."
+m07_119_narrator.mp3,M07,Harbor Under Siege,picture: Admin Vex (plazmo starter only),Narrator,narrator,,A woman in a black-and-yellow cape turns. Her eyes are pale as ice.
+m07_120_vex.mp3,M07,Harbor Under Siege,picture: Admin Vex (plazmo starter only),Admin Vex,vex,,Take the core. Leave the children to Hexcoil.
+m07_121_narrator.mp3,M07,Harbor Under Siege,picture: Kit's partner stands firm (plazmo starter only),Narrator,narrator,,Kit's partner stands firm.
+m07_122_narrator.mp3,M07,Harbor Under Siege,picture: Kit's partner stands firm (plazmo starter only),Narrator,narrator,,"Knocked flat, Kit's {kit} gets up and plants itself in front of Kit again."
+m07_123_narrator.mp3,M07,Harbor Under Siege,picture: Kit's partner stands firm (plazmo starter only),Narrator,narrator,,It glows... and grows into {kit2}! Roots burst up and wrap the Hexcoil tight.
+m07_124_marsh.mp3,M07,Harbor Under Siege,Keeper battle: Thalassa,Captain Delia Marsh,marsh,,The tide waits for no one. Battle stations!
+m07_125_marsh.mp3,M07,Harbor Under Siege,Keeper battle: Thalassa,Captain Delia Marsh,marsh,,You sailed through that storm. Well done.
+m07_126_marsh.mp3,M07,Harbor Under Siege,Keeper battle: Thalassa,Captain Delia Marsh,marsh,,Watch out for Helix. They're after the tower cores.
+m07_127_narrator.mp3,M07,Harbor Under Siege,picture: Old Barnaby surfaces (plazmo starter only),Narrator,narrator,,Old Barnaby surfaces.
+m07_128_narrator.mp3,M07,Harbor Under Siege,picture: Old Barnaby surfaces (plazmo starter only),Narrator,narrator,,"Captain Marsh's Old Barnaby, a huge barnacled Brineback, rises to breathe."
+m07_129_narrator.mp3,M07,Harbor Under Siege,picture: Old Barnaby surfaces (plazmo starter only),Narrator,narrator,,Your partner has waited for exactly this moment. It streaks in and strikes!
+m07_130_marsh.mp3,M07,Harbor Under Siege,quest complete,Captain Delia Marsh,marsh,,"They got away with the core, but you fought like a storm. This Shard is yours."
+m08_131_sola.mp3,M08,Sola's Choice,quest start,Sola Reyes,sola,,Helix says they know where my dad is. They found the crater signal he was chasing.
+m08_132_narrator.mp3,M08,Sola's Choice,picture: You got good (plazmo starter only),Narrator,narrator,,You got good.
+m08_133_narrator.mp3,M08,Sola's Choice,picture: You got good (plazmo starter only),Narrator,narrator,,"At the end of the Long Dock, Sola kneels beside her tired partner."
+m08_134_sola.mp3,M08,Sola's Choice,picture: You got good (plazmo starter only),Sola Reyes,sola,,You got good. That's why I need to do this alone.
+m08_135_narrator.mp3,M08,Sola's Choice,quest complete,Narrator,narrator,,"Sola steps onto a Helix shuttle. ""Don't follow me."" The doors hiss shut."
+m09_136_vashti.mp3,M09,Static on the Line,quest start,Dr. Imogen Vashti,vashti,,Every Relay Tower is broadcasting the same pulse... a signal from the Starfall crater. Win Neonis's Shard so we can tune in.
+m09_137_narrator.mp3,M09,Static on the Line,picture: The quiet voice (plazmo starter only),Narrator,narrator,,The quiet voice.
+m09_138_narrator.mp3,M09,Static on the Line,picture: The quiet voice (plazmo starter only),Narrator,narrator,,"On the highest rooftop in Neonis, Kit plugs the last wire into an old broadcast dish."
+m09_139_narrator.mp3,M09,Static on the Line,picture: The quiet voice (plazmo starter only),Narrator,narrator,,Through the static comes Sola's tired voice: Is my dad there?
+m09_140_narrator.mp3,M09,Static on the Line,picture: The quiet voice (plazmo starter only),Narrator,narrator,,"Then a calm, quiet man: Phase Three begins when the eighth tower cracks."
+m09_141_static.mp3,M09,Static on the Line,Keeper battle: Neonis,DJ Static,static,,Turn it up! This battle's going live!
+m09_142_static.mp3,M09,Static on the Line,Keeper battle: Neonis,DJ Static,static,,That's a wrap. You rocked the stage.
+m09_143_static.mp3,M09,Static on the Line,Keeper battle: Neonis,DJ Static,static,,That signal from the Rift? It sounds like a lullaby.
+m09_144_narrator.mp3,M09,Static on the Line,picture: Battle night at the Voltspire (plazmo starter only),Narrator,narrator,,Battle night at the Voltspire.
+m09_145_narrator.mp3,M09,Static on the Line,picture: Battle night at the Voltspire (plazmo starter only),Narrator,narrator,,"Under the strobe lights, DJ Static's giant speaker-beast pounds out the beat."
+m09_146_narrator.mp3,M09,Static on the Line,picture: Battle night at the Voltspire (plazmo starter only),Narrator,narrator,,Your team finds the one gap in the rhythm and strikes. BWAAAMP!
+m09_147_narrator.mp3,M09,Static on the Line,picture: Battle night at the Voltspire (plazmo starter only),Narrator,narrator,,"The giant speaker sits down, and the whole crowd goes wild."
+m09_148_static.mp3,M09,Static on the Line,quest complete,DJ Static,static,,"That was a banger! Take the Shard. And hey, that signal? It's coming from the other side of something."
+m10_149_narrator.mp3,M10,Murals of Ystra,quest start,Narrator,narrator,,Carved walls glow as you approach. Three murals tell a story older than the Starfall.
+m10_150_narrator.mp3,M10,Murals of Ystra,picture: The seal of eight towers,Narrator,narrator,,The seal of eight towers.
+m10_151_narrator.mp3,M10,Murals of Ystra,picture: The seal of eight towers,Narrator,narrator,,"Above the fourth Shard, Zib's eye glows brighter than ever before."
+m10_152_narrator.mp3,M10,Murals of Ystra,picture: The seal of eight towers,Narrator,narrator,,"Eight towers on eight worlds light up, one by one, in a ring around the sun."
+m10_153_kit.mp3,M10,Murals of Ystra,picture: The seal of eight towers,Kit Briggs,kit,,"They're not just towers. They're a seal. In the corner, Dr. Vashti goes quiet."
+m10_154_narrator.mp3,M10,Murals of Ystra,"picture: Little scout, you came back",Narrator,narrator,,"Little scout, you came back."
+m10_155_narrator.mp3,M10,Murals of Ystra,"picture: Little scout, you came back",Narrator,narrator,,"On Glyphos, a crystal in the biggest temple wall begins to glow."
+m10_156_narrator.mp3,M10,Murals of Ystra,"picture: Little scout, you came back",Narrator,narrator,,"A soft, chiming voice: Little scout. You came back."
+m10_157_narrator.mp3,M10,Murals of Ystra,"picture: Little scout, you came back",Narrator,narrator,,Zib's lights flash every color at once.
+m10_158_narrator.mp3,M10,Murals of Ystra,picture: The murals of Ystra,Narrator,narrator,,The murals of Ystra.
+m10_159_narrator.mp3,M10,Murals of Ystra,picture: The murals of Ystra,Narrator,narrator,,"Before the tree-mother's mural, Zib pulses sadly in your hands."
+m10_160_narrator.mp3,M10,Murals of Ystra,picture: The murals of Ystra,Narrator,narrator,,You hold it close. You've got a home now. You've got us.
+m10_161_narrator.mp3,M10,Murals of Ystra,picture: The murals of Ystra,Narrator,narrator,,"At the end of the hall, a newer mural shows four small figures around a cracked seedpod."
+m10_162_narrator.mp3,M10,Murals of Ystra,picture: Begin Phase Three,Narrator,narrator,,Begin Phase Three.
+m10_163_narrator.mp3,M10,Murals of Ystra,picture: Begin Phase Three,Narrator,narrator,,"Far away, on Helix Station, Sola stands at a window full of stars."
+m10_164_narrator.mp3,M10,Murals of Ystra,picture: Begin Phase Three,Narrator,narrator,,"Below the glass floor, rows of caged Alienmon glow in the dark."
+m10_165_thorne.mp3,M10,Murals of Ystra,picture: Begin Phase Three,Director Kael Thorne,thorne,,Begin Phase Three. Sola's hands slowly curl into fists.
+m10_166_narrator.mp3,M10,Murals of Ystra,picture: The eye opens,Narrator,narrator,,The eye opens.
+m10_167_narrator.mp3,M10,Murals of Ystra,picture: The eye opens,Narrator,narrator,,"...Back on Glyphos, Zib blinks."
+m10_168_narrator.mp3,M10,Murals of Ystra,picture: The eye opens,Narrator,narrator,,"For a split second, its big eye reflects something enormous: a giant dark eye, opening."
+m10_169_narrator.mp3,M10,Murals of Ystra,quest complete,Narrator,narrator,,"The murals show it plainly: a dying world called Ystra, a void that ate the stars, and a great tree-mother sending her children away in seedpods. The Alienmon are refugees."
+m11_170_basalt.mp3,M11,The Light in the Crater,quest start,Old Basalt,basalt,,"Teo Reyes? Sure, I knew him. Six years ago he stood at the crater's edge, smiling, saying he could hear a song."
+m11_171_basalt.mp3,M11,The Light in the Crater,quest start,Old Basalt,basalt,,Then he walked into the light and didn't come back.
+m11_172_basalt.mp3,M11,The Light in the Crater,Keeper battle: Pyros,Old Basalt,basalt,,Sixty years in the mines. Show me your fire.
+m11_173_basalt.mp3,M11,The Light in the Crater,Keeper battle: Pyros,Old Basalt,basalt,,Hmph. The fire in you burns true.
+m11_174_basalt.mp3,M11,The Light in the Crater,Keeper battle: Pyros,Old Basalt,basalt,,Find Teo's girl. She deserves to know.
+m11_175_basalt.mp3,M11,The Light in the Crater,quest complete,Old Basalt,basalt,,"Tell Sola her pa was the bravest fool I ever met. Here, your fifth Shard."
+m12_176_ingrid.mp3,M12,Teeth in the Ice,quest start,Ingrid Vale,ingrid,,The ice holds something you need to see. Fossils... with bite marks the size of moons.
+m12_177_narrator.mp3,M12,Teeth in the Ice,scene: kit_iceburr,Narrator,narrator,,"In the snow, a prickly little Iceburr is stuck, one leg frozen into the ice."
+m12_178_narrator.mp3,M12,Teeth in the Ice,scene: kit_iceburr,Narrator,narrator,,"Kit kneels down, pulls a tiny heater coil off his tool belt, and gently melts it free."
+m12_179_narrator.mp3,M12,Teeth in the Ice,scene: kit_iceburr,Narrator,narrator,,"The Iceburr shakes itself off... and hops onto Kit's shoulder. Kit: Ow. Spiky. Hi, friend."
+m12_180_ingrid.mp3,M12,Teeth in the Ice,Keeper battle: Glacia,Ingrid Vale,ingrid,,Let's see if you can keep your cool.
+m12_181_ingrid.mp3,M12,Teeth in the Ice,Keeper battle: Glacia,Ingrid Vale,ingrid,,You thawed my best defense. Impressive.
+m12_182_ingrid.mp3,M12,Teeth in the Ice,Keeper battle: Glacia,Ingrid Vale,ingrid,,Whatever made those bite marks is still out there.
+m12_183_ingrid.mp3,M12,Teeth in the Ice,quest complete,Ingrid Vale,ingrid,,"The Devourer isn't a legend. But look closer: Ystran creatures, Ystran trees... and no fossil of the Seedmother. Not one bone."
+m12_184_ingrid.mp3,M12,Teeth in the Ice,quest complete,Ingrid Vale,ingrid,,Because there was nothing left to bite. She'd already gone.
+m12_185_ingrid.mp3,M12,Teeth in the Ice,quest complete,Ingrid Vale,ingrid,,Take the sixth Shard. We'll need every tower standing.
+m13_186_grub.mp3,M13,Infiltrate the Forge,quest start,Grub,grub,,Psst. I used to work for Helix. Their Forge Fortress has a shuttle keycard in the control room. Get it and you can reach Helix Station.
+m13_187_narrator.mp3,M13,Infiltrate the Forge,quest complete,Narrator,narrator,,You swipe a Helix Keycard from the control terminal. The fortress shuttle pad lights up.
+m13_188_narrator.mp3,M13,Infiltrate the Forge,scene: project_unity_sign,Narrator,narrator,,A cold white sign hangs over the cage rows: PROJECT UNITY. ONE OF EVERY SPECIES.
+m13_189_narrator.mp3,M13,Infiltrate the Forge,scene: project_unity_sign,Narrator,narrator,,"Every cage has a label, a number and a species name, like a museum."
+m14_190_bronn.mp3,M14,Helix Station,quest start,Admin Bronn,bronn,,Thorne's lost his mind. That Rift will swallow us all. Beat me and I'll open the way to Vex.
+m14_191_narrator.mp3,M14,Helix Station,scene: The Observation Deck,Narrator,narrator,,"After the battle you play Sola the recording from the Deep Mines. ""If you find this, Sola, I'm not lost."""
+m14_192_narrator.mp3,M14,Helix Station,scene: The Observation Deck,Narrator,narrator,,"Before she can answer, the deck's big screen flickers on by itself. Two files play."
+m14_193_thorne.mp3,M14,Helix Station,scene: The Observation Deck,Director Kael Thorne,thorne,log,[log] Reyes was an acceptable loss. The data he left behind was worth it.
+m14_194_narrator.mp3,M14,Helix Station,scene: The Observation Deck,Narrator,narrator,,Sola goes completely still.
+m14_195_narrator.mp3,M14,Helix Station,scene: The Observation Deck,Narrator,narrator,,"The second file: a reactor alarm, a woman's voice, then silence. Elena Thorne, lost in a Helix accident."
+m14_196_thorne.mp3,M14,Helix Station,scene: The Observation Deck,Director Kael Thorne,thorne,log,"[log] If the Rift can power anything, it can power a way back to her."
+m14_197_thorne.mp3,M14,Helix Station,scene: The Observation Deck,Director Kael Thorne,thorne,log,[log] Project Unity is nearly complete. One of every species. Carry them all through the Rift and the Seedmother regrows life the way I choose.
+m14_198_thorne.mp3,M14,Helix Station,scene: The Observation Deck,Director Kael Thorne,thorne,log,[log] She will give me Elena back.
+m14_199_sola.mp3,M14,Helix Station,quest complete,Sola Reyes,sola,,...An acceptable loss. That's what he called my dad.
+m15_200_sola.mp3,M15,Sola Turns,quest start,Sola Reyes,sola,,They lied to me. Thorne never wanted to find my dad. He wants to OPEN the thing that took him.
+m15_201_narrator.mp3,M15,Sola Turns,scene: Sola turns,Narrator,narrator,,Sola rips the Helix patch off her sleeve and throws it on the floor.
+m15_202_sola.mp3,M15,Sola Turns,scene: Sola turns,Sola Reyes,sola,,He's not data. He's my dad.
+m15_203_sola.mp3,M15,Sola Turns,scene: Sola turns,Sola Reyes,sola,,"I'm with you. Let's finish this, together."
+m15_204_narrator.mp3,M15,Sola Turns,quest complete,Narrator,narrator,,"Admin Vex escapes in a pod, shrieking about the Director."
+m15_205_sola.mp3,M15,Sola Turns,quest complete,Sola Reyes,sola,,We did it. Together.
+m16_206_echoiris.mp3,M16,Twin Visions,quest start,Echo & Iris,echoiris,,We already saw you climb these stairs. We also saw the sky tear open.
+m16_207_narrator.mp3,M16,Twin Visions,scene: The Prophecy Shrine,Narrator,narrator,,"At the third wind shrine, the wind falls silent. Carved across the whole shrine wall is one great picture."
+m16_208_liss.mp3,M16,Twin Visions,scene: The Prophecy Shrine,Liss,liss,,You have been told she stayed behind on Ystra. She didn't. She couldn't.
+m16_209_liss.mp3,M16,Twin Visions,scene: The Prophecy Shrine,Liss,liss,,"As the hungry one ate our sky, the Seedmother broke her whole self apart into the seedpods. Every Alienmon carries a piece of her. Zib. Your partner. All of them."
+m16_210_liss.mp3,M16,Twin Visions,scene: The Prophecy Shrine,Liss,liss,,"On Ystra only the Heartroot is left, one last root in the crater where her tree stood. And it is fading."
+m16_211_liss.mp3,M16,Twin Visions,scene: The Prophecy Shrine,Liss,liss,,"This is the rest of the line Teo copied: ""She is scattered so she may live. Whoever reunites all her children will let the Seedmother grow again, and her world with her."""
+m16_212_liss.mp3,M16,Twin Visions,scene: The Prophecy Shrine,Liss,liss,,"Reunite, Linker. Not cage. Every one of them stays itself."
+m16_213_narrator.mp3,M16,Twin Visions,Keeper battle: Halo,Narrator,narrator,,Echo and Iris: We already saw this battle. Shall we see how it ends?
+m16_214_narrator.mp3,M16,Twin Visions,Keeper battle: Halo,Narrator,narrator,,Echo and Iris: The vision changed. Because of you.
+m16_215_narrator.mp3,M16,Twin Visions,Keeper battle: Halo,Narrator,narrator,,Echo and Iris: The Rift. The shadow. A girl and her father. We saw it all.
+m16_216_echoiris.mp3,M16,Twin Visions,quest complete,Echo & Iris,echoiris,,The vision is clear now. The Rift opens at the Starfall crater. Take the seventh Shard.
+m17_217_kade.mp3,M17,Voices in the Dark,quest start,Mortimer Kade,kade,,I built the Rift engine for Thorne. I scratched the logo off my coat the day I understood what it would wake.
+m17_218_kade.mp3,M17,Voices in the Dark,Keeper battle: Umbra,Mortimer Kade,kade,,The Devourer follows the light. Prove you can stand in the dark.
+m17_219_kade.mp3,M17,Voices in the Dark,Keeper battle: Umbra,Mortimer Kade,kade,,You're ready. Take the last shard.
+m17_220_kade.mp3,M17,Voices in the Dark,Keeper battle: Umbra,Mortimer Kade,kade,,"With 8 shards, the Rift will let you land. Stop Thorne."
+m17_221_kade.mp3,M17,Voices in the Dark,quest complete,Mortimer Kade,kade,,Eight Shards. The towers will sing. Go to the crater before Thorne does.
+m17b_222_marsh.mp3,M17b,Harbor Reclaimed,quest start,Captain Delia Marsh,marsh,,Linker! Get to Port Saltreach. I've found where Helix is hiding my tower core.
+m17b_223_narrator.mp3,M17b,Harbor Reclaimed,scene: The Harbor Tower,Narrator,narrator,,"Captain Marsh slots the core back into the Harbor Tower. For a second, nothing."
+m17b_224_narrator.mp3,M17b,Harbor Reclaimed,scene: The Harbor Tower,Narrator,narrator,,"Then the whole tower hums, and a beam of light shoots up into the night. Every boat in the harbor sounds its horn."
+m17b_225_marsh.mp3,M17b,Harbor Reclaimed,scene: The Harbor Tower,Captain Delia Marsh,marsh,,Now we're even.
+m17b_226_marsh.mp3,M17b,Harbor Reclaimed,quest complete,Captain Delia Marsh,marsh,,"The seal's got one more tower singing. Go get that crater, kid."
+m17b_227_narrator.mp3,M17b,Harbor Reclaimed,scene: zib_pod,Narrator,narrator,,"The valley is full of cracked, glowing seedpod shells. Zib zips straight past all of them..."
+m17b_228_narrator.mp3,M17b,Harbor Reclaimed,scene: zib_pod,Narrator,narrator,,"...and stops at one small shell, half-buried in the rock."
+m17b_229_narrator.mp3,M17b,Harbor Reclaimed,scene: zib_pod,Narrator,narrator,,"Zib lands inside it and sits very still for a long, quiet minute. Its lights go soft and pink."
+m17b_230_narrator.mp3,M17b,Harbor Reclaimed,scene: zib_pod,Narrator,narrator,,This was Zib's pod. The last one Liss launched.
+m18_231_strand.mp3,M18,Eight Shards Sing,quest start,Strand,strand,,Linker! Meet me in Dustmere's plaza. I'm done with Helix.
+m18_232_ostrander.mp3,M18,Eight Shards Sing,scene: rim_ostrander,General Ostrander,ostrander,,Halt. This crater has been under military guard for twenty years.
+m18_233_ostrander.mp3,M18,Eight Shards Sing,scene: rim_ostrander,General Ostrander,ostrander,,I don't care how many Shards you carry. No children go past this camp.
+m18_234_tamsin.mp3,M18,Eight Shards Sing,scene: rim_tamsin,Tamsin,tamsin,,General! They're with me.
+m18_235_tamsin.mp3,M18,Eight Shards Sing,scene: rim_tamsin,Tamsin,tamsin,,"I've mapped every inch of this crater, and I'll be at their side the whole way down. You have my word."
+m18_236_ostrander.mp3,M18,Eight Shards Sing,scene: rim_tamsin,General Ostrander,ostrander,,"...Fine. But if anything happens, Tamsin, it's on you."
+m18_237_tamsin.mp3,M18,Eight Shards Sing,scene: rim_tamsin,Tamsin,tamsin,,(to you) Told you I'd turn up. Come on. Stay close.
+m18_238_vex.mp3,M18,Eight Shards Sing,scene: pell_refuses,Admin Vex,vex,,Pell! The little saucer. Net it. NOW.
+m18_239_narrator.mp3,M18,Eight Shards Sing,scene: pell_refuses,Narrator,narrator,,Pell raises the net gun. His hands are shaking.
+m18_240_pell.mp3,M18,Eight Shards Sing,scene: pell_refuses,Pell,pell,,Helix Directive... Field Division... (He looks at Zib.) ...No.
+m18_241_narrator.mp3,M18,Eight Shards Sing,scene: pell_refuses,Narrator,narrator,,Pell throws the net gun over the rim. It tumbles down into the crater's light.
+m18_242_vex.mp3,M18,Eight Shards Sing,scene: pell_refuses,Admin Vex,vex,,You'll regret that! (She storms off toward the engine.)
+m18_243_narrator.mp3,M18,Eight Shards Sing,quest complete,Narrator,narrator,,Your eight Shards rise and resonate. A great signal-winged bird answers the call: Novaryx!
+m19_244_thorne.mp3,M19,Seal the Rift,quest start,Director Kael Thorne,thorne,,"The Rift is power, child. Power the universe wasted on refugees."
+m19_245_narrator.mp3,M19,Seal the Rift,scene: kit_gravity_trap,Narrator,narrator,,A Helix gravity trap snaps on. Everyone is pinned flat to the glowing rock.
+m19_246_kit.mp3,M19,Seal the Rift,scene: kit_gravity_trap,Kit Briggs,kit,,"Iceburr, freeze the coils! Now!"
+m19_247_narrator.mp3,M19,Seal the Rift,scene: kit_gravity_trap,Narrator,narrator,,Iceburr frosts the trap's coils until they crack. The pull lets go.
+m19_248_kit.mp3,M19,Seal the Rift,scene: kit_gravity_trap,Kit Briggs,kit,,"Got it! Keep moving, everybody."
+m19_249_narrator.mp3,M19,Seal the Rift,scene: The Rift closes: the Signal song,Narrator,narrator,,"Thorne stares through the Rift, looking for the power he was promised. He sees Ystra: grey, barren, empty. No Seedmother to command. Nothing to answer him."
+m19_250_narrator.mp3,M19,Seal the Rift,scene: The Rift closes: the Signal song,Narrator,narrator,,"Only Oblivane, starving and enormous. The power he wanted doesn't exist. He drops to his knees."
+m19_251_thorne.mp3,M19,Seal the Rift,scene: The Rift closes: the Signal song,Director Kael Thorne,thorne,,Reroute the engine to the seal. I'll hold it. Go!
+m19_252_narrator.mp3,M19,Seal the Rift,scene: The Rift closes: the Signal song,Narrator,narrator,,"Zib pours its light into the Shards. One by one, its lights start to go out."
+m19_253_narrator.mp3,M19,Seal the Rift,scene: The Rift closes: the Signal song,Narrator,narrator,,"You, Sola, Novaryx and Zib start to sing the Signal. It's the Spore Choir's song from Sporeholm. Hmm-mm-mmm."
+m19_254_narrator.mp3,M19,Seal the Rift,quest complete,Narrator,narrator,,"The Shards blaze and the Rift folds shut. From the last of its light steps Teo Reyes, an adult Lumivex at his side. Sola runs to him."
+m19_255_teo.mp3,M19,Seal the Rift,quest complete,Teo Reyes,teo,,Sola? ...You're so tall.
+m19_256_teo.mp3,M19,Seal the Rift,quest complete,Teo Reyes,teo,,The seal can only be healed from Ystra's side. And there's something you need to know.
+m19_257_teo.mp3,M19,Seal the Rift,quest complete,Teo Reyes,teo,,"The Heartroot, the last piece of her on Ystra, is dying. If it dies, the legend can't come true."
+m19b_258_mom.mp3,M19b,Homecoming,quest start,Mom,mom,,"You're home! Come on, the whole town is at the Starfall Festival tonight."
+m19b_259_narrator.mp3,M19b,Homecoming,picture: The Crater Four (plazmo starter only),Narrator,narrator,,The Crater Four.
+m19b_260_narrator.mp3,M19b,Homecoming,picture: The Crater Four (plazmo starter only),Narrator,narrator,,"Before the trial, Dr. Vashti asks you and Kit up to her lab on Neonis."
+m19b_261_vashti.mp3,M19b,Homecoming,picture: The Crater Four (plazmo starter only),Dr. Imogen Vashti,vashti,,"The four kids in the crater were me, Kael, Orra... and Teo Reyes."
+m19b_262_narrator.mp3,M19b,Homecoming,picture: The Crater Four (plazmo starter only),Narrator,narrator,,Zib floats up and bumps its saucer gently against her cheek.
+m19b_263_narrator.mp3,M19b,Homecoming,scene: The trial on Neonis,Narrator,narrator,,"In the Linker League courtroom, Strand testifies with shaking hands."
+m19b_264_narrator.mp3,M19b,Homecoming,scene: The trial on Neonis,Narrator,narrator,,"Dr. Vashti testifies too, and confesses her own twenty years of silence, in public, for everyone to hear."
+m19b_265_narrator.mp3,M19b,Homecoming,scene: The trial on Neonis,Narrator,narrator,,Director Thorne pleads guilty to everything. He looks at no one.
+m19b_266_narrator.mp3,M19b,Homecoming,scene: The trial on Neonis,Narrator,narrator,,"A week later, a letter arrives from his cell. Folded inside is a Codex page he copied twenty years ago."
+m19b_267_narrator.mp3,M19b,Homecoming,scene: The trial on Neonis,Narrator,narrator,,"Codex page: The door that is a road opens only for a scout and a listener, together."
+m19b_268_narrator.mp3,M19b,Homecoming,scene: The trial on Neonis,Narrator,narrator,,Codex page: But she cannot grow while the hungry one still hungers. Heal it first. Then call her children home.
+m19b_269_narrator.mp3,M19b,Homecoming,scene: An invitation,Narrator,narrator,,"A message arrives from Apex Array, from Orra Venn, the Prime Linker and the last of the Crater Four."
+m19b_270_orra.mp3,M19b,Homecoming,scene: An invitation,Orra Venn,orra,message,[message] Come to the Summit.
+m19b_271_narrator.mp3,M19b,Homecoming,scene: An invitation,Narrator,narrator,,Dr. Vashti reads it twice. Vashti: Orra and I haven't spoken in fifteen years.
+m19b_272_mom.mp3,M19b,Homecoming,quest complete,Mom,mom,,"The Summit, huh? Go on. Make your Nana proud."
+m20_273_orra.mp3,M20,The Summit,quest start,Orra Venn,orra,,"The Quorum waits in four halls. Beat them all, then come find me under the great telescope."
+m20_274_ostrander.mp3,M20,The Summit,quest complete,General Ostrander,ostrander,,"Go on, then. The Prime Linker is waiting."
+m21_275_orra.mp3,M21,Prime Linker,quest start,Orra Venn,orra,,My first Linker still works. Let's see if yours can outshine it.
+m21_276_orra.mp3,M21,Prime Linker,quest complete,Orra Venn,orra,,The Kessler system has a new Prime Linker. Carry the secret differently. Carry it in the open.
+p01_277_narrator.mp3,P01,Through the Vortex,quest start,Narrator,narrator,,"Zib's lights blink in a rhythm you've never seen. It's pointing up, at the Great Telescope."
+p01_278_narrator.mp3,P01,Through the Vortex,scene: The Vortex,Narrator,narrator,,You and Zib hum the Spore Choir's song. Hmm-mm-mmm.
+p01_279_narrator.mp3,P01,Through the Vortex,scene: The Vortex,Narrator,narrator,,The sky above the telescope folds open into a spinning road of light.
+p01_280_vashti.mp3,P01,Through the Vortex,scene: The Vortex,Dr. Imogen Vashti,vashti,,Go. I'll hold the road open from this side. However long it takes.
+p01_281_narrator.mp3,P01,Through the Vortex,scene: The Vortex,Narrator,narrator,,"A last message from Thorne arrives on her screen: ""Bring her home, all of her."""
+p01_282_narrator.mp3,P01,Through the Vortex,quest complete,Narrator,narrator,,"You step out of the Vortex under a huge, tired red sun. Ystra is barren: grey crystal, nothing growing. The crystal forest from your dream is a dead, chiming ruin."
+p01_283_liss.mp3,P01,Through the Vortex,quest complete,Liss,liss,,"Look. Far off, at the bottom of that empty crater. That single faint glow is the Heartroot, the last piece of her on Ystra."
+p01_284_liss.mp3,P01,Through the Vortex,quest complete,Liss,liss,,The legend says whoever reunites all her children lets her grow again. But nothing can grow while Oblivane still hungers.
+p01_285_narrator.mp3,P01,Through the Vortex,scene: saga_reveal,Narrator,narrator,,"A hooded figure has followed you through the Vortex. It's Saga, the silent Quorum master."
+p01_286_narrator.mp3,P01,Through the Vortex,scene: saga_reveal,Narrator,narrator,,"Saga lowers the hood. Underneath is a face like clear crystal, flickering at the edges."
+p01_287_saga.mp3,P01,Through the Vortex,scene: saga_reveal,Saga,saga,,"I am a Ystran echo. I came in the Mother Pod and lived twenty years in a borrowed human shape, guarding the Vortex secret."
+p01_288_saga.mp3,P01,Through the Vortex,scene: saga_reveal,Saga,saga,,The one who launched your little scout... Liss... is my sister.
+p01_289_narrator.mp3,P01,Through the Vortex,scene: saga_reveal,Narrator,narrator,,Zib flashes every color at once. So that was the word Saga whispered at the Summit.
+p01_290_narrator.mp3,P01,Through the Vortex,scene: tamsin_map_room,Narrator,narrator,,Tamsin finds a ruined room covered in star charts: the Ystran explorers' map room.
+p01_291_narrator.mp3,P01,Through the Vortex,scene: tamsin_map_room,Narrator,narrator,,On the wall is a symbol shaped exactly like the question mark on her vest.
+p01_292_saga.mp3,P01,Through the Vortex,scene: tamsin_map_room,Saga,saga,,"That word means ""the place we haven't found yet."""
+p01_293_narrator.mp3,P01,Through the Vortex,scene: tamsin_map_room,Narrator,narrator,,Tamsin sits down on the floor and laughs until she cries.
+p01_294_tamsin.mp3,P01,Through the Vortex,scene: tamsin_map_room,Tamsin,tamsin,,Forty years. Forty years I've been looking for this. I think I'll stay a while.
+p01_295_narrator.mp3,P01,Through the Vortex,scene: blight_begging,Narrator,narrator,,The forest is gray and silent here. Small shadow creatures creep out of the dead trees and swarm toward you.
+p01_296_narrator.mp3,P01,Through the Vortex,scene: blight_begging,Narrator,narrator,,Your team braces for a fight... then you see it. They aren't attacking.
+p01_297_narrator.mp3,P01,Through the Vortex,scene: blight_begging,Narrator,narrator,,They're reaching for your light. They're begging.
+p02_298_narrator.mp3,P02,The Devourer,quest start,Narrator,narrator,,The ground simply stops. Beyond it is a darkness so complete it has no shape.
+p02_299_narrator.mp3,P02,The Devourer,quest start,Narrator,narrator,,Something enormous is breathing inside it.
+p02_300_narrator.mp3,P02,The Devourer,quest complete,Narrator,narrator,,"Oblivane is calm at last, small and silver. Light returns to Ystra's sky... but the land stays bare. The job isn't finished."
+p03_301_liss.mp3,P03,The Reunion,quest start,Liss,liss,,Now. The Heartroot's crater. Before its light goes out.
+p03_302_narrator.mp3,P03,The Reunion,scene: The Reunion: Choir,Narrator,narrator,,Kit's Shard relay and Static's frequency send the call home to Kessler.
+p03_303_narrator.mp3,P03,The Reunion,scene: The Reunion: Choir,Narrator,narrator,,"Above the crater, the Warp Gate wakes for the first time and opens a road between the worlds."
+p03_304_narrator.mp3,P03,The Reunion,scene: The Reunion: Choir,Narrator,narrator,,"And they come through it: Hank, Captain Marsh, DJ Static, Ingrid, Old Basalt, Echo and Iris, Kade, every trainer you ever battled, even Pell."
+p03_305_narrator.mp3,P03,The Reunion,scene: The Reunion: Choir,Narrator,narrator,,Wild Alienmon of every kind pour through the Gate behind them.
+p03_306_narrator.mp3,P03,The Reunion,scene: The Reunion: Choir,Narrator,narrator,,"Every Alienmon sings one note of her song. Nobody gives up their body or their life, only a note. Every one of them stays itself."
+p03_307_narrator.mp3,P03,The Reunion,scene: The Reunion: Choir,Narrator,narrator,,The Heartroot drinks the song. Green floods out across Ystra.
+p03_308_narrator.mp3,P03,The Reunion,scene: The Reunion: Choir,Narrator,narrator,,"A world-tree of crystal and leaves rises out of the crater: the Seedmother, growing again."
+p03_309_narrator.mp3,P03,The Reunion,scene: The Reunion: Choir,Narrator,narrator,,"She holds Oblivane, small and silver now, like a moon in her branches."
+p03_310_seedmother.mp3,P03,The Reunion,quest complete,The Seedmother,seedmother,,"Thank you, my children. Every one of you still yourselves."
+p03_311_seedmother.mp3,P03,The Reunion,quest complete,The Seedmother,seedmother,,"Take this seed. The Gate will stay open, a road between your two homes."
+p04_312_vashti.mp3,P04,The Warp Gate Hums,quest start,Dr. Imogen Vashti,vashti,,"The Warp Gate is still open, on every scope in the system! Go and see it from our side."
+p04_313_narrator.mp3,P04,The Warp Gate Hums,quest complete,Narrator,narrator,,"The Warp Gate's runes blaze cyan and pink. A road between two worlds, open at last."
