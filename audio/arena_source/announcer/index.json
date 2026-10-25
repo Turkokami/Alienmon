@@ -1,0 +1,82 @@
+{
+ "three.mp3": {
+  "text": "THREE",
+  "source": "ElevenLabs_2026-10-18T17_09_49_Arena Announcer_gen_sp100_s50_sb75_v4.mp3"
+ },
+ "two.mp3": {
+  "text": "TWO!",
+  "source": "ElevenLabs_2026-10-18T17_10_18_Arena Announcer_gen_sp100_s50_sb75_v4.mp3"
+ },
+ "one.mp3": {
+  "text": "ONE",
+  "source": "ElevenLabs_2026-10-18T17_10_36_Arena Announcer_gen_sp100_s50_sb75_v4.mp3"
+ },
+ "go.mp3": {
+  "text": "Go!",
+  "source": "ElevenLabs_2026-10-18T17_10_44_Arena Announcer_gen_sp100_s50_sb75_v4.mp3"
+ },
+ "k_o.mp3": {
+  "text": "K.O.",
+  "source": "ElevenLabs_2026-10-18T17_11_21_Arena Announcer_gen_sp100_s50_sb75_v4.mp3"
+ },
+ "time.mp3": {
+  "text": "TIME!",
+  "source": "ElevenLabs_2026-10-18T17_11_31_Arena Announcer_gen_sp100_s50_sb75_v4.mp3"
+ },
+ "victory.mp3": {
+  "text": "VICTORY!",
+  "source": "ElevenLabs_2026-10-18T17_11_41_Arena Announcer_gen_sp100_s50_sb75_v4.mp3"
+ },
+ "try_again.mp3": {
+  "text": "Try again!",
+  "source": "ElevenLabs_2026-10-18T17_11_51_Arena Announcer_gen_sp100_s50_sb75_v4.mp3"
+ },
+ "it_s_a_draw.mp3": {
+  "text": "It's a draw!",
+  "source": "ElevenLabs_2026-10-18T17_12_01_Arena Announcer_gen_sp100_s50_sb75_v4.mp3"
+ },
+ "round_one.mp3": {
+  "text": "ROUND ONE!",
+  "source": "ElevenLabs_2026-10-18T17_12_10_Arena Announcer_gen_sp100_s50_sb75_v4.mp3"
+ },
+ "round_two.mp3": {
+  "text": "ROUND TWO!",
+  "source": "ElevenLabs_2026-10-18T17_12_20_Arena Announcer_gen_sp100_s50_sb75_v4.mp3"
+ },
+ "final_round.mp3": {
+  "text": "FINAL ROUND!",
+  "source": "ElevenLabs_2026-10-18T17_12_30_Arena Announcer_gen_sp100_s50_sb75_v4.mp3"
+ },
+ "super_effective.mp3": {
+  "text": "Super effective!",
+  "source": "ElevenLabs_2026-10-18T17_13_27_Arena Announcer_gen_sp100_s50_sb75_v4.mp3"
+ },
+ "critical_hit.mp3": {
+  "text": "critical hit",
+  "source": "ElevenLabs_2026-10-18T17_13_37_Arena Announcer_gen_sp100_s50_sb75_v4.mp3"
+ },
+ "sudden_death.mp3": {
+  "text": "SUDDEN DEATH!",
+  "source": "ElevenLabs_2026-10-18T17_13_47_Arena Announcer_gen_sp100_s50_sb75_v4.mp3"
+ },
+ "linkers_ready.mp3": {
+  "text": "Linkers ready",
+  "source": "ElevenLabs_2026-10-18T17_13_57_Arena Announcer_gen_sp100_s50_sb75_v4.mp3"
+ },
+ "switch.mp3": {
+  "text": "Switch!",
+  "source": "ElevenLabs_2026-10-18T17_14_07_Arena Announcer_gen_sp100_s50_sb75_v4.mp3"
+ },
+ "perfect.mp3": {
+  "text": "Perfect!",
+  "source": "ElevenLabs_2026-10-18T17_14_16_Arena Announcer_gen_sp100_s50_sb75_v4.mp3"
+ },
+ "what_a_comeback.mp3": {
+  "text": "WHAT A COMEBACK!",
+  "source": "ElevenLabs_2026-10-18T17_14_26_Arena Announcer_gen_sp100_s50_sb75_v4.mp3"
+ },
+ "a_new_champion.mp3": {
+  "text": "A new champion!",
+  "source": "ElevenLabs_2026-10-18T17_14_36_Arena Announcer_gen_sp100_s50_sb75_v4.mp3"
+ }
+}
