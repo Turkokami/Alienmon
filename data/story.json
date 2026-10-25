@@ -14,7 +14,16 @@
     "He looks up and sees you watching... then puts a finger to his lips.",
     "Helix Grunt: ...You didn't see that, and I didn't see you. Name's Strand."
    ],
-   "art": "strand"
+   "art": "strand",
+   "pic": {
+    "k": "cut_17",
+    "at": 0,
+    "skip": [
+     0,
+     1,
+     2
+    ]
+   }
   },
   {
    "id": "rim_ostrander",
@@ -135,7 +144,15 @@
    ],
    "take": [
     "stowaway"
-   ]
+   ],
+   "pic": {
+    "k": "cut_09",
+    "at": 2,
+    "skip": [
+     2,
+     4
+    ]
+   }
   },
   {
    "id": "kit_meet_plain",
