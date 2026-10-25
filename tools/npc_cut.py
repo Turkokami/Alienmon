@@ -34,6 +34,16 @@ for world, roles in ROSTER.items():
             c = Image.new('RGBA', (128, 128), (0, 0, 0, 0)); c.alpha_composite(b, ((128 - b.width) // 2, 128 - 3 - b.height))
             c.save(f'{OUT}/{world}_{role}{suf}.png', optimize=True); made.append(f'{world}_{role}{suf}')
 print(len(made), 'sprites:', ', '.join(sorted({m.rsplit('_up', 1)[0] for m in made})))
+# single-character replacements (art/raw/npcs/rook_fix/<sprite>[_up].png, one figure per image) win over the sheet cut
+FIX = APP + '/art/raw/npcs/rook_fix'
+if os.path.isdir(FIX):
+    for f in sorted(os.listdir(FIX)):
+        if not f.endswith('.png'): continue
+        im = cutout(Image.open(f'{FIX}/{f}')); b = im.crop(im.getbbox()); k = 122 / b.height
+        b = b.resize((max(1, round(b.width * k)), 122), Image.LANCZOS)
+        if b.width > 126: b = b.resize((126, max(1, round(b.height * 126 / b.width))), Image.LANCZOS)
+        c = Image.new('RGBA', (128, 128), (0, 0, 0, 0)); c.alpha_composite(b, ((128 - b.width) // 2, 128 - 3 - b.height)); c.save(f'{OUT}/{f}', optimize=True)
+    print('replacements:', len([f for f in os.listdir(FIX) if f.endswith('.png')]))
 # the list the build uses to put each world's own people on its maps (only worlds whose sheets exist)
 folk = {w: [r for r in roles if os.path.exists(f'{OUT}/{w}_{r}.png')] for w, roles in ROSTER.items()}
 json.dump({w: r for w, r in folk.items() if r}, open(APP + '/data/world_folk.json', 'w'), indent=1)
