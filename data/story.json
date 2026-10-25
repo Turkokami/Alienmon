@@ -63,7 +63,17 @@
     "...and stops at one small shell, half-buried in the rock.",
     "Zib lands inside it and sits very still for a long, quiet minute. Its lights go soft and pink.",
     "This was Zib's pod. The last one Liss launched."
-   ]
+   ],
+   "pic": {
+    "k": "cut_49",
+    "at": 0,
+    "skip": [
+     0,
+     1,
+     2,
+     3
+    ]
+   }
   },
   {
    "id": "pell_refuses",
@@ -78,7 +88,15 @@
     "Pell throws the net gun over the rim. It tumbles down into the crater's light.",
     "Admin Vex: You'll regret that! (She storms off toward the engine.)"
    ],
-   "art": "vex"
+   "art": "vex",
+   "pic": {
+    "k": "cut_50",
+    "at": 1,
+    "skip": [
+     1,
+     3
+    ]
+   }
   },
   {
    "id": "saga_reveal",
@@ -93,7 +111,14 @@
     "Saga: The one who launched your little scout... Liss... is my sister.",
     "Zib flashes every color at once. So that was the word Saga whispered at the Summit."
    ],
-   "art": "saga"
+   "art": "saga",
+   "pic": {
+    "k": "cut_59",
+    "at": 1,
+    "skip": [
+     1
+    ]
+   }
   },
   {
    "id": "tamsin_map_room",
@@ -184,7 +209,16 @@
     "Kit kneels down, pulls a tiny heater coil off his tool belt, and gently melts it free.",
     "The Iceburr shakes itself off... and hops onto Kit's shoulder. Kit: Ow. Spiky. Hi, friend."
    ],
-   "art": "kit"
+   "art": "kit",
+   "pic": {
+    "k": "cut_42",
+    "at": 0,
+    "skip": [
+     0,
+     1,
+     2
+    ]
+   }
   },
   {
    "id": "kit_gravity_trap",
@@ -198,7 +232,15 @@
     "Iceburr frosts the trap's coils until they crack. The pull lets go.",
     "Kit: Got it! Keep moving, everybody."
    ],
-   "art": "kit"
+   "art": "kit",
+   "pic": {
+    "k": "cut_52",
+    "at": 2,
+    "skip": [
+     0,
+     2
+    ]
+   }
   },
   {
    "id": "project_unity_sign",
@@ -209,7 +251,15 @@
    "lines": [
     "A cold white sign hangs over the cage rows: PROJECT UNITY. ONE OF EVERY SPECIES.",
     "Every cage has a label, a number and a species name, like a museum."
-   ]
+   ],
+   "pic": {
+    "k": "cut_43",
+    "at": 0,
+    "skip": [
+     0,
+     1
+    ]
+   }
   }
  ],
  "shifts": [

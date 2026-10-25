@@ -6658,7 +6658,7 @@
    "name": "Nurse",
    "tile": [
     8,
-    4
+    3
    ],
    "stay": true,
    "t": [
@@ -6668,7 +6668,7 @@
   {
    "art": "explorer",
    "tile": [
-    3,
+    4,
     9
    ],
    "face": "right",
