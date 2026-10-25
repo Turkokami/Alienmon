@@ -12998,5 +12998,702 @@
     ]
    ]
   }
+ },
+ "917": {
+  "src": "X01_dustara_seedpod_dig_site.png",
+  "dir": "01_dustara",
+  "world": "Dustara",
+  "cat": "Hidden Area",
+  "title": "Seedpod Dig Site",
+  "name": "Seedpod Dig Site",
+  "alt": false,
+  "type": "field",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/01_dustara/917_hidden_area_seedpod_dig_site.png",
+  "exits": {
+   "left": [
+    [
+     3,
+     6
+    ]
+   ]
+  },
+  "expansion": true
+ },
+ "918": {
+  "src": "X02_dustara_old_observatory_ruins.png",
+  "dir": "01_dustara",
+  "world": "Dustara",
+  "cat": "Hidden Area",
+  "title": "Old Observatory Ruins",
+  "name": "Old Observatory Ruins",
+  "alt": false,
+  "type": "field",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/01_dustara/918_hidden_area_old_observatory_ruins.png",
+  "exits": {
+   "bottom": [
+    [
+     11,
+     12
+    ],
+    [
+     14,
+     15
+    ]
+   ]
+  },
+  "expansion": true
+ },
+ "919": {
+  "src": "X03_ferrox_junkyard_throne.png",
+  "dir": "02_ferrox",
+  "world": "Ferrox",
+  "cat": "Hidden Area",
+  "title": "Junkyard Throne",
+  "name": "Junkyard Throne",
+  "alt": false,
+  "type": "field",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/02_ferrox/919_hidden_area_junkyard_throne.png",
+  "exits": {
+   "bottom": [
+    [
+     11,
+     13
+    ]
+   ]
+  },
+  "expansion": true
+ },
+ "920": {
+  "src": "X04_ferrox_abandoned_foundry.png",
+  "dir": "02_ferrox",
+  "world": "Ferrox",
+  "cat": "Hidden Area",
+  "title": "Abandoned Foundry",
+  "name": "Abandoned Foundry",
+  "alt": false,
+  "type": "field",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/02_ferrox/920_hidden_area_abandoned_foundry.png",
+  "exits": {
+   "left": [
+    [
+     9,
+     10
+    ]
+   ]
+  },
+  "expansion": true
+ },
+ "921": {
+  "src": "X05_sporeholm_canopy_walkways.png",
+  "dir": "03_sporeholm",
+  "world": "Sporeholm",
+  "cat": "Hidden Area",
+  "title": "Canopy Walkways",
+  "name": "Canopy Walkways",
+  "alt": false,
+  "type": "field",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/03_sporeholm/921_hidden_area_canopy_walkways.png",
+  "exits": {
+   "right": [
+    [
+     4,
+     5
+    ]
+   ],
+   "bottom": [
+    [
+     13,
+     14
+    ]
+   ]
+  },
+  "expansion": true
+ },
+ "922": {
+  "src": "X06_sporeholm_spore_choir_amphitheatre.png",
+  "dir": "03_sporeholm",
+  "world": "Sporeholm",
+  "cat": "Hidden Area",
+  "title": "Spore Choir Amphitheatre",
+  "name": "Spore Choir Amphitheatre",
+  "alt": false,
+  "type": "field",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/03_sporeholm/922_hidden_area_spore_choir_amphitheatre.png",
+  "exits": {
+   "bottom": [
+    [
+     13,
+     14
+    ]
+   ]
+  },
+  "expansion": true
+ },
+ "923": {
+  "src": "X07_thalassa_coral_tide_pools.png",
+  "dir": "04_thalassa",
+  "world": "Thalassa",
+  "cat": "Hidden Area",
+  "title": "Coral Tide Pools",
+  "name": "Coral Tide Pools",
+  "alt": false,
+  "type": "field",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/04_thalassa/923_hidden_area_coral_tide_pools.png",
+  "exits": {
+   "top": [
+    [
+     11,
+     12
+    ]
+   ]
+  },
+  "expansion": true
+ },
+ "924": {
+  "src": "X08_thalassa_shipwreck_cove.png",
+  "dir": "04_thalassa",
+  "world": "Thalassa",
+  "cat": "Hidden Area",
+  "title": "Shipwreck Cove",
+  "name": "Shipwreck Cove",
+  "alt": false,
+  "type": "field",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/04_thalassa/924_hidden_area_shipwreck_cove.png",
+  "exits": {
+   "right": [
+    [
+     6,
+     11
+    ]
+   ]
+  },
+  "expansion": true
+ },
+ "925": {
+  "src": "X09_neonis_rooftop_billboards.png",
+  "dir": "05_neonis",
+  "world": "Neonis",
+  "cat": "Hidden Area",
+  "title": "Rooftop Billboards",
+  "name": "Rooftop Billboards",
+  "alt": false,
+  "type": "field",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/05_neonis/925_hidden_area_rooftop_billboards.png",
+  "exits": {
+   "bottom": [
+    [
+     10,
+     13
+    ]
+   ]
+  },
+  "expansion": true
+ },
+ "926": {
+  "src": "X10_neonis_arcade_underground.png",
+  "dir": "05_neonis",
+  "world": "Neonis",
+  "cat": "Hidden Area",
+  "title": "Arcade Underground",
+  "name": "Arcade Underground",
+  "alt": false,
+  "type": "field",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/05_neonis/926_hidden_area_arcade_underground.png",
+  "exits": {
+   "left": [
+    [
+     7,
+     8
+    ]
+   ]
+  },
+  "expansion": true
+ },
+ "927": {
+  "src": "X11_glyphos_sunken_temple_court.png",
+  "dir": "06_glyphos",
+  "world": "Glyphos",
+  "cat": "Hidden Area",
+  "title": "Sunken Temple Court",
+  "name": "Sunken Temple Court",
+  "alt": false,
+  "type": "field",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/06_glyphos/927_hidden_area_sunken_temple_court.png",
+  "exits": {
+   "right": [
+    [
+     7,
+     8
+    ]
+   ]
+  },
+  "expansion": true
+ },
+ "928": {
+  "src": "X12_glyphos_vine_bridge_canopy.png",
+  "dir": "06_glyphos",
+  "world": "Glyphos",
+  "cat": "Hidden Area",
+  "title": "Vine Bridge Canopy",
+  "name": "Vine Bridge Canopy",
+  "alt": false,
+  "type": "field",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/06_glyphos/928_hidden_area_vine_bridge_canopy.png",
+  "exits": {
+   "bottom": [
+    [
+     13,
+     15
+    ]
+   ]
+  },
+  "expansion": true
+ },
+ "929": {
+  "src": "X13_pyros_obsidian_glass_fields.png",
+  "dir": "07_pyros",
+  "world": "Pyros",
+  "cat": "Hidden Area",
+  "title": "Obsidian Glass Fields",
+  "name": "Obsidian Glass Fields",
+  "alt": false,
+  "type": "field",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/07_pyros/929_hidden_area_obsidian_glass_fields.png",
+  "exits": {
+   "top": [
+    [
+     15,
+     17
+    ]
+   ]
+  },
+  "expansion": true
+ },
+ "930": {
+  "src": "X14_pyros_hot_spring_terraces.png",
+  "dir": "07_pyros",
+  "world": "Pyros",
+  "cat": "Hidden Area",
+  "title": "Hot Spring Terraces",
+  "name": "Hot Spring Terraces",
+  "alt": false,
+  "type": "field",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/07_pyros/930_hidden_area_hot_spring_terraces.png",
+  "exits": {
+   "left": [
+    [
+     8,
+     9
+    ]
+   ]
+  },
+  "expansion": true
+ },
+ "931": {
+  "src": "X15_glacia_frozen_waterfall.png",
+  "dir": "08_glacia",
+  "world": "Glacia",
+  "cat": "Hidden Area",
+  "title": "Frozen Waterfall",
+  "name": "Frozen Waterfall",
+  "alt": false,
+  "type": "field",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/08_glacia/931_hidden_area_frozen_waterfall.png",
+  "exits": {
+   "right": [
+    [
+     7,
+     8
+    ]
+   ]
+  },
+  "expansion": true
+ },
+ "932": {
+  "src": "X16_glacia_aurora_snowfield.png",
+  "dir": "08_glacia",
+  "world": "Glacia",
+  "cat": "Hidden Area",
+  "title": "Aurora Snowfield",
+  "name": "Aurora Snowfield",
+  "alt": false,
+  "type": "field",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/08_glacia/932_hidden_area_aurora_snowfield.png",
+  "exits": {},
+  "expansion": true
+ },
+ "933": {
+  "src": "X17_helix_arboretum_dome.png",
+  "dir": "09_helix",
+  "world": "Helix Station",
+  "cat": "Hidden Area",
+  "title": "Arboretum Dome",
+  "name": "Arboretum Dome",
+  "alt": false,
+  "type": "field",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/09_helix/933_hidden_area_arboretum_dome.png",
+  "exits": {
+   "left": [
+    [
+     6,
+     8
+    ]
+   ]
+  },
+  "expansion": true
+ },
+ "934": {
+  "src": "X18_helix_cargo_bay.png",
+  "dir": "09_helix",
+  "world": "Helix Station",
+  "cat": "Hidden Area",
+  "title": "Cargo Bay",
+  "name": "Cargo Bay",
+  "alt": false,
+  "type": "field",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/09_helix/934_hidden_area_cargo_bay.png",
+  "exits": {
+   "right": [
+    [
+     9,
+     11
+    ]
+   ]
+  },
+  "expansion": true
+ },
+ "935": {
+  "src": "X19_halo_floating_isle_gardens.png",
+  "dir": "10_halo",
+  "world": "Halo",
+  "cat": "Hidden Area",
+  "title": "Floating Isle Gardens",
+  "name": "Floating Isle Gardens",
+  "alt": false,
+  "type": "field",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/10_halo/935_hidden_area_floating_isle_gardens.png",
+  "exits": {
+   "right": [
+    [
+     7,
+     9
+    ]
+   ],
+   "top": [
+    [
+     4,
+     8
+    ]
+   ]
+  },
+  "expansion": true
+ },
+ "936": {
+  "src": "X20_halo_wind_temple_steps.png",
+  "dir": "10_halo",
+  "world": "Halo",
+  "cat": "Hidden Area",
+  "title": "Wind Temple Steps",
+  "name": "Wind Temple Steps",
+  "alt": false,
+  "type": "field",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/10_halo/936_hidden_area_wind_temple_steps.png",
+  "exits": {
+   "top": [
+    [
+     11,
+     12
+    ],
+    [
+     16,
+     19
+    ]
+   ],
+   "bottom": [
+    [
+     10,
+     14
+    ]
+   ]
+  },
+  "expansion": true
+ },
+ "937": {
+  "src": "X21_umbra_lantern_festival_street.png",
+  "dir": "11_umbra",
+  "world": "Umbra",
+  "cat": "Hidden Area",
+  "title": "Lantern Festival Street",
+  "name": "Lantern Festival Street",
+  "alt": false,
+  "type": "field",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/11_umbra/937_hidden_area_lantern_festival_street.png",
+  "exits": {
+   "bottom": [
+    [
+     15,
+     16
+    ]
+   ]
+  },
+  "expansion": true
+ },
+ "938": {
+  "src": "X22_umbra_moonlit_garden.png",
+  "dir": "11_umbra",
+  "world": "Umbra",
+  "cat": "Hidden Area",
+  "title": "Moonlit Garden",
+  "name": "Moonlit Garden",
+  "alt": false,
+  "type": "field",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/11_umbra/938_hidden_area_moonlit_garden.png",
+  "exits": {
+   "left": [
+    [
+     7,
+     8
+    ]
+   ]
+  },
+  "expansion": true
+ },
+ "939": {
+  "src": "X23_starfall_meteor_fields.png",
+  "dir": "12_starfall",
+  "world": "Starfall Rift",
+  "cat": "Hidden Area",
+  "title": "Meteor Fields",
+  "name": "Meteor Fields",
+  "alt": false,
+  "type": "field",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/12_starfall/939_hidden_area_meteor_fields.png",
+  "exits": {
+   "top": [
+    [
+     15,
+     17
+    ]
+   ],
+   "bottom": [
+    [
+     15,
+     17
+    ]
+   ]
+  },
+  "expansion": true
+ },
+ "940": {
+  "src": "X24_starfall_seedpod_nursery.png",
+  "dir": "12_starfall",
+  "world": "Starfall Rift",
+  "cat": "Hidden Area",
+  "title": "Seedpod Nursery",
+  "name": "Seedpod Nursery",
+  "alt": false,
+  "type": "field",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/12_starfall/940_hidden_area_seedpod_nursery.png",
+  "exits": {
+   "bottom": [
+    [
+     11,
+     12
+    ]
+   ]
+  },
+  "expansion": true
+ },
+ "941": {
+  "src": "X25_apex_telescope_ridge.png",
+  "dir": "13_apex",
+  "world": "Apex Array",
+  "cat": "Hidden Area",
+  "title": "Telescope Ridge",
+  "name": "Telescope Ridge",
+  "alt": false,
+  "type": "field",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/13_apex/941_hidden_area_telescope_ridge.png",
+  "exits": {
+   "left": [
+    [
+     8,
+     12
+    ]
+   ]
+  },
+  "expansion": true
+ },
+ "942": {
+  "src": "X26_apex_hall_of_champions_plaza.png",
+  "dir": "13_apex",
+  "world": "Apex Array",
+  "cat": "Hidden Area",
+  "title": "Hall of Champions Plaza",
+  "name": "Hall of Champions Plaza",
+  "alt": false,
+  "type": "field",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/13_apex/942_hidden_area_hall_of_champions_plaza.png",
+  "exits": {
+   "bottom": [
+    [
+     10,
+     13
+    ]
+   ]
+  },
+  "expansion": true
+ },
+ "943": {
+  "src": "X27_ystra_floating_fragment_gardens.png",
+  "dir": "14_ystra",
+  "world": "Ystra",
+  "cat": "Hidden Area",
+  "title": "Floating Fragment Gardens",
+  "name": "Floating Fragment Gardens",
+  "alt": false,
+  "type": "field",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/14_ystra/943_hidden_area_floating_fragment_gardens.png",
+  "exits": {
+   "right": [
+    [
+     5,
+     6
+    ]
+   ]
+  },
+  "expansion": true
+ },
+ "944": {
+  "src": "X28_ystra_memory_crystal_grove.png",
+  "dir": "14_ystra",
+  "world": "Ystra",
+  "cat": "Hidden Area",
+  "title": "Memory Crystal Grove",
+  "name": "Memory Crystal Grove",
+  "alt": false,
+  "type": "field",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/14_ystra/944_hidden_area_memory_crystal_grove.png",
+  "exits": {
+   "bottom": [
+    [
+     13,
+     14
+    ]
+   ]
+  },
+  "expansion": true
  }
 }
