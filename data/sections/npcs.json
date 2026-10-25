@@ -407,7 +407,8 @@
     21,
     5
    ],
-   "stay": true
+   "stay": true,
+   "talk_only": true
   },
   {
    "art": "townsfolk",

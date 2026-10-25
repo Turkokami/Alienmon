@@ -1799,18 +1799,12 @@
      "x": 21,
      "y": 5,
      "art": "explorer",
-     "face": "left",
+     "face": "down",
      "t": [
       "Linker: Press START to check your team. A tired Alienmon is a fainted Alienmon waiting to happen."
      ],
      "stay": true,
-     "src": "n:004:3",
-     "id": "sec004_tr3",
-     "trainer": {
-      "cls": "Linker",
-      "linker": 1,
-      "name": "Remy"
-     }
+     "src": "n:004:3"
     },
     {
      "x": 16,
