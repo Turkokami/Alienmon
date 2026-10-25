@@ -16,15 +16,16 @@
   },
   {
    "k": "cut_02",
-   "q": "M01",
+   "q": "lab",
    "o": 0,
-   "w": "start",
+   "w": "talk",
    "cap": "Choose with your heart",
    "lines": [
     "Three capsules glow on Dr. Vashti's brass table: Sporix, Plazmo and Gloopa.",
     "Dr. Vashti: Don't pick with your head. Choose with your heart."
    ],
-   "src": "Cutscene 02 - Ch 1 - Choose With Your Heart (Dustara).png"
+   "src": "Cutscene 02 - Ch 1 - Choose With Your Heart (Dustara).png",
+   "note": "shown by secStarterTalk after Dr. Vashti speaks, before the starter choice"
   },
   {
    "k": "cut_03",
