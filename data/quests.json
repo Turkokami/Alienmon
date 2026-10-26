@@ -262,7 +262,7 @@
    },
    "giver": {
     "name": "Dusty the wanderer",
-    "art": "wanderer"
+    "art": "dusty"
    },
    "prereq": [
     "M03"
@@ -1070,7 +1070,7 @@
    },
    "giver": {
     "name": "Admin Bronn",
-    "art": "vex"
+    "art": "bronn"
    },
    "prereq": [
     "M13"
@@ -2286,8 +2286,7 @@
     "note": "black hole near the Void Ruins in the old map; in the Molten Frontier era, travel by ship to Ystra"
    },
    "giver": {
-    "name": "Zib",
-    "art": "technician"
+    "name": "Zib"
    },
    "prereq": [
     "M21"
@@ -2374,8 +2373,7 @@
     "note": "tile map or future painted map; place this spot when building"
    },
    "giver": {
-    "name": "Seedmother's voice",
-    "art": "ystran"
+    "name": "Seedmother's voice"
    },
    "prereq": [
     "P01"
@@ -2428,8 +2426,7 @@
     "note": "tile map or future painted map; place this spot when building"
    },
    "giver": {
-    "name": "The Heartroot",
-    "art": "ystran"
+    "name": "The Heartroot"
    },
    "prereq": [
     "P02"
@@ -2615,7 +2612,7 @@
    },
    "giver": {
     "name": "Dusty the wanderer",
-    "art": "wanderer"
+    "art": "dusty"
    },
    "prereq": [
     "M01"
@@ -3465,8 +3462,7 @@
     "note": "tile map or future painted map; place this spot when building"
    },
    "giver": {
-    "name": "Zib",
-    "art": "technician"
+    "name": "Zib"
    },
    "prereq": [
     "M06",
@@ -4323,7 +4319,7 @@
    },
    "giver": {
     "name": "Admin Bronn",
-    "art": "technician"
+    "art": "bronn"
    },
    "prereq": [
     "M14"
@@ -4690,7 +4686,7 @@
    },
    "giver": {
     "name": "Teo Reyes",
-    "art": "strand"
+    "art": "teo"
    },
    "prereq": [
     "M19"
