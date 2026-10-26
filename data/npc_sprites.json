@@ -1,0 +1,2059 @@
+{
+"003": {
+"1": "dustara_canyon_courier"
+},
+"004": {
+"3": "dustara_seedpod_hunter",
+"4": "dustara_spice_vendor"
+},
+"005": {
+"1": "dustara_canyon_courier"
+},
+"006": {
+"1": "dustara_spice_vendor"
+},
+"007": {
+"0": "dustara_seedpod_hunter",
+"1": "dustara_crater_stargazer"
+},
+"008": {
+"2": "umbra_mine_watchman",
+"3": "dustara_seedpod_hunter",
+"4": "dustara_spice_vendor"
+},
+"009": {
+"0": "dustara_canyon_courier",
+"1": "dustara_mesa_mechanic",
+"2": "dustara_crater_stargazer",
+"3": "dustara_seedpod_hunter"
+},
+"010": {
+"0": "dustara_seedpod_hunter",
+"1": "dustara_canyon_courier",
+"2": "dustara_sand_ranger",
+"3": "dustara_mesa_mechanic"
+},
+"011": {
+"1": "dustara_seedpod_hunter",
+"2": "dustara_mesa_mechanic",
+"3": "dustara_canyon_courier"
+},
+"012": {
+"0": "ferrox_forge_smith"
+},
+"013": {
+"0": "dustara_desert_elder"
+},
+"014": {
+"1": "dustara_seedpod_hunter",
+"3": "pyros_obsidian_carver"
+},
+"015": {
+"0": "dustara_dune_farmer"
+},
+"016": {
+"0": "dustara_canyon_courier",
+"1": "dustara_crater_stargazer"
+},
+"017": {
+"1": "dustara_dune_farmer",
+"3": "dustara_sand_ranger",
+"4": "dustara_crater_stargazer"
+},
+"018": {
+"1": "dustara_mesa_mechanic",
+"2": "dustara_spice_vendor",
+"4": "dustara_seedpod_hunter",
+"5": "dustara_dune_farmer"
+},
+"020": {
+"0": "dustara_canyon_courier",
+"1": "dustara_crater_stargazer"
+},
+"021": {
+"0": "dustara_canyon_courier",
+"1": "dustara_sand_ranger"
+},
+"022": {
+"0": "dustara_mesa_mechanic",
+"2": "dax"
+},
+"023": {
+"0": "dustara_crater_stargazer"
+},
+"024": {
+"0": "dustara_sand_ranger"
+},
+"025": {
+"0": "dustara_spice_vendor",
+"1": "dustara_mesa_mechanic"
+},
+"026": {
+"0": "dustara_seedpod_hunter"
+},
+"027": {
+"0": "dustara_crater_stargazer"
+},
+"028": {
+"0": "dustara_dune_farmer"
+},
+"029": {
+"1": "ferrox_rail_conductor",
+"2": "wanderer"
+},
+"030": {
+"0": "ferrox_weld_apprentice",
+"1": "ferrox_rail_conductor",
+"2": "townsfolk",
+"4": "miner",
+"5": "ferrox_forge_smith"
+},
+"031": {
+"1": "ferrox_forge_smith"
+},
+"032": {
+"1": "ferrox_salvage_trader"
+},
+"039": {
+"0": "ferrox_ferrox_foreman",
+"2": "ferrox_scrap_picker"
+},
+"041": {
+"0": "sporeholm_spore_singer",
+"1": "sporeholm_moss_ranger"
+},
+"042": {
+"1": "sporeholm_spore_researcher",
+"2": "sporeholm_moss_ranger",
+"3": "sporeholm_mushroom_forager",
+"4": "sporeholm_swamp_herbalist",
+"5": "sporeholm_spore_singer",
+"7": "sporeholm_stilt_builder"
+},
+"043": {
+"1": "sporeholm_moss_ranger"
+},
+"047": {
+"0": "sporeholm_moss_ranger",
+"1": "wanderer"
+},
+"050": {
+"0": "sporeholm_spore_researcher",
+"1": "sporeholm_mushroom_forager",
+"2": "sporeholm_moss_ranger"
+},
+"051": {
+"0": "sporeholm_spore_singer"
+},
+"052": {
+"2": "thalassa_pearl_diver",
+"3": "thalassa_harbor_sailor",
+"4": "thalassa_fishmonger",
+"5": "thalassa_lighthouse_keeper"
+},
+"053": {
+"0": "thalassa_fishmonger",
+"2": "neonis_holo_promoter",
+"3": "thalassa_dock_hand",
+"4": "wanderer",
+"6": "thalassa_coral_researcher"
+},
+"055": {
+"1": "thalassa_fishmonger"
+},
+"062": {
+"1": "neonis_holo_promoter",
+"2": "neonis_night_courier",
+"3": "neonis_neon_skater",
+"5": "neonis_glitch_hunter",
+"6": "explorer"
+},
+"063": {
+"0": "neonis_neon_skater",
+"1": "neonis_cable_tech",
+"2": "neonis_night_courier",
+"3": "neonis_glitch_hunter",
+"4": "neonis_holo_promoter",
+"5": "researcher"
+},
+"064": {
+"1": "neonis_neon_skater"
+},
+"065": {
+"1": "neonis_noodle_cook"
+},
+"066": {
+"0": "neonis_glitch_hunter",
+"1": "neonis_cable_tech",
+"2": "neonis_night_courier",
+"3": "neonis_neon_raver",
+"4": "technician"
+},
+"069": {
+"1": "neonis_neon_raver",
+"2": "neonis_holo_promoter",
+"3": "neonis_neon_skater",
+"4": "neonis_cable_tech"
+},
+"072": {
+"0": "glyphos_rune_scholar"
+},
+"073": {
+"0": "glyphos_mural_copyist",
+"1": "glyphos_archaeologist",
+"2": "glyphos_chime_keeper",
+"3": "ferrox_forge_smith",
+"4": "glyphos_rune_scholar",
+"5": "glyphos_camp_cook",
+"6": "researcher"
+},
+"074": {
+"1": "glyphos_mural_copyist"
+},
+"077": {
+"0": "glyphos_chime_keeper",
+"1": "glyphos_rune_scholar",
+"2": "glyphos_archaeologist",
+"3": "glyphos_mural_copyist"
+},
+"078": {
+"0": "glyphos_chime_keeper",
+"1": "glyphos_mural_copyist"
+},
+"079": {
+"0": "glyphos_mural_copyist",
+"1": "glyphos_chime_keeper"
+},
+"080": {
+"0": "glyphos_chime_keeper",
+"1": "glyphos_archaeologist"
+},
+"081": {
+"0": "glyphos_mural_copyist",
+"1": "glyphos_chime_keeper"
+},
+"082": {
+"0": "pyros_drill_operator",
+"1": "pyros_obsidian_carver",
+"2": "pyros_spring_keeper",
+"3": "pyros_fire_warden",
+"4": "pyros_ash_elder",
+"5": "pyros_lamplighter",
+"7": "pyros_cinder_kid"
+},
+"083": {
+"1": "pyros_lava_miner"
+},
+"084": {
+"1": "pyros_drill_operator"
+},
+"087": {
+"0": "pyros_obsidian_carver",
+"1": "pyros_lava_miner"
+},
+"088": {
+"0": "researcher",
+"1": "pyros_obsidian_carver"
+},
+"089": {
+"0": "pyros_lava_miner",
+"1": "pyros_lamplighter"
+},
+"091": {
+"1": "pyros_spring_keeper",
+"2": "pyros_obsidian_carver"
+},
+"093": {
+"0": "glacia_snow_researcher",
+"1": "glacia_ice_climber",
+"2": "technician",
+"3": "glacia_aurora_watcher",
+"5": "glacia_sled_courier"
+},
+"094": {
+"1": "glacia_ice_climber"
+},
+"095": {
+"1": "glacia_aurora_watcher"
+},
+"096": {
+"0": "glacia_sled_courier",
+"1": "glacia_aurora_watcher",
+"2": "glacia_snow_researcher",
+"3": "glacia_ice_climber"
+},
+"098": {
+"1": "pell",
+"2": "umbra_mine_watchman",
+"3": "technician"
+},
+"099": {
+"0": "glacia_snow_researcher",
+"1": "glacia_aurora_watcher"
+},
+"100": {
+"0": "glacia_ice_climber",
+"1": "glacia_sled_courier"
+},
+"103": {
+"0": "glacia_ice_fisher",
+"1": "glacia_frost_baker",
+"2": "glacia_ice_climber"
+},
+"104": {
+"0": "glacia_aurora_watcher"
+},
+"105": {
+"2": "helix_lab_assistant",
+"3": "helix_service_droid",
+"6": "researcher"
+},
+"107": {
+"0": "helix_docking_pilot",
+"1": "helix_lab_assistant"
+},
+"108": {
+"0": "helix_lab_assistant",
+"1": "helix_station_engineer"
+},
+"109": {
+"0": "helix_lab_assistant",
+"1": "researcher"
+},
+"110": {
+"0": "helix_docking_pilot"
+},
+"111": {
+"0": "helix_hydro_gardener",
+"2": "helix_lab_assistant"
+},
+"114": {
+"0": "halo_sky_pilgrim",
+"1": "halo_bellringer",
+"2": "halo_starwatch_monk"
+},
+"115": {
+"0": "halo_bellringer",
+"1": "halo_starwatch_monk",
+"2": "halo_sky_pilgrim",
+"3": "halo_kite_kid",
+"4": "researcher",
+"6": "halo_sky_postman"
+},
+"116": {
+"1": "halo_cloud_farmer"
+},
+"117": {
+"1": "halo_feather_weaver"
+},
+"121": {
+"0": "halo_starwatch_monk",
+"1": "halo_sky_postman",
+"2": "halo_sky_pilgrim"
+},
+"122": {
+"0": "halo_sky_pilgrim"
+},
+"123": {
+"0": "umbra_shadow_mapper"
+},
+"124": {
+"0": "technician",
+"1": "umbra_veiled_mourner",
+"2": "umbra_shadow_mapper",
+"3": "sporeholm_swamp_herbalist",
+"4": "umbra_void_researcher",
+"6": "umbra_ghost_story_kid"
+},
+"125": {
+"1": "thalassa_pearl_diver"
+},
+"126": {
+"1": "umbra_night_vendor"
+},
+"129": {
+"0": "umbra_mine_watchman",
+"1": "technician"
+},
+"130": {
+"0": "umbra_shadow_mapper",
+"1": "umbra_veiled_mourner"
+},
+"131": {
+"0": "umbra_void_researcher",
+"1": "umbra_shadow_mapper"
+},
+"132": {
+"0": "umbra_lantern_lighter",
+"1": "technician"
+},
+"133": {
+"0": "umbra_night_vendor"
+},
+"134": {
+"1": "umbra_void_researcher",
+"2": "umbra_mine_watchman"
+},
+"136": {
+"2": "starfall_camp_medic",
+"3": "pilgrim",
+"4": "starfall_rift_surveyor",
+"5": "starfall_meteor_prospector",
+"6": "miner"
+},
+"137": {
+"1": "starfall_meteor_prospector"
+},
+"138": {
+"0": "starfall_rift_surveyor",
+"1": "starfall_seedpod_collector",
+"3": "pilgrim"
+},
+"140": {
+"0": "pilgrim",
+"1": "starfall_seedpod_collector"
+},
+"141": {
+"1": "starfall_rift_surveyor",
+"4": "pilgrim"
+},
+"142": {
+"0": "starfall_seedpod_collector",
+"1": "pilgrim"
+},
+"143": {
+"0": "starfall_seedpod_collector",
+"1": "starfall_rift_surveyor"
+},
+"144": {
+"0": "pilgrim"
+},
+"145": {
+"1": "starfall_rift_surveyor"
+},
+"146": {
+"0": "apex_telescope_tech",
+"1": "apex_star_scholar"
+},
+"147": {
+"0": "apex_telescope_tech"
+},
+"148": {
+"0": "apex_telescope_tech"
+},
+"150": {
+"0": "apex_relay_engineer"
+},
+"152": {
+"0": "apex_telescope_tech",
+"1": "apex_star_scholar"
+},
+"153": {
+"2": "ystra_memory_keeper",
+"3": "ystra_blight_cleanser"
+},
+"154": {
+"2": "ystra_blight_cleanser",
+"4": "ystra_memory_keeper",
+"5": "ystra_ystran_elder"
+},
+"155": {
+"0": "ystra_blight_cleanser",
+"1": "ystra_memory_keeper",
+"2": "pilgrim"
+},
+"156": {
+"3": "ystra_memory_keeper",
+"5": "ystra_blight_cleanser"
+},
+"157": {
+"1": "ystra_memory_keeper"
+},
+"158": {
+"3": "ystra_memory_keeper",
+"4": "ystra_blight_cleanser"
+},
+"160": {
+"2": "ystra_memory_keeper",
+"3": "ystra_blight_cleanser",
+"4": "pilgrim",
+"5": "ystra_ystran_elder"
+},
+"161": {
+"1": "ystra_blight_cleanser",
+"2": "ystra_memory_keeper"
+},
+"162": {
+"1": "ystra_blight_cleanser"
+},
+"163": {
+"2": "ystra_memory_keeper"
+},
+"164": {
+"3": "wanderer",
+"4": "townsfolk",
+"5": "technician",
+"6": "miner",
+"7": "civilian"
+},
+"166": {
+"1": "dustara_crater_stargazer"
+},
+"172": {
+"0": "starfall_rift_surveyor"
+},
+"174": {
+"0": "pyros_lava_miner"
+},
+"175": {
+"0": "halo_sky_pilgrim"
+},
+"176": {
+"0": "neonis_neon_raver"
+},
+"177": {
+"0": "glyphos_relic_porter"
+},
+"178": {
+"0": "sporeholm_swamp_herbalist"
+},
+"179": {
+"0": "halo_starwatch_monk"
+},
+"180": {
+"0": "neonis_noodle_cook"
+},
+"181": {
+"0": "researcher"
+},
+"182": {
+"0": "halo_feather_weaver"
+},
+"183": {
+"0": "glyphos_camp_cook"
+},
+"186": {
+"0": "umbra_night_vendor"
+},
+"187": {
+"0": "dustara_sand_ranger"
+},
+"188": {
+"0": "ferrox_ferrox_foreman"
+},
+"189": {
+"0": "ystra_ystran_scout"
+},
+"193": {
+"0": "glacia_ice_fisher"
+},
+"401": {
+"0": "apex_quorum_delegate",
+"1": "apex_prime_hopeful"
+},
+"403": {
+"1": "apex_prime_hopeful"
+},
+"405": {
+"0": "apex_mountain_porter",
+"1": "apex_star_scholar"
+},
+"406": {
+"0": "apex_mountain_porter"
+},
+"407": {
+"0": "apex_mountain_porter"
+},
+"409": {
+"0": "apex_summit_climber"
+},
+"411": {
+"0": "apex_prime_hopeful",
+"1": "apex_star_scholar"
+},
+"412": {
+"0": "apex_telescope_tech"
+},
+"413": {
+"1": "apex_prime_hopeful"
+},
+"414": {
+"0": "apex_mountain_porter",
+"1": "apex_star_scholar"
+},
+"415": {
+"0": "apex_telescope_tech",
+"1": "apex_star_scholar"
+},
+"416": {
+"1": "apex_summit_climber"
+},
+"419": {
+"1": "apex_quorum_delegate"
+},
+"420": {
+"0": "apex_telescope_tech",
+"1": "apex_star_scholar"
+},
+"421": {
+"0": "apex_telescope_tech"
+},
+"422": {
+"0": "apex_mountain_porter",
+"1": "apex_prime_hopeful"
+},
+"423": {
+"0": "apex_mountain_porter",
+"1": "apex_prime_hopeful"
+},
+"424": {
+"0": "apex_telescope_tech"
+},
+"425": {
+"0": "apex_telescope_tech",
+"1": "apex_star_scholar"
+},
+"426": {
+"1": "apex_prime_hopeful"
+},
+"427": {
+"1": "apex_telescope_tech",
+"2": "apex_prime_hopeful"
+},
+"428": {
+"0": "apex_summit_climber"
+},
+"429": {
+"0": "apex_mountain_porter"
+},
+"430": {
+"0": "apex_relay_engineer",
+"1": "apex_observatory_kid",
+"2": "apex_telescope_tech"
+},
+"431": {
+"0": "miner",
+"1": "apex_prime_hopeful"
+},
+"432": {
+"0": "dustara_dune_farmer"
+},
+"434": {
+"0": "apex_quorum_delegate",
+"1": "apex_summit_climber"
+},
+"436": {
+"0": "dustara_crater_stargazer",
+"1": "dustara_seedpod_hunter"
+},
+"438": {
+"1": "dustara_seedpod_hunter"
+},
+"441": {
+"0": "pyros_obsidian_carver",
+"1": "dustara_sand_ranger"
+},
+"442": {
+"0": "ferrox_forge_smith"
+},
+"443": {
+"0": "starfall_meteor_prospector"
+},
+"444": {
+"0": "dustara_dune_farmer"
+},
+"445": {
+"0": "dustara_seedpod_hunter",
+"1": "dustara_mesa_mechanic"
+},
+"446": {
+"0": "dustara_mesa_mechanic",
+"1": "dustara_dune_farmer"
+},
+"447": {
+"0": "dustara_dune_farmer",
+"1": "dustara_seedpod_hunter"
+},
+"453": {
+"0": "dustara_dune_farmer",
+"1": "dustara_seedpod_hunter"
+},
+"458": {
+"0": "dustara_mesa_mechanic",
+"1": "dustara_spice_vendor"
+},
+"460": {
+"0": "dustara_canyon_courier",
+"1": "dustara_mesa_mechanic"
+},
+"462": {
+"0": "dustara_sand_ranger",
+"1": "dustara_canyon_courier"
+},
+"464": {
+"0": "dustara_mesa_mechanic",
+"1": "dustara_spice_vendor"
+},
+"465": {
+"0": "dustara_canyon_courier",
+"1": "dustara_sand_ranger"
+},
+"466": {
+"0": "dustara_spice_vendor",
+"1": "dustara_canyon_courier"
+},
+"467": {
+"0": "dustara_crater_stargazer"
+},
+"468": {
+"0": "dustara_dune_farmer",
+"1": "dustara_spice_vendor"
+},
+"470": {
+"0": "dustara_mesa_mechanic",
+"1": "townsfolk"
+},
+"471": {
+"0": "dustara_desert_elder",
+"1": "dustara_dune_farmer"
+},
+"472": {
+"0": "dustara_dune_farmer"
+},
+"476": {
+"0": "ferrox_salvage_trader",
+"1": "ferrox_scrap_picker"
+},
+"478": {
+"1": "ferrox_rail_conductor"
+},
+"481": {
+"0": "ferrox_forge_smith",
+"1": "ferrox_salvage_trader"
+},
+"482": {
+"0": "ferrox_forge_smith"
+},
+"483": {
+"0": "ferrox_forge_smith"
+},
+"484": {
+"0": "ferrox_forge_smith"
+},
+"485": {
+"0": "ferrox_weld_apprentice",
+"1": "ferrox_scrap_picker",
+"3": "ferrox_ferrox_foreman"
+},
+"486": {
+"0": "ferrox_scrap_picker",
+"1": "ferrox_forge_smith"
+},
+"487": {
+"0": "ferrox_forge_smith"
+},
+"488": {
+"1": "ferrox_scrap_picker"
+},
+"489": {
+"0": "ferrox_weld_apprentice",
+"2": "ferrox_crane_operator",
+"3": "ferrox_forge_smith"
+},
+"490": {
+"0": "ferrox_forge_smith"
+},
+"491": {
+"1": "ferrox_crane_operator"
+},
+"494": {
+"0": "ferrox_rail_conductor",
+"1": "explorer",
+"3": "ferrox_scrap_picker"
+},
+"495": {
+"0": "ferrox_rust_tinkerer",
+"1": "ferrox_crane_operator"
+},
+"496": {
+"0": "researcher"
+},
+"497": {
+"0": "ferrox_rail_conductor",
+"1": "ferrox_forge_smith"
+},
+"498": {
+"0": "ferrox_salvage_trader"
+},
+"499": {
+"0": "ferrox_crane_operator",
+"1": "ferrox_weld_apprentice"
+},
+"500": {
+"0": "ferrox_ferrox_foreman"
+},
+"502": {
+"0": "ferrox_rust_tinkerer"
+},
+"505": {
+"0": "ferrox_weld_apprentice",
+"1": "townsfolk",
+"2": "ferrox_forge_smith"
+},
+"506": {
+"0": "ferrox_crane_operator",
+"1": "ferrox_salvage_trader",
+"2": "pyros_spring_keeper",
+"3": "ferrox_scrap_picker"
+},
+"507": {
+"0": "dustara_dune_farmer"
+},
+"511": {
+"0": "glacia_snow_researcher",
+"1": "glacia_ice_climber",
+"2": "glacia_aurora_watcher"
+},
+"512": {
+"1": "glacia_aurora_watcher"
+},
+"514": {
+"0": "glacia_sled_courier",
+"1": "technician"
+},
+"518": {
+"0": "technician",
+"1": "glacia_snow_researcher"
+},
+"519": {
+"0": "glacia_aurora_watcher",
+"1": "glacia_sled_courier"
+},
+"520": {
+"0": "glacia_sled_courier",
+"1": "technician"
+},
+"521": {
+"0": "technician",
+"1": "glacia_aurora_watcher"
+},
+"522": {
+"0": "technician",
+"1": "glacia_sled_courier",
+"2": "glacia_snow_researcher",
+"3": "glacia_ice_climber"
+},
+"523": {
+"0": "glacia_ice_climber",
+"1": "technician"
+},
+"524": {
+"0": "glacia_ice_climber",
+"1": "glacia_sled_courier"
+},
+"525": {
+"0": "pilgrim",
+"1": "glacia_ice_climber",
+"2": "glacia_snow_researcher",
+"3": "glacia_sled_courier"
+},
+"526": {
+"0": "glacia_aurora_watcher",
+"1": "pyros_obsidian_carver",
+"2": "glacia_sled_courier",
+"3": "technician"
+},
+"527": {
+"0": "glacia_aurora_watcher",
+"1": "technician"
+},
+"528": {
+"0": "glacia_aurora_watcher"
+},
+"529": {
+"0": "glacia_sled_courier",
+"1": "glacia_ice_climber"
+},
+"530": {
+"0": "glacia_aurora_watcher",
+"1": "glacia_frost_baker"
+},
+"531": {
+"0": "glacia_ice_fisher",
+"1": "glacia_sled_courier"
+},
+"532": {
+"0": "glacia_frost_baker",
+"1": "glacia_aurora_watcher"
+},
+"534": {
+"0": "glacia_snow_researcher"
+},
+"537": {
+"0": "glacia_aurora_watcher",
+"1": "glacia_snowball_kid"
+},
+"538": {
+"0": "miner",
+"1": "glacia_fur_trader"
+},
+"539": {
+"0": "helix_hydro_gardener"
+},
+"541": {
+"0": "glacia_snow_researcher",
+"1": "glacia_ice_climber"
+},
+"543": {
+"0": "glyphos_chime_keeper",
+"1": "pilgrim",
+"2": "glyphos_mural_copyist"
+},
+"545": {
+"1": "glyphos_jungle_guide"
+},
+"548": {
+"0": "glyphos_rune_scholar",
+"1": "glyphos_mural_copyist"
+},
+"549": {
+"0": "thalassa_pearl_diver"
+},
+"550": {
+"0": "glyphos_relic_porter"
+},
+"551": {
+"0": "glyphos_jungle_guide"
+},
+"552": {
+"0": "glyphos_jungle_guide",
+"1": "glyphos_archaeologist",
+"2": "glyphos_chime_keeper"
+},
+"553": {
+"0": "glyphos_chime_keeper",
+"1": "glyphos_mural_copyist"
+},
+"554": {
+"0": "glyphos_rune_scholar",
+"1": "glyphos_mural_copyist"
+},
+"555": {
+"0": "glyphos_rune_scholar",
+"1": "glyphos_chime_keeper"
+},
+"556": {
+"0": "glyphos_rune_scholar",
+"1": "glyphos_chime_keeper",
+"2": "pilgrim",
+"3": "glyphos_archaeologist"
+},
+"557": {
+"0": "glyphos_archaeologist",
+"1": "thalassa_fishmonger"
+},
+"558": {
+"0": "glyphos_mural_copyist",
+"1": "glyphos_chime_keeper"
+},
+"559": {
+"0": "sporeholm_bog_fisher",
+"1": "glacia_ice_fisher"
+},
+"560": {
+"0": "glyphos_archaeologist",
+"1": "glyphos_mural_copyist"
+},
+"561": {
+"0": "glyphos_jungle_guide",
+"1": "glyphos_chime_keeper"
+},
+"562": {
+"0": "glyphos_archaeologist",
+"1": "glyphos_jungle_guide"
+},
+"563": {
+"0": "glyphos_camp_cook",
+"1": "umbra_mine_watchman"
+},
+"564": {
+"0": "glyphos_mural_copyist",
+"1": "glyphos_chime_keeper"
+},
+"566": {
+"0": "glyphos_chime_keeper",
+"1": "glyphos_ruins_kid"
+},
+"567": {
+"0": "miner",
+"1": "glyphos_mural_copyist"
+},
+"568": {
+"0": "sporeholm_mushroom_forager"
+},
+"570": {
+"0": "glyphos_rune_scholar",
+"1": "glyphos_relic_porter"
+},
+"571": {
+"0": "glyphos_chime_keeper",
+"1": "glyphos_rune_scholar"
+},
+"572": {
+"0": "glyphos_archaeologist",
+"1": "glyphos_rune_scholar"
+},
+"573": {
+"0": "halo_sky_postman",
+"1": "halo_starwatch_monk",
+"2": "halo_sky_pilgrim"
+},
+"575": {
+"1": "halo_cloud_farmer"
+},
+"578": {
+"0": "halo_sky_postman",
+"1": "halo_sky_pilgrim"
+},
+"579": {
+"0": "halo_sky_postman"
+},
+"580": {
+"0": "starfall_meteor_prospector"
+},
+"581": {
+"0": "halo_sky_postman"
+},
+"582": {
+"0": "halo_wind_glider",
+"1": "halo_sky_pilgrim",
+"2": "halo_starwatch_monk",
+"3": "researcher"
+},
+"583": {
+"0": "halo_starwatch_monk",
+"1": "halo_bellringer"
+},
+"584": {
+"0": "halo_starwatch_monk",
+"1": "halo_bellringer"
+},
+"585": {
+"0": "halo_bellringer",
+"1": "halo_starwatch_monk"
+},
+"586": {
+"0": "halo_starwatch_monk",
+"1": "halo_bellringer"
+},
+"587": {
+"0": "halo_starwatch_monk",
+"1": "halo_bellringer",
+"2": "halo_sky_pilgrim",
+"3": "pilgrim"
+},
+"588": {
+"0": "halo_bellringer",
+"1": "halo_wind_glider"
+},
+"589": {
+"0": "halo_starwatch_monk",
+"1": "halo_bellringer"
+},
+"590": {
+"0": "halo_starwatch_monk",
+"1": "halo_sky_pilgrim",
+"2": "halo_bellringer",
+"3": "pilgrim"
+},
+"591": {
+"0": "halo_cloud_farmer",
+"1": "halo_starwatch_monk"
+},
+"592": {
+"0": "halo_wind_glider"
+},
+"593": {
+"0": "halo_sky_postman",
+"1": "halo_starwatch_monk"
+},
+"594": {
+"0": "halo_cloud_farmer",
+"1": "halo_feather_weaver"
+},
+"597": {
+"1": "halo_sky_pilgrim",
+"2": "halo_starwatch_monk"
+},
+"600": {
+"0": "halo_starwatch_monk",
+"1": "halo_kite_kid"
+},
+"601": {
+"0": "miner",
+"1": "halo_sky_pilgrim"
+},
+"602": {
+"0": "halo_cloud_farmer"
+},
+"604": {
+"0": "halo_cloud_farmer",
+"1": "halo_wind_glider"
+},
+"605": {
+"0": "helix_helix_grunt",
+"1": "helix_station_engineer",
+"2": "helix_freed_captive"
+},
+"606": {
+"1": "helix_service_droid"
+},
+"608": {
+"0": "pyros_obsidian_carver",
+"1": "helix_service_droid"
+},
+"609": {
+"0": "helix_freed_captive"
+},
+"610": {
+"0": "helix_station_engineer"
+},
+"611": {
+"0": "miner"
+},
+"612": {
+"1": "helix_lab_assistant"
+},
+"613": {
+"0": "helix_lab_assistant"
+},
+"615": {
+"1": "helix_lab_assistant"
+},
+"616": {
+"0": "helix_lab_assistant",
+"1": "helix_freed_captive"
+},
+"618": {
+"1": "helix_lab_assistant"
+},
+"619": {
+"0": "helix_lab_assistant"
+},
+"621": {
+"0": "helix_hydro_gardener",
+"1": "helix_lab_assistant"
+},
+"622": {
+"0": "helix_lab_assistant"
+},
+"623": {
+"0": "helix_service_droid",
+"1": "neonis_holo_promoter"
+},
+"624": {
+"1": "helix_station_engineer"
+},
+"626": {
+"0": "helix_freed_captive"
+},
+"627": {
+"0": "helix_lab_assistant"
+},
+"628": {
+"0": "helix_helix_grunt"
+},
+"629": {
+"0": "helix_service_droid",
+"1": "helix_station_kid"
+},
+"630": {
+"0": "helix_helix_grunt",
+"1": "helix_station_engineer"
+},
+"632": {
+"0": "helix_hydro_gardener",
+"1": "helix_lab_assistant"
+},
+"634": {
+"0": "helix_docking_pilot",
+"1": "helix_freed_captive"
+},
+"635": {
+"0": "neonis_neon_skater",
+"1": "neonis_neon_raver"
+},
+"636": {
+"1": "neonis_holo_promoter"
+},
+"639": {
+"0": "neonis_night_courier",
+"1": "neonis_glitch_hunter"
+},
+"640": {
+"0": "neonis_night_courier"
+},
+"641": {
+"0": "neonis_neon_raver"
+},
+"642": {
+"0": "neonis_neon_skater"
+},
+"643": {
+"0": "neonis_glitch_hunter",
+"1": "neonis_night_courier"
+},
+"644": {
+"0": "neonis_noodle_cook",
+"1": "neonis_night_courier",
+"2": "explorer",
+"3": "neonis_neon_raver"
+},
+"645": {
+"0": "neonis_neon_raver",
+"1": "neonis_glitch_hunter"
+},
+"646": {
+"0": "neonis_glitch_hunter",
+"1": "neonis_night_courier"
+},
+"647": {
+"0": "neonis_cable_tech",
+"1": "neonis_holo_promoter",
+"2": "neonis_night_courier",
+"3": "neonis_neon_skater"
+},
+"648": {
+"0": "neonis_holo_promoter",
+"1": "neonis_cable_tech"
+},
+"650": {
+"0": "thalassa_fishmonger",
+"1": "thalassa_pearl_diver"
+},
+"651": {
+"0": "neonis_neon_raver",
+"1": "neonis_cable_tech"
+},
+"652": {
+"0": "neonis_noodle_cook",
+"1": "neonis_night_courier"
+},
+"653": {
+"0": "neonis_glitch_hunter"
+},
+"654": {
+"0": "halo_cloud_farmer",
+"1": "neonis_cable_tech"
+},
+"656": {
+"0": "neonis_holo_promoter",
+"1": "pilgrim"
+},
+"657": {
+"0": "neonis_night_courier",
+"1": "neonis_neon_skater"
+},
+"659": {
+"0": "neonis_neon_raver",
+"2": "neonis_holo_promoter"
+},
+"662": {
+"0": "neonis_cable_tech",
+"1": "neonis_arcade_kid"
+},
+"663": {
+"0": "miner",
+"1": "neonis_night_courier"
+},
+"664": {
+"0": "halo_cloud_farmer"
+},
+"666": {
+"0": "neonis_glitch_hunter",
+"1": "neonis_night_courier"
+},
+"668": {
+"0": "pyros_drill_operator",
+"1": "pyros_lava_miner"
+},
+"670": {
+"1": "pyros_lamplighter"
+},
+"673": {
+"0": "pyros_obsidian_carver",
+"1": "pyros_drill_operator"
+},
+"677": {
+"0": "pyros_lamplighter",
+"1": "pyros_obsidian_carver"
+},
+"678": {
+"0": "pyros_lava_miner",
+"1": "pyros_obsidian_carver"
+},
+"679": {
+"0": "pyros_lava_miner",
+"1": "pyros_obsidian_carver"
+},
+"680": {
+"0": "pyros_fire_warden",
+"1": "pyros_drill_operator"
+},
+"681": {
+"0": "pyros_spring_keeper",
+"1": "pyros_lamplighter"
+},
+"682": {
+"0": "pyros_drill_operator",
+"1": "pyros_lava_miner",
+"2": "pyros_obsidian_carver",
+"3": "pyros_fire_warden"
+},
+"683": {
+"0": "pyros_obsidian_carver",
+"1": "pyros_lava_miner"
+},
+"684": {
+"0": "pyros_drill_operator",
+"1": "explorer",
+"2": "pyros_lava_miner",
+"3": "pyros_obsidian_carver"
+},
+"685": {
+"0": "pyros_lava_miner",
+"1": "pyros_spring_keeper"
+},
+"686": {
+"0": "pyros_ash_elder",
+"1": "pyros_fire_warden"
+},
+"687": {
+"0": "researcher"
+},
+"688": {
+"0": "explorer",
+"1": "pyros_fire_warden"
+},
+"689": {
+"0": "pyros_spring_keeper",
+"1": "pyros_obsidian_carver"
+},
+"690": {
+"0": "pyros_obsidian_carver",
+"1": "pyros_drill_operator"
+},
+"691": {
+"0": "pyros_ash_elder"
+},
+"693": {
+"0": "pyros_lava_miner"
+},
+"696": {
+"0": "pyros_drill_operator",
+"1": "pyros_cinder_kid"
+},
+"697": {
+"0": "pyros_ash_elder",
+"1": "pyros_lamplighter"
+},
+"698": {
+"0": "halo_cloud_farmer"
+},
+"700": {
+"0": "pyros_drill_operator",
+"1": "explorer"
+},
+"702": {
+"0": "sporeholm_mushroom_forager",
+"2": "sporeholm_moss_ranger"
+},
+"704": {
+"1": "sporeholm_spore_singer"
+},
+"707": {
+"0": "sporeholm_moss_ranger",
+"1": "explorer"
+},
+"709": {
+"0": "sporeholm_bog_fisher",
+"1": "sporeholm_spore_researcher"
+},
+"710": {
+"0": "sporeholm_moss_ranger"
+},
+"711": {
+"0": "sporeholm_spore_researcher",
+"1": "sporeholm_moss_ranger",
+"3": "researcher"
+},
+"712": {
+"0": "sporeholm_spore_researcher",
+"1": "sporeholm_moss_ranger"
+},
+"713": {
+"0": "sporeholm_moss_ranger"
+},
+"714": {
+"0": "sporeholm_spore_singer",
+"3": "sporeholm_spore_researcher"
+},
+"715": {
+"0": "sporeholm_spore_researcher",
+"1": "sporeholm_moss_ranger"
+},
+"716": {
+"1": "sporeholm_moss_ranger",
+"2": "explorer"
+},
+"718": {
+"0": "sporeholm_bog_fisher",
+"1": "sporeholm_moss_ranger"
+},
+"719": {
+"0": "sporeholm_spore_researcher",
+"1": "sporeholm_moss_ranger"
+},
+"720": {
+"0": "sporeholm_moss_ranger"
+},
+"721": {
+"0": "sporeholm_mushroom_forager"
+},
+"722": {
+"0": "sporeholm_spore_researcher",
+"1": "sporeholm_spore_singer"
+},
+"723": {
+"0": "sporeholm_spore_singer"
+},
+"725": {
+"0": "sporeholm_stilt_builder"
+},
+"728": {
+"0": "sporeholm_bog_fisher",
+"1": "sporeholm_firefly_kid"
+},
+"729": {
+"0": "sporeholm_swamp_herbalist"
+},
+"730": {
+"0": "sporeholm_mushroom_forager"
+},
+"733": {
+"0": "sporeholm_bog_fisher",
+"1": "sporeholm_moss_ranger"
+},
+"736": {
+"0": "starfall_seedpod_collector",
+"1": "pilgrim"
+},
+"738": {
+"1": "starfall_signal_operator"
+},
+"741": {
+"0": "pilgrim",
+"1": "starfall_camp_medic"
+},
+"742": {
+"0": "starfall_rift_surveyor"
+},
+"743": {
+"0": "starfall_rift_surveyor"
+},
+"744": {
+"0": "starfall_rift_surveyor"
+},
+"745": {
+"0": "pilgrim",
+"1": "starfall_rift_surveyor"
+},
+"746": {
+"0": "starfall_rift_surveyor"
+},
+"747": {
+"1": "pilgrim"
+},
+"748": {
+"0": "pilgrim",
+"1": "starfall_rift_surveyor"
+},
+"750": {
+"1": "pilgrim"
+},
+"751": {
+"0": "pilgrim",
+"1": "starfall_seedpod_collector"
+},
+"752": {
+"0": "starfall_seedpod_collector",
+"1": "starfall_rift_surveyor"
+},
+"753": {
+"1": "pilgrim"
+},
+"754": {
+"0": "pilgrim",
+"1": "starfall_meteor_prospector",
+"2": "starfall_containment_officer",
+"3": "starfall_rift_surveyor"
+},
+"755": {
+"0": "starfall_rift_surveyor",
+"1": "researcher"
+},
+"756": {
+"0": "starfall_containment_officer",
+"1": "ystra_seedkeeper"
+},
+"757": {
+"0": "starfall_rift_surveyor",
+"1": "starfall_rim_cook"
+},
+"758": {
+"0": "starfall_rift_surveyor"
+},
+"763": {
+"0": "starfall_meteor_prospector",
+"1": "starfall_starchart_kid",
+"2": "starfall_camp_medic"
+},
+"764": {
+"0": "miner",
+"1": "starfall_rift_surveyor"
+},
+"765": {
+"0": "helix_hydro_gardener"
+},
+"767": {
+"0": "starfall_rift_surveyor",
+"1": "starfall_seedpod_collector"
+},
+"768": {
+"0": "thalassa_coral_researcher"
+},
+"769": {
+"1": "thalassa_shipwright"
+},
+"772": {
+"0": "thalassa_harbor_sailor",
+"1": "wanderer"
+},
+"774": {
+"0": "thalassa_dock_hand"
+},
+"775": {
+"0": "wanderer"
+},
+"777": {
+"1": "thalassa_dock_hand"
+},
+"778": {
+"0": "thalassa_dock_hand"
+},
+"779": {
+"0": "thalassa_dock_hand"
+},
+"780": {
+"0": "thalassa_fishmonger",
+"3": "thalassa_dock_hand"
+},
+"781": {
+"0": "thalassa_coral_researcher",
+"1": "pilgrim",
+"3": "thalassa_harbor_sailor"
+},
+"783": {
+"0": "thalassa_dock_hand",
+"1": "thalassa_harbor_sailor"
+},
+"784": {
+"0": "thalassa_harbor_sailor"
+},
+"785": {
+"0": "thalassa_harbor_sailor",
+"1": "thalassa_pearl_diver"
+},
+"786": {
+"1": "thalassa_shipwright"
+},
+"787": {
+"0": "thalassa_coral_researcher"
+},
+"790": {
+"0": "wanderer",
+"1": "thalassa_shipwright"
+},
+"791": {
+"0": "thalassa_pearl_diver"
+},
+"792": {
+"0": "thalassa_shipwright",
+"1": "thalassa_fishmonger"
+},
+"795": {
+"0": "thalassa_pearl_diver"
+},
+"799": {
+"0": "thalassa_shipwright",
+"1": "thalassa_beach_kid",
+"2": "thalassa_coral_researcher"
+},
+"800": {
+"0": "thalassa_lighthouse_keeper",
+"1": "thalassa_harbor_sailor"
+},
+"801": {
+"0": "helix_hydro_gardener"
+},
+"803": {
+"0": "thalassa_shipwright"
+},
+"804": {
+"0": "thalassa_coral_researcher",
+"1": "thalassa_dock_hand"
+},
+"807": {
+"0": "umbra_veiled_mourner",
+"1": "umbra_lantern_lighter",
+"2": "technician"
+},
+"809": {
+"1": "umbra_shadow_mapper"
+},
+"812": {
+"0": "umbra_shadow_mapper",
+"1": "explorer"
+},
+"813": {
+"0": "umbra_veiled_mourner"
+},
+"814": {
+"0": "umbra_mine_watchman"
+},
+"815": {
+"0": "umbra_shadow_mapper"
+},
+"816": {
+"0": "umbra_lantern_lighter",
+"1": "technician",
+"2": "helix_station_engineer",
+"3": "umbra_veiled_mourner"
+},
+"817": {
+"0": "umbra_veiled_mourner",
+"1": "umbra_shadow_mapper",
+"2": "umbra_lantern_lighter",
+"3": "explorer"
+},
+"818": {
+"0": "umbra_shadow_mapper",
+"1": "technician"
+},
+"819": {
+"0": "technician",
+"1": "umbra_veiled_mourner"
+},
+"820": {
+"0": "umbra_veiled_mourner",
+"1": "umbra_shadow_mapper"
+},
+"821": {
+"0": "umbra_shadow_mapper",
+"1": "technician"
+},
+"822": {
+"0": "technician",
+"1": "umbra_veiled_mourner"
+},
+"823": {
+"0": "umbra_shadow_mapper",
+"1": "umbra_veiled_mourner"
+},
+"824": {
+"0": "umbra_shadow_mapper",
+"1": "technician"
+},
+"825": {
+"0": "technician",
+"1": "umbra_veiled_mourner"
+},
+"826": {
+"0": "umbra_void_researcher"
+},
+"827": {
+"0": "umbra_shadow_mapper",
+"1": "umbra_veiled_mourner"
+},
+"828": {
+"0": "umbra_veiled_mourner",
+"1": "umbra_night_vendor"
+},
+"829": {
+"0": "umbra_night_vendor",
+"1": "umbra_shadow_mapper"
+},
+"830": {
+"0": "umbra_gravekeeper"
+},
+"833": {
+"0": "umbra_lantern_lighter"
+},
+"836": {
+"0": "umbra_mine_watchman",
+"1": "umbra_ghost_story_kid"
+},
+"837": {
+"0": "umbra_gravekeeper",
+"1": "umbra_void_researcher"
+},
+"838": {
+"0": "ystra_seedkeeper"
+},
+"840": {
+"0": "umbra_mine_watchman",
+"1": "umbra_shadow_mapper"
+},
+"842": {
+"0": "ystra_memory_keeper",
+"1": "ystra_blight_cleanser",
+"2": "pilgrim"
+},
+"843": {
+"1": "ystra_seedkeeper"
+},
+"845": {
+"0": "ystra_memory_keeper",
+"1": "ystra_blight_cleanser"
+},
+"846": {
+"0": "ystra_fragment_wanderer"
+},
+"847": {
+"0": "ystra_fragment_wanderer"
+},
+"848": {
+"0": "ystra_memory_keeper"
+},
+"849": {
+"1": "ystra_blight_cleanser"
+},
+"850": {
+"0": "ystra_memory_keeper",
+"1": "ystra_blight_cleanser"
+},
+"851": {
+"0": "ystra_blight_cleanser"
+},
+"852": {
+"0": "ystra_memory_keeper",
+"1": "ystra_fragment_wanderer"
+},
+"853": {
+"0": "ystra_memory_keeper",
+"1": "ystra_blight_cleanser"
+},
+"854": {
+"0": "ystra_blight_cleanser"
+},
+"855": {
+"1": "ystra_memory_keeper"
+},
+"856": {
+"0": "ystra_blight_cleanser",
+"1": "ystra_memory_keeper"
+},
+"857": {
+"0": "ystra_blight_cleanser"
+},
+"858": {
+"0": "ystra_fragment_wanderer",
+"1": "ystra_blight_cleanser"
+},
+"859": {
+"0": "ystra_blight_cleanser",
+"1": "researcher"
+},
+"860": {
+"0": "ystra_ystran_elder"
+},
+"861": {
+"0": "ystra_ystran_scout",
+"1": "ystra_memory_keeper"
+},
+"862": {
+"1": "ystra_ystran_scout"
+},
+"863": {
+"0": "ystra_ystran_artisan",
+"1": "ystra_echo_child",
+"2": "ystra_blight_cleanser"
+},
+"864": {
+"0": "ystra_ystran_elder",
+"1": "ystra_memory_keeper"
+},
+"865": {
+"0": "ystra_seedkeeper"
+},
+"867": {
+"0": "ystra_ystran_scout",
+"1": "ystra_fragment_wanderer"
+},
+"874": {
+"0": "dustara_crater_stargazer",
+"1": "dustara_seedpod_hunter",
+"2": "dustara_mesa_mechanic"
+},
+"875": {
+"0": "dustara_sand_ranger"
+},
+"876": {
+"0": "dustara_seedpod_hunter",
+"1": "dustara_mesa_mechanic",
+"2": "dustara_canyon_courier",
+"3": "technician"
+},
+"877": {
+"0": "dustara_sand_ranger"
+},
+"879": {
+"0": "dustara_canyon_courier",
+"1": "dustara_seedpod_hunter"
+},
+"880": {
+"0": "ferrox_rust_tinkerer",
+"1": "ferrox_forge_smith"
+},
+"881": {
+"1": "ferrox_ferrox_foreman"
+},
+"882": {
+"0": "glacia_ice_climber",
+"1": "glacia_aurora_watcher",
+"2": "glacia_sled_courier"
+},
+"883": {
+"0": "glacia_sled_courier",
+"1": "technician"
+},
+"884": {
+"0": "glyphos_relic_porter"
+},
+"885": {
+"0": "glyphos_archaeologist",
+"1": "glyphos_rune_scholar",
+"2": "glyphos_chime_keeper"
+},
+"886": {
+"0": "glyphos_camp_cook"
+},
+"887": {
+"0": "glyphos_chime_keeper",
+"1": "glyphos_archaeologist",
+"2": "glyphos_mural_copyist",
+"3": "pilgrim"
+},
+"888": {
+"0": "glyphos_mural_copyist"
+},
+"889": {
+"0": "halo_sky_pilgrim"
+},
+"890": {
+"0": "halo_starwatch_monk",
+"1": "halo_sky_pilgrim",
+"2": "halo_bellringer"
+},
+"891": {
+"0": "glacia_ice_fisher",
+"1": "halo_bellringer",
+"2": "halo_starwatch_monk"
+},
+"892": {
+"0": "halo_starwatch_monk",
+"1": "halo_sky_pilgrim"
+},
+"894": {
+"1": "helix_lab_assistant"
+},
+"895": {
+"0": "neonis_night_courier",
+"1": "neonis_cable_tech",
+"2": "wanderer"
+},
+"896": {
+"0": "neonis_night_courier",
+"1": "neonis_neon_raver"
+},
+"897": {
+"0": "pyros_lamplighter",
+"1": "pyros_obsidian_carver",
+"2": "pyros_lava_miner"
+},
+"898": {
+"0": "pyros_obsidian_carver",
+"1": "pyros_spring_keeper"
+},
+"899": {
+"0": "sporeholm_moss_ranger"
+},
+"900": {
+"0": "sporeholm_spore_researcher",
+"2": "researcher"
+},
+"901": {
+"0": "starfall_seedpod_collector"
+},
+"902": {
+"0": "starfall_rift_surveyor",
+"1": "researcher"
+},
+"903": {
+"0": "starfall_rift_surveyor",
+"2": "pilgrim"
+},
+"904": {
+"0": "pilgrim",
+"1": "starfall_rift_surveyor"
+},
+"905": {
+"0": "umbra_lantern_lighter",
+"1": "umbra_shadow_mapper",
+"2": "technician"
+},
+"906": {
+"0": "umbra_veiled_mourner",
+"1": "technician",
+"2": "umbra_lantern_lighter"
+},
+"907": {
+"0": "umbra_lantern_lighter",
+"1": "umbra_shadow_mapper"
+},
+"908": {
+"0": "ystra_ystran_scout"
+},
+"909": {
+"0": "researcher",
+"2": "ystra_memory_keeper"
+},
+"910": {
+"0": "helix_helix_grunt"
+},
+"911": {
+"0": "ystra_fragment_wanderer",
+"1": "ystra_memory_keeper",
+"3": "ystra_blight_cleanser"
+},
+"913": {
+"0": "thalassa_fishmonger",
+"1": "ystra_blight_cleanser",
+"2": "ystra_memory_keeper"
+},
+"914": {
+"0": "ystra_memory_keeper"
+},
+"916": {
+"1": "dustara_canyon_courier"
+},
+"917": {
+"0": "dustara_mesa_mechanic",
+"1": "dustara_dune_farmer"
+},
+"918": {
+"0": "dustara_sand_ranger",
+"1": "dustara_seedpod_hunter"
+},
+"919": {
+"0": "ferrox_forge_smith"
+},
+"920": {
+"1": "ferrox_crane_operator"
+},
+"921": {
+"1": "sporeholm_spore_researcher"
+},
+"922": {
+"0": "sporeholm_spore_researcher",
+"1": "sporeholm_moss_ranger"
+},
+"924": {
+"1": "thalassa_fishmonger"
+},
+"925": {
+"0": "neonis_cable_tech",
+"1": "neonis_night_courier"
+},
+"926": {
+"0": "neonis_night_courier",
+"1": "neonis_neon_skater"
+},
+"927": {
+"0": "glyphos_archaeologist",
+"1": "glyphos_chime_keeper"
+},
+"928": {
+"0": "glyphos_chime_keeper",
+"1": "glyphos_archaeologist"
+},
+"929": {
+"0": "pyros_drill_operator",
+"1": "pyros_obsidian_carver"
+},
+"930": {
+"0": "pyros_drill_operator",
+"1": "pyros_lava_miner"
+},
+"931": {
+"0": "glacia_ice_climber",
+"1": "technician"
+},
+"932": {
+"0": "technician",
+"1": "glacia_aurora_watcher"
+},
+"933": {
+"1": "helix_lab_assistant"
+},
+"934": {
+"0": "helix_lab_assistant"
+},
+"935": {
+"0": "halo_bellringer",
+"1": "halo_starwatch_monk"
+},
+"936": {
+"0": "halo_sky_pilgrim",
+"1": "halo_starwatch_monk"
+},
+"937": {
+"0": "umbra_lantern_lighter",
+"1": "umbra_shadow_mapper"
+},
+"938": {
+"0": "umbra_shadow_mapper",
+"1": "technician"
+},
+"939": {
+"1": "pilgrim"
+},
+"940": {
+"0": "pilgrim",
+"1": "starfall_rift_surveyor"
+},
+"941": {
+"1": "apex_prime_hopeful"
+},
+"942": {
+"0": "apex_star_scholar",
+"1": "apex_telescope_tech"
+},
+"943": {
+"0": "ystra_blight_cleanser",
+"1": "ystra_memory_keeper"
+},
+"944": {
+"0": "ystra_memory_keeper"
+}
+}
