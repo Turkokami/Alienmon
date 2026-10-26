@@ -15,7 +15,7 @@ const secVis=n=>(!n.after||mDone(n.after))&&(!n.until||!mDone(n.until))&&(!n.fla
 const secNpcs=s=>(s.npcs||[]).filter(secVis);
 function secNpcAt(s,x,y){return secNpcs(s).find(n=>n.x===x&&n.y===y)}
 function secStashAt(s,x,y){return(s.objects||[]).find(o=>o.k==='stash'&&o.tile[0]===x&&o.tile[1]===y)}
-function secWalk(s,x,y){const c=secTile(s,x,y);return(c==='.'||c===','||c===':'||fluidOK(c))&&!secNpcAt(s,x,y)&&!secStashAt(s,x,y)&&!(s.id===(G.sec&&G.sec.id)&&(secQAt(x,y,true)||secMonAt(s,x,y)))}
+function secWalk(s,x,y){const c=secTile(s,x,y);return(c==='.'||c===','||c===':'||fluidOK(c))&&!secNpcAt(s,x,y)&&!secStashAt(s,x,y)&&!(s.objects||[]).some(o=>o.k==='keeper'&&o.tile[0]===x&&o.tile[1]===y)&&!(s.id===(G.sec&&G.sec.id)&&(secQAt(x,y,true)||secMonAt(s,x,y)))}
 const QCHAR=new Set(['giver','talk','turnin','trainer','legend']);
 function secQAt(x,y,chars){if(typeof qEnts!=='function')return null;return qEnts().find(e=>(!chars||QCHAR.has(e.k))&&e.k!=='beacon'&&Math.floor(e.x/16)===x&&Math.floor(e.y/16)===y)}
 function secMonAt(s,x,y){return(s.mons||[]).find(m=>m.x===x&&m.y===y&&!(G.monGone&&(s.id+':'+m.x+','+m.y) in G.monGone))}
@@ -45,7 +45,7 @@ let SSPOT=null;
 function secLos(){if(!G.party.length||!G.party.some(m=>m.hp>0))return false;const s=SWORLD[G.sec.id];for(const n of secNpcs(s)){if(!n.trainer||G.beaten[n.id])continue;const[dx,dy]=DIRS[n.face||'down'];
   for(let k=1;k<=5;k++){const x=n.x+dx*k,y=n.y+dy*k;if(x===G.sec.x&&y===G.sec.y){if(!n.home)n.home=[n.x,n.y];SSPOT={n,t:36,walk:0,steps:k-1};exclaimSfx();face=({up:'down',down:'up',left:'right',right:'left'})[n.face||'down'];return true}if(!secWalk(s,x,y))break}}return false}
 // shared houses: one room per planet; the doormat ('back') returns you to the door you came in by
-function secHouse(s,o){if(!SWORLD[o.to])return say('The door is locked. Nobody seems to be home.');G.houseBack={id:s.id,at:[G.sec.x,G.sec.y]};secWarp({to:o.to,at:(SWORLD[o.to].spawns||{}).default||[7,12],face:'up',kind:'door'})}
+function secHouse(s,o){if(!SWORLD[o.to])return say('The door is locked. Nobody seems to be home.');G.houseBack={id:s.id,at:[G.sec.x,G.sec.y],title:o.title||null};   /* a shared room can carry this town's name (Port Ember's healing centre) */secWarp({to:o.to,at:(SWORLD[o.to].spawns||{}).default||[7,12],face:'up',kind:'door'})}
 function secHouseBack(){const s=SWORLD[G.sec.id],b=G.houseBack&&SWORLD[G.houseBack.id]?G.houseBack:null,p=SWORLD[s.parent];G.houseBack=null;
  SFADE={t:0,go:()=>{if(b)enterSection(b.id,b.at,'down');else if(p){const dw=(p.warps||[]).find(w=>w.to===s.id);enterSection(p.id,dw?[dw.tile[0],dw.tile[1]+1]:(p.spawns||{}).default||p.spawns.arrival,'down')}doorSfx()}}}
 function secArrive(){SBLK=null;const s=SWORLD[G.sec.id],w=s.warps.find(w=>w.tile[0]===G.sec.x&&w.tile[1]===G.sec.y);if(w&&w.to==='back')return secHouseBack();if(w&&w.kind==='gate')return secGate(w);if(w&&SWORLD[w.to])return secWarp(w);
@@ -67,10 +67,10 @@ function secBackThroughGate(){const b=G.secBack;if(!b||!SWORLD[b.id])return fals
 function secLeaveForShip(){if(G.secBack&&SWORLD[G.secBack.id])return say(G.sec.id==='164'?'The shuttle back to the Molten Frontier.':'The gate back to the Molten Frontier.',()=>choose('Go back through the gate?',['Yes','No'],i=>{if(i===0)secBackThroughGate()}));if(!shipOK())return say(['The landing pad. Your ship sits waiting, but it has no launch clearance yet.',SHIP_NO]);say('This path leads back to the landing pad.',()=>choose('Board your ship?',['Yes','No'],i=>{if(i===0){G.sec=null;teleportToShip()}}))}
 function secInteract(){const s=SWORLD[G.sec.id],[dx,dy]=DIRS[face],x=G.sec.x+dx,y=G.sec.y+dy;
  const own=secQAt(G.sec.x,G.sec.y,false);if(own&&own.k==='prop')return qInteract(own);   // a quest pickup under your feet counts too
- const qe=secQAt(x,y,false);if(qe&&(!secNpcAt(s,x,y)||qe.k==='giver'||qe.k==='turnin'))return qInteract(qe);   // a townsperson who offers or takes back a mission
+ const qe=secQAt(x,y,false);if(qe&&(!secNpcAt(s,x,y)||qe.k==='giver'||qe.k==='turnin'||qe.k==='trainer'))return qInteract(qe);   // a townsperson who offers or takes back a mission
  const wm=secMonAt(s,x,y);if(wm)return secMonBattle(s,wm);
- const n=secNpcAt(s,x,y);if(n){n.face=({up:'down',down:'up',left:'right',right:'left'})[face];if(n.legend)return storyLegend(n);if(n.trainer)return secTrainerTalk(n);if(n.wid){const q0=QN.length;qEvent('talk',n.wid,{x:n.x*16+8,y:n.y*16+15});if(QN.length>q0)return}if(n.story==='starter'&&!G.party.length)return secStarterTalk();if(storyNpc(n))return;if(n.story==='arena')return arenaMenu();if(n.name==='Receptionist'&&/Lobby/.test(s.name))return arenaDesk(s);return say(!G.party.length&&n.pre?n.pre:n.t,null,n.por||(n.name&&(PORT[n.art]||TALKI[n.art])?n.art:undefined))}
- const o=(s.objects||[]).find(o=>o.tile[0]===x&&o.tile[1]===y);if(!o)return secFieldA(s,x,y);
+ const n=secNpcAt(s,x,y);if(n){n.face=({up:'down',down:'up',left:'right',right:'left'})[face];if(n.legend)return storyLegend(n);if(n.trainer)return secTrainerTalk(n);if(n.wid){const q0=QN.length;qEvent('talk',n.wid,{x:n.x*16+8,y:n.y*16+15});if(QN.length>q0)return}if(n.story==='starter'&&!G.party.length)return secStarterTalk();if(storyNpc(n))return;if(/^Nurse\b/.test(n.name||'')&&G.party.length&&(s.objects||[]).some(o=>o.k==='bay')){G.singBuy=0;return bayMenu()}if(n.story==='arena')return arenaMenu();if(n.name==='Receptionist'&&/Lobby/.test(s.name))return arenaDesk(s);return say(!G.party.length&&n.pre?n.pre:n.t,null,n.por||(n.name&&(PORT[n.art]||TALKI[n.art])?n.art:undefined))}
+ const o=(s.objects||[]).find(o=>o.tile[0]===x&&o.tile[1]===y)||(s.objects||[]).find(o=>(o.k==='bay'||o.k==='shop')&&o.tile[0]===G.sec.x&&o.tile[1]===G.sec.y);if(!o)return secFieldA(s,x,y);
  if(o.k==='arena')return arenaMenu();
  if(o.k==='desk')return arenaDesk(s);if(o.k==='rta_go')return typeof rtaHub==='function'?rtaHub('planet'):exhibMenu();
  if(o.k==='rta_cups')return typeof rCupMenu==='function'?(rtaHub('planet'),rCupMenu()):say('The cups open with the Linker Arena. Coming soon!');
@@ -149,7 +149,7 @@ function drawSec(){const s=SWORLD[G.sec.id],p=SM?SM.t/SM.n:0,jp=SJ?SJ.t/(SJ.dur|
  if(SSPOT&&SSPOT.t>0){const X=SSPOT.n.x*16-cx+3,Y=SSPOT.n.y*16-cy-20;box(X,Y,10,11,'#fff','#1b1424');txt('!',X+3,Y+2,'#d7262e',7)}
  if(SDEBUG)drawSecDebug(s,cx,cy);
  if(typeof skyDraw==='function')skyDraw(s,cx,cy);nightTint();qDrawTracker(SBANNER>0?18:0);
- if(SBANNER>0){SBANNER--;box(0,0,160,18,'#1b1424','#5ff2ff');txt(s.name.replace(/^Molten Frontier: /,''),6,5,'#5ff2ff')}
+ if(SBANNER>0){SBANNER--;box(0,0,160,18,'#1b1424','#5ff2ff');txt((G.houseBack&&G.houseBack.title&&s.parent!==G.houseBack.id&&s.type==='interior'?G.houseBack.title:s.name).replace(/^Molten Frontier: /,''),6,5,'#5ff2ff')}
  if(SFADE){const a=SFADE.t<10?SFADE.t/10:(20-SFADE.t)/10;ctx.fillStyle='rgba(0,0,0,'+a.toFixed(2)+')';ctx.fillRect(0,0,160,144)}
  txt('◆'+G.shards,128,134,'#fff')}
 // 16x24 figure standing on its tile (feet on the tile's bottom edge)
@@ -179,8 +179,9 @@ function secEnabled(){if(!G)return false;if(G.sec)return true;return!(G.opt&&G.o
 function secApprentices(k){let n=0,any=false;for(const s of Object.values(SWORLD))if(s.pkey===k)for(const p of s.npcs||[])if(p.trainer&&p.trainer.app){any=true;if(!G.beaten[p.id])n++}return any?n:null}
 // the opening: wake up at home, Mom sends you to Dr. Vashti's lab, and your partner is chosen at her pod table
 const NO_PARTNER=["Wait! It's dangerous out there without an Alienmon.","Dr. Vashti is waiting at her lab: the big dome with the telescope, across the plaza."];
-function secWakeUp(){scene='planet';enterSection('002',SWORLD['002'].spawns.wake||SWORLD['002'].spawns.default,'down');
- say(['...','You wake up. Sunlight is pouring over the crater rim.','Today is the day: Dr. Vashti promised you your very first Alienmon partner!'])}
+function secWakeUp(){scene='planet';enterSection('002',SWORLD['002'].spawns.wake||SWORLD['002'].spawns.default,'down');G.seenCut=G.seenCut||{};
+ const wake=()=>say(['...','You wake up. Sunlight is pouring over the crater rim.','Today is the day: Dr. Vashti promised you your very first Alienmon partner!']),c=CUTPIC.find(c=>c.k==='cut_01');
+ if(!c||G.seenCut[c.k])return wake();G.seenCut[c.k]=1;let n=0;const go=()=>{if(okI(boardImg(c.k)))cutBoard([[c.k,[c.cap+'.'].concat(c.lines)]],wake);else if(++n<40)setTimeout(go,100);else say([c.cap+'.'].concat(c.lines),wake)};go()}
 function secStarterTalk(){say(["Dr. Vashti: There you are! Come, come.","Twenty years ago, the sky fell.","Seedpods scattered across the whole Kessler system, onto every world.","What hatched were Alienmon: refugees from a dying planet called Ystra.","Your Linker can bond with them. Three pods hatched this week, and one of them is yours.","Choose your first partner."],()=>{const go=()=>{scene='starter';ssel=0},c=CUTPIC.find(c=>c.k==='cut_02');G.seenCut=G.seenCut||{};   /* the three pods picture, then the choice */
  if(c&&!G.seenCut[c.k]&&okI(boardImg(c.k))){G.seenCut[c.k]=1;cutBoard([[c.k,[c.cap+'.'].concat(c.lines||[])]],go)}else go()},'vashti')}
 function secStarterChosen(id){G.starter=id;const left=D[kitStarter()].name;say([D[id].name+' joined you!',"Dr. Vashti: Wonderful. You two already look like you belong together.","Your friend Sola was here at dawn and took one of the others. She's already out training.","Heal for free at the Recovery Bay, stock up at the shop, and when you're ready, head east over the bridge.","The drift grass beyond town hides wild Alienmon. And every world's Keeper guards a Signal Shard. Go see them all!","As you turn to go, the third pod wobbles... it pops open, and a tiny "+left+" squeaks and scurries out the door!","Dr. Vashti: Oh dear. That one's shy. It'll turn up."],null,'vashti')}

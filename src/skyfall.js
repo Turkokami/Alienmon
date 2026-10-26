@@ -92,7 +92,7 @@ function skyStep(s,ct){skyBeats();
 // news on the Linker: a new front on this world, a new storm, an open rift (each once per window)
 function skyBeats(){if(!G||!G.sec)return;const s=SWORLD[G.sec.id],f=frontHere(),w=skyWin();
  if(f&&G.skyn!==f.k+w){G.skyn=f.k+w;toast(f.n+'! '+f.t.join(' & ')+' boosted');SKYTAG={k:'front_'+f.k,t:0}}
- const st=stormNow();if(st&&G.stormSeen!==st.w){G.stormSeen=st.w;qNotify('SKY','event',['Linker alert! Strong signal: a '+st.name+' colony on '+st.pname+'.','It moves to a new area every hour. Check START > Gear > Sky Report to track it.'])}
+ const st=stormNow();if(st&&G.stormSeen!==st.w&&G.party.length&&mDone('M01')){G.stormSeen=st.w;qNotify('SKY','event',['Linker alert! Strong signal: a '+st.name+' colony on '+st.pname+'.','It moves to a new area every hour. Check START > Gear > Sky Report to track it.'])}
  if(riftOpen()&&G.riftSeen!==w&&(G.shards||0)>=9&&typeof rtaStart==='function'){G.riftSeen=w;qNotify('SKY','event',['Linker alert! A Rift Breach is open at Starfall Rift.','Something huge is coming through. Linkers are gathering!'])}
  const t=skyAntenna();if(G.key&&G.key.hydro_skiff&&(G.antenna||0)<t){const up=(G.antenna||0)>0;G.antenna=t;
   qNotify('GEAR','gear',up?['Dr. Vashti is calling on your Linker!','"Your antenna needs an upgrade for deeper signals. Sending it now!"','Linker antenna Mk '+t+'! Signal Dives find rarer Alienmon.']:['Mina is calling on your Linker!','"Splodge found this on the sea floor. It\'s a Linker antenna! Face any water and dive for a signal."','You can now Signal Dive! START > Gear > Signal Dive.'])}}

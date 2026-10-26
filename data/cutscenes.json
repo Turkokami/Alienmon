@@ -8,7 +8,7 @@
    "w": "start",
    "cap": "A dream of crystal trees",
    "lines": [
-    "You dream of crystal trees under a huge red sun that is slowly going out.",
+    "Glassy branches glitter under a huge red sun that is slowly going out.",
     "The wind moves through the branches like a sad song.",
     "A whisper, soft as leaves: Find the one who listens."
    ],
@@ -211,11 +211,11 @@
   {
    "k": "cut_18",
    "q": "M06",
-   "o": 2,
+   "o": 3,
    "w": "done",
    "cap": "Brighter than the Spore Pools",
    "lines": [
-    "Dr. Moor's poison has {starter} covered in spots and hanging still...",
+    "Dr. Moor's poison has your partner covered in spots and hanging still...",
     "You shout NOW! Your partner blazes brighter than the Spore Pools and wins the day."
    ],
    "src": "Cutscene 18 - Ch 14 - Plazmet Ignites (Sporeholm).png"
@@ -299,7 +299,7 @@
    "k": "cut_25",
    "q": "M08",
    "o": 0,
-   "w": "start",
+   "w": "done",
    "cap": "You got good",
    "lines": [
     "At the end of the Long Dock, Sola kneels beside her tired partner.",
@@ -361,16 +361,17 @@
   },
   {
    "k": "cut_31",
-   "q": "M10",
+   "q": "scene",
    "o": 0,
-   "w": "done",
+   "w": "scene",
    "cap": "Little scout, you came back",
    "lines": [
     "On Glyphos, a crystal in the biggest temple wall begins to glow.",
     "A soft, chiming voice: Little scout. You came back.",
     "Zib's lights flash every color at once."
    ],
-   "src": "Cutscene 31 - Ch 23 - Little Scout, You Came Back (Glyphos).png"
+   "src": "Cutscene 31 - Ch 23 - Little Scout, You Came Back (Glyphos).png",
+   "scene": "glyphos_little_scout"
   },
   {
    "k": "cut_32",

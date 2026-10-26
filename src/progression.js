@@ -83,7 +83,7 @@ function learnPrompt(m,mi,cb){if(m.moves.includes(mi))return cb();
  if(m.moves.length<4){m.moves.push(mi);return say(nm(m)+' learned '+MV[mi].n+'!',cb)}
  const skip=()=>say(nm(m)+' did not learn '+MV[mi].n+'.',cb);
  say(nm(m)+' wants to learn '+MV[mi].n+', but it already knows 4 moves.',()=>{choose('Forget which move?',m.moves.map(x=>MV[x].n).concat(['Keep old moves']),i=>{
-  if(i>=4)return skip();const old=m.moves[i];m.moves[i]=mi;if(m.ppm)delete m.ppm[mi];say(['1, 2 and... Poof!',nm(m)+' forgot '+MV[old].n+'...','...and learned '+MV[mi].n+'!'],cb)},skip);
+  if(i>=4)return skip();const old=m.moves[i];m.moves[i]=mi;if(m.ppm)delete m.ppm[mi];say([nm(m)+' lets '+MV[old].n+' fade from its memory...','...and locks in '+MV[mi].n+'!'],cb)},skip);
   CH.draw=drawLearn;CH.mon=m;CH.list=m.moves.concat([mi]);CH.sel=4})}
 function moveArchive(){const L=G.party.map(m=>nm(m)+' Lv'+m.lv);choose('Move Archive: 100 stardust',L.concat(['Back']),i=>{if(i>=G.party.length)return bayMenu();const m=G.party[i];
  const opts=[...new Set(learnset(m.id).filter(([l,mi])=>l<=m.lv&&!m.moves.includes(mi)).map(([l,mi])=>mi))];
@@ -130,9 +130,9 @@ function evoReady(m){const ev=spOf(m.id).evolves;if(!ev||!ev.into||IDX[ev.into]=
  if(how.startsWith('Level'))return true;if(/Signal Shard 4/.test(how))return G.shards>=4;if(/all 8/.test(how))return G.shards>=8;
  const here=(PL[G.planet]||{}).key;if(/Halo/.test(how))return m.lvUp&&here==='halo'&&nearTower();if(/Rift/.test(how))return m.lvUp&&here==='starfall'&&nearTower();return false}
 function evoSteps(steps){for(const m of G.party)if(evoReady(m))steps.push({fn:cb=>{const into=IDX[spOf(m.id).evolves.into],old=nm(m);
-  say('What? '+old+' is evolving!',()=>choose('Let '+old+' evolve?',['Evolve','Stop'],i=>{if(i!==0)return say('Huh? '+old+' stopped evolving!',cb);
+  say(old+"'s signal is surging... it's changing!",()=>choose('Let '+old+' evolve?',['Evolve','Stop'],i=>{if(i!==0)return say(old+"'s glow fades. It stays just as it is, for now.",cb);
    evoAnim(m,into,()=>{const r=m.hp/stat(m,0);m.id=into;m.hp=Math.max(1,Math.round(stat(m,0)*r));G.seen[m.id]=G.caught[m.id]=1;
-   say(old+' evolved into '+nm(m)+'!',()=>progRun(learnset(m.id).filter(([l,mi])=>l<=m.lv&&MV[mi].sig).map(([l,mi])=>({fn:c=>learnPrompt(m,mi,c)})),cb))})},()=>say('Huh? '+old+' stopped evolving!',cb)))}});
+   say(old+' evolved into '+nm(m)+'!',()=>progRun(learnset(m.id).filter(([l,mi])=>l<=m.lv&&MV[mi].sig).map(([l,mi])=>({fn:c=>learnPrompt(m,mi,c)})),cb))})},()=>say(old+"'s glow fades. It stays just as it is, for now.",cb)))}});
  for(const m of G.party)m.lvUp=0}
 
 /* Shard Sync Limit: gifted, traded and legendary Alienmon above the limit ignore 25% of commands */

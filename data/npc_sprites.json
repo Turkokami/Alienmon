@@ -14,7 +14,7 @@
 },
 "007": {
 "0": "dustara_seedpod_hunter",
-"1": "dustara_crater_stargazer"
+"1": "dustara_spice_vendor"
 },
 "008": {
 "2": "umbra_mine_watchman",
@@ -283,7 +283,6 @@
 "3": "glacia_ice_climber"
 },
 "098": {
-"1": "pell",
 "2": "umbra_mine_watchman",
 "3": "technician"
 },
@@ -603,8 +602,8 @@
 "1": "apex_prime_hopeful"
 },
 "423": {
-"0": "apex_mountain_porter",
-"1": "apex_prime_hopeful"
+"0": "apex_prime_hopeful",
+"1": "apex_mountain_porter"
 },
 "424": {
 "0": "apex_telescope_tech"
