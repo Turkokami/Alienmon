@@ -61,3 +61,25 @@ qa_pic_zib_bridge_1_02_narrator_sporix.mp3,pic_zib_bridge_1,Story QA fixes 2026-
 qa_pic_zib_bridge_1_02_narrator_plazmo.mp3,pic_zib_bridge_1,Story QA fixes 2026-10-26,qa fix,Narrator,narrator,,"Something past the old stone bridge is sending a signal. You click on your flashlight and go, Plazmo close behind."
 qa_pic_zib_bridge_1_02_narrator_gloopa.mp3,pic_zib_bridge_1,Story QA fixes 2026-10-26,qa fix,Narrator,narrator,,"Something past the old stone bridge is sending a signal. You click on your flashlight and go, Gloopa close behind."
 qa_battle_listen_01_liss.mp3,battle_listen,Story QA fixes 2026-10-26,qa fix,Liss,liss,,Don't fight it. When the moment comes... listen.
+gap_m01_start_narrator.mp3,gap,Voice gaps 2026-10-26,gap fill,Narrator,narrator,,"Dr. Vashti is waiting for you at her lab: the big dome with the telescope, across the plaza."
+gap_m02_start_narrator.mp3,gap,Voice gaps 2026-10-26,gap fill,Narrator,narrator,,"DX-4, the old scout robot by the dome homes, is beeping like crazy at the canyon."
+gap_m03_start_narrator.mp3,gap,Voice gaps 2026-10-26,gap fill,Narrator,narrator,,"Sola is waiting for you at the Trading Post, across the canyon bridge."
+gap_m19_keepers_narrator.mp3,gap,Voice gaps 2026-10-26,gap fill,Narrator,narrator,,"Over Static's broadcast, every Keeper joins in: Hank, Dr. Moor, Captain Marsh, Static, Basalt, Ingrid, Echo and Iris, Kade."
+gap_m19_everyworld_narrator.mp3,gap,Voice gaps 2026-10-26,gap fill,Narrator,narrator,,"On every world, every Alienmon sings with them."
+gap_m19_blaze_narrator_sporix.mp3,gap,Voice gaps 2026-10-26,gap fill,Narrator,narrator,,Fungaroth blazes like a small star and pushes the Rift closed with light.
+gap_m19_blaze_narrator_plazmo.mp3,gap,Voice gaps 2026-10-26,gap fill,Narrator,narrator,,Solarach blazes like a small star and pushes the Rift closed with light.
+gap_m19_blaze_narrator_gloopa.mp3,gap,Voice gaps 2026-10-26,gap fill,Narrator,narrator,,Abyssor blazes like a small star and pushes the Rift closed with light.
+gap_p03_seed_1_seedmother.mp3,gap,Voice gaps 2026-10-26,gap fill,Seedmother,seedmother,,"Then my children will make Ystra green again, and the Warp Gate will carry them to their friends whenever they wish."
+gap_p03_seed_2_seedmother.mp3,gap,Voice gaps 2026-10-26,gap fill,Seedmother,seedmother,,"Then my children will stay with the friends who took them in, and the Warp Gate will bring them home to visit."
+gap_p03_seed_3_seedmother.mp3,gap,Voice gaps 2026-10-26,gap fill,Seedmother,seedmother,,Both. Of course. Why should a home have only one door?
+gap_npc_mom_1_mom.mp3,gap,Voice gaps 2026-10-26,gap fill,Mom,mom,,"Good morning, sleepyhead! Dr. Vashti called. She's waiting for you at her observatory lab."
+gap_npc_mom_2_mom.mp3,gap,Voice gaps 2026-10-26,gap fill,Mom,mom,,"It's the big dome with the telescope, across the plaza. Go on, your partner is waiting!"
+gap_npc_labaide_researcher.mp3,gap,Voice gaps 2026-10-26,gap fill,Lab aide,researcher,,Dr. Vashti has been waiting for you! She's by the pod table.
+gap_npc_kid_kid.mp3,gap,Voice gaps 2026-10-26,gap fill,Kid,kid,,You're getting your first Alienmon today? Lucky! Dr. Vashti's lab is the dome with the telescope.
+gap_npc_tanktech_technician.mp3,gap,Voice gaps 2026-10-26,gap fill,Tank tech,technician,,This hydro tank used to cool the whole station. Now it's full of water Alienmon!
+gap_npc_kit_bolts_kit_sporix.mp3,gap,Voice gaps 2026-10-26,gap fill,Kit,kit,,My Gloopa sniffs out loose bolts. It's better at it than me!
+gap_npc_kit_blight_kit_sporix.mp3,gap,Voice gaps 2026-10-26,gap fill,Kit,kit,,"My Abyssor can heal the blight, slowly, tree by tree. We'll stay and do this part."
+gap_npc_kit_bolts_kit_plazmo.mp3,gap,Voice gaps 2026-10-26,gap fill,Kit,kit,,My Sporix sniffs out loose bolts. It's better at it than me!
+gap_npc_kit_blight_kit_plazmo.mp3,gap,Voice gaps 2026-10-26,gap fill,Kit,kit,,"My Fungaroth can heal the blight, slowly, tree by tree. We'll stay and do this part."
+gap_npc_kit_bolts_kit_gloopa.mp3,gap,Voice gaps 2026-10-26,gap fill,Kit,kit,,My Plazmo sniffs out loose bolts. It's better at it than me!
+gap_npc_kit_blight_kit_gloopa.mp3,gap,Voice gaps 2026-10-26,gap fill,Kit,kit,,"My Solarach can heal the blight, slowly, tree by tree. We'll stay and do this part."
