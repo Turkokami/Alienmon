@@ -85,9 +85,9 @@ function nurseTip(){const q=QUESTS.find(q=>q.type==='main'&&G.quests&&G.quests[q
 
 // one-off story beats tied to stages
 function worldBeats(){if(!G||!G.quests)return;grantModules();
- if(mDone('M05')&&!G.flags.ship_clear){G.flags.ship_clear=1;   // Hank hands over Nana Wren's ship: the hangar picture, then his line
-  if(typeof CUTQ!=='undefined'&&SCN.hangar)CUTQ.push({k:'hangar',cap:"Nana Wren's starship",lines:['Hank leads you behind the Relay Tower to his hangar and pulls a dusty tarp off something big.','Underneath sits a little round starship: cream-coloured, pink engines, a bubble cockpit.',"It's Nana Wren's ship."]});
-  qNotify('M05','ship',[WSTATE.ship.grant_text])}
+ if(mDone('M05')&&!G.flags.ship_clear){G.flags.ship_clear=1;   // Hank hands over Nana Wren's ship: his line, then the hangar picture
+  const it=[{q:'M05',kind:'ship',lines:[WSTATE.ship.grant_text]}].concat(SCN.hangar?[{q:'M05',kind:'pic',pic:{k:'hangar',cap:"Nana Wren's starship",lines:['Hank leads you behind the Relay Tower to his hangar and pulls a dusty tarp off something big.','Underneath sits a sleek little starship: cream and gold, pink engines, a bubble cockpit.',"It's Nana Wren's ship."]},lines:[]}]:[]);
+  let at=QN.length;for(let i=QN.length-1;i>=0;i--)if(QN[i].q==='M05'){at=i+1;break}QN.splice(at,0,...it)}   /* right after Hank's own words, before the next quest's news */
  const F=PAINT.fortress;if(F){const post=mDone('M19');F.town=post?'Reclaimed Forge':'Helix Forge Fortress';
   if(post&&!F.hot.some(h=>h.k==='shop'))F.hot.push({x:600,y:560,r:24,k:'shop',hint:"Grub's shop",art:'grub',draw:true})}}
 
@@ -114,8 +114,18 @@ function tryRun(){const e=EM();if(B.sp&&B.sp.immortal){say('There is nowhere to 
  turn(Object.assign(next=>{if(ok)say('Got away safely!',()=>{const back=B.from||'planet';B.over=true;QWILD=null;scene=back;B=null});else say("Couldn't get away!",next)},{pri:1}))}
 
 // nicknames: offered after a capture, changed at Recovery Bays
-function nickPrompt(m,cb){choose('Give '+D[m.id].name+' a nickname?',['Yes','No'],i=>{if(i===0){let v=null;try{v=window.prompt('Nickname for '+D[m.id].name+' (up to 12 letters):',m.nick||'')}catch(e){}
-  v=(v||'').replace(/[^\w .'-]/g,'').trim().slice(0,12);if(v){m.nick=v;return say(D[m.id].name+' will be known as '+v+'!',cb)}}cb()},cb)}
+function nickPrompt(m,cb){choose('Give '+D[m.id].name+' a nickname?',['Yes','No'],i=>{if(i===0)return nickEntry(m,cb);cb()},cb)}
+/* the name screen: a letter grid on the game screen (up to 12 letters). A adds, B erases (or cancels when empty), START or DONE finishes */
+const NKR=['ABCDEFGHIJ','KLMNOPQRST',"UVWXYZ .'-",'abcdefghij','klmnopqrst','uvwxyz0123'];
+function nickEntry(m,cb){choose('',['-'],()=>{});Object.assign(CH,{draw:drawNick,upd:updNick,mon:m,v:m.nick||'',gx:0,gy:0,fin:v=>{CH=null;v=v.trim().slice(0,12);if(v){m.nick=v;say(D[m.id].name+' will be known as '+v+'!',cb)}else cb()}})}
+function updNick(){const c=CH,R=NKR.length;if(P_('up'))c.gy=(c.gy+R)%(R+1);if(P_('down'))c.gy=(c.gy+1)%(R+1);if(P_('left'))c.gx=(c.gx+9)%10;if(P_('right'))c.gx=(c.gx+1)%10;
+ if(P_('b')){if(c.v)c.v=c.v.slice(0,-1);else c.fin('');return}
+ if(P_('start'))return c.fin(c.v);
+ if(P_('a')){if(c.gy===R){if(c.gx<5)c.v=c.v.slice(0,-1);else c.fin(c.v);return}if(c.v.length<12)c.v+=NKR[c.gy][c.gx]}}
+function drawNick(){const c=CH,R=NKR.length;rect(0,0,160,144,'#120c22');box(2,2,156,26,'#1b1424','#5ff2ff');txt('Nickname for '+D[c.mon.id].name,6,6,'#5ff2ff',6);txt(c.v+(frame%40<20&&c.v.length<12?'_':''),6,17,'#ffffff',7);
+ NKR.forEach((r,y)=>{for(let x=0;x<10;x++){const s=c.gx===x&&c.gy===y,X=12+x*14,Y=34+y*13;if(s)rect(X-3,Y-3,12,12,'#ffd23f');txt(r[x]===' '?'_':r[x],X,Y,s?'#1b1424':'#e8e0ff',7)}});
+ const Y=34+R*13,on=c.gy===R;for(const[x,l,k]of[[10,'ERASE',0],[86,'DONE',1]]){const s=on&&(c.gx>=5)===!!k;box(x,Y,64,13,s?'#ffd23f':'#1b1424','#5ff2ff');txt(l,x+32-l.length*3,Y+4,s?'#1b1424':'#e8e0ff',6)}
+ txt('A add  B erase  START ok',10,134,'#a99cc8',6)}
 function nickMenu(){choose('Nickname which Alienmon?',G.party.map(m=>nm(m)).concat(['Back']),i=>{if(i>=G.party.length)return bayMenu();nickPrompt(G.party[i],nickMenu)},bayMenu)}
 
 // key items: their own Bag entries; can't be used up, sold or thrown away
@@ -154,13 +164,16 @@ function addPeople(k,H){const P=PEOPLE[k];if(!P)return;
 // a legendary you defeated (rather than caught) comes back after the next Shard or postgame quest
 const progSig=()=>G.shards+':'+QUESTS.filter(q=>/^P/.test(q.id)&&mDone(q.id)).length;
 function legendHere(name){const id=IDX[name];if(id==null||G.caught[id])return false;return(G.legendGone||{})[name]!==progSig()}
-// trainer teams: size by the world's level band, levels and species from progression.json
+const TR_INTRO=["Hey! Your Linker just pinged mine. Battle!","A new Linker! Let's see what your team can do!","You look like you're training. Me too. Battle!","My partner's been itching for a battle. You're it!","Stop right there, Linker! Show me your best!"];
+// trainer teams: size by the world's level band, levels and species from progression.json.
+// Nobody on a world's routes outlevels its Keeper before you've beaten them, and Dustara's road stays gentle until you reach the Frontier.
 function townTrainer(h){const key=(PL[G.planet]||{}).key,a=PROG.areas[key]||{},tl=a.trainer_levels||a.levels||[5,8],hi=tl[1];
  const size=hi<=15?[1,2]:hi<=35?[2,3]:[3,4],r=rng(hash(h.id)),n=h.app?size[1]:size[0]+Math.floor(r()*(size[1]-size[0]+1));
  const t=(wildTable(key)||[]).filter(x=>wildOK(x.name)&&IDX[x.name]!=null);
  const team=Array.from({length:n},(_,i)=>[IDX[t.length?t[Math.floor(r()*t.length)].name:'Fizzle'],(h.app?Math.max(tl[0],hi-2):Math.max(tl[0],Math.min(hi,tl[0]+Math.floor(r()*(hi-tl[0]+1))+i)))+(h.route?2:0)]);
- if(typeof mDone==='function'&&!mDone('M03')&&key==='dustara')team.splice(1,9),team[0][1]=Math.min(team[0][1],4);   /* before the first rival battle: one gentle Lv4 partner, a fair fight for a brand-new starter */
- return{name:h.cls+' '+h.name,art:h.art,intro:h.app?"You'll need to get past us to reach the Keeper!":"Our eyes met! That means a battle!",
+ if(typeof mDone==='function'&&!mDone('M03')&&key==='dustara')team.splice(1,9),team[0][1]=Math.min(team[0][1],4);
+ const kp=PROG.keepers[key],cap=kp&&!G.beaten[key]?kp.ace_level-(h.app?1:2):key==='dustara'&&typeof mDone==='function'&&!mDone('M04')?7:99;for(const t of team)t[1]=Math.min(t[1],cap);   /* before the first rival battle: one gentle Lv4 partner, a fair fight for a brand-new starter */
+ return{name:h.cls+' '+h.name,art:h.art,intro:h.app?"You'll need to get past us to reach the Keeper!":TR_INTRO[Math.abs(hash(h.id))%TR_INTRO.length],
   lose:h.app?'Go on, the Keeper is waiting.':'Wow, you two are in sync!',after:h.app?'The Keeper is just ahead.':'Good battle! Keep training out here.',team,bkey:h.id}}
 function trainerTalk(h){const tr=townTrainer(h);if(G.beaten[h.id])return say(tr.name+': '+tr.after,null,h.art);
  if(!G.party.some(m=>m.hp>0))return say('Your team needs to heal first.');

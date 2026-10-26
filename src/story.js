@@ -39,8 +39,8 @@ function storyThen(q,t){if(!t||!storyIf(t.if))return;const L=(t.lines||[]).slice
  if(t.evolve==='starter'){const ln=starterLine(myStarter()),top=IDX[ln[2]],m=G.party.concat(G.box).find(m=>ln.includes(D[m.id].name));
   if(m&&m.id!==top){const was=nm(m),from=m.id;m.id=top;m.hp=stat(m,0);G.seen[top]=G.caught[top]=1;L.push('...'+was+' is glowing!');
    QEVO={q:q.id,kind:'evo',evo:[from,top,m.pri],lines:[was+' evolved into '+D[top].name+'!']}}}
- if(t.go&&SWORLD[t.go]){const g=SWORLD[t.go],go=()=>{G.sub=null;G.secBack=null;const p=pidx(g.pkey);if(p>=0)G.planet=p;enterSection(g.id,g.spawns.arrival||g.spawns.default,'down');scene='planet';PREV='planet'};if(secOn())SFADE={t:0,go};else go()}   // walk through to another place (the Vortex to Ystra)
- if(L.length)QN.push({q:q.id,kind:'then',lines:L.map(qFmt),art:t.art});if(QEVO){QN.push(QEVO);QEVO=null}}
+ if(L.length)QN.push({q:q.id,kind:'then',lines:L.map(qFmt),art:t.art});if(QEVO){QN.push(QEVO);QEVO=null}
+ if(t.go&&SWORLD[t.go]){const g=SWORLD[t.go],go=()=>{G.sub=null;G.secBack=null;const p=pidx(g.pkey);if(p>=0)G.planet=p;enterSection(g.id,g.spawns.arrival||g.spawns.default,'down');scene='planet';PREV='planet';qPassive()};QN.push({q:q.id,kind:'go',go:()=>{if(secOn())SFADE={t:0,go};else go()}})}}   // walk or fly through to another place (Strand's shuttle, the Vortex to Ystra), once the lines before it are read
 let QEVO=null;   // a story evolution plays its animation after the lines that lead up to it
 
 /* ---- section scenes: walk in at the right moment and the scene plays once ---- */
@@ -77,6 +77,7 @@ function storyBattleStart(tr,L){B.sp=(tr&&tr.sp)||NEXTB||null;NEXTB=null;if(B.sp
  if(tr&&tr.ally){const a=tr.ally,base=a.mon==='rival'?rivalStarter():a.mon==='kit'?kitStarter():IDX[a.mon];if(base!=null){const lv=a.lv||Math.max(...G.party.map(m=>m.lv));let id=a.mon==='rival'?IDX[starterLine(base)[a.evolve?2:1]]:a.mon==='kit'?evolvedAt(base,lv):base;
    const m=mk(id,lv);m.guest=1;m.nick=null;G.party.push(m);G.seen[id]=1;
    L.push(a.who+' fights beside you!');if(a.evolve&&a.mon==='rival')L.push(a.who+"'s "+starterLine(base)[1]+' is glowing... it evolved into '+D[id].name+'!');L.push(a.who+"'s "+D[id].name+' is ready to swap in from your team!')}}
+ if(B.sp&&B.sp.listen)L.push("Liss (far away): Don't fight it. When the moment comes... listen.");
  if(!tr&&B.team.length&&D[B.team[0].id].name==='Blightling'&&secOn()&&['160','161'].includes(G.sec.id))L.push('...It isn\'t attacking. It\'s reaching for your light. It\'s begging.')}
 function storyAllyLeave(){if(G&&G.party.some(m=>m.guest)){G.party=G.party.filter(m=>!m.guest)}}
 const storyRunLabel=()=>B&&B.sp&&B.sp.listen&&B.sp.turns>=3?'LISTEN':'RUN';

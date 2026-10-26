@@ -79,7 +79,7 @@ for n, a, s, j in [
  ('ystra_fragment_wanderer','a','m','travel'), ('ystra_memory_keeper','a','f','mystic')]:
     tag(n, a, s, *j.split())
 GENERIC = {'explorer', 'wanderer', 'civilian', 'technician', 'miner', 'researcher', 'pilgrim', 'townsfolk'}
-OWN = {'Dax': 'dax', 'Forge Miner Dax': 'dax', 'Grub': 'grub', 'Bug Catcher Grub': 'grub', 'Strand': 'strand', 'Pell': 'pell',
+OWN = {'Dax': 'dax', 'Forge Miner Dax': 'dax', 'Grub': 'grub', 'Strand': 'strand', 'Pell': 'pell',
        'Tamsin': 'tamsin', 'Mina': 'mina', 'Fenna': 'fenna', 'Bram': 'bram', 'Mr. Abernathy': 'abernathy', 'Nurse Coral': 'coral',
        'Mom': 'mom', 'Kit': 'kit', 'Teo': 'teo', 'Sola': 'sola', 'DX-4': 'dx4', 'Dusty': 'dusty', 'Old Dusty': 'dusty'}
 JOBS = [(r'\bkid\b|girl|boy|child', 'KID'), (r'\bold\b|\belder\b|grand|caretaker', 'ELDER'),

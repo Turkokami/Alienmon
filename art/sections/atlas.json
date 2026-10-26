@@ -12163,11 +12163,13 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 2–10 → Railcar Maze"
+    "left edge, tile rows 2–11 → Railcar Maze",
+    "right edge, tile rows 4–5 → Coolant Reservoir"
    ],
    "v3": true,
    "kit": "881",
-   "file": "art/sections/02_ferrox/881_reservoir_islands.png"
+   "file": "art/sections/02_ferrox/881_reservoir_islands.png",
+   "notes": "lake re-render (owner art 881_reservoir_islands.png)"
   },
   {
    "id": "880",
@@ -12185,11 +12187,13 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "right edge, tile rows 5–8 → Scrapyard Dome"
+    "right edge, tile rows 4–5 → Scrapyard Dome",
+    "left edge, tile rows 4–5 → Reservoir Islands"
    ],
    "v3": true,
    "kit": "880",
-   "file": "art/sections/02_ferrox/880_coolant_reservoir.png"
+   "file": "art/sections/02_ferrox/880_coolant_reservoir.png",
+   "notes": "lake re-render (owner art 880_coolant_reservoir.png)"
   },
   {
    "id": "875",

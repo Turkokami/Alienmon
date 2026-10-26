@@ -280,7 +280,7 @@
  ],
  "ship": {
   "unlock": "M05 done",
-  "grant_text": "Hank Briggs: Come see what's in my hangar. Small, round, cream-colored, pink engines, bubble cockpit. That's your Nana Wren's old starship. I've kept it safe for her grandkid all these years. Launch clearance approved. Fly safe, Linker.",
+  "grant_text": "Hank Briggs: Come see what's in my hangar. Small and sleek, cream and gold, pink engines, bubble cockpit. That's your Nana Wren's old starship. I've kept it safe for her grandkid all these years. Launch clearance approved. Fly safe, Linker.",
   "rule": "START → Ship and every landing pad use your own ship. Before M05 the Ship option says: 'Your ship needs launch clearance. Win your first Signal Shard.' Landing on a planet still requires that planet's req (shards / flags) from planets.json.",
   "space_landing_req": {
    "dustara": "always",

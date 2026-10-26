@@ -1829,7 +1829,8 @@
     ],
     "k": "house",
     "to": "005",
-    "why": "Port Ember healing centre (shared Recovery Bay room)"
+    "why": "Port Ember healing centre (shared Recovery Bay room)",
+    "title": "Port Ember Recovery Bay"
    },
    {
     "tile": [
@@ -1838,7 +1839,8 @@
     ],
     "k": "house",
     "to": "005",
-    "why": "Port Ember healing centre (shared Recovery Bay room)"
+    "why": "Port Ember healing centre (shared Recovery Bay room)",
+    "title": "Port Ember Recovery Bay"
    }
   ],
   "042": [

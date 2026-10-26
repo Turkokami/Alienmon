@@ -580,7 +580,8 @@ for sid, sec in world.items():
             if person.get('face'):
                 o['face_pinned'] = 1
             o['id'] = person.get('wid') or f"sec{sid}_{'app' if tr.get('app') else 'tr'}{n}"
-            tr.setdefault('name', hname(o['id']))
+            if 'name' not in tr:
+                tr['name'], tr['_auto'] = hname(o['id']), 1   # renamed below so no two trainers share a name
             o['trainer'] = tr
             if not person.get('face'):   # look down the longest open line: that's where they spot you
                 best = None
@@ -653,6 +654,14 @@ for key, sp in qsrc.items():
     out = {'s': sid}
     if sp.get('art'):
         out['art'] = sp['art']
+    if sp.get('pts') or sp.get('at'):   # placed by hand: exact tiles (e.g. the three murals on the wall)
+        P = sp.get('pts') or [sp['at']]
+        out.update(x=P[0][0], y=P[0][1])
+        if len(P) > 1:
+            out['pts'] = [list(p) for p in P]
+        spots[key] = out
+        qtaken[sid].add(tuple(P[0]))
+        continue
     if sp.get('npc'):
         hit = [n for n in sec.get('npcs', []) if n.get('wid') == sp['npc']]
         if hit:
@@ -1147,6 +1156,44 @@ for sid, sec in world.items():
         if best:
             report.setdefault('stashes moved off an NPC', []).append(f"{sid} {sec['name']}: {o['tile']} -> {list(best)}")
             taken.discard(tuple(o['tile'])); o['tile'] = list(best); taken.add(best)
+
+# ---- every trainer gets a name of their own, and never a story character's (the hero is Rook; Sola, Pell, Tamsin... are people in the story) ----
+STORY_NAMES = {'Rook', 'Sola', 'Sol', 'Pell', 'Tamsin', 'Wren', 'Bram', 'Fenn', 'Fenna', 'Kit', 'Teo', 'Orra', 'Saga', 'Liss', 'Echo', 'Iris', 'Hank', 'Mina', 'Vex', 'Bronn',
+               'Grub', 'Dax', 'Strand', 'Marsh', 'Kade', 'Thorne', 'Kael', 'Elena', 'Imogen', 'Vashti', 'Dusty', 'Basalt', 'Ingrid', 'Static', 'Moor', 'Lysa', 'Marisol',
+               'Harrow', 'Ostrander', 'Zib', 'Coral', 'Abernathy', 'Nana', 'Kessler', 'Ystra', 'Novaryx', 'Oblivane'}
+ONSET = ['B', 'C', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P', 'R', 'S', 'T', 'V', 'Z', 'Br', 'Ch', 'Cl', 'Dr', 'Fl', 'Gr', 'Kr', 'Sh', 'Sk', 'St', 'Th', 'Tr']
+NUC = ['a', 'e', 'i', 'o', 'u', 'ai', 'ei', 'ia', 'io']
+TAIL = ['', 'n', 'l', 'r', 'x', 's', 'k', 'th', 'ra', 'na', 'lo', 'ri', 'ne', 'ly', 'do', 'mi', 'sa', 'ven', 'rin', 'lan', 'dra', 'tis']
+GEN = sorted({o + v + t for o in ONSET for v in NUC for t in TAIL if 3 <= len(o + v + t) <= 7})
+NAME_POOL = [n for n in pop['names'] if n not in STORY_NAMES] + [n for n in GEN if n not in STORY_NAMES and n not in pop['names']]
+fixed = {n['trainer']['name'] for s in world.values() for n in s.get('npcs', []) if n.get('trainer') and not n['trainer'].get('_auto')}
+used = set(fixed)
+for sid in sorted(world):
+    for n in world[sid].get('npcs', []):
+        tr = n.get('trainer')
+        if not tr or not tr.pop('_auto', None):
+            continue
+        k = int(hashlib.md5(n['id'].encode()).hexdigest()[:8], 16) % len(NAME_POOL)
+        while NAME_POOL[k] in used:
+            k = (k + 1) % len(NAME_POOL)
+        tr['name'] = NAME_POOL[k]
+        used.add(tr['name'])
+# Ystra is barren until the Reunion opens the Warp Gate (P03): only Ystran echoes, story people and Helix leftovers are there before it.
+# Everyone else (seekers, rift walkers, residents, farmers...) came through the Gate afterwards.
+YSTRA_OK = ('Ystran', 'Saga', 'Kit', 'Tamsin', 'Liss', 'Dr. Vashti', 'Teo', 'Helix', 'Nurse', 'Clerk')
+for sid, sec in world.items():
+    if sec.get('pkey') != 'ystra':
+        continue
+    for n in sec.get('npcs', []):
+        if n.get('after') or n.get('legend') or n.get('story') or (n.get('trainer') or {}).get('app'):
+            continue
+        who = ((n.get('trainer') or {}).get('cls') or (n.get('t') or [''])[0].split(':')[0] or n.get('name') or '')
+        if n['art'] == 'ystran' or n['art'].startswith('ystra_') or who.startswith(YSTRA_OK):
+            continue
+        n['after'] = 'P03'
+dupes = sorted(x for x in fixed if x in STORY_NAMES)
+if dupes:
+    report.setdefault('trainers named after story characters', []).extend(dupes)
 
 json.dump({'version': 1, 'tile': 16, 'screen_tiles': [10, 9], 'arrival': arrivals, 'quest_spots': spots, 'sections': world, 'connections': conns},
           open(os.path.join(ROOT, OUT or 'data/world.json'), 'w', encoding='utf-8'), indent=1, ensure_ascii=False)

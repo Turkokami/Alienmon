@@ -26,7 +26,7 @@ const qPrereqsDone=q=>(q.prereq||[]).every(p=>qs(p)&&qs(p).state==='done');
 function qUnlock(){let again=true;while(again){again=false;
  for(const q of QUESTS){const s=qs(q.id);if(s.state==='locked'&&qPrereqsDone(q)){s.state='available';if(q.type==='main'){qActivate(q);again=true}}}}}
 
-function qActivate(q){const s=qs(q.id);s.state='active';s.step=0;s.n=0;s.got=[];if(q.id==='M01')qPic('intro',0,'start');qPic(q.id,0,'start');
+function qActivate(q){const s=qs(q.id);s.state='active';s.step=0;s.n=0;s.got=[];qPic(q.id,0,'start');
  if(G.qtrack==null||!qs(G.qtrack)||qs(G.qtrack).state!=='active')G.qtrack=q.id;
  qNotify(q.id,'start',['New '+(q.type==='main'?'story quest':'side mission')+': '+q.title].concat(q.dialogue&&q.dialogue.start||[]));qPassive()}
 
@@ -38,7 +38,7 @@ function qHere(){return scene==='world'?'molten_frontier':(G.sub||(PL[G.planet]|
 function qSameArea(loc){if(!loc)return false;if(typeof secOn==='function'&&secOn())return loc.sec===G.sec.id;const h=qHere();return loc.area==='molten_frontier'?h==='molten_frontier':(loc.planet&&loc.planet===h&&scene!=='world'&&scene!=='space')}
 function qPos(){if(typeof secOn==='function'&&secOn())return[G.sec.x*16+8,G.sec.y*16+15];return scene==='world'?G.wpos:G.ppos}
 // a quest location, moved onto walkable ground for the painted towns when tools/place_quests.py had to
-const QPLACE_FIXED={'M13:1':{area:'fortress',planet:'fortress',x:768,y:222,spot:'Control room terminal'}};
+const QPLACE_FIXED={'M13:1':{area:'fortress',planet:'fortress',x:740,y:600,spot:'Forge corridor'},'M13:2':{area:'fortress',planet:'fortress',x:768,y:222,spot:'Control room terminal'}};
 function qLoc(qid,step,loc){if(typeof secOn==='function'&&secOn()){const sl=secQLoc(qid+':'+step,loc);if(sl)return sl}const p=QPLACE_FIXED[qid+':'+step]||QPLACE[qid+':'+step];return p?Object.assign({},loc,p):loc}
 
 function qMatch(q,o,type,target,info){const t=o.type;
@@ -63,9 +63,9 @@ function qEvent(type,target,info){if(!G||!G.quests)return false;info=info||{};le
  return hit}
 
 function qProgress(q,n){const s=qs(q.id),o=qObj(q);s.n+=n;
- if(s.n>=(o.count||1)){qPic(q.id,s.step,'done');s.step++;s.n=0;s.got=[];if(o.then)storyThen(q,o.then);if(s.step<q.objectives.length)qPic(q.id,s.step,'start');
+ if(s.n>=(o.count||1)){const st=s.step;s.step++;s.n=0;s.got=[];if(o.then)storyThen(q,o.then);qPic(q.id,st,'done');if(s.step<q.objectives.length)qPic(q.id,s.step,'start');
   if(s.step>=q.objectives.length)qComplete(q);
-  else{qNotify(q.id,'step',['Objective complete! Next: '+qText(q)]);if(q.type==='main')autosave();qPassive()}}}
+  else{const nx=qObj(q);if(!((nx.type==='cutscene'||nx.type==='choice')&&storyAt(nx))&&!(o.then&&o.then.go))qNotify(q.id,'step',['Objective complete! Next: '+qText(q)]);if(q.type==='main')autosave();qPassive()}}}
 
 function itemName(k){const it=ITEMS.find(i=>i.k===k)||PODS.find(p=>p.k===k);return it?it.n:(KEY_ITEMS[k]||k)}
 function qRewardText(r){const L=[];if(r.dust)L.push(r.dust+' stardust');for(const k in r.items||{})L.push(r.items[k]+'x '+itemName(k));if(r.alienmon_gift)L.push(r.alienmon_gift.name);return L.join(', ')}
@@ -93,39 +93,57 @@ function qPassive(){if(!G||!G.quests)return;
   else if(QTRAINER.has(o.type)&&!q.repeatable){const n=Math.min(o.count||1,o.target.split('|').filter(t=>G.beaten[t]).length);if(n>s.n)qProgress(q,n-s.n)}
   else if(o.type==='item'&&G.key[o.target])qProgress(q,1);
   else if(o.type==='xenodex'&&Object.keys(G.caught).length>=(o.count||1))qProgress(q,o.count||1);
-  else if(o.type==='cutscene'){if(s.playing||!storyAt(o))continue;const ca=o.scene?[o.scene,o.title||'']:QCUT_ART[o.target],art=ca&&SCI[ca[0]];
+  else if(o.type==='cutscene'){if(s.playing||!storyAt(o)||QN.length||DLG||CH||scene==='battle'||scene==='cut')continue;const ca=o.scene?[o.scene,o.title||'']:QCUT_ART[o.target],art=ca&&SCI[ca[0]];
    // wait a few seconds for the scene art to download before falling back to text only
    const qb=!o.scene&&QBOARD[o.target],bok=qb&&qb.every(([k])=>okI(boardImg(k)));if(bok&&!DLG&&!CH&&scene!=='battle'&&scene!=='cut'&&!CUTQ.length){s.playing=1;cutBoard(qb,()=>{s.playing=0;qNotify(q.id,'scene',storyCutLines(o));qProgress(q,1)})}else if(!qb&&okI(art)&&!DLG&&!CH&&scene!=='battle'&&scene!=='cut'&&!CUTQ.length){s.playing=1;cut(art,ca[1],()=>{s.playing=0;qNotify(q.id,'scene',storyCutLines(o));qProgress(q,1)})}else if(!(qb?bok:okI(art))&&(s.wait=(s.wait||0)+1)>15){qNotify(q.id,'scene',storyCutLines(o));qProgress(q,1)}}
-  else if(o.type==='choice'&&!s.asking&&!DLG&&!CH&&storyAt(o)){s.asking=1;choose(qFmt(o.hint||q.title),o.options.map(qFmt),i=>{s.asking=0;G.flags[o.target]=i+1;qProgress(q,1)});if(o.default!=null&&CH)CH.sel=o.default}
+  else if(o.type==='choice'&&!s.asking&&!DLG&&!CH&&!QN.length&&scene!=='cut'&&scene!=='battle'&&storyAt(o)){s.asking=1;choose(qFmt(o.hint||q.title),o.options.map(qFmt),i=>{s.asking=0;G.flags[o.target]=i+1;qProgress(q,1)});if(o.default!=null&&CH)CH.sel=o.default}
   else if(o.type==='legendary_encounter'&&o.skip_if&&(G.flags[o.skip_if.flag]||0)===o.skip_if.value&&storyAt(o)){qNotify(q.id,'scene',o.skip_if.lines||[]);qProgress(q,1)}
   else if(o.type==='visit'||o.type==='spot_event'){const t=o.target||'';
    if(t==='molten_frontier'){if(scene==='world'||(typeof secOn==='function'&&secOn()&&SEC_FRONTIER.has(G.sec.id)))qProgress(q,1)}
    else if(t.startsWith('planet:')){if(scene==='planet'&&qHere()===t.slice(7))qProgress(q,1)}
-   else if(t.startsWith('node:')){if(typeof secOn==='function'&&secOn()){if(SEC_NODE[t.slice(5)]===G.sec.id)qProgress(q,1)}else if(scene==='world'){const[n,d]=nearestNode(G.wpos[0],G.wpos[1]);if(n&&n.k===t.slice(5)&&d<70)qProgress(q,1)}}
+   else if(t.startsWith('node:')){if(QNODEPL[t.slice(5)]&&G.flags.ship_clear&&scene==='planet'&&qHere()===QNODEPL[t.slice(5)])qProgress(q,1);else if(typeof secOn==='function'&&secOn()){if(SEC_NODE[t.slice(5)]===G.sec.id)qProgress(q,1)}else if(scene==='world'){const[n,d]=nearestNode(G.wpos[0],G.wpos[1]);if(n&&n.k===t.slice(5)&&d<70)qProgress(q,1)}}
    else if(loc&&qSameArea(loc)){const p=qPos(),pp=loc.pts&&loc.pts[Math.min(s.n,loc.pts.length-1)],lx=pp?pp[0]*16+8:loc.x,ly=pp?pp[1]*16+15:loc.y;if(lx==null||(p&&Math.hypot(lx-p[0],ly-p[1])<(pp?20:44)))qProgress(q,1)}}}}
 
+// a Frontier harbour or tunnel that leads to a world: once you have a ship, flying there counts too
+const QNODEPL={thalassa:'thalassa',glyphos:'glyphos',pyros:'pyros',umbra:'umbra',ferrox:'ferrox',helix:'helix',starfall:'starfall'};
 // cutscene lines that are not already part of a quest's own dialogue
 const QCUT_ART={zib_joins:['dustara_keyart','A signal from the canyon...'],sola_leaves:['cut_26','The Deep Sea Ferry dock'],sola_joins:['helix_keyart','Helix Station'],novaryx_awakens:['starfall_keyart','The eight Shards sing'],rift_sealed:['starfall_battle','The Rift closes']};
 // storyboards: pictures with story text, played in place of a single scene image
 const QBOARD={zib_joins:[
- ['zib_bridge_1',["Night falls over Dustmere. DX-4 sweeps the path outside Mr. Abernathy's bakery, beeping at the canyon.",'Something past the old stone bridge is sending a signal. You grab a flashlight and go, {starter} close behind.']],
+ ['zib_bridge_1',["By the time you and {starter} reach the bridge, the long first day is over and night has fallen. DX-4 is still beeping at the canyon.",'Something past the old stone bridge is sending a signal. You click on your flashlight and go, {starter} close behind.']],
  ['zib_bridge_2',['Halfway across the glowing bridge, the canyon wall bursts open!','A tiny silver saucer rockets out in a shower of red rock.']],
  ['zib_bridge_3',['It stops right in front of your nose. Inside the glass dome, one huge eye blinks at you.','"Bip."']],
  ['zib_bridge_4',["{starter} jumps back in surprise. The saucer doesn't flinch. It loops around you, lights flashing gold.","It's an Alienmon called Zib... and it has decided you're its captain."]]]};
-const QCUT={novaryx_awakens:['Your eight Shards rise and resonate. A great signal-winged bird answers the call...']};
+const QCUT={novaryx_awakens:[]};   // the Novaryx picture (cut_51) tells it
 
 function qNotify(q,kind,lines){if(lines&&lines.length)QN.push({q,kind,lines:lines.map(l=>typeof qFmt==='function'?qFmt(l):l)})}
 // show waiting quest messages when nothing else is on screen
 // story pictures (data/cutscenes.json): shown full screen with their narration when a quest step starts or is done.
 // A picture can have a version per starter (<key>_<starter>), picked by boardImg. Each is shown once per save.
 const CUTPIC=__CUTPICS__;let CUTQ=[];
-function qPic(qid,o,w){if(!G)return;G.seenCut=G.seenCut||{};for(const c of CUTPIC)if(c.q===qid&&c.o===o&&c.w===w&&!G.seenCut[c.k]){if(c.st&&!(typeof myStarter==='function'&&G.party&&G.party.length&&D[myStarter()].name.toLowerCase()===c.st))continue;G.seenCut[c.k]=1;CUTQ.push(c)}}
-function qPicFlush(){if(G&&!(G.seenCut&&G.seenCut._intro)&&G.quests&&qs('M01').state==='active'&&qs('M01').step===0){G.seenCut=G.seenCut||{};G.seenCut._intro=1;qPic('intro',0,'start')}   // Dr. Vashti's pods picture waits for her talk in the lab (secStarterTalk)   // the opening pictures: the first quest starts before the save exists
- if(!CUTQ.length||DLG||CH||!(scene==='planet'||scene==='world')||(typeof SFADE!=='undefined'&&SFADE))return false;
- const c=CUTQ[0];if(okI(boardImg(c.k))){CUTQ.shift();cutBoard([[c.k,[/[.!?…]$/.test(c.cap)?c.cap:c.cap+'.'].concat(c.lines||[])]],()=>{});return true}
- if((c.wait=(c.wait||0)+1)>240)CUTQ.shift();return true}   // give the picture ~4 s to download, else skip it
-function qFlush(){if(qPicFlush())return;if(QN.length&&!DLG&&!CH&&(scene==='planet'||scene==='world')&&!(typeof SFADE!=='undefined'&&SFADE)&&!(typeof SM!=='undefined'&&SM)){const p=QN[0].pic;if(p){const ok=okI(boardImg(p.k));if(!ok&&(QN[0].wait=(QN[0].wait||0)+1)<=240)return;const m=QN.shift();if(ok)cutBoard([[p.k,[/[.!?…]$/.test(p.cap)?p.cap:p.cap+'.'].concat(p.lines||[])]],()=>{});else say(m.lines,null,m.art);return}   /* a scene's picture: wait ~4 s for it, else tell it in words */
- const m=QN.shift();if(m.evo&&typeof evoAnimIds==='function'){evoAnimIds(m.evo[0],m.evo[1],m.evo[2],()=>say(m.lines));return}const giver=m.kind!=='then'&&QI[m.q]&&QI[m.q].giver;say(m.lines,null,m.art||giver&&giver.art||undefined)   /* story beats after a step are narration: no quest-giver picture */}}
+function qPic(qid,o,w){if(!G)return;G.seenCut=G.seenCut||{};for(const c of CUTPIC)if(c.q===qid&&c.o===o&&c.w===w&&!G.seenCut[c.k]){if(c.st&&!(typeof myStarter==='function'&&G.party&&G.party.length&&D[myStarter()].name.toLowerCase()===c.st))continue;G.seenCut[c.k]=1;QN.push({q:qid,kind:'pic',pic:c,lines:[c.cap+'.'].concat(c.lines||[]).map(qFmt)})}}
+/* each line of a quest message shows the face of whoever speaks it ("Hank: ...", "Teo (recording): ..."); narration has no face.
+   A story quest's opening words from someone who isn't here arrive as a Linker message. */
+const QSPK={'Dr. Vashti':'vashti','Dr. Imogen Vashti':'vashti','Vashti':'vashti','Dusty':'dusty','Old Dusty':'dusty','Hank Briggs':'hank','Hank':'hank','Kit':'kit','Kit Briggs':'kit','Sola':'sola','Sola Reyes':'sola',
+ 'Captain Marsh':'marsh','Marsh':'marsh','Dr. Lysa Moor':'moor','Dr. Moor':'moor','DJ Static':'static','Static':'static','Old Basalt':'basalt','Basalt':'basalt','Ingrid Vale':'ingrid','Ingrid':'ingrid','Grub':'grub','Admin Bronn':'bronn','Admin Vex':'vex','Vex':'vex',
+ 'Director Thorne':'thorne','Thorne':'thorne','Kael Thorne':'thorne','Mortimer Kade':'kade','Kade':'kade','Strand':'strand','Pell':'pell','Helix Grunt Pell':'pell','Orra Venn':'orra','Orra':'orra','Teo Reyes':'teo','Teo':'teo','Mom':'mom','Tamsin':'tamsin','Liss':'liss',
+ 'Dax':'dax','Forge Miner Dax':'dax','DX-4':'dx4','Mina':'mina','Saga':'saga','Marisol Fenn':'marisol','Duke Harrow':'harrow','General Ostrander':'ostrander','Echo & Iris':'twins','Echo and Iris':'twins','Echo':'twins','Iris':'twins',
+ 'Nana Wren':'nanawren','Squid Sailor':'squidsailor','Nurse':'nurse','Nurse Coral':'coral','Fenna':'fenna','Bram':'bram','Mr. Abernathy':'abernathy','Guard':'guard','Helix Grunt':'helix_helix_grunt','Grunt':'helix_helix_grunt',
+ 'Zib':'','Seedmother':'','Codex page':'','Ystran Echo':'ystran'};
+const QSYS=/^(New (story quest|side mission)|Objective complete|Quest complete|Mission accepted|Word from|Linker alert|Incoming Linker message|You received)/;
+function qSpeaker(l){const m=typeof l==='string'&&!QSYS.test(l)&&l.match(/^([A-Z][\w.'&-]*(?: (?:[A-Z&][\w.'-]*|of|the)){0,3})(?: \([^)]*\))?: /);return m?m[1]:null}   /* a name: capitalised words ("Dr. Vashti", "Echo & Iris") */
+const qArtOK=a=>!!(a&&(PORT[a]||TALKI[a]||CHAR[a]));
+function qLineArt(l,fb){const sp=qSpeaker(l);if(!sp)return null;if(sp in QSPK)return qArtOK(QSPK[sp])?QSPK[sp]:null;return qArtOK(fb)?fb:null}
+function qSpeakerArt(lines){for(const l of[].concat(lines)){const a=qLineArt(l,null);if(a)return a}return null}
+// someone (or their portrait) is standing in this section
+function qPresent(a){if(!(typeof secOn==='function'&&secOn()))return false;const s=SWORLD[G.sec.id];if(secNpcs(s).some(n=>n.art===a||n.por===a))return true;if(qEnts().some(e=>e.art===a))return true;const kp=PL[G.planet]&&PL[G.planet].keeper;return!!(kp&&kp.art===a&&(s.objects||[]).some(o=>o.k==='keeper'))}
+function qSay(m){const runs=[];for(const l of m.lines){const a=qLineArt(l,m.art),r=runs[runs.length-1];if(r&&r.art===a)r.lines.push(l);else runs.push({art:a,lines:[l]})}
+ if(m.kind==='start'&&QI[m.q]&&QI[m.q].type==='main')for(const r of runs)if(r.art&&!qPresent(r.art)){r.lines.unshift('Incoming Linker message from '+qSpeaker(r.lines[0])+'...');break}
+ const next=i=>{const r=runs[i];if(!r)return m.after&&m.after();say(r.lines,()=>next(i+1),r.art||undefined)};next(0)}
+function qFlush(){if(QN.length&&!DLG&&!CH&&(scene==='planet'||scene==='world'||(scene==='space'&&QN[0].q==='P04'))&&!(typeof SFADE!=='undefined'&&SFADE)&&!(typeof SM!=='undefined'&&SM)){const m=QN[0];
+  if(m.go){QN.shift();m.go();return}   /* a move to another place waits for the lines before it */
+  if(m.pic){const p=m.pic,ok=okI(boardImg(p.k));if(!ok&&(m.wait=(m.wait||0)+1)<=240)return;QN.shift();if(ok)cutBoard([[p.k,[/[.!?…]$/.test(p.cap)?p.cap:p.cap+'.'].concat(p.lines||[])]],()=>{});else if(m.lines&&m.lines.length)qSay(m);return}   /* a story picture: wait ~4 s for it, else tell it in words */
+  QN.shift();if(m.evo&&typeof evoAnimIds==='function'){evoAnimIds(m.evo[0],m.evo[1],m.evo[2],()=>say(m.lines));return}qSay(m)}}
 
 /* ---- quest log text ---- */
 function qText(q){const s=qs(q.id),o=qObj(q);if(!o)return'Done';const l=qLoc(q.id,s.step,o.location)||{},spot=l.spot||'',c=o.count||1,cnt=c>1?' ('+s.n+'/'+c+')':'',t=o.target||'';
@@ -136,7 +154,7 @@ function qText(q){const s=qs(q.id),o=qObj(q);if(!o)return'Done';const l=qLoc(q.i
  switch(o.type){
   case'choose_starter':return'Choose your partner';
   case'talk':return'Talk: '+(spot||t);
-  case'visit':case'spot_event':if(/^planet:/.test(t)){const pk=t.slice(7),p=PL.find(x=>x.key===pk);return'Fly to '+(p?p.name:pk)+' (START > Ship)'}return'Go to '+(spot||t.replace(/^(planet|node):/,''));
+  case'visit':case'spot_event':if(/^node:/.test(t)&&QNODEPL[t.slice(5)]&&G.flags.ship_clear){const p=PL.find(x=>x.key===QNODEPL[t.slice(5)]);return'Go to '+(spot||t.slice(5))+', or fly to '+(p?p.name:t.slice(5))}if(/^planet:/.test(t)){const pk=t.slice(7),p=PL.find(x=>x.key===pk);return'Fly to '+(p?p.name:pk)+' (START > Ship)'}return'Go to '+(spot||t.replace(/^(planet|node):/,''));
   case'examine':return'Examine '+(spot||t.replace(/_/g,' '))+cnt;
   case'collect':return'Find '+t.replace(/_/g,' ')+cnt;
   case'catch':return'Catch '+t+cnt;case'catch_any':return'Catch any Alienmon'+cnt;case'catch_type':return'Catch a '+t+'-type'+cnt;
@@ -153,9 +171,9 @@ function qWhere(q){const s=qs(q.id),o=qObj(q),l=(o&&qLoc(q.id,s.step,o.location)
 
 /* ---- things quests put into the world: givers, props, trainers, legendaries ---- */
 const QART={sola_1:'sola',admin_vex:'vex',admin_bronn:'bronn',director_thorne:'thorne',orra_venn:'orra',quorum_marisol:'marisol',quorum_harrow:'harrow',quorum_saga:'saga',quorum_ostrander:'ostrander',
- quorum_all_rematch:'marisol',helix_dock_grunt:'strand',helix_spore_grunt:'strand',ferrox_junkers:'technician',pyros_miners:'miner',static_dancers:'civilian'};
+ quorum_all_rematch:'marisol',helix_dock_grunt:'helix_helix_grunt',helix_spore_grunt:'helix_helix_grunt',fortress_guard:'helix_helix_grunt',ferrox_junkers:'technician',pyros_miners:'miner',static_dancers:'civilian'};
 const QNAME={sola_1:'Sola',admin_vex:'Admin Vex',admin_bronn:'Admin Bronn',director_thorne:'Director Thorne',orra_venn:'Orra Venn',quorum_marisol:'Marisol Fenn',quorum_harrow:'Duke Harrow',
- quorum_saga:'Saga',quorum_ostrander:'General Ostrander',quorum_all_rematch:'The Quorum',helix_dock_grunt:'Helix Grunt',helix_spore_grunt:'Helix Grunt',ferrox_junkers:'Junker',pyros_miners:'Miner',static_dancers:'Dancer'};
+ quorum_saga:'Saga',quorum_ostrander:'General Ostrander',quorum_all_rematch:'The Quorum',helix_dock_grunt:'Helix Grunt',helix_spore_grunt:'Helix Grunt',fortress_guard:'Helix Guard',ferrox_junkers:'Junker',pyros_miners:'Miner',static_dancers:'Dancer'};
 const qTitle=id=>QNAME[id]||id.replace(/_/g,' ').replace(/\b\w/g,c=>c.toUpperCase());
 const QTRAINER=new Set(['battle_trainer','battle_rival','defeat_boss']);
 // spread several pickups around one spot
@@ -171,7 +189,7 @@ function qEnts(){if(qEntFrame===frame&&qEntCache)return qEntCache;qEntFrame=fram
   if(!l||l.x==null||!qSameArea(l))continue;
   if(o.type==='talk')E.push({k:'talk',q,o,x:l.x,y:l.y,art:l.art||null,mark:'?'});
   else if(o.type==='examine'||o.type==='collect'){const c=o.count||1;for(let i=0;i<c;i++)if(!s.got.includes(i)){const d=QSPREAD[i%QSPREAD.length],pp=l.pts&&l.pts[i%l.pts.length];E.push({k:'prop',q,o,i,x:pp?pp[0]*16+8:l.x+d[0],y:pp?pp[1]*16+15:l.y+d[1]})}}
-  else if(QTRAINER.has(o.type)&&!(o.target.includes('|'))&&!/^mf\d+$/.test(o.target))E.push({k:'trainer',q,o,x:l.x,y:l.y,art:QART[o.target]||(q.giver&&q.giver.art)||'guard',mark:'!'});
+  else if(QTRAINER.has(o.type)&&!(o.target.includes('|'))&&!/^mf\d+$/.test(o.target)){const tv=o.trainers&&o.trainers[s.n]||{};E.push({k:'trainer',q,o,x:l.x,y:l.y,art:tv.art||QART[o.target]||(q.giver&&q.giver.art)||'guard',mark:'!'})}
   else if(o.type==='legendary_encounter')E.push({k:'legend',q,o,x:l.x,y:l.y,mon:o.target,mark:'!'});
   else if(o.type==='visit'||o.type==='spot_event'){const pp=l.pts&&l.pts[Math.min(s.n,l.pts.length-1)];E.push({k:'beacon',q,o,x:pp?pp[0]*16+8:l.x,y:pp?pp[1]*16+15:l.y})}}
  return qEntCache=E}
@@ -179,16 +197,22 @@ function qEnts(){if(qEntFrame===frame&&qEntCache)return qEntCache;qEntFrame=fram
 function qNear(){const p=qPos();if(!p)return null;let best=null,bd=scene==='world'?14:40;for(const e of qEnts()){if(e.k==='beacon')continue;const d=Math.hypot(e.x-p[0],e.y-p[1]);if(d<bd){bd=d;best=e}}return best}
 
 // story bosses and the rival use the progression levels and lead with their signature Alienmon
-const QBOSS={admin_bronn:['bronn','Bronnix',3],admin_vex:['vex','Vexhydra',4],director_thorne:['thorne','Thornvoid',5],orra_venn:['orra','Firstlight',6],
- quorum_marisol:[0,'Facetrix',5],quorum_harrow:[1,'Encorex',5],quorum_saga:[2,'Pyrelyth',5],quorum_ostrander:[3,'Citadrake',5]};
+// [level key, ace, team size, hall type ('mix' = one of each), signature Alienmon who always come along]
+const QBOSS={admin_bronn:['bronn','Bronnix',3],admin_vex:['vex','Vexhydra',4,null,['Hexcoil']],director_thorne:['thorne','Thornvoid',5],orra_venn:['orra','Firstlight',6,'mix'],
+ quorum_marisol:[0,'Facetrix',5,'Crystal'],quorum_harrow:[1,'Encorex',5,'Sonic'],quorum_saga:[2,'Pyrelyth',5,'Plasma'],quorum_ostrander:[3,'Citadrake',5,'Gravity']};
 const RIVAL_LV=[7,15,22,36,56,70];
+const QBOSSPOOL={};function qBossPool(ty){if(QBOSSPOOL[ty])return QBOSSPOOL[ty];const ok=d=>!['legendary','mythic','starter','signature'].includes(d.r)&&!d.name.includes('(')&&wildOK(d.name);   /* no World-Echo forms */
+ return QBOSSPOOL[ty]=D.map((d,i)=>i).filter(i=>ok(D[i])&&(D[i].t||[]).includes(ty))}
 function evolvedAt(id,lv){let n=D[id].name;for(let i=0;i<3;i++){const ev=(PROG.species[n]||{}).evolves;if(ev&&ev.into&&/^Level/.test(ev.method||'Level')&&lv>=ev.level&&IDX[ev.into]!=null)n=ev.into;else break}return IDX[n]}
 function bossTeam(q,o){const p=PL[G.planet]||PL[0],pool=p.pool.e.concat(p.pool.c).filter(id=>wildOK(D[id].name)),r=rng(hash(o.target)),fill=(n,lv)=>Array.from({length:n},()=>[evolvedAt(pool[Math.floor(r()*pool.length)],lv),lv]);
  const rv=/^sola_(\d)$/.exec(o.target);
  if(rv){const n=+rv[1],ace=RIVAL_LV[n-1]||7,mine=STARTERS.find(s=>G.caught[s])??STARTERS[0],counter=STARTERS[(STARTERS.indexOf(mine)+1)%3];
   return fill(n-1,Math.max(2,ace-2)).concat([[o.rival_stage&&typeof starterLine==='function'?IDX[starterLine(counter)[o.rival_stage-1]]:evolvedAt(counter,ace),ace]])}
  const b=QBOSS[o.target];if(!b)return null;const lv=typeof b[0]==='number'?PROG.bosses.quorum[b[0]]:PROG.bosses[b[0]];
- return fill(b[2]-1,lv-2).concat([[IDX[b[1]]??pool[0],lv]])}
+ const sig=(b[4]||[]).filter(n=>IDX[n]!=null).map(n=>[IDX[n],lv-1]),n=b[2]-1-sig.length,ace=IDX[b[1]]??pool[0],seen=new Set([ace]),one=P=>{for(let k=0;k<40&&P.length;k++){const id=evolvedAt(P[Math.floor(r()*P.length)],lv-2);if(!seen.has(id)){seen.add(id);return[id,lv-2]}}return null};
+ const rest=b[3]==='mix'?['Crystal','Sonic','Plasma','Gravity','Psi','Void','Hydro'].filter(t=>!(D[ace].t||[]).includes(t)).map(t=>one(qBossPool(t))).filter(Boolean).slice(0,n)
+  :b[3]?Array.from({length:n},()=>one(qBossPool(b[3]))).filter(Boolean):fill(n,lv-2);
+ return rest.concat(sig,[[ace,lv]])}
 function qTeam(q,o){const bt=bossTeam(q,o);if(bt)return bt;const p=PL[G.planet]||PL[0],lv=(p.lv||[5,8])[1];
  if(o.team&&o.team.length)return o.team.map(([id,l])=>{if(id==='counter_starter'){const mine=STARTERS.find(s=>G.caught[s]);return[STARTERS[(STARTERS.indexOf(mine)+1)%3]??STARTERS[1],l]}return[IDX[id]!=null?IDX[id]:id,l]});
  const pool=p.pool.c.concat(p.pool.e),r=rng(hash(o.target)),boss=o.type==='defeat_boss',n=boss?3:2;
@@ -197,9 +221,9 @@ function qTeam(q,o){const bt=bossTeam(q,o);if(bt)return bt;const p=PL[G.planet]|
 function qInteract(e){const q=e.q;
  if(e.k==='giver'){say(((q.dialogue&&q.dialogue.start||[]).length?q.dialogue.start:[q.title]).map(qFmt),()=>choose('Side mission: '+q.title,['Accept','Not now'],i=>{if(i===0){QN=QN.filter(m=>m.q!==q.id);qActivate(q);QN=QN.filter(m=>!(m.q===q.id&&m.kind==='start'));say('Mission accepted: '+q.title+'. '+qText(q)+'.')}}),q.giver&&q.giver.art);return}
  if(e.k==='turnin'||e.k==='talk'){if(!qEvent('talk','q:'+q.id,{x:e.x,y:e.y}))say(((q.dialogue&&q.dialogue.progress)||['Keep at it, Linker.']).map(qFmt),null,e.art||(q.giver&&q.giver.art));return}
- if(e.k==='prop'){const s=qs(q.id);s.got.push(e.i);if(QPROP_GIVES[e.o.target]){G.key=G.key||{};G.key[QPROP_GIVES[e.o.target]]=1}say(e.o.type==='collect'?'You found a '+e.o.target.replace(/_/g,' ')+'!':'You examine the '+(qLoc(q.id,s.step,e.o.location).spot||e.o.target.replace(/_/g,' '))+'.');qEvent('prop',e.o.target);return}
- if(e.k==='trainer'){if(!G.party.some(m=>m.hp>0)){say('Your team needs to heal first.');return}const name=qTitle(e.o.target),team=qTeam(q,e.o);
-  const tr={name,art:e.art,intro:qFmt(e.o.intro||'You want to battle? Let\'s go!'),lose:qFmt(e.o.lose||'...You win this time.'),after:'Not bad, Linker.',team,bkey:e.o.target,ally:e.o.ally,sp:e.o.test==='orra'?{orra:1}:null};
+ if(e.k==='prop'){const s=qs(q.id);s.got.push(e.i);if(QPROP_GIVES[e.o.target]){G.key=G.key||{};G.key[QPROP_GIVES[e.o.target]]=1}const sp=qLoc(q.id,s.step,e.o.location).spot||e.o.target.replace(/_/g,' '),tx=e.o.texts&&e.o.texts[e.i];say(tx?[].concat(tx).map(qFmt):e.o.type==='collect'?'You found a '+e.o.target.replace(/_/g,' ')+'!':'You examine '+(/^[A-Z][\w.-]*'s /.test(sp)?'':'the ')+sp+'.');qEvent('prop',e.o.target);return}
+ if(e.k==='trainer'){if(!G.party.some(m=>m.hp>0)){say('Your team needs to heal first.');return}const o=Object.assign({},e.o,e.o.trainers&&e.o.trainers[qs(q.id).n]||{}),name=o.name||qTitle(o.target),team=qTeam(q,o);
+  const tr={name,art:e.art,intro:qFmt(o.intro||'Let\'s see what your team can do!'),lose:qFmt(o.lose||'...You win this time.'),after:'Not bad, Linker.',team,bkey:o.target,ally:o.ally,sp:o.test==='orra'?{orra:1}:null};
   say(name+': '+tr.intro,()=>startBattle(team.map(([id,lv])=>mk(id,lv)),tr),e.art);return}
  if(e.k==='legend'){if(!G.party.some(m=>m.hp>0)){say('Your team needs to heal first.');return}const id=IDX[e.mon];if(id==null)return;
   say('The air hums... '+e.mon+' appears!',()=>{NEXTB=e.o.listen?{immortal:1,listen:1}:null;startBattle([mk(id,e.o.lv||50)],null)});return}}

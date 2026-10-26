@@ -425,7 +425,7 @@
   {
    "art": "guard",
    "t": [
-    "Watchman: West of here is the landing pad. Ships only leave with launch clearance from a Keeper."
+    "Watchman: Ships only leave Dustmere with launch clearance from a Keeper. Win a Signal Shard and the sky is yours."
    ],
    "tile": [
     15,
@@ -833,7 +833,7 @@
   {
    "art": "grub",
    "t": [
-    "Bug Catcher Grub: Fire bugs! The hottest bugs! Battle me!"
+    "Swarm Spotter Wick: Fire bugs! The hottest bugs! Battle me!"
    ],
    "wid": "mf10",
    "near": [
@@ -918,7 +918,7 @@
   {
    "art": "pilgrim",
    "t": [
-    "Pilgrim Sol: The island spirits test every traveler. Let's battle!"
+    "Pilgrim Oro: The island spirits test every traveler. Let's battle!"
    ],
    "wid": "mf4",
    "near": [
@@ -1135,7 +1135,7 @@
   {
    "art": "miner",
    "t": [
-    "Forge Miner Dax: The gate's mine to guard. Beat me first!"
+    "Forge Miner Dax: Hank's tower is past this gate. Beat me and I'll let you through."
    ],
    "wid": "mf12",
    "near": [
@@ -1620,7 +1620,7 @@
    ]
   },
   {
-   "art": "guard",
+   "art": "pell",
    "name": "Pell",
    "after": "M11",
    "until": "M13",

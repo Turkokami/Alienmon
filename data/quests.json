@@ -38,8 +38,7 @@
    ],
    "dialogue": {
     "start": [
-     "Dr. Vashti: Twenty years ago the Starfall brought them here. Today, one of them chooses you.",
-     "Pick your partner: Sporix, Plazmo or Gloopa."
+     "Dr. Vashti is waiting for you at her lab: the big dome with the telescope, across the plaza."
     ],
     "progress": [
      "Keep at it, Linker. You've got this."
@@ -92,6 +91,13 @@
       "x": 400,
       "y": 342,
       "map": "data/painted_maps.json#dustara"
+     },
+     "then": {
+      "art": "dx4",
+      "lines": [
+       "DX-4: Bzzt! Unknown signal on the canyon bridge. Frequency... friendly?",
+       "DX-4: Recommend investigation. Recommend snacks. Probably."
+      ]
      }
     },
     {
@@ -170,7 +176,7 @@
    ],
    "dialogue": {
     "start": [
-     "DX-4: Bzzt! Unknown signal on the canyon bridge. Frequency... friendly?"
+     "DX-4, the old scout robot by the dome homes, is beeping like crazy at the canyon."
     ],
     "progress": [
      "Keep at it, Linker. You've got this."
@@ -223,12 +229,14 @@
       "x": 1180,
       "y": 720,
       "map": "data/painted_maps.json#dustara"
-     }
+     },
+     "intro": "Took the slow starter, huh? Let's see who's the better Linker.",
+     "lose": "Ugh! ...Fine. Beginner's luck."
     }
    ],
    "dialogue": {
     "start": [
-     "Sola: Took the slow starter, huh? Let's see who's the better Linker."
+     "Sola is waiting for you at the Trading Post, across the canyon bridge."
     ],
     "progress": [
      "Keep at it, Linker. You've got this."
@@ -262,7 +270,7 @@
    },
    "giver": {
     "name": "Dusty the wanderer",
-    "art": "wanderer"
+    "art": "dusty"
    },
    "prereq": [
     "M03"
@@ -281,18 +289,6 @@
      }
     },
     {
-     "type": "visit",
-     "target": "node:bay",
-     "count": 1,
-     "location": {
-      "area": "molten_frontier",
-      "spot": "Palm Isle Recovery Hut",
-      "x": 325,
-      "y": 614,
-      "map": "data/world_map.json"
-     }
-    },
-    {
      "type": "talk",
      "target": "mf2",
      "count": 1,
@@ -302,18 +298,38 @@
       "x": 558,
       "y": 138,
       "map": "data/world_map.json"
+     },
+     "hint": "Talk to the Guard at the Tunnel Mouth",
+     "then": {
+      "art": "guard",
+      "lines": [
+       "Guard: So you're the new Linker. Helix runs a forge fortress up the ridge. Stay sharp out here."
+      ]
      }
+    },
+    {
+     "type": "visit",
+     "target": "node:bay",
+     "count": 1,
+     "location": {
+      "area": "molten_frontier",
+      "spot": "Palm Isle Recovery Hut",
+      "x": 325,
+      "y": 614,
+      "map": "data/world_map.json"
+     },
+     "hint": "Rest at the Palm Isle Recovery Hut"
     }
    ],
    "dialogue": {
     "start": [
-     "Dusty: The tunnel at the bottom of town runs clear under the sea to the Molten Frontier. Every Linker's road starts there."
+     "Dusty: Head east past the cactus gardens to the Sunset Tunnel. It runs clear under the sea to the Molten Frontier. Every Linker's road starts there."
     ],
     "progress": [
      "Keep at it, Linker. You've got this."
     ],
     "complete": [
-     "Guard: So you're the new Linker. Helix runs a forge fortress up the ridge. Stay sharp out here."
+     "Your team is rested. The whole Molten Frontier is open to you now."
     ]
    },
    "rewards": {
@@ -369,7 +385,8 @@
       "x": 873,
       "y": 790,
       "map": "data/world_map.json"
-     }
+     },
+     "hint": "Go through the Forge Gate to Ferrox"
     },
     {
      "type": "spot_event",
@@ -396,7 +413,7 @@
    ],
    "dialogue": {
     "start": [
-     "Forge Miner Dax: Hank's tower is past this gate. Beat me and I'll let you through."
+     "Hank Briggs's Relay Tower is on Ferrox, through the Forge Gate. Forge Miner Dax guards the gate, and nobody gets past him without a battle."
     ],
     "progress": [
      "Keep at it, Linker. You've got this."
@@ -458,6 +475,31 @@
       "planet": "sporeholm",
       "spot": "Spore pools",
       "note": "tile map or future painted map; place this spot when building"
+     },
+     "trainers": [
+      {
+       "name": "Helix Grunt",
+       "intro": "Helix Directive! These spore pools are Helix property now. Scram!",
+       "lose": "The siphons! Dr. Moor's going to get every drop back..."
+      },
+      {
+       "name": "Helix Grunt",
+       "intro": "You beat my partner? Then you'll have to beat me too. These tanks stay full!",
+       "lose": "Fine! Take your swamp back! I'm calling the shuttle."
+      }
+     ]
+    },
+    {
+     "type": "battle_rival",
+     "target": "sola_2",
+     "count": 1,
+     "hint": "Sola is waiting by the Spore Pools",
+     "intro": "There you are. I've been waiting by the Spore Pools all morning. Let's see if you've kept up!",
+     "lose": "...Okay. You're getting good. Don't let it go to your head.",
+     "location": {
+      "area": "sporeholm",
+      "planet": "sporeholm",
+      "spot": "Sola at the Spore Pools"
      }
     },
     {
@@ -537,15 +579,38 @@
       "spot": "Port Saltreach docks",
       "note": "tile map or future painted map; place this spot when building"
      },
-     "team": [
-      [
-       "Krillswarm",
-       17
-      ],
-      [
-       "Hexcoil",
-       18
-      ]
+     "trainers": [
+      {
+       "name": "Helix Grunt Pell",
+       "art": "pell",
+       "intro": "Helix Directive, Field Division! Step away from the docks, kid. This is official business.",
+       "lose": "Admin Vex is going to be so mad at me...",
+       "team": [
+        [
+         "Krillswarm",
+         17
+        ],
+        [
+         "Bubbub",
+         17
+        ]
+       ]
+      },
+      {
+       "name": "Helix Grunt",
+       "intro": "Admin Vex said to leave the children to Hexcoil. Gladly!",
+       "lose": "Hexcoil, no! Pull back, pull back!",
+       "team": [
+        [
+         "Krillswarm",
+         17
+        ],
+        [
+         "Hexcoil",
+         18
+        ]
+       ]
+      }
      ]
     },
     {
@@ -603,6 +668,19 @@
    ],
    "objectives": [
     {
+     "type": "battle_rival",
+     "target": "sola_3",
+     "count": 1,
+     "hint": "Find Sola at the end of the Long Dock",
+     "intro": "One more battle before I go. For old times' sake.",
+     "lose": "...You got good.",
+     "location": {
+      "area": "molten_frontier",
+      "planet": "dustara",
+      "spot": "Sola at the end of the Long Dock"
+     }
+    },
+    {
      "type": "cutscene",
      "target": "sola_leaves",
      "count": 1,
@@ -623,7 +701,7 @@
      "Keep at it, Linker. You've got this."
     ],
     "complete": [
-     "Sola steps onto a Helix shuttle. \"Don't follow me.\" The doors hiss shut."
+     "A Helix shuttle drops down beside the Deep Sea Ferry dock. Sola climbs aboard. \"Don't follow me.\" The doors hiss shut."
     ]
    },
    "rewards": {
@@ -666,6 +744,13 @@
       "x": 307,
       "y": 518,
       "map": "data/painted_maps.json#neonis"
+     },
+     "then": {
+      "art": "vashti",
+      "lines": [
+       "Dr. Vashti: You made it to Neonis! Kit's up on the highest rooftop in the city, wiring an old broadcast dish into that pulse.",
+       "Dr. Vashti: If anyone can make that signal talk, it's Kit. Listen..."
+      ]
      }
     },
     {
@@ -745,14 +830,29 @@
      "location": {
       "area": "glyphos_town",
       "planet": "glyphos",
-      "spot": "Mural hall: Ystra, the Devourer, the Seedmother",
+      "spot": "the three murals",
       "note": "tile map or future painted map; place this spot when building"
-     }
+     },
+     "hint": "Examine the three murals in the Mural Hall",
+     "texts": [
+      [
+       "Mural: A golden sun over a green world. Tall figures raise their arms to it.",
+       "The glyphs read: YSTRA. Home. The garden that sang."
+      ],
+      [
+       "Mural: A vast tree-mother, roots wrapped around glowing seeds.",
+       "The glyphs read: THE SEEDMOTHER. She gave her children wings of pod and light, and sent them far."
+      ],
+      [
+       "Mural: A dark tide swallows the stars one by one. A pale world sits in its mouth.",
+       "The glyphs read: THE DEVOURER. It does not hunger. It simply ends."
+      ]
+     ]
     }
    ],
    "dialogue": {
     "start": [
-     "Carved walls glow as you approach. Three murals tell a story older than the Starfall."
+     "Word comes from Glyphos: the old temple walls have started to glow. The Deep Sea Ferry sails there from the Long Dock."
     ],
     "progress": [
      "Keep at it, Linker. You've got this."
@@ -768,15 +868,7 @@
     "dust": 600
    },
    "repeatable": false,
-   "notes": "No Keeper on Glyphos.",
-   "epilogue": {
-    "art": "thorne",
-    "lines": [
-     "Far away, on Helix Station, Sola stands beside Director Thorne at a window full of stars.",
-     "Director Thorne: Begin Phase Three.",
-     "...Back on Glyphos, Zib blinks. For a split second, its big eye reflects something enormous: a giant dark eye, slowly opening."
-    ]
-   }
+   "notes": "No Keeper on Glyphos."
   },
   {
    "id": "M11",
@@ -918,7 +1010,7 @@
      "location": {
       "area": "glacia_town",
       "planet": "glacia",
-      "spot": "Three frozen fossil sites in the crystal caverns",
+      "spot": "Three frozen fossils at the Fossil Dig Flats",
       "note": "tile map or future painted map; place this spot when building"
      }
     },
@@ -1011,6 +1103,29 @@
      }
     },
     {
+     "type": "battle_trainer",
+     "target": "fortress_guard",
+     "count": 1,
+     "hint": "Get past the guard inside the Forge",
+     "team": [
+      [
+       "Gearhound",
+       33
+      ],
+      [
+       "Nullbot",
+       34
+      ]
+     ],
+     "intro": "Intruder in the Forge! Nobody gets near the control room!",
+     "lose": "Somebody... sound the alarm...",
+     "location": {
+      "area": "fortress",
+      "planet": "fortress",
+      "spot": "Forge corridor"
+     }
+    },
+    {
      "type": "examine",
      "target": "forge_terminal",
      "count": 1,
@@ -1020,7 +1135,8 @@
       "x": 1090,
       "y": 252,
       "map": "data/world_map.json"
-     }
+     },
+     "hint": "Search the control-room terminal"
     },
     {
      "type": "item",
@@ -1032,7 +1148,8 @@
       "x": 1090,
       "y": 252,
       "map": "data/world_map.json"
-     }
+     },
+     "hint": "Take the Helix Keycard"
     }
    ],
    "dialogue": {
@@ -1070,7 +1187,7 @@
    },
    "giver": {
     "name": "Admin Bronn",
-    "art": "vex"
+    "art": "bronn"
    },
    "prereq": [
     "M13"
@@ -1097,7 +1214,9 @@
       "planet": "helix",
       "spot": "Engineering bay",
       "note": "tile map or future painted map; place this spot when building"
-     }
+     },
+     "intro": "Thorne's lost his mind. That Rift will swallow us all. Beat me, and I'll open the way to the Observation Deck.",
+     "lose": "...Go. The Observation Deck is that way. Stop him."
     },
     {
      "type": "battle_rival",
@@ -1132,7 +1251,7 @@
    ],
    "dialogue": {
     "start": [
-     "Admin Bronn: Thorne's lost his mind. That Rift will swallow us all. Beat me and I'll open the way to Vex."
+     "Grub: Psst. Admin Bronn runs Helix Station's engine bay. Get past him and you can reach the Observation Deck."
     ],
     "progress": [
      "Keep at it, Linker. You've got this."
@@ -1283,8 +1402,10 @@
      "at": "590",
      "scene": "prophecy_mural",
      "title": "The Prophecy Shrine",
-     "hint": "Follow Liss to the third wind shrine in the Floating Gardens",
+     "hint": "Go to the third wind shrine in the Floating Gardens",
      "lines": [
+      "A shimmering girl made of crystal light is waiting at the shrine, flickering at the edges like a candle.",
+      "Liss: I am Liss, a Ystran echo. What's left of one, anyway. Zib knows my voice.",
       "At the third wind shrine, the wind falls silent. Carved across the whole shrine wall is one great picture.",
       "Liss: You have been told she stayed behind on Ystra. She didn't. She couldn't.",
       "Liss: As the hungry one ate our sky, the Seedmother broke her whole self apart into the seedpods. Every Alienmon carries a piece of her. Zib. Your partner. All of them.",
@@ -1335,7 +1456,7 @@
    "epilogue": {
     "art": "ystran",
     "lines": [
-     "At the last wind shrine, the Ystran echo Liss is clearer than ever.",
+     "At the last wind shrine, Liss is waiting again, clearer than ever.",
      "Liss: I launched the last seedpod. The one carrying Zib. The fold was closing, and someone had to push it through.",
      "Liss: I stayed behind on purpose. Someone had to sing it on its way.",
      "Zib's lights flicker through every color, then go soft and blue. It's crying in lights."
@@ -1426,7 +1547,7 @@
    ],
    "dialogue": {
     "start": [
-     "Mortimer Kade: I built the Rift engine for Thorne. I scratched the logo off my coat the day I understood what it would wake."
+     "Mortimer Kade: Seven Shards, Linker. Come to my lab on Umbra before you win the eighth. There's something you need to see."
     ],
     "progress": [
      "Keep at it, Linker. You've got this."
@@ -1534,7 +1655,7 @@
      "scene": "thalassa_landmark",
      "title": "The Harbor Tower",
      "lines": [
-      "Captain Marsh slots the core back into the Harbor Tower. For a second, nothing.",
+      "Later that night, at the Harbor Tower, Captain Marsh slots the core back in. For a second, nothing.",
       "Then the whole tower hums, and a beam of light shoots up into the night. Every boat in the harbor sounds its horn.",
       "Captain Marsh: Now we're even."
      ]
@@ -1724,8 +1845,9 @@
       "lines": [
        "A battered Helix shuttle drops into Dustmere's plaza. The hatch opens. It's Strand.",
        "Strand: Field Division. Second Class. ...Resigning.",
-       "Strand: Ostrander's soldiers have the crater sealed tight. But nobody stops a Helix shuttle. Get in. I'll fly you past the cordon."
-      ]
+       "Strand: The General's soldiers have the crater sealed tight. But nobody stops a Helix shuttle. Get in. I'll fly you past the cordon."
+      ],
+      "go": "136"
      }
     },
     {
@@ -1739,7 +1861,8 @@
       "x": 1436,
       "y": 704,
       "map": "data/world_map.json"
-     }
+     },
+     "hint": "Fly with Strand past the cordon"
     },
     {
      "type": "cutscene",
@@ -1799,7 +1922,7 @@
      "Keep at it, Linker. You've got this."
     ],
     "complete": [
-     "Your eight Shards rise and resonate. A great signal-winged bird answers the call: Novaryx!"
+     "With Novaryx's light ahead of you, the way down into the crater is open."
     ]
    },
    "rewards": {
@@ -1841,7 +1964,8 @@
      },
      "ally": {
       "who": "Sola",
-      "mon": "Squawktone",
+      "mon": "rival",
+      "evolve": 1,
       "lv": 52
      },
      "intro": "Do you know what infinite energy means? It means no accident is ever final.",
@@ -1889,8 +2013,8 @@
      "Keep at it, Linker. You've got this."
     ],
     "complete": [
-     "The Shards blaze and the Rift folds shut. From the last of its light steps Teo Reyes, an adult Lumivex at his side. Sola runs to him.",
      "Teo: Sola? ...You're so tall.",
+     "Teo: And Kael? Kael Thorne, holding the seal shut? We climbed down into that crater together, twenty years ago. Kael, Imogen, Orra and me.",
      "Teo: The seal can only be healed from Ystra's side. And there's something you need to know.",
      "Teo: The Heartroot, the last piece of her on Ystra, is dying. If it dies, the legend can't come true."
     ]
@@ -1937,7 +2061,7 @@
       "art": "wanderer"
      },
      "then": {
-      "art": "wanderer",
+      "art": "dusty",
       "lines": [
        "Dustmere is celebrating twenty years since the Starfall. The bridge glows all on its own.",
        "Dusty: Twenty years ago, four kids climbed down into that crater and found the Mother Pod. I always told it like a fairy tale. Tonight I'll tell it true.",
@@ -1981,7 +2105,7 @@
       "spot": "DX-4 in the plaza"
      },
      "then": {
-      "art": "technician",
+      "art": "dx4",
       "lines": [
        "Nana Wren (journal, last page): I built a little robot to listen for the scout's frequency, and to watch over my grandchild when I can't.",
        "Nana Wren (journal): I taught him my favorite word. Probably.",
@@ -2028,6 +2152,10 @@
        52
       ],
       [
+       "Hexcoil",
+       53
+      ],
+      [
        "Venomite",
        53
       ],
@@ -2038,7 +2166,7 @@
      ],
      "ally": {
       "who": "Captain Marsh",
-      "mon": "Anchorath",
+      "mon": "Brineback",
       "lv": 54
      },
      "intro": "You again?! I'm not going back to that Director. I'm not going ANYWHERE!",
@@ -2077,7 +2205,7 @@
      "Mom: Go on, enjoy the festival. You've earned it."
     ],
     "complete": [
-     "Mom: The Summit, huh? Go on. Make your Nana proud."
+     "Mom (on your Linker): The Summit, huh? Go on. Make your Nana proud."
     ]
    },
    "rewards": {
@@ -2132,7 +2260,9 @@
        "Marisol Fenn: This crystal cut the first Signal Shard. Twenty years ago, four kids built the very first Linker around it.",
        "Marisol Fenn: Vashti did the biology, Orra the signal, Kael the engineering. Teo just kept saying it would work. It did."
       ]
-     }
+     },
+     "intro": "Welcome to the Crystal hall. Twenty years of champions have stood where you're standing. Shine for me!",
+     "lose": "Brilliant. Truly brilliant."
     },
     {
      "type": "defeat_boss",
@@ -2150,7 +2280,9 @@
        "Duke Harrow: I wrote the anthem they played the day the Linker League was founded.",
        "Duke Harrow: That same night, Orra and Vashti locked the Codex away in this mountain. I watched them do it. Nobody sang about that part."
       ]
-     }
+     },
+     "intro": "Welcome to the Sonic hall, kid! Let's make some noise!",
+     "lose": "What a finale! Encore, encore!"
     },
     {
      "type": "defeat_boss",
@@ -2168,7 +2300,9 @@
        "As Saga's last Alienmon falls, Saga leans close and whispers one word. It isn't any language you know.",
        "Zib's lights flash every color at once. Nobody else seems to notice."
       ]
-     }
+     },
+     "intro": "(Saga says nothing. The hooded figure only bows... and the battle begins.)",
+     "lose": "(Saga leans close and whispers one word. It isn't any language you know.)"
     },
     {
      "type": "defeat_boss",
@@ -2186,7 +2320,9 @@
        "General Ostrander: I guarded that crater for twenty years. I'll tell you something I never put in a report.",
        "General Ostrander: Six years ago I saw Teo Reyes walk into the light. I could have stopped him. He looked so happy. So I let him go."
       ]
-     }
+     },
+     "intro": "The Gravity hall. I held a crater for twenty years. Let's see if you can hold your ground.",
+     "lose": "...You held. Good."
     }
    ],
    "dialogue": {
@@ -2286,8 +2422,7 @@
     "note": "black hole near the Void Ruins in the old map; in the Molten Frontier era, travel by ship to Ystra"
    },
    "giver": {
-    "name": "Zib",
-    "art": "technician"
+    "name": "Zib"
    },
    "prereq": [
     "M21"
@@ -2338,7 +2473,8 @@
      "location": {
       "area": "space",
       "spot": "Ystra"
-     }
+     },
+     "hint": "Step through the Vortex"
     }
    ],
    "dialogue": {
@@ -2374,8 +2510,7 @@
     "note": "tile map or future painted map; place this spot when building"
    },
    "giver": {
-    "name": "Seedmother's voice",
-    "art": "ystran"
+    "name": "Seedmother's voice"
    },
    "prereq": [
     "P01"
@@ -2404,9 +2539,7 @@
     "progress": [
      "Keep at it, Linker. You've got this."
     ],
-    "complete": [
-     "Oblivane is calm at last, small and silver. Light returns to Ystra's sky... but the land stays bare. The job isn't finished."
-    ]
+    "complete": []
    },
    "rewards": {
     "flags": [
@@ -2428,8 +2561,7 @@
     "note": "tile map or future painted map; place this spot when building"
    },
    "giver": {
-    "name": "The Heartroot",
-    "art": "ystran"
+    "name": "The Heartroot"
    },
    "prereq": [
     "P02"
@@ -2460,7 +2592,7 @@
      "count": 1,
      "at": "163",
      "scene": "ystra_keyart",
-     "title": "The Reunion: Choir",
+     "title": "The Reunion",
      "lines": [
       "Kit's Shard relay and Static's frequency send the call home to Kessler.",
       "Above the crater, the Warp Gate wakes for the first time and opens a road between the worlds.",
@@ -2575,9 +2707,7 @@
     "progress": [
      "Keep at it, Linker. You've got this."
     ],
-    "complete": [
-     "The Warp Gate's runes blaze cyan and pink. A road between two worlds, open at last."
-    ]
+    "complete": []
    },
    "rewards": {
     "flags": [
@@ -2587,7 +2717,6 @@
    "repeatable": false,
    "notes": "Hook for Batch 2. When a batch02 folder exists, this opens the next system.",
    "epilogue": {
-    "art": "thorne",
     "lines": [
      "One year later.",
      "The Warp Gate hums over Dustmere. Through it, green against Ystra's new sky, you can see the Seedmother's tree.",
@@ -2615,7 +2744,7 @@
    },
    "giver": {
     "name": "Dusty the wanderer",
-    "art": "wanderer"
+    "art": "dusty"
    },
    "prereq": [
     "M01"
@@ -3465,8 +3594,7 @@
     "note": "tile map or future painted map; place this spot when building"
    },
    "giver": {
-    "name": "Zib",
-    "art": "technician"
+    "name": "Zib"
    },
    "prereq": [
     "M06",
@@ -4323,7 +4451,7 @@
    },
    "giver": {
     "name": "Admin Bronn",
-    "art": "technician"
+    "art": "bronn"
    },
    "prereq": [
     "M14"
@@ -4690,7 +4818,7 @@
    },
    "giver": {
     "name": "Teo Reyes",
-    "art": "strand"
+    "art": "teo"
    },
    "prereq": [
     "M19"

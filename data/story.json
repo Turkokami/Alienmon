@@ -1,6 +1,6 @@
 {
  "_about": "Book canon story data (docs/SAGA_MASTER_PLAN.md). scenes: play once on entering a section; shifts: objectives inserted into existing quests (older saves move their step on); inserted: new main quests (older saves past them count them as done). Bump version when adding shifts or inserted quests.",
- "version": 8,
+ "version": 9,
  "scenes": [
   {
    "id": "strand_sporeling",
@@ -260,6 +260,68 @@
      1
     ]
    }
+  },
+  {
+   "id": "helix_scouts_ferrox",
+   "sec": "489",
+   "when": {
+    "active": "M05",
+    "step": 2
+   },
+   "lines": [
+    "Two Helix scouts in white coats are poking around the crane yard, scanning the scrap piles.",
+    "Helix Grunt: Readings say the Starfall signal runs right under this yard. Mark it for the Director.",
+    "Helix Grunt: Someone's coming! Fall back!",
+    "The scouts slip away between the cranes."
+   ]
+  },
+  {
+   "id": "spore_siphons",
+   "sec": "714",
+   "when": {
+    "active": "M06",
+    "step": 1
+   },
+   "lines": [
+    "Thick Helix hoses snake out of the glowing spore pools into humming siphon tanks.",
+    "Where the hoses drink, the pools have gone pale and still. The whole swamp smells like burnt sugar.",
+    "Helix Grunt: Keep those tanks filling! Admin's orders!"
+   ]
+  },
+  {
+   "id": "glyphos_little_scout",
+   "sec": "081",
+   "when": {
+    "active": "M10"
+   },
+   "lines": [
+    "On Glyphos, a crystal in the biggest temple wall begins to glow.",
+    "A soft, chiming voice: Little scout. You came back.",
+    "Zib's lights flash every color at once."
+   ],
+   "pic": {
+    "k": "cut_31",
+    "at": 0,
+    "skip": [
+     0,
+     1,
+     2
+    ]
+   }
+  },
+  {
+   "id": "tamsin_meet",
+   "sec": "123",
+   "when": {
+    "active": "M17"
+   },
+   "art": "tamsin",
+   "lines": [
+    "A woman in a patched explorer's vest, a big question mark stitched on the back, is sketching the cave walls by lantern light.",
+    "Tamsin: Oh! A Linker. Name's Tamsin. Thirty years of exploring, and I still haven't found the place I'm looking for.",
+    "Tamsin: Here's the one thing thirty years taught me. A capture isn't taking. It's asking. Hold out your hand first.",
+    "Tamsin: You're headed for the crater, aren't you? I can see it on your face. Then I'll turn up when you need me."
+   ]
   }
  ],
  "shifts": [
@@ -310,6 +372,24 @@
    "at": 1,
    "n": 1,
    "v": 7
+  },
+  {
+   "q": "M06",
+   "at": 2,
+   "n": 1,
+   "v": 9
+  },
+  {
+   "q": "M08",
+   "at": 0,
+   "n": 1,
+   "v": 9
+  },
+  {
+   "q": "M13",
+   "at": 1,
+   "n": 1,
+   "v": 9
   }
  ],
  "inserted": [

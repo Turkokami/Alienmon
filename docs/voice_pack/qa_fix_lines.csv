@@ -1,0 +1,63 @@
+file,quest,quest_title,beat,speaker,voice,direction,text
+qa_q_m02_dx4_01_dx4.mp3,M02,Story QA fixes 2026-10-26,qa fix,DX-4,dx4,,Recommend investigation. Recommend snacks. Probably.
+qa_q_m03_sola_01_sola.mp3,M03,Story QA fixes 2026-10-26,qa fix,Sola,sola,,Ugh! ...Fine. Beginner's luck.
+qa_q_m04_dusty_01_dusty.mp3,M04,Story QA fixes 2026-10-26,qa fix,Dusty,dusty,,Head east past the cactus gardens to the Sunset Tunnel. It runs clear under the sea to the Molten Frontier. Every Linker's road starts there.
+qa_q_m04_complete_01_narrator.mp3,M04,Story QA fixes 2026-10-26,qa fix,Narrator,narrator,,Your team is rested. The whole Molten Frontier is open to you now.
+qa_q_m05_start_01_narrator.mp3,M05,Story QA fixes 2026-10-26,qa fix,Narrator,narrator,,"Hank Briggs's Relay Tower is on Ferrox, through the Forge Gate. Forge Miner Dax guards the gate, and nobody gets past him without a battle."
+qa_q_m06_grunt_01_grunt.mp3,M06,Story QA fixes 2026-10-26,qa fix,Helix Grunt,grunt,,Helix Directive! These spore pools are Helix property now. Scram!
+qa_q_m06_grunt_02_grunt.mp3,M06,Story QA fixes 2026-10-26,qa fix,Helix Grunt,grunt,,The siphons! Dr. Moor's going to get every drop back...
+qa_q_m06_grunt_03_grunt.mp3,M06,Story QA fixes 2026-10-26,qa fix,Helix Grunt,grunt,,You beat my partner? Then you'll have to beat me too. These tanks stay full!
+qa_q_m06_grunt_04_grunt.mp3,M06,Story QA fixes 2026-10-26,qa fix,Helix Grunt,grunt,,Fine! Take your swamp back! I'm calling the shuttle.
+qa_q_m06_sola_01_sola.mp3,M06,Story QA fixes 2026-10-26,qa fix,Sola,sola,,There you are. I've been waiting by the Spore Pools all morning. Let's see if you've kept up!
+qa_q_m06_sola_02_sola.mp3,M06,Story QA fixes 2026-10-26,qa fix,Sola,sola,,...Okay. You're getting good. Don't let it go to your head.
+qa_q_m07_pell_01_pell.mp3,M07,Story QA fixes 2026-10-26,qa fix,Pell,pell,,"Helix Directive, Field Division! Step away from the docks, kid. This is official business."
+qa_q_m07_pell_02_pell.mp3,M07,Story QA fixes 2026-10-26,qa fix,Pell,pell,,Admin Vex is going to be so mad at me...
+qa_q_m07_grunt_01_grunt.mp3,M07,Story QA fixes 2026-10-26,qa fix,Helix Grunt,grunt,,Admin Vex said to leave the children to Hexcoil. Gladly!
+qa_q_m07_grunt_02_grunt.mp3,M07,Story QA fixes 2026-10-26,qa fix,Helix Grunt,grunt,,"Hexcoil, no! Pull back, pull back!"
+qa_q_m08_sola_01_sola.mp3,M08,Story QA fixes 2026-10-26,qa fix,Sola,sola,,One more battle before I go. For old times' sake.
+qa_q_m08_complete_01_narrator.mp3,M08,Story QA fixes 2026-10-26,qa fix,Narrator,narrator,,"A Helix shuttle drops down beside the Deep Sea Ferry dock. Sola climbs aboard. ""Don't follow me."" The doors hiss shut."
+qa_q_m09_vashti_01_vashti.mp3,M09,Story QA fixes 2026-10-26,qa fix,Dr. Vashti,vashti,,"You made it to Neonis! Kit's up on the highest rooftop in the city, wiring an old broadcast dish into that pulse."
+qa_q_m09_vashti_02_vashti.mp3,M09,Story QA fixes 2026-10-26,qa fix,Dr. Vashti,vashti,,"If anyone can make that signal talk, it's Kit. Listen..."
+qa_q_m10_start_01_narrator.mp3,M10,Story QA fixes 2026-10-26,qa fix,Narrator,narrator,,Word comes from Glyphos: the old temple walls have started to glow. The Deep Sea Ferry sails there from the Long Dock.
+qa_q_m13_guard_01_grunt.mp3,M13,Story QA fixes 2026-10-26,qa fix,Helix Guard,grunt,,Intruder in the Forge! Nobody gets near the control room!
+qa_q_m13_guard_02_grunt.mp3,M13,Story QA fixes 2026-10-26,qa fix,Helix Guard,grunt,,Somebody... sound the alarm...
+qa_q_m14_grub_01_grub.mp3,M14,Story QA fixes 2026-10-26,qa fix,Grub,grub,,Psst. Admin Bronn runs Helix Station's engine bay. Get past him and you can reach the Observation Deck.
+qa_q_m14_bronn_01_bronn.mp3,M14,Story QA fixes 2026-10-26,qa fix,Admin Bronn,bronn,,"Thorne's lost his mind. That Rift will swallow us all. Beat me, and I'll open the way to the Observation Deck."
+qa_q_m14_bronn_02_bronn.mp3,M14,Story QA fixes 2026-10-26,qa fix,Admin Bronn,bronn,,...Go. The Observation Deck is that way. Stop him.
+qa_q_m16_liss_01_narrator.mp3,M16,Story QA fixes 2026-10-26,qa fix,Narrator,narrator,,"A shimmering girl made of crystal light is waiting at the shrine, flickering at the edges like a candle."
+qa_q_m16_liss_02_liss.mp3,M16,Story QA fixes 2026-10-26,qa fix,Liss,liss,,"I am Liss, a Ystran echo. What's left of one, anyway. Zib knows my voice."
+qa_q_m16_epi_01_narrator.mp3,M16,Story QA fixes 2026-10-26,qa fix,Narrator,narrator,,"At the last wind shrine, Liss is waiting again, clearer than ever."
+qa_q_m17_kade_01_kade.mp3,M17,Story QA fixes 2026-10-26,qa fix,Mortimer Kade,kade,,"Seven Shards, Linker. Come to my lab on Umbra before you win the eighth. There's something you need to see."
+qa_q_m17b_relit_01_narrator.mp3,M17B,Story QA fixes 2026-10-26,qa fix,Narrator,narrator,,"Later that night, at the Harbor Tower, Captain Marsh slots the core back in. For a second, nothing."
+qa_q_m18_strand_01_strand.mp3,M18,Story QA fixes 2026-10-26,qa fix,Strand,strand,,The General's soldiers have the crater sealed tight. But nobody stops a Helix shuttle. Get in. I'll fly you past the cordon.
+qa_q_m18_complete_01_narrator.mp3,M18,Story QA fixes 2026-10-26,qa fix,Narrator,narrator,,"With Novaryx's light ahead of you, the way down into the crater is open."
+qa_q_m19_teo_01_teo.mp3,M19,Story QA fixes 2026-10-26,qa fix,Teo,teo,,"And Kael? Kael Thorne, holding the seal shut? We climbed down into that crater together, twenty years ago. Kael, Imogen, Orra and me."
+qa_q_m20_0_01_marisol.mp3,M20,Story QA fixes 2026-10-26,qa fix,Marisol Fenn,marisol,,Welcome to the Crystal hall. Twenty years of champions have stood where you're standing. Shine for me!
+qa_q_m20_0_02_marisol.mp3,M20,Story QA fixes 2026-10-26,qa fix,Marisol Fenn,marisol,,Brilliant. Truly brilliant.
+qa_q_m20_1_01_harrow.mp3,M20,Story QA fixes 2026-10-26,qa fix,Duke Harrow,harrow,,"Welcome to the Sonic hall, kid! Let's make some noise!"
+qa_q_m20_1_02_harrow.mp3,M20,Story QA fixes 2026-10-26,qa fix,Duke Harrow,harrow,,"What a finale! Encore, encore!"
+qa_q_m20_3_01_ostrander.mp3,M20,Story QA fixes 2026-10-26,qa fix,General Ostrander,ostrander,,The Gravity hall. I held a crater for twenty years. Let's see if you can hold your ground.
+qa_q_m20_3_02_ostrander.mp3,M20,Story QA fixes 2026-10-26,qa fix,General Ostrander,ostrander,,...You held. Good.
+qa_pic_cut_01_01_narrator.mp3,pic_cut_01,Story QA fixes 2026-10-26,qa fix,Narrator,narrator,,Glassy branches glitter under a huge red sun that is slowly going out.
+qa_pic_cut_18_01_narrator.mp3,pic_cut_18,Story QA fixes 2026-10-26,qa fix,Narrator,narrator,,Dr. Moor's poison has your partner covered in spots and hanging still...
+qa_scene_helix_scouts_ferrox_01_narrator.mp3,scene_helix_scouts_ferrox,Story QA fixes 2026-10-26,qa fix,Narrator,narrator,,"Two Helix scouts in white coats are poking around the crane yard, scanning the scrap piles."
+qa_scene_helix_scouts_ferrox_02_grunt.mp3,scene_helix_scouts_ferrox,Story QA fixes 2026-10-26,qa fix,Helix Grunt,grunt,,Readings say the Starfall signal runs right under this yard. Mark it for the Director.
+qa_scene_helix_scouts_ferrox_03_grunt.mp3,scene_helix_scouts_ferrox,Story QA fixes 2026-10-26,qa fix,Helix Grunt,grunt,,Someone's coming! Fall back!
+qa_scene_helix_scouts_ferrox_04_narrator.mp3,scene_helix_scouts_ferrox,Story QA fixes 2026-10-26,qa fix,Narrator,narrator,,The scouts slip away between the cranes.
+qa_scene_spore_siphons_01_narrator.mp3,scene_spore_siphons,Story QA fixes 2026-10-26,qa fix,Narrator,narrator,,Thick Helix hoses snake out of the glowing spore pools into humming siphon tanks.
+qa_scene_spore_siphons_02_narrator.mp3,scene_spore_siphons,Story QA fixes 2026-10-26,qa fix,Narrator,narrator,,"Where the hoses drink, the pools have gone pale and still. The whole swamp smells like burnt sugar."
+qa_scene_spore_siphons_03_grunt.mp3,scene_spore_siphons,Story QA fixes 2026-10-26,qa fix,Helix Grunt,grunt,,Keep those tanks filling! Admin's orders!
+qa_scene_tamsin_meet_01_narrator.mp3,scene_tamsin_meet,Story QA fixes 2026-10-26,qa fix,Narrator,narrator,,"A woman in a patched explorer's vest, a big question mark stitched on the back, is sketching the cave walls by lantern light."
+qa_scene_tamsin_meet_02_tamsin.mp3,scene_tamsin_meet,Story QA fixes 2026-10-26,qa fix,Tamsin,tamsin,,"Oh! A Linker. Name's Tamsin. Thirty years of exploring, and I still haven't found the place I'm looking for."
+qa_scene_tamsin_meet_03_tamsin.mp3,scene_tamsin_meet,Story QA fixes 2026-10-26,qa fix,Tamsin,tamsin,,Here's the one thing thirty years taught me. A capture isn't taking. It's asking. Hold out your hand first.
+qa_scene_tamsin_meet_04_tamsin.mp3,scene_tamsin_meet,Story QA fixes 2026-10-26,qa fix,Tamsin,tamsin,,"You're headed for the crater, aren't you? I can see it on your face. Then I'll turn up when you need me."
+qa_world_004_watchman_01_guard.mp3,world_004_watchman,Story QA fixes 2026-10-26,qa fix,Watchman,guard,,Ships only leave Dustmere with launch clearance from a Keeper. Win a Signal Shard and the sky is yours.
+qa_m05_ship_grant_01_hank.mp3,m05_ship_grant,Story QA fixes 2026-10-26,qa fix,Hank Briggs,hank,,"Come see what's in my hangar. Small and sleek, cream and gold, pink engines, bubble cockpit. That's your Nana Wren's old starship. I've kept it safe for her grandkid all these years. Launch clearance approved. Fly safe, Linker."
+qa_pic_hangar_01_narrator.mp3,pic_hangar,Story QA fixes 2026-10-26,qa fix,Narrator,narrator,,"Underneath sits a sleek little starship: cream and gold, pink engines, a bubble cockpit."
+qa_pic_zib_bridge_1_01_narrator_sporix.mp3,pic_zib_bridge_1,Story QA fixes 2026-10-26,qa fix,Narrator,narrator,,"By the time you and Sporix reach the bridge, the long first day is over and night has fallen. DX-4 is still beeping at the canyon."
+qa_pic_zib_bridge_1_01_narrator_plazmo.mp3,pic_zib_bridge_1,Story QA fixes 2026-10-26,qa fix,Narrator,narrator,,"By the time you and Plazmo reach the bridge, the long first day is over and night has fallen. DX-4 is still beeping at the canyon."
+qa_pic_zib_bridge_1_01_narrator_gloopa.mp3,pic_zib_bridge_1,Story QA fixes 2026-10-26,qa fix,Narrator,narrator,,"By the time you and Gloopa reach the bridge, the long first day is over and night has fallen. DX-4 is still beeping at the canyon."
+qa_pic_zib_bridge_1_02_narrator_sporix.mp3,pic_zib_bridge_1,Story QA fixes 2026-10-26,qa fix,Narrator,narrator,,"Something past the old stone bridge is sending a signal. You click on your flashlight and go, Sporix close behind."
+qa_pic_zib_bridge_1_02_narrator_plazmo.mp3,pic_zib_bridge_1,Story QA fixes 2026-10-26,qa fix,Narrator,narrator,,"Something past the old stone bridge is sending a signal. You click on your flashlight and go, Plazmo close behind."
+qa_pic_zib_bridge_1_02_narrator_gloopa.mp3,pic_zib_bridge_1,Story QA fixes 2026-10-26,qa fix,Narrator,narrator,,"Something past the old stone bridge is sending a signal. You click on your flashlight and go, Gloopa close behind."
+qa_battle_listen_01_liss.mp3,battle_listen,Story QA fixes 2026-10-26,qa fix,Liss,liss,,Don't fight it. When the moment comes... listen.

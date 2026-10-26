@@ -112,10 +112,10 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 | 491 Railcar Maze | 13,3 | 150x Stardust | 1 |
 | 491 Railcar Maze | 21,5 | 150x Stardust | 1 |
 | 495 Rustvale Back Lot | 7,10 | 3x Stasis Pod | 1 |
-| 881 Reservoir Islands | 9,12 | 2x Med Gel | 1 |
-| 881 Reservoir Islands | 20,6 | 3x Stasis Pod | 1 |
-| 880 Coolant Reservoir | 12,7 | 1x Tether Pulse | 1 |
-| 880 Coolant Reservoir | 5,3 | 150x Stardust | 1 |
+| 881 Reservoir Islands | 14,12 | 2x Med Gel | 1 |
+| 881 Reservoir Islands | 22,7 | 3x Stasis Pod | 1 |
+| 880 Coolant Reservoir | 10,12 | 1x Tether Pulse | 1 |
+| 880 Coolant Reservoir | 19,4 | 150x Stardust | 1 |
 | 919 Junkyard Throne | 13,8 | 3x Stasis Pod | 1 |
 | 919 Junkyard Throne | 7,4 | 1x Revive Spark | 1 |
 | 920 Abandoned Foundry | 7,9 | 3x Stasis Pod | 1 |
