@@ -324,7 +324,7 @@ function startIntro(){scene='intro';say(["Twenty years ago, the sky fell.","Seed
 const STARTERS=[IDX['Sporix'],IDX['Plazmo'],IDX['Gloopa']];
 function updTitle(){const sv=newOnly()?null:loadSave();const opts=sv?['Continue','New game']:typeof cloudRestore==='function'?['New game','Restore']:['New game'];   /* Restore: a cloud backup onto a new device */
  if(P_('up')||P_('down')||P_('left')||P_('right'))tsel=(tsel+1)%opts.length;
- if(P_('a')&&!document.querySelector('.tb')){if(opts[tsel]==='Restore'){cloudRestore();return}if(opts[tsel]==='Continue'){G=sv;G.gender='boy';if(G.arenaParty){G.party=G.arenaParty;G.box=G.arenaBox||G.box;delete G.arenaParty;delete G.arenaBox}scene=G.lastScene==='world'?'world':'planet';if(typeof secRescue==='function')secRescue();say('Welcome back, Linker.')}else{newGame();G.gender='boy';if(secEnabled()&&SWORLD['002'])secWakeUp();else startIntro()}}
+ if(P_('a')&&!document.querySelector('.tb')){if(opts[tsel]==='Restore'){cloudRestore();return}if(opts[tsel]==='Continue'){G=sv;G.gender='boy';if(G.arenaParty){G.party=G.arenaParty;G.box=G.arenaBox||G.box;delete G.arenaParty;delete G.arenaBox}scene=G.lastScene==='world'?'world':'planet';if(typeof secRescue==='function')secRescue();say('Welcome back, Linker.')}else{newGame();G.gender='boy';G.opt={expLink:true,voice:true};if(secEnabled()&&SWORLD['002'])secWakeUp();else startIntro()}}
 
  frame++;
  if(TITLEI.complete&&TITLEI.naturalWidth){ctx.save();ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';ctx.drawImage(TITLEI,0,0,160,144);ctx.restore();
