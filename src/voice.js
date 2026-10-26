@@ -21,6 +21,9 @@ function voNext(){if(VOA){VOA.onended=null;VOA.pause()}const f=VOQ.shift();if(!f
 const voSpeaking=()=>!!(VOA&&!VOA.paused&&!VOA.ended);
 /* say() pages: the clip of a line plays on the first page of that line */
 function voPages(lines){const out=[];for(const l of[].concat(lines)){const w=wrap(l),f=voFind(typeof qFmt==='function'?qFmt(l):l);for(let i=0;i<w.length;i+=2)out.push(i===0?f:null)}return out}
-function voTick(){if(typeof DLG!=='undefined'&&DLG&&DLG.vo){if(DLG!==VOLAST.dlg||DLG.i!==VOLAST.i){VOLAST.dlg=DLG;VOLAST.i=DLG.i;const f=DLG.vo[DLG.i];if(f)voPlay([f])}}
+/* Xenodex notes page: its spoken entry (dex_<No.>_xenodex) */
+function voDex(){if(typeof CH==='undefined'||!CH||typeof drawDexLore==='undefined'||CH.draw!==drawDexLore){VOLAST.dex=null;return}if(VOLAST.dex===CH.mon)return;VOLAST.dex=CH.mon;
+ const f='dex_'+String(D[CH.mon].n).padStart(3,'0')+'_xenodex';if(VOICE[f])voPlay([f])}
+function voTick(){voDex();if(typeof DLG!=='undefined'&&DLG&&DLG.vo){if(DLG!==VOLAST.dlg||DLG.i!==VOLAST.i){VOLAST.dlg=DLG;VOLAST.i=DLG.i;const f=DLG.vo[DLG.i];if(f)voPlay([f])}}
  if(typeof CUT!=='undefined'&&CUT&&CUT.board){if(CUT!==VOLAST.cut||CUT.p!==VOLAST.p){VOLAST.cut=CUT;VOLAST.p=CUT.p;const ps=CUT.board[CUT.p];if(ps&&ps.vo)voPlay(ps.vo)}}}
 addEventListener('visibilitychange',()=>{if(document.hidden&&VOA)VOA.pause()});
