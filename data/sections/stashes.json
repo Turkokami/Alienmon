@@ -1084,22 +1084,44 @@
    "section": "881",
    "name": "Reservoir Islands",
    "tile": [
-    1,
-    4
+    9,
+    12
    ],
    "item": "gel",
    "n": 2,
    "tier": 1
   },
   {
+   "section": "881",
+   "name": "Reservoir Islands",
+   "tile": [
+    20,
+    6
+   ],
+   "item": "stasis",
+   "n": 3,
+   "tier": 1
+  },
+  {
    "section": "880",
    "name": "Coolant Reservoir",
    "tile": [
-    22,
-    10
+    12,
+    7
    ],
    "item": "tether",
    "n": 1,
+   "tier": 1
+  },
+  {
+   "section": "880",
+   "name": "Coolant Reservoir",
+   "tile": [
+    5,
+    3
+   ],
+   "item": "dust",
+   "n": 150,
    "tier": 1
   },
   {

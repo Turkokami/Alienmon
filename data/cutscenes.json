@@ -38,7 +38,6 @@
     "One huge eye blinks at you, then at Plazmo.",
     "Zib: Bip!"
    ],
-   "st": "plazmo",
    "src": "Cutscene 03 - Ch 2 - Zib Falls From the Sky (Dustara).png"
   },
   {
@@ -64,7 +63,6 @@
     "Mud everywhere. {starter} is worn out, and you scoop it up gently.",
     "Sola turns away fast. For a second, her eyes look shiny."
    ],
-   "st": "plazmo",
    "src": "Cutscene 05 - Ch 3 - First Rival Battle (Dustara).png"
   },
   {
@@ -78,7 +76,6 @@
     "A grumpy Cactling leaps in front, curls into a spiky ball and takes the hit. THUNK.",
     "It folds its stubby arms and stares at you. Well? Are you going to ask?"
    ],
-   "st": "plazmo",
    "src": "Cutscene 06 - Ch 4 - Cactling Takes the Hit (Dustara).png"
   },
   {
@@ -92,7 +89,6 @@
     "Two Helix agents in white step out of the dark. A crackling net flies at Zib!",
     "{starter} throws itself in the way. When the dust clears, the agents are gone."
    ],
-   "st": "plazmo",
    "src": "Cutscene 07 - Ch 5 - Ambush in the Sunset Tunnel (Dustara).png"
   },
   {
@@ -106,7 +102,6 @@
     "Your backpack wriggles. Two round eyes blink up at you from behind your sandwich.",
     "Then whoever it is ducks back down under the socks."
    ],
-   "st": "plazmo",
    "src": "Cutscene 08 - Ch 6 - The Stowaway (Molten Frontier).png"
   },
   {
@@ -119,7 +114,6 @@
     "Your bag wriggles, and your little stowaway leaps straight into Kit's arms.",
     "It snuggles in and won't let go. It has made up its mind."
    ],
-   "st": "plazmo",
    "src": "Cutscene 09 - Ch 7 - Sporix Picks Kit (Molten Frontier).png",
    "scene": "kit_meet"
   },
@@ -134,7 +128,6 @@
     "You shout NOW! {starter} blasts the cracked ground, and the rock gives way.",
     "The giant topples. THOOOM. Forge Miner Dax just laughs."
    ],
-   "st": "plazmo",
    "src": "Cutscene 10 - Ch 7 - Rumbler Topples (Molten Frontier).png"
   },
   {
@@ -147,7 +140,6 @@
     "Up in the Ferrox Relay Tower, the crowd is roaring.",
     "Hank Briggs and his Anvilox, the Iron Wall of Ferrox, are waiting for you."
    ],
-   "st": "plazmo",
    "src": "Cutscene 11 - Ch 9 - The Welder Flame (Ferrox).png"
   },
   {
@@ -161,7 +153,6 @@
     "Hank Briggs: THAT'S MY KID!",
     "In your hand, your first Signal Shard hums, warm and blue."
    ],
-   "st": "plazmo",
    "src": "Cutscene 12 - Ch 9 - That's My Kid! (Ferrox).png"
   },
   {
@@ -201,7 +192,6 @@
     "Zib floats close and hums a soft, swaying tune. Hmm-mm-mmm.",
     "The little Mossback opens its eyes, wobbles out... and hums along."
    ],
-   "st": "plazmo",
    "src": "Cutscene 15 - Ch 11 - Zib Sings the Spore Choir Song (Sporeholm).png"
   },
   {
@@ -228,7 +218,6 @@
     "Dr. Moor's poison has {starter} covered in spots and hanging still...",
     "You shout NOW! Your partner blazes brighter than the Spore Pools and wins the day."
    ],
-   "st": "plazmo",
    "src": "Cutscene 18 - Ch 14 - Plazmet Ignites (Sporeholm).png"
   },
   {
@@ -242,7 +231,6 @@
     "Zib's eye fills the air with a giant gentle face of leaves and branches, eyes closed.",
     "Zib: ...Bip. It sounds like it misses her."
    ],
-   "st": "plazmo",
    "src": "Cutscene 19 - Ch 14 - The Tree-Mother's Face (Sporeholm).png"
   },
   {
@@ -281,7 +269,6 @@
     "A woman in a black-and-yellow cape turns. Her eyes are pale as ice.",
     "Admin Vex: Take the core. Leave the children to Hexcoil."
    ],
-   "st": "plazmo",
    "src": "Cutscene 22 - Ch 17 - Admin Vex (Thalassa).png"
   },
   {
@@ -294,7 +281,6 @@
     "Knocked flat, Kit's {kit} gets up and plants itself in front of Kit again.",
     "It glows... and grows into {kit2}! Roots burst up and wrap the Hexcoil tight."
    ],
-   "st": "plazmo",
    "src": "Cutscene 23 - Ch 17 - Sporix Becomes Mycelith (Thalassa).png"
   },
   {
@@ -307,7 +293,6 @@
     "Captain Marsh's Old Barnaby, a huge barnacled Brineback, rises to breathe.",
     "Your partner has waited for exactly this moment. It streaks in and strikes!"
    ],
-   "st": "plazmo",
    "src": "Cutscene 24 - Ch 18 - Old Barnaby Surfaces (Thalassa).png"
   },
   {
@@ -320,7 +305,6 @@
     "At the end of the Long Dock, Sola kneels beside her tired partner.",
     "Sola: You got good. That's why I need to do this alone."
    ],
-   "st": "plazmo",
    "src": "Cutscene 25 - Ch 19 - Rook Finally Wins (Molten Frontier).png"
   },
   {
@@ -334,7 +318,6 @@
     "Signs flash backwards, trains freeze in midair, and a hot dog stand plays opera.",
     "One cheeky Glitchbug zaps the top of your head."
    ],
-   "st": "plazmo",
    "src": "Cutscene 27 - Ch 20 - The Glitchbug Swarm (Neonis).png"
   },
   {
@@ -348,7 +331,6 @@
     "Through the static comes Sola's tired voice: Is my dad there?",
     "Then a calm, quiet man: Phase Three begins when the eighth tower cracks."
    ],
-   "st": "plazmo",
    "src": "Cutscene 28 - Ch 21 - The Quiet Voice (Neonis).png"
   },
   {
@@ -362,7 +344,6 @@
     "Your team finds the one gap in the rhythm and strikes. BWAAAMP!",
     "The giant speaker sits down, and the whole crowd goes wild."
    ],
-   "st": "plazmo",
    "src": "Cutscene 29 - Ch 22 - Battle Night at the Voltspire (Neonis).png"
   },
   {
@@ -402,7 +383,6 @@
     "The Monolets bow low, and the little Chimelet swings out one pure note. Dinnnng.",
     "Every wall hums, and the great doors swing slowly open."
    ],
-   "st": "plazmo",
    "src": "Cutscene 32 - Ch 24 - The Temple Sings (Glyphos).png"
   },
   {
@@ -429,7 +409,6 @@
     "Dr. Vashti: The four kids in the crater were me, Kael, Orra... and Teo Reyes.",
     "Zib floats up and bumps its saucer gently against her cheek."
    ],
-   "st": "plazmo",
    "src": "Cutscene 34 - Ch 26 - The Crater Four (Neonis).png"
   },
   {

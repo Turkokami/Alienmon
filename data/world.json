@@ -69532,8 +69532,17 @@
     24,
     16
    ],
-   "notes": "",
-   "edges": {},
+   "notes": "lake re-render (owner art 881_reservoir_islands.png)",
+   "edges": {
+    "right": {
+     "to": "880",
+     "range": [
+      4,
+      7
+     ],
+     "offset": 0
+    }
+   },
    "warps": [
     {
      "tile": [
@@ -69665,19 +69674,29 @@
    "objects": [
     {
      "tile": [
-      1,
-      4
+      9,
+      12
      ],
      "k": "stash",
      "item": "gel",
      "n": 2,
      "tier": 1
+    },
+    {
+     "tile": [
+      20,
+      6
+     ],
+     "k": "stash",
+     "item": "stasis",
+     "n": 3,
+     "tier": 1
     }
    ],
    "spawns": {
     "default": [
-     1,
-     2
+     22,
+     4
     ]
    },
    "grid": [
@@ -69685,8 +69704,46 @@
     75
    ],
    "pkey": "ferrox",
-   "npcs": [],
-   "mons": []
+   "npcs": [
+    {
+     "x": 4,
+     "y": 10,
+     "art": "guard",
+     "face": "up",
+     "t": [],
+     "id": "sec881_tr0",
+     "trainer": {
+      "cls": "Rail Hand",
+      "route": 1,
+      "name": "Pip"
+     }
+    },
+    {
+     "x": 19,
+     "y": 4,
+     "art": "technician",
+     "face": "down",
+     "t": [],
+     "id": "sec881_tr1",
+     "trainer": {
+      "cls": "Scrapper",
+      "route": 1,
+      "name": "Lio"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 11,
+     "y": 9,
+     "mon": "Anvilox"
+    },
+    {
+     "x": 13,
+     "y": 9,
+     "mon": "Gongorr"
+    }
+   ]
   },
   "880": {
    "id": "880",
@@ -69699,8 +69756,17 @@
     24,
     16
    ],
-   "notes": "",
-   "edges": {},
+   "notes": "lake re-render (owner art 880_coolant_reservoir.png)",
+   "edges": {
+    "left": {
+     "to": "881",
+     "range": [
+      4,
+      7
+     ],
+     "offset": 0
+    }
+   },
    "warps": [
     {
      "tile": [
@@ -69762,30 +69828,40 @@
    "objects": [
     {
      "tile": [
-      22,
-      10
+      12,
+      7
      ],
      "k": "stash",
      "item": "tether",
      "n": 1,
      "tier": 1
+    },
+    {
+     "tile": [
+      5,
+      3
+     ],
+     "k": "stash",
+     "item": "dust",
+     "n": 150,
+     "tier": 1
     }
    ],
    "spawns": {
     "default": [
-     22,
-     5
+     1,
+     4
     ]
    },
    "grid": [
-    0,
-    95
+    24,
+    75
    ],
    "pkey": "ferrox",
    "npcs": [
     {
-     "x": 22,
-     "y": 8,
+     "x": 7,
+     "y": 4,
      "art": "ferrox_folk3",
      "face": "down",
      "t": [
@@ -69793,12 +69869,43 @@
      ],
      "name": "Pipe fitter",
      "src": "n:880:0"
+    },
+    {
+     "x": 17,
+     "y": 4,
+     "art": "miner",
+     "face": "left",
+     "t": [],
+     "id": "sec880_tr1",
+     "trainer": {
+      "cls": "Miner",
+      "route": 1,
+      "name": "Suri"
+     }
+    },
+    {
+     "x": 10,
+     "y": 12,
+     "art": "guard",
+     "face": "down",
+     "t": [],
+     "id": "sec880_tr2",
+     "trainer": {
+      "cls": "Rail Hand",
+      "route": 1,
+      "name": "Corin"
+     }
     }
    ],
    "mons": [
     {
-     "x": 22,
-     "y": 6,
+     "x": 19,
+     "y": 12,
+     "mon": "Gearhound"
+    },
+    {
+     "x": 4,
+     "y": 12,
      "mon": "Coilossus"
     }
    ]
@@ -70974,7 +71081,7 @@
    },
    "grid": [
     0,
-    115
+    95
    ],
    "pkey": "ferrox",
    "npcs": [
@@ -83741,6 +83848,20 @@
    ]
   },
   {
+   "from_id": "881",
+   "edge": "right",
+   "tile_range": [
+    4,
+    7
+   ],
+   "to_id": "880",
+   "to_edge": "left",
+   "to_tile": [
+    4,
+    7
+   ]
+  },
+  {
    "from_id": "880",
    "edge": "right",
    "tile_range": [
@@ -83752,6 +83873,20 @@
    "to_tile": [
     10,
     13
+   ]
+  },
+  {
+   "from_id": "880",
+   "edge": "left",
+   "tile_range": [
+    4,
+    7
+   ],
+   "to_id": "881",
+   "to_edge": "right",
+   "to_tile": [
+    4,
+    7
    ]
   },
   {
