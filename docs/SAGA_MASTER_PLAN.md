@@ -429,7 +429,7 @@ Ending: the shared-home choice. Ystra is renewed, the Warp Gate links it to Kess
 
 25. Zib's Choice. The Seedmother tells Zib his mission is done; he can stay home. Zib looks at her, then at Rook, and says one long, soft "Bip." The Seedmother smiles: "A scout's job is to find a home. You found one." Zib comes back with Rook.
 
-26. One Year Later. Rook is seventeen. The Warp Gate hums over Dustmere. Tamsin stayed on Ystra to explore; Teo and Vashti run a new research station between the worlds; Vex is still in prison, and Marsh still visits to gloat. A letter arrives from Thorne: "Elena would have liked you. Tell your Zib thank you." At the Observatory, a nervous new thirteen- year-old chooses a starter, and Rook notices one shy capsule nobody picked. He walks over to it. The end of the Alienmon Chronicles.
+26. One Year Later. Rook is seventeen. The Warp Gate hums over Dustmere. Tamsin stayed on Ystra to explore; Teo and Vashti run a new research station between the worlds; Vex is still in prison, and Marsh still visits to gloat. A letter arrives from Thorne: "Elena would have liked you. Tell your Zib thank you." At the Observatory, a nervous new sixteen-year-old chooses a starter, and Rook notices one shy capsule nobody picked. He walks over to it. The end of the Alienmon Chronicles.
 
 ## Mysteries and payoffs
 
