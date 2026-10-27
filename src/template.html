@@ -458,13 +458,14 @@ function areaTrack(){if(scene==='cut'&&CUT&&CUT.board)return'wonder';if(typeof s
  if(scene==='menu'||scene==='cut'){return PREV==='space'?'space':PREV==='world'?'frontier':PREV==='planet'?'town':lastArea}return lastArea}
 function wantTrack(){if(TITLE_SCENES.includes(scene))return TITLEM;if(typeof CRED!=='undefined'&&CRED)return BGM;if(scene==='cut'&&CUT&&CUT.board)return'chip';
  if(musicMode==='song'&&typeof EVO!=='undefined'&&EVO&&song('evolution'))return song('evolution');
+ if(scene==='rta'&&typeof rMusic==='function'){const t=rMusic();if(t)return t}
  if(scene==='battle'||scene==='rta'||(LVP&&B))return(musicMode==='song'&&songBattle())||BATTLEM;
  if(musicMode!=='song')return'chip';if(scene==='dive')return song('signal_dive')||BGM;if(scene==='space'||(scene==='menu'&&PREV==='space'))return song('space_flight')||BGM;const sw=G&&G.sec&&typeof SWORLD!=='undefined'&&SWORLD[G.sec.id];if(sw&&/Recovery (Bay|Tent)$/.test(sw.name)&&song('recovery_bay'))return song('recovery_bay');if(sw&&sw.type==='cave'&&song('caves'))return song('caves');   /* healing rooms and caves have their own music */
  return(G&&songWorld())||BGM}
 function musicTry(){if(musicMode==='off'||document.hidden)return;const t=wantTrack();if(t!==curTrack){if(t!=='chip'&&t!==BGM)t.currentTime=0;curTrack=t}   /* every song but the overworld theme starts from the top */
  if(t==='chip'){chipInit();if(AC&&AC.state==='suspended')AC.resume()}else if(t.paused){const p=t.play();if(p&&p.catch)p.catch(()=>{})}}
 function musicTick(){if(musicMode==='off')return;const t=wantTrack();if(t!==curTrack)musicTry();
- const duck=typeof voSpeaking==='function'&&voSpeaking()?0.4:1;   /* music dips while a story voice is speaking */
+ const duck=(typeof voSpeaking==='function'&&voSpeaking())||(typeof rDuck==='function'&&rDuck())?0.4:1;   /* music dips while a story voice is speaking */
  for(const a of ALLM){const target=a===curTrack?MUSIC_VOL*volMul()*duck*(a===BATTLEM?1.15:1):0;a.volume=Math.max(0,Math.min(1,a.volume+Math.sign(target-a.volume)*Math.min(0.006,Math.abs(target-a.volume))));if(a!==curTrack&&a.volume<=0.001&&!a.paused)a.pause()}
  if(AC){const area=areaTrack();if(curTrack==='chip'){if(chipCur!==area){if(chipVol>0.004)chipVol=Math.max(0,chipVol-0.012);else{lastArea=area;chipPlay(area)}}else chipVol=Math.min(CHIP_VOL*volMul(),chipVol+0.004)}
   else{chipVol=Math.max(0,chipVol-0.006);if(chipVol<=0)chipStop()}chipMaster.gain.setTargetAtTime(chipVol,AC.currentTime,0.05)}}

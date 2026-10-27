@@ -145,8 +145,9 @@ fill.__SECENGINE__=(fs.readFileSync(path.join(root,'src/sections.js'),'utf8')+'\
 // Linker Arena (src/arena.js, docs/arena/ARENA_BUILD_PLAN.md): move shapes and timings plus any imported arena art
 const ARENAJ=fs.readFileSync(path.join(root,'data/arena.json'),'utf8');
 const ARENAART={poses:folder('art/arena/poses','.png'),scenes:folder('art/arena/scenes','.jpg'),fx:folder('art/arena/fx','.webp'),tiles:folder('art/arena/tiles','.webp'),hazards:folder('art/arena/hazards','.webp'),ui:folder('art/arena/ui','.png'),uicut:folder('art/arena/uicut','.png')};
+const ARENASND={sfx:folder('audio/arena/sfx','.mp3'),vo:folder('audio/arena/vo','.mp3'),music:folder('audio/arena/music','.mp3')};   // announcer, effects, music (audio/arena)
 console.log('arena art:',Object.entries(ARENAART).map(([k,v])=>k+' '+Object.keys(v).length).join(', '));
-fill.__ARENAENGINE__=fs.readFileSync(path.join(root,'src/arena.js'),'utf8').replace(/__ARENA__/g,()=>ARENAJ).replace(/__ARENAART__/g,()=>j(ARENAART));
+fill.__ARENAENGINE__=fs.readFileSync(path.join(root,'src/arena.js'),'utf8').replace(/__ARENA__/g,()=>ARENAJ).replace(/__ARENAART__/g,()=>j(ARENAART)).replace(/__ARENASND__/g,()=>j(ARENASND));
 fill.__WORLDENGINE__=fs.readFileSync(path.join(root,'src/world.js'),'utf8').replace(/__PROTO__/g,j(PROTO)).replace(/__WORLDSTATE__/g,j({gates:WS.gates,ship:WS.ship})).replace(/__PEOPLE__/g,PEOPLE).replace(/__SPACE__/g,j(SPACEART));
 // function replacer: data can contain "$&"-style sequences that a string replacement would expand
 let html=fs.readFileSync(path.join(root,'src/template.html'),'utf8').replace(/__[A-Z]+__/g,k=>k in fill?fill[k]:k);

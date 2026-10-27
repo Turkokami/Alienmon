@@ -29,7 +29,7 @@
  "match": {
   "level": 50,
   "time": 99,
-  "countdown": 120,
+  "countdown": 240,
   "scale": 0.12
  },
  "moves": {

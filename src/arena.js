@@ -19,6 +19,34 @@ const RF={x0:6,y0:20,x1:154,y1:128};   // the arena floor on the 160x144 screen
 const RDIFF=[['Easy',27,0.35],['Normal',15,0.18],['Hard',7,0.06]];   // name, ticks between decisions, aim error (radians)
 const RREACH={PROJ:100,LOB:90,WAVE:110,BEAM:110,CHAIN:110,ARC:22,CONE:34,BURST:28,DASH:50,ZONE:80,RAIN:80,FIELD:70,AURA:999};
 let RTA=null;const RTO={diff:1,arena:0,pick:0};
+/* ---- arena sound (audio/arena): the announcer, hit and move effects, and the arena's own music.
+   Effects and announcer lines are decoded once into the game's audio context (no lag on phones); music tracks loop
+   through the normal music fader (wantTrack asks rMusic). Music off (Options) silences all of it; Voices off silences the announcer. */
+const ARSND=__ARENASND__,RSB={},RSLAST={},RSM={};let RSLOAD=0,RSVOT=0,RSPEND=null;const RPRE=100;
+function rsLoad(){if(RSLOAD||typeof chipInit!=='function'||!chipInit())return;RSLOAD=1;
+ const L=[...Object.entries(ARSND.sfx).map(([k,u])=>['sfx:'+k,u]),...Object.entries(ARSND.vo).map(([k,u])=>['vo:'+k,u]),...Object.entries(ARSND.music).filter(([k])=>/^(jingle|sting)_/.test(k)).map(([k,u])=>['music:'+k,u])];
+ for(const[key,u]of L)fetch(u).then(r=>r.arrayBuffer()).then(b=>new Promise((ok,no)=>AC.decodeAudioData(b,ok,no))).then(buf=>{RSB[key]=buf;if(RSPEND&&RSPEND.key===key&&Date.now()-RSPEND.at<2500){RSPEND=null;rsPlay(key,1)}}).catch(()=>{})}
+function rsPlay(key,vol,gap){if(musicMode==='off'||document.hidden||!AC)return 0;const buf=RSB[key];if(!buf){if(key.startsWith('vo:'))RSPEND={key,at:Date.now()};return 0}
+ const now=AC.currentTime;if(gap&&RSLAST[key]&&now-RSLAST[key]<gap)return 0;RSLAST[key]=now;if(AC.state==='suspended')AC.resume();
+ const s=AC.createBufferSource(),g=AC.createGain();s.buffer=buf;g.gain.value=Math.min(1.5,vol*(typeof volMul==='function'?volMul():1));s.connect(g);g.connect(AC.destination);s.start();
+ if(!key.startsWith('sfx:'))RSVOT=Math.max(RSVOT,now+buf.duration);return buf.duration}
+const rSfx=(k,v,gap)=>rsPlay('sfx:'+k,v==null?0.55:v,gap==null?0.06:gap);
+const rVo=(k,gap)=>{if(typeof voOn==='function'&&!voOn())return;rsPlay('vo:'+k,1.1,gap||0)};
+const rJingle=k=>rsPlay('music:'+k,0.8,0);
+const rDuck=()=>!!(AC&&AC.currentTime<RSVOT);   // music dips under the announcer and the jingles
+function rSong(k){const u=ARSND.music[k];if(!u)return null;if(!RSM[k]){const a=new Audio(u);a.loop=true;a.volume=0;a.preload='auto';RSM[k]=a;ALLM.push(a)}return RSM[k]}
+function rMusic(){if(!RTA)return rSong(RHUB&&(RHUB.pod||RHUB.cab)?'arena_lobby':'arena_menu');const o=RTA.opts||{};
+ if(RTA.phase==='fight'&&!o.rift&&rT0()-(RTA.t-RTA.t0)<15*60)return rSong('battle_sudden_death');   // the last 15 seconds
+ return rSong(o.cup?(o.cup.round>=3?'battle_final':'battle_cup'):o.keeper?'battle_keeper':o.rift?'battle_rift':RTA.pl>=PL.length?'battle_practice':'battle_standard')}
+const rIntro=()=>{const o=RTA.opts||{};return o.cup?[['round_one','ROUND 1'],['round_two','ROUND 2'],['linkers_ready','ROUND 3'],['final_round','FINAL ROUND']][o.cup.round]:o.ffa||o.rift?['linkers_ready','READY?']:['round_one','ROUND 1']};
+function rSndTick(){const A=RTA,me=A.f[0];
+ for(const f of A.f){if(f.m.hp<=0){if(!f.sKO){f.sKO=1;rSfx('ko_poof',0.7);rVo('k_o',1.5);rSfx('crowd_cheer',0.3,2)}}else f.sKO=0}
+ if(me&&me.m.hp>0){const low=me.m.hp<stat(me.m,0)*0.25;if(low&&!me.sLow)rSfx('low_hp_warning',0.45);me.sLow=low;
+  if(me.sCd)me.cd.forEach((c,i)=>{if(me.sCd[i]>0&&c===0)rSfx('cooldown_ready',0.25,0.2)});me.sCd=me.cd.slice()}
+ if(rT0()-(A.t-A.t0)===15*60)rJingle('sting_match_point')}
+function rsResult(){const A=RTA,w=A.win,mine=A.tm[0],frac=mine.reduce((a,x)=>a+x.m.hp/stat(x.m,0),0)/mine.length;
+ if(w===0){rJingle('jingle_victory');rSfx('crowd_cheer',0.4);rVo(frac>=0.999?'perfect':frac<0.2?'what_a_comeback':'victory')}
+ else if(w===1){rJingle('jingle_try_again');rVo('try_again')}else{rJingle('jingle_draw');rVo('it_s_a_draw')}}
 addEventListener('keydown',e=>{if(scene!=='rta')return;if(e.code==='KeyQ'||e.code==='Tab'){pressed.sw=true;e.preventDefault();return}const k={Digit1:0,Digit2:1,Digit3:2,Digit4:3,KeyJ:0,KeyK:1,KeyL:2,KeyI:3}[e.code];if(k!==undefined){pressed['m'+k]=true;e.preventDefault()}});
 // tapping a move in the bar along the bottom of the screen fires it, so phones get all four moves without the B cycle
 cv.addEventListener('pointerdown',e=>{if(scene!=='rta'||!RTA||CH||DLG)return;const r=cv.getBoundingClientRect(),x=(e.clientX-r.left)/r.width*160,y=(e.clientY-r.top)/r.height*144;
@@ -87,12 +115,12 @@ function rtaStart(opts){if(typeof opts==='number')opts={foe:[opts]};opts=opts||{
  RTA.pk=names.flatMap(n=>['side_a','side_b','atk_front','atk_back','hurt','ko'].map(p=>n+'_'+p)).filter(k=>k in ARA.poses);warm(ARPI,RTA.pk);RTA.wait=0;
  RTA.pk2=[[ARSI,RTA.key+'_arena'],...['panel_l','panel_r','bar_g','bar_y','bar_r','timer','btn_ready','btn_cool','btn_pressed','cd_3','cd_2','cd_1','cd_go'].map(k=>[ARUI,k])].filter(([o,k])=>o===ARSI?k in ARA.scenes:ARA.uicut&&k in ARA.uicut);for(const[o,k]of RTA.pk2)o[k];   // the arena poses load before the countdown runs
  for(const x of f)rCpush('common_release',0,x.x,x.y-12,34,30);
- const L=[];if(!opts.ffa&&!opts.rift){entry(f[0].m,f[1].m,L);entry(f[1].m,f[0].m,L)}rLog(opts.rift?['Stabilise the '+D[opts.rift.boss].name+'! Your allies will help.']:opts.ffa?['Free-for-all! Last Alienmon standing wins.']:opts.code?[opts.code.name+"'s team steps into the arena!"].concat(L):L);scene='rta'}
+ const L=[];if(!opts.ffa&&!opts.rift){entry(f[0].m,f[1].m,L);entry(f[1].m,f[0].m,L)}rLog(opts.rift?['Stabilise the '+D[opts.rift.boss].name+'! Your allies will help.']:opts.ffa?['Free-for-all! Last Alienmon standing wins.']:opts.code?[opts.code.name+"'s team steps into the arena!"].concat(L):L);scene='rta';rsLoad();rSfx('release_beam',0.5)}
 // tag battles: bring the next Alienmon in where the last one stood (its cooldowns are kept from when it left)
 const rAlive=side=>RTA.tm[side].filter(x=>x.m.hp>0);
 function rSwap(side,to){const A=RTA,old=A.f[side],nx=to||A.tm[side].find(x=>x!==old&&x.m.hp>0);if(!nx||nx===old)return false;
  nx.x=old.x;nx.y=old.y;nx.face=old.face;nx.ax=old.ax;nx.ay=old.ay;nx.kb=[0,0];nx.wind=null;nx.dash=null;nx.swapCd=90;nx.next=0;old.wind=null;old.dash=null;
- if(old.m.hp>0)rCpush('common_release',1,old.x,old.y-12,30,18);A.f[side]=nx;rCpush('common_release',0,nx.x,nx.y-12,34,26);
+ if(old.m.hp>0){rCpush('common_release',1,old.x,old.y-12,30,18);rSfx('recall_beam',0.35)}rSfx('swap_partner',0.55);if(side===0)rVo('switch',2);A.f[side]=nx;rCpush('common_release',0,nx.x,nx.y-12,34,26);
  const L=['Go, '+nm(nx.m)+'!'];entry(nx.m,A.f[1-side].m,L);rLog(L);return true}
 
 /* ---- cups (P3-03): four 3v3 rounds against themed teams, harder each round; a win gives the cup's trophy ---- */
@@ -122,7 +150,7 @@ let RHUB=null;
 const RCARDS=[{k:'card_1v1',n:'1 vs 1',go:()=>{RTO.mode='1v1';rtaStart()}},{k:'card_3v3',n:'3 vs 3',go:()=>{RTO.mode='3v3';rtaStart()}},{k:'card_ffa',n:'Free-for-all',go:()=>rtaStart({ffa:1})},
  {k:'card_cups',n:'Cups',go:()=>rCupMenu()},{k:'card_code',n:'Battle Code',go:()=>rCodeMenu()},{k:'card_practice',n:'Practice',go:()=>{const k=RTO.mode;RTO.mode='1v1';rtaStart({arena:PL.length,diff:0});RTO.mode=k}}];
 // back: where B returns to ('planet' from a lobby or Recovery Bay, else the START menu)
-function rtaHub(back){if(!G.party.length)return say('You need an Alienmon to enter the Arena.');if(back)RTO.back=back;RTA=null;RHUB={sel:RHUB?RHUB.sel:0,t:0};scene='rta'}
+function rtaHub(back){if(!G.party.length)return say('You need an Alienmon to enter the Arena.');if(back)RTO.back=back;RTA=null;RHUB={sel:RHUB?RHUB.sel:0,t:0};scene='rta';rsLoad();if(back)rVo('linkers_ready')}
 function rtaExit(){RHUB=null;RTA=null;if(RTO.back==='planet'){RTO.back=null;scene='planet'}else{scene='menu';menuMode='root'}}
 function rHubUpd(){const H=RHUB;if(!H)return rtaExit();H.t++;
  if(H.pod){if(H.pod.t++>30&&(P_('a')||P_('b'))){const cb=H.pod.cb;H.pod=null;if(cb)cb()}return}
@@ -140,12 +168,12 @@ function rHubDraw(){const H=RHUB;if(!H){rect(0,0,160,144,'#120c22');return}
  box(0,110,160,34);txt(RCARDS[H.sel].n+(RCARDS[H.sel].soon?' (soon)':''),6,115,'#1b1424',7);txt('A: pick  START: setup  B: back',6,128,'#3b2a5c',5)}
 // the winners' podium: a trophy on the top step and your lead Alienmon beside it
 const RTROPHY={canyon:'trophy_bronze',tide:'trophy_bronze',thunder:'trophy_silver',frost:'trophy_silver',nebula:'trophy_gold',summit:'trophy_prism'};
-function rPodium(trophy,title,lead,cb){scene='rta';RTA=null;RHUB=RHUB||{sel:0,t:0};RHUB.pod={trophy,title,lead,cb,t:0}}
+function rPodium(trophy,title,lead,cb){scene='rta';RTA=null;RHUB=RHUB||{sel:0,t:0};RHUB.pod={trophy,title,lead,cb,t:0};rJingle('jingle_cup_win');rVo('a_new_champion')}
 function rPodDraw(P){if(!rUi('podium_bg',0,0,160,107))rect(0,0,160,107,'#241838');const b=Math.round(Math.sin(P.t/8)*2);
  rUi(P.trophy,70,26+b,20);if(P.lead!=null)dspr(P.lead,26,40,2.2,false,null);
  box(0,107,160,37);wrap(P.title,24).slice(0,2).forEach((l,i)=>txt(l,6,113+i*11,'#1b1424',7));if(P.t>30&&frame%40<28)txt('A',150,134,'#ff8a1e',6)}
 // the trophy cabinet in the Dustmere lobby: every cup, lit up once it is won
-function rCabinet(){scene='rta';RTA=null;RHUB={sel:0,t:0,cab:{t:0},cab0:'exit'};RTO.back='planet'}
+function rCabinet(){scene='rta';RTA=null;RHUB={sel:0,t:0,cab:{t:0},cab0:'exit'};RTO.back='planet';rsLoad();rJingle('jingle_trophy')}
 function rCabDraw(){rect(0,0,160,144,'#1b1424');txt('Trophy cabinet',36,4,'#ffd23f',7);const won=(G.rta&&G.rta.cups)||{};
  RCUPS.forEach((c,i)=>{const x=10+(i%3)*50,y=18+Math.floor(i/3)*44,got=won[c.k];ctx.save();if(!got){ctx.globalAlpha=0.25}rUi(RTROPHY[c.k],x+12,y,18);ctx.restore();txt(c.n.replace(' Cup',''),x+2,y+36,got?'#ffd23f':'#6b5a9a',5)});
  const kp=Object.keys((G.rta&&G.rta.keepers)||{}).length,r=G.rta||{w:0,l:0};box(0,110,160,34);txt('Keeper rematches won: '+kp+'/8',6,115,'#1b1424',6);txt('Record: '+(r.w||0)+' W / '+(r.l||0)+' L',6,127,'#1b1424',6)}
@@ -193,16 +221,18 @@ function rCodeFight(){tradePanel("Fight a friend's team",'<p style="margin:0 0 8
 function rtaUpd(){if(!RTA)return rHubUpd();const A=RTA;A.t++;
  if(A.phase!=='over'&&P_('start')){choose('Paused',['Resume','Forfeit'],k=>{if(k===1)rtaOver(1)},()=>{});rtaDraw();return}
  if(A.phase==='count'){if(A.pk&&A.wait<180&&!(A.pk.every(k=>okI(ARPI[k]))&&A.pk2.every(([o,k])=>okI(o[k])))){A.wait++;A.t=0}   // hold on '3' (up to 3 s) until every fighter's art is in
+  else if(A.pre==null||A.pre<RPRE){if(A.pre==null){A.pre=0;rVo(rIntro()[0])}A.pre++;A.t=0}   // the announcer calls the round
+  else{const st=ARJ.match.countdown/4;if(A.t===1)rVo('three');else if(A.t===st)rVo('two');else if(A.t===2*st)rVo('one');else if(A.t===3*st){rVo('go');rJingle('sting_round_start')}}
   if(A.t>=ARJ.match.countdown){A.phase='fight';A.t0=A.t}A.cfx=A.cfx.filter(x=>++x.t<x.dur);rtaDraw();return}
- if(A.phase==='over'){A.ot++;rStepFx();if(A.ot>50&&(P_('a')||P_('b')))rtaResult();rtaDraw();return}
+ if(A.phase==='over'){A.ot++;rStepFx();if(A.ot===(A.timeout?70:45))rsResult();if(A.ot>50&&(P_('a')||P_('b')))rtaResult();rtaDraw();return}
  for(let s=0;s<A.f.length;s++){const f=A.f[s];if(f.m.hp<=0&&rAlive(s).length){if(!f.next)f.next=60;else if(--f.next<=0)rSwap(s)}}
- rControl(A.f[0]);for(const e of A.f.slice(1))rAI(e,rFoe(e));for(const f of A.f)rStep(f);rShots();rAreas();rTick();rTerTick();rHazTick();rStepFx();
+ rControl(A.f[0]);for(const e of A.f.slice(1))rAI(e,rFoe(e));for(const f of A.f)rStep(f);rShots();rAreas();rTick();rTerTick();rHazTick();rStepFx();rSndTick();
  const left=rT0()-(A.t-A.t0),fr=s=>A.tm[s].reduce((a,x)=>a+x.m.hp/stat(x.m,0),0)/A.tm[s].length,me=A.f.every((x,i)=>x.team!==0||!rAlive(i).length),rest=A.f.every((x,i)=>x.team===0||!rAlive(i).length);
  if(me||rest)rtaOver(me&&rest?2:me?1:0);
  else if(left<=0&&A.opts.rift){A.timeout=1;rtaOver(1)}
  else if(left<=0){A.timeout=1;const best=Math.max(...A.tm.slice(1).map((t,i)=>fr(i+1)));rtaOver(Math.abs(fr(0)-best)<0.01?2:fr(0)>best?0:1)}
  rtaDraw()}
-function rtaOver(win){const A=RTA;if(A.phase==='over')return;A.phase='over';A.ot=0;A.win=win;A.shots=[];A.areas=A.areas.filter(z=>z.kind==='beam');
+function rtaOver(win){const A=RTA;if(A.phase==='over')return;A.phase='over';if(A.timeout)rVo('time');A.ot=0;A.win=win;A.shots=[];A.areas=A.areas.filter(z=>z.kind==='beam');
  G.rta=G.rta||{w:0,l:0,d:0};G.rta[['w','l','d'][win]]++;if(A.opts.ffa&&win===0)G.rta.ffa=(G.rta.ffa||0)+1;if(A.opts.code&&win===0)G.rta.codes=(G.rta.codes||0)+1}
 function rtaResult(){if(RTA.opts.cup)return rCupNext();if(RTA.opts.keeper)return rKeeperDone();if(RTA.opts.rift)return rRiftDone();if(RTA.opts.ffa||RTA.opts.code){const o={...RTA.opts,mine:null},tag=o.code?o.code.name+"'s team":'Free-for-all';
   return choose(tag,[o.ffa?'Again (new foes)':'Rematch','Leave'],k=>{if(k===0)rtaStart(o.ffa?{ffa:1,arena:o.arena}:o);else rtaLeave()},rtaLeave)}
@@ -217,8 +247,8 @@ function rControl(f){if(f.swapCd>0)f.swapCd--;if(P_('sw')&&f.swapCd<=0&&f.m.hp>0
  rUse(f,use,ax,ay)}
 function rUse(f,i,ax,ay){if(f.cd[i]>0||f.wind||f.dash||f.m.st==='freeze'||f.m.hp<=0)return false;const mv=MV[f.m.moves[i]],tier=rTier(mv);
  f.cdm[i]=f.cd[i]=Math.round(tier.cd*(1-Math.min(0.15,es(f.m,'spe')/1000)));
- const L=[];if(!canAct(f.m,L)){rLog(L);rFloat(f,f.m.st==='shock'?'zzt!':'?!','#ffd23f');return false}   // shock and confusion can still spoil a move
- if(L.length)rLog(L);f.wind={i,t:tier.wind,ax,ay};f.atkT=24;if(ax||ay){f.ax=ax;f.ay=ay}if(!tier.wind)rRelease(f);return true}
+ const L=[];if(!canAct(f.m,L)){rLog(L);rSfx('move_fizzle',0.5);rFloat(f,f.m.st==='shock'?'zzt!':'?!','#ffd23f');return false}   // shock and confusion can still spoil a move
+ if(L.length)rLog(L);f.wind={i,t:tier.wind,ax,ay};if(tier.wind)rSfx(mv.sig?'windup_ultimate':(mv.p||0)>=90?'windup_heavy':'windup_charge',f.team===0?0.5:0.35,0.1);f.atkT=24;if(ax||ay){f.ax=ax;f.ay=ay}if(!tier.wind)rRelease(f);return true}
 function rRelease(f){const w=f.wind;f.wind=null;rFire(f,w.i,w.ax,w.ay)}
 
 function rStep(f){const m=f.m;if(m.hp<=0)return;
@@ -236,14 +266,15 @@ function rStep(f){const m=f.m;if(m.hp<=0)return;
 function rFire(f,i,ax,ay){const A=RTA,mv=MV[f.m.moves[i]],sh=rShape(mv),atk={f,mv,hit:new Set()},foe=rFoe(f);
  const reach=Math.min(Math.hypot(foe.x-f.x,foe.y-f.y),RREACH[sh]),tx=f.x+ax*reach,ty=f.y+ay*reach;
  if(sh==='AURA'){const h=f.m.hp,b0=rBs(f.m),b1=rBs(foe.m);rLog(rScaled([f.m,foe.m],()=>act(f.m,foe.m,mv)));if(f.m.hp>h){rFloat(f,'+'+(f.m.hp-h),'#9be36b');rCpush('common_heal_shield',0,f.x,f.y-12,28,24)}rBuffFx(f,b0);rBuffFx(foe,b1);f.aura=36;return}
+ if(sh!=='AURA'&&sh!=='DASH')rSfx('dash_whoosh',0.22,0.08);
  if(sh==='PROJ'||sh==='LOB')A.shots.push({x:f.x+ax*8,y:f.y-8+ay*8,vx:ax*2.6,vy:ay*2.6,r:4,life:60,t:0,lob:sh==='LOB',atk});
  else if(sh==='WAVE')A.shots.push({x:f.x+ax*8,y:f.y-8+ay*8,vx:ax*1.8,vy:ay*1.8,r:11,life:75,t:0,wave:1,atk});
  else if(sh==='BEAM'||sh==='CHAIN'){const L=RREACH[sh],ex=f.x+ax*L,ey=f.y-8+ay*L;A.areas.push({kind:'beam',x:f.x,y:f.y-8,ex,ey,t:0,dur:16,atk});
   for(const o of rFoes(f)){if(o.m.hp<=0)continue;const px=o.x-f.x,py=o.y-8-(f.y-8),k=Math.max(0,Math.min(L,px*ax+py*ay));if(Math.hypot(px-ax*k,py-ay*k)<9)rHit(atk,o)}}
- else if(sh==='ARC')rHitAt(atk,f.x+ax*14,f.y-8+ay*14,12,false,true);
- else if(sh==='CONE')rHitAt(atk,f.x+ax*20,f.y-8+ay*20,16,false,true);
+ else if(sh==='ARC'){rHitAt(atk,f.x+ax*14,f.y-8+ay*14,12,false,true);if(!atk.hit.size)rSfx('hit_miss',0.4)}
+ else if(sh==='CONE'){rHitAt(atk,f.x+ax*20,f.y-8+ay*20,16,false,true);if(!atk.hit.size)rSfx('hit_miss',0.4)}
  else if(sh==='BURST'){rHitAt(atk,f.x,f.y-8,26,false);rImpact(atk,f.x,f.y-8,1)}
- else if(sh==='DASH'){f.dash={vx:ax*3.4,vy:ay*3.4,t:14,atk};rCpush('common_movement',0,f.x-ax*10,f.y-6,24,16,ax<0)}
+ else if(sh==='DASH'){f.dash={vx:ax*3.4,vy:ay*3.4,t:14,atk};rSfx('dash_whoosh',0.5);rCpush('common_movement',0,f.x-ax*10,f.y-6,24,16,ax<0)}
  else if(sh==='ZONE')A.areas.push({kind:'zone',x:tx,y:ty,r:16,t:0,delay:30,atk});
  else if(sh==='RAIN')for(let j=0;j<3;j++)A.areas.push({kind:'zone',x:tx+(A.r()-0.5)*30,y:ty+(A.r()-0.5)*18,r:11,t:-j*8,delay:30,atk});
  else A.areas.push({kind:'field',x:tx,y:ty,r:18,t:0,dur:240,atk})}
@@ -254,11 +285,11 @@ function rHit(atk,t){atk.hit.add(t);const a=atk.f.m,d=t.m,mv=atk.mv,hp0=d.hp,ba=
  const sh=a.st==='shock',cf=a.cf;if(sh)a.st=null;a.cf=0;   // already checked when the move was used
  const L=rScaled([a,d],()=>act(a,d,{...mv,a:1e9}));if(sh&&!a.st)a.st='shock';if(!a.cf)a.cf=cf;   // accuracy is the hitbox's job in real time
  if(t.boss&&d.hp<hp0)d.hp=Math.max(0,hp0-Math.max(1,Math.round((hp0-d.hp)/6)));const dmg=hp0-d.hp;rImpact(atk,t.x,t.y-8);rBuffFx(atk.f,ba);rBuffFx(t,bd);
- if(dmg>0){const e=eff(mv.t,D[d.id].t),cr=L.includes('A critical hit!');rCpush(cr||e<1?'common_hit_weak':'common_hit_normal',cr?1:e>1?1:0,t.x,t.y-10,e>1||cr?30:22,14)}
+ if(dmg>0){const e=eff(mv.t,D[d.id].t),cr=L.includes('A critical hit!');rSfx(cr?'hit_critical':e>1?'hit_super':e<1?'hit_resisted':'hit_normal',cr||e>1?0.7:0.55,0.05);if(cr)rVo('critical_hit',4);else if(e>1)rVo('super_effective',4);if((mv.p||0)>80)rSfx('knockback',0.4,0.2);rCpush(cr||e<1?'common_hit_weak':'common_hit_normal',cr?1:e>1?1:0,t.x,t.y-10,e>1||cr?30:22,14)}
  if(hp0>0&&d.hp<=0)rCpush('common_status_confuse_ko',1,t.x,t.y-8,40,28);
  if(dmg>0){t.hurt=14;const k=Math.min(3,0.8+(mv.p||40)/50),dx=t.x-atk.f.x,dy=t.y-atk.f.y,l=Math.hypot(dx,dy)||1;t.kb=[dx/l*k,dy/l*k];rFloat(t,'-'+dmg,'#ffffff');
   const e=eff(mv.t,D[d.id].t);if(e>1){rFloat(t,'SUPER!','#ffd23f');RTA.shake=8}else if(e<1)rFloat(t,'resist','#a99cc8');if(L.includes('A critical hit!'))rFloat(t,'CRIT!','#ff8a1e');if((mv.p||0)>80)RTA.shake=Math.max(RTA.shake,6)}
- else if(d.hp>hp0){rFloat(t,'+'+(d.hp-hp0),'#9be36b');rCpush('common_heal_shield',0,t.x,t.y-12,28,24)}
+ else if(d.hp>hp0){rSfx('terrain_recover',0.4,0.3);rFloat(t,'+'+(d.hp-hp0),'#9be36b');rCpush('common_heal_shield',0,t.x,t.y-12,28,24)}
  rLog(L)}
 function rShots(){const A=RTA;A.shots=A.shots.filter(s=>{s.t++;s.x+=s.vx;s.y+=s.vy;
  for(const t of rFoes(s.atk.f))if(t.m.hp>0&&!s.atk.hit.has(t)&&Math.hypot(t.x-s.x,t.y-8-s.y)<s.r+7){rHit(s.atk,t);if(!s.wave)return false}
@@ -271,7 +302,7 @@ function rAreas(){const A=RTA;A.areas=A.areas.filter(z=>{z.t++;
 function rTick(){const A=RTA,t=A.t-A.t0;for(const f of A.f){const m=f.m;if(m.hp<=0)continue;const mx=stat(m,0),tr=TR(m.id),L=[];
  if(t%120===0)rScaled([m],()=>{if(m.st==='burn'){m.hp=Math.max(0,m.hp-Math.max(1,Math.floor(mx/16)));rFloat(f,'burn','#ff8a1e')}if(m.st==='poison'){m.hp=Math.max(0,m.hp-Math.max(1,Math.floor(mx/8)));rFloat(f,'poison','#b45cff')}});
  if(t%180===0&&t){rScaled([m],()=>{if(['heal','guardian','harmonic'].includes(tr.k))heal(m,1/16,L,'restored HP with '+tr.name+'!');if(tr.k==='genesis')heal(m,1/8,L,'restored HP with '+tr.name+'!')});
-  if(tr.k==='speed'&&m.bs.spe<6){m.bs.spe++;L.push(nm(m)+"'s "+tr.name+' raised its Speed!')}rLog(L)}}}
+  if(tr.k==='speed'&&m.bs.spe<6){m.bs.spe++;L.push(nm(m)+"'s "+tr.name+' raised its Speed!')}if(L.length)rSfx('trait_trigger',0.35,0.5);rLog(L)}}}
 
 /* ---- computer opponent: keep its best move's range, strafe, sidestep shots and warning rings ---- */
 function rAI(f,foe){const A=RTA,ai=f.ai,r=A.r;if(f.swapCd>0)f.swapCd--;if(f.m.hp>0&&f.swapCd<=0&&f.m.hp<stat(f.m,0)*0.3&&rAlive(f.side).length>1&&r()<0.004){rSwap(f.side);return}f.mx=ai.mx;f.my=ai.my;if(f.m.hp<=0||foe.m.hp<=0||--ai.t>0)return;ai.t=A.diff[1];
@@ -298,7 +329,7 @@ function rTerHit(x,y,r,mv){const A=RTA;if(!Array.isArray(A.ter))A.ter=[];const k
  x=Math.max(RF.x0+r,Math.min(RF.x1-r,x));y=Math.max(RF.y0+r*0.7,Math.min(RF.y1-r*0.7,y));
  const near=A.ter.find(c=>c.k===k&&Math.hypot(c.x-x,c.y-y)<c.r*0.9);
  if(near){near.t=0;near.r=Math.min(26,near.r+2);near.big=near.big||big;return}
- A.ter.push({k,x,y,r,t:0,v:Math.floor(A.r()*4),big});if(A.ter.length>6)A.ter.shift()}
+ A.ter.push({k,x,y,r,t:0,v:Math.floor(A.r()*4),big});rSfx('terrain_crater',0.4,0.4);if(A.ter.length>6)A.ter.shift()}
 const rTerAt=(x,y)=>RTA.ter&&RTA.ter.length?RTA.ter.find(c=>((x-c.x)/c.r)**2+((y-c.y)/(c.r*0.7))**2<1):null;
 const rTerSpeed=f=>{const c=rTerAt(f.x,f.y);return!c?1:c.k==='crater'?0.6:c.k==='puddle'?0.75:c.k==='ice'?1.3:1};
 function rTerTick(){const A=RTA;if(!A.ter||!A.ter.length)return;for(const c of A.ter)c.t++;A.ter=A.ter.filter(c=>c.t<=1200);
@@ -316,7 +347,7 @@ const RHAZ={dustara:{e:'slow',r:14},ferrox:{e:'hit',r:12},sporeholm:{e:'poison',
  pyros:{e:'burn',r:12},glacia:{e:'hit',r:11},helix:{e:'hit',r:12},halo:{e:'gust',r:16},umbra:{e:'dark',r:18},starfall:{e:'portal',r:9},ystra:{e:'heal',r:16}};
 function rHazTick(){const A=RTA,H=RHAZ[A.key];if(!H||A.phase!=='fight')return;if(!A.hz)A.hz={next:360,list:[]};const Z=A.hz;
  if(--Z.next<=0){Z.next=420+Math.floor(A.r()*300);const sp=()=>({x:RF.x0+24+A.r()*(RF.x1-RF.x0-48),y:RF.y0+30+A.r()*(RF.y1-RF.y0-40)});
-  const h={...sp(),t:0,warn:70,act:48,H,hit:new Set(),gx:A.r()<0.5?-1:1};if(H.e==='portal'){const b=sp();h.bx=b.x;h.by=b.y;h.act=360}Z.list.push(h)}
+  const h={...sp(),t:0,warn:70,act:48,H,hit:new Set(),gx:A.r()<0.5?-1:1};if(H.e==='portal'){const b=sp();h.bx=b.x;h.by=b.y;h.act=360}Z.list.push(h);rSfx('warning_marker',0.4)}
  Z.list=Z.list.filter(h=>{h.t++;const live=h.t>h.warn;
   if(live)for(const f of A.f){const m=f.m;if(m.hp<=0)continue;const inA=Math.hypot(f.x-h.x,(f.y-h.y)*1.4)<h.H.r+6;
    if(h.H.e==='portal'){if((f.ptp||0)>0){f.ptp--;continue}const inB=Math.hypot(f.x-h.bx,(f.y-h.by)*1.4)<h.H.r+6;if(inA||inB){f.x=inA?h.bx:h.x;f.y=inA?h.by:h.y;f.ptp=60;rCpush('common_release',0,f.x,f.y-12,26,18)}continue}
@@ -407,7 +438,8 @@ function rHud(){const A=RTA,p=A.f[0],e=A.opts.ffa||A.opts.rift?rFoe(p):A.f[1];
    if(i===p.sel)rect(x+18,141,20,1,'#ffd23f');txtFit(mv.n,x+18,131,k>0?'#a99cc8':'#ffffff',21,5)}
   else{rect(x+1,130,38,13,i===p.sel?'#ffd23f':'#3b2a5c');rect(x+2,131,36,11,'#1b1424');rect(x+2,131,Math.round(36*(1-k)),11,k>0?c[2]:c[0]);txtFit(mv.n,x+3,134,k>0?'#a99cc8':'#ffffff',34,5)}});
  if(A.log){const w=wrap(A.log.s,29).slice(0,2);box(4,121-w.length*7,152,7+w.length*7,'#f8f4ff');w.forEach((l,i)=>txt(l,7,125-w.length*7+i*7,'#1b1424',5))}
- if(A.phase==='count'){const n=3-Math.floor(A.t/(ARJ.match.countdown/4)),s=n>0?String(n):'GO!';if(!rUi(n>0?'cd_'+n:'cd_go',56,44,48)){txt(s,80-s.length*8+1,61,'#1b1424',16);txt(s,80-s.length*8,60,'#ffd23f',16)}}
+ if(A.phase==='count'&&A.pre!=null&&A.pre<RPRE){const s=rIntro()[1],z=s.length>8?8:16;txt(s,80-s.length*z/2+1,61,'#1b1424',z);txt(s,80-s.length*z/2,60,'#ffd23f',z)}
+ else if(A.phase==='count'){const n=3-Math.floor(A.t/(ARJ.match.countdown/4)),s=n>0?String(n):'GO!';if(!rUi(n>0?'cd_'+n:'cd_go',56,44,48)){txt(s,80-s.length*8+1,61,'#1b1424',16);txt(s,80-s.length*8,60,'#ffd23f',16)}}
  if(A.phase==='fight'&&A.t-A.t0<30&&!rUi('cd_go',56,44,48))txt('GO!',57,60,'#ffd23f',16);
  if(A.phase==='over'){if(A.ot<45&&rUi(A.timeout?'cd_time':'cd_ko',52,40,56)){}else{const s=['VICTORY!','TRY AGAIN!','DRAW'][A.win];
   if(!rUi(['res_win','res_lose','res_draw'][A.win],16,48,128)){box(80-s.length*4-10,52,s.length*8+20,30,'#3b2a5c','#ffd23f');txt(s,80-s.length*4,58,'#ffd23f')}
