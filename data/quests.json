@@ -1400,13 +1400,9 @@
      "target": "prophecy_shrine",
      "count": 1,
      "at": "590",
-     "scene": "prophecy_mural",
      "title": "The Prophecy Shrine",
      "hint": "Go to the third wind shrine in the Floating Gardens",
      "lines": [
-      "A shimmering girl made of crystal light is waiting at the shrine, flickering at the edges like a candle.",
-      "Liss: I am Liss, a Ystran echo. What's left of one, anyway. Zib knows my voice.",
-      "At the third wind shrine, the wind falls silent. Carved across the whole shrine wall is one great picture.",
       "Liss: You have been told she stayed behind on Ystra. She didn't. She couldn't.",
       "Liss: As the hungry one ate our sky, the Seedmother broke her whole self apart into the seedpods. Every Alienmon carries a piece of her. Zib. Your partner. All of them.",
       "Liss: On Ystra only the Heartroot is left, one last root in the crater where her tree stood. And it is fading.",

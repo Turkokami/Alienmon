@@ -14,7 +14,7 @@
 - 893 Hydro Tank: Guard
 - 893 Hydro Tank: Helix Grunt
 
-## moved or dropped to keep everything reachable (19)
+## moved or dropped to keep everything reachable (10)
 
 - 733 Sporelake Shore: dropped stash at (2, 3) (was crowding a quest figure)
 - 733 Sporelake Shore: dropped mon at (1, 14)
@@ -26,15 +26,6 @@
 - 905 Abyss Rim Descent: dropped mon at (14, 12)
 - 905 Abyss Rim Descent: dropped stash at (19, 7)
 - 905 Abyss Rim Descent: dropped stash at (14, 6)
-- 873 Tarn Islands: dropped npc at (2, 7)
-- 873 Tarn Islands: dropped npc at (2, 6)
-- 873 Tarn Islands: dropped mon at (2, 3)
-- 873 Tarn Islands: dropped mon at (2, 11)
-- 872 Tarn Waters: dropped npc at (2, 7)
-- 872 Tarn Waters: dropped mon at (2, 3)
-- 872 Tarn Waters: dropped mon at (2, 4)
-- 872 Tarn Waters: dropped stash at (1, 9)
-- 872 Tarn Waters: dropped stash at (3, 14)
 
 ## left in a narrow spot (no open ground) (3)
 

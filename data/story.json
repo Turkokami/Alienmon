@@ -49,7 +49,15 @@
     "General Ostrander: ...Fine. But if anything happens, Tamsin, it's on you.",
     "Tamsin: (to you) Told you I'd turn up. Come on. Stay close."
    ],
-   "art": "explorer"
+   "art": "explorer",
+   "pic": {
+    "k": "cut_68",
+    "at": 0,
+    "skip": [
+     0,
+     1
+    ]
+   }
   },
   {
    "id": "zib_pod",
@@ -133,7 +141,17 @@
     "Tamsin sits down on the floor and laughs until she cries.",
     "Tamsin: Forty years. Forty years I've been looking for this. I think I'll stay a while."
    ],
-   "art": "explorer"
+   "art": "explorer",
+   "pic": {
+    "k": "cut_69",
+    "at": 0,
+    "skip": [
+     0,
+     1,
+     2,
+     3
+    ]
+   }
   },
   {
    "id": "blight_begging",
@@ -145,7 +163,15 @@
     "The forest is gray and silent here. Small shadow creatures creep out of the dead trees and swarm toward you.",
     "Your team braces for a fight... then you see it. They aren't attacking.",
     "They're reaching for your light. They're begging."
-   ]
+   ],
+   "pic": {
+    "k": "cut_70",
+    "at": 1,
+    "skip": [
+     1,
+     2
+    ]
+   }
   },
   {
    "id": "kit_meet",
@@ -273,7 +299,14 @@
     "Helix Grunt: Readings say the Starfall signal runs right under this yard. Mark it for the Director.",
     "Helix Grunt: Someone's coming! Fall back!",
     "The scouts slip away between the cranes."
-   ]
+   ],
+   "pic": {
+    "k": "cut_63",
+    "at": 0,
+    "skip": [
+     0
+    ]
+   }
   },
   {
    "id": "spore_siphons",
@@ -286,7 +319,15 @@
     "Thick Helix hoses snake out of the glowing spore pools into humming siphon tanks.",
     "Where the hoses drink, the pools have gone pale and still. The whole swamp smells like burnt sugar.",
     "Helix Grunt: Keep those tanks filling! Admin's orders!"
-   ]
+   ],
+   "pic": {
+    "k": "cut_64",
+    "at": 0,
+    "skip": [
+     0,
+     1
+    ]
+   }
   },
   {
    "id": "glyphos_little_scout",
@@ -321,7 +362,14 @@
     "Tamsin: Oh! A Linker. Name's Tamsin. Thirty years of exploring, and I still haven't found the place I'm looking for.",
     "Tamsin: Here's the one thing thirty years taught me. A capture isn't taking. It's asking. Hold out your hand first.",
     "Tamsin: You're headed for the crater, aren't you? I can see it on your face. Then I'll turn up when you need me."
-   ]
+   ],
+   "pic": {
+    "k": "cut_65",
+    "at": 0,
+    "skip": [
+     0
+    ]
+   }
   }
  ],
  "shifts": [

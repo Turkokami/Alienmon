@@ -97,3 +97,6 @@ m10_qa_mural_5_narrator.mp3,M10,Murals of Ystra,mural (examine),Narrator,narrato
 m10_qa_mural_6_narrator.mp3,M10,Murals of Ystra,mural (examine),Narrator,narrator,"Slow, awed, reading ancient words",The glyphs read: THE DEVOURER. It does not hunger. It simply ends.
 m20_qa_saga_intro_narrator.mp3,M20,The Summit,Saga battle start,Narrator,narrator,"Quiet, hushed",Saga says nothing. The hooded figure only bows... and the battle begins.
 m20_qa_saga_lose_narrator.mp3,M20,The Summit,Saga defeated,Narrator,narrator,"Quiet, hushed","Saga's hood dips in one slow, deep bow."
+qa_pic_cut_67_narrator.mp3,M18,The Crater,story picture,Narrator,narrator,"Excited, a little hushed",Strand's stolen shuttle skims low over the General's cordon.
+qa_pic_cut_71_narrator.mp3,M13,The Forge Fortress,story picture,Narrator,narrator,"Quick, heist energy","You pull the Helix Keycard from the main terminal. Out the window, the shuttle pad lights up."
+qa_pic_cut_72_narrator.mp3,M20,The Summit,story picture,Narrator,narrator,"Quiet, hushed",Saga bows to you once more. Zib's lights won't stop flashing.

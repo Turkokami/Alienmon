@@ -6262,6 +6262,28 @@
    "tier": 7
   },
   {
+   "section": "873",
+   "name": "Tarn Islands",
+   "tile": [
+    14,
+    11
+   ],
+   "item": "singularity",
+   "n": 2,
+   "tier": 7
+  },
+  {
+   "section": "873",
+   "name": "Tarn Islands",
+   "tile": [
+    9,
+    3
+   ],
+   "item": "ether",
+   "n": 5,
+   "tier": 7
+  },
+  {
    "section": "868",
    "name": "Summit Maintenance Hut",
    "tile": [
@@ -6269,6 +6291,28 @@
     9
    ],
    "item": "maxrevive",
+   "n": 2,
+   "tier": 7
+  },
+  {
+   "section": "872",
+   "name": "Tarn Waters",
+   "tile": [
+    18,
+    3
+   ],
+   "item": "maxrevive",
+   "n": 2,
+   "tier": 7
+  },
+  {
+   "section": "872",
+   "name": "Tarn Waters",
+   "tile": [
+    2,
+    4
+   ],
+   "item": "singularity",
    "n": 2,
    "tier": 7
   }

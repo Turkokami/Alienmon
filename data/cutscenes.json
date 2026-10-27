@@ -718,6 +718,123 @@
    "q": "P04",
    "o": 0,
    "w": "done"
+  },
+  {
+   "k": "cut_63",
+   "q": "scene",
+   "o": 0,
+   "w": "start",
+   "cap": "Two Helix scouts in white coats are poking around the crane yard, scanning the scrap piles",
+   "lines": [],
+   "src": "cut_63.png (final render pack 2026-10-27)",
+   "scene": "helix_scouts_ferrox"
+  },
+  {
+   "k": "cut_64",
+   "q": "scene",
+   "o": 0,
+   "w": "start",
+   "cap": "Thick Helix hoses snake out of the glowing spore pools into humming siphon tanks",
+   "lines": [
+    "Where the hoses drink, the pools have gone pale and still. The whole swamp smells like burnt sugar."
+   ],
+   "src": "cut_64.png (final render pack 2026-10-27)",
+   "scene": "spore_siphons"
+  },
+  {
+   "k": "cut_65",
+   "q": "scene",
+   "o": 0,
+   "w": "start",
+   "cap": "A woman in a patched explorer's vest, a big question mark stitched on the back, is sketching the cave walls by lantern light",
+   "lines": [],
+   "src": "cut_65.png (final render pack 2026-10-27)",
+   "scene": "tamsin_meet"
+  },
+  {
+   "k": "cut_68",
+   "q": "scene",
+   "o": 0,
+   "w": "start",
+   "cap": "Tamsin: General! They're with me",
+   "lines": [
+    "Tamsin: I've mapped every inch of this crater, and I'll be at their side the whole way down. You have my word."
+   ],
+   "src": "cut_68.png (final render pack 2026-10-27)",
+   "scene": "rim_tamsin"
+  },
+  {
+   "k": "cut_69",
+   "q": "scene",
+   "o": 0,
+   "w": "start",
+   "cap": "Tamsin finds a ruined room covered in star charts: the Ystran explorers' map room",
+   "lines": [
+    "On the wall is a symbol shaped exactly like the question mark on her vest.",
+    "Saga: That word means \"the place we haven't found yet.\"",
+    "Tamsin sits down on the floor and laughs until she cries."
+   ],
+   "src": "cut_69.png (final render pack 2026-10-27)",
+   "scene": "tamsin_map_room"
+  },
+  {
+   "k": "cut_70",
+   "q": "scene",
+   "o": 0,
+   "w": "start",
+   "cap": "Your team braces for a fight... then you see it. They aren't attacking",
+   "lines": [
+    "They're reaching for your light. They're begging."
+   ],
+   "src": "cut_70.png (final render pack 2026-10-27)",
+   "scene": "blight_begging"
+  },
+  {
+   "k": "cut_67",
+   "cap": "Strand's stolen shuttle skims low over the General's cordon",
+   "lines": [],
+   "src": "cut_67.png (final render pack 2026-10-27)",
+   "q": "M18",
+   "o": 0,
+   "w": "done"
+  },
+  {
+   "k": "cut_71",
+   "cap": "You pull the Helix Keycard from the main terminal. Out the window, the shuttle pad lights up",
+   "lines": [],
+   "src": "cut_71.png (final render pack 2026-10-27)",
+   "q": "M13",
+   "o": 3,
+   "w": "done"
+  },
+  {
+   "k": "cut_72",
+   "cap": "Saga bows to you once more. Zib's lights won't stop flashing",
+   "lines": [],
+   "src": "cut_72.png (final render pack 2026-10-27)",
+   "q": "M20",
+   "o": 2,
+   "w": "done"
+  },
+  {
+   "k": "cut_66",
+   "q": "M16",
+   "o": 1,
+   "w": "board",
+   "cap": "Liss at the third wind shrine",
+   "lines": [],
+   "src": "cut_66.png (final render pack 2026-10-27)",
+   "note": "shown by QBOARD.prophecy_shrine in src/quests.js, before the mural"
+  },
+  {
+   "k": "cut_73",
+   "q": "P04",
+   "o": 0,
+   "w": "credits",
+   "cap": "One year later",
+   "lines": [],
+   "src": "cut_73.png (final render pack 2026-10-27)",
+   "note": "the end-credits picture (startCredits in src/story.js)"
   }
  ]
 }

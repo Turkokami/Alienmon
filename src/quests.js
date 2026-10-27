@@ -95,7 +95,7 @@ function qPassive(){if(!G||!G.quests)return;
   else if(o.type==='xenodex'&&Object.keys(G.caught).length>=(o.count||1))qProgress(q,o.count||1);
   else if(o.type==='cutscene'){if(s.playing||!storyAt(o)||QN.length||DLG||CH||scene==='battle'||scene==='cut')continue;const ca=o.scene?[o.scene,o.title||'']:QCUT_ART[o.target],art=ca&&SCI[ca[0]];
    // wait a few seconds for the scene art to download before falling back to text only
-   const qb=!o.scene&&QBOARD[o.target],bok=qb&&qb.every(([k])=>okI(boardImg(k)));if(bok&&!DLG&&!CH&&scene!=='battle'&&scene!=='cut'&&!CUTQ.length){s.playing=1;cutBoard(qb,()=>{s.playing=0;qNotify(q.id,'scene',storyCutLines(o));qProgress(q,1)})}else if(!qb&&okI(art)&&!DLG&&!CH&&scene!=='battle'&&scene!=='cut'&&!CUTQ.length){s.playing=1;cut(art,ca[1],()=>{s.playing=0;qNotify(q.id,'scene',storyCutLines(o));qProgress(q,1)})}else if(!(qb?bok:okI(art))&&(s.wait=(s.wait||0)+1)>15){qNotify(q.id,'scene',storyCutLines(o));qProgress(q,1)}}
+   const qb=!o.scene&&QBOARD[o.target],bok=qb&&qb.every(([k])=>okI(boardImg(k)));if(bok&&!DLG&&!CH&&scene!=='battle'&&scene!=='cut'&&!CUTQ.length){s.playing=1;cutBoard(qb,()=>{s.playing=0;qNotify(q.id,'scene',storyCutLines(o));qProgress(q,1)})}else if(!qb&&okI(art)&&!DLG&&!CH&&scene!=='battle'&&scene!=='cut'&&!CUTQ.length){s.playing=1;cut(art,ca[1],()=>{s.playing=0;qNotify(q.id,'scene',storyCutLines(o));qProgress(q,1)})}else if(!(qb?bok:okI(art))&&(s.wait=(s.wait||0)+1)>15){qNotify(q.id,'scene',(qb&&o.target==='prophecy_shrine'?qb.flatMap(b=>b[1]):[]).concat(storyCutLines(o)));qProgress(q,1)}}
   else if(o.type==='choice'&&!s.asking&&!DLG&&!CH&&!QN.length&&scene!=='cut'&&scene!=='battle'&&storyAt(o)){s.asking=1;choose(qFmt(o.hint||q.title),o.options.map(qFmt),i=>{s.asking=0;G.flags[o.target]=i+1;qProgress(q,1)});if(o.default!=null&&CH)CH.sel=o.default}
   else if(o.type==='legendary_encounter'&&o.skip_if&&(G.flags[o.skip_if.flag]||0)===o.skip_if.value&&storyAt(o)){qNotify(q.id,'scene',o.skip_if.lines||[]);qProgress(q,1)}
   else if(o.type==='visit'||o.type==='spot_event'){const t=o.target||'';
@@ -109,7 +109,8 @@ const QNODEPL={thalassa:'thalassa',glyphos:'glyphos',pyros:'pyros',umbra:'umbra'
 // cutscene lines that are not already part of a quest's own dialogue
 const QCUT_ART={zib_joins:['dustara_keyart','A signal from the canyon...'],sola_leaves:['cut_26','The Deep Sea Ferry dock'],sola_joins:['helix_keyart','Helix Station'],novaryx_awakens:['starfall_keyart','The eight Shards sing'],rift_sealed:['starfall_battle','The Rift closes']};
 // storyboards: pictures with story text, played in place of a single scene image
-const QBOARD={zib_joins:[
+const QBOARD={prophecy_shrine:[['cut_66',['A shimmering girl made of crystal light is waiting at the shrine, flickering at the edges like a candle.',"Liss: I am Liss, a Ystran echo. What's left of one, anyway. Zib knows my voice."]],['prophecy_mural',['At the third wind shrine, the wind falls silent. Carved across the whole shrine wall is one great picture.']]],   /* Liss waiting at the shrine, then the mural */
+ zib_joins:[
  ['zib_bridge_1',["By the time you and {starter} reach the bridge, the long first day is over and night has fallen. DX-4 is still beeping at the canyon.",'Something past the old stone bridge is sending a signal. You click on your flashlight and go, {starter} close behind.']],
  ['zib_bridge_2',['Halfway across the glowing bridge, the canyon wall bursts open!','A tiny silver saucer rockets out in a shower of red rock.']],
  ['zib_bridge_3',['It stops right in front of your nose. Inside the glass dome, one huge eye blinks at you.','"Bip."']],

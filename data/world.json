@@ -74569,7 +74569,7 @@
     24,
     16
    ],
-   "notes": "",
+   "notes": "lake re-render (owner art 873_tarn_islands.png)",
    "edges": {},
    "warps": [
     {
@@ -74601,7 +74601,28 @@
      "edge": "top"
     }
    ],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      14,
+      11
+     ],
+     "k": "stash",
+     "item": "singularity",
+     "n": 2,
+     "tier": 7
+    },
+    {
+     "tile": [
+      9,
+      3
+     ],
+     "k": "stash",
+     "item": "ether",
+     "n": 5,
+     "tier": 7
+    }
+   ],
    "spawns": {
     "default": [
      1,
@@ -74613,8 +74634,46 @@
     70
    ],
    "pkey": "apex",
-   "npcs": [],
-   "mons": []
+   "npcs": [
+    {
+     "x": 18,
+     "y": 6,
+     "art": "explorer",
+     "face": "left",
+     "t": [],
+     "id": "sec873_tr0",
+     "trainer": {
+      "cls": "Ace Linker",
+      "route": 1,
+      "name": "Geiri"
+     }
+    },
+    {
+     "x": 16,
+     "y": 11,
+     "art": "researcher",
+     "face": "left",
+     "t": [],
+     "id": "sec873_tr1",
+     "trainer": {
+      "cls": "Astronomer",
+      "route": 1,
+      "name": "Mail"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 11,
+     "y": 3,
+     "mon": "Diamondillo"
+    },
+    {
+     "x": 6,
+     "y": 8,
+     "mon": "Gemmantle"
+    }
+   ]
   },
   "868": {
    "id": "868",
@@ -74720,7 +74779,7 @@
     24,
     16
    ],
-   "notes": "",
+   "notes": "lake re-render (owner art 872_tarn_waters.png)",
    "edges": {},
    "warps": [
     {
@@ -74752,7 +74811,28 @@
      "edge": "top"
     }
    ],
-   "objects": [],
+   "objects": [
+    {
+     "tile": [
+      18,
+      3
+     ],
+     "k": "stash",
+     "item": "maxrevive",
+     "n": 2,
+     "tier": 7
+    },
+    {
+     "tile": [
+      2,
+      4
+     ],
+     "k": "stash",
+     "item": "singularity",
+     "n": 2,
+     "tier": 7
+    }
+   ],
    "spawns": {
     "default": [
      1,
@@ -74766,10 +74846,23 @@
    "pkey": "apex",
    "npcs": [
     {
+     "x": 12,
+     "y": 6,
+     "art": "guard",
+     "face": "down",
+     "t": [],
+     "id": "sec872_tr0",
+     "trainer": {
+      "cls": "Summit Guard",
+      "route": 1,
+      "name": "Breth"
+     }
+    },
+    {
      "x": 2,
-     "y": 12,
+     "y": 2,
      "art": "explorer",
-     "face": "up",
+     "face": "down",
      "t": [],
      "id": "sec872_tr1",
      "trainer": {
@@ -74779,7 +74872,18 @@
      }
     }
    ],
-   "mons": []
+   "mons": [
+    {
+     "x": 13,
+     "y": 13,
+     "mon": "Riffrex"
+    },
+    {
+     "x": 11,
+     "y": 13,
+     "mon": "Cragmajor"
+    }
+   ]
   },
   "870": {
    "id": "870",

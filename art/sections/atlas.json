@@ -13030,7 +13030,8 @@
    ],
    "v3": true,
    "kit": "873",
-   "file": "art/sections/13_apex/873_tarn_islands.png"
+   "file": "art/sections/13_apex/873_tarn_islands.png",
+   "notes": "lake re-render (owner art 873_tarn_islands.png)"
   },
   {
    "id": "868",
@@ -13074,7 +13075,8 @@
    ],
    "v3": true,
    "kit": "872",
-   "file": "art/sections/13_apex/872_tarn_waters.png"
+   "file": "art/sections/13_apex/872_tarn_waters.png",
+   "notes": "lake re-render (owner art 872_tarn_waters.png)"
   },
   {
    "id": "870",
