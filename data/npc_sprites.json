@@ -14,7 +14,7 @@
 },
 "007": {
 "0": "dustara_seedpod_hunter",
-"1": "dustara_spice_vendor"
+"1": "dustara_crater_stargazer"
 },
 "008": {
 "2": "umbra_mine_watchman",
@@ -1798,6 +1798,12 @@
 "867": {
 "0": "ystra_ystran_scout",
 "1": "ystra_fragment_wanderer"
+},
+"869": {
+"1": "apex_prime_hopeful"
+},
+"872": {
+"0": "apex_telescope_tech"
 },
 "874": {
 "0": "dustara_crater_stargazer",

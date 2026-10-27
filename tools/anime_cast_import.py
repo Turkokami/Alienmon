@@ -75,7 +75,7 @@ def sheet(src, key):
     im = Image.open(src)
     W = im.width
     a, fg, fl, boxes = figures(im, 0.0015)
-    grid = [s for s in boxes if s[1].start > W * 0.58]
+    grid = [s for s in boxes if s[1].start > W * 0.565]
     rows = []
     for s in sorted(grid, key=lambda s: s[0].start):
         if rows and abs(rows[-1][0][0].start - s[0].start) < 60:
