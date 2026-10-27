@@ -85,3 +85,6 @@ gap_npc_kit_bolts_kit_gloopa.mp3,gap,Voice gaps 2026-10-26,gap fill,Kit,kit,,My 
 gap_npc_kit_blight_kit_gloopa.mp3,gap,Voice gaps 2026-10-26,gap fill,Kit,kit,,"My Solarach can heal the blight, slowly, tree by tree. We'll stay and do this part."
 qa_pic_cut_03_narrator_sporix.mp3,M02,Zib picks a captain,story picture,Narrator,narrator,,"One huge eye blinks at you, then at Sporix."
 qa_pic_cut_03_narrator_gloopa.mp3,M02,Zib picks a captain,story picture,Narrator,narrator,,"One huge eye blinks at you, then at Gloopa."
+s32_qa_pod_1_narrator.mp3,S32,Zib's Signal Twin,examine,Narrator,narrator,,"Under a ring of glowing mushrooms sits an old, cracked seedpod. Its beacon is still pinging."
+s32_qa_pod_2_narrator.mp3,S32,Zib's Signal Twin,examine,Narrator,narrator,,"It's no cousin. The pod is empty, still calling for whoever hatched from it twenty years ago."
+s32_qa_complete_narrator.mp3,S32,Zib's Signal Twin,complete,Narrator,narrator,,"Zib bumps the old pod gently and beeps a soft reply. Somewhere out there, its pod-mate is doing just fine."

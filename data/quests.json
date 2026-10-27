@@ -3586,7 +3586,7 @@
    "id": "S32",
    "type": "side",
    "act": "Sporeholm",
-   "title": "Zib's Cousin",
+   "title": "Zib's Signal Twin",
    "location": {
     "area": "sporeholm_town",
     "planet": "sporeholm",
@@ -3602,15 +3602,22 @@
    ],
    "objectives": [
     {
-     "type": "catch",
-     "target": "Zib",
+     "type": "examine",
+     "target": "pinging_pod",
      "count": 1,
      "location": {
       "area": "sporeholm_town",
       "planet": "sporeholm",
-      "spot": "Bog clearing (rare)",
+      "spot": "Bog clearing",
       "note": "tile map or future painted map; place this spot when building"
-     }
+     },
+     "hint": "Follow the saucer signal to the bog clearing",
+     "texts": [
+      [
+       "Under a ring of glowing mushrooms sits an old, cracked seedpod. Its beacon is still pinging.",
+       "It's no cousin. The pod is empty, still calling for whoever hatched from it twenty years ago."
+      ]
+     ]
     }
    ],
    "dialogue": {
@@ -3621,14 +3628,14 @@
      "Keep at it, Linker. You've got this."
     ],
     "complete": [
-     "Two Zibs! They blink at each other in perfect sync."
+     "Zib bumps the old pod gently and beeps a soft reply. Somewhere out there, its pod-mate is doing just fine."
     ]
    },
    "rewards": {
     "dust": 500
    },
    "repeatable": false,
-   "notes": "Zib is a rare wild encounter on Sporeholm."
+   "notes": "Zib is one of a kind (never wild). The 'cousin' signal is an empty seedpod's beacon; examine it at the bog clearing."
   },
   {
    "id": "S40",
