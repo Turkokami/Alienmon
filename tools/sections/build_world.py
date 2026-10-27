@@ -1195,6 +1195,13 @@ dupes = sorted(x for x in fixed if x in STORY_NAMES)
 if dupes:
     report.setdefault('trainers named after story characters', []).extend(dupes)
 
+# a quest spot snapped to a townsperson follows them if they were moved later in this build (S14: the Squid Sailor's hand-over)
+for key, sp in qsrc.items():
+    if sp.get('npc') and key in spots:
+        hit = [n for n in world[spots[key]['s']].get('npcs', []) if n.get('wid') == sp['npc']]
+        if hit:
+            spots[key].update(x=hit[0]['x'], y=hit[0]['y'])
+
 json.dump({'version': 1, 'tile': 16, 'screen_tiles': [10, 9], 'arrival': arrivals, 'quest_spots': spots, 'sections': world, 'connections': conns},
           open(os.path.join(ROOT, OUT or 'data/world.json'), 'w', encoding='utf-8'), indent=1, ensure_ascii=False)
 lines = ['# Section connections report', '',

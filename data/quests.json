@@ -1400,13 +1400,9 @@
      "target": "prophecy_shrine",
      "count": 1,
      "at": "590",
-     "scene": "prophecy_mural",
      "title": "The Prophecy Shrine",
      "hint": "Go to the third wind shrine in the Floating Gardens",
      "lines": [
-      "A shimmering girl made of crystal light is waiting at the shrine, flickering at the edges like a candle.",
-      "Liss: I am Liss, a Ystran echo. What's left of one, anyway. Zib knows my voice.",
-      "At the third wind shrine, the wind falls silent. Carved across the whole shrine wall is one great picture.",
       "Liss: You have been told she stayed behind on Ystra. She didn't. She couldn't.",
       "Liss: As the hungry one ate our sky, the Seedmother broke her whole self apart into the seedpods. Every Alienmon carries a piece of her. Zib. Your partner. All of them.",
       "Liss: On Ystra only the Heartroot is left, one last root in the crater where her tree stood. And it is fading.",
@@ -2302,7 +2298,7 @@
       ]
      },
      "intro": "(Saga says nothing. The hooded figure only bows... and the battle begins.)",
-     "lose": "(Saga leans close and whispers one word. It isn't any language you know.)"
+     "lose": "(Saga's hood dips in one slow, deep bow.)"
     },
     {
      "type": "defeat_boss",
@@ -2726,7 +2722,8 @@
      "At the Observatory, a nervous new thirteen-year-old is choosing a first partner.",
      "Over on the table, one shy capsule sits all alone. Nobody picked it. You walk over to it.",
      "THE END of the Alienmon Chronicles. (Every Alienmon is a piece of her. Open the Xenodex and press A to see the Heartroot.)"
-    ]
+    ],
+    "credits": 1
    }
   },
   {
@@ -2761,12 +2758,13 @@
       "x": 1350,
       "y": 930,
       "map": "data/painted_maps.json#dustara"
-     }
+     },
+     "hint": "Catch a Cactling in the Cactus Gardens"
     }
    ],
    "dialogue": {
     "start": [
-     "Dusty: Haven't seen a Cactling bloom in years. Catch one and show me?"
+     "Dusty: Haven't seen a Cactling bloom in years. They grow out in the Cactus Gardens. Catch one and show me?"
     ],
     "progress": [
      "Keep at it, Linker. You've got this."
@@ -2816,12 +2814,14 @@
       "x": 0,
       "y": 0,
       "map": "data/painted_maps.json#dustara"
-     }
+     },
+     "noun": "bolt",
+     "hint": "Find DX-4's bolts around the Trading Post"
     }
    ],
    "dialogue": {
     "start": [
-     "DX-4: Bzzt. Three of my bolts rolled away in the Starfall wind. Retrieve them?"
+     "DX-4: Bzzt. Three of my bolts rolled off toward the Trading Post. Retrieve them?"
     ],
     "progress": [
      "Keep at it, Linker. You've got this."
@@ -2871,18 +2871,19 @@
       "x": 1232,
       "y": 756,
       "map": "data/painted_maps.json#dustara"
-     }
+     },
+     "hint": "Beat wild Alienmon around the Trading Post"
     }
    ],
    "dialogue": {
     "start": [
-     "The pink Alienmon puffs up its gills. It looks like it wants a rematch... again and again."
+     "The pink Alienmon puffs up its gills and glares at the wild Alienmon roaming the Trading Post. It wants you to chase them off."
     ],
     "progress": [
      "Keep at it, Linker. You've got this."
     ],
     "complete": [
-     "After its third loss it happily hands you a shiny stone it was guarding."
+     "After your third win, the pink Alienmon happily hands you a Harmonic Pod it was guarding."
     ]
    },
    "rewards": {
@@ -2984,18 +2985,19 @@
      "location": {
       "area": "molten_frontier",
       "spot": "all five Frontier trainers"
-     }
+     },
+     "hint": "Beat the five Frontier trainers"
     }
    ],
    "dialogue": {
     "start": [
-     "Dax: Beat every trainer on the Frontier and you'll earn a Frontier Badge of honor."
+     "Dax: Beat all five trainers on the Frontier. Anyone you've already beaten counts. Do it and I'll make it worth your while."
     ],
     "progress": [
      "Keep at it, Linker. You've got this."
     ],
     "complete": [
-     "Dax: All five! Here, a Singularity Cell. Don't waste it."
+     "Dax: All five! Here, a Singularity Pod. Don't waste it."
     ]
    },
    "rewards": {
@@ -3034,7 +3036,8 @@
      "location": {
       "area": "molten_frontier",
       "spot": "east trails (x > 560)"
-     }
+     },
+     "hint": "Beat wild Alienmon on the Lava Bridges"
     }
    ],
    "dialogue": {
@@ -3133,7 +3136,8 @@
       "x": 840,
       "y": 526,
       "map": "data/world_map.json"
-     }
+     },
+     "noun": "old pickaxe"
     }
    ],
    "dialogue": {
@@ -3239,16 +3243,16 @@
      }
     },
     {
-     "type": "visit",
-     "target": "node:pyros",
+     "type": "examine",
+     "target": "echo_crystal",
      "count": 1,
      "location": {
-      "area": "molten_frontier",
-      "spot": "Magma Mines",
-      "x": 1347,
-      "y": 118,
-      "map": "data/world_map.json"
-     }
+      "area": "pyros_town",
+      "planet": "pyros",
+      "spot": "Humming crystal"
+     },
+     "hint": "Find the humming crystal in the Deep Mines Entrance on Pyros",
+     "msg": "The crystal hums with the echo's voice."
     }
    ],
    "dialogue": {
@@ -3300,7 +3304,9 @@
      "location": {
       "area": "molten_frontier",
       "spot": "lava field trails"
-     }
+     },
+     "noun": "scrap cog",
+     "hint": "Find scrap cogs on the Lava Bridges"
     }
    ],
    "dialogue": {
@@ -3311,7 +3317,7 @@
      "Keep at it, Linker. You've got this."
     ],
     "complete": [
-     "Grub: Heh, pleasure doing business. One Singularity Cell, as promised."
+     "Grub: Heh, pleasure doing business. One Singularity Pod, as promised."
     ]
    },
    "rewards": {
@@ -3320,7 +3326,8 @@
     }
    },
    "repeatable": true,
-   "notes": ""
+   "notes": "",
+   "cooldown_h": 24
   },
   {
    "id": "S20",
@@ -3350,7 +3357,8 @@
       "planet": "ferrox",
       "spot": "Scrapyard drift grass",
       "note": "tile map or future painted map; place this spot when building"
-     }
+     },
+     "hint": "Catch a Gleamgrub in Scrapyard Crossing"
     }
    ],
    "dialogue": {
@@ -3398,7 +3406,58 @@
       "planet": "ferrox",
       "spot": "Crane yard",
       "note": "tile map or future painted map; place this spot when building"
-     }
+     },
+     "trainers": [
+      {
+       "name": "Junker Rizz",
+       "art": "ferrox_scrap_picker",
+       "team": [
+        [
+         "Rustadillo",
+         10
+        ],
+        [
+         "Cogglet",
+         11
+        ]
+       ],
+       "intro": "These cranes are full of free scrap. Finders keepers!",
+       "lose": "Fine, fine! I'll find another yard."
+      },
+      {
+       "name": "Junker Marta",
+       "art": "ferrox_salvage_trader",
+       "team": [
+        [
+         "Tinwing",
+         11
+        ],
+        [
+         "Magnub",
+         11
+        ]
+       ],
+       "intro": "Rizz lost? Then I'll jam the cranes myself!",
+       "lose": "Ugh. Hank's got a bodyguard now."
+      },
+      {
+       "name": "Junker Bolt",
+       "art": "ferrox_rust_tinkerer",
+       "team": [
+        [
+         "Gongit",
+         11
+        ],
+        [
+         "Corrovore",
+         12
+        ]
+       ],
+       "intro": "I'm the boss of this crew. You won't beat me!",
+       "lose": "Okay, okay! We'll leave the cranes alone."
+      }
+     ],
+     "hint": "Beat the three junkers in the crane yard"
     }
    ],
    "dialogue": {
@@ -3448,12 +3507,13 @@
       "planet": "ferrox",
       "spot": "Furnace ridge (rare)",
       "note": "tile map or future painted map; place this spot when building"
-     }
+     },
+     "hint": "Catch a Forgemaul at Coolant Pond (at night)"
     }
    ],
    "dialogue": {
     "start": [
-     "Scrapper: A Forgemaul's been hammering in the furnace ridge at night. Nobody's caught one."
+     "Scrapper: A Forgemaul's been hammering down by Coolant Pond at night. Nobody's caught one."
     ],
     "progress": [
      "Keep at it, Linker. You've got this."
@@ -3491,13 +3551,15 @@
      "type": "catch",
      "target": "Lumislug",
      "count": 1,
-     "location": null
+     "location": null,
+     "hint": "Catch a Lumislug (Mirefen Village, Mushroom Crossroads)"
     },
     {
      "type": "catch",
      "target": "Puffspore",
      "count": 1,
-     "location": null
+     "location": null,
+     "hint": "Catch a Puffspore by day (Bog Fork, Glowcap Meadow)"
     }
    ],
    "dialogue": {
@@ -3548,7 +3610,8 @@
       "planet": "sporeholm",
       "spot": "Three giant teal mushrooms",
       "note": "tile map or future painted map; place this spot when building"
-     }
+     },
+     "hint": "Follow the glowing mushrooms"
     },
     {
      "type": "talk",
@@ -3559,7 +3622,8 @@
       "planet": "sporeholm",
       "spot": "Third mushroom",
       "note": "tile map or future painted map; place this spot when building"
-     }
+     },
+     "hint": "Find the lost sporeling by the third mushroom"
     }
    ],
    "dialogue": {
@@ -3570,7 +3634,7 @@
      "Keep at it, Linker. You've got this."
     ],
     "complete": [
-     "The little sporeling clings to you all the way home. The elder gives you a woven charm."
+     "The little sporeling clings to you all the way home. The elder presses a pouch of Med Gels into your hands."
     ]
    },
    "rewards": {
@@ -3586,7 +3650,7 @@
    "id": "S32",
    "type": "side",
    "act": "Sporeholm",
-   "title": "Zib's Cousin",
+   "title": "Zib's Signal Twin",
    "location": {
     "area": "sporeholm_town",
     "planet": "sporeholm",
@@ -3602,15 +3666,22 @@
    ],
    "objectives": [
     {
-     "type": "catch",
-     "target": "Zib",
+     "type": "examine",
+     "target": "pinging_pod",
      "count": 1,
      "location": {
       "area": "sporeholm_town",
       "planet": "sporeholm",
-      "spot": "Bog clearing (rare)",
+      "spot": "Bog clearing",
       "note": "tile map or future painted map; place this spot when building"
-     }
+     },
+     "hint": "Follow the saucer signal to the bog clearing",
+     "texts": [
+      [
+       "Under a ring of glowing mushrooms sits an old, cracked seedpod. Its beacon is still pinging.",
+       "It's no cousin. The pod is empty, still calling for whoever hatched from it twenty years ago."
+      ]
+     ]
     }
    ],
    "dialogue": {
@@ -3621,14 +3692,14 @@
      "Keep at it, Linker. You've got this."
     ],
     "complete": [
-     "Two Zibs! They blink at each other in perfect sync."
+     "Zib bumps the old pod gently and beeps a soft reply. Somewhere out there, its pod-mate is doing just fine."
     ]
    },
    "rewards": {
     "dust": 500
    },
    "repeatable": false,
-   "notes": "Zib is a rare wild encounter on Sporeholm."
+   "notes": "Zib is one of a kind (never wild). The 'cousin' signal is an empty seedpod's beacon; examine it at the bog clearing."
   },
   {
    "id": "S40",
@@ -3658,7 +3729,9 @@
       "planet": "thalassa",
       "spot": "Docks, lighthouse, sea arch",
       "note": "tile map or future painted map; place this spot when building"
-     }
+     },
+     "noun": "logbook page",
+     "hint": "Find Captain Marsh's logbook pages around the docks"
     },
     {
      "type": "cutscene",
@@ -3803,7 +3876,8 @@
       "planet": "thalassa",
       "spot": "Under the sea arch (rare)",
       "note": "tile map or future painted map; place this spot when building"
-     }
+     },
+     "hint": "Catch Anchorath deep in the Sea Caves"
     }
    ],
    "dialogue": {
@@ -3855,7 +3929,58 @@
       "x": 900,
       "y": 600,
       "map": "data/painted_maps.json#neonis"
-     }
+     },
+     "trainers": [
+      {
+       "name": "Dancer Vee",
+       "art": "neonis_neon_raver",
+       "team": [
+        [
+         "Pixbot",
+         21
+        ],
+        [
+         "Filamaw",
+         22
+        ]
+       ],
+       "intro": "Round one! Keep up with the beat!",
+       "lose": "Wow, you've got rhythm!"
+      },
+      {
+       "name": "Dancer Juno",
+       "art": "neonis_neon_skater",
+       "team": [
+        [
+         "Ampup",
+         22
+        ],
+        [
+         "Holofox",
+         23
+        ]
+       ],
+       "intro": "Round two! Let's turn it up!",
+       "lose": "The crowd is cheering for YOU now!"
+      },
+      {
+       "name": "Dancer Kix",
+       "art": "neonis_holo_promoter",
+       "team": [
+        [
+         "Neonewt",
+         22
+        ],
+        [
+         "Squawkbox",
+         24
+        ]
+       ],
+       "intro": "Final round! This is my solo!",
+       "lose": "Encore! Encore!"
+      }
+     ],
+     "hint": "Beat Static's three backup dancers"
     }
    ],
    "dialogue": {
@@ -3900,7 +4025,8 @@
      "type": "catch",
      "target": "Glitchbug",
      "count": 3,
-     "location": null
+     "location": null,
+     "hint": "Catch Glitchbugs in the Arcade Alleys"
     }
    ],
    "dialogue": {
@@ -3952,7 +4078,9 @@
       "planet": "neonis",
       "spot": "Three rooftop antennas in Galactic City",
       "note": "tile map or future painted map; place this spot when building"
-     }
+     },
+     "hint": "Retune the city antennas",
+     "msg": "You retune the antenna to the crater pulse."
     }
    ],
    "dialogue": {
@@ -3963,7 +4091,7 @@
      "Keep at it, Linker. You've got this."
     ],
     "complete": [
-     "Dr. Vashti: Triangulated. The pulse comes from INSIDE the crater, from somewhere else entirely."
+     "Dr. Vashti: Triangulated. The pulse comes from inside the crater... and from somewhere far beyond it."
     ]
    },
    "rewards": {
@@ -4005,7 +4133,10 @@
       "planet": "glyphos",
       "spot": "Five carved stones around the ruins",
       "note": "tile map or future painted map; place this spot when building"
-     }
+     },
+     "noun": "rubbing",
+     "hint": "Take rubbings of the carved stones in Glyph Hollow",
+     "msg": "You take a rubbing of the carved stone."
     }
    ],
    "dialogue": {
@@ -4090,7 +4221,7 @@
    ],
    "objectives": [
     {
-     "type": "win_battle",
+     "type": "legendary_encounter",
      "target": "Monolet",
      "count": 3,
      "location": {
@@ -4099,7 +4230,9 @@
       "spot": "Inner sanctum",
       "note": "tile map or future painted map; place this spot when building"
      },
-     "hint": "Calm the Monolet guardians"
+     "hint": "Calm the Monolet guardians in the temple",
+     "lv": 23,
+     "appear": "A stone guardian stirs and blocks the hall. Monolet!"
     },
     {
      "type": "examine",
@@ -4110,13 +4243,14 @@
       "area": "glyphos_town",
       "planet": "glyphos",
       "spot": "Temple mirrors"
-     }
+     },
+     "msg": "You turn the mirror. A beam of light jumps toward the great doors."
     },
     {
      "type": "show",
      "target": "mon:Chimelet",
      "count": 1,
-     "hint": "Bring a Chimelet to the great doors",
+     "hint": "Bring a Chimelet in your party to the great doors",
      "location": {
       "area": "glyphos_town",
       "planet": "glyphos",
@@ -4133,7 +4267,6 @@
      "Keep at it, Linker. You've got this."
     ],
     "complete": [
-     "The Chimelet sings one clear note. The great doors shiver, then swing slowly open.",
      "Behind them, the oldest mural of all: tiny crystal people waving goodbye to a sky full of seedpods.",
      "Ystran echo: ...you listened... thank you..."
     ]
@@ -4174,7 +4307,9 @@
       "planet": "pyros",
       "spot": "Deep mine shaft",
       "note": "tile map or future painted map; place this spot when building"
-     }
+     },
+     "noun": "brass lantern",
+     "hint": "Find Old Basalt's lantern in the Deep Mines Depths"
     }
    ],
    "dialogue": {
@@ -4267,7 +4402,78 @@
       "planet": "pyros",
       "spot": "Mine depths",
       "note": "tile map or future painted map; place this spot when building"
-     }
+     },
+     "trainers": [
+      {
+       "name": "Miner Brick",
+       "art": "pyros_lava_miner",
+       "team": [
+        [
+         "Charsprout",
+         28
+        ],
+        [
+         "Obsidimp",
+         29
+        ]
+       ],
+       "intro": "Down here, only the tough survive. Let's go!",
+       "lose": "Tougher than you look."
+      },
+      {
+       "name": "Driller Ona",
+       "art": "pyros_drill_operator",
+       "team": [
+        [
+         "Drillit",
+         29
+        ],
+        [
+         "Rumblet",
+         30
+        ]
+       ],
+       "intro": "My drill's never lost a fight!",
+       "lose": "Huh. My drill just lost a fight."
+      },
+      {
+       "name": "Carver Sol",
+       "art": "pyros_obsidian_carver",
+       "team": [
+        [
+         "Ashpup",
+         29
+        ],
+        [
+         "Smoglet",
+         30
+        ]
+       ],
+       "intro": "Brick and Ona were warm-ups. I'm the real deal.",
+       "lose": "Okay. You're the real deal."
+      },
+      {
+       "name": "Crew Chief Tova",
+       "art": "pyros_fire_warden",
+       "team": [
+        [
+         "Cinderhound",
+         30
+        ],
+        [
+         "Lavorb",
+         30
+        ],
+        [
+         "Pyroclast",
+         31
+        ]
+       ],
+       "intro": "You beat my whole crew? Then face the chief!",
+       "lose": "Ha! The deep crew salutes you."
+      }
+     ],
+     "hint": "Beat the four members of the deep crew"
     }
    ],
    "dialogue": {
@@ -4378,7 +4584,7 @@
      "Keep at it, Linker. You've got this."
     ],
     "complete": [
-     "Researcher: You saved us both. Take my field notes and these supplies."
+     "Researcher: You saved us both. Please, take these supplies."
     ]
    },
    "rewards": {
@@ -4466,7 +4672,9 @@
       "planet": "helix",
       "spot": "Five containment cages",
       "note": "tile map or future painted map; place this spot when building"
-     }
+     },
+     "hint": "Open the containment cages",
+     "msg": "You open the cage. The Alienmon inside blinks at the light."
     }
    ],
    "dialogue": {
@@ -4479,8 +4687,6 @@
     ],
     "complete": [
      "The freed Alienmon chirp their thanks. Several follow your transfer beam to your ship's storage.",
-     "Kit refuses to leave until every cage is open. Kit's {kit3} digs in and roots the last stuck doors wide open.",
-     "Kit (shaking): Nobody gets left.",
      "Project Unity is broken. Helix's collection is gone."
     ]
    },
@@ -4488,7 +4694,8 @@
     "alienmon_gift": {
      "name": "random_helix_pool",
      "count": 2,
-     "to": "storage"
+     "to": "storage",
+     "lv": 33
     }
    },
    "repeatable": false,
@@ -4514,7 +4721,7 @@
    ],
    "objectives": [
     {
-     "type": "win_battle",
+     "type": "legendary_encounter",
      "target": "Nullbot",
      "count": 3,
      "location": {
@@ -4522,7 +4729,10 @@
       "planet": "helix",
       "spot": "Server room",
       "note": "tile map or future painted map; place this spot when building"
-     }
+     },
+     "lv": 35,
+     "hint": "Beat the Nullbots guarding Thorne's files",
+     "appear": "A Nullbot powers up in front of the server. Intruder!"
     }
    ],
    "dialogue": {
@@ -4575,7 +4785,9 @@
       "planet": "umbra",
       "spot": "Four dark lanterns",
       "note": "tile map or future painted map; place this spot when building"
-     }
+     },
+     "hint": "Light the dark lanterns in Lantern Crossroads",
+     "msg": "You light the lantern. Warm light spills across the street."
     }
    ],
    "dialogue": {
@@ -4625,12 +4837,14 @@
       "planet": "umbra",
       "spot": "Ruined lab",
       "note": "tile map or future painted map; place this spot when building"
-     }
+     },
+     "noun": "page of Kade's notes",
+     "hint": "Find Kade's notes around his lab"
     }
    ],
    "dialogue": {
     "start": [
-     "Kade: My old notes are in the ruined lab. They prove Thorne knew the Devourer was real."
+     "Kade: My old notes are scattered around this lab. They prove Thorne knew the Devourer was real."
     ],
     "progress": [
      "Keep at it, Linker. You've got this."
@@ -4732,7 +4946,8 @@
       "planet": "starfall",
       "spot": "Crater rim (common there)",
       "note": "tile map or future painted map; place this spot when building"
-     }
+     },
+     "hint": "Catch a Novaling on the Crater Rim (by day)"
     }
    ],
    "dialogue": {
@@ -4777,13 +4992,16 @@
      "type": "catch",
      "target": "Mirrix",
      "count": 1,
-     "location": null
+     "location": null,
+     "hint": "Catch a Mirrix (cloud maps, at night)"
     },
     {
      "type": "catch",
      "target": "Reflix",
      "count": 1,
-     "location": null
+     "location": null,
+     "have": true,
+     "hint": "Catch a Reflix (cloud maps, at night)"
     }
    ],
    "dialogue": {
@@ -4794,7 +5012,7 @@
      "Keep at it, Linker. You've got this."
     ],
     "complete": [
-     "Echo & Iris: We saw you'd do it. But it's still nice to watch."
+     "Echo & Iris: We knew you'd do it. But it's still nice to watch."
     ]
    },
    "rewards": {
@@ -4833,7 +5051,9 @@
       "planet": "starfall",
       "spot": "Crashed pods around the crater",
       "note": "tile map or future painted map; place this spot when building"
-     }
+     },
+     "noun": "seedpod shell",
+     "hint": "Find seedpod shells in the Pod Fields"
     }
    ],
    "dialogue": {
@@ -4883,7 +5103,9 @@
       "planet": "starfall",
       "spot": "Teo's old camp",
       "note": "tile map or future painted map; place this spot when building"
-     }
+     },
+     "noun": "Teo's journal",
+     "hint": "Find Teo's journal at his old camp"
     }
    ],
    "dialogue": {
@@ -4934,7 +5156,9 @@
       "planet": "apex",
       "spot": "Three telescope nodes",
       "note": "tile map or future painted map; place this spot when building"
-     }
+     },
+     "hint": "Align the telescope nodes",
+     "msg": "You turn the node until it clicks into line."
     }
    ],
    "dialogue": {
@@ -4984,7 +5208,42 @@
       "planet": "apex",
       "spot": "Summit halls",
       "note": "tile map or future painted map; place this spot when building"
-     }
+     },
+     "hint": "Beat all four Quorum members again",
+     "trainers": [
+      {
+       "target": "quorum_marisol",
+       "name": "Marisol Fenn",
+       "art": "marisol",
+       "lvup": 6,
+       "intro": "I've been polishing my crystals since our last battle. Ready?",
+       "lose": "Still the Prime Linker. Brilliant."
+      },
+      {
+       "target": "quorum_harrow",
+       "name": "Duke Harrow",
+       "art": "harrow",
+       "lvup": 6,
+       "intro": "A rematch! Let the music swell!",
+       "lose": "Bravo. Bravo!"
+      },
+      {
+       "target": "quorum_saga",
+       "name": "Saga",
+       "art": "saga",
+       "lvup": 6,
+       "intro": "(Saga bows once. The rematch begins.)",
+       "lose": "(Saga's hood dips in one slow, deep bow.)"
+      },
+      {
+       "target": "quorum_ostrander",
+       "name": "General Ostrander",
+       "art": "ostrander",
+       "lvup": 6,
+       "intro": "Again, Linker. Show me you have not gone soft.",
+       "lose": "Hmph. Not soft at all."
+      }
+     ]
     }
    ],
    "dialogue": {
@@ -5005,7 +5264,8 @@
     }
    },
    "repeatable": true,
-   "notes": "Repeatable weekly; levels +10."
+   "notes": "Repeatable weekly; levels +10.",
+   "cooldown_h": 168
   },
   {
    "id": "S101",
@@ -5035,13 +5295,13 @@
    ],
    "dialogue": {
     "start": [
-     "Dr. Vashti: Register 150 Alienmon in your Xenodex and I'll give you my rarest cell."
+     "Dr. Vashti: Register 150 Alienmon in your Xenodex and I'll give you three of my rarest pods."
     ],
     "progress": [
      "Keep at it, Linker. You've got this."
     ],
     "complete": [
-     "Dr. Vashti: Half the system catalogued! You've earned this."
+     "Dr. Vashti: One hundred and fifty kinds catalogued! You've earned these."
     ]
    },
    "rewards": {
@@ -5080,7 +5340,10 @@
       "planet": "ystra",
       "spot": "Three crystal shrines",
       "note": "tile map or future painted map; place this spot when building"
-     }
+     },
+     "noun": "Ystran echo",
+     "hint": "Gather the echoes at the crystal shrines",
+     "msg": "A soft voice rises from the crystal and joins you."
     }
    ],
    "dialogue": {
@@ -5130,13 +5393,14 @@
       "planet": "ystra",
       "spot": "Blighted forest",
       "note": "tile map or future painted map; place this spot when building"
-     }
+     },
+     "hint": "Calm Blightlings in the Blighted Forest (battle or catch)"
     }
    ],
    "dialogue": {
     "start": [
      "Liss: The little shadows in this forest are pieces of Oblivane's hunger. They are not attacking you. They are begging.",
-     "Liss: Meet them gently. Kit's {kit3} can heal a little of the blight, tree by tree."
+     "Liss: Meet them gently. Calm five of them, in battle or with your beam, and the forest will breathe a little easier."
     ],
     "progress": [
      "Keep at it, Linker. You've got this."
@@ -5152,7 +5416,8 @@
     }
    },
    "repeatable": true,
-   "notes": ""
+   "notes": "",
+   "cooldown_h": 24
   },
   {
    "id": "S53",
@@ -5180,7 +5445,9 @@
       "area": "neonis_town",
       "planet": "neonis",
       "spot": "The crashed Helix shuttle"
-     }
+     },
+     "hint": "Search the crashed Helix shuttle",
+     "msg": "The shuttle's cargo hold is burst wide open. Something inside is buzzing."
     },
     {
      "type": "collect",
@@ -5191,7 +5458,9 @@
       "area": "neonis_town",
       "planet": "neonis",
       "spot": "Loose Glitchbugs in the Arcade District"
-     }
+     },
+     "noun": "stray Glitchbug",
+     "msg": "You scoop up a stray Glitchbug!"
     }
    ],
    "dialogue": {
@@ -5280,7 +5549,7 @@
     ],
     "complete": [
      "Mina: SPLODGE! You silly bubble. Thank you, Linker!",
-     "Mina: You know what? He likes you. Keep him. Walk out onto deep water and Splodge will carry you anywhere.",
+     "Mina: You know what? He likes you. Walk out onto deep water and Splodge will come and carry you anywhere.",
      "Mina: Just don't pop him."
     ]
    },

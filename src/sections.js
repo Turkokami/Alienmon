@@ -191,7 +191,7 @@ function secMonBattle(s,wm){if(!G.party.some(m=>m.hp>0))return say('Your team ne
  let wp=wildPick(zk,wm.mon);if(wp){const sm=IDX[shownMon(wm.mon,0)],pv=PREVO[D[sm].name];wp=[sm,Math.max(wp[1],pv?pv.level-1:0)]}
  const id=wp?wp[0]:IDX[shownMon(wm.mon,0)];if(id==null)return;QWILD='hotspot_mon_'+({dustara:'dustmere'}[p.key]||p.key);
  G.monGone=G.monGone||{};const tag=s.id+':'+wm.x+','+wm.y;
- say('The wild '+D[id].name+' wants to battle!',()=>{startBattle([mk(...(wp?[id,wp[1]]:clampWild(id,ri(p.lv[0],p.lv[1]),0)))],null);if(scene==='battle')G.monGone[tag]=1;else say('It ran off, scared by your Signal Jammer!')})}
+ startBattle([mk(...(wp?[id,wp[1]]:clampWild(id,ri(p.lv[0],p.lv[1]),0)))],null);if(scene==='battle')G.monGone[tag]=1;else say('It ran off, scared by your Signal Jammer!')}
 // quest spots on the section maps: tile positions in 16 px space (feet on the tile's bottom edge)
 function secQLoc(key,loc){const sp=SECQ[key];if(!sp)return null;return Object.assign({},loc,{sec:sp.s,x:sp.x*16+8,y:sp.y*16+15,pts:sp.pts,art:sp.art||loc&&loc.art})}
 // the old Molten Frontier world map's places, now sections: 'visit the Frontier' / 'visit node X' objectives

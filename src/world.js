@@ -41,6 +41,8 @@ const wildIds=list=>list.filter(id=>wildOK(D[id].name));
 function noteHeal(){if(typeof secOn==='function'&&secOn()){secVisit(G.sec.id);G.lastHeal={sec:G.sec.id,at:[G.sec.x,G.sec.y],planet:G.planet,back:G.secBack||null};return}G.lastHeal=scene==='world'?{w:'bay'}:{p:(PL[G.planet]||PL[0]).key,pos:(G.ppos||[0,0]).slice()}}
 function wakeAtLastHeal(){const h=G.lastHeal;
  // section maps: back to the last Recovery Bay counter you used, or home to Mom if you never healed anywhere
+ if(h&&h.sec&&SWORLD[h.sec]&&secOn()&&G.sec&&SWORLD[G.sec.id]&&SWORLD[h.sec].pkey!==SWORLD[G.sec.id].pkey&&typeof BAYS!=='undefined'){const pk=SWORLD[G.sec.id].pkey,bay=BAYS.find(id=>SWORLD[id].pkey===pk&&G.visited&&G.visited[id]);
+  if(bay){const s=SWORLD[bay],o=(s.objects||[]).find(o=>o.k==='bay'),at=o&&secWalk(s,o.x,o.y+1)?[o.x,o.y+1]:s.spawns.default;B=null;scene='planet';G.planet=pidx(pk);G.sub=null;G.secBack=null;enterSection(bay,at,'up');G.lastHeal={sec:bay,at,planet:G.planet,back:null};return}}
  if(h&&h.sec&&SWORLD[h.sec]){B=null;scene='planet';G.planet=h.planet;G.sub=null;G.secBack=h.back||null;enterSection(h.sec,h.at,'up');return}
  if(typeof secOn==='function'&&secOn()&&!(h&&h.p)){B=null;scene='planet';G.planet=pidx('dustara');G.sub=null;G.secBack=null;enterSection('001',SWORLD['001'].spawns.default,'up');return}
  if(G.sec)G.sec=null;
