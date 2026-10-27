@@ -35,7 +35,7 @@
    "cap": "Zib picks a captain",
    "lines": [
     "Zib settles on your shoulder, its lights still flashing gold.",
-    "One huge eye blinks at you, then at Plazmo.",
+    "One huge eye blinks at you, then at {starter}.",
     "Zib: Bip!"
    ],
    "src": "Cutscene 03 - Ch 2 - Zib Falls From the Sky (Dustara).png"
