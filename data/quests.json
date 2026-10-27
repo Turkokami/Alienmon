@@ -2302,7 +2302,7 @@
       ]
      },
      "intro": "(Saga says nothing. The hooded figure only bows... and the battle begins.)",
-     "lose": "(Saga leans close and whispers one word. It isn't any language you know.)"
+     "lose": "(Saga's hood dips in one slow, deep bow.)"
     },
     {
      "type": "defeat_boss",

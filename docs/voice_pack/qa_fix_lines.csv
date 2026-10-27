@@ -88,3 +88,12 @@ qa_pic_cut_03_narrator_gloopa.mp3,M02,Zib picks a captain,story picture,Narrator
 s32_qa_pod_1_narrator.mp3,S32,Zib's Signal Twin,examine,Narrator,narrator,,"Under a ring of glowing mushrooms sits an old, cracked seedpod. Its beacon is still pinging."
 s32_qa_pod_2_narrator.mp3,S32,Zib's Signal Twin,examine,Narrator,narrator,,"It's no cousin. The pod is empty, still calling for whoever hatched from it twenty years ago."
 s32_qa_complete_narrator.mp3,S32,Zib's Signal Twin,complete,Narrator,narrator,,"Zib bumps the old pod gently and beeps a soft reply. Somewhere out there, its pod-mate is doing just fine."
+m02_019_zib.mp3,P03,The Reunion,epilogue (reuses the existing Bip clip),Zib,zib,,...Biiip.
+m10_qa_mural_1_narrator.mp3,M10,Murals of Ystra,mural (examine),Narrator,narrator,"Slow, awed, reading ancient words",A golden sun over a green world. Tall figures raise their arms to it.
+m10_qa_mural_2_narrator.mp3,M10,Murals of Ystra,mural (examine),Narrator,narrator,"Slow, awed, reading ancient words",The glyphs read: YSTRA. Home. The garden that sang.
+m10_qa_mural_3_narrator.mp3,M10,Murals of Ystra,mural (examine),Narrator,narrator,"Slow, awed, reading ancient words","A vast tree-mother, roots wrapped around glowing seeds."
+m10_qa_mural_4_narrator.mp3,M10,Murals of Ystra,mural (examine),Narrator,narrator,"Slow, awed, reading ancient words","The glyphs read: THE SEEDMOTHER. She gave her children wings of pod and light, and sent them far."
+m10_qa_mural_5_narrator.mp3,M10,Murals of Ystra,mural (examine),Narrator,narrator,"Slow, awed, reading ancient words",A dark tide swallows the stars one by one. A pale world sits in its mouth.
+m10_qa_mural_6_narrator.mp3,M10,Murals of Ystra,mural (examine),Narrator,narrator,"Slow, awed, reading ancient words",The glyphs read: THE DEVOURER. It does not hunger. It simply ends.
+m20_qa_saga_intro_narrator.mp3,M20,The Summit,Saga battle start,Narrator,narrator,"Quiet, hushed",Saga says nothing. The hooded figure only bows... and the battle begins.
+m20_qa_saga_lose_narrator.mp3,M20,The Summit,Saga defeated,Narrator,narrator,"Quiet, hushed","Saga's hood dips in one slow, deep bow."
