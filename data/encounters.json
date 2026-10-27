@@ -30067,53 +30067,6 @@
     ],
     "method": "walk",
     "time": "any"
-   },
-   {
-    "n": 75,
-    "name": "Goozilla",
-    "types": [
-     "Toxin",
-     "Hydro"
-    ],
-    "rarity": "common",
-    "weight": 10,
-    "levels": [
-     46,
-     54
-    ],
-    "method": "surf",
-    "time": "any"
-   },
-   {
-    "n": 77,
-    "name": "Bubblorca",
-    "types": [
-     "Hydro"
-    ],
-    "rarity": "common",
-    "weight": 6,
-    "levels": [
-     46,
-     54
-    ],
-    "method": "surf",
-    "time": "any"
-   },
-   {
-    "n": 79,
-    "name": "Clawfort",
-    "types": [
-     "Hydro",
-     "Alloy"
-    ],
-    "rarity": "uncommon",
-    "weight": 3,
-    "levels": [
-     46,
-     54
-    ],
-    "method": "surf",
-    "time": "any"
    }
   ]
  },
@@ -30818,53 +30771,6 @@
      52
     ],
     "method": "walk",
-    "time": "any"
-   },
-   {
-    "n": 75,
-    "name": "Goozilla",
-    "types": [
-     "Toxin",
-     "Hydro"
-    ],
-    "rarity": "common",
-    "weight": 10,
-    "levels": [
-     46,
-     54
-    ],
-    "method": "surf",
-    "time": "any"
-   },
-   {
-    "n": 77,
-    "name": "Bubblorca",
-    "types": [
-     "Hydro"
-    ],
-    "rarity": "common",
-    "weight": 6,
-    "levels": [
-     46,
-     54
-    ],
-    "method": "surf",
-    "time": "any"
-   },
-   {
-    "n": 79,
-    "name": "Clawfort",
-    "types": [
-     "Hydro",
-     "Alloy"
-    ],
-    "rarity": "uncommon",
-    "weight": 3,
-    "levels": [
-     46,
-     54
-    ],
-    "method": "surf",
     "time": "any"
    }
   ]
@@ -43363,6 +43269,476 @@
      19
     ],
     "method": "surf",
+    "time": "any"
+   }
+  ]
+ },
+ "872": {
+  "planet": "Apex Array",
+  "name": "Tarn Waters",
+  "habitat": "summit",
+  "encounters": [
+   {
+    "n": 252,
+    "name": "Foldarch",
+    "types": [
+     "Gravity",
+     "Void"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     48,
+     54
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 253,
+    "name": "Gemmling",
+    "types": [
+     "Crystal"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     46,
+     52
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 254,
+    "name": "Gemmantle",
+    "types": [
+     "Crystal"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     48,
+     54
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 255,
+    "name": "Riffling",
+    "types": [
+     "Sonic"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     46,
+     52
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 256,
+    "name": "Riffrex",
+    "types": [
+     "Sonic"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     48,
+     54
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 257,
+    "name": "Cragpull",
+    "types": [
+     "Gravity"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     46,
+     52
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 258,
+    "name": "Cragmajor",
+    "types": [
+     "Gravity"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     48,
+     54
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 259,
+    "name": "Flarechick",
+    "types": [
+     "Plasma"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     46,
+     52
+    ],
+    "method": "walk",
+    "time": "day x2"
+   },
+   {
+    "n": 260,
+    "name": "Flarehawk",
+    "types": [
+     "Plasma"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     48,
+     54
+    ],
+    "method": "walk",
+    "time": "day x2"
+   },
+   {
+    "n": 261,
+    "name": "Diamite",
+    "types": [
+     "Alloy",
+     "Crystal"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     46,
+     52
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 262,
+    "name": "Diamondillo",
+    "types": [
+     "Alloy",
+     "Crystal"
+    ],
+    "rarity": "rare",
+    "weight": 1,
+    "levels": [
+     48,
+     54
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 263,
+    "name": "Facetrix",
+    "types": [
+     "Crystal"
+    ],
+    "rarity": "rare",
+    "weight": 1,
+    "levels": [
+     46,
+     52
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 264,
+    "name": "Encorex",
+    "types": [
+     "Sonic"
+    ],
+    "rarity": "rare",
+    "weight": 1,
+    "levels": [
+     46,
+     52
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 265,
+    "name": "Pyrelyth",
+    "types": [
+     "Plasma"
+    ],
+    "rarity": "rare",
+    "weight": 1,
+    "levels": [
+     46,
+     52
+    ],
+    "method": "walk",
+    "time": "day x2"
+   },
+   {
+    "n": 266,
+    "name": "Citadrake",
+    "types": [
+     "Gravity"
+    ],
+    "rarity": "rare",
+    "weight": 1,
+    "levels": [
+     46,
+     52
+    ],
+    "method": "walk",
+    "time": "any"
+   }
+  ]
+ },
+ "873": {
+  "planet": "Apex Array",
+  "name": "Tarn Islands",
+  "habitat": "summit",
+  "encounters": [
+   {
+    "n": 252,
+    "name": "Foldarch",
+    "types": [
+     "Gravity",
+     "Void"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     48,
+     54
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 253,
+    "name": "Gemmling",
+    "types": [
+     "Crystal"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     46,
+     52
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 254,
+    "name": "Gemmantle",
+    "types": [
+     "Crystal"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     48,
+     54
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 255,
+    "name": "Riffling",
+    "types": [
+     "Sonic"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     46,
+     52
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 256,
+    "name": "Riffrex",
+    "types": [
+     "Sonic"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     48,
+     54
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 257,
+    "name": "Cragpull",
+    "types": [
+     "Gravity"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     46,
+     52
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 258,
+    "name": "Cragmajor",
+    "types": [
+     "Gravity"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     48,
+     54
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 259,
+    "name": "Flarechick",
+    "types": [
+     "Plasma"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     46,
+     52
+    ],
+    "method": "walk",
+    "time": "day x2"
+   },
+   {
+    "n": 260,
+    "name": "Flarehawk",
+    "types": [
+     "Plasma"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     48,
+     54
+    ],
+    "method": "walk",
+    "time": "day x2"
+   },
+   {
+    "n": 261,
+    "name": "Diamite",
+    "types": [
+     "Alloy",
+     "Crystal"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     46,
+     52
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 262,
+    "name": "Diamondillo",
+    "types": [
+     "Alloy",
+     "Crystal"
+    ],
+    "rarity": "rare",
+    "weight": 1,
+    "levels": [
+     48,
+     54
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 263,
+    "name": "Facetrix",
+    "types": [
+     "Crystal"
+    ],
+    "rarity": "rare",
+    "weight": 1,
+    "levels": [
+     46,
+     52
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 264,
+    "name": "Encorex",
+    "types": [
+     "Sonic"
+    ],
+    "rarity": "rare",
+    "weight": 1,
+    "levels": [
+     46,
+     52
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 265,
+    "name": "Pyrelyth",
+    "types": [
+     "Plasma"
+    ],
+    "rarity": "rare",
+    "weight": 1,
+    "levels": [
+     46,
+     52
+    ],
+    "method": "walk",
+    "time": "day x2"
+   },
+   {
+    "n": 266,
+    "name": "Citadrake",
+    "types": [
+     "Gravity"
+    ],
+    "rarity": "rare",
+    "weight": 1,
+    "levels": [
+     46,
+     52
+    ],
+    "method": "walk",
     "time": "any"
    }
   ]

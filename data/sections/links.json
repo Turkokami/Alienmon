@@ -118,102 +118,6 @@
    "why": "V2: Vashti's observatory, up the steps"
   },
   {
-   "interior": "426",
-   "parent": "430",
-   "door": [
-    3,
-    6
-   ],
-   "door2": [
-    4,
-    6
-   ],
-   "mat": [
-    [
-     9,
-     18
-    ],
-    [
-     10,
-     18
-    ]
-   ],
-   "confidence": "high",
-   "why": "V3 kit door"
-  },
-  {
-   "interior": "433",
-   "parent": "430",
-   "door": [
-    11,
-    6
-   ],
-   "door2": [
-    12,
-    6
-   ],
-   "mat": [
-    [
-     9,
-     18
-    ],
-    [
-     10,
-     18
-    ]
-   ],
-   "confidence": "high",
-   "why": "V3 kit door"
-  },
-  {
-   "interior": "428",
-   "parent": "427",
-   "door": [
-    11,
-    7
-   ],
-   "door2": [
-    12,
-    7
-   ],
-   "mat": [
-    [
-     8,
-     17
-    ],
-    [
-     9,
-     17
-    ]
-   ],
-   "confidence": "high",
-   "why": "V3 kit door"
-  },
-  {
-   "interior": "403",
-   "parent": "401",
-   "door": [
-    11,
-    7
-   ],
-   "door2": [
-    12,
-    7
-   ],
-   "mat": [
-    [
-     9,
-     18
-    ],
-    [
-     10,
-     18
-    ]
-   ],
-   "confidence": "high",
-   "why": "V3 kit door"
-  },
-  {
    "interior": "043",
    "parent": "042",
    "door": [
@@ -1544,6 +1448,122 @@
    ],
    "confidence": "high",
    "why": "Palm Isle Recovery Bay dome (was an outdoor counter)"
+  },
+  {
+   "interior": "426",
+   "parent": "430",
+   "door": [
+    3,
+    6
+   ],
+   "door2": [
+    4,
+    6
+   ],
+   "mat": [
+    [
+     9,
+     18
+    ],
+    [
+     10,
+     18
+    ]
+   ],
+   "confidence": "high",
+   "why": "V3 kit door"
+  },
+  {
+   "interior": "433",
+   "parent": "430",
+   "door": [
+    11,
+    6
+   ],
+   "door2": [
+    12,
+    6
+   ],
+   "mat": [
+    [
+     9,
+     18
+    ],
+    [
+     10,
+     18
+    ]
+   ],
+   "confidence": "high",
+   "why": "V3 kit door"
+  },
+  {
+   "interior": "428",
+   "parent": "427",
+   "door": [
+    11,
+    7
+   ],
+   "door2": [
+    12,
+    7
+   ],
+   "mat": [
+    [
+     8,
+     17
+    ],
+    [
+     9,
+     17
+    ]
+   ],
+   "confidence": "high",
+   "why": "V3 kit door"
+  },
+  {
+   "interior": "403",
+   "parent": "401",
+   "door": [
+    11,
+    7
+   ],
+   "door2": [
+    12,
+    7
+   ],
+   "mat": [
+    [
+     9,
+     18
+    ],
+    [
+     10,
+     18
+    ]
+   ],
+   "confidence": "high",
+   "why": "V3 kit door"
+  },
+  {
+   "interior": "869",
+   "parent": "868",
+   "door": [
+    12,
+    6
+   ],
+   "mat": [
+    [
+     9,
+     18
+    ],
+    [
+     10,
+     18
+    ]
+   ],
+   "confidence": "high",
+   "why": "V3 kit door"
   }
  ],
  "stairs": [
@@ -2421,218 +2441,6 @@
     "k": "house",
     "to": "188",
     "why": "V3 kit house door"
-   }
-  ],
-  "430": [
-   {
-    "tile": [
-     19,
-     6
-    ],
-    "k": "house",
-    "to": "423",
-    "why": "V3 kit house door"
-   },
-   {
-    "tile": [
-     20,
-     6
-    ],
-    "k": "house",
-    "to": "423",
-    "why": "V3 kit house door"
-   }
-  ],
-  "431": [
-   {
-    "tile": [
-     11,
-     4
-    ],
-    "k": "house",
-    "to": "424",
-    "why": "V3 kit house door"
-   },
-   {
-    "tile": [
-     12,
-     4
-    ],
-    "k": "house",
-    "to": "424",
-    "why": "V3 kit house door"
-   },
-   {
-    "tile": [
-     17,
-     4
-    ],
-    "k": "house",
-    "to": "425",
-    "why": "V3 kit house door"
-   },
-   {
-    "tile": [
-     18,
-     4
-    ],
-    "k": "house",
-    "to": "425",
-    "why": "V3 kit house door"
-   },
-   {
-    "tile": [
-     6,
-     4
-    ],
-    "k": "house",
-    "to": "424",
-    "why": "V3 kit house door"
-   },
-   {
-    "tile": [
-     7,
-     4
-    ],
-    "k": "house",
-    "to": "424",
-    "why": "V3 kit house door"
-   },
-   {
-    "tile": [
-     20,
-     12
-    ],
-    "k": "house",
-    "to": "425",
-    "why": "V3 kit house door"
-   },
-   {
-    "tile": [
-     21,
-     12
-    ],
-    "k": "house",
-    "to": "425",
-    "why": "V3 kit house door"
-   }
-  ],
-  "432": [
-   {
-    "tile": [
-     12,
-     5
-    ],
-    "k": "house",
-    "to": "423",
-    "why": "V3 kit house door"
-   },
-   {
-    "tile": [
-     13,
-     5
-    ],
-    "k": "house",
-    "to": "423",
-    "why": "V3 kit house door"
-   },
-   {
-    "tile": [
-     18,
-     5
-    ],
-    "k": "house",
-    "to": "423",
-    "why": "V3 kit house door"
-   },
-   {
-    "tile": [
-     19,
-     5
-    ],
-    "k": "house",
-    "to": "423",
-    "why": "V3 kit house door"
-   }
-  ],
-  "426": [
-   {
-    "tile": [
-     9,
-     6
-    ],
-    "k": "bay"
-   },
-   {
-    "tile": [
-     10,
-     6
-    ],
-    "k": "bay"
-   }
-  ],
-  "433": [
-   {
-    "tile": [
-     5,
-     9
-    ],
-    "k": "shop"
-   },
-   {
-    "tile": [
-     5,
-     10
-    ],
-    "k": "shop"
-   }
-  ],
-  "422": [
-   {
-    "tile": [
-     15,
-     4
-    ],
-    "k": "chest",
-    "item": "maxrevive",
-    "n": 2,
-    "why": "Secret Grove reward (behind the Relay Tower)"
-   }
-  ],
-  "415": [
-   {
-    "tile": [
-     12,
-     12
-    ],
-    "k": "chest",
-    "item": "singularity",
-    "n": 2,
-    "why": "Stargazer Overlook dead end reward"
-   }
-  ],
-  "409": [
-   {
-    "tile": [
-     2,
-     7
-    ],
-    "k": "chest",
-    "item": "stasis",
-    "n": 3,
-    "why": "Icefall Deep Chamber reward"
-   }
-  ],
-  "429": [
-   {
-    "tile": [
-     12,
-     2
-    ],
-    "k": "chest",
-    "item": "fullgel",
-    "n": 3,
-    "why": "Relay Tower summit reward (the Apex Keeper is Orra Venn at the Great Telescope, so no keeper here)"
    }
   ],
   "728": [
@@ -5858,6 +5666,230 @@
     "k": "bay",
     "why": "Recovery Bay counter"
    }
+  ],
+  "430": [
+   {
+    "tile": [
+     19,
+     6
+    ],
+    "k": "house",
+    "to": "423",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     20,
+     6
+    ],
+    "k": "house",
+    "to": "423",
+    "why": "V3 kit house door"
+   }
+  ],
+  "431": [
+   {
+    "tile": [
+     11,
+     4
+    ],
+    "k": "house",
+    "to": "424",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     12,
+     4
+    ],
+    "k": "house",
+    "to": "424",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     17,
+     4
+    ],
+    "k": "house",
+    "to": "425",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     18,
+     4
+    ],
+    "k": "house",
+    "to": "425",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     6,
+     4
+    ],
+    "k": "house",
+    "to": "424",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     7,
+     4
+    ],
+    "k": "house",
+    "to": "424",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     20,
+     12
+    ],
+    "k": "house",
+    "to": "425",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     21,
+     12
+    ],
+    "k": "house",
+    "to": "425",
+    "why": "V3 kit house door"
+   }
+  ],
+  "432": [
+   {
+    "tile": [
+     12,
+     5
+    ],
+    "k": "house",
+    "to": "870",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     13,
+     5
+    ],
+    "k": "house",
+    "to": "870",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     18,
+     5
+    ],
+    "k": "house",
+    "to": "871",
+    "why": "V3 kit house door"
+   },
+   {
+    "tile": [
+     19,
+     5
+    ],
+    "k": "house",
+    "to": "871",
+    "why": "V3 kit house door"
+   }
+  ],
+  "426": [
+   {
+    "tile": [
+     9,
+     6
+    ],
+    "k": "bay"
+   },
+   {
+    "tile": [
+     10,
+     6
+    ],
+    "k": "bay"
+   }
+  ],
+  "433": [
+   {
+    "tile": [
+     5,
+     9
+    ],
+    "k": "shop"
+   },
+   {
+    "tile": [
+     5,
+     10
+    ],
+    "k": "shop"
+   }
+  ],
+  "422": [
+   {
+    "tile": [
+     15,
+     4
+    ],
+    "k": "chest",
+    "item": "maxrevive",
+    "n": 2,
+    "why": "Secret Grove reward (behind the Relay Tower)"
+   }
+  ],
+  "415": [
+   {
+    "tile": [
+     12,
+     12
+    ],
+    "k": "chest",
+    "item": "singularity",
+    "n": 2,
+    "why": "Stargazer Overlook dead end reward"
+   }
+  ],
+  "409": [
+   {
+    "tile": [
+     2,
+     7
+    ],
+    "k": "chest",
+    "item": "stasis",
+    "n": 3,
+    "why": "Icefall Deep Chamber reward"
+   }
+  ],
+  "429": [
+   {
+    "tile": [
+     12,
+     2
+    ],
+    "k": "chest",
+    "item": "fullgel",
+    "n": 3,
+    "why": "Relay Tower summit reward (the Apex Keeper is Orra Venn at the Great Telescope, so no keeper here)"
+   }
+  ],
+  "869": [
+   {
+    "tile": [
+     9,
+     10
+    ],
+    "k": "chest",
+    "item": "fullgel",
+    "n": 2,
+    "why": "Helix hideout loot on the console"
+   }
   ]
  },
  "arrival": {
@@ -6224,60 +6256,6 @@
    "default": [
     7,
     8
-   ]
-  },
-  "423": {
-   "default": [
-    9,
-    15
-   ]
-  },
-  "424": {
-   "default": [
-    9,
-    16
-   ]
-  },
-  "425": {
-   "default": [
-    9,
-    16
-   ]
-  },
-  "434": {
-   "default": [
-    12,
-    10
-   ]
-  },
-  "406": {
-   "default": [
-    5,
-    3
-   ]
-  },
-  "407": {
-   "default": [
-    4,
-    4
-   ]
-  },
-  "409": {
-   "default": [
-    12,
-    12
-   ]
-  },
-  "428": {
-   "default": [
-    9,
-    15
-   ]
-  },
-  "429": {
-   "default": [
-    11,
-    12
    ]
   },
   "721": {
@@ -7089,6 +7067,78 @@
     9,
     17
    ]
+  },
+  "423": {
+   "default": [
+    9,
+    15
+   ]
+  },
+  "424": {
+   "default": [
+    9,
+    16
+   ]
+  },
+  "425": {
+   "default": [
+    9,
+    16
+   ]
+  },
+  "870": {
+   "default": [
+    9,
+    17
+   ]
+  },
+  "871": {
+   "default": [
+    9,
+    16
+   ]
+  },
+  "434": {
+   "default": [
+    12,
+    10
+   ]
+  },
+  "406": {
+   "default": [
+    5,
+    3
+   ]
+  },
+  "407": {
+   "default": [
+    4,
+    4
+   ]
+  },
+  "409": {
+   "default": [
+    12,
+    12
+   ]
+  },
+  "428": {
+   "default": [
+    9,
+    15
+   ]
+  },
+  "429": {
+   "default": [
+    11,
+    12
+   ]
+  },
+  "869": {
+   "default": [
+    9,
+    17
+   ]
   }
  },
  "zones": {
@@ -7332,23 +7382,6 @@
    "why": "V2: the landing pad is the arrival point and the shuttle home"
   },
   {
-   "section": "434",
-   "tiles": [
-    [
-     12,
-     8
-    ],
-    [
-     13,
-     8
-    ]
-   ],
-   "node": "dustara",
-   "planet": "dustara",
-   "label": "your ship back to Dustara",
-   "why": "V3: the Apex spaceport is a way home"
-  },
-  {
    "section": "041",
    "tiles": [
     [
@@ -7547,6 +7580,23 @@
    "planet": "dustara",
    "label": "your ship back to Dustara",
    "why": "V3: the spaceport is the arrival point and the way home"
+  },
+  {
+   "section": "434",
+   "tiles": [
+    [
+     12,
+     8
+    ],
+    [
+     13,
+     8
+    ]
+   ],
+   "node": "dustara",
+   "planet": "dustara",
+   "label": "your ship back to Dustara",
+   "why": "V3: the Apex spaceport is a way home"
   }
  ],
  "trainers": {
@@ -7635,7 +7685,8 @@
    "912": 1,
    "909": 2,
    "876": 3,
-   "877": 1
+   "877": 1,
+   "869": 2
   },
   "tiles": [
    {
@@ -8685,236 +8736,6 @@
    "face": "down",
    "kind": "door",
    "parent": "030"
-  },
-  {
-   "section": "423",
-   "tile": [
-    9,
-    16
-   ],
-   "to": "back",
-   "at": [
-    9,
-    15
-   ],
-   "face": "down",
-   "kind": "door",
-   "parent": "430"
-  },
-  {
-   "section": "423",
-   "tile": [
-    10,
-    16
-   ],
-   "to": "back",
-   "at": [
-    10,
-    15
-   ],
-   "face": "down",
-   "kind": "door",
-   "parent": "430"
-  },
-  {
-   "section": "424",
-   "tile": [
-    9,
-    17
-   ],
-   "to": "back",
-   "at": [
-    9,
-    16
-   ],
-   "face": "down",
-   "kind": "door",
-   "parent": "431"
-  },
-  {
-   "section": "424",
-   "tile": [
-    10,
-    17
-   ],
-   "to": "back",
-   "at": [
-    10,
-    16
-   ],
-   "face": "down",
-   "kind": "door",
-   "parent": "431"
-  },
-  {
-   "section": "425",
-   "tile": [
-    9,
-    17
-   ],
-   "to": "back",
-   "at": [
-    9,
-    16
-   ],
-   "face": "down",
-   "kind": "door",
-   "parent": "431"
-  },
-  {
-   "section": "425",
-   "tile": [
-    10,
-    17
-   ],
-   "to": "back",
-   "at": [
-    10,
-    16
-   ],
-   "face": "down",
-   "kind": "door",
-   "parent": "431"
-  },
-  {
-   "section": "405",
-   "tile": [
-    11,
-    3
-   ],
-   "to": "406",
-   "at": [
-    5,
-    3
-   ],
-   "face": "down",
-   "kind": "stairs"
-  },
-  {
-   "section": "406",
-   "tile": [
-    5,
-    2
-   ],
-   "to": "405",
-   "at": [
-    11,
-    4
-   ],
-   "face": "down",
-   "kind": "stairs"
-  },
-  {
-   "section": "406",
-   "tile": [
-    18,
-    2
-   ],
-   "to": "407",
-   "at": [
-    4,
-    4
-   ],
-   "face": "down",
-   "kind": "stairs"
-  },
-  {
-   "section": "407",
-   "tile": [
-    4,
-    3
-   ],
-   "to": "406",
-   "at": [
-    18,
-    3
-   ],
-   "face": "down",
-   "kind": "stairs"
-  },
-  {
-   "section": "407",
-   "tile": [
-    11,
-    13
-   ],
-   "to": "409",
-   "at": [
-    12,
-    12
-   ],
-   "face": "up",
-   "kind": "stairs"
-  },
-  {
-   "section": "409",
-   "tile": [
-    12,
-    13
-   ],
-   "to": "407",
-   "at": [
-    11,
-    12
-   ],
-   "face": "up",
-   "kind": "stairs"
-  },
-  {
-   "section": "428",
-   "tile": [
-    15,
-    4
-   ],
-   "to": "429",
-   "at": [
-    11,
-    12
-   ],
-   "face": "up",
-   "kind": "stairs"
-  },
-  {
-   "section": "429",
-   "tile": [
-    11,
-    14
-   ],
-   "to": "428",
-   "at": [
-    15,
-    6
-   ],
-   "face": "down",
-   "kind": "stairs"
-  },
-  {
-   "section": "403",
-   "tile": [
-    9,
-    4
-   ],
-   "to": "404",
-   "at": [
-    11,
-    13
-   ],
-   "face": "up",
-   "kind": "stairs"
-  },
-  {
-   "section": "404",
-   "tile": [
-    11,
-    14
-   ],
-   "to": "403",
-   "at": [
-    9,
-    5
-   ],
-   "face": "down",
-   "kind": "stairs"
   },
   {
    "section": "721",
@@ -12051,6 +11872,296 @@
    ],
    "face": "left",
    "kind": "stairs"
+  },
+  {
+   "section": "423",
+   "tile": [
+    9,
+    16
+   ],
+   "to": "back",
+   "at": [
+    9,
+    15
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "430"
+  },
+  {
+   "section": "423",
+   "tile": [
+    10,
+    16
+   ],
+   "to": "back",
+   "at": [
+    10,
+    15
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "430"
+  },
+  {
+   "section": "424",
+   "tile": [
+    9,
+    17
+   ],
+   "to": "back",
+   "at": [
+    9,
+    16
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "431"
+  },
+  {
+   "section": "424",
+   "tile": [
+    10,
+    17
+   ],
+   "to": "back",
+   "at": [
+    10,
+    16
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "431"
+  },
+  {
+   "section": "425",
+   "tile": [
+    9,
+    17
+   ],
+   "to": "back",
+   "at": [
+    9,
+    16
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "431"
+  },
+  {
+   "section": "425",
+   "tile": [
+    10,
+    17
+   ],
+   "to": "back",
+   "at": [
+    10,
+    16
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "431"
+  },
+  {
+   "section": "870",
+   "tile": [
+    9,
+    18
+   ],
+   "to": "back",
+   "at": [
+    9,
+    17
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "432"
+  },
+  {
+   "section": "870",
+   "tile": [
+    10,
+    18
+   ],
+   "to": "back",
+   "at": [
+    10,
+    17
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "432"
+  },
+  {
+   "section": "871",
+   "tile": [
+    9,
+    17
+   ],
+   "to": "back",
+   "at": [
+    9,
+    16
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "432"
+  },
+  {
+   "section": "871",
+   "tile": [
+    10,
+    17
+   ],
+   "to": "back",
+   "at": [
+    10,
+    16
+   ],
+   "face": "down",
+   "kind": "door",
+   "parent": "432"
+  },
+  {
+   "section": "405",
+   "tile": [
+    11,
+    3
+   ],
+   "to": "406",
+   "at": [
+    5,
+    3
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "406",
+   "tile": [
+    5,
+    2
+   ],
+   "to": "405",
+   "at": [
+    11,
+    4
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "406",
+   "tile": [
+    18,
+    2
+   ],
+   "to": "407",
+   "at": [
+    4,
+    4
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "407",
+   "tile": [
+    4,
+    3
+   ],
+   "to": "406",
+   "at": [
+    18,
+    3
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "407",
+   "tile": [
+    11,
+    13
+   ],
+   "to": "409",
+   "at": [
+    12,
+    12
+   ],
+   "face": "up",
+   "kind": "stairs"
+  },
+  {
+   "section": "409",
+   "tile": [
+    12,
+    13
+   ],
+   "to": "407",
+   "at": [
+    11,
+    12
+   ],
+   "face": "up",
+   "kind": "stairs"
+  },
+  {
+   "section": "428",
+   "tile": [
+    15,
+    4
+   ],
+   "to": "429",
+   "at": [
+    11,
+    12
+   ],
+   "face": "up",
+   "kind": "stairs"
+  },
+  {
+   "section": "429",
+   "tile": [
+    11,
+    14
+   ],
+   "to": "428",
+   "at": [
+    15,
+    6
+   ],
+   "face": "down",
+   "kind": "stairs"
+  },
+  {
+   "section": "403",
+   "tile": [
+    9,
+    4
+   ],
+   "to": "404",
+   "at": [
+    11,
+    13
+   ],
+   "face": "up",
+   "kind": "stairs"
+  },
+  {
+   "section": "404",
+   "tile": [
+    11,
+    14
+   ],
+   "to": "403",
+   "at": [
+    9,
+    5
+   ],
+   "face": "down",
+   "kind": "stairs"
   }
  ],
  "shared_rooms": [
@@ -12122,6 +12233,8 @@
   "172",
   "757",
   "758",
-  "756"
+  "756",
+  "870",
+  "871"
  ]
 }

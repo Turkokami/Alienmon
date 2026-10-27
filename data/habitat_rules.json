@@ -2060,6 +2060,16 @@
    "planet": "Dustara",
    "name": "Sunset Tunnel Mouth",
    "habitat": "canyon"
+  },
+  "872": {
+   "planet": "Apex Array",
+   "name": "Tarn Waters",
+   "habitat": "summit"
+  },
+  "873": {
+   "planet": "Apex Array",
+   "name": "Tarn Islands",
+   "habitat": "summit"
   }
  }
 }

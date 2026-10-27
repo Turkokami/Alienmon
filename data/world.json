@@ -53089,7 +53089,7 @@
       5
      ],
      "k": "house",
-     "to": "423",
+     "to": "870",
      "why": "V3 kit house door"
     },
     {
@@ -53098,7 +53098,7 @@
       5
      ],
      "k": "house",
-     "to": "423",
+     "to": "870",
      "why": "V3 kit house door"
     },
     {
@@ -53107,7 +53107,7 @@
       5
      ],
      "k": "house",
-     "to": "423",
+     "to": "871",
      "why": "V3 kit house door"
     },
     {
@@ -53116,7 +53116,7 @@
       5
      ],
      "k": "house",
-     "to": "423",
+     "to": "871",
      "why": "V3 kit house door"
     },
     {
@@ -53721,7 +53721,106 @@
      "offset": -1
     }
    },
-   "warps": [],
+   "warps": [
+    {
+     "tile": [
+      9,
+      15
+     ],
+     "to": "872",
+     "at": [
+      1,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      10,
+      15
+     ],
+     "to": "872",
+     "at": [
+      1,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      11,
+      15
+     ],
+     "to": "872",
+     "at": [
+      1,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      12,
+      15
+     ],
+     "to": "872",
+     "at": [
+      1,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      13,
+      15
+     ],
+     "to": "872",
+     "at": [
+      2,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      14,
+      15
+     ],
+     "to": "872",
+     "at": [
+      2,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      15,
+      15
+     ],
+     "to": "872",
+     "at": [
+      2,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    }
+   ],
    "objects": [
     {
      "tile": [
@@ -53938,12 +54037,125 @@
      "offset": -2
     }
    },
-   "warps": [],
-   "objects": [
+   "warps": [
     {
      "tile": [
       2,
-      14
+      15
+     ],
+     "to": "873",
+     "at": [
+      1,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      3,
+      15
+     ],
+     "to": "873",
+     "at": [
+      1,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      4,
+      15
+     ],
+     "to": "873",
+     "at": [
+      1,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      5,
+      15
+     ],
+     "to": "873",
+     "at": [
+      1,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      6,
+      15
+     ],
+     "to": "873",
+     "at": [
+      2,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      7,
+      15
+     ],
+     "to": "873",
+     "at": [
+      2,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      8,
+      15
+     ],
+     "to": "873",
+     "at": [
+      2,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      9,
+      15
+     ],
+     "to": "873",
+     "at": [
+      2,
+      1
+     ],
+     "face": "down",
+     "kind": "edge",
+     "edge": "bottom"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      21,
+      13
      ],
      "k": "stash",
      "item": "fullgel",
@@ -53952,8 +54164,8 @@
     },
     {
      "tile": [
-      21,
-      13
+      6,
+      3
      ],
      "k": "stash",
      "item": "singularity",
@@ -53975,7 +54187,7 @@
    "npcs": [
     {
      "x": 12,
-     "y": 10,
+     "y": 12,
      "art": "guard",
      "face": "up",
      "t": [],
@@ -55250,6 +55462,76 @@
    "warps": [
     {
      "tile": [
+      10,
+      15
+     ],
+     "to": "868",
+     "at": [
+      1,
+      9
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      11,
+      15
+     ],
+     "to": "868",
+     "at": [
+      1,
+      9
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      12,
+      15
+     ],
+     "to": "868",
+     "at": [
+      1,
+      9
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      13,
+      15
+     ],
+     "to": "868",
+     "at": [
+      1,
+      10
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
+      14,
+      15
+     ],
+     "to": "868",
+     "at": [
+      1,
+      10
+     ],
+     "face": "right",
+     "kind": "edge",
+     "edge": "bottom"
+    },
+    {
+     "tile": [
       11,
       7
      ],
@@ -55302,7 +55584,7 @@
    "pkey": "apex",
    "npcs": [
     {
-     "x": 13,
+     "x": 15,
      "y": 10,
      "art": "apex_folk1",
      "face": "left",
@@ -55320,8 +55602,8 @@
      }
     },
     {
-     "x": 5,
-     "y": 12,
+     "x": 6,
+     "y": 7,
      "art": "apex_folk3",
      "face": "down",
      "t": [
@@ -55344,13 +55626,13 @@
    ],
    "mons": [
     {
-     "x": 6,
+     "x": 17,
      "y": 7,
      "mon": "Flarehawk"
     },
     {
-     "x": 11,
-     "y": 14,
+     "x": 19,
+     "y": 9,
      "mon": "Diamondillo"
     }
    ]
@@ -74181,6 +74463,425 @@
      "mon": "Pulsarion"
     }
    ]
+  },
+  "869": {
+   "id": "869",
+   "name": "Apex Helix Hideout",
+   "planet": "Apex Array",
+   "dir": "13_apex",
+   "type": "interior",
+   "img": "art/sections_game/13_apex/869_apex_helix_hideout.png",
+   "tiles": [
+    20,
+    20
+   ],
+   "notes": "",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      9,
+      18
+     ],
+     "to": "868",
+     "at": [
+      12,
+      7
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      10,
+      18
+     ],
+     "to": "868",
+     "at": [
+      12,
+      7
+     ],
+     "face": "down",
+     "kind": "door"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      9,
+      10
+     ],
+     "k": "chest",
+     "item": "fullgel",
+     "n": 2,
+     "why": "Helix hideout loot on the console"
+    }
+   ],
+   "spawns": {
+    "door": [
+     9,
+     17
+    ],
+    "default": [
+     9,
+     17
+    ]
+   },
+   "parent": "868",
+   "pkey": "apex",
+   "npcs": [
+    {
+     "x": 11,
+     "y": 13,
+     "art": "guard",
+     "face": "left",
+     "t": [],
+     "id": "sec869_tr0",
+     "trainer": {
+      "cls": "Summit Guard",
+      "route": 1,
+      "name": "Siodra"
+     }
+    },
+    {
+     "x": 7,
+     "y": 11,
+     "art": "explorer",
+     "face": "right",
+     "t": [],
+     "id": "sec869_tr1",
+     "trainer": {
+      "cls": "Ace Linker",
+      "route": 1,
+      "name": "Drioly"
+     }
+    }
+   ]
+  },
+  "873": {
+   "id": "873",
+   "name": "Tarn Islands",
+   "planet": "Apex Array",
+   "dir": "13_apex",
+   "type": "route",
+   "img": "art/sections_game/13_apex/873_tarn_islands.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      1,
+      0
+     ],
+     "to": "419",
+     "at": [
+      2,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      2,
+      0
+     ],
+     "to": "419",
+     "at": [
+      9,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     1,
+     1
+    ]
+   },
+   "grid": [
+    0,
+    70
+   ],
+   "pkey": "apex",
+   "npcs": [],
+   "mons": []
+  },
+  "868": {
+   "id": "868",
+   "name": "Summit Maintenance Hut",
+   "planet": "Apex Array",
+   "dir": "13_apex",
+   "type": "landmark",
+   "img": "art/sections_game/13_apex/868_summit_maintenance_hut.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      0,
+      9
+     ],
+     "to": "401",
+     "at": [
+      10,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      0,
+      10
+     ],
+     "to": "401",
+     "at": [
+      14,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "left"
+    },
+    {
+     "tile": [
+      12,
+      6
+     ],
+     "to": "869",
+     "at": [
+      9,
+      17
+     ],
+     "face": "up",
+     "kind": "door",
+     "edge": "up"
+    }
+   ],
+   "objects": [
+    {
+     "tile": [
+      12,
+      9
+     ],
+     "k": "stash",
+     "item": "maxrevive",
+     "n": 2,
+     "tier": 7
+    }
+   ],
+   "spawns": {
+    "default": [
+     1,
+     9
+    ]
+   },
+   "grid": [
+    0,
+    90
+   ],
+   "pkey": "apex",
+   "mons": [
+    {
+     "x": 14,
+     "y": 9,
+     "mon": "Diamondillo"
+    },
+    {
+     "x": 12,
+     "y": 11,
+     "mon": "Gemmantle"
+    }
+   ]
+  },
+  "872": {
+   "id": "872",
+   "name": "Tarn Waters",
+   "planet": "Apex Array",
+   "dir": "13_apex",
+   "type": "route",
+   "img": "art/sections_game/13_apex/872_tarn_waters.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      1,
+      0
+     ],
+     "to": "415",
+     "at": [
+      9,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    },
+    {
+     "tile": [
+      2,
+      0
+     ],
+     "to": "415",
+     "at": [
+      15,
+      14
+     ],
+     "face": "up",
+     "kind": "edge",
+     "edge": "top"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     1,
+     1
+    ]
+   },
+   "grid": [
+    0,
+    110
+   ],
+   "pkey": "apex",
+   "npcs": [
+    {
+     "x": 2,
+     "y": 12,
+     "art": "explorer",
+     "face": "up",
+     "t": [],
+     "id": "sec872_tr1",
+     "trainer": {
+      "cls": "Ace Linker",
+      "route": 1,
+      "name": "Sodra"
+     }
+    }
+   ],
+   "mons": []
+  },
+  "870": {
+   "id": "870",
+   "name": "Summit Family Home",
+   "planet": "Apex Array",
+   "dir": "13_apex",
+   "type": "interior",
+   "img": "art/sections_game/13_apex/870_summit_family_home.png",
+   "tiles": [
+    20,
+    20
+   ],
+   "notes": "",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      9,
+      18
+     ],
+     "to": "back",
+     "at": [
+      9,
+      17
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      10,
+      18
+     ],
+     "to": "back",
+     "at": [
+      10,
+      17
+     ],
+     "face": "down",
+     "kind": "door"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     9,
+     17
+    ]
+   },
+   "parent": "432",
+   "pkey": "apex"
+  },
+  "871": {
+   "id": "871",
+   "name": "Stargazer Cottage",
+   "planet": "Apex Array",
+   "dir": "13_apex",
+   "type": "interior",
+   "img": "art/sections_game/13_apex/871_stargazer_cottage.png",
+   "tiles": [
+    20,
+    20
+   ],
+   "notes": "",
+   "edges": {},
+   "warps": [
+    {
+     "tile": [
+      9,
+      17
+     ],
+     "to": "back",
+     "at": [
+      9,
+      16
+     ],
+     "face": "down",
+     "kind": "door"
+    },
+    {
+     "tile": [
+      10,
+      17
+     ],
+     "to": "back",
+     "at": [
+      10,
+      16
+     ],
+     "face": "down",
+     "kind": "door"
+    }
+   ],
+   "objects": [],
+   "spawns": {
+    "default": [
+     9,
+     16
+    ]
+   },
+   "parent": "432",
+   "pkey": "apex"
   }
  },
  "connections": [
@@ -81519,6 +82220,20 @@
   },
   {
    "from_id": "415",
+   "edge": "bottom",
+   "tile_range": [
+    9,
+    15
+   ],
+   "to_id": "872",
+   "to_edge": "top",
+   "to_tile": [
+    1,
+    2
+   ]
+  },
+  {
+   "from_id": "415",
    "edge": "right",
    "tile_range": [
     9,
@@ -81585,6 +82300,20 @@
    "to_tile": [
     11,
     21
+   ]
+  },
+  {
+   "from_id": "419",
+   "edge": "bottom",
+   "tile_range": [
+    2,
+    9
+   ],
+   "to_id": "873",
+   "to_edge": "top",
+   "to_tile": [
+    1,
+    2
    ]
   },
   {
@@ -81725,6 +82454,20 @@
    "to_tile": [
     7,
     9
+   ]
+  },
+  {
+   "from_id": "401",
+   "edge": "bottom",
+   "tile_range": [
+    10,
+    14
+   ],
+   "to_id": "868",
+   "to_edge": "left",
+   "to_tile": [
+    9,
+    10
    ]
   },
   {
@@ -84385,6 +85128,48 @@
    "to_tile": [
     14,
     19
+   ]
+  },
+  {
+   "from_id": "873",
+   "edge": "top",
+   "tile_range": [
+    1,
+    2
+   ],
+   "to_id": "419",
+   "to_edge": "bottom",
+   "to_tile": [
+    2,
+    9
+   ]
+  },
+  {
+   "from_id": "868",
+   "edge": "left",
+   "tile_range": [
+    9,
+    10
+   ],
+   "to_id": "401",
+   "to_edge": "bottom",
+   "to_tile": [
+    10,
+    14
+   ]
+  },
+  {
+   "from_id": "872",
+   "edge": "top",
+   "tile_range": [
+    1,
+    2
+   ],
+   "to_id": "415",
+   "to_edge": "bottom",
+   "to_tile": [
+    9,
+    15
    ]
   }
  ]

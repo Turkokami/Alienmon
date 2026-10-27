@@ -6034,8 +6034,8 @@
    "section": "419",
    "name": "Instrument Hollows",
    "tile": [
-    2,
-    14
+    21,
+    13
    ],
    "item": "fullgel",
    "n": 3,
@@ -6045,8 +6045,8 @@
    "section": "419",
    "name": "Instrument Hollows",
    "tile": [
-    21,
-    13
+    6,
+    3
    ],
    "item": "singularity",
    "n": 2,
@@ -6255,6 +6255,17 @@
    "name": "Hall of Champions Plaza",
    "tile": [
     8,
+    9
+   ],
+   "item": "maxrevive",
+   "n": 2,
+   "tier": 7
+  },
+  {
+   "section": "868",
+   "name": "Summit Maintenance Hut",
+   "tile": [
+    12,
     9
    ],
    "item": "maxrevive",

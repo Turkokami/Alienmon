@@ -9255,6 +9255,7 @@
    "tile_px_game": 16,
    "exits": [
     "top edge, tile columns 6–14 → Tarn Fork",
+    "bottom edge, tile columns 9–15 → Tarn Waters",
     "right edge, tile rows 9–14 → Telescope Ridge"
    ],
    "v3": true,
@@ -9301,7 +9302,8 @@
    "tile_px_game": 16,
    "exits": [
     "left edge, tile rows 7–11 → Summit Crossroads",
-    "top edge, tile columns 13–20 → Glacier Bend"
+    "top edge, tile columns 13–20 → Glacier Bend",
+    "bottom edge, tile columns 2–9 → Tarn Islands"
    ],
    "v3": true,
    "kit": "419",
@@ -9537,7 +9539,8 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 9–12 → Tarn Fork"
+    "left edge, tile rows 9–12 → Tarn Fork",
+    "bottom edge, tile columns 10–14 → Summit Maintenance Hut"
    ],
    "v3": true,
    "kit": "401",
@@ -12986,6 +12989,132 @@
    "v3": true,
    "kit": "944",
    "file": "art/kit/14_ystra/944_hidden_area_memory_crystal_grove.png"
+  },
+  {
+   "id": "869",
+   "planet": "Apex Array",
+   "name": "Apex Helix Hideout",
+   "type": "interior",
+   "size_px": [
+    1280,
+    1280
+   ],
+   "tiles": [
+    20,
+    20
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "v3": true,
+   "kit": "869",
+   "file": "art/sections/13_apex/869_apex_helix_hideout.png"
+  },
+  {
+   "id": "873",
+   "planet": "Apex Array",
+   "name": "Tarn Islands",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "top edge, tile columns 1–2 → Instrument Hollows"
+   ],
+   "v3": true,
+   "kit": "873",
+   "file": "art/sections/13_apex/873_tarn_islands.png"
+  },
+  {
+   "id": "868",
+   "planet": "Apex Array",
+   "name": "Summit Maintenance Hut",
+   "type": "landmark",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 9–10 → Summit Grand Stadium"
+   ],
+   "v3": true,
+   "kit": "868",
+   "file": "art/sections/13_apex/868_summit_maintenance_hut.png"
+  },
+  {
+   "id": "872",
+   "planet": "Apex Array",
+   "name": "Tarn Waters",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "top edge, tile columns 1–2 → Stargazer Overlook"
+   ],
+   "v3": true,
+   "kit": "872",
+   "file": "art/sections/13_apex/872_tarn_waters.png"
+  },
+  {
+   "id": "870",
+   "planet": "Apex Array",
+   "name": "Summit Family Home",
+   "type": "interior",
+   "size_px": [
+    1280,
+    1280
+   ],
+   "tiles": [
+    20,
+    20
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "v3": true,
+   "kit": "870",
+   "file": "art/sections/13_apex/870_summit_family_home.png"
+  },
+  {
+   "id": "871",
+   "planet": "Apex Array",
+   "name": "Stargazer Cottage",
+   "type": "interior",
+   "size_px": [
+    1280,
+    1280
+   ],
+   "tiles": [
+    20,
+    20
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [],
+   "v3": true,
+   "kit": "871",
+   "file": "art/sections/13_apex/871_stargazer_cottage.png"
   }
  ]
 }
