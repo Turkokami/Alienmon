@@ -5,7 +5,7 @@
 const VOICE=__VOICE__,VOLINES=__VOICELINES__,VOPAT=VOLINES.pattern.map(([r,f])=>[new RegExp(r),f]);
 let VOA=null,VOLAST={dlg:null,i:-1,cut:null,p:-1},VOQ=[];
 const voOn=()=>!(G&&G.opt&&G.opt.voice===false);   /* voices have their own switch (Options > Voices), separate from music; every new game starts with them on */
-const voNorm=s=>String(s||'').replace(/^[A-Z][\w.'&-]*(?: [A-Z&][\w.'-]*){0,3}(?: \([^)]*\))?:\s+/,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();
+const voNorm=s=>String(s||'').replace(/^[A-Z][\w.'&-]*(?: (?:[A-Z&][\w.'-]*|echo|elder)){0,3}(?: \([^)]*\))?:\s+/,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();
 function voFind(line){const k=voNorm(line);if(!k)return null;let f=VOLINES.exact[k];
  if(!f)for(const[re,fn]of VOPAT)if(re.test(k)){f=fn;break}
  if(f&&!VOICE[f]){const st=typeof myStarter==='function'&&G&&G.party&&G.party.length?D[myStarter()].name.toLowerCase():'sporix';f=VOICE[f+'_'+st]?f+'_'+st:null}   /* starter-name lines come in three versions */
