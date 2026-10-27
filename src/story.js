@@ -79,7 +79,8 @@ function storyBattleStart(tr,L){B.sp=(tr&&tr.sp)||NEXTB||null;NEXTB=null;if(B.sp
    L.push(a.who+' fights beside you!');if(a.evolve&&a.mon==='rival')L.push(a.who+"'s "+starterLine(base)[1]+' is glowing... it evolved into '+D[id].name+'!');L.push(a.who+"'s "+D[id].name+' is ready to swap in from your team!')}}
  if(B.sp&&B.sp.listen)L.push("Liss (far away): Don't fight it. When the moment comes... listen.");
  if(!tr&&B.team.length&&D[B.team[0].id].name==='Blightling'&&secOn()&&['160','161'].includes(G.sec.id))L.push('...It isn\'t attacking. It\'s reaching for your light. It\'s begging.')}
-function storyAllyLeave(){if(G&&G.party.some(m=>m.guest)){G.party=G.party.filter(m=>!m.guest)}}
+function storyAllyLeave(){if(G&&G.party.some(m=>m.guest)){const cur=B&&G.party[B.pi];G.party=G.party.filter(m=>!m.guest);
+ if(B){const i=G.party.indexOf(cur);B.pi=i>=0?i:Math.max(0,G.party.findIndex(m=>m.hp>0));if(B.part)B.part=new Set([...B.part].filter(j=>j<G.party.length))}}}
 const storyRunLabel=()=>B&&B.sp&&B.sp.listen&&B.sp.turns>=3?'LISTEN':'RUN';
 function storyImmortal(){if(!B||!B.sp||!B.sp.immortal)return;const e=EM();if(e.hp<=0){e.hp=Math.ceil(stat(e,0)*0.5);B.sp.grow=(B.sp.grow||0)+1;e.bs&&e.bs.atk<6&&e.bs.atk++}}
 function storyListen(down){B.phase='wait';const e=EM();

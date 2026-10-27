@@ -385,7 +385,7 @@ function paintInteract(h){const p=PL[G.planet];if(h.k==='route')return enterRout
  if(h.k==='ship')return choose('Your ship',['Head out (world map)','Recovery Bay','Shop','Cancel'],i=>{if(i===0)launch();else if(i===1){healAll();noteHeal();say('Ship Recovery Bay: Your Alienmon are fully healed and cured!')}else if(i===2)shop()});
  if(h.k==='talk')return say(h.t,null,h.art||undefined);
  if(h.k==='mon'){if(!G.party.some(m=>m.hp>0))return say('Your team needs to heal first.');const pool=p.pool.r.length?p.pool.r:p.pool.c,[a,b]=p.lv;
-  let wp=wildPick(p.key,h.mon);if(wp&&h.mon){const sm=IDX[shownMon(h.mon,inRoute()?2:0)],pv=PREVO[D[sm].name];wp=[sm,Math.max(wp[1],pv?pv.level-1:0)]}const id=wp?wp[0]:h.mon&&IDX[h.mon]!=null?IDX[h.mon]:pick(pool);QWILD='hotspot_mon_'+({dustara:'dustmere'}[p.key]||p.key);say(h.t||'The wild '+D[id].name+' wants to battle!',()=>{startBattle([mk(...(wp?[id,wp[1]]:clampWild(id,ri(a,b)+1,inRoute()?2:0)))],null);if(scene==='battle'){G.monGone=G.monGone||{};G.monGone[paintMonKey(h)]=1}})}}
+  let wp=wildPick(p.key,h.mon);if(wp&&h.mon){const sm=IDX[shownMon(h.mon,inRoute()?2:0)],pv=PREVO[D[sm].name];wp=[sm,Math.max(wp[1],pv?pv.level-1:0)]}const id=wp?wp[0]:h.mon&&IDX[h.mon]!=null?IDX[h.mon]:pick(pool);QWILD='hotspot_mon_'+({dustara:'dustmere'}[p.key]||p.key);(h.t?f=>say(h.t,f):f=>f())(()=>{startBattle([mk(...(wp?[id,wp[1]]:clampWild(id,ri(a,b)+1,inRoute()?2:0)))],null);if(scene==='battle'){G.monGone=G.monGone||{};G.monGone[paintMonKey(h)]=1}})}}
 const paintMonKey=h=>'p:'+(G.sub||PL[G.planet].key)+':'+h.x+','+h.y,paintMonGone=h=>h.k==='mon'&&!h.legend&&!!(G.monGone&&(paintMonKey(h)) in G.monGone);
 function drawPaint(){const P=paintOf(),im=SCI[P.img];if(!G.ppos)G.ppos=P.start.slice();const S=P.S,mw=P.w*S,mh=P.h*S,fx=G.ppos[0]*S,fy=G.ppos[1]*S;
  const cx=Math.max(0,Math.min(mw-160,fx-80)),cy=Math.max(0,Math.min(mh-144,fy-82)),cs=Math.round(88*S),ms=Math.round(cs*0.85);rect(0,0,160,144,'#1d1433');
@@ -760,7 +760,7 @@ function updBattle(){const opts=['FIGHT','BAG','SWAP',storyRunLabel()];
    else if(e.kind==='heal'){B.itemUse=e.it;B.phase='party';B.forced=false;B.psel=B.pi}
    else{const it=e.it,en=EM();G.items[it.k]--;qEvent('use',it.battle);turn(Object.assign(next=>{const L=['You used a '+it.n+'!'];
      if(it.battle==='tether'){const mx=stat(en,0),dmg=Math.min(Math.max(1,Math.floor(mx*0.25)),en.hp-1);if(dmg>0){en.hp-=dmg;L.push(nm(en)+' was weakened! It has '+en.hp+' HP left.')}else L.push(nm(en)+" can't be weakened any further.")}
-     else{const b=L.length;inflict(en,'shock',L);if(L.length===b)L.push('It had no effect on '+nm(en)+'.')}
+     else{const b=L.length;inflict(en,'shock',L);if(L.length===b)L.push('It had no effect on '+nm(en)+'.'+(immune(en,'shock')?' Its trait shrugs off Stun Spray. Try it on another Alienmon.':en.st?' It already has a status problem.':''))}
      LAST={mv:{t:it.battle==='stun'?'Volt':'None',p:0,fx:{s:1}},a:PM(),d:en,hit:true};playFx(()=>say(L,next))},{pri:1}))}}}
  else if(B.phase==='boxpick'){const n=G.box.length;if(P_('up'))B.bxsel=(B.bxsel+n-1)%n;if(P_('down'))B.bxsel=(B.bxsel+1)%n;
   if(P_('b')){B.phase='wait';say('You decided not to call for backup.',loseBattle);return}
@@ -857,7 +857,7 @@ function drawBattle(){const e=curEnv(),p=PM(),en=EM(),pl=PL[G.planet],ar=B.tr&&(
 function expbar(x,y,w,m){rect(x,y,w,3,'#1b1424');rect(x+1,y+1,Math.round((w-2)*expFrac(m)),1,'#5ff2ff')}
 function drawParty(sel,title){box(0,0,160,144);txt(title,6,6,'#1b1424');G.party.forEach((m,i)=>{const y=20+i*20;if(i===sel)rect(4,y-2,152,19,'#ffe0c0');dspr(m.id,6,y-1,1,false,m);
  txt(nm(m).slice(0,10),26,y,m.hp>0?'#1b1424':'#a99cc8',7);txt('Lv'+m.lv,120,y,'#3b2a5c',7);hpbar(26,y+10,60,m);expbar(122,y+10,30,m);txt(m.hp>0?m.hp+'/'+stat(m,0):'FAINTED',92,y+9,m.hp>0?'#3b2a5c':'#d7262e',6)})}
-function drawBox(sel,title){box(0,0,160,144);txt(title,6,5,'#1b1424');if(!G.box.length){wrap('Storage is empty. Alienmon you catch while your team is full are beamed here.',24).forEach((l,i)=>txt(l,6,24+i*10,'#3b2a5c',7));return}
+function drawBox(sel,title){box(0,0,160,144);txt(title,6,5,'#1b1424',6);if(!G.box.length){wrap('Storage is empty. Alienmon you catch while your team is full are beamed here.',24).forEach((l,i)=>txt(l,6,24+i*10,'#3b2a5c',7));return}
  const st=Math.max(0,Math.min(sel-5,G.box.length-7));for(let i=0;i<7&&st+i<G.box.length;i++){const m=G.box[st+i],y=18+i*17;if(st+i===sel)rect(3,y-2,154,16,'#ffe0c0');dspr(m.id,5,y-2,1,false,m);
   txt(nm(m).slice(0,10),26,y,m.hp>0?'#1b1424':'#a99cc8',7);txt('Lv'+m.lv,120,y,'#3b2a5c',7);hpbar(26,y+9,60,m);txt(m.hp>0?m.hp+'/'+stat(m,0):'FAINTED',92,y+8,m.hp>0?'#3b2a5c':'#d7262e',6)}
  txt((sel+1)+'/'+G.box.length,124,5,'#3b2a5c',6)}
@@ -882,7 +882,7 @@ function updMenu(){if(menuMode==='quests'){qLogUpd();if(menuMode==='quests')qLog
   if(P_('a')&&n){const i=B.bxsel,m=G.box[i];choose(nm(m)+' Lv'+m.lv,['Add to team','Swap with team member','Summary','Cancel'],k=>{
     if(k===0){if(G.party.length>=6)say('Your team is full. Choose Swap instead.');else{G.box.splice(i,1);G.party.push(m);B.bxsel=Math.max(0,Math.min(i,G.box.length-1));say(nm(m)+' beamed down and joined your team!')}}
     else if(k===1){menuMode='swappick';B.psel=0}else if(k===2)menuMode='boxsum'})}
-  if(menuMode==='storage')drawBox(B.bxsel,'Storage (A: options)')}
+  if(menuMode==='storage')drawBox(B.bxsel,'Storage  A:options')}
  else if(menuMode==='swappick'){const n=G.party.length;if(P_('up'))B.psel=(B.psel+n-1)%n;if(P_('down'))B.psel=(B.psel+1)%n;if(P_('b')){menuMode='storage';return}
   if(P_('a')){const a=G.party[B.psel],b=G.box[B.bxsel];G.party[B.psel]=b;G.box[B.bxsel]=a;menuMode='storage';say(nm(b)+' joined your team. '+nm(a)+' was beamed to storage.')}
   if(menuMode==='swappick')drawParty(B.psel,'Swap '+nm(G.box[B.bxsel]).slice(0,10)+' with:')}

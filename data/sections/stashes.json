@@ -930,8 +930,8 @@
    "section": "490",
    "name": "Coolant Pond",
    "tile": [
-    15,
-    5
+    14,
+    2
    ],
    "item": "gel",
    "n": 2,
@@ -3261,8 +3261,8 @@
    "section": "673",
    "name": "Deep Mines Entrance",
    "tile": [
-    3,
-    7
+    6,
+    6
    ],
    "item": "revive",
    "n": 2,
@@ -3273,7 +3273,7 @@
    "name": "Deep Mines Entrance",
    "tile": [
     19,
-    6
+    11
    ],
    "item": "revive",
    "n": 2,

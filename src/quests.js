@@ -22,13 +22,16 @@ function qMigrate(){const done=id=>{const s=qs(id);if(s){s.state='done';s.step=Q
   if(os.every(o=>(o.type==='defeat_keeper'&&G.beaten[o.target])||(o.type==='battle_trainer'&&!o.target.includes('|')&&G.beaten[o.target])))done(q.id)}}
 
 const qPrereqsDone=q=>(q.prereq||[]).every(p=>qs(p)&&qs(p).state==='done');
+const qRested=q=>!q.cooldown_h||!(G.qcool&&G.qcool[q.id])||Date.now()-G.qcool[q.id]>=q.cooldown_h*3600e3;   // a repeatable mission's rest time
 // locked -> available once prerequisites are done; main quests start straight away
 function qUnlock(){let again=true;while(again){again=false;
  for(const q of QUESTS){const s=qs(q.id);if(s.state==='locked'&&qPrereqsDone(q)){s.state='available';if(q.type==='main'){qActivate(q);again=true}}}}}
 
+const qPunct=(t,p)=>/[.!?…]$/.test(t)?t:t+p;
+const qA=w=>(/^[aeiou]/i.test(w)?'an ':'a ')+w;
 function qActivate(q){const s=qs(q.id);s.state='active';s.step=0;s.n=0;s.got=[];qPic(q.id,0,'start');
  if(G.qtrack==null||!qs(G.qtrack)||qs(G.qtrack).state!=='active')G.qtrack=q.id;
- qNotify(q.id,'start',['New '+(q.type==='main'?'story quest':'side mission')+': '+q.title].concat(q.dialogue&&q.dialogue.start||[]));qPassive()}
+ qNotify(q.id,'start',['New '+(q.type==='main'?'story quest':'side mission')+': '+q.title].concat(q.dialogue&&q.dialogue.start||[]),q.giver&&q.giver.art);qPassive()}
 
 const qObj=q=>q.objectives[qs(q.id).step];
 const qActive=()=>QUESTS.filter(q=>qs(q.id).state==='active');
@@ -47,7 +50,7 @@ function qMatch(q,o,type,target,info){const t=o.type;
   case'talk':if(t==='talk'||t==='deliver'||t==='show'){if(o.target===target||target==='q:'+q.id)return true;const l=qLoc(q.id,qs(q.id).step,o.location);return!!(info.x!=null&&l&&l.x!=null&&qSameArea(l)&&Math.hypot(l.x-info.x,l.y-info.y)<(typeof secOn==='function'&&secOn()?8:56))}return false;
   case'visit':return(t==='visit'||t==='spot_event')&&o.target===target;
   case'prop':return(t==='examine'||t==='collect')&&o.target===target;
-  case'catch':return(t==='catch'&&o.target===target)||t==='catch_any'||(t==='catch_type'&&(D[IDX[target]].t||[]).includes(o.target))||(t==='legendary_encounter'&&o.target===target);
+  case'catch':return(t==='catch'&&o.target===target)||(t==='win_battle'&&o.target===target)||t==='catch_any'||(t==='catch_type'&&(D[IDX[target]].t||[]).includes(o.target))||(t==='legendary_encounter'&&o.target===target);
   case'win':return(t==='win_battle'&&(o.target===target||o.target===info.area))||(t==='legendary_encounter'&&o.target===target);
   case'trainer':return(t==='battle_trainer'||t==='battle_rival'||t==='defeat_boss')&&(o.target===target||o.target.split('|').includes(target)||(o.target==='quorum_all_rematch'&&/^quorum_/.test(target)));
   case'keeper':return t==='defeat_keeper'&&o.target===target;
@@ -57,7 +60,7 @@ function qMatch(q,o,type,target,info){const t=o.type;
 // gameplay reports an event; returns true if it moved any quest forward
 function qEvent(type,target,info){if(!G||!G.quests)return false;info=info||{};let hit=false;
  for(const q of qActive()){const o=qObj(q);if(!o||!qMatch(q,o,type,target,info))continue;
-  if(o.type==='deliver'){const k=o.target;if(!(G.items[k]>0)){qNotify(q.id,'need',['You need a '+itemName(k)+' to hand over.']);continue}G.items[k]--}
+  if(o.type==='deliver'){const k=o.target;if(!(G.items[k]>0)){qNotify(q.id,'need',['You need '+qA(itemName(k))+' to hand over.']);continue}G.items[k]--}
   if(o.type==='show'){const ty=o.target.replace(/^(type|mon):/,''),sp=o.target.startsWith('mon:');if(!G.party.some(m=>sp?storyIsMon(m,ty):(D[m.id].t||[]).includes(ty))){qNotify(q.id,'need',['Bring '+(sp?'a '+ty:'a '+ty+'-type Alienmon')+' in your party.']);continue}}
   hit=true;qProgress(q,1)}
  return hit}
@@ -68,7 +71,7 @@ function qProgress(q,n){const s=qs(q.id),o=qObj(q);s.n+=n;
   else{const nx=qObj(q);if(!((nx.type==='cutscene'||nx.type==='choice')&&storyAt(nx))&&!(o.then&&o.then.go))qNotify(q.id,'step',['Objective complete! Next: '+qText(q)]);if(q.type==='main')autosave();qPassive()}}}
 
 function itemName(k){const it=ITEMS.find(i=>i.k===k)||PODS.find(p=>p.k===k);return it?it.n:(KEY_ITEMS[k]||k)}
-function qRewardText(r){const L=[];if(r.dust)L.push(r.dust+' stardust');for(const k in r.items||{})L.push(r.items[k]+'x '+itemName(k));if(r.alienmon_gift)L.push(r.alienmon_gift.name);return L.join(', ')}
+function qRewardText(r){const L=[];if(r.dust)L.push(r.dust+' stardust');for(const k in r.items||{})L.push(r.items[k]+'x '+itemName(k));const g=r.alienmon_gift;if(g)L.push(g.name==='random_helix_pool'?(g.count||1)+' rescued Alienmon':g.name);return L.join(', ')}
 
 function qComplete(q){const s=qs(q.id),r=q.rewards||{};s.state='done';
  QN=QN.filter(m=>!(m.q===q.id&&m.kind==='start'));   // finished before its intro was shown: skip the intro
@@ -77,10 +80,12 @@ function qComplete(q){const s=qs(q.id),r=q.rewards||{};s.state='done';
  for(const f of r.flags||[])G.flags[f]=1;
  // Signal Shards come from the Keeper battles themselves, so the quest's "shard" reward is not paid again
  if(r.alienmon_seen)for(const n of[].concat(r.alienmon_seen))if(IDX[n]!=null)G.seen[IDX[n]]=1;
- let gift=null;if(r.alienmon_gift&&IDX[r.alienmon_gift.name]!=null){const m=mk(IDX[r.alienmon_gift.name],r.alienmon_gift.lv||5);gift=addMon(m)==='box'?' (sent to storage)':''}
- const rt=qRewardText(r);
- qNotify(q.id,'done',(q.dialogue&&q.dialogue.complete||[]).concat(['Quest complete: '+q.title+'!'+(rt?' Received '+rt+(gift||'')+'.':'')]));if(q.epilogue)storyThen(q,q.epilogue);
- if(q.repeatable){s.state='available';s.step=0;s.n=0}
+ let gift=null,rt=qRewardText(r);const gf=r.alienmon_gift;if(gf&&IDX[gf.name]!=null){const m=mk(IDX[gf.name],gf.lv||5);gift=addMon(m)==='box'?' (sent to storage)':''}
+ else if(gf&&gf.name==='random_helix_pool'){const hp=PL.find(p=>p.key==='helix')||PL[G.planet]||PL[0],pool=hp.pool.c.concat(hp.pool.e).filter(id=>wildOK(D[id].name)),lv=gf.lv||(hp.lv||[30,34])[1],got=[];
+  for(let i=0;i<(gf.count||1)&&pool.length;i++){const id=pool[Math.floor(Math.random()*pool.length)];const m=mk(id,lv);G.seen[id]=1;G.caught[id]=1;G.box.push(m);got.push(D[id].name)}
+  rt=rt.replace((gf.count||1)+' rescued Alienmon',got.join(' and '));gift=' (sent to storage)'}
+ qNotify(q.id,'done',(q.dialogue&&q.dialogue.complete||[]).concat(['Quest complete: '+qPunct(q.title,'!')+(rt?' Received '+rt+(gift||'')+'.':'')]),q.giver&&q.giver.art);if(q.epilogue)storyThen(q,q.epilogue);
+ if(q.repeatable){s.state='available';s.step=0;s.n=0;if(q.cooldown_h){G.qcool=G.qcool||{};G.qcool[q.id]=Date.now()}}
  if(G.qtrack===q.id)G.qtrack=(qActive()[0]||{}).id||null;
  qUnlock();if(q.type==='main')autosave()}
 
@@ -92,6 +97,7 @@ function qPassive(){if(!G||!G.quests)return;
   // trainers fight once: one you already beat (S10 before M13, say) counts for the objective; rematch quests don't
   else if(QTRAINER.has(o.type)&&!q.repeatable){const n=Math.min(o.count||1,o.target.split('|').filter(t=>G.beaten[t]).length);if(n>s.n)qProgress(q,n-s.n)}
   else if(o.type==='item'&&G.key[o.target])qProgress(q,1);
+  else if(o.type==='catch'&&o.have&&IDX[o.target]!=null&&G.caught[IDX[o.target]])qProgress(q,o.count||1);   // caught before this step came up (S96: either twin first)
   else if(o.type==='xenodex'&&Object.keys(G.caught).length>=(o.count||1))qProgress(q,o.count||1);
   else if(o.type==='cutscene'){if(s.playing||!storyAt(o)||QN.length||DLG||CH||scene==='battle'||scene==='cut')continue;const ca=o.scene?[o.scene,o.title||'']:QCUT_ART[o.target],art=ca&&SCI[ca[0]];
    // wait a few seconds for the scene art to download before falling back to text only
@@ -117,7 +123,7 @@ const QBOARD={prophecy_shrine:[['cut_66',['A shimmering girl made of crystal lig
  ['zib_bridge_4',["{starter} jumps back in surprise. The saucer doesn't flinch. It loops around you, lights flashing gold.","It's an Alienmon called Zib... and it has decided you're its captain."]]]};
 const QCUT={novaryx_awakens:[]};   // the Novaryx picture (cut_51) tells it
 
-function qNotify(q,kind,lines){if(lines&&lines.length)QN.push({q,kind,lines:lines.map(l=>typeof qFmt==='function'?qFmt(l):l)})}
+function qNotify(q,kind,lines,art){if(lines&&lines.length)QN.push({q,kind,art:art||undefined,lines:lines.map(l=>typeof qFmt==='function'?qFmt(l):l)})}
 // show waiting quest messages when nothing else is on screen
 // story pictures (data/cutscenes.json): shown full screen with their narration when a quest step starts or is done.
 // A picture can have a version per starter (<key>_<starter>), picked by boardImg. Each is shown once per save.
@@ -130,7 +136,7 @@ const QSPK={'Dr. Vashti':'vashti','Dr. Imogen Vashti':'vashti','Vashti':'vashti'
  'Director Thorne':'thorne','Thorne':'thorne','Kael Thorne':'thorne','Mortimer Kade':'kade','Kade':'kade','Strand':'strand','Pell':'pell','Helix Grunt Pell':'pell','Orra Venn':'orra','Orra':'orra','Teo Reyes':'teo','Teo':'teo','Mom':'mom','Tamsin':'tamsin','Liss':'liss',
  'Dax':'dax','Forge Miner Dax':'dax','DX-4':'dx4','Mina':'mina','Saga':'saga','Marisol Fenn':'marisol','Duke Harrow':'harrow','General Ostrander':'ostrander','Echo & Iris':'twins','Echo and Iris':'twins','Echo':'twins','Iris':'twins',
  'Nana Wren':'nanawren','Squid Sailor':'squidsailor','Nurse':'nurse','Nurse Coral':'coral','Fenna':'fenna','Bram':'bram','Mr. Abernathy':'abernathy','Guard':'guard','Helix Grunt':'helix_helix_grunt','Grunt':'helix_helix_grunt',
- 'Zib':'','Seedmother':'','Codex page':'','Ystran Echo':'ystran'};
+ 'Zib':'','Seedmother':'','Codex page':'','Ystran Echo':'ystran','Ystran echo':'ystran'};
 const QSYS=/^(New (story quest|side mission)|Objective complete|Quest complete|Mission accepted|Word from|Linker alert|Incoming Linker message|You received)/;
 function qSpeaker(l){const m=typeof l==='string'&&!QSYS.test(l)&&l.match(/^([A-Z][\w.'&-]*(?: (?:[A-Z&][\w.'-]*|of|the)){0,3})(?: \([^)]*\))?: /);return m?m[1]:null}   /* a name: capitalised words ("Dr. Vashti", "Echo & Iris") */
 const qArtOK=a=>!!(a&&(PORT[a]||TALKI[a]||CHAR[a]));
@@ -139,7 +145,7 @@ function qSpeakerArt(lines){for(const l of[].concat(lines)){const a=qLineArt(l,n
 // someone (or their portrait) is standing in this section
 function qPresent(a){if(!(typeof secOn==='function'&&secOn()))return false;const s=SWORLD[G.sec.id];if(secNpcs(s).some(n=>n.art===a||n.por===a))return true;if(qEnts().some(e=>e.art===a))return true;const kp=PL[G.planet]&&PL[G.planet].keeper;return!!(kp&&kp.art===a&&(s.objects||[]).some(o=>o.k==='keeper'))}
 function qSay(m){const runs=[];for(const l of m.lines){const a=qLineArt(l,m.art),r=runs[runs.length-1];if(r&&r.art===a)r.lines.push(l);else runs.push({art:a,lines:[l]})}
- if(m.kind==='start'&&QI[m.q]&&QI[m.q].type==='main')for(const r of runs)if(r.art&&!qPresent(r.art)){r.lines.unshift('Incoming Linker message from '+qSpeaker(r.lines[0])+'...');break}
+ if((m.kind==='start'&&QI[m.q]&&QI[m.q].type==='main')||(m.kind==='done'&&QI[m.q]&&QI[m.q].type==='side'))for(const r of runs)if(r.art&&!qPresent(r.art)&&(m.kind!=='done'||r.art===m.art)){r.lines.unshift('Incoming Linker message from '+qSpeaker(r.lines[0])+'...');break}
  const next=i=>{const r=runs[i];if(!r)return m.after&&m.after();say(r.lines,()=>next(i+1),r.art||undefined)};next(0)}
 function qFlush(){if(QN.length&&!DLG&&!CH&&(scene==='planet'||scene==='world'||(scene==='space'&&QN[0].q==='P04'))&&!(typeof SFADE!=='undefined'&&SFADE)&&!(typeof SM!=='undefined'&&SM)){const m=QN[0];
   if(m.go){QN.shift();m.go();return}if(m.credits){QN.shift();if(typeof startCredits==='function')startCredits();return}   /* a move to another place waits for the lines before it */
@@ -157,13 +163,13 @@ function qText(q){const s=qs(q.id),o=qObj(q);if(!o)return'Done';const l=qLoc(q.i
   case'talk':return'Talk: '+(spot||t);
   case'visit':case'spot_event':if(/^node:/.test(t)&&QNODEPL[t.slice(5)]&&G.flags.ship_clear){const p=PL.find(x=>x.key===QNODEPL[t.slice(5)]);return'Go to '+(spot||t.slice(5))+', or fly to '+(p?p.name:t.slice(5))}if(/^planet:/.test(t)){const pk=t.slice(7),p=PL.find(x=>x.key===pk);return'Fly to '+(p?p.name:pk)+' (START > Ship)'}return'Go to '+(spot||t.replace(/^(planet|node):/,''));
   case'examine':return'Examine '+(spot||t.replace(/_/g,' '))+cnt;
-  case'collect':return'Find '+t.replace(/_/g,' ')+cnt;
+  case'collect':return'Find '+(o.noun||t.replace(/_/g,' '))+cnt;
   case'catch':return'Catch '+t+cnt;case'catch_any':return'Catch any Alienmon'+cnt;case'catch_type':return'Catch a '+t+'-type'+cnt;
   case'win_battle':return'Win battles'+(IDX[t]!=null?' vs '+t:'')+cnt;
   case'battle_trainer':case'battle_rival':case'defeat_boss':return'Battle: '+(spot||t.replace(/_/g,' '))+cnt;
   case'defeat_keeper':return'Beat the Keeper of '+((PL.find(p=>p.key===t)||{}).name||t);
   case'use_item':return'Use a '+itemName(t)+' in battle'+cnt;
-  case'deliver':return'Bring a '+itemName(t)+' to '+(QI[q.id].giver.name||'them');
+  case'deliver':return'Bring '+qA(itemName(t))+' to '+(QI[q.id].giver.name||'them');
   case'show':return'Show a '+t.replace('type:','')+'-type Alienmon';
   case'xenodex':return'Catch '+c+' kinds ('+Object.keys(G.caught).length+'/'+c+')';
   case'legendary_encounter':return'Face '+t;
@@ -184,7 +190,7 @@ const QSPREAD=[[0,0],[34,10],[-30,14],[12,-26],[-14,30],[40,-18]];
 let qEntCache=null,qEntFrame=-1;
 function qEnts(){if(qEntFrame===frame&&qEntCache)return qEntCache;qEntFrame=frame;const E=[];if(!G||!G.quests){return qEntCache=E}
  for(const q of QUESTS){const s=qs(q.id);
-  if(q.type==='side'&&s.state==='available'&&qPrereqsDone(q)){const l=qLoc(q.id,'giver',q.location);if(l&&l.x!=null&&qSameArea(l))E.push({k:'giver',q,x:l.x,y:l.y,art:q.giver&&q.giver.art,mon:q.giver&&q.giver.mon,mark:'!'})}
+  if(q.type==='side'&&s.state==='available'&&qPrereqsDone(q)&&qRested(q)){const l=qLoc(q.id,'giver',q.location);if(l&&l.x!=null&&qSameArea(l))E.push({k:'giver',q,x:l.x,y:l.y,art:q.giver&&q.giver.art,mon:q.giver&&q.giver.mon,mark:'!'})}
   if(s.state!=='active')continue;const o=qObj(q);if(!o)continue;const l=qLoc(q.id,s.step,o.location);
   if(o.type==='deliver'||o.type==='show'){const g=qLoc(q.id,'giver',q.location);if(g&&g.x!=null&&qSameArea(g))E.push({k:'turnin',q,o,x:g.x,y:g.y,art:q.giver&&q.giver.art,mark:'?'});continue}
   if(!l||l.x==null||!qSameArea(l))continue;
@@ -209,7 +215,7 @@ function bossTeam(q,o){const p=PL[G.planet]||PL[0],pool=p.pool.e.concat(p.pool.c
  const rv=/^sola_(\d)$/.exec(o.target);
  if(rv){const n=+rv[1],ace=RIVAL_LV[n-1]||7,mine=STARTERS.find(s=>G.caught[s])??STARTERS[0],counter=STARTERS[(STARTERS.indexOf(mine)+1)%3];
   return fill(n-1,Math.max(2,ace-2)).concat([[o.rival_stage&&typeof starterLine==='function'?IDX[starterLine(counter)[o.rival_stage-1]]:evolvedAt(counter,ace),ace]])}
- const b=QBOSS[o.target];if(!b)return null;const lv=typeof b[0]==='number'?PROG.bosses.quorum[b[0]]:PROG.bosses[b[0]];
+ const b=QBOSS[o.target];if(!b)return null;const lv=(typeof b[0]==='number'?PROG.bosses.quorum[b[0]]:PROG.bosses[b[0]])+(o.lvup||0);   /* lvup: a stronger rematch */
  const sig=(b[4]||[]).filter(n=>IDX[n]!=null).map(n=>[IDX[n],lv-1]),n=b[2]-1-sig.length,ace=IDX[b[1]]??pool[0],seen=new Set([ace]),one=P=>{for(let k=0;k<40&&P.length;k++){const id=evolvedAt(P[Math.floor(r()*P.length)],lv-2);if(!seen.has(id)){seen.add(id);return[id,lv-2]}}return null};
  const rest=b[3]==='mix'?['Crystal','Sonic','Plasma','Gravity','Psi','Void','Hydro'].filter(t=>!(D[ace].t||[]).includes(t)).map(t=>one(qBossPool(t))).filter(Boolean).slice(0,n)
   :b[3]?Array.from({length:n},()=>one(qBossPool(b[3]))).filter(Boolean):fill(n,lv-2);
@@ -220,14 +226,14 @@ function qTeam(q,o){const bt=bossTeam(q,o);if(bt)return bt;const p=PL[G.planet]|
  return Array.from({length:n},(_,i)=>[pool[Math.floor(r()*pool.length)],lv+(boss?3:1)+i])}
 
 function qInteract(e){const q=e.q;
- if(e.k==='giver'){say(((q.dialogue&&q.dialogue.start||[]).length?q.dialogue.start:[q.title]).map(qFmt),()=>choose('Side mission: '+q.title,['Accept','Not now'],i=>{if(i===0){QN=QN.filter(m=>m.q!==q.id);qActivate(q);QN=QN.filter(m=>!(m.q===q.id&&m.kind==='start'));say('Mission accepted: '+q.title+'. '+qText(q)+'.')}}),q.giver&&q.giver.art);return}
- if(e.k==='turnin'||e.k==='talk'){if(!qEvent('talk','q:'+q.id,{x:e.x,y:e.y}))say(((q.dialogue&&q.dialogue.progress)||['Keep at it, Linker.']).map(qFmt),null,e.art||(q.giver&&q.giver.art));return}
- if(e.k==='prop'){const s=qs(q.id);s.got.push(e.i);if(QPROP_GIVES[e.o.target]){G.key=G.key||{};G.key[QPROP_GIVES[e.o.target]]=1}const sp=qLoc(q.id,s.step,e.o.location).spot||e.o.target.replace(/_/g,' '),tx=e.o.texts&&e.o.texts[e.i];say(tx?[].concat(tx).map(qFmt):e.o.type==='collect'?'You found a '+e.o.target.replace(/_/g,' ')+'!':'You examine '+(/^[A-Z][\w.-]*'s /.test(sp)?'':'the ')+sp+'.');qEvent('prop',e.o.target);return}
+ if(e.k==='giver'){qSay({q:q.id,kind:'offer',art:q.giver&&q.giver.art,lines:((q.dialogue&&q.dialogue.start||[]).length?q.dialogue.start:[q.title]).map(qFmt),after:()=>choose('Side mission: '+q.title,['Accept','Not now'],i=>{if(i===0){QN=QN.filter(m=>m.q!==q.id);qActivate(q);G.qtrack=q.id;QN=QN.filter(m=>!(m.q===q.id&&m.kind==='start'));say('Mission accepted: '+qPunct(q.title,'.')+' '+qPunct(qText(q),'.'))}})});return}
+ if(e.k==='turnin'||e.k==='talk'){if(!qEvent('talk','q:'+q.id,{x:e.x,y:e.y})){const pg=((q.dialogue&&q.dialogue.progress)||[]).filter(l=>!/^Keep at it, Linker/.test(l));if(pg.length)qSay({q:q.id,kind:'progress',art:e.art||(q.giver&&q.giver.art),lines:pg.map(qFmt)});else say('Still to do: '+qPunct(qText(q),'.'))}return}
+ if(e.k==='prop'){const s=qs(q.id);s.got.push(e.i);if(QPROP_GIVES[e.o.target]){G.key=G.key||{};G.key[QPROP_GIVES[e.o.target]]=1}const sp=qLoc(q.id,s.step,e.o.location).spot||e.o.target.replace(/_/g,' '),tx=e.o.texts&&e.o.texts[e.i];say(tx?[].concat(tx).map(qFmt):e.o.msg?qFmt(e.o.msg):e.o.type==='collect'?'You found '+qA(e.o.noun||e.o.target.replace(/_/g,' '))+'!':'You examine '+(/^(the|a|an) /i.test(sp)||/^[A-Z][\w.-]*'s /.test(sp)?'':'the ')+sp.replace(/^The /,'the ')+'.');qEvent('prop',e.o.target);return}
  if(e.k==='trainer'){if(!G.party.some(m=>m.hp>0)){say('Your team needs to heal first.');return}const o=Object.assign({},e.o,e.o.trainers&&e.o.trainers[qs(q.id).n]||{}),name=o.name||qTitle(o.target),team=qTeam(q,o);
   const tr={name,art:e.art,intro:qFmt(o.intro||'Let\'s see what your team can do!'),lose:qFmt(o.lose||'...You win this time.'),after:'Not bad, Linker.',team,bkey:o.target,ally:o.ally,sp:o.test==='orra'?{orra:1}:null};
   say(name+': '+tr.intro,()=>startBattle(team.map(([id,lv])=>mk(id,lv)),tr),e.art);return}
  if(e.k==='legend'){if(!G.party.some(m=>m.hp>0)){say('Your team needs to heal first.');return}const id=IDX[e.mon];if(id==null)return;
-  say('The air hums... '+e.mon+' appears!',()=>{NEXTB=e.o.listen?{immortal:1,listen:1}:null;startBattle([mk(id,e.o.lv||50)],null)});return}}
+  say(e.o.appear?qFmt(e.o.appear):'The air hums... '+e.mon+' appears!',()=>{NEXTB=e.o.listen?{immortal:1,listen:1}:null;startBattle([mk(id,e.o.lv||50)],null)});return}}
 
 // markers and quest figures, drawn on painted towns (S = map zoom, cs = character size) and on the world map (S = 1)
 function qDraw(cx,cy,S,cs){for(const e of qEnts()){const x=e.x*S-cx,y=e.y*S-cy;if(x<-20||x>180||y<-30||y>170)continue;
@@ -261,8 +267,8 @@ function qLogDraw(){const L=qList(B.qtab);rect(0,0,160,144,'#120c22');
  L.slice(top,top+7).forEach((q,j)=>{const i=top+j,s=qs(q.id).state,mark=s==='done'?'✓':s==='available'?'!':G.qtrack===q.id?'▶':' ';
   txt((i===B.qsel?'>':' ')+mark+q.title.slice(0,23),6,22+j*9,s==='done'?'#8a7fa8':'#1b1424',6)});
  const q=L[B.qsel];box(2,90,156,52,'#1b1424','#ffd23f');if(!q)return;const s=qs(q.id).state;
- const ht=G.qtrack===q.id?'A: untrack':'A: track',tl=s==='active'?Math.floor((152-ht.length*6-8)/6):25;txt(q.title.length>tl?q.title.slice(0,tl-1)+'…':q.title,6,94,'#ffd23f',6);txt((q.act?q.act+' · ':'')+qWhere(q),6,103,'#a99cc8',6);
+ const ht=G.qtrack===q.id?'A: untrack':'A: track',tl=25,wh=(q.act?q.act+' · ':'')+qWhere(q),wl=s==='active'?Math.floor((152-ht.length*6-8)/6):25;txt(q.title.length>tl?q.title.slice(0,tl-1)+'…':q.title,6,94,'#ffd23f',6);txt(wh.length>wl?wh.slice(0,wl-1)+'…':wh,6,103,'#a99cc8',6);
  if(s==='active'){const w=wrap(qText(q),28);txt(w[0]||'',6,112,'#ffffff',6);if(w[1])txt(w[1],6,120,'#ffffff',6)}
  else txt(s==='done'?'Complete!':'Talk to '+((q.giver&&q.giver.name)||'them').slice(0,20)+' to start.',6,112,'#ffffff',6);
  const rt=qRewardText(q.rewards||{});if(rt)txt(('Reward: '+rt).slice(0,30),6,130,'#7dff6a',6);
- if(s==='active')txt(ht,154-ht.length*6,94,'#5ff2ff',6)}
+ if(s==='active')txt(ht,154-ht.length*6,103,'#5ff2ff',6)}

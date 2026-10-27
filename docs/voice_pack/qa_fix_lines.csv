@@ -100,3 +100,64 @@ m20_qa_saga_lose_narrator.mp3,M20,The Summit,Saga defeated,Narrator,narrator,"Qu
 qa_pic_cut_67_narrator.mp3,M18,The Crater,story picture,Narrator,narrator,"Excited, a little hushed",Strand's stolen shuttle skims low over the General's cordon.
 qa_pic_cut_71_narrator.mp3,M13,The Forge Fortress,story picture,Narrator,narrator,"Quick, heist energy","You pull the Helix Keycard from the main terminal. Out the window, the shuttle pad lights up."
 qa_pic_cut_72_narrator.mp3,M20,The Summit,story picture,Narrator,narrator,"Quiet, hushed",Saga bows to you once more. Zib's lights won't stop flashing.
+qa2_s01_start_0_dusty.mp3,S01,Dusty's Cactus Garden,quest start,Dusty,dusty,,Haven't seen a Cactling bloom in years. They grow out in the Cactus Gardens. Catch one and show me?
+qa2_s02_start_0_dx4.mp3,S02,DX-4's Missing Parts,quest start,DX-4,dx4,,Bzzt. Three of my bolts rolled off toward the Trading Post. Retrieve them?
+qa2_s03_start_0_narrator.mp3,S03,Pink Gills,quest start,Narrator,narrator,,The pink Alienmon puffs up its gills and glares at the wild Alienmon roaming the Trading Post. It wants you to chase them off.
+qa2_s03_complete_0_narrator.mp3,S03,Pink Gills,quest complete,Narrator,narrator,,"After your third win, the pink Alienmon happily hands you a Harmonic Pod it was guarding."
+qa2_s10_start_0_dax.mp3,S10,Frontier Gauntlet,quest start,Dax,dax,,Beat all five trainers on the Frontier. Anyone you've already beaten counts. Do it and I'll make it worth your while.
+qa2_s10_complete_0_dax.mp3,S10,Frontier Gauntlet,quest complete,Dax,dax,,"All five! Here, a Singularity Pod. Don't waste it."
+qa2_s16_complete_0_grub.mp3,S16,Grub's Bargain,quest complete,Grub,grub,,"Heh, pleasure doing business. One Singularity Pod, as promised."
+qa2_s93_start_0_kade.mp3,S93,Kade's Notes,quest start,Kade,kade,,My old notes are scattered around this lab. They prove Thorne knew the Devourer was real.
+qa2_s110_msg_narrator.mp3,S110,Echoes of Home,pickup,Narrator,narrator,,A soft voice rises from the crystal and joins you.
+qa2_s15_msg_narrator.mp3,S15,Echo in the Mountain,pickup,Narrator,narrator,,The crystal hums with the echo's voice.
+qa2_s22_start_0_scrapper.mp3,S22,Forgemaul Sighting,quest start,Scrapper,scrapper,,A Forgemaul's been hammering down by Coolant Pond at night. Nobody's caught one.
+qa2_s21_t0_intro_scrapper.mp3,S21,Crane Yard Brawl,trainer intro,Junker Rizz,scrapper,,These cranes are full of free scrap. Finders keepers!
+qa2_s21_t0_lose_scrapper.mp3,S21,Crane Yard Brawl,trainer lose,Junker Rizz,scrapper,,"Fine, fine! I'll find another yard."
+qa2_s21_t1_intro_scrapper.mp3,S21,Crane Yard Brawl,trainer intro,Junker Marta,scrapper,,Rizz lost? Then I'll jam the cranes myself!
+qa2_s21_t1_lose_scrapper.mp3,S21,Crane Yard Brawl,trainer lose,Junker Marta,scrapper,,Ugh. Hank's got a bodyguard now.
+qa2_s21_t2_intro_scrapper.mp3,S21,Crane Yard Brawl,trainer intro,Junker Bolt,scrapper,,I'm the boss of this crew. You won't beat me!
+qa2_s21_t2_lose_scrapper.mp3,S21,Crane Yard Brawl,trainer lose,Junker Bolt,scrapper,,"Okay, okay! We'll leave the cranes alone."
+qa2_s50_t0_intro_fan.mp3,S50,Encore!,trainer intro,Dancer Vee,fan,,Round one! Keep up with the beat!
+qa2_s50_t0_lose_fan.mp3,S50,Encore!,trainer lose,Dancer Vee,fan,,"Wow, you've got rhythm!"
+qa2_s50_t1_intro_fan.mp3,S50,Encore!,trainer intro,Dancer Juno,fan,,Round two! Let's turn it up!
+qa2_s50_t1_lose_fan.mp3,S50,Encore!,trainer lose,Dancer Juno,fan,,The crowd is cheering for YOU now!
+qa2_s50_t2_intro_fan.mp3,S50,Encore!,trainer intro,Dancer Kix,fan,,Final round! This is my solo!
+qa2_s50_t2_lose_fan.mp3,S50,Encore!,trainer lose,Dancer Kix,fan,,Encore! Encore!
+qa2_s72_t0_intro_miner.mp3,S72,Deep Drill,trainer intro,Miner Brick,miner,,"Down here, only the tough survive. Let's go!"
+qa2_s72_t0_lose_miner.mp3,S72,Deep Drill,trainer lose,Miner Brick,miner,,Tougher than you look.
+qa2_s72_t1_intro_miner.mp3,S72,Deep Drill,trainer intro,Driller Ona,miner,,My drill's never lost a fight!
+qa2_s72_t1_lose_miner.mp3,S72,Deep Drill,trainer lose,Driller Ona,miner,,Huh. My drill just lost a fight.
+qa2_s72_t2_intro_miner.mp3,S72,Deep Drill,trainer intro,Carver Sol,miner,,Brick and Ona were warm-ups. I'm the real deal.
+qa2_s72_t2_lose_miner.mp3,S72,Deep Drill,trainer lose,Carver Sol,miner,,Okay. You're the real deal.
+qa2_s72_t3_intro_miner.mp3,S72,Deep Drill,trainer intro,Crew Chief Tova,miner,,You beat my whole crew? Then face the chief!
+qa2_s72_t3_lose_miner.mp3,S72,Deep Drill,trainer lose,Crew Chief Tova,miner,,Ha! The deep crew salutes you.
+qa2_s31_complete_0_narrator.mp3,S31,Lost in the Mist,quest complete,Narrator,narrator,,The little sporeling clings to you all the way home. The elder presses a pouch of Med Gels into your hands.
+qa2_s52_msg_narrator.mp3,S52,Lost Signal,pickup,Narrator,narrator,,You retune the antenna to the crater pulse.
+qa2_s52_complete_0_vashti.mp3,S52,Lost Signal,quest complete,Dr. Vashti,vashti,,Triangulated. The pulse comes from inside the crater... and from somewhere far beyond it.
+qa2_s53_msg0_narrator.mp3,S53,Glitchbug Outbreak,pickup,Narrator,narrator,,The shuttle's cargo hold is burst wide open. Something inside is buzzing.
+qa2_s53_msg1_narrator.mp3,S53,Glitchbug Outbreak,pickup,Narrator,narrator,,You scoop up a stray Glitchbug!
+qa2_s60_msg_narrator.mp3,S60,Mural Rubbings,pickup,Narrator,narrator,,You take a rubbing of the carved stone.
+qa2_s62_appear_narrator.mp3,S62,The Great Doors,guardian,Narrator,narrator,,A stone guardian stirs and blocks the hall. Monolet!
+qa2_s62_msg_narrator.mp3,S62,The Great Doors,pickup,Narrator,narrator,,You turn the mirror. A beam of light jumps toward the great doors.
+qa2_s81_complete_0_researcher.mp3,S81,Frozen Cargo,quest complete,Researcher,researcher,,"You saved us both. Please, take these supplies."
+qa2_s90_msg_narrator.mp3,S90,Free the Captives,pickup,Narrator,narrator,,You open the cage. The Alienmon inside blinks at the light.
+qa2_s91_appear_narrator.mp3,S91,Nullbot Override,guard,Narrator,narrator,,A Nullbot powers up in front of the server. Intruder!
+qa2_s92_msg_narrator.mp3,S92,Lantern Lighting,pickup,Narrator,narrator,,You light the lantern. Warm light spills across the street.
+qa2_s96_complete_0_echoiris.mp3,S96,Mirror Match,quest complete,Echo & Iris,echoiris,,We knew you'd do it. But it's still nice to watch.
+qa2_s99_msg_narrator.mp3,S99,Telescope Alignment,pickup,Narrator,narrator,,You turn the node until it clicks into line.
+qa2_s100_t0_intro_marisol.mp3,S100,Quorum Rematch,rematch intro,Marisol Fenn,marisol,,I've been polishing my crystals since our last battle. Ready?
+qa2_s100_t0_lose_marisol.mp3,S100,Quorum Rematch,rematch lose,Marisol Fenn,marisol,,Still the Prime Linker. Brilliant.
+qa2_s100_t1_intro_harrow.mp3,S100,Quorum Rematch,rematch intro,Duke Harrow,harrow,,A rematch! Let the music swell!
+qa2_s100_t1_lose_harrow.mp3,S100,Quorum Rematch,rematch lose,Duke Harrow,harrow,,Bravo. Bravo!
+qa2_s100_t2_intro_narrator.mp3,S100,Quorum Rematch,rematch intro,Narrator,narrator,,Saga bows once. The rematch begins.
+qa2_s100_t3_intro_ostrander.mp3,S100,Quorum Rematch,rematch intro,General Ostrander,ostrander,,"Again, Linker. Show me you have not gone soft."
+qa2_s100_t3_lose_ostrander.mp3,S100,Quorum Rematch,rematch lose,General Ostrander,ostrander,,Hmph. Not soft at all.
+qa2_s101_start_0_vashti.mp3,S101,Star Chart,quest start,Dr. Vashti,vashti,,Register 150 Alienmon in your Xenodex and I'll give you three of my rarest pods.
+qa2_s101_complete_0_vashti.mp3,S101,Star Chart,quest complete,Dr. Vashti,vashti,,One hundred and fifty kinds catalogued! You've earned these.
+qa2_s111_start_1_liss.mp3,S111,Blight Cleansing,quest start,Liss,liss,,"Meet them gently. Calm five of them, in battle or with your beam, and the forest will breathe a little easier."
+qa2_s112_complete_1_mina.mp3,S112,Splodge's Big Splash,quest complete,Mina,mina,,You know what? He likes you. Walk out onto deep water and Splodge will come and carry you anywhere.
+qa2_pic_cut_21_03_narrator.mp3,S40,Captain's Log,story picture,Narrator,narrator,,"In the cage beside it: a knitted blanket and a note, signed with just one letter. S."
+qa2_s15_042_ystran.mp3,S15,Echo in the Mountain,quest start,Ystran echo,ystran,"Soft, echoing, far away",...the mountain's heart remembers Ystra... go deeper...
+qa2_s31_060_elder_f.mp3,S31,Lost in the Mist,quest start,Sporefolk elder,elder_f,Worried but kind,Our little one wandered into the mist. Follow the glowing mushrooms!
+qa2_s62_094_ystran.mp3,S62,The Great Doors,quest start,Ystran echo,ystran,"Soft, echoing, far away",...the great doors sleep... guardians of stone keep the halls...
+qa2_s110_158_ystran.mp3,S110,Echoes of Home,quest start,Ystran echo,ystran,"Soft, echoing, far away",...gather our voices... so the Seedmother can hear...

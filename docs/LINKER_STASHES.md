@@ -98,7 +98,7 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 | 484 Deepcut Mine Depths | 4,3 | 150x Stardust | 1 |
 | 484 Deepcut Mine Depths | 17,3 | 150x Stardust | 1 |
 | 490 Coolant Pond | 15,9 | 2x Med Gel | 1 |
-| 490 Coolant Pond | 15,5 | 2x Med Gel | 1 |
+| 490 Coolant Pond | 14,2 | 2x Med Gel | 1 |
 | 494 Salvage Flats | 20,4 | 2x Med Gel | 1 |
 | 494 Salvage Flats | 20,7 | 1x Revive Spark | 1 |
 | 476 Scrapyard Dome | 2,10 | 2x Cure Spray | 1 |
@@ -334,8 +334,8 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 | 688 Ember Hollow Grove | 18,2 | 5x Harmonic Pod | 4 |
 | 688 Ember Hollow Grove | 3,9 | 1x Full Gel | 4 |
 | 668 Magma Pit Arena | 21,9 | 3x Mega Gel | 4 |
-| 673 Deep Mines Entrance | 3,7 | 2x Revive Spark | 4 |
-| 673 Deep Mines Entrance | 19,6 | 2x Revive Spark | 4 |
+| 673 Deep Mines Entrance | 6,6 | 2x Revive Spark | 4 |
+| 673 Deep Mines Entrance | 19,11 | 2x Revive Spark | 4 |
 | 686 Abandoned Smelter | 21,9 | 800x Stardust | 4 |
 | 693 Volcano Relay Tower | 19,11 | 2x Ether Gel | 4 |
 | 897 Lava Sea | 19,3 | 5x Harmonic Pod | 4 |
