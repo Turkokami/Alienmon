@@ -697,15 +697,20 @@ function endTurn(){const L=[];if(typeof skyEndTurn==='function')skyEndTurn(L);if
   if(m.hp>0&&tr.k==='genesis')heal(m,1/8,L,'restored HP with '+tr.name+'!');
   if(m.hp>0&&tr.k==='speed'&&m.bs.spe<6){m.bs.spe++;L.push(nm(m)+"'s "+tr.name+' raised its Speed!')}
   if(m.hp<=0)L.push(nm(m)+' fainted!')}
- const fin=()=>{if(lastChance())return;if(EM().hp<=0||PM().hp<=0)resolveFaints();else B.phase='menu'};if(L.length)say(L.filter(l=>!(EM().hp<=0&&l===nm(EM())+' fainted!'&&lcPending(EM()))),fin);else fin()}
+ const fin=()=>{if(lastChance()||rivalEvo())return;if(EM().hp<=0||PM().hp<=0)resolveFaints();else B.phase='menu'};if(L.length)say(L.filter(l=>!(EM().hp<=0&&l===nm(EM())+' fainted!'&&lcPending(EM()))),fin);else fin()}
+// book Ch 12: Sola's starter evolves mid-battle the first time it drops to half HP
+function rivalEvo(){const e=EM(),to=e&&D[e.id].to;if(!(B.tr&&B.tr.midEvo)||B.midEvo||B.ei!==B.team.length-1||!to||IDX[to]==null||e.hp<=0||e.hp>stat(e,0)/2||PM().hp<=0)return false;
+ B.midEvo=1;const was=nm(e),f=e.hp/stat(e,0);e.id=IDX[to];e.moves=movesAt(e.id,e.lv);e.hp=Math.min(stat(e,0),Math.round(stat(e,0)*(f+0.35)));G.seen[e.id]=1;warm(ARTI,[to]);
+ say([B.tr.name+': Not yet. Not today.','What? '+was+' is evolving!',was+' evolved into '+to+'!'],()=>{B.phase='menu'});return true}
 function resolveFaints(){const pDead=PM().hp<=0;if(EM().hp<=0)enemyFaint(()=>{if(pDead)playerFaint();else B.phase='menu'});else playerFaint()}
 function enemyFaint(cont){const e=EM(),steps=[];if(!(B.tr&&B.tr.arena))progAward(e,!!B.tr,steps);   // league battles give no EXP (level caps stay fair)
  progRun(steps,()=>{if(B.tr&&B.ei<B.team.length-1){B.ei++;const n=EM();G.seen[n.id]=1;resetStages(n);const L=[B.tr.name+' sent out '+nm(n)+'!'];entry(n,PM(),L);say(L,cont)}else endBattle(true)})}
 function playerFaint(){if(G.party.some(m=>m.hp>0)){B.phase='party';B.forced=true;B.psel=G.party.findIndex(m=>m.hp>0);say([nm(PM())+' is out of the fight!','Choose which Alienmon to swap in.'])}
- else if(G.box.some(m=>m.hp>0)){B.phase='boxpick';B.bxsel=G.box.findIndex(m=>m.hp>0);say(['Your whole team is down!','Your ship can beam in a backup Alienmon from storage. Choose one!'])}
+ else if(G.box.some(m=>m.hp>0)&&!(B.tr&&B.tr.canLose)){B.phase='boxpick';B.bxsel=G.box.findIndex(m=>m.hp>0);say(['Your whole team is down!','Your ship can beam in a backup Alienmon from storage. Choose one!'])}
 
  else if(B.sp&&B.sp.listen)storyListen(true);else loseBattle()}
-function loseBattle(){storyAllyLeave();if(B&&B.tr&&B.tr.arena){B.over=true;const back=B.from||'planet';B=null;scene=back;return arenaAfter(false)}{const lost=Math.floor(G.dust/4);G.dust-=lost;say(['You have no Alienmon left to fight!','You dropped '+lost+' stardust and hurried back to the last place you healed...'],()=>{healAll();wakeAtLastHeal()})}}
+function loseBattle(){storyAllyLeave();if(B&&B.tr&&B.tr.arena){B.over=true;const back=B.from||'planet';B=null;scene=back;return arenaAfter(false)}
+ if(B&&B.tr&&B.tr.canLose){const tr=B.tr,back=B.from||'planet';B.over=true;B=null;scene=back;G.grace=60;healAll();for(const m of G.party)m.cf=0;say((tr.win?[tr.name+': '+tr.win]:[]).concat(['You lost, but your team gave it everything. Everyone is rested and ready.']),()=>qEvent('trainer',tr.bkey));return}{const lost=Math.floor(G.dust/4);G.dust-=lost;say(['You have no Alienmon left to fight!','You dropped '+lost+' stardust and hurried back to the last place you healed...'],()=>{healAll();wakeAtLastHeal()})}}
 function endBattle(won){storyAllyLeave();const tr=B&&B.tr,lines=[];
  if(won){const pk=PL[G.planet]&&PL[G.planet].key;if(tr&&tr.bkey)qEvent('trainer',tr.bkey);else if(tr&&tr===PL[G.planet].keeper)qEvent('keeper',pk);else if(!tr&&B.team.length){qEvent('win',D[B.team[B.team.length-1].id].name,{area:QWILD});noteLegendWin(B.team[B.team.length-1])}}QWILD=null;
  if(won&&!(tr&&tr.bkey==='arena_exhib')){const e=B.team[B.team.length-1];const dust=payout(tr,e);G.dust+=dust;lines.push('You collected '+dust+' stardust.');

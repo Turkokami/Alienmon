@@ -114,7 +114,7 @@
    "shard": true,
    "flag": null,
    "flagMsg": null,
-   "team": [[33, 10], [42, 12]]
+   "team": [[302, 10], [42, 12]]
   },
   "npcArt": "technician",
   "ring": false,
@@ -185,20 +185,7 @@
    "shard": true,
    "flag": null,
    "flagMsg": null,
-   "team": [
-    [
-     51,
-     15
-    ],
-    [
-     53,
-     15
-    ],
-    [
-     69,
-     17
-    ]
-   ]
+   "team": [[312, 15], [51, 15], [310, 17]]
   },
   "npcArt": "sporefolk",
   "ring": false,
@@ -345,24 +332,7 @@
    "shard": true,
    "flag": null,
    "flagMsg": null,
-   "team": [
-    [
-     101,
-     23
-    ],
-    [
-     102,
-     23
-    ],
-    [
-     106,
-     23
-    ],
-    [
-     117,
-     25
-    ]
-   ]
+   "team": [[101, 23], [102, 23], [106, 23], [313, 25]]
   },
   "npcArt": "civilian",
   "ring": false,

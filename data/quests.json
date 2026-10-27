@@ -231,7 +231,9 @@
       "map": "data/painted_maps.json#dustara"
      },
      "intro": "Took the slow starter, huh? Let's see who's the better Linker.",
-     "lose": "Ugh! ...Fine. Beginner's luck."
+     "lose": "Ugh! ...Fine. Beginner's luck.",
+     "lose_ok": true,
+     "win": "My dad would've laughed at you."
     }
    ],
    "dialogue": {
@@ -242,8 +244,7 @@
      "Keep at it, Linker. You've got this."
     ],
     "complete": [
-     "Sola: Not bad... for a beginner. My dad would've liked you.",
-     "Sola: He walked into the crater light six years ago. I was seven. Everyone says he got lost.",
+     "Sola: He walked into the crater light six years ago. I was ten. Everyone says he got lost.",
      "Sola: I'm going to find him. Don't fall behind!"
     ]
    },
@@ -254,7 +255,7 @@
     ]
    },
    "repeatable": false,
-   "notes": "Sola uses the starter strong against yours (Sporix→Plazmo, Plazmo→Gloopa, Gloopa→Sporix)."
+   "notes": "Sola uses the starter strong against yours (Sporix→Plazmo, Plazmo→Gloopa, Gloopa→Sporix). Book Ch 3: Rook loses this one; the story goes on either way (lose_ok)."
   },
   {
    "id": "M04",
@@ -500,7 +501,10 @@
       "area": "sporeholm",
       "planet": "sporeholm",
       "spot": "Sola at the Spore Pools"
-     }
+     },
+     "lose_ok": true,
+     "mid_evo": true,
+     "win": "That thing where you waited. ...That was good."
     },
     {
      "type": "defeat_keeper",
@@ -535,7 +539,7 @@
     ]
    },
    "repeatable": false,
-   "notes": ""
+   "notes": "Book Ch 12: Sola's starter evolves mid-battle (mid_evo) and Rook loses; the story goes on either way (lose_ok)."
   },
   {
    "id": "M07",

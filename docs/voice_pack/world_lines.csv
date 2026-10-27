@@ -1199,7 +1199,7 @@ dex_006_xenodex.mp3,XENODEX,Solarach,xenodex entry,Xenodex,xenodex,Solarach. Fin
 dex_007_xenodex.mp3,XENODEX,Gloopa,xenodex entry,Xenodex,xenodex,"Gloopa. A wobbly jelly dome with a bubble core, curly tentacles that taste the air, and a gurgling giggle. Chosen at the Crater Observatory."
 dex_008_xenodex.mp3,XENODEX,Tidaloid,xenodex entry,Xenodex,xenodex,"Tidaloid. Floats beneath a tall, speckled bell like a living lantern of seawater, with a quiet face under the rim. It hums when it's calm."
 dex_009_xenodex.mp3,XENODEX,Abyssor,xenodex entry,Xenodex,xenodex,Abyssor. Final form; a deep-sea leviathan.
-dex_010_xenodex.mp3,XENODEX,Zib,xenodex entry,Xenodex,xenodex,"Zib. A palm-sized silver saucer with a glass dome, and inside it a little round body with one huge eye. Says only ""Bip."" Its lights change with its mood."
+dex_010_xenodex.mp3,XENODEX,Zib,xenodex entry,Xenodex,xenodex,"Zib. A palm-sized silver saucer with a glass dome, and inside it a little round body with one huge eye. Says only ""Bip."" Its lights change with its mood. It matches no known species."
 dex_011_xenodex.mp3,XENODEX,Fizzle,xenodex entry,Xenodex,xenodex,Fizzle. A fuzzy yellow puff with huge ears tipped in glowing sparks. Feeds on the static that crackles through drift grass.
 dex_012_xenodex.mp3,XENODEX,Fizzlord,xenodex entry,Xenodex,xenodex,Fizzlord. Feeds on the static that crackles through drift grass.
 dex_013_xenodex.mp3,XENODEX,Skitterbit,xenodex entry,Xenodex,xenodex,"Skitterbit. Colonies hum in perfect sync, like a tiny radio choir."
@@ -1232,7 +1232,7 @@ dex_039_xenodex.mp3,XENODEX,Railbeast,xenodex entry,Xenodex,xenodex,Railbeast. L
 dex_040_xenodex.mp3,XENODEX,Gleamgrub,xenodex entry,Xenodex,xenodex,"Gleamgrub. A shy rust slug with a riveted shell and green eyestalks. Its lime-green slime eats metal, and then it eats the rust."
 dex_041_xenodex.mp3,XENODEX,Corrovore,xenodex entry,Xenodex,xenodex,Corrovore. Corrodes whatever it sleeps on.
 dex_042_xenodex.mp3,XENODEX,Smeltpup,xenodex entry,Xenodex,xenodex,Smeltpup. Forges its own shell in abandoned furnaces.
-dex_043_xenodex.mp3,XENODEX,Anvilox,xenodex entry,Xenodex,xenodex,Anvilox. The Anvil Hound: a fortress of dark metal and rock with glowing lava seams and an anvil plate on its brow. It drinks fire and grows stronger.
+dex_043_xenodex.mp3,XENODEX,Anvilox,xenodex entry,Xenodex,xenodex,"Anvilox. The Anvil Hound: a fortress of dark metal and rock with glowing lava seams and an anvil plate on its brow. It drinks fire and grows stronger. Partner of Hank Briggs, the Iron Wall of Ferrox."
 dex_044_xenodex.mp3,XENODEX,Gongit,xenodex entry,Xenodex,xenodex,Gongit. Hammers on sheet metal to talk to others.
 dex_045_xenodex.mp3,XENODEX,Gongorr,xenodex entry,Xenodex,xenodex,Gongorr. Hammers on sheet metal to talk to others.
 dex_046_xenodex.mp3,XENODEX,Nutbug,xenodex entry,Xenodex,xenodex,Nutbug. Hoards shiny screws in hidden nests.
@@ -1265,7 +1265,7 @@ dex_072_xenodex.mp3,XENODEX,Cocoonix,xenodex entry,Xenodex,xenodex,Cocoonix. Spi
 dex_073_xenodex.mp3,XENODEX,Lunaweaver,xenodex entry,Xenodex,xenodex,Lunaweaver. Spins silk that glows under moonlight.
 dex_074_xenodex.mp3,XENODEX,Drippit,xenodex entry,Xenodex,xenodex,Drippit. Lives in puddles of glowing runoff.
 dex_075_xenodex.mp3,XENODEX,Goozilla,xenodex entry,Xenodex,xenodex,Goozilla. Lives in puddles of glowing runoff.
-dex_076_xenodex.mp3,XENODEX,Bubbub,xenodex entry,Xenodex,xenodex,Bubbub. A cat-sized Alienmon that rides inside an air bubble it blows from a pouch in its chest. They travel in big giggly groups.
+dex_076_xenodex.mp3,XENODEX,Bubbub,xenodex entry,Xenodex,xenodex,Bubbub. A cat-sized Alienmon that rides inside an air bubble it blows from a pouch in its chest. They travel in big giggly groups. A big one can blow a bubble large enough to carry a rider.
 dex_077_xenodex.mp3,XENODEX,Bubblorca,xenodex entry,Xenodex,xenodex,Bubblorca. Bounces between waves inside a bubble of air.
 dex_078_xenodex.mp3,XENODEX,Crabot,xenodex entry,Xenodex,xenodex,Crabot. Grows its shell from shipwreck metal.
 dex_079_xenodex.mp3,XENODEX,Clawfort,xenodex entry,Xenodex,xenodex,Clawfort. Grows its shell from shipwreck metal.
@@ -1492,26 +1492,26 @@ dex_299_xenodex.mp3,XENODEX,Oblivane,xenodex entry,Xenodex,xenodex,"Oblivane. Th
 dex_300_xenodex.mp3,XENODEX,Seedmother,xenodex entry,Xenodex,xenodex,"Seedmother. The living heart of Ystra, spoken of in every Ystran legend."
 dex_301_xenodex.mp3,XENODEX,Cogglet,xenodex entry,Xenodex,xenodex,Cogglet. A single cog with one curious eye. Packs of them spin through Ferrox scrapyards looking for machines to fix.
 dex_302_xenodex.mp3,XENODEX,Cyclopper,xenodex entry,Xenodex,xenodex,Cyclopper. A copper scout that rolls on one wheel. Its single eye sees in the dark of the Deepcut Mine.
-dex_303_xenodex.mp3,XENODEX,Girderon,xenodex entry,Xenodex,xenodex,Girderon. A walking steel girder. Crane crews swear it holds up half the Railyard on its back.
+dex_303_xenodex.mp3,XENODEX,Girderon,xenodex entry,Xenodex,xenodex,Girderon. A walking steel girder. Crane crews swear it holds up half the Railyard on its back. Its head ends in a heavy hammer. Hank Briggs battles with one.
 dex_304_xenodex.mp3,XENODEX,Rustadillo,xenodex entry,Xenodex,xenodex,Rustadillo. It curls into a ball of rusted plates and sleeps in scrap heaps. The rust is its armour.
 dex_305_xenodex.mp3,XENODEX,Tinwing,xenodex entry,Xenodex,xenodex,Tinwing. A tin bird that lifts loose bolts with its crane-hook feet and rings like a bell when it sings.
-dex_306_xenodex.mp3,XENODEX,Brineback,xenodex entry,Xenodex,xenodex,Brineback. An old sea turtle carrying a reef on its shell. Fish follow it along the Thalassa coast.
+dex_306_xenodex.mp3,XENODEX,Brineback,xenodex entry,Xenodex,xenodex,"Brineback. An old sea turtle carrying a reef on its shell. Fish follow it along the Thalassa coast. Captain Marsh's partner, Old Barnaby, is a Brineback."
 dex_307_xenodex.mp3,XENODEX,Fiddlesnap,xenodex entry,Xenodex,xenodex,Fiddlesnap. A crab with one giant claw that it snaps in rhythm. Dock workers call its clicking the harbour drum.
 dex_308_xenodex.mp3,XENODEX,Squidmiral,xenodex entry,Xenodex,xenodex,Squidmiral. A squid in a sailor hat who blows bubbles from a pipe. It reads the tides like a captain reads a chart.
 dex_309_xenodex.mp3,XENODEX,The Old One,xenodex entry,Xenodex,xenodex,The Old One. A whale older than the harbour. Sailors only glimpse its glowing fins far out where the sea goes dark.
 dex_310_xenodex.mp3,XENODEX,Glowcroak,xenodex entry,Xenodex,xenodex,Glowcroak. A frog with a glowing throat that sits on Sporeholm mushrooms and croaks light into the mist.
-dex_311_xenodex.mp3,XENODEX,Gloomtoad,xenodex entry,Xenodex,xenodex,Gloomtoad. Its glow turns purple and bitter with age. It puffs spore bubbles that make other Alienmon drowsy.
+dex_311_xenodex.mp3,XENODEX,Gloomtoad,xenodex entry,Xenodex,xenodex,Gloomtoad. Its glow turns purple and bitter with age. It puffs spore bubbles that make other Alienmon drowsy. Dr. Lysa Moor's partner.
 dex_312_xenodex.mp3,XENODEX,Mossback,xenodex entry,Xenodex,xenodex,"Mossback. A turtle so still that a whole garden, waterfall and all, has grown on its shell."
-dex_313_xenodex.mp3,XENODEX,Oozel,xenodex entry,Xenodex,xenodex,"Oozel. A grinning purple ooze that slides through the bogs, soaking up spores that would choke others."
-dex_314_xenodex.mp3,XENODEX,Boombastadon,xenodex entry,Xenodex,xenodex,"Boombastadon. A mammoth built of speakers. When it stomps, the whole Neonis block feels the bass."
-dex_315_xenodex.mp3,XENODEX,Squawkbox,xenodex entry,Xenodex,xenodex,Squawkbox. A flying radio that picks up every signal in the city and squawks it back out of tune.
+dex_313_xenodex.mp3,XENODEX,Oozel,xenodex entry,Xenodex,xenodex,"Oozel. A grinning purple ooze that slides through the bogs, soaking up spores that would choke others. Dr. Lysa Moor's partner."
+dex_314_xenodex.mp3,XENODEX,Boombastadon,xenodex entry,Xenodex,xenodex,"Boombastadon. A mammoth built of speakers. When it stomps, the whole Neonis block feels the bass. DJ Static's partner."
+dex_315_xenodex.mp3,XENODEX,Squawkbox,xenodex entry,Xenodex,xenodex,Squawkbox. A flying radio that picks up every signal in the city and squawks it back out of tune. DJ Static's partner.
 dex_316_xenodex.mp3,XENODEX,Puffloon,xenodex entry,Xenodex,xenodex,Puffloon. A pink cloud that floats over Halo on a ribbon. Touching it fills you with sleepy calm.
 dex_317_xenodex.mp3,XENODEX,Stormquill,xenodex entry,Xenodex,xenodex,"Stormquill. A bird made of lightning. Its feathers crackle, and storms over Halo follow its flight."
 dex_318_xenodex.mp3,XENODEX,Lacefin,xenodex entry,Xenodex,xenodex,Lacefin. A seahorse with fins like lace that drifts through the flooded ruins of Glyphos.
 dex_319_xenodex.mp3,XENODEX,Vitramoth,xenodex entry,Xenodex,xenodex,Vitramoth. Its wings are stained glass. In the Temple of Voices it rests in the window frames and nobody notices.
 dex_320_xenodex.mp3,XENODEX,Dunetrot,xenodex entry,Xenodex,xenodex,Dunetrot. A sandstone dinosaur with a friendly grin. It naps in the sun until a sandstorm wakes it.
-dex_321_xenodex.mp3,XENODEX,Hexcoil,xenodex entry,Xenodex,xenodex,Hexcoil. A serpent dripping purple venom. Umbra lantern-keepers hang charms to keep it from their doors.
-dex_322_xenodex.mp3,XENODEX,Rumbler,xenodex entry,Xenodex,xenodex,Rumbler. A golem of loose boulders. Pyros miners know a cave-in is coming when the Rumblers start walking.
+dex_321_xenodex.mp3,XENODEX,Hexcoil,xenodex entry,Xenodex,xenodex,Hexcoil. A serpent dripping purple venom. Umbra lantern-keepers hang charms to keep it from their doors. Admin Vex's partner.
+dex_322_xenodex.mp3,XENODEX,Rumbler,xenodex entry,Xenodex,xenodex,Rumbler. A boulder of rock and glowing lava that walks on stubby legs. Pyros miners know a cave-in is coming when the Rumblers start walking. Forge Miner Dax's partner.
 dex_323_xenodex.mp3,XENODEX,Pebblet (Glacia),xenodex entry,Xenodex,xenodex,"Pebblet (Glacia). Pebblet's seedpod fell on Glacia long ago. Frost has crept into its cracks: the indigo crystals are now pale-blue ice, its brown stone is frosted white on top, and icicles hang from its edges."
 dex_324_xenodex.mp3,XENODEX,Rivetoad (Helix),xenodex entry,Xenodex,xenodex,"Rivetoad (Helix). Rivetoad's seedpod fell on Helix Station long ago. Moss and tiny ferns grow between its rivets, a vine coils around one leg, and small glowing seed pods sprout along its back where bolts used to be."
 dex_325_xenodex.mp3,XENODEX,Lumislug (Halo),xenodex entry,Xenodex,xenodex,"Lumislug (Halo). Lumislug's seedpod fell on Halo long ago. Its glow pulses in rhythm like a speaker, its eyestalks end in little bell shapes, and its slime trail leaves faint ripples of sound."
