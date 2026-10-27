@@ -10,7 +10,7 @@ A story illustration for the Alienmon game, in EXACTLY the same art style as the
 
 Scene: Above the Great Telescope at night the sky folds open into a spinning spiral tunnel of light (the Vortex); Rook and Zib float up into it while Dr. Vashti holds a glowing control panel below, hair blowing. Wonder.
 
-Characters must match their attached reference pictures (faces, hair, clothes, colours): Dr. Vashti, the player (Rook). Alienmon must match their attached sprites: Zib. Rook is a 13-year-old boy (the hero). Do NOT draw the hero's starter partner Alienmon (it varies per player).
+Characters must match their attached reference pictures (faces, hair, clothes, colours): Dr. Vashti, the player (Rook). Alienmon must match their attached sprites: Zib. Rook is a 16-year-old boy (the hero). Do NOT draw the hero's starter partner Alienmon (it varies per player).
 
 Canvas 1536x1024, landscape. Keep everything important inside the middle 1536x864 band (top and bottom get trimmed). No text, no captions, no speech bubbles, no UI, no watermark, no ball-shaped or capsule-shaped capture devices or emblems.
 ```

@@ -10,7 +10,7 @@ A story illustration for the Alienmon game, in EXACTLY the same art style as the
 
 Scene: On a snowy aurora-lit trail on Glacia, Kit kneels in the snow holding a small glowing orange heater coil from his tool belt next to a prickly little Iceburr whose leg is frozen in a chunk of ice; the ice is melting and steaming. Warm, gentle, funny moment.
 
-Characters must match their attached reference pictures (faces, hair, clothes, colours): Kit. Alienmon must match their attached sprites: Iceburr. Rook is a 13-year-old boy (the hero). Do NOT draw the hero's starter partner Alienmon (it varies per player).
+Characters must match their attached reference pictures (faces, hair, clothes, colours): Kit. Alienmon must match their attached sprites: Iceburr. Rook is a 16-year-old boy (the hero). Do NOT draw the hero's starter partner Alienmon (it varies per player).
 
 Canvas 1536x1024, landscape. Keep everything important inside the middle 1536x864 band (top and bottom get trimmed). No text, no captions, no speech bubbles, no UI, no watermark, no ball-shaped or capsule-shaped capture devices or emblems.
 ```

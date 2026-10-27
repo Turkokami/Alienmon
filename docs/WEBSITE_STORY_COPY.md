@@ -21,7 +21,7 @@ Twenty years ago, thousands of glowing seedpods fell across the Kessler star sys
 ### New block: "A saga in five books" (after "One story. Three ways in.")
 **One journey. Fourteen worlds. Five books.**
 
-The Alienmon Chronicles follows Rook, a thirteen-year-old from a canyon town, and Zib, a tiny scout carrying a message across the stars. It starts with a humming bridge and a birthday partner. It ends somewhere no human has ever been.
+The Alienmon Chronicles follows Rook, a sixteen-year-old from a canyon town, and Zib, a tiny scout carrying a message across the stars. It starts with a humming bridge and a birthday partner. It ends somewhere no human has ever been.
 
 Five cards, one per book: title, one line, a status badge. The book page links come later.
 
@@ -65,7 +65,7 @@ What swallowed the sky? The murals only call it the Devourer.
 ### Linkers and the Transfer Beam
 In Kessler, people and Alienmon learned to live side by side. Linkers wear a Linker on the wrist, a device that tunes into an Alienmon's signal. Weaken a wild Alienmon in battle, lock on to its frequency, and the cyan-white Transfer Beam carries it safely aboard your ship. No cages, no balls to throw: a Linker bonds with a partner, and the partner chooses to stay.
 
-On their thirteenth birthday, kids in Dustmere climb the 112 steps to Dr. Vashti's Observatory to meet their first partner. Her only advice: "Choose with your heart."
+On their sixteenth birthday, kids in Dustmere climb the 112 steps to Dr. Vashti's Observatory to meet their first partner. Her only advice: "Choose with your heart."
 
 ### Relay Towers and Signal Shards
 Eight ancient Relay Towers stand across the Kessler system, built long before anyone in Kessler arrived. Each is guarded by a Keeper, the strongest Linker on that world, and anchored by a Signal Shard that only answers a true bond.
@@ -73,7 +73,7 @@ Eight ancient Relay Towers stand across the Kessler system, built long before an
 Win a Keeper's respect and you win their Shard. Win all eight and something old wakes up. Nobody alive knows exactly what the towers were built to do. A few people are starting to guess.
 
 ### Zib
-On the night of Rook's thirteenth birthday, the ancient bridge below Dustmere starts to hum, and a palm-sized saucer with one enormous eye drops out of the sky and chooses him. No database on any world knows what it is. It says only one word, "Bip," and its lights change color with its mood: gold when happy, purple when grumpy, blue when nervous.
+On the night of Rook's sixteenth birthday, the ancient bridge below Dustmere starts to hum, and a palm-sized saucer with one enormous eye drops out of the sky and chooses him. No database on any world knows what it is. It says only one word, "Bip," and its lights change color with its mood: gold when happy, purple when grumpy, blue when nervous.
 
 Zib is carrying something. Every so often, a memory flickers across its eye: a red sun, a crystal world, a song. Zib has a message to deliver, and it has chosen Rook to help.
 
@@ -103,7 +103,7 @@ Alienmon is about the creatures, and the people who love them. Battles are puzzl
 ### Book 1 · The Kessler Signal
 *A scout falls from the sky and chooses a boy.*
 
-On his thirteenth birthday Rook meets his first partner, and that same night a tiny saucer named Zib drops out of the sky and chooses him. Nobody knows what Zib is. The Helix Directive wants to find out. To follow Zib's signal, Rook must cross six worlds, earn his first Signal Shards from the Keepers, and face his rival Sola again and again. The murals of Glyphos hold a warning, and on Dustara, deep in the crater, something has started to wake.
+On his sixteenth birthday Rook meets his first partner, and that same night a tiny saucer named Zib drops out of the sky and chooses him. Nobody knows what Zib is. The Helix Directive wants to find out. To follow Zib's signal, Rook must cross six worlds, earn his first Signal Shards from the Keepers, and face his rival Sola again and again. The murals of Glyphos hold a warning, and on Dustara, deep in the crater, something has started to wake.
 **Worlds:** Dustara, Ferrox, Sporeholm, Thalassa, Neonis, Glyphos · **Shards:** 1–4 · **Status:** written. Read Chapter 1 free, or listen to the audiobook preview.
 
 ### Book 2 · The Eighth Tower
@@ -167,7 +167,7 @@ Show on each world card, and as the intro on its world page. Keepers and types f
 ---
 
 ## 5. Game page addition: "A story you play"
-**A story you play.** The game follows the saga from Rook's thirteenth birthday onward: 23 story missions, 48 side quests, eight Keepers, a rival who never lets you rest, and a mystery that grows with every Shard. Catch and bond with 300 Alienmon across 14 worlds, each living in habitats that suit them, from desert canyons to undersea vents. Your choices, your team and your Xenodex are yours. The story belongs to everyone who listens.
+**A story you play.** The game follows the saga from Rook's sixteenth birthday onward: 23 story missions, 48 side quests, eight Keepers, a rival who never lets you rest, and a mystery that grows with every Shard. Catch and bond with 300 Alienmon across 14 worlds, each living in habitats that suit them, from desert canyons to undersea vents. Your choices, your team and your Xenodex are yours. The story belongs to everyone who listens.
 
 ---
 

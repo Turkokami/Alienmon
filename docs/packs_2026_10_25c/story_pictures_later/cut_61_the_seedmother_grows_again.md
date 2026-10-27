@@ -10,7 +10,7 @@ A story illustration for the Alienmon game, in EXACTLY the same art style as the
 
 Scene: The finale on Ystra: a gigantic world-tree of crystal and green leaves (the Seedmother) rises out of the crater, green life flooding across the grey land, a small silver Oblivane resting in her branches like a moon; Rook, Kit, Sola and a crowd of friends and every kind of Alienmon below, all singing. A huge glowing Warp Gate ring in the sky behind. Joyful, epic, the best picture in the game.
 
-Characters must match their attached reference pictures (faces, hair, clothes, colours): the player (Rook), Kit, Sola, Hank, Captain Marsh, DJ Static. Alienmon must match their attached sprites: Seedmother, Oblivane, Zib. Rook is a 13-year-old boy (the hero). Do NOT draw the hero's starter partner Alienmon (it varies per player).
+Characters must match their attached reference pictures (faces, hair, clothes, colours): the player (Rook), Kit, Sola, Hank, Captain Marsh, DJ Static. Alienmon must match their attached sprites: Seedmother, Oblivane, Zib. Rook is a 16-year-old boy (the hero). Do NOT draw the hero's starter partner Alienmon (it varies per player).
 
 Canvas 1536x1024, landscape. Keep everything important inside the middle 1536x864 band (top and bottom get trimmed). No text, no captions, no speech bubbles, no UI, no watermark, no ball-shaped or capsule-shaped capture devices or emblems.
 ```

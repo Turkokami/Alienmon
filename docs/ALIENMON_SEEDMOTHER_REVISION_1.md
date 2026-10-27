@@ -122,7 +122,7 @@ ALIENMON_BOOK_SYNC_CHANGES.md , this file wins.
 | --- | --- |
 | Ch 1 | Ystra is barren: grey crystal, no growing things. The crystal forest is a dead, chiming ruin. |
 | Ch 2 | Liss tells the full legend and shows them the Heartroot from a distance, a single faint glow in a vast empty crater. |
-| Ch 8 | After Ignarch's test, the Pillars bow: "Unifier." Rook is horrified. He hasn't caught all of them; he's thirteen. Liss: "Nobody said catch." |
+| Ch 8 | After Ignarch's test, the Pillars bow: "Unifier." Rook is horrified. He hasn't caught all of them; he's sixteen. Liss: "Nobody said catch." |
 | Ch 14, Blighted Forest | Fungaroth's healing works only a little; nothing can truly grow until the Heartroot does. |
 | Ch 22, Let Go | Oblivane lets go, and the light returns to the sky, but the land stays bare. The job isn't finished. |
 | Ch 23 (rewritten): The Heartroot | They reach the empty crater. The Heartroot is almost dark. Rook understands: one team isn't enough. He needs every Alienmon. |
