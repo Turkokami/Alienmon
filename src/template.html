@@ -449,6 +449,11 @@ let musicOn=musicMode!=='off';
 const BGM=new Audio(__MUSIC__),TITLEM=new Audio(__TITLEMUSIC__),BATTLEM=new Audio(__BATTLEMUSIC__);[BGM,TITLEM,BATTLEM].forEach(a=>{a.loop=true;a.volume=0;a.preload='auto'});
 /* the owner's soundtrack (audio/music): one theme per world plus special tracks, each loaded the first time it is needed */
 const SONGS=__SONGS__,SONGA={},ALLM=[BGM,TITLEM,BATTLEM];
+/* battle sound effects (audio/sfx): decoded once into the audio context on the first tap, played at a move's impact. Music off silences them too. */
+const BSFX=__BATTLESFX__,BSB={};let BSL=0;
+function bsLoad(){if(BSL||!chipInit())return;BSL=1;for(const[k,u]of Object.entries(BSFX))fetch(u).then(r=>r.arrayBuffer()).then(b=>new Promise((ok,no)=>AC.decodeAudioData(b,ok,no))).then(x=>{BSB[k]=x}).catch(()=>{})}
+function bSfx(k,v,delay){if(musicMode==='off'||document.hidden||!AC||!BSB[k])return;if(AC.state==='suspended')AC.resume();const s=AC.createBufferSource(),g=AC.createGain();s.buffer=BSB[k];g.gain.value=(v||0.5)*volMul();s.connect(g);g.connect(AC.destination);s.start(AC.currentTime+(delay||0))}
+function bHitSnd(L){const mv=L.mv;if(!mv.p){bSfx('trait_trigger',0.35,0.1);return}bSfx('dash_whoosh',0.25);bSfx(L.cr?'hit_critical':L.e>1?'hit_super':L.e<1?'hit_resisted':'hit_normal',0.6,0.32);if(L.ko)bSfx('ko_poof',0.6,0.75)}
 function song(k){if(!SONGS[k])return null;if(!SONGA[k]){const a=new Audio(SONGS[k]);a.loop=k!=='victory'&&k!=='evolution';a.volume=0;a.preload='auto';SONGA[k]=a;ALLM.push(a)}return SONGA[k]}
 function songWorld(){const s=typeof secOn==='function'&&secOn()&&SWORLD[G.sec.id],k=s?(s.pkey||s.zone):PL[G.planet]&&PL[G.planet].key;return song('world_'+k)}
 function songBattle(){if(scene==='rta')return RTA&&RTA.opts&&RTA.opts.rift?song('rift_breach'):null;if(!B||!B.team)return null;
@@ -458,13 +463,14 @@ function areaTrack(){if(scene==='cut'&&CUT&&CUT.board)return'wonder';if(typeof s
  if(scene==='menu'||scene==='cut'){return PREV==='space'?'space':PREV==='world'?'frontier':PREV==='planet'?'town':lastArea}return lastArea}
 function wantTrack(){if(TITLE_SCENES.includes(scene))return TITLEM;if(typeof CRED!=='undefined'&&CRED)return BGM;if(scene==='cut'&&CUT&&CUT.board)return'chip';
  if(musicMode==='song'&&typeof EVO!=='undefined'&&EVO&&song('evolution'))return song('evolution');
+ if(scene==='rta'&&typeof rMusic==='function'){const t=rMusic();if(t)return t}
  if(scene==='battle'||scene==='rta'||(LVP&&B))return(musicMode==='song'&&songBattle())||BATTLEM;
  if(musicMode!=='song')return'chip';if(scene==='dive')return song('signal_dive')||BGM;if(scene==='space'||(scene==='menu'&&PREV==='space'))return song('space_flight')||BGM;const sw=G&&G.sec&&typeof SWORLD!=='undefined'&&SWORLD[G.sec.id];if(sw&&/Recovery (Bay|Tent)$/.test(sw.name)&&song('recovery_bay'))return song('recovery_bay');if(sw&&sw.type==='cave'&&song('caves'))return song('caves');   /* healing rooms and caves have their own music */
  return(G&&songWorld())||BGM}
-function musicTry(){if(musicMode==='off'||document.hidden)return;const t=wantTrack();if(t!==curTrack){if(t!=='chip'&&t!==BGM)t.currentTime=0;curTrack=t}   /* every song but the overworld theme starts from the top */
+function musicTry(){if(musicMode==='off'||document.hidden)return;bsLoad();const t=wantTrack();if(t!==curTrack){if(t!=='chip'&&t!==BGM)t.currentTime=0;curTrack=t}   /* every song but the overworld theme starts from the top */
  if(t==='chip'){chipInit();if(AC&&AC.state==='suspended')AC.resume()}else if(t.paused){const p=t.play();if(p&&p.catch)p.catch(()=>{})}}
 function musicTick(){if(musicMode==='off')return;const t=wantTrack();if(t!==curTrack)musicTry();
- const duck=typeof voSpeaking==='function'&&voSpeaking()?0.4:1;   /* music dips while a story voice is speaking */
+ const duck=(typeof voSpeaking==='function'&&voSpeaking())||(typeof rDuck==='function'&&rDuck())?0.4:1;   /* music dips while a story voice is speaking */
  for(const a of ALLM){const target=a===curTrack?MUSIC_VOL*volMul()*duck*(a===BATTLEM?1.15:1):0;a.volume=Math.max(0,Math.min(1,a.volume+Math.sign(target-a.volume)*Math.min(0.006,Math.abs(target-a.volume))));if(a!==curTrack&&a.volume<=0.001&&!a.paused)a.pause()}
  if(AC){const area=areaTrack();if(curTrack==='chip'){if(chipCur!==area){if(chipVol>0.004)chipVol=Math.max(0,chipVol-0.012);else{lastArea=area;chipPlay(area)}}else chipVol=Math.min(CHIP_VOL*volMul(),chipVol+0.004)}
   else{chipVol=Math.max(0,chipVol-0.006);if(chipVol<=0)chipStop()}chipMaster.gain.setTargetAtTime(chipVol,AC.currentTime,0.05)}}
@@ -637,7 +643,7 @@ function canAct(a,lines){if(a.st==='freeze'){if(R()<0.25){a.st=null;lines.push(n
 let LAST=null;
 function act(a,d,mv){LAST=null;const lines=[];if(a.hp<=0)return lines;if(disobeys(a)){lines.push(nm(a)+' is listening to the stars...');return lines}if(!canAct(a,lines)){if(a.hp<=0)lines.push(nm(a)+' fainted!');return lines}
  lines.push(nm(a)+' used '+mv.n+'!');const fx=mv.fx||{};
- const accMul=sm((a.bs.acc||0));if(R()*100>mv.a*accMul){lines.push('It missed!');return lines}
+ const accMul=sm((a.bs.acc||0));if(R()*100>mv.a*accMul){lines.push('It missed!');bSfx('hit_miss',0.45,0.2);return lines}
  LAST={mv,a,d,hit:true};
  if(!mv.p){ if(fx.heal){if(a.hp>=stat(a,0))lines.push('But its HP is already full!');else heal(a,fx.heal,lines)}
    if(fx.self)stages(a,fx.self,lines);if(fx.foe)stages(d,fx.foe,lines);if(fx.s){const before=d.st,bc=d.cf;inflict(d,fx.s,lines);if(before===d.st&&bc===d.cf)lines.push('But it had no effect.')}return lines}
@@ -651,7 +657,7 @@ function act(a,d,mv){LAST=null;const lines=[];if(a.hp<=0)return lines;if(disobey
  let cc=0.06;if(fx.crit)cc*=3;if(at.k==='crit')cc*=3;const crit=R()<cc?1.5:1;
  let dmg=Math.max(1,Math.floor(((2*a.lv/5+2)*mv.p*A/Df/50+2)*stab*e*mod*crit*(0.85+R()*0.15)));
  const full=d.hp>=stat(d,0);if((dt.k==='sturdy')&&full&&dmg>=d.hp&&!d.sturdyUsed){dmg=d.hp-1;d.sturdyUsed=true;var sturdyHit=true}
- d.hp=Math.max(0,d.hp-dmg);godFix(d);if(crit>1)lines.push('A critical hit!');if(e>1)lines.push("It's super effective!");else if(e<1)lines.push("It's not very effective...");
+ d.hp=Math.max(0,d.hp-dmg);godFix(d);if(crit>1)lines.push('A critical hit!');if(e>1)lines.push("It's super effective!");else if(e<1)lines.push("It's not very effective...");if(LAST){LAST.e=e;LAST.cr=crit>1;LAST.ko=d.hp<=0}
  if(typeof sturdyHit!=='undefined'&&sturdyHit)lines.push(nm(d)+' held on with '+dt.name+'!');
 if(fx.drain&&a.hp<stat(a,0)){a.hp=Math.min(stat(a,0),a.hp+Math.max(1,Math.floor(dmg*fx.drain)));lines.push(nm(a)+' drained energy!')}
  if(at.k==='devourer'&&a.hp<stat(a,0)){a.hp=Math.min(stat(a,0),a.hp+Math.floor(dmg/3));lines.push(nm(a)+' devoured energy!')}
@@ -666,7 +672,7 @@ function aiMove(a,d){let best=a.moves[0],bv=-1;for(const mi of a.moves){const mv
   else{const dt=TR(d.id);v=mv.p*eff(mv.t,D[d.id].t)*(D[a.id].t.includes(mv.t)?1.5:1)*(0.7+R()*0.6);if(dt.k==='absorb'&&dt.v===mv.t)v=0;if(dt.k==='float'&&mv.t==='Gravity')v=0}
   if(v>bv){bv=v;best=mi}}return MV[best]}
 function startBattle(team,trainer){if(!trainer)for(const m of team)if(!m.pri&&R()<priOdds())m.pri=1;if(typeof SJBUF!=='undefined'){SJBUF=0;SJ=null}if(!trainer&&G.jam>0&&team.length&&team[0].lv<(G.party.find(m=>m.hp>0)||{lv:0}).lv){return}warm(ARTI,team.map(m=>D[m.id].name));warm(ARTBI,G.party.map(m=>D[m.id].name));if(typeof bfxWarm==='function')bfxWarm(team.concat(G.party));const pi=G.party.findIndex(m=>m.hp>0);team.forEach(m=>{G.seen[m.id]=1;resetStages(m)});G.party.forEach(resetStages);
- B={from:scene==='world'?'world':'planet',team,ei:0,tr:trainer,pi,part:new Set([pi]),phase:'wait',sel:0,psel:0,podsel:0,captured:false,anim:null,trShow:!!(trainer&&trainer.art)};scene='battle';const L=trainer?[trainer.name+(/ (and|&) /.test(trainer.name)?' want':' wants')+' to battle!',trainer.name+' sent out '+nm(team[0])+'!']:['A wild '+nm(team[0])+' appeared!'];if(!trainer&&team[0].pri){L[0]='A Prismatic '+nm(team[0])+' appeared!';L.push('Its colours shimmer like nothing you have seen!');priSfx()}
+ B={from:scene==='world'?'world':'planet',team,ei:0,tr:trainer,pi,part:new Set([pi]),phase:'wait',sel:0,psel:0,podsel:0,captured:false,anim:null,trShow:!!(trainer&&trainer.art)};scene='battle';bSfx('release_beam',0.4);const L=trainer?[trainer.name+(/ (and|&) /.test(trainer.name)?' want':' wants')+' to battle!',trainer.name+' sent out '+nm(team[0])+'!']:['A wild '+nm(team[0])+' appeared!'];if(!trainer&&team[0].pri){L[0]='A Prismatic '+nm(team[0])+' appeared!';L.push('Its colours shimmer like nothing you have seen!');priSfx()}
  if(typeof skyBattleStart==='function')skyBattleStart(L);storyBattleStart(trainer,L);const tw=TR(team[0].id);if(!trainer&&tw.k==='sync')L.push(nm(team[0])+"'s signal feels "+(tw.v>1?'calm and friendly.':'jumpy and skittish.'));
  L.push('Go, '+nm(G.party[pi])+'!');entry(team[0],G.party[pi],L);entry(G.party[pi],team[0],L);
  if(B.trShow){say(L[0],()=>{B.trShow=false;say(L.slice(1),()=>B.phase='menu')})}else say(L,()=>B.phase='menu')}
@@ -784,7 +790,8 @@ Crystal:['beam','spark','hue-rotate(270deg) saturate(1.3)'],Psi:['voidball','voi
 Gravity:['boulder','boom','sepia(1) saturate(0.7)'],Alloy:['boulder','spark','grayscale(1) brightness(1.25)'],None:[null,'boom','grayscale(0.7) brightness(1.2)']};
 const PPOS=[34,74],EPOS=[126,26];
 function posOf(m){return m===PM()?PPOS:EPOS}
-function playFx(cb){if(G.opt&&G.opt.noAnim){LAST=null;cb();return}const L=LAST;LAST=null;if(!L||!L.hit||!B){cb();return}const mv=L.mv,t=FXT[mv.t]||FXT.None;
+function playFx(cb){if(LAST&&LAST.hit&&B&&LAST.mv)bHitSnd(LAST);   /* the move's sound, timed to its impact */
+ if(G.opt&&G.opt.noAnim){LAST=null;cb();return}const L=LAST;LAST=null;if(!L||!L.hit||!B){cb();return}const mv=L.mv,t=FXT[mv.t]||FXT.None;
  if(bfxSheet(mv)&&!(G.opt&&G.opt.classicFx)){const fx0=mv.fx||{},selfOnly=!mv.p&&(fx0.self||fx0.heal)&&!fx0.foe&&!fx0.s,from=posOf(L.a),to=selfOnly?from:posOf(L.d);
   B.anim={kind:'move3',att:L.a,sheet:bfxSheet(mv),from,to,t:0,pj:selfOnly?0:18,dur:(selfOnly?0:18)+30,cb,tgt:selfOnly?L.a:L.d,small:!mv.p,label:mv.n?nm(L.a)+' used '+mv.n+'!':''};return}
  if(mv.an&&okI(FXI['mv_'+mv.an.r])){const an=mv.an,fx0=mv.fx||{},selfOnly=!mv.p&&(fx0.self||fx0.heal)&&!fx0.foe&&!fx0.s,from=posOf(L.a),to=selfOnly?from:posOf(L.d),proj=an.p&&!selfOnly;
