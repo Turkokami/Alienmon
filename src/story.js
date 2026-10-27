@@ -39,7 +39,7 @@ function storyThen(q,t){if(!t||!storyIf(t.if))return;const L=(t.lines||[]).slice
  if(t.evolve==='starter'){const ln=starterLine(myStarter()),top=IDX[ln[2]],m=G.party.concat(G.box).find(m=>ln.includes(D[m.id].name));
   if(m&&m.id!==top){const was=nm(m),from=m.id;m.id=top;m.hp=stat(m,0);G.seen[top]=G.caught[top]=1;L.push('...'+was+' is glowing!');
    QEVO={q:q.id,kind:'evo',evo:[from,top,m.pri],lines:[was+' evolved into '+D[top].name+'!']}}}
- if(L.length)QN.push({q:q.id,kind:'then',lines:L.map(qFmt),art:t.art});if(QEVO){QN.push(QEVO);QEVO=null}
+ if(L.length)QN.push({q:q.id,kind:'then',lines:L.map(qFmt),art:t.art});if(QEVO){QN.push(QEVO);QEVO=null}if(t.credits)QN.push({q:q.id,kind:'credits',credits:1});
  if(t.go&&SWORLD[t.go]){const g=SWORLD[t.go],go=()=>{G.sub=null;G.secBack=null;const p=pidx(g.pkey);if(p>=0)G.planet=p;enterSection(g.id,g.spawns.arrival||g.spawns.default,'down');scene='planet';PREV='planet';qPassive()};QN.push({q:q.id,kind:'go',go:()=>{if(secOn())SFADE={t:0,go};else go()}})}}   // walk or fly through to another place (Strand's shuttle, the Vortex to Ystra), once the lines before it are read
 let QEVO=null;   // a story evolution plays its animation after the lines that lead up to it
 
@@ -139,3 +139,15 @@ function drawHeartroot(){const n=heartCount(),t=n/HEART_TOTAL;rect(0,0,160,144,'
  const nx=BLOOMS.find(([k])=>n<k);txt(nx?'Next bloom: '+nx[0]:'Ystra has fully bloomed',6,124,'#a99cc8',6);if(G.flags.unifier)txt('Title: Unifier',6,134,'#ffd23f',6);else txt('Caught + befriended species',6,134,'#6f6390',6)}
 // choices whose follow-up lines depend on which option was picked
 function storyPick(t,L){if(t&&t.pick){const v=(G.flags||{})[t.pick.flag];const ls=t.pick.lines&&t.pick.lines[v];if(ls)L.push(...ls)}}
+
+/* ---- end credits: after the last epilogue (quest.epilogue.credits), a starfield roll over the ending picture with the main theme ---- */
+let CRED=null;
+const CRED_LINES=()=>{const tm=(G.party||[]).filter(m=>!m.guest).map(m=>m.nick||D[m.id].name),dex=Object.keys(G.caught||{}).length;
+ return['ALIENMON','','Based on','The Alienmon Chronicles','by Kristofer Elling','','Created by','Kristofer Elling','','Story','The Kessler Signal','and the books that follow','','Music','Save the Stars','Let\'s Go, Alienmon!','and the full soundtrack','','Voices','The Alienmon voice cast','','Thanks to','every Linker League tester','who played it first','','Your team',...tm,'','Xenodex: '+dex+' / '+D.length,'','Every Alienmon is','a piece of her.','','Thank you for playing!','','THE END']};
+function startCredits(){CRED={t:0,L:CRED_LINES(),im:boardImg('cut_73')&&okI(boardImg('cut_73'))?boardImg('cut_73'):boardImg('cut_62')}}
+function drawCredits(){const c=CRED;c.t++;const n=c.L.length,low=66-96-(n-1)*11,top=Math.max(48-c.t*0.35,low),done=top===low;
+ if(P_('a')||P_('b')){if(done&&c.t>(c.end||0)+30){CRED=null;return}if(!done)c.t+=150}if(done&&!c.end)c.end=c.t;
+ rect(0,0,160,144,'#05030c');for(let i=0;i<40;i++){const x=(i*53)%160,y=(i*97+Math.floor(c.t/(2+i%3)))%144;rect(x,y,1,1,i%5?'#5a4f80':'#ffd23f')}
+ if(c.im&&okI(c.im)){ctx.save();ctx.globalAlpha=Math.min(1,c.t/90);ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';ctx.drawImage(c.im,0,Math.round(Math.min(0,top)),160,90);ctx.restore()}
+ c.L.forEach((l,i)=>{const y=Math.round(top+96+i*11);if(y<-10||y>150||!l)return;const big=i===0||l==='THE END',w=l.length*(big?8:6);txt(l,Math.round(80-w/2),y,big?'#ffd23f':/^(Based on|Created by|Story|Music|Voices|Thanks to|Your team)$/.test(l)?'#9be36b':'#e8e0ff',big?8:6)});
+ if(done&&frame%60<40)txt('Press A',59,120,'#ff8a1e',6)}

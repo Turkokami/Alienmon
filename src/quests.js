@@ -141,7 +141,7 @@ function qSay(m){const runs=[];for(const l of m.lines){const a=qLineArt(l,m.art)
  if(m.kind==='start'&&QI[m.q]&&QI[m.q].type==='main')for(const r of runs)if(r.art&&!qPresent(r.art)){r.lines.unshift('Incoming Linker message from '+qSpeaker(r.lines[0])+'...');break}
  const next=i=>{const r=runs[i];if(!r)return m.after&&m.after();say(r.lines,()=>next(i+1),r.art||undefined)};next(0)}
 function qFlush(){if(QN.length&&!DLG&&!CH&&(scene==='planet'||scene==='world'||(scene==='space'&&QN[0].q==='P04'))&&!(typeof SFADE!=='undefined'&&SFADE)&&!(typeof SM!=='undefined'&&SM)){const m=QN[0];
-  if(m.go){QN.shift();m.go();return}   /* a move to another place waits for the lines before it */
+  if(m.go){QN.shift();m.go();return}if(m.credits){QN.shift();if(typeof startCredits==='function')startCredits();return}   /* a move to another place waits for the lines before it */
   if(m.pic){const p=m.pic,ok=okI(boardImg(p.k));if(!ok&&(m.wait=(m.wait||0)+1)<=240)return;QN.shift();if(ok)cutBoard([[p.k,[/[.!?…]$/.test(p.cap)?p.cap:p.cap+'.'].concat(p.lines||[])]],()=>{});else if(m.lines&&m.lines.length)qSay(m);return}   /* a story picture: wait ~4 s for it, else tell it in words */
   QN.shift();if(m.evo&&typeof evoAnimIds==='function'){evoAnimIds(m.evo[0],m.evo[1],m.evo[2],()=>say(m.lines));return}qSay(m)}}
 
