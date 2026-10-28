@@ -1,13 +1,11 @@
 node_modules/
-android/
 .DS_Store
 Thumbs.db
 import_report.json
 .vercel
 __pycache__/
-# build output (node tools/build.js); only the fonts note is tracked
-www/*
-!www/fonts/
+# build output (node tools/build.js); the game font is copied in from art/ui/fonts
+www/
 .env*
 art/kit/
 tools/sections/v3/review/
