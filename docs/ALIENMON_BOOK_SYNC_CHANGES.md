@@ -156,7 +156,7 @@ Mom's farewell gift is a brass cross-shaped badge with a glowing blue core, stam
 | Edge of the Void | **Oblivane** (Void/Gravity) can't be beaten. After a set number of turns a **Listen** command appears, and choosing it starts the Choir song. Oblivane is calmed and released in the story, not caught. If an optional capture exists, it comes only after the credits. |
 | The ending choice | Add a third option to "rebuild Ystra" and "keep Kessler": **Both**. It is canon and should be the highlighted default. The Warp Gate wakes either way. |
 | Zib's choice | The Seedmother tells Zib his mission is done. He chooses the player. Her line: "A scout's job is to find a home. You found one." |
-| Epilogue | One year later. Thorne's letter: "Elena would have liked you. Tell your Zib thank you." Last scene: a new 13-year-old at the Observatory, and one shy capsule nobody picked. |
+| Epilogue | One year later. Thorne's letter: "Elena would have liked you. Tell your Zib thank you." Last scene: a new 16-year-old at the Observatory, and one shy capsule nobody picked. |
 
 ---
 

@@ -10,7 +10,7 @@ A story illustration for the Alienmon game, in EXACTLY the same art style as the
 
 Scene: Inside the Helix Forge Fortress containment wing: long rows of glowing glass-and-steel cages stretching into the distance, each with a small label plate, sad little Alienmon silhouettes inside, a cold white overhead sign (draw the sign blank, NO letters). Rook stands small in the aisle with Zib hiding behind him. Cold white and orange Helix colours. Serious but not frightening for kids.
 
-Characters must match their attached reference pictures (faces, hair, clothes, colours): the player (Rook). Alienmon must match their attached sprites: Zib. Rook is a 13-year-old boy (the hero). Do NOT draw the hero's starter partner Alienmon (it varies per player).
+Characters must match their attached reference pictures (faces, hair, clothes, colours): the player (Rook). Alienmon must match their attached sprites: Zib. Rook is a 16-year-old boy (the hero). Do NOT draw the hero's starter partner Alienmon (it varies per player).
 
 Canvas 1536x1024, landscape. Keep everything important inside the middle 1536x864 band (top and bottom get trimmed). No text, no captions, no speech bubbles, no UI, no watermark, no ball-shaped or capsule-shaped capture devices or emblems.
 ```

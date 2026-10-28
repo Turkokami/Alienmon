@@ -6,7 +6,7 @@ require('child_process').execSync('node '+JSON.stringify(require('path').join(__
 // so browsers and the service worker can cache them forever. `node tools/build.js --inline` instead embeds everything
 // as data: URIs in one self-contained www/index.html (the Android / Capacitor build and offline single-file copies).
 const fs=require('fs'),path=require('path'),crypto=require('crypto');
-const root=path.join(__dirname,'..'),www=path.join(root,'www'),INLINE=process.argv.includes('--inline');
+const root=path.join(__dirname,'..'),www=path.join(root,'www'),INLINE=process.argv.includes('--inline'),APP=process.argv.includes('--app');   // --app: the store build (Capacitor), fully offline
 const core=JSON.parse(fs.readFileSync(path.join(root,'data/core_battle.json')));
 const dirs=fs.readdirSync(path.join(root,'data/batches')).filter(d=>!d.startsWith('.')).sort();
 let D=[],P=[],SYS=[];
@@ -147,6 +147,7 @@ fill.__ARENAENGINE__='';
 fill.__WORLDENGINE__=fs.readFileSync(path.join(root,'src/world.js'),'utf8').replace(/__PROTO__/g,j(PROTO)).replace(/__WORLDSTATE__/g,j({gates:WS.gates,ship:WS.ship})).replace(/__PEOPLE__/g,PEOPLE).replace(/__SPACE__/g,j(SPACEART));
 // function replacer: data can contain "$&"-style sequences that a string replacement would expand
 let html=fs.readFileSync(path.join(root,'src/template.html'),'utf8').replace(/__[A-Z]+__/g,k=>k in fill?fill[k]:k);
+html=html.replace(/__APP__/g,j(APP));
 fs.mkdirSync(www,{recursive:true});
 fs.writeFileSync(path.join(www,'index.html'),html);
 if(!INLINE)fs.writeFileSync(path.join(www,'asset-manifest.json'),j({build:BUILD,assets:ASSETS}));
@@ -154,7 +155,7 @@ if(!INLINE)fs.writeFileSync(path.join(www,'asset-manifest.json'),j({build:BUILD,
 const copy=(from,to)=>{fs.mkdirSync(path.dirname(path.join(www,to)),{recursive:true});fs.copyFileSync(path.join(root,from),path.join(www,to))};
 for(const f of fs.readdirSync(path.join(root,'art/ui/icons')))copy('art/ui/icons/'+f,'icons/'+f);
 // ---- map editor (prototype builds): www/editor.html + www/editor_data.json ----
-if(PROTO&&!INLINE){
+if(PROTO&&!INLINE&&!APP){
  const rd=(f,d)=>fs.existsSync(path.join(root,f))?JSON.parse(fs.readFileSync(path.join(root,f),'utf8')):d;
  const ED={planets:{},sections:{},props:{},chars:{},mons:{},layout:rd('data/sections/props_layout.json',{}),edits:{npcs:rd('data/editor/npcs.json',{}),mons:rd('data/editor/mons.json',{}),maps:rd('data/editor/maps.json',[]),grid:rd('data/editor/grid.json',{}),routes:rd('data/editor/routes.json',[]),doors:rd('data/editor/doors.json',{}),clips:rd('data/editor/clips.json',[]).map(c=>({...c,url:asset('art/editor_clips/'+c.id+'.png')}))}};
  for(const[id,sec]of Object.entries(SECW.sections)){const cp=path.join(root,'data/collision',id+'.json');if(!sec.img)continue;
@@ -178,7 +179,9 @@ if(PROTO&&!INLINE){
  if(process.env.EDITOR_SITE==='1'){   // the stand-alone editor site (separate Vercel project): the editor is the home page, no game, no service worker
   fs.copyFileSync(path.join(www,'editor.html'),path.join(www,'index.html'));for(const f of['sw.js','manifest.webmanifest'])fs.rmSync(path.join(www,f),{force:true})}
  console.log('map editor: www/editor.html ('+Object.keys(ED.sections).length+' sections, '+Object.values(ED.props).reduce((a,b)=>a+b.length,0)+' props)')}
+for(const f of['PressStart2P-Regular.ttf','OFL.txt'])copy('art/ui/fonts/'+f,'fonts/'+f);   // the game font, bundled
 copy('src/manifest.webmanifest','manifest.webmanifest');copy('art/ui/og.jpg','og.jpg');
-if(!INLINE&&process.env.EDITOR_SITE!=='1')fs.writeFileSync(path.join(www,'sw.js'),fs.readFileSync(path.join(root,'src/sw.js'),'utf8').replace(/__BUILD__/g,j(BUILD)));
+if(!INLINE&&!APP&&process.env.EDITOR_SITE!=='1')fs.writeFileSync(path.join(www,'sw.js'),fs.readFileSync(path.join(root,'src/sw.js'),'utf8').replace(/__BUILD__/g,j(BUILD)));
+if(APP)for(const f of['sw.js','asset-manifest.json','editor.html','editor.js','editor_data.json','secbot.js','storybot.js'])fs.rmSync(path.join(www,f),{force:true});   // leftovers from web builds stay out of the app
 const mb=b=>(b/1048576).toFixed(1)+' MB';
 console.log('Built www/index.html ('+mb(Buffer.byteLength(html))+(INLINE?', everything inlined':', '+ASSETS.length+' assets in www/assets')+') with',D.length,'Alienmon across',P.length,'planets.');

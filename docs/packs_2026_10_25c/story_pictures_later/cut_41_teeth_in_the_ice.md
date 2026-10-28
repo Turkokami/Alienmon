@@ -10,7 +10,7 @@ A story illustration for the Alienmon game, in EXACTLY the same art style as the
 
 Scene: Inside a blue glacier cavern on Glacia, Ingrid Vale holds up a lantern beside a giant fossil frozen in the ice wall: the skeleton of an ancient tree-like creature with an enormous crescent-shaped bite mark taken out of it, far bigger than a house. Rook and Kit stare up, tiny in comparison. Cold blue light, awe and mystery, kid-friendly.
 
-Characters must match their attached reference pictures (faces, hair, clothes, colours): Ingrid Vale, the player (Rook), Kit. Alienmon must match their attached sprites: Zib. Rook is a 13-year-old boy (the hero). Do NOT draw the hero's starter partner Alienmon (it varies per player).
+Characters must match their attached reference pictures (faces, hair, clothes, colours): Ingrid Vale, the player (Rook), Kit. Alienmon must match their attached sprites: Zib. Rook is a 16-year-old boy (the hero). Do NOT draw the hero's starter partner Alienmon (it varies per player).
 
 Canvas 1536x1024, landscape. Keep everything important inside the middle 1536x864 band (top and bottom get trimmed). No text, no captions, no speech bubbles, no UI, no watermark, no ball-shaped or capsule-shaped capture devices or emblems.
 ```

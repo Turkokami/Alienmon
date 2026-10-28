@@ -234,7 +234,7 @@
    112
   ],
   "r": "mascot",
-  "lore": "A palm-sized silver saucer with a glass dome, and inside it a little round body with one huge eye. Says only \"Bip.\" Its lights change with its mood.",
+  "lore": "A palm-sized silver saucer with a glass dome, and inside it a little round body with one huge eye. Says only \"Bip.\" Its lights change with its mood. It matches no known species.",
   "b": 1,
   "tr": 51,
   "sig": 3
@@ -1036,7 +1036,7 @@
    64
   ],
   "r": "normal",
-  "lore": "The Anvil Hound: a fortress of dark metal and rock with glowing lava seams and an anvil plate on its brow. It drinks fire and grows stronger.",
+  "lore": "The Anvil Hound: a fortress of dark metal and rock with glowing lava seams and an anvil plate on its brow. It drinks fire and grows stronger. Partner of Hank Briggs, the Iron Wall of Ferrox.",
   "b": 1,
   "tr": 19,
   "sig": -1
@@ -1853,7 +1853,7 @@
    38
   ],
   "r": "normal",
-  "lore": "A cat-sized Alienmon that rides inside an air bubble it blows from a pouch in its chest. They travel in big giggly groups.",
+  "lore": "A cat-sized Alienmon that rides inside an air bubble it blows from a pouch in its chest. They travel in big giggly groups. A big one can blow a bubble large enough to carry a rider.",
   "b": 1,
   "tr": 1,
   "sig": -1
@@ -7469,7 +7469,7 @@
    65
   ],
   "r": "normal",
-  "lore": "A walking steel girder. Crane crews swear it holds up half the Railyard on its back.",
+  "lore": "A walking steel girder. Crane crews swear it holds up half the Railyard on its back. Its head ends in a heavy hammer. Hank Briggs battles with one.",
   "b": 1,
   "tr": 8,
   "sig": -1
@@ -7543,7 +7543,7 @@
    40
   ],
   "r": "normal",
-  "lore": "An old sea turtle carrying a reef on its shell. Fish follow it along the Thalassa coast.",
+  "lore": "An old sea turtle carrying a reef on its shell. Fish follow it along the Thalassa coast. Captain Marsh's partner, Old Barnaby, is a Brineback.",
   "b": 1,
   "tr": 36,
   "sig": -1
@@ -7666,7 +7666,7 @@
    45
   ],
   "r": "normal",
-  "lore": "Its glow turns purple and bitter with age. It puffs spore bubbles that make other Alienmon drowsy.",
+  "lore": "Its glow turns purple and bitter with age. It puffs spore bubbles that make other Alienmon drowsy. Dr. Lysa Moor's partner.",
   "b": 1,
   "tr": 26,
   "sig": -1
@@ -7715,7 +7715,7 @@
    50
   ],
   "r": "normal",
-  "lore": "A grinning purple ooze that slides through the bogs, soaking up spores that would choke others.",
+  "lore": "A grinning purple ooze that slides through the bogs, soaking up spores that would choke others. Dr. Lysa Moor's partner.",
   "b": 1,
   "tr": 20,
   "sig": -1
@@ -7740,7 +7740,7 @@
    45
   ],
   "r": "normal",
-  "lore": "A mammoth built of speakers. When it stomps, the whole Neonis block feels the bass.",
+  "lore": "A mammoth built of speakers. When it stomps, the whole Neonis block feels the bass. DJ Static's partner.",
   "b": 1,
   "tr": 11,
   "sig": -1
@@ -7765,7 +7765,7 @@
    105
   ],
   "r": "normal",
-  "lore": "A flying radio that picks up every signal in the city and squawks it back out of tune.",
+  "lore": "A flying radio that picks up every signal in the city and squawks it back out of tune. DJ Static's partner.",
   "b": 1,
   "tr": 21,
   "sig": -1
@@ -7912,7 +7912,7 @@
    80
   ],
   "r": "normal",
-  "lore": "A serpent dripping purple venom. Umbra lantern-keepers hang charms to keep it from their doors.",
+  "lore": "A serpent dripping purple venom. Umbra lantern-keepers hang charms to keep it from their doors. Admin Vex's partner.",
   "b": 1,
   "tr": 6,
   "sig": -1
@@ -7921,6 +7921,7 @@
   "n": 322,
   "name": "Rumbler",
   "t": [
+   "Magma",
    "Gravity"
   ],
   "st": 1,
@@ -7936,7 +7937,7 @@
    70
   ],
   "r": "normal",
-  "lore": "A golem of loose boulders. Pyros miners know a cave-in is coming when the Rumblers start walking.",
+  "lore": "A boulder of rock and glowing lava that walks on stubby legs. Pyros miners know a cave-in is coming when the Rumblers start walking. Forge Miner Dax's partner.",
   "b": 1,
   "tr": 12,
   "sig": -1

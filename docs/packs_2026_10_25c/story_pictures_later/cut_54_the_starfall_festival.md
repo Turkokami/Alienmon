@@ -10,7 +10,7 @@ A story illustration for the Alienmon game, in EXACTLY the same art style as the
 
 Scene: Night in Dustmere (a red-rock desert town): the Starfall Festival around a big bonfire ring, lanterns, the town cheering, shooting stars overhead; Old Dusty telling a story with big hand gestures, Mom hugging Rook, Kit and Sola toasting marshmallows, Zib glowing. Happy homecoming.
 
-Characters must match their attached reference pictures (faces, hair, clothes, colours): Mom, Old Dusty, the player (Rook), Kit, Sola. Alienmon must match their attached sprites: Zib. Rook is a 13-year-old boy (the hero). Do NOT draw the hero's starter partner Alienmon (it varies per player).
+Characters must match their attached reference pictures (faces, hair, clothes, colours): Mom, Old Dusty, the player (Rook), Kit, Sola. Alienmon must match their attached sprites: Zib. Rook is a 16-year-old boy (the hero). Do NOT draw the hero's starter partner Alienmon (it varies per player).
 
 Canvas 1536x1024, landscape. Keep everything important inside the middle 1536x864 band (top and bottom get trimmed). No text, no captions, no speech bubbles, no UI, no watermark, no ball-shaped or capsule-shaped capture devices or emblems.
 ```

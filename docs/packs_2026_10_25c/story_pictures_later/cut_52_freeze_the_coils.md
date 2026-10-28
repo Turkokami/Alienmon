@@ -10,7 +10,7 @@ A story illustration for the Alienmon game, in EXACTLY the same art style as the
 
 Scene: Deep in the Starfall crater: a Helix gravity trap of humming orange coils pins everyone to the glowing rock; Kit, pressed to the ground, points, and his Iceburr blasts the coils with frost so they crack. Action, teamwork.
 
-Characters must match their attached reference pictures (faces, hair, clothes, colours): Kit. Alienmon must match their attached sprites: Iceburr. Rook is a 13-year-old boy (the hero). Do NOT draw the hero's starter partner Alienmon (it varies per player).
+Characters must match their attached reference pictures (faces, hair, clothes, colours): Kit. Alienmon must match their attached sprites: Iceburr. Rook is a 16-year-old boy (the hero). Do NOT draw the hero's starter partner Alienmon (it varies per player).
 
 Canvas 1536x1024, landscape. Keep everything important inside the middle 1536x864 band (top and bottom get trimmed). No text, no captions, no speech bubbles, no UI, no watermark, no ball-shaped or capsule-shaped capture devices or emblems.
 ```

@@ -10,7 +10,7 @@ A story illustration for the Alienmon game, in EXACTLY the same art style as the
 
 Scene: A grand neon-lit courtroom on Neonis: Director Thorne stands alone at the defendant's stand, head bowed; Strand and Dr. Vashti sit in the witness seats; a quiet crowd in the gallery. Solemn but not dark.
 
-Characters must match their attached reference pictures (faces, hair, clothes, colours): Director Thorne, Strand, Dr. Vashti. Rook is a 13-year-old boy (the hero). Do NOT draw the hero's starter partner Alienmon (it varies per player).
+Characters must match their attached reference pictures (faces, hair, clothes, colours): Director Thorne, Strand, Dr. Vashti. Rook is a 16-year-old boy (the hero). Do NOT draw the hero's starter partner Alienmon (it varies per player).
 
 Canvas 1536x1024, landscape. Keep everything important inside the middle 1536x864 band (top and bottom get trimmed). No text, no captions, no speech bubbles, no UI, no watermark, no ball-shaped or capsule-shaped capture devices or emblems.
 ```

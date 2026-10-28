@@ -10,7 +10,7 @@ A story illustration for the Alienmon game, in EXACTLY the same art style as the
 
 Scene: Helix Station corridor: Sola rips an orange ring-and-slash Helix patch off her sleeve and it flutters to the floor; determined face, turning to stand shoulder to shoulder with Rook and Kit. Heroic, hopeful.
 
-Characters must match their attached reference pictures (faces, hair, clothes, colours): Sola, the player (Rook), Kit. Rook is a 13-year-old boy (the hero). Do NOT draw the hero's starter partner Alienmon (it varies per player).
+Characters must match their attached reference pictures (faces, hair, clothes, colours): Sola, the player (Rook), Kit. Rook is a 16-year-old boy (the hero). Do NOT draw the hero's starter partner Alienmon (it varies per player).
 
 Canvas 1536x1024, landscape. Keep everything important inside the middle 1536x864 band (top and bottom get trimmed). No text, no captions, no speech bubbles, no UI, no watermark, no ball-shaped or capsule-shaped capture devices or emblems.
 ```

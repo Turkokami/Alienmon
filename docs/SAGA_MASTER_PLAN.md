@@ -6,7 +6,7 @@ The Alienmon Chronicles is one story told in five books: a boy follows a lost sc
 
 ## The saga at a glance
 
-Logline. Rook, a thirteen-year-old from a canyon town, is chosen by Zib, a palm-sized scout carrying a message from the Seedmother of Ystra. To deliver it he must win eight Signal Shards, rescue his rival from a corporation built on a stolen secret, seal a tear in space, and cross through it to heal Oblivane, the starving guardian that ate Ystra's sky.
+Logline. Rook, a sixteen-year-old from a canyon town, is chosen by Zib, a palm-sized scout carrying a message from the Seedmother of Ystra. To deliver it he must win eight Signal Shards, rescue his rival from a corporation built on a stolen secret, seal a tear in space, and cross through it to heal Oblivane, the starving guardian that ate Ystra's sky.
 
 The shape of the saga. Books 1 and 2 are the journey and the mystery. Book 3 is the war and the first climax. Book 4 is home, truth and inheritance. Book 5 is the voyage to Ystra and the true ending. Each book ends on a hook that opens the next one.
 
@@ -309,7 +309,7 @@ New faces: the Quorum (Marisol Fenn, Duke Harrow, Saga, General Ostrander as a Q
 
 5. DX-4's Secret. The journal's last page explains DX-4: Nana built him to listen for the scout's frequency and watch over her grandchild. "Probably" was her own favorite word. DX-4 is quiet for a long time, then says, "I KNEW THAT. PROBABLY."
 
-6. An Ordinary Day. Rook and Sola spend one whole day being thirteen: a dust-bike race, a swim in the canyon pool, a contest to make Plazmo and Zib laugh. Sola admits it's the first normal day she's had since she was seven.
+6. An Ordinary Day. Rook and Sola spend one whole day being sixteen: a dust-bike race, a swim in the canyon pool, a contest to make Plazmo and Zib laugh. Sola admits it's the first normal day she's had since she was seven.
 
 #### Part Two: The Reckoning
 
@@ -429,7 +429,7 @@ Ending: the shared-home choice. Ystra is renewed, the Warp Gate links it to Kess
 
 25. Zib's Choice. The Seedmother tells Zib his mission is done; he can stay home. Zib looks at her, then at Rook, and says one long, soft "Bip." The Seedmother smiles: "A scout's job is to find a home. You found one." Zib comes back with Rook.
 
-26. One Year Later. Rook is fourteen. The Warp Gate hums over Dustmere. Tamsin stayed on Ystra to explore; Teo and Vashti run a new research station between the worlds; Vex is still in prison, and Marsh still visits to gloat. A letter arrives from Thorne: "Elena would have liked you. Tell your Zib thank you." At the Observatory, a nervous new thirteen- year-old chooses a starter, and Rook notices one shy capsule nobody picked. He walks over to it. The end of the Alienmon Chronicles.
+26. One Year Later. Rook is seventeen. The Warp Gate hums over Dustmere. Tamsin stayed on Ystra to explore; Teo and Vashti run a new research station between the worlds; Vex is still in prison, and Marsh still visits to gloat. A letter arrives from Thorne: "Elena would have liked you. Tell your Zib thank you." At the Observatory, a nervous new sixteen-year-old chooses a starter, and Rook notices one shy capsule nobody picked. He walks over to it. The end of the Alienmon Chronicles.
 
 ## Mysteries and payoffs
 

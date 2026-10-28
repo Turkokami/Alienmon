@@ -10,7 +10,7 @@ A story illustration for the Alienmon game, in EXACTLY the same art style as the
 
 Scene: On the edge of a huge glowing volcanic crater on Pyros at dusk, the grizzled old miner Old Basalt stands with Rook and Kit, pointing his pick down into a column of soft golden light rising from the crater. Lava rivers glow far below, ash drifts, Zib hovers close to Rook. Wistful, a little eerie, not scary.
 
-Characters must match their attached reference pictures (faces, hair, clothes, colours): Old Basalt, the player (Rook), Kit. Alienmon must match their attached sprites: Zib. Rook is a 13-year-old boy (the hero). Do NOT draw the hero's starter partner Alienmon (it varies per player).
+Characters must match their attached reference pictures (faces, hair, clothes, colours): Old Basalt, the player (Rook), Kit. Alienmon must match their attached sprites: Zib. Rook is a 16-year-old boy (the hero). Do NOT draw the hero's starter partner Alienmon (it varies per player).
 
 Canvas 1536x1024, landscape. Keep everything important inside the middle 1536x864 band (top and bottom get trimmed). No text, no captions, no speech bubbles, no UI, no watermark, no ball-shaped or capsule-shaped capture devices or emblems.
 ```
