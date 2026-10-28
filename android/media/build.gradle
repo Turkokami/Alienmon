@@ -1,0 +1,11 @@
+// Install-time asset pack: voices and music ship here so the base download stays under Play's 200 MB limit.
+// Play installs it together with the app and its files land in the same assets as the base, so the game sees no difference.
+// tools/app_media_pack.py moves the files in after `npx cap sync android`.
+apply plugin: 'com.android.asset-pack'
+
+assetPack {
+    packName = "media"
+    dynamicDelivery {
+        deliveryType = "install-time"
+    }
+}

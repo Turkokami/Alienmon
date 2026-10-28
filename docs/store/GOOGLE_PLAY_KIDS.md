@@ -86,4 +86,9 @@ Expected result: ESRB **Everyone**, PEGI **7**, USK **6**. Monster battles usual
 
 1. **Personal developer accounts made after November 2023** must run a **closed test with at least 12 testers for 14 days in a row** before production access unlocks. Organisation accounts skip this.
 2. Upload the signed **.aab** to Internal testing first, then Closed testing.
-3. **Size:** Play's limit for the base download is 200 MB; bigger games ship the rest as Play Asset Delivery packs. The build is about 485 MB without the arena, so it has to be compressed before the first upload.
+3. **Size (solved).** Play's limit for the base download is 200 MB. `npm run android` does it all:
+   - `tools/app_compress.py`: maps become WebP, voices go to 48 kbps mono, music to 96 kbps. They look and sound the same; samples were checked by the owner.
+   - `tools/app_media_pack.py`: moves voices and music into the install-time asset pack `android/media`.
+   - Measured on 2026-10-27 (arena removed): base **138.5 MB**, media pack 108.2 MB. Play installs both together, and the game reads them as one set of files.
+4. **Testing on a phone from Android Studio:** a plain Run installs only the base, so there are no voices or music. Either set Run > Edit Configurations > Deploy to "APK from app bundle", or test through Play's internal testing track.
+5. **Build the store app from the live branch (main), not maps-v2.** maps-v2 adds the test-only arena (90 MB) and test options.

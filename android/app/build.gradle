@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
+    assetPacks = [":media"]   // voices and music (android/media, filled by tools/app_media_pack.py)
     namespace = "com.alienmon.game"
     compileSdk = rootProject.ext.compileSdkVersion
     defaultConfig {
