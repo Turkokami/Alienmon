@@ -150,7 +150,10 @@ let RHUB=null;
 const RCARDS=[{k:'card_1v1',n:'1 vs 1',go:()=>{RTO.mode='1v1';rtaStart()}},{k:'card_3v3',n:'3 vs 3',go:()=>{RTO.mode='3v3';rtaStart()}},{k:'card_ffa',n:'Free-for-all',go:()=>rtaStart({ffa:1})},
  {k:'card_cups',n:'Cups',go:()=>rCupMenu()},{k:'card_code',n:'Battle Code',go:()=>rCodeMenu()},{k:'card_practice',n:'Practice',go:()=>{const k=RTO.mode;RTO.mode='1v1';rtaStart({arena:PL.length,diff:0});RTO.mode=k}}];
 // back: where B returns to ('planet' from a lobby or Recovery Bay, else the START menu)
-function rtaHub(back){if(!G.party.length)return say('You need an Alienmon to enter the Arena.');if(back)RTO.back=back;RTA=null;RHUB={sel:RHUB?RHUB.sel:0,t:0};scene='rta';rsLoad();if(back)rVo('linkers_ready')}
+// the Linker Arena opens after the second Keeper (two Signal Shards); free roam skips the lock for testers
+const rtaLocked=()=>!freeRoam()&&(G.shards||0)<2;
+function rtaHub(back){if(!G.party.length)return say('You need an Alienmon to enter the Arena.');if(rtaLocked())return say(['Receptionist: The Linker Arena is for Linkers with two Signal Shards.','Beat your second Keeper, then come back and show the crowd what you can do!'],null,'referee');
+ if(back)RTO.back=back;RTA=null;RHUB={sel:RHUB?RHUB.sel:0,t:0};scene='rta';rsLoad();if(back)rVo('linkers_ready');return true}
 function rtaExit(){RHUB=null;RTA=null;if(RTO.back==='planet'){RTO.back=null;scene='planet'}else{scene='menu';menuMode='root'}}
 function rHubUpd(){const H=RHUB;if(!H)return rtaExit();H.t++;
  if(H.pod){if(H.pod.t++>30&&(P_('a')||P_('b'))){const cb=H.pod.cb;H.pod=null;if(cb)cb()}return}

@@ -1,0 +1,648 @@
+file,quest,quest_title,beat,speaker,voice,text
+fill_npc_0001_ystran.mp3,028,npc,npc,Ystran echo,ystran,...the mountain's heart burns like Ystra's dying sun...
+fill_npc_0002_kit_sporix.mp3,030,npc,npc,Kit,kit,My Gloopa sniffs out loose bolts. It's better at it than me!
+fill_npc_0003_kit_plazmo.mp3,030,npc,npc,Kit,kit,My Sporix sniffs out loose bolts. It's better at it than me!
+fill_npc_0004_kit_gloopa.mp3,030,npc,npc,Kit,kit,My Plazmo sniffs out loose bolts. It's better at it than me!
+fill_sign_object_0001_narrator.mp3,052,sign/object,sign/object,Narrator,narrator,"PORT SALTREACH DOCKS. Sunny skies, clear water, and the best fish pies in the Kessler system."
+fill_sign_object_0002_narrator.mp3,062,sign/object,sign/object,Narrator,narrator,NEONIS STARPORT - Deck 7. Mind the landing ring while ships are docking.
+fill_sign_object_0003_narrator.mp3,063,sign/object,sign/object,Narrator,narrator,A holo-ad loops: a glowing jellyfish Alienmon drifts by. 'Stay charged. Stay bright. Neonis.'
+fill_sign_object_0004_narrator.mp3,072,sign/object,sign/object,Narrator,narrator,The carvings are worn smooth by the tide. Only one glyph is clear: a seed.
+fill_sign_object_0005_narrator.mp3,073,sign/object,sign/object,Narrator,narrator,DIG CAMP - Glyphos Expedition. Keep to the marked paths. Do NOT lick the crystals.
+fill_sign_object_0006_narrator.mp3,077,sign/object,sign/object,Narrator,narrator,"Its glyphs pulse softly, like a heartbeat. It feels like it is waiting for someone."
+fill_sign_object_0007_narrator.mp3,077,sign/object,sign/object,Narrator,narrator,The carving shows a ring of stones around a sleeping seed.
+fill_sign_object_0008_narrator.mp3,080,sign/object,sign/object,Narrator,narrator,Old chimes hang silent above the dais.
+fill_sign_object_0009_narrator.mp3,080,sign/object,sign/object,Narrator,narrator,"WHEN THE BELLS SING, THE GUARDIANS LISTEN."
+fill_sign_object_0010_narrator.mp3,082,sign/object,sign/object,Narrator,narrator,CINDER HOLLOW. Raised on the first ember seam of Pyros.
+fill_sign_object_0011_narrator.mp3,082,sign/object,sign/object,Narrator,narrator,"Below, someone has scratched: 'Dig deep, come home.'"
+fill_sign_object_0012_narrator.mp3,082,sign/object,sign/object,Narrator,narrator,The camp furnace. It has not gone out in forty years.
+fill_sign_object_0013_narrator.mp3,082,sign/object,sign/object,Narrator,narrator,'Lit by Old Basalt.'
+fill_sign_object_0014_narrator.mp3,093,sign/object,sign/object,Narrator,narrator,Frostmark Research Station. The crystal in this fountain was cut from the glacier and never melts.
+fill_sign_object_0015_narrator.mp3,093,sign/object,sign/object,Narrator,narrator,Founded by survey crews who came for the aurora and stayed for the ice.
+fill_sign_object_0016_narrator.mp3,096,sign/object,sign/object,Narrator,narrator,Frostmark. East: Crystal Caverns.
+fill_sign_object_0017_narrator.mp3,096,sign/object,sign/object,Narrator,narrator,frost grass hides wild Alienmon. Keep a Stasis Pod handy.
+fill_sign_object_0018_narrator.mp3,103,sign/object,sign/object,Narrator,narrator,Aurora Relay Crystal. It pulses in time with the sky.
+fill_sign_object_0019_narrator.mp3,103,sign/object,sign/object,Narrator,narrator,'Keeper Ingrid Vale awaits challengers on the floor above.'
+fill_sign_object_0020_narrator.mp3,105,sign/object,sign/object,Narrator,narrator,The medical bay's scanner hums. Helix-grade nanites patch up your whole team.
+fill_sign_object_0021_narrator.mp3,105,sign/object,sign/object,Narrator,narrator,HELIX STATION - DOCKING RING. All personnel: report unregistered Linkers to Security.
+fill_sign_object_0022_narrator.mp3,106,sign/object,sign/object,Narrator,narrator,Shift A - cages. Shift B - cages. Shift C - also cages. Complaints to Admin Vex.
+fill_sign_object_0023_narrator.mp3,107,sign/object,sign/object,Narrator,narrator,SPECIMEN TANK 1F-03. Do not tap the glass. It taps back.
+fill_sign_object_0024_narrator.mp3,108,sign/object,sign/object,Narrator,narrator,stabiliser coolant at 81%. Director Thorne wants 100% by next cycle.
+fill_sign_object_0025_narrator.mp3,109,sign/object,sign/object,Narrator,narrator,"PROJECT UNITY LOG, Director Thorne:"
+fill_sign_object_0026_narrator.mp3,109,sign/object,sign/object,Narrator,narrator,"""The Ystran prophecy says whoever reunites all her children lets the Seedmother grow again."""
+fill_sign_object_0027_narrator.mp3,109,sign/object,sign/object,Narrator,narrator,"""So we will hold all of them. One of every species, in one vault, carried through the Rift."""
+fill_sign_object_0028_narrator.mp3,109,sign/object,sign/object,Narrator,narrator,"""Whoever holds every species controls her power to regrow life. Then no accident is ever final."""
+fill_sign_object_0029_narrator.mp3,109,sign/object,sign/object,Narrator,narrator,the Alienmon inside presses a paw to the glass. The lock reads HELIX ADMIN ONLY.
+fill_sign_object_0030_narrator.mp3,109,sign/object,sign/object,Narrator,narrator,something green shuffles behind the bars. The lock is keyed to an admin card.
+fill_sign_object_0031_narrator.mp3,110,sign/object,sign/object,Narrator,narrator,CONTAINMENT WING 2F. Toxin pools are for Alienmon conditioning. Do not swim.
+fill_sign_object_0032_narrator.mp3,110,sign/object,sign/object,Narrator,narrator,"two tanks, two sleeping Alienmon. A sticky note says 'ask Bronn for the code'."
+fill_sign_object_0033_narrator.mp3,110,sign/object,sign/object,Narrator,narrator,status SEDATED. Someone has doodled a sad face on the screen.
+fill_sign_object_0034_narrator.mp3,111,sign/object,sign/object,Narrator,narrator,output 340% of rated. A label underneath says 'it's fine'.
+fill_sign_object_0035_narrator.mp3,111,sign/object,sign/object,Narrator,narrator,Rerouted core power to the Rift engine again. Lights on 2F may flicker. - B.
+fill_sign_object_0036_narrator.mp3,112,sign/object,sign/object,Narrator,narrator,every planet you've visited glows. One dark point beyond them all is marked RIFT.
+fill_sign_object_0037_narrator.mp3,114,sign/object,sign/object,Narrator,narrator,A small crystal shrine. Travellers make a wish here before crossing the Wind Bridges.
+fill_sign_object_0038_narrator.mp3,114,sign/object,sign/object,Narrator,narrator,SKYLINER HALO-1. Boarding by ticket only.
+fill_sign_object_0039_narrator.mp3,114,sign/object,sign/object,Narrator,narrator,none. Enjoy the view!
+fill_sign_object_0040_narrator.mp3,115,sign/object,sign/object,Narrator,narrator,THE HOLO-GLOBE. Fourteen worlds turn in its light.
+fill_sign_object_0041_narrator.mp3,115,sign/object,sign/object,Narrator,narrator,one of them is slowly dimming.
+fill_sign_object_0042_narrator.mp3,124,sign/object,sign/object,Narrator,narrator,lit the night the city tipped into the sinkhole. It has never gone out.
+fill_sign_object_0043_narrator.mp3,133,sign/object,sign/object,Narrator,narrator,"'Thorne knew. The engine does not open a door. It rings a bell, and something below is listening.'"
+fill_sign_object_0044_narrator.mp3,133,sign/object,sign/object,Narrator,narrator,"A cracked Rift-engine prototype. The orb inside still turns, slowly, toward the floor."
+fill_sign_object_0045_narrator.mp3,136,sign/object,sign/object,Narrator,narrator,A hand-lettered card on the stall: 'Closed until the Helix inspection is over. Again.'
+fill_sign_object_0046_narrator.mp3,136,sign/object,sign/object,Narrator,narrator,Civilian access to the Starfall Rift is suspended by order of the Helix Directive.
+fill_sign_object_0047_narrator.mp3,136,sign/object,sign/object,Narrator,narrator,'Since when does Helix give orders out here?'
+fill_sign_object_0048_narrator.mp3,140,sign/object,sign/object,Narrator,narrator,"Teo's tent. The flap is tied shut with a careful knot, as if he meant to come back."
+fill_sign_object_0049_narrator.mp3,140,sign/object,sign/object,Narrator,narrator,"A child's drawing is pinned inside: a man, a star, and the word 'DAD'."
+fill_sign_object_0050_narrator.mp3,140,sign/object,sign/object,Narrator,narrator,"Teo's Journal, last page: 'The light at the bottom is singing. I think it knows my name.'"
+fill_sign_object_0051_narrator.mp3,140,sign/object,sign/object,Narrator,narrator,"The campfire is long cold. Three cups still sit around it, one never used."
+fill_sign_object_0052_narrator.mp3,141,sign/object,sign/object,Narrator,narrator,"Below, the Rift turns slowly, a purple wound in the crater floor. The hum is louder here."
+fill_sign_object_0053_narrator.mp3,145,sign/object,sign/object,Narrator,narrator,RIFT ENGINE CONSOLE - Containment field: 41%. Output: rising. Authorized by Director K. Thorne.
+fill_sign_object_0054_narrator.mp3,146,sign/object,sign/object,Narrator,narrator,Recovery terminal online. Last full heal before the Great Telescope.
+fill_sign_object_0055_narrator.mp3,146,sign/object,sign/object,Narrator,narrator,Observatory Halls of the Quorum. Road east: the Great Telescope.
+fill_sign_object_0056_narrator.mp3,147,sign/object,sign/object,Narrator,narrator,"CRYSTAL HALL, 1F. Seat of Quorum member Marisol Fenn."
+fill_sign_object_0057_narrator.mp3,147,sign/object,sign/object,Narrator,narrator,Step into the orrery column to ride up to the Sonic Hall.
+fill_sign_object_0058_narrator.mp3,148,sign/object,sign/object,Narrator,narrator,"SONIC HALL, 2F. Seat of Quorum member Duke Harrow."
+fill_sign_object_0059_narrator.mp3,148,sign/object,sign/object,Narrator,narrator,The dome hums a low chord. The right staircase climbs to 3F.
+fill_sign_object_0060_narrator.mp3,149,sign/object,sign/object,Narrator,narrator,"PLASMA HALL, 3F. Seat of the silent Quorum member Saga."
+fill_sign_object_0061_narrator.mp3,149,sign/object,sign/object,Narrator,narrator,A lone flame burns in the orb. The right staircase climbs to 4F.
+fill_sign_object_0062_narrator.mp3,150,sign/object,sign/object,Narrator,narrator,"GRAVITY HALL, 4F. Seat of Quorum member General Ostrander."
+fill_sign_object_0063_narrator.mp3,150,sign/object,sign/object,Narrator,narrator,"Beyond this hall, only the Prime Linker waits at the Great Telescope."
+fill_sign_object_0064_narrator.mp3,152,sign/object,sign/object,Narrator,narrator,"Every Linker world is pinned here, Dustara to Starfall."
+fill_sign_object_0065_narrator.mp3,152,sign/object,sign/object,Narrator,narrator,"One faint point past the Rift has no name, only a note: 'Ystra?'"
+fill_npc_0005_ystran.mp3,153,npc,npc,Ystran echo,ystran,"I remember this place green. Look, the first moss is back on the Arrival Fragment!"
+fill_npc_0006_ystran.mp3,153,npc,npc,Ystran echo,ystran,"...welcome home, children of the stars. Rest by the crystal. It still remembers how to heal."
+fill_npc_0007_ystran.mp3,153,npc,npc,Ystran echo,ystran,"We were a voice once. Now we are only the echo, waiting for someone to listen."
+fill_sign_object_0066_narrator.mp3,153,sign/object,sign/object,Narrator,narrator,The carved stone hums. A warm light washes over your team.
+fill_sign_object_0067_narrator.mp3,153,sign/object,sign/object,Narrator,narrator,A banner bearing the Seedmother's crest. Stitched below: 'Every road home begins with a single seed.'
+fill_npc_0008_ystran.mp3,154,npc,npc,Ystran echo,ystran,The floating islands are putting down roots again. Terravox hums when it walks.
+fill_npc_0009_ystran.mp3,154,npc,npc,Ystran echo,ystran,Terravox carried a forest on its back... these islands were its footsteps.
+fill_npc_0010_ystran.mp3,154,npc,npc,Ystran echo,ystran,...do you hear the roots? They are still reaching for each other.
+fill_npc_0011_ystran.mp3,156,npc,npc,Ystran echo,ystran,Coral is growing in the Drowned Seas. Aquelion says the dreams are happier.
+fill_npc_0012_ystran.mp3,156,npc,npc,Ystran echo,ystran,These were our seas. Aquelion sang over them... now the water drowns the old roads.
+fill_npc_0013_ystran.mp3,156,npc,npc,Ystran echo,ystran,...the coral still grows. Grief is not the same as ending.
+fill_sign_object_0068_narrator.mp3,156,sign/object,sign/object,Narrator,narrator,"A drowned archway. Aquelion, Pillar of the Seas, once sang the tides through this gate."
+fill_npc_0014_ystran.mp3,157,npc,npc,Ystran echo,ystran,"When the sun began to die, we fed it everything... and still it dimmed."
+fill_npc_0015_ystran.mp3,157,npc,npc,Ystran echo,ystran,"...go north, into the crystal halls. The light there was ours."
+fill_sign_object_0069_narrator.mp3,157,sign/object,sign/object,Narrator,narrator,"The Sun Forge. Ignarch, Pillar of the Sun, fed Ystra's red star from this flame until the very end."
+fill_npc_0016_ystran.mp3,158,npc,npc,Ystran echo,ystran,The Choir chamber sings on its own now. Every note is one of her children.
+fill_sign_object_0070_narrator.mp3,158,sign/object,sign/object,Narrator,narrator,"Crystal altar. Glyphs flicker: 'We sang our memory into stone, so the stars would know we were here.'"
+fill_sign_object_0071_narrator.mp3,158,sign/object,sign/object,Narrator,narrator,"A sealed reliquary. Its light pulses slowly, like something asleep and dreaming."
+fill_npc_0017_ystran.mp3,159,npc,npc,Ystran echo,ystran,...this was a library. We sang knowledge into crystal so it would outlive us. It did.
+fill_npc_0018_ystran.mp3,159,npc,npc,Ystran echo,ystran,"Beyond these halls, the forest sickens. The Devourer's shadow touched it first."
+fill_sign_object_0072_narrator.mp3,159,sign/object,sign/object,Narrator,narrator,A small shrine. A worn carving shows seedpods rising from a great tree into the sky.
+fill_sign_object_0073_narrator.mp3,159,sign/object,sign/object,Narrator,narrator,The Archive Disc. Most of its records are dark. One still glows: a map of stars named Kessler.
+fill_npc_0019_kit_sporix.mp3,160,npc,npc,Kit,kit,"My Abyssor can heal the blight, slowly, tree by tree. We'll stay and do this part."
+fill_npc_0020_kit_plazmo.mp3,160,npc,npc,Kit,kit,"My Fungaroth can heal the blight, slowly, tree by tree. We'll stay and do this part."
+fill_npc_0021_kit_gloopa.mp3,160,npc,npc,Kit,kit,"My Solarach can heal the blight, slowly, tree by tree. We'll stay and do this part."
+fill_npc_0022_ystran.mp3,160,npc,npc,Ystran echo,ystran,The blight is gone. The little shadows sleep in the new leaves.
+fill_npc_0023_ystran.mp3,161,npc,npc,Ystran echo,ystran,"...the trees remember being green. If you listen, they will tell you what green sounded like."
+fill_npc_0024_ystran.mp3,161,npc,npc,Ystran echo,ystran,"Past the void lies the Heartroot's crater. First, you must look into the hungry one."
+fill_npc_0025_ystran.mp3,162,npc,npc,Ystran echo,ystran,"The Devourer was never cruel... only hungry, and so very alone."
+fill_npc_0026_ystran.mp3,162,npc,npc,Ystran echo,ystran,"...if you face it, do not hate it. Hate is a kind of hunger too."
+fill_sign_object_0074_narrator.mp3,162,sign/object,sign/object,Narrator,narrator,A cracked pillar. Scratched in haste: 'It does not hate us. It is only hungry. Do not look into it too long.'
+fill_npc_0027_ystran.mp3,163,npc,npc,Ystran echo,ystran,"Every child came home and stayed itself. That is the whole legend. Thank you, Unifier."
+fill_npc_0028_ystran.mp3,163,npc,npc,Ystran echo,ystran,Her world-tree stood here once. Every seedpod that crossed the stars was a piece of her. Now only the Heartroot remains.
+fill_npc_0029_ystran.mp3,163,npc,npc,Ystran echo,ystran,"...she is tired, Linker. But she waited for you. She always knew someone would come."
+fill_sign_object_0075_narrator.mp3,163,sign/object,sign/object,Narrator,narrator,"A crystal shard from the Seedmother's old world-tree. It is warm to the touch, and hums the same note as your partner."
+fill_sign_object_0076_narrator.mp3,163,sign/object,sign/object,Narrator,narrator,A quiet spring shrine. Seedpods once floated here before their long fall between the stars.
+fill_sign_object_0077_narrator.mp3,781,sign/object,sign/object,Narrator,narrator,SEA ARCH COVE. Quiet waters. Something very large sleeps beneath the arch. Please do not wake it.
+fill_sign_object_0078_narrator.mp3,780,sign/object,sign/object,Narrator,narrator,"Captain's Log, faded: 'The arch woke again tonight. The water glowed blue all the way to the tower.'"
+fill_sign_object_0079_narrator.mp3,780,sign/object,sign/object,Narrator,narrator,The rest of the page is water-stained.
+fill_sign_object_0080_narrator.mp3,525,sign/object,sign/object,Narrator,narrator,"Frozen Falls. The water froze mid-plunge, all at once, in a single night."
+fill_sign_object_0081_narrator.mp3,525,sign/object,sign/object,Narrator,narrator,Locals swear a Glaciryx nests behind the ice curtain.
+fill_sign_object_0082_narrator.mp3,526,sign/object,sign/object,Narrator,narrator,"Frozen fossil site #1. A jawbone longer than a shuttle, gouged by teeth from something even bigger."
+fill_sign_object_0083_narrator.mp3,526,sign/object,sign/object,Narrator,narrator,The bite marks are ringed with frost that never thaws.
+fill_sign_object_0084_narrator.mp3,526,sign/object,sign/object,Narrator,narrator,Frozen fossil site #2. Ribs snapped clean through. The tooth marks are as wide as a road.
+fill_sign_object_0085_narrator.mp3,526,sign/object,sign/object,Narrator,narrator,'Predator unknown. Size: impossible.'
+fill_sign_object_0086_narrator.mp3,526,sign/object,sign/object,Narrator,narrator,Frozen fossil site #3. A thighbone with one huge crescent bite taken out of it.
+fill_sign_object_0087_narrator.mp3,526,sign/object,sign/object,Narrator,narrator,"Three sites, one bite pattern. Whatever ate these was the size of a moon."
+fill_sign_object_0088_narrator.mp3,526,sign/object,sign/object,Narrator,narrator,"a giant Ystran creature, frozen mid-roar in the glacier wall."
+fill_sign_object_0089_narrator.mp3,526,sign/object,sign/object,Narrator,narrator,Dig crews say it hums when the aurora is bright.
+fill_quest_0001_ystran.mp3,quests/[]/dialogue/start/[],quest,quest,Ystran echo,ystran,...turn the light toward the doors... and only a Chimelet's note can wake them...
+fill_quest_0002_ystran.mp3,quests/[]/dialogue/complete/[],quest,quest,Ystran echo,ystran,...you listened... thank you...
+fill_story_picture_0001_narrator_sporix.mp3,cut_03,story picture,story picture,Narrator,narrator,"One huge eye blinks at you, then at Sporix."
+fill_story_picture_0002_narrator_plazmo.mp3,cut_03,story picture,story picture,Narrator,narrator,"One huge eye blinks at you, then at Plazmo."
+fill_story_picture_0003_narrator_gloopa.mp3,cut_03,story picture,story picture,Narrator,narrator,"One huge eye blinks at you, then at Gloopa."
+fill_story_picture_0004_narrator_sporix.mp3,cut_05,story picture,story picture,Narrator,narrator,"Mud everywhere. Sporix is worn out, and you scoop it up gently."
+fill_story_picture_0005_narrator_plazmo.mp3,cut_05,story picture,story picture,Narrator,narrator,"Mud everywhere. Plazmo is worn out, and you scoop it up gently."
+fill_story_picture_0006_narrator_gloopa.mp3,cut_05,story picture,story picture,Narrator,narrator,"Mud everywhere. Gloopa is worn out, and you scoop it up gently."
+fill_story_picture_0007_narrator_sporix.mp3,cut_07,story picture,story picture,Narrator,narrator,"Sporix throws itself in the way. When the dust clears, the agents are gone."
+fill_story_picture_0008_narrator_plazmo.mp3,cut_07,story picture,story picture,Narrator,narrator,"Plazmo throws itself in the way. When the dust clears, the agents are gone."
+fill_story_picture_0009_narrator_gloopa.mp3,cut_07,story picture,story picture,Narrator,narrator,"Gloopa throws itself in the way. When the dust clears, the agents are gone."
+fill_story_picture_0010_narrator_sporix.mp3,cut_10,story picture,story picture,Narrator,narrator,Dax's giant boulder beast raises one huge foot over Sporix.
+fill_story_picture_0011_narrator_plazmo.mp3,cut_10,story picture,story picture,Narrator,narrator,Dax's giant boulder beast raises one huge foot over Plazmo.
+fill_story_picture_0012_narrator_gloopa.mp3,cut_10,story picture,story picture,Narrator,narrator,Dax's giant boulder beast raises one huge foot over Gloopa.
+fill_story_picture_0013_narrator_sporix.mp3,cut_10,story picture,story picture,Narrator,narrator,"You shout NOW! Sporix blasts the cracked ground, and the rock gives way."
+fill_story_picture_0014_narrator_plazmo.mp3,cut_10,story picture,story picture,Narrator,narrator,"You shout NOW! Plazmo blasts the cracked ground, and the rock gives way."
+fill_story_picture_0015_narrator_gloopa.mp3,cut_10,story picture,story picture,Narrator,narrator,"You shout NOW! Gloopa blasts the cracked ground, and the rock gives way."
+fill_picture_caption_0001_narrator.mp3,cut_66,picture caption,picture caption,Narrator,narrator,Liss at the third wind shrine
+fill_keeper_planet_0001_vashti.mp3,[]/npc,keeper/planet,keeper/planet,Dr. Vashti,vashti,Ferrox is the closest world with a Relay Tower. Fly there and challenge its Keeper!
+fill_keeper_planet_0002_technician.mp3,[]/npc,keeper/planet,keeper/planet,Scrapper,technician,Hank Briggs built half this planet's tower out of junk. His Alienmon hit like freight trains.
+fill_keeper_planet_0003_researcher.mp3,[]/npc,keeper/planet,keeper/planet,Botanist,researcher,The spores here react to the towers... almost like they're homesick.
+fill_keeper_planet_0004_sailor.mp3,[]/npc,keeper/planet,keeper/planet,Sailor,sailor,Helix ships were circling the tower last night. Strange folks in white coats.
+fill_keeper_planet_0005_researcher.mp3,[]/npc,keeper/planet,keeper/planet,Archaeologist,researcher,"These murals show a shadow eating a planet, and a mother creature launching seeds into space."
+fill_keeper_planet_0006_elder_m.mp3,[]/npc,keeper/planet,keeper/planet,Old miner,elder_m,Basalt saw the first pod land. A man named Teo walked into the light after it and never came back.
+fill_keeper_planet_0007_researcher.mp3,[]/npc,keeper/planet,keeper/planet,Researcher,researcher,Ingrid found a frozen Ystra creature with bite marks the size of buildings.
+fill_keeper_planet_0008_grub.mp3,[]/npc,keeper/planet,keeper/planet,Grub,grub,Psst. I used to work here. Thorne's planning to overload the towers and rip the Rift wide open.
+fill_keeper_planet_0009_pilgrim.mp3,[]/npc,keeper/planet,keeper/planet,Pilgrim,pilgrim,The twins see the future. They say the Rift opens soon.
+fill_keeper_planet_0010_explorer.mp3,[]/npc,keeper/planet,keeper/planet,Lost wanderer,explorer,Kade used to be Helix. He quit when he learned what's on the other side of the Rift.
+fill_keeper_planet_0011_sola.mp3,[]/npc,keeper/planet,keeper/planet,Sola,sola,Thorne said my dad was an 'acceptable loss.' He's in there. I'm fighting with you this time.
+fill_keeper_planet_0012_narrator.mp3,[]/keeper/flagMsg,keeper/planet,keeper/planet,Narrator,narrator,"Zib and the 8 shards resonate. The Rift seals! Teo Reyes stumbles out, safe. The Apex Array is now open."
+fill_keeper_planet_0013_marisol.mp3,[]/npc,keeper/planet,keeper/planet,Marisol Fenn,marisol,The Quorum stepped aside for you. Only the Prime Linker remains.
+fill_keeper_planet_0014_narrator.mp3,[]/keeper/flagMsg,keeper/planet,keeper/planet,Narrator,narrator,You are the new Prime Linker! A path to Ystra has opened.
+fill_keeper_planet_0015_townsman.mp3,[]/npc,keeper/planet,keeper/planet,A voice in your Linker,townsman,My children... thank you for keeping them safe.
+fill_gate_message_0001_dusty.mp3,gates/[]/blocked_msg,gate message,gate message,Dusty,dusty,Sola's waiting for you at the trading post. Settle that first!
+fill_gate_message_0002_narrator.mp3,gates/[]/blocked_msg,gate message,gate message,Narrator,narrator,Forge Miner Dax blocks the gate: 'Beat me first!'
+fill_gate_message_0003_narrator.mp3,gates/[]/blocked_msg,gate message,gate message,Narrator,narrator,The harbor gate's runes stay dark. (Needs 2 Signal Shards.)
+fill_gate_message_0004_squid.mp3,gates/[]/blocked_msg,gate message,gate message,Squid Sailor,squid,The ferry's grounded till the Relay signal settles. (Needs 4 Signal Shards.)
+fill_gate_message_0005_narrator.mp3,gates/[]/blocked_msg,gate message,gate message,Narrator,narrator,A sealed Ystran door glows red. The Ystran echo whispers: '...learn our story first...'
+fill_gate_message_0006_grunt.mp3,gates/[]/blocked_msg,gate message,gate message,Helix Grunt,grunt,Nobody gets in without clearance!
+fill_gate_message_0007_narrator.mp3,gates/[]/blocked_msg,gate message,gate message,Narrator,narrator,The shuttle hatch needs a Helix Keycard.
+fill_gate_message_0008_narrator.mp3,gates/[]/blocked_msg,gate message,gate message,Narrator,narrator,"Deep inside, a Relay seal hums. (Needs 7 Signal Shards.)"
+fill_gate_message_0009_grunt.mp3,gates/[]/blocked_msg,gate message,gate message,Strand,grunt,Thorne's locked the crater shuttle. Only someone with all 8 Shards could override it.
+fill_gate_message_0010_sailor.mp3,gates/[]/blocked_msg,gate message,gate message,Dock worker,sailor,Nobody boards that drifting freighter. Not until the harbor's safe again.
+fill_gate_message_0011_grunt.mp3,gates/[]/blocked_msg,gate message,gate message,Helix Guard,grunt,This vessel is Helix Directive property. Move along.
+fill_gate_message_0012_narrator.mp3,gates/[]/blocked_msg,gate message,gate message,Narrator,narrator,A rough-looking sailor: Private boat. Shove off.
+fill_npc_0030_miner.mp3,town_people,npc,npc,Old prospector,miner,The Starfall crater glows purple every night since the pods came down.
+fill_npc_0031_technician.mp3,town_people,npc,npc,Mechanic,technician,Press B to hop gaps. Saves you the long way around the canyon.
+fill_npc_0032_pilgrim.mp3,town_people,npc,npc,Pilgrim,pilgrim,The holo-globe shows all fourteen worlds at once.
+fill_npc_0033_researcher.mp3,town_people,npc,npc,Skywatcher,researcher,The islands float on updrafts. Don't look down.
+fill_npc_0034_pilgrim.mp3,town_people,npc,npc,Mystic,pilgrim,The twins see what you'll do before you do it.
+fill_npc_0035_fan.mp3,town_people,npc,npc,Raver,fan,The whole city hums with Volt energy. Feel it?
+fill_npc_0036_technician.mp3,town_people,npc,npc,Coder,technician,Every sign in Neonis runs on Alienmon power.
+fill_npc_0037_explorer.mp3,town_people,npc,npc,Courier,explorer,Deliveries are faster across the catwalks.
+fill_npc_0038_miner.mp3,town_people,npc,npc,Miner,miner,The lava's hot enough to melt a mine cart. Stay on the trestles.
+fill_npc_0039_miner.mp3,town_people,npc,npc,Smith,miner,Magma-types forge their own armor down here.
+fill_npc_0040_townsman.mp3,town_people,npc,npc,Ash walker,townsman,The crater's light still flickers after all these years.
+fill_npc_0041_researcher.mp3,town_people,npc,npc,Astronomer,researcher,The great telescope can see all the way to Ystra.
+fill_npc_0042_guard.mp3,town_people,npc,npc,Summit guard,guard,Only the strongest Linkers make it this high.
+fill_npc_0043_townsman.mp3,town_people,npc,npc,Ace Linker,townsman,Train hard. The summit doesn't forgive.
+fill_npc_0044_researcher.mp3,town_people,npc,npc,Researcher,researcher,Something huge is frozen inside the glacier wall.
+fill_npc_0045_researcher.mp3,town_people,npc,npc,Archaeologist,researcher,These glyphs tell the Alienmon's story. Read the murals.
+fill_npc_0046_pilgrim.mp3,town_people,npc,npc,Pilgrim,pilgrim,The obelisk hums when you hold Signal Shards near it.
+fill_npc_0047_researcher.mp3,town_people,npc,npc,Rune scholar,researcher,Crystal-types grow in the old courtyards.
+fill_npc_0048_technician.mp3,town_people,npc,npc,Engineer,technician,The power cores have been running hot all week.
+fill_npc_0049_farmer.mp3,town_people,npc,npc,Spore tender,farmer,Mind the lily pads. Some float farther than they look.
+fill_npc_0050_researcher.mp3,town_people,npc,npc,Botanist,researcher,The mushrooms glow brighter near the Relay Tower.
+fill_npc_0051_explorer.mp3,town_people,npc,npc,Bog hiker,explorer,Toxin-types hide in the moss reeds. Carry Cure Spray.
+fill_npc_0052_pilgrim.mp3,town_people,npc,npc,Rift seeker,pilgrim,Can you hear it? The crater hums like a heartbeat.
+fill_npc_0053_researcher.mp3,town_people,npc,npc,Star watcher,researcher,Crystals here grow overnight.
+fill_npc_0054_miner.mp3,town_people,npc,npc,Rig worker,miner,Helix left half its drills running when they ran.
+fill_npc_0055_sailor.mp3,town_people,npc,npc,Sailor,sailor,The docks go on for miles. Jump the short gaps between piers.
+fill_npc_0056_sailor.mp3,town_people,npc,npc,Swimmer,sailor,Hydro-types shine here. Volt moves send them flying.
+fill_npc_0057_townswoman.mp3,town_people,npc,npc,Dockhand,townswoman,Helix boats were circling the harbor again last night.
+fill_npc_0058_ystran.mp3,town_people,npc,npc,Ystran echo,ystran,"...welcome home, children of the stars..."
+fill_npc_0059_pilgrim.mp3,town_people,npc,npc,Rift walker,pilgrim,"Every fragment here was one world, once."
+fill_npc_0060_pilgrim.mp3,town_people,npc,npc,Seeker,pilgrim,The crystal forest sings when the Seedmother wakes.
+fill_game_text_0001_linker.mp3,arena.js:71,game text,game text,Linker,linker,The breach is still open. Heal up and try again!
+fill_game_text_0002_linker.mp3,arena.js:85,game text,game text,Linker,linker,You need an Alienmon to enter the Arena.
+fill_game_text_0003_linker.mp3,arena.js:93,game text,game text,Linker,linker,Arena battles happen in real time. Every Alienmon fights at level 50.
+fill_game_text_0004_linker.mp3,arena.js:93,game text,game text,Linker,linker,"Strong moves need time to recharge, and the biggest ones glow before they hit. Watch for warning rings on the ground and dodge!"
+fill_game_text_0005_linker.mp3,arena.js:93,game text,game text,Linker,linker,"In 3 vs 3, press SWAP (or Q) to switch Alienmon. When one is knocked out, the next one beams in."
+fill_game_text_0006_linker.mp3,arena.js:93,game text,game text,Linker,linker,"Heavy hits crack the floor, and every planet has its own hazard. Types, Traits and status all work like normal battles."
+fill_game_text_0007_linker.mp3,arena.js:118,game text,game text,Linker,linker,Free-for-all! Last Alienmon standing wins.
+fill_game_text_0008_linker.mp3,arena.js:132,game text,game text,Linker,linker,The Summit Cup opens once you win the other five cups.
+fill_game_text_0009_linker.mp3,arena.js:145,game text,game text,Linker,linker,Another win for the record.
+fill_game_text_0010_linker.mp3,arena.js:145,game text,game text,Linker,linker,You are the Linker Arena champion!
+fill_game_text_0011_clerk.mp3,arena.js:155,game text,game text,Receptionist,clerk,The Linker Arena is for Linkers with two Signal Shards.
+fill_game_text_0012_linker.mp3,arena.js:155,game text,game text,Linker,linker,"Beat your second Keeper, then come back and show the crowd what you can do!"
+fill_game_text_0013_linker.mp3,arena.js:187,game text,game text,Linker,linker,Beat a Keeper in the story first. Then they will accept a rematch here.
+fill_game_text_0014_linker.mp3,arena.js:196,game text,game text,Linker,linker,You received 500 Stardust!
+fill_game_text_0015_linker.mp3,arena.js:204,game text,game text,Linker,linker,That is a trade code. Battle Codes start with ARENA-.
+fill_game_text_0016_linker.mp3,arena.js:204,game text,game text,Linker,linker,That does not look like a Battle Code.
+fill_game_text_0017_linker.mp3,arena.js:205,game text,game text,Linker,linker,That code is damaged or was changed. Ask your friend to copy it again.
+fill_game_text_0018_linker.mp3,arena.js:206,game text,game text,Linker,linker,That code could not be read.
+fill_game_text_0019_linker.mp3,arena.js:208,game text,game text,Linker,linker,That team has an Alienmon the Linker Arena does not allow.
+fill_game_text_0020_linker.mp3,arena.js:214,game text,game text,Linker,linker,"paste a friend's code and battle their team. The computer steers it, on Hard."
+fill_game_text_0021_linker.mp3,arena.js:214,game text,game text,Linker,linker,"Your team never leaves your save, and codes can be used again and again."
+fill_game_text_0022_linker.mp3,arena.js:218,game text,game text,Linker,linker,Select the code and copy it.
+fill_game_text_0023_linker.mp3,cloud.js:13,game text,game text,Linker,linker,Could not reach the cloud. Check your connection.
+fill_game_text_0024_linker.mp3,cloud.js:33,game text,game text,Linker,linker,This device could not store the game.
+fill_game_text_0025_linker.mp3,cloud.js:36,game text,game text,Linker,linker,Cloud backup keeps a copy of your game safe online.
+fill_game_text_0026_linker.mp3,cloud.js:36,game text,game text,Linker,linker,You get a Linker backup code. With it you can bring your game back on any phone or computer.
+fill_game_text_0027_linker.mp3,cloud.js:36,game text,game text,Linker,linker,Turn on cloud backup?
+fill_game_text_0028_linker.mp3,cloud.js:38,game text,game text,Linker,linker,This device could not turn on cloud backup.
+fill_game_text_0029_linker.mp3,cloud.js:39,game text,game text,Linker,linker,Cloud backup is on! Here is your Linker backup code.
+fill_game_text_0030_linker.mp3,cloud.js:39,game text,game text,Linker,linker,Cloud backup was not turned on. Try again later.
+fill_game_text_0031_linker.mp3,cloud.js:41,game text,game text,Linker,linker,Your game is backed up.
+fill_game_text_0032_linker.mp3,extras.js:15,game text,game text,Linker,linker,Dr. Vashti is calling on your Linker!
+fill_game_text_0033_vashti.mp3,extras.js:15,game text,game text,Vashti,vashti,"""Congratulations on your first Signal Shard! I'm sending you my old Hover Board."""
+fill_game_text_0034_vashti.mp3,extras.js:16,game text,game text,Vashti,vashti,"""Two Shards! You'll be travelling a lot now, so take this Warp Beacon."""
+fill_game_text_0035_vashti.mp3,extras.js:17,game text,game text,Vashti,vashti,"""Three Shards! Take my Signal Finder. Plenty of Linkers drop things and never find them again."""
+fill_game_text_0036_linker.mp3,extras.js:20,game text,game text,Linker,linker,No field gear yet. Gear like the Hover Board turns up as your journey goes on.
+fill_game_text_0037_linker.mp3,extras.js:33,game text,game text,Linker,linker,The Warp Beacon only locks on while you are walking on a world.
+fill_game_text_0038_linker.mp3,extras.js:33,game text,game text,Linker,linker,Not in the middle of an arena run!
+fill_game_text_0039_linker.mp3,extras.js:34,game text,game text,Linker,linker,no other Recovery Bay is stored yet. Visit one and it is saved here.
+fill_game_text_0040_linker.mp3,extras.js:41,game text,game text,Linker,linker,It works once you are back outdoors.
+fill_game_text_0041_linker.mp3,extras.js:41,game text,game text,Linker,linker,You put the Hover Board away.
+fill_game_text_0042_linker.mp3,extras.js:95,game text,game text,Linker,linker,Tracked quest here!
+fill_game_text_0043_linker.mp3,extras.js:95,game text,game text,Linker,linker,A quest waits here.
+fill_game_text_0044_linker.mp3,extras.js:99,game text,game text,Linker,linker,Uses the smallest Gels that will top up every hurt Alienmon on your team.
+fill_game_text_0045_linker.mp3,extras.js:106,game text,game text,Linker,linker,Your team is topped up!
+fill_game_text_0046_linker.mp3,extras.js:106,game text,game text,Linker,linker,You ran out of Gels.
+fill_game_text_0047_linker.mp3,extras.js:107,game text,game text,Linker,linker,You have no Gels left.
+fill_game_text_0048_linker.mp3,extras.js:107,game text,game text,Linker,linker,Your team is already at full health.
+fill_game_text_0049_linker.mp3,extras.js:108,game text,game text,Linker,linker,No Tech Discs yet.
+fill_game_text_0050_linker.mp3,extras.js:108,game text,game text,Linker,linker,Nothing here yet.
+fill_game_text_0051_linker.mp3,extras.js:120,game text,game text,Linker,linker,Your Alienmon will ride in its pod.
+fill_game_text_0052_linker.mp3,extras.js:129,game text,game text,Linker,linker,Prismatic Alienmon appear three times as often.
+fill_game_text_0053_linker.mp3,extras.js:129,game text,game text,Linker,linker,Proof you registered every Alienmon. Dr. Vashti is speechless.
+fill_game_text_0054_linker.mp3,extras.js:144,game text,game text,Linker,linker,Battles give 1.5x EXP all Wednesday.
+fill_game_text_0055_linker.mp3,extras.js:144,game text,game text,Linker,linker,Prismatic Alienmon are 4x as common on Friday night (2x by day).
+fill_game_text_0056_linker.mp3,extras.js:145,game text,game text,Linker,linker,Every battle pays double Stardust on Saturday.
+fill_game_text_0057_linker.mp3,extras.js:145,game text,game text,Linker,linker,Rare Alienmon turn up 3x as often on Sunday.
+fill_game_text_0058_linker.mp3,extras.js:151,game text,game text,Linker,linker,No event today. Check back tomorrow!
+fill_game_text_0059_linker.mp3,extras.js:151,game text,game text,Linker,linker,"Wednesday Training Day, Friday Prismatic Night, Saturday Lucky Day, Sunday Swarm."
+fill_game_text_0060_linker.mp3,extras.js:151,game text,game text,Linker,linker,Void and Psi Alienmon are out in force.
+fill_game_text_0061_linker.mp3,extras.js:151,game text,game text,Linker,linker,Bio and Plasma Alienmon are out in force.
+fill_game_text_0062_linker.mp3,extras.js:157,game text,game text,Linker,linker,Mystery Gift needs a secure connection.
+fill_game_text_0063_linker.mp3,extras.js:159,game text,game text,Linker,linker,That code is not valid.
+fill_game_text_0064_linker.mp3,extras.js:160,game text,game text,Linker,linker,This save already received that gift.
+fill_game_text_0065_linker.mp3,extras.js:184,game text,game text,Linker,linker,You search around the room... and find something tucked away!
+fill_game_text_0066_linker.mp3,extras.js:184,game text,game text,Linker,linker,You found something hidden on the ground!
+fill_game_text_0067_linker.mp3,extras.js:184,game text,game text,Linker,linker,"You already had it, so you sold the spare for 300 Stardust."
+fill_game_text_0068_linker.mp3,extras.js:187,game text,game text,Linker,linker,The Signal Finder only works on a world's surface.
+fill_game_text_0069_linker.mp3,extras.js:189,game text,game text,Linker,linker,You found everything hidden on this world!
+fill_game_text_0070_linker.mp3,extras.js:192,game text,game text,Linker,linker,BEEEEEP! It's right here! Face it and press A.
+fill_game_text_0071_linker.mp3,extras.js:208,game text,game text,Linker,linker,Forget which move?
+fill_game_text_0072_explorer.mp3,extras.js:218,game text,game text,Explorer,explorer,I just saw a Prismatic Alienmon! ...It got away.
+fill_game_text_0073_explorer.mp3,extras.js:218,game text,game text,Explorer,explorer,My partner learned a new move today!
+fill_game_text_0074_explorer.mp3,extras.js:218,game text,game text,Explorer,explorer,Have you tried the Star Arena leagues yet?
+fill_game_text_0075_explorer.mp3,extras.js:218,game text,game text,Explorer,explorer,I'm still training. Call me again soon!
+fill_game_text_0076_explorer.mp3,extras.js:221,game text,game text,Explorer,explorer,You came! Let's see how much we have both grown!
+fill_game_text_0077_explorer.mp3,extras.js:221,game text,game text,Explorer,explorer,You're still way ahead of me... Call me again!
+fill_game_text_0078_explorer.mp3,extras.js:221,game text,game text,Explorer,explorer,Call me any time for another rematch.
+fill_game_text_0079_explorer.mp3,extras.js:222,game text,game text,Explorer,explorer,Your team needs to heal first.
+fill_game_text_0080_linker.mp3,extras.js:228,game text,game text,Linker,linker,What is this?
+fill_game_text_0081_nurse.mp3,extras.js:228,game text,game text,Nurse,nurse,Leave one Alienmon with us. It earns a little EXP for every step you take.
+fill_game_text_0082_linker.mp3,extras.js:228,game text,game text,Linker,linker,Now and then we find an Egg beside it! Walk with an Egg and it hatches.
+fill_game_text_0083_nurse.mp3,extras.js:229,game text,game text,Nurse,nurse,You need at least two Alienmon with you to leave one here.
+fill_game_text_0084_nurse.mp3,extras.js:230,game text,game text,Nurse,nurse,That one is far too powerful for our little Nursery!
+fill_game_text_0085_nurse.mp3,extras.js:233,game text,game text,Nurse,nurse,You can only carry 6 Eggs at a time!
+fill_game_text_0086_linker.mp3,extras.js:238,game text,game text,Linker,linker,The Nursery found an Egg!
+fill_game_text_0087_linker.mp3,extras.js:240,game text,game text,Linker,linker,Oh? Your Egg is moving...
+fill_game_text_0088_linker.mp3,extras.js:241,game text,game text,Linker,linker,It barely moves. It will take a while to hatch.
+fill_game_text_0089_linker.mp3,extras.js:241,game text,game text,Linker,linker,Something is moving inside! It should hatch soon.
+fill_game_text_0090_linker.mp3,extras.js:241,game text,game text,Linker,linker,It is making sounds! It is about to hatch!
+fill_game_text_0091_linker.mp3,extras.js:245,game text,game text,Linker,linker,"Who is it? ...Oh, a Linker! Good luck on your journey!"
+fill_game_text_0092_linker.mp3,extras.js:245,game text,game text,Linker,linker,"*A sleepy voice*: Come back later, I'm napping..."
+fill_game_text_0093_elder_f.mp3,extras.js:245,game text,game text,Grandma,elder_f,"In my day we caught Alienmon with our bare hands! ...Well, almost."
+fill_game_text_0094_kid.mp3,extras.js:246,game text,game text,Kid,kid,Mom says I can get my own Alienmon next year!
+fill_game_text_0095_researcher.mp3,extras.js:246,game text,game text,Inventor,researcher,"Don't open the door! My experiment is very, very fragile!"
+fill_game_text_0096_townsman.mp3,extras.js:247,game text,game text,Collector,townsman,Did you know some Alienmon only come out at night?
+fill_game_text_0097_townswoman.mp3,extras.js:247,game text,game text,Chef,townswoman,Something smells good? That's Stardust stew. Secret recipe!
+fill_game_text_0098_linker.mp3,extras.js:250,game text,game text,Linker,linker,*Knock knock* Resident: Did you use what I gave you? Good luck!
+fill_game_text_0099_townsman.mp3,extras.js:251,game text,game text,Resident,townsman,"Oh! A visitor! Here, take this. I never use it anyway."
+fill_game_text_0100_linker.mp3,extras.js:252,game text,game text,Linker,linker,*Knock knock* Resident: That Tech Disc treating you well?
+fill_game_text_0101_townsman.mp3,extras.js:255,game text,game text,Resident,townsman,A Linker! I found this Tech Disc and I don't even have an Alienmon. It's yours!
+fill_game_text_0102_linker.mp3,extras.js:256,game text,game text,Linker,linker,"Ah, a Linker! Let me rate your Xenodex."
+fill_game_text_0103_linker.mp3,extras.js:256,game text,game text,Linker,linker,A fine start! Get out there and catch more!
+fill_game_text_0104_linker.mp3,extras.js:256,game text,game text,Linker,linker,Impressive progress! Keep it up!
+fill_game_text_0105_linker.mp3,extras.js:256,game text,game text,Linker,linker,Remarkable! Dr. Vashti must be proud.
+fill_game_text_0106_linker.mp3,extras.js:256,game text,game text,Linker,linker,Astonishing! Only a few more to go!
+fill_game_text_0107_linker.mp3,extras.js:256,game text,game text,Linker,linker,A complete Xenodex! You are a living legend!
+fill_game_text_0108_linker.mp3,extras.js:257,game text,game text,Linker,linker,*Knock knock* Resident: My new partner and I are so happy. Thank you again!
+fill_game_text_0109_linker.mp3,extras.js:260,game text,game text,Linker,linker,*Knock knock* ...Nobody is home.
+fill_game_text_0110_townsman.mp3,extras.js:263,game text,game text,Resident,townsman,Aww. Come back if you change your mind!
+fill_game_text_0111_linker.mp3,extras.js:271,game text,game text,Linker,linker,"your jumps (B) reach up to 4 tiles, over wider gaps."
+fill_game_text_0112_linker.mp3,extras.js:271,game text,game text,Linker,linker,Walk onto deep water and Splodge the Bubbub carries you across in its bubble.
+fill_game_text_0113_linker.mp3,extras.js:272,game text,game text,Linker,linker,walk across lava flows unharmed.
+fill_game_text_0114_linker.mp3,extras.js:272,game text,game text,Linker,linker,lights up dark caves.
+fill_game_text_0115_linker.mp3,extras.js:272,game text,game text,Linker,linker,your jumps (B) reach up to 5 tiles.
+fill_game_text_0116_linker.mp3,extras.js:275,game text,game text,Linker,linker,Deep water. Mina at the Port Saltreach docks knows about Bubbub rides.
+fill_game_text_0117_linker.mp3,extras.js:275,game text,game text,Linker,linker,"Deep water. With a Bubbub to ride, you could cross it."
+fill_game_text_0118_linker.mp3,extras.js:275,game text,game text,Linker,linker,Lava! A Heat Shield module could cross it.
+fill_game_text_0119_linker.mp3,progression.js:47,game text,game text,Linker,linker,The rest of your team gained EXP through EXP Link.
+fill_game_text_0120_linker.mp3,progression.js:70,game text,game text,Linker,linker,Lands critical hits more often.
+fill_game_text_0121_linker.mp3,progression.js:71,game text,game text,Linker,linker,"A straight attack, no extra effect."
+fill_game_text_0122_linker.mp3,progression.js:71,game text,game text,Linker,linker,No extra effect.
+fill_game_text_0123_linker.mp3,progression.js:91,game text,game text,Linker,linker,Relearn which move?
+fill_game_text_0124_linker.mp3,progression.js:91,game text,game text,Linker,linker,You need 100 stardust.
+fill_game_text_0125_linker.mp3,quests.js:116,game text,game text,Linker,linker,A signal from the canyon...
+fill_game_text_0126_explorer.mp3,quests.js:234,game text,game text,Explorer,explorer,Let's see what your team can do!
+fill_game_text_0127_explorer.mp3,quests.js:234,game text,game text,Explorer,explorer,"Not bad, Linker."
+fill_game_text_0128_linker.mp3,quests.js:266,game text,game text,Linker,linker,No side missions yet.
+fill_game_text_0129_linker.mp3,quests.js:266,game text,game text,Linker,linker,No quests yet.
+fill_game_text_0130_explorer.mp3,sections.js:41,game text,game text,Explorer,explorer,"Wow, you two are in sync. Good luck out there!"
+fill_game_text_0131_explorer.mp3,sections.js:41,game text,game text,Explorer,explorer,"Keep exploring, Linker. Every region has new Alienmon."
+fill_game_text_0132_linker.mp3,sections.js:48,game text,game text,Linker,linker,The door is locked. Nobody seems to be home.
+fill_game_text_0133_linker.mp3,sections.js:67,game text,game text,Linker,linker,The shuttle back to the Molten Frontier.
+fill_game_text_0134_linker.mp3,sections.js:67,game text,game text,Linker,linker,The gate back to the Molten Frontier.
+fill_game_text_0135_linker.mp3,sections.js:67,game text,game text,Linker,linker,Go back through the gate?
+fill_game_text_0136_linker.mp3,sections.js:67,game text,game text,Linker,linker,"The landing pad. Your ship sits waiting, but it has no launch clearance yet."
+fill_game_text_0137_linker.mp3,sections.js:67,game text,game text,Linker,linker,This path leads back to the landing pad.
+fill_game_text_0138_linker.mp3,sections.js:67,game text,game text,Linker,linker,Board your ship?
+fill_game_text_0139_linker.mp3,sections.js:76,game text,game text,Linker,linker,The cups open with the Linker Arena. Coming soon!
+fill_game_text_0140_linker.mp3,sections.js:77,game text,game text,Linker,linker,"A cabinet of glittering trophies, waiting for champions."
+fill_game_text_0141_linker.mp3,sections.js:81,game text,game text,Linker,linker,The Linker Stash is empty. You already took what was inside.
+fill_game_text_0142_linker.mp3,sections.js:82,game text,game text,Linker,linker,You found a Linker Stash!
+fill_game_text_0143_linker.mp3,sections.js:85,game text,game text,Linker,linker,The chest is empty.
+fill_game_text_0144_linker.mp3,sections.js:87,game text,game text,Linker,linker,Three empty pod cradles. Your partner's pod used to sit in the middle one.
+fill_game_text_0145_linker.mp3,sections.js:87,game text,game text,Linker,linker,Three seed pods hum on the lab table.
+fill_game_text_0146_linker.mp3,sections.js:110,game text,game text,Linker,linker,The way out of town is blocked off here. Try another path.
+fill_game_text_0147_linker.mp3,sections.js:110,game text,game text,Linker,linker,The path ahead is blocked. You cannot go this way.
+fill_game_text_0148_linker.mp3,sections.js:110,game text,game text,Linker,linker,The way is blocked off here. Try another path.
+fill_game_text_0149_linker.mp3,sections.js:110,game text,game text,Linker,linker,That way is sealed off.
+fill_game_text_0150_townswoman.mp3,sections.js:181,game text,game text,Townswoman,townswoman,Wait! It's dangerous out there without an Alienmon.
+fill_game_text_0151_townswoman.mp3,sections.js:181,game text,game text,Townswoman,townswoman,"Dr. Vashti is waiting at her lab: the big dome with the telescope, across the plaza."
+fill_game_text_0152_narrator.mp3,sections.js:183,game text,game text,Narrator,narrator,You wake up. Sunlight is pouring over the crater rim.
+fill_game_text_0153_narrator.mp3,sections.js:183,game text,game text,Narrator,narrator,Dr. Vashti promised you your very first Alienmon partner!
+fill_game_text_0154_vashti.mp3,sections.js:187,game text,game text,Dr. Vashti,vashti,Wonderful. You two already look like you belong together.
+fill_game_text_0155_vashti.mp3,sections.js:187,game text,game text,Vashti,vashti,Your friend Sola was here at dawn and took one of the others. She's already out training.
+fill_game_text_0156_vashti.mp3,sections.js:187,game text,game text,Vashti,vashti,"Heal for free at the Recovery Bay, stock up at the shop, and when you're ready, head east over the bridge."
+fill_game_text_0157_vashti.mp3,sections.js:187,game text,game text,Vashti,vashti,The drift grass beyond town hides wild Alienmon. And every world's Keeper guards a Signal Shard. Go see them all!
+fill_game_text_0158_vashti.mp3,sections.js:187,game text,game text,Dr. Vashti,vashti,Oh dear. That one's shy. It'll turn up.
+fill_game_text_0159_linker.mp3,sections.js:194,game text,game text,Linker,linker,"It ran off, scared by your Signal Jammer!"
+fill_game_text_0160_linker.mp3,sections.js:222,game text,game text,Linker,linker,That code is not right.
+fill_game_text_0161_explorer.mp3,sections.js:257,game text,game text,Explorer,explorer,You made it to me! Let's see if you shine like real stardust!
+fill_game_text_0162_explorer.mp3,sections.js:257,game text,game text,Explorer,explorer,Wow... you're the Stardust Champion now!
+fill_game_text_0163_explorer.mp3,sections.js:259,game text,game text,Explorer,explorer,Comets burn bright and fast. Can you keep up?
+fill_game_text_0164_explorer.mp3,sections.js:259,game text,game text,Explorer,explorer,You blazed right past me. The Comet crown is yours.
+fill_game_text_0165_explorer.mp3,sections.js:261,game text,game text,Explorer,explorer,Nobody has outshone me in a hundred battles. Prove me wrong!
+fill_game_text_0166_explorer.mp3,sections.js:261,game text,game text,Explorer,explorer,A brighter star than me... incredible. Supernova Champion!
+fill_game_text_0167_explorer.mp3,sections.js:263,game text,game text,Explorer,explorer,Every light falls into the Singularity eventually. Show me yours.
+fill_game_text_0168_guard.mp3,sections.js:270,game text,game text,Arena Master,guard,"Welcome to the Star Arena, Linker!"
+fill_game_text_0169_linker.mp3,sections.js:270,game text,game text,Linker,linker,"Four leagues, each with its own level cap. Beat three rounds and the League Champion to take the crown."
+fill_game_text_0170_linker.mp3,sections.js:273,game text,game text,Linker,linker,The Singularity League opens once you have won the other three leagues.
+fill_game_text_0171_linker.mp3,sections.js:274,game text,game text,Linker,linker,"Any level, but no legendary Alienmon."
+fill_game_text_0172_linker.mp3,sections.js:277,game text,game text,Linker,linker,Leave the legendaries at home.
+fill_game_text_0173_linker.mp3,sections.js:288,game text,game text,Linker,linker,Come back and defend your title any time.
+fill_game_text_0174_explorer.mp3,sections.js:291,game text,game text,Explorer,explorer,Round 1! Let's give the crowd a show!
+fill_game_text_0175_explorer.mp3,sections.js:291,game text,game text,Explorer,explorer,Round 2! You won't get past me so easily!
+fill_game_text_0176_explorer.mp3,sections.js:291,game text,game text,Explorer,explorer,Final round before the Champion! Bring it!
+fill_game_text_0177_explorer.mp3,sections.js:291,game text,game text,Explorer,explorer,What a battle! The crowd loves you!
+fill_game_text_0178_explorer.mp3,sections.js:291,game text,game text,Explorer,explorer,Good luck out there!
+fill_game_text_0179_clerk.mp3,sections.js:294,game text,game text,Receptionist,clerk,Welcome! Fancy an exhibition match?
+fill_game_text_0180_clerk.mp3,sections.js:296,game text,game text,Receptionist,clerk,Welcome to the Linker Arena!
+fill_game_text_0181_linker.mp3,sections.js:303,game text,game text,Linker,linker,Your team needs rest first. Visit a Recovery Bay.
+fill_game_text_0182_explorer.mp3,sections.js:310,game text,game text,Explorer,explorer,Let's put on a show for the crowd!
+fill_game_text_0183_explorer.mp3,sections.js:310,game text,game text,Explorer,explorer,One on one. No holding back!
+fill_game_text_0184_explorer.mp3,sections.js:310,game text,game text,Explorer,explorer,The crowd came to see a real battle!
+fill_game_text_0185_explorer.mp3,sections.js:310,game text,game text,Explorer,explorer,What a match! The crowd loves you!
+fill_game_text_0186_fan.mp3,sections.js:318,game text,game text,Announcer,fan,And the match goes to the challenger!
+fill_game_text_0187_linker.mp3,sections.js:318,game text,game text,Linker,linker,"Better luck next time, Linker. Your Alienmon has been healed."
+fill_game_text_0188_fan.mp3,sections.js:321,game text,game text,Announcer,fan,And that's the end of the run!
+fill_game_text_0189_fan.mp3,sections.js:322,game text,game text,Announcer,fan,Three wins! Now for the League Champion!
+fill_game_text_0190_guard.mp3,sections.js:327,game text,game text,Arena Master,guard,"And for the Grand Champion... Lumivex, the arena's guardian, has chosen you!"
+fill_game_text_0191_guard.mp3,sections.js:328,game text,game text,Arena Master,guard,You've won all three leagues. The Singularity League is open to you!
+fill_game_text_0192_linker.mp3,sections.js:340,game text,game text,Linker,linker,That does not look like an Alienmon trade code.
+fill_game_text_0193_linker.mp3,sections.js:344,game text,game text,Linker,linker,That Alienmon could not be received.
+fill_game_text_0194_linker.mp3,sections.js:357,game text,game text,Linker,linker,"pick an Alienmon and you get a trade code. It leaves your team, so only share the code with one friend."
+fill_game_text_0195_linker.mp3,sections.js:357,game text,game text,Linker,linker,paste a friend's code to welcome their Alienmon. Traded Alienmon above your Shard level may not always obey.
+fill_game_text_0196_linker.mp3,sections.js:358,game text,game text,Linker,linker,You need at least two Alienmon on your team to send one away.
+fill_game_text_0197_linker.mp3,sections.js:359,game text,game text,Linker,linker,Send which Alienmon?
+fill_game_text_0198_linker.mp3,sections.js:366,game text,game text,Linker,linker,This save already received that Alienmon.
+fill_game_text_0199_linker.mp3,skyfall.js:16,game text,game text,Linker,linker,Sand rolls across the canyons.
+fill_game_text_0200_linker.mp3,skyfall.js:17,game text,game text,Linker,linker,Scrap shivers and sparks jump between the heaps.
+fill_game_text_0201_linker.mp3,skyfall.js:18,game text,game text,Linker,linker,The swamp exhales clouds of glowing spores.
+fill_game_text_0202_linker.mp3,skyfall.js:19,game text,game text,Linker,linker,Warm rain sweeps in off a rising sea.
+fill_game_text_0203_linker.mp3,skyfall.js:21,game text,game text,Linker,linker,Old runes lift off the ruins and drift on the wind.
+fill_game_text_0204_linker.mp3,skyfall.js:22,game text,game text,Linker,linker,Hot ash and embers rain from the vents.
+fill_game_text_0205_linker.mp3,skyfall.js:23,game text,game text,Linker,linker,The aurora drops low enough to touch.
+fill_game_text_0206_linker.mp3,skyfall.js:24,game text,game text,Linker,linker,The station gardens burst into bloom.
+fill_game_text_0207_linker.mp3,skyfall.js:25,game text,game text,Linker,linker,The winds sing through the cloud spires.
+fill_game_text_0208_linker.mp3,skyfall.js:26,game text,game text,Linker,linker,A deeper dark rolls over the dark world.
+fill_game_text_0209_linker.mp3,skyfall.js:27,game text,game text,Linker,linker,"Seedpods streak across the sky, just like the day the sky fell."
+fill_game_text_0210_linker.mp3,skyfall.js:28,game text,game text,Linker,linker,The relay array splits the sunlight into colour.
+fill_game_text_0211_linker.mp3,skyfall.js:29,game text,game text,Linker,linker,Rocks lift off the ground and hang in the air.
+fill_game_text_0212_linker.mp3,skyfall.js:74,game text,game text,Linker,linker,The whole colony scatters...
+fill_game_text_0213_linker.mp3,skyfall.js:83,game text,game text,Linker,linker,A Rift Breach! Something huge is coming through.
+fill_game_text_0214_vashti.mp3,skyfall.js:84,game text,game text,Vashti,vashti,"""We've got your back!"""
+fill_game_text_0215_linker.mp3,skyfall.js:96,game text,game text,Linker,linker,Linker alert! A Rift Breach is open at Starfall Rift.
+fill_game_text_0216_linker.mp3,skyfall.js:96,game text,game text,Linker,linker,Something huge is coming through. Linkers are gathering!
+fill_game_text_0217_vashti.mp3,skyfall.js:98,game text,game text,Vashti,vashti,"""Your antenna needs an upgrade for deeper signals. Sending it now!"""
+fill_game_text_0218_linker.mp3,skyfall.js:98,game text,game text,Linker,linker,Mina is calling on your Linker!
+fill_game_text_0219_mina.mp3,skyfall.js:98,game text,game text,Mina,mina,"""Splodge found this on the sea floor. It's a Linker antenna! Face any water and dive for a signal."""
+fill_game_text_0220_linker.mp3,skyfall.js:110,game text,game text,Linker,linker,Face the water (or stand in it) to dive for a signal.
+fill_game_text_0221_linker.mp3,skyfall.js:111,game text,game text,Linker,linker,No signal here. Try somewhere with more water.
+fill_game_text_0222_linker.mp3,skyfall.js:117,game text,game text,Linker,linker,You let the signal go.
+fill_game_text_0223_linker.mp3,skyfall.js:127,game text,game text,Linker,linker,Pulling it up...
+fill_game_text_0224_linker.mp3,skyfall.js:127,game text,game text,Linker,linker,It slipped away...
+fill_game_text_0225_linker.mp3,skyfall.js:128,game text,game text,Linker,linker,The signal faded into the deep.
+fill_game_text_0226_linker.mp3,skyfall.js:131,game text,game text,Linker,linker,A perfect lock! Something rises fast...
+fill_game_text_0227_linker.mp3,skyfall.js:131,game text,game text,Linker,linker,You reel the signal in...
+fill_game_text_0228_linker.mp3,skyfall.js:136,game text,game text,Linker,linker,You already resonated a Shard this battle.
+fill_game_text_0229_linker.mp3,skyfall.js:136,game text,game text,Linker,linker,Earn a Signal Shard from a Keeper first.
+fill_game_text_0230_linker.mp3,skyfall.js:137,game text,game text,Linker,linker,Resonate which Shard?
+fill_game_text_0231_linker.mp3,skyfall.js:142,game text,game text,Linker,linker,The Shard's resonance fades.
+fill_game_text_0232_linker.mp3,skyfall.js:175,game text,game text,Linker,linker,"Holopup tilts its head. Earn a Signal Shard first, then try again."
+fill_game_text_0233_linker.mp3,skyfall.js:185,game text,game text,Linker,linker,Clear skies everywhere.
+fill_game_text_0234_linker.mp3,skyfall.js:187,game text,game text,Linker,linker,A Rift Breach is open at Starfall Rift!
+fill_game_text_0235_linker.mp3,skyfall.js:189,game text,game text,Linker,linker,Dive from a map with water.
+fill_game_text_0236_linker.mp3,skyfall.js:190,game text,game text,Linker,linker,"Today's Skyfall fronts, the Signal Storm and any Rift Breach."
+fill_game_text_0237_linker.mp3,skyfall.js:190,game text,game text,Linker,linker,Face water and dive for a signal.
+fill_game_text_0238_narrator.mp3,story.js:17,game text,game text,Narrator,narrator,"Snacks, a map and a spare pair of socks. It feels a little heavier than it should."
+fill_game_text_0239_narrator.mp3,story.js:17,game text,game text,Narrator,narrator,"A brass cross with a glowing blue core, stamped ""R.B. No. 1"". Mom pinned it on you."
+fill_game_text_0240_narrator.mp3,story.js:17,game text,game text,Narrator,narrator,Teo Reyes's old mining lantern. It never quite goes out.
+fill_game_text_0241_narrator.mp3,story.js:18,game text,game text,Narrator,narrator,"""the floating gardens beyond the light."""
+fill_game_text_0242_narrator.mp3,story.js:18,game text,game text,Narrator,narrator,Nana Wren's journal from the night of the Starfall.
+fill_game_text_0243_narrator.mp3,story.js:18,game text,game text,Narrator,narrator,"""a door that is a road."""
+fill_game_text_0244_narrator.mp3,story.js:18,game text,game text,Narrator,narrator,"A page from Teo's journal. He copied one damaged line from Vashti's Codex: ""She is scattered so she may live..."" The rest is gone."
+fill_game_text_0245_narrator.mp3,story.js:18,game text,game text,Narrator,narrator,"The Prophecy Shrine at Halo's third wind shrine: ""She is scattered so she may live. Whoever reunites all her children will let the Seedmother grow again, and her world with her."" Reunite, not cage."
+fill_game_text_0246_narrator.mp3,story.js:18,game text,game text,Narrator,narrator,The starter nobody picked at Dr. Vashti's lab. It hides in your bag and only peeks out for snacks.
+fill_game_text_0247_narrator.mp3,story.js:58,game text,game text,Narrator,narrator,Your team is fully healed!
+fill_game_text_0248_narrator.mp3,story.js:65,game text,game text,Narrator,narrator,The Three Pillars bow their great heads together.
+fill_game_text_0249_narrator.mp3,story.js:65,game text,game text,Narrator,narrator,You haven't caught them all. You're sixteen! How can you be the Unifier?
+fill_game_text_0250_liss.mp3,story.js:65,game text,game text,Liss,liss,Nobody said catch.
+fill_game_text_0251_narrator.mp3,story.js:66,game text,game text,Narrator,narrator,Terravox lowers its forest-heavy head. A floating island above you groans and starts to fall.
+fill_game_text_0252_terravox.mp3,story.js:66,game text,game text,Terravox,terravox,No one holds up an island alone. Come back with at least three partners beside you.
+fill_game_text_0253_terravox.mp3,story.js:67,game text,game text,Terravox,terravox,Hold it.
+fill_game_text_0254_narrator.mp3,story.js:67,game text,game text,Narrator,narrator,A floating island tilts and starts to fall toward the forest below.
+fill_game_text_0255_narrator.mp3,story.js:67,game text,game text,Narrator,narrator,"The island steadies, then rises back into the sky."
+fill_game_text_0256_terravox.mp3,story.js:67,game text,game text,Terravox,terravox,Strength is not one creature lifting. It is many refusing to let go.
+fill_game_text_0257_narrator.mp3,story.js:68,game text,game text,Narrator,narrator,Aquelion offers to wash away your saddest memory.
+fill_game_text_0258_narrator.mp3,story.js:69,game text,game text,Narrator,narrator,The water rises around you... and stops.
+fill_game_text_0259_aquelion.mp3,story.js:69,game text,game text,Aquelion,aquelion,"If I take it, I take the people who held you through it too. Are you sure?"
+fill_game_text_0260_narrator.mp3,story.js:70,game text,game text,Narrator,narrator,"You shake your head. That memory is sad, but it has people you love in it."
+fill_game_text_0261_aquelion.mp3,story.js:70,game text,game text,Aquelion,aquelion,You would rather hurt and remember. Then you are ready.
+fill_game_text_0262_narrator.mp3,story.js:71,game text,game text,Narrator,narrator,"The sea goes perfectly still. Aquelion rises, and in its glassy eyes you see the saddest moment of your life."
+fill_game_text_0263_aquelion.mp3,story.js:71,game text,game text,Aquelion,aquelion,I keep the dreams of the sleeping. I can take this one away. Forever.
+fill_game_text_0264_ignarch.mp3,story.js:72,game text,game text,Ignarch,ignarch,Step into the Forge light alone. No partners.
+fill_game_text_0265_narrator.mp3,story.js:72,game text,game text,Narrator,narrator,Ignarch waits. The heat does not move.
+fill_game_text_0266_narrator.mp3,story.js:73,game text,game text,Narrator,narrator,You leave your partners at the edge and walk into the blinding light.
+fill_game_text_0267_narrator.mp3,story.js:73,game text,game text,Narrator,narrator,It is so hot and so bright that you can't see your own hands.
+fill_game_text_0268_narrator.mp3,story.js:73,game text,game text,Narrator,narrator,"a woman singing, low and kind. Hmm-mm-mmm. The same song the sporefolk sang."
+fill_game_text_0269_ignarch.mp3,story.js:73,game text,game text,Ignarch,ignarch,"Courage is going in afraid. Your grandmother did, twenty years ago."
+fill_game_text_0270_narrator.mp3,story.js:88,game text,game text,Narrator,narrator,Your last partner falls. Oblivane's shadow closes over you...
+fill_game_text_0271_narrator.mp3,story.js:88,game text,game text,Narrator,narrator,You stop the battle and step forward with Zib.
+fill_game_text_0272_narrator.mp3,story.js:88,game text,game text,Narrator,narrator,Everybody's somebody's somebody. You think it as hard as you can.
+fill_game_text_0273_narrator.mp3,story.js:88,game text,game text,Narrator,narrator,You ask Oblivane what it lost.
+fill_game_text_0274_narrator.mp3,story.js:88,game text,game text,Narrator,narrator,"From far away, the Ystran Choir begins to sing. Hmm-mm-mmm."
+fill_game_text_0275_narrator.mp3,story.js:89,game text,game text,Narrator,narrator,it was the moon-spirit who carried the dying home as starlight. It never wanted to keep them. It just couldn't let go.
+fill_game_text_0276_narrator.mp3,story.js:89,game text,game text,Narrator,narrator,Two hundred years of swallowed light pour back into Ystra's sky as starlight.
+fill_game_text_0277_narrator.mp3,story.js:89,game text,game text,Narrator,narrator,"Oblivane is calm. It drifts away, small and silver, toward the empty crater where the Heartroot glows."
+fill_game_text_0278_narrator.mp3,story.js:89,game text,game text,Narrator,narrator,Light returns to Ystra's sky... but the land stays bare. The job isn't finished.
+fill_game_text_0279_narrator.mp3,story.js:89,game text,game text,Narrator,narrator,Starlight falls over your team and heals every one of them.
+fill_game_text_0280_narrator.mp3,story.js:92,game text,game text,Narrator,narrator,Orra is targeting Zib!
+fill_game_text_0281_narrator.mp3,story.js:93,game text,game text,Narrator,narrator,You throw yourself in front of Zib.
+fill_game_text_0282_narrator.mp3,story.js:93,game text,game text,Narrator,narrator,Orra lowers her hand. The attack fades to nothing.
+fill_game_text_0283_orra.mp3,story.js:93,game text,game text,Orra,orra,That was the test. Could you carry what I carried? You just showed me.
+fill_game_text_0284_narrator.mp3,story.js:94,game text,game text,Narrator,narrator,"You order the attack. Orra's eyes narrow, but she fights on."
+fill_game_text_0285_narrator.mp3,story.js:129,game text,game text,Narrator,narrator,Every kind of Alienmon in the Kessler system has bonded with you.
+fill_game_text_0286_narrator.mp3,story.js:129,game text,game text,Narrator,narrator,"Under the Seedmother's tree, you walk with every Alienmon you have ever met. They hum the song together, each one still itself."
+fill_game_text_0287_liss.mp3,story.js:130,game text,game text,Liss,liss,The legend called for someone who would reunite all her children. Not catch them. Unite them.
+fill_game_text_0288_narrator.mp3,story.js:130,game text,game text,Narrator,narrator,You are named the Unifier!
+fill_game_text_0289_narrator.mp3,story.js:130,game text,game text,Narrator,narrator,Your Linker shines gold now: the Unifier's Linker.
+fill_game_text_0290_narrator.mp3,story.js:148,game text,game text,Narrator,narrator,Thank you for playing!
+fill_game_text_0291_technician.mp3,world.js:17,game text,game text,Shuttle tech,technician,The Star Arena only flies out Linkers who hold a Signal Shard.
+fill_game_text_0292_linker.mp3,world.js:17,game text,game text,Linker,linker,The way is sealed for now.
+fill_game_text_0293_linker.mp3,world.js:21,game text,game text,Linker,linker,Your ship needs launch clearance. Win your first Signal Shard.
+fill_game_text_0294_technician.mp3,world.js:25,game text,game text,Ferrox control,technician,Landing denied. Prove yourself on the Molten Frontier first.
+fill_game_text_0295_linker.mp3,world.js:25,game text,game text,Linker,linker,Helix Station only accepts its own shuttles. Find a way through the Forge Fortress.
+fill_game_text_0296_technician.mp3,world.js:26,game text,game text,Halo traffic,technician,The sky islands are closed to outsiders right now.
+fill_game_text_0297_linker.mp3,world.js:26,game text,game text,Linker,linker,The Rift's storm tears at your hull. You'll need all 8 Shards to get through.
+fill_game_text_0298_linker.mp3,world.js:27,game text,game text,Linker,linker,Access by Quorum invitation only.
+fill_game_text_0299_linker.mp3,world.js:27,game text,game text,Linker,linker,The coordinates lead nowhere... yet.
+fill_game_text_0300_strand.mp3,world.js:63,game text,game text,Strand,strand,You did it. The crater's quiet.
+fill_game_text_0301_technician.mp3,world.js:64,game text,game text,Technician,technician,The crater pulse finally stopped.
+fill_game_text_0302_teo.mp3,world.js:72,game text,game text,Teo,teo,Home at last. Sola won't stop telling me about you.
+fill_game_text_0303_sola.mp3,world.js:72,game text,game text,Sola,sola,"Dad's home. We did it, Linker."
+fill_game_text_0304_vashti.mp3,world.js:76,game text,game text,Dr. Vashti,vashti,Go find Zib's signal on the bridge!
+fill_game_text_0305_vashti.mp3,world.js:76,game text,game text,Dr. Vashti,vashti,Sola's waiting for you at the trading post!
+fill_game_text_0306_marisol.mp3,world.js:77,game text,game text,Marisol Fenn,marisol,The Quorum waits in four halls. Are you ready?
+fill_game_text_0307_narrator.mp3,world.js:91,game text,game text,Narrator,narrator,Hank leads you behind the Relay Tower to his hangar and pulls a dusty tarp off something big.
+fill_game_text_0308_linker.mp3,world.js:113,game text,game text,Linker,linker,There is nowhere to run. Your team stands firm.
+fill_game_text_0309_linker.mp3,world.js:113,game text,game text,Linker,linker,You can't run from a trainer battle!
+fill_game_text_0310_linker.mp3,world.js:114,game text,game text,Linker,linker,A powerful presence holds you in place!
+fill_game_text_0311_linker.mp3,world.js:116,game text,game text,Linker,linker,Got away safely!
+fill_game_text_0312_linker.mp3,world.js:116,game text,game text,Linker,linker,Couldn't get away!
+fill_game_text_0313_linker.mp3,world.js:131,game text,game text,Linker,linker,Nickname which Alienmon?
+fill_game_text_0314_linker.mp3,world.js:134,game text,game text,Linker,linker,Opens the Fortress Shuttle Pad to Helix Station.
+fill_game_text_0315_linker.mp3,world.js:134,game text,game text,Linker,linker,A sliver of Ystra that hums near the Heartroot.
+fill_game_text_0316_linker.mp3,world.js:134,game text,game text,Linker,linker,A seed from the new world-tree of the Seedmother.
+fill_game_text_0317_linker.mp3,world.js:135,game text,game text,Linker,linker,reach cliff ledges and shortcuts.
+fill_game_text_0318_linker.mp3,world.js:135,game text,game text,Linker,linker,Splodge the Bubbub carries you across deep water in its bubble.
+fill_game_text_0319_linker.mp3,world.js:135,game text,game text,Linker,linker,walk lava-crossing shortcuts.
+fill_game_text_0320_linker.mp3,world.js:136,game text,game text,Linker,linker,light dark caves.
+fill_game_text_0321_linker.mp3,world.js:136,game text,game text,Linker,linker,ride floating platforms.
+fill_game_text_0322_linker.mp3,world.js:141,game text,game text,Linker,linker,You can now ride Splodge the Bubbub across deep water! Just walk out onto it.
+fill_game_text_0323_linker.mp3,world.js:148,game text,game text,Linker,linker,Items heal between battles. Pods are for wild Alienmon only.
+fill_game_text_0324_linker.mp3,world.js:148,game text,game text,Linker,linker,Your ship stores every Alienmon beyond 6. Swap them here.
+fill_game_text_0325_linker.mp3,world.js:148,game text,game text,Linker,linker,The Map shows every Relay Gate and world.
+fill_game_text_0326_linker.mp3,world.js:149,game text,game text,Linker,linker,Fly between worlds. Each landing needs enough Signal Shards.
+fill_game_text_0327_linker.mp3,world.js:149,game text,game text,Linker,linker,B jumps. Grass and trails hide wild Alienmon.
+fill_game_text_0328_linker.mp3,world.js:149,game text,game text,Linker,linker,Press B to jump over small gaps and railings.
+fill_game_text_0329_explorer.mp3,world.js:169,game text,game text,Explorer,explorer,Hey! Your Linker just pinged mine. Battle!
+fill_game_text_0330_explorer.mp3,world.js:169,game text,game text,Explorer,explorer,A new Linker! Let's see what your team can do!
+fill_game_text_0331_explorer.mp3,world.js:169,game text,game text,Explorer,explorer,You look like you're training. Me too. Battle!
+fill_game_text_0332_explorer.mp3,world.js:169,game text,game text,Explorer,explorer,My partner's been itching for a battle. You're it!
+fill_game_text_0333_explorer.mp3,world.js:169,game text,game text,Explorer,explorer,"Stop right there, Linker! Show me your best!"
+fill_game_text_0334_explorer.mp3,world.js:178,game text,game text,Explorer,explorer,You'll need to get past us to reach the Keeper!
+fill_game_text_0335_explorer.mp3,world.js:179,game text,game text,Explorer,explorer,"Go on, the Keeper is waiting."
+fill_game_text_0336_explorer.mp3,world.js:179,game text,game text,Explorer,explorer,"Wow, you two are in sync!"
+fill_game_text_0337_explorer.mp3,world.js:179,game text,game text,Explorer,explorer,The Keeper is just ahead.
+fill_game_text_0338_explorer.mp3,world.js:179,game text,game text,Explorer,explorer,Good battle! Keep training out here.
+fill_game_text_0339_linker.mp3,world.js:246,game text,game text,Linker,linker,Saving is unavailable in this browser.
+fill_game_text_0340_linker.mp3,world.js:247,game text,game text,Linker,linker,"The demo always starts a fresh game, so loading saves is turned off."
+fill_game_text_0341_linker.mp3,world.js:248,game text,game text,Linker,linker,That slot is empty.
+fill_game_text_0342_linker.mp3,world.js:248,game text,game text,Linker,linker,Replace your current game?
+fill_game_text_0343_linker.mp3,template.html:205,game text,game text,Linker,linker,Backup file downloaded.
+fill_game_text_0344_linker.mp3,template.html:205,game text,game text,Linker,linker,Export is unavailable in this browser.
+fill_game_text_0345_linker.mp3,template.html:210,game text,game text,Linker,linker,That file is not an Alienmon save.
+fill_game_text_0346_linker.mp3,template.html:211,game text,game text,Linker,linker,Backup restored! Restarting...
+fill_game_text_0347_linker.mp3,template.html:211,game text,game text,Linker,linker,Could not store the save.
+fill_game_text_0348_linker.mp3,template.html:212,game text,game text,Linker,linker,Choose your backup file.
+fill_game_text_0349_linker.mp3,template.html:223,game text,game text,Linker,linker,Registered to the Xenodex!
+fill_game_text_0350_vashti.mp3,template.html:238,game text,game text,Vashti,vashti,I'm Dr. Vashti. Your Linker can bond with them.
+fill_game_text_0351_linker.mp3,template.html:238,game text,game text,Linker,linker,"Choose your first partner, then take the ship and find the rest."
+fill_game_text_0352_linker.mp3,template.html:242,game text,game text,Linker,linker,"Welcome back, Linker."
+fill_game_text_0353_linker.mp3,template.html:256,game text,game text,Linker,linker,Your rival Sola took the other starter and blasted off already.
+fill_game_text_0354_linker.mp3,template.html:256,game text,game text,Linker,linker,"This is Dustmere, your home town on the crater rim. Head down the path at the bottom of town to step out onto the world map."
+fill_game_text_0355_linker.mp3,template.html:256,game text,game text,Linker,linker,Drift grass hides wild Alienmon. Keepers guard each world's tower and its Signal Shard.
+fill_game_text_0356_linker.mp3,template.html:300,game text,game text,Linker,linker,Your Alienmon are fully healed and cured!
+fill_game_text_0357_linker.mp3,template.html:467,game text,game text,Linker,linker,Head out onto the world map?
+fill_game_text_0358_clerk.mp3,template.html:505,game text,game text,Shopkeeper,clerk,Only 3 Singularity Pods per visit. They take ages to charge!
+fill_game_text_0359_clerk.mp3,template.html:507,game text,game text,Shopkeeper,clerk,Not enough stardust. Win battles to earn more.
+fill_game_text_0360_linker.mp3,template.html:507,game text,game text,Linker,linker,Leave the shop.
+fill_game_text_0361_linker.mp3,template.html:521,game text,game text,Linker,linker,The Warp Gate is dormant. New star systems full of Alienmon will open here in future batches.
+fill_game_text_0362_linker.mp3,template.html:556,game text,game text,Linker,linker,It hurt itself in confusion!
+fill_game_text_0363_linker.mp3,template.html:563,game text,game text,Linker,linker,But its HP is already full!
+fill_game_text_0364_linker.mp3,template.html:564,game text,game text,Linker,linker,But it had no effect.
+fill_game_text_0365_linker.mp3,template.html:575,game text,game text,Linker,linker,It's super effective!
+fill_game_text_0366_linker.mp3,template.html:575,game text,game text,Linker,linker,It's not very effective...
+fill_game_text_0367_linker.mp3,template.html:590,game text,game text,Linker,linker,Its colours shimmer like nothing you have seen!
+fill_game_text_0368_linker.mp3,template.html:623,game text,game text,Linker,linker,Choose which Alienmon to swap in.
+fill_game_text_0369_linker.mp3,template.html:624,game text,game text,Linker,linker,Your whole team is down!
+fill_game_text_0370_linker.mp3,template.html:624,game text,game text,Linker,linker,Your ship can beam in a backup Alienmon from storage. Choose one!
+fill_game_text_0371_linker.mp3,template.html:628,game text,game text,Linker,linker,"You lost, but your team gave it everything. Everyone is rested and ready."
+fill_game_text_0372_linker.mp3,template.html:628,game text,game text,Linker,linker,You have no Alienmon left to fight!
+fill_game_text_0373_linker.mp3,template.html:632,game text,game text,Linker,linker,You found a Med Gel!
+fill_game_text_0374_linker.mp3,template.html:632,game text,game text,Linker,linker,You found a Stasis Pod!
+fill_game_text_0375_linker.mp3,template.html:640,game text,game text,Linker,linker,Revives a fainted Alienmon with half HP.
+fill_game_text_0376_linker.mp3,template.html:640,game text,game text,Linker,linker,"Cures burn, poison, shock and freeze."
+fill_game_text_0377_linker.mp3,template.html:641,game text,game text,Linker,linker,Weakens the foe but never knocks it out. Great before a capture.
+fill_game_text_0378_linker.mp3,template.html:642,game text,game text,Linker,linker,Shocks the foe. Shocked Alienmon are easier to capture.
+fill_game_text_0379_linker.mp3,template.html:643,game text,game text,Linker,linker,Fully heals your whole team.
+fill_game_text_0380_linker.mp3,template.html:643,game text,game text,Linker,linker,Restores 10 PP to each move.
+fill_game_text_0381_linker.mp3,template.html:643,game text,game text,Linker,linker,Weaker wild Alienmon keep away for 200 steps.
+fill_game_text_0382_linker.mp3,template.html:643,game text,game text,Linker,linker,Revives a fainted Alienmon with full HP.
+fill_game_text_0383_linker.mp3,template.html:646,game text,game text,Linker,linker,The whole team was fully healed!
+fill_game_text_0384_linker.mp3,template.html:647,game text,game text,Linker,linker,The Signal Jammer hums. Weaker Alienmon will keep their distance.
+fill_game_text_0385_linker.mp3,template.html:654,game text,game text,Linker,linker,Starts a Linker Sync capture. Wild Alienmon only.
+fill_game_text_0386_linker.mp3,template.html:656,game text,game text,Linker,linker,call down a Shard world's sky for 5 turns.
+fill_game_text_0387_linker.mp3,template.html:662,game text,game text,Linker,linker,"Catches wild Alienmon. After you throw it, tune the Sync bar to lock on."
+fill_game_text_0388_linker.mp3,template.html:662,game text,game text,Linker,linker,much better odds of a catch.
+fill_game_text_0389_linker.mp3,template.html:662,game text,game text,Linker,linker,"The strongest pod, for tough or rare Alienmon."
+fill_game_text_0390_linker.mp3,template.html:668,game text,game text,Linker,linker,The signal slipped...
+fill_game_text_0391_linker.mp3,template.html:669,game text,game text,Linker,linker,Transfer beam fired!
+fill_game_text_0392_linker.mp3,template.html:681,game text,game text,Linker,linker,There is no PP left for this move!
+fill_game_text_0393_linker.mp3,template.html:685,game text,game text,Linker,linker,Oblivane is far too vast for any pod. Hold on...
+fill_game_text_0394_linker.mp3,template.html:685,game text,game text,Linker,linker,A Keeper's partner is already bonded. You can't Sync with it!
+fill_game_text_0395_linker.mp3,template.html:689,game text,game text,Linker,linker,Its trait shrugs off Stun Spray. Try it on another Alienmon.
+fill_game_text_0396_linker.mp3,template.html:689,game text,game text,Linker,linker,It already has a status problem.
+fill_game_text_0397_linker.mp3,template.html:692,game text,game text,Linker,linker,You decided not to call for backup.
+fill_game_text_0398_linker.mp3,template.html:747,game text,game text,Linker,linker,Transfer beam locked...
+fill_game_text_0399_linker.mp3,template.html:747,game text,game text,Linker,linker,The signal is breaking!
+fill_game_text_0400_linker.mp3,template.html:782,game text,game text,Linker,linker,Who goes next?
+fill_game_text_0401_linker.mp3,template.html:782,game text,game text,Linker,linker,Swap to whom?
+fill_game_text_0402_linker.mp3,template.html:787,game text,game text,Linker,linker,Storage is empty. Alienmon you catch while your team is full are beamed here.
+fill_game_text_0403_linker.mp3,template.html:796,game text,game text,Linker,linker,Invincible off. Battles hurt again.
+fill_game_text_0404_linker.mp3,template.html:796,game text,game text,Linker,linker,Invincible on. Your Alienmon cannot be hurt.
+fill_game_text_0405_linker.mp3,template.html:796,game text,game text,Linker,linker,Your lead Alienmon will walk behind you.
+fill_game_text_0406_linker.mp3,template.html:796,game text,game text,Linker,linker,New maps off. You will be back on the classic maps the next time you land.
+fill_game_text_0407_linker.mp3,template.html:796,game text,game text,Linker,linker,New maps on. They start the next time you land on a planet.
+fill_game_text_0408_linker.mp3,template.html:796,game text,game text,Linker,linker,New maps off.
+fill_game_text_0409_linker.mp3,template.html:796,game text,game text,Linker,linker,Travel follows the story. Free roam is only for playtest builds.
+fill_game_text_0410_linker.mp3,template.html:796,game text,game text,Linker,linker,"arrows / WASD / d-pad. A: Z, Enter or Space. B: X (jump, back)."
+fill_game_text_0411_linker.mp3,template.html:796,game text,game text,Linker,linker,Esc or P opens the menu. M switches music. Gamepads work too.
+fill_game_text_0412_linker.mp3,template.html:796,game text,game text,Linker,linker,You're already aboard your ship.
+fill_game_text_0413_linker.mp3,template.html:796,game text,game text,Linker,linker,Teleport to your ship?
+fill_game_text_0414_linker.mp3,template.html:796,game text,game text,Linker,linker,fly to a planet and press A to land. Dustara's landing pad leads to Dustmere and the Molten Frontier.
+fill_game_text_0415_linker.mp3,template.html:799,game text,game text,Linker,linker,"Walk the paths between areas, or take your ship to another world."
+fill_game_text_0416_linker.mp3,template.html:801,game text,game text,Linker,linker,Game saved to this browser.
+fill_game_text_0417_linker.mp3,template.html:806,game text,game text,Linker,linker,You need at least one Alienmon with you.
+fill_game_text_0418_linker.mp3,template.html:810,game text,game text,Linker,linker,Your team is full. Choose Swap instead.
+fill_game_text_0419_linker.mp3,template.html:829,game text,game text,Linker,linker,Teleporting to your ship...
+fill_game_text_0420_linker.mp3,template.html:829,game text,game text,Linker,linker,Transfer beam complete. You are aboard your ship.
+fill_game_text_0421_linker.mp3,template.html:829,game text,game text,Linker,linker,Fly to any planet and press A to land. Land on Dustara to walk back to the Molten Frontier.
+fill_game_text_0422_linker.mp3,template.html:829,game text,game text,Linker,linker,Fly to any planet and press A to land. Press START and choose Map to return to the Molten Frontier.
+fill_game_text_0423_linker.mp3,template.html:898,game text,game text,Linker,linker,Type a few words about the bug first.
+fill_game_text_0424_linker.mp3,template.html:902,game text,game text,Linker,linker,"The report could not be sent, so it was copied. Paste it in a message to the developer."
+fill_game_text_0425_linker.mp3,template.html:903,game text,game text,Linker,linker,Could not send. Please screenshot this box and send it to the developer.
+fill_linker_alert_0001_linker.mp3,skyfall front,linker alert,linker alert,Linker,linker,Dust Tide! Swarm & Gravity boosted
+fill_linker_alert_0002_linker.mp3,skyfall storm,linker alert,linker alert,Linker,linker,Linker alert! A Signal Storm is building on Dustara.
+fill_linker_alert_0003_linker.mp3,skyfall front,linker alert,linker alert,Linker,linker,Magnet Storm! Alloy & Volt boosted
+fill_linker_alert_0004_linker.mp3,skyfall storm,linker alert,linker alert,Linker,linker,Linker alert! A Signal Storm is building on Ferrox.
+fill_linker_alert_0005_linker.mp3,skyfall front,linker alert,linker alert,Linker,linker,Spore Bloom! Toxin & Bio boosted
+fill_linker_alert_0006_linker.mp3,skyfall storm,linker alert,linker alert,Linker,linker,Linker alert! A Signal Storm is building on Sporeholm.
+fill_linker_alert_0007_linker.mp3,skyfall front,linker alert,linker alert,Linker,linker,Tide Surge! Hydro & Sonic boosted
+fill_linker_alert_0008_linker.mp3,skyfall storm,linker alert,linker alert,Linker,linker,Linker alert! A Signal Storm is building on Thalassa.
+fill_linker_alert_0009_linker.mp3,skyfall front,linker alert,linker alert,Linker,linker,Grid Blackout! Volt & Psi boosted
+fill_linker_alert_0010_linker.mp3,skyfall storm,linker alert,linker alert,Linker,linker,Linker alert! A Signal Storm is building on Neonis.
+fill_linker_alert_0011_linker.mp3,skyfall front,linker alert,linker alert,Linker,linker,Glyph Wind! Psi & Crystal boosted
+fill_linker_alert_0012_linker.mp3,skyfall storm,linker alert,linker alert,Linker,linker,Linker alert! A Signal Storm is building on Glyphos.
+fill_linker_alert_0013_linker.mp3,skyfall front,linker alert,linker alert,Linker,linker,Ash Fall! Magma & Plasma boosted
+fill_linker_alert_0014_linker.mp3,skyfall storm,linker alert,linker alert,Linker,linker,Linker alert! A Signal Storm is building on Pyros.
+fill_linker_alert_0015_linker.mp3,skyfall front,linker alert,linker alert,Linker,linker,Aurora Surge! Cryo & Crystal boosted
+fill_linker_alert_0016_linker.mp3,skyfall storm,linker alert,linker alert,Linker,linker,Linker alert! A Signal Storm is building on Glacia.
+fill_linker_alert_0017_linker.mp3,skyfall front,linker alert,linker alert,Linker,linker,Bloom Cycle! Bio & Alloy boosted
+fill_linker_alert_0018_linker.mp3,skyfall storm,linker alert,linker alert,Linker,linker,Linker alert! A Signal Storm is building on Helix Station.
+fill_linker_alert_0019_linker.mp3,skyfall front,linker alert,linker alert,Linker,linker,Choir Winds! Sonic & Psi boosted
+fill_linker_alert_0020_linker.mp3,skyfall storm,linker alert,linker alert,Linker,linker,Linker alert! A Signal Storm is building on Halo.
+fill_linker_alert_0021_linker.mp3,skyfall front,linker alert,linker alert,Linker,linker,Shadow Front! Void & Gravity boosted
+fill_linker_alert_0022_linker.mp3,skyfall storm,linker alert,linker alert,Linker,linker,Linker alert! A Signal Storm is building on Umbra.
+fill_linker_alert_0023_linker.mp3,skyfall front,linker alert,linker alert,Linker,linker,Seedpod Shower! Plasma & Gravity boosted
+fill_linker_alert_0024_linker.mp3,skyfall storm,linker alert,linker alert,Linker,linker,Linker alert! A Signal Storm is building on Starfall Rift.
+fill_linker_alert_0025_linker.mp3,skyfall front,linker alert,linker alert,Linker,linker,Prism Flare! Crystal & Plasma boosted
+fill_linker_alert_0026_linker.mp3,skyfall storm,linker alert,linker alert,Linker,linker,Linker alert! A Signal Storm is building on Apex Array.
+fill_linker_alert_0027_linker.mp3,skyfall front,linker alert,linker alert,Linker,linker,Gravity Drift! Gravity & Void boosted
+fill_linker_alert_0028_linker.mp3,skyfall storm,linker alert,linker alert,Linker,linker,Linker alert! A Signal Storm is building on Ystra.

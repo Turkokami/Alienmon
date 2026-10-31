@@ -3246,7 +3246,7 @@
    "zone": "thalassa",
    "grid": [
     0,
-    84
+    100
    ],
    "pkey": "dustara",
    "npcs": [
@@ -3374,7 +3374,7 @@
    "zone": "thalassa",
    "grid": [
     24,
-    84
+    100
    ],
    "pkey": "dustara",
    "npcs": [
@@ -3477,7 +3477,7 @@
    "zone": "thalassa",
    "grid": [
     48,
-    84
+    100
    ],
    "pkey": "dustara",
    "npcs": [
@@ -3625,7 +3625,7 @@
    "zone": "thalassa",
    "grid": [
     72,
-    84
+    100
    ],
    "pkey": "dustara",
    "npcs": [
@@ -3817,7 +3817,7 @@
    "zone": "thalassa",
    "grid": [
     96,
-    84
+    100
    ],
    "pkey": "dustara",
    "npcs": [
@@ -3999,7 +3999,7 @@
    "zone": "thalassa",
    "grid": [
     120,
-    84
+    100
    ],
    "pkey": "dustara",
    "npcs": [
@@ -4098,7 +4098,7 @@
    "zone": "pyros",
    "grid": [
     144,
-    84
+    100
    ],
    "pkey": "dustara",
    "npcs": [
@@ -4206,7 +4206,7 @@
    "zone": "pyros",
    "grid": [
     168,
-    84
+    100
    ],
    "pkey": "dustara",
    "npcs": [
@@ -4329,7 +4329,7 @@
    "zone": "pyros",
    "grid": [
     192,
-    84
+    100
    ],
    "pkey": "dustara",
    "npcs": [
@@ -4471,7 +4471,7 @@
    "zone": "pyros",
    "grid": [
     216,
-    84
+    100
    ],
    "pkey": "dustara",
    "npcs": [
@@ -4602,7 +4602,7 @@
    "zone": "pyros",
    "grid": [
     240,
-    84
+    100
    ],
    "pkey": "dustara",
    "npcs": [
@@ -4661,7 +4661,7 @@
    "zone": "pyros",
    "grid": [
     264,
-    84
+    100
    ],
    "pkey": "dustara",
    "npcs": [
@@ -4802,7 +4802,7 @@
    "zone": "pyros",
    "grid": [
     288,
-    84
+    100
    ],
    "pkey": "dustara",
    "npcs": [
@@ -4942,7 +4942,7 @@
    "zone": "pyros",
    "grid": [
     312,
-    84
+    100
    ],
    "pkey": "dustara",
    "npcs": [
@@ -5046,7 +5046,7 @@
    "zone": "pyros",
    "grid": [
     336,
-    83
+    99
    ],
    "pkey": "dustara",
    "npcs": [
@@ -19699,7 +19699,7 @@
    },
    "grid": [
     0,
-    133
+    149
    ],
    "pkey": "ystra",
    "npcs": [
@@ -19857,7 +19857,7 @@
    },
    "grid": [
     24,
-    133
+    149
    ],
    "pkey": "ystra",
    "npcs": [
@@ -19987,7 +19987,7 @@
    },
    "grid": [
     48,
-    133
+    149
    ],
    "pkey": "ystra",
    "npcs": [
@@ -20104,7 +20104,7 @@
    },
    "grid": [
     72,
-    133
+    149
    ],
    "pkey": "ystra",
    "npcs": [
@@ -22930,12 +22930,12 @@
      "offset": 1
     },
     "left": {
-     "to": "497",
+     "to": "947",
      "range": [
       2,
-      9
+      6
      ],
-     "offset": 6
+     "offset": 0
     },
     "top": {
      "to": "481",
@@ -23057,12 +23057,12 @@
    "notes": "",
    "edges": {
     "right": {
-     "to": "489",
+     "to": "947",
      "range": [
       8,
       11
      ],
-     "offset": -6
+     "offset": 0
     }
    },
    "warps": [
@@ -23190,8 +23190,8 @@
     ]
    },
    "grid": [
-    -95,
-    -15
+    -119,
+    -9
    ],
    "pkey": "ferrox",
    "npcs": [
@@ -24596,12 +24596,12 @@
      "offset": -8
     },
     "left": {
-     "to": "495",
+     "to": "946",
      "range": [
-      3,
-      7
+      4,
+      6
      ],
-     "offset": 5
+     "offset": 0
     }
    },
    "warps": [],
@@ -24701,20 +24701,20 @@
      "offset": 8
     },
     "bottom": {
-     "to": "491",
+     "to": "948",
      "range": [
-      13,
-      20
+      14,
+      18
      ],
-     "offset": -9
+     "offset": 0
     }
    },
    "warps": [],
    "objects": [
     {
      "tile": [
-      14,
-      10
+      19,
+      14
      ],
      "k": "stash",
      "item": "revive",
@@ -24798,12 +24798,12 @@
    "notes": "",
    "edges": {
     "top": {
-     "to": "488",
+     "to": "948",
      "range": [
       4,
       7
      ],
-     "offset": 9
+     "offset": 1
     },
     "right": {
      "to": "920",
@@ -24953,8 +24953,8 @@
     ]
    },
    "grid": [
-    -78,
-    52
+    -86,
+    68
    ],
    "pkey": "ferrox",
    "npcs": [
@@ -25001,12 +25001,12 @@
    "notes": "",
    "edges": {
     "right": {
-     "to": "486",
+     "to": "946",
      "range": [
-      8,
+      7,
       8
      ],
-     "offset": -5
+     "offset": 0
     }
    },
    "warps": [
@@ -25054,12 +25054,12 @@
    "spawns": {
     "default": [
      22,
-     8
+     7
     ]
    },
    "grid": [
-    -119,
-    15
+    -143,
+    20
    ],
    "pkey": "ferrox",
    "npcs": [
@@ -25908,12 +25908,12 @@
      "offset": 11
     },
     "bottom": {
-     "to": "458",
+     "to": "945",
      "range": [
       12,
-      19
+      17
      ],
-     "offset": -8
+     "offset": 0
     }
    },
    "warps": [],
@@ -25930,8 +25930,8 @@
     },
     {
      "tile": [
-      2,
-      9
+      20,
+      13
      ],
      "k": "stash",
      "item": "dust",
@@ -26005,12 +26005,12 @@
    "notes": "",
    "edges": {
     "top": {
-     "to": "453",
+     "to": "945",
      "range": [
       4,
       9
      ],
-     "offset": 8
+     "offset": 0
     },
     "left": {
      "to": "465",
@@ -26059,8 +26059,8 @@
     ]
    },
    "grid": [
-    73,
-    48
+    65,
+    64
    ],
    "pkey": "dustara",
    "npcs": [
@@ -26251,8 +26251,8 @@
     ]
    },
    "grid": [
-    49,
-    43
+    41,
+    59
    ],
    "pkey": "dustara",
    "npcs": [
@@ -26355,8 +26355,8 @@
     ]
    },
    "grid": [
-    61,
-    64
+    53,
+    80
    ],
    "pkey": "dustara",
    "npcs": [
@@ -30366,12 +30366,12 @@
      "offset": -10
     },
     "bottom": {
-     "to": "718",
+     "to": "949",
      "range": [
       14,
       19
      ],
-     "offset": -11
+     "offset": 0
     }
    },
    "warps": [],
@@ -30485,12 +30485,12 @@
    "notes": "",
    "edges": {
     "top": {
-     "to": "716",
+     "to": "949",
      "range": [
       3,
       6
      ],
-     "offset": 11
+     "offset": 1
     }
    },
    "warps": [],
@@ -30533,8 +30533,8 @@
     ]
    },
    "grid": [
-    121,
-    37
+    111,
+    53
    ],
    "pkey": "sporeholm",
    "npcs": [
@@ -31543,12 +31543,12 @@
      "offset": -4
     },
     "top": {
-     "to": "778",
+     "to": "950",
      "range": [
       14,
       18
      ],
-     "offset": -13
+     "offset": 1
     }
    },
    "warps": [],
@@ -31607,8 +31607,8 @@
     ]
    },
    "grid": [
-    83,
-    16
+    97,
+    32
    ],
    "pkey": "thalassa",
    "npcs": [
@@ -32197,8 +32197,8 @@
     ]
    },
    "grid": [
-    59,
-    20
+    73,
+    36
    ],
    "pkey": "thalassa",
    "npcs": [
@@ -32334,8 +32334,8 @@
     ]
    },
    "grid": [
-    61,
-    36
+    75,
+    52
    ],
    "pkey": "thalassa",
    "npcs": [
@@ -32454,8 +32454,8 @@
     ]
    },
    "grid": [
-    64,
-    52
+    78,
+    68
    ],
    "pkey": "thalassa",
    "npcs": [
@@ -32507,12 +32507,12 @@
      "offset": -2
     },
     "bottom": {
-     "to": "801",
+     "to": "950",
      "range": [
-      1,
-      10
+      2,
+      8
      ],
-     "offset": 13
+     "offset": 0
     },
     "top": {
      "to": "779",
@@ -32601,7 +32601,7 @@
     },
     {
      "x": 4,
-     "y": 9,
+     "y": 12,
      "mon": "Clawfort"
     }
    ]
@@ -37900,12 +37900,12 @@
      "offset": 0
     },
     "right": {
-     "to": "570",
+     "to": "951",
      "range": [
       5,
-      9
+      7
      ],
-     "offset": 7
+     "offset": 0
     },
     "left": {
      "to": "553",
@@ -38016,12 +38016,12 @@
    "notes": "",
    "edges": {
     "left": {
-     "to": "552",
+     "to": "951",
      "range": [
       12,
       13
      ],
-     "offset": -7
+     "offset": 0
     }
    },
    "warps": [
@@ -38075,8 +38075,8 @@
     ]
    },
    "grid": [
-    100,
-    -25
+    124,
+    -18
    ],
    "pkey": "glyphos",
    "npcs": [
@@ -47213,12 +47213,12 @@
      "offset": 0
     },
     "right": {
-     "to": "605",
+     "to": "952",
      "range": [
       3,
       8
      ],
-     "offset": 7
+     "offset": 0
     },
     "bottom": {
      "to": "632",
@@ -48701,12 +48701,12 @@
    "notes": "",
    "edges": {
     "left": {
-     "to": "613",
+     "to": "952",
      "range": [
-      10,
+      9,
       12
      ],
-     "offset": -7
+     "offset": -1
     },
     "right": {
      "to": "626",
@@ -48807,12 +48807,12 @@
    "spawns": {
     "default": [
      1,
-     10
+     9
     ]
    },
    "grid": [
-    120,
-    -10
+    144,
+    -4
    ],
    "pkey": "helix",
    "npcs": [
@@ -49106,8 +49106,8 @@
     ]
    },
    "grid": [
-    144,
-    -9
+    168,
+    -3
    ],
    "pkey": "helix",
    "npcs": [
@@ -52689,8 +52689,8 @@
     ]
    },
    "grid": [
-    9,
-    -25
+    -1,
+    -41
    ],
    "pkey": "apex",
    "npcs": [
@@ -52856,8 +52856,8 @@
     ]
    },
    "grid": [
-    33,
-    -23
+    23,
+    -39
    ],
    "pkey": "apex",
    "npcs": [
@@ -53018,8 +53018,8 @@
     ]
    },
    "grid": [
-    73,
-    -53
+    63,
+    -69
    ],
    "pkey": "apex",
    "npcs": [
@@ -53192,12 +53192,12 @@
    "notes": "",
    "edges": {
     "bottom": {
-     "to": "416",
+     "to": "953",
      "range": [
-      3,
-      16
+      7,
+      13
      ],
-     "offset": 10
+     "offset": 0
     },
     "left": {
      "to": "430",
@@ -53228,8 +53228,8 @@
    "objects": [
     {
      "tile": [
-      17,
-      12
+      14,
+      14
      ],
      "k": "stash",
      "item": "dust",
@@ -53238,8 +53238,8 @@
     },
     {
      "tile": [
-      20,
-      5
+      5,
+      12
      ],
      "k": "stash",
      "item": "dust",
@@ -53249,13 +53249,13 @@
    ],
    "spawns": {
     "default": [
-     3,
+     7,
      14
     ]
    },
    "grid": [
-    57,
-    -19
+    47,
+    -35
    ],
    "pkey": "apex",
    "npcs": [
@@ -53288,13 +53288,13 @@
    ],
    "mons": [
     {
-     "x": 19,
+     "x": 20,
      "y": 3,
      "mon": "Flarehawk"
     },
     {
-     "x": 2,
-     "y": 4,
+     "x": 5,
+     "y": 14,
      "mon": "Diamondillo"
     }
    ]
@@ -53321,12 +53321,12 @@
      "offset": -3
     },
     "top": {
-     "to": "421",
+     "to": "954",
      "range": [
-      3,
-      20
+      5,
+      19
      ],
-     "offset": 11
+     "offset": 0
     },
     "right": {
      "to": "427",
@@ -53360,7 +53360,7 @@
     {
      "tile": [
       2,
-      1
+      2
      ],
      "k": "stash",
      "item": "ether",
@@ -53395,9 +53395,9 @@
     },
     {
      "x": 20,
-     "y": 11,
+     "y": 3,
      "art": "guard",
-     "face": "up",
+     "face": "left",
      "t": [],
      "id": "sec412_tr1",
      "trainer": {
@@ -53414,8 +53414,8 @@
      "mon": "Riffrex"
     },
     {
-     "x": 3,
-     "y": 3,
+     "x": 19,
+     "y": 10,
      "mon": "Cragmajor"
     }
    ]
@@ -53650,8 +53650,8 @@
     ]
    },
    "grid": [
-    60,
-    -35
+    50,
+    -51
    ],
    "pkey": "apex",
    "npcs": [
@@ -53928,12 +53928,12 @@
      "offset": -1
     },
     "top": {
-     "to": "411",
+     "to": "953",
      "range": [
       13,
       19
      ],
-     "offset": -10
+     "offset": 0
     }
    },
    "warps": [],
@@ -54184,8 +54184,8 @@
     ]
    },
    "grid": [
-    81,
-    -21
+    71,
+    -37
    ],
    "pkey": "apex",
    "npcs": [
@@ -54289,8 +54289,8 @@
     ]
    },
    "grid": [
-    83,
-    -37
+    73,
+    -53
    ],
    "pkey": "apex",
    "npcs": [
@@ -54348,12 +54348,12 @@
    "notes": "",
    "edges": {
     "bottom": {
-     "to": "412",
+     "to": "954",
      "range": [
       14,
       19
      ],
-     "offset": -11
+     "offset": 0
     },
     "top": {
      "to": "405",
@@ -54394,8 +54394,8 @@
     ]
    },
    "grid": [
-    13,
-    -19
+    24,
+    -35
    ],
    "pkey": "apex",
    "npcs": [
@@ -54733,8 +54733,8 @@
     ]
    },
    "grid": [
-    12,
-    -35
+    23,
+    -51
    ],
    "pkey": "apex",
    "npcs": [
@@ -57025,12 +57025,12 @@
      "offset": 1
     },
     "bottom": {
-     "to": "857",
+     "to": "955",
      "range": [
       6,
       10
      ],
-     "offset": -4
+     "offset": 0
     }
    },
    "warps": [],
@@ -57256,8 +57256,8 @@
     ]
    },
    "grid": [
-    49,
-    113
+    45,
+    129
    ],
    "pkey": "ystra",
    "npcs": [
@@ -57359,8 +57359,8 @@
     ]
    },
    "grid": [
-    43,
-    97
+    39,
+    113
    ],
    "pkey": "ystra",
    "npcs": [
@@ -57466,8 +57466,8 @@
     ]
    },
    "grid": [
-    44,
-    81
+    40,
+    97
    ],
    "pkey": "ystra",
    "npcs": [
@@ -57791,12 +57791,12 @@
    "notes": "",
    "edges": {
     "top": {
-     "to": "851",
+     "to": "955",
      "range": [
       2,
       15
      ],
-     "offset": 4
+     "offset": 0
     },
     "bottom": {
      "to": "854",
@@ -57837,8 +57837,8 @@
     ]
    },
    "grid": [
-    46,
-    65
+    42,
+    81
    ],
    "pkey": "ystra",
    "npcs": [
@@ -65920,7 +65920,7 @@
    },
    "grid": [
     0,
-    57
+    73
    ],
    "pkey": "sporeholm",
    "npcs": [
@@ -69261,7 +69261,7 @@
    },
    "grid": [
     0,
-    153
+    169
    ],
    "pkey": "ystra",
    "npcs": [
@@ -69377,7 +69377,7 @@
    },
    "grid": [
     0,
-    173
+    189
    ],
    "pkey": "ystra",
    "npcs": [
@@ -69597,7 +69597,7 @@
    },
    "grid": [
     0,
-    193
+    209
    ],
    "pkey": "ystra",
    "npcs": [
@@ -69733,7 +69733,7 @@
    },
    "grid": [
     0,
-    213
+    229
    ],
    "pkey": "ystra",
    "npcs": [
@@ -70062,7 +70062,7 @@
    },
    "grid": [
     0,
-    75
+    89
    ],
    "pkey": "ferrox",
    "npcs": [
@@ -70188,7 +70188,7 @@
    },
    "grid": [
     24,
-    75
+    89
    ],
    "pkey": "ferrox",
    "npcs": [
@@ -70334,7 +70334,7 @@
    },
    "grid": [
     0,
-    104
+    120
    ],
    "pkey": "dustara",
    "npcs": [
@@ -70464,7 +70464,7 @@
    },
    "grid": [
     0,
-    124
+    140
    ],
    "pkey": "dustara",
    "npcs": [
@@ -70714,7 +70714,7 @@
    },
    "grid": [
     0,
-    144
+    160
    ],
    "pkey": "dustara",
    "npcs": [
@@ -71124,7 +71124,7 @@
    },
    "grid": [
     0,
-    164
+    180
    ],
    "pkey": "dustara",
    "npcs": [
@@ -71283,7 +71283,7 @@
    },
    "grid": [
     0,
-    184
+    200
    ],
    "pkey": "dustara",
    "npcs": [
@@ -71414,7 +71414,7 @@
    },
    "grid": [
     0,
-    95
+    109
    ],
    "pkey": "ferrox",
    "npcs": [
@@ -71510,8 +71510,8 @@
     ]
    },
    "grid": [
-    -54,
-    53
+    -62,
+    69
    ],
    "pkey": "ferrox",
    "npcs": [
@@ -71628,7 +71628,7 @@
    },
    "grid": [
     0,
-    77
+    93
    ],
    "pkey": "sporeholm",
    "npcs": [
@@ -71745,7 +71745,7 @@
    },
    "grid": [
     0,
-    97
+    113
    ],
    "pkey": "sporeholm",
    "npcs": [
@@ -71973,7 +71973,7 @@
    },
    "grid": [
     0,
-    72
+    88
    ],
    "pkey": "thalassa",
    "npcs": [
@@ -74304,7 +74304,7 @@
    },
    "grid": [
     0,
-    233
+    249
    ],
    "pkey": "ystra",
    "npcs": [
@@ -74423,7 +74423,7 @@
    },
    "grid": [
     0,
-    253
+    269
    ],
    "pkey": "ystra",
    "npcs": [
@@ -74990,6 +74990,1089 @@
    },
    "parent": "432",
    "pkey": "apex"
+  },
+  "945": {
+   "id": "945",
+   "name": "Oasis Steps",
+   "planet": "Dustara",
+   "dir": "01_dustara",
+   "type": "route",
+   "img": "art/sections_game/01_dustara/945_oasis_steps.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "",
+   "edges": {
+    "top": {
+     "to": "453",
+     "range": [
+      12,
+      17
+     ],
+     "offset": 0
+    },
+    "bottom": {
+     "to": "458",
+     "range": [
+      4,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [],
+   "objects": [
+    {
+     "tile": [
+      17,
+      3
+     ],
+     "k": "stash",
+     "item": "cure",
+     "n": 2,
+     "tier": 1
+    },
+    {
+     "tile": [
+      11,
+      5
+     ],
+     "k": "stash",
+     "item": "dust",
+     "n": 150,
+     "tier": 1
+    }
+   ],
+   "spawns": {
+    "default": [
+     12,
+     1
+    ]
+   },
+   "grid": [
+    65,
+    48
+   ],
+   "pkey": "dustara",
+   "npcs": [
+    {
+     "x": 15,
+     "y": 4,
+     "art": "explorer",
+     "face": "left",
+     "t": [],
+     "id": "sec945_tr0",
+     "trainer": {
+      "cls": "Linker",
+      "route": 1,
+      "name": "Nelo"
+     }
+    },
+    {
+     "x": 13,
+     "y": 4,
+     "art": "wanderer",
+     "face": "right",
+     "t": [],
+     "id": "sec945_tr1",
+     "trainer": {
+      "cls": "Canyon Scout",
+      "route": 1,
+      "name": "Meidra"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 13,
+     "y": 6,
+     "mon": "Kilnback"
+    }
+   ]
+  },
+  "946": {
+   "id": "946",
+   "name": "Back Lot Siding",
+   "planet": "Ferrox",
+   "dir": "02_ferrox",
+   "type": "route",
+   "img": "art/sections_game/02_ferrox/946_back_lot_siding.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "",
+   "edges": {
+    "right": {
+     "to": "486",
+     "range": [
+      4,
+      6
+     ],
+     "offset": 0
+    },
+    "left": {
+     "to": "495",
+     "range": [
+      7,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [],
+   "objects": [
+    {
+     "tile": [
+      18,
+      10
+     ],
+     "k": "stash",
+     "item": "stasis",
+     "n": 3,
+     "tier": 1
+    },
+    {
+     "tile": [
+      14,
+      10
+     ],
+     "k": "stash",
+     "item": "gel",
+     "n": 2,
+     "tier": 1
+    }
+   ],
+   "spawns": {
+    "default": [
+     22,
+     4
+    ]
+   },
+   "grid": [
+    -119,
+    20
+   ],
+   "pkey": "ferrox",
+   "npcs": [
+    {
+     "x": 16,
+     "y": 8,
+     "art": "miner",
+     "face": "up",
+     "t": [],
+     "id": "sec946_tr0",
+     "trainer": {
+      "cls": "Miner",
+      "route": 1,
+      "name": "Krone"
+     }
+    },
+    {
+     "x": 10,
+     "y": 9,
+     "art": "guard",
+     "face": "up",
+     "t": [],
+     "id": "sec946_tr1",
+     "trainer": {
+      "cls": "Rail Hand",
+      "route": 1,
+      "name": "Skaira"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 21,
+     "y": 9,
+     "mon": "Gearhound"
+    },
+    {
+     "x": 3,
+     "y": 8,
+     "mon": "Coilossus"
+    }
+   ]
+  },
+  "947": {
+   "id": "947",
+   "name": "Crane Gully",
+   "planet": "Ferrox",
+   "dir": "02_ferrox",
+   "type": "route",
+   "img": "art/sections_game/02_ferrox/947_crane_gully.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "",
+   "edges": {
+    "right": {
+     "to": "489",
+     "range": [
+      2,
+      6
+     ],
+     "offset": 0
+    },
+    "left": {
+     "to": "497",
+     "range": [
+      8,
+      10
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [],
+   "objects": [
+    {
+     "tile": [
+      3,
+      9
+     ],
+     "k": "stash",
+     "item": "gel",
+     "n": 2,
+     "tier": 1
+    },
+    {
+     "tile": [
+      6,
+      9
+     ],
+     "k": "stash",
+     "item": "stun",
+     "n": 1,
+     "tier": 1
+    }
+   ],
+   "spawns": {
+    "default": [
+     22,
+     2
+    ]
+   },
+   "grid": [
+    -95,
+    -9
+   ],
+   "pkey": "ferrox",
+   "npcs": [
+    {
+     "x": 6,
+     "y": 7,
+     "art": "guard",
+     "face": "down",
+     "t": [],
+     "id": "sec947_tr0",
+     "trainer": {
+      "cls": "Rail Hand",
+      "route": 1,
+      "name": "Skorin"
+     }
+    },
+    {
+     "x": 4,
+     "y": 7,
+     "art": "technician",
+     "face": "down",
+     "t": [],
+     "id": "sec947_tr1",
+     "trainer": {
+      "cls": "Scrapper",
+      "route": 1,
+      "name": "Brais"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 1,
+     "y": 7,
+     "mon": "Anvilox"
+    }
+   ]
+  },
+  "948": {
+   "id": "948",
+   "name": "Junk Switchback",
+   "planet": "Ferrox",
+   "dir": "02_ferrox",
+   "type": "route",
+   "img": "art/sections_game/02_ferrox/948_junk_switchback.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "",
+   "edges": {
+    "top": {
+     "to": "488",
+     "range": [
+      14,
+      18
+     ],
+     "offset": 0
+    },
+    "bottom": {
+     "to": "491",
+     "range": [
+      5,
+      8
+     ],
+     "offset": -1
+    }
+   },
+   "warps": [],
+   "objects": [
+    {
+     "tile": [
+      18,
+      8
+     ],
+     "k": "stash",
+     "item": "stun",
+     "n": 1,
+     "tier": 1
+    },
+    {
+     "tile": [
+      6,
+      10
+     ],
+     "k": "stash",
+     "item": "cure",
+     "n": 2,
+     "tier": 1
+    }
+   ],
+   "spawns": {
+    "default": [
+     14,
+     1
+    ]
+   },
+   "grid": [
+    -87,
+    52
+   ],
+   "pkey": "ferrox",
+   "npcs": [
+    {
+     "x": 18,
+     "y": 5,
+     "art": "technician",
+     "face": "left",
+     "t": [],
+     "id": "sec948_tr0",
+     "trainer": {
+      "cls": "Scrapper",
+      "route": 1,
+      "name": "Fak"
+     }
+    },
+    {
+     "x": 5,
+     "y": 8,
+     "art": "miner",
+     "face": "right",
+     "t": [],
+     "id": "sec948_tr1",
+     "trainer": {
+      "cls": "Miner",
+      "route": 1,
+      "name": "Thumi"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 6,
+     "y": 12,
+     "mon": "Gearhound"
+    },
+    {
+     "x": 16,
+     "y": 6,
+     "mon": "Coilossus"
+    }
+   ]
+  },
+  "949": {
+   "id": "949",
+   "name": "Lantern Stepping Stones",
+   "planet": "Sporeholm",
+   "dir": "03_sporeholm",
+   "type": "route",
+   "img": "art/sections_game/03_sporeholm/949_lantern_stepping_stones.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "",
+   "edges": {
+    "top": {
+     "to": "716",
+     "range": [
+      14,
+      19
+     ],
+     "offset": 0
+    },
+    "bottom": {
+     "to": "718",
+     "range": [
+      4,
+      7
+     ],
+     "offset": -1
+    }
+   },
+   "warps": [],
+   "objects": [
+    {
+     "tile": [
+      7,
+      6
+     ],
+     "k": "stash",
+     "item": "stasis",
+     "n": 5,
+     "tier": 2
+    },
+    {
+     "tile": [
+      18,
+      3
+     ],
+     "k": "stash",
+     "item": "megagel",
+     "n": 1,
+     "tier": 2
+    }
+   ],
+   "spawns": {
+    "default": [
+     14,
+     1
+    ]
+   },
+   "grid": [
+    110,
+    37
+   ],
+   "pkey": "sporeholm",
+   "npcs": [
+    {
+     "x": 13,
+     "y": 3,
+     "art": "researcher",
+     "face": "right",
+     "t": [],
+     "id": "sec949_tr0",
+     "trainer": {
+      "cls": "Botanist",
+      "route": 1,
+      "name": "Lilo"
+     }
+    },
+    {
+     "x": 9,
+     "y": 6,
+     "art": "explorer",
+     "face": "right",
+     "t": [],
+     "id": "sec949_tr1",
+     "trainer": {
+      "cls": "Bog Hiker",
+      "route": 1,
+      "name": "Chai"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 17,
+     "y": 5,
+     "mon": "Sludgeviper"
+    },
+    {
+     "x": 13,
+     "y": 5,
+     "mon": "Lianarch"
+    }
+   ]
+  },
+  "950": {
+   "id": "950",
+   "name": "Tidepath Dunes",
+   "planet": "Thalassa",
+   "dir": "04_thalassa",
+   "type": "route",
+   "img": "art/sections_game/04_thalassa/950_tidepath_dunes.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "",
+   "edges": {
+    "bottom": {
+     "to": "801",
+     "range": [
+      15,
+      18
+     ],
+     "offset": -1
+    },
+    "top": {
+     "to": "778",
+     "range": [
+      2,
+      8
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [],
+   "objects": [],
+   "spawns": {
+    "default": [
+     15,
+     14
+    ]
+   },
+   "grid": [
+    96,
+    16
+   ],
+   "pkey": "thalassa",
+   "npcs": [
+    {
+     "x": 8,
+     "y": 6,
+     "art": "guard",
+     "face": "right",
+     "t": [],
+     "id": "sec950_tr0",
+     "trainer": {
+      "cls": "Dockhand",
+      "route": 1,
+      "name": "Lix"
+     }
+    },
+    {
+     "x": 10,
+     "y": 5,
+     "art": "squidsailor",
+     "face": "right",
+     "t": [],
+     "id": "sec950_tr1",
+     "trainer": {
+      "cls": "Sailor",
+      "route": 1,
+      "name": "Geimi"
+     }
+    }
+   ],
+   "mons": []
+  },
+  "951": {
+   "id": "951",
+   "name": "Landing Causeway",
+   "planet": "Glyphos",
+   "dir": "06_glyphos",
+   "type": "route",
+   "img": "art/sections_game/06_glyphos/951_landing_causeway.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "",
+   "edges": {
+    "left": {
+     "to": "552",
+     "range": [
+      5,
+      7
+     ],
+     "offset": 0
+    },
+    "right": {
+     "to": "570",
+     "range": [
+      12,
+      13
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [],
+   "objects": [],
+   "spawns": {
+    "default": [
+     1,
+     5
+    ]
+   },
+   "grid": [
+    100,
+    -18
+   ],
+   "pkey": "glyphos",
+   "npcs": [
+    {
+     "x": 12,
+     "y": 9,
+     "art": "explorer",
+     "face": "down",
+     "t": [],
+     "id": "sec951_tr0",
+     "trainer": {
+      "cls": "Archaeologist",
+      "route": 1,
+      "name": "Krialy"
+     }
+    },
+    {
+     "x": 6,
+     "y": 7,
+     "art": "pilgrim",
+     "face": "left",
+     "t": [],
+     "id": "sec951_tr1",
+     "trainer": {
+      "cls": "Pilgrim",
+      "route": 1,
+      "name": "Nuk"
+     }
+    }
+   ],
+   "mons": []
+  },
+  "952": {
+   "id": "952",
+   "name": "Proving Grounds Ramp",
+   "planet": "Helix Station",
+   "dir": "09_helix",
+   "type": "route",
+   "img": "art/sections_game/09_helix/952_proving_grounds_ramp.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "",
+   "edges": {
+    "left": {
+     "to": "613",
+     "range": [
+      3,
+      7
+     ],
+     "offset": 0
+    },
+    "right": {
+     "to": "605",
+     "range": [
+      8,
+      10
+     ],
+     "offset": 1
+    }
+   },
+   "warps": [],
+   "objects": [
+    {
+     "tile": [
+      18,
+      5
+     ],
+     "k": "stash",
+     "item": "singularity",
+     "n": 1,
+     "tier": 5
+    },
+    {
+     "tile": [
+      7,
+      4
+     ],
+     "k": "stash",
+     "item": "fullgel",
+     "n": 2,
+     "tier": 5
+    }
+   ],
+   "spawns": {
+    "default": [
+     0,
+     3
+    ]
+   },
+   "grid": [
+    120,
+    -3
+   ],
+   "pkey": "helix",
+   "npcs": [
+    {
+     "x": 16,
+     "y": 3,
+     "art": "researcher",
+     "face": "down",
+     "t": [],
+     "id": "sec952_tr0",
+     "trainer": {
+      "cls": "Scientist",
+      "route": 1,
+      "name": "Sily"
+     }
+    },
+    {
+     "x": 11,
+     "y": 4,
+     "art": "guard",
+     "face": "down",
+     "t": [],
+     "id": "sec952_tr1",
+     "trainer": {
+      "cls": "Guard",
+      "route": 1,
+      "name": "Memi"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 3,
+     "y": 4,
+     "mon": "Wardenix"
+    },
+    {
+     "x": 14,
+     "y": 3,
+     "mon": "Nulltron"
+    }
+   ]
+  },
+  "953": {
+   "id": "953",
+   "name": "Summit Switchback",
+   "planet": "Apex Array",
+   "dir": "13_apex",
+   "type": "route",
+   "img": "art/sections_game/13_apex/953_summit_switchback.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "",
+   "edges": {
+    "top": {
+     "to": "411",
+     "range": [
+      7,
+      13
+     ],
+     "offset": 0
+    },
+    "bottom": {
+     "to": "416",
+     "range": [
+      13,
+      18
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [],
+   "objects": [
+    {
+     "tile": [
+      18,
+      2
+     ],
+     "k": "stash",
+     "item": "maxrevive",
+     "n": 2,
+     "tier": 7
+    },
+    {
+     "tile": [
+      19,
+      6
+     ],
+     "k": "stash",
+     "item": "singularity",
+     "n": 2,
+     "tier": 7
+    }
+   ],
+   "spawns": {
+    "default": [
+     7,
+     1
+    ]
+   },
+   "grid": [
+    47,
+    -19
+   ],
+   "pkey": "apex",
+   "npcs": [
+    {
+     "x": 18,
+     "y": 8,
+     "art": "guard",
+     "face": "left",
+     "t": [],
+     "id": "sec953_tr0",
+     "trainer": {
+      "cls": "Summit Guard",
+      "route": 1,
+      "name": "Cluven"
+     }
+    },
+    {
+     "x": 14,
+     "y": 3,
+     "art": "explorer",
+     "face": "left",
+     "t": [],
+     "id": "sec953_tr1",
+     "trainer": {
+      "cls": "Ace Linker",
+      "route": 1,
+      "name": "Drora"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 16,
+     "y": 2,
+     "mon": "Diamondillo"
+    },
+    {
+     "x": 7,
+     "y": 4,
+     "mon": "Gemmantle"
+    }
+   ]
+  },
+  "954": {
+   "id": "954",
+   "name": "Terrace Stair",
+   "planet": "Apex Array",
+   "dir": "13_apex",
+   "type": "route",
+   "img": "art/sections_game/13_apex/954_terrace_stair.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "",
+   "edges": {
+    "bottom": {
+     "to": "412",
+     "range": [
+      5,
+      19
+     ],
+     "offset": 0
+    },
+    "top": {
+     "to": "421",
+     "range": [
+      14,
+      18
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [],
+   "objects": [
+    {
+     "tile": [
+      7,
+      11
+     ],
+     "k": "stash",
+     "item": "maxrevive",
+     "n": 2,
+     "tier": 7
+    },
+    {
+     "tile": [
+      17,
+      10
+     ],
+     "k": "stash",
+     "item": "dust",
+     "n": 2500,
+     "tier": 7
+    }
+   ],
+   "spawns": {
+    "default": [
+     5,
+     14
+    ]
+   },
+   "grid": [
+    24,
+    -19
+   ],
+   "pkey": "apex",
+   "npcs": [
+    {
+     "x": 19,
+     "y": 8,
+     "art": "explorer",
+     "face": "left",
+     "t": [],
+     "id": "sec954_tr0",
+     "trainer": {
+      "cls": "Ace Linker",
+      "route": 1,
+      "name": "Cin"
+     }
+    },
+    {
+     "x": 19,
+     "y": 11,
+     "art": "researcher",
+     "face": "left",
+     "t": [],
+     "id": "sec954_tr1",
+     "trainer": {
+      "cls": "Astronomer",
+      "route": 1,
+      "name": "Puna"
+     }
+    }
+   ],
+   "mons": [
+    {
+     "x": 4,
+     "y": 9,
+     "mon": "Cragmajor"
+    },
+    {
+     "x": 5,
+     "y": 12,
+     "mon": "Flarehawk"
+    }
+   ]
+  },
+  "955": {
+   "id": "955",
+   "name": "Void Fork Descent",
+   "planet": "Ystra",
+   "dir": "14_ystra",
+   "type": "route",
+   "img": "art/sections_game/14_ystra/955_void_fork_descent.png",
+   "tiles": [
+    24,
+    16
+   ],
+   "notes": "",
+   "edges": {
+    "top": {
+     "to": "851",
+     "range": [
+      6,
+      9
+     ],
+     "offset": 0
+    },
+    "bottom": {
+     "to": "857",
+     "range": [
+      2,
+      15
+     ],
+     "offset": 0
+    }
+   },
+   "warps": [],
+   "objects": [
+    {
+     "tile": [
+      11,
+      10
+     ],
+     "k": "stash",
+     "item": "fullgel",
+     "n": 3,
+     "tier": 7
+    },
+    {
+     "tile": [
+      3,
+      3
+     ],
+     "k": "stash",
+     "item": "maxrevive",
+     "n": 2,
+     "tier": 7
+    }
+   ],
+   "spawns": {
+    "default": [
+     6,
+     1
+    ]
+   },
+   "grid": [
+    42,
+    65
+   ],
+   "pkey": "ystra",
+   "npcs": [
+    {
+     "x": 11,
+     "y": 8,
+     "art": "explorer",
+     "face": "left",
+     "t": [],
+     "id": "sec955_tr0",
+     "trainer": {
+      "cls": "Rift Walker",
+      "route": 1,
+      "name": "Kriodo"
+     },
+     "after": "P03"
+    },
+    {
+     "x": 5,
+     "y": 3,
+     "art": "pilgrim",
+     "face": "left",
+     "t": [],
+     "id": "sec955_tr1",
+     "trainer": {
+      "cls": "Seeker",
+      "route": 1,
+      "name": "Vialan"
+     },
+     "after": "P03"
+    }
+   ],
+   "mons": [
+    {
+     "x": 14,
+     "y": 9,
+     "mon": "Fractalith"
+    },
+    {
+     "x": 4,
+     "y": 8,
+     "mon": "Riftwalker"
+    }
+   ]
   }
  },
  "connections": [
@@ -77053,13 +78136,13 @@
    "edge": "left",
    "tile_range": [
     2,
-    9
+    6
    ],
-   "to_id": "497",
+   "to_id": "947",
    "to_edge": "right",
    "to_tile": [
-    8,
-    11
+    2,
+    6
    ]
   },
   {
@@ -77083,11 +78166,11 @@
     8,
     11
    ],
-   "to_id": "489",
+   "to_id": "947",
    "to_edge": "left",
    "to_tile": [
-    2,
-    9
+    8,
+    10
    ]
   },
   {
@@ -77304,14 +78387,14 @@
    "from_id": "486",
    "edge": "left",
    "tile_range": [
-    3,
-    7
+    4,
+    6
    ],
-   "to_id": "495",
+   "to_id": "946",
    "to_edge": "right",
    "to_tile": [
-    8,
-    8
+    4,
+    6
    ]
   },
   {
@@ -77332,14 +78415,14 @@
    "from_id": "488",
    "edge": "bottom",
    "tile_range": [
-    13,
-    20
+    14,
+    18
    ],
-   "to_id": "491",
+   "to_id": "948",
    "to_edge": "top",
    "to_tile": [
-    4,
-    7
+    14,
+    18
    ]
   },
   {
@@ -77349,11 +78432,11 @@
     4,
     7
    ],
-   "to_id": "488",
+   "to_id": "948",
    "to_edge": "bottom",
    "to_tile": [
-    13,
-    20
+    5,
+    8
    ]
   },
   {
@@ -77388,14 +78471,14 @@
    "from_id": "495",
    "edge": "right",
    "tile_range": [
-    8,
+    7,
     8
    ],
-   "to_id": "486",
+   "to_id": "946",
    "to_edge": "left",
    "to_tile": [
-    3,
-    7
+    7,
+    8
    ]
   },
   {
@@ -77543,13 +78626,13 @@
    "edge": "bottom",
    "tile_range": [
     12,
-    19
+    17
    ],
-   "to_id": "458",
+   "to_id": "945",
    "to_edge": "top",
    "to_tile": [
-    4,
-    9
+    12,
+    17
    ]
   },
   {
@@ -77559,11 +78642,11 @@
     4,
     9
    ],
-   "to_id": "453",
+   "to_id": "945",
    "to_edge": "bottom",
    "to_tile": [
-    12,
-    19
+    4,
+    8
    ]
   },
   {
@@ -78217,11 +79300,11 @@
     14,
     19
    ],
-   "to_id": "718",
+   "to_id": "949",
    "to_edge": "top",
    "to_tile": [
-    3,
-    6
+    14,
+    19
    ]
   },
   {
@@ -78231,11 +79314,11 @@
     3,
     6
    ],
-   "to_id": "716",
+   "to_id": "949",
    "to_edge": "bottom",
    "to_tile": [
-    14,
-    19
+    4,
+    7
    ]
   },
   {
@@ -78399,11 +79482,11 @@
     14,
     18
    ],
-   "to_id": "778",
+   "to_id": "950",
    "to_edge": "bottom",
    "to_tile": [
-    1,
-    10
+    15,
+    18
    ]
   },
   {
@@ -78592,14 +79675,14 @@
    "from_id": "778",
    "edge": "bottom",
    "tile_range": [
-    1,
-    10
+    2,
+    8
    ],
-   "to_id": "801",
+   "to_id": "950",
    "to_edge": "top",
    "to_tile": [
-    14,
-    18
+    2,
+    8
    ]
   },
   {
@@ -79489,13 +80572,13 @@
    "edge": "right",
    "tile_range": [
     5,
-    9
+    7
    ],
-   "to_id": "570",
+   "to_id": "951",
    "to_edge": "left",
    "to_tile": [
-    12,
-    13
+    5,
+    7
    ]
   },
   {
@@ -79519,11 +80602,11 @@
     12,
     13
    ],
-   "to_id": "552",
+   "to_id": "951",
    "to_edge": "right",
    "to_tile": [
-    5,
-    9
+    12,
+    13
    ]
   },
   {
@@ -81213,11 +82296,11 @@
     3,
     8
    ],
-   "to_id": "605",
+   "to_id": "952",
    "to_edge": "left",
    "to_tile": [
-    10,
-    12
+    3,
+    7
    ]
   },
   {
@@ -81448,14 +82531,14 @@
    "from_id": "605",
    "edge": "left",
    "tile_range": [
-    10,
+    9,
     12
    ],
-   "to_id": "613",
+   "to_id": "952",
    "to_edge": "right",
    "to_tile": [
-    3,
-    8
+    8,
+    10
    ]
   },
   {
@@ -82120,14 +83203,14 @@
    "from_id": "411",
    "edge": "bottom",
    "tile_range": [
-    3,
-    16
+    7,
+    13
    ],
-   "to_id": "416",
+   "to_id": "953",
    "to_edge": "top",
    "to_tile": [
-    13,
-    19
+    7,
+    13
    ]
   },
   {
@@ -82190,13 +83273,13 @@
    "from_id": "412",
    "edge": "top",
    "tile_range": [
-    3,
-    20
+    5,
+    19
    ],
-   "to_id": "421",
+   "to_id": "954",
    "to_edge": "bottom",
    "to_tile": [
-    14,
+    5,
     19
    ]
   },
@@ -82375,11 +83458,11 @@
     13,
     19
    ],
-   "to_id": "411",
+   "to_id": "953",
    "to_edge": "bottom",
    "to_tile": [
-    3,
-    16
+    13,
+    18
    ]
   },
   {
@@ -82459,11 +83542,11 @@
     14,
     19
    ],
-   "to_id": "412",
+   "to_id": "954",
    "to_edge": "top",
    "to_tile": [
-    3,
-    20
+    14,
+    18
    ]
   },
   {
@@ -82823,11 +83906,11 @@
     6,
     10
    ],
-   "to_id": "857",
+   "to_id": "955",
    "to_edge": "top",
    "to_tile": [
-    2,
-    15
+    6,
+    9
    ]
   },
   {
@@ -82991,11 +84074,11 @@
     2,
     15
    ],
-   "to_id": "851",
+   "to_id": "955",
    "to_edge": "bottom",
    "to_tile": [
-    6,
-    10
+    2,
+    15
    ]
   },
   {
@@ -85277,6 +86360,314 @@
    "to_edge": "bottom",
    "to_tile": [
     9,
+    15
+   ]
+  },
+  {
+   "from_id": "945",
+   "edge": "top",
+   "tile_range": [
+    12,
+    17
+   ],
+   "to_id": "453",
+   "to_edge": "bottom",
+   "to_tile": [
+    12,
+    17
+   ]
+  },
+  {
+   "from_id": "945",
+   "edge": "bottom",
+   "tile_range": [
+    4,
+    8
+   ],
+   "to_id": "458",
+   "to_edge": "top",
+   "to_tile": [
+    4,
+    9
+   ]
+  },
+  {
+   "from_id": "946",
+   "edge": "right",
+   "tile_range": [
+    4,
+    6
+   ],
+   "to_id": "486",
+   "to_edge": "left",
+   "to_tile": [
+    4,
+    6
+   ]
+  },
+  {
+   "from_id": "946",
+   "edge": "left",
+   "tile_range": [
+    7,
+    8
+   ],
+   "to_id": "495",
+   "to_edge": "right",
+   "to_tile": [
+    7,
+    8
+   ]
+  },
+  {
+   "from_id": "947",
+   "edge": "right",
+   "tile_range": [
+    2,
+    6
+   ],
+   "to_id": "489",
+   "to_edge": "left",
+   "to_tile": [
+    2,
+    6
+   ]
+  },
+  {
+   "from_id": "947",
+   "edge": "left",
+   "tile_range": [
+    8,
+    10
+   ],
+   "to_id": "497",
+   "to_edge": "right",
+   "to_tile": [
+    8,
+    11
+   ]
+  },
+  {
+   "from_id": "948",
+   "edge": "top",
+   "tile_range": [
+    14,
+    18
+   ],
+   "to_id": "488",
+   "to_edge": "bottom",
+   "to_tile": [
+    14,
+    18
+   ]
+  },
+  {
+   "from_id": "948",
+   "edge": "bottom",
+   "tile_range": [
+    5,
+    8
+   ],
+   "to_id": "491",
+   "to_edge": "top",
+   "to_tile": [
+    4,
+    7
+   ]
+  },
+  {
+   "from_id": "949",
+   "edge": "top",
+   "tile_range": [
+    14,
+    19
+   ],
+   "to_id": "716",
+   "to_edge": "bottom",
+   "to_tile": [
+    14,
+    19
+   ]
+  },
+  {
+   "from_id": "949",
+   "edge": "bottom",
+   "tile_range": [
+    4,
+    7
+   ],
+   "to_id": "718",
+   "to_edge": "top",
+   "to_tile": [
+    3,
+    6
+   ]
+  },
+  {
+   "from_id": "950",
+   "edge": "bottom",
+   "tile_range": [
+    15,
+    18
+   ],
+   "to_id": "801",
+   "to_edge": "top",
+   "to_tile": [
+    14,
+    18
+   ]
+  },
+  {
+   "from_id": "950",
+   "edge": "top",
+   "tile_range": [
+    2,
+    8
+   ],
+   "to_id": "778",
+   "to_edge": "bottom",
+   "to_tile": [
+    2,
+    8
+   ]
+  },
+  {
+   "from_id": "951",
+   "edge": "left",
+   "tile_range": [
+    5,
+    7
+   ],
+   "to_id": "552",
+   "to_edge": "right",
+   "to_tile": [
+    5,
+    7
+   ]
+  },
+  {
+   "from_id": "951",
+   "edge": "right",
+   "tile_range": [
+    12,
+    13
+   ],
+   "to_id": "570",
+   "to_edge": "left",
+   "to_tile": [
+    12,
+    13
+   ]
+  },
+  {
+   "from_id": "952",
+   "edge": "left",
+   "tile_range": [
+    3,
+    7
+   ],
+   "to_id": "613",
+   "to_edge": "right",
+   "to_tile": [
+    3,
+    8
+   ]
+  },
+  {
+   "from_id": "952",
+   "edge": "right",
+   "tile_range": [
+    8,
+    10
+   ],
+   "to_id": "605",
+   "to_edge": "left",
+   "to_tile": [
+    9,
+    12
+   ]
+  },
+  {
+   "from_id": "953",
+   "edge": "top",
+   "tile_range": [
+    7,
+    13
+   ],
+   "to_id": "411",
+   "to_edge": "bottom",
+   "to_tile": [
+    7,
+    13
+   ]
+  },
+  {
+   "from_id": "953",
+   "edge": "bottom",
+   "tile_range": [
+    13,
+    18
+   ],
+   "to_id": "416",
+   "to_edge": "top",
+   "to_tile": [
+    13,
+    19
+   ]
+  },
+  {
+   "from_id": "954",
+   "edge": "bottom",
+   "tile_range": [
+    5,
+    19
+   ],
+   "to_id": "412",
+   "to_edge": "top",
+   "to_tile": [
+    5,
+    19
+   ]
+  },
+  {
+   "from_id": "954",
+   "edge": "top",
+   "tile_range": [
+    14,
+    18
+   ],
+   "to_id": "421",
+   "to_edge": "bottom",
+   "to_tile": [
+    14,
+    19
+   ]
+  },
+  {
+   "from_id": "955",
+   "edge": "top",
+   "tile_range": [
+    6,
+    9
+   ],
+   "to_id": "851",
+   "to_edge": "bottom",
+   "to_tile": [
+    6,
+    10
+   ]
+  },
+  {
+   "from_id": "955",
+   "edge": "bottom",
+   "tile_range": [
+    2,
+    15
+   ],
+   "to_id": "857",
+   "to_edge": "top",
+   "to_tile": [
+    2,
     15
    ]
   }

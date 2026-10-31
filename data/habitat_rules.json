@@ -2070,6 +2070,61 @@
    "planet": "Apex Array",
    "name": "Tarn Islands",
    "habitat": "summit"
+  },
+  "945": {
+   "planet": "Dustara",
+   "name": "Oasis Steps",
+   "habitat": "canyon"
+  },
+  "946": {
+   "planet": "Ferrox",
+   "name": "Back Lot Siding",
+   "habitat": "scrapyard"
+  },
+  "947": {
+   "planet": "Ferrox",
+   "name": "Crane Gully",
+   "habitat": "scrapyard"
+  },
+  "948": {
+   "planet": "Ferrox",
+   "name": "Junk Switchback",
+   "habitat": "scrapyard"
+  },
+  "949": {
+   "planet": "Sporeholm",
+   "name": "Lantern Stepping Stones",
+   "habitat": "swamp"
+  },
+  "950": {
+   "planet": "Thalassa",
+   "name": "Tidepath Dunes",
+   "habitat": "coast"
+  },
+  "951": {
+   "planet": "Glyphos",
+   "name": "Landing Causeway",
+   "habitat": "ruins"
+  },
+  "952": {
+   "planet": "Helix Station",
+   "name": "Proving Grounds Ramp",
+   "habitat": "containment"
+  },
+  "953": {
+   "planet": "Apex Array",
+   "name": "Summit Switchback",
+   "habitat": "summit"
+  },
+  "954": {
+   "planet": "Apex Array",
+   "name": "Terrace Stair",
+   "habitat": "summit"
+  },
+  "955": {
+   "planet": "Ystra",
+   "name": "Void Fork Descent",
+   "habitat": "void_edge"
   }
  }
 }

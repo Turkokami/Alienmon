@@ -54,9 +54,10 @@ function storyEnter(id){if(!G||!G.quests)return;G.sseen=G.sseen||{};for(const sc
   else QN.push({q:sc.id,kind:'scene',lines:L,art:sc.art})}}
 
 /* ---- townsfolk with story extras: a line for when you carry a key item, and nurses who heal ---- */
-function storyNpc(n){if(n.keyline&&G.key&&G.key[n.keyline.k]){if(n.story==='heal'){healAll();noteHeal()}say(n.keyline.t.map(qFmt).concat(n.story==='heal'?['Your team is fully healed!']:[]),null,n.por);return true}
- if(n.story==='heal'){healAll();noteHeal();say((n.t||[]).map(qFmt).concat(['Your team is fully healed!']),null,n.por);return true}
- if(n.t&&n.t.some(l=>l.indexOf('{')>=0)){say(n.t.map(qFmt),null,n.por);return true}return false}
+const npcPor=n=>n.por||(n.name&&(PORT[n.art]||TALKI[n.art])?n.art:undefined);   // a named person's face is their own sprite's bust (as in secInteract)
+function storyNpc(n){if(n.keyline&&G.key&&G.key[n.keyline.k]){if(n.story==='heal'){healAll();noteHeal()}say(n.keyline.t.map(qFmt).concat(n.story==='heal'?['Your team is fully healed!']:[]),null,npcPor(n));return true}
+ if(n.story==='heal'){healAll();noteHeal();say((n.t||[]).map(qFmt).concat(['Your team is fully healed!']),null,npcPor(n));return true}
+ if(n.t&&n.t.some(l=>l.indexOf('{')>=0)){say(n.t.map(qFmt),null,npcPor(n));return true}return false}
 
 /* ---- the Three Pillars test you before they battle (Book 5) ---- */
 const PILLAR={Terravox:'strength',Aquelion:'memory',Ignarch:'courage'};

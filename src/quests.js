@@ -136,11 +136,12 @@ const QSPK={'Dr. Vashti':'vashti','Dr. Imogen Vashti':'vashti','Vashti':'vashti'
  'Director Thorne':'thorne','Thorne':'thorne','Kael Thorne':'thorne','Mortimer Kade':'kade','Kade':'kade','Strand':'strand','Pell':'pell','Helix Grunt Pell':'pell','Orra Venn':'orra','Orra':'orra','Teo Reyes':'teo','Teo':'teo','Mom':'mom','Tamsin':'tamsin','Liss':'liss',
  'Dax':'dax','Forge Miner Dax':'dax','DX-4':'dx4','Mina':'mina','Saga':'saga','Marisol Fenn':'marisol','Duke Harrow':'harrow','General Ostrander':'ostrander','Echo & Iris':'twins','Echo and Iris':'twins','Echo':'twins','Iris':'twins',
  'Nana Wren':'nanawren','Squid Sailor':'squidsailor','Nurse':'nurse','Nurse Coral':'coral','Fenna':'fenna','Bram':'bram','Mr. Abernathy':'abernathy','Guard':'guard','Helix Grunt':'helix_helix_grunt','Grunt':'helix_helix_grunt',
- 'Zib':'','Seedmother':'','Codex page':'','Ystran Echo':'ystran','Ystran echo':'ystran'};
+ 'Zib':'','Seedmother':'','Codex page':'','Quorum':'','Mural':'','Ystran Echo':'ystran','Ystran echo':'ystran'};
 const QSYS=/^(New (story quest|side mission)|Objective complete|Quest complete|Mission accepted|Word from|Linker alert|Incoming Linker message|You received)/;
 function qSpeaker(l){const m=typeof l==='string'&&!QSYS.test(l)&&l.match(/^([A-Z][\w.'&-]*(?: (?:[A-Z&][\w.'-]*|of|the)){0,3})(?: \([^)]*\))?: /);return m?m[1]:null}   /* a name: capitalised words ("Dr. Vashti", "Echo & Iris") */
 const qArtOK=a=>!!(a&&(PORT[a]||TALKI[a]||CHAR[a]));
-function qLineArt(l,fb){const sp=qSpeaker(l);if(!sp)return null;if(sp in QSPK)return qArtOK(QSPK[sp])?QSPK[sp]:null;return qArtOK(fb)?fb:null}
+function qLineArt(l,fb){const sp=qSpeaker(l);if(!sp)return null;const here=typeof secOn==='function'&&secOn()&&secNpcs(SWORLD[G.sec.id]).find(n=>n.name===sp);if(here&&qArtOK(here.art))return here.art;   // someone standing here speaks with their own sprite's face
+ if(sp in QSPK)return qArtOK(QSPK[sp])?QSPK[sp]:null;return qArtOK(fb)?fb:null}
 function qSpeakerArt(lines){for(const l of[].concat(lines)){const a=qLineArt(l,null);if(a)return a}return null}
 // someone (or their portrait) is standing in this section
 function qPresent(a){if(!(typeof secOn==='function'&&secOn()))return false;const s=SWORLD[G.sec.id];if(secNpcs(s).some(n=>n.art===a||n.por===a))return true;if(qEnts().some(e=>e.art===a))return true;const kp=PL[G.planet]&&PL[G.planet].keeper;return!!(kp&&kp.art===a&&(s.objects||[]).some(o=>o.k==='keeper'))}

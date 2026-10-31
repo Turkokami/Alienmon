@@ -144,7 +144,7 @@ function grantModules(){G.key=G.key||{};for(const[s,k]of MODULES)if(G.shards>=s&
 // autosave after story steps and Signal Shards (never mid-battle)
 function autosave(){if(!G||!G.party||!G.party.length)return;if(scene==='battle'||CUT){G._as=1;return}G._as=0;if(save())toast('Saved')}
 // first-time tips: one line, never blocks play
-let TOAST=null;function toast(t){TOAST={t,n:150}}
+let TOAST=null;function toast(t){TOAST={t,n:150};const f=typeof voFind==='function'&&voFind(t);if(f)voPlay([f])}   // a toast with a recorded line is spoken too
 const TIPS={bag:'Tip: Items heal between battles. Pods are for wild Alienmon only.',storage:'Tip: Your ship stores every Alienmon beyond 6. Swap them here.',map:'Tip: The Map shows every Relay Gate and world.',
  ship:'Tip: Fly between worlds. Each landing needs enough Signal Shards.',world:'Tip: B jumps. Grass and trails hide wild Alienmon.',town:'Tip: Press B to jump over small gaps and railings.'};
 function tip(k){G.tips=G.tips||{};if(G.tips[k])return;G.tips[k]=1;toast(TIPS[k])}

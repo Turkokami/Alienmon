@@ -400,8 +400,8 @@
    "section": "453",
    "name": "Sunstep Slope",
    "tile": [
-    2,
-    9
+    20,
+    13
    ],
    "item": "dust",
    "n": 150,
@@ -713,6 +713,28 @@
    ],
    "item": "stasis",
    "n": 3,
+   "tier": 1
+  },
+  {
+   "section": "945",
+   "name": "Oasis Steps",
+   "tile": [
+    17,
+    3
+   ],
+   "item": "cure",
+   "n": 2,
+   "tier": 1
+  },
+  {
+   "section": "945",
+   "name": "Oasis Steps",
+   "tile": [
+    11,
+    5
+   ],
+   "item": "dust",
+   "n": 150,
    "tier": 1
   }
  ],
@@ -1029,8 +1051,8 @@
    "section": "488",
    "name": "Scrap Slope",
    "tile": [
-    14,
-    10
+    19,
+    14
    ],
    "item": "revive",
    "n": 1,
@@ -1166,6 +1188,72 @@
    ],
    "item": "stasis",
    "n": 3,
+   "tier": 1
+  },
+  {
+   "section": "946",
+   "name": "Back Lot Siding",
+   "tile": [
+    18,
+    10
+   ],
+   "item": "stasis",
+   "n": 3,
+   "tier": 1
+  },
+  {
+   "section": "946",
+   "name": "Back Lot Siding",
+   "tile": [
+    14,
+    10
+   ],
+   "item": "gel",
+   "n": 2,
+   "tier": 1
+  },
+  {
+   "section": "947",
+   "name": "Crane Gully",
+   "tile": [
+    3,
+    9
+   ],
+   "item": "gel",
+   "n": 2,
+   "tier": 1
+  },
+  {
+   "section": "947",
+   "name": "Crane Gully",
+   "tile": [
+    6,
+    9
+   ],
+   "item": "stun",
+   "n": 1,
+   "tier": 1
+  },
+  {
+   "section": "948",
+   "name": "Junk Switchback",
+   "tile": [
+    18,
+    8
+   ],
+   "item": "stun",
+   "n": 1,
+   "tier": 1
+  },
+  {
+   "section": "948",
+   "name": "Junk Switchback",
+   "tile": [
+    6,
+    10
+   ],
+   "item": "cure",
+   "n": 2,
    "tier": 1
   }
  ],
@@ -1575,6 +1663,28 @@
    ],
    "item": "stasis",
    "n": 5,
+   "tier": 2
+  },
+  {
+   "section": "949",
+   "name": "Lantern Stepping Stones",
+   "tile": [
+    7,
+    6
+   ],
+   "item": "stasis",
+   "n": 5,
+   "tier": 2
+  },
+  {
+   "section": "949",
+   "name": "Lantern Stepping Stones",
+   "tile": [
+    18,
+    3
+   ],
+   "item": "megagel",
+   "n": 1,
    "tier": 2
   }
  ],
@@ -4305,6 +4415,28 @@
    "item": "fullgel",
    "n": 2,
    "tier": 5
+  },
+  {
+   "section": "952",
+   "name": "Proving Grounds Ramp",
+   "tile": [
+    18,
+    5
+   ],
+   "item": "singularity",
+   "n": 1,
+   "tier": 5
+  },
+  {
+   "section": "952",
+   "name": "Proving Grounds Ramp",
+   "tile": [
+    7,
+    4
+   ],
+   "item": "fullgel",
+   "n": 2,
+   "tier": 5
   }
  ],
  "Halo": [
@@ -5902,8 +6034,8 @@
    "section": "411",
    "name": "Summit Crossroads",
    "tile": [
-    17,
-    12
+    14,
+    14
    ],
    "item": "dust",
    "n": 2500,
@@ -5913,8 +6045,8 @@
    "section": "411",
    "name": "Summit Crossroads",
    "tile": [
-    20,
-    5
+    5,
+    12
    ],
    "item": "dust",
    "n": 2500,
@@ -5936,7 +6068,7 @@
    "name": "Observatory Junction",
    "tile": [
     2,
-    1
+    2
    ],
    "item": "ether",
    "n": 5,
@@ -6314,6 +6446,50 @@
    ],
    "item": "singularity",
    "n": 2,
+   "tier": 7
+  },
+  {
+   "section": "953",
+   "name": "Summit Switchback",
+   "tile": [
+    18,
+    2
+   ],
+   "item": "maxrevive",
+   "n": 2,
+   "tier": 7
+  },
+  {
+   "section": "953",
+   "name": "Summit Switchback",
+   "tile": [
+    19,
+    6
+   ],
+   "item": "singularity",
+   "n": 2,
+   "tier": 7
+  },
+  {
+   "section": "954",
+   "name": "Terrace Stair",
+   "tile": [
+    7,
+    11
+   ],
+   "item": "maxrevive",
+   "n": 2,
+   "tier": 7
+  },
+  {
+   "section": "954",
+   "name": "Terrace Stair",
+   "tile": [
+    17,
+    10
+   ],
+   "item": "dust",
+   "n": 2500,
    "tier": 7
   }
  ],
@@ -6940,6 +7116,28 @@
    "tile": [
     18,
     9
+   ],
+   "item": "maxrevive",
+   "n": 2,
+   "tier": 7
+  },
+  {
+   "section": "955",
+   "name": "Void Fork Descent",
+   "tile": [
+    11,
+    10
+   ],
+   "item": "fullgel",
+   "n": 3,
+   "tier": 7
+  },
+  {
+   "section": "955",
+   "name": "Void Fork Descent",
+   "tile": [
+    3,
+    3
    ],
    "item": "maxrevive",
    "n": 2,

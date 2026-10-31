@@ -73,7 +73,7 @@ function secInteract(){const s=SWORLD[G.sec.id],[dx,dy]=DIRS[face],x=G.sec.x+dx,
  const o=(s.objects||[]).find(o=>o.tile[0]===x&&o.tile[1]===y)||(s.objects||[]).find(o=>(o.k==='bay'||o.k==='shop')&&o.tile[0]===G.sec.x&&o.tile[1]===G.sec.y);if(!o)return secFieldA(s,x,y);
  if(o.k==='arena')return arenaMenu();
  if(o.k==='desk')return arenaDesk(s);if(o.k==='rta_go')return typeof rtaHub==='function'?rtaHub('planet'):exhibMenu();
- if(o.k==='rta_cups')return typeof rCupMenu==='function'?(rtaHub('planet'),rCupMenu()):say('The cups open with the Linker Arena. Coming soon!');
+ if(o.k==='rta_cups')return typeof rCupMenu==='function'?(rtaHub('planet')&&rCupMenu()):say('The cups open with the Linker Arena. Coming soon!');
  if(o.k==='trophies')return typeof rCabinet==='function'?rCabinet():say(['A cabinet of glittering trophies, waiting for champions.']);
  if(o.k==='house')return secHouse(s,o);
  if(o.k==='ladder')return say(o.label||'A ladder.',()=>choose('Climb up?',['Climb','Not now'],i=>{if(i===0)secWarp({to:o.to,at:o.at,face:o.face||'up',kind:'stairs'})}));
@@ -293,12 +293,12 @@ function arenaTrainer(L,round){const champ=round===3,r=rng(hash(L.k+round+frame)
 // every arena lobby's receptionist (and the Dustmere lobby desk): the Linker Arena on this world's floor, or an exhibition match
 function arenaDesk(s){const pi=PL.findIndex(p=>p.key===s.pkey);if(typeof rtaHub!=='function')return say('Receptionist: Welcome! Fancy an exhibition match?',exhibMenu,'referee');
  if(typeof RTO!=='undefined')RTO.arena=s.id==='915'?Math.max(0,PL.findIndex(p=>p.key==='dustara')):pi<0?PL.length:pi;   // the Dustmere dome fights on Dustara's arena
- choose('Receptionist: Welcome to the Linker Arena!',['Linker Arena (real-time)','Exhibition match','Not now'],i=>{if(i===0)rtaHub('planet');else if(i===1)exhibMenu()},null,'referee')}
+ choose('Receptionist: Welcome to the Linker Arena!',[(rtaLocked()?'[locked] ':'')+'Linker Arena (real-time)','Exhibition match','Not now'],i=>{if(i===0)rtaHub('planet');else if(i===1)exhibMenu()},null,'referee')}
 const EXHIB_FEE=50,EXHIB=[{k:'rookie',n:'Rookie',d:-3,prize:100},{k:'ace',n:'Ace',d:0,prize:160},{k:'star',n:'Star',d:3,prize:250}];
 function exhibMenu(){G.arena=G.arena||{};const rec=G.arena.exhib||{wins:0,losses:0};
- const opts=EXHIB.map(x=>x.n+' match (win '+x.prize+')').concat(['Records'],typeof rtaMenu==='function'?['Linker Arena (test)']:[],['Not now']);
+ const opts=EXHIB.map(x=>x.n+' match (win '+x.prize+')').concat(['Records','Not now']);   // the real-time Linker Arena opens only from an arena lobby's receptionist
  choose('Exhibition: '+EXHIB_FEE+' Stardust to enter',opts,i=>{const x=EXHIB[i];
-  if(!x){const o=opts[i];if(o==='Records')return say(['Exhibition record: '+rec.wins+' win'+(rec.wins===1?'':'s')+', '+rec.losses+' loss'+(rec.losses===1?'':'es')+'.','Best win streak: '+(rec.best||0)+'.'],exhibMenu);if(o==='Linker Arena (test)')return rtaHub();return}
+  if(!x){const o=opts[i];if(o==='Records')return say(['Exhibition record: '+rec.wins+' win'+(rec.wins===1?'':'s')+', '+rec.losses+' loss'+(rec.losses===1?'':'es')+'.','Best win streak: '+(rec.best||0)+'.'],exhibMenu);return}
   if(G.dust<EXHIB_FEE)return say('You need '+EXHIB_FEE+' Stardust to enter. You have '+G.dust+'.',exhibMenu);
   const ok=G.party.filter(m=>m.hp>0);if(!ok.length)return say('Your team needs rest first. Visit a Recovery Bay.');
   choose('Who fights the '+x.n+' match?',ok.map(m=>nm(m)+' Lv'+m.lv).concat(['Back']),j=>{const m=ok[j];if(!m)return exhibMenu();

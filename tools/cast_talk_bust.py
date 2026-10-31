@@ -1,5 +1,7 @@
 """Talk portraits that match the map sprites: cut the front figure (left half) of a cast render in art/raw/cast and keep
 its head-to-waist part as art/portraits_talk/<key>.png. The bust it replaces is kept in art/raw/portraits_talk/old_v1.
+A character with no cast render gets its bust from the in-game sprite itself (art/characters/<key>.png, front frame),
+blown up with nearest-neighbour so the face in the dialogue box is always the person walking on the map.
 
 Usage: python tools/cast_talk_bust.py <key> [<key> ...]
 """
@@ -13,7 +15,18 @@ KEEP = 0.62   # head to about the waist
 WHOLE = {'squidsailor'}   # no waist to cut at: the whole figure
 
 
+def sprite_bust(key):
+    sp = Image.open(f'{APP}/art/characters/{key}.png').convert('RGBA')
+    x0, y0, x1, y1 = sp.getbbox()
+    if key not in WHOLE:
+        y1 = y0 + round((y1 - y0) * KEEP)
+    im = sp.crop((x0, y0, x1, y1))
+    return im.resize((im.width * max(1, round(209 / im.height)), im.height * max(1, round(209 / im.height))), Image.NEAREST)   # whole pixels only
+
+
 def bust(key):
+    if not os.path.exists(f'{APP}/art/raw/cast/{key}.png'):
+        return save(key, sprite_bust(key))
     src = Image.open(f'{APP}/art/raw/cast/{key}.png').convert('RGB')
     W, H = src.size
     a = np.asarray(src.crop((0, 0, W // 2, H))).astype(int)
@@ -35,7 +48,10 @@ def bust(key):
     x0, x1 = cols.min(), cols.max()
     rgba = np.dstack([a[y0:y1 + 1, x0:x1 + 1], (keep[y0:y1 + 1, x0:x1 + 1] * 255)]).astype(np.uint8)
     im = Image.fromarray(rgba, 'RGBA')
-    im = im.resize((round(im.width * 209 / im.height), 209), Image.NEAREST)   # pixel art: crisp edges, same height as the other busts
+    save(key, im.resize((round(im.width * 209 / im.height), 209), Image.NEAREST))   # pixel art: crisp edges, same height as the other busts
+
+
+def save(key, im):
     out = f'{APP}/art/portraits_talk/{key}.png'
     old = f'{APP}/art/raw/portraits_talk/old_v1/{key}.png'
     if os.path.exists(out) and not os.path.exists(old):

@@ -13695,5 +13695,376 @@
    ]
   },
   "expansion": true
+ },
+ "945": {
+  "src": "Dustara - Extra scenes - 30 Oasis Steps.png",
+  "dir": "01_dustara",
+  "world": "Dustara",
+  "cat": "Extra scenes",
+  "title": "30 Oasis Steps",
+  "name": "Oasis Steps",
+  "alt": false,
+  "type": "route",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/01_dustara/945_extra_scenes_oasis_steps.png",
+  "exits": {
+   "top": [
+    [
+     11,
+     19
+    ]
+   ],
+   "bottom": [
+    [
+     4,
+     8
+    ]
+   ]
+  }
+ },
+ "946": {
+  "src": "Ferrox - Extra scenes - 30 Back Lot Siding.png",
+  "dir": "02_ferrox",
+  "world": "Ferrox",
+  "cat": "Extra scenes",
+  "title": "30 Back Lot Siding",
+  "name": "Back Lot Siding",
+  "alt": false,
+  "type": "route",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/02_ferrox/946_extra_scenes_back_lot_siding.png",
+  "exits": {
+   "left": [
+    [
+     6,
+     8
+    ]
+   ],
+   "right": [
+    [
+     4,
+     7
+    ]
+   ],
+   "top": [
+    [
+     13,
+     16
+    ]
+   ]
+  }
+ },
+ "947": {
+  "src": "Ferrox - Extra scenes - 30 Crane Gully.png",
+  "dir": "02_ferrox",
+  "world": "Ferrox",
+  "cat": "Extra scenes",
+  "title": "30 Crane Gully",
+  "name": "Crane Gully",
+  "alt": false,
+  "type": "route",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/02_ferrox/947_extra_scenes_crane_gully.png",
+  "exits": {
+   "left": [
+    [
+     7,
+     11
+    ]
+   ],
+   "right": [
+    [
+     0,
+     9
+    ]
+   ],
+   "top": [
+    [
+     15,
+     18
+    ],
+    [
+     20,
+     23
+    ]
+   ]
+  }
+ },
+ "948": {
+  "src": "Ferrox - Extra scenes - 30 Junk Switchback.png",
+  "dir": "02_ferrox",
+  "world": "Ferrox",
+  "cat": "Extra scenes",
+  "title": "30 Junk Switchback",
+  "name": "Junk Switchback",
+  "alt": false,
+  "type": "route",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/02_ferrox/948_extra_scenes_junk_switchback.png",
+  "exits": {
+   "left": [
+    [
+     2,
+     3
+    ],
+    [
+     13,
+     14
+    ]
+   ],
+   "top": [
+    [
+     6,
+     7
+    ],
+    [
+     12,
+     19
+    ]
+   ],
+   "bottom": [
+    [
+     5,
+     8
+    ]
+   ]
+  }
+ },
+ "949": {
+  "src": "Sporeholm - Extra scenes - 30 Lantern Stepping Stones.png",
+  "dir": "03_sporeholm",
+  "world": "Sporeholm",
+  "cat": "Extra scenes",
+  "title": "30 Lantern Stepping Stones",
+  "name": "Lantern Stepping Stones",
+  "alt": false,
+  "type": "route",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/03_sporeholm/949_extra_scenes_lantern_stepping_stones.png",
+  "exits": {
+   "top": [
+    [
+     14,
+     19
+    ]
+   ],
+   "bottom": [
+    [
+     4,
+     7
+    ],
+    [
+     14,
+     16
+    ]
+   ]
+  }
+ },
+ "950": {
+  "src": "Thalassa - Extra scenes - 30 Tidepath Dunes.png",
+  "dir": "04_thalassa",
+  "world": "Thalassa",
+  "cat": "Extra scenes",
+  "title": "30 Tidepath Dunes",
+  "name": "Tidepath Dunes",
+  "alt": false,
+  "type": "route",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/04_thalassa/950_extra_scenes_tidepath_dunes.png",
+  "exits": {
+   "top": [
+    [
+     2,
+     8
+    ]
+   ],
+   "bottom": [
+    [
+     14,
+     18
+    ]
+   ]
+  }
+ },
+ "951": {
+  "src": "Glyphos - Extra scenes - 30 Landing Causeway.png",
+  "dir": "06_glyphos",
+  "world": "Glyphos",
+  "cat": "Extra scenes",
+  "title": "30 Landing Causeway",
+  "name": "Landing Causeway",
+  "alt": false,
+  "type": "route",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/06_glyphos/951_extra_scenes_landing_causeway.png",
+  "exits": {
+   "left": [
+    [
+     3,
+     5
+    ]
+   ]
+  }
+ },
+ "952": {
+  "src": "Helix Station - Extra scenes - 30 Proving Grounds Ramp.png",
+  "dir": "09_helix",
+  "world": "Helix Station",
+  "cat": "Extra scenes",
+  "title": "30 Proving Grounds Ramp",
+  "name": "Proving Grounds Ramp",
+  "alt": false,
+  "type": "route",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/09_helix/952_extra_scenes_proving_grounds_ramp.png",
+  "exits": {
+   "left": [
+    [
+     11,
+     13
+    ]
+   ],
+   "top": [
+    [
+     17,
+     20
+    ]
+   ],
+   "bottom": [
+    [
+     1,
+     2
+    ]
+   ]
+  }
+ },
+ "953": {
+  "src": "Apex Array - Extra scenes - 30 Summit Switchback.png",
+  "dir": "13_apex",
+  "world": "Apex Array",
+  "cat": "Extra scenes",
+  "title": "30 Summit Switchback",
+  "name": "Summit Switchback",
+  "alt": false,
+  "type": "route",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/13_apex/953_extra_scenes_summit_switchback.png",
+  "exits": {
+   "top": [
+    [
+     7,
+     13
+    ],
+    [
+     18,
+     21
+    ]
+   ],
+   "bottom": [
+    [
+     13,
+     19
+    ]
+   ]
+  }
+ },
+ "954": {
+  "src": "Apex Array - Extra scenes - 30 Terrace Stair.png",
+  "dir": "13_apex",
+  "world": "Apex Array",
+  "cat": "Extra scenes",
+  "title": "30 Terrace Stair",
+  "name": "Terrace Stair",
+  "alt": false,
+  "type": "route",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/13_apex/954_extra_scenes_terrace_stair.png",
+  "exits": {
+   "right": [
+    [
+     5,
+     12
+    ],
+    [
+     14,
+     15
+    ]
+   ],
+   "top": [
+    [
+     14,
+     18
+    ]
+   ],
+   "bottom": [
+    [
+     5,
+     19
+    ],
+    [
+     21,
+     23
+    ]
+   ]
+  }
+ },
+ "955": {
+  "src": "Ystra - Extra scenes - 30 Void Fork Descent.png",
+  "dir": "14_ystra",
+  "world": "Ystra",
+  "cat": "Extra scenes",
+  "title": "30 Void Fork Descent",
+  "name": "Void Fork Descent",
+  "alt": false,
+  "type": "route",
+  "tiles": [
+   24,
+   16
+  ],
+  "file": "art/kit/14_ystra/955_extra_scenes_void_fork_descent.png",
+  "exits": {
+   "top": [
+    [
+     6,
+     13
+    ]
+   ],
+   "bottom": [
+    [
+     2,
+     19
+    ]
+   ]
+  }
  }
 }

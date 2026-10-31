@@ -3584,7 +3584,7 @@
    "tile_px_game": 16,
    "exits": [
     "bottom edge, tile columns 9–13 → Scrapyard Crossing",
-    "left edge, tile rows 2–9 → Scrap Hollow Grove",
+    "left edge, tile rows 2–6 → Crane Gully",
     "top edge, tile columns 9–14 → Deepcut Mine Entrance"
    ],
    "v3": true,
@@ -3607,7 +3607,7 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "right edge, tile rows 8–11 → Crane Overlook",
+    "right edge, tile rows 8–11 → Crane Gully",
     "top edge, tile columns 13–18 → Junkyard Throne"
    ],
    "v3": true,
@@ -3870,7 +3870,7 @@
    "exits": [
     "top edge, tile columns 4–10 → Coolant Fork",
     "bottom edge, tile columns 11–19 → Scrap Slope",
-    "left edge, tile rows 3–7 → Rustvale Back Lot"
+    "left edge, tile rows 4–6 → Back Lot Siding"
    ],
    "v3": true,
    "kit": "486",
@@ -3893,7 +3893,7 @@
    "tile_px_game": 16,
    "exits": [
     "top edge, tile columns 3–8 → Railyard Junction",
-    "bottom edge, tile columns 13–20 → Railcar Maze"
+    "bottom edge, tile columns 14–18 → Junk Switchback"
    ],
    "v3": true,
    "kit": "488",
@@ -3915,7 +3915,7 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "top edge, tile columns 4–7 → Scrap Slope",
+    "top edge, tile columns 4–7 → Junk Switchback",
     "bottom edge, tile columns 15–21 → Reservoir Islands",
     "right edge, tile rows 10–12 → Abandoned Foundry"
    ],
@@ -3939,7 +3939,7 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "right edge, tile rows 8–8 → Railyard Junction"
+    "right edge, tile rows 7–8 → Back Lot Siding"
    ],
    "v3": true,
    "kit": "495",
@@ -4135,7 +4135,7 @@
    "tile_px_game": 16,
    "exits": [
     "top edge, tile columns 2–9 → Oasis Fork",
-    "bottom edge, tile columns 12–19 → Oasis Shore"
+    "bottom edge, tile columns 12–17 → Oasis Steps"
    ],
    "v3": true,
    "kit": "453",
@@ -4157,7 +4157,7 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "top edge, tile columns 4–9 → Sunstep Slope",
+    "top edge, tile columns 4–9 → Oasis Steps",
     "left edge, tile rows 4–5 → Hidden Mesa Grove",
     "bottom edge, tile columns 4–10 → Red River Bend"
    ],
@@ -4904,7 +4904,7 @@
    "tile_px_game": 16,
    "exits": [
     "top edge, tile columns 14–19 → Root Junction",
-    "bottom edge, tile columns 14–19 → Bogwater Bend"
+    "bottom edge, tile columns 14–19 → Lantern Stepping Stones"
    ],
    "v3": true,
    "kit": "716",
@@ -4926,7 +4926,7 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "top edge, tile columns 3–6 → Lantern Marsh Shore"
+    "top edge, tile columns 3–6 → Lantern Stepping Stones"
    ],
    "v3": true,
    "kit": "718",
@@ -5125,7 +5125,7 @@
    "tile_px_game": 16,
    "exits": [
     "left edge, tile rows 8–9 → Shell Flats",
-    "top edge, tile columns 14–18 → Lagoon Fork"
+    "top edge, tile columns 14–18 → Tidepath Dunes"
    ],
    "v3": true,
    "kit": "801",
@@ -5325,7 +5325,7 @@
    "tile_px_game": 16,
    "exits": [
     "left edge, tile rows 7–9 → Boardwalk Crossing",
-    "bottom edge, tile columns 1–10 → Saltreach Farmstead",
+    "bottom edge, tile columns 2–8 → Tidepath Dunes",
     "top edge, tile columns 5–10 → Dune Stairway",
     "right edge, tile rows 7–9 → Dune Junction"
    ],
@@ -6299,7 +6299,7 @@
    "exits": [
     "bottom edge, tile columns 10–15 → Dig Camp Farmstead",
     "top edge, tile columns 10–15 → Dig Camp Quiet Court",
-    "right edge, tile rows 5–9 → Glyphos Spaceport",
+    "right edge, tile rows 5–7 → Landing Causeway",
     "left edge, tile rows 5–9 → Glyph Junction"
    ],
    "v3": true,
@@ -6322,7 +6322,7 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 12–13 → Ruin Crossroads"
+    "left edge, tile rows 12–13 → Landing Causeway"
    ],
    "v3": true,
    "kit": "570",
@@ -8018,7 +8018,7 @@
    "exits": [
     "left edge, tile rows 7–10 → Station Coolant Fork",
     "top edge, tile columns 14–18 → Hangar Deck",
-    "right edge, tile rows 3–8 → Helix Proving Grounds",
+    "right edge, tile rows 3–8 → Proving Grounds Ramp",
     "bottom edge, tile columns 4–9 → Hydroponics Edge"
    ],
    "v3": true,
@@ -8284,7 +8284,7 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "left edge, tile rows 10–12 → Corridor Junction",
+    "left edge, tile rows 9–12 → Proving Grounds Ramp",
     "right edge, tile rows 10–12 → Helix Comms Spire",
     "bottom edge, tile columns 10–13 → Hydro Tank"
    ],
@@ -9156,7 +9156,7 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 3–16 → Meltwater Tarn",
+    "bottom edge, tile columns 7–13 → Summit Switchback",
     "left edge, tile rows 5–8 → Summit Lane Homes",
     "top edge, tile columns 8–14 → Summit Stairs",
     "right edge, tile rows 5–10 → Instrument Hollows"
@@ -9182,7 +9182,7 @@
    "tile_px_game": 16,
    "exits": [
     "left edge, tile rows 7–12 → Summit Lift",
-    "top edge, tile columns 3–20 → Observatory Terrace",
+    "top edge, tile columns 5–19 → Terrace Stair",
     "right edge, tile rows 9–9 → Apex Relay Tower",
     "bottom edge, tile columns 4–10 → Summit Farmstead"
    ],
@@ -9279,7 +9279,7 @@
    "tile_px_game": 16,
    "exits": [
     "bottom edge, tile columns 14–21 → Tarn Fork",
-    "top edge, tile columns 13–19 → Summit Crossroads"
+    "top edge, tile columns 13–19 → Summit Switchback"
    ],
    "v3": true,
    "kit": "416",
@@ -9348,7 +9348,7 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "bottom edge, tile columns 14–19 → Observatory Junction",
+    "bottom edge, tile columns 14–19 → Terrace Stair",
     "top edge, tile columns 9–14 → Icefall Cave Entrance"
    ],
    "v3": true,
@@ -9824,7 +9824,7 @@
     "right edge, tile rows 7–9 → Seedfall Farmstead",
     "left edge, tile rows 7–9 → Ystra Secret Grove",
     "top edge, tile columns 5–10 → Void Crack Bend",
-    "bottom edge, tile columns 6–10 → Seedmother Flats"
+    "bottom edge, tile columns 6–10 → Void Fork Descent"
    ],
    "v3": true,
    "kit": "851",
@@ -9962,7 +9962,7 @@
    "tile_px_render": 64,
    "tile_px_game": 16,
    "exits": [
-    "top edge, tile columns 2–15 → Void Fork",
+    "top edge, tile columns 2–15 → Void Fork Descent",
     "bottom edge, tile columns 2–11 → Still Crystal Pool"
    ],
    "v3": true,
@@ -13117,6 +13117,259 @@
    "v3": true,
    "kit": "871",
    "file": "art/sections/13_apex/871_stargazer_cottage.png"
+  },
+  {
+   "id": "945",
+   "planet": "Dustara",
+   "name": "Oasis Steps",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "top edge, tile columns 12–17 → Sunstep Slope",
+    "bottom edge, tile columns 4–8 → Oasis Shore"
+   ],
+   "v3": true,
+   "kit": "945",
+   "file": "art/sections/01_dustara/945_oasis_steps.png"
+  },
+  {
+   "id": "946",
+   "planet": "Ferrox",
+   "name": "Back Lot Siding",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "right edge, tile rows 4–6 → Railyard Junction",
+    "left edge, tile rows 7–8 → Rustvale Back Lot"
+   ],
+   "v3": true,
+   "kit": "946",
+   "file": "art/sections/02_ferrox/946_back_lot_siding.png"
+  },
+  {
+   "id": "947",
+   "planet": "Ferrox",
+   "name": "Crane Gully",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "right edge, tile rows 2–6 → Crane Overlook",
+    "left edge, tile rows 8–10 → Scrap Hollow Grove"
+   ],
+   "v3": true,
+   "kit": "947",
+   "file": "art/sections/02_ferrox/947_crane_gully.png"
+  },
+  {
+   "id": "948",
+   "planet": "Ferrox",
+   "name": "Junk Switchback",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "top edge, tile columns 14–18 → Scrap Slope",
+    "bottom edge, tile columns 5–8 → Railcar Maze"
+   ],
+   "v3": true,
+   "kit": "948",
+   "file": "art/sections/02_ferrox/948_junk_switchback.png"
+  },
+  {
+   "id": "949",
+   "planet": "Sporeholm",
+   "name": "Lantern Stepping Stones",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "top edge, tile columns 14–19 → Lantern Marsh Shore",
+    "bottom edge, tile columns 4–7 → Bogwater Bend"
+   ],
+   "v3": true,
+   "kit": "949",
+   "file": "art/sections/03_sporeholm/949_lantern_stepping_stones.png"
+  },
+  {
+   "id": "950",
+   "planet": "Thalassa",
+   "name": "Tidepath Dunes",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "bottom edge, tile columns 15–18 → Saltreach Farmstead",
+    "top edge, tile columns 2–8 → Lagoon Fork"
+   ],
+   "v3": true,
+   "kit": "950",
+   "file": "art/sections/04_thalassa/950_tidepath_dunes.png"
+  },
+  {
+   "id": "951",
+   "planet": "Glyphos",
+   "name": "Landing Causeway",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 5–7 → Ruin Crossroads",
+    "right edge, tile rows 12–13 → Glyphos Spaceport"
+   ],
+   "v3": true,
+   "kit": "951",
+   "file": "art/sections/06_glyphos/951_landing_causeway.png"
+  },
+  {
+   "id": "952",
+   "planet": "Helix Station",
+   "name": "Proving Grounds Ramp",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "left edge, tile rows 3–7 → Corridor Junction",
+    "right edge, tile rows 8–10 → Helix Proving Grounds"
+   ],
+   "v3": true,
+   "kit": "952",
+   "file": "art/sections/09_helix/952_proving_grounds_ramp.png"
+  },
+  {
+   "id": "953",
+   "planet": "Apex Array",
+   "name": "Summit Switchback",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "top edge, tile columns 7–13 → Summit Crossroads",
+    "bottom edge, tile columns 13–18 → Meltwater Tarn"
+   ],
+   "v3": true,
+   "kit": "953",
+   "file": "art/sections/13_apex/953_summit_switchback.png"
+  },
+  {
+   "id": "954",
+   "planet": "Apex Array",
+   "name": "Terrace Stair",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "bottom edge, tile columns 5–19 → Observatory Junction",
+    "top edge, tile columns 14–18 → Observatory Terrace"
+   ],
+   "v3": true,
+   "kit": "954",
+   "file": "art/sections/13_apex/954_terrace_stair.png"
+  },
+  {
+   "id": "955",
+   "planet": "Ystra",
+   "name": "Void Fork Descent",
+   "type": "route",
+   "size_px": [
+    1536,
+    1024
+   ],
+   "tiles": [
+    24,
+    16
+   ],
+   "tile_px_render": 64,
+   "tile_px_game": 16,
+   "exits": [
+    "top edge, tile columns 6–9 → Void Fork",
+    "bottom edge, tile columns 2–15 → Seedmother Flats"
+   ],
+   "v3": true,
+   "kit": "955",
+   "file": "art/sections/14_ystra/955_void_fork_descent.png"
   }
  ]
 }
