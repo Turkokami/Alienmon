@@ -44,7 +44,7 @@ function progAward(e,trainer,steps,skip){const link=!G.opt||G.opt.expLink!==fals
  const[ti,ta]=tpGain(e);let shared=0;
  for(const[m,share]of recv){const amt=Math.max(1,Math.floor(expGain(e,m,trainer)*share*(typeof evMul==='function'?evMul('exp'):1)));m.xp+=amt;addTP(m,ti,ta);
   if(share===0.5)shared++;else steps.push({say:[nm(m)+' gained '+amt+' EXP!']})}
- if(shared)steps.push({say:['The rest of your team gained EXP through EXP Link.']});
+ if(shared&&!B.linkSaid){B.linkSaid=1;steps.push({say:['The rest of your team gained EXP through EXP Link.']})}   // once per battle, however many foes fall
  for(const[m]of recv)levelSteps(m,steps)}
 function levelSteps(m,steps){while(m.lv<100&&m.xp>=xpFor(m.id,m.lv+1)){const before=SNAMES.map((_,i)=>stat(m,i));m.lv++;m.tpa=(m.tp||[0,0,0,0,0,0]).slice();m.lvUp=1;
   const after=SNAMES.map((_,i)=>stat(m,i));if(m.hp>0)m.hp=Math.max(1,m.hp+after[0]-before[0]);
