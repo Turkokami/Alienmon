@@ -1,0 +1,10 @@
+file,quest,quest_title,beat,speaker,voice,text
+m05_crystal_01_narrator.mp3,M05,Sparks on Ferrox,Kit fixes the tower crystal at night,Narrator,narrator,"That night you bunk down in an old train car at the edge of the scrap heaps, with Kit in the bunk across from you."
+m05_crystal_02_narrator.mp3,M05,Sparks on Ferrox,Kit fixes the tower crystal at night,Narrator,narrator,"Far away, the great blue crystal on top of the Relay Tower flickers. Dark. Bright. Dark again, like a light about to go out."
+m05_crystal_03_narrator.mp3,M05,Sparks on Ferrox,Kit fixes the tower crystal at night,Narrator,narrator,"Kit sits bolt upright. ""No. No, no, no,"" he whispers. You hear his toolbelt clink, then the door clicks shut."
+m05_crystal_04_narrator.mp3,M05,Sparks on Ferrox,Kit fixes the tower crystal at night,Narrator,narrator,"Later you wake up. Kit's bunk is empty. At the very top of the tower, a tiny white light is spitting sparks. Someone up there is welding."
+m05_crystal_05_narrator.mp3,M05,Sparks on Ferrox,Kit fixes the tower crystal at night,Narrator,narrator,"By morning Kit is fast asleep with his goggles on and a smudge of soot on his cheek. The tower crystal glows a steady, perfect blue."
+m05_crystal_06_kit.mp3,M05,Sparks on Ferrox,Kit fixes the tower crystal at night,Kit,kit,Couldn't sleep. Went for a walk. ...Five more minutes.
+m05_crystal_07_hank.mp3,M05,Sparks on Ferrox,cut_12: Hank finds out,Hank Briggs,hank,"I went up to check the core this morning. It's been flickering for days, and I couldn't fix it without shutting the whole tower down."
+m05_crystal_08_hank.mp3,M05,Sparks on Ferrox,cut_12: Hank finds out,Hank Briggs,hank,"Yesterday it was cracked. Today it's perfect. Neatest weld I've ever seen. Kit... that was you, wasn't it?"
+m05_crystal_09_kit.mp3,M05,Sparks on Ferrox,cut_12: Hank finds out,Kit,kit,"Climbed all two hundred and forty rungs. But Dad, the crack was weird. Too straight. Like somebody drew it with a ruler."

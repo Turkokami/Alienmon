@@ -844,7 +844,7 @@ function shakeOf(m){const A=B.anim;if(A&&(A.kind==='move'||A.kind==='move2'||A.k
 function hpbar(x,y,w,m){const r=m.hp/stat(m,0);rect(x,y,w,4,'#1b1424');rect(x+1,y+1,Math.round((w-2)*r),2,r>0.5?'#3fae49':r>0.2?'#ffd23f':'#d7262e')}
 const STC={burn:['BRN','#d7262e'],poison:['PSN','#8a3ad0'],shock:['SHK','#c9a400'],freeze:['FRZ','#2e86de']};
 function stTag(m,x,y){if(m.st){rect(x,y,20,8,STC[m.st][1]);txt(STC[m.st][0],x+1,y+1,'#fff',6)}}
-function drawBattle(){const e=curEnv(),p=PM(),en=EM(),pl=PL[G.planet],ar=B.tr&&(B.tr===pl.keeper?SCI[pl.key+'_arena']:B.tr.arena?SCI.apex_arena:null),si=okI(ar)?ar:SCI[pl.scene];
+function drawBattle(){const e=curEnv(),p=PM(),en=EM(),pl=PL[G.planet],arK=B.tr&&(B.tr===pl.keeper?pl.key+'_arena':B.tr.arena?'apex_arena':null),ar=arK&&(typeof ARA!=='undefined'&&ARA.scenes&&ARA.scenes[arK]?ARSI[arK]:SCI[arK]),si=okI(ar)?ar:SCI[pl.scene];   // Keeper and arena fights: the painted arena floor (art/arena/scenes)
  if(okI(si)){cover(si,0,0,160,104,pl.sceneFx);ctx.fillStyle='rgba(18,12,34,0.18)';ctx.fillRect(0,0,160,104);
   ctx.fillStyle='rgba(18,12,34,0.45)';ctx.beginPath();ctx.ellipse(126,48,30,6,0,0,6.283);ctx.fill();ctx.beginPath();ctx.ellipse(36,97,34,7,0,0,6.283);ctx.fill()}
  else{rect(0,0,160,104,e.bg);rect(96,44,60,8,e.g2);rect(4,92,64,10,e.g2)}

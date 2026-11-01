@@ -387,7 +387,18 @@
       "y": 790,
       "map": "data/world_map.json"
      },
-     "hint": "Go through the Forge Gate to Ferrox"
+     "hint": "Go through the Forge Gate to Ferrox",
+     "then": {
+      "art": "kit",
+      "lines": [
+       "That night you bunk down in an old train car at the edge of the scrap heaps, with Kit in the bunk across from you.",
+       "Far away, the great blue crystal on top of the Relay Tower flickers. Dark. Bright. Dark again, like a light about to go out.",
+       "Kit sits bolt upright. \"No. No, no, no,\" he whispers. You hear his toolbelt clink, then the door clicks shut.",
+       "Later you wake up. Kit's bunk is empty. At the very top of the tower, a tiny white light is spitting sparks. Someone up there is welding.",
+       "By morning Kit is fast asleep with his goggles on and a smudge of soot on his cheek. The tower crystal glows a steady, perfect blue.",
+       "Kit: Couldn't sleep. Went for a walk. ...Five more minutes."
+      ]
+     }
     },
     {
      "type": "spot_event",
