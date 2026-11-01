@@ -66,7 +66,7 @@
    64
   ],
   "r": "starter",
-  "lore": "Final form; a towering guardian.",
+  "lore": "A walking forest of red caps and root-legs. Every step leaves spores that sprout overnight. It guards its patch of ground like a castle wall.",
   "b": 1,
   "tr": 2,
   "sig": 0
@@ -138,7 +138,7 @@
    101
   ],
   "r": "starter",
-  "lore": "Final form; a miniature star.",
+  "lore": "A tiny sun with one blazing eye, ringed by orbiting sparks. It burns hotter the braver its Linker is. Its glow can light a whole canyon.",
   "b": 1,
   "tr": 0,
   "sig": 1
@@ -210,7 +210,7 @@
    62
   ],
   "r": "starter",
-  "lore": "Final form; a deep-sea leviathan.",
+  "lore": "A deep-sea leviathan whose blue body glows with spots like stars. A single lure on its head can call a storm off the open sea.",
   "b": 1,
   "tr": 1,
   "sig": 2
@@ -1160,7 +1160,7 @@
    70
   ],
   "r": "signature",
-  "lore": "Hank Briggs's partner since the towers were built.",
+  "lore": "An armored rhino of riveted iron with a hammerhead tail. It pounds scrap flat to build its own plating. Hank Briggs's oldest partner.",
   "b": 1,
   "tr": 50,
   "sig": 4
@@ -1704,7 +1704,7 @@
    54
   ],
   "r": "signature",
-  "lore": "Dr. Lysa Moor's research partner.",
+  "lore": "A long-legged marsh bird with mushroom-cap wings. It sniffs out rot and sick roots, then eats them. Dr. Lysa Moor's research partner.",
   "b": 1,
   "tr": 50,
   "sig": 5
@@ -2349,7 +2349,7 @@
    63
   ],
   "r": "signature",
-  "lore": "Captain Delia Marsh's first mate.",
+  "lore": "A sea serpent that drags a rusted anchor and is crusted with barnacles. It can hold a ship still in a gale. Captain Marsh's first mate.",
   "b": 1,
   "tr": 50,
   "sig": 6
@@ -2892,7 +2892,7 @@
    127
   ],
   "r": "signature",
-  "lore": "DJ Static's headliner.",
+  "lore": "A rabbit with speaker ears that thump out bass so deep the street shakes. Crowds follow its beat across Neonis. DJ Static's headliner.",
   "b": 1,
   "tr": 50,
   "sig": 7
@@ -3880,7 +3880,7 @@
    48
   ],
   "r": "signature",
-  "lore": "Old Basalt's companion for sixty years.",
+  "lore": "A giant tortoise with a shell of cooling lava rock. It sleeps in magma pools and wakes to warm the mines. Old Basalt's friend for sixty years.",
   "b": 1,
   "tr": 50,
   "sig": 8
@@ -4427,7 +4427,7 @@
    50
   ],
   "r": "signature",
-  "lore": "Ingrid Vale's partner on every expedition.",
+  "lore": "A woolly mammoth with crystal tusks and frost-white fur. It can smell a hidden crevasse a mile away. Ingrid Vale's expedition partner.",
   "b": 1,
   "tr": 50,
   "sig": 9
@@ -4749,7 +4749,7 @@
    73
   ],
   "r": "signature",
-  "lore": "Admin Vex's favorite.",
+  "lore": "A three-headed serpent dripping green venom. Each head watches a different way, so nothing sneaks up on it. Admin Vex's favorite.",
   "b": 1,
   "tr": 50,
   "sig": 11
@@ -4773,7 +4773,7 @@
    70
   ],
   "r": "signature",
-  "lore": "Admin Bronn built its armor himself.",
+  "lore": "A bulldog in heavy bolted armor plates. Once it bites down it never lets go. Admin Bronn built and rebuilds its armor by hand.",
   "b": 1,
   "tr": 50,
   "sig": 12
@@ -4798,7 +4798,7 @@
    73
   ],
   "r": "signature",
-  "lore": "Kael Thorne's ace, raised from a pod he stole from the crater.",
+  "lore": "A lion with a mane of floating dark shards that bends gravity around it. Raised by Kael Thorne from a pod stolen from the crater.",
   "b": 1,
   "tr": 50,
   "sig": 13
@@ -5193,7 +5193,7 @@
    72
   ],
   "r": "signature",
-  "lore": "Echo's partner; it shows you what you fear.",
+  "lore": "A crystal spirit with a mirror for a face. Look into it and you see what you fear most. Echo's partner, and Reflix's twin.",
   "b": 1,
   "tr": 50,
   "sig": 14
@@ -5218,7 +5218,7 @@
    66
   ],
   "r": "signature",
-  "lore": "Iris's partner; it shows you what you hope for.",
+  "lore": "A crystal spirit of mirror-bright shards. Look into it and you see what you hope for most. Iris's partner, and Mirrix's twin.",
   "b": 1,
   "tr": 50,
   "sig": 15
@@ -5664,7 +5664,7 @@
    86
   ],
   "r": "signature",
-  "lore": "Mortimer Kade's guardian.",
+  "lore": "A shadow wolf circled by a ring of bent light, like the edge of a black hole. It guards doors that lead nowhere. Mortimer Kade's guardian.",
   "b": 1,
   "tr": 50,
   "sig": 16
@@ -6474,7 +6474,7 @@
    56
   ],
   "r": "signature",
-  "lore": "Marisol Fenn's crown jewel.",
+  "lore": "A peacock with a tail of cut gemstones. It fans them to throw dazzling beams of light at its foes. Marisol Fenn's crown jewel.",
   "b": 1,
   "tr": 50,
   "sig": 17
@@ -6498,7 +6498,7 @@
    116
   ],
   "r": "signature",
-  "lore": "Duke Harrow's opening act.",
+  "lore": "A rooster with a guitar-neck crest that crows in power chords. Its call starts every show and ends every fight. Duke Harrow's opening act.",
   "b": 1,
   "tr": 50,
   "sig": 18
@@ -6522,7 +6522,7 @@
    90
   ],
   "r": "signature",
-  "lore": "Saga's silent partner.",
+  "lore": "A hooded spirit of living flame that never speaks. Its fire burns quietly, but it can scorch stone to glass. Saga's silent partner.",
   "b": 1,
   "tr": 50,
   "sig": 19
@@ -6546,7 +6546,7 @@
    61
   ],
   "r": "signature",
-  "lore": "General Ostrander's unbreakable defense.",
+  "lore": "A walking fortress with towers and walls on its back. Nothing has ever broken through its stone. General Ostrander's unbreakable defense.",
   "b": 1,
   "tr": 50,
   "sig": 20
@@ -6571,7 +6571,7 @@
    99
   ],
   "r": "signature",
-  "lore": "Orra Venn's partner: the first Alienmon ever bonded to a human.",
+  "lore": "A glowing stag with antlers of pure light. Legend says it was the first Alienmon ever to bond with a human: Orra Venn, long ago.",
   "b": 1,
   "tr": 50,
   "sig": 21
