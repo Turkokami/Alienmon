@@ -58,6 +58,18 @@ def unpack(path):
     print('unpacked', path)
 
 
+def census():
+    """Per map: people, roaming Alienmon and stashes in data/world.json, plus quest spots the builder couldn't place."""
+    if not os.path.exists('data/world.json'):
+        return {}, 0
+    W = json.load(open('data/world.json', encoding='utf-8'))['sections']
+    c = {k: (len(v.get('npcs') or []), len(v.get('mons') or []), sum(1 for o in v.get('objects') or [] if o.get('k') == 'stash')) for k, v in W.items()}
+    rep = open('data/connections_report.md', encoding='utf-8').read() if os.path.exists('data/connections_report.md') else ''
+    import re
+    m = re.search(r'## quest spots with no room \((\d+)\)', rep)
+    return c, int(m.group(1)) if m else 0
+
+
 def main():
     if '--from' in sys.argv:
         unpack(sys.argv[sys.argv.index('--from') + 1])
@@ -66,8 +78,14 @@ def main():
     steps = [['python', 'tools/sections/build_world.py'], ['python', 'tools/sections/check_sections.py'],
              ['python', 'tools/sections/check_reach.py'], ['node', 'tools/build.js'], ['node', 'tools/check_build.js']]
     bad = False
+    before, q0 = census()
     for st in steps:
         code, out = run(st)
+        if st[1].endswith('build_world.py') and before:   # nobody may vanish: an edit that crowds out a person, a roaming Alienmon, a stash or a quest spot stops here
+            after, q1 = census(); lost = [f'{k} {n}' for k in before for n, a_, b_ in zip(('people', 'roaming Alienmon', 'stashes'), before[k], after.get(k, (0, 0, 0))) if b_ < a_]
+            if lost or q1 > q0:
+                print('\nThese maps lost something because the edit filled the spots they stood on (move or remove props there):\n  ' + '\n  '.join(lost + ([f'{q1 - q0} quest spot(s) with no room (see data/connections_report.md)'] if q1 > q0 else [])))
+                bad = True
         if code or 'FAIL' in out or 'SYNTAX ERROR' in out or 'unreachable' in out.lower().split('everything reachable')[0][-200:]:
             if code or 'FAIL' in out or 'SYNTAX ERROR' in out:
                 bad = True

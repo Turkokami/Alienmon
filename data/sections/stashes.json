@@ -345,8 +345,8 @@
    "section": "470",
    "name": "Dustmere Lane Homes",
    "tile": [
-    17,
-    7
+    14,
+    9
    ],
    "item": "stasis",
    "n": 3,
@@ -765,7 +765,7 @@
    "section": "505",
    "name": "Rustvale Lane Homes",
    "tile": [
-    17,
+    3,
     12
    ],
    "item": "revive",
@@ -1307,7 +1307,7 @@
    "name": "Mirefen Lane Homes",
    "tile": [
     6,
-    8
+    9
    ],
    "item": "dust",
    "n": 300,
@@ -1737,8 +1737,8 @@
    "section": "801",
    "name": "Saltreach Farmstead",
    "tile": [
-    20,
-    12
+    19,
+    11
    ],
    "item": "megagel",
    "n": 1,
@@ -2588,8 +2588,8 @@
    "section": "566",
    "name": "Dig Camp Lane Homes",
    "tile": [
-    15,
-    6
+    20,
+    12
    ],
    "item": "dust",
    "n": 500,
@@ -3107,8 +3107,8 @@
    "section": "696",
    "name": "Cinder Hollow Lane Homes",
    "tile": [
-    8,
-    6
+    11,
+    8
    ],
    "item": "ether",
    "n": 2,
@@ -3130,7 +3130,7 @@
    "name": "Cinder Hollow Farmstead",
    "tile": [
     2,
-    12
+    10
    ],
    "item": "megagel",
    "n": 3,
@@ -4354,7 +4354,7 @@
    "section": "894",
    "name": "Hydro Tank Islands",
    "tile": [
-    13,
+    15,
     11
    ],
    "item": "maxrevive",
@@ -6674,7 +6674,7 @@
    "section": "863",
    "name": "Fragment Lane Homes",
    "tile": [
-    7,
+    16,
     2
    ],
    "item": "maxrevive",

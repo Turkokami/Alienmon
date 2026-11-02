@@ -40,7 +40,7 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 | 027 Frontier: Shadow Tunnel Mouth | 15,9 | 5x Harmonic Pod | 4 |
 | 028 Frontier: Magma Mines Gate | 11,4 | 1x Full Gel | 4 |
 | 472 Dustmere Farmstead | 2,12 | 3x Stasis Pod | 1 |
-| 470 Dustmere Lane Homes | 17,7 | 3x Stasis Pod | 1 |
+| 470 Dustmere Lane Homes | 14,9 | 3x Stasis Pod | 1 |
 | 447 Oasis Fork | 17,3 | 2x Med Gel | 1 |
 | 447 Oasis Fork | 7,12 | 150x Stardust | 1 |
 | 471 Dustmere Quiet Court | 2,4 | 2x Med Gel | 1 |
@@ -83,7 +83,7 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 |---|---|---|---|
 | 029 Ferrox Spaceport | 20,9 | 2x Cure Spray | 1 |
 | 030 Rustvale | 10,12 | 2x Med Gel | 1 |
-| 505 Rustvale Lane Homes | 17,12 | 1x Revive Spark | 1 |
+| 505 Rustvale Lane Homes | 3,12 | 1x Revive Spark | 1 |
 | 506 Rustvale Quiet Court | 21,5 | 1x Revive Spark | 1 |
 | 507 Rustvale Farmstead | 21,13 | 2x Med Gel | 1 |
 | 485 Scrapyard Crossing | 5,12 | 3x Stasis Pod | 1 |
@@ -137,7 +137,7 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 | 042 Mirefen Village | 16,9 | 2x Harmonic Pod | 2 |
 | 047 Mushroom Maze | 16,13 | 1x Mega Gel | 2 |
 | 047 Mushroom Maze | 6,12 | 300x Stardust | 2 |
-| 728 Mirefen Lane Homes | 6,8 | 300x Stardust | 2 |
+| 728 Mirefen Lane Homes | 6,9 | 300x Stardust | 2 |
 | 729 Mirefen Quiet Court | 2,9 | 5x Stasis Pod | 2 |
 | 730 Mirefen Farmstead | 5,9 | 300x Stardust | 2 |
 | 711 Mushroom Crossroads | 19,6 | 1x Signal Jammer | 2 |
@@ -181,7 +181,7 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 | 053 Saltreach Market | 16,6 | 1x Mega Gel | 2 |
 | 803 Thalassa Spaceport | 7,6 | 1x Signal Jammer | 2 |
 | 800 Saltreach Quiet Court | 21,9 | 1x Mega Gel | 2 |
-| 801 Saltreach Farmstead | 20,12 | 1x Mega Gel | 2 |
+| 801 Saltreach Farmstead | 19,11 | 1x Mega Gel | 2 |
 | 776 Boardwalk Crossing | 3,5 | 1x Mega Gel | 2 |
 | 776 Boardwalk Crossing | 6,11 | 2x Cure Spray | 2 |
 | 790 Saltreach Secret Grove | 16,2 | 5x Stasis Pod | 2 |
@@ -268,7 +268,7 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 | 073 Dig Camp | 9,11 | 2x Mega Gel | 3 |
 | 077 Glyph Hollow | 9,10 | 2x Mega Gel | 3 |
 | 077 Glyph Hollow | 13,4 | 3x Harmonic Pod | 3 |
-| 566 Dig Camp Lane Homes | 15,6 | 500x Stardust | 3 |
+| 566 Dig Camp Lane Homes | 20,12 | 500x Stardust | 3 |
 | 568 Dig Camp Farmstead | 21,13 | 500x Stardust | 3 |
 | 567 Dig Camp Quiet Court | 21,9 | 1x Ether Gel | 3 |
 | 552 Ruin Crossroads | 7,10 | 500x Stardust | 3 |
@@ -320,9 +320,9 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 | 088 Deep Mines B2 | 20,7 | 3x Mega Gel | 4 |
 | 089 Deep Mines Depths | 5,3 | 1x Full Gel | 4 |
 | 700 Pyros Spaceport | 5,3 | 2x Ether Gel | 4 |
-| 696 Cinder Hollow Lane Homes | 8,6 | 2x Ether Gel | 4 |
+| 696 Cinder Hollow Lane Homes | 11,8 | 2x Ether Gel | 4 |
 | 697 Cinder Hollow Quiet Court | 2,9 | 3x Mega Gel | 4 |
-| 698 Cinder Hollow Farmstead | 2,12 | 3x Mega Gel | 4 |
+| 698 Cinder Hollow Farmstead | 2,10 | 3x Mega Gel | 4 |
 | 677 Basalt Crossroads | 19,11 | 3x Mega Gel | 4 |
 | 677 Basalt Crossroads | 21,4 | 3x Mega Gel | 4 |
 | 678 Mine Junction | 21,12 | 3x Mega Gel | 4 |
@@ -443,7 +443,7 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 | 626 Helix Comms Spire | 20,9 | 2x Full Gel | 5 |
 | 621 Hidden Hydro Garden | 17,8 | 2x Full Gel | 5 |
 | 621 Hidden Hydro Garden | 12,9 | 1x Max Revive | 5 |
-| 894 Hydro Tank Islands | 13,11 | 1x Max Revive | 5 |
+| 894 Hydro Tank Islands | 15,11 | 1x Max Revive | 5 |
 | 894 Hydro Tank Islands | 7,3 | 1x Max Revive | 5 |
 | 933 Arboretum Dome | 16,3 | 1200x Stardust | 5 |
 | 933 Arboretum Dome | 4,2 | 3x Ether Gel | 5 |
@@ -678,7 +678,7 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 | 161 Blighted Forest Part B | 9,3 | 3x Full Gel | 7 |
 | 162 Edge of the Void | 10,9 | 2x Max Revive | 7 |
 | 163 Seedmother's Grove | 8,10 | 2x Max Revive | 7 |
-| 863 Fragment Lane Homes | 7,2 | 2x Max Revive | 7 |
+| 863 Fragment Lane Homes | 16,2 | 2x Max Revive | 7 |
 | 864 Fragment Quiet Court | 20,13 | 2x Max Revive | 7 |
 | 865 Seedfall Farmstead | 21,13 | 5x Ether Gel | 7 |
 | 849 Crystal Crossroads | 3,12 | 3x Full Gel | 7 |
