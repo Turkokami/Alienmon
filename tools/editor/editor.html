@@ -43,7 +43,20 @@ main{display:flex}#mapwrap{position:relative;flex:1;min-width:0}
 .padrow{display:flex;gap:14px;align-items:flex-start;flex-wrap:wrap}.padrow h4{margin:4px 0 0;font-size:12px;color:var(--muted)}
 .scenes{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:6px;margin:8px 0}.scenes button{text-align:left;font-size:13px}
 main{height:calc(100% - 96px)}
+
+/* phones: the bottom bar keeps the everyday tools; More opens every tool as a grid */
+#modes #moremode{display:none}
+#moresheet{display:none;position:fixed;left:0;right:0;bottom:0;z-index:8;background:var(--panel);border-top:1px solid var(--accent);padding:10px 10px calc(70px + env(safe-area-inset-bottom));max-height:70vh;overflow:auto}
+#moresheet.on{display:block}#moresheet .g{display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:6px}
+#moresheet button{display:flex;flex-direction:column;align-items:center;gap:2px;padding:8px 4px;font-size:12px}#moresheet button.on{border-color:var(--accent);color:var(--accent)}#moresheet i{font-style:normal;font-size:22px}
+#moresheet h4{margin:0 0 8px;color:var(--accent);display:flex;justify-content:space-between;align-items:center}
+/* playtest controls over the map (touch screens) */
+#playpad{display:none;position:absolute;left:0;right:0;bottom:10px;pointer-events:none;justify-content:space-between;align-items:flex-end;padding:0 12px}
+#playpad.on{display:flex}#playpad .dp{display:grid;grid-template-columns:repeat(3,58px);grid-template-rows:repeat(3,58px);gap:4px;pointer-events:auto}
+#playpad button{font-size:22px;padding:0;border-radius:12px;background:rgba(42,32,70,.85);touch-action:none;user-select:none;-webkit-user-select:none}
+#playpad .ab{display:flex;gap:10px;align-items:flex-end;pointer-events:auto}#playpad .ab button{width:68px;height:68px;border-radius:50%;font-weight:700}#playpad .ab button+button{margin-bottom:34px}
 @media (max-width:820px), (pointer:coarse) and (max-width:1100px){
+ #modes button:not(.core){display:none}#modes #moremode{display:flex}#modes button.core{flex:1 1 0;min-width:0;padding:4px 2px}#modes button.core span{font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
  html,body{overflow:hidden;overscroll-behavior:none}
  header{padding:6px 8px;gap:6px;flex-wrap:nowrap}header h1{display:none}
  header select{flex:1 1 0;min-width:0;padding:7px 6px}header .act{flex:0 0 auto;flex-wrap:nowrap}header .act button{padding:7px 10px}
@@ -68,27 +81,30 @@ main{height:calc(100% - 96px)}
 <span class="row act"><button id="undo">&#8630; Undo</button><button id="save">Save</button></span>
 </header>
 <nav id="modes">
-<button data-mode="play" title="Walk the map with the game's rules"><i>&#9654;</i><span>Playtest</span></button>
-<button data-mode="props" class="on"><i>&#127793;</i><span>Props</span></button>
-<button data-mode="people"><i>&#129485;</i><span>People</span></button>
+<button class="core" data-mode="play" title="Walk the map with the game's rules"><i>&#9654;</i><span>Playtest</span></button>
+<button class="core on" data-mode="props"><i>&#127793;</i><span>Props</span></button>
+<button class="core" data-mode="people"><i>&#129485;</i><span>People</span></button>
 <button data-mode="mons"><i>&#128126;</i><span>Alienmon</span></button>
 <button data-mode="arrange" title="Move whole map scenes: drag them to stitch side by side or top to bottom"><i>&#10021;</i><span>Move scenes</span></button>
 <button data-mode="scenes" title="Ready-made scenes: drop one onto the world map or add it as a room"><i>&#128444;</i><span>Scenes</span></button>
 <button data-mode="routes"><i>&#128739;</i><span>Routes</span></button>
-<button data-mode="walls"><i>&#129521;</i><span>Walls</span></button>
+<button class="core" data-mode="walls"><i>&#129521;</i><span>Walls</span></button>
 <button data-mode="doors"><i>&#128682;</i><span>Doors</span></button>
 <button data-mode="clips"><i>&#9986;</i><span>Clips</span></button>
-<button data-mode="terrain" title="Paint ground, paths, water and grass that join up by themselves (autotiles)"><i>&#9968;</i><span>Terrain</span></button>
+<button class="core" data-mode="terrain" title="Paint ground, paths, water and grass that join up by themselves (autotiles)"><i>&#9968;</i><span>Terrain</span></button>
 <button data-mode="sprites" title="Turn a generated sprite sheet into walking people or props"><i>&#127912;</i><span>Sprites</span></button>
 <button data-mode="wild" title="Which wild Alienmon live in the tall grass and water"><i>&#127807;</i><span>Encounters</span></button>
-<button data-mode="items" title="Item stashes, chests, hidden items, signs and blocked-path messages"><i>&#127873;</i><span>Items</span></button>
+<button class="core" data-mode="items" title="Item stashes, chests, hidden items, signs and blocked-path messages"><i>&#127873;</i><span>Items</span></button>
 <button data-mode="settings" title="Music, area name, encounter rate, night and weather for one map"><i>&#9881;</i><span>Map settings</span></button>
 <button data-mode="check" title="Check maps against the Map Logic Pack"><i>&#9989;</i><span>Check</span></button>
 <button data-mode="overview" title="Every world at a glance"><i>&#127759;</i><span>Worlds</span></button>
 <button data-mode="versions" title="Saved versions and crash recovery"><i>&#128190;</i><span>Versions</span></button>
 <button data-mode="maps"><i>&#10133;</i><span>Add map</span></button>
+<button id="moremode" class="core" title="Every tool"><i>&#9776;</i><span>More</span></button>
 </nav>
+<div id="moresheet"><h4>All tools <button id="moreclose">Close</button></h4><div class="g"></div></div>
 <main><div id="mapwrap"><canvas id="map"></canvas><div id="where"></div>
+<div id="playpad"><div class="dp"><span></span><button data-pp="up">&#9650;</button><span></span><button data-pp="left">&#9664;</button><span></span><button data-pp="right">&#9654;</button><span></span><button data-pp="down">&#9660;</button><span></span></div><div class="ab"><button id="ppb">B</button><button id="ppa">A</button></div></div>
 <div id="mapctl"><button id="zout" title="Zoom out">&minus;</button><button id="zfit" title="Fit the map on screen">Fit</button><button id="zin" title="Zoom in">+</button>
 <label title="Show walls and walkable ground"><input type="checkbox" id="walls"> walls</label><label title="Show doors"><input type="checkbox" id="showdoors" checked> doors</label></div>
 </div><div id="sizer" title="Drag to resize the panel"><b></b></div><aside id="panel"></aside></main>

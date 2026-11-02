@@ -246,8 +246,9 @@ function playWire() {
 function firstWalk(id) { const R = rowsOf(id); for (let y = 0; y < R.length; y++) for (let x = 0; x < R[y].length; x++) if (R[y][x] === '.') return [x, y]; return null; }
 function playStart(id, x, y) {
   if (S.view !== id) { S.view = id; views(); }
-  S.zoom = Math.max(S.zoom, Math.min(4, cv.clientHeight / (144 * 1.6)));
   S.play = { sid: id, x, y, face: 'down', mv: null, msg: null, back: [], beat: new Set(), log: ['Started on ' + sec(id).name + '.'] };
+  if (phone()) { document.documentElement.style.setProperty('--ph', Math.round(innerHeight * 0.22) + 'px'); resize(); }   // phones: small panel, big map, pad over it
+  S.zoom = phone() ? Math.max(1, Math.min(cv.clientWidth / 168, cv.clientHeight / 150)) : Math.max(S.zoom, Math.min(4, cv.clientHeight / (144 * 1.6)));   // phones: the game screen fills the map area
   centerPlay(); panel(); playLoop();
 }
 function playStop() { S.play = null; for (const k in HELD) delete HELD[k]; panel(); draw(); }

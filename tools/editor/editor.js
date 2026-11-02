@@ -209,8 +209,8 @@ function paint(t) { if (!t) return; const R = rowsOf(t.sid).slice(), row = R[t.y
 const TOUCH = new Map(); let PINCH = null;
 function pinchStart() { const [a, b] = [...TOUCH.values()]; PINCH = { d: Math.hypot(a.x - b.x, a.y - b.y) || 1, mx: (a.x + b.x) / 2, my: (a.y + b.y) / 2, z: S.zoom, ox: S.ox, oy: S.oy }; }
 function cancelGesture() {   // a second finger turns whatever the first finger started into a pan/zoom
-  if (S.pieceDrag || S.drag || S.stampDrag || S.terrPaint) { const keep = S.sel; S.terrPaint = false; undo(); S.sel = keep; panel(); }
-  S.wallRect = S.clipRect = S.routeDrag = null; S.pan = null; S.drag = false; S.pieceDrag = null; S.propGrab = null; S.stampDrag = null; S.painting = false;
+  if (S.pieceDrag || S.drag || S.stampDrag || S.terrPaint || S.groupDrag) { const keep = S.sel; S.terrPaint = false; S.groupDrag = null; undo(); S.sel = keep; panel(); }
+  S.wallRect = S.clipRect = S.routeDrag = S.gRect = S.boxSel = null; S.pan = null; S.drag = false; S.pieceDrag = null; S.propGrab = null; S.stampDrag = null; S.painting = false;
 }
 cv.addEventListener('pointerdown', e => {
   if (e.pointerType === 'touch') { TOUCH.set(e.pointerId, { x: e.clientX, y: e.clientY }); if (TOUCH.size === 2) { cancelGesture(); pinchStart(); cv.setPointerCapture(e.pointerId); draw(); return; } if (TOUCH.size > 2) return; }

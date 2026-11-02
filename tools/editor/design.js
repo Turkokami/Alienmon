@@ -184,6 +184,7 @@ function designWire() {
   on('#vsave', 'click', async () => { const n = ($('#vname').value || '').trim() || 'Version ' + new Date().toLocaleString(); await vput('v' + Date.now(), stateNow(n)); toast('Version saved: ' + n); versionsPanelFill(); });
   if ($('#vlist')) versionsPanelFill(); if ($('#ovgrid')) overviewFill();
   if (typeof designWire2 === 'function') designWire2();
+  playPad();
 }
 function designDown(e, t, wx, wy) {   // true = handled here
   if (typeof designDown2 === 'function' && designDown2(e, t, wx, wy)) return true;
@@ -224,4 +225,15 @@ function designDraw(ctx) {
   if (typeof designDraw2 === 'function') designDraw2(ctx);
 }
 function designBundle(b) { b.design = DS; if (typeof designBundle2 === 'function') designBundle2(b); }
-function designBoot() { DS = Object.assign({ zones: {}, objs: {}, people: {}, settings: {}, ground: {} }, ED.edits.design || {}); recoverDraft(); if (typeof designBoot2 === 'function') designBoot2(); }
+// ---------- phones: the More sheet and the on-map playtest pad ----------
+const phone = () => matchMedia('(max-width:820px), (pointer:coarse) and (max-width:1100px)').matches;
+function moreSheet(open) { const sh = $('#moresheet'); if (!open) { sh.classList.remove('on'); return; }
+  sh.querySelector('.g').innerHTML = [...document.querySelectorAll('#modes [data-mode]')].map(b => `<button data-go="${b.dataset.mode}" class="${S.mode === b.dataset.mode ? 'on' : ''}">${b.innerHTML}</button>`).join('');
+  sh.querySelectorAll('[data-go]').forEach(b => b.onclick = () => { sh.classList.remove('on'); document.querySelector(`#modes [data-mode="${b.dataset.go}"]`).click(); markMore(); }); sh.classList.add('on'); }
+function markMore() { const core = document.querySelector(`#modes [data-mode="${S.mode}"]`), m = $('#moremode'); if (m) m.classList.toggle('on', !!core && !core.classList.contains('core')); }
+function playPad() { const p = $('#playpad'); if (p) p.classList.toggle('on', S.mode === 'play' && !!S.play && (phone() || matchMedia('(pointer:coarse)').matches)); }
+function designBoot() { DS = Object.assign({ zones: {}, objs: {}, people: {}, settings: {}, ground: {} }, ED.edits.design || {}); recoverDraft(); if (typeof designBoot2 === 'function') designBoot2();
+  $('#moremode').onclick = () => moreSheet(!$('#moresheet').classList.contains('on')); $('#moreclose').onclick = () => moreSheet(false);
+  document.querySelectorAll('#modes [data-mode]').forEach(b => b.addEventListener('click', () => { moreSheet(false); setTimeout(markMore); }));
+  document.querySelectorAll('[data-pp]').forEach(b => { const d = b.dataset.pp, up = () => { delete HELD[d]; }; b.addEventListener('pointerdown', e => { e.preventDefault(); HELD[d] = 1; }); b.addEventListener('pointerup', up); b.addEventListener('pointercancel', up); b.addEventListener('pointerleave', up); });
+  $('#ppa').addEventListener('pointerdown', e => { e.preventDefault(); playA(); }); $('#ppb').addEventListener('pointerdown', e => { e.preventDefault(); playB(); }); }
