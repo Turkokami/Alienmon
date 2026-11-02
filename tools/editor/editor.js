@@ -1,4 +1,5 @@
 // Alienmon map editor: place props, people and wild Alienmon on the section maps, paint walls, and grow a world with new map pieces.
+// Terrain painting and the Sprite Studio live in studio.js.
 // Loads editor_data.json (written by tools/build.js on prototype builds). Saves straight into the alienmon-app folder (Chrome/Edge
 // desktop: File System Access) or downloads editor_changes.json; tools/editor/apply.py turns either into a rebuilt game.
 'use strict';
@@ -14,8 +15,8 @@ let LAYOUT = {}, MOVES = {}, ADDED = {}, REMOVED = {}, MONS = {}, MAPS = [], ROW
 const DIRTY = new Set();
 const HIST = [];
 const edgeSnap = () => Object.fromEntries(Object.values(ED.sections).map(s => [s.id, s.edges]));
-function snap() { HIST.push(JSON.stringify({ LAYOUT, MOVES, ADDED, REMOVED, MONS, ROWS, GRID, ROUTES, DOORS, CLIPS, MAPS, EDGES: edgeSnap() })); if (HIST.length > 60) HIST.shift(); }
-function undo() { const h = HIST.pop(); if (!h) return toast('Nothing to undo'); let E; ({ LAYOUT, MOVES, ADDED, REMOVED, MONS, ROWS, GRID, ROUTES, DOORS, CLIPS, MAPS, EDGES: E } = JSON.parse(h)); for (const m of MAPS) if (m.built && ED.sections[m.id]) bake(m.id); for (const k of Object.keys(ED.sections)) if (ED.sections[k]._new && !MAPS.some(m => m.id === k)) { delete ED.sections[k]; if (S.view === k) S.view = 'outdoor'; views(); } for (const [k, v] of Object.entries(E || {})) if (ED.sections[k]) ED.sections[k].edges = v; S.sel = null; panel(); draw(); }
+function snap() { HIST.push(JSON.stringify({ LAYOUT, MOVES, ADDED, REMOVED, MONS, ROWS, GRID, ROUTES, DOORS, CLIPS, MAPS, TILESETS, EDGES: edgeSnap() })); if (HIST.length > 60) HIST.shift(); }
+function undo() { const h = HIST.pop(); if (!h) return toast('Nothing to undo'); let E, T; ({ LAYOUT, MOVES, ADDED, REMOVED, MONS, ROWS, GRID, ROUTES, DOORS, CLIPS, MAPS, TILESETS: T, EDGES: E } = JSON.parse(h)); if (T) TILESETS = T; for (const m of MAPS) if (m.built && ED.sections[m.id]) bake(m.id); for (const k of Object.keys(ED.sections)) if (ED.sections[k]._new && !MAPS.some(m => m.id === k)) { delete ED.sections[k]; if (S.view === k) S.view = 'outdoor'; views(); } for (const [k, v] of Object.entries(E || {})) if (ED.sections[k]) ED.sections[k].edges = v; S.sel = null; panel(); draw(); }
 function touch(sid) { DIRTY.add(sid); $('#save').classList.add('hot'); }
 
 // ---------- data helpers ----------
@@ -206,7 +207,7 @@ function paint(t) { if (!t) return; const R = rowsOf(t.sid).slice(), row = R[t.y
 const TOUCH = new Map(); let PINCH = null;
 function pinchStart() { const [a, b] = [...TOUCH.values()]; PINCH = { d: Math.hypot(a.x - b.x, a.y - b.y) || 1, mx: (a.x + b.x) / 2, my: (a.y + b.y) / 2, z: S.zoom, ox: S.ox, oy: S.oy }; }
 function cancelGesture() {   // a second finger turns whatever the first finger started into a pan/zoom
-  if (S.pieceDrag || S.drag || S.stampDrag) { const keep = S.sel; undo(); S.sel = keep; panel(); }
+  if (S.pieceDrag || S.drag || S.stampDrag || S.terrPaint) { const keep = S.sel; S.terrPaint = false; undo(); S.sel = keep; panel(); }
   S.wallRect = S.clipRect = S.routeDrag = null; S.pan = null; S.drag = false; S.pieceDrag = null; S.propGrab = null; S.stampDrag = null; S.painting = false;
 }
 cv.addEventListener('pointerdown', e => {
@@ -214,6 +215,7 @@ cv.addEventListener('pointerdown', e => {
   cv.setPointerCapture(e.pointerId); const [wx, wy] = toWorld(e), t = tileAt(wx, wy);
   if (S.stamp && S.stamp.kind === 'scene' && e.button === 0 && !e.altKey) { dropScene(wx, wy); return; }
   if (e.button === 1 || e.button === 2 || e.altKey || !t) { S.pan = [e.clientX - S.ox, e.clientY - S.oy]; return; }
+  if (S.mode === 'terrain') { terrainDown(t, wx, wy); return; }
   if (S.mode === 'walls') { S.wallRect = { sid: t.sid, x0: t.x, y0: t.y, x1: t.x, y1: t.y }; draw(); return; }
   if (S.mode === 'clips') {
     const m = S.view !== 'outdoor' && builtMap(S.view);
@@ -246,6 +248,7 @@ cv.addEventListener('pointermove', e => {
   const [wx, wy] = toWorld(e), t = tileAt(wx, wy);
   if (S.pan) { S.ox = e.clientX - S.pan[0]; S.oy = e.clientY - S.pan[1]; draw(); return; }
   if (S.painting) { paint(t); return; }
+  if (S.terrPaint) { terrainPaint(wx, wy); return; }
   if (S.clipRect) { if (t && t.sid === S.clipRect.sid) { S.clipRect.x1 = t.x; S.clipRect.y1 = t.y; draw(); } return; }
   if (S.stampDrag && S.sel && S.sel.kind === 'stamp' && t) { const m = builtMap(S.sel.sid), st = m.stamps[S.sel.i], nx = t.x - S.stampDrag.dx, ny = t.y - S.stampDrag.dy; if (nx !== st.x || ny !== st.y) { st.x = nx; st.y = ny; bake(S.sel.sid); } return; }
   if (S.wallRect) { if (t && t.sid === S.wallRect.sid) { S.wallRect.x1 = t.x; S.wallRect.y1 = t.y; draw(); } return; }
@@ -258,7 +261,7 @@ cv.addEventListener('pointermove', e => {
 });
 const touchEnd = e => { if (e.pointerType !== 'touch') return; TOUCH.delete(e.pointerId); if (TOUCH.size < 2 && PINCH) { PINCH = null; if (TOUCH.size === 1) { const [p] = [...TOUCH.values()]; S.pan = [p.x - S.ox, p.y - S.oy]; } } };
 cv.addEventListener('pointercancel', touchEnd);
-addEventListener('pointerup', e => { const wasPinch = !!PINCH; touchEnd(e); if (wasPinch || PINCH || TOUCH.size) return; if (S.clipRect) makeClip(); if (S.stampDrag) { const id = S.sel && S.sel.sid; S.stampDrag = null; if (id) stampRows(id); } if (S.wallRect) fillRect(); if (S.routeDrag) finishRoute(); S.pan = null; S.drag = false; S.painting = false; S.pieceDrag = null; S.propGrab = null; });
+addEventListener('pointerup', e => { const wasPinch = !!PINCH; touchEnd(e); if (wasPinch || PINCH || TOUCH.size) return; if (S.clipRect) makeClip(); if (S.stampDrag) { const id = S.sel && S.sel.sid; S.stampDrag = null; if (id) stampRows(id); } if (S.wallRect) fillRect(); if (S.routeDrag) finishRoute(); terrainUp(); S.pan = null; S.drag = false; S.painting = false; S.pieceDrag = null; S.propGrab = null; });
 cv.addEventListener('wheel', e => { e.preventDefault(); const r = cv.getBoundingClientRect(), mx = e.clientX - r.left, my = e.clientY - r.top, z0 = S.zoom;
   S.zoom = Math.max(0.25, Math.min(8, S.zoom * (e.deltaY < 0 ? 1.15 : 1 / 1.15))); S.ox = mx - (mx - S.ox) * S.zoom / z0; S.oy = my - (my - S.oy) * S.zoom / z0; draw(); }, { passive: false });
 cv.addEventListener('contextmenu', e => e.preventDefault());
@@ -434,8 +437,9 @@ function panel() {
       <div class="scenes">${planetSecs().filter(onWorld).sort((a, b) => a.id.localeCompare(b.id)).map(s => `<button data-scene="${s.id}" class="${S.sel && S.sel.kind === 'piece' && S.sel.sid === s.id ? 'on' : ''}">${s.id} ${s.name}</button>`).join('')}</div>`;
   else if (m === 'routes') h += `<h3>Travel routes</h3><p class="hint">Blue bars are the ways across between map pieces. To add one, press on the edge of a piece where it touches the next piece and drag along that edge to set how wide the opening is (a road is usually 4 to 6 tiles). The opening is cut through the walls on both sides. Click a bar to select it; Delete removes it. Each side of a piece can have one route.</p>
     ${ROUTES.filter(r => !r.remove).map(r => `<div>${r.a} ${r.side} ${r.band[0]}-${r.band[1]} to ${r.b}</div>`).join('')}`;
+  if (m === 'terrain') h += terrainPanel(); else if (m === 'sprites') h += spritesPanel();
   h += `<h3>Check</h3><button id="check">Check edited maps</button><div id="checkout"></div>`;
-  P.innerHTML = h; wire();
+  P.innerHTML = h; wire(); if (m === 'terrain') terrainWire(); else if (m === 'sprites') spritesWire();
 }
 function selPanel() {
   const r = S.sel;
@@ -593,12 +597,14 @@ function bake(id) {   // redraw a built map: the ground (a clip repeated, or a p
   g.fillStyle = m.color || '#6b5b45'; g.fillRect(0, 0, W * 16, H * 16);
   const gc = m.ground && clipById(m.ground), gi = gc && clipImg(gc);
   if (gc && ok(gi)) for (let y = 0; y < H; y += gc.h) for (let x = 0; x < W; x += gc.w) g.drawImage(gi, x * 16, y * 16);
+  terrainBake(m, g, W, H);   // painted terrain layers (studio.js) sit on the ground, under the stamps
   for (const st of m.stamps || []) { const c = clipById(st.c), ci = c && clipImg(c); if (c && ok(ci)) g.drawImage(ci, st.x * 16, st.y * 16); }
   NEWIMG[id] = cv2.toDataURL('image/png'); touch(id); draw();
 }
 function stampRows(id) {   // collision: the ground clip's walls repeated, then each stamp's walls on top
   const m = builtMap(id), s = sec(id), [W, H] = s.tiles, gc = m.ground && clipById(m.ground);
   const R = Array.from({ length: H }, (_, y) => Array.from({ length: W }, (_, x) => gc ? gc.rows[y % gc.h][x % gc.w] : '.'));
+  terrainRows(m, R, W, H);
   for (const st of m.stamps || []) { const c = clipById(st.c); if (!c) continue; for (let j = 0; j < c.h; j++) for (let i = 0; i < c.w; i++) { const y = st.y + j, x = st.x + i; if (R[y] && R[y][x] !== undefined) R[y][x] = c.rows[j][i]; } }
   for (const [side, e] of Object.entries(s.edges || {})) for (let k = e.range[0]; k <= e.range[1]; k++) { const [x, y] = { left: [0, k], right: [W - 1, k], top: [k, 0], bottom: [k, H - 1] }[side]; if (R[y]) R[y][x] = '.'; }
   for (const w of s.warps || []) if (R[w.tile[1]]) R[w.tile[1]][w.tile[0]] = '.';
@@ -641,8 +647,8 @@ function bundle() {
   const coll = {}; for (const id of Object.keys(ROWS)) coll[id] = { id, name: sec(id).name, tiles: sec(id).tiles, edited: true, legend: { '.': 'walk', '#': 'blocked', ',': 'tall grass' }, rows: ROWS[id] };
   const images = {}; for (const m of MAPS) if (NEWIMG[m.id]) images[m.img] = NEWIMG[m.id];
   for (const c of CLIPS) if (CLIPIMG[c.id]) images['art/editor_clips/' + c.id + '.png'] = CLIPIMG[c.id];
-  const clips = CLIPS.map(({ url, ...c }) => c);
-  return { version: 1, layout: LAYOUT, npcs, mons: MONS, maps: MAPS, collision: coll, images, grid: GRID, routes: ROUTES, doors: DOORS, clips };
+  const clips = CLIPS.map(({ url, ...c }) => c), files = {}, tilesets = studioBundle(images, files);   // terrains, new sprites and prop sheets
+  return { version: 1, layout: LAYOUT, npcs, mons: MONS, maps: MAPS, collision: coll, images, grid: GRID, routes: ROUTES, doors: DOORS, clips, tilesets, files };
 }
 let DIR = null;
 async function save() {
@@ -663,6 +669,8 @@ async function save() {
     await put('data/editor/routes.json', JSON.stringify(b.routes, null, 1));
     await put('data/editor/doors.json', JSON.stringify(b.doors, null, 1));
     await put('data/editor/clips.json', JSON.stringify(b.clips, null, 1));
+    await put('data/editor/tilesets.json', JSON.stringify(b.tilesets, null, 1));
+    for (const [rel, txt] of Object.entries(b.files)) await put(rel, txt);
     for (const [id, c] of Object.entries(b.collision)) await put(`data/collision/${id}.json`, JSON.stringify(c));
     for (const [rel, url] of Object.entries(b.images)) await put(rel, await (await fetch(url)).blob());
     DIRTY.clear(); $('#save').classList.remove('hot');
@@ -692,7 +700,7 @@ function views() { const ss = planetSecs().sort((a, b) => a.id.localeCompare(b.i
   $('#view').innerHTML = `<option value="outdoor">Whole world (outdoor maps stitched)</option>` + ss.map(s => `<option value="${s.id}" ${S.view === s.id ? 'selected' : ''}>${s.id} ${s.name}${s.grid ? '' : s.type === 'interior' ? ' (inside)' : ' (' + s.type + ')'}</option>`).join(''); $('#view').value = S.view; }
 async function boot() {
   ED = await (await fetch('editor_data.json', { cache: 'no-store' })).json();
-  LAYOUT = ED.layout || {}; MOVES = (ED.edits.npcs || {}).moves || {}; ADDED = (ED.edits.npcs || {}).added || {}; REMOVED = (ED.edits.npcs || {}).removed || {}; MONS = ED.edits.mons || {}; MAPS = ED.edits.maps || []; GRID = ED.edits.grid || {}; ROUTES = ED.edits.routes || []; DOORS = ED.edits.doors || {}; CLIPS = ED.edits.clips || [];
+  LAYOUT = ED.layout || {}; MOVES = (ED.edits.npcs || {}).moves || {}; ADDED = (ED.edits.npcs || {}).added || {}; REMOVED = (ED.edits.npcs || {}).removed || {}; MONS = ED.edits.mons || {}; MAPS = ED.edits.maps || []; GRID = ED.edits.grid || {}; ROUTES = ED.edits.routes || []; DOORS = ED.edits.doors || {}; CLIPS = ED.edits.clips || []; TILESETS = ED.edits.tilesets || [];
   const dirs = Object.keys(ED.planets).sort(); S.planet = dirs[0]; S.sheet = Object.keys(ED.props).find(d => d === S.planet) || Object.keys(ED.props)[0];
   $('#planet').innerHTML = dirs.map(d => `<option value="${d}">${ED.planets[d]}</option>`).join('');
   $('#planet').onchange = e => { S.planet = e.target.value; S.view = 'outdoor'; S.sel = null; if (ED.props[S.planet]) S.sheet = S.planet; views(); panel(); fit(); };

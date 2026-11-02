@@ -76,6 +76,8 @@ main{height:calc(100% - 96px)}
 <button data-mode="walls"><i>&#129521;</i><span>Walls</span></button>
 <button data-mode="doors"><i>&#128682;</i><span>Doors</span></button>
 <button data-mode="clips"><i>&#9986;</i><span>Clips</span></button>
+<button data-mode="terrain" title="Paint ground, paths, water and grass that join up by themselves (autotiles)"><i>&#9968;</i><span>Terrain</span></button>
+<button data-mode="sprites" title="Turn a generated sprite sheet into walking people or props"><i>&#127912;</i><span>Sprites</span></button>
 <button data-mode="maps"><i>&#10133;</i><span>Add map</span></button>
 </nav>
 <main><div id="mapwrap"><canvas id="map"></canvas><div id="where"></div>
@@ -83,5 +85,6 @@ main{height:calc(100% - 96px)}
 <label title="Show walls and walkable ground"><input type="checkbox" id="walls"> walls</label><label title="Show doors"><input type="checkbox" id="showdoors" checked> doors</label></div>
 </div><div id="sizer" title="Drag to resize the panel"><b></b></div><aside id="panel"></aside></main>
 <div id="toast"></div>
+<script src="studio.js"></script>
 <script src="editor.js"></script>
 </body></html>

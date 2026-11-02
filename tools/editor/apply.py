@@ -31,6 +31,10 @@ def unpack(path):
     json.dump(b.get('routes', []), open('data/editor/routes.json', 'w'), indent=1)
     json.dump(b.get('doors', {}), open('data/editor/doors.json', 'w'), indent=1)
     json.dump(b.get('clips', []), open('data/editor/clips.json', 'w', encoding='utf-8'), indent=1, ensure_ascii=False)
+    json.dump(b.get('tilesets', []), open('data/editor/tilesets.json', 'w', encoding='utf-8'), indent=1, ensure_ascii=False)
+    for rel, txt in b.get('files', {}).items():   # prop sheets made in the Sprite Studio (their cut.json); nothing outside art/props
+        if rel.startswith('art/props/') and rel.endswith('/cut.json') and '..' not in rel:
+            os.makedirs(os.path.dirname(rel), exist_ok=True); open(rel, 'w', encoding='utf-8').write(txt)
     for sid, c in b.get('collision', {}).items():
         json.dump(c, open(f'data/collision/{sid}.json', 'w'))
     for m in b.get('maps', []):   # scenes dropped from the scene library: copy the library picture into place
@@ -38,7 +42,7 @@ def unpack(path):
             os.makedirs(os.path.dirname(m['img']), exist_ok=True)
             shutil.copyfile(m['src'], m['img'])
     for rel, url in b.get('images', {}).items():
-        if url and url.startswith('data:image/png;base64,'):
+        if url and url.startswith('data:image/png;base64,') and '..' not in rel and rel.startswith('art/'):
             os.makedirs(os.path.dirname(rel), exist_ok=True)
             open(rel, 'wb').write(base64.b64decode(url.split(',', 1)[1]))
     print('unpacked', path)
@@ -48,7 +52,7 @@ def main():
     if '--from' in sys.argv:
         unpack(sys.argv[sys.argv.index('--from') + 1])
     if '--stage' in sys.argv:   # new map images must be tracked or check_build flags them as missing on Vercel
-        subprocess.run(['git', 'add'] + [p for p in ('art/sections_game', 'art/editor_clips', 'data/collision', 'data/editor', 'data/sections/props_layout.json') if os.path.exists(p)])
+        subprocess.run(['git', 'add'] + [p for p in ('art/sections_game', 'art/editor_clips', 'art/editor_tiles', 'art/characters', 'art/props', 'data/collision', 'data/editor', 'data/sections/props_layout.json') if os.path.exists(p)])
     steps = [['python', 'tools/sections/build_world.py'], ['python', 'tools/sections/check_sections.py'],
              ['python', 'tools/sections/check_reach.py'], ['node', 'tools/build.js'], ['node', 'tools/check_build.js']]
     bad = False
@@ -65,6 +69,7 @@ def main():
         if branch != 'maps-v2':
             print(f'Not pushing: on branch {branch}, editor changes only publish from maps-v2.'); return
         subprocess.run(['git', 'add', 'data/sections/props_layout.json', 'data/editor', 'data/collision', 'data/world.json', 'art/sections_game',
+                        'art/editor_clips', 'art/editor_tiles', 'art/characters', 'art/props',
                         'data/sections/stashes.json', 'docs/LINKER_STASHES.md', 'data/connections_report.md'])
         subprocess.run(['git', 'commit', '-q', '-m', 'Map editor changes'])
         subprocess.run(['git', 'push', '-q'])
