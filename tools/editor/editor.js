@@ -104,7 +104,7 @@ function draw() {
   if (S.clipRect) { const r = S.clipRect, s = sec(r.sid), [ox, oy] = origin(s), x0 = Math.min(r.x0, r.x1), y0 = Math.min(r.y0, r.y1);
     ctx.fillStyle = 'rgba(95,242,255,0.25)'; ctx.fillRect(ox + x0 * 16, oy + y0 * 16, (Math.abs(r.x1 - r.x0) + 1) * 16, (Math.abs(r.y1 - r.y0) + 1) * 16);
     ctx.strokeStyle = '#5ff2ff'; ctx.lineWidth = 2 / S.zoom; ctx.setLineDash([4 / S.zoom, 3 / S.zoom]); ctx.strokeRect(ox + x0 * 16, oy + y0 * 16, (Math.abs(r.x1 - r.x0) + 1) * 16, (Math.abs(r.y1 - r.y0) + 1) * 16); ctx.setLineDash([]); }
-  if (S.mode === 'clips' && S.view !== 'outdoor') { const m = builtMap(S.view); if (m) { const s = sec(S.view);
+  if (S.mode === 'clips' && S.view !== 'outdoor') { const m = stampHost(S.view); if (m) { const s = sec(S.view);
     (m.stamps || []).forEach((st, i) => { const c = clipById(st.c); if (!c) return; const on = S.sel && S.sel.kind === 'stamp' && S.sel.i === i;
       ctx.strokeStyle = on ? '#ffd23f' : 'rgba(255,255,255,0.35)'; ctx.lineWidth = (on ? 2 : 1) / S.zoom; ctx.strokeRect(st.x * 16, st.y * 16, c.w * 16, c.h * 16); });
     if (S.hover && S.stamp && S.stamp.kind === 'clip') { const c = clipById(S.stamp.c), [h] = S.hover; if (c) { ctx.strokeStyle = '#ffd23f'; ctx.strokeRect(h.x * 16, h.y * 16, c.w * 16, c.h * 16); } } } }
@@ -168,7 +168,7 @@ function selPos() { const r = S.sel; if (!r) return null;
   if (r.kind === 'prop') { const q = (LAYOUT[r.sid] || [])[r.i]; return q && [q.x, q.y]; }
   if (r.kind === 'mon') { const m = monsOf(r.sid)[r.i]; return m && [m.x, m.y]; }
   const n = npcsOf(r.sid).find(n => same(n.ref, r)); return n && [n.x, n.y]; }
-function delSel() { const r = S.sel; if (!r) return; if (r.kind === 'piece') return; if (r.kind === 'stamp') { snap(); builtMap(r.sid).stamps.splice(r.i, 1); S.sel = null; bake(r.sid); stampRows(r.sid); panel(); return; } if (r.kind === 'route') { snap(); removeRoute(r.sid, r.side); S.sel = null; panel(); draw(); return; } snap();
+function delSel() { const r = S.sel; if (!r) return; if (r.kind === 'piece') return; if (r.kind === 'stamp') { snap(); stampHost(r.sid).stamps.splice(r.i, 1); S.sel = null; terrBake(r.sid); terrRows(r.sid); panel(); return; } if (r.kind === 'route') { snap(); removeRoute(r.sid, r.side); S.sel = null; panel(); draw(); return; } snap();
   if (r.kind === 'prop') LAYOUT[r.sid].splice(r.i, 1);
   else if (r.kind === 'added') ADDED[r.sid].splice(r.i, 1);
   else if (r.kind === 'npc') { if (!confirm('Remove this person from the map? (Story characters may be needed by quests.)')) return; (REMOVED[r.sid] = REMOVED[r.sid] || []).push(r.src); }
@@ -221,8 +221,8 @@ cv.addEventListener('pointerdown', e => {
   if (S.mode === 'terrain') { terrainDown(t, wx, wy); return; }
   if (S.mode === 'walls') { S.wallRect = { sid: t.sid, x0: t.x, y0: t.y, x1: t.x, y1: t.y }; draw(); return; }
   if (S.mode === 'clips') {
-    const m = S.view !== 'outdoor' && builtMap(S.view);
-    if (m && S.stamp && S.stamp.kind === 'clip') { placeStamp(t); return; }
+    const m = S.view !== 'outdoor' && stampHost(S.view);   // a built map, or a finished map's see-through layer (play.js)
+    if (S.view !== 'outdoor' && S.stamp && S.stamp.kind === 'clip') { placeStamp(t); return; }
     if (m) { const i = (m.stamps || []).map((st, i) => [st, i]).reverse().find(([st]) => { const c = clipById(st.c); return c && t.x >= st.x && t.x < st.x + c.w && t.y >= st.y && t.y < st.y + c.h; });
       if (i) { snap(); S.sel = { kind: 'stamp', sid: S.view, i: i[1] }; S.stampDrag = { dx: t.x - i[0].x, dy: t.y - i[0].y }; panel(); draw(); return; } }
     S.clipRect = { sid: t.sid, x0: t.x, y0: t.y, x1: t.x, y1: t.y }; draw(); return; }
@@ -254,7 +254,7 @@ cv.addEventListener('pointermove', e => {
   if (S.painting) { paint(t); return; }
   if (S.terrPaint) { terrainPaint(wx, wy); return; }
   if (S.clipRect) { if (t && t.sid === S.clipRect.sid) { S.clipRect.x1 = t.x; S.clipRect.y1 = t.y; draw(); } return; }
-  if (S.stampDrag && S.sel && S.sel.kind === 'stamp' && t) { const m = builtMap(S.sel.sid), st = m.stamps[S.sel.i], nx = t.x - S.stampDrag.dx, ny = t.y - S.stampDrag.dy; if (nx !== st.x || ny !== st.y) { st.x = nx; st.y = ny; bake(S.sel.sid); } return; }
+  if (S.stampDrag && S.sel && S.sel.kind === 'stamp' && t) { const m = stampHost(S.sel.sid), st = m.stamps[S.sel.i], nx = t.x - S.stampDrag.dx, ny = t.y - S.stampDrag.dy; if (nx !== st.x || ny !== st.y) { st.x = nx; st.y = ny; terrBake(S.sel.sid); } return; }
   if (S.wallRect) { if (t && t.sid === S.wallRect.sid) { S.wallRect.x1 = t.x; S.wallRect.y1 = t.y; draw(); } return; }
   if (S.pieceDrag) { movePiece(wx, wy); return; }
   if (S.routeDrag) { const r = S.routeDrag, s = sec(r.sid), [ox, oy] = origin(s), [W, H] = s.tiles; r.k1 = r.side === 'left' || r.side === 'right' ? Math.max(0, Math.min(H - 1, Math.floor((wy - oy) / 16))) : Math.max(0, Math.min(W - 1, Math.floor((wx - ox) / 16))); draw(); return; }
@@ -265,7 +265,7 @@ cv.addEventListener('pointermove', e => {
 });
 const touchEnd = e => { if (e.pointerType !== 'touch') return; TOUCH.delete(e.pointerId); if (TOUCH.size < 2 && PINCH) { PINCH = null; if (TOUCH.size === 1) { const [p] = [...TOUCH.values()]; S.pan = [p.x - S.ox, p.y - S.oy]; } } };
 cv.addEventListener('pointercancel', touchEnd);
-addEventListener('pointerup', e => { const wasPinch = !!PINCH; touchEnd(e); if (wasPinch || PINCH || TOUCH.size) return; if (S.clipRect) makeClip(); if (S.stampDrag) { const id = S.sel && S.sel.sid; S.stampDrag = null; if (id) stampRows(id); } if (S.wallRect) fillRect(); if (S.routeDrag) finishRoute(); terrainUp(); designUp(); S.pan = null; S.drag = false; S.painting = false; S.pieceDrag = null; S.propGrab = null; });
+addEventListener('pointerup', e => { const wasPinch = !!PINCH; touchEnd(e); if (wasPinch || PINCH || TOUCH.size) return; if (S.clipRect) makeClip(); if (S.stampDrag) { const id = S.sel && S.sel.sid; S.stampDrag = null; if (id) terrRows(id); } if (S.wallRect) fillRect(); if (S.routeDrag) finishRoute(); terrainUp(); designUp(); S.pan = null; S.drag = false; S.painting = false; S.pieceDrag = null; S.propGrab = null; });
 cv.addEventListener('wheel', e => { e.preventDefault(); const r = cv.getBoundingClientRect(), mx = e.clientX - r.left, my = e.clientY - r.top, z0 = S.zoom;
   S.zoom = Math.max(0.25, Math.min(8, S.zoom * (e.deltaY < 0 ? 1.15 : 1 / 1.15))); S.ox = mx - (mx - S.ox) * S.zoom / z0; S.oy = my - (my - S.oy) * S.zoom / z0; draw(); }, { passive: false });
 cv.addEventListener('contextmenu', e => e.preventDefault());
@@ -282,7 +282,7 @@ function nudge(dx, dy, fine) { if (designNudge(dx, dy)) return;   // arrows: one
   const r = S.sel; if (!r) return; snap();
   if (r.kind === 'prop' && fine) { const q = LAYOUT[r.sid][r.i]; q.ox = (q.ox || 0) + dx; q.oy = (q.oy || 0) + dy; if (!q.ox) delete q.ox; if (!q.oy) delete q.oy; touch(r.sid); panel(); draw(); }
   else if (r.kind === 'piece') { const g = gridOf(sec(r.sid)).slice(), k = fine ? 4 : 1; GRID[r.sid] = [g[0] + dx * k, g[1] + dy * k]; touch(r.sid); panel(); draw(); }
-  else if (r.kind === 'stamp') { const st = builtMap(r.sid).stamps[r.i]; st.x += dx; st.y += dy; bake(r.sid); stampRows(r.sid); panel(); }
+  else if (r.kind === 'stamp') { const st = stampHost(r.sid).stamps[r.i]; st.x += dx; st.y += dy; terrBake(r.sid); terrRows(r.sid); panel(); }
   else moveSel(null, dx, dy);
 }
 function padHtml(fineLabel) {
@@ -455,7 +455,7 @@ function selPanel() {
       <label>Opens <select id="doorto"><option value="">Choose a room...</option>${roomChoices()}</select></label>
       <div class="row"><button id="doorset">Set door</button>${d ? '<button id="doorrm">Remove door</button>' : ''}${d && d.to && sec(d.to) ? `<button id="dooropen">Open ${doorName(d.to)}</button>` : ''}</div>
       <div class="hint">The door tile becomes solid (you walk into it to go in). The tile in front of it must be walkable.</div></div>`; }
-  if (r && r.kind === 'stamp') { const st = builtMap(r.sid).stamps[r.i], c = clipById(st.c); return `<div class="sel"><b>Stamp: ${c ? c.name : st.c}</b><div>at ${st.x},${st.y}</div><div class="hint">Drag to move, or use the arrows</div>${padHtml('')}<button id="del">Remove</button></div>`; }
+  if (r && r.kind === 'stamp') { const st = stampHost(r.sid).stamps[r.i], c = clipById(st.c); return `<div class="sel"><b>Stamp: ${c ? c.name : st.c}</b><div>at ${st.x},${st.y}</div><div class="hint">Drag to move, or use the arrows</div>${padHtml('')}<button id="del">Remove</button></div>`; }
   if (r && r.kind === 'piece') { const s = sec(r.sid), g = gridOf(s), bad = viewSecs().some(o => o !== s && overlap(s, o)); return `<div class="sel"><b>Moving: ${s.id} ${s.name}</b><div>at ${g[0]}, ${g[1]} (tiles), ${s.tiles[0]}x${s.tiles[1]} ${bad ? '<span class="bad">overlaps another scene</span>' : '<span class="good">no overlap</span>'}</div>
     <div class="hint">Drag it on the map with one finger, or use the arrows. It snaps flush to the scene beside, above or below it.</div>${padHtml('4 tiles')}<div class="row"><button id="pdone">Done</button><button id="pfind">Show it</button></div></div>`; }
   if (r && r.kind === 'route') { const s = sec(r.sid), e = (s.edges || {})[r.side]; return e ? `<div class="sel"><b>Route</b><div>${s.name}, ${r.side} edge ${e.range[0]}-${e.range[1]}, to ${(sec(e.to) || {}).name || e.to}</div><button id="del">Remove route</button></div>` : ''; }
@@ -511,7 +511,7 @@ function wire() {
   on('#ename', 'input', e => { const a = ADDED[S.sel.sid][S.sel.i]; a.name = e.target.value; touch(S.sel.sid); });
   on('#eline', 'input', e => { const a = ADDED[S.sel.sid][S.sel.i]; a.t = e.target.value.split('\n').filter(Boolean); touch(S.sel.sid); });
   on('#check', 'click', check);
-  document.querySelectorAll('[data-clip]').forEach(b => b.onclick = () => { S.clipSel = b.dataset.clip; S.stamp = builtMap(S.view) ? { kind: 'clip', c: b.dataset.clip } : null; panel(); });
+  document.querySelectorAll('[data-clip]').forEach(b => b.onclick = () => { if (S.stamp && S.stamp.c === b.dataset.clip) { S.stamp = null; panel(); return; } S.clipSel = b.dataset.clip; S.stamp = S.view !== 'outdoor' ? { kind: 'clip', c: b.dataset.clip } : null; if (!S.stamp) toast('Open one map from the map list, then tap where the clip goes.'); panel(); });
   on('#clipsall', 'change', e => { S.clipsAll = e.target.checked; panel(); });
   on('#cliprm', 'click', () => { if (MAPS.some(m => m.built && (m.ground === S.clipSel || (m.stamps || []).some(st => st.c === S.clipSel)))) return toast('That clip is used on a map; remove those stamps first.'); snap(); CLIPS = CLIPS.filter(c => c.id !== S.clipSel); DIRTY.add('clips'); $('#save').classList.add('hot'); S.clipSel = null; S.stamp = null; panel(); });
   on('#clipground', 'click', () => { const m = builtMap(S.view); snap(); m.ground = S.clipSel; bake(S.view); stampRows(S.view); });
@@ -617,8 +617,8 @@ function stampRows(id) {   // collision: the ground clip's walls repeated, then 
   ROWS[id] = R.map(r => r.join('')); touch(id); draw();
 }
 function placeStamp(t) {
-  const m = builtMap(S.view); if (!m || !t || t.sid !== S.view) return; snap(); (m.stamps = m.stamps || []).push({ c: S.stamp.c, x: t.x, y: t.y });
-  S.sel = { kind: 'stamp', sid: S.view, i: m.stamps.length - 1 }; bake(S.view); stampRows(S.view); panel();
+  if (!t || t.sid !== S.view) return; snap(); const m = stampHost(S.view, true); if (!m) return; (m.stamps = m.stamps || []).push({ c: S.stamp.c, x: t.x, y: t.y });
+  S.sel = { kind: 'stamp', sid: S.view, i: m.stamps.length - 1 }; terrBake(S.view); terrRows(S.view); panel();
 }
 function newBlank(name, W, H, type, ground, color) {
   const used = new Set(Object.keys(ED.sections)); let n = 300; while (used.has(String(n))) n++; const id = String(n), dir = S.planet;
@@ -633,8 +633,8 @@ function newBlank(name, W, H, type, ground, color) {
   S.view = id; views(); fit(); toast(`New map ${id} ${name} (${W}x${H}). Pick clips on the right and click to stamp them.${grid ? ' Then use Arrange and Routes to join it to the world.' : ' Then point doors at it with Doors.'}`, 9000); panel(); draw();
 }
 function clipsPanel() {
-  const m = S.view !== 'outdoor' && builtMap(S.view), list = CLIPS.filter(c => !S.clipsAll ? c.dir === S.planet : true);
-  return `<h3>Clips</h3><p class="hint">${m ? 'Click a clip, then click the map to stamp it. Drag a stamp to move it; Delete removes it. Stamps bring their walls and walkable ground with them.' : 'On any map, press and drag a box around a piece (a road, rocks, a cliff, water) to clip it into the library. Clips from the same world blend best.'}</p>
+  const m = S.view !== 'outdoor' && builtMap(S.view), one = S.view !== 'outdoor', list = CLIPS.filter(c => !S.clipsAll ? c.dir === S.planet : true);
+  return `<h3>Clips</h3><p class="hint"><b>Make a clip:</b> with no clip picked, press and drag a box around a piece of any map (a road, rocks, a cliff, water). <b>Use a clip:</b> ${one ? 'tap it below, then tap the map where its top-left corner goes. Drag a stamp to move it; Delete removes it. Stamps bring their walls and walkable ground with them' + (m ? '' : '. On a finished map the stamp sits on a see-through layer, so the picture underneath is never changed') + '. Tap the picked clip again (or Esc) to go back to making clips.' : 'open one map from the map list first.'} A clip can also become a Terrain (Terrain tab, "Make from clip").</p>
     <label class="row"><input type="checkbox" id="clipsall" ${S.clipsAll ? 'checked' : ''}> show clips from every world</label>
     <div class="grid">${list.map(c => `<button class="pal ${S.stamp && S.stamp.c === c.id ? 'on' : ''}" data-clip="${c.id}" data-cap="${c.name} · ${c.w}x${c.h} tiles · from ${c.from}" title="${c.name}"><img src="${CLIPIMG[c.id] || c.url}"></button>`).join('') || '<div class="hint">No clips yet.</div>'}</div>
     ${S.clipSel ? `<div class="row" style="margin-top:6px"><button id="cliprm">Delete clip ${S.clipSel}</button>${m ? `<button id="clipground">Use ${S.clipSel} as the ground</button>` : ''}</div>` : ''}

@@ -59,8 +59,22 @@ function groupPanel() {
 // ---------- Map Logic checker (docs/MAP_LOGIC_PACK.md, section 5) ----------
 const SIZE_TARGET = { town: [50, 45], route: [50, 90], field: [50, 90], landmark: [50, 45], interior: [14, 11] };
 function walkable(c) { return c === '.' || c === ','; }
+const OUT_T = new Set(['route', 'town', 'field', 'landmark']);   // the 3-wide path rule is for outdoor maps; caves, towers and arenas are tight on purpose
+function setRow(id, tiles, ch) { const R = rowsOf(id).map(r => r.split('')), keys = blockedKeys(id); let n = 0;
+  for (const [x, y] of tiles) if (R[y] && R[y][x] !== undefined && R[y][x] !== ch && !(ch === '#' && keys.has(x + ',' + y))) { R[y][x] = ch; n++; }
+  if (n) { ROWS[id] = R.map(r => r.join('')); touch(id); } return n; }
+function dressDoor(id, door) {   // a pair of the same small prop either side of the door, using the prop this world puts by its doors most
+  const s = sec(id), near = {}, small = p => { const m = propInfo(p); return m && m.px[0] <= 20 && m.px[1] <= 34; };
+  for (const sid of Object.keys(LAYOUT)) { const t = sec(sid); if (!t || t.dir !== s.dir) continue;
+    for (const o of t.objects || []) if (['house', 'bay', 'shop'].includes(o.k)) for (const q of LAYOUT[sid]) if (small(q.p) && Math.abs(q.x - o.tile[0]) <= 4 && Math.abs(q.y - o.tile[1]) <= 3) near[q.p] = (near[q.p] || 0) + 1; }
+  let p = Object.keys(near).sort((a, b) => near[b] - near[a])[0];
+  if (!p) { const sheet = Object.keys(ED.props).find(k => k === s.dir) || Object.keys(ED.props).find(k => k.startsWith(s.dir)); const m = sheet && ED.props[sheet].find(m => m.px[0] <= 20 && m.px[1] <= 34); if (m) p = sheet + '/' + String(m.n).padStart(2, '0'); }
+  if (!p) return 0; const R = rowsOf(id), L = LAYOUT[id] = LAYOUT[id] || [], taken = k => L.some(q => q.x + ',' + q.y === k) || npcsOf(id).some(n => n.x + ',' + n.y === k), keys = blockedKeys(id); let n = 0;
+  for (const dx of [-2, 2, -3, 3]) { if (n >= 2) break; const x = door[0] + dx, y = door[1] + 1; if (!walkable((R[y] || '')[x]) || keys.has(x + ',' + y) || taken(x + ',' + y)) continue;
+    if (n === 1 && Math.sign(dx) === Math.sign(L[L.length - 1].x - door[0])) continue; L.push({ p, x, y }); n++; }
+  if (n) touch(id); return n; }
 function logicCheck(ids) {
-  const out = [], add = (sid, sev, msg, tiles) => out.push({ sid, sev, msg, tiles: tiles || [] });
+  const out = [], add = (sid, sev, msg, tiles, fix) => out.push({ sid, sev, msg, tiles: tiles || [], fix });
   for (const id of ids) { const s = sec(id); if (!s) continue; const R = rowsOf(id); if (!R.length) { add(id, 'warn', 'No walls painted yet.'); continue; }
     const [W, H] = s.tiles, inside = s.type === 'interior', at = (x, y) => (R[y] || '')[x];
     // exits and doors lead somewhere, and back
@@ -69,13 +83,13 @@ function logicCheck(ids) {
     for (const d of allDoors(id)) { if (!d.to) add(id, 'bad', 'A door opens nothing.', [d.x + ',' + d.y]);
       else if (!d.to.startsWith('menu:') && d.to !== 'back' && !sec(d.to)) add(id, 'bad', `A door opens a room that doesn't exist (${d.to}).`, [d.x + ',' + d.y]);
       const side = [[0, 1], [0, -1], [-1, 0], [1, 0]].find(([a, b]) => walkable(at(d.x + a, d.y + b)));   // doors open from below, room exits and counters from any side
-      if (!side) add(id, 'bad', 'Nothing to stand on beside a door.', [d.x + ',' + d.y]);
+      if (!side) add(id, 'bad', 'Nothing to stand on beside a door.', [d.x + ',' + d.y], !inside && d.y + 1 < H && { label: 'Open the tile in front', run: () => setRow(id, [[d.x, d.y + 1]], '.') });
       else if (!inside && !d.to.startsWith('menu:') && side[1] === 1 && !walkable(at(d.x, d.y + 2))) add(id, 'warn', 'A door has only a 1-tile apron (2 wanted).', [d.x + ',' + (d.y + 2)]); }
     for (const w of s.warps || []) if (w.to && w.to !== 'back' && !w.to.includes(':') && !sec(w.to)) add(id, 'bad', `A passage leads to a missing map (${w.to}).`, [w.tile.join(',')]);
     // everything walkable can be reached
     const RE = reachOf(id), cut = []; for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) if (walkable(at(x, y)) && !RE.seen.has(x + ',' + y) && !RE.solid.has(x + ',' + y)) cut.push(x + ',' + y);
-    if (cut.length) add(id, 'warn', `${cut.length} walkable tile(s) can never be reached.`, cut);
-    if (!inside) {
+    if (cut.length) add(id, 'warn', `${cut.length} walkable tile(s) can never be reached.`, cut, { label: 'Make them walls', run: () => setRow(id, cut.map(k => k.split(',').map(Number)), '#') });
+    if (!inside && OUT_T.has(s.type)) {
       // nothing walkable narrower than 3 tiles
       const pinch = []; for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) { if (!walkable(at(x, y)) || RE.solid.has(x + ',' + y)) continue;
         let a = x, b = x, c = y, d = y; while (walkable(at(a - 1, y))) a--; while (walkable(at(b + 1, y))) b++; while (walkable(at(x, c - 1))) c--; while (walkable(at(x, d + 1))) d++;
@@ -89,7 +103,7 @@ function logicCheck(ids) {
       if (empty.length) add(id, 'warn', `${empty.length / 100} open 10x10 area(s) with no props or people.`, empty);
       // every building gets everyday objects around it
       for (const o of s.objects || []) if (['house', 'bay', 'shop'].includes(o.k)) { const n = (LAYOUT[id] || []).filter(q => Math.abs(q.x - o.tile[0]) <= 5 && Math.abs(q.y - o.tile[1]) <= 4).length;
-        if (n < 2) add(id, 'warn', `A building has ${n} prop(s) near its door (2 or more wanted).`, [o.tile.join(',')]); }
+        if (n < 2) add(id, 'warn', `A building has ${n} prop(s) near its door (2 or more wanted).`, [o.tile.join(',')], { label: 'Add a matching pair', run: () => dressDoor(id, o.tile) }); }
       // long straight runs: a full-width walkable row or column longer than 20 with no prop on it
       const lane = (x, y) => { let c = y, d = y; while (walkable(at(x, c - 1))) c--; while (walkable(at(x, d + 1))) d++; return d - c + 1 <= 8; };   // a path, not a plaza
       const runs = []; for (let y = 0; y < H; y++) { let run = 0; for (let x = 0; x <= W; x++) { if (x < W && walkable(at(x, y)) && !RE.solid.has(x + ',' + y) && lane(x, y)) run++; else { if (run > 20) for (let k = 0; k < run; k++) runs.push((x - run + k) + ',' + y); run = 0; } } }
@@ -101,7 +115,7 @@ function logicCheck(ids) {
 }
 function worldCheck(dir) {   // per world: wildlife zones and a water edge
   const out = [], ss = Object.values(ED.sections).filter(s => s.dir === dir);
-  const grass = ss.filter(s => (rowsOf(s.id) || []).join('').split(',').length - 1 >= 36).length, water = ss.filter(s => /~/.test((rowsOf(s.id) || []).join(''))).length;
+  const grass = ss.filter(s => (rowsOf(s.id) || []).join('').split(',').length - 1 >= 36).length, water = ss.filter(s => fluidTiles(s.id, 'water').size).length;
   if (grass < 2) out.push({ sid: null, sev: 'warn', msg: `Only ${grass} map(s) on this world have a wildlife zone (36+ tiles of tall grass); 2 or more wanted.`, tiles: [] });
   const small = ss.filter(s => { const tg = SIZE_TARGET[s.type === 'interior' ? 'interior' : s.type]; return tg && (s.tiles[0] < tg[0] * 0.5 || s.tiles[1] < tg[1] * 0.5); }).length;
   if (small) out.push({ sid: null, sev: 'info', msg: `${small} map(s) are smaller than the Map Logic Pack sizes (towns about 50x45, routes 50x90, rooms 14x11). The painted renders are 24x16, so this is a note, not a fault.`, tiles: [] });
@@ -112,7 +126,8 @@ function logicPanel() {
   const res = S.logic;
   return `<h3>Map Logic check</h3><p class="hint">Checks maps against the Map Logic Pack: exits and doors lead somewhere and back, doors have room in front, every path can be reached and is at least 3 wide, no empty patches, buildings dressed, trainers' sightlines don't overlap, people stay out of door fronts.</p>
     <div class="row"><button id="lgthis">Check this map</button><button id="lgworld">Check the whole world</button></div>
-    ${res ? `<div style="margin-top:8px">${res.length ? res.map((r, i) => `<div class="${r.sev === 'bad' ? 'bad' : r.sev === 'warn' ? '' : 'hint'}" style="margin:4px 0">${r.sev === 'bad' ? '&#10060;' : r.sev === 'warn' ? '&#9888;' : '&#8505;'} ${r.sid ? `<b>${r.sid} ${sec(r.sid).name}</b>: ` : ''}${r.msg} ${r.sid ? `<button data-lg="${i}">Show</button>` : ''}</div>`).join('') : '<div class="good">Everything passes.</div>'}</div>` : ''}`;
+    ${res ? `<div style="margin-top:8px">${res.some(r => r.fix) ? `<div class="sel"><button id="lgfixall">Fix all (${res.filter(r => r.fix).length})</button> <span class="hint">Only the safe fixes: walls over ground nobody can reach, a matching pair of props by bare doors, an open tile in front of blocked doors, shorter overlapping trainer sightlines, strollers kept off doorways, trainers turned away from walls, and a hidden Med Gel at a dead end of maps with no items. Narrow paths, empty patches and dead exits need your eye. Undo puts everything back.</span></div>` : ''}
+      ${res.length ? res.map((r, i) => `<div class="${r.sev === 'bad' ? 'bad' : r.sev === 'warn' ? '' : 'hint'}" style="margin:4px 0">${r.sev === 'bad' ? '&#10060;' : r.sev === 'warn' ? '&#9888;' : '&#8505;'} ${r.sid ? `<b>${r.sid} ${sec(r.sid).name}</b>: ` : ''}${r.msg} ${r.sid ? `<button data-lg="${i}">Show</button>` : ''}${r.fix ? ` <button data-lgfix="${i}">${r.fix.label}</button>` : ''}</div>`).join('') : '<div class="good">Everything passes.</div>'}</div>` : ''}`;
 }
 function logicShow(i) { const r = S.logic[i]; if (!r || !r.sid) return; if (S.view !== 'outdoor' || !onWorld(sec(r.sid))) { S.view = r.sid; views(); fit(); } else centerOn(r.sid); S.hl = { sid: r.sid, keys: new Set(r.tiles) }; draw(); }
 
@@ -178,8 +193,11 @@ function designWire() {
   document.querySelectorAll('[data-gop]').forEach(b => b.onclick = () => groupOp(b.dataset.gop));
   on('#multimode', 'change', e => { S.multiMode = e.target.checked; S.stamp = null; panel(); });
   on('#gcopy', 'click', groupCopy); on('#gdel', 'click', groupDelete); on('#gclear', 'click', () => { S.multi = null; panel(); draw(); });
-  on('#lgthis', 'click', () => { if (S.view === 'outdoor') return toast('Open one map first (or check the whole world).'); S.logic = logicCheck([S.view]); S.hl = null; panel(); draw(); });
-  on('#lgworld', 'click', () => { S.logic = worldCheck(S.planet).concat(logicCheck(planetSecs().map(s => s.id))); S.hl = null; panel(); draw(); });
+  const recheck = () => { S.logic = S.logicScope === 'world' ? worldCheck(S.planet).concat(logicCheck(planetSecs().map(s => s.id))) : logicCheck([S.logicScope]); S.hl = null; panel(); draw(); };
+  on('#lgthis', 'click', () => { if (S.view === 'outdoor') return toast('Open one map first (or check the whole world).'); S.logicScope = S.view; recheck(); });
+  on('#lgworld', 'click', () => { S.logicScope = 'world'; recheck(); });
+  document.querySelectorAll('[data-lgfix]').forEach(b => b.onclick = () => { const r = S.logic[+b.dataset.lgfix]; snap(); const n = r.fix.run(); toast(n === 0 ? 'Nothing could be changed there safely.' : 'Fixed. Undo puts it back.'); recheck(); });
+  on('#lgfixall', 'click', () => { const fx = S.logic.filter(r => r.fix); snap(); let n = 0; for (const r of fx) { const k = r.fix.run(); if (k !== 0) n++; } toast(`${n} of ${fx.length} fixed. Undo puts it all back.`, 5000); recheck(); });
   document.querySelectorAll('[data-lg]').forEach(b => b.onclick = () => logicShow(+b.dataset.lg));
   on('#vsave', 'click', async () => { const n = ($('#vname').value || '').trim() || 'Version ' + new Date().toLocaleString(); await vput('v' + Date.now(), stateNow(n)); toast('Version saved: ' + n); versionsPanelFill(); });
   if ($('#vlist')) versionsPanelFill(); if ($('#ovgrid')) overviewFill();

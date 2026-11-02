@@ -201,16 +201,19 @@ function settingsWire() {
 const PAINTIMG = {};
 function paintTarget(id) {   // a painted (rendered) map gets a see-through layer of terrain on top; its own picture is never changed
   if (!sec(id) || builtMap(id) || id === 'outdoor') return null;
-  const p = DS.paint[id] = DS.paint[id] || { id, terrain: [] }; if (!p.base) p.base = rowsOf(id).slice(); return p;
+  const p = DS.paint[id] = DS.paint[id] || { id, terrain: [], stamps: [] }; if (!p.base) p.base = rowsOf(id).slice(); return p;
 }
+function stampHost(id, make) { return builtMap(id) || (make ? paintTarget(id) : ((DS.paint || {})[id] || null)); }   // where clip stamps go on this map
 function paintBake(id) {
   const p = DS.paint[id], s = sec(id); if (!p) return; const [W, H] = s.tiles, c = document.createElement('canvas'); c.width = W * 16; c.height = H * 16;
-  terrainBake(p, c.getContext('2d'), W, H); PAINTIMG[id] = c.toDataURL('image/png'); touch(id); draw();
+  terrainBake(p, c.getContext('2d'), W, H);
+  for (const st of p.stamps || []) { const cl = clipById(st.c), ci = cl && clipImg(cl); if (cl && ok(ci)) c.getContext('2d').drawImage(ci, st.x * 16, st.y * 16); } PAINTIMG[id] = c.toDataURL('image/png'); touch(id); draw();
 }
 function paintRows(id) {   // tiles under 3+ corners of a terrain take its ground; tiles the terrain left go back to what they were
   const p = DS.paint[id], s = sec(id); if (!p) return; const [W, H] = s.tiles, cur = rowsOf(id).map(r => r.split('')), R = p.base.map(r => r.split(''));
   terrainRows(p, R, W, H);
   const any = new Set(p.touched || []);
+  for (const st of p.stamps || []) { const cl = clipById(st.c); if (!cl) continue; for (let j = 0; j < cl.h; j++) for (let i = 0; i < cl.w; i++) { const x = st.x + i, y = st.y + j; if (R[y] && R[y][x] !== undefined) { R[y][x] = cl.rows[j][i]; any.add(tk(x, y)); } } }
   for (const ly of p.terrain) { const v = ly.v, at = (a, b) => v.charCodeAt(b * (W + 1) + a) === 49; for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) if (at(x, y) || at(x + 1, y) || at(x, y + 1) || at(x + 1, y + 1)) any.add(tk(x, y)); }
   p.touched = [...any];
   for (const k of any) { const [x, y] = k.split(',').map(Number); if (cur[y]) cur[y][x] = R[y][x]; }
@@ -341,13 +344,32 @@ function playDraw(ctx) {
 // ---------- extra Map Logic checks: people, sightlines, door fronts, rewards ----------
 function logicExtra(id, add) {
   const ps = peopleWithData(id), seen = new Set(), over = [];
-  for (const n of ps) if (n.trainer) { const L = sightOf(id, n); if (!L.length) add(id, 'info', `A trainer at ${n.x},${n.y} faces a wall: nobody can walk into their sight.`, [tk(n.x, n.y)]);
+  const editable = n => n.ref.kind === 'added' || !!n.ref.src;
+  for (const n of ps) if (n.trainer) { const L = sightOf(id, n); if (!L.length) add(id, 'info', `A trainer at ${n.x},${n.y} faces a wall: nobody can walk into their sight.`, [tk(n.x, n.y)], editable(n) && { label: 'Turn them to the open side', run: () => faceOpen(id, n) });
     for (const k of L) { if (seen.has(k)) over.push(k); seen.add(k); } }
-  if (over.length) add(id, 'warn', `Two trainers' sightlines overlap on ${over.length} tile(s): the player would be called out by both.`, over);
+  if (over.length) add(id, 'warn', `Two trainers' sightlines overlap on ${over.length} tile(s): the player would be called out by both.`, over, { label: 'Shorten the overlapping sight', run: () => unOverlap(id) });
   const fronts = allDoors(id).map(d => tk(d.x, d.y + 1));
-  for (const n of ps) if (n.wander) { const r = Math.min(2, n.wander), hit = fronts.filter(k => { const [x, y] = k.split(',').map(Number); return Math.abs(x - n.x) <= r && Math.abs(y - n.y) <= r; }); if (hit.length) add(id, 'warn', `Someone strolls across a door front at ${hit[0]}.`, hit); }
+  for (const n of ps) if (n.wander) { const r = Math.min(2, n.wander), hit = fronts.filter(k => { const [x, y] = k.split(',').map(Number); return Math.abs(x - n.x) <= r && Math.abs(y - n.y) <= r; }); if (hit.length) add(id, 'warn', `Someone strolls across a door front at ${hit[0]}.`, hit, editable(n) && { label: 'Make them stand still', run: () => { personSet(n.ref, 'wander', null); return 1; } }); }
   const items = (DS.objs[id] || []).filter(o => ['stash', 'chest', 'hidden'].includes(o.k)).length + sec(id).objects.filter(o => o.k === 'stash' || o.k === 'chest').length;
-  if (!items && ['route', 'field', 'cave', 'dungeon'].includes(sec(id).type)) add(id, 'info', 'No items on this map. A reward at a dead end or behind a detour makes exploring worth it.');
+  if (!items && ['route', 'field', 'cave', 'dungeon'].includes(sec(id).type)) add(id, 'info', 'No items on this map. A reward at a dead end or behind a detour makes exploring worth it.', [], { label: 'Hide a Med Gel at a dead end', run: () => hideAtDeadEnd(id) });
+}
+function faceOpen(id, n) { let best = null; for (const f of ['down', 'left', 'right', 'up']) { const L = sightOf(id, { ...n, face: f }).length; if (!best || L > best[1]) best = [f, L]; } if (!best[1]) return 0; personSet(n.ref, 'face', best[0]); return 1; }
+function unOverlap(id) {   // walk the trainers in order; a later one stops just before a tile an earlier one already sees
+  const seen = new Set(); let n = 0;
+  for (const p of peopleWithData(id)) { if (!p.trainer) continue; const L = sightOf(id, p), k = L.findIndex(t => seen.has(t));
+    if (k >= 0 && (p.ref.kind === 'added' || p.ref.src)) { personSet(p.ref, 'trainer', Object.assign({}, p.trainer, { sight: Math.max(1, k) })); n++; L.length = Math.max(1, k); }
+    for (const t of L) seen.add(t); }
+  return n; }
+function hideAtDeadEnd(id) {   // the walkable tile farthest from every way in that has only one open neighbour (or the farthest tile at all)
+  const s = sec(id), [W, H] = s.tiles, R = rowsOf(id), RE = reachOf(id), dist = new Map(), q = [], walk = (x, y) => '.,'.includes((R[y] || '')[x] || '#') && !RE.solid.has(tk(x, y));
+  for (const [side, e] of Object.entries(s.edges || {})) for (let k = e.range[0]; k <= e.range[1]; k++) { const p = { left: [0, k], right: [W - 1, k], top: [k, 0], bottom: [k, H - 1] }[side]; if (walk(...p)) { dist.set(tk(...p), 0); q.push(p); } }
+  for (const w of s.warps || []) for (const p of [w.tile, [w.tile[0], w.tile[1] + 1], [w.tile[0], w.tile[1] - 1]]) if (walk(...p) && !dist.has(tk(...p))) { dist.set(tk(...p), 0); q.push(p); }
+  if (!q.length) { const sp = (s.spawns || {}).default; if (sp) { dist.set(tk(...sp), 0); q.push(sp); } }
+  while (q.length) { const [x, y] = q.shift(); for (const [a, b] of [[1, 0], [-1, 0], [0, 1], [0, -1]]) { const k = tk(x + a, y + b); if (!dist.has(k) && walk(x + a, y + b)) { dist.set(k, dist.get(tk(x, y)) + 1); q.push([x + a, y + b]); } } }
+  const keys = blockedKeys(id), cand = [...dist.entries()].filter(([k]) => !keys.has(k) && !(s.objects || []).some(o => tk(...o.tile) === k)).map(([k, d]) => { const [x, y] = k.split(',').map(Number), open = [[1, 0], [-1, 0], [0, 1], [0, -1]].filter(([a, b]) => walk(x + a, y + b)).length; return [x, y, d + (open === 1 ? 1000 : 0)]; });
+  if (!cand.length) return 0; cand.sort((a, b) => b[2] - a[2]); const [x, y] = cand[0]; objsOf(id).push({ k: 'hidden', tile: [x, y], item: 'gel', n: 1 }); touch(id); return 1;
+}
+function _logicTail() {
 }
 
 // ---------- hooks (called from design.js) ----------
