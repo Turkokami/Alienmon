@@ -31,8 +31,8 @@ jobs:
           git config user.name "Alienmon map editor"
           git config user.email "turkokami@gmail.com"
           git rm -q --cached data/editor/pending.json && rm data/editor/pending.json
-          mkdir -p art/editor_clips art/editor_tiles
-          git add data/sections/props_layout.json data/editor data/collision data/world.json art/sections_game art/editor_clips art/editor_tiles art/characters art/props \
+          mkdir -p art/editor_clips art/editor_tiles art/sections_paint art/sections_over_ed
+          git add data/sections/props_layout.json data/editor data/collision data/world.json art/sections_game art/editor_clips art/editor_tiles art/characters art/props art/sections_paint art/sections_over_ed data/encounters.json \
                   data/sections/stashes.json docs/LINKER_STASHES.md data/connections_report.md
           git commit -q -m "Map editor changes (saved from the web)" || echo "nothing to commit"
           git push -q

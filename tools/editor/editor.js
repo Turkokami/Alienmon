@@ -1,5 +1,5 @@
 // Alienmon map editor: place props, people and wild Alienmon on the section maps, paint walls, and grow a world with new map pieces.
-// Terrain painting and the Sprite Studio live in studio.js.
+// Terrain painting and the Sprite Studio live in studio.js; playtest, encounters, people, items, checks and versions in design.js/play.js.
 // Loads editor_data.json (written by tools/build.js on prototype builds). Saves straight into the alienmon-app folder (Chrome/Edge
 // desktop: File System Access) or downloads editor_changes.json; tools/editor/apply.py turns either into a rebuilt game.
 'use strict';
@@ -15,8 +15,8 @@ let LAYOUT = {}, MOVES = {}, ADDED = {}, REMOVED = {}, MONS = {}, MAPS = [], ROW
 const DIRTY = new Set();
 const HIST = [];
 const edgeSnap = () => Object.fromEntries(Object.values(ED.sections).map(s => [s.id, s.edges]));
-function snap() { HIST.push(JSON.stringify({ LAYOUT, MOVES, ADDED, REMOVED, MONS, ROWS, GRID, ROUTES, DOORS, CLIPS, MAPS, TILESETS, EDGES: edgeSnap() })); if (HIST.length > 60) HIST.shift(); }
-function undo() { const h = HIST.pop(); if (!h) return toast('Nothing to undo'); let E, T; ({ LAYOUT, MOVES, ADDED, REMOVED, MONS, ROWS, GRID, ROUTES, DOORS, CLIPS, MAPS, TILESETS: T, EDGES: E } = JSON.parse(h)); if (T) TILESETS = T; for (const m of MAPS) if (m.built && ED.sections[m.id]) bake(m.id); for (const k of Object.keys(ED.sections)) if (ED.sections[k]._new && !MAPS.some(m => m.id === k)) { delete ED.sections[k]; if (S.view === k) S.view = 'outdoor'; views(); } for (const [k, v] of Object.entries(E || {})) if (ED.sections[k]) ED.sections[k].edges = v; S.sel = null; panel(); draw(); }
+function snap() { HIST.push(JSON.stringify({ LAYOUT, MOVES, ADDED, REMOVED, MONS, ROWS, GRID, ROUTES, DOORS, CLIPS, MAPS, TILESETS, DS, EDGES: edgeSnap() })); if (HIST.length > 60) HIST.shift(); }
+function undo() { const h = HIST.pop(); if (!h) return toast('Nothing to undo'); let E, T, D; ({ LAYOUT, MOVES, ADDED, REMOVED, MONS, ROWS, GRID, ROUTES, DOORS, CLIPS, MAPS, TILESETS: T, DS: D, EDGES: E } = JSON.parse(h)); if (T) TILESETS = T; if (D) DS = D; for (const m of MAPS) if (m.built && ED.sections[m.id]) bake(m.id); designUndo(); for (const k of Object.keys(ED.sections)) if (ED.sections[k]._new && !MAPS.some(m => m.id === k)) { delete ED.sections[k]; if (S.view === k) S.view = 'outdoor'; views(); } for (const [k, v] of Object.entries(E || {})) if (ED.sections[k]) ED.sections[k].edges = v; S.sel = null; panel(); draw(); }
 function touch(sid) { DIRTY.add(sid); $('#save').classList.add('hot'); }
 
 // ---------- data helpers ----------
@@ -67,6 +67,7 @@ function draw() {
   for (const s of viewSecs()) {
     const [ox, oy] = origin(s), [W, H] = s.tiles, im = NEWIMG[s.id] ? img(NEWIMG[s.id]) : img(s.img);
     if (ok(im)) ctx.drawImage(im, ox, oy, W * 16, H * 16); else { ctx.fillStyle = '#222'; ctx.fillRect(ox, oy, W * 16, H * 16); }
+    paintDraw(s, ox, oy);   // terrain painted over a finished map (play.js)
     ctx.strokeStyle = 'rgba(255,255,255,0.35)'; ctx.lineWidth = 1 / S.zoom; ctx.strokeRect(ox, oy, W * 16, H * 16);
     ctx.fillStyle = 'rgba(0,0,0,0.6)'; ctx.fillRect(ox, oy, Math.min(W * 16, s.name.length * 5 + 26), 9);
     ctx.fillStyle = '#ffd23f'; ctx.font = '7px monospace'; ctx.fillText(s.id + ' ' + s.name, ox + 2, oy + 7);
@@ -97,6 +98,7 @@ function draw() {
     for (const o of s.objects) if (o.k === 'stash') { ctx.fillStyle = '#b07cff'; ctx.fillRect(ox + o.tile[0] * 16 + 3, oy + o.tile[1] * 16 + 5, 10, 9); }
   }
   items.sort((a, b) => a.y - b.y).forEach(it => it.d());
+  designDraw(ctx);
   draw.items = items;
   if (S.sel) { const it = items.find(it => same(it.ref, S.sel)); if (it) { ctx.strokeStyle = '#ffd23f'; ctx.lineWidth = 1.5 / S.zoom; ctx.setLineDash([3 / S.zoom, 2 / S.zoom]); ctx.strokeRect(...it.box); ctx.setLineDash([]); } }
   if (S.clipRect) { const r = S.clipRect, s = sec(r.sid), [ox, oy] = origin(s), x0 = Math.min(r.x0, r.x1), y0 = Math.min(r.y0, r.y1);
@@ -213,6 +215,7 @@ function cancelGesture() {   // a second finger turns whatever the first finger 
 cv.addEventListener('pointerdown', e => {
   if (e.pointerType === 'touch') { TOUCH.set(e.pointerId, { x: e.clientX, y: e.clientY }); if (TOUCH.size === 2) { cancelGesture(); pinchStart(); cv.setPointerCapture(e.pointerId); draw(); return; } if (TOUCH.size > 2) return; }
   cv.setPointerCapture(e.pointerId); const [wx, wy] = toWorld(e), t = tileAt(wx, wy);
+  if (designDown(e, t, wx, wy)) return;   // playtest, prop groups, encounter zones, ground brushes, people and items (design.js)
   if (S.stamp && S.stamp.kind === 'scene' && e.button === 0 && !e.altKey) { dropScene(wx, wy); return; }
   if (e.button === 1 || e.button === 2 || e.altKey || !t) { S.pan = [e.clientX - S.ox, e.clientY - S.oy]; return; }
   if (S.mode === 'terrain') { terrainDown(t, wx, wy); return; }
@@ -247,6 +250,7 @@ cv.addEventListener('pointermove', e => {
     if (PINCH) return; }
   const [wx, wy] = toWorld(e), t = tileAt(wx, wy);
   if (S.pan) { S.ox = e.clientX - S.pan[0]; S.oy = e.clientY - S.pan[1]; draw(); return; }
+  if (designMove(e, t, wx, wy)) return;
   if (S.painting) { paint(t); return; }
   if (S.terrPaint) { terrainPaint(wx, wy); return; }
   if (S.clipRect) { if (t && t.sid === S.clipRect.sid) { S.clipRect.x1 = t.x; S.clipRect.y1 = t.y; draw(); } return; }
@@ -261,19 +265,20 @@ cv.addEventListener('pointermove', e => {
 });
 const touchEnd = e => { if (e.pointerType !== 'touch') return; TOUCH.delete(e.pointerId); if (TOUCH.size < 2 && PINCH) { PINCH = null; if (TOUCH.size === 1) { const [p] = [...TOUCH.values()]; S.pan = [p.x - S.ox, p.y - S.oy]; } } };
 cv.addEventListener('pointercancel', touchEnd);
-addEventListener('pointerup', e => { const wasPinch = !!PINCH; touchEnd(e); if (wasPinch || PINCH || TOUCH.size) return; if (S.clipRect) makeClip(); if (S.stampDrag) { const id = S.sel && S.sel.sid; S.stampDrag = null; if (id) stampRows(id); } if (S.wallRect) fillRect(); if (S.routeDrag) finishRoute(); terrainUp(); S.pan = null; S.drag = false; S.painting = false; S.pieceDrag = null; S.propGrab = null; });
+addEventListener('pointerup', e => { const wasPinch = !!PINCH; touchEnd(e); if (wasPinch || PINCH || TOUCH.size) return; if (S.clipRect) makeClip(); if (S.stampDrag) { const id = S.sel && S.sel.sid; S.stampDrag = null; if (id) stampRows(id); } if (S.wallRect) fillRect(); if (S.routeDrag) finishRoute(); terrainUp(); designUp(); S.pan = null; S.drag = false; S.painting = false; S.pieceDrag = null; S.propGrab = null; });
 cv.addEventListener('wheel', e => { e.preventDefault(); const r = cv.getBoundingClientRect(), mx = e.clientX - r.left, my = e.clientY - r.top, z0 = S.zoom;
   S.zoom = Math.max(0.25, Math.min(8, S.zoom * (e.deltaY < 0 ? 1.15 : 1 / 1.15))); S.ox = mx - (mx - S.ox) * S.zoom / z0; S.oy = my - (my - S.oy) * S.zoom / z0; draw(); }, { passive: false });
 cv.addEventListener('contextmenu', e => e.preventDefault());
 addEventListener('keydown', e => {
   if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.tagName === 'SELECT') return;
+  if (designKey(e)) return;
   if (e.key === 'Escape') { S.stamp = null; S.sel = null; panel(); draw(); }
   else if (e.key === 'Delete' || e.key === 'Backspace') { e.preventDefault(); delSel(); }
   else if ((e.ctrlKey || e.metaKey) && e.key === 'z') { e.preventDefault(); undo(); }
   else if ((e.ctrlKey || e.metaKey) && e.key === 'c' && S.sel && S.sel.kind === 'prop') { const q = LAYOUT[S.sel.sid][S.sel.i]; S.stamp = { kind: 'prop', p: q.p, flat: q.solid === false }; toast('Copied: click to place copies, Esc to stop'); }
   else if (e.key.startsWith('Arrow') && S.sel) { e.preventDefault(); const d = { ArrowLeft: [-1, 0], ArrowRight: [1, 0], ArrowUp: [0, -1], ArrowDown: [0, 1] }[e.key]; nudge(d[0], d[1], e.shiftKey); }
 });
-function nudge(dx, dy, fine) {   // arrows: one tile (a whole scene moves one tile); fine: one pixel for props, four tiles for scenes
+function nudge(dx, dy, fine) { if (designNudge(dx, dy)) return;   // arrows: one tile (a whole scene moves one tile); fine: one pixel for props, four tiles for scenes
   const r = S.sel; if (!r) return; snap();
   if (r.kind === 'prop' && fine) { const q = LAYOUT[r.sid][r.i]; q.ox = (q.ox || 0) + dx; q.oy = (q.oy || 0) + dy; if (!q.ox) delete q.ox; if (!q.oy) delete q.oy; touch(r.sid); panel(); draw(); }
   else if (r.kind === 'piece') { const g = gridOf(sec(r.sid)).slice(), k = fine ? 4 : 1; GRID[r.sid] = [g[0] + dx * k, g[1] + dy * k]; touch(r.sid); panel(); draw(); }
@@ -409,7 +414,7 @@ function dragProp(X, Y) {   // X,Y = wanted top-left of the sprite in world pixe
 // ---------- side panel ----------
 function panel() {
   const P = $('#panel'), m = S.mode; let h = '';
-  if (S.sel) h += selPanel();
+  if (S.sel) h += selPanel() + (m === 'people' ? personPanel() : '');   // faces, strolling and trainers (play.js)
   const PRE = `<div id="preview"><div class="box" id="pbox"></div><div class="cap" id="pcap">${matchMedia('(pointer:coarse)').matches ? 'Tap an item to see it large' : 'Hover over an item to see it large'}</div><div class="sizes">Item size <input type="range" id="cellsz" min="70" max="300" value="${S.cell || Math.round(Math.max(100, Math.min(200, innerWidth * 0.065)))}"></div></div>`;
   if (m === 'props') {
     h += PRE + `<h3>Props</h3><p class="hint"><b>Add:</b> pick an item below, then press on the map and drag it to the exact spot before letting go. <b>Move or remove:</b> click any item already on the map (including the ones Claude placed), drag it anywhere, or press Remove / Delete.</p>${S.stamp ? '<button id="stopstamp">Stop placing (Esc)</button>' : ''}<label>Sheet <select id="sheet">${Object.keys(ED.props).map(d => `<option ${d === S.sheet ? 'selected' : ''}>${d}</option>`).join('')}</select></label>
@@ -438,8 +443,9 @@ function panel() {
   else if (m === 'routes') h += `<h3>Travel routes</h3><p class="hint">Blue bars are the ways across between map pieces. To add one, press on the edge of a piece where it touches the next piece and drag along that edge to set how wide the opening is (a road is usually 4 to 6 tiles). The opening is cut through the walls on both sides. Click a bar to select it; Delete removes it. Each side of a piece can have one route.</p>
     ${ROUTES.filter(r => !r.remove).map(r => `<div>${r.a} ${r.side} ${r.band[0]}-${r.band[1]} to ${r.b}</div>`).join('')}`;
   if (m === 'terrain') h += terrainPanel(); else if (m === 'sprites') h += spritesPanel();
+  h += designPanel(m);
   h += `<h3>Check</h3><button id="check">Check edited maps</button><div id="checkout"></div>`;
-  P.innerHTML = h; wire(); if (m === 'terrain') terrainWire(); else if (m === 'sprites') spritesWire();
+  P.innerHTML = h; wire(); if (m === 'terrain') terrainWire(); else if (m === 'sprites') spritesWire(); designWire();
 }
 function selPanel() {
   const r = S.sel;
@@ -648,7 +654,8 @@ function bundle() {
   const images = {}; for (const m of MAPS) if (NEWIMG[m.id]) images[m.img] = NEWIMG[m.id];
   for (const c of CLIPS) if (CLIPIMG[c.id]) images['art/editor_clips/' + c.id + '.png'] = CLIPIMG[c.id];
   const clips = CLIPS.map(({ url, ...c }) => c), files = {}, tilesets = studioBundle(images, files);   // terrains, new sprites and prop sheets
-  return { version: 1, layout: LAYOUT, npcs, mons: MONS, maps: MAPS, collision: coll, images, grid: GRID, routes: ROUTES, doors: DOORS, clips, tilesets, files };
+  const out = { version: 1, layout: LAYOUT, npcs, mons: MONS, maps: MAPS, collision: coll, images, grid: GRID, routes: ROUTES, doors: DOORS, clips, tilesets, files };
+  designBundle(out); return out;
 }
 let DIR = null;
 async function save() {
@@ -670,6 +677,7 @@ async function save() {
     await put('data/editor/doors.json', JSON.stringify(b.doors, null, 1));
     await put('data/editor/clips.json', JSON.stringify(b.clips, null, 1));
     await put('data/editor/tilesets.json', JSON.stringify(b.tilesets, null, 1));
+    await put('data/editor/design.json', JSON.stringify(b.design, null, 1));
     for (const [rel, txt] of Object.entries(b.files)) await put(rel, txt);
     for (const [id, c] of Object.entries(b.collision)) await put(`data/collision/${id}.json`, JSON.stringify(c));
     for (const [rel, url] of Object.entries(b.images)) await put(rel, await (await fetch(url)).blob());
@@ -700,7 +708,7 @@ function views() { const ss = planetSecs().sort((a, b) => a.id.localeCompare(b.i
   $('#view').innerHTML = `<option value="outdoor">Whole world (outdoor maps stitched)</option>` + ss.map(s => `<option value="${s.id}" ${S.view === s.id ? 'selected' : ''}>${s.id} ${s.name}${s.grid ? '' : s.type === 'interior' ? ' (inside)' : ' (' + s.type + ')'}</option>`).join(''); $('#view').value = S.view; }
 async function boot() {
   ED = await (await fetch('editor_data.json', { cache: 'no-store' })).json();
-  LAYOUT = ED.layout || {}; MOVES = (ED.edits.npcs || {}).moves || {}; ADDED = (ED.edits.npcs || {}).added || {}; REMOVED = (ED.edits.npcs || {}).removed || {}; MONS = ED.edits.mons || {}; MAPS = ED.edits.maps || []; GRID = ED.edits.grid || {}; ROUTES = ED.edits.routes || []; DOORS = ED.edits.doors || {}; CLIPS = ED.edits.clips || []; TILESETS = ED.edits.tilesets || [];
+  LAYOUT = ED.layout || {}; MOVES = (ED.edits.npcs || {}).moves || {}; ADDED = (ED.edits.npcs || {}).added || {}; REMOVED = (ED.edits.npcs || {}).removed || {}; MONS = ED.edits.mons || {}; MAPS = ED.edits.maps || []; GRID = ED.edits.grid || {}; ROUTES = ED.edits.routes || []; DOORS = ED.edits.doors || {}; CLIPS = ED.edits.clips || []; TILESETS = ED.edits.tilesets || []; designBoot();
   const dirs = Object.keys(ED.planets).sort(); S.planet = dirs[0]; S.sheet = Object.keys(ED.props).find(d => d === S.planet) || Object.keys(ED.props)[0];
   $('#planet').innerHTML = dirs.map(d => `<option value="${d}">${ED.planets[d]}</option>`).join('');
   $('#planet').onchange = e => { S.planet = e.target.value; S.view = 'outdoor'; S.sel = null; if (ED.props[S.planet]) S.sheet = S.planet; views(); panel(); fit(); };

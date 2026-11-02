@@ -465,7 +465,7 @@ function wantTrack(){if(TITLE_SCENES.includes(scene))return TITLEM;if(typeof CRE
  if(musicMode==='song'&&typeof EVO!=='undefined'&&EVO&&song('evolution'))return song('evolution');
  if(scene==='rta'&&typeof rMusic==='function'){const t=rMusic();if(t)return t}
  if(scene==='battle'||scene==='rta'||(LVP&&B))return(musicMode==='song'&&songBattle())||BATTLEM;
- if(musicMode!=='song')return'chip';if(scene==='dive')return song('signal_dive')||BGM;if(scene==='space'||(scene==='menu'&&PREV==='space'))return song('space_flight')||BGM;const sw=G&&G.sec&&typeof SWORLD!=='undefined'&&SWORLD[G.sec.id];if(sw&&/Recovery (Bay|Tent)$/.test(sw.name)&&song('recovery_bay'))return song('recovery_bay');if(sw&&sw.type==='cave'&&song('caves'))return song('caves');   /* healing rooms and caves have their own music */
+ if(musicMode!=='song')return'chip';if(scene==='dive')return song('signal_dive')||BGM;if(scene==='space'||(scene==='menu'&&PREV==='space'))return song('space_flight')||BGM;const sw=G&&G.sec&&typeof SWORLD!=='undefined'&&SWORLD[G.sec.id];if(sw&&sw.music&&song(sw.music))return song(sw.music);   /* a track picked in the map editor */if(sw&&/Recovery (Bay|Tent)$/.test(sw.name)&&song('recovery_bay'))return song('recovery_bay');if(sw&&sw.type==='cave'&&song('caves'))return song('caves');   /* healing rooms and caves have their own music */
  return(G&&songWorld())||BGM}
 function musicTry(){if(musicMode==='off'||document.hidden)return;bsLoad();const t=wantTrack();if(t!==curTrack){if(t!=='chip'&&t!==BGM)t.currentTime=0;curTrack=t}   /* every song but the overworld theme starts from the top */
  if(t==='chip'){chipInit();if(AC&&AC.state==='suspended')AC.resume()}else if(t.paused){const p=t.play();if(p&&p.catch)p.catch(()=>{})}}

@@ -370,6 +370,15 @@ for _k, _rm in ED_NPCS.get('removed', {}).items():
 for _k, _add in ED_NPCS.get('added', {}).items():
     for _i, _p in enumerate(_add):
         npc_src.setdefault(_k, []).append(dict(_p, stay=True, src=f'e:{_k}:{_i}'))
+_EDP = (json.load(open(os.path.join(ROOT, 'data/editor/design.json'), encoding='utf-8')) if os.path.exists(os.path.join(ROOT, 'data/editor/design.json')) else {}).get('people', {})
+for _k, _ed in _EDP.items():   # map editor: face, lines, wander box and trainer set on people already in the game
+    for _p in npc_src.get(_k, []):
+        if isinstance(_p, dict) and _p.get('src') in _ed:
+            for _f, _v in _ed[_p['src']].items():
+                if _v in (None, '', []):
+                    _p.pop(_f, None)
+                else:
+                    _p[_f] = _v
 
 
 def reach(rows, W, H, start, block):
@@ -574,7 +583,7 @@ for sid, sec in world.items():
         taken.add(t)
         if person.get('wid'):
             wid_tile.setdefault(person['wid'], t)
-        o = {'x': t[0], 'y': t[1], 'art': person['art'], 'face': person.get('face', 'down'), 't': person['t'], **({'name': person['name']} if person.get('name') else {}), **({k: person[k] for k in ('pre', 'story', 'wid', 'after', 'until', 'legend', 'lv', 'flag', 'stay', 'keyline', 'por', 'src') if person.get(k)})}
+        o = {'x': t[0], 'y': t[1], 'art': person['art'], 'face': person.get('face', 'down'), 't': person['t'], **({'name': person['name']} if person.get('name') else {}), **({k: person[k] for k in ('pre', 'story', 'wid', 'after', 'until', 'legend', 'lv', 'flag', 'stay', 'keyline', 'por', 'src', 'wander') if person.get(k)})}
         if person.get('trainer'):
             tr = dict(person['trainer'])
             if person.get('face'):

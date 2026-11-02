@@ -175,8 +175,8 @@ function townTrainer(h){const key=(PL[G.planet]||{}).key,a=PROG.areas[key]||{},t
  const team=Array.from({length:n},(_,i)=>[IDX[t.length?t[Math.floor(r()*t.length)].name:'Fizzle'],(h.app?Math.max(tl[0],hi-2):Math.max(tl[0],Math.min(hi,tl[0]+Math.floor(r()*(hi-tl[0]+1))+i)))+(h.route?2:0)]);
  if(typeof mDone==='function'&&!mDone('M03')&&key==='dustara')team.splice(1,9),team[0][1]=Math.min(team[0][1],4);
  const kp=PROG.keepers[key],cap=kp&&!G.beaten[key]?kp.ace_level-(h.app?1:2):key==='dustara'&&typeof mDone==='function'&&!mDone('M04')?7:99;for(const t of team)t[1]=Math.min(t[1],cap);   /* before the first rival battle: one gentle Lv4 partner, a fair fight for a brand-new starter */
- return{name:h.cls+' '+h.name,art:h.art,intro:h.app?"You'll need to get past us to reach the Keeper!":TR_INTRO[Math.abs(hash(h.id))%TR_INTRO.length],
-  lose:h.app?'Go on, the Keeper is waiting.':'Wow, you two are in sync!',after:h.app?'The Keeper is just ahead.':'Good battle! Keep training out here.',team,bkey:h.id}}
+ return{name:h.cls+' '+h.name,art:h.art,intro:h.intro?h.intro:h.app?"You'll need to get past us to reach the Keeper!":TR_INTRO[Math.abs(hash(h.id))%TR_INTRO.length],
+  lose:h.lose||(h.app?'Go on, the Keeper is waiting.':'Wow, you two are in sync!'),after:h.after||(h.app?'The Keeper is just ahead.':'Good battle! Keep training out here.'),team,bkey:h.id}}
 function trainerTalk(h){const tr=townTrainer(h);if(G.beaten[h.id])return say(tr.name+': '+tr.after,null,h.art);
  if(!G.party.some(m=>m.hp>0))return say('Your team needs to heal first.');
  say(tr.name+': '+tr.intro,()=>startBattle(tr.team.map(([id,lv])=>mk(id,lv)),tr),h.art)}
@@ -234,7 +234,7 @@ const isNight=()=>{const h=new Date().getHours();return h>=19||h<6};
 // night: Void and Psi Alienmon come out (x3) and Bio/Plasma hide (x0.5); by day it is the other way round
 function dayMul(name){const id=IDX[name];if(id==null)return 1;const t=D[id].t||[],n=isNight(),nite=t.includes('Void')||t.includes('Psi'),day=t.includes('Bio')||t.includes('Plasma');
  return(nite&&!day?(n?3:0.5):day&&!nite?(n?0.5:3):1)*(typeof evSwarm==='function'?evSwarm(name):1)}
-function nightTint(){if(!isNight()||(G.opt&&G.opt.noNight))return;ctx.fillStyle='rgba(16,18,60,0.22)';ctx.fillRect(0,0,160,144)}
+function nightTint(){if(!isNight()||(G.opt&&G.opt.noNight)||(typeof secOn==='function'&&secOn()&&SWORLD[G.sec.id].noNight))return;ctx.fillStyle='rgba(16,18,60,0.22)';ctx.fillRect(0,0,160,144)}
 
 /* ---------- Xenodex: where a caught Alienmon lives ---------- */
 function livesIn(id){if(typeof habitatsOf==='function'){const hs=habitatsOf(id);if(hs.length){const seen=new Set(),out=[];for(const h of hs){const k=h.name.replace(/ Part [AB]$| [0-9]F$| B[0-9]$/,'');if(!seen.has(k)){seen.add(k);out.push(k)}}return out}}const n=D[id].name,out=[];for(const k in PROG.areas){const a=PROG.areas[k];if(['tier1','tier2_after_4_shards','tier3_after_champion'].some(t=>(a[t]||[]).some(x=>x.name===n)))out.push((PL.find(p=>p.key===k)||{}).name||k)}return out}

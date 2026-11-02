@@ -51,6 +51,9 @@ function layerDraw(g, t, v, W, H) {
   if (t.shadow) { g.save(); g.globalAlpha = 0.35; g.filter = 'brightness(0)'; g.drawImage(L, 0, 2); g.restore(); }   // a raised edge (plateaus, hedges)
   g.drawImage(L, 0, 0);
 }
+function terrTarget(id) { return builtMap(id) || paintTarget(id); }   // a built map, or a finished map with a terrain layer on top (play.js)
+function terrBake(id) { if (builtMap(id)) bake(id); else paintBake(id); }
+function terrRows(id) { if (builtMap(id)) stampRows(id); else paintRows(id); }
 function terrainBake(m, g, W, H) { for (const ly of m.terrain || []) { const t = tsById(ly.ts); if (t) layerDraw(g, t, ly.v, W, H); } }
 function terrainRows(m, R, W, H) {   // a tile takes its terrain's ground when 3 or 4 of its corners are that terrain (the later layer wins)
   for (const ly of m.terrain || []) { const t = tsById(ly.ts); if (!t || !t.walk) continue; const v = ly.v, at = (x, y) => v.charCodeAt(y * (W + 1) + x) === 49 ? 1 : 0;
@@ -62,20 +65,20 @@ function layerFor(m, ts) { const [W, H] = sec(m.id).tiles; m.terrain = m.terrain
   if (!ly) { ly = { ts, v: '0'.repeat((W + 1) * (H + 1)) }; m.terrain.push(ly); } return ly; }
 let TBAKE = 0;
 function terrainPaint(wx, wy) {
-  const m = builtMap(S.view), t = S.terr; if (!m || !t) return; const [W, H] = sec(m.id).tiles, n = S.tbrush || 1;
+  const m = terrTarget(S.view), t = S.terr; if (!m || !t) return; const [W, H] = sec(m.id).tiles, n = S.tbrush || 1;
   const cx = Math.floor(wx / 16), cy = Math.floor(wy / 16); if (cx < 0 || cy < 0 || cx >= W || cy >= H) return;
   const ly = layerFor(m, t), a = ly.v.split(''), x0 = cx - Math.floor((n - 1) / 2), y0 = cy - Math.floor((n - 1) / 2), ch = S.terase ? '0' : '1'; let hit = false;
   for (let y = y0; y <= y0 + n; y++) for (let x = x0; x <= x0 + n; x++) if (x >= 0 && y >= 0 && x <= W && y <= H && a[y * (W + 1) + x] !== ch) { a[y * (W + 1) + x] = ch; hit = true; }
   if (!hit) return; ly.v = a.join('');
-  if (!TBAKE) TBAKE = requestAnimationFrame(() => { TBAKE = 0; bake(m.id); });
+  if (!TBAKE) TBAKE = requestAnimationFrame(() => { TBAKE = 0; terrBake(m.id); });
 }
-function terrainFill(all) { const m = builtMap(S.view); if (!m || !S.terr) return; const [W, H] = sec(m.id).tiles; snap(); layerFor(m, S.terr).v = (all ? '1' : '0').repeat((W + 1) * (H + 1)); bake(m.id); stampRows(m.id); panel(); }
+function terrainFill(all) { const m = terrTarget(S.view); if (!m || !S.terr) return; const [W, H] = sec(m.id).tiles; snap(); layerFor(m, S.terr).v = (all ? '1' : '0').repeat((W + 1) * (H + 1)); terrBake(m.id); terrRows(m.id); panel(); }
 function terrainDown(t, wx, wy) {
-  if (!builtMap(S.view)) return toast('Terrain paints on maps built here. Open one from the map list, or make a new one in this panel.');
+  if (S.view === 'outdoor') return toast('Open one map from the map list to paint on it.');
   if (!S.terr) return toast('Pick a terrain on the right first.');
   snap(); S.terrPaint = true; terrainPaint(wx, wy);
 }
-function terrainUp() { if (!S.terrPaint) return; S.terrPaint = false; const id = S.view; cancelAnimationFrame(TBAKE); TBAKE = 0; bake(id); stampRows(id); panel(); }
+function terrainUp() { if (!S.terrPaint) return; S.terrPaint = false; const id = S.view; cancelAnimationFrame(TBAKE); TBAKE = 0; terrBake(id); terrRows(id); panel(); }
 
 // ---------- tileset library ----------
 function tsPreview(t, size) {   // a small sample patch: an island with a bay and a hole, so every kind of edge shows
@@ -103,10 +106,10 @@ const PROMPTS = {
 function copyPrompt(k) { const name = ($('#pname2') || {}).value || ''; const t = PROMPTS[k](name); navigator.clipboard ? navigator.clipboard.writeText(t).then(() => toast('Prompt copied. Paste it into ChatGPT with a reference picture.'), () => prompt('Copy this prompt:', t)) : prompt('Copy this prompt:', t); }
 
 function terrainPanel() {
-  const m = S.view !== 'outdoor' && builtMap(S.view), list = TILESETS.filter(t => S.tsAll || t.dir === S.planet), cur = S.terr && tsById(S.terr);
+  const m = S.view !== 'outdoor' && (builtMap(S.view) || DS.paint[S.view] || { id: S.view, terrain: [], over: 1 }), list = TILESETS.filter(t => S.tsAll || t.dir === S.planet), cur = S.terr && tsById(S.terr);
   const prev = cur ? tsPreview(cur, 48) : '';
   return `<div id="preview"><div class="box" id="pbox">${prev ? `<img src="${prev}">` : ''}</div><div class="cap" id="pcap">${cur ? `${cur.name}: the 15 pieces it makes (painting picks them for you)` : 'Pick a terrain to see its pieces'}</div></div>
-  <h3>Terrain painter</h3><p class="hint">${m ? 'Pick a terrain, then press and drag on the map. Edges, corners, islands and holes join up by themselves as you paint. Walls and walkable ground follow the terrain.' : '<b>Terrain paints on maps you build here.</b> Choose one of your built maps in the map list, or make a new one at the bottom of this panel.'}</p>
+  <h3>Terrain painter</h3><p class="hint">${m ? 'Pick a terrain, then press and drag on the map. Edges, corners, islands and holes join up by themselves as you paint. Walls and walkable ground follow the terrain.' + (builtMap(S.view) ? '' : ' <b>This is a finished map:</b> the terrain goes on a see-through layer over it, so the picture underneath is never changed.') : '<b>Open one map</b> from the map list to paint on it (a finished map or one you built), or make a new one at the bottom of this panel.'}</p>
   ${m ? `<div class="row"><button class="tool ${!S.terase ? 'on' : ''}" id="tpaint">Paint</button><button class="tool ${S.terase ? 'on' : ''}" id="terase">Erase</button>
     Brush ${[1, 2, 3, 4].map(n => `<button class="tool ${(S.tbrush || 1) === n ? 'on' : ''}" data-tb="${n}">${n}</button>`).join('')}</div>
     <div class="row" style="margin-top:6px"><button id="tfill">Fill the whole map</button><button id="tclear">Clear this terrain</button></div>
@@ -140,10 +143,10 @@ function terrainPanel() {
 }
 function terrainWire() {
   const on = (sel, ev, f) => { const el = $(sel); if (el) el.addEventListener(ev, f); }, cur = () => tsById(S.terr);
-  const redo = () => { DIRTY.add('tilesets'); $('#save').classList.add('hot'); for (const m of MAPS) if (m.built && (m.terrain || []).some(l => l.ts === S.terr)) { bake(m.id); stampRows(m.id); } };
+  const redo = () => { DIRTY.add('tilesets'); $('#save').classList.add('hot'); for (const m of MAPS.filter(m => m.built).concat(Object.values(DS.paint || {}))) if ((m.terrain || []).some(l => l.ts === S.terr)) { terrBake(m.id); terrRows(m.id); } };
   document.querySelectorAll('[data-ts]').forEach(b => b.onclick = () => { S.terr = b.dataset.ts; panel(); });
   document.querySelectorAll('[data-tb]').forEach(b => b.onclick = () => { S.tbrush = +b.dataset.tb; panel(); });
-  document.querySelectorAll('[data-tup]').forEach(b => b.onclick = () => { const m = builtMap(S.view), i = +b.dataset.tup; if (!i) return; snap(); [m.terrain[i - 1], m.terrain[i]] = [m.terrain[i], m.terrain[i - 1]]; bake(m.id); stampRows(m.id); panel(); });
+  document.querySelectorAll('[data-tup]').forEach(b => b.onclick = () => { const m = terrTarget(S.view), i = +b.dataset.tup; if (!i) return; snap(); [m.terrain[i - 1], m.terrain[i]] = [m.terrain[i], m.terrain[i - 1]]; terrBake(m.id); terrRows(m.id); panel(); });
   document.querySelectorAll('[data-prompt]').forEach(b => b.onclick = () => copyPrompt(b.dataset.prompt));
   on('#tpaint', 'click', () => { S.terase = false; panel(); }); on('#terase', 'click', () => { S.terase = true; panel(); });
   on('#tfill', 'click', () => terrainFill(true)); on('#tclear', 'click', () => terrainFill(false));
@@ -153,7 +156,7 @@ function terrainWire() {
   on('#tsrimc', 'change', e => { cur().rimColor = e.target.value; redo(); panel(); }); on('#tstex', 'change', e => { cur().texTiles = Math.max(1, Math.min(16, +e.target.value || 4)); redo(); panel(); });
   on('#tsseed', 'click', () => { cur().seed = Math.round(Math.random() * 60) / 10; redo(); panel(); });
   on('#tsshadow', 'change', e => { cur().shadow = e.target.checked; redo(); panel(); });
-  on('#tsrm', 'click', () => { if (MAPS.some(m => m.built && (m.terrain || []).some(l => l.ts === S.terr))) return toast('That terrain is painted on a map; clear it there first.'); snap(); TILESETS = TILESETS.filter(t => t.id !== S.terr); DIRTY.add('tilesets'); S.terr = null; panel(); });
+  on('#tsrm', 'click', () => { if (MAPS.filter(m => m.built).concat(Object.values(DS.paint || {})).some(m => (m.terrain || []).some(l => l.ts === S.terr))) return toast('That terrain is painted on a map; clear it there first.'); snap(); TILESETS = TILESETS.filter(t => t.id !== S.terr); DIRTY.add('tilesets'); S.terr = null; panel(); });
   const base = () => ({ name: ($('#tsname').value || '').trim() || 'Terrain', walk: $('#tsnwalk').value });
   on('#tsfromclip', 'click', () => { const c = $('#tsclip').value; if (!c) return toast('Clip a patch of ground in Clips mode first.'); addTileset({ ...base(), kind: 'auto', clip: c, rough: 0.5, rim: 0.4, rimColor: '#2b2216' }); });
   on('#tstexf', 'change', async e => { const f = e.target.files[0]; if (!f) return; const u = await readFile(f), t = { ...base(), kind: 'auto', rough: 0.5, rim: 0.4, rimColor: '#2b2216', texTiles: 4 };

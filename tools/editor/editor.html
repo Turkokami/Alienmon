@@ -67,6 +67,7 @@ main{height:calc(100% - 96px)}
 <span class="row act"><button id="undo">&#8630; Undo</button><button id="save">Save</button></span>
 </header>
 <nav id="modes">
+<button data-mode="play" title="Walk the map with the game's rules"><i>&#9654;</i><span>Playtest</span></button>
 <button data-mode="props" class="on"><i>&#127793;</i><span>Props</span></button>
 <button data-mode="people"><i>&#129485;</i><span>People</span></button>
 <button data-mode="mons"><i>&#128126;</i><span>Alienmon</span></button>
@@ -78,6 +79,12 @@ main{height:calc(100% - 96px)}
 <button data-mode="clips"><i>&#9986;</i><span>Clips</span></button>
 <button data-mode="terrain" title="Paint ground, paths, water and grass that join up by themselves (autotiles)"><i>&#9968;</i><span>Terrain</span></button>
 <button data-mode="sprites" title="Turn a generated sprite sheet into walking people or props"><i>&#127912;</i><span>Sprites</span></button>
+<button data-mode="wild" title="Which wild Alienmon live in the tall grass and water"><i>&#127807;</i><span>Encounters</span></button>
+<button data-mode="items" title="Item stashes, chests, hidden items, signs and blocked-path messages"><i>&#127873;</i><span>Items</span></button>
+<button data-mode="settings" title="Music, area name, encounter rate, night and weather for one map"><i>&#9881;</i><span>Map settings</span></button>
+<button data-mode="check" title="Check maps against the Map Logic Pack"><i>&#9989;</i><span>Check</span></button>
+<button data-mode="overview" title="Every world at a glance"><i>&#127759;</i><span>Worlds</span></button>
+<button data-mode="versions" title="Saved versions and crash recovery"><i>&#128190;</i><span>Versions</span></button>
 <button data-mode="maps"><i>&#10133;</i><span>Add map</span></button>
 </nav>
 <main><div id="mapwrap"><canvas id="map"></canvas><div id="where"></div>
@@ -86,5 +93,7 @@ main{height:calc(100% - 96px)}
 </div><div id="sizer" title="Drag to resize the panel"><b></b></div><aside id="panel"></aside></main>
 <div id="toast"></div>
 <script src="studio.js"></script>
+<script src="design.js"></script>
+<script src="play.js"></script>
 <script src="editor.js"></script>
 </body></html>

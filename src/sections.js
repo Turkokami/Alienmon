@@ -5,7 +5,7 @@
  doors, doormats, stairs and cave mouths. Collision is one char per tile: '.' walk, '#' blocked, ',' tall grass.
  G.sec = {id,x,y} is the player's tile; the old painted town maps stay in use wherever no section is active. */
 const PROPC={};function PROPI(u){return PROPC[u]||(PROPC[u]=Object.assign(new Image(),{src:u}))}
-const ENC=__ENC__,SWORLD=__SWORLD__,SECI=lazyImgs(__SECIMG__),SECOVI=lazyImgs(__SECOV__),SECQ=__SECQ__;
+const ENC=__ENC__,SWORLD=__SWORLD__,SECI=lazyImgs(__SECIMG__),SECOVI=lazyImgs(__SECOV__),SECQ=__SECQ__,SECPAINT=__SECPAINT__,SECPI=lazyImgs(SECPAINT),SECOVE=__SECOVE__,SECOVEI=lazyImgs(SECOVE);
 const SEC_STEP=12;              // frames per tile at 60 updates a second (the Hover Board halves it)
 let STRICK=null,SJ=null,SJBUF=0,SM=null,SFADE=null,SBANNER=0,SDEBUG=false,SBUMP=0,SNEAR=null;
 const secOn=()=>!!(G&&G.sec&&SWORLD[G.sec.id]);
@@ -13,7 +13,7 @@ const secTile=(s,x,y)=>x<0||y<0||x>=s.tiles[0]||y>=s.tiles[1]?null:s.rows[y][x];
 const DIRS={up:[0,-1],down:[0,1],left:[-1,0],right:[1,0]};
 const secVis=n=>(!n.after||mDone(n.after))&&(!n.until||!mDone(n.until))&&(!n.flag||!!(G.flags&&G.flags[n.flag]))&&(!n.legend||legendHere(n.legend));
 const secNpcs=s=>(s.npcs||[]).filter(secVis);
-function secNpcAt(s,x,y){return secNpcs(s).find(n=>n.x===x&&n.y===y)}
+function secNpcAt(s,x,y){return secNpcs(s).find(n=>(n.x===x&&n.y===y)||(n.wm&&n.x+n.wm.dx===x&&n.y+n.wm.dy===y))}
 function secStashAt(s,x,y){return(s.objects||[]).find(o=>o.k==='stash'&&o.tile[0]===x&&o.tile[1]===y)}
 function secWalk(s,x,y){const c=secTile(s,x,y);return(c==='.'||c===','||c===':'||fluidOK(c))&&!secNpcAt(s,x,y)&&!secStashAt(s,x,y)&&!(s.objects||[]).some(o=>o.k==='keeper'&&o.tile[0]===x&&o.tile[1]===y)&&!(s.id===(G.sec&&G.sec.id)&&(secQAt(x,y,true)||secMonAt(s,x,y)))}
 const QCHAR=new Set(['giver','talk','turnin','trainer','legend']);
@@ -35,15 +35,20 @@ function secWarp(w){SFADE={t:0,go:()=>{enterSection(w.to,w.at,w.face);if(w.kind=
 function doorSfx(){try{if(!AC||musicMode==='off')return;const t=AC.currentTime,o=AC.createOscillator(),g=AC.createGain();o.type='square';o.frequency.setValueAtTime(220,t);o.frequency.setValueAtTime(330,t+0.05);g.gain.setValueAtTime(0.035,t);g.gain.exponentialRampToValueAtTime(0.001,t+0.12);o.connect(g).connect(AC.destination);o.start(t);o.stop(t+0.13)}catch(e){}}
 function bumpSfx(){if(SBUMP>0)return;SBUMP=14;try{if(!AC||musicMode==='off')return;const t=AC.currentTime,o=AC.createOscillator(),g=AC.createGain();o.type='square';o.frequency.setValueAtTime(90,t);g.gain.setValueAtTime(0.03,t);g.gain.exponentialRampToValueAtTime(0.001,t+0.08);o.connect(g).connect(AC.destination);o.start(t);o.stop(t+0.09)}catch(e){}}
 // arriving on a tile: warps (doors, mats, stairs, cave mouths) fire as you step onto them
-const secTrainerH=n=>({id:n.id,cls:n.trainer.cls,name:n.trainer.name,art:n.art,app:n.trainer.app,route:n.trainer.route});
+const secTrainerH=n=>({id:n.id,cls:n.trainer.cls,name:n.trainer.name,art:n.art,app:n.trainer.app,route:n.trainer.route,intro:n.trainer.intro,lose:n.trainer.lose,after:n.trainer.after});
+// a trainer set up in the map editor with their own team ([[species,level],...]) and their own lines
+function secCustomTrainer(n){const T=n.trainer,name=(T.cls+' '+(T.name||'')).trim(),team=T.team.filter(([sp])=>IDX[sp]!=null).map(([sp,lv])=>[IDX[sp],lv]);
+ const tr={name,art:n.art,intro:T.intro||'Let\'s battle!',lose:T.lose||'Wow, you two are in sync!',after:T.after||'Good battle! Keep training out here.',team,bkey:n.id};
+ if(G.beaten[n.id])return say(name+': '+tr.after,null,n.art);if(!team.length)return say(n.t,null,n.art);if(!G.party.some(m=>m.hp>0))return say('Your team needs to heal first.');
+ say(name+': '+tr.intro,()=>startBattle(team.map(([id,lv])=>mk(id,lv)),tr),n.art)}
 // the Molten Frontier's own trainers keep their world ids, lines and story-paced teams
-function secTrainerTalk(n){if(G.rem&&G.rem[n.id]&&G.beaten[n.id])return secRematch(n);if(n.trainer.linker&&G.beaten[n.id])return say(n.t,null,n.art);if(!n.trainer.frontier)return trainerTalk(secTrainerH(n));const t0=n.t[0]||'',name=t0.split(':')[0],team=frontierTeam({id:n.id})||townTrainer(secTrainerH(Object.assign({},n,{trainer:{cls:name,name:''}}))).team;
+function secTrainerTalk(n){if(G.rem&&G.rem[n.id]&&G.beaten[n.id])return secRematch(n);if(n.trainer.linker&&G.beaten[n.id])return say(n.t,null,n.art);if(n.trainer.team)return secCustomTrainer(n);if(!n.trainer.frontier)return trainerTalk(secTrainerH(n));const t0=n.t[0]||'',name=t0.split(':')[0],team=frontierTeam({id:n.id})||townTrainer(secTrainerH(Object.assign({},n,{trainer:{cls:name,name:''}}))).team;
  const tr={name,art:n.art,intro:t0.split(': ').slice(1).join(': ')||'Let\'s battle!',lose:'Wow, you two are in sync. Good luck out there!',after:'Keep exploring, Linker. Every region has new Alienmon.',team,bkey:n.id};
  qEvent('talk',n.id,{x:n.x*16+8,y:n.y*16+15});if(G.beaten[n.id])return say(name+': '+tr.after,null,n.art);if(!G.party.some(m=>m.hp>0))return say('Your team needs to heal first.');say(t0,()=>startBattle(team.map(([id,lv])=>mk(id,lv)),tr),n.art)}
 // line of sight: step into a trainer's view (up to 5 clear tiles straight ahead of them) and they call you out
 let SSPOT=null;
 function secLos(){if(!G.party.length||!G.party.some(m=>m.hp>0))return false;const s=SWORLD[G.sec.id];for(const n of secNpcs(s)){if(!n.trainer||G.beaten[n.id])continue;const[dx,dy]=DIRS[n.face||'down'];
-  for(let k=1;k<=5;k++){const x=n.x+dx*k,y=n.y+dy*k;if(x===G.sec.x&&y===G.sec.y){if(!n.home)n.home=[n.x,n.y];SSPOT={n,t:36,walk:0,steps:k-1};exclaimSfx();face=({up:'down',down:'up',left:'right',right:'left'})[n.face||'down'];return true}if(!secWalk(s,x,y))break}}return false}
+  for(let k=1;k<=(n.trainer.sight||5);k++){const x=n.x+dx*k,y=n.y+dy*k;if(x===G.sec.x&&y===G.sec.y){if(!n.home)n.home=[n.x,n.y];SSPOT={n,t:36,walk:0,steps:k-1};exclaimSfx();face=({up:'down',down:'up',left:'right',right:'left'})[n.face||'down'];return true}if(!secWalk(s,x,y))break}}return false}
 // shared houses: one room per planet; the doormat ('back') returns you to the door you came in by
 function secHouse(s,o){if(!SWORLD[o.to])return say('The door is locked. Nobody seems to be home.');G.houseBack={id:s.id,at:[G.sec.x,G.sec.y],title:o.title||null};   /* a shared room can carry this town's name (Port Ember's healing centre) */secWarp({to:o.to,at:(SWORLD[o.to].spawns||{}).default||[7,12],face:'up',kind:'door'})}
 function secHouseBack(){const s=SWORLD[G.sec.id],b=G.houseBack&&SWORLD[G.houseBack.id]?G.houseBack:null,p=SWORLD[s.parent];G.houseBack=null;
@@ -51,7 +56,7 @@ function secHouseBack(){const s=SWORLD[G.sec.id],b=G.houseBack&&SWORLD[G.houseBa
 function secArrive(){SBLK=null;const s=SWORLD[G.sec.id],w=s.warps.find(w=>w.tile[0]===G.sec.x&&w.tile[1]===G.sec.y);if(w&&w.to==='back')return secHouseBack();if(w&&w.kind==='gate')return secGate(w);if(w&&SWORLD[w.to])return secWarp(w);
  if(G.grace>0)G.grace=Math.max(0,G.grace-15);if(G.jam>0)G.jam=Math.max(0,G.jam-2);stepc++;
  if(eggStep())return;if(secLos())return;
- const ct=secTile(s,G.sec.x,G.sec.y);if(typeof skyStep==='function'&&skyStep(s,ct))return;if(ct===','&&!(G.grace>0)&&R()<0.1)wild();else if(ct==='~'&&!(G.grace>0)&&R()<0.05)wild();else if(ct==='.'&&s.type==='cave'&&!secCaveGrass(s)&&!(G.grace>0)&&R()<0.06)wild()}
+ const ct=secTile(s,G.sec.x,G.sec.y);if(typeof skyStep==='function'&&skyStep(s,ct))return;const rt=s.rate==null?1:s.rate;if(ct===','&&!(G.grace>0)&&R()<0.1*rt)wild();else if(ct==='~'&&!(G.grace>0)&&R()<0.05*rt)wild();else if(ct==='.'&&s.type==='cave'&&!secCaveGrass(s)&&!(G.grace>0)&&R()<0.06*rt)wild()}
 // a cave with no marked encounter patches: its whole floor is wild ground (at a lower rate than grass)
 const CAVEG={};function secCaveGrass(s){return s.id in CAVEG?CAVEG[s.id]:(CAVEG[s.id]=s.rows.some(r=>r.includes(',')))}
 // Frontier gates: the story gate decides; through it you arrive at that planet's landing edge (its own sections,
@@ -85,10 +90,13 @@ function secInteract(){const s=SWORLD[G.sec.id],[dx,dy]=DIRS[face],x=G.sec.x+dx,
  if(o.k==='chest'){G.opened=G.opened||{};const tag=s.id+':'+o.tile;if(G.opened[tag])return say('The chest is empty.');G.opened[tag]=1;const pod=G.pods&&o.item in G.pods,n=o.n||1;if(pod)G.pods[o.item]+=n;else G.items[o.item]=(G.items[o.item]||0)+n;
   const name=(ITEMS.concat(PODS).find(i=>i.k===o.item)||{n:o.item}).n;return say('You opened the chest... and found '+(n>1?n+'x ':'a ')+name+'!')}if(o.k==='bay'){G.singBuy=0;return bayMenu()}if(o.k==='shop')return shop();
  if(o.k==='lab'&&!G.party.length)return secStarterTalk();if(o.k==='lab')return say(G.party.length?'Three empty pod cradles. Your partner\'s pod used to sit in the middle one.':'Three seed pods hum on the lab table.');
+ if(o.k==='hidden'){G.opened=G.opened||{};const tag=s.id+':'+o.tile;if(G.opened[tag])return secFieldA(s,x,y);G.opened[tag]=1;const n=o.n||1;stashSfx();if(o.item==='dust'){G.dust+=n;return say('You searched the spot... and found '+n+' Stardust!')}
+  const pod=G.pods&&o.item in G.pods;if(pod)G.pods[o.item]+=n;else G.items[o.item]=(G.items[o.item]||0)+n;const name=(ITEMS.concat(PODS).find(i=>i.k===o.item)||{n:o.item}).n;return say('You searched the spot... and found '+(n>1?n+'x ':'a ')+name+'!')}
  if(o.t)return say(o.t)}
 function updSec(){const s=SWORLD[G.sec.id];if(SBUMP>0)SBUMP--;if(MODHINT>0)MODHINT--;
  // a trainer who walked up to challenge you goes back to their spot once the battle and talk are over, so nobody is left blocking a path
  if(!SSPOT&&!DLG&&!CH)for(const n of s.npcs||[])if(n.home&&!(n.home[0]===G.sec.x&&n.home[1]===G.sec.y)){n.x=n.home[0];n.y=n.home[1];n.ox=n.oy=0;delete n.home}
+ if(!SSPOT&&!DLG&&!CH&&!SFADE)secWander(s);
  if(SSPOT){if(SSPOT.t>0){SSPOT.t--;if(SSPOT.t===0)SSPOT.walk=0}else{const n=SSPOT.n,[dx,dy]=DIRS[n.face||'down'];
    if(Math.abs(n.x+dx-G.sec.x)+Math.abs(n.y+dy-G.sec.y)===0||SSPOT.steps<=0){SSPOT=null;n.ox=n.oy=0;secTrainerTalk(n)}   // (n.home: where they walk back to afterwards)
    else{SSPOT.walk++;n.ox=dx*16*SSPOT.walk/SEC_STEP;n.oy=dy*16*SSPOT.walk/SEC_STEP;if(SSPOT.walk>=SEC_STEP){n.x+=dx;n.y+=dy;n.ox=n.oy=0;SSPOT.walk=0;SSPOT.steps--}}}drawSec();return}
@@ -102,6 +110,11 @@ function updSec(){const s=SWORLD[G.sec.id];if(SBUMP>0)SBUMP--;if(MODHINT>0)MODHI
  if(pressed.g){pressed.g=false;SDEBUG=!SDEBUG;toast('Grid overlay '+(SDEBUG?'on':'off'))}
  if(P_('a')){secInteract();drawSec();return}
  secStepHeld();drawSec()}
+// townsfolk with a wander box (map editor): now and then they take a step, never more than n.wander tiles (max 2) from where they started
+function secWander(s){for(const n of s.npcs||[]){if(!n.wander||!secVis(n))continue;if(!n.wh)n.wh=[n.x,n.y];
+ if(n.wm){n.wm.t++;const k=n.wm.t/SEC_STEP;n.ox=n.wm.dx*16*k;n.oy=n.wm.dy*16*k;if(n.wm.t>=SEC_STEP){n.x+=n.wm.dx;n.y+=n.wm.dy;n.ox=n.oy=0;n.wm=null}continue}
+ if(Math.random()>0.006)continue;const d=['up','down','left','right'][Math.floor(Math.random()*4)],[dx,dy]=DIRS[d],x=n.x+dx,y=n.y+dy,r=Math.min(2,n.wander);n.face=d;
+ if(Math.abs(x-n.wh[0])>r||Math.abs(y-n.wh[1])>r)continue;if(x===G.sec.x&&y===G.sec.y)continue;const c=secTile(s,x,y);if(c!=='.'&&c!==':')continue;n.wm={dx,dy,t:0};if(!secWalk(s,x,y)||(SM&&SM.to.s===s&&SM.to.x===x&&SM.to.y===y)||s.warps.some(w=>w.tile[0]===x&&w.tile[1]===y))n.wm=null}}
 // a path that runs off the edge of an outdoor map but leads nowhere: keep pushing into it and you're told it's blocked
 let SBLK=null;
 function secPathBlock(s,a,d){if(s.type==='interior'||s.type==='cave'||s.type==='arena')return;const W=s.tiles[0],H=s.tiles[1],x=a?a.x:G.sec.x,y=a?a.y:G.sec.y;
@@ -111,6 +124,7 @@ const PATH_BLOCK={town:'The way out of town is blocked off here. Try another pat
 function secStepHeld(){const d=held.up?'up':held.down?'down':held.left?'left':held.right?'right':null;if(!d)return;face=d;const s=SWORLD[G.sec.id],a=secAhead(s,G.sec.x,G.sec.y,d);
  if(a&&(a.arrival||a.s.id!==s.id)&&!G.party.length&&s.type!=='interior')return say(NO_PARTNER);
  if(a&&a.arrival)return secLeaveForShip();
+ if(a&&a.s===s&&d==='down'&&secTile(s,a.x,a.y)==='v'&&secWalk(s,a.x,a.y+1)){SFOL=null;SJ={t:0,from:[G.sec.x,G.sec.y],to:[a.x,a.y+1]};jumpSfx();return}   // a ledge: one-way hop down
  if(!a||!secWalk(a.s,a.x,a.y)){const ho=a&&a.s===SWORLD[G.sec.id]&&(a.s.objects||[]).find(o=>o.k==='house'&&o.tile[0]===a.x&&o.tile[1]===a.y);if(ho)return secHouse(a.s,ho);const dr=a&&a.s===SWORLD[G.sec.id]&&face==='up'&&(a.s.objects||[]).find(o=>o.door&&o.tile[0]===a.x&&o.tile[1]===a.y);if(dr){doorSfx();if(dr.k==='bay'){G.singBuy=0;return bayMenu()}return shop()}if(a&&a.s){const c=secTile(a.s,a.x,a.y);if(c==='~'||c==='^')modHint(c)}bumpSfx();const so=a&&a.s===s&&(s.objects||[]).find(o=>o.k==='stop'&&o.tile[0]===a.x&&o.tile[1]===a.y);if(so){const k='stop:'+s.id+':'+a.x+','+a.y;if(!SBLK||SBLK.k!==k){SBLK={k,t:frame,said:1};return say(so.t)}return}secPathBlock(s,a,d);return}
  const lw=a.s.warps.find(w=>w.tile[0]===a.x&&w.tile[1]===a.y&&w.node);if(lw&&!gateOpen(lw.node)){bumpSfx();return say(gateMsg(lw.node))}
  secFollowStep(G.sec.x,G.sec.y);SM={t:0,n:secStepN(s),dx:DIRS[d][0],dy:DIRS[d][1],to:a}}
@@ -118,7 +132,7 @@ function secStepHeld(){const d=held.up?'up':held.down?'down':held.left?'left':he
 function secCam(s,px,py){const W=s.tiles[0]*16,H=s.tiles[1]*16,e=s.edges,open=k=>e[k]&&SWORLD[e[k].to];
  let cx=px+8-80,cy=py+8-76;if(!open('left'))cx=Math.max(0,cx);if(!open('right'))cx=Math.min(W-160,cx);if(!open('top'))cy=Math.max(0,cy);if(!open('bottom'))cy=Math.min(H-144,cy);
  if(W<160)cx=(W-160)/2;if(H<144)cy=(H-144)/2;return[Math.round(cx),Math.round(cy)]}
-function secDrawImg(id,ox,oy){const im=SECI[id];if(okI(im))ctx.drawImage(im,ox,oy)}   // not loaded yet: the backdrop shows through
+function secDrawImg(id,ox,oy){const im=SECI[id];if(okI(im))ctx.drawImage(im,ox,oy);if(SECPAINT[id]){const pi=SECPI[id];if(okI(pi))ctx.drawImage(pi,ox,oy)}}   // + terrain painted over it in the map editor   // not loaded yet: the backdrop shows through
 // outdoors, the map is mirrored (and dimmed) on every side, so offset neighbours and diagonal corners never leave an empty dark block
 let SECBD=null;function secBackdrop(id){const im=SECI[id];if(!okI(im))return null;if(SECBD&&SECBD.id===id)return SECBD.c;
  const W=im.naturalWidth||im.width,H=im.naturalHeight||im.height,c=document.createElement('canvas');c.width=W*3;c.height=H*3;const g=c.getContext('2d');
@@ -139,7 +153,7 @@ function drawSec(){const s=SWORLD[G.sec.id],p=SM?SM.t/SM.n:0,jp=SJ?SJ.t/(SJ.dur|
  people.push({y:py,me:1,draw:()=>{const k=(G.gender||'boy');if(hop){ctx.fillStyle='rgba(20,10,20,0.3)';ctx.beginPath();ctx.ellipse(px-cx+8,py-cy+15,5,2,0,0,6.283);ctx.fill()}const rd=secDrawRide(s,px-cx,py-cy-hop),hv=!rd&&secHoverOn(s);if(hv)secDrawBoard(px-cx,py-cy-hop,SJ&&SJ.trick,jp);const fc=SJ&&SJ.trick==='spin'?['down','left','up','right'][(['down','left','up','right'].indexOf(SJ.face0)+Math.floor(jp*4))%4]:face;secDrawChar(k,fc,px-cx,py-cy-hop-(hv?3:0)-rd,hv?0:SM&&p>0.25&&p<0.75?1:0,true);if(typeof secDrawTrick==='function')secDrawTrick(px-cx,py-cy)}});
  // walk-behind props: each cut-out sorts with the people by its base row, so whoever stands behind it is drawn first
  if(s.props)for(const[u,x,y,w,h,pw,ph,ox,flat,oy]of s.props){const im=PROPI(u),X=Math.round(x*16+(w*16-pw)/2+(ox||0)-cx),Y=(flat?y*16+Math.round((h*16-ph)/2)-cy:(y+h)*16-ph-cy)+(oy||0);if(X>160||X+pw<0||Y>144||Y+ph<0)continue;people.push({y:flat?-1e9:(y+h-1)*16+1,draw:()=>{if(okI(im))ctx.drawImage(im,X,Y)}})}
- if(s.over){const ov=SECOVI[s.id];if(okI(ov))for(const[x,y0,h,by]of s.over){const X=x*16-cx,Y=y0*16-cy;if(X<-16||X>160||Y>144||Y+h*16<0)continue;people.push({y:by*16+1,draw:()=>ctx.drawImage(ov,x*16,y0*16,16,h*16,X,Y,16,h*16)})}}
+ if(s.over)for(const[x,y0,h,by,e]of s.over){const ov=e?SECOVEI[s.id]:SECOVI[s.id];if(!okI(ov))continue;const X=x*16-cx,Y=y0*16-cy;if(X<-16||X>160||Y>144||Y+h*16<0)continue;people.push({y:by*16+1,draw:()=>ctx.drawImage(ov,x*16,y0*16,16,h*16,X,Y,16,h*16)})}   // e: painted in the map editor
  secFollowDraw(people,s,cx,cy,p);secNeighbours(s,people,cx,cy);people.sort((a,b)=>a.y-b.y).forEach(o=>o.draw());
  for(const m of s.mons||[]){if(G.monGone&&(s.id+':'+m.x+','+m.y) in G.monGone)continue;const im=OWI[shownMon(m.mon,0)];if(!okI(im))continue;const X=m.x*16-cx,Y=m.y*16-cy;if(X<-24||Y<-24||X>176||Y>160)continue;
   ctx.fillStyle='rgba(20,10,20,0.35)';ctx.beginPath();ctx.ellipse(X+8,Y+15,6,2,0,0,6.283);ctx.fill();ctx.save();ctx.imageSmoothingEnabled=true;ctx.drawImage(im,((frame>>4)&1)*64,0,64,64,X-2,Y-5,20,20);ctx.restore()}
@@ -149,7 +163,7 @@ function drawSec(){const s=SWORLD[G.sec.id],p=SM?SM.t/SM.n:0,jp=SJ?SJ.t/(SJ.dur|
  if(SSPOT&&SSPOT.t>0){const X=SSPOT.n.x*16-cx+3,Y=SSPOT.n.y*16-cy-20;box(X,Y,10,11,'#fff','#1b1424');txt('!',X+3,Y+2,'#d7262e',7)}
  if(SDEBUG)drawSecDebug(s,cx,cy);
  if(typeof skyDraw==='function')skyDraw(s,cx,cy);nightTint();qDrawTracker(SBANNER>0?18:0);
- if(SBANNER>0){SBANNER--;box(0,0,160,18,'#1b1424','#5ff2ff');txt((G.houseBack&&G.houseBack.title&&s.parent!==G.houseBack.id&&s.type==='interior'?G.houseBack.title:s.name).replace(/^Molten Frontier: /,''),6,5,'#5ff2ff')}
+ if(SBANNER>0){SBANNER--;box(0,0,160,18,'#1b1424','#5ff2ff');txt((G.houseBack&&G.houseBack.title&&s.parent!==G.houseBack.id&&s.type==='interior'?G.houseBack.title:s.banner||s.name).replace(/^Molten Frontier: /,''),6,5,'#5ff2ff')}
  if(SFADE){const a=SFADE.t<10?SFADE.t/10:(20-SFADE.t)/10;ctx.fillStyle='rgba(0,0,0,'+a.toFixed(2)+')';ctx.fillRect(0,0,160,144)}
  txt('◆'+G.shards,128,134,'#fff')}
 // 16x24 figure standing on its tile (feet on the tile's bottom edge)

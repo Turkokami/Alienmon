@@ -32,7 +32,7 @@ const skyWin=()=>Math.floor(Date.now()/(2*SKY_H));
 const frontOn=(k,w)=>!!FRONTS[k]&&hash('front:'+k+':'+(w==null?skyWin():w))%100<40;
 const secOut=s=>!!s&&OUTDOOR.has(s.type);
 const skyKey=s=>s&&(s.pkey||s.zone);
-function frontHere(){if(typeof secOn!=='function'||!secOn())return null;const s=SWORLD[G.sec.id];if(!secOut(s))return null;const k=skyKey(s);return frontOn(k)?Object.assign({k},FRONTS[k]):null}
+function frontHere(){if(typeof secOn!=='function'||!secOn())return null;const s=SWORLD[G.sec.id];if(!secOut(s)||s.noWeather)return null;const k=skyKey(s);return frontOn(k)?Object.assign({k},FRONTS[k]):null}
 const skyPI=k=>PL.findIndex(p=>p.key===k);
 const skyOpenPL=(p,extra)=>((p.req&&p.req.s)||0)<=(G.shards||0)+(extra||0)&&!(p.req&&p.req.f&&!(G.flags&&G.flags[p.req.f]));   // worlds the player can reach
 // the biggest level on a map's own encounter list, else the world's range
