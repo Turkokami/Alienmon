@@ -114,7 +114,7 @@ function updSec(){const s=SWORLD[G.sec.id];if(SBUMP>0)SBUMP--;if(MODHINT>0)MODHI
 function secWander(s){for(const n of s.npcs||[]){if(!n.wander||!secVis(n))continue;if(!n.wh)n.wh=[n.x,n.y];
  if(n.wm){n.wm.t++;const k=n.wm.t/SEC_STEP;n.ox=n.wm.dx*16*k;n.oy=n.wm.dy*16*k;if(n.wm.t>=SEC_STEP){n.x+=n.wm.dx;n.y+=n.wm.dy;n.ox=n.oy=0;n.wm=null}continue}
  if(Math.random()>0.006)continue;const d=['up','down','left','right'][Math.floor(Math.random()*4)],[dx,dy]=DIRS[d],x=n.x+dx,y=n.y+dy,r=Math.min(2,n.wander);n.face=d;
- if(Math.abs(x-n.wh[0])>r||Math.abs(y-n.wh[1])>r)continue;if(x===G.sec.x&&y===G.sec.y)continue;const c=secTile(s,x,y);if(c!=='.'&&c!==':')continue;n.wm={dx,dy,t:0};if(!secWalk(s,x,y)||(SM&&SM.to.s===s&&SM.to.x===x&&SM.to.y===y)||s.warps.some(w=>w.tile[0]===x&&w.tile[1]===y))n.wm=null}}
+ if(Math.abs(x-n.wh[0])>r||Math.abs(y-n.wh[1])>r)continue;if(x===G.sec.x&&y===G.sec.y)continue;const c=secTile(s,x,y);if(c!=='.'&&c!==':')continue;if(!secWalk(s,x,y)||(SM&&SM.to.s===s&&SM.to.x===x&&SM.to.y===y)||s.warps.some(w=>w.tile[0]===x&&w.tile[1]===y))continue;n.wm={dx,dy,t:0}}}
 // a path that runs off the edge of an outdoor map but leads nowhere: keep pushing into it and you're told it's blocked
 let SBLK=null;
 function secPathBlock(s,a,d){if(s.type==='interior'||s.type==='cave'||s.type==='arena')return;const W=s.tiles[0],H=s.tiles[1],x=a?a.x:G.sec.x,y=a?a.y:G.sec.y;
