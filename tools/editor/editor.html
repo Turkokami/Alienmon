@@ -14,6 +14,7 @@ main{display:flex}#mapwrap{position:relative;flex:1;min-width:0}
 #where{position:absolute;left:8px;bottom:8px;background:rgba(0,0,0,.6);padding:2px 8px;border-radius:4px;font:12px monospace;color:var(--muted)}
 #panel{flex:0 0 auto;width:var(--pw,clamp(440px,36vw,1100px));min-width:320px;max-width:75vw;overflow:auto;background:var(--panel);border-left:1px solid var(--line);padding:10px 12px}
 #panel h3{margin:14px 0 6px;color:var(--accent);font-size:14px}#panel label{display:block;margin:6px 0}#panel label input,#panel label select,#panel textarea{width:100%}
+#panel label.row{display:flex;flex-wrap:nowrap}#panel label input[type=checkbox]{width:auto;flex:0 0 auto;margin:0 6px 0 0}
 .row{display:flex;gap:6px;align-items:center;flex-wrap:wrap}.hint{color:var(--muted);font-size:12px;margin:4px 0}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(var(--cell,clamp(100px,6.5vw,200px)),1fr));gap:8px;margin-top:8px}
 .pal{height:var(--cell,clamp(100px,6.5vw,200px));padding:6px;display:flex;align-items:center;justify-content:center;background:#d8cfee;border-radius:8px}

@@ -136,7 +136,12 @@ async function versionsPanelFill() {
   el.querySelectorAll('[data-vdel]').forEach(b => b.onclick = async () => { await vput(b.dataset.vdel); versionsPanelFill(); });
 }
 setInterval(() => { try { if (ED && DIRTY.size) vput('draft', stateNow('Unsaved work')); else if (ED) vput('draft'); } catch (e) {} }, 45000);   // crash recovery: a draft while there are unsaved changes
-async function recoverDraft() { try { const d = (await vall()).find(([k]) => k === 'draft'); if (d && confirm(`The editor found unsaved work from ${new Date(d[1].t).toLocaleString()}. Bring it back?`)) stateLoad(d[1]); else if (d) vput('draft'); } catch (e) {} }
+async function recoverDraft() {   // a banner, not a popup: the editor stays usable until you choose
+  try { const d = (await vall()).find(([k]) => k === 'draft'); if (!d) return;
+    const bar = document.createElement('div'); bar.style.cssText = 'position:fixed;left:50%;top:60px;transform:translateX(-50%);z-index:9;background:#2a2046;border:1px solid #ffd23f;border-radius:8px;padding:8px 12px;display:flex;gap:8px;align-items:center;max-width:94vw';
+    bar.innerHTML = `<span>Unsaved work from ${new Date(d[1].t).toLocaleString()} was found.</span><button id="drok">Bring it back</button><button id="drno">Discard</button>`; document.body.append(bar);
+    bar.querySelector('#drok').onclick = () => { bar.remove(); stateLoad(d[1]); toast('Restored. Save to keep it.'); };
+    bar.querySelector('#drno').onclick = () => { bar.remove(); vput('draft'); }; } catch (e) {} }
 
 // ---------- overview of every world ----------
 function overviewPanel() {
