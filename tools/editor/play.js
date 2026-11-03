@@ -15,26 +15,56 @@ function fluidTiles(id, k) {   // water or lava on this map: the game's own (dat
   return out;
 }
 const behindTiles = id => new Set((sec(id).behind || []).concat((DS.ground[id] || {}).behind || []).map(t => tk(...t)));
-const GB = { '~': 'water', '^': 'lava', 'v': 'ledge (hop down only)', 'b': 'walk behind (drawn over the player)', 'x': 'cleared' };
-function groundRect() {
-  const r = S.gRect; S.gRect = null; const s = sec(r.sid), [W, H] = s.tiles, R = rowsOf(r.sid).map(x => x.split('')), g = gnd(r.sid), b = S.brush, keys = blockedKeys(r.sid); let n = 0;
-  snap();
-  for (let y = Math.min(r.y0, r.y1); y <= Math.max(r.y0, r.y1); y++) for (let x = Math.min(r.x0, r.x1); x <= Math.max(r.x0, r.x1); x++) {
-    if (!R[y] || R[y][x] === undefined) continue;
-    if (b === '~' || b === '^') { if (x < 1 || y < 1 || x > W - 2 || y > H - 2 || keys.has(tk(x, y))) continue; const k = b === '~' ? 'water' : 'lava', o = b === '~' ? 'lava' : 'water';
-      R[y][x] = '#'; g[o] = dropT(g[o], x, y); g.no = dropT(g.no, x, y); if (!hasT(g[k], x, y)) (g[k] = g[k] || []).push([x, y]); n++; }
-    else if (b === 'v') { if (keys.has(tk(x, y))) continue; R[y][x] = 'v'; g.water = dropT(g.water, x, y); g.lava = dropT(g.lava, x, y); n++; }
+// [brush, name, colour on the map, what it does]
+const BRUSHES = [['.', 'Walkable', 'rgba(80,255,150,0.6)', 'the player can walk here'], ['#', 'Wall', 'rgba(255,40,60,0.6)', 'blocks the way'], [',', 'Tall grass', 'rgba(40,200,110,0.75)', 'walkable, with wild battles'],
+  ['~', 'Water', 'rgba(60,150,255,0.7)', 'swim with the Bubbub Ride'], ['^', 'Lava', 'rgba(255,120,40,0.75)', 'cross with the Heat Shield'], ['v', 'Ledge', 'rgba(255,255,255,0.55)', 'hop down only, a wall from below'],
+  ['b', 'Walk behind', 'rgba(215,155,255,0.6)', 'drawn over the player: tree tops, roofs, arches'], ['x', 'Clear water/lava', 'rgba(0,0,0,0.45)', 'water or lava back to plain wall']];
+const brushName = b => (BRUSHES.find(x => x[0] === b) || [, b])[1].toLowerCase();
+function applyBrush(sid, tiles, b) {   // one brush for every kind of ground; doors, exits and spawns are never closed off
+  const s = sec(sid), [W, H] = s.tiles, R = rowsOf(sid).map(x => x.split('')), g = gnd(sid), keys = blockedKeys(sid), host = builtMap(sid) || (DS.paint || {})[sid]; let n = 0, kept = 0;
+  const man = (x, y) => { if (host) (host.manual = host.manual || {})[tk(x, y)] = R[y][x]; };   // so a later terrain repaint elsewhere doesn't undo it
+  for (const [x, y] of tiles) { if (!R[y] || R[y][x] === undefined) continue; const k = tk(x, y), wet = hasT(g.water, x, y) || hasT(g.lava, x, y);
+    if (b === '.' || b === '#' || b === ',') { if (R[y][x] === b && !wet) continue; if (b === '#' && keys.has(k)) { kept++; continue; }
+      R[y][x] = b; g.water = dropT(g.water, x, y); g.lava = dropT(g.lava, x, y); man(x, y); n++; }
+    else if (b === '~' || b === '^') { if (x < 1 || y < 1 || x > W - 2 || y > H - 2 || keys.has(k)) { kept++; continue; } const kk = b === '~' ? 'water' : 'lava', o = b === '~' ? 'lava' : 'water';
+      if (R[y][x] === '#' && hasT(g[kk], x, y)) continue; R[y][x] = '#'; g[o] = dropT(g[o], x, y); g.no = dropT(g.no, x, y); if (!hasT(g[kk], x, y)) (g[kk] = g[kk] || []).push([x, y]); man(x, y); n++; }
+    else if (b === 'v') { if (keys.has(k)) { kept++; continue; } if (R[y][x] === 'v') continue; R[y][x] = 'v'; g.water = dropT(g.water, x, y); g.lava = dropT(g.lava, x, y); man(x, y); n++; }
     else if (b === 'b') { if (!hasT(g.behind, x, y)) { (g.behind = g.behind || []).push([x, y]); n++; } }
-    else if (b === 'x') { const was = fluidTiles(r.sid, 'water').has(tk(x, y)) || fluidTiles(r.sid, 'lava').has(tk(x, y));
-      g.water = dropT(g.water, x, y); g.lava = dropT(g.lava, x, y); g.behind = dropT(g.behind, x, y); if (was && !hasT(g.no, x, y)) (g.no = g.no || []).push([x, y]); if (R[y][x] === 'v') R[y][x] = '#'; n++; } }
+    else if (b === 'x') { const was = fluidTiles(sid, 'water').has(k) || fluidTiles(sid, 'lava').has(k), had = hasT(g.behind, x, y);
+      g.water = dropT(g.water, x, y); g.lava = dropT(g.lava, x, y); g.behind = dropT(g.behind, x, y); if (was && !hasT(g.no, x, y)) (g.no = g.no || []).push([x, y]); if (R[y][x] === 'v') { R[y][x] = '#'; man(x, y); } if (was || had) n++; } }
   for (const k of ['water', 'lava', 'behind', 'no']) if (g[k] && !g[k].length) delete g[k];
-  ROWS[r.sid] = R.map(x => x.join('')); touch(r.sid);
-  toast(`${n} tile(s): ${GB[b]}`); panel(); draw();
+  ROWS[sid] = R.map(x => x.join('')); if (n) touch(sid);
+  return { n, kept };
 }
-function wallsExtra() {
-  return `<div class="hint" style="margin-top:8px"><b>Ground:</b> water and lava are walls until the player has the Bubbub Ride / Heat Shield. A ledge is a one-way hop: walk down into it and you jump over; from below it's a wall. Walk-behind tiles are drawn over the player (tree tops, roofs, arches): paint the part that should cover them.</div>
-    <div class="row">${[['~', 'Water'], ['^', 'Lava'], ['v', 'Ledge'], ['b', 'Walk behind'], ['x', 'Clear ground']].map(([c, n]) => `<button class="tool ${S.brush === c ? 'on' : ''}" data-b="${c}">${n}</button>`).join('')}</div>
-    <div class="hint"><span style="color:#5ab0ff">blue</span> water, <span style="color:#ff8a3a">orange</span> lava, <span style="color:#fff">&#8595;</span> ledge, <span style="color:#d79bff">purple stripes</span> walk behind.</div>`;
+function tileInfo(sid, x, y) {   // what a tile is, in plain words (shown as you hover in Walkable)
+  const c = (rowsOf(sid)[y] || '')[x], k = tk(x, y); if (c === undefined) return '';
+  if (fluidTiles(sid, 'water').has(k)) return 'water'; if (fluidTiles(sid, 'lava').has(k)) return 'lava';
+  if (c === '#') return behindTiles(sid).has(k) ? 'wall, drawn over the player' : 'wall'; if (c === 'v') return 'ledge (hop down)';
+  const RE = reachOf(sid);
+  if (RE.solid.has(k)) return 'walkable ground, but a prop, person or stash stands on it';
+  if (!RE.seen.has(k)) return 'walkable, but cut off: no path from an exit or door reaches it';
+  return c === ',' ? 'tall grass (wild battles)' : 'walkable';
+}
+function brushReport(sid, tiles, res, b) {   // say what happened, and why any of it still isn't green
+  const R = rowsOf(sid), RE = reachOf(sid); let cut = 0, under = 0;
+  if (b === '.' || b === ',') for (const [x, y] of tiles) { const k = tk(x, y), c = (R[y] || '')[x]; if (c !== '.' && c !== ',') continue; if (RE.solid.has(k)) under++; else if (!RE.seen.has(k)) cut++; }
+  let m = res.n ? `${res.n} tile${res.n === 1 ? '' : 's'} set to ${brushName(b)}.` : `Already ${brushName(b)}: nothing to change.`;
+  if (res.kept) m += ` ${res.kept} door, exit or spawn tile${res.kept === 1 ? '' : 's'} left open.`;
+  if (cut) m += ` ${cut} of them ${cut === 1 ? 'is' : 'are'} walkable but cut off (orange): paint a walkable path joining ${cut === 1 ? 'it' : 'them'} to the green ground.`;
+  if (under) m += ` ${under} ${under === 1 ? 'is' : 'are'} under a prop or person (purple), which blocks ${under === 1 ? 'it' : 'them'}: move or remove it in Place.`;
+  toast(m, cut || under ? 9000 : 3000);
+}
+function wallsPanel() {
+  return `<ol class="steps"><li>Pick what the ground should be.</li><li>${S.wtool === 'brush' ? 'Drag across the map like a paintbrush.' : 'Tap a tile, or press and drag a box over many.'}</li><li>Check the colours: <b style="color:#7dffa0">green</b> means the player can get there.</li></ol>
+    <div class="brushes">${BRUSHES.map(([c, n, col, what]) => `<button class="tool ${S.brush === c ? 'on' : ''}" data-b="${c}" title="${what}"><span class="sw" style="background:${col}"></span>${n}</button>`).join('')}</div>
+    <div class="hint" style="margin:4px 0 8px">${(BRUSHES.find(x => x[0] === S.brush) || [, , , ''])[3]}</div>
+    <div class="row"><span class="hint">Tool</span><button class="tool ${S.wtool !== 'brush' ? 'on' : ''}" data-wt="box">&#9634; Box</button><button class="tool ${S.wtool === 'brush' ? 'on' : ''}" data-wt="brush">&#128396; Brush</button></div>
+    <h4>What the colours mean</h4>
+    <div class="legend"><div><span class="sw" style="background:rgba(80,255,150,0.6)"></span>walkable, and the player can reach it</div><div><span class="sw" style="background:rgba(40,200,110,0.85)"></span>tall grass (wild battles)</div>
+    <div><span class="sw" style="background:rgba(255,150,0,0.8)"></span><b>walkable but cut off</b>: no path from an exit or door gets there yet. Paint walkable ground to join it up.</div>
+    <div><span class="sw" style="background:rgba(150,90,255,0.6)"></span>walkable ground under a prop or person (they block it)</div><div><span class="sw" style="background:rgba(255,40,60,0.6)"></span>wall</div>
+    <div><span class="sw" style="background:rgba(60,150,255,0.7)"></span>water <span class="sw" style="background:rgba(255,120,40,0.75);margin-left:8px"></span>lava <span class="sw" style="background:rgba(255,255,255,0.55);margin-left:8px"></span>ledge</div></div>
+    <p class="hint">Doors, exits and spawn points are never walled over. ${matchMedia('(pointer:coarse)').matches ? '' : 'Hover a tile to see what it is (bottom left of the map).'}</p>`;
 }
 
 // ---------- people and trainers ----------
@@ -149,7 +179,7 @@ function wildPanel() {
   const tot = m => e.encounters.filter(x => (m === 'surf') === (x.method === 'surf')).reduce((a, x) => a + x.weight, 0);
   const st = settingsOf(id), bad = e.encounters.filter(x => !(habFit(x.types, e.habitat) || (x.method === 'surf' && x.types.includes('Hydro'))));
   return `<h3>Wild Alienmon: ${sec(id).name}</h3>
-    <p class="hint">This map has <b>${grass}</b> tall-grass tiles and <b>${water}</b> water tiles${sec(id).type === 'cave' && !grass ? ' (a cave with no grass: the whole floor is wild ground)' : ''}. Encounter rate: ${st.rate == null ? 'normal' : st.rate + 'x'} (change it in Map settings). Paint tall grass with Walls, water with the Ground brushes.</p>
+    <p class="hint">This map has <b>${grass}</b> tall-grass tiles and <b>${water}</b> water tiles${sec(id).type === 'cave' && !grass ? ' (a cave with no grass: the whole floor is wild ground)' : ''}. Encounter rate: ${st.rate == null ? 'normal' : st.rate + 'x'} (change it in Map settings). Paint tall grass and water in Paint: Terrain or Paint: Walkable.</p>
     <label>Habitat <select id="whab">${Object.keys(ED.hab.habitats).sort().map(h => `<option ${h === e.habitat ? 'selected' : ''}>${h}</option>`).join('')}</select></label>
     <div class="hint">${esc(H_.description)} Native: ${(H_.native || []).join(', ') || '-'}. Tolerated: ${(H_.tolerated || []).join(', ') || '-'}.</div>
     ${bad.length ? `<div class="bad">${bad.map(x => x.name).join(', ')} can't live in ${e.habitat}: the build refuses this map until they're removed or the habitat changes.</div>` : ''}
@@ -215,6 +245,7 @@ function paintRows(id) {   // tiles under 3+ corners of a terrain take its groun
   const any = new Set(p.touched || []);
   for (const st of p.stamps || []) { const cl = clipById(st.c); if (!cl) continue; for (let j = 0; j < cl.h; j++) for (let i = 0; i < cl.w; i++) { const x = st.x + i, y = st.y + j; if (R[y] && R[y][x] !== undefined) { R[y][x] = cl.rows[j][i]; any.add(tk(x, y)); } } }
   for (const ly of p.terrain) { const v = ly.v, at = (a, b) => v.charCodeAt(b * (W + 1) + a) === 49; for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) if (at(x, y) || at(x + 1, y) || at(x, y + 1) || at(x + 1, y + 1)) any.add(tk(x, y)); }
+  for (const [k, ch] of Object.entries(p.manual || {})) { const [x, y] = k.split(',').map(Number); if (R[y] && R[y][x] !== undefined) { R[y][x] = ch; any.add(k); } }   // Walkable edits made after the terrain
   p.touched = [...any];
   for (const k of any) { const [x, y] = k.split(',').map(Number); if (cur[y]) cur[y][x] = R[y][x]; }
   ROWS[id] = cur.map(r => r.join('')); touch(id); draw();
@@ -374,7 +405,6 @@ function _logicTail() {
 
 // ---------- hooks (called from design.js) ----------
 function designPanel2(m) {
-  if (m === 'walls') return wallsExtra();
   if (m === 'items') return itemsPanel();
   if (m === 'wild') return wildPanel();
   if (m === 'settings') return settingsPanel();
@@ -385,12 +415,11 @@ function designWire2() { const m = S.mode; if (m === 'people') personWire(); if 
 function designDown2(e, t, wx, wy) {
   if (S.mode === 'play') { if (e.button === 0 && !e.altKey && t) { if (canWalk(t.sid, t.x, t.y)) playStart(t.sid, t.x, t.y); else toast('Start on a walkable tile.'); return true; } return false; }
   if (e.button !== 0 || e.altKey || !t) return false;
-  if (S.mode === 'walls' && '~^vbx'.includes(S.brush)) { S.gRect = { sid: t.sid, x0: t.x, y0: t.y, x1: t.x, y1: t.y }; draw(); return true; }
   if (S.mode === 'items') { itemPlace(t); return true; }
   return false;
 }
-function designMove2(e, t) { if (S.gRect) { if (t && t.sid === S.gRect.sid) { S.gRect.x1 = t.x; S.gRect.y1 = t.y; draw(); } return true; } return false; }
-function designUp2() { if (S.gRect) groundRect(); }
+function designMove2() { return false; }
+function designUp2() {}
 function designKey2(e) {
   if (S.mode !== 'play' || !S.play) return false;
   if (KEYS[e.key]) { e.preventDefault(); HELD[KEYS[e.key]] = 1; return true; }
@@ -413,8 +442,6 @@ function designDraw2(ctx) {
       const on = mine && S.osel && S.osel.sid === s.id && S.osel.i === i; ctx.fillStyle = mine ? (on ? '#ffd23f' : 'rgba(255,210,63,0.75)') : 'rgba(180,180,180,0.7)'; ctx.fillRect(ox + o.tile[0] * 16 + 2, oy + o.tile[1] * 16 + 2, 12, 12);
       ctx.fillStyle = '#1b1424'; ctx.font = 'bold 10px sans-serif'; ctx.fillText(L, ox + o.tile[0] * 16 + 5, oy + o.tile[1] * 16 + 12); }
   }
-  if (S.gRect) { const r = S.gRect, [ox, oy] = origin(sec(r.sid)), x0 = Math.min(r.x0, r.x1), y0 = Math.min(r.y0, r.y1); ctx.fillStyle = { '~': 'rgba(60,150,255,0.5)', '^': 'rgba(255,120,40,0.5)', v: 'rgba(255,255,255,0.4)', b: 'rgba(215,155,255,0.5)', x: 'rgba(0,0,0,0.4)' }[S.brush];
-    ctx.fillRect(ox + x0 * 16, oy + y0 * 16, (Math.abs(r.x1 - r.x0) + 1) * 16, (Math.abs(r.y1 - r.y0) + 1) * 16); }
   playDraw(ctx);
 }
 function designBundle2(b) {

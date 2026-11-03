@@ -6,7 +6,54 @@
 'use strict';
 let TILESETS = [], TSIMG = {};
 const TSC = {};   // id -> {fill, rim} 256x256 mask sheets (64 px pieces) or {sheet} image
-const tsById = id => TILESETS.find(t => t.id === id);
+const tsById = id => TILESETS.find(t => t.id === id) || starters().find(t => t.id === id);
+
+// ---------- starter terrains: drawn in code, ready on every world (never saved; maps keep their id) ----------
+function rng(seed) { let s = seed >>> 0 || 1; return () => ((s = (s * 1664525 + 1013904223) >>> 0) / 4294967296); }
+function texCanvas(paint, seed) {   // a 128 px seamless texture (8 tiles at game scale): whatever crosses an edge is drawn again on the other side
+  const N = 128, c = document.createElement('canvas'); c.width = c.height = N; const g = c.getContext('2d'), r = rng(seed);
+  const wrap = f => { for (const dx of [-N, 0, N]) for (const dy of [-N, 0, N]) { g.save(); g.translate(dx, dy); f(); g.restore(); } };
+  paint(g, r, wrap, N); return c;
+}
+function speck(g, r, wrap, N, n, cols, s0, s1) { for (let i = 0; i < n; i++) { const x = r() * N, y = r() * N, s = s0 + r() * (s1 - s0), c = cols[(r() * cols.length) | 0]; wrap(() => { g.fillStyle = c; g.fillRect(x, y, s, s); }); } }
+const texBase = (g, N, c) => { g.fillStyle = c; g.fillRect(0, 0, N, N); };
+const TEX = {
+  path: (g, r, w, N) => {texBase(g, N, '#a07d55'); speck(g, r, w, N, 900, ['#8d6b46', '#b38f63', '#96734d', '#c09c70'], 1, 3);
+    for (let i = 0; i < 40; i++) { const x = r() * N, y = r() * N, a = 1.5 + r() * 2.5; w(() => { g.fillStyle = '#6e5a46'; g.beginPath(); g.ellipse(x, y + 0.8, a, a * 0.7, 0, 0, 6.29); g.fill(); g.fillStyle = '#b9a58e'; g.beginPath(); g.ellipse(x - 0.4, y - 0.3, a * 0.75, a * 0.5, 0, 0, 6.29); g.fill(); }); } },
+  road: (g, r, w, N) => {texBase(g, N, '#5d5a62');
+    for (let y = 0; y < N; y += 16) { let x = (y / 16) % 2 ? -9 : 0; while (x < N) { const bw = 14 + Math.floor(r() * 8), c = ['#a19ea8', '#938f9b', '#aaa6b0', '#8c8894'][(r() * 4) | 0], X = x, Y = y;
+      w(() => { g.fillStyle = '#47444c'; g.beginPath(); g.roundRect(X + 1.5, Y + 2, bw - 3, 13, 4); g.fill(); g.fillStyle = c; g.beginPath(); g.roundRect(X + 1.5, Y + 1.5, bw - 3, 12, 4); g.fill(); g.fillStyle = 'rgba(255,255,255,0.18)'; g.fillRect(X + 4, Y + 3, bw - 9, 2); }); x += bw; } } },
+  grass: (g, r, w, N) => {texBase(g, N, '#5f9b45'); speck(g, r, w, N, 1400, ['#4f8a3a', '#6fae52', '#578f40', '#7cbb5c'], 1, 3); speck(g, r, w, N, 14, ['#f7e27a', '#f0a6c8', '#ffffff'], 2, 2.5); },
+  tall: (g, r, w, N) => {texBase(g, N, '#2f6a2c'); const bl = [];
+    for (let i = 0; i < 900; i++) bl.push([r() * N, r() * N, 5 + r() * 5, (r() - 0.5) * 4, ['#5aa043', '#6cb84f', '#4b8e3b', '#7fca5e', '#3f7f35'][(r() * 5) | 0]]);
+    bl.sort((a, b) => a[1] - b[1]); g.lineWidth = 1.6; g.lineCap = 'round';
+    for (const [x, y, h, l, c] of bl) w(() => { g.strokeStyle = c; g.beginPath(); g.moveTo(x, y); g.quadraticCurveTo(x + l * 0.3, y - h * 0.6, x + l, y - h); g.stroke(); }); },
+  sand: (g, r, w, N) => {texBase(g, N, '#e0c98f'); speck(g, r, w, N, 1000, ['#d4bb7f', '#ead6a2', '#cdb176'], 1, 2); g.strokeStyle = 'rgba(160,128,78,0.35)'; g.lineWidth = 1.2;
+    for (let k = 0; k < 8; k++) { const y0 = k * 16 + r() * 6; g.beginPath(); for (let x = 0; x <= N; x += 2) g.lineTo(x, y0 + 2.5 * Math.sin(6.2832 * x / N * 2 + k)); g.stroke(); } },
+  water: (g, r, w, N) => {texBase(g, N, '#3f86c9'); speck(g, r, w, N, 500, ['#3a7dbd', '#4a92d3', '#357abb'], 2, 5); g.lineWidth = 1.5; g.lineCap = 'round';
+    for (let i = 0; i < 34; i++) { const x = r() * N, y = r() * N, a = 3 + r() * 5; w(() => { g.strokeStyle = 'rgba(160,215,250,0.75)'; g.beginPath(); g.arc(x, y, a, 3.6, 5.8); g.stroke(); }); } },
+  lava: (g, r, w, N) => {texBase(g, N, '#ff7a22'); speck(g, r, w, N, 300, ['#ffb13b', '#ff9a2e'], 2, 4);
+    for (let i = 0; i < 26; i++) { const x = r() * N, y = r() * N, a = 7 + r() * 9, pts = Array.from({ length: 7 }, (_, k) => [Math.cos(k * 0.9) * a * (0.7 + r() * 0.4), Math.sin(k * 0.9) * a * (0.6 + r() * 0.4)]);
+      w(() => { g.fillStyle = '#5a2a20'; g.beginPath(); pts.forEach(([u, v]) => g.lineTo(x + u, y + v)); g.fill(); g.fillStyle = 'rgba(255,255,255,0.08)'; g.fillRect(x - a / 2, y - a / 3, a / 2, 1.5); }); } },
+  rock: (g, r, w, N) => {texBase(g, N, '#7b7480'); speck(g, r, w, N, 900, ['#6d6672', '#8a8390', '#736c78', '#958e9b'], 1, 4); g.strokeStyle = 'rgba(40,34,46,0.6)'; g.lineWidth = 1;
+    for (let i = 0; i < 16; i++) { let x = r() * N, y = r() * N; const p = [[x, y]]; for (let k = 0; k < 4; k++) { x += (r() - 0.5) * 14; y += (r() - 0.5) * 14; p.push([x, y]); } w(() => { g.beginPath(); p.forEach(([u, v]) => g.lineTo(u, v)); g.stroke(); }); } },
+  snow: (g, r, w, N) => {texBase(g, N, '#eef4fb'); speck(g, r, w, N, 900, ['#dfe9f5', '#ffffff', '#d5e2f0'], 1, 3); },
+  hedge: (g, r, w, N) => {texBase(g, N, '#24491f'); for (let i = 0; i < 260; i++) { const x = r() * N, y = r() * N, a = 3 + r() * 5, c = ['#3d7535', '#4a8a40', '#2f5f2a', '#56994a'][(r() * 4) | 0]; w(() => { g.fillStyle = c; g.beginPath(); g.arc(x, y, a, 0, 6.29); g.fill(); }); } },
+  wood: (g, r, w, N) => { for (let y = 0; y < N; y += 16) { g.fillStyle = ['#a8743f', '#9b6a38', '#b27c45'][(y / 16) % 3]; g.fillRect(0, y, N, 16); g.fillStyle = '#5e3c1e'; g.fillRect(0, y + 15, N, 1);
+      const off = (y / 16) % 2 ? 32 : 0; for (let x = off; x < N + 64; x += 64) g.fillRect(x % N, y, 1, 15); g.fillStyle = 'rgba(0,0,0,0.08)'; for (let k = 0; k < 6; k++) g.fillRect(r() * N, y + 3 + r() * 9, 10 + r() * 20, 1); } },
+  tiles: (g, r, w, N) => {texBase(g, N, '#a69d8b'); for (let y = 0; y < N; y += 16) for (let x = 0; x < N; x += 16) { g.fillStyle = (x + y) / 16 % 2 ? '#d9d2c3' : '#cfc7b6'; g.fillRect(x + 1, y + 1, 14, 14); } },
+};
+let STARTERS = null;
+function starters() {   // [id, name, texture, ground, roughness, edge line, edge colour, raised]
+  if (STARTERS) return STARTERS;
+  STARTERS = [['s_path', 'Dirt path', 'path', '.', 0.45, 0.35, '#5a4128'], ['s_road', 'Stone road', 'road', '.', 0.1, 0.5, '#3a3640'], ['s_grass', 'Short grass', 'grass', '.', 0.6, 0.25, '#2d5a22'],
+    ['s_tall', 'Tall grass (wild battles)', 'tall', ',', 0.7, 0.45, '#1d3f1a'], ['s_sand', 'Sand', 'sand', '.', 0.5, 0.25, '#a8884f'], ['s_snow', 'Snow', 'snow', '.', 0.55, 0.2, '#9fb3c8'],
+    ['s_water', 'Water (swim with the Bubbub Ride)', 'water', '~', 0.4, 0.6, '#d8c690'], ['s_lava', 'Lava (cross with the Heat Shield)', 'lava', '^', 0.45, 0.6, '#2a1410'],
+    ['s_rock', 'Rock / cliff (blocked)', 'rock', '#', 0.35, 0.5, '#2b2630', 1], ['s_hedge', 'Hedge (blocked)', 'hedge', '#', 0.6, 0.4, '#13280f', 1],
+    ['s_wood', 'Wood floor (rooms)', 'wood', '.', 0, 0.2, '#3a2412'], ['s_tiles', 'Tiled floor (rooms)', 'tiles', '.', 0, 0.2, '#6d6556']]
+    .map(([id, name, k, walk, rough, rim, rimColor, shadow], i) => ({ id, name, kind: 'auto', walk, rough, rim, rimColor, shadow: !!shadow, seed: i * 1.3, texTiles: 8, starter: true, dir: '*', tex: texCanvas(TEX[k], 7 + i * 31) }));
+  return STARTERS;
+}
 const corners = i => [i & 1, (i >> 1) & 1, (i >> 2) & 1, (i >> 3) & 1];   // NW, NE, SW, SE
 
 // ---------- edge masks for 'auto' tilesets ----------
@@ -29,7 +76,8 @@ function maskSheets(t) {
   fill.getContext('2d').putImageData(fd, 0, 0); rim.getContext('2d').putImageData(rd, 0, 0);
   return (TSC[t.id] = { fill, rim, key: t.rough + '|' + t.rim + '|' + t.seed });
 }
-function texOf(t) {   // the texture an auto tileset paints with: a map clip (16 px per tile already) or an uploaded picture
+function texOf(t) {   // the texture an auto tileset paints with: a starter's own canvas, a map clip (16 px per tile already) or an uploaded picture
+  if (t.tex) return t.tex;
   if (t.clip) { const c = clipById(t.clip); return c && clipImg(c); }
   return img(TSIMG[t.id] || t.url);
 }
@@ -39,7 +87,7 @@ function layerDraw(g, t, v, W, H) {
   const L = document.createElement('canvas'); L.width = W * 16; L.height = H * 16; const l = L.getContext('2d');
   if (t.kind === 'sheet') { const sh = img(TSIMG[t.id] || t.url); if (!ok(sh)) return; const n = sh.naturalWidth / 4; l.imageSmoothingEnabled = true;
     for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) { const i = idx(x, y); if (i) l.drawImage(sh, (i % 4) * n, (i >> 2) * n, n, sh.naturalHeight / 4, x * 16, y * 16, 16, 16); } }
-  else { const tex = texOf(t); if (!ok(tex)) return; const M = maskSheets(t), sc = t.clip ? 1 : (t.texTiles || 4) * 16 / tex.naturalWidth;
+  else { const tex = texOf(t); if (!tex || !(tex.width && !tex.naturalWidth ? tex.width : ok(tex))) return; const M = maskSheets(t), sc = t.clip ? 1 : (t.texTiles || 4) * 16 / (tex.naturalWidth || tex.width);
     const pat = l.createPattern(tex, 'repeat'); if (pat.setTransform) pat.setTransform(new DOMMatrix([sc, 0, 0, sc, 0, 0]));
     l.fillStyle = pat; l.fillRect(0, 0, W * 16, H * 16);
     const mk = document.createElement('canvas'); mk.width = W * 16; mk.height = H * 16; const m = mk.getContext('2d'); m.imageSmoothingEnabled = true;
@@ -53,32 +101,46 @@ function layerDraw(g, t, v, W, H) {
 }
 function terrTarget(id) { return builtMap(id) || paintTarget(id); }   // a built map, or a finished map with a terrain layer on top (play.js)
 function terrBake(id) { if (builtMap(id)) bake(id); else paintBake(id); }
-function terrRows(id) { if (builtMap(id)) stampRows(id); else paintRows(id); }
+function terrRows(id) { if (builtMap(id)) stampRows(id); else paintRows(id); terrFluids(id); }
 function terrainBake(m, g, W, H) { for (const ly of m.terrain || []) { const t = tsById(ly.ts); if (t) layerDraw(g, t, ly.v, W, H); } }
-function terrainRows(m, R, W, H) {   // a tile takes its terrain's ground when 3 or 4 of its corners are that terrain (the later layer wins)
+const fluidCh = w => w === '~' || w === '^';
+function terrainRows(m, R, W, H) {   // a tile takes its terrain's ground when 3 or 4 of its corners are that terrain (the later layer wins); water and lava are walls the game lets you cross later
   for (const ly of m.terrain || []) { const t = tsById(ly.ts); if (!t || !t.walk) continue; const v = ly.v, at = (x, y) => v.charCodeAt(y * (W + 1) + x) === 49 ? 1 : 0;
-    for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) if (at(x, y) + at(x + 1, y) + at(x, y + 1) + at(x + 1, y + 1) >= 3) R[y][x] = t.walk; }
+    for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) if (at(x, y) + at(x + 1, y) + at(x, y + 1) + at(x + 1, y + 1) >= 3) R[y][x] = fluidCh(t.walk) ? '#' : t.walk; }
 }
+function terrFluids(id) {   // water and lava terrain also count as the game's water and lava (Bubbub Ride, Heat Shield, surf encounters)
+  const m = builtMap(id) || (DS.paint || {})[id]; if (!m) return; const [W, H] = sec(id).tiles, now = { water: [], lava: [] }, cell = Array.from({ length: H }, () => Array(W).fill(null));
+  for (const ly of m.terrain || []) { const t = tsById(ly.ts); if (!t || !t.walk) continue; const v = ly.v, at = (x, y) => v.charCodeAt(y * (W + 1) + x) === 49 ? 1 : 0;
+    for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) if (at(x, y) + at(x + 1, y) + at(x, y + 1) + at(x + 1, y + 1) >= 3) cell[y][x] = t.walk; }
+  for (let y = 1; y < H - 1; y++) for (let x = 1; x < W - 1; x++) if (cell[y][x] === '~' || cell[y][x] === '^') now[cell[y][x] === '~' ? 'water' : 'lava'].push([x, y]);
+  const g = gnd(id), old = m.fl || { water: [], lava: [] };
+  for (const k of ['water', 'lava']) { const drop = new Set(old[k].map(t => tk(...t))), keep = (g[k] || []).filter(t => !drop.has(tk(...t))), have = new Set(keep.map(t => tk(...t)));
+    g[k] = keep.concat(now[k].filter(t => !have.has(tk(...t)))); if (!g[k].length) delete g[k]; }
+  m.fl = now; if (!now.water.length && !now.lava.length) delete m.fl;
+}
+function clearManual(m, x0, y0, x1, y1) { if (!m.manual) return; for (let y = y0; y <= y1; y++) for (let x = x0; x <= x1; x++) delete m.manual[tk(x, y)]; }   // a newer terrain or stamp wins over an older Walkable edit
 
-// ---------- painting ----------
+// ---------- painting (works on one map or on the whole stitched world: the stroke stays on the map it started on) ----------
 function layerFor(m, ts) { const [W, H] = sec(m.id).tiles; m.terrain = m.terrain || []; let ly = m.terrain.find(l => l.ts === ts);
   if (!ly) { ly = { ts, v: '0'.repeat((W + 1) * (H + 1)) }; m.terrain.push(ly); } return ly; }
 let TBAKE = 0;
 function terrainPaint(wx, wy) {
-  const m = terrTarget(S.view), t = S.terr; if (!m || !t) return; const [W, H] = sec(m.id).tiles, n = S.tbrush || 1;
-  const cx = Math.floor(wx / 16), cy = Math.floor(wy / 16); if (cx < 0 || cy < 0 || cx >= W || cy >= H) return;
-  const ly = layerFor(m, t), a = ly.v.split(''), x0 = cx - Math.floor((n - 1) / 2), y0 = cy - Math.floor((n - 1) / 2), ch = S.terase ? '0' : '1'; let hit = false;
-  for (let y = y0; y <= y0 + n; y++) for (let x = x0; x <= x0 + n; x++) if (x >= 0 && y >= 0 && x <= W && y <= H && a[y * (W + 1) + x] !== ch) { a[y * (W + 1) + x] = ch; hit = true; }
-  if (!hit) return; ly.v = a.join('');
-  if (!TBAKE) TBAKE = requestAnimationFrame(() => { TBAKE = 0; terrBake(m.id); });
+  const id = S.tsid, m = id && terrTarget(id), t = S.terr; if (!m || (!t && !S.terase)) return; const s = sec(id), [W, H] = s.tiles, [ox, oy] = origin(s), n = S.tbrush || 1;
+  const cx = Math.floor((wx - ox) / 16), cy = Math.floor((wy - oy) / 16); if (cx < 0 || cy < 0 || cx >= W || cy >= H) return;
+  const x0 = cx - Math.floor((n - 1) / 2), y0 = cy - Math.floor((n - 1) / 2); let hit = false;
+  for (const ly of S.terase ? (m.terrain || []) : [layerFor(m, t)]) { const a = ly.v.split(''), ch = S.terase ? '0' : '1';   // the eraser clears every terrain under it
+    for (let y = y0; y <= y0 + n; y++) for (let x = x0; x <= x0 + n; x++) if (x >= 0 && y >= 0 && x <= W && y <= H && a[y * (W + 1) + x] !== ch) { a[y * (W + 1) + x] = ch; hit = true; }
+    ly.v = a.join(''); }
+  if (!hit) return; clearManual(m, x0 - 1, y0 - 1, x0 + n, y0 + n);
+  if (!TBAKE) TBAKE = requestAnimationFrame(() => { TBAKE = 0; terrBake(id); });
 }
-function terrainFill(all) { const m = terrTarget(S.view); if (!m || !S.terr) return; const [W, H] = sec(m.id).tiles; snap(); layerFor(m, S.terr).v = (all ? '1' : '0').repeat((W + 1) * (H + 1)); terrBake(m.id); terrRows(m.id); panel(); }
+function terrainFill(all) { const id = S.view !== 'outdoor' ? S.view : S.tsid; if (!id) return toast('Open one map from the map list first.'); const m = terrTarget(id); if (!m || !S.terr) return toast('Pick a terrain first.');
+  const [W, H] = sec(id).tiles; snap(); layerFor(m, S.terr).v = (all ? '1' : '0').repeat((W + 1) * (H + 1)); if (all) delete m.manual; terrBake(id); terrRows(id); panel(); }
 function terrainDown(t, wx, wy) {
-  if (S.view === 'outdoor') return toast('Open one map from the map list to paint on it.');
-  if (!S.terr) return toast('Pick a terrain on the right first.');
-  snap(); S.terrPaint = true; terrainPaint(wx, wy);
+  if (!S.terr && !S.terase) return toast('Pick a terrain on the right first.');
+  S.tsid = t.sid; snap(); S.terrPaint = true; terrainPaint(wx, wy);
 }
-function terrainUp() { if (!S.terrPaint) return; S.terrPaint = false; const id = S.view; cancelAnimationFrame(TBAKE); TBAKE = 0; terrBake(id); terrRows(id); panel(); }
+function terrainUp() { if (!S.terrPaint) return; S.terrPaint = false; const id = S.tsid; cancelAnimationFrame(TBAKE); TBAKE = 0; terrBake(id); terrRows(id); panel(); }
 
 // ---------- tileset library ----------
 function tsPreview(t, size) {   // a small sample patch: an island with a bay and a hole, so every kind of edge shows
@@ -86,7 +148,7 @@ function tsPreview(t, size) {   // a small sample patch: an island with a bay an
   const c = document.createElement('canvas'); c.width = W * 16; c.height = H * 16; const g = c.getContext('2d'); g.fillStyle = '#6b5b45'; g.fillRect(0, 0, W * 16, H * 16);
   layerDraw(g, t, v, W, H); return c.toDataURL();
 }
-function addTileset(t) { let k = 1; while (tsById('t' + k)) k++; t.id = 't' + k; t.dir = S.planet; t.seed = t.seed ?? Math.round(Math.random() * 60) / 10; snap(); TILESETS.push(t); DIRTY.add('tilesets'); $('#save').classList.add('hot'); S.terr = t.id; panel(); toast(`Terrain "${t.name}" ready. Paint it on a built map.`); }
+function addTileset(t) { let k = 1; while (tsById('t' + k)) k++; t.id = 't' + k; t.dir = S.planet; t.seed = t.seed ?? Math.round(Math.random() * 60) / 10; snap(); TILESETS.push(t); DIRTY.add('tilesets'); $('#save').classList.add('hot'); S.terr = t.id; S.terase = false; panel(); toast(`Terrain "${t.name}" is ready: drag on any map to paint it.`, 5000); }
 const readFile = f => new Promise(r => { const fr = new FileReader(); fr.onload = () => r(fr.result); fr.readAsDataURL(f); });
 function templatePng() {   // the blank 4x4 layout, for drawing a sheet by hand or attaching to an image generator
   const n = 64, c = document.createElement('canvas'); c.width = c.height = n * 4; const g = c.getContext('2d');
@@ -105,65 +167,69 @@ const PROMPTS = {
 };
 function copyPrompt(k) { const name = ($('#pname2') || {}).value || ''; const t = PROMPTS[k](name); navigator.clipboard ? navigator.clipboard.writeText(t).then(() => toast('Prompt copied. Paste it into ChatGPT with a reference picture.'), () => prompt('Copy this prompt:', t)) : prompt('Copy this prompt:', t); }
 
+const GROUNDS = [['.', 'walkable'], [',', 'tall grass (wild battles)'], ['~', 'water (swim with the Bubbub Ride)'], ['^', 'lava (cross with the Heat Shield)'], ['#', 'blocked (cliff, hedge, wall)'], ['', 'looks only (keeps the ground under it)']];
+const groundName = w => (GROUNDS.find(g => g[0] === (w || '')) || GROUNDS[0])[1];
 function terrainPanel() {
-  const m = S.view !== 'outdoor' && (builtMap(S.view) || DS.paint[S.view] || { id: S.view, terrain: [], over: 1 }), list = TILESETS.filter(t => S.tsAll || t.dir === S.planet), cur = S.terr && tsById(S.terr);
-  const prev = cur ? tsPreview(cur, 48) : '';
-  return `<div id="preview"><div class="box" id="pbox">${prev ? `<img src="${prev}">` : ''}</div><div class="cap" id="pcap">${cur ? `${cur.name}: the 15 pieces it makes (painting picks them for you)` : 'Pick a terrain to see its pieces'}</div></div>
-  <h3>Terrain painter</h3><p class="hint">${m ? 'Pick a terrain, then press and drag on the map. Edges, corners, islands and holes join up by themselves as you paint. Walls and walkable ground follow the terrain.' + (builtMap(S.view) ? '' : ' <b>This is a finished map:</b> the terrain goes on a see-through layer over it, so the picture underneath is never changed.') : '<b>Open one map</b> from the map list to paint on it (a finished map or one you built), or make a new one at the bottom of this panel.'}</p>
-  ${m ? `<div class="row"><button class="tool ${!S.terase ? 'on' : ''}" id="tpaint">Paint</button><button class="tool ${S.terase ? 'on' : ''}" id="terase">Erase</button>
-    Brush ${[1, 2, 3, 4].map(n => `<button class="tool ${(S.tbrush || 1) === n ? 'on' : ''}" data-tb="${n}">${n}</button>`).join('')}</div>
-    <div class="row" style="margin-top:6px"><button id="tfill">Fill the whole map</button><button id="tclear">Clear this terrain</button></div>
-    ${(m.terrain || []).length ? `<div class="hint">Layers, bottom to top: ${(m.terrain || []).map((l, i) => `<button data-tup="${i}" title="Move up a layer">${(tsById(l.ts) || {}).name || l.ts} ${i ? '&#8593;' : ''}</button>`).join(' ')}</div>` : ''}` : ''}
-  <label class="row"><input type="checkbox" id="tsall" ${S.tsAll ? 'checked' : ''}> show terrains from every world</label>
-  <div class="grid">${list.map(t => `<button class="pal ${S.terr === t.id ? 'on' : ''}" data-ts="${t.id}" data-cap="${t.name} · ${{ '.': 'walkable', ',': 'tall grass (wild battles)', '#': 'blocked', '': 'keeps the walls under it' }[t.walk || '']}" title="${t.name}"><img src="${tsPreview(t, 24)}"></button>`).join('') || '<div class="hint">No terrains yet. Make one below.</div>'}</div>
-  ${cur ? `<div class="sel" style="margin-top:8px"><b>${cur.name}</b>
-    <label>Ground <select id="tswalk">${[['.', 'walkable'], [',', 'tall grass (wild battles)'], ['#', 'blocked (water, lava, cliff)'], ['', 'keep what is under it']].map(([v, n]) => `<option value="${v}" ${(cur.walk || '') === v ? 'selected' : ''}>${n}</option>`).join('')}</select></label>
+  const one = S.view !== 'outdoor', m = one && (builtMap(S.view) || DS.paint[S.view]), mine = TILESETS.filter(t => S.tsAll || t.dir === S.planet), cur = S.terr && tsById(S.terr);
+  const pal = t => `<button class="pal ${S.terr === t.id && !S.terase ? 'on' : ''}" data-ts="${t.id}" data-cap="${esc(t.name)} · ${groundName(t.walk)}" title="${esc(t.name)}"><img src="${tsPreview(t, 24)}"></button>`;
+  return `<div id="preview"><div class="box" id="pbox">${cur ? `<img src="${tsPreview(cur, 48)}">` : ''}</div><div class="cap" id="pcap">${cur ? `${esc(cur.name)} · ${groundName(cur.walk)}` : 'Pick a terrain to see it'}</div></div>
+  <ol class="steps"><li>Pick a terrain below.</li><li>Press and drag on any map to paint it. Edges and corners join up by themselves.</li><li>The ground follows the terrain: paths are walkable, tall grass starts wild battles, water and lava block the way until the player has the gear.</li></ol>
+  <div class="row"><button class="tool ${!S.terase ? 'on' : ''}" id="tpaint">&#128396; Paint</button><button class="tool ${S.terase ? 'on' : ''}" id="terase">&#9003; Eraser</button>
+    <span class="hint">Brush</span>${[1, 2, 3, 5].map(n => `<button class="tool ${(S.tbrush || 1) === n ? 'on' : ''}" data-tb="${n}">${n}</button>`).join('')}</div>
+  ${one ? `<div class="row" style="margin-top:6px"><button id="tfill" ${cur ? '' : 'disabled'}>Fill this whole map${cur ? ' with ' + esc(cur.name.split(' (')[0]) : ''}</button><button id="tclear" ${cur ? '' : 'disabled'}>Remove it from this map</button></div>` : ''}
+  ${m && (m.terrain || []).length > 1 ? `<div class="hint">On this map, bottom to top: ${m.terrain.map((l, i) => `<button data-tup="${i}" title="Move up a layer">${esc((tsById(l.ts) || {}).name || l.ts)} ${i ? '&#8593;' : ''}</button>`).join(' ')}</div>` : ''}
+  ${one && !builtMap(S.view) ? '<p class="hint">Finished maps keep their picture: terrain goes on a see-through layer on top.</p>' : ''}
+  <h4>Starter terrains</h4><div class="grid">${starters().map(pal).join('')}</div>
+  <h4>Your terrains</h4><div class="grid">${mine.map(pal).join('') || '<div class="hint">None yet. Make one below, or copy a starter to change it.</div>'}</div>
+  <label class="row"><input type="checkbox" id="tsall" ${S.tsAll ? 'checked' : ''}> show terrains made on every world</label>
+  ${cur ? `<div class="sel" style="margin-top:8px"><b>${esc(cur.name)}</b>
+    ${cur.starter ? `<div class="hint">Ground: ${groundName(cur.walk)}. Starter terrains can't be changed.</div><button id="tcopy">Make my own copy to change</button>` : `
+    <label>Name <input id="tsrename" value="${esc(cur.name)}"></label>
+    <label>Ground <select id="tswalk">${GROUNDS.map(([v, n]) => `<option value="${v}" ${(cur.walk || '') === v ? 'selected' : ''}>${n}</option>`).join('')}</select></label>
     ${cur.kind === 'auto' ? `<label>Edge roughness <input type="range" id="tsrough" min="0" max="1" step="0.05" value="${cur.rough ?? 0.5}"></label>
     <label>Edge line <input type="range" id="tsrim" min="0" max="1" step="0.05" value="${cur.rim ?? 0.5}"></label><label>Edge colour <input type="color" id="tsrimc" value="${cur.rimColor || '#2b2216'}"></label>
     ${cur.clip ? '' : `<label>Texture size, tiles <input type="number" id="tstex" min="1" max="16" value="${cur.texTiles || 4}"></label>`}
     <button id="tsseed">New edge shape</button>` : ''}
     <label class="row"><input type="checkbox" id="tsshadow" ${cur.shadow ? 'checked' : ''}> raised (drop shadow under the edge)</label>
-    <button id="tsrm">Delete terrain</button></div>` : ''}
-  <h3>Make a terrain</h3>
-  <label>Name <input id="tsname" placeholder="e.g. Moss, Shallow water, Lava crust"></label>
-  <label>Ground <select id="tsnwalk"><option value=".">walkable</option><option value=",">tall grass</option><option value="#">blocked (water, lava, cliff)</option><option value="">keep what is under it</option></select></label>
-  <div class="hint"><b>From a map clip</b> (matches this world's art best): clip a patch of ground in Clips mode first.</div>
-  <div class="row"><select id="tsclip">${CLIPS.filter(c => c.dir === S.planet || S.tsAll).map(c => `<option value="${c.id}">${c.name} (${c.w}x${c.h})</option>`).join('') || '<option value="">no clips yet</option>'}</select><button id="tsfromclip">Make from clip</button></div>
-  <div class="hint"><b>From a seamless texture picture</b> (ChatGPT, SpriteCook or your own):</div>
-  <input type="file" id="tstexf" accept="image/*">
-  <div class="hint"><b>From a finished 4x4 sheet</b> drawn to the template layout:</div>
-  <input type="file" id="tssheetf" accept="image/*">
-  <div class="row" style="margin-top:8px"><button id="tstpl">Download blank template</button><button data-prompt="texture">Copy texture prompt</button><button data-prompt="sheet">Copy sheet prompt</button></div>
-  <h3>New map to paint on</h3>
-  <label>Name <input id="bname" placeholder="e.g. Hidden Canyon"></label>
-  <div class="row"><label>Width <input id="bw" type="number" value="24" min="8" max="48" style="width:70px"></label><label>Height <input id="bh" type="number" value="16" min="8" max="48" style="width:70px"></label></div>
-  <label>Kind <select id="btype"><option>route</option><option>town</option><option>field</option><option>landmark</option><option value="interior">interior room</option></select></label>
-  <input type="hidden" id="bground" value=""><label>Base colour <input id="bcolor" type="color" value="#6b5b45"></label>
-  <button id="bmake">Create blank map</button><p class="hint">Paint a base terrain over the whole map with Fill, then paths, water and grass on top.</p>`;
+    <button id="tsrm">Delete terrain</button>`}</div>` : ''}
+  <h3>Make your own terrain</h3>
+  <div class="row"><button id="tsample" class="${S.tsample ? 'on' : ''}">&#9986; Copy ground from a map</button></div>
+  <p class="hint">${S.tsample ? '<b>Now drag a box over a patch of plain ground on the map</b> (grass, a road, sand). It becomes a terrain that matches the art.' : 'Matches this world best: drag a box over plain ground on any map and it becomes a terrain.'}</p>
+  <label>Name <input id="tsname" placeholder="e.g. Moss, Shallow water"></label>
+  <label>Ground <select id="tsnwalk">${GROUNDS.map(([v, n]) => `<option value="${v}">${n}</option>`).join('')}</select></label>
+  <div class="hint"><b>From a seamless picture</b> (ChatGPT, SpriteCook or your own):</div><input type="file" id="tstexf" accept="image/*">
+  <div class="hint"><b>From a finished 4x4 sheet</b> drawn to the template layout:</div><input type="file" id="tssheetf" accept="image/*">
+  <div class="row" style="margin-top:8px"><button id="tstpl">Download blank template</button><button data-prompt="texture">Copy texture prompt</button><button data-prompt="sheet">Copy sheet prompt</button></div>`;
 }
 function terrainWire() {
   const on = (sel, ev, f) => { const el = $(sel); if (el) el.addEventListener(ev, f); }, cur = () => tsById(S.terr);
   const redo = () => { DIRTY.add('tilesets'); $('#save').classList.add('hot'); for (const m of MAPS.filter(m => m.built).concat(Object.values(DS.paint || {}))) if ((m.terrain || []).some(l => l.ts === S.terr)) { terrBake(m.id); terrRows(m.id); } };
-  document.querySelectorAll('[data-ts]').forEach(b => b.onclick = () => { S.terr = b.dataset.ts; panel(); });
+  document.querySelectorAll('[data-ts]').forEach(b => b.onclick = () => { S.terr = b.dataset.ts; S.terase = false; S.tsample = false; panel(); });
   document.querySelectorAll('[data-tb]').forEach(b => b.onclick = () => { S.tbrush = +b.dataset.tb; panel(); });
   document.querySelectorAll('[data-tup]').forEach(b => b.onclick = () => { const m = terrTarget(S.view), i = +b.dataset.tup; if (!i) return; snap(); [m.terrain[i - 1], m.terrain[i]] = [m.terrain[i], m.terrain[i - 1]]; terrBake(m.id); terrRows(m.id); panel(); });
   document.querySelectorAll('[data-prompt]').forEach(b => b.onclick = () => copyPrompt(b.dataset.prompt));
-  on('#tpaint', 'click', () => { S.terase = false; panel(); }); on('#terase', 'click', () => { S.terase = true; panel(); });
+  on('#tpaint', 'click', () => { S.terase = false; panel(); }); on('#terase', 'click', () => { S.terase = true; S.tsample = false; panel(); });
   on('#tfill', 'click', () => terrainFill(true)); on('#tclear', 'click', () => terrainFill(false));
   on('#tsall', 'change', e => { S.tsAll = e.target.checked; panel(); });
+  on('#tcopy', 'click', () => { const c = cur(), t = { name: c.name.replace(/ \(.*/, '') + ' (my copy)', kind: 'auto', walk: c.walk, rough: c.rough, rim: c.rim, rimColor: c.rimColor, shadow: c.shadow, seed: c.seed, texTiles: 8 }; addTileset(t); TSIMG[t.id] = c.tex.toDataURL('image/png'); img(TSIMG[t.id]); panel(); });
+  on('#tsrename', 'change', e => { snap(); cur().name = e.target.value.trim() || cur().name; DIRTY.add('tilesets'); $('#save').classList.add('hot'); panel(); });
   on('#tswalk', 'change', e => { snap(); cur().walk = e.target.value; redo(); panel(); });
   on('#tsrough', 'change', e => { cur().rough = +e.target.value; redo(); panel(); }); on('#tsrim', 'change', e => { cur().rim = +e.target.value; redo(); panel(); });
   on('#tsrimc', 'change', e => { cur().rimColor = e.target.value; redo(); panel(); }); on('#tstex', 'change', e => { cur().texTiles = Math.max(1, Math.min(16, +e.target.value || 4)); redo(); panel(); });
   on('#tsseed', 'click', () => { cur().seed = Math.round(Math.random() * 60) / 10; redo(); panel(); });
   on('#tsshadow', 'change', e => { cur().shadow = e.target.checked; redo(); panel(); });
-  on('#tsrm', 'click', () => { if (MAPS.filter(m => m.built).concat(Object.values(DS.paint || {})).some(m => (m.terrain || []).some(l => l.ts === S.terr))) return toast('That terrain is painted on a map; clear it there first.'); snap(); TILESETS = TILESETS.filter(t => t.id !== S.terr); DIRTY.add('tilesets'); S.terr = null; panel(); });
+  on('#tsrm', 'click', () => { if (MAPS.filter(m => m.built).concat(Object.values(DS.paint || {})).some(m => (m.terrain || []).some(l => l.ts === S.terr))) return toast('That terrain is painted on a map; remove it there first.'); snap(); TILESETS = TILESETS.filter(t => t.id !== S.terr); DIRTY.add('tilesets'); S.terr = null; panel(); });
+  on('#tsample', 'click', () => { S.tsample = !S.tsample; S.terase = false; panel(); if (S.tsample) toast('Drag a box over plain ground on the map.', 5000); });
   const base = () => ({ name: ($('#tsname').value || '').trim() || 'Terrain', walk: $('#tsnwalk').value });
-  on('#tsfromclip', 'click', () => { const c = $('#tsclip').value; if (!c) return toast('Clip a patch of ground in Clips mode first.'); addTileset({ ...base(), kind: 'auto', clip: c, rough: 0.5, rim: 0.4, rimColor: '#2b2216' }); });
   on('#tstexf', 'change', async e => { const f = e.target.files[0]; if (!f) return; const u = await readFile(f), t = { ...base(), kind: 'auto', rough: 0.5, rim: 0.4, rimColor: '#2b2216', texTiles: 4 };
     addTileset(t); TSIMG[t.id] = await squash(u, 512); img(TSIMG[t.id]); panel(); });
   on('#tssheetf', 'change', async e => { const f = e.target.files[0]; if (!f) return; const u = await readFile(f), t = { ...base(), kind: 'sheet' };
     addTileset(t); TSIMG[t.id] = await squash(u, 512, true); img(TSIMG[t.id]); panel(); });
   on('#tstpl', 'click', templatePng);
+}
+function terrainFromClip(c) {   // "Copy ground from a map": the boxed patch becomes a terrain whose ground is what most of the patch was
+  const all = c.rows.join(''), cnt = ch => all.split(ch).length - 1, walk = cnt(',') > all.length / 2 ? ',' : cnt('#') > all.length / 2 ? '#' : '.';
+  addTileset({ name: c.name, walk, kind: 'auto', clip: c.id, rough: 0.5, rim: 0.35, rimColor: '#2b2216' }); S.tsample = false; panel();
 }
 function squash(url, max, keyBg) {   // keep saves small: at most max px, PNG; sheets on a flat background get it keyed out
   return new Promise(r => { const i = new Image(); i.onload = () => { const s = Math.min(1, max / Math.max(i.width, i.height)), c = document.createElement('canvas'); c.width = Math.round(i.width * s); c.height = Math.round(i.height * s);

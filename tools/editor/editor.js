@@ -10,7 +10,7 @@ const img = u => { if (!u) return null; if (!IMGS[u]) { const i = new Image(); i
 const ok = i => i && i.complete && i.naturalWidth;
 
 // ---------- working state ----------
-const S = { planet: null, view: 'outdoor', mode: 'props', zoom: 2, ox: 40, oy: 40, sheet: null, stamp: null, sel: null, walls: false, brush: '#', drag: null, pan: null };
+const S = { planet: null, view: 'outdoor', mode: 'props', zoom: 2, ox: 40, oy: 40, sheet: null, stamp: null, sel: null, walls: false, brush: '.', drag: null, pan: null, clipTool: 'cut', wtool: 'box' };
 let LAYOUT = {}, MOVES = {}, ADDED = {}, REMOVED = {}, MONS = {}, MAPS = [], ROWS = {}, NEWIMG = {}, GRID = {}, ROUTES = [], DOORS = {}, CLIPS = [], CLIPIMG = {};
 const DIRTY = new Set();
 const HIST = [];
@@ -98,23 +98,24 @@ function draw() {
     for (const o of s.objects) if (o.k === 'stash') { ctx.fillStyle = '#b07cff'; ctx.fillRect(ox + o.tile[0] * 16 + 3, oy + o.tile[1] * 16 + 5, 10, 9); }
   }
   items.sort((a, b) => a.y - b.y).forEach(it => it.d());
-  designDraw(ctx);
+  designDraw(ctx); updateTip();
   draw.items = items;
   if (S.sel) { const it = items.find(it => same(it.ref, S.sel)); if (it) { ctx.strokeStyle = '#ffd23f'; ctx.lineWidth = 1.5 / S.zoom; ctx.setLineDash([3 / S.zoom, 2 / S.zoom]); ctx.strokeRect(...it.box); ctx.setLineDash([]); } }
   if (S.clipRect) { const r = S.clipRect, s = sec(r.sid), [ox, oy] = origin(s), x0 = Math.min(r.x0, r.x1), y0 = Math.min(r.y0, r.y1);
     ctx.fillStyle = 'rgba(95,242,255,0.25)'; ctx.fillRect(ox + x0 * 16, oy + y0 * 16, (Math.abs(r.x1 - r.x0) + 1) * 16, (Math.abs(r.y1 - r.y0) + 1) * 16);
     ctx.strokeStyle = '#5ff2ff'; ctx.lineWidth = 2 / S.zoom; ctx.setLineDash([4 / S.zoom, 3 / S.zoom]); ctx.strokeRect(ox + x0 * 16, oy + y0 * 16, (Math.abs(r.x1 - r.x0) + 1) * 16, (Math.abs(r.y1 - r.y0) + 1) * 16); ctx.setLineDash([]); }
-  if (S.mode === 'clips' && S.view !== 'outdoor') { const m = stampHost(S.view); if (m) { const s = sec(S.view);
-    (m.stamps || []).forEach((st, i) => { const c = clipById(st.c); if (!c) return; const on = S.sel && S.sel.kind === 'stamp' && S.sel.i === i;
-      ctx.strokeStyle = on ? '#ffd23f' : 'rgba(255,255,255,0.35)'; ctx.lineWidth = (on ? 2 : 1) / S.zoom; ctx.strokeRect(st.x * 16, st.y * 16, c.w * 16, c.h * 16); });
-    if (S.hover && S.stamp && S.stamp.kind === 'clip') { const c = clipById(S.stamp.c), [h] = S.hover; if (c) { ctx.strokeStyle = '#ffd23f'; ctx.strokeRect(h.x * 16, h.y * 16, c.w * 16, c.h * 16); } } } }
+  if (S.mode === 'clips') for (const s of viewSecs()) { const m = stampHost(s.id); if (!m) continue; const [ox, oy] = origin(s);
+    (m.stamps || []).forEach((st, i) => { const c = clipById(st.c); if (!c) return; const on = S.sel && S.sel.kind === 'stamp' && S.sel.sid === s.id && S.sel.i === i;
+      ctx.strokeStyle = on ? '#ffd23f' : 'rgba(255,255,255,0.45)'; ctx.lineWidth = (on ? 2 : 1) / S.zoom; ctx.strokeRect(ox + st.x * 16, oy + st.y * 16, c.w * 16, c.h * 16); }); }
+  if (S.mode === 'clips' && S.hover && S.stamp && S.stamp.kind === 'clip') { const c = clipById(S.stamp.c), [h] = S.hover; if (c) { const [x0, y0] = stampAt(h, c), X = h.ox + x0 * 16, Y = h.oy + y0 * 16, ci = clipImg(c);
+    ctx.save(); ctx.globalAlpha = 0.75; if (ok(ci)) ctx.drawImage(ci, X, Y); ctx.restore(); ctx.strokeStyle = '#ffd23f'; ctx.lineWidth = 1.5 / S.zoom; ctx.strokeRect(X, Y, c.w * 16, c.h * 16); } }
   if (S.wallRect) { const r = S.wallRect, s = sec(r.sid), [ox, oy] = origin(s), x0 = Math.min(r.x0, r.x1), y0 = Math.min(r.y0, r.y1);
-    ctx.fillStyle = S.brush === '#' ? 'rgba(255,40,60,0.5)' : S.brush === ',' ? 'rgba(40,220,120,0.5)' : 'rgba(255,255,255,0.45)';
+    ctx.fillStyle = (BRUSHES.find(b => b[0] === S.brush) || [, , 'rgba(255,255,255,0.45)'])[2];
     ctx.fillRect(ox + x0 * 16, oy + y0 * 16, (Math.abs(r.x1 - r.x0) + 1) * 16, (Math.abs(r.y1 - r.y0) + 1) * 16);
     ctx.strokeStyle = '#ffd23f'; ctx.lineWidth = 2 / S.zoom; ctx.strokeRect(ox + x0 * 16, oy + y0 * 16, (Math.abs(r.x1 - r.x0) + 1) * 16, (Math.abs(r.y1 - r.y0) + 1) * 16); }
   if (S.routeDrag) { const r = S.routeDrag, s = sec(r.sid), [ox, oy] = origin(s), a = Math.min(r.k0, r.k1) * 16, b = (Math.max(r.k0, r.k1) + 1) * 16; ctx.fillStyle = 'rgba(255,210,63,0.6)';
     if (r.side === 'left' || r.side === 'right') ctx.fillRect(ox + (r.side === 'right' ? s.tiles[0] * 16 - 16 : 0), oy + a, 16, b - a); else ctx.fillRect(ox + a, oy + (r.side === 'bottom' ? s.tiles[1] * 16 - 16 : 0), b - a, 16); }
-  if (S.hover && S.stamp) { const [hx, hy] = S.hover; ctx.strokeStyle = 'rgba(255,210,63,0.9)'; ctx.lineWidth = 1 / S.zoom; ctx.strokeRect(hx.ox + hx.x * 16, hx.oy + hx.y * 16, (S.stamp.w || 1) * 16, 16); }
+  if (S.hover && S.stamp && S.stamp.kind !== 'clip') { const [hx, hy] = S.hover; ctx.strokeStyle = 'rgba(255,210,63,0.9)'; ctx.lineWidth = 1 / S.zoom; ctx.strokeRect(hx.ox + hx.x * 16, hx.oy + hx.y * 16, (S.stamp.w || 1) * 16, 16); }
 }
 const same = (a, b) => a && b && a.kind === b.kind && a.sid === b.sid && a.i === b.i && a.src === b.src;
 
@@ -175,14 +176,9 @@ function delSel() { const r = S.sel; if (!r) return; if (r.kind === 'piece') ret
   else if (r.kind === 'mon') { if (!MONS[r.sid]) MONS[r.sid] = (sec(r.sid).mons || []).map(m => ({ ...m })); MONS[r.sid].splice(r.i, 1); }
   touch(r.sid); S.sel = null; panel(); draw(); }
 function fillRect() {
-  const r = S.wallRect; S.wallRect = null; const s = sec(r.sid), keys = blockedKeys(r.sid), R = rowsOf(r.sid).map(x => x.split(''));
-  const x0 = Math.min(r.x0, r.x1), x1 = Math.max(r.x0, r.x1), y0 = Math.min(r.y0, r.y1), y1 = Math.max(r.y0, r.y1); let n = 0, kept = 0;
-  snap();
-  for (let y = y0; y <= y1; y++) for (let x = x0; x <= x1; x++) { if (!R[y] || R[y][x] === undefined || R[y][x] === S.brush) continue;
-    if (S.brush === '#' && keys.has(x + ',' + y)) { kept++; continue; }   // never wall over a door, exit, counter or spawn
-    R[y][x] = S.brush; n++; }
-  if (n) { ROWS[r.sid] = R.map(x => x.join('')); touch(r.sid); }
-  toast(`${n} tile${n === 1 ? '' : 's'} set to ${{ '#': 'wall', '.': 'walkable', ',': 'tall grass' }[S.brush]}${kept ? ` (${kept} door/exit tile${kept === 1 ? '' : 's'} left open)` : ''}`); panel(); draw();
+  const r = S.wallRect; S.wallRect = null; const x0 = Math.min(r.x0, r.x1), x1 = Math.max(r.x0, r.x1), y0 = Math.min(r.y0, r.y1), y1 = Math.max(r.y0, r.y1), tiles = [];
+  for (let y = y0; y <= y1; y++) for (let x = x0; x <= x1; x++) tiles.push([x, y]);
+  snap(); brushReport(r.sid, tiles, applyBrush(r.sid, tiles, S.brush), S.brush); panel(); draw();
 }
 // which walkable tiles the player can actually reach: flood from every exit, door, doormat, spawn and the tile in front of each door
 function reachOf(id) {
@@ -197,19 +193,20 @@ function reachOf(id) {
   for (const o of s.objects) if (o.k !== 'stash') seeds.push([o.tile[0], o.tile[1] + 1], [o.tile[0], o.tile[1] - 1], [o.tile[0] + 1, o.tile[1]], [o.tile[0] - 1, o.tile[1]]);
   for (const d of DOORS[id] || []) seeds.push([d.tile[0], d.tile[1] + 1]);
   for (const v of Object.values(s.spawns || {})) if (v) seeds.push(v);
+  if (!seeds.some(([x, y]) => walk(x, y))) for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) seeds.push([x, y]);   // no way in yet (a new map before its routes or doors): nothing counts as cut off
   const seen = new Set(), q = [];
   for (const [x, y] of seeds) if (walk(x, y) && !seen.has(x + ',' + y)) { seen.add(x + ',' + y); q.push([x, y]); }
   while (q.length) { const [x, y] = q.shift(); for (const [a, b] of [[1, 0], [-1, 0], [0, 1], [0, -1]]) { const k = (x + a) + ',' + (y + b); if (!seen.has(k) && walk(x + a, y + b)) { seen.add(k); q.push([x + a, y + b]); } } }
   return { seen, solid };
 }
-function paint(t) { if (!t) return; const R = rowsOf(t.sid).slice(), row = R[t.y].split(''); if (row[t.x] === S.brush) return;
-  if (S.brush !== '#' || !blockedKeys(t.sid).has(t.x + ',' + t.y) || confirm('This tile is a door, exit or spawn. Make it a wall anyway?')) { row[t.x] = S.brush; R[t.y] = row.join(''); ROWS[t.sid] = R; touch(t.sid); draw(); } }
-
+function paint(t) {   // the freehand Walkable brush: every tile the pointer crosses on the map the stroke started on
+  const w = S.painting; if (!t || !w || t.sid !== w.sid || w.seen.has(t.x + ',' + t.y)) return; w.seen.add(t.x + ',' + t.y); w.tiles.push([t.x, t.y]);
+  const res = applyBrush(t.sid, [[t.x, t.y]], S.brush); w.n += res.n; w.kept += res.kept; draw(); }
 // ---------- mouse / keys ----------
 const TOUCH = new Map(); let PINCH = null;
 function pinchStart() { const [a, b] = [...TOUCH.values()]; PINCH = { d: Math.hypot(a.x - b.x, a.y - b.y) || 1, mx: (a.x + b.x) / 2, my: (a.y + b.y) / 2, z: S.zoom, ox: S.ox, oy: S.oy }; }
 function cancelGesture() {   // a second finger turns whatever the first finger started into a pan/zoom
-  if (S.pieceDrag || S.drag || S.stampDrag || S.terrPaint || S.groupDrag) { const keep = S.sel; S.terrPaint = false; S.groupDrag = null; undo(); S.sel = keep; panel(); }
+  if (S.pieceDrag || S.drag || S.stampDrag || S.terrPaint || S.groupDrag || S.painting) { const keep = S.sel; S.terrPaint = false; S.groupDrag = null; undo(); S.sel = keep; panel(); }
   S.wallRect = S.clipRect = S.routeDrag = S.gRect = S.boxSel = null; S.pan = null; S.drag = false; S.pieceDrag = null; S.propGrab = null; S.stampDrag = null; S.painting = false;
 }
 cv.addEventListener('pointerdown', e => {
@@ -218,13 +215,13 @@ cv.addEventListener('pointerdown', e => {
   if (designDown(e, t, wx, wy)) return;   // playtest, prop groups, encounter zones, ground brushes, people and items (design.js)
   if (S.stamp && S.stamp.kind === 'scene' && e.button === 0 && !e.altKey) { dropScene(wx, wy); return; }
   if (e.button === 1 || e.button === 2 || e.altKey || !t) { S.pan = [e.clientX - S.ox, e.clientY - S.oy]; return; }
-  if (S.mode === 'terrain') { terrainDown(t, wx, wy); return; }
-  if (S.mode === 'walls') { S.wallRect = { sid: t.sid, x0: t.x, y0: t.y, x1: t.x, y1: t.y }; draw(); return; }
-  if (S.mode === 'clips') {
-    const m = S.view !== 'outdoor' && stampHost(S.view);   // a built map, or a finished map's see-through layer (play.js)
-    if (S.view !== 'outdoor' && S.stamp && S.stamp.kind === 'clip') { placeStamp(t); return; }
-    if (m) { const i = (m.stamps || []).map((st, i) => [st, i]).reverse().find(([st]) => { const c = clipById(st.c); return c && t.x >= st.x && t.x < st.x + c.w && t.y >= st.y && t.y < st.y + c.h; });
-      if (i) { snap(); S.sel = { kind: 'stamp', sid: S.view, i: i[1] }; S.stampDrag = { dx: t.x - i[0].x, dy: t.y - i[0].y }; panel(); draw(); return; } }
+  if (S.mode === 'terrain') { if (S.tsample) { S.clipRect = { sid: t.sid, x0: t.x, y0: t.y, x1: t.x, y1: t.y, terrain: true }; draw(); return; } terrainDown(t, wx, wy); return; }
+  if (S.mode === 'walls') { if (S.wtool === 'brush') { snap(); S.painting = { sid: t.sid, seen: new Set(), tiles: [], n: 0, kept: 0 }; paint(t); return; } S.wallRect = { sid: t.sid, x0: t.x, y0: t.y, x1: t.x, y1: t.y }; draw(); return; }
+  if (S.mode === 'clips') {   // Copy: drag a box. Stamp: tap to place the picked clip. Move: drag a stamp. Works on one map or the whole world.
+    if (S.clipTool === 'stamp') { if (!S.stamp || S.stamp.kind !== 'clip') return toast('Pick a clip on the right first.'); placeStamp(t); return; }
+    if (S.clipTool === 'move') { const m = stampHost(t.sid), hit = m && (m.stamps || []).map((st, i) => [st, i]).reverse().find(([st]) => { const c = clipById(st.c); return c && t.x >= st.x && t.x < st.x + c.w && t.y >= st.y && t.y < st.y + c.h; });
+      if (!hit) { S.sel = null; panel(); draw(); return toast('Tap a stamp you placed to move it.'); }
+      snap(); S.sel = { kind: 'stamp', sid: t.sid, i: hit[1] }; S.stampDrag = { dx: t.x - hit[0].x, dy: t.y - hit[0].y }; panel(); draw(); return; }
     S.clipRect = { sid: t.sid, x0: t.x, y0: t.y, x1: t.x, y1: t.y }; draw(); return; }
   if (S.mode === 'doors') { S.sel = { kind: 'door', sid: t.sid, x: t.x, y: t.y }; panel(); draw(); return; }
   if (S.mode === 'arrange') { if (S.view !== 'outdoor') { toWorldView(); return; } const s = sec(t.sid), [ox, oy] = origin(s); snap(); S.sel = { kind: 'piece', sid: t.sid }; S.pieceDrag = { sid: t.sid, dx: wx - ox, dy: wy - oy }; panel(); draw(); return; }
@@ -254,25 +251,25 @@ cv.addEventListener('pointermove', e => {
   if (S.painting) { paint(t); return; }
   if (S.terrPaint) { terrainPaint(wx, wy); return; }
   if (S.clipRect) { if (t && t.sid === S.clipRect.sid) { S.clipRect.x1 = t.x; S.clipRect.y1 = t.y; draw(); } return; }
-  if (S.stampDrag && S.sel && S.sel.kind === 'stamp' && t) { const m = stampHost(S.sel.sid), st = m.stamps[S.sel.i], nx = t.x - S.stampDrag.dx, ny = t.y - S.stampDrag.dy; if (nx !== st.x || ny !== st.y) { st.x = nx; st.y = ny; terrBake(S.sel.sid); } return; }
+  if (S.stampDrag && S.sel && S.sel.kind === 'stamp' && t && t.sid === S.sel.sid) { const m = stampHost(S.sel.sid), st = m.stamps[S.sel.i], nx = t.x - S.stampDrag.dx, ny = t.y - S.stampDrag.dy; if (nx !== st.x || ny !== st.y) { st.x = nx; st.y = ny; terrBake(S.sel.sid); } return; }
   if (S.wallRect) { if (t && t.sid === S.wallRect.sid) { S.wallRect.x1 = t.x; S.wallRect.y1 = t.y; draw(); } return; }
   if (S.pieceDrag) { movePiece(wx, wy); return; }
   if (S.routeDrag) { const r = S.routeDrag, s = sec(r.sid), [ox, oy] = origin(s), [W, H] = s.tiles; r.k1 = r.side === 'left' || r.side === 'right' ? Math.max(0, Math.min(H - 1, Math.floor((wy - oy) / 16))) : Math.max(0, Math.min(W - 1, Math.floor((wx - ox) / 16))); draw(); return; }
   if (S.drag && S.propGrab && S.sel && S.sel.kind === 'prop') { dragProp(wx - S.propGrab.dx, wy - S.propGrab.dy); return; }
   if (S.drag && t && S.sel) { const p = selPos(); if (p && (p[0] !== t.x || p[1] !== t.y)) moveSel(t); return; }
   S.hover = t ? [t] : null; if (S.stamp) { if (t) S.hover = [{ ...t }]; draw(); }
-  $('#where').textContent = t ? `${t.sid} ${sec(t.sid).name}  tile ${t.x},${t.y}` : '';
+  $('#where').textContent = t ? `${t.sid} ${sec(t.sid).name}  tile ${t.x},${t.y}${S.walls || S.mode === 'walls' ? ' · ' + tileInfo(t.sid, t.x, t.y) : ''}` : '';
 });
 const touchEnd = e => { if (e.pointerType !== 'touch') return; TOUCH.delete(e.pointerId); if (TOUCH.size < 2 && PINCH) { PINCH = null; if (TOUCH.size === 1) { const [p] = [...TOUCH.values()]; S.pan = [p.x - S.ox, p.y - S.oy]; } } };
 cv.addEventListener('pointercancel', touchEnd);
-addEventListener('pointerup', e => { const wasPinch = !!PINCH; touchEnd(e); if (wasPinch || PINCH || TOUCH.size) return; if (S.clipRect) makeClip(); if (S.stampDrag) { const id = S.sel && S.sel.sid; S.stampDrag = null; if (id) terrRows(id); } if (S.wallRect) fillRect(); if (S.routeDrag) finishRoute(); terrainUp(); designUp(); S.pan = null; S.drag = false; S.painting = false; S.pieceDrag = null; S.propGrab = null; });
+addEventListener('pointerup', e => { const wasPinch = !!PINCH; touchEnd(e); if (wasPinch || PINCH || TOUCH.size) return; if (S.clipRect) makeClip(); if (S.stampDrag) { const id = S.sel && S.sel.sid; S.stampDrag = null; if (id) { const m = stampHost(id), st = m.stamps[S.sel.i], c = clipById(st.c); if (c) clearManual(m, st.x, st.y, st.x + c.w - 1, st.y + c.h - 1); terrRows(id); } } if (S.wallRect) fillRect(); if (S.painting) { const w = S.painting; S.painting = false; brushReport(w.sid, w.tiles, w, S.brush); panel(); } if (S.routeDrag) finishRoute(); terrainUp(); designUp(); S.pan = null; S.drag = false; S.painting = false; S.pieceDrag = null; S.propGrab = null; });
 cv.addEventListener('wheel', e => { e.preventDefault(); const r = cv.getBoundingClientRect(), mx = e.clientX - r.left, my = e.clientY - r.top, z0 = S.zoom;
   S.zoom = Math.max(0.25, Math.min(8, S.zoom * (e.deltaY < 0 ? 1.15 : 1 / 1.15))); S.ox = mx - (mx - S.ox) * S.zoom / z0; S.oy = my - (my - S.oy) * S.zoom / z0; draw(); }, { passive: false });
 cv.addEventListener('contextmenu', e => e.preventDefault());
 addEventListener('keydown', e => {
   if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.tagName === 'SELECT') return;
   if (designKey(e)) return;
-  if (e.key === 'Escape') { S.stamp = null; S.sel = null; panel(); draw(); }
+  if (e.key === 'Escape') { S.stamp = null; S.sel = null; S.tsample = false; panel(); draw(); }
   else if (e.key === 'Delete' || e.key === 'Backspace') { e.preventDefault(); delSel(); }
   else if ((e.ctrlKey || e.metaKey) && e.key === 'z') { e.preventDefault(); undo(); }
   else if ((e.ctrlKey || e.metaKey) && e.key === 'c' && S.sel && S.sel.kind === 'prop') { const q = LAYOUT[S.sel.sid][S.sel.i]; S.stamp = { kind: 'prop', p: q.p, flat: q.solid === false }; toast('Copied: click to place copies, Esc to stop'); }
@@ -307,7 +304,7 @@ function allDoors(sid) { const s = sec(sid), out = new Map(), add = (x, y) => { 
 function setDoor(sid, x, y, to) {
   snap(); DOORS[sid] = (DOORS[sid] || []).filter(d => !(d.tile[0] === x && d.tile[1] === y)); DOORS[sid].push({ tile: [x, y], to: to || null });
   if (to) { const R = rowsOf(sid).map(r => r.split('')); if (R[y]) { R[y][x] = '#'; ROWS[sid] = R.map(r => r.join('')); }   // a door is bumped into, so its tile is solid
-    const below = (rowsOf(sid)[y + 1] || '')[x]; if (below !== '.' && below !== ',') toast('Heads up: the tile in front of this door is not walkable. Paint it walkable in Walls so the player can reach it.', 6000); }
+    const below = (rowsOf(sid)[y + 1] || '')[x]; if (below !== '.' && below !== ',') toast('Heads up: the tile in front of this door is not walkable. Paint it walkable in Paint: Walkable so the player can reach it.', 6000); }
   touch(sid); panel(); draw();
 }
 function roomChoices() {   // rooms on this world first, then everything else
@@ -334,7 +331,7 @@ function dropScene(wx, wy) {   // outdoor scene: becomes a new map piece where y
   GRID[id] = grid; ROWS[id] = R; NEWIMG[id] = lib.url; touch(id);
   MAPS.push({ id, name: lib.name, dir, planet: ED.planets[dir], type: 'route', tiles: [W, H], img: `art/sections_game/${dir}/${id}_${slug}.png`, src: lib.file });
   S.stamp = null; S.sel = { kind: 'piece', sid: id }; S.pieceDrag = { sid: id, dx: W * 8, dy: H * 8 }; movePiece(wx, wy);
-  toast(`${lib.name} added as ${id}. Drag it into place (it snaps to the scene beside it), then use Routes to join it and Walls to paint where you can walk.`, 9000); panel(); draw();
+  toast(`${lib.name} added as ${id}. Drag it into place (it snaps to the scene beside it), then use Routes to join it and Paint to set where you can walk.`, 9000); panel(); draw();
 }
 function addSceneRoom(lib) {   // interior scene: a new room with a 2-tile doormat in the middle of the bottom wall; point a door at it with Doors
   snap(); const [W, H] = lib.tiles, id = newId(), dir = S.planet, slug = lib.id.split('/')[1], cx = Math.floor(W / 2) - 1;
@@ -344,13 +341,13 @@ function addSceneRoom(lib) {   // interior scene: a new room with a 2-tile doorm
     warps: [{ tile: [cx, H - 1], to: 'back', kind: 'door' }, { tile: [cx + 1, H - 1], to: 'back', kind: 'door' }], objects: [], spawns: { default: [cx, H - 2] }, npcs: [], mons: [], _new: true };
   ROWS[id] = ED.sections[id].rows; NEWIMG[id] = lib.url; touch(id);
   MAPS.push({ id, name: lib.name, dir, planet: ED.planets[dir], type: 'interior', tiles: [W, H], img: `art/sections_game/${dir}/${id}_${slug}.png`, src: lib.file });
-  S.stamp = null; S.view = id; views(); fit(); S.mode = 'walls'; document.querySelectorAll('[data-mode]').forEach(x => x.classList.toggle('on', x.dataset.mode === 'walls'));
+  S.stamp = null; S.view = id; views(); fit(); setMode('walls');
   toast(`Room ${id} ${lib.name} added. Paint its walls and furniture as walls, then use Doors to point a door at it.`, 9000); panel(); draw();
 }
 function scenesPanel() {
   const dirs = [...new Set((ED.scenes || []).map(x => x.dir))].sort(); if (!S.sceneDir || !dirs.includes(S.sceneDir)) S.sceneDir = dirs.includes(S.planet) ? S.planet : dirs[0];
   const list = (ED.scenes || []).filter(x => x.dir === S.sceneDir), cur = S.stamp && S.stamp.kind === 'scene' ? sceneById(S.stamp.id) : null;
-  return `<h3>Scenes</h3><p class="hint">Ready-made scenes. <b>Outdoor:</b> tap one, then tap the world map where it should go and drag it into place; it snaps to the scene beside it. Then use <b>Routes</b> to join it and <b>Walls</b> to paint where you can walk. <b>Rooms:</b> tap one, then <b>Add as a room</b>, and point a door at it with <b>Doors</b>. New scenes join ${ED.planets[S.planet]}.</p>
+  return `<h3>Scenes</h3><p class="hint">Ready-made scenes. <b>Outdoor:</b> tap one, then tap the world map where it should go and drag it into place; it snaps to the scene beside it. Then use <b>Routes</b> to join it and <b>Paint</b> to set where you can walk. <b>Rooms:</b> tap one, then <b>Add as a room</b>, and point a door at it with <b>Doors</b>. New scenes join ${ED.planets[S.planet]}.</p>
     ${cur ? `<div class="sel"><b>${cur.name}</b> <span class="hint">${cur.kind === 'interior' ? 'room' : 'outdoor'}, ${cur.tiles[0]}x${cur.tiles[1]} tiles</span><div class="row">${cur.kind === 'interior' ? '<button id="sroom">Add as a room</button>' : '<span class="good">Now tap the world map where it should go</span>'}<button id="scancel">Cancel</button></div></div>` : ''}
     <label>Scenes from <select id="sdir">${dirs.map(d => `<option value="${d}" ${d === S.sceneDir ? 'selected' : ''}>${ED.planets[d] || d}</option>`).join('')}</select></label>
     ${[['outdoor', 'Outdoor scenes'], ['residential', 'Residential'], ['crossroads', 'Crossroads']].map(([g, t]) => { const xs = list.filter(x => x.kind !== 'interior' && (x.group || 'outdoor') === g); return xs.length ? `<h4>${t}</h4><div class="grid wide">${xs.map(x => `<button class="pal ${cur && cur.id === x.id ? 'on' : ''}" data-libscene="${x.id}" data-cap="${x.name} · ${t.toLowerCase()} · ${x.tiles[0]}x${x.tiles[1]} tiles" title="${x.name}"><img src="${x.url}" loading="lazy"></button>`).join('')}</div>` : ''; }).join('')}
@@ -411,9 +408,67 @@ function dragProp(X, Y) {   // X,Y = wanted top-left of the sprite in world pixe
   if (!q.ox) delete q.ox; if (!q.oy) delete q.oy; touch(r.sid); draw();
 }
 
+// ---------- tabs: six groups along the top (the bottom bar on phones), each with its own tools ----------
+const GROUPS = [
+  ['paint', '&#128396;', 'Paint', [['terrain', 'Terrain'], ['clips', 'Clips'], ['walls', 'Walkable']]],
+  ['place', '&#127793;', 'Place', [['props', 'Props'], ['people', 'People'], ['items', 'Items'], ['mons', 'Roaming Alienmon']]],
+  ['world', '&#128506;', 'World', [['arrange', 'Move maps'], ['routes', 'Routes'], ['doors', 'Doors'], ['scenes', 'Scenes'], ['maps', 'New map']]],
+  ['info', '&#9881;', 'Map', [['settings', 'Settings'], ['wild', 'Wild Alienmon']]],
+  ['test', '&#9654;', 'Test', [['play', 'Playtest'], ['check', 'Check']]],
+  ['tools', '&#129520;', 'Tools', [['sprites', 'Sprite Studio'], ['overview', 'All worlds'], ['versions', 'Versions']]]];
+const LEAD = {
+  terrain: 'Paint the ground: dirt paths, stone roads, grass, tall grass, sand, water. Walkable ground follows what you paint.',
+  clips: 'Copy a piece of any map (a bridge, rocks, a doorway) and stamp copies of it anywhere.',
+  walls: 'Choose exactly where the player can walk, where wild battles happen, and where water, lava and ledges are.',
+  props: 'Add, move and line up objects: lamps, trees, fences, stalls, buildings.',
+  people: 'Add townsfolk and trainers, and set what they say, where they face and how they move.',
+  items: 'Hide items, place Linker Stashes, chests, signs and blocked-path messages.',
+  mons: 'Alienmon that roam the map and battle you when you bump into them.',
+  arrange: 'Move whole maps on the world layout so their edges line up.',
+  routes: 'Open a walkway between two maps that touch.',
+  doors: 'Choose which room or counter each door opens.',
+  scenes: 'Add a ready-made scene to this world, outdoors or as a room.',
+  maps: 'Make a new map: a blank one to paint, or one from a picture.',
+  settings: 'Music, the name banner, encounter rate, night and weather for one map.',
+  wild: "Which wild Alienmon live in this map's tall grass and water, and how often.",
+  play: "Walk the map with the game's rules to try it out.",
+  check: 'Find problems using the Map Logic Pack, and fix the safe ones in one go.',
+  sprites: 'Turn a generated sprite sheet into walking characters or props.',
+  overview: 'Every world at a glance, with its problem count.',
+  versions: 'Snapshots of your work, and crash recovery.' };
+const groupOf = m => GROUPS.find(g => g[3].some(x => x[0] === m)) || GROUPS[1];
+function setMode(m) {
+  S.mode = m; S.stamp = null; S.tsample = false; if (S.sel && ['stamp', 'route', 'piece', 'door'].includes(S.sel.kind)) S.sel = null; const g = groupOf(m); (S.lastSub = S.lastSub || {})[g[0]] = m;
+  document.querySelectorAll('#modes [data-group]').forEach(b => b.classList.toggle('on', b.dataset.group === g[0]));
+  if ((m === 'arrange' || m === 'routes') && S.view !== 'outdoor') toWorldView(); panel(); draw();
+}
+function tabsHtml() { const g = groupOf(S.mode);
+  return `<div class="subtabs">${g[3].map(([m, n]) => `<button data-sub="${m}" class="${S.mode === m ? 'on' : ''}">${n}</button>`).join('')}</div><p class="lead">${LEAD[S.mode] || ''}</p>`; }
+function tipText() {   // what a tap or drag on the map does right now
+  const m = S.mode, st = S.stamp;
+  if (m === 'terrain') return S.tsample ? 'Drag a box over plain ground to copy it as a terrain' : S.terase ? 'Eraser: drag over painted terrain to remove it' : S.terr && tsById(S.terr) ? `Drag on the map to paint: ${tsById(S.terr).name.split(' (')[0]}` : 'Pick a terrain on the right';
+  if (m === 'clips') return S.clipTool === 'move' ? 'Drag a stamp to move it' : S.clipTool === 'stamp' ? (st && clipById(st.c) ? `Tap the map to stamp: ${clipById(st.c).name}` : 'Pick a clip on the right') : 'Drag a box over the map to copy that piece';
+  if (m === 'walls') return `${S.wtool === 'brush' ? 'Drag across the map' : 'Tap a tile or drag a box'} to paint: ${brushName(S.brush)}`;
+  if (m === 'props') return st && st.kind === 'group' ? 'Tap to paste the group' : st ? 'Tap the map to place it (keeps placing until you stop)' : S.multiMode ? 'Tap props or drag a box to select several' : 'Pick a prop on the right to add it, or drag one on the map to move it';
+  if (m === 'people') return st ? 'Tap the map to place this person' : 'Pick someone on the right to add, or tap a person on the map to edit them';
+  if (m === 'mons') return st ? 'Tap the map to place this Alienmon' : 'Pick an Alienmon on the right';
+  if (m === 'items') return `Tap the map to place: ${OK_[S.okind || 'stash']}`;
+  if (m === 'doors') return 'Tap a door to choose what it opens';
+  if (m === 'routes') return 'Drag along the edge where two maps touch';
+  if (m === 'arrange') return 'Drag a map to move it';
+  if (m === 'scenes') return st ? 'Tap the world map where the scene goes' : 'Pick a scene on the right';
+  if (m === 'play') return S.play ? 'Walk: arrows or WASD · A: Space · B: Shift' : 'Tap a walkable tile to start walking there';
+  return '';
+}
+function updateTip() {
+  const el = $('#tip'); if (!el) return; const t = tipText(), key = t + '|' + !!S.stamp; if (el.dataset.k === key) return; el.dataset.k = key;
+  el.innerHTML = t ? `<span>${esc(t)}</span>${S.stamp ? '<button id="tipx" title="Stop placing (Esc)">&#10005; Stop</button>' : ''}` : '';
+  const x = $('#tipx'); if (x) x.onclick = () => { S.stamp = null; panel(); draw(); };
+}
+
 // ---------- side panel ----------
 function panel() {
-  const P = $('#panel'), m = S.mode; let h = '';
+  const P = $('#panel'), m = S.mode; let h = tabsHtml();
   if (S.sel) h += selPanel() + (m === 'people' ? personPanel() : '');   // faces, strolling and trainers (play.js)
   const PRE = `<div id="preview"><div class="box" id="pbox"></div><div class="cap" id="pcap">${matchMedia('(pointer:coarse)').matches ? 'Tap an item to see it large' : 'Hover over an item to see it large'}</div><div class="sizes">Item size <input type="range" id="cellsz" min="70" max="300" value="${S.cell || Math.round(Math.max(100, Math.min(200, innerWidth * 0.065)))}"></div></div>`;
   if (m === 'props') {
@@ -425,16 +480,11 @@ function panel() {
       <label>Name (optional) <input id="pname" value="${S.pname || ''}"></label><label>What they say <input id="pline" value="${S.pline || ''}" placeholder="Nice day, isn't it?"></label>
       <div class="grid">${Object.entries(ED.chars).map(([k, u]) => `<button class="pal ${S.stamp && S.stamp.art === k ? 'on' : ''}" data-c="${k}" data-cap="${k}" title="${k}"><img src="${(ED.charBig || {})[k] || u}"></button>`).join('')}</div>`;
   } else if (m === 'mons') {
-    h += PRE + `<h3>Wild Alienmon</h3><p class="hint">Roaming Alienmon you can bump into for a battle. Placing one here replaces the automatic ones on that map piece.</p>
+    h += PRE + `<h3>Roaming Alienmon</h3><p class="hint">Alienmon that wander the map and battle you when you bump into them. Placing one here replaces the automatic ones on that map piece.</p>
       <input id="msearch" placeholder="Search Alienmon" value="${S.msearch || ''}">
       <div class="grid">${Object.entries(ED.mons).filter(([k]) => !S.msearch || k.toLowerCase().includes(S.msearch.toLowerCase())).map(([k, u]) => `<button class="pal mon ${S.stamp && S.stamp.mon === k ? 'on' : ''}" data-m="${k}" data-cap="${k}" title="${k}"><span style="background-image:url(${u})"></span></button>`).join('')}</div>`;
-  } else if (m === 'walls') {
-    h += `<h3>Walls and walkable ground</h3><p class="hint">Pick a brush, then click a tile or press and drag to select a block of tiles; letting go fills the whole block. Doors and exits are never walled over.</p>
-      <div class="hint"><b>Colours:</b> <span style="color:#7dffa0">green</span> = the player can walk here (darker green = tall grass with wild battles),
-      <span style="color:#ffaa33">orange</span> = walkable but cut off (no way to get there: these are the spots to fix),
-      <span style="color:#ff6070">red</span> = wall, <span style="color:#b48cff">purple</span> = ground under a prop or person.</div>
-      <div class="row">${[['#', 'Wall'], ['.', 'Walkable'], [',', 'Tall grass']].map(([c, n]) => `<button class="tool ${S.brush === c ? 'on' : ''}" data-b="${c}">${n}</button>`).join('')}</div>`;
-  } else if (m === 'maps') h += mapPanel();
+  } else if (m === 'walls') h += wallsPanel();
+  else if (m === 'maps') h += mapPanel();
   else if (m === 'scenes') h += `<div id="preview"><div class="box" id="pbox"></div><div class="cap" id="pcap">Tap a scene to see it large</div></div>` + scenesPanel();
   else if (m === 'clips') h += (S.mode === 'clips' ? `<div id="preview"><div class="box" id="pbox"></div><div class="cap" id="pcap">Hover over a clip to see it large</div></div>` : '') + clipsPanel();
   else if (m === 'doors') h += `<h3>Doors</h3><p class="hint">Click a door on the map, then choose what it opens. Cyan = doors the game already has, yellow = doors you set, grey = story doors (fixed). Any number of doors can open the same room: leaving it takes the player back out the door they came in by. To add a new Alienmon centre or house, place a building from the Props sheet, then click its door here and pick that world's Recovery Bay or house room.</p>`;
@@ -444,8 +494,7 @@ function panel() {
     ${ROUTES.filter(r => !r.remove).map(r => `<div>${r.a} ${r.side} ${r.band[0]}-${r.band[1]} to ${r.b}</div>`).join('')}`;
   if (m === 'terrain') h += terrainPanel(); else if (m === 'sprites') h += spritesPanel();
   h += designPanel(m);
-  h += `<h3>Check</h3><button id="check">Check edited maps</button><div id="checkout"></div>`;
-  P.innerHTML = h; wire(); if (m === 'terrain') terrainWire(); else if (m === 'sprites') spritesWire(); designWire();
+  P.innerHTML = h; updateTip(); wire(); if (m === 'terrain') terrainWire(); else if (m === 'sprites') spritesWire(); designWire();
 }
 function selPanel() {
   const r = S.sel;
@@ -468,17 +517,25 @@ function selPanel() {
     ${padHtml(r.kind === 'prop' ? '1 pixel' : '')}<div class="hint">Drag to move${r.kind === 'prop' ? ' anywhere, to the pixel (its solid footprint follows the tile under its base)' : ''} · arrows move a tile${r.kind === 'prop' ? ' · Shift+arrows nudge a pixel · Ctrl+C copy' : ''} · Delete removes</div><button id="del">Remove</button></div>`;
 }
 function mapPanel() {
-  const outs = planetSecs().filter(s => s.grid);
-  return `<h3>Grow this world</h3><p class="hint">Upload a new map render (same style and scale as the others: 64 px per tile, 1536×1024 wide or 1024×1024 square) and attach it to the edge of an existing map piece.</p>
+  const outs = planetSecs().filter(s => s.grid), clips = CLIPS.filter(c => c.dir === S.planet);
+  return `<h3>A blank map to paint</h3>
+    <label>Name <input id="bname" placeholder="e.g. Hidden Canyon"></label>
+    <div class="row"><label>Width <input id="bw" type="number" value="24" min="8" max="48" style="width:70px"></label><label>Height <input id="bh" type="number" value="16" min="8" max="48" style="width:70px"></label><span class="hint">tiles (the game shows 10x9 at a time)</span></div>
+    <label>Kind <select id="btype"><option>route</option><option>town</option><option>field</option><option>landmark</option><option value="interior">interior room</option></select></label>
+    <label>Start with <select id="bground"><option value="">a plain colour</option>${clips.map(c => `<option value="${c.id}">${esc(c.name)} repeated</option>`).join('')}</select></label>
+    <label>Colour <input id="bcolor" type="color" value="#6b5b45"></label>
+    <button id="bmake">Create blank map</button>
+    <p class="hint">It opens in Paint: Terrain. Fill it with a ground terrain, then paint paths, grass and water. Join it to the world with Move maps and Routes, or point a door at it with Doors.</p>
+    <h3>A map from a picture</h3><p class="hint">Upload a new map render (same style and scale as the others: 64 px per tile, 1536×1024 wide or 1024×1024 square) and attach it to the edge of an existing map.</p>
     <input type="file" id="mfile" accept="image/*">
     <label>Name <input id="mname" placeholder="e.g. Rimwalk Trail Part C"></label>
     <label>Kind <select id="mtype"><option>route</option><option>town</option><option>field</option><option>landmark</option><option value="interior">interior room (Recovery Bay, shop, house...)</option></select></label>
     <label>Attach to <select id="mto">${outs.map(s => `<option value="${s.id}">${s.id} ${s.name}</option>`).join('')}</select></label>
     <label>On its <select id="mside"><option>right</option><option>left</option><option>top</option><option>bottom</option></select> edge</label>
     <label>Opening, tiles <input id="mband" value="5-10" size="6"> (rows for left/right, columns for top/bottom)</label>
-    <button id="madd">Add map piece</button>
-    <p class="hint">The new piece starts fully walkable inside a wall border with the opening cut on the joining edge. Use Walls to paint its walls, then dress it.</p>
-    ${MAPS.length ? '<h4>Added this session</h4>' + MAPS.map(m => `<div>${m.id} ${m.name} → ${m.attach.side} of ${m.attach.to}</div>`).join('') : ''}`;
+    <button id="madd">Add map</button>
+    <p class="hint">The new map starts fully walkable inside a wall border with the opening cut on the joining edge. Set its walls in Paint: Walkable, then dress it.</p>
+    ${MAPS.length ? '<h4>Added this session</h4>' + MAPS.map(m => `<div>${m.id} ${esc(m.name)}${m.attach ? ` → ${m.attach.side} of ${m.attach.to}` : m.built ? ' (blank, painted)' : ''}</div>`).join('') : ''}`;
 }
 function showPreview(b) {
   const box = $('#pbox'), cap = $('#pcap'); if (!box) return;
@@ -496,6 +553,9 @@ function wire() {
   document.querySelectorAll('[data-c]').forEach(b => b.onclick = () => { S.stamp = { kind: 'char', art: b.dataset.c, name: S.pname, line: S.pline }; S.sel = null; panel(); });
   document.querySelectorAll('[data-m]').forEach(b => b.onclick = () => { S.stamp = { kind: 'mon', mon: b.dataset.m }; S.sel = null; panel(); });
   document.querySelectorAll('[data-b]').forEach(b => b.onclick = () => { S.brush = b.dataset.b; panel(); });
+  document.querySelectorAll('[data-wt]').forEach(b => b.onclick = () => { S.wtool = b.dataset.wt; panel(); });
+  document.querySelectorAll('[data-sub]').forEach(b => b.onclick = () => setMode(b.dataset.sub));
+  document.querySelectorAll('[data-ct]').forEach(b => b.onclick = () => { S.clipTool = b.dataset.ct; if (b.dataset.ct !== 'stamp') S.stamp = null; else if (S.clipSel) S.stamp = { kind: 'clip', c: S.clipSel }; panel(); draw(); });
   on('#pname', 'input', e => { S.pname = e.target.value; if (S.stamp) S.stamp.name = S.pname; });
   on('#pline', 'input', e => { S.pline = e.target.value; if (S.stamp) S.stamp.line = S.pline; });
   on('#msearch', 'input', e => { S.msearch = e.target.value; const pos = e.target.selectionStart; panel(); const i = $('#msearch'); i.focus(); i.setSelectionRange(pos, pos); });
@@ -511,10 +571,13 @@ function wire() {
   on('#ename', 'input', e => { const a = ADDED[S.sel.sid][S.sel.i]; a.name = e.target.value; touch(S.sel.sid); });
   on('#eline', 'input', e => { const a = ADDED[S.sel.sid][S.sel.i]; a.t = e.target.value.split('\n').filter(Boolean); touch(S.sel.sid); });
   on('#check', 'click', check);
-  document.querySelectorAll('[data-clip]').forEach(b => b.onclick = () => { if (S.stamp && S.stamp.c === b.dataset.clip) { S.stamp = null; panel(); return; } S.clipSel = b.dataset.clip; S.stamp = S.view !== 'outdoor' ? { kind: 'clip', c: b.dataset.clip } : null; if (!S.stamp) toast('Open one map from the map list, then tap where the clip goes.'); panel(); });
+  document.querySelectorAll('[data-clip]').forEach(b => b.onclick = () => { if (S.stamp && S.stamp.c === b.dataset.clip) { S.stamp = null; panel(); draw(); return; } S.clipSel = b.dataset.clip; S.stamp = { kind: 'clip', c: b.dataset.clip }; S.clipTool = 'stamp'; panel(); draw(); toast('Now tap the map where the copy goes.'); });
+  on('#clipname', 'change', e => { const c = clipById(S.clipSel); if (!c) return; snap(); c.name = e.target.value.trim() || c.name; DIRTY.add('clips'); $('#save').classList.add('hot'); panel(); });
+  on('#clipterr', 'click', () => { const c = clipById(S.clipSel); if (c) { terrainFromClip(c); toast(`Terrain "${c.name}" made: find it in Paint: Terrain.`, 5000); } });
   on('#clipsall', 'change', e => { S.clipsAll = e.target.checked; panel(); });
-  on('#cliprm', 'click', () => { if (MAPS.some(m => m.built && (m.ground === S.clipSel || (m.stamps || []).some(st => st.c === S.clipSel)))) return toast('That clip is used on a map; remove those stamps first.'); snap(); CLIPS = CLIPS.filter(c => c.id !== S.clipSel); DIRTY.add('clips'); $('#save').classList.add('hot'); S.clipSel = null; S.stamp = null; panel(); });
+  on('#cliprm', 'click', () => { if (MAPS.filter(m => m.built).concat(Object.values(DS.paint || {})).some(m => m.ground === S.clipSel || (m.stamps || []).some(st => st.c === S.clipSel)) || TILESETS.some(t => t.clip === S.clipSel)) return toast('That clip is stamped on a map or used by a terrain; remove those first.'); snap(); CLIPS = CLIPS.filter(c => c.id !== S.clipSel); DIRTY.add('clips'); $('#save').classList.add('hot'); S.clipSel = null; S.stamp = null; panel(); });
   on('#clipground', 'click', () => { const m = builtMap(S.view); snap(); m.ground = S.clipSel; bake(S.view); stampRows(S.view); });
+  on('#tipx', 'click', () => { S.stamp = null; panel(); draw(); });
   on('#bmake', 'click', () => { const name = ($('#bname').value || '').trim(); if (!name) return toast('Give the new map a name.'); newBlank(name, Math.max(8, Math.min(48, +$('#bw').value || 24)), Math.max(8, Math.min(48, +$('#bh').value || 16)), $('#btype').value, $('#bground').value, $('#bcolor').value); });
   on('#doorset', 'click', () => { const v = $('#doorto').value; if (!v) return toast('Choose a room first.'); setDoor(S.sel.sid, S.sel.x, S.sel.y, v); toast('Door set: opens ' + doorName(v)); });
   on('#doorrm', 'click', () => setDoor(S.sel.sid, S.sel.x, S.sel.y, null));
@@ -536,7 +599,7 @@ function check() {
     while (q.length) { const [x, y] = q.shift(); for (const [a, b] of [[1, 0], [-1, 0], [0, 1], [0, -1]]) { const k = (x + a) + ',' + (y + b); if (!seen.has(k) && walk(x + a, y + b)) { seen.add(k); q.push([x + a, y + b]); } } }
     const cut = starts.filter(k => !seen.has(k.join(',')));
     out.push(cut.length ? `<div class="bad">${id} ${s.name}: ${cut.length} door/exit tile(s) cut off, e.g. ${cut[0]}</div>` : `<div class="good">${id} ${s.name}: all doors and exits reachable</div>`); }
-  $('#checkout').innerHTML = out.join('') || '<div class="hint">No edited maps yet.</div>';
+  const co = $('#checkout'); if (co) co.innerHTML = out.join('') || '<div class="hint">No edited maps yet.</div>';
   return !out.some(o => o.includes('class="bad"'));
 }
 
@@ -564,7 +627,7 @@ async function addMap() {
   t.edges = Object.assign({}, t.edges, { [side]: { to: id, range: band } });
   ROWS[id] = ED.sections[id].rows; NEWIMG[id] = url; touch(id);
   MAPS.push({ id, name, dir, planet: t.planet, type: $('#mtype').value, tiles: [W, H], img: `art/sections_game/${dir}/${id}_${slug}.png`, attach: { to, side, band } });
-  toast(`Added ${id} ${name} (${W}×${H} tiles). Paint its walls, then dress it.`); panel(); draw();
+  toast(`Added ${id} ${name} (${W}×${H} tiles). Set where you can walk in Paint: Walkable, then dress it.`); panel(); draw();
 }
 
 async function addRoom(f, name) {   // a new interior: walls round the edge, a 2-tile doormat in the middle of the bottom wall
@@ -579,7 +642,7 @@ async function addRoom(f, name) {   // a new interior: walls round the edge, a 2
     warps: [{ tile: [cx, H - 1], to: 'back', kind: 'door' }, { tile: [cx + 1, H - 1], to: 'back', kind: 'door' }], objects: [], spawns: { default: [cx, H - 2] }, npcs: [], mons: [] };
   ROWS[id] = ED.sections[id].rows; NEWIMG[id] = url; touch(id);
   MAPS.push({ id, name, dir, planet: ED.planets[dir], type: 'interior', tiles: [W, H], img: `art/sections_game/${dir}/${id}_${slug}.png` });
-  S.view = id; views(); fit(); S.mode = 'walls'; document.querySelectorAll('[data-mode]').forEach(x => x.classList.toggle('on', x.dataset.mode === 'walls'));
+  S.view = id; views(); fit(); setMode('walls');
   toast(`Room ${id} ${name} added (${W}x${H} tiles). Paint its walls and furniture as walls, then use Doors to point doors at it.`, 9000); panel(); draw();
 }
 
@@ -587,16 +650,19 @@ async function addRoom(f, name) {   // a new interior: walls round the edge, a 2
 const clipById = id => CLIPS.find(c => c.id === id);
 const builtMap = id => MAPS.find(m => m.id === id && m.built);
 function clipImg(c) { return img(CLIPIMG[c.id] || c.url); }
-function makeClip() {
+function makeClip() {   // the box becomes a clip (picture plus its walls), named for its map; rename it in the panel
   const r = S.clipRect; S.clipRect = null; const s = sec(r.sid), x0 = Math.min(r.x0, r.x1), y0 = Math.min(r.y0, r.y1), w = Math.abs(r.x1 - r.x0) + 1, h = Math.abs(r.y1 - r.y0) + 1;
-  if (w * h < 2) { draw(); return toast('Drag a box around the piece you want to clip.'); }
-  const name = prompt(`Name this clip (${w}x${h} tiles from ${s.name}):`, 'road'); if (!name) { draw(); return; }
-  const src = NEWIMG[s.id] ? img(NEWIMG[s.id]) : img(s.img); if (!ok(src)) { draw(); return toast('That map image is still loading, try again.'); }
-  const c = document.createElement('canvas'); c.width = w * 16; c.height = h * 16; c.getContext('2d').drawImage(src, x0 * 16, y0 * 16, w * 16, h * 16, 0, 0, w * 16, h * 16);
+  if (w * h < 2) { draw(); return toast('Drag a box around the piece you want to copy.'); }
+  const src = NEWIMG[s.id] ? img(NEWIMG[s.id]) : img(s.img); if (!ok(src)) { draw(); return toast('That map picture is still loading, try again.'); }
+  const fw = src.naturalWidth / s.tiles[0], fh = src.naturalHeight / s.tiles[1], c = document.createElement('canvas'); c.width = w * 16; c.height = h * 16; const g = c.getContext('2d');
+  g.drawImage(src, x0 * fw, y0 * fh, w * fw, h * fh, 0, 0, w * 16, h * 16);
+  const pu = !builtMap(s.id) && (PAINTIMG[s.id] || s.paintUrl), pi = pu && img(pu); if (ok(pi)) g.drawImage(pi, x0 * 16, y0 * 16, w * 16, h * 16, 0, 0, w * 16, h * 16);   // terrain painted on top comes too
   const R = rowsOf(s.id), rows = Array.from({ length: h }, (_, j) => (R[y0 + j] || '').slice(x0, x0 + w).padEnd(w, '#'));
-  let n = 1; while (clipById('c' + n)) n++; const id = 'c' + n;
-  snap(); CLIPIMG[id] = c.toDataURL('image/png'); CLIPS.push({ id, name: name.trim(), dir: s.dir, w, h, rows, from: s.id }); $('#save').classList.add('hot'); DIRTY.add('clips');
-  toast(`Clip "${name}" saved (${w}x${h}). It is in the Clips library on the right.`); panel(); draw();
+  let n = 1; while (clipById('c' + n)) n++; const id = 'c' + n, name = r.terrain ? `Ground from ${s.name}` : `${s.name} piece ${n}`;
+  snap(); CLIPIMG[id] = c.toDataURL('image/png'); CLIPS.push({ id, name, dir: s.dir, w, h, rows, from: s.id }); $('#save').classList.add('hot'); DIRTY.add('clips');
+  if (r.terrain) { terrainFromClip(clipById(id)); draw(); return; }
+  S.clipSel = id; S.stamp = { kind: 'clip', c: id }; S.clipTool = 'stamp';
+  toast(`Copied ${w}x${h} tiles. Now tap the map wherever you want a copy of it.`, 6000); panel(); draw();
 }
 function bake(id) {   // redraw a built map: the ground (a clip repeated, or a plain colour), then every stamp in order
   const m = builtMap(id), s = sec(id), [W, H] = s.tiles, cv2 = document.createElement('canvas'); cv2.width = W * 16; cv2.height = H * 16; const g = cv2.getContext('2d');
@@ -612,13 +678,16 @@ function stampRows(id) {   // collision: the ground clip's walls repeated, then 
   const R = Array.from({ length: H }, (_, y) => Array.from({ length: W }, (_, x) => gc ? gc.rows[y % gc.h][x % gc.w] : '.'));
   terrainRows(m, R, W, H);
   for (const st of m.stamps || []) { const c = clipById(st.c); if (!c) continue; for (let j = 0; j < c.h; j++) for (let i = 0; i < c.w; i++) { const y = st.y + j, x = st.x + i; if (R[y] && R[y][x] !== undefined) R[y][x] = c.rows[j][i]; } }
+  for (const [k, ch] of Object.entries(m.manual || {})) { const [x, y] = k.split(',').map(Number); if (R[y] && R[y][x] !== undefined) R[y][x] = ch; }   // Walkable edits made after the terrain and stamps
   for (const [side, e] of Object.entries(s.edges || {})) for (let k = e.range[0]; k <= e.range[1]; k++) { const [x, y] = { left: [0, k], right: [W - 1, k], top: [k, 0], bottom: [k, H - 1] }[side]; if (R[y]) R[y][x] = '.'; }
   for (const w of s.warps || []) if (R[w.tile[1]]) R[w.tile[1]][w.tile[0]] = '.';
   ROWS[id] = R.map(r => r.join('')); touch(id); draw();
 }
+const stampAt = (t, c) => [t.x - Math.floor((c.w - 1) / 2), t.y - Math.floor((c.h - 1) / 2)];   // a stamp lands centred on the tap
 function placeStamp(t) {
-  if (!t || t.sid !== S.view) return; snap(); const m = stampHost(S.view, true); if (!m) return; (m.stamps = m.stamps || []).push({ c: S.stamp.c, x: t.x, y: t.y });
-  S.sel = { kind: 'stamp', sid: S.view, i: m.stamps.length - 1 }; terrBake(S.view); terrRows(S.view); panel();
+  const c = t && clipById(S.stamp.c); if (!c) return; snap(); const m = stampHost(t.sid, true); if (!m) return; const [x, y] = stampAt(t, c); (m.stamps = m.stamps || []).push({ c: c.id, x, y });
+  clearManual(m, x, y, x + c.w - 1, y + c.h - 1); S.sel = { kind: 'stamp', sid: t.sid, i: m.stamps.length - 1 }; terrBake(t.sid); terrRows(t.sid); panel();
+  toast(`Stamped ${c.name}. Tap again for another copy, or Stop when you're done.`);
 }
 function newBlank(name, W, H, type, ground, color) {
   const used = new Set(Object.keys(ED.sections)); let n = 300; while (used.has(String(n))) n++; const id = String(n), dir = S.planet;
@@ -630,23 +699,20 @@ function newBlank(name, W, H, type, ground, color) {
   const m = { id, name, dir, planet: ED.planets[dir], type, tiles: [W, H], img: `art/sections_game/${dir}/${id}_${slug}.png`, built: true, ground: ground || null, color: color || '#6b5b45', stamps: [] };
   if (type === 'interior') { const cx = Math.floor(W / 2) - 1; ED.sections[id].warps = [{ tile: [cx, H - 1], to: 'back', kind: 'door' }, { tile: [cx + 1, H - 1], to: 'back', kind: 'door' }]; ED.sections[id].spawns = { default: [cx, H - 2] }; }
   MAPS.push(m); bake(id); stampRows(id); ED.sections[id].img = NEWIMG[id];
-  S.view = id; views(); fit(); toast(`New map ${id} ${name} (${W}x${H}). Pick clips on the right and click to stamp them.${grid ? ' Then use Arrange and Routes to join it to the world.' : ' Then point doors at it with Doors.'}`, 9000); panel(); draw();
+  S.view = id; views(); fit(); setMode('terrain'); toast(`New map ${id} ${name} (${W}x${H}). Paint it with the terrains on the right.${grid ? ' Then join it to the world with World: Move maps and Routes.' : ' Then point a door at it with World: Doors.'}`, 9000);
 }
 function clipsPanel() {
-  const m = S.view !== 'outdoor' && builtMap(S.view), one = S.view !== 'outdoor', list = CLIPS.filter(c => !S.clipsAll ? c.dir === S.planet : true);
-  return `<h3>Clips</h3><p class="hint"><b>Make a clip:</b> with no clip picked, press and drag a box around a piece of any map (a road, rocks, a cliff, water). <b>Use a clip:</b> ${one ? 'tap it below, then tap the map where its top-left corner goes. Drag a stamp to move it; Delete removes it. Stamps bring their walls and walkable ground with them' + (m ? '' : '. On a finished map the stamp sits on a see-through layer, so the picture underneath is never changed') + '. Tap the picked clip again (or Esc) to go back to making clips.' : 'open one map from the map list first.'} A clip can also become a Terrain (Terrain tab, "Make from clip").</p>
+  const list = CLIPS.filter(c => S.clipsAll || c.dir === S.planet), tool = S.clipTool || 'cut', cur = S.clipSel && clipById(S.clipSel), m = S.view !== 'outdoor' && builtMap(S.view), st = S.stamp && S.stamp.kind === 'clip' && clipById(S.stamp.c);
+  return `<div id="preview"><div class="box" id="pbox"></div><div class="cap" id="pcap">${list.length ? 'Hover over a clip to see it large' : ''}</div></div>
+    <ol class="steps"><li><b>Copy</b>: drag a box over any part of a map (a bridge, rocks, a doorway, a patch of flowers).</li><li><b>Stamp</b>: tap the map to put a copy there, as many times as you like. Its walls and walkable ground come with it.</li><li><b>Move</b>: drag a stamp to adjust it, or select it and Remove.</li></ol>
+    <div class="row">${[['cut', '&#9986; Copy'], ['stamp', '&#128204; Stamp'], ['move', '&#10021; Move']].map(([k, n]) => `<button class="tool ${tool === k ? 'on' : ''}" data-ct="${k}">${n}</button>`).join('')}</div>
+    <p class="hint">${tool === 'cut' ? '<b>Drag a box over the map</b> to copy that piece.' : tool === 'stamp' ? (st ? `<b>Tap the map</b> to stamp ${esc(st.name)}.` : '<b>Pick a clip below</b>, then tap the map.') : '<b>Drag a stamp</b> you placed to move it.'}
+      ${builtMap(S.view) ? '' : ' On finished maps stamps go on a see-through layer, so the picture underneath never changes.'}</p>
+    <h4>Your clips</h4><div class="grid">${list.map(c => `<button class="pal ${S.stamp && S.stamp.c === c.id ? 'on' : ''}" data-clip="${c.id}" data-cap="${esc(c.name)} · ${c.w}x${c.h} tiles" title="${esc(c.name)}"><img src="${CLIPIMG[c.id] || c.url}"></button>`).join('') || '<div class="hint">No clips yet: use Copy to make one.</div>'}</div>
     <label class="row"><input type="checkbox" id="clipsall" ${S.clipsAll ? 'checked' : ''}> show clips from every world</label>
-    <div class="grid">${list.map(c => `<button class="pal ${S.stamp && S.stamp.c === c.id ? 'on' : ''}" data-clip="${c.id}" data-cap="${c.name} · ${c.w}x${c.h} tiles · from ${c.from}" title="${c.name}"><img src="${CLIPIMG[c.id] || c.url}"></button>`).join('') || '<div class="hint">No clips yet.</div>'}</div>
-    ${S.clipSel ? `<div class="row" style="margin-top:6px"><button id="cliprm">Delete clip ${S.clipSel}</button>${m ? `<button id="clipground">Use ${S.clipSel} as the ground</button>` : ''}</div>` : ''}
-    <h3>New map from clips</h3>
-    <label>Name <input id="bname" placeholder="e.g. Hidden Canyon"></label>
-    <div class="row"><label>Width <input id="bw" type="number" value="24" min="8" max="48" style="width:70px"></label><label>Height <input id="bh" type="number" value="16" min="8" max="48" style="width:70px"></label></div>
-    <label>Kind <select id="btype"><option>route</option><option>town</option><option>field</option><option>landmark</option><option value="interior">interior room</option></select></label>
-    <label>Ground <select id="bground"><option value="">Plain colour</option>${list.map(c => `<option value="${c.id}">${c.name} (repeated)</option>`).join('')}</select></label>
-    <label>Colour <input id="bcolor" type="color" value="#6b5b45"></label>
-    <button id="bmake">Create blank map</button>`;
+    ${cur ? `<div class="sel"><label>Name <input id="clipname" value="${esc(cur.name)}"></label><div class="hint">${cur.w}x${cur.h} tiles, copied from ${cur.from} ${esc((sec(cur.from) || {}).name || '')}</div>
+      <div class="row"><button id="clipterr" title="Paint with it in Paint: Terrain; its edges blend in">Make it a terrain</button>${m ? `<button id="clipground">Repeat it as this map's ground</button>` : ''}<button id="cliprm">Delete clip</button></div></div>` : ''}`;
 }
-
 // ---------- saving ----------
 function bundle() {
   const npcs = { moves: MOVES, added: ADDED, removed: REMOVED };
@@ -659,7 +725,7 @@ function bundle() {
 }
 let DIR = null;
 async function save() {
-  if (DIRTY.size && !check() && !confirm('Some doors or exits are cut off on the maps listed under Check. Save anyway?')) return;
+  if (DIRTY.size && !check() && !confirm('Some doors or exits are cut off on maps you edited (Test: Check shows where). Save anyway?')) return;
   const b = bundle();
   if (!/^(localhost|127\.)/.test(location.hostname)) return webSave(b);   // on the test link: save through Vercel -> GitHub
   if (!window.showDirectoryPicker) { download(b); return; }
@@ -713,7 +779,9 @@ async function boot() {
   $('#planet').innerHTML = dirs.map(d => `<option value="${d}">${ED.planets[d]}</option>`).join('');
   $('#planet').onchange = e => { S.planet = e.target.value; S.view = 'outdoor'; S.sel = null; if (ED.props[S.planet]) S.sheet = S.planet; views(); panel(); fit(); };
   $('#view').onchange = e => { S.view = e.target.value; S.sel = null; fit(); };
-  document.querySelectorAll('[data-mode]').forEach(b => b.onclick = () => { b.scrollIntoView({ block: 'nearest', inline: 'center' }); S.mode = b.dataset.mode; S.stamp = null; document.querySelectorAll('[data-mode]').forEach(x => x.classList.toggle('on', x === b)); if ((S.mode === 'arrange' || S.mode === 'routes') && S.view !== 'outdoor') toWorldView(); panel(); draw(); });
+  $('#modes').innerHTML = GROUPS.map(([k, i, n, subs]) => `<button data-group="${k}" title="${subs.map(x => x[1]).join(', ')}"><i>${i}</i><span>${n}</span></button>`).join('');
+  document.querySelectorAll('[data-group]').forEach(b => b.onclick = () => { const g = GROUPS.find(g => g[0] === b.dataset.group); setMode((S.lastSub || {})[g[0]] || g[3][0][0]); });
+  setMode(S.mode);
   $('#walls').onchange = e => { S.walls = e.target.checked; draw(); }; $('#showdoors').onchange = draw;
   $('#zin').onclick = () => { S.zoom = Math.min(8, S.zoom * 1.25); draw(); }; $('#zout').onclick = () => { S.zoom = Math.max(0.25, S.zoom / 1.25); draw(); }; $('#zfit').onclick = fit;
   $('#undo').onclick = undo; $('#save').onclick = save;

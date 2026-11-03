@@ -60,8 +60,8 @@ function groupPanel() {
 const SIZE_TARGET = { town: [50, 45], route: [50, 90], field: [50, 90], landmark: [50, 45], interior: [14, 11] };
 function walkable(c) { return c === '.' || c === ','; }
 const OUT_T = new Set(['route', 'town', 'field', 'landmark']);   // the 3-wide path rule is for outdoor maps; caves, towers and arenas are tight on purpose
-function setRow(id, tiles, ch) { const R = rowsOf(id).map(r => r.split('')), keys = blockedKeys(id); let n = 0;
-  for (const [x, y] of tiles) if (R[y] && R[y][x] !== undefined && R[y][x] !== ch && !(ch === '#' && keys.has(x + ',' + y))) { R[y][x] = ch; n++; }
+function setRow(id, tiles, ch) { const R = rowsOf(id).map(r => r.split('')), keys = blockedKeys(id), host = builtMap(id) || (DS.paint || {})[id]; let n = 0;
+  for (const [x, y] of tiles) if (R[y] && R[y][x] !== undefined && R[y][x] !== ch && !(ch === '#' && keys.has(x + ',' + y))) { R[y][x] = ch; if (host) (host.manual = host.manual || {})[x + ',' + y] = ch; n++; }
   if (n) { ROWS[id] = R.map(r => r.join('')); touch(id); } return n; }
 function dressDoor(id, door) {   // a pair of the same small prop either side of the door, using the prop this world puts by its doors most
   const s = sec(id), near = {}, small = p => { const m = propInfo(p); return m && m.px[0] <= 20 && m.px[1] <= 34; };
@@ -119,7 +119,7 @@ function worldCheck(dir) {   // per world: wildlife zones and a water edge
   if (grass < 2) out.push({ sid: null, sev: 'warn', msg: `Only ${grass} map(s) on this world have a wildlife zone (36+ tiles of tall grass); 2 or more wanted.`, tiles: [] });
   const small = ss.filter(s => { const tg = SIZE_TARGET[s.type === 'interior' ? 'interior' : s.type]; return tg && (s.tiles[0] < tg[0] * 0.5 || s.tiles[1] < tg[1] * 0.5); }).length;
   if (small) out.push({ sid: null, sev: 'info', msg: `${small} map(s) are smaller than the Map Logic Pack sizes (towns about 50x45, routes 50x90, rooms 14x11). The painted renders are 24x16, so this is a note, not a fault.`, tiles: [] });
-  if (!water) out.push({ sid: null, sev: 'info', msg: 'No water edge on this world yet (paint water with the Ground brushes).', tiles: [] });
+  if (!water) out.push({ sid: null, sev: 'info', msg: 'No water edge on this world yet (paint water in Paint: Terrain or Paint: Walkable).', tiles: [] });
   return out;
 }
 function logicPanel() {
@@ -243,15 +243,9 @@ function designDraw(ctx) {
   if (typeof designDraw2 === 'function') designDraw2(ctx);
 }
 function designBundle(b) { b.design = DS; if (typeof designBundle2 === 'function') designBundle2(b); }
-// ---------- phones: the More sheet and the on-map playtest pad ----------
+// ---------- phones: the on-map playtest pad ----------
 const phone = () => matchMedia('(max-width:820px), (pointer:coarse) and (max-width:1100px)').matches;
-function moreSheet(open) { const sh = $('#moresheet'); if (!open) { sh.classList.remove('on'); return; }
-  sh.querySelector('.g').innerHTML = [...document.querySelectorAll('#modes [data-mode]')].map(b => `<button data-go="${b.dataset.mode}" class="${S.mode === b.dataset.mode ? 'on' : ''}">${b.innerHTML}</button>`).join('');
-  sh.querySelectorAll('[data-go]').forEach(b => b.onclick = () => { sh.classList.remove('on'); document.querySelector(`#modes [data-mode="${b.dataset.go}"]`).click(); markMore(); }); sh.classList.add('on'); }
-function markMore() { const core = document.querySelector(`#modes [data-mode="${S.mode}"]`), m = $('#moremode'); if (m) m.classList.toggle('on', !!core && !core.classList.contains('core')); }
-function playPad() { const p = $('#playpad'); if (p) p.classList.toggle('on', S.mode === 'play' && !!S.play && (phone() || matchMedia('(pointer:coarse)').matches)); }
+function playPad() { const p = $('#playpad'); if (p) p.classList.toggle('on', S.mode === 'play' && !!S.play && (phone() || matchMedia('(pointer:coarse)').matches)); $('#mapwrap').classList.toggle('playing', S.mode === 'play' && !!S.play); }
 function designBoot() { DS = Object.assign({ zones: {}, objs: {}, people: {}, settings: {}, ground: {} }, ED.edits.design || {}); recoverDraft(); if (typeof designBoot2 === 'function') designBoot2();
-  $('#moremode').onclick = () => moreSheet(!$('#moresheet').classList.contains('on')); $('#moreclose').onclick = () => moreSheet(false);
-  document.querySelectorAll('#modes [data-mode]').forEach(b => b.addEventListener('click', () => { moreSheet(false); setTimeout(markMore); }));
   document.querySelectorAll('[data-pp]').forEach(b => { const d = b.dataset.pp, up = () => { delete HELD[d]; }; b.addEventListener('pointerdown', e => { e.preventDefault(); HELD[d] = 1; }); b.addEventListener('pointerup', up); b.addEventListener('pointercancel', up); b.addEventListener('pointerleave', up); });
   $('#ppa').addEventListener('pointerdown', e => { e.preventDefault(); playA(); }); $('#ppb').addEventListener('pointerdown', e => { e.preventDefault(); playB(); }); }
