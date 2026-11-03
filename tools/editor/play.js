@@ -123,25 +123,75 @@ function personWire() {
 }
 
 // ---------- items, signs and blocked paths ----------
-const OK_ = { stash: 'Linker Stash', chest: 'Chest', hidden: 'Hidden item', sign: 'Sign', stop: 'Blocked-path message' };
+const OK_ = { stash: 'Linker Stash', pickup: 'Item on the ground', chest: 'Chest', hidden: 'Hidden item', sign: 'Sign', lock: 'Locked way', stop: 'Blocked-path message' };
+const OK_ICON = { stash: '&#128142;', pickup: '&#10024;', chest: '&#127873;', hidden: '&#10067;', sign: '&#128204;', lock: '&#128274;', stop: '&#9888;' };
+const OK_PL = { stash: 'Linker Stashes', pickup: 'items on the ground', chest: 'chests', hidden: 'hidden items', sign: 'signs', lock: 'locked ways', stop: 'blocked-path messages' };
+const OK_HOW = {
+  stash: 'A Linker Stash capsule. The player opens it with A.',
+  pickup: 'An item lying on the ground, sparkling. The player picks it up with A, then the tile is free to walk on.',
+  chest: 'A chest the player opens with A. The tile becomes solid.',
+  hidden: 'Invisible: found by pressing A facing the tile. Good at the end of a fence, by a lone rock or a dead end.',
+  sign: 'Read with A. The tile becomes solid.',
+  lock: 'Blocks the way until the player has what it needs (a key item, or this world\'s Keeper beaten). Then A opens it for good.',
+  stop: 'Shown when the player bumps the tile (a rockfall, a closed road). The tile becomes solid.' };
 const objsOf = id => DS.objs[id] = DS.objs[id] || [];
+const hasItem = k => ['stash', 'pickup', 'chest', 'hidden'].includes(k), hasText = k => ['sign', 'stop', 'lock'].includes(k), canShow = k => k === 'chest' || k === 'sign';
+const REWARDS = [[3, [['gel', 2], ['stasis', 3], ['cure', 1], ['dust', 100]]], [7, [['megagel', 2], ['harmonic', 2], ['revive', 1], ['ether', 1], ['dust', 300]]],
+  [11, [['fullgel', 1], ['harmonic', 3], ['revive', 2], ['jammer', 2], ['dust', 600]]], [99, [['maxrevive', 1], ['singularity', 1], ['fullgel', 2], ['dust', 1200]]]];   // by how far into the journey the world is
+const rewardsFor = dir => REWARDS.find(([n]) => (parseInt(dir) || 1) <= n)[1];
+const itemName = k => (ED.items.find(i => i.k === k) || { n: k }).n;
+const pkeyOf = dir => (dir || '').replace(/^\d+_/, '');
+function itemSel(id, v) {   // grouped, so healing, pods, Stardust and key items are easy to find
+  const groups = [...new Set(ED.items.map(i => i.g || 'Items'))];
+  return `<select id="${id}">${groups.map(g => `<optgroup label="${g}">${ED.items.filter(i => (i.g || 'Items') === g).map(i => `<option value="${i.k}" ${v === i.k ? 'selected' : ''}>${esc(i.n)}</option>`).join('')}</optgroup>`).join('')}</select>`;
+}
+function lockSel(id, need) {
+  const v = need && need.key ? 'key:' + need.key : need && need.keeper ? 'keeper' : need && need.flag ? 'flag:' + need.flag : 'keeper';
+  return `<select id="${id}"><option value="keeper" ${v === 'keeper' ? 'selected' : ''}>this world's Keeper is beaten</option>
+    <optgroup label="the player has a key item">${ED.items.filter(i => i.g === 'Key items').map(i => `<option value="key:${i.k}" ${v === 'key:' + i.k ? 'selected' : ''}>${esc(i.n)}</option>`).join('')}</optgroup></select>`;
+}
+const needOf = (v, dir) => v === 'keeper' ? { keeper: pkeyOf(dir) } : v.startsWith('key:') ? { key: v.slice(4) } : { flag: v.slice(5) };
+const LOOKS = [['barrier', 'Energy fence'], ['gate', 'Iron gate'], ['rock', 'Boulder']];
 function itemsPanel() {
-  const k = S.okind || 'stash', o = S.osel && (DS.objs[S.osel.sid] || [])[S.osel.i];
-  const itemSel = (id, v) => `<select id="${id}">${ED.items.map(i => `<option value="${i.k}" ${v === i.k ? 'selected' : ''}>${i.n}</option>`).join('')}</select>`;
-  return `<h3>Items, signs and blocked paths</h3><p class="hint">Pick a kind, then click the map. Click one you placed to change or remove it. Rewards at dead ends and behind detours make exploring worth it (Map Logic Pack).</p>
-    <div class="row">${Object.entries(OK_).map(([v, n]) => `<button class="tool ${k === v ? 'on' : ''}" data-ok="${v}">${n}</button>`).join('')}</div>
-    ${['stash', 'chest', 'hidden'].includes(k) ? `<div class="row" style="margin-top:6px"><label>Item ${itemSel('oitem', S.oitem || 'gel')}</label><label>How many <input id="on" type="number" min="1" max="99" value="${S.on || 1}" style="width:60px"></label></div>` : `<label>Text <textarea id="ot" rows="2" placeholder="${k === 'sign' ? 'RIMWALK TRAIL - Dustara Plaza ahead' : 'Rockfall! The path is blocked for now.'}">${esc(S.ot)}</textarea></label>`}
-    <div class="hint">${{ stash: 'A Linker Stash capsule (solid).', chest: 'A chest the player opens with A. The tile becomes solid.', hidden: 'Invisible: the player finds it by pressing A facing the tile (the end of a fence, a lone rock).', sign: 'Read with A. The tile becomes solid: put it on a sign prop or a wall.', stop: 'Shown when the player bumps the tile. The tile becomes solid.' }[k]}</div>
-    ${o ? `<div class="sel"><b>${OK_[o.k]}</b> at ${o.tile.join(',')}
-      ${o.item ? `<div class="row"><label>Item ${itemSel('esitem', o.item)}</label><label>How many <input id="esn" type="number" min="1" max="99" value="${o.n || 1}" style="width:60px"></label></div>` : `<label>Text <textarea id="est" rows="2">${esc([].concat(o.t || []).join('\n'))}</textarea></label>`}
-      <button id="esdel">Remove</button></div>` : ''}`;
+  const k = S.okind || 'stash', o = S.osel && (DS.objs[S.osel.sid] || [])[S.osel.i], one = S.view !== 'outdoor' && sec(S.view), dir = one ? one.dir : S.planet;
+  const info = ED.items.find(i => i.k === (S.oitem || 'gel')), rw = rewardsFor(dir);
+  const list = id => (DS.objs[id] || []).map((x, i) => [x, i]).filter(([x]) => OK_[x.k]);
+  const counts = ids => { const c = {}; for (const id of ids) for (const [x] of list(id)) c[x.k] = (c[x.k] || 0) + 1; return Object.entries(c).map(([k, n]) => `${n} ${n > 1 ? OK_PL[k] : OK_[k].toLowerCase()}`).join(', ') || 'nothing yet'; };
+  const worldIds = Object.values(ED.sections).filter(s => s.dir === dir).map(s => s.id);
+  return `<div class="brushes">${Object.entries(OK_).map(([v, n]) => `<button class="${k === v ? 'on' : ''}" data-ok="${v}">${OK_ICON[v]} ${n}</button>`).join('')}</div>
+    <p class="hint">${OK_HOW[k]}</p>
+    ${hasItem(k) ? `<label>Item ${itemSel('oitem', S.oitem || 'gel')}</label>${info && info.d ? `<div class="hint">${esc(info.d)}</div>` : ''}
+      <label>How many <input id="on" type="number" min="1" max="9999" value="${S.on || 1}" style="width:80px"></label>
+      <div class="hint">Good rewards for ${esc(ED.planets[dir] || 'this world')}:</div><div class="row">${rw.map(([it, n]) => `<button data-rw="${it}|${n}">${n > 1 ? n + 'x ' : ''}${esc(itemName(it))}</button>`).join('')}</div>` : ''}
+    ${k === 'lock' ? `<label>Opens when ${lockSel('olneed', S.olneed ? needOf(S.olneed, dir) : null)}</label><label>Looks like <select id="ollook">${LOOKS.map(([v, n]) => `<option value="${v}" ${(S.ollook || 'barrier') === v ? 'selected' : ''}>${n}</option>`).join('')}</select></label>
+      <label>Opened message <input id="olok" value="${esc(S.olok || '')}" placeholder="The fence powers down. The way is open!"></label>` : ''}
+    ${hasText(k) ? `<label>${k === 'lock' ? 'Locked message' : 'Text'} <textarea id="ot" rows="2" placeholder="${k === 'sign' ? 'RIMWALK TRAIL - Dustara Plaza ahead' : k === 'lock' ? 'An energy fence hums across the path. Only a Keeper\'s badge can switch it off.' : 'Rockfall! The path is blocked for now.'}">${esc(S.ot)}</textarea></label>` : ''}
+    ${canShow(k) ? `<label class="row"><input type="checkbox" id="oshow" ${S.oshow !== false ? 'checked' : ''}> draw a ${k} here (untick if the map picture already shows one)</label>` : ''}
+    <p class="hint"><b>Tap the map</b> to place it. Tap one you placed to change or remove it.</p>
+    ${o ? `<div class="sel"><b>${OK_ICON[o.k]} ${OK_[o.k]}</b> at ${o.tile.join(',')}
+      ${o.item ? `<label>Item ${itemSel('esitem', o.item)}</label><label>How many <input id="esn" type="number" min="1" max="9999" value="${o.n || 1}" style="width:80px"></label>` : ''}
+      ${o.k === 'lock' ? `<label>Opens when ${lockSel('esneed', o.need)}</label><label>Looks like <select id="eslook">${LOOKS.map(([v, n]) => `<option value="${v}" ${(o.look || 'barrier') === v ? 'selected' : ''}>${n}</option>`).join('')}</select></label>
+        <label>Opened message <input id="esok" value="${esc(o.ok || '')}"></label>` : ''}
+      ${hasText(o.k) ? `<label>${o.k === 'lock' ? 'Locked message' : 'Text'} <textarea id="est" rows="2">${esc([].concat(o.t || []).join('\n'))}</textarea></label>` : ''}
+      ${canShow(o.k) ? `<label class="row"><input type="checkbox" id="esshow" ${o.show ? 'checked' : ''}> draw it in the game</label>` : ''}
+      <button id="esdel">Remove</button></div>` : ''}
+    <h4>Placed so far</h4>
+    ${one ? `<div class="hint">${esc(one.name)}: ${counts([one.id])}</div><div class="row">${list(one.id).map(([x, i]) => `<button data-osel="${i}" class="${o && S.osel.i === i ? 'on' : ''}">${OK_ICON[x.k]} ${x.item ? esc(itemName(x.item)) : esc(OK_[x.k])}</button>`).join('')}</div>` : '<div class="hint">Open a map to list what is on it.</div>'}
+    <div class="hint">All of ${esc(ED.planets[dir] || 'this world')}: ${counts(worldIds)}</div>
+    ${how('<li>Pick a kind above, and the item it gives.</li><li>Tap the map to place it. Put rewards at dead ends and behind detours so exploring pays off (Map Logic Pack).</li><li>A <b>Locked way</b> plus a key item in a chest somewhere else makes a small puzzle.</li>')}`;
 }
 function itemsWire() {
-  const on = (sel, ev, f) => { const el = $(sel); if (el) el.addEventListener(ev, f); }, o = () => S.osel && DS.objs[S.osel.sid][S.osel.i];
-  document.querySelectorAll('[data-ok]').forEach(b => b.onclick = () => { S.okind = b.dataset.ok; S.osel = null; panel(); });
-  on('#oitem', 'change', e => S.oitem = e.target.value); on('#on', 'change', e => S.on = Math.max(1, +e.target.value || 1)); on('#ot', 'input', e => S.ot = e.target.value);
-  on('#esitem', 'change', e => { snap(); o().item = e.target.value; touch(S.osel.sid); }); on('#esn', 'change', e => { snap(); o().n = Math.max(1, +e.target.value || 1); touch(S.osel.sid); });
-  on('#est', 'change', e => { snap(); const lines = e.target.value.split('\n').map(x => x.trim()).filter(Boolean); o().t = o().k === 'stop' ? lines.join(' ') : lines; touch(S.osel.sid); });
+  const on = (sel, ev, f) => { const el = $(sel); if (el) el.addEventListener(ev, f); }, o = () => S.osel && DS.objs[S.osel.sid][S.osel.i], ch = () => { touch(S.osel.sid); draw(); };
+  const dir = () => (S.osel && sec(S.osel.sid).dir) || (S.view !== 'outdoor' && sec(S.view) ? sec(S.view).dir : S.planet);
+  document.querySelectorAll('[data-ok]').forEach(b => b.onclick = () => { S.okind = b.dataset.ok; S.osel = null; panel(); draw(); });
+  document.querySelectorAll('[data-osel]').forEach(b => b.onclick = () => { S.osel = { sid: S.view, i: +b.dataset.osel }; panel(); draw(); });
+  document.querySelectorAll('[data-rw]').forEach(b => b.onclick = () => { const [it, n] = b.dataset.rw.split('|'); S.oitem = it; S.on = +n; if (o() && o().item) { snap(); o().item = it; o().n = +n; ch(); } panel(); });
+  on('#oitem', 'change', e => { S.oitem = e.target.value; panel(); }); on('#on', 'change', e => S.on = Math.max(1, +e.target.value || 1)); on('#ot', 'input', e => S.ot = e.target.value);
+  on('#olneed', 'change', e => S.olneed = e.target.value); on('#ollook', 'change', e => S.ollook = e.target.value); on('#olok', 'input', e => S.olok = e.target.value); on('#oshow', 'change', e => S.oshow = e.target.checked);
+  on('#esitem', 'change', e => { snap(); o().item = e.target.value; ch(); }); on('#esn', 'change', e => { snap(); o().n = Math.max(1, +e.target.value || 1); ch(); });
+  on('#esneed', 'change', e => { snap(); o().need = needOf(e.target.value, dir()); ch(); }); on('#eslook', 'change', e => { snap(); o().look = e.target.value; ch(); });
+  on('#esok', 'change', e => { snap(); o().ok = e.target.value.trim(); ch(); }); on('#esshow', 'change', e => { snap(); if (e.target.checked) o().show = 1; else delete o().show; ch(); });
+  on('#est', 'change', e => { snap(); const lines = e.target.value.split('\n').map(x => x.trim()).filter(Boolean); o().t = o().k === 'sign' ? lines : lines.join(' '); ch(); });
   on('#esdel', 'click', () => { snap(); DS.objs[S.osel.sid].splice(S.osel.i, 1); touch(S.osel.sid); S.osel = null; panel(); draw(); });
 }
 function itemPlace(t) {
@@ -151,10 +201,12 @@ function itemPlace(t) {
   if (s.objects.some(o => o.tile[0] === t.x && o.tile[1] === t.y)) return toast('Something is already there.');
   if (blockedKeys(t.sid).has(tk(t.x, t.y))) return toast('Keep doors, exits and counters clear.');
   const o = { k, tile: [t.x, t.y] };
-  if (['stash', 'chest', 'hidden'].includes(k)) { o.item = S.oitem || 'gel'; o.n = S.on || 1; if (k === 'stash') o.tier = 1; }
-  else { const txt = (S.ot || '').trim(); if (!txt) return toast('Type the text first.'); o.t = k === 'stop' ? txt.replace(/\n/g, ' ') : txt.split('\n').filter(Boolean); }
+  if (hasItem(k)) { o.item = S.oitem || 'gel'; o.n = S.on || 1; if (k === 'stash') o.tier = 1; }
+  if (k === 'lock') { o.need = needOf(S.olneed || 'keeper', s.dir); o.look = S.ollook || 'barrier'; if ((S.olok || '').trim()) o.ok = S.olok.trim(); }
+  if (hasText(k)) { const txt = (S.ot || '').trim(); if (!txt && k !== 'lock') return toast('Type the text first.'); if (txt) o.t = k === 'sign' ? txt.split('\n').filter(Boolean) : txt.replace(/\n/g, ' '); }
+  if (canShow(k) && S.oshow !== false) o.show = 1;
   snap(); L.push(o);
-  if (k === 'chest' || k === 'sign' || k === 'stop') { const R = rowsOf(t.sid).map(r => r.split('')); if (R[t.y][t.x] !== '#') { R[t.y][t.x] = '#'; ROWS[t.sid] = R.map(r => r.join('')); } }
+  if (k === 'chest' || k === 'sign' || k === 'stop') { const R = rowsOf(t.sid).map(r => r.split('')); if (R[t.y][t.x] !== '#') { R[t.y][t.x] = '#'; ROWS[t.sid] = R.map(r => r.join('')); } }   // pickups and locks block only until they are taken or opened (the game checks)
   S.osel = { sid: t.sid, i: L.length - 1 }; touch(t.sid); panel(); draw();
 }
 
@@ -291,7 +343,7 @@ function playSay(t) { const P = S.play; P.msg = [].concat(t).join(' '); P.log.pu
 function solidAt(id, x, y) {   // what blocks a step besides the ground itself
   for (const q of LAYOUT[id] || []) { if (q.solid === false) continue; const b = propBox(q); if (b && x >= q.x && x < q.x + b.w && y >= q.y && y < q.y + b.h) return 'prop'; }
   if (npcsOf(id).some(n => n.x === x && n.y === y)) return 'person'; if (monsOf(id).some(m => m.x === x && m.y === y)) return 'mon';
-  if (sec(id).objects.some(o => (o.k === 'stash' || o.k === 'keeper') && o.tile[0] === x && o.tile[1] === y) || (DS.objs[id] || []).some(o => o.k === 'stash' && o.tile[0] === x && o.tile[1] === y)) return 'object';
+  if (sec(id).objects.some(o => (o.k === 'stash' || o.k === 'keeper') && o.tile[0] === x && o.tile[1] === y) || (DS.objs[id] || []).some(o => (o.k === 'stash' || ((o.k === 'pickup' || o.k === 'lock') && !(S.play && S.play.got && S.play.got.has(id + ':' + o.tile)))) && o.tile[0] === x && o.tile[1] === y)) return 'object';
   return null;
 }
 function groundAt(id, x, y) { const c = (rowsOf(id)[y] || '')[x]; if (c === undefined) return null; if (c === '#') { if (behindTiles(id).has(tk(x, y))) return ':'; if (fluidTiles(id, 'water').has(tk(x, y))) return '~'; if (fluidTiles(id, 'lava').has(tk(x, y))) return '^'; } return c; }
@@ -342,6 +394,9 @@ function playA() {
   const o = (DS.objs[P.sid] || []).concat(s.objects).find(o => o.tile[0] === x && o.tile[1] === y);
   if (o) { const nm = it => ((ED.items.find(i => i.k === it) || {}).n || it);
     if (o.k === 'stash' || o.k === 'chest') return playSay(`${o.k === 'stash' ? 'A Linker Stash' : 'A chest'}: ${(o.n || 1) > 1 ? o.n + 'x ' : ''}${nm(o.item)}.`);
+    if (o.k === 'pickup' || o.k === 'lock') { const P_ = S.play, tag = P.sid + ':' + o.tile; if ((P_.got = P_.got || new Set()).has(tag)) return;
+      if (o.k === 'pickup') { P_.got.add(tag); draw(); return playSay(`You picked up ${(o.n || 1) > 1 ? o.n + 'x ' : 'a '}${nm(o.item)}!`); }
+      P_.got.add(tag); draw(); return playSay(`${o.t || 'Something blocks the way.'} (In the game it opens when ${o.need && o.need.key ? 'the player has ' + nm(o.need.key) : "this world's Keeper is beaten"}. Playtest opens it now.)`); }
     if (o.k === 'hidden') return playSay(`You searched the spot... and found ${(o.n || 1) > 1 ? o.n + 'x ' : 'a '}${nm(o.item)}!`);
     if (o.t) return playSay(o.t); if (o.k === 'house') return playSay('A door.'); }
   const d = allDoors(P.sid).find(o => o.x === x && o.y === y); if (d && d.to && d.to.startsWith('menu:')) return playSay(d.to === 'menu:bay' ? 'The healing counter.' : 'The shop counter.');
@@ -437,9 +492,11 @@ function designDraw2(ctx) {
     if (S.mode === 'people' || S.mode === 'play' || S.mode === 'check') for (const n of peopleWithData(s.id)) {
       if (n.trainer) { ctx.fillStyle = 'rgba(255,60,80,0.28)'; for (const k of sightOf(s.id, n)) { const [x, y] = k.split(',').map(Number); ctx.fillRect(ox + x * 16 + 2, oy + y * 16 + 2, 12, 12); } }
       if (n.wander) { const r = Math.min(2, n.wander); ctx.save(); ctx.strokeStyle = 'rgba(95,242,255,0.8)'; ctx.setLineDash([3 / S.zoom, 2 / S.zoom]); ctx.lineWidth = 1 / S.zoom; ctx.strokeRect(ox + (n.x - r) * 16, oy + (n.y - r) * 16, (2 * r + 1) * 16, (2 * r + 1) * 16); ctx.restore(); } }
+    for (const o of DS.objs[s.id] || []) if (o.show || o.k === 'pickup' || o.k === 'lock') objArt(ctx, o, ox + o.tile[0] * 16, oy + o.tile[1] * 16, !!(S.play && S.play.got && S.play.got.has(s.id + ':' + o.tile)), 0);
     if (S.mode === 'items' || S.mode === 'play' || S.mode === 'check') for (const [o, mine, i] of s.objects.map(o => [o, false, -1]).concat((DS.objs[s.id] || []).map((o, i) => [o, true, i]))) {
-      const L = { stash: 'S', chest: 'C', hidden: '?', sign: 'i', stop: '!' }[o.k]; if (!L || (o.k === 'stash' && !mine)) continue;
-      const on = mine && S.osel && S.osel.sid === s.id && S.osel.i === i; ctx.fillStyle = mine ? (on ? '#ffd23f' : 'rgba(255,210,63,0.75)') : 'rgba(180,180,180,0.7)'; ctx.fillRect(ox + o.tile[0] * 16 + 2, oy + o.tile[1] * 16 + 2, 12, 12);
+      const L = { stash: 'S', chest: 'C', hidden: '?', sign: 'i', stop: '!', pickup: '*', lock: 'L' }[o.k]; if (S.mode === 'play' && L && o.k !== 'hidden') continue; if (!L || (o.k === 'stash' && !mine)) continue;
+      const on = mine && S.osel && S.osel.sid === s.id && S.osel.i === i; ctx.fillStyle = mine ? (on ? '#ffd23f' : 'rgba(255,210,63,0.75)') : 'rgba(180,180,180,0.7)'; if (mine && (o.show || o.k === 'pickup' || o.k === 'lock')) { ctx.fillRect(ox + o.tile[0] * 16, oy + o.tile[1] * 16, 5, 5); if (on) { ctx.strokeStyle = '#ffd23f'; ctx.lineWidth = 1; ctx.strokeRect(ox + o.tile[0] * 16 + 0.5, oy + o.tile[1] * 16 + 0.5, 15, 15); } continue; }   // its picture shows; just a small tag
+      ctx.fillRect(ox + o.tile[0] * 16 + 2, oy + o.tile[1] * 16 + 2, 12, 12);
       ctx.fillStyle = '#1b1424'; ctx.font = 'bold 10px sans-serif'; ctx.fillText(L, ox + o.tile[0] * 16 + 5, oy + o.tile[1] * 16 + 12); }
   }
   playDraw(ctx);

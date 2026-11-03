@@ -433,7 +433,7 @@ const LEAD = {
   walls: 'Choose exactly where the player can walk, where wild battles happen, and where water, lava and ledges are.',
   props: 'Add, move and line up objects: lamps, trees, fences, stalls, buildings.',
   people: 'Add townsfolk and trainers, and set what they say, where they face and how they move.',
-  items: 'Hide items, place Linker Stashes, chests, signs and blocked-path messages.',
+  items: 'Rewards and puzzles: items on the ground, chests, Linker Stashes, hidden items, signs, and locked ways that open with a key item or a Keeper win.',
   mons: 'Alienmon that roam the map and battle you when you bump into them.',
   arrange: 'Move whole maps on the world layout so their edges line up.',
   routes: 'Open a walkway between two maps that touch.',
@@ -464,7 +464,7 @@ function tipText() {   // what a tap or drag on the map does right now
   if (m === 'props') return st && st.kind === 'group' ? 'Tap to paste the group' : st ? 'Tap the map to place it (keeps placing until you stop)' : S.multiMode ? 'Tap props or drag a box to select several' : 'Pick a prop on the right to add it, or drag one on the map to move it';
   if (m === 'people') return st ? 'Tap the map to place this person' : 'Pick someone on the right to add, or tap a person on the map to edit them';
   if (m === 'mons') return st ? 'Tap the map to place this Alienmon' : 'Pick an Alienmon on the right';
-  if (m === 'items') return `Tap the map to place: ${OK_[S.okind || 'stash']}`;
+  if (m === 'items') return `Tap the map to place: ${OK_[S.okind || 'stash']}${hasItem(S.okind || 'stash') ? ' (' + itemName(S.oitem || 'gel') + ')' : ''}`;
   if (m === 'doors') return 'Tap a door to choose what it opens';
   if (m === 'routes') return 'Drag along the edge where two maps touch';
   if (m === 'arrange') return 'Drag a map to move it';

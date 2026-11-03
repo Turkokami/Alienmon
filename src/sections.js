@@ -15,7 +15,13 @@ const secVis=n=>(!n.after||mDone(n.after))&&(!n.until||!mDone(n.until))&&(!n.fla
 const secNpcs=s=>(s.npcs||[]).filter(secVis);
 function secNpcAt(s,x,y){return secNpcs(s).find(n=>(n.x===x&&n.y===y)||(n.wm&&n.x+n.wm.dx===x&&n.y+n.wm.dy===y))}
 function secStashAt(s,x,y){return(s.objects||[]).find(o=>o.k==='stash'&&o.tile[0]===x&&o.tile[1]===y)}
-function secWalk(s,x,y){const c=secTile(s,x,y);return(c==='.'||c===','||c===':'||fluidOK(c))&&!secNpcAt(s,x,y)&&!secStashAt(s,x,y)&&!(s.objects||[]).some(o=>o.k==='keeper'&&o.tile[0]===x&&o.tile[1]===y)&&!(s.id===(G.sec&&G.sec.id)&&(secQAt(x,y,true)||secMonAt(s,x,y)))}
+// map-editor objects that come and go: an item lying on the ground until it is picked up, a locked way until the player has what it needs
+const secGot=(s,o)=>!!(G.opened&&G.opened[s.id+':'+o.tile]);
+function secLockOpen(o){const n=o.need||{};return n.key?!!(G.key&&G.key[n.key]):n.keeper?!!(G.beaten&&G.beaten[n.keeper]):n.flag?!!(G.flags&&G.flags[n.flag]):true}
+function secObjBlocks(s,x,y){return(s.objects||[]).some(o=>(o.k==='pickup'||o.k==='lock')&&o.tile[0]===x&&o.tile[1]===y&&!secGot(s,o))}
+function secGive(k,n){if(k==='dust'){G.dust+=n;return n+' Stardust'}if(typeof KEY_ITEMS!=='undefined'&&KEY_ITEMS[k]){G.key=G.key||{};G.key[k]=1;return KEY_ITEMS[k]}
+ if(G.pods&&k in G.pods)G.pods[k]+=n;else G.items[k]=(G.items[k]||0)+n;return(n>1?n+'x ':'a ')+(ITEMS.concat(PODS).find(i=>i.k===k)||{n:k}).n}
+function secWalk(s,x,y){const c=secTile(s,x,y);return(c==='.'||c===','||c===':'||fluidOK(c))&&!secNpcAt(s,x,y)&&!secStashAt(s,x,y)&&!secObjBlocks(s,x,y)&&!(s.objects||[]).some(o=>o.k==='keeper'&&o.tile[0]===x&&o.tile[1]===y)&&!(s.id===(G.sec&&G.sec.id)&&(secQAt(x,y,true)||secMonAt(s,x,y)))}
 const QCHAR=new Set(['giver','talk','turnin','trainer','legend']);
 function secQAt(x,y,chars){if(typeof qEnts!=='function')return null;return qEnts().find(e=>(!chars||QCHAR.has(e.k))&&e.k!=='beacon'&&Math.floor(e.x/16)===x&&Math.floor(e.y/16)===y)}
 function secMonAt(s,x,y){return(s.mons||[]).find(m=>m.x===x&&m.y===y&&!(G.monGone&&(s.id+':'+m.x+','+m.y) in G.monGone))}
@@ -87,8 +93,9 @@ function secInteract(){const s=SWORLD[G.sec.id],[dx,dy]=DIRS[face],x=G.sec.x+dx,
   if(o.item==='dust'){G.dust+=n;return say(['You found a Linker Stash!','Inside: '+n+' Stardust.'])}
   const pod=G.pods&&o.item in G.pods;if(pod)G.pods[o.item]+=n;else G.items[o.item]=(G.items[o.item]||0)+n;const name=(ITEMS.concat(PODS).find(i=>i.k===o.item)||{n:o.item}).n;
   stashSfx();return say(['You found a Linker Stash!','Inside: '+(n>1?n+'x ':'a ')+name+'.'])}
- if(o.k==='chest'){G.opened=G.opened||{};const tag=s.id+':'+o.tile;if(G.opened[tag])return say('The chest is empty.');G.opened[tag]=1;const pod=G.pods&&o.item in G.pods,n=o.n||1;if(pod)G.pods[o.item]+=n;else G.items[o.item]=(G.items[o.item]||0)+n;
-  const name=(ITEMS.concat(PODS).find(i=>i.k===o.item)||{n:o.item}).n;return say('You opened the chest... and found '+(n>1?n+'x ':'a ')+name+'!')}if(o.k==='bay'){G.singBuy=0;return bayMenu()}if(o.k==='shop')return shop();
+ if(o.k==='chest'){G.opened=G.opened||{};const tag=s.id+':'+o.tile;if(G.opened[tag])return say('The chest is empty.');G.opened[tag]=1;return say('You opened the chest... and found '+secGive(o.item,o.n||1)+'!')}
+ if(o.k==='pickup'){if(secGot(s,o))return secFieldA(s,x,y);G.opened=G.opened||{};G.opened[s.id+':'+o.tile]=1;stashSfx();return say('You picked up '+secGive(o.item,o.n||1)+'!')}
+ if(o.k==='lock'){if(secGot(s,o))return secFieldA(s,x,y);if(!secLockOpen(o))return say(o.t||'Something blocks the way.');G.opened=G.opened||{};G.opened[s.id+':'+o.tile]=1;doorSfx();return say(o.ok||'The way is open now.')}if(o.k==='bay'){G.singBuy=0;return bayMenu()}if(o.k==='shop')return shop();
  if(o.k==='lab'&&!G.party.length)return secStarterTalk();if(o.k==='lab')return say(G.party.length?'Three empty pod cradles. Your partner\'s pod used to sit in the middle one.':'Three seed pods hum on the lab table.');
  if(o.k==='hidden'){G.opened=G.opened||{};const tag=s.id+':'+o.tile;if(G.opened[tag])return secFieldA(s,x,y);G.opened[tag]=1;const n=o.n||1;stashSfx();if(o.item==='dust'){G.dust+=n;return say('You searched the spot... and found '+n+' Stardust!')}
   const pod=G.pods&&o.item in G.pods;if(pod)G.pods[o.item]+=n;else G.items[o.item]=(G.items[o.item]||0)+n;const name=(ITEMS.concat(PODS).find(i=>i.k===o.item)||{n:o.item}).n;return say('You searched the spot... and found '+(n>1?n+'x ':'a ')+name+'!')}
@@ -158,6 +165,7 @@ function drawSec(){const s=SWORLD[G.sec.id],p=SM?SM.t/SM.n:0,jp=SJ?SJ.t/(SJ.dur|
  for(const m of s.mons||[]){if(G.monGone&&(s.id+':'+m.x+','+m.y) in G.monGone)continue;const im=OWI[shownMon(m.mon,0)];if(!okI(im))continue;const X=m.x*16-cx,Y=m.y*16-cy;if(X<-24||Y<-24||X>176||Y>160)continue;
   ctx.fillStyle='rgba(20,10,20,0.35)';ctx.beginPath();ctx.ellipse(X+8,Y+15,6,2,0,0,6.283);ctx.fill();ctx.save();ctx.imageSmoothingEnabled=true;ctx.drawImage(im,((frame>>4)&1)*64,0,64,64,X-2,Y-5,20,20);ctx.restore()}
  for(const o of s.objects||[])if(o.k==='stash')secDrawStash(o.tile[0]*16-cx,o.tile[1]*16-cy,G.opened&&G.opened[s.id+':'+o.tile]);
+ for(const o of s.objects||[])if(o.show||o.k==='pickup'||o.k==='lock'){const X=o.tile[0]*16-cx,Y=o.tile[1]*16-cy;if(X>-16&&Y>-16&&X<160&&Y<144)objArt(ctx,o,X,Y,secGot(s,o),frame)}   // chests and signs drawn when the map picture has none
  secDark(s,px-cx,py-cy);qDraw(cx,cy,1,24);
  if(secTile(s,G.sec.x,G.sec.y)===','){ctx.fillStyle='#3f9d3a';for(let i=0;i<4;i++)ctx.fillRect(Math.round(px-cx+2+i*3),Math.round(py-cy+11-(i%2)),2,5)}
  if(SSPOT&&SSPOT.t>0){const X=SSPOT.n.x*16-cx+3,Y=SSPOT.n.y*16-cy-20;box(X,Y,10,11,'#fff','#1b1424');txt('!',X+3,Y+2,'#d7262e',7)}
