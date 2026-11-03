@@ -243,7 +243,7 @@ function paintRows(id) {   // tiles under 3+ corners of a terrain take its groun
   const p = DS.paint[id], s = sec(id); if (!p) return; const [W, H] = s.tiles, cur = rowsOf(id).map(r => r.split('')), R = p.base.map(r => r.split(''));
   terrainRows(p, R, W, H);
   const any = new Set(p.touched || []);
-  for (const st of p.stamps || []) { const cl = clipById(st.c); if (!cl) continue; for (let j = 0; j < cl.h; j++) for (let i = 0; i < cl.w; i++) { const x = st.x + i, y = st.y + j; if (R[y] && R[y][x] !== undefined) { R[y][x] = cl.rows[j][i]; any.add(tk(x, y)); } } }
+  for (const st of p.stamps || []) { const cl = clipById(st.c); if (!cl) continue; for (let j = 0; j < cl.h; j++) for (let i = 0; i < cl.w; i++) { const x = st.x + i, y = st.y + j; if (R[y] && R[y][x] !== undefined && cl.rows[j][i] !== ' ') { R[y][x] = cl.rows[j][i]; any.add(tk(x, y)); } } }
   for (const ly of p.terrain) { const v = ly.v, at = (a, b) => v.charCodeAt(b * (W + 1) + a) === 49; for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) if (at(x, y) || at(x + 1, y) || at(x, y + 1) || at(x + 1, y + 1)) any.add(tk(x, y)); }
   for (const [k, ch] of Object.entries(p.manual || {})) { const [x, y] = k.split(',').map(Number); if (R[y] && R[y][x] !== undefined) { R[y][x] = ch; any.add(k); } }   // Walkable edits made after the terrain
   p.touched = [...any];

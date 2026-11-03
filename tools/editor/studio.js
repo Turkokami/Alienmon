@@ -76,28 +76,38 @@ function kitName(walk, [r, g, b], indoor) {
   if (indoor) return 'Floor';
   return grey ? (v > 0.8 ? 'Snow' : 'Stone ground') : green ? 'Grass' : blue ? (v > 0.75 ? 'Snow' : 'Blue ground') : v > 0.62 ? 'Sand path' : 'Dirt path';
 }
-function worldKit(dir, grp) {   // null while the world's map pictures are still loading (the panel redraws when they arrive)
-  const key = dir + '|' + grp; if (KIT[key]) return KIT[key];
-  const secs = Object.values(ED.sections).filter(s => s.dir === dir && s.img && kitGroup(s) === grp && !builtMap(s.id)), ims = secs.map(s => img(s.img));
+function fluidMap(s) {   // water and lava tiles of a map: its fluids file (tiles or boxes) plus Walkable edits
+  const fl = {}; for (const [k, ch] of [['water', '~'], ['lava', '^']]) { for (const e of (s.fluid || {})[k] || []) if (e.length === 2) fl[tk(e[0], e[1])] = ch; else for (let y = e[1]; y <= e[3]; y++) for (let x = e[0]; x <= e[2]; x++) fl[tk(x, y)] = ch;
+    for (const [x, y] of ((DS.ground || {})[s.id] || {})[k] || []) fl[tk(x, y)] = ch; } return fl;
+}
+function tileStats(px, TW, TH) {   // colour mean and variance of every 16 px tile
+  const mean = [], vari = [];
+  for (let y = 0; y < TH; y++) for (let x = 0; x < TW; x++) { const s0 = [0, 0, 0], s1 = [0, 0, 0];
+    for (let j = 0; j < 16; j++) for (let i = 0; i < 16; i++) { const p = ((y * 16 + j) * TW * 16 + x * 16 + i) * 4; for (let q = 0; q < 3; q++) { s0[q] += px[p + q]; s1[q] += px[p + q] * px[p + q]; } }
+    mean[y * TW + x] = s0.map(v => v / 256); vari[y * TW + x] = s1.map((v, q) => v / 256 - (s0[q] / 256) ** 2); }
+  return { mean, vari };
+}
+function winStat({ mean, vari }, TW, x, y, k) {   // a k x k window: low score = even texture without big shapes (plazas, planks) that would show as a repeat
+  const M = [0, 0, 0], Q = [0, 0, 0], V = [0, 0, 0], n = k * k;
+  for (let yy = y; yy < y + k; yy++) for (let xx = x; xx < x + k; xx++) { const i = yy * TW + xx; for (let q = 0; q < 3; q++) { M[q] += mean[i][q] / n; Q[q] += mean[i][q] ** 2 / n; V[q] += vari[i][q] / n; } }
+  const lf = [0, 1, 2].reduce((a, q) => a + Math.sqrt(Math.max(0, Q[q] - M[q] ** 2)), 0) / 3, sd = [0, 1, 2].reduce((a, q) => a + Math.sqrt(Math.max(0, V[q] + Q[q] - M[q] ** 2)), 0) / 3;
+  return { M, sd, score: sd * 0.5 + lf * 2 };
+}
+function worldKit(dir, grp, only) {   // only: just that map's ground; null while the world's map pictures are still loading (the panel redraws when they arrive)
+  const key = dir + '|' + grp + '|' + (only || ''); if (KIT[key]) return KIT[key];
+  const secs = Object.values(ED.sections).filter(s => s.dir === dir && s.img && kitGroup(s) === grp && !builtMap(s.id) && (!only || s.id === only)), ims = secs.map(s => img(s.img));
   if (ims.some(i => !ok(i))) { if (!KITWAIT[key]) { KITWAIT[key] = 1; Promise.all(ims.map(i => ok(i) ? 0 : new Promise(r => { i.addEventListener('load', r); i.addEventListener('error', r); })))
     .then(() => { delete KITWAIT[key]; if (S.mode === 'terrain') panel(); }); } return null; }
   const cands = [];
   for (const s of secs) { const im = img(s.img), [TW, TH] = s.tiles, c = document.createElement('canvas'); c.width = TW * 16; c.height = TH * 16;
-    const g = c.getContext('2d', { willReadFrequently: true }); g.drawImage(im, 0, 0, TW * 16, TH * 16); const px = g.getImageData(0, 0, TW * 16, TH * 16).data, rows = rowsOf(s.id), fl = {};
-    for (const [k, ch] of [['water', '~'], ['lava', '^']]) { for (const e of (s.fluid || {})[k] || []) if (e.length === 2) fl[tk(e[0], e[1])] = ch; else for (let y = e[1]; y <= e[3]; y++) for (let x = e[0]; x <= e[2]; x++) fl[tk(x, y)] = ch;
-      for (const [x, y] of ((DS.ground || {})[s.id] || {})[k] || []) fl[tk(x, y)] = ch; }
-    const at = (x, y) => fl[tk(x, y)] || (rows[y] || '')[x], mean = [], vari = [];
-    for (let y = 0; y < TH; y++) for (let x = 0; x < TW; x++) { const s0 = [0, 0, 0], s1 = [0, 0, 0];
-      for (let j = 0; j < 16; j++) for (let i = 0; i < 16; i++) { const p = ((y * 16 + j) * TW * 16 + x * 16 + i) * 4; for (let q = 0; q < 3; q++) { s0[q] += px[p + q]; s1[q] += px[p + q] * px[p + q]; } }
-      mean[y * TW + x] = s0.map(v => v / 256); vari[y * TW + x] = s1.map((v, q) => v / 256 - (s0[q] / 256) ** 2); }
+    const g = c.getContext('2d', { willReadFrequently: true }); g.drawImage(im, 0, 0, TW * 16, TH * 16); const rows = rowsOf(s.id), fl = fluidMap(s), st = tileStats(g.getImageData(0, 0, TW * 16, TH * 16).data, TW, TH);
+    const at = (x, y) => fl[tk(x, y)] || (rows[y] || '')[x];
     for (const k of [5, 4, 3]) for (let y = 1; y + k < TH; y++) for (let x = 1; x + k < TW; x++) {
       const ch = at(x, y); if (!ch || !'.,~^#'.includes(ch)) continue; const m = ch === '.' || ch === '#' ? 1 : 0; let good = true;   // plain ground and blocked fill must sit well inside their area
       for (let yy = y - m; yy < y + k + m && good; yy++) for (let xx = x - m; xx < x + k + m; xx++) if (at(xx, yy) !== ch) { good = false; break; }
-      if (!good) continue; const M = [0, 0, 0], Q = [0, 0, 0], V = [0, 0, 0], n = k * k;
-      for (let yy = y; yy < y + k; yy++) for (let xx = x; xx < x + k; xx++) { const i = yy * TW + xx; for (let q = 0; q < 3; q++) { M[q] += mean[i][q] / n; Q[q] += mean[i][q] ** 2 / n; V[q] += vari[i][q] / n; } }
-      const lf = [0, 1, 2].reduce((a, q) => a + Math.sqrt(Math.max(0, Q[q] - M[q] ** 2)), 0) / 3, sd = [0, 1, 2].reduce((a, q) => a + Math.sqrt(Math.max(0, V[q] + Q[q] - M[q] ** 2)), 0) / 3;
+      if (!good) continue; const { M, sd, score } = winStat(st, TW, x, y, k);
       if (ch === '#' && sd > 42) continue;   // buildings and big props, not ground
-      cands.push({ ch, k, score: sd * 0.5 + lf * 2 - k * 2, M, s, x, y, c });   // even texture, no big shapes (plazas, planks) that would show as a repeat
+      cands.push({ ch, k, score: score - k * 2, M, s, x, y, c });
     } }
   const out = [], names = {};
   for (const ch of ['.', ',', '~', '^', '#']) { const got = [];
@@ -232,8 +242,9 @@ const GROUNDS = [['.', 'walkable'], [',', 'tall grass (wild battles)'], ['~', 'w
 const groundName = w => (GROUNDS.find(g => g[0] === (w || '')) || GROUNDS[0])[1];
 function terrainPanel() {
   const one = S.view !== 'outdoor', m = one && (builtMap(S.view) || DS.paint[S.view]), cur = S.terr && tsById(S.terr);
-  const kit = worldKit(S.planet, one && sec(S.view) ? kitGroup(sec(S.view)) : 'out'), hid = new Set(DS.kitHide || []), shown = (kit || []).filter(t => !hid.has(t.id));
-  const mine = TILESETS.filter(t => (S.tsAll || t.dir === S.planet) && !shown.some(k => k.id === t.from)), isOn = t => !S.terase && (S.terr === t.id || (cur && cur.from === t.id));
+  const grp = one && sec(S.view) ? kitGroup(sec(S.view)) : 'out', own = one && !builtMap(S.view) ? worldKit(S.planet, grp, S.view) : null, kit = worldKit(S.planet, grp), hid = new Set(DS.kitHide || []);
+  const ownShown = (own || []).filter(t => !hid.has(t.id)), shown = (kit || []).filter(t => !hid.has(t.id) && !ownShown.some(o => o.src === t.src && o.walk === t.walk)), allKit = ownShown.concat(shown);
+  const mine = TILESETS.filter(t => (S.tsAll || t.dir === S.planet) && !allKit.some(k => k.id === t.from)), isOn = t => !S.terase && (S.terr === t.id || (cur && cur.from === t.id));
   const pal = t => `<button class="pal ${isOn(t) ? 'on' : ''}" data-ts="${t.id}" data-cap="${esc(t.name)} · ${groundName(t.walk)}" title="${esc(t.name)}"><img src="${tsPreview(t, 24)}"><small>${esc(t.name.split(' (')[0])}</small></button>`;
   return `<div id="preview"><div class="box" id="pbox">${cur ? `<img src="${tsPreview(cur, 48)}">` : ''}</div><div class="cap" id="pcap">${cur ? `${esc(cur.name)} · ${groundName(cur.walk)}` : 'Pick a terrain to see it'}</div></div>
   <div class="row"><button class="tool ${!S.terase ? 'on' : ''}" id="tpaint">&#128396; Paint</button><button class="tool ${S.terase ? 'on' : ''}" id="terase">&#9003; Eraser</button>
@@ -242,9 +253,10 @@ function terrainPanel() {
   ${m && (m.terrain || []).length > 1 ? `<div class="hint">On this map, bottom to top: ${m.terrain.map((l, i) => `<button data-tup="${i}" title="Move up a layer">${esc((tsById(l.ts) || {}).name || l.ts)} ${i ? '&#8593;' : ''}</button>`).join(' ')}</div>` : ''}
   ${one && !builtMap(S.view) ? '<p class="hint">Finished maps keep their picture: terrain goes on a see-through layer on top.</p>' : ''}
   ${how('<li>Pick a terrain below.</li><li>Press and drag on any map to paint it. Edges and corners join up by themselves.</li><li>The ground follows the terrain: paths are walkable, tall grass starts wild battles, water and lava block the way until the player has the gear.</li>')}
-  <h4>This world's ground</h4><p class="hint">Cut from ${esc(ED.planets[S.planet] || 'this world')}'s own maps, so it matches. Edges fade into the art under them.</p>
+  ${own ? `<h4>This map's ground</h4><p class="hint">Cut from ${esc(sec(S.view).name)} itself, so it matches exactly.</p><div class="grid">${ownShown.map(pal).join('') || '<div class="hint">No plain patch big enough on this map.</div>'}</div>` : ''}
+  <h4>${own ? 'More from this world' : "This world's ground"}</h4><p class="hint">Cut from ${esc(ED.planets[S.planet] || 'this world')}'s own maps, so it matches. Edges fade into the art under them.</p>
   <div class="grid">${!kit ? '<div class="hint">Looking through this world\'s maps&hellip;</div>' : shown.map(pal).join('') || '<div class="hint">No plain ground found here. Use Copy ground from a map below.</div>'}</div>
-  ${kit && kit.some(t => hid.has(t.id)) ? '<button id="kitshow">Show the ones I hid</button>' : ''}
+  ${(kit || []).concat(own || []).some(t => hid.has(t.id)) ? '<button id="kitshow">Show the ones I hid</button>' : ''}
   <h4>Your terrains</h4><div class="grid">${mine.map(pal).join('') || '<div class="hint">None yet. Copy ground from a map below, or turn a clip (a mountain, a cliff edge) into one.</div>'}</div>
   <label class="row"><input type="checkbox" id="tsall" ${S.tsAll ? 'checked' : ''}> show terrains made on every world</label>
   <details class="how" ${cur && cur.starter ? 'open' : ''}><summary>Plain drawn terrains (don't match the map art)</summary><div class="grid">${starters().map(pal).join('')}</div></details>
@@ -442,4 +454,64 @@ function studioBundle(images, files) {
   for (const s of SPRITES) if (s.kind === 'char') Object.assign(images, s.files); else { images[`art/props/${s.sheet}/${String(s.n).padStart(2, '0')}.png`] = s.url; sheets[s.sheet] = 1; }
   for (const sh of Object.keys(sheets)) files[`art/props/${sh}/cut.json`] = JSON.stringify(ED.props[sh].map(p => ({ n: p.n, src: [0, 0, p.px[0], p.px[1]], px: p.px })), null, 1);
   return TILESETS.map(({ url, ...t }) => t);
+}
+
+// ---------- ready-made pieces: each map's own path, grass, tall-grass patch, pond and cliff edge, cut in advance ----------
+const READY = {}, RKIND = [['path', 'Path'], ['grass', 'Grass'], ['tall', 'Tall grass'], ['pond', 'Pond'], ['cliff', 'Cliff edge']];
+const readyById = id => { for (const v of Object.values(READY)) { const c = (v || []).find(c => c.id === id); if (c) return c; } };
+function readyFor(sid) {   // null until the map picture has loaded
+  if (READY[sid]) return READY[sid]; const s = sec(sid), im = s && s.img && img(s.img); if (!ok(im)) return null;
+  const [W, H] = s.tiles, fl = fluidMap(s), R = rowsOf(sid), at = (x, y) => x < 0 || y < 0 || x >= W || y >= H ? null : fl[tk(x, y)] || (R[y] || '')[x];
+  const cvs = document.createElement('canvas'); cvs.width = W * 16; cvs.height = H * 16; const g = cvs.getContext('2d', { willReadFrequently: true }); g.drawImage(im, 0, 0, W * 16, H * 16);
+  const st = tileStats(g.getImageData(0, 0, W * 16, H * 16).data, W, H), out = [];
+  const cut = (kind, x, y, w, h, keep) => {   // keep(x, y): the feature's own tiles; the rest of the box is see-through, and the outline fades into the map it is put on
+    keep = keep || (() => true); const c = document.createElement('canvas'); c.width = w * 16; c.height = h * 16; const g2 = c.getContext('2d', { willReadFrequently: true });
+    g2.drawImage(cvs, x * 16, y * 16, w * 16, h * 16, 0, 0, w * 16, h * 16); const d = g2.getImageData(0, 0, w * 16, h * 16), K = (i, j) => i >= 0 && j >= 0 && i < w && j < h && keep(x + i, y + j), F = 6;
+    for (let py = 0; py < h * 16; py++) for (let px = 0; px < w * 16; px++) { const i = px >> 4, j = py >> 4, lx = (px & 15) + 0.5, ly = (py & 15) + 0.5; let r = F;
+      if (K(i, j)) for (let dj = -1; dj <= 1; dj++) for (let di = -1; di <= 1; di++) { if ((!di && !dj) || K(i + di, j + dj)) continue;   // distance to the nearest tile that is not part of it, or the box edge
+        const dx = di < 0 ? lx : 16 - lx, dy = dj < 0 ? ly : 16 - ly; r = Math.min(r, di && dj ? Math.hypot(dx, dy) : di ? dx : dy); } else r = 0;
+      const n = Math.sin(px * 12.9898 + py * 78.233) * 43758.5453; d.data[(py * w * 16 + px) * 4 + 3] = r >= F ? 255 : Math.max(0, Math.min(255, 255 * (r / F + (n - Math.floor(n) - 0.5) * 0.35))); }
+    g2.putImageData(d, 0, 0);
+    out.push({ id: `r_${sid}_${kind}`, kind, name: `${RKIND.find(k => k[0] === kind)[1]}, ${s.name}`, dir: s.dir, w, h, from: sid, ready: true, url: c.toDataURL('image/png'),
+      rows: Array.from({ length: h }, (_, j) => Array.from({ length: w }, (_, i) => keep(x + i, y + j) ? (R[y + j] || '')[x + i] || '#' : ' ').join('')) }); };
+  const near = (ch, x, y) => { for (let j = -1; j <= 1; j++) for (let i = -1; i <= 1; i++) if (at(x + i, y + j) === ch) return true; return false; };
+  const best = {};   // plain ground: the evenest 3x3 that sits well inside walkable ground, green for grass, anything else for path
+  for (let y = 1; y + 4 < H; y++) for (let x = 1; x + 4 < W; x++) { let good = true; for (let j = -1; j < 4 && good; j++) for (let i = -1; i < 4; i++) if (at(x + i, y + j) !== '.') { good = false; break; }
+    if (!good) continue; const { M, score } = winStat(st, W, x, y, 3), kind = M[1] > M[0] * 1.05 && M[1] > M[2] ? 'grass' : 'path'; if (!best[kind] || score < best[kind].score) best[kind] = { x, y, score }; }
+  for (const k of ['path', 'grass']) if (best[k]) cut(k, best[k].x, best[k].y, 3, 3);
+  const comps = test => { const seen = new Set(), list = [];   // connected areas of one kind of ground, with their box
+    for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) { if (seen.has(tk(x, y)) || !test(at(x, y))) continue; const q = [[x, y]], c = { n: 0, x0: x, y0: y, x1: x, y1: y }; seen.add(tk(x, y));
+      while (q.length) { const [a, b] = q.pop(); c.n++; c.x0 = Math.min(c.x0, a); c.x1 = Math.max(c.x1, a); c.y0 = Math.min(c.y0, b); c.y1 = Math.max(c.y1, b);
+        for (const [u, v] of [[a + 1, b], [a - 1, b], [a, b + 1], [a, b - 1]]) if (!seen.has(tk(u, v)) && test(at(u, v))) { seen.add(tk(u, v)); q.push([u, v]); } }
+      list.push(c); } return list; };
+  const pick = (list, pad, mw, mh) => list.map(c => ({ ...c, x0: Math.max(0, c.x0 - pad), y0: Math.max(0, c.y0 - pad), x1: Math.min(W - 1, c.x1 + pad), y1: Math.min(H - 1, c.y1 + pad) }))
+    .filter(c => c.n >= 4 && c.x1 - c.x0 < mw && c.y1 - c.y0 < mh).sort((a, b) => b.n - a.n)[0];
+  const tall = pick(comps(ch => ch === ','), 0, 9, 7); if (tall) cut('tall', tall.x0, tall.y0, tall.x1 - tall.x0 + 1, tall.y1 - tall.y0 + 1, (x, y) => at(x, y) === ',');
+  const wet = (x0, y0, x1, y1) => { const m = [0, 0, 0]; let n = 0; for (let y = y0; y <= y1; y++) for (let x = x0; x <= x1; x++) if (at(x, y) === '~') { st.mean[y * W + x].forEach((v, q) => m[q] += v); n++; } return n && m[2] > m[0] && m[2] >= m[1] * 0.8; };   // blue-ish, not a dark cave pool
+  const pond = pick(comps(ch => ch === '~').filter(c => wet(c.x0, c.y0, c.x1, c.y1)), 1, 11, 9); if (pond) cut('pond', pond.x0, pond.y0, pond.x1 - pond.x0 + 1, pond.y1 - pond.y0 + 1, (x, y) => near('~', x, y));   // the water and its bank
+  else { let sh = null;   // a lake too big to copy whole: a stretch of its shore instead, about half water
+    for (let y = 0; y + 5 <= H; y++) for (let x = 0; x + 6 <= W; x++) { let n = 0; for (let j = 0; j < 5; j++) for (let i = 0; i < 6; i++) n += at(x + i, y + j) === '~';
+      const d = Math.abs(n / 30 - 0.55); if (n && (!sh || d < sh.d)) sh = { x, y, d }; }
+    if (sh && sh.d < 0.25 && wet(sh.x, sh.y, sh.x + 5, sh.y + 4)) cut('pond', sh.x, sh.y, 6, 5, (x, y) => near('~', x, y)); }
+  let cl = null; const doors = (s.warps || []).map(w => w.tile).filter(Boolean).concat((s.objects || []).map(o => o.tile).filter(Boolean));   // a cliff or mountain side with the ground at its foot
+  for (const [cw, ch] of [[5, 4], [5, 3], [4, 3]]) { if (cl) break;   // the tallest that fits; walkable foot along the bottom
+    for (let y = 0; y + ch <= H; y++) for (let x = 0; x + cw <= W; x++) { let good = true; for (let j = 0; j < ch && good; j++) for (let i = 0; i < cw; i++) if (at(x + i, y + j) !== (j < ch - 1 ? '#' : '.')) { good = false; break; }
+      if (!good || doors.some(([u, v]) => u >= x && u < x + cw && v >= y && v < y + ch)) continue; const { sd, score } = winStat(st, W, x, y, ch - 1); if (sd > 42) continue;   // skip buildings and doorways
+      if (!cl || score < cl.score) cl = { x, y, w: cw, h: ch, score }; } }
+  if (cl) cut('cliff', cl.x, cl.y, cl.w, cl.h);
+  return (READY[sid] = out);
+}
+function adoptClip(id) {   // a ready-made piece becomes one of your clips (saved) once you place it or turn it into a terrain
+  const r = readyById(id); if (!r) return id; const have = CLIPS.find(c => c.src === r.id); if (have) return have.id;
+  let n = 1; while (clipById('c' + n)) n++; const c = { id: 'c' + n, name: r.name, dir: r.dir, w: r.w, h: r.h, rows: r.rows, from: r.from, src: r.id };
+  CLIPS.push(c); CLIPIMG[c.id] = r.url; DIRTY.add('clips'); $('#save').classList.add('hot'); if (S.clipSel === id) S.clipSel = c.id; return c.id;
+}
+function readyGrid() {   // this map's pieces first, then the rest of the world's
+  const one = S.view !== 'outdoor' && sec(S.view), grp = one ? kitGroup(one) : 'out', k = S.readyKind || 'path';
+  const ids = Object.values(ED.sections).filter(s => s.dir === S.planet && s.img && kitGroup(s) === grp && !builtMap(s.id)).map(s => s.id).sort((a, b) => (b === S.view) - (a === S.view));
+  let wait = 0; const list = ids.flatMap(id => { const r = readyFor(id); if (!r) { wait++; return []; } return r.filter(c => c.kind === k); });
+  if (wait) Promise.all(ids.map(id => img(sec(id).img)).filter(i => !ok(i)).map(i => new Promise(r => { i.addEventListener('load', r); i.addEventListener('error', r); }))).then(() => { if (S.mode === 'clips') panel(); });
+  return `<div class="row seg">${RKIND.map(([v, n]) => `<button class="tool ${k === v ? 'on' : ''}" data-rk="${v}">${n}</button>`).join('')}</div>
+    <div class="grid">${list.map(c => `<button class="pal ${S.clipSel === c.id || (clipById(S.clipSel) || {}).src === c.id ? 'on' : ''}" data-clip="${c.id}" data-cap="${esc(c.name)} · ${c.w}x${c.h} tiles" title="${esc(c.name)}"><img src="${c.url}"><small>${esc(sec(c.from).name)}${c.from === S.view ? ' (this map)' : ''}</small></button>`).join('')
+      || `<div class="hint">${wait ? 'Cutting pieces from this world\'s maps&hellip;' : 'None of this world\'s maps has one.'}</div>`}</div>`;
 }

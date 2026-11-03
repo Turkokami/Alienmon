@@ -587,14 +587,15 @@ function wire() {
   on('#ename', 'input', e => { const a = ADDED[S.sel.sid][S.sel.i]; a.name = e.target.value; touch(S.sel.sid); });
   on('#eline', 'input', e => { const a = ADDED[S.sel.sid][S.sel.i]; a.t = e.target.value.split('\n').filter(Boolean); touch(S.sel.sid); });
   on('#check', 'click', check);
+  document.querySelectorAll('[data-rk]').forEach(b => b.onclick = () => { S.readyKind = b.dataset.rk; panel(); });
   document.querySelectorAll('[data-clip]').forEach(b => b.onclick = () => { S.clipSel = b.dataset.clip; S.clipTool = 'stamp'; startGhost(S.clipSel); panel(); draw(); });
   on('#clipplace', 'click', () => { S.clipTool = 'stamp'; startGhost(S.clipSel); panel(); draw(); });
   on('#clipapply', 'click', applyGhost); on('#clipquick', 'change', e => { S.quickStamp = e.target.checked; panel(); draw(); });
   on('#clipname', 'change', e => { const c = clipById(S.clipSel); if (!c) return; snap(); c.name = e.target.value.trim() || c.name; DIRTY.add('clips'); $('#save').classList.add('hot'); panel(); });
-  on('#clipterr', 'click', () => { const c = clipById(S.clipSel); if (c) { terrainFromClip(c); toast(`Terrain "${c.name}" made: find it in Paint: Terrain.`, 5000); } });
+  on('#clipterr', 'click', () => { const c = clipById(adoptClip(S.clipSel)); if (c) { terrainFromClip(c); toast(`Terrain "${c.name}" made: find it in Paint: Terrain.`, 5000); } });
   on('#clipsall', 'change', e => { S.clipsAll = e.target.checked; panel(); });
   on('#cliprm', 'click', () => { if (MAPS.filter(m => m.built).concat(Object.values(DS.paint || {})).some(m => m.ground === S.clipSel || (m.stamps || []).some(st => st.c === S.clipSel)) || TILESETS.some(t => t.clip === S.clipSel)) return toast('That clip is stamped on a map or used by a terrain; remove those first.'); snap(); CLIPS = CLIPS.filter(c => c.id !== S.clipSel); DIRTY.add('clips'); $('#save').classList.add('hot'); S.clipSel = null; S.ghost = null; panel(); });
-  on('#clipground', 'click', () => { const m = builtMap(S.view); snap(); m.ground = S.clipSel; bake(S.view); stampRows(S.view); });
+  on('#clipground', 'click', () => { const m = builtMap(S.view); S.clipSel = adoptClip(S.clipSel); snap(); m.ground = S.clipSel; bake(S.view); stampRows(S.view); });
   on('#tipx', 'click', () => { S.stamp = null; panel(); draw(); });
   on('#bmake', 'click', () => { const name = ($('#bname').value || '').trim(); if (!name) return toast('Give the new map a name.'); newBlank(name, Math.max(8, Math.min(48, +$('#bw').value || 24)), Math.max(8, Math.min(48, +$('#bh').value || 16)), $('#btype').value, $('#bground').value, $('#bcolor').value); });
   on('#doorset', 'click', () => { const v = $('#doorto').value; if (!v) return toast('Choose a room first.'); setDoor(S.sel.sid, S.sel.x, S.sel.y, v); toast('Door set: opens ' + doorName(v)); });
@@ -667,7 +668,7 @@ async function addRoom(f, name) {   // a new interior: walls round the edge, a 2
 }
 
 // ---------- clips and blank maps built from them ----------
-const clipById = id => CLIPS.find(c => c.id === id);
+const clipById = id => CLIPS.find(c => c.id === id) || readyById(id);
 const builtMap = id => MAPS.find(m => m.id === id && m.built);
 function clipImg(c) { return img(CLIPIMG[c.id] || c.url); }
 function makeClip() {   // the box becomes a clip (picture plus its walls), named for its map; rename it in the panel
@@ -697,7 +698,7 @@ function stampRows(id) {   // collision: the ground clip's walls repeated, then 
   const m = builtMap(id), s = sec(id), [W, H] = s.tiles, gc = m.ground && clipById(m.ground);
   const R = Array.from({ length: H }, (_, y) => Array.from({ length: W }, (_, x) => gc ? gc.rows[y % gc.h][x % gc.w] : '.'));
   terrainRows(m, R, W, H);
-  for (const st of m.stamps || []) { const c = clipById(st.c); if (!c) continue; for (let j = 0; j < c.h; j++) for (let i = 0; i < c.w; i++) { const y = st.y + j, x = st.x + i; if (R[y] && R[y][x] !== undefined) R[y][x] = c.rows[j][i]; } }
+  for (const st of m.stamps || []) { const c = clipById(st.c); if (!c) continue; for (let j = 0; j < c.h; j++) for (let i = 0; i < c.w; i++) { const y = st.y + j, x = st.x + i; if (R[y] && R[y][x] !== undefined && c.rows[j][i] !== ' ') R[y][x] = c.rows[j][i]; } }   // ' ' in a clip's rows is see-through: the ground under it stays
   for (const [k, ch] of Object.entries(m.manual || {})) { const [x, y] = k.split(',').map(Number); if (R[y] && R[y][x] !== undefined) R[y][x] = ch; }   // Walkable edits made after the terrain and stamps
   for (const [side, e] of Object.entries(s.edges || {})) for (let k = e.range[0]; k <= e.range[1]; k++) { const [x, y] = { left: [0, k], right: [W - 1, k], top: [k, 0], bottom: [k, H - 1] }[side]; if (R[y]) R[y][x] = '.'; }
   for (const w of s.warps || []) if (R[w.tile[1]]) R[w.tile[1]][w.tile[0]] = '.';
@@ -716,7 +717,7 @@ function startGhost(cid, at) {   // the picked clip appears as a yellow preview 
 function clampGhost() { const g = S.ghost, c = clipById(g.c), [W, H] = sec(g.sid).tiles; g.x = Math.max(0, Math.min(Math.max(0, W - c.w), g.x)); g.y = Math.max(0, Math.min(Math.max(0, H - c.h), g.y)); }
 function ghostTo(t) { const g = S.ghost, d = S.ghostDrag || { dx: 0, dy: 0 }; if (!g || !t) return; g.sid = t.sid; g.x = t.x - d.dx; g.y = t.y - d.dy; clampGhost(); draw(); }
 function applyGhost() {
-  const g = S.ghost, c = g && clipById(g.c); if (!c) return; snap(); const m = stampHost(g.sid, true); if (!m) return; (m.stamps = m.stamps || []).push({ c: c.id, x: g.x, y: g.y });
+  const g = S.ghost; if (g) g.c = adoptClip(g.c); const c = g && clipById(g.c); if (!c) return; snap(); const m = stampHost(g.sid, true); if (!m) return; (m.stamps = m.stamps || []).push({ c: c.id, x: g.x, y: g.y });
   clearManual(m, g.x, g.y, g.x + c.w - 1, g.y + c.h - 1); terrBake(g.sid); terrRows(g.sid); g.n++;
   if (!S.quickStamp) { const [W, H] = sec(g.sid).tiles, [ox, oy] = origin(sec(g.sid)), seen = (x, y) => { const X = (ox + x * 16) * S.zoom + S.ox, Y = (oy + y * 16) * S.zoom + S.oy; return X >= 0 && Y >= 0 && X + c.w * 16 * S.zoom <= cv.clientWidth && Y + c.h * 16 * S.zoom <= cv.clientHeight; };
     const to = [[c.w, 0], [-c.w, 0], [0, c.h], [0, -c.h]].map(([dx, dy]) => [g.x + dx, g.y + dy]).find(([x, y]) => x >= 0 && y >= 0 && x + c.w <= W && y + c.h <= H && seen(x, y)); if (to) [g.x, g.y] = to; }   // step the box aside, staying on screen, so the copy you just put down shows
@@ -743,10 +744,11 @@ function clipsPanel() {
     ${g && tool === 'stamp' ? `<div class="sel place"><img src="${CLIPIMG[g.id] || g.url}"><div><b>${esc(g.name)}</b><div class="hint">${g.w}x${g.h} tiles${S.ghost.n ? ` · ${S.ghost.n} placed` : ''}</div>
       ${S.quickStamp ? '' : '<button id="clipapply" class="go">&#10003; Apply here</button>'}</div></div>
       <label class="row"><input type="checkbox" id="clipquick" ${S.quickStamp ? 'checked' : ''}> quick mode: every tap puts a copy down (no Apply)</label>` : ''}
+    <h4>Ready-made pieces</h4><p class="hint">Cut in advance from every map in this world${S.view !== 'outdoor' ? ', this map first' : ''}. Tap one, drag the yellow box, Apply.</p>${readyGrid()}
     <h4>Your clips</h4><div class="grid">${list.map(c => `<button class="pal ${S.clipSel === c.id ? 'on' : ''}" data-clip="${c.id}" data-cap="${esc(c.name)} · ${c.w}x${c.h} tiles" title="${esc(c.name)}"><img src="${CLIPIMG[c.id] || c.url}"><small>${esc(c.name)}</small></button>`).join('') || '<div class="hint">No clips yet: press Copy and drag a box over a map.</div>'}</div>
     <label class="row"><input type="checkbox" id="clipsall" ${S.clipsAll ? 'checked' : ''}> show clips from every world</label>
-    ${cur ? `<div class="sel"><label>Name <input id="clipname" value="${esc(cur.name)}"></label><div class="hint">${cur.w}x${cur.h} tiles, copied from ${cur.from} ${esc((sec(cur.from) || {}).name || '')}</div>
-      <div class="row">${S.ghost ? '' : '<button id="clipplace" class="go">&#128204; Place on map</button>'}<button id="clipterr" title="Paint with it in Paint: Terrain; its edges blend in">Make it a terrain</button>${m ? `<button id="clipground">Repeat it as this map's ground</button>` : ''}<button id="cliprm">Delete clip</button></div></div>` : ''}
+    ${cur ? `<div class="sel">${cur.ready ? `<b>${esc(cur.name)}</b><div class="hint">${cur.w}x${cur.h} tiles. Ready-made: it's saved to Your clips when you place it.</div>` : `<label>Name <input id="clipname" value="${esc(cur.name)}"></label><div class="hint">${cur.w}x${cur.h} tiles, copied from ${cur.from} ${esc((sec(cur.from) || {}).name || '')}</div>`}
+      <div class="row">${S.ghost ? '' : '<button id="clipplace" class="go">&#128204; Place on map</button>'}<button id="clipterr" title="Paint with it in Paint: Terrain; its edges blend in">Make it a terrain</button>${m ? `<button id="clipground">Repeat it as this map's ground</button>` : ''}${cur.ready ? '' : '<button id="cliprm">Delete clip</button>'}</div></div>` : ''}
     ${how(`<li><b>Copy</b>: drag a box over any part of a map (a bridge, rocks, a doorway, flowers). It becomes a clip.</li><li><b>Place</b>: pick a clip. A yellow box shows where it will go: drag it into place and press <b>Apply</b>. Its walls and walkable ground come with it.</li><li><b>Move</b>: drag a copy you placed to adjust it, or tap it and Remove.</li>`)}
     ${builtMap(S.view) ? '' : '<p class="hint">On finished maps copies go on a see-through layer, so the picture underneath never changes.</p>'}`;
 }
