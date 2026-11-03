@@ -28,6 +28,8 @@ const passage = s => !s.grid && s.type !== 'interior';      // reached through a
 const viewSecs = () => S.view === 'outdoor' ? planetSecs().filter(onWorld) : [sec(S.view)].filter(Boolean);
 const gridOf = s => GRID[s.id] || s.grid || s.vgrid;
 const origin = s => S.view === 'outdoor' ? [gridOf(s)[0] * 16, gridOf(s)[1] * 16] : [0, 0];
+const FACES = ['facing down', 'facing up', 'facing left', 'facing right'];
+const turnOf = p => { const m = propInfo(p), d = p.split('/')[0]; return m && m.turn ? m.turn.map(n => d + '/' + String(n).padStart(2, '0')) : null; };   // the four facings of one object, from a turn sheet
 const propInfo = p => { const [d, n] = p.split('/'); const m = (ED.props[d] || []).find(m => String(m.n).padStart(2, '0') === n); return m; };
 function propBox(q) {
   const m = propInfo(q.p); if (!m) return null; const [pw, ph] = m.px, w = q.w || Math.max(1, Math.round(pw / 16)), h = q.h || 1;
@@ -92,7 +94,7 @@ function draw() {
       ctx.fillStyle = '#000'; ctx.fillRect(ox + d.x * 16 - 2, oy + d.y * 16 - 9, Math.min(110, doorName(d.to).length * 4 + 6), 8); ctx.fillStyle = '#fff'; ctx.font = '6px monospace'; ctx.fillText(doorName(d.to).slice(0, 26), ox + d.x * 16, oy + d.y * 16 - 3); }
     if (S.mode === 'doors' && S.sel && S.sel.kind === 'door' && S.sel.sid === s.id) { ctx.strokeStyle = '#ffd23f'; ctx.lineWidth = 2 / S.zoom; ctx.strokeRect(ox + S.sel.x * 16, oy + S.sel.y * 16, 16, 16); }
     if ($('#showdoors').checked) for (const w of s.warps) { ctx.strokeStyle = '#5ff2ff'; ctx.lineWidth = 1.5 / S.zoom; ctx.strokeRect(ox + w.tile[0] * 16 + 1, oy + w.tile[1] * 16 + 1, 14, 14); }
-    (LAYOUT[s.id] || []).forEach((q, i) => { const b = propBox(q); if (b) items.push({ y: q.solid === false ? -1e9 : (q.y + b.h - 1) * 16, d: () => { const im = img(b.url); if (ok(im)) ctx.drawImage(im, ox + b.X, oy + b.Y); }, ref: { kind: 'prop', sid: s.id, i }, box: [ox + b.X, oy + b.Y, b.pw, b.ph] }); });
+    (LAYOUT[s.id] || []).forEach((q, i) => { const b = propBox(q); if (b) items.push({ y: q.solid === false ? -1e9 : (q.y + b.h - 1) * 16, d: () => { const im = img(b.url); if (!ok(im)) return; if (q.flip) { ctx.save(); ctx.translate(ox + b.X + b.pw, oy + b.Y); ctx.scale(-1, 1); ctx.drawImage(im, 0, 0); ctx.restore(); } else ctx.drawImage(im, ox + b.X, oy + b.Y); }, ref: { kind: 'prop', sid: s.id, i }, box: [ox + b.X, oy + b.Y, b.pw, b.ph] }); });
     for (const n of npcsOf(s.id)) { const u = ED.chars[n.art]; items.push({ y: n.y * 16 + 1, d: () => { const im = img(u); if (ok(im)) ctx.drawImage(im, ox + n.x * 16 - 4, oy + n.y * 16 - 8, 24, 24); else { ctx.fillStyle = '#ff8a1e'; ctx.fillRect(ox + n.x * 16 + 4, oy + n.y * 16 + 2, 8, 12); } }, ref: n.ref, box: [ox + n.x * 16 - 4, oy + n.y * 16 - 8, 24, 24] }); }
     monsOf(s.id).forEach((m, i) => { const u = ED.mons[m.mon]; items.push({ y: m.y * 16 + 2, d: () => { const im = img(u); if (ok(im)) ctx.drawImage(im, 0, 0, 64, 64, ox + m.x * 16 - 2, oy + m.y * 16 - 5, 20, 20); }, ref: { kind: 'mon', sid: s.id, i }, box: [ox + m.x * 16 - 2, oy + m.y * 16 - 5, 20, 20] }); });
     for (const o of s.objects) if (o.k === 'stash') { ctx.fillStyle = '#b07cff'; ctx.fillRect(ox + o.tile[0] * 16 + 3, oy + o.tile[1] * 16 + 5, 10, 9); }
@@ -525,7 +527,8 @@ function selPanel() {
   const p = selPos(); if (!p) return '';
   let name = r.kind === 'prop' ? 'Prop ' + LAYOUT[r.sid][r.i].p : r.kind === 'mon' ? monsOf(r.sid)[r.i].mon : (npcsOf(r.sid).find(n => same(n.ref, r)) || {}).name || 'Townsperson';
   let extra = '';
-  if (r.kind === 'prop') { const q = LAYOUT[r.sid][r.i]; extra = `<label>Solid rows (for buildings: how many tiles deep it blocks) <input id="ph" type="number" min="1" max="8" value="${q.h || 1}"></label>`; }
+  if (r.kind === 'prop') { const q = LAYOUT[r.sid][r.i], ts = turnOf(q.p), at = ts ? ts.indexOf(q.p) : -1; extra = `<div class="row"><button id="pflip" class="${q.flip ? 'on' : ''}">&#8644; Mirror</button><button id="pturn" ${ts ? '' : 'disabled'}>&#8635; Turn${ts ? ' (' + FACES[at] + ')' : ''}</button></div>
+    <div class="hint">${ts ? 'Turn steps through its four facings. Mirror flips it left to right.' : 'Mirror flips it left to right. Turn works on props cut from a turn sheet (four facings in a row; see the prompt packs).'}</div><label>Solid rows (for buildings: how many tiles deep it blocks) <input id="ph" type="number" min="1" max="8" value="${q.h || 1}"></label>`; }
   if (r.kind === 'added') { const a = ADDED[r.sid][r.i]; extra = `<label>Name <input id="ename" value="${a.name || ''}"></label><label>Says <textarea id="eline">${(a.t || []).join('\n')}</textarea></label>`; }
   return `<div class="sel"><b>${name}</b><div>${r.sid} ${sec(r.sid).name} · tile ${p[0]},${p[1]}</div>${extra}
     ${padHtml(r.kind === 'prop' ? '1 pixel' : '')}<div class="hint">Drag to move${r.kind === 'prop' ? ' anywhere, to the pixel (its solid footprint follows the tile under its base)' : ''} · arrows move a tile${r.kind === 'prop' ? ' · Shift+arrows nudge a pixel · Ctrl+C copy' : ''} · Delete removes</div><button id="del">Remove</button></div>`;
@@ -601,6 +604,8 @@ function wire() {
   on('#doorset', 'click', () => { const v = $('#doorto').value; if (!v) return toast('Choose a room first.'); setDoor(S.sel.sid, S.sel.x, S.sel.y, v); toast('Door set: opens ' + doorName(v)); });
   on('#doorrm', 'click', () => setDoor(S.sel.sid, S.sel.x, S.sel.y, null));
   on('#dooropen', 'click', () => { const d = doorAt(S.sel.sid, S.sel.x, S.sel.y); S.view = d.to; S.sel = null; views(); panel(); fit(); });
+  on('#pflip', 'click', () => { const q = LAYOUT[S.sel.sid][S.sel.i]; snap(); if (q.flip) delete q.flip; else q.flip = 1; touch(S.sel.sid); panel(); draw(); });
+  on('#pturn', 'click', () => { const q = LAYOUT[S.sel.sid][S.sel.i], ts = turnOf(q.p); if (!ts) return; snap(); q.p = ts[(ts.indexOf(q.p) + 1) % ts.length]; delete q.flip; touch(S.sel.sid); panel(); draw(); });
   on('#ph', 'input', e => { const q = LAYOUT[S.sel.sid][S.sel.i]; snap(); const h = Math.max(1, Math.min(8, +e.target.value || 1)); if (h > 1) q.h = h; else delete q.h; touch(S.sel.sid); draw(); });
   on('#madd', 'click', addMap);
   on('#pickmap', 'change', e => e.target.value && openMap(e.target.value));

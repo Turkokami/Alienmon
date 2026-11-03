@@ -119,7 +119,7 @@ const SECW=fs.existsSync(path.join(root,'data/world.json'))?JSON.parse(fs.readFi
 const PL_=fs.existsSync(path.join(root,'data/sections/props_layout.json'))?JSON.parse(fs.readFileSync(path.join(root,'data/sections/props_layout.json'),'utf8')):{},PROPS={};
 function props(id,rows){const L=PL_[id];if(!L||!L.length)return rows;const R=rows.map(r=>r.split(''));PROPS[id]=[];
  for(const q of L){const f='art/props/'+q.p+'.png';if(!fs.existsSync(f))continue;const b=fs.readFileSync(f),pw=b.readUInt32BE(16),ph=b.readUInt32BE(20),w=q.w||Math.max(1,Math.round(pw/16)),h=q.h||1;
-  PROPS[id].push([asset(f),q.x,q.y,w,h,pw,ph,q.ox||0,q.solid===false?1:0,q.oy||0]);if(q.solid!==false)for(let y=q.y;y<q.y+h;y++)for(let x=q.x;x<q.x+w;x++)if(R[y]&&R[y][x]!==undefined)R[y][x]='#'}
+  PROPS[id].push([asset(f),q.x,q.y,w,h,pw,ph,q.ox||0,q.solid===false?1:0,q.oy||0,q.flip?1:0]);if(q.solid!==false)for(let y=q.y;y<q.y+h;y++)for(let x=q.x;x<q.x+w;x++)if(R[y]&&R[y][x]!==undefined)R[y][x]='#'}
  return R.map(r=>r.join(''))}
 const PB=fs.existsSync(path.join(root,'data/sections/pass_behind.json'))?JSON.parse(fs.readFileSync(path.join(root,'data/sections/pass_behind.json'),'utf8')):{},SECOV={};
 // the map editor's design file (data/editor/design.json): per-map settings, painted ground (water, lava, walk-behind), items and signs, painted-over terrain
@@ -178,7 +178,7 @@ if(PROTO&&!INLINE&&!APP){
    fluid:(()=>{const f=path.join(root,'data/sections/fluids',id+'.json');return fs.existsSync(f)?JSON.parse(fs.readFileSync(f,'utf8')):null})(),behind:PB[id]?PB[id].tiles:[],...(fs.existsSync(path.join(root,'art/sections_paint',id+'.png'))?{paintUrl:asset('art/sections_paint/'+id+'.png')}:{}),
    spawns:sec.spawns,npcs:(sec.npcs||[]).map(n=>({x:n.x,y:n.y,art:n.art,name:n.name||'',src:n.src||'',face:n.face||'down',trainer:n.trainer||null,id:n.id||'',wander:n.wander||0,t:n.t||[]})),mons:sec.mons||[]}}
  for(const d of fs.readdirSync(path.join(root,'art/props')).sort()){const cj=path.join(root,'art/props',d,'cut.json');if(!fs.existsSync(cj))continue;
-  ED.props[d]=JSON.parse(fs.readFileSync(cj,'utf8')).map(m=>({n:m.n,px:m.px,url:asset('art/props/'+d+'/'+String(m.n).padStart(2,'0')+'.png')}))}
+  ED.props[d]=JSON.parse(fs.readFileSync(cj,'utf8')).map(m=>({n:m.n,px:m.px,...(m.turn?{turn:m.turn}:{}),url:asset('art/props/'+d+'/'+String(m.n).padStart(2,'0')+'.png')}))}
  {const byDir={};for(const x of Object.values(ED.sections))(byDir[x.dir]=byDir[x.dir]||[]).push(x);   // areas reached through a passage get a display spot under the stitched maps
   for(const xs of Object.values(byDir)){let y=0;for(const x of xs)if(x.grid)y=Math.max(y,x.grid[1]+x.tiles[1]);let gx=0;
    for(const x of xs.filter(x=>!x.grid&&x.type!=='interior').sort((a,b)=>a.id.localeCompare(b.id))){x.vgrid=[gx,y+8];gx+=x.tiles[0]+4}}}

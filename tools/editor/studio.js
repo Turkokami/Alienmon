@@ -379,6 +379,11 @@ function spCut() {
     SP.items = big.map(b => ({ b, on: true })); SP.frames = null;
   }
 }
+function spRows(items) {   // reading order by rows of the sheet, even when the things in a row have different heights
+  const hs = items.map(x => x.b[3]).sort((a, b) => a - b), gap = (hs[hs.length >> 1] || 16) * 0.6, rows = [];
+  for (const x of items.slice().sort((a, b) => (a.b[1] + a.b[3] / 2) - (b.b[1] + b.b[3] / 2))) { const cy = x.b[1] + x.b[3] / 2, r = rows[rows.length - 1]; if (r && cy - r.cy < gap) r.l.push(x); else rows.push({ cy, l: [x] }); }
+  return rows.flatMap(r => r.l.sort((a, b) => a.b[0] - b.b[0]));
+}
 function propCanvas(b) {   // one cut prop at game scale: the first (top-left) item is SP.tiles tiles wide, the rest keep their size relative to it
   const ref = SP.items[0].b, k = SP.tiles * 16 / ref[2], w = Math.max(4, Math.round(b[2] * k)), h = Math.max(4, Math.round(b[3] * k)), o = document.createElement('canvas'); o.width = w; o.height = h;
   const g = o.getContext('2d'); g.imageSmoothingEnabled = SP.px < 2; g.imageSmoothingQuality = 'high'; g.drawImage(SP.work, b[0], b[1], b[2], b[3], 0, 0, w, h); return o;
@@ -404,7 +409,8 @@ function spritesPanel() {
     <label>Rows, top to bottom <select id="sporder">${['down,left,right,up', 'down,up,left,right', 'down,right,left,up', 'up,right,down,left', 'down,left,up,right'].map(o => `<option ${SP.order === o ? 'selected' : ''}>${o}</option>`).join('')}</select></label>
     <label class="row"><input type="checkbox" id="spmirror" ${SP.mirror ? 'checked' : ''}> right = the left row flipped</label>
     <div class="hint">Columns: 3 = stand, step, step. 4 = stand, step, stand, step. Missing rows are skipped (a missing right row is flipped from left).</div>` :
-    `<label>The first item (top left) is this many tiles wide <input type="number" id="sptiles" min="1" max="8" step="0.5" value="${SP.tiles}"></label>`}
+    `<label>The first item (top left) is this many tiles wide <input type="number" id="sptiles" min="1" max="8" step="0.5" value="${SP.tiles}"></label>
+    <label class="row"><input type="checkbox" id="spturn" ${SP.turn ? 'checked' : ''}> turn sheet: each row shows one object four times (facing down, up, left, right), so Turn can switch between them</label>`}
   <div class="row" style="margin-top:6px"><button id="spcut">Cut the sheet</button></div>
   ${fr ? `<canvas id="spcv" width="410" height="156" style="width:100%;max-width:410px;border-radius:8px;margin-top:8px;image-rendering:pixelated"></canvas>
     <label>Speed <input type="range" id="spfps" min="2" max="14" value="${SP.fps}"></label>
@@ -428,7 +434,7 @@ function spritesWire() {
     SP.px = detectPixel(c); toast(SP.px > 1 ? `Pixel grid: ${SP.px} px blocks. Snapped.` : 'No pixel grid found: this looks like painted art.'); re(); });
   on('#spcols', 'change', e => { SP.cols = +e.target.value || 3; re(); }); on('#sprows', 'change', e => { SP.rows = +e.target.value || 4; re(); });
   on('#sporder', 'change', e => { SP.order = e.target.value; re(); }); on('#spmirror', 'change', e => { SP.mirror = e.target.checked; re(); });
-  on('#sptiles', 'change', e => { SP.tiles = Math.max(1, +e.target.value || 2); panel(); });
+  on('#sptiles', 'change', e => { SP.tiles = Math.max(1, +e.target.value || 2); panel(); }); on('#spturn', 'change', e => { SP.turn = e.target.checked; panel(); });
   on('#spcut', 'click', () => { if (!SP.src) return toast('Pick a sheet picture first.'); re(); });
   on('#spfps', 'input', e => { SP.fps = +e.target.value; });
   on('#spname', 'input', e => { SP.name = e.target.value.toLowerCase().replace(/[^a-z0-9_]/g, '_'); });
@@ -440,8 +446,10 @@ function spritesWire() {
     SPRITES.push({ kind: 'char', name: n, files }); ED.chars[n] = front; DIRTY.add('sprites'); $('#save').classList.add('hot');
     toast(`${n} added to People. Place them from the People tab; Save writes the sprites into the game.`, 6000); panel(); });
   on('#spaddp', 'click', () => { const sheet = S.planet + '_studio', list = ED.props[sheet] = ED.props[sheet] || []; let added = 0;
-    for (const x of SP.items) { if (!x.on) continue; const c = propCanvas(x.b), n = list.reduce((a, p) => Math.max(a, p.n + 1), 0), url = c.toDataURL('image/png');
-      list.push({ n, px: [c.width, c.height], url }); SPRITES.push({ kind: 'prop', sheet, n, url, px: [c.width, c.height] }); added++; }
+    const picked = SP.items.filter(x => x.on), order = SP.turn ? spRows(picked) : picked, made = [];
+    for (const x of order) { const c = propCanvas(x.b), n = list.reduce((a, p) => Math.max(a, p.n + 1), 0), url = c.toDataURL('image/png'), p = { n, px: [c.width, c.height], url };
+      list.push(p); made.push(p); SPRITES.push({ kind: 'prop', sheet, n, url, px: [c.width, c.height] }); added++; }
+    if (SP.turn) for (let i = 0; i + 3 < made.length; i += 4) { const t = made.slice(i, i + 4).map(p => p.n); made.slice(i, i + 4).forEach(p => p.turn = t); }   // four in a row = one object's facings
     if (!added) return toast('Tick at least one item.'); DIRTY.add('sprites'); $('#save').classList.add('hot'); S.sheet = sheet;
     toast(`${added} prop(s) added to the ${sheet} sheet in Props. Save writes them into the game.`, 6000); panel(); });
   spAnimate();
@@ -452,7 +460,7 @@ function studioBundle(images, files) {
   for (const t of TILESETS) if (TSIMG[t.id]) images[`art/editor_tiles/${t.id}.png`] = TSIMG[t.id];
   const sheets = {};
   for (const s of SPRITES) if (s.kind === 'char') Object.assign(images, s.files); else { images[`art/props/${s.sheet}/${String(s.n).padStart(2, '0')}.png`] = s.url; sheets[s.sheet] = 1; }
-  for (const sh of Object.keys(sheets)) files[`art/props/${sh}/cut.json`] = JSON.stringify(ED.props[sh].map(p => ({ n: p.n, src: [0, 0, p.px[0], p.px[1]], px: p.px })), null, 1);
+  for (const sh of Object.keys(sheets)) files[`art/props/${sh}/cut.json`] = JSON.stringify(ED.props[sh].map(p => ({ n: p.n, src: [0, 0, p.px[0], p.px[1]], px: p.px, ...(p.turn ? { turn: p.turn } : {}) })), null, 1);
   return TILESETS.map(({ url, ...t }) => t);
 }
 
