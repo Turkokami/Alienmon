@@ -55,10 +55,10 @@ function brushReport(sid, tiles, res, b) {   // say what happened, and why any o
   toast(m, cut || under ? 9000 : 3000);
 }
 function wallsPanel() {
-  return `<ol class="steps"><li>Pick what the ground should be.</li><li>${S.wtool === 'brush' ? 'Drag across the map like a paintbrush.' : 'Tap a tile, or press and drag a box over many.'}</li><li>Check the colours: <b style="color:#7dffa0">green</b> means the player can get there.</li></ol>
-    <div class="brushes">${BRUSHES.map(([c, n, col, what]) => `<button class="tool ${S.brush === c ? 'on' : ''}" data-b="${c}" title="${what}"><span class="sw" style="background:${col}"></span>${n}</button>`).join('')}</div>
+  return `<div class="row seg">${[['box', '&#9634; Box'], ['brush', '&#128396; Brush']].map(([k, n]) => `<button class="tool ${(S.wtool === 'brush') === (k === 'brush') ? 'on' : ''}" data-wt="${k}">${n}</button>`).join('')}</div>
+    <div class="brushes" style="margin-top:6px">${BRUSHES.map(([c, n, col, what]) => `<button class="tool ${S.brush === c ? 'on' : ''}" data-b="${c}" title="${what}"><span class="sw" style="background:${col}"></span>${n}</button>`).join('')}</div>
     <div class="hint" style="margin:4px 0 8px">${(BRUSHES.find(x => x[0] === S.brush) || [, , , ''])[3]}</div>
-    <div class="row"><span class="hint">Tool</span><button class="tool ${S.wtool !== 'brush' ? 'on' : ''}" data-wt="box">&#9634; Box</button><button class="tool ${S.wtool === 'brush' ? 'on' : ''}" data-wt="brush">&#128396; Brush</button></div>
+    ${how(`<li>Pick what the ground should be.</li><li>${S.wtool === 'brush' ? 'Drag across the map like a paintbrush.' : 'Tap a tile, or press and drag a box over many.'}</li><li>Check the colours: <b style="color:#7dffa0">green</b> means the player can get there.</li>`)}
     <h4>What the colours mean</h4>
     <div class="legend"><div><span class="sw" style="background:rgba(80,255,150,0.6)"></span>walkable, and the player can reach it</div><div><span class="sw" style="background:rgba(40,200,110,0.85)"></span>tall grass (wild battles)</div>
     <div><span class="sw" style="background:rgba(255,150,0,0.8)"></span><b>walkable but cut off</b>: no path from an exit or door gets there yet. Paint walkable ground to join it up.</div>
@@ -174,7 +174,7 @@ function encOf(id) {
 }
 function encSet(id, f) { snap(); DS.enc = DS.enc || {}; const e = JSON.parse(JSON.stringify(encOf(id))); f(e); for (const x of e.encounters) x.rarity = x.weight >= 10 ? 'common' : x.weight >= 5 ? 'uncommon' : 'rare'; DS.enc[id] = e; touch(id); panel(); }
 function wildPanel() {
-  if (S.view === 'outdoor') return `<h3>Wild Alienmon</h3><p class="hint">Open one map from the map list to set which Alienmon live in its tall grass and water.</p>`;
+  if (S.view === 'outdoor') return `<p class="hint">Which map? Tap one on the world map, or pick it here:</p>${mapPick()}`;
   const id = S.view, e = encOf(id), R = rowsOf(id).join(''), grass = (R.match(/,/g) || []).length, water = fluidTiles(id, 'water').size, H_ = ED.hab.habitats[e.habitat] || {};
   const tot = m => e.encounters.filter(x => (m === 'surf') === (x.method === 'surf')).reduce((a, x) => a + x.weight, 0);
   const st = settingsOf(id), bad = e.encounters.filter(x => !(habFit(x.types, e.habitat) || (x.method === 'surf' && x.types.includes('Hydro'))));
@@ -210,7 +210,7 @@ function wildWire() {
 // ---------- map settings ----------
 const settingsOf = id => (DS.settings[id] || {});
 function settingsPanel() {
-  if (S.view === 'outdoor') return `<h3>Map settings</h3><p class="hint">Open one map from the map list.</p>`;
+  if (S.view === 'outdoor') return `<p class="hint">Which map? Tap one on the world map, or pick it here:</p>${mapPick()}`;
   const id = S.view, s = sec(id), st = settingsOf(id);
   return `<h3>Map settings: ${s.name}</h3>
     <label>Name shown when you enter <input id="mbanner" value="${esc(st.banner)}" placeholder="${esc(s.name)}"></label>

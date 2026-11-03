@@ -167,18 +167,19 @@ const PROMPTS = {
 };
 function copyPrompt(k) { const name = ($('#pname2') || {}).value || ''; const t = PROMPTS[k](name); navigator.clipboard ? navigator.clipboard.writeText(t).then(() => toast('Prompt copied. Paste it into ChatGPT with a reference picture.'), () => prompt('Copy this prompt:', t)) : prompt('Copy this prompt:', t); }
 
+const how = li => `<details class="how" ${phone() ? '' : 'open'}><summary>How it works</summary><ol class="steps">${li}</ol></details>`;
 const GROUNDS = [['.', 'walkable'], [',', 'tall grass (wild battles)'], ['~', 'water (swim with the Bubbub Ride)'], ['^', 'lava (cross with the Heat Shield)'], ['#', 'blocked (cliff, hedge, wall)'], ['', 'looks only (keeps the ground under it)']];
 const groundName = w => (GROUNDS.find(g => g[0] === (w || '')) || GROUNDS[0])[1];
 function terrainPanel() {
   const one = S.view !== 'outdoor', m = one && (builtMap(S.view) || DS.paint[S.view]), mine = TILESETS.filter(t => S.tsAll || t.dir === S.planet), cur = S.terr && tsById(S.terr);
-  const pal = t => `<button class="pal ${S.terr === t.id && !S.terase ? 'on' : ''}" data-ts="${t.id}" data-cap="${esc(t.name)} · ${groundName(t.walk)}" title="${esc(t.name)}"><img src="${tsPreview(t, 24)}"></button>`;
+  const pal = t => `<button class="pal ${S.terr === t.id && !S.terase ? 'on' : ''}" data-ts="${t.id}" data-cap="${esc(t.name)} · ${groundName(t.walk)}" title="${esc(t.name)}"><img src="${tsPreview(t, 24)}"><small>${esc(t.name.split(' (')[0])}</small></button>`;
   return `<div id="preview"><div class="box" id="pbox">${cur ? `<img src="${tsPreview(cur, 48)}">` : ''}</div><div class="cap" id="pcap">${cur ? `${esc(cur.name)} · ${groundName(cur.walk)}` : 'Pick a terrain to see it'}</div></div>
-  <ol class="steps"><li>Pick a terrain below.</li><li>Press and drag on any map to paint it. Edges and corners join up by themselves.</li><li>The ground follows the terrain: paths are walkable, tall grass starts wild battles, water and lava block the way until the player has the gear.</li></ol>
   <div class="row"><button class="tool ${!S.terase ? 'on' : ''}" id="tpaint">&#128396; Paint</button><button class="tool ${S.terase ? 'on' : ''}" id="terase">&#9003; Eraser</button>
     <span class="hint">Brush</span>${[1, 2, 3, 5].map(n => `<button class="tool ${(S.tbrush || 1) === n ? 'on' : ''}" data-tb="${n}">${n}</button>`).join('')}</div>
   ${one ? `<div class="row" style="margin-top:6px"><button id="tfill" ${cur ? '' : 'disabled'}>Fill this whole map${cur ? ' with ' + esc(cur.name.split(' (')[0]) : ''}</button><button id="tclear" ${cur ? '' : 'disabled'}>Remove it from this map</button></div>` : ''}
   ${m && (m.terrain || []).length > 1 ? `<div class="hint">On this map, bottom to top: ${m.terrain.map((l, i) => `<button data-tup="${i}" title="Move up a layer">${esc((tsById(l.ts) || {}).name || l.ts)} ${i ? '&#8593;' : ''}</button>`).join(' ')}</div>` : ''}
   ${one && !builtMap(S.view) ? '<p class="hint">Finished maps keep their picture: terrain goes on a see-through layer on top.</p>' : ''}
+  ${how('<li>Pick a terrain below.</li><li>Press and drag on any map to paint it. Edges and corners join up by themselves.</li><li>The ground follows the terrain: paths are walkable, tall grass starts wild battles, water and lava block the way until the player has the gear.</li>')}
   <h4>Starter terrains</h4><div class="grid">${starters().map(pal).join('')}</div>
   <h4>Your terrains</h4><div class="grid">${mine.map(pal).join('') || '<div class="hint">None yet. Make one below, or copy a starter to change it.</div>'}</div>
   <label class="row"><input type="checkbox" id="tsall" ${S.tsAll ? 'checked' : ''}> show terrains made on every world</label>

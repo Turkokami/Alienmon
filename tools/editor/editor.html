@@ -18,7 +18,7 @@ main{display:flex}#mapwrap{position:relative;flex:1;min-width:0}
 .row{display:flex;gap:6px;align-items:center;flex-wrap:wrap}.hint{color:var(--muted);font-size:12px;margin:4px 0}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(var(--cell,clamp(100px,6.5vw,200px)),1fr));gap:8px;margin-top:8px}
 .pal{height:var(--cell,clamp(100px,6.5vw,200px));padding:6px;display:flex;align-items:center;justify-content:center;background:#d8cfee;border-radius:8px}
-.pal img{width:100%;height:100%;object-fit:contain;image-rendering:pixelated}.pal.on{outline:3px solid var(--accent)}
+.grid>.hint{grid-column:1/-1}.lead+h3,.lead+#preview+h3{display:none}.pal small{display:block;font-size:11px;line-height:1.15;color:#1b1424;font-weight:600;text-align:center;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:0 0 auto}.pal:has(small){flex-direction:column;gap:2px}.pal:has(small) img{min-height:0;flex:1 1 auto}.pal img{width:100%;height:100%;object-fit:contain;image-rendering:pixelated}.pal.on{outline:3px solid var(--accent)}
 .pal.mon span{display:block;width:100%;height:100%;background-size:200% 100%;background-position:0 0;background-repeat:no-repeat;image-rendering:pixelated}
 #preview{position:sticky;top:-10px;z-index:2;background:var(--panel);padding:8px 0;border-bottom:1px solid var(--line);margin:-10px 0 8px}
 #preview .box{height:clamp(220px,30vh,420px);display:flex;align-items:center;justify-content:center;background:#d8cfee;border-radius:10px}
@@ -43,7 +43,12 @@ main{display:flex}#mapwrap{position:relative;flex:1;min-width:0}
 #panel h4{margin:12px 0 4px;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.04em}
 button:disabled{opacity:.45;cursor:default}
 #tip{position:absolute;left:8px;top:8px;max-width:calc(100% - 330px);display:flex;gap:8px;align-items:center;background:rgba(18,12,34,.9);border:1px solid var(--accent);border-radius:8px;padding:5px 10px;font-size:13px;z-index:3}
-#tip:empty{display:none}#tip button{padding:3px 8px;font-size:12px}
+#tip:empty{display:none}#tip button{padding:3px 8px;font-size:12px}#tip .tipb{display:flex;gap:6px;flex:0 0 auto}
+button.go{background:#2f7d4a;border-color:#7dff9a;color:#fff;font-weight:700}#tip button.go{padding:6px 12px;font-size:14px}
+#hand{display:none}#hand.on{background:var(--accent);color:#1b1424}
+.seg{display:flex;gap:4px}.seg button{flex:1 1 0}
+.sel.place{display:flex;gap:10px;align-items:center}.sel.place img{width:64px;height:64px;object-fit:contain;image-rendering:pixelated;background:#d8cfee;border-radius:6px;flex:0 0 auto}.sel.place .go{margin-top:6px;padding:8px 14px}
+details.how{margin:8px 0;border:1px solid var(--line);border-radius:8px;padding:4px 8px}details.how summary{cursor:pointer;color:var(--muted);font-size:13px;padding:2px 0}details.how[open] summary{margin-bottom:2px}
 
 
 #modes{display:flex;gap:4px;padding:6px 12px;background:var(--panel);border-bottom:1px solid var(--line);overflow-x:auto;scrollbar-width:none}
@@ -79,8 +84,14 @@ main{height:calc(100% - 96px)}
  #preview{position:static;margin:0 0 6px}#preview .box{height:110px}#preview .sizes{display:none}
  .grid{grid-template-columns:repeat(auto-fill,minmax(var(--cell,76px),1fr));gap:6px}.pal{height:var(--cell,76px)}
  #panel button,#panel select,#panel input{min-height:36px}
- #toast{bottom:80px}
- #tip{top:auto;bottom:8px;right:8px;max-width:none;font-size:12px}#mapwrap.playing #tip{display:none}
+ #toast{bottom:auto;top:58px;font-size:13px;left:10px;right:10px;transform:none;max-width:none}
+ #tip{top:auto;bottom:8px;right:8px;max-width:none;font-size:12px;flex-wrap:wrap}#mapwrap.playing #tip{display:none}#tip .tipb{flex:1 1 100%}#tip .tipb button{flex:1 1 0;min-height:42px}
+ #preview{display:none!important}.lead{font-size:12px;margin:2px 0 6px}
+ #hand{display:block}#mapctl{max-width:none;left:8px;flex-wrap:nowrap;gap:3px}#mapctl button{min-width:36px;min-height:36px;padding:4px 6px}#mapctl label{padding:4px 6px;font-size:12px}
+ #mapctl label span{display:none}#mapctl label:after{font-size:15px}#mapctl label[title^="Colour"]:after{content:"\25A6"}#mapctl label[title^="Show doors"]:after{content:"\1F6AA"}
+ .seg button{min-height:42px}
+ .lead+h3+p.hint:not(.full),.lead+#preview+h3+p.hint:not(.full){display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;cursor:pointer}
+ .lead+h3+p.hint:not(.full):after{content:""}
  .subtabs button{padding:7px 4px}
 }
 .grid.wide{grid-template-columns:repeat(auto-fill,minmax(calc(var(--cell,clamp(100px,6.5vw,200px)) * 1.5),1fr))}.grid.wide .pal{height:var(--cell,clamp(100px,6.5vw,200px))}
@@ -92,8 +103,8 @@ main{height:calc(100% - 96px)}
 <nav id="modes"></nav>
 <main><div id="mapwrap"><canvas id="map"></canvas><div id="where"></div><div id="tip"></div>
 <div id="playpad"><div class="dp"><span></span><button data-pp="up">&#9650;</button><span></span><button data-pp="left">&#9664;</button><span></span><button data-pp="right">&#9654;</button><span></span><button data-pp="down">&#9660;</button><span></span></div><div class="ab"><button id="ppb">B</button><button id="ppa">A</button></div></div>
-<div id="mapctl"><button id="zout" title="Zoom out">&minus;</button><button id="zfit" title="Fit the map on screen">Fit</button><button id="zin" title="Zoom in">+</button>
-<label title="Colour the ground: green walkable, red wall, orange cut off"><input type="checkbox" id="walls"> walkable</label><label title="Show doors"><input type="checkbox" id="showdoors" checked> doors</label></div>
+<div id="mapctl"><button id="hand" title="Move the map with one finger (two fingers always work)">&#9995;</button><button id="zout" title="Zoom out">&minus;</button><button id="zfit" title="Fit the map on screen">Fit</button><button id="zin" title="Zoom in">+</button>
+<label title="Colour the ground: green walkable, red wall, orange cut off"><input type="checkbox" id="walls"> <span>walkable</span></label><label title="Show doors"><input type="checkbox" id="showdoors" checked> <span>doors</span></label></div>
 </div><div id="sizer" title="Drag to resize the panel"><b></b></div><aside id="panel"></aside></main>
 <div id="toast"></div>
 <script src="studio.js"></script>
