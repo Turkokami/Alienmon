@@ -6,7 +6,7 @@
 'use strict';
 let TILESETS = [], TSIMG = {};
 const TSC = {};   // id -> {fill, rim} 256x256 mask sheets (64 px pieces) or {sheet} image
-const tsById = id => TILESETS.find(t => t.id === id) || starters().find(t => t.id === id);
+const tsById = id => TILESETS.find(t => t.id === id) || starters().find(t => t.id === id) || kitById(id);
 
 // ---------- starter terrains: drawn in code, ready on every world (never saved; maps keep their id) ----------
 function rng(seed) { let s = seed >>> 0 || 1; return () => ((s = (s * 1664525 + 1013904223) >>> 0) / 4294967296); }
@@ -54,6 +54,65 @@ function starters() {   // [id, name, texture, ground, roughness, edge line, edg
     .map(([id, name, k, walk, rough, rim, rimColor, shadow], i) => ({ id, name, kind: 'auto', walk, rough, rim, rimColor, shadow: !!shadow, seed: i * 1.3, texTiles: 8, starter: true, dir: '*', tex: texCanvas(TEX[k], 7 + i * 31) }));
   return STARTERS;
 }
+// ---------- this world's ground: plain patches found in its own map art, made seamless, so painting blends into the maps ----------
+const KIT = {}, KITWAIT = {}, TEXRT = {}, SEAM = {};
+const kitGroup = s => ['interior', 'tower'].includes(s.type) ? 'in' : s.type === 'cave' ? 'cave' : 'out';
+const kitById = id => { for (const v of Object.values(KIT)) { const t = (v || []).find(t => t.id === id); if (t) return t; } };
+function seamless(src, sx, sy, w, h) {   // shift the patch by half (its old edges meet in the middle), then fade the original back in over the middle
+  const a = document.createElement('canvas'); a.width = w; a.height = h; const g = a.getContext('2d'); g.drawImage(src, sx, sy, w, h, 0, 0, w, h);
+  const o = document.createElement('canvas'); o.width = w; o.height = h; const q = o.getContext('2d'), hw = w >> 1, hh = h >> 1;
+  for (const [dx, dy] of [[0, 0], [-w, 0], [0, -h], [-w, -h]]) q.drawImage(a, dx + hw, dy + hh);
+  const A = g.getImageData(0, 0, w, h), B = q.getImageData(0, 0, w, h);
+  for (let y = 0; y < h; y++) for (let x = 0; x < w; x++) { const t = Math.min(1, 2.2 * Math.min(Math.min(x, w - 1 - x) / hw, Math.min(y, h - 1 - y) / hh)), p = (y * w + x) * 4;
+    for (let c = 0; c < 3; c++) A.data[p + c] = A.data[p + c] * t + B.data[p + c] * (1 - t); A.data[p + 3] = 255; }
+  g.putImageData(A, 0, 0); return a;
+}
+function kitName(walk, [r, g, b], indoor) {
+  const mx = Math.max(r, g, b), mn = Math.min(r, g, b), s = mx ? (mx - mn) / mx : 0, v = mx / 255, d = mx - mn || 1;
+  const h = mx === mn ? 0 : mx === r ? 60 * (((g - b) / d + 6) % 6) : mx === g ? 60 * ((b - r) / d + 2) : 60 * ((r - g) / d + 4);
+  const grey = s < 0.18, green = h >= 65 && h < 170, blue = h >= 170 && h < 270;
+  if (walk === ',') return 'Tall grass'; if (walk === '~') return 'Water'; if (walk === '^') return 'Lava';
+  if (walk === '#') return indoor ? 'Wall' : grey ? 'Rock' : green ? 'Thicket' : blue ? (v > 0.75 ? 'Ice wall' : s > 0.6 ? 'Deep water' : 'Dense growth') : 'Cliff';
+  if (indoor) return 'Floor';
+  return grey ? (v > 0.8 ? 'Snow' : 'Stone ground') : green ? 'Grass' : blue ? (v > 0.75 ? 'Snow' : 'Blue ground') : v > 0.62 ? 'Sand path' : 'Dirt path';
+}
+function worldKit(dir, grp) {   // null while the world's map pictures are still loading (the panel redraws when they arrive)
+  const key = dir + '|' + grp; if (KIT[key]) return KIT[key];
+  const secs = Object.values(ED.sections).filter(s => s.dir === dir && s.img && kitGroup(s) === grp && !builtMap(s.id)), ims = secs.map(s => img(s.img));
+  if (ims.some(i => !ok(i))) { if (!KITWAIT[key]) { KITWAIT[key] = 1; Promise.all(ims.map(i => ok(i) ? 0 : new Promise(r => { i.addEventListener('load', r); i.addEventListener('error', r); })))
+    .then(() => { delete KITWAIT[key]; if (S.mode === 'terrain') panel(); }); } return null; }
+  const cands = [];
+  for (const s of secs) { const im = img(s.img), [TW, TH] = s.tiles, c = document.createElement('canvas'); c.width = TW * 16; c.height = TH * 16;
+    const g = c.getContext('2d', { willReadFrequently: true }); g.drawImage(im, 0, 0, TW * 16, TH * 16); const px = g.getImageData(0, 0, TW * 16, TH * 16).data, rows = rowsOf(s.id), fl = {};
+    for (const [k, ch] of [['water', '~'], ['lava', '^']]) { for (const e of (s.fluid || {})[k] || []) if (e.length === 2) fl[tk(e[0], e[1])] = ch; else for (let y = e[1]; y <= e[3]; y++) for (let x = e[0]; x <= e[2]; x++) fl[tk(x, y)] = ch;
+      for (const [x, y] of ((DS.ground || {})[s.id] || {})[k] || []) fl[tk(x, y)] = ch; }
+    const at = (x, y) => fl[tk(x, y)] || (rows[y] || '')[x], mean = [], vari = [];
+    for (let y = 0; y < TH; y++) for (let x = 0; x < TW; x++) { const s0 = [0, 0, 0], s1 = [0, 0, 0];
+      for (let j = 0; j < 16; j++) for (let i = 0; i < 16; i++) { const p = ((y * 16 + j) * TW * 16 + x * 16 + i) * 4; for (let q = 0; q < 3; q++) { s0[q] += px[p + q]; s1[q] += px[p + q] * px[p + q]; } }
+      mean[y * TW + x] = s0.map(v => v / 256); vari[y * TW + x] = s1.map((v, q) => v / 256 - (s0[q] / 256) ** 2); }
+    for (const k of [5, 4, 3]) for (let y = 1; y + k < TH; y++) for (let x = 1; x + k < TW; x++) {
+      const ch = at(x, y); if (!ch || !'.,~^#'.includes(ch)) continue; const m = ch === '.' || ch === '#' ? 1 : 0; let good = true;   // plain ground and blocked fill must sit well inside their area
+      for (let yy = y - m; yy < y + k + m && good; yy++) for (let xx = x - m; xx < x + k + m; xx++) if (at(xx, yy) !== ch) { good = false; break; }
+      if (!good) continue; const M = [0, 0, 0], Q = [0, 0, 0], V = [0, 0, 0], n = k * k;
+      for (let yy = y; yy < y + k; yy++) for (let xx = x; xx < x + k; xx++) { const i = yy * TW + xx; for (let q = 0; q < 3; q++) { M[q] += mean[i][q] / n; Q[q] += mean[i][q] ** 2 / n; V[q] += vari[i][q] / n; } }
+      const lf = [0, 1, 2].reduce((a, q) => a + Math.sqrt(Math.max(0, Q[q] - M[q] ** 2)), 0) / 3, sd = [0, 1, 2].reduce((a, q) => a + Math.sqrt(Math.max(0, V[q] + Q[q] - M[q] ** 2)), 0) / 3;
+      if (ch === '#' && sd > 42) continue;   // buildings and big props, not ground
+      cands.push({ ch, k, score: sd * 0.5 + lf * 2 - k * 2, M, s, x, y, c });   // even texture, no big shapes (plazas, planks) that would show as a repeat
+    } }
+  const out = [], names = {};
+  for (const ch of ['.', ',', '~', '^', '#']) { const got = [];
+    for (const c of cands.filter(c => c.ch === ch).sort((a, b) => a.score - b.score)) { if (got.length && c.score > got[0].score * 2 + 15) break;
+      if (got.every(g => Math.abs(g.M[0] - c.M[0]) + Math.abs(g.M[1] - c.M[1]) + Math.abs(g.M[2] - c.M[2]) > 60)) got.push(c); if (got.length >= 3) break; }
+    for (const c of got) { let nm = kitName(ch, c.M, grp === 'in'); names[nm] = (names[nm] || 0) + 1; if (names[nm] > 1) nm += ' ' + names[nm];
+      out.push({ id: `k_${c.s.id}_${c.x}_${c.y}_${c.k}`, name: nm, kind: 'auto', walk: ch, rough: 0.55, rim: ch === '.' ? 0 : 0.3, rimColor: '#' + c.M.map(v => Math.round(v * 0.4).toString(16).padStart(2, '0')).join(''), soft: 0.6, shadow: ch === '#', seed: out.length * 1.7, kit: true, src: c.s.name, texTiles: c.k, tex: seamless(c.c, c.x * 16, c.y * 16, c.k * 16, c.k * 16) }); } }
+  return (KIT[key] = out);
+}
+function kitAdopt() {   // a world-ground terrain is saved as one of your terrains the first time it is painted
+  const k = S.terr && kitById(S.terr); if (!k) return; const have = TILESETS.find(t => t.from === k.id); if (have) { S.terr = have.id; return; }
+  let n = 1; while (tsById('t' + n)) n++;
+  const t = { id: 't' + n, name: k.name, kind: 'auto', walk: k.walk, rough: k.rough, rim: k.rim, rimColor: k.rimColor, soft: k.soft, shadow: k.shadow, seed: k.seed, texTiles: k.texTiles, dir: S.planet, from: k.id };
+  TILESETS.push(t); TEXRT[t.id] = k.tex; TSIMG[t.id] = k.tex.toDataURL('image/png'); img(TSIMG[t.id]); DIRTY.add('tilesets'); $('#save').classList.add('hot'); S.terr = t.id;
+}
 const corners = i => [i & 1, (i >> 1) & 1, (i >> 2) & 1, (i >> 3) & 1];   // NW, NE, SW, SE
 
 // ---------- edge masks for 'auto' tilesets ----------
@@ -62,23 +121,24 @@ function wobble(u, v, seed) {   // periodic in u and v (period 1), so pieces lin
   return 0.5 * Math.sin(p * (2 * u + v) + s) + 0.3 * Math.sin(p * (3 * v - u) + 1.7 + s) + 0.2 * Math.sin(p * (5 * u + 4 * v) + 4.1 + s);
 }
 function maskSheets(t) {
-  if (TSC[t.id] && TSC[t.id].key === t.rough + '|' + t.rim + '|' + t.seed) return TSC[t.id];
+  const key = t.rough + '|' + t.rim + '|' + t.seed + '|' + (t.soft || 0); if (TSC[t.id] && TSC[t.id].key === key) return TSC[t.id];
   const N = 64, fill = document.createElement('canvas'), rim = document.createElement('canvas'); fill.width = rim.width = fill.height = rim.height = N * 4;
   const fd = fill.getContext('2d').createImageData(N * 4, N * 4), rd = rim.getContext('2d').createImageData(N * 4, N * 4);
-  const amp = (t.rough ?? 0.5) * 0.3, rimW = (t.rim ?? 0.5) * 0.09, e = 1.2 / N;
+  const amp = (t.rough ?? 0.5) * 0.3, rimW = (t.rim ?? 0.5) * 0.09, soft = t.soft || 0, e = Math.max(1.2 / N, soft * 0.22);   // soft: a wide, grainy fade into the art under it
   for (let i = 1; i < 16; i++) { const [a, b, c, d] = corners(i), X = (i % 4) * N, Y = (i >> 2) * N;
     for (let py = 0; py < N; py++) for (let px = 0; px < N; px++) {
       const u = (px + 0.5) / N, v = (py + 0.5) / N, su = u * u * (3 - 2 * u), sv = v * v * (3 - 2 * v);
       const f = (a * (1 - su) + b * su) * (1 - sv) + (c * (1 - su) + d * su) * sv, k = f - 0.5 + amp * wobble(u, v, t.seed) * (f > 0.02 && f < 0.98 ? 1 : 0);
-      const al = f >= 0.999 ? 1 : f <= 0.001 ? 0 : Math.max(0, Math.min(1, (k + e) / (2 * e)));
+      let al = f >= 0.999 ? 1 : f <= 0.001 ? 0 : Math.max(0, Math.min(1, (k + e) / (2 * e)));
+      if (soft && al > 0 && al < 1) { const n = Math.sin(px * 12.9898 + py * 78.233 + i * 3.17) * 43758.5453; al = Math.max(0, Math.min(1, al + (n - Math.floor(n) - 0.5) * 0.7 * soft)); }
       const r = rimW > 0 && al > 0 ? Math.max(0, Math.min(1, 1 - (k - e) / rimW)) * al : 0, o = ((Y + py) * N * 4 + X + px) * 4;
       fd.data[o + 3] = Math.round(al * 255); rd.data[o + 3] = Math.round(r * (f >= 0.999 ? 0 : 1) * 255); } }
   fill.getContext('2d').putImageData(fd, 0, 0); rim.getContext('2d').putImageData(rd, 0, 0);
-  return (TSC[t.id] = { fill, rim, key: t.rough + '|' + t.rim + '|' + t.seed });
+  return (TSC[t.id] = { fill, rim, key });
 }
 function texOf(t) {   // the texture an auto tileset paints with: a starter's own canvas, a map clip (16 px per tile already) or an uploaded picture
-  if (t.tex) return t.tex;
-  if (t.clip) { const c = clipById(t.clip); return c && clipImg(c); }
+  if (t.tex) return t.tex; if (TEXRT[t.id]) return TEXRT[t.id];
+  if (t.clip) { const c = clipById(t.clip), i = c && clipImg(c); if (!ok(i)) return i; return SEAM[c.id] || (SEAM[c.id] = seamless(i, 0, 0, i.naturalWidth, i.naturalHeight)); }   // a clip repeats without a seam
   return img(TSIMG[t.id] || t.url);
 }
 // draw one terrain layer onto a map canvas (g), W x H tiles, from vertex string v
@@ -135,10 +195,10 @@ function terrainPaint(wx, wy) {
   if (!TBAKE) TBAKE = requestAnimationFrame(() => { TBAKE = 0; terrBake(id); });
 }
 function terrainFill(all) { const id = S.view !== 'outdoor' ? S.view : S.tsid; if (!id) return toast('Open one map from the map list first.'); const m = terrTarget(id); if (!m || !S.terr) return toast('Pick a terrain first.');
-  const [W, H] = sec(id).tiles; snap(); layerFor(m, S.terr).v = (all ? '1' : '0').repeat((W + 1) * (H + 1)); if (all) delete m.manual; terrBake(id); terrRows(id); panel(); }
+  kitAdopt(); const [W, H] = sec(id).tiles; snap(); layerFor(m, S.terr).v = (all ? '1' : '0').repeat((W + 1) * (H + 1)); if (all) delete m.manual; terrBake(id); terrRows(id); panel(); }
 function terrainDown(t, wx, wy) {
   if (!S.terr && !S.terase) return toast('Pick a terrain on the right first.');
-  S.tsid = t.sid; snap(); S.terrPaint = true; terrainPaint(wx, wy);
+  kitAdopt(); S.tsid = t.sid; snap(); S.terrPaint = true; terrainPaint(wx, wy);
 }
 function terrainUp() { if (!S.terrPaint) return; S.terrPaint = false; const id = S.tsid; cancelAnimationFrame(TBAKE); TBAKE = 0; terrBake(id); terrRows(id); panel(); }
 
@@ -171,8 +231,10 @@ const how = li => `<details class="how" ${phone() ? '' : 'open'}><summary>How it
 const GROUNDS = [['.', 'walkable'], [',', 'tall grass (wild battles)'], ['~', 'water (swim with the Bubbub Ride)'], ['^', 'lava (cross with the Heat Shield)'], ['#', 'blocked (cliff, hedge, wall)'], ['', 'looks only (keeps the ground under it)']];
 const groundName = w => (GROUNDS.find(g => g[0] === (w || '')) || GROUNDS[0])[1];
 function terrainPanel() {
-  const one = S.view !== 'outdoor', m = one && (builtMap(S.view) || DS.paint[S.view]), mine = TILESETS.filter(t => S.tsAll || t.dir === S.planet), cur = S.terr && tsById(S.terr);
-  const pal = t => `<button class="pal ${S.terr === t.id && !S.terase ? 'on' : ''}" data-ts="${t.id}" data-cap="${esc(t.name)} · ${groundName(t.walk)}" title="${esc(t.name)}"><img src="${tsPreview(t, 24)}"><small>${esc(t.name.split(' (')[0])}</small></button>`;
+  const one = S.view !== 'outdoor', m = one && (builtMap(S.view) || DS.paint[S.view]), cur = S.terr && tsById(S.terr);
+  const kit = worldKit(S.planet, one && sec(S.view) ? kitGroup(sec(S.view)) : 'out'), hid = new Set(DS.kitHide || []), shown = (kit || []).filter(t => !hid.has(t.id));
+  const mine = TILESETS.filter(t => (S.tsAll || t.dir === S.planet) && !shown.some(k => k.id === t.from)), isOn = t => !S.terase && (S.terr === t.id || (cur && cur.from === t.id));
+  const pal = t => `<button class="pal ${isOn(t) ? 'on' : ''}" data-ts="${t.id}" data-cap="${esc(t.name)} · ${groundName(t.walk)}" title="${esc(t.name)}"><img src="${tsPreview(t, 24)}"><small>${esc(t.name.split(' (')[0])}</small></button>`;
   return `<div id="preview"><div class="box" id="pbox">${cur ? `<img src="${tsPreview(cur, 48)}">` : ''}</div><div class="cap" id="pcap">${cur ? `${esc(cur.name)} · ${groundName(cur.walk)}` : 'Pick a terrain to see it'}</div></div>
   <div class="row"><button class="tool ${!S.terase ? 'on' : ''}" id="tpaint">&#128396; Paint</button><button class="tool ${S.terase ? 'on' : ''}" id="terase">&#9003; Eraser</button>
     <span class="hint">Brush</span>${[1, 2, 3, 5].map(n => `<button class="tool ${(S.tbrush || 1) === n ? 'on' : ''}" data-tb="${n}">${n}</button>`).join('')}</div>
@@ -180,22 +242,26 @@ function terrainPanel() {
   ${m && (m.terrain || []).length > 1 ? `<div class="hint">On this map, bottom to top: ${m.terrain.map((l, i) => `<button data-tup="${i}" title="Move up a layer">${esc((tsById(l.ts) || {}).name || l.ts)} ${i ? '&#8593;' : ''}</button>`).join(' ')}</div>` : ''}
   ${one && !builtMap(S.view) ? '<p class="hint">Finished maps keep their picture: terrain goes on a see-through layer on top.</p>' : ''}
   ${how('<li>Pick a terrain below.</li><li>Press and drag on any map to paint it. Edges and corners join up by themselves.</li><li>The ground follows the terrain: paths are walkable, tall grass starts wild battles, water and lava block the way until the player has the gear.</li>')}
-  <h4>Starter terrains</h4><div class="grid">${starters().map(pal).join('')}</div>
-  <h4>Your terrains</h4><div class="grid">${mine.map(pal).join('') || '<div class="hint">None yet. Make one below, or copy a starter to change it.</div>'}</div>
+  <h4>This world's ground</h4><p class="hint">Cut from ${esc(ED.planets[S.planet] || 'this world')}'s own maps, so it matches. Edges fade into the art under them.</p>
+  <div class="grid">${!kit ? '<div class="hint">Looking through this world\'s maps&hellip;</div>' : shown.map(pal).join('') || '<div class="hint">No plain ground found here. Use Copy ground from a map below.</div>'}</div>
+  ${kit && kit.some(t => hid.has(t.id)) ? '<button id="kitshow">Show the ones I hid</button>' : ''}
+  <h4>Your terrains</h4><div class="grid">${mine.map(pal).join('') || '<div class="hint">None yet. Copy ground from a map below, or turn a clip (a mountain, a cliff edge) into one.</div>'}</div>
   <label class="row"><input type="checkbox" id="tsall" ${S.tsAll ? 'checked' : ''}> show terrains made on every world</label>
+  <details class="how" ${cur && cur.starter ? 'open' : ''}><summary>Plain drawn terrains (don't match the map art)</summary><div class="grid">${starters().map(pal).join('')}</div></details>
   ${cur ? `<div class="sel" style="margin-top:8px"><b>${esc(cur.name)}</b>
-    ${cur.starter ? `<div class="hint">Ground: ${groundName(cur.walk)}. Starter terrains can't be changed.</div><button id="tcopy">Make my own copy to change</button>` : `
+    ${cur.kit ? `<div class="hint">Cut from ${esc(cur.src)}. Ground: ${groundName(cur.walk)}. It's saved as one of your terrains when you first paint with it.</div><button id="kithide">Hide this one</button>` : cur.starter ? `<div class="hint">Ground: ${groundName(cur.walk)}. Starter terrains can't be changed.</div><button id="tcopy">Make my own copy to change</button>` : `
     <label>Name <input id="tsrename" value="${esc(cur.name)}"></label>
     <label>Ground <select id="tswalk">${GROUNDS.map(([v, n]) => `<option value="${v}" ${(cur.walk || '') === v ? 'selected' : ''}>${n}</option>`).join('')}</select></label>
     ${cur.kind === 'auto' ? `<label>Edge roughness <input type="range" id="tsrough" min="0" max="1" step="0.05" value="${cur.rough ?? 0.5}"></label>
     <label>Edge line <input type="range" id="tsrim" min="0" max="1" step="0.05" value="${cur.rim ?? 0.5}"></label><label>Edge colour <input type="color" id="tsrimc" value="${cur.rimColor || '#2b2216'}"></label>
+    <label>Edge blend (fade into the map) <input type="range" id="tssoft" min="0" max="1" step="0.05" value="${cur.soft || 0}"></label>
     ${cur.clip ? '' : `<label>Texture size, tiles <input type="number" id="tstex" min="1" max="16" value="${cur.texTiles || 4}"></label>`}
     <button id="tsseed">New edge shape</button>` : ''}
     <label class="row"><input type="checkbox" id="tsshadow" ${cur.shadow ? 'checked' : ''}> raised (drop shadow under the edge)</label>
     <button id="tsrm">Delete terrain</button>`}</div>` : ''}
   <h3>Make your own terrain</h3>
   <div class="row"><button id="tsample" class="${S.tsample ? 'on' : ''}">&#9986; Copy ground from a map</button></div>
-  <p class="hint">${S.tsample ? '<b>Now drag a box over a patch of plain ground on the map</b> (grass, a road, sand). It becomes a terrain that matches the art.' : 'Matches this world best: drag a box over plain ground on any map and it becomes a terrain.'}</p>
+  <p class="hint">${S.tsample ? '<b>Now drag a box over a patch of plain ground on the map</b> (grass, a road, sand). It becomes a terrain that matches the art.' : 'Want a ground that isn\'t in the list? Drag a box over it on any map (grass, a road, a mountain side) and it becomes a terrain.'}</p>
   <label>Name <input id="tsname" placeholder="e.g. Moss, Shallow water"></label>
   <label>Ground <select id="tsnwalk">${GROUNDS.map(([v, n]) => `<option value="${v}">${n}</option>`).join('')}</select></label>
   <div class="hint"><b>From a seamless picture</b> (ChatGPT, SpriteCook or your own):</div><input type="file" id="tstexf" accept="image/*">
@@ -218,6 +284,9 @@ function terrainWire() {
   on('#tsrough', 'change', e => { cur().rough = +e.target.value; redo(); panel(); }); on('#tsrim', 'change', e => { cur().rim = +e.target.value; redo(); panel(); });
   on('#tsrimc', 'change', e => { cur().rimColor = e.target.value; redo(); panel(); }); on('#tstex', 'change', e => { cur().texTiles = Math.max(1, Math.min(16, +e.target.value || 4)); redo(); panel(); });
   on('#tsseed', 'click', () => { cur().seed = Math.round(Math.random() * 60) / 10; redo(); panel(); });
+  on('#tssoft', 'change', e => { cur().soft = +e.target.value; redo(); panel(); });
+  on('#kithide', 'click', () => { snap(); DS.kitHide = [...(DS.kitHide || []), S.terr]; S.terr = null; DIRTY.add('design'); $('#save').classList.add('hot'); panel(); });
+  on('#kitshow', 'click', () => { snap(); DS.kitHide = []; DIRTY.add('design'); $('#save').classList.add('hot'); panel(); });
   on('#tsshadow', 'change', e => { cur().shadow = e.target.checked; redo(); panel(); });
   on('#tsrm', 'click', () => { if (MAPS.filter(m => m.built).concat(Object.values(DS.paint || {})).some(m => (m.terrain || []).some(l => l.ts === S.terr))) return toast('That terrain is painted on a map; remove it there first.'); snap(); TILESETS = TILESETS.filter(t => t.id !== S.terr); DIRTY.add('tilesets'); S.terr = null; panel(); });
   on('#tsample', 'click', () => { S.tsample = !S.tsample; S.terase = false; panel(); if (S.tsample) toast('Drag a box over plain ground on the map.', 5000); });
@@ -230,7 +299,7 @@ function terrainWire() {
 }
 function terrainFromClip(c) {   // "Copy ground from a map": the boxed patch becomes a terrain whose ground is what most of the patch was
   const all = c.rows.join(''), cnt = ch => all.split(ch).length - 1, walk = cnt(',') > all.length / 2 ? ',' : cnt('#') > all.length / 2 ? '#' : '.';
-  addTileset({ name: c.name, walk, kind: 'auto', clip: c.id, rough: 0.5, rim: 0.35, rimColor: '#2b2216' }); S.tsample = false; panel();
+  addTileset({ name: c.name, walk, kind: 'auto', clip: c.id, rough: 0.55, rim: 0, soft: 0.6, shadow: walk === '#', rimColor: '#2b2216' }); S.tsample = false; panel();
 }
 function squash(url, max, keyBg) {   // keep saves small: at most max px, PNG; sheets on a flat background get it keyed out
   return new Promise(r => { const i = new Image(); i.onload = () => { const s = Math.min(1, max / Math.max(i.width, i.height)), c = document.createElement('canvas'); c.width = Math.round(i.width * s); c.height = Math.round(i.height * s);
