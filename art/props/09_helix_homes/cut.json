@@ -1,0 +1,167 @@
+[
+ {
+  "n": 0,
+  "src": [
+   0,
+   0,
+   70,
+   53
+  ],
+  "px": [
+   70,
+   53
+  ],
+  "name": "Crew quarters module",
+  "h": 2
+ },
+ {
+  "n": 1,
+  "src": [
+   0,
+   0,
+   53,
+   62
+  ],
+  "px": [
+   53,
+   62
+  ],
+  "name": "Crew pod home",
+  "h": 2
+ },
+ {
+  "n": 2,
+  "src": [
+   0,
+   0,
+   88,
+   54
+  ],
+  "px": [
+   88,
+   54
+  ],
+  "name": "Family habitat module",
+  "h": 3
+ },
+ {
+  "n": 3,
+  "src": [
+   0,
+   0,
+   88,
+   91
+  ],
+  "px": [
+   88,
+   91
+  ],
+  "name": "Officer apartment block",
+  "h": 4
+ },
+ {
+  "n": 4,
+  "src": [
+   0,
+   0,
+   70,
+   51
+  ],
+  "px": [
+   70,
+   51
+  ],
+  "name": "Engineer's quarters",
+  "h": 2
+ },
+ {
+  "n": 5,
+  "src": [
+   0,
+   0,
+   70,
+   61
+  ],
+  "px": [
+   70,
+   61
+  ],
+  "name": "Hydroponic home",
+  "h": 2
+ },
+ {
+  "n": 6,
+  "src": [
+   0,
+   0,
+   106,
+   56
+  ],
+  "px": [
+   106,
+   56
+  ],
+  "name": "Capsule dorm row",
+  "h": 2
+ },
+ {
+  "n": 7,
+  "src": [
+   0,
+   0,
+   88,
+   77
+  ],
+  "px": [
+   88,
+   77
+  ],
+  "name": "Viewport suite",
+  "h": 3
+ },
+ {
+  "n": 8,
+  "src": [
+   0,
+   0,
+   70,
+   44
+  ],
+  "px": [
+   70,
+   44
+  ],
+  "name": "Converted cargo home",
+  "h": 2
+ },
+ {
+  "n": 9,
+  "src": [
+   0,
+   0,
+   70,
+   48
+  ],
+  "px": [
+   70,
+   48
+  ],
+  "name": "Medic's quarters",
+  "h": 2
+ },
+ {
+  "n": 10,
+  "src": [
+   0,
+   0,
+   53,
+   49
+  ],
+  "px": [
+   53,
+   49
+  ],
+  "name": "Pilot's bunk",
+  "h": 2
+ }
+]
