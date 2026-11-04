@@ -1,0 +1,197 @@
+[
+ {
+  "n": 0,
+  "src": [
+   0,
+   0,
+   70,
+   58
+  ],
+  "px": [
+   70,
+   58
+  ],
+  "name": "Dig camp tent",
+  "h": 2
+ },
+ {
+  "n": 1,
+  "src": [
+   0,
+   0,
+   106,
+   81
+  ],
+  "px": [
+   106,
+   81
+  ],
+  "name": "HQ tent with awning",
+  "h": 3
+ },
+ {
+  "n": 2,
+  "src": [
+   0,
+   0,
+   88,
+   65
+  ],
+  "px": [
+   88,
+   65
+  ],
+  "name": "Mural wall house",
+  "h": 2
+ },
+ {
+  "n": 3,
+  "src": [
+   0,
+   0,
+   70,
+   48
+  ],
+  "px": [
+   70,
+   48
+  ],
+  "name": "Explorer's tent home",
+  "h": 2
+ },
+ {
+  "n": 4,
+  "src": [
+   0,
+   0,
+   70,
+   53
+  ],
+  "px": [
+   70,
+   53
+  ],
+  "name": "Restored ruin house",
+  "h": 3
+ },
+ {
+  "n": 5,
+  "src": [
+   0,
+   0,
+   70,
+   77
+  ],
+  "px": [
+   70,
+   77
+  ],
+  "name": "Jungle stilt hut",
+  "h": 3
+ },
+ {
+  "n": 6,
+  "src": [
+   0,
+   0,
+   70,
+   51
+  ],
+  "px": [
+   70,
+   51
+  ],
+  "name": "Scholar's cottage",
+  "h": 2
+ },
+ {
+  "n": 7,
+  "src": [
+   0,
+   0,
+   106,
+   49
+  ],
+  "px": [
+   106,
+   49
+  ],
+  "name": "Bamboo longhouse",
+  "h": 2
+ },
+ {
+  "n": 8,
+  "src": [
+   0,
+   0,
+   70,
+   65
+  ],
+  "px": [
+   70,
+   65
+  ],
+  "name": "Vine-covered cottage",
+  "h": 2
+ },
+ {
+  "n": 9,
+  "src": [
+   0,
+   0,
+   88,
+   62
+  ],
+  "px": [
+   88,
+   62
+  ],
+  "name": "Courtyard ruin home",
+  "h": 4
+ },
+ {
+  "n": 10,
+  "src": [
+   0,
+   0,
+   70,
+   102
+  ],
+  "px": [
+   70,
+   102
+  ],
+  "name": "Guide's treehouse",
+  "h": 4
+ },
+ {
+  "n": 11,
+  "src": [
+   0,
+   0,
+   106,
+   80
+  ],
+  "px": [
+   106,
+   80
+  ],
+  "name": "Family tent cluster",
+  "h": 3
+ },
+ {
+  "n": 12,
+  "src": [
+   0,
+   0,
+   53,
+   65
+  ],
+  "px": [
+   53,
+   65
+  ],
+  "name": "Chime keeper's hut",
+  "h": 2
+ }
+]

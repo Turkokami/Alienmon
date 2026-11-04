@@ -1,0 +1,197 @@
+[
+ {
+  "n": 0,
+  "src": [
+   0,
+   0,
+   70,
+   69
+  ],
+  "px": [
+   70,
+   69
+  ],
+  "name": "Whitewashed harbour house",
+  "h": 2
+ },
+ {
+  "n": 1,
+  "src": [
+   0,
+   0,
+   53,
+   96
+  ],
+  "px": [
+   53,
+   96
+  ],
+  "name": "Lighthouse",
+  "h": 5
+ },
+ {
+  "n": 2,
+  "src": [
+   0,
+   0,
+   70,
+   57
+  ],
+  "px": [
+   70,
+   57
+  ],
+  "name": "Shell-roof cottage",
+  "h": 2
+ },
+ {
+  "n": 3,
+  "src": [
+   0,
+   0,
+   70,
+   57
+  ],
+  "px": [
+   70,
+   57
+  ],
+  "name": "Blue-door fisher cottage",
+  "h": 2
+ },
+ {
+  "n": 4,
+  "src": [
+   0,
+   0,
+   88,
+   64
+  ],
+  "px": [
+   88,
+   64
+  ],
+  "name": "Stilt house over the lagoon",
+  "h": 3
+ },
+ {
+  "n": 5,
+  "src": [
+   0,
+   0,
+   88,
+   68
+  ],
+  "px": [
+   88,
+   68
+  ],
+  "name": "Houseboat",
+  "h": 2
+ },
+ {
+  "n": 6,
+  "src": [
+   0,
+   0,
+   106,
+   100
+  ],
+  "px": [
+   106,
+   100
+  ],
+  "name": "Terraced seaside homes",
+  "h": 3
+ },
+ {
+  "n": 7,
+  "src": [
+   0,
+   0,
+   106,
+   103
+  ],
+  "px": [
+   106,
+   103
+  ],
+  "name": "Captain's villa",
+  "h": 4
+ },
+ {
+  "n": 8,
+  "src": [
+   0,
+   0,
+   106,
+   54
+  ],
+  "px": [
+   106,
+   54
+  ],
+  "name": "Shell-cottage pair",
+  "h": 2
+ },
+ {
+  "n": 9,
+  "src": [
+   0,
+   0,
+   53,
+   54
+  ],
+  "px": [
+   53,
+   54
+  ],
+  "name": "Beach hut",
+  "h": 2
+ },
+ {
+  "n": 10,
+  "src": [
+   0,
+   0,
+   88,
+   87
+  ],
+  "px": [
+   88,
+   87
+  ],
+  "name": "Diver's house with a pool",
+  "h": 3
+ },
+ {
+  "n": 11,
+  "src": [
+   0,
+   0,
+   70,
+   87
+  ],
+  "px": [
+   70,
+   87
+  ],
+  "name": "Coral-stone house",
+  "h": 2
+ },
+ {
+  "n": 12,
+  "src": [
+   0,
+   0,
+   70,
+   89
+  ],
+  "px": [
+   70,
+   89
+  ],
+  "name": "Lighthouse keeper's cottage",
+  "h": 2
+ }
+]
