@@ -164,7 +164,7 @@ function drawSec(){const s=SWORLD[G.sec.id],p=SM?SM.t/SM.n:0,jp=SJ?SJ.t/(SJ.dur|
  secFollowDraw(people,s,cx,cy,p);secNeighbours(s,people,cx,cy);people.sort((a,b)=>a.y-b.y).forEach(o=>o.draw());
  for(const m of s.mons||[]){if(G.monGone&&(s.id+':'+m.x+','+m.y) in G.monGone)continue;const im=OWI[shownMon(m.mon,0)];if(!okI(im))continue;const X=m.x*16-cx,Y=m.y*16-cy;if(X<-24||Y<-24||X>176||Y>160)continue;
   ctx.fillStyle='rgba(20,10,20,0.35)';ctx.beginPath();ctx.ellipse(X+8,Y+15,6,2,0,0,6.283);ctx.fill();ctx.save();ctx.imageSmoothingEnabled=true;ctx.drawImage(im,((frame>>4)&1)*64,0,64,64,X-2,Y-5,20,20);ctx.restore()}
- for(const o of s.objects||[])if(o.k==='stash')secDrawStash(o.tile[0]*16-cx,o.tile[1]*16-cy,G.opened&&G.opened[s.id+':'+o.tile]);
+ for(const o of s.objects||[])if(o.k==='stash')secDrawStash(o.tile[0]*16-cx,o.tile[1]*16-cy,G.opened&&G.opened[s.id+':'+o.tile],o.tier);
  for(const o of s.objects||[])if(o.show||o.k==='pickup'||o.k==='lock'){const X=o.tile[0]*16-cx,Y=o.tile[1]*16-cy;if(X>-16&&Y>-16&&X<160&&Y<144)objArt(ctx,o,X,Y,secGot(s,o),frame)}   // chests and signs drawn when the map picture has none
  secDark(s,px-cx,py-cy);qDraw(cx,cy,1,24);
  if(secTile(s,G.sec.x,G.sec.y)===','){ctx.fillStyle='#3f9d3a';for(let i=0;i<4;i++)ctx.fillRect(Math.round(px-cx+2+i*3),Math.round(py-cy+11-(i%2)),2,5)}
@@ -265,8 +265,9 @@ function secJump(){const s=SWORLD[G.sec.id],[dx,dy]=DIRS[face];
  jumpSfx()}
 
 // a Linker Stash on the ground: a little gold-and-violet capsule with a cyan light (drawn, so every world gets the same look)
-const STASHI=__STASHART__.map(u=>u?Object.assign(new Image(),{src:u}):null);
-function secDrawStash(x,y,open){if(x<-16||y<-24||x>160||y>144)return;const im=STASHI[open?1:0];ctx.fillStyle='rgba(20,10,20,0.35)';ctx.beginPath();ctx.ellipse(x+8,y+15,7,2,0,0,6.283);ctx.fill();if(okI(im)){ctx.drawImage(im,x,y+16-im.naturalHeight);if(!open&&frame%60<30){ctx.fillStyle='rgba(95,242,255,0.35)';ctx.fillRect(x+7,y+10,2,2)}}}
+const STASHI=__STASHART__.map(t=>t.map(u=>u?Object.assign(new Image(),{src:u}):null));   // [tier 1 bronze, 2 silver, 3 star][closed, open]
+function secDrawStash(x,y,open,tier){if(x<-24||y<-36||x>168||y>144)return;const im=(STASHI[(tier||1)-1]||STASHI[0])[open?1:0];ctx.fillStyle='rgba(20,10,20,0.35)';ctx.beginPath();ctx.ellipse(x+8,y+15,7,2,0,0,6.283);ctx.fill();
+ if(okI(im)){ctx.drawImage(im,x+8-(im.naturalWidth>>1),y+16-im.naturalHeight);if(!open&&frame%60<30){ctx.fillStyle='rgba(95,242,255,0.35)';ctx.fillRect(x+7,y+10,2,2)}}}
 function stashSfx(){try{if(!AC||musicMode==='off')return;const t=AC.currentTime;[523,659,784,1047].forEach((f,i)=>{const o=AC.createOscillator(),g=AC.createGain();o.type='square';o.frequency.value=f;g.gain.setValueAtTime(0.03,t+i*0.07);g.gain.exponentialRampToValueAtTime(0.001,t+i*0.07+0.12);o.connect(g).connect(AC.destination);o.start(t+i*0.07);o.stop(t+i*0.07+0.13)})}catch(e){}}
 function exclaimSfx(){try{if(!AC||musicMode==='off')return;const t=AC.currentTime,o=AC.createOscillator(),g=AC.createGain();o.type='square';o.frequency.setValueAtTime(880,t);o.frequency.setValueAtTime(1175,t+0.06);g.gain.setValueAtTime(0.04,t);g.gain.exponentialRampToValueAtTime(0.001,t+0.16);o.connect(g).connect(AC.destination);o.start(t);o.stop(t+0.17)}catch(e){}}
 

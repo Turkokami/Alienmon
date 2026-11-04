@@ -741,7 +741,10 @@ function bagList(inBattle){const L=[];if(inBattle)PODS.forEach(p=>L.push({kind:'
  if(inBattle&&typeof skyShards==='function'&&skyShards().length)L.push({kind:'reso',it:{k:'reso',n:'Shard Resonance'},n:'Shard Resonance',c:B&&B.reso?0:1,d:"Once per battle: call down a Shard world's sky for 5 turns."});return L}
 function drawBag(list,sel,title){box(0,0,160,144);txt(title,6,5,'#1b1424');const st=Math.max(0,Math.min(sel-6,list.length-9));
  for(let i=0;i<9&&st+i<list.length;i++){const e=list[st+i],y=18+i*10;if(st+i===sel)rect(3,y-1,154,10,'#ffe0c0');txt(e.n,6,y,e.c?'#1b1424':'#a99cc8',7);txt('x'+e.c,136,y,'#3b2a5c',7)}
- const e=list[sel];if(e){box(0,110,160,34,'#f8f4ff','#3b2a5c');wrap(e.d,24).slice(0,3).forEach((l,i)=>txt(l,5,115+i*9,'#3b2a5c',6))}}
+ const e=list[sel];if(e){box(0,110,160,34,'#f8f4ff','#3b2a5c');const ic=itemIcon(e);wrap(e.d,ic?21:24).slice(0,3).forEach((l,i)=>txt(l,5,115+i*9,'#3b2a5c',6));if(ic)ctx.drawImage(ic,131,115)}}
+// the selected item's picture in the Bag (art/ui/items: one per item and pod key, key items share the pouch)
+const ITEMI=Object.fromEntries(Object.entries(__ITEMART__).map(([k,u])=>[k,Object.assign(new Image(),{src:u})]));
+function itemIcon(e){const im=ITEMI[e.kind==='key'||e.kind==='egg'?'key':e.it&&e.it.k];return im&&im.complete&&im.naturalWidth?im:null}
 
 /* ---------- Linker Sync capture ---------- */
 const PODS=[{k:'stasis',n:'Stasis Pod',m:1,sp:1,price:20,d:'Catches wild Alienmon. After you throw it, tune the Sync bar to lock on.'},{k:'harmonic',n:'Harmonic Pod',m:1.6,sp:1,price:60,d:'A stronger pod: much better odds of a catch.'},{k:'singularity',n:'Singularity Pod',m:2.6,sp:0.75,price:200,d:'The strongest pod, for tough or rare Alienmon.'}];

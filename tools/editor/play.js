@@ -152,6 +152,8 @@ function lockSel(id, need) {
 }
 const needOf = (v, dir) => v === 'keeper' ? { keeper: pkeyOf(dir) } : v.startsWith('key:') ? { key: v.slice(4) } : { flag: v.slice(5) };
 const LOOKS = [['barrier', 'Energy fence'], ['gate', 'Iron gate'], ['rock', 'Boulder']];
+const TIERS = [[1, 'Bronze (everyday rewards)'], [2, 'Silver (good rewards)'], [3, 'Star (rare rewards)']];   // the stash's look in the game
+const tierSel = (id, v) => `<select id="${id}">${TIERS.map(([t, n]) => `<option value="${t}" ${(v || 1) === t ? 'selected' : ''}>${n}</option>`).join('')}</select>`;
 function itemsPanel() {
   const k = S.okind || 'stash', o = S.osel && (DS.objs[S.osel.sid] || [])[S.osel.i], one = S.view !== 'outdoor' && sec(S.view), dir = one ? one.dir : S.planet;
   const info = ED.items.find(i => i.k === (S.oitem || 'gel')), rw = rewardsFor(dir);
@@ -162,6 +164,7 @@ function itemsPanel() {
     <p class="hint">${OK_HOW[k]}</p>
     ${hasItem(k) ? `<label>Item ${itemSel('oitem', S.oitem || 'gel')}</label>${info && info.d ? `<div class="hint">${esc(info.d)}</div>` : ''}
       <label>How many <input id="on" type="number" min="1" max="9999" value="${S.on || 1}" style="width:80px"></label>
+      ${k === 'stash' ? `<label>Stash ${tierSel('otier', S.otier)}</label>` : ''}
       <div class="hint">Good rewards for ${esc(ED.planets[dir] || 'this world')}:</div><div class="row">${rw.map(([it, n]) => `<button data-rw="${it}|${n}">${n > 1 ? n + 'x ' : ''}${esc(itemName(it))}</button>`).join('')}</div>` : ''}
     ${k === 'lock' ? `<label>Opens when ${lockSel('olneed', S.olneed ? needOf(S.olneed, dir) : null)}</label><label>Looks like <select id="ollook">${LOOKS.map(([v, n]) => `<option value="${v}" ${(S.ollook || 'barrier') === v ? 'selected' : ''}>${n}</option>`).join('')}</select></label>
       <label>Opened message <input id="olok" value="${esc(S.olok || '')}" placeholder="The fence powers down. The way is open!"></label>` : ''}
@@ -170,6 +173,7 @@ function itemsPanel() {
     <p class="hint"><b>Tap the map</b> to place it. Tap one you placed to change or remove it.</p>
     ${o ? `<div class="sel"><b>${OK_ICON[o.k]} ${OK_[o.k]}</b> at ${o.tile.join(',')}
       ${o.item ? `<label>Item ${itemSel('esitem', o.item)}</label><label>How many <input id="esn" type="number" min="1" max="9999" value="${o.n || 1}" style="width:80px"></label>` : ''}
+      ${o.k === 'stash' ? `<label>Stash ${tierSel('estier', o.tier)}</label>` : ''}
       ${o.k === 'lock' ? `<label>Opens when ${lockSel('esneed', o.need)}</label><label>Looks like <select id="eslook">${LOOKS.map(([v, n]) => `<option value="${v}" ${(o.look || 'barrier') === v ? 'selected' : ''}>${n}</option>`).join('')}</select></label>
         <label>Opened message <input id="esok" value="${esc(o.ok || '')}"></label>` : ''}
       ${hasText(o.k) ? `<label>${o.k === 'lock' ? 'Locked message' : 'Text'} <textarea id="est" rows="2">${esc([].concat(o.t || []).join('\n'))}</textarea></label>` : ''}
@@ -187,8 +191,8 @@ function itemsWire() {
   document.querySelectorAll('[data-osel]').forEach(b => b.onclick = () => { S.osel = { sid: S.view, i: +b.dataset.osel }; panel(); draw(); });
   document.querySelectorAll('[data-rw]').forEach(b => b.onclick = () => { const [it, n] = b.dataset.rw.split('|'); S.oitem = it; S.on = +n; if (o() && o().item) { snap(); o().item = it; o().n = +n; ch(); } panel(); });
   on('#oitem', 'change', e => { S.oitem = e.target.value; panel(); }); on('#on', 'change', e => S.on = Math.max(1, +e.target.value || 1)); on('#ot', 'input', e => S.ot = e.target.value);
-  on('#olneed', 'change', e => S.olneed = e.target.value); on('#ollook', 'change', e => S.ollook = e.target.value); on('#olok', 'input', e => S.olok = e.target.value); on('#oshow', 'change', e => S.oshow = e.target.checked);
-  on('#esitem', 'change', e => { snap(); o().item = e.target.value; ch(); }); on('#esn', 'change', e => { snap(); o().n = Math.max(1, +e.target.value || 1); ch(); });
+  on('#olneed', 'change', e => S.olneed = e.target.value); on('#ollook', 'change', e => S.ollook = e.target.value); on('#olok', 'input', e => S.olok = e.target.value); on('#oshow', 'change', e => S.oshow = e.target.checked); on('#otier', 'change', e => S.otier = +e.target.value);
+  on('#esitem', 'change', e => { snap(); o().item = e.target.value; ch(); }); on('#esn', 'change', e => { snap(); o().n = Math.max(1, +e.target.value || 1); ch(); }); on('#estier', 'change', e => { snap(); o().tier = +e.target.value; ch(); });
   on('#esneed', 'change', e => { snap(); o().need = needOf(e.target.value, dir()); ch(); }); on('#eslook', 'change', e => { snap(); o().look = e.target.value; ch(); });
   on('#esok', 'change', e => { snap(); o().ok = e.target.value.trim(); ch(); }); on('#esshow', 'change', e => { snap(); if (e.target.checked) o().show = 1; else delete o().show; ch(); });
   on('#est', 'change', e => { snap(); const lines = e.target.value.split('\n').map(x => x.trim()).filter(Boolean); o().t = o().k === 'sign' ? lines : lines.join(' '); ch(); });
@@ -201,7 +205,7 @@ function itemPlace(t) {
   if (s.objects.some(o => o.tile[0] === t.x && o.tile[1] === t.y)) return toast('Something is already there.');
   if (blockedKeys(t.sid).has(tk(t.x, t.y))) return toast('Keep doors, exits and counters clear.');
   const o = { k, tile: [t.x, t.y] };
-  if (hasItem(k)) { o.item = S.oitem || 'gel'; o.n = S.on || 1; if (k === 'stash') o.tier = 1; }
+  if (hasItem(k)) { o.item = S.oitem || 'gel'; o.n = S.on || 1; if (k === 'stash') o.tier = S.otier || 1; }
   if (k === 'lock') { o.need = needOf(S.olneed || 'keeper', s.dir); o.look = S.ollook || 'barrier'; if ((S.olok || '').trim()) o.ok = S.olok.trim(); }
   if (hasText(k)) { const txt = (S.ot || '').trim(); if (!txt && k !== 'lock') return toast('Type the text first.'); if (txt) o.t = k === 'sign' ? txt.split('\n').filter(Boolean) : txt.replace(/\n/g, ' '); }
   if (canShow(k) && S.oshow !== false) o.show = 1;
