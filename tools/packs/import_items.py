@@ -2,17 +2,9 @@
 # and the Linker Stash tier sheet (bronze, silver, star; closed row then open row) -> art/ui/stash_<tier>_closed|open.png at map scale.
 # Run: python -P tools/packs/import_items.py <icon sheet.png> <stash tiers sheet.png>
 import os, sys
-import numpy as np
-from PIL import Image, ImageDraw, ImageFilter
+from PIL import Image
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from import_buildings import blobs
-
-def key(im):   # only the magenta joined to the outside is background, so violet liquids, cores and gems inside an icon survive
-    im = im.convert('RGBA'); a = np.asarray(im).astype(int); r, g, b = a[..., 0], a[..., 1], a[..., 2]
-    bg = (r > 150) & (b > 150) & (g < 110) & (np.abs(r - b) < 90)
-    m = Image.fromarray(np.pad(np.where(bg, 255, 0), 1, constant_values=255).astype(np.uint8)).copy(); ImageDraw.floodfill(m, (0, 0), 128, thresh=0)
-    out = (np.asarray(m)[1:-1, 1:-1] != 128) & ~((r > 235) & (b > 235) & (g < 30))   # plus near-exact #FF00FF trapped inside a ring or a pile
-    im.putalpha(Image.fromarray(np.where(out, 255, 0).astype(np.uint8)).filter(ImageFilter.MinFilter(5))); return im
+from import_buildings import blobs, key   # edge-joined magenta only, so violet details survive
 from zip_build_packs import ROOT
 ICONS = ['gel', 'megagel', 'fullgel', 'revive', 'maxrevive', 'cure', 'ether', 'tether', 'stun', 'jammer', 'stasis', 'harmonic', 'singularity', 'dust', 'stash', 'key']
 SIZE = 24

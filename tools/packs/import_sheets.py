@@ -8,8 +8,7 @@ import json, os, re, sys
 from PIL import Image
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from make_build_packs import WORLDS, chunks
-from import_buildings import boxes, main_part
-from import_items import key   # only edge-joined magenta is background: violet glows and liquids inside an object survive
+from import_buildings import boxes, key, main_part   # key: only edge-joined magenta is background, so violet glows survive
 from zip_build_packs import ROOT
 
 def lists(w):   # code letter -> (sheets of (name, footprint), folder suffix, widen factor)

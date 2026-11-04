@@ -4,7 +4,7 @@
 # Run: python -P tools/packs/import_buildings.py <folder with the PNGs> [more folders]   (extract zips into their own folder first)
 import json, os, re, sys
 import numpy as np
-from PIL import Image, ImageFilter
+from PIL import Image, ImageDraw, ImageFilter
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from make_build_packs import WORLDS, chunks
 from zip_buildings import groups
@@ -12,10 +12,13 @@ from zip_build_packs import ROOT
 SHEET = {'HOME': 'homes', 'SHOP': 'business', 'CIVIC': 'civic'}
 GROW = 1.1   # the art is a little wider than its ground footprint, like the buildings already in the game
 
-def key(im):   # magenta (not always exact #FF00FF) -> transparent, shrinking the edge so no pink fringe survives the scale-down
+def key(im):   # only the magenta joined to the outside is background (plus near-exact #FF00FF trapped inside an arch or ring),
+    # so violet roofs, neon signs and glowing liquids inside a building survive
     im = im.convert('RGBA'); a = np.asarray(im).astype(int); r, g, b = a[..., 0], a[..., 1], a[..., 2]
     bg = (r > 150) & (b > 150) & (g < 110) & (np.abs(r - b) < 90)
-    m = Image.fromarray(np.where(bg, 0, 255).astype(np.uint8)).filter(ImageFilter.MinFilter(5)); im.putalpha(m); return im
+    m = Image.fromarray(np.pad(np.where(bg, 255, 0), 1, constant_values=255).astype(np.uint8)).copy(); ImageDraw.floodfill(m, (0, 0), 128, thresh=0)
+    out = (np.asarray(m)[1:-1, 1:-1] != 128) & ~((r > 235) & (b > 235) & (g < 30))
+    im.putalpha(Image.fromarray(np.where(out, 255, 0).astype(np.uint8)).filter(ImageFilter.MinFilter(5))); return im
 
 def boxes(im, want=None):   # retry the merge distance until the count matches the sheet's list
     for gap in (6, 4, 3, 2, 8, 10, 12):
