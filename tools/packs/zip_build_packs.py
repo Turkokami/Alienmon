@@ -20,10 +20,10 @@ def map_ref(d, types):   # the first finished map of that kind, enlarged 3x with
                 im = Image.open(p).convert('RGB'); return s['name'], png(im.resize((im.width * 3, im.height * 3), Image.NEAREST))
     return None, None
 
-def props_ref(d):   # a strip of the world's existing props on magenta: the style new sheets should match
+def props_ref(d, only=('_props2', '_buildings')):   # a strip of the world's existing props on magenta: the style new sheets should match
     ims = []
-    for sub in (d + '_props2', d + '_buildings'):
-        f = os.path.join(ROOT, 'art/props', sub)
+    for sub in only:
+        f = os.path.join(ROOT, 'art/props', d + sub)
         if os.path.isdir(f): ims += [Image.open(os.path.join(f, n)).convert('RGBA') for n in sorted(os.listdir(f)) if n.endswith('.png')][:8]
     if not ims: return None
     W = sum(i.width for i in ims) + 12 * (len(ims) + 1); H = max(i.height for i in ims) + 24
