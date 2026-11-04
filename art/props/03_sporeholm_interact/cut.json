@@ -1,0 +1,162 @@
+[
+ {
+  "n": 0,
+  "src": [
+   0,
+   0,
+   16,
+   14
+  ],
+  "px": [
+   16,
+   14
+  ],
+  "name": "Treasure chest, closed",
+  "h": 1,
+  "sheet": "1.00"
+ },
+ {
+  "n": 1,
+  "src": [
+   0,
+   0,
+   16,
+   19
+  ],
+  "px": [
+   16,
+   19
+  ],
+  "name": "Same chest, open",
+  "h": 1,
+  "sheet": "1.01"
+ },
+ {
+  "n": 2,
+  "src": [
+   0,
+   0,
+   16,
+   15
+  ],
+  "px": [
+   16,
+   15
+  ],
+  "name": "Supply basket, closed",
+  "h": 1,
+  "sheet": "1.02"
+ },
+ {
+  "n": 3,
+  "src": [
+   0,
+   0,
+   16,
+   13
+  ],
+  "px": [
+   16,
+   13
+  ],
+  "name": "Locked way: energy fence",
+  "h": 1,
+  "sheet": "1.03"
+ },
+ {
+  "n": 4,
+  "src": [
+   0,
+   0,
+   16,
+   14
+  ],
+  "px": [
+   16,
+   14
+  ],
+  "name": "Locked way: thorn vine wall",
+  "h": 1,
+  "sheet": "1.04"
+ },
+ {
+  "n": 5,
+  "src": [
+   0,
+   0,
+   16,
+   11
+  ],
+  "px": [
+   16,
+   11
+  ],
+  "name": "Locked way: giant fallen cap",
+  "h": 1,
+  "sheet": "1.05"
+ },
+ {
+  "n": 6,
+  "src": [
+   0,
+   0,
+   16,
+   11
+  ],
+  "px": [
+   16,
+   11
+  ],
+  "name": "Ground pickup sparkle",
+  "h": 1,
+  "sheet": "1.06"
+ },
+ {
+  "n": 7,
+  "src": [
+   0,
+   0,
+   16,
+   10
+  ],
+  "px": [
+   16,
+   10
+  ],
+  "name": "Buried item in moss",
+  "h": 1,
+  "sheet": "1.07"
+ },
+ {
+  "n": 8,
+  "src": [
+   0,
+   0,
+   16,
+   21
+  ],
+  "px": [
+   16,
+   21
+  ],
+  "name": "Key item: lantern of the marsh",
+  "h": 1,
+  "sheet": "1.08"
+ },
+ {
+  "n": 9,
+  "src": [
+   0,
+   0,
+   16,
+   22
+  ],
+  "px": [
+   16,
+   22
+  ],
+  "name": "Key item: choir reed",
+  "h": 1,
+  "sheet": "1.09"
+ }
+]

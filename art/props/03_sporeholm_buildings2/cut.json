@@ -1,0 +1,162 @@
+[
+ {
+  "n": 0,
+  "src": [
+   0,
+   0,
+   70,
+   69
+  ],
+  "px": [
+   70,
+   69
+  ],
+  "name": "Mushroom-cap cottage",
+  "h": 3,
+  "sheet": "1.00"
+ },
+ {
+  "n": 1,
+  "src": [
+   0,
+   0,
+   88,
+   83
+  ],
+  "px": [
+   88,
+   83
+  ],
+  "name": "Stilt house over the bog",
+  "h": 3,
+  "sheet": "1.01"
+ },
+ {
+  "n": 2,
+  "src": [
+   0,
+   0,
+   70,
+   63
+  ],
+  "px": [
+   70,
+   63
+  ],
+  "name": "Herbalist hut",
+  "h": 2,
+  "sheet": "1.02"
+ },
+ {
+  "n": 3,
+  "src": [
+   0,
+   0,
+   88,
+   81
+  ],
+  "px": [
+   88,
+   81
+  ],
+  "name": "Spore lab dome",
+  "h": 3,
+  "sheet": "1.03"
+ },
+ {
+  "n": 4,
+  "src": [
+   0,
+   0,
+   88,
+   60
+  ],
+  "px": [
+   88,
+   60
+  ],
+  "name": "Root-arch gate house",
+  "h": 3,
+  "sheet": "1.04"
+ },
+ {
+  "n": 5,
+  "src": [
+   0,
+   0,
+   106,
+   76
+  ],
+  "px": [
+   106,
+   76
+  ],
+  "name": "Choir amphitheatre stage",
+  "h": 3,
+  "sheet": "2.00"
+ },
+ {
+  "n": 6,
+  "src": [
+   0,
+   0,
+   53,
+   98
+  ],
+  "px": [
+   53,
+   98
+  ],
+  "name": "Tall toadstool tower home",
+  "h": 4,
+  "sheet": "2.01"
+ },
+ {
+  "n": 7,
+  "src": [
+   0,
+   0,
+   70,
+   51
+  ],
+  "px": [
+   70,
+   51
+  ],
+  "name": "Lily-pad dock shed",
+  "h": 2,
+  "sheet": "2.02"
+ },
+ {
+  "n": 8,
+  "src": [
+   0,
+   0,
+   70,
+   54
+  ],
+  "px": [
+   70,
+   54
+  ],
+  "name": "Firefly lantern workshop",
+  "h": 2,
+  "sheet": "2.03"
+ },
+ {
+  "n": 9,
+  "src": [
+   0,
+   0,
+   106,
+   51
+  ],
+  "px": [
+   106,
+   51
+  ],
+  "name": "Marsh farmstead barn",
+  "h": 3,
+  "sheet": "2.04"
+ }
+]
