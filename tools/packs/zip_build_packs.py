@@ -1,5 +1,5 @@
-# Zips docs/build_packs into one ChatGPT render pack per world: START_HERE.md, every prompt as its own file, and the
-# reference pictures to attach (a town map, a route map, the townsfolk style reference, a sample of the world's props).
+# Zips docs/build_packs into ONE ChatGPT render pack: instructions, a folder per world (every prompt as its own file with the exact
+# name its picture must come back as, plus the reference pictures to attach) and a list of every file expected back.
 # Run: python tools/packs/zip_build_packs.py [out_dir]
 import io, json, os, re, sys, zipfile
 from PIL import Image
@@ -43,17 +43,44 @@ def prompts(md):   # (file name, title, prompt) for every code block, named by i
         out.append((f'{tag}_{slug}.md', title, code.group(1)))
     return out
 
-START = """# Alienmon build pack: {name}
 
-Everything ChatGPT needs to draw new buildings, props, furniture, signs, chests, ground textures, terrain pieces and townsfolk for **{name}**.
+TOP = """# Alienmon build packs: instructions for ChatGPT
 
-## How to render (one chat for this whole world)
-1. Upload this zip, or the files in `references/`, at the start of the chat.
-2. Say: **"Render prompt A1 exactly as written. Attach references/town_map.png as the style reference."**
-3. One prompt per message. Work down the list below.
-4. If the style drifts: **"Match the attached Alienmon map exactly and try again."**
-5. Check every picture: magenta background edge to edge, nothing touching, no text or letters, no ball-shaped devices.
-6. Save each picture as `{dir}_<prompt code>.png` (for example `{dir}_A1.png`), open it once, then send them back a few at a time.
+This zip holds {total} image prompts for the Alienmon game's map builder: new buildings, props, furniture, signs, chests, turnaround sheets,
+ground textures, terrain pieces and walking townsfolk for all 14 worlds, plus shared item icons.
+
+## Your job, ChatGPT
+1. Work one folder at a time, in folder order (`00_shared_items`, `01_dustara`, `02_ferrox` ...). Read that folder's `START_HERE.md` first.
+2. Render each file in its `prompts/` folder **exactly as written**, one image per prompt, attaching the reference picture its START_HERE names.
+3. **Give every image back as its own separate PNG file.** Never put several prompts in one image, never crop, never shrink.
+4. **Name every file exactly** as the `Return as:` line at the top of its prompt says, for example `03_sporeholm_A1_buildings_sheet_1.png`
+   (world folder, prompt code, prompt name; lowercase, underscores, `.png`). Do not rename or shorten them.
+5. **Sort them into folders.** When a folder is finished, put its pictures in a zip named `Alienmon_Renders_<folder>.zip`
+   (for example `Alienmon_Renders_03_sporeholm.zip`) laid out as `renders/03_sporeholm/03_sporeholm_A1_buildings_sheet_1.png` and so on.
+   Also offer each PNG as its own download.
+6. Before handing a folder back, check it against `RETURN_FILE_LIST.csv`: every row for that folder has a file with exactly that name.
+7. If a picture breaks a rule below, redo it before returning it.
+
+## Style rules for every picture
+- Match the attached Alienmon reference picture: the same detailed pixel art, outlines, palette mood and light from the top left.
+- Backgrounds are one flat pure magenta #FF00FF, edge to edge (ground textures fill the whole square instead).
+- No text, letters or numbers. No logos or emblems. No ball-shaped capture devices, nothing round and red-and-white.
+- Original designs only, not resembling Pokemon or any existing game.
+
+## Folders
+| Folder | World | Prompts |
+|---|---|---|
+{rows}
+"""
+
+WSTART = """# {name}: what to render
+
+{line}
+
+## Steps
+1. Attach the reference picture named for each kind of prompt (table below).
+2. Render the prompts in `prompts/` in order, one image each.
+3. Return each image as its own PNG with the exact name on its `Return as:` line, then zip them as `Alienmon_Renders_{dir}.zip` with the folder `renders/{dir}/` inside.
 
 ## Which reference to attach
 | Prompts | Attach |
@@ -63,33 +90,44 @@ Everything ChatGPT needs to draw new buildings, props, furniture, signs, chests,
 | I (walking townsfolk) | `references/townsfolk_style.png` |
 
 ## The prompts ({count})
-| Code | What | File |
+| Code | What | Return as |
 |---|---|---|
 {rows}
-
-`ALL_PROMPTS.md` has every prompt in one file.
 """
 
+
+def ret(d, f): return f'{d}_{f[:-3]}.png'   # A1_buildings_sheet_1.md -> 03_sporeholm_A1_buildings_sheet_1.png
+
+
+def pfile(d, f, t, p): return f'# {f.split("_")[0]}: {t}\n\nReturn as: `renders/{d}/{ret(d, f)}`\n\n```\n{p}\n```\n'
+
+
 def main():
-    os.makedirs(OUT, exist_ok=True); made = []
-    for w in WORLDS:
-        d, name = w['dir'], w['name']; md = open(os.path.join(ROOT, 'docs/build_packs', d + '.md'), encoding='utf-8').read(); P = prompts(md)
-        base = f'Alienmon_Build_Pack_{d}'; zp = os.path.join(OUT, base + '.zip')
-        with zipfile.ZipFile(zp, 'w', zipfile.ZIP_DEFLATED) as z:
-            rows = '\n'.join(f'| {f.split("_")[0]} | {t} | `prompts/{f}` |' for f, t, _ in P)
-            z.writestr(f'{base}/START_HERE.md', START.format(name=name, dir=d, count=len(P), rows=rows))
-            z.writestr(f'{base}/ALL_PROMPTS.md', md)
-            for f, t, p in P: z.writestr(f'{base}/prompts/{f}', f'# {f.split("_")[0]}: {t}\n\n```\n{p}\n```\n')
+    os.makedirs(OUT, exist_ok=True); base = 'Alienmon_Build_Packs'; zp = os.path.join(OUT, base + '_ALL.zip'); csv = ['folder,code,prompt_file,return_file']; top = []
+    with zipfile.ZipFile(zp, 'w', zipfile.ZIP_DEFLATED) as z:
+        sd = '00_shared_items'; sh = open(os.path.join(ROOT, 'docs/build_packs/00_shared_items.md'), encoding='utf-8').read()
+        S = [(f'S{i + 1}_{n}.md', t, c) for i, ((n, t), c) in enumerate(zip([('item_icons', 'Item icons'), ('linker_stash_tiers', 'Linker Stash tiers')], re.findall(r'```\n(.*?)\n```', sh, re.S)))]
+        rows = '\n'.join(f'| {f.split("_")[0]} | {t} | `{ret(sd, f)}` |' for f, t, _ in S)
+        z.writestr(f'{base}/{sd}/START_HERE.md', WSTART.format(name='Shared items', line='Item icons and Linker Stash tiers used in every world. Attach any world\'s existing_props.png for style.', dir=sd, count=len(S), rows=rows))
+        for f, t, p in S: z.writestr(f'{base}/{sd}/prompts/{f}', pfile(sd, f, t, p)); csv.append(f'{sd},{f.split("_")[0]},{sd}/prompts/{f},renders/{sd}/{ret(sd, f)}')
+        top.append(f'| `{sd}` | Shared items | {len(S)} |'); total = len(S)
+        for w in WORLDS:
+            d, name = w['dir'], w['name']; md = open(os.path.join(ROOT, 'docs/build_packs', d + '.md'), encoding='utf-8').read(); P = prompts(md); total += len(P)
+            rows = '\n'.join(f'| {f.split("_")[0]} | {t} | `{ret(d, f)}` |' for f, t, _ in P)
+            z.writestr(f'{base}/{d}/START_HERE.md', WSTART.format(name=name, line=w['line'][0].upper() + w['line'][1:] + '.', dir=d, count=len(P), rows=rows))
+            for f, t, p in P: z.writestr(f'{base}/{d}/prompts/{f}', pfile(d, f, t, p)); csv.append(f'{d},{f.split("_")[0]},{d}/prompts/{f},renders/{d}/{ret(d, f)}')
             for nm, kinds in (('town_map', ('town', 'landmark')), ('route_map', ('route', 'field'))):
                 src, b = map_ref(d, kinds)
-                if b: z.writestr(f'{base}/references/{nm}.png', b)
+                if b: z.writestr(f'{base}/{d}/references/{nm}.png', b)
             r = os.path.join(ROOT, 'docs/npc_prompts/references', d.split('_', 1)[1] + '_style_reference.png')
-            if os.path.isfile(r): z.write(r, f'{base}/references/townsfolk_style.png')
+            if os.path.isfile(r): z.write(r, f'{base}/{d}/references/townsfolk_style.png')
             b = props_ref(d)
-            if b: z.writestr(f'{base}/references/existing_props.png', b)
-            z.writestr(f'{base}/references/shared_items_pack.md', open(os.path.join(ROOT, 'docs/build_packs/00_shared_items.md'), encoding='utf-8').read())
-        made.append((zp, len(P), os.path.getsize(zp)))
-    for zp, n, sz in made: print(os.path.basename(zp), n, 'prompts', round(sz / 1e6, 2), 'MB')
+            if b: z.writestr(f'{base}/{d}/references/existing_props.png', b)
+            top.append(f'| `{d}` | {name} | {len(P)} |')
+        z.writestr(f'{base}/START_HERE_FOR_CHATGPT.md', TOP.format(total=total, rows='\n'.join(top)))
+        z.writestr(f'{base}/RETURN_FILE_LIST.csv', '\n'.join(csv) + '\n')
+    print(os.path.basename(zp), total, 'prompts', round(os.path.getsize(zp) / 1e6, 2), 'MB')
+
 
 if __name__ == '__main__':
     main()
