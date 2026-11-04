@@ -25,6 +25,12 @@ def boxes(im, want=None):   # retry the merge distance until the count matches t
         B = blobs(im, gap)
         if want is None or len(B) == want: return B
     B = blobs(im, 2); A = np.asarray(im.getchannel('A')) > 0
+    while len(B) > want:   # one building drawn as separate pieces (a row of homes): join the two side-by-side pieces with the smallest gap
+        P = [(max(B[j][0] - B[i][0] - B[i][2], 0), i, j) for i in range(len(B)) for j in range(len(B)) if i != j and B[j][0] >= B[i][0]
+             and min(B[i][1] + B[i][3], B[j][1] + B[j][3]) - max(B[i][1], B[j][1]) > 0.5 * min(B[i][3], B[j][3])]
+        if not P: break
+        _, i, j = min(P); x, y = min(B[i][0], B[j][0]), min(B[i][1], B[j][1])
+        B[i] = [x, y, max(B[i][0] + B[i][2], B[j][0] + B[j][2]) - x, max(B[i][1] + B[i][3], B[j][1] + B[j][3]) - y]; B.pop(j)
     while len(B) < want:   # two buildings drawn touching: split the widest piece at its thinnest column
         i = max(range(len(B)), key=lambda k: B[k][2]); x, y, w, h = B[i]; col = A[y + int(h * 0.6):y + h, x:x + w].sum(0)   # buildings that touch meet up high (an arm, a roof); split where their bases part
         lo, hi = int(w * 0.25), int(w * 0.75); c = lo + int(np.argmin(col[lo:hi]))
