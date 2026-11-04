@@ -1,0 +1,182 @@
+[
+ {
+  "n": 0,
+  "src": [
+   0,
+   0,
+   88,
+   68
+  ],
+  "px": [
+   88,
+   68
+  ],
+  "name": "Spore lab dome",
+  "h": 3
+ },
+ {
+  "n": 1,
+  "src": [
+   0,
+   0,
+   70,
+   56
+  ],
+  "px": [
+   70,
+   56
+  ],
+  "name": "Firefly lantern workshop",
+  "h": 2
+ },
+ {
+  "n": 2,
+  "src": [
+   0,
+   0,
+   88,
+   66
+  ],
+  "px": [
+   88,
+   66
+  ],
+  "name": "Mushroom market stall house",
+  "h": 3
+ },
+ {
+  "n": 3,
+  "src": [
+   0,
+   0,
+   88,
+   76
+  ],
+  "px": [
+   88,
+   76
+  ],
+  "name": "Tea house",
+  "h": 3
+ },
+ {
+  "n": 4,
+  "src": [
+   0,
+   0,
+   70,
+   63
+  ],
+  "px": [
+   70,
+   63
+  ],
+  "name": "Lantern shop",
+  "h": 2
+ },
+ {
+  "n": 5,
+  "src": [
+   0,
+   0,
+   88,
+   54
+  ],
+  "px": [
+   88,
+   54
+  ],
+  "name": "Bog ferry station",
+  "h": 2
+ },
+ {
+  "n": 6,
+  "src": [
+   0,
+   0,
+   70,
+   49
+  ],
+  "px": [
+   70,
+   49
+  ],
+  "name": "Seed and spore exchange",
+  "h": 2
+ },
+ {
+  "n": 7,
+  "src": [
+   0,
+   0,
+   70,
+   45
+  ],
+  "px": [
+   70,
+   45
+  ],
+  "name": "Rope and net maker",
+  "h": 2
+ },
+ {
+  "n": 8,
+  "src": [
+   0,
+   0,
+   106,
+   79
+  ],
+  "px": [
+   106,
+   79
+  ],
+  "name": "Village hall",
+  "h": 4
+ },
+ {
+  "n": 9,
+  "src": [
+   0,
+   0,
+   106,
+   68
+  ],
+  "px": [
+   106,
+   68
+  ],
+  "name": "Inn of the Glowing Marsh",
+  "h": 3
+ },
+ {
+  "n": 10,
+  "src": [
+   0,
+   0,
+   70,
+   75
+  ],
+  "px": [
+   70,
+   75
+  ],
+  "name": "Moss bakery",
+  "h": 2
+ },
+ {
+  "n": 11,
+  "src": [
+   0,
+   0,
+   88,
+   71
+  ],
+  "px": [
+   88,
+   71
+  ],
+  "name": "Library in a hollow stump",
+  "h": 3
+ }
+]

@@ -1,0 +1,227 @@
+[
+ {
+  "n": 0,
+  "src": [
+   0,
+   0,
+   70,
+   83
+  ],
+  "px": [
+   70,
+   83
+  ],
+  "name": "Domed adobe family home",
+  "h": 2
+ },
+ {
+  "n": 1,
+  "src": [
+   0,
+   0,
+   106,
+   71
+  ],
+  "px": [
+   106,
+   71
+  ],
+  "name": "Two-dome cottage with a courtyard wall",
+  "h": 3
+ },
+ {
+  "n": 2,
+  "src": [
+   0,
+   0,
+   53,
+   66
+  ],
+  "px": [
+   53,
+   66
+  ],
+  "name": "Water tower and pump house",
+  "h": 3
+ },
+ {
+  "n": 3,
+  "src": [
+   0,
+   0,
+   106,
+   56
+  ],
+  "px": [
+   106,
+   56
+  ],
+  "name": "Farmhouse with seedpod drying racks",
+  "h": 3
+ },
+ {
+  "n": 4,
+  "src": [
+   0,
+   0,
+   88,
+   55
+  ],
+  "px": [
+   88,
+   55
+  ],
+  "name": "Canyon cliff dwelling front",
+  "h": 3
+ },
+ {
+  "n": 5,
+  "src": [
+   0,
+   0,
+   53,
+   63
+  ],
+  "px": [
+   53,
+   63
+  ],
+  "name": "Small one-dome starter home",
+  "h": 2
+ },
+ {
+  "n": 6,
+  "src": [
+   0,
+   0,
+   70,
+   101
+  ],
+  "px": [
+   70,
+   101
+  ],
+  "name": "Stacked adobe townhouse",
+  "h": 3
+ },
+ {
+  "n": 7,
+  "src": [
+   0,
+   0,
+   106,
+   88
+  ],
+  "px": [
+   106,
+   88
+  ],
+  "name": "Courtyard villa",
+  "h": 4
+ },
+ {
+  "n": 8,
+  "src": [
+   0,
+   0,
+   70,
+   101
+  ],
+  "px": [
+   70,
+   101
+  ],
+  "name": "Mesa-top lookout home",
+  "h": 3
+ },
+ {
+  "n": 9,
+  "src": [
+   0,
+   0,
+   106,
+   60
+  ],
+  "px": [
+   106,
+   60
+  ],
+  "name": "Rancher bunkhouse",
+  "h": 2
+ },
+ {
+  "n": 10,
+  "src": [
+   0,
+   0,
+   106,
+   48
+  ],
+  "px": [
+   106,
+   48
+  ],
+  "name": "Painted dome duplex",
+  "h": 2
+ },
+ {
+  "n": 11,
+  "src": [
+   0,
+   0,
+   53,
+   59
+  ],
+  "px": [
+   53,
+   59
+  ],
+  "name": "Hermit hut",
+  "h": 2
+ },
+ {
+  "n": 12,
+  "src": [
+   0,
+   0,
+   88,
+   65
+  ],
+  "px": [
+   88,
+   65
+  ],
+  "name": "Family home with a water cistern",
+  "h": 3
+ },
+ {
+  "n": 13,
+  "src": [
+   0,
+   0,
+   88,
+   58
+  ],
+  "px": [
+   88,
+   58
+  ],
+  "name": "Elder's shaded house",
+  "h": 3
+ },
+ {
+  "n": 14,
+  "src": [
+   0,
+   0,
+   70,
+   59
+  ],
+  "px": [
+   70,
+   59
+  ],
+  "name": "Artist's mosaic house",
+  "h": 2
+ }
+]

@@ -178,7 +178,7 @@ if(PROTO&&!INLINE&&!APP){
    fluid:(()=>{const f=path.join(root,'data/sections/fluids',id+'.json');return fs.existsSync(f)?JSON.parse(fs.readFileSync(f,'utf8')):null})(),behind:PB[id]?PB[id].tiles:[],...(fs.existsSync(path.join(root,'art/sections_paint',id+'.png'))?{paintUrl:asset('art/sections_paint/'+id+'.png')}:{}),
    spawns:sec.spawns,npcs:(sec.npcs||[]).map(n=>({x:n.x,y:n.y,art:n.art,name:n.name||'',src:n.src||'',face:n.face||'down',trainer:n.trainer||null,id:n.id||'',wander:n.wander||0,t:n.t||[]})),mons:sec.mons||[]}}
  for(const d of fs.readdirSync(path.join(root,'art/props')).sort()){const cj=path.join(root,'art/props',d,'cut.json');if(!fs.existsSync(cj))continue;
-  ED.props[d]=JSON.parse(fs.readFileSync(cj,'utf8')).map(m=>({n:m.n,px:m.px,...(m.turn?{turn:m.turn}:{}),url:asset('art/props/'+d+'/'+String(m.n).padStart(2,'0')+'.png')}))}
+  ED.props[d]=JSON.parse(fs.readFileSync(cj,'utf8')).map(m=>({n:m.n,px:m.px,...(m.turn?{turn:m.turn}:{}),...(m.name?{name:m.name}:{}),...(m.h>1?{h:m.h}:{}),url:asset('art/props/'+d+'/'+String(m.n).padStart(2,'0')+'.png')}))}
  {const byDir={};for(const x of Object.values(ED.sections))(byDir[x.dir]=byDir[x.dir]||[]).push(x);   // areas reached through a passage get a display spot under the stitched maps
   for(const xs of Object.values(byDir)){let y=0;for(const x of xs)if(x.grid)y=Math.max(y,x.grid[1]+x.tiles[1]);let gx=0;
    for(const x of xs.filter(x=>!x.grid&&x.type!=='interior').sort((a,b)=>a.id.localeCompare(b.id))){x.vgrid=[gx,y+8];gx+=x.tiles[0]+4}}}

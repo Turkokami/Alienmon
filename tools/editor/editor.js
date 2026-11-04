@@ -153,7 +153,7 @@ function place(t) {
   if (!S.stamp || !t) return;
   const st = S.stamp;
   if (st.kind === 'prop') { const m = propInfo(st.p), w = Math.max(1, Math.round(m.px[0] / 16)), why = canProp(t.sid, t.x, t.y, w, 1, st.flat);
-    if (why) return toast(why); snap(); (LAYOUT[t.sid] = LAYOUT[t.sid] || []).push({ p: st.p, x: t.x, y: t.y, ...(st.flat ? { solid: false, h: 2 } : {}) }); S.sel = { kind: 'prop', sid: t.sid, i: LAYOUT[t.sid].length - 1 }; }
+    if (why) return toast(why); snap(); (LAYOUT[t.sid] = LAYOUT[t.sid] || []).push({ p: st.p, x: t.x, y: t.y, ...(st.flat ? { solid: false, h: 2 } : m.h > 1 ? { h: m.h } : {}) }); S.sel = { kind: 'prop', sid: t.sid, i: LAYOUT[t.sid].length - 1 }; }
   else if (st.kind === 'char') { const why = canStand(t.sid, t.x, t.y); if (why) return toast(why); snap();
     (ADDED[t.sid] = ADDED[t.sid] || []).push({ art: st.art, name: st.name || '', tile: [t.x, t.y], face: 'down', t: [st.line || ((st.name ? st.name + ': ' : '') + 'Nice day, isn\'t it?')] }); S.sel = { kind: 'added', sid: t.sid, i: ADDED[t.sid].length - 1 }; }
   else if (st.kind === 'mon') { const why = canStand(t.sid, t.x, t.y); if (why) return toast(why); snap();
@@ -490,7 +490,7 @@ function panel() {
   if (m === 'props') {
     h += PRE + `${how('<li><b>Add:</b> pick an item below, then press on the map and drag it to the exact spot before letting go. It keeps adding copies until you press Stop.</li><li><b>Move or remove:</b> tap any item already on the map, drag it anywhere, or press Remove.</li>')}${S.stamp ? '<button id="stopstamp">Stop placing (Esc)</button>' : ''}<label>Sheet <select id="sheet">${Object.keys(ED.props).map(d => `<option ${d === S.sheet ? 'selected' : ''}>${d}</option>`).join('')}</select></label>
       <label class="row"><input type="checkbox" id="flat" ${S.flatNext ? 'checked' : ''}> place as a flat rug (walk over it)</label>
-      <div class="grid">${(ED.props[S.sheet] || []).map(p => { const key = S.sheet + '/' + String(p.n).padStart(2, '0'); return `<button class="pal ${S.stamp && S.stamp.p === key ? 'on' : ''}" data-p="${key}" data-cap="${S.sheet} #${p.n} · ${p.px[0]}×${p.px[1]} px · about ${Math.max(1, Math.round(p.px[0] / 16))} tile(s) wide" title="#${p.n}"><img src="${p.url}"></button>`; }).join('')}</div>`;
+      <div class="grid">${(ED.props[S.sheet] || []).map(p => { const key = S.sheet + '/' + String(p.n).padStart(2, '0'); return `<button class="pal ${S.stamp && S.stamp.p === key ? 'on' : ''}" data-p="${key}" data-cap="${p.name ? esc(p.name) + ' · ' : ''}${S.sheet} #${p.n} · ${p.px[0]}×${p.px[1]} px · about ${Math.max(1, Math.round(p.px[0] / 16))} tile(s) wide" title="${p.name ? esc(p.name) : '#' + p.n}"><img src="${p.url}">${p.name ? `<small>${esc(p.name)}</small>` : ''}</button>`; }).join('')}</div>`;
   } else if (m === 'people') {
     h += PRE + `${how('<li>Type a name and what they say (optional).</li><li>Pick a character below, then tap the map.</li><li>Drag anyone to move them; tap them to edit.</li>')}
       <label>Name (optional) <input id="pname" value="${S.pname || ''}"></label><label>What they say <input id="pline" value="${S.pline || ''}" placeholder="Nice day, isn't it?"></label>

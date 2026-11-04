@@ -1,0 +1,182 @@
+[
+ {
+  "n": 0,
+  "src": [
+   0,
+   0,
+   88,
+   52
+  ],
+  "px": [
+   88,
+   52
+  ],
+  "name": "Railcar house",
+  "h": 2
+ },
+ {
+  "n": 1,
+  "src": [
+   0,
+   0,
+   70,
+   79
+  ],
+  "px": [
+   70,
+   79
+  ],
+  "name": "Rustvale row house",
+  "h": 2
+ },
+ {
+  "n": 2,
+  "src": [
+   0,
+   0,
+   70,
+   53
+  ],
+  "px": [
+   70,
+   53
+  ],
+  "name": "Shipping container home",
+  "h": 2
+ },
+ {
+  "n": 3,
+  "src": [
+   0,
+   0,
+   88,
+   91
+  ],
+  "px": [
+   88,
+   91
+  ],
+  "name": "Stacked container flats",
+  "h": 4
+ },
+ {
+  "n": 4,
+  "src": [
+   0,
+   0,
+   70,
+   74
+  ],
+  "px": [
+   70,
+   74
+  ],
+  "name": "Water tank house",
+  "h": 3
+ },
+ {
+  "n": 5,
+  "src": [
+   0,
+   0,
+   88,
+   68
+  ],
+  "px": [
+   88,
+   68
+  ],
+  "name": "Mechanic's family house",
+  "h": 3
+ },
+ {
+  "n": 6,
+  "src": [
+   0,
+   0,
+   106,
+   65
+  ],
+  "px": [
+   106,
+   65
+  ],
+  "name": "Bunkhouse for crane crews",
+  "h": 2
+ },
+ {
+  "n": 7,
+  "src": [
+   0,
+   0,
+   70,
+   64
+  ],
+  "px": [
+   70,
+   64
+  ],
+  "name": "Rivet-plate cottage",
+  "h": 2
+ },
+ {
+  "n": 8,
+  "src": [
+   0,
+   0,
+   106,
+   38
+  ],
+  "px": [
+   106,
+   38
+  ],
+  "name": "Old railcar duplex",
+  "h": 2
+ },
+ {
+  "n": 9,
+  "src": [
+   0,
+   0,
+   70,
+   52
+  ],
+  "px": [
+   70,
+   52
+  ],
+  "name": "Junk-art house",
+  "h": 2
+ },
+ {
+  "n": 10,
+  "src": [
+   0,
+   0,
+   88,
+   77
+  ],
+  "px": [
+   88,
+   77
+  ],
+  "name": "Foreman's house",
+  "h": 3
+ },
+ {
+  "n": 11,
+  "src": [
+   0,
+   0,
+   53,
+   51
+  ],
+  "px": [
+   53,
+   51
+  ],
+  "name": "Tiny scrap shack",
+  "h": 2
+ }
+]
