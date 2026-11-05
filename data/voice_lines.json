@@ -3037,7 +3037,14 @@
 "prism flare crystal plasma boosted": "fill_linker_alert_0025_linker",
 "linker alert a signal storm is building on apex array": "fill_linker_alert_0026_linker",
 "gravity drift gravity void boosted": "fill_linker_alert_0027_linker",
-"linker alert a signal storm is building on ystra": "fill_linker_alert_0028_linker"
+"linker alert a signal storm is building on ystra": "fill_linker_alert_0028_linker",
+"today is the day dr vashti promised you your very first alienmon partner": "fill_open_wake_narrator",
+"sporix joined you": "fill_open_joined_narrator_sporix",
+"as you turn to go the third pod wobbles it pops open and a tiny gloopa squeaks and scurries out the door": "fill_open_shypod_narrator_sporix",
+"plazmo joined you": "fill_open_joined_narrator_plazmo",
+"as you turn to go the third pod wobbles it pops open and a tiny sporix squeaks and scurries out the door": "fill_open_shypod_narrator_plazmo",
+"gloopa joined you": "fill_open_joined_narrator_gloopa",
+"as you turn to go the third pod wobbles it pops open and a tiny plazmo squeaks and scurries out the door": "fill_open_shypod_narrator_gloopa"
 },
 "pattern": [
 [
