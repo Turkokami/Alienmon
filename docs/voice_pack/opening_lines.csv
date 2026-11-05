@@ -1,0 +1,8 @@
+file,quest,quest_title,beat,speaker,voice,text
+fill_open_wake_narrator.mp3,002,opening,game text,Narrator,narrator,Today is the day: Dr. Vashti promised you your very first Alienmon partner!
+fill_open_joined_narrator_sporix.mp3,002,opening,game text,Narrator,narrator,Sporix joined you!
+fill_open_shypod_narrator_sporix.mp3,002,opening,game text,Narrator,narrator,"As you turn to go, the third pod wobbles... it pops open, and a tiny Gloopa squeaks and scurries out the door!"
+fill_open_joined_narrator_plazmo.mp3,002,opening,game text,Narrator,narrator,Plazmo joined you!
+fill_open_shypod_narrator_plazmo.mp3,002,opening,game text,Narrator,narrator,"As you turn to go, the third pod wobbles... it pops open, and a tiny Sporix squeaks and scurries out the door!"
+fill_open_joined_narrator_gloopa.mp3,002,opening,game text,Narrator,narrator,Gloopa joined you!
+fill_open_shypod_narrator_gloopa.mp3,002,opening,game text,Narrator,narrator,"As you turn to go, the third pod wobbles... it pops open, and a tiny Plazmo squeaks and scurries out the door!"
