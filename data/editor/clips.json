@@ -14,5 +14,20 @@
    "##"
   ],
   "from": "465"
+ },
+ {
+  "id": "c2",
+  "name": "Cliff edge, Red Rock Caves Entrance",
+  "dir": "01_dustara",
+  "w": 5,
+  "h": 4,
+  "rows": [
+   "#####",
+   "#####",
+   "#####",
+   "....."
+  ],
+  "from": "441",
+  "src": "r_441_cliff"
  }
 ]

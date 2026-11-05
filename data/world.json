@@ -25952,8 +25952,8 @@
    "pkey": "dustara",
    "npcs": [
     {
-     "x": 16,
-     "y": 9,
+     "x": 17,
+     "y": 10,
      "art": "explorer",
      "face": "left",
      "t": [],
@@ -26497,7 +26497,7 @@
      "src": "n:436:0"
     },
     {
-     "x": 5,
+     "x": 4,
      "y": 8,
      "art": "dustara_folk2",
      "face": "down",
@@ -26521,8 +26521,8 @@
    ],
    "mons": [
     {
-     "x": 3,
-     "y": 11,
+     "x": 2,
+     "y": 12,
      "mon": "Fizzlord"
     },
     {
@@ -26934,7 +26934,7 @@
     ]
    },
    "grid": [
-    79,
+    88,
     46
    ],
    "pkey": "dustara",
@@ -26973,8 +26973,8 @@
      "mon": "Fizzlord"
     },
     {
-     "x": 7,
-     "y": 5,
+     "x": 1,
+     "y": 2,
      "mon": "Skitterdrone"
     }
    ]
@@ -27148,8 +27148,8 @@
    "objects": [
     {
      "tile": [
-      18,
-      9
+      20,
+      13
      ],
      "k": "stash",
      "item": "stasis",
@@ -27158,8 +27158,8 @@
     },
     {
      "tile": [
-      21,
-      12
+      20,
+      8
      ],
      "k": "stash",
      "item": "tether",
@@ -27174,7 +27174,7 @@
     ]
    },
    "grid": [
-    56,
+    54,
     32
    ],
    "pkey": "dustara",
@@ -27193,10 +27193,10 @@
      }
     },
     {
-     "x": 19,
-     "y": 12,
+     "x": 11,
+     "y": 2,
      "art": "explorer",
-     "face": "right",
+     "face": "down",
      "t": [],
      "id": "sec446_tr1",
      "trainer": {
@@ -27208,13 +27208,13 @@
    ],
    "mons": [
     {
-     "x": 3,
-     "y": 3,
+     "x": 19,
+     "y": 11,
      "mon": "Fizzlord"
     },
     {
-     "x": 20,
-     "y": 8,
+     "x": 1,
+     "y": 3,
      "mon": "Skitterdrone"
     }
    ]
@@ -27341,7 +27341,7 @@
     {
      "tile": [
       3,
-      4
+      6
      ],
      "k": "stash",
      "item": "stasis",
@@ -27350,7 +27350,7 @@
     },
     {
      "tile": [
-      3,
+      13,
       12
      ],
      "k": "stash",
@@ -27372,10 +27372,10 @@
    "pkey": "dustara",
    "npcs": [
     {
-     "x": 12,
-     "y": 5,
+     "x": 5,
+     "y": 8,
      "art": "wanderer",
-     "face": "down",
+     "face": "right",
      "t": [],
      "id": "sec460_tr0",
      "trainer": {
@@ -27385,10 +27385,10 @@
      }
     },
     {
-     "x": 4,
-     "y": 8,
+     "x": 14,
+     "y": 10,
      "art": "technician",
-     "face": "right",
+     "face": "up",
      "t": [],
      "id": "sec460_tr1",
      "trainer": {
@@ -27400,12 +27400,12 @@
    ],
    "mons": [
     {
-     "x": 13,
-     "y": 12,
+     "x": 11,
+     "y": 3,
      "mon": "Fizzlord"
     },
     {
-     "x": 5,
+     "x": 4,
      "y": 4,
      "mon": "Skitterdrone"
     }
@@ -27464,8 +27464,8 @@
    "objects": [
     {
      "tile": [
-      16,
-      11
+      21,
+      8
      ],
      "k": "stash",
      "item": "gel",
@@ -27508,8 +27508,8 @@
      "src": "n:441:0"
     },
     {
-     "x": 14,
-     "y": 12,
+     "x": 19,
+     "y": 9,
      "art": "explorer",
      "face": "down",
      "t": [
@@ -27526,8 +27526,8 @@
      "mon": "Kilnback"
     },
     {
-     "x": 18,
-     "y": 10,
+     "x": 15,
+     "y": 12,
      "mon": "Squawktone"
     }
    ]
@@ -75035,8 +75035,8 @@
     },
     {
      "tile": [
-      11,
-      5
+      10,
+      7
      ],
      "k": "stash",
      "item": "dust",
@@ -75057,7 +75057,7 @@
    "pkey": "dustara",
    "npcs": [
     {
-     "x": 15,
+     "x": 14,
      "y": 4,
      "art": "explorer",
      "face": "left",
@@ -75070,7 +75070,7 @@
      }
     },
     {
-     "x": 13,
+     "x": 12,
      "y": 4,
      "art": "wanderer",
      "face": "right",
@@ -75088,6 +75088,11 @@
      "x": 13,
      "y": 6,
      "mon": "Kilnback"
+    },
+    {
+     "x": 10,
+     "y": 5,
+     "mon": "Squawktone"
     }
    ]
   },

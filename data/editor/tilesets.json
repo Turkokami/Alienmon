@@ -1,1 +1,62 @@
-[]
+[
+ {
+  "id": "t1",
+  "name": "Sand path",
+  "kind": "auto",
+  "walk": ".",
+  "rough": 0.55,
+  "rim": 0,
+  "rimColor": "#604d2f",
+  "soft": 0.6,
+  "shadow": false,
+  "seed": 0,
+  "texTiles": 5,
+  "dir": "01_dustara",
+  "from": "k_471_11_6_5"
+ },
+ {
+  "id": "t2",
+  "name": "Tall grass",
+  "kind": "auto",
+  "walk": ",",
+  "rough": 0.55,
+  "rim": 0.3,
+  "rimColor": "#292b1a",
+  "soft": 0.6,
+  "shadow": false,
+  "seed": 5.1,
+  "texTiles": 4,
+  "dir": "01_dustara",
+  "from": "k_441_4_7_4"
+ },
+ {
+  "id": "t3",
+  "name": "Tall grass 3",
+  "kind": "auto",
+  "walk": ",",
+  "rough": 1,
+  "rim": 0.2,
+  "rimColor": "#412910",
+  "soft": 0.25,
+  "shadow": false,
+  "seed": 8.5,
+  "texTiles": 3,
+  "dir": "01_dustara",
+  "from": "k_462_6_7_3"
+ },
+ {
+  "id": "t4",
+  "name": "Tall grass 2",
+  "kind": "auto",
+  "walk": ",",
+  "rough": 0.55,
+  "rim": 0.3,
+  "rimColor": "#2d1a16",
+  "soft": 0.6,
+  "shadow": false,
+  "seed": 6.8,
+  "texTiles": 3,
+  "dir": "01_dustara",
+  "from": "k_027_15_11_3"
+ }
+]

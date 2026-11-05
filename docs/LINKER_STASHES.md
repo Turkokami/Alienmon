@@ -57,11 +57,11 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 | 445 Canyon Crossroads | 18,12 | 3x Stasis Pod | 1 |
 | 464 Mirage Flats | 3,6 | 3x Stasis Pod | 1 |
 | 464 Mirage Flats | 20,11 | 2x Med Gel | 1 |
-| 446 Mesa Junction | 18,9 | 3x Stasis Pod | 1 |
-| 446 Mesa Junction | 21,12 | 1x Tether Pulse | 1 |
-| 460 Hoodoo Hollows | 3,4 | 3x Stasis Pod | 1 |
-| 460 Hoodoo Hollows | 3,12 | 2x Cure Spray | 1 |
-| 441 Red Rock Caves Entrance | 16,11 | 2x Med Gel | 1 |
+| 446 Mesa Junction | 20,13 | 3x Stasis Pod | 1 |
+| 446 Mesa Junction | 20,8 | 1x Tether Pulse | 1 |
+| 460 Hoodoo Hollows | 3,6 | 3x Stasis Pod | 1 |
+| 460 Hoodoo Hollows | 13,12 | 2x Cure Spray | 1 |
+| 441 Red Rock Caves Entrance | 21,8 | 2x Med Gel | 1 |
 | 441 Red Rock Caves Entrance | 5,8 | 2x Med Gel | 1 |
 | 442 Red Rock Caves B1 | 19,12 | 2x Med Gel | 1 |
 | 442 Red Rock Caves B1 | 4,12 | 1x Tether Pulse | 1 |
@@ -75,7 +75,7 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 | 918 Old Observatory Ruins | 7,10 | 1x Stun Spray | 1 |
 | 918 Old Observatory Ruins | 5,2 | 3x Stasis Pod | 1 |
 | 945 Oasis Steps | 17,3 | 2x Cure Spray | 1 |
-| 945 Oasis Steps | 11,5 | 150x Stardust | 1 |
+| 945 Oasis Steps | 10,7 | 150x Stardust | 1 |
 
 ## Ferrox (47)
 
