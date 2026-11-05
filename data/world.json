@@ -455,7 +455,7 @@
   "S03:0": {
    "s": "008",
    "x": 17,
-   "y": 9
+   "y": 10
   },
   "S04:giver": {
    "s": "011",
@@ -1590,14 +1590,6 @@
    ],
    "notes": "Home town: hero's house, Vashti's observatory dome, Recovery Bay, shop, the bridge exit east, trading post south",
    "edges": {
-    "right": {
-     "to": "007",
-     "range": [
-      5,
-      10
-     ],
-     "offset": 0
-    },
     "bottom": {
      "to": "472",
      "range": [
@@ -1605,6 +1597,14 @@
       13
      ],
      "offset": -6
+    },
+    "right": {
+     "to": "007",
+     "range": [
+      5,
+      8
+     ],
+     "offset": 0
     }
    },
    "warps": [
@@ -2215,7 +2215,7 @@
      "to": "007",
      "range": [
       5,
-      10
+      8
      ],
      "offset": 0
     },
@@ -2223,7 +2223,7 @@
      "to": "009",
      "range": [
       5,
-      10
+      8
      ],
      "offset": 0
     }
@@ -2286,8 +2286,8 @@
     },
     {
      "tile": [
-      7,
-      7
+      8,
+      9
      ],
      "k": "stash",
      "item": "cure",
@@ -2400,7 +2400,7 @@
    ],
    "mons": [
     {
-     "x": 9,
+     "x": 22,
      "y": 9,
      "mon": "Pebblet"
     }
@@ -2419,16 +2419,16 @@
    ],
    "notes": "Canyon-rim route with drift grass, ledges you hop down, trainers",
    "edges": {
-    "left": {
-     "to": "008",
+    "right": {
+     "to": "010",
      "range": [
       5,
       8
      ],
      "offset": 0
     },
-    "right": {
-     "to": "010",
+    "left": {
+     "to": "008",
      "range": [
       5,
       8
@@ -2461,7 +2461,7 @@
    ],
    "spawns": {
     "default": [
-     1,
+     22,
      5
     ]
    },
@@ -3337,7 +3337,7 @@
      "to": "016",
      "range": [
       5,
-      9
+      8
      ],
      "offset": 0
     }
@@ -3428,16 +3428,16 @@
    ],
    "notes": "Ash fields, cooling lava channels",
    "edges": {
-    "left": {
-     "to": "015",
+    "right": {
+     "to": "017",
      "range": [
       5,
       8
      ],
      "offset": 0
     },
-    "right": {
-     "to": "017",
+    "left": {
+     "to": "015",
      "range": [
       5,
       8
@@ -3470,7 +3470,7 @@
    ],
    "spawns": {
     "default": [
-     1,
+     22,
      5
     ]
    },
@@ -3722,7 +3722,7 @@
      "to": "017",
      "range": [
       5,
-      10
+      8
      ],
      "offset": 0
     },
@@ -3730,7 +3730,7 @@
      "to": "019",
      "range": [
       5,
-      10
+      8
      ],
      "offset": 0
     }
@@ -3799,8 +3799,8 @@
     },
     {
      "tile": [
-      7,
-      10
+      8,
+      9
      ],
      "k": "stash",
      "item": "dust",
@@ -3910,7 +3910,7 @@
    ],
    "mons": [
     {
-     "x": 9,
+     "x": 22,
      "y": 10,
      "mon": "Cindermole"
     }
@@ -3929,16 +3929,16 @@
    ],
    "notes": "Long wooden dock where the Deep Sea Ferry berths (M08 Sola's Choice scene)",
    "edges": {
-    "left": {
-     "to": "018",
+    "right": {
+     "to": "020",
      "range": [
       5,
       8
      ],
      "offset": 0
     },
-    "right": {
-     "to": "020",
+    "left": {
+     "to": "018",
      "range": [
       5,
       8
@@ -3992,7 +3992,7 @@
    ],
    "spawns": {
     "default": [
-     1,
+     22,
      5
     ]
    },
@@ -4061,7 +4061,7 @@
      "to": "021",
      "range": [
       5,
-      9
+      8
      ],
      "offset": 0
     }
@@ -4070,8 +4070,8 @@
    "objects": [
     {
      "tile": [
-      5,
-      3
+      14,
+      11
      ],
      "k": "stash",
      "item": "harmonic",
@@ -4080,8 +4080,8 @@
     },
     {
      "tile": [
-      15,
-      11
+      6,
+      3
      ],
      "k": "stash",
      "item": "stasis",
@@ -4157,16 +4157,16 @@
    ],
    "notes": "Climbing ridge with ledges",
    "edges": {
-    "left": {
-     "to": "020",
+    "right": {
+     "to": "022",
      "range": [
       5,
       8
      ],
      "offset": 0
     },
-    "right": {
-     "to": "022",
+    "left": {
+     "to": "020",
      "range": [
       5,
       8
@@ -4199,7 +4199,7 @@
    ],
    "spawns": {
     "default": [
-     1,
+     22,
      5
     ]
    },
@@ -4273,7 +4273,7 @@
      "to": "023",
      "range": [
       5,
-      9
+      8
      ],
      "offset": 0
     }
@@ -4399,16 +4399,16 @@
    ],
    "notes": "Helix Forge Fortress entrance, Helix grunt guard",
    "edges": {
-    "left": {
-     "to": "022",
+    "right": {
+     "to": "024",
      "range": [
       5,
       8
      ],
      "offset": 0
     },
-    "right": {
-     "to": "024",
+    "left": {
+     "to": "022",
      "range": [
       5,
       8
@@ -4464,7 +4464,7 @@
    ],
    "spawns": {
     "default": [
-     1,
+     22,
      5
     ]
    },
@@ -4869,7 +4869,7 @@
      "to": "028",
      "range": [
       5,
-      8
+      7
      ],
      "offset": 1
     }
@@ -25388,21 +25388,21 @@
    ],
    "notes": "",
    "edges": {
-    "top": {
-     "to": "004",
-     "range": [
-      4,
-      9
-     ],
-     "offset": 6
-    },
     "right": {
      "to": "470",
      "range": [
       7,
-      10
+      9
      ],
      "offset": 2
+    },
+    "top": {
+     "to": "004",
+     "range": [
+      4,
+      7
+     ],
+     "offset": 6
     }
    },
    "warps": [
@@ -25467,8 +25467,8 @@
    ],
    "spawns": {
     "default": [
-     4,
-     1
+     22,
+     7
     ]
    },
    "grid": [
@@ -25479,7 +25479,7 @@
    "npcs": [
     {
      "x": 7,
-     "y": 11,
+     "y": 10,
      "art": "dustara_folk6",
      "face": "down",
      "t": [
@@ -25490,8 +25490,8 @@
      "src": "n:472:0"
     },
     {
-     "x": 21,
-     "y": 6,
+     "x": 19,
+     "y": 9,
      "art": "sheepkid",
      "face": "down",
      "t": [
@@ -25522,16 +25522,16 @@
    ],
    "notes": "",
    "edges": {
-    "left": {
-     "to": "472",
+    "right": {
+     "to": "447",
      "range": [
       9,
       11
      ],
      "offset": -2
     },
-    "right": {
-     "to": "447",
+    "left": {
+     "to": "472",
      "range": [
       9,
       11
@@ -25599,7 +25599,7 @@
    ],
    "spawns": {
     "default": [
-     1,
+     22,
      9
     ]
    },
@@ -25670,14 +25670,6 @@
      ],
      "offset": -3
     },
-    "bottom": {
-     "to": "453",
-     "range": [
-      13,
-      19
-     ],
-     "offset": -11
-    },
     "right": {
      "to": "436",
      "range": [
@@ -25685,6 +25677,14 @@
       9
      ],
      "offset": 2
+    },
+    "bottom": {
+     "to": "453",
+     "range": [
+      13,
+      19
+     ],
+     "offset": -11
     }
    },
    "warps": [],
@@ -25856,7 +25856,7 @@
    "npcs": [
     {
      "x": 10,
-     "y": 4,
+     "y": 6,
      "art": "dustara_folk5",
      "face": "down",
      "t": [
@@ -25899,14 +25899,6 @@
    ],
    "notes": "",
    "edges": {
-    "top": {
-     "to": "447",
-     "range": [
-      2,
-      9
-     ],
-     "offset": 11
-    },
     "bottom": {
      "to": "945",
      "range": [
@@ -25914,6 +25906,14 @@
       17
      ],
      "offset": 0
+    },
+    "top": {
+     "to": "447",
+     "range": [
+      2,
+      8
+     ],
+     "offset": 11
     }
    },
    "warps": [],
@@ -25941,8 +25941,8 @@
    ],
    "spawns": {
     "default": [
-     2,
-     0
+     12,
+     14
     ]
    },
    "grid": [
@@ -26004,27 +26004,27 @@
    ],
    "notes": "",
    "edges": {
-    "top": {
-     "to": "945",
-     "range": [
-      4,
-      9
-     ],
-     "offset": 0
-    },
     "left": {
      "to": "465",
      "range": [
       4,
-      5
+      7
      ],
      "offset": 5
+    },
+    "top": {
+     "to": "945",
+     "range": [
+      4,
+      8
+     ],
+     "offset": 0
     },
     "bottom": {
      "to": "462",
      "range": [
       4,
-      10
+      9
      ],
      "offset": 12
     }
@@ -26054,8 +26054,8 @@
    ],
    "spawns": {
     "default": [
-     4,
-     1
+     1,
+     4
     ]
    },
    "grid": [
@@ -26705,7 +26705,7 @@
      "to": "436",
      "range": [
       8,
-      13
+      11
      ],
      "offset": 2
     },
@@ -26713,7 +26713,7 @@
      "to": "464",
      "range": [
       8,
-      14
+      13
      ],
      "offset": 1
     },
@@ -26992,14 +26992,6 @@
    ],
    "notes": "",
    "edges": {
-    "right": {
-     "to": "445",
-     "range": [
-      3,
-      8
-     ],
-     "offset": 2
-    },
     "top": {
      "to": "441",
      "range": [
@@ -27008,11 +27000,19 @@
      ],
      "offset": -5
     },
+    "right": {
+     "to": "445",
+     "range": [
+      3,
+      7
+     ],
+     "offset": 2
+    },
     "bottom": {
      "to": "460",
      "range": [
       4,
-      9
+      8
      ],
      "offset": 11
     }
@@ -27169,8 +27169,8 @@
    ],
    "spawns": {
     "default": [
-     22,
-     3
+     14,
+     1
     ]
    },
    "grid": [
@@ -27428,7 +27428,7 @@
      "to": "446",
      "range": [
       9,
-      14
+      13
      ],
      "offset": 5
     }
@@ -27464,8 +27464,8 @@
    "objects": [
     {
      "tile": [
-      10,
-      7
+      16,
+      11
      ],
      "k": "stash",
      "item": "gel",
@@ -27474,8 +27474,8 @@
     },
     {
      "tile": [
-      15,
-      9
+      5,
+      8
      ],
      "k": "stash",
      "item": "gel",
@@ -27496,8 +27496,8 @@
    "pkey": "dustara",
    "npcs": [
     {
-     "x": 8,
-     "y": 9,
+     "x": 14,
+     "y": 8,
      "art": "dustara_folk4",
      "face": "down",
      "t": [
@@ -27508,8 +27508,8 @@
      "src": "n:441:0"
     },
     {
-     "x": 15,
-     "y": 11,
+     "x": 14,
+     "y": 12,
      "art": "explorer",
      "face": "down",
      "t": [
@@ -27521,12 +27521,12 @@
    ],
    "mons": [
     {
-     "x": 5,
-     "y": 9,
+     "x": 7,
+     "y": 8,
      "mon": "Kilnback"
     },
     {
-     "x": 17,
+     "x": 18,
      "y": 10,
      "mon": "Squawktone"
     }
@@ -76078,20 +76078,6 @@
  "connections": [
   {
    "from_id": "004",
-   "edge": "right",
-   "tile_range": [
-    5,
-    10
-   ],
-   "to_id": "007",
-   "to_edge": "left",
-   "to_tile": [
-    5,
-    8
-   ]
-  },
-  {
-   "from_id": "004",
    "edge": "bottom",
    "tile_range": [
     10,
@@ -76101,7 +76087,21 @@
    "to_edge": "top",
    "to_tile": [
     4,
-    9
+    7
+   ]
+  },
+  {
+   "from_id": "004",
+   "edge": "right",
+   "tile_range": [
+    5,
+    8
+   ],
+   "to_id": "007",
+   "to_edge": "left",
+   "to_tile": [
+    5,
+    8
    ]
   },
   {
@@ -76115,7 +76115,7 @@
    "to_edge": "right",
    "to_tile": [
     5,
-    10
+    8
    ]
   },
   {
@@ -76129,7 +76129,7 @@
    "to_edge": "left",
    "to_tile": [
     5,
-    10
+    8
    ]
   },
   {
@@ -76137,7 +76137,7 @@
    "edge": "left",
    "tile_range": [
     5,
-    10
+    8
    ],
    "to_id": "007",
    "to_edge": "right",
@@ -76151,9 +76151,23 @@
    "edge": "right",
    "tile_range": [
     5,
-    10
+    8
    ],
    "to_id": "009",
+   "to_edge": "left",
+   "to_tile": [
+    5,
+    8
+   ]
+  },
+  {
+   "from_id": "009",
+   "edge": "right",
+   "tile_range": [
+    5,
+    8
+   ],
+   "to_id": "010",
    "to_edge": "left",
    "to_tile": [
     5,
@@ -76169,20 +76183,6 @@
    ],
    "to_id": "008",
    "to_edge": "right",
-   "to_tile": [
-    5,
-    10
-   ]
-  },
-  {
-   "from_id": "009",
-   "edge": "right",
-   "tile_range": [
-    5,
-    8
-   ],
-   "to_id": "010",
-   "to_edge": "left",
    "to_tile": [
     5,
     8
@@ -76333,9 +76333,23 @@
    "edge": "right",
    "tile_range": [
     5,
-    9
+    8
    ],
    "to_id": "016",
+   "to_edge": "left",
+   "to_tile": [
+    5,
+    8
+   ]
+  },
+  {
+   "from_id": "016",
+   "edge": "right",
+   "tile_range": [
+    5,
+    8
+   ],
+   "to_id": "017",
    "to_edge": "left",
    "to_tile": [
     5,
@@ -76353,20 +76367,6 @@
    "to_edge": "right",
    "to_tile": [
     5,
-    9
-   ]
-  },
-  {
-   "from_id": "016",
-   "edge": "right",
-   "tile_range": [
-    5,
-    8
-   ],
-   "to_id": "017",
-   "to_edge": "left",
-   "to_tile": [
-    5,
     8
    ]
   },
@@ -76395,7 +76395,7 @@
    "to_edge": "left",
    "to_tile": [
     5,
-    10
+    8
    ]
   },
   {
@@ -76403,7 +76403,7 @@
    "edge": "left",
    "tile_range": [
     5,
-    10
+    8
    ],
    "to_id": "017",
    "to_edge": "right",
@@ -76417,9 +76417,23 @@
    "edge": "right",
    "tile_range": [
     5,
-    10
+    8
    ],
    "to_id": "019",
+   "to_edge": "left",
+   "to_tile": [
+    5,
+    8
+   ]
+  },
+  {
+   "from_id": "019",
+   "edge": "right",
+   "tile_range": [
+    5,
+    8
+   ],
+   "to_id": "020",
    "to_edge": "left",
    "to_tile": [
     5,
@@ -76437,20 +76451,6 @@
    "to_edge": "right",
    "to_tile": [
     5,
-    10
-   ]
-  },
-  {
-   "from_id": "019",
-   "edge": "right",
-   "tile_range": [
-    5,
-    8
-   ],
-   "to_id": "020",
-   "to_edge": "left",
-   "to_tile": [
-    5,
     8
    ]
   },
@@ -76473,9 +76473,23 @@
    "edge": "right",
    "tile_range": [
     5,
-    9
+    8
    ],
    "to_id": "021",
+   "to_edge": "left",
+   "to_tile": [
+    5,
+    8
+   ]
+  },
+  {
+   "from_id": "021",
+   "edge": "right",
+   "tile_range": [
+    5,
+    8
+   ],
+   "to_id": "022",
    "to_edge": "left",
    "to_tile": [
     5,
@@ -76493,20 +76507,6 @@
    "to_edge": "right",
    "to_tile": [
     5,
-    9
-   ]
-  },
-  {
-   "from_id": "021",
-   "edge": "right",
-   "tile_range": [
-    5,
-    8
-   ],
-   "to_id": "022",
-   "to_edge": "left",
-   "to_tile": [
-    5,
     8
    ]
   },
@@ -76529,9 +76529,23 @@
    "edge": "right",
    "tile_range": [
     5,
-    9
+    8
    ],
    "to_id": "023",
+   "to_edge": "left",
+   "to_tile": [
+    5,
+    8
+   ]
+  },
+  {
+   "from_id": "023",
+   "edge": "right",
+   "tile_range": [
+    5,
+    8
+   ],
+   "to_id": "024",
    "to_edge": "left",
    "to_tile": [
     5,
@@ -76547,20 +76561,6 @@
    ],
    "to_id": "022",
    "to_edge": "right",
-   "to_tile": [
-    5,
-    9
-   ]
-  },
-  {
-   "from_id": "023",
-   "edge": "right",
-   "tile_range": [
-    5,
-    8
-   ],
-   "to_id": "024",
-   "to_edge": "left",
    "to_tile": [
     5,
     8
@@ -76669,7 +76669,7 @@
    "edge": "right",
    "tile_range": [
     5,
-    8
+    7
    ],
    "to_id": "028",
    "to_edge": "left",
@@ -76689,7 +76689,7 @@
    "to_edge": "right",
    "to_tile": [
     5,
-    8
+    7
    ]
   },
   {
@@ -78483,24 +78483,10 @@
   },
   {
    "from_id": "472",
-   "edge": "top",
-   "tile_range": [
-    4,
-    9
-   ],
-   "to_id": "004",
-   "to_edge": "bottom",
-   "to_tile": [
-    10,
-    13
-   ]
-  },
-  {
-   "from_id": "472",
    "edge": "right",
    "tile_range": [
     7,
-    10
+    9
    ],
    "to_id": "470",
    "to_edge": "left",
@@ -78510,17 +78496,17 @@
    ]
   },
   {
-   "from_id": "470",
-   "edge": "left",
+   "from_id": "472",
+   "edge": "top",
    "tile_range": [
-    9,
-    11
+    4,
+    7
    ],
-   "to_id": "472",
-   "to_edge": "right",
+   "to_id": "004",
+   "to_edge": "bottom",
    "to_tile": [
-    7,
-    10
+    10,
+    13
    ]
   },
   {
@@ -78532,6 +78518,20 @@
    ],
    "to_id": "447",
    "to_edge": "left",
+   "to_tile": [
+    7,
+    9
+   ]
+  },
+  {
+   "from_id": "470",
+   "edge": "left",
+   "tile_range": [
+    9,
+    11
+   ],
+   "to_id": "472",
+   "to_edge": "right",
    "to_tile": [
     7,
     9
@@ -78567,20 +78567,6 @@
   },
   {
    "from_id": "447",
-   "edge": "bottom",
-   "tile_range": [
-    13,
-    19
-   ],
-   "to_id": "453",
-   "to_edge": "top",
-   "to_tile": [
-    2,
-    9
-   ]
-  },
-  {
-   "from_id": "447",
    "edge": "right",
    "tile_range": [
     7,
@@ -78591,6 +78577,20 @@
    "to_tile": [
     9,
     11
+   ]
+  },
+  {
+   "from_id": "447",
+   "edge": "bottom",
+   "tile_range": [
+    13,
+    19
+   ],
+   "to_id": "453",
+   "to_edge": "top",
+   "to_tile": [
+    2,
+    8
    ]
   },
   {
@@ -78609,20 +78609,6 @@
   },
   {
    "from_id": "453",
-   "edge": "top",
-   "tile_range": [
-    2,
-    9
-   ],
-   "to_id": "447",
-   "to_edge": "bottom",
-   "to_tile": [
-    13,
-    19
-   ]
-  },
-  {
-   "from_id": "453",
    "edge": "bottom",
    "tile_range": [
     12,
@@ -78636,17 +78622,17 @@
    ]
   },
   {
-   "from_id": "458",
+   "from_id": "453",
    "edge": "top",
    "tile_range": [
-    4,
-    9
+    2,
+    8
    ],
-   "to_id": "945",
+   "to_id": "447",
    "to_edge": "bottom",
    "to_tile": [
-    4,
-    8
+    13,
+    19
    ]
   },
   {
@@ -78654,7 +78640,7 @@
    "edge": "left",
    "tile_range": [
     4,
-    5
+    7
    ],
    "to_id": "465",
    "to_edge": "right",
@@ -78665,30 +78651,30 @@
   },
   {
    "from_id": "458",
+   "edge": "top",
+   "tile_range": [
+    4,
+    8
+   ],
+   "to_id": "945",
+   "to_edge": "bottom",
+   "to_tile": [
+    4,
+    8
+   ]
+  },
+  {
+   "from_id": "458",
    "edge": "bottom",
    "tile_range": [
     4,
-    10
+    9
    ],
    "to_id": "462",
    "to_edge": "top",
    "to_tile": [
     16,
     21
-   ]
-  },
-  {
-   "from_id": "465",
-   "edge": "right",
-   "tile_range": [
-    9,
-    12
-   ],
-   "to_id": "458",
-   "to_edge": "left",
-   "to_tile": [
-    4,
-    5
    ]
   },
   {
@@ -78706,6 +78692,20 @@
    ]
   },
   {
+   "from_id": "465",
+   "edge": "right",
+   "tile_range": [
+    9,
+    12
+   ],
+   "to_id": "458",
+   "to_edge": "left",
+   "to_tile": [
+    4,
+    7
+   ]
+  },
+  {
    "from_id": "462",
    "edge": "top",
    "tile_range": [
@@ -78716,7 +78716,7 @@
    "to_edge": "bottom",
    "to_tile": [
     4,
-    10
+    9
    ]
   },
   {
@@ -78744,7 +78744,21 @@
    "to_edge": "top",
    "to_tile": [
     8,
-    13
+    11
+   ]
+  },
+  {
+   "from_id": "445",
+   "edge": "right",
+   "tile_range": [
+    5,
+    9
+   ],
+   "to_id": "875",
+   "to_edge": "left",
+   "to_tile": [
+    8,
+    9
    ]
   },
   {
@@ -78752,7 +78766,7 @@
    "edge": "top",
    "tile_range": [
     8,
-    13
+    11
    ],
    "to_id": "436",
    "to_edge": "bottom",
@@ -78766,7 +78780,7 @@
    "edge": "bottom",
    "tile_range": [
     8,
-    14
+    13
    ],
    "to_id": "464",
    "to_edge": "top",
@@ -78786,21 +78800,7 @@
    "to_edge": "right",
    "to_tile": [
     3,
-    8
-   ]
-  },
-  {
-   "from_id": "445",
-   "edge": "right",
-   "tile_range": [
-    5,
-    9
-   ],
-   "to_id": "875",
-   "to_edge": "left",
-   "to_tile": [
-    8,
-    9
+    7
    ]
   },
   {
@@ -78814,49 +78814,7 @@
    "to_edge": "bottom",
    "to_tile": [
     8,
-    14
-   ]
-  },
-  {
-   "from_id": "446",
-   "edge": "right",
-   "tile_range": [
-    3,
-    8
-   ],
-   "to_id": "445",
-   "to_edge": "left",
-   "to_tile": [
-    5,
-    9
-   ]
-  },
-  {
-   "from_id": "446",
-   "edge": "top",
-   "tile_range": [
-    14,
-    18
-   ],
-   "to_id": "441",
-   "to_edge": "bottom",
-   "to_tile": [
-    9,
-    14
-   ]
-  },
-  {
-   "from_id": "446",
-   "edge": "bottom",
-   "tile_range": [
-    4,
-    9
-   ],
-   "to_id": "460",
-   "to_edge": "top",
-   "to_tile": [
-    15,
-    19
+    13
    ]
   },
   {
@@ -78874,17 +78832,45 @@
    ]
   },
   {
-   "from_id": "460",
+   "from_id": "446",
    "edge": "top",
    "tile_range": [
-    15,
-    19
+    14,
+    18
    ],
-   "to_id": "446",
+   "to_id": "441",
    "to_edge": "bottom",
    "to_tile": [
-    4,
+    9,
+    13
+   ]
+  },
+  {
+   "from_id": "446",
+   "edge": "right",
+   "tile_range": [
+    3,
+    7
+   ],
+   "to_id": "445",
+   "to_edge": "left",
+   "to_tile": [
+    5,
     9
+   ]
+  },
+  {
+   "from_id": "446",
+   "edge": "bottom",
+   "tile_range": [
+    4,
+    8
+   ],
+   "to_id": "460",
+   "to_edge": "top",
+   "to_tile": [
+    15,
+    19
    ]
   },
   {
@@ -78902,11 +78888,25 @@
    ]
   },
   {
+   "from_id": "460",
+   "edge": "top",
+   "tile_range": [
+    15,
+    19
+   ],
+   "to_id": "446",
+   "to_edge": "bottom",
+   "to_tile": [
+    4,
+    8
+   ]
+  },
+  {
    "from_id": "441",
    "edge": "bottom",
    "tile_range": [
     9,
-    14
+    13
    ],
    "to_id": "446",
    "to_edge": "top",
@@ -86388,7 +86388,7 @@
    "to_edge": "top",
    "to_tile": [
     4,
-    9
+    8
    ]
   },
   {

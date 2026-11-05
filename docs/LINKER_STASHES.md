@@ -11,7 +11,7 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 |---|---|---|---|
 | 004 Dustmere Plaza | 5,9 | 150x Stardust | 1 |
 | 007 Dustmere Bridge | 11,8 | 3x Stasis Pod | 1 |
-| 008 Trading Post | 7,7 | 2x Cure Spray | 1 |
+| 008 Trading Post | 8,9 | 2x Cure Spray | 1 |
 | 009 Rimwalk Trail Part A | 6,9 | 2x Med Gel | 1 |
 | 009 Rimwalk Trail Part A | 6,3 | 1x Revive Spark | 1 |
 | 010 Rimwalk Trail Part B | 11,10 | 2x Med Gel | 1 |
@@ -29,10 +29,10 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 | 016 Frontier: Ash Trail Part B | 17,9 | 1x Revive Spark | 1 |
 | 017 Frontier: Palm Isle | 12,9 | 3x Stasis Pod | 1 |
 | 017 Frontier: Palm Isle | 6,3 | 2x Cure Spray | 1 |
-| 018 Frontier: Port Ember | 7,10 | 150x Stardust | 1 |
+| 018 Frontier: Port Ember | 8,9 | 150x Stardust | 1 |
 | 019 Frontier: Long Dock | 5,6 | 5x Stasis Pod | 2 |
-| 020 Frontier: Ridge Path Part A | 5,3 | 2x Harmonic Pod | 2 |
-| 020 Frontier: Ridge Path Part A | 15,11 | 5x Stasis Pod | 2 |
+| 020 Frontier: Ridge Path Part A | 14,11 | 2x Harmonic Pod | 2 |
+| 020 Frontier: Ridge Path Part A | 6,3 | 5x Stasis Pod | 2 |
 | 021 Frontier: Ridge Path Part B | 19,10 | 1x Revive Spark | 2 |
 | 021 Frontier: Ridge Path Part B | 6,3 | 300x Stardust | 2 |
 | 022 Frontier: Forge Gate | 5,11 | 2x Harmonic Pod | 2 |
@@ -61,8 +61,8 @@ Items get better with the story: tier 1 (Dustara, Ferrox) up to tier 7 (Apex Arr
 | 446 Mesa Junction | 21,12 | 1x Tether Pulse | 1 |
 | 460 Hoodoo Hollows | 3,4 | 3x Stasis Pod | 1 |
 | 460 Hoodoo Hollows | 3,12 | 2x Cure Spray | 1 |
-| 441 Red Rock Caves Entrance | 10,7 | 2x Med Gel | 1 |
-| 441 Red Rock Caves Entrance | 15,9 | 2x Med Gel | 1 |
+| 441 Red Rock Caves Entrance | 16,11 | 2x Med Gel | 1 |
+| 441 Red Rock Caves Entrance | 5,8 | 2x Med Gel | 1 |
 | 442 Red Rock Caves B1 | 19,12 | 2x Med Gel | 1 |
 | 442 Red Rock Caves B1 | 4,12 | 1x Tether Pulse | 1 |
 | 443 Red Rock Caves B2 | 20,5 | 3x Stasis Pod | 1 |
