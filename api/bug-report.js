@@ -17,7 +17,7 @@ module.exports = async (req, res) => {
   let body = text + '\n\n---\n' + line('Build', ctx.build) + line('Branch', ctx.branch) + line('Screen', ctx.scene) + line('Map', where)
     + line('Section', ctx.sec) + line('Position', ctx.pos) + line('Party', ctx.party) + line('Story', ctx.story) + line('Device', ctx.device)
     + line('Viewport', ctx.view) + line('Reported', new Date().toISOString());
-  if (typeof ctx.save === 'string' && ctx.save.length < 40000) body += '\n<details><summary>Save data</summary>\n\n```json\n' + ctx.save + '\n```\n</details>\n';
+  // the repo is public, so the player's whole save is never posted; build, map, position, party and story above are enough to find the spot
   const gh = (labels) => fetch('https://api.github.com/repos/' + REPO + '/issues', { method: 'POST', body: JSON.stringify({ title, body, ...(labels ? { labels } : {}) }),
     headers: { Authorization: 'Bearer ' + token, Accept: 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28', 'User-Agent': 'alienmon-bug-report' } });
   try {
