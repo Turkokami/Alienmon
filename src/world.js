@@ -241,8 +241,11 @@ function livesIn(id){if(typeof habitatsOf==='function'){const hs=habitatsOf(id);
 
 /* ---------- three save slots (copies of the current game) ---------- */
 const SLOT=i=>'alienmon_slot_'+i;
+function slotRecover(back){if(newOnly())return say('The demo always starts a fresh game, so loading saves is turned off.',back);let b=null;try{b=JSON.parse(localStorage.getItem('alienmon_save_backup_before_new')||'null')}catch(e){}if(!b||!b.party||!b.party.length)return say('There is no older game to bring back.',back);
+ choose('Older game: '+nm(b.party[0])+' Lv'+(b.party[0].lv||'?')+' ◆'+(b.shards|0),['Bring it back','Cancel'],k=>{if(k!==0)return back&&back();try{save();const cur=localStorage.getItem('alienmon_save_v2'),old=localStorage.getItem('alienmon_save_backup_before_new');if(cur)localStorage.setItem('alienmon_save_backup_before_new',cur);localStorage.setItem('alienmon_save_v2',old);say('Bringing back your older game... (the current one is kept as the older game now)',()=>location.reload())}catch(e){say('Could not swap the games.',back)}},()=>back&&back())}
 function slotMenu(){const info=[1,2,3].map(i=>{try{const g=JSON.parse(localStorage.getItem(SLOT(i))||'null');return g?'Slot '+i+': '+nm(g.party[0]||{id:0})+' Lv'+((g.party[0]||{}).lv||'?')+' ◆'+g.shards:'Slot '+i+': empty'}catch(e){return'Slot '+i+': empty'}});
- choose('Save slots',info.concat(['Back']),i=>{if(i>2)return;choose(info[i],['Save current game here','Load this slot','Cancel'],k=>{
+ const hasOld=(()=>{try{return!!localStorage.getItem('alienmon_save_backup_before_new')}catch(e){return false}})();
+ choose('Save slots',info.concat(hasOld?['Older game (before New game)','Back']:['Back']),i=>{if(i===3&&hasOld)return slotRecover(slotMenu);if(i>2)return;choose(info[i],['Save current game here','Load this slot','Cancel'],k=>{
   if(k===0){save();try{localStorage.setItem(SLOT(i+1),JSON.stringify(G));say('Saved to slot '+(i+1)+'.',slotMenu)}catch(e){say('Saving is unavailable in this browser.')}}
   if(k===1&&newOnly())return say('The demo always starts a fresh game, so loading saves is turned off.',slotMenu);
   if(k===1){const s=localStorage.getItem(SLOT(i+1));if(!s)return say('That slot is empty.',slotMenu);choose('Replace your current game?',['Load slot '+(i+1),'Cancel'],c=>{if(c===0){localStorage.setItem('alienmon_save_v2',s);say('Loading...',()=>location.reload())}})}})})}

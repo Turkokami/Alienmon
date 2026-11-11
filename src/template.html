@@ -284,12 +284,12 @@ function genMap(pi){if(MAPS[pi])return MAPS[pi];const r=rng(hash(PL[pi].key)),m=
 /* ---------- game state ---------- */
 let G=null, scene='title', DLG=null, frame=0;
 function newGame(){G={v:2,mapv:3,sys:1,dust:200,party:[],box:[],pods:{stasis:10,harmonic:5,singularity:2},items:{...START_ITEMS},shards:0,beaten:{},flags:{},seen:{},caught:{},planet:0,px:15,py:20,ship:{x:PL[0].x,y:PL[0].y+40,vx:0,vy:0,a:-Math.PI/2}}}
-function save(){G.lastScene=PREV==='world'?'world':'planet';try{localStorage.setItem('alienmon_save_v2',JSON.stringify(G));if(typeof cloudUpload==='function')cloudUpload(false);return true}catch(e){return false}}
+function save(){if(!G||!G.party||!G.party.length)return false;G.lastScene=PREV==='world'?'world':'planet';try{localStorage.setItem('alienmon_save_v2',JSON.stringify(G));if(typeof cloudUpload==='function')cloudUpload(false);return true}catch(e){return false}}
 // back up the save to a file and restore it, e.g. to move a game to another browser or device
 function exportSave(){save();try{const blob=new Blob([JSON.stringify({game:'alienmon',version:2,exported:new Date().toISOString(),save:G})],{type:'application/json'}),a=document.createElement('a');
  a.href=URL.createObjectURL(blob);a.download='alienmon-save-'+new Date().toISOString().slice(0,10)+'.json';document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},1000);say('Backup file downloaded.')}catch(e){say('Export is unavailable in this browser.')}}
 // New game only is for the public demo; testers (signed in, beta, or tester code) keep Continue and their saves
-function newOnly(){if(!NEWONLY_BUILD||BETA)return false;try{if(/(?:^|;\s*)alienmon_signed_in=1/.test(document.cookie))return false}catch(e){}try{if(typeof testerOn==='function'&&testerOn())return false}catch(e){}return true}
+function newOnly(){if(!NEWONLY_BUILD||BETA||APP||(typeof PROTO!=='undefined'&&PROTO))return false;try{if(/(?:^|;\s*)alienmon_signed_in=1/.test(document.cookie))return false}catch(e){}try{if(typeof testerOn==='function'&&testerOn())return false}catch(e){}return true}
 function importSave(){if(newOnly())return say('The demo always starts a fresh game, so loading saves is turned off.');const inp=document.createElement('input');inp.type='file';inp.accept='.json,application/json';
  inp.onchange=()=>{const f=inp.files&&inp.files[0];if(!f)return;f.text().then(t=>{let d;try{d=JSON.parse(t)}catch(e){}const g=d&&d.game==='alienmon'?d.save:d;
   if(!g||!Array.isArray(g.party)||!Array.isArray(g.box)){say('That file is not an Alienmon save.');return}
@@ -297,7 +297,8 @@ function importSave(){if(newOnly())return say('The demo always starts a fresh ga
  inp.click();say('Choose your backup file.')}
 const MAPV=3;   // saves from before the V3 map rebuild start over (kept aside as alienmon_save_v2_premaps3, not deleted)
 function loadSave(){try{const s=localStorage.getItem('alienmon_save_v2');if(!s)return null;const g=JSON.parse(s);for(const m of(g.party||[]).concat(g.box||[]))if(m&&m.pri){g.pri=g.pri||{};g.pri[m.id]=1}
- if((g.mapv||0)<MAPV){try{if(!localStorage.getItem('alienmon_save_v2_premaps3'))localStorage.setItem('alienmon_save_v2_premaps3',s);localStorage.removeItem('alienmon_save_v2')}catch(e){}return null}g.party.concat(g.box).forEach(m=>{m.st=m.st||null;resetStages(m)});g.items=g.items||{...START_ITEMS};return progMigrate(renameMigrate(g))}catch(e){return null}}
+ if((g.mapv||0)<MAPV){try{if(!localStorage.getItem('alienmon_save_v2_premaps3'))localStorage.setItem('alienmon_save_v2_premaps3',s)}catch(e){}return null}
+ const okM=m=>m&&typeof m==='object'&&D[m.id];g.party=(g.party||[]).filter(okM);g.box=(g.box||[]).filter(okM);if(!g.party.length&&g.box.length)g.party.push(g.box.shift());if(!g.party.length)return null;g.party.concat(g.box).forEach(m=>{m.st=m.st||null;resetStages(m)});g.items=g.items||{...START_ITEMS};return progMigrate(renameMigrate(g))}catch(e){try{const s=localStorage.getItem('alienmon_save_v2');if(s)localStorage.setItem('alienmon_save_v2_unreadable',s);localStorage.setItem('alienmon_lasterr','loadSave '+(e&&e.message))}catch(_){}console.error('loadSave',e);return null}}
 function say(lines,cb,por){const pages=[];for(const l of[].concat(lines)){const w=wrap(l);for(let i=0;i<w.length;i+=2)pages.push(w.slice(i,i+2))}DLG={pages,i:0,cb,por,vo:typeof voPages==='function'?voPages(lines):null}}
 function healAll(){for(const m of G.party.concat(G.box)){m.hp=stat(m,0);m.ppm={};m.st=null;resetStages(m)}if(!G.pods.stasis&&!G.pods.harmonic&&!G.pods.singularity&&G.dust<20)G.pods.stasis=5}
 const UNLOCK_ALL=false   // playtesters use START > Options > Free roam instead; // playtest: every planet is open
@@ -322,9 +323,12 @@ function addMon(m){G.seen[m.id]=1;G.caught[m.id]=1;if(m.pri){G.pri=G.pri||{};G.p
 let tsel=0,ssel=0;
 function startIntro(){scene='intro';say(["Twenty years ago, the sky fell.","Seedpods scattered across the whole Kessler system, onto every world.","What hatched were Alienmon: refugees from a dying planet called Ystra.","I'm Dr. Vashti. Your Linker can bond with them.","Choose your first partner, then take the ship and find the rest."],()=>{scene='starter'},'vashti')}
 const STARTERS=[IDX['Sporix'],IDX['Plazmo'],IDX['Gloopa']];
-function updTitle(){const sv=newOnly()?null:loadSave();const opts=sv?['Continue','New game']:!APP&&typeof cloudRestore==='function'?['New game','Restore']:['New game'];   /* Restore: a cloud backup onto a new device */
- if(P_('up')||P_('down')||P_('left')||P_('right'))tsel=(tsel+1)%opts.length;
- if(P_('a')&&!document.querySelector('.tb')){if(opts[tsel]==='Restore'){cloudRestore();return}if(opts[tsel]==='Continue'){G=sv;G.gender='boy';if(G.arenaParty){G.party=G.arenaParty;G.box=G.arenaBox||G.box;delete G.arenaParty;delete G.arenaBox}scene=G.lastScene==='world'?'world':'planet';if(typeof secRescue==='function')secRescue();say('Welcome back, Linker.')}else{newGame();G.gender='boy';G.opt={expLink:true,voice:true};if(secEnabled()&&SWORLD['002'])secWakeUp();else startIntro()}}
+let TRAW,TSV,TCONF=0;
+function newGameBackup(){try{const s=localStorage.getItem('alienmon_save_v2');if(!s)return;const p=localStorage.getItem('alienmon_save_backup_before_new');if(p&&p!==s)localStorage.setItem('alienmon_save_backup_before_new_2',p);localStorage.setItem('alienmon_save_backup_before_new',s)}catch(e){}}
+function updTitle(){let raw=null;try{raw=localStorage.getItem('alienmon_save_v2')}catch(e){}if(raw!==TRAW){TRAW=raw;TSV=newOnly()?null:loadSave()}const sv=TSV;const opts=sv?['Continue',TCONF?'Erase? A':'New game']:!APP&&typeof cloudRestore==='function'?['New game','Restore']:['New game'];   /* Restore: a cloud backup onto a new device */
+ if(P_('up')||P_('down')||P_('left')||P_('right')){tsel=(tsel+1)%opts.length;TCONF=0}
+ if(TCONF&&frame-TCONF>300)TCONF=0;
+ if(P_('a')&&!document.querySelector('.tb')){if(opts[tsel]==='Restore'){cloudRestore();return}if(opts[tsel]==='New game'&&sv){TCONF=frame||1;return}if(opts[tsel]==='Continue'){G=sv;G.gender='boy';if(G.arenaParty){G.party=G.arenaParty;G.box=G.arenaBox||G.box;delete G.arenaParty;delete G.arenaBox}scene=G.lastScene==='world'?'world':'planet';if(typeof secRescue==='function')secRescue();say('Welcome back, Linker.')}else{TCONF=0;newGameBackup();newGame();G.gender='boy';G.opt={expLink:true,voice:true};if(secEnabled()&&SWORLD['002'])secWakeUp();else startIntro()}}
 
  frame++;
  if(TITLEI.complete&&TITLEI.naturalWidth){ctx.save();ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';ctx.drawImage(TITLEI,0,0,160,144);ctx.restore();

@@ -78,7 +78,7 @@ const j=x=>JSON.stringify(x);
 // public address used in share tags (Open Graph needs absolute URLs); override with SITE_URL for a custom domain
 // private beta build (the Vercel project with PRIVATE_TESTING=1): shows a feedback link that emails FEEDBACK_EMAIL
 // demo builds start fresh every time: the title screen offers New game only (set NEW_GAME_ONLY=0 to bring Continue back)
-const NEWONLY=process.env.NEW_GAME_ONLY!=='0';
+const NEWONLY=!APP&&process.env.NEW_GAME_ONLY!=='0';   // the store app keeps its save between launches
 // maps-v2 prototype (branch only, drop before merging): every planet open for the owner's map checks
 let GITREF=process.env.VERCEL_GIT_COMMIT_REF||'';try{if(!GITREF)GITREF=require('child_process').execSync('git rev-parse --abbrev-ref HEAD',{cwd:root}).toString().trim()}catch(e){}
 const PROTO=GITREF==='maps-v2';
