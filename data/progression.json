@@ -3885,6 +3885,256 @@
    "rarity": "mythic",
    "evolves": null,
    "capture_mod": 0.2
+  },
+  "Cogglet": {
+   "n": 301,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Cyclopper",
+    "level": 24,
+    "method": "Level 24"
+   },
+   "capture_mod": 1.0
+  },
+  "Cyclopper": {
+   "n": 302,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Girderon": {
+   "n": 303,
+   "curve": "pulse",
+   "base_yield": 173,
+   "stage": 1,
+   "stages": 1,
+   "bst": 480,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 1.0
+  },
+  "Rustadillo": {
+   "n": 304,
+   "curve": "pulse",
+   "base_yield": 169,
+   "stage": 1,
+   "stages": 1,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 1.0
+  },
+  "Tinwing": {
+   "n": 305,
+   "curve": "pulse",
+   "base_yield": 169,
+   "stage": 1,
+   "stages": 1,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 1.0
+  },
+  "Brineback": {
+   "n": 306,
+   "curve": "pulse",
+   "base_yield": 173,
+   "stage": 1,
+   "stages": 1,
+   "bst": 480,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 1.0
+  },
+  "Fiddlesnap": {
+   "n": 307,
+   "curve": "pulse",
+   "base_yield": 169,
+   "stage": 1,
+   "stages": 1,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 1.0
+  },
+  "Squidmiral": {
+   "n": 308,
+   "curve": "pulse",
+   "base_yield": 169,
+   "stage": 1,
+   "stages": 1,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 1.0
+  },
+  "The Old One": {
+   "n": 309,
+   "curve": "ancient",
+   "base_yield": 360,
+   "stage": 1,
+   "stages": 1,
+   "bst": 580,
+   "rarity": "legendary",
+   "evolves": null,
+   "capture_mod": 0.2
+  },
+  "Glowcroak": {
+   "n": 310,
+   "curve": "standard",
+   "base_yield": 55,
+   "stage": 1,
+   "stages": 2,
+   "bst": 310,
+   "rarity": "normal",
+   "evolves": {
+    "into": "Gloomtoad",
+    "level": 28,
+    "method": "Level 28"
+   },
+   "capture_mod": 1.0
+  },
+  "Gloomtoad": {
+   "n": 311,
+   "curve": "standard",
+   "base_yield": 150,
+   "stage": 2,
+   "stages": 2,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 0.7
+  },
+  "Mossback": {
+   "n": 312,
+   "curve": "pulse",
+   "base_yield": 173,
+   "stage": 1,
+   "stages": 1,
+   "bst": 480,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 1.0
+  },
+  "Oozel": {
+   "n": 313,
+   "curve": "pulse",
+   "base_yield": 165,
+   "stage": 1,
+   "stages": 1,
+   "bst": 460,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 1.0
+  },
+  "Boombastadon": {
+   "n": 314,
+   "curve": "pulse",
+   "base_yield": 173,
+   "stage": 1,
+   "stages": 1,
+   "bst": 480,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 1.0
+  },
+  "Squawkbox": {
+   "n": 315,
+   "curve": "pulse",
+   "base_yield": 167,
+   "stage": 1,
+   "stages": 1,
+   "bst": 465,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 1.0
+  },
+  "Puffloon": {
+   "n": 316,
+   "curve": "pulse",
+   "base_yield": 165,
+   "stage": 1,
+   "stages": 1,
+   "bst": 460,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 1.0
+  },
+  "Stormquill": {
+   "n": 317,
+   "curve": "pulse",
+   "base_yield": 174,
+   "stage": 1,
+   "stages": 1,
+   "bst": 485,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 1.0
+  },
+  "Lacefin": {
+   "n": 318,
+   "curve": "pulse",
+   "base_yield": 171,
+   "stage": 1,
+   "stages": 1,
+   "bst": 475,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 1.0
+  },
+  "Vitramoth": {
+   "n": 319,
+   "curve": "pulse",
+   "base_yield": 173,
+   "stage": 1,
+   "stages": 1,
+   "bst": 480,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 1.0
+  },
+  "Dunetrot": {
+   "n": 320,
+   "curve": "pulse",
+   "base_yield": 169,
+   "stage": 1,
+   "stages": 1,
+   "bst": 470,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 1.0
+  },
+  "Hexcoil": {
+   "n": 321,
+   "curve": "pulse",
+   "base_yield": 171,
+   "stage": 1,
+   "stages": 1,
+   "bst": 475,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 1.0
+  },
+  "Rumbler": {
+   "n": 322,
+   "curve": "pulse",
+   "base_yield": 173,
+   "stage": 1,
+   "stages": 1,
+   "bst": 480,
+   "rarity": "normal",
+   "evolves": null,
+   "capture_mod": 1.0
   }
  },
  "areas": {

@@ -45655,5 +45655,4752 @@
     "fill": true
    }
   ]
+ },
+ "897": {
+  "planet": "Pyros",
+  "name": "Lava Sea",
+  "habitat": "volcano",
+  "encounters": [
+   {
+    "n": 142,
+    "name": "Cinderhound",
+    "types": [
+     "Magma"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     29,
+     31
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 145,
+    "name": "Coremantle",
+    "types": [
+     "Magma",
+     "Gravity"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     29,
+     31
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 149,
+    "name": "Blazewing",
+    "types": [
+     "Magma",
+     "Swarm"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     29,
+     31
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 153,
+    "name": "Smogshade",
+    "types": [
+     "Magma",
+     "Void"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     29,
+     31
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 157,
+    "name": "Scorchwyrm",
+    "types": [
+     "Magma"
+    ],
+    "rarity": "rare",
+    "weight": 1,
+    "levels": [
+     29,
+     31
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 160,
+    "name": "Phoenixia",
+    "types": [
+     "Magma",
+     "Bio"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     29,
+     31
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 322,
+    "name": "Rumbler",
+    "types": [
+     "Gravity"
+    ],
+    "rarity": "uncommon",
+    "weight": 2,
+    "levels": [
+     29,
+     31
+    ],
+    "method": "walk",
+    "time": "any"
+   }
+  ],
+  "copied_from": "898"
+ },
+ "917": {
+  "planet": "Dustara",
+  "name": "Seedpod Dig Site",
+  "habitat": "canyon",
+  "encounters": [
+   {
+    "n": 13,
+    "name": "Skitterbit",
+    "types": [
+     "Swarm"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     2,
+     3
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 15,
+    "name": "Hivemaw",
+    "types": [
+     "Swarm"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     4,
+     5
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 280,
+    "name": "Tiktrill",
+    "types": [
+     "Sonic",
+     "Swarm"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     2,
+     3
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 29,
+    "name": "Liftant",
+    "types": [
+     "Gravity",
+     "Swarm"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     2,
+     5
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
+   },
+   {
+    "n": 16,
+    "name": "Pebblet",
+    "types": [
+     "Gravity"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     2,
+     5
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
+   },
+   {
+    "n": 31,
+    "name": "Spindyn",
+    "types": [
+     "Volt",
+     "Gravity"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     2,
+     5
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
+   },
+   {
+    "n": 320,
+    "name": "Dunetrot",
+    "types": [
+     "Gravity"
+    ],
+    "rarity": "common",
+    "weight": 5,
+    "levels": [
+     2,
+     5
+    ],
+    "method": "walk",
+    "time": "any"
+   }
+  ],
+  "copied_from": "460"
+ },
+ "918": {
+  "planet": "Dustara",
+  "name": "Old Observatory Ruins",
+  "habitat": "canyon",
+  "encounters": [
+   {
+    "n": 11,
+    "name": "Fizzle",
+    "types": [
+     "Volt"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     2,
+     4
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 12,
+    "name": "Fizzlord",
+    "types": [
+     "Volt"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     4,
+     6
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 14,
+    "name": "Skitterdrone",
+    "types": [
+     "Swarm"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     4,
+     6
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 13,
+    "name": "Skitterbit",
+    "types": [
+     "Swarm"
+    ],
+    "rarity": "rare",
+    "weight": 1,
+    "levels": [
+     2,
+     4
+    ],
+    "method": "walk",
+    "time": "any",
+    "note": "spillover"
+   },
+   {
+    "n": 29,
+    "name": "Liftant",
+    "types": [
+     "Gravity",
+     "Swarm"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     2,
+     6
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
+   },
+   {
+    "n": 16,
+    "name": "Pebblet",
+    "types": [
+     "Gravity"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     2,
+     6
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
+   },
+   {
+    "n": 31,
+    "name": "Spindyn",
+    "types": [
+     "Volt",
+     "Gravity"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     2,
+     6
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
+   },
+   {
+    "n": 320,
+    "name": "Dunetrot",
+    "types": [
+     "Gravity"
+    ],
+    "rarity": "common",
+    "weight": 5,
+    "levels": [
+     2,
+     6
+    ],
+    "method": "walk",
+    "time": "any"
+   }
+  ],
+  "copied_from": "465"
+ },
+ "919": {
+  "planet": "Ferrox",
+  "name": "Junkyard Throne",
+  "habitat": "scrapyard",
+  "encounters": [
+   {
+    "n": 32,
+    "name": "Dynamotor",
+    "types": [
+     "Volt",
+     "Gravity"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     9,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 35,
+    "name": "Scraptitan",
+    "types": [
+     "Alloy"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     9,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 39,
+    "name": "Railbeast",
+    "types": [
+     "Alloy"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     9,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 41,
+    "name": "Corrovore",
+    "types": [
+     "Toxin",
+     "Alloy"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     9,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 43,
+    "name": "Anvilox",
+    "types": [
+     "Magma",
+     "Alloy"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     9,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 47,
+    "name": "Screwmantis",
+    "types": [
+     "Swarm",
+     "Alloy"
+    ],
+    "rarity": "rare",
+    "weight": 1,
+    "levels": [
+     9,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 50,
+    "name": "Magnaxis",
+    "types": [
+     "Alloy",
+     "Gravity"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     9,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 301,
+    "name": "Cogglet",
+    "types": [
+     "Alloy"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     9,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 302,
+    "name": "Cyclopper",
+    "types": [
+     "Alloy",
+     "Volt"
+    ],
+    "rarity": "rare",
+    "weight": 2,
+    "levels": [
+     10,
+     14
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 303,
+    "name": "Girderon",
+    "types": [
+     "Alloy",
+     "Gravity"
+    ],
+    "rarity": "uncommon",
+    "weight": 4,
+    "levels": [
+     9,
+     14
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 304,
+    "name": "Rustadillo",
+    "types": [
+     "Alloy"
+    ],
+    "rarity": "uncommon",
+    "weight": 4,
+    "levels": [
+     9,
+     14
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 305,
+    "name": "Tinwing",
+    "types": [
+     "Alloy",
+     "Sonic"
+    ],
+    "rarity": "common",
+    "weight": 5,
+    "levels": [
+     9,
+     14
+    ],
+    "method": "walk",
+    "time": "any"
+   }
+  ],
+  "copied_from": "497"
+ },
+ "920": {
+  "planet": "Ferrox",
+  "name": "Abandoned Foundry",
+  "habitat": "scrapyard",
+  "encounters": [
+   {
+    "n": 32,
+    "name": "Dynamotor",
+    "types": [
+     "Volt",
+     "Gravity"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     10,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 35,
+    "name": "Scraptitan",
+    "types": [
+     "Alloy"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     10,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 37,
+    "name": "Coilossus",
+    "types": [
+     "Alloy",
+     "Volt"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     10,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 41,
+    "name": "Corrovore",
+    "types": [
+     "Toxin",
+     "Alloy"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     10,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 43,
+    "name": "Anvilox",
+    "types": [
+     "Magma",
+     "Alloy"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     10,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 45,
+    "name": "Gongorr",
+    "types": [
+     "Sonic",
+     "Alloy"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     10,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 50,
+    "name": "Magnaxis",
+    "types": [
+     "Alloy",
+     "Gravity"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     10,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 301,
+    "name": "Cogglet",
+    "types": [
+     "Alloy"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     10,
+     12
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 302,
+    "name": "Cyclopper",
+    "types": [
+     "Alloy",
+     "Volt"
+    ],
+    "rarity": "rare",
+    "weight": 2,
+    "levels": [
+     10,
+     14
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 303,
+    "name": "Girderon",
+    "types": [
+     "Alloy",
+     "Gravity"
+    ],
+    "rarity": "uncommon",
+    "weight": 4,
+    "levels": [
+     10,
+     14
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 304,
+    "name": "Rustadillo",
+    "types": [
+     "Alloy"
+    ],
+    "rarity": "uncommon",
+    "weight": 4,
+    "levels": [
+     10,
+     14
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 305,
+    "name": "Tinwing",
+    "types": [
+     "Alloy",
+     "Sonic"
+    ],
+    "rarity": "common",
+    "weight": 5,
+    "levels": [
+     10,
+     14
+    ],
+    "method": "walk",
+    "time": "any"
+   }
+  ],
+  "copied_from": "491"
+ },
+ "921": {
+  "planet": "Sporeholm",
+  "name": "Canopy Walkways",
+  "habitat": "swamp",
+  "encounters": [
+   {
+    "n": 53,
+    "name": "Puffspore",
+    "types": [
+     "Bio",
+     "Toxin"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     10,
+     12
+    ],
+    "method": "walk",
+    "time": "day x2"
+   },
+   {
+    "n": 57,
+    "name": "Gnatcloud",
+    "types": [
+     "Swarm"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     12,
+     14
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 59,
+    "name": "Sludgeviper",
+    "types": [
+     "Hydro",
+     "Toxin"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     12,
+     14
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 63,
+    "name": "Dreamcap",
+    "types": [
+     "Psi",
+     "Bio"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     12,
+     14
+    ],
+    "method": "walk",
+    "time": "night x2"
+   },
+   {
+    "n": 66,
+    "name": "Lilypod",
+    "types": [
+     "Hydro",
+     "Bio"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     10,
+     12
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 67,
+    "name": "Lotudrake",
+    "types": [
+     "Hydro",
+     "Bio"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     12,
+     14
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 74,
+    "name": "Drippit",
+    "types": [
+     "Toxin",
+     "Hydro"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     10,
+     12
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 71,
+    "name": "Silkpup",
+    "types": [
+     "Swarm",
+     "Bio"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     10,
+     14
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
+   },
+   {
+    "n": 60,
+    "name": "Vinewisp",
+    "types": [
+     "Bio"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     10,
+     14
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
+   },
+   {
+    "n": 310,
+    "name": "Glowcroak",
+    "types": [
+     "Bio"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     10,
+     14
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 311,
+    "name": "Gloomtoad",
+    "types": [
+     "Toxin",
+     "Bio"
+    ],
+    "rarity": "rare",
+    "weight": 2,
+    "levels": [
+     12,
+     16
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 312,
+    "name": "Mossback",
+    "types": [
+     "Bio",
+     "Hydro"
+    ],
+    "rarity": "uncommon",
+    "weight": 4,
+    "levels": [
+     10,
+     16
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 313,
+    "name": "Oozel",
+    "types": [
+     "Toxin"
+    ],
+    "rarity": "common",
+    "weight": 5,
+    "levels": [
+     10,
+     16
+    ],
+    "method": "walk",
+    "time": "any"
+   }
+  ],
+  "copied_from": "719"
+ },
+ "922": {
+  "planet": "Sporeholm",
+  "name": "Spore Choir Amphitheatre",
+  "habitat": "fungal",
+  "encounters": [
+   {
+    "n": 52,
+    "name": "Neonmire",
+    "types": [
+     "Toxin"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     14,
+     16
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 55,
+    "name": "Rotbloom",
+    "types": [
+     "Bio",
+     "Toxin"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     14,
+     16
+    ],
+    "method": "walk",
+    "time": "day x2"
+   },
+   {
+    "n": 61,
+    "name": "Lianarch",
+    "types": [
+     "Bio"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     14,
+     16
+    ],
+    "method": "walk",
+    "time": "day x2"
+   },
+   {
+    "n": 63,
+    "name": "Dreamcap",
+    "types": [
+     "Psi",
+     "Bio"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     14,
+     16
+    ],
+    "method": "walk",
+    "time": "night x2"
+   },
+   {
+    "n": 65,
+    "name": "Venomarch",
+    "types": [
+     "Toxin",
+     "Swarm"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     14,
+     16
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 69,
+    "name": "Murkwraith",
+    "types": [
+     "Void",
+     "Toxin"
+    ],
+    "rarity": "rare",
+    "weight": 1,
+    "levels": [
+     14,
+     16
+    ],
+    "method": "walk",
+    "time": "night x2"
+   },
+   {
+    "n": 73,
+    "name": "Lunaweaver",
+    "types": [
+     "Swarm",
+     "Bio"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     14,
+     16
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 310,
+    "name": "Glowcroak",
+    "types": [
+     "Bio"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     14,
+     16
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 311,
+    "name": "Gloomtoad",
+    "types": [
+     "Toxin",
+     "Bio"
+    ],
+    "rarity": "rare",
+    "weight": 2,
+    "levels": [
+     14,
+     18
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 313,
+    "name": "Oozel",
+    "types": [
+     "Toxin"
+    ],
+    "rarity": "common",
+    "weight": 5,
+    "levels": [
+     14,
+     18
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 312,
+    "name": "Mossback",
+    "types": [
+     "Bio",
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     14,
+     18
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 59,
+    "name": "Sludgeviper",
+    "types": [
+     "Hydro",
+     "Toxin"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     14,
+     18
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 66,
+    "name": "Lilypod",
+    "types": [
+     "Hydro",
+     "Bio"
+    ],
+    "rarity": "uncommon",
+    "weight": 3,
+    "levels": [
+     14,
+     18
+    ],
+    "method": "surf",
+    "time": "any"
+   }
+  ],
+  "copied_from": "720"
+ },
+ "923": {
+  "planet": "Thalassa",
+  "name": "Coral Tide Pools",
+  "habitat": "thermal_vent",
+  "encounters": [
+   {
+    "n": 99,
+    "name": "Ventlet",
+    "types": [
+     "Hydro",
+     "Magma"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     16,
+     18
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 100,
+    "name": "Thermoctus",
+    "types": [
+     "Hydro",
+     "Magma"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     18,
+     20
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 76,
+    "name": "Bubbub",
+    "types": [
+     "Hydro"
+    ],
+    "rarity": "rare",
+    "weight": 1,
+    "levels": [
+     16,
+     18
+    ],
+    "method": "surf",
+    "time": "any",
+    "note": "spillover"
+   },
+   {
+    "n": 80,
+    "name": "Zapfin",
+    "types": [
+     "Hydro",
+     "Volt"
+    ],
+    "rarity": "rare",
+    "weight": 1,
+    "levels": [
+     16,
+     18
+    ],
+    "method": "surf",
+    "time": "any",
+    "note": "spillover"
+   },
+   {
+    "n": 92,
+    "name": "Barnacub",
+    "types": [
+     "Hydro"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     16,
+     20
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
+   },
+   {
+    "n": 84,
+    "name": "Conchlet",
+    "types": [
+     "Hydro",
+     "Crystal"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     16,
+     20
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
+   },
+   {
+    "n": 282,
+    "name": "Croakle",
+    "types": [
+     "Hydro",
+     "Sonic"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     16,
+     20
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
+   },
+   {
+    "n": 294,
+    "name": "Drizzlit",
+    "types": [
+     "Volt",
+     "Hydro"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     16,
+     20
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
+   },
+   {
+    "n": 86,
+    "name": "Echofin",
+    "types": [
+     "Sonic",
+     "Hydro"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     16,
+     20
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
+   },
+   {
+    "n": 307,
+    "name": "Fiddlesnap",
+    "types": [
+     "Hydro"
+    ],
+    "rarity": "uncommon",
+    "weight": 3,
+    "levels": [
+     16,
+     20
+    ],
+    "method": "walk",
+    "time": "any"
+   }
+  ],
+  "copied_from": "783"
+ },
+ "924": {
+  "planet": "Thalassa",
+  "name": "Shipwreck Cove",
+  "habitat": "coast",
+  "encounters": [
+   {
+    "n": 75,
+    "name": "Goozilla",
+    "types": [
+     "Toxin",
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     15,
+     18
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 76,
+    "name": "Bubbub",
+    "types": [
+     "Hydro"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     13,
+     16
+    ],
+    "method": "surf",
+    "time": "any",
+    "also": "fishing"
+   },
+   {
+    "n": 77,
+    "name": "Bubblorca",
+    "types": [
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     15,
+     18
+    ],
+    "method": "surf",
+    "time": "any",
+    "also": "fishing"
+   },
+   {
+    "n": 79,
+    "name": "Clawfort",
+    "types": [
+     "Hydro",
+     "Alloy"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     15,
+     18
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 80,
+    "name": "Zapfin",
+    "types": [
+     "Hydro",
+     "Volt"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     13,
+     16
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 81,
+    "name": "Stormray",
+    "types": [
+     "Hydro",
+     "Volt"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     15,
+     18
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 83,
+    "name": "Cephalux",
+    "types": [
+     "Hydro",
+     "Psi"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     15,
+     18
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 84,
+    "name": "Conchlet",
+    "types": [
+     "Hydro",
+     "Crystal"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     13,
+     16
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 85,
+    "name": "Pearlord",
+    "types": [
+     "Hydro",
+     "Crystal"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     15,
+     18
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 87,
+    "name": "Echoleviah",
+    "types": [
+     "Sonic",
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     15,
+     18
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 88,
+    "name": "Tidepull",
+    "types": [
+     "Hydro",
+     "Gravity"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     13,
+     16
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 89,
+    "name": "Tidemoon",
+    "types": [
+     "Hydro",
+     "Gravity"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     15,
+     18
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 91,
+    "name": "Mistphantom",
+    "types": [
+     "Void",
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     15,
+     18
+    ],
+    "method": "surf",
+    "time": "night x2"
+   },
+   {
+    "n": 92,
+    "name": "Barnacub",
+    "types": [
+     "Hydro"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     13,
+     16
+    ],
+    "method": "surf",
+    "time": "any",
+    "also": "fishing"
+   },
+   {
+    "n": 93,
+    "name": "Barnacolos",
+    "types": [
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     15,
+     18
+    ],
+    "method": "surf",
+    "time": "any",
+    "also": "fishing"
+   },
+   {
+    "n": 96,
+    "name": "Anchorath",
+    "types": [
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     13,
+     16
+    ],
+    "method": "surf",
+    "time": "any",
+    "also": "fishing"
+   },
+   {
+    "n": 97,
+    "name": "Gullwhistle",
+    "types": [
+     "Sonic"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     13,
+     16
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 98,
+    "name": "Galecry",
+    "types": [
+     "Sonic"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     15,
+     18
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 281,
+    "name": "Chronocrick",
+    "types": [
+     "Sonic",
+     "Swarm"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     15,
+     18
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 282,
+    "name": "Croakle",
+    "types": [
+     "Hydro",
+     "Sonic"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     13,
+     16
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 289,
+    "name": "Rustlegrove",
+    "types": [
+     "Bio",
+     "Sonic"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     15,
+     18
+    ],
+    "method": "walk",
+    "time": "day x2"
+   },
+   {
+    "n": 290,
+    "name": "Divebot",
+    "types": [
+     "Alloy",
+     "Hydro"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     13,
+     16
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 291,
+    "name": "Divekraken",
+    "types": [
+     "Alloy",
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     15,
+     18
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 78,
+    "name": "Crabot",
+    "types": [
+     "Hydro",
+     "Alloy"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     13,
+     18
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
+   },
+   {
+    "n": 294,
+    "name": "Drizzlit",
+    "types": [
+     "Volt",
+     "Hydro"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     13,
+     18
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
+   },
+   {
+    "n": 306,
+    "name": "Brineback",
+    "types": [
+     "Hydro",
+     "Bio"
+    ],
+    "rarity": "uncommon",
+    "weight": 4,
+    "levels": [
+     13,
+     18
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 307,
+    "name": "Fiddlesnap",
+    "types": [
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     13,
+     18
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 308,
+    "name": "Squidmiral",
+    "types": [
+     "Hydro",
+     "Psi"
+    ],
+    "rarity": "uncommon",
+    "weight": 4,
+    "levels": [
+     13,
+     18
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 309,
+    "name": "The Old One",
+    "types": [
+     "Hydro",
+     "Void"
+    ],
+    "rarity": "rare",
+    "weight": 1,
+    "levels": [
+     26,
+     30
+    ],
+    "method": "surf",
+    "time": "any"
+   }
+  ],
+  "copied_from": "790"
+ },
+ "925": {
+  "planet": "Neonis",
+  "name": "Rooftop Billboards",
+  "habitat": "neon_city",
+  "encounters": [
+   {
+    "n": 101,
+    "name": "Bulbit",
+    "types": [
+     "Volt"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     17,
+     20
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 104,
+    "name": "Pixbot",
+    "types": [
+     "Volt",
+     "Alloy"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     17,
+     20
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 106,
+    "name": "Ampup",
+    "types": [
+     "Volt",
+     "Sonic"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     17,
+     20
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 108,
+    "name": "Signalet",
+    "types": [
+     "Volt",
+     "Psi"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     17,
+     20
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 110,
+    "name": "Glitchbug",
+    "types": [
+     "Volt",
+     "Swarm"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     17,
+     20
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 112,
+    "name": "Blackwatt",
+    "types": [
+     "Void",
+     "Volt"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     17,
+     20
+    ],
+    "method": "walk",
+    "time": "night x2"
+   },
+   {
+    "n": 114,
+    "name": "Neonewt",
+    "types": [
+     "Volt"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     17,
+     20
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 116,
+    "name": "Holopup",
+    "types": [
+     "Psi",
+     "Volt"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     17,
+     20
+    ],
+    "method": "walk",
+    "time": "night x2"
+   },
+   {
+    "n": 118,
+    "name": "Bassquake",
+    "types": [
+     "Volt",
+     "Sonic"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     17,
+     20
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 121,
+    "name": "Turbinit",
+    "types": [
+     "Volt",
+     "Gravity"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     17,
+     20
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 314,
+    "name": "Boombastadon",
+    "types": [
+     "Sonic",
+     "Alloy"
+    ],
+    "rarity": "uncommon",
+    "weight": 4,
+    "levels": [
+     17,
+     20
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 315,
+    "name": "Squawkbox",
+    "types": [
+     "Sonic",
+     "Volt"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     17,
+     20
+    ],
+    "method": "walk",
+    "time": "any"
+   }
+  ],
+  "copied_from": "654"
+ },
+ "926": {
+  "planet": "Neonis",
+  "name": "Arcade Underground",
+  "habitat": "neon_city",
+  "encounters": [
+   {
+    "n": 102,
+    "name": "Filamaw",
+    "types": [
+     "Volt"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     22,
+     24
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 103,
+    "name": "Arclume",
+    "types": [
+     "Volt"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     22,
+     24
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 105,
+    "name": "Datadron",
+    "types": [
+     "Volt",
+     "Alloy"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     22,
+     24
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 107,
+    "name": "Amplion",
+    "types": [
+     "Volt",
+     "Sonic"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     22,
+     24
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 109,
+    "name": "Transmitron",
+    "types": [
+     "Volt",
+     "Psi"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     22,
+     24
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 111,
+    "name": "Glitchmoth",
+    "types": [
+     "Volt",
+     "Swarm"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     22,
+     24
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 113,
+    "name": "Nullgrid",
+    "types": [
+     "Void",
+     "Volt"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     22,
+     24
+    ],
+    "method": "walk",
+    "time": "night x2"
+   },
+   {
+    "n": 115,
+    "name": "Neonagon",
+    "types": [
+     "Volt"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     22,
+     24
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 119,
+    "name": "Quartzle",
+    "types": [
+     "Crystal",
+     "Volt"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     20,
+     22
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 120,
+    "name": "Piezorn",
+    "types": [
+     "Crystal",
+     "Volt"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     22,
+     24
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 122,
+    "name": "Turbinox",
+    "types": [
+     "Volt",
+     "Gravity"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     22,
+     24
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 314,
+    "name": "Boombastadon",
+    "types": [
+     "Sonic",
+     "Alloy"
+    ],
+    "rarity": "uncommon",
+    "weight": 4,
+    "levels": [
+     20,
+     24
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 315,
+    "name": "Squawkbox",
+    "types": [
+     "Sonic",
+     "Volt"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     20,
+     24
+    ],
+    "method": "walk",
+    "time": "any"
+   }
+  ],
+  "copied_from": "647"
+ },
+ "927": {
+  "planet": "Glyphos",
+  "name": "Sunken Temple Court",
+  "habitat": "ruins",
+  "encounters": [
+   {
+    "n": 124,
+    "name": "Runeguard",
+    "types": [
+     "Crystal",
+     "Psi"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     24,
+     27
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 126,
+    "name": "Obeliskor",
+    "types": [
+     "Gravity",
+     "Psi"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     24,
+     27
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 129,
+    "name": "Prismwolf",
+    "types": [
+     "Crystal"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     24,
+     27
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 131,
+    "name": "Memoria",
+    "types": [
+     "Void",
+     "Psi"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     24,
+     27
+    ],
+    "method": "walk",
+    "time": "night x2"
+   },
+   {
+    "n": 133,
+    "name": "Ambroot",
+    "types": [
+     "Bio",
+     "Crystal"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     24,
+     27
+    ],
+    "method": "walk",
+    "time": "day x2"
+   },
+   {
+    "n": 135,
+    "name": "Chimeral",
+    "types": [
+     "Sonic",
+     "Crystal"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     24,
+     27
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 137,
+    "name": "Vortexus",
+    "types": [
+     "Gravity"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     24,
+     27
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 139,
+    "name": "Oraclaw",
+    "types": [
+     "Psi"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     24,
+     27
+    ],
+    "method": "walk",
+    "time": "night x2"
+   },
+   {
+    "n": 283,
+    "name": "Croakoustic",
+    "types": [
+     "Hydro",
+     "Sonic"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     24,
+     27
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 285,
+    "name": "Tarpitan",
+    "types": [
+     "Toxin",
+     "Gravity"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     24,
+     27
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 318,
+    "name": "Lacefin",
+    "types": [
+     "Hydro",
+     "Crystal"
+    ],
+    "rarity": "common",
+    "weight": 5,
+    "levels": [
+     24,
+     27
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 318,
+    "name": "Lacefin",
+    "types": [
+     "Hydro",
+     "Crystal"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     24,
+     27
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 283,
+    "name": "Croakoustic",
+    "types": [
+     "Hydro",
+     "Sonic"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     24,
+     27
+    ],
+    "method": "surf",
+    "time": "any"
+   },
+   {
+    "n": 75,
+    "name": "Goozilla",
+    "types": [
+     "Toxin",
+     "Hydro"
+    ],
+    "rarity": "uncommon",
+    "weight": 3,
+    "levels": [
+     24,
+     27
+    ],
+    "method": "surf",
+    "time": "any"
+   }
+  ],
+  "copied_from": "557"
+ },
+ "928": {
+  "planet": "Glyphos",
+  "name": "Vine Bridge Canopy",
+  "habitat": "ruins",
+  "encounters": [
+   {
+    "n": 124,
+    "name": "Runeguard",
+    "types": [
+     "Crystal",
+     "Psi"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     26,
+     28
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 126,
+    "name": "Obeliskor",
+    "types": [
+     "Gravity",
+     "Psi"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     26,
+     28
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 128,
+    "name": "Shardwolf",
+    "types": [
+     "Crystal"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     26,
+     28
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 129,
+    "name": "Prismwolf",
+    "types": [
+     "Crystal"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     26,
+     28
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 131,
+    "name": "Memoria",
+    "types": [
+     "Void",
+     "Psi"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     26,
+     28
+    ],
+    "method": "walk",
+    "time": "night x2"
+   },
+   {
+    "n": 133,
+    "name": "Ambroot",
+    "types": [
+     "Bio",
+     "Crystal"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     26,
+     28
+    ],
+    "method": "walk",
+    "time": "day x2"
+   },
+   {
+    "n": 135,
+    "name": "Chimeral",
+    "types": [
+     "Sonic",
+     "Crystal"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     26,
+     28
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 137,
+    "name": "Vortexus",
+    "types": [
+     "Gravity"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     26,
+     28
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 139,
+    "name": "Oraclaw",
+    "types": [
+     "Psi"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     26,
+     28
+    ],
+    "method": "walk",
+    "time": "night x2"
+   },
+   {
+    "n": 285,
+    "name": "Tarpitan",
+    "types": [
+     "Toxin",
+     "Gravity"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     26,
+     28
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 318,
+    "name": "Lacefin",
+    "types": [
+     "Hydro",
+     "Crystal"
+    ],
+    "rarity": "common",
+    "weight": 5,
+    "levels": [
+     26,
+     28
+    ],
+    "method": "walk",
+    "time": "any"
+   }
+  ],
+  "copied_from": "561"
+ },
+ "929": {
+  "planet": "Pyros",
+  "name": "Obsidian Glass Fields",
+  "habitat": "volcano",
+  "encounters": [
+   {
+    "n": 142,
+    "name": "Cinderhound",
+    "types": [
+     "Magma"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     29,
+     31
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 145,
+    "name": "Coremantle",
+    "types": [
+     "Magma",
+     "Gravity"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     29,
+     31
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 149,
+    "name": "Blazewing",
+    "types": [
+     "Magma",
+     "Swarm"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     29,
+     31
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 153,
+    "name": "Smogshade",
+    "types": [
+     "Magma",
+     "Void"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     29,
+     31
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 157,
+    "name": "Scorchwyrm",
+    "types": [
+     "Magma"
+    ],
+    "rarity": "rare",
+    "weight": 1,
+    "levels": [
+     29,
+     31
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 160,
+    "name": "Phoenixia",
+    "types": [
+     "Magma",
+     "Bio"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     29,
+     31
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 322,
+    "name": "Rumbler",
+    "types": [
+     "Gravity"
+    ],
+    "rarity": "uncommon",
+    "weight": 2,
+    "levels": [
+     29,
+     31
+    ],
+    "method": "walk",
+    "time": "any"
+   }
+  ],
+  "copied_from": "681"
+ },
+ "930": {
+  "planet": "Pyros",
+  "name": "Hot Spring Terraces",
+  "habitat": "volcano",
+  "encounters": [
+   {
+    "n": 142,
+    "name": "Cinderhound",
+    "types": [
+     "Magma"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     29,
+     31
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 145,
+    "name": "Coremantle",
+    "types": [
+     "Magma",
+     "Gravity"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     29,
+     31
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 149,
+    "name": "Blazewing",
+    "types": [
+     "Magma",
+     "Swarm"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     29,
+     31
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 153,
+    "name": "Smogshade",
+    "types": [
+     "Magma",
+     "Void"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     29,
+     31
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 157,
+    "name": "Scorchwyrm",
+    "types": [
+     "Magma"
+    ],
+    "rarity": "rare",
+    "weight": 1,
+    "levels": [
+     29,
+     31
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 160,
+    "name": "Phoenixia",
+    "types": [
+     "Magma",
+     "Bio"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     29,
+     31
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 322,
+    "name": "Rumbler",
+    "types": [
+     "Gravity"
+    ],
+    "rarity": "uncommon",
+    "weight": 2,
+    "levels": [
+     29,
+     31
+    ],
+    "method": "walk",
+    "time": "any"
+   }
+  ],
+  "copied_from": "688"
+ },
+ "931": {
+  "planet": "Glacia",
+  "name": "Frozen Waterfall",
+  "habitat": "tundra",
+  "encounters": [
+   {
+    "n": 163,
+    "name": "Glaciarch",
+    "types": [
+     "Cryo"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     33,
+     35
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 167,
+    "name": "Floelord",
+    "types": [
+     "Cryo",
+     "Hydro"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     33,
+     35
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 171,
+    "name": "Hailbringer",
+    "types": [
+     "Cryo",
+     "Gravity"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     33,
+     35
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 175,
+    "name": "Whiteout",
+    "types": [
+     "Cryo",
+     "Void"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     33,
+     35
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 176,
+    "name": "Lichling",
+    "types": [
+     "Cryo",
+     "Bio"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     31,
+     33
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 177,
+    "name": "Lichenoth",
+    "types": [
+     "Cryo",
+     "Bio"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     33,
+     35
+    ],
+    "method": "walk",
+    "time": "any"
+   }
+  ],
+  "copied_from": "526"
+ },
+ "932": {
+  "planet": "Glacia",
+  "name": "Aurora Snowfield",
+  "habitat": "aurora",
+  "encounters": [
+   {
+    "n": 164,
+    "name": "Rimeshard",
+    "types": [
+     "Cryo",
+     "Crystal"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     28,
+     30
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 168,
+    "name": "Auroralet",
+    "types": [
+     "Cryo",
+     "Psi"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     28,
+     30
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 178,
+    "name": "Shatterling",
+    "types": [
+     "Cryo",
+     "Sonic"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     28,
+     30
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 180,
+    "name": "Glaciryx",
+    "types": [
+     "Cryo",
+     "Crystal"
+    ],
+    "rarity": "common",
+    "weight": 2,
+    "levels": [
+     28,
+     30
+    ],
+    "method": "walk",
+    "time": "any",
+    "quest_tuned": "2026-10-27 side-quest QA"
+   },
+   {
+    "n": 287,
+    "name": "Cryoblaze",
+    "types": [
+     "Cryo",
+     "Plasma"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     30,
+     32
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 166,
+    "name": "Floepup",
+    "types": [
+     "Cryo",
+     "Hydro"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     28,
+     32
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
+   }
+  ],
+  "copied_from": "529"
+ },
+ "933": {
+  "planet": "Helix Station",
+  "name": "Arboretum Dome",
+  "habitat": "containment",
+  "encounters": [
+   {
+    "n": 183,
+    "name": "Stalactrix",
+    "types": [
+     "Cryo"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     36,
+     38
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 186,
+    "name": "Chimerax",
+    "types": [
+     "Alloy",
+     "Psi"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     36,
+     38
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 188,
+    "name": "Vialord",
+    "types": [
+     "Toxin",
+     "Volt"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     36,
+     38
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 190,
+    "name": "Wardenix",
+    "types": [
+     "Alloy",
+     "Gravity"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     36,
+     38
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 192,
+    "name": "Nulltron",
+    "types": [
+     "Void",
+     "Alloy"
+    ],
+    "rarity": "rare",
+    "weight": 1,
+    "levels": [
+     36,
+     38
+    ],
+    "method": "walk",
+    "time": "night x2"
+   }
+  ],
+  "copied_from": "621"
+ },
+ "934": {
+  "planet": "Helix Station",
+  "name": "Cargo Bay",
+  "habitat": "containment",
+  "encounters": [
+   {
+    "n": 185,
+    "name": "Splicor",
+    "types": [
+     "Alloy",
+     "Psi"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     34,
+     37
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 186,
+    "name": "Chimerax",
+    "types": [
+     "Alloy",
+     "Psi"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     34,
+     37
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 188,
+    "name": "Vialord",
+    "types": [
+     "Toxin",
+     "Volt"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     34,
+     37
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 190,
+    "name": "Wardenix",
+    "types": [
+     "Alloy",
+     "Gravity"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     34,
+     37
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 194,
+    "name": "Bronnix",
+    "types": [
+     "Alloy"
+    ],
+    "rarity": "rare",
+    "weight": 1,
+    "levels": [
+     32,
+     35
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 189,
+    "name": "Cagebot",
+    "types": [
+     "Alloy",
+     "Gravity"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     32,
+     37
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
+   },
+   {
+    "n": 191,
+    "name": "Nullbot",
+    "types": [
+     "Void",
+     "Alloy"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     32,
+     37
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
+   }
+  ],
+  "copied_from": "618"
+ },
+ "935": {
+  "planet": "Halo",
+  "name": "Floating Isle Gardens",
+  "habitat": "sky",
+  "encounters": [
+   {
+    "n": 195,
+    "name": "Thornvoid",
+    "types": [
+     "Gravity",
+     "Void"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     33,
+     36
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 198,
+    "name": "Cerebralux",
+    "types": [
+     "Psi"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     35,
+     38
+    ],
+    "method": "walk",
+    "time": "night x2"
+   },
+   {
+    "n": 199,
+    "name": "Humlet",
+    "types": [
+     "Psi",
+     "Sonic"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     33,
+     36
+    ],
+    "method": "walk",
+    "time": "night x2"
+   },
+   {
+    "n": 201,
+    "name": "Levitot",
+    "types": [
+     "Psi",
+     "Gravity"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     33,
+     36
+    ],
+    "method": "walk",
+    "time": "night x2"
+   },
+   {
+    "n": 203,
+    "name": "Haloette",
+    "types": [
+     "Psi",
+     "Crystal"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     33,
+     36
+    ],
+    "method": "walk",
+    "time": "night x2"
+   },
+   {
+    "n": 205,
+    "name": "Zephyrling",
+    "types": [
+     "Sonic",
+     "Gravity"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     33,
+     36
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 206,
+    "name": "Zephyrion",
+    "types": [
+     "Sonic",
+     "Gravity"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     35,
+     38
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 208,
+    "name": "Nightmarra",
+    "types": [
+     "Psi",
+     "Void"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     35,
+     38
+    ],
+    "method": "walk",
+    "time": "night x2"
+   },
+   {
+    "n": 212,
+    "name": "Reflix",
+    "types": [
+     "Psi",
+     "Crystal"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     33,
+     36
+    ],
+    "method": "walk",
+    "time": "night x2"
+   },
+   {
+    "n": 316,
+    "name": "Puffloon",
+    "types": [
+     "Psi"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     33,
+     38
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 317,
+    "name": "Stormquill",
+    "types": [
+     "Volt"
+    ],
+    "rarity": "uncommon",
+    "weight": 1,
+    "levels": [
+     33,
+     38
+    ],
+    "method": "walk",
+    "time": "any"
+   }
+  ],
+  "copied_from": "582"
+ },
+ "936": {
+  "planet": "Halo",
+  "name": "Wind Temple Steps",
+  "habitat": "sky_garden",
+  "encounters": [
+   {
+    "n": 196,
+    "name": "Mindlet",
+    "types": [
+     "Psi"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     37,
+     39
+    ],
+    "method": "walk",
+    "time": "night x2"
+   },
+   {
+    "n": 197,
+    "name": "Cerebrix",
+    "types": [
+     "Psi"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     39,
+     41
+    ],
+    "method": "walk",
+    "time": "night x2"
+   },
+   {
+    "n": 200,
+    "name": "Hummingmind",
+    "types": [
+     "Psi",
+     "Sonic"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     39,
+     41
+    ],
+    "method": "walk",
+    "time": "night x2"
+   },
+   {
+    "n": 202,
+    "name": "Levitaur",
+    "types": [
+     "Psi",
+     "Gravity"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     39,
+     41
+    ],
+    "method": "walk",
+    "time": "night x2"
+   },
+   {
+    "n": 204,
+    "name": "Halocene",
+    "types": [
+     "Psi",
+     "Crystal"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     39,
+     41
+    ],
+    "method": "walk",
+    "time": "night x2"
+   },
+   {
+    "n": 209,
+    "name": "Astrochick",
+    "types": [
+     "Psi"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     37,
+     39
+    ],
+    "method": "walk",
+    "time": "night x2"
+   },
+   {
+    "n": 210,
+    "name": "Astrowl",
+    "types": [
+     "Psi"
+    ],
+    "rarity": "rare",
+    "weight": 1,
+    "levels": [
+     39,
+     41
+    ],
+    "method": "walk",
+    "time": "night x2"
+   },
+   {
+    "n": 211,
+    "name": "Mirrix",
+    "types": [
+     "Psi",
+     "Crystal"
+    ],
+    "rarity": "rare",
+    "weight": 4,
+    "levels": [
+     37,
+     39
+    ],
+    "method": "walk",
+    "time": "night x2",
+    "quest_tuned": "2026-10-27 side-quest QA"
+   },
+   {
+    "n": 213,
+    "name": "Bardlet",
+    "types": [
+     "Psi",
+     "Sonic"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     37,
+     39
+    ],
+    "method": "walk",
+    "time": "night x2"
+   },
+   {
+    "n": 316,
+    "name": "Puffloon",
+    "types": [
+     "Psi"
+    ],
+    "rarity": "common",
+    "weight": 6,
+    "levels": [
+     37,
+     41
+    ],
+    "method": "walk",
+    "time": "any"
+   }
+  ],
+  "copied_from": "588"
+ },
+ "937": {
+  "planet": "Umbra",
+  "name": "Lantern Festival Street",
+  "habitat": "dark_city",
+  "encounters": [
+   {
+    "n": 218,
+    "name": "Wellspawn",
+    "types": [
+     "Void",
+     "Gravity"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     38,
+     40
+    ],
+    "method": "walk",
+    "time": "night x2"
+   },
+   {
+    "n": 221,
+    "name": "Ruinmech",
+    "types": [
+     "Gravity",
+     "Alloy"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     40,
+     42
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 224,
+    "name": "Wailshade",
+    "types": [
+     "Void",
+     "Sonic"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     38,
+     40
+    ],
+    "method": "walk",
+    "time": "night x2"
+   },
+   {
+    "n": 229,
+    "name": "Gravebloom",
+    "types": [
+     "Void",
+     "Bio"
+    ],
+    "rarity": "rare",
+    "weight": 1,
+    "levels": [
+     40,
+     42
+    ],
+    "method": "walk",
+    "time": "night x2"
+   },
+   {
+    "n": 222,
+    "name": "Duskmite",
+    "types": [
+     "Void",
+     "Swarm"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     38,
+     42
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
+   },
+   {
+    "n": 321,
+    "name": "Hexcoil",
+    "types": [
+     "Toxin",
+     "Void"
+    ],
+    "rarity": "common",
+    "weight": 5,
+    "levels": [
+     38,
+     42
+    ],
+    "method": "walk",
+    "time": "any"
+   }
+  ],
+  "copied_from": "827"
+ },
+ "938": {
+  "planet": "Umbra",
+  "name": "Moonlit Garden",
+  "habitat": "dark_city",
+  "encounters": [
+   {
+    "n": 215,
+    "name": "Sulklet",
+    "types": [
+     "Void"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     37,
+     39
+    ],
+    "method": "walk",
+    "time": "night x2"
+   },
+   {
+    "n": 220,
+    "name": "Ruinbot",
+    "types": [
+     "Gravity",
+     "Alloy"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     37,
+     39
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 221,
+    "name": "Ruinmech",
+    "types": [
+     "Gravity",
+     "Alloy"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     39,
+     41
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 228,
+    "name": "Rotroot",
+    "types": [
+     "Void",
+     "Bio"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     37,
+     39
+    ],
+    "method": "walk",
+    "time": "night x2"
+   },
+   {
+    "n": 222,
+    "name": "Duskmite",
+    "types": [
+     "Void",
+     "Swarm"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     37,
+     41
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
+   },
+   {
+    "n": 321,
+    "name": "Hexcoil",
+    "types": [
+     "Toxin",
+     "Void"
+    ],
+    "rarity": "common",
+    "weight": 5,
+    "levels": [
+     37,
+     41
+    ],
+    "method": "walk",
+    "time": "any"
+   }
+  ],
+  "copied_from": "821"
+ },
+ "939": {
+  "planet": "Starfall Rift",
+  "name": "Meteor Fields",
+  "habitat": "seedpod_field",
+  "encounters": [
+   {
+    "n": 231,
+    "name": "Novaling",
+    "types": [
+     "Plasma"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     42,
+     44
+    ],
+    "method": "walk",
+    "time": "day x2"
+   },
+   {
+    "n": 234,
+    "name": "Quasarling",
+    "types": [
+     "Plasma",
+     "Gravity"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     42,
+     44
+    ],
+    "method": "walk",
+    "time": "day x2"
+   },
+   {
+    "n": 240,
+    "name": "Cometlet",
+    "types": [
+     "Gravity",
+     "Plasma"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     42,
+     44
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 242,
+    "name": "Meteorb",
+    "types": [
+     "Crystal",
+     "Gravity"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     42,
+     44
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 246,
+    "name": "Starsprout",
+    "types": [
+     "Bio",
+     "Plasma"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     42,
+     44
+    ],
+    "method": "walk",
+    "time": "day x2"
+   },
+   {
+    "n": 247,
+    "name": "Starbloom",
+    "types": [
+     "Bio",
+     "Plasma"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     44,
+     46
+    ],
+    "method": "walk",
+    "time": "day x2"
+   },
+   {
+    "n": 250,
+    "name": "Podsentinel",
+    "types": [
+     "Bio"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     44,
+     46
+    ],
+    "method": "walk",
+    "time": "day x2"
+   }
+  ],
+  "copied_from": "755"
+ },
+ "940": {
+  "planet": "Starfall Rift",
+  "name": "Seedpod Nursery",
+  "habitat": "seedpod_field",
+  "encounters": [
+   {
+    "n": 231,
+    "name": "Novaling",
+    "types": [
+     "Plasma"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     42,
+     44
+    ],
+    "method": "walk",
+    "time": "day x2"
+   },
+   {
+    "n": 234,
+    "name": "Quasarling",
+    "types": [
+     "Plasma",
+     "Gravity"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     42,
+     44
+    ],
+    "method": "walk",
+    "time": "day x2"
+   },
+   {
+    "n": 240,
+    "name": "Cometlet",
+    "types": [
+     "Gravity",
+     "Plasma"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     42,
+     44
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 242,
+    "name": "Meteorb",
+    "types": [
+     "Crystal",
+     "Gravity"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     42,
+     44
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 246,
+    "name": "Starsprout",
+    "types": [
+     "Bio",
+     "Plasma"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     42,
+     44
+    ],
+    "method": "walk",
+    "time": "day x2"
+   },
+   {
+    "n": 247,
+    "name": "Starbloom",
+    "types": [
+     "Bio",
+     "Plasma"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     44,
+     46
+    ],
+    "method": "walk",
+    "time": "day x2"
+   },
+   {
+    "n": 250,
+    "name": "Podsentinel",
+    "types": [
+     "Bio"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     44,
+     46
+    ],
+    "method": "walk",
+    "time": "day x2"
+   }
+  ],
+  "copied_from": "939"
+ },
+ "941": {
+  "planet": "Apex Array",
+  "name": "Telescope Ridge",
+  "habitat": "summit",
+  "encounters": [
+   {
+    "n": 252,
+    "name": "Foldarch",
+    "types": [
+     "Gravity",
+     "Void"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     48,
+     54
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 253,
+    "name": "Gemmling",
+    "types": [
+     "Crystal"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     46,
+     52
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 254,
+    "name": "Gemmantle",
+    "types": [
+     "Crystal"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     48,
+     54
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 255,
+    "name": "Riffling",
+    "types": [
+     "Sonic"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     46,
+     52
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 256,
+    "name": "Riffrex",
+    "types": [
+     "Sonic"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     48,
+     54
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 257,
+    "name": "Cragpull",
+    "types": [
+     "Gravity"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     46,
+     52
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 258,
+    "name": "Cragmajor",
+    "types": [
+     "Gravity"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     48,
+     54
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 259,
+    "name": "Flarechick",
+    "types": [
+     "Plasma"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     46,
+     52
+    ],
+    "method": "walk",
+    "time": "day x2"
+   },
+   {
+    "n": 260,
+    "name": "Flarehawk",
+    "types": [
+     "Plasma"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     48,
+     54
+    ],
+    "method": "walk",
+    "time": "day x2"
+   },
+   {
+    "n": 261,
+    "name": "Diamite",
+    "types": [
+     "Alloy",
+     "Crystal"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     46,
+     52
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 262,
+    "name": "Diamondillo",
+    "types": [
+     "Alloy",
+     "Crystal"
+    ],
+    "rarity": "rare",
+    "weight": 1,
+    "levels": [
+     48,
+     54
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 263,
+    "name": "Facetrix",
+    "types": [
+     "Crystal"
+    ],
+    "rarity": "rare",
+    "weight": 1,
+    "levels": [
+     46,
+     52
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 264,
+    "name": "Encorex",
+    "types": [
+     "Sonic"
+    ],
+    "rarity": "rare",
+    "weight": 1,
+    "levels": [
+     46,
+     52
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 265,
+    "name": "Pyrelyth",
+    "types": [
+     "Plasma"
+    ],
+    "rarity": "rare",
+    "weight": 1,
+    "levels": [
+     46,
+     52
+    ],
+    "method": "walk",
+    "time": "day x2"
+   },
+   {
+    "n": 266,
+    "name": "Citadrake",
+    "types": [
+     "Gravity"
+    ],
+    "rarity": "rare",
+    "weight": 1,
+    "levels": [
+     46,
+     52
+    ],
+    "method": "walk",
+    "time": "any"
+   }
+  ],
+  "copied_from": "415"
+ },
+ "942": {
+  "planet": "Apex Array",
+  "name": "Hall of Champions Plaza",
+  "habitat": "summit",
+  "encounters": [
+   {
+    "n": 252,
+    "name": "Foldarch",
+    "types": [
+     "Gravity",
+     "Void"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     48,
+     54
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 253,
+    "name": "Gemmling",
+    "types": [
+     "Crystal"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     46,
+     52
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 254,
+    "name": "Gemmantle",
+    "types": [
+     "Crystal"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     48,
+     54
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 255,
+    "name": "Riffling",
+    "types": [
+     "Sonic"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     46,
+     52
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 256,
+    "name": "Riffrex",
+    "types": [
+     "Sonic"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     48,
+     54
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 257,
+    "name": "Cragpull",
+    "types": [
+     "Gravity"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     46,
+     52
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 258,
+    "name": "Cragmajor",
+    "types": [
+     "Gravity"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     48,
+     54
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 259,
+    "name": "Flarechick",
+    "types": [
+     "Plasma"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     46,
+     52
+    ],
+    "method": "walk",
+    "time": "day x2"
+   },
+   {
+    "n": 260,
+    "name": "Flarehawk",
+    "types": [
+     "Plasma"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     48,
+     54
+    ],
+    "method": "walk",
+    "time": "day x2"
+   },
+   {
+    "n": 261,
+    "name": "Diamite",
+    "types": [
+     "Alloy",
+     "Crystal"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     46,
+     52
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 262,
+    "name": "Diamondillo",
+    "types": [
+     "Alloy",
+     "Crystal"
+    ],
+    "rarity": "rare",
+    "weight": 1,
+    "levels": [
+     48,
+     54
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 263,
+    "name": "Facetrix",
+    "types": [
+     "Crystal"
+    ],
+    "rarity": "rare",
+    "weight": 1,
+    "levels": [
+     46,
+     52
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 264,
+    "name": "Encorex",
+    "types": [
+     "Sonic"
+    ],
+    "rarity": "rare",
+    "weight": 1,
+    "levels": [
+     46,
+     52
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 265,
+    "name": "Pyrelyth",
+    "types": [
+     "Plasma"
+    ],
+    "rarity": "rare",
+    "weight": 1,
+    "levels": [
+     46,
+     52
+    ],
+    "method": "walk",
+    "time": "day x2"
+   },
+   {
+    "n": 266,
+    "name": "Citadrake",
+    "types": [
+     "Gravity"
+    ],
+    "rarity": "rare",
+    "weight": 1,
+    "levels": [
+     46,
+     52
+    ],
+    "method": "walk",
+    "time": "any"
+   }
+  ],
+  "copied_from": "422"
+ },
+ "943": {
+  "planet": "Ystra",
+  "name": "Floating Fragment Gardens",
+  "habitat": "floating_land",
+  "encounters": [
+   {
+    "n": 270,
+    "name": "Riftling",
+    "types": [
+     "Gravity",
+     "Psi"
+    ],
+    "rarity": "uncommon",
+    "weight": 5,
+    "levels": [
+     55,
+     57
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 272,
+    "name": "Blightling",
+    "types": [
+     "Bio",
+     "Void"
+    ],
+    "rarity": "rare",
+    "weight": 1,
+    "levels": [
+     55,
+     57
+    ],
+    "method": "walk",
+    "time": "day x2",
+    "note": "spillover"
+   },
+   {
+    "n": 271,
+    "name": "Riftwalker",
+    "types": [
+     "Gravity",
+     "Psi"
+    ],
+    "rarity": "rare",
+    "weight": 1,
+    "levels": [
+     57,
+     59
+    ],
+    "method": "walk",
+    "time": "any",
+    "note": "spillover"
+   },
+   {
+    "n": 273,
+    "name": "Blightroot",
+    "types": [
+     "Bio",
+     "Void"
+    ],
+    "rarity": "rare",
+    "weight": 1,
+    "levels": [
+     57,
+     59
+    ],
+    "method": "walk",
+    "time": "day x2",
+    "note": "spillover"
+   },
+   {
+    "n": 257,
+    "name": "Cragpull",
+    "types": [
+     "Gravity"
+    ],
+    "rarity": "rare",
+    "weight": 2,
+    "levels": [
+     55,
+     59
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
+   }
+  ],
+  "copied_from": "849"
+ },
+ "944": {
+  "planet": "Ystra",
+  "name": "Memory Crystal Grove",
+  "habitat": "floating_land",
+  "encounters": [
+   {
+    "n": 271,
+    "name": "Riftwalker",
+    "types": [
+     "Gravity",
+     "Psi"
+    ],
+    "rarity": "common",
+    "weight": 10,
+    "levels": [
+     58,
+     60
+    ],
+    "method": "walk",
+    "time": "any"
+   },
+   {
+    "n": 270,
+    "name": "Riftling",
+    "types": [
+     "Gravity",
+     "Psi"
+    ],
+    "rarity": "rare",
+    "weight": 1,
+    "levels": [
+     56,
+     58
+    ],
+    "method": "walk",
+    "time": "any",
+    "note": "spillover"
+   },
+   {
+    "n": 272,
+    "name": "Blightling",
+    "types": [
+     "Bio",
+     "Void"
+    ],
+    "rarity": "rare",
+    "weight": 1,
+    "levels": [
+     56,
+     58
+    ],
+    "method": "walk",
+    "time": "day x2",
+    "note": "spillover"
+   },
+   {
+    "n": 273,
+    "name": "Blightroot",
+    "types": [
+     "Bio",
+     "Void"
+    ],
+    "rarity": "rare",
+    "weight": 1,
+    "levels": [
+     58,
+     60
+    ],
+    "method": "walk",
+    "time": "day x2",
+    "note": "spillover"
+   },
+   {
+    "n": 257,
+    "name": "Cragpull",
+    "types": [
+     "Gravity"
+    ],
+    "rarity": "rare",
+    "weight": 2,
+    "levels": [
+     56,
+     60
+    ],
+    "method": "walk",
+    "time": "any",
+    "fill": true
+   }
+  ],
+  "copied_from": "858"
  }
 }

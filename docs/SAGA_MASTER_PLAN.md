@@ -53,7 +53,7 @@ The crater pulse is the seal straining. Helix experiments have been cracking the
 
 | Fact | Canon | Where it's set |
 | --- | --- | --- |
-| Teo has been missing | Six years (Sola was seven) | Book 1, Ch 1. The game bible says three years; update the game to six. |
+| Teo has been missing | Six years (Sola was ten; she is 16 now) | Book 1, Ch 1. The game says "I was ten". |
 | Plazmo's line | Plazmo → Plazmet → Solarach | Plazmet in Book 1, Ch 14; Solarach in Book 3 |
 | Gloopa's line | Gloopa → Tidaloid → Abyssor | Tidaloid in Book 1, Ch 12; Abyssor in Book 2 |
 | Sporix's line | Sporix → Mycelith → Fungaroth | Mycelith in Book 1, Ch 17; Fungaroth in Book 2 |
