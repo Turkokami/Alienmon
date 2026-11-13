@@ -1,0 +1,14 @@
+<title>Sporeholm 3D</title>
+<style>html,body{color-scheme:dark;margin:0;height:100%;overflow:hidden;background:#0a0620;font-family:system-ui,Segoe UI,sans-serif;color:#eafff4}
+#load{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;font-size:22px;letter-spacing:.5px;background:#0a0620;z-index:5}
+#help{display:none;position:fixed;left:14px;top:12px;font-size:13px;line-height:1.5;background:rgba(10,20,30,.55);padding:8px 12px;border-radius:10px}
+#fps{position:fixed;right:14px;top:12px;font-size:12px;opacity:.7}
+#hint{display:none;position:fixed;left:50%;bottom:150px;transform:translateX(-50%);background:rgba(10,20,30,.7);padding:6px 14px;border-radius:16px;font-size:14px;border:1px solid #3fe0d0}
+#dlg{display:none;position:fixed;left:50%;bottom:26px;transform:translateX(-50%);width:min(760px,92vw);background:rgba(12,24,34,.88);border:2px solid #c8f06a;border-radius:14px;padding:12px 18px}
+#who{color:#c8f06a;font-weight:700;margin-bottom:4px}#txt{font-size:17px;line-height:1.4}</style>
+<div id="load">Loading Sporeholm…</div>
+<div id="help"><b>Sporeholm — Mirefen Village</b><br>Click the game to steer the camera with the mouse (Esc frees it)<br>W A S D / arrows: move · Shift: run · Space: jump · E: talk · wheel: zoom · O: outlines on/off<br>Doors are open: walk into any home or shop · E at caves, towers, arches, vault doors and stairs to go inside or upstairs · Tall grass hides wild Alienmon: E to catch · G: graphics High/Medium/Low · B: benchmark</div>
+<div id="fps"></div><div id="hint"></div><div id="dlg"><div id="who"></div><div id="txt"></div></div>
+
+<script src="assets.js?v=edb37999"></script><script src="world.js?v=edb37999"></script><script src="game.js?v=edb37999"></script>
+<script>setTimeout(function(){startGame().catch(function(e){document.getElementById('load').textContent='Could not start: '+e.message;console.error(e)})},50)</script>
