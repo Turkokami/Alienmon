@@ -1,0 +1,58 @@
+ID,Character,Category,Reference files
+001,Rook,Dustmere story cast,001_rook.png
+002,Sola Reyes,Dustmere story cast,002_sola-reyes.png
+003,Rook's Mom,Dustmere story cast,003_mom.png
+004,Dr Imogen Vashti,Dustmere story cast,004_dr-imogen-vashti.png
+005,DX-4,Dustmere story cast,005_dx-4.png
+006,Nana Wren,Dustmere story cast,006_nana-wren.png
+007,Old Dusty,Dustmere story cast,007_old-dusty.png
+008,Teo Reyes,Dustmere story cast,008_teo-reyes.png
+009,Mr Abernathy,Official Dustara townsfolk,local-abernathy-160.webp
+010,Bram,Official Dustara townsfolk,local-bram-160.webp
+011,Rock girl,Official Dustara townsfolk,local-rockgirl-160.webp
+012,Referee,Official Dustara townsfolk,local-referee-160.webp
+013,Snack trader,Official Dustara townsfolk,local-snacktrader-160.webp
+014,Sheepish kid,Official Dustara townsfolk,local-sheepkid-160.webp
+015,Canyon Courier,Official Dustara townsfolk,dustara-canyon-courier-front.webp
+016,Crater Stargazer,Official Dustara townsfolk,dustara-crater-stargazer-front.webp
+017,Dune Farmer,Official Dustara townsfolk,dustara-dune-farmer-front.webp
+018,Spice Vendor,Official Dustara townsfolk,dustara-spice-vendor-front.webp
+019,Sand Ranger,Official Dustara townsfolk,dustara-sand-ranger-front.webp
+020,Seedpod Hunter,Official Dustara townsfolk,dustara-seedpod-hunter-front.webp
+021,Mesa Mechanic,Official Dustara townsfolk,dustara-mesa-mechanic-front.webp
+022,Desert Elder,Official Dustara townsfolk,dustara-desert-elder-front.webp
+023,Cactus nectar vendor,Expansion NPC,023_cactus_nectar_vendor.png
+024,Sand-sail mechanic,Expansion NPC,024_sand_sail_mechanic.png
+025,Salt-flat runner,Expansion NPC,025_salt_flat_runner.png
+026,Dune herder,Expansion NPC,026_dune_herder.png
+027,Water-token clerk,Expansion NPC,027_water_token_clerk.png
+028,Obsidian bead cutter,Expansion NPC,028_obsidian_bead_cutter.png
+029,Sunshade weaver,Expansion NPC,029_sunshade_weaver.png
+030,Clay cistern mason,Expansion NPC,030_clay_cistern_mason.png
+031,Caravan negotiator,Expansion NPC,031_caravan_negotiator.png
+032,Dust-bell ringer,Expansion NPC,032_dust_bell_ringer.png
+033,Oasis orchard tender,Expansion NPC,033_oasis_orchard_tender.png
+034,Mirage surveyor,Expansion NPC,034_mirage_surveyor.png
+035,Solar oven cook,Expansion NPC,035_solar_oven_cook.png
+036,Camel-bug groomer,Expansion NPC,036_camel_bug_groomer.png
+037,Desert kite child,Expansion NPC,037_desert_kite_child.png
+038,Fossil brush apprentice,Expansion NPC,038_fossil_brush_apprentice.png
+039,Brass cooling-fan maker,Expansion NPC,039_brass_cooling_fan_maker.png
+040,Dried-flower perfumer,Expansion NPC,040_dried_flower_perfumer.png
+041,Sand-glass storyteller,Expansion NPC,041_sand_glass_storyteller.png
+042,Copper washbasin maker,Expansion NPC,042_copper_washbasin_maker.png
+043,Dune flute pupil,Expansion NPC,043_dune_flute_pupil.png
+044,Windmill tender,Expansion NPC,044_windmill_tender.png
+045,Terracotta tile painter,Expansion NPC,045_terracotta_tile_painter.png
+046,Salt bread cart pusher,Expansion NPC,046_salt_bread_cart_pusher.png
+047,Steam-coast navigator,Expansion NPC,047_steam_coast_navigator.png
+048,Basalt storm sentinel,Expansion NPC,048_basalt_storm_sentinel.png
+049,Sun-disc procession leader,Expansion NPC,049_sun_disc_procession_leader.png
+050,Deep-well diver,Expansion NPC,050_deep_well_diver.png
+051,Glass-dune pathfinder,Expansion NPC,051_glass_dune_pathfinder.png
+052,Heat-shield caravan escort,Expansion NPC,052_heat_shield_caravan_escort.png
+053,Dune seed custodian,Expansion NPC,053_dune_seed_custodian.png
+054,Saltstorm shelter builder,Expansion NPC,054_saltstorm_shelter_builder.png
+055,Scorpion-shell packer,Expansion NPC,055_scorpion_shell_packer.png
+056,Ashwind pilgrim,Expansion NPC,056_ashwind_pilgrim.png
+057,Sunwell rescue climber,Expansion NPC,057_sunwell_rescue_climber.png
