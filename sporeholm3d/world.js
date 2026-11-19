@@ -14392,7 +14392,7 @@ const nnHasW = (X, Y) => { for (let y = Y; y < Y + 30; y++) for (let x = X; x < 
 const tGround = (o) => { const X = o.gx, Y = o.gy; fillT(X, Y, X + 29, Y + 29, "x"); if (o.ground) o.ground(X, Y); tLinks(o.id); if (o.after) o.after(X, Y); nnWalks(X, Y); for (const b of o.bld || []) fillT(X + b[1], Y + b[2], X + b[1] + b[3] - 1, Y + b[2] + b[4] - 1, "b"); };
 let TCUR = null; const tBuild = (o) => { const X = o.gx, Y = o.gy; TCUR = o; if (nnHasW(X, Y)) thWater(X, Y); tDecks(X, Y); if (!o.wild) tQuays(X, Y, "sbpP.,gx");
   for (const b of o.bld || []) { if (b[0] === "-") continue; xShack3(b[0], X + b[1], Y + b[2], b[3], b[4], { name: b[5] }); nnSign(b[0], X + b[1], Y + b[2], b[3], b[4]); }
-  if (o.build) o.build(X, Y); nnBlocks(X, Y, o); nnDress(X, Y, o); nnDetail(X, Y, o); };
+  if (o.build) o.build(X, Y); nnBlocks(X, Y, o); nnDress(X, Y, o); if (!o.wild) nnDetail(X, Y, o); };
 // a traffic signal: a pole, an arm over the road and a three-light head
 const nnSignal = (x, z, ry = 0) => { const G = grp(x, 0, z, ry); add(new THREE.CylinderGeometry(0.08, 0.1, 4.4, 8), nnM.dark(), [0, 2.2, 0], [0, 0, 0], null, G); add(new THREE.BoxGeometry(0.1, 0.1, 2.6), nnM.dark(), [0, 4.3, 1.3], [0, 0, 0], "nocol", G); add(new THREE.BoxGeometry(0.4, 1.0, 0.3), nnM.dark(), [0, 3.75, 2.5], [0, 0, 0], "nocol", G);
   for (const [y, c] of [[4.05, "#ff3a5a"], [3.75, "#ffe23a"], [3.45, "#2aff9a"]]) add(new THREE.CircleGeometry(0.11, 12), nnM.neon(c), [0, y, 2.66], [0, 0, 0], "nocol", G); return G; };
@@ -14605,7 +14605,7 @@ const nnWild = (X, Y, o = {}) => { const tree = o.pine ?? 0.4, dens = o.dens ?? 
     else if (c === "," && ((x * 7 + y * 13) % 17 === 0)) { let side = null; for (const [dx, dy] of [[1, 0], [-1, 0], [0, 1], [0, -1]]) if ("g.".includes(at(x + dx, y + dy))) side = [dx, dy]; if (side) nnBollard({ x: x + 0.5 + side[0] * 0.45, z: y + 0.5 + side[1] * 0.45 }); } } };
 
 // ================= MOUNT LUMEN (four cells, x 10..69, z -30..29): a peak right beside the city with a trail that winds to a lookout =================
-const MTC = [40, -2], MTH = 18, MTR = (() => { const P = [], t0 = Math.atan2(17, 24), turns = 1.6; for (let i = 0; i <= 400; i++) { const t = i / 400, th = t0 - t * turns * TAU, r = 29.5 - 25 * t; P.push([MTC[0] + Math.cos(th) * r, MTC[1] + Math.sin(th) * r]); } return P; })();
+const MTC = [40, -2], MTH = 26, MTR = (() => { const P = [], t0 = Math.atan2(17, 24), turns = 1.6; for (let i = 0; i <= 400; i++) { const t = i / 400, th = t0 - t * turns * TAU, r = 29.5 - 25 * t; P.push([MTC[0] + Math.cos(th) * r, MTC[1] + Math.sin(th) * r]); } return P; })();
 const mtBase = (r) => { const t = Math.min(1, Math.max(0, (31 - r) / 26)); return MTH * t * t * (3 - 2 * t); };
 // nearest point on the trail: distance and how far along it is (0 at the trailhead, 1 at the summit)
 const mtNear = (x, z) => { let d = 1e9, best = 0; for (let i = 0; i + 1 < MTR.length; i++) { const dd = segD(x, z, MTR[i][0], MTR[i][1], MTR[i + 1][0], MTR[i + 1][1]); if (dd < d) { d = dd; best = i / (MTR.length - 1); } } return [d, best]; };
