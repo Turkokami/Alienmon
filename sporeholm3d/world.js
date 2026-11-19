@@ -14435,7 +14435,7 @@ const nnXRelief = (k, x, z, gy, w, d, h) => { const q = nnXR((Math.floor(x * 73.
   if (k === 3 && h > 8 && q() < 0.6) { const s = q() < 0.5 ? -1 : 1; nnCy("deco", null, x + s * (w / 2 - 0.5), gy + 3.4, z1 + 0.16, 0.09, h - 4, "#4a4856"); for (let y = gy + 4; y < top - 1; y += 2.4) nnBx("deco", null, x + s * (w / 2 - 0.5), y, z1 + 0.08, 0.26, 0.06, 0.2, "#2a2834"); } };
 // ---- real painted surfaces: CC0 photo textures (Poly Haven, via the studio texture library) mapped in world space, with normal-map relief
 // and roughness that varies across every surface. Each texture starts as a flat 4 px stand-in and swaps to the real picture once it loads. ----
-const NNTXV = "r3a", NNTX = {};
+const NNTXV = "r4a", NNTX = {};
 const nnTex = (name, srgb, fill) => NNTX[name] || (NNTX[name] = (() => { const c = nnXCv(4, 4), C = c.getContext("2d"); C.fillStyle = fill; C.fillRect(0, 0, 4, 4);
   const t = new THREE.CanvasTexture(c); t.wrapS = t.wrapT = THREE.RepeatWrapping; t.anisotropy = 8; if (srgb) t.colorSpace = THREE.SRGBColorSpace;
   const hk = typeof globalThis !== "undefined" && globalThis.NNTEXLOAD; if (hk) { const im = hk(name); if (im) { t.image = im; t.needsUpdate = true; return t; } }
@@ -14688,18 +14688,183 @@ const nnXPlanter = (O, c, leaf) => { const q = nnXR(Math.floor(O.x * 53) * 101 +
   nnXB("lit", O, 0, 0.5, 0, 1.14, 0.05, 1.14, NNXCAP); nnXB("glow", O, 0, 0.47, 0, 1.16, 0.025, 1.16, c); nnXB("lit", O, 0, 0.5, 0, 0.98, 0.03, 0.98, "#2a2030");
   { const pc = [leaf, nnXHex(leaf, 0.07), nnXHex(leaf, -0.08), nnXHex(leaf, -0.15)], cen = [0, 0.8, 0]; for (let k = 0; k < 6; k++) { const a = (k / 6) * TAU + q() * 0.5, r = 0.1 + q() * 0.22, ht = 0.25 + q() * 0.35; nnXBeam("deco", O, [Math.cos(a) * r * 0.3, 0.52, Math.sin(a) * r * 0.3], [Math.cos(a) * r, 0.52 + ht, Math.sin(a) * r], 0.015, "#3a3048", "limb"); nnXClump(O, q, Math.cos(a) * r, 0.55 + ht, Math.sin(a) * r, 0.2, pc, cen, 0.55, 3); } nnXClump(O, q, 0, 0.75, 0, 0.26, pc, cen, 0.55, 5); }
   for (let k = 0; k < 5; k++) { const a = q() * TAU, r = 0.25 + q() * 0.2; nnXP("glow", O, "sph", Math.cos(a) * r, 0.8 + q() * 0.4, Math.sin(a) * r, 0.09, 0.09, 0.09, NC[Math.floor(q() * 4)]); } nnXTufts(O, q, 4, 0.36, 0.46, 0.5); nnXTufts(O, q, 3, 0.6, 0.72, 0); };
-const nnXBench = (O, c) => { for (let k = 0; k < 4; k++) nnXB("lit", O, 0, 0.42, -0.18 + k * 0.125, 1.8, 0.05, 0.1, k % 2 ? "#b0acc8" : "#a4a0bc");
-  for (let k = 0; k < 3; k++) nnXP("lit", O, "box", 0, 0.62 + k * 0.15, -0.27 - k * 0.022, 1.8, 0.1, 0.04, "#a4a0bc", -0.15);
-  for (const s of [-0.78, 0, 0.78]) { nnXB("lit", O, s, 0.37, 0, 0.06, 0.05, 0.5, NNXDARK); nnXP("lit", O, "box", s, 0.68, -0.29, 0.06, 0.62, 0.05, NNXDARK, -0.15); }
-  for (const s of [-0.86, 0.86]) { nnXB("lit", O, s, 0, -0.18, 0.08, 0.42, 0.08, NNXDARK); nnXB("lit", O, s, 0, 0.18, 0.08, 0.42, 0.08, NNXDARK); nnXB("lit", O, s, 0.62, 0.0, 0.08, 0.05, 0.56, NNXDARK); nnXB("lit", O, s, 0.42, 0.24, 0.08, 0.22, 0.06, NNXDARK); nnXB("lit", O, s, 0.0, 0, 0.12, 0.04, 0.58, "#2a2838"); }
-  nnXB("glow", O, 0, 0.35, 0.22, 1.6, 0.025, 0.03, c); nnXB("glow", O, 0, 0.35, -0.22, 1.6, 0.025, 0.03, c); };
-const nnXLamp = (O, c) => { nnXB("lit", O, 0, 0, 0, 0.42, 0.32, 0.42, "#26243a"); nnXB("lit", O, 0, 0.32, 0, 0.46, 0.05, 0.46, NNXSTEEL); for (const [a, b] of [[-0.15, -0.15], [0.15, -0.15], [-0.15, 0.15], [0.15, 0.15]]) nnXC("lit", O, a, 0.37, b, 0.035, 0.04, NNXSTEEL, "cyl6");
-  nnXB("lit", O, 0, 0.08, 0.215, 0.18, 0.16, 0.01, "#3a3852"); nnXC("lit", O, 0, 0.37, 0, 0.13, 0.3, "#2a283a", "cyl12"); for (const y of [0.7, 1.45, 2.9]) nnXC("lit", O, 0, y, 0, 0.11, 0.06, NNXSTEEL, "cyl12");
-  nnXC("glow", O, 0, 0.66, 0, 0.105, 0.5, c, "cyl12"); nnXC("lit", O, 0, 3.32, 0, 0.12, 0.08, NNXSTEEL, "cyl12");
-  nnXBeam("lit", O, [0, 2.5, 0.05], [0, 3.05, 0.55], 0.025, NNXDARK); nnXBeam("lit", O, [0, 3.05, 0.55], [0, 3.32, 0.75], 0.025, NNXDARK);
-  nnXB("lit", O, 0, 3.32, 0.6, 0.34, 0.08, 1.08, "#26243a"); nnXP("lit", O, "pyr", 0, 3.46, 1.02, 0.5, 0.18, 0.5, "#26243a", 0, Math.PI / 4); nnXB("glow", O, 0, 3.24, 1.02, 0.3, 0.06, 0.3, "#fff4dc"); nnXB("glow", O, 0, 3.26, 0.6, 0.18, 0.03, 0.8, c);
-  for (const s of [-1, 1]) nnXB("glow", O, s * 0.012, 1.7, 0.16, 0.012, 0.9, 0.012, c);
-  nnXB("lit", O, 0.03, 1.75, 0.1, 0.03, 0.04, 0.5, NNXDARK); nnXB("lit", O, 0.03, 1.75, 0.34, 0.02, 0.85, 0.42, c === NC[1] ? "#2a6a9a" : "#8a2a7a"); nnXB("glow", O, 0.045, 2.15, 0.34, 0.01, 0.12, 0.3, "#ffffff"); nnXB("glow", O, 0.045, 1.95, 0.34, 0.01, 0.06, 0.24, c); if (!O.abs) nnXTufts(O, nnXR(Math.floor(O.x * 37) * 97 + Math.floor(O.z * 61)), 2, 0.28, 0.4, 0); };
+// ---- pass 4: street furniture in real materials. Wood benches and tables with grain, canvas umbrellas, cast-iron lamps with glass lanterns,
+// festoon bulbs on real cable, and speakers built like real PA cabinets. A night-city reflection map lets painted and polished metal show its shape. ----
+const NNENV = {};
+const nnEnv = () => NNENV.t || (NNENV.t = (() => { const S = 64, q = nnXR(911), faces = [];
+  for (let f = 0; f < 6; f++) { const c = nnXCv(S, S), C = c.getContext("2d");
+    if (f === 2) { C.fillStyle = "#44347a"; C.fillRect(0, 0, S, S); const g = C.createRadialGradient(S / 2, S / 2, 2, S / 2, S / 2, S * 0.7); g.addColorStop(0, "#8a7ab8"); g.addColorStop(1, "#44347a"); C.fillStyle = g; C.fillRect(0, 0, S, S); }
+    else if (f === 3) { C.fillStyle = "#4e4458"; C.fillRect(0, 0, S, S); for (let k = 0; k < 14; k++) { C.globalAlpha = 0.45; C.fillStyle = ["#6a2a7a", "#2a6a7a", "#6a5a3a"][k % 3]; C.fillRect(q() * S, q() * S, 4 + q() * 12, 2 + q() * 5); } C.globalAlpha = 1; }
+    else { const g = C.createLinearGradient(0, 0, 0, S); g.addColorStop(0, "#3a2c62"); g.addColorStop(0.4, "#6a4a92"); g.addColorStop(0.52, "#b07ab8"); g.addColorStop(0.6, "#6a5a7c"); g.addColorStop(1, "#4a4058"); C.fillStyle = g; C.fillRect(0, 0, S, S);
+      for (let k = 0; k < 46; k++) { C.globalAlpha = 0.45 + q() * 0.55; C.fillStyle = ["#ffd58a", "#bfe8ff", "#ffb0e8"][k % 3]; C.fillRect(q() * S, S * 0.3 + q() * S * 0.26, 1.5, 2); }
+      for (let k = 0; k < 4; k++) { C.globalAlpha = 1; C.fillStyle = ["#ff4ad8", "#3af0ff", "#ffc860", "#b07aff"][(k + f) % 4]; C.fillRect(q() * (S - 16), S * 0.28 + q() * S * 0.2, 8 + q() * 8, 2 + q() * 3); }
+      C.globalAlpha = 1; }
+    faces.push(c); }
+  const t = new THREE.CubeTexture(faces); t.colorSpace = THREE.SRGBColorSpace; t.needsUpdate = true; return t; })());
+const nnEnvd = (m, i) => { m.envMap = nnEnv(); m.envMapIntensity = i; return m; };
+const nnTexR = (name, srgb, fill, rx, ry) => { const t = nnTex(name, srgb, fill).clone(); t.repeat.set(rx, ry); t.needsUpdate = true; return t; };
+
+// batch materials for the new bins (one merged mesh each across the whole map)
+const nnWoodM = () => thM("nnWood", () => nnEnvd(std({ map: nnTex("nn_wood_d", true, "#c8bca8"), normalMap: nnTex("nn_wood_n", false, "#8080ff"), normalScale: new THREE.Vector2(0.7, 0.7), vertexColors: true, roughness: 0.56, metalness: 0 }), 0.55));
+const nnClothM = () => thM("nnCloth", () => nnEnvd(std({ map: nnTex("nn_cloth_d", true, "#cccccc"), normalMap: nnTex("nn_cloth_n", false, "#8080ff"), normalScale: new THREE.Vector2(0.8, 0.8), vertexColors: true, roughness: 0.86, metalness: 0, side: THREE.DoubleSide }), 0.3));
+const nnIronM = () => thM("nnIron", () => nnEnvd(NNPB(std({ map: nnTex("nn_grit_d", true, "#d6d6d6"), vertexColors: true, roughness: 0.36, metalness: 0 }), 0.7, { n: "nn_pmet_n", ns: 0.55, rv: 0.3 }), 0.95));
+const nnChromeM = () => thM("nnChrome", () => nnEnvd(std({ vertexColors: true, roughness: 0.22, metalness: 1 }), 1.6));
+
+// geometry for the kit: lathed shapes are radius 0.5 and height 1, centred, like the other unit parts
+const nnLath = (pts, seg) => new THREE.LatheGeometry(pts.map(([r, y]) => new THREE.Vector2(Math.max(r, 0.0004) * 0.5, y - 0.5)), seg);
+const nnCat = (gs) => { const L = gs.map((g) => g.index ? g.toNonIndexed() : g); let n = 0; for (const g of L) n += g.attributes.position.count; const P = new Float32Array(n * 3), N = new Float32Array(n * 3); let o = 0;
+  for (const g of L) { P.set(g.attributes.position.array, o * 3); N.set(g.attributes.normal.array, o * 3); o += g.attributes.position.count; }
+  const g = new THREE.BufferGeometry(); g.setAttribute("position", new THREE.BufferAttribute(P, 3)); g.setAttribute("normal", new THREE.BufferAttribute(N, 3)); return g; };
+// the umbrella canopy: eight panels that sag between ribs, a scalloped valance; A = even panels, B = odd (for two-colour stripes). Rim at y 0, apex 0.3, radius 1.
+const nnUmbG = (odd) => { const P = [], RS = 7, AS = 5, H = 0.3, pt = (a, r) => { const k = ((a / (TAU / 8)) % 1 + 1) % 1, sag = Math.sin(Math.PI * k) * 0.055 * r; return [Math.cos(a) * r * (1 - sag * 0.3), H * (1 - Math.pow(r, 1.35)) - sag, Math.sin(a) * r * (1 - sag * 0.3)]; };
+  for (let p = odd ? 1 : 0; p < 8; p += 2) { const a0 = p * TAU / 8;
+    for (let i = 0; i < RS; i++) for (let j = 0; j < AS; j++) { const r0 = i / RS, r1 = (i + 1) / RS, b0 = a0 + (j / AS) * TAU / 8, b1 = a0 + ((j + 1) / AS) * TAU / 8;
+      const A = pt(b0, r0), B = pt(b1, r0), C = pt(b1, r1), D = pt(b0, r1); P.push(...A, ...C, ...B, ...A, ...D, ...C); }
+    for (let j = 0; j < AS * 2; j++) { const b0 = a0 + (j / (AS * 2)) * TAU / 8, b1 = a0 + ((j + 1) / (AS * 2)) * TAU / 8, A = pt(b0, 1), B = pt(b1, 1), s0 = 0.09 + 0.035 * Math.cos(((j / (AS * 2)) * 2 - 1) * Math.PI * 0.5) ** 2, s1 = 0.09 + 0.035 * Math.cos((((j + 1) / (AS * 2)) * 2 - 1) * Math.PI * 0.5) ** 2;
+      const C = [B[0], B[1] - s1, B[2]], D = [A[0], A[1] - s0, A[2]]; P.push(...A, ...B, ...C, ...A, ...C, ...D); } }
+  const g = new THREE.BufferGeometry(); g.setAttribute("position", new THREE.BufferAttribute(new Float32Array(P), 3)); g.computeVertexNormals(); return g; };
+const NNGX = {
+  "@lbase": () => nnLath([[0, 0], [1, 0], [1, 0.07], [0.88, 0.11], [0.84, 0.2], [0.66, 0.3], [0.52, 0.46], [0.46, 0.66], [0.52, 0.74], [0.46, 0.82], [0.4, 1], [0, 1]], 12),
+  "@flute": () => { const g = new THREE.CylinderGeometry(0.5, 0.5, 1, 36, 1, false), P = g.attributes.position; for (let i = 0; i < P.count; i++) { const x = P.getX(i), z = P.getZ(i), r = Math.hypot(x, z); if (r < 1e-4) continue; const a = Math.atan2(z, x), k = 1 - 0.09 * Math.pow(0.5 + 0.5 * Math.cos(a * 12), 3); P.setXYZ(i, x * k, P.getY(i), z * k); } g.computeVertexNormals(); return g; },
+  "@ldome": () => nnLath([[0.92, 0], [1, 0.12], [0.96, 0.3], [0.8, 0.55], [0.5, 0.8], [0.22, 0.94], [0, 1]], 8),
+  "@shade": () => nnCat([nnLath([[1, 0], [0.9, 0.12], [0.68, 0.4], [0.42, 0.72], [0.22, 0.92], [0, 1]], 16), nnLath([[0, 0.92], [0.2, 0.86], [0.4, 0.66], [0.64, 0.36], [0.86, 0.08], [0.97, 0]], 16)]),
+  "@bulb": () => nnLath([[0, 0], [0.62, 0.06], [0.96, 0.3], [0.98, 0.52], [0.66, 0.78], [0.42, 0.9], [0.4, 1], [0, 1]], 8),
+  "@ringV": () => new THREE.TorusGeometry(0.5, 0.09, 4, 14).rotateY(Math.PI / 2),
+  "@bead": () => new THREE.TorusGeometry(0.5, 0.14, 4, 12).rotateX(Math.PI / 2),
+  "@umbA": () => nnUmbG(false), "@c8": () => new THREE.CylinderGeometry(0.5, 0.5, 1, 8), "@s8": () => new THREE.SphereGeometry(0.5, 8, 5), "@umbB": () => nnUmbG(true),
+};
+const nnXBm = (bin, O, a, b, r, col) => nnXBeam(bin, O, a, b, r, col, r < 0.032 ? "cyl6" : "cyl");
+const NNIRON = "#4c5c70", NNCHR = "#c4c8d4", NNBRASS = "#c8a464";
+
+// ---- street lamp: a cast-iron foot, fluted shaft, polished collars, a curled arm and a six-sided glass lantern with a warm bulb inside ----
+const nnXLamp = (O, c) => { const IR = NNIRON, LZ = 0.95;
+  nnXC("metal", O, 0, 0, 0, 0.3, 0.04, "#2e3644", "pad"); nnXC("metal", O, 0, 0.04, 0, 0.27, 0.58, IR, "@lbase");
+  nnXB("chrome", O, 0, 0.14, 0.205, 0.12, 0.16, 0.02, "#a8acb8"); for (const s of [-1, 1]) nnXC("chrome", O, s * 0.045, 0.2, 0.217, 0.01, 0.01, NNCHR, "cyl6");
+  nnXC("metal", O, 0, 0.6, 0, 0.1, 2.32, IR, "@flute"); for (const [y, r, h] of [[0.58, 0.125, 0.05], [1.42, 0.112, 0.035], [2.88, 0.125, 0.06]]) nnXC("chrome", O, 0, y, 0, r, h, NNCHR, "@c8");
+  for (const y of [0.67, 2.84]) nnXP("metal", O, "@bead", 0, y, 0, 0.23, 0.23, 0.23, IR);
+  nnXC("glow", O, 0, 0.86, 0, 0.104, 0.3, c, "cyl12"); for (const y of [0.85, 1.16]) nnXC("chrome", O, 0, y, 0, 0.11, 0.016, NNCHR, "@c8");
+  nnXC("metal", O, 0, 2.94, 0, 0.11, 0.12, IR, "@ldome"); nnXP("chrome", O, "@s8", 0, 3.09, 0, 0.06, 0.06, 0.06, NNCHR);
+  // the arm curls up and out to the lantern, with a scroll underneath
+  { let p0 = [0, 2.8, 0.05]; for (let k = 1; k <= 7; k++) { const t = k / 7, p1 = [0, 2.8 + 0.62 * t - 0.2 * t * t * t, 0.05 + 0.9 * t * t * 0.5 + 0.45 * t]; p1[2] = 0.05 + (LZ - 0.05) * (0.35 * t + 0.65 * t * t); nnXBm("metal", O, p0, p1, 0.03, IR); p0 = p1; } }
+  nnXP("metal", O, "@ringV", 0, 3.0, 0.3, 0.32, 0.32, 0.32, IR); nnXBm("metal", O, [0, 2.62, 0.06], [0, 2.86, 0.3], 0.02, IR);
+  // the lantern
+  nnXC("chrome", O, 0, 3.12, LZ, 0.014, 0.12, NNCHR, "cyl6"); nnXC("chrome", O, 0, 3.07, LZ, 0.24, 0.025, NNCHR, "@c8"); nnXC("metal", O, 0, 3.09, LZ, 0.25, 0.14, IR, "@ldome"); nnXP("chrome", O, "@s8", 0, 3.25, LZ, 0.05, 0.05, 0.05, NNCHR);
+  nnXC("metal", O, 0, 3.03, LZ, 0.19, 0.04, IR, "cyl6"); nnXC("glow", O, 0, 2.77, LZ, 0.165, 0.26, "#ffe2a8", "cyl6"); nnXC("metal", O, 0, 2.73, LZ, 0.19, 0.04, IR, "cyl6");
+  for (let k = 0; k < 6; k++) { const a = k * Math.PI / 3; nnXB("metal", O, Math.sin(a) * 0.172, 2.75, LZ + Math.cos(a) * 0.172, 0.02, 0.29, 0.02, IR, 0, a); }
+  nnXP("metal", O, "cone", 0, 2.66, LZ, 0.12, 0.12, 0.12, IR, Math.PI); nnXP("glow", O, "ring", 0, 3.06, LZ, 0.52, 0.7, 0.52, c);
+  // the banner on its bracket, in printed canvas
+  nnXB("metal", O, 0.03, 2.2, 0.1, 0.03, 0.03, 0.5, IR); nnXB("metal", O, 0.03, 1.33, 0.1, 0.03, 0.03, 0.5, IR); nnXB("fabric", O, 0.03, 1.36, 0.36, 0.015, 0.83, 0.42, c === NC[1] ? "#2a6a9a" : "#8a2a7a");
+  nnXB("glow", O, 0.042, 1.95, 0.36, 0.01, 0.1, 0.3, "#ffffff"); nnXB("glow", O, 0.042, 1.75, 0.36, 0.01, 0.05, 0.24, c);
+  if (!O.abs) nnXTufts(O, nnXR(Math.floor(O.x * 37) * 97 + Math.floor(O.z * 61)), 2, 0.28, 0.4, 0); };
+
+// ---- park lamp: a slim green post with a shepherd's-crook arm and a bell shade over a glass globe ----
+const nnXPathLamp = (O) => { const IR = "#34463e";
+  nnXC("metal", O, 0, 0, 0, 0.17, 0.42, IR, "@lbase"); nnXC("metal", O, 0, 0.4, 0, 0.065, 1.92, IR, "@flute"); for (const y of [0.4, 2.3]) nnXC("chrome", O, 0, y, 0, 0.078, 0.04, NNBRASS, "@c8");
+  { let p0 = [0, 2.32, 0]; for (let k = 1; k <= 7; k++) { const a = (k / 7) * Math.PI, p1 = [0, 2.32 + Math.sin(a) * 0.2, 0.2 - Math.cos(a) * 0.2]; nnXBm("metal", O, p0, p1, 0.022, IR); p0 = p1; } }
+  nnXC("chrome", O, 0, 2.24, 0.4, 0.012, 0.1, NNBRASS, "cyl6"); nnXC("metal", O, 0, 2.1, 0.4, 0.2, 0.15, IR, "@shade"); nnXP("chrome", O, "@s8", 0, 2.27, 0.4, 0.04, 0.04, 0.04, NNBRASS);
+  nnXP("glow", O, "sph", 0, 2.02, 0.4, 0.17, 0.19, 0.17, "#ffe6b0"); nnXC("chrome", O, 0, 2.1, 0.4, 0.09, 0.02, NNBRASS, "@c8"); };
+
+// ---- bollard: a painted post on a polished foot with a lit band behind four louvres and a domed cap ----
+const nnXBollard = (O, x, z, col) => { const IR = "#3a4252";
+  nnXC("chrome", O, x, 0, z, 0.13, 0.04, NNCHR, "pad"); nnXC("metal", O, x, 0.04, z, 0.1, 0.5, IR, "cyl12"); nnXC("glow", O, x, 0.54, z, 0.094, 0.13, col, "cyl12");
+  for (let k = 0; k < 4; k++) { const a = k * Math.PI / 2 + Math.PI / 4; nnXB("metal", O, x + Math.sin(a) * 0.096, 0.54, z + Math.cos(a) * 0.096, 0.035, 0.13, 0.035, IR, 0, a); }
+  nnXC("chrome", O, x, 0.67, z, 0.11, 0.025, NNCHR, "@c8"); nnXC("metal", O, x, 0.695, z, 0.11, 0.09, IR, "@ldome"); };
+
+// ---- festoon lights: cable between two points with a socket and a glass bulb every so often (world coordinates when O is null) ----
+const nnXFestoon = (O, pts, cols) => { for (let i = 0; i < pts.length; i++) { const [x, y, z] = pts[i];
+    if (i) nnXBm("deco", O, pts[i - 1], pts[i], 0.011, "#24222c");
+    nnXC("deco", O, x, y - 0.11, z, 0.026, 0.09, "#2a2830", "cyl6"); nnXP("glow", O, "@bulb", x, y - 0.18, z, 0.09, 0.13, 0.09, cols(i)); } };
+
+// ---- the posts that carry the festoon lights: an iron post on a moulded foot, a finial, and a bracket reaching out to the cable (dx, dz point along the run) ----
+const nnXLightPost = (x, z, dx, dz) => { const L = Math.hypot(dx, dz) || 1, ux = dx / L, uz = dz / L, IR = NNIRON;
+  nnXC("metal", null, x, 0, z, 0.22, 0.48, IR, "@lbase"); nnXC("metal", null, x, 0.46, z, 0.1, 4.06, IR, "@flute"); for (const y of [0.46, 2.2, 4.46]) nnXC("chrome", null, x, y, z, 0.118, 0.05, NNCHR, "@c8");
+  nnXC("metal", null, x, 4.5, z, 0.12, 0.13, IR, "@ldome"); nnXP("chrome", null, "@s8", x, 4.68, z, 0.07, 0.07, 0.07, NNCHR);
+  nnXBm("metal", null, [x, 4.3, z], [x + ux * 0.3, 4.42, z + uz * 0.3], 0.022, IR); nnXP("chrome", null, "@s8", x + ux * 0.3, 4.42, z + uz * 0.3, 0.05, 0.05, 0.05, NNCHR);
+  nnXBm("metal", null, [x, 4.0, z], [x + ux * 0.24, 4.36, z + uz * 0.24], 0.016, IR); };
+
+// ---- the posts round the dance rings: a fluted iron column with polished collars, a lit band, and a frosted globe in a brass cup ----
+const nnXRingPost = (x, z, c) => { const O = { x, z }, IR = "#5a4c88";
+  nnXC("metal", O, 0, 0, 0, 0.34, 0.5, IR, "@lbase"); nnXC("chrome", O, 0, 0.4, 0, 0.2, 0.08, NNCHR, "@c8"); nnXC("metal", O, 0, 0.46, 0, 0.18, 1.8, IR, "@flute");
+  for (const y of [1.2, 2.22]) nnXC("chrome", O, 0, y, 0, 0.2, 0.06, NNCHR, "@c8"); nnXP("metal", O, "@bead", 0, 1.32, 0, 0.4, 0.4, 0.4, IR);
+  nnXC("metal", O, 0, 2.27, 0, 0.17, 0.12, IR, "@shade"); nnXC("chrome", O, 0, 2.3, 0, 0.12, 0.06, NNBRASS, "@c8"); nnXP("chrome", O, "ring", 0, 2.38, 0, 0.44, 1.4, 0.44, NNBRASS); for (let k = 0; k < 4; k++) { const a = k * Math.PI / 2; nnXBm("chrome", O, [Math.cos(a) * 0.12, 2.33, Math.sin(a) * 0.12], [Math.cos(a) * 0.2, 2.5, Math.sin(a) * 0.2], 0.01, NNBRASS); } };
+
+// ---- bench: wooden slats on cast-iron ends with curled arms, bolted through ----
+const nnXBench = (O, c) => { const q = nnXR(Math.floor(O.x * 31) * 89 + Math.floor(O.z * 47)), WD = ["#9a6440", "#a87a52", "#7e5236", "#b08a5e"][Math.floor(q() * 4)], IR = ["#2e3e38", "#3a3650", "#2e3c4e"][Math.floor(q() * 3)];
+  for (let k = 0; k < 4; k++) nnXB("wood", O, 0, 0.42, -0.19 + k * 0.125, 1.8, 0.045, 0.105, nnXHex(WD, (q() - 0.5) * 0.08));
+  for (let k = 0; k < 3; k++) nnXP("wood", O, "box", 0, 0.62 + k * 0.14, -0.285 - k * 0.022, 1.8, 0.1, 0.035, nnXHex(WD, (q() - 0.5) * 0.08), -0.16);
+  for (const s of [-0.84, 0, 0.84]) { const end = s !== 0;
+    nnXBm("metal", O, [s, 0.02, 0.24], [s, 0.42, 0.2], 0.03, IR); nnXBm("metal", O, [s, 0.02, -0.22], [s, 0.42, -0.2], 0.03, IR); nnXBm("metal", O, [s, 0.42, -0.2], [s, 0.94, -0.34], 0.026, IR); nnXBm("metal", O, [s, 0.41, 0.24], [s, 0.41, -0.24], 0.024, IR);
+    for (const z of [0.24, -0.22]) nnXC("metal", O, s, 0, z, 0.045, 0.025, IR, "cyl12");
+    for (let k = 0; k < 4; k++) nnXC("chrome", O, s, 0.443, -0.19 + k * 0.125, 0.012, 0.01, NNCHR, "cyl6");
+    if (end) { nnXBm("metal", O, [s, 0.42, 0.2], [s, 0.64, 0.2], 0.022, IR); nnXBm("metal", O, [s, 0.66, -0.29], [s, 0.66, 0.2], 0.022, IR); nnXP("metal", O, "@ringV", s, 0.61, 0.25, 0.14, 0.14, 0.14, IR); nnXB("wood", O, s, 0.67, -0.04, 0.075, 0.035, 0.5, WD); } }
+  nnXB("glow", O, 0, 0.36, 0.22, 1.6, 0.025, 0.03, c); nnXB("glow", O, 0, 0.36, -0.2, 1.6, 0.025, 0.03, c); };
+
+// ---- picnic table: a planked top on crossed legs with two bench boards each side ----
+const nnXPicnic = (O) => { const q = nnXR(Math.floor(O.x * 41) * 67 + Math.floor(O.z * 29)), WD = ["#9a7050", "#8a6448", "#a8805a"][Math.floor(q() * 3)], WD2 = nnXHex(WD, -0.08);
+  for (let k = 0; k < 5; k++) nnXB("wood", O, 0, 0.72, -0.36 + k * 0.18, 1.85, 0.05, 0.165, nnXHex(WD, (q() - 0.5) * 0.1));
+  for (const z of [-0.8, 0.8]) for (const j of [-1, 1]) nnXB("wood", O, 0, 0.42, z + j * 0.075, 1.85, 0.045, 0.14, nnXHex(WD, (q() - 0.5) * 0.1));
+  for (const s of [-0.68, 0.68]) { for (const sd of [-1, 1]) nnXBm("wood", O, [s, 0, sd * 0.88], [s, 0.69, sd * 0.12], 0.045, WD2);
+    nnXB("wood", O, s, 0.35, 0, 0.07, 0.07, 1.95, WD2); nnXB("wood", O, s, 0.63, 0, 0.07, 0.07, 0.9, WD2); for (const z of [-0.8, 0, 0.8]) nnXC("chrome", O, s + 0.036, 0.385, z, 0.012, 0.012, NNCHR, "cyl6"); } };
+
+// ---- bistro table under a striped canvas umbrella, with two chairs ----
+const nnXChair = (O, cx, cz, a, WD, IR) => { const ca = Math.cos(a), sa = Math.sin(a), P = (x, y, z) => [cx + x * ca + z * sa, y, cz - x * sa + z * ca];
+  for (let j = 0; j < 3; j++) { const p = P(0, 0.455, -0.12 + j * 0.12); nnXP("wood", O, "box", p[0], p[1], p[2], 0.42, 0.03, 0.1, WD, 0, a); }
+  for (const [x, z] of [[-0.18, -0.17], [0.18, -0.17], [-0.18, 0.17], [0.18, 0.17]]) nnXBm("metal", O, P(x * 1.1, 0, z * 1.1), P(x, 0.44, z), 0.016, IR);
+  nnXBm("metal", O, P(-0.19, 0.43, 0.18), P(0.19, 0.43, 0.18), 0.012, IR); nnXBm("metal", O, P(-0.19, 0.43, -0.18), P(0.19, 0.43, -0.18), 0.012, IR);
+  for (const x of [-0.18, 0.18]) nnXBm("metal", O, P(x, 0.44, -0.18), P(x * 1.04, 0.9, -0.25), 0.015, IR);
+  for (const y of [0.68, 0.84]) { const p = P(0, y, -0.205 - (y - 0.68) * 0.25); nnXP("wood", O, "box", p[0], p[1], p[2], 0.4, 0.08, 0.025, WD, -0.12, a); } };
+const nnXCafe = (O, c) => { const q = nnXR(Math.floor(O.x * 59) * 71 + Math.floor(O.z * 37)), cream = "#e4d8c4", WD = ["#9a6a48", "#86583a", "#a87c56"][Math.floor(q() * 3)], IR = "#2c3038";
+  nnXC("chrome", O, 0, 0, 0, 0.27, 0.03, NNCHR, "pad"); nnXC("metal", O, 0, 0.03, 0, 0.06, 0.07, IR, "cyl12"); nnXC("chrome", O, 0, 0.05, 0, 0.034, 0.66, NNCHR, "@c8"); nnXC("metal", O, 0, 0.68, 0, 0.2, 0.04, IR, "cyl12");
+  for (let k = -2; k <= 2; k++) { const x = k * 0.168, L = 2 * Math.sqrt(Math.max(0.01, 0.43 * 0.43 - x * x)); nnXB("wood", O, x, 0.72, 0, 0.155, 0.032, L, nnXHex(WD, (q() - 0.5) * 0.08)); }
+  nnXP("chrome", O, "ring", 0, 0.736, 0, 0.88, 0.45, 0.88, NNCHR);
+  // the umbrella: pole and crank, eight ribs and stretchers, a two-colour canopy with a scalloped valance, and an LED ring under the hub
+  nnXC("chrome", O, 0, 0.72, 0, 0.022, 1.66, NNCHR, "@c8"); nnXB("metal", O, 0.035, 1.3, 0, 0.05, 0.1, 0.05, IR); nnXBm("metal", O, [0.06, 1.35, 0], [0.13, 1.35, 0.05], 0.008, IR);
+  nnXC("metal", O, 0, 1.9, 0, 0.045, 0.09, IR, "cyl12"); nnXP("glow", O, "ring", 0, 1.89, 0, 0.32, 0.6, 0.32, "#ffd890");
+  nnXP("fabric", O, "@umbA", 0, 1.98, 0, 1.25, 1.25, 1.25, c); nnXP("fabric", O, "@umbB", 0, 1.98, 0, 1.25, 1.25, 1.25, cream); nnXP("chrome", O, "@s8", 0, 2.4, 0, 0.07, 0.07, 0.07, NNCHR);
+  for (let k = 0; k < 8; k++) { const a = k * TAU / 8, ca = Math.cos(a), sa = Math.sin(a); nnXBm("chrome", O, [0, 2.32, 0], [ca * 1.24, 1.965, sa * 1.24], 0.008, NNCHR); nnXBm("chrome", O, [0, 1.95, 0], [ca * 0.62, 2.2, sa * 0.62], 0.006, NNCHR); nnXP("chrome", O, "oct", ca * 1.25, 1.96, sa * 1.25, 0.03, 0.03, 0.03, NNCHR); }
+  nnXChair(O, 0.74, 0, -Math.PI / 2, WD, IR); nnXChair(O, -0.74, 0, Math.PI / 2, WD, IR); };
+
+// ---- speakers: real PA cabinets in purple lacquer with ball corners, aluminium edge trim, felt baffles, ridged paper cones with rubber surrounds,
+// polished baskets and bolts, a horn tweeter, ports, handles and a power light ----
+const NNSPK4 = {};
+const nnSpk4G = (k) => NNSPK4[k] || (NNSPK4[k] = (() => {
+  if (k === "cone") { const P = []; for (let i = 0; i <= 28; i++) { const t = i / 28, r = 0.075 + t * 0.225; P.push(new THREE.Vector2(r, -0.09 * (1 - t) * (1 - t * 0.35) + 0.0035 * Math.sin(t * Math.PI * 9))); } return new THREE.LatheGeometry(P, 48).rotateX(Math.PI / 2); }
+  if (k === "cap") return new THREE.SphereGeometry(0.078, 20, 8, 0, TAU, 0, Math.PI / 2).rotateX(Math.PI / 2);
+  if (k === "sur") return new THREE.TorusGeometry(0.312, 0.024, 10, 56);
+  if (k === "frm") return new THREE.TorusGeometry(0.348, 0.02, 8, 56);
+  if (k === "plate") return new THREE.RingGeometry(0.33, 0.39, 56);
+  if (k === "horn") return new THREE.CylinderGeometry(0.19, 0.05, 0.16, 4, 1, true).rotateY(Math.PI / 4).rotateX(-Math.PI / 2);
+  if (k === "port") return new THREE.TorusGeometry(0.06, 0.014, 8, 28);
+  if (k === "ball") return new THREE.SphereGeometry(0.07, 12, 10); })());
+const nnSpkMats = () => thM("spk4", () => { const felt = nnTexR("nn_cloth_d", true, "#bbbbbb", 7, 7), feltN = nnTexR("nn_cloth_n", false, "#8080ff", 7, 7);
+  return { cab: nnEnvd(NNPB(std({ map: nnTex("nn_grit_d", true, "#d6d6d6"), color: "#b47ee0", roughness: 0.32, metalness: 0 }), 0.9, { n: "nn_pmet_n", ns: 0.5, rv: 0.35 }), 1.0),
+    baf: nnEnvd(std({ map: felt, normalMap: feltN, color: "#868498", roughness: 0.95 }), 0.2), paper: nnEnvd(std({ color: "#d4d0dc", roughness: 0.78, map: nnTex("nn_grit_d", true, "#d6d6d6"), side: THREE.DoubleSide }), 0.4),
+    rub: nnEnvd(std({ color: "#57545f", roughness: 0.42 }), 0.8), cap: nnEnvd(std({ color: "#2e2c36", roughness: 0.16 }), 1.1), chr: nnEnvd(std({ color: "#c8ccd8", roughness: 0.26, metalness: 0.45 }), 1.8),
+    blk: nnEnvd(std({ color: "#3a3844", roughness: 0.38 }), 0.7), hornM: nnEnvd(std({ color: "#a8acbc", roughness: 0.3, metalness: 0, side: THREE.DoubleSide }), 1.0), hole: std({ color: "#121016", roughness: 0.9 }),
+    grl: (() => { const c = nnXCv(64, 64), C = c.getContext("2d"); C.fillStyle = "#b4b8c6"; C.fillRect(0, 0, 64, 64); C.fillStyle = "#14121a"; for (let y = 0; y < 4; y++) for (let x = 0; x < 4; x++) { C.beginPath(); C.arc(8 + x * 16 + (y % 2) * 8, 8 + y * 16, 5.4, 0, TAU); C.fill(); } const t = nnXTx(c, true); t.repeat.set(12, 4); return nnEnvd(std({ map: t, roughness: 0.35 }), 0.8); })() }; });
+const nnSpeaker = (x, z, ry = 0) => { const G = grp(x, 0, z, ry), M = nnSpkMats(), A = (geo, m, p, r = [0, 0, 0], col = "nocol") => add(geo, m, p, r, col, G);
+  const drv = (px, py, s, ring) => { const zf = 0.436;
+    A(nnSpk4G("plate"), M.chr, [px, py, 0.405]).scale.setScalar(s); A(nnSpk4G("cone"), M.paper, [px, py, zf]).scale.set(s, s, s * 0.32); A(nnSpk4G("cap"), M.cap, [px, py, zf - 0.026 * s]).scale.set(s, s, s * 0.55); for (const [gk, m] of [["sur", M.rub], ["frm", M.chr]]) A(nnSpk4G(gk), m, [px, py, zf]).scale.setScalar(s);
+    for (let b = 0; b < 8; b++) { const a = b * TAU / 8 + Math.PI / 8; A(new THREE.CylinderGeometry(0.014, 0.014, 0.02, 8), M.chr, [px + Math.cos(a) * 0.37 * s, py + Math.sin(a) * 0.37 * s, zf + 0.012], [Math.PI / 2, 0, 0]); }
+    if (ring) A(new THREE.TorusGeometry(0.405 * s, 0.007, 6, 56), nnM.neon(ring), [px, py, 0.41]); };
+  for (let k = 0; k < 2; k++) { const cy = 0.5 + k * 1.02;
+    A(new THREE.BoxGeometry(1.0, 1.0, 0.8), M.cab, [0, cy, 0], [0, 0, 0], k ? "nocol" : null); A(new THREE.BoxGeometry(0.84, 0.84, 0.02), M.baf, [0, cy, 0.393]);
+    // aluminium trim round the baffle, ball corners, recessed handles on the sides
+    for (const sy of [-1, 1]) { A(new THREE.BoxGeometry(0.88, 0.022, 0.03), M.chr, [0, cy + sy * 0.432, 0.4]); A(new THREE.BoxGeometry(0.022, 0.88, 0.03), M.chr, [sy * 0.432, cy, 0.4]); }
+    for (const [sx, sy] of [[-1, -1], [1, -1], [-1, 1], [1, 1]]) for (const sz of [-1, 1]) A(nnSpk4G("ball"), M.chr, [sx * 0.49, cy + sy * 0.49, sz * 0.39]);
+    for (const sx of [-1, 1]) { A(new THREE.BoxGeometry(0.02, 0.12, 0.3), M.blk, [sx * 0.502, cy + 0.12, 0]); A(new THREE.CylinderGeometry(0.014, 0.014, 0.24, 8), M.chr, [sx * 0.52, cy + 0.12, 0], [Math.PI / 2, 0, 0]); }
+    if (!k) { drv(0, cy + 0.06, 1.0, NC[1]);
+      for (const sx of [-1, 1]) { A(new THREE.CircleGeometry(0.06, 20), M.hole, [sx * 0.33, cy - 0.36, 0.405]); A(nnSpk4G("port"), M.chr, [sx * 0.33, cy - 0.36, 0.406]); }
+      A(new THREE.BoxGeometry(0.2, 0.05, 0.012), M.chr, [0, cy - 0.37, 0.41]); A(new THREE.BoxGeometry(0.16, 0.012, 0.004), nnM.neon(NC[0]), [0, cy - 0.37, 0.418]);
+      A(new THREE.SphereGeometry(0.012, 8, 6), nnM.neon("#5aff9a"), [0.36, cy + 0.38, 0.405]);
+      for (const sx of [-1, 1]) for (const sz of [-1, 1]) A(new THREE.CylinderGeometry(0.05, 0.06, 0.03, 12), M.rub, [sx * 0.38, 0.0, sz * 0.3]); }
+    else { drv(-0.22, cy - 0.2, 0.5, NC[0]); drv(0.22, cy - 0.2, 0.5, NC[0]);
+      for (const sy of [-1, 1]) { A(new THREE.BoxGeometry(0.46, 0.04, 0.03), M.cab, [0, cy + 0.22 + sy * 0.15, 0.41]); A(new THREE.BoxGeometry(0.06, 0.3, 0.03), M.cab, [sy * 0.2, cy + 0.22, 0.41]); for (const sx of [-1, 1]) A(new THREE.CylinderGeometry(0.011, 0.011, 0.012, 8), M.chr, [sx * 0.2, cy + 0.22 + sy * 0.15, 0.428], [Math.PI / 2, 0, 0]); }
+      A(nnSpk4G("horn"), M.hornM, [0, cy + 0.22, 0.445]).scale.set(1, 1, 0.5); A(new THREE.CircleGeometry(0.05, 16), M.hole, [0, cy + 0.22, 0.407]); A(new THREE.TorusGeometry(0.052, 0.009, 6, 20), M.chr, [0, cy + 0.22, 0.408]);
+      A(new THREE.BoxGeometry(0.5, 0.045, 0.012), M.grl, [0, cy + 0.385, 0.401]); } }
+  // the level meter on top sits in its own housing with a polished rim
+  A(new THREE.BoxGeometry(0.86, 0.1, 0.5), M.cab, [0, 2.09, 0.08]); A(new THREE.BoxGeometry(0.8, 0.012, 0.03), M.chr, [0, 2.14, 0.33]);
+  for (let i = 0; i < 5; i++) { const h = 0.15 + R() * 0.5; A(new THREE.BoxGeometry(0.12, h, 0.06), nnM.neon(NC[(i + 2) % 4]), [-0.3 + i * 0.15, 2.14 + h / 2, 0.3]); } return G; };
 // ---- props ----
 const thPalm = (x, z, h = 6 + R() * 3, lean = R() * TAU) => { const G = grp(x, 0, z, lean), bend = 0.6 + R() * 0.9, pts = []; for (let i = 0; i <= 8; i++) { const t = i / 8; pts.push([Math.sin(t * 1.4) * bend, t * h, 0]); } limb(pts, 0.2, 0.12, thMat.palm(), { seg: 24, rad: 7, knob: 0.5, parent: G });
   const top = pts[8]; for (let k = 0; k < 9; k++) { const a = (k / 9) * TAU + R() * 0.3, L = 2.2 + R() * 1.2, droop = 0.8 + R() * 0.6, g = new THREE.PlaneGeometry(L, 0.55, 8, 2), P2 = g.attributes.position; for (let i = 0; i < P2.count; i++) { const u = (P2.getX(i) + L / 2) / L, v = P2.getY(i); P2.setXYZ(i, u * L, -droop * u * u + Math.abs(v) * 0.15 * u, v * (1 - u * 0.7)); } g.computeVertexNormals(); const f = add(g, thMat.leaf(), [top[0], top[1] + 0.05, top[2]], [0, a, -0.15], "nocol", G); f.castShadow = true; }
@@ -14840,27 +15005,11 @@ const nnScreenT = (k) => thM("scrT" + k, () => tex(256, 128, (g, W, Hh) => { con
 const nnScreenM = (k) => thM("scr" + k, () => new THREE.MeshBasicMaterial({ map: nnScreenT(k) }));
 const nnBeam = (a, b, r, m, P) => { const v = new THREE.Vector3(b[0] - a[0], b[1] - a[1], b[2] - a[2]), L = v.length(), M = add(new THREE.CylinderGeometry(r, r, L, 6), m, [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2, (a[2] + b[2]) / 2], [0, 0, 0], "nocol", P); M.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), v.normalize()); return M; };
 // ---- street furniture ----
-const nnLamp = (x, z, ry = 0, c = NC[1]) => { const G = grp(x, 0, z, ry); add(new THREE.CylinderGeometry(0.06, 0.09, 3.4, 8), nnM.dark(), [0, 1.7, 0], [0, 0, 0], null, G); nnXLamp({ x, z, ry }, c); return G; };
+const nnLamp = (x, z, ry = 0, c = NC[1]) => { const G = grp(x, 0, z, ry); add(new THREE.CylinderGeometry(0.06, 0.075, 2.9, 8), nnM.dark(), [0, 1.45, 0], [0, 0, 0], null, G); nnXLamp({ x, z, ry }, c); return G; };
 const nnBench = (x, z, ry = 0, c = nnPick()) => { const G = grp(x, 0, z, ry); add(new THREE.BoxGeometry(1.7, 0.04, 0.42), nnM.dark(), [0, 0.38, 0], [0, 0, 0], null, G); nnXBench({ x, z, ry }, c); return G; };
 const nnVend = (x, z, ry = 0, c = nnPick()) => { const G = grp(x, 0, z, ry); add(new THREE.BoxGeometry(0.95, 1.9, 0.75), nnM.dark(), [0, 0.95, 0], [0, 0, 0], null, G); add(new THREE.PlaneGeometry(0.62, 1.1), nnM.neon(c), [-0.1, 1.15, 0.38], [0, 0, 0], "nocol", G);
   for (let r = 0; r < 3; r++) for (let k = 0; k < 3; k++) add(new THREE.CylinderGeometry(0.06, 0.06, 0.2, 8), nnM.neon(NC[(r + k) % 4]), [-0.3 + k * 0.2, 0.8 + r * 0.32, 0.36], [0, 0, 0], "nocol", G);
   add(new THREE.BoxGeometry(0.16, 0.5, 0.04), nnM.chrome(), [0.33, 1.1, 0.38], [0, 0, 0], "nocol", G); add(new THREE.BoxGeometry(0.6, 0.18, 0.05), nnM.neon("#ffffff"), [-0.1, 0.35, 0.38], [0, 0, 0], "nocol", G); return G; };
-const nnSpeaker = (x, z, ry = 0) => { const G = grp(x, 0, z, ry), cab = nnPaintT("spkCab", "nn_pmet", "#948eae", 0.9, { r: 0.62, rt: "nn_pmet_r", rv: 0.3 }), baf = nnPaintT("spkBaf", "nn_grit", "#4a4858", 1.6, { r: 0.85, ns: 1.4 }),
-    paper = nnPaintT("spkPaper", "nn_grit", "#5a5866", 2.4, { r: 0.9, ns: 1.6, rv: 0.2 }), rub = thM("spkRub", () => std({ color: "#34323c", roughness: 0.55 })), stl = thM("spkStl", () => std({ color: "#b8b4c4", roughness: 0.32, metalness: 1 })), blk = thM("spkBlk", () => std({ color: "#3c3a46", roughness: 0.5 }));
-  const drv = (px, py, s, ring) => { const P = [px, py, 0.402]; for (const [gk, m] of [["cone", paper], ["cap", rub], ["sur", rub], ["frm", stl]]) { const mm = add(nnSpkG(gk), m, P, [0, 0, 0], "nocol", G); mm.scale.setScalar(s); }
-    for (let b = 0; b < 4; b++) { const a = b * TAU / 4 + Math.PI / 4; add(new THREE.CylinderGeometry(0.016, 0.016, 0.02, 8), stl, [px + Math.cos(a) * 0.37 * s, py + Math.sin(a) * 0.37 * s, 0.41], [Math.PI / 2, 0, 0], "nocol", G); }
-    if (ring) add(new THREE.TorusGeometry(0.4 * s, 0.022, 8, 48), nnM.neon(ring), [px, py, 0.418], [0, 0, 0], "nocol", G); };
-  for (let k = 0; k < 2; k++) { const cy = 0.5 + k * 1.02;
-    // cabinet in worn paint, a recessed front baffle, steel corner protectors and edge trim, side handles
-    add(new THREE.BoxGeometry(1.0, 1.0, 0.8), cab, [0, cy, 0], [0, 0, 0], k ? "nocol" : null, G); add(new THREE.BoxGeometry(0.9, 0.9, 0.02), baf, [0, cy, 0.396], [0, 0, 0], "nocol", G);
-    for (const [sx, sy] of [[-1, -1], [1, -1], [-1, 1], [1, 1]]) { add(new THREE.BoxGeometry(0.035, 0.94, 0.035), blk, [sx * 0.5, cy, 0.4], [0, 0, 0], "nocol", G); for (const sz of [-1, 1]) add(new THREE.BoxGeometry(0.11, 0.11, 0.11), stl, [sx * 0.47, cy + sy * 0.47, sz * 0.37], [0, 0, 0], "nocol", G); }
-    for (const sx of [-1, 1]) { add(new THREE.BoxGeometry(0.02, 0.1, 0.26), blk, [sx * 0.505, cy + 0.1, 0], [0, 0, 0], "nocol", G); add(new THREE.CylinderGeometry(0.018, 0.018, 0.2, 8), stl, [sx * 0.53, cy + 0.1, 0], [Math.PI / 2, 0, 0], "nocol", G); }
-    if (!k) { drv(0, cy + 0.07, 1.0, NC[1]); add(new THREE.BoxGeometry(0.62, 0.09, 0.02), nnGrilleM(), [0, cy - 0.37, 0.405], [0, 0, 0], "nocol", G); add(new THREE.BoxGeometry(0.66, 0.012, 0.03), stl, [0, cy - 0.32, 0.405], [0, 0, 0], "nocol", G); add(new THREE.BoxGeometry(0.66, 0.012, 0.03), stl, [0, cy - 0.42, 0.405], [0, 0, 0], "nocol", G); }
-    else { drv(-0.21, cy - 0.2, 0.52, NC[0]); drv(0.21, cy - 0.2, 0.52, NC[0]); add(nnSpkG("horn"), blk, [0, cy + 0.22, 0.34], [0, 0, 0], "nocol", G); add(new THREE.BoxGeometry(0.06, 0.06, 0.06), blk, [0, cy + 0.22, 0.25], [0, 0, 0], "nocol", G);
-      add(new THREE.BoxGeometry(0.4, 0.26, 0.012), nnGrilleM(), [0, cy + 0.22, 0.411], [0, 0, 0], "nocol", G).material.transparent = false; } }
-  // the level meter on top sits in its own small housing
-  add(new THREE.BoxGeometry(0.86, 0.1, 0.5), cab, [0, 2.09, 0.08], [0, 0, 0], "nocol", G); add(new THREE.BoxGeometry(0.8, 0.012, 0.03), stl, [0, 2.14, 0.33], [0, 0, 0], "nocol", G);
-  for (let i = 0; i < 5; i++) { const h = 0.15 + R() * 0.5; add(new THREE.BoxGeometry(0.12, h, 0.06), nnM.neon(NC[(i + 2) % 4]), [-0.3 + i * 0.15, 2.14 + h / 2, 0.3], [0, 0, 0], "nocol", G); } return G; };
 const nnHolo = (x, z, c = nnPick(), h = 2.6) => { const G = grp(x, 0, z, R() * TAU); add(new THREE.CylinderGeometry(0.28, 0.36, 0.5, 12), nnM.chrome(), [0, 0.25, 0], [0, 0, 0], null, G); add(new THREE.CylinderGeometry(0.06, 0.06, h, 8), nnM.dark(), [0, h / 2, 0], [0, 0, 0], "nocol", G);
   add(new THREE.CylinderGeometry(0.55, 0.2, 1.5, 16, 1, true), nnM.holo(c), [0, h + 0.4, 0], [0, 0, 0], "nocol", G); add(new THREE.OctahedronGeometry(0.28, 0), nnM.neon(c), [0, h + 0.5, 0], [0, 0, 0], "nocol", G); add(new THREE.TorusGeometry(0.36, 0.03, 6, 24), nnM.neon(c), [0, 0.52, 0], [Math.PI / 2, 0, 0], "nocol", G); return G; };
 const nnPlanter = (x, z, c = nnPick()) => { const ry = R() * TAU, G = grp(x, 0, z, ry); add(new THREE.BoxGeometry(1.0, 0.5, 1.0), FXA.nnD(), [0, 0.3, 0], [0, 0, 0], null, G); R(); R(); R(); nnXPlanter({ x, z, ry }, c, "#3a8a6a"); return G; };
@@ -14882,7 +15031,8 @@ const nnFlower = (x, z, s = 1, c = nnPick()) => { const G = grp(x, 0, z, R() * T
 const nnPuddle = (x, z, s = 1) => { const m = add(new THREE.CircleGeometry(0.8 * s, 20), thM("puddle", () => std({ color: "#101020", roughness: 0.02, metalness: 0.9, emissive: "#2a0a3a", emissiveIntensity: 0.4 })), [x, 0.04, z], [-Math.PI / 2, 0, R() * TAU], "nocol"); m.scale.set(1, 0.6, 1); return m; };
 const nnArch = (x, z, ry = 0, span = 9, h = 5.5, c = nnPick()) => { nnXArch(x, z, ry, span, h, c); return grp(x, 0, z, ry); };
 // strings of glowing bulbs hung across a street between two poles
-const nnLights = (x0, z0, x1, z1, n = 12) => { const G = grp(0, 0, 0); for (const [x, z] of [[x0, z0], [x1, z1]]) add(new THREE.CylinderGeometry(0.07, 0.09, 4.6, 8), nnM.dark(), [x, 2.3, z], [0, 0, 0], null, G); for (let i = 0; i <= n; i++) { const t = i / n, x = x0 + (x1 - x0) * t, z = z0 + (z1 - z0) * t, y = 4.4 - Math.sin(t * Math.PI) * 0.9; add(new THREE.BoxGeometry(0.22, 0.22, 0.22), nnM.neon(NC[i % 4]), [x, y - 0.16, z], [0.6, 0.6, 0], "nocol", G); if (i) { const tp = (i - 1) / n; nnBeam([x0 + (x1 - x0) * tp, 4.4 - Math.sin(tp * Math.PI) * 0.9, z0 + (z1 - z0) * tp], [x, y, z], 0.015, nnM.dark(), G); } } return G; };
+const nnLights = (x0, z0, x1, z1, n = 12) => { const G = grp(0, 0, 0); for (const [x, z] of [[x0, z0], [x1, z1]]) { add(new THREE.CylinderGeometry(0.06, 0.075, 4.6, 8), nnM.dark(), [x, 2.3, z], [0, 0, 0], null, G); nnXLightPost(x, z, x === x0 && z === z0 ? x1 - x0 : x0 - x1, x === x0 && z === z0 ? z1 - z0 : z0 - z1); }
+  const pts = []; for (let i = 0; i <= n; i++) { const t = i / n; pts.push([x0 + (x1 - x0) * t, 4.4 - Math.sin(t * Math.PI) * 0.9, z0 + (z1 - z0) * t]); } nnXFestoon(null, pts, (i) => NC[i % 4]); return G; };
 const nnTransformer = (x, z, ry = 0) => { const G = grp(x, 0, z, ry); add(new THREE.BoxGeometry(1.6, 1.4, 1.0), thM("nnGrey", () => std({ color: "#4a4a5a", roughness: 0.6, metalness: 0.5 })), [0, 0.7, 0], [0, 0, 0], null, G); add(new THREE.PlaneGeometry(1.4, 0.25), nnM.haz(), [0, 1.2, 0.51], [0, 0, 0], "nocol", G);
   for (let k = 0; k < 3; k++) add(new THREE.CylinderGeometry(0.08, 0.1, 0.5, 8), nnM.neon(NC[2]), [-0.5 + k * 0.5, 1.65, 0], [0, 0, 0], "nocol", G); return G; };
 const nnRail = (x0, z0, x1, z1, c = NC[1]) => { const L = Math.hypot(x1 - x0, z1 - z0), G = grp((x0 + x1) / 2, 0, (z0 + z1) / 2, -Math.atan2(z1 - z0, x1 - x0)); const n = Math.max(1, Math.round(L / 1.6)); for (let i = 0; i <= n; i++) add(new THREE.CylinderGeometry(0.05, 0.05, 1.1, 6), nnM.chrome(), [-L / 2 + (i * L) / n, 0.55, 0], [0, 0, 0], "nocol", G);
@@ -14892,7 +15042,7 @@ const nnPadT = () => thM("padT", () => tex(512, 512, (g, W) => { g.fillStyle = "
   g.fillStyle = "#ffe23a"; for (let k = 0; k < 24; k++) { const a = (k / 24) * TAU; g.save(); g.translate(W / 2 + Math.cos(a) * 200, W / 2 + Math.sin(a) * 200); g.rotate(a); g.fillRect(-10, -4, 20, 8); g.restore(); } }));
 const nnRing = (x, z, r = 6) => { const G = grp(x, 0, z); add(new THREE.CylinderGeometry(r, r, 0.3, 48), thM("ringPad", () => std({ map: nnPadT(), roughness: 0.3, metalness: 0.4 })), [0, 0.06, 0], [0, 0, 0], "nocol", G);
   for (const [rr, c] of [[r, NC[1]], [r * 0.62, NC[0]], [r * 0.25, NC[2]]]) add(new THREE.TorusGeometry(rr, 0.08, 6, 64), nnM.neon(c), [0, 0.24, 0], [Math.PI / 2, 0, 0], "nocol", G);
-  for (let k = 0; k < 6; k++) { const a = (k / 6) * TAU, P = grp(Math.cos(a) * (r + 0.8), 0, Math.sin(a) * (r + 0.8), -a, G); add(new THREE.CylinderGeometry(0.16, 0.24, 2.4, 8), nnM.chrome(), [0, 1.2, 0], [0, 0, 0], null, P); add(new THREE.SphereGeometry(0.22, 12, 8), nnM.neon(NC[k % 2 ? 0 : 1]), [0, 2.55, 0], [0, 0, 0], "nocol", P); add(new THREE.TorusGeometry(0.26, 0.04, 6, 16), nnM.neon(NC[3]), [0, 1.8, 0], [Math.PI / 2, 0, 0], "nocol", P); } return G; };
+  for (let k = 0; k < 6; k++) { const a = (k / 6) * TAU, P = grp(Math.cos(a) * (r + 0.8), 0, Math.sin(a) * (r + 0.8), -a, G); add(new THREE.CylinderGeometry(0.12, 0.14, 2.3, 8), nnM.dark(), [0, 1.15, 0], [0, 0, 0], null, P); add(new THREE.SphereGeometry(0.22, 14, 10), nnM.neon(NC[k % 2 ? 0 : 1]), [0, 2.56, 0], [0, 0, 0], "nocol", P); add(new THREE.TorusGeometry(0.205, 0.03, 6, 24), nnM.neon(NC[3]), [0, 1.8, 0], [Math.PI / 2, 0, 0], "nocol", P); nnXRingPost(x + Math.cos(a) * (r + 0.8), z + Math.sin(a) * (r + 0.8)); } return G; };
 const nnShip = (x, z, ry = 0, s = 1) => { const G = grp(x, 0, z, ry); const hull = FXA.nnC(), dk = nnM.dark(); const b = add(new THREE.CapsuleGeometry(1.25 * s, 6.5 * s, 8, 20), hull, [0, 2.1 * s, 0], [0, 0, Math.PI / 2], null, G); b.scale.set(1, 1, 0.85);
   add(new THREE.SphereGeometry(1.0 * s, 16, 10, 0, TAU, 0, Math.PI / 2), nnM.glass(), [3.6 * s, 2.6 * s, 0], [0, 0, -0.5], "nocol", G);
   for (const sd of [-1, 1]) { const w = add(new THREE.BoxGeometry(3.4 * s, 0.18 * s, 3.2 * s), hull, [-0.6 * s, 1.8 * s, sd * 2.4 * s], [0, sd * -0.35, 0], "nocol", G); add(new THREE.BoxGeometry(3.0 * s, 0.06 * s, 0.12 * s), nnM.neon(NC[0]), [-0.6 * s, 1.92 * s, sd * 3.6 * s], [0, sd * -0.35, 0], "nocol", G);
@@ -15002,13 +15152,13 @@ Object.assign(TGK, {
   glitch: { lo: "#2a1a4a", hi: "#c06aff", seed: "#3af0ff", mons: ["lo_spindyn", "lo_cogglet", "lo_magnub", "lo_gleamgrub"] },
   canal: { lo: "#103a3a", hi: "#5ae8b0", seed: "#ffe04a", mons: ["lo_gloopa", "lo_coilet", "lo_fizzle", "lo_tiktrill"] } });
 // ---- Neonis detail pass: dense dressing baked into three merged, vertex-coloured meshes per scene (lit solid, lit overhead, neon glow) ----
-const NND = { lit: [], deco: [], glow: [], leaf: [] };
+const NND = { lit: [], deco: [], glow: [], leaf: [], wood: [], metal: [], chrome: [], fabric: [] };
 const NNGEO = {};
 const nnH3 = (x, y, z) => { const h = Math.sin(x * 127.1 + y * 311.7 + z * 74.7) * 43758.5453; return h - Math.floor(h); };
 const nnVN = (x, y, z) => { const xi = Math.floor(x), yi = Math.floor(y), zi = Math.floor(z), f = (t) => t * t * (3 - 2 * t), u = f(x - xi), v = f(y - yi), w = f(z - zi), L = (a, b, t) => a + (b - a) * t;
   return L(L(L(nnH3(xi, yi, zi), nnH3(xi + 1, yi, zi), u), L(nnH3(xi, yi + 1, zi), nnH3(xi + 1, yi + 1, zi), u), v), L(L(nnH3(xi, yi, zi + 1), nnH3(xi + 1, yi, zi + 1), u), L(nnH3(xi, yi + 1, zi + 1), nnH3(xi + 1, yi + 1, zi + 1), u), v), w); };
 const nnGeo = (k) => NNGEO[k] || (NNGEO[k] = (() => { let g;
-  if (k === "box") g = new THREE.BoxGeometry(1, 1, 1); else if (k === "cyl") g = new THREE.CylinderGeometry(0.5, 0.5, 1, 12); else if (k === "cyl6") g = new THREE.CylinderGeometry(0.5, 0.5, 1, 6);
+  if (NNGX[k]) g = NNGX[k](); else if (k === "box") g = new THREE.BoxGeometry(1, 1, 1); else if (k === "cyl") g = new THREE.CylinderGeometry(0.5, 0.5, 1, 12); else if (k === "cyl6") g = new THREE.CylinderGeometry(0.5, 0.5, 1, 6);
   else if (k === "cone") g = new THREE.ConeGeometry(0.5, 1, 12); else if (k === "sph") g = new THREE.SphereGeometry(0.5, 9, 6); else if (k === "ico") { g = new THREE.IcosahedronGeometry(0.5, 1); if (g.index) g = g.toNonIndexed(); const P = g.attributes.position, Nn = new Float32Array(P.count * 3), d = new THREE.Vector3(); for (let i = 0; i < P.count; i++) { d.fromBufferAttribute(P, i).normalize(); const w = 1 + 0.16 * (nnVN(d.x * 2.1 + 3.1, d.y * 2.1, d.z * 2.1) - 0.5) + 0.07 * (nnVN(d.x * 4.7, d.y * 4.7 + 9, d.z * 4.7) - 0.5); P.setXYZ(i, d.x * 0.5 * w, d.y * 0.5 * w, d.z * 0.5 * w); Nn[i * 3] = d.x; Nn[i * 3 + 1] = d.y; Nn[i * 3 + 2] = d.z; } g.setAttribute("normal", new THREE.BufferAttribute(Nn, 3)); }
   else if (k === "ring") { g = new THREE.TorusGeometry(0.5, 0.05, 4, 28); g.rotateX(Math.PI / 2); } else if (k === "pad") g = new THREE.CylinderGeometry(0.5, 0.5, 1, 20); else if (k === "cyl12") g = new THREE.CylinderGeometry(0.5, 0.5, 1, 12); else if (k === "oct") g = new THREE.OctahedronGeometry(0.5, 0); else if (k === "pyr") g = new THREE.ConeGeometry(0.5, 1, 4); else if (k === "limb") g = new THREE.CylinderGeometry(0.32, 0.5, 1, 9);
   else if (k === "card" || k === "cardn") { const f = new THREE.PlaneGeometry(1, 1); if (k === "cardn") { f.rotateX(-Math.PI / 2); f.translate(0.5, 0, 0); } const b = f.clone(); if (k === "cardn") b.rotateX(Math.PI); else b.rotateY(Math.PI);
@@ -15022,20 +15172,21 @@ const nnBx = (bin, O, x, y0, z, w, h, d, col, ry = 0, rx = 0) => nnP(bin, O, "bo
 const nnCy = (bin, O, x, y0, z, r, h, col, gk = "cyl") => nnP(bin, O, gk, x, y0 + h / 2, z, r * 2, h, r * 2, col);
 const nnSp = (bin, O, x, y, z, r, col, gk = "sph") => nnP(bin, O, gk, x, y, z, r * 2, r * 2, r * 2, col);
 const nnDetailFlush = () => { const m4 = new THREE.Matrix4(), q = new THREE.Quaternion(), e = new THREE.Euler(), s = new THREE.Vector3(), v = new THREE.Vector3(), n3 = new THREE.Matrix3(), base = new Map(), cc = new THREE.Color();
-  for (const bin of ["lit", "deco", "glow", "leaf"]) { const isL = bin === "leaf"; const L = NND[bin]; if (!L.length) continue; let nv = 0; for (const it of L) nv += nnGeo(it[0]).attributes.position.count;
-    const P = new Float32Array(nv * 3), N = new Float32Array(nv * 3), C = new Float32Array(nv * 3), UV = isL ? new Float32Array(nv * 2) : null, cv = new THREE.Vector3(); let o = 0;
+  for (const bin of ["lit", "deco", "glow", "leaf", "wood", "metal", "chrome", "fabric"]) { const isL = bin === "leaf", isU = bin === "wood" || bin === "fabric", uS = bin === "wood" ? 0.7 : 2.2, vS = bin === "wood" ? 1.6 : 2.2; const L = NND[bin]; if (!L.length) continue; let nv = 0; for (const it of L) nv += nnGeo(it[0]).attributes.position.count;
+    const P = new Float32Array(nv * 3), N = new Float32Array(nv * 3), C = new Float32Array(nv * 3), UV = isL || isU ? new Float32Array(nv * 2) : null, cv = new THREE.Vector3(); let o = 0;
     for (const [gk, O, wx, ly, wz, rx, ry, rz, sx, sy, sz, col, cen, crad] of L) { let bx = 0, by = 0, bz = 0;
       if (O && O.abs) { bx = O.x; by = O.y; bz = O.z; } else if (O) { const key = O.x + "," + O.z; let b = base.get(key); if (!b) { const [ux, uz] = unwarp(O.x, O.z); b = [ux, Math.max(GHT(ux, uz), O.floor === undefined ? -9 : O.floor), uz]; base.set(key, b); } [bx, by, bz] = b; }
       m4.compose(v.set(bx + wx, by + ly, bz + wz), q.setFromEuler(e.set(rx, ry, rz)), s.set(sx, sy, sz)); n3.getNormalMatrix(m4); cc.set(col);
       const paint = bin !== "glow" && !isL, gy = O ? by : null; if (isL) { cv.set(bx + cen[0], by + cen[1], bz + cen[2]); const j = nnH3(bx + wx, by + ly, bz + wz); cc.offsetHSL((j - 0.5) * 0.03, 0, (j - 0.5) * 0.08); } if (paint) { const j = nnH3(bx + wx, by + ly * 0.37, bz + wz); cc.offsetHSL((j - 0.5) * 0.02, (nnH3(bz + wz, bx, ly) - 0.5) * 0.08, (j - 0.5) * 0.07); }
-      const g = nnGeo(gk), gp = g.attributes.position, gn = g.attributes.normal, gu = g.attributes.uv;
-      for (let i = 0; i < gp.count; i++, o++) { v.fromBufferAttribute(gp, i).applyMatrix4(m4); P[o * 3] = v.x; P[o * 3 + 1] = v.y; P[o * 3 + 2] = v.z; let k = 1;
+      const g = nnGeo(gk), gp = g.attributes.position, gn = g.attributes.normal, gu = g.attributes.uv, hu = nnH3(wx + bx, ly + 3.1, wz + bz) * 7.3, hv = nnH3(wz + bz, wx + bx, ly) * 5.1;
+      for (let i = 0; i < gp.count; i++, o++) { if (isU) { const ax = Math.abs(gn.getX(i)), ay = Math.abs(gn.getY(i)), az = Math.abs(gn.getZ(i)), px = gp.getX(i) * sx, py = gp.getY(i) * sy, pz = gp.getZ(i) * sz; let a, b2, sa, sb; if (ax >= ay && ax >= az) { a = pz; b2 = py; sa = sz; sb = sy; } else if (ay >= az) { a = px; b2 = pz; sa = sx; sb = sz; } else { a = px; b2 = py; sa = sx; sb = sy; } UV[o * 2] = (sa >= sb ? a : b2) * uS + hu; UV[o * 2 + 1] = (sa >= sb ? b2 : a) * vS + hv; }
+        v.fromBufferAttribute(gp, i).applyMatrix4(m4); P[o * 3] = v.x; P[o * 3 + 1] = v.y; P[o * 3 + 2] = v.z; let k = 1;
         if (paint) { k = 0.9 + 0.2 * nnVN(v.x * 0.9, v.y * 0.9 + 5, v.z * 0.9) + 0.06 * (nnVN(v.x * 3.7, v.y * 3.7, v.z * 3.7) - 0.5); if (gy !== null) { const h = Math.min(1, Math.max(0, (v.y - gy) / 0.9)); k *= 0.6 + 0.4 * h * h * (3 - 2 * h); } }
         if (isL) { UV[o * 2] = gu.getX(i); UV[o * 2 + 1] = gu.getY(i); v.sub(cv); const d = v.length() / crad, h = Math.min(1, Math.max(0, d)); k = (0.5 + 0.5 * h * h * (3 - 2 * h)) * (0.92 + 0.16 * nnVN(P[o * 3] * 1.3, P[o * 3 + 1] * 1.3, P[o * 3 + 2] * 1.3)) * (v.y > 0 ? 1.06 : 0.94); v.y = v.y * 0.7 + crad * 0.25; v.normalize(); }
         else v.fromBufferAttribute(gn, i).applyMatrix3(n3).normalize(); N[o * 3] = v.x; N[o * 3 + 1] = v.y; N[o * 3 + 2] = v.z; if (paint && v.y > 0.6) k *= 1.04; C[o * 3] = cc.r * k; C[o * 3 + 1] = cc.g * k; C[o * 3 + 2] = cc.b * k; } }
-    const g = new THREE.BufferGeometry(); g.setAttribute("position", new THREE.BufferAttribute(P, 3)); g.setAttribute("normal", new THREE.BufferAttribute(N, 3)); g.setAttribute("color", new THREE.BufferAttribute(C, 3)); if (isL) g.setAttribute("uv", new THREE.BufferAttribute(UV, 2)); g.computeBoundingSphere();
-    const mat = isL ? nnXLeafM() : bin === "glow" ? thM("nnDG", () => new THREE.MeshBasicMaterial({ vertexColors: true })) : nnPaintGrit();
-    const m = add(g, mat, [0, 0, 0], [0, 0, 0], bin === "lit" ? null : "nocol"); m.userData.noLift = true; m.castShadow = bin === "lit" || isL; m.receiveShadow = bin !== "glow"; if (isL) m.customDepthMaterial = thM("nnDFd", () => new THREE.MeshDepthMaterial({ depthPacking: THREE.RGBADepthPacking, map: nnXLeafM().map, alphaTest: 0.45 })); NND[bin] = []; } };
+    const g = new THREE.BufferGeometry(); g.setAttribute("position", new THREE.BufferAttribute(P, 3)); g.setAttribute("normal", new THREE.BufferAttribute(N, 3)); g.setAttribute("color", new THREE.BufferAttribute(C, 3)); if (UV) g.setAttribute("uv", new THREE.BufferAttribute(UV, 2)); g.computeBoundingSphere();
+    const mat = isL ? nnXLeafM() : bin === "glow" ? thM("nnDG", () => new THREE.MeshBasicMaterial({ vertexColors: true })) : bin === "wood" ? nnWoodM() : bin === "fabric" ? nnClothM() : bin === "metal" ? nnIronM() : bin === "chrome" ? nnChromeM() : nnPaintGrit();
+    const m = add(g, mat, [0, 0, 0], [0, 0, 0], bin === "lit" || bin === "wood" || bin === "metal" ? null : "nocol"); m.userData.noLift = true; m.castShadow = bin !== "glow" && bin !== "deco" && bin !== "chrome"; m.receiveShadow = bin !== "glow"; if (isL) m.customDepthMaterial = thM("nnDFd", () => new THREE.MeshDepthMaterial({ depthPacking: THREE.RGBADepthPacking, map: nnXLeafM().map, alphaTest: 0.45 })); NND[bin] = []; } };
 
 // ---- rooftops: a lighter slab and parapet on every tower, then the clutter a real roof has ----
 const NNROOF = ["#5c5674", "#4e4c6a", "#62587a", "#555c76", "#4a5068"], NNAWN = ["#7a2a8a", "#2a6a8a", "#8a2a5a", "#2a7a66", "#5a3a9a"], NNWIN = ["#e8b888", "#88c8d8", "#d898c8", "#c8c0f0"];
@@ -15086,9 +15237,8 @@ const nnPrps = {
   stall: (O) => { const c = nnPick(), a = NNAWN[Math.floor(R() * NNAWN.length)]; nnBx("lit", O, 0, 0, 0, 2.2, 1.0, 0.9, "#2a2838"); nnBx("glow", O, 0, 0.55, 0.46, 2.0, 0.08, 0.02, c); for (const s of [-1.05, 1.05]) nnBx("lit", O, s, 1.0, -0.38, 0.08, 1.4, 0.08, "#8a8aa0");
     for (let k = 0; k < 5; k++) nnBx("deco", O, -1.04 + k * 0.52, 2.25, 0.05, 0.52, 0.07, 1.45, k % 2 ? "#e8e0f0" : a, 0, 0.18); nnBx("glow", O, 0, 2.62, -0.4, 1.6, 0.36, 0.06, c); nnBx("lit", O, 0, 1.0, 0, 1.9, 0.06, 0.7, "#5a4a3a");
     for (const s of [-0.6, 0.6]) { nnCy("lit", O, s, 0, 0.95, 0.06, 0.65, "#8a8aa0"); nnCy("lit", O, s, 0.65, 0.95, 0.22, 0.07, a); } nnSp("glow", O, 0.6, 1.12, 0, 0.12, "#ffd890"); },
-  cafe: (O) => { const c = NNAWN[Math.floor(R() * NNAWN.length)]; nnCy("lit", O, 0, 0, 0, 0.05, 0.75, "#8a8aa0"); nnCy("lit", O, 0, 0.75, 0, 0.42, 0.05, "#e8e0f0"); for (const [a, b] of [[-0.7, 0], [0.7, 0]]) { nnCy("lit", O, a, 0, b, 0.05, 0.45, "#8a8aa0"); nnCy("lit", O, a, 0.45, b, 0.22, 0.06, c); }
-    nnCy("lit", O, 0, 0.75, 0, 0.03, 1.45, "#22202e"); nnP("deco", O, "cone", 0, 2.32, 0, 2.2, 0.45, 2.2, c); nnSp("glow", O, 0, 2.08, 0, 0.1, "#ffd890"); },
-  bollards: (O) => { for (const s of [-0.7, 0, 0.7]) { nnCy("lit", O, s, 0, 0, 0.12, 0.8, "#22202e"); nnP("glow", O, "ring", s, 0.7, 0, 0.26, 1, 0.26, nnPick()); } },
+  cafe: (O) => { const c = NNAWN[Math.floor(R() * NNAWN.length)]; nnXCafe(O, c); },
+  bollards: (O) => { for (const s of [-0.7, 0, 0.7]) nnXBollard(O, s, 0, nnPick()); },
   bags: (O) => { for (let k = 0; k < 3; k++) nnP("lit", O, "ico", (k - 1) * 0.36, 0.22, (R() - 0.5) * 0.2, 0.44, 0.4, 0.44, "#1c1a26", R(), R()); },
   rack: (O) => { for (const s of [-0.5, 0, 0.5]) nnP("lit", O, "ring", s, 0.45, 0, 0.8, 1, 0.8, "#8a8aa0", Math.PI / 2, Math.PI / 2); nnBx("lit", O, 0, 0, 0, 1.4, 0.05, 0.15, "#22202e"); },
   hydrant: (O) => { const c = R() < 0.5 ? "#ff3ad0" : "#2af0ff"; nnCy("lit", O, 0, 0, 0, 0.16, 0.6, "#3a3470"); nnSp("lit", O, 0, 0.62, 0, 0.17, "#3a3470"); nnP("glow", O, "ring", 0, 0.42, 0, 0.36, 1, 0.36, c); },
@@ -15107,7 +15257,8 @@ const nnCar = (O, y) => { const c = ["#3a3470", "#5a2a6a", "#2a4a6a", "#6a6a8a",
   nnBx("glow", O, 0, y - 0.07, 0, 2.2, 0.06, 1.05, g); for (const s of [-0.42, 0.42]) { nnBx("glow", O, 1.31, y + 0.25, s, 0.04, 0.12, 0.26, "#fff4d0"); nnBx("glow", O, -1.31, y + 0.25, s, 0.04, 0.1, 0.3, "#ff3a5a"); } };
 const nnDrone = (O, y) => { nnBx("deco", O, 0, y, 0, 0.42, 0.12, 0.42, "#22202e"); for (const [a, b] of [[-0.38, -0.38], [0.38, -0.38], [-0.38, 0.38], [0.38, 0.38]]) { nnBx("deco", O, a / 2, y + 0.04, b / 2, Math.abs(a) * 1.1, 0.04, 0.05, "#22202e", Math.atan2(b, a)); nnP("glow", O, "ring", a, y + 0.1, b, 0.32, 1, 0.32, "#2af0ff"); } nnSp("glow", O, 0, y - 0.08, 0, 0.07, "#ff3a5a"); };
 const nnString = (x0, z0, x1, z1, y, n = 9) => { const c0 = nnPick(), O = { x: (x0 + x1) / 2, z: (z0 + z1) / 2 }, dx = x1 - x0, dz = z1 - z0, L = Math.hypot(dx, dz), ry = -Math.atan2(dz, dx);
-  for (let k = 0; k <= n; k++) { const t = k / n, sag = 0.9 * 4 * t * (1 - t), px = (t - 0.5) * dx, pz = (t - 0.5) * dz; nnSp("glow", O, px, y - sag, pz, 0.09, k % 3 === 0 ? c0 : k % 3 === 1 ? "#ffe23a" : "#2af0ff", "ico"); if (k < n) { const t2 = (k + 0.5) / n, sg2 = 0.9 * 4 * t2 * (1 - t2); nnP("deco", O, "box", (t2 - 0.5) * dx, y - sg2 + 0.08, (t2 - 0.5) * dz, L / n + 0.05, 0.025, 0.025, "#14121c", 0, ry); } } };
+  const pts = []; for (let k = 0; k <= n; k++) { const t = k / n; pts.push([(t - 0.5) * dx, y - 0.9 * 4 * t * (1 - t), (t - 0.5) * dz]); } nnXFestoon(O, pts, (k) => k % 3 === 0 ? c0 : k % 3 === 1 ? "#ffe23a" : "#2af0ff");
+  for (const p of [pts[0], pts[n]]) { nnXC("metal", O, p[0], p[1] - 0.05, p[2], 0.06, 0.1, "#2c2a34", "cyl6"); nnXC("chrome", O, p[0], p[1] - 0.08, p[2], 0.035, 0.03, NNCHR, "cyl6"); } };
 
 // ---- street pass over one scene ----
 const nnDetail = (X, Y, o = {}) => { const hub = o.hub || [15, 15], WALL = "xb", OPEN = "sPp,.gkr";
@@ -15349,7 +15500,7 @@ const nnPine = (O, s = 1) => nnXPine(O, s, ["#1e4a48", "#245a50", "#1a3e4a"][Mat
 const nnRound = (O, s = 1) => { nnXRound(O, s, ["#3a6a5a", "#2f5a6a", "#4a5a7a", "#5a4a8a"][Math.floor(nh(O.x, O.z, 4) * 4)]); if (nh(O.x, O.z, 9) < 0.3) nnSp("glow", O, -0.4 * s, 1.7 * s, 0.6 * s, 0.12, "#5affc0"); };
 const nnRock = (O, s = 1) => { nnP("lit", O, "ico", 0, 0.25 * s, 0, 1.3 * s, 0.9 * s, 1.1 * s, ["#5a566a", "#4a4a5c", "#625a6e"][Math.floor(nh(O.x, O.z, 5) * 3)], 0.3, nh(O.x, O.z, 6) * 6); };
 const nnShroom = (O) => { const c = nh(O.x, O.z, 7) < 0.5 ? "#5affc0" : "#ff5ae0"; for (let k = 0; k < 3; k++) { const a = k * 2.1, r = 0.3 * k; nnCy("lit", O, Math.cos(a) * r, 0, Math.sin(a) * r, 0.04, 0.3 + k * 0.1, "#e8e0f0"); nnP("glow", O, "sph", Math.cos(a) * r, 0.32 + k * 0.1, Math.sin(a) * r, 0.34 - k * 0.06, 0.14, 0.34 - k * 0.06, c); } };
-const nnBollard = (O) => { nnCy("lit", O, 0, 0, 0, 0.1, 0.7, "#22202e"); nnSp("glow", O, 0, 0.78, 0, 0.12, "#7af0ff"); };
+const nnBollard = (O) => nnXBollard(O, 0, 0, "#7af0ff");
 const nnReeds = (O) => { for (let k = 0; k < 6; k++) { const a = nh(O.x, O.z, k) * 6.28, r = nh(O.x, O.z, k + 9) * 0.4; nnBx("lit", O, Math.cos(a) * r, 0, Math.sin(a) * r, 0.05, 0.8 + nh(O.x, O.z, k + 3) * 0.7, 0.05, "#3a6a4a", 0, (nh(O.x, O.z, k + 5) - 0.5) * 0.3); } };
 // one pass over a wild cell: trees on meadow, rocks on stone, reeds on the shore, bollards along paths
 const nnWild = (X, Y, o = {}) => { const tree = o.pine ?? 0.4, dens = o.dens ?? 0.045;
@@ -15512,8 +15663,8 @@ TLINK.push(["NL", "NN", "p", 15], ["NN", "NQ", "p", 15], ["NU", "ND", "p", -20],
 
 // ================= WILD DETAIL PASS: everything here goes into the merged detail batches, so it costs a handful of draw calls per area =================
 const WPATH = ",k", WSOFT = "g.";
-const nnPathLamp = (O) => { nnCy("lit", O, 0, 0, 0, 0.07, 2.5, "#22202e"); nnBx("lit", O, 0, 2.45, 0.18, 0.08, 0.08, 0.45, "#22202e"); nnP("glow", O, "cone", 0, 2.32, 0.38, 0.34, 0.22, 0.34, "#ffe9b0"); nnSp("glow", O, 0, 2.22, 0.38, 0.09, "#fff4d0"); };
-const nnPicnic = (O) => { nnBx("lit", O, 0, 0.72, 0, 1.8, 0.08, 0.9, "#8a6a5a"); for (const s of [-0.7, 0.7]) nnBx("lit", O, s, 0, 0, 0.1, 0.72, 0.7, "#3a2a34"); for (const z of [-0.8, 0.8]) { nnBx("lit", O, 0, 0.42, z, 1.8, 0.07, 0.3, "#8a6a5a"); for (const s of [-0.7, 0.7]) nnBx("lit", O, s, 0, z, 0.08, 0.42, 0.08, "#3a2a34"); } };
+const nnPathLamp = (O) => nnXPathLamp(O);
+const nnPicnic = (O) => nnXPicnic(O);
 const nnFirefly = (O, y) => nnSp("glow", O, 0, y, 0, 0.05, ["#e8ff7a", "#7affc8", "#ffe27a"][Math.floor(nh(O.x, O.z, 61) * 3)], "ico");
 const nnLily = (x, z) => { const O = { x, z, floor: -0.1 }, s = 0.25 + nh(x, z, 71) * 0.25; nnCy("deco", O, 0, 0, 0, s, 0.03, "#2a7a5a"); if (nh(x, z, 72) < 0.3) nnSp("glow", O, s * 0.4, 0.08, 0, 0.07, nh(x, z, 73) < 0.5 ? "#ff8ae8" : "#fff4f0"); };
 const nnTrailSign = (O, c) => { nnCy("lit", O, 0, 0, 0, 0.06, 1.7, "#3a2a34"); nnBx("lit", O, 0.25, 1.35, 0, 0.75, 0.24, 0.06, "#5a4a3a", 0, 0); nnBx("glow", O, 0.25, 1.35, 0.035, 0.6, 0.06, 0.01, c); nnBx("lit", O, -0.2, 1.0, 0, 0.6, 0.22, 0.06, "#5a4a3a", 0.4); };
