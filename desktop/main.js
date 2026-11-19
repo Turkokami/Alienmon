@@ -161,7 +161,8 @@ app.whenReady().then(() => {
       Object.assign(state, await win.webContents.executeJavaScript(`({ loadText: (document.getElementById('load')||{}).textContent, loadShown: getComputedStyle(document.getElementById('load')).display !== 'none', hasGame: !!window.GAME, canvases: document.querySelectorAll('canvas').length, gl: (()=>{const c=document.querySelector('canvas');if(!c)return null;const g=c.getContext('webgl2')||c.getContext('webgl');if(!g)return null;const x=g.getExtension('WEBGL_debug_renderer_info');return x?g.getParameter(x.UNMASKED_RENDERER_WEBGL):'webgl'})() })`));
     } catch (e) { state.err = String(e); }
     try { const img = await win.webContents.capturePage(); fs.writeFileSync(out, img.toPNG()); } catch (e) { state.shotErr = String(e); }
-    fs.writeFileSync(out.replace(/\.png$/, '.json'), JSON.stringify({ world, state, blocked, missing: [...new Set(missing)], errors: errors.slice(0, 40) }, null, 2));
+    const report = JSON.stringify({ world, state, blocked, missing: [...new Set(missing)], errors: errors.slice(0, 40) }, null, 2);
+    try { fs.writeFileSync(out.replace(/\.png$/, '.json'), report); } catch (e) { console.log(report); console.error('[selftest] could not write report:', String(e)); }
     app.exit(0);
     }, 2000);
 });
