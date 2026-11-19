@@ -11903,7 +11903,7 @@ const PATC = {}; const groundFor = (sx, sy) => { const GGstart = GG.length; cons
   { const WK = nnWK(sx, sy); for (let y = 0; y < 30; y++) for (let x = 0; x < 30; x++) if (tt(x, y) === "g" && (WK >= 1 || R() < WK)) glowgrassTile(sx + x, sy + y); }
   for (let k = GGstart; k < GG.length; k++) { const gg = GG[k]; if (!".,gx".includes(atW(gg[0], gg[1]))) gg[2] = 0; }
   if (H && H.grass) for (let y = 0; y < 30; y++) for (let x = 0; x < 30; x++) { const c = tt(x, y); const n = FR ? (c === "g" ? 4 : c === "." ? 1 : 0) : Math.round((c === "." ? 7 : c === "x" ? 4 : c === "," ? 3 : c === "g" ? 6 : c === "p" || c === "P" ? (D.pave === "trail" ? 6 : 2) : 0) * ((H && H.grassK) || 1) * nnWK(sx, sy)); for (let k = 0; k < n; k++) { const gx = sx + x + R(), gz = sy + y + R(), cw = atW(gx, gz), onP = cw === "p" || cw === "P"; if (!".,gx".includes(cw) && !onP) continue; if (onP) { if (D.pave !== "trail") { if (R() < 0.12) PEB.push([gx, gz, 0.04 + R() * 0.06]); continue; } if (k % 4 === 0) { const cn = 4 + Math.floor(R() * 4); for (let q = 0; q < cn; q++) MG.push([gx + (R() - 0.5) * 0.22, gz + (R() - 0.5) * 0.22, 0.07 + R() * 0.12, R() * TAU]); } else if (k % 4 === 1 && R() < 0.14) PEB.push([gx, gz, 0.05 + R() * 0.09]); else if (k % 4 === 2 && R() < 0.15) FLW.push([gx, gz, 0.05 + R() * 0.05]); continue; }
-      MG.push([gx, gz, 0.14 + R() * (cw === "x" ? 0.5 : 0.34), R() * TAU]); if (k % 17 === 0) FLW.push([gx, gz, 0.08 + R() * 0.09]); else if (k % 26 === 0) PEB.push([gx, gz, 0.07 + R() * 0.15]); } }
+      MG.push([gx, gz, 0.14 + R() * (cw === "x" ? 0.5 : 0.34), R() * TAU]); if (k % 17 === 0 && (nnWK(sx, sy) >= 1 || R() < 0.3)) FLW.push([gx, gz, 0.08 + R() * 0.09]); else if (k % 26 === 0) PEB.push([gx, gz, 0.07 + R() * 0.15]); } }
 };
 // boardwalk: plank deck with rope rails over a run of tiles (axis-aligned); rails only on sides facing water
 const PLK = {}; const plankG = (L) => { const key = Math.round(L * 2), a = PLK[key] || (PLK[key] = []); if (a.length < 5) { const g = new THREE.BoxGeometry(0.56, 0.13, L, 1, 1, Math.max(2, Math.round(L))); const U = g.attributes.uv; for (let q = 0; q < U.count; q++) U.setXY(q, U.getX(q) * 0.3 + a.length * 0.17, U.getY(q) * L * 0.25); a.push(warp(g, 0.035, 1.2)); } return a[Math.floor(R() * a.length)]; };
@@ -14392,7 +14392,7 @@ const nnHasW = (X, Y) => { for (let y = Y; y < Y + 30; y++) for (let x = X; x < 
 const tGround = (o) => { const X = o.gx, Y = o.gy; fillT(X, Y, X + 29, Y + 29, "x"); if (o.ground) o.ground(X, Y); tLinks(o.id); if (o.after) o.after(X, Y); nnWalks(X, Y); for (const b of o.bld || []) fillT(X + b[1], Y + b[2], X + b[1] + b[3] - 1, Y + b[2] + b[4] - 1, "b"); };
 let TCUR = null; const tBuild = (o) => { const X = o.gx, Y = o.gy; TCUR = o; if (nnHasW(X, Y)) thWater(X, Y); tDecks(X, Y); if (!o.wild) tQuays(X, Y, "sbpP.,gx");
   for (const b of o.bld || []) { if (b[0] === "-") continue; xShack3(b[0], X + b[1], Y + b[2], b[3], b[4], { name: b[5] }); nnSign(b[0], X + b[1], Y + b[2], b[3], b[4]); }
-  if (o.build) o.build(X, Y); nnBlocks(X, Y, o); nnDress(X, Y, o); if (!o.wild) nnDetail(X, Y, o); };
+  if (o.build) o.build(X, Y); nnBlocks(X, Y, o); nnDress(X, Y, o); if (o.wild) nnWildDetail(X, Y, o); else nnDetail(X, Y, o); };
 // a traffic signal: a pole, an arm over the road and a three-light head
 const nnSignal = (x, z, ry = 0) => { const G = grp(x, 0, z, ry); add(new THREE.CylinderGeometry(0.08, 0.1, 4.4, 8), nnM.dark(), [0, 2.2, 0], [0, 0, 0], null, G); add(new THREE.BoxGeometry(0.1, 0.1, 2.6), nnM.dark(), [0, 4.3, 1.3], [0, 0, 0], "nocol", G); add(new THREE.BoxGeometry(0.4, 1.0, 0.3), nnM.dark(), [0, 3.75, 2.5], [0, 0, 0], "nocol", G);
   for (const [y, c] of [[4.05, "#ff3a5a"], [3.75, "#ffe23a"], [3.45, "#2aff9a"]]) add(new THREE.CircleGeometry(0.11, 12), nnM.neon(c), [0, y, 2.66], [0, 0, 0], "nocol", G); return G; };
@@ -14575,7 +14575,8 @@ TS({ id: "NZ", gx: 100, gy: 150, name: "Static Canal", hub: [20, 15],
     tallGrass(X + 20, Y + 23.5, 3.4, 2.6, "canal", { name: "Static Canal reeds" }); tallGrass(X + 20, Y + 6.5, 3.4, 2.6, "neon", { name: "Static Canal verge grass" }); } });
 // ================= NEONIS EXPANSION: Mount Lumen, Lumen Park, the Canal Wilds and eleven new districts =================
 // wild cells carry lighter ground cover so the big parks stay smooth on older laptops
-const nnWK = (sx, sy) => { for (const k in TSCN) { const o = TSCN[k]; if (o.gx === sx && o.gy === sy) return o.wild ? (o.wk ?? 0.4) : 1; } return 1; };
+const nnWK = (sx, sy) => { for (const k in TSCN) { const o = TSCN[k]; if (o.gx === sx && o.gy === sy) return o.wild ? (o.wk ?? 0.28) : 1; } return 1; };
+const tgW = (cx, cz, rx, rz, kind, o = {}) => tallGrass(cx, cz, rx, rz, kind, { dens: 32, ...o });
 const nh = (x, y, s = 0) => { const v = Math.sin(x * 127.1 + y * 311.7 + s * 74.7) * 43758.5453; return v - Math.floor(v); };
 const nnArea = (X, Y, f) => { for (let y = Y; y < Y + 30; y++) for (let x = X; x < X + 30; x++) { const c = f(x, y); if (c) fillT(x, y, x, y, c); } };
 const segD = (px, py, ax, ay, bx, by) => { const dx = bx - ax, dy = by - ay, L = dx * dx + dy * dy, t = L ? Math.max(0, Math.min(1, ((px - ax) * dx + (py - ay) * dy) / L)) : 0; return Math.hypot(px - ax - t * dx, py - ay - t * dy); };
@@ -14616,7 +14617,7 @@ const nnMountH = (x, z) => { if (x < 8 || x > 72 || z < -32 || z > 32) return 0;
 const mtTile = (x, y) => { const r = Math.hypot(x + 0.5 - MTC[0], y + 0.5 - MTC[1]); if (r > 31.5) return "g"; if (r < 4.6) return "P"; if (polyD(x + 0.5, y + 0.5, MTR) < 1.7) return ","; return r < 13 ? "." : r < 15 && nh(x, y, 11) < 0.5 ? "." : "g"; };
 const mtBuild = (X, Y, o) => { nnWild(X, Y, { pine: 0.85, dens: 0.07, rocks: 0.07 });
   for (let i = 18; i < MTR.length - 6; i += 22) { const [ax, az] = MTR[i], [bx, bz] = MTR[i + 1]; if (ax < X || ax >= X + 30 || az < Y || az >= Y + 30) continue; const nx = -(bz - az), nz = bx - ax, L = Math.hypot(nx, nz) || 1, s = i % 44 ? 1 : -1; nnBollard({ x: ax + (nx / L) * 1.9 * s, z: az + (nz / L) * 1.9 * s }); } };
-TS({ id: "M1", gx: 10, gy: -30, name: "Mount Lumen North Face", wild: true, ground(X, Y) { nnArea(X, Y, mtTile); }, build(X, Y) { mtBuild(X, Y); tallGrass(X + 12, Y + 18, 4, 3.5, "glitch", { name: "Mount Lumen ridge grass" }); } });
+TS({ id: "M1", gx: 10, gy: -30, name: "Mount Lumen North Face", wild: true, ground(X, Y) { nnArea(X, Y, mtTile); }, build(X, Y) { mtBuild(X, Y); tgW(X + 12, Y + 18, 4, 3.5, "glitch", { name: "Mount Lumen ridge grass" }); } });
 TS({ id: "M2", gx: 40, gy: -30, name: "Mount Lumen Summit", wild: true, ground(X, Y) { nnArea(X, Y, mtTile); },
   build(X, Y) { mtBuild(X, Y); const cx = MTC[0], cz = MTC[1];
     // the lookout: a rail around the summit with a gap where the trail arrives, benches and a telescope facing the city lights to the east
@@ -14624,13 +14625,13 @@ TS({ id: "M2", gx: 40, gy: -30, name: "Mount Lumen Summit", wild: true, ground(X
     nnBench(cx + 1.6, cz + 2.2, Math.PI / 2 + 0.5); nnBench(cx + 2.4, cz - 0.6, Math.PI / 2); nnBench(cx + 1.4, cz - 3.0, Math.PI / 2 - 0.5);
     { const G = grp(cx + 3.3, 0, cz + 0.9, Math.PI / 2); add(new THREE.CylinderGeometry(0.06, 0.08, 1.2, 8), nnM.dark(), [0, 0.6, 0], [0, 0, 0], null, G); add(new THREE.CylinderGeometry(0.13, 0.18, 0.9, 12), nnM.chrome(), [0, 1.3, 0.1], [1.2, 0, 0], "nocol", G); add(new THREE.TorusGeometry(0.16, 0.03, 6, 16), nnM.neon(NC[1]), [0, 1.5, 0.48], [1.2 - Math.PI / 2, 0, 0], "nocol", G); }
     nnRelay(cx - 0.5, cz - 3.2, 11); nnQuest(cx - 2.2, cz + 2.4, "lumen-beacon", "Relight the Lumen Beacon", Math.PI / 2);
-    tallGrass(X + 8, Y + 8, 4, 3.4, "neon", { name: "Mount Lumen high meadow" }); } });
-TS({ id: "M3", gx: 10, gy: 0, name: "Mount Lumen West Slope", wild: true, ground(X, Y) { nnArea(X, Y, mtTile); }, build(X, Y) { mtBuild(X, Y); tallGrass(X + 13, Y + 9, 5, 4, "neon", { name: "West slope grass" }); nnQuest(X + 21, Y + 22, "lost-hiker", "Find the lost hiker", 0.6); } });
+    tgW(X + 8, Y + 8, 4, 3.4, "neon", { name: "Mount Lumen high meadow" }); } });
+TS({ id: "M3", gx: 10, gy: 0, name: "Mount Lumen West Slope", wild: true, ground(X, Y) { nnArea(X, Y, mtTile); }, build(X, Y) { mtBuild(X, Y); tgW(X + 13, Y + 9, 5, 4, "neon", { name: "West slope grass" }); nnQuest(X + 21, Y + 22, "lost-hiker", "Find the lost hiker", 0.6); } });
 TS({ id: "M4", gx: 40, gy: 0, name: "Mount Lumen Trailhead", hub: [22, 15], wild: true,
   ground(X, Y) { nnArea(X, Y, mtTile); fillT(X + 20, Y + 12, X + 29, Y + 18, ","); ellT(X + 24, Y + 15, 3, 3, "P"); fillT(X + 12, Y + 26, X + 23, Y + 27, ","); },
   bld: [["n_home2", 13, 19, 9, 7, "Trailhead Lodge"]],
   build(X, Y) { mtBuild(X, Y); nnArch(X + 22.5, Y + 15, Math.PI / 2, 6.5, 4.6, NC[1]); nnLamp(X + 26, Y + 12.4, Math.PI, NC[0]); nnLamp(X + 26, Y + 17.6, 0, NC[0]); nnBillboard(X + 27.2, Y + 21, -Math.PI / 2, 3.4, 1.8, 1.2, 2);
-    nnBench(X + 24, Y + 19, 0); nnPlanter(X + 20.8, Y + 11.8, NC[3]); tallGrass(X + 8, Y + 22, 4, 3.4, "neon", { name: "Trailhead meadow" }); } });
+    nnBench(X + 24, Y + 19, 0); nnPlanter(X + 20.8, Y + 11.8, NC[3]); tgW(X + 8, Y + 22, 4, 3.4, "neon", { name: "Trailhead meadow" }); } });
 
 // ================= LUMEN PARK (five cells, x 40..99, z 60..149): a lake with an island, bridges, meadows and woods =================
 const PK1 = [[62, 90, 13, 10], [80, 102, 9, 7], [84, 113, 4, 6], [86, 125, 5.5, 9]];
@@ -14648,19 +14649,19 @@ TS({ id: "P1", gx: 40, gy: 60, name: "Lumen Park North Gate", hub: [14, 6], wild
     { const G = grp(ix, 0, iz); for (let k = 0; k < 6; k++) { const a = (k / 6) * TAU; add(new THREE.CylinderGeometry(0.1, 0.1, 2.6, 8), nnM.dark(), [Math.cos(a) * 1.5, 1.3, Math.sin(a) * 1.5], [0, 0, 0], k ? "nocol" : null, G); }
       add(new THREE.ConeGeometry(2.2, 1.2, 6), thM("gazRoof", () => std({ color: "#5a4a8a", roughness: 0.6 })), [0, 3.2, 0], [0, 0, 0], "nocol", G); add(new THREE.TorusGeometry(1.6, 0.06, 6, 24), nnM.neon(NC[0]), [0, 2.6, 0], [Math.PI / 2, 0, 0], "nocol", G); }
     nnQuest(ix + 1.2, iz + 1.6, "glowfish", "Feed the lake glowfish", 0); nnArch(X + 14, Y + 3.5, 0, 7, 5, NC[3]); nnBench(X + 11, Y + 8.6, Math.PI / 2); nnBench(X + 17, Y + 8.6, -Math.PI / 2); nnPlanter(X + 11, Y + 4, NC[0]); nnPlanter(X + 17, Y + 4, NC[1]);
-    tallGrass(X + 7, Y + 18, 4.5, 4, "neon", { name: "Lumen Park west meadow" }); } });
+    tgW(X + 7, Y + 18, 4.5, 4, "neon", { name: "Lumen Park west meadow" }); } });
 TS({ id: "P2", gx: 70, gy: 60, name: "Lumen Park Boathouse", wild: true, ground(X, Y) { nnArea(X, Y, pk1Tile); fillT(X + 8, Y + 25, X + 18, Y + 27, ","); },
   bld: [["n_cafe", 9, 18, 9, 7, "Lumen Park Boathouse"]],
   build(X, Y) { pkBuild(X, Y); nnLights(X + 8, Y + 26.6, X + 18, Y + 26.6, 10); nnBench(X + 20, Y + 27, Math.PI); nnCart(X + 6, Y + 26.5, 0, NC[1]); thBoat(X + 0.5, Y + 26, 0.4, "#ff3ad0");
-    tallGrass(X + 18, Y + 9, 5, 4, "neon", { name: "Lumen Park north meadow" }); } });
+    tgW(X + 18, Y + 9, 5, 4, "neon", { name: "Lumen Park north meadow" }); } });
 TS({ id: "P3", gx: 40, gy: 90, name: "Lumen Park Woods", wild: true, ground(X, Y) { nnArea(X, Y, pk1Tile); },
-  build(X, Y) { nnWild(X, Y, { pine: 0.6, dens: 0.09 }); tallGrass(X + 9, Y + 20, 5, 4, "neon", { name: "Lumen Park woods grass" }); tallGrass(X + 25, Y + 13, 2.6, 2.2, "canal", { name: "Lumen Park lake reeds" }); nnQuest(X + 8, Y + 22, "lost-kite", "Get the kite down from the tree", 0.4); } });
+  build(X, Y) { nnWild(X, Y, { pine: 0.6, dens: 0.09 }); tgW(X + 9, Y + 20, 5, 4, "neon", { name: "Lumen Park woods grass" }); tgW(X + 25, Y + 13, 2.6, 2.2, "canal", { name: "Lumen Park lake reeds" }); nnQuest(X + 8, Y + 22, "lost-kite", "Get the kite down from the tree", 0.4); } });
 TS({ id: "P4", gx: 70, gy: 90, name: "Lumen Park Lake", hub: [26, 15], wild: true, ground(X, Y) { nnArea(X, Y, pk1Tile); },
   build(X, Y) { pkBuild(X, Y); thBoat(X + 12, Y + 9, 1.2, "#2af0ff"); thBoat(X + 4, Y + 2, -0.4, "#ffe23a");
-    tallGrass(X + 4, Y + 24, 3.6, 3, "canal", { name: "Lumen Park south reeds" }); } });
+    tgW(X + 4, Y + 24, 3.6, 3, "canal", { name: "Lumen Park south reeds" }); } });
 TS({ id: "P5", gx: 70, gy: 120, name: "Lumen Park South Gate", hub: [15, 22], wild: true, ground(X, Y) { nnArea(X, Y, pk1Tile); ellT(X + 15, Y + 22, 3, 3, "P"); },
   build(X, Y) { pkBuild(X, Y); nnArch(X + 15, Y + 25.5, 0, 7, 5, NC[2]); nnBench(X + 12, Y + 19.5, Math.PI / 2); nnVend(X + 18.6, Y + 20, -Math.PI / 2); nnPlay(X + 6, Y + 6);
-    tallGrass(X + 7, Y + 18, 4, 3.5, "neon", { name: "Lumen Park south meadow" }); tallGrass(X + 23, Y + 6, 3, 3, "canal", { name: "Lumen Park inlet reeds" }); } });
+    tgW(X + 7, Y + 18, 4, 3.5, "neon", { name: "Lumen Park south meadow" }); tgW(X + 23, Y + 6, 3, 3, "canal", { name: "Lumen Park inlet reeds" }); } });
 
 // ================= THE CANAL WILDS (four cells, x 190..249, z 120..179): a winding river with marsh, boardwalks and woods =================
 const cwC = (y) => 222 + 9 * Math.sin((y - 120) * 0.085) + 3 * Math.sin(y * 0.21), cwW = (y) => 3.2 + 1.2 * Math.sin(y * 0.13);
@@ -14670,15 +14671,15 @@ const cwTile = (x, y) => { const px = x + 0.5, py = y + 0.5, d = Math.abs(px - c
   if (d > 2.6 && d < 4.4 && py > 126 && py < 178) return ","; for (const [a, b] of [[[197, 135], [cwC(135) - cwW(135) - 3.5, 135]], [[196, 175], [cwC(175) - cwW(175) - 3.5, 175]], [[cwC(150) + 6, 150], [244, 150]]]) if (segD(px, py, a[0], a[1], b[0], b[1]) < 1.6) return ",";
   return nh(x, y, 31) < 0.015 ? "." : "g"; };
 TS({ id: "Q1", gx: 190, gy: 120, name: "Canal Wilds Gate", hub: [6, 15], wild: true, ground(X, Y) { nnArea(X, Y, cwTile); ellT(X + 6, Y + 15, 2.6, 2.6, "P"); },
-  build(X, Y) { nnWild(X, Y, { pine: 0.3, dens: 0.06 }); nnArch(X + 3.5, Y + 15, Math.PI / 2, 6.5, 4.6, NC[1]); tallGrass(X + 18, Y + 24, 3, 3.5, "canal", { name: "Canal Wilds reed bed" }); tallGrass(X + 9, Y + 5, 4, 3, "neon", { name: "Canal Wilds north meadow" }); } });
+  build(X, Y) { nnWild(X, Y, { pine: 0.3, dens: 0.06 }); nnArch(X + 3.5, Y + 15, Math.PI / 2, 6.5, 4.6, NC[1]); tgW(X + 18, Y + 24, 3, 3.5, "canal", { name: "Canal Wilds reed bed" }); tgW(X + 9, Y + 5, 4, 3, "neon", { name: "Canal Wilds north meadow" }); } });
 TS({ id: "Q2", gx: 220, gy: 120, name: "Canal Wilds Ranger Station", wild: true, ground(X, Y) { nnArea(X, Y, cwTile); fillT(X + 15, Y + 9, X + 26, Y + 11, ","); },
   bld: [["n_home2", 16, 2, 9, 7, "Ranger Station"]],
   build(X, Y) { nnWild(X, Y, { pine: 0.5, dens: 0.07 }); nnLamp(X + 15, Y + 10, Math.PI / 2, NC[1]); nnBench(X + 26.5, Y + 10, -Math.PI / 2); nnQuest(X + 22, Y + 12, "ranger-log", "Return the ranger's logbook", Math.PI);
-    tallGrass(X + 22, Y + 22, 3.4, 3, "canal", { name: "Ranger pond reeds" }); } });
+    tgW(X + 22, Y + 22, 3.4, 3, "canal", { name: "Ranger pond reeds" }); } });
 TS({ id: "Q3", gx: 190, gy: 150, name: "Canal Wilds Marsh", hub: [6, 25], wild: true, ground(X, Y) { nnArea(X, Y, cwTile); ellT(X + 6, Y + 25, 2.6, 2.6, "P"); },
-  build(X, Y) { nnWild(X, Y, { pine: 0.2, dens: 0.05 }); nnQuest(X + 21, Y + 4, "reed-drone", "Find the drone lost in the reeds", 0); tallGrass(X + 15, Y + 8, 3, 3, "canal", { name: "Marsh reeds" }); tallGrass(X + 10, Y + 18, 4, 3, "neon", { name: "Marsh meadow" }); } });
+  build(X, Y) { nnWild(X, Y, { pine: 0.2, dens: 0.05 }); nnQuest(X + 21, Y + 4, "reed-drone", "Find the drone lost in the reeds", 0); tgW(X + 15, Y + 8, 3, 3, "canal", { name: "Marsh reeds" }); tgW(X + 10, Y + 18, 4, 3, "neon", { name: "Marsh meadow" }); } });
 TS({ id: "Q4", gx: 220, gy: 150, name: "Canal Wilds Deep Woods", wild: true, ground(X, Y) { nnArea(X, Y, cwTile); },
-  build(X, Y) { nnWild(X, Y, { pine: 0.7, dens: 0.1 }); tallGrass(X + 20, Y + 18, 4.5, 4, "glitch", { name: "Deep woods glitch grass" }); tallGrass(X + 6, Y + 6, 3, 3, "canal", { name: "Deep woods reeds" }); } });
+  build(X, Y) { nnWild(X, Y, { pine: 0.7, dens: 0.1 }); tgW(X + 20, Y + 18, 4.5, 4, "glitch", { name: "Deep woods glitch grass" }); tgW(X + 6, Y + 6, 3, 3, "canal", { name: "Deep woods reeds" }); } });
 
 // ================= NEW CITY DISTRICTS =================
 TS({ id: "NN", gx: 100, gy: 0, name: "Night Market", hub: [15, 15],
@@ -14754,6 +14755,34 @@ TS({ id: "N0", gx: 70, gy: 150, name: "Old Town", hub: [15, 15],
 TLINK.push(["NL", "NN", "p", 15], ["NN", "NQ", "p", 15], ["NU", "ND", "p", -20], ["NU", "NE", "p", -15], ["NE", "NT", "p", 205], ["NO", "NT", "p", 15], ["NV", "NX", "p", 47],
   ["NV", "N3", "p", 205], ["N3", "NH", "p", 197], ["NH", "N6", "p", 103], ["NM", "N4", "p", 114], ["N4", "N5", "p", 115], ["N5", "N7", "p", 135], ["N7", "NY", "p", 138], ["N5", "NZ", "p", 127],
   ["NZ", "N0", "p", 165], ["NZ", "N0", "k", 165], ["NL", "M4", "p", 15], ["NS", "P1", "p", 54], ["P4", "N4", "p", 105], ["P5", "N5", "p", 135], ["P5", "N0", "p", 85], ["NW", "Q1", "p", 135], ["NP", "Q3", "p", 176]);
+
+// ================= WILD DETAIL PASS: everything here goes into the merged detail batches, so it costs a handful of draw calls per area =================
+const WPATH = ",k", WSOFT = "g.";
+const nnPathLamp = (O) => { nnCy("lit", O, 0, 0, 0, 0.07, 2.5, "#22202e"); nnBx("lit", O, 0, 2.45, 0.18, 0.08, 0.08, 0.45, "#22202e"); nnP("glow", O, "cone", 0, 2.32, 0.38, 0.34, 0.22, 0.34, "#ffe9b0"); nnSp("glow", O, 0, 2.22, 0.38, 0.09, "#fff4d0"); };
+const nnPicnic = (O) => { nnBx("lit", O, 0, 0.72, 0, 1.8, 0.08, 0.9, "#8a6a5a"); for (const s of [-0.7, 0.7]) nnBx("lit", O, s, 0, 0, 0.1, 0.72, 0.7, "#3a2a34"); for (const z of [-0.8, 0.8]) { nnBx("lit", O, 0, 0.42, z, 1.8, 0.07, 0.3, "#8a6a5a"); for (const s of [-0.7, 0.7]) nnBx("lit", O, s, 0, z, 0.08, 0.42, 0.08, "#3a2a34"); } };
+const nnFirefly = (O, y) => nnSp("glow", O, 0, y, 0, 0.05, ["#e8ff7a", "#7affc8", "#ffe27a"][Math.floor(nh(O.x, O.z, 61) * 3)], "ico");
+const nnLily = (x, z) => { const O = { x, z, floor: -0.1 }, s = 0.25 + nh(x, z, 71) * 0.25; nnCy("deco", O, 0, 0, 0, s, 0.03, "#2a7a5a"); if (nh(x, z, 72) < 0.3) nnSp("glow", O, s * 0.4, 0.08, 0, 0.07, nh(x, z, 73) < 0.5 ? "#ff8ae8" : "#fff4f0"); };
+const nnTrailSign = (O, c) => { nnCy("lit", O, 0, 0, 0, 0.06, 1.7, "#3a2a34"); nnBx("lit", O, 0.25, 1.35, 0, 0.75, 0.24, 0.06, "#5a4a3a", 0, 0); nnBx("glow", O, 0.25, 1.35, 0.035, 0.6, 0.06, 0.01, c); nnBx("lit", O, -0.2, 1.0, 0, 0.6, 0.22, 0.06, "#5a4a3a", 0.4); };
+const nnLog = (O) => { nnP("lit", O, "cyl", 0, 0.22, 0, 0.44, 1.8, 0.44, "#4a3a34", 0, 0, Math.PI / 2); nnP("glow", O, "sph", 0.5, 0.42, 0.1, 0.16, 0.08, 0.16, "#5affc0"); };
+const nnWildDetail = (X, Y, o = {}) => { const park = /^P/.test(o.id), mtn = /^M/.test(o.id);
+  const isP = (x, y) => WPATH.includes(at(x, y)); let lastBench = -99, signs = 0;
+  for (let y = Y; y < Y + 30; y++) for (let x = X; x < X + 30; x++) { const c = at(x, y), h = nh(x, y, 40);
+    if (c === ",") { // path edge furniture: lamps, benches, signposts at forks
+      let side = null, pn = 0; for (const [dx, dy] of [[1, 0], [-1, 0], [0, 1], [0, -1]]) { const n = at(x + dx, y + dy); if (WSOFT.includes(n)) side = [dx, dy]; if (isP(x + dx, y + dy)) pn++; }
+      if (side && ((x * 5 + y * 11) % 13 === 0)) { nnPathLamp({ x: x + 0.5 + side[0] * 0.55, z: y + 0.5 + side[1] * 0.55, ry: Math.atan2(-side[0], -side[1]) }); continue; }
+      if (side && h < (park ? 0.05 : 0.025) && (x + y) - lastBench > 6) { lastBench = x + y; const bx = x + 0.5 + side[0] * 0.95, bz = y + 0.5 + side[1] * 0.95; if (WSOFT.includes(at(Math.floor(bx), Math.floor(bz)))) nnPrps.bench({ x: bx, z: bz, ry: Math.atan2(-side[0], -side[1]) }); continue; }
+      if (pn >= 3 && signs < 3 && h > 0.9 && side) { signs++; nnTrailSign({ x: x + 0.5 + side[0] * 0.6, z: y + 0.5 + side[1] * 0.6, ry: h * 6 }, NC[signs % 4]); } }
+    else if (c === "g") { let nearP = false; for (let dy = -2; dy <= 2 && !nearP; dy++) for (let dx = -2; dx <= 2; dx++) if (isP(x + dx, y + dy)) { nearP = true; break; }
+      if (nh(x, y, 50) < 0.07) nnFirefly({ x: x + nh(x, y, 51), z: y + nh(x, y, 52) }, 0.7 + nh(x, y, 53) * 1.6);
+      if (park && nearP && h > 0.988) nnPicnic({ x: x + 0.5, z: y + 0.5, ry: nh(x, y, 54) * 3 });
+      else if (!nearP && h > 0.975 && h <= 0.988) nnLog({ x: x + 0.5, z: y + 0.5, ry: nh(x, y, 55) * 6 }); }
+    else if (c === "w") { let shore = false; for (const [dx, dy] of [[1, 0], [-1, 0], [0, 1], [0, -1], [2, 0], [-2, 0], [0, 2], [0, -2]]) if (at(x + dx, y + dy) !== "w") shore = true;
+      if (shore && h < 0.22) nnLily(x + 0.2 + nh(x, y, 56) * 0.6, y + 0.2 + nh(x, y, 57) * 0.6); } }
+  if (mtn) { // rest stops every so often along the trail: bench, lamp and a cairn, on the downhill side
+    for (let i = 60; i < MTR.length - 30; i += 70) { const [ax, az] = MTR[i], [bx, bz] = MTR[i + 1]; if (ax < X || ax >= X + 30 || az < Y || az >= Y + 30) continue; const dx = ax - MTC[0], dz = az - MTC[1], L = Math.hypot(dx, dz), ox = dx / L, oz = dz / L;
+      const O = { x: ax + ox * 1.9, z: az + oz * 1.9, ry: Math.atan2(ox, oz) + Math.PI }; nnPrps.bench(O); nnPathLamp({ x: ax + ox * 1.9 + oz * 1.4, z: az + oz * 1.9 - ox * 1.4, ry: O.ry });
+      for (let k = 0; k < 4; k++) nnP("lit", { x: ax + ox * 1.9 - oz * 1.3, z: az + oz * 1.9 + ox * 1.3 }, "ico", 0, 0.15 + k * 0.24, 0, 0.5 - k * 0.09, 0.26, 0.45 - k * 0.08, "#6a6478", 0, k); } }
+};
 // small helpers for the new scenes
 const tIsle = (X, Y, cx, cy, r, seed, jungle = 0.5) => { tBlob(X + cx, Y + cy, r, ".", 0.25, seed); if (jungle) tBlob(X + cx, Y + cy, r * jungle, "g", 0.3, seed + 1); };
 const tLamps = (pts, X, Y) => { for (const [x, z] of pts) thLamp(X + x, Y + z); };
