@@ -7,6 +7,7 @@ const { app, BrowserWindow, Menu, protocol, session, shell } = require('electron
 const fs = require('fs');
 const path = require('path');
 const { Readable } = require('stream');
+const os = require('os');
 
 app.setName('Alienmon 3D');
 app.commandLine.appendSwitch('ignore-gpu-blocklist');          // use the GPU even on older driver lists
@@ -14,6 +15,11 @@ app.commandLine.appendSwitch('force_high_performance_gpu');     // laptops: pick
 app.commandLine.appendSwitch('enable-gpu-rasterization');
 app.commandLine.appendSwitch('disable-background-timer-throttling');
 app.commandLine.appendSwitch('disable-renderer-backgrounding');
+// Keeping every built area needs a bigger JavaScript heap than Chrome's default. Budget: half the PC's RAM.
+const RAM_MB = Math.round(os.totalmem() / 1048576);
+const AREA_MB = 200;                                   // measured: about 100 MB of game data + textures per built area
+const CACHE_AREAS = Math.max(6, Math.floor((RAM_MB * 0.5) / AREA_MB));
+app.commandLine.appendSwitch('js-flags', '--max-old-space-size=' + Math.min(16384, Math.max(4096, Math.round(RAM_MB * 0.6))));
 
 const HOST = 'alienmon';
 const ORIGIN = 'app://' + HOST;
@@ -53,6 +59,11 @@ function resolveFile(urlPath) {
 
 async function serve(request) {
   const url = new URL(request.url);
+  if (url.pathname === '/desktop-config.js') {
+    const off = /[?&]preload=0\b/.test(url.search) || process.env.ALIENMON_NO_PRELOAD === '1';
+    return new Response(`window.AM_DESKTOP=1;window.AM_DESKTOP_RAM_MB=${RAM_MB};window.AM_DESKTOP_CACHE=${CACHE_AREAS};try{var c=+localStorage.getItem('am_desktop_cap');if(c>0&&c<window.AM_DESKTOP_CACHE)window.AM_DESKTOP_CACHE=c}catch(e){}` + (off ? 'window.AM_PRELOAD_OFF=1;' : ''),
+      { headers: { 'Content-Type': 'text/javascript; charset=utf-8', 'Cache-Control': 'no-cache' } });
+  }
   const file = resolveFile(url.pathname);
   let st;
   try { st = file && fs.statSync(file); } catch {}
@@ -128,15 +139,31 @@ app.whenReady().then(() => {
   win.webContents.on('console-message', (e) => { const lvl = e.level ?? e.params?.level; const msg = e.message ?? e.params?.message; if (lvl === 'error' || lvl === 3) errors.push(msg); });
   win.webContents.on('render-process-gone', (e, d) => errors.push('renderer gone: ' + d.reason));
   win.loadURL(worldUrl(world));
-  setTimeout(async () => {
-    let state = {};
+  const t0 = Date.now(), limit = (parseFloat(secs) || 30) * 1000;
+  const memMB = () => Math.round(app.getAppMetrics().reduce((a, m) => a + (m.memory ? m.memory.workingSetSize : 0), 0) / 1024);
+  let peak = 0;
+  const poll = setInterval(async () => {
+    peak = Math.max(peak, memMB());
+    let pre = null;
+    try { pre = await win.webContents.executeJavaScript('window.AM_PRELOAD ? JSON.stringify(window.AM_PRELOAD) : null'); } catch {}
+    pre = pre && JSON.parse(pre);
+    if (process.env.SELFTEST_VERBOSE && pre) console.log('[selftest]', world, Math.round((Date.now() - t0) / 1000) + 's', pre.built + '/' + pre.total, memMB() + 'MB');
+    if (!((pre && pre.done) || Date.now() - t0 > limit)) return;
+    clearInterval(poll);
+    if (process.env.SELFTEST_TELEPORT) {   // walk into the area farthest from the start, to see a reused area drawn
+      try { await win.webContents.executeJavaScript(`(()=>{const G=window.GAME,R=G.res.rects,p=G.P.position;let best=null,bd=-1;for(const k in R){const [x,z]=G.res.unwarp?G.res.unwarp(R[k][0]+15,R[k][1]+15):[R[k][0]+15,R[k][1]+15];const d=Math.hypot(x-p.x,z-p.z);if(d>bd){bd=d;best=[k,x,z]}}p.set(best[1],G.groundY(best[1],best[2]),best[2]);window.__tp=best[0];return best})()`); } catch (e) { errors.push('teleport: ' + e); }
+      await new Promise(r => setTimeout(r, 15000));
+    }
+    await new Promise(r => setTimeout(r, 4000));
+    let state = { teleportedTo: await win.webContents.executeJavaScript('window.__tp||null').catch(()=>null), lastLoad: await win.webContents.executeJavaScript('window.GAME&&window.GAME.STAT?JSON.stringify(window.GAME.STAT):null').catch(()=>null), preload: pre, secondsToReady: Math.round((Date.now() - t0) / 1000), memMB: memMB(), peakMemMB: peak };
+    try { state.checks = await win.webContents.executeJavaScript(`(async()=>{const out={};const names=${JSON.stringify(fs.existsSync(path.join(GAME,'m','remote'))?fs.readdirSync(path.join(GAME,'m','remote')):[])};let ok=0;for(const n of names){const r=await fetch('m/remote/'+n);const b=new Uint8Array(await r.arrayBuffer());if(r.ok&&String.fromCharCode(b[0],b[1],b[2],b[3])==='glTF')ok++}out.remoteModelsOk=ok+'/'+names.length;const G=window.GAME;if(G&&G.STAT&&!window.AM_PRELOAD_OFF){const ks=Object.keys(G.res.rects).filter(k=>!G.CH[k]).slice(0,8);const t=[];for(const k of ks){const a=performance.now();G.loadScene(k);t.push({area:k,ms:Math.round(performance.now()-a),cached:String(G.STAT.last).endsWith('*')});G.unloadScene(k)}out.revisit=t;const ri=G.r.info.memory;out.gpu={textures:ri.textures,geometries:ri.geometries};if(performance.memory)out.jsHeapMB=Math.round(performance.memory.usedJSHeapSize/1048576)}const v=await fetch('audio/voicebank_spo.mp3',{headers:{Range:'bytes=100-199'}});out.rangeStatus=v.status;out.rangeBytes=(await v.arrayBuffer()).byteLength;return out})()`); } catch (e) { state.checkErr = String(e); }
     try {
-      state = await win.webContents.executeJavaScript(`({ loadText: (document.getElementById('load')||{}).textContent, loadShown: getComputedStyle(document.getElementById('load')).display !== 'none', hasGame: !!window.GAME, canvases: document.querySelectorAll('canvas').length, gl: (()=>{const c=document.querySelector('canvas');if(!c)return null;const g=c.getContext('webgl2')||c.getContext('webgl');if(!g)return null;const x=g.getExtension('WEBGL_debug_renderer_info');return x?g.getParameter(x.UNMASKED_RENDERER_WEBGL):'webgl'})() })`);
+      Object.assign(state, await win.webContents.executeJavaScript(`({ loadText: (document.getElementById('load')||{}).textContent, loadShown: getComputedStyle(document.getElementById('load')).display !== 'none', hasGame: !!window.GAME, canvases: document.querySelectorAll('canvas').length, gl: (()=>{const c=document.querySelector('canvas');if(!c)return null;const g=c.getContext('webgl2')||c.getContext('webgl');if(!g)return null;const x=g.getExtension('WEBGL_debug_renderer_info');return x?g.getParameter(x.UNMASKED_RENDERER_WEBGL):'webgl'})() })`));
     } catch (e) { state.err = String(e); }
     try { const img = await win.webContents.capturePage(); fs.writeFileSync(out, img.toPNG()); } catch (e) { state.shotErr = String(e); }
     fs.writeFileSync(out.replace(/\.png$/, '.json'), JSON.stringify({ world, state, blocked, missing: [...new Set(missing)], errors: errors.slice(0, 40) }, null, 2));
     app.exit(0);
-  }, (parseFloat(secs) || 30) * 1000);
+    }, 2000);
 });
 
 app.on('window-all-closed', () => app.quit());

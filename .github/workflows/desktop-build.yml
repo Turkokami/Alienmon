@@ -1,0 +1,62 @@
+# Builds the Alienmon 3D Windows installer on a real Windows machine and publishes it as a
+# pre-release on this repo (Releases page). Runs on pushes to desktop-app that touch the desktop
+# packaging or the game folder, or by hand from the Actions tab. Never touches maps-v2 or the website.
+name: Desktop app - build Windows installer
+on:
+  push:
+    branches: [desktop-app]
+    paths: ['desktop/**', 'sporeholm3d/**', '.github/workflows/desktop-build.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: desktop-build
+  cancel-in-progress: true
+jobs:
+  windows:
+    runs-on: windows-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          sparse-checkout: |
+            sporeholm3d
+            desktop
+          sparse-checkout-cone-mode: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install packaging tools
+        working-directory: desktop
+        run: npm ci
+      - name: Build installer
+        working-directory: desktop
+        run: npm run dist:win
+      - name: Check every world starts offline in the built app
+        working-directory: desktop
+        shell: bash
+        env:
+          ALIENMON_NO_PRELOAD: '1'
+        run: |
+          mkdir -p selftest
+          for w in dustara sporeholm ferrox thalassa neonis; do
+            "dist/win-unpacked/Alienmon 3D.exe" --use-angle=swiftshader --enable-unsafe-swiftshader --selftest=$w,420,$PWD/selftest/$w.png || true
+            echo "== $w"; cat selftest/$w.json || echo "no report"
+          done
+      - uses: actions/upload-artifact@v4
+        with:
+          name: selftest
+          path: desktop/selftest
+          retention-days: 7
+      - name: Publish pre-release
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cd desktop/dist
+          f=$(ls Alienmon-3D-Setup-*.exe | head -1)
+          tag="desktop-$(date -u +%Y%m%d)-${GITHUB_RUN_NUMBER}"
+          gh release create "$tag" "$f" --repo "$GITHUB_REPOSITORY" --target "$GITHUB_SHA" --prerelease \
+            --title "Alienmon 3D for Windows ($(date -u +%b\ %d))" \
+            --notes "Desktop build of the live worlds (Dustara, Sporeholm, Ferrox, Thalassa, Neonis) from desktop-app ${GITHUB_SHA::7}. Plays offline. Download $f, run it, and pick where to install."

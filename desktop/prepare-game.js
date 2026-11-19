@@ -52,6 +52,21 @@ function download(url, dest) {
   }
   fs.writeFileSync(assetsPath, assets);
 
+  // Desktop-only switches. The game keeps up to 4 built areas (0 on Low) after you leave them; the desktop app
+  // keeps every one, so desktop.js can build them all up front. Fails loudly if the game code moved.
+  const gamePath = path.join(OUT, 'game.js');
+  let game = fs.readFileSync(path.join(SRC, 'game.js'), 'utf8');
+  const cacheRe = /\bht=\{\},X=([A-Za-z_$][\w$]*\?0:[A-Za-z_$][\w$]*\?2:4),/;
+  if (!cacheRe.test(game)) { console.error('Could not find the area cache limit in game.js; update prepare-game.js'); process.exit(1); }
+  game = game.replace(cacheRe, (m, orig) => `ht=window.__AM_HT={},X=window.AM_DESKTOP?(window.AM_DESKTOP_CACHE??1e9):(${orig}),`);
+  fs.writeFileSync(gamePath, game);
+  fs.copyFileSync(path.join(__dirname, 'app', 'ui', 'desktop.js'), path.join(OUT, 'desktop.js'));
+  let html = fs.readFileSync(path.join(SRC, 'index.html'), 'utf8');
+  html = html.replace('<script src="assets.js', '<script src="desktop-config.js"></script><script src="assets.js');
+  html = html.replace(/(<script src="game\.js[^"]*"><\/script>)/, '$1<script src="desktop.js"></script>');
+  if (!html.includes('desktop.js') || !html.includes('desktop-config.js')) { console.error('Could not add desktop.js to index.html'); process.exit(1); }
+  fs.writeFileSync(path.join(OUT, 'index.html'), html);
+
   // Safety check: nothing in the packaged game may point at the internet.
   const left = [];
   for (const f of ['index.html', 'game.js', 'world.js', 'assets.js']) {
