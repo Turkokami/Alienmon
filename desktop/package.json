@@ -1,0 +1,57 @@
+{
+  "name": "alienmon-3d-desktop",
+  "productName": "Alienmon 3D",
+  "version": "1.0.0",
+  "description": "Alienmon 3D for Windows: every world and file on your PC, no internet needed",
+  "author": "LOKES ONE LIMITED CO",
+  "private": true,
+  "main": "main.js",
+  "scripts": {
+    "prepare-game": "node prepare-game.js",
+    "start": "node prepare-game.js && electron .",
+    "dist:win": "node prepare-game.js && electron-builder --win nsis --x64"
+  },
+  "devDependencies": {
+    "electron": "^38.8.6",
+    "electron-builder": "^26.18.0"
+  },
+  "build": {
+    "appId": "com.lokesone.alienmon3d",
+    "productName": "Alienmon 3D",
+    "copyright": "LOKES ONE LIMITED CO",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "main.js",
+      "package.json",
+      "app/**/*",
+      "build/icon.png"
+    ],
+    "asar": false,
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "build/icon.ico",
+      "artifactName": "Alienmon-3D-Setup-${version}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Alienmon 3D",
+      "deleteAppDataOnUninstall": false,
+      "installerIcon": "build/icon.ico",
+      "uninstallerIcon": "build/icon.ico"
+    }
+  }
+}

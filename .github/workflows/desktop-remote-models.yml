@@ -1,0 +1,37 @@
+# The desktop app bundles every file the game uses. A few battle-rig models are streamed by the web
+# build from Vercel Blob; this downloads them into desktop/remote-models/ on the desktop-app branch
+# so the Windows build can include them. It only touches that folder and only on desktop-app.
+name: Desktop app - fetch streamed models
+on:
+  push:
+    branches: [desktop-app]
+    paths: ['sporeholm3d/assets.js', 'desktop/prepare-game.js', '.github/workflows/desktop-remote-models.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: desktop-app
+          sparse-checkout: |
+            sporeholm3d/assets.js
+            desktop
+          sparse-checkout-cone-mode: false
+      - name: Download streamed models
+        run: |
+          mkdir -p desktop/remote-models
+          grep -oE 'https://[a-z0-9]+\.public\.blob\.vercel-storage\.com/[^"]+' sporeholm3d/assets.js | sort -u | while read -r u; do
+            f="desktop/remote-models/$(basename "$u")"
+            [ -s "$f" ] || curl -fsSL --retry 3 -o "$f" "$u"
+            ls -la "$f"
+          done
+      - name: Commit
+        run: |
+          git config user.name "Alienmon desktop build"
+          git config user.email "turkokami@gmail.com"
+          git add desktop/remote-models
+          git commit -q -m "Desktop app: add streamed battle-rig models" || echo "nothing to commit"
+          git push -q
