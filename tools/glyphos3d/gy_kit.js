@@ -1,14 +1,18 @@
 // ================= GLYPHOS KIT: jungle, Ystran ruins, the Dig Camp; nearly everything goes into a handful of merged batches =================
 // extra batch bins: carved sandstone (solid), fronds and stems (no collision), bark (solid); tree crowns go in the shared leaf-card batch
-NND.stone = []; NND.fern = []; NND.bark = [];
-const GYBIN = { stone: () => gyTri("gyBStone", "ashlar", 0.25, { vc: true, r: 0.92 }), carve: () => gyTri("gyBCarve", "carve", 0.25, { vc: true, r: 0.92 }), fern: () => gyTri("gyBLeaf", "fern", 0.85, { vc: true, r: 0.78, side: THREE.DoubleSide }), bark: () => gyTri("gyBBark", "bark", 0.7, { vc: true, r: 0.95 }) };
+NND.stone = []; NND.fern = []; NND.bark = []; NND.rocky = [];
+const GYBIN = { stone: () => gyTri("gyBStone", "ashlar", 0.25, { vc: true, r: 0.92 }), carve: () => gyTri("gyBCarve", "carve", 0.25, { vc: true, r: 0.92 }), fern: () => gyTri("gyBLeaf", "fern", 0.85, { vc: true, r: 0.78, side: THREE.DoubleSide }), bark: () => gyTri("gyBBark", "bark", 0.7, { vc: true, r: 0.95 }), rocky: () => gyTri("gyBRock", "plaster", 0.35, { vc: true, r: 0.95 }) };
 NND.carve = [];
-const GYSOLID = { lit: 1, stone: 1, carve: 1, bark: 1 };
+const GYSOLID = { lit: 1, stone: 1, carve: 1, bark: 1, rocky: 1 };
+// smooth shading for a non-indexed mesh: average the face normals of every corner that shares a position
+const gySmoothN = (g) => { g.computeVertexNormals(); const P = g.attributes.position, N = g.attributes.normal, acc = new Map(), key = (i) => Math.round(P.getX(i) * 1e4) + "," + Math.round(P.getY(i) * 1e4) + "," + Math.round(P.getZ(i) * 1e4);
+  for (let i = 0; i < P.count; i++) { const k = key(i); const a = acc.get(k) || [0, 0, 0]; a[0] += N.getX(i); a[1] += N.getY(i); a[2] += N.getZ(i); acc.set(k, a); }
+  for (let i = 0; i < P.count; i++) { const a = acc.get(key(i)), l = Math.hypot(a[0], a[1], a[2]) || 1; N.setXYZ(i, a[0] / l, a[1] / l, a[2] / l); } N.needsUpdate = true; return g; };
 // extra shapes for the batches
 { const blob = (det, amp, seed) => { const g = new THREE.IcosahedronGeometry(0.5, det), P = g.attributes.position, N = g.attributes.normal, v = new THREE.Vector3();
     for (let i = 0; i < P.count; i++) { v.fromBufferAttribute(P, i).normalize(); const k = 1 + amp * (Math.sin(v.x * 5.1 + seed) * Math.sin(v.y * 4.3 + seed * 2) * Math.sin(v.z * 4.7 + seed * 3) + 0.5 * Math.sin(v.x * 11 + v.z * 9 + seed)); P.setXYZ(i, v.x * 0.5 * k, v.y * 0.5 * k * (v.y < 0 ? 0.55 : 1), v.z * 0.5 * k); N.setXYZ(i, v.x, v.y, v.z); }
     return g.index ? g.toNonIndexed() : g; };
-  NNGEO.ico0 = (() => { const g = new THREE.IcosahedronGeometry(0.5, 0); return g.index ? g.toNonIndexed() : g; })(); NNGEO.limbL = new THREE.CylinderGeometry(0.32, 0.5, 1, 5, 1, true).toNonIndexed(); NNGEO.blob = blob(1, 0.22, 1.3); NNGEO.blobL = blob(0, 0.16, 2.2); NNGEO.blob2 = blob(1, 0.3, 4.1); NNGEO.rock = (() => { const g = blob(1, 0.28, 2.7); g.computeVertexNormals(); return g; })();
+  NNGEO.ico0 = (() => { const g = new THREE.IcosahedronGeometry(0.5, 0); return g.index ? g.toNonIndexed() : g; })(); NNGEO.limbL = new THREE.CylinderGeometry(0.32, 0.5, 1, 5, 1, true).toNonIndexed(); NNGEO.blob = blob(1, 0.22, 1.3); NNGEO.blobL = blob(0, 0.16, 2.2); NNGEO.blob2 = blob(1, 0.3, 4.1); NNGEO.rock = gySmoothN(blob(2, 0.24, 2.7));
   NNGEO.tcyl = new THREE.CylinderGeometry(0.34, 0.5, 1, 7, 1, true).toNonIndexed(); NNGEO.stem = new THREE.CylinderGeometry(0.5, 0.5, 1, 3, 1, true).toNonIndexed(); NNGEO.cyl8 = new THREE.CylinderGeometry(0.5, 0.5, 1, 10).toNonIndexed();
   NNGEO.dome = new THREE.SphereGeometry(0.5, 10, 5, 0, TAU, 0, Math.PI / 2).toNonIndexed(); NNGEO.pyr = new THREE.ConeGeometry(0.71, 1, 4, 1).rotateY(Math.PI / 4).toNonIndexed();
   { const sh = new THREE.Shape(); sh.moveTo(0, 0); sh.lineTo(1, 0); sh.quadraticCurveTo(0.25, 0.25, 0, 1); sh.lineTo(0, 0); const g = new THREE.ExtrudeGeometry(sh, { depth: 1, bevelEnabled: false, curveSegments: 4 }); g.translate(0, 0, -0.5); NNGEO.wedge = g.index ? g.toNonIndexed() : g; }
@@ -61,7 +65,7 @@ const gyBush = (O, s = 1) => { const q = gyQ(O, 3), cols = gyLeafC(q), r = 0.95 
   nnXClump(O, q, 0, r * 0.65, 0, r * 0.6, cols, cen, r * 1.1, 3);
   if (gh(O.x, O.z, 28) < 0.3) for (let i = 0; i < 4; i++) nnSp("glow", O, (gh(O.x, O.z, 130 + i) - 0.5) * 1.2 * s, (0.6 + gh(O.x, O.z, 134 + i) * 0.5) * s, (gh(O.x, O.z, 138 + i) - 0.5) * 1.2 * s, 0.07, ["#ff7a9a", "#ffd24a", "#ff9a4a", "#f8f0ff"][Math.floor(gh(O.x, O.z, 29) * 4)]); };
 const gyFlowers = (O) => { for (let i = 0; i < 5; i++) { const a = gh(O.x, O.z, 140 + i) * TAU, r = gh(O.x, O.z, 145 + i) * 0.5; nnCy("fern", O, Math.cos(a) * r, 0, Math.sin(a) * r, 0.02, 0.35, "#a8d890", "stem"); nnSp("glow", O, Math.cos(a) * r, 0.38, Math.sin(a) * r, 0.065, ["#ff6a8a", "#ffcf4a", "#fff4f8", "#c87aff", "#ff9a3a"][(i + Math.floor(gh(O.x, O.z, 150) * 5)) % 5], "ico0"); } };
-const gyRock = (O, s = 1, col) => nnP("stone", O, "rock", 0, 0.2 * s, 0, 1.3 * s, 0.9 * s, 1.1 * s, col || ["#c8c0b4", "#b8b4a4", "#d0c8b0", "#a8b098"][Math.floor(gh(O.x, O.z, 31) * 4)], 0, gh(O.x, O.z, 32) * 6, 0);
+const gyRock = (O, s = 1, col) => nnP("rocky", O, "rock", 0, 0.2 * s, 0, 1.3 * s, 0.9 * s, 1.1 * s, col || ["#c8c0b4", "#b8b4a4", "#d0c8b0", "#a8b098"][Math.floor(gh(O.x, O.z, 31) * 4)], 0, gh(O.x, O.z, 32) * 6, 0);
 const gyReeds = (O) => { for (let k = 0; k < 7; k++) { const a = gh(O.x, O.z, 160 + k) * 6.28, r = gh(O.x, O.z, 170 + k) * 0.45; nnBx("fern", O, Math.cos(a) * r, 0, Math.sin(a) * r, 0.05, 0.9 + gh(O.x, O.z, 180 + k) * 0.8, 0.05, "#c0e0a0", 0, (gh(O.x, O.z, 190 + k) - 0.5) * 0.3); } };
 const gyLily = (x, z) => { const O = { x, z, floor: -0.1 }, s = 0.25 + nh(x, z, 71) * 0.25; nnCy("fern", O, 0, 0, 0, s, 0.03, "#a0d890", "cyl6"); if (nh(x, z, 72) < 0.35) nnSp("glow", O, s * 0.4, 0.08, 0, 0.07, nh(x, z, 73) < 0.5 ? "#ff9ae0" : "#fff4f0"); };
 const gyFirefly = (O, y) => nnSp("glow", O, 0, y, 0, 0.045, ["#f0ff8a", "#9affd8", "#ffe28a"][Math.floor(nh(O.x, O.z, 61) * 3)], "ico0");
@@ -149,3 +153,25 @@ Object.assign(TGK, {
   ruin: { lo: "#3a4a2a", hi: "#d8d07a", seed: "#ffcf4a", mons: ["lo_pebblet", "lo_gleamgrub", "lo_liftant", "lo_dunetrot"] },
   tide: { lo: "#103a3a", hi: "#6ae0c0", seed: "#bff8ff", mons: ["lo_gloopa", "lo_coilet", "lo_mycora", "lo_gloopa"] },
   orchid: { lo: "#3a2a4a", hi: "#e09ae8", seed: "#ffd0f8", mons: ["lo_dreamcap", "lo_blinkit", "lo_sporix", "lo_hivemaw"] } });
+
+// rope bridge between two lookout platforms (deck height h): sagging plank deck, two hand ropes on posts, a few hanging vines
+const gyRopeBridge = (x0, z0, x1, z1, h = 6.14) => { const dx = x1 - x0, dz = z1 - z0, L = Math.hypot(dx, dz), O = { x: (x0 + x1) / 2, z: (z0 + z1) / 2, ry: Math.atan2(-dz, dx) }, Ls = L - 2.4, sag = Math.min(0.6, Ls * 0.05), yAt = (u) => h - sag * (1 - (2 * u / Ls) ** 2);
+  let n = 0; for (let u = -Ls / 2 + 0.2; u <= Ls / 2 - 0.1; u += 0.42, n++) { const y = yAt(u); nnBx("deco", O, u, y - 0.07, 0, 0.32, 0.07, 1.1, ["#8a6a44", "#7e6040", "#94744c"][n % 3], 0, (gh(O.x + u, O.z, 610) - 0.5) * 0.06);
+    if (n % 4 === 0) for (const s of [-1, 1]) nnBx("deco", O, u, y, s * 0.58, 0.06, 0.92, 0.06, "#6e5636");
+    if (gh(O.x + u, O.z, 611) < 0.18) { const Lv = 0.8 + gh(O.x, O.z + u, 612) * 1.6; nnBx("fern", O, u, y - Lv, (gh(O.x + u, O.z, 613) < 0.5 ? -1 : 1) * 0.55, 0.06, Lv, 0.06, "#a8d890"); } }
+  const st = 0.7; for (let u = -Ls / 2; u < Ls / 2 - 0.01; u += st) { const u2 = Math.min(Ls / 2, u + st), ya = yAt(u) + 0.88, yb = yAt(u2) + 0.88, len = Math.hypot(u2 - u, yb - ya);
+    for (const s of [-1, 1]) nnP("deco", O, "box", (u + u2) / 2, (ya + yb) / 2, s * 0.58, len, 0.045, 0.045, "#c8b070", 0, 0, Math.atan2(yb - ya, u2 - u)); } };
+// a Glyphos ship: sandstone and brass hull, turquoise glyph bands, brass engines with a gold glow, turquoise canopy, on a carved landing pad
+const gyShip = (x, z, ry = 0, s = 1) => { const G = grp(x, 0, z, ry), hull = thM("gyShipHull", () => std({ color: "#e4d4b0", roughness: 0.55, metalness: 0.25 })), brass = thMat.brass(),
+    turq = thM("gyShipTurq", () => std({ color: GYC.turq, emissive: "#1aa898", emissiveIntensity: 0.7, roughness: 0.3 })), glow = thM("gyShipGlow", () => new THREE.MeshBasicMaterial({ color: "#ffd870" })),
+    glass = thM("gyShipGlass", () => std({ color: "#8fe8e0", roughness: 0.06, metalness: 0.4, transparent: true, opacity: 0.72 })), pad = thM("gyShipPad", () => std({ color: "#d8c8a0", roughness: 0.9 }));
+  add(new THREE.CylinderGeometry(5.2 * s, 5.4 * s, 0.16, 32), pad, [0, 0.08, 0], [0, 0, 0], "nocol", G); add(new THREE.TorusGeometry(4.7 * s, 0.07, 6, 48), turq, [0, 0.17, 0], [Math.PI / 2, 0, 0], "nocol", G);
+  const b = add(new THREE.CapsuleGeometry(1.25 * s, 6.5 * s, 8, 20), hull, [0, 2.1 * s, 0], [0, 0, Math.PI / 2], null, G); b.scale.set(1, 1, 0.85);
+  for (const u of [-1.6, 0.4, 2.2]) add(new THREE.TorusGeometry(1.24 * s, 0.07 * s, 6, 28), u === 0.4 ? turq : brass, [u * s, 2.1 * s, 0], [0, Math.PI / 2, 0], "nocol", G);
+  add(new THREE.SphereGeometry(1.0 * s, 16, 10, 0, TAU, 0, Math.PI / 2), glass, [3.6 * s, 2.6 * s, 0], [0, 0, -0.5], "nocol", G);
+  for (const sd of [-1, 1]) { add(new THREE.BoxGeometry(3.4 * s, 0.18 * s, 3.2 * s), hull, [-0.6 * s, 1.8 * s, sd * 2.4 * s], [0, sd * -0.35, 0], "nocol", G); add(new THREE.BoxGeometry(3.0 * s, 0.07 * s, 0.14 * s), turq, [-0.6 * s, 1.93 * s, sd * 3.6 * s], [0, sd * -0.35, 0], "nocol", G);
+    for (let k = 0; k < 3; k++) add(new THREE.BoxGeometry(0.34 * s, 0.34 * s, 0.04), k === 1 ? turq : brass, [(-1.4 + k * 1.2) * s, 2.15 * s, sd * 1.08 * s], [0, 0, Math.PI / 4], "nocol", G);
+    add(new THREE.CylinderGeometry(0.5 * s, 0.6 * s, 2.4 * s, 14), brass, [-3.4 * s, 2.0 * s, sd * 1.2 * s], [0, 0, Math.PI / 2], "nocol", G); add(new THREE.CircleGeometry(0.45 * s, 14), glow, [-4.62 * s, 2.0 * s, sd * 1.2 * s], [0, -Math.PI / 2, 0], "nocol", G); }
+  add(new THREE.BoxGeometry(2.0 * s, 2.2 * s, 0.16 * s), hull, [-3.0 * s, 3.6 * s, 0], [0, 0, 0.35], "nocol", G); add(new THREE.BoxGeometry(1.6 * s, 0.12 * s, 0.2 * s), turq, [-3.2 * s, 4.45 * s, 0], [0, 0, 0.35], "nocol", G);
+  for (const [lx, lz] of [[2.2, 0.9], [2.2, -0.9], [-2.4, 1.0], [-2.4, -1.0]]) { nnBeam([lx * s, 1.4 * s, lz * s], [lx * s * 1.1, 0.16, lz * s * 1.5], 0.08 * s, brass, G); add(new THREE.CylinderGeometry(0.22 * s, 0.26 * s, 0.1, 10), brass, [lx * s * 1.1, 0.2, lz * s * 1.5], [0, 0, 0], "nocol", G); }
+  add(new THREE.BoxGeometry(1.2 * s, 0.1, 1.6 * s), hull, [1.0 * s, 0.55 * s, 1.6 * s], [0.5, 0, 0], "nocol", G); return G; };

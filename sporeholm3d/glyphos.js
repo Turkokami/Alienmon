@@ -3362,15 +3362,19 @@ const tStacks = (X, Y, n, h0 = 4) => { let c = 0; for (let t = 0; t < n * 20 && 
 const tRocksOff = (X, Y, cx, cy, r0, r1, n) => { for (let k = 0; k < n * 3; k++) { const a = R() * TAU, r = r0 + R() * (r1 - r0), x = X + cx + Math.cos(a) * r, z = Y + cy + Math.sin(a) * r; let ok = true; for (let dx = -2; dx <= 2 && ok; dx++) for (let dz = -2; dz <= 2; dz++) if ("pPks,gbf.".includes(at(Math.floor(x + dx), Math.floor(z + dz))) && at(Math.floor(x), Math.floor(z)) !== "x") { ok = false; break; } if (ok) thRock(x, z, 0.8 + R() * 1.2); } };
 // ================= GLYPHOS KIT: jungle, Ystran ruins, the Dig Camp; nearly everything goes into a handful of merged batches =================
 // extra batch bins: carved sandstone (solid), fronds and stems (no collision), bark (solid); tree crowns go in the shared leaf-card batch
-NND.stone = []; NND.fern = []; NND.bark = [];
-const GYBIN = { stone: () => gyTri("gyBStone", "ashlar", 0.25, { vc: true, r: 0.92 }), carve: () => gyTri("gyBCarve", "carve", 0.25, { vc: true, r: 0.92 }), fern: () => gyTri("gyBLeaf", "fern", 0.85, { vc: true, r: 0.78, side: THREE.DoubleSide }), bark: () => gyTri("gyBBark", "bark", 0.7, { vc: true, r: 0.95 }) };
+NND.stone = []; NND.fern = []; NND.bark = []; NND.rocky = [];
+const GYBIN = { stone: () => gyTri("gyBStone", "ashlar", 0.25, { vc: true, r: 0.92 }), carve: () => gyTri("gyBCarve", "carve", 0.25, { vc: true, r: 0.92 }), fern: () => gyTri("gyBLeaf", "fern", 0.85, { vc: true, r: 0.78, side: THREE.DoubleSide }), bark: () => gyTri("gyBBark", "bark", 0.7, { vc: true, r: 0.95 }), rocky: () => gyTri("gyBRock", "plaster", 0.35, { vc: true, r: 0.95 }) };
 NND.carve = [];
-const GYSOLID = { lit: 1, stone: 1, carve: 1, bark: 1 };
+const GYSOLID = { lit: 1, stone: 1, carve: 1, bark: 1, rocky: 1 };
+// smooth shading for a non-indexed mesh: average the face normals of every corner that shares a position
+const gySmoothN = (g) => { g.computeVertexNormals(); const P = g.attributes.position, N = g.attributes.normal, acc = new Map(), key = (i) => Math.round(P.getX(i) * 1e4) + "," + Math.round(P.getY(i) * 1e4) + "," + Math.round(P.getZ(i) * 1e4);
+  for (let i = 0; i < P.count; i++) { const k = key(i); const a = acc.get(k) || [0, 0, 0]; a[0] += N.getX(i); a[1] += N.getY(i); a[2] += N.getZ(i); acc.set(k, a); }
+  for (let i = 0; i < P.count; i++) { const a = acc.get(key(i)), l = Math.hypot(a[0], a[1], a[2]) || 1; N.setXYZ(i, a[0] / l, a[1] / l, a[2] / l); } N.needsUpdate = true; return g; };
 // extra shapes for the batches
 { const blob = (det, amp, seed) => { const g = new THREE.IcosahedronGeometry(0.5, det), P = g.attributes.position, N = g.attributes.normal, v = new THREE.Vector3();
     for (let i = 0; i < P.count; i++) { v.fromBufferAttribute(P, i).normalize(); const k = 1 + amp * (Math.sin(v.x * 5.1 + seed) * Math.sin(v.y * 4.3 + seed * 2) * Math.sin(v.z * 4.7 + seed * 3) + 0.5 * Math.sin(v.x * 11 + v.z * 9 + seed)); P.setXYZ(i, v.x * 0.5 * k, v.y * 0.5 * k * (v.y < 0 ? 0.55 : 1), v.z * 0.5 * k); N.setXYZ(i, v.x, v.y, v.z); }
     return g.index ? g.toNonIndexed() : g; };
-  NNGEO.ico0 = (() => { const g = new THREE.IcosahedronGeometry(0.5, 0); return g.index ? g.toNonIndexed() : g; })(); NNGEO.limbL = new THREE.CylinderGeometry(0.32, 0.5, 1, 5, 1, true).toNonIndexed(); NNGEO.blob = blob(1, 0.22, 1.3); NNGEO.blobL = blob(0, 0.16, 2.2); NNGEO.blob2 = blob(1, 0.3, 4.1); NNGEO.rock = (() => { const g = blob(1, 0.28, 2.7); g.computeVertexNormals(); return g; })();
+  NNGEO.ico0 = (() => { const g = new THREE.IcosahedronGeometry(0.5, 0); return g.index ? g.toNonIndexed() : g; })(); NNGEO.limbL = new THREE.CylinderGeometry(0.32, 0.5, 1, 5, 1, true).toNonIndexed(); NNGEO.blob = blob(1, 0.22, 1.3); NNGEO.blobL = blob(0, 0.16, 2.2); NNGEO.blob2 = blob(1, 0.3, 4.1); NNGEO.rock = gySmoothN(blob(2, 0.24, 2.7));
   NNGEO.tcyl = new THREE.CylinderGeometry(0.34, 0.5, 1, 7, 1, true).toNonIndexed(); NNGEO.stem = new THREE.CylinderGeometry(0.5, 0.5, 1, 3, 1, true).toNonIndexed(); NNGEO.cyl8 = new THREE.CylinderGeometry(0.5, 0.5, 1, 10).toNonIndexed();
   NNGEO.dome = new THREE.SphereGeometry(0.5, 10, 5, 0, TAU, 0, Math.PI / 2).toNonIndexed(); NNGEO.pyr = new THREE.ConeGeometry(0.71, 1, 4, 1).rotateY(Math.PI / 4).toNonIndexed();
   { const sh = new THREE.Shape(); sh.moveTo(0, 0); sh.lineTo(1, 0); sh.quadraticCurveTo(0.25, 0.25, 0, 1); sh.lineTo(0, 0); const g = new THREE.ExtrudeGeometry(sh, { depth: 1, bevelEnabled: false, curveSegments: 4 }); g.translate(0, 0, -0.5); NNGEO.wedge = g.index ? g.toNonIndexed() : g; }
@@ -3423,7 +3427,7 @@ const gyBush = (O, s = 1) => { const q = gyQ(O, 3), cols = gyLeafC(q), r = 0.95 
   nnXClump(O, q, 0, r * 0.65, 0, r * 0.6, cols, cen, r * 1.1, 3);
   if (gh(O.x, O.z, 28) < 0.3) for (let i = 0; i < 4; i++) nnSp("glow", O, (gh(O.x, O.z, 130 + i) - 0.5) * 1.2 * s, (0.6 + gh(O.x, O.z, 134 + i) * 0.5) * s, (gh(O.x, O.z, 138 + i) - 0.5) * 1.2 * s, 0.07, ["#ff7a9a", "#ffd24a", "#ff9a4a", "#f8f0ff"][Math.floor(gh(O.x, O.z, 29) * 4)]); };
 const gyFlowers = (O) => { for (let i = 0; i < 5; i++) { const a = gh(O.x, O.z, 140 + i) * TAU, r = gh(O.x, O.z, 145 + i) * 0.5; nnCy("fern", O, Math.cos(a) * r, 0, Math.sin(a) * r, 0.02, 0.35, "#a8d890", "stem"); nnSp("glow", O, Math.cos(a) * r, 0.38, Math.sin(a) * r, 0.065, ["#ff6a8a", "#ffcf4a", "#fff4f8", "#c87aff", "#ff9a3a"][(i + Math.floor(gh(O.x, O.z, 150) * 5)) % 5], "ico0"); } };
-const gyRock = (O, s = 1, col) => nnP("stone", O, "rock", 0, 0.2 * s, 0, 1.3 * s, 0.9 * s, 1.1 * s, col || ["#c8c0b4", "#b8b4a4", "#d0c8b0", "#a8b098"][Math.floor(gh(O.x, O.z, 31) * 4)], 0, gh(O.x, O.z, 32) * 6, 0);
+const gyRock = (O, s = 1, col) => nnP("rocky", O, "rock", 0, 0.2 * s, 0, 1.3 * s, 0.9 * s, 1.1 * s, col || ["#c8c0b4", "#b8b4a4", "#d0c8b0", "#a8b098"][Math.floor(gh(O.x, O.z, 31) * 4)], 0, gh(O.x, O.z, 32) * 6, 0);
 const gyReeds = (O) => { for (let k = 0; k < 7; k++) { const a = gh(O.x, O.z, 160 + k) * 6.28, r = gh(O.x, O.z, 170 + k) * 0.45; nnBx("fern", O, Math.cos(a) * r, 0, Math.sin(a) * r, 0.05, 0.9 + gh(O.x, O.z, 180 + k) * 0.8, 0.05, "#c0e0a0", 0, (gh(O.x, O.z, 190 + k) - 0.5) * 0.3); } };
 const gyLily = (x, z) => { const O = { x, z, floor: -0.1 }, s = 0.25 + nh(x, z, 71) * 0.25; nnCy("fern", O, 0, 0, 0, s, 0.03, "#a0d890", "cyl6"); if (nh(x, z, 72) < 0.35) nnSp("glow", O, s * 0.4, 0.08, 0, 0.07, nh(x, z, 73) < 0.5 ? "#ff9ae0" : "#fff4f0"); };
 const gyFirefly = (O, y) => nnSp("glow", O, 0, y, 0, 0.045, ["#f0ff8a", "#9affd8", "#ffe28a"][Math.floor(nh(O.x, O.z, 61) * 3)], "ico0");
@@ -3512,6 +3516,28 @@ Object.assign(TGK, {
   tide: { lo: "#103a3a", hi: "#6ae0c0", seed: "#bff8ff", mons: ["lo_gloopa", "lo_coilet", "lo_mycora", "lo_gloopa"] },
   orchid: { lo: "#3a2a4a", hi: "#e09ae8", seed: "#ffd0f8", mons: ["lo_dreamcap", "lo_blinkit", "lo_sporix", "lo_hivemaw"] } });
 
+// rope bridge between two lookout platforms (deck height h): sagging plank deck, two hand ropes on posts, a few hanging vines
+const gyRopeBridge = (x0, z0, x1, z1, h = 6.14) => { const dx = x1 - x0, dz = z1 - z0, L = Math.hypot(dx, dz), O = { x: (x0 + x1) / 2, z: (z0 + z1) / 2, ry: Math.atan2(-dz, dx) }, Ls = L - 2.4, sag = Math.min(0.6, Ls * 0.05), yAt = (u) => h - sag * (1 - (2 * u / Ls) ** 2);
+  let n = 0; for (let u = -Ls / 2 + 0.2; u <= Ls / 2 - 0.1; u += 0.42, n++) { const y = yAt(u); nnBx("deco", O, u, y - 0.07, 0, 0.32, 0.07, 1.1, ["#8a6a44", "#7e6040", "#94744c"][n % 3], 0, (gh(O.x + u, O.z, 610) - 0.5) * 0.06);
+    if (n % 4 === 0) for (const s of [-1, 1]) nnBx("deco", O, u, y, s * 0.58, 0.06, 0.92, 0.06, "#6e5636");
+    if (gh(O.x + u, O.z, 611) < 0.18) { const Lv = 0.8 + gh(O.x, O.z + u, 612) * 1.6; nnBx("fern", O, u, y - Lv, (gh(O.x + u, O.z, 613) < 0.5 ? -1 : 1) * 0.55, 0.06, Lv, 0.06, "#a8d890"); } }
+  const st = 0.7; for (let u = -Ls / 2; u < Ls / 2 - 0.01; u += st) { const u2 = Math.min(Ls / 2, u + st), ya = yAt(u) + 0.88, yb = yAt(u2) + 0.88, len = Math.hypot(u2 - u, yb - ya);
+    for (const s of [-1, 1]) nnP("deco", O, "box", (u + u2) / 2, (ya + yb) / 2, s * 0.58, len, 0.045, 0.045, "#c8b070", 0, 0, Math.atan2(yb - ya, u2 - u)); } };
+// a Glyphos ship: sandstone and brass hull, turquoise glyph bands, brass engines with a gold glow, turquoise canopy, on a carved landing pad
+const gyShip = (x, z, ry = 0, s = 1) => { const G = grp(x, 0, z, ry), hull = thM("gyShipHull", () => std({ color: "#e4d4b0", roughness: 0.55, metalness: 0.25 })), brass = thMat.brass(),
+    turq = thM("gyShipTurq", () => std({ color: GYC.turq, emissive: "#1aa898", emissiveIntensity: 0.7, roughness: 0.3 })), glow = thM("gyShipGlow", () => new THREE.MeshBasicMaterial({ color: "#ffd870" })),
+    glass = thM("gyShipGlass", () => std({ color: "#8fe8e0", roughness: 0.06, metalness: 0.4, transparent: true, opacity: 0.72 })), pad = thM("gyShipPad", () => std({ color: "#d8c8a0", roughness: 0.9 }));
+  add(new THREE.CylinderGeometry(5.2 * s, 5.4 * s, 0.16, 32), pad, [0, 0.08, 0], [0, 0, 0], "nocol", G); add(new THREE.TorusGeometry(4.7 * s, 0.07, 6, 48), turq, [0, 0.17, 0], [Math.PI / 2, 0, 0], "nocol", G);
+  const b = add(new THREE.CapsuleGeometry(1.25 * s, 6.5 * s, 8, 20), hull, [0, 2.1 * s, 0], [0, 0, Math.PI / 2], null, G); b.scale.set(1, 1, 0.85);
+  for (const u of [-1.6, 0.4, 2.2]) add(new THREE.TorusGeometry(1.24 * s, 0.07 * s, 6, 28), u === 0.4 ? turq : brass, [u * s, 2.1 * s, 0], [0, Math.PI / 2, 0], "nocol", G);
+  add(new THREE.SphereGeometry(1.0 * s, 16, 10, 0, TAU, 0, Math.PI / 2), glass, [3.6 * s, 2.6 * s, 0], [0, 0, -0.5], "nocol", G);
+  for (const sd of [-1, 1]) { add(new THREE.BoxGeometry(3.4 * s, 0.18 * s, 3.2 * s), hull, [-0.6 * s, 1.8 * s, sd * 2.4 * s], [0, sd * -0.35, 0], "nocol", G); add(new THREE.BoxGeometry(3.0 * s, 0.07 * s, 0.14 * s), turq, [-0.6 * s, 1.93 * s, sd * 3.6 * s], [0, sd * -0.35, 0], "nocol", G);
+    for (let k = 0; k < 3; k++) add(new THREE.BoxGeometry(0.34 * s, 0.34 * s, 0.04), k === 1 ? turq : brass, [(-1.4 + k * 1.2) * s, 2.15 * s, sd * 1.08 * s], [0, 0, Math.PI / 4], "nocol", G);
+    add(new THREE.CylinderGeometry(0.5 * s, 0.6 * s, 2.4 * s, 14), brass, [-3.4 * s, 2.0 * s, sd * 1.2 * s], [0, 0, Math.PI / 2], "nocol", G); add(new THREE.CircleGeometry(0.45 * s, 14), glow, [-4.62 * s, 2.0 * s, sd * 1.2 * s], [0, -Math.PI / 2, 0], "nocol", G); }
+  add(new THREE.BoxGeometry(2.0 * s, 2.2 * s, 0.16 * s), hull, [-3.0 * s, 3.6 * s, 0], [0, 0, 0.35], "nocol", G); add(new THREE.BoxGeometry(1.6 * s, 0.12 * s, 0.2 * s), turq, [-3.2 * s, 4.45 * s, 0], [0, 0, 0.35], "nocol", G);
+  for (const [lx, lz] of [[2.2, 0.9], [2.2, -0.9], [-2.4, 1.0], [-2.4, -1.0]]) { nnBeam([lx * s, 1.4 * s, lz * s], [lx * s * 1.1, 0.16, lz * s * 1.5], 0.08 * s, brass, G); add(new THREE.CylinderGeometry(0.22 * s, 0.26 * s, 0.1, 10), brass, [lx * s * 1.1, 0.2, lz * s * 1.5], [0, 0, 0], "nocol", G); }
+  add(new THREE.BoxGeometry(1.2 * s, 0.1, 1.6 * s), hull, [1.0 * s, 0.55 * s, 1.6 * s], [0.5, 0, 0], "nocol", G); return G; };
+
 // ---- links between areas: the same 6-tile road, but it winds instead of running ruler-straight ----
 const gyWob = (P, Q, s, k = 1) => { const dx = Q[0] - P[0], dy = Q[1] - P[1], L = Math.hypot(dx, dy); if (L < 7) return [P, Q]; const nx = -dy / L, ny = dx / L, amp = (nh(P[0] + Q[0], P[1] + Q[1], s) - 0.5) * Math.min(8, L * 0.3) * k, amp2 = (nh(P[0] - Q[1], P[1] + Q[0], s + 3) - 0.5) * Math.min(3, L * 0.12) * k, n = Math.max(3, Math.round(L / 2.5)), out = [P];
   for (let i = 1; i <= n; i++) { const u = i / n, w = Math.sin(Math.PI * u) * amp + Math.sin(Math.PI * 2 * u) * amp2; out.push(i === n ? Q : [P[0] + dx * u + nx * w, P[1] + dy * u + ny * w]); } return out; };
@@ -3596,12 +3622,12 @@ const gyOuter = (rects) => { let X0 = 1e9, X1 = -1e9, Z0 = 1e9, Z1 = -1e9; for (
   for (let k = 0; k < 14; k++) { const a = -Math.PI * 0.05 + (k / 13) * Math.PI * 1.1, rr = 300 + R() * 60, x = cx + Math.cos(a) * rr, z = cz - Math.sin(a) * rr; if (seaK(x, z) > 0.1) continue; const hh = 40 + R() * 50, m = add(warp(new THREE.ConeGeometry(55 + R() * 40, hh, 9, 4), 6, 0.02), thM("gyRidge", () => std({ color: "#3a5a3a", roughness: 1, flatShading: true })), [x, hh / 2 - 6, z], [0, R() * 3, 0], "nocol"); m.userData.noLift = true; m.castShadow = false; } };
 
 // ================= GLYPHOS SCENES (planet 06: the jungle of the Ystran ruins and the Dig Camp) =================
-// 50 areas on the same 30 x 30 grid as the other worlds, x 10..249, z -30..179 (row r at z = -30 + 30r):
+// 51 areas on the same 30 x 30 grid as the other worlds, x 10..249, z -30..179 (row r at z = -30 + 30r):
 // r0  F1 Chime Falls Upper - F2 Chime Falls Ridge - S1 Sunspire North - S2 Sunspire Summit Trail - V1 Canopy Walk - Y9 Temple of Voices
 // r1  Q4 Fern Hollow - F3 Chime Falls Basin - F4 Chime Falls Pool - S3 Sunspire West - S4 Sunspire Trailhead - V2 Canopy Walk Landing - Y8 Temple Steps
 // r2  YK Grotto Deep Chamber - YE Grotto Lower Hall - YB Grotto Upper Hall - YX Sunken Channel - YZ Forgotten Forum - YV Temple of Trials - YY Glyph Hollow
-// r3  Q1 Mangrove Flats - Q2 Heron Pools - Q3 Old Quarry - YG Drowned Grotto - Q6 Monolet Garden - YA Pillar Hollows - Y4 Storehouse - E1 Excavation Pits
-// r4  YO Coral Grove - (lagoon) - YU Tidepool Ruins - YS Glyph Steps - YQ Quiet Court - YM Mural Overlook - E2 Sunwell Terraces - E3 Orchid Ravine
+// r3  Q1 Vine Bridge Canopy - Q2 Heron Pools - Q3 Old Quarry - YG Drowned Grotto - Q6 Monolet Garden - YA Pillar Hollows - Y4 Storehouse - E1 Excavation Pits
+// r4  YO Coral Grove - Y7 Sunken Temple Court - YU Tidepool Ruins - YS Glyph Steps - YQ Quiet Court - YM Mural Overlook - E2 Sunwell Terraces - E3 Orchid Ravine
 // r5  YI Island Chain - YN Sunken Shallows - YT Tidepool Fork - YJ Glyph Junction - YC Ruin Crossroads - YW Landing Causeway - YP Spaceport - E4 Beacon Point
 // r6  EC Shipwreck Cove - YL Sunken Landing (spawn) - YD Dig Camp - YH Lane Homes - YF Farmstead - YR Relay Tower - EB Turtle Beach
 const gyO = (X, Y, x, z, ry = 0) => ({ x: X + x, z: Y + z, ry });
@@ -3630,7 +3656,7 @@ gyW("EC", 10, 150, "Shipwreck Cove", { hub: [16, 11], r: 9, palms: 0.5, blobs: [
     gyBoat(X + 23, Y + 27.5, 0.4); gyCrates(gyO(X, Y, 11, 21, 0.6), 3); gyRock(gyO(X, Y, 3, 15), 1.6); gyRock(gyO(X, Y, 26, 18), 1.2); gyCampfire(gyO(X, Y, 18, 19)); } });
 
 gyW("YL", 40, 150, "Sunken Landing", { town: true, hub: [15, 13], r: 13, palms: 0.4,
-  bld: [["g_clinic", 2, 1, 9, 7, "Landing Recovery Tent"], ["g_home", 20, 1, 9, 7, "Harbormaster's Hut"], ["g_hut", 21, 17, 8, 6, "Net Mender's Hut"]],
+  bld: [["g_store", 2, 1, 9, 7, "Harbor Store"], ["g_home", 20, 1, 9, 7, "Harbormaster's Hut"], ["g_hut", 21, 17, 8, 6, "Net Mender's Hut"]],
   ground(X, Y) { ellT(X + 15, Y + 13, 7, 5.5, "P"); fillT(X + 1, Y + 9, X + 28, Y + 17, "g"); tLine(X + 2, Y + 13, X + 28, Y + 13, 5, "p"); fillT(X, Y + 24, X + 29, Y + 29, "w"); tBlob(X + 8, Y + 21, 5, ".", 0.25, 3); tBlob(X + 15, Y + 22, 4, ".", 0.2, 4); },
   after(X, Y) { tLine(X + 15, Y + 18, X + 15, Y + 29, 3.4, "k", "w"); tLine(X + 15, Y + 27, X + 24, Y + 27, 3.4, "k", "w"); },
   grass: [[6, 21, 3, 2, "tide", "Landing shore grass"]],
@@ -3638,7 +3664,7 @@ gyW("YL", 40, 150, "Sunken Landing", { town: true, hub: [15, 13], r: 13, palms: 
     gyCrates(gyO(X, Y, 18, 21.5, 0.3), 4); gyAwning(gyO(X, Y, 6, 18.5, 0.1), 4.5, 2.6, 2.4, "#e8dcc0"); gyTable(gyO(X, Y, 6, 18.8)); gyBench(gyO(X, Y, 9.5, 9.3, Math.PI)); gyBench(gyO(X, Y, 20.5, 9.3, Math.PI)); } });
 
 gyW("YD", 70, 150, "Dig Camp", { town: true, hub: [15, 13], r: 13,
-  bld: [["g_shop", 2, 1, 9, 7, "Dig Camp Supply Shop"], ["g_hall", 19, 1, 10, 8, "Expedition Hall"], ["g_tent", 2, 18, 9, 6, "Cartographer's Tent"], ["g_store", 19, 18, 10, 7, "Finds Store"]],
+  bld: [["g_clinic", 2, 1, 9, 7, "Dig Camp Recovery Tent"], ["g_store", 19, 1, 10, 8, "Dig Camp HQ Tent"], ["g_tent", 2, 18, 9, 6, "Expedition Tent"], ["g_hut", 19, 18, 10, 7, "Finds Shed"]],
   ground(X, Y) { fillT(X + 1, Y + 8, X + 28, Y + 28, "g"); ellT(X + 15, Y + 13, 6, 4.6, "P"); tLine(X + 1, Y + 13, X + 29, Y + 13, 5, "p"); tLine(X + 2, Y + 26.5, X + 28, Y + 26.5, 3, ","); tBlob(X + 15, Y + 22, 3.6, ".", 0.2, 2); },
   grass: [[25, 28, 3, 1.4, "ruin", "Dig Camp spoil heaps"]], quest: [24.5, 16.5, "lost-trowel", "Find Dr. Ixa's lost trowel", -0.5],
   build(X, Y) { gyCampfire(gyO(X, Y, 15, 13)); for (const [x, z] of [[11, 10.4], [19, 10.4], [11, 15.8], [19, 15.8]]) gyLantern(gyO(X, Y, x, z)); gyDigGrid(gyO(X, Y, 15, 21.5), 5, 4); gySieve(gyO(X, Y, 12, 18.6, 0.4)); gyBarrow(gyO(X, Y, 18.4, 18.8, -0.6));
@@ -3646,14 +3672,14 @@ gyW("YD", 70, 150, "Dig Camp", { town: true, hub: [15, 13], r: 13,
     gyWall(gyO(X, Y, 12.2, 24.6), 5.6, 1.6, 0.6, 0.5); gyScaffold(gyO(X, Y, 15, 24.8), 4, 3.2); gyColumn(gyO(X, Y, 11.2, 19.5), 2.4, 0.5); gyBench(gyO(X, Y, 9.5, 14.8, Math.PI / 2)); gyGlyphStone(gyO(X, Y, 18.2, 18.6, 0.3), 0.9); } });
 
 gyW("YH", 100, 150, "Lane Homes", { town: true, hub: [15, 13], r: 13,
-  bld: [["g_home", 2, 1, 9, 7, "Kalo's House"], ["g_home2", 20, 1, 9, 7, "Brightstone House"], ["g_home", 1, 18, 8, 7, "Ixa's House"], ["g_hut", 11, 18, 7, 6, "Potter's Hut"], ["g_lodge", 20, 18, 9, 7, "Lane Lodge"]],
+  bld: [["g_home", 2, 1, 9, 7, "Kalo's House"], ["g_home2", 20, 1, 9, 7, "Brightstone House"], ["g_home", 1, 18, 8, 7, "Ixa's House"], ["g_hut", 11, 18, 7, 6, "Potter's Hut"], ["g_shop", 20, 18, 9, 7, "Dig Camp Supply Shop"]],
   ground(X, Y) { fillT(X + 1, Y + 8, X + 28, Y + 28, "g"); tLine(X, Y + 13, X + 29, Y + 13, 5, "p"); ellT(X + 15, Y + 13, 4.5, 3.6, "P"); tLine(X + 1, Y + 26.5, X + 28, Y + 26.5, 3, "s"); tLine(X + 9.8, Y + 15, X + 9.8, Y + 27, 2.2, "s"); tLine(X + 19.2, Y + 15, X + 19.2, Y + 27, 2.2, "s"); },
   grass: [[25, 28.4, 3, 1.2, "jungle", "Lane hedgerow"]],
   build(X, Y) { gyUrn(gyO(X, Y, 15, 13)); for (const [x, z] of [[1.5, 9.6], [11, 9.6], [28, 9.6], [8.5, 17.2], [26, 17.2]]) gyFlowers(gyO(X, Y, x, z)); gyBench(gyO(X, Y, 12, 16.6, Math.PI)); gyBench(gyO(X, Y, 24, 10.0));
     for (const x of [3, 9, 21, 27]) gyLantern(gyO(X, Y, x, 10.4)); gyTable(gyO(X, Y, 14.5, 28.5), false); } });
 
 gyW("YF", 130, 150, "Farmstead", { town: true, hub: [15, 13], r: 13,
-  bld: [["g_lodge", 2, 1, 10, 8, "Farmstead Lodge"], ["g_hut", 20, 2, 8, 6, "Seed Shed"]],
+  bld: [["g_lodge", 2, 1, 10, 8, "Farmstead Lodge"], ["g_tent", 20, 2, 8, 6, "Dig Camp Tent"]],
   ground(X, Y) { fillT(X + 1, Y + 8, X + 28, Y + 28, "g"); tLine(X, Y + 13, X + 29, Y + 13, 5, "p"); for (const [x0, y0, x1, y1] of [[2, 18, 11, 27], [17, 18, 27, 23], [17, 25, 27, 28]]) fillT(X + x0, Y + y0, X + x1, Y + y1, "f"); },
   grass: [[26, 9, 2.6, 1.8, "jungle", "Farmstead verge"]], quest: [14, 21, "seed-thief", "Catch the seed thief", 0],
   build(X, Y) { for (const [x0, y0, x1, y1] of [[2, 18, 11, 27], [17, 18, 27, 23], [17, 25, 27, 28]]) for (let x = x0 + 0.5; x <= x1; x += 1.2) for (let z = y0 + 0.6; z <= y1; z += 1.3) { const O = gyO(X, Y, x, z, nh(x, z, 1)); nnCy("fern", O, 0, 0, 0, 0.05, 0.5, "#5a8a2a"); gyMoss(O, 0, 0.55, 0, 0.26); }
@@ -3710,7 +3736,7 @@ gyW("YP", 190, 120, "Glyphos Spaceport", { town: true, hub: [15, 15], r: 13,
   bld: [["g_hall", 1, 1, 11, 8, "Spaceport Hall"], ["g_home", 20, 1, 9, 7, "Pilot's Bunkhouse"]],
   ground(X, Y) { fillT(X + 1, Y + 9, X + 28, Y + 28, "g"); ellT(X + 15, Y + 18, 9, 8, "P"); },
   grass: [[26, 27.5, 2.6, 1.4, "jungle", "Spaceport verge"]],
-  build(X, Y) { nnShip(X + 8, Y + 22, 0.3, 0.8); nnShip(X + 23, Y + 22, -0.5, 0.8); for (const [x, z] of [[6.5, 12], [23.5, 12], [6.5, 25], [23.5, 25]]) gyBrazier(gyO(X, Y, x, z)); gyCrates(gyO(X, Y, 26, 15, 0.2), 6); gyFlag(gyO(X, Y, 13, 10.5), 5, GYC.turq); gyFlag(gyO(X, Y, 17, 10.5), 5, GYC.gold); } });
+  build(X, Y) { gyShip(X + 8, Y + 22, 0.3, 0.8); gyShip(X + 23, Y + 22, -0.5, 0.8); for (const [x, z] of [[6.5, 12], [23.5, 12], [6.5, 25], [23.5, 25]]) gyBrazier(gyO(X, Y, x, z)); gyCrates(gyO(X, Y, 26, 15, 0.2), 6); gyFlag(gyO(X, Y, 13, 10.5), 5, GYC.turq); gyFlag(gyO(X, Y, 17, 10.5), 5, GYC.gold); } });
 
 gyW("E4", 220, 120, "Beacon Point", { hub: [12, 15], r: 10, palms: 0.5, blobs: [[22, 15, 6, "."], [24, 26, 5, "w", 0.25]],
   grass: [[10, 23, 3.4, 2.4, "tide", "Beacon Point grass"], [12, 6, 3, 2.2, "orchid", "Beacon orchid bank"]], quest: [19, 12, "light-beacon", "Light the beacon on the point", -0.7],
@@ -3720,6 +3746,16 @@ gyW("E4", 220, 120, "Beacon Point", { hub: [12, 15], r: 10, palms: 0.5, blobs: [
 gyW("YO", 10, 90, "Coral Grove", { hub: [15, 16], r: 9, palms: 0.4, blobs: [[15, 8, 5, "w", 0.25], [7, 20, 4, "."], [23, 22, 5, "g"]],
   grass: [[22, 21, 3.4, 3, "orchid", "Coral Grove orchids"], [7, 20, 2.6, 2, "tide", "Grove pool reeds"]], quest: [10, 14, "coral-grove", "Find the secret of the Coral Grove", 0.5],
   build(X, Y) { for (let k = 0; k < 9; k++) { const a = (k / 9) * TAU; thCoral(X + 15 + Math.cos(a) * 3.6, Y + 8 + Math.sin(a) * 3, 0.8 + R() * 0.6); } gyArch(gyO(X, Y, 15, 12.5), 3.6, 4, 0.8); gyVines(gyO(X, Y, 15, 12.6), 3.6, 4); } });
+
+gyW("Y7", 40, 90, "Sunken Temple Court", { hub: [15, 17], r: 0, base: "w", wk: 0.3,
+  ground(X, Y) { tBlob(X + 15, Y + 13, 9, ".", 0.2, 7); ellT(X + 15, Y + 17, 7.5, 5.5, "P"); fillT(X + 9, Y + 4, X + 21, Y + 10, "b"); tBlob(X + 5, Y + 25, 3.2, "g", 0.3, 8); tBlob(X + 25, Y + 25, 2.6, ".", 0.3, 9);
+    tLine(X + 15, Y + 17, X + 5, Y + 25, 3, "k", "w"); tLine(X + 15, Y + 17, X + 25, Y + 25, 3, "k", "w"); tLine(X + 21, Y + 17, X + 29, Y + 17, 3.4, "k", "w"); },
+  grass: [[5, 25, 2.4, 2.2, "tide", "Temple court reeds"]], quest: [21.5, 20, "sunken-court", "Light the sunken court braziers", -0.5],
+  build(X, Y) { gyTemple(gyO(X, Y, 15, 7), 12, 7, 5); for (const [x, z] of [[10, 14.5], [20, 14.5], [10, 20.5], [20, 20.5]]) gyBrazier(gyO(X, Y, x, z)); gyGlyphStone(gyO(X, Y, 15, 19.5), 0.9);
+    for (const [x, z, ry] of [[3.5, 9, 0.3], [26.5, 9, -0.3], [15, 27, 0]]) { const O = { x: X + x, z: Y + z, ry, floor: -0.6 }; gyArch(O, 3.2, 3.8, 0.8); gyVines(O, 3.2, 3.6); }
+    for (let k = 0; k < 12; k++) { const a = (k / 12) * TAU + 0.2, px = X + 15 + Math.cos(a) * 9.5, pz = Y + 16 + Math.sin(a) * 8; if (at(Math.floor(px), Math.floor(pz)) !== "w" || pz < Y + 11) continue; gyColumn({ x: px, z: pz, ry: a, floor: -0.6 }, 2.6 + nh(k, 3, 11) * 1.8, nh(k, 4, 12) < 0.5 ? 0.5 : 0); }
+    gyHead({ x: X + 27, z: Y + 18.5, ry: -0.9, floor: -0.7 }, 1.3); for (let k = 0; k < 26; k++) { const x = 1 + R() * 28, z = 1 + R() * 28; if (at(Math.floor(X + x), Math.floor(Y + z)) === "w") gyLily(X + x, Y + z); }
+    gyChimePost(gyO(X, Y, 5, 25)); gyStele(gyO(X, Y, 25, 25), 1.8); } });
 
 gyW("YU", 70, 90, "Tidepool Ruins", { hub: [15, 15], r: 9, blobs: [[7, 7, 4.5, "w", 0.3], [23, 8, 4, "w", 0.3], [8, 23, 4, "w", 0.3], [22, 22, 5, "."]],
   grass: [[22, 22, 3.4, 3, "tide", "Tidepool ruin grass"]], quest: [18.5, 11, "tidepool-glyph", "Read the tidepool glyph", -0.4],
@@ -3731,7 +3767,7 @@ gyW("YS", 100, 90, "Glyph Steps", { hub: [12, 21], r: 8, blobs: [[19, 10, 8, "."
   build(X, Y) { gyPyramid(gyO(X, Y, 20, 9), 10.5, 5, 1.2, true); for (const s of [-1, 1]) { gyColumn(gyO(X, Y, 20 + s * 3.2, 15.6), 4, 0); gyBrazier(gyO(X, Y, 20 + s * 5.2, 15.4)); } } });
 
 gyW("YQ", 130, 90, "Quiet Court", { town: true, hub: [15, 15], r: 12,
-  bld: [["g_study", 1, 1, 9, 7, "Scribe's House"], ["g_home", 20, 1, 9, 7, "Court Keeper's House"]],
+  bld: [["g_study", 1, 1, 9, 7, "Archivist's Study"], ["g_helix", 20, 1, 9, 7, "Shrine Chamber"]],
   ground(X, Y) { fillT(X + 1, Y + 8, X + 28, Y + 28, "g"); ellT(X + 15, Y + 15, 6.5, 6.5, "P"); ellT(X + 15, Y + 15, 1.8, 1.8, "w"); },
   grass: [[5, 24, 3.2, 2.6, "orchid", "Court garden orchids"], [25, 24, 3, 2.4, "jungle", "Court thicket"]],
   build(X, Y) { gyRuinRing(X, Y, 15, 15, 5.2, 4, 3.6, 0, Math.PI / 4); for (const [x, z] of [[10.5, 10.5], [19.5, 10.5], [10.5, 19.5], [19.5, 19.5]]) gyUrn(gyO(X, Y, x, z)); gyBench(gyO(X, Y, 15, 22, 0)); gyBench(gyO(X, Y, 8, 15, Math.PI / 2)); gyStele(gyO(X, Y, 22, 15, -Math.PI / 2), 2.2); } });
@@ -3751,10 +3787,11 @@ gyW("E3", 220, 90, "Orchid Ravine", { hub: [12, 15], r: 8, jungle: 1.2, blobs: [
   build(X, Y) { for (let z = 2; z < 28; z += 2.4) gyRock(gyO(X, Y, 26 + (R() - 0.5), z), 1.2 + R() * 0.9); gyStele(gyO(X, Y, 15, 11), 1.8); } });
 
 // ---------------- row 3 ----------------
-gyW("Q1", 10, 60, "Mangrove Flats", { hub: [16, 16], r: 8, palms: 0.2, blobs: [[6, 7, 6, "w", 0.35], [24, 24, 5, "w", 0.35], [6, 24, 4, "."], [24, 8, 4, "g"]],
-  grass: [[6, 24, 3, 2.4, "tide", "Mangrove mud grass"], [24, 8, 3, 2.6, "jungle", "Mangrove ferns"]],
-  build(X, Y) { for (let k = 0; k < 16; k++) { const x = R() * 30, z = R() * 30; if (at(Math.floor(X + x), Math.floor(Y + z)) !== "w") continue; const O = { x: X + x, z: Y + z, ry: R() * 6, floor: -0.5 }; for (let r = 0; r < 5; r++) { const a = r * 1.3; nnP("bark", O, "cyl", Math.cos(a) * 0.6, 0.5, Math.sin(a) * 0.6, 0.12, 1.4, 0.12, "#4a3a2a", Math.sin(a) * 0.6, 0, -Math.cos(a) * 0.6); } nnCy("bark", O, 0, 0.9, 0, 0.18, 2.4, "#5a4430"); gyMoss(O, 0, 3.6, 0, 1.6); } } });
-
+gyW("Q1", 10, 60, "Vine Bridge Canopy", { hub: [16, 16], r: 9, jungle: 1.15, palms: 0.05, blobs: [[6, 7, 5, "w", 0.3], [24, 25, 4.2, "w", 0.3], [6, 24, 4, "."], [24, 8, 4, "g"]],
+  grass: [[6, 24, 3, 2.4, "jungle", "Canopy floor ferns"], [24, 8, 3, 2.6, "jungle", "Canopy fern bed"]], quest: [10.5, 16, "vine-bridge", "Cross the vine bridges", Math.PI / 2],
+  build(X, Y) { const T = [[9, 11], [21, 11], [21, 21], [10, 21]].filter(([x, z]) => !gyOnTrail(X + x, Y + z)); for (const [x, z] of T) { gyLookout(gyO(X, Y, x, z), 6); gyTree(gyO(X, Y, x + (x < 15 ? -2.6 : 2.6), z + (z < 15 ? -2.4 : 2.4)), 1.5); }
+    for (let k = 0; k < T.length; k++) gyRopeBridge(X + T[k][0], Y + T[k][1], X + T[(k + 1) % T.length][0], Y + T[(k + 1) % T.length][1], 6.14);
+    for (const [x, z] of [[4, 15], [27, 16], [15, 4], [16, 27]]) if (!gyOnTrail(X + x, Y + z)) gyTree(gyO(X, Y, x, z), 1.3); for (let k = 0; k < 8; k++) { const x = 3 + R() * 24, z = 3 + R() * 24; if (at(Math.floor(X + x), Math.floor(Y + z)) === "w") gyLily(X + x, Y + z); } } });
 gyW("Q2", 40, 60, "Heron Pools", { hub: [15, 15], r: 10, blobs: [[8, 8, 4, "w", 0.3], [22, 22, 4.5, "w", 0.3], [23, 7, 4, "."]],
   grass: [[23, 7, 3, 2.6, "tide", "Heron pool reeds"], [7, 22, 3.2, 2.6, "jungle", "Heron thicket"]], quest: [19, 17, "heron-feather", "Find the white heron feather", 0],
   build(X, Y) { for (const [x, z] of [[9, 9], [21, 21]]) for (let k = 0; k < 2; k++) { const O = gyO(X, Y, x + k * 1.6, z + 2.4, 0.4 + k); nnCy("lit", O, 0, 0, 0, 0.03, 0.8, "#c87a3a"); nnP("lit", O, "sph", 0, 1.0, 0, 0.3, 0.38, 0.5, "#f4f0e8"); nnCy("lit", O, 0, 1.2, 0.18, 0.04, 0.5, "#f4f0e8"); } gyLog(gyO(X, Y, 14, 6, 0.6)); } });
@@ -3872,7 +3909,7 @@ gyW("Y8", 220, 0, "Temple of Voices Steps", { hub: [15, 15], r: 9, blobs: [[15, 
 for (const [a, b, t, c0] of [
   ["YL", "YD"], ["YD", "YH"], ["YH", "YF"], ["YF", "YR"], ["YR", "EB"], ["YL", "EC"], ["YL", "YN"], ["YD", "YT"], ["YH", "YJ"], ["YF", "YC"], ["EB", "YP"],
   ["YI", "EC", "p", 24], ["YI", "YO", "p", 25], ["YN", "YI", "k", 135], ["YT", "YN", "k", 135], ["YJ", "YT"], ["YC", "YJ"], ["YC", "YW"], ["YW", "YP"], ["YP", "E4"],
-  ["YT", "YU"], ["YJ", "YS"], ["YC", "YQ"], ["YM", "YW", "p", 175], ["E4", "E3"], ["YO", "Q1"], ["YU", "YS"], ["YQ", "YS"], ["YQ", "YM"], ["E3", "E2"], ["E2", "YM"],
+  ["YT", "YU"], ["Y7", "YU", "k"], ["YJ", "YS"], ["YC", "YQ"], ["YM", "YW", "p", 175], ["E4", "E3"], ["YO", "Q1"], ["YU", "YS"], ["YQ", "YS"], ["YQ", "YM"], ["E3", "E2"], ["E2", "YM"],
   ["YU", "Q3"], ["YS", "YG"], ["Q6", "YQ"], ["YM", "YA"], ["E2", "Y4"], ["E3", "E1"], ["Q1", "Q2"], ["Q2", "Q3"], ["Q3", "YG"], ["Q6", "YG"], ["Q6", "YA"], ["Y4", "E1"],
   ["Q2", "YK"], ["YG", "YB", "p", 115], ["Q6", "YX"], ["YA", "YZ"], ["YV", "Y4"], ["E1", "YY"], ["YB", "YE"], ["YE", "YK"], ["YZ", "YX", "p", 45], ["YZ", "YV"], ["YV", "YY"], ["YY", "Y8"],
   ["Q4", "YK"], ["F4", "YB"], ["S3", "YX", "p", 137], ["S4", "YZ", "p", 182], ["V2", "YV", "p", 193], ["Q4", "F3"], ["F3", "F4"], ["F4", "S3", "p", 20], ["S4", "V2", "p", 17], ["V2", "Y8"],
