@@ -14392,8 +14392,15 @@ const nnXSwatch = (key) => NNXSW[key] || (NNXSW[key] = (() => { const W = 512, P
 // world-space (triplanar) textured material: colour tints the swatch
 const nnXTri = (key, sw, sc, o = {}) => thM("nnX|" + key, () => FXTRI(std({ map: nnXSwatch(sw).map, color: o.c || "#ffffff", roughness: o.r ?? 0.75, metalness: o.m ?? 0.1, vertexColors: !!o.vc }), sc, 0));
 // towers: darken toward the street (ambient occlusion and grime at the foot of every wall), keeping lit windows bright
-const nnXFoot = (m) => { m.onBeforeCompile = (sh) => { sh.vertexShader = "varying float nnWY;\n" + sh.vertexShader.replace("#include <project_vertex>", "#include <project_vertex>\nnnWY = (modelMatrix * vec4(transformed, 1.0)).y;");
-    sh.fragmentShader = "varying float nnWY;\n" + sh.fragmentShader.replace("#include <color_fragment>", "#include <color_fragment>\ndiffuseColor.rgb *= mix(0.52, 1.0, smoothstep(0.3, 7.0, nnWY));"); }; m.customProgramCacheKey = () => "nnfoot"; return m; };
+const nnXFoot = (m) => { const gd = nnTex("nn_grit_d", true, "#d6d6d6"), gn = nnTex("nn_grit_n", false, "#8080ff");
+  m.onBeforeCompile = (sh) => { sh.uniforms.gD = { value: gd }; sh.uniforms.gN = { value: gn };
+    sh.vertexShader = "varying float nnWY; varying vec3 nnWP; varying vec3 nnWN;\n" + sh.vertexShader.replace("#include <project_vertex>", "#include <project_vertex>\nnnWY = (modelMatrix * vec4(transformed, 1.0)).y; nnWP = (modelMatrix * vec4(transformed, 1.0)).xyz; nnWN = normalize(mat3(modelMatrix) * objectNormal);");
+    // weathering in world space over the painted facade: fine concrete grit and pitting, rain streaks running down from the ledges, darker at the foot of the wall
+    sh.fragmentShader = "varying float nnWY; varying vec3 nnWP; varying vec3 nnWN; uniform sampler2D gD; uniform sampler2D gN;\n" + NNPBV + sh.fragmentShader
+      .replace("#include <color_fragment>", "#include <color_fragment>\ndiffuseColor.rgb *= mix(0.52, 1.0, smoothstep(0.3, 7.0, nnWY));\n{ vec3 bw = pbW(nnWN); float g = (texture2D(gD, nnWP.zy * 0.5) * bw.x + texture2D(gD, nnWP.xz * 0.5) * bw.y + texture2D(gD, nnWP.xy * 0.5) * bw.z).r; diffuseColor.rgb *= mix(1.0, g * 1.18, 0.55);\n float st = fxVN(vec3(nnWP.x * 2.6 + nnWP.z * 2.6, nnWP.y * 0.12, nnWP.z * 0.7)); float st2 = fxVN(vec3((nnWP.x + nnWP.z) * 9.0, nnWP.y * 0.35, 1.3)); diffuseColor.rgb *= 1.0 - 0.2 * smoothstep(0.45, 0.85, st) * (0.6 + 0.4 * st2) * (1.0 - abs(nnWN.y)); }")
+      .replace("#include <normal_fragment_maps>", "#include <normal_fragment_maps>\n{ vec3 wN0 = normalize((vec4(normal, 0.0) * viewMatrix).xyz); vec3 bw = pbW(wN0); vec3 a = texture2D(gN, nnWP.zy * 0.5).xyz * 2.0 - 1.0, b = texture2D(gN, nnWP.xz * 0.5).xyz * 2.0 - 1.0, c = texture2D(gN, nnWP.xy * 0.5).xyz * 2.0 - 1.0; a.xy *= 0.8; b.xy *= 0.8; c.xy *= 0.8;\n a = vec3(a.xy + wN0.zy, abs(a.z) * wN0.x); b = vec3(b.xy + wN0.xz, abs(b.z) * wN0.y); c = vec3(c.xy + wN0.xy, abs(c.z) * wN0.z); vec3 nW = normalize(a.zyx * bw.x + b.xzy * bw.y + c.xyz * bw.z); normal = normalize((viewMatrix * vec4(nW, 0.0)).xyz); }")
+      .replace("#include <roughnessmap_fragment>", "#include <roughnessmap_fragment>\nroughnessFactor = clamp(roughnessFactor * (0.8 + 0.4 * fxVN(nnWP * 1.9 + 4.1)), 0.05, 1.0);"); };
+  m.customProgramCacheKey = () => "nnfoot2"; return m; };
 // ---- real relief on every city tower: cornice, belt course over the shops, string courses, corner quoins, and per-style
 // fittings (fire escapes on brick, balconies on plaster, sunshades on concrete, fins on glass, wall units on metal) ----
 const NNXBAY = [16, 8, 20, 12, 16], NNXTRIM = ["#8a8498", "#7a7684", "#4c5064", "#2c2a34", "#bcb2c8"], NNXIRON = "#24222c";
@@ -14426,6 +14433,95 @@ const nnXRelief = (k, x, z, gy, w, d, h) => { const q = nnXR((Math.floor(x * 73.
     for (const zf of [z1, z0]) { const fz = zf > z ? 1 : -1; for (let f = 1; f <= floorsUp && f * 3.2 < h - 1.4; f++) for (let x2 = x0 + bw / 2; x2 < x1 - 0.5; x2 += bw) { if (q() > (k === 3 ? 0.18 : 0.08)) continue;
       const y = gy + f * 3.2 + (k === 3 ? 2.35 : 0.18); nnBx("deco", null, x2, y, zf + fz * 0.22, 0.66, 0.44, 0.42, "#9a9aa8"); nnBx("deco", null, x2, y + 0.06, zf + fz * 0.44, 0.5, 0.3, 0.02, "#3a3a46"); nnBx("deco", null, x2 + 0.36, y - 0.6, zf + fz * 0.04, 0.03, 0.62, 0.03, "#2a2834"); } } }
   if (k === 3 && h > 8 && q() < 0.6) { const s = q() < 0.5 ? -1 : 1; nnCy("deco", null, x + s * (w / 2 - 0.5), gy + 3.4, z1 + 0.16, 0.09, h - 4, "#4a4856"); for (let y = gy + 4; y < top - 1; y += 2.4) nnBx("deco", null, x + s * (w / 2 - 0.5), y, z1 + 0.08, 0.26, 0.06, 0.2, "#2a2834"); } };
+// ---- real painted surfaces: CC0 photo textures (Poly Haven, via the studio texture library) mapped in world space, with normal-map relief
+// and roughness that varies across every surface. Each texture starts as a flat 4 px stand-in and swaps to the real picture once it loads. ----
+const NNTXV = "r3a", NNTX = {};
+const nnTex = (name, srgb, fill) => NNTX[name] || (NNTX[name] = (() => { const c = nnXCv(4, 4), C = c.getContext("2d"); C.fillStyle = fill; C.fillRect(0, 0, 4, 4);
+  const t = new THREE.CanvasTexture(c); t.wrapS = t.wrapT = THREE.RepeatWrapping; t.anisotropy = 8; if (srgb) t.colorSpace = THREE.SRGBColorSpace;
+  const hk = typeof globalThis !== "undefined" && globalThis.NNTEXLOAD; if (hk) { const im = hk(name); if (im) { t.image = im; t.needsUpdate = true; return t; } }
+  try { if (typeof Image === "function" && typeof location !== "undefined" && /^https?:/.test(location.protocol)) { const im = new Image(); im.decoding = "async"; im.onload = () => { if (im.naturalWidth) { t.image = im; t.needsUpdate = true; } }; im.src = "tex/" + name + ".webp?v=" + NNTXV; } } catch (e) { }
+  return t; })());
+const NNPBV = "vec3 pbW(vec3 n) { vec3 b = pow(abs(n), vec3(4.0)); return b / (b.x + b.y + b.z + 1e-5); }\nfloat fxH(vec3 p) { return fract(sin(dot(p, vec3(127.1, 311.7, 74.7))) * 43758.5453); }\nfloat fxVN(vec3 p) { vec3 i = floor(p), f = fract(p); f = f * f * (3.0 - 2.0 * f); return mix(mix(mix(fxH(i), fxH(i + vec3(1, 0, 0)), f.x), mix(fxH(i + vec3(0, 1, 0)), fxH(i + vec3(1, 1, 0)), f.x), f.y), mix(mix(fxH(i + vec3(0, 0, 1)), fxH(i + vec3(1, 0, 1)), f.x), mix(fxH(i + vec3(0, 1, 1)), fxH(i + vec3(1, 1, 1)), f.x), f.y), f.z); }\n";
+// PBR triplanar: o.n = normal map, o.rt = roughness map, o.ns = normal strength, o.rv = how much roughness wanders (0..0.5)
+const NNPB = (m, sc, o = {}) => { const nrm = o.n ? nnTex(o.n, false, "#8080ff") : null, rgh = o.rt ? nnTex(o.rt, false, "#808080") : null, ns = (o.ns ?? 1).toFixed(2), rv = (o.rv ?? 0.3).toFixed(2), f = (v) => v.toFixed(4);
+  m.onBeforeCompile = (sh) => { sh.uniforms.fxS = { value: sc }; if (nrm) sh.uniforms.pbN = { value: nrm }; if (rgh) sh.uniforms.pbR = { value: rgh };
+    sh.vertexShader = "varying vec3 fxP; varying vec3 fxN;\n" + sh.vertexShader.replace("#include <project_vertex>", "#include <project_vertex>\n{ vec4 fwp = vec4(transformed, 1.0); vec3 fwn = objectNormal;\n#ifdef USE_INSTANCING\n fwp = instanceMatrix * fwp; fwn = mat3(instanceMatrix) * fwn;\n#endif\n fxP = (modelMatrix * fwp).xyz; fxN = normalize(mat3(modelMatrix) * fwn); }");
+    sh.fragmentShader = "uniform float fxS; varying vec3 fxP; varying vec3 fxN;\n" + (nrm ? "uniform sampler2D pbN;\n" : "") + (rgh ? "uniform sampler2D pbR;\n" : "") + NNPBV + sh.fragmentShader
+      .replace("#include <map_fragment>", "{ vec3 bw = pbW(fxN); vec4 tx = texture2D(map, fxP.zy * fxS) * bw.x + texture2D(map, fxP.xz * fxS) * bw.y + texture2D(map, fxP.xy * fxS) * bw.z; diffuseColor *= tx;\n float m1 = fxVN(fxP * 0.09 + 7.3), m2 = fxVN(vec3(fxP.x * 0.85, fxP.y * 0.11, fxP.z * 0.85)); diffuseColor.rgb *= (0.88 + 0.22 * m1) * (0.93 + 0.1 * m2); }")
+      .replace("#include <roughnessmap_fragment>", "#include <roughnessmap_fragment>\n{ vec3 bw = pbW(fxN); float rr = " + (rgh ? "(texture2D(pbR, fxP.zy * fxS).g * bw.x + texture2D(pbR, fxP.xz * fxS).g * bw.y + texture2D(pbR, fxP.xy * fxS).g * bw.z) * 2.0" : "1.0") + "; roughnessFactor = clamp(roughnessFactor * rr * (1.0 - " + rv + " + 2.0 * " + rv + " * fxVN(fxP * 2.3 + 1.7)), 0.05, 1.0); }")
+      .replace("#include <normal_fragment_maps>", "#include <normal_fragment_maps>\n" + (nrm ? "{ vec3 bw = pbW(fxN); vec3 wN = normalize(fxN); vec3 a = texture2D(pbN, fxP.zy * fxS).xyz * 2.0 - 1.0, b = texture2D(pbN, fxP.xz * fxS).xyz * 2.0 - 1.0, c = texture2D(pbN, fxP.xy * fxS).xyz * 2.0 - 1.0;\n a.xy *= " + ns + "; b.xy *= " + ns + "; c.xy *= " + ns + ";\n a = vec3(a.xy + wN.zy, abs(a.z) * wN.x); b = vec3(b.xy + wN.xz, abs(b.z) * wN.y); c = vec3(c.xy + wN.xy, abs(c.z) * wN.z);\n vec3 nW = normalize(a.zyx * bw.x + b.xzy * bw.y + c.xyz * bw.z); normal = normalize((viewMatrix * vec4(nW, 0.0)).xyz); }" : ""));
+  };
+  m.customProgramCacheKey = () => "fxtri-pb" + f(sc) + (nrm ? "n" : "") + (rgh ? "r" : "") + ns + rv; return m; };
+// the three painted materials the city leans on
+const nnPaintGrit = () => thM("nnPGrit", () => NNPB(std({ map: nnTex("nn_grit_d", true, "#d6d6d6"), vertexColors: true, roughness: 0.62, metalness: 0 }), 0.35, { n: "nn_grit_n", ns: 0.9, rv: 0.4 }));
+const nnPaintMetal = () => thM("nnPMet", () => NNPB(std({ map: nnTex("nn_pmet_d", true, "#878787"), color: "#8a84a4", roughness: 0.55, metalness: 0 }), 0.5, { n: "nn_pmet_n", rt: "nn_pmet_r", ns: 1, rv: 0.25 }));
+const nnPaintGranite = () => thM("nnPGran", () => NNPB(std({ map: nnTex("nn_gran_d", true, "#6a6a70"), color: "#c4bcdc", roughness: 0.42, metalness: 0 }), 0.6, { n: "nn_gran_n", ns: 1, rv: 0.3 }));
+
+// ---- moving water: one shared clock, ripple normals from two drifting wave maps, a sky-and-neon sheen at grazing angles, and foam rings
+// where the jets land. Water meshes keep their own shaders, so the game never merges them away. ----
+const NNWT = { value: 0 };
+const nnWTick = () => { NNWT.value = ((typeof performance !== "undefined" && performance.now) ? performance.now() : Date.now()) / 1000 % 3600; };
+// o: c colour, e glow, op opacity, vc vertex colours, imp = [radius, count, angle0] of jet landings (in the mesh's own frame), fr = foam ring radius, ws = wave scale
+const nnWaterM = (key, o) => thM("nnWat|" + key, () => { const m = std({ color: o.c || "#ffffff", roughness: 0.07, metalness: 0, transparent: true, opacity: o.op ?? 0.84, depthWrite: false, emissive: o.e || "#000000", emissiveIntensity: 1, vertexColors: !!o.vc });
+  const wn = nnTex("nn_wave_n", false, "#8080ff"), ws = (o.ws ?? 0.22).toFixed(3), imp = o.imp, fr = o.fr;
+  m.onBeforeCompile = (sh) => { sh.uniforms.nnT = NNWT; sh.uniforms.wN = { value: wn };
+    sh.vertexShader = "varying vec3 nwP; varying vec3 nwL;\n" + sh.vertexShader.replace("#include <project_vertex>", "#include <project_vertex>\nnwP = (modelMatrix * vec4(transformed, 1.0)).xyz; nwL = position;");
+    let rip = "float foam = 0.0;\n";
+    if (imp) rip += "{ float ang = atan(nwL.z, nwL.x); float st = 6.2831853 / " + imp[1].toFixed(1) + "; float k = floor((ang - " + imp[2].toFixed(4) + ") / st + 0.5); float a2 = " + imp[2].toFixed(4) + " + k * st; vec2 cc = vec2(cos(a2), sin(a2)) * " + imp[0].toFixed(3) + "; vec2 dv = nwL.xz - cc; float d = length(dv) + 1e-4;\n float w = sin(d * 30.0 - nnT * 8.0 + k * 1.7) * exp(-d * 2.6) * smoothstep(0.02, 0.12, d); dn += dv / d * w * 0.55; foam += exp(-d * 9.0) * (0.55 + 0.45 * sin(nnT * 13.0 + k * 2.3 + d * 40.0)) + exp(-d * 4.0) * 0.25 * max(0.0, sin(d * 30.0 - nnT * 8.0 + k * 1.7)); }\n";
+    if (fr) rip += "{ float r = length(nwL.xz); float dr = r - " + fr.toFixed(3) + "; float w2 = sin(abs(dr) * 34.0 - nnT * 7.0) * exp(-abs(dr) * 5.0); dn += normalize(nwL.xz + 1e-4) * sign(dr) * w2 * 0.35; foam += exp(-abs(dr) * 14.0) * (0.6 + 0.4 * fxVN(vec3(nwL.xz * 9.0, nnT * 3.0))); }\n";
+    sh.fragmentShader = "uniform float nnT; uniform sampler2D wN; varying vec3 nwP; varying vec3 nwL;\n" + NNPBV + sh.fragmentShader
+      .replace("#include <normal_fragment_maps>", "#include <normal_fragment_maps>\nvec2 dn = vec2(0.0);\n" + rip + "{ vec2 p = nwP.xz; vec3 wa = texture2D(wN, p * " + ws + " + vec2(nnT * 0.031, nnT * 0.017)).xyz * 2.0 - 1.0, wb = texture2D(wN, p * " + ws + " * 1.7 - vec2(nnT * 0.023, -nnT * 0.029)).xyz * 2.0 - 1.0;\n dn += (wa.xy + wb.xy) * 0.32; vec3 wn = normalize(vec3(dn.x, 1.0, dn.y)); normal = normalize((viewMatrix * vec4(wn, 0.0)).xyz); }")
+      .replace("#include <emissivemap_fragment>", "#include <emissivemap_fragment>\n{ float fres = pow(1.0 - clamp(dot(normal, normalize(vViewPosition)), 0.0, 1.0), 3.0); float gl = pow(fxVN(vec3(nwP.xz * 6.0 + normal.xz * 3.0, nnT * 1.3)), 6.0);\n totalEmissiveRadiance += fres * vec3(0.20, 0.26, 0.52) + gl * vec3(0.22, 0.5, 0.62) + foam * vec3(0.55, 0.68, 0.78); diffuseColor.a = clamp(diffuseColor.a + fres * 0.12 + foam * 0.4, 0.0, 1.0); }");
+  };
+  m.customProgramCacheKey = () => "nnwater" + key + ws + (imp ? imp.join(",") : "") + (fr || ""); return m; });
+// falling and arcing water (jets, the curtain off the upper bowl): streaks that run along the flow, softer at the edges, added on as light
+const nnFlowM = (key, o) => thM("nnFlow|" + key, () => { const m = new THREE.MeshBasicMaterial({ color: o.c || "#bff2ff", transparent: true, opacity: o.op ?? 0.8, depthWrite: false, blending: THREE.AdditiveBlending, side: o.ds ? THREE.DoubleSide : THREE.FrontSide });
+  const sp = (o.sp ?? 2.4).toFixed(2), rp = (o.rp ?? 7).toFixed(1), cs = (o.cs ?? 1).toFixed(1), ax = o.ax || "x";
+  m.onBeforeCompile = (sh) => { sh.uniforms.nnT = NNWT;
+    sh.vertexShader = "varying vec2 nfU; varying float nfE;\n" + sh.vertexShader.replace("#include <project_vertex>", "#include <project_vertex>\nnfU = uv; nfE = abs(dot(normalize(normalMatrix * normal), normalize(-mvPosition.xyz)));");
+    const along = ax === "x" ? "nfU.x" : "1.0 - nfU.y", across = ax === "x" ? "nfU.y" : "nfU.x";
+    sh.fragmentShader = "uniform float nnT; varying vec2 nfU; varying float nfE;\n" + NNPBV + sh.fragmentShader.replace("#include <alphamap_fragment>", "#include <alphamap_fragment>\n{ float al = " + along + ", ac = " + across + "; float s1 = fxVN(vec3(ac * " + cs + " * 24.0, al * " + rp + " - nnT * " + sp + ", 0.5)), s2 = fxVN(vec3(ac * " + cs + " * 61.0, al * " + rp + " * 2.3 - nnT * " + sp + " * 1.6, 3.7));\n float k = 0.35 + 0.75 * s1 * s1 + 0.4 * s2; float ed = pow(clamp(nfE, 0.0, 1.0), 0.7); diffuseColor.a *= k * (0.25 + 0.75 * ed) * smoothstep(0.0, 0.06, al) * (1.0 - smoothstep(" + (o.fe ?? 0.9).toFixed(2) + ", 1.0, al)); diffuseColor.rgb *= 0.8 + 0.5 * s2; }");
+  };
+  m.customProgramCacheKey = () => "nnflow" + key + sp + rp + cs + ax; return m; });
+// spray: little camera-facing droplets that hop up and fall back where the jets land, animated on the graphics card
+const nnSprayM = () => thM("nnSpray", () => { const m = new THREE.MeshBasicMaterial({ color: "#d8faff", transparent: true, opacity: 0.9, depthWrite: false, blending: THREE.AdditiveBlending });
+  m.onBeforeCompile = (sh) => { sh.uniforms.nnT = NNWT;
+    sh.vertexShader = "uniform float nnT; attribute vec4 sp; attribute vec2 cr; varying float sA; varying vec2 sC;\n" + sh.vertexShader.replace("#include <project_vertex>", "float t = fract(nnT * sp.y + sp.x); vec3 c = transformed + vec3(cos(sp.z), 0.0, sin(sp.z)) * sp.w * t + vec3(0.0, sp.w * 1.3 * t * (1.0 - t) * 4.0 * (0.6 + 0.4 * fract(sp.x * 7.3)), 0.0);\nvec4 mvPosition = modelViewMatrix * vec4(c, 1.0); float sz = 0.035 + 0.05 * (1.0 - t); mvPosition.xy += cr * sz; gl_Position = projectionMatrix * mvPosition; sA = (1.0 - t) * smoothstep(0.0, 0.08, t); sC = cr;");
+    sh.fragmentShader = "varying float sA; varying vec2 sC;\n" + sh.fragmentShader.replace("#include <alphamap_fragment>", "#include <alphamap_fragment>\ndiffuseColor.a *= sA * (1.0 - smoothstep(0.35, 1.0, length(sC)));");
+  };
+  m.customProgramCacheKey = () => "nnspray1"; return m; });
+// pts: [x, y, z, n, spread, speed] bursts in the fountain's own frame
+const nnSprayG = (pts, rnd) => { let n = 0; for (const p of pts) n += p[3]; const P = new Float32Array(n * 12), S = new Float32Array(n * 16), C = new Float32Array(n * 8), I = []; let o = 0;
+  for (const [x, y, z, cnt, spread, spd] of pts) for (let i = 0; i < cnt; i++, o++) { const ph = rnd(), an = rnd() * TAU, sw = spread * (0.4 + rnd() * 0.6), v = spd * (0.7 + rnd() * 0.6);
+    for (let c = 0; c < 4; c++) { const j = o * 4 + c; P.set([x, y, z], j * 3); S.set([ph, v, an, sw], j * 4); C.set([c & 1 ? 1 : -1, c & 2 ? 1 : -1], j * 2); } const b = o * 4; I.push(b, b + 1, b + 2, b + 2, b + 1, b + 3); }
+  const g = new THREE.BufferGeometry(); g.setAttribute("position", new THREE.BufferAttribute(P, 3)); g.setAttribute("sp", new THREE.BufferAttribute(S, 4)); g.setAttribute("cr", new THREE.BufferAttribute(C, 2)); g.setAttribute("normal", new THREE.BufferAttribute(new Float32Array(n * 12).fill(0).map((_, i) => i % 3 === 1 ? 1 : 0), 3)); g.setAttribute("uv", new THREE.BufferAttribute(new Float32Array(n * 8), 2)); g.setIndex(I);
+  g.boundingSphere = new THREE.Sphere(new THREE.Vector3(0, 1, 0), 4.5); return g; };
+// a jet: a tube along a parabola from the nozzle to where it lands, thinner at the nozzle and spreading as it falls
+const nnJetG = (a, b, peak, r0, r1) => { const c = new THREE.QuadraticBezierCurve3(new THREE.Vector3(...a), new THREE.Vector3((a[0] + b[0]) / 2, peak, (a[2] + b[2]) / 2), new THREE.Vector3(...b));
+  const g = new THREE.TubeGeometry(c, 28, 1, 8, false), P = g.attributes.position, U = g.attributes.uv, v = new THREE.Vector3(), cp = new THREE.Vector3();
+  for (let i = 0; i < P.count; i++) { const t = U.getX(i); c.getPointAt(t, cp); v.fromBufferAttribute(P, i).sub(cp).multiplyScalar(r0 + (r1 - r0) * t * t); P.setXYZ(i, cp.x + v.x, cp.y + v.y, cp.z + v.z); }
+  g.computeBoundingSphere(); return g; };
+const nnMergeG = (gs) => { let nv = 0, ni = 0; for (const g of gs) { nv += g.attributes.position.count; ni += g.index ? g.index.count : g.attributes.position.count; }
+  const P = new Float32Array(nv * 3), N = new Float32Array(nv * 3), U = new Float32Array(nv * 2), I = new Uint32Array(ni); let vo = 0, io = 0;
+  for (const g of gs) { const c = g.attributes.position.count; P.set(g.attributes.position.array, vo * 3); N.set(g.attributes.normal.array, vo * 3); U.set(g.attributes.uv.array, vo * 2);
+    if (g.index) { for (let i = 0; i < g.index.count; i++) I[io + i] = g.index.getX(i) + vo; io += g.index.count; } else { for (let i = 0; i < c; i++) I[io + i] = vo + i; io += c; } vo += c; g.dispose(); }
+  const m = new THREE.BufferGeometry(); m.setAttribute("position", new THREE.BufferAttribute(P, 3)); m.setAttribute("normal", new THREE.BufferAttribute(N, 3)); m.setAttribute("uv", new THREE.BufferAttribute(U, 2)); m.setIndex(new THREE.BufferAttribute(I, 1)); m.computeBoundingSphere(); return m; };
+const nnAnim = (m) => { m.onBeforeRender = nnWTick; m.castShadow = false; m.receiveShadow = false; m.userData.noLift = true; return m; };
+const nnFlip = (g) => { const I = g.index; for (let i = 0; i < I.count; i += 3) { const a = I.getX(i + 1); I.setX(i + 1, I.getX(i + 2)); I.setX(i + 2, a); } const N = g.attributes.normal; for (let i = 0; i < N.count; i++) N.setXYZ(i, -N.getX(i), -N.getY(i), -N.getZ(i)); return g; };
+// painted, worn surfaces with no vertex colours (cabinets, cones, rubber)
+const nnPaintT = (key, tex, col, sc, o = {}) => thM("nnPT|" + key, () => NNPB(std({ map: nnTex(tex + "_d", true, "#888888"), color: col, roughness: o.r ?? 0.6, metalness: o.m ?? 0 }), sc, { n: tex + "_n", rt: o.rt, ns: o.ns ?? 1, rv: o.rv ?? 0.3 }));
+// perforated steel speaker grille, a tiling picture of round holes
+const nnGrilleM = () => thM("nnGrille", () => { const c = nnXCv(64, 64), C = c.getContext("2d"); C.fillStyle = "#5a5866"; C.fillRect(0, 0, 64, 64); C.fillStyle = "#0c0b10";
+  for (let y = 0; y < 4; y++) for (let x = 0; x < 4; x++) { C.beginPath(); C.arc(8 + x * 16 + (y % 2) * 8, 8 + y * 16, 5.2, 0, TAU); C.fill(); }
+  const t = nnXTx(c, true); t.repeat.set(14, 14); return std({ map: t, roughness: 0.45, metalness: 0 }); });
+const NNSPK = {};
+const nnSpkG = (k) => NNSPK[k] || (NNSPK[k] = (() => { let g;
+  if (k === "cone") { const P = []; for (let i = 0; i <= 10; i++) { const t = i / 10, r = 0.07 + t * 0.23; P.push(new THREE.Vector2(r, -0.085 * (1 - t) * (1 - t * 0.35))); } g = new THREE.LatheGeometry(P, 40).rotateX(Math.PI / 2); }
+  else if (k === "cap") g = new THREE.SphereGeometry(0.075, 18, 8, 0, TAU, 0, Math.PI / 2).rotateX(Math.PI / 2);
+  else if (k === "sur") g = new THREE.TorusGeometry(0.31, 0.026, 8, 48);
+  else if (k === "frm") g = new THREE.TorusGeometry(0.345, 0.018, 6, 48);
+  else if (k === "horn") g = new THREE.CylinderGeometry(0.17, 0.045, 0.14, 4, 1, true).rotateY(Math.PI / 4).rotateX(-Math.PI / 2);
+  return g; })());
 // ---- Neonis street-scale detail: the fountains, gateway arches, shop awnings, street trees, planters, benches and lamps are built up from many
 // small painted parts in the shared batches (no extra draw calls). Every part is placed with nnXP, which turns parts properly when the spot is rotated. ----
 const NNXQ = new THREE.Quaternion(), NNXQ2 = new THREE.Quaternion(), NNXE = new THREE.Euler(), NNXUP = new THREE.Vector3(0, 1, 0), NNXV = new THREE.Vector3();
@@ -14442,20 +14538,32 @@ const NNXSTONE = "#5a5478", NNXCAP = "#b4aed0", NNXDARK = "#1e1c2a", NNXSTEEL = 
 
 // ---- the plaza fountain: stepped plinth, a basin with ribs, coping and lit water, eight arcing jets, a spilling upper bowl,
 // a ring of segmented light meters (the old equalizer bars) and a fluted spire crowned by a framed diamond with a halo ----
-const nnXFountain = (x, z) => { const O = { x, z }, q = nnXR(Math.floor(x * 37) * 131 + Math.floor(z * 53)), R0 = 2.6;
-  add(new THREE.CylinderGeometry(R0, R0 + 0.1, 0.7, 32), nnXTri("nnFStone", "plaster", 0.4, { c: "#7a72a4", r: 0.5, m: 0.08 }), [x, 0.35, z], [0, 0, 0], null);
-  nnXC("lit", O, 0, 0, 0, R0 + 0.45, 0.16, "#2c2a3c"); nnXC("lit", O, 0, 0.16, 0, R0 + 0.25, 0.1, "#4a4664"); nnXRing("glow", O, 0, 0.2, 0, R0 + 0.3, 0.03, NC[1]);
-  nnXC("lit", O, 0, 0.68, 0, R0 + 0.12, 0.12, NNXCAP, "pad"); nnXC("lit", O, 0, 0.8, 0, R0 + 0.06, 0.04, "#d0cae8", "pad");
-  nnXC("glow", O, 0, 0.52, 0, R0 - 0.12, 0.04, NNXWATER, "pad"); for (const [r, c] of [[2.15, "#3aa8c8"], [1.7, "#2a8ab0"], [1.95, "#5ad0f0"]]) nnXRing("glow", O, 0, 0.575, 0, r, 0.012, c);
+const nnXFountain = (x, z) => { const O = { x, z }, q = nnXR(Math.floor(x * 37) * 131 + Math.floor(z * 53)), R0 = 2.6, Ri = R0 - 0.2, WY = 0.6, A0 = 0.2, RJ = 1.9, GR = nnPaintGranite();
+  // a real open basin in granite tile: outer wall, a rounded stone lip, an inner wall and a floor, with moving water sitting below the lip
+  add(new THREE.CylinderGeometry(R0, R0 + 0.1, 0.62, 48, 1, true), GR, [x, 0.31, z], [0, 0, 0], null);
+  const lip = add(new THREE.TorusGeometry(R0 - 0.1, 0.13, 10, 72), GR, [x, 0.66, z], [Math.PI / 2, 0, 0], "nocol"); lip.scale.set(1, 1, 0.75);
+  add(nnFlip(new THREE.CylinderGeometry(Ri + 0.02, Ri + 0.02, 0.44, 48, 1, true)), GR, [x, 0.46, z], [0, 0, 0], "nocol");
+  add(new THREE.CircleGeometry(Ri + 0.04, 48).rotateX(-Math.PI / 2), GR, [x, 0.25, z], [0, 0, 0], "nocol");
+  nnAnim(add(new THREE.CircleGeometry(Ri + 0.03, 72).rotateX(-Math.PI / 2), nnWaterM("basin", { c: "#2a7a96", e: "#062a38", op: 0.8, imp: [RJ, 8, A0], fr: 1.6, ws: 0.3 }), [x, WY, z], [0, 0, 0], "water"));
+  nnXC("lit", O, 0, 0, 0, R0 + 0.45, 0.16, "#2c2a3c", "pad"); nnXC("lit", O, 0, 0.16, 0, R0 + 0.25, 0.1, "#4a4664", "pad"); nnXRing("glow", O, 0, 0.2, 0, R0 + 0.3, 0.03, NC[1]);
+  nnXRing("glow", O, 0, 0.27, 0, 2.12, 0.03, "#3ab8e0"); for (let k = 0; k < 8; k++) { const a = (k / 8) * TAU + A0 + Math.PI / 8; nnXC("glow", O, Math.cos(a) * 2.05, 0.25, Math.sin(a) * 2.05, 0.09, 0.03, "#c8f6ff", "pad"); }
   for (let k = 0; k < 20; k++) { const a = (k / 20) * TAU; nnXB("lit", O, Math.cos(a) * (R0 + 0.06), 0.12, Math.sin(a) * (R0 + 0.06), 0.16, 0.5, 0.06, "#3a3456", 0, -a + Math.PI / 2); }
   nnXRing("glow", O, 0, 0.42, 0, R0 + 0.1, 0.035, NC[3]);
   for (let k = 0; k < 4; k++) { const a = (k / 4) * TAU + Math.PI / 4; nnXB("lit", O, Math.cos(a) * (R0 + 0.36), 0.16, Math.sin(a) * (R0 + 0.36), 0.36, 0.14, 0.24, NNXDARK, 0, -a); nnXB("glow", O, Math.cos(a) * (R0 + 0.36), 0.3, Math.sin(a) * (R0 + 0.36), 0.26, 0.02, 0.14, "#fff0d0", 0, -a); }
-  for (let k = 0; k < 8; k++) { const a = (k / 8) * TAU + 0.2, ca = Math.cos(a), sa = Math.sin(a); nnXB("lit", O, ca * (R0 - 0.08), 0.74, sa * (R0 - 0.08), 0.18, 0.16, 0.22, NNXSTEEL, 0, -a);
-    for (let i = 1; i <= 8; i++) { const t = i / 9, r = (R0 - 0.2) * (1 - t) + 1.25 * t, y = 0.86 + t * (1 - t) * 4.2 - t * 0.4; nnXP("glow", O, "sph", ca * r, y, sa * r, 0.13 - t * 0.05, 0.13 - t * 0.05, 0.13 - t * 0.05, i % 3 ? NNXSPRAY : "#ffffff"); }
-    nnXRing("glow", O, ca * 1.25, 0.58, sa * 1.25, 0.18, 0.012, "#9ae8ff"); }
-  nnXC("lit", O, 0, 0.55, 0, 0.62, 1.3, "#3a3456", "cyl"); for (let k = 0; k < 8; k++) { const a = (k / 8) * TAU; nnXB("lit", O, Math.cos(a) * 0.6, 0.6, Math.sin(a) * 0.6, 0.1, 1.2, 0.1, "#4e4870", 0, -a); }
-  nnXP("lit", O, "cone", 0, 1.95, 0, 3.0, 0.55, 3.0, "#6a6290", Math.PI); nnXC("lit", O, 0, 2.18, 0, 1.52, 0.1, NNXCAP, "pad"); nnXC("glow", O, 0, 2.21, 0, 1.4, 0.03, "#2a8ab0", "pad");
-  for (let k = 0; k < 28; k++) { const a = (k / 28) * TAU, len = 1.3 + q() * 0.25; nnXB("glow", O, Math.cos(a) * 1.55, 2.2 - len, Math.sin(a) * 1.55, 0.09 + q() * 0.06, len, 0.02, k % 3 ? "#8ae8ff" : "#d0f8ff", 0, -a + Math.PI / 2); }
+  // eight bronze nozzles on the lip arc water in toward the centre; each lands in a ring of foam and splashes
+  const jets = [], spr = [];
+  for (let k = 0; k < 8; k++) { const a = (k / 8) * TAU + A0, ca = Math.cos(a), sa = Math.sin(a); nnXB("lit", O, ca * (R0 - 0.1), 0.7, sa * (R0 - 0.1), 0.2, 0.14, 0.24, NNXSTEEL, 0, -a); nnXBeam("lit", O, [ca * (R0 - 0.14), 0.8, sa * (R0 - 0.14)], [ca * (R0 - 0.26), 0.9, sa * (R0 - 0.26)], 0.045, NNXSTEEL, "cyl12");
+    jets.push(nnJetG([ca * (R0 - 0.27), 0.91, sa * (R0 - 0.27)], [ca * RJ, WY, sa * RJ], 2 * 1.95 - (0.91 + WY) / 2, 0.035, 0.075)); spr.push([ca * RJ, WY, sa * RJ, 16, 0.32, 0.9]); }
+  nnAnim(add(nnMergeG(jets), nnFlowM("jet", { c: "#c8f4ff", op: 0.85, sp: 6, rp: 6, cs: 0.25, ax: "x", fe: 0.92 }), [x, 0, z], [0, 0, 0], "water"));
+  nnXC("lit", O, 0, 0.25, 0, 0.62, 1.5, "#3a3456", "cyl12"); for (let k = 0; k < 8; k++) { const a = (k / 8) * TAU; nnXB("lit", O, Math.cos(a) * 0.6, 0.3, Math.sin(a) * 0.6, 0.1, 1.4, 0.1, "#4e4870", 0, -a); }
+  // the upper bowl: its own rippling pool behind a stone lip, spilling all the way round as a sheet that breaks into streaks
+  nnXP("lit", O, "cone", 0, 1.95, 0, 3.0, 0.55, 3.0, "#6a6290", Math.PI);
+  const lip2 = add(new THREE.TorusGeometry(1.5, 0.08, 8, 56), GR, [x, 2.26, z], [Math.PI / 2, 0, 0], "nocol"); lip2.scale.set(1, 1, 0.75);
+  nnAnim(add(new THREE.CircleGeometry(1.47, 56).rotateX(-Math.PI / 2), nnWaterM("bowl", { c: "#2a7a96", e: "#06303f", op: 0.85, fr: 0.45, ws: 0.34 }), [x, 2.25, z], [0, 0, 0], "water"));
+  nnAnim(add(new THREE.CylinderGeometry(1.57, 1.66, 2.24 - WY, 72, 1, true), nnFlowM("curtain", { c: "#b8f0ff", op: 0.62, sp: 9, rp: 5, cs: 3, ax: "y", ds: true, fe: 0.94 }), [x, (2.24 + WY) / 2, z], [0, 0, 0], "water"));
+  for (let k = 0; k < 20; k++) { const a = (k / 20) * TAU + q() * 0.2; spr.push([Math.cos(a) * 1.64, WY, Math.sin(a) * 1.64, 3, 0.22, 1.1]); }
+  for (let k = 0; k < 6; k++) { const a = (k / 6) * TAU; spr.push([Math.cos(a) * 0.46, 2.26, Math.sin(a) * 0.46, 3, 0.14, 0.8]); }
+  nnAnim(add(nnSprayG(spr, q), nnSprayM(), [x, 0, z], [0, 0, 0], "water"));
   const meter = [NC[1], NC[1], "#5ab0ff", NC[3], NC[3], "#d04aff", NC[0], NC[0], "#ff7aa8", NC[2]];
   for (let k = 0; k < 12; k++) { const a = (k / 12) * TAU, ca = Math.cos(a), sa = Math.sin(a), h = 1.2 + Math.abs(Math.sin(k * 1.7)) * 2.8, r = 1.02;
     nnXB("lit", O, ca * r, 2.24, sa * r, 0.3, h, 0.3, NNXDARK, 0, -a); nnXB("lit", O, ca * r, 2.24 + h, sa * r, 0.36, 0.06, 0.36, NNXSTEEL, 0, -a);
@@ -14606,7 +14714,7 @@ const thBarrel = (x, z) => add(new THREE.CylinderGeometry(0.32, 0.3, 0.85, 12), 
 const thNet = (x, z, ry = 0) => { const G = grp(x, 0, z, ry); for (const s of [-1, 1]) add(new THREE.CylinderGeometry(0.05, 0.06, 1.8, 6), thMat.woodD(), [s * 1.2, 0.9, 0], [0, 0, 0], null, G); const g = new THREE.PlaneGeometry(2.4, 1.4, 12, 6), P2 = g.attributes.position; for (let i = 0; i < P2.count; i++) P2.setZ(i, -0.15 * Math.sin(((P2.getX(i) + 1.2) / 2.4) * Math.PI)); add(g, thM("net", () => std({ map: tex(64, 64, (gg, W) => { gg.clearRect(0, 0, W, W); gg.strokeStyle = "#c8b890"; gg.lineWidth = 2; for (let k = 0; k <= W; k += 8) { gg.beginPath(); gg.moveTo(k, 0); gg.lineTo(k, W); gg.stroke(); gg.beginPath(); gg.moveTo(0, k); gg.lineTo(W, k); gg.stroke(); } }, true), transparent: true, alphaTest: 0.3, side: THREE.DoubleSide })), [0, 1.05, 0], [0, 0, 0], "nocol", G); return G; };
 // ---- the sea: a turquoise water plane over each scene (the painted seabed shows through), glowing faintly ----
 const thWater = (X, Y) => { const g = new THREE.PlaneGeometry(30, 30, 30, 30); g.rotateX(-Math.PI / 2); const C = []; const P2 = g.attributes.position; for (let i = 0; i < P2.count; i++) { const x = X + 15 + P2.getX(i), z = Y + 15 + P2.getZ(i); let land = 0; for (const [dx, dz] of [[0, 0], [1, 0], [-1, 0], [0, 1], [0, -1], [2, 0], [-2, 0], [0, 2], [0, -2]]) if (at(Math.floor(x + dx), Math.floor(z + dz)) !== "w") land++; const sh = land / 9, c = new THREE.Color("#0e7fa0").lerp(new THREE.Color("#5ee6dc"), Math.min(1, sh * 1.8)); C.push(c.r, c.g, c.b); }
-  g.setAttribute("color", new THREE.Float32BufferAttribute(C, 3)); const m = add(g, thM("sea", () => new THREE.MeshStandardMaterial({ vertexColors: true, transparent: true, opacity: 0.62, roughness: 0.08, metalness: 0.15, emissive: "#0a4a5a", emissiveIntensity: 0.35, depthWrite: false })), [X + 15, -0.12, Y + 15], [0, 0, 0], "nocol"); m.userData.noLift = true; m.userData.flat = 1; m.receiveShadow = true; m.renderOrder = 1; return m; };
+  g.setAttribute("color", new THREE.Float32BufferAttribute(C, 3)); const m = nnAnim(add(g, nnWaterM("canal", { vc: true, op: 0.66, e: "#0a3a4a", ws: 0.16 }), [X + 15, -0.12, Y + 15], [0, 0, 0], "nocol")); m.userData.flat = 1; m.receiveShadow = true; m.renderOrder = 1; return m; };
 // ---- stone docks: raised quay blocks along a tile run, mooring posts, rope coils ----
 const thQuay = (x0, z0, x1, z1, h = 0.75) => { const L = Math.hypot(x1 - x0, z1 - z0), a = Math.atan2(z1 - z0, x1 - x0), n = Math.max(1, Math.round(L / 1.2)); const G = grp((x0 + x1) / 2, 0, (z0 + z1) / 2, -a);
   for (let i = 0; i < n; i++) { const u = -L / 2 + (i + 0.5) * (L / n); add(new THREE.BoxGeometry(L / n - 0.04, h + 0.7, 0.9), thMat.stone(), [u, (h - 0.7) / 2, 0], [0, (R() - 0.5) * 0.02, 0], null, G); }
@@ -14716,11 +14824,11 @@ const thTreehouse = (x, z) => { const G = grp(x, 0, z); for (const [dx, dz] of [
 // A neon city of music, holograms and arcades. Palette: magenta, electric cyan, hot yellow, violet, chrome on indigo night.
 const NC = ["#ff3ad0", "#2af0ff", "#ffe23a", "#9a5aff"];
 const nnPick = () => NC[Math.floor(R() * NC.length)];
-const nnM = { chrome: () => thMat.brass(), dark: () => thM("nnDark", () => std({ color: "#1c1a26", roughness: 0.4, metalness: 0.5 })),
+const nnM = { chrome: () => thMat.brass(), dark: () => nnPaintMetal(),
   glass: () => thM("nnGlass", () => std({ color: "#6a8aff", roughness: 0.08, metalness: 0.2, transparent: true, opacity: 0.5, emissive: "#1a2a6a", emissiveIntensity: 0.6 })),
   neon: (c) => thM("neon" + c, () => new THREE.MeshBasicMaterial({ color: c })),
   holo: (c) => thM("holo" + c, () => new THREE.MeshBasicMaterial({ color: c, transparent: true, opacity: 0.32, side: THREE.DoubleSide, blending: THREE.AdditiveBlending, depthWrite: false })),
-  leaf: () => thM("nnLeaf", () => std({ color: "#1a6a5a", emissive: "#0a4a3a", emissiveIntensity: 0.6, roughness: 0.8, flatShading: true })),
+  leaf: () => thM("nnLeaf", () => std({ color: "#1a6a5a", emissive: "#0a4a3a", emissiveIntensity: 0.6, roughness: 0.8 })),
   haz: () => thM("nnHaz", () => std({ map: tex(128, 32, (g, W, Hh) => { g.fillStyle = "#ffe23a"; g.fillRect(0, 0, W, Hh); g.fillStyle = "#1a1826"; for (let x = -Hh; x < W; x += 24) { g.beginPath(); g.moveTo(x, Hh); g.lineTo(x + 12, Hh); g.lineTo(x + 12 + Hh, 0); g.lineTo(x + Hh, 0); g.fill(); } }), roughness: 0.6 })) };
 // screens show shapes only (equalizer bars, rings, peaks), never words
 const nnScreenT = (k) => thM("scrT" + k, () => tex(256, 128, (g, W, Hh) => { const gr = g.createLinearGradient(0, 0, W, Hh); gr.addColorStop(0, ["#3a0a5a", "#04304a", "#4a0a2a", "#2a2a2a"][k % 4]); gr.addColorStop(1, ["#0a1a5a", "#2a0a4a", "#0a3a3a", "#4a4a4a"][k % 4]); g.fillStyle = gr; g.fillRect(0, 0, W, Hh);
@@ -14737,8 +14845,22 @@ const nnBench = (x, z, ry = 0, c = nnPick()) => { const G = grp(x, 0, z, ry); ad
 const nnVend = (x, z, ry = 0, c = nnPick()) => { const G = grp(x, 0, z, ry); add(new THREE.BoxGeometry(0.95, 1.9, 0.75), nnM.dark(), [0, 0.95, 0], [0, 0, 0], null, G); add(new THREE.PlaneGeometry(0.62, 1.1), nnM.neon(c), [-0.1, 1.15, 0.38], [0, 0, 0], "nocol", G);
   for (let r = 0; r < 3; r++) for (let k = 0; k < 3; k++) add(new THREE.CylinderGeometry(0.06, 0.06, 0.2, 8), nnM.neon(NC[(r + k) % 4]), [-0.3 + k * 0.2, 0.8 + r * 0.32, 0.36], [0, 0, 0], "nocol", G);
   add(new THREE.BoxGeometry(0.16, 0.5, 0.04), nnM.chrome(), [0.33, 1.1, 0.38], [0, 0, 0], "nocol", G); add(new THREE.BoxGeometry(0.6, 0.18, 0.05), nnM.neon("#ffffff"), [-0.1, 0.35, 0.38], [0, 0, 0], "nocol", G); return G; };
-const nnSpeaker = (x, z, ry = 0) => { const G = grp(x, 0, z, ry); for (let k = 0; k < 2; k++) { add(new THREE.BoxGeometry(1.0, 1.0, 0.8), nnM.dark(), [0, 0.5 + k * 1.02, 0], [0, 0, 0], k ? "nocol" : null, G); add(new THREE.CircleGeometry(0.32, 20), thM("cone", () => std({ color: "#3a3a48", roughness: 0.9 })), [0, 0.55 + k * 1.02, 0.41], [0, 0, 0], "nocol", G); add(new THREE.TorusGeometry(0.33, 0.03, 6, 24), nnM.neon(NC[k]), [0, 0.55 + k * 1.02, 0.42], [0, 0, 0], "nocol", G); }
-  for (let i = 0; i < 5; i++) { const h = 0.15 + R() * 0.5; add(new THREE.BoxGeometry(0.12, h, 0.06), nnM.neon(NC[(i + 2) % 4]), [-0.3 + i * 0.15, 2.04 + h / 2, 0.3], [0, 0, 0], "nocol", G); } return G; };
+const nnSpeaker = (x, z, ry = 0) => { const G = grp(x, 0, z, ry), cab = nnPaintT("spkCab", "nn_pmet", "#948eae", 0.9, { r: 0.62, rt: "nn_pmet_r", rv: 0.3 }), baf = nnPaintT("spkBaf", "nn_grit", "#4a4858", 1.6, { r: 0.85, ns: 1.4 }),
+    paper = nnPaintT("spkPaper", "nn_grit", "#5a5866", 2.4, { r: 0.9, ns: 1.6, rv: 0.2 }), rub = thM("spkRub", () => std({ color: "#34323c", roughness: 0.55 })), stl = thM("spkStl", () => std({ color: "#b8b4c4", roughness: 0.32, metalness: 1 })), blk = thM("spkBlk", () => std({ color: "#3c3a46", roughness: 0.5 }));
+  const drv = (px, py, s, ring) => { const P = [px, py, 0.402]; for (const [gk, m] of [["cone", paper], ["cap", rub], ["sur", rub], ["frm", stl]]) { const mm = add(nnSpkG(gk), m, P, [0, 0, 0], "nocol", G); mm.scale.setScalar(s); }
+    for (let b = 0; b < 4; b++) { const a = b * TAU / 4 + Math.PI / 4; add(new THREE.CylinderGeometry(0.016, 0.016, 0.02, 8), stl, [px + Math.cos(a) * 0.37 * s, py + Math.sin(a) * 0.37 * s, 0.41], [Math.PI / 2, 0, 0], "nocol", G); }
+    if (ring) add(new THREE.TorusGeometry(0.4 * s, 0.022, 8, 48), nnM.neon(ring), [px, py, 0.418], [0, 0, 0], "nocol", G); };
+  for (let k = 0; k < 2; k++) { const cy = 0.5 + k * 1.02;
+    // cabinet in worn paint, a recessed front baffle, steel corner protectors and edge trim, side handles
+    add(new THREE.BoxGeometry(1.0, 1.0, 0.8), cab, [0, cy, 0], [0, 0, 0], k ? "nocol" : null, G); add(new THREE.BoxGeometry(0.9, 0.9, 0.02), baf, [0, cy, 0.396], [0, 0, 0], "nocol", G);
+    for (const [sx, sy] of [[-1, -1], [1, -1], [-1, 1], [1, 1]]) { add(new THREE.BoxGeometry(0.035, 0.94, 0.035), blk, [sx * 0.5, cy, 0.4], [0, 0, 0], "nocol", G); for (const sz of [-1, 1]) add(new THREE.BoxGeometry(0.11, 0.11, 0.11), stl, [sx * 0.47, cy + sy * 0.47, sz * 0.37], [0, 0, 0], "nocol", G); }
+    for (const sx of [-1, 1]) { add(new THREE.BoxGeometry(0.02, 0.1, 0.26), blk, [sx * 0.505, cy + 0.1, 0], [0, 0, 0], "nocol", G); add(new THREE.CylinderGeometry(0.018, 0.018, 0.2, 8), stl, [sx * 0.53, cy + 0.1, 0], [Math.PI / 2, 0, 0], "nocol", G); }
+    if (!k) { drv(0, cy + 0.07, 1.0, NC[1]); add(new THREE.BoxGeometry(0.62, 0.09, 0.02), nnGrilleM(), [0, cy - 0.37, 0.405], [0, 0, 0], "nocol", G); add(new THREE.BoxGeometry(0.66, 0.012, 0.03), stl, [0, cy - 0.32, 0.405], [0, 0, 0], "nocol", G); add(new THREE.BoxGeometry(0.66, 0.012, 0.03), stl, [0, cy - 0.42, 0.405], [0, 0, 0], "nocol", G); }
+    else { drv(-0.21, cy - 0.2, 0.52, NC[0]); drv(0.21, cy - 0.2, 0.52, NC[0]); add(nnSpkG("horn"), blk, [0, cy + 0.22, 0.34], [0, 0, 0], "nocol", G); add(new THREE.BoxGeometry(0.06, 0.06, 0.06), blk, [0, cy + 0.22, 0.25], [0, 0, 0], "nocol", G);
+      add(new THREE.BoxGeometry(0.4, 0.26, 0.012), nnGrilleM(), [0, cy + 0.22, 0.411], [0, 0, 0], "nocol", G).material.transparent = false; } }
+  // the level meter on top sits in its own small housing
+  add(new THREE.BoxGeometry(0.86, 0.1, 0.5), cab, [0, 2.09, 0.08], [0, 0, 0], "nocol", G); add(new THREE.BoxGeometry(0.8, 0.012, 0.03), stl, [0, 2.14, 0.33], [0, 0, 0], "nocol", G);
+  for (let i = 0; i < 5; i++) { const h = 0.15 + R() * 0.5; add(new THREE.BoxGeometry(0.12, h, 0.06), nnM.neon(NC[(i + 2) % 4]), [-0.3 + i * 0.15, 2.14 + h / 2, 0.3], [0, 0, 0], "nocol", G); } return G; };
 const nnHolo = (x, z, c = nnPick(), h = 2.6) => { const G = grp(x, 0, z, R() * TAU); add(new THREE.CylinderGeometry(0.28, 0.36, 0.5, 12), nnM.chrome(), [0, 0.25, 0], [0, 0, 0], null, G); add(new THREE.CylinderGeometry(0.06, 0.06, h, 8), nnM.dark(), [0, h / 2, 0], [0, 0, 0], "nocol", G);
   add(new THREE.CylinderGeometry(0.55, 0.2, 1.5, 16, 1, true), nnM.holo(c), [0, h + 0.4, 0], [0, 0, 0], "nocol", G); add(new THREE.OctahedronGeometry(0.28, 0), nnM.neon(c), [0, h + 0.5, 0], [0, 0, 0], "nocol", G); add(new THREE.TorusGeometry(0.36, 0.03, 6, 24), nnM.neon(c), [0, 0.52, 0], [Math.PI / 2, 0, 0], "nocol", G); return G; };
 const nnPlanter = (x, z, c = nnPick()) => { const ry = R() * TAU, G = grp(x, 0, z, ry); add(new THREE.BoxGeometry(1.0, 0.5, 1.0), FXA.nnD(), [0, 0.3, 0], [0, 0, 0], null, G); R(); R(); R(); nnXPlanter({ x, z, ry }, c, "#3a8a6a"); return G; };
@@ -14886,9 +15008,9 @@ const nnH3 = (x, y, z) => { const h = Math.sin(x * 127.1 + y * 311.7 + z * 74.7)
 const nnVN = (x, y, z) => { const xi = Math.floor(x), yi = Math.floor(y), zi = Math.floor(z), f = (t) => t * t * (3 - 2 * t), u = f(x - xi), v = f(y - yi), w = f(z - zi), L = (a, b, t) => a + (b - a) * t;
   return L(L(L(nnH3(xi, yi, zi), nnH3(xi + 1, yi, zi), u), L(nnH3(xi, yi + 1, zi), nnH3(xi + 1, yi + 1, zi), u), v), L(L(nnH3(xi, yi, zi + 1), nnH3(xi + 1, yi, zi + 1), u), L(nnH3(xi, yi + 1, zi + 1), nnH3(xi + 1, yi + 1, zi + 1), u), v), w); };
 const nnGeo = (k) => NNGEO[k] || (NNGEO[k] = (() => { let g;
-  if (k === "box") g = new THREE.BoxGeometry(1, 1, 1); else if (k === "cyl") g = new THREE.CylinderGeometry(0.5, 0.5, 1, 8); else if (k === "cyl6") g = new THREE.CylinderGeometry(0.5, 0.5, 1, 6);
-  else if (k === "cone") g = new THREE.ConeGeometry(0.5, 1, 8); else if (k === "sph") g = new THREE.SphereGeometry(0.5, 7, 5); else if (k === "ico") { g = new THREE.IcosahedronGeometry(0.5, 1); if (g.index) g = g.toNonIndexed(); const P = g.attributes.position, Nn = new Float32Array(P.count * 3), d = new THREE.Vector3(); for (let i = 0; i < P.count; i++) { d.fromBufferAttribute(P, i).normalize(); const w = 1 + 0.16 * (nnVN(d.x * 2.1 + 3.1, d.y * 2.1, d.z * 2.1) - 0.5) + 0.07 * (nnVN(d.x * 4.7, d.y * 4.7 + 9, d.z * 4.7) - 0.5); P.setXYZ(i, d.x * 0.5 * w, d.y * 0.5 * w, d.z * 0.5 * w); Nn[i * 3] = d.x; Nn[i * 3 + 1] = d.y; Nn[i * 3 + 2] = d.z; } g.setAttribute("normal", new THREE.BufferAttribute(Nn, 3)); }
-  else if (k === "ring") { g = new THREE.TorusGeometry(0.5, 0.05, 4, 20); g.rotateX(Math.PI / 2); } else if (k === "pad") g = new THREE.CylinderGeometry(0.5, 0.5, 1, 20); else if (k === "cyl12") g = new THREE.CylinderGeometry(0.5, 0.5, 1, 12); else if (k === "oct") g = new THREE.OctahedronGeometry(0.5, 0); else if (k === "pyr") g = new THREE.ConeGeometry(0.5, 1, 4); else if (k === "limb") g = new THREE.CylinderGeometry(0.32, 0.5, 1, 6);
+  if (k === "box") g = new THREE.BoxGeometry(1, 1, 1); else if (k === "cyl") g = new THREE.CylinderGeometry(0.5, 0.5, 1, 12); else if (k === "cyl6") g = new THREE.CylinderGeometry(0.5, 0.5, 1, 6);
+  else if (k === "cone") g = new THREE.ConeGeometry(0.5, 1, 12); else if (k === "sph") g = new THREE.SphereGeometry(0.5, 9, 6); else if (k === "ico") { g = new THREE.IcosahedronGeometry(0.5, 1); if (g.index) g = g.toNonIndexed(); const P = g.attributes.position, Nn = new Float32Array(P.count * 3), d = new THREE.Vector3(); for (let i = 0; i < P.count; i++) { d.fromBufferAttribute(P, i).normalize(); const w = 1 + 0.16 * (nnVN(d.x * 2.1 + 3.1, d.y * 2.1, d.z * 2.1) - 0.5) + 0.07 * (nnVN(d.x * 4.7, d.y * 4.7 + 9, d.z * 4.7) - 0.5); P.setXYZ(i, d.x * 0.5 * w, d.y * 0.5 * w, d.z * 0.5 * w); Nn[i * 3] = d.x; Nn[i * 3 + 1] = d.y; Nn[i * 3 + 2] = d.z; } g.setAttribute("normal", new THREE.BufferAttribute(Nn, 3)); }
+  else if (k === "ring") { g = new THREE.TorusGeometry(0.5, 0.05, 4, 28); g.rotateX(Math.PI / 2); } else if (k === "pad") g = new THREE.CylinderGeometry(0.5, 0.5, 1, 20); else if (k === "cyl12") g = new THREE.CylinderGeometry(0.5, 0.5, 1, 12); else if (k === "oct") g = new THREE.OctahedronGeometry(0.5, 0); else if (k === "pyr") g = new THREE.ConeGeometry(0.5, 1, 4); else if (k === "limb") g = new THREE.CylinderGeometry(0.32, 0.5, 1, 9);
   else if (k === "card" || k === "cardn") { const f = new THREE.PlaneGeometry(1, 1); if (k === "cardn") { f.rotateX(-Math.PI / 2); f.translate(0.5, 0, 0); } const b = f.clone(); if (k === "cardn") b.rotateX(Math.PI); else b.rotateY(Math.PI);
     const parts = [f.toNonIndexed(), b.toNonIndexed()], n = parts[0].attributes.position.count * 2, P = new Float32Array(n * 3), Nn = new Float32Array(n * 3), U = new Float32Array(n * 2); let o = 0;
     for (const pg of parts) for (let i = 0; i < pg.attributes.position.count; i++, o++) { P.set([pg.attributes.position.getX(i), pg.attributes.position.getY(i), pg.attributes.position.getZ(i)], o * 3); Nn.set([pg.attributes.normal.getX(i), pg.attributes.normal.getY(i), pg.attributes.normal.getZ(i)], o * 3); U[o * 2] = (k === "cardn" ? 0.5 : 0) + pg.attributes.uv.getX(i) * 0.5; U[o * 2 + 1] = pg.attributes.uv.getY(i); }
@@ -14912,7 +15034,7 @@ const nnDetailFlush = () => { const m4 = new THREE.Matrix4(), q = new THREE.Quat
         if (isL) { UV[o * 2] = gu.getX(i); UV[o * 2 + 1] = gu.getY(i); v.sub(cv); const d = v.length() / crad, h = Math.min(1, Math.max(0, d)); k = (0.5 + 0.5 * h * h * (3 - 2 * h)) * (0.92 + 0.16 * nnVN(P[o * 3] * 1.3, P[o * 3 + 1] * 1.3, P[o * 3 + 2] * 1.3)) * (v.y > 0 ? 1.06 : 0.94); v.y = v.y * 0.7 + crad * 0.25; v.normalize(); }
         else v.fromBufferAttribute(gn, i).applyMatrix3(n3).normalize(); N[o * 3] = v.x; N[o * 3 + 1] = v.y; N[o * 3 + 2] = v.z; if (paint && v.y > 0.6) k *= 1.04; C[o * 3] = cc.r * k; C[o * 3 + 1] = cc.g * k; C[o * 3 + 2] = cc.b * k; } }
     const g = new THREE.BufferGeometry(); g.setAttribute("position", new THREE.BufferAttribute(P, 3)); g.setAttribute("normal", new THREE.BufferAttribute(N, 3)); g.setAttribute("color", new THREE.BufferAttribute(C, 3)); if (isL) g.setAttribute("uv", new THREE.BufferAttribute(UV, 2)); g.computeBoundingSphere();
-    const mat = isL ? nnXLeafM() : bin === "glow" ? thM("nnDG", () => new THREE.MeshBasicMaterial({ vertexColors: true })) : thM("nnDL", () => FXTRI(std({ map: nnXSwatch("grime").map, vertexColors: true, roughness: 0.62, metalness: 0.2 }), 0.35, 0));
+    const mat = isL ? nnXLeafM() : bin === "glow" ? thM("nnDG", () => new THREE.MeshBasicMaterial({ vertexColors: true })) : nnPaintGrit();
     const m = add(g, mat, [0, 0, 0], [0, 0, 0], bin === "lit" ? null : "nocol"); m.userData.noLift = true; m.castShadow = bin === "lit" || isL; m.receiveShadow = bin !== "glow"; if (isL) m.customDepthMaterial = thM("nnDFd", () => new THREE.MeshDepthMaterial({ depthPacking: THREE.RGBADepthPacking, map: nnXLeafM().map, alphaTest: 0.45 })); NND[bin] = []; } };
 
 // ---- rooftops: a lighter slab and parapet on every tower, then the clutter a real roof has ----
