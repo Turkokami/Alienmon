@@ -11900,9 +11900,9 @@ const PATC = {}; const groundFor = (sx, sy) => { const GGstart = GG.length; cons
   if (H && H.bakeOut) H.bakeOut[sx + "," + sy] = { map: map.image, emi: emi.image }; const m = new THREE.Mesh(pg, std({ map, emissive: "#ffffff", emissiveMap: emi, emissiveIntensity: 0.6, roughness: 0.85 })); m.position.set(sx + 15, 0, sy + 15); m.receiveShadow = true; m.name = "ground"; m.userData.rect = [sx, sy]; root.add(m); if (H && H.stand) return;
   for (let y = 0; y < (FR ? 0 : 30); y++) for (let x = 0; x < 30; x++) { const c = tt(x, y); if (c !== "." ) continue; let edge = false; for (const [dx, dy] of [[1, 0], [-1, 0], [0, 1], [0, -1]]) if (isPathLike(tt(x + dx, y + dy))) edge = true; if (edge && R() < 0.18) glowcaps(sx + x + 0.5, sy + y + 0.5, 2 + Math.floor(R() * 3), undefined, 0.7); }
   // glowgrass blades on every g tile, boardwalk planks on every k tile
-  for (let y = 0; y < 30; y++) for (let x = 0; x < 30; x++) if (tt(x, y) === "g") glowgrassTile(sx + x, sy + y);
+  { const WK = nnWK(sx, sy); for (let y = 0; y < 30; y++) for (let x = 0; x < 30; x++) if (tt(x, y) === "g" && (WK >= 1 || R() < WK)) glowgrassTile(sx + x, sy + y); }
   for (let k = GGstart; k < GG.length; k++) { const gg = GG[k]; if (!".,gx".includes(atW(gg[0], gg[1]))) gg[2] = 0; }
-  if (H && H.grass) for (let y = 0; y < 30; y++) for (let x = 0; x < 30; x++) { const c = tt(x, y); const n = FR ? (c === "g" ? 4 : c === "." ? 1 : 0) : Math.round((c === "." ? 7 : c === "x" ? 4 : c === "," ? 3 : c === "g" ? 6 : c === "p" || c === "P" ? (D.pave === "trail" ? 6 : 2) : 0) * ((H && H.grassK) || 1)); for (let k = 0; k < n; k++) { const gx = sx + x + R(), gz = sy + y + R(), cw = atW(gx, gz), onP = cw === "p" || cw === "P"; if (!".,gx".includes(cw) && !onP) continue; if (onP) { if (D.pave !== "trail") { if (R() < 0.12) PEB.push([gx, gz, 0.04 + R() * 0.06]); continue; } if (k % 4 === 0) { const cn = 4 + Math.floor(R() * 4); for (let q = 0; q < cn; q++) MG.push([gx + (R() - 0.5) * 0.22, gz + (R() - 0.5) * 0.22, 0.07 + R() * 0.12, R() * TAU]); } else if (k % 4 === 1 && R() < 0.14) PEB.push([gx, gz, 0.05 + R() * 0.09]); else if (k % 4 === 2 && R() < 0.15) FLW.push([gx, gz, 0.05 + R() * 0.05]); continue; }
+  if (H && H.grass) for (let y = 0; y < 30; y++) for (let x = 0; x < 30; x++) { const c = tt(x, y); const n = FR ? (c === "g" ? 4 : c === "." ? 1 : 0) : Math.round((c === "." ? 7 : c === "x" ? 4 : c === "," ? 3 : c === "g" ? 6 : c === "p" || c === "P" ? (D.pave === "trail" ? 6 : 2) : 0) * ((H && H.grassK) || 1) * nnWK(sx, sy)); for (let k = 0; k < n; k++) { const gx = sx + x + R(), gz = sy + y + R(), cw = atW(gx, gz), onP = cw === "p" || cw === "P"; if (!".,gx".includes(cw) && !onP) continue; if (onP) { if (D.pave !== "trail") { if (R() < 0.12) PEB.push([gx, gz, 0.04 + R() * 0.06]); continue; } if (k % 4 === 0) { const cn = 4 + Math.floor(R() * 4); for (let q = 0; q < cn; q++) MG.push([gx + (R() - 0.5) * 0.22, gz + (R() - 0.5) * 0.22, 0.07 + R() * 0.12, R() * TAU]); } else if (k % 4 === 1 && R() < 0.14) PEB.push([gx, gz, 0.05 + R() * 0.09]); else if (k % 4 === 2 && R() < 0.15) FLW.push([gx, gz, 0.05 + R() * 0.05]); continue; }
       MG.push([gx, gz, 0.14 + R() * (cw === "x" ? 0.5 : 0.34), R() * TAU]); if (k % 17 === 0) FLW.push([gx, gz, 0.08 + R() * 0.09]); else if (k % 26 === 0) PEB.push([gx, gz, 0.07 + R() * 0.15]); } }
 };
 // boardwalk: plank deck with rope rails over a run of tiles (axis-aligned); rails only on sides facing water
@@ -12072,6 +12072,7 @@ const terrainInit = () => { if (TER.ready) return; TER.ready = true; if (H && H.
     Hm[y * GW + x] = c === "c" || (c === "k" && D.deepK(x, y - GOY)) ? CANYON_Y : c === "w" || c === "k" ? -0.6 : c === "l" ? -0.42 : c === "r" ? 0.12 : c === "p" || c === "P" ? 0.22 + n * 0.25 : c === "b" || c === "s" || c === "f" ? 0.26 + n * 0.15 : c === "," ? 0.2 : c === "x" ? 0.7 + 0.08 * n : c === "g" ? 0.3 + hill * (0.2 + 0.35 * n) : 0.3 + 0.06 * n; }
   for (let it = 0; it < 3; it++) { const N2 = new Float32Array(GW * GH); for (let y = 0; y < GH; y++) for (let x = 0; x < GW; x++) { let s = 0, w = 0; for (let dy = -1; dy <= 1; dy++) for (let dx = -1; dx <= 1; dx++) { const xx = Math.min(GW - 1, Math.max(0, x + dx)), yy = Math.min(GH - 1, Math.max(0, y + dy)), ww = dx || dy ? 1 : 2; s += Hm[yy * GW + xx] * ww; w += ww; } N2[y * GW + x] = s / w; }
     for (let y = 0; y < GH; y++) for (let x = 0; x < GW; x++) { const c = GRID[y][x], i = y * GW + x; if (c === "c" || (c === "k" && D.deepK(x, y - GOY))) N2[i] = CANYON_Y; else if (c === "w" || c === "k") N2[i] = Math.min(N2[i], -0.3); else if (c === "l") N2[i] = Math.min(N2[i], -0.25); else if ("pPbsf".includes(c)) N2[i] = Math.min(0.75, Math.max(0.16, N2[i])); else if (c === "r") N2[i] = Math.min(0.2, Math.max(0.08, N2[i])); else N2[i] = Math.max(0.12, N2[i]); } Hm = N2; }
+  for (let y = 0; y < GH; y++) for (let x = 0; x < GW; x++) Hm[y * GW + x] += nnMountH(x + 0.5, y - GOY + 0.5);
   TER.H = Hm; if (H && H.cache) H.cache.TER = { RES: TER.RES, NX: TER.NX, NZ: TER.NZ, wx: TER.wx, wz: TER.wz, low: TER.low, D: TER.D, H: TER.H }; };
 const warpXY = (x, z) => { const fx = (x + 1) * TER.RES, fz = (z + GOY + 1) * TER.RES, i = Math.min(TER.NX - 2, Math.max(0, fx | 0)), j = Math.min(TER.NZ - 2, Math.max(0, fz | 0)), u = Math.min(1, Math.max(0, fx - i)), v = Math.min(1, Math.max(0, fz - j)), NX = TER.NX;
   const L = (A) => (A[j * NX + i] * (1 - u) + A[j * NX + i + 1] * u) * (1 - v) + (A[(j + 1) * NX + i] * (1 - u) + A[(j + 1) * NX + i + 1] * u) * v; return [x + L(TER.wx), z + L(TER.wz)]; };
@@ -12125,7 +12126,7 @@ const FL = { fern: [], helix: [], pod: [], tendril: [], shrub: [], fan: [] };
 const plant = (kind, x, z, s = 1) => FL[kind].push([x, z, s * (0.75 + R() * 0.5), R() * TAU]);
 // scatter over every non-walkable land tile of the region, densest at the wild edges and round the hills
 const FLORAK = { D3: 0.3, D4: 0.7 };
-const scatterFlora = (ids) => { for (const id of ids) { const [sx, sy] = SCN[id].rect; const fk = FLORAK[id] ?? 1; for (let y = 0; y < 30; y++) for (let x = 0; x < 30; x++) { const c = at(sx + x, sy + y); if (c !== "g") continue; const d = distW(sx + x, sy + y); if (d < 1) continue; const n = c === "x" ? 1.6 : c === "g" ? 0.7 : c === "," ? 0.4 : d >= 3 ? 1.5 : 0.8;
+const scatterFlora = (ids) => { for (const id of ids) { const [sx, sy] = SCN[id].rect; const fk = (FLORAK[id] ?? 1) * nnWK(sx, sy); for (let y = 0; y < 30; y++) for (let x = 0; x < 30; x++) { const c = at(sx + x, sy + y); if (c !== "g") continue; const d = distW(sx + x, sy + y); if (d < 1) continue; const n = c === "x" ? 1.6 : c === "g" ? 0.7 : c === "," ? 0.4 : d >= 3 ? 1.5 : 0.8;
     const cnt = (n + R()) * fk * 0.72, lim = fk < 0.2 ? (R() < cnt ? 1 : 0) : cnt; for (let k = 0; k < lim; k++) { const px = sx + x + R(), pz = sy + y + R(), cw = atW(px, pz); if (cw !== "g") continue; const r = R(); plant(r < 0.3 ? "fern" : r < 0.5 ? "shrub" : r < 0.72 ? "tendril" : r < 0.86 ? "pod" : r < 0.96 ? "fan" : "helix", px, pz, c === "x" ? 1.3 : 1); } } } };
 // a few hundred more in the wild ring outside the region
 const scatterOuter = (hy) => { for (let k = 0; k < 480; k++) { let x, z; do { x = -18 + R() * 156; z = -18 + R() * 126; } while (x > -0.5 && x < 120.5 && z > -0.5 && z < 90.5); const r = R(); FL[r < 0.3 ? "shrub" : r < 0.5 ? "fern" : r < 0.7 ? "pod" : r < 0.85 ? "helix" : "fan"].push([x, z, 1.2 + R() * 0.8, R() * TAU, hy(x, z)]); } };
@@ -13971,7 +13972,7 @@ const thMat = {
 Object.assign(FXA, { nnA: () => thM("nnA", () => std({ color: "#3a3470", roughness: 0.35, metalness: 0.35 })), nnB: () => thM("nnB", () => std({ color: "#5a2a6a", roughness: 0.35, metalness: 0.35 })),
   nnC: () => thM("nnC", () => std({ color: "#b8bccc", roughness: 0.25, metalness: 0.85 })), nnD: () => thM("nnD", () => std({ color: "#1e2a4a", roughness: 0.3, metalness: 0.4 })),
   nnFrame: () => thM("nnFrame", () => std({ color: "#2a2a36", roughness: 0.35, metalness: 0.7 })), nnDoor: () => thMat.blue(),
-  orange: () => thM("nnRoof", () => std({ color: "#22202e", roughness: 0.7, metalness: 0.3 })) });
+  orange: () => thM("nnRoof", () => std({ color: "#6a6488", roughness: 0.75, metalness: 0.2 })) });
 Object.assign(FXSTY, { nnHome: { mats: ["nnA", "nnA", "nnD", "nnB"], roof: "flat", frame: "nnFrame", door: "nnDoor", tha: true },
   nnHome2: { mats: ["nnA", "nnD", "nnB"], roof: "flat", frame: "nnFrame", door: "nnDoor", storeys: 2, tha: true },
   nnShop: { mats: ["nnD", "nnC"], roof: "flat", frame: "nnFrame", door: "nnDoor", store: true, tha: true },
@@ -14179,9 +14180,9 @@ const nnDome = (x, z, r = 8.5) => { const G = grp(x, -0.2, z); add(new THREE.Sph
   add(new THREE.SphereGeometry(r + 0.06, 18, 7, 0, TAU, 0, Math.PI / 2), thM("domeWire", () => new THREE.MeshBasicMaterial({ color: "#ff3ad0", wireframe: true })), [0, 0, 0], [0, 0, 0], "nocol", G);
   add(new THREE.TorusGeometry(r, 0.3, 8, 64), nnM.neon(NC[1]), [0, 0.3, 0], [Math.PI / 2, 0, 0], "nocol", G); add(new THREE.TorusGeometry(r * 0.72, 0.18, 8, 48), nnM.neon(NC[2]), [0, r * 0.69, 0], [Math.PI / 2, 0, 0], "nocol", G);
   add(new THREE.CylinderGeometry(1.4, 2.0, 1.4, 16), FXA.nnC(), [0, r + 0.5, 0], [0, 0, 0], "nocol", G); add(new THREE.CylinderGeometry(0.1, 0.25, 5, 8), nnM.chrome(), [0, r + 3.6, 0], [0, 0, 0], "nocol", G); add(new THREE.SphereGeometry(0.4, 12, 8), nnM.neon(NC[0]), [0, r + 6.2, 0], [0, 0, 0], "nocol", G);
-  // the entrance on the east side: a glowing arch over a dark doorway, with a canopy
+  // the entrance on the east side: a glowing arch over a dark doorway, between two light pillars
   const E = grp(r - 0.4, 0, 0, Math.PI / 2, G); add(new THREE.TorusGeometry(2.6, 0.32, 8, 24, Math.PI), nnM.neon(NC[0]), [0, 0, 0.3], [0, 0, 0], "nocol", E); add(new THREE.CircleGeometry(2.4, 24, 0, Math.PI), nnM.dark(), [0, 0, 0.2], [0, 0, 0], "nocol", E);
-  add(new THREE.BoxGeometry(6.4, 0.2, 2.6), FXA.nnC(), [0, 3.3, 1.4], [0.12, 0, 0], "nocol", E); add(new THREE.BoxGeometry(6.4, 0.08, 0.1), nnM.neon(NC[1]), [0, 3.25, 2.7], [0, 0, 0], "nocol", E); const l = new THREE.PointLight(0xff3ad0, 3, 24, 1.5); l.position.set(r + 1.5, 3, 0); G.add(l); return G; };
+  for (const s of [-3.3, 3.3]) { add(new THREE.CylinderGeometry(0.38, 0.46, 0.7, 10), nnM.dark(), [s, 0.35, 0.9], [0, 0, 0], null, E); add(new THREE.CylinderGeometry(0.34, 0.34, 0.25, 10), nnM.dark(), [s, 3.55, 0.9], [0, 0, 0], "nocol", E); add(new THREE.CylinderGeometry(0.2, 0.2, 2.9, 8), nnM.neon(NC[1]), [s, 2.1, 0.9], [0, 0, 0], "nocol", E); add(new THREE.SphereGeometry(0.42, 12, 8), nnM.neon(NC[2]), [s, 3.85, 0.9], [0, 0, 0], "nocol", E); } const l = new THREE.PointLight(0xff3ad0, 3, 24, 1.5); l.position.set(r + 1.5, 3, 0); G.add(l); return G; };
 const nnRelay = (x, z, h = 24) => { const G = grp(x, 0, z), m = nnM.chrome(), base = 1.8, top = 0.35; const pt = (sx, sz, y) => { const t = y / h, r = base + (top - base) * t; return [sx * r, y, sz * r]; };
   for (const [sx, sz] of [[1, 1], [-1, 1], [1, -1], [-1, -1]]) nnBeam(pt(sx, sz, 0), pt(sx, sz, h), 0.09, m, G);
   for (let y = 2; y < h; y += 2.4) for (const [a, b] of [[[1, 1], [-1, 1]], [[-1, 1], [-1, -1]], [[-1, -1], [1, -1]], [[1, -1], [1, 1]]]) nnBeam(pt(a[0], a[1], y), pt(b[0], b[1], y + 1.2), 0.04, m, G);
@@ -14209,32 +14210,41 @@ const nnPlay = (x, z) => { const G = grp(x, 0, z); add(new THREE.SphereGeometry(
   for (const [a, b, c] of [[2.8, 0.8, NC[0]], [-2.6, 1.2, NC[2]]]) { const S = grp(a, 0, b, 0, G); add(new THREE.CylinderGeometry(0.06, 0.06, 0.6, 6), nnM.chrome(), [0, 0.3, 0], [0, 0, 0], "nocol", S); add(new THREE.SphereGeometry(0.35, 10, 8), nnM.neon(c), [0, 0.75, 0], [0, 0, 0], null, S); } return G; };
 // ---- the city blocks: every patch of block ground ("x") away from the streets fills with towers of lit windows ----
 const NNF = {};
-const nnFacadeM = () => NNF.mat || (NNF.mat = (() => { const cols = 16, rows = 12, lay = []; for (let i = 0; i < cols * rows; i++) lay.push(R() < 0.5 ? null : ["#ffd890", "#7af0ff", "#ff7ae0", "#e8e8ff", "#b89aff"][Math.floor(R() * 5)]);
-  const draw = (lit) => (g, W, Hh) => { const cw = W / cols, rh = Hh / rows; g.fillStyle = lit ? "#000000" : "#16141f"; g.fillRect(0, 0, W, Hh); if (!lit) for (let r = 0; r < rows; r++) { g.fillStyle = "rgba(255,255,255,0.05)"; g.fillRect(0, r * rh, W, 3); }
-    for (let r = 1; r < rows; r++) for (let c = 1; c < cols; c++) { const v = lay[r * cols + c], x = c * cw + 6, y = r * rh + 8, w = cw - 12, h = rh - 16; if (v) { g.fillStyle = v; g.globalAlpha = lit ? 0.55 + ((r * 7 + c * 3) % 5) * 0.1 : 1; g.fillRect(x, y, w, h); g.globalAlpha = 1; } else if (!lit) { g.fillStyle = "#222a44"; g.fillRect(x, y, w, h); } } };
-  return std({ map: tex(512, 512, draw(false), [1, 1]), emissiveMap: tex(512, 512, draw(true), [1, 1]), emissive: "#ffffff", emissiveIntensity: 1.0, roughness: 0.45, metalness: 0.3 }); })());
+const NNLAY = [[16, 12, 0.5], [20, 14, 0.42], [24, 13, 0.58]], NNTINT = [[1, 1, 1], [1.5, 1.2, 1.8], [1.1, 1.4, 1.7], [1.7, 1.2, 1.3], [1.25, 1.25, 1.35], [0.95, 1.35, 1.4], [1.6, 1.45, 1.1]];
+const nnFacadeM = (k = 0) => NNF[k] || (NNF[k] = (() => { const [cols, rows, pl] = NNLAY[k], lay = []; for (let i = 0; i < cols * rows; i++) lay.push(R() < pl ? null : ["#ffd890", "#7af0ff", "#ff7ae0", "#e8e8ff", "#b89aff"][Math.floor(R() * 5)]);
+  const draw = (lit) => (g, W, Hh) => { const cw = W / cols, rh = Hh / rows, mx = Math.max(3, cw * 0.18), my = Math.max(4, rh * 0.22); g.fillStyle = lit ? "#000000" : "#2a2838"; g.fillRect(0, 0, W, Hh); if (!lit) for (let r = 0; r < rows; r++) { g.fillStyle = "rgba(255,255,255,0.07)"; g.fillRect(0, r * rh, W, 3); }
+    if (!lit && k === 1) for (let c = 0; c < cols; c++) { g.fillStyle = "rgba(0,0,0,0.25)"; g.fillRect(c * cw, 0, 3, Hh); }
+    for (let r = 1; r < rows; r++) for (let c = 1; c < cols; c++) { const v = lay[r * cols + c], x = c * cw + mx, y = r * rh + my, w = cw - 2 * mx, h = rh - 2 * my; if (v) { g.fillStyle = v; g.globalAlpha = lit ? 0.55 + ((r * 7 + c * 3) % 5) * 0.1 : 1; g.fillRect(x, y, w, h); g.globalAlpha = 1; } else if (!lit) { g.fillStyle = "#2a3250"; g.fillRect(x, y, w, h); } }
+    g.fillStyle = lit ? "#000000" : "#6a6684"; g.fillRect(0, 0, 24, 24); };
+  return std({ map: tex(512, 512, draw(false), [1, 1]), emissiveMap: tex(512, 512, draw(true), [1, 1]), emissive: "#ffffff", emissiveIntensity: 1.0, roughness: 0.5, metalness: 0.25, vertexColors: true }); })());
 const nnBox = (B, cx, y0, cz, w, h, d, u0, v0) => { const x0 = cx - w / 2, x1 = cx + w / 2, z0 = cz - d / 2, z1 = cz + d / 2, y1 = y0 + h, S = 1 / 32;
-  const quad = (a, b, c, dd, n, uv) => { for (const [p, t] of [[a, uv[0]], [b, uv[1]], [c, uv[2]], [a, uv[0]], [c, uv[2]], [dd, uv[3]]]) { B.P.push(p[0], p[1], p[2]); B.N.push(n[0], n[1], n[2]); B.U.push(t[0], t[1]); } };
-  const side = (L) => [[u0, v0], [u0 + L * S, v0], [u0 + L * S, v0 + h * S], [u0, v0 + h * S]], T = [0.01, 0.99];
+  const tc = B.tint, quad = (a, b, c, dd, n, uv) => { for (const [p, t] of [[a, uv[0]], [b, uv[1]], [c, uv[2]], [a, uv[0]], [c, uv[2]], [dd, uv[3]]]) { B.P.push(p[0], p[1], p[2]); B.N.push(n[0], n[1], n[2]); B.U.push(t[0], t[1]); if (tc) B.C.push(tc[0], tc[1], tc[2]); } };
+  const side = (L) => [[u0, v0], [u0 + L * S, v0], [u0 + L * S, v0 + h * S], [u0, v0 + h * S]], T = [0.012, 0.988];
   quad([x0, y0, z1], [x1, y0, z1], [x1, y1, z1], [x0, y1, z1], [0, 0, 1], side(w)); quad([x1, y0, z0], [x0, y0, z0], [x0, y1, z0], [x1, y1, z0], [0, 0, -1], side(w));
   quad([x1, y0, z1], [x1, y0, z0], [x1, y1, z0], [x1, y1, z1], [1, 0, 0], side(d)); quad([x0, y0, z0], [x0, y0, z1], [x0, y1, z1], [x0, y1, z0], [-1, 0, 0], side(d));
   quad([x0, y1, z1], [x1, y1, z1], [x1, y1, z0], [x0, y1, z0], [0, 1, 0], [T, T, T, T]); };
 const nnBoxC = (B, cx, y0, cz, w, h, d, col) => { const n0 = B.P.length; nnBox({ P: B.P, N: B.N, U: [] }, cx, y0, cz, w, h, d, 0, 0); for (let i = n0; i < B.P.length; i += 3) B.C.push(col.r, col.g, col.b); };
-const nnFlush = (B, NB) => { if (B.P.length) { const g = new THREE.BufferGeometry(); g.setAttribute("position", new THREE.Float32BufferAttribute(B.P, 3)); g.setAttribute("normal", new THREE.Float32BufferAttribute(B.N, 3)); g.setAttribute("uv", new THREE.Float32BufferAttribute(B.U, 2)); const m = add(g, nnFacadeM(), [0, 0, 0], [0, 0, 0], "nocol"); m.userData.noLift = true; m.castShadow = false; }
+const nnFB = () => [0, 1, 2].map((k) => ({ P: [], N: [], U: [], C: [], k, tint: null }));
+const nnFlush = (BB, NB) => { for (const B of BB) if (B.P.length) { const g = new THREE.BufferGeometry(); g.setAttribute("position", new THREE.Float32BufferAttribute(B.P, 3)); g.setAttribute("normal", new THREE.Float32BufferAttribute(B.N, 3)); g.setAttribute("uv", new THREE.Float32BufferAttribute(B.U, 2)); g.setAttribute("color", new THREE.Float32BufferAttribute(B.C, 3)); const m = add(g, nnFacadeM(B.k), [0, 0, 0], [0, 0, 0], "nocol"); m.userData.noLift = true; m.castShadow = false; }
   if (NB.P.length) { const g = new THREE.BufferGeometry(); g.setAttribute("position", new THREE.Float32BufferAttribute(NB.P, 3)); g.setAttribute("normal", new THREE.Float32BufferAttribute(NB.N, 3)); g.setAttribute("color", new THREE.Float32BufferAttribute(NB.C, 3)); const m = add(g, thM("nnTrimM", () => new THREE.MeshBasicMaterial({ vertexColors: true })), [0, 0, 0], [0, 0, 0], "nocol"); m.userData.noLift = true; m.castShadow = false; m.receiveShadow = false; } };
-const nnTower = (B, NB, ux, uz, y0, bw, bd, h) => { nnBox(B, ux, y0, uz, bw, h, bd, R(), R()); let top = y0 + h;
-  if (h > 10 && R() < 0.6) { const th = 2 + R() * 4; nnBox(B, ux + (R() - 0.5) * bw * 0.3, top, uz + (R() - 0.5) * bd * 0.3, bw * 0.6, th, bd * 0.6, R(), R()); }
+const nnTower = (BB, NB, ux, uz, y0, bw, bd, h, clutter = false) => { const B = BB[Math.floor(R() * BB.length)]; B.tint = NNTINT[Math.floor(R() * NNTINT.length)]; nnBox(B, ux, y0, uz, bw, h, bd, R(), R()); let top = y0 + h, tw = bw, td = bd, tx = ux, tz = uz;
+  if (h > 10 && R() < 0.6) { const th = 2 + R() * 4; tx = ux + (R() - 0.5) * bw * 0.3; tz = uz + (R() - 0.5) * bd * 0.3; tw = bw * 0.6; td = bd * 0.6; nnBox(B, tx, top, tz, tw, th, td, R(), R()); if (clutter) nnRoofTop(ux, top, uz, bw, bd, false); top += th; }
   if (R() < 0.55) { const c = new THREE.Color(nnPick()); for (const [a, b, ww, dd] of [[0, bd / 2, bw, 0.12], [0, -bd / 2, bw, 0.12], [bw / 2, 0, 0.12, bd], [-bw / 2, 0, 0.12, bd]]) nnBoxC(NB, ux + a, top - 0.12, uz + b, ww + 0.04, 0.16, dd + 0.04, c); }
   if (R() < 0.3) { const sx = R() < 0.5 ? -1 : 1; nnBoxC(NB, ux + sx * (bw / 2 - 0.35), y0 + 1.5 + h * 0.15, uz + bd / 2 + 0.06, 0.22, h * 0.6, 0.1, new THREE.Color(nnPick())); }
-  if (R() < 0.35) nnBox(B, ux + (R() - 0.5) * bw * 0.5, top, uz + (R() - 0.5) * bd * 0.5, 0.9, 0.6, 0.7, 0, 0.99); };
-const nnBlocks = (X, Y, o = {}) => { const B = { P: [], N: [], U: [] }, NB = { P: [], N: [], C: [] }, used = new Set(), K = (x, y) => x + "," + y, keep = (o.keep || []).map(([a, b, c, d]) => [X + a, Y + b, X + c, Y + d]);
+  if (clutter) nnRoofTop(tx, top, tz, tw, td, true); else if (R() < 0.35) nnBox(B, ux + (R() - 0.5) * bw * 0.5, top, uz + (R() - 0.5) * bd * 0.5, 0.9, 0.6, 0.7, 0, 0.99); return top; };
+const nnBlocks = (X, Y, o = {}) => { const B = nnFB(), NB = { P: [], N: [], C: [] }, used = new Set(), K = (x, y) => x + "," + y, keep = (o.keep || []).map(([a, b, c, d]) => [X + a, Y + b, X + c, Y + d]);
   const el = (x, y) => { if (at(x, y) !== "x" || used.has(K(x, y)) || keep.some(([a, b, c, d]) => x >= a && x <= c && y >= b && y <= d)) return false; for (let dy = -1; dy <= 1; dy++) for (let dx = -1; dx <= 1; dx++) if (at(x + dx, y + dy) !== "x") return false; return true; };
   for (let y = Y; y < Y + 30; y++) for (let x = X; x < X + 30; x++) { if (!el(x, y)) continue; let w = 2 + Math.floor(R() * 4), d = 2 + Math.floor(R() * 4);
     const fits = (w, d) => { if (x + w > X + 30 || y + d > Y + 30) return false; for (let j = 0; j < d; j++) for (let i = 0; i < w; i++) if (!el(x + i, y + j)) return false; return true; };
     while (w > 1 && d > 1 && !fits(w, d)) { if (w >= d) w--; else d--; } if (!fits(w, d)) continue; for (let j = 0; j < d; j++) for (let i = 0; i < w; i++) used.add(K(x + i, y + j));
     const cx = x + w / 2, cz = y + d / 2, dist = TER.D ? TER.D[Math.min(GH - 1, Math.floor(cz) + GOY) * GW + Math.floor(cx)] : 4, near = dist <= 3;
     const h = (o.low ? 0.6 : 1) * (near ? 3.5 + R() * 5 : 6 + R() * 8 + Math.min(14, (dist - 3) * 2.2)); const [ux, uz] = unwarp(cx, cz);
-    nnTower(B, NB, ux, uz, GHT(ux, uz) - 0.5, w - 0.3 - (w > 2 ? R() * 0.4 : 0), d - 0.3 - R() * 0.3, h + 0.5); }
+    const bw = w - 0.3 - (w > 2 ? R() * 0.4 : 0), bd = d - 0.3 - R() * 0.3, gy = GHT(ux, uz); nnTower(B, NB, ux, uz, gy - 0.5, bw, bd, h + 0.5, true);
+    const WALK = "sPp,.gk", face = (pts) => pts.filter(([a, b]) => WALK.includes(at(a, b))).length >= Math.max(1, pts.length / 2);
+    for (const [ok, fx, fz, ry, fw] of [[face([...Array(w)].map((_, i) => [x + i, y + d + 1])), ux, uz + bd / 2, 0, bw], [face([...Array(w)].map((_, i) => [x + i, y - 2])), ux, uz - bd / 2, Math.PI, bw],
+      [face([...Array(d)].map((_, j) => [x + w + 1, y + j])), ux + bw / 2, uz, Math.PI / 2, bd], [face([...Array(d)].map((_, j) => [x - 2, y + j])), ux - bw / 2, uz, -Math.PI / 2, bd]]) { if (!ok) continue;
+      nnStorefront(fx, gy, fz, ry, fw); if (h > 8 && fw > 2.4 && (o.ads ?? 0) < 3 && R() < 0.3) { o.ads = (o.ads || 0) + 1; const aw = Math.min(fw * 0.75, 4.2), ah = aw * 0.6, ay = gy + 4 + R() * Math.max(0.5, h - 9), G = grp(fx + Math.sin(ry) * 0.08, 0, fz + Math.cos(ry) * 0.08, ry); G.userData.noLift = true;
+        add(new THREE.BoxGeometry(aw + 0.25, ah + 0.25, 0.08), nnM.dark(), [0, ay, -0.03], [0, 0, 0], "nocol", G); add(new THREE.PlaneGeometry(aw, ah), nnScreenM(Math.floor(R() * 3)), [0, ay, 0.02], [0, 0, 0], "nocol", G); } } }
   nnFlush(B, NB); };
 // ---- street dressing: lamps on every curb, a bench, vending machine, planter, speaker or holo pillar along the walls ----
 const nnDress = (X, Y, o = {}) => { let n = 0; const hub = o.hub || [15, 15];
@@ -14246,7 +14256,7 @@ const nnDress = (X, Y, o = {}) => { let n = 0; const hub = o.hub || [15, 15];
     [() => nnBench(px, pz, wl[2]), () => nnVend(px, pz, wl[2]), () => nnPlanter(px, pz), () => nnSpeaker(px, pz, wl[2]), () => nnHolo(px, pz), () => nnTrash(px, pz), () => nnArcadeCab(px, pz, wl[2])][k % 7](); } };
 // neon trim on each walk-in: a lit bar along the roof edge and a glowing panel over the door
 const nnSign = (key, x0, y0, w, d) => { const S = SHACK[key], ST = FXSTY[S.st], hw = Math.min(w / 2 - 0.3, S.wide ? 5 : 4.2), hd = Math.min(d / 2 - 0.15, 3.2), cx = x0 + w / 2, cz = y0 + d / 2 - 0.35, H = 3.3 + (ST.storeys === 2 ? 2.5 : 0) + 0.2, c = nnPick(), G = grp(cx, 0, cz);
-  add(new THREE.BoxGeometry((hw + 0.45) * 2, 0.12, 0.08), nnM.neon(c), [0, H + 0.32, hd + 0.66], [0, 0, 0], "nocol", G); add(new THREE.BoxGeometry(1.8, 0.5, 0.1), nnM.dark(), [0, 2.95, hd + 0.3], [0, 0, 0], "nocol", G); add(new THREE.BoxGeometry(1.5, 0.08, 0.05), nnM.neon(c), [0, 3.05, hd + 0.37], [0, 0, 0], "nocol", G); add(new THREE.BoxGeometry(1.5, 0.08, 0.05), nnM.neon(NC[(NC.indexOf(c) + 1) % 4]), [0, 2.85, hd + 0.37], [0, 0, 0], "nocol", G); return G; };
+  add(new THREE.BoxGeometry((hw + 0.45) * 2, 0.12, 0.08), nnM.neon(c), [0, H + 0.32, hd + 0.66], [0, 0, 0], "nocol", G); add(new THREE.BoxGeometry(1.8, 0.5, 0.1), nnM.dark(), [0, 2.95, hd + 0.3], [0, 0, 0], "nocol", G); add(new THREE.BoxGeometry(1.5, 0.08, 0.05), nnM.neon(c), [0, 3.05, hd + 0.37], [0, 0, 0], "nocol", G); add(new THREE.BoxGeometry(1.5, 0.08, 0.05), nnM.neon(NC[(NC.indexOf(c) + 1) % 4]), [0, 2.85, hd + 0.37], [0, 0, 0], "nocol", G); { const [ux, uz] = unwarp(cx, cz); nnRoofTop(ux, GHT(ux, uz) + H - 0.12, uz - 0.2, hw * 2 - 0.4, hd * 2 - 0.6, true, true); } return G; };
 // ---- beyond the built streets: the rest of the city, block after block of lit towers out to the horizon ----
 const nnOuter = (rects) => { let X0 = 1e9, X1 = -1e9, Z0 = 1e9, Z1 = -1e9; for (const [x, z] of rects) { X0 = Math.min(X0, x); X1 = Math.max(X1, x + 30); Z0 = Math.min(Z0, z); Z1 = Math.max(Z1, z + 30); }
   const inside = (x, z) => rects.some(([rx, rz]) => x >= rx && x <= rx + 30 && z >= rz && z <= rz + 30), covered = (x, z, m) => inside(x, z) && inside(x - m, z - m) && inside(x + m, z - m) && inside(x - m, z + m) && inside(x + m, z + m);
@@ -14255,7 +14265,7 @@ const nnOuter = (rects) => { let X0 = 1e9, X1 = -1e9, Z0 = 1e9, Z1 = -1e9; for (
   for (let i = 0; i < P.count; i++) { const x = P.getX(i) + cx, z = P.getZ(i) + cz, c = new THREE.Color("#1c1a26").lerp(new THREE.Color("#2c2840"), fbm(x * 0.05, z * 0.05, 3.1, 2) * 0.5 + 0.5); C.push(c.r, c.g, c.b); }
   g.setAttribute("color", new THREE.Float32BufferAttribute(C, 3)); const idx = g.index.array, keepI = []; for (let i = 0; i < idx.length; i += 3) { let mx = 0, mz = 0; for (let q = 0; q < 3; q++) { mx += P.getX(idx[i + q]) / 3; mz += P.getZ(idx[i + q]) / 3; } if (!covered(mx + cx, mz + cz, 3)) keepI.push(idx[i], idx[i + 1], idx[i + 2]); }
   g.setIndex(keepI); g.computeVertexNormals(); const gm = add(g, new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 0.9 }), [cx, 0.5, cz], [0, 0, 0], "nocol"); gm.userData.noLift = true; gm.castShadow = false;
-  const B = { P: [], N: [], U: [] }, NB = { P: [], N: [], C: [] }, occ = new Set(); let placed = 0;
+  const B = nnFB(), NB = { P: [], N: [], C: [] }, occ = new Set(); let placed = 0;
   for (let t = 0; t < 6000 && placed < 900; t++) { const x = cx + (R() - 0.5) * (SZ - 20), z = cz + (R() - 0.5) * (SZ - 20), d = dist(x, z); if (d < 3.5) continue; const w = 4 + R() * 7, dd = 4 + R() * 7, key = Math.floor(x / 9) + "," + Math.floor(z / 9); if (occ.has(key)) continue; occ.add(key);
     const h = d < 14 ? 5 + R() * 8 : 9 + R() * 18 + Math.min(45, d * 0.32); nnTower(B, NB, x, z, 0.3, Math.min(w, 8.5), Math.min(dd, 8.5), h); placed++;
     if (d > 25 && h > 24 && R() < 0.12) { const ry = Math.atan2(cx - x, cz - z), bb = nnBillboard(x + Math.sin(ry) * (dd / 2 + 0.3), z + Math.cos(ry) * (dd / 2 + 0.3), ry, 6 + R() * 4, 3.5 + R() * 2, h * 0.55, Math.floor(R() * 3)); bb.userData.noLift = true; bb.position.y = 0.3; } }
@@ -14266,6 +14276,103 @@ Object.assign(TGK, {
   neon: { lo: "#1a3a5a", hi: "#3af0e0", seed: "#ff4ad8", mons: ["lo_blinkit", "lo_fizzle", "lo_coilet", "lo_skitterbit"] },
   glitch: { lo: "#2a1a4a", hi: "#c06aff", seed: "#3af0ff", mons: ["lo_spindyn", "lo_cogglet", "lo_magnub", "lo_gleamgrub"] },
   canal: { lo: "#103a3a", hi: "#5ae8b0", seed: "#ffe04a", mons: ["lo_gloopa", "lo_coilet", "lo_fizzle", "lo_tiktrill"] } });
+// ---- Neonis detail pass: dense dressing baked into three merged, vertex-coloured meshes per scene (lit solid, lit overhead, neon glow) ----
+const NND = { lit: [], deco: [], glow: [] };
+const NNGEO = {};
+const nnGeo = (k) => NNGEO[k] || (NNGEO[k] = (() => { let g;
+  if (k === "box") g = new THREE.BoxGeometry(1, 1, 1); else if (k === "cyl") g = new THREE.CylinderGeometry(0.5, 0.5, 1, 8); else if (k === "cyl6") g = new THREE.CylinderGeometry(0.5, 0.5, 1, 6);
+  else if (k === "cone") g = new THREE.ConeGeometry(0.5, 1, 8); else if (k === "sph") g = new THREE.SphereGeometry(0.5, 7, 5); else if (k === "ico") g = new THREE.IcosahedronGeometry(0.5, 0);
+  else if (k === "ring") { g = new THREE.TorusGeometry(0.5, 0.05, 4, 20); g.rotateX(Math.PI / 2); } else if (k === "pad") g = new THREE.CylinderGeometry(0.5, 0.5, 1, 20);
+  return g.index ? g.toNonIndexed() : g; })());
+// O: null = world coordinates; {x, z, ry} = a spot on the tile grid, seated on the ground when the scene is finished; {abs: true, x, y, z, ry} = a fixed world spot
+const nnP = (bin, O, gk, lx, ly, lz, sx, sy, sz, col, rx = 0, ry = 0, rz = 0) => { let wx = lx, wz = lz, r = ry; if (O && O.ry) { const c = Math.cos(O.ry), s = Math.sin(O.ry); wx = lx * c + lz * s; wz = -lx * s + lz * c; r += O.ry; } NND[bin].push([gk, O, wx, ly, wz, rx, r, rz, sx, sy, sz, col]); };
+const nnBx = (bin, O, x, y0, z, w, h, d, col, ry = 0, rx = 0) => nnP(bin, O, "box", x, y0 + h / 2, z, w, h, d, col, rx, ry);
+const nnCy = (bin, O, x, y0, z, r, h, col, gk = "cyl") => nnP(bin, O, gk, x, y0 + h / 2, z, r * 2, h, r * 2, col);
+const nnSp = (bin, O, x, y, z, r, col, gk = "sph") => nnP(bin, O, gk, x, y, z, r * 2, r * 2, r * 2, col);
+const nnDetailFlush = () => { const m4 = new THREE.Matrix4(), q = new THREE.Quaternion(), e = new THREE.Euler(), s = new THREE.Vector3(), v = new THREE.Vector3(), n3 = new THREE.Matrix3(), base = new Map(), cc = new THREE.Color();
+  for (const bin of ["lit", "deco", "glow"]) { const L = NND[bin]; if (!L.length) continue; let nv = 0; for (const it of L) nv += nnGeo(it[0]).attributes.position.count;
+    const P = new Float32Array(nv * 3), N = new Float32Array(nv * 3), C = new Float32Array(nv * 3); let o = 0;
+    for (const [gk, O, wx, ly, wz, rx, ry, rz, sx, sy, sz, col] of L) { let bx = 0, by = 0, bz = 0;
+      if (O && O.abs) { bx = O.x; by = O.y; bz = O.z; } else if (O) { const key = O.x + "," + O.z; let b = base.get(key); if (!b) { const [ux, uz] = unwarp(O.x, O.z); b = [ux, Math.max(GHT(ux, uz), O.floor === undefined ? -9 : O.floor), uz]; base.set(key, b); } [bx, by, bz] = b; }
+      m4.compose(v.set(bx + wx, by + ly, bz + wz), q.setFromEuler(e.set(rx, ry, rz)), s.set(sx, sy, sz)); n3.getNormalMatrix(m4); cc.set(col);
+      const g = nnGeo(gk), gp = g.attributes.position, gn = g.attributes.normal;
+      for (let i = 0; i < gp.count; i++, o++) { v.fromBufferAttribute(gp, i).applyMatrix4(m4); P[o * 3] = v.x; P[o * 3 + 1] = v.y; P[o * 3 + 2] = v.z; v.fromBufferAttribute(gn, i).applyMatrix3(n3).normalize(); N[o * 3] = v.x; N[o * 3 + 1] = v.y; N[o * 3 + 2] = v.z; C[o * 3] = cc.r; C[o * 3 + 1] = cc.g; C[o * 3 + 2] = cc.b; } }
+    const g = new THREE.BufferGeometry(); g.setAttribute("position", new THREE.BufferAttribute(P, 3)); g.setAttribute("normal", new THREE.BufferAttribute(N, 3)); g.setAttribute("color", new THREE.BufferAttribute(C, 3)); g.computeBoundingSphere();
+    const mat = bin === "glow" ? thM("nnDG", () => new THREE.MeshBasicMaterial({ vertexColors: true })) : thM("nnDL", () => std({ vertexColors: true, roughness: 0.55, metalness: 0.25 }));
+    const m = add(g, mat, [0, 0, 0], [0, 0, 0], bin === "lit" ? null : "nocol"); m.userData.noLift = true; m.castShadow = bin === "lit"; m.receiveShadow = bin !== "glow"; NND[bin] = []; } };
+
+// ---- rooftops: a lighter slab and parapet on every tower, then the clutter a real roof has ----
+const NNROOF = ["#5c5674", "#4e4c6a", "#62587a", "#555c76", "#4a5068"], NNAWN = ["#7a2a8a", "#2a6a8a", "#8a2a5a", "#2a7a66", "#5a3a9a"], NNWIN = ["#e8b888", "#88c8d8", "#d898c8", "#c8c0f0"];
+const nnRoofTop = (x, y, z, w, d, clutter, bare = false) => { const rc = NNROOF[Math.floor(R() * NNROOF.length)], pc = "#3a3652";
+  if (!bare) { nnBx("lit", null, x, y - 0.06, z, w + 0.04, 0.12, d + 0.04, rc); const ph = 0.3 + R() * 0.25;
+  for (const [a, b, ww, dd] of [[0, d / 2 - 0.08, w, 0.16], [0, -d / 2 + 0.08, w, 0.16], [w / 2 - 0.08, 0, 0.16, d], [-w / 2 + 0.08, 0, 0.16, d]]) nnBx("deco", null, x + a, y, z + b, ww, ph, dd, pc); }
+  if (!clutter) return; const ar = w * d, sp = (m) => [x + (R() - 0.5) * (w - m), z + (R() - 0.5) * (d - m)];
+  if (ar > 9 && R() < 0.14) { nnCy("deco", null, x, y + 0.02, z, Math.min(w, d) * 0.38, 0.08, "#2c2a3c", "pad"); nnP("glow", null, "ring", x, y + 0.13, z, Math.min(w, d) * 0.62, 1, Math.min(w, d) * 0.62, "#ffe23a"); nnBx("glow", null, x, y + 0.12, z, Math.min(w, d) * 0.3, 0.02, 0.12, "#ffe23a"); return; }
+  if (ar > 7 && R() < 0.16) { nnBx("deco", null, x, y, z, w - 0.5, 0.3, d - 0.5, "#3a2f2a"); for (let k = 0; k < 4; k++) { const [a, b] = sp(1); nnSp("deco", null, a, y + 0.55, b, 0.3 + R() * 0.25, ["#3aa070", "#2f8a6a", "#8a5aff", "#4ab890"][k % 4], "ico"); } nnBx("glow", null, x, y + 0.3, z - (d - 0.5) / 2, w - 0.5, 0.05, 0.05, "#5affc0"); return; }
+  const nac = ar > 6 ? 1 + Math.floor(R() * 3) : R() < 0.6 ? 1 : 0; for (let k = 0; k < nac; k++) { const [a, b] = sp(1.2); nnBx("deco", null, a, y, b, 0.8, 0.55, 0.8, "#8c8ca6"); nnCy("deco", null, a, y + 0.55, b, 0.28, 0.04, "#2a2838"); }
+  if (R() < 0.3) { const [a, b] = sp(1.6); for (const [p, q2] of [[-0.35, -0.35], [0.35, -0.35], [-0.35, 0.35], [0.35, 0.35]]) nnBx("deco", null, a + p, y, b + q2, 0.08, 0.7, 0.08, "#2a2838"); nnCy("deco", null, a, y + 0.7, b, 0.55, 1.1, "#7a6a8a"); nnCy("deco", null, a, y + 1.8, b, 0.6, 0.12, "#4a3a5a", "cone"); }
+  if (R() < 0.45) { const [a, b] = sp(0.6), hh = 1.5 + R() * 4; nnBx("deco", null, a, y, b, 0.09, hh, 0.09, "#2a2838"); nnSp("glow", null, a, y + hh + 0.08, b, 0.12, R() < 0.5 ? "#ff3a5a" : "#ff3ad0"); if (hh > 3) nnBx("deco", null, a, y + hh * 0.6, b, 0.7, 0.05, 0.05, "#2a2838"); }
+  if (R() < 0.22 && w > 2.2) { const c = nnPick(), ry = R() < 0.5 ? 0 : Math.PI / 2, bw = Math.min(3.2, (ry ? d : w) - 0.4); for (const s2 of [-1, 1]) nnBx("deco", null, x + (ry ? 0 : s2 * bw * 0.4), y, z + (ry ? s2 * bw * 0.4 : 0), 0.1, 1.2, 0.1, "#2a2838");
+    nnBx("deco", null, x, y + 1.2, z, ry ? 0.12 : bw, 1.1, ry ? bw : 0.12, "#1c1a26"); nnBx("glow", null, x, y + 1.25, z, ry ? 0.16 : bw - 0.2, 1.0, ry ? bw - 0.2 : 0.16, c); } };
+
+// ---- ground-floor shop fronts on every tower that faces a street: lit window band, awning, sign strip ----
+const nnStorefront = (fx, y0, fz, ry, fw) => { if (fw < 1.6) return; const O = { abs: true, x: fx, y: y0, z: fz, ry }, ac = NNAWN[Math.floor(R() * NNAWN.length)], sc = nnPick(), wc = NNWIN[Math.floor(R() * NNWIN.length)];
+  nnBx("glow", O, 0, 0.85, 0.04, fw - 0.45, 1.45, 0.06, wc); for (let u = -fw / 2 + 0.6; u < fw / 2 - 0.3; u += 1.1) nnBx("deco", O, u, 0.8, 0.08, 0.07, 1.55, 0.06, "#1a1824");
+  const dx = (R() - 0.5) * (fw - 1.4); nnBx("deco", O, dx, 0.5, 0.1, 0.85, 1.85, 0.06, "#14121c"); nnBx("glow", O, dx, 2.36, 0.1, 0.85, 0.05, 0.05, sc);
+  nnBx("deco", O, 0, 2.48, 0.5, fw - 0.25, 0.07, 0.95, ac, 0, 0.22); nnBx("glow", O, 0, 2.38, 0.96, fw - 0.25, 0.06, 0.04, sc);
+  nnBx("glow", O, (R() - 0.5) * fw * 0.2, 2.78, 0.07, Math.min(fw * 0.7, 3.6), 0.42, 0.08, sc); };
+
+// ---- street props, each a handful of parts in the shared batches ----
+const nnPrps = {
+  bench: (O) => { nnBx("lit", O, 0, 0.4, 0, 1.8, 0.1, 0.5, "#9a9ab4"); nnBx("lit", O, 0, 0.5, -0.24, 1.8, 0.45, 0.07, "#4a3a6a", 0, -0.15); for (const s of [-0.75, 0.75]) nnBx("lit", O, s, 0, 0, 0.1, 0.4, 0.45, "#22202e"); nnBx("glow", O, 0, 0.36, 0.2, 1.6, 0.03, 0.04, nnPick()); },
+  planter: (O) => { const c = nnPick(); nnBx("lit", O, 0, 0, 0, 1.1, 0.5, 1.1, "#2a2838"); nnBx("glow", O, 0, 0.5, 0, 1.14, 0.04, 1.14, c); nnSp("lit", O, 0, 0.9, 0, 0.5, R() < 0.5 ? "#3a9a7a" : "#7a4ae0", "ico"); nnSp("lit", O, 0.25, 1.25, 0.1, 0.28, "#4ab890", "ico"); },
+  crates: (O) => { const n = 2 + Math.floor(R() * 2); for (let k = 0; k < n; k++) nnBx("lit", O, (k % 2) * 0.62 - 0.3, k > 1 ? 0.6 : 0, (R() - 0.5) * 0.2, 0.58, 0.58, 0.58, ["#6a5a48", "#4a5a6a", "#5a4a6a"][k % 3], R() * 0.5); nnBx("glow", O, -0.3, 0.3, 0.3, 0.3, 0.06, 0.02, nnPick()); },
+  aframe: (O) => { const c = nnPick(); for (const s of [-1, 1]) nnBx("lit", O, 0, 0, s * 0.18, 0.6, 1.0, 0.05, "#1c1a26", 0, s * 0.33); nnBx("glow", O, 0, 0.25, 0.36, 0.42, 0.55, 0.02, c, 0, 0.33); },
+  scooter: (O) => { nnBx("lit", O, 0, 0.1, 0, 1.0, 0.07, 0.24, "#22202e"); nnBx("lit", O, 0.45, 0.1, 0, 0.06, 0.95, 0.06, "#8a8aa0", 0, 0); nnBx("lit", O, 0.45, 1.02, 0, 0.06, 0.06, 0.5, "#22202e"); for (const s of [-0.42, 0.42]) nnP("glow", O, "cyl", s, 0.1, 0, 0.2, 0.06, 0.2, "#2af0ff", Math.PI / 2); },
+  hoverbike: (O) => { const c = nnPick(); nnBx("lit", O, 0, 0.45, 0, 1.6, 0.36, 0.5, ["#3a3470", "#5a2a6a", "#2a4a6a"][Math.floor(R() * 3)]); nnBx("lit", O, -0.2, 0.81, 0, 0.7, 0.12, 0.36, "#14121c"); nnBx("lit", O, 0.62, 0.8, 0, 0.18, 0.3, 0.42, "#22202e"); nnBx("glow", O, 0, 0.36, 0, 1.4, 0.05, 0.4, c); nnBx("glow", O, 0.82, 0.6, 0, 0.04, 0.12, 0.3, "#fff4d0"); nnBx("glow", O, -0.82, 0.6, 0, 0.04, 0.1, 0.3, "#ff3a5a"); },
+  newsbox: (O) => { const c = nnPick(); nnBx("lit", O, 0, 0, 0, 0.5, 0.95, 0.45, ["#2a6a8a", "#8a2a5a", "#5a3a9a"][Math.floor(R() * 3)]); nnBx("glow", O, 0, 0.55, 0.23, 0.36, 0.25, 0.02, c); },
+  phone: (O) => { const c = nnPick(); nnBx("lit", O, 0, 0, -0.4, 0.95, 2.2, 0.08, "#1c1a26"); for (const s of [-0.45, 0.45]) nnBx("lit", O, s, 0, 0, 0.07, 2.2, 0.85, "#22202e"); nnBx("lit", O, 0, 2.2, 0, 1.05, 0.12, 0.95, "#1c1a26"); nnBx("glow", O, 0, 2.32, 0.44, 0.8, 0.22, 0.03, c); nnBx("glow", O, 0, 1.1, -0.34, 0.4, 0.5, 0.03, "#7af0ff"); },
+  stall: (O) => { const c = nnPick(), a = NNAWN[Math.floor(R() * NNAWN.length)]; nnBx("lit", O, 0, 0, 0, 2.2, 1.0, 0.9, "#2a2838"); nnBx("glow", O, 0, 0.55, 0.46, 2.0, 0.08, 0.02, c); for (const s of [-1.05, 1.05]) nnBx("lit", O, s, 1.0, -0.38, 0.08, 1.4, 0.08, "#8a8aa0");
+    for (let k = 0; k < 5; k++) nnBx("deco", O, -1.04 + k * 0.52, 2.25, 0.05, 0.52, 0.07, 1.45, k % 2 ? "#e8e0f0" : a, 0, 0.18); nnBx("glow", O, 0, 2.62, -0.4, 1.6, 0.36, 0.06, c); nnBx("lit", O, 0, 1.0, 0, 1.9, 0.06, 0.7, "#5a4a3a");
+    for (const s of [-0.6, 0.6]) { nnCy("lit", O, s, 0, 0.95, 0.06, 0.65, "#8a8aa0"); nnCy("lit", O, s, 0.65, 0.95, 0.22, 0.07, a); } nnSp("glow", O, 0.6, 1.12, 0, 0.12, "#ffd890"); },
+  cafe: (O) => { const c = NNAWN[Math.floor(R() * NNAWN.length)]; nnCy("lit", O, 0, 0, 0, 0.05, 0.75, "#8a8aa0"); nnCy("lit", O, 0, 0.75, 0, 0.42, 0.05, "#e8e0f0"); for (const [a, b] of [[-0.7, 0], [0.7, 0]]) { nnCy("lit", O, a, 0, b, 0.05, 0.45, "#8a8aa0"); nnCy("lit", O, a, 0.45, b, 0.22, 0.06, c); }
+    nnCy("lit", O, 0, 0.75, 0, 0.03, 1.45, "#22202e"); nnP("deco", O, "cone", 0, 2.32, 0, 2.2, 0.45, 2.2, c); nnSp("glow", O, 0, 2.08, 0, 0.1, "#ffd890"); },
+  bollards: (O) => { for (const s of [-0.7, 0, 0.7]) { nnCy("lit", O, s, 0, 0, 0.12, 0.8, "#22202e"); nnP("glow", O, "ring", s, 0.7, 0, 0.26, 1, 0.26, nnPick()); } },
+  bags: (O) => { for (let k = 0; k < 3; k++) nnP("lit", O, "ico", (k - 1) * 0.36, 0.22, (R() - 0.5) * 0.2, 0.44, 0.4, 0.44, "#1c1a26", R(), R()); },
+  rack: (O) => { for (const s of [-0.5, 0, 0.5]) nnP("lit", O, "ring", s, 0.45, 0, 0.8, 1, 0.8, "#8a8aa0", Math.PI / 2, Math.PI / 2); nnBx("lit", O, 0, 0, 0, 1.4, 0.05, 0.15, "#22202e"); },
+  hydrant: (O) => { const c = R() < 0.5 ? "#ff3ad0" : "#2af0ff"; nnCy("lit", O, 0, 0, 0, 0.16, 0.6, "#3a3470"); nnSp("lit", O, 0, 0.62, 0, 0.17, "#3a3470"); nnP("glow", O, "ring", 0, 0.42, 0, 0.36, 1, 0.36, c); },
+  tree: (O) => { const c = R() < 0.5 ? "#ff5ae0" : R() < 0.5 ? "#5af0ff" : "#b08aff"; nnCy("lit", O, 0, 0, 0, 0.55, 0.4, "#2a2838"); nnP("glow", O, "ring", 0, 0.4, 0, 1.12, 1, 1.12, c); nnCy("lit", O, 0, 0.4, 0, 0.09, 2.2, "#2a2440");
+    for (let k = 0; k < 3; k++) nnSp(k ? "lit" : "glow", O, (R() - 0.5) * 0.7, 2.5 + k * 0.35, (R() - 0.5) * 0.7, 0.55 - k * 0.1, k ? (R() < 0.5 ? "#3a2a70" : "#2a4a6a") : c, "ico"); },
+  vend: (O) => { const c = nnPick(); nnBx("lit", O, 0, 0, 0, 0.95, 1.9, 0.75, "#1c1a26"); nnBx("glow", O, -0.1, 0.6, 0.38, 0.62, 1.1, 0.02, c); nnBx("glow", O, 0.33, 0.9, 0.38, 0.12, 0.4, 0.02, "#ffffff"); },
+  sign: (O) => { const c = nnPick(); nnCy("lit", O, 0, 0, 0, 0.05, 2.4, "#22202e"); nnBx("glow", O, 0.35, 2.0, 0, 0.8, 0.22, 0.05, c); nnBx("glow", O, -0.3, 1.65, 0, 0.7, 0.22, 0.05, nnPick()); },
+};
+const nnCar = (O, y) => { const c = ["#3a3470", "#5a2a6a", "#2a4a6a", "#6a6a8a", "#7a2a4a"][Math.floor(R() * 5)], g = nnPick();
+  nnBx("deco", O, 0, y, 0, 2.6, 0.55, 1.25, c); nnBx("deco", O, -0.15, y + 0.55, 0, 1.4, 0.42, 1.08, "#1e2640"); nnBx("deco", O, 0.25, y + 0.25, 0, 3.0, 0.12, 0.5, c);
+  nnBx("glow", O, 0, y - 0.07, 0, 2.2, 0.06, 1.05, g); for (const s of [-0.42, 0.42]) { nnBx("glow", O, 1.31, y + 0.25, s, 0.04, 0.12, 0.26, "#fff4d0"); nnBx("glow", O, -1.31, y + 0.25, s, 0.04, 0.1, 0.3, "#ff3a5a"); } };
+const nnDrone = (O, y) => { nnBx("deco", O, 0, y, 0, 0.42, 0.12, 0.42, "#22202e"); for (const [a, b] of [[-0.38, -0.38], [0.38, -0.38], [-0.38, 0.38], [0.38, 0.38]]) { nnBx("deco", O, a / 2, y + 0.04, b / 2, Math.abs(a) * 1.1, 0.04, 0.05, "#22202e", Math.atan2(b, a)); nnP("glow", O, "ring", a, y + 0.1, b, 0.32, 1, 0.32, "#2af0ff"); } nnSp("glow", O, 0, y - 0.08, 0, 0.07, "#ff3a5a"); };
+const nnString = (x0, z0, x1, z1, y, n = 9) => { const c0 = nnPick(), O = { x: (x0 + x1) / 2, z: (z0 + z1) / 2 }, dx = x1 - x0, dz = z1 - z0, L = Math.hypot(dx, dz), ry = -Math.atan2(dz, dx);
+  for (let k = 0; k <= n; k++) { const t = k / n, sag = 0.9 * 4 * t * (1 - t), px = (t - 0.5) * dx, pz = (t - 0.5) * dz; nnSp("glow", O, px, y - sag, pz, 0.09, k % 3 === 0 ? c0 : k % 3 === 1 ? "#ffe23a" : "#2af0ff", "ico"); if (k < n) { const t2 = (k + 0.5) / n, sg2 = 0.9 * 4 * t2 * (1 - t2); nnP("deco", O, "box", (t2 - 0.5) * dx, y - sg2 + 0.08, (t2 - 0.5) * dz, L / n + 0.05, 0.025, 0.025, "#14121c", 0, ry); } } };
+
+// ---- street pass over one scene ----
+const nnDetail = (X, Y, o = {}) => { const hub = o.hub || [15, 15], WALL = "xb", OPEN = "sPp,.gkr";
+  const run = (x, y, dx, dy) => { let n = 0; for (let k = 1; k < 12 && at(x + dx * k, y + dy * k) === "p"; k++) n++; return n; };
+  const hs = (x, y) => (((x * 73856093) ^ (y * 19349663)) >>> 0) % 1000;
+  const L = Object.keys(nnPrps), wallK = ["bench", "planter", "crates", "aframe", "newsbox", "phone", "bags", "rack", "vend", "sign", "stall", "crates", "planter", "bench"];
+  for (let y = Y; y < Y + 30; y++) for (let x = X; x < X + 30; x++) { const c = at(x, y), h = hs(x, y), nearHub = Math.hypot(x + 0.5 - X - hub[0], y + 0.5 - Y - hub[1]) < 4.5;
+    if (c === "s") { let rd = null, wl = null; for (const [dx, dy, ry] of [[0, 1, 0], [0, -1, Math.PI], [1, 0, Math.PI / 2], [-1, 0, -Math.PI / 2]]) { if (at(x + dx, y + dy) === "p") rd = [dx, dy, ry]; if (WALL.includes(at(x + dx, y + dy))) wl = [dx, dy, ry]; }
+      if (nearHub) continue;
+      if (rd && !wl) { const along = rd[1] ? x : y, m = ((along % 11) + 11) % 11; if (m === 6) nnPrps.hoverbike({ x: x + 0.5 + rd[0] * 0.15, z: y + 0.5 + rd[1] * 0.15, ry: rd[2] + Math.PI / 2 }); else if (m === 9) nnPrps[h % 2 ? "hydrant" : "bollards"]({ x: x + 0.5 + rd[0] * 0.25, z: y + 0.5 + rd[1] * 0.25, ry: rd[2] + Math.PI / 2 }); else if (m === 1 && h % 3 === 0) nnPrps.tree({ x: x + 0.5, z: y + 0.5 }); continue; }
+      if (wl) { const along = wl[1] ? x : y, m = ((along % 3) + 3) % 3; if (m !== 1 || ((along % 9) + 9) % 9 === 5 || ((along % 7) + 7) % 7 === 3) continue; const k = wallK[h % wallK.length], ry = wl[2] + Math.PI;
+        if (k === "stall" && !(OPEN.includes(at(x - wl[0], y - wl[1])) && OPEN.includes(at(x - 2 * wl[0], y - 2 * wl[1])))) continue; nnPrps[k]({ x: x + 0.5 + wl[0] * 0.2, z: y + 0.5 + wl[1] * 0.2, ry }); } continue; }
+    if (c === "P" && !nearHub) { if (h < 22) nnPrps[["cafe", "tree", "planter", "bench", "stall", "cafe"][h % 6]]({ x: x + 0.5, z: y + 0.5, ry: (h % 4) * Math.PI / 2 }); else if (h > 990) nnDrone({ x: x + 0.5, z: y + 0.5, ry: h * 0.1 }, 4 + (h % 3)); continue; }
+    if (c === "," && h < 14) { let nx = false; for (const [dx, dy] of [[0, 1], [0, -1], [1, 0], [-1, 0]]) if (WALL.includes(at(x + dx, y + dy))) nx = true; if (nx) nnPrps.tree({ x: x + 0.5, z: y + 0.5 }); continue; }
+    if (c === "p") { const u = run(x, y, 0, -1), dn = run(x, y, 0, 1), lf = run(x, y, -1, 0), rt = run(x, y, 1, 0), vr = u + dn + 1, hr = lf + rt + 1;
+      const horiz = vr >= 4 && vr <= 8 && hr > 8, vert = hr >= 4 && hr <= 8 && vr > 8;
+      if (horiz && u === Math.floor((u + dn) / 2)) { const cz = y + 0.5 + (dn - u) / 2; if (((x % 3) + 3) % 3 === 0) nnBx("glow", { x: x + 0.5, z: cz }, 0, 0.05, 0, 1.3, 0.03, 0.14, "#d8c060");
+        if (h % 23 === 0) nnCar({ x: x + 0.5, z: cz + (h % 2 ? 1.4 : -1.4), ry: h % 2 ? 0 : Math.PI }, 6.2 + (h % 5) * 0.6); if (((x % 13) + 13) % 13 === 7 && WALL.includes(at(x, y - u - 2)) && WALL.includes(at(x, y + dn + 2))) nnString(x + 0.5, y - u - 0.6, x + 0.5, y + dn + 1.6, 5.4); }
+      if (vert && lf === Math.floor((lf + rt) / 2)) { const cx = x + 0.5 + (rt - lf) / 2; if (((y % 3) + 3) % 3 === 0) nnBx("glow", { x: cx, z: y + 0.5 }, 0, 0.05, 0, 0.14, 0.03, 1.3, "#d8c060");
+        if (h % 23 === 0) nnCar({ x: cx + (h % 2 ? 1.4 : -1.4), z: y + 0.5, ry: h % 2 ? Math.PI / 2 : -Math.PI / 2 }, 6.2 + (h % 5) * 0.6); if (((y % 13) + 13) % 13 === 7 && WALL.includes(at(x - lf - 2, y)) && WALL.includes(at(x + rt + 2, y))) nnString(x - lf - 0.6, y + 0.5, x + rt + 1.6, y + 0.5, 5.4); }
+      if (!horiz && !vert && hr > 8 && vr > 8 && h < 6) { /* crossing: a crosswalk patch */ for (let k = -2; k <= 2; k++) nnBx("glow", { x: x + 0.5 + k * 0.5, z: y + 0.5 }, 0, 0.05, 0, 0.28, 0.03, 1.6, "#c8c0e0"); } } } };
 // ---- scene framework: hub + links (Neonis streets are 6 tiles wide, with 2-tile sidewalks on both sides) ----
 const THUB = {};
 const TLINK = [ // [scene A, scene B, tile, crossing coordinate along the shared edge]
@@ -14278,14 +14385,14 @@ const tLineIn = (x0, y0, x1, y1, w, t, only, rx, ry) => { if ("sk,".includes(t))
 // paint this scene's half of every link that touches it: hub -> a point 3 tiles before the edge -> the crossing -> on into the neighbour
 const tLinks = (id) => { const [rx, ry] = tRect(id); for (const [a, b, t, c] of TLINK) { if (a !== id && b !== id) continue; const [ax, ay] = tRect(a), [bx, by] = tRect(b), A = tHub(a), B = tHub(b);
     let p1, p2; if (bx !== ax) { const ex = Math.max(ax, bx); p1 = [ex - 3, c]; p2 = [ex + 3, c]; if (bx < ax) [p1, p2] = [p2, p1]; } else { const ey = Math.max(ay, by); p1 = [c, ey - 3]; p2 = [c, ey + 3]; if (by < ay) [p1, p2] = [p2, p1]; }
-    const only = t === "p" || t === "s" ? "x.,gr" : "w"; const pts = [A, p1, p2, B]; for (let i = 0; i < 3; i++) tLineIn(pts[i][0], pts[i][1], pts[i + 1][0], pts[i + 1][1], 6, t, only, rx, ry); } };
+    const only = t === "k" ? "w" : "x.,gr", tt = t === "p" && TSCN[id] && TSCN[id].wild ? "," : t; const pts = [A, p1, p2, B]; for (let i = 0; i < 3; i++) tLineIn(pts[i][0], pts[i][1], pts[i + 1][0], pts[i + 1][1], 6, tt, only, rx, ry); } };
 // every road gets a two-tile sidewalk on each side where it runs past block ground
 const nnWalks = (X, Y) => { const T = []; for (let y = Y; y < Y + 30; y++) for (let x = X; x < X + 30; x++) { if (at(x, y) !== "x") continue; let n = false; for (let dy = -2; dy <= 2 && !n; dy++) for (let dx = -2; dx <= 2; dx++) if (at(x + dx, y + dy) === "p") { n = true; break; } if (n) T.push([x, y]); } for (const [x, y] of T) fillT(x, y, x, y, "s"); };
 const nnHasW = (X, Y) => { for (let y = Y; y < Y + 30; y++) for (let x = X; x < X + 30; x++) if (at(x, y) === "w") return true; return false; };
 const tGround = (o) => { const X = o.gx, Y = o.gy; fillT(X, Y, X + 29, Y + 29, "x"); if (o.ground) o.ground(X, Y); tLinks(o.id); if (o.after) o.after(X, Y); nnWalks(X, Y); for (const b of o.bld || []) fillT(X + b[1], Y + b[2], X + b[1] + b[3] - 1, Y + b[2] + b[4] - 1, "b"); };
-let TCUR = null; const tBuild = (o) => { const X = o.gx, Y = o.gy; TCUR = o; if (nnHasW(X, Y)) thWater(X, Y); tDecks(X, Y); tQuays(X, Y, "sbpP.,gx");
+let TCUR = null; const tBuild = (o) => { const X = o.gx, Y = o.gy; TCUR = o; if (nnHasW(X, Y)) thWater(X, Y); tDecks(X, Y); if (!o.wild) tQuays(X, Y, "sbpP.,gx");
   for (const b of o.bld || []) { if (b[0] === "-") continue; xShack3(b[0], X + b[1], Y + b[2], b[3], b[4], { name: b[5] }); nnSign(b[0], X + b[1], Y + b[2], b[3], b[4]); }
-  if (o.build) o.build(X, Y); nnBlocks(X, Y, o); nnDress(X, Y, o); };
+  if (o.build) o.build(X, Y); nnBlocks(X, Y, o); nnDress(X, Y, o); nnDetail(X, Y, o); };
 // a traffic signal: a pole, an arm over the road and a three-light head
 const nnSignal = (x, z, ry = 0) => { const G = grp(x, 0, z, ry); add(new THREE.CylinderGeometry(0.08, 0.1, 4.4, 8), nnM.dark(), [0, 2.2, 0], [0, 0, 0], null, G); add(new THREE.BoxGeometry(0.1, 0.1, 2.6), nnM.dark(), [0, 4.3, 1.3], [0, 0, 0], "nocol", G); add(new THREE.BoxGeometry(0.4, 1.0, 0.3), nnM.dark(), [0, 3.75, 2.5], [0, 0, 0], "nocol", G);
   for (const [y, c] of [[4.05, "#ff3a5a"], [3.75, "#ffe23a"], [3.45, "#2aff9a"]]) add(new THREE.CircleGeometry(0.11, 12), nnM.neon(c), [0, y, 2.66], [0, 0, 0], "nocol", G); return G; };
@@ -14373,7 +14480,7 @@ TS({ id: "NF", gx: 130, gy: 60, name: "Farmstead Edge", hub: [15, 15], keep: [[5
 // ---------------- NM  Neon Megadome ----------------
 TS({ id: "NM", gx: 100, gy: 60, name: "Neon Megadome", hub: [22, 15], keep: [[0, 5, 17, 25]],
   ground(X, Y) { ellT(X + 22, Y + 15, 3.6, 6, "P"); ellT(X + 24, Y + 6.5, 4, 3.4, "g"); },
-  build(X, Y) { nnDome(X + 9, Y + 15, 8.0); for (const [x, z, c] of [[19.5, 10, 0], [19.5, 20, 1]]) nnHolo(X + x, Y + z, NC[c], 3.2); nnKiosk(X + 24, Y + 21.5, Math.PI); nnCart(X + 20.5, Y + 22.4, Math.PI, NC[2]);
+  build(X, Y) { nnDome(X + 9, Y + 15, 8.0); for (const [x, z, c] of [[19.5, 10, 0], [27, 18, 1]]) nnHolo(X + x, Y + z, NC[c], 3.2); nnKiosk(X + 24, Y + 21.5, Math.PI); nnCart(X + 26, Y + 24, Math.PI, NC[2]);
     nnSpeaker(X + 26, Y + 9.5, 0); nnBillboard(X + 23, Y + 27.8, Math.PI, 7, 3, 4.5, 1);
     tallGrass(X + 24, Y + 6.5, 3.4, 2.8, "glitch", { name: "Megadome glitch garden" }); } });
 
@@ -14449,7 +14556,7 @@ TS({ id: "NW", gx: 160, gy: 120, name: "Canal Quay", hub: [15, 15],
 TS({ id: "NP", gx: 160, gy: 150, name: "Broadcast Plaza", hub: [15, 15], keep: [[18, 5, 25, 12]],
   ground(X, Y) { fillT(X + 6, Y + 12, X + 27, Y + 22, "P"); ellT(X + 8, Y + 26, 4, 3, "g"); },
   build(X, Y) { nnRelay(X + 21.5, Y + 8.5, 26); nnBillboard(X + 9, Y + 11.2, 0, 7, 3.6, 4.4, 1); nnBillboard(X + 27.4, Y + 17, -Math.PI / 2, 8, 3.6, 4.6, 0);
-    for (const [x, z] of [[11, 21], [16, 21], [21, 21]]) nnBench(X + x, Y + z + 0.6, Math.PI); nnHolo(X + 24, Y + 13.5, NC[1]); nnKiosk(X + 7.5, Y + 20.6, Math.PI / 2); nnTVs(X + 26, Y + 21);
+    for (const [x, z] of [[11, 21], [16, 21]]) nnBench(X + x, Y + z + 0.6, Math.PI); nnHolo(X + 24, Y + 13.5, NC[1]); nnKiosk(X + 7.5, Y + 20.6, Math.PI / 2); nnTVs(X + 26, Y + 21);
     tallGrass(X + 8, Y + 26, 3.4, 2.4, "glitch", { name: "Broadcast glitch garden" }); } });
 
 // ---------------- NY  Arcade Alleys ----------------
@@ -14466,6 +14573,187 @@ TS({ id: "NZ", gx: 100, gy: 150, name: "Static Canal", hub: [20, 15],
   build(X, Y) { nnTVs(X + 16, Y + 10.5); nnTVs(X + 16, Y + 20); thBoat(X + 9, Y + 9, 0.3, "#3a3a48"); thBoat(X + 8, Y + 21.5, -0.4, "#3a3a48"); nnBillboard(X + 23.5, Y + 15, -Math.PI / 2, 6, 3, 3.8, 3);
     nnLamp(X + 14.3, Y + 12.5, -Math.PI / 2, "#9a5aff"); nnLamp(X + 14.3, Y + 17.5, -Math.PI / 2, "#9a5aff");
     tallGrass(X + 20, Y + 23.5, 3.4, 2.6, "canal", { name: "Static Canal reeds" }); tallGrass(X + 20, Y + 6.5, 3.4, 2.6, "neon", { name: "Static Canal verge grass" }); } });
+// ================= NEONIS EXPANSION: Mount Lumen, Lumen Park, the Canal Wilds and eleven new districts =================
+// wild cells carry lighter ground cover so the big parks stay smooth on older laptops
+const nnWK = (sx, sy) => { for (const k in TSCN) { const o = TSCN[k]; if (o.gx === sx && o.gy === sy) return o.wild ? (o.wk ?? 0.4) : 1; } return 1; };
+const nh = (x, y, s = 0) => { const v = Math.sin(x * 127.1 + y * 311.7 + s * 74.7) * 43758.5453; return v - Math.floor(v); };
+const nnArea = (X, Y, f) => { for (let y = Y; y < Y + 30; y++) for (let x = X; x < X + 30; x++) { const c = f(x, y); if (c) fillT(x, y, x, y, c); } };
+const segD = (px, py, ax, ay, bx, by) => { const dx = bx - ax, dy = by - ay, L = dx * dx + dy * dy, t = L ? Math.max(0, Math.min(1, ((px - ax) * dx + (py - ay) * dy) / L)) : 0; return Math.hypot(px - ax - t * dx, py - ay - t * dy); };
+const polyD = (px, py, P) => { let d = 1e9; for (let i = 0; i + 1 < P.length; i++) d = Math.min(d, segD(px, py, P[i][0], P[i][1], P[i + 1][0], P[i + 1][1])); return d; };
+
+// ---- side quest spots: a holo notice board with a floating marker; the list is handed back to the game as `quests` ----
+const NNQ = [];
+const nnQuest = (x, z, id, label, ry = 0) => { NNQ.push({ id, label, x, z }); const G = grp(x, 0, z, ry); add(new THREE.CylinderGeometry(0.07, 0.09, 1.9, 8), nnM.dark(), [0, 0.95, 0], [0, 0, 0], null, G);
+  add(new THREE.BoxGeometry(1.2, 0.8, 0.08), nnM.dark(), [0, 1.75, 0], [0, 0, 0], "nocol", G); add(new THREE.PlaneGeometry(1.05, 0.65), nnScreenM(2), [0, 1.75, 0.05], [0, 0, 0], "nocol", G);
+  add(new THREE.OctahedronGeometry(0.28, 0), nnM.neon("#ffe23a"), [0, 2.75, 0], [0, 0, 0], "nocol", G); add(new THREE.TorusGeometry(0.42, 0.03, 6, 24), nnM.neon("#ffe23a"), [0, 0.04, 0], [Math.PI / 2, 0, 0], "nocol", G); return G; };
+
+// ---- wild dressing, all merged into the detail batches: pines, round trees, boulders, glow mushrooms, path bollards ----
+const nnPine = (O, s = 1) => { nnCy("lit", O, 0, 0, 0, 0.12 * s, 1.0 * s, "#3a2a2a"); const c = ["#1e4a48", "#245a50", "#1a3e4a"][Math.floor(nh(O.x, O.z, 3) * 3)];
+  for (let k = 0; k < 3; k++) nnP("lit", O, "cone", 0, (0.9 + k * 0.85) * s, 0, (1.9 - k * 0.45) * s, 1.4 * s, (1.9 - k * 0.45) * s, c); };
+const nnRound = (O, s = 1) => { nnCy("lit", O, 0, 0, 0, 0.14 * s, 1.5 * s, "#3a2a34"); const c = ["#3a6a5a", "#2f5a6a", "#4a5a7a", "#5a4a8a"][Math.floor(nh(O.x, O.z, 4) * 4)];
+  nnSp("lit", O, 0, 2.0 * s, 0, 1.0 * s, c, "ico"); nnSp("lit", O, 0.5 * s, 2.5 * s, 0.2 * s, 0.65 * s, c, "ico"); if (nh(O.x, O.z, 9) < 0.3) nnSp("glow", O, -0.4 * s, 1.7 * s, 0.6 * s, 0.12, "#5affc0"); };
+const nnRock = (O, s = 1) => { nnP("lit", O, "ico", 0, 0.25 * s, 0, 1.3 * s, 0.9 * s, 1.1 * s, ["#5a566a", "#4a4a5c", "#625a6e"][Math.floor(nh(O.x, O.z, 5) * 3)], 0.3, nh(O.x, O.z, 6) * 6); };
+const nnShroom = (O) => { const c = nh(O.x, O.z, 7) < 0.5 ? "#5affc0" : "#ff5ae0"; for (let k = 0; k < 3; k++) { const a = k * 2.1, r = 0.3 * k; nnCy("lit", O, Math.cos(a) * r, 0, Math.sin(a) * r, 0.04, 0.3 + k * 0.1, "#e8e0f0"); nnP("glow", O, "sph", Math.cos(a) * r, 0.32 + k * 0.1, Math.sin(a) * r, 0.34 - k * 0.06, 0.14, 0.34 - k * 0.06, c); } };
+const nnBollard = (O) => { nnCy("lit", O, 0, 0, 0, 0.1, 0.7, "#22202e"); nnSp("glow", O, 0, 0.78, 0, 0.12, "#7af0ff"); };
+const nnReeds = (O) => { for (let k = 0; k < 6; k++) { const a = nh(O.x, O.z, k) * 6.28, r = nh(O.x, O.z, k + 9) * 0.4; nnBx("lit", O, Math.cos(a) * r, 0, Math.sin(a) * r, 0.05, 0.8 + nh(O.x, O.z, k + 3) * 0.7, 0.05, "#3a6a4a", 0, (nh(O.x, O.z, k + 5) - 0.5) * 0.3); } };
+// one pass over a wild cell: trees on meadow, rocks on stone, reeds on the shore, bollards along paths
+const nnWild = (X, Y, o = {}) => { const tree = o.pine ?? 0.4, dens = o.dens ?? 0.045;
+  for (let y = Y; y < Y + 30; y++) for (let x = X; x < X + 30; x++) { const c = at(x, y), h = nh(x, y), O = { x: x + 0.2 + nh(x, y, 1) * 0.6, z: y + 0.2 + nh(x, y, 2) * 0.6 };
+    let wN = 0, pN = 0; for (const [dx, dy] of [[1, 0], [-1, 0], [0, 1], [0, -1]]) { const n = at(x + dx, y + dy); if (n === "w") wN++; if (n === "," || n === "p" || n === "k" || n === "P") pN++; }
+    if (c === "g") { if (wN && h < 0.3) nnReeds(O); else if (!pN && h < dens) (nh(x, y, 8) < tree ? nnPine : nnRound)(O, 0.8 + nh(x, y, 4) * 0.6); else if (!pN && h > 0.985) nnShroom(O); else if (h > 0.97 && h <= 0.985) nnRock(O, 0.6); }
+    else if (c === ".") { if (h < (o.rocks ?? 0.05)) nnRock(O, 0.7 + nh(x, y, 4) * 0.9); else if (h > 0.993 && (o.pine ?? 0) > 0) nnPine(O, 0.7); }
+    else if (c === "," && ((x * 7 + y * 13) % 17 === 0)) { let side = null; for (const [dx, dy] of [[1, 0], [-1, 0], [0, 1], [0, -1]]) if ("g.".includes(at(x + dx, y + dy))) side = [dx, dy]; if (side) nnBollard({ x: x + 0.5 + side[0] * 0.45, z: y + 0.5 + side[1] * 0.45 }); } } };
+
+// ================= MOUNT LUMEN (four cells, x 10..69, z -30..29): a peak right beside the city with a trail that winds to a lookout =================
+const MTC = [40, -2], MTH = 18, MTR = (() => { const P = [], t0 = Math.atan2(17, 24), turns = 1.6; for (let i = 0; i <= 400; i++) { const t = i / 400, th = t0 - t * turns * TAU, r = 29.5 - 25 * t; P.push([MTC[0] + Math.cos(th) * r, MTC[1] + Math.sin(th) * r]); } return P; })();
+const mtBase = (r) => { const t = Math.min(1, Math.max(0, (31 - r) / 26)); return MTH * t * t * (3 - 2 * t); };
+// nearest point on the trail: distance and how far along it is (0 at the trailhead, 1 at the summit)
+const mtNear = (x, z) => { let d = 1e9, best = 0; for (let i = 0; i + 1 < MTR.length; i++) { const dd = segD(x, z, MTR[i][0], MTR[i][1], MTR[i + 1][0], MTR[i + 1][1]); if (dd < d) { d = dd; best = i / (MTR.length - 1); } } return [d, best]; };
+// the slope is a smooth dome with a little noise; the trail is cut into it as a level bench so it never tilts sideways
+const nnMountH = (x, z) => { if (x < 8 || x > 72 || z < -32 || z > 32) return 0; const r = Math.hypot(x - MTC[0], z - MTC[1]); if (r > 31) return 0; const base = mtBase(r), t = Math.min(1, Math.max(0, (31 - r) / 26)), s = t * t * (3 - 2 * t);
+  if (r < 3) return base; const [d, u] = mtNear(x, z), bump = r > 5 && r < 27 ? fbm(x * 0.12, z * 0.12, 8.3, 2) * 1.6 * s * Math.min(1, d / 4) : 0, h = base + bump; if (d > 3.6) return h;
+  const ht = mtBase(29.5 - 25 * u), w = d < 1.9 ? 1 : 1 - (d - 1.9) / 1.7; return h + (ht - h) * w * w * (3 - 2 * w); };
+const mtTile = (x, y) => { const r = Math.hypot(x + 0.5 - MTC[0], y + 0.5 - MTC[1]); if (r > 31.5) return "g"; if (r < 4.6) return "P"; if (polyD(x + 0.5, y + 0.5, MTR) < 1.7) return ","; return r < 13 ? "." : r < 15 && nh(x, y, 11) < 0.5 ? "." : "g"; };
+const mtBuild = (X, Y, o) => { nnWild(X, Y, { pine: 0.85, dens: 0.07, rocks: 0.07 });
+  for (let i = 18; i < MTR.length - 6; i += 22) { const [ax, az] = MTR[i], [bx, bz] = MTR[i + 1]; if (ax < X || ax >= X + 30 || az < Y || az >= Y + 30) continue; const nx = -(bz - az), nz = bx - ax, L = Math.hypot(nx, nz) || 1, s = i % 44 ? 1 : -1; nnBollard({ x: ax + (nx / L) * 1.9 * s, z: az + (nz / L) * 1.9 * s }); } };
+TS({ id: "M1", gx: 10, gy: -30, name: "Mount Lumen North Face", wild: true, ground(X, Y) { nnArea(X, Y, mtTile); }, build(X, Y) { mtBuild(X, Y); tallGrass(X + 12, Y + 18, 4, 3.5, "glitch", { name: "Mount Lumen ridge grass" }); } });
+TS({ id: "M2", gx: 40, gy: -30, name: "Mount Lumen Summit", wild: true, ground(X, Y) { nnArea(X, Y, mtTile); },
+  build(X, Y) { mtBuild(X, Y); const cx = MTC[0], cz = MTC[1];
+    // the lookout: a rail around the summit with a gap where the trail arrives, benches and a telescope facing the city lights to the east
+    const tEnd = MTR[MTR.length - 1], aEnd = Math.atan2(tEnd[1] - cz, tEnd[0] - cx); for (let k = 0; k < 12; k++) { const a0 = ((k - 0.5) / 12) * TAU + aEnd, a1 = a0 + TAU / 12; if (k === 0) continue; nnRail(cx + Math.cos(a0) * 4.3, cz + Math.sin(a0) * 4.3, cx + Math.cos(a1) * 4.3, cz + Math.sin(a1) * 4.3, NC[k % 2 ? 1 : 0]); }
+    nnBench(cx + 1.6, cz + 2.2, Math.PI / 2 + 0.5); nnBench(cx + 2.4, cz - 0.6, Math.PI / 2); nnBench(cx + 1.4, cz - 3.0, Math.PI / 2 - 0.5);
+    { const G = grp(cx + 3.3, 0, cz + 0.9, Math.PI / 2); add(new THREE.CylinderGeometry(0.06, 0.08, 1.2, 8), nnM.dark(), [0, 0.6, 0], [0, 0, 0], null, G); add(new THREE.CylinderGeometry(0.13, 0.18, 0.9, 12), nnM.chrome(), [0, 1.3, 0.1], [1.2, 0, 0], "nocol", G); add(new THREE.TorusGeometry(0.16, 0.03, 6, 16), nnM.neon(NC[1]), [0, 1.5, 0.48], [1.2 - Math.PI / 2, 0, 0], "nocol", G); }
+    nnRelay(cx - 0.5, cz - 3.2, 11); nnQuest(cx - 2.2, cz + 2.4, "lumen-beacon", "Relight the Lumen Beacon", Math.PI / 2);
+    tallGrass(X + 8, Y + 8, 4, 3.4, "neon", { name: "Mount Lumen high meadow" }); } });
+TS({ id: "M3", gx: 10, gy: 0, name: "Mount Lumen West Slope", wild: true, ground(X, Y) { nnArea(X, Y, mtTile); }, build(X, Y) { mtBuild(X, Y); tallGrass(X + 13, Y + 9, 5, 4, "neon", { name: "West slope grass" }); nnQuest(X + 21, Y + 22, "lost-hiker", "Find the lost hiker", 0.6); } });
+TS({ id: "M4", gx: 40, gy: 0, name: "Mount Lumen Trailhead", hub: [22, 15], wild: true,
+  ground(X, Y) { nnArea(X, Y, mtTile); fillT(X + 20, Y + 12, X + 29, Y + 18, ","); ellT(X + 24, Y + 15, 3, 3, "P"); fillT(X + 12, Y + 26, X + 23, Y + 27, ","); },
+  bld: [["n_home2", 13, 19, 9, 7, "Trailhead Lodge"]],
+  build(X, Y) { mtBuild(X, Y); nnArch(X + 22.5, Y + 15, Math.PI / 2, 6.5, 4.6, NC[1]); nnLamp(X + 26, Y + 12.4, Math.PI, NC[0]); nnLamp(X + 26, Y + 17.6, 0, NC[0]); nnBillboard(X + 27.2, Y + 21, -Math.PI / 2, 3.4, 1.8, 1.2, 2);
+    nnBench(X + 24, Y + 19, 0); nnPlanter(X + 20.8, Y + 11.8, NC[3]); tallGrass(X + 8, Y + 22, 4, 3.4, "neon", { name: "Trailhead meadow" }); } });
+
+// ================= LUMEN PARK (five cells, x 40..99, z 60..149): a lake with an island, bridges, meadows and woods =================
+const PK1 = [[62, 90, 13, 10], [80, 102, 9, 7], [84, 113, 4, 6], [86, 125, 5.5, 9]];
+const pk1E = (x, y) => { let e = 9; for (const [cx, cy, rx, ry] of PK1) e = Math.min(e, Math.hypot((x - cx) / rx, (y - cy) / ry)); return e + fbm(x * 0.15, y * 0.15, 3.3, 2) * 0.12; };
+const PK1S = [[[54, 66], [57, 79]], [[96, 105], [90.5, 104]], [[85, 142], [86, 135.5]], [[50, 108], [56, 99]], [[90, 78], [74, 86]]];
+const pk1Tile = (x, y) => { const px = x + 0.5, py = y + 0.5, e = pk1E(px, py), isl = Math.hypot(px - 60, py - 89) < 3.6;
+  if (isl) return Math.hypot(px - 60, py - 89) < 1.8 ? "P" : "g";
+  if (e < 1.24 && Math.abs(py - 89) <= 1.5 && px > 62 && px < 79) return "k"; if (e < 1.24 && Math.abs(py - 113) <= 1.5 && px > 77 && px < 92) return "k";
+  if (e < 1) return "w"; if (e > 1.2 && e < 1.42) return ","; for (const [a, b] of PK1S) if (segD(px, py, a[0], a[1], b[0], b[1]) < 1.6) return ",";
+  return nh(x, y, 21) < 0.02 && e > 1.6 ? "." : "g"; };
+const pkBuild = (X, Y) => { nnWild(X, Y, { pine: 0.25, dens: 0.05 }); };
+TS({ id: "P1", gx: 40, gy: 60, name: "Lumen Park North Gate", hub: [14, 6], wild: true,
+  ground(X, Y) { nnArea(X, Y, pk1Tile); ellT(X + 14, Y + 6, 3, 3, "P"); },
+  build(X, Y) { pkBuild(X, Y); const ix = 60, iz = 89; // the island gazebo
+    { const G = grp(ix, 0, iz); for (let k = 0; k < 6; k++) { const a = (k / 6) * TAU; add(new THREE.CylinderGeometry(0.1, 0.1, 2.6, 8), nnM.dark(), [Math.cos(a) * 1.5, 1.3, Math.sin(a) * 1.5], [0, 0, 0], k ? "nocol" : null, G); }
+      add(new THREE.ConeGeometry(2.2, 1.2, 6), thM("gazRoof", () => std({ color: "#5a4a8a", roughness: 0.6 })), [0, 3.2, 0], [0, 0, 0], "nocol", G); add(new THREE.TorusGeometry(1.6, 0.06, 6, 24), nnM.neon(NC[0]), [0, 2.6, 0], [Math.PI / 2, 0, 0], "nocol", G); }
+    nnQuest(ix + 1.2, iz + 1.6, "glowfish", "Feed the lake glowfish", 0); nnArch(X + 14, Y + 3.5, 0, 7, 5, NC[3]); nnBench(X + 11, Y + 8.6, Math.PI / 2); nnBench(X + 17, Y + 8.6, -Math.PI / 2); nnPlanter(X + 11, Y + 4, NC[0]); nnPlanter(X + 17, Y + 4, NC[1]);
+    tallGrass(X + 7, Y + 18, 4.5, 4, "neon", { name: "Lumen Park west meadow" }); } });
+TS({ id: "P2", gx: 70, gy: 60, name: "Lumen Park Boathouse", wild: true, ground(X, Y) { nnArea(X, Y, pk1Tile); fillT(X + 8, Y + 25, X + 18, Y + 27, ","); },
+  bld: [["n_cafe", 9, 18, 9, 7, "Lumen Park Boathouse"]],
+  build(X, Y) { pkBuild(X, Y); nnLights(X + 8, Y + 26.6, X + 18, Y + 26.6, 10); nnBench(X + 20, Y + 27, Math.PI); nnCart(X + 6, Y + 26.5, 0, NC[1]); thBoat(X + 0.5, Y + 26, 0.4, "#ff3ad0");
+    tallGrass(X + 18, Y + 9, 5, 4, "neon", { name: "Lumen Park north meadow" }); } });
+TS({ id: "P3", gx: 40, gy: 90, name: "Lumen Park Woods", wild: true, ground(X, Y) { nnArea(X, Y, pk1Tile); },
+  build(X, Y) { nnWild(X, Y, { pine: 0.6, dens: 0.09 }); tallGrass(X + 9, Y + 20, 5, 4, "neon", { name: "Lumen Park woods grass" }); tallGrass(X + 25, Y + 13, 2.6, 2.2, "canal", { name: "Lumen Park lake reeds" }); nnQuest(X + 8, Y + 22, "lost-kite", "Get the kite down from the tree", 0.4); } });
+TS({ id: "P4", gx: 70, gy: 90, name: "Lumen Park Lake", hub: [26, 15], wild: true, ground(X, Y) { nnArea(X, Y, pk1Tile); },
+  build(X, Y) { pkBuild(X, Y); thBoat(X + 12, Y + 9, 1.2, "#2af0ff"); thBoat(X + 4, Y + 2, -0.4, "#ffe23a");
+    tallGrass(X + 4, Y + 24, 3.6, 3, "canal", { name: "Lumen Park south reeds" }); } });
+TS({ id: "P5", gx: 70, gy: 120, name: "Lumen Park South Gate", hub: [15, 22], wild: true, ground(X, Y) { nnArea(X, Y, pk1Tile); ellT(X + 15, Y + 22, 3, 3, "P"); },
+  build(X, Y) { pkBuild(X, Y); nnArch(X + 15, Y + 25.5, 0, 7, 5, NC[2]); nnBench(X + 12, Y + 19.5, Math.PI / 2); nnVend(X + 18.6, Y + 20, -Math.PI / 2); nnPlay(X + 6, Y + 6);
+    tallGrass(X + 7, Y + 18, 4, 3.5, "neon", { name: "Lumen Park south meadow" }); tallGrass(X + 23, Y + 6, 3, 3, "canal", { name: "Lumen Park inlet reeds" }); } });
+
+// ================= THE CANAL WILDS (four cells, x 190..249, z 120..179): a winding river with marsh, boardwalks and woods =================
+const cwC = (y) => 222 + 9 * Math.sin((y - 120) * 0.085) + 3 * Math.sin(y * 0.21), cwW = (y) => 3.2 + 1.2 * Math.sin(y * 0.13);
+const CWP = [[205, 158, 4, 3], [242, 142, 4, 3]];
+const cwTile = (x, y) => { const px = x + 0.5, py = y + 0.5, d = Math.abs(px - cwC(py)) - cwW(py) + fbm(px * 0.2, py * 0.2, 7.1, 2) * 0.6, pond = CWP.some(([cx, cy, rx, ry]) => Math.hypot((px - cx) / rx, (py - cy) / ry) < 1);
+  if ((Math.abs(py - 141) <= 1.5 || Math.abs(py - 167) <= 1.5) && d < 2) return "k"; if (d < 0 || pond) return "w";
+  if (d > 2.6 && d < 4.4 && py > 126 && py < 178) return ","; for (const [a, b] of [[[197, 135], [cwC(135) - cwW(135) - 3.5, 135]], [[196, 175], [cwC(175) - cwW(175) - 3.5, 175]], [[cwC(150) + 6, 150], [244, 150]]]) if (segD(px, py, a[0], a[1], b[0], b[1]) < 1.6) return ",";
+  return nh(x, y, 31) < 0.015 ? "." : "g"; };
+TS({ id: "Q1", gx: 190, gy: 120, name: "Canal Wilds Gate", hub: [6, 15], wild: true, ground(X, Y) { nnArea(X, Y, cwTile); ellT(X + 6, Y + 15, 2.6, 2.6, "P"); },
+  build(X, Y) { nnWild(X, Y, { pine: 0.3, dens: 0.06 }); nnArch(X + 3.5, Y + 15, Math.PI / 2, 6.5, 4.6, NC[1]); tallGrass(X + 18, Y + 24, 3, 3.5, "canal", { name: "Canal Wilds reed bed" }); tallGrass(X + 9, Y + 5, 4, 3, "neon", { name: "Canal Wilds north meadow" }); } });
+TS({ id: "Q2", gx: 220, gy: 120, name: "Canal Wilds Ranger Station", wild: true, ground(X, Y) { nnArea(X, Y, cwTile); fillT(X + 15, Y + 9, X + 26, Y + 11, ","); },
+  bld: [["n_home2", 16, 2, 9, 7, "Ranger Station"]],
+  build(X, Y) { nnWild(X, Y, { pine: 0.5, dens: 0.07 }); nnLamp(X + 15, Y + 10, Math.PI / 2, NC[1]); nnBench(X + 26.5, Y + 10, -Math.PI / 2); nnQuest(X + 22, Y + 12, "ranger-log", "Return the ranger's logbook", Math.PI);
+    tallGrass(X + 22, Y + 22, 3.4, 3, "canal", { name: "Ranger pond reeds" }); } });
+TS({ id: "Q3", gx: 190, gy: 150, name: "Canal Wilds Marsh", hub: [6, 25], wild: true, ground(X, Y) { nnArea(X, Y, cwTile); ellT(X + 6, Y + 25, 2.6, 2.6, "P"); },
+  build(X, Y) { nnWild(X, Y, { pine: 0.2, dens: 0.05 }); nnQuest(X + 21, Y + 4, "reed-drone", "Find the drone lost in the reeds", 0); tallGrass(X + 15, Y + 8, 3, 3, "canal", { name: "Marsh reeds" }); tallGrass(X + 10, Y + 18, 4, 3, "neon", { name: "Marsh meadow" }); } });
+TS({ id: "Q4", gx: 220, gy: 150, name: "Canal Wilds Deep Woods", wild: true, ground(X, Y) { nnArea(X, Y, cwTile); },
+  build(X, Y) { nnWild(X, Y, { pine: 0.7, dens: 0.1 }); tallGrass(X + 20, Y + 18, 4.5, 4, "glitch", { name: "Deep woods glitch grass" }); tallGrass(X + 6, Y + 6, 3, 3, "canal", { name: "Deep woods reeds" }); } });
+
+// ================= NEW CITY DISTRICTS =================
+TS({ id: "NN", gx: 100, gy: 0, name: "Night Market", hub: [15, 15],
+  ground(X, Y) { tLine(X, Y + 15, X + 29, Y + 15, 6, "p"); fillT(X + 11, Y + 2, X + 18, Y + 10, ","); fillT(X + 2, Y + 20, X + 27, Y + 27, "P"); ellT(X + 26, Y + 25, 2.6, 2.4, "g"); },
+  bld: [["n_noodle", 2, 3, 9, 7, "Midnight Dumplings"], ["n_shop", 19, 3, 9, 7, "Night Market Goods"]],
+  build(X, Y) { for (let k = 0; k < 5; k++) nnCart(X + 4.5 + k * 4.6, Y + 22, 0, NC[k % 4]); for (let k = 0; k < 4; k++) nnCart(X + 6.8 + k * 4.6, Y + 26.4, Math.PI, NC[(k + 2) % 4]);
+    nnLights(X + 2, Y + 20.5, X + 27, Y + 20.5, 20); nnLights(X + 2, Y + 24.2, X + 27, Y + 24.2, 20); nnLights(X + 11, Y + 2.5, X + 18, Y + 9.5, 8); nnArcadeCab(X + 12, Y + 3, 0); nnArcadeCab(X + 13.2, Y + 3, 0); nnVend(X + 17, Y + 3, 0);
+    nnBillboard(X + 15, Y + 0.6, 0, 6, 2.6, 6.5, 2); nnQuest(X + 15, Y + 6.5, "lantern-vendor", "Help the missing lantern vendor", Math.PI); tallGrass(X + 26, Y + 25, 2, 2, "neon", { name: "Night Market planter grass" }); } });
+TS({ id: "ND", gx: 130, gy: -30, name: "Data Vault", hub: [15, 15], keep: [[18, 2, 28, 9]],
+  ground(X, Y) { ellT(X + 10, Y + 14, 7, 4.2, "P"); ellT(X + 22, Y + 24, 4.5, 3.4, "g"); tLine(X + 16.5, Y + 18.5, X + 21, Y + 22.5, 3.4, ","); },
+  bld: [["n_court", 3, 3, 11, 7, "Data Vault Lobby"]],
+  build(X, Y) { nnEqTower(X + 23, Y + 5.5); nnRelay(X + 27, Y + 4, 18); for (let k = 0; k < 4; k++) nnTransformer(X + 18 + k * 2.4, Y + 9.5, Math.PI); nnCables(X + 20, Y + 11);
+    for (const [x, z] of [[5, 13], [15, 13]]) nnHolo(X + x, Y + z, NC[3], 2.6); nnKiosk(X + 10, Y + 17.4, Math.PI); nnQuest(X + 6, Y + 17, "data-shard", "Recover the corrupted data shard", Math.PI);
+    tallGrass(X + 22, Y + 24, 3.6, 2.8, "glitch", { name: "Data Vault glitch garden" }); } });
+TS({ id: "NE", gx: 190, gy: -30, name: "Sky Gardens", hub: [15, 15],
+  ground(X, Y) { ellT(X + 15, Y + 15, 4, 4, "P"); fillT(X + 1, Y + 10, X + 12, Y + 11, ","); tLine(X + 6, Y + 11, X + 13, Y + 15, 3, ","); fillT(X + 19, Y + 3, X + 28, Y + 12, "."); ellT(X + 23.5, Y + 7, 3.4, 2.4, "w");
+    fillT(X + 2, Y + 19, X + 12, Y + 28, "."); ellT(X + 23, Y + 23, 5, 4, "g"); tLine(X + 15, Y + 15, X + 21.5, Y + 9.5, 3.4, ","); },
+  bld: [["n_home", 2, 3, 8, 7, "Greenhouse Keeper"]],
+  build(X, Y) { nnCrops(X + 2.2, Y + 19.4, X + 11.8, Y + 28.4); for (const [x, z] of [[19.5, 3.5], [28, 3.5], [19.5, 12], [28, 12]]) nnTree(X + x, Y + z, 0.9); for (let k = 0; k < 8; k++) nnFlower(X + 20 + nh(k, 1) * 8, Y + 10 + nh(k, 2) * 2, 1);
+    nnRail(X + 19, Y + 2.8, X + 29, Y + 2.8, "#5affc0"); nnBench(X + 12.5, Y + 15, Math.PI / 2); nnWaterTower(X + 3, Y + 15); nnQuest(X + 25, Y + 19.5, "glow-bloom", "Find the rare glow bloom", Math.PI);
+    tallGrass(X + 23, Y + 23, 4, 3.2, "neon", { name: "Sky Gardens meadow" }); } });
+TS({ id: "NT", gx: 190, gy: 0, name: "Skybridge Terrace", hub: [15, 15],
+  ground(X, Y) { fillT(X + 18, Y + 6, X + 28, Y + 24, "P"); ellT(X + 7, Y + 25, 4.5, 3, "g"); fillT(X + 6, Y + 19, X + 8, Y + 22, ","); },
+  bld: [["n_cafe", 2, 3, 9, 7, "Terrace Cafe"]],
+  build(X, Y) { nnRail(X + 28.8, Y + 6, X + 28.8, Y + 24, NC[1]); nnRail(X + 18, Y + 24.6, X + 28.8, Y + 24.6, NC[1]); for (const z of [9, 15, 21]) nnBench(X + 27.2, Y + z, -Math.PI / 2);
+    for (const z of [12, 18]) { const G = grp(X + 28, 0, Y + z, -Math.PI / 2); add(new THREE.CylinderGeometry(0.06, 0.08, 1.2, 8), nnM.dark(), [0, 0.6, 0], [0, 0, 0], null, G); add(new THREE.CylinderGeometry(0.12, 0.16, 0.8, 12), nnM.chrome(), [0, 1.3, 0.1], [1.2, 0, 0], "nocol", G); }
+    nnHolo(X + 21, Y + 8, NC[0], 3); nnBillboard(X + 23, Y + 5.4, 0, 6, 2.6, 4.2, 0); nnQuest(X + 25, Y + 12, "telescope", "Fix the broken telescope", -Math.PI / 2);
+    tallGrass(X + 7, Y + 25, 3.4, 2.2, "neon", { name: "Terrace lawn" }); } });
+TS({ id: "NX", gx: 220, gy: 30, name: "Neon Pier", hub: [8, 17],
+  ground(X, Y) { fillT(X + 16, Y, X + 29, Y + 29, "w"); fillT(X, Y + 11, X + 14, Y + 23, "P"); fillT(X + 13, Y + 2, X + 15, Y + 28, "s"); tLine(X + 12, Y + 17, X + 27, Y + 17, 4, "k", "w"); tLine(X + 20, Y + 17, X + 20, Y + 27, 3.4, "k", "w"); ellT(X + 6, Y + 26, 4, 2.6, "g"); },
+  bld: [["n_noodle", 2, 3, 9, 7, "Pier Fish Shack"]],
+  build(X, Y) { thBoat(X + 24, Y + 21, 0.1, "#ff3ad0"); thBoat(X + 23.5, Y + 12.5, -0.1, "#2af0ff"); thBoat(X + 25, Y + 25, 1.4, "#ffe23a"); for (let k = 0; k < 6; k++) thCrate(X + 2 + (k % 3) * 0.9, Y + 20.5 + Math.floor(k / 3) * 0.9, 0.7);
+    for (const z of [5, 11, 23]) nnLamp(X + 14.6, Y + z, -Math.PI / 2, NC[1]); nnRail(X + 15.8, Y + 2, X + 15.8, Y + 15, NC[1]); nnRail(X + 15.8, Y + 19.6, X + 15.8, Y + 28, NC[1]); nnLights(X + 14, Y + 17, X + 27, Y + 17, 14);
+    nnCart(X + 6, Y + 13, 0, NC[2]); nnBench(X + 10, Y + 22.5, Math.PI); nnQuest(X + 26.5, Y + 16, "pier-fishing", "Win the pier fishing contest", -Math.PI / 2); tallGrass(X + 6, Y + 26, 3.2, 2, "canal", { name: "Pier shore grass" }); } });
+TS({ id: "N3", gx: 190, gy: 60, name: "Power Station", hub: [11, 15], keep: [[13, 9, 29, 27]],
+  ground(X, Y) { ellT(X + 11, Y + 15, 3.5, 3.5, "P"); fillT(X + 13, Y + 10, X + 28, Y + 26, ","); ellT(X + 4, Y + 6, 3, 3.6, "g"); fillT(X + 4, Y + 8, X + 8, Y + 10, ","); },
+  bld: [["n_studio", 18, 3, 10, 7, "Grid Control Room"]],
+  build(X, Y) { for (let k = 0; k < 3; k++) for (let j = 0; j < 2; j++) nnTransformer(X + 17 + k * 4, Y + 13 + j * 6, 0); nnEqTower(X + 26, Y + 22); for (let k = 0; k < 3; k++) nnCables(X + 16 + k * 4, Y + 16);
+    nnRail(X + 13.5, Y + 10, X + 28.8, Y + 10, "#ffe23a"); nnRail(X + 13.5, Y + 26.6, X + 28.8, Y + 26.6, "#ffe23a"); nnQuest(X + 15, Y + 24, "transformer", "Calm the overloaded transformer", Math.PI / 2);
+    tallGrass(X + 4, Y + 6, 2.6, 3, "glitch", { name: "Power Station verge" }); } });
+TS({ id: "N4", gx: 100, gy: 90, name: "Hologram Park", hub: [15, 15],
+  ground(X, Y) { ellT(X + 15, Y + 15, 6, 6, "P"); fillT(X + 18, Y + 10, X + 27, Y + 12, "P"); fillT(X + 2, Y + 20, X + 9, Y + 28, "."); ellT(X + 24, Y + 24, 4.5, 3.6, "g"); },
+  bld: [["n_cafe", 19, 3, 9, 7, "Holo Tea House"]],
+  build(X, Y) { for (let k = 0; k < 6; k++) { const a = (k / 6) * TAU; nnHolo(X + 15 + Math.cos(a) * 4.2, Y + 15 + Math.sin(a) * 4.2, NC[k % 4], 2.6 + (k % 3) * 0.6); } nnRing(X + 15, Y + 15, 2.2);
+    for (const [x, z] of [[3, 21], [8, 27], [3, 27]]) nnTree(X + x, Y + z, 1); nnBench(X + 6, Y + 24, Math.PI / 2); nnQuest(X + 22, Y + 17.5, "glitched-holo", "Debug the glitched hologram", Math.PI);
+    tallGrass(X + 24, Y + 24, 3.6, 2.8, "glitch", { name: "Hologram Park glitch lawn" }); } });
+TS({ id: "N5", gx: 100, gy: 120, name: "Recycler Yard", hub: [15, 15],
+  ground(X, Y) { fillT(X + 2, Y + 2, X + 11, Y + 11, ","); fillT(X + 18, Y + 10, X + 27, Y + 12, ","); ellT(X + 23, Y + 24, 3.6, 3, "w"); ellT(X + 6, Y + 24, 4, 3.2, "g"); fillT(X + 5, Y + 20, X + 7, Y + 21, ","); },
+  bld: [["n_shop", 19, 3, 9, 7, "Scrap Exchange"]],
+  build(X, Y) { for (let k = 0; k < 14; k++) thCrate(X + 3 + (k % 5) * 1.6 + nh(k, 3) * 0.4, Y + 3 + Math.floor(k / 5) * 2.6, 0.7 + nh(k, 4) * 0.4);
+    { const G = grp(X + 9.5, 0, Y + 9.5); const m = thM("crane", () => std({ color: "#ffb02a", roughness: 0.5, metalness: 0.4 })); add(new THREE.BoxGeometry(0.5, 7, 0.5), m, [0, 3.5, 0], [0, 0, 0], null, G); add(new THREE.BoxGeometry(6, 0.4, 0.4), m, [-2.2, 7, 0], [0, 0, 0], "nocol", G); add(new THREE.CylinderGeometry(0.03, 0.03, 3, 6), nnM.dark(), [-4.6, 5.5, 0], [0, 0, 0], "nocol", G); add(new THREE.BoxGeometry(1.2, 0.5, 1.2), nnM.dark(), [-4.6, 3.8, 0], [0, 0, 0], "nocol", G); }
+    nnTransformer(X + 25, Y + 17.5, -Math.PI / 2); nnQuest(X + 5, Y + 12.6, "power-cell", "Find a working power cell", Math.PI); tallGrass(X + 6, Y + 24, 3.2, 2.6, "neon", { name: "Recycler Yard weeds" }); tallGrass(X + 23, Y + 24, 3, 2.6, "canal", { name: "Recycler ditch reeds", any: true }); } });
+TS({ id: "N7", gx: 130, gy: 120, name: "Lantern Market", hub: [10, 15],
+  ground(X, Y) { fillT(X + 4, Y + 10, X + 24, Y + 20, "P"); ellT(X + 24, Y + 4, 3.6, 3, "g"); fillT(X + 23, Y + 7, X + 25, Y + 9, ","); fillT(X + 17, Y + 22, X + 27, Y + 28, "."); fillT(X + 19, Y + 21, X + 22, Y + 21, ","); },
+  bld: [["n_cafe", 14, 3, 9, 7, "Lantern Tea Room"]],
+  build(X, Y) { for (let k = 0; k < 4; k++) nnLights(X + 4, Y + 11 + k * 2.8, X + 24, Y + 11 + k * 2.8, 18); for (let k = 0; k < 4; k++) nnCart(X + 7 + k * 4.5, Y + 19.2, Math.PI, NC[k % 4]);
+    nnTree(X + 22, Y + 25, 1.3, "#ff7ae0"); for (let k = 0; k < 6; k++) nnFlower(X + 18 + nh(k, 7) * 9, Y + 23 + nh(k, 8) * 5, 1); nnBench(X + 19, Y + 27.4, Math.PI); nnQuest(X + 25.5, Y + 23.5, "old-lanterns", "Relight the old lanterns", -Math.PI / 2);
+    tallGrass(X + 24, Y + 4, 2.8, 2.2, "neon", { name: "Lantern Market garden" }); } });
+TS({ id: "N6", gx: 220, gy: 90, name: "Helix Labs", hub: [8, 13],
+  ground(X, Y) { fillT(X + 4, Y + 10, X + 24, Y + 18, "P"); ellT(X + 24, Y + 24, 5.6, 4.6, "g"); ellT(X + 24, Y + 24, 4, 3.2, "w"); ellT(X + 7, Y + 24, 4.2, 3.6, "g"); fillT(X + 6, Y + 19, X + 8, Y + 21, ","); fillT(X + 21, Y + 19, X + 23, Y + 20, ","); },
+  bld: [["n_helix", 12, 3, 11, 7, "Helix Research Lab"]],
+  build(X, Y) { nnHelixTower(X + 26.5, Y + 6, 18); { const G = grp(X + 16, 0, Y + 14); for (let k = 0; k < 3; k++) add(new THREE.TorusGeometry(0.9 - k * 0.2, 0.08, 8, 32), nnM.neon("#ff7a1a"), [0, 1.8 + k * 0.5, 0], [k * 0.6, k * 0.9, 0], "nocol", G); add(new THREE.CylinderGeometry(0.5, 0.6, 1.2, 12), thMat.white(), [0, 0.6, 0], [0, 0, 0], null, G); }
+    for (const x of [6, 10, 20]) nnPlanter(X + x, Y + 17.4, "#ff7a1a"); nnBench(X + 13, Y + 17.4, Math.PI); nnQuest(X + 21, Y + 21, "escaped-specimen", "Catch the escaped test specimen", Math.PI);
+    tallGrass(X + 7, Y + 24, 3.4, 2.8, "neon", { name: "Helix Labs lawn" }); tallGrass(X + 24, Y + 24, 3, 2.4, "canal", { name: "Helix test pond reeds", any: true }); } });
+TS({ id: "N0", gx: 70, gy: 150, name: "Old Town", hub: [15, 15],
+  ground(X, Y) { fillT(X + 1, Y + 10, X + 10, Y + 12, ","); fillT(X + 20, Y + 10, X + 28, Y + 11, ","); ellT(X + 6, Y + 24, 5.6, 4.6, "g"); ellT(X + 6, Y + 24, 4.2, 3.2, "w"); tLine(X + 2, Y + 24, X + 11, Y + 24, 3.4, "k", "w"); fillT(X + 10, Y + 22, X + 12, Y + 25, ","); ellT(X + 22, Y + 24, 4.6, 3.6, "g"); fillT(X + 12, Y + 19, X + 18, Y + 28, ","); },
+  bld: [["n_home", 2, 3, 8, 7, "Old Town House"], ["n_home2", 20, 3, 8, 7, "Clocktower Flat"]],
+  build(X, Y) { { const G = grp(X + 15, 0, Y + 25.5); add(new THREE.BoxGeometry(2.2, 9, 2.2), FXA.nnA(), [0, 4.5, 0], [0, 0, 0], null, G); add(new THREE.ConeGeometry(1.8, 2.4, 4), thM("clockRoof", () => std({ color: "#5a3a6a", roughness: 0.6 })), [0, 10.2, 0], [0, Math.PI / 4, 0], "nocol", G);
+      for (const [x, z, r] of [[0, 1.12, 0], [0, -1.12, Math.PI], [1.12, 0, Math.PI / 2], [-1.12, 0, -Math.PI / 2]]) { add(new THREE.CircleGeometry(0.7, 20), nnM.neon("#ffe9b0"), [x, 7.6, z], [0, r, 0], "nocol", G); } }
+    for (const [x, z] of [[2, 11], [9, 11], [21, 10.6], [27, 10.6]]) nnLamp(X + x, Y + z, Math.PI, "#ffd890"); nnBench(X + 13, Y + 21, Math.PI / 2); nnBench(X + 17, Y + 21, -Math.PI / 2); nnFlower(X + 12.5, Y + 27, 1); nnFlower(X + 17.5, Y + 27, 1);
+    nnQuest(X + 13.2, Y + 25, "stopped-clock", "Find out why the clock stopped", Math.PI / 2); tallGrass(X + 22, Y + 24, 3.6, 2.8, "neon", { name: "Old Town green" }); tallGrass(X + 6, Y + 21.5, 3, 1.2, "canal", { name: "Old Town pond reeds", any: true }); } });
+
+TLINK.push(["NL", "NN", "p", 15], ["NN", "NQ", "p", 15], ["NU", "ND", "p", -20], ["NU", "NE", "p", -15], ["NE", "NT", "p", 205], ["NO", "NT", "p", 15], ["NV", "NX", "p", 47],
+  ["NV", "N3", "p", 205], ["N3", "NH", "p", 197], ["NH", "N6", "p", 103], ["NM", "N4", "p", 114], ["N4", "N5", "p", 115], ["N5", "N7", "p", 135], ["N7", "NY", "p", 138], ["N5", "NZ", "p", 127],
+  ["NZ", "N0", "p", 165], ["NZ", "N0", "k", 165], ["NL", "M4", "p", 15], ["NS", "P1", "p", 54], ["P4", "N4", "p", 105], ["P5", "N5", "p", 135], ["P5", "N0", "p", 85], ["NW", "Q1", "p", 135], ["NP", "Q3", "p", 176]);
 // small helpers for the new scenes
 const tIsle = (X, Y, cx, cy, r, seed, jungle = 0.5) => { tBlob(X + cx, Y + cy, r, ".", 0.25, seed); if (jungle) tBlob(X + cx, Y + cy, r * jungle, "g", 0.3, seed + 1); };
 const tLamps = (pts, X, Y) => { for (const [x, z] of pts) thLamp(X + x, Y + z); };
@@ -14534,6 +14822,6 @@ buildAll(); if (H && H.all && H.flora !== false) buildFlora();
 if (WALKINS.length) { // last net: no instanced blade, crop or plant may stand in a room or on a doorstep
   const m4 = new THREE.Matrix4(), v = new THREE.Vector3(), z0 = new THREE.Matrix4().makeScale(0, 0, 0), hit = (x, z) => WALKINS.some((w) => { const px = w.G.position.x + w.ox, pz = w.G.position.z + w.oz; return ((x - px) / (w.rx + 0.75)) ** 2 + ((z - pz) / (w.rz + 0.75)) ** 2 < 1 || (Math.abs(x - px) < w.dw / 2 + 0.6 && Math.abs(z - pz) < w.r + 2.4 && ((z - pz) * w.d > 0 || w.back)); });
   root.updateMatrixWorld(true); root.traverse((o) => { if (!o.isInstancedMesh || o.userData.int) return; let n = 0; for (let i = 0; i < o.count; i++) { o.getMatrixAt(i, m4); v.setFromMatrixPosition(m4).applyMatrix4(o.matrixWorld); if (hit(v.x, v.z)) { o.setMatrixAt(i, z0); n++; } } if (n) o.instanceMatrix.needsUpdate = true; }); }
-return { pathguard: PATHGUARD, patches: TGP, places: placeMeta(), outPortals: OUTPORTALS, walkins: WALKINS.map((w) => ({ name: w.name, key: w.key, x: (w.G.position.x + w.ox), y: w.G.position.y, z: (w.G.position.z + w.oz), rx: w.rx, rz: w.rz, dw: w.dw, fh: w.fh, d: w.d, back: !!w.back })), atW, warpXY, unwarp, ght: GHT, flora: FLC.n, object: root, rect: SCN[ids[0] || want].rect, grid: GRID.map((r) => r.join("")), oy: GOY, bounds: [BX0, BZ0, BX1, BZ1], rects: Object.fromEntries(Object.keys(SCN).map((k) => [k, SCN[k].rect])) };
+nnDetailFlush(); return { quests: NNQ, pathguard: PATHGUARD, patches: TGP, places: placeMeta(), outPortals: OUTPORTALS, walkins: WALKINS.map((w) => ({ name: w.name, key: w.key, x: (w.G.position.x + w.ox), y: w.G.position.y, z: (w.G.position.z + w.oz), rx: w.rx, rz: w.rz, dw: w.dw, fh: w.fh, d: w.d, back: !!w.back })), atW, warpXY, unwarp, ght: GHT, flora: FLC.n, object: root, rect: SCN[ids[0] || want].rect, grid: GRID.map((r) => r.join("")), oy: GOY, bounds: [BX0, BZ0, BX1, BZ1], rects: Object.fromEntries(Object.keys(SCN).map((k) => [k, SCN[k].rect])) };
 
 }};
