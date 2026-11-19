@@ -13565,9 +13565,9 @@ const xShack3 = (kind, x0, y0, w, d, o = {}) => { const S = SHACK[kind], ST = FX
   const nw = Math.max(1, S.win || 1), slots = []; for (let k = 0; k < nw; k++) for (const s of [-1, 1]) { const x = s * (dg / 2 + 0.95 + k * 1.25); if (Math.abs(x) > hw - 0.55) continue; slots.push(x); winAt(x, 1.55, hd + 0.2, 0); if (two) winAt(x, fh + 1.3, hd + 0.2, 0); }
   if (ST.roof !== "glass" && !pod) for (const s of [-1, 1]) winAt(s * (hw + 0.2), 1.55, -hd * 0.25, s * Math.PI / 2);
   if (S.awnY || (ST.roof === "pitch" && !ST.store && !ST.clinic && R() < 0.5)) { const x = slots.length ? slots[0] : -(dg / 2 + 0.9); fxCloth(1.5, 0.9, FXA.canvasY(), G, [x, 2.3, hd + 0.62], 0.55); for (const s of [-1, 1]) add(new THREE.CylinderGeometry(0.025, 0.025, 0.7, 4), frame, [x + s * 0.7, 2.05, hd + 0.95], [0.5, 0, 0], "nocol", G); }
-  if (ST.store) { const A = add(new THREE.PlaneGeometry(hw * 2 - 0.4, 1.3, 6, 1), D.awningM(R() < 0.6 ? "#c8321e" : "#3a7a8a", "#f2e6d4"), [0, 2.75, hd + 0.75], [-Math.PI / 2 + 0.5, 0, 0], "nocol", G); A.material.side = THREE.DoubleSide;
-    for (let k = 0; k < Math.round(hw * 2 / 0.5); k++) add(new THREE.CircleGeometry(0.25, 8, Math.PI, Math.PI), D.awningM(k % 2 ? "#f2e6d4" : "#c8321e", "#f2e6d4"), [-hw + 0.45 + k * 0.5, 2.43, hd + 1.32], [0, 0, 0], "nocol", G);
-    const gx = grp(0, ST.roof === "pitch" ? H + 0.55 : H - 0.5, hd + 0.45, 0, G); add(gearGeo(12, 1, 0.3, 0.18), XM.brass(), [0, 0, 0], [0, 0, 0], null, gx).scale.setScalar(0.42); add(new THREE.CircleGeometry(0.12, 12), FXA.amber(), [0, 0, 0.1], [0, 0, 0], "nocol", gx);
+  if (ST.store) { const awC = R() < 0.6 ? "#c8321e" : "#3a7a8a"; if (ST.nnAw) nnXAwnG(cx, cz, hw * 2 - 0.4, hd); else { const A = add(new THREE.PlaneGeometry(hw * 2 - 0.4, 1.3, 6, 1), D.awningM(awC, "#f2e6d4"), [0, 2.75, hd + 0.75], [-Math.PI / 2 + 0.5, 0, 0], "nocol", G); A.material.side = THREE.DoubleSide;
+    for (let k = 0; k < Math.round(hw * 2 / 0.5); k++) add(new THREE.CircleGeometry(0.25, 8, Math.PI, Math.PI), D.awningM(k % 2 ? "#f2e6d4" : "#c8321e", "#f2e6d4"), [-hw + 0.45 + k * 0.5, 2.43, hd + 1.32], [0, 0, 0], "nocol", G); }
+    if (!ST.nnAw) { const gx = grp(0, ST.roof === "pitch" ? H + 0.55 : H - 0.5, hd + 0.45, 0, G); add(gearGeo(12, 1, 0.3, 0.18), XM.brass(), [0, 0, 0], [0, 0, 0], null, gx).scale.setScalar(0.42); add(new THREE.CircleGeometry(0.12, 12), FXA.amber(), [0, 0, 0.1], [0, 0, 0], "nocol", gx); }
     crateP(cx + hw - 0.5, cz + hd + 1.0, 0.55); crateP(cx + hw - 1.15, cz + hd + 1.2, 0.45); fxCanister(-hw + 0.35, hd + 0.8, G); }
   if (ST.clinic) { const C = grp(0, H - 0.75, hd + 0.3, 0, G); box(0, 0, 0, 1.3, 1.3, 0.1, frame, C); box(0, 0, 0.08, 0.95, 0.3, 0.06, FXA.cyan(), C); box(0, 0, 0.08, 0.3, 0.95, 0.06, FXA.cyan(), C); fxCanister(dg / 2 + 0.75, hd + 0.75, G); fxCanister(-dg / 2 - 0.75, hd + 0.75, G); }
   if (two) { // catwalk balcony across the front with a yellow railing, stairs up the right side
@@ -13975,7 +13975,7 @@ Object.assign(FXA, { nnA: () => nnXTri("nnA", "plaster", 0.25, { c: "#7a72c0", r
   orange: () => nnXTri("nnRoof", "roof", 0.25, { c: "#b0a8c8", r: 0.88, m: 0.08 }) });
 Object.assign(FXSTY, { nnHome: { mats: ["nnA", "nnA", "nnD", "nnB"], roof: "flat", frame: "nnFrame", door: "nnDoor", tha: true },
   nnHome2: { mats: ["nnA", "nnD", "nnB"], roof: "flat", frame: "nnFrame", door: "nnDoor", storeys: 2, tha: true },
-  nnShop: { mats: ["nnD", "nnC"], roof: "flat", frame: "nnFrame", door: "nnDoor", store: true, tha: true },
+  nnShop: { mats: ["nnD", "nnC"], roof: "flat", frame: "nnFrame", door: "nnDoor", store: true, tha: true, nnAw: true },
   nnClinic: { mats: ["nnC", "nnA"], roof: "flat", frame: "nnFrame", door: "nnDoor", clinic: true, tha: true },
   nnHall: { mats: ["nnB", "nnD", "nnA"], roof: "flat", frame: "nnFrame", door: "nnDoor", tha: true } });
 for (const [k, st] of Object.entries({ n_home: "nnHome", n_home2: "nnHome2", n_loft: "nnHome2", n_shop: "nnShop", n_noodle: "nnShop", n_cafe: "nnShop", n_clinic: "nnClinic", n_lounge: "nnHall", n_court: "nnHall", n_studio: "nnHall", n_arcade: "nnHall", n_helix: "nnClinic" })) SHACK[k] = { st, win: 1 };
@@ -14164,6 +14164,128 @@ const nnXRelief = (k, x, z, gy, w, d, h) => { const q = nnXR((Math.floor(x * 73.
     for (const zf of [z1, z0]) { const fz = zf > z ? 1 : -1; for (let f = 1; f <= floorsUp && f * 3.2 < h - 1.4; f++) for (let x2 = x0 + bw / 2; x2 < x1 - 0.5; x2 += bw) { if (q() > (k === 3 ? 0.18 : 0.08)) continue;
       const y = gy + f * 3.2 + (k === 3 ? 2.35 : 0.18); nnBx("deco", null, x2, y, zf + fz * 0.22, 0.66, 0.44, 0.42, "#9a9aa8"); nnBx("deco", null, x2, y + 0.06, zf + fz * 0.44, 0.5, 0.3, 0.02, "#3a3a46"); nnBx("deco", null, x2 + 0.36, y - 0.6, zf + fz * 0.04, 0.03, 0.62, 0.03, "#2a2834"); } } }
   if (k === 3 && h > 8 && q() < 0.6) { const s = q() < 0.5 ? -1 : 1; nnCy("deco", null, x + s * (w / 2 - 0.5), gy + 3.4, z1 + 0.16, 0.09, h - 4, "#4a4856"); for (let y = gy + 4; y < top - 1; y += 2.4) nnBx("deco", null, x + s * (w / 2 - 0.5), y, z1 + 0.08, 0.26, 0.06, 0.2, "#2a2834"); } };
+// ---- Neonis street-scale detail: the fountains, gateway arches, shop awnings, street trees, planters, benches and lamps are built up from many
+// small painted parts in the shared batches (no extra draw calls). Every part is placed with nnXP, which turns parts properly when the spot is rotated. ----
+const NNXQ = new THREE.Quaternion(), NNXQ2 = new THREE.Quaternion(), NNXE = new THREE.Euler(), NNXUP = new THREE.Vector3(0, 1, 0), NNXV = new THREE.Vector3();
+const nnXO = (O) => O ? (O._n || (O._n = O.abs ? { abs: true, x: O.x, y: O.y, z: O.z } : { x: O.x, z: O.z, floor: O.floor })) : null;
+const nnXP = (bin, O, gk, lx, ly, lz, sx, sy, sz, col, rx = 0, ry = 0, rz = 0) => { const yaw = (O && O.ry) || 0; let wx = lx, wz = lz;
+  if (yaw) { const c = Math.cos(yaw), s = Math.sin(yaw); wx = lx * c + lz * s; wz = -lx * s + lz * c; NNXQ.setFromEuler(NNXE.set(rx, ry, rz)); NNXQ.premultiply(NNXQ2.setFromAxisAngle(NNXUP, yaw)); NNXE.setFromQuaternion(NNXQ, "XYZ"); rx = NNXE.x; ry = NNXE.y; rz = NNXE.z; }
+  NND[bin].push([gk, nnXO(O), wx, ly, wz, rx, ry, rz, sx, sy, sz, col]); };
+const nnXB = (bin, O, x, y0, z, w, h, d, col, rx = 0, ry = 0, rz = 0) => nnXP(bin, O, "box", x, y0 + h / 2, z, w, h, d, col, rx, ry, rz);
+const nnXC = (bin, O, x, y0, z, r, h, col, gk = "cyl") => nnXP(bin, O, gk, x, y0 + h / 2, z, r * 2, h, r * 2, col);
+const nnXBeam = (bin, O, a, b, r, col, gk = "cyl") => { NNXV.set(b[0] - a[0], b[1] - a[1], b[2] - a[2]); const L = NNXV.length(); if (L < 1e-4) return; NNXQ.setFromUnitVectors(NNXUP, NNXV.normalize()); NNXE.setFromQuaternion(NNXQ, "XYZ");
+  nnXP(bin, O, gk, (a[0] + b[0]) / 2, (a[1] + b[1]) / 2, (a[2] + b[2]) / 2, r * 2, L, r * 2, col, NNXE.x, NNXE.y, NNXE.z); };
+const nnXRing = (bin, O, x, y, z, r, tube, col) => nnXP(bin, O, "ring", x, y, z, r * 2, tube / 0.1, r * 2, col);
+const NNXSTONE = "#5a5478", NNXCAP = "#b4aed0", NNXDARK = "#1e1c2a", NNXSTEEL = "#a8acc0", NNXWATER = "#1a6a8a", NNXSPRAY = "#c8f6ff";
+
+// ---- the plaza fountain: stepped plinth, a basin with ribs, coping and lit water, eight arcing jets, a spilling upper bowl,
+// a ring of segmented light meters (the old equalizer bars) and a fluted spire crowned by a framed diamond with a halo ----
+const nnXFountain = (x, z) => { const O = { x, z }, q = nnXR(Math.floor(x * 37) * 131 + Math.floor(z * 53)), R0 = 2.6;
+  add(new THREE.CylinderGeometry(R0, R0 + 0.1, 0.7, 32), nnXTri("nnFStone", "plaster", 0.4, { c: "#7a72a4", r: 0.5, m: 0.08 }), [x, 0.35, z], [0, 0, 0], null);
+  nnXC("lit", O, 0, 0, 0, R0 + 0.45, 0.16, "#2c2a3c"); nnXC("lit", O, 0, 0.16, 0, R0 + 0.25, 0.1, "#4a4664"); nnXRing("glow", O, 0, 0.2, 0, R0 + 0.3, 0.03, NC[1]);
+  nnXC("lit", O, 0, 0.68, 0, R0 + 0.12, 0.12, NNXCAP, "pad"); nnXC("lit", O, 0, 0.8, 0, R0 + 0.06, 0.04, "#d0cae8", "pad");
+  nnXC("glow", O, 0, 0.52, 0, R0 - 0.12, 0.04, NNXWATER, "pad"); for (const [r, c] of [[2.15, "#3aa8c8"], [1.7, "#2a8ab0"], [1.95, "#5ad0f0"]]) nnXRing("glow", O, 0, 0.575, 0, r, 0.012, c);
+  for (let k = 0; k < 20; k++) { const a = (k / 20) * TAU; nnXB("lit", O, Math.cos(a) * (R0 + 0.06), 0.12, Math.sin(a) * (R0 + 0.06), 0.16, 0.5, 0.06, "#3a3456", 0, -a + Math.PI / 2); }
+  nnXRing("glow", O, 0, 0.42, 0, R0 + 0.1, 0.035, NC[3]);
+  for (let k = 0; k < 4; k++) { const a = (k / 4) * TAU + Math.PI / 4; nnXB("lit", O, Math.cos(a) * (R0 + 0.36), 0.16, Math.sin(a) * (R0 + 0.36), 0.36, 0.14, 0.24, NNXDARK, 0, -a); nnXB("glow", O, Math.cos(a) * (R0 + 0.36), 0.3, Math.sin(a) * (R0 + 0.36), 0.26, 0.02, 0.14, "#fff0d0", 0, -a); }
+  for (let k = 0; k < 8; k++) { const a = (k / 8) * TAU + 0.2, ca = Math.cos(a), sa = Math.sin(a); nnXB("lit", O, ca * (R0 - 0.08), 0.74, sa * (R0 - 0.08), 0.18, 0.16, 0.22, NNXSTEEL, 0, -a);
+    for (let i = 1; i <= 8; i++) { const t = i / 9, r = (R0 - 0.2) * (1 - t) + 1.25 * t, y = 0.86 + t * (1 - t) * 4.2 - t * 0.4; nnXP("glow", O, "sph", ca * r, y, sa * r, 0.13 - t * 0.05, 0.13 - t * 0.05, 0.13 - t * 0.05, i % 3 ? NNXSPRAY : "#ffffff"); }
+    nnXRing("glow", O, ca * 1.25, 0.58, sa * 1.25, 0.18, 0.012, "#9ae8ff"); }
+  nnXC("lit", O, 0, 0.55, 0, 0.62, 1.3, "#3a3456", "cyl"); for (let k = 0; k < 8; k++) { const a = (k / 8) * TAU; nnXB("lit", O, Math.cos(a) * 0.6, 0.6, Math.sin(a) * 0.6, 0.1, 1.2, 0.1, "#4e4870", 0, -a); }
+  nnXP("lit", O, "cone", 0, 1.95, 0, 3.0, 0.55, 3.0, "#6a6290", Math.PI); nnXC("lit", O, 0, 2.18, 0, 1.52, 0.1, NNXCAP, "pad"); nnXC("glow", O, 0, 2.21, 0, 1.4, 0.03, "#2a8ab0", "pad");
+  for (let k = 0; k < 28; k++) { const a = (k / 28) * TAU, len = 1.3 + q() * 0.25; nnXB("glow", O, Math.cos(a) * 1.55, 2.2 - len, Math.sin(a) * 1.55, 0.09 + q() * 0.06, len, 0.02, k % 3 ? "#8ae8ff" : "#d0f8ff", 0, -a + Math.PI / 2); }
+  const meter = [NC[1], NC[1], "#5ab0ff", NC[3], NC[3], "#d04aff", NC[0], NC[0], "#ff7aa8", NC[2]];
+  for (let k = 0; k < 12; k++) { const a = (k / 12) * TAU, ca = Math.cos(a), sa = Math.sin(a), h = 1.2 + Math.abs(Math.sin(k * 1.7)) * 2.8, r = 1.02;
+    nnXB("lit", O, ca * r, 2.24, sa * r, 0.3, h, 0.3, NNXDARK, 0, -a); nnXB("lit", O, ca * r, 2.24 + h, sa * r, 0.36, 0.06, 0.36, NNXSTEEL, 0, -a);
+    const n = Math.floor((h - 0.1) / 0.22); for (let i = 0; i < n; i++) nnXB("glow", O, ca * (r + 0.155), 2.3 + i * 0.22, sa * (r + 0.155), 0.2, 0.15, 0.02, meter[Math.min(9, Math.floor((i / Math.max(1, n - 1)) * 9.99 * (h / 4)))], 0, -a + Math.PI / 2); }
+  nnXC("lit", O, 0, 2.2, 0, 0.4, 5.0, "#2a2840", "cyl12"); for (let y = 2.9; y < 7.1; y += 0.85) nnXC("lit", O, 0, y, 0, 0.45, 0.08, NNXSTEEL, "cyl12");
+  for (let k = 0; k < 6; k++) { const a = (k / 6) * TAU; nnXB("glow", O, Math.cos(a) * 0.41, 2.4, Math.sin(a) * 0.41, 0.05, 4.6, 0.05, NC[1], 0, -a); }
+  nnXP("lit", O, "cone", 0, 7.45, 0, 1.1, 0.5, 1.1, "#3a3456"); nnXC("lit", O, 0, 7.15, 0, 0.6, 0.1, NNXCAP, "cyl12"); nnXRing("glow", O, 0, 7.28, 0, 0.6, 0.03, NC[0]);
+  const DY = 8.35, Dw = 0.62, Dh = 0.95; nnXP("glow", O, "oct", 0, DY, 0, Dw * 2, Dh * 2, Dw * 2, NC[1]); nnXP("glow", O, "oct", 0, DY, 0, Dw * 1.15, Dh * 1.15, Dw * 1.15, "#e8ffff");
+  const V = [[Dw, 0, 0], [-Dw, 0, 0], [0, 0, Dw], [0, 0, -Dw]].map(([a, b, c]) => [a * 1.06, DY + b, c * 1.06]), T = [0, DY + Dh * 1.06, 0], B = [0, DY - Dh * 1.06, 0];
+  for (const v of V) { nnXBeam("lit", O, v, T, 0.03, NNXSTEEL); nnXBeam("lit", O, v, B, 0.03, NNXSTEEL); } for (const [i, j] of [[0, 2], [2, 1], [1, 3], [3, 0]]) nnXBeam("lit", O, V[i], V[j], 0.03, NNXSTEEL);
+  nnXP("glow", O, "ring", 0, DY, 0, 2.6, 0.5, 2.6, NC[0], 0.35, 0, 0.2); for (let k = 0; k < 4; k++) { const a = (k / 4) * TAU + 0.4; nnXP("glow", O, "oct", Math.cos(a) * 1.35, DY + Math.sin(a * 2) * 0.3, Math.sin(a) * 1.35, 0.26, 0.4, 0.26, NC[(k + 2) % 4]); }
+  return null; };
+
+// ---- gateway arches over the road: plinths with bolts, steel pillars with twin neon tubes in clamps, knee braces, a lattice truss beam
+// with a lit name board on both faces, hanging spotlights, and faceted gems in prong mounts along the top ----
+const nnXArch = (x, z, ry, span, h, c) => { const O = { x, z, ry }, q = nnXR(Math.floor(x * 41) * 97 + Math.floor(z * 67)), hs = span / 2;
+  for (const s of [-1, 1]) { const px = s * hs; add(new THREE.BoxGeometry(0.46, h, 0.46), nnM.dark(), [0, 0, 0], [0, 0, 0], null, grp(x + Math.cos(ry) * px, h / 2, z - Math.sin(ry) * px, ry));
+    nnXB("lit", O, px, 0, 0, 0.95, 0.5, 0.95, "#2c2a3c"); nnXB("lit", O, px, 0.5, 0, 1.02, 0.08, 1.02, "#8a86a0"); for (const [a, b] of [[-0.36, -0.36], [0.36, -0.36], [-0.36, 0.36], [0.36, 0.36]]) nnXC("lit", O, px + a, 0.58, b, 0.05, 0.07, NNXSTEEL, "cyl6");
+    for (const [a, b] of [[-0.24, -0.24], [0.24, -0.24], [-0.24, 0.24], [0.24, 0.24]]) nnXB("lit", O, px + a, 0.58, b, 0.05, h - 1.0, 0.05, NNXSTEEL);
+    for (const fz of [-1, 1]) { for (const o of [-0.09, 0.09]) nnXC("glow", O, px + o, 0.7, fz * 0.25, 0.035, h - 1.4, c); for (let y = 1.1; y < h - 0.8; y += 0.85) nnXB("lit", O, px, y, fz * 0.255, 0.3, 0.06, 0.05, NNXSTEEL); }
+    nnXB("lit", O, px, h - 0.42, 0, 0.66, 0.24, 0.66, "#3a3652"); nnXB("lit", O, px, h - 0.48, 0, 0.72, 0.06, 0.72, NNXSTEEL);
+    for (const fz of [-0.16, 0.16]) nnXBeam("lit", O, [px - s * 0.25, h - 1.6, fz], [px - s * 1.4, h - 0.2, fz], 0.05, "#3a3652", "box"); }
+  const W = span + 0.7, yb = h - 0.15, yt = h + 0.65; for (const fz of [-0.2, 0.2]) { nnXB("lit", O, 0, yt, fz, W, 0.14, 0.12, "#26243a"); nnXB("lit", O, 0, yb, fz, W, 0.16, 0.12, "#26243a"); }
+  nnXB("lit", O, 0, yt + 0.14, 0, W, 0.05, 0.52, NNXSTEEL); const nb = Math.max(4, Math.round(span / 1.1));
+  for (let i = 0; i <= nb; i++) { const u = -hs - 0.2 + (i / nb) * (span + 0.4); for (const fz of [-0.2, 0.2]) { nnXB("lit", O, u, yb + 0.16, fz, 0.07, yt - yb - 0.16, 0.07, "#3a3652"); if (i < nb) { const u2 = -hs - 0.2 + ((i + 1) / nb) * (span + 0.4); nnXBeam("lit", O, i % 2 ? [u, yb + 0.16, fz] : [u, yt, fz], i % 2 ? [u2, yt, fz] : [u2, yb + 0.16, fz], 0.025, "#5a5674"); } } }
+  for (const fz of [-1, 1]) nnXB("glow", O, 0, yb - 0.03, fz * 0.27, W - 0.4, 0.05, 0.03, c);
+  const bw = Math.min(span * 0.42, 4.2), by = yb + 0.12, bh = yt - yb + 0.1; nnXB("lit", O, 0, by, 0, bw, bh, 0.5, "#14121c");
+  for (const fz of [-1, 1]) { const zz = fz * 0.26; nnXB("glow", O, 0, by, zz, bw, 0.05, 0.02, c); nnXB("glow", O, 0, by + bh - 0.05, zz, bw, 0.05, 0.02, c); for (const s of [-1, 1]) nnXB("glow", O, s * (bw / 2 - 0.025), by, zz, 0.05, bh, 0.02, c);
+    let u = -bw / 2 + 0.3; while (u < bw / 2 - 0.4) { const lw = 0.14 + q() * 0.28; nnXB("glow", O, u + lw / 2, by + 0.2 + q() * 0.06, zz + fz * 0.005, lw, 0.24 + q() * 0.12, 0.015, q() < 0.75 ? "#fff0fa" : NC[(Math.floor(q() * 4))]); u += lw + 0.08 + (q() < 0.2 ? 0.16 : 0); } }
+  for (const u of [-hs * 0.62, -hs * 0.3, hs * 0.3, hs * 0.62]) { nnXB("lit", O, u, yb - 0.32, 0, 0.04, 0.32, 0.04, NNXDARK); nnXP("lit", O, "cone", u, yb - 0.42, 0, 0.3, 0.24, 0.3, NNXDARK, Math.PI); nnXC("glow", O, u, yb - 0.56, 0, 0.1, 0.02, "#fff4d8"); }
+  for (let k = 0; k < 7; k++) { const u = -span / 2 + 1 + k * (span - 2) / 6, y = yt + 0.19, gc = NC[k % 4]; nnXC("lit", O, u, y, 0, 0.05, 0.3, NNXSTEEL, "cyl6"); nnXC("lit", O, u, y + 0.28, 0, 0.12, 0.06, NNXSTEEL, "cyl6");
+    nnXP("lit", O, "oct", u, y + 0.82, 0, 0.66, 0.92, 0.14, "#2a2838"); nnXP("glow", O, "oct", u, y + 0.82, 0, 0.56, 0.8, 0.22, gc); nnXP("glow", O, "oct", u, y + 0.86, 0, 0.22, 0.34, 0.26, "#ffffff");
+    for (const s of [-1, 1]) nnXBeam("lit", O, [u, y + 0.34, 0], [u + s * 0.22, y + 0.66, 0], 0.018, NNXSTEEL); }
+  return null; };
+
+// ---- shop awnings: striped canvas in panels, a hemmed valance with scallops, a steel frame with side arms, wall rail and struts, lit underneath ----
+const nnXAwn = (O, w, yTop, depth, slope, ac, sc) => { const n = Math.max(3, Math.round(w / 0.42)), sw = w / n, cs = Math.cos(slope), sn = Math.sin(slope), zc = 0.04 + (depth / 2) * cs, yc = yTop - (depth / 2) * sn, zf = 0.04 + depth * cs, yf = yTop - depth * sn, lt = nnXHex(ac, 0.45); ac = nnXHex(ac, 0.1);
+  for (let i = 0; i < n; i++) { const u = -w / 2 + sw * (i + 0.5), col = i % 2 ? lt : ac; nnXP("deco", O, "box", u, yc, zc, sw + 0.002, 0.035, depth, col, slope);
+    nnXP("deco", O, "box", u, yf - 0.12, zf, sw + 0.002, 0.24, 0.03, col); nnXP("deco", O, "cyl", u, yf - 0.24, zf - 0.006, sw * 0.98, 0.026, sw * 0.98, col, Math.PI / 2); }
+  nnXP("deco", O, "box", 0, yf - 0.005, zf + 0.018, w + 0.02, 0.03, 0.012, nnXHex(ac, -0.15));
+  for (const s of [-1, 1]) { nnXBeam("lit", O, [s * w / 2, yTop + 0.03, 0.04], [s * w / 2, yf + 0.03, zf], 0.025, NNXSTEEL, "box"); nnXBeam("lit", O, [s * (w / 2 - 0.15), yTop - 0.75, 0.04], [s * (w / 2 - 0.15), yc - 0.02, zc], 0.018, NNXSTEEL); }
+  nnXP("lit", O, "box", 0, yf + 0.02, zf - 0.02, w + 0.04, 0.04, 0.04, NNXSTEEL); nnXP("lit", O, "box", 0, yTop + 0.06, 0.06, w + 0.12, 0.1, 0.1, "#26243a");
+  for (let u = -w / 2 + 0.6; u < w / 2 - 0.3; u += 1.4) nnXP("lit", O, "box", u, yTop + 0.06, 0.12, 0.08, 0.2, 0.08, NNXSTEEL);
+  nnXP("glow", O, "box", 0, yf - 0.255, zf - 0.04, w - 0.1, 0.03, 0.03, sc); };
+const nnXAwnG = (cx, cz, w, hd) => { const q = nnXR(Math.floor(cx * 31) * 71 + Math.floor(cz * 43)); nnXAwn({ x: cx, z: cz + hd + 0.1 }, w, 3.05, 1.3, 0.5, NNAWN[Math.floor(q() * NNAWN.length)], NC[Math.floor(q() * 4)]);
+  const sy = 3.3, c = NC[Math.floor(q() * 4)], O = { x: cx, z: cz + hd + 0.1 }; nnXB("lit", O, 0, sy, 0.08, 2.2, 0.62, 0.12, NNXDARK); nnXB("glow", O, 0, sy + 0.08, 0.15, 1.9, 0.08, 0.02, c); nnXB("glow", O, 0, sy + 0.46, 0.15, 1.9, 0.04, 0.02, c);
+  for (let u = -0.75; u < 0.8; u += 0.3) nnXB("glow", O, u, sy + 0.2, 0.15, 0.16 + q() * 0.08, 0.2, 0.015, "#fff0fa"); };
+
+// ---- street trees: a planter with a lit rim and grate, a tapering trunk with branches, a canopy of shaded clusters, blossoms and lantern fruit ----
+const nnXCanopy = (O, q, cx, cy, cz, r, cols, glowC, nCl = 8) => { for (let k = 0; k < nCl; k++) { const a = q() * TAU, rr = r * (0.25 + q() * 0.6), yy = (q() - 0.35) * r * 0.9, top = (yy + r * 0.35) / (r * 1.25), sz = r * (0.42 + q() * 0.28), col = nnXHex(cols[Math.floor(q() * cols.length)], -0.06 + top * 0.14);
+    nnXP("lit", O, "ico", cx + Math.cos(a) * rr, cy + yy, cz + Math.sin(a) * rr, sz * 2, sz * 1.6, sz * 2, col, q() * 3, q() * 3, 0); }
+  nnXP("lit", O, "ico", cx, cy + r * 0.15, cz, r * 1.5, r * 1.15, r * 1.5, nnXHex(cols[0], -0.05), 0.3, q() * 3, 0);
+  if (glowC) nnXP("glow", O, "ico", cx, cy - r * 0.42, cz, r * 1.25, r * 0.6, r * 1.25, nnXHex(glowC, 0.08), 0, q() * 3, 0);
+  if (glowC) for (let k = 0; k < 6; k++) { const a = q() * TAU, rr = r * (0.6 + q() * 0.35); nnXP("glow", O, "sph", cx + Math.cos(a) * rr, cy + (q() - 0.3) * r * 0.8, cz + Math.sin(a) * rr, 0.13, 0.13, 0.13, glowC); } };
+const NNXLEAF = { "#ff5ae0": ["#e07ad0", "#f09ae0", "#c85ab8"], "#5af0ff": ["#5ac8d8", "#8ae0e8", "#3aa8b8"], "#b08aff": ["#9a7ae8", "#b89af0", "#7a5ad0"] };
+const nnXStreetTree = (O, c, rs) => { const q = nnXR(Math.floor(O.x * 59) * 113 + Math.floor(O.z * 83));
+  nnXC("lit", O, 0, 0, 0, 0.58, 0.42, "#2a2838", "cyl12"); nnXC("lit", O, 0, 0.42, 0, 0.62, 0.06, NNXCAP, "cyl12"); nnXRing("glow", O, 0, 0.36, 0, 0.6, 0.03, c); nnXC("lit", O, 0, 0.44, 0, 0.52, 0.03, "#2a2234", "cyl12");
+  for (let k = 0; k < 6; k++) { const a = (k / 6) * Math.PI; nnXP("lit", O, "box", 0, 0.47, 0, 1.0, 0.02, 0.04, "#5a566e", 0, a); }
+  nnXP("lit", O, "cone", 0, 1.5, 0, 0.26, 2.2, 0.26, "#2a2440"); nnXC("lit", O, 0, 0.44, 0, 0.11, 2.2, "#3a2a48", "cyl6");
+  for (let k = 0; k < 4; k++) { const a = (k / 4) * TAU + rs[0] * 3; nnXBeam("lit", O, [0, 1.9 + k * 0.18, 0], [Math.cos(a) * 0.6, 2.45 + k * 0.12, Math.sin(a) * 0.6], 0.04, "#3a2a48", "cyl6"); }
+  nnXCanopy(O, q, (rs[1] - 0.5) * 0.4, 2.75, (rs[2] - 0.5) * 0.4, 0.95, NNXLEAF[c] || NNXLEAF["#b08aff"], c, 9);
+  for (let k = 0; k < 3; k++) { const a = q() * TAU, r = 0.5 + q() * 0.3; nnXBeam("lit", O, [Math.cos(a) * r, 2.35, Math.sin(a) * r], [Math.cos(a) * r, 1.95, Math.sin(a) * r], 0.008, NNXDARK); nnXP("glow", O, "oct", Math.cos(a) * r, 1.87, Math.sin(a) * r, 0.12, 0.2, 0.12, "#ffe0a0"); } };
+const nnXPark = (x, z, s, cc) => { const O = { x, z }, q = nnXR(Math.floor(x * 61) * 109 + Math.floor(z * 89)), base = [nnXHex(cc, -0.04), nnXHex(cc, 0.08), nnXHex(cc, -0.12)];
+  for (let k = 0; k < 4; k++) { const a = q() * TAU; nnXBeam("lit", O, [0, (1.3 + k * 0.2) * s, 0], [Math.cos(a) * 0.7 * s, (2.0 + k * 0.15) * s, Math.sin(a) * 0.7 * s], 0.05 * s, "#2a2438", "cyl6"); }
+  for (let k = 0; k < 5; k++) { const a = (k / 5) * TAU + q(); nnXBeam("lit", O, [0, 0.02, 0], [Math.cos(a) * 0.35 * s, 0.0, Math.sin(a) * 0.35 * s], 0.05 * s, "#2a2438", "cyl6"); }
+  nnXCanopy(O, q, 0, 2.75 * s, 0, 1.0 * s, [cc, ...base], cc, 9); };
+const nnXPine = (O, s, c) => { const q = nnXR(Math.floor(O.x * 47) * 71 + Math.floor(O.z * 59)); nnXP("lit", O, "cone", 0, 1.1 * s, 0, 0.3 * s, 2.2 * s, 0.3 * s, "#3a2a2a");
+  for (let k = 0; k < 5; k++) { const w = (2.0 - k * 0.34) * s, y = (0.75 + k * 0.62) * s; nnXP("lit", O, "cone", 0, y, 0, w, 1.0 * s, w, nnXHex(c, -0.06 + k * 0.035), 0, q() * 3, 0); nnXP("lit", O, "cone", 0, y - 0.32 * s, 0, w * 1.04, 0.36 * s, w * 1.04, nnXHex(c, -0.1), 0, q() * 3, 0); } };
+const nnXRound = (O, s, c) => { const q = nnXR(Math.floor(O.x * 43) * 67 + Math.floor(O.z * 71)); nnXP("lit", O, "cone", 0, 0.9 * s, 0, 0.32 * s, 1.8 * s, 0.32 * s, "#3a2a34");
+  for (let k = 0; k < 3; k++) { const a = q() * TAU; nnXBeam("lit", O, [0, 1.2 * s, 0], [Math.cos(a) * 0.55 * s, 1.85 * s, Math.sin(a) * 0.55 * s], 0.05 * s, "#3a2a34", "cyl6"); }
+  nnXCanopy(O, q, 0, 2.1 * s, 0, 0.95 * s, [c, nnXHex(c, -0.06), nnXHex(c, 0.05)], null, 6); };
+
+// ---- planters, benches, lamps ----
+const nnXPlanter = (O, c, leaf) => { const q = nnXR(Math.floor(O.x * 53) * 101 + Math.floor(O.z * 79));
+  nnXB("lit", O, 0, 0.06, 0, 1.06, 0.46, 1.06, "#2e2c40"); nnXB("lit", O, 0, 0, 0, 1.12, 0.07, 1.12, "#1c1a26");
+  for (const [a, b] of [[-0.53, -0.53], [0.53, -0.53], [-0.53, 0.53], [0.53, 0.53]]) nnXB("lit", O, a, 0.0, b, 0.1, 0.56, 0.1, NNXSTEEL);
+  for (const s of [-1, 1]) { nnXB("lit", O, 0, 0.18, s * 0.535, 0.78, 0.22, 0.02, "#3a3852"); nnXB("lit", O, s * 0.535, 0.18, 0, 0.02, 0.22, 0.78, "#3a3852"); }
+  nnXB("lit", O, 0, 0.5, 0, 1.14, 0.05, 1.14, NNXCAP); nnXB("glow", O, 0, 0.47, 0, 1.16, 0.025, 1.16, c); nnXB("lit", O, 0, 0.5, 0, 0.98, 0.03, 0.98, "#2a2030");
+  for (let k = 0; k < 7; k++) { const a = q() * TAU, r = q() * 0.28, sz = 0.26 + q() * 0.18; nnXP("lit", O, "ico", Math.cos(a) * r, 0.68 + q() * 0.3, Math.sin(a) * r, sz * 2, sz * 1.6, sz * 2, nnXHex(leaf, -0.1 + q() * 0.18), q() * 3, q() * 3, 0); }
+  for (let k = 0; k < 5; k++) { const a = q() * TAU, r = 0.25 + q() * 0.2; nnXP("glow", O, "sph", Math.cos(a) * r, 0.8 + q() * 0.4, Math.sin(a) * r, 0.09, 0.09, 0.09, NC[Math.floor(q() * 4)]); } };
+const nnXBench = (O, c) => { for (let k = 0; k < 4; k++) nnXB("lit", O, 0, 0.42, -0.18 + k * 0.125, 1.8, 0.05, 0.1, k % 2 ? "#b0acc8" : "#a4a0bc");
+  for (let k = 0; k < 3; k++) nnXP("lit", O, "box", 0, 0.62 + k * 0.15, -0.27 - k * 0.022, 1.8, 0.1, 0.04, "#a4a0bc", -0.15);
+  for (const s of [-0.78, 0, 0.78]) { nnXB("lit", O, s, 0.37, 0, 0.06, 0.05, 0.5, NNXDARK); nnXP("lit", O, "box", s, 0.68, -0.29, 0.06, 0.62, 0.05, NNXDARK, -0.15); }
+  for (const s of [-0.86, 0.86]) { nnXB("lit", O, s, 0, -0.18, 0.08, 0.42, 0.08, NNXDARK); nnXB("lit", O, s, 0, 0.18, 0.08, 0.42, 0.08, NNXDARK); nnXB("lit", O, s, 0.62, 0.0, 0.08, 0.05, 0.56, NNXDARK); nnXB("lit", O, s, 0.42, 0.24, 0.08, 0.22, 0.06, NNXDARK); nnXB("lit", O, s, 0.0, 0, 0.12, 0.04, 0.58, "#2a2838"); }
+  nnXB("glow", O, 0, 0.35, 0.22, 1.6, 0.025, 0.03, c); nnXB("glow", O, 0, 0.35, -0.22, 1.6, 0.025, 0.03, c); };
+const nnXLamp = (O, c) => { nnXB("lit", O, 0, 0, 0, 0.42, 0.32, 0.42, "#26243a"); nnXB("lit", O, 0, 0.32, 0, 0.46, 0.05, 0.46, NNXSTEEL); for (const [a, b] of [[-0.15, -0.15], [0.15, -0.15], [-0.15, 0.15], [0.15, 0.15]]) nnXC("lit", O, a, 0.37, b, 0.035, 0.04, NNXSTEEL, "cyl6");
+  nnXB("lit", O, 0, 0.08, 0.215, 0.18, 0.16, 0.01, "#3a3852"); nnXC("lit", O, 0, 0.37, 0, 0.13, 0.3, "#2a283a", "cyl12"); for (const y of [0.7, 1.45, 2.9]) nnXC("lit", O, 0, y, 0, 0.11, 0.06, NNXSTEEL, "cyl12");
+  nnXC("glow", O, 0, 0.66, 0, 0.105, 0.5, c, "cyl12"); nnXC("lit", O, 0, 3.32, 0, 0.12, 0.08, NNXSTEEL, "cyl12");
+  nnXBeam("lit", O, [0, 2.5, 0.05], [0, 3.05, 0.55], 0.025, NNXDARK); nnXBeam("lit", O, [0, 3.05, 0.55], [0, 3.32, 0.75], 0.025, NNXDARK);
+  nnXB("lit", O, 0, 3.32, 0.6, 0.34, 0.08, 1.08, "#26243a"); nnXP("lit", O, "pyr", 0, 3.46, 1.02, 0.5, 0.18, 0.5, "#26243a", 0, Math.PI / 4); nnXB("glow", O, 0, 3.24, 1.02, 0.3, 0.06, 0.3, "#fff4dc"); nnXB("glow", O, 0, 3.26, 0.6, 0.18, 0.03, 0.8, c);
+  for (const s of [-1, 1]) nnXB("glow", O, s * 0.012, 1.7, 0.16, 0.012, 0.9, 0.012, c);
+  nnXB("lit", O, 0.03, 1.75, 0.1, 0.03, 0.04, 0.5, NNXDARK); nnXB("lit", O, 0.03, 1.75, 0.34, 0.02, 0.85, 0.42, c === NC[1] ? "#2a6a9a" : "#8a2a7a"); nnXB("glow", O, 0.045, 2.15, 0.34, 0.01, 0.12, 0.3, "#ffffff"); nnXB("glow", O, 0.045, 1.95, 0.34, 0.01, 0.06, 0.24, c); };
 // ---- props ----
 const thPalm = (x, z, h = 6 + R() * 3, lean = R() * TAU) => { const G = grp(x, 0, z, lean), bend = 0.6 + R() * 0.9, pts = []; for (let i = 0; i <= 8; i++) { const t = i / 8; pts.push([Math.sin(t * 1.4) * bend, t * h, 0]); } limb(pts, 0.2, 0.12, thMat.palm(), { seg: 24, rad: 7, knob: 0.5, parent: G });
   const top = pts[8]; for (let k = 0; k < 9; k++) { const a = (k / 9) * TAU + R() * 0.3, L = 2.2 + R() * 1.2, droop = 0.8 + R() * 0.6, g = new THREE.PlaneGeometry(L, 0.55, 8, 2), P2 = g.attributes.position; for (let i = 0; i < P2.count; i++) { const u = (P2.getX(i) + L / 2) / L, v = P2.getY(i); P2.setXYZ(i, u * L, -droop * u * u + Math.abs(v) * 0.15 * u, v * (1 - u * 0.7)); } g.computeVertexNormals(); const f = add(g, thMat.leaf(), [top[0], top[1] + 0.05, top[2]], [0, a, -0.15], "nocol", G); f.castShadow = true; }
@@ -14304,10 +14426,8 @@ const nnScreenT = (k) => thM("scrT" + k, () => tex(256, 128, (g, W, Hh) => { con
 const nnScreenM = (k) => thM("scr" + k, () => new THREE.MeshBasicMaterial({ map: nnScreenT(k) }));
 const nnBeam = (a, b, r, m, P) => { const v = new THREE.Vector3(b[0] - a[0], b[1] - a[1], b[2] - a[2]), L = v.length(), M = add(new THREE.CylinderGeometry(r, r, L, 6), m, [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2, (a[2] + b[2]) / 2], [0, 0, 0], "nocol", P); M.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), v.normalize()); return M; };
 // ---- street furniture ----
-const nnLamp = (x, z, ry = 0, c = NC[1]) => { const G = grp(x, 0, z, ry); add(new THREE.CylinderGeometry(0.06, 0.09, 3.4, 8), nnM.dark(), [0, 1.7, 0], [0, 0, 0], null, G); add(new THREE.BoxGeometry(0.08, 0.08, 1.1), nnM.dark(), [0, 3.36, 0.5], [0, 0, 0], "nocol", G);
-  add(new THREE.BoxGeometry(0.16, 0.06, 0.9), nnM.neon(c), [0, 3.28, 0.6], [0, 0, 0], "nocol", G); add(new THREE.CylinderGeometry(0.1, 0.1, 0.5, 8), nnM.neon(c), [0, 0.9, 0], [0, 0, 0], "nocol", G); return G; };
-const nnBench = (x, z, ry = 0, c = nnPick()) => { const G = grp(x, 0, z, ry); add(new THREE.BoxGeometry(1.8, 0.1, 0.5), nnM.chrome(), [0, 0.46, 0], [0, 0, 0], null, G); add(new THREE.BoxGeometry(1.8, 0.45, 0.08), FXA.nnD(), [0, 0.75, -0.22], [-0.15, 0, 0], "nocol", G);
-  for (const s of [-0.75, 0.75]) add(new THREE.BoxGeometry(0.1, 0.44, 0.45), nnM.dark(), [s, 0.22, 0], [0, 0, 0], "nocol", G); add(new THREE.BoxGeometry(1.6, 0.03, 0.4), nnM.neon(c), [0, 0.38, 0], [0, 0, 0], "nocol", G); return G; };
+const nnLamp = (x, z, ry = 0, c = NC[1]) => { const G = grp(x, 0, z, ry); add(new THREE.CylinderGeometry(0.06, 0.09, 3.4, 8), nnM.dark(), [0, 1.7, 0], [0, 0, 0], null, G); nnXLamp({ x, z, ry }, c); return G; };
+const nnBench = (x, z, ry = 0, c = nnPick()) => { const G = grp(x, 0, z, ry); add(new THREE.BoxGeometry(1.7, 0.04, 0.42), nnM.dark(), [0, 0.38, 0], [0, 0, 0], null, G); nnXBench({ x, z, ry }, c); return G; };
 const nnVend = (x, z, ry = 0, c = nnPick()) => { const G = grp(x, 0, z, ry); add(new THREE.BoxGeometry(0.95, 1.9, 0.75), nnM.dark(), [0, 0.95, 0], [0, 0, 0], null, G); add(new THREE.PlaneGeometry(0.62, 1.1), nnM.neon(c), [-0.1, 1.15, 0.38], [0, 0, 0], "nocol", G);
   for (let r = 0; r < 3; r++) for (let k = 0; k < 3; k++) add(new THREE.CylinderGeometry(0.06, 0.06, 0.2, 8), nnM.neon(NC[(r + k) % 4]), [-0.3 + k * 0.2, 0.8 + r * 0.32, 0.36], [0, 0, 0], "nocol", G);
   add(new THREE.BoxGeometry(0.16, 0.5, 0.04), nnM.chrome(), [0.33, 1.1, 0.38], [0, 0, 0], "nocol", G); add(new THREE.BoxGeometry(0.6, 0.18, 0.05), nnM.neon("#ffffff"), [-0.1, 0.35, 0.38], [0, 0, 0], "nocol", G); return G; };
@@ -14315,7 +14435,7 @@ const nnSpeaker = (x, z, ry = 0) => { const G = grp(x, 0, z, ry); for (let k = 0
   for (let i = 0; i < 5; i++) { const h = 0.15 + R() * 0.5; add(new THREE.BoxGeometry(0.12, h, 0.06), nnM.neon(NC[(i + 2) % 4]), [-0.3 + i * 0.15, 2.04 + h / 2, 0.3], [0, 0, 0], "nocol", G); } return G; };
 const nnHolo = (x, z, c = nnPick(), h = 2.6) => { const G = grp(x, 0, z, R() * TAU); add(new THREE.CylinderGeometry(0.28, 0.36, 0.5, 12), nnM.chrome(), [0, 0.25, 0], [0, 0, 0], null, G); add(new THREE.CylinderGeometry(0.06, 0.06, h, 8), nnM.dark(), [0, h / 2, 0], [0, 0, 0], "nocol", G);
   add(new THREE.CylinderGeometry(0.55, 0.2, 1.5, 16, 1, true), nnM.holo(c), [0, h + 0.4, 0], [0, 0, 0], "nocol", G); add(new THREE.OctahedronGeometry(0.28, 0), nnM.neon(c), [0, h + 0.5, 0], [0, 0, 0], "nocol", G); add(new THREE.TorusGeometry(0.36, 0.03, 6, 24), nnM.neon(c), [0, 0.52, 0], [Math.PI / 2, 0, 0], "nocol", G); return G; };
-const nnPlanter = (x, z, c = nnPick()) => { const G = grp(x, 0, z, R() * TAU); add(new THREE.BoxGeometry(1.1, 0.5, 1.1), FXA.nnD(), [0, 0.25, 0], [0, 0, 0], null, G); add(new THREE.BoxGeometry(1.14, 0.04, 1.14), nnM.neon(c), [0, 0.5, 0], [0, 0, 0], "nocol", G); add(new THREE.IcosahedronGeometry(0.5, 1), nnM.leaf(), [0, 0.85, 0], [R(), R(), R()], "nocol", G); return G; };
+const nnPlanter = (x, z, c = nnPick()) => { const ry = R() * TAU, G = grp(x, 0, z, ry); add(new THREE.BoxGeometry(1.0, 0.5, 1.0), FXA.nnD(), [0, 0.3, 0], [0, 0, 0], null, G); R(); R(); R(); nnXPlanter({ x, z, ry }, c, "#3a8a6a"); return G; };
 const nnCart = (x, z, ry = 0, c = nnPick()) => { const G = grp(x, 0, z, ry); add(new THREE.BoxGeometry(2.0, 0.9, 0.9), FXA.nnB(), [0, 0.65, 0], [0, 0, 0], null, G); for (const s of [-0.7, 0.7]) add(new THREE.CylinderGeometry(0.2, 0.2, 0.1, 12), nnM.dark(), [s, 0.2, 0.46], [Math.PI / 2, 0, 0], "nocol", G);
   add(new THREE.BoxGeometry(2.1, 0.06, 0.04), nnM.neon(c), [0, 1.1, 0.46], [0, 0, 0], "nocol", G); for (const s of [-1, 1]) add(new THREE.CylinderGeometry(0.04, 0.04, 1.4, 6), nnM.chrome(), [s * 0.95, 1.8, 0.35], [0, 0, 0], "nocol", G);
   const A = add(new THREE.PlaneGeometry(2.3, 1.0, 4, 1), D.awningM(c, "#1a1830"), [0, 2.55, 0.15], [-1.25, 0, 0], "nocol", G); A.material.side = THREE.DoubleSide;
@@ -14327,14 +14447,12 @@ const nnBillboard = (x, z, ry = 0, w = 5, h = 2.6, y0 = 3, k = Math.floor(R() * 
   add(new THREE.BoxGeometry(w + 0.3, h + 0.3, 0.2), nnM.dark(), [0, y0 + h / 2, -0.12], [0, 0, 0], "nocol", G); add(new THREE.PlaneGeometry(w, h), nnScreenM(k), [0, y0 + h / 2, 0.0], [0, 0, 0], "nocol", G); add(new THREE.BoxGeometry(w + 0.36, 0.08, 0.08), nnM.neon(NC[k % 4]), [0, y0 + h + 0.2, 0], [0, 0, 0], "nocol", G); return G; };
 const nnCables = (x, z, ry = 0) => { const G = grp(x, 0, z, ry); for (let k = 0; k < 3; k++) { const pts = []; for (let i = 0; i <= 6; i++) pts.push(new THREE.Vector3(-1.2 + i * 0.4, 0.08, (k - 1) * 0.16 + Math.sin(i + k * 2) * 0.12)); add(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts), 16, 0.07, 6), thM("cable" + k, () => std({ color: ["#1a1a22", "#2a1a3a", "#1a2a3a"][k], roughness: 0.6 })), [0, 0, 0], [0, 0, 0], "nocol", G); } return G; };
 const nnTrash = (x, z) => { const G = grp(x, 0, z, R() * TAU); add(new THREE.CylinderGeometry(0.28, 0.24, 0.8, 12), nnM.chrome(), [0, 0.4, 0], [0, 0, 0], null, G); add(new THREE.TorusGeometry(0.28, 0.025, 6, 20), nnM.neon(NC[1]), [0, 0.8, 0], [Math.PI / 2, 0, 0], "nocol", G); return G; };
-const nnTree = (x, z, s = 1, c) => { const G = grp(x, 0, z, R() * TAU); add(new THREE.CylinderGeometry(0.1 * s, 0.16 * s, 2.2 * s, 7), thM("nnTrunk", () => std({ color: "#2a2438", roughness: 0.8 })), [0, 1.1 * s, 0], [0, 0, 0], null, G); const cc = c || ["#2af0c0", "#ff6ad8", "#9a7aff", "#5ae8ff"][Math.floor(R() * 4)];
-  for (let k = 0; k < 3; k++) { const m = add(new THREE.IcosahedronGeometry((0.9 - k * 0.15) * s, 1), thM("nnCan" + cc, () => std({ color: cc, emissive: cc, emissiveIntensity: 0.35, roughness: 0.7, flatShading: true })), [(R() - 0.5) * 0.6 * s, (2.3 + k * 0.55) * s, (R() - 0.5) * 0.6 * s], [R(), R(), R()], "nocol", G); m.scale.y = 0.75; } return G; };
+const nnTree = (x, z, s = 1, c) => { const G = grp(x, 0, z, R() * TAU); add(new THREE.CylinderGeometry(0.1 * s, 0.17 * s, 2.4 * s, 7), thM("nnTrunk", () => std({ color: "#2a2438", roughness: 0.8 })), [0, 1.2 * s, 0], [0, 0, 0], null, G); const cc = c || ["#2af0c0", "#ff6ad8", "#9a7aff", "#5ae8ff"][Math.floor(R() * 4)];
+  for (let k = 0; k < 15; k++) R(); nnXPark(x, z, s, cc); return G; };
 const nnFlower = (x, z, s = 1, c = nnPick()) => { const G = grp(x, 0, z, R() * TAU); const h = (0.8 + R() * 1.2) * s; nnBeam([0, 0, 0], [0.15, h, 0], 0.04 * s, nnM.leaf(), G); add(new THREE.SphereGeometry(0.28 * s, 10, 8), nnM.neon(c), [0.15, h, 0], [0, 0, 0], "nocol", G);
   for (let k = 0; k < 5; k++) { const a = (k / 5) * TAU; add(new THREE.CircleGeometry(0.22 * s, 8), nnM.holo(c), [0.15 + Math.cos(a) * 0.3 * s, h, Math.sin(a) * 0.3 * s], [-Math.PI / 2 + 0.5, a, 0], "nocol", G); } return G; };
 const nnPuddle = (x, z, s = 1) => { const m = add(new THREE.CircleGeometry(0.8 * s, 20), thM("puddle", () => std({ color: "#101020", roughness: 0.02, metalness: 0.9, emissive: "#2a0a3a", emissiveIntensity: 0.4 })), [x, 0.04, z], [-Math.PI / 2, 0, R() * TAU], "nocol"); m.scale.set(1, 0.6, 1); return m; };
-const nnArch = (x, z, ry = 0, span = 9, h = 5.5, c = nnPick()) => { const G = grp(x, 0, z, ry); for (const s of [-1, 1]) { add(new THREE.BoxGeometry(0.4, h, 0.4), nnM.dark(), [s * span / 2, h / 2, 0], [0, 0, 0], null, G); add(new THREE.BoxGeometry(0.1, h - 0.4, 0.44), nnM.neon(c), [s * span / 2, h / 2, 0], [0, 0, 0], "nocol", G); }
-  add(new THREE.BoxGeometry(span + 0.4, 0.5, 0.4), nnM.dark(), [0, h, 0], [0, 0, 0], "nocol", G); add(new THREE.BoxGeometry(span + 0.4, 0.12, 0.46), nnM.neon(c), [0, h - 0.2, 0], [0, 0, 0], "nocol", G);
-  for (let k = 0; k < 7; k++) add(new THREE.BoxGeometry(0.5, 0.5, 0.06), nnM.neon(NC[k % 4]), [-span / 2 + 1 + k * (span - 2) / 6, h + 0.55, 0], [0, 0, Math.PI / 4], "nocol", G); return G; };
+const nnArch = (x, z, ry = 0, span = 9, h = 5.5, c = nnPick()) => { nnXArch(x, z, ry, span, h, c); return grp(x, 0, z, ry); };
 // strings of glowing bulbs hung across a street between two poles
 const nnLights = (x0, z0, x1, z1, n = 12) => { const G = grp(0, 0, 0); for (const [x, z] of [[x0, z0], [x1, z1]]) add(new THREE.CylinderGeometry(0.07, 0.09, 4.6, 8), nnM.dark(), [x, 2.3, z], [0, 0, 0], null, G); for (let i = 0; i <= n; i++) { const t = i / n, x = x0 + (x1 - x0) * t, z = z0 + (z1 - z0) * t, y = 4.4 - Math.sin(t * Math.PI) * 0.9; add(new THREE.BoxGeometry(0.22, 0.22, 0.22), nnM.neon(NC[i % 4]), [x, y - 0.16, z], [0.6, 0.6, 0], "nocol", G); if (i) { const tp = (i - 1) / n; nnBeam([x0 + (x1 - x0) * tp, 4.4 - Math.sin(tp * Math.PI) * 0.9, z0 + (z1 - z0) * tp], [x, y, z], 0.015, nnM.dark(), G); } } return G; };
 const nnTransformer = (x, z, ry = 0) => { const G = grp(x, 0, z, ry); add(new THREE.BoxGeometry(1.6, 1.4, 1.0), thM("nnGrey", () => std({ color: "#4a4a5a", roughness: 0.6, metalness: 0.5 })), [0, 0.7, 0], [0, 0, 0], null, G); add(new THREE.PlaneGeometry(1.4, 0.25), nnM.haz(), [0, 1.2, 0.51], [0, 0, 0], "nocol", G);
@@ -14374,8 +14492,7 @@ const nnRelay = (x, z, h = 24) => { const G = grp(x, 0, z), m = nnM.chrome(), ba
   for (const [y, ry] of [[h * 0.55, 0.5], [h * 0.75, 2.6]]) { const dish = grp(0, y, 0, ry, G); add(new THREE.SphereGeometry(1.6, 16, 8, 0, TAU, 0, Math.PI / 3), thMat.white(), [0, 0, 1.2], [-Math.PI / 2, 0, 0], "nocol", dish); add(new THREE.CylinderGeometry(0.04, 0.04, 1.2, 6), m, [0, 0, 1.6], [Math.PI / 2, 0, 0], "nocol", dish); }
   for (let k = 0; k < 4; k++) add(new THREE.TorusGeometry(base + (top - base) * ((k + 1) / 5) + 0.15, 0.05, 6, 24), nnM.neon(NC[k % 4]), [0, h * ((k + 1) / 5), 0], [Math.PI / 2, 0, Math.PI / 4], "nocol", G);
   add(new THREE.CylinderGeometry(0.05, 0.08, 3, 6), m, [0, h + 1.5, 0], [0, 0, 0], "nocol", G); add(new THREE.SphereGeometry(0.28, 10, 8), nnM.neon("#ff2a2a"), [0, h + 3.1, 0], [0, 0, 0], "nocol", G); return G; };
-const nnEqTower = (x, z) => { const G = grp(x, 0, z); add(new THREE.CylinderGeometry(2.2, 2.5, 0.6, 24), FXA.nnC(), [0, 0.3, 0], [0, 0, 0], null, G); for (let k = 0; k < 14; k++) { const a = (k / 14) * TAU, h = 1.5 + Math.abs(Math.sin(k * 1.7)) * 4.5; add(new THREE.BoxGeometry(0.4, h, 0.4), nnM.neon(NC[k % 4]), [Math.cos(a) * 1.5, 0.6 + h / 2, Math.sin(a) * 1.5], [0, -a, 0], "nocol", G); }
-  add(new THREE.CylinderGeometry(0.5, 0.5, 6.5, 12), nnM.dark(), [0, 3.85, 0], [0, 0, 0], "nocol", G); add(new THREE.OctahedronGeometry(0.8, 0), nnM.neon(NC[1]), [0, 7.6, 0], [0, 0, 0], "nocol", G); return G; };
+const nnEqTower = (x, z) => { nnXFountain(x, z); return grp(x, 0, z); };
 const nnPortal = (x, z) => { const G = grp(x, 0, z); const c = thMat.stone(); add(new THREE.BoxGeometry(11, 6.5, 2.2), c, [0, 3.25, -1.2], [0, 0, 0], null, G); add(new THREE.BoxGeometry(6.2, 4.4, 0.2), nnM.dark(), [0, 2.2, 0.0], [0, 0, 0], "nocol", G);
   for (let k = 0; k < 9; k++) add(new THREE.BoxGeometry(0.12, 4.2, 0.12), nnM.neon(NC[1]), [-2.8 + k * 0.7, 2.2, 0.2], [0, 0, 0], "nocol", G); for (const y of [0.9, 2.2, 3.5]) add(new THREE.BoxGeometry(6.0, 0.1, 0.12), nnM.neon(NC[1]), [0, y, 0.22], [0, 0, 0], "nocol", G);
   add(new THREE.BoxGeometry(7.0, 0.5, 0.3), nnM.haz(), [0, 4.7, 0.1], [0, 0, 0], "nocol", G); for (const s of [-1, 1]) { add(new THREE.BoxGeometry(0.5, 4.6, 0.3), nnM.haz(), [s * 3.35, 2.3, 0.1], [0, 0, 0], "nocol", G); add(new THREE.SphereGeometry(0.25, 10, 8), nnM.neon("#ff2a2a"), [s * 4.4, 5.6, 0.1], [0, 0, 0], "nocol", G); } return G; };
@@ -14462,7 +14579,7 @@ const NNGEO = {};
 const nnGeo = (k) => NNGEO[k] || (NNGEO[k] = (() => { let g;
   if (k === "box") g = new THREE.BoxGeometry(1, 1, 1); else if (k === "cyl") g = new THREE.CylinderGeometry(0.5, 0.5, 1, 8); else if (k === "cyl6") g = new THREE.CylinderGeometry(0.5, 0.5, 1, 6);
   else if (k === "cone") g = new THREE.ConeGeometry(0.5, 1, 8); else if (k === "sph") g = new THREE.SphereGeometry(0.5, 7, 5); else if (k === "ico") g = new THREE.IcosahedronGeometry(0.5, 0);
-  else if (k === "ring") { g = new THREE.TorusGeometry(0.5, 0.05, 4, 20); g.rotateX(Math.PI / 2); } else if (k === "pad") g = new THREE.CylinderGeometry(0.5, 0.5, 1, 20);
+  else if (k === "ring") { g = new THREE.TorusGeometry(0.5, 0.05, 4, 20); g.rotateX(Math.PI / 2); } else if (k === "pad") g = new THREE.CylinderGeometry(0.5, 0.5, 1, 20); else if (k === "cyl12") g = new THREE.CylinderGeometry(0.5, 0.5, 1, 12); else if (k === "oct") g = new THREE.OctahedronGeometry(0.5, 0); else if (k === "pyr") g = new THREE.ConeGeometry(0.5, 1, 4);
   return g.index ? g.toNonIndexed() : g; })());
 // O: null = world coordinates; {x, z, ry} = a spot on the tile grid, seated on the ground when the scene is finished; {abs: true, x, y, z, ry} = a fixed world spot
 const nnP = (bin, O, gk, lx, ly, lz, sx, sy, sz, col, rx = 0, ry = 0, rz = 0) => { let wx = lx, wz = lz, r = ry; if (O && O.ry) { const c = Math.cos(O.ry), s = Math.sin(O.ry); wx = lx * c + lz * s; wz = -lx * s + lz * c; r += O.ry; } NND[bin].push([gk, O, wx, ly, wz, rx, r, rz, sx, sy, sz, col]); };
@@ -14499,13 +14616,13 @@ const nnRoofTop = (x, y, z, w, d, clutter, bare = false) => { const rc = NNROOF[
 const nnStorefront = (fx, y0, fz, ry, fw) => { if (fw < 1.6) return; const O = { abs: true, x: fx, y: y0, z: fz, ry }, ac = NNAWN[Math.floor(R() * NNAWN.length)], sc = nnPick(), wc = NNWIN[Math.floor(R() * NNWIN.length)];
   nnBx("glow", O, 0, 0.85, 0.04, fw - 0.45, 1.45, 0.06, wc); for (let u = -fw / 2 + 0.6; u < fw / 2 - 0.3; u += 1.1) nnBx("deco", O, u, 0.8, 0.08, 0.07, 1.55, 0.06, "#1a1824");
   const dx = (R() - 0.5) * (fw - 1.4); nnBx("deco", O, dx, 0.5, 0.1, 0.85, 1.85, 0.06, "#14121c"); nnBx("glow", O, dx, 2.36, 0.1, 0.85, 0.05, 0.05, sc);
-  nnBx("deco", O, 0, 2.48, 0.5, fw - 0.25, 0.07, 0.95, ac, 0, 0.22); nnBx("glow", O, 0, 2.38, 0.96, fw - 0.25, 0.06, 0.04, sc);
+  nnXAwn(O, fw - 0.25, 2.58, 0.95, 0.3, ac, sc);
   nnBx("glow", O, (R() - 0.5) * fw * 0.2, 2.78, 0.07, Math.min(fw * 0.7, 3.6), 0.42, 0.08, sc); };
 
 // ---- street props, each a handful of parts in the shared batches ----
 const nnPrps = {
-  bench: (O) => { nnBx("lit", O, 0, 0.4, 0, 1.8, 0.1, 0.5, "#9a9ab4"); nnBx("lit", O, 0, 0.5, -0.24, 1.8, 0.45, 0.07, "#4a3a6a", 0, -0.15); for (const s of [-0.75, 0.75]) nnBx("lit", O, s, 0, 0, 0.1, 0.4, 0.45, "#22202e"); nnBx("glow", O, 0, 0.36, 0.2, 1.6, 0.03, 0.04, nnPick()); },
-  planter: (O) => { const c = nnPick(); nnBx("lit", O, 0, 0, 0, 1.1, 0.5, 1.1, "#2a2838"); nnBx("glow", O, 0, 0.5, 0, 1.14, 0.04, 1.14, c); nnSp("lit", O, 0, 0.9, 0, 0.5, R() < 0.5 ? "#3a9a7a" : "#7a4ae0", "ico"); nnSp("lit", O, 0.25, 1.25, 0.1, 0.28, "#4ab890", "ico"); },
+  bench: (O) => nnXBench(O, nnPick()),
+  planter: (O) => { const c = nnPick(), leaf = R() < 0.5 ? "#3a9a7a" : "#7a4ae0"; nnXPlanter(O, c, leaf); },
   crates: (O) => { const n = 2 + Math.floor(R() * 2); for (let k = 0; k < n; k++) nnBx("lit", O, (k % 2) * 0.62 - 0.3, k > 1 ? 0.6 : 0, (R() - 0.5) * 0.2, 0.58, 0.58, 0.58, ["#6a5a48", "#4a5a6a", "#5a4a6a"][k % 3], R() * 0.5); nnBx("glow", O, -0.3, 0.3, 0.3, 0.3, 0.06, 0.02, nnPick()); },
   aframe: (O) => { const c = nnPick(); for (const s of [-1, 1]) nnBx("lit", O, 0, 0, s * 0.18, 0.6, 1.0, 0.05, "#1c1a26", 0, s * 0.33); nnBx("glow", O, 0, 0.25, 0.36, 0.42, 0.55, 0.02, c, 0, 0.33); },
   scooter: (O) => { nnBx("lit", O, 0, 0.1, 0, 1.0, 0.07, 0.24, "#22202e"); nnBx("lit", O, 0.45, 0.1, 0, 0.06, 0.95, 0.06, "#8a8aa0", 0, 0); nnBx("lit", O, 0.45, 1.02, 0, 0.06, 0.06, 0.5, "#22202e"); for (const s of [-0.42, 0.42]) nnP("glow", O, "cyl", s, 0.1, 0, 0.2, 0.06, 0.2, "#2af0ff", Math.PI / 2); },
@@ -14521,8 +14638,7 @@ const nnPrps = {
   bags: (O) => { for (let k = 0; k < 3; k++) nnP("lit", O, "ico", (k - 1) * 0.36, 0.22, (R() - 0.5) * 0.2, 0.44, 0.4, 0.44, "#1c1a26", R(), R()); },
   rack: (O) => { for (const s of [-0.5, 0, 0.5]) nnP("lit", O, "ring", s, 0.45, 0, 0.8, 1, 0.8, "#8a8aa0", Math.PI / 2, Math.PI / 2); nnBx("lit", O, 0, 0, 0, 1.4, 0.05, 0.15, "#22202e"); },
   hydrant: (O) => { const c = R() < 0.5 ? "#ff3ad0" : "#2af0ff"; nnCy("lit", O, 0, 0, 0, 0.16, 0.6, "#3a3470"); nnSp("lit", O, 0, 0.62, 0, 0.17, "#3a3470"); nnP("glow", O, "ring", 0, 0.42, 0, 0.36, 1, 0.36, c); },
-  tree: (O) => { const c = R() < 0.5 ? "#ff5ae0" : R() < 0.5 ? "#5af0ff" : "#b08aff"; nnCy("lit", O, 0, 0, 0, 0.55, 0.4, "#2a2838"); nnP("glow", O, "ring", 0, 0.4, 0, 1.12, 1, 1.12, c); nnCy("lit", O, 0, 0.4, 0, 0.09, 2.2, "#2a2440");
-    for (let k = 0; k < 3; k++) nnSp(k ? "lit" : "glow", O, (R() - 0.5) * 0.7, 2.5 + k * 0.35, (R() - 0.5) * 0.7, 0.55 - k * 0.1, k ? (R() < 0.5 ? "#3a2a70" : "#2a4a6a") : c, "ico"); },
+  tree: (O) => { const c = R() < 0.5 ? "#ff5ae0" : R() < 0.5 ? "#5af0ff" : "#b08aff", rs = []; for (let k = 0; k < 3; k++) { rs.push(R(), R()); if (k) R(); } nnXStreetTree(O, c, rs); },
   vend: (O) => { const c = nnPick(); nnBx("lit", O, 0, 0, 0, 0.95, 1.9, 0.75, "#1c1a26"); nnBx("glow", O, -0.1, 0.6, 0.38, 0.62, 1.1, 0.02, c); nnBx("glow", O, 0.33, 0.9, 0.38, 0.12, 0.4, 0.02, "#ffffff"); },
   sign: (O) => { const c = nnPick(); nnCy("lit", O, 0, 0, 0, 0.05, 2.4, "#22202e"); nnBx("glow", O, 0.35, 2.0, 0, 0.8, 0.22, 0.05, c); nnBx("glow", O, -0.3, 1.65, 0, 0.7, 0.22, 0.05, nnPick()); },
 };
@@ -14769,10 +14885,8 @@ const nnQuest = (x, z, id, label, ry = 0) => { NNQ.push({ id, label, x, z }); co
   add(new THREE.OctahedronGeometry(0.28, 0), nnM.neon("#ffe23a"), [0, 2.75, 0], [0, 0, 0], "nocol", G); add(new THREE.TorusGeometry(0.42, 0.03, 6, 24), nnM.neon("#ffe23a"), [0, 0.04, 0], [Math.PI / 2, 0, 0], "nocol", G); return G; };
 
 // ---- wild dressing, all merged into the detail batches: pines, round trees, boulders, glow mushrooms, path bollards ----
-const nnPine = (O, s = 1) => { nnCy("lit", O, 0, 0, 0, 0.12 * s, 1.0 * s, "#3a2a2a"); const c = ["#1e4a48", "#245a50", "#1a3e4a"][Math.floor(nh(O.x, O.z, 3) * 3)];
-  for (let k = 0; k < 3; k++) nnP("lit", O, "cone", 0, (0.9 + k * 0.85) * s, 0, (1.9 - k * 0.45) * s, 1.4 * s, (1.9 - k * 0.45) * s, c); };
-const nnRound = (O, s = 1) => { nnCy("lit", O, 0, 0, 0, 0.14 * s, 1.5 * s, "#3a2a34"); const c = ["#3a6a5a", "#2f5a6a", "#4a5a7a", "#5a4a8a"][Math.floor(nh(O.x, O.z, 4) * 4)];
-  nnSp("lit", O, 0, 2.0 * s, 0, 1.0 * s, c, "ico"); nnSp("lit", O, 0.5 * s, 2.5 * s, 0.2 * s, 0.65 * s, c, "ico"); if (nh(O.x, O.z, 9) < 0.3) nnSp("glow", O, -0.4 * s, 1.7 * s, 0.6 * s, 0.12, "#5affc0"); };
+const nnPine = (O, s = 1) => nnXPine(O, s, ["#1e4a48", "#245a50", "#1a3e4a"][Math.floor(nh(O.x, O.z, 3) * 3)]);
+const nnRound = (O, s = 1) => { nnXRound(O, s, ["#3a6a5a", "#2f5a6a", "#4a5a7a", "#5a4a8a"][Math.floor(nh(O.x, O.z, 4) * 4)]); if (nh(O.x, O.z, 9) < 0.3) nnSp("glow", O, -0.4 * s, 1.7 * s, 0.6 * s, 0.12, "#5affc0"); };
 const nnRock = (O, s = 1) => { nnP("lit", O, "ico", 0, 0.25 * s, 0, 1.3 * s, 0.9 * s, 1.1 * s, ["#5a566a", "#4a4a5c", "#625a6e"][Math.floor(nh(O.x, O.z, 5) * 3)], 0.3, nh(O.x, O.z, 6) * 6); };
 const nnShroom = (O) => { const c = nh(O.x, O.z, 7) < 0.5 ? "#5affc0" : "#ff5ae0"; for (let k = 0; k < 3; k++) { const a = k * 2.1, r = 0.3 * k; nnCy("lit", O, Math.cos(a) * r, 0, Math.sin(a) * r, 0.04, 0.3 + k * 0.1, "#e8e0f0"); nnP("glow", O, "sph", Math.cos(a) * r, 0.32 + k * 0.1, Math.sin(a) * r, 0.34 - k * 0.06, 0.14, 0.34 - k * 0.06, c); } };
 const nnBollard = (O) => { nnCy("lit", O, 0, 0, 0, 0.1, 0.7, "#22202e"); nnSp("glow", O, 0, 0.78, 0, 0.12, "#7af0ff"); };
