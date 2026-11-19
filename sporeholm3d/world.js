@@ -14742,20 +14742,32 @@ const nnXLamp = (O, c) => { const IR = NNIRON, LZ = 0.95;
   nnXB("chrome", O, 0, 0.14, 0.205, 0.12, 0.16, 0.02, "#a8acb8"); for (const s of [-1, 1]) nnXC("chrome", O, s * 0.045, 0.2, 0.217, 0.01, 0.01, NNCHR, "cyl6");
   nnXC("metal", O, 0, 0.6, 0, 0.1, 2.32, IR, "@flute"); for (const [y, r, h] of [[0.58, 0.125, 0.05], [1.42, 0.112, 0.035], [2.88, 0.125, 0.06]]) nnXC("chrome", O, 0, y, 0, r, h, NNCHR, "@c8");
   for (const y of [0.67, 2.84]) nnXP("metal", O, "@bead", 0, y, 0, 0.23, 0.23, 0.23, IR);
-  nnXC("glow", O, 0, 0.86, 0, 0.104, 0.3, c, "cyl12"); for (const y of [0.85, 1.16]) nnXC("chrome", O, 0, y, 0, 0.11, 0.016, NNCHR, "@c8");
+  nnXC("glow", O, 0, 0.86, 0, 0.104, 0.3, "#ffe8c4", "cyl12"); for (const y of [0.85, 1.16]) nnXC("chrome", O, 0, y, 0, 0.11, 0.016, NNCHR, "@c8");
   nnXC("metal", O, 0, 2.94, 0, 0.11, 0.12, IR, "@ldome"); nnXP("chrome", O, "@s8", 0, 3.09, 0, 0.06, 0.06, 0.06, NNCHR);
   // the arm curls up and out to the lantern, with a scroll underneath
   { let p0 = [0, 2.8, 0.05]; for (let k = 1; k <= 7; k++) { const t = k / 7, p1 = [0, 2.8 + 0.62 * t - 0.2 * t * t * t, 0.05 + 0.9 * t * t * 0.5 + 0.45 * t]; p1[2] = 0.05 + (LZ - 0.05) * (0.35 * t + 0.65 * t * t); nnXBm("metal", O, p0, p1, 0.03, IR); p0 = p1; } }
   nnXP("metal", O, "@ringV", 0, 3.0, 0.3, 0.32, 0.32, 0.32, IR); nnXBm("metal", O, [0, 2.62, 0.06], [0, 2.86, 0.3], 0.02, IR);
   // the lantern
   nnXC("chrome", O, 0, 3.12, LZ, 0.014, 0.12, NNCHR, "cyl6"); nnXC("chrome", O, 0, 3.07, LZ, 0.24, 0.025, NNCHR, "@c8"); nnXC("metal", O, 0, 3.09, LZ, 0.25, 0.14, IR, "@ldome"); nnXP("chrome", O, "@s8", 0, 3.25, LZ, 0.05, 0.05, 0.05, NNCHR);
-  nnXC("metal", O, 0, 3.03, LZ, 0.19, 0.04, IR, "cyl6"); nnXC("glow", O, 0, 2.77, LZ, 0.165, 0.26, "#ffe2a8", "cyl6"); nnXC("metal", O, 0, 2.73, LZ, 0.19, 0.04, IR, "cyl6");
+  nnXC("metal", O, 0, 3.03, LZ, 0.19, 0.04, IR, "cyl6"); nnXC("glow", O, 0, 2.77, LZ, 0.165, 0.26, "#ffeccc", "cyl6"); nnXC("metal", O, 0, 2.73, LZ, 0.19, 0.04, IR, "cyl6");
   for (let k = 0; k < 6; k++) { const a = k * Math.PI / 3; nnXB("metal", O, Math.sin(a) * 0.172, 2.75, LZ + Math.cos(a) * 0.172, 0.02, 0.29, 0.02, IR, 0, a); }
-  nnXP("metal", O, "cone", 0, 2.66, LZ, 0.12, 0.12, 0.12, IR, Math.PI); nnXP("glow", O, "ring", 0, 3.06, LZ, 0.52, 0.7, 0.52, c);
+  nnXP("metal", O, "cone", 0, 2.66, LZ, 0.12, 0.12, 0.12, IR, Math.PI); nnXP("chrome", O, "ring", 0, 3.06, LZ, 0.52, 0.7, 0.52, NNCHR);
   // the banner on its bracket, in printed canvas
   nnXB("metal", O, 0.03, 2.2, 0.1, 0.03, 0.03, 0.5, IR); nnXB("metal", O, 0.03, 1.33, 0.1, 0.03, 0.03, 0.5, IR); nnXB("fabric", O, 0.03, 1.36, 0.36, 0.015, 0.83, 0.42, c === NC[1] ? "#2a6a9a" : "#8a2a7a");
-  nnXB("glow", O, 0.042, 1.95, 0.36, 0.01, 0.1, 0.3, "#ffffff"); nnXB("glow", O, 0.042, 1.75, 0.36, 0.01, 0.05, 0.24, c);
+  nnXB("fabric", O, 0.042, 1.95, 0.36, 0.01, 0.1, 0.3, "#efe6d6"); nnXB("fabric", O, 0.042, 1.75, 0.36, 0.01, 0.05, 0.24, "#d8c8a8");
   if (!O.abs) nnXTufts(O, nnXR(Math.floor(O.x * 37) * 97 + Math.floor(O.z * 61)), 2, 0.28, 0.4, 0); };
+
+// soft, natural light colours: a neon colour washed most of the way to warm white, and a deep enamel paint made from it
+const nnSoftC = (c, t = 0.62) => "#" + new THREE.Color(c).lerp(new THREE.Color("#fff1dc"), t).getHexString();
+const nnEnamel = (c) => "#" + new THREE.Color(c).lerp(new THREE.Color("#2a2836"), 0.62).getHexString();
+// ---- post-top street lamp: moulded foot, fluted iron post, an enamel band in the street colour, and a frosted acorn globe in a brass cup ----
+const nnXPostLamp = (O, H, c) => { const IR = NNIRON;
+  nnXC("metal", O, 0, 0, 0, 0.3, 0.04, "#2e3644", "pad"); nnXC("metal", O, 0, 0.04, 0, 0.26, 0.56, IR, "@lbase"); nnXC("metal", O, 0, 0.58, 0, 0.085, H - 0.72, IR, "@flute");
+  for (const [y, r, h] of [[0.58, 0.11, 0.05], [H * 0.55, 0.1, 0.035], [H - 0.16, 0.11, 0.05]]) nnXC("chrome", O, 0, y, 0, r, h, NNCHR, "@c8");
+  nnXC("metal", O, 0, 0.9, 0, 0.098, 0.16, nnEnamel(c), "cyl12"); nnXP("metal", O, "@bead", 0, 0.88, 0, 0.21, 0.21, 0.21, IR);
+  nnXC("chrome", O, 0, H - 0.11, 0, 0.14, 0.09, NNBRASS, "@c8"); nnXP("glow", O, "sph", 0, H + 0.17, 0, 0.36, 0.44, 0.36, "#fff0d6");
+  nnXC("metal", O, 0, H + 0.36, 0, 0.13, 0.1, IR, "@ldome"); nnXP("chrome", O, "@s8", 0, H + 0.49, 0, 0.05, 0.05, 0.05, NNBRASS);
+  for (let k = 0; k < 4; k++) { const a = k * Math.PI / 2; nnXBm("metal", O, [Math.cos(a) * 0.1, H - 0.03, Math.sin(a) * 0.1], [Math.cos(a) * 0.15, H + 0.36, Math.sin(a) * 0.15], 0.009, IR); } };
 
 // ---- park lamp: a slim green post with a shepherd's-crook arm and a bell shade over a glass globe ----
 const nnXPathLamp = (O) => { const IR = "#34463e";
@@ -14786,7 +14798,7 @@ const nnXLightPost = (x, z, dx, dz) => { const L = Math.hypot(dx, dz) || 1, ux =
 const nnXRingPost = (x, z, c) => { const O = { x, z }, IR = "#5a4c88";
   nnXC("metal", O, 0, 0, 0, 0.34, 0.5, IR, "@lbase"); nnXC("chrome", O, 0, 0.4, 0, 0.2, 0.08, NNCHR, "@c8"); nnXC("metal", O, 0, 0.46, 0, 0.18, 1.8, IR, "@flute");
   for (const y of [1.2, 2.22]) nnXC("chrome", O, 0, y, 0, 0.2, 0.06, NNCHR, "@c8"); nnXP("metal", O, "@bead", 0, 1.32, 0, 0.4, 0.4, 0.4, IR);
-  nnXC("metal", O, 0, 2.27, 0, 0.17, 0.12, IR, "@shade"); nnXC("chrome", O, 0, 2.3, 0, 0.12, 0.06, NNBRASS, "@c8"); nnXP("chrome", O, "ring", 0, 2.38, 0, 0.44, 1.4, 0.44, NNBRASS); for (let k = 0; k < 4; k++) { const a = k * Math.PI / 2; nnXBm("chrome", O, [Math.cos(a) * 0.12, 2.33, Math.sin(a) * 0.12], [Math.cos(a) * 0.2, 2.5, Math.sin(a) * 0.2], 0.01, NNBRASS); } };
+  nnXC("metal", O, 0, 2.27, 0, 0.17, 0.12, IR, "@shade"); nnXC("chrome", O, 0, 2.3, 0, 0.12, 0.06, NNBRASS, "@c8"); nnXP("chrome", O, "ring", 0, 2.38, 0, 0.44, 1.4, 0.44, NNBRASS); nnXP("glow", O, "sph", 0, 2.55, 0, 0.38, 0.42, 0.38, "#fff0d6"); nnXC("metal", O, 0, 2.74, 0, 0.09, 0.06, "#5a4c88", "@ldome"); for (let k = 0; k < 4; k++) { const a = k * Math.PI / 2; nnXBm("chrome", O, [Math.cos(a) * 0.12, 2.33, Math.sin(a) * 0.12], [Math.cos(a) * 0.2, 2.5, Math.sin(a) * 0.2], 0.01, NNBRASS); } };
 
 // ---- bench: wooden slats on cast-iron ends with curled arms, bolted through ----
 const nnXBench = (O, c) => { const q = nnXR(Math.floor(O.x * 31) * 89 + Math.floor(O.z * 47)), WD = ["#9a6440", "#a87a52", "#7e5236", "#b08a5e"][Math.floor(q() * 4)], IR = ["#2e3e38", "#3a3650", "#2e3c4e"][Math.floor(q() * 3)];
@@ -15010,8 +15022,8 @@ const nnBench = (x, z, ry = 0, c = nnPick()) => { const G = grp(x, 0, z, ry); ad
 const nnVend = (x, z, ry = 0, c = nnPick()) => { const G = grp(x, 0, z, ry); add(new THREE.BoxGeometry(0.95, 1.9, 0.75), nnM.dark(), [0, 0.95, 0], [0, 0, 0], null, G); add(new THREE.PlaneGeometry(0.62, 1.1), nnM.neon(c), [-0.1, 1.15, 0.38], [0, 0, 0], "nocol", G);
   for (let r = 0; r < 3; r++) for (let k = 0; k < 3; k++) add(new THREE.CylinderGeometry(0.06, 0.06, 0.2, 8), nnM.neon(NC[(r + k) % 4]), [-0.3 + k * 0.2, 0.8 + r * 0.32, 0.36], [0, 0, 0], "nocol", G);
   add(new THREE.BoxGeometry(0.16, 0.5, 0.04), nnM.chrome(), [0.33, 1.1, 0.38], [0, 0, 0], "nocol", G); add(new THREE.BoxGeometry(0.6, 0.18, 0.05), nnM.neon("#ffffff"), [-0.1, 0.35, 0.38], [0, 0, 0], "nocol", G); return G; };
-const nnHolo = (x, z, c = nnPick(), h = 2.6) => { const G = grp(x, 0, z, R() * TAU); add(new THREE.CylinderGeometry(0.28, 0.36, 0.5, 12), nnM.chrome(), [0, 0.25, 0], [0, 0, 0], null, G); add(new THREE.CylinderGeometry(0.06, 0.06, h, 8), nnM.dark(), [0, h / 2, 0], [0, 0, 0], "nocol", G);
-  add(new THREE.CylinderGeometry(0.55, 0.2, 1.5, 16, 1, true), nnM.holo(c), [0, h + 0.4, 0], [0, 0, 0], "nocol", G); add(new THREE.OctahedronGeometry(0.28, 0), nnM.neon(c), [0, h + 0.5, 0], [0, 0, 0], "nocol", G); add(new THREE.TorusGeometry(0.36, 0.03, 6, 24), nnM.neon(c), [0, 0.52, 0], [Math.PI / 2, 0, 0], "nocol", G); return G; };
+const nnHolo = (x, z, c = nnPick(), h = 2.6) => { const G = grp(x, 0, z, R() * TAU); add(new THREE.CylinderGeometry(0.2, 0.24, 0.5, 8), nnM.dark(), [0, 0.25, 0], [0, 0, 0], null, G).visible = false;
+  nnXPostLamp({ x, z }, Math.max(2.5, h + 0.2), c); return G; };
 const nnPlanter = (x, z, c = nnPick()) => { const ry = R() * TAU, G = grp(x, 0, z, ry); add(new THREE.BoxGeometry(1.0, 0.5, 1.0), FXA.nnD(), [0, 0.3, 0], [0, 0, 0], null, G); R(); R(); R(); nnXPlanter({ x, z, ry }, c, "#3a8a6a"); return G; };
 const nnCart = (x, z, ry = 0, c = nnPick()) => { const G = grp(x, 0, z, ry); add(new THREE.BoxGeometry(2.0, 0.9, 0.9), FXA.nnB(), [0, 0.65, 0], [0, 0, 0], null, G); for (const s of [-0.7, 0.7]) add(new THREE.CylinderGeometry(0.2, 0.2, 0.1, 12), nnM.dark(), [s, 0.2, 0.46], [Math.PI / 2, 0, 0], "nocol", G);
   add(new THREE.BoxGeometry(2.1, 0.06, 0.04), nnM.neon(c), [0, 1.1, 0.46], [0, 0, 0], "nocol", G); for (const s of [-1, 1]) add(new THREE.CylinderGeometry(0.04, 0.04, 1.4, 6), nnM.chrome(), [s * 0.95, 1.8, 0.35], [0, 0, 0], "nocol", G);
@@ -15041,8 +15053,10 @@ const nnRail = (x0, z0, x1, z1, c = NC[1]) => { const L = Math.hypot(x1 - x0, z1
 const nnPadT = () => thM("padT", () => tex(512, 512, (g, W) => { g.fillStyle = "#1c1a2a"; g.fillRect(0, 0, W, W); g.strokeStyle = "#3a3658"; g.lineWidth = 3; for (let k = 1; k < 8; k++) { g.beginPath(); g.arc(W / 2, W / 2, k * 32, 0, TAU); g.stroke(); } for (let k = 0; k < 12; k++) { const a = (k / 12) * TAU; g.beginPath(); g.moveTo(W / 2 + Math.cos(a) * 40, W / 2 + Math.sin(a) * 40); g.lineTo(W / 2 + Math.cos(a) * 250, W / 2 + Math.sin(a) * 250); g.stroke(); }
   g.fillStyle = "#ffe23a"; for (let k = 0; k < 24; k++) { const a = (k / 24) * TAU; g.save(); g.translate(W / 2 + Math.cos(a) * 200, W / 2 + Math.sin(a) * 200); g.rotate(a); g.fillRect(-10, -4, 20, 8); g.restore(); } }));
 const nnRing = (x, z, r = 6) => { const G = grp(x, 0, z); add(new THREE.CylinderGeometry(r, r, 0.3, 48), thM("ringPad", () => std({ map: nnPadT(), roughness: 0.3, metalness: 0.4 })), [0, 0.06, 0], [0, 0, 0], "nocol", G);
-  for (const [rr, c] of [[r, NC[1]], [r * 0.62, NC[0]], [r * 0.25, NC[2]]]) add(new THREE.TorusGeometry(rr, 0.08, 6, 64), nnM.neon(c), [0, 0.24, 0], [Math.PI / 2, 0, 0], "nocol", G);
-  for (let k = 0; k < 6; k++) { const a = (k / 6) * TAU, P = grp(Math.cos(a) * (r + 0.8), 0, Math.sin(a) * (r + 0.8), -a, G); add(new THREE.CylinderGeometry(0.12, 0.14, 2.3, 8), nnM.dark(), [0, 1.15, 0], [0, 0, 0], null, P); add(new THREE.SphereGeometry(0.22, 14, 10), nnM.neon(NC[k % 2 ? 0 : 1]), [0, 2.56, 0], [0, 0, 0], "nocol", P); add(new THREE.TorusGeometry(0.205, 0.03, 6, 24), nnM.neon(NC[3]), [0, 1.8, 0], [Math.PI / 2, 0, 0], "nocol", P); nnXRingPost(x + Math.cos(a) * (r + 0.8), z + Math.sin(a) * (r + 0.8)); } return G; };
+  const steel = thM("ringSteel", () => nnEnvd(std({ color: "#9a9eae", roughness: 0.34, metalness: 0.85 }), 1.2));
+  for (const [rr, c] of [[r, NC[1]], [r * 0.62, NC[0]], [r * 0.25, NC[2]]]) { const ch = add(new THREE.TorusGeometry(rr, 0.13, 4, 72), steel, [0, 0.216, 0], [Math.PI / 2, 0, 0], "nocol", G); ch.scale.set(1, 1, 0.18);
+    const led = add(new THREE.TorusGeometry(rr, 0.045, 4, 72), nnM.neon(nnSoftC(c)), [0, 0.226, 0], [Math.PI / 2, 0, 0], "nocol", G); led.scale.set(1, 1, 0.35); }
+  for (let k = 0; k < 6; k++) { const a = (k / 6) * TAU, P = grp(Math.cos(a) * (r + 0.8), 0, Math.sin(a) * (r + 0.8), -a, G); add(new THREE.CylinderGeometry(0.12, 0.14, 2.3, 8), nnM.dark(), [0, 1.15, 0], [0, 0, 0], null, P); nnXRingPost(x + Math.cos(a) * (r + 0.8), z + Math.sin(a) * (r + 0.8)); } return G; };
 const nnShip = (x, z, ry = 0, s = 1) => { const G = grp(x, 0, z, ry); const hull = FXA.nnC(), dk = nnM.dark(); const b = add(new THREE.CapsuleGeometry(1.25 * s, 6.5 * s, 8, 20), hull, [0, 2.1 * s, 0], [0, 0, Math.PI / 2], null, G); b.scale.set(1, 1, 0.85);
   add(new THREE.SphereGeometry(1.0 * s, 16, 10, 0, TAU, 0, Math.PI / 2), nnM.glass(), [3.6 * s, 2.6 * s, 0], [0, 0, -0.5], "nocol", G);
   for (const sd of [-1, 1]) { const w = add(new THREE.BoxGeometry(3.4 * s, 0.18 * s, 3.2 * s), hull, [-0.6 * s, 1.8 * s, sd * 2.4 * s], [0, sd * -0.35, 0], "nocol", G); add(new THREE.BoxGeometry(3.0 * s, 0.06 * s, 0.12 * s), nnM.neon(NC[0]), [-0.6 * s, 1.92 * s, sd * 3.6 * s], [0, sd * -0.35, 0], "nocol", G);
