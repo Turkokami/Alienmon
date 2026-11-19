@@ -13969,10 +13969,10 @@ const thMat = {
 };
 // Neonis walk-ins: glossy indigo and violet panels between chrome posts, flat roofs with a dark deck, cyan doors.
 // (The builder's tha flag keeps the clean shell: no rivets, petals, chimneys or pipework.)
-Object.assign(FXA, { nnA: () => thM("nnA", () => std({ color: "#3a3470", roughness: 0.35, metalness: 0.35 })), nnB: () => thM("nnB", () => std({ color: "#5a2a6a", roughness: 0.35, metalness: 0.35 })),
-  nnC: () => thM("nnC", () => std({ color: "#b8bccc", roughness: 0.25, metalness: 0.85 })), nnD: () => thM("nnD", () => std({ color: "#1e2a4a", roughness: 0.3, metalness: 0.4 })),
-  nnFrame: () => thM("nnFrame", () => std({ color: "#2a2a36", roughness: 0.35, metalness: 0.7 })), nnDoor: () => thMat.blue(),
-  orange: () => thM("nnRoof", () => std({ color: "#6a6488", roughness: 0.75, metalness: 0.2 })) });
+Object.assign(FXA, { nnA: () => nnXTri("nnA", "plaster", 0.25, { c: "#7a72c0", r: 0.85, m: 0.04 }), nnB: () => nnXTri("nnB", "brick", 0.25, { c: "#d8a8d0", r: 0.9, m: 0.02 }),
+  nnC: () => nnXTri("nnC", "metal", 0.25, { c: "#dce0ec", r: 0.38, m: 0.7 }), nnD: () => nnXTri("nnD", "rib", 0.25, { c: "#6a7aaa", r: 0.55, m: 0.4 }),
+  nnFrame: () => nnXTri("nnFrame", "metal", 0.5, { c: "#5a5a6c", r: 0.42, m: 0.7 }), nnDoor: () => thMat.blue(),
+  orange: () => nnXTri("nnRoof", "roof", 0.25, { c: "#b0a8c8", r: 0.88, m: 0.08 }) });
 Object.assign(FXSTY, { nnHome: { mats: ["nnA", "nnA", "nnD", "nnB"], roof: "flat", frame: "nnFrame", door: "nnDoor", tha: true },
   nnHome2: { mats: ["nnA", "nnD", "nnB"], roof: "flat", frame: "nnFrame", door: "nnDoor", storeys: 2, tha: true },
   nnShop: { mats: ["nnD", "nnC"], roof: "flat", frame: "nnFrame", door: "nnDoor", store: true, tha: true },
@@ -13980,6 +13980,190 @@ Object.assign(FXSTY, { nnHome: { mats: ["nnA", "nnA", "nnD", "nnB"], roof: "flat
   nnHall: { mats: ["nnB", "nnD", "nnA"], roof: "flat", frame: "nnFrame", door: "nnDoor", tha: true } });
 for (const [k, st] of Object.entries({ n_home: "nnHome", n_home2: "nnHome2", n_loft: "nnHome2", n_shop: "nnShop", n_noodle: "nnShop", n_cafe: "nnShop", n_clinic: "nnClinic", n_lounge: "nnHall", n_court: "nnHall", n_studio: "nnHall", n_arcade: "nnHall", n_helix: "nnClinic" })) SHACK[k] = { st, win: 1 };
 SHACK.n_arcade.wide = true; SHACK.n_court.wide = true; SHACK.n_lounge.wide = true; SHACK.n_helix.wide = true;
+// ================= NEONIS: painted materials with relief (brick, concrete, curtain glass, metal cladding, plaster) =================
+// Every surface is painted on a canvas at true scale (32 px per metre on the towers), then a height pass becomes a normal map
+// and a roughness map, so walls catch the light: mortar sinks, sills and lintels stand proud, windows sit in deep reveals.
+// Uses its own seeded random so the city layout (driven by R) stays exactly as before.
+const nnXR = (s) => () => { s = (s + 0x6d2b79f5) | 0; let t = Math.imul(s ^ (s >>> 15), 1 | s); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
+const nnXCv = (w, h) => { const c = document.createElement("canvas"); c.width = w; c.height = h; return c; };
+const nnXTx = (c, srgb) => { const t = new THREE.CanvasTexture(c); if (srgb) t.colorSpace = THREE.SRGBColorSpace; t.wrapS = t.wrapT = THREE.RepeatWrapping; t.anisotropy = 8; return t; };
+// tileable value noise, cx by cy cells, several octaves, 0..1
+const nnXNoise = (W, Hh, cx, cy, oct, rnd) => { const out = new Float32Array(W * Hh); let amp = 1, tot = 0;
+  for (let o = 0; o < oct; o++) { const nx = cx << o, ny = cy << o, g = new Float32Array(nx * ny); for (let i = 0; i < g.length; i++) g[i] = rnd();
+    for (let y = 0; y < Hh; y++) { const fy = (y * ny) / Hh, y0 = Math.floor(fy), ty = fy - y0, sy = ty * ty * (3 - 2 * ty), r0 = (y0 % ny) * nx, r1 = ((y0 + 1) % ny) * nx;
+      for (let x = 0; x < W; x++) { const fx = (x * nx) / W, x0 = Math.floor(fx), tx = fx - x0, sx = tx * tx * (3 - 2 * tx), x0m = x0 % nx, x1 = (x0 + 1) % nx;
+        const a = g[r0 + x0m], b = g[r0 + x1], c = g[r1 + x0m], d = g[r1 + x1], top = a + (b - a) * sx; out[y * W + x] += amp * (top + (c + (d - c) * sx - top) * sy); } }
+    tot += amp; amp *= 0.5; }
+  for (let i = 0; i < out.length; i++) out[i] /= tot; return out; };
+// darken/lighten a colour canvas with big soft stains and rain streaks running down from ledges
+const nnXGrime = (c, rnd, o = {}) => { const g = c.getContext("2d"), W = c.width, Hh = c.height, id = g.getImageData(0, 0, W, Hh), d = id.data;
+  const stain = nnXNoise(W, Hh, o.sc || 4, o.sc || 4, 4, rnd), streak = nnXNoise(W, Hh, o.stx || 48, o.sty || 3, 2, rnd), fine = nnXNoise(W, Hh, 64, 64, 2, rnd);
+  const ks = o.stain ?? 0.34, kr = o.streak ?? 0.22, kf = o.fine ?? 0.12;
+  for (let i = 0, p = 0; p < stain.length; p++, i += 4) { const st = Math.max(0, streak[p] - 0.45) * 2.2; const f = (1 - ks / 2 + ks * stain[p]) * (1 - kr * st) * (1 - kf / 2 + kf * fine[p]);
+    d[i] = Math.min(255, d[i] * f); d[i + 1] = Math.min(255, d[i + 1] * f); d[i + 2] = Math.min(255, d[i + 2] * f); }
+  g.putImageData(id, 0, 0); };
+// height canvas (grey) -> tangent-space normal map at size n
+const nnXNormal = (hc, n, str) => { const c = nnXCv(n, n), g = c.getContext("2d"); g.imageSmoothingEnabled = true; g.drawImage(hc, 0, 0, n, n); const s = g.getImageData(0, 0, n, n).data, H = new Float32Array(n * n);
+  for (let i = 0; i < n * n; i++) H[i] = s[i * 4] / 255; const o = g.createImageData(n, n), od = o.data;
+  for (let y = 0; y < n; y++) { const yu = ((y - 1 + n) % n) * n, yd = ((y + 1) % n) * n, yr = y * n;
+    for (let x = 0; x < n; x++) { const xl = (x - 1 + n) % n, xr = (x + 1) % n, dx = H[yr + xr] - H[yr + xl], dy = H[yd + x] - H[yu + x];
+      const nx = -dx * str, ny = dy * str, l = Math.hypot(nx, ny, 1), i = (yr + x) * 4; od[i] = (nx / l * 0.5 + 0.5) * 255; od[i + 1] = (ny / l * 0.5 + 0.5) * 255; od[i + 2] = (1 / l * 0.5 + 0.5) * 255; od[i + 3] = 255; } }
+  g.putImageData(o, 0, 0); return c; };
+const nnXHalf = (src, n) => { const c = nnXCv(n, n); c.getContext("2d").drawImage(src, 0, 0, n, n); return c; };
+const nnXHex = (h, l = 0) => { const c = new THREE.Color(h); if (l) c.offsetHSL(0, 0, l); return "#" + c.getHexString(); };
+const nnXGrey = (v) => { const k = Math.max(0, Math.min(255, Math.round(v * 255))); return `rgb(${k},${k},${k})`; };
+
+// ---- shared window painter: reveal shadow, frame, mullions, glass with sky reflection, blinds or curtains, sill and lintel ----
+// C colour, Hh height, Rg roughness, L lit (emissive) canvas contexts; x,y,w,h in px; o: style
+const nnXWin = (C, Hh, Rg, L, x, y, w, h, o, rnd) => { const fr = o.frame || 3, rv = o.reveal ?? 5;
+  // reveal (the deep jamb around the window) and its head shadow
+  C.fillStyle = o.revealCol || "#1a1824"; C.fillRect(x - 1, y - 1, w + 2, h + 2); Hh.fillStyle = nnXGrey(0.18); Hh.fillRect(x, y, w, h);
+  // glass with a sky reflection and a soft diagonal sheen
+  const gx = x + rv, gy = y + rv, gw = w - 2 * rv, gh = h - 2 * rv, hue = o.glassHue ?? 245 + rnd() * 30;
+  const gr = C.createLinearGradient(0, gy, 0, gy + gh); gr.addColorStop(0, `hsl(${hue},${22 + rnd() * 18}%,${46 + rnd() * 14}%)`); gr.addColorStop(0.5, `hsl(${hue},28%,${20 + rnd() * 8}%)`); gr.addColorStop(1, `hsl(${hue + 10},30%,9%)`);
+  C.fillStyle = gr; C.fillRect(gx, gy, gw, gh); Rg.fillStyle = nnXGrey(0.1); Rg.fillRect(gx, gy, gw, gh); Hh.fillStyle = nnXGrey(0.12); Hh.fillRect(gx, gy, gw, gh);
+  C.save(); C.beginPath(); C.rect(gx, gy, gw, gh); C.clip(); C.fillStyle = "rgba(255,255,255,0.10)"; const sx = gx + rnd() * gw; C.beginPath(); C.moveTo(sx, gy); C.lineTo(sx + gw * 0.35, gy); C.lineTo(sx - gw * 0.1, gy + gh); C.lineTo(sx - gw * 0.45, gy + gh); C.fill(); C.restore();
+  // what is behind the glass
+  const lit = rnd() < (o.litP ?? 0.42), kind = rnd(), wc = ["#ffd498", "#ffe8c0", "#9ae8ff", "#ff9ae0", "#d8d0ff", "#ffc070"][Math.floor(rnd() * 6)];
+  if (kind < 0.3) { C.fillStyle = "rgba(200,196,214,0.55)"; for (let k = gy + 2; k < gy + gh * (0.4 + rnd() * 0.6); k += 3) C.fillRect(gx, k, gw, 1.6); } // blinds
+  else if (kind < 0.55) { const cc = ["#7a3a5a", "#3a5a7a", "#6a5a3a", "#5a3a7a", "#c8b8a0"][Math.floor(rnd() * 5)]; C.fillStyle = cc; const cw = gw * (0.18 + rnd() * 0.2); C.fillRect(gx, gy, cw, gh); C.fillRect(gx + gw - cw, gy, cw, gh); C.fillStyle = "rgba(0,0,0,0.25)"; for (let k = 0; k < 3; k++) { C.fillRect(gx + (k + 0.5) * cw / 3, gy, 1, gh); C.fillRect(gx + gw - (k + 0.5) * cw / 3, gy, 1, gh); } }
+  if (lit && L) { const lg = L.createLinearGradient(0, gy, 0, gy + gh); lg.addColorStop(0, wc); lg.addColorStop(1, nnXHex(wc, -0.28)); L.globalAlpha = 0.65 + rnd() * 0.35; L.fillStyle = lg; L.fillRect(gx, gy, gw, gh);
+    L.fillStyle = "rgba(0,0,0,0.55)"; if (rnd() < 0.6) L.fillRect(gx + rnd() * gw * 0.5, gy + gh * 0.62, gw * (0.2 + rnd() * 0.4), gh * 0.38); // furniture silhouette
+    if (kind < 0.3) { L.fillStyle = "rgba(0,0,0,0.5)"; for (let k = gy + 2; k < gy + gh; k += 3) L.fillRect(gx, k, gw, 1.2); }
+    else if (kind < 0.55) { L.fillStyle = "rgba(0,0,0,0.35)"; const cw = gw * 0.25; L.fillRect(gx, gy, cw, gh); L.fillRect(gx + gw - cw, gy, cw, gh); }
+    L.globalAlpha = 1; C.fillStyle = "rgba(255,220,170,0.12)"; C.fillRect(gx, gy, gw, gh); }
+  // frame and mullions
+  C.strokeStyle = o.frameCol || "#2c2a36"; C.lineWidth = fr; C.strokeRect(gx + fr / 2, gy + fr / 2, gw - fr, gh - fr); Hh.strokeStyle = nnXGrey(0.42); Hh.lineWidth = fr; Hh.strokeRect(gx + fr / 2, gy + fr / 2, gw - fr, gh - fr);
+  Rg.strokeStyle = nnXGrey(0.45); Rg.lineWidth = fr; Rg.strokeRect(gx + fr / 2, gy + fr / 2, gw - fr, gh - fr);
+  const mv = o.mullV ?? (gw > 28 ? 1 : 0), mh = o.mullH ?? (gh > 40 ? 1 : 0); C.fillStyle = o.frameCol || "#2c2a36"; Hh.fillStyle = nnXGrey(0.4);
+  for (let k = 1; k <= mv; k++) { const mx = gx + (gw * k) / (mv + 1) - 1; C.fillRect(mx, gy, 2, gh); Hh.fillRect(mx, gy, 2, gh); if (L) { L.fillStyle = "#000"; L.fillRect(mx, gy, 2, gh); } }
+  for (let k = 1; k <= mh; k++) { const my = gy + gh * (o.transom ?? 0.3) * k - 1; C.fillRect(gx, my, gw, 2); Hh.fillRect(gx, my, gw, 2); if (L) { L.fillStyle = "#000"; L.fillRect(gx, my, gw, 2); } }
+  if (L) { L.fillStyle = "#000"; L.fillRect(gx, gy, gw, fr); L.fillRect(gx, gy + gh - fr, gw, fr); L.fillRect(gx, gy, fr, gh); L.fillRect(gx + gw - fr, gy, fr, gh); }
+  // head shadow inside the reveal
+  const hs = C.createLinearGradient(0, y, 0, y + rv + 7); hs.addColorStop(0, "rgba(0,0,0,0.55)"); hs.addColorStop(1, "rgba(0,0,0,0)"); C.fillStyle = hs; C.fillRect(x, y, w, rv + 7);
+  C.fillStyle = "rgba(0,0,0,0.28)"; C.fillRect(x, y, rv * 0.6, h); C.fillStyle = "rgba(255,255,255,0.05)"; C.fillRect(x + w - rv * 0.6, y, rv * 0.6, h);
+  // sill and lintel standing proud of the wall, with a shadow and a grime run under the sill
+  if (o.sill !== false) { const sh = o.sillH || 4, so = o.sillO ?? 4; C.fillStyle = o.sillCol || "#8a8698"; C.fillRect(x - so, y + h, w + 2 * so, sh); C.fillStyle = "rgba(255,255,255,0.18)"; C.fillRect(x - so, y + h, w + 2 * so, 1);
+    Hh.fillStyle = nnXGrey(0.92); Hh.fillRect(x - so, y + h, w + 2 * so, sh); const ss = C.createLinearGradient(0, y + h + sh, 0, y + h + sh + 6); ss.addColorStop(0, "rgba(0,0,0,0.45)"); ss.addColorStop(1, "rgba(0,0,0,0)"); C.fillStyle = ss; C.fillRect(x - so, y + h + sh, w + 2 * so, 6);
+    for (const ex of [x - so + 2, x + w + so - 6]) { const rg = C.createLinearGradient(0, y + h + sh, 0, y + h + sh + 30 + rnd() * 40); rg.addColorStop(0, "rgba(10,8,14,0.32)"); rg.addColorStop(1, "rgba(10,8,14,0)"); C.fillStyle = rg; C.fillRect(ex, y + h + sh, 4 + rnd() * 4, 70); } }
+  if (o.lintel) { const lh = o.lintelH || 5, lo = o.lintelO ?? 3; C.fillStyle = o.lintel; C.fillRect(x - lo, y - lh - 1, w + 2 * lo, lh); C.fillStyle = "rgba(255,255,255,0.15)"; C.fillRect(x - lo, y - lh - 1, w + 2 * lo, 1); Hh.fillStyle = nnXGrey(0.85); Hh.fillRect(x - lo, y - lh - 1, w + 2 * lo, lh);
+    if (o.keystone) { C.fillStyle = nnXHex(o.lintel, 0.06); C.fillRect(x + w / 2 - 3, y - lh - 3, 6, lh + 3); Hh.fillStyle = nnXGrey(0.95); Hh.fillRect(x + w / 2 - 3, y - lh - 3, 6, lh + 3); } } };
+
+// brick courses with mortar, per-brick colour, a few burnt headers
+const nnXBrick = (C, Hh, x0, y0, W, Hb, rnd, cols, bw, bh, mort) => { C.fillStyle = mort; C.fillRect(x0, y0, W, Hb); Hh.fillStyle = nnXGrey(0.38); Hh.fillRect(x0, y0, W, Hb);
+  for (let r = 0, y = y0; y < y0 + Hb; y += bh, r++) for (let x = x0 - (r % 2) * bw / 2; x < x0 + W; x += bw) { const c = cols[Math.floor(rnd() * cols.length)], l = (rnd() - 0.5) * 0.08;
+    C.fillStyle = nnXHex(c, l); C.fillRect(x + 1, y + 1, bw - 1.2, bh - 1.2); if (rnd() < 0.05) { C.fillStyle = "rgba(20,10,20,0.35)"; C.fillRect(x + 1, y + 1, bw - 1.2, bh - 1.2); }
+    Hh.fillStyle = nnXGrey(0.6 + rnd() * 0.08); Hh.fillRect(x + 1, y + 1, bw - 1.2, bh - 1.2); } };
+
+// ---- the five tower facades. Tile = 32 m square at 1024 px; floors are 3.2 m (10 per tile) ----
+const NNXFAC = {};
+const nnXFacade = (k) => NNXFAC[k] || (NNXFAC[k] = (() => { const W = 1024, P = 32, FH = 3.2 * P, rnd = nnXR(9100 + k * 77);
+  const c = nnXCv(W, W), h = nnXCv(W, W), r = nnXCv(W, W), l = nnXCv(512, 512), C = c.getContext("2d"), Hh = h.getContext("2d"), Rg = r.getContext("2d"), L0 = l.getContext("2d");
+  L0.fillStyle = "#000"; L0.fillRect(0, 0, 512, 512); const L = { // lit layer is half-size: wrap a scaling proxy
+    set fillStyle(v) { L0.fillStyle = v; }, set globalAlpha(v) { L0.globalAlpha = v; }, fillRect: (a, b, cc, d) => L0.fillRect(a / 2, b / 2, cc / 2, d / 2), createLinearGradient: (a, b, cc, d) => L0.createLinearGradient(a / 2, b / 2, cc / 2, d / 2) };
+  Rg.fillStyle = nnXGrey(0.85); Rg.fillRect(0, 0, W, W); Hh.fillStyle = nnXGrey(0.6); Hh.fillRect(0, 0, W, W);
+  const floors = (f) => { for (let fl = 0; fl < 10; fl++) f(fl, W - (fl + 1) * FH); }; // fl 0 = bottom row of the canvas (v = 0)
+  if (k === 0) { // red-brown brick walk-up: punched windows, stone sills, lintels with keystones, a stone band every floor
+    nnXBrick(C, Hh, 0, 0, W, W, rnd, ["#6a3a3a", "#74403a", "#5e3434", "#7a4a40", "#663838", "#583230"], 12.8, 4.27, "#3e3238");
+    nnXGrime(c, rnd, { stain: 0.3, streak: 0.18 });
+    floors((fl, y) => { C.fillStyle = "#7a7488"; C.fillRect(0, y + FH - 6, W, 6); C.fillStyle = "rgba(255,255,255,0.14)"; C.fillRect(0, y + FH - 6, W, 1); C.fillStyle = "rgba(0,0,0,0.35)"; C.fillRect(0, y + FH, W, 3); Hh.fillStyle = nnXGrey(0.82); Hh.fillRect(0, y + FH - 6, W, 6);
+      for (let b = 0; b < 16; b++) { const bx = b * 2 * P, ww = 1.1 * P, wh = 1.85 * P; nnXWin(C, Hh, Rg, L, bx + (2 * P - ww) / 2, y + 0.55 * P, ww, wh, { lintel: "#8a8496", keystone: true, sillCol: "#8e889c", frameCol: "#e8e2d8", frame: 3, mullH: 1, transom: 0.32, mullV: 0, litP: 0.4 }, rnd); } }); }
+  else if (k === 1) { // board-formed concrete: big panels with seams and tie holes, ribbon windows with thin mullions
+    const n = nnXNoise(W, W, 16, 16, 3, rnd), id = C.createImageData(W, W); for (let i = 0; i < W * W; i++) { const v = 96 + n[i] * 40, j = i * 4; id.data[j] = v * 0.98; id.data[j + 1] = v * 0.96; id.data[j + 2] = v * 1.06; id.data[j + 3] = 255; } C.putImageData(id, 0, 0);
+    for (let y = 0; y < W; y += 6) { C.fillStyle = `rgba(0,0,0,${0.03 + rnd() * 0.04})`; C.fillRect(0, y, W, 1); }
+    nnXGrime(c, rnd, { stain: 0.4, streak: 0.32, sty: 2 });
+    floors((fl, y) => { for (let px = 0; px < W; px += 4 * P) { C.fillStyle = "rgba(10,8,16,0.6)"; C.fillRect(px, y, 2, FH); Hh.fillStyle = nnXGrey(0.4); Hh.fillRect(px, y, 2, FH); for (const tx of [0.6, 2, 3.4]) for (const ty of [0.4, 2.8]) { C.fillStyle = "rgba(20,18,26,0.6)"; C.beginPath(); C.arc(px + tx * P, y + ty * P, 2, 0, TAU); C.fill(); } }
+      C.fillStyle = "rgba(10,8,16,0.55)"; C.fillRect(0, y + FH - 2, W, 2); Hh.fillStyle = nnXGrey(0.4); Hh.fillRect(0, y + FH - 2, W, 2);
+      const wy = y + 0.9 * P, wh = 1.45 * P; C.fillStyle = "#121018"; C.fillRect(0, wy - 2, W, wh + 4); Hh.fillStyle = nnXGrey(0.15); Hh.fillRect(0, wy, W, wh);
+      for (let b = 0; b < 32; b++) nnXWin(C, Hh, Rg, L, b * P, wy, P, wh, { reveal: 1, frame: 2, frameCol: "#3a3844", sill: false, mullV: 0, mullH: 0, glassHue: 228, litP: 0.32 }, rnd);
+      C.fillStyle = "#9a96a6"; C.fillRect(0, wy + wh, W, 5); Hh.fillStyle = nnXGrey(0.95); Hh.fillRect(0, wy + wh, W, 5); const sg = C.createLinearGradient(0, wy + wh + 5, 0, wy + wh + 14); sg.addColorStop(0, "rgba(0,0,0,0.5)"); sg.addColorStop(1, "rgba(0,0,0,0)"); C.fillStyle = sg; C.fillRect(0, wy + wh + 5, W, 9);
+      const hg = C.createLinearGradient(0, wy - 2, 0, wy + 10); hg.addColorStop(0, "rgba(0,0,0,0.6)"); hg.addColorStop(1, "rgba(0,0,0,0)"); C.fillStyle = hg; C.fillRect(0, wy - 2, W, 12); }); }
+  else if (k === 2) { // curtain wall: tinted glass in a fine mullion grid, a dark spandrel band at every slab
+    C.fillStyle = "#1c2236"; C.fillRect(0, 0, W, W); Rg.fillStyle = nnXGrey(0.35); Rg.fillRect(0, 0, W, W);
+    floors((fl, y) => { const sp = 0.75 * P; for (let b = 0; b < 20; b++) { const bx = b * 1.6 * P; nnXWin(C, Hh, Rg, L, bx + 2, y + sp + 2, 1.6 * P - 4, FH - sp - 4, { reveal: 1, frame: 3, frameCol: "#5a5e72", sill: false, mullV: 0, mullH: 0, glassHue: 222 + (b % 3) * 6, litP: 0.36 }, rnd); }
+      const sg = C.createLinearGradient(0, y, 0, y + sp); sg.addColorStop(0, "#2a2e40"); sg.addColorStop(1, "#1a1c28"); C.fillStyle = sg; C.fillRect(0, y, W, sp + 2); Hh.fillStyle = nnXGrey(0.55); Hh.fillRect(0, y, W, sp);
+      C.fillStyle = "#6a6e84"; C.fillRect(0, y, W, 3); Hh.fillStyle = nnXGrey(0.8); Hh.fillRect(0, y, W, 3); for (let b = 0; b <= 20; b++) { C.fillStyle = "#6a6e84"; C.fillRect(b * 1.6 * P - 2, y, 4, FH); Hh.fillStyle = nnXGrey(0.8); Hh.fillRect(b * 1.6 * P - 2, y, 4, FH); L0.fillStyle = "#000"; L0.fillRect((b * 1.6 * P - 2) / 2, y / 2, 2, FH / 2); } });
+    nnXGrime(c, rnd, { stain: 0.25, streak: 0.12, fine: 0.06 }); }
+  else if (k === 3) { // dark ribbed metal cladding with square windows, louvres and riveted seams
+    C.fillStyle = "#34323e"; C.fillRect(0, 0, W, W); for (let x = 0; x < W; x += 8) { const g2 = C.createLinearGradient(x, 0, x + 8, 0); g2.addColorStop(0, "#2a2832"); g2.addColorStop(0.5, "#46444f"); g2.addColorStop(1, "#24222c"); C.fillStyle = g2; C.fillRect(x, 0, 8, W);
+      const gh2 = Hh.createLinearGradient(x, 0, x + 8, 0); gh2.addColorStop(0, nnXGrey(0.45)); gh2.addColorStop(0.5, nnXGrey(0.7)); gh2.addColorStop(1, nnXGrey(0.45)); Hh.fillStyle = gh2; Hh.fillRect(x, 0, 8, W); }
+    Rg.fillStyle = nnXGrey(0.5); Rg.fillRect(0, 0, W, W); nnXGrime(c, rnd, { stain: 0.36, streak: 0.3 });
+    floors((fl, y) => { C.fillStyle = "#1e1c26"; C.fillRect(0, y + FH - 4, W, 4); C.fillStyle = "rgba(255,255,255,0.12)"; C.fillRect(0, y + FH - 4, W, 1); Hh.fillStyle = nnXGrey(0.3); Hh.fillRect(0, y + FH - 4, W, 4);
+      for (let x = 6; x < W; x += 24) { C.fillStyle = "#6a6878"; C.fillRect(x, y + FH - 9, 2, 2); }
+      for (let b = 0; b < 12; b++) { const bx = b * (32 / 12) * P, ww = 1.35 * P, wh = 1.5 * P, wx = bx + ((32 / 12) * P - ww) / 2, wy = y + 0.75 * P;
+        C.fillStyle = "#16141c"; C.fillRect(wx - 5, wy - 5, ww + 10, wh + 10); Hh.fillStyle = nnXGrey(0.85); Hh.fillRect(wx - 5, wy - 5, ww + 10, wh + 10);
+        nnXWin(C, Hh, Rg, L, wx, wy, ww, wh, { reveal: 3, frame: 3, frameCol: "#4a4856", sill: false, mullV: 1, mullH: 0, glassHue: 250, litP: 0.4 }, rnd);
+        if (rnd() < 0.3) { const ly = wy + wh + 0.3 * P; C.fillStyle = "#24222c"; C.fillRect(wx + ww * 0.2, ly, ww * 0.6, 0.45 * P); for (let s = ly + 2; s < ly + 0.45 * P; s += 3) { C.fillStyle = "#4a4856"; C.fillRect(wx + ww * 0.2, s, ww * 0.6, 1); } Hh.fillStyle = nnXGrey(0.75); Hh.fillRect(wx + ww * 0.2, ly, ww * 0.6, 0.45 * P); } } }); }
+  else { // pale plaster apartments: shuttered windows, cornice line, drainpipes
+    const n = nnXNoise(W, W, 24, 24, 4, rnd), id = C.createImageData(W, W); for (let i = 0; i < W * W; i++) { const v = n[i], j = i * 4; id.data[j] = 150 + v * 34; id.data[j + 1] = 138 + v * 30; id.data[j + 2] = 162 + v * 30; id.data[j + 3] = 255; } C.putImageData(id, 0, 0);
+    const hn = Hh.createImageData(W, W); for (let i = 0; i < W * W; i++) { const v = 140 + n[i] * 40, j = i * 4; hn.data[j] = hn.data[j + 1] = hn.data[j + 2] = v; hn.data[j + 3] = 255; } Hh.putImageData(hn, 0, 0);
+    nnXGrime(c, rnd, { stain: 0.45, streak: 0.34, sty: 3 });
+    floors((fl, y) => { C.fillStyle = "#b0a6be"; C.fillRect(0, y + FH - 5, W, 5); C.fillStyle = "rgba(0,0,0,0.3)"; C.fillRect(0, y + FH, W, 3); Hh.fillStyle = nnXGrey(0.9); Hh.fillRect(0, y + FH - 5, W, 5);
+      for (let b = 0; b < 16; b++) { const bx = b * 2 * P, ww = 1.0 * P, wh = 1.6 * P, wx = bx + (2 * P - ww) / 2, wy = y + 0.7 * P, sc = ["#3a6a6a", "#6a3a4a", "#3a4a7a", "#5a5a3a", "#4a3a6a"][Math.floor(rnd() * 5)];
+        nnXWin(C, Hh, Rg, L, wx, wy, ww, wh, { reveal: 4, frame: 2, frameCol: "#e0d8e8", sillCol: "#c8c0d0", lintel: null, mullV: 1, mullH: 0, litP: 0.44 }, rnd);
+        if (rnd() < 0.7) for (const s of [-1, 1]) { const sx2 = s < 0 ? wx - ww / 2 - 2 : wx + ww + 2; C.fillStyle = sc; C.fillRect(sx2, wy, ww / 2, wh); C.fillStyle = "rgba(0,0,0,0.3)"; for (let t = wy + 3; t < wy + wh; t += 4) C.fillRect(sx2 + 1, t, ww / 2 - 2, 1.5); C.fillStyle = "rgba(0,0,0,0.25)"; C.fillRect(s < 0 ? sx2 + ww / 2 : sx2 - 2, wy, 2, wh); Hh.fillStyle = nnXGrey(0.72); Hh.fillRect(sx2, wy, ww / 2, wh); } } });
+    for (const px of [0.25, 0.75].map((f) => f * W)) { C.fillStyle = "#5a5664"; C.fillRect(px, 0, 5, W); C.fillStyle = "rgba(255,255,255,0.18)"; C.fillRect(px + 1, 0, 1, W); C.fillStyle = "rgba(0,0,0,0.3)"; C.fillRect(px + 5, 0, 3, W); Hh.fillStyle = nnXGrey(0.98); Hh.fillRect(px, 0, 5, W);
+      for (let y = 20; y < W; y += 80) { C.fillStyle = "#4a4654"; C.fillRect(px - 1, y, 7, 3); } } }
+  const map = nnXTx(c, true), lit = nnXTx(l, true), nrm = nnXTx(nnXNormal(h, 512, k === 2 ? 3 : 5), false), rgh = nnXTx(nnXHalf(r, 512), false);
+  return { map, lit, nrm, rgh }; })());
+
+// ---- tileable swatches for anything mapped in world space (walk-in shells, props, roofs): 512 px = 4 m ----
+const NNXSW = {};
+const nnXSwatch = (key) => NNXSW[key] || (NNXSW[key] = (() => { const W = 512, P = 128, rnd = nnXR(500 + key.length * 31 + key.charCodeAt(0)), c = nnXCv(W, W), h = nnXCv(W, W), C = c.getContext("2d"), Hh = h.getContext("2d");
+  Hh.fillStyle = nnXGrey(0.6); Hh.fillRect(0, 0, W, W); let str = 4;
+  const fillNoise = (base, amp, cells = 16) => { const n = nnXNoise(W, W, cells, cells, 4, rnd), id = C.createImageData(W, W); for (let i = 0; i < W * W; i++) { const v = n[i], j = i * 4; id.data[j] = base[0] + v * amp; id.data[j + 1] = base[1] + v * amp; id.data[j + 2] = base[2] + v * amp; id.data[j + 3] = 255; } C.putImageData(id, 0, 0); return n; };
+  if (key === "plaster") { const n = fillNoise([176, 176, 184], 48, 20); const hd = Hh.createImageData(W, W); for (let i = 0; i < W * W; i++) { const v = 130 + n[i] * 60, j = i * 4; hd.data[j] = hd.data[j + 1] = hd.data[j + 2] = v; hd.data[j + 3] = 255; } Hh.putImageData(hd, 0, 0);
+    for (let y = 0; y < W; y += P) { C.fillStyle = "rgba(20,16,30,0.35)"; C.fillRect(0, y, W, 2); Hh.fillStyle = nnXGrey(0.3); Hh.fillRect(0, y, W, 2); } for (let x = 0; x < W; x += 2 * P) { C.fillStyle = "rgba(20,16,30,0.3)"; C.fillRect(x, 0, 2, W); Hh.fillStyle = nnXGrey(0.3); Hh.fillRect(x, 0, 2, W); }
+    nnXGrime(c, rnd, { sc: 2, stain: 0.35, streak: 0.3, stx: 24, sty: 2 }); }
+  else if (key === "brick") { nnXBrick(C, Hh, 0, 0, W, W, rnd, ["#b0a0a8", "#a89098", "#bca8b0", "#9a8890", "#c0b0b8"], 32, 10.67, "#5a5460"); nnXGrime(c, rnd, { sc: 2, stain: 0.3, streak: 0.22, stx: 24, sty: 2 }); }
+  else if (key === "metal") { fillNoise([170, 172, 182], 30, 32); for (let y = 0; y < W; y++) { C.fillStyle = `rgba(255,255,255,${rnd() * 0.05})`; C.fillRect(0, y, W, 1); }
+    for (let y = 0; y < W; y += P) for (let x = 0; x < W; x += P) { C.strokeStyle = "rgba(20,18,30,0.6)"; C.lineWidth = 2; C.strokeRect(x + 1, y + 1, P - 2, P - 2); Hh.strokeStyle = nnXGrey(0.3); Hh.lineWidth = 2; Hh.strokeRect(x + 1, y + 1, P - 2, P - 2);
+      for (const [a, b] of [[8, 8], [P - 8, 8], [8, P - 8], [P - 8, P - 8], [P / 2, 8], [P / 2, P - 8]]) { C.fillStyle = "#d8dae4"; C.beginPath(); C.arc(x + a, y + b, 2.5, 0, TAU); C.fill(); Hh.fillStyle = nnXGrey(0.95); Hh.beginPath(); Hh.arc(x + a, y + b, 2.5, 0, TAU); Hh.fill(); } }
+    nnXGrime(c, rnd, { sc: 2, stain: 0.3, streak: 0.18, stx: 24, sty: 2 }); }
+  else if (key === "rib") { for (let x = 0; x < W; x += 16) { const g2 = C.createLinearGradient(x, 0, x + 16, 0); g2.addColorStop(0, "#8a8a98"); g2.addColorStop(0.5, "#c8c8d4"); g2.addColorStop(1, "#7a7a88"); C.fillStyle = g2; C.fillRect(x, 0, 16, W); const h2 = Hh.createLinearGradient(x, 0, x + 16, 0); h2.addColorStop(0, nnXGrey(0.35)); h2.addColorStop(0.5, nnXGrey(0.8)); h2.addColorStop(1, nnXGrey(0.35)); Hh.fillStyle = h2; Hh.fillRect(x, 0, 16, W); }
+    for (let y = 0; y < W; y += 2 * P) { C.fillStyle = "rgba(10,8,16,0.5)"; C.fillRect(0, y, W, 3); } nnXGrime(c, rnd, { sc: 2, stain: 0.4, streak: 0.35, stx: 32, sty: 2 }); }
+  else if (key === "roof") { fillNoise([120, 118, 130], 40, 24); for (let y = 0; y < W; y += P / 2) { C.fillStyle = "rgba(0,0,0,0.25)"; C.fillRect(0, y, W, 2); Hh.fillStyle = nnXGrey(0.75); Hh.fillRect(0, y, W, 3); } for (let k = 0; k < 900; k++) { C.fillStyle = `rgba(${rnd() < 0.5 ? "255,255,255" : "0,0,0"},${0.05 + rnd() * 0.1})`; C.fillRect(rnd() * W, rnd() * W, 2, 2); } nnXGrime(c, rnd, { sc: 3, stain: 0.5, streak: 0.05 }); }
+  else { // "grime": near-white weathering for vertex-coloured props
+    fillNoise([206, 204, 212], 50, 8); for (let k = 0; k < 2500; k++) { C.fillStyle = `rgba(${rnd() < 0.5 ? "255,255,255" : "30,26,40"},${0.04 + rnd() * 0.08})`; C.fillRect(rnd() * W, rnd() * W, 1 + rnd() * 3, 1 + rnd() * 3); }
+    for (let k = 0; k < 40; k++) { C.strokeStyle = "rgba(20,16,30,0.12)"; C.lineWidth = 1; const x = rnd() * W, y = rnd() * W; C.beginPath(); C.moveTo(x, y); C.lineTo(x + (rnd() - 0.5) * 30, y + (rnd() - 0.5) * 30); C.stroke(); } nnXGrime(c, rnd, { sc: 2, stain: 0.3, streak: 0.25, stx: 32, sty: 2 }); str = 2; }
+  return { map: nnXTx(c, true), nrm: nnXTx(nnXNormal(h, 256, str), false) }; })());
+// world-space (triplanar) textured material: colour tints the swatch
+const nnXTri = (key, sw, sc, o = {}) => thM("nnX|" + key, () => FXTRI(std({ map: nnXSwatch(sw).map, color: o.c || "#ffffff", roughness: o.r ?? 0.75, metalness: o.m ?? 0.1, vertexColors: !!o.vc }), sc, 0));
+// towers: darken toward the street (ambient occlusion and grime at the foot of every wall), keeping lit windows bright
+const nnXFoot = (m) => { m.onBeforeCompile = (sh) => { sh.vertexShader = "varying float nnWY;\n" + sh.vertexShader.replace("#include <project_vertex>", "#include <project_vertex>\nnnWY = (modelMatrix * vec4(transformed, 1.0)).y;");
+    sh.fragmentShader = "varying float nnWY;\n" + sh.fragmentShader.replace("#include <color_fragment>", "#include <color_fragment>\ndiffuseColor.rgb *= mix(0.52, 1.0, smoothstep(0.3, 7.0, nnWY));"); }; m.customProgramCacheKey = () => "nnfoot"; return m; };
+// ---- real relief on every city tower: cornice, belt course over the shops, string courses, corner quoins, and per-style
+// fittings (fire escapes on brick, balconies on plaster, sunshades on concrete, fins on glass, wall units on metal) ----
+const NNXBAY = [16, 8, 20, 12, 16], NNXTRIM = ["#8a8498", "#7a7684", "#4c5064", "#2c2a34", "#bcb2c8"], NNXIRON = "#24222c";
+const nnXCap = (k, x, z, top, w, d) => { const tc = NNXTRIM[k]; nnBx("lit", null, x, top - 0.34, z, w + 0.26, 0.22, d + 0.26, tc); nnBx("deco", null, x, top - 0.46, z, w + 0.12, 0.12, d + 0.12, nnXHex(tc, -0.08)); };
+const nnXRelief = (k, x, z, gy, w, d, h) => { const q = nnXR((Math.floor(x * 73.1) * 7919) ^ Math.floor(z * 191.7)), tc = NNXTRIM[k], dk = nnXHex(tc, -0.1), x0 = x - w / 2, x1 = x + w / 2, z0 = z - d / 2, z1 = z + d / 2, top = gy + h, nf = Math.floor((h - 0.6) / 3.2);
+  if (h < 2.5) return;
+  // cornice with a bed moulding under it
+  if (k !== 2) { nnBx("lit", null, x, top - 0.62, z, w + 0.34, 0.26, d + 0.34, tc); nnBx("deco", null, x, top - 0.8, z, w + 0.18, 0.18, d + 0.18, dk); }
+  else nnBx("lit", null, x, top - 0.5, z, w + 0.14, 0.2, d + 0.14, "#5a5e72");
+  // belt course over the shop fronts, string course every third floor
+  if (h > 4.2) nnBx("lit", null, x, gy + 3.12, z, w + 0.16, 0.22, d + 0.16, tc);
+  if (k === 0 || k === 4) for (let f = 3; f * 3.2 < h - 1.4; f += 3) nnBx("deco", null, x, gy + f * 3.2 - 0.02, z, w + 0.1, 0.16, d + 0.1, tc);
+  // corner quoins / pilasters
+  const qw = k === 2 ? 0.16 : 0.3, qo = k === 2 ? 0.05 : 0.08; for (const [a, b] of [[x0 + qw / 2 - qo, z0 + qw / 2 - qo], [x1 - qw / 2 + qo, z0 + qw / 2 - qo], [x0 + qw / 2 - qo, z1 - qw / 2 + qo], [x1 - qw / 2 + qo, z1 - qw / 2 + qo]])
+    nnBx(k === 2 ? "deco" : "lit", null, a, gy + 3.2, b, qw, Math.max(0.2, h - 3.85), qw, k === 2 ? "#5a5e72" : k === 3 ? "#1c1a24" : nnXHex(tc, 0.03));
+  const floorsUp = Math.min(nf, 7);
+  if (k === 1) for (let f = 1; f < nf; f++) { const y = gy + f * 3.2 + 2.42; nnBx("deco", null, x, y, z, w + 0.62, 0.07, d + 0.62, "#8a8696"); }
+  if (k === 2) for (const [ax, az, len, alongX] of [[x, z1, w, true], [x, z0, w, true], [x1, z, d, false], [x0, z, d, false]]) { const n = Math.floor(len / 3.2); for (let i = 1; i < n; i++) { const t = -len / 2 + i * 3.2 + (len - n * 3.2) / 2; nnBx("deco", null, alongX ? x + t : ax + Math.sign(ax - x) * 0.12, gy + 3.4, alongX ? az + Math.sign(az - z) * 0.12 : z + t, alongX ? 0.06 : 0.24, h - 3.9, alongX ? 0.24 : 0.06, "#5a5e72"); } }
+  if (k === 0 && w > 4.2 && nf >= 2) { // fire escape on the front: landings, rails and stair flights zig-zagging up
+    const n0 = Math.floor((w - 4) / 2), cx = x0 + 2 + 2 * Math.floor(q() * Math.max(1, n0)) + 1, fz = q() < 0.5 ? 1 : -1, zf = fz > 0 ? z1 : z0;
+    for (let f = 1; f <= floorsUp - 0 && f * 3.2 < h - 1.2; f++) { const y = gy + f * 3.2 - 0.02, zc = zf + fz * 0.5;
+      nnBx("deco", null, cx, y, zc, 3.8, 0.06, 1.0, NNXIRON); nnBx("deco", null, cx, y + 0.95, zf + fz * 0.98, 3.8, 0.04, 0.04, NNXIRON); nnBx("deco", null, cx, y + 0.5, zf + fz * 0.98, 3.8, 0.03, 0.03, NNXIRON);
+      for (const s of [-1, 1]) { nnBx("deco", null, cx + s * 1.88, y, zc, 0.04, 0.98, 1.0, NNXIRON); nnBx("deco", null, cx + s * 1.88, y, zf + fz * 0.98, 0.05, 0.98, 0.05, NNXIRON); }
+      if ((f + 1) * 3.2 < h - 1.2 && f < floorsUp) { const dir = f % 2 ? 1 : -1, L = Math.hypot(3.3, 3.2); nnP("deco", null, "box", cx, y + 1.6, zc + fz * 0.05, L, 0.05, 0.62, NNXIRON, 0, 0, dir * Math.atan2(3.2, 3.3)); } } }
+  if (k === 4 && w > 3) for (const zf of [z1, z0]) { const fz = zf > z ? 1 : -1, nb = Math.floor((w - 0.6) / 2); // French balconies on the plaster blocks
+    for (let f = 1; f <= floorsUp && f * 3.2 < h - 1.4; f++) for (let b = 0; b < nb; b++) { if (q() > 0.38) continue; const bx = fz > 0 ? x0 + 1 + 2 * b : x1 - 1 - 2 * b, y = gy + f * 3.2 + 0.05, zc = zf + fz * 0.38;
+      nnBx("lit", null, bx, y, zc, 1.5, 0.1, 0.76, "#a49ab4"); nnBx("deco", null, bx, y + 0.95, zf + fz * 0.74, 1.5, 0.05, 0.05, NNXIRON); for (let i = 0; i < 6; i++) nnBx("deco", null, bx - 0.7 + i * 0.28, y + 0.1, zf + fz * 0.74, 0.025, 0.85, 0.025, NNXIRON); for (const s of [-1, 1]) nnBx("deco", null, bx + s * 0.74, y + 0.1, zc, 0.03, 0.85, 0.72, NNXIRON);
+      if (q() < 0.4) nnCy("deco", null, bx + (q() - 0.5) * 0.9, y + 0.1, zc, 0.13, 0.22, "#8a5a4a"); } }
+  if ((k === 3 || k === 0 || k === 4) && w > 2.4) { const nb = k === 3 ? 12 : 16, bw = 32 / nb; // window units and vents hung on the street walls
+    for (const zf of [z1, z0]) { const fz = zf > z ? 1 : -1; for (let f = 1; f <= floorsUp && f * 3.2 < h - 1.4; f++) for (let x2 = x0 + bw / 2; x2 < x1 - 0.5; x2 += bw) { if (q() > (k === 3 ? 0.18 : 0.08)) continue;
+      const y = gy + f * 3.2 + (k === 3 ? 2.35 : 0.18); nnBx("deco", null, x2, y, zf + fz * 0.22, 0.66, 0.44, 0.42, "#9a9aa8"); nnBx("deco", null, x2, y + 0.06, zf + fz * 0.44, 0.5, 0.3, 0.02, "#3a3a46"); nnBx("deco", null, x2 + 0.36, y - 0.6, zf + fz * 0.04, 0.03, 0.62, 0.03, "#2a2834"); } } }
+  if (k === 3 && h > 8 && q() < 0.6) { const s = q() < 0.5 ? -1 : 1; nnCy("deco", null, x + s * (w / 2 - 0.5), gy + 3.4, z1 + 0.16, 0.09, h - 4, "#4a4856"); for (let y = gy + 4; y < top - 1; y += 2.4) nnBx("deco", null, x + s * (w / 2 - 0.5), y, z1 + 0.08, 0.26, 0.06, 0.2, "#2a2834"); } };
 // ---- props ----
 const thPalm = (x, z, h = 6 + R() * 3, lean = R() * TAU) => { const G = grp(x, 0, z, lean), bend = 0.6 + R() * 0.9, pts = []; for (let i = 0; i <= 8; i++) { const t = i / 8; pts.push([Math.sin(t * 1.4) * bend, t * h, 0]); } limb(pts, 0.2, 0.12, thMat.palm(), { seg: 24, rad: 7, knob: 0.5, parent: G });
   const top = pts[8]; for (let k = 0; k < 9; k++) { const a = (k / 9) * TAU + R() * 0.3, L = 2.2 + R() * 1.2, droop = 0.8 + R() * 0.6, g = new THREE.PlaneGeometry(L, 0.55, 8, 2), P2 = g.attributes.position; for (let i = 0; i < P2.count; i++) { const u = (P2.getX(i) + L / 2) / L, v = P2.getY(i); P2.setXYZ(i, u * L, -droop * u * u + Math.abs(v) * 0.15 * u, v * (1 - u * 0.7)); } g.computeVertexNormals(); const f = add(g, thMat.leaf(), [top[0], top[1] + 0.05, top[2]], [0, a, -0.15], "nocol", G); f.castShadow = true; }
@@ -14210,13 +14394,9 @@ const nnPlay = (x, z) => { const G = grp(x, 0, z); add(new THREE.SphereGeometry(
   for (const [a, b, c] of [[2.8, 0.8, NC[0]], [-2.6, 1.2, NC[2]]]) { const S = grp(a, 0, b, 0, G); add(new THREE.CylinderGeometry(0.06, 0.06, 0.6, 6), nnM.chrome(), [0, 0.3, 0], [0, 0, 0], "nocol", S); add(new THREE.SphereGeometry(0.35, 10, 8), nnM.neon(c), [0, 0.75, 0], [0, 0, 0], null, S); } return G; };
 // ---- the city blocks: every patch of block ground ("x") away from the streets fills with towers of lit windows ----
 const NNF = {};
-const NNLAY = [[16, 12, 0.5], [20, 14, 0.42], [24, 13, 0.58]], NNTINT = [[1, 1, 1], [1.5, 1.2, 1.8], [1.1, 1.4, 1.7], [1.7, 1.2, 1.3], [1.25, 1.25, 1.35], [0.95, 1.35, 1.4], [1.6, 1.45, 1.1]];
-const nnFacadeM = (k = 0) => NNF[k] || (NNF[k] = (() => { const [cols, rows, pl] = NNLAY[k], lay = []; for (let i = 0; i < cols * rows; i++) lay.push(R() < pl ? null : ["#ffd890", "#7af0ff", "#ff7ae0", "#e8e8ff", "#b89aff"][Math.floor(R() * 5)]);
-  const draw = (lit) => (g, W, Hh) => { const cw = W / cols, rh = Hh / rows, mx = Math.max(3, cw * 0.18), my = Math.max(4, rh * 0.22); g.fillStyle = lit ? "#000000" : "#2a2838"; g.fillRect(0, 0, W, Hh); if (!lit) for (let r = 0; r < rows; r++) { g.fillStyle = "rgba(255,255,255,0.07)"; g.fillRect(0, r * rh, W, 3); }
-    if (!lit && k === 1) for (let c = 0; c < cols; c++) { g.fillStyle = "rgba(0,0,0,0.25)"; g.fillRect(c * cw, 0, 3, Hh); }
-    for (let r = 1; r < rows; r++) for (let c = 1; c < cols; c++) { const v = lay[r * cols + c], x = c * cw + mx, y = r * rh + my, w = cw - 2 * mx, h = rh - 2 * my; if (v) { g.fillStyle = v; g.globalAlpha = lit ? 0.55 + ((r * 7 + c * 3) % 5) * 0.1 : 1; g.fillRect(x, y, w, h); g.globalAlpha = 1; } else if (!lit) { g.fillStyle = "#2a3250"; g.fillRect(x, y, w, h); } }
-    g.fillStyle = lit ? "#000000" : "#6a6684"; g.fillRect(0, 0, 24, 24); };
-  return std({ map: tex(512, 512, draw(false), [1, 1]), emissiveMap: tex(512, 512, draw(true), [1, 1]), emissive: "#ffffff", emissiveIntensity: 1.0, roughness: 0.5, metalness: 0.25, vertexColors: true }); })());
+const NNLAY = [[16, 12, 0.5], [20, 14, 0.42], [24, 13, 0.58]], NNTINT = [[1, 1, 1], [1.08, 0.98, 1.12], [0.94, 1.0, 1.1], [1.1, 1.0, 0.96], [1.04, 1.04, 1.04], [0.92, 0.96, 1.04], [1.06, 1.04, 0.96]];
+const nnFacadeM = (k = 0) => NNF[k] || (NNF[k] = (() => { const T = nnXFacade(k); return nnXFoot(std({ map: T.map, emissiveMap: T.lit, emissive: "#ffffff", emissiveIntensity: 1.0, normalMap: T.nrm, normalScale: new THREE.Vector2(1.3, 1.3),
+  roughnessMap: T.rgh, roughness: 1, metalness: [0.05, 0.04, 0.35, 0.3, 0.03][k], vertexColors: true })); })());
 const nnBox = (B, cx, y0, cz, w, h, d, u0, v0) => { const x0 = cx - w / 2, x1 = cx + w / 2, z0 = cz - d / 2, z1 = cz + d / 2, y1 = y0 + h, S = 1 / 32;
   const tc = B.tint, quad = (a, b, c, dd, n, uv) => { for (const [p, t] of [[a, uv[0]], [b, uv[1]], [c, uv[2]], [a, uv[0]], [c, uv[2]], [dd, uv[3]]]) { B.P.push(p[0], p[1], p[2]); B.N.push(n[0], n[1], n[2]); B.U.push(t[0], t[1]); if (tc) B.C.push(tc[0], tc[1], tc[2]); } };
   const side = (L) => [[u0, v0], [u0 + L * S, v0], [u0 + L * S, v0 + h * S], [u0, v0 + h * S]], T = [0.012, 0.988];
@@ -14224,11 +14404,11 @@ const nnBox = (B, cx, y0, cz, w, h, d, u0, v0) => { const x0 = cx - w / 2, x1 = 
   quad([x1, y0, z1], [x1, y0, z0], [x1, y1, z0], [x1, y1, z1], [1, 0, 0], side(d)); quad([x0, y0, z0], [x0, y0, z1], [x0, y1, z1], [x0, y1, z0], [-1, 0, 0], side(d));
   quad([x0, y1, z1], [x1, y1, z1], [x1, y1, z0], [x0, y1, z0], [0, 1, 0], [T, T, T, T]); };
 const nnBoxC = (B, cx, y0, cz, w, h, d, col) => { const n0 = B.P.length; nnBox({ P: B.P, N: B.N, U: [] }, cx, y0, cz, w, h, d, 0, 0); for (let i = n0; i < B.P.length; i += 3) B.C.push(col.r, col.g, col.b); };
-const nnFB = () => [0, 1, 2].map((k) => ({ P: [], N: [], U: [], C: [], k, tint: null }));
+const nnFB = () => [0, 1, 2, 3, 4].map((k) => ({ P: [], N: [], U: [], C: [], k, tint: null }));
 const nnFlush = (BB, NB) => { for (const B of BB) if (B.P.length) { const g = new THREE.BufferGeometry(); g.setAttribute("position", new THREE.Float32BufferAttribute(B.P, 3)); g.setAttribute("normal", new THREE.Float32BufferAttribute(B.N, 3)); g.setAttribute("uv", new THREE.Float32BufferAttribute(B.U, 2)); g.setAttribute("color", new THREE.Float32BufferAttribute(B.C, 3)); const m = add(g, nnFacadeM(B.k), [0, 0, 0], [0, 0, 0], "nocol"); m.userData.noLift = true; m.castShadow = false; }
   if (NB.P.length) { const g = new THREE.BufferGeometry(); g.setAttribute("position", new THREE.Float32BufferAttribute(NB.P, 3)); g.setAttribute("normal", new THREE.Float32BufferAttribute(NB.N, 3)); g.setAttribute("color", new THREE.Float32BufferAttribute(NB.C, 3)); const m = add(g, thM("nnTrimM", () => new THREE.MeshBasicMaterial({ vertexColors: true })), [0, 0, 0], [0, 0, 0], "nocol"); m.userData.noLift = true; m.castShadow = false; m.receiveShadow = false; } };
-const nnTower = (BB, NB, ux, uz, y0, bw, bd, h, clutter = false) => { const B = BB[Math.floor(R() * BB.length)]; B.tint = NNTINT[Math.floor(R() * NNTINT.length)]; nnBox(B, ux, y0, uz, bw, h, bd, R(), R()); let top = y0 + h, tw = bw, td = bd, tx = ux, tz = uz;
-  if (h > 10 && R() < 0.6) { const th = 2 + R() * 4; tx = ux + (R() - 0.5) * bw * 0.3; tz = uz + (R() - 0.5) * bd * 0.3; tw = bw * 0.6; td = bd * 0.6; nnBox(B, tx, top, tz, tw, th, td, R(), R()); if (clutter) nnRoofTop(ux, top, uz, bw, bd, false); top += th; }
+const nnTower = (BB, NB, ux, uz, y0, bw, bd, h, clutter = false) => { const B = BB[Math.floor(R() * BB.length)]; B.tint = NNTINT[Math.floor(R() * NNTINT.length)]; const nbay = NNXBAY[B.k], u0 = Math.floor(R() * nbay) / nbay, v0 = Math.floor(R() * 10) / 10 - 0.5 / 32; nnBox(B, ux, y0, uz, bw, h, bd, u0, v0); if (clutter) nnXRelief(B.k, ux, uz, y0 + 0.5, bw, bd, h - 0.5); let top = y0 + h, tw = bw, td = bd, tx = ux, tz = uz;
+  if (h > 10 && R() < 0.6) { const th = 2 + R() * 4; tx = ux + (R() - 0.5) * bw * 0.3; tz = uz + (R() - 0.5) * bd * 0.3; tw = bw * 0.6; td = bd * 0.6; nnBox(B, tx, top, tz, tw, th, td, Math.floor(R() * nbay) / nbay, R()); if (clutter) { nnRoofTop(ux, top, uz, bw, bd, false); nnXCap(B.k, tx, tz, top + th, tw, td); } top += th; }
   if (R() < 0.55) { const c = new THREE.Color(nnPick()); for (const [a, b, ww, dd] of [[0, bd / 2, bw, 0.12], [0, -bd / 2, bw, 0.12], [bw / 2, 0, 0.12, bd], [-bw / 2, 0, 0.12, bd]]) nnBoxC(NB, ux + a, top - 0.12, uz + b, ww + 0.04, 0.16, dd + 0.04, c); }
   if (R() < 0.3) { const sx = R() < 0.5 ? -1 : 1; nnBoxC(NB, ux + sx * (bw / 2 - 0.35), y0 + 1.5 + h * 0.15, uz + bd / 2 + 0.06, 0.22, h * 0.6, 0.1, new THREE.Color(nnPick())); }
   if (clutter) nnRoofTop(tx, top, tz, tw, td, true); else if (R() < 0.35) nnBox(B, ux + (R() - 0.5) * bw * 0.5, top, uz + (R() - 0.5) * bd * 0.5, 0.9, 0.6, 0.7, 0, 0.99); return top; };
@@ -14298,7 +14478,7 @@ const nnDetailFlush = () => { const m4 = new THREE.Matrix4(), q = new THREE.Quat
       const g = nnGeo(gk), gp = g.attributes.position, gn = g.attributes.normal;
       for (let i = 0; i < gp.count; i++, o++) { v.fromBufferAttribute(gp, i).applyMatrix4(m4); P[o * 3] = v.x; P[o * 3 + 1] = v.y; P[o * 3 + 2] = v.z; v.fromBufferAttribute(gn, i).applyMatrix3(n3).normalize(); N[o * 3] = v.x; N[o * 3 + 1] = v.y; N[o * 3 + 2] = v.z; C[o * 3] = cc.r; C[o * 3 + 1] = cc.g; C[o * 3 + 2] = cc.b; } }
     const g = new THREE.BufferGeometry(); g.setAttribute("position", new THREE.BufferAttribute(P, 3)); g.setAttribute("normal", new THREE.BufferAttribute(N, 3)); g.setAttribute("color", new THREE.BufferAttribute(C, 3)); g.computeBoundingSphere();
-    const mat = bin === "glow" ? thM("nnDG", () => new THREE.MeshBasicMaterial({ vertexColors: true })) : thM("nnDL", () => std({ vertexColors: true, roughness: 0.55, metalness: 0.25 }));
+    const mat = bin === "glow" ? thM("nnDG", () => new THREE.MeshBasicMaterial({ vertexColors: true })) : thM("nnDL", () => FXTRI(std({ map: nnXSwatch("grime").map, vertexColors: true, roughness: 0.62, metalness: 0.2 }), 0.35, 0));
     const m = add(g, mat, [0, 0, 0], [0, 0, 0], bin === "lit" ? null : "nocol"); m.userData.noLift = true; m.castShadow = bin === "lit"; m.receiveShadow = bin !== "glow"; NND[bin] = []; } };
 
 // ---- rooftops: a lighter slab and parapet on every tower, then the clutter a real roof has ----
