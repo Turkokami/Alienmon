@@ -62,10 +62,10 @@ gyW("YF", 130, 150, "Farmstead", { town: true, hub: [15, 13], r: 13,
   build(X, Y) { for (const [x0, y0, x1, y1] of [[2, 18, 11, 27], [17, 18, 27, 23], [17, 25, 27, 28]]) for (let x = x0 + 0.5; x <= x1; x += 1.2) for (let z = y0 + 0.6; z <= y1; z += 1.3) { const O = gyO(X, Y, x, z, nh(x, z, 1)); nnCy("fern", O, 0, 0, 0, 0.05, 0.5, "#5a8a2a"); gyMoss(O, 0, 0.55, 0, 0.26); }
     for (const [x, z, L, ry] of [[1.6, 17.4, 10.5, 0], [16.4, 17.4, 11.2, 0], [1.6, 17.4, 11, Math.PI / 2]]) for (let u = 0; u <= L; u += 1.8) { const O = { x: X + x + Math.cos(ry) * u, z: Y + z + Math.sin(ry) * u }; nnCy("lit", O, 0, 0, 0, 0.06, 1.0, "#8a6a40"); } gyBarrow(gyO(X, Y, 13.5, 17.5, 0.4)); gyCrates(gyO(X, Y, 18, 9, 0), 4); gyToolRack(gyO(X, Y, 28, 10)); } });
 
-gyW("YR", 160, 150, "Relay Tower", { hub: [14, 13], r: 10, blobs: [[20, 21, 6, "g"], [9, 22, 5, "."], [14, 13, 4, "."]],
-  ground(X, Y) { fillT(X, Y + 28, X + 29, Y + 29, "w"); },
-  grass: [[21, 22, 3.6, 2.6, "jungle", "Relay hill grass"], [7, 9, 2.8, 2, "ruin", "Relay ruin grass"]], quest: [10, 17, "relay-tower", "Retune the old Relay Tower", 0.5],
-  build(X, Y) { gyChimeTower(gyO(X, Y, 14, 13), 10); gyRuinRing(X, Y, 14, 13, 5, 8, 3.2, 0.5); gyBrazier(gyO(X, Y, 17, 9)); gyBrazier(gyO(X, Y, 11, 17)); gyStele(gyO(X, Y, 19.5, 15, -0.6), 2.4); gyCrates(gyO(X, Y, 8.5, 21, 0.3), 3); } });
+gyW("YR", 160, 150, "Relay Tower", { hub: [14, 24], r: 5, blobs: [[25, 23, 4, "g"], [5, 23, 4, "."]],
+  ground(X, Y) { fillT(X + 5, Y + 1, X + 22, Y + 18, "b"); fillT(X, Y + 28, X + 29, Y + 29, "w"); },
+  grass: [[26, 22, 2.6, 2.2, "jungle", "Relay hill grass"], [3, 10, 2.4, 2, "ruin", "Relay ruin grass"]], quest: [8, 25, "relay-tower", "Retune the old Relay Tower", 0.5],
+  build(X, Y) { gyRelayTower(gyO(X, Y, 14, 10)); gyBrazier(gyO(X, Y, 11, 20.6)); gyBrazier(gyO(X, Y, 17, 20.6)); gyStele(gyO(X, Y, 21.5, 23, -0.6), 2.4); gyCrates(gyO(X, Y, 3.5, 21, 0.3), 3); } });
 
 gyW("EB", 190, 150, "Turtle Beach", { hub: [13, 12], r: 9, palms: 0.6, blobs: [[15, 21, 9, "."], [24, 12, 5, "g"], [6, 26, 7, "w", 0.2], [24, 27, 7, "w", 0.2]],
   ground(X, Y) { fillT(X, Y + 27, X + 29, Y + 29, "w"); },
@@ -194,7 +194,7 @@ gyW("Y4", 190, 60, "Dig Camp Storehouse", { town: true, hub: [15, 15], r: 12,
   bld: [["g_store", 1, 2, 10, 8, "Dig Camp Storehouse"], ["g_tent", 1, 19, 9, 6, "Packer's Tent"]],
   ground(X, Y) { fillT(X + 1, Y + 9, X + 28, Y + 28, "g"); ellT(X + 15, Y + 15, 4.6, 4.6, "P"); },
   grass: [[24, 7, 3, 2.4, "jungle", "Storehouse thicket"]], quest: [20, 22, "missing-crates", "Track down the missing crates", 0.3],
-  build(X, Y) { gyCrates(gyO(X, Y, 13.5, 11, 0.2), 6); gyCrates(gyO(X, Y, 18, 19.5, -0.4), 5); gyBarrow(gyO(X, Y, 11, 18, 0.6)); gyAwning(gyO(X, Y, 23, 13.5), 4.5, 2.6, 2.3, "#d8c8a0"); gyTable(gyO(X, Y, 23, 13.6)); gyLookout(gyO(X, Y, 25, 25), 5); for (const [x, z] of [[11, 15], [19, 15]]) gyLantern(gyO(X, Y, x, z)); } });
+  build(X, Y) { gyCrates(gyO(X, Y, 13.5, 11, 0.2), 6); gyCrates(gyO(X, Y, 18, 19.5, -0.4), 5); gyBarrow(gyO(X, Y, 11, 18, 0.6)); gyAwning(gyO(X, Y, 23, 13.5), 4.5, 2.6, 2.3, "#d8c8a0"); gyTable(gyO(X, Y, 23, 13.6)); gyLookout(gyO(X, Y, 25, 25), 5); for (const [x, z] of [[11, 15], [19, 15]]) gyLantern(gyO(X, Y, x, z)); gyCellarHatch(gyO(X, Y, 16, 6)); } });
 
 gyW("E1", 220, 60, "Excavation Pits", { hub: [15, 15], r: 11, blobs: [[8, 8, 4, "."], [22, 8, 4, "."], [8, 22, 4, "."], [22, 22, 4, "."]],
   grass: [[15, 4, 3, 1.8, "ruin", "Pit rim grass"], [4, 15, 1.8, 3, "jungle", "Pit thicket"]], quest: [15, 19, "excavation", "Help dig out the buried door", Math.PI],
@@ -224,10 +224,10 @@ gyW("YZ", 160, 30, "Forgotten Forum", { hub: [16, 15], r: 11, blobs: [[16, 15, 6
   grass: [[5, 6, 3, 2.4, "ruin", "Forum edge grass"], [26, 25, 2.6, 2.4, "jungle", "Forum thicket"]],
   build(X, Y) { for (let u = 10.5; u <= 21.5; u += 3.6) for (const z of [9.6, 20.4]) { if (gyOnTrail(X + u, Y + z) || gyOnTrail(X + u, Y + z + (z < 15 ? -1.5 : 1.5))) continue; gyColumn(gyO(X, Y, u, z), 4, nh(u, z, 1) < 0.35 ? 0.5 : 0); } gyStele(gyO(X, Y, 16, 15), 2.6); for (const [x, z] of [[12, 12], [20, 18]]) gyUrn(gyO(X, Y, x, z)); } });
 
-gyW("YV", 190, 30, "Temple of Trials", { hub: [9, 23], r: 8, blobs: [[18, 12, 9, "."], [5, 15, 4, "g"], [25, 25, 4, "g"]],
-  ground(X, Y) { fillT(X + 11, Y + 6, X + 24, Y + 13, "b"); },
-  grass: [[5, 15, 3, 2.6, "jungle", "Trials thicket"], [25, 25, 3, 2.6, "ruin", "Trials yard grass"]], quest: [18, 17.5, "trials", "Pass the three Trials", Math.PI],
-  build(X, Y) { gyTemple(gyO(X, Y, 18, 9.6), 12, 7, 5); for (const s of [-1, 1]) { gyChimePost(gyO(X, Y, 18 + s * 6, 16)); gyBrazier(gyO(X, Y, 18 + s * 3.6, 15.4)); } } });
+gyW("YV", 190, 30, "Temple of Trials", { hub: [10, 24], r: 6, blobs: [[3, 11, 3, "g"], [25, 26, 3.5, "g"]],
+  ground(X, Y) { fillT(X + 7, Y + 1, X + 28, Y + 18, "b"); },
+  grass: [[3, 11, 2.4, 2.2, "jungle", "Trials thicket"], [25, 26, 2.6, 2.2, "ruin", "Trials yard grass"]], quest: [15, 26, "trials", "Pass the three Trials", Math.PI],
+  build(X, Y) { gyTrialsHall(gyO(X, Y, 18, 10)); } });
 
 gyW("YY", 220, 30, "Glyph Hollow", { hub: [15, 15], r: 10, blobs: [[15, 15, 4.6, "w", 0.2], [8, 24, 4, "g"]],
   ground(X, Y) { ellT(X + 15, Y + 15, 2.5, 2.5, "g"); },
@@ -273,10 +273,10 @@ gyW("V1", 190, -30, "Canopy Walk", { hub: [12, 12], r: 9, jungle: 1.3, palms: 0.
 gyW("V2", 190, 0, "Canopy Walk Landing", { hub: [12, 17], r: 9, jungle: 1.3, blobs: [[22, 8, 4, "g"]],
   grass: [[22, 8, 3, 2.6, "jungle", "Landing ferns"], [8, 26, 3, 1.8, "orchid", "Landing orchids"]], quest: [16, 22, "canopy-nest", "Return the fallen nest to the canopy", 0.3],
   build(X, Y) { gyLookout(gyO(X, Y, 18, 14), 6); gyScaffold(gyO(X, Y, 9, 13, 0.3), 3.4, 4); } });
-gyW("Y9", 220, -30, "Temple of Voices", { hub: [15, 25], r: 8, blobs: [[15, 15, 11, "."]],
-  ground(X, Y) { fillT(X + 6, Y + 3, X + 23, Y + 19, "b"); },
-  grass: [[4, 26, 2.6, 2.2, "ruin", "Temple forecourt grass"], [26, 26, 2.6, 2.2, "ruin", "Temple side grass"]], quest: [19, 23, "temple-voices", "Hear the Temple of Voices sing", Math.PI],
-  build(X, Y) { gyPyramid(gyO(X, Y, 15, 11), 17, 6, 1.5, true); for (const s of [-1, 1]) { gyChimeTower(gyO(X, Y, 15 + s * 10.5, 18), 6); gyHead(gyO(X, Y, 15 + s * 4.5, 21.5, 0), 1.3); } } });
+gyW("Y9", 220, -30, "Temple of Voices", { hub: [15, 25], r: 6, blobs: [[15, 25, 5, "."]],
+  ground(X, Y) { fillT(X + 4, Y + 1, X + 25, Y + 20, "b"); },
+  grass: [[4, 26, 2.6, 2.2, "ruin", "Temple forecourt grass"], [26, 26, 2.6, 2.2, "ruin", "Temple side grass"]], quest: [20, 26.5, "temple-voices", "Hear the Temple of Voices sing", Math.PI],
+  build(X, Y) { gyVoicesPyramid(gyO(X, Y, 15, 11)); for (const s of [-1, 1]) { gyChimeTower(gyO(X, Y, 15 + s * 9.5, 23.5), 6); gyHead(gyO(X, Y, 15 + s * 4.2, 23.6, 0), 1.3); } } });
 gyW("Y8", 220, 0, "Temple of Voices Steps", { hub: [15, 15], r: 9, blobs: [[15, 6, 5, "."], [15, 24, 5, "."]],
   ground(X, Y) { fillT(X + 11, Y, X + 19, Y + 29, "P"); },
   grass: [[5, 8, 3, 2.6, "jungle", "Steps thicket"], [25, 22, 3, 2.6, "ruin", "Steps ruin grass"]],
@@ -284,11 +284,11 @@ gyW("Y8", 220, 0, "Temple of Voices Steps", { hub: [15, 15], r: 9, blobs: [[15, 
 
 // ---------------- links (crossings default to the average of the two hubs along the shared edge; water crossings get a boardwalk too) ----------------
 for (const [a, b, t, c0] of [
-  ["YL", "YD"], ["YD", "YH"], ["YH", "YF"], ["YF", "YR"], ["YR", "EB"], ["YL", "EC"], ["YL", "YN"], ["YD", "YT"], ["YH", "YJ"], ["YF", "YC"], ["EB", "YP"],
+  ["YL", "YD"], ["YD", "YH"], ["YH", "YF"], ["YF", "YR", "p", 171], ["YR", "EB", "p", 171], ["YL", "EC"], ["YL", "YN"], ["YD", "YT"], ["YH", "YJ"], ["YF", "YC"], ["EB", "YP"],
   ["YI", "EC", "p", 24], ["YI", "YO", "p", 25], ["YN", "YI", "k", 135], ["YT", "YN", "k", 135], ["YJ", "YT"], ["YC", "YJ"], ["YC", "YW"], ["YW", "YP"], ["YP", "E4"],
   ["YT", "YU"], ["Y7", "YU", "k"], ["YJ", "YS"], ["YC", "YQ"], ["YM", "YW", "p", 175], ["E4", "E3"], ["YO", "Q1"], ["YU", "YS"], ["YQ", "YS"], ["YQ", "YM"], ["E3", "E2"], ["E2", "YM"],
   ["YU", "Q3"], ["YS", "YG"], ["Q6", "YQ"], ["YM", "YA"], ["E2", "Y4"], ["E3", "E1"], ["Q1", "Q2"], ["Q2", "Q3"], ["Q3", "YG"], ["Q6", "YG"], ["Q6", "YA"], ["Y4", "E1"],
-  ["Q2", "YK"], ["YG", "YB", "p", 115], ["Q6", "YX"], ["YA", "YZ"], ["YV", "Y4"], ["E1", "YY"], ["YB", "YE"], ["YE", "YK"], ["YZ", "YX", "p", 45], ["YZ", "YV"], ["YV", "YY"], ["YY", "Y8"],
+  ["Q2", "YK"], ["YG", "YB", "p", 115], ["Q6", "YX"], ["YA", "YZ"], ["YV", "Y4"], ["E1", "YY"], ["YB", "YE"], ["YE", "YK"], ["YZ", "YX", "p", 45], ["YZ", "YV", "p", 54], ["YV", "YY", "p", 54], ["YY", "Y8"],
   ["Q4", "YK"], ["F4", "YB"], ["S3", "YX", "p", 137], ["S4", "YZ", "p", 182], ["V2", "YV", "p", 193], ["Q4", "F3"], ["F3", "F4"], ["F4", "S3", "p", 20], ["S4", "V2", "p", 17], ["V2", "Y8"],
   ["F1", "F3"], ["F2", "F4"], ["F1", "F2"], ["F2", "S1", "p", -20], ["S2", "V1", "p", -18], ["V1", "V2"], ["V1", "Y9", "p", -6], ["Y8", "Y9"]]) {
   const A = TSCN[a], B = TSCN[b]; if (!A || !B) throw new Error("glyphos link " + a + "-" + b); const horiz = A.gy === B.gy; if (!(horiz ? Math.abs(A.gx - B.gx) === 30 : A.gx === B.gx && Math.abs(A.gy - B.gy) === 30)) throw new Error("glyphos link not adjacent " + a + "-" + b);

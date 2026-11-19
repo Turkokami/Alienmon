@@ -60,7 +60,12 @@ cut("// ================= NEONIS SCENES =================", "// ================
 cut("// ================= MOUNT LUMEN", "// ================= WILD DETAIL PASS")
 # (j) the Glyphos kit, jungle and scenes go in just before the assembly
 rep("// ================= assemble =================",
-    piece("gy_kit.js") + "\n" + piece("gy_jungle.js") + "\n" + piece("gy_scenes.js") + "\n// ================= assemble =================")
+    piece("gy_kit.js") + "\n" + piece("gy_jungle.js") + "\n" + piece("gy_scenes.js") + "\n" + piece("gy_places.js") + "\n// ================= assemble =================")
+# (j2) interiors: a room may set its own wall height; sandstone rooms get sandstone ribs or none; a place flushes its merged furniture batches
+rep("h = S.flat ? S.wallH : S.wallH * (0.85 + R() * 0.3);", "h = P.wallH || (S.flat ? S.wallH : S.wallH * (0.85 + R() * 0.3));")
+rep("const ribM = S.fxWall ? FXA.frame() :", "const ribM = S.ribM ? FXA[S.ribM]() : S.fxWall ? FXA.frame() :")
+rep('if ((x + y) % 4 === 0 && P.style !== "bunker") limb(', 'if ((x + y) % 4 === 0 && P.style !== "bunker" && !S.noRib) limb(')
+rep("const placeWorld = (id) => { const { P, g } = buildPlace(id); if (H && H.windify) {} buildAll(); buildFlora();", "const placeWorld = (id) => { const { P, g } = buildPlace(id); if (H && H.windify) {} buildAll(); buildFlora(); nnDetailFlush();")
 # (k) spawn scene and the land beyond
 rep('const want = (H && H.scene) || "NA"', 'const want = (H && H.scene) || "YL"')
 rep("nnOuter(ORECT.map((id) => SCN[id].rect));", "gyOuter(ORECT.map((id) => SCN[id].rect));")
