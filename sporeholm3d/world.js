@@ -1744,7 +1744,7 @@ P2("C5", 120, 60, ["WWWWWX", "GG..GX", "....GX", "G...GX", "GG..GX", "XXXXXX"], 
 // ---- C6 Lantern Marsh Shore ----
 P2("C6", 150, 60, ["WG...X", "WG...X", "W....X", "WW..GX", "WW...X", "WWW.WX"], (F, E) => { F(12, 0, 17, 14, "k"); F(5, 10, 11, 14, "k"); F(12, 15, 17, 24, "p"); F(12, 25, 17, 29, "k"); F(18, 10, 23, 13, "p"); E(22, 6.5, 4.2, 3.6, "."); F(18, 21, 21, 23, "p"); F(10, 15, 11, 29, "w"); F(18, 25, 24, 29, "w"); }, (X, Y, M0) => {
   closeEdges(X, Y, { n: [10, 19], s: [0, 29], w: [0, 29] }); boardwalk(X + 12, Y + 0, X + 17, Y + 14, 0.3); boardwalk(X + 5, Y + 10, X + 11, Y + 14, 0.3); boardwalk(X + 12, Y + 25, X + 17, Y + 29, 0.3);
-  // the Giant Mushroom: the tallest on Sporeholm, pale gold, with a hollow between its roots
+  // the Giant Mushroom: pale gold, with a hollow between its roots (the tallest on Sporeholm is now the Relay Tower, Z8)
   { const G = giantMush(X + 22.5, Y + 5.5, 15, 7.5, "#ffe08a", 0.03, 1); for (let k = 0; k < 7; k++) { const a = 0.3 + (k / 6) * 2.5; limb([[X + 22.5 + Math.sin(a) * 1.4, 2.6, Y + 5.5 + Math.cos(a) * 1.4], [X + 22.5 + Math.sin(a) * 3.0, 1.4, Y + 5.5 + Math.cos(a) * 3.0], [X + 22.5 + Math.sin(a) * 4.6, -0.2, Y + 5.5 + Math.cos(a) * 4.6]], 0.6, 0.22, M0.stalk, { seg: 14, rad: 8, knob: 0.3 }); } const l = new THREE.PointLight(0xffe08a, 6, 22, 1.3); l.position.set(X + 22.5, 9, Y + 9); root.add(l); glowcaps(X + 21, Y + 11.4, 8, ["#ffe08a"], 1.5); }
   // floating lanterns everywhere, the launch jetty, mist thickening south
   for (let k = 0; k < 60; k++) { const x = X + R() * 30, z = Y + R() * 30; if (at(x | 0, z | 0) !== "w") continue; if (k % 2) { add(olathe([[0.001, 0], [0.22, 0.02], [0.26, 0.1], [0.001, 0.06]], 10), M0.plank, [x, 0.03, z]); add(olathe([[0.001, 0], [0.1, 0.02], [0.13, 0.16], [0.07, 0.3], [0.001, 0.32]], 10), MK.glowC(["#ffd27a", "#ffb347", "#ff8ad8", "#8af0ff"][k % 4], 2), [x, 0.1, z]); } else lilyPad(x, z, 0.3 + R() * 0.5); if (k % 9 === 0) reeds(x, z, 6); }
@@ -2461,6 +2461,40 @@ const SPZ8BUILD = (K, SK, KC, SKC, st) => { const R0 = spRect("Z8"), { tW } = R0
     const q = K.kRat(x, z, 37); if (q() < 0.12) continue; SK.HexPool(spAO(x, z, spGY(x, z) - 0.02, Math.PI / 6), q, HR * 0.97, cols[Math.floor(q() * cols.length)]); nh++; }
   st.z8 = { rings: ring, pools: nh, at: [T.position.x, T.position.z].map((v) => +v.toFixed(1)) }; };
 SPS.Z8 = SPZ8BUILD;
+// C6/D6 Lantern Marsh (Book 1, Ch 12): folded paper lanterns float, sail and fly over the open water (flowers, boats, birds, moons), pink-
+// glowing dragonflies, a round plank platform where the stepping stones meet in D6 (where Sola waits) and the huge paper moon on its own raft.
+const SPLC = ["#ffd27a", "#ffb347", "#ff8ad8", "#8af0ff", "#fff2c0", "#c8a0ff", "#ffd27a"];
+const spLanterns = (K, SK, id, dens = 0.11) => { const R0 = spRect(id, 0), { tW } = R0; let n = 0;
+  for (let i = Math.floor(R0.x0); i < R0.x1; i++) for (let j = Math.floor(R0.z0); j < R0.z1; j++) { const cx = i + 0.5, cz = j + 0.5; if (tW(cx, cz) !== "w") continue; const q = K.kRat(cx, cz, 41); if (q() > dens) continue;
+    const x = cx + (q() - 0.5) * 0.8, z = cz + (q() - 0.5) * 0.8, r = q(), col = SPLC[Math.floor(q() * SPLC.length)], s = 0.7 + q() * 0.45;
+    if (r < 0.12) { const O = spAO(x, z, 2.2 + q() * 3.2, q() * TAU); SK.PaperLantern(O, q, "bird", s * 1.1, col); } // flying
+    else { const kind = r < 0.5 ? "flower" : r < 0.8 ? "boat" : r < 0.92 ? "orb" : "moon"; SK.PaperLantern(spAO(x, z, 0.03, q() * TAU), q, kind, s, col); } n++;
+    if (q() < 0.12) SK.Dragonfly(spAO(x + 0.4, z, 0.7 + q() * 1.1, q() * TAU)); }
+  return n; };
+SPS.C6 = (K, SK, KC, SKC, st) => { st.c6 = spLanterns(K, SK, "C6", 0.12); };
+SPS.D6 = (K, SK, KC, SKC, st) => { const [X, Y] = SCN.D6.rect, R0 = spRect("D6"), M0 = mk().M;
+  // the round platform: the walkable circle becomes boardwalk tiles; stones, lily pads and buoys that stood there go
+  const gc = [X + 20, Y + 20.3], [px, pz] = unwarp(gc[0], gc[1]), PR = 3.5, top = 0.42;
+  for (let y = Math.floor(gc[1] - 4); y <= gc[1] + 4; y++) for (let x = Math.floor(gc[0] - 4); x <= gc[0] + 4; x++) if (Math.hypot(x + 0.5 - gc[0], y + 0.5 - gc[1]) < 3.05 && at(x, y) === "w") GRID[y + GOY][x] = "k";
+  const bb = new THREE.Box3(), c = new THREE.Vector3(), sz = new THREE.Vector3(); let rm = 0; for (const o of root.children.slice()) { if (o.isLight || o.isPoints || o.name === "ground" || o.name === "grass" || o.name === "water" || o.userData.noLift || o.userData.detail) continue; bb.setFromObject(o); if (bb.isEmpty()) continue; bb.getCenter(c); bb.getSize(sz); if (sz.x > 2.5 || sz.z > 2.5 || bb.max.y > 1.4) continue; if (Math.hypot(c.x - px, c.z - pz) < PR + 0.3) { root.remove(o); rm++; } }
+  for (let z = -PR + 0.13; z < PR; z += 0.26) { const L = 2 * Math.sqrt(Math.max(0, PR * PR - z * z)) - 0.1; if (L < 0.3) continue; const h = K.kH3(z, 3, 1); K.P("wood", null, "box", px, top - 0.04 + (h - 0.5) * 0.02, pz + z, L, 0.08, 0.23, K.kHex(["#8a6440", "#7a5634", "#94704a"][Math.floor(h * 3)], (h - 0.5) * 0.08)); }
+  for (let k = 0; k < 28; k++) { const a = (k / 28) * TAU, b = ((k + 1) / 28) * TAU; K.Beam("wood", null, [px + Math.cos(a) * PR, top - 0.12, pz + Math.sin(a) * PR], [px + Math.cos(b) * PR, top - 0.12, pz + Math.sin(b) * PR], 0.09, "#5e4430", "cyl6"); }
+  for (let k = 0; k < 40; k++) { const a = (k / 40) * TAU; K.P("glow", null, "oct", px + Math.cos(a) * 2.25, top + 0.005, pz + Math.sin(a) * 2.25, 0.16, 0.03, 0.16, k % 2 ? "#ffd27a" : "#ff8ad8"); }
+  for (let k = 0; k < 12; k++) { const a = (k / 12) * TAU + 0.13, ex = px + Math.cos(a) * (PR + 0.05), ez = pz + Math.sin(a) * (PR + 0.05), open = Math.abs(Math.cos(a)) > 0.62; K.C("wood", null, ex, -0.8, ez, 0.08, top + (open ? 1.0 : 1.9), "#5e4430", "cyl6");
+    if (!open) { const b = a + TAU / 12, fx = px + Math.cos(b) * (PR + 0.05), fz = pz + Math.sin(b) * (PR + 0.05); if (Math.abs(Math.cos(b)) <= 0.62) K.Sag("deco", null, [ex, top + 0.85, ez], [fx, top + 0.85, fz], 0.08, 0.022, "#c8b080", 3);
+      if (k % 2 === 0) { K.Beam("wood", null, [ex, top + 1.75, ez], [ex + Math.cos(a) * 0.45, top + 1.8, ez + Math.sin(a) * 0.45], 0.03, "#5e4430", "cyl6"); SK.PaperLantern(spAO(ex + Math.cos(a) * 0.45, ez + Math.sin(a) * 0.45, top + 1.15), K.kRat(ex, ez, 3), "orb", 0.9, SPLC[k % SPLC.length]); } } }
+  for (let k = 0; k < 10; k++) { const a = (k / 10) * TAU, x = px + Math.cos(a) * (PR + 0.25), z = pz + Math.sin(a) * (PR + 0.25); K.C("wood", null, x, -0.9, z, 0.07, 0.8 + top, "#4e3a28", "cyl6"); }
+  st.d6 = { removed: rm };
+  // the huge paper moon on its own raft, south of the platform
+  const [mx, mz] = unwarp(X + 21.6, Y + 26.2); K.Deck(spAO(mx, mz, 0.38), K.kRat(mx, mz, 5), 0, 0.3, 0, 3.4, 2.6, 0.25, { rail: false }); for (const [dx, dz] of [[-1.5, -1.1], [1.5, -1.1], [-1.5, 1.1], [1.5, 1.1]]) K.C("wood", null, mx + dx, -0.6, mz + dz, 0.09, 1.0, "#4e3a28", "cyl6");
+  const sh = new THREE.Shape(), MR = 1.9, ir = 1.55, icx = 0.85, icy = 0.32, idd = Math.hypot(icx, icy), ia = Math.atan2(icy, icx), aa = (MR * MR - ir * ir + idd * idd) / (2 * idd), ao = Math.acos(aa / MR);
+  const t1 = ia + ao, t2 = ia - ao + TAU, p1 = [MR * Math.cos(t1) - icx, MR * Math.sin(t1) - icy], p2 = [MR * Math.cos(t2) - icx, MR * Math.sin(t2) - icy];
+  sh.absarc(0, 0, MR, t1, t2, false); sh.absarc(icx, icy, ir, Math.atan2(p2[1], p2[0]) + TAU, Math.atan2(p1[1], p1[0]), true);
+  const mg = new THREE.ExtrudeGeometry(sh, { depth: 0.5, bevelEnabled: true, bevelSize: 0.12, bevelThickness: 0.12, bevelSegments: 3, curveSegments: 40 }); mg.translate(0, 0, -0.25);
+  const moon = add(mg, MK.glowC("#fff2c0", 1.7), [mx, 2.7, mz], [0, 0.25 + Math.PI, 0]); moon.name = "nocol"; moon.userData.noLift = true;
+  K.Beam("wood", null, [mx, 0.4, mz], [mx + 0.2, 1.05, mz + 0.1], 0.12, "#5e4430", "cyl6"); K.Beam("wood", null, [mx - 0.9, 0.4, mz - 0.3], [mx - 0.5, 1.25, mz - 0.1], 0.08, "#5e4430", "cyl6");
+  const ml = new THREE.PointLight(0xfff0c0, 6, 14, 1.5); ml.position.set(mx, 2.9, mz + 1.5); root.add(ml);
+  st.d6.lanterns = spLanterns(K, SK, "D6", 0.13); };
 const spPass = (ids) => { if (!ASSETS.detailKit || !ASSETS.detailKit.sporeholm) return null; const env = { add, std, unwarp, GHT }, K = ASSETS.detailKit(THREE, env, { chunk: 60 }), SK = ASSETS.detailKit.sporeholm(K), KC = ASSETS.detailKit(THREE, env, { chunk: 60 }), SKC = ASSETS.detailKit.sporeholm(KC), st = { scenes: {} };
   for (const id of ids) { const f = SPS[id]; if (!f) continue; const n0 = K.count(), c0 = KC.count(); f(K, SK, KC, SKC, st); st.scenes[id] = K.count() - n0 + KC.count() - c0; }
   st.kit = K.flush(root).length; const camp = KC.flush(root); for (const m of camp) m.userData.helixCamp = true; st.camp = camp.length; return st; };
