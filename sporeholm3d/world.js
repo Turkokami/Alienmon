@@ -8471,7 +8471,7 @@ XS({ id: "FB3", gx: 60, gy: 30, name: "Ferrox Relay Tower", cross: { e: C6x }, b
   z: ["X X L L X X", "X D L L D X", "X B P P P P", "X G S P D X", "X G G T S X", "X X X X X X"],
   ground(F, X, Y) { F(8, 1, 22, 11, "b"); F(12, 9, 18, 17, "p"); ellT(X + 15, Y + 6.5, 6.2, 5.6, "b"); },
   paint(g, S) { g.fillStyle = "rgba(20,12,10,0.55)"; g.beginPath(); g.ellipse(12.6 * S, 15.6 * S, 1.6 * S, 1.0 * S, 0.3, 0, TAU); g.fill(); for (let k = 0; k < 40; k++) { g.strokeStyle = `rgba(255,${120 + R() * 80},40,${0.15 + R() * 0.25})`; g.lineWidth = 1.5; const x = R() * 30 * S, y = R() * 30 * S; g.beginPath(); g.moveTo(x, y); g.lineTo(x + (R() - 0.5) * S * 2, y + (R() - 0.5) * S * 2); g.stroke(); } },
-  build(X, Y) { xRelayTower(X + 15, Y + 6.4); xFurnace(X + 3.6, Y + 4.0, 0.5, 1.1); xFurnace(X + 26.4, Y + 4.0, -0.5, 1.1);
+  build(X, Y) { { const n0 = root.children.length; xRelayTower(X + 15, Y + 6.4); fxCut(n0); } fxSpear(X + 15, Y + 6.4); xFurnace(X + 3.6, Y + 4.0, 0.5, 1.1); xFurnace(X + 26.4, Y + 4.0, -0.5, 1.1);
     { const G = grp(X + 7.0, 0, Y + 12.0, 0.2); add(new THREE.BoxGeometry(1.4, 2.2, 1.4), XM.rust("#6a4a3a"), [0, 1.1, 0], [0, 0, 0], null, G); add(new THREE.BoxGeometry(1.7, 0.15, 1.7), XM.iron(), [0, 2.3, 0], [0, 0, 0], null, G); add(new THREE.PlaneGeometry(0.8, 0.5), MK.glowC("#ffd27a", 1), [0, 1.5, 0.71], [0, 0, 0], "nocol", G); xBench(X + 8.4, Y + 13.0, -0.3); } // the guard post
     { const G = grp(X + 22.0, 0, Y + 22.4, 0.4); add(warp(new THREE.BoxGeometry(3.2, 1.8, 2.2, 3, 2, 2), 0.14, 1.1), std({ color: "#2a2428", roughness: 0.4, metalness: 0.5, flatShading: true }), [0, 0.9, 0], [0, 0, 0], null, G); for (let k = 0; k < 4; k++) add(new THREE.BoxGeometry(0.1, 0.05, 1.4), XM.ember(), [-1 + k * 0.6, 1.82, 0], [0, 0.3 * k, 0], "nocol", G); add(new THREE.BoxGeometry(0.06, 1.4, 0.06), XM.ember(), [1.1, 0.9, 1.11], [0, 0, 0.4], "nocol", G); } // the Forgemaul's cracked anvil-stone
     FX.steam(X + 9, Y + 22, 3, 1); for (let k = 0; k < 14; k++) add(new THREE.SphereGeometry(0.05, 5, 4), XM.ember(), [X + 4 + R() * 22, 1 + R() * 6, Y + 3 + R() * 10]).name = "nocol"; } });
@@ -8626,7 +8626,7 @@ defPlace("fkeeper", { name: "Relay Tower Keeper Room", w: 24, d: 30, style: "xto
     xEllRing(X(12), 6.6, Z(15), 10.8, 13.8, 0.14, MK.glowC("#4ab0ff", 2.4)); lite(12, 15, "#4ab0ff", 6, 26, 6); // the great blue crystal, a glowing ring of light round the room's edge
     for (const [x, y] of [[3.5, 10.5], [20, 10.5], [3.5, 19.5], [20, 19.5]]) { const G = grp(X(x), 0, Z(y)); add(new THREE.BoxGeometry(1.4, 1.0, 3.6), XM.paint("#a83a2a"), [0, 0.5, 0], [0, 0, 0], null, G); } // tool chests
     { const W = grp(X(12), 0, Z(1.6)); for (let k = 0; k < 5; k++) { add(new THREE.BoxGeometry(0.16, 2.6, 0.08), XM.steel(), [-2 + k, 1.6, 0], [0, 0, 0.1], null, W); add(new THREE.TorusGeometry(0.28, 0.08, 4, 8, 4.4), XM.steel(), [-2 + k + 0.13, 3.0, 0], [0, 0, 1.4], null, W); } add(new THREE.BoxGeometry(5.4, 0.2, 0.4), XM.iron(), [0, 0.3, 0], [0, 0, 0], null, W); } // the giant wrench rack
-    for (const [x, y] of [[6, 25], [18, 25]]) { for (let k = 0; k < 6; k++) add(new THREE.TorusGeometry(0.5 - k * 0.04, 0.06, 4, 12), XM.iron(), [X(x), 0.08 + k * 0.1, Z(y)], [Math.PI / 2, 0, 0]); } for (const [x, y] of [[12, 8], [12, 20]]) lite(x, y, "#ffd8b0", 2.4, 12, 5); } });
+    for (const [x, y] of [[6, 25], [18, 25]]) { for (let k = 0; k < 6; k++) add(new THREE.TorusGeometry(0.5 - k * 0.04, 0.06, 4, 12), XM.iron(), [X(x), 0.08 + k * 0.1, Z(y)], [Math.PI / 2, 0, 0]); } for (const [x, y] of [[12, 8], [12, 20]]) lite(x, y, "#ffd8b0", 2.4, 12, 5); fxStands(X, Z); } });
 // ---------- Hank's Hangar: Nana Wren's ship kept safe in its launch bay ----------
 defPlace("fhangar", { name: "Hank's Hangar", w: 30, d: 20, style: "xhangar", indoor: true,
   grid() { const g = PLW(30, 20); pRect(g, 1, 1, 28, 18, "."); pRect(g, 14, 19, 15, 19, "S"); pRect(g, 1, 1, 28, 3, "o"); pRect(g, 1, 4, 3, 16, "o"); pRect(g, 26, 4, 28, 16, "o"); pRect(g, 11, 7, 18, 12, "o"); return g; },
@@ -8706,6 +8706,75 @@ OUTPORTALS.push(
   { scene: "FZ5", at: [135.0, -26.4], arrive: [135.0, -24.0], to: "fmine1:in", label: "Enter Deepcut Mine" },
   { scene: "FD7", at: [203.0, 107.6], arrive: [203.0, 109.8], to: "fdomeLobby:in", label: "Enter the Scrapyard Dome" },
   { scene: "FC2", at: [45.0, 68.8], arrive: [45.0, 71.0], to: "fhelix:in", label: "Open the clean metal door" });
+// ================= FERROX STORY PLACES + DETAIL PASS (Nov 20 2026) =================
+// Nothing in this block calls R(): new variety comes from fxH (a position hash) so the seeded stream that older code reads stays the same.
+const fxH = (x, z, s = 0) => { const h = Math.sin(x * 127.1 + z * 311.7 + s * 74.7) * 43758.5453; return h - Math.floor(h); };
+const fxCut = (n0) => { for (const c of root.children.slice(n0)) root.remove(c); }; // mark-then-remove: drop whatever an old builder just added
+const fxIM = (geo, mat, list, P, name = "nocol") => { if (!list.length) return null; const IM = new THREE.InstancedMesh(geo, mat, list.length), m4 = new THREE.Matrix4(), q = new THREE.Quaternion(), e = new THREE.Euler(), s = new THREE.Vector3(), p = new THREE.Vector3(), col = new THREE.Color();
+  list.forEach((o, i) => { e.set(o.rx || 0, o.ry || 0, o.rz || 0); q.setFromEuler(e); s.set(o.sx ?? o.s ?? 1, o.sy ?? o.s ?? 1, o.sz ?? o.s ?? 1); p.set(o.x, o.y, o.z); m4.compose(p, q, s); IM.setMatrixAt(i, m4); if (o.c) IM.setColorAt(i, col.set(o.c)); });
+  if (IM.instanceColor) IM.instanceColor.needsUpdate = true; IM.castShadow = IM.receiveShadow = true; IM.name = name; P.add(IM); return IM; };
+const FXN = { iron: () => fxM("rivplate", { c: "#e0d0cc", s: 0.32, m: 0.35, r: 0.55, d: 0.35 }), ironD: () => fxM("rivplate", { c: "#8e7c78", s: 0.45, m: 0.5, r: 0.55, d: 0.3 }), stone: () => fxM("cream", { c: "#e6dccc", s: 0.7, m: 0.02, r: 0.9 }),
+  blue: () => MK.glowC("#4ab0ff", 2.0), swirl: () => MK.glowC("#7ff0e6", 1.5), crack: () => xm("fxCrack", () => std({ color: "#0a0c18", roughness: 0.9 })), figure: () => xm("fxFig", () => std({ color: "#ffffff", roughness: 0.75, metalness: 0.05 })) };
+
+// ---- THE RELAY TOWER: a giant iron spear. Curved star-seed shell plates round its foot, wide iron steps up to an enormous round door
+// under a stone lintel cut with swirl marks; the service ladder (240 rungs) climbs the east flank to the Crystal Room, where the cracked core
+// shows through a breach on the north side; a blue crystal is held in iron claws at the very top ----
+const fxSpear = (x, z) => { const G = grp(x, 0, z, 0), iron = FXN.iron(), ironD = FXN.ironD(), fr = FXA.frame(), bolts = [];
+  // the foot: a solid iron drum wrapped in nine bowed shell petals, open at the front for the door
+  add(new THREE.CylinderGeometry(4.25, 4.6, 7.4, 24), ironD, [0, 3.7, 0], [0, 0, 0], null, G);
+  for (let k = 0; k < 9; k++) { const a = 0.72 + k * ((TAU - 1.44) / 8); fxPetal(G, bolts, 3.25, 7.6, 0.55, [Math.sin(a) * 4.75, 0, Math.cos(a) * 4.75], a, fxShellM(k % 4)); }
+  add(new THREE.CylinderGeometry(4.05, 4.95, 0.9, 24), fr, [0, 7.75, 0], [0, 0, 0], null, G); add(new THREE.TorusGeometry(4.5, 0.12, 5, 40), fr, [0, 0.12, 0], [Math.PI / 2, 0, 0], "nocol", G);
+  // the shaft: 46 m of tapering iron, banded every few metres, eight riveted ribs running up it
+  const y0 = 8.2, y1 = 54, r0 = 3.3, r1 = 1.25, rAt = (y) => r0 + (r1 - r0) * ((y - y0) / (y1 - y0));
+  add(new THREE.CylinderGeometry(r1, r0, y1 - y0, 20, 6), iron, [0, (y0 + y1) / 2, 0], [0, 0, 0], null, G);
+  for (let y = y0 + 2; y < y1 - 1; y += 4.6) add(new THREE.CylinderGeometry(rAt(y + 0.2) + 0.09, rAt(y - 0.2) + 0.09, 0.4, 20), fr, [0, y, 0], [0, 0, 0], "nocol", G);
+  for (let y = y0 + 4.4; y < y1 - 3; y += 6.9) for (const a of [0.0, 1.4, -1.4, 2.9]) { const r = rAt(y) + 0.06; add(new THREE.BoxGeometry(0.26, 1.1, 0.12), FXA.amber(), [Math.sin(a) * r, y, Math.cos(a) * r], [0, a, 0], "nocol", G); } // lit slit windows up the shaft
+  for (let k = 0; k < 8; k++) { const a = (k / 8) * TAU + 0.2; fxBar(G, [Math.sin(a) * (r0 + 0.05), y0, Math.cos(a) * (r0 + 0.05)], [Math.sin(a) * (r1 + 0.05), y1, Math.cos(a) * (r1 + 0.05)], 0.22, ironD); }
+  // the Crystal Room: a riveted drum with a ring catwalk, blue portholes, the cracked core showing through a breach on the north side
+  add(new THREE.CylinderGeometry(4.3, 4.3, 0.25, 32), fr, [0, y1 - 0.1, 0], [0, 0, 0], "nocol", G); add(new THREE.CylinderGeometry(2.9, 2.5, 4.2, 20), ironD, [0, y1 + 2.1, 0], [0, 0, 0], null, G);
+  add(new THREE.CylinderGeometry(3.15, 3.15, 0.35, 24), fr, [0, y1 + 4.3, 0], [0, 0, 0], "nocol", G); add(new THREE.TorusGeometry(4.2, 0.06, 4, 48), FXA.yel(), [0, y1 + 1.05, 0], [Math.PI / 2, 0, 0], "nocol", G); add(new THREE.TorusGeometry(4.2, 0.05, 4, 48), FXA.yel(), [0, y1 + 0.55, 0], [Math.PI / 2, 0, 0], "nocol", G);
+  for (let k = 0; k < 16; k++) { const a = (k / 16) * TAU; add(new THREE.BoxGeometry(0.06, 1.05, 0.06), FXA.yel(), [Math.sin(a) * 4.2, y1 + 0.55, Math.cos(a) * 4.2], [0, 0, 0], "nocol", G); }
+  for (let k = 0; k < 8; k++) { const a = (k / 8) * TAU + TAU / 16; if (Math.cos(a) < -0.8) continue; const P = grp(Math.sin(a) * 2.72, y1 + 2.3, Math.cos(a) * 2.72, a, G); add(new THREE.CircleGeometry(0.42, 14), FXN.blue(), [0, 0, 0.04], [0, 0, 0], "nocol", P); add(new THREE.TorusGeometry(0.46, 0.07, 4, 16), fr, [0, 0, 0.05], [0, 0, 0], "nocol", P); }
+  { const C = grp(0, y1 + 2.0, -2.35, Math.PI, G); add(new THREE.IcosahedronGeometry(1.15, 1), FXN.blue(), [0, 0, 0.2], [0.3, 0.5, 0], "nocol", C); add(new THREE.TorusGeometry(1.35, 0.16, 5, 18), fr, [0, 0, 0.35], [0, 0, 0.4], "nocol", C);
+    for (const [a, l] of [[0.3, 1.1], [1.4, 0.9], [2.6, 1.2], [3.9, 0.8], [5.0, 1.0]]) add(new THREE.BoxGeometry(0.05, l, 0.05), FXN.crack(), [Math.cos(a) * 0.45, Math.sin(a) * 0.45, 1.33], [0, 0, a + 1.4], "nocol", C); // dark cracks across the core's face
+    for (const s of [-1, 1]) add(new THREE.BoxGeometry(0.5, 2.6, 0.3), fr, [s * 1.6, 0, 0.1], [0, 0, s * 0.15], "nocol", C); }
+  // the crown: a riveted cap, six iron claws, the blue crystal
+  add(new THREE.CylinderGeometry(1.1, 3.0, 1.8, 20), fr, [0, y1 + 5.4, 0], [0, 0, 0], null, G);
+  for (let k = 0; k < 6; k++) { const a = (k / 6) * TAU, c = Math.cos(a), s = Math.sin(a); fxBar(G, [s * 1.3, y1 + 6.1, c * 1.3], [s * 1.75, y1 + 8.6, c * 1.75], 0.24, ironD, true); fxBar(G, [s * 1.75, y1 + 8.6, c * 1.75], [s * 1.25, y1 + 11.2, c * 1.25], 0.18, ironD, true); add(new THREE.ConeGeometry(0.14, 0.5, 4), fr, [s * 1.2, y1 + 11.4, c * 1.2], [0, 0, 0], "nocol", G); }
+  { const cr = add(new THREE.OctahedronGeometry(1.5, 0), FXN.blue(), [0, y1 + 9.8, 0], [0, 0.4, 0], "nocol", G); cr.scale.set(1, 2.9, 1); const l = new THREE.PointLight(0x58b8ff, 6, 40, 1.4); l.position.set(0, y1 + 9.4, 0); G.add(l); const l2 = new THREE.PointLight(0x4ab0ff, 3, 16, 1.6); l2.position.set(0, y1 + 2.2, -3.2); G.add(l2); }
+  // the round door: an iron disc with spokes in a pale stone ring, the stone lintel with glowing swirl marks, wide low iron steps
+  { const D = grp(0, 0, 4.55, 0, G), st = FXN.stone(); add(new THREE.BoxGeometry(5.2, 4.9, 0.7), st, [0, 2.45, 0], [0, 0, 0], null, D); add(new THREE.BoxGeometry(4.4, 2.9, 0.5), fxShellM(1), [0, 6.3, -0.15], [0, 0, 0], null, D); add(new THREE.CylinderGeometry(1.95, 1.95, 0.3, 32), ironD, [0, 2.15, 0.32], [Math.PI / 2, 0, 0], "nocol", D);
+    add(new THREE.TorusGeometry(2.08, 0.2, 6, 36), st, [0, 2.15, 0.42], [0, 0, 0], "nocol", D); add(new THREE.TorusGeometry(1.86, 0.08, 4, 36), fr, [0, 2.15, 0.5], [0, 0, 0], "nocol", D); add(new THREE.CylinderGeometry(0.32, 0.38, 0.22, 12), fr, [0, 2.15, 0.56], [Math.PI / 2, 0, 0], "nocol", D);
+    for (let k = 0; k < 8; k++) { const a = (k / 8) * TAU; add(new THREE.BoxGeometry(0.12, 1.45, 0.06), fr, [Math.sin(a) * 1.0, 2.15 + Math.cos(a) * 1.0, 0.5], [0, 0, -a], "nocol", D); bolts.push([new THREE.Vector3(Math.sin(a) * 1.68, 2.15 + Math.cos(a) * 1.68, 5.05), new THREE.Vector3(0, 0, 1), 0.1]); }
+    add(new THREE.BoxGeometry(6.0, 0.8, 1.0), st, [0, 4.75, 0.2], [0, 0, 0], null, D); // the stone lintel
+    for (const [sx, r, k] of [[-1.9, 0.26, 0], [-0.62, 0.22, 1], [0.62, 0.22, 2], [1.9, 0.26, 3]]) { const S = grp(sx, 4.75, 0.72, 0, D); add(new THREE.TorusGeometry(r, 0.035, 4, 18, Math.PI * 1.6), FXN.swirl(), [0, 0, 0], [0, 0, k * 1.3], "nocol", S); add(new THREE.TorusGeometry(r * 0.52, 0.03, 4, 12, Math.PI * 1.5), FXN.swirl(), [0, 0, 0], [0, 0, k * 1.3 + 2.4], "nocol", S); }
+    for (let k = 0; k < 3; k++) add(new THREE.BoxGeometry(6.6 - k * 0.6, 0.14, 0.62), fr, [0, 0.07 + k * 0.14, 1.95 - k * 0.55], [0, 0, 0], "nocol", D); // wide iron steps
+    for (const s of [-1, 1]) { const L = grp(s * 3.7, 0, 2.3, 0, D); add(new THREE.CylinderGeometry(0.09, 0.14, 3.6, 8), fr, [0, 1.8, 0], [0, 0, 0], "nocol", L); add(new THREE.BoxGeometry(0.42, 0.5, 0.42), fr, [0, 3.75, 0], [0, 0, 0], "nocol", L); add(new THREE.BoxGeometry(0.32, 0.36, 0.44), FXA.amber(), [0, 3.75, 0], [0, 0, 0], "nocol", L); add(new THREE.ConeGeometry(0.34, 0.3, 4), fr, [0, 4.15, 0], [0, Math.PI / 4, 0], "nocol", L); } }
+  // the service ladder: 34 rungs up the shell petal, a landing on the collar, then 206 rungs up the shaft to a hatch under the Crystal Room
+  { const a = 1.93, ux = Math.sin(a), uz = Math.cos(a), tx = Math.cos(a), tz = -Math.sin(a), rungs = [], hoops = [], segs = [[0.25, 7.65, 5.62, 5.62, 34], [8.45, y1 - 0.25, r0 + 0.32, r1 + 0.32, 206]];
+    for (const [ya, yb, ra, rb, n] of segs) { for (let i = 0; i < n; i++) { const t = (i + 0.5) / n, y = ya + (yb - ya) * t, r = ra + (rb - ra) * t; rungs.push({ x: ux * r, y, z: uz * r, ry: a }); if (n > 100 && i % 9 === 4) hoops.push({ x: ux * (r + 0.32), y, z: uz * (r + 0.32), ry: a, rx: Math.PI / 2 }); }
+      for (const s of [-1, 1]) fxBar(G, [ux * ra + tx * s * 0.27, ya - 0.2, uz * ra + tz * s * 0.27], [ux * rb + tx * s * 0.27, yb + 0.3, uz * rb + tz * s * 0.27], 0.06, FXA.yel(), true); }
+    fxIM(new THREE.BoxGeometry(0.54, 0.04, 0.04), fr, rungs, G); fxIM(new THREE.TorusGeometry(0.4, 0.025, 3, 10, Math.PI), FXA.yel(), hoops, G);
+    add(new THREE.BoxGeometry(1.2, 0.12, 2.6), fr, [ux * 4.6, 7.8, uz * 4.6], [0, a, 0], "nocol", G); add(new THREE.BoxGeometry(0.9, 0.06, 0.9), FXN.crack(), [ux * (r1 + 0.32), y1 - 0.26, uz * (r1 + 0.32)], [0, a, 0], "nocol", G); }
+  fxBolts(G, bolts); return G; };
+// ---- the tower arena: three tiers of riveted metal stands hung round the Keeper Room wall above the tool chests, open at the lift (south)
+// and behind the Keeper's spot (north), packed with miners (orange, helmet lamps), train drivers (blue caps) and junk-market kids with a picture banner ----
+const fxStands = (X, Z) => { const cx = 12, cz = 15, RX = 11.2, RZ = 14.2, fl = fxM("rivplate", { c: "#9a8078", s: 0.9, m: 0.35, d: 0.3, side: THREE.DoubleSide }), fr = FXA.frame(), pt = (t, s, y) => [X(cx + Math.cos(t) * RX * s), y, Z(cz + Math.sin(t) * RZ * s)];
+  const arcs = [[-Math.PI / 2 + 0.45, Math.PI / 2 - 0.5], [Math.PI / 2 + 0.5, (3 * Math.PI) / 2 - 0.45]], bods = [], heads = [], hats = [], lamps = [];
+  for (const [ta, tb] of arcs) for (let i = 0; i < 3; i++) { const s0 = 0.8 + i * 0.075, s1 = s0 + 0.075, y = 2.3 + i * 0.62;
+    add(fxSheet(40, 1, (u, v) => pt(ta + (tb - ta) * u, s0 + (s1 - s0) * v, y)), fl, [0, 0, 0], [0, 0, 0], "nocol"); add(fxSheet(40, 1, (u, v) => pt(ta + (tb - ta) * u, s0, y - 0.62 + 0.62 * v)), fl, [0, 0, 0], [0, 0, 0], "nocol");
+    if (i === 0) { const rail = []; for (let k = 0; k <= 40; k++) rail.push(new THREE.Vector3(...pt(ta + ((tb - ta) * k) / 40, s0 - 0.004, y + 0.62))); add(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(rail), 80, 0.045, 4), FXA.yel(), [0, 0, 0], [0, 0, 0], "nocol");
+      for (let k = 0; k <= 20; k++) { const t = ta + ((tb - ta) * k) / 20, [px, , pz] = pt(t, s0 - 0.004, 0); add(new THREE.BoxGeometry(0.05, 0.62, 0.05), FXA.yel(), [px, y + 0.31, pz], [0, 0, 0], "nocol"); if (k % 4 === 0) fxBar(root, pt(t, 1.0, 0.9), pt(t, s0 + 0.01, y - 0.05), 0.14, fr); } }
+    const L = (tb - ta) * RX * (s0 + s1) * 0.5 * 1.12, n = Math.floor(L / 0.62);
+    for (let k = 0; k < n; k++) { const t = ta + ((tb - ta) * (k + 0.5)) / n, h = fxH(k, i, ta), h2 = fxH(k, i, ta + 7); if (h > 0.74) continue; const [px, , pz] = pt(t, (s0 + s1) / 2, 0), kind = h2 < 0.42 ? 0 : h2 < 0.7 ? 1 : 2, sc = kind === 2 ? 0.72 : 1;
+      bods.push({ x: px, y: y + 0.36 * sc, z: pz, s: sc, c: kind === 0 ? (h2 < 0.2 ? "#e07a2a" : "#c86a30") : kind === 1 ? "#2a3a6a" : ["#e04a6a", "#4ac0a0", "#f0c040", "#8a5ad0", "#ff8a4a"][Math.floor(h * 6.7) % 5] });
+      heads.push({ x: px, y: y + 0.82 * sc, z: pz, s: sc, c: ["#c89070", "#a87050", "#e0b090", "#7a5038"][Math.floor(h2 * 37) % 4] });
+      hats.push({ x: px, y: y + 0.97 * sc, z: pz, s: sc, sy: kind === 2 ? 0.6 : 1, c: kind === 0 ? "#f2c230" : kind === 1 ? "#3a5aa0" : "#3a2418" });
+      if (kind === 0) { const ix = cx - (px - X(0)), iz = cz - (pz - Z(0)), d = Math.hypot(ix, iz) || 1; lamps.push({ x: px + (ix / d) * 0.16, y: y + 0.98, z: pz + (iz / d) * 0.16, s: 1 }); } } }
+  fxIM(new THREE.CylinderGeometry(0.17, 0.23, 0.6, 6), FXN.figure(), bods, root); fxIM(new THREE.IcosahedronGeometry(0.15, 0), FXN.figure(), heads, root); fxIM(new THREE.CylinderGeometry(0.165, 0.17, 0.1, 7), FXN.figure(), hats, root); fxIM(new THREE.SphereGeometry(0.05, 5, 4), MK.glowC("#fff0b0", 2.2), lamps, root);
+  { const t = Math.PI, [bx, , bz] = pt(t, 0.84, 0), B = grp(bx, 2.95, bz, Math.PI / 2); for (const s of [-1, 1]) add(new THREE.CylinderGeometry(0.03, 0.03, 1.6, 5), fr, [s * 1.6, 0.8, 0], [0, 0, 0], "nocol", B);
+    [["#e07a2a", -1.05], ["#f2e0c0", 0], ["#3a5aa0", 1.05]].forEach(([c, x]) => add(new THREE.PlaneGeometry(1.05, 0.7), xm("fxBan" + c, () => std({ color: c, roughness: 0.9, side: THREE.DoubleSide })), [x, 1.2, 0.02], [0, 0, 0], "nocol", B));
+    const d = add(new THREE.OctahedronGeometry(0.26, 0), FXN.blue(), [0, 1.2, 0.06], [0, 0, 0], "nocol", B); d.scale.set(0.8, 1.2, 0.2); add(new THREE.TorusGeometry(0.22, 0.04, 4, 8), XM.iron(), [-1.05, 1.2, 0.05], [0, 0, 0], "nocol", B); add(new THREE.TorusGeometry(0.22, 0.04, 4, 8), XM.iron(), [1.05, 1.2, 0.05], [0, 0, 0], "nocol", B); } };
 // ================= assemble =================
 // map mode: grids for every scene, ground + objects for one scene and its neighbours
 // world mode (H.all): the whole 120x90 region in 3D — every scene's ground and objects
