@@ -2543,8 +2543,37 @@ SPS.B3 = (K, SK, KC, SKC, st) => { const hub = MF.caps.find((c) => c.choir), [hx
   for (let k = 0; k < 40; k++) { const q = K.kRat(k, 8, 23), a = q() * TAU, r = Math.sqrt(q()) * 6.5; K.P("glow", null, "oct", hx + Math.cos(a) * r, top + 2.8 + q() * 5, hz + Math.sin(a) * r, 0.07, 0.07, 0.07, ["#c8fff0", "#ffd27a", "#ff8ad8"][k % 3]); }
   const l = new THREE.PointLight(0xc89aff, 5, 18, 1.6); l.position.set(hx, top + 5.5, hz); root.add(l);
   st.b3 = { bells: tops.length, lanterns: nl }; };
+// the detail pass every Sporeholm scene gets (B7 and Z8 are dressed by their own builders): giant mushrooms of many sizes on the wild
+// edges, clusters, moss cushions and glow caps away from the paths, lantern posts along the walkways, grass tufts and glow caps at the
+// water's edge, lily pads and dragonflies on open water. Nothing goes on a path, a door, a portal or a tall-grass patch; everything but
+// the slim lantern posts is see-through to collisions (deco/glow bins), so no way is ever blocked.
+const SPTOWN = new Set(["A1", "A2", "A3", "A4", "B2", "B3", "B4", "C1", "C2", "C3", "C4"]), SPNOGEN = new Set(["B7", "Z8"]);
+const SPSKIP = { B1: (a, b) => Math.hypot(a - 11, b - 41) < 8.5, D6: (a, b) => Math.hypot(a - 170, b - 110.3) < 5 || Math.hypot(a - 171.6, b - 116.2) < 3.5 };
+const SPGEN = (K, SK, id, st) => { if (SPNOGEN.has(id)) return; const [X, Y] = SCN[id].rect, town = SPTOWN.has(id), dens = town ? 0.4 : 1, n0 = K.count(), cap = 200000, sk = SPSKIP[id];
+  const tl = (x, y) => at(x, y) || " ", near = (x, y, r, set) => { for (let dy = -r; dy <= r; dy++) for (let dx = -r; dx <= r; dx++) if (set.includes(tl(x + dx, y + dy))) return true; return false; };
+  const inTG = (x, z) => TGP.some((q) => ((x - q.x) / (q.rx + 0.8)) ** 2 + ((z - q.z) / (q.rz + 0.8)) ** 2 < 1);
+  const ports = OUTPORTALS.filter((o) => o.scene === id).map((o) => unwarp(o.at[0], o.at[1])), doors = WALKINS.map((w) => [w.G.position.x + w.ox, w.G.position.z + w.oz, Math.max(w.rx, w.rz) + 3]);
+  const busy = (x, z) => inTG(x, z) || ports.some(([a, b]) => Math.hypot(x - a, z - b) < 3.2) || doors.some(([a, b, r]) => Math.hypot(x - a, z - b) < r);
+  const CC = ["#9a5ad0", "#3fb8b0", "#c86ad8", "#6a6ae0", "#ffb347", "#3fe0d0", "#ff8ad8", "#7af0c8"], GL = ["#3fe0d0", "#c8f06a", "#ff8ad8", "#8af0ff", "#ffd27a"];
+  let nl = 0;
+  for (let gy = Y; gy < Y + 30; gy++) for (let gx = X; gx < X + 30; gx++) { if (K.count() - n0 > cap) break; if (sk && sk(gx + 0.5, gy + 0.5)) continue;
+    const t = tl(gx, gy), q = K.kRat(gx, gy, 31), r = q(), [x, z] = unwarp(gx + 0.25 + q() * 0.5, gy + 0.25 + q() * 0.5); if (busy(x, z)) continue;
+    const y = spGY(x, z), O = spAO(x, z, y), pAdj = near(gx, gy, 1, "pPs"), pNear = near(gx, gy, 2, "pPskbf"), wAdj = near(gx, gy, 1, "w"), col = CC[Math.floor(q() * CC.length)], gl = GL[Math.floor(q() * GL.length)];
+    if (t === "x") { if (r < 0.13 * dens) SK.Shroom(O, q, 2.4 + q() * 5.5, { bin: "deco", capBin: "deco", cap: col, gill: gl });
+      else if (r < 0.26 * dens) SK.ShroomCluster(O, q, 0.9 + q() * 1.6, [col, CC[(gx + gy) % CC.length]], { bin: "deco", capBin: "deco", gill: gl });
+      else if (r < 0.36 * dens) SK.MossMound(O, q, 0, 0, 0.6 + q() * 0.7, "#4a7a5a", gl); }
+    else if (t === "." || t === ",") {
+      if (pAdj && !wAdj && (gx * 7 + gy * 13) % 11 === 0 && r < 0.75) { let best = null, bd = 9; for (let dy = -1; dy <= 1; dy++) for (let dx = -1; dx <= 1; dx++) if ("pPs".includes(tl(gx + dx, gy + dy)) && dx * dx + dy * dy < bd) { bd = dx * dx + dy * dy; best = [dx, dy]; }
+        if (best) { SK.LanternPost(O, q, 0, 0, 2.1 + q() * 0.4, ["#ffd27a", "#8af0ff", "#c8f06a"][(gx + gy) % 3], Math.atan2(-best[1], best[0]), CC[(gx * 3 + gy) % CC.length]); nl++; continue; } }
+      if (!pNear && r < 0.045 * dens) SK.ShroomCluster(O, q, 0.8 + q() * 1.5, [col, CC[(gx * 5 + gy) % CC.length]], { bin: "deco", capBin: "deco", gill: gl });
+      else if (!pNear && r < 0.08 * dens) SK.MossMound(O, q, 0, 0, 0.45 + q() * 0.6, "#4f8060", gl);
+      else if (!pAdj && r < 0.15 * dens) SK.TinyCaps(O, q, 0.8 + q() * 0.6, gl);
+      else if (wAdj && r < 0.42) { K.Tufts(O, q, 3 + Math.floor(q() * 4), 0, 0.45, 0, ["#3f8a5a", "#5aa86a", "#2f6a5a"]); if (q() < 0.5) SK.TinyCaps(O, q, 0.9, gl); } }
+    else if (t === "w" && near(gx, gy, 1, ".,gx")) { if (r < 0.06) { K.P("deco", null, "disc", x, 0.045, z, 0.6 + q() * 0.4, 1, 0.5 + q() * 0.4, "#3cae5a", 0, q() * 3, 0); if (q() < 0.4) K.P("glow", null, "oct", x + 0.1, 0.1, z, 0.12, 0.1, 0.12, "#ff8ad8"); } else if (r < 0.075) SK.Dragonfly(spAO(x, z, 0.4 + q() * 0.9, q() * TAU)); } }
+  st.scenes[id] = (st.scenes[id] || 0) + K.count() - n0; st.lamps = (st.lamps || 0) + nl; };
 const spPass = (ids) => { if (!ASSETS.detailKit || !ASSETS.detailKit.sporeholm) return null; const env = { add, std, unwarp, GHT }, K = ASSETS.detailKit(THREE, env, { chunk: 60 }), SK = ASSETS.detailKit.sporeholm(K), KC = ASSETS.detailKit(THREE, env, { chunk: 60 }), SKC = ASSETS.detailKit.sporeholm(KC), st = { scenes: {} };
   for (const id of ids) { const f = SPS[id]; if (!f) continue; const n0 = K.count(), c0 = KC.count(); f(K, SK, KC, SKC, st); st.scenes[id] = K.count() - n0 + KC.count() - c0; }
+  if (!(H && H.sporeholmGen === false)) for (const id of ids) SPGEN(K, SK, id, st);
   st.kit = K.flush(root).length; const camp = KC.flush(root); for (const m of camp) m.userData.helixCamp = true; st.camp = camp.length; return st; };
 const PROF = { t0: performance.now() }; const want = (H && H.scene) || "B3", near = (H && H.near) || [];
 for (const id of Object.keys(SCN)) SCN[id].ground();
