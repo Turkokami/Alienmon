@@ -3218,23 +3218,27 @@ const iconTex = (kind) => { const M0 = mk(); if (M0.icons[kind]) return M0.icons
 const signBoard = (x, y, z, kind, s = 0.8, P = root) => { const M0 = mk().M, G = grp(x, y, z, 0, P); limb([[-0.5 * s, 0.55 * s, -0.05], [0, 0.6 * s, 0.02], [0.5 * s, 0.55 * s, -0.05]], 0.03, 0.03, M0.bark, { seg: 6, rad: 5, parent: G }); for (const sx of [-0.3, 0.3]) limb([[sx * s, 0.55 * s, 0], [sx * s, 0.42 * s, 0.02]], 0.008, 0.008, M0.iron, { seg: 2, rad: 4, knob: 0, parent: G });
   add(new THREE.BoxGeometry(0.75 * s, 0.75 * s, 0.06), [M0.bark, M0.bark, M0.bark, M0.bark, iconTex(kind), M0.bark], [0, 0, 0.02], [0, 0, 0], null, G); return G; };
 // ---------- path-edge & street props ----------
-const sporeLantern = (x, z, h = 2.4, c = "#7ff0e6") => { const M0 = mk().M, G = grp(x, 0, z, R() * 0.3); add(olathe([[0.001, 0], [0.26, 0], [0.26, 0.16], [0.18, 0.24], [0.15, h * 0.55], [0.17, h * 0.62], [0.13, h * 0.66], [0.13, h - 0.12], [0.2, h - 0.08], [0.2, h], [0.001, h]], 4, 0.01, 2), M0.stalk, [0, 0, 0], [0, Math.PI / 4, 0], null, G);
+// Sporeholm-style leftovers are recorded and marked here, then swapped out by the Dustara detail pass (the R() calls stay exactly as they were)
+const DXOLD = { gc: [], lan: [], lifted: false };
+const sporeLantern0 = (x, z, h = 2.4, c = "#7ff0e6") => { const M0 = mk().M, G = grp(x, 0, z, R() * 0.3); add(olathe([[0.001, 0], [0.26, 0], [0.26, 0.16], [0.18, 0.24], [0.15, h * 0.55], [0.17, h * 0.62], [0.13, h * 0.66], [0.13, h - 0.12], [0.2, h - 0.08], [0.2, h], [0.001, h]], 4, 0.01, 2), M0.stalk, [0, 0, 0], [0, Math.PI / 4, 0], null, G);
   add(new THREE.TorusGeometry(0.16, 0.025, 6, 4), D.turq(), [0, h * 0.6, 0], [Math.PI / 2, 0, Math.PI / 4], null, G); for (const y of [h + 0.02, h + 0.56]) add(new THREE.CylinderGeometry(0.17, 0.2, 0.06, 6), D.copper(), [0, y, 0], [0, 0, 0], null, G);
   for (let k = 0; k < 6; k++) { const a = (k / 6) * TAU; add(new THREE.CylinderGeometry(0.015, 0.015, 0.54, 4), D.copper(), [Math.cos(a) * 0.16, h + 0.29, Math.sin(a) * 0.16], [0, 0, 0], null, G); }
   add(new THREE.OctahedronGeometry(0.14, 0), MK.glowC(c, 2.2), [0, h + 0.29, 0], [0, 0, 0], null, G).scale.y = 1.6; add(new THREE.ConeGeometry(0.2, 0.22, 6), D.copper(), [0, h + 0.7, 0], [0, 0, 0], null, G);
   const l = new THREE.PointLight(new THREE.Color(c), 2.2, 7, 1.6); l.position.set(0, h + 0.3, 0); G.add(l); return G; };
+const sporeLantern = (x, z, h = 2.4, c) => { const G = sporeLantern0(x, z, h, c); G.userData.oldSL = true; DXOLD.lan.push({ x, z, h, lifted: DXOLD.lifted }); return G; };
 const capBench = (x, z, ry = 0) => { const M0 = mk().M, G = grp(x, 0, z, ry); add(warp(soft(new THREE.BoxGeometry(1.8, 0.42, 0.62, 6, 2, 2), { bulge: 0.04, warp: 0.03 }), 0.02, 2), D.adobe(), [0, 0.21, 0], [0, 0, 0], null, G); add(warp(new THREE.BoxGeometry(1.9, 0.08, 0.7, 6, 1, 2), 0.015, 2), M0.stalk, [0, 0.46, 0], [0, 0, 0], null, G);
   add(warp(soft(new THREE.BoxGeometry(1.8, 0.55, 0.22, 6, 2, 1), { bulge: 0.05, warp: 0.03 }), 0.02, 2), D.adobe(), [0, 0.75, -0.26], [0, 0, 0], null, G); add(new THREE.BoxGeometry(1.84, 0.05, 0.26), D.turq(), [0, 1.02, -0.26], [0, 0, 0], null, G); for (const sx of [-1, 1]) add(olathe([[0.001, 0], [0.16, 0], [0.16, 0.6], [0.001, 0.62]], 10), D.adobe(), [sx * 0.95, 0, 0.0], [0, 0, 0], null, G); return G; };
 const barrelP = (x, z, s = 0.8) => barrel(x, 0, z, s, std({ map: boards(256, 256, 8, true, 24, 32) }), mk().M.iron);
 const crateP = (x, z, s = 0.55, ry = R()) => crate(x, 0, z, s, ry, std({ map: boards(256, 256, 4, false, 30, 44) }));
 const basketP = (x, z, c = "#5af0ff", s = 1) => { const M0 = mk().M; add(olathe([[0.001, 0], [0.2 * s, 0], [0.26 * s, 0.24 * s], [0.27 * s, 0.26 * s], [0.001, 0.2 * s]], 16), M0.weave, [x, 0, z]); for (let k = 0; k < 6; k++) add(new THREE.SphereGeometry(0.06 * s, 8, 6), MK.glowC(c, 0.9), [x + (R() - 0.5) * 0.25 * s, 0.25 * s, z + (R() - 0.5) * 0.25 * s]); };
 const potP = (x, z, s = 1, plant = true) => { add(olathe([[0.001, 0], [0.14 * s, 0], [0.2 * s, 0.18 * s], [0.13 * s, 0.32 * s], [0.15 * s, 0.36 * s], [0.001, 0.34 * s]], 14, 0.01, 4), std({ color: "#a8603a", roughness: 0.8 }), [x, 0, z]); if (plant) for (let k = 0; k < 5; k++) { const a = (k / 5) * TAU, L = 0.25 + R() * 0.2; limb([[x, 0.34 * s, z], [x + Math.cos(a) * 0.15, 0.34 * s + L * 0.7, z + Math.sin(a) * 0.15], [x + Math.cos(a) * 0.3, 0.34 * s + L * 0.5, z + Math.sin(a) * 0.3]], 0.03, 0.01, MK.glowC("#5ad88a", 0.5), { seg: 8, rad: 4 }); } };
-const glowcaps = (x, z, n = 5, cols, spread = 0.5, y0 = 0) => { const DG = D.geo(); for (let k = 0; k < n; k++) { const px = x + (R() - 0.5) * spread, pz = z + (R() - 0.5) * spread, q = R(), s = 0.6 + R() * 0.7;
+const glowcaps0 = (x, z, n = 5, cols, spread = 0.5, y0 = 0) => { const DG = D.geo(); for (let k = 0; k < n; k++) { const px = x + (R() - 0.5) * spread, pz = z + (R() - 0.5) * spread, q = R(), s = 0.6 + R() * 0.7;
     if (q < 0.3) { const b = add(DG.barrel, D.cactus(), [px, y0, pz], [0, R() * TAU, 0]); b.scale.set(s, s * (0.8 + R() * 0.6), s); if (R() < 0.6) add(DG.bloom, MK.glowC(["#ff6ab0", "#ffb84a", "#f0f0ff", "#c86aff"][Math.floor(R() * 4)], 0.7), [px, y0 + 0.22 * s * 1.2, pz]).scale.setScalar(s); }
     else if (q < 0.5) add(DG.agave, D.agave(), [px, y0, pz], [0, R() * TAU, 0]).scale.setScalar(s * 0.9);
     else if (q < 0.8) add(DG.pebble, R() < 0.5 ? mk().M.stone : D.sandstone(), [px, y0 + 0.02, pz], [R(), R(), R()]).scale.set(0.06 + R() * 0.1, 0.04 + R() * 0.06, 0.06 + R() * 0.1);
     else if (q < 0.92) add(DG.tuft, D.sage(), [px, y0, pz], [0, R() * TAU, 0]).scale.setScalar(s);
     else { const g = add(DG.shard, MK.glowC("#b06aff", 1.4), [px, y0 + 0.05, pz], [R() * 0.6, R() * TAU, R() * 0.6]); g.scale.set(0.06, 0.16 + R() * 0.1, 0.06); } } };
+const glowcaps = (x, z, n = 5, cols, spread = 0.5, y0 = 0) => { const n0 = root.children.length; glowcaps0(x, z, n, cols, spread, y0); for (let i = n0; i < root.children.length; i++) root.children[i].userData.oldGC = true; DXOLD.gc.push([x, z, n, cols, spread, y0, DXOLD.lifted]); };
 const planterPair = (x, z, w = 2.6) => { for (const s of [-1, 1]) { const px = x + s * (w / 2 + 0.45); add(olathe([[0.001, 0], [0.3, 0], [0.34, 0.08], [0.3, 0.12], [0.34, 0.46], [0.38, 0.5], [0.001, 0.5]], 8, 0.01, 3), D.sandstone(), [px, 0, z]); const DG = D.geo(); add(DG.barrel, D.cactus(), [px, 0.48, z]).scale.set(1.3, 1.6, 1.3); add(DG.bloom, MK.glowC("#ff6ab0", 0.8), [px, 0.48 + 0.42, z]).scale.setScalar(1.3); } };
 const noticeBoard = (x, z, ry = 0) => { const M0 = mk().M, G = grp(x, 0, z, ry); for (const sx of [-0.6, 0.6]) limb([[sx, 0, 0], [sx, 1.6, 0]], 0.06, 0.05, M0.bark, { seg: 4, rad: 6, parent: G }); add(warp(new THREE.BoxGeometry(1.4, 0.9, 0.08, 4, 3, 1), 0.01, 3), std({ map: boards(256, 256, 5, true, 28, 40) }), [0, 1.1, 0.02], [0, 0, 0], null, G);
   for (let k = 0; k < 4; k++) add(new THREE.PlaneGeometry(0.28, 0.32), std({ color: ["#f0e6d0", "#e8f0d8", "#f0d8e0", "#d8e8f0"][k] }), [-0.45 + k * 0.3, 1.1 + (R() - 0.5) * 0.2, 0.07], [0, 0, (R() - 0.5) * 0.2], null, G); limb([[-0.75, 1.62, 0.04], [0, 1.72, 0.06], [0.75, 1.62, 0.04]], 0.05, 0.05, M0.thatch, { seg: 8, rad: 6, parent: G }); return G; };
@@ -4611,7 +4615,7 @@ defPlace("sunset1", { name: "Sunset Tunnel B1", w: 40, d: 30, style: "mine", ind
   dress({ X, Z, lite }) { const P = this;
     dpRails([[4, 26], [4, 20], [12, 18], [20, 20], [28, 16], [33, 10], [35, 4]], X, Z); dpRails([[28, 16], [31.4, 19.4]], X, Z); dpRubble(X(31.8), Z(19.8), 1, 8); // the collapsed rail spur
     for (const [x, y, ry] of [[4, 23, 0], [8, 19, 1.2], [17, 19.5, 1.7], [24, 18, 2.0], [30.5, 13, 2.6], [34, 7, 2.9], [13.2, 13, 0.2], [18, 8.5, 1.4], [27, 7, 1.6]]) dpTimber(X(x), Z(y), ry);
-    for (const [x, y] of [[4, 22], [12, 18], [20, 20], [28, 15.5], [33, 9], [22, 7], [14, 11], [35, 4.5]]) dpLantern(X(x), Z(y), (x + y) % 3 ? "#ffb060" : "#7ff0e6");
+    for (const [x, y] of [[4, 22], [12, 18], [20, 20], [28, 15.5], [33, 9], [22, 7], [14, 11], [35, 4.5]]) dpLantern(X(x), Z(y), "#5ab8ff");
     for (const [x, y] of P.stash) { dpStash(X(x), Z(y), R()); lite(x, y, "#ffd27a", 2, 6); } for (const [x, y] of P.boulders) dpBlock(X(x), Z(y), 1.7);
     dpBench(X(10.6), Z(20.6), 0.2); barrelP(X(14.2), Z(20.4), 0.7); crateP(X(9.4), Z(16.4), 0.5); // the miner's rest nook (miner stands at 12, 20)
     for (const [x, y] of [[4, 25], [5, 21]]) { dpShaft(X(x), Z(y), "#ffa060", 5.5, 1.1); lite(x, y, "#ff9a50", 3.5, 8, 4.5); } // sunset light through cracks near the entrance
@@ -4634,8 +4638,8 @@ defPlace("sunset2", { name: "Sunset Tunnel B2", w: 40, d: 30, style: "basalt", i
     for (const [x, y] of [[33, 21], [35.4, 24.2], [36.2, 26]]) { lite(x, y, "#ff8a3a", 3.4, 9, 1.2); add(new THREE.SphereGeometry(0.6, 10, 8), new THREE.MeshBasicMaterial({ color: "#ffd2b0", transparent: true, opacity: 0.08, depthWrite: false }), [X(x + 1), 1.4, Z(y)]).name = "nocol"; } // warm light and steam toward the Frontier
     dpRails([[28, 17], [33, 20.5], [36, 24], [36, 26.6]], X, Z); for (const [x, y, ry] of [[9, 7.5, 0.9], [13, 11.5, 0.7], [29.5, 18, 2.2], [34.5, 22, 2.6]]) dpTimber(X(x), Z(y), ry, 3.2, 3.2);
     { const A = D.arch(X(36), Z(27.6), 3.2, 4.2, 0, 0.8); for (const s of [-1, 1]) dpRune(X(36 + s * 1.7), Z(27.2), Math.PI / 2, 2.6, 2, "#7ff0e6"); dpRune(X(36), Z(27.2), 0, 2.4, 4, "#7ff0e6"); lite(36, 26.8, "#7ff0e6", 3, 7, 3); } // the carved Ystran archway
-    for (const [x, y] of P.stash) { dpStash(X(x), Z(y), R()); lite(x, y, "#ffd27a", 2, 6); } dpLantern(X(34.4), Z(6.4), "#ffb060", 2.2);
-    for (const [x, y] of [[5, 4.5], [11, 9], [12, 20.5], [30, 10.5]]) dpLantern(X(x), Z(y), "#ffb060", 2.6, 2);
+    for (const [x, y] of P.stash) { dpStash(X(x), Z(y), R()); lite(x, y, "#ffd27a", 2, 6); } dpLantern(X(34.4), Z(6.4), "#5ab8ff", 2.2);
+    for (const [x, y] of [[5, 4.5], [11, 9], [12, 20.5], [30, 10.5]]) dpLantern(X(x), Z(y), "#5ab8ff", 2.6, 2);
     dpCrystals(X(16), Z(21.6), "#5af0e0", 0.8, 4); dpCrystals(X(24.5), Z(8.6), "#5af0e0", 0.9, 5);
     tallGrass(X(20), Z(20.6), 3, 1.2, "cavedeep", { any: true, name: "Sunset Tunnel B2 pool shore" }); tallGrass(X(9.4), Z(22.4), 1.8, 1.6, "cavedeep", { any: true, name: "Sunset Tunnel B2 dead end" }); } });
 
@@ -5842,6 +5846,271 @@ cBuild("DB1", () => { const S0 = D.sandstone(), S1 = D.paleStone(), rope = std({
   // a low parapet along the hilltop rim, so the drop reads as a cliff edge
   for (let k = 0; k < 64; k++) { const ang = (k / 64) * TAU, a = OBS_C[0] + Math.cos(ang) * OBS_R[0] * 0.985, b = OBS_C[1] + Math.sin(ang) * OBS_R[1] * 0.985; if (a > 10.4 && b > 42.6) continue; if (a < 1.4 || b < 31.4) continue; add(warp(new THREE.BoxGeometry(0.34, 0.5, 0.8, 1, 1, 2), 0.03, k), S0, [a, 0.2, b], [0, -ang, 0]); }
 });
+// ======== DX PASS BEGIN ========
+// ================= DUSTARA STORY + DETAIL PASS (shared detail kit) =================
+// Book 1 places the audit found missing or thin, plus a desert-frontier detail pass over the Dustara scenes.
+// All new randomness comes from the kit's kRat/kR hashes, never R(), so the old layout is untouched; old props that
+// must go are taken out after the builds (by position, or by a userData mark), never skipped while building.
+// ---- the canyon path and the old stone bridge: tiles, heights and walkability ----
+// A rope-railed path leaves the bakery's back lane, cuts east through the rock and drops onto the 112 steps' first landing;
+// the steps run on down to the floor camp, and the canyon floor west of the camp is now walkable sand, split by a deep
+// fissure that the old carved bridge crosses. Heights come from D.elev (exact targets) and D.lowWalk; the tiles turn
+// walkable only after every build has run, so no build sees a changed grid.
+const DXF = { fx0: 79, fx1: 81, bz0: 61, bz1: 63, bx0: 75.4, bx1: 85.6 };
+const dxPath = (x, y) => x >= 59 && x <= 65 && y >= 55 && y <= 57;
+const dxBr = (x, y) => x >= DXF.fx0 && x <= DXF.fx1 && y >= DXF.bz0 && y <= DXF.bz1;
+const dxFiss = (x, y) => x >= DXF.fx0 && x <= DXF.fx1 && y >= 57 && y <= 68 && !dxBr(x, y);
+const dxFloor = (x, y) => x >= 70 && x <= 92 && y >= 58 && y <= 67 && !(x >= DXF.fx0 && x <= DXF.fx1);
+const dxHb = (x, z) => { const [a, b] = warpXY(x, z), fx = a - 0.5, fz = b - 0.5 + GOY, i = Math.floor(fx), j = Math.floor(fz), u = fx - i, v = fz - j, h = (xx, yy) => TER.H[Math.min(GH - 1, Math.max(0, yy)) * GW + Math.min(GW - 1, Math.max(0, xx))], s = (t) => t * t * (3 - 2 * t), U = s(u), V = s(v);
+  return (h(i, j) * (1 - U) + h(i + 1, j) * U) * (1 - V) + (h(i, j + 1) * (1 - U) + h(i + 1, j + 1) * U) * V; };
+const dxArch = (a) => { const t = Math.min(1, Math.max(0, (a - DXF.bx0) / (DXF.bx1 - DXF.bx0))); return CANYON_Y + 0.2 + 1.3 * Math.sin(t * Math.PI); };
+const dxPathH = (a) => { const t = Math.min(1, Math.max(0, (a - 58.8) / 7.2)); return -2.85 * t * t * (3 - 2 * t) * 0.35 - 2.85 * t * 0.65; };
+const DXFLOOR_Y = CANYON_Y + 0.2;
+{ const e0 = D.elev; D.elev = (x, z) => { const base = e0 ? e0(x, z) : 0; if (!TER.ready) return base; const [a, b] = warpXY(x, z), ci = Math.floor(a), cj = Math.floor(b);
+    if (dxPath(ci, cj)) return dxPathH(a) - dxHb(x, z);
+    if (dxBr(ci, cj)) return at(ci, cj) === "c" ? base - 4.2 : dxArch(a) - dxHb(x, z);
+    if (dxFiss(ci, cj)) return base - 4.2;
+    if (dxFloor(ci, cj) || cIsFloor(ci, cj)) return (cj >= DXF.bz0 && cj <= DXF.bz1 && a > DXF.bx0 && a < DXF.bx1 ? dxArch(a) : DXFLOOR_Y) - dxHb(x, z);
+    return base; }; }
+{ const l0 = D.lowWalk; D.lowWalk = (ci, cj) => (l0 ? l0(ci, cj) : false) || dxPath(ci, cj) || dxFloor(ci, cj) || dxBr(ci, cj); }
+const dxTiles = () => { for (let y = 55; y <= 57; y++) for (let x = 59; x <= 65; x++) GRID[y + GOY][x] = "p";
+  for (let y = 58; y <= 67; y++) for (let x = 70; x <= 92; x++) if ((dxFloor(x, y) || dxBr(x, y)) && GRID[y + GOY][x] === "c") GRID[y + GOY][x] = ",";
+  for (let y = 342; y <= 349; y++) for (let x = 174; x <= 179; x++) if (Math.hypot(x + 0.5 - 177.0, y + 0.5 - 345.6) < 2.55 && GRID[y + GOY][x] === "w") GRID[y + GOY][x] = "k"; }; // Port Ember's round platform
+
+const dxPass = (ids) => {
+  const K = ASSETS.detailKit(THREE, { add, std, unwarp, GHT }, { chunk: 60 }), { P, B, C, S, Beam, Sag, kRat, kR, kHex } = K, st = { removed: 0, kept: 0 };
+  const RECTS = ids.map((id) => SCN[id].rect), own = (x, z) => RECTS.some(([rx, rz]) => x >= rx && x < rx + 30 && z >= rz && z < rz + 30);
+  const has = (id) => ids.includes(id);
+  const OT = (x, z) => ({ x, z, floor: -99 }); // a spot on the ground (tile coords; the kit unwarps and seats it)
+  const OA = (x, y, z) => { const [ux, uz] = unwarp(x, z); return { abs: true, x: ux, y, z: uz }; }; // an absolute height at a tile spot
+  const walk = (x, z) => { const c = at(Math.floor(x), Math.floor(z)); return "pPksbf".includes(c); };
+  // take old objects out of a box (tile/world coords), shortening long wall runs instead of deleting them
+  const clearBox = (x0, z0, x1, z1, o = {}) => { const bb = new THREE.Box3(); root.updateMatrixWorld(true);
+    for (const ob of root.children.slice()) { if (ob.isLight || ob.name === "ground" || ob.name === "grass" || ob.name === "water" || ob.name === "canyonwall" || ob.userData.detail) continue; bb.setFromObject(ob); if (bb.isEmpty()) continue;
+      if (bb.max.x < x0 || bb.min.x > x1 || bb.max.z < z0 || bb.min.z > z1 || bb.min.y > (o.ytop ?? 8)) continue; const sx = bb.max.x - bb.min.x, sz = bb.max.z - bb.min.z;
+      if (Math.max(sx, sz) > 3.5 && Math.min(sx, sz) < 1.6 && ob.isMesh) { const alongZ = sz > sx, lo = alongZ ? bb.min.z : bb.min.x, hi = alongZ ? bb.max.z : bb.max.x, L = hi - lo, g0 = alongZ ? z0 : x0, g1 = alongZ ? z1 : x1;
+        for (const [s0, s1] of [[lo, g0 - 0.05], [g1 + 0.05, hi]]) { if (s1 - s0 < 0.5) continue; const c = ob.clone(); c.scale.x *= (s1 - s0) / L; if (alongZ) c.position.z = (s0 + s1) / 2; else c.position.x = (s0 + s1) / 2; root.add(c); } }
+      else if (Math.max(sx, sz) > (o.big || 9)) continue;
+      root.remove(ob); st.removed++; } };
+  const stripFlora = (inside) => { const cut = (arr) => { for (let i = arr.length - 1; i >= 0; i--) { const [a, b] = warpXY(arr[i][0], arr[i][1]); if (inside(a, b)) arr.splice(i, 1); } }; for (const a2 of [MG, FLW, GG, PEB]) cut(a2); for (const k of Object.keys(FL)) cut(FL[k]); };
+  // a carved swirl: an outward spiral of thin glowing strokes on a face (face normal = +z turned by ry)
+  const swirl = (O, cx, cy, cz, r, ry, col, turns = 1.6) => { const n = 12, c = Math.cos(ry), s = Math.sin(ry); let p = null; for (let k = 0; k <= n; k++) { const t = k / n, a = t * turns * Math.PI * 2, rr = r * (0.15 + 0.85 * t), lx = Math.cos(a) * rr, ly = Math.sin(a) * rr, q = [cx + lx * c, cy + ly, cz - lx * s]; if (p) Beam("glow", O, p, q, 0.022, col, "box"); p = q; } };
+  const light = (x, y, z, col, i, d) => { const [ux, uz] = unwarp(x, z), l = new THREE.PointLight(new THREE.Color(col), i, d, 1.6); l.position.set(ux, y, uz); root.add(l); };
+  const sign = (x, z, ry, l1, l2) => { if (!own(x, z)) return; const [ux, uz] = unwarp(x, z), y = GHT(ux, uz), Gs = grp(ux, y, uz, ry); Gs.userData.noLift = true; add(new THREE.BoxGeometry(0.12, 1.2, 0.12), D.wood(), [0, 0.6, 0], [0, 0, 0], null, Gs);
+    const t = tex(256, 96, (g, W, Hh) => { g.fillStyle = "#e8c890"; g.fillRect(0, 0, W, Hh); g.strokeStyle = "#7a4a22"; g.lineWidth = 6; g.strokeRect(4, 4, W - 8, Hh - 8); g.fillStyle = "#5a3418"; g.textAlign = "center"; g.font = "bold 28px serif"; g.fillText(l1, W / 2, l2 ? 42 : 58); if (l2) { g.font = "21px serif"; g.fillText(l2, W / 2, 76); } }); add(new THREE.BoxGeometry(1.0, 0.4, 0.05), std({ map: t, roughness: 0.8 }), [0, 1.2, 0.08], [0, 0, 0], null, Gs); };
+  const blueLamp = (x, z, h = 1.7, o = {}) => { if (!own(x, z)) return; const O = o.y !== undefined ? OA(x, o.y, z) : OT(x, z); C("metal", O, 0, 0, 0, 0.045, h, "#3a3238", "cyl6"); Beam("metal", O, [0, h - 0.05, 0], [0.32, h - 0.05, 0], 0.025, "#3a3238", "box"); Beam("metal", O, [0.32, h - 0.05, 0], [0.32, h - 0.25, 0], 0.012, "#2a2428", "box");
+    C("metal", O, 0.32, h - 0.62, 0, 0.11, 0.06, "#4a3a30", "cyl6"); C("glow", O, 0.32, h - 0.56, 0, 0.075, 0.24, "#58b8ff", "cyl6"); C("glow", O, 0.32, h - 0.5, 0, 0.035, 0.1, "#d8f0ff", "cyl6"); P("metal", O, "pyr", 0.32, h - 0.24, 0, 0.24, 0.12, 0.24, "#4a3a30");
+    if (o.light !== false) { const [ux, uz] = unwarp(x, z); light(x + 0.32, (o.y ?? GHT(ux, uz)) + h - 0.45, z, "#6ac0ff", o.li || 1.3, o.ld || 5.5); } };
+  // ---- 1. the canyon path behind the bakery ----
+  if (has("DB2") || has("DB3")) { clearBox(58.4, 54.55, 65.85, 58.05); stripFlora((a, b) => a >= 58.5 && a < 66 && b >= 54.6 && b < 58.2);
+    const q = kRat(61, 56, 11), ROCK = ["#a8583a", "#b8663e", "#94492e", "#c27a4e"];
+    for (let x = 59.1; x < 66; x += 0.9) { const yP = dxPathH(x); // cut faces: tall rock both sides, from below the path to above the old ground
+      for (const [z, sd] of [[54.35, -1], [58.15, 1]]) { if (!own(x, z)) continue; const h = 2.2 + q() * 1.6 - yP * 0.6, r = 0.75 + q() * 0.35; P("lit", OA(x, yP - 0.4, z + sd * 0.15), "ico", 0, h * 0.45, 0, r * 2.1, h, r * 1.7, ROCK[Math.floor(q() * 4)], 0, q() * 6, 0); if (q() < 0.4) P("lit", OA(x + 0.4, yP - 0.2, z + sd * 0.55), "ico", 0, 0.5, 0, 1.1, 1.0, 1.0, ROCK[Math.floor(q() * 4)]); } }
+    // rope railing on posts along the south edge, a worn plank lip on each little drop
+    let prev = null; for (let x = 59.4; x < 66.2; x += 1.35) { if (!own(x, 57.7)) { prev = null; continue; } const yP = dxPathH(x), O = OA(x, yP, 57.72); C("wood", O, 0, -0.1, 0, 0.055, 1.15, "#7a5434", "cyl6"); S("metal", O, 0, 1.06, 0, 0.07, "#b08a40");
+      const top = [OA(x, 0, 57.72).x, yP + 0.98, OA(x, 0, 57.72).z]; if (prev) { Sag("deco", null, prev, top, 0.12, 0.022, "#c8a070", 5); Sag("deco", null, [prev[0], prev[1] - 0.45, prev[2]], [top[0], top[1] - 0.45, top[2]], 0.1, 0.018, "#c8a070", 5); } prev = top; }
+    for (let x = 59.6; x < 65.9; x += 0.75) { if (!own(x, 56)) continue; const yP = dxPathH(x); B("deco", OA(x, yP, 56.2), 0, -0.02, 0, 0.1, 0.05, 2.7, "#8a5a3a"); }
+    blueLamp(59.4, 54.95, 1.8, { y: dxPathH(59.4) }); blueLamp(63.2, 54.95, 1.8, { y: dxPathH(63.2) });
+    sign(58.2, 54.4, 0, "CANYON PATH", "down to the canyon floor"); }
+  // ---- 2. the old stone bridge on the canyon floor ----
+  if (has("DC3") || has("DB3") || has("DB4") || has("DC4")) stripFlora((a, b) => (a >= 70 && a < 93 && b >= 57 && b < 68));
+  if (has("DC3")) { const q = kRat(80, 62, 21), PALE = ["#d8d0bc", "#cfc6ae", "#e2dac6", "#c4baa2"], pale = () => PALE[Math.floor(q() * 4)], BLUE = "#3f8cf0", zc = 62.5;
+    // deck: thick slabs that follow the walk height (their tops are the walk surface), a faint blue inlay down the middle
+    for (let x = DXF.bx0 + 0.25; x < DXF.bx1; x += 0.5) { const y = dxArch(x), O = OA(x, y, zc); B("lit", O, 0, -0.55, 0, 0.52, 0.6, 3.1, pale()); P("glow", O, "box", 0, 0.056, 0, 0.5, 0.012, 0.07, "#2a62c0");
+      for (const sd of [-1, 1]) { B("lit", O, 0, 0, sd * 1.42, 0.52, 0.5 + 0.06 * Math.sin(x * 3.1), 0.26, pale()); } }
+    // parapet posts with carved swirls, both faces
+    for (let x = DXF.bx0 + 0.4; x < DXF.bx1; x += 1.7) { const y = dxArch(x), O = OA(x, y, zc); for (const sd of [-1, 1]) { B("lit", O, 0, 0, sd * 1.42, 0.42, 0.95, 0.4, pale()); P("lit", O, "pyr", 0, 1.08, sd * 1.42, 0.5, 0.26, 0.5, pale(), 0, Math.PI / 4, 0); swirl(O, 0, 0.55, sd * 1.63, 0.15, sd > 0 ? 0 : Math.PI, BLUE); } }
+    // the arch under the span and its two piers going down into the fissure
+    const FX0 = 79.05, FX1 = 81.95, FB = DXFLOOR_Y - 4.6; for (const px of [FX0 - 0.15, FX1 + 0.15]) { const O = OA(px, FB, zc); B("lit", O, 0, 0, 0, 1.0, dxArch(px) - FB - 0.5, 3.0, pale()); swirl(O, 0, 2.2, 1.55, 0.3, 0, BLUE, 2); swirl(O, 0, 2.2, -1.55, 0.3, Math.PI, BLUE, 2); }
+    for (let k = 0; k <= 12; k++) { const a = Math.PI * (k / 12), cx = (FX0 + FX1) / 2, x = cx - Math.cos(a) * 1.55, y = dxArch(x) - 0.85 - (1 - Math.sin(a)) * 1.4; B("lit", OA(x, y, zc), 0, -0.3, 0, 0.4, 0.6, 2.95, pale(), 0, 0, Math.cos(a) * 0.8); }
+    // abutments: heavy carved blocks at each end, outside the walkway
+    for (const ex of [DXF.bx0 - 0.1, DXF.bx1 + 0.1]) for (const sd of [-1, 1]) { const O = OT(ex, zc + sd * 2.0); B("lit", O, 0, -0.3, 0, 1.0, 2.3, 0.9, pale()); P("lit", O, "box", 0, 2.1, 0, 1.15, 0.22, 1.05, pale()); swirl(O, 0, 1.2, sd * 0.47, 0.32, sd > 0 ? 0 : Math.PI, BLUE, 2.2); swirl(O, (ex < 80 ? -1 : 1) * 0.52, 1.2, 0, 0.26, ex < 80 ? -Math.PI / 2 : Math.PI / 2, BLUE, 2); }
+    // old carved blocks fallen on the floor, half sunk in the sand
+    for (const [x, z, s] of [[73.2, 59.4, 1], [76.8, 65.9, 0.8], [87.6, 59.1, 0.9], [84.2, 66.2, 1.1], [71.3, 65.6, 0.7]]) { const O = OT(x, z); B("lit", O, 0, -0.25, 0, 1.1 * s, 0.75 * s, 0.8 * s, pale(), 0.1, q() * 3, 0.15); swirl(O, 0, 0.18 * s, 0.41 * s, 0.18 * s, 0, "#2c5ea8"); }
+    for (const [x, z, h] of [[72.4, 66.3, 3.4], [88.3, 66.4, 2.2], [74.6, 58.7, 1.6]]) { const O = OT(x, z); C("lit", O, 0, -0.2, 0, 0.42, h, pale()); swirl(O, 0, h * 0.55, 0.43, 0.22, 0, "#2c5ea8", 2); }
+    // the fissure: a dim molten seam far down, and a cool blue glow from the bridge
+    for (let z = 57.5; z < 68.5; z += 0.7) { if (z > DXF.bz0 - 0.2 && z < DXF.bz1 + 1.2) continue; P("glow", OA(80.5 + Math.sin(z * 1.3) * 0.25, DXFLOOR_Y - 4.15, z), "disc", 0, 0, 0, 0.9, 1, 0.8, "#8a3014"); }
+    light(80.5, DXFLOOR_Y + 2.2, zc - 2.4, "#4a9cff", 2.2, 9); light(80.5, DXFLOOR_Y + 2.2, zc + 2.4, "#4a9cff", 2.2, 9); light(80.5, DXFLOOR_Y - 2.5, 59.5, "#ff6a2a", 1.6, 7); light(80.5, DXFLOOR_Y - 2.5, 66.5, "#ff6a2a", 1.6, 7); }
+  // the floor itself: drifts, scrub, rock stacks against the walls (the way from the camp to the bridge stays open)
+  { const q = kRat(70, 58, 31), ROCK = ["#9a4a30", "#b0603a", "#8a3e2a", "#c47a50"], SC = ["#9aa060", "#b8a868", "#7a8a50", "#c8b878"];
+    for (let x = 70.3; x < 93; x += 1.3) for (let z = 58.2; z < 67.9; z += 1.3) { const px = x + q() * 0.9, pz = z + q() * 0.9, ci = Math.floor(px), cj = Math.floor(pz); if (!own(px, pz) || !dxFloor(ci, cj)) continue; const lane = pz > DXF.bz0 - 0.6 && pz < DXF.bz1 + 1.6, r = q();
+      if (!lane && (pz < 59.2 || pz > 66.6) && r < 0.4) { const O = OT(px, pz), n = 2 + Math.floor(q() * 3); let yy = 0, w = 1.5 + q() * 0.8; for (let k = 0; k < n; k++) { const t = 0.45 + q() * 0.45; P("lit", O, "ico", (q() - 0.5) * 0.3, yy + t * 0.5, (q() - 0.5) * 0.3, w * 1.25, t, w, ROCK[Math.floor(q() * 4)], (q() - 0.5) * 0.15, q() * 6, 0); yy += t * 0.85; w *= 0.72 + q() * 0.15; } }
+      else if (r < 0.7) { const O = OT(px, pz); for (let k = 0; k < 7; k++) { const a = q() * 6.3, d = q() * 0.35; P("deco", O, "blade", Math.cos(a) * d, 0, Math.sin(a) * d, 0.12, 0.35 + q() * 0.4, 0.12, SC[Math.floor(q() * 4)], (q() - 0.5) * 0.6, q() * 6, (q() - 0.5) * 0.6); } }
+      else P("deco", OT(px, pz), "disc", 0, 0.02, 0, 0.9 + q() * 0.8, 1, 0.6 + q() * 0.5, "#b88660"); } }
+  // ---- 2. the Forge Gate: the great pale stone ring on the cliff edge, wrapped in scaffolding; the Forge Mining Camp round it ----
+  if (has("DFB4")) { const X = 90, Y = 290, q = kRat(104, 296, 41), PALE = ["#ddd4c2", "#d2c8b4", "#e6ddcb", "#c8bea8"], pale = () => PALE[Math.floor(q() * 4)];
+    clearBox(X + 10.6, Y + 3.75, X + 18.4, Y + 5.6, { big: 12 }); // the old small arch, its rune strips, carvings and lamps
+    const cx = X + 14.5, cz = Y + 6.2, O = OT(cx, cz), CY = 3.3, R0 = 3.35, R1 = 4.6, NS = 44; // centred on the game's gate-wake rings (r 3.1 at 3.3 m)
+    for (let k = 0; k < NS; k++) { const a = (k / NS) * Math.PI * 2, rm = (R0 + R1) / 2, x = Math.cos(a) * rm, y = CY + Math.sin(a) * rm, top = CY + Math.sin(a) * R1; if (top < -0.2 && Math.sin(a) < -0.9) continue;
+      P(top < 0.6 ? "deco" : "lit", O, "box", x, y, 0, (Math.PI * 2 * rm / NS) * 1.06, R1 - R0, 1.15, pale(), 0, 0, a + Math.PI / 2);
+      if (k % 2 === 0) for (const sd of [-1, 1]) P("deco", O, "box", Math.cos(a) * (R0 + 0.12), CY + Math.sin(a) * (R0 + 0.12), sd * 0.59, 0.42, 0.05, 0.03, "#8a8272", 0, 0, a + Math.PI / 2); }
+    for (let k = 0; k < 9; k++) { const a = Math.PI * (0.1 + k * 0.1); for (const sd of [-1, 1]) swirl(O, Math.cos(a) * 3.98, CY + Math.sin(a) * 3.98, sd * 0.6, 0.28, sd > 0 ? 0 : Math.PI, "#55708c", 1.8); }
+    for (const sx of [-1, 1]) { B("lit", O, sx * 3.7, -0.3, 0, 2.2, 1.3, 2.0, pale()); B("lit", O, sx * 3.9, 0.95, 0, 1.6, 0.35, 1.7, pale()); swirl(O, sx * 3.7, 0.4, 1.01, 0.3, 0, "#55708c", 2); }
+    // scaffolding: poles, plank decks and ladders lashed with rope, halfway up both faces on both flanks; lanterns hang from the poles
+    for (const sx of [-1, 1]) for (const sz of [-1, 1]) { const px0 = sx * 2.9, px1 = sx * 5.1, pz0 = sz * 0.85, pz1 = sz * 1.75;
+      for (const px of [px0, px1]) for (const pz of [pz0, pz1]) { C("wood", O, px, -0.2, pz, 0.075, 5.9, "#8a6440", "cyl6"); for (const y of [1.9, 3.7, 5.4]) C("deco", O, px, y - 0.08, pz, 0.1, 0.16, "#c8a070", "cyl6"); }
+      for (const y of [1.9, 3.7]) { if (y > 3 && Math.abs(px0) < 3.2 && false) continue; for (let t = 0; t < 4; t++) B("wood", O, px0 + (px1 - px0) * ((t + 0.5) / 4), y, (pz0 + pz1) / 2, Math.abs(px1 - px0) / 4 - 0.03, 0.07, 0.95, kHex("#9a7450", (q() - 0.5) * 0.12)); }
+      for (const y of [1.0, 2.8, 4.6]) Beam("wood", O, [px0, y, pz1], [px1, y + 0.9, pz1], 0.04, "#7a5434", "box");
+      Beam("wood", O, [px0, 5.4, pz0], [px0, 5.4, pz1], 0.05, "#7a5434", "box"); Beam("wood", O, [px1, 5.4, pz0], [px1, 5.4, pz1], 0.05, "#7a5434", "box");
+      if (sz > 0) K.Ladder(O, (px0 + px1) / 2, pz1 + 0.25, 3.8, 0, "#7a5a3a");
+      const lx = px1 + sx * 0.18, lz = pz1; Beam("metal", O, [lx - sx * 0.18, 4.9, lz], [lx, 4.9, lz], 0.02, "#3a3238", "box"); C("metal", O, lx, 4.25, lz, 0.1, 0.05, "#4a3a30", "cyl6"); C("glow", O, lx, 4.3, lz, 0.07, 0.22, "#ffc070", "cyl6"); P("metal", O, "pyr", lx, 4.62, lz, 0.22, 0.12, 0.22, "#4a3a30");
+      light(cx + lx, 4.4 + 0.2, cz + lz, "#ffb860", 1.2, 6); }
+    // rope coils, a pulley and planks stacked on the plaza edge
+    for (const [x, z] of [[X + 10.4, Y + 8.6], [X + 18.8, Y + 8.4]]) { const O2 = OT(x, z); for (let k = 0; k < 6; k++) B("wood", O2, 0, 0.08 * k, 0, 2.2, 0.07, 0.3, kHex("#a07a52", (q() - 0.5) * 0.1), 0, 0.08 * (q() - 0.5), 0); P("deco", O2, "ring", 0.4, 0.55, 0.7, 0.5, 2.2, 0.5, "#c8a070"); }
+    // the camp: black stone huts with tin roofs and smoking chimneys, rail tracks with ore carts of glittering rock
+    const hut = (x, z, w, d, ry) => { if (!own(x, z)) return; const O2 = { x, z, ry, floor: -99 }, ST = ["#2e2a2e", "#3a3436", "#26232a"];
+      for (let i = 0; i < Math.ceil(w / 0.5); i++) for (let j = 0; j < 4; j++) { const lx = -w / 2 + 0.25 + i * 0.5; for (const sd of [-1, 1]) B("lit", O2, Math.min(lx, w / 2 - 0.25), j * 0.45, sd * (d / 2 - 0.14), 0.5, 0.46, 0.3, ST[(i + j) % 3]); }
+      for (let i = 0; i < Math.ceil(d / 0.5); i++) for (let j = 0; j < 4; j++) { const lz = -d / 2 + 0.25 + i * 0.5; for (const sd of [-1, 1]) B("lit", O2, sd * (w / 2 - 0.14), j * 0.45, Math.min(lz, d / 2 - 0.25), 0.3, 0.46, 0.5, ST[(i + j + 1) % 3]); }
+      B("deco", O2, 0, 0, d / 2 - 0.02, 0.8, 1.4, 0.05, "#5a3a26"); B("glow", O2, w / 4, 1.0, d / 2 - 0.02, 0.5, 0.35, 0.04, "#ffb860");
+      for (const sd of [-1, 1]) for (let i = 0; i < 5; i++) P("metal", O2, "box", 0, 2.05 + 0.32 - i * 0.003, sd * (d / 4 + 0.1), w + 0.5, 0.05, d / 2 + 0.45, kHex("#9a9ea4", (q() - 0.5) * 0.12 - i * 0.01), sd * 0.38, 0, 0);
+      B("lit", O2, 0, 1.85, 0, w, 0.25, 0.3, "#2e2a2e"); C("metal", O2, w / 2 - 0.5, 1.6, -d / 4, 0.14, 1.6, "#4a4a50", "cyl6"); for (let k = 0; k < 4; k++) S("deco", O2, w / 2 - 0.5 + k * 0.12, 3.4 + k * 0.42, -d / 4 - k * 0.1, 0.18 + k * 0.08, "#d8d0cc"); };
+    hut(X + 3.6, Y + 9.6, 3.6, 2.8, 0); hut(X + 26.2, Y + 9.4, 3.4, 2.8, 0); hut(X + 16.2, Y + 21.6, 3.4, 2.8, Math.PI);
+    const rails = (pts) => { for (let i = 0; i + 1 < pts.length; i++) { const [a, b] = [pts[i], pts[i + 1]], L = Math.hypot(b[0] - a[0], b[1] - a[1]), nx = -(b[1] - a[1]) / L, nz = (b[0] - a[0]) / L;
+        for (let t = 0.2; t < L; t += 0.62) { const x = a[0] + (b[0] - a[0]) * t / L, z = a[1] + (b[1] - a[1]) * t / L; if (!own(x, z)) continue; B("deco", OT(x, z), 0, 0, 0, 1.15, 0.07, 0.22, "#6a4a32", 0, Math.atan2(b[0] - a[0], b[1] - a[1]) + Math.PI / 2, 0); }
+        for (const sd of [-0.32, 0.32]) for (let t = 0; t < L; t += 1.0) { const t1 = Math.min(L, t + 1.0), x0 = a[0] + (b[0] - a[0]) * t / L + nx * sd, z0 = a[1] + (b[1] - a[1]) * t / L + nz * sd, x1 = a[0] + (b[0] - a[0]) * t1 / L + nx * sd, z1 = a[1] + (b[1] - a[1]) * t1 / L + nz * sd; if (!own(x0, z0)) continue; const A0 = OT(x0, z0); const [ux0, uz0] = unwarp(x0, z0), [ux1, uz1] = unwarp(x1, z1); Beam("deco", A0, [0, 0.1, 0], [ux1 - ux0, 0.1 + GHT(ux1, uz1) - GHT(ux0, uz0), uz1 - uz0], 0.035, "#5a5a62", "box"); } } };
+    const cart = (x, z, ry) => { if (!own(x, z)) return; const O2 = { x, z, ry, floor: -99 }; B("metal", O2, 0, 0.3, 0, 1.0, 0.55, 0.7, "#5a4a3e"); for (const a of [-0.36, 0.36]) for (const b of [-0.28, 0.28]) P("metal", O2, "cyl6", a, 0.2, b + Math.sign(b) * 0.1, 0.3, 0.06, 0.3, "#2a2a2e", Math.PI / 2, 0, 0);
+      for (let k = 0; k < 7; k++) P(k % 3 ? "lit" : "glow", O2, "oct", (q() - 0.5) * 0.7, 0.88 + q() * 0.15, (q() - 0.5) * 0.45, 0.22, 0.26, 0.22, k % 3 ? "#5a5058" : ["#ffd27a", "#7ff0e6", "#ff9a5a"][k % 3 === 0 ? Math.floor(q() * 3) : 0]); };
+    rails([[X + 0.6, Y + 6.8], [X + 9.4, Y + 6.8]]); rails([[X + 20.6, Y + 6.8], [X + 29.4, Y + 6.8]]); rails([[X + 13.2, Y + 24.2], [X + 19, Y + 23]]); cart(X + 6.8, Y + 6.8, Math.PI / 2); cart(X + 24.4, Y + 6.8, Math.PI / 2); cart(X + 14.6, Y + 23.9, 1.4);
+    // the signs on the way in: plank boards on posts with iron spikes along the top
+    sign(X + 2.6, Y + 11.4, 0, "FORGE MINING CAMP", "AUTHORIZED MINERS ONLY"); for (let k = 0; k < 7; k++) if (own(X + 2.6, Y + 11.4)) P("metal", OT(X + 2.1 + k * 0.16, Y + 11.48), "pyr", 0, 1.48, 0, 0.05, 0.16, 0.05, "#3a3a3e"); }
+  // ---- 3/8. the horizon (built once, by the stand pass): the purple glow of Starfall Crater to the north-east, the jagged purple Sunset Range beyond the tunnel ----
+  if (H.stand) { const hz = new THREE.Group(); hz.userData.noLift = true; hz.name = "nocol"; root.add(hz);
+    { const cx = 178, cz = -96, prof = []; for (let k = 0; k <= 24; k++) { const t = k / 24, r = 30 + t * 78, y = t < 0.32 ? -6 + Math.pow(t / 0.32, 2) * 26 : 20 * Math.pow(1 - (t - 0.32) / 0.68, 1.6) - 3; prof.push(new THREE.Vector2(r, y)); }
+      const g = new THREE.LatheGeometry(prof, 72), P2 = g.attributes.position; for (let i = 0; i < P2.count; i++) { const x = P2.getX(i), z = P2.getZ(i), y = P2.getY(i); P2.setY(i, y + (K.kVN(x * 0.08, 0.5, z * 0.08) - 0.5) * 6 * Math.min(1, Math.max(0, y + 3) / 10)); } g.computeVertexNormals();
+      const rim = new THREE.Mesh(g, std({ color: "#b8684a", roughness: 1 })); rim.position.set(cx, 0, cz); rim.name = "nocol"; hz.add(rim);
+      const bowl = new THREE.Mesh(new THREE.CircleGeometry(31, 48), new THREE.MeshBasicMaterial({ color: "#b070ff", fog: false })); bowl.rotation.x = -Math.PI / 2; bowl.position.set(cx, -5.5, cz); bowl.name = "nocol"; hz.add(bowl);
+      for (let k = 0; k < 4; k++) { const h = 12 + k * 9, gm = new THREE.Mesh(new THREE.CylinderGeometry(24 - k * 4, 31 - k * 2, h, 40, 1, true), new THREE.MeshBasicMaterial({ color: k < 2 ? "#a868f0" : "#7a40c8", transparent: true, opacity: 0.13 - k * 0.025, depthWrite: false, side: THREE.DoubleSide, fog: false, blending: THREE.AdditiveBlending })); gm.position.set(cx, h / 2 - 4, cz); gm.name = "nocol"; hz.add(gm); }
+      const l = new THREE.PointLight(0xb070ff, 40, 200, 1.1); l.position.set(cx, 30, cz); hz.add(l); }
+    { const g = new THREE.BufferGeometry(), Pp = [], Cc = [], col = new THREE.Color(), top = new THREE.Color("#c8a0e8"), mid = new THREE.Color("#7a4a9a"), low = new THREE.Color("#4a2a5a"), q = kR(9131);
+      const peak = (px, pz, h, r) => { const n = 9, rs = [], as = []; for (let k = 0; k < n; k++) { as.push((k / n) * Math.PI * 2 + (q() - 0.5) * 0.4); rs.push(r * (0.65 + q() * 0.6)); }
+        const tip = [px + (q() - 0.5) * r * 0.3, h, pz + (q() - 0.5) * r * 0.3]; for (let k = 0; k < n; k++) { const a0 = as[k], a1 = as[(k + 1) % n], r0 = rs[k], r1 = rs[(k + 1) % n], b0 = [px + Math.cos(a0) * r0, -8, pz + Math.sin(a0) * r0], b1 = [px + Math.cos(a1) * r1, -8, pz + Math.sin(a1) * r1], m0 = [px + Math.cos(a0) * r0 * 0.5, h * (0.45 + q() * 0.2), pz + Math.sin(a0) * r0 * 0.5], m1 = [px + Math.cos(a1) * r1 * 0.5, h * (0.45 + q() * 0.2), pz + Math.sin(a1) * r1 * 0.5];
+          for (const [A, B2, C2] of [[b0, m0, b1], [m0, m1, b1], [m0, tip, m1]]) for (const v of [A, B2, C2]) { Pp.push(...v); const t = Math.max(0, v[1]) / h; col.copy(low).lerp(mid, Math.min(1, t * 1.6)).lerp(top, Math.max(0, t - 0.6) * 2.2); Cc.push(col.r, col.g, col.b); } } };
+      for (let k = 0; k < 34; k++) { const z = -70 + k * 6.2 + (q() - 0.5) * 4, x = 286 + q() * 30 + (k % 3) * 8, h = 45 + q() * 55 + (k % 4 === 1 ? 30 : 0); peak(x, z, h, 14 + q() * 12); }
+      for (let k = 0; k < 18; k++) { const z = -60 + k * 11 + (q() - 0.5) * 5; peak(272 + q() * 8, z, 26 + q() * 18, 12 + q() * 6); }
+      g.setAttribute("position", new THREE.Float32BufferAttribute(Pp, 3)); g.setAttribute("color", new THREE.Float32BufferAttribute(Cc, 3)); g.computeVertexNormals();
+      const m = new THREE.Mesh(g, std({ vertexColors: true, roughness: 1, flatShading: true })); m.name = "nocol"; hz.add(m); } }
+  // ---- 4. the Gateposts: two big red boulders where the path leaves town for the Cactus Gardens (DB6 / DB7 seam) ----
+  { const q = kRat(180, 44, 51), RED = ["#a8442c", "#b8503a", "#9a3c28", "#c25a3e"];
+    for (const [x, z, s] of [[180.7, 40.2, 1], [180.6, 49.9, 1.08]]) { if (!own(x, z)) continue; const O = OT(x, z);
+      P("lit", O, "ico", 0, 1.3 * s, 0, 3.6 * s, 3.4 * s, 3.0 * s, RED[0], 0.1, q() * 6, 0.05); P("lit", O, "ico", 0.3, 3.0 * s, 0.1, 2.6 * s, 1.6 * s, 2.2 * s, RED[1], 0, q() * 6, 0.1); P("lit", O, "ico", -0.9, 0.5, 0.8, 1.6, 1.2, 1.4, RED[2]);
+      for (let k = 0; k < 6; k++) P("deco", O, "box", (q() - 0.5) * 2.4, 0.6 + k * 0.5, (z < 45 ? 1 : -1) * 1.45 * s, 1.4 + q(), 0.03, 0.02, "#7a2a1a"); }
+    if (own(176.6, 41.4)) { const O = OT(176.6, 41.4); C("wood", O, 0, 0, 0, 0.05, 4.2, "#6a4a32", "cyl6"); B("fabric", O, 0.55, 3.1, 0, 1.0, 0.85, 0.03, "#7a3aa8"); P("metal", O, "sph", 0, 4.25, 0, 0.12, 0.12, 0.12, "#c8a050"); } }
+  // ---- 6. the laundry yard behind Your House: a dusty patch, a sagging washing line, an upturned bucket, a pile of pebbles ----
+  if (has("DB2")) { const q = kRat(34, 58, 61), X = 30, Y = 30, z0 = Y + 28.35;
+    for (let x = X + 1.6; x < X + 10.8; x += 1.1) P("deco", OT(x, z0 - 0.1 + (q() - 0.5) * 0.3), "disc", 0, 0.025, 0, 1.6 + q() * 0.6, 1, 1.1 + q() * 0.4, "#d8b088");
+    const a = [X + 1.8, z0], b = [X + 9.6, z0]; for (const p of [a, b]) { const O = OT(p[0], p[1]); C("wood", O, 0, 0, 0, 0.06, 2.0, "#7a5434", "cyl6"); Beam("wood", O, [-0.3, 1.9, 0], [0.3, 1.9, 0], 0.035, "#7a5434", "box"); }
+    const [ua, va] = unwarp(a[0], a[1]), [ub, vb] = unwarp(b[0], b[1]), ya = GHT(ua, va), yb = GHT(ub, vb); Sag("deco", null, [ua, ya + 1.86, va], [ub, yb + 1.86, vb], 0.32, 0.012, "#e8dcc0", 10);
+    const CL = ["#e8e0d0", "#6aa0c8", "#c8603a", "#e8c860", "#8ac0a0", "#d8a0c0", "#f0f0e8"]; for (let k = 0; k < 9; k++) { const t = 0.08 + k * 0.105, sag = Math.sin(t * Math.PI) * 0.32, x = ua + (ub - ua) * t, z = va + (vb - va) * t, y = ya + (yb - ya) * t + 1.86 - sag, w = 0.35 + q() * 0.35, h = 0.4 + q() * 0.4;
+      B("fabric", { abs: true, x, y: y - h, z }, 0, 0, 0, w, h, 0.02, CL[k % CL.length], (q() - 0.5) * 0.12, Math.atan2(ub - ua, vb - va) + Math.PI / 2, 0); P("wood", { abs: true, x, y, z }, "box", 0, 0, 0, 0.03, 0.08, 0.04, "#a08060"); }
+    { const O = OT(X + 6.2, z0 + 0.2); C("metal", O, 0, 0, 0, 0.2, 0.36, "#7a8088", "cyl"); C("metal", O, 0, 0.36, 0, 0.15, 0.03, "#5a6066", "cyl"); }
+    { const O = OT(X + 7.6, z0 - 0.2); for (let k = 0; k < 16; k++) { const ang = q() * 6.3, r = q() * 0.35; P("deco", O, "ico", Math.cos(ang) * r, 0.05 + (0.35 - r) * 0.4, Math.sin(ang) * r, 0.14, 0.1, 0.13, ["#c8b8a0", "#a89880", "#d8c8b0"][k % 3]); } }
+    { const O = OT(X + 3.6, z0 + 0.2); C("wood", O, 0, 0, 0, 0.32, 0.32, "#b89060", "cyl"); for (let k = 0; k < 3; k++) B("fabric", O, (k - 1) * 0.15, 0.28, 0, 0.18, 0.08, 0.3, CL[k + 2]); } }
+  // ---- 7. the Trading Post's water tower on stilts with its creaky windmill, and patched canvas tents by the canyon rim ----
+  if (has("DB4")) { const q = kRat(119, 39, 71), X = 90, Y = 30;
+    { const x = 119.6, z = 39.6, O = OT(x, z), L = 9.0; for (const [sx, sz] of [[-1.1, -1.1], [1.1, -1.1], [-1.1, 1.1], [1.1, 1.1]]) Beam("wood", O, [sx * 1.25, -0.2, sz * 1.25], [sx * 0.95, L, sz * 0.95], 0.11, "#7a5434", "cyl6");
+      for (const y of [2.2, 4.6, 7.0]) for (const [p0, p1] of [[[-1, -1], [1, -1]], [[1, -1], [1, 1]], [[1, 1], [-1, 1]], [[-1, 1], [-1, -1]]]) { const f = 1.2 - y * 0.027; Beam("wood", O, [p0[0] * f, y, p0[1] * f], [p1[0] * f, y + 1.6, p1[1] * f], 0.045, "#8a6440", "box"); }
+      B("wood", O, 0, L, 0, 3.0, 0.18, 3.0, "#7a5434"); for (let k = 0; k < 18; k++) { const a = (k / 18) * Math.PI * 2; B("wood", O, Math.cos(a) * 1.25, L + 0.18, Math.sin(a) * 1.25, 0.46, 2.4, 0.12, kHex("#9a7048", (q() - 0.5) * 0.14), 0, -a + Math.PI / 2, 0); }
+      for (const y of [L + 0.5, L + 2.3]) P("metal", O, "ring", 0, y, 0, 2.64, 0.9, 2.64, "#3a3436"); P("wood", O, "cone", 0, L + 3.0, 0, 3.0, 1.0, 3.0, "#8a5a3a"); C("metal", O, 0.9, -0.2, 0.9, 0.06, L, "#4a4a50", "cyl6"); }
+    { const x = 119.9, z = 34.8, O = OT(x, z), L = 9.6; for (const [sx, sz] of [[-1, -1], [1, -1], [-1, 1], [1, 1]]) Beam("metal", O, [sx * 0.9, -0.2, sz * 0.9], [sx * 0.18, L, sz * 0.18], 0.045, "#5a5258", "box");
+      for (let y = 1.5; y < L; y += 1.6) { const f = 0.9 - (y / L) * 0.72; for (const [p0, p1] of [[[-1, -1], [1, 1]], [[1, -1], [-1, 1]]]) Beam("metal", O, [p0[0] * f, y, p0[1] * f], [p1[0] * f * 0.9, y + 1.4, p1[1] * f * 0.9], 0.02, "#5a5258", "box"); }
+      const hub = [-0.5, L + 0.2, 0]; C("metal", O, -0.1, L - 0.1, 0, 0.18, 0.45, "#4a4246", "cyl6"); Beam("metal", O, [0.2, L + 0.2, 0], [1.6, L + 0.2, 0], 0.03, "#4a4246", "box"); B("metal", O, 1.6, L - 0.3, 0, 0.04, 1.0, 0.9, "#8a3a2a", 0.15, 0, 0);
+      for (let k = 0; k < 12; k++) { const a = (k / 12) * Math.PI * 2 + 0.2; P("metal", O, "box", hub[0], hub[1] + Math.sin(a) * 0.95, Math.cos(a) * 0.95, 0.03, 0.26, 1.6, kHex("#b8b0a0", (q() - 0.5) * 0.15), a, 0, 0); } P("metal", O, "sph", hub[0] - 0.05, hub[1], 0, 0.22, 0.22, 0.22, "#3a3436"); }
+    const tent = (x, z, ry, cols) => { if (!own(x, z)) return; const O = { x, z, ry, floor: -99 }, W = 2.4, Dp = 1.7, Hh = 1.6;
+      for (const sd of [-1, 1]) for (let k = 0; k < 4; k++) P("fabric", O, "box", sd * W * 0.25, Hh / 2 + 0.02, -Dp / 2 + Dp * (k + 0.5) / 4, 0.03, Math.hypot(W / 2, Hh) - 0.02, Dp / 4 + 0.02, cols[(k + (sd > 0)) % cols.length], 0, 0, sd * -Math.atan2(W / 2, Hh));
+      for (const pz of [-Dp / 2, Dp / 2]) C("wood", O, 0, 0, pz, 0.04, Hh + 0.15, "#7a5434", "cyl6"); Beam("wood", O, [0, Hh, -Dp / 2], [0, Hh, Dp / 2], 0.03, "#7a5434", "box");
+      for (const sd of [-1, 1]) Beam("deco", O, [0, Hh, sd * Dp / 2], [sd * 0.2, 0, sd * (Dp / 2 + 0.6)], 0.01, "#c8b080", "box"); P("deco", O, "box", 0, 0.65, Dp / 2 + 0.01, 0.9, 1.2, 0.02, "#3a2a20"); };
+    tent(X + 3.0, Y + 23.9, 0, ["#d8c8a0", "#c8b088", "#b89a70"]); tent(X + 6.3, Y + 23.9, 0.1, ["#c8a878", "#a8603a", "#d8c8a0"]); tent(X + 16.4, Y + 23.9, -0.05, ["#d0c098", "#c8b088", "#7a8a6a"]); tent(X + 19.8, Y + 23.9, 0.08, ["#d8c8a0", "#b8703a", "#c8b088"]); }
+  // ---- 9. Sporeholm leftovers out: the stalk-and-cage spore lanterns become iron lamp posts with brass lanterns, the old glowcap clusters become desert scrub ----
+  { let ng = 0, nl = 0; for (const ob of root.children.slice()) { if (ob.userData.oldGC) { root.remove(ob); ng++; } else if (ob.userData.oldSL) { root.remove(ob); nl++; } } st.oldGC = ng; st.oldSL = nl;
+    for (const L of DXOLD.lan) { const O = L.lifted ? { abs: true, x: L.x, y: L.y0 || 0, z: L.z } : OT(L.x, L.z), h = (L.h || 2.4) + 0.3; C("metal", O, 0, 0, 0, 0.13, 0.35, "#3a3438", "cyl6"); C("metal", O, 0, 0.3, 0, 0.05, h - 0.3, "#3a3438", "cyl6"); P("metal", O, "sph", 0, h, 0, 0.12, 0.12, 0.12, "#b08a40");
+      B("metal", O, -0.11, h - 0.6, -0.11, 0.03, 0.42, 0.03, "#b08a40"); B("metal", O, 0.11, h - 0.6, -0.11, 0.03, 0.42, 0.03, "#b08a40"); B("metal", O, -0.11, h - 0.6, 0.11, 0.03, 0.42, 0.03, "#b08a40"); B("metal", O, 0.11, h - 0.6, 0.11, 0.03, 0.42, 0.03, "#b08a40");
+      B("glow", O, 0, h - 0.56, 0, 0.19, 0.34, 0.19, "#ffcf80"); P("metal", O, "pyr", 0, h - 0.1, 0, 0.36, 0.2, 0.36, "#5a4636", 0, Math.PI / 4, 0); B("metal", O, 0, h - 0.66, 0, 0.3, 0.05, 0.3, "#5a4636");
+      const [ux, uz] = L.lifted ? [L.x, L.z] : unwarp(L.x, L.z), l = new THREE.PointLight(0xffc070, 2.0, 7, 1.6); l.position.set(ux, (L.lifted ? L.y0 || 0 : GHT(ux, uz)) + h - 0.4, uz); root.add(l); }
+    const SG = ["#9aa878", "#8a9a6a", "#b0b088", "#7a8a5a"]; for (const G of DXOLD.gc) { const [x, z, n = 5, , spread = 0.5, y0 = 0, lifted] = G, q = kRat(x, z, 91), O = lifted ? { abs: true, x, y: y0, z } : y0 > 0.3 ? (() => { const [ux, uz] = unwarp(x, z); return { abs: true, x: ux, y: GHT(ux, uz) + y0, z: uz }; })() : OT(x, z);
+      for (let k = 0; k < n; k++) { const px = (q() - 0.5) * spread, pz = (q() - 0.5) * spread, r = q(), s = 0.6 + q() * 0.6;
+        if (r < 0.28 && y0 < 0.3) { C("lit", O, px, 0, pz, 0.13 * s, 0.24 * s, "#5a8a4a"); S("lit", O, px, 0.24 * s, pz, 0.13 * s, "#6a9a52"); if (q() < 0.5) S("deco", O, px, 0.36 * s, pz, 0.05, ["#f0d060", "#e88a4a", "#f0f0e0"][Math.floor(q() * 3)]); }
+        else if (r < 0.5) { for (let i = 0; i < 7; i++) { const a = (i / 7) * 6.28 + q() * 0.4; P("deco", O, "blade", px + Math.cos(a) * 0.05, 0, pz + Math.sin(a) * 0.05, 0.1 * s, 0.42 * s, 0.1 * s, "#7a9a8a", Math.sin(a) * 0.5, a, Math.cos(a) * 0.5); } }
+        else if (r < 0.75) P("deco", O, "ico", px, 0.02, pz, 0.14 * s, 0.08 * s, 0.12 * s, ["#c8a888", "#a88868", "#d8b898"][Math.floor(q() * 3)]);
+        else for (let i = 0; i < 5; i++) { const a = q() * 6.28; P("deco", O, "blade", px + Math.cos(a) * 0.04, 0, pz + Math.sin(a) * 0.04, 0.08, (0.25 + q() * 0.25) * s, 0.08, SG[Math.floor(q() * 4)], (q() - 0.5) * 0.7, a, (q() - 0.5) * 0.7); } } } }
+  // ---- 10. the desert-frontier detail pass: scrub and dry grass, cacti, rock stacks, pebbles, crates by the walls, lamp posts on the walkways, a wagon or two ----
+  const doorZone = (ux, uz, m = 1.2) => WALKINS.some((w) => { const px = w.G.position.x + w.ox, pz = w.G.position.z + w.oz; return ((ux - px) / (w.rx + m)) ** 2 + ((uz - pz) / (w.rz + m)) ** 2 < 1 || (Math.abs(ux - px) < w.dw / 2 + m && Math.abs(uz - pz) < w.r + 3.0 && ((uz - pz) * w.d > 0 || w.back)); });
+  const inTG = (ux, uz) => TGP.some((t) => ((ux - t.x) / (t.rx + 0.6)) ** 2 + ((uz - t.z) / (t.rz + 0.6)) ** 2 < 1);
+  const lamps = DXOLD.lan.filter((l) => !l.lifted).map((l) => [l.x, l.z]);
+  const stack = (O, q, h, r, cols) => { const n = 2 + Math.floor(q() * 3); let y = 0, rr = r; for (let k = 0; k < n; k++) { const lh = (h / n) * (0.8 + q() * 0.5); P("lit", O, "ico", (q() - 0.5) * 0.3 * r, y + lh * 0.45, (q() - 0.5) * 0.3 * r, rr * 2.1, lh * 1.25, rr * (1.7 + q() * 0.4), cols[k % cols.length], (q() - 0.5) * 0.1, q() * 6, (q() - 0.5) * 0.1); y += lh * 0.9; rr *= 0.72 + q() * 0.18; } };
+  const RK = [["#b0583a", "#c87048", "#9a4a32"], ["#c06a44", "#a8503a", "#d88a5a"], ["#a04a30", "#b86a4a", "#8a3e2a"]];
+  for (const id of ids) { const [X, Y] = SCN[id].rect; if (Y >= FY0 || id === "DFC5") continue; const q = kRat(X, Y, 101), town = D.PAVE[id] === "pave", wildK = town ? 0.6 : 1.0;
+    const dist = (ci, cj, set, R2 = 3) => { let d = 9; for (let dy = -R2; dy <= R2; dy++) for (let dx = -R2; dx <= R2; dx++) { if (set.includes(at(ci + dx, cj + dy))) d = Math.min(d, Math.hypot(dx, dy)); } return d; };
+    let nLamp = 0, nWag = 0;
+    for (let y = 0.4; y < 30; y += 1.55) for (let x = 0.4; x < 30; x += 1.55) { const px = X + x + (q() - 0.5) * 1.3, pz = Y + y + (q() - 0.5) * 1.3, ci = Math.floor(px), cj = Math.floor(pz), c = at(ci, cj), r = q(), r2 = q();
+      if (dxFloor(ci, cj) || dxPath(ci, cj) || dxBr(ci, cj)) continue;
+      if (c === "x") { // edge bands: layered red rock stacks deep in the band, and scrub on the slopes
+        let deep = true; for (const [dx, dy] of [[1, 0], [-1, 0], [0, 1], [0, -1]]) if (at(ci + dx, cj + dy) !== "x") deep = false;
+        if (deep && r < 0.16 * wildK && dist(ci, cj, "pPksbf.,g", 2) >= 2) stack(OT(px, pz), q, 1.6 + q() * 3.4, 0.7 + q() * 0.6, RK[Math.floor(q() * 3)]);
+        else if (r < 0.4) { const O = OT(px, pz); for (let k = 0; k < 6; k++) { const a = q() * 6.28; P("deco", O, "blade", Math.cos(a) * 0.12, 0, Math.sin(a) * 0.12, 0.1, 0.35 + q() * 0.3, 0.1, ["#a89a68", "#8a8a5a", "#c0b080"][k % 3], (q() - 0.5) * 0.8, a, (q() - 0.5) * 0.8); } }
+        continue; }
+      if (!".,g".includes(c)) continue; const [ux, uz] = unwarp(px, pz); if (doorZone(ux, uz) || inTG(ux, uz)) continue;
+      const dP = dist(ci, cj, "pPks"), dB = dist(ci, cj, "b"), O = OT(px, pz);
+      if (r < (c === "g" ? 0.85 : 0.55)) { const n = c === "g" ? 9 : 6, cols = c === "g" ? ["#a8b070", "#c0b878", "#90a060"] : ["#b8a878", "#a89868", "#c8b888", "#9a9a6a"]; for (let k = 0; k < n; k++) { const a = q() * 6.28, d = q() * 0.4; P("deco", O, "blade", Math.cos(a) * d, 0, Math.sin(a) * d, 0.09, 0.3 + q() * 0.45, 0.09, cols[k % cols.length], (q() - 0.5) * 0.7, a, (q() - 0.5) * 0.7); } }
+      if (r2 < 0.3) P("deco", O, "ico", (q() - 0.5) * 0.6, 0.015, (q() - 0.5) * 0.6, 0.12 + q() * 0.18, 0.06 + q() * 0.06, 0.1 + q() * 0.16, ["#c8a080", "#a87a5a", "#d8b090", "#8a6a50"][Math.floor(q() * 4)]);
+      if (dP >= 2.2 && dB >= 1.5) { const r3 = q();
+        if (r3 < 0.07 * wildK) { // a saguaro-like cactus with a couple of arms and a few flowers
+          const h = 1.6 + q() * 2.2; C("lit", O, 0, 0, 0, 0.2, h, "#4a7a44"); S("lit", O, 0, h, 0, 0.2, "#568a4c"); for (let k = 0; k < 2; k++) { const a = q() * 6.28, ay = h * (0.35 + q() * 0.3), L = 0.5 + q() * 0.4; Beam("lit", O, [Math.cos(a) * 0.15, ay, Math.sin(a) * 0.15], [Math.cos(a) * L, ay + 0.1, Math.sin(a) * L], 0.12, "#4a7a44"); C("lit", O, Math.cos(a) * L, ay + 0.05, Math.sin(a) * L, 0.12, 0.5 + q() * 0.6, "#4a7a44"); }
+          if (q() < 0.6) S("deco", O, 0, h + 0.18, 0, 0.07, "#f0e0a0"); }
+        else if (r3 < 0.15 * wildK) { for (let k = 0; k < 3; k++) { const a = q() * 6.28, d = q() * 0.35, s = 0.6 + q() * 0.6; C("lit", O, Math.cos(a) * d, 0, Math.sin(a) * d, 0.16 * s, 0.3 * s, "#5a8a4a"); S("lit", O, Math.cos(a) * d, 0.3 * s, Math.sin(a) * d, 0.16 * s, "#6a9a52"); if (q() < 0.5) S("deco", O, Math.cos(a) * d, 0.45 * s, Math.sin(a) * d, 0.06, ["#ff6ab0", "#ffb84a", "#f0f0ff"][k % 3]); } }
+        else if (r3 < 0.21 * wildK) { for (let k = 0; k < 5; k++) { const a = q() * 6.28; P("lit", O, "sph", Math.cos(a) * 0.25, 0.3 + k * 0.12, Math.sin(a) * 0.25, 0.42, 0.5, 0.12, k % 2 ? "#6a9a5a" : "#5a8a4a", 0.2, a, 0.3); } }
+        else if (r3 < 0.25 * wildK && !town) stack(O, q, 1.0 + q() * 2.2, 0.5 + q() * 0.5, RK[Math.floor(q() * 3)]);
+        else if (r3 < 0.31) { for (let k = 0; k < 8; k++) { const a = (k / 8) * 6.28; P("deco", O, "blade", Math.cos(a) * 0.08, 0, Math.sin(a) * 0.08, 0.16, 0.7, 0.16, "#7a9a8a", Math.sin(a) * 0.9, a, Math.cos(a) * 0.9); } } }
+      if (dB <= 1.01 && dP >= 1.5 && q() < 0.18) { const ry = q() * 6; if (q() < 0.5) { B("wood", { x: px, z: pz, ry, floor: -99 }, 0, 0, 0, 0.6, 0.55, 0.6, "#9a7048"); if (q() < 0.5) B("wood", { x: px, z: pz, ry, floor: -99 }, 0.05, 0.55, 0, 0.45, 0.42, 0.45, "#8a6440"); } else { C("wood", O, 0, 0, 0, 0.3, 0.8, "#8a5a38"); for (const y of [0.15, 0.62]) P("metal", O, "ring", 0, y, 0, 0.62, 0.6, 0.62, "#3a3436"); } }
+      if (town && dP > 0.9 && dP < 1.6 && dB >= 1.5 && nLamp < 6 && !lamps.some(([lx, lz]) => Math.hypot(lx - px, lz - pz) < 8)) { lamps.push([px, pz]); nLamp++; const h = 2.6;
+        C("metal", O, 0, 0, 0, 0.1, 0.3, "#3a3438", "cyl6"); C("metal", O, 0, 0.3, 0, 0.045, h - 0.3, "#3a3438", "cyl6"); Beam("metal", O, [0, h - 0.1, 0], [0.38, h - 0.1, 0], 0.025, "#3a3438", "box"); B("glow", O, 0.38, h - 0.62, 0, 0.17, 0.3, 0.17, "#ffcf80"); P("metal", O, "pyr", 0.38, h - 0.22, 0, 0.3, 0.16, 0.3, "#5a4636", 0, Math.PI / 4, 0); B("metal", O, 0.38, h - 0.68, 0, 0.24, 0.05, 0.24, "#5a4636"); }
+      if (nWag < 1 && dP >= 1.5 && dP < 3 && dB >= 2 && q() < 0.05) { let ok = true; for (let dy = -1; dy <= 1; dy++) for (let dx = -2; dx <= 2; dx++) if (!".,".includes(at(ci + dx, cj + dy))) ok = false;
+        if (ok) { nWag++; const W = { x: px, z: pz, ry: q() * 0.6 - 0.3, floor: -99 }; B("wood", W, 0, 0.55, 0, 2.6, 0.18, 1.3, "#8a6440"); for (const sd of [-1, 1]) B("wood", W, 0, 0.73, sd * 0.62, 2.6, 0.32, 0.06, "#7a5434"); for (const sd of [-1, 1]) B("wood", W, sd * 1.27, 0.73, 0, 0.06, 0.32, 1.3, "#7a5434");
+          for (const wx of [-0.85, 0.85]) for (const sd of [-1, 1]) { P("wood", W, "ring", wx, 0.45, sd * 0.72, 0.9, 1.0, 0.9, "#5a3a26", Math.PI / 2, 0, 0); for (let k = 0; k < 4; k++) P("wood", W, "box", wx, 0.45, sd * 0.72, 0.04, 0.86, 0.04, "#6a4a32", 0, 0, (k / 4) * Math.PI); }
+          Beam("wood", W, [1.3, 0.55, -0.3], [2.4, 0.3, 0], 0.04, "#7a5434", "box"); Beam("wood", W, [1.3, 0.55, 0.3], [2.4, 0.3, 0], 0.04, "#7a5434", "box");
+          if (q() < 0.6) { for (let k = 0; k <= 6; k++) { const a = (k / 6) * Math.PI; P("fabric", W, "box", -0.1, 0.9 + Math.sin(a) * 0.62, Math.cos(a) * 0.62, 2.2, 0.03, 0.34, "#e0d4b4", a - Math.PI / 2, 0, 0); } } else for (let k = 0; k < 3; k++) B("wood", W, -0.6 + k * 0.6, 0.73, 0, 0.5, 0.45, 0.5, "#a07a50"); } } } }
+  // ---- 11. Port Ember: stilt houses in four peeling colours over the water, zigzag walkways, rope ladders and hanging bridges,
+  //      nets drying on every rail, coloured glass lanterns, the big round platform at the end of the Long Dock, and the Lady of the Gate ----
+  { const q = kRat(135, 345, 111), WY = 0.38;
+    const stilt = (x, z, w, d, col, ry = 0) => { if (!own(x, z)) return; const O = { abs: true, x, y: 0, z, ry }, FL = 1.25, Hh = 2.1;
+      for (const sx of [-1, 0, 1]) for (const sz of [-1, 1]) Beam("wood", O, [sx * (w / 2 - 0.15), -2.0, sz * (d / 2 - 0.15)], [sx * (w / 2 - 0.15), FL, sz * (d / 2 - 0.15)], 0.09, "#5a4030", "cyl6");
+      for (const sz of [-1, 1]) Beam("wood", O, [-w / 2, 0.4, sz * (d / 2 - 0.15)], [w / 2, -0.5, sz * (d / 2 - 0.15)], 0.04, "#5a4030", "box");
+      for (let t = -w / 2 - 0.5; t < w / 2 + 0.5; t += 0.32) B("wood", O, t + 0.16, FL, 0, 0.3, 0.07, d + 1.0, kHex("#8a6440", (q() - 0.5) * 0.14));
+      for (let i = 0; i < Math.ceil(w / 0.6); i++) for (const sd of [-1, 1]) { const lx = -w / 2 + 0.3 + i * 0.6; B("lit", O, Math.min(lx, w / 2 - 0.3), FL + 0.07, sd * (d / 2 - 0.06), 0.6, Hh, 0.12, kHex(col, (q() - 0.5) * 0.1, (q() - 0.5) * 0.1)); }
+      for (let i = 0; i < Math.ceil(d / 0.6); i++) for (const sd of [-1, 1]) { const lz = -d / 2 + 0.3 + i * 0.6; B("lit", O, sd * (w / 2 - 0.06), FL + 0.07, Math.min(lz, d / 2 - 0.3), 0.12, Hh, 0.6, kHex(col, (q() - 0.5) * 0.1, (q() - 0.5) * 0.1)); }
+      for (let k = 0; k < 7; k++) B("deco", O, (q() - 0.5) * (w - 0.6), FL + 0.3 + q() * (Hh - 0.6), d / 2 + 0.005, 0.15 + q() * 0.3, 0.1 + q() * 0.2, 0.01, "#b8a890"); // peeling paint
+      B("deco", O, -w / 4, FL + 0.07, d / 2 + 0.01, 0.75, 1.4, 0.03, "#4a3426"); B("glow", O, w / 4, FL + 1.0, d / 2 + 0.01, 0.55, 0.45, 0.03, "#ffd890");
+      for (const sd of [-1, 1]) P("wood", O, "box", sd * w / 4, FL + Hh + 0.55, 0, w / 2 + 0.55, 0.08, d + 0.7, kHex("#7a5a3a", (q() - 0.5) * 0.1), 0, 0, sd * -0.5);
+      const LC = ["#ff5a5a", "#ffd24a", "#5ab8ff", "#6af0a0", "#ff8ad8"]; for (const [lx, lz] of [[-w / 2 - 0.2, d / 2 + 0.3], [w / 2 + 0.2, d / 2 + 0.3], [0, -d / 2 - 0.3]]) { Beam("deco", O, [lx, FL + Hh + 0.2, lz], [lx, FL + Hh - 0.25, lz], 0.01, "#3a3030", "box"); P("glow", O, "oct", lx, FL + Hh - 0.42, lz, 0.22, 0.32, 0.22, LC[Math.floor(q() * 5)]); }
+      for (const sd of [-1, 1]) { B("wood", O, 0, FL, sd * (d / 2 + 0.48), w + 1.0, 0.85, 0.06, "#6a4a32"); for (let k = 0; k < 3; k++) P("fabric", O, "box", -w / 2 + 0.6 + k * (w / 3), FL + 0.55, sd * (d / 2 + 0.52), w / 3.4, 0.6, 0.02, "#3a4a44", 0, 0, (q() - 0.5) * 0.1); } // nets drying on the rails
+      K.Ladder(O, w / 2 + 0.3, 0, FL + 0.2, Math.PI / 2, "#7a5a3a"); };
+    stilt(122.4, 345.2, 3.0, 2.6, "#f0c84a"); stilt(136.8, 342.0, 3.2, 2.6, "#d8483a"); stilt(146.8, 343.2, 3.0, 2.8, "#4aa0d8"); stilt(136.6, 347.4, 3.0, 2.4, "#6ac8a0");
+    // zigzag plank walks on posts between the piers and the houses, and a hanging rope bridge between two houses
+    const walk = (pts, y = 1.25) => { for (let i = 0; i + 1 < pts.length; i++) { const [a, b] = [pts[i], pts[i + 1]], L = Math.hypot(b[0] - a[0], b[1] - a[1]), ry = Math.atan2(b[0] - a[0], b[1] - a[1]); if (!own(a[0], a[1])) continue;
+        for (let t = 0.15; t < L; t += 0.34) { const x = a[0] + (b[0] - a[0]) * t / L, z = a[1] + (b[1] - a[1]) * t / L; B("wood", { abs: true, x, y, z, ry }, 0, -0.07, 0, 1.0, 0.07, 0.3, kHex("#8a6440", (q() - 0.5) * 0.14)); }
+        for (let t = 0; t <= L; t += 1.6) { const x = a[0] + (b[0] - a[0]) * t / L, z = a[1] + (b[1] - a[1]) * t / L; for (const sd of [-0.5, 0.5]) { const nx = Math.cos(ry) * sd, nz = -Math.sin(ry) * sd; Beam("wood", null, [x + nx, -1.8, z + nz], [x + nx, y + 0.9, z + nz], 0.05, "#5a4030", "cyl6"); } }
+        for (const sd of [-0.5, 0.5]) { const nx = Math.cos(ry) * sd, nz = -Math.sin(ry) * sd; Sag("deco", null, [a[0] + nx, y + 0.85, a[1] + nz], [b[0] + nx, y + 0.85, b[1] + nz], 0.06, 0.018, "#c8a070", 4); } } };
+    walk([[129.8, 343.4], [131.6, 341.6], [133.4, 343.0], [135.2, 341.8]], WY + 0.85); walk([[125.2, 344.2], [124.1, 345.0]], WY + 0.85); walk([[143.9, 343.6], [145.3, 343.2]], WY + 0.85);
+    if (own(136.7, 345)) K.RopeBridge(null, q, [136.7, 1.25, 343.3], [136.6, 1.25, 346.2], 0.35);
+    if (own(130.8, 340.4)) { const O = { abs: true, x: 129.9, y: WY, z: 341.0, ry: Math.PI / 2 }; K.Ladder(O, 0, 0.35, 2.0, 0, "#7a5a3a"); }
+    // the big round wooden platform at the end of the Long Dock (walkable: its tiles become deck after the builds)
+    { const cx = 177.0, cz = 345.6, Rr = 2.9; if (own(cx, cz)) { for (let r = 0.4; r < Rr; r += 0.5) { const n = Math.max(6, Math.round((Math.PI * 2 * r) / 0.55)); for (let k = 0; k < n; k++) { const a = (k / n) * Math.PI * 2; B("wood", { abs: true, x: cx + Math.cos(a) * r, y: WY - 0.08, z: cz + Math.sin(a) * r, ry: -a }, 0, 0, 0, 0.46, 0.08, (Math.PI * 2 * r) / n + 0.02, kHex("#8a6440", (q() - 0.5) * 0.14)); } }
+        for (let k = 0; k < 12; k++) { const a = (k / 12) * Math.PI * 2; Beam("wood", null, [cx + Math.cos(a) * (Rr - 0.2), -2, cz + Math.sin(a) * (Rr - 0.2)], [cx + Math.cos(a) * (Rr - 0.2), WY - 0.08, cz + Math.sin(a) * (Rr - 0.2)], 0.12, "#5a4030", "cyl6"); if (Math.abs(Math.cos(a) + 1) < 0.2) continue; Beam("wood", null, [cx + Math.cos(a) * (Rr + 0.05), WY, cz + Math.sin(a) * (Rr + 0.05)], [cx + Math.cos(a) * (Rr + 0.05), WY + 1.0, cz + Math.sin(a) * (Rr + 0.05)], 0.05, "#6a4a32", "cyl6"); }
+        for (let k = 0; k < 24; k++) { const a0 = (k / 24) * Math.PI * 2, a1 = ((k + 1) / 24) * Math.PI * 2; if (Math.cos(a0) < -0.85 || Math.cos(a1) < -0.85) continue; Sag("deco", null, [cx + Math.cos(a0) * (Rr + 0.05), WY + 0.95, cz + Math.sin(a0) * (Rr + 0.05)], [cx + Math.cos(a1) * (Rr + 0.05), WY + 0.95, cz + Math.sin(a1) * (Rr + 0.05)], 0.03, 0.022, "#c8a070", 2); }
+        for (const a of [0.6, 2.0, 4.2, 5.4]) { const x = cx + Math.cos(a) * (Rr - 0.6), z = cz + Math.sin(a) * (Rr - 0.6); P("fabric", { abs: true, x, y: WY, z }, "box", 0, 0.08, 0, 0.9, 0.12, 0.7, "#3a4a44", 0, a, 0.1); } } }
+    // the Lady of the Gate: two enormous pale pillars rising out of the deep water past the last stilt house, an arch across the top, a carved face of leaves and branches with a crown of twigs, eyes closed
+    { const cx = 152.0, cz = 347.9, span = 8.4, Hp = 10.5, PALE = ["#d8d2c2", "#cfc8b6", "#e0dacb"]; if (own(cx, cz)) { const O = { abs: true, x: cx, y: -3.5, z: cz, ry: Math.PI };
+      for (const sx of [-1, 1]) { const px = sx * (span / 2 + 0.9); for (let k = 0; k < 9; k++) B("lit", O, px, k * 1.55, 0, 2.0 - k * 0.02, 1.58, 2.0 - k * 0.02, PALE[k % 3]);
+        for (let k = 0; k < 40; k++) { const a = q() * 6.28, y = 2.6 + q() * 1.9; P("deco", O, "hemi", px + Math.cos(a) * 1.02, y, Math.sin(a) * 1.02, 0.18, 0.12, 0.18, "#e8e4d8", Math.PI / 2 * Math.sin(a), 0, -Math.PI / 2 * Math.cos(a)); }
+        for (let k = 0; k < 4; k++) swirl(O, px, 6 + k * 1.6, 1.02, 0.36, 0, "#2a3236", 2); for (let k = 0; k < 4; k++) swirl(O, px, 6 + k * 1.6, -1.02, 0.36, Math.PI, "#2a3236", 2); }
+      const top = Hp + 3.5; for (let k = 0; k <= 16; k++) { const a = Math.PI * (k / 16), x = -Math.cos(a) * (span / 2 + 0.9), y = 9 * 1.55 + Math.sin(a) * 2.6; B("lit", O, x, y - 0.6, 0, 1.25, 1.3, 1.9, PALE[k % 3], 0, 0, Math.cos(a) * 0.85); }
+      const fy = 9 * 1.55 + 2.4, fz = 1.0; // the face, carved into the keystone
+      P("lit", O, "sph", 0, fy, fz - 0.3, 1.5, 1.9, 0.8, "#d0cab8"); for (const sx of [-1, 1]) { Beam("deco", O, [sx * 0.42, fy + 0.18, fz + 0.06], [sx * 0.18, fy + 0.12, fz + 0.08], 0.025, "#2a2a2a", "box"); Beam("deco", O, [sx * 0.42, fy + 0.18, fz + 0.06], [sx * 0.3, fy + 0.1, fz + 0.09], 0.02, "#2a2a2a", "box"); }
+      Beam("deco", O, [-0.18, fy - 0.42, fz + 0.06], [0.18, fy - 0.42, fz + 0.06], 0.02, "#2a2a2a", "box"); Beam("deco", O, [0, fy + 0.05, fz + 0.12], [0, fy - 0.2, fz + 0.14], 0.03, "#bcb4a2", "box");
+      for (let k = 0; k < 14; k++) { const a = Math.PI * (k / 13) - Math.PI / 2 + Math.PI / 2, r = 1.05 + (k % 2) * 0.2; P("lit", O, "oct", Math.cos(a) * r * (k < 7 ? -1 : 1) * 0.0 + Math.cos(Math.PI * k / 13) * r, fy + Math.sin(Math.PI * k / 13) * r * 0.2 - 0.2 - (k % 3) * 0.15, fz - 0.15, 0.5, 0.26, 0.12, k % 2 ? "#c8c4a8" : "#bcbaa0", 0, 0, Math.PI * k / 13); }
+      for (let k = 0; k < 11; k++) { const a = Math.PI * (0.12 + 0.76 * k / 10), L = 1.2 + (k % 2) * 0.5; Beam("lit", O, [Math.cos(a) * 0.55, fy + 0.7 + Math.sin(a) * 0.2, fz - 0.25], [Math.cos(a) * L, fy + 0.8 + Math.sin(a) * L, fz - 0.3], 0.07, "#c4bea8", "box"); Beam("lit", O, [Math.cos(a) * L * 0.7, fy + 0.8 + Math.sin(a) * L * 0.7, fz - 0.3], [Math.cos(a + 0.25) * L * 0.95, fy + 0.85 + Math.sin(a + 0.25) * L * 0.95, fz - 0.3], 0.04, "#c4bea8", "box"); }
+      for (let k = 0; k < 16; k++) { const x = -span / 2 - 0.4 + q() * (span + 0.8), y0 = 9 * 1.55 + 1.2 + Math.sin(Math.PI * (x + span / 2) / span) * 1.5, L = 0.8 + q() * 2.4; for (let j = 0; j < 4; j++) P("fabric", O, "box", x + Math.sin(j * 1.3 + k) * 0.06, y0 - L * (j + 0.5) / 4, 0.98 * (k % 2 ? 1 : -1), 0.12, L / 4 + 0.04, 0.02, j % 2 ? "#2a6a3a" : "#3a7a44", 0, 0, Math.sin(j + k) * 0.15); } } } }
+  const made = K.flush(root); let nv = 0; for (const m of made) nv += m.geometry.attributes.position.count; st.verts = nv; st.meshes = made.length; return st; };
+// ======== DX PASS END ========
 // ================= assemble =================
 // map mode: grids for every scene, ground + objects for one scene and its neighbours
 // world mode (H.all): the whole 120x90 region in 3D — every scene's ground and objects
@@ -5865,7 +6134,7 @@ const PATHGUARD = { removed: 0 }; for (const id of ids) if (SCN[id]) { const n0 
   // keep the wild paths clear: anything tall that landed right in the middle of a path goes
   const bb = new THREE.Box3(), c = new THREE.Vector3(), sz = new THREE.Vector3(); for (const o of root.children.slice(n0)) { if (o.isLight || o.name === "ground" || o.name === "grass" || o.name === "water" || o.userData.noLift) continue; bb.setFromObject(o); if (bb.isEmpty()) continue; bb.getSize(sz); if (sz.y < 0.9 || Math.max(sz.x, sz.z) > 14 || Math.max(sz.x, sz.z) < 1.05) continue; bb.getCenter(c); const gz = GZ[id]; if (gz && (c.x < gz[0] || c.z < gz[1] || c.x > gz[2] || c.z > gz[3])) continue; const mg = Math.max(sz.x, sz.z) > 4.5 ? 1.0 : 0.6; let onP = 0, tot = 0; for (let fx = 0.1; fx < 1; fx += 0.2) for (let fz = 0.1; fz < 1; fz += 0.2) { tot++; if (at(Math.floor(bb.min.x + sz.x * fx), Math.floor(bb.min.z + sz.z * fz)) === "p") onP++; } if ([[0, 0], [mg, 0], [-mg, 0], [0, mg], [0, -mg]].every(([dx, dz]) => at(Math.floor(c.x + dx), Math.floor(c.z + dz)) === "p") || (onP / tot >= 0.4 && bb.min.y < 0.6 && Math.max(sz.x, sz.z) < 6)) { root.remove(o); PATHGUARD.removed++; (PATHGUARD.list = PATHGUARD.list || []).push(id + " " + sz.x.toFixed(1) + "x" + sz.y.toFixed(1) + "x" + sz.z.toFixed(1) + " @" + c.x.toFixed(0) + "," + c.z.toFixed(0)); } } }
 if (H && H.all) scatterFlora(ids);
-liftAll();
+liftAll(); DXOLD.lifted = true;
 if (WALKINS.length) for (const w of WALKINS) { // every front door opens onto walkable ground: carve a short path out from the doorstep
   const px = w.G.position.x + w.ox, pz = w.G.position.z + w.oz; for (let dz = w.r * 0.5; dz < w.r + 3.2; dz += 0.25) for (let dx = -(w.dw / 2 + 0.45); dx <= w.dw / 2 + 0.45; dx += 0.25) { const [a, b] = warpXY(px + dx, pz + w.d * dz), ix = Math.floor(a), iy = Math.floor(b); if (!inG(ix, iy)) continue; const c = GRID[iy + GOY][ix]; if (!"pPkbs.,gfw".includes(c)) GRID[iy + GOY][ix] = "p"; } }
 if (WALKINS.length) { // ...and that path must join the village paths: walk the grid from each door to the nearest big walkable area and pave the way
@@ -5880,6 +6149,7 @@ if (WALKINS.length) { // flatten the ground under and in front of every walk-in 
 // bounds of what was built
 const ORD_ = ORECT.filter((id) => SCN[id].rect[1] < FY0), OFR = ORECT.filter((id) => SCN[id].rect[1] >= FY0); let BX0 = 1e9, BX1 = -1e9, BZ0 = 1e9, BZ1 = -1e9; for (const id of ORD_) { const [x, z] = SCN[id].rect; BX0 = Math.min(BX0, x); BX1 = Math.max(BX1, x + 30); BZ0 = Math.min(BZ0, z); BZ1 = Math.max(BZ1, z + 30); }
 // Dustara has no swamp: water only where a scene lays its own pools (oasis, cistern); the canyon floor is lit from below instead
+if (H && H.all) dxTiles(); // the canyon path and the canyon floor turn walkable only now, after every build
 if (H && H.all && H.water !== false && ORD_.length) D.canyonFloor(BX0, BZ0, BX1, BZ1);
 if (H && H.all && H.outer !== false && OFR.length) FX.outer(OFR.map((id) => SCN[id].rect)); // the Frontier's own surroundings: sea to the south, the volcano to the north
 if (H && H.all && H.outer !== false && ORD_.length) { // the wild beyond the built scenes: red mesa country, hoodoos, saguaros and sage
@@ -5898,6 +6168,7 @@ if (H && H.all && H.outer !== false && ORD_.length) { // the wild beyond the bui
   const bb = new THREE.Box3(), zone = new THREE.Box3(), sz = new THREE.Vector3(); for (const w of WALKINS) { const p = { x: w.G.position.x + w.ox, y: w.G.position.y, z: w.G.position.z + w.oz }; for (const [x0, x1, z0, z1] of [[p.x - w.dw / 2 - 0.45, p.x + w.dw / 2 + 0.45, Math.min(p.z + w.d * w.r * 0.5, p.z + w.d * (w.r + 2.4)), Math.max(p.z + w.d * w.r * 0.5, p.z + w.d * (w.r + 2.4))], ...(w.back ? [[p.x - w.dw / 2 - 0.45, p.x + w.dw / 2 + 0.45, p.z - w.r - 2.4, p.z - w.r * 0.5]] : []), [p.x - w.rx * 0.6, p.x + w.rx * 0.6, p.z - w.rz * 0.6, p.z + w.rz * 0.6]]) { zone.min.set(x0, p.y - 0.3, z0); zone.max.set(x1, p.y + 2.0, z1); for (const o of root.children.slice()) { if (o === w.G || o.isLight || o.name === "ground" || o.name === "grass" || o.name === "water" || WALKINS.some((q) => q.G === o)) continue; bb.setFromObject(o); if (bb.isEmpty() || !bb.intersectsBox(zone)) continue; bb.getSize(sz); if (Math.max(sz.x, sz.z) < 6) root.remove(o); } } } } }
 if (TGP.length) { // the tall grass owns its patch: other ground flora steps aside so the encounter grass reads clearly
   const inP = (x, z) => TGP.some((q) => ((x - q.x) / (q.rx * 0.95)) ** 2 + ((z - q.z) / (q.rz * 0.95)) ** 2 < 1), strip = (arr) => { for (let i = arr.length - 1; i >= 0; i--) if (inP(arr[i][0], arr[i][1])) arr.splice(i, 1); }; for (const a2 of [MG, FLW, GG]) strip(a2); for (const k of Object.keys(FL)) strip(FL[k]); }
+const DXPASS = H && H.all && H.dustDetail !== false ? dxPass(ids) : null; if (DXPASS && H.verbose) console.log("dustara detail pass", JSON.stringify(DXPASS));
 buildAll(); if (H && H.all && H.flora !== false) buildFlora();
 if (WALKINS.length) { // last net: no instanced blade, crop or plant may stand in a room or on a doorstep
   const m4 = new THREE.Matrix4(), v = new THREE.Vector3(), z0 = new THREE.Matrix4().makeScale(0, 0, 0), hit = (x, z) => WALKINS.some((w) => { const px = w.G.position.x + w.ox, pz = w.G.position.z + w.oz; return ((x - px) / (w.rx + 0.75)) ** 2 + ((z - pz) / (w.rz + 0.75)) ** 2 < 1 || (Math.abs(x - px) < w.dw / 2 + 0.6 && Math.abs(z - pz) < w.r + 2.4 && ((z - pz) * w.d > 0 || w.back)); });
