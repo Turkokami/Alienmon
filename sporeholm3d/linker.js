@@ -101,6 +101,7 @@
       ["Xenodex", "every Alienmon you've linked", openDex],
       ["Map", "where you are (M)", openMap],
       ["Controls", "keys and buttons", openHelp],
+      ["New game", "start over from the first cutscene", openNewGame],
       ["Close", "back to the game", close],
     ];
     drawMenu();
@@ -117,9 +118,26 @@
     mode = "help";
     ov.innerHTML = `<div class="lk-card"><div class="lk-head"><span class="dot"></span>Controls</div><div class="lk-lore">
       <b>WASD / arrows</b> walk · <b>Shift</b> run · <b>Space</b> jump<br><b>E</b> talk, coax, pick up<br><b>Enter</b> this menu · <b>M</b> Linker map<br>
-      <b>Tab</b> team &amp; bag · <b>I</b> items<br>Controller: <b>Start</b> team &amp; bag<br><br>Your game saves by itself as you play.</div>
+      <b>Tab</b> team &amp; bag · <b>I</b> items<br>Controller: <b>Start</b> team &amp; bag<br><br>Your game saves by itself as you play. To start over, pick <b>New game</b> in this menu.</div>
       <div class="lk-foot"><span></span><span>Esc: back</span></div></div>`;
     ov.style.display = "flex";
+  };
+  // ---- New game: Yes/No, No picked first. Yes reloads with ?newgame=1, which index.html turns into a wiped save.
+  let ngSel = 1;
+  const openNewGame = () => { mode = "newgame"; ngSel = 1; drawNewGame() };
+  const drawNewGame = () => {
+    ov.innerHTML = `<div class="lk-card lk-menu"><div class="lk-head"><span class="dot"></span>New game</div>
+      <div class="lk-lore"><b>Start over?</b> Your current save will be erased. Your settings stay.</div>` +
+      ["Yes, start over", "No, keep playing"].map((t, i) => `<div class="lk-mi${i === ngSel ? " on" : ""}" data-i="${i}">${t}</div>`).join("") +
+      `<div class="lk-foot"><span>Arrows: move</span><span>Enter: pick · Esc: back</span></div></div>`;
+    ov.style.display = "flex";
+    ov.querySelectorAll(".lk-mi").forEach(el => el.onclick = () => { ngSel = +el.dataset.i; pickNewGame() });
+  };
+  const pickNewGame = () => {
+    if (ngSel !== 0) { openMenu(); return }
+    close();
+    if (window.AM_RESET_SAVE) window.AM_RESET_SAVE();
+    location.href = location.pathname + "?newgame=1";
   };
   // ---- Xenodex list
   const openDex = () => {
@@ -207,6 +225,12 @@
       if (mode === "dexEntry") { if (ok || back) openDex(); return }
       if (mode === "map") { if (c === "KeyM" || back || ok) close(); return }
       if (mode === "help") { if (back || ok) openMenu(); return }
+      if (mode === "newgame") {
+        if (/Arrow(Up|Down)|Key[WS]/.test(c)) { ngSel = 1 - ngSel; sfx("ui/ui_move.mp3", 0.4); drawNewGame() }
+        else if (ok) { sfx("ui/ui_confirm.mp3", 0.5); pickNewGame() }
+        else if (back) { sfx("ui/ui_back.mp3", 0.5); openMenu() }
+        return;
+      }
       if (mode === "menu") {
         if (c === "ArrowUp" || c === "KeyW") { sel = (sel + items.length - 1) % items.length; sfx("ui/ui_move.mp3", 0.4); drawMenu() }
         else if (c === "ArrowDown" || c === "KeyS") { sel = (sel + 1) % items.length; sfx("ui/ui_move.mp3", 0.4); drawMenu() }
