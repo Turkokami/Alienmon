@@ -73,7 +73,7 @@ ASSETS.detailKit = function (THREE, env, opts = {}) {
     C.strokeStyle = "rgb(120,110,90)"; C.lineWidth = 3; C.beginPath(); C.moveTo(384, 258); C.bezierCurveTo(372, 330, 398, 420, 384, 510); C.stroke();
     for (let k = 0; k < 30; k++) { const t = k / 30, y = 262 + t * 244, x = 384 + Math.sin(t * 9) * 6, s = k % 2 ? 1 : -1, L = 34 - t * 12 + rnd() * 10; leaf(x, y, s > 0 ? 0.6 + rnd() * 0.5 : Math.PI - 0.6 - rnd() * 0.5, L, L * 0.42, Math.floor(140 + rnd() * 110)); }
     const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 4;
-    return std({ map: t, vertexColors: true, alphaTest: 0.45, roughness: 0.62, metalness: 0, side: THREE.DoubleSide }); });
+    return std({ map: t, vertexColors: true, alphaTest: 0.45, roughness: 0.62, metalness: 0 }); });
 
   // ---- geometry: unit shapes, never indexed, so they merge by copying ----
   const GEO = ASSETS.detailKit.geo || (ASSETS.detailKit.geo = {});
@@ -83,6 +83,8 @@ ASSETS.detailKit = function (THREE, env, opts = {}) {
     if (k === "box") g = new THREE.BoxGeometry(1, 1, 1); else if (k === "cyl") g = new THREE.CylinderGeometry(0.5, 0.5, 1, 10); else if (k === "cyl6") g = new THREE.CylinderGeometry(0.5, 0.5, 1, 6);
     else if (k === "cone") g = new THREE.ConeGeometry(0.5, 1, 10); else if (k === "sph") g = new THREE.SphereGeometry(0.5, 9, 6); else if (k === "hemi") g = new THREE.SphereGeometry(0.5, 12, 5, 0, TAU, 0, Math.PI / 2);
     else if (k === "ico") { g = new THREE.IcosahedronGeometry(0.5, 1); if (g.index) g = g.toNonIndexed(); const P = g.attributes.position, d = new THREE.Vector3(); for (let i = 0; i < P.count; i++) { d.fromBufferAttribute(P, i).normalize(); const w = 1 + 0.18 * (kVN(d.x * 2.1 + 3.1, d.y * 2.1, d.z * 2.1) - 0.5) + 0.08 * (kVN(d.x * 4.7, d.y * 4.7 + 9, d.z * 4.7) - 0.5); P.setXYZ(i, d.x * 0.5 * w, d.y * 0.5 * w, d.z * 0.5 * w); } g.computeVertexNormals(); }
+    else if (k === "flat") { g = new THREE.PlaneGeometry(1, 1); g.rotateX(-Math.PI / 2); } else if (k === "disc") { g = new THREE.CircleGeometry(0.5, 8); g.rotateX(-Math.PI / 2); }
+    else if (k === "blade") { const a = new THREE.BufferGeometry(), v = [-0.5, 0, 0, 0.5, 0, 0, 0, 1, 0, 0, 0, -0.5, 0, 0, 0.5, 0, 1, 0]; a.setAttribute("position", new THREE.Float32BufferAttribute(v, 3)); a.computeVertexNormals(); const N = a.attributes.normal; for (let i = 0; i < N.count; i++) N.setXYZ(i, 0.3, 0.9, 0.3); g = a; }
     else if (k === "ring") { g = new THREE.TorusGeometry(0.5, 0.05, 4, 24); g.rotateX(Math.PI / 2); } else if (k === "oct") g = new THREE.OctahedronGeometry(0.5, 0); else if (k === "pyr") g = new THREE.ConeGeometry(0.5, 1, 4);
     else if (k === "limb") g = new THREE.CylinderGeometry(0.32, 0.5, 1, 7); else if (k === "limb5") g = new THREE.CylinderGeometry(0.4, 0.5, 1, 5); else if (k === "tube") g = new THREE.CylinderGeometry(0.5, 0.5, 1, 5, 1, true);
     // double-faced cards: the second face is the first turned round, so both sides light from their own side
@@ -155,7 +157,7 @@ ASSETS.detailKit = function (THREE, env, opts = {}) {
     for (let k = 0; k < 6; k++) { const a = (k / 6) * TAU + q() * 0.5, Lr = (0.9 + q() * 0.6) * s; Beam("wood", O, [0, 0.9 * s, 0], [Math.cos(a) * Lr, -0.05, Math.sin(a) * Lr], 0.11 * s, kHex(bark, -0.04), "limb5"); B("wood", O, Math.cos(a) * Lr * 0.45, -0.05, Math.sin(a) * Lr * 0.45, 0.06 * s, 0.9 * s, Lr * 0.9, kHex(bark, -0.05), 0, -a, 0); }
     const pts = Trunk("wood", O, q, 0, H, 0.3 * s, 0.17 * s, bark, 0.6 * s, 4), top = pts[pts.length - 1], cen = [top[0], top[1] + crad * 0.15, top[2]];
     // moss and a strangler vine wound round the trunk
-    if (o.moss !== false) for (let k = 0; k < 7; k++) { const t = 0.15 + k * 0.11, i = Math.min(3, Math.floor(t * 4)), p = pts[i], a = k * 1.9; B("deco", O, p[0] + Math.cos(a) * 0.25 * s, p[1] + (t * 4 - i) * H / 4, p[2] + Math.sin(a) * 0.25 * s, 0.22 * s, 0.4 * s, 0.08 * s, kHex(cols[2] || cols[0], -0.12), 0, -a, 0); }
+    if (o.moss !== false) for (let k = 0; k < 7; k++) { const t = 0.15 + k * 0.11, i = Math.min(3, Math.floor(t * 4)), p = pts[i], a = k * 1.9; P("deco", O, "ico", p[0] + Math.cos(a) * 0.24 * s, p[1] + (t * 4 - i) * H / 4, p[2] + Math.sin(a) * 0.24 * s, 0.26 * s, 0.34 * s, 0.12 * s, ["#4a6a3a", "#5a7a3a", "#3a5a34"][k % 3], 0, -a, 0); }
     const nl = o.limbs || 6; for (let k = 0; k < nl; k++) { const a = (k / nl) * TAU + q() * 0.7, st = pts[3 - (k % 2)], Ll = (1.5 + q() * 0.9) * s * (o.spread || 1), end = [st[0] + Math.cos(a) * Ll, st[1] + (0.6 + q() * 0.5) * s, st[2] + Math.sin(a) * Ll];
       Beam("wood", O, st, end, 0.09 * s, kHex(bark, 0.04), "limb5"); Clump(O, q, end[0], end[1] + 0.25 * s, end[2], 0.95 * s, cols, cen, crad, 9);
       const mid = [(st[0] + end[0]) / 2, (st[1] + end[1]) / 2 + 0.45 * s, (st[2] + end[2]) / 2]; Clump(O, q, mid[0], mid[1], mid[2], 0.8 * s, cols, cen, crad, 6);
@@ -182,8 +184,8 @@ ASSETS.detailKit = function (THREE, env, opts = {}) {
     return T; };
   // ground cover: tufts of blades and leaf litter
   const Tufts = (O, q, n, r0, r1, y0, cols) => { for (let k = 0; k < n; k++) { const a = q() * TAU, r = r0 + q() * (r1 - r0), cx = Math.cos(a) * r, cz = Math.sin(a) * r, c = cols[Math.floor(q() * cols.length)];
-      for (let b = 0; b < 4; b++) { const h = 0.18 + q() * 0.3, ta = q() * TAU, lean = 0.2 + q() * 0.45; P("deco", O, "pyr", cx + Math.cos(ta) * 0.05, y0 + h * 0.45, cz + Math.sin(ta) * 0.05, 0.035, h, 0.035, kHex(c, -0.04 + q() * 0.12), Math.cos(ta) * lean, q() * 3, Math.sin(ta) * lean); } } };
-  const Litter = (O, q, n, r0, r1, cols) => { for (let k = 0; k < n; k++) { const a = q() * TAU, r = r0 + q() * (r1 - r0); P("deco", O, "box", Math.cos(a) * r, 0.015, Math.sin(a) * r, 0.1 + q() * 0.08, 0.015, 0.07 + q() * 0.05, kHex(cols[Math.floor(q() * cols.length)], -0.05 + q() * 0.1), 0, q() * 3, 0); } };
+      for (let b = 0; b < 4; b++) { const h = 0.18 + q() * 0.3, ta = q() * TAU, lean = 0.2 + q() * 0.45; P("deco", O, "blade", cx + Math.cos(ta) * 0.05, y0, cz + Math.sin(ta) * 0.05, 0.05, h, 0.05, kHex(c, -0.04 + q() * 0.12), Math.cos(ta) * lean, q() * 3, Math.sin(ta) * lean); } } };
+  const Litter = (O, q, n, r0, r1, cols) => { for (let k = 0; k < n; k++) { const a = q() * TAU, r = r0 + q() * (r1 - r0); P("deco", O, "flat", Math.cos(a) * r, 0.02, Math.sin(a) * r, 0.1 + q() * 0.08, 1, 0.07 + q() * 0.05, kHex(cols[Math.floor(q() * cols.length)], -0.05 + q() * 0.1), 0, q() * 3, 0); } };
   const Rock = (O, q, x, z, r, col) => { P("lit", O, "ico", x, r * 0.35, z, r * (1.4 + q() * 0.5), r * (0.8 + q() * 0.4), r * (1.2 + q() * 0.5), col, 0, q() * TAU, 0); };
 
   // ---- glowing alien flora ----
