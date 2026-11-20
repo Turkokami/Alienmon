@@ -2421,6 +2421,46 @@ const SPB7BUILD = (K, SK, KC, SKC, st) => { const { X, Y } = SPB7, R0 = spRect("
   for (const [x, z, cc, I] of [[17, 12.6, "#fff2d0", 8], [21.8, 16.3, "#e8fff0", 5]]) { const [ux, uz] = unwarp(X + x, Y + z), L2 = new THREE.PointLight(cc, I, 12, 1.6); L2.position.set(ux, spGY(ux, uz) + 3.8, uz); L2.userData.helixCamp = true; root.add(L2); }
 };
 const SPS = { B7: SPB7BUILD };
+// Z8 Relay Tower: in the book it "looked like a mushroom" and rises out of a honeycomb of spore pools. The old blue spire is taken down
+// to its stone door arch, its crystal and pulse rings; a giant pale mushroom grows in its place (windows spiralling up the stalk round
+// the stair inside, shelf fungus, a ring skirt, a huge teal cap with glowing gills). Honeycomb pools in green, violet and gold fill the moss
+// round its foot; the old heart pool (the story anchor) now glows gold.
+const SPZ8BUILD = (K, SK, KC, SKC, st) => { const R0 = spRect("Z8"), { tW } = R0, bb = new THREE.Box3(), sz = new THREE.Vector3(), M0 = mk().M;
+  let T = null; for (const o of root.children) { if (!o.isGroup || o.userData.noLift) continue; bb.setFromObject(o); bb.getSize(sz); if (sz.y > 30 && tW(o.position.x, o.position.z) !== "#") { T = o; break; } } if (!T) return;
+  let ring = 0; for (const ch of T.children.slice()) { const g = ch.geometry, keepD = ch.isGroup && ch.position.z > 4, keepC = g && g.type === "OctahedronGeometry" && g.parameters.radius > 3, keepR = g && g.type === "TorusGeometry" && ch.material && ch.material.transparent && g.parameters.radius >= 5;
+    if (keepC) ch.position.y = 43; else if (keepR) { const k = Math.round((g.parameters.radius - 5) / 3.5); ch.position.y = 42.4 - k * 1.6; ring++; } else if (!keepD) T.remove(ch); }
+  for (const o of root.children) if (o.isLight && o.color && o.color.getHex() === 0x5ac8ff && Math.hypot(o.position.x - T.position.x, o.position.z - T.position.z) < 8 && o.position.y > 30) o.position.y = T.position.y + 44;
+  const add2 = (geo, mat, p = [0, 0, 0], r = [0, 0, 0]) => add(geo, mat, p, r, null, T);
+  // the stalk: a broad flared foot (the door arch sits in it), a long waist, a swelling under the cap
+  const prof = [[0.001, 0], [6.6, 0], [6.15, 0.45], [5.9, 1.5], [5.8, 3.4], [5.35, 5.6], [4.6, 8.6], [4.0, 13], [3.65, 18], [3.5, 23], [3.7, 27], [4.4, 30], [5.6, 32.3], [0.001, 32.3]];
+  const stM = M0.stalk.clone(); stM.color = new THREE.Color("#f4eef8"); stM.emissive = new THREE.Color("#4a6a78"); stM.emissiveIntensity = 0.35; add2(olathe(prof, 56, 0.06, 0.6), stM);
+  const stR = (y) => { for (let i = 1; i < prof.length - 1; i++) if (prof[i][1] >= y) { const [r0, y0] = prof[i - 1], [r1, y1] = prof[i], t = (y - y0) / Math.max(0.01, y1 - y0); return r0 + (r1 - r0) * t; } return 5.6; };
+  // the ring skirt
+  const sk = olathe([[3.62, 24.4], [4.6, 24.0], [5.6, 23.2], [6.3, 22.4]], 56, 0.05, 1.5); add2(wavyRim(sk, 6.3, 7, 0.1, 1.3), std({ color: "#f4ead8", emissive: "#6a5a48", emissiveIntensity: 0.45, side: THREE.DoubleSide, roughness: 0.8 }));
+  // the cap, its glowing gills and a pale rim
+  const r = 13.5, cp = [[0.001, r * 0.56], [r * 0.5, r * 0.5], [r * 0.85, r * 0.28], [r, 0.03], [r * 0.96, -0.12], [r * 0.3, 0], [0.001, 0.02]];
+  add2(wavyRim(olathe(cp, 72, r * 0.02, 1.2), r, 6, 0.06, 2.1), MK.capM("#3fb0c8"), [0, 32.2, 0]); add2(new THREE.CircleGeometry(r * 0.92, 48), MK.glowC("#8affe0", 1.1), [0, 32.12, 0], [Math.PI / 2, 0, 0]);
+  for (let k = 0; k < 3; k++) add2(new THREE.TorusGeometry(r * (0.45 + k * 0.17), 0.05, 4, 64), MK.glowC("#c8fff0", 1.6), [0, 32.08, 0], [Math.PI / 2, 0, 0]);
+  // windows spiralling round the stair inside, skipping the door
+  const wm = MK.glowC("#ffe6a0", 1.9), wg = new THREE.BoxGeometry(0.55, 0.85, 0.2); for (let k = 0; k < 34; k++) { const t = k / 34, y = 4 + t * 25, a = t * 3.2 * TAU + 0.7, rr = stR(y) - 0.04; if (y < 6 && Math.abs(Math.atan2(Math.sin(a), Math.cos(a))) < 0.7) continue;
+    add2(wg, wm, [Math.sin(a) * rr, y, Math.cos(a) * rr], [0, a, 0]); if (k % 3 === 0) add2(new THREE.BoxGeometry(0.75, 0.1, 0.35), M0.plank, [Math.sin(a) * (rr + 0.1), y - 0.48, Math.cos(a) * (rr + 0.1)], [0, a, 0]); }
+  // shelf fungus climbing the stalk
+  const shg = new THREE.SphereGeometry(1, 14, 6, 0, Math.PI, 0, Math.PI / 2); for (let k = 0; k < 18; k++) { const y = 2.5 + K.kH3(k, 1, 2) * 26, a = K.kH3(k, 3, 4) * TAU, rr = stR(y), s = 0.6 + K.kH3(k, 5, 6) * 0.9, m = add2(shg, MK.capM(["#3fe0d0", "#b06ad8", "#ffb347", "#7ab0ff"][k % 4]), [Math.sin(a) * (rr - 0.15), y, Math.cos(a) * (rr - 0.15)], [0, a - Math.PI / 2, 0]); m.scale.set(s, 0.22 * s, s * 0.8); }
+  // kit dressing in world space round the tower: tendrils off the cap rim, moss and glow caps at the foot, the swirl of glowing marks under the moss
+  const O = spAO(T.position.x, T.position.z, T.position.y);
+  for (let k = 0; k < 40; k++) { const a = (k / 40) * TAU + K.kH3(k, 7, 1) * 0.12, L = 1.5 + K.kH3(k, 2, 9) * 5.5, x = Math.sin(a) * r * 0.93, z = Math.cos(a) * r * 0.93; K.Beam("deco", O, [x, 32.1, z], [x * 1.01, 32.1 - L, z * 1.01], 0.03, "#2a4a4a", "cyl6"); K.P("glow", O, "oct", x * 1.01, 32 - L, z * 1.01, 0.2, 0.26, 0.2, ["#9affd8", "#ffd27a", "#d89aff"][k % 3]); }
+  for (let k = 0; k < 16; k++) { const a = (k / 16) * TAU + 0.2, q = K.kRat(k, 8, 31); if (Math.abs(Math.atan2(Math.sin(a), Math.cos(a))) < 0.5) continue; SK.MossMound(O, q, Math.sin(a) * 6.0, Math.cos(a) * 6.0, 0.9 + q() * 0.6, "#3e6a3a", "#9affd8"); }
+  for (let k = 0; k < 70; k++) { const t = k / 70, a = t * 2.4 * TAU, rr = 6.6 + t * 5.5, x = Math.sin(a) * rr, z = Math.cos(a) * rr; if (z > 4.5 && Math.abs(x) < 3) continue; K.P("glow", O, "flat", x, 0.05, z, 0.5, 1, 0.22, "#7affd8", 0, a + Math.PI / 2, 0); }
+  // the old pools: the heart pool glows gold, the others turn green and violet
+  let np = 0; root.traverse((m) => { if (!m.isMesh || !m.geometry || m.geometry.type !== "CircleGeometry" || !m.parent || m.parent === root || m.parent === T) return; const p = m.parent.position; if (tW(p.x, p.z) === "#") return; if (m.name === "heartpool") { m.material = MK.glowC("#ffd25a", 1.9).clone(); m.scale.setScalar(1.25); } else if (m.geometry.parameters.radius > 1) { m.material = MK.glowC(np++ % 2 ? "#b07aff" : "#7af08a", 1.4); } });
+  // the honeycomb: hexagonal pools with springy moss rims on the open moss round the tower
+  const HR = 1.05, dx = Math.sqrt(3) * HR, dz = 1.5 * HR, cols = ["#7af08a", "#b07aff", "#ffd25a", "#7af08a", "#b07aff"]; let nh = 0, hp = null; root.traverse((m) => { if (m.name === "heartpool") hp = m.getWorldPosition(new THREE.Vector3()); });
+  for (let j = -14; j <= 14; j++) for (let i = -14; i <= 14; i++) { const x = T.position.x + i * dx + (j & 1 ? dx / 2 : 0), z = T.position.z + j * dz, d = Math.hypot(x - T.position.x, z - T.position.z); if (d < 7.2 || d > 17) continue;
+    const t0 = tW(x, z); let ok = ".gbP".includes(t0) && (t0 !== "P" || (Math.abs(x - T.position.x) > 3.4 && z > T.position.z + 7.4)) && (!hp || Math.hypot(x - hp.x, z - hp.z) > 3.6);
+    for (let k = 0; k < 6 && ok; k++) { const a = (k / 6) * TAU, t = tW(x + Math.cos(a) * 1.25, z + Math.sin(a) * 1.25); if ("pks#".includes(t)) ok = false; } if (!ok) continue;
+    const q = K.kRat(x, z, 37); if (q() < 0.12) continue; SK.HexPool(spAO(x, z, spGY(x, z) - 0.02, Math.PI / 6), q, HR * 0.97, cols[Math.floor(q() * cols.length)]); nh++; }
+  st.z8 = { rings: ring, pools: nh, at: [T.position.x, T.position.z].map((v) => +v.toFixed(1)) }; };
+SPS.Z8 = SPZ8BUILD;
 const spPass = (ids) => { if (!ASSETS.detailKit || !ASSETS.detailKit.sporeholm) return null; const env = { add, std, unwarp, GHT }, K = ASSETS.detailKit(THREE, env, { chunk: 60 }), SK = ASSETS.detailKit.sporeholm(K), KC = ASSETS.detailKit(THREE, env, { chunk: 60 }), SKC = ASSETS.detailKit.sporeholm(KC), st = { scenes: {} };
   for (const id of ids) { const f = SPS[id]; if (!f) continue; const n0 = K.count(), c0 = KC.count(); f(K, SK, KC, SKC, st); st.scenes[id] = K.count() - n0 + KC.count() - c0; }
   st.kit = K.flush(root).length; const camp = KC.flush(root); for (const m of camp) m.userData.helixCamp = true; st.camp = camp.length; return st; };

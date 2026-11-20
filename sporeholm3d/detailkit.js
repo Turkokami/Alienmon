@@ -311,8 +311,8 @@ ASSETS.detailKit.sporeholm = function (K) { const { P, B, C, S, Beam, Sag, Ring,
   const Dragonfly = (O, col = "#ff7ad8") => { P("deco", O, "cyl6", 0, 0, 0, 0.035, 0.42, 0.035, "#1a4a4a", 0, 0, Math.PI / 2); P("glow", O, "sph", 0.22, 0.01, 0, 0.07, 0.06, 0.08, "#7affd0");
     for (const [x, sd] of [[0.05, -1], [0.05, 1], [-0.03, -1], [-0.03, 1]]) P("glow", O, "box", x, 0.02, sd * 0.17, 0.07, 0.006, 0.3, col, sd * 0.12, x > 0 ? 0.15 * sd : -0.2 * sd, 0); };
   // honeycomb spore pool: a hexagonal moss rim round glowing water (circumradius r)
-  const HexPool = (O, q, r, col, rim = "#3e6a3a") => { P("deco", O, "cyl6", 0, 0.03, 0, 2 * r, 0.22, 2 * r, rim); P("glow", O, "cyl6", 0, 0.1, 0, 2 * r * 0.8, 0.06, 2 * r * 0.8, col); P("deco", O, "cyl6", 0, 0.115, 0, 2 * r * 0.5, 0.04, 2 * r * 0.5, kHex(col, 0.1, 0.1));
-    for (let k = 0; k < 3; k++) P("glow", O, "sph", (q() - 0.5) * r, 0.25 + q() * 0.8, (q() - 0.5) * r, 0.07, 0.07, 0.07, kHex(col, 0.25)); };
+  const HexPool = (O, q, r, col, rim = "#3e6a3a") => { P("deco", O, "cyl6", 0, -0.02, 0, 2 * r, 0.2, 2 * r, rim); P("glow", O, "cyl6", 0, 0.1, 0, 2 * r * 0.82, 0.05, 2 * r * 0.82, col); P("glow", O, "cyl6", 0, 0.115, 0, 2 * r * 0.45, 0.04, 2 * r * 0.45, kHex(col, 0.12, 0.05));
+    for (let k = 0; k < 3; k++) P("glow", O, "oct", (q() - 0.5) * r, 0.25 + q() * 0.8, (q() - 0.5) * r, 0.09, 0.09, 0.09, kHex(col, 0.25)); };
   // ---- the Helix spore-harvest camp: white ridge tents marked with the orange ring-and-slash, floodlights, vacuum machines, a power box ----
   const HELIX = "#f08a2a";
   const Emblem = (O, x, y, z, rx, ry, s = 1) => { P("deco", O, "ring", x, y, z, 0.7 * s, 1.4, 0.7 * s, HELIX, rx, ry, 0); P("deco", O, "box", x, y, z, 0.9 * s, 0.03, 0.08 * s, HELIX, rx, ry + 0.75, 0); };
