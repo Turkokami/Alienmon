@@ -11,6 +11,14 @@ h1{margin:0 0 6px;font-size:44px;letter-spacing:1px;color:#c8f06a;text-shadow:0 
 button{font:inherit;cursor:pointer;color:#fff;border-radius:12px}
 #cont{display:block;width:100%;padding:16px;font-size:20px;font-weight:700;background:#1d4a52;border:2px solid #3fe0d0;margin-bottom:22px}
 #cont:hover,#cont:focus{background:#256470;outline:none}
+#cont{margin-bottom:10px}
+#newg{display:block;width:100%;padding:12px;font-size:17px;font-weight:700;background:#16202e;border:2px solid #c8f06a;margin-bottom:22px}
+#newg:hover,#newg:focus{background:#24321c;outline:none}
+#ask{display:none;position:fixed;inset:0;background:rgba(4,8,20,.8);align-items:center;justify-content:center;padding:24px}
+#ask .box{width:min(420px,100%);background:#0f2233;border:2px solid #c8f06a;border-radius:16px;padding:22px;text-align:center}
+#ask h2{margin:0 0 8px;color:#c8f06a}#ask p{margin:0 0 18px;opacity:.85}
+#ask .row{display:flex;gap:10px}#ask .row button{flex:1;padding:12px;font-size:17px;font-weight:700;background:#16202e;border:2px solid #345}
+#ask .row button:hover,#ask .row button:focus{border-color:#c8f06a;background:#1c2a3c;outline:none}
 .label{text-align:left;opacity:.7;font-size:13px;margin:0 0 8px 2px;text-transform:uppercase;letter-spacing:1px}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .grid button{padding:14px 12px;font-size:16px;background:#16202e;border:1px solid #345;text-align:left}
@@ -22,10 +30,13 @@ button{font:inherit;cursor:pointer;color:#fff;border-radius:12px}
   <h1>Alienmon 3D</h1>
   <div class="sub">Every world is on your PC. No internet needed.</div>
   <button id="cont">Continue</button>
+  <button id="newg">New Game<small style="display:block;font-weight:400;font-size:12px;opacity:.65;margin-top:3px">Start over from the first cutscene</small></button>
   <div class="label">Pick a world</div>
   <div class="grid" id="worlds"></div>
   <div class="keys">F11 full screen · F10 back to this screen · Alt shows the menu</div>
 </div>
+<div id="ask"><div class="box"><h2>Start over?</h2><p>Your current save will be erased. Your settings stay.</p>
+  <div class="row"><button id="yes">Yes</button><button id="no">No</button></div></div></div>
 <script>
 var W=[["dustara","Dustara",""],["sporeholm","Sporeholm","Mirefen Village"],["ferrox","Ferrox",""],["thalassa","Thalassa","In progress"],["neonis","Neonis","Preview"]];
 var last=null;try{last=localStorage.getItem("am_world")}catch(e){}
@@ -35,5 +46,12 @@ cont.textContent=last&&names[last]?"Continue on "+names[last]:"Start in Dustara"
 cont.onclick=function(){location.href="/index.html"+(last&&names[last]?"":"?world=dustara")};
 var g=document.getElementById("worlds");
 W.forEach(function(w){var b=document.createElement("button");b.innerHTML=w[1]+(w[2]?"<small>"+w[2]+"</small>":"");b.onclick=function(){location.href="/index.html?world="+w[0]};g.appendChild(b)});
+var hasSave=false;try{for(var i=0;i<localStorage.length;i++){var k=localStorage.key(i);if(/_rpg$|^sporeholm_|^am_world$/.test(k))hasSave=true}}catch(e){}
+var ask=document.getElementById("ask"),newGame=function(){location.href="/index.html?newgame=1"};
+document.getElementById("newg").onclick=function(){if(!hasSave){newGame();return}ask.style.display="flex";document.getElementById("no").focus()};
+document.getElementById("yes").onclick=newGame;
+document.getElementById("no").onclick=function(){ask.style.display="none";document.getElementById("newg").focus()};
+document.addEventListener("keydown",function(e){if(e.key==="Escape"&&ask.style.display==="flex"){ask.style.display="none";document.getElementById("newg").focus()}
+ if((e.key==="ArrowLeft"||e.key==="ArrowRight")&&ask.style.display==="flex"){var a=document.activeElement&&document.activeElement.id==="yes"?"no":"yes";document.getElementById(a).focus()}});
 cont.focus();
 </script></body></html>
