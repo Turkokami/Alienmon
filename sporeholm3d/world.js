@@ -14291,7 +14291,7 @@ if (WALKINS.length) { // last net: no instanced blade, crop or plant may stand i
 const SEATED = window.SEAT && !(H && H.bakeOnly) ? window.SEAT.run(root, GHT, THREE) : null; /* Nov 26: plants, pebbles and small props sit on the ground */
 return { seated: SEATED, pathguard: PATHGUARD, patches: TGP, places: placeMeta(), outPortals: OUTPORTALS, walkins: WALKINS.map((w) => ({ name: w.name, key: w.key, x: (w.G.position.x + w.ox), y: w.G.position.y, z: (w.G.position.z + w.oz), rx: w.rx, rz: w.rz, dw: w.dw, fh: w.fh, d: w.d, back: !!w.back })), atW, warpXY, unwarp, ght: GHT, flora: FLC.n, object: root, rect: SCN[ids[0] || want].rect, grid: GRID.map((r) => r.join("")), oy: GOY, bounds: [BX0, BZ0, BX1, BZ1], rects: Object.fromEntries(Object.keys(SCN).map((k) => [k, SCN[k].rect])) };
 
-},nmap:function(THREE,H){
+
 },nmap:function(THREE,H){
 // ---- Squatch in-house building kit: seeded random, painted canvas textures, mesh helpers ----
 const TAU = Math.PI * 2; let seed = 5521; const R = () => { seed = (seed * 16807) % 2147483647; return seed / 2147483647; };
@@ -17215,7 +17215,7 @@ const nnXLeafM = () => thM("nnDF", () => { const W = 512, Hh = 256, c = nnXCv(W,
     C.strokeStyle = `rgb(${sh},${sh},${sh})`; C.lineWidth = 2 + rnd() * 1.5; C.beginPath(); C.moveTo(x, 128 + s * rnd() * 6); C.lineTo(x + 10 + rnd() * 24, 128 + s * w * (0.4 + rnd() * 0.6)); C.stroke(); }
   for (let k = 0; k < 9; k++) { const x = 290 + k * 24; C.lineWidth = 2.5; C.strokeStyle = "rgb(80,64,72)"; C.beginPath(); C.moveTo(x, 128); C.lineTo(x + 30, 128 + (k % 2 ? 1 : -1) * (60 - k * 5)); C.stroke(); }
   const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 4;
-  return std({ map: t, vertexColors: true, alphaTest: 0.45, roughness: 0.78, metalness: 0 }); });
+  return std({ map: t, vertexColors: true, alphaTest: 0.45, roughness: 0.78, metalness: 0, side: THREE.DoubleSide /* the game draws a solid inked outline behind every one-sided opaque mesh; on cut-out leaf cards that outline showed as grey squares, and two-sided materials get no outline */ }); });
 // a leaf card in the shared batch: cen is the crown centre (local), crad its radius, used to shade the card as part of one soft volume
 const nnXL = (O, gk, lx, ly, lz, sx, sz, col, rx, ry, rz, cen, crad) => { nnXP("leaf", O, gk, lx, ly, lz, sx, gk === "card" ? sx : 1, sz, col, rx, ry, rz); const it = NND.leaf[NND.leaf.length - 1], yaw = (O && O.ry) || 0;
   let cx = cen[0], cz = cen[2]; if (yaw) { const c = Math.cos(yaw), sn = Math.sin(yaw); cx = cen[0] * c + cen[2] * sn; cz = -cen[0] * sn + cen[2] * c; } it.push([cx, cen[1], cz], crad); };
