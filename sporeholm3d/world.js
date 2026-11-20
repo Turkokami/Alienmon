@@ -11806,6 +11806,61 @@ TS({ id: "F5", gx: 210, gy: 120, name: "Jungle Heights", hub: [14, 10], palms: 8
 TS({ id: "F6", gx: 240, gy: 120, name: "Hidden Cove", hub: [10, 14], palms: 6, jungle: 6, coral: 18,
   ground(X, Y) { tBlob(X + 17, Y + 14, 11, "x", 0.15, 231); tBlob(X + 12, Y + 14, 6, ".", 0.2, 232); tLine(X + 12, Y + 14, X + 20, Y + 9, 3.4, "s"); fillT(X + 18, Y + 6, X + 22, Y + 10, "s"); },
   build(X, Y) { thArch(X + 20, Y + 6.2, 0, 4.4, 3.8); thChest(X + 20, Y + 7, 0); thChest(X + 21.2, Y + 7.5, 0.4); thLamp(X + 15, Y + 11); tRocksOff(X, Y, 17, 14, 4, 12, 18); tallGrass(X + 10, Y + 16, 2.4, 2, "shore", { name: "Hidden Cove grass" }); } });
+// ================= THALASSA JUNGLE (Nov 20 2026): the castaway islands, alien and lush =================
+// Book 1 and the owner's ask: white-sand islands under a ringed sky, but the jungle has to feel like a lost-boys, Swiss-Family-Robinson
+// island on another world. Every jungle tile gets a layered rainforest: buttressed canopy giants with hanging vines, banyans, tall bent
+// palms, tree ferns, giant split leaves, ferns, and glowing alien plants (lantern stalks, glow-caps, tube anemones, spiral fronds).
+// Banyan Isle, Verdant Isle and Jungle Heights get treehouses joined by rope bridges, and castaway huts built from upturned boats sit
+// on the beaches. All of it is batched by the detail kit, placed by tile hash (the world's own random R() is never touched), kept off
+// paths, doorways, hubs and tall-grass patches, with trunks spaced so the jungle can still be walked.
+const TJ_GREEN = [["#2e8a5a", "#3aa86a", "#1f6e4e", "#5ac080"], ["#2a9a7a", "#3ab890", "#1a7a6a", "#6ad0a0"], ["#4a9a3a", "#6ab84a", "#3a7a2e", "#8ad05a"]];
+const TJ_ALIEN = [["#7a4ac0", "#9a6ae0", "#5a3aa0", "#b88af0"], ["#d8604a", "#f08a5a", "#b84a3a", "#ffb07a"], ["#2ab8b0", "#4ad8c8", "#1a8a8a", "#8af0e0"], ["#c84a8a", "#e070a8", "#a03a70", "#f0a0c8"]];
+const TJ_GLOW = ["#5af0ff", "#ff7ad8", "#b48aff", "#9aff8a", "#ffd27a", "#7affd0"];
+const TJ_HOUSES = { D2: 3, D5: 3, F5: 4, S1: 1, D6: 1, M1: 1 }; // treehouses per scene (Banyan Isle, Verdant Isle, Jungle Heights, Mangrove Isle, Vine Falls, Smugglers' Cove)
+const tJunglePass = (ids) => { if (typeof ASSETS === "undefined" || !ASSETS.detailKit) return null; const K = ASSETS.detailKit(THREE, { add, std, unwarp, GHT }, { chunk: 60 });
+  const PATHT = "pPkbs,", near = (x, y, r, set) => { for (let dy = -r; dy <= r; dy++) for (let dx = -r; dx <= r; dx++) if (set.includes(at(x + dx, y + dy))) return true; return false; };
+  const share = (x, y, r, set) => { let n = 0, t = 0; for (let dy = -r; dy <= r; dy++) for (let dx = -r; dx <= r; dx++) { t++; if (set.includes(at(x + dx, y + dy))) n++; } return n / t; };
+  const doorNear = (x, z, r) => WALKINS.some((w) => Math.hypot(x - (w.G.position.x + w.ox), z - (w.G.position.z + w.oz)) < r + Math.max(w.rx, w.rz));
+  const inGrass = (x, z, m = 0.6) => TGP.some((q) => ((x - q.x) / (q.rx + m)) ** 2 + ((z - q.z) / (q.rz + m)) ** 2 < 1);
+  const wy = (x, z) => { const [ux, uz] = unwarp(x, z), g = GHT(ux, uz); return [ux, Number.isFinite(g) ? g : 0, uz]; };
+  const pal = (q, alien) => { const g = TJ_GREEN[Math.floor(q() * TJ_GREEN.length)]; if (q() < alien) { const a = TJ_ALIEN[Math.floor(q() * TJ_ALIEN.length)]; return [g[0], g[1], a[0], a[1], g[2]]; } return g; };
+  const stats = { trees: 0, palms: 0, houses: 0, huts: 0, under: 0, glow: 0 };
+  for (const id of ids) { const o = TSCN[id]; if (!o) continue; const X = o.gx, Y = o.gy, hub = tHub(id), tops = [], decks = [], dens = Math.min(1, 0.55 + (o.jungle || 0) / 40), alien = 0.28;
+    let huts = 0, houses = 0; const hutMax = (o.jungle || 0) >= 8 ? 2 : (o.palms || 0) >= 5 ? 1 : 0;
+    const clear = (x, z, r) => Math.hypot(x - hub[0], z - hub[1]) > r + 2.5 && !doorNear(x, z, r + 1.5) && !inGrass(x, z, r * 0.6);
+    // ---- the big plants on a jittered 3 m grid ----
+    for (let cy = 0; cy < 10; cy++) for (let cx = 0; cx < 10; cx++) { const q = K.kRat(X + cx * 3, Y + cy * 3, 11), x = X + cx * 3 + 0.4 + q() * 2.2, z = Y + cy * 3 + 0.4 + q() * 2.2, ix = Math.floor(x), iz = Math.floor(z), t = at(ix, iz), O = { x, z, ry: q() * TAU };
+      const inland = t === "." && (o.jungle || o.palms) && !near(ix, iz, 3, "w"); // the island interiors grow into jungle too, not bare sand
+      if (t === "g" || (inland && q() < 0.75)) { if (near(ix, iz, 1, PATHT) || !clear(x, z, 1.2) || q() > dens) continue; const deep = share(ix, iz, 3, "gx.");
+        if (houses < (TJ_HOUSES[id] || 0) && deep > 0.8 && !near(ix, iz, 3, PATHT) && clear(x, z, 5) && !near(ix, iz, 4, "b")) { const H = K.TreeHouse(O, q, 1.05, pal(q, 0.35), { roof: ["#e6d6b6", "#d8c4a0", "#c8b8a0"][houses % 3], flag: ["#d83a2a", "#2a6ad8", "#e8b02a"][houses % 3] }); const [ux, uy, uz] = wy(x, z); decks.push([ux, uy + H.dh, uz]); houses++; stats.houses++; continue; }
+        const r = q(), s = 0.85 + q() * 0.45; if (r < 0.46) { const T = K.CanopyTree(O, q, s, pal(q, alien), { h: 6 + q() * 3 }); tops.push([x, z, T.top[1] - 0.5, s]); stats.trees++; }
+        else if (r < 0.62) { K.Palm(O, q, 0.95 + q() * 0.4, pal(q, 0.15), { glow: q() < 0.3 ? TJ_GLOW[Math.floor(q() * 6)] : null, h: 6 + q() * 2 }); stats.palms++; }
+        else if (r < 0.8) K.TreeFern(O, q, 0.9 + q() * 0.4, pal(q, alien));
+        else if (deep > 0.75) { const T = K.Banyan(O, q, 0.9 + q() * 0.3, pal(q, alien)); tops.push([x, z, T.top[1] - 0.5, 1]); stats.trees++; }
+        else { const T = K.CanopyTree(O, q, s * 0.9, pal(q, 0.6), { h: 5 + q() * 2 }); tops.push([x, z, T.top[1] - 0.5, s]); stats.trees++; } }
+      else if (t === "." ) { if (near(ix, iz, 1, PATHT) || !clear(x, z, 1)) continue; const gNear = near(ix, iz, 2, "g"), wNear = near(ix, iz, 1, "w");
+        if (huts < hutMax && gNear && !wNear && !near(ix, iz, 3, PATHT + "b") && share(ix, iz, 2, ".g") > 0.95 && clear(x, z, 4)) { K.BoatHut({ x, z, ry: Math.round(q() * 4) * Math.PI / 2 }, q, 1, { roof: ["#d8cbb0", "#e8d8b8"][huts % 2] }); huts++; stats.huts++; continue; }
+        if (q() < (gNear ? 0.65 : (o.palms ? 0.28 : 0.1))) { K.Palm(O, q, 0.95 + q() * 0.35, pal(q, 0.1), { h: 6.5 + q() * 2.5, bend: 1 + q() * 1.6, glow: q() < 0.15 ? TJ_GLOW[Math.floor(q() * 6)] : null }); stats.palms++; }
+        else if (q() < 0.25) K.Driftwood(O, q, 0, 0, 1); }
+      else if (t === "x") { if (near(ix, iz, 1, PATHT) || q() > 0.55) continue; const T = K.CanopyTree(O, q, 0.8 + q() * 0.3, pal(q, alien), { h: 4.5 + q() * 2, moss: true }); tops.push([x, z, T.top[1] - 0.4, 0.9]); stats.trees++; } }
+    // ---- understory, tile by tile ----
+    for (let iz = Y; iz < Y + 30; iz++) for (let ix = X; ix < X + 30; ix++) { const t = at(ix, iz); if (t !== "g" && t !== "x" && t !== ".") continue; const q = K.kRat(ix, iz, 23), x = ix + 0.15 + q() * 0.7, z = iz + 0.15 + q() * 0.7;
+      if (Math.hypot(x - hub[0], z - hub[1]) < 2.5 || doorNear(x, z, 1.2)) continue; const O = { x, z, ry: q() * TAU }, cols = pal(q, alien), r = q(), gl = TJ_GLOW[Math.floor(q() * 6)], inTG = inGrass(x, z, 0.2);
+      if (t === "g") { if (!inTG) { if (r < 0.2) K.Fern(O, q, 0.8 + q() * 0.6, cols); else if (r < 0.3) K.GiantLeaf(O, q, 0.9 + q() * 0.6, cols); else if (r < 0.355) { K.GlowStalk(O, q, 1, gl); stats.glow++; } else if (r < 0.4) { K.GlowCaps(O, q, 1, gl); stats.glow++; } else if (r < 0.43) { K.GlowTubes(O, q, 1, gl, cols[2]); stats.glow++; } else if (r < 0.45) { K.Spiral(O, q, 1, kHexT(cols[0], -0.1), gl); stats.glow++; } }
+        K.Tufts(O, q, 2, 0.1, 0.6, 0, cols); if (!inTG) K.Litter(O, q, 3, 0.1, 0.7, ["#8a6a3a", "#6a5a2a", "#a8803a", cols[0]]); stats.under++; }
+      else if (t === "x") { if (r < 0.3) K.Fern(O, q, 0.9 + q() * 0.5, cols); else if (r < 0.42) K.GiantLeaf(O, q, 1, cols); }
+      else if (t === "." && (o.jungle || o.palms) && !near(ix, iz, 2, "w" + PATHT)) { // inland sand: a jungle floor of moss, leaf litter and ferns
+        K.P("deco", O, "cyl", 0, 0.03, 0, 1.3 + q() * 0.9, 0.02, 1.1 + q() * 0.8, ["#3a5a2a", "#4a6a2e", "#5a5a32", "#2e5a3e"][Math.floor(q() * 4)]); K.Litter(O, q, 4, 0.1, 0.8, ["#8a6a3a", "#6a5a2a", "#a8803a", cols[0]]);
+        if (!inTG) { if (r < 0.2) K.Fern(O, q, 0.8 + q() * 0.5, cols); else if (r < 0.28) K.GiantLeaf(O, q, 0.9 + q() * 0.5, cols); else if (r < 0.32) { K.GlowStalk(O, q, 1, gl); stats.glow++; } else if (r < 0.36) { K.GlowCaps(O, q, 1, gl); stats.glow++; } } K.Tufts(O, q, 2, 0.1, 0.6, 0, cols); stats.under++; }
+      else if (t === ".") { if (near(ix, iz, 0, PATHT)) continue; if (r < 0.035 && near(ix, iz, 1, "w")) { K.GlowTubes(O, q, 0.8, gl, "#e8b8a0"); stats.glow++; } else if (r < 0.06 && near(ix, iz, 1, "g")) K.Fern(O, q, 0.7, cols); else if (r < 0.08) K.Rock(O, q, 0, 0, 0.25 + q() * 0.3, "#c8beb0"); } }
+    // ---- lianas looping between neighbouring crowns ----
+    for (let i = 0; i < tops.length; i++) { let best = -1, bd = 1e9; for (let j = i + 1; j < tops.length; j++) { const d = Math.hypot(tops[i][0] - tops[j][0], tops[i][1] - tops[j][1]); if (d > 3.5 && d < 8 && d < bd) { bd = d; best = j; } } if (best < 0) continue;
+      const A = wy(tops[i][0], tops[i][1]), Bv = wy(tops[best][0], tops[best][1]), a = [A[0], A[1] + tops[i][2], A[2]], b = [Bv[0], Bv[1] + tops[best][2], Bv[2]], q = K.kRat(a[0], a[2], 31);
+      K.Sag("deco", null, a, b, 1.2 + q() * 1.4, 0.035, "#4a5a3a", 8); for (let k = 1; k < 5; k++) { const tt = k / 5, p = [a[0] + (b[0] - a[0]) * tt, a[1] + (b[1] - a[1]) * tt - Math.sin(tt * Math.PI) * 1.6, a[2] + (b[2] - a[2]) * tt]; K.L(null, "cardv", p[0], p[1], p[2], 0.45, 0.6 + q() * 1.4, 1, kHexT(TJ_GREEN[0][k % 4], -0.05), 0, q() * TAU, 0, p, 1.5); } }
+    // ---- rope bridges between treehouses of the same scene ----
+    for (let i = 0; i < decks.length; i++) for (let j = i + 1; j < decks.length; j++) { const a = decks[i], b = decks[j], d = Math.hypot(a[0] - b[0], a[2] - b[2]); if (d < 16) K.RopeBridge(null, K.kRat(a[0], b[2], 41), a, b, 0.35 + d * 0.04); } }
+  K.flush(root); return stats; };
+const kHexT = (h, l = 0) => { const c = new THREE.Color(h); if (l) c.offsetHSL(0, 0, l); return "#" + c.getHexString(); };
 // ================= assemble =================
 // map mode: grids for every scene, ground + objects for one scene and its neighbours
 // world mode (H.all): the whole 120x90 region in 3D — every scene's ground and objects
@@ -11865,6 +11920,7 @@ if (TGP.length) { // the tall grass owns its patch: other ground flora steps asi
   const inP = (x, z) => TGP.some((q) => ((x - q.x) / (q.rx * 0.95)) ** 2 + ((z - q.z) / (q.rz * 0.95)) ** 2 < 1), strip = (arr) => { for (let i = arr.length - 1; i >= 0; i--) if (inP(arr[i][0], arr[i][1])) arr.splice(i, 1); }; for (const a2 of [MG, FLW, GG]) strip(a2); for (const k of Object.keys(FL)) strip(FL[k]); }
 { // Port Saltreach keeps its streets, plazas and docks swept: no weeds or blades on paving
   const paved = (x, z) => "pPkbs".includes(at(Math.floor(x), Math.floor(z))), strip = (arr) => { for (let i = arr.length - 1; i >= 0; i--) if (paved(arr[i][0], arr[i][1])) arr.splice(i, 1); }; for (const a2 of [MG, FLW, GG]) strip(a2); for (const k of Object.keys(FL)) strip(FL[k]); }
+const TJUNGLE = H && H.all && H.jungle !== false ? tJunglePass(ids) : null; if (TJUNGLE && typeof console !== "undefined" && H.verbose) console.log("thalassa jungle", JSON.stringify(TJUNGLE));
 buildAll(); if (H && H.all && H.flora !== false) buildFlora(); thUVfix(root);
 if (WALKINS.length) { // last net: no instanced blade, crop or plant may stand in a room or on a doorstep
   const m4 = new THREE.Matrix4(), v = new THREE.Vector3(), z0 = new THREE.Matrix4().makeScale(0, 0, 0), hit = (x, z) => WALKINS.some((w) => { const px = w.G.position.x + w.ox, pz = w.G.position.z + w.oz; return ((x - px) / (w.rx + 0.75)) ** 2 + ((z - pz) / (w.rz + 0.75)) ** 2 < 1 || (Math.abs(x - px) < w.dw / 2 + 0.6 && Math.abs(z - pz) < w.r + 2.4 && ((z - pz) * w.d > 0 || w.back)); });
