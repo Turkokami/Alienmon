@@ -254,3 +254,85 @@ ASSETS.detailKit = function (THREE, env, opts = {}) {
   return { ND, P, B, C, S, Beam, Ring, L, Sag, flush, count, kR, kRat, kHex, kVN, kH3, Clump, Fronds, Trunk, CanopyTree, Palm, TreeFern, Fern, GiantLeaf, Banyan, Tufts, Litter, Rock,
     GlowStalk, GlowCaps, GlowTubes, Spiral, Deck, Ladder, Hut, RopeBridge, TreeHouse, BoatHut, Driftwood, ShipWheel, mats: { mLeaf, mWood, mGrit, mCloth, mIron, mGlow } };
 };
+
+// ================= SPOREHOLM KIT (Nov 20 2026): giant mushrooms, shelf fungus, moss, jar-lantern posts, folded paper lanterns,
+// dragonflies, honeycomb spore pools and the Helix harvest-camp gear. Built on the primitives the main kit returns, so it only adds:
+// const SK = ASSETS.detailKit.sporeholm(K) once per build, after K = ASSETS.detailKit(...). Everything still flushes with K.flush(root).
+ASSETS.detailKit.sporeholm = function (K) { const { P, B, C, S, Beam, Sag, Ring, kHex } = K, TAU = Math.PI * 2;
+  const CAPS = { dome: 0.62, parasol: 0.3, bell: 1.05, flat: 0.18 };
+  // one mushroom of height s: a leaning, tapering stalk with a root flare and a skirt, a cap (dome, parasol, bell, flat or cone),
+  // glowing gills under it, glowing spots on it, and on the big ones glow-tipped tendrils hanging from the rim
+  const Shroom = (O, q, s, o = {}) => { const x0 = o.x || 0, z0 = o.z || 0, H = s, shp = o.shape || ["dome", "parasol", "cone", "bell", "dome", "parasol"][Math.floor(q() * 6)];
+    const r = o.r || H * (shp === "parasol" || shp === "flat" ? 0.42 : shp === "cone" ? 0.27 : shp === "bell" ? 0.25 : 0.34) * (0.85 + q() * 0.3);
+    const bin = o.bin || (H > 1.4 ? "lit" : "deco"), stem = o.stem || "#ece6f2", cap = o.cap || "#b06ad8", gl = o.gill || kHex(cap, 0.22), spot = o.spot || "#fff4e0";
+    const la = o.la ?? q() * TAU, lean = (o.lean ?? (0.04 + q() * 0.14)) * H, n = H > 3 ? 3 : 2, sr = o.sr || Math.max(0.03, H * 0.05);
+    const p = [x0 + Math.cos(la) * lean, H, z0 + Math.sin(la) * lean]; Beam(bin, O, [x0, -0.08, z0], p, sr * (n > 2 ? 1.25 : 1.1), stem, H > 2.5 ? "limb" : "cyl6");
+    if (H > 1.5) C(bin, O, x0, -0.1, z0, sr * 2.0, Math.min(0.9, H * 0.12), kHex(stem, -0.1), "limb");
+    if (H > 2.2 && o.skirt !== false) P("deco", O, "cone", x0 + (p[0] - x0) * 0.6, H * 0.74, z0 + (p[2] - z0) * 0.6, sr * 4.6, H * 0.07, sr * 4.6, kHex(stem, 0.04));
+    const [px, , pz] = p, by = H - 0.04 * r; let hy;
+    const cb = o.capBin || bin; if (shp === "cone" || (H < 1.5 && shp !== "flat" && shp !== "parasol")) { hy = r * (shp === "cone" ? 1.05 : CAPS[shp] * 1.3); P(cb, O, "cone", px, by + hy / 2, pz, 2 * r, hy, 2 * r, cap); } else if (H < 1.5) { hy = r * CAPS[shp] * 1.4; P(cb, O, "cone", px, by + hy / 2, pz, 2 * r, hy, 2 * r, cap); } else if (shp === "cone") { hy = r * 1.05; P(cb, O, "cone", px, by + hy / 2, pz, 2 * r, hy, 2 * r, cap); } else { hy = r * CAPS[shp]; P(cb, O, "hemi", px, by, pz, 2 * r, hy, 2 * r, cap); }
+    P("glow", O, "disc", px, by - 0.02, pz, 1.86 * r, 1, 1.86 * r, gl, Math.PI, 0, 0);
+    if (r > 1.4 && shp !== "cone") { Ring(cb, O, px, by + 0.02, pz, r * 0.97, Math.min(0.22, r * 0.07), kHex(cap, -0.08)); P(cb, O, "hemi", px, by + hy * 0.5, pz, 1.2 * r, hy * 0.62, 1.2 * r, kHex(cap, 0.07, -0.05), 0, 0.3, 0); }
+    const ns = o.spots ?? (H > 0.9 ? 3 + Math.floor(q() * 5) : 1); for (let k = 0; k < ns; k++) { const a = q() * TAU, e = 0.2 + q() * 0.95, sz = r * (0.09 + q() * 0.08);
+      const rr = shp === "cone" ? r * (1 - e / 1.3) : r * Math.cos(e) * 0.98, yy = shp === "cone" ? by + hy * (e / 1.3) : by + Math.sin(e) * hy * 0.98; P("glow", O, "oct", px + Math.cos(a) * rr, yy, pz + Math.sin(a) * rr, sz, sz * 0.45, sz, spot, 0, a, 0); }
+    const nt = o.tend ?? (H > 4.5 ? 3 + Math.floor(q() * 4) : 0); for (let k = 0; k < nt; k++) { const a = q() * TAU, L = (0.5 + q() * 1.4) * (H / 6), tx = px + Math.cos(a) * r * 0.85, tz = pz + Math.sin(a) * r * 0.85;
+      Beam("deco", O, [tx, by, tz], [tx, by - L, tz], 0.012 * (H / 5), kHex(stem, -0.1), "cyl6"); P("glow", O, "oct", tx, by - L - 0.04, tz, 0.09, 0.12, 0.09, gl); }
+    return { top: [px, H, pz], r, by }; };
+  // a family of mushrooms round a spot: one big one and smaller ones leaning out from it
+  const ShroomCluster = (O, q, s, cols, o = {}) => { const n = o.n || 3 + Math.floor(q() * 4), x0 = o.x || 0, z0 = o.z || 0; let big = null;
+    for (let k = 0; k < n; k++) { const f = k ? 0.25 + q() * 0.5 : 1, a = q() * TAU, d = k ? s * (0.15 + q() * 0.25) : 0, col = cols[Math.floor(q() * cols.length)];
+      const R0 = Shroom(O, q, s * f, { x: x0 + Math.cos(a) * d, z: z0 + Math.sin(a) * d, la: a, lean: k ? 0.12 + q() * 0.2 : undefined, cap: col, shape: o.shape, stem: o.stem, bin: o.bin, capBin: o.capBin, gill: o.gill }); if (!k) big = R0; } return big; };
+  // shelf fungus: half-moon brackets stepping up round a stalk or trunk of radius tr at local (x, z)
+  const Shelf = (O, x, y, z, r, col, a, gl) => { P("deco", O, "hemi", x + Math.cos(a) * r * 0.25, y, z + Math.sin(a) * r * 0.25, 2 * r, r * 0.3, 1.5 * r, col, 0, -a + Math.PI / 2, 0); if (gl) P("glow", O, "disc", x + Math.cos(a) * r * 0.25, y - 0.01, z + Math.sin(a) * r * 0.25, 1.7 * r, 1, 1.25 * r, gl, Math.PI, -a + Math.PI / 2, 0); };
+  const ShelfRun = (O, q, x, z, tr, y0, y1, cols, gl) => { const n = 2 + Math.floor(q() * 4), a0 = q() * TAU; for (let k = 0; k < n; k++) { const a = a0 + k * (1.3 + q() * 0.8), y = y0 + (y1 - y0) * (k + q() * 0.5) / n, r = (0.18 + q() * 0.22) * Math.max(0.6, tr * 2.4);
+      Shelf(O, x + Math.cos(a) * tr, y, z + Math.sin(a) * tr, r, cols[k % cols.length], a, gl); } };
+  // cheap glow caps for ground cover: diamond stems and flattened diamond caps (48 verts each)
+  const TinyCaps = (O, q, s, glow, x = 0, z = 0, n = 0) => { n = n || 3 + Math.floor(q() * 4); for (let k = 0; k < n; k++) { const a = q() * TAU, r = q() * 0.4 * s, h = (0.1 + q() * 0.3) * s, cx = x + Math.cos(a) * r, cz = z + Math.sin(a) * r, cr = (0.06 + q() * 0.1) * s;
+      P("deco", O, "oct", cx, h / 2, cz, cr * 0.5, h, cr * 0.5, "#e8e0c8"); P("glow", O, "oct", cx, h, cz, cr * 2, cr * 0.7, cr * 2, kHex(glow, (q() - 0.5) * 0.15), 0, q(), 0); } };
+  // a soft cushion of moss, with a few glow caps in it
+  const MossMound = (O, q, x, z, r, col, glow) => { P("deco", O, "ico", x, r * 0.12, z, 2 * r, r * 0.5, 2 * r * (0.7 + q() * 0.5), col, 0, q() * TAU, 0); P("deco", O, "ico", x + (q() - 0.5) * r, r * 0.1, z + (q() - 0.5) * r, r * 1.1, r * 0.4, r * 0.9, kHex(col, 0.06), 0, q() * TAU, 0);
+    if (glow && q() < 0.7) TinyCaps(O, q, 0.6 + q() * 0.4, glow, x + (q() - 0.5) * r, z + (q() - 0.5) * r); };
+  // a boardwalk lamp: a crooked root post with a little cap roof and a firefly jar hanging off a bent arm toward a (local yaw)
+  const LanternPost = (O, q, x, z, h, glow, a = 0, cap = "#3fa0a0") => { const ax = x + Math.cos(a) * 0.5, az = z - Math.sin(a) * 0.5;
+    Beam("wood", O, [x, -0.2, z], [x + 0.04, h * 0.55, z], 0.075, "#6a4a32", "cyl6"); Beam("wood", O, [x + 0.04, h * 0.55, z], [x - 0.02, h, z], 0.06, "#5a3e2a", "cyl6");
+    P("deco", O, "cone", x - 0.02, h + 0.06, z, 0.46, 0.18, 0.46, cap); Beam("wood", O, [x, h - 0.2, z], [ax, h - 0.12, az], 0.03, "#5a3e2a", "cyl6");
+    Beam("deco", O, [ax, h - 0.12, az], [ax, h - 0.36, az], 0.008, "#2a2a2a", "cyl6"); P("glow", O, "cyl", ax, h - 0.52, az, 0.2, 0.3, 0.2, glow); P("deco", O, "cone", ax, h - 0.34, az, 0.24, 0.08, 0.24, "#4a3a2a");
+    for (let k = 0; k < 3; k++) P("glow", O, "oct", ax + (q() - 0.5) * 0.12, h - 0.5 + (q() - 0.5) * 0.18, az + (q() - 0.5) * 0.12, 0.03, 0.03, 0.03, "#ffffff"); return [ax, h - 0.52, az]; };
+  // folded paper lanterns lit by a spore-candle: flower, boat, bird, moon, orb (local frame, s = size)
+  const PaperLantern = (O, q, kind, s, col) => { const wc = kHex(col, 0.18), cn = "#fff2c0";
+    if (kind === "flower") { const n = 6; for (let k = 0; k < n; k++) { const a = (k / n) * TAU; P("glow", O, "oct", Math.cos(a) * 0.2 * s, 0.1 * s, Math.sin(a) * 0.2 * s, 0.34 * s, 0.07 * s, 0.17 * s, k % 2 ? col : wc, 0, -a, 0.55); } P("glow", O, "sph", 0, 0.12 * s, 0, 0.16 * s, 0.14 * s, 0.16 * s, cn); P("deco", O, "disc", 0, 0.01, 0, 0.6 * s, 1, 0.6 * s, "#2e7a3a"); }
+    else if (kind === "boat") { for (const sd of [-1, 1]) P("glow", O, "box", 0, 0.08 * s, sd * 0.08 * s, 0.62 * s, 0.15 * s, 0.015, col, sd * 0.55, 0, 0); P("glow", O, "box", 0, 0.012, 0, 0.5 * s, 0.015, 0.1 * s, wc);
+      P("glow", O, "pyr", 0.03 * s, 0.34 * s, 0, 0.03 * s, 0.42 * s, 0.34 * s, wc, 0, Math.PI / 2, 0); P("glow", O, "sph", -0.12 * s, 0.1 * s, 0, 0.07 * s, 0.09 * s, 0.07 * s, cn); }
+    else if (kind === "bird") { P("glow", O, "oct", 0, 0, 0, 0.36 * s, 0.13 * s, 0.13 * s, col); P("glow", O, "oct", 0.2 * s, 0.07 * s, 0, 0.12 * s, 0.1 * s, 0.09 * s, wc); P("glow", O, "pyr", 0.3 * s, 0.07 * s, 0, 0.04 * s, 0.08 * s, 0.04 * s, "#ffb347", 0, 0, -Math.PI / 2);
+      for (const sd of [-1, 1]) P("glow", O, "box", -0.02 * s, 0.05 * s, sd * 0.2 * s, 0.22 * s, 0.012, 0.36 * s, wc, sd * -0.45, 0, 0); P("glow", O, "pyr", -0.24 * s, 0.02 * s, 0, 0.16 * s, 0.03 * s, 0.14 * s, col, 0, 0, Math.PI / 2); }
+    else if (kind === "moon") { for (let k = 0; k <= 6; k++) { const a = -1.15 + k * 0.383, w = (0.07 + Math.sin((k / 6) * Math.PI) * 0.08) * s; P("glow", O, "sph", Math.cos(a) * 0.2 * s, 0.24 * s + Math.sin(a) * 0.2 * s, 0, w, w, w * 0.7, k % 2 ? col : wc); } }
+    else { P("glow", O, "sph", 0, 0.22 * s, 0, 0.36 * s, 0.4 * s, 0.36 * s, col); P("deco", O, "cyl", 0, 0.42 * s, 0, 0.14 * s, 0.04 * s, 0.14 * s, "#5a3e2a"); P("deco", O, "cyl", 0, 0.02 * s, 0, 0.16 * s, 0.04 * s, 0.16 * s, "#5a3e2a"); } };
+  // a dragonfly with pink-glowing wings (local frame)
+  const Dragonfly = (O, col = "#ff7ad8") => { P("deco", O, "cyl6", 0, 0, 0, 0.035, 0.42, 0.035, "#1a4a4a", 0, 0, Math.PI / 2); P("glow", O, "sph", 0.22, 0.01, 0, 0.07, 0.06, 0.08, "#7affd0");
+    for (const [x, sd] of [[0.05, -1], [0.05, 1], [-0.03, -1], [-0.03, 1]]) P("glow", O, "box", x, 0.02, sd * 0.17, 0.07, 0.006, 0.3, col, sd * 0.12, x > 0 ? 0.15 * sd : -0.2 * sd, 0); };
+  // honeycomb spore pool: a hexagonal moss rim round glowing water (circumradius r)
+  const HexPool = (O, q, r, col, rim = "#3e6a3a") => { P("deco", O, "cyl6", 0, 0.03, 0, 2 * r, 0.22, 2 * r, rim); P("glow", O, "cyl6", 0, 0.1, 0, 2 * r * 0.8, 0.06, 2 * r * 0.8, col); P("deco", O, "cyl6", 0, 0.115, 0, 2 * r * 0.5, 0.04, 2 * r * 0.5, kHex(col, 0.1, 0.1));
+    for (let k = 0; k < 3; k++) P("glow", O, "sph", (q() - 0.5) * r, 0.25 + q() * 0.8, (q() - 0.5) * r, 0.07, 0.07, 0.07, kHex(col, 0.25)); };
+  // ---- the Helix spore-harvest camp: white ridge tents marked with the orange ring-and-slash, floodlights, vacuum machines, a power box ----
+  const HELIX = "#f08a2a";
+  const Emblem = (O, x, y, z, rx, ry, s = 1) => { P("deco", O, "ring", x, y, z, 0.7 * s, 1.4, 0.7 * s, HELIX, rx, ry, 0); P("deco", O, "box", x, y, z, 0.9 * s, 0.03, 0.08 * s, HELIX, rx, ry + 0.75, 0); };
+  const HelixTent = (O, q, w = 2.6, d = 2.2, h = 2.1) => { const wh = 0.95; B("lit", O, 0, 0, 0, w - 0.1, wh, d - 0.1, "#e4e8ec"); const L = Math.hypot(d / 2 + 0.15, h - wh), th = Math.atan2(h - wh, d / 2 + 0.15);
+    for (const sd of [-1, 1]) { const yc = wh + (h - wh) / 2, zc = sd * (d / 4 + 0.07); P("fabric", O, "box", 0, yc, zc, w + 0.25, 0.04, L, "#f4f6f8", sd * th, 0, 0); Emblem(O, w * 0.18, yc + Math.cos(th) * 0.04, zc + sd * Math.sin(th) * 0.04, sd * th, 0, 0.8); }
+    for (const sx of [-1, 1]) { P("fabric", O, "pyr", sx * (w / 2 + 0.02), wh + (h - wh) / 2 - 0.02, 0, 0.03, h - wh + 0.05, d + 0.3, "#eef0f2"); C("metal", O, sx * (w / 2 + 0.1), 0, 0, 0.03, h + 0.15, "#8a9298", "cyl6"); }
+    P("deco", O, "box", w / 2 + 0.06, 0.02, 0, 0.02, 0.85, 0.7, "#4a5862"); Beam("metal", O, [-w / 2 - 0.1, h + 0.1, 0], [w / 2 + 0.1, h + 0.1, 0], 0.025, "#8a9298", "cyl6");
+    for (const [sx, sz] of [[-1, -1], [1, -1], [-1, 1], [1, 1]]) Beam("deco", O, [sx * (w / 2 + 0.1), h, 0], [sx * (w / 2 + 0.6), 0.02, sz * (d / 2 + 0.6)], 0.008, "#d8d0b8", "cyl6");
+    P("glow", O, "cyl", w / 2 + 0.05, 1.55, 0, 0.14, 0.05, 0.14, "#fff6d8", 0, 0, Math.PI / 2); };
+  const Floodlight = (O, q, h = 4.2) => { for (let k = 0; k < 3; k++) { const a = (k / 3) * TAU + 0.5; Beam("metal", O, [Math.cos(a) * 0.7, 0, Math.sin(a) * 0.7], [0, 1.0, 0], 0.035, "#5a6268", "cyl6"); }
+    Beam("metal", O, [0, 0, 0], [0, h, 0], 0.055, "#7a8288", "cyl6"); B("metal", O, 0, h - 0.05, 0, 0.12, 0.12, 1.3, "#5a6268");
+    for (const sz of [-0.42, 0.42]) { B("metal", O, 0.05, h - 0.2, sz, 0.36, 0.42, 0.42, "#d8dde2"); P("glow", O, "cyl", 0.24, h + 0.01, sz, 0.34, 0.03, 0.34, "#fffbe8", 0, 0, Math.PI / 2); }
+    B("deco", O, -0.15, 0.25, 0, 0.3, 0.3, 0.3, "#2a2e32"); P("deco", O, "box", -0.15, 0.56, 0, 0.32, 0.04, 0.32, HELIX); };
+  // a boxy vacuum machine; its hose runs to tip (local [x, y, z]) and presses a nozzle to a mushroom cap
+  const VacMachine = (O, q, tip) => { B("metal", O, 0, 0.22, 0, 1.3, 0.95, 0.95, "#dfe3e7"); P("deco", O, "box", 0, 0.78, 0, 1.32, 0.12, 0.97, HELIX); C("metal", O, -0.25, 1.17, 0, 0.33, 0.75, "#c9ced3");
+    P("glow", O, "hemi", -0.25, 1.9, 0, 0.5, 0.25, 0.5, "#b8ffd0"); for (const [x, z] of [[-0.45, -0.5], [0.45, -0.5], [-0.45, 0.5], [0.45, 0.5]]) P("metal", O, "cyl", x, 0.18, z, 0.36, 0.1, 0.36, "#2a2e32", Math.PI / 2, 0, 0);
+    P("glow", O, "box", 0.66, 0.55, -0.2, 0.02, 0.1, 0.1, "#7aff8a"); P("glow", O, "box", 0.66, 0.55, 0.05, 0.02, 0.1, 0.1, "#ff5a3a"); Emblem(O, 0.66, 0.45, 0.3, 0, Math.PI / 2, 0.3);
+    if (tip) { const st = [0.5, 1.05, 0]; Sag("deco", O, st, tip, 0.6, 0.075, "#454b51", 12); for (let k = 0; k < 6; k++) { const t = 0.55 + k * 0.08; P("glow", O, "oct", st[0] + (tip[0] - st[0]) * t + (q() - 0.5) * 0.3, st[1] + (tip[1] - st[1]) * t - 0.2 + (q() - 0.5) * 0.3, st[2] + (tip[2] - st[2]) * t + (q() - 0.5) * 0.3, 0.05, 0.05, 0.05, "#d8ff8a"); }
+      P("metal", O, "cone", tip[0], tip[1] - 0.15, tip[2], 0.5, 0.35, 0.5, "#9aa2a8"); } };
+  const PowerBox = (O) => { B("metal", O, 0, 0, 0, 1.0, 1.4, 0.65, "#8e979e"); B("metal", O, 0, 1.4, 0, 1.1, 0.08, 0.75, "#6a7278"); for (let k = 0; k < 5; k++) P("deco", O, "box", -0.4 + k * 0.2, 0.2, 0.34, 0.1, 0.18, 0.02, k % 2 ? "#1a1a1a" : "#ffd23a", 0, 0, 0.6);
+    P("glow", O, "box", 0.3, 1.1, 0.335, 0.08, 0.08, 0.02, "#7aff8a"); P("glow", O, "box", 0.15, 1.1, 0.335, 0.08, 0.08, 0.02, "#ff5a3a"); B("metal", O, -0.25, 0.75, 0.36, 0.08, 0.35, 0.08, "#2a2e32"); Emblem(O, 0, 0.75, 0.335, Math.PI / 2, 0, 0.4); };
+  return { TinyCaps, Shroom, ShroomCluster, Shelf, ShelfRun, MossMound, LanternPost, PaperLantern, Dragonfly, HexPool, HelixTent, Floodlight, VacMachine, PowerBox, Emblem };
+};

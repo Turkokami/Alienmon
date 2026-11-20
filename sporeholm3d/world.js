@@ -2325,6 +2325,105 @@ if (H && H.show) { // style line-up on a plain mossy green
   gourdHouse(38, 40, 7, 6, { c: "#e0a850" }); shellShop(46.5, 40, 8, 6, { sign: "basket" }); logHall(55.5, 40, 9, 6, { sign: "hook" }); lotusShop(66, 40, 7, 6, { sign: "needle" }); lanternTower(74.5, 40, 7, 6, { sign: "lantern" });
   for (let k = 0; k < 30; k++) glowcaps(36 + R() * 48, 47.5 + R() * 4, 4); for (let k = 0; k < 160; k++) plant(["fern", "pod", "tendril", "shrub", "fan", "helix"][k % 6], 34 + R() * 52, (k % 2 ? 36 : 48) + R() * 4); buildFlora();
   return { object: root, rect: [45, 30], grid: [], unwarp: (x, z) => [x, z], ght: () => 0 }; }
+// ================= SPOREHOLM STORY + DETAIL PASS (Nov 20 2026) =================
+// Book 1 places the map was missing, rebuilt with the shared detail kit (detailkit.js, "SPOREHOLM KIT" block), plus a dressing pass over
+// every scene. Off with H.sporeholm === false. Nothing here calls R(), so the seeded layout of every other scene is untouched.
+const SPON = !(H && H.sporeholm === false);
+// B7 Mushroom Maze: in the book it is a water maze. Its corridors become channels (open water along the mushroom walls, a plank boardwalk
+// down the middle, the "k" tiles), and three maze cells open into the clearing where Helix pitched its spore-harvest camp. The exits west
+// and north stay dry path, and so do the three pedestals. The tiles change before the terrain is made, so B7's own seeded dressing reshuffles.
+const SPB7 = { X: 180, Y: 30, clear: [[11, 10, 14, 14], [15, 11, 23, 14], [20, 15, 23, 18]], ped: [[27.4, 6.2], [7.3, 27.4], [17.8, 17.2]] };
+const spInClear = (lx, lz) => SPB7.clear.some(([a, b, c, d]) => lx >= a && lx < c + 1 && lz >= b && lz < d + 1);
+if (SPON && SCN.B7) { const g0 = SCN.B7.ground; SCN.B7.ground = function () { g0.call(this); const { X, Y } = SPB7;
+  for (const [a, b, c, d] of SPB7.clear) fillT(X + a, Y + b, X + c, Y + d, "P");
+  const ch = []; for (let z = 2; z < 30; z++) for (let x = 2; x < 30; x++) { if (at(X + x, Y + z) !== "p" || SPB7.ped.some(([a, b]) => Math.abs(a - x - 0.5) < 1.6 && Math.abs(b - z - 0.5) < 1.6)) continue;
+    let nx = false; for (let dz = -1; dz <= 1; dz++) for (let dx = -1; dx <= 1; dx++) if (at(X + x + dx, Y + z + dz) === "x") nx = true; ch.push([X + x, Y + z, nx ? "w" : "k"]); }
+  for (const [x, z, c] of ch) GRID[z + GOY][x] = c; }; }
+const spAO = (x, z, y = 0, ry = 0) => ({ abs: true, x, y, z, ry });
+const spGY = (x, z) => { const g = GHT(x, z); return Number.isFinite(g) ? Math.max(g, 0) : 0; };
+// a scene's footprint in world space (the grid bent by the meander) and a tile lookup that stays inside it
+const spRect = (id, m = 3) => { const [X, Y] = SCN[id].rect; let x0 = 1e9, x1 = -1e9, z0 = 1e9, z1 = -1e9; for (const [a, b] of [[X, Y], [X + 30, Y], [X, Y + 30], [X + 30, Y + 30], [X + 15, Y], [X + 15, Y + 30], [X, Y + 15], [X + 30, Y + 15]]) { const [u, v] = unwarp(a, b); x0 = Math.min(x0, u); x1 = Math.max(x1, u); z0 = Math.min(z0, v); z1 = Math.max(z1, v); }
+  const tW = (wx, wz) => { const [a, b] = warpXY(wx, wz); return a >= X && a < X + 30 && b >= Y && b < Y + 30 ? at(Math.floor(a), Math.floor(b)) : "#"; }; return { X, Y, x0: x0 - m, x1: x1 + m, z0: z0 - m, z1: z1 + m, tW }; };
+// where a root child was authored on the grid (exact inverse of the meander that liftAll applied)
+const spAuth = (x, z) => { const [lx, lz] = TER.low(x, z); return [x + lx, z + lz]; };
+// a plank deck over every walkable water tile ("k") of a scene: planks lie across the run of the boardwalk, posts and rope rails where it meets
+// open water, stilts below. Returns the edge cells (deck side, water side) for lanterns and boats.
+const spDeck = (K, R0, top = 0.4, o = {}) => { const { x0, x1, z0, z1, tW } = R0, isK = (x, z) => tW(x, z) === "k" && (!o.skip || !o.skip(x, z)), wd = o.wood || ["#8a6440", "#7a5634", "#94704a", "#6e5034"], ori = new Map();
+  const run = (x, z, dx, dz) => { let n = 0; for (let s = 0.5; s < 7; s += 0.5) { if (!isK(x + dx * s, z + dz * s)) break; n++; } return n; };
+  const oriAt = (x, z) => { const key = Math.floor(x) + "," + Math.floor(z); let v = ori.get(key); if (v === undefined) { const cx = Math.floor(x) + 0.5, cz = Math.floor(z) + 0.5; v = run(cx, cz, 1, 0) + run(cx, cz, -1, 0) >= run(cx, cz, 0, 1) + run(cx, cz, 0, -1) ? 1 : 0; ori.set(key, v); } return v; };
+  let np = 0; for (const along of [1, 0]) { const A0 = along ? x0 : z0, A1 = along ? x1 : z1, B0 = along ? z0 : x0, B1 = along ? z1 : x1;
+    for (let a = A0; a < A1; a += 0.26) { let s = null; for (let b = B0; b <= B1 + 0.1; b += 0.1) { const x = along ? a : b, z = along ? b : a, ok = b <= B1 && isK(x, z) && oriAt(x, z) === along; if (ok && s === null) s = b; if (!ok && s !== null) { if (b - s > 0.25) { const h = K.kH3(a, s, 7), c = K.kHex(wd[Math.floor(h * 4)], (h - 0.5) * 0.08), y = top - 0.04 + (h - 0.5) * 0.025, m = (s + b) / 2;
+            if (along) K.P("wood", null, "box", a, y, m, 0.23, 0.08, b - s + 0.05, c, 0, (h - 0.5) * 0.03, (h - 0.5) * 0.02); else K.P("wood", null, "box", m, y, a, b - s + 0.05, 0.08, 0.23, c, (h - 0.5) * 0.02, (h - 0.5) * 0.03, 0); np++; } s = null; } } } }
+  const edges = []; for (let i = Math.floor(x0); i < x1; i++) for (let j = Math.floor(z0); j < z1; j++) { const cx = i + 0.5, cz = j + 0.5; if (!isK(cx, cz)) continue;
+    for (const [dx, dz] of [[1, 0], [-1, 0], [0, 1], [0, -1]]) { if (tW(cx + dx, cz + dz) !== "w") continue; const ex = cx + dx * 0.45, ez = cz + dz * 0.45, px = -dz, pz = dx; edges.push([ex, ez, dx, dz]);
+      if (o.rail !== false) { if ((i + j) % 2 === 0) { K.C("wood", null, ex, -0.8, ez, 0.065, top + 1.7, K.kHex("#5e4430", (K.kH3(ex, ez, 1) - 0.5) * 0.1), "cyl6"); K.P("deco", null, "cone", ex, top + 0.95, ez, 0.16, 0.06, 0.16, "#3a5a3a"); }
+        K.Sag("deco", null, [ex - px * 0.52, top + 0.82, ez - pz * 0.52], [ex + px * 0.52, top + 0.82, ez + pz * 0.52], 0.04, 0.022, "#c8b080", 2); }
+      else if ((i + j) % 2 === 0) K.C("wood", null, ex, -0.8, ez, 0.07, top + 0.75, "#5e4430", "cyl6"); } }
+  return { edges, planks: np }; };
+// small root-child props (lamps, guide caps, logs) that ended up standing on a boardwalk tile step off onto the open water beside it
+const spOffDeck = (R0, ok = (t) => t === "w") => { const bb = new THREE.Box3(), c = new THREE.Vector3(), sz = new THREE.Vector3(); let n = 0; for (const o of root.children) { if (o.isLight || o.isPoints || o.name === "ground" || o.name === "grass" || o.name === "water" || o.userData.noLift || o.userData.detail) continue;
+    bb.setFromObject(o); if (bb.isEmpty()) continue; bb.getCenter(c); bb.getSize(sz); if (sz.x > 3.5 || sz.z > 3.5 || R0.tW(c.x, c.z) !== "k") continue;
+    let best = null; for (let r = 0.5; r <= 3 && !best; r += 0.5) for (let k = 0; k < 16; k++) { const a = (k / 16) * TAU, x = c.x + Math.cos(a) * r, z = c.z + Math.sin(a) * r; if (ok(R0.tW(x, z)) && ok(R0.tW(x + 0.4, z)) && ok(R0.tW(x - 0.4, z)) && ok(R0.tW(x, z + 0.4)) && ok(R0.tW(x, z - 0.4))) { best = [x, z]; break; } }
+    if (best) { o.position.x += best[0] - c.x; o.position.z += best[1] - c.z; n++; } } return n; };
+const SPCAP = ["#9a5ad0", "#6a6ae0", "#3fb8b0", "#c86ad8", "#7a4ab8", "#4a9ad8"];
+const SPB7BUILD = (K, SK, KC, SKC, st) => { const { X, Y } = SPB7, R0 = spRect("B7"), { tW } = R0, bb = new THREE.Box3(), c = new THREE.Vector3(), sz = new THREE.Vector3();
+  // 1. the clearing: the giant mushrooms (and their moss) that stood in the three opened maze cells go
+  let rm = 0; for (const o of root.children.slice()) { if (o.isLight || o.isPoints || o.name === "ground" || o.name === "grass" || o.name === "water" || o.userData.noLift) continue; bb.setFromObject(o); if (bb.isEmpty()) continue; bb.getCenter(c); bb.getSize(sz); if (sz.x > 14 || sz.z > 14) continue; if (o.position.x > X - 20 && sz.x < 6 && sz.z < 6) c.copy(o.position);
+    const [a, b] = spAuth(c.x, c.z); if (a >= X && a < X + 30 && b >= Y && b < Y + 30 && spInClear(a - X, b - Y)) { root.remove(o); rm++; } }
+  for (const k of Object.keys(FL)) { const l = FL[k]; for (let i = l.length - 1; i >= 0; i--) { const [a, b] = warpXY(l[i][0], l[i][1]); if (a >= X && b >= Y && a < X + 30 && b < Y + 30 && spInClear(a - X, b - Y)) { l.splice(i, 1); rm++; } } }
+  st.b7removed = rm; st.b7moved = spOffDeck(R0);
+  // 2. the boardwalk down the channels
+  const top = 0.4, D = spDeck(K, R0, top); st.b7planks = D.planks;
+  // 3. the water: lily pads with pink buds, reeds and glow caps along the stalk walls, the odd stalk canoe tied up beside the boardwalk
+  for (let i = Math.floor(R0.x0); i < R0.x1; i++) for (let j = Math.floor(R0.z0); j < R0.z1; j++) { const cx = i + 0.5, cz = j + 0.5, t = tW(cx, cz), q = K.kRat(cx, cz, 11); if (t !== "w" && t !== "x") continue;
+    if (t === "w") { if (q() < 0.45) { const s = 0.25 + q() * 0.3, lx = cx + (q() - 0.5) * 0.7, lz = cz + (q() - 0.5) * 0.7; K.P("deco", null, "disc", lx, 0.045, lz, 2 * s, 1, 2 * s, K.kHex("#3cae5a", (q() - 0.5) * 0.12)); if (q() < 0.35) K.P("glow", null, "oct", lx + 0.05, 0.1, lz, 0.12, 0.1, 0.12, "#ff8ad8"); }
+      let nx = 0; for (const [dx, dz] of [[1, 0], [-1, 0], [0, 1], [0, -1]]) if (tW(cx + dx * 0.9, cz + dz * 0.9) === "x") nx++; if (nx && q() < 0.55) K.Tufts(spAO(cx + (q() - 0.5) * 0.5, cz + (q() - 0.5) * 0.5, -0.05), q, 2 + Math.floor(q() * 3), 0, 0.35, 0, ["#4a8a4a", "#5a9a5a", "#3a7a5a"]);
+      if (nx && q() < 0.3) SK.TinyCaps(spAO(cx, cz, 0.02), q, 0.8, ["#7affd8", "#c8f06a", "#d89aff"][Math.floor(q() * 3)]); continue; }
+    // stalk-wall foot next to water: moss cushions and small shroom families
+    let nw = 0; for (const [dx, dz] of [[1, 0], [-1, 0], [0, 1], [0, -1]]) if (tW(cx + dx, cz + dz) === "w") nw++; if (!nw) continue; const gy = spGY(cx, cz);
+    if (q() < 0.5) SK.MossMound(spAO(cx, cz, gy - 0.05), q, 0, 0, 0.5 + q() * 0.4, ["#3e6a3a", "#4a7a3a", "#36603e"][Math.floor(q() * 3)], q() < 0.5 ? "#9affd8" : "#e8ff9a");
+    if (q() < 0.3) SK.ShroomCluster(spAO(cx, cz, gy), q, 0.6 + q() * 1.2, ["#e8e0f0", "#c8a0e8", "#a0e0d8"], { n: 2 + Math.floor(q() * 3), bin: "deco" }); }
+  // 4. the roof: pale giant stalks rising from the walls and leaning out over the channels, their wide caps closing over the water
+  const pick = new Map(); for (let i = Math.floor(R0.x0); i < R0.x1; i++) for (let j = Math.floor(R0.z0); j < R0.z1; j++) { const cx = i + 0.5, cz = j + 0.5; if (tW(cx, cz) !== "x") continue; let vx = 0, vz = 0, n = 0;
+      for (let k = 0; k < 8; k++) { const a = (k / 8) * TAU, t = tW(cx + Math.cos(a) * 1.6, cz + Math.sin(a) * 1.6); if (t === "w" || t === "k") { vx += Math.cos(a); vz += Math.sin(a); n++; } } if (!n || n > 5) continue;
+      const key = Math.floor(cx / 3.4) + "," + Math.floor(cz / 3.4), h = K.kH3(cx, cz, 3), b = pick.get(key); if (!b || h < b[0]) pick.set(key, [h, cx, cz, Math.atan2(vz, vx)]); }
+  let nroof = 0; for (const [h, cx, cz, la] of pick.values()) { if (h > 0.8) continue; const q = K.kRat(cx, cz, 13), Hh = 6.2 + q() * 4, cap = SPCAP[Math.floor(q() * SPCAP.length)];
+    SK.Shroom(spAO(cx, cz, spGY(cx, cz)), q, Hh, { shape: q() < 0.75 ? "parasol" : "dome", r: 1.9 + q() * 1.3, la, lean: 0.17 + q() * 0.08, stem: K.kHex("#ece6f2", (q() - 0.5) * 0.06), cap, gill: K.kHex(cap, 0.3, 0.1), capBin: "deco", tend: 4 + Math.floor(q() * 4) }); nroof++; }
+  st.b7roof = nroof;
+  // 5. firefly-jar lamps on the open-water side of the boardwalk, one every few metres
+  const lamp = new Map(); for (const [ex, ez, dx, dz] of D.edges) { const key = Math.floor(ex / 6) + "," + Math.floor(ez / 6), h = K.kH3(ex, ez, 5), b = lamp.get(key); if (!b || h < b[0]) lamp.set(key, [h, ex, ez, dx, dz]); }
+  for (const [, ex, ez, dx, dz] of lamp.values()) { const lx = ex + dx * 0.35, lz = ez + dz * 0.35; SK.LanternPost(spAO(lx, lz, 0), K.kRat(lx, lz, 6), 0, 0, 2.3, "#ffe89a", Math.atan2(dz, -dx)); }
+  // stalk canoes tied up along the boardwalk
+  let nb = 0; for (const [ex, ez, dx, dz] of D.edges) { if (nb >= 6 || K.kH3(ex, ez, 9) > 0.06) continue; const bx = ex + dx * 0.55, bz = ez + dz * 0.55; if (tW(bx, bz) !== "w") continue; nb++; const O = spAO(bx, bz, 0.02, Math.atan2(dx, dz));
+    K.P("wood", O, "hemi", 0, 0.24, 0, 0.7, 0.3, 2.6, "#d8cfc0", Math.PI, 0, 0); K.P("deco", O, "box", 0, 0.2, 0, 0.62, 0.05, 2.4, "#a89a88"); K.B("wood", O, 0, 0.2, 0.3, 0.6, 0.05, 0.18, "#7a5634"); K.Beam("wood", O, [0.25, 0.25, -0.6], [-0.1, 0.32, 0.8], 0.025, "#8a6440", "cyl6"); K.P("wood", O, "box", -0.13, 0.33, 0.95, 0.12, 0.02, 0.3, "#8a6440", 0, 0, 0.3); K.Sag("deco", O, [0, 0.3, -1.2], [-0.5 * Math.sign(dx + dz || 1), 0.55, -1.25], 0.05, 0.015, "#c8b080", 3); }
+  st.b7boats = nb;
+  // 6. the Helix spore-harvest camp in the clearing (its own batches, tagged so the game can hide it before act 4)
+  const L = (x, z, ry = 0) => ({ x: X + x, z: Y + z, ry }), q = K.kRat(X, Y, 21);
+  for (const [x, z] of [[13.5, 12.5], [17, 12.8], [21, 13], [21.8, 15.8], [16, 14]]) K.Litter(L(x, z), K.kRat(x, z, 23), 14, 0.2, 1.8, ["#8a7a5a", "#6a5a42", "#9a9a80"]); // trampled moss and dropped bits
+  SKC.HelixTent(L(12.0, 11.1, 0), q, 2.3, 1.9, 2.0); SKC.HelixTent(L(21.9, 17.5, 0), q, 2.4, 1.9, 2.1);
+  // crates and drums
+  for (const [x, z, s] of [[11.5, 14.3, 0.8], [12.35, 14.4, 0.7], [11.9, 14.35, 0.6], [23.3, 13.9, 0.75]]) { const y = s === 0.6 ? 0.8 : 0; KC.B("metal", L(x, z, q() * 0.4), 0, y, 0, s, s * 0.8, s, "#c8ccd0"); KC.P("deco", L(x, z, 0), "box", 0, y + s * 0.4, 0, s + 0.02, 0.08, s + 0.02, "#f08a2a"); }
+  for (const [x, z] of [[20.4, 18.3], [20.9, 18.5], [23.4, 15.9]]) KC.C("metal", L(x, z), 0, 0, 0, 0.28, 0.85, "#4a5862");
+  // the camp gate: two posts and a banner with the ring-and-slash over the way in from the boardwalk
+  for (const x of [14.6, 19.7]) KC.C("metal", L(x, 14.75), 0, 0, 0, 0.07, 3.1, "#8a9298", "cyl6"); KC.Beam("metal", L(17.15, 14.75), [-2.55, 3.0, 0], [2.55, 3.0, 0], 0.04, "#8a9298", "cyl6");
+  KC.P("fabric", L(17.15, 14.75), "box", 0, 2.55, 0, 2.6, 0.8, 0.03, "#f4f6f8"); SKC.Emblem(L(17.15, 14.72), 0, 2.55, -0.03, Math.PI / 2, 0, 0.55); SKC.Emblem(L(17.15, 14.78), 0, 2.55, 0.03, Math.PI / 2, 0, 0.55);
+  SKC.Floodlight(L(20.6, 15.6, 0.6), q, 4.4); SKC.Floodlight(L(11.3, 10.4, 2.4), q, 4.0);
+  // vacuum machines with their hoses pressed to the caps of the walls around the clearing; those caps are turning grey
+  const near = (x, z) => { let best = null, bd = 9; root.updateMatrixWorld(true); for (const o of root.children) { if (!o.isGroup || o.userData.noLift) continue; bb.setFromObject(o); if (bb.isEmpty()) continue; bb.getSize(sz); if (sz.y < 3.5 || sz.x > 5) continue; bb.getCenter(c); const d = Math.hypot(c.x - x, c.z - z); if (d < bd) { bd = d; best = [o, c.x, bb.max.y, c.z]; } } return best; };
+  const grey = new THREE.Color("#8e8a90"), greyed = new Set();
+  for (const [x, z, tx, tz] of [[16.0, 11.4, 16.4, 10.4], [23.0, 12.2, 24.3, 12.6], [12.9, 13.0, 10.6, 13.0], [21.0, 15.6, 20.6, 19.5]]) { const [ux, uz] = unwarp(X + x, Y + z), [vx, vz] = unwarp(X + tx, Y + tz), t = near(vx, vz); if (!t) continue; const gy = spGY(ux, uz), O = spAO(ux, uz, gy);
+    SKC.VacMachine(O, q, [t[1] - ux, t[2] - gy - 0.15, t[3] - uz]); if (!greyed.has(t[0])) { greyed.add(t[0]); t[0].traverse((m) => { if (!m.isMesh || !m.material || !m.material.color) return; m.material = m.material.clone(); m.material.color.lerp(grey, 0.6); if (m.material.emissive) m.material.emissiveIntensity *= 0.35; }); } }
+  // cables from the machines and lights to the power box out on the east boardwalk
+  const pb = [25.2, 17.4]; for (const [x, z] of [[16.4, 11.6], [23.0, 12.6], [13.2, 13.2], [20.9, 15.9], [12.6, 11.1], [21.9, 16.4]]) { const [ux, uz] = unwarp(X + x, Y + z), [px, pz] = unwarp(X + pb[0], Y + pb[1]), n = Math.max(3, Math.round(Math.hypot(px - ux, pz - uz) / 1.2)); let p0 = [ux, spGY(ux, uz) + 0.04, uz];
+    for (let k = 1; k <= n; k++) { const t = k / n, wx = ux + (px - ux) * t + Math.sin(t * 9 + x) * 0.25, wz = uz + (pz - uz) * t + Math.cos(t * 7 + z) * 0.25, tt = tW(wx, wz), p1 = [wx, tt === "k" ? top + 0.02 : tt === "w" ? 0.05 : spGY(wx, wz) + 0.04, wz]; KC.Beam("deco", null, p0, p1, 0.03, "#2a2e32", "cyl6"); p0 = p1; } }
+  // grey, drained caps around the camp
+  for (const [x, z] of [[10.6, 10.8], [10.7, 14.2], [24.3, 10.9], [24.4, 18.6], [19.2, 19.4], [15.5, 10.5]]) { const [ux, uz] = unwarp(X + x, Y + z), q2 = K.kRat(ux, uz, 17); SKC.ShroomCluster(spAO(ux, uz, spGY(ux, uz)), q2, 1.4 + q2() * 1.2, ["#9a9496", "#8a8488", "#a8a0a4"], { n: 2 + Math.floor(q2() * 2), stem: "#c8c4c0", bin: "deco", gill: "#4a4a4a" }); }
+  for (const [x, z, cc, I] of [[17, 12.6, "#fff2d0", 8], [21.8, 16.3, "#e8fff0", 5]]) { const [ux, uz] = unwarp(X + x, Y + z), L2 = new THREE.PointLight(cc, I, 12, 1.6); L2.position.set(ux, spGY(ux, uz) + 3.8, uz); L2.userData.helixCamp = true; root.add(L2); }
+};
+const SPS = { B7: SPB7BUILD };
+const spPass = (ids) => { if (!ASSETS.detailKit || !ASSETS.detailKit.sporeholm) return null; const env = { add, std, unwarp, GHT }, K = ASSETS.detailKit(THREE, env, { chunk: 60 }), SK = ASSETS.detailKit.sporeholm(K), KC = ASSETS.detailKit(THREE, env, { chunk: 60 }), SKC = ASSETS.detailKit.sporeholm(KC), st = { scenes: {} };
+  for (const id of ids) { const f = SPS[id]; if (!f) continue; const n0 = K.count(), c0 = KC.count(); f(K, SK, KC, SKC, st); st.scenes[id] = K.count() - n0 + KC.count() - c0; }
+  st.kit = K.flush(root).length; const camp = KC.flush(root); for (const m of camp) m.userData.helixCamp = true; st.camp = camp.length; return st; };
 const PROF = { t0: performance.now() }; const want = (H && H.scene) || "B3", near = (H && H.near) || [];
 for (const id of Object.keys(SCN)) SCN[id].ground();
 PROF.grids = performance.now(); if (!(H && H.place)) terrainInit(); PROF.ter = performance.now(); mk(); PROF.mk = performance.now(); if (H && H.place) return placeWorld(H.place);
@@ -2376,6 +2475,7 @@ if (H && H.all && H.outer !== false) { // the wild beyond the built scenes: roll
   const bb = new THREE.Box3(), zone = new THREE.Box3(), sz = new THREE.Vector3(); for (const w of WALKINS) { const p = { x: w.G.position.x + w.ox, y: w.G.position.y, z: w.G.position.z + w.oz }; for (const [x0, x1, z0, z1] of [[p.x - w.dw / 2 - 0.45, p.x + w.dw / 2 + 0.45, Math.min(p.z + w.d * w.r * 0.5, p.z + w.d * (w.r + 2.4)), Math.max(p.z + w.d * w.r * 0.5, p.z + w.d * (w.r + 2.4))], ...(w.back ? [[p.x - w.dw / 2 - 0.45, p.x + w.dw / 2 + 0.45, p.z - w.r - 2.4, p.z - w.r * 0.5]] : []), [p.x - w.rx * 0.6, p.x + w.rx * 0.6, p.z - w.rz * 0.6, p.z + w.rz * 0.6]]) { zone.min.set(x0, p.y - 0.3, z0); zone.max.set(x1, p.y + 2.0, z1); for (const o of root.children.slice()) { if (o === w.G || o.isLight || o.name === "ground" || o.name === "grass" || o.name === "water" || WALKINS.some((q) => q.G === o)) continue; bb.setFromObject(o); if (bb.isEmpty() || !bb.intersectsBox(zone)) continue; bb.getSize(sz); if (Math.max(sz.x, sz.z) < 6) root.remove(o); } } } } }
 if (TGP.length) { // the tall grass owns its patch: other ground flora steps aside so the encounter grass reads clearly
   const inP = (x, z) => TGP.some((q) => ((x - q.x) / (q.rx * 0.95)) ** 2 + ((z - q.z) / (q.rz * 0.95)) ** 2 < 1), strip = (arr) => { for (let i = arr.length - 1; i >= 0; i--) if (inP(arr[i][0], arr[i][1])) arr.splice(i, 1); }; for (const a2 of [MG, FLW, GG]) strip(a2); for (const k of Object.keys(FL)) strip(FL[k]); }
+const SPPASS = H && H.all && SPON ? spPass(ids) : null; if (SPPASS && H.verbose) console.log("sporeholm pass", JSON.stringify(SPPASS));
 PROF.pre = performance.now(); buildAll(); if (H && H.all && H.flora !== false) buildFlora(); PROF.end = performance.now();
 if (WALKINS.length) { // last net: no instanced blade, crop or plant may stand in a room or on a doorstep
   const m4 = new THREE.Matrix4(), v = new THREE.Vector3(), z0 = new THREE.Matrix4().makeScale(0, 0, 0), hit = (x, z) => WALKINS.some((w) => { const px = w.G.position.x + w.ox, pz = w.G.position.z + w.oz; return ((x - px) / (w.rx + 0.75)) ** 2 + ((z - pz) / (w.rz + 0.75)) ** 2 < 1 || (Math.abs(x - px) < w.dw / 2 + 0.6 && Math.abs(z - pz) < w.r + 2.4 && ((z - pz) * w.d > 0 || w.back)); });
