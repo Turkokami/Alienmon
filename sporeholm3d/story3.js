@@ -301,6 +301,8 @@
       if (CS.on || e.busy()) return null;
       let best = null, bd = r;
       for (const id in ACT) { const a = ACT[id]; if (!a.G || !a.G.visible || a.comp || !(a.talk || a.trainer)) continue; const d = Math.hypot(a.x - P.position.x, a.z - P.position.z); if (d < bd) { bd = d; best = a; } }
+      // a door that is closer than the person wins, so nobody standing by a door can block it
+      if (best) { let pt = null; try { pt = window.GAME && window.GAME.portalNear && window.GAME.portalNear(); } catch (x) {} if (pt && pt._d < bd) return null; }
       return best;
     };
 
@@ -354,7 +356,7 @@
         } else { objArrow.style.opacity = "0"; objDist.textContent = ""; }
       }
       poll -= dt;
-      if (poll <= 0) { poll = 0.25; if (!CS.on && !fighting && !e.busy() && !(e.menu && e.menu()) && endCard.style.display !== "flex" && H && H.tick) { try { H.tick(); } catch (x) { console.error("story3 tick", x); } } }
+      if (poll <= 0) { poll = 0.25; if (!CS.on && !fighting && !e.busy() && !(e.menu && e.menu()) && endCard.style.display !== "flex" && H && H.tick) { try { H.tick(); } catch (x) { console.error("story3 tick " + (x && x.stack || x)); } } }
     };
     const talk = () => {
       if (CS.on) { advance(); return true; }
@@ -413,7 +415,7 @@
     e.KEYITEMS && !e.KEYITEMS.some((k) => k.sid === "free3") && e.KEYITEMS.push({ k: "key", sid: "free3", n: "Free roam (playtest)", d: "Opens every path, ignoring the story gates.", fn: () => ((ST.free = !ST.free), save(), ST.free ? "Free roam is ON: every path is open." : "Free roam is OFF: the story gates are back.") });
     if (H && H.start) setTimeout(() => { try { H.start(); } catch (x) { console.error("story3 start", x); } }, 600);
 
-    window.STORY = { ST, ACT, play, titleCard, blocked, talk, refreshOpen: () => {}, objective, zib, set: (step) => { ST.step = step; save(); H && H.resume && H.resume(); }, get CS() { return CS; }, get objPos() { return objPos(); }, advance, X, nearest };
+    window.STORY = { ST, ACT, play, titleCard, blocked, talk, refreshOpen: () => {}, objective, zib, set: (step) => { ST.step = step; save(); H && H.resume && H.resume(); }, get CS() { return CS; }, get objPos() { return objPos(); }, advance, X, nearest, at, H: () => H };
     return { ST, update, blocked, talk, hint, key, busy: () => CS.on };
   };
 })();
@@ -425,8 +427,12 @@
   "use strict";
   window.STORY3_WORLDS.thalassa = function (X) {
     const { s, e, K, V, ST, at, actor, ACT, play, pause, objective, fade, blackout, place, mesh, mat } = X;
-    const F = ST.flags, P = s.P;
+    const F = ST.flags, P = s.P; const inSc = (k) => !!s.CH[k] || s.sceneAt(P.position.x, P.position.z) === k;
     const R = "Rook", KT = "Kit", Z = "Zib", M = "Captain Marsh", VX = "Admin Vex", PE = "Pell", SN = "Strand", LK = "Linker";
+    // stand-in models until these have their own: Bubbub = Lilypod, the shed seahorse = Bogeel, the shed crab = Magnub
+    X.species("Bubbub", { t: ["Hydro"], s: [70, 50, 64, 60, 66, 52], m: "n4_lilypod", h: 0.7 });
+    X.species("Sea horse", { t: ["Hydro"], s: [60, 52, 58, 64, 60, 70], m: "n4_bogeel", h: 1.0 });
+    X.species("Shell crab", { t: ["Hydro"], s: [58, 70, 80, 40, 52, 46], m: "lo_magnub", h: 0.45 });
     X.species("Hexcoil", { t: ["Toxin"], s: [78, 88, 72, 84, 70, 86], m: "n4_sludgeviper", h: 1.6 });
     X.species("Brineback", { t: ["Hydro"], s: [112, 82, 108, 78, 96, 40], m: "n4_mossback", h: 1.3 });
     X.species("Mycelith", { t: ["Bio"], s: [86, 72, 92, 70, 92, 46], m: "lo_mycora", h: 1.1 });
@@ -516,7 +522,7 @@
     X.companion("cSpor", { name: "Sporix", mon: "Sporix", h: 0.42, nobub: true }, () => !F.myc && !F.sporOut);
     X.companion("cMyc", { name: "Mycelith", mon: "Mycelith", h: 1.1, nobub: true }, () => !!F.myc && !F.mycOut);
     const visStep = (...k) => () => k.includes(ST.step);
-    actor("marsh", { name: M, model: "r2_ranger", h: 1.86, scene: "*", pkey: () => (F.jobGull || 0) + (F.hold ? "h" : ""), pos: () => marshPos(), show: () => !!marshPos(true), talk: () => marshTalk(), mark: () => is("dinner", "orders", "sunset", "keeper") });
+    actor("marsh", { name: M, model: "n2_ferry", h: 1.78, scene: "*", pkey: () => (F.jobGull || 0) + (F.hold ? "h" : ""), pos: () => marshPos(), show: () => !!marshPos(true), talk: () => marshTalk(), mark: () => is("dinner", "orders", "sunset", "keeper") });
     const marshPos = (q) => {
       const k = ST.step;
       if (k === "arrive") return q ? 1 : at("TA", 14.8, 14.6);
@@ -535,7 +541,7 @@
     actor("baby", { name: "", mon: "Chirpod", h: 0.42, scene: "*", pos: () => X.setPos("hold", 0, -1.2), set: "hold", show: () => !!X.curSet && X.curSet.id === "hold" && !F.chirp, noface: true });
     // the tower attack
     const vexOn = () => is("vex");
-    actor("vex", { name: VX, model: "n2_inspector", h: 1.8, scene: "TD", pos: () => at("TD", 15, 15.4), show: vexOn });
+    actor("vex", { name: VX, model: "n2_librarian", h: 1.78, scene: "TD", pos: () => at("TD", 15, 15.4), show: vexOn });
     actor("pell", { name: PE, model: "n2_story_pell", h: 1.82, scene: "TD", pos: () => at("TD", 12.2, 15.0), show: vexOn });
     actor("strand", { name: SN, model: "n2_story_strand", h: 1.62, scene: "TD", pos: () => at("TD", 18.0, 15.6), show: vexOn });
     actor("crateV", { build: () => crate(), scene: "TD", pos: () => at("TD", 18.9, 14.7, false), show: vexOn });
@@ -553,15 +559,15 @@
     actor("pd1", { name: "", mon: "Skitterdrone", h: 0.9, scene: "TA", noface: true, pos: () => at("TA", 4.6, 17.6), show: () => is("round") && !F.jobPier });
     actor("lhDoor", { name: "Lighthouse door", build: () => { const G = new K.G(); mesh(new K.Box(1.2, 2.1, 0.12), mat("#5a3c26", 0.02), 0, 1.05, 0, G); mesh(new K.Sph(0.05, 8, 6), mat("#d8b04a", 0.4, { metalness: 0.8 }), 0.4, 1.0, 0.08, G); return G; }, scene: "TE", pos: () => at("TE", 16, 17.6), show: () => is("round") && F.jobGull !== 2, talk: () => jobGull(), verb: "Knock on the lighthouse door", mark: () => true });
     actor("gg1", { name: "Helix grunt", model: "n2_story_grunt", h: 1.7, scene: "TE", pos: () => at("TE", 14.6, 19.2), show: () => F.jobGull === 1.5 });
-    actor("mina", { name: "Mina", model: "r2_kid", h: 1.25, scene: "TC", pos: () => at("TC", 5.2, 8.2), show: () => is("round") && !F.jobWall, talk: () => jobWall(), mark: () => true });
-    actor("splodge", { name: "Splodge", build: bubbub, scene: "TC", pos: () => at("TC", 6.4, 8.6), show: () => is("round") && !F.jobWall });
+    actor("mina", { name: "Mina", model: "n2_pupil", h: 1.3, scene: "TC", pos: () => at("TC", 5.2, 8.2), show: () => is("round") && !F.jobWall, talk: () => jobWall(), mark: () => true });
+    actor("splodge", { name: "Splodge", mon: "Bubbub", scene: "TC", pos: () => at("TC", 6.4, 8.6), show: () => is("round") && !F.jobWall });
     actor("wg1", { name: "Helix grunt", model: "n2_story_grunt", h: 1.74, scene: "TC", pos: () => at("TC", 4.6, 5.6), show: () => is("round") && !F.jobWall });
     actor("wg2", { name: "Helix grunt", model: "n2_story_grunt", h: 1.7, scene: "TC", pos: () => at("TC", 5.8, 5.2), show: () => is("round") && !F.jobWall });
     actor("young", { name: "Young grunt", model: "n2_story_grunt", h: 1.62, scene: "TI", pos: () => at("TI", 6.4, 13.4), show: () => is("round") && !F.jobBeach, talk: () => jobBeach(), mark: () => true });
     actor("pip", { name: "Pip", mon: "Skitterdrone", h: 0.9, scale: 0.7, scene: "TI", pos: () => at("TI", 7.2, 13.9), show: () => is("round") && !F.jobBeach });
     actor("shedDoor", { name: "Old boat shed", build: () => { const G = new K.G(); mesh(new K.Box(0.18, 0.24, 0.08), mat("#8a8a90", 0.05, { metalness: 0.9 }), 0, 1.1, 0, G); mesh(new K.Tor(0.07, 0.02, 6, 12, 3.2), mat("#8a8a90", 0.05, { metalness: 0.9 }), 0, 1.25, 0, G); return G; }, scene: "TC", pos: () => at("TC", 17, 23.4), show: () => is("round") && !F.jobShed, talk: () => jobShed(), verb: "Listen at the shed door", mark: () => true });
-    actor("tied1", { name: "", build: seahorse, scene: "*", pos: () => X.setPos("shed", -0.5, -1.2), set: "shed", show: () => !!X.curSet && X.curSet.id === "shed" });
-    actor("tied2", { name: "", build: crab, scene: "*", pos: () => X.setPos("shed", 0.6, -1.1), set: "shed", show: () => !!X.curSet && X.curSet.id === "shed" });
+    actor("tied1", { name: "", mon: "Sea horse", scene: "*", pos: () => X.setPos("shed", -0.5, -1.2), set: "shed", show: () => !!X.curSet && X.curSet.id === "shed" });
+    actor("tied2", { name: "", mon: "Shell crab", scene: "*", pos: () => X.setPos("shed", 0.6, -1.1), set: "shed", show: () => !!X.curSet && X.curSet.id === "shed" });
     actor("netm1", { name: "Fisherman", model: "r2_fisher", h: 1.66, scene: "TA", pos: () => at("TA", 3.4, 8.6), show: () => is("round"), talk: () => jobNets(), mark: () => !F.jobNets, verb: (a) => (F.jobNets ? "Talk to the fisherman" : "Help mend the nets") });
     actor("netm2", { name: "Fisherman", model: "r2_fisher", h: 1.6, scene: "TA", pos: () => at("TA", 1.6, 9.0), show: () => is("round") });
 
@@ -896,7 +902,7 @@
     };
 
     /* ---------- the poll: walk-up triggers ---------- */
-    const near = (sc, x, z, r) => X.dist(at(sc, x, z, false)) < r && !!s.CH[sc];
+    const near = (sc, x, z, r) => X.dist(at(sc, x, z, false)) < r && inSc(sc);
     const tick = () => {
       const k = ST.step;
       if (k === "pier" && near("TA", 14.5, 13.5, 4.5)) return ghostArrives();
@@ -952,8 +958,10 @@
   "use strict";
   window.STORY3_WORLDS.neonis = function (X) {
     const { s, e, K, V, ST, at, actor, ACT, play, pause, objective, blackout, mesh, mat, inPlace } = X;
-    const F = ST.flags, P = s.P;
+    const F = ST.flags, P = s.P; const inSc = (k) => !!s.CH[k] || s.sceneAt(P.position.x, P.position.z) === k;
     const R = "Rook", KT = "Kit", Z = "Zib", VA = "Dr. Vashti", SN = "Strand", ST_ = "DJ Static", LK = "Linker";
+    // stand-in model until it has its own: the Squawkbox flying radio = Cogglet
+    X.species("Squawkbox", { t: ["Sonic"], s: [50, 40, 50, 70, 60, 90], m: "lo_cogglet", h: 0.45 });
     X.species("Glitchbug", { t: ["Volt", "Swarm"], s: [48, 60, 46, 72, 50, 98], m: "lo_tiktrill", h: 0.4, st: 1 });
     X.species("Boombastadon", { t: ["Sonic"], s: [125, 96, 112, 72, 86, 34], m: "lo_gongorr", h: 1.3, st: 2 });
     X.species("Mycelith", { t: ["Bio"], s: [86, 72, 92, 70, 92, 46], m: "lo_mycora", h: 1.1, st: 2 });
@@ -1010,9 +1018,9 @@
     BUGS.forEach(([x, z], i) => actor("gb" + i, { name: "", mon: "Glitchbug", h: 0.4, fly: 0.7 + (i % 3) * 0.4, scene: "*", noface: true, pos: () => (F["g" + i] ? P.position.clone() : at("N4", x, z)), show: () => (is("bugs", "gather") || (is("garden") && !F.released)) && (i === 0 || !!F["g" + i] || is("bugs", "gather")), pkey: () => (F["g" + i] ? 1 : 0), tick: (a, dt) => { if (a.G && a.G.visible && !X.followers.includes(a.id)) { a.G.position.y = a.base.y + Math.sin(X.T * 6 + i) * 0.12; a.G.rotation.y += dt * 2; } } }));
     actor("lumiN", { name: "Lumislug", mon: "Lumislug", h: 0.4, scene: "*", noface: true, pkey: () => (F.lumi ? 1 : 0), pos: () => P.position.clone(), show: () => is("gather", "garden") && !F.released, onSpawn: (a) => { const l = new K.PL("#a8ff60", 2.2, 9, 2); l.position.y = 0.5; a.G.add(l); } });
     actor("strand", { name: SN, model: "n2_story_strand", h: 1.62, scene: "*", noface: false, pkey: () => (F.strandOn ? 1 : 0), pos: () => P.position.clone().add(new V(-3.2, 0, -2.2)), show: () => !!F.strandOn });
-    actor("engineer", { name: "Old engineer", model: "n2_technician", h: 1.7, scene: "N3", pos: () => at("N3", 12.6, 12.4), show: () => is("garden") });
-    actor("squawk", { name: "Squawkbox", build: squawk, scene: "*", fly: 1.2, noface: false, pkey: () => (F.sqOn ? 1 : 0) + pl(), pos: () => P.position.clone().add(new V(0, 0, 1.6)), show: () => is("follow") || (is("squawk") && !!F.sqOn) || (is("dishes") && pl() === "staticRoof") });
-    actor("static", { name: ST_, model: "n2_musician", h: 1.72, scene: "*", pos: () => (pl() === "voltCrown" ? at("voltCrown", 12, 10.5) : at("staticRoof", 6.5, 5.4)), show: () => (pl() === "staticRoof" && is("follow", "dishes", "spire")) || (pl() === "voltCrown" && is("crown", "done")), pkey: pl, talk: () => staticTalk(), mark: () => is("crown") || (is("follow") && pl() === "staticRoof") });
+    actor("engineer", { name: "Old engineer", model: "n2_toymaker", h: 1.68, scene: "N3", pos: () => at("N3", 12.6, 12.4), show: () => is("garden") });
+    actor("squawk", { name: "Squawkbox", mon: "Squawkbox", scene: "*", fly: 1.2, noface: false, pkey: () => (F.sqOn ? 1 : 0) + pl(), pos: () => P.position.clone().add(new V(0, 0, 1.6)), show: () => is("follow") || (is("squawk") && !!F.sqOn) || (is("dishes") && pl() === "staticRoof") });
+    actor("static", { name: ST_, model: "n2_cartographer", h: 1.76, scene: "*", pos: () => (pl() === "voltCrown" ? at("voltCrown", 12, 10.5) : at("staticRoof", 6.5, 5.4)), show: () => (pl() === "staticRoof" && is("follow", "dishes", "spire")) || (pl() === "voltCrown" && is("crown", "done")), pkey: pl, talk: () => staticTalk(), mark: () => is("crown") || (is("follow") && pl() === "staticRoof") });
     actor("boom", { name: "Boombastadon", mon: "Boombastadon", h: 2.6, scale: 2.2, scene: "voltCrown", noface: false, pkey: () => (F.boomOut ? 1 : 0), pos: () => at("voltCrown", 12, 7.6), show: () => is("crown", "done") && !!F.boomOut });
     const DISH = [["staticRoof", 21.8, 5.0, "the dish by the water tank"], ["staticRoof", 27.8, 17.2, "the dish on the far roof"], ["staticRoof", 36.8, 16.0, "the tall antenna"], ["staticRoof", 38, 9, "the biggest dish, pointing at the Voltspire"]];
     DISH.forEach(([sc, x, z, nm], i) => actor("dish" + i, { name: "Broken dish", build: fixPoint, scene: sc, pos: () => at(sc, x, z), show: () => is("dishes") && !F["d" + i], talk: () => fixDish(i), verb: () => (i === (F.dn || 0) ? "Fix " + nm : "Fix " + nm), mark: () => i === (F.dn || 0), tick: (a, dt) => { if (a.G && a.G.visible) a.G.children.forEach((c, k) => { c.position.y = 0.8 + ((X.T * 1.5 + k * 0.25) % 1.2); }); } }));
@@ -1035,7 +1043,7 @@
       if (k === "dusk") return labGoal("It's getting dark. Go back to Dr. Vashti's lab (Hologram Park)");
       if (k === "squawk") return p === "neonLab" || p === "vashtiLobby" ? objective("Go out into the city. Dr. Vashti says Static will find you", () => (p === "neonLab" ? at("neonLab", 11.5, 17.6) : at("vashtiLobby", 8.5, 12.4))) : objective("");
       if (k === "follow") { if (p === "studioStairs") return objective("Climb to the rooftop studio", () => at("studioStairs", 11, 6.8)); if (p === "staticRoof") return objective("Meet DJ Static at the deck", () => at("staticRoof", 6.5, 6.2)); return objective("Follow the Squawkbox to Quiet Court (the Recording Studio)", () => at("NQ", 5.44, 9.6)); }
-      if (k === "dishes") { const i = F.dn || 0; if (p !== "staticRoof") return objective("Go back up to DJ Static's rooftops (Quiet Court)", () => at("NQ", 5.44, 9.6)); return objective("Fix the broken dishes (" + i + " of " + DISH.length + "): " + DISH[i][3], () => at(DISH[i][0], DISH[i][1], DISH[i][2])); }
+      if (k === "dishes") { const i = F.dn || 0; if (i >= DISH.length) return objective(""); if (p !== "staticRoof") return objective("Go back up to DJ Static's rooftops (Quiet Court)", () => at("NQ", 5.44, 9.6)); return objective("Fix the broken dishes (" + i + " of " + DISH.length + "): " + DISH[i][3], () => at(DISH[i][0], DISH[i][1], DISH[i][2])); }
       if (k === "spire") { if (p === "voltHall") return objective("Ride up to the crown of the Voltspire", () => at("voltHall", 16, 3.6)); return objective("Go to the Voltspire for Battle Night (Voltspire Plaza)", () => at("NV", 18, 16.6)); }
       if (k === "crown") return objective("Battle Keeper DJ Static", () => at("voltCrown", 12, 12.6));
       objective("");
@@ -1273,7 +1281,7 @@
         "Zib floats down off Rook's cap, down to the four Shards, and his eye begins to glow. Brighter than it ever has before. A beam shoots straight up into the night sky over the Voltspire.",
         { cam: at("voltCrown", 12, 3.6, false).add(new V(0, 22, 4)) },
         "And there, enormous, floating over the heads of all those thousands of people, is the Kessler system. The sun in the middle. Fourteen worlds around it.",
-        () => { let k = 0; vision.children.filter((c) => c.name === "tower").forEach((t, i) => setTimeout(() => (t.visible = true), 300 * i)); setTimeout(() => vision.children.filter((c) => c.name === "line").forEach((l) => (l.visible = true)), 2700); },
+        () => { const v = vision; if (!v) return; v.children.filter((c) => c.name === "tower").forEach((t, i) => setTimeout(() => (t.visible = true), 300 * i)); setTimeout(() => v.children.filter((c) => c.name === "line").forEach((l) => (l.visible = true)), 2700); },
         "On eight of those worlds, towers light up one by one. Ferrox. Sporeholm. Thalassa, faint and flickering. Neonis, blazing yellow. And four more. Then lines of light shoot out between them, and from every tower to the sun.",
         "A circle. With eight points around it. All joined together. It is the drawing on Kit's arm. And it looks exactly like a lock. The kind with a dial, that you spin around and around until it clicks.",
         { cam: "cKit" },
@@ -1296,12 +1304,12 @@
       const k = ST.step, p = pl();
       if (p !== lastPl) { lastPl = p; goal(); }
       if (vision) { vision.scale.lerp(new V(1, 1, 1), 0.2); vision.rotation.z += 0.004; }
-      if (k === "bugs" && s.CH.N4 && X.dist(at("N4", 16, 18, false)) < 8) return bugsScene();
+      if (k === "bugs" && inSc("N4") && X.dist(at("N4", 16, 18, false)) < 8) return bugsScene();
       if (k === "gather") {
-        BUGS.forEach(([x, z], i) => { if (!F["g" + i] && s.CH.N4 && X.dist(at("N4", x, z, false)) < 3.6) { F["g" + i] = 1; X.cry("skitterbit"); if (!X.followers.includes("lumiN")) X.follow("lumiN", true); X.follow("gb" + i, true); X.save(); goal(); } });
+        BUGS.forEach(([x, z], i) => { if (!F["g" + i] && inSc("N4") && Math.min(X.dist(at("N4", x, z, false)), X.dist(at("N4", x, z))) < 3.6) { F["g" + i] = 1; X.cry("skitterbit"); if (!X.followers.includes("lumiN")) X.follow("lumiN", true); X.follow("gb" + i, true); X.save(); goal(); } });
         if (BUGS.every((b, i) => F["g" + i])) return strandScene();
       }
-      if (k === "garden" && !F.released && s.CH.N3 && X.dist(at("N3", 12, 13.5, false)) < 5) return garden();
+      if (k === "garden" && !F.released && inSc("N3") && X.dist(at("N3", 12, 13.5, false)) < 5) return garden();
       if (k === "squawk" && !p && /^N/.test(s.sceneAt(P.position.x, P.position.z) || "")) return squawkScene();
       if (k === "follow" && p === "staticRoof" && X.dist(at("staticRoof", 6.5, 6.2, false)) < 6) return staticMeet();
       if (k === "spire" && p === "voltCrown") { set("crown"); return crownScene(); }
@@ -1330,7 +1338,7 @@
   "use strict";
   window.STORY3_WORLDS.glyphos = function (X) {
     const { s, e, K, V, ST, at, actor, ACT, play, pause, objective, blackout, mesh, mat, inPlace } = X;
-    const F = ST.flags, P = s.P;
+    const F = ST.flags, P = s.P; const inSc = (k) => !!s.CH[k] || s.sceneAt(P.position.x, P.position.z) === k;
     const R = "Rook", KT = "Kit", Z = "Zib", TA = "Tamsin", SQ = "Squid Sailor", LI = "Liss", MO = "Monolets", LK = "Linker";
     X.species("Monolet", { t: ["Gravity", "Psi"], s: [96, 84, 120, 70, 92, 30], m: "lo_pebblet", h: 0.9, st: 2 });
     X.species("Chimelet", { t: ["Sonic", "Crystal"], s: [55, 40, 60, 82, 76, 70], m: "lo_blinkit", h: 0.5, st: 1 });
@@ -1456,7 +1464,7 @@
     actor("sailor", { name: SQ, model: "d047_steam_coast_navigator", h: 1.68, scene: "*", pkey: () => (F.jx != null ? 1 : 0), pos: () => { const j = jetty(); const [x, z] = X.near(j.x + 1.6, j.z + 1.2); return new V(x, s.groundY(x, z), z); }, show: () => F.jx != null && X.dist(jetty()) < 90, talk: () => sailorTalk(), mark: () => is("home") });
     actor("tamsin", { name: TA, model: "d032_dust_bell_ringer", h: 1.62, scene: "YD", pos: () => at("YD", 15, 12), show: () => is("camp"), talk: () => tamsinScene(), mark: () => is("camp") });
     const DOOR9 = () => at("Y9", 15, 24.4, false);
-    actor("liss0", { name: LI, build: () => crystal(true), scene: "Y9", fly: 1.5, noface: true, pos: () => at("Y9", 16.7, 24.6, false), talk: () => lissTalk(), verb: "Listen to the crystal", mark: () => is("temple"), tick: (a) => lit(a, F.lissOn ? 0.8 + Math.sin(X.T * 2) * 0.2 : 0) });
+    actor("liss0", { name: LI, build: () => crystal(true), scene: "Y9", fly: 1.5, noface: true, pos: () => at("Y9", 17.6, 25.6, false), talk: () => lissTalk(), verb: "Listen to the crystal", mark: () => is("temple"), tick: (a) => lit(a, F.lissOn ? 0.8 + Math.sin(X.T * 2) * 0.2 : 0) });
     actor("liss1", { name: LI, build: () => crystal(false), scene: "gv1", fly: 1.5, noface: true, pos: () => at("gv1", 1.4, 6.6, false), talk: () => lissTalk(1), verb: "Listen to the crystal", tick: (a) => lit(a, X.dist(a.G.position) < 4 ? 1 : 0.05) });
     actor("liss2", { name: LI, build: () => crystal(false), scene: "gv2", fly: 1.5, noface: true, pos: () => at("gv2", 16.6, 6.8, false), talk: () => lissTalk(2), verb: "Listen to the crystal", tick: (a) => lit(a, X.dist(a.G.position) < 4 ? 1 : 0.05) });
     actor("liss3", { name: LI, build: () => crystal(false), scene: "gv3", fly: 3.2, noface: true, pos: () => at("gv3", 12.9, 6.0, false), talk: () => lissTalk(3), verb: "Listen to the crystal", tick: (a) => lit(a, is("chime") ? 1 : 0.1) });
@@ -1464,7 +1472,7 @@
     MIR.forEach(([x, z, y], i) => actor("mir" + i, { name: "Mirror", build: i === 2 ? wallMirror : mirror, scene: "gv3", noface: true, pkey: () => rot(i) + (F.mi || 0) * 10, pos: () => G3(x, z), show: () => true, talk: () => turnMirror(i), verb: () => (i === 2 && !F.hook ? "Reach the high mirror" : i === 3 && !F.lured ? "Get to the last mirror" : "Turn the mirror"), mark: () => is("mirrors") && (F.mi || 0) === i, onSpawn: (a) => aimMirror(a, i), tick: (a) => { if (a.G && a.lastRot !== rot(i)) { a.lastRot = rot(i); aimMirror(a, i); } } }));
     actor("door", { build: roundDoor, scene: "gv3", noface: true, pos: () => G3(DOOR[0], DOOR[1]), tick: (a, dt) => { if (!a.G) return; const r = a.G.getObjectByName("roll"), want = F.doorOpen ? 3.4 : F.crack ? 0.25 : 0; if (r) { r.position.x += (want - r.position.x) * Math.min(1, dt * 0.9); r.rotation.z = -r.position.x / 1.75; } const cm = a.G.userData.cm, l = a.G.getObjectByName("light"); const k = F.lit ? 1.6 + Math.sin(X.T * 3) * 0.3 : 0; if (cm) cm.emissiveIntensity = k; if (l) l.intensity = k * 1.4; } });
     const MONO = [[6.9, 6.2], [4.0, 6.4], [9.1, 5.9]];
-    MONO.forEach(([x, z], i) => actor("mono" + i, { name: i === 1 ? "Monolet" : "", mon: "Monolet", h: 1.4, scale: 1.7, scene: "gv3", noface: false, pkey: () => (F.lured && i === 1 ? 1 : 0) + (F.bow ? 2 : 0), pos: () => (F.bow ? G3(4.6 + i * 1.6, 6.4) : F.lured && i === 1 ? G3(2.2, 7.6) : G3(x, z)), onSpawn: (a) => pebbles(a.G), tick: (a, dt) => { if (!a.G) return; const rg = a.G.getObjectByName("ring"); if (rg) rg.rotation.y += dt * (F.bow ? 0.6 : past("maze") ? 3 : 0.2); const c = a.G.getObjectByName("crack"); if (c) { const v = !past("maze") ? 0.05 : F.bow ? 1.2 : 2.2; c.material.emissiveIntensity = v; c.material.color.set(F.bow ? "#ffd860" : "#a85aff"); c.material.emissive.set(F.bow ? "#ffd860" : "#a85aff"); } const tip = i === 2 && F.dizzy && !F.bow; a.G.rotation.x += ((tip ? -1.45 : F.bow ? 0.35 : 0) - a.G.rotation.x) * Math.min(1, dt * 2); }, talk: i === 1 ? () => monoTalk() : null }));
+    MONO.forEach(([x, z], i) => actor("mono" + i, { name: i === 1 ? "Monolet" : "", mon: "Monolet", h: 1.4, scale: 1.7, scene: "gv3", noface: false, pkey: () => (F.lured && i === 1 ? 1 : 0) + (F.bow ? 2 : 0), pos: () => (F.bow ? G3(4.6 + i * 1.6, 6.4) : F.lured && i === 1 ? G3(2.2, 7.6) : G3(x, z)), onSpawn: (a) => pebbles(a.G), tick: (a, dt) => { if (!a.G) return; const rg = a.G.getObjectByName("ring"); if (rg) rg.rotation.y += dt * (F.bow ? 0.6 : past("maze") ? 3 : 0.2); const c = a.G.getObjectByName("crack"); if (c) { const v = !past("maze") ? 0.05 : F.bow ? 1.2 : 2.2; c.material.emissiveIntensity = v; c.material.color.set(F.bow ? "#ffd860" : "#a85aff"); c.material.emissive.set(F.bow ? "#ffd860" : "#a85aff"); } const tip = i === 2 && F.dizzy && !F.bow; a.G.rotation.x += ((tip ? -1.45 : F.bow ? 0.35 : 0) - a.G.rotation.x) * Math.min(1, dt * 2); }, talk: i === 1 ? () => (F.mi === 3 && !F.lured && !F.bow ? turnMirror(3) : monoTalk()) : null }));
     actor("chime", { name: "Chimelet", mon: "Chimelet", h: 0.6, fly: 0.35, scene: "gv3", noface: false, pkey: () => (F.chimeOut ? 1 : 0), pos: () => (F.chimeOut ? G3(9.4, 6.6) : G3(12.3, 9.4)), show: () => is("chime", "hall", "murals", "home", "done") || past("chime"), tick: (a) => { if (a.G && a.G.visible) a.G.position.y = a.base.y + Math.sin(X.T * 2) * 0.06; } });
     // the Mural Hall: the three great murals on the north wall, then the scouts, the sealed door with eight stars, and the crater
     const MU = [[2.7, 2.3, "the crystal forest"], [9.3, 2.3, "the shadow"], [6.0, 2.3, "the Seedmother"], [1.9, 4.5, "the scouts"], [10.1, 4.5, "the door with eight stars"], [8.6, 7.6, "the last painting"]];
@@ -1785,7 +1793,7 @@
       if (p !== lastPl) { lastPl = p; goal(); drawBeams(); }
       runPebbles(dt);
       if (k === "mirrors" && p === "gv3" && !F.bow) { nextThrow -= dt; if (nextThrow <= 0) { nextThrow = 3 + Math.random() * 4; throwPebble(); } }
-      if (k === "camp" && s.CH.YD && X.dist(at("YD", 15, 12, false)) < 5) return tamsinScene();
+      if (k === "camp" && inSc("YD") && X.dist(at("YD", 15, 12, false)) < 5) return tamsinScene();
       if (k === "temple" && !F.lissOn && s.res && s.res.rects && s.res.rects.Y9 && X.dist(DOOR9()) < 5.5) return templeScene();
       if (k === "maze" && p === "gv1" && !F.mazeIn) return mazeIntro();
       if (k === "maze" && p === "gv3") return domeScene();
