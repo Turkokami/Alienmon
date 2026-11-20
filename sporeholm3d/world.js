@@ -2519,6 +2519,30 @@ SPS.B1 = (K, SK, KC, SKC, st) => { const [cx, cz] = unwarp(11, 41), PR = 5.9, to
   for (let k = 0; k < 22; k++) { const q = K.kRat(k, 9, 13), a = q() * TAU, r = 6.7 + q() * 0.6, x = cx + Math.cos(a) * r, z = cz + Math.sin(a) * r; if (Math.hypot(x - (cx + 6.3), z - (cz + 3.5)) < 3.6) continue; SK.TinyCaps(spAO(x, z, spGY(x, z)), q, 1.3, ["#c8f0a0", "#8affc8", "#3fe0d0"][k % 3]); }
   const l = new THREE.PointLight(0x9affc8, 4, 16, 1.6); l.position.set(cx, 3.2, cz); root.add(l);
   st.b1 = { removed: rm }; };
+// B3 the Choir Platform: the tallest cap in the middle of Mirefen, kept flat and open round the Singing Spring. Tall glowing bell
+// mushrooms rise from the swamp between the bridges and stairs, a garland of paper lanterns hangs from bell to bell above the
+// platform's edge, glow rings are inlaid in the cap top and spore lights drift overhead.
+SPS.B3 = (K, SK, KC, SKC, st) => { const hub = MF.caps.find((c) => c.choir), [hx, hz] = unwarp(hub.x, hub.z), top0 = hub.h, top = Number.isFinite(GHT(hx + 3.75, hz)) ? GHT(hx + 3.75, hz) : top0, tops = [];
+  const clear = (a, b, m) => MF.bridges.some((s) => MF.seg(s, a, b).d < s.w + m) || MF.stairs.some((s) => MF.seg(s, a, b).d < s.w + m);
+  const rc = new THREE.Raycaster(), dn = new THREE.Vector3(0, -1, 0), rimY = (x, z) => { rc.set(new THREE.Vector3(x, top + 6, z), dn); for (const h of rc.intersectObjects(root.children, true)) { if (h.object.name === "ground" || h.object.name === "water" || h.object.name === "grass") continue; if (h.point.y <= top + 0.25) return h.point.y; } return null; };
+  for (let k = 0; k < 8; k++) { const ga = (k / 8) * TAU + Math.PI / 8, q = K.kRat(k, 4, 21); let ok = null;
+    for (const rr of [6.0, 5.6, 6.5, 5.2]) { const a = hub.x + Math.cos(ga) * rr, b = hub.z + Math.sin(ga) * rr; if (clear(a, b, 0.35)) continue; const [x, z] = unwarp(a, b), y = rimY(x, z); if (y !== null && y > top - 1.6) { ok = [x, z, y]; break; } }
+    if (!ok) continue; const [x, z, y] = ok, H = 4.3 + q() * 1.1, col = ["#c86aff", "#3fe0d0", "#ff8ad8", "#7a8aff"][k % 4];
+    const R0 = SK.Shroom(spAO(x, z, y - 0.05), q, H, { shape: "bell", r: 1.05 + q() * 0.25, bin: "deco", capBin: "deco", cap: col, la: Math.atan2(z - hz, x - hx), lean: 0.08, tend: 3 });
+    { const a = Math.atan2(hz - z, hx - x), lx = R0.top[0] + Math.cos(a) * R0.r * 0.7, lz = R0.top[2] + Math.sin(a) * R0.r * 0.7, ly = y + R0.by; K.Beam("deco", null, [lx, ly, lz], [lx, ly - 0.9, lz], 0.012, "#d8c8a0", "cyl6"); SK.PaperLantern(spAO(lx, lz, ly - 1.35), q, "orb", 0.95, SPLC[k % SPLC.length]); }
+    SK.TinyCaps(spAO(x, z, y - 0.02), q, 1.4, col); tops.push([R0.top[0], y + R0.by - 0.1, R0.top[2], col]); }
+  // the lantern garland: from each bell's rim to the next one round the ring, little lanterns hanging under the rope
+  tops.sort((u, v) => Math.atan2(u[2] - hz, u[0] - hx) - Math.atan2(v[2] - hz, v[0] - hx)); let nl = 0;
+  for (let i = 0; i < tops.length; i++) { const A = tops[i], Bq = tops[(i + 1) % tops.length], d = Math.hypot(Bq[0] - A[0], Bq[2] - A[2]); if (d > 14 || tops.length < 3) continue; const sag = 0.9 + d * 0.05;
+    K.Sag("deco", null, [A[0], A[1], A[2]], [Bq[0], Bq[1], Bq[2]], sag, 0.02, "#d8c8a0", 8);
+    const n = Math.max(2, Math.floor(d / 1.6)); for (let j = 1; j < n; j++) { const t = j / n, x = A[0] + (Bq[0] - A[0]) * t, z = A[2] + (Bq[2] - A[2]) * t, y = A[1] + (Bq[1] - A[1]) * t - Math.sin(t * Math.PI) * sag;
+      if (y < top + 2.6) continue; K.Beam("deco", null, [x, y, z], [x, y - 0.35, z], 0.01, "#d8c8a0", "cyl6"); SK.PaperLantern(spAO(x, z, y - 0.8), K.kRat(x, z, 22), "orb", 0.75, SPLC[(i + j) % SPLC.length]); nl++; } }
+  // inlaid rings on the cap top and drifting spore lights above it
+  for (const [r, c] of [[3.42, "#ffd27a"], [4.06, "#c8a0ff"]]) { const m = add(new THREE.RingGeometry(r, r + 0.06, 96), MK.glowC(c, 1.1), [hx, top + 0.012, hz], [-Math.PI / 2, 0, 0]); m.name = "nocol"; }
+  for (let k = 0; k < 24; k++) { const a = (k / 24) * TAU; K.P("glow", null, "disc", hx + Math.cos(a) * 3.72, top + 0.014, hz + Math.sin(a) * 3.72, 0.16, 1, 0.16, k % 3 ? "#fff2c0" : "#ff8ad8"); }
+  for (let k = 0; k < 40; k++) { const q = K.kRat(k, 8, 23), a = q() * TAU, r = Math.sqrt(q()) * 6.5; K.P("glow", null, "oct", hx + Math.cos(a) * r, top + 2.8 + q() * 5, hz + Math.sin(a) * r, 0.07, 0.07, 0.07, ["#c8fff0", "#ffd27a", "#ff8ad8"][k % 3]); }
+  const l = new THREE.PointLight(0xc89aff, 5, 18, 1.6); l.position.set(hx, top + 5.5, hz); root.add(l);
+  st.b3 = { bells: tops.length, lanterns: nl }; };
 const spPass = (ids) => { if (!ASSETS.detailKit || !ASSETS.detailKit.sporeholm) return null; const env = { add, std, unwarp, GHT }, K = ASSETS.detailKit(THREE, env, { chunk: 60 }), SK = ASSETS.detailKit.sporeholm(K), KC = ASSETS.detailKit(THREE, env, { chunk: 60 }), SKC = ASSETS.detailKit.sporeholm(KC), st = { scenes: {} };
   for (const id of ids) { const f = SPS[id]; if (!f) continue; const n0 = K.count(), c0 = KC.count(); f(K, SK, KC, SKC, st); st.scenes[id] = K.count() - n0 + KC.count() - c0; }
   st.kit = K.flush(root).length; const camp = KC.flush(root); for (const m of camp) m.userData.helixCamp = true; st.camp = camp.length; return st; };
