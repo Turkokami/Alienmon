@@ -52,11 +52,11 @@ function download(url, dest) {
   }
   fs.writeFileSync(assetsPath, assets);
 
-  // Desktop-only switches. The game keeps up to 4 built areas (0 on Low) after you leave them; the desktop app
+  // Desktop-only switches. The game keeps a few built areas (0 on Low) after you leave them; the desktop app
   // keeps every one, so desktop.js can build them all up front. Fails loudly if the game code moved.
   const gamePath = path.join(OUT, 'game.js');
   let game = fs.readFileSync(path.join(SRC, 'game.js'), 'utf8');
-  const cacheRe = /\bht=\{\},X=([A-Za-z_$][\w$]*\?0:[A-Za-z_$][\w$]*\?2:4),/;
+  const cacheRe = /\bht=\{\},X=([A-Za-z_$][\w$]*\?\d+:[A-Za-z_$][\w$]*\?\d+:\d+),/;
   if (!cacheRe.test(game)) { console.error('Could not find the area cache limit in game.js; update prepare-game.js'); process.exit(1); }
   game = game.replace(cacheRe, (m, orig) => `ht=window.__AM_HT={},X=window.AM_DESKTOP?(window.AM_DESKTOP_CACHE??1e9):(${orig}),`);
   fs.writeFileSync(gamePath, game);
