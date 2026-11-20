@@ -8399,11 +8399,11 @@ XS({ id: "FA8", gx: 210, gy: 0, name: "Hank's Hangar", town: true, cross: { w: C
   bld: [["x_control", 3, 20, 6, 5, "Control Shack"]],
   ground(F) { F(4, 2, 24, 9, "b"); F(2, 10, 26, 13, "P"); F(2, 15, 27, 18, "p"); },
   paint(g, S) { g.fillStyle = "rgba(242,194,48,0.65)"; for (let x = 3; x < 26; x += 1.6) { g.fillRect(x * S, 14.4 * S, S * 0.8, S * 0.18); g.fillRect(x * S, 19.2 * S, S * 0.8, S * 0.18); } },
-  build(X, Y) { xHangar(X + 4.5, Y + 1.6, 20, 8); xRails(X + 3, Y + 16.0, X + 26.6, Y + 16.0); xRails(X + 3, Y + 18.0, X + 26.6, Y + 18.0);
+  build(X, Y) { { const n0 = root.children.length; xHangar(X + 4.5, Y + 1.6, 20, 8); fxCut(n0); } fxWhale(X + 14.5, Y + 9.6); xRails(X + 3, Y + 16.0, X + 26.6, Y + 16.0); xRails(X + 3, Y + 18.0, X + 26.6, Y + 18.0);
     { const G = grp(X + 26.4, 0, Y + 21.0, 0); add(new THREE.BoxGeometry(0.4, 3.6, 5.4), XM.haz(), [0, 1.8, 0], [0, 0, -0.35], null, G); for (const s of [-2, 0, 2]) add(new THREE.BoxGeometry(1.6, 0.3, 0.3), XM.iron(), [0.7, 0.9, s], [0, 0, 0.6], null, G); } // the striped blast deflector
     xTank(X + 20.4, Y + 11.4, 1.1, 2.4, "#1f8a80"); xTank(X + 23.0, Y + 11.6, 1.1, 2.4, "#a8582c"); xTank(X + 25.6, Y + 11.4, 1.0, 2.2, "#4a8a84"); xFence(X + 19.0, Y + 13.2, X + 27.0, Y + 13.2, 1.5);
     { const R2 = grp(X + 6, 0, Y + 25.2, 0); add(new THREE.CylinderGeometry(0.05, 0.08, 6, 6), XM.steelD(), [2.5, 3, -4.6], [0, 0, 0], null, R2); add(new THREE.BoxGeometry(1.0, 0.04, 0.04), XM.steelD(), [2.5, 5.6, -4.6], [0, 0, 0], null, R2); } // the control shack's radio mast
-    for (const [x, z] of [[2.2, 9.8], [26.2, 9.6]]) { add(new THREE.BoxGeometry(1.2, 1.0, 0.6), XM.paint("#a83a2a"), [X + x, 0.5, Y + z]); } xTyres(X + 1.4, Y + 11.4, 4); xGear(X + 26.8, Y + 24.6, 0.7); { const G = grp(X + 22.4, 0, Y + 24.6, 0); add(new THREE.BoxGeometry(1.2, 1.0, 1.0), XM.iron(), [0, 1.1, 0], [0, 0, 0], null, G); add(new THREE.BoxGeometry(0.2, 0.6, 0.8), XM.iron(), [0, 0.3, 0], [0, 0, 0], null, G); }
+    for (const [x, z] of [[2.2, 9.8], [26.2, 9.6]]) { add(new THREE.BoxGeometry(1.2, 1.0, 0.6), XM.paint("#a83a2a"), [X + x, 0.5, Y + z]); } xTyres(X + 1.4, Y + 11.4, 4); xGear(X + 26.8, Y + 24.6, 0.7); fxSmelter(X + 22.0, Y + 24.6);
     for (const [x, z] of [[2.2, 14.6], [27.2, 14.6]]) { add(new THREE.CylinderGeometry(0.08, 0.1, 2.4, 6), XM.steelD(), [X + x, 1.2, Y + z]); add(new THREE.SphereGeometry(0.18, 8, 6), MK.glowC("#ff8a2a", 1.8), [X + x, 2.5, Y + z]); } } });
 // ---- A5 Crane Overlook: Hank's crane yard above the Crossing; the Giant Crane, the jammed crane (S21), where the Helix scouts were seen (M05) ----
 XS({ id: "FA5", gx: 120, gy: 0, name: "Crane Overlook", cross: { n: C6x, s: C6x, e: C6x, w: C6x },
@@ -8775,6 +8775,52 @@ const fxStands = (X, Z) => { const cx = 12, cz = 15, RX = 11.2, RZ = 14.2, fl = 
   { const t = Math.PI, [bx, , bz] = pt(t, 0.84, 0), B = grp(bx, 2.95, bz, Math.PI / 2); for (const s of [-1, 1]) add(new THREE.CylinderGeometry(0.03, 0.03, 1.6, 5), fr, [s * 1.6, 0.8, 0], [0, 0, 0], "nocol", B);
     [["#e07a2a", -1.05], ["#f2e0c0", 0], ["#3a5aa0", 1.05]].forEach(([c, x]) => add(new THREE.PlaneGeometry(1.05, 0.7), xm("fxBan" + c, () => std({ color: c, roughness: 0.9, side: THREE.DoubleSide })), [x, 1.2, 0.02], [0, 0, 0], "nocol", B));
     const d = add(new THREE.OctahedronGeometry(0.26, 0), FXN.blue(), [0, 1.2, 0.06], [0, 0, 0], "nocol", B); d.scale.set(0.8, 1.2, 0.2); add(new THREE.TorusGeometry(0.22, 0.04, 4, 8), XM.iron(), [-1.05, 1.2, 0.05], [0, 0, 0], "nocol", B); add(new THREE.TorusGeometry(0.22, 0.04, 4, 8), XM.iron(), [1.05, 1.2, 0.05], [0, 0, 0], "nocol", B); } };
+// ---- HANK'S HANGAR: a long, low star-seed-shell hall with a roof like a whale's back (half an ellipsoid cut by a flat front wall),
+// riveted ribs and a spine, and two enormous sliding doors rolled aside on iron wheels along a top track and a ground rail ----
+const fxWhale = (cx, zf) => { const rx = 11.2, ry = 9.0, rz = 6.0, fz = 2.6, dw = 7.4, dh = 5.0, G = grp(cx, 0, zf - fz, 0), fr = FXA.frame(), bolts = [], dark = xm("fxVoid", () => std({ color: "#18110e", roughness: 0.95 }));
+  const sec = (x) => Math.sqrt(Math.max(0, 1 - (x / rx) ** 2)), bMax = (x) => { const k = sec(x); return k * rz <= fz ? Math.PI : Math.acos(Math.max(-1, -fz / (rz * k))); }, sp = (x, b, s = 1) => { const k = sec(x) * s; return [x, ry * k * Math.sin(b), -rz * k * Math.cos(b)]; };
+  for (let i = 0; i < 6; i++) { const xa = -rx + (2 * rx * i) / 6, xb = -rx + (2 * rx * (i + 1)) / 6; add(fxSheet(8, 18, (u, v) => { const x = (xa + (xb - xa) * u) * 0.998; return sp(x, v * bMax(x)); }), fxShellM(i % 4), [0, 0, 0], [0, 0, 0], "nocol", G); }
+  for (const f of [-0.84, -0.5, -0.17, 0.17, 0.5, 0.84]) { const x = f * rx, bm = bMax(x), pts = []; for (let k = 0; k <= 16; k++) pts.push(new THREE.Vector3(...sp(x, (k / 16) * bm, 1.012))); add(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts), 28, 0.13, 5), fr, [0, 0, 0], [0, 0, 0], "nocol", G);
+    for (let k = 1; k < 16; k += 2) { const p = sp(x, (k / 16) * bm, 1.02), n = new THREE.Vector3(p[0] / rx ** 2, p[1] / ry ** 2, p[2] / rz ** 2).normalize(); bolts.push([new THREE.Vector3(...p).addScaledVector(n, 0.1), n, 0.1]); } }
+  { const pts = []; for (let k = 0; k <= 20; k++) { const x = (-0.95 + (1.9 * k) / 20) * rx; pts.push(new THREE.Vector3(...sp(x, Math.PI / 2, 1.02))); } add(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts), 40, 0.2, 6), fr, [0, 0, 0], [0, 0, 0], "nocol", G); } // the spine
+  // the flat front wall (solid), a dark doorway recess, a solid core so nobody walks into the shell
+  const hT = (x) => ry * Math.sqrt(Math.max(0, 1 - (x / rx) ** 2 - (fz / rz) ** 2)), xw = rx * Math.sqrt(1 - (fz / rz) ** 2) * 0.999, wm = fxM("rivplate", { c: "#d8c4b8", s: 0.5, side: THREE.DoubleSide });
+  for (const s of [-1, 1]) add(fxSheet(10, 6, (u, v) => { const x = s * (dw / 2 + (xw - dw / 2) * u); return [x, hT(x) * v, fz]; }), wm, [0, 0, 0], [0, 0, 0], null, G);
+  add(fxSheet(8, 4, (u, v) => { const x = -dw / 2 + dw * u; return [x, dh + (hT(x) - dh) * v, fz]; }), wm, [0, 0, 0], [0, 0, 0], null, G);
+  add(new THREE.BoxGeometry(dw, dh, 1.4), dark, [0, dh / 2, fz - 0.75], [0, 0, 0], null, G); add(new THREE.BoxGeometry(2 * xw - 2.4, 4.6, rz + fz - 2.4), dark, [0, 2.3, (fz - rz) / 2], [0, 0, 0], null, G);
+  for (const s of [-1, 1]) fxBar(G, [s * (dw / 2 + 0.2), 0, fz + 0.12], [s * (dw / 2 + 0.2), dh + 0.3, fz + 0.12], 0.4, fr, true); add(new THREE.BoxGeometry(dw + 0.8, 0.5, 0.4), fr, [0, dh + 0.25, fz + 0.12], [0, 0, 0], "nocol", G); add(new THREE.PlaneGeometry(dw, 0.3), FXA.haz(), [0, dh + 0.25, fz + 0.33], [0, 0, 0], "nocol", G);
+  for (const x of [-7.6, -5.4, 5.4, 7.6]) add(new THREE.CircleGeometry(0.42, 14), FXA.amber(), [x, Math.min(hT(x) - 1.3, 4.6), fz + 0.03], [0, 0, 0], "nocol", G);
+  // two enormous sliding doors, rolled aside: riveted leaves with cross braces, iron wheels on a ground rail and on a top track
+  const tw = dw + 9.6; add(new THREE.BoxGeometry(tw, 0.32, 0.3), fr, [0, dh + 0.85, fz + 0.5], [0, 0, 0], "nocol", G); for (const z of [fz + 0.32, fz + 0.68]) add(new THREE.BoxGeometry(tw, 0.08, 0.1), XM.steelD(), [0, 0.04, z], [0, 0, 0], "nocol", G);
+  for (const s of [-1, 1]) { const D = grp(s * (dw / 2 + 2.3), 0, fz + 0.5, 0, G); add(new THREE.BoxGeometry(4.3, dh + 0.1, 0.22), FXA.plate(), [0, 0.62 + (dh + 0.1) / 2, 0], [0, 0, 0], "nocol", D);
+    fxBar(D, [-2.0, 0.8, 0.14], [2.0, dh + 0.4, 0.14], 0.16, fr, true); fxBar(D, [2.0, 0.8, 0.14], [-2.0, dh + 0.4, 0.14], 0.16, fr, true);
+    for (const y of [0.85, dh + 0.4]) add(new THREE.BoxGeometry(4.3, 0.22, 0.3), fr, [0, y, 0], [0, 0, 0], "nocol", D);
+    for (const x of [-1.5, 0, 1.5]) { add(new THREE.CylinderGeometry(0.34, 0.34, 0.16, 14), XM.iron(), [x, 0.36, 0], [Math.PI / 2, 0, 0], "nocol", D); add(new THREE.CylinderGeometry(0.1, 0.1, 0.3, 8), fr, [x, 0.36, 0], [Math.PI / 2, 0, 0], "nocol", D); add(new THREE.CylinderGeometry(0.2, 0.2, 0.14, 12), XM.iron(), [x, dh + 0.85, -0.05], [Math.PI / 2, 0, 0], "nocol", D); } }
+  fxBolts(G, bolts); return G; };
+
+// ---- THE SMELTING WORKS: a working foundry beside the train yard. A furnace house with a glowing mouth facing the road, two tall smokestacks,
+// and a ladle gantry pouring a bright stream into a row of ingot moulds ----
+const fxSmelter = (x, z) => { const G = grp(x, 0, z, 0), fr = FXA.frame(), hot = MK.glowC("#ffb030", 2.8), ember = MK.glowC("#ff6a1a", 2.4), soot = XM.dark();
+  add(new THREE.BoxGeometry(5.2, 4.4, 5.0), XM.corr("#9a5a3a"), [0, 2.2, 0], [0, 0, 0], null, G); add(new THREE.BoxGeometry(5.9, 0.28, 5.7), fr, [0, 4.62, 0], [0.1, 0, 0], "nocol", G);
+  for (const [sx, sz] of [[-1, -1], [1, -1], [-1, 1], [1, 1]]) add(new THREE.BoxGeometry(0.36, 4.5, 0.36), fr, [sx * 2.6, 2.25, sz * 2.5], [0, 0, 0], "nocol", G);
+  for (const y of [1.4, 3.0]) add(new THREE.BoxGeometry(5.3, 0.14, 5.1), fr, [0, y, 0], [0, 0, 0], "nocol", G);
+  // the furnace mouth on the west face
+  { const M = grp(-2.62, 0, 0.2, -Math.PI / 2, G); add(new THREE.BoxGeometry(3.2, 3.0, 0.5), fr, [0, 1.5, 0.05], [0, 0, 0], "nocol", M); add(new THREE.PlaneGeometry(2.3, 2.0), ember, [0, 1.25, 0.32], [0, 0, 0], "nocol", M); add(new THREE.PlaneGeometry(1.5, 1.1), hot, [0, 1.05, 0.34], [0, 0, 0], "nocol", M);
+    for (let k = 0; k < 6; k++) add(new THREE.BoxGeometry(0.07, 2.0, 0.07), soot, [-0.95 + k * 0.38, 1.25, 0.4], [0, 0, 0], "nocol", M); add(new THREE.PlaneGeometry(3.2, 0.35), FXA.haz(), [0, 2.85, 0.31], [0, 0, 0], "nocol", M);
+    const l = new THREE.PointLight(0xff7a2a, 4, 11, 1.5); l.position.set(0, 1.3, 1.6); M.add(l); }
+  // two smokestacks, banded, sooty at the lip, a dull glow inside
+  for (const [sx, sz, h, r] of [[1.15, 1.3, 16, 0.78], [-1.1, 1.5, 13, 0.62]]) { add(new THREE.CylinderGeometry(r * 0.82, r, h, 14), XM.rust("#8a4a34"), [sx, h / 2, sz], [0, 0, 0], null, G);
+    for (let y = 5; y < h - 1; y += 3) add(new THREE.CylinderGeometry(r * (1 - (0.18 * y) / h) + 0.07, r * (1 - (0.18 * y) / h) + 0.07, 0.22, 14), fr, [sx, y, sz], [0, 0, 0], "nocol", G);
+    add(new THREE.CylinderGeometry(r * 0.95, r * 0.86, 0.6, 14), soot, [sx, h + 0.1, sz], [0, 0, 0], "nocol", G); add(new THREE.CircleGeometry(r * 0.7, 12), ember, [sx, h + 0.35, sz], [-Math.PI / 2, 0, 0], "nocol", G); }
+  // the ladle gantry on the north side: a tipped crucible pouring into the moulds
+  { const L = grp(0.2, 0, -3.7, 0, G); for (const s of [-1, 1]) { fxBar(L, [s * 2.0, 0, -0.5], [s * 2.0, 4.3, 0], 0.2, fr, true); fxBar(L, [s * 2.0, 0, 0.5], [s * 2.0, 4.3, 0], 0.2, fr, true); } add(new THREE.BoxGeometry(4.4, 0.3, 0.3), FXA.yel(), [0, 4.35, 0], [0, 0, 0], "nocol", L);
+    for (const s of [-1, 1]) fxBar(L, [s * 0.55, 4.2, 0], [s * 0.6, 3.15, 0], 0.05, XM.steelD(), true);
+    const C = grp(0, 2.7, 0, 0, L); C.rotation.z = -0.75; add(new THREE.CylinderGeometry(0.66, 0.46, 1.0, 14), XM.iron(), [0, 0, 0], [0, 0, 0], "nocol", C); add(new THREE.CircleGeometry(0.6, 14), hot, [0, 0.46, 0], [-Math.PI / 2, 0, 0], "nocol", C); add(new THREE.TorusGeometry(0.68, 0.06, 4, 16), fr, [0, 0.45, 0], [Math.PI / 2, 0, 0], "nocol", C);
+    fxBar(L, [0.82, 2.72, 0], [0.98, 0.28, 0], 0.11, hot, true); add(new THREE.SphereGeometry(0.22, 8, 5), hot, [0.98, 0.28, 0], [0, 0, 0], "nocol", L);
+    for (let k = 0; k < 5; k++) { const mx = -1.3 + k * 0.6 + 0.3; add(new THREE.BoxGeometry(0.5, 0.22, 0.8), soot, [mx, 0.11, 0.1], [0, 0, 0], "nocol", L); if (k >= 3) add(new THREE.PlaneGeometry(0.36, 0.62), k === 3 ? hot : ember, [mx, 0.231, 0.1], [-Math.PI / 2, 0, 0], "nocol", L); }
+    const l = new THREE.PointLight(0xffa040, 3, 8, 1.6); l.position.set(0.9, 1.0, 0.4); L.add(l); }
+  for (let k = 0; k < 6; k++) add(new THREE.BoxGeometry(0.62, 0.18, 0.26), XM.copper(), [1.95 - (k % 3) * 0.66, 0.09 + Math.floor(k / 3) * 0.18, -2.95 + (k % 2) * 0.05], [0, 0, 0], "nocol", G); // cooled ingots
+  return G; };
 // ================= assemble =================
 // map mode: grids for every scene, ground + objects for one scene and its neighbours
 // world mode (H.all): the whole 120x90 region in 3D — every scene's ground and objects
