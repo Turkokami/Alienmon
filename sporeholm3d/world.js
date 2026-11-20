@@ -11825,11 +11825,11 @@ const tJunglePass = (ids) => { if (typeof ASSETS === "undefined" || !ASSETS.deta
   const wy = (x, z) => { const [ux, uz] = unwarp(x, z), g = GHT(ux, uz); return [ux, Number.isFinite(g) ? g : 0, uz]; };
   const pal = (q, alien) => { const g = TJ_GREEN[Math.floor(q() * TJ_GREEN.length)]; if (q() < alien) { const a = TJ_ALIEN[Math.floor(q() * TJ_ALIEN.length)]; return [g[0], g[1], a[0], a[1], g[2]]; } return g; };
   const stats = { trees: 0, palms: 0, houses: 0, huts: 0, under: 0, glow: 0 };
-  for (const id of ids) { const o = TSCN[id]; if (!o) continue; const X = o.gx, Y = o.gy, hub = tHub(id), tops = [], decks = [], dens = Math.min(1, 0.55 + (o.jungle || 0) / 40), alien = 0.28;
+  for (const id of ids) { const o = TSCN[id]; if (!o) continue; const X = o.gx, Y = o.gy, hub = tHub(id), tops = [], decks = [], dens = Math.min(1, 0.68 + (o.jungle || 0) / 40), alien = 0.28;
     let huts = 0, houses = 0; const hutMax = (o.jungle || 0) >= 8 ? 2 : (o.palms || 0) >= 5 ? 1 : 0;
     const clear = (x, z, r) => Math.hypot(x - hub[0], z - hub[1]) > r + 2.5 && !doorNear(x, z, r + 1.5) && !inGrass(x, z, r * 0.6);
     // ---- the big plants on a jittered 3 m grid ----
-    for (let cy = 0; cy < 10; cy++) for (let cx = 0; cx < 10; cx++) { const q = K.kRat(X + cx * 3, Y + cy * 3, 11), x = X + cx * 3 + 0.4 + q() * 2.2, z = Y + cy * 3 + 0.4 + q() * 2.2, ix = Math.floor(x), iz = Math.floor(z), t = at(ix, iz), O = { x, z, ry: q() * TAU };
+    for (let cy = 0; cy < 12; cy++) for (let cx = 0; cx < 12; cx++) { const q = K.kRat(X + cx * 2.5, Y + cy * 2.5, 11), x = X + cx * 2.5 + 0.3 + q() * 1.9, z = Y + cy * 2.5 + 0.3 + q() * 1.9, ix = Math.floor(x), iz = Math.floor(z), t = at(ix, iz), O = { x, z, ry: q() * TAU };
       const inland = t === "." && (o.jungle || o.palms) && !near(ix, iz, 3, "w"); // the island interiors grow into jungle too, not bare sand
       if (t === "g" || (inland && q() < 0.75)) { if (near(ix, iz, 1, PATHT) || !clear(x, z, 1.2) || q() > dens) continue; const deep = share(ix, iz, 3, "gx.");
         if (houses < (TJ_HOUSES[id] || 0) && deep > 0.8 && !near(ix, iz, 3, PATHT) && clear(x, z, 5) && !near(ix, iz, 4, "b")) { const H = K.TreeHouse(O, q, 1.05, pal(q, 0.35), { roof: ["#e6d6b6", "#d8c4a0", "#c8b8a0"][houses % 3], flag: ["#d83a2a", "#2a6ad8", "#e8b02a"][houses % 3] }); const [ux, uy, uz] = wy(x, z); decks.push([ux, uy + H.dh, uz]); houses++; stats.houses++; continue; }
@@ -11862,6 +11862,69 @@ const tJunglePass = (ids) => { if (typeof ASSETS === "undefined" || !ASSETS.deta
   for (const ch of root.children.slice()) if (ch.userData && ch.userData.oldBush) root.remove(ch); // the old round bushes give way to the new jungle
   K.flush(root); return stats; };
 const kHexT = (h, l = 0) => { const c = new THREE.Color(h); if (l) c.offsetHSL(0, 0, l); return "#" + c.getHexString(); };
+// ================= THALASSA STORY PIECES (Nov 20 2026): places Book 1 and the world page name that had no build =================
+// Harbor gate at the arrival pier (Book Ch16), the waterfall jungle at Vine Falls with a rope bridge and a cave behind the water,
+// a cargo barge moored off Saltreach Docks (Ch18), market stalls filling the East Quarter square (Saltreach Market, world page),
+// sea-grass dunes on the Sandbar Chain (map guide), and the iron service ladder on Harbor Point (Ch17). Built with the detail kit,
+// placed by hand, no R() calls.
+const tStoryPass = (ids) => { if (typeof ASSETS === "undefined" || !ASSETS.detailKit) return null; const K = ASSETS.detailKit(THREE, { add, std, unwarp, GHT }, { chunk: 60 }); const has = (id) => ids.includes(id) && TSCN[id]; const made = []; const inGrassT = (x, z, m = 0.4) => TGP.some((g) => ((x - g.x) / (g.rx + m)) ** 2 + ((z - g.z) / (g.rz + m)) ** 2 < 1);
+  const stone = ["#a8a090", "#9a9284", "#b4ac9c", "#8e877a"], weed = ["#2e6a3a", "#3a7a42", "#4a8a3a", "#245a3a", "#6a7a2a"];
+  // ---- D3 Harbor Mouth: the Thalassa-side harbor gate, two barnacled stone pillars and an arch rising out of the sea over the pier ----
+  if (has("D3")) { const o = TSCN.D3, q = K.kRat(o.gx, o.gy, 301), G = { abs: true, x: o.gx + 15, y: -1.1, z: o.gy + 25, ry: 0 };
+    for (const sx of [-4.1, 4.1]) { for (let k = 0; k < 8; k++) { const w = 1.75 - k * 0.04; K.B("lit", G, sx + (q() - 0.5) * 0.08, k * 0.95, (q() - 0.5) * 0.08, w, 0.97, w, stone[k % 4], 0, (q() - 0.5) * 0.12, 0); }
+      K.B("lit", G, sx, 7.6, 0, 2.1, 0.5, 2.1, "#8e877a"); // capital
+      for (let k = 0; k < 26; k++) { const a = q() * Math.PI * 2, y = 0.8 + q() * 2.2, r = 0.9; K.S("lit", G, sx + Math.cos(a) * r, y, Math.sin(a) * r, 0.06 + q() * 0.07, ["#e8e0cc", "#d8d0bc", "#c8c0b0"][k % 3], "ico"); } // barnacles at the tide line
+      for (let k = 0; k < 14; k++) { const a = q() * Math.PI * 2, y = 2.4 + q() * 4.6, L = 0.8 + q() * 1.6; K.B("deco", G, sx + Math.cos(a) * 0.9, y - L, Math.sin(a) * 0.9, 0.14, L, 0.03, weed[k % 5], (q() - 0.5) * 0.2, a, (q() - 0.5) * 0.2); } }
+    let p0 = null; for (let i = 0; i <= 10; i++) { const a = Math.PI - (i / 10) * Math.PI, p = [Math.cos(a) * 4.1, 7.85 + Math.sin(a) * 2.3, 0]; if (p0) K.Beam("lit", G, p0, p, 0.62, stone[i % 4], "cyl6"); p0 = p; }
+    K.B("lit", G, 0, 9.7, 0, 1.5, 1.6, 1.3, "#b4ac9c"); // keystone
+    for (const fz of [-0.68, 0.68]) { const sgn = Math.sign(fz); K.P("lit", G, "hemi", 0, 10.45, fz, 0.95, 1.2, 0.5, "#c8c0b0", sgn * Math.PI / 2, 0, 0); // the carved woman's face, Lady of the Gate, on both sides
+      for (const ex of [-0.2, 0.2]) K.S("glow", G, ex, 10.6, fz + sgn * 0.22, 0.07, "#5ac8ff"); K.B("lit", G, 0, 10.18, fz + sgn * 0.2, 0.26, 0.05, 0.05, "#8e877a");
+      for (let k = 0; k < 9; k++) K.B("deco", G, -1.9 + k * 0.48, 8.4 - q() * 1.2, fz * 0.6, 0.12, 0.9 + q() * 1.1, 0.03, weed[k % 5]); } // seaweed hung along the arch
+    made.push("harbor gate"); }
+  // ---- D6 Vine Falls: mist at the foot of the falls, a cave mouth behind the water, a rope bridge across the pool, hanging vines ----
+  if (has("D6")) { const o = TSCN.D6, X = o.gx, Y = o.gy, q = K.kRat(X, Y, 302);
+    const cave = { x: X + 19.4, z: Y + 15, ry: Math.PI / 2 }; K.P("glow", cave, "hemi", 0, -0.2, 0, 3.0, 5.2, 0.6, "#05090c", 0, 0, 0); // dark cave behind the falling water
+    for (let k = 0; k < 12; k++) { const a = (k / 11) * Math.PI; K.S("lit", cave, Math.cos(a) * 1.75, Math.sin(a) * 2.4 - 0.2, 0.25, 0.45 + q() * 0.3, stone[k % 4], "ico"); }
+    for (const [dx, dz] of [[-1.2, 0.2], [0, 0.4], [1.2, 0.2]]) K.GlowCaps({ x: X + 19.2 + dz, z: Y + 15 + dx }, q, 0.8, "#5af0ff"); // the glow inside the Sea Cave
+    const deckA = [X + 14.6, 0, Y + 11.9], deckB = [X + 14.6, 0, Y + 18.1], dh = 2.6;
+    for (const [i, d] of [[0, deckA], [1, deckB]]) { const O = { x: d[0], z: d[2] }; K.Deck(O, q, 0, dh, 0, 2.2, 2.2, 0, { gap: i ? 0 : 2 }); for (const [px, pz] of [[-0.9, -0.9], [0.9, -0.9], [-0.9, 0.9], [0.9, 0.9]]) K.Beam("wood", O, [px, -0.1, pz], [px, dh - 0.3, pz], 0.09, "#6a5038", "limb5"); K.Ladder(O, 1.2, 0, dh, Math.PI / 2, "#7a5a3a"); }
+    { const O = { x: deckA[0], z: deckA[2] }, b = [0, dh + 0.12, deckB[2] - deckA[2]]; K.RopeBridge(O, q, [0, dh + 0.12, 0.9], [b[0], b[1], b[2] - 0.9], 0.55); }
+    const lf = { abs: true, x: X + 18.6, y: 0, z: Y + 15, ry: 0 }; for (let k = 0; k < 22; k++) { const z = -3.4 + q() * 6.8, top = 7 + q() * 0.8, L = 2.2 + q() * 3.8, x = -0.3 + q() * 0.6; K.Beam("deco", lf, [x, top, z], [x + (q() - 0.5) * 0.3, top - L, z + (q() - 0.5) * 0.3], 0.035, weed[k % 5], "cyl6"); for (let j = 0; j < 4; j++) K.P("deco", lf, "blade", x, top - L * (0.2 + j * 0.22), z, 0.35, 0.3, 0.35, weed[(k + j) % 5], 1.6, q() * 6, 0); }
+    const mist = new THREE.MeshBasicMaterial({ color: "#ffffff", transparent: true, opacity: 0.09, depthWrite: false }); for (let k = 0; k < 4; k++) { const m = add(new THREE.SphereGeometry(1, 10, 6), mist, [X + 17.2 - q() * 1.6, 0.4 + q() * 0.9, Y + 13 + q() * 4], [0, 0, 0], "nocol"); m.scale.set(1.2 + q(), 0.6 + q() * 0.4, 1.2 + q()); m.userData.noLift = true; }
+    made.push("vine falls"); }
+  // ---- TA Saltreach Docks: a cargo barge moored at the end of the west pier ----
+  if (has("TA")) { const o = TSCN.TA, X = o.gx, Y = o.gy, q = K.kRat(X, Y, 303), G = { abs: true, x: X + 3.6, y: -0.12, z: Y + 25.6, ry: 0 };
+    K.B("wood", G, 0, -0.55, 0, 7.2, 0.95, 2.7, "#4a3a2e"); K.B("metal", G, 0, 0.38, 1.33, 7.2, 0.28, 0.12, "#7a3a2a"); K.B("metal", G, 0, 0.38, -1.33, 7.2, 0.28, 0.12, "#7a3a2a"); K.B("metal", G, 0, 0.32, 0, 7.0, 0.06, 2.5, "#5a4a3a");
+    for (let k = 0; k < 6; k++) K.Ring("fabric", { abs: true, x: G.x - 3 + k * 1.2, y: 0.05, z: G.z + 1.42 }, 0, 0, 0, 0.24, 1.2, "#1a1a1a");
+    const cr = ["#a8803a", "#8a6a3a", "#2a6aa8", "#c8452a", "#6a8a4a"]; for (let k = 0; k < 9; k++) { const cx = -2.6 + (k % 3) * 1.15, cz = -0.6 + Math.floor(k / 3) * 0.6; K.B("wood", G, cx, 0.35, cz, 1.0, 0.75, 0.55, cr[k % 5]); if (k % 2) K.B("wood", G, cx, 1.1, cz, 0.95, 0.7, 0.52, cr[(k + 2) % 5]); }
+    K.B("fabric", G, -1.45, 1.9, 0, 3.6, 0.08, 2.1, "#c8b890", 0, 0, 0.05); // tarp over the cargo
+    K.B("wood", G, 2.4, 0.35, 0, 1.8, 1.6, 1.8, "#e8e0d0"); K.B("wood", G, 2.4, 1.95, 0, 2.1, 0.18, 2.1, "#c8452a"); K.C("metal", G, 3.0, 2.1, 0.45, 0.15, 1.2, "#2a2a2a"); // wheelhouse and stack
+    K.Sag("deco", { abs: true, x: 0, y: 0, z: 0 }, [X + 7.2, 0.6, Y + 25.3], [X + 6.5, 0.9, Y + 22.4], 0.25, 0.025, "#c8b890", 4);
+    made.push("cargo barge"); }
+  // ---- M5 East Quarter: Saltreach Market, the square filled with stalls, fish crates and bunting ----
+  if (has("M5")) { const o = TSCN.M5, X = o.gx, Y = o.gy, q = K.kRat(X, Y, 304);
+    const stall = (x, z, ry, col) => { const O = { x: X + x, z: Y + z, ry }; for (const [px, pz] of [[-1, -0.6], [1, -0.6], [-1, 0.6], [1, 0.6]]) K.C("wood", O, px, 0, pz, 0.06, 2.1, "#7a5a3a");
+      K.B("wood", O, 0, 0, 0.35, 2.1, 0.9, 0.55, "#9a7048"); for (let k = 0; k < 5; k++) K.B("fabric", O, -0.84 + k * 0.42, 2.12, 0, 0.42, 0.06, 1.6, k % 2 ? "#f0ece0" : col, 0.12, 0, 0);
+      const goods = [["#c8d0d8", "#a8b8c8"], ["#e8a83a", "#d8602a", "#a8c83a"], ["#d84a6a", "#f0a0c0"], ["#4a8ac8", "#9ad0f0"]][Math.floor(q() * 4)]; for (let k = 0; k < 8; k++) K.S("deco", O, -0.8 + q() * 1.6, 0.98, 0.2 + q() * 0.35, 0.09 + q() * 0.05, goods[k % goods.length]);
+      K.B("wood", O, -0.4, 0, -1.0, 0.5, 0.4, 0.4, "#8a6a3a"); K.B("wood", O, 0.5, 0, -1.05, 0.5, 0.4, 0.4, "#a8803a"); };
+    stall(5, 6.6, 0, "#d23a2a"); stall(9, 6.6, 0, "#2a6aa8"); stall(23.2, 6.2, 0, "#2a8a6a"); stall(27, 6.2, 0, "#e8a83a"); stall(5.2, 23.7, Math.PI, "#7a4ac0"); stall(25, 23.7, Math.PI, "#d23a2a");
+    for (const [a, b] of [[[11, 11], [19, 11]], [[11, 18.5], [19, 18.5]], [[11, 11], [11, 18.5]], [[19, 11], [19, 18.5]]]) { const A = [X + a[0], 3.0, Y + a[1]], Bp = [X + b[0], 3.0, Y + b[1]]; K.Sag("deco", { abs: true, x: 0, y: 0, z: 0 }, A, Bp, 0.6, 0.015, "#e8e0d0", 6);
+      for (let k = 1; k < 12; k++) { const t = k / 12, x = A[0] + (Bp[0] - A[0]) * t, z = A[2] + (Bp[2] - A[2]) * t, y = 3.0 - Math.sin(t * Math.PI) * 0.6 - 0.18; K.P("fabric", { abs: true, x, y, z, ry: Math.atan2(Bp[0] - A[0], Bp[2] - A[2]) }, "pyr", 0, 0, 0, 0.26, 0.32, 0.04, ["#d23a2a", "#2a6aa8", "#e8a83a", "#f0f0e8", "#2a8a6a"][k % 5], Math.PI, 0, 0); } }
+    for (const [x, z] of [[7.5, 9.5], [22.5, 9.2], [8.2, 20.2], [22.2, 20.6], [3.4, 6.3], [27.6, 23.5]]) { const O = { x: X + x, z: Y + z }; K.B("wood", O, 0, 0, 0, 0.7, 0.35, 0.5, "#8a6a3a"); for (let k = 0; k < 4; k++) K.P("deco", O, "ico", -0.2 + k * 0.13, 0.4, (q() - 0.5) * 0.2, 0.3, 0.1, 0.12, ["#c8d0d8", "#a8b8c8", "#d89a7a"][k % 3], 0, q() * 3, 0); }
+    made.push("market"); }
+  // ---- F2 Sandbar Chain: sea-grass dunes on the sand islands, driftwood and a dune fence ----
+  if (has("F2")) { const o = TSCN.F2, X = o.gx, Y = o.gy, hub = tHub("F2");
+    for (let iz = Y; iz < Y + 30; iz++) for (let ix = X; ix < X + 30; ix++) { if (at(ix, iz) !== ".") continue; let edge = 0; for (const [dx, dz] of [[1, 0], [-1, 0], [0, 1], [0, -1]]) if (at(ix + dx, iz + dz) === "w") edge++; const q = K.kRat(ix, iz, 305), x = ix + 0.2 + q() * 0.6, z = iz + 0.2 + q() * 0.6;
+      if (Math.hypot(x - hub[0], z - hub[1]) < 2.6 || inGrassT(x, z)) continue; const O = { x, z, ry: q() * TAU };
+      if (!edge && q() < 0.5) K.P("deco", O, "ico", 0, -0.12, 0, 1.6 + q() * 1.2, 0.5 + q() * 0.3, 1.3 + q(), ["#e8dcc0", "#e0d2b2", "#f0e6cc"][Math.floor(q() * 3)]);
+      K.Tufts(O, q, edge ? 3 : 7, 0.05, 0.8, 0.15, ["#9aa85a", "#b8b86a", "#7a9a4a", "#c8c088"]); if (q() < 0.12) K.Driftwood(O, q, 0, 0, 1); }
+    made.push("dunes"); }
+  // ---- TD Harbor Point: the iron service ladder up the rocks from the beach to the tower terrace ----
+  if (has("TD")) { const o = TSCN.TD, X = o.gx, Y = o.gy, O = { x: X + 8.6, z: Y + 17.2, ry: 0.5 }; K.Rock(O, K.kRat(X, Y, 306), 0.35, 0, 1.6, "#8a847a");
+    K.Ladder(O, 0, -0.7, 3.4, 0.5, "#4a4a52"); K.B("metal", O, 0, 3.35, -0.75, 0.8, 0.08, 0.5, "#4a4a52"); made.push("service ladder"); }
+  // tag and flush
+  const verts = K.count(); K.flush(root); return { made, verts }; };
+
 // ================= assemble =================
 // map mode: grids for every scene, ground + objects for one scene and its neighbours
 // world mode (H.all): the whole 120x90 region in 3D — every scene's ground and objects
@@ -11921,7 +11984,7 @@ if (TGP.length) { // the tall grass owns its patch: other ground flora steps asi
   const inP = (x, z) => TGP.some((q) => ((x - q.x) / (q.rx * 0.95)) ** 2 + ((z - q.z) / (q.rz * 0.95)) ** 2 < 1), strip = (arr) => { for (let i = arr.length - 1; i >= 0; i--) if (inP(arr[i][0], arr[i][1])) arr.splice(i, 1); }; for (const a2 of [MG, FLW, GG]) strip(a2); for (const k of Object.keys(FL)) strip(FL[k]); }
 { // Port Saltreach keeps its streets, plazas and docks swept: no weeds or blades on paving
   const paved = (x, z) => "pPkbs".includes(at(Math.floor(x), Math.floor(z))), strip = (arr) => { for (let i = arr.length - 1; i >= 0; i--) if (paved(arr[i][0], arr[i][1])) arr.splice(i, 1); }; for (const a2 of [MG, FLW, GG]) strip(a2); for (const k of Object.keys(FL)) strip(FL[k]); }
-const TJUNGLE = H && H.all && H.jungle !== false ? tJunglePass(ids) : null; if (TJUNGLE && typeof console !== "undefined" && H.verbose) console.log("thalassa jungle", JSON.stringify(TJUNGLE));
+const TJUNGLE = H && H.all && H.jungle !== false ? tJunglePass(ids) : null; const TSTORY = H && H.all && H.story !== false ? tStoryPass(ids) : null; if (TSTORY && typeof console !== "undefined" && H.verbose) console.log("thalassa story", JSON.stringify(TSTORY)); if (TJUNGLE && typeof console !== "undefined" && H.verbose) console.log("thalassa jungle", JSON.stringify(TJUNGLE));
 buildAll(); if (H && H.all && H.flora !== false) buildFlora(); thUVfix(root);
 if (WALKINS.length) { // last net: no instanced blade, crop or plant may stand in a room or on a doorstep
   const m4 = new THREE.Matrix4(), v = new THREE.Vector3(), z0 = new THREE.Matrix4().makeScale(0, 0, 0), hit = (x, z) => WALKINS.some((w) => { const px = w.G.position.x + w.ox, pz = w.G.position.z + w.oz; return ((x - px) / (w.rx + 0.75)) ** 2 + ((z - pz) / (w.rz + 0.75)) ** 2 < 1 || (Math.abs(x - px) < w.dw / 2 + 0.6 && Math.abs(z - pz) < w.r + 2.4 && ((z - pz) * w.d > 0 || w.back)); });
