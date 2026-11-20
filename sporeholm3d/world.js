@@ -2495,6 +2495,30 @@ SPS.D6 = (K, SK, KC, SKC, st) => { const [X, Y] = SCN.D6.rect, R0 = spRect("D6")
   K.Beam("wood", null, [mx, 0.4, mz], [mx + 0.2, 1.05, mz + 0.1], 0.12, "#5e4430", "cyl6"); K.Beam("wood", null, [mx - 0.9, 0.4, mz - 0.3], [mx - 0.5, 1.25, mz - 0.1], 0.08, "#5e4430", "cyl6");
   const ml = new THREE.PointLight(0xfff0c0, 6, 14, 1.5); ml.position.set(mx, 2.9, mz + 1.5); root.add(ml);
   st.d6.lanterns = spLanterns(K, SK, "D6", 0.13); };
+// B1 Landing Bog: the landing pad becomes the flat top of a giant pale-green glowing mushroom cap standing in the bog pool. The deck
+// height (0.70) and its edge stay as before, so the ramp, the guide lights, the chevrons and the fuel pod still sit right on it.
+SPS.B1 = (K, SK, KC, SKC, st) => { const [cx, cz] = unwarp(11, 41), PR = 5.9, top = 0.7, bb = new THREE.Box3(), c = new THREE.Vector3(), sz = new THREE.Vector3(); let rm = 0;
+  for (const o of root.children.slice()) { if (!o.isMesh || !o.geometry) continue; const g = o.geometry, pa = g.parameters || {}; bb.setFromObject(o); bb.getCenter(c); bb.getSize(sz); const d = Math.hypot(c.x - cx, c.z - cz);
+    const deck = g.type === "CylinderGeometry" && Math.abs(pa.radiusTop - PR) < 0.01 && d < 1, rope = g.type === "TorusGeometry" && Math.abs(pa.radius - PR) < 0.01 && d < 1, pile = d > 4.6 && d < 5.9 && sz.x < 1 && sz.z < 1 && Math.abs(sz.y - 1.35) < 0.12 && bb.min.y < -0.6;
+    if (deck || rope || pile) { root.remove(o); rm++; } }
+  const capM = std({ color: "#cdeec0", emissive: "#5ac87a", emissiveIntensity: 0.32, roughness: 0.55 }), rimM = std({ color: "#b4e0a8", emissive: "#3a9a5a", emissiveIntensity: 0.28, roughness: 0.6 });
+  const capG = olathe([[0.001, top], [5.3, top], [5.75, top - 0.025], [5.98, top - 0.1], [6.08, top - 0.24], [6.06, 0.3], [5.95, 0.16], [5.6, 0.04], [4.4, -0.08], [2.4, -0.16], [0.001, -0.18]], 72, 0.02, 7), cp = capG.attributes.position, ccol = new Float32Array(cp.count * 3), c0 = new THREE.Color("#f4fff0"), c1 = new THREE.Color("#c4f0b4"), c2 = new THREE.Color("#8ed69a"), cc = new THREE.Color();
+  for (let i = 0; i < cp.count; i++) { const r = Math.hypot(cp.getX(i), cp.getZ(i)), y = cp.getY(i); cc.copy(c0).lerp(c1, Math.min(1, r / 5.2)); if (r > 5.2 || y < top - 0.05) cc.lerp(c2, 0.7); const w = 0.94 + 0.06 * Math.sin(Math.atan2(cp.getZ(i), cp.getX(i)) * 9 + r * 1.7); cc.multiplyScalar(w); ccol.set([cc.r, cc.g, cc.b], i * 3); }
+  capG.setAttribute("color", new THREE.BufferAttribute(ccol, 3)); capM.vertexColors = true; capM.color.set("#ffffff");
+  add(capG, capM, [cx, 0, cz]);
+  for (let k = 0; k < 14; k++) { const q = K.kRat(k, 5, 14), a = q() * TAU, r = 2.2 + q() * 3.0, s = 0.7 + q() * 0.9; K.P("deco", null, "disc", cx + Math.cos(a) * r, top + 0.002, cz + Math.sin(a) * r, s, 1, s * 0.75, "#a4dc9c", 0, q() * 3, 0); }
+  const gill = add(new THREE.RingGeometry(2.3, 5.5, 72, 1), MK.glowC("#8affc8", 0.9), [cx, -0.13, cz], [Math.PI / 2, 0, 0]); gill.name = "nocol";
+  add(olathe([[0.001, -1.4], [2.7, -1.4], [2.25, -0.9], [2.0, -0.4], [2.15, -0.14], [0.001, -0.14]], 40, 0.04, 5), std({ color: "#e8f0dc", emissive: "#4a7a5a", emissiveIntensity: 0.2, roughness: 0.8 }), [cx, 0, cz]);
+  // pale glowing spots and two faint growth rings on the cap top (flat, never in the way)
+  for (let k = 0; k < 46; k++) { const q = K.kRat(k, 7, 11), a = q() * TAU, r = 1.9 + Math.sqrt(q()) * 3.7, x = cx + Math.cos(a) * r, z = cz + Math.sin(a) * r, s = 0.16 + q() * 0.3;
+    if (Math.abs(((a - Math.PI / 4 + TAU) % (Math.PI / 2)) - Math.PI / 4) < 0.22 && r > 1.8 && r < 4.9) continue; // keep the chevrons clear
+    K.P("glow", null, "disc", x, top + 0.004, z, s, 1, s * (0.7 + q() * 0.3), q() < 0.5 ? "#f2ffe0" : "#a8ffd8"); }
+  for (const r of [3.1, 4.95]) { const m = add(new THREE.RingGeometry(r, r + 0.05, 72), MK.glowC("#b8ffd8", 0.7), [cx, top + 0.003, cz], [-Math.PI / 2, 0, 0]); m.name = "nocol"; }
+  // the cap rim: soft frills under the edge, little glowing drips and baby caps on the pool shore
+  for (let k = 0; k < 36; k++) { const a = (k / 36) * TAU + 0.04, q = K.kRat(k, 3, 12); K.P("deco", null, "oct", cx + Math.cos(a) * 5.85, 0.1, cz + Math.sin(a) * 5.85, 0.32, 0.16 + q() * 0.08, 0.32, "#a6d89a", 0, a, 0); if (k % 3 === 0) K.P("glow", null, "oct", cx + Math.cos(a) * 5.7, -0.1 - q() * 0.2, cz + Math.sin(a) * 5.7, 0.07, 0.12, 0.07, "#a8ffd8"); }
+  for (let k = 0; k < 22; k++) { const q = K.kRat(k, 9, 13), a = q() * TAU, r = 6.7 + q() * 0.6, x = cx + Math.cos(a) * r, z = cz + Math.sin(a) * r; if (Math.hypot(x - (cx + 6.3), z - (cz + 3.5)) < 3.6) continue; SK.TinyCaps(spAO(x, z, spGY(x, z)), q, 1.3, ["#c8f0a0", "#8affc8", "#3fe0d0"][k % 3]); }
+  const l = new THREE.PointLight(0x9affc8, 4, 16, 1.6); l.position.set(cx, 3.2, cz); root.add(l);
+  st.b1 = { removed: rm }; };
 const spPass = (ids) => { if (!ASSETS.detailKit || !ASSETS.detailKit.sporeholm) return null; const env = { add, std, unwarp, GHT }, K = ASSETS.detailKit(THREE, env, { chunk: 60 }), SK = ASSETS.detailKit.sporeholm(K), KC = ASSETS.detailKit(THREE, env, { chunk: 60 }), SKC = ASSETS.detailKit.sporeholm(KC), st = { scenes: {} };
   for (const id of ids) { const f = SPS[id]; if (!f) continue; const n0 = K.count(), c0 = KC.count(); f(K, SK, KC, SKC, st); st.scenes[id] = K.count() - n0 + KC.count() - c0; }
   st.kit = K.flush(root).length; const camp = KC.flush(root); for (const m of camp) m.userData.helixCamp = true; st.camp = camp.length; return st; };
