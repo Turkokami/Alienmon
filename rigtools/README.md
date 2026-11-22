@@ -1,6 +1,6 @@
-# Rigged models in the game (preview branch only)
+# Rigged models in the game
 
-This branch tests the new rigged Alienmon and characters in the first 5 levels. Nothing here is on the live site.
+The new rigged Alienmon and townsfolk for the first 5 levels. Live on maps-v2 (3d.alienmon.com) since Nov 22.
 Add `?rig=0` to the address to play the same build with the old models, for comparison.
 
 ## What is new
