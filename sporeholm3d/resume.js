@@ -18,16 +18,28 @@
     if (!s || s.step !== window.STORY.ST.step || busy()) return;
     const P = window.GAME.P.position;
     if (!outdoors(P.x, P.z) || !outdoors(s.x, s.z)) return;
-    if (window.GAME.canStand && !window.GAME.canStand(s.x, s.z)) return;
     if (Math.hypot(P.x - s.x, P.z - s.z) < 3) return;
-    try { window.GAME.respawn(s.x, s.z) } catch {}
+    // The saved spot's area may not be loaded yet, so move there first and check the ground once it has
+    // streamed in; if the spot turns out not to be standable, go back to the start point.
+    const G = window.GAME, home = [P.x, P.z];
+    const put = (x, z) => { try { G.P.position.set(x, G.groundY ? G.groundY(x, z) : G.P.position.y, z); G.vel && G.vel.set(0, 0, 0) } catch {} };
+    try { const sc = G.sceneAt && G.sceneAt(s.x, s.z); sc && G.loadScene && G.loadScene(sc) } catch {}
+    put(s.x, s.z);
+    let tries = 0;
+    const check = () => {
+      if (!G.canStand) return;
+      const Q = G.P.position;
+      if (G.canStand(Q.x, Q.z)) { put(Q.x, Q.z); return }
+      if (++tries < 6) setTimeout(check, 1000); else put(home[0], home[1]);
+    };
+    setTimeout(check, 1000);
   };
   const tick = () => {
     if (!ready() || loading()) return;
     if (!restored) { if (!t0) t0 = performance.now(); else if (performance.now() - t0 > 1500) restore(); return; }
     if (busy()) return;
     const P = window.GAME.P.position;
-    if (!outdoors(P.x, P.z)) return;
+    if (!outdoors(P.x, P.z) || (window.GAME.canStand && !window.GAME.canStand(P.x, P.z))) return;
     try { localStorage.setItem(KEY(), JSON.stringify({ x: +P.x.toFixed(2), z: +P.z.toFixed(2), step: window.STORY.ST.step })) } catch {}
   };
   setInterval(tick, 2000);
