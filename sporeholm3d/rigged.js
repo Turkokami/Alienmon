@@ -18,11 +18,12 @@
 "br_rig_magnub": "url:m/rig/br_rig_magnub.cd59bef9.glb",
 "br_rig_pebblet": "url:m/rig/br_rig_pebblet.b60e2a1a.glb",
 "br_rig_skitterbit": "url:m/rig/br_rig_skitterbit.ef603577.glb",
+"br_rig_skitterdrone": "url:m/rig/br_rig_skitterdrone.77e4ae7d.glb",
 "br_rig_spindyn": "url:m/rig/br_rig_spindyn.c6d89863.glb",
 "br_rig_sporix": "url:m/rig/br_rig_sporix.f57c8e94.glb",
 "br_rig_tiktrill": "url:m/rig/br_rig_tiktrill.d64a0d7e.glb",
 "tr_d002_sola_reyes": "url:m/rig/tr_d002_sola_reyes.86b34eff.glb",
-"tr_d003_mom": "url:m/rig/tr_d003_mom.985ad1e2.glb",
+"tr_d003_mom": "url:m/rig/tr_d003_mom.f88bdd25.glb",
 "tr_d004_dr_imogen_vashti": "url:m/rig/tr_d004_dr_imogen_vashti.b2556802.glb",
 "tr_d005_dx_4": "url:m/rig/tr_d005_dx_4.ee62493e.glb",
 "tr_d006_nana_wren": "url:m/rig/tr_d006_nana_wren.ca5f7d1c.glb",
@@ -80,4 +81,4 @@
 "tr_n2_story_strand": "url:m/rig/tr_n2_story_strand.59ffb0c9.glb",
 "tr_r2_kid": "url:m/rig/tr_r2_kid.5ca64939.glb"
 };for(var k in A)window.ASSETS.glb[k]=A[k];
-window.RIGGED={"Blinkit": "br_rig_blinkit", "Bogeel": "br_rig_bogeel", "Cactling": "br_rig_cactling", "Chirpod": "br_rig_chirpod", "Cogglet": "br_rig_cogglet", "Coilet": "br_rig_coilet", "Drippit": "br_rig_drippit", "Dunetrot": "br_rig_dunetrot", "Fizzle": "br_rig_fizzle", "Fizzlord": "br_rig_fizzlord", "Gleamgrub": "br_rig_gleamgrub", "Gloopa": "br_rig_gloopa", "Hivemaw": "br_rig_hivemaw", "Liftant": "br_rig_liftant", "Magnub": "br_rig_magnub", "Pebblet": "br_rig_pebblet", "Skitterbit": "br_rig_skitterbit", "Spindyn": "br_rig_spindyn", "Sporix": "br_rig_sporix", "Tiktrill": "br_rig_tiktrill"};window.RIGMAP={"lo_blinkit": "br_rig_blinkit", "n4_bogeel": "br_rig_bogeel", "n3_cactling": "br_rig_cactling", "lo_chirpod": "br_rig_chirpod", "lo_cogglet": "br_rig_cogglet", "lo_coilet": "br_rig_coilet", "n4_drippit": "br_rig_drippit", "lo_dunetrot": "br_rig_dunetrot", "lo_fizzle": "br_rig_fizzle", "lo_fizzlord": "br_rig_fizzlord", "lo_gleamgrub": "br_rig_gleamgrub", "lo_gloopa": "br_rig_gloopa", "lo_hivemaw": "br_rig_hivemaw", "lo_liftant": "br_rig_liftant", "lo_magnub": "br_rig_magnub", "lo_pebblet": "br_rig_pebblet", "lo_skitterbit": "br_rig_skitterbit", "lo_spindyn": "br_rig_spindyn", "lo_sporix": "br_rig_sporix", "lo_tiktrill": "br_rig_tiktrill"};window.YAWFIX=Object.assign(window.YAWFIX||{},{"br_rig_chirpod": -1.5708, "br_rig_gloopa": -1.5708});})();
+window.RIGGED={"Blinkit": "br_rig_blinkit", "Bogeel": "br_rig_bogeel", "Cactling": "br_rig_cactling", "Chirpod": "br_rig_chirpod", "Cogglet": "br_rig_cogglet", "Coilet": "br_rig_coilet", "Drippit": "br_rig_drippit", "Dunetrot": "br_rig_dunetrot", "Fizzle": "br_rig_fizzle", "Fizzlord": "br_rig_fizzlord", "Gleamgrub": "br_rig_gleamgrub", "Gloopa": "br_rig_gloopa", "Hivemaw": "br_rig_hivemaw", "Liftant": "br_rig_liftant", "Magnub": "br_rig_magnub", "Pebblet": "br_rig_pebblet", "Skitterbit": "br_rig_skitterbit", "Skitterdrone": "br_rig_skitterdrone", "Spindyn": "br_rig_spindyn", "Sporix": "br_rig_sporix", "Tiktrill": "br_rig_tiktrill"};window.RIGMAP={"lo_blinkit": "br_rig_blinkit", "n4_bogeel": "br_rig_bogeel", "n3_cactling": "br_rig_cactling", "lo_chirpod": "br_rig_chirpod", "lo_cogglet": "br_rig_cogglet", "lo_coilet": "br_rig_coilet", "n4_drippit": "br_rig_drippit", "lo_dunetrot": "br_rig_dunetrot", "lo_fizzle": "br_rig_fizzle", "lo_fizzlord": "br_rig_fizzlord", "lo_gleamgrub": "br_rig_gleamgrub", "lo_gloopa": "br_rig_gloopa", "lo_hivemaw": "br_rig_hivemaw", "lo_liftant": "br_rig_liftant", "lo_magnub": "br_rig_magnub", "lo_pebblet": "br_rig_pebblet", "lo_skitterbit": "br_rig_skitterbit", "n5_skitterdrone": "br_rig_skitterdrone", "lo_spindyn": "br_rig_spindyn", "lo_sporix": "br_rig_sporix", "lo_tiktrill": "br_rig_tiktrill"};window.YAWFIX=Object.assign(window.YAWFIX||{},{"br_rig_chirpod": -1.5708, "br_rig_gloopa": -1.5708});})();
