@@ -6,12 +6,12 @@ import * as THREE from "three"; import {GLTFLoader} from "three/addons/loaders/G
 const info=document.getElementById("info"); window.onerror=(m)=>info.textContent="error: "+m; window.addEventListener("unhandledrejection",(e)=>info.textContent="error: "+(e.reason&&e.reason.message||e.reason));
 window.ASSETS={glb:{}}; const r2=document.createElement("script"); r2.src="rigged.js?v=rg3t"; document.head.appendChild(r2); await new Promise(r=>r2.onload=r);
 const u=window.ASSETS.glb.tr_tamsin.slice(4); const clip=new URLSearchParams(location.search).get("clip")||"walk_v2";
-const R=new THREE.WebGLRenderer({antialias:true}); R.setSize(innerWidth,innerHeight); R.setPixelRatio(devicePixelRatio); document.body.appendChild(R.domElement);
+let R=null; try{R=new THREE.WebGLRenderer({antialias:true}); R.setSize(innerWidth,innerHeight); R.setPixelRatio(devicePixelRatio); document.body.appendChild(R.domElement);}catch(e){R=null}
 const S=new THREE.Scene(); S.background=new THREE.Color(0xcfd6dd); S.add(new THREE.HemisphereLight(0xffffff,0x667788,2.2)); const D=new THREE.DirectionalLight(0xffffff,1.5); D.position.set(2,4,3); S.add(D);
 const C=new THREE.PerspectiveCamera(35,innerWidth/innerHeight,.01,100);
 const g=await new GLTFLoader().loadAsync(u); const m=g.scene; S.add(m); const b=new THREE.Box3().setFromObject(m), h=b.max.y-b.min.y, c=b.getCenter(new THREE.Vector3());
 C.position.set(c.x+h*0.9,c.y+h*0.15,c.z+h*2.2); C.lookAt(c);
 const mx=new THREE.AnimationMixer(m); const a=g.animations.find(x=>x.name===clip)||g.animations[0]; mx.clipAction(a).play();
-info.textContent="clips: "+g.animations.map(x=>x.name).join(", ")+"  |  playing "+a.name;
-const ck=new THREE.Clock(); R.setAnimationLoop(()=>{mx.update(ck.getDelta()); R.render(S,C)});
+let nb=0,nm=0; m.traverse(o=>{if(o.isBone)nb++; if(o.isMesh)nm++}); info.textContent=(R?"":"(no 3D view in this browser) ")+"meshes "+nm+", bones "+nb+", clips: "+g.animations.map(x=>x.name).join(", ")+"  |  playing "+a.name;
+const ck=new THREE.Clock(); R&&R.setAnimationLoop(()=>{mx.update(ck.getDelta()); R.render(S,C)});
 </script></body></html>
