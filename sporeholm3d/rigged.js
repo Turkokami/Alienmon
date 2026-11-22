@@ -61,7 +61,7 @@
 "tr_d038_fossil_brush_apprentice": "url:m/rig/tr_d038_fossil_brush_apprentice.720362c3.glb",
 "tr_d039_brass_cooling_fan_maker": "url:m/rig/tr_d039_brass_cooling_fan_maker.c54f80ee.glb",
 "tr_d040_dried_flower_perfumer": "url:m/rig/tr_d040_dried_flower_perfumer.2d0dc111.glb",
-"tr_d041_sand_glass_storyteller": "url:m/rig/tr_d041_sand_glass_storyteller.7ef62970.glb",
+"tr_d041_sand_glass_storyteller": "url:m/rig/tr_d041_sand_glass_storyteller.5264d9b6.glb",
 "tr_d042_copper_washbasin_maker": "url:m/rig/tr_d042_copper_washbasin_maker.e0a6d893.glb",
 "tr_d043_dune_flute_pupil": "url:m/rig/tr_d043_dune_flute_pupil.19a0d656.glb",
 "tr_d044_windmill_tender": "url:m/rig/tr_d044_windmill_tender.3013401f.glb",
