@@ -1,3 +1,4 @@
+/* Tamsin keeps her old look with ?rig=0 */window.ASSETS&&window.ASSETS.glb&&!window.ASSETS.glb.tamsin&&(window.ASSETS.glb.tamsin=window.ASSETS.glb.d032_dust_bell_ringer);
 /* Rigged-model test (preview only). Loads the new rigged copies of the first-5-level Alienmon for battles, and the new rigged
    characters' own idle/walk/run. Add ?rig=0 to the address to play with the old models for comparison. */
 (function(){if(/[?&]rig=0/.test(location.search))return;var A={
@@ -47,6 +48,7 @@
 "tr_d054_saltstorm_shelter_builder": "url:m/rig/tr_d054_saltstorm_shelter_builder.627e183e.glb",
 "tr_n2_story_kit": "url:m/rig/tr_n2_story_kit.c3bc9679.glb",
 "tr_n2_story_sola": "url:m/rig/tr_n2_story_sola.921dacaa.glb",
-"tr_r2_kid": "url:m/rig/tr_r2_kid.cfbde01b.glb"
+"tr_r2_kid": "url:m/rig/tr_r2_kid.cfbde01b.glb",
+"tr_tamsin": "url:https://ocejqvdipitcrjfy.public.blob.vercel-storage.com/models/mws157tn-rig-transfer-rnd_ede5741727254492-mws155cq-p4w1f2aXrWT9rKrYDV3KUsHgKjZcFb.glb"
 };for(var k in A)window.ASSETS.glb[k]=A[k];
 window.RIGGED={"Blinkit": "br_rig_blinkit", "Bogeel": "br_rig_bogeel", "Cactling": "br_rig_cactling", "Chirpod": "br_rig_chirpod", "Cogglet": "br_rig_cogglet", "Coilet": "br_rig_coilet", "Drippit": "br_rig_drippit", "Dunetrot": "br_rig_dunetrot", "Fizzle": "br_rig_fizzle", "Fizzlord": "br_rig_fizzlord", "Gleamgrub": "br_rig_gleamgrub", "Gloopa": "br_rig_gloopa", "Hivemaw": "br_rig_hivemaw", "Liftant": "br_rig_liftant", "Magnub": "br_rig_magnub", "Pebblet": "br_rig_pebblet", "Skitterbit": "br_rig_skitterbit", "Spindyn": "br_rig_spindyn", "Sporix": "br_rig_sporix", "Tiktrill": "br_rig_tiktrill"};window.RIGMAP={"lo_blinkit": "br_rig_blinkit", "n4_bogeel": "br_rig_bogeel", "n3_cactling": "br_rig_cactling", "lo_chirpod": "br_rig_chirpod", "lo_cogglet": "br_rig_cogglet", "lo_coilet": "br_rig_coilet", "n4_drippit": "br_rig_drippit", "lo_dunetrot": "br_rig_dunetrot", "lo_fizzle": "br_rig_fizzle", "lo_fizzlord": "br_rig_fizzlord", "lo_gleamgrub": "br_rig_gleamgrub", "lo_gloopa": "br_rig_gloopa", "lo_hivemaw": "br_rig_hivemaw", "lo_liftant": "br_rig_liftant", "lo_magnub": "br_rig_magnub", "lo_pebblet": "br_rig_pebblet", "lo_skitterbit": "br_rig_skitterbit", "lo_spindyn": "br_rig_spindyn", "lo_sporix": "br_rig_sporix", "lo_tiktrill": "br_rig_tiktrill"};window.YAWFIX=Object.assign(window.YAWFIX||{},{"br_rig_chirpod": -1.5708, "br_rig_gloopa": -1.5708});})();
