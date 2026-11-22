@@ -1,0 +1,52 @@
+# Gathers every Alienmon model into model-library/ on the model-library branch.
+# Runs only on that branch. Never deploys, never touches maps-v2 or main.
+name: model-library
+on:
+  push:
+    branches: [model-library]
+    paths: [model-library/manifest.json, .github/workflows/model-library.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: { group: model-library, cancel-in-progress: false }
+jobs:
+  gather:
+    if: github.ref == 'refs/heads/model-library'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: model-library }
+      - name: Download and copy models
+        run: |
+          python3 - <<'PY'
+          import json, os, shutil, urllib.request
+          m = json.load(open('model-library/manifest.json')); missing = []; LIMIT = 95_000_000
+          for url, dest in m['download']:
+              if os.path.exists(dest) and os.path.getsize(dest) > 0: continue
+              os.makedirs(os.path.dirname(dest), exist_ok=True)
+              try:
+                  with urllib.request.urlopen(url, timeout=120) as r, open(dest + '.part', 'wb') as f: shutil.copyfileobj(r, f)
+                  if os.path.getsize(dest + '.part') > LIMIT: missing.append(f'{dest}: over the 95 MB GitHub limit'); os.remove(dest + '.part')
+                  else: os.replace(dest + '.part', dest)
+              except Exception as e:
+                  missing.append(f'{dest}: download failed ({e})')
+                  if os.path.exists(dest + '.part'): os.remove(dest + '.part')
+          for s, dest in m['copy']:
+              if not os.path.exists(s): missing.append(f'{dest}: {s} not found'); continue
+              os.makedirs(os.path.dirname(dest), exist_ok=True)
+              if not os.path.exists(dest): shutil.copyfile(s, dest)
+          tot = sum(os.path.getsize(os.path.join(d, f)) for d, _, fs in os.walk('model-library') for f in fs)
+          open('model-library/REPORT.txt', 'w').write(f'total {tot / 1e6:.1f} MB\n' + ''.join(f'MISSING {x}\n' for x in missing))
+          print(open('model-library/REPORT.txt').read())
+          PY
+      - name: Commit back to this branch
+        run: |
+          git config user.name "model-library bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A model-library sporeholm3d/m
+          git diff --cached --quiet && exit 0
+          git commit -m "Gather Alienmon models into model-library"
+          git push origin HEAD:model-library
+      - uses: actions/upload-artifact@v4
+        with: { name: alienmon-model-library, path: model-library, retention-days: 30 }
