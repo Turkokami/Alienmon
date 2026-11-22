@@ -1,0 +1,17 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Tamsin check</title>
+<style>body{margin:0;background:#cfd6dd;font:14px sans-serif}#info{position:fixed;left:8px;top:8px;background:#fff8;padding:6px 8px}</style></head><body><div id="info">loading…</div>
+<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/"}}</script>
+<script type="module">
+import * as THREE from "three"; import {GLTFLoader} from "three/addons/loaders/GLTFLoader.js";
+const info=document.getElementById("info"); const s=document.createElement("script"); s.src="assets.js?v=wd4"; document.head.appendChild(s);
+await new Promise(r=>s.onload=r); const r2=document.createElement("script"); r2.src="rigged.js?v=rg3t"; document.head.appendChild(r2); await new Promise(r=>r2.onload=r);
+const u=window.ASSETS.glb.tr_tamsin.slice(4); const clip=new URLSearchParams(location.search).get("clip")||"walk_v2";
+const R=new THREE.WebGLRenderer({antialias:true}); R.setSize(innerWidth,innerHeight); R.setPixelRatio(devicePixelRatio); document.body.appendChild(R.domElement);
+const S=new THREE.Scene(); S.background=new THREE.Color(0xcfd6dd); S.add(new THREE.HemisphereLight(0xffffff,0x667788,2.2)); const D=new THREE.DirectionalLight(0xffffff,1.5); D.position.set(2,4,3); S.add(D);
+const C=new THREE.PerspectiveCamera(35,innerWidth/innerHeight,.01,100);
+const g=await new GLTFLoader().loadAsync(u); const m=g.scene; S.add(m); const b=new THREE.Box3().setFromObject(m), h=b.max.y-b.min.y, c=b.getCenter(new THREE.Vector3());
+C.position.set(c.x+h*0.9,c.y+h*0.15,c.z+h*2.2); C.lookAt(c);
+const mx=new THREE.AnimationMixer(m); const a=g.animations.find(x=>x.name===clip)||g.animations[0]; mx.clipAction(a).play();
+info.textContent="clips: "+g.animations.map(x=>x.name).join(", ")+"  |  playing "+a.name;
+const ck=new THREE.Clock(); R.setAnimationLoop(()=>{mx.update(ck.getDelta()); R.render(S,C)});
+</script></body></html>
