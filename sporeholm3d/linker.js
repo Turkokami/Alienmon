@@ -59,12 +59,12 @@
     if (window.RPG && window.RPG.B) return true;
     for (const id of ["btUI", "rpgPanel", "syncUI"]) {
       const el = document.getElementById(id);
-      if (el && el.offsetParent !== null && getComputedStyle(el).display !== "none" && getComputedStyle(el).visibility !== "hidden" && el.getBoundingClientRect().height > 4) {
+      if (el && el.getClientRects().length && getComputedStyle(el).display !== "none" && getComputedStyle(el).visibility !== "hidden" && el.getBoundingClientRect().height > 4) {
         if (id === "btUI" && getComputedStyle(el).opacity === "0") continue;
         return true;
       }
     }
-    const ld = document.getElementById("load"); if (ld && ld.style.display !== "none" && ld.offsetParent !== null) return true;
+    const ld = document.getElementById("load"); if (ld && ld.style.display !== "none" && ld.getClientRects().length && getComputedStyle(ld).display !== "none") return true;
     return false;
   };
   const close = () => { mode = null; ov.style.display = "none"; ov.innerHTML = ""; if (voice) { try { voice.pause() } catch {} voice = null } };
