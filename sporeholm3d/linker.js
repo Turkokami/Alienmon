@@ -59,12 +59,12 @@
     if (window.RPG && window.RPG.B) return true;
     for (const id of ["btUI", "rpgPanel", "syncUI"]) {
       const el = document.getElementById(id);
-      if (el && el.offsetParent !== null && getComputedStyle(el).display !== "none" && getComputedStyle(el).visibility !== "hidden" && el.getBoundingClientRect().height > 4) {
+      if (el && el.getClientRects().length && getComputedStyle(el).display !== "none" && getComputedStyle(el).visibility !== "hidden" && el.getBoundingClientRect().height > 4) {
         if (id === "btUI" && getComputedStyle(el).opacity === "0") continue;
         return true;
       }
     }
-    const ld = document.getElementById("load"); if (ld && ld.style.display !== "none" && ld.offsetParent !== null) return true;
+    const ld = document.getElementById("load"); if (ld && ld.style.display !== "none" && ld.getClientRects().length && getComputedStyle(ld).display !== "none") return true;
     return false;
   };
   const close = () => { mode = null; ov.style.display = "none"; ov.innerHTML = ""; if (voice) { try { voice.pause() } catch {} voice = null } };
@@ -256,6 +256,14 @@
     }
   }, true);
   ov.addEventListener("click", e => { if (e.target === ov) { mode === "dexEntry" ? openDex() : close() } });
+  // controller: A or B closes the "New Xenodex entry" card (the game reads the pad itself, not as key presses)
+  let padPrev = false;
+  setInterval(() => {
+    const gp = navigator.getGamepads ? Array.from(navigator.getGamepads()).find(g => g && g.connected) : null;
+    const down = !!(gp && gp.buttons && ((gp.buttons[0] && gp.buttons[0].pressed) || (gp.buttons[1] && gp.buttons[1].pressed)));
+    if (down && !padPrev && mode === "entry") { close(); setTimeout(poll, 50) }
+    padPrev = down;
+  }, 60);
   // keep the movement keys from sticking when a panel opens mid-walk
   const unstick = () => { const K = window.GAME && window.GAME.K; if (K) for (const k in K) K[k] = false };
   new MutationObserver(() => { if (ov.style.display === "flex") unstick() }).observe(ov, { attributes: true, attributeFilter: ["style"] });
