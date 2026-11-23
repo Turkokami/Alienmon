@@ -39,3 +39,16 @@ Port these into the PC source too.
     frames and sills sit on the real wall surface, sampled from the wall mesh. A door leaf that would swing into a neighbouring
     dome or its own wall swings inward instead.
 16. world.js: rooms with a stair notch get a real door (frame, two leaves that swing open, a step and a lamp).
+
+## Nov 23 voice fixes (made by `rigtools/voice_fix.py`; port these into the PC source too)
+
+Run `python rigtools/voice_fix.py sporeholm3d` on a fresh built game. It is safe to run twice; it skips what is already done.
+
+17. `audio/voicebank.json`: 713 clip offsets were 5,802 bytes early, so those lines started with a scrap of the previous line.
+    Every start offset now moves forward by 5,802.
+18. `VOICELINE` (3 places in game.js): if the full text has no clip, try again without a leading "Name: " (trainer and
+    townsfolk lines are stored without the speaker's name).
+19. Battle log: after a voiced line, wait for the clip to end (up to 14 s) instead of moving on after 0.9 s, which cut voices off.
+20. Sporeholm quest lines: quest text given as a plain string now looks up its clip, so the 79 quest lines speak.
+
+17. Resting palms face the body (Nov 23, game.js `bn`): after the hand is placed, the forearm turns about its own axis so the hand's palm (hand-bone local +Z on the Tripo rig) faces the body's centre line instead of forward. Scaled by the settle weight, so walk/run blend the same way. index.html loads game.js?v=bt3.
