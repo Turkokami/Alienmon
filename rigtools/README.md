@@ -50,3 +50,5 @@ Run `python rigtools/voice_fix.py sporeholm3d` on a fresh built game. It is safe
     townsfolk lines are stored without the speaker's name).
 19. Battle log: after a voiced line, wait for the clip to end (up to 14 s) instead of moving on after 0.9 s, which cut voices off.
 20. Sporeholm quest lines: quest text given as a plain string now looks up its clip, so the 79 quest lines speak.
+
+17. Resting palms face the body (Nov 23, game.js `bn`): after the hand is placed, the forearm turns about its own axis so the hand's palm (hand-bone local +Z on the Tripo rig) faces the body's centre line instead of forward. Scaled by the settle weight, so walk/run blend the same way. index.html loads game.js?v=bt3.
