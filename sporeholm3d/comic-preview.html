@@ -3,27 +3,29 @@
 <title>Cutscene panel preview</title>
 <style>
 body{margin:0;background:#05070b;color:#eee;font:16px/1.4 system-ui,sans-serif}
-#box{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);width:min(820px,92vw);background:rgba(10,14,24,.88);border:2px solid #f4ecd8;border-radius:10px;padding:14px 18px;z-index:30}
+.lbox{position:fixed;left:0;right:0;height:9vh;background:#000;z-index:18;pointer-events:none}
+#csBox{position:fixed;left:50%;bottom:12vh;transform:translateX(-50%);width:min(820px,92vw);background:rgba(10,14,24,.88);border:2px solid #f4ecd8;border-radius:10px;padding:14px 18px;z-index:19}
 #meta{position:fixed;top:10px;left:12px;z-index:30;font-size:13px;opacity:.8}
 #ctl{position:fixed;top:10px;right:12px;z-index:30}
 button{font:inherit;padding:4px 10px;margin-left:4px}
 </style>
-<script src="comic-data.js?v=gn1"></script><script src="comic.js?v=gn1"></script></head>
+<script src="comic-data.js?v=gn1"></script><script src="comic.js?v=gn2"></script></head>
 <body>
 <div id="meta"></div>
 <div id="ctl"><button id="prev">Back</button><button id="play">Pause</button><button id="next">Next</button></div>
-<div id="box"></div>
+<div class="lbox" style="top:0"></div><div class="lbox" style="bottom:0"></div>
+<div id="csBox"></div>
 <script>
-/* Steps through every mapped cutscene line in story order, the way the game calls the panel layer.
+/* Steps through every mapped cutscene line in story order, the way the game calls the panel layer, with the game's black cutscene bars (9% of the height, top and bottom) and its dialog box, so the fit can be checked at any window size.
    Lets the panels be checked on any computer, without starting the 3D game. ?at=E08 starts at a chapter. */
 const L=COMIC_DATA.lines;let i=0,timer=null;
 const at=new URLSearchParams(location.search).get("at");
 if(at){const j=L.findIndex(l=>l[1]&&l[1].startsWith(at));if(j>=0)i=j;}
 function go(n){i=Math.max(0,Math.min(L.length-1,n));__COMIC.end();__COMIC.line(L[i][0]);
-document.getElementById("box").textContent=L[i][0];
+document.getElementById("csBox").textContent=L[i][0];
 document.getElementById("meta").textContent=(i+1)+" / "+L.length+"  ·  "+(L[i][1]||"back to 3D");}
 function play(){clearInterval(timer);timer=setInterval(()=>{if(i<L.length-1){i++;__COMIC.line(L[i][0]);
-document.getElementById("box").textContent=L[i][0];document.getElementById("meta").textContent=(i+1)+" / "+L.length+"  ·  "+(L[i][1]||"back to 3D");}},4000);}
+document.getElementById("csBox").textContent=L[i][0];document.getElementById("meta").textContent=(i+1)+" / "+L.length+"  ·  "+(L[i][1]||"back to 3D");}},4000);}
 document.getElementById("next").onclick=()=>{go(i+1)};document.getElementById("prev").onclick=()=>{go(i-1)};
 document.getElementById("play").onclick=e=>{if(timer){clearInterval(timer);timer=null;e.target.textContent="Play";}else{play();e.target.textContent="Pause";}};
 go(i);play();
