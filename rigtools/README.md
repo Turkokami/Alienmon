@@ -22,3 +22,20 @@ Add `?rig=0` to the address to play the same build with the old models, for comp
 9. Every spawn (map wanderers, wild battles, trainer teams) swaps to the rigged copy listed in `window.RIGMAP`.
 10. and 11. Rigged Alienmon on the map blend into their own walk cycle while they move, at a speed matched to how fast they travel.
 12. The afterimage trail on slam-type moves copies the model without its animation controller (copying it crashed).
+
+## Nov 23 fixes (test branch fixes-1123, not live yet)
+
+Port these into the PC source too.
+
+13. Townsfolk arm settling (`bn` in game.js, called every frame for each townsperson): the `tr_` models face +X inside their
+    group, but the code took +Z as "forward", so it pushed one forearm across the body and the other out to the side.
+    DX-4's thin robot arms showed it worst. Now "forward" is worked out from the shoulders: the direction from L_Upperarm to
+    R_Upperarm, turned a quarter to the front. The forearm may keep up to 0.2 of its own outward angle (was 0.04, which pulled
+    DX-4's hands into his thighs), and it only gets a small forward bend (up to 0.18) when the clip doesn't already have one.
+14. Head look-at (`At` in game.js): same wrong "forward", so townsfolk turned their heads sideways when you stood in front of
+    them. It now uses the same shoulder-based forward.
+15. world.js, all 5 world kits: open walk-in door leaves no longer carry the gold ring (it was left floating beside doors whose
+    leaf didn't show, like Your House). Grass tips and seed heads sway with their blades instead of hanging in the air. Window
+    frames and sills sit on the real wall surface, sampled from the wall mesh. A door leaf that would swing into a neighbouring
+    dome or its own wall swings inward instead.
+16. world.js: rooms with a stair notch get a real door (frame, two leaves that swing open, a step and a lamp).
