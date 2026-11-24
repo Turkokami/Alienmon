@@ -31,6 +31,7 @@
     'html.tc #rpgHud .m{gap:4px!important;margin:2px 0!important}',
     'html.tc.tc-battle #rpgHud{display:none!important}',
     'html.tc #rpgHud div[style*="margin-top:4px"]{display:none}',
+    '#tcX{display:none}html.tc #tcX{display:flex;position:absolute;top:-14px;right:-10px;width:34px;height:34px;border-radius:50%;align-items:center;justify-content:center;background:#1a2a36;border:2px solid #c8f06a;color:#c8f06a;font:700 16px system-ui;cursor:pointer}html.tc #dlg{padding-right:30px!important}',
     'html.tc #dlg{left:calc(8px + env(safe-area-inset-left))!important;right:calc(54px + env(safe-area-inset-right));width:auto!important;transform:none!important;bottom:calc(150px + env(safe-area-inset-bottom))!important;padding:8px 12px!important;font-size:14px;cursor:pointer}',
     '#tcTL{position:fixed;left:calc(6px + env(safe-area-inset-left));top:calc(6px + env(safe-area-inset-top));max-width:calc(58vw - 12px);display:flex;flex-direction:column;align-items:flex-start;gap:4px;z-index:5;pointer-events:none}',
     'html.tc #tcTL #objHud{position:static!important;transform:none!important;left:auto!important;top:auto!important;bottom:auto!important;font-size:11px!important;line-height:1.25;padding:4px 8px!important;max-width:100%!important;gap:6px!important;box-sizing:border-box}',
@@ -168,7 +169,14 @@
       new MutationObserver(function () { var t = hint.textContent; if (/^E\s\s/.test(t)) hint.textContent = 'Ⓐ ' + t.replace(/^E\s+/, ''); }).observe(hint, { childList: true, characterData: true, subtree: true });
     }
     var dlg = document.getElementById('dlg');
-    if (dlg) dlg.addEventListener('click', function () { press('KeyE', 'e'); });
+    if (dlg) {
+      dlg.addEventListener('click', function () { press('KeyE', 'e'); });
+      var x = document.createElement('div'); x.id = 'tcX'; x.textContent = '\u2715'; x.setAttribute('aria-label', 'Close');
+      var shut = function (e) { e.preventDefault(); e.stopPropagation(); closeDlg(); };
+      x.addEventListener('touchend', shut, { passive: false }); x.addEventListener('touchstart', function (e) { e.stopPropagation(); }, { passive: true });
+      x.addEventListener('click', shut);
+      dlg.appendChild(x);
+    }
     setInterval(tick, 120); tick();
     tip();
   };
@@ -184,8 +192,12 @@
     if (lm === 'entry' || lm === 'dexEntry' || lm === 'map' || lm === 'help') { back(); return; }
     key('keydown', 'KeyE', 'e');
   };
+  var closeDlg = function () {   // ends a townsperson chat (game.js sets window.__closeDlg); walking away still works too
+    if (window.__closeDlg) window.__closeDlg(); else { var d = document.getElementById('dlg'); if (d) d.style.display = 'none'; }
+  };
   var back = function () {   // B: the Linker panels ignore made-up key presses, so close them through their own calls
     var L = window.LINKER, lm = linkerMode();
+    if (!lm && shown('dlg') && !shown('csBox')) { closeDlg(); return; }
     if (lm) {
       if (lm === 'dexEntry') L.openDex(); else if (lm === 'dex' || lm === 'help' || lm === 'newgame') L.openMenu(); else L.close();
       return;
