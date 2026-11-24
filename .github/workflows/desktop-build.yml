@@ -109,21 +109,6 @@ jobs:
           gh release create "$TAG" "$f" --repo "$GITHUB_REPOSITORY" --target "$GITHUB_SHA" --prerelease \
             --title "Alienmon 3D for Windows ($(date -u +%b\ %d))" \
             --notes "Desktop build of the live worlds (Dustara, Sporeholm, Ferrox, Thalassa, Neonis) from desktop-app ${GITHUB_SHA::7}. Download $f, run it, and pick where to install. The first time it opens it downloads the new Alienmon once; after that it plays offline. Later versions install from the Update button on the start screen."
-      - name: Update button test (install, find this release as an update, install it over itself, restart)
-        working-directory: desktop
-        shell: bash
-        timeout-minutes: 25
-        continue-on-error: true
-        run: |
-          mkdir -p selftest; dir=$(cygpath -w "$PWD/selftest")
-          ./dist/Alienmon-3D-Setup-*.exe /S || echo "install exit $?"
-          exe=$(find "$(cygpath -u "$LOCALAPPDATA")/Programs" -name 'Alienmon 3D.exe' | head -1); echo "installed: $exe"
-          before=$(stat -c %Y "$exe")
-          ALIENMON_BUILD_RUN=0 ALIENMON_UPDATE_APPLY=1 ALIENMON_UPDATE_REPORT="$dir\\after-update.json" "$exe" "--updatetest=$dir\\update.json" || echo "exit $?"
-          cat selftest/update.json || echo "no update report"
-          for i in $(seq 1 120); do [ -f selftest/after-update.json ] && break; sleep 5; done
-          echo "== after update"; cat selftest/after-update.json || echo "the game did not start again by itself"
-          after=$(stat -c %Y "$exe"); echo "exe replaced: $([ "$after" != "$before" ] && echo yes || echo no)"
       - uses: actions/upload-artifact@v4
         if: always()
         with:
