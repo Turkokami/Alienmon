@@ -1,0 +1,56 @@
+# Tests the in-game Update button on a fresh Windows machine, using the newest published installer:
+# install it silently, pretend it is an older build, let it find that same release, download it, install it
+# over itself and start the game again. Runs by hand from the Actions tab, or when this file changes.
+# Publishes nothing.
+name: Desktop app - test the Update button
+on:
+  push:
+    branches: [desktop-app]
+    paths: ['.github/workflows/desktop-update-test.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  update:
+    runs-on: windows-latest
+    timeout-minutes: 45
+    steps:
+      - name: Download the newest published installer
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tag=$(gh api "repos/$GITHUB_REPOSITORY/releases?per_page=30" --jq '[.[] | select(.tag_name|test("^desktop-[0-9]{8}-[0-9]+$"))] | sort_by(.tag_name|split("-")[2]|tonumber) | last | .tag_name')
+          echo "newest build: $tag"; echo "TAG=$tag" >> "$GITHUB_ENV"
+          gh release download "$tag" --repo "$GITHUB_REPOSITORY" --pattern 'Alienmon-3D-Setup-*.exe' --dir "$RUNNER_TEMP/inst"
+          ls -l "$RUNNER_TEMP/inst"
+      - name: Install it silently (as a player would after downloading it)
+        shell: pwsh
+        run: |
+          $f = Get-ChildItem "$env:RUNNER_TEMP\inst\*.exe" | Select-Object -First 1
+          $p = Start-Process -FilePath $f.FullName -ArgumentList '/S' -PassThru
+          if (-not $p.WaitForExit(900000)) { Write-Host 'Installer still running after 15 minutes'; Get-Process | Where-Object { $_.Name -match 'Alienmon|Setup|nsis|Un_' } | Format-Table Name,Id,StartTime; exit 1 }
+          Write-Host "installer exit code: $($p.ExitCode)"
+          Get-ChildItem "$env:LOCALAPPDATA\Programs" -Recurse -Filter 'Alienmon 3D.exe' | Select-Object FullName,LastWriteTime,Length
+      - name: Press Update (pretending to be an older build) and check the game restarts updated
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force "$env:RUNNER_TEMP\rep" | Out-Null
+          $exe = (Get-ChildItem "$env:LOCALAPPDATA\Programs" -Recurse -Filter 'Alienmon 3D.exe' | Select-Object -First 1).FullName
+          $before = (Get-Item $exe).LastWriteTimeUtc
+          $env:ALIENMON_BUILD_RUN = '0'; $env:ALIENMON_UPDATE_APPLY = '1'; $env:ALIENMON_UPDATE_REPORT = "$env:RUNNER_TEMP\rep\after-update.json"
+          $p = Start-Process -FilePath $exe -ArgumentList "--updatetest=$env:RUNNER_TEMP\rep\update.json" -PassThru
+          if (-not $p.WaitForExit(900000)) { Write-Host 'Update download still running after 15 minutes'; exit 1 }
+          Get-Content "$env:RUNNER_TEMP\rep\update.json"
+          for ($i = 0; $i -lt 120 -and -not (Test-Path "$env:RUNNER_TEMP\rep\after-update.json"); $i++) { Start-Sleep 5 }
+          Write-Host '== after update'
+          if (Test-Path "$env:RUNNER_TEMP\rep\after-update.json") { Get-Content "$env:RUNNER_TEMP\rep\after-update.json" } else { Write-Host 'The game did not start again by itself'; Get-Process | Where-Object { $_.Name -match 'Alienmon|Setup' } | Format-Table Name,Id,StartTime }
+          $after = (Get-Item $exe).LastWriteTimeUtc
+          Write-Host "game files replaced by the update: $($after -ne $before) ($before -> $after)"
+          if (-not (Test-Path "$env:RUNNER_TEMP\rep\after-update.json")) { exit 1 }
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: update-test
+          path: ${{ runner.temp }}/rep
+          retention-days: 7
