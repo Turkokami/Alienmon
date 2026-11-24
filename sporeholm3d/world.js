@@ -1160,7 +1160,7 @@ const doorNotches = (P, S, at, ox, oz, W, D, wallM, room) => { if (!P.indoor || 
 const buildPlace = (id) => { const P = PLACE[id], S = PSTY[P.style], g = P.grid(), W = P.w, D = P.d, ox = P.ox, oz = P.oz, at = (x, y) => (y >= 0 && y < D && x >= 0 && x < W ? g[y][x] : "#"); P.g = g;
   const isFloor = (c) => ".,gbvS".includes(c);
   // painted floor
-  const px = 32, cvs = document.createElement("canvas"); cvs.width = W * px; cvs.height = D * px; const c2 = cvs.getContext("2d"); const ecv = document.createElement("canvas"); ecv.width = W * px; ecv.height = D * px; const e2 = ecv.getContext("2d"); e2.fillStyle = P.indoor ? (P.style === "bunker" ? "#24262c" : "#16282a") : "#000"; e2.fillRect(0, 0, W * px, D * px);
+  const px = W * D > 1500 ? 24 : 32, cvs = document.createElement("canvas"); cvs.width = W * px; cvs.height = D * px; const c2 = cvs.getContext("2d"); const ecv = document.createElement("canvas"); ecv.width = W * px; ecv.height = D * px; const e2 = ecv.getContext("2d"); e2.fillStyle = P.indoor ? (P.style === "bunker" ? "#24262c" : "#16282a") : "#000"; e2.fillRect(0, 0, W * px, D * px);
   { const tc = document.createElement("canvas"); tc.width = W * px; tc.height = D * px; const t2 = tc.getContext("2d"); for (let y = 0; y < D; y++) for (let x = 0; x < W; x++) { const c = g[y][x], nv = fbm(x * 0.22 + PK, y * 0.22, 3.1, 2) * 0.5 + 0.5; t2.fillStyle = c === "," || c === "S" ? S.stone : c === "v" ? "#6a3aa0" : c === "g" ? "#3a9a4a" : c === "w" ? "#0e3a4a" : S.floor[Math.min(2, Math.floor(nv * 3))]; t2.fillRect(x * px, y * px, px, px); } c2.filter = "blur(" + Math.round(px * 0.45) + "px)"; c2.drawImage(tc, 0, 0); c2.filter = "none"; }
   if (P.style === "root" || P.style === "stalk" || P.style === "loft") { c2.globalAlpha = 0.35; c2.strokeStyle = P.style === "stalk" ? "#8a7050" : "#3a2210"; c2.lineWidth = 2; for (let y = 0; y < D * px; y += px * 0.5) { c2.beginPath(); c2.moveTo(0, y); c2.lineTo(W * px, y + (R() - 0.5) * 6); c2.stroke(); for (let x = (y / (px * 0.5)) % 2 ? 0 : px; x < W * px; x += px * 2.5) { c2.beginPath(); c2.moveTo(x, y); c2.lineTo(x, y + px * 0.5); c2.stroke(); } } c2.globalAlpha = 1; }
   for (let k = 0; k < W * D * 6; k++) { const x = R() * W * px, y = R() * D * px, c = at(Math.floor(x / px), Math.floor(y / px)); if (!isFloor(c)) continue; c2.globalAlpha = 0.25 + R() * 0.35; c2.fillStyle = c === "," ? (R() < 0.5 ? "#2a2a2e" : "#8a8a86") : c === "v" ? (R() < 0.5 ? "#b06ad8" : "#4a2a7a") : R() < 0.5 ? S.moss : S.floor[(k % 3)]; c2.beginPath(); c2.arc(x, y, 2 + R() * 7, 0, TAU); c2.fill(); } c2.globalAlpha = 1;
@@ -1169,7 +1169,7 @@ const buildPlace = (id) => { const P = PLACE[id], S = PSTY[P.style], g = P.grid(
   if (P.style === "deep") { e2.lineCap = "round"; for (let k = 0; k < 14; k++) { let x = 20 * (P.sc || 1) * px, y = 13 * (P.sc || 1) * px, a = (k / 14) * TAU; e2.strokeStyle = ["rgba(255,210,122,0.85)", "rgba(90,240,255,0.8)"][k % 2]; e2.lineWidth = 6; e2.beginPath(); e2.moveTo(x, y); for (let s = 0; s < 40; s++) { a += (R() - 0.5) * 0.5; x += Math.cos(a) * 12; y += Math.sin(a) * 12; e2.lineTo(x, y); } e2.stroke(); } }
   if (P.style === "arena") { e2.strokeStyle = "rgba(230,255,220,0.9)"; e2.lineWidth = 10; e2.beginPath(); e2.ellipse(15 * px, 11.5 * px, 6.4 * px, 5.6 * px, 0, 0, TAU); e2.stroke(); e2.beginPath(); e2.arc(15 * px, 11.5 * px, 1.2 * px, 0, TAU); e2.stroke(); c2.strokeStyle = "#e8f0d8"; c2.lineWidth = 10; c2.beginPath(); c2.ellipse(15 * px, 11.5 * px, 6.4 * px, 5.6 * px, 0, 0, TAU); c2.stroke(); }
   if (P.style === "cave" || P.style === "crystal-cave") for (let k = 0; k < 40; k++) { const x = R() * W, y = R() * D; if (!isFloor(at(Math.floor(x), Math.floor(y)))) continue; e2.fillStyle = `rgba(${R() < 0.5 ? "90,240,255" : "150,255,150"},${0.25 + R() * 0.3})`; e2.beginPath(); e2.arc(x * px, y * px, 3 + R() * 6, 0, TAU); e2.fill(); }
-  const ft = new THREE.CanvasTexture(cvs), et = new THREE.CanvasTexture(ecv); ft.colorSpace = THREE.SRGBColorSpace; et.colorSpace = THREE.SRGBColorSpace; ft.anisotropy = 8;
+  P.bake && P.bake(e2, px); const ft = new THREE.CanvasTexture(cvs), et = new THREE.CanvasTexture(ecv); ft.colorSpace = THREE.SRGBColorSpace; et.colorSpace = THREE.SRGBColorSpace; ft.anisotropy = 8;
   const fm = std({ map: ft, emissive: "#ffffff", emissiveMap: et, emissiveIntensity: 1, roughness: P.style === "crystal" ? 0.35 : 0.9 });
   if (P.style !== "canopy" && P.style !== "crown") { const pg = new THREE.PlaneGeometry(W, D, W * 2, D * 2); pg.rotateX(-Math.PI / 2); { const Pp = pg.attributes.position; for (let i = 0; i < Pp.count; i++) { const x = Pp.getX(i) + W / 2, z = Pp.getZ(i) + D / 2, c = at(Math.floor(Math.min(W - 0.01, x)), Math.floor(Math.min(D - 0.01, z))); Pp.setY(i, c === "w" ? -0.45 : 0.02 * Math.sin(x * 1.3) * Math.cos(z * 1.1)); } pg.computeVertexNormals(); } const m = add(pg, fm, [ox + W / 2, 0, oz + D / 2]); m.name = "ground"; m.receiveShadow = true; }
   // water
@@ -4942,7 +4942,7 @@ const doorNotches = (P, S, at, ox, oz, W, D, wallM, room) => { if (!P.indoor || 
 const buildPlace = (id) => { const P = PLACE[id], S = PSTY[P.style], g = P.grid(), W = P.w, D = P.d, ox = P.ox, oz = P.oz, at = (x, y) => (y >= 0 && y < D && x >= 0 && x < W ? g[y][x] : "#"); P.g = g;
   const isFloor = (c) => ".,gbvS".includes(c);
   // painted floor
-  const px = 32, cvs = document.createElement("canvas"); cvs.width = W * px; cvs.height = D * px; const c2 = cvs.getContext("2d"); const ecv = document.createElement("canvas"); ecv.width = W * px; ecv.height = D * px; const e2 = ecv.getContext("2d"); e2.fillStyle = S.ebase || (P.indoor ? (P.style === "bunker" ? "#24262c" : "#16282a") : "#000"); e2.fillRect(0, 0, W * px, D * px);
+  const px = W * D > 1500 ? 24 : 32, cvs = document.createElement("canvas"); cvs.width = W * px; cvs.height = D * px; const c2 = cvs.getContext("2d"); const ecv = document.createElement("canvas"); ecv.width = W * px; ecv.height = D * px; const e2 = ecv.getContext("2d"); e2.fillStyle = S.ebase || (P.indoor ? (P.style === "bunker" ? "#24262c" : "#16282a") : "#000"); e2.fillRect(0, 0, W * px, D * px);
   { const tc = document.createElement("canvas"); tc.width = W * px; tc.height = D * px; const t2 = tc.getContext("2d"); for (let y = 0; y < D; y++) for (let x = 0; x < W; x++) { const c = g[y][x], nv = fbm(x * 0.22 + PK, y * 0.22, 3.1, 2) * 0.5 + 0.5; t2.fillStyle = c === "," || c === "S" ? S.stone : c === "v" ? "#6a3aa0" : c === "g" ? "#3a9a4a" : c === "w" ? "#0e3a4a" : S.floor[Math.min(2, Math.floor(nv * 3))]; t2.fillRect(x * px, y * px, px, px); } c2.filter = "blur(" + Math.round(px * 0.45) + "px)"; c2.drawImage(tc, 0, 0); c2.filter = "none"; }
   if (P.style === "root" || P.style === "stalk" || P.style === "loft" || S.planks) { c2.globalAlpha = 0.35; c2.strokeStyle = P.style === "stalk" ? "#8a7050" : "#3a2210"; c2.lineWidth = 2; for (let y = 0; y < D * px; y += px * 0.5) { c2.beginPath(); c2.moveTo(0, y); c2.lineTo(W * px, y + (R() - 0.5) * 6); c2.stroke(); for (let x = (y / (px * 0.5)) % 2 ? 0 : px; x < W * px; x += px * 2.5) { c2.beginPath(); c2.moveTo(x, y); c2.lineTo(x, y + px * 0.5); c2.stroke(); } } c2.globalAlpha = 1; }
   for (let k = 0; k < W * D * 6; k++) { const x = R() * W * px, y = R() * D * px, c = at(Math.floor(x / px), Math.floor(y / px)); if (!isFloor(c)) continue; c2.globalAlpha = 0.25 + R() * 0.35; c2.fillStyle = c === "," ? (R() < 0.5 ? "#2a2a2e" : "#8a8a86") : c === "v" ? (R() < 0.5 ? "#b06ad8" : "#4a2a7a") : R() < 0.5 ? S.moss : S.floor[(k % 3)]; c2.beginPath(); c2.arc(x, y, 2 + R() * 7, 0, TAU); c2.fill(); } c2.globalAlpha = 1;
@@ -4953,7 +4953,7 @@ const buildPlace = (id) => { const P = PLACE[id], S = PSTY[P.style], g = P.grid(
   if (P.style === "arena" || S.lines) { e2.strokeStyle = "rgba(230,255,220,0.9)"; e2.lineWidth = 10; e2.beginPath(); e2.ellipse(15 * px, 11.5 * px, 6.4 * px, 5.6 * px, 0, 0, TAU); e2.stroke(); e2.beginPath(); e2.arc(15 * px, 11.5 * px, 1.2 * px, 0, TAU); e2.stroke(); c2.strokeStyle = "#e8f0d8"; c2.lineWidth = 10; c2.beginPath(); c2.ellipse(15 * px, 11.5 * px, 6.4 * px, 5.6 * px, 0, 0, TAU); c2.stroke(); }
   if (S.dots) for (let k = 0; k < 50; k++) { const x = R() * W, y = R() * D; if (!isFloor(at(Math.floor(x), Math.floor(y)))) continue; e2.fillStyle = `rgba(${S.dots[k % S.dots.length]},${0.18 + R() * 0.25})`; e2.beginPath(); e2.arc(x * px, y * px, 2 + R() * 5, 0, TAU); e2.fill(); }
   if (P.style === "cave" || P.style === "crystal-cave") for (let k = 0; k < 40; k++) { const x = R() * W, y = R() * D; if (!isFloor(at(Math.floor(x), Math.floor(y)))) continue; e2.fillStyle = `rgba(${R() < 0.5 ? "90,240,255" : "150,255,150"},${0.25 + R() * 0.3})`; e2.beginPath(); e2.arc(x * px, y * px, 3 + R() * 6, 0, TAU); e2.fill(); }
-  const ft = new THREE.CanvasTexture(cvs), et = new THREE.CanvasTexture(ecv); ft.colorSpace = THREE.SRGBColorSpace; et.colorSpace = THREE.SRGBColorSpace; ft.anisotropy = 8;
+  P.bake && P.bake(e2, px); const ft = new THREE.CanvasTexture(cvs), et = new THREE.CanvasTexture(ecv); ft.colorSpace = THREE.SRGBColorSpace; et.colorSpace = THREE.SRGBColorSpace; ft.anisotropy = 8;
   const fm = std({ map: ft, emissive: "#ffffff", emissiveMap: et, emissiveIntensity: 1, roughness: P.style === "crystal" ? 0.35 : 0.9 });
   if (P.style !== "canopy" && P.style !== "crown") { const pg = new THREE.PlaneGeometry(W, D, W * 2, D * 2); pg.rotateX(-Math.PI / 2); { const Pp = pg.attributes.position; for (let i = 0; i < Pp.count; i++) { const x = Pp.getX(i) + W / 2, z = Pp.getZ(i) + D / 2, c = at(Math.floor(Math.min(W - 0.01, x)), Math.floor(Math.min(D - 0.01, z))); Pp.setY(i, c === "w" ? -0.45 : c === " " ? -14 : 0.02 * Math.sin(x * 1.3) * Math.cos(z * 1.1)); } pg.computeVertexNormals(); } const m = add(pg, fm, [ox + W / 2, 0, oz + D / 2]); m.name = "ground"; m.receiveShadow = true; }
   // water
@@ -5010,11 +5010,189 @@ const dpShaft = (x, z, c = "#ffb060", h = 6, r = 0.9) => { const m = add(new THR
 const dpPool = (x, z, rx, rz, c = "#2fb0b8") => { const m = add(new THREE.CircleGeometry(1, 32), std({ color: c, roughness: 0.05, metalness: 0.3, emissive: c, emissiveIntensity: 0.45, transparent: true, opacity: 0.85 }), [x, -0.1, z], [-Math.PI / 2, 0, 0]); m.scale.set(rx, rz, 1); m.name = "water"; };
 
 // ---------- Sunset Tunnel ----------
-defPlace("sunset1", { name: "Sunset Tunnel B1", w: 40, d: 30, style: "mine", indoor: true,
-  grid() { const g = PLW(40, 30); pPath(g, [[4, 26], [4, 20], [12, 18], [20, 20], [28, 16], [33, 10], [35, 4]], 4); pPath(g, [[12, 18], [14, 10], [22, 7], [30, 7], [33, 10]], 4); pCirc(g, 12, 18.5, 3.4);
+// ---------- Sunset Tunnel expansion (patch_caves.py) ----------
+// The original 40 x 30 tunnels keep every tile (all story spots, the Pell ambush, both stairs); the new galleries open off them.
+// ---- grid carving for the expansion (pasted into world.js by patch_caves.py) ----
+const dcOld = (x, y) => x < 40 && y < 30; // the original 40 x 30 tunnel: its tiles are never re-roughened
+const dcRough = (g, amt, seed, keep) => { const H = g.length, W = g[0].length, o = g.map((r) => r.slice()); for (let y = 1; y < H - 1; y++) for (let x = 1; x < W - 1; x++) { if (o[y][x] !== "#" || keep(x, y)) continue; let n = 0; for (const [dx, dy] of [[1, 0], [-1, 0], [0, 1], [0, -1]]) if (o[y + dy][x + dx] === ".") n++; if (n >= 2 && fbm(x * 0.4 + seed, y * 0.4, seed) > 0.5 - amt) g[y][x] = "."; } };
+// B1 (sunset1, 78 x 56): east galleries, the southern drifts, and the hidden Still Water Shrine
+const DCX1 = {
+  pillars: [[51, 9.5, 1.1], [57.5, 14.5, 1.0], [23, 41, 1.2], [30.5, 44.5, 0.9], [49, 46, 1.0]],
+  // [x, y, ry, item stash id] stash spots are carved as small pockets below
+};
+const dcGrid1 = (g) => { const keep = (x, y) => dcOld(x, y) || (x >= 64 && y >= 30 && y <= 44); // (the shrine keeps a clean edge)
+  // connectors out of the original tunnel: east from the rail junction (33,10), south through the old dead end (22,26)
+  pPath(g, [[33, 10], [39, 11.5], [45, 12]], 4); pPath(g, [[22, 26], [22, 31], [24.5, 36]], 3.4);
+  // the Lantern Gallery (big east chamber) and its north alcove (stash)
+  pCirc(g, 54, 12, 9, ".", 7); pPath(g, [[51.5, 6], [49.5, 2.6]], 2.6); pCirc(g, 49.4, 2.4, 1.5);
+  // the Crystal Vein Hall and its corner niche (stash)
+  pPath(g, [[62, 11], [67.5, 9.5]], 4); pCirc(g, 71, 9, 5.6, ".", 5.2); pPath(g, [[73.5, 6], [75.6, 2.8]], 2.4); pCirc(g, 75.8, 2.4, 1.3);
+  // the collapsed junction south of the gallery
+  pPath(g, [[56, 18], [57, 24], [58, 28]], 4); pCirc(g, 58, 30, 4.2, ".", 3.6);
+  // the Echo Cavern, the old Miners' Bunkroom west of it and its back pocket (stash)
+  pCirc(g, 26, 42, 9, ".", 6.6); pPath(g, [[18, 43], [12, 46]], 4); pCirc(g, 7.5, 47, 5.2, ".", 4.2); pPath(g, [[5, 50], [4, 53.4]], 2.4); pCirc(g, 4, 53.6, 1.3);
+  // the Ore Sorting Floor, its link north to the junction and the rail spur (stash)
+  pPath(g, [[34, 43], [42.5, 45]], 4); pCirc(g, 51, 45, 9, ".", 6.6); pPath(g, [[56, 40], [58, 33]], 4); pPath(g, [[54.5, 50.5], [50.5, 53.6]], 2.6); pCirc(g, 50, 53.8, 1.4);
+  // the Pump Chamber (old flood pumps) between the junction and the Echo Cavern, and the Collapsed Stope above the bunkroom
+  pPath(g, [[54.5, 30.5], [49, 30]], 3.6); pCirc(g, 44, 30, 6.5, ".", 5); pPath(g, [[40, 34], [35, 38]], 3.4);
+  pPath(g, [[8.5, 43.5], [9.5, 39]], 3.4); pCirc(g, 10, 35.5, 5, ".", 3.6);
+  // the long south drift east to the Glowworm Hollow
+  pPath(g, [[59.5, 47.5], [64, 49.5], [67, 50]], 3.6); pCirc(g, 71, 50, 5.6, ".", 4.4);
+  // the hidden crawl: a narrow crack out of the Crystal Vein Hall's south-east corner, down the east wall to the shrine
+  pPath(g, [[73.6, 13], [75.2, 17], [74.4, 21.5], [75.6, 26], [73.6, 31]], 2.2);
+  dcRough(g, 0.3, 21, keep);
+  // the Still Water Shrine: a round chamber, the pond in the middle, the altar dais beyond it (south)
+  pCirc(g, 70, 37, 6.2, ".", 5.2); pPath(g, [[73.6, 30], [72.4, 34]], 2.4); pCirc(g, 70, 36.6, 3.3, "w", 2.3); pRect(g, 67, 40, 73, 41, ",");
+  for (const [x, y, r] of DCX1.pillars) pCirc(g, x, y, r * 0.85, "o");
+  pRect(g, 69, 40, 70, 41, "o"); pRect(g, 66, 40, 66, 40, "o"); pRect(g, 73, 40, 73, 40, "o"); // the altar and its two waystones are solid
+  pRect(g, 43, 30, 44, 32, "o"); // the flood pump
+};
+// B2 (sunset2, 78 x 56): the drowned east caverns, the steam galleries toward the Frontier and the Sunken Rail Station
+const DCX2 = { pillars: [[47, 37.5, 1.0], [16, 45.5, 0.9], [67.6, 19.4, 0.9]] };
+const dcGrid2 = (g) => { const keep = (x, y) => dcOld(x, y) || (x >= 32 && x <= 39 && y >= 26 && y <= 33); // (the exit stair notch stays a notch)
+  pPath(g, [[35, 8], [41, 9], [47, 9.5]], 4); pCirc(g, 55, 10, 8, ".", 6.2); // east out of the lantern alcove to the Tidewater Grotto
+  pPath(g, [[62.5, 12], [67, 14.5]], 3.6); pCirc(g, 71, 17, 5.6, ".", 6.4); pPath(g, [[73.5, 11.5], [75.4, 4.4]], 2.4); pCirc(g, 75.6, 4, 1.3); // the Fossil Hall and its pocket (stash)
+  pPath(g, [[54, 16], [52.5, 23], [51, 30]], 4); pCirc(g, 50, 37, 8.5, ".", 6.2); // south to the Steam Vent Gallery
+  pPath(g, [[33, 20.5], [39, 22.5], [45, 26], [47, 31]], 3.4); // a second way down from the exit ledge
+  pPath(g, [[58.5, 38], [64, 40]], 3.6); pCirc(g, 68, 41, 5, ".", 4.4); // the Ember Seep
+  pPath(g, [[50, 43], [52, 48.5]], 3.4); pCirc(g, 54, 51, 5, ".", 3.4); // the Brine Cistern
+  pPath(g, [[41.5, 39], [32, 41.5], [24, 44]], 3.8); pCirc(g, 17, 46, 7.5, ".", 5.6); pPath(g, [[11, 50], [7, 53.4]], 2.4); pCirc(g, 6.6, 53.6, 1.3); // the Sunken Rail Station and its pocket (stash)
+  pPath(g, [[6, 25], [8, 31], [12, 40]], 3.4); // the old dead end now runs on down to the station
+  dcRough(g, 0.25, 31, keep);
+  pCirc(g, 57.5, 8, 3, "w", 2); pCirc(g, 68.5, 42, 1.6, "w", 1.2); // the tide pool and a warm spring
+  for (const [x, y, r] of DCX2.pillars) pCirc(g, x, y, r * 0.85, "o");
+};
+// ---- props, lights and baked floor glow for the expansion ----
+// Lanterns are timber posts with an emissive lantern; only a few per chamber carry a real PointLight (the game pools those),
+// the rest light the floor through warm glow pools baked into the floor's emissive map (P.bake, called by buildPlace).
+const DCWARM = "#ffb868", DCTEAL = "#7ff0e6";
+const dcGlowPaint = (list) => (e2, px) => { e2.save(); e2.globalCompositeOperation = "lighter"; for (const [x, y, r, c] of list) { const gr = e2.createRadialGradient(x * px, y * px, 0, x * px, y * px, r * px); gr.addColorStop(0, c); gr.addColorStop(1, "rgba(0,0,0,0)"); e2.fillStyle = gr; e2.fillRect((x - r) * px, (y - r) * px, 2 * r * px, 2 * r * px); } e2.restore(); };
+const dcPost = (X, Z, x, y, ry = 0, c = DCWARM) => { const G = grp(X(x), 0, Z(y), ry), wd = D.wood(); add(warp(new THREE.BoxGeometry(0.2, 2.8, 0.2, 1, 3, 1), 0.02, 2), wd, [0, 1.4, 0], [0, 0, 0], null, G); add(new THREE.BoxGeometry(0.78, 0.12, 0.12), wd, [0.3, 2.66, 0], [0, 0, 0], "nocol", G); add(new THREE.CylinderGeometry(0.012, 0.012, 0.32, 4), D.iron(), [0.6, 2.46, 0], [0, 0, 0], "nocol", G); add(olathe([[0.001, -0.17], [0.12, -0.14], [0.16, 0.02], [0.08, 0.15], [0.001, 0.15]], 12), MK.glowC(c, 2.4), [0.6, 2.16, 0], [0, 0, 0], "nocol", G); add(new THREE.ConeGeometry(0.17, 0.12, 8), D.iron(), [0.6, 2.33, 0], [0, 0, 0], "nocol", G); return G; };
+const dcCandle = (x, z, y = 0, h = 0.22) => { add(new THREE.CylinderGeometry(0.05, 0.06, h, 8), std({ color: "#f4e6c8", roughness: 0.6 }), [x, y + h / 2, z], [0, 0, 0], "nocol"); add(new THREE.SphereGeometry(0.045, 8, 6), MK.glowC("#ffd27a", 3), [x, y + h + 0.05, z], [0, 0, 0], "nocol").scale.y = 1.6; };
+const dcPillar = (x, z, r = 1, h = 5.4) => { const m = add(warp(new THREE.CylinderGeometry(r * 0.72, r * 1.08, h, 10, 6), 0.16, 1.1), D.rock(), [x, h / 2, z], [0, R() * TAU, 0]); m.scale.x = 0.9 + R() * 0.2; for (let k = 0; k < 4; k++) { const a = R() * TAU; boulder(x + Math.cos(a) * r * 1.05, 0.18, z + Math.sin(a) * r * 1.05, 0.3 + R() * 0.25, D.rock(), 0.6); } return m; };
+const dcMite = (x, z, s = 1, mat = D.rock()) => { const m = add(warp(new THREE.ConeGeometry(0.35 * s, 1.6 * s, 7, 3), 0.08, 1.5), mat, [x, 0.8 * s - 0.05, z], [(R() - 0.5) * 0.15, R() * TAU, (R() - 0.5) * 0.15]); return m; }; // a stalagmite
+const dcDots = (x, z, c = "#9aff9a", n = 7) => { const m = MK.glowC(c, 1.6); for (let k = 0; k < n; k++) add(new THREE.SphereGeometry(0.04 + R() * 0.04, 6, 5), m, [x + (R() - 0.5) * 0.9, 0.05 + R() * 1.6, z + (R() - 0.5) * 0.9], [0, 0, 0], "nocol"); }; // glowing cave moss
+const dcThreads = (x, z, c = "#9aff9a", n = 8, sp = 2.4) => { const m = MK.glowC(c, 2); for (let k = 0; k < n; k++) { const L = 0.5 + R() * 1.4, px = x + (R() - 0.5) * sp, pz = z + (R() - 0.5) * sp; add(new THREE.CylinderGeometry(0.012, 0.012, L, 4), m, [px, 4.6 - L / 2, pz], [0, 0, 0], "nocol"); add(new THREE.SphereGeometry(0.05, 6, 5), m, [px, 4.6 - L, pz], [0, 0, 0], "nocol"); } }; // glowworm threads
+const dcBin = (x, z, ry = 0, ore = "#8a4a2a") => { const G = grp(x, 0, z, ry), wd = D.wood(); add(warp(new THREE.BoxGeometry(1.6, 0.9, 1.1, 2, 1, 2), 0.02, 2), wd, [0, 0.45, 0], [0, 0, 0], null, G); for (let k = 0; k < 7; k++) add(new THREE.DodecahedronGeometry(0.2 + R() * 0.08, 0), std({ color: ore, roughness: 0.9 }), [(R() - 0.5) * 1.2, 0.95, (R() - 0.5) * 0.7], [R(), R(), R()], "nocol", G); return G; };
+const dcBunk = (x, z, ry = 0) => { const G = grp(x, 0, z, ry), wd = D.wood(); for (const sx of [-0.95, 0.95]) for (const sz of [-0.4, 0.4]) add(new THREE.BoxGeometry(0.1, 1.8, 0.1), wd, [sx, 0.9, sz], [0, 0, 0], null, G); for (const y of [0.42, 1.32]) { add(new THREE.BoxGeometry(2.0, 0.08, 0.9), wd, [0, y, 0], [0, 0, 0], null, G); add(warp(new THREE.BoxGeometry(1.8, 0.14, 0.78, 3, 1, 2), 0.02, 2), std({ color: "#c8b08a", roughness: 1 }), [0, y + 0.11, 0], [0, 0, 0], "nocol", G); add(new THREE.BoxGeometry(0.9, 0.05, 0.8), std({ color: y < 1 ? "#8a3a2a" : "#3a6a7a", roughness: 1 }), [0.35, y + 0.2, 0], [0, 0, 0.04], "nocol", G); } return G; };
+const dcTable = (x, z, ry = 0) => { const G = grp(x, 0, z, ry), wd = D.wood(); add(new THREE.BoxGeometry(1.4, 0.08, 0.8), wd, [0, 0.74, 0], [0, 0, 0], null, G); for (const sx of [-0.6, 0.6]) for (const sz of [-0.32, 0.32]) add(new THREE.BoxGeometry(0.08, 0.72, 0.08), wd, [sx, 0.36, sz], [0, 0, 0], null, G); for (const sx of [-0.9, 0.9]) add(new THREE.CylinderGeometry(0.18, 0.2, 0.45, 8), wd, [sx, 0.22, 0.1], [0, 0, 0], null, G); add(new THREE.CylinderGeometry(0.07, 0.08, 0.16, 8), std({ color: "#c8a878" }), [0.2, 0.86, 0.1], [0, 0, 0], "nocol", G); return G; };
+const dcStove = (x, z) => { for (let k = 0; k < 8; k++) { const a = (k / 8) * TAU; boulder(x + Math.cos(a) * 0.55, 0.12, z + Math.sin(a) * 0.55, 0.2, D.rockDark(), 0.6); } add(new THREE.CircleGeometry(0.42, 14), MK.glowC("#ff8a3a", 1.6), [x, 0.04, z], [-Math.PI / 2, 0, 0], "nocol"); for (let k = 0; k < 3; k++) add(new THREE.CylinderGeometry(0.05, 0.05, 0.8, 5), D.wood(), [x, 0.12, z], [Math.PI / 2, (k / 3) * Math.PI, 0], "nocol"); };
+const dcVent = (x, z) => { for (let k = 0; k < 9; k++) { const a = (k / 9) * TAU; boulder(x + Math.cos(a) * 0.75, 0.15, z + Math.sin(a) * 0.75, 0.28, D.rockDark(), 0.6); } add(new THREE.CircleGeometry(0.6, 16), MK.glowC("#ff7a2a", 1.8), [x, 0.05, z], [-Math.PI / 2, 0, 0], "nocol"); for (let k = 0; k < 4; k++) add(new THREE.SphereGeometry(0.5 + k * 0.22, 10, 8), new THREE.MeshBasicMaterial({ color: "#ffe2c8", transparent: true, opacity: 0.09 - k * 0.015, depthWrite: false }), [x + (R() - 0.5) * 0.3, 0.7 + k * 0.75, z + (R() - 0.5) * 0.3], [0, 0, 0], "nocol"); };
+const dcBumper = (x, z, ry = 0) => { const G = grp(x, 0, z, ry), wd = D.wood(); for (const s of [-0.42, 0.42]) add(new THREE.BoxGeometry(0.16, 0.6, 0.16), D.iron(), [s, 0.3, 0], [0, 0, 0], null, G); add(new THREE.BoxGeometry(1.1, 0.24, 0.24), wd, [0, 0.5, 0], [0, 0, 0], null, G); add(new THREE.BoxGeometry(1.1, 0.06, 0.26), std({ color: "#e8c040", roughness: 0.6 }), [0, 0.5, 0.01], [0, 0, 0], "nocol", G); return G; };
+const dcPump = (x, z, ry = 0) => { const G = grp(x, 0, z, ry), ir = D.iron(); add(new THREE.CylinderGeometry(0.9, 0.95, 2.2, 16), std({ color: "#7a5a44", roughness: 0.55, metalness: 0.5 }), [0, 1.1, 0], [0, 0, 0], null, G); for (const y of [0.4, 1.1, 1.8]) add(new THREE.TorusGeometry(0.93, 0.05, 6, 24), ir, [0, y, 0], [Math.PI / 2, 0, 0], "nocol", G); add(new THREE.TorusGeometry(0.55, 0.06, 6, 18), ir, [1.05, 1.5, 0], [0, Math.PI / 2, 0], "nocol", G); add(new THREE.CylinderGeometry(0.06, 0.06, 1.1, 6), ir, [1.05, 1.5, 0], [0, 0, Math.PI / 2], "nocol", G); add(new THREE.CylinderGeometry(0.16, 0.16, 4.5, 10), ir, [0, 2.4, -2.2], [Math.PI / 2, 0, 0], "nocol", G); add(new THREE.CylinderGeometry(0.16, 0.16, 2.6, 10), ir, [0, 1.15, -4.4], [0, 0, 0], "nocol", G); add(new THREE.SphereGeometry(0.12, 8, 6), MK.glowC("#ffb060", 2), [0, 2.35, 0.92], [0, 0, 0], "nocol", G); return G; };
+
+// ---- B1 data: lantern posts [x, y, ry, light intensity (0 = baked glow only)], extra glow pools [x, y, r, rgba]
+const DC1L = [[40.6, 10.3, 1.6, 0], [47.6, 8.4, 0.3, 2.6], [60.6, 9.4, 3.2, 0], [53.6, 18.2, 1.6, 2.4], [49.2, 16.2, 0.4, 0], [57.6, 6.5, 2.8, 0],
+  [65.4, 8.2, 1.4, 0], [55.4, 22.4, 1.6, 0], [60.6, 29.4, 3.0, 2.4], [21.0, 30.2, 0.0, 0], [20.4, 38.6, 0.6, 2.4], [33.6, 40.2, 2.8, 0], [25.6, 47.8, 1.6, 0],
+  [14.6, 44.4, 1.5, 0], [6.4, 43.8, 0.4, 2.6], [11.6, 33.0, 2.6, 0], [38.6, 42.6, 1.5, 0], [45.6, 41.2, 0.6, 2.4], [58.4, 43, 2.8, 0], [55.8, 49.6, 2.2, 0],
+  [63.0, 47.6, 1.5, 0], [41.4, 27.0, 0.4, 2.4], [48.2, 33.0, 2.6, 0], [37.4, 35.6, 2.2, 0]];
+const DC1G = [[54, 12, 9, "rgba(255,150,80,0.16)"], [26, 42, 9, "rgba(255,150,80,0.15)"], [51, 45, 9, "rgba(255,150,80,0.15)"], [44, 30, 6, "rgba(255,150,80,0.14)"], [7.5, 47, 5, "rgba(255,160,90,0.2)"], [10, 35.5, 4.5, "rgba(255,150,80,0.14)"], [58, 30, 4, "rgba(255,150,80,0.14)"],
+  [71, 9, 6, "rgba(90,230,220,0.2)"], [71, 50, 5.5, "rgba(120,255,170,0.2)"], [75, 17, 2.4, "rgba(90,220,210,0.22)"], [74.6, 21.5, 2.4, "rgba(90,220,210,0.22)"], [75.4, 26, 2.4, "rgba(90,220,210,0.22)"], [73.8, 30.6, 2.4, "rgba(90,220,210,0.24)"],
+  [70, 36.6, 6, "rgba(90,230,230,0.26)"], [70, 40.6, 3.2, "rgba(255,200,120,0.35)"], [49.4, 2.6, 2.2, "rgba(255,190,110,0.28)"], [75.8, 2.6, 2.2, "rgba(150,220,255,0.28)"], [4, 53.4, 2.2, "rgba(255,190,110,0.28)"], [50, 53.6, 2.2, "rgba(255,190,110,0.28)"],
+  ...DC1L.map(([x, y]) => [x, y, 3.6, "rgba(255,168,92,0.42)"])];
+const dcBake1 = dcGlowPaint(DC1G);
+const dcDress1 = ({ X, Z, lite }) => {
+  for (const [x, y, ry, li] of DC1L) { dcPost(X, Z, x, y, ry); if (li) lite(x + 0.6 * Math.cos(ry), y - 0.6 * Math.sin(ry), DCWARM, li, 11, 2.1); }
+  for (const [x, y, r] of DCX1.pillars) dcPillar(X(x), Z(y), r);
+  // the branch line: rails east from the old junction through the Lantern Gallery to the Collapsed Junction, and the south line through the Ore Sorting Floor
+  dpRails([[33, 10], [39, 11.5], [45, 12], [52, 13.2], [55.6, 17], [57, 24], [58, 28.4]], X, Z); dpRails([[42.5, 45], [48, 43.4], [54, 44.4], [59.5, 47.5], [64, 49.5], [66.6, 50]], X, Z); dpRails([[54.5, 46.6], [54.5, 50.5], [50.6, 53.2]], X, Z);
+  for (const [x, y, ry] of [[37.4, 10.9, 1.8], [43, 12, 1.6], [56.6, 21, 0.1], [57.6, 26, 0.1], [22, 29, 0], [23.4, 33.6, 0.4], [16, 44.6, 1.2], [38.2, 44, 1.4], [62, 48.6, 1.2], [9.2, 40.8, 0.2], [51.4, 30.2, 1.6], [37.6, 36.6, 0.8]]) dpTimber(X(x), Z(y), ry);
+  // the Lantern Gallery: a cart on the branch line, crates and ore by the walls, amber crystals
+  dpCart(X(50.4), Z(13), 1.75); dpCart(X(56), Z(19.4), 0.25, "#c8783a"); crateP(X(47.4), Z(14.8), 0.55); crateP(X(48.1), Z(15.4), 0.45); barrelP(X(61), Z(13.8), 0.7); barrelP(X(60.2), Z(14.6), 0.6); dcBin(X(58.6), Z(7.4), 0.4);
+  dpCrystals(X(46.6), Z(7.4), "#ffd27a", 0.7, 4); dpCrystals(X(62), Z(16), "#ffd27a", 0.6, 3); for (const [x, y] of [[45.6, 10], [62.4, 11.6], [50, 17.4], [59.4, 17.2]]) dcMite(X(x), Z(y), 0.8 + R() * 0.4);
+  tallGrass(X(55.4), Z(14.6), 2.2, 1.3, "cave", { any: true, name: "Sunset Tunnel B1 Lantern Gallery rubble" });
+  // its north alcove: a miner's forgotten crate and the first hidden stash
+  crateP(X(48.4), Z(2.2), 0.45); dpRubble(X(50.6), Z(1.9), 0.5, 3); dcCandle(X(48.8), Z(3.4)); dcCandle(X(50.1), Z(3.2), 0, 0.16);
+  // the Crystal Vein Hall: a forest of teal and violet crystal, one corner niche (stash); the crack in the south-east corner is the way to the shrine
+  for (const [x, y, c, s] of [[68, 6.4, DCTEAL, 1], [72.6, 5.2, "#c86aff", 0.9], [74.6, 9.4, DCTEAL, 0.8], [67.4, 11.8, "#c86aff", 0.8], [70.2, 12.6, DCTEAL, 0.9], [71.4, 9, "#c86aff", 0.6], [66, 9.6, DCTEAL, 0.7], [76, 6.8, "#c86aff", 0.6], [71.2, 12.8, DCTEAL, 0.6]]) dpCrystals(X(x), Z(y), c, s, 5);
+  lite(71, 9, DCTEAL, 2.6, 12, 2.6); lite(73.4, 12, "#c86aff", 1.6, 7, 1.6);
+  dcCandle(X(75.1), Z(3.4)); dpRubble(X(76.4), Z(1.8), 0.4, 3);
+  // the crack: faint glowing cave-moss so it is never black, a little teal crystal at each bend
+  for (const [x, y] of [[74.6, 15.2], [75.6, 19.4], [74.2, 23.6], [75.8, 27.6], [74.4, 30]]) { dpCrystals(X(x + 0.9), Z(y), DCTEAL, 0.35, 2); dcDots(X(x - 0.9), Z(y)); }
+  // the Collapsed Junction: the branch line ends at a buffer under a fall of rock
+  dcBumper(X(58), Z(29.4), 0); dpRubble(X(60.8), Z(32.2), 1, 7); dpBlock(X(55.2), Z(32.6), 1.2); dpTimber(X(58.2), Z(31.8), 0.3, 3, 3.4).rotation.z = 0.35; crateP(X(56.2), Z(28.2), 0.5);
+  // the Pump Chamber: the old flood pump, its pipe up the wall, a puddle of seep water
+  dcPump(X(44), Z(31.4), 0); dpPool(X(41.4), Z(28.4), 1.5, 1, "#3ac0c0"); barrelP(X(47.4), Z(27.2), 0.7); crateP(X(39.6), Z(31.8), 0.5); dpSandbags(X(46.6), Z(33.4), 0.3);
+  tallGrass(X(41), Z(32.4), 1.6, 1.2, "cave", { any: true, name: "Sunset Tunnel B1 Pump Chamber" });
+  // the Echo Cavern: stalagmites, a beam of sunset light through a crack high above, rubble where wild Alienmon hide
+  for (const [x, y, s] of [[19.4, 39.2, 1.2], [20.2, 45.2, 1], [33, 39.6, 1.1], [32.4, 46.6, 0.9], [27.6, 37.2, 0.8], [24.6, 47.4, 0.9], [29, 40.8, 0.7], [18.6, 42, 0.7]]) dcMite(X(x), Z(y), s);
+  dpShaft(X(27.4), Z(42.6), "#ffa060", 6, 1.3); lite(27.4, 42.6, "#ff9a50", 2.4, 9, 4.6);
+  tallGrass(X(22), Z(45.4), 2.4, 1.5, "cave", { any: true, name: "Sunset Tunnel B1 Echo Cavern" });
+  // the Miners' Bunkroom: bunks, a table, a stove, supplies; its back pocket keeps a stash
+  dcBunk(X(3.6), Z(45.2), Math.PI / 2); dcBunk(X(4.2), Z(48.8), Math.PI / 2); dcTable(X(8.6), Z(48.6), 0.1); dcStove(X(10.4), Z(45.4)); crateP(X(11.6), Z(49.4), 0.55); crateP(X(12.2), Z(48.6), 0.45); barrelP(X(6.6), Z(50.6), 0.7); dpSandbags(X(9.6), Z(43.2), 0.2);
+  crateP(X(3.2), Z(54.2), 0.42); dcCandle(X(4.9), Z(53.1));
+  // the Collapsed Stope: fallen timbers and amber crystal
+  dpRubble(X(7), Z(33.6), 1, 7); dpTimber(X(12.2), Z(35.8), 1.2, 3, 3.4).rotation.z = -0.4; dpCrystals(X(13.4), Z(33.4), "#ffd27a", 0.8, 5); dpCrystals(X(6.4), Z(37), "#ffd27a", 0.6, 3);
+  tallGrass(X(10.2), Z(36.4), 2, 1.2, "cave", { any: true, name: "Sunset Tunnel B1 Collapsed Stope" });
+  // the Ore Sorting Floor: carts, ore bins, a chute, the spur to the buffer (stash)
+  dpCart(X(47.6), Z(43.6), 1.4); dpCart(X(54.5), Z(48), 0, "#c8783a"); dcBin(X(45), Z(47.6), 0.2); dcBin(X(52.6), Z(40.6), -0.1, "#c8783a"); dcBin(X(57.4), Z(43.2), 1.2);
+  { const G = grp(X(49.6), 0, Z(40.2), 0); add(warp(new THREE.BoxGeometry(1.2, 0.12, 3.4, 1, 1, 3), 0.02, 2), D.wood(), [0, 2.0, 0.6], [0.65, 0, 0], null, G); for (const s of [-0.6, 0.6]) add(new THREE.BoxGeometry(0.12, 2.8, 0.12), D.wood(), [s, 1.4, -0.4], [0, 0, 0], null, G); } // the ore chute
+  dcBumper(X(51.4), Z(52.6), 0.8); dcCandle(X(48.6), Z(53.6));
+  tallGrass(X(46.4), Z(49.4), 2.2, 1.3, "cave", { any: true, name: "Sunset Tunnel B1 Ore Sorting Floor" });
+  // the Glowworm Hollow: threads of light hanging in the dark, green crystal
+  for (const [x, y] of [[69, 48.6], [72.6, 49.4], [70.6, 52], [74, 51.6], [67.4, 51]]) dcThreads(X(x), Z(y));
+  dpCrystals(X(74.8), Z(48.2), "#9aff9a", 0.7, 4); dpCrystals(X(67.2), Z(48), DCTEAL, 0.6, 3); lite(71, 50, "#9affc0", 2.4, 10, 2.8);
+  // ---- the Still Water Shrine ----
+  { const ax = X(70), az = Z(40.7), S = D.paleStone();
+    add(new THREE.BoxGeometry(5.6, 0.08, 1.9), S, [ax, 0.03, az], [0, 0, 0], "nocol"); // the dais (flush with the floor)
+    const G = grp(ax, 0, az + 0.15, 0);
+    add(warp(new THREE.BoxGeometry(1.7, 0.3, 1.1, 2, 1, 2), 0.02, 2), S, [0, 0.15, 0], [0, 0, 0], null, G);
+    add(warp(soft(new THREE.BoxGeometry(1.2, 0.84, 0.74, 2, 3, 2), { warp: 0.02 }), 0.02, 2), S, [0, 0.72, 0], [0, 0, 0], null, G);
+    add(warp(new THREE.BoxGeometry(1.5, 0.12, 0.94, 2, 1, 2), 0.02, 2), S, [0, 1.2, 0], [0, 0, 0], null, G);
+    for (const y of [0.5, 0.86]) add(new THREE.BoxGeometry(0.9, 0.05, 0.03), MK.glowC(DCTEAL, 1.8), [0, y, 0.385], [0, 0, 0], "nocol", G);
+    add(new THREE.TorusGeometry(0.16, 0.03, 6, 20), MK.glowC(DCTEAL, 2), [0, 0.68, 0.385], [0, 0, 0], "nocol", G);
+    for (const [sx, sz] of [[-0.62, -0.36], [0.62, -0.36], [-0.62, 0.36], [0.62, 0.36]]) dcCandle(ax + sx, az + 0.15 + sz, 1.26, 0.16 + R() * 0.1);
+    for (const sx of [-2.4, 2.4]) dcCandle(ax + sx, az - 0.4, 0.16, 0.3);
+    D.arch(ax, az + 1.6, 4.6, 4.2, 0, 0.5); dpRune(ax, az + 1.45, 0, 2.6, 4.25, DCTEAL); for (const s of [-1, 1]) dpRune(ax + s * 2.25, az + 1.45, 0, 0.06, 1.6, DCTEAL).scale.y = 30;
+    D.waystone(X(66.2), Z(40.2), 2); D.waystone(X(73.8), Z(40.2), 2); }
+  // the pond: a rim of smooth stones, glowing pads, a shaft of pale light, crystal along the walls
+  for (let k = 0; k < 26; k++) { const a = (k / 26) * TAU; if (Math.abs(a - Math.PI / 2) < 0.75) continue; const x = 70 + Math.cos(a) * 3.55, y = 36.6 + Math.sin(a) * 2.55, b = boulder(X(x), 0.02, Z(y), 0.2 + R() * 0.1, D.paleStone(), 0.5); if (b) b.name = "nocol"; } // (the south arc stays open: you stand there at the altar)
+  for (const [x, y, s] of [[68.6, 35.8, 0.34], [71.2, 37.4, 0.28], [69.8, 37.9, 0.22], [71.8, 35.4, 0.3], [68.2, 37.6, 0.2]]) add(new THREE.CircleGeometry(s, 14), MK.glowC("#9affd8", 1.2), [X(x), -0.09, Z(y)], [-Math.PI / 2, 0, 0], "nocol");
+  dpShaft(X(70), Z(36.4), "#a8eef8", 7.5, 1.35);
+  for (const [x, y, c] of [[64.6, 34.6, DCTEAL], [75.4, 34.4, "#c86aff"], [65.2, 38.8, "#c86aff"], [75, 38.6, DCTEAL], [66.6, 32.6, DCTEAL], [72.6, 32.2, "#c86aff"]]) dpCrystals(X(x), Z(y), c, 0.7, 4);
+  lite(70, 36.6, DCTEAL, 3, 11, 2.4); lite(70, 40.2, "#ffc878", 2.6, 8, 2.2);
+};
+
+// ---- B2 data ----
+const DC2L = [[38.4, 7.0, 1.6, 0], [49.6, 5.6, 0.4, 2.4], [60.8, 13.4, 3.0, 0], [66.4, 12.2, 1.4, 0], [74.4, 20.2, 2.8, 2.4], [53, 21.4, 1.6, 0],
+  [44.4, 33.4, 0.4, 0], [56.8, 40.6, 2.8, 2.4], [41.4, 24.6, 2.2, 0], [62.6, 38.2, 1.6, 0], [57.4, 50.4, 3.0, 2.2], [36, 40.2, 1.5, 0], [27.6, 42.2, 1.5, 0],
+  [11.2, 43, 0.4, 2.6], [21.6, 49.2, 2.8, 0], [7.4, 31.2, 0.2, 0], [10.6, 38, 0.6, 0], [69.4, 37.6, 2.4, 0]];
+const DC2G = [[55, 10, 8, "rgba(120,220,230,0.14)"], [71, 17, 6, "rgba(255,160,90,0.14)"], [50, 37, 8.5, "rgba(255,130,60,0.18)"], [68, 41, 5, "rgba(255,120,50,0.24)"], [54, 51, 5, "rgba(255,170,100,0.14)"], [17, 46, 7.5, "rgba(255,160,90,0.16)"],
+  [46, 34, 1.8, "rgba(255,110,40,0.4)"], [54, 39.6, 1.8, "rgba(255,110,40,0.4)"], [52.6, 32.6, 1.6, "rgba(255,110,40,0.35)"], [75.6, 4, 2.2, "rgba(255,190,110,0.28)"], [6.6, 53.4, 2.2, "rgba(255,190,110,0.28)"],
+  ...DC2L.map(([x, y]) => [x, y, 3.6, "rgba(255,168,92,0.42)"])];
+const dcBake2 = dcGlowPaint(DC2G);
+const dcDress2 = ({ X, Z, lite }) => {
+  for (const [x, y, ry, li] of DC2L) { dcPost(X, Z, x, y, ry); if (li) lite(x + 0.6 * Math.cos(ry), y - 0.6 * Math.sin(ry), DCWARM, li, 11, 2.1); }
+  for (const [x, y, r] of DCX2.pillars) dcPillar(X(x), Z(y), r);
+  for (const [x, y, ry] of [[40.6, 8.6, 1.6], [64.6, 13.2, 1.2], [52.8, 25, 0.1], [43.2, 24.4, 0.9], [61, 39, 1.3], [51.2, 45.8, 0.3], [30, 42, 1.4], [7.4, 34.6, 0.2]]) dpTimber(X(x), Z(y), ry, 3.2, 3.2);
+  // the Tidewater Grotto: sea water seeping through the basalt into a tide pool, drips, barnacled rock
+  for (let k = 0; k < 9; k++) { const x = 51 + R() * 9, y = 5.5 + R() * 9; const d = add(new THREE.CylinderGeometry(0.02, 0.02, 4.5, 4), std({ color: "#9af0ff", emissive: "#5af0e0", emissiveIntensity: 1, transparent: true, opacity: 0.5 }), [X(x), 3.2, Z(y)]); d.name = "nocol"; }
+  for (const [x, y] of [[48.6, 12.6], [61.4, 6.6], [53.2, 4.8], [59.6, 12.8]]) { boulder(X(x), 0.3, Z(y), 0.6 + R() * 0.3, D.rockDark(), 0.7); dpCrystals(X(x + 0.6), Z(y + 0.4), "#5af0e0", 0.5, 3); }
+  lite(57.5, 8, "#5af0e0", 2.6, 11, 2.2); tallGrass(X(51.6), Z(14.2), 2, 1.2, "cavedeep", { any: true, name: "Sunset Tunnel B2 Tidewater Grotto" });
+  // the Fossil Hall: the bones of something enormous in the rock; a pocket behind it (stash)
+  D.skeleton(X(72.2), Z(20.6), -0.15, 0.72); dpCrystals(X(67), Z(21.6), "#ffd27a", 0.7, 4); dpCrystals(X(75.4), Z(14), "#ffd27a", 0.6, 3); crateP(X(74.6), Z(3.2), 0.42); dcCandle(X(76.2), Z(5));
+  // the Steam Vent Gallery: hot vents from the Frontier below, warm light
+  dcVent(X(46), Z(34)); dcVent(X(54), Z(39.6)); dcVent(X(52.6), Z(32.6)); lite(50, 36.6, "#ff8a3a", 2.8, 12, 1.8);
+  for (const [x, y] of [[43.2, 38.6], [57, 35], [48, 42], [55.4, 32]]) dcMite(X(x), Z(y), 0.9, D.rockDark());
+  tallGrass(X(49.6), Z(39.8), 2.2, 1.2, "cavedeep", { any: true, name: "Sunset Tunnel B2 Steam Vent Gallery" });
+  // the Ember Seep: a warm spring lit from beneath
+  add(new THREE.CircleGeometry(1, 24), new THREE.MeshBasicMaterial({ color: "#ff7a2a", transparent: true, opacity: 0.35, depthWrite: false, blending: THREE.AdditiveBlending }), [X(68.5), -0.08, Z(42)], [-Math.PI / 2, 0, 0], "nocol").scale.set(1.9, 1.5, 1);
+  dpCrystals(X(71.4), Z(39), "#ff6a3a", 0.8, 5); dpCrystals(X(64.6), Z(43.4), "#ffb060", 0.6, 3); lite(68.5, 42, "#ff7a2a", 2.4, 9, 1.2);
+  // the Brine Cistern: salt formations and old water barrels
+  for (const [x, y] of [[51.4, 52.6], [56.8, 52], [54.4, 48.8]]) dpCrystals(X(x), Z(y), "#f4f0e8", 0.8, 5); barrelP(X(57.4), Z(48.6), 0.7); barrelP(X(58.2), Z(49.4), 0.6);
+  // the Sunken Rail Station: a stone platform, a bench, a stranded cart; its pocket (stash)
+  add(new THREE.BoxGeometry(7, 0.1, 1.8), D.paleStone(), [X(17), 0.04, Z(42.6)], [0, 0, 0], "nocol"); // the old platform edge (flush)
+  dpRails([[10.4, 45.2], [17, 45.2], [23.4, 45.6]], X, Z); dpRails([[12, 48.6], [20.6, 48.4]], X, Z); dpCart(X(19.4), Z(48.4), 1.57, "#6a6a72"); dcBumper(X(11.4), Z(48.6), Math.PI / 2);
+  dpBench(X(15), Z(42.4), 0); dpBench(X(19.2), Z(42.4), 0); crateP(X(22.4), Z(50.2), 0.5); barrelP(X(12.6), Z(50.4), 0.7);
+  crateP(X(5.6), Z(54.2), 0.42); dcCandle(X(7.6), Z(53));
+  tallGrass(X(15.4), Z(50.2), 2.2, 1.2, "cavedeep", { any: true, name: "Sunset Tunnel B2 Sunken Rail Station" });
+};
+
+defPlace("sunset1", { name: "Sunset Tunnel B1", w: 78, d: 56, style: "mine", indoor: true, bake: dcBake1,
+  grid() { const g = PLW(78, 56); pPath(g, [[4, 26], [4, 20], [12, 18], [20, 20], [28, 16], [33, 10], [35, 4]], 4); pPath(g, [[12, 18], [14, 10], [22, 7], [30, 7], [33, 10]], 4); pCirc(g, 12, 18.5, 3.4);
     pPath(g, [[20, 20], [22, 27]], 3.4); pPath(g, [[14, 10], [6, 6]], 3.4); // the two dead ends (stash slabs)
     pPath(g, [[28, 16], [33, 21]], 3.4); pPath(g, [[22, 7], [22, 2.5]], 3.4); // two side tunnels, sealed by boulders
-    pRough(g, 0.3, 11); pCirc(g, 33.6, 21.6, 1.9, "o"); pCirc(g, 22, 2.2, 1.9, "o"); pRect(g, 2, 27, 5, 28, "S"); pRect(g, 34, 1, 37, 2, "S"); return g; },
+    pRough(g, 0.3, 11); pCirc(g, 33.6, 21.6, 1.9, "o"); pCirc(g, 22, 2.2, 1.9, "o"); pRect(g, 2, 27, 5, 28, "S"); pRect(g, 34, 1, 37, 2, "S"); dcGrid1(g); return g; },
   arrive: { in: [4, 24.5, 0], up: [33.5, 6.5, 2.4] },
   portals: [{ t: [3.5, 28.4], to: "out:DB8", label: "Climb out to the Tunnel Mouth" }, { t: [35.5, 1.6], to: "sunset2:in", label: "Go down to B2" }],
   stash: [[22, 26], [6, 6]], boulders: [[33.6, 21.6], [22, 2.2]], trainers: [],
@@ -5026,14 +5204,14 @@ defPlace("sunset1", { name: "Sunset Tunnel B1", w: 40, d: 30, style: "mine", ind
     dpBench(X(10.6), Z(20.6), 0.2); barrelP(X(14.2), Z(20.4), 0.7); crateP(X(9.4), Z(16.4), 0.5); // the miner's rest nook (miner stands at 12, 20)
     for (const [x, y] of [[4, 25], [5, 21]]) { dpShaft(X(x), Z(y), "#ffa060", 5.5, 1.1); lite(x, y, "#ff9a50", 3.5, 8, 4.5); } // sunset light through cracks near the entrance
     dpCart(X(26), Z(7.4), 1.57); dpCrystals(X(30.5), Z(5.6), "#7ff0e6", 0.8, 4); dpCrystals(X(6.5), Z(4.6), "#ffd27a", 0.7, 4);
-    tallGrass(X(20.4), Z(20.2), 2.2, 1.6, "cave", { any: true, name: "Sunset Tunnel B1 rubble" }); tallGrass(X(26), Z(7), 2.4, 1.4, "cave", { any: true, name: "Sunset Tunnel B1 rubble (north)" }); } });
+    tallGrass(X(20.4), Z(20.2), 2.2, 1.6, "cave", { any: true, name: "Sunset Tunnel B1 rubble" }); tallGrass(X(26), Z(7), 2.4, 1.4, "cave", { any: true, name: "Sunset Tunnel B1 rubble (north)" }); dcDress1({ X, Z, lite }); } });
 
-defPlace("sunset2", { name: "Sunset Tunnel B2", w: 40, d: 30, style: "basalt", indoor: true,
-  grid() { const g = PLW(40, 30); pPath(g, [[4, 4], [10, 8], [14, 13]], 4); pCirc(g, 20, 15, 9, ".", 7); pCirc(g, 20, 15, 5.6, "w", 4.2); pRect(g, 13, 14, 27, 16, "b"); // the stone bridge over the pool
+defPlace("sunset2", { name: "Sunset Tunnel B2", w: 78, d: 56, style: "basalt", indoor: true, bake: dcBake2,
+  grid() { const g = PLW(78, 56); pPath(g, [[4, 4], [10, 8], [14, 13]], 4); pCirc(g, 20, 15, 9, ".", 7); pCirc(g, 20, 15, 5.6, "w", 4.2); pRect(g, 13, 14, 27, 16, "b"); // the stone bridge over the pool
     pPath(g, [[12, 20], [6, 25]], 3.4); // dead end (stash)
     pPath(g, [[26, 12], [32, 8.5]], 3.4); pCirc(g, 33.4, 8, 2.1); // the lantern alcove (stash)
     pPath(g, [[28, 17], [33, 20.5]], 4); pPath(g, [[33, 20.5], [36, 24], [36, 27]], 2.6); // the narrow rail ledge to the exit
-    pRough(g, 0.25, 12); pCirc(g, 20, 15, 5.6, "w", 4.2); pRect(g, 13, 14, 27, 16, "b"); pRect(g, 2, 1, 5, 2, "S"); pRect(g, 35, 27, 36, 28, "S"); return g; },
+    pRough(g, 0.25, 12); pCirc(g, 20, 15, 5.6, "w", 4.2); pRect(g, 13, 14, 27, 16, "b"); pRect(g, 2, 1, 5, 2, "S"); pRect(g, 35, 27, 36, 28, "S"); dcGrid2(g); return g; },
   arrive: { in: [4.5, 5.5, 3.14], up: [35.6, 25, 0] },
   portals: [{ t: [3.5, 1.6], to: "sunset1:up", label: "Climb back up to B1" }, { t: [36, 28.4], to: "out:DFC1", label: "Climb up to the Molten Frontier" }],
   stash: [[6, 25], [33.8, 7.4]], trainers: [],
@@ -5047,7 +5225,7 @@ defPlace("sunset2", { name: "Sunset Tunnel B2", w: 40, d: 30, style: "basalt", i
     for (const [x, y] of P.stash) { dpStash(X(x), Z(y), R()); lite(x, y, "#ffd27a", 2, 6); } dpLantern(X(34.4), Z(6.4), "#5ab8ff", 2.2);
     for (const [x, y] of [[5, 4.5], [11, 9], [12, 20.5], [30, 10.5]]) dpLantern(X(x), Z(y), "#5ab8ff", 2.6, 2);
     dpCrystals(X(16), Z(21.6), "#5af0e0", 0.8, 4); dpCrystals(X(24.5), Z(8.6), "#5af0e0", 0.9, 5);
-    tallGrass(X(20), Z(20.6), 3, 1.2, "cavedeep", { any: true, name: "Sunset Tunnel B2 pool shore" }); tallGrass(X(9.4), Z(22.4), 1.8, 1.6, "cavedeep", { any: true, name: "Sunset Tunnel B2 dead end" }); } });
+    tallGrass(X(20), Z(20.6), 3, 1.2, "cavedeep", { any: true, name: "Sunset Tunnel B2 pool shore" }); tallGrass(X(9.4), Z(22.4), 1.8, 1.6, "cavedeep", { any: true, name: "Sunset Tunnel B2 dead end" }); dcDress2({ X, Z, lite }); } });
 
 // ---------- Red Rock Caves ----------
 defPlace("redcave1", { name: "Red Rock Caves B1", w: 40, d: 30, style: "redcave", indoor: true,
@@ -8226,7 +8404,7 @@ const doorNotches = (P, S, at, ox, oz, W, D, wallM, room) => { if (!P.indoor || 
 const buildPlace = (id) => { const P = PLACE[id], S = PSTY[P.style], g = P.grid(), W = P.w, D = P.d, ox = P.ox, oz = P.oz, at = (x, y) => (y >= 0 && y < D && x >= 0 && x < W ? g[y][x] : "#"); P.g = g;
   const isFloor = (c) => ".,gbvS".includes(c);
   // painted floor
-  const px = 32, cvs = document.createElement("canvas"); cvs.width = W * px; cvs.height = D * px; const c2 = cvs.getContext("2d"); const ecv = document.createElement("canvas"); ecv.width = W * px; ecv.height = D * px; const e2 = ecv.getContext("2d"); e2.fillStyle = S.ebase || (P.indoor ? (P.style === "bunker" ? "#24262c" : "#16282a") : "#000"); e2.fillRect(0, 0, W * px, D * px);
+  const px = W * D > 1500 ? 24 : 32, cvs = document.createElement("canvas"); cvs.width = W * px; cvs.height = D * px; const c2 = cvs.getContext("2d"); const ecv = document.createElement("canvas"); ecv.width = W * px; ecv.height = D * px; const e2 = ecv.getContext("2d"); e2.fillStyle = S.ebase || (P.indoor ? (P.style === "bunker" ? "#24262c" : "#16282a") : "#000"); e2.fillRect(0, 0, W * px, D * px);
   { const tc = document.createElement("canvas"); tc.width = W * px; tc.height = D * px; const t2 = tc.getContext("2d"); for (let y = 0; y < D; y++) for (let x = 0; x < W; x++) { const c = g[y][x], nv = fbm(x * 0.22 + PK, y * 0.22, 3.1, 2) * 0.5 + 0.5; t2.fillStyle = c === "," || c === "S" ? S.stone : c === "v" ? "#6a3aa0" : c === "g" ? "#3a9a4a" : c === "w" ? "#0e3a4a" : S.floor[Math.min(2, Math.floor(nv * 3))]; t2.fillRect(x * px, y * px, px, px); } c2.filter = "blur(" + Math.round(px * 0.45) + "px)"; c2.drawImage(tc, 0, 0); c2.filter = "none"; }
   if (S.fxFloor && typeof FXIMG !== "undefined" && FXIMG[S.fxFloor] && FXIMG[S.fxFloor].naturalWidth) { const im = FXIMG[S.fxFloor], pt = c2.createPattern(im, "repeat"); pt.setTransform(new DOMMatrix().scaleSelf(((S.fxScale || 2.6) * px) / im.width)); c2.save(); c2.globalAlpha = S.fxA || 0.9; c2.fillStyle = pt; c2.fillRect(0, 0, W * px, D * px); c2.restore(); }
   if (P.style === "root" || P.style === "stalk" || P.style === "loft" || S.planks) { c2.globalAlpha = 0.35; c2.strokeStyle = P.style === "stalk" ? "#8a7050" : "#3a2210"; c2.lineWidth = 2; for (let y = 0; y < D * px; y += px * 0.5) { c2.beginPath(); c2.moveTo(0, y); c2.lineTo(W * px, y + (R() - 0.5) * 6); c2.stroke(); for (let x = (y / (px * 0.5)) % 2 ? 0 : px; x < W * px; x += px * 2.5) { c2.beginPath(); c2.moveTo(x, y); c2.lineTo(x, y + px * 0.5); c2.stroke(); } } c2.globalAlpha = 1; }
@@ -8238,7 +8416,7 @@ const buildPlace = (id) => { const P = PLACE[id], S = PSTY[P.style], g = P.grid(
   if (P.style === "arena" || S.lines) { e2.strokeStyle = "rgba(230,255,220,0.9)"; e2.lineWidth = 10; e2.beginPath(); e2.ellipse(15 * px, 11.5 * px, 6.4 * px, 5.6 * px, 0, 0, TAU); e2.stroke(); e2.beginPath(); e2.arc(15 * px, 11.5 * px, 1.2 * px, 0, TAU); e2.stroke(); c2.strokeStyle = "#e8f0d8"; c2.lineWidth = 10; c2.beginPath(); c2.ellipse(15 * px, 11.5 * px, 6.4 * px, 5.6 * px, 0, 0, TAU); c2.stroke(); }
   if (S.dots) for (let k = 0; k < 50; k++) { const x = R() * W, y = R() * D; if (!isFloor(at(Math.floor(x), Math.floor(y)))) continue; e2.fillStyle = `rgba(${S.dots[k % S.dots.length]},${0.18 + R() * 0.25})`; e2.beginPath(); e2.arc(x * px, y * px, 2 + R() * 5, 0, TAU); e2.fill(); }
   if (P.style === "cave" || P.style === "crystal-cave") for (let k = 0; k < 40; k++) { const x = R() * W, y = R() * D; if (!isFloor(at(Math.floor(x), Math.floor(y)))) continue; e2.fillStyle = `rgba(${R() < 0.5 ? "90,240,255" : "150,255,150"},${0.25 + R() * 0.3})`; e2.beginPath(); e2.arc(x * px, y * px, 3 + R() * 6, 0, TAU); e2.fill(); }
-  const ft = new THREE.CanvasTexture(cvs), et = new THREE.CanvasTexture(ecv); ft.colorSpace = THREE.SRGBColorSpace; et.colorSpace = THREE.SRGBColorSpace; ft.anisotropy = 8;
+  P.bake && P.bake(e2, px); const ft = new THREE.CanvasTexture(cvs), et = new THREE.CanvasTexture(ecv); ft.colorSpace = THREE.SRGBColorSpace; et.colorSpace = THREE.SRGBColorSpace; ft.anisotropy = 8;
   const fm = std({ map: ft, emissive: "#ffffff", emissiveMap: et, emissiveIntensity: 1, roughness: P.style === "crystal" ? 0.35 : 0.9 });
   if (P.style !== "canopy" && P.style !== "crown") { const pg = new THREE.PlaneGeometry(W, D, W * 2, D * 2); pg.rotateX(-Math.PI / 2); { const Pp = pg.attributes.position; for (let i = 0; i < Pp.count; i++) { const x = Pp.getX(i) + W / 2, z = Pp.getZ(i) + D / 2, c = at(Math.floor(Math.min(W - 0.01, x)), Math.floor(Math.min(D - 0.01, z))); Pp.setY(i, c === "w" ? -0.45 : c === " " ? -14 : 0.02 * Math.sin(x * 1.3) * Math.cos(z * 1.1)); } pg.computeVertexNormals(); } const m = add(pg, fm, [ox + W / 2, 0, oz + D / 2]); m.name = "ground"; m.receiveShadow = true; }
   // water
@@ -11407,7 +11585,7 @@ const doorNotches = (P, S, at, ox, oz, W, D, wallM, room) => { if (!P.indoor || 
 const buildPlace = (id) => { const P = PLACE[id], S = PSTY[P.style], g = P.grid(), W = P.w, D = P.d, ox = P.ox, oz = P.oz, at = (x, y) => (y >= 0 && y < D && x >= 0 && x < W ? g[y][x] : "#"); P.g = g;
   const isFloor = (c) => ".,gbvS".includes(c);
   // painted floor
-  const px = 32, cvs = document.createElement("canvas"); cvs.width = W * px; cvs.height = D * px; const c2 = cvs.getContext("2d"); const ecv = document.createElement("canvas"); ecv.width = W * px; ecv.height = D * px; const e2 = ecv.getContext("2d"); e2.fillStyle = S.ebase || (P.indoor ? (P.style === "bunker" ? "#24262c" : "#16282a") : "#000"); e2.fillRect(0, 0, W * px, D * px);
+  const px = W * D > 1500 ? 24 : 32, cvs = document.createElement("canvas"); cvs.width = W * px; cvs.height = D * px; const c2 = cvs.getContext("2d"); const ecv = document.createElement("canvas"); ecv.width = W * px; ecv.height = D * px; const e2 = ecv.getContext("2d"); e2.fillStyle = S.ebase || (P.indoor ? (P.style === "bunker" ? "#24262c" : "#16282a") : "#000"); e2.fillRect(0, 0, W * px, D * px);
   { const tc = document.createElement("canvas"); tc.width = W * px; tc.height = D * px; const t2 = tc.getContext("2d"); for (let y = 0; y < D; y++) for (let x = 0; x < W; x++) { const c = g[y][x], nv = fbm(x * 0.22 + PK, y * 0.22, 3.1, 2) * 0.5 + 0.5; t2.fillStyle = c === "," || c === "S" ? S.stone : c === "v" ? "#6a3aa0" : c === "g" ? "#3a9a4a" : c === "w" ? "#0e3a4a" : S.floor[Math.min(2, Math.floor(nv * 3))]; t2.fillRect(x * px, y * px, px, px); } c2.filter = "blur(" + Math.round(px * 0.45) + "px)"; c2.drawImage(tc, 0, 0); c2.filter = "none"; }
   if (S.fxFloor && typeof FXIMG !== "undefined" && FXIMG[S.fxFloor] && FXIMG[S.fxFloor].naturalWidth) { const im = FXIMG[S.fxFloor], pt = c2.createPattern(im, "repeat"); pt.setTransform(new DOMMatrix().scaleSelf(((S.fxScale || 2.6) * px) / im.width)); c2.save(); c2.globalAlpha = S.fxA || 0.9; c2.fillStyle = pt; c2.fillRect(0, 0, W * px, D * px); c2.restore(); }
   if (P.style === "root" || P.style === "stalk" || P.style === "loft" || S.planks) { c2.globalAlpha = 0.35; c2.strokeStyle = P.style === "stalk" ? "#8a7050" : "#3a2210"; c2.lineWidth = 2; for (let y = 0; y < D * px; y += px * 0.5) { c2.beginPath(); c2.moveTo(0, y); c2.lineTo(W * px, y + (R() - 0.5) * 6); c2.stroke(); for (let x = (y / (px * 0.5)) % 2 ? 0 : px; x < W * px; x += px * 2.5) { c2.beginPath(); c2.moveTo(x, y); c2.lineTo(x, y + px * 0.5); c2.stroke(); } } c2.globalAlpha = 1; }
@@ -11419,7 +11597,7 @@ const buildPlace = (id) => { const P = PLACE[id], S = PSTY[P.style], g = P.grid(
   if (P.style === "arena" || S.lines) { e2.strokeStyle = "rgba(230,255,220,0.9)"; e2.lineWidth = 10; e2.beginPath(); e2.ellipse(15 * px, 11.5 * px, 6.4 * px, 5.6 * px, 0, 0, TAU); e2.stroke(); e2.beginPath(); e2.arc(15 * px, 11.5 * px, 1.2 * px, 0, TAU); e2.stroke(); c2.strokeStyle = "#e8f0d8"; c2.lineWidth = 10; c2.beginPath(); c2.ellipse(15 * px, 11.5 * px, 6.4 * px, 5.6 * px, 0, 0, TAU); c2.stroke(); }
   if (S.dots) for (let k = 0; k < 50; k++) { const x = R() * W, y = R() * D; if (!isFloor(at(Math.floor(x), Math.floor(y)))) continue; e2.fillStyle = `rgba(${S.dots[k % S.dots.length]},${0.18 + R() * 0.25})`; e2.beginPath(); e2.arc(x * px, y * px, 2 + R() * 5, 0, TAU); e2.fill(); }
   if (P.style === "cave" || P.style === "crystal-cave") for (let k = 0; k < 40; k++) { const x = R() * W, y = R() * D; if (!isFloor(at(Math.floor(x), Math.floor(y)))) continue; e2.fillStyle = `rgba(${R() < 0.5 ? "90,240,255" : "150,255,150"},${0.25 + R() * 0.3})`; e2.beginPath(); e2.arc(x * px, y * px, 3 + R() * 6, 0, TAU); e2.fill(); }
-  const ft = new THREE.CanvasTexture(cvs), et = new THREE.CanvasTexture(ecv); ft.colorSpace = THREE.SRGBColorSpace; et.colorSpace = THREE.SRGBColorSpace; ft.anisotropy = 8;
+  P.bake && P.bake(e2, px); const ft = new THREE.CanvasTexture(cvs), et = new THREE.CanvasTexture(ecv); ft.colorSpace = THREE.SRGBColorSpace; et.colorSpace = THREE.SRGBColorSpace; ft.anisotropy = 8;
   const fm = std({ map: ft, emissive: "#ffffff", emissiveMap: et, emissiveIntensity: 1, roughness: P.style === "crystal" ? 0.35 : 0.9 });
   if (P.style !== "canopy" && P.style !== "crown") { const pg = new THREE.PlaneGeometry(W, D, W * 2, D * 2); pg.rotateX(-Math.PI / 2); { const Pp = pg.attributes.position; for (let i = 0; i < Pp.count; i++) { const x = Pp.getX(i) + W / 2, z = Pp.getZ(i) + D / 2, c = at(Math.floor(Math.min(W - 0.01, x)), Math.floor(Math.min(D - 0.01, z))); Pp.setY(i, c === "w" ? -0.45 : c === " " ? -14 : 0.02 * Math.sin(x * 1.3) * Math.cos(z * 1.1)); } pg.computeVertexNormals(); } const m = add(pg, fm, [ox + W / 2, 0, oz + D / 2]); m.name = "ground"; m.receiveShadow = true; }
   // water
@@ -14669,7 +14847,7 @@ const doorNotches = (P, S, at, ox, oz, W, D, wallM, room) => { if (!P.indoor || 
 const buildPlace = (id) => { const P = PLACE[id], S = PSTY[P.style], g = P.grid(), W = P.w, D = P.d, ox = P.ox, oz = P.oz, at = (x, y) => (y >= 0 && y < D && x >= 0 && x < W ? g[y][x] : "#"); P.g = g;
   const isFloor = (c) => ".,gbvS".includes(c);
   // painted floor
-  const px = 32, cvs = document.createElement("canvas"); cvs.width = W * px; cvs.height = D * px; const c2 = cvs.getContext("2d"); const ecv = document.createElement("canvas"); ecv.width = W * px; ecv.height = D * px; const e2 = ecv.getContext("2d"); e2.fillStyle = S.ebase || (P.indoor ? (P.style === "bunker" ? "#24262c" : "#16282a") : "#000"); e2.fillRect(0, 0, W * px, D * px);
+  const px = W * D > 1500 ? 24 : 32, cvs = document.createElement("canvas"); cvs.width = W * px; cvs.height = D * px; const c2 = cvs.getContext("2d"); const ecv = document.createElement("canvas"); ecv.width = W * px; ecv.height = D * px; const e2 = ecv.getContext("2d"); e2.fillStyle = S.ebase || (P.indoor ? (P.style === "bunker" ? "#24262c" : "#16282a") : "#000"); e2.fillRect(0, 0, W * px, D * px);
   { const tc = document.createElement("canvas"); tc.width = W * px; tc.height = D * px; const t2 = tc.getContext("2d"); for (let y = 0; y < D; y++) for (let x = 0; x < W; x++) { const c = g[y][x], nv = fbm(x * 0.22 + PK, y * 0.22, 3.1, 2) * 0.5 + 0.5; t2.fillStyle = c === "," || c === "S" ? S.stone : c === "v" ? "#6a3aa0" : c === "g" ? "#3a9a4a" : c === "w" ? "#0e3a4a" : S.floor[Math.min(2, Math.floor(nv * 3))]; t2.fillRect(x * px, y * px, px, px); } c2.filter = "blur(" + Math.round(px * 0.45) + "px)"; c2.drawImage(tc, 0, 0); c2.filter = "none"; }
   if (S.fxFloor && typeof FXIMG !== "undefined" && FXIMG[S.fxFloor] && FXIMG[S.fxFloor].naturalWidth) { const im = FXIMG[S.fxFloor], pt = c2.createPattern(im, "repeat"); pt.setTransform(new DOMMatrix().scaleSelf(((S.fxScale || 2.6) * px) / im.width)); c2.save(); c2.globalAlpha = S.fxA || 0.9; c2.fillStyle = pt; c2.fillRect(0, 0, W * px, D * px); c2.restore(); }
   if (P.style === "root" || P.style === "stalk" || P.style === "loft" || S.planks) { c2.globalAlpha = 0.35; c2.strokeStyle = P.style === "stalk" ? "#8a7050" : "#3a2210"; c2.lineWidth = 2; for (let y = 0; y < D * px; y += px * 0.5) { c2.beginPath(); c2.moveTo(0, y); c2.lineTo(W * px, y + (R() - 0.5) * 6); c2.stroke(); for (let x = (y / (px * 0.5)) % 2 ? 0 : px; x < W * px; x += px * 2.5) { c2.beginPath(); c2.moveTo(x, y); c2.lineTo(x, y + px * 0.5); c2.stroke(); } } c2.globalAlpha = 1; }
@@ -14681,7 +14859,7 @@ const buildPlace = (id) => { const P = PLACE[id], S = PSTY[P.style], g = P.grid(
   if (P.style === "arena" || S.lines) { e2.strokeStyle = "rgba(230,255,220,0.9)"; e2.lineWidth = 10; e2.beginPath(); e2.ellipse(15 * px, 11.5 * px, 6.4 * px, 5.6 * px, 0, 0, TAU); e2.stroke(); e2.beginPath(); e2.arc(15 * px, 11.5 * px, 1.2 * px, 0, TAU); e2.stroke(); c2.strokeStyle = "#e8f0d8"; c2.lineWidth = 10; c2.beginPath(); c2.ellipse(15 * px, 11.5 * px, 6.4 * px, 5.6 * px, 0, 0, TAU); c2.stroke(); }
   if (S.dots) for (let k = 0; k < 50; k++) { const x = R() * W, y = R() * D; if (!isFloor(at(Math.floor(x), Math.floor(y)))) continue; e2.fillStyle = `rgba(${S.dots[k % S.dots.length]},${0.18 + R() * 0.25})`; e2.beginPath(); e2.arc(x * px, y * px, 2 + R() * 5, 0, TAU); e2.fill(); }
   if (P.style === "cave" || P.style === "crystal-cave") for (let k = 0; k < 40; k++) { const x = R() * W, y = R() * D; if (!isFloor(at(Math.floor(x), Math.floor(y)))) continue; e2.fillStyle = `rgba(${R() < 0.5 ? "90,240,255" : "150,255,150"},${0.25 + R() * 0.3})`; e2.beginPath(); e2.arc(x * px, y * px, 3 + R() * 6, 0, TAU); e2.fill(); }
-  const ft = new THREE.CanvasTexture(cvs), et = new THREE.CanvasTexture(ecv); ft.colorSpace = THREE.SRGBColorSpace; et.colorSpace = THREE.SRGBColorSpace; ft.anisotropy = 8;
+  P.bake && P.bake(e2, px); const ft = new THREE.CanvasTexture(cvs), et = new THREE.CanvasTexture(ecv); ft.colorSpace = THREE.SRGBColorSpace; et.colorSpace = THREE.SRGBColorSpace; ft.anisotropy = 8;
   const fm = std({ map: ft, emissive: "#ffffff", emissiveMap: et, emissiveIntensity: 1, roughness: P.style === "crystal" ? 0.35 : 0.9 });
   if (P.style !== "canopy" && P.style !== "crown") { const pg = new THREE.PlaneGeometry(W, D, W * 2, D * 2); pg.rotateX(-Math.PI / 2); { const Pp = pg.attributes.position; for (let i = 0; i < Pp.count; i++) { const x = Pp.getX(i) + W / 2, z = Pp.getZ(i) + D / 2, c = at(Math.floor(Math.min(W - 0.01, x)), Math.floor(Math.min(D - 0.01, z))); Pp.setY(i, c === "w" ? -0.45 : c === " " ? -14 : 0.02 * Math.sin(x * 1.3) * Math.cos(z * 1.1)); } pg.computeVertexNormals(); } const m = add(pg, fm, [ox + W / 2, 0, oz + D / 2]); m.name = "ground"; m.receiveShadow = true; }
   // water
