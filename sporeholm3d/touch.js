@@ -30,6 +30,8 @@
     'html.tc #rpgHud{top:calc(6px + env(safe-area-inset-top))!important;right:calc(6px + env(safe-area-inset-right))!important;font-size:10px!important;min-width:0!important;max-width:40vw;padding:4px 7px!important;opacity:.88}',
     'html.tc #rpgHud .m{gap:4px!important;margin:2px 0!important}',
     'html.tc.tc-battle #rpgHud{display:none!important}',
+    'html.tc #rpgHud div[style*="margin-top:4px"]{display:none}',
+    'html.tc #dlg{left:calc(8px + env(safe-area-inset-left))!important;right:calc(54px + env(safe-area-inset-right));width:auto!important;transform:none!important;bottom:calc(150px + env(safe-area-inset-bottom))!important;padding:8px 12px!important;font-size:14px;cursor:pointer}',
     '#tcTL{position:fixed;left:calc(6px + env(safe-area-inset-left));top:calc(6px + env(safe-area-inset-top));max-width:calc(58vw - 12px);display:flex;flex-direction:column;align-items:flex-start;gap:4px;z-index:5;pointer-events:none}',
     'html.tc #tcTL #objHud{position:static!important;transform:none!important;left:auto!important;top:auto!important;bottom:auto!important;font-size:11px!important;line-height:1.25;padding:4px 8px!important;max-width:100%!important;gap:6px!important;box-sizing:border-box}',
     'html.tc #tcTL #objHud #objArrow{width:16px;height:16px}',
@@ -69,7 +71,7 @@
     '.tcS{position:fixed;right:calc(8px + env(safe-area-inset-right));width:46px;height:30px;border-radius:9px;font:700 11px system-ui;color:#eafff4;background:rgba(12,24,34,.5);border:1px solid rgba(90,240,224,.45);display:flex;align-items:center;justify-content:center;touch-action:none}',
     '.tcS.dn{background:rgba(90,240,224,.4)}',
     '#tcTip{position:fixed;left:50%;top:38%;transform:translate(-50%,-50%);z-index:13;max-width:84vw;background:rgba(10,20,30,.82);border:1px solid #5af0e0;border-radius:12px;padding:10px 14px;font:13px/1.5 system-ui;color:#eafff4;text-align:center;pointer-events:none;transition:opacity .5s}',
-    '@media (orientation:landscape) and (max-height:500px){#tcA{width:60px;height:60px}#tcBk{bottom:calc(92px + env(safe-area-inset-bottom))}.tcS{bottom:calc(10px + env(safe-area-inset-bottom))!important}#tcBag{right:calc(160px + env(safe-area-inset-right))}#tcMap{right:calc(212px + env(safe-area-inset-right))}#tcMenu{right:calc(264px + env(safe-area-inset-right))}#tcFs{right:calc(316px + env(safe-area-inset-right))}html.tc #hint{bottom:calc(96px + env(safe-area-inset-bottom))!important}html.tc #csBox{bottom:8px!important}html.tc #csPt{bottom:10px!important}}'
+    '@media (orientation:landscape) and (max-height:500px){#tcA{width:60px;height:60px}#tcBk{bottom:calc(92px + env(safe-area-inset-bottom))}.tcS{bottom:calc(10px + env(safe-area-inset-bottom))!important}#tcBag{right:calc(160px + env(safe-area-inset-right))}#tcMap{right:calc(212px + env(safe-area-inset-right))}#tcMenu{right:calc(264px + env(safe-area-inset-right))}#tcFs{right:calc(316px + env(safe-area-inset-right))}html.tc #hint{bottom:calc(96px + env(safe-area-inset-bottom))!important}html.tc #csBox{bottom:8px!important}html.tc #csPt{bottom:10px!important}html.tc #dlg{bottom:calc(8px + env(safe-area-inset-bottom))!important;right:calc(372px + env(safe-area-inset-right))}}'
   ].join('\n');
   (document.head || root).appendChild(css);
 
@@ -124,7 +126,7 @@
     var R = window.RPG;
     if (R && R.B) return 'battle';
     if (R && R.PN && R.PN.open) return 'panel';
-    if (shown('csBox') || shown('dlg') || shown('endCard') || shown('syncUI')) return 'talk';
+    if (shown('csBox') || shown('endCard') || shown('syncUI')) return 'talk';
     return 'free';
   };
   var setMode = function (m) {
