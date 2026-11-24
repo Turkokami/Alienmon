@@ -2,3 +2,7 @@ node_modules/
 app/game/
 dist/
 selftest/
+pack-cache/
+pack-out/
+pack-manifest.prev.json
+build-info.json

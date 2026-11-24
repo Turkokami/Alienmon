@@ -1,5 +1,6 @@
 # Builds the Alienmon 3D Windows installer on a real Windows machine and publishes it as a
-# pre-release on this repo (Releases page). Runs on pushes to desktop-app that touch the desktop
+# pre-release on this repo (Releases page). The new Alienmon models go in a separate model pack release
+# (desktop-pack-<version>) that the app downloads on first launch, so the installer stays under 2 GB. Runs on pushes to desktop-app that touch the desktop
 # packaging or the game folder, or by hand from the Actions tab. Never touches maps-v2 or the website.
 name: Desktop app - build Windows installer
 on:
@@ -30,10 +31,61 @@ jobs:
       - name: Install packaging tools
         working-directory: desktop
         run: npm ci
+      - name: Stamp the build number (the in-game Update button compares it)
+        working-directory: desktop
+        shell: bash
+        run: |
+          tag="desktop-$(date -u +%Y%m%d)-${GITHUB_RUN_NUMBER}"
+          echo "TAG=$tag" >> "$GITHUB_ENV"
+          printf '{"run":%s,"tag":"%s","repo":"%s","sha":"%s"}' "$GITHUB_RUN_NUMBER" "$tag" "$GITHUB_REPOSITORY" "${GITHUB_SHA::7}" > build-info.json
+          cat build-info.json
+      - name: Copy the game in and make the Alienmon pack
+        working-directory: desktop
+        run: node prepare-game.js
+      - name: Publish the Alienmon pack (only when its models changed)
+        working-directory: desktop
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ ! -f pack-out/TAG ]; then echo "This pack is already on Releases."; exit 0; fi
+          ptag=$(cat pack-out/TAG); R="$GITHUB_REPOSITORY"
+          gh release view "$ptag" --repo "$R" >/dev/null 2>&1 || gh release create "$ptag" --repo "$R" --target "$GITHUB_SHA" --prerelease --latest=false \
+            --title "Alienmon 3D model pack (${ptag#desktop-pack-})" \
+            --notes "The new Alienmon models for the Windows app. The app downloads these by itself the first time it opens; nobody needs to download them by hand."
+          have=$(gh release view "$ptag" --repo "$R" --json assets -q '.assets[].name')
+          missing=()
+          for f in pack-out/*.glb; do n=$(basename "$f"); grep -qxF "$n" <<< "$have" || missing+=("$f"); done
+          echo "${#missing[@]} models to upload"
+          for ((i=0; i<${#missing[@]}; i+=20)); do gh release upload "$ptag" --repo "$R" --clobber "${missing[@]:i:20}"; done
+          gh release upload "$ptag" --repo "$R" --clobber pack-out/pack-manifest.json   # last: its presence means the pack is complete
       - name: Build installer
         working-directory: desktop
-        run: npm run dist:win
-      - name: Check every world starts offline in the built app
+        shell: bash
+        run: |
+          npx electron-builder --win nsis --x64
+          ls -l dist/*.exe
+      - name: Check a world starts before the pack is downloaded (player chose to skip it)
+        working-directory: desktop
+        shell: bash
+        timeout-minutes: 12
+        continue-on-error: true
+        env:
+          ALIENMON_NO_PRELOAD: '1'
+        run: |
+          mkdir -p selftest/nopack; dir=$(cygpath -w "$PWD/selftest/nopack")
+          timeout 540 "dist/win-unpacked/Alienmon 3D.exe" --use-angle=swiftshader --enable-unsafe-swiftshader "--selftest=dustara,420,$dir\\dustara.png" || echo "exit code $?"
+          cat selftest/nopack/dustara.json || echo "no report"
+      - name: First launch downloads the Alienmon pack; second launch stays offline
+        working-directory: desktop
+        shell: bash
+        timeout-minutes: 40
+        run: |
+          mkdir -p selftest; dir=$(cygpath -w "$PWD/selftest")
+          "dist/win-unpacked/Alienmon 3D.exe" "--packtest=$dir\\pack.json" || echo "exit code $?"
+          cat selftest/pack.json
+          node -e "const r=require('./selftest/pack.json'); if(r.state!=='done'||!r.readyAfter||!r.secondLaunch.ready) process.exit(1)"
+      - name: Check every world starts offline in the built app (with the pack)
         working-directory: desktop
         shell: bash
         timeout-minutes: 50
@@ -47,11 +99,6 @@ jobs:
             timeout 540 "dist/win-unpacked/Alienmon 3D.exe" --use-angle=swiftshader --enable-unsafe-swiftshader "--selftest=$w,420,$dir\\$w.png" || echo "exit code $?"
             echo "== $w"; cat "selftest/$w.json" || echo "no report"
           done
-      - uses: actions/upload-artifact@v4
-        with:
-          name: selftest
-          path: desktop/selftest
-          retention-days: 7
       - name: Publish pre-release
         shell: bash
         env:
@@ -59,7 +106,27 @@ jobs:
         run: |
           cd desktop/dist
           f=$(ls Alienmon-3D-Setup-*.exe | head -1)
-          tag="desktop-$(date -u +%Y%m%d)-${GITHUB_RUN_NUMBER}"
-          gh release create "$tag" "$f" --repo "$GITHUB_REPOSITORY" --target "$GITHUB_SHA" --prerelease \
+          gh release create "$TAG" "$f" --repo "$GITHUB_REPOSITORY" --target "$GITHUB_SHA" --prerelease \
             --title "Alienmon 3D for Windows ($(date -u +%b\ %d))" \
-            --notes "Desktop build of the live worlds (Dustara, Sporeholm, Ferrox, Thalassa, Neonis) from desktop-app ${GITHUB_SHA::7}. Plays offline. Download $f, run it, and pick where to install."
+            --notes "Desktop build of the live worlds (Dustara, Sporeholm, Ferrox, Thalassa, Neonis) from desktop-app ${GITHUB_SHA::7}. Download $f, run it, and pick where to install. The first time it opens it downloads the new Alienmon once; after that it plays offline. Later versions install from the Update button on the start screen."
+      - name: Update button test (install, find this release as an update, install it over itself, restart)
+        working-directory: desktop
+        shell: bash
+        timeout-minutes: 25
+        continue-on-error: true
+        run: |
+          mkdir -p selftest; dir=$(cygpath -w "$PWD/selftest")
+          ./dist/Alienmon-3D-Setup-*.exe /S || echo "install exit $?"
+          exe=$(find "$(cygpath -u "$LOCALAPPDATA")/Programs" -name 'Alienmon 3D.exe' | head -1); echo "installed: $exe"
+          before=$(stat -c %Y "$exe")
+          ALIENMON_BUILD_RUN=0 ALIENMON_UPDATE_APPLY=1 ALIENMON_UPDATE_REPORT="$dir\\after-update.json" "$exe" "--updatetest=$dir\\update.json" || echo "exit $?"
+          cat selftest/update.json || echo "no update report"
+          for i in $(seq 1 120); do [ -f selftest/after-update.json ] && break; sleep 5; done
+          echo "== after update"; cat selftest/after-update.json || echo "the game did not start again by itself"
+          after=$(stat -c %Y "$exe"); echo "exe replaced: $([ "$after" != "$before" ] && echo yes || echo no)"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: selftest
+          path: desktop/selftest
+          retention-days: 7

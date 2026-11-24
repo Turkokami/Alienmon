@@ -1,0 +1,45 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Alienmon 3D</title>
+<style>
+:root{color-scheme:dark}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:#0a0620;color:#eafff4;font-family:system-ui,"Segoe UI",sans-serif}
+body{display:flex;align-items:center;justify-content:center;padding:24px;
+ background-image:radial-gradient(1px 1px at 20% 30%,#fff8,transparent),radial-gradient(1px 1px at 70% 80%,#fff6,transparent),radial-gradient(1px 1px at 40% 70%,#fff5,transparent),radial-gradient(1px 1px at 85% 20%,#fff7,transparent),radial-gradient(ellipse at 50% 120%,#1d4a52 0,transparent 60%)}
+.card{width:min(560px,100%);text-align:center}
+h1{margin:0 0 6px;font-size:40px;color:#c8f06a;text-shadow:0 0 18px #3fe0d055}
+.sub{opacity:.75;margin-bottom:26px;line-height:1.5}
+.bar{height:22px;border-radius:11px;background:#16202e;border:1px solid #345;overflow:hidden}
+.fill{height:100%;width:0;background:linear-gradient(90deg,#1d4a52,#3fe0d0);transition:width .4s}
+#txt{margin:12px 0 22px;font-variant-numeric:tabular-nums;opacity:.85;min-height:1.3em}
+#err{color:#ffb4a0;margin:-10px 0 18px;display:none}
+button{font:inherit;cursor:pointer;color:#fff;border-radius:12px;display:block;width:100%}
+#retry{padding:14px;font-size:18px;font-weight:700;background:#1d4a52;border:2px solid #3fe0d0;margin-bottom:10px;display:none}
+#skip{padding:10px;font-size:15px;background:#16202e;border:1px solid #345}
+button:hover,button:focus{border-color:#c8f06a;outline:none}
+</style></head><body>
+<div class="card">
+  <h1>Alienmon 3D</h1>
+  <div class="sub" id="sub">Downloading the new Alienmon. This happens once; after that the game plays offline.</div>
+  <div class="bar"><div class="fill" id="fill"></div></div>
+  <div id="txt">Starting…</div>
+  <div id="err"></div>
+  <button id="retry">Try again</button>
+  <button id="skip">Play now without the new Alienmon</button>
+</div>
+<script>
+var fill=document.getElementById("fill"),txt=document.getElementById("txt"),err=document.getElementById("err"),retry=document.getElementById("retry");
+function mb(b){return Math.round(b/1048576)}
+function show(s){
+  var pct=s.totalBytes?Math.min(100,100*s.doneBytes/s.totalBytes):0;fill.style.width=pct.toFixed(1)+"%";
+  if(s.ready||s.state==="done"){fill.style.width="100%";txt.textContent="Done. Starting the game…";location.href="/start";return true}
+  if(s.state==="checking")txt.textContent="Checking what is already on this PC…";
+  else if(s.state==="downloading")txt.textContent=mb(s.doneBytes)+" MB of "+mb(s.totalBytes)+" MB  ·  "+s.doneFiles+" of "+s.totalFiles+" models";
+  if(s.state==="error"){err.style.display="block";err.textContent="The download stopped. Check the internet connection and try again; it picks up where it left off.";retry.style.display="block";txt.textContent=mb(s.doneBytes)+" MB of "+mb(s.totalBytes)+" MB"}
+  else{err.style.display="none";retry.style.display="none"}
+  return false}
+function poll(){fetch("/_pack/status").then(function(r){return r.json()}).then(function(s){if(!show(s))setTimeout(poll,500)}).catch(function(){setTimeout(poll,1000)})}
+function start(){fetch("/_pack/start").then(function(r){return r.json()}).then(function(s){show(s);setTimeout(poll,300)})}
+retry.onclick=start;
+document.getElementById("skip").onclick=function(){location.href="/start"};
+start();
+</script></body></html>

@@ -1,13 +1,17 @@
 // Alienmon 3D desktop app.
 // Serves the bundled game from the app's own folder through a private app:// address, so every model,
-// texture and sound loads from disk. Any attempt to reach the internet is blocked, and saves
-// (localStorage) stay in the user's profile folder between launches.
+// texture and sound loads from disk. The game page itself can never reach the internet, and saves
+// (localStorage) stay in the user's profile folder between launches. Only the app's own downloader goes
+// online: once for the new Alienmon model pack (pack.js) and when you press Update (update.js).
 'use strict';
 const { app, BrowserWindow, Menu, protocol, session, shell } = require('electron');
 const fs = require('fs');
 const path = require('path');
 const { Readable } = require('stream');
 const os = require('os');
+const { spawn } = require('child_process');
+const { Pack } = require('./pack');
+const { Updater } = require('./update');
 
 app.setName('Alienmon 3D');
 app.commandLine.appendSwitch('ignore-gpu-blocklist');          // use the GPU even on older driver lists
@@ -43,7 +47,25 @@ protocol.registerSchemesAsPrivileged([{
 
 const args = process.argv.slice(1);
 const selftest = (args.find(a => a.startsWith('--selftest=')) || '').slice(11);   // world,seconds,out.png (used by the build check)
+const packtest = (args.find(a => a.startsWith('--packtest=')) || '').slice(11);    // out.json: download the pack, report
+const updatetest = (args.find(a => a.startsWith('--updatetest=')) || '').slice(13); // out.json: check, download, apply an update
 const blocked = [];
+function readJson(f) { try { return JSON.parse(fs.readFileSync(f, 'utf8')); } catch { return null; } }
+const BUILD = Object.assign({ run: 0, tag: null, repo: 'Turkokami/Alienmon' }, readJson(path.join(__dirname, 'build-info.json')) || {});
+if (process.env.ALIENMON_BUILD_RUN) BUILD.run = +process.env.ALIENMON_BUILD_RUN;   // the build check pretends to be older
+// Downloads use their own session: the game's session blocks every internet address.
+const netFetch = (u, o) => session.fromPartition('persist:downloads').fetch(u, Object.assign({ cache: 'no-store' }, o));
+let pack, updater;
+function json(o) { return new Response(JSON.stringify(o), { headers: { 'Content-Type': 'application/json', 'Cache-Control': 'no-cache' } }); }
+function firstPage() { return ORIGIN + (pack.ready() ? '/start' : '/_ui/download.html'); }
+function packStatus() { return Object.assign({ ready: pack.ready(), version: pack.manifest && pack.manifest.version }, pack.status); }
+
+// Run the downloaded installer silently over this install; it starts the game again when it is done.
+function applyUpdate(installer, env) {
+  if (process.platform !== 'win32' || !app.isPackaged) throw new Error('Updates install only in the installed Windows app');
+  spawn(installer, ['/S', '--force-run'], { detached: true, stdio: 'ignore', env: env || process.env }).unref();
+  setTimeout(() => app.exit(0), 300);
+}
 const missing = [];
 
 function resolveFile(urlPath) {
@@ -64,7 +86,17 @@ async function serve(request) {
     return new Response(`window.AM_DESKTOP=1;window.AM_DESKTOP_RAM_MB=${RAM_MB};window.AM_DESKTOP_CACHE=${CACHE_AREAS};try{var c=+localStorage.getItem('am_desktop_cap');if(c>0&&c<window.AM_DESKTOP_CACHE)window.AM_DESKTOP_CACHE=c}catch(e){}` + (off ? 'window.AM_PRELOAD_OFF=1;' : ''),
       { headers: { 'Content-Type': 'text/javascript; charset=utf-8', 'Cache-Control': 'no-cache' } });
   }
-  const file = resolveFile(url.pathname);
+  if (url.pathname === '/_pack/status') return json(packStatus());
+  if (url.pathname === '/_pack/start') { pack.start(); return json(packStatus()); }
+  if (url.pathname === '/_update/status') { await updater.check(url.searchParams.has('force')); return json(updater.status); }
+  if (url.pathname === '/_update/start') {
+    if (updater.status.state === 'available' || updater.status.state === 'error')
+      updater.download().then(f => applyUpdate(f)).catch(e => { updater.status.state = 'error'; updater.status.error = String(e && e.message || e); });
+    return json(updater.status);
+  }
+  // Until the pack is complete, the new Alienmon stay switched off (the game runs fine without them).
+  if (url.pathname === '/newmons.js' && !pack.ready()) return new Response('/* new Alienmon pack not downloaded yet */', { headers: { 'Content-Type': 'text/javascript; charset=utf-8', 'Cache-Control': 'no-cache' } });
+  const file = url.pathname.startsWith('/pack/') ? pack.file(decodeURIComponent(url.pathname.slice(6))) : resolveFile(url.pathname);
   let st;
   try { st = file && fs.statSync(file); } catch {}
   if (!st || !st.isFile()) { missing.push(url.pathname); return new Response('Not found', { status: 404 }); }
@@ -121,17 +153,52 @@ function createWindow() {
   return win;
 }
 
-if (!selftest && !app.requestSingleInstanceLock()) app.quit();
+if (process.env.ALIENMON_AFTER_UPDATE) {   // the build check: the updated app was started again by the installer
+  app.whenReady().then(() => {
+    try { fs.writeFileSync(process.env.ALIENMON_AFTER_UPDATE, JSON.stringify({ relaunched: true, build: BUILD, exe: process.execPath, at: new Date().toISOString() })); } catch {}
+    app.exit(0);
+  });
+} else if (!selftest && !packtest && !updatetest && !app.requestSingleInstanceLock()) app.quit();
 app.on('second-instance', () => { const w = BrowserWindow.getAllWindows()[0]; if (w) { if (w.isMinimized()) w.restore(); w.focus(); } });
 
-app.whenReady().then(() => {
+app.whenReady().then(async () => {
+  if (process.env.ALIENMON_AFTER_UPDATE) return;
+  pack = new Pack({ manifestPath: path.join(GAME, 'pack-manifest.json'), dir: path.join(app.getPath('userData'), 'packs', 'alienmon'), fetchFn: netFetch });
+  updater = new Updater({ build: BUILD, fetchFn: netFetch, dir: path.join(app.getPath('userData'), 'updates') });
   protocol.handle('app', serve);
+  if (packtest) {   // build check: download the pack as a first launch would, then once more as a second launch would
+    const t0 = Date.now(), report = { readyBefore: pack.ready(), version: pack.manifest && pack.manifest.version, files: pack.status.totalFiles, totalMB: Math.round(pack.status.totalBytes / 1048576) };
+    await pack.start();
+    Object.assign(report, { state: pack.status.state, error: pack.status.error, fetchedMB: Math.round((pack.status.fetchedBytes || 0) / 1048576), seconds: Math.round((Date.now() - t0) / 1000), readyAfter: pack.ready() });
+    const again = new Pack({ manifestPath: path.join(GAME, 'pack-manifest.json'), dir: pack.dir, fetchFn: () => { throw new Error('second launch went online'); } });
+    report.secondLaunch = { ready: again.ready(), firstPage: again.ready() ? '/start' : '/_ui/download.html' };
+    fs.writeFileSync(packtest, JSON.stringify(report, null, 2));
+    app.exit(0); return;
+  }
+  if (updatetest) {  // build check: pretend to be an older build, find this build on Releases, download it, install it
+    const report = { build: BUILD };
+    try {
+      report.check = Object.assign({}, await updater.check(true), { source: updater.source });
+      if (updater.status.state === 'available') {
+        const f = await updater.download();
+        report.download = { file: path.basename(f), bytes: fs.statSync(f).size, digestChecked: !!updater.found.digest };
+        if (process.env.ALIENMON_UPDATE_APPLY) {
+          report.applied = true;
+          fs.writeFileSync(updatetest, JSON.stringify(report, null, 2));
+          const env = Object.assign({}, process.env); delete env.ALIENMON_BUILD_RUN; delete env.ALIENMON_UPDATE_APPLY; if (process.env.ALIENMON_UPDATE_REPORT) env.ALIENMON_AFTER_UPDATE = process.env.ALIENMON_UPDATE_REPORT;
+          applyUpdate(f, env); return;
+        }
+      }
+    } catch (e) { report.error = String(e && e.message || e); }
+    fs.writeFileSync(updatetest, JSON.stringify(report, null, 2));
+    app.exit(0); return;
+  }
   // Offline by design: nothing leaves the PC. Blocked addresses are kept for the build check.
   session.defaultSession.webRequest.onBeforeRequest({ urls: ['http://*/*', 'https://*/*', 'ws://*/*', 'wss://*/*'] }, (d, cb) => {
     blocked.push(d.url); cb({ cancel: true });
   });
   const win = createWindow();
-  if (!selftest) { win.loadURL(ORIGIN + '/start'); return; }
+  if (!selftest) { win.loadURL(firstPage()); return; }
 
   // Build check: open one world, let it run, save a screenshot and a report, then quit.
   const [world, secs, out] = selftest.split(',');
@@ -156,7 +223,7 @@ app.whenReady().then(() => {
     }
     await new Promise(r => setTimeout(r, 4000));
     let state = { teleportedTo: await win.webContents.executeJavaScript('window.__tp||null').catch(()=>null), lastLoad: await win.webContents.executeJavaScript('window.GAME&&window.GAME.STAT?JSON.stringify(window.GAME.STAT):null').catch(()=>null), preload: pre, secondsToReady: Math.round((Date.now() - t0) / 1000), memMB: memMB(), peakMemMB: peak };
-    try { state.checks = await win.webContents.executeJavaScript(`(async()=>{const out={};const names=${JSON.stringify(fs.existsSync(path.join(GAME,'m','remote'))?fs.readdirSync(path.join(GAME,'m','remote')):[])};let ok=0;for(const n of names){const r=await fetch('m/remote/'+n);const b=new Uint8Array(await r.arrayBuffer());if(r.ok&&String.fromCharCode(b[0],b[1],b[2],b[3])==='glTF')ok++}out.remoteModelsOk=ok+'/'+names.length;const G=window.GAME;if(G&&G.STAT&&!window.AM_PRELOAD_OFF){const ks=Object.keys(G.res.rects).filter(k=>!G.CH[k]).slice(0,8);const t=[];for(const k of ks){const a=performance.now();G.loadScene(k);t.push({area:k,ms:Math.round(performance.now()-a),cached:String(G.STAT.last).endsWith('*')});G.unloadScene(k)}out.revisit=t;const ri=G.r.info.memory;out.gpu={textures:ri.textures,geometries:ri.geometries};if(performance.memory)out.jsHeapMB=Math.round(performance.memory.usedJSHeapSize/1048576)}const v=await fetch('audio/voicebank_spo.mp3',{headers:{Range:'bytes=100-199'}});out.rangeStatus=v.status;out.rangeBytes=(await v.arrayBuffer()).byteLength;return out})()`); } catch (e) { state.checkErr = String(e); }
+    try { state.checks = await win.webContents.executeJavaScript(`(async()=>{const out={};const names=${JSON.stringify(fs.existsSync(path.join(GAME,'m','remote'))?fs.readdirSync(path.join(GAME,'m','remote')):[])};let ok=0;for(const n of names){const r=await fetch('m/remote/'+n);const b=new Uint8Array(await r.arrayBuffer());if(r.ok&&String.fromCharCode(b[0],b[1],b[2],b[3])==='glTF')ok++}out.remoteModelsOk=ok+'/'+names.length;out.newAlienmon=Object.keys(window.NEWMONS||{}).length;const ps=await (await fetch('/_pack/status')).json();out.packReady=ps.ready;if(ps.ready){const pm=await (await fetch('pack-manifest.json')).json();let pok=0;for(const f of pm.files.slice(0,10)){const r=await fetch('pack/'+f.name);const b=new Uint8Array(await r.arrayBuffer());if(r.ok&&b.length===f.size&&String.fromCharCode(b[0],b[1],b[2],b[3])==='glTF')pok++}out.packModelsOk=pok+'/'+Math.min(10,pm.files.length)}const G=window.GAME;if(G&&G.STAT&&!window.AM_PRELOAD_OFF){const ks=Object.keys(G.res.rects).filter(k=>!G.CH[k]).slice(0,8);const t=[];for(const k of ks){const a=performance.now();G.loadScene(k);t.push({area:k,ms:Math.round(performance.now()-a),cached:String(G.STAT.last).endsWith('*')});G.unloadScene(k)}out.revisit=t;const ri=G.r.info.memory;out.gpu={textures:ri.textures,geometries:ri.geometries};if(performance.memory)out.jsHeapMB=Math.round(performance.memory.usedJSHeapSize/1048576)}const v=await fetch('audio/voicebank_spo.mp3',{headers:{Range:'bytes=100-199'}});out.rangeStatus=v.status;out.rangeBytes=(await v.arrayBuffer()).byteLength;return out})()`); } catch (e) { state.checkErr = String(e); }
     try {
       Object.assign(state, await win.webContents.executeJavaScript(`({ loadText: (document.getElementById('load')||{}).textContent, loadShown: getComputedStyle(document.getElementById('load')).display !== 'none', hasGame: !!window.GAME, canvases: document.querySelectorAll('canvas').length, gl: (()=>{const c=document.querySelector('canvas');if(!c)return null;const g=c.getContext('webgl2')||c.getContext('webgl');if(!g)return null;const x=g.getExtension('WEBGL_debug_renderer_info');return x?g.getParameter(x.UNMASKED_RENDERER_WEBGL):'webgl'})() })`));
     } catch (e) { state.err = String(e); }

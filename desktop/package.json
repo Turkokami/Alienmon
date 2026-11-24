@@ -2,7 +2,7 @@
   "name": "alienmon-3d-desktop",
   "productName": "Alienmon 3D",
   "version": "1.0.0",
-  "description": "Alienmon 3D for Windows: every world and file on your PC, no internet needed",
+  "description": "Alienmon 3D for Windows: every world on your PC, plays offline",
   "author": "LOKES ONE LIMITED CO",
   "private": true,
   "main": "main.js",
@@ -25,6 +25,9 @@
     },
     "files": [
       "main.js",
+      "pack.js",
+      "update.js",
+      "build-info.json",
       "package.json",
       "app/**/*",
       "build/icon.png"

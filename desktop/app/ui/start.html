@@ -25,14 +25,20 @@ button{font:inherit;cursor:pointer;color:#fff;border-radius:12px}
 .grid button:hover,.grid button:focus{border-color:#c8f06a;background:#1c2a3c;outline:none}
 .grid small{display:block;opacity:.6;font-size:12px;margin-top:3px}
 .keys{margin-top:26px;font-size:13px;opacity:.6;line-height:1.6}
+.note{margin-top:16px;font-size:14px;opacity:.85;min-height:1.2em}
+.note button{display:inline-block;width:auto;padding:6px 14px;margin-left:8px;font-size:14px;font-weight:700;background:#1d4a52;border:2px solid #3fe0d0}
+.note button:hover,.note button:focus{border-color:#c8f06a;outline:none}
+#upd{opacity:.7}
 </style></head><body>
 <div class="card">
   <h1>Alienmon 3D</h1>
-  <div class="sub">Every world is on your PC. No internet needed.</div>
+  <div class="sub">Every world is on your PC. Plays offline.</div>
   <button id="cont">Continue</button>
   <button id="newg">New Game<small style="display:block;font-weight:400;font-size:12px;opacity:.65;margin-top:3px">Start over from the first cutscene</small></button>
   <div class="label">Pick a world</div>
   <div class="grid" id="worlds"></div>
+  <div class="note" id="packnote" style="display:none">The new Alienmon aren't downloaded yet.<button id="getpack">Download</button></div>
+  <div class="note" id="upd"></div>
   <div class="keys">F11 full screen · F10 back to this screen · Alt shows the menu</div>
 </div>
 <div id="ask"><div class="box"><h2>Start over?</h2><p>Your current save will be erased. Your settings stay.</p>
@@ -54,4 +60,19 @@ document.getElementById("no").onclick=function(){ask.style.display="none";docume
 document.addEventListener("keydown",function(e){if(e.key==="Escape"&&ask.style.display==="flex"){ask.style.display="none";document.getElementById("newg").focus()}
  if((e.key==="ArrowLeft"||e.key==="ArrowRight")&&ask.style.display==="flex"){var a=document.activeElement&&document.activeElement.id==="yes"?"no":"yes";document.getElementById(a).focus()}});
 cont.focus();
+// New Alienmon pack (downloaded on first launch; skipped if the player chose to play without it)
+fetch("/_pack/status").then(function(r){return r.json()}).then(function(s){if(!s.ready&&s.totalFiles){document.getElementById("packnote").style.display="block";document.getElementById("getpack").onclick=function(){location.href="/_ui/download.html"}}}).catch(function(){});
+// Update button: checks Releases for a newer build, downloads it, installs it and restarts the game
+var upd=document.getElementById("upd");
+function mb(b){return Math.round(b/1048576)}
+function showUpd(s){
+  if(s.state==="available"){upd.style.opacity=1;upd.innerHTML="";upd.appendChild(document.createTextNode("A new version is ready: "+(s.title||s.latest)+"."));var b=document.createElement("button");b.textContent="Update";b.onclick=function(){fetch("/_update/start").then(function(){pollUpd()})};upd.appendChild(b);return}
+  if(s.state==="downloading"){upd.style.opacity=1;upd.textContent="Downloading the update… "+mb(s.doneBytes)+" of "+mb(s.totalBytes)+" MB";setTimeout(pollUpd,700);return}
+  if(s.state==="ready"){upd.style.opacity=1;upd.textContent="Installing the update. The game will close and open again by itself.";return}
+  if(s.state==="error"){upd.style.opacity=1;upd.innerHTML="";upd.appendChild(document.createTextNode("The update didn't finish."));var r=document.createElement("button");r.textContent="Try again";r.onclick=function(){fetch("/_update/start").then(function(){pollUpd()})};upd.appendChild(r);return}
+  upd.style.opacity=.6;upd.innerHTML="";upd.appendChild(document.createTextNode(s.state==="current"?"Up to date.":s.state==="offline"?"Couldn't check for updates (offline).":"Checking for updates…"));
+  if(s.state==="current"||s.state==="offline"){var c=document.createElement("button");c.textContent="Check again";c.onclick=function(){upd.textContent="Checking for updates…";fetch("/_update/status?force=1").then(function(r){return r.json()}).then(showUpd)};upd.appendChild(c)}
+}
+function pollUpd(){fetch("/_update/status").then(function(r){return r.json()}).then(showUpd).catch(function(){})}
+pollUpd();
 </script></body></html>
