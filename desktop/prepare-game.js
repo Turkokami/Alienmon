@@ -38,19 +38,30 @@ function download(url, dest) {
   copyDir(SRC, OUT);
 
   // Models the web build loads from the internet ("url:https://..."): fetch once, store under m/remote/.
-  const assetsPath = path.join(OUT, 'assets.js');
-  let assets = fs.readFileSync(path.join(SRC, 'assets.js'), 'utf8');
-  const urls = [...new Set(assets.match(/https:\/\/[^"'\s]+/g) || [])];
+  // Every script the page loads is scanned (assets.js, newmons.js and any added later), not just assets.js.
+  const pageHtml = fs.readFileSync(path.join(SRC, 'index.html'), 'utf8');
+  const scripts = [...new Set([...pageHtml.matchAll(/<script src="([^"?]+)/g)].map(m => m[1]))]
+    .filter(f => !f.startsWith('desktop') && fs.existsSync(path.join(SRC, f)));
+  if (!scripts.includes('assets.js')) scripts.push('assets.js');
+  const STREAMED = /https:\/\/[a-z0-9]+\.public\.blob\.vercel-storage\.com\/[^"'\s]+/g;
   fs.mkdirSync(CACHE, { recursive: true });
   fs.mkdirSync(path.join(OUT, 'm', 'remote'), { recursive: true });
-  for (const u of urls) {
-    const name = path.basename(new URL(u).pathname);
-    const cached = path.join(CACHE, name);
-    if (!fs.existsSync(cached)) { console.log('Downloading', name); try { download(u, cached); } catch (e) { console.error('Could not download ' + name + '. Run the "Desktop app" workflow, or build on a PC with internet.'); process.exit(1); } }
-    fs.copyFileSync(cached, path.join(OUT, 'm', 'remote', name));
-    assets = assets.split(u).join('m/remote/' + name);
+  const urls = new Set();
+  for (const f of scripts) {
+    let txt = fs.readFileSync(path.join(SRC, f), 'utf8');
+    const found = [...new Set(txt.match(f === 'assets.js' ? /https:\/\/[^"'\s]+/g : STREAMED) || [])];
+    if (!found.length) continue;
+    for (const u of found) {
+      const name = path.basename(new URL(u).pathname);
+      const cached = path.join(CACHE, name);
+      if (!fs.existsSync(cached)) { console.log('Downloading', name); try { download(u, cached); } catch (e) { console.error('Could not download ' + name + '. Run the "Desktop app" workflow, or build on a PC with internet.'); process.exit(1); } }
+      fs.copyFileSync(cached, path.join(OUT, 'm', 'remote', name));
+      txt = txt.split(u).join('m/remote/' + name);
+      urls.add(u);
+    }
+    fs.writeFileSync(path.join(OUT, f), txt);
+    console.log(f + ': ' + found.length + ' streamed models now local');
   }
-  fs.writeFileSync(assetsPath, assets);
 
   // Desktop-only switches. The game keeps a few built areas (0 on Low) after you leave them; the desktop app
   // keeps every one, so desktop.js can build them all up front. Fails loudly if the game code moved.
@@ -69,10 +80,10 @@ function download(url, dest) {
 
   // Safety check: nothing in the packaged game may point at the internet.
   const left = [];
-  for (const f of ['index.html', 'game.js', 'world.js', 'assets.js']) {
+  for (const f of ['index.html', 'game.js', ...scripts.filter(x => x !== 'game.js')]) {
     const txt = fs.readFileSync(path.join(OUT, f), 'utf8');
     for (const m of txt.match(/https?:\/\/[^"'\s)]+/g) || []) if (!m.startsWith('http://www.w3.org/')) left.push(f + ': ' + m);
   }
   if (left.length) { console.error('Online links still in the game:\n' + left.join('\n')); process.exit(1); }
-  console.log('Game ready in', OUT, '(' + urls.length + ' streamed models now local)');
+  console.log('Game ready in', OUT, '(' + urls.size + ' streamed models now local)');
 })().catch(e => { console.error(e); process.exit(1); });
