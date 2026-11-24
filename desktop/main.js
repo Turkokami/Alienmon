@@ -63,6 +63,8 @@ function packStatus() { return Object.assign({ ready: pack.ready(), version: pac
 // Run the downloaded installer silently over this install; it starts the game again when it is done.
 function applyUpdate(installer, env) {
   if (process.platform !== 'win32' || !app.isPackaged) throw new Error('Updates install only in the installed Windows app');
+  const dir = path.join(app.getPath('userData'), 'updates');
+  fs.writeFileSync(path.join(dir, 'pending.json'), JSON.stringify({ from: BUILD.tag, to: updater.found && updater.found.tag, at: new Date().toISOString() }));
   spawn(installer, ['/S', '--force-run'], { detached: true, stdio: 'ignore', env: env || process.env }).unref();
   setTimeout(() => app.exit(0), 300);
 }
@@ -89,6 +91,11 @@ async function serve(request) {
   if (url.pathname === '/_pack/status') return json(packStatus());
   if (url.pathname === '/_pack/start') { pack.start(); return json(packStatus()); }
   if (url.pathname === '/_update/status') { await updater.check(url.searchParams.has('force')); return json(updater.status); }
+  if (url.pathname === '/_update/last') {   // shown once on the start screen after an update
+    const f = path.join(app.getPath('userData'), 'updates', 'last-update.json'), last = readJson(f);
+    if (last && !last.shown) { last.shown = true; try { fs.writeFileSync(f, JSON.stringify(last)); } catch {} return json(last); }
+    return json(null);
+  }
   if (url.pathname === '/_update/start') {
     if (updater.status.state === 'available' || updater.status.state === 'error')
       updater.download().then(f => applyUpdate(f)).catch(e => { updater.status.state = 'error'; updater.status.error = String(e && e.message || e); });
@@ -163,6 +170,12 @@ app.on('second-instance', () => { const w = BrowserWindow.getAllWindows()[0]; if
 
 app.whenReady().then(async () => {
   if (process.env.ALIENMON_AFTER_UPDATE) return;
+  // First launch after the Update button: note that the update went in (the start screen shows it once).
+  const updDir = path.join(app.getPath('userData'), 'updates'), pending = readJson(path.join(updDir, 'pending.json'));
+  if (pending) {
+    try { fs.writeFileSync(path.join(updDir, 'last-update.json'), JSON.stringify(Object.assign(pending, { running: BUILD.tag, ok: !pending.to || pending.to === BUILD.tag, startedAt: new Date().toISOString(), shown: false }))); } catch {}
+    try { fs.unlinkSync(path.join(updDir, 'pending.json')); } catch {}
+  }
   pack = new Pack({ manifestPath: path.join(GAME, 'pack-manifest.json'), dir: path.join(app.getPath('userData'), 'packs', 'alienmon'), fetchFn: netFetch });
   updater = new Updater({ build: BUILD, fetchFn: netFetch, dir: path.join(app.getPath('userData'), 'updates') });
   protocol.handle('app', serve);

@@ -74,5 +74,5 @@ function showUpd(s){
   if(s.state==="current"||s.state==="offline"){var c=document.createElement("button");c.textContent="Check again";c.onclick=function(){upd.textContent="Checking for updates…";fetch("/_update/status?force=1").then(function(r){return r.json()}).then(showUpd)};upd.appendChild(c)}
 }
 function pollUpd(){fetch("/_update/status").then(function(r){return r.json()}).then(showUpd).catch(function(){})}
-pollUpd();
+fetch("/_update/last").then(function(r){return r.json()}).then(function(l){if(l&&l.ok){upd.style.opacity=1;upd.textContent="Updated to the newest version."}else pollUpd()}).catch(pollUpd);
 </script></body></html>
