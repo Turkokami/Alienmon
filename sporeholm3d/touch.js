@@ -36,7 +36,7 @@
     'html.tc #tcTL .tcFlog{position:static!important;left:auto!important;bottom:auto!important;font-size:10px!important;padding:3px 8px!important;max-width:100%;box-sizing:border-box;opacity:.85}',
     'html.tc.tc-battle #tcTL,html.tc.tc-loading #tcTL{display:none}',
     'html.tc #hint{bottom:calc(178px + env(safe-area-inset-bottom))!important;pointer-events:auto;font-size:13px;max-width:70vw;text-align:center}',
-    'html.tc #csBox{font-size:15px;padding:10px 14px}',
+    'html.tc #csBox{font-size:15px;padding-top:10px;padding-bottom:10px;padding-right:14px}html.tc #csBox:not(.hasPt){padding-left:14px}html.tc #csBox.hasPt{padding-left:calc(min(150px,17vw) + 18px);min-height:calc(min(150px,17vw) + 4px)}',
     'html.tc .hpb{top:calc(6px + env(safe-area-inset-top))!important;min-width:0!important;width:min(46vw,260px);box-sizing:border-box;font-size:11px!important;padding:5px 8px!important}',
     'html.tc #hpL{right:calc(6px + env(safe-area-inset-right))!important}html.tc #hpR{left:calc(6px + env(safe-area-inset-left))!important}',
     'html.tc #btUI{font-size:13px}',
@@ -69,7 +69,7 @@
     '.tcS{position:fixed;right:calc(8px + env(safe-area-inset-right));width:46px;height:30px;border-radius:9px;font:700 11px system-ui;color:#eafff4;background:rgba(12,24,34,.5);border:1px solid rgba(90,240,224,.45);display:flex;align-items:center;justify-content:center;touch-action:none}',
     '.tcS.dn{background:rgba(90,240,224,.4)}',
     '#tcTip{position:fixed;left:50%;top:38%;transform:translate(-50%,-50%);z-index:13;max-width:84vw;background:rgba(10,20,30,.82);border:1px solid #5af0e0;border-radius:12px;padding:10px 14px;font:13px/1.5 system-ui;color:#eafff4;text-align:center;pointer-events:none;transition:opacity .5s}',
-    '@media (orientation:landscape) and (max-height:500px){#tcA{width:60px;height:60px}#tcBk{bottom:calc(92px + env(safe-area-inset-bottom))}.tcS{bottom:calc(10px + env(safe-area-inset-bottom))!important}#tcBag{right:calc(160px + env(safe-area-inset-right))}#tcMap{right:calc(212px + env(safe-area-inset-right))}#tcMenu{right:calc(264px + env(safe-area-inset-right))}#tcFs{right:calc(316px + env(safe-area-inset-right))}html.tc #hint{bottom:calc(96px + env(safe-area-inset-bottom))!important}html.tc #csBox{bottom:8px!important}}'
+    '@media (orientation:landscape) and (max-height:500px){#tcA{width:60px;height:60px}#tcBk{bottom:calc(92px + env(safe-area-inset-bottom))}.tcS{bottom:calc(10px + env(safe-area-inset-bottom))!important}#tcBag{right:calc(160px + env(safe-area-inset-right))}#tcMap{right:calc(212px + env(safe-area-inset-right))}#tcMenu{right:calc(264px + env(safe-area-inset-right))}#tcFs{right:calc(316px + env(safe-area-inset-right))}html.tc #hint{bottom:calc(96px + env(safe-area-inset-bottom))!important}html.tc #csBox{bottom:8px!important}html.tc #csPt{bottom:10px!important}}'
   ].join('\n');
   (document.head || root).appendChild(css);
 
