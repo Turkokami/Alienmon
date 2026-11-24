@@ -72,3 +72,17 @@ Copy `sporeholm3d/game.js`, `world.js`, `index.html`, and the new `hudpos.js` an
 index.html loads world.js?v=wd8, game.js?v=bt5, hudpos.js?v=1 and perf.js?v=1.
 32. Tamsin uses her own rigged model: assets.js adds "tr_tamsin" as a streamed model, and her NPC entry in game.js uses model "tamsin" instead of d032_dust_bell_ringer (assets.js?v=wd4t, game.js?v=bt6).
 33. Sunset Tunnel expanded (world.js `sunset1`/`sunset2` grids grow from 40x30 to 78x56, about 4.4x the walkable floor): new chambers on B1 and B2, lantern posts, light baked into the floor texture, and a hidden crawl to the Still Water Shrine (pond and altar). game.js stashes accept a fixed spot, a height offset and a custom message; 7 new Linker stashes save as `stash[id]` in dustara_rpg. index.html loads world.js?v=wd9, game.js?v=bt7.
+
+## Nov 24 Observatory move (branch dustara-observatory, preview only; port these into the PC source too)
+
+Copy `sporeholm3d/world.js`, `game.js`, `linker-data.js` and `index.html` from the branch once it is merged. What changed:
+
+34. world.js (Dustara `dmap` only): two new scenes east of Sola's Yard. DA5 "Observatory Switchbacks" at [120,0] (five rope-railed legs up a banded red hillside) and DA6 "Vashti's Observatory" at [150,0] (grand stair, summit courtyard, the Crater Observatory, a balcony over the town with two coin telescopes). The summit is 26 m up. A path is carved out of DA4's east edge (rows 13-16, x 112-119) with an "OBSERVATORY / 112 steps up" sign.
+35. world.js: the old observatory on DB1 is taken off after DB1 builds (dome, telescope, dish, pipes and its walk-in); the hill becomes Stargazers' Hill with a coin telescope aimed at the new dome. Its sign now reads "STARGAZERS' HILL / lookout & garden".
+36. world.js: the "Crater Observatory" door (OUTPORTALS) is now on DA6 at [168.46, 11.41]; the lab's "Go outside" door returns to DA6.
+37. world.js: far view of the town from the summit. `OBS2.town()` builds low-detail stand-in roofs (data baked into `/*IMPD*/`) for town scenes that are not loaded, hidden whenever the real scene loads. The frontier detail pass takes `D.XLITE` / `D.xClear` so the new slopes and balcony aren't buried in rock stacks.
+38. game.js: every Observatory objective points to DA6 (k("DB1") -> k("DA6")); objective and hint text say "over the canyon bridge and up the switchbacks"; Dr. Vashti (outdoor, after the map step), her story NPC and the Lab Aide stand in the DA6 courtyard; the Lab Aide's greeting fires at the top of the grand stair (Ct(161.5,17.5,4.5)). DA5/DA6 are added to G3[1] (act 1 scenes) and the d_town zone; the map manifest gets the two scenes, their exits, the moved door, NPC spots and walk-in, and DB1 is renamed Stargazers' Hill.
+39. game.js: Mom's line now reads "Past the fountain, over the canyon bridge and up the switchbacks." Its old voice clip (v3d_dus_0151_mom.mp3) is unmapped because it said "West across the plaza"; record the new line in the next voice pack.
+40. linker-data.js: DA5 and DA6 added to the Dustmere Rim zone.
+
+index.html loads world.js?v=wd9ob, game.js?v=bt7ob, linker-data.js?v=cl1ob.
