@@ -35,7 +35,7 @@
     'html.tc #dlg{left:calc(8px + env(safe-area-inset-left))!important;right:calc(54px + env(safe-area-inset-right));width:auto!important;transform:none!important;bottom:calc(150px + env(safe-area-inset-bottom))!important;padding:8px 12px!important;font-size:14px;cursor:pointer}',
     '#tcTL{position:fixed;left:calc(6px + env(safe-area-inset-left));top:calc(6px + env(safe-area-inset-top));max-width:calc(58vw - 12px);display:flex;flex-direction:column;align-items:flex-start;gap:4px;z-index:5;pointer-events:none}',
     'html.tc #tcTL #objHud{position:static!important;transform:none!important;left:auto!important;top:auto!important;bottom:auto!important;font-size:11px!important;line-height:1.25;padding:4px 8px!important;max-width:100%!important;gap:6px!important;box-sizing:border-box}',
-    'html.tc #tcTL #objHud #objArrow{width:16px;height:16px}',
+    'html.tc #tcTL #objHud #objArrow{width:34px!important;height:34px!important}',
     'html.tc #tcTL .tcFlog{position:static!important;left:auto!important;bottom:auto!important;font-size:10px!important;padding:3px 8px!important;max-width:100%;box-sizing:border-box;opacity:.85}',
     'html.tc.tc-battle #tcTL,html.tc.tc-loading #tcTL{display:none}',
     'html.tc #hint{bottom:calc(178px + env(safe-area-inset-bottom))!important;pointer-events:auto;font-size:13px;max-width:70vw;text-align:center}',

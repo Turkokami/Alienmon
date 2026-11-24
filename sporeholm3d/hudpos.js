@@ -7,6 +7,7 @@
     '#objHud{top:auto!important;bottom:140px!important;transition:opacity .2s}' +
     '#objHud.ohide{opacity:0!important;pointer-events:none!important}' +
     '#hint{bottom:186px!important}' +
+    '#objArrow{width:40px!important;height:40px!important;flex:none;filter:drop-shadow(0 0 4px #c8f06a99)}' +
     '@media (max-height:560px){#objHud{bottom:124px!important}#hint{bottom:166px!important}}';
   (document.head || document.documentElement).appendChild(st);
   var shown = function (id) {
