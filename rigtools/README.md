@@ -124,3 +124,14 @@ Copy `sporeholm3d/world.js`, `game.js`, `linker-data.js` and `index.html` from m
 59. linker-data.js: DA5 and DA6 added to the Dustmere Rim zone.
 
 index.html loads world.js?v=wd14ob, game.js?v=bt8ob, linker-data.js?v=cl1ob. The lab's new domed roof (above) stays; only its "Go outside" door now leads to DA6.
+
+## Nov 25 bigger shop, bakery and clinic (interiors slice 2, now live; port into the PC source)
+
+60. Roomier rooms, at least Rook's room size, with the camera at its normal distance:
+    - world.js: Recovery Bay grid grows to 18x14; new places `dShopIn` (Dustmere Shop, 16x13, plank floor) and `bakeryIn` (Abernathy's Bakery, 16x13, tile floor), each with a fine room-kit block (shelving and gondolas, east checkout with Stasis Pod capsules; oven, racks, display cases, cafe tables) and the old furniture kept as a fallback. Two OUTPORTALS replace the DB2 walk-ins "Dustmere Shop" and "Abernathy's Bakery" (doors at [52.86, 34.75] and [52.75, 50.4]). The middle pendant in the shop is removed and the bakery's moved to (10.4, 3.6) so they don't block the view.
+    - game.js: the DB2 Clerk stands in dShopIn at (14.1, 7); Mr. Abernathy in bakeryIn at (7.75, 4.45); the Recovery Bay nurse at (9.6, 3.15). The shop menu still opens by the Clerk's name.
+    - game.js static-mesh merge keeps the room-kit wall side tag: the merge key and the merged mesh and its outline carry `userData.rkEdge`.
+    - roomkit.js: wall pieces inside a doorway notch in the outer row, and the corner posts on the outer walls (door jambs), are tagged with that outer wall; world.js doorNotches tags the door, frame, header and lantern with the wall side in fine rooms.
+    - cutaway.js: hides the tagged pieces on the camera's side (world-space boxes); restores them when the camera moves.
+    - index.html loads roomkit.js?v=rk7, world.js?v=wd20ob, game.js?v=bt9ob, cutaway.js?v=3.
+

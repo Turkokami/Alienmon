@@ -5021,7 +5021,8 @@ const doorNotches = (P, S, at, ox, oz, W, D, wallM, room) => { if (!P.indoor || 
     // a lantern over the door and a mat in front of it
     { const lx = dbl ? 0 : 0.0, ly = dh + 0.62; add(new THREE.BoxGeometry(0.06, 0.06, 0.26), M.iron, [lx, ly + 0.06, 0.3], [0, 0, 0], "nocol", G); add(new THREE.CylinderGeometry(0.1, 0.12, 0.24, 8), M.glow, [lx, ly - 0.08, 0.42], [0, 0, 0], "nocol", G); add(new THREE.ConeGeometry(0.15, 0.1, 8), M.iron, [lx, ly + 0.08, 0.42], [0, 0, 0], "nocol", G);
       const l = new THREE.PointLight(0xffd090, 2.6, 6.5, 1.6); l.position.set(0, ly - 0.2, 0.75); G.add(l); }
-    add(new THREE.PlaneGeometry(Math.min(1.6, w - 0.2), 0.62), M.mat, [0, fy0 + 0.012, 0.62], [-Math.PI / 2, 0, 0], "nocol", G); } };
+    add(new THREE.PlaneGeometry(Math.min(1.6, w - 0.2), 0.62), M.mat, [0, fy0 + 0.012, 0.62], [-Math.PI / 2, 0, 0], "nocol", G);
+    if (P.fine) G.traverse((m) => { if (m.isMesh && m.material !== M.mat) m.userData.rkEdge = e; }); } }; // Nov 25: the cutaway hides the doorway with its wall
 const buildPlace = (id) => { const P = PLACE[id], S = PSTY[P.style], g = P.grid(), W = P.w, D = P.d, ox = P.ox, oz = P.oz, at = (x, y) => (y >= 0 && y < D && x >= 0 && x < W ? g[y][x] : "#"); P.g = g;
   const isFloor = (c) => ".,gbvS".includes(c);
   // finished rooms (roomkit.js): real floor, thin walls with trim and windows, dense props; the old painted floor and block walls are skipped
@@ -5680,7 +5681,7 @@ defPlace("dShopIn", { name: "Dustmere Shop", w: 16, d: 13, style: "adobe", indoo
       for (const sx of [6.4, 9.6]) K.plant(X(sx), fy, Z(11.4), 1.4, "palm", "#b0603a"); K.plant(X(1.7), fy, Z(1.8), 1.2, "snake", "#efe3cc");
       K.rug(X(8.0), Z(10.4), 1.6, 2.6, 0, "rk_rug1_d", fy); K.clock(X(8.0), 3.05, Z(11.95), Math.PI, 0.24);
       // ---- light: pendant lamps over the aisles and the counter, warm fill
-      for (const [x, z] of [[4.2, 4.0], [7.8, 4.0], [11.4, 4.0], [6.0, 8.6], [9.6, 8.6], [12.9, 7.0]]) hangLamp(X(x), Z(z), "#ffd27a", 2.95, false);
+      for (const [x, z] of [[4.2, 4.0], [11.4, 4.0], [6.0, 8.6], [9.6, 8.6], [12.9, 7.0]]) hangLamp(X(x), Z(z), "#ffd27a", 2.95, false);
       lite(8, 4.5, "#fff0d8", 2.2, 12, 3.3); lite(8, 9, "#ffe8c8", 1.6, 10, 3.2); lite(12.6, 7, "#ffe2b8", 1.0, 6, 3); } },
   grid() { const g = PLW(16, 13); pRect(g, 1, 1, 14, 11, "."); pRect(g, 7, 12, 8, 12, "S"); return g; },
   arrive: { in: [8.0, 10.6, 0] },
@@ -5736,7 +5737,7 @@ defPlace("bakeryIn", { name: "Abernathy's Bakery", w: 16, d: 13, style: "adobe",
         for (const xx of [-0.45, 0.05]) { K.basket(xx, 0.81, 0, 0.9, "#c8a070"); for (let j = 0; j < 4; j++) ball("paint", 0.075, xx + (j % 2 - 0.5) * 0.12, 1.0 + Math.floor(j / 2) * 0.05, (Math.floor(j / 2) - 0.5) * 0.1, "#c8843a", 1.5, 0.75, 0.9); }
         lathe("paint", [[0.001, 0], [0.16, 0], [0.16, 0.13], [0.001, 0.14]], 0.5, 0.81, 0, "#f0e0c8", 16); lathe("gloss", [[0.001, 0], [0.2, 0], [0.2, 0.18], [0.12, 0.28], [0.001, 0.3]], 0.5, 0.81, 0, "#e8f8ff", 16); });
       K.rug(X(8.0), Z(10.6), 1.6, 2.4, 0, "rk_rug1_d", fy); K.clock(X(8.0), 3.05, Z(11.95), Math.PI, 0.24); K.frame(X(14.95), 2.0, Z(5.6), -Math.PI / 2, 0.8, 0.6, K.art("mesa"));
-      for (const [x, z] of [[3.2, 6.6], [3.2, 10.2], [5.8, 8.5], [7.75, 5.4], [12.2, 5.6], [5.0, 2.6]]) hangLamp(X(x), Z(z), "#ffc070", 2.95, false);
+      for (const [x, z] of [[3.2, 6.6], [3.2, 10.2], [5.8, 8.5], [10.4, 3.6], [12.2, 5.6], [5.0, 2.6]]) hangLamp(X(x), Z(z), "#ffc070", 2.95, false);
       lite(8, 5.5, "#ffe2b8", 2.0, 12, 3.3); lite(4, 8.5, "#ffd8a8", 1.4, 8, 3); lite(12, 4, "#ffb878", 1.2, 7, 3); } },
   grid() { const g = PLW(16, 13); pRect(g, 1, 1, 14, 11, "."); pRect(g, 7, 12, 8, 12, "S"); return g; },
   arrive: { in: [8.0, 10.6, 0] },

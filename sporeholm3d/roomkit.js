@@ -108,9 +108,11 @@ ASSETS.roomKit = function (THREE, env) {
       mk(hz, "x"); mk(vt, "z"); }
     // edge name of a run as seen from inside: a run along x with the room toward +z is the room's north wall
     const edgeOf = (r) => r.axis === "x" ? (r.s > 0 ? "n" : "s") : (r.s > 0 ? "w" : "e");
+    // which side a piece belongs to for the cutaway: the short returns inside a doorway notch in the outer row belong to that outer wall
+    const tagOf = (r) => r.axis === "z" && r.t0 >= D - 1 ? "s" : r.axis === "z" && r.t1 <= 1 ? "n" : r.axis === "x" && r.t0 >= W - 1 ? "e" : r.axis === "x" && r.t1 <= 1 ? "w" : edgeOf(r);
     // world placement for local wall coordinates: t along the wall, y up, d into the room (negative = inside the wall)
     const W3 = (r, t, d) => r.axis === "x" ? [ox + t, oz + r.L + r.s * d] : [ox + r.L + r.s * d, oz + t];
-    const piece = (key, r, t0, t1, y0, y1, d0, d1, c) => { if (t1 - t0 < 0.005 || y1 - y0 < 0.005 || d1 - d0 < 0.001) return; const [cx, cz] = W3(r, (t0 + t1) / 2, (d0 + d1) / 2); key = key + "@" + edgeOf(r);
+    const piece = (key, r, t0, t1, y0, y1, d0, d1, c) => { if (t1 - t0 < 0.005 || y1 - y0 < 0.005 || d1 - d0 < 0.001) return; const [cx, cz] = W3(r, (t0 + t1) / 2, (d0 + d1) / 2); key = key + "@" + tagOf(r);
       if (r.axis === "x") box(key, t1 - t0, y1 - y0, d1 - d0, cx, (y0 + y1) / 2, cz, c); else box(key, d1 - d0, y1 - y0, t1 - t0, cx, (y0 + y1) / 2, cz, c); };
     const sunH = new THREE.Vector2(-0.45, 0.89).normalize(), tanE = 0.9; let sunLights = 0;
     for (const r of runs) { const e = edgeOf(r), ws = (o.wins || []).filter((w) => w.e === e && w.at - w.w / 2 >= r.t0 + 0.2 && w.at + w.w / 2 <= r.t1 - 0.2).map((w) => ({ ...w, t0: w.at - w.w / 2, t1: w.at + w.w / 2, y0: w.y0 ?? 1.05, y1: w.y1 ?? Math.min(H - 0.45, 2.55) })).sort((a, b) => a.t0 - b.t0);
@@ -153,7 +155,8 @@ ASSETS.roomKit = function (THREE, env) {
         else if (w.sun !== false) { const [lx, lz] = W3(r, tc, 0.9); const l = new THREE.PointLight(0xcfe4ff, 0.7, 4, 1.8); l.position.set(lx, (w.y0 + w.y1) / 2, lz); root.add(l); } } }
     // corner posts where two walls meet around the outside of a room corner
     for (let y = 0; y <= D; y++) for (let x = 0; x <= W; x++) { const f = [!solid(x - 1, y - 1), !solid(x, y - 1), !solid(x - 1, y), !solid(x, y)], n = f.filter(Boolean).length; if (n !== 1) continue; const k = f.indexOf(true), sx = k % 2 === 0 ? 1 : -1, sz = k < 2 ? 1 : -1, cx = ox + x + sx * T / 2, cz = oz + y + sz * T / 2;
-      box("wall", T, H - fy, T, cx, (H + fy) / 2, cz, wallC); box("trim", T + 0.08, 0.07, T + 0.08, cx + sx * 0.0, H + 0.035, cz, trimC); }
+      const pe = y >= D - 1 ? "@s" : y <= 1 ? "@n" : x <= 1 ? "@w" : x >= W - 1 ? "@e" : ""; // posts at the outer walls (door jambs, corners) hide with that wall
+      box("wall" + pe, T, H - fy, T, cx, (H + fy) / 2, cz, wallC); box("trim" + pe, T + 0.08, 0.07, T + 0.08, cx + sx * 0.0, H + 0.035, cz, trimC); }
     return { runs, T, H }; };
 
   // ================= props =================
