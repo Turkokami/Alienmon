@@ -5538,7 +5538,17 @@ defPlace("vashtiLab", { name: "Vashti's Observatory Lab", w: 16, d: 13, style: "
   grid() { const g = PLW(16, 13); pCirc(g, 8, 6.5, 7.2, ".", 5.6); pRect(g, 7, 11, 8, 12, "S"); return g; },
   arrive: { in: [7.5, 10.4, 0] },
   portals: [{ t: [7.5, 12.4], to: "out:DB1", label: "Go outside" }],
-  dress({ X, Z, lite }) { DFURN.vashtiLab(X(8), Z(6.8), 5.4, 4.4, 4.2); add(new THREE.CircleGeometry(1.1, 24), std({ color: "#1a2050", emissive: "#3a4a9a", emissiveIntensity: 0.6 }), [X(8), 4.4, Z(3.6)], [Math.PI / 2.4, 0, 0]).name = "nocol"; lite(8, 6.5, "#ffe0b0", 3, 12, 3.4); lite(8, 3.5, "#c8d8ff", 1.6, 7, 3); } }); // a slot of night sky above the telescope
+  dress({ X, Z, lite }) { DFURN.vashtiLab(X(8), Z(6.8), 5.4, 4.4, 4.2); add(new THREE.CircleGeometry(1.1, 24), std({ color: "#1a2050", emissive: "#3a4a9a", emissiveIntensity: 0.6 }), [X(8), 4.4, Z(3.6)], [Math.PI / 2.4, 0, 0]).name = "nocol"; lite(8, 6.5, "#ffe0b0", 3, 12, 3.4); lite(8, 3.5, "#c8d8ff", 1.6, 7, 3);
+    { // Nov 25: a plastered observatory dome with timber ribs over the round room, so talk shots show a roof, not black sky. Seen only from inside (back faces), so the play camera above still looks straight in.
+      const c = document.createElement("canvas"); c.width = 1024; c.height = 256; const g = c.getContext("2d"); let ds = 77; const dr = () => { ds = (ds * 16807) % 2147483647; return ds / 2147483647; };
+      const gr = g.createLinearGradient(0, 0, 0, 256); gr.addColorStop(0, "#3a2c4a"); gr.addColorStop(0.35, "#c9b08c"); gr.addColorStop(1, "#ead6b2"); g.fillStyle = gr; g.fillRect(0, 0, 1024, 256);
+      for (let i = 0; i < 2600; i++) { g.fillStyle = `rgba(${dr() < 0.5 ? "90,60,30" : "255,245,225"},${0.04 + dr() * 0.06})`; g.fillRect(dr() * 1024, 60 + dr() * 196, 1 + dr() * 3, 1 + dr() * 3); }
+      for (let k = 0; k < 16; k++) { const x = (k / 16) * 1024; g.fillStyle = "#5a3a22"; g.fillRect(x - 7, 0, 14, 256); g.fillStyle = "rgba(255,220,170,.25)"; g.fillRect(x - 7, 0, 3, 256); }
+      g.fillStyle = "#5a3a22"; g.fillRect(0, 226, 1024, 30); g.fillRect(0, 128, 1024, 9); g.fillStyle = "#b08a3a"; for (let k = 0; k < 64; k++) g.fillRect(k * 16 + 6, 236, 4, 4);
+      const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 4;
+      const dome = add(new THREE.SphereGeometry(1, 48, 14, 0, Math.PI * 2, 0, Math.PI / 2), new THREE.MeshStandardMaterial({ map: t, roughness: 0.9, side: THREE.BackSide, emissive: "#3a2a1a", emissiveIntensity: 0.25 }), [X(8), 3.15, Z(6.5)]);
+      dome.scale.set(7.75, 2.6, 6.15); dome.name = "nocol"; dome.userData.noCam = 1;
+    } } }); // a slot of night sky above the telescope
 defPlace("recoveryBay", { name: "Dustmere Recovery Bay", w: 18, d: 14, style: "adobe", indoor: true,
   // finished interior (roomkit.js, Nov 25 2026): pale limestone floor, white plaster over a warm wood wainscot, six windows, a curved reception
   // desk in front of the glowing healing alcove, medicine cabinets, a waiting lounge by the west window, the attic ladder and cabinet on the east side
