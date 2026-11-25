@@ -50,7 +50,7 @@ ASSETS.roomKit = function (THREE, env) {
     cloth: ["cloth", 0.7, "nocol"], fcloth: ["cloth", 0.7, ""], leaf: ["leaf", 1, "nocol"], glow: ["glow", 1, "nocol"], fwood: ["wood", 1.6, ""] };
   let FR = new THREE.Matrix4(); const _m = new THREE.Matrix4(), _q = new THREE.Quaternion(), _e = new THREE.Euler(), _s = new THREE.Vector3(), _p = new THREE.Vector3(), _c = new THREE.Color();
   const put = (key, geo, p = [0, 0, 0], r = [0, 0, 0], s = 1, color = "#ffffff", own) => {
-    const spec = BKEYS[key], b = BAT[key] || (BAT[key] = { mat: mat[spec[0]], sc: spec[1], name: spec[2], pos: [], nor: [], uv: [], col: [] });
+    const [k0, edge] = key.split("@"), spec = BKEYS[k0], b = BAT[key] || (BAT[key] = { mat: mat[spec[0]], sc: spec[1], name: spec[2], edge, pos: [], nor: [], uv: [], col: [] });
     const g = geo.index ? geo.toNonIndexed() : geo; _e.set(r[0], r[1], r[2]); _q.setFromEuler(_e); const sc = Array.isArray(s) ? s : [s, s, s]; _m.compose(_p.set(p[0], p[1], p[2]), _q, _s.set(sc[0], sc[1], sc[2])); _m.premultiply(FR); g.applyMatrix4(_m);
     const P = g.attributes.position, N = g.attributes.normal, U = g.attributes.uv; _c.set(color);
     for (let i = 0; i < P.count; i++) { const x = P.getX(i), y = P.getY(i), z = P.getZ(i), nx = N.getX(i), ny = N.getY(i), nz = N.getZ(i); b.pos.push(x, y, z); b.nor.push(nx, ny, nz);
@@ -59,7 +59,7 @@ ASSETS.roomKit = function (THREE, env) {
     if (g !== geo) geo.dispose(); g.dispose(); };
   const at = (x, y, z, ry, fn) => { const keep = FR.clone(); _e.set(0, ry || 0, 0); _q.setFromEuler(_e); FR = FR.clone().multiply(new THREE.Matrix4().compose(new THREE.Vector3(x, y, z), _q.clone(), new THREE.Vector3(1, 1, 1))); try { fn(); } finally { FR = keep; } };
   const flush = () => { for (const k in BAT) { const b = BAT[k]; if (!b.pos.length) continue; const g = new THREE.BufferGeometry(); g.setAttribute("position", new THREE.Float32BufferAttribute(b.pos, 3)); g.setAttribute("normal", new THREE.Float32BufferAttribute(b.nor, 3)); g.setAttribute("uv", new THREE.Float32BufferAttribute(b.uv, 2)); g.setAttribute("color", new THREE.Float32BufferAttribute(b.col, 3)); g.computeBoundingSphere();
-      const m = new THREE.Mesh(g, b.mat()); m.name = b.name; m.castShadow = k === "wall" || k === "fwood" || k === "fpaint" || k === "wood"; m.receiveShadow = true; root.add(m); delete BAT[k]; } };
+      const m = new THREE.Mesh(g, b.mat()); m.name = b.name; const k0 = k.split("@")[0]; m.castShadow = k0 === "wall" || k0 === "fwood" || k0 === "fpaint" || k0 === "wood"; m.receiveShadow = true; if (b.edge) m.userData.rkEdge = b.edge; /* walls tagged by side so the camera can see through the near one */ root.add(m); delete BAT[k]; } };
 
   // ---- shapes ----
   const box = (key, w, h, d, x, y, z, c, ry = 0, rx = 0, rz = 0) => put(key, new THREE.BoxGeometry(w, h, d), [x, y, z], [rx, ry, rz], 1, c);
@@ -110,7 +110,7 @@ ASSETS.roomKit = function (THREE, env) {
     const edgeOf = (r) => r.axis === "x" ? (r.s > 0 ? "n" : "s") : (r.s > 0 ? "w" : "e");
     // world placement for local wall coordinates: t along the wall, y up, d into the room (negative = inside the wall)
     const W3 = (r, t, d) => r.axis === "x" ? [ox + t, oz + r.L + r.s * d] : [ox + r.L + r.s * d, oz + t];
-    const piece = (key, r, t0, t1, y0, y1, d0, d1, c) => { if (t1 - t0 < 0.005 || y1 - y0 < 0.005 || d1 - d0 < 0.001) return; const [cx, cz] = W3(r, (t0 + t1) / 2, (d0 + d1) / 2);
+    const piece = (key, r, t0, t1, y0, y1, d0, d1, c) => { if (t1 - t0 < 0.005 || y1 - y0 < 0.005 || d1 - d0 < 0.001) return; const [cx, cz] = W3(r, (t0 + t1) / 2, (d0 + d1) / 2); key = key + "@" + edgeOf(r);
       if (r.axis === "x") box(key, t1 - t0, y1 - y0, d1 - d0, cx, (y0 + y1) / 2, cz, c); else box(key, d1 - d0, y1 - y0, t1 - t0, cx, (y0 + y1) / 2, cz, c); };
     const sunH = new THREE.Vector2(-0.45, 0.89).normalize(), tanE = 0.9; let sunLights = 0;
     for (const r of runs) { const e = edgeOf(r), ws = (o.wins || []).filter((w) => w.e === e && w.at - w.w / 2 >= r.t0 + 0.2 && w.at + w.w / 2 <= r.t1 - 0.2).map((w) => ({ ...w, t0: w.at - w.w / 2, t1: w.at + w.w / 2, y0: w.y0 ?? 1.05, y1: w.y1 ?? Math.min(H - 0.45, 2.55) })).sort((a, b) => a.t0 - b.t0);
@@ -133,13 +133,13 @@ ASSETS.roomKit = function (THREE, env) {
         // steel grid and frame, glass, the view (inside the wall's thickness so nothing shows outside the room from above)
         const gd0 = -T * 0.55, gd1 = -T * 0.45, gc = "#2b2622"; piece("metal", r, w.t0, w.t0 + 0.05, w.y0, w.y1, gd0, gd1, gc); piece("metal", r, w.t1 - 0.05, w.t1, w.y0, w.y1, gd0, gd1, gc); piece("metal", r, w.t0, w.t1, w.y0, w.y0 + 0.05, gd0, gd1, gc); piece("metal", r, w.t0, w.t1, w.y1 - 0.05, w.y1, gd0, gd1, gc);
         for (let k = 1; k <= nb; k++) { const u = w.t0 + (wW * k) / (nb + 1); piece("metal", r, u - 0.018, u + 0.018, w.y0, w.y1, gd0, gd1, gc); } for (let k = 1; k <= nh; k++) { const v = w.y0 + (wH * k) / (nh + 1); piece("metal", r, w.t0, w.t1, v - 0.018, v + 0.018, gd0, gd1, gc); }
-        { const [gx, gz] = W3(r, tc, -T * 0.5), ry = r.axis === "x" ? (r.s > 0 ? 0 : Math.PI) : (r.s > 0 ? Math.PI / 2 : -Math.PI / 2); const gl = add(new THREE.PlaneGeometry(wW, wH), mat.glass(), [gx, (w.y0 + w.y1) / 2, gz], [0, ry, 0]); gl.name = "nocol"; gl.castShadow = false;
+        { const [gx, gz] = W3(r, tc, -T * 0.5), ry = r.axis === "x" ? (r.s > 0 ? 0 : Math.PI) : (r.s > 0 ? Math.PI / 2 : -Math.PI / 2); const gl = add(new THREE.PlaneGeometry(wW, wH), mat.glass(), [gx, (w.y0 + w.y1) / 2, gz], [0, ry, 0]); gl.name = "nocol"; gl.castShadow = false; gl.userData.rkEdge = edgeOf(r);
           const [vx, vz] = W3(r, tc, -T + 0.015), vg = new THREE.PlaneGeometry(wW, wH), U = vg.attributes.uv, u0 = R() * 0.6, du = wW / 7, fB = 0.84, fT = fB - wH * 0.32; for (let i = 0; i < U.count; i++) U.setXY(i, u0 + U.getX(i) * du, 1 - (fB + (fT - fB) * U.getY(i)));
-          const vm = add(vg, mat.view(), [vx, (w.y0 + w.y1) / 2, vz], [0, ry, 0]); vm.name = "nocol"; vm.castShadow = false; }
+          const vm = add(vg, mat.view(), [vx, (w.y0 + w.y1) / 2, vz], [0, ry, 0]); vm.name = "nocol"; vm.castShadow = false; vm.userData.rkEdge = edgeOf(r); }
         // curtains: a rod and two gathered drapes
         if (w.curtains) { const cc = w.curtains, ry = 0; piece("metal", r, w.t0 - 0.35, w.t1 + 0.35, w.y1 + 0.3, w.y1 + 0.33, 0.1, 0.13, "#3a2a1e");
           for (const sd of [-1, 1]) { const cw = 0.42, ch = w.y1 + 0.3 - fy - 0.25, uc = sd < 0 ? w.t0 - 0.12 : w.t1 + 0.12, pg = new THREE.PlaneGeometry(cw, ch, 14, 4), Pp = pg.attributes.position; for (let i = 0; i < Pp.count; i++) Pp.setZ(i, 0.05 * Math.sin((Pp.getX(i) / cw) * TAU * 3.5)); pg.computeVertexNormals();
-            const [cx, cz] = W3(r, uc, 0.18); put("cloth", pg, [cx, fy + 0.25 + ch / 2, cz], [0, r.axis === "x" ? (r.s > 0 ? 0 : Math.PI) : (r.s > 0 ? Math.PI / 2 : -Math.PI / 2), 0], 1, cc); } }
+            const [cx, cz] = W3(r, uc, 0.18); put("cloth@" + edgeOf(r), pg, [cx, fy + 0.25 + ch / 2, cz], [0, r.axis === "x" ? (r.s > 0 ? 0 : Math.PI) : (r.s > 0 ? Math.PI / 2 : -Math.PI / 2), 0], 1, cc); } }
         // sunlight: a slanted beam from the window to the floor and the sun patch with the grid's shadow
         const nIn = r.axis === "x" ? new THREE.Vector2(0, r.s) : new THREE.Vector2(r.s, 0);
         if (nIn.dot(sunH) > 0.2 && w.sun !== false) { const P0 = (tt, yy) => { const [x, z] = W3(r, tt, 0.02); return new THREE.Vector3(x, yy, z); }, proj = (v) => new THREE.Vector3(v.x + sunH.x * ((v.y - fy) / tanE), fy + 0.012, v.z + sunH.y * ((v.y - fy) / tanE));

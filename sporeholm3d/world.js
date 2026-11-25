@@ -5539,12 +5539,14 @@ defPlace("vashtiLab", { name: "Vashti's Observatory Lab", w: 16, d: 13, style: "
   arrive: { in: [7.5, 10.4, 0] },
   portals: [{ t: [7.5, 12.4], to: "out:DB1", label: "Go outside" }],
   dress({ X, Z, lite }) { DFURN.vashtiLab(X(8), Z(6.8), 5.4, 4.4, 4.2); add(new THREE.CircleGeometry(1.1, 24), std({ color: "#1a2050", emissive: "#3a4a9a", emissiveIntensity: 0.6 }), [X(8), 4.4, Z(3.6)], [Math.PI / 2.4, 0, 0]).name = "nocol"; lite(8, 6.5, "#ffe0b0", 3, 12, 3.4); lite(8, 3.5, "#c8d8ff", 1.6, 7, 3); } }); // a slot of night sky above the telescope
-defPlace("recoveryBay", { name: "Dustmere Recovery Bay", w: 14, d: 10, style: "adobe", indoor: true,
+defPlace("recoveryBay", { name: "Dustmere Recovery Bay", w: 18, d: 14, style: "adobe", indoor: true,
   // finished interior (roomkit.js, Nov 25 2026): pale limestone floor, white plaster over a warm wood wainscot, six windows, a curved reception
   // desk in front of the glowing healing alcove, medicine cabinets, a waiting lounge by the west window, the attic ladder and cabinet on the east side
   fine: { floor: "stone", panel: "#8a6440", trimC: "#4e3220", tint: "#fffaf2",
-    wins: [{ e: "n", at: 3.0, w: 1.3, curtains: "#2a8a86" }, { e: "n", at: 11.0, w: 1.3, curtains: "#2a8a86" }, { e: "w", at: 5.0, w: 1.4 }, { e: "e", at: 8.0, w: 1.1 }, { e: "s", at: 3.4, w: 1.3 }, { e: "s", at: 10.6, w: 1.3 }],
-    dress({ K, X, Z, S, lite, fy, Y }) { const { box, cyl, ball, lathe, R } = K, TQ = "#2a9a96", WH = "#f4efe6";
+    wins: [{ e: "n", at: 3.67, w: 1.3, curtains: "#2a8a86" }, { e: "n", at: 14.33, w: 1.3, curtains: "#2a8a86" }, { e: "w", at: 7.0, w: 1.4 }, { e: "e", at: 11.5, w: 1.1 }, { e: "s", at: 4.2, w: 1.3 }, { e: "s", at: 13.8, w: 1.3 }, { e: "w", at: 11.7, w: 1.4 }, { e: "e", at: 3.6, w: 1.1 }],
+    dress({ K, X: X0, Z: Z0, S, lite: lite0, fy, Y }) { const { box, cyl, ball, lathe, R } = K, TQ = "#2a9a96", WH = "#f4efe6";
+      // Nov 25: the room grew from 14 x 10 to 18 x 14; the layout below was drawn for the old size, so its coordinates are stretched wall to wall
+      const rbX = (v) => 1 + (v - 1) * 16 / 12, rbZ = (v) => 1 + (v - 1) * 12 / 8, X = (v) => X0(rbX(v)), Z = (v) => Z0(rbZ(v)), lite = (x, y, ...a) => lite0(rbX(x), rbZ(y), ...a);
       // ---- the healing alcove: an arched plaster niche on the north wall, a shallow basin of glowing water, the leaf-and-heart emblem above
       { const ax = X(7), az = Z(1.0);
         for (const s2 of [-1, 1]) box("fpaint", 0.32, 2.3, 0.34, ax + s2 * 1.25, fy + 1.15, az + 0.17, WH);
@@ -5598,11 +5600,26 @@ defPlace("recoveryBay", { name: "Dustmere Recovery Bay", w: 14, d: 10, style: "a
       K.rug(X(7), Z(5.6), 3.0, 2.0, 0, "rk_rug2_d", fy);
       { box("fpaint", 1.6, 0.42, 0.6, X(7), fy + 0.21, Z(6.0), WH); box("fwood", 1.64, 0.05, 0.64, X(7), fy + 0.445, Z(6.0), "#b8804a"); K.plant(X(7), fy + 0.47, Z(6.0), 1.1, "snake", "#efe3cc"); }
       for (const sx of [4.4, 7, 9.6]) hangLamp(X(sx), Z(4.6), "#e8fff8", 2.7);
+      // ---- added for the bigger room (new grid coordinates, X0 / Z0): a row of waiting chairs by the south wall, a reading nook with two
+      // armchairs on the east side, a pair of recovery cots with privacy curtains on the north-east wall, tall plants, more light
+      { const chair = (x, z, ry, c) => K.at(X0(x), fy, Z0(z), ry, () => { box("fcloth", 0.5, 0.08, 0.48, 0, 0.46, 0, c); box("fcloth", 0.5, 0.5, 0.07, 0, 0.74, -0.21, c); for (const [sx, sz] of [[-1, -1], [1, -1], [-1, 1], [1, 1]]) cyl("metal", 0.016, 0.016, 0.46, sx * 0.21, 0.23, sz * 0.2, "#3a3632", 6); });
+        for (let k = 0; k < 4; k++) chair(2.3 + k * 0.62, 12.35, Math.PI, k % 2 ? TQ : "#e8b84a"); box("fwood", 0.5, 0.05, 0.42, X0(5.0), fy + 0.5, Z0(12.35), "#8a5a34"); for (const sx of [-1, 1]) box("fwood", 0.04, 0.5, 0.38, X0(5.0 + sx * 0.22), fy + 0.25, Z0(12.35), "#5a361c"); K.books(X0(4.82), X0(5.15), fy + 0.525, Z0(12.35), 0.2);
+        const arm = (x, z, ry, c) => K.at(X0(x), fy, Z0(z), ry, () => { box("fcloth", 0.78, 0.34, 0.72, 0, 0.27, 0, c); box("fcloth", 0.78, 0.6, 0.16, 0, 0.62, -0.3, c); for (const sx of [-1, 1]) box("fcloth", 0.14, 0.24, 0.72, sx * 0.34, 0.52, 0, c); K.cushion(0, 0.47, 0.05, 0.5, 0.12, 0.52, c); K.cushion(0, 0.72, -0.18, 0.42, 0.3, 0.12, WH); });
+        K.rug(X0(13.2), Z0(9.4), 2.4, 2.0, 0, "rk_rug1_d", fy); arm(12.4, 9.0, Math.PI / 2 + 0.4, "#c8643a"); arm(13.9, 10.0, -Math.PI / 2 - 0.2, "#2a7a76");
+        cyl("fwood", 0.32, 0.32, 0.04, X0(13.15), fy + 0.5, Z0(9.5), "#8a5a34", 18); cyl("fwood", 0.04, 0.04, 0.48, X0(13.15), fy + 0.25, Z0(9.5), "#5a361c", 8); K.mug(X0(13.05), fy + 0.52, Z0(9.45), TQ); K.bowl(X0(13.28), fy + 0.52, Z0(9.6), true);
+        K.floorLamp(X0(15.9), Z0(10.6), "#efe0c0", true, fy);
+        for (const cx of [14.0, 15.9]) K.at(X0(cx), fy, Z0(2.4), 0, () => { box("fpaint", 0.95, 0.42, 1.9, 0, 0.32, 0, WH); for (const [sx, sz] of [[-1, -1], [1, -1], [-1, 1], [1, 1]]) cyl("metal", 0.025, 0.025, 0.12, sx * 0.4, 0.06, sz * 0.85, "#8a8a86", 6);
+          box("fcloth", 0.9, 0.12, 1.84, 0, 0.58, 0, "#f6f1e6"); box("cloth", 0.94, 0.05, 1.1, 0, 0.66, 0.35, TQ); K.cushion(0, 0.7, -0.7, 0.6, 0.12, 0.3, "#fbf7ee"); box("fpaint", 0.95, 0.75, 0.06, 0, 0.6, -0.97, WH); box("paint", 0.6, 0.12, 0.012, 0, 0.88, -0.935, "#7ff0e6"); });
+        box("metal", 0.03, 0.03, 2.2, X0(14.95), 2.4, Z0(2.5), "#c8c8c4"); for (let k = 0; k < 9; k++) box("cloth", 0.03, 1.7, 0.24, X0(14.95), 1.5, Z0(1.6 + k * 0.22), k % 2 ? "#d8f0ec" : "#c4e8e2", 0, (k % 2 ? 0.3 : -0.3));
+        for (const [x, z, h, kd, c] of [[1.6, 11.7, 1.7, "palm", "#a8603a"], [16.3, 6.8, 1.5, "leafy", "#c4572e"], [6.2, 1.6, 1.3, "snake", "#efe3cc"], [11.9, 1.6, 1.3, "snake", "#efe3cc"]]) K.plant(X0(x), fy, Z0(z), h, kd, c);
+        K.frame(X0(17.0), 2.0, Z0(9.6), -Math.PI / 2, 0.7, 0.5, K.art("mesa")); K.frame(X0(1.0), 2.0, Z0(11.0), Math.PI / 2, 0.5, 0.7, K.art("stars"));
+        for (const [x, z] of [[4, 10.5], [13.2, 9.4], [15, 3]]) hangLamp(X0(x), Z0(z), "#ffe8c8", 2.7); }
+      lite0(4, 10, "#ffe2b8", 1.2, 8, 3); lite0(14, 9, "#ffe2b8", 1.2, 8, 3); lite0(14.9, 2.6, "#e8fff8", 1.0, 6, 3);
       lite(7, 4.5, "#fff4e4", 2.0, 11, 3); lite(3, 5, "#ffe2b8", 0.9, 6, 2.6); } },
-  grid() { const g = PLW(14, 10); pRect(g, 1, 1, 12, 8, "."); pRect(g, 6, 9, 7, 9, "S"); return g; },
-  arrive: { in: [6.5, 7.6, 0], ladder: [9.8, 6.6, 3.14] },
-  portals: [{ t: [6.5, 9.4], to: "out:DB2", label: "Go outside" }, { t: [10.2, 5.7], to: "bayAttic:in", label: "Climb the ladder to the attic", flat: true }],
-  dress({ X, Z, lite }) { DFURN.recoveryBay(X(7), Z(5), 5.4, 3.8, 3.4, { ladder: true }); lite(7, 4.5, "#e8fff8", 2.6, 11, 3); } });
+  grid() { const g = PLW(18, 14); pRect(g, 1, 1, 16, 12, "."); pRect(g, 8, 13, 9, 13, "S"); return g; },
+  arrive: { in: [8.5, 11.4, 0], ladder: [12.73, 9.4, 3.14] },
+  portals: [{ t: [8.5, 13.4], to: "out:DB2", label: "Go outside" }, { t: [13.27, 8.05], to: "bayAttic:in", label: "Climb the ladder to the attic", flat: true }],
+  dress({ X, Z, lite }) { DFURN.recoveryBay(X(9), Z(7), 7.2, 5.6, 3.4, { ladder: true }); lite(9, 6.3, "#e8fff8", 2.6, 13, 3); } });
 
 // ---------- the upper floors ----------
 defPlace("house2f", { name: "Your House 2F", w: 11, d: 11, style: "adobe", indoor: true,
