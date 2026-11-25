@@ -4923,7 +4923,7 @@ const doorNotches = (P, S, at, ox, oz, W, D, wallM, room) => { if (!P.indoor || 
     // frame: posts, lintel with a keystone, threshold
     for (const sd of [-1, 1]) add(soft(new THREE.BoxGeometry(0.2, dh + 0.18, 0.24, 1, 4, 1), { warp: 0.01 }), M.frame, [sd * (w / 2 - 0.1), (dh + 0.18) / 2, 0.08], [0, 0, 0], "nocol", G);
     add(soft(new THREE.BoxGeometry(w + 0.1, 0.24, 0.3, 4, 1, 1), { warp: 0.01 }), M.frame, [0, dh + 0.12, 0.1], [0, 0, 0], "nocol", G); add(new THREE.BoxGeometry(0.26, 0.3, 0.08), M.frame, [0, dh + 0.14, 0.27], [0, 0, 0], "nocol", G);
-    add(new THREE.BoxGeometry(w - 0.1, 0.05, 0.34), M.frame, [0, 0.025, 0.14], [0, 0, 0], "nocol", G);
+    const fy0 = P.fine ? 0.065 : 0; add(new THREE.BoxGeometry(w - 0.1, 0.05, 0.34), M.frame, [0, fy0 + 0.025, 0.14], [0, 0, 0], "nocol", G);
     // the door: two leaves on a wide opening, one otherwise; hinged at the posts, plank faces, iron straps, a brass ring pull
     const dbl = w >= 1.8, lw = dbl ? (w - 0.22) / 2 : w - 0.22, rec = { t: 0, off: 0, parts: [] };
     for (const sd of dbl ? [-1, 1] : [-1]) { const pv = new THREE.Group(); pv.position.set(sd * (w / 2 - 0.2), 0.04, 0.14); G.add(pv); const dx = -sd * lw / 2, s = sd < 0 ? -1 : 1;
@@ -4938,10 +4938,13 @@ const doorNotches = (P, S, at, ox, oz, W, D, wallM, room) => { if (!P.indoor || 
     // a lantern over the door and a mat in front of it
     { const lx = dbl ? 0 : 0.0, ly = dh + 0.62; add(new THREE.BoxGeometry(0.06, 0.06, 0.26), M.iron, [lx, ly + 0.06, 0.3], [0, 0, 0], "nocol", G); add(new THREE.CylinderGeometry(0.1, 0.12, 0.24, 8), M.glow, [lx, ly - 0.08, 0.42], [0, 0, 0], "nocol", G); add(new THREE.ConeGeometry(0.15, 0.1, 8), M.iron, [lx, ly + 0.08, 0.42], [0, 0, 0], "nocol", G);
       const l = new THREE.PointLight(0xffd090, 2.6, 6.5, 1.6); l.position.set(0, ly - 0.2, 0.75); G.add(l); }
-    add(new THREE.PlaneGeometry(Math.min(1.6, w - 0.2), 0.62), M.mat, [0, 0.035, 0.62], [-Math.PI / 2, 0, 0], "nocol", G); } };
+    add(new THREE.PlaneGeometry(Math.min(1.6, w - 0.2), 0.62), M.mat, [0, fy0 + 0.012, 0.62], [-Math.PI / 2, 0, 0], "nocol", G); } };
 const buildPlace = (id) => { const P = PLACE[id], S = PSTY[P.style], g = P.grid(), W = P.w, D = P.d, ox = P.ox, oz = P.oz, at = (x, y) => (y >= 0 && y < D && x >= 0 && x < W ? g[y][x] : "#"); P.g = g;
   const isFloor = (c) => ".,gbvS".includes(c);
+  // finished rooms (roomkit.js): real floor, thin walls with trim and windows, dense props; the old painted floor and block walls are skipped
+  const FINE = P.fine && ASSETS.roomKit ? P.fine : null, FY = FINE ? 0.065 : 0, RKIT = FINE ? ASSETS.roomKit(THREE, { add, std, root, seed: 4000 + PK }) : null;
   // painted floor
+  if (!FINE) {
   const px = W * D > 1500 ? 24 : 32, cvs = document.createElement("canvas"); cvs.width = W * px; cvs.height = D * px; const c2 = cvs.getContext("2d"); const ecv = document.createElement("canvas"); ecv.width = W * px; ecv.height = D * px; const e2 = ecv.getContext("2d"); e2.fillStyle = S.ebase || (P.indoor ? (P.style === "bunker" ? "#24262c" : "#16282a") : "#000"); e2.fillRect(0, 0, W * px, D * px);
   { const tc = document.createElement("canvas"); tc.width = W * px; tc.height = D * px; const t2 = tc.getContext("2d"); for (let y = 0; y < D; y++) for (let x = 0; x < W; x++) { const c = g[y][x], nv = fbm(x * 0.22 + PK, y * 0.22, 3.1, 2) * 0.5 + 0.5; t2.fillStyle = c === "," || c === "S" ? S.stone : c === "v" ? "#6a3aa0" : c === "g" ? "#3a9a4a" : c === "w" ? "#0e3a4a" : S.floor[Math.min(2, Math.floor(nv * 3))]; t2.fillRect(x * px, y * px, px, px); } c2.filter = "blur(" + Math.round(px * 0.45) + "px)"; c2.drawImage(tc, 0, 0); c2.filter = "none"; }
   if (P.style === "root" || P.style === "stalk" || P.style === "loft" || S.planks) { c2.globalAlpha = 0.35; c2.strokeStyle = P.style === "stalk" ? "#8a7050" : "#3a2210"; c2.lineWidth = 2; for (let y = 0; y < D * px; y += px * 0.5) { c2.beginPath(); c2.moveTo(0, y); c2.lineTo(W * px, y + (R() - 0.5) * 6); c2.stroke(); for (let x = (y / (px * 0.5)) % 2 ? 0 : px; x < W * px; x += px * 2.5) { c2.beginPath(); c2.moveTo(x, y); c2.lineTo(x, y + px * 0.5); c2.stroke(); } } c2.globalAlpha = 1; }
@@ -4956,27 +4959,29 @@ const buildPlace = (id) => { const P = PLACE[id], S = PSTY[P.style], g = P.grid(
   P.bake && P.bake(e2, px); const ft = new THREE.CanvasTexture(cvs), et = new THREE.CanvasTexture(ecv); ft.colorSpace = THREE.SRGBColorSpace; et.colorSpace = THREE.SRGBColorSpace; ft.anisotropy = 8;
   const fm = std({ map: ft, emissive: "#ffffff", emissiveMap: et, emissiveIntensity: 1, roughness: P.style === "crystal" ? 0.35 : 0.9 });
   if (P.style !== "canopy" && P.style !== "crown") { const pg = new THREE.PlaneGeometry(W, D, W * 2, D * 2); pg.rotateX(-Math.PI / 2); { const Pp = pg.attributes.position; for (let i = 0; i < Pp.count; i++) { const x = Pp.getX(i) + W / 2, z = Pp.getZ(i) + D / 2, c = at(Math.floor(Math.min(W - 0.01, x)), Math.floor(Math.min(D - 0.01, z))); Pp.setY(i, c === "w" ? -0.45 : c === " " ? -14 : 0.02 * Math.sin(x * 1.3) * Math.cos(z * 1.1)); } pg.computeVertexNormals(); } const m = add(pg, fm, [ox + W / 2, 0, oz + D / 2]); m.name = "ground"; m.receiveShadow = true; }
+  } // end painted floor
   // water
   let hasW = false; for (const r of g) if (r.includes("w")) hasW = true; if (hasW) { const wm = add(new THREE.PlaneGeometry(W, D), std({ color: "#0e5262", roughness: 0.05, metalness: 0.4, emissive: "#0a4a5a", emissiveIntensity: 0.8, transparent: true, opacity: 0.8 }), [ox + W / 2, -0.12, oz + D / 2], [-Math.PI / 2, 0, 0]); wm.name = "water"; }
   // walls along every edge between floor and wall
-  const wallM = std({ map: P.style === "bunker" ? null : S.rockWall && !S.stoneMap ? MK.rockT || MK.stoneT : S.room && P.style !== "barn" ? MK.adobeT || MK.stoneT : P.style === "barn" ? MK.barkT : MK.stoneT, color: S.wall, roughness: P.style === "crystal" ? 0.2 : 0.95, emissive: S.wallE || (P.style === "crystal" ? "#5aa8d8" : P.style === "ruin" ? "#4a4636" : "#000000"), emissiveIntensity: S.wallEI || (P.style === "crystal" ? 0.35 : P.style === "ruin" ? 0.6 : 0), metalness: P.style === "bunker" ? 0.6 : 0 });
+  const wallM = FINE ? RKIT.plasterM() : std({ map: P.style === "bunker" ? null : S.rockWall && !S.stoneMap ? MK.rockT || MK.stoneT : S.room && P.style !== "barn" ? MK.adobeT || MK.stoneT : P.style === "barn" ? MK.barkT : MK.stoneT, color: S.wall, roughness: P.style === "crystal" ? 0.2 : 0.95, emissive: S.wallE || (P.style === "crystal" ? "#5aa8d8" : P.style === "ruin" ? "#4a4636" : "#000000"), emissiveIntensity: S.wallEI || (P.style === "crystal" ? 0.35 : P.style === "ruin" ? 0.6 : 0), metalness: P.style === "bunker" ? 0.6 : 0 });
   const ribM = std({ map: MK.stoneT, color: S.stone, roughness: 0.9 });
   const edge = (x, y) => { if (isFloor(at(x, y)) || at(x, y) === "w" || at(x, y) === " ") return false; for (let dy = -1; dy <= 1; dy++) for (let dx = -1; dx <= 1; dx++) if (isFloor(at(x + dx, y + dy)) || at(x + dx, y + dy) === "w") return true; return false; };
   const room = !!S.room || P.style === "stalk" || P.style === "arena" || P.style === "crystal" || P.style === "bunker" || P.style === "root" || P.style === "ruin";
   if (P.ring) { const [rcx, rcy, rrx, rry] = P.ring, n = 72, h = S.wallH, inner = std({ map: P.style === "crystal" ? null : P.style === "root" ? MK.barkT : P.style === "heart" ? MK.stoneT : S.room ? MK.adobeT || MK.stalkT : MK.stalkT, color: S.wall, roughness: P.style === "crystal" ? 0.2 : 0.85, emissive: S.ringE || (P.style === "crystal" ? "#5aa8d8" : P.style === "root" ? "#ffb060" : P.style === "heart" ? "#2a6a8a" : "#ffe0b0"), emissiveIntensity: S.ringEI || (P.style === "crystal" ? 0.45 : 0.12), side: THREE.DoubleSide });
     for (let k = 0; k < n; k++) { const a0 = (k / n) * TAU, a1 = ((k + 1) / n) * TAU, am = (a0 + a1) / 2, x0 = rcx + Math.cos(a0) * rrx, y0 = rcy + Math.sin(a0) * rry, x1 = rcx + Math.cos(a1) * rrx, y1 = rcy + Math.sin(a1) * rry, xm = (x0 + x1) / 2, ym = (y0 + y1) / 2; if (P.portals.some((q) => Math.hypot(q.t[0] - xm, q.t[1] - ym) < 1.7)) continue;
       const L = Math.hypot(x1 - x0, y1 - y0) + 0.06, seg = add(soft(new THREE.BoxGeometry(L, h, 0.45, 1, 4, 1), { warp: 0.02 }), inner, [ox + xm, h / 2, oz + ym], [0, -Math.atan2(y1 - y0, x1 - x0), 0]); if (k % 6 === 0) limb([[ox + xm, 0, oz + ym], [ox + xm * 0.999 + rcx * 0.001, h * 0.6, oz + ym], [ox + rcx + (xm - rcx) * 0.92, h, oz + rcy + (ym - rcy) * 0.92]], 0.18, 0.12, ribM, { seg: 6, rad: 6 }); } }
-  for (let y = -1; y <= D; y++) for (let x = -1; x <= W; x++) { if (P.ring || !edge(x, y) || at(x, y) === "o") continue; const cx = ox + x + 0.5, cz = oz + y + 0.5, h = S.flat ? S.wallH : S.wallH * (0.85 + R() * 0.3);
+  if (FINE) RKIT.shell({ P, g, at, isFloor, S, ox, oz, W, D, fy: FY, wallH: FINE.wallH || S.wallH, floor: FINE.floor, wins: FINE.wins, tint: FINE.tint, panel: FINE.panel, trimC: FINE.trimC, wains: FINE.wains });
+  for (let y = -1; y <= D; y++) for (let x = -1; x <= W; x++) { if (FINE || P.ring || !edge(x, y) || at(x, y) === "o") continue; const cx = ox + x + 0.5, cz = oz + y + 0.5, h = S.flat ? S.wallH : S.wallH * (0.85 + R() * 0.3);
     if (room) { const b = add(soft(new THREE.BoxGeometry(1.04, h, 1.04, 2, 4, 2), { warp: P.style === "bunker" ? 0.005 : 0.03 }), wallM, [cx, h / 2, cz]); if ((x + y) % 4 === 0 && P.style !== "bunker") limb([[cx, 0, cz], [cx + 0.05, h * 0.5, cz], [cx, h, cz]], 0.16, 0.12, ribM, { seg: 4, rad: 6 }); }
     else if (P.style === "glade") { mossRock(cx, cz, 1.4 + R() * 0.8); if (R() < 0.1) { const gm = giantMush(cx + (R() - 0.5), cz + (R() - 0.5), 5 + R() * 6, 1.6 + R() * 1.6, S.glow[Math.floor(R() * S.glow.length)], (R() - 0.5) * 0.3, 0); } }
     else { const b = add(warp(new THREE.IcosahedronGeometry(1, 1), 0.28, 1.1), wallM, [cx, h * 0.45, cz], S.rockWall ? [(R() - 0.5) * 0.3, R() * TAU, (R() - 0.5) * 0.3] : [R(), R(), R()]); b.scale.set(0.95, h * 0.55, 0.95); { let fx = 0, fz = 0; for (let dy = -1; dy <= 1; dy++) for (let dx = -1; dx <= 1; dx++) if (isFloor(at(x + dx, y + dy)) || at(x + dx, y + dy) === "w") { fx += dx; fz += dy; } const fl = Math.hypot(fx, fz); if (fl > 0) { b.position.x -= (fx / fl) * 0.6; b.position.z -= (fz / fl) * 0.6; } b.scale.x = b.scale.z = S.rockWall ? 1.0 : 0.68; } if (R() < (S.cave ? 0.05 : 0.12)) glowcaps(cx, cz, 4, S.glow, 0.6); if (R() < 0.08) { const sh = add(olathe([[0.001, 0.08], [0.35, 0.05], [0.5, 0], [0.001, -0.04]], 12), MK.glowC(S.glow[Math.floor(R() * S.glow.length)], 1.4), [cx, 1 + R() * 2.5, cz]); sh.scale.z = 0.6; } } }
   // portal markers: stone steps / hatches / doorways
-  for (const q of P.portals) { const x = ox + q.t[0], z = oz + q.t[1]; const r = add(new THREE.RingGeometry(0.7, 0.95, 28), MK.glowC("#7af0e0", 1.2), [x, 0.05, z], [-Math.PI / 2, 0, 0]); r.name = "nocol"; const l = new THREE.PointLight(0x9af0e8, 2.2, 6, 1.6); l.position.set(x, 1.4, z); root.add(l); if (P.indoor && P.style !== "bunker" && !q.flat) for (let k = 0; k < 4; k++) add(warp(new THREE.BoxGeometry(2, 0.18, 0.5, 2, 1, 1), 0.02, 2), ribM, [x, -0.1 - k * 0.2, z + (q.t[1] > D / 2 ? 0.3 + k * 0.45 : -0.3 - k * 0.45)]); }
+  for (const q of P.portals) { const x = ox + q.t[0], z = oz + q.t[1]; const r = add(new THREE.RingGeometry(0.7, 0.95, 28), MK.glowC("#7af0e0", 1.2), [x, FY + 0.03, z], [-Math.PI / 2, 0, 0]); r.name = "nocol"; const l = new THREE.PointLight(0x9af0e8, 2.2, 6, 1.6); l.position.set(x, 1.4, z); root.add(l); if (P.indoor && P.style !== "bunker" && !q.flat) for (let k = 0; k < 4; k++) add(warp(new THREE.BoxGeometry(2, 0.18, 0.5, 2, 1, 1), 0.02, 2), ribM, [x, -0.1 - k * 0.2, z + (q.t[1] > D / 2 ? 0.3 + k * 0.45 : -0.3 - k * 0.45)]); }
   doorNotches(P, S, at, ox, oz, W, D, wallM, room);
   if (P.indoor && (S.cave || P.style === "cave" || P.style === "crystal-cave" || P.style === "deep")) for (let y = 3; y < D; y += 6) for (let x = 3; x < W; x += 6) if (isFloor(at(x, y))) { const l = new THREE.PointLight(new THREE.Color(S.glow[(x + y) % S.glow.length]), 2.4, 11, 1.5); l.position.set(ox + x, 2.6, oz + y); root.add(l); glowcaps(ox + x + 1.2, oz + y - 0.8, 3, S.glow, 0.4); }
   const lite = (x, y, c, i = 3, d = 9, h = 2) => { const l = new THREE.PointLight(new THREE.Color(c), i, d, 1.5); l.position.set(ox + x, h, oz + y); root.add(l); };
   // the furniture of each place
-  const X = (x) => ox + x, Z = (y) => oz + y; P.dress && P.dress({ X, Z, S, g, lite });
+  const X = (x) => ox + x, Z = (y) => oz + y; if (FINE && FINE.dress) { FINE.dress({ K: RKIT, X, Z, S, g, lite, fy: FY, Y: dIn.Y }); RKIT.flush(); } else P.dress && P.dress({ X, Z, S, g, lite });
   PLACEDRESS[id] && PLACEDRESS[id]({ P, X, Z, S, g, lite, at });
   return { P, g }; };
 
@@ -5369,6 +5374,79 @@ OUTPORTALS.push(
 // ---------- the story rooms at full size (pack section 15), reached through their front doors; they replace those buildings' walk-in rooms ----
 // When several doors share a scene (Your House and the Recovery Bay are both in DB2), a place's "out:DB2" returns to the OUTPORTALS entry whose "to" names that place.
 defPlace("house1f", { name: "Your House", w: 12, d: 11, style: "adobe", indoor: true,
+  // finished interior (roomkit.js, Nov 25 2026): terracotta tile, plaster and wood wainscot, five windows, a real kitchen along the north wall,
+  // dining by the west window, a living corner with TV, speakers and couch, a reading chair by the east window, the entry table by the door
+  fine: { floor: "tile", panel: "#a06a3c", trimC: "#5a361c",
+    wins: [{ e: "n", at: 2.8, w: 1.3, y0: 1.32, y1: 2.5, rows: 1 }, { e: "w", at: 5.0, w: 1.3, curtains: "#c8803a" }, { e: "e", at: 2.3, w: 1.1 }, { e: "e", at: 8.4, w: 1.2, curtains: "#2a7a76" }, { e: "s", at: 3.0, w: 1.2, curtains: "#c8803a" }],
+    dress({ K, X, Z, lite, fy, Y }) { const { box, cyl, ball, lathe, R } = K;
+      // ---- kitchen: base cabinets along the north wall and down the west wall, butcher-block top, tiled backsplash, sink under the window, cooktop and hood
+      const cabC = "#2a6e6a", topC = "#b8804a";
+      const run = (x0, x1, z0, depth, alongX) => { const L = x1 - x0, n = Math.max(1, Math.round(L / 0.55));
+        for (let k = 0; k < n; k++) { const u0 = x0 + (L * k) / n, u1 = x0 + (L * (k + 1)) / n, um = (u0 + u1) / 2, uw = u1 - u0;
+          if (alongX) { box("fpaint", uw - 0.01, 0.82, depth - 0.05, X(um), fy + 0.41 + 0.08, Z(z0 + depth / 2 - 0.02), cabC); box("paint", uw - 0.06, 0.66, 0.02, X(um), fy + 0.5, Z(z0 + depth - 0.04), "#327c78"); box("paint", uw - 0.14, 0.52, 0.02, X(um), fy + 0.5, Z(z0 + depth - 0.028), cabC); ball("metal", 0.02, X(um + uw * 0.3), fy + 0.72, Z(z0 + depth - 0.01), "#d8a838"); }
+          else { box("fpaint", depth - 0.05, 0.82, uw - 0.01, X(z0 + depth / 2 - 0.02), fy + 0.49, Z(um), cabC); box("paint", 0.02, 0.66, uw - 0.06, X(z0 + depth - 0.04), fy + 0.5, Z(um), "#327c78"); box("paint", 0.02, 0.52, uw - 0.14, X(z0 + depth - 0.028), fy + 0.5, Z(um), cabC); ball("metal", 0.02, X(z0 + depth - 0.01), fy + 0.72, Z(um + uw * 0.3), "#d8a838"); } }
+        if (alongX) { box("paint", L, 0.08, depth - 0.1, X(x0 + L / 2), fy + 0.04, Z(z0 + depth / 2 - 0.06), "#1e1a16"); box("fwood", L + 0.04, 0.06, depth + 0.03, X(x0 + L / 2), fy + 0.93, Z(z0 + depth / 2), topC); }
+        else { box("paint", depth - 0.1, 0.08, L, X(z0 + depth / 2 - 0.06), fy + 0.04, Z(x0 + L / 2), "#1e1a16"); box("fwood", depth + 0.03, 0.06, L + 0.04, X(z0 + depth / 2), fy + 0.93, Z(x0 + L / 2), topC); } };
+      run(1.0, 4.6, 1.0, 0.64, true); run(1.64, 3.2, 1.0, 0.64, false);
+      // backsplash: small glazed tiles in two blues and a cream, up to the window sill and on the west return
+      for (let i = 0; i < 36; i++) for (let j = 0; j < 4; j++) { const x = 1.05 + i * 0.1, y = fy + 1.0 + j * 0.1; if (x > 2.08 && x < 3.52 && y > 1.2) continue; box("gloss", 0.094, 0.094, 0.012, X(x + 0.05), y + 0.05, Z(1.008), K.pick(["#2a6a8a", "#3a84a0", "#5aa0b8", "#24607e"])); }
+      for (let i = 0; i < 16; i++) for (let j = 0; j < 4; j++) box("gloss", 0.012, 0.094, 0.094, X(1.008), fy + 1.0 + j * 0.1 + 0.05, Z(1.66 + i * 0.1 + 0.05), K.pick(["#2a6a8a", "#3a84a0", "#5aa0b8", "#24607e"]));
+      // sink and tap under the window; a drying rack and a jar of utensils
+      box("metal", 0.62, 0.02, 0.42, X(2.8), fy + 0.965, Z(1.34), "#9aa2a8"); box("metal", 0.54, 0.16, 0.36, X(2.8), fy + 0.88, Z(1.34), "#6a7076");
+      cyl("metal", 0.015, 0.02, 0.32, X(2.8), fy + 1.12, Z(1.1), "#c8a040", 8); K.put("metal", new THREE.TorusGeometry(0.1, 0.014, 6, 12, Math.PI), [X(2.8), fy + 1.27, Z(1.2)], [0, Math.PI / 2, 0], 1, "#c8a040");
+      for (let k = 0; k < 5; k++) box("gloss", 0.02, 0.2, 0.2, X(3.3 + k * 0.05), fy + 1.06, Z(1.32), K.pick(["#efe3cc", "#2a9a96", "#e8b84a"]), 0, 0, 0.15);
+      lathe("gloss", [[0.001, 0], [0.06, 0], [0.065, 0.16], [0.001, 0.16]], X(2.1), fy + 0.96, Z(1.2), "#c4572e"); for (let k = 0; k < 4; k++) cyl("wood", 0.008, 0.008, 0.28, X(2.1 + (R() - 0.5) * 0.05), fy + 1.15, Z(1.2 + (R() - 0.5) * 0.05), "#8a5a34", 4, (R() - 0.5) * 0.3, (R() - 0.5) * 0.3);
+      // cooktop with copper pots and a kettle, a plaster hood with a wood mantel over it
+      box("metal", 0.7, 0.03, 0.52, X(4.0), fy + 0.975, Z(1.32), "#24221f"); for (const [dx, dz] of [[-0.17, -0.12], [0.17, -0.12], [-0.17, 0.12], [0.17, 0.12]]) K.put("metal", new THREE.TorusGeometry(0.07, 0.01, 5, 14), [X(4.0 + dx), fy + 0.995, Z(1.32 + dz)], [Math.PI / 2, 0, 0], 1, "#4a4640");
+      lathe("metal", [[0.001, 0], [0.13, 0], [0.14, 0.14], [0.15, 0.15], [0.001, 0.15]], X(3.83), fy + 1.0, Z(1.44), "#c87a3a"); lathe("metal", [[0.001, 0], [0.09, 0], [0.11, 0.08], [0.06, 0.18], [0.02, 0.22], [0.001, 0.22]], X(4.17), fy + 1.0, Z(1.2), "#c87a3a");
+      box("fpaint", 0.9, 0.8, 0.5, X(4.0), 2.55, Z(1.25), "#ecdcbe"); box("fpaint", 0.7, 0.5, 0.36, X(4.0), 2.0, Z(1.18), "#ecdcbe"); box("trim", 0.98, 0.08, 0.56, X(4.0), 2.18, Z(1.27), "#5a361c");
+      for (let k = 0; k < 3; k++) lathe("gloss", [[0.001, 0], [0.05, 0], [0.06, 0.12], [0.04, 0.18], [0.001, 0.18]], X(3.7 + k * 0.3), 2.22, Z(1.4), K.pick(["#2a9a96", "#e8b84a", "#c4572e"]));
+      // open shelves left of the window: plates, jars, a plant; a cutting board and bread on the counter
+      K.wallShelf(X(1.55), 1.85, Z(1.0), 0, 0.9, "jars"); K.wallShelf(X(1.55), 2.35, Z(1.0), 0, 0.9, "mix");
+      box("wood", 0.4, 0.025, 0.28, X(3.45), fy + 0.97, Z(1.4), "#c89a62", 0.2); K.ball("paint", 0.09, X(3.45), fy + 1.03, Z(1.4), "#d89a50", 1.5, 0.7, 1);
+      K.wallShelf(X(1.0), 1.85, Z(2.45), Math.PI / 2, 1.3, "jars"); K.bowl(X(1.32), fy + 0.96, Z(2.9), true);
+      // hanging rail with copper pans by the hood
+      // ---- dining by the west window: round table, four chairs, fruit and a jug of flowers, a pendant lamp, a rug
+      K.rug(X(3.3), Z(5.0), 2.4, 2.2, 0, "rk_rug2_d", fy); FUR.table(root, X(3.3), Y, Z(5.0), 0.62); for (const [dx, dz, ry] of [[-0.8, 0, 1.57], [0.8, 0, -1.57], [0, -0.8, 0], [0, 0.8, 3.14]]) FUR.chair(root, X(3.3 + dx), Y, Z(5.0 + dz), ry);
+      K.bowl(X(3.15), Y + 0.81, Z(4.95), true); lathe("gloss", [[0.001, 0], [0.07, 0], [0.09, 0.1], [0.05, 0.22], [0.06, 0.26], [0.001, 0.26]], X(3.5), Y + 0.81, Z(5.15), "#efe3cc"); for (let k = 0; k < 6; k++) K.ball("glow", 0.03, X(3.5 + (R() - 0.5) * 0.14), Y + 1.12 + R() * 0.1, Z(5.15 + (R() - 0.5) * 0.14), K.pick(["#ff8a5a", "#ffd27a", "#ff6ab0"]));
+      hangLamp(X(3.3), Z(5.0), "#ffc070", 2.55);
+      K.clock(X(1.0), 2.3, Z(3.6), Math.PI / 2, 0.17);
+      // pantry hutch on the west wall south of the window
+      K.bookcase(X(1.2), Z(7.1), Math.PI / 2, 1.2, 1.85, 0.4, "#7a4a2a");
+      // ---- living corner: TV console on the north wall between two floor speakers, a shelf of books above, frames, couch, coffee table, rug, a pendant
+      { const tx = 6.7; box("fwood", 1.7, 0.46, 0.44, X(tx), fy + 0.25, Z(1.24), "#7a4a2a"); for (const dx of [-0.42, 0.42]) { box("wood", 0.8, 0.36, 0.02, X(tx + dx), fy + 0.26, Z(1.47), "#8a5a34"); ball("metal", 0.018, X(tx + dx + (dx < 0 ? 0.32 : -0.32)), fy + 0.28, Z(1.49), "#d8a838"); }
+        dScreen(X(tx), fy + 0.86, Z(1.22), 0, 1.0, 0.58); box("metal", 0.3, 0.04, 0.16, X(tx), fy + 0.5, Z(1.22), "#2a2e34"); box("paint", 0.34, 0.06, 0.22, X(tx + 0.55), fy + 0.51, Z(1.25), "#d8d0c0");
+        K.speaker(X(tx - 1.15), fy, Z(1.25), 0, 0.95, "#6a4024"); K.speaker(X(tx + 1.15), fy, Z(1.25), 0, 0.95, "#6a4024");
+        K.wallShelf(X(tx), 2.3, Z(1.0), 0, 1.5, "books"); K.frame(X(tx - 1.15), 1.75, Z(1.0), 0, 0.42, 0.52, K.art("shapes")); K.frame(X(tx + 1.15), 1.75, Z(1.0), 0, 0.42, 0.52, K.art("map"));
+        K.rug(X(tx), Z(3.3), 2.8, 2.0, 0, "rk_rug1_d", fy);
+        // coffee table with books, a mug and a little cactus
+        box("fwood", 1.05, 0.05, 0.58, X(tx), fy + 0.42, Z(3.1), "#8a5a34"); for (const [sx, sz] of [[-1, -1], [1, -1], [-1, 1], [1, 1]]) box("fwood", 0.05, 0.4, 0.05, X(tx + sx * 0.46), fy + 0.2, Z(3.1 + sz * 0.24), "#5a361c"); box("wood", 0.95, 0.02, 0.5, X(tx), fy + 0.12, Z(3.1), "#8a5a34");
+        K.books(X(tx - 0.45), X(tx - 0.1), fy + 0.445, Z(3.0), 0.2); K.mug(X(tx + 0.1), fy + 0.445, Z(3.18)); K.plant(X(tx + 0.36), fy + 0.445, Z(3.02), 0.5, "cactus", "#efe3cc");
+        // couch: frame, seat and back cushions, arms, throw pillows and a folded blanket
+        const cx = X(tx), cz = Z(4.45), cc = "#c8643a"; box("fcloth", 2.0, 0.3, 0.9, cx, fy + 0.25, cz, cc); box("fcloth", 2.0, 0.55, 0.22, cx, fy + 0.62, cz + 0.36, cc); for (const s of [-1, 1]) box("fcloth", 0.2, 0.55, 0.9, cx + s * 0.9, fy + 0.4, cz, cc);
+        for (const s of [-1, 1]) K.cushion(cx + s * 0.4, fy + 0.46, cz - 0.04, 0.8, 0.16, 0.72, "#d4744a"); for (const s of [-1, 1]) K.cushion(cx + s * 0.4, fy + 0.72, cz + 0.22, 0.78, 0.4, 0.18, "#d4744a", 0, -0.15);
+        K.cushion(cx - 0.62, fy + 0.68, cz + 0.08, 0.36, 0.34, 0.12, "#2a7a76", 0.3, -0.3); K.cushion(cx + 0.6, fy + 0.68, cz + 0.08, 0.36, 0.34, 0.12, "#e8b84a", -0.3, -0.3); K.cushion(cx + 0.2, fy + 0.66, cz + 0.12, 0.32, 0.3, 0.11, "#efe3cc", 0.1, -0.3);
+        box("cloth", 0.5, 0.08, 0.62, cx + 0.88, fy + 0.69, cz - 0.02, "#2a5a7a", 0.1);
+        for (const dx of [-0.85, 0.85]) box("fwood", 0.06, 0.08, 0.06, cx + dx, fy + 0.04, cz + 0.36, "#3a2414");
+        // side table with a lamp at the couch's west end
+        box("fwood", 0.42, 0.04, 0.42, X(tx - 1.32), fy + 0.55, cz, "#8a5a34"); for (const [sx, sz] of [[-1, -1], [1, -1], [-1, 1], [1, 1]]) box("fwood", 0.035, 0.55, 0.035, X(tx - 1.32 + sx * 0.18), fy + 0.275, cz + sz * 0.18, "#5a361c"); K.tableLamp(X(tx - 1.32), fy + 0.57, cz, "#efe0c0", false, "#2a7a76");
+        hangLamp(X(tx), Z(3.2), "#ffd27a", 2.6); }
+      // ---- the stairs up, the bookcase beside them on the east wall
+      dStairs(X(9.0), Z(6.0), 0, 7, 0.8); K.bookcase(X(10.8), Z(4.9), -Math.PI / 2, 1.1, 1.95, 0.38, "#8a5a34");
+      // ---- reading corner by the east window: armchair, floor lamp, a stack of books, a big plant
+      { const ax = X(9.7), az = Z(8.0), cc = "#2a6e6a"; K.at(ax, fy, az, -2.3, () => { box("fcloth", 0.85, 0.32, 0.8, 0, 0.26, 0, cc); box("fcloth", 0.85, 0.6, 0.18, 0, 0.62, -0.33, cc); for (const s of [-1, 1]) box("fcloth", 0.16, 0.5, 0.8, s * 0.38, 0.4, 0, cc); K.cushion(0, 0.46, 0.04, 0.6, 0.16, 0.6, "#327c78"); K.cushion(0.1, 0.66, -0.2, 0.36, 0.32, 0.12, "#e8b84a", 0, -0.25); for (const s of [-1, 1]) for (const t of [-1, 1]) box("fwood", 0.05, 0.1, 0.05, s * 0.36, 0.05, t * 0.34, "#3a2414"); });
+        K.floorLamp(X(10.5), Z(9.4), "#efe0c0", true, fy); K.books(X(10.2), X(10.6), fy, Z(7.1), 0.22); K.plant(X(8.4), fy, Z(9.45), 1.6, "palm", "#a8603a"); }
+      // ---- entry: console table under the south window with a lamp, a bowl for keys, a basket below; coat pegs; plants by the door
+      { box("fwood", 1.4, 0.05, 0.38, X(3.0), fy + 0.8, Z(9.76), "#7a4a2a"); for (const sx of [-1, 1]) box("fwood", 0.05, 0.8, 0.34, X(3.0 + sx * 0.66), fy + 0.4, Z(9.76), "#5a361c"); box("wood", 1.3, 0.03, 0.32, X(3.0), fy + 0.2, Z(9.76), "#7a4a2a");
+        K.tableLamp(X(2.5), fy + 0.825, Z(9.78), "#efe0c0", false, "#e8b84a"); K.bowl(X(3.35), fy + 0.825, Z(9.75), false); K.basket(X(2.75), fy + 0.22, Z(9.74), 0.9); K.basket(X(3.3), fy + 0.22, Z(9.74), 0.75, "#a8784a");
+        for (let k = 0; k < 4; k++) { cyl("metal", 0.012, 0.012, 0.1, X(7.9 + k * 0.22), 1.7, Z(9.95), "#2b2622", 6, Math.PI / 2 - 0.4); } box("trim", 1.0, 0.1, 0.03, X(8.23), 1.7, Z(9.985), "#5a361c");
+        box("cloth", 0.36, 0.7, 0.12, X(7.95), 1.33, Z(9.88), "#8a4a2a", 0, 0.05); box("cloth", 0.3, 0.5, 0.16, X(8.42), 1.45, Z(9.86), "#2a5a7a");
+        K.plant(X(4.55), fy, Z(9.55), 1.1, "snake", "#efe3cc"); K.plant(X(7.4), fy, Z(9.55), 1.2, "leafy", "#c4572e"); }
+      // ---- gallery on the west wall by the hutch
+      K.frame(X(1.0), 1.8, Z(8.5), Math.PI / 2, 0.55, 0.42, K.art("mesa")); K.frame(X(1.0), 1.65, Z(9.3), Math.PI / 2, 0.3, 0.4, K.art("stars"));
+      K.plant(X(1.45), fy, Z(9.4), 0.9, "trail", "#2a9a96");
+      lite(5.5, 6.5, "#ffe2b8", 1.4, 9, 2.8); } },
+
   grid() { const g = PLW(12, 11); pRect(g, 1, 1, 10, 9, "."); pRect(g, 5, 10, 6, 10, "S"); pRect(g, 8, 4, 9, 5, "o"); return g; },
   arrive: { in: [5.5, 8.4, 0], down: [7.8, 7.4, 3.14] },
   portals: [{ t: [5.5, 10.4], to: "out:DB2", label: "Go outside" }, { t: [9.0, 6.6], to: "house2f:in", label: "Go upstairs", flat: true }],
@@ -5386,6 +5464,58 @@ defPlace("recoveryBay", { name: "Dustmere Recovery Bay", w: 14, d: 10, style: "a
 
 // ---------- the upper floors ----------
 defPlace("house2f", { name: "Your House 2F", w: 11, d: 11, style: "adobe", indoor: true,
+  // finished interior (roomkit.js, Nov 25 2026): Rook's room. Wood floor, four windows (telescope window, desk window, east window over the
+  // toy chest, south window by the bean bag), string lights, bed with a nightstand and lamp, desk with screen and speakers, a full bookcase,
+  // a wardrobe, Alienmon posters from the game's own dex art, a rug with floor cushions and a board game
+  fine: { floor: "plank", panel: "#8a5a34", trimC: "#4e3018",
+    wins: [{ e: "n", at: 4.7, w: 1.2, y0: 1.2, y1: 2.55 }, { e: "n", at: 7.0, w: 1.4, y0: 1.25, y1: 2.55 }, { e: "e", at: 2.8, w: 1.2, curtains: "#2a5a7a" }, { e: "s", at: 2.8, w: 1.2, curtains: "#c8803a" }],
+    dress({ K, X, Z, lite, fy, Y }) { const { box, cyl, ball, lathe, R } = K;
+      // ---- bed against the north wall, extra pillow and a folded blanket, nightstand with a lamp, an alarm clock and books, a picture above
+      FUR.bed(root, X(2.7), Y, Z(2.15), 0, 2.0, 1.3); K.cushion(X(2.95), Y + 0.66, Z(1.45), 0.5, 0.16, 0.32, "#efe3cc", 0, 0.2); box("cloth", 1.36, 0.07, 0.42, X(2.7), Y + 0.62, Z(2.85), "#2a5a7a");
+      { const nx = X(1.55), nz = Z(1.32); box("fwood", 0.48, 0.5, 0.4, nx, fy + 0.3, nz, "#8a5a34"); box("wood", 0.42, 0.16, 0.02, nx, fy + 0.4, nz + 0.205, "#a06a3c"); ball("metal", 0.016, nx, fy + 0.4, nz + 0.22, "#d8a838"); for (const s of [-1, 1]) for (const t of [-1, 1]) box("fwood", 0.04, 0.06, 0.04, nx + s * 0.2, fy + 0.03, nz + t * 0.16, "#3a2414");
+        K.tableLamp(nx - 0.08, fy + 0.55, nz - 0.04, "#efe0c0", true, "#2a7a76"); box("paint", 0.12, 0.08, 0.05, nx + 0.13, fy + 0.59, nz + 0.08, "#2a2622"); box("glow", 0.08, 0.03, 0.005, nx + 0.13, fy + 0.6, nz + 0.106, "#7ff0e6"); K.books(nx + 0.02, nx + 0.2, fy + 0.55, nz - 0.08, 0.14); }
+      K.frame(X(2.7), 1.95, Z(1.0), 0, 0.9, 0.55, K.art("mesa"));
+      K.rug(X(4.0), Z(2.5), 1.0, 1.7, 0, "rk_rug2_d", fy);
+      // ---- the telescope at its window
+      { const T = grp(X(4.7), fy, Z(1.75)); for (const [a, b] of [[0.3, 0.3], [-0.3, 0.3], [0, -0.35]]) add(new THREE.CylinderGeometry(0.03, 0.03, 1.3, 5), D.wood(), [a * 0.6, 0.6, b * 0.6], [b * 0.4, 0, -a * 0.4], null, T); add(new THREE.CylinderGeometry(0.09, 0.12, 0.9, 12), D.brass(), [0, 1.35, 0.1], [-1.0, 0, 0], null, T); }
+      // ---- desk under the second window: screen, keyboard, speakers, desk lamp, mug, books; chair; corkboard and a shelf beside the window
+      tableR(X(7.0), Z(1.36), 1.5, 0.6, {}); dScreen(X(7.0), 1.12, Z(1.2), 0, 0.62, 0.4); box("paint", 0.42, 0.025, 0.14, X(7.0), Y + 0.83, Z(1.5), "#3a3e46"); box("paint", 0.07, 0.02, 0.1, X(7.32), Y + 0.83, Z(1.5), "#3a3e46");
+      K.speaker(X(6.42), Y + 0.82, Z(1.25), 0.15, 0.26, "#6a4024"); K.speaker(X(7.58), Y + 0.82, Z(1.25), -0.15, 0.26, "#6a4024"); K.mug(X(7.5), Y + 0.82, Z(1.52), "#e8b84a"); K.books(X(6.25), X(6.5), Y + 0.82, Z(1.52), 0.16);
+      FUR.chair(root, X(7.0), Y, Z(2.1), Math.PI);
+      K.cork(X(8.75), 1.65, Z(1.0), 0, 0.85, 0.6); K.wallShelf(X(8.75), 2.3, Z(1.0), 0, 0.85, "mix");
+      // ---- string lights across the north wall
+      K.stringLights([[X(1.15), 2.95, Z(1.06)], [X(3.4), 2.95, Z(1.06)], [X(5.8), 2.95, Z(1.06)], [X(8.0), 2.95, Z(1.06)], [X(9.85), 2.95, Z(1.06)]], 10);
+      // ---- east wall: toy chest under the window, the bookcase, a tall plant
+      { const tx = X(9.62), tz = Z(2.8); K.at(tx, fy, tz, -Math.PI / 2, () => { box("fwood", 1.1, 0.5, 0.6, 0, 0.25, 0, "#c84a2a"); box("fwood", 1.14, 0.07, 0.64, 0, 0.53, 0, "#e8b84a"); for (const s of [-1, 1]) box("paint", 0.06, 0.4, 0.01, s * 0.3, 0.26, 0.302, "#e8b84a"); box("metal", 0.12, 0.05, 0.02, 0, 0.45, 0.31, "#d8a838"); });
+        K.ball("paint", 0.11, tx - 0.15, fy + 0.68, tz + 0.2, "#2a7a76"); K.ball("paint", 0.07, tx - 0.1, fy + 0.63, tz - 0.25, "#e8b84a"); }
+      K.bookcase(X(9.81), Z(5.2), -Math.PI / 2, 1.15, 1.95, 0.38, "#8a5a34"); K.plant(X(9.5), fy, Z(6.45), 1.5, "palm", "#efe3cc");
+      // ---- west wall: an Alienmon poster, the wardrobe, the laundry basket
+      K.frame(X(1.0), 1.7, Z(4.6), Math.PI / 2, 0.62, 0.82, K.art("dex:Cactling:#c4572e"), "#2a1e16", false);
+      { K.at(X(1.3), fy, Z(7.0), Math.PI / 2, () => { box("fwood", 1.4, 2.05, 0.58, 0, 1.03, 0, "#7a4a2a"); box("trim", 1.48, 0.07, 0.64, 0, 2.08, 0.01, "#4e3018"); box("trim", 1.42, 0.08, 0.6, 0, 0.04, 0.01, "#3a2414");
+          for (const s of [-1, 1]) { box("wood", 0.66, 1.84, 0.02, s * 0.345, 1.08, 0.3, "#8a5a34"); box("trim", 0.5, 0.62, 0.012, s * 0.345, 1.45, 0.312, "#7a4a2a"); box("trim", 0.5, 0.62, 0.012, s * 0.345, 0.66, 0.312, "#7a4a2a"); ball("metal", 0.02, s * 0.06, 1.1, 0.32, "#d8a838"); } }); K.basket(X(1.3), 2.1, Z(7.0), 0.85, "#c8a070"); }
+      K.basket(X(1.55), fy, Z(5.75), 1.1, "#d8c8a8"); K.cushion(X(1.55), fy + 0.3, Z(5.75), 0.32, 0.12, 0.3, "#2a5a7a");
+      // ---- the middle of the room: big rug, floor cushions, a low table with a board game and dice
+      K.rug(X(5.3), Z(5.8), 3.1, 2.3, 0, "rk_rug1_d", fy);
+      { const lx = X(5.3), lz = Z(5.6); box("fwood", 0.95, 0.05, 0.62, lx, fy + 0.33, lz, "#8a5a34"); for (const [sx, sz] of [[-1, -1], [1, -1], [-1, 1], [1, 1]]) box("fwood", 0.05, 0.32, 0.05, lx + sx * 0.42, fy + 0.16, lz + sz * 0.26, "#5a361c");
+        box("paint", 0.42, 0.02, 0.42, lx, fy + 0.365, lz, "#efe3cc"); for (let i = 0; i < 6; i++) for (let j = 0; j < 6; j++) if ((i + j) % 2) box("paint", 0.06, 0.004, 0.06, lx - 0.15 + i * 0.06, fy + 0.377, lz - 0.15 + j * 0.06, "#2a7a76");
+        for (let k = 0; k < 5; k++) cyl("gloss", 0.018, 0.018, 0.02, lx - 0.12 + R() * 0.24, fy + 0.39, lz - 0.12 + R() * 0.24, K.pick(["#c83a2a", "#e8b84a"]), 10); for (let k = 0; k < 2; k++) box("paint", 0.035, 0.035, 0.035, lx + 0.33, fy + 0.375, lz - 0.1 + k * 0.08, "#f4ecdc", R());
+        K.cushion(lx - 0.75, fy + 0.1, lz + 0.55, 0.62, 0.18, 0.62, "#c8643a"); K.cushion(lx + 0.8, fy + 0.1, lz + 0.5, 0.62, 0.18, 0.62, "#2a7a76"); }
+      // ---- reading corner by the south window: bean bag, floor lamp, a crate of books, a plant
+      K.cushion(X(2.1), fy + 0.3, Z(8.9), 1.0, 0.6, 0.95, "#c4572e", 0.4); K.cushion(X(2.1), fy + 0.42, Z(9.15), 0.82, 0.55, 0.4, "#c4572e", 0.4, -0.5); K.cushion(X(2.25), fy + 0.6, Z(8.8), 0.3, 0.25, 0.1, "#e8b84a", 0.5, -0.4);
+      K.floorLamp(X(1.4), Z(9.55), "#efe0c0", true, fy); K.crate(X(3.75), fy, Z(9.65), 0, 0.42); K.books(X(3.58), X(3.92), fy + 0.04, Z(9.65), 0.2); K.plant(X(4.4), fy, Z(9.6), 1.1, "leafy", "#2a7a76");
+      // ---- south wall: two more posters and a clock over the stairs
+      K.frame(X(5.4), 1.75, Z(10.0), Math.PI, 0.55, 0.72, K.art("dex:Dunetrot:#2a7a96"), "#2a1e16", false); K.frame(X(6.5), 1.75, Z(10.0), Math.PI, 0.55, 0.72, K.art("dex:Gearhound:#7a4ab0"), "#2a1e16", false);
+      K.clock(X(9.0), 2.5, Z(10.0), Math.PI, 0.18);
+      // ---- more life in the middle: a bench at the foot of the bed, a pendant over the rug, a shelf and frames over the laundry, a hanging plant, a desk-side rug
+      { const bx = X(2.7), bz = Z(3.45); box("fwood", 1.2, 0.06, 0.38, bx, fy + 0.44, bz, "#8a5a34"); for (const s of [-1, 1]) box("fwood", 0.06, 0.42, 0.34, bx + s * 0.55, fy + 0.21, bz, "#5a361c"); box("wood", 1.1, 0.03, 0.32, bx, fy + 0.12, bz, "#8a5a34");
+        K.cushion(bx - 0.3, fy + 0.52, bz, 0.4, 0.1, 0.32, "#2a7a76"); box("cloth", 0.36, 0.06, 0.3, bx + 0.28, fy + 0.5, bz, "#e8b84a", 0.2); K.basket(bx + 0.1, fy + 0.15, bz, 0.7, "#a8784a"); }
+      hangLamp(X(5.3), Z(5.6), "#ffd27a", 2.6, false);
+      K.wallShelf(X(1.0), 2.25, Z(5.8), Math.PI / 2, 1.1, "mix"); K.frame(X(1.0), 1.55, Z(5.45), Math.PI / 2, 0.36, 0.46, K.art("stars")); K.frame(X(1.0), 1.55, Z(6.1), Math.PI / 2, 0.36, 0.46, K.art("shapes"));
+      { const hx = X(8.9), hz = Z(3.6); cyl("metal", 0.004, 0.004, 0.75, hx, 2.85, hz, "#2b2622", 4); K.plant(hx, 2.25, hz, 0.8, "trail", "#efe3cc"); }
+      K.rug(X(7.0), Z(2.3), 1.4, 1.0, 0, "rk_rug2_d", fy);
+      K.plant(X(4.0), fy, Z(4.0), 1.0, "snake", "#c4572e");
+      lite(5.5, 5.5, "#ffe2b8", 1.4, 10, 2.9); } },
+
   grid() { const g = PLW(11, 11); pRect(g, 1, 1, 9, 9, "."); pRect(g, 8, 10, 9, 10, "S"); return g; },
   arrive: { in: [8.5, 8.4, 3.14] },
   portals: [{ t: [8.5, 10.4], to: "house1f:down", label: "Go downstairs", flat: true }],
@@ -5600,12 +5730,27 @@ SCN.DB2 = { rect: [30, 30],
     ellT(X + 15, Y + 15, 7.4, 7.4, "P"); F(19, 10, 26, 19, "P"); // the round plaza and, east of it, the clear landing space (kept empty for Strand's shuttle)
     F(1, 9, 10, 11, "p"); F(19, 7, 27, 11, "p"); F(1, 18, 11, 18, "p"); F(1, 25, 11, 27, "p"); F(18, 25, 28, 27, "p"); // aprons and back lanes
     F(1, 1, 10, 8, "b"); F(19, 1, 24, 6, "b"); F(25, 1, 28, 6, "b"); F(1, 19, 10, 24, "b"); F(19, 19, 25, 24, "b"); F(26, 19, 28, 23, "b");
+    const pp0 = PAINT.length;
+    // Nov 25 2026 detail pass: the plaza is laid in rings of hand-cut sandstone setts (each stone its own tint, mortar joints, worn
+    // edges and dust in the joints), with a darker terracotta border course; drawn into the ground picture, so it costs no extra meshes
+    PAINT.push((g, sx, sy, S) => { if (sx !== X || sy !== Y) return; let sd = 7741; const r = () => { sd = (sd * 16807) % 2147483647; return sd / 2147483647; };
+      g.save(); g.translate(15 * S, 15 * S); g.beginPath(); g.arc(0, 0, 7.45 * S, 0, TAU); g.clip(); g.fillStyle = "rgba(150,92,52,0.95)"; g.fillRect(-8 * S, -8 * S, 16 * S, 16 * S);
+      const stone = (r0, r1, a0, a1, h, s0, l0) => { const gp = 0.035 / Math.max(r0, 0.5); g.beginPath(); g.arc(0, 0, r1 * S, a0 + gp, a1 - gp); g.arc(0, 0, r0 * S, a1 - gp, a0 + gp, true); g.closePath();
+        g.fillStyle = `hsl(${h},${s0}%,${l0}%)`; g.fill(); const m = (a0 + a1) / 2, rm = (r0 + r1) / 2, gr = g.createRadialGradient(Math.cos(m) * rm * S, Math.sin(m) * rm * S, 0, Math.cos(m) * rm * S, Math.sin(m) * rm * S, (r1 - r0) * S * 1.1);
+        gr.addColorStop(0, "rgba(255,240,215,0.16)"); gr.addColorStop(1, "rgba(90,50,25,0.22)"); g.fillStyle = gr; g.fill(); };
+      for (let r0 = 3.05; r0 < 6.95; r0 += 0.43) { const r1 = Math.min(r0 + 0.4, 6.95), n = Math.round((TAU * (r0 + 0.2)) / (0.5 + r() * 0.12)), off = r() * TAU; let a = off;
+        for (let k = 0; k < n; k++) { const da = (TAU / n) * (0.8 + r() * 0.4), a1 = k === n - 1 ? off + TAU : Math.min(a + da, off + TAU); stone(r0, r1, a, a1, 24 + r() * 14, 52 + r() * 14, 58 + r() * 12); a = a1; } }
+      { const n = 44; for (let k = 0; k < n; k++) stone(6.98, 7.45, (k / n) * TAU, ((k + 1) / n) * TAU, 16 + r() * 8, 54 + r() * 10, 50 + r() * 8); }
+      for (let i = 0; i < 90; i++) { const a = r() * TAU, rr = (3.2 + r() * 4) * S, x = Math.cos(a) * rr, y = Math.sin(a) * rr, q = S * (0.3 + r() * 1.2), gr = g.createRadialGradient(x, y, 0, x, y, q), dk = r() < 0.6;
+        gr.addColorStop(0, dk ? "rgba(110,60,30,0.16)" : "rgba(255,236,200,0.14)"); gr.addColorStop(1, "rgba(0,0,0,0)"); g.fillStyle = gr; g.fillRect(x - q, y - q, q * 2, q * 2); }
+      g.restore(); });
     PAINT.push((g, sx, sy, S) => { if (sx !== X || sy !== Y) return; const cx = 15 * S, cy = 15 * S; // the turquoise-glass compass star inlaid in the plaza
       g.save(); g.translate(cx, cy); for (let k = 0; k < 16; k++) { const a = (k / 16) * TAU, L = (k % 4 === 0 ? 6.6 : k % 2 ? 3.2 : 4.6) * S; g.fillStyle = k % 2 ? "rgba(60,190,185,0.85)" : "rgba(120,240,230,0.95)"; g.beginPath(); g.moveTo(0, 0); g.lineTo(Math.cos(a - 0.12) * S * 0.9, Math.sin(a - 0.12) * S * 0.9); g.lineTo(Math.cos(a) * L, Math.sin(a) * L); g.lineTo(Math.cos(a + 0.12) * S * 0.9, Math.sin(a + 0.12) * S * 0.9); g.closePath(); g.fill(); }
       g.strokeStyle = "rgba(60,190,185,0.9)"; g.lineWidth = S * 0.12; for (const r of [6.9, 7.2]) { g.beginPath(); g.arc(0, 0, r * S, 0, TAU); g.stroke(); } g.restore();
       g.strokeStyle = "rgba(120,80,60,0.35)"; g.lineWidth = S * 0.25; g.beginPath(); g.arc(22.6 * S, 14.6 * S, 3.6 * S, 0, TAU); g.stroke(); // faint darker landing circle
       for (let k = 0; k < 10; k++) { g.fillStyle = "rgba(60,190,185,0.6)"; g.fillRect((12.4 + k * 0.5) * S, 2.6 * S, S * 0.12, S * 0.12); } });
     PAINT.push(Object.assign(() => {}, { glow: (g, sx, sy, S) => { if (sx !== X || sy !== Y) return; g.save(); g.translate(15 * S, 15 * S); for (let k = 0; k < 16; k++) { const a = (k / 16) * TAU, L = (k % 4 === 0 ? 6.6 : k % 2 ? 3.2 : 4.6) * S; g.fillStyle = "rgba(60,220,210,0.55)"; g.beginPath(); g.moveTo(0, 0); g.lineTo(Math.cos(a - 0.12) * S * 0.9, Math.sin(a - 0.12) * S * 0.9); g.lineTo(Math.cos(a) * L, Math.sin(a) * L); g.lineTo(Math.cos(a + 0.12) * S * 0.9, Math.sin(a + 0.12) * S * 0.9); g.closePath(); g.fill(); } g.strokeStyle = "rgba(60,220,210,0.5)"; g.lineWidth = S * 0.1; g.beginPath(); g.arc(0, 0, 7.05 * S, 0, TAU); g.stroke(); g.restore(); } }));
+    SCN.DB2.plazaPaint = PAINT.slice(pp0); // the paving, the star and its glow, reused by the plaza overlay in build()
   },
   build() { const X = 30, Y = 30, M0 = mk().M;
     // ---- closed edges: the adobe town wall, red rock beyond ----
@@ -5644,6 +5789,22 @@ SCN.DB2 = { rect: [30, 30],
     // ---- rune lamps round the plaza and along the four roads (every 8-10 tiles, staggered, one tile off the path) ----
     for (const [x, z] of [[11.2, 7.6], [18.8, 7.6], [7.0, 11.0], [23.6, 11.0], [5.0, 18.8], [26.0, 18.8], [11.2, 22.4], [18.8, 22.4], [2.0, 11.2], [28.4, 18.8], [11.2, 27.5], [18.8, 28.5], [11.2, 3.2], [18.8, 3.4]]) sporeLantern(X + x, Y + z);
     for (const [x, z] of [[9.7, 9.6], [13.6, 18.6]]) planterPair(X + x, Y + z, 1.6);
+    // Nov 25 2026 detail pass: a low sandstone kerb round the plaza (open at the north, west and south roads and on the east landing side),
+    // and big terracotta planters with desert plants framing each entrance; built with the room kit so it all merges into a few meshes
+    if (ASSETS.roomKit) { const K = ASSETS.roomKit(THREE, { add, std, root, seed: 5150 }), cx = X + 15, cz = Y + 15, gaps = [[Math.PI * 1.5, 0.46], [Math.PI, 0.46], [Math.PI / 2, 0.46], [0, 0.72]];
+      const open = (a) => gaps.some(([g0, w]) => Math.abs(Math.atan2(Math.sin(a - g0), Math.cos(a - g0))) < w);
+      for (let k = 0; k < 80; k++) { const a = ((k + 0.5) / 80) * TAU; if (open(a)) continue; K.at(cx + Math.cos(a) * 7.62, 0, cz + Math.sin(a) * 7.62, -a, () => { K.box("paint", 0.34, 0.16, 0.56, 0, 0.08, 0, K.pick(["#d8b48a", "#cfa87c", "#e2c098", "#c89c70"])); K.box("paint", 0.3, 0.02, 0.5, 0, 0.165, 0, "#e8caa0"); }); }
+      for (const [g0, w] of gaps.slice(0, 3)) for (const s of [-1, 1]) { const a = g0 + s * (w + 0.06), px = cx + Math.cos(a) * 7.9, pz = cz + Math.sin(a) * 7.9;
+        K.plant(px, 0, pz, 2.8, K.pick(["palm", "snake", "cactus", "leafy"]), "#b8603a"); }
+      K.flush(); }
+    // the new paving also goes on a thin overlay disc (the shipped ground picture for this scene is pre-painted, so the painters above
+    // don't run on it): stones, the inlaid star and its glow, cut to the plaza circle, following the ground's own height
+    if (typeof document !== "undefined" && SCN.DB2.plazaPaint && SCN.DB2.plazaPaint.length) { const S2 = 72, W2 = 15 * S2, mkC = (glow) => { const c = document.createElement("canvas"); c.width = c.height = W2; const g = c.getContext("2d");
+        if (glow) { g.fillStyle = "#000"; g.fillRect(0, 0, W2, W2); } g.save(); g.translate(-7.5 * S2, -7.5 * S2); for (const f of SCN.DB2.plazaPaint) { if (glow) { f.glow && f.glow(g, X, Y, S2); } else f(g, X, Y, S2); } g.restore();
+        g.globalCompositeOperation = "destination-in"; g.beginPath(); g.arc(W2 / 2, W2 / 2, 7.45 * S2, 0, TAU); g.fill(); const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 8; return t; };
+      const pg = new THREE.PlaneGeometry(15, 15, 48, 48); pg.rotateX(-Math.PI / 2); { const Pp = pg.attributes.position; for (let i = 0; i < Pp.count; i++) Pp.setY(i, GHT(X + 15 + Pp.getX(i), Y + 15 + Pp.getZ(i)) + 0.02); pg.computeVertexNormals(); }
+      const em = mkC(true), pm = std({ map: mkC(false), emissive: "#ffffff", emissiveMap: em, emissiveIntensity: 0.6, roughness: 0.85, alphaTest: 0.5, polygonOffset: true, polygonOffsetFactor: -2, polygonOffsetUnits: -2 });
+      const dm = new THREE.Mesh(pg, pm); dm.position.set(X + 15, 0, Y + 15); dm.receiveShadow = true; dm.name = "nocol"; root.add(dm); }
     // purple pennant strings between rooftops (above buildings only), wind chimes, sand drifts against walls
     for (const [a, b] of [[[5, 8.5, 3.0], [21, 7.0, 2.6]], [[4, 19.5, 2.6], [22, 19.5, 2.6]]]) { const n = 26; for (let k = 0; k <= n; k++) { const t = k / n, x = a[0] + (b[0] - a[0]) * t, z = a[1] + (b[1] - a[1]) * t, y = a[2] + 3.4 - Math.sin(t * Math.PI) * 0.8; if (k < n) tube([[X + x, y, Y + z], [X + a[0] + (b[0] - a[0]) * (t + 1 / n), a[2] + 3.4 - Math.sin((t + 1 / n) * Math.PI) * 0.8, Y + a[1] + (b[1] - a[1]) * (t + 1 / n)]], 0.012, M0.rope, 2); if (k % 2 === 0 && k > 1 && k < n - 1) { const f = add(new THREE.ConeGeometry(0.16, 0.36, 3), D.cloth(["#7a4ab0", "#9a6ad0", "#3fc6c0"][k % 3]), [X + x, y - 0.2, Y + z], [Math.PI, 0, 0]); f.scale.z = 0.15; } } }
     D.windChime(X + 7.0, 2.4, Y + 9.4); D.windChime(X + 22.0, 2.3, Y + 7.6);
