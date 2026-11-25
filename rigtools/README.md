@@ -81,7 +81,7 @@ index.html loads world.js?v=wd8, game.js?v=bt5, hudpos.js?v=1 and perf.js?v=1.
 40. Townsperson chats can be force-closed on phones: touch.js v4 adds a round ✕ on the speech bubble, and B also closes it. game.js sets `window.__closeDlg` in the main loop (hides #dlg, clears the talking NPC `Ri`, stops the voice line) so the close is clean (game.js?v=bt7m3).
 41. Objective guidance arrow is bigger: hudpos.js v2 makes #objArrow 40px (was 22px) with a soft green glow; on phones touch.js v5 makes it 34px. index.html loads hudpos.js?v=2.
 
-## Nov 24 stairs + NPC facing fixes (branch stairs-npc-1124; port these into the PC source too)
+## Nov 24 stairs + NPC facing fixes (branch stairs-npc-1124, live on maps-v2 Nov 25 together with mobile-touch; port these into the PC source too)
 
 42. Stairs ground check (game.js `et`, `ip`, `sp`): the player's ground ray no longer stops looking 3.2 m above the terrain (new 4th argument `fr`), so tall built stairs and upper floors stay under Rook instead of going invisible. `__gL` keeps the last ground height so the next step is probed from the step, not from under it, and when climbing Rook can trail the surface by at most 0.08 m (was unlimited), which stops the sprint sink.
 43. Steep-ground block (game.js `__gT` inside `ip`): Rook can't walk into a steep slope of drawn terrain that sits more than 0.45 m above his feet (face steeper than about 45 degrees, terrain meshes only). This is the waist-deep sink beside the 112 steps: the walk strip is 2 m wide but the drawn slope beside it is wider, so walking up beside the strip put Rook inside it. Now he rides on what you see.
