@@ -30,6 +30,7 @@ ASSETS.roomKit = function (THREE, env) {
     wood: () => M("wood", () => std({ map: rkTex("rk_plank_d", true, "#c08a58"), normalMap: rkTex("rk_plank_n", false, "#8080ff"), normalScale: V2(0.5), roughness: 0.62, vertexColors: true })),
     trim: () => M("trim", () => std({ map: rkTex("rk_plank_d", true, "#c08a58"), roughness: 0.5, vertexColors: true })),
     plank: () => M("plank", () => std({ map: rkTex("rk_plank_d", true, "#c08a58"), normalMap: rkTex("rk_plank_n", false, "#8080ff"), normalScale: V2(0.9), roughness: 0.48 })),
+    stone: () => M("stone", () => std({ map: rkTex("rk_stone_d", true, "#e2d8c6"), normalMap: rkTex("rk_stone_n", false, "#8080ff"), normalScale: V2(0.6), roughness: 0.38 })),
     tile: () => M("tile", () => std({ map: rkTex("rk_tile_d", true, "#b85a36"), normalMap: rkTex("rk_tile_n", false, "#8080ff"), normalScale: V2(1.0), roughness: 0.66 })),
     paint: () => M("paint", () => std({ roughness: 0.72, vertexColors: true })),
     gloss: () => M("gloss", () => std({ roughness: 0.28, vertexColors: true })),
@@ -92,10 +93,10 @@ ASSETS.roomKit = function (THREE, env) {
   const shell = (o) => { const { at: cell, ox, oz, W, D } = o, H = o.wallH, fy = o.fy, T = 0.26, wallC = o.tint || "#ffffff", panC = o.panel || "#9a6438", trimC = o.trimC || "#5e3a20";
     const solid = (x, y) => { const c = cell(x, y); return !(o.isFloor(c) || c === "o" || c === "w"); };
     // floor: one quad per floor cell, world-unit UVs, named "ground" so the player walks on it
-    { const pos = [], nor = [], uv = [], sc = o.floor === "tile" ? 2.0 : 1.6;
+    { const pos = [], nor = [], uv = [], sc = o.floor === "tile" || o.floor === "stone" ? 2.0 : 1.6;
       for (let y = 0; y < D; y++) for (let x = 0; x < W; x++) { if (solid(x, y)) continue; const x0 = ox + x, z0 = oz + y, q = [[x0, z0], [x0, z0 + 1], [x0 + 1, z0 + 1], [x0, z0], [x0 + 1, z0 + 1], [x0 + 1, z0]]; for (const [a, b] of q) { pos.push(a, fy, b); nor.push(0, 1, 0); uv.push(a / sc, -b / sc); } }
       const g = new THREE.BufferGeometry(); g.setAttribute("position", new THREE.Float32BufferAttribute(pos, 3)); g.setAttribute("normal", new THREE.Float32BufferAttribute(nor, 3)); g.setAttribute("uv", new THREE.Float32BufferAttribute(uv, 2));
-      const m = new THREE.Mesh(g, o.floor === "tile" ? mat.tile() : mat.plank()); m.name = "ground"; m.receiveShadow = true; root.add(m);
+      const m = new THREE.Mesh(g, o.floor === "tile" ? mat.tile() : o.floor === "stone" ? mat.stone() : mat.plank()); m.name = "ground"; m.receiveShadow = true; root.add(m);
       // a dark plane under everything outside the room, so the gaps around the walls read as solid ground from above
       const vd = add(new THREE.PlaneGeometry(W + 2, D + 2), std({ color: "#2a1a10", roughness: 1 }), [ox + W / 2, -0.02, oz + D / 2], [-Math.PI / 2, 0, 0]); vd.name = "nocol"; }
     // wall runs: every floor-cell edge that faces a solid cell, merged along each line

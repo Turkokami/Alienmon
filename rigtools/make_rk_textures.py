@@ -7,6 +7,7 @@ Makes the tileable surfaces the room kit (sporeholm3d/roomkit.js) uses for upgra
   rk_plaster warm limewash plaster (colour + normal)
   rk_pave    sandstone flagstone paving for town squares (colour + normal)
   rk_rug1/2  two woven rugs with original desert-star patterns (colour)
+  rk_stone   pale honed limestone slabs for clinic and shop floors (colour + normal)
   rk_view    a painted Dustara canyon view seen through windows (colour)
 Everything is drawn from noise here; no photos or outside art are used.
 Run:  python3 rigtools/make_rk_textures.py   (writes sporeholm3d/tex/rk_*.webp)
@@ -329,6 +330,37 @@ def view():
     save("rk_view_d", col, 85)
 
 
+# ------------------------------------------------------------------ honed limestone (clinic and shop floors)
+def stone():
+    n = N
+    k = 4  # tiles across (tile = 2 m -> 50 cm slabs)
+    s = n / k
+    yy, xx = np.mgrid[0:n, 0:n].astype(float)
+    ti, tj = (xx // s).astype(int), (yy // s).astype(int)
+    u, v = (xx % s) / s, (yy % s) / s
+    dmin = np.minimum(np.minimum(u, 1 - u), np.minimum(v, 1 - v))
+    groutS = blur((dmin < 0.008).astype(float), 1)
+    base = [hexc("#e6dccb"), hexc("#ddd1bd"), hexc("#ebe3d4"), hexc("#d8ccb6")]
+    idx = (ti * 3 + tj * 5 + (ti * tj) % 3) % len(base)
+    col = np.zeros((n, n, 3))
+    for i, c in enumerate(base):
+        col[idx == i] = c
+    tvar = RNG.uniform(0.95, 1.04, (k, k))
+    col *= tvar[tj % k, ti % k][..., None]
+    cloud = fbm(n, 90, 5)
+    col *= (0.95 + 0.05 * cloud)[..., None]
+    vein = np.abs(fbm(n, 60, 4, aspect=(1.0, 0.35)))
+    vmask = np.exp(-(vein / 0.06) ** 2) * (fbm(n, 120, 2) > 0.2)
+    col = col * (1 - 0.12 * vmask[..., None]) + hexc("#b8a88e")[None, None, :] * 0.12 * vmask[..., None]
+    sp = blur((RNG.random((n, n)) < 0.004).astype(float), 1) * 4
+    col *= (1 - 0.18 * sp.clip(0, 1))[..., None]
+    gc = hexc("#c8bca8")
+    col = col * (1 - groutS[..., None]) + gc[None, None, :] * groutS[..., None]
+    h = (1 - groutS) * 1.0 + 0.02 * cloud
+    save("rk_stone_d", col)
+    save("rk_stone_n", normal_from_height(blur(h, 1), 3.0), 92)
+
+
 if __name__ == "__main__":
     os.makedirs(OUT, exist_ok=True)
     planks()
@@ -338,3 +370,4 @@ if __name__ == "__main__":
     rug("rk_rug1_d", "#1f6f72", "#a8442a", "#e8b84a", "#f2e2c4")
     rug("rk_rug2_d", "#2c3a6e", "#c8803a", "#d84a3a", "#efe0c0")
     view()
+    stone()
