@@ -228,3 +228,10 @@ index.html loads world.js?v=wd14ob, game.js?v=bt8ob, linker-data.js?v=cl1ob. The
     - New ground texture tex/ex_fxsoil (packed rusty dirt, gravel, scrap flakes, bolts, washers, ruts and cracks) as surfaces.js rule f_ground, on Ferrox's open ground only. Town scenes (town: true) keep their painted plaza plates, which the gravel was hiding.
     - Thalassa's and Neonis's own FXTRI copies are unchanged.
     - index.html: surfaces.js?v=ex11, world.js?v=wd32fx3.
+
+77. Dustara: the sky and the ringed planet show from town (finishes the "lower the tall rock walls" step left open in 69):
+    - world.js Dustara outer wild (the red mesa country beyond the map's edges, right behind the town's north side): the hills rise about half as high (5–14 m → 2.5–6.5 m), the mesas are less than half as tall (3–18 m → 1.6–7.6 m) and the hoodoos about 60%. Same random draws, so every other piece stays where it was. Only Dustara's copy changed (Ferrox, Thalassa, Neonis and Sporeholm untouched). Walkable ground is untouched (all of this sits outside the playable map).
+    - game.js Dustara day sky: the ringed planet sat low (about 6° up) and hid behind the cliffs; it now hangs about 22° up in the north-east sky, and the two small moons move up with it.
+    - The canyon cliffs inside the map (Observatory hill, the cliff dwellings) keep their height: they're walkable terrain.
+    - Picture: alienmon-reference/dustara-style/dustara_town_sky_before_after.jpg (plaza, looking north-east).
+    - index.html: world.js?v=wd33sky, game.js?v=bt16sky.
