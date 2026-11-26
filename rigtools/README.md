@@ -180,3 +180,11 @@ index.html loads world.js?v=wd14ob, game.js?v=bt8ob, linker-data.js?v=cl1ob. The
     - Speed: software-render test 6.0 → 5.6 fps at the plaza; ground check unchanged (crystals stay out of the solid list).
     - Still to do for the look: the tall rock walls around town hide most of the sky; lowering the far mesas comes next.
     - index.html: world.js?v=wd28st6, game.js?v=bt14st2.
+
+70. Sunset Tunnel grown into a broad cavern (both levels, B1 and B2):
+    - world.js: new scalePlace(id, k, ox) grows a place's whole layout k times on each axis. Sunset Tunnel B1 and B2 are now scale 2 (156 × 112 m each, 4× the floor area; walkable floor 1,882 → 7,450 m² on B1 and 1,395 → 5,540 m² on B2). They moved to ox 5000 and 5400 so they don't overlap other places.
+    - Paths, rough edges and the place painters (pRect, pCirc, pPath, pRough, dcRough) scale with the layout; boulders, pillars, altar, waystones and pump keep their real size (oCirc / oRect). Walls are 1.7× taller, cave lights spread with the layout, and every dress() call places through X()/Z() so rails, timbers, lanterns, stashes and the arch land in the same spots, just farther apart.
+    - The grown floor gets up to 50 violet, teal and pink crystal clusters along the cavern walls, a few glowing cap clumps and up to 8 crystal lights; spots near arrivals, portals and stashes stay clear.
+    - game.js: arrivals, portals, item spots, NPC spots and door targets inside a place multiply by the place's scale (placeMeta scg), so a scale-1 place is unchanged.
+    - Checked: both arrivals and all four portals stand on floor. Software-render test 24 → 21 fps in B2.
+    - index.html: world.js?v=wd29tn4, game.js?v=bt15tn1.
