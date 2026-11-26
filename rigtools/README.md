@@ -247,3 +247,9 @@ index.html loads world.js?v=wd14ob, game.js?v=bt8ob, linker-data.js?v=cl1ob. The
 - `bookvoice-check.html`: lists every book-voiced line with a Play button and a Play all.
 - The PC download needs internet for these lines; offline it falls back to the old clips.
 - index.html: comic-data.js?v=gn1bv1, bookvoice-data.js?v=bv1, bookvoice.js?v=bv1, game.js?v=bt16bv1.
+
+## 80. Fountain kerb flush, calmer plants, observatory door (Nov 26)
+- world.js (DB2 plaza, roomKit kerb at r 7.62): the sandstone kerb ring round the plaza was 0.18 m tall and not solid, so you walked through it. It is now an inlaid band 0.06 m high (base 0.05 + 0.012 cap) that you walk over.
+- game.js (the shared wind shader `windify`): mode 0 swayed by `pow(clamp(wp.y,0,8),2)*0.05` of WORLD height, so any bush or tuft standing on raised ground (terraces, mesas: y up to 8+) swung up to ~3 m. It now uses height above the plant's own base (`wp.y - wb.y`, base from instanceMatrix/modelMatrix), clamped to 3 m, times 0.012: bases stay locked to the ground and tops move a few cm. Mode 1 (tall grass) cut from `pow(y,1.5)*0.14` to `pow(clamp(y,0,2),1.5)*0.04`.
+- world.js (DA6 observatory): the fitted door sat inside the 2.2x walls, so the wall under the telescope sign was blank. A gold-framed arched double door (2.5 x 3.5 m, brass bar, ring handles, hinge straps, turquoise glass diamonds) and a sandstone step now stand at x 168.46, z 15.75 (the wall leans out at its foot), on a 1.4 m deep sandstone surround. The group is `noLift` and placed at GHT height, so the path guard does not strip it.
+- index.html: world.js?v=wd34b, game.js?v=bt17bv.

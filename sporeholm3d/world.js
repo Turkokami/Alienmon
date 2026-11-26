@@ -6106,7 +6106,7 @@ SCN.DB2 = { rect: [30, 30],
     // and big terracotta planters with desert plants framing each entrance; built with the room kit so it all merges into a few meshes
     if (ASSETS.roomKit) { const K = ASSETS.roomKit(THREE, { add, std, root, seed: 5150 }), cx = X + 15, cz = Y + 15, gaps = [[Math.PI * 1.5, 0.46], [Math.PI, 0.46], [Math.PI / 2, 0.46], [0, 0.72]];
       const open = (a) => gaps.some(([g0, w]) => Math.abs(Math.atan2(Math.sin(a - g0), Math.cos(a - g0))) < w);
-      for (let k = 0; k < 80; k++) { const a = ((k + 0.5) / 80) * TAU; if (open(a)) continue; K.at(cx + Math.cos(a) * 7.62, 0, cz + Math.sin(a) * 7.62, -a, () => { K.box("paint", 0.34, 0.16, 0.56, 0, 0.08, 0, K.pick(["#d8b48a", "#cfa87c", "#e2c098", "#c89c70"])); K.box("paint", 0.3, 0.02, 0.5, 0, 0.165, 0, "#e8caa0"); }); }
+      for (let k = 0; k < 80; k++) { const a = ((k + 0.5) / 80) * TAU; if (open(a)) continue; K.at(cx + Math.cos(a) * 7.62, 0, cz + Math.sin(a) * 7.62, -a, () => { K.box("paint", 0.34, 0.05, 0.56, 0, 0.025, 0, K.pick(["#d8b48a", "#cfa87c", "#e2c098", "#c89c70"])); K.box("paint", 0.3, 0.012, 0.5, 0, 0.054, 0, "#e8caa0"); /* README 78: kerb laid flush, an inlaid band you walk over */ }); }
       for (const [g0, w] of gaps.slice(0, 3)) for (const s of [-1, 1]) { const a = g0 + s * (w + 0.06), px = cx + Math.cos(a) * 7.9, pz = cz + Math.sin(a) * 7.9;
         K.plant(px, 0, pz, 2.8, K.pick(["palm", "snake", "cactus", "leafy"]), "#b8603a"); }
       K.flush(); }
@@ -7042,7 +7042,19 @@ SCN.DA6 = { rect: [150, 0],
         const dm = std({ map: doorMap, color: new THREE.Color("#2a6a8a").lerp(new THREE.Color("#f0d0a8"), 0.38), emissive: "#2a6a8a", emissiveIntensity: 0.12 });
         add(new THREE.ExtrudeGeometry(archShape(dw, dh), { depth: 0.12, bevelEnabled: false }), dm, [x, y, z], [0, 0, 0], "nocol");
         add(new THREE.BoxGeometry(0.06, dh - 0.1, 0.05), D.brass(), [x, y + (dh - 0.1) / 2, z + 0.14], [0, 0, 0], "nocol");
-        for (const sd of [-1, 1]) add(new THREE.TorusGeometry(0.12, 0.025, 6, 14), D.brass(), [x + sd * 0.22, y + 1.15, z + 0.16], [0, 0, 0], "nocol"); } }
+        for (const sd of [-1, 1]) add(new THREE.TorusGeometry(0.12, 0.025, 6, 14), D.brass(), [x + sd * 0.22, y + 1.15, z + 0.16], [0, 0, 0], "nocol"); }
+      // README 78: the fitted door above sits inside the 2.2x walls (hidden), so the wall under the telescope sign stood blank; a
+      // full gold-framed arched double door goes on the front wall where "Enter the Observatory" triggers (x 168.46; the wall leans out toward its foot, so the door stands at z 15.75 on a deep sandstone surround)
+      { const x = 168.46, z = 15.75, y = GHT(168.46, 16.3) - 0.02 /* placed at the summit height itself; noLift keeps the path guard and lift off it */, dw = 2.5, dh = 3.5, G = grp(x, y, z, 0); G.userData.noLift = true;
+        const dm = std({ map: doorMap, color: new THREE.Color("#2a6a8a").lerp(new THREE.Color("#f0d0a8"), 0.55), emissive: "#2a6a8a", emissiveIntensity: 0.12 });
+        add(new THREE.ExtrudeGeometry(archShape(dw + 0.7, dh + 0.4), { depth: 1.4, bevelEnabled: false }), D.sandstone ? D.sandstone() : S1, [0, 0, -1.32], [0, 0, 0], "nocol", G);
+        add(new THREE.ExtrudeGeometry(archShape(dw + 0.3, dh + 0.18), { depth: 0.12, bevelEnabled: false }), D.brass(), [0, 0, 0.14], [0, 0, 0], "nocol", G);
+        add(new THREE.ExtrudeGeometry(archShape(dw, dh), { depth: 0.1, bevelEnabled: false }), dm, [0, 0, 0.24], [0, 0, 0], "nocol", G);
+        add(new THREE.BoxGeometry(0.06, dh - 0.15, 0.05), D.brass(), [0, (dh - 0.15) / 2, 0.36], [0, 0, 0], "nocol", G);
+        for (const sd of [-1, 1]) { add(new THREE.TorusGeometry(0.14, 0.03, 6, 14), D.brass(), [sd * 0.26, 1.2, 0.38], [0, 0, 0], "nocol", G);
+          for (const hy of [0.7, 2.2]) add(new THREE.BoxGeometry(0.7, 0.07, 0.03), D.brass(), [sd * 0.75, hy, 0.355], [0, 0, 0], "nocol", G);
+          add(new THREE.BoxGeometry(0.22, 0.22, 0.03), std({ color: "#3fd6d0", emissive: "#3fd6d0", emissiveIntensity: 1.2 }), [sd * 0.55, dh - 0.7, 0.355], [0, 0, Math.PI / 4], "nocol", G); }
+        add(new THREE.BoxGeometry(dw + 1.0, 0.12, 0.9), S1, [0, 0.06, 0.55], [0, 0, 0], "floor", G); } }
     { const T = grp(cx, OBS2.TELY || 0, cz - 1.4 * OBF, 0); T.scale.setScalar(OBF * 0.85); add(new THREE.BoxGeometry(1.3, 0.25, 6.2), std({ color: "#2a2a3a", roughness: 0.6 }), [0, 6.35, 0.4], [0.35, 0, 0], null, T);
       const tb = grp(0, 6.0, 0, 0, T); const tube2 = add(olathe([[0.001, -0.5], [0.42, -0.5], [0.48, 0], [0.5, 4.2], [0.62, 4.4], [0.62, 4.8], [0.001, 4.8]], 20, 0.0), D.brass(), [0, 0, 0], [0, 0, 0], null, tb); tube2.rotation.x = -1.05;
       for (const y of [0.8, 2.0, 3.2]) { const r2 = add(new THREE.TorusGeometry(0.5, 0.06, 6, 20), D.copper(), [0, 0, 0], [0, 0, 0], null, tb); r2.position.set(0, Math.cos(1.05) * y, -Math.sin(1.05) * y); r2.rotation.x = -1.05 + Math.PI / 2; }
