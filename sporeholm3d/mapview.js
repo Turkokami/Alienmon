@@ -31,7 +31,10 @@
   let LB = null, LBfor = null;
   const labels = () => { if (LBfor === info) return LB; const out = [];
     for (const q of info.outPortals || []) { const id = String(q.to || "").split(":")[0]; let t = nice(q.label); const pn = (info.places || {})[id] || "";
-      if (!t || /^go (inside|in|out|down|up)$/i.test(t)) t = /^house/.test(id) ? "Home" : pn.replace(/ (B\d|Lobby|Trial Floor|Depths)$/, "");
+      if (/secret/i.test(pn + " " + q.label)) continue;
+      if (!/^(enter|go (down )?into)\b/i.test(String(q.label || "").trim()) && pn) t = pn;
+      if (!t || /^go (inside|in|out|down|up)$/i.test(t)) t = pn; if (/^house/.test(id) || /^your house/i.test(pn)) t = "Home";
+      t = t.replace(/ (B\d|Lobby|Trial Floor|Depths|Gallery|Reading Loft|Recovery Loft|Loft|Rooms)$/, "").replace(/^the\s+/i, "");
       if (!t) continue; const [x, z] = unwarp(q.at[0], q.at[1]); if (out.some((l) => l.t === t && Math.hypot(l.x - x, l.z - z) < 40)) continue; out.push({ t, x, z, k: KIND(id, t) }) }
     for (const l of info.labels || []) out.push(l); out.sort((a, b) => (b.k === "home") - (a.k === "home")); LBfor = info; LB = out; return out };
   // ---- drawing

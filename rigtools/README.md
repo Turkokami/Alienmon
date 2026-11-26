@@ -202,3 +202,9 @@ index.html loads world.js?v=wd14ob, game.js?v=bt8ob, linker-data.js?v=cl1ob. The
     - linker.js opens it in place of the old block map (mode "map2"; M, Enter or Back closes, arrows/WASD pan, Q/R or +/− zoom) and keeps the old map for any world without a baked picture.
     - Baked so far: Dustara (9 × 12 tiles, 2.3 MB of tiles, 0.6 MB overview). The baker (bake.js / stitch.py) stays outside the repo.
     - index.html: mapview.js?v=1, linker.js?v=mv1.
+
+73. Map screen for Sporeholm and Ferrox:
+    - Baked map/sporeholm (10 × 7 tiles, 2.2 MB of tiles) and map/ferrox (8 × 8 tiles, 1.8 MB). All three live worlds now open the new map.
+    - Baker fix: in a long page session Sporeholm's mushroom houses and gardens dropped out of the picture, so the baker now loads a fresh page every 5 tiles and re-bakes any tile that comes out as unloaded night-blue.
+    - Labels: a door that isn't "Enter ..." (Climb the stair to ..., Crawl through ..., Open the ... door) is named by the place it leads to, with floor words dropped (Music Hall, Library, Clinic, Co-op Hall, Guesthouse). Places with "secret" in their name never get a label, so Ferrox's Helix Secret Lab stays hidden.
+    - index.html: mapview.js?v=2.
