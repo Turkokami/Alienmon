@@ -281,3 +281,11 @@ index.html loads world.js?v=wd14ob, game.js?v=bt8ob, linker-data.js?v=cl1ob. The
 - game.js `P("dxFire")`: was `ae(38.8,50.8)`, which sat inside the Scholar's Cottage shell after the README 81 swap. Now `ae(44.4,51.6)`, beside Old Dusty.
 - Both spots checked: standable, open on all 4 sides, not inside a shell.
 - index.html: game.js?v=bt20bv.
+
+## 85. Auto-unstick, Farm Kid off the Arena path (play bot follow-ups)
+- game.js `sp()` (movement step): if the player holds a direction, isn't jumping, doesn't move, and a 4 cm step fails in all four directions for 1.2 s, the game looks for the nearest open spot (strict pass: 1 m clear each way within 14 m; loose pass: 0.3 m clear within 30 m). If none, it puts the player back where they were walking a moment ago (`window.__lgB`, positions every 0.5 s, kept 1.5 to 40 m away). Pressing into a wall never triggers it, since the other directions are free.
+- Covers the 8 dead-end pockets the play bot found (Dustara DF6/DB7, Sporeholm C2/B4/B7 x2, Ferrox FD7/FA8). Tested each: freed by search or by stepping back.
+- game.js Farm Kid (DC2): `x:44,z:85` -> `x:41,z:82`. The old spot sat in a house's door zone, so the spawn push put him on the Arena barn path (50.2,88.1). He now stands on open ground at about 38.8,76.5.
+- Sola (DB4, `ae(105.2,44.5)`): checked, she stands on open walkable ground; the play bot's flag came from `canStand`, not from walking. No change.
+- game.js: `GAME.IP(x,z,y,dx,dz)` exposes the move check (debug). `window.__unstuck` counts rescues.
+- index.html: game.js?v=bt21bv.
