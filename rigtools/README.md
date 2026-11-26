@@ -240,3 +240,10 @@ index.html loads world.js?v=wd14ob, game.js?v=bt8ob, linker-data.js?v=cl1ob. The
 - mapview.js: the "✕ Close" button on the map screen was hidden by CSS (`#mv .x{display:none}`), so on phone there was no way out. It now shows top right (52 px tall), and Esc and the phone back gesture close the map too (opening pushes a history entry; popstate closes it; closing by button steps that entry back).
 - The view re-centres on the player one frame after opening, once the canvas has its final size.
 - index.html: mapview.js?v=3.
+
+## 79. Voices straight from the Book 1 audiobook (Nov 26)
+- New `bookvoice-data.js` + `bookvoice.js` (loaded just before game.js). They wrap `window.VPLAY`: 156 story and NPC lines now play from the audiobook chapter files (ElevenLabs_Alienmon_Book1_V3 in Squatch Studio, prologue and chapters 1–11, chapter 4 not yet). The player seeks the chapter and plays only the matched pieces, skipping "he said" parts. If the chapter can't load in 4 s (offline PC build, bad signal) the game's own clip plays instead. `?bookvoice=0` switches it off.
+- 82 lines already matched the book word for word and keep their text. 74 lines were paraphrases of the book; their on-screen text (game.js and comic-data.js) is now the book's own wording so the words match what you hear.
+- `bookvoice-check.html`: lists every book-voiced line with a Play button and a Play all.
+- The PC download needs internet for these lines; offline it falls back to the old clips.
+- index.html: comic-data.js?v=gn1bv1, bookvoice-data.js?v=bv1, bookvoice.js?v=bv1, game.js?v=bt16bv1.
