@@ -424,6 +424,40 @@ def sploam():
     save("ex_sploam_n", normal_from_height(blur(h, 1), 5.0), 88)
 
 
+def fxsoil():
+    """Ferrox ground: packed rusty dirt with gravel, flakes of scrap, bolts and washers, cart ruts and dried cracks. 3 m tile, grey detail."""
+    n = N
+    r = RNG
+    grav = [(r.uniform(0, n), r.uniform(0, n), r.uniform(2, 6)) for _ in range(1400)]
+    def pebble(d, it, ox, oy):
+        x, y, rr = it
+        d.ellipse([x + ox - rr, y + oy - rr * 0.75, x + ox + rr, y + oy + rr * 0.75], fill=int(150 + rr * 15))
+    gv = blur(_stamp(n, grav, pebble), 1)
+    flakes = [(r.uniform(0, n), r.uniform(0, n), r.uniform(5, 16), r.uniform(3, 8), r.uniform(0, 3.14)) for _ in range(140)]
+    def flake(d, it, ox, oy):
+        x, y, a, b, t = it
+        ca, sa = np.cos(t), np.sin(t)
+        pts = [(x + ox + ca * a * u - sa * b * v, y + oy + sa * a * u + ca * b * v) for u, v in ((-1, -1), (1, -0.7), (0.8, 1), (-0.9, 0.8))]
+        d.polygon(pts, fill=255)
+    fl = _stamp(n, flakes, flake)
+    bolts = [(r.uniform(0, n), r.uniform(0, n), r.uniform(3, 6)) for _ in range(70)]
+    def bolt(d, it, ox, oy):
+        x, y, rr = it
+        d.ellipse([x + ox - rr, y + oy - rr, x + ox + rr, y + oy + rr], outline=255, width=2)
+        d.ellipse([x + ox - rr * 0.35, y + oy - rr * 0.35, x + ox + rr * 0.35, y + oy + rr * 0.35], fill=200)
+    bo = _stamp(n, bolts, bolt)
+    ruts = ridged(n, 12, 3, aspect=(1.0, 0.08))
+    cr = cracks(n, 9, width=0.02, keep=0.5)
+    clump = fbm(n, 4, 3)
+    oil = np.clip((fbm(n, 30, 2) - 0.62) * 4, 0, 1)
+    h = 0.9 * gv + 0.6 * fl + 0.7 * bo + 0.25 * ruts - 0.5 * cr + 0.35 * clump
+    det = 0.5 + 0.14 * (gv - 0.2) + 0.12 * fl - 0.05 * blur(fl, 2) * (1 - fl) + 0.1 * bo - 0.16 * cr + 0.08 * (clump - 0.5) - 0.1 * oil + 0.04 * (ruts - 0.5)
+    rgb = np.repeat(np.clip(det, 0, 1)[..., None], 3, -1)
+    print("fxsoil mean", round(float(np.clip(det, 0, 1).mean()), 3))
+    save("ex_fxsoil_d", rgb, 86)
+    save("ex_fxsoil_n", normal_from_height(blur(h, 1), 5.0), 88)
+
+
 if __name__ == "__main__":
     os.makedirs(OUT, exist_ok=True)
     which = sys.argv[1:] or ["adobe", "rock", "block", "roof", "grit"]

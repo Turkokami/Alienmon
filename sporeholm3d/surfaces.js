@@ -144,6 +144,7 @@ vec3 triW(vec3 n) { vec3 b = pow(abs(n), vec3(4.0)); return b / (b.x + b.y + b.z
     s_thatch: { d: "ex_spfibre", size: 0.8, detail: true, amt: 0.8, ns: 1.0, mid: 0.471 },
     s_moss: { d: "ex_sploam", size: 2, detail: true, amt: 0.9, ns: 0.8, mid: 0.448, emid: 1 },
     s_ground: { d: "ex_sploam", size: 3, detail: true, amt: 1.1, ns: 0.9, mid: 0.448, emi: 0.85, emid: 1 },
+    f_ground: { d: "ex_fxsoil", size: 3, detail: true, amt: 0.6, ns: 0.6, mid: 0.425, emi: 0.8, emid: 1 },
   };
   const keyOf = (mat, mesh) => (mesh.userData && mesh.userData.surfKey) || mat.userData.surfKey || (mat.map && mat.map.userData && mat.map.userData.surfKey) || null;
   const scan = (root) => {

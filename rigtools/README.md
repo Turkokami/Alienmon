@@ -220,5 +220,11 @@ index.html loads world.js?v=wd14ob, game.js?v=bt8ob, linker-data.js?v=cl1ob. The
     - surfaces.js rules s_cap, s_stalk, s_bark, s_stone, s_wood, s_thatch, s_moss, s_ground. They keep each mesh's own painted colour and spots and add the surface relief on top (detail mode), so no designs change.
     - New emid option: the glow (emissive) of a self-lit surface takes the same light/dark relief, otherwise Sporeholm's glowing caps washed the relief out at night. Used on caps, moss and ground.
     - world.js (Sporeholm kit only, the map function): the kit's stalk, bark, stone, shingle, thatch, moss, plank and door textures, every cap texture and the ground mesh are tagged with those rules.
-    - Seen while testing, already there before this change: black jagged speckles on the grass east of (137, 74), next to the blue tall grass.
+    - Seen while testing, already there before this change: black jagged speckles on the grass east of (137, 74), next to the blue tall grass. They stay with shadows, water and grass hidden, so they are most likely the headless test renderer; check on a real phone before chasing them.
     - index.html: surfaces.js?v=ex9, world.js?v=wd31sp1.
+
+76. Ferrox outdoor surfaces:
+    - Ferrox's riveted plate, rust, patch and shell materials (FXTRI in world.js's fmap) now take relief from their own pictures: one extra blurred texture read per face gives a height, and the shader bends the lighting by it, so rivets, weld seams, dents and rust pits stand off the metal. Strength FXBUMP 0.06, fading out from about 10 m to 29 m so far walls don't glitter. No new textures or meshes.
+    - New ground texture tex/ex_fxsoil (packed rusty dirt, gravel, scrap flakes, bolts, washers, ruts and cracks) as surfaces.js rule f_ground, on Ferrox's open ground only. Town scenes (town: true) keep their painted plaza plates, which the gravel was hiding.
+    - Thalassa's and Neonis's own FXTRI copies are unchanged.
+    - index.html: surfaces.js?v=ex11, world.js?v=wd32fx3.
