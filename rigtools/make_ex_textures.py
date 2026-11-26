@@ -336,6 +336,94 @@ def dxwood():
     save("ex_dxwood_n", normal_from_height(blur(h, 1), 5.0), 90)
 
 
+# ------------------------------------------------------------------ Sporeholm (Nov 26): grey detail layers over the painted colours
+def _stamp(n, items, draw):
+    """Draw shapes onto a wrapping grey canvas (PIL), so the tile repeats seamlessly. Returns a float array 0..1."""
+    from PIL import Image as _I, ImageDraw as _D
+    im = _I.new("L", (n, n), 0); d = _D.Draw(im)
+    for it in items:
+        for ox in (-n, 0, n):
+            for oy in (-n, 0, n):
+                draw(d, it, ox, oy)
+    return np.asarray(im, float) / 255.0
+
+
+def spcap():
+    """Mushroom cap skin: soft lumps, a fine felt of speckle, scattered pores and a few shallow dents. 1.6 m tile, grey detail."""
+    n = N
+    lump = fbm(n, 70, 3)
+    felt = fbm(n, 2.5, 2)
+    pores = np.clip((pnoise(n, 3.0) - 1.3) * 2.0, 0, 1)
+    pores = blur(pores, 1)
+    dent = np.clip(-(fbm(n, 30, 2)) - 0.6, 0, 1)
+    h = 0.6 * lump + 0.12 * felt - 1.1 * pores - 0.5 * dent
+    det = 0.5 + 0.07 * lump + 0.05 * felt - 0.45 * pores - 0.06 * dent
+    rgb = np.repeat(np.clip(det, 0, 1)[..., None], 3, -1)
+    save("ex_spcap_d", rgb, 86)
+    save("ex_spcap_n", normal_from_height(blur(h, 1), 4.0), 88)
+
+
+def spfibre():
+    """Mushroom stalk: long vertical fibres, shallow grooves, a few torn scars. 1.2 m tile, grey detail; fibres run up the image."""
+    n = N
+    fib = fbm(n, 5, 3, aspect=(1.0, 0.05))
+    groove = ridged(n, 26, 3, aspect=(1.0, 0.08))
+    groove = np.clip((groove - 0.75) * 4, 0, 1)
+    scar = np.clip(fbm(n, 40, 3) - 1.1, 0, 1) * 2
+    h = 0.35 * fib - 0.9 * groove - 0.6 * scar
+    det = 0.5 + 0.08 * fib - 0.18 * groove - 0.1 * scar
+    rgb = np.repeat(np.clip(det, 0, 1)[..., None], 3, -1)
+    save("ex_spfibre_d", rgb, 86)
+    save("ex_spfibre_n", normal_from_height(blur(h, 1), 5.0), 88)
+
+
+def spbark():
+    """Old bark: deep vertical furrows between corky plates, cross-cracks on the plates. 1.5 m tile, grey detail."""
+    n = N
+    w = fbm(n, 60, 2) * 18
+    yy, xx = np.mgrid[0:n, 0:n].astype(float)
+    fur = ridged(n, 40, 4, aspect=(1.0, 0.12))
+    fur = np.clip((fur - 0.6) * 2.6, 0, 1)
+    plate = fbm(n, 14, 3)
+    cross = np.clip((ridged(n, 30, 3, aspect=(0.25, 1.0)) - 0.85) * 5, 0, 1) * (1 - fur)
+    h = -1.2 * fur + 0.35 * plate - 0.5 * cross
+    det = 0.5 - 0.3 * fur + 0.06 * plate - 0.12 * cross
+    rgb = np.repeat(np.clip(det, 0, 1)[..., None], 3, -1)
+    save("ex_spbark_d", rgb, 86)
+    save("ex_spbark_n", normal_from_height(blur(h, 1), 7.0), 88)
+
+
+def sploam():
+    """Forest floor under the giant mushrooms: fallen leaves and spore flakes, twigs, moss clumps, small stones. 3 m tile, grey detail."""
+    n = N
+    r = RNG
+    leaves = [(r.uniform(0, n), r.uniform(0, n), r.uniform(6, 15), r.uniform(3, 7), r.uniform(0, 3.14), r.uniform(0.35, 0.8)) for _ in range(900)]
+    def leaf(d, it, ox, oy):
+        x, y, a, b, t, v = it
+        ca, sa = np.cos(t), np.sin(t)
+        pts = [(x + ox + ca * a * np.cos(k / 8 * 6.283) - sa * b * np.sin(k / 8 * 6.283) * (1 - 0.35 * abs(np.cos(k / 8 * 6.283))),
+                y + oy + sa * a * np.cos(k / 8 * 6.283) + ca * b * np.sin(k / 8 * 6.283) * (1 - 0.35 * abs(np.cos(k / 8 * 6.283)))) for k in range(8)]
+        d.polygon(pts, fill=int(v * 255))
+    lf = _stamp(n, leaves, leaf)
+    twigs = [(r.uniform(0, n), r.uniform(0, n), r.uniform(20, 70), r.uniform(0, 3.14), r.integers(1, 3)) for _ in range(90)]
+    def twig(d, it, ox, oy):
+        x, y, L, t, w = it
+        d.line([(x + ox, y + oy), (x + ox + np.cos(t) * L, y + oy + np.sin(t) * L)], fill=255, width=int(w))
+    tw = _stamp(n, twigs, twig)
+    stones = [(r.uniform(0, n), r.uniform(0, n), r.uniform(3, 9)) for _ in range(160)]
+    def stone(d, it, ox, oy):
+        x, y, rr = it
+        d.ellipse([x + ox - rr, y + oy - rr * 0.8, x + ox + rr, y + oy + rr * 0.8], fill=255)
+    st = blur(_stamp(n, stones, stone), 1)
+    mossc = np.clip(fbm(n, 50, 3) * 1.4, 0, 1)
+    crumb = fbm(n, 2, 2)
+    h = 0.5 * lf + 0.6 * tw + 1.0 * st + 0.4 * mossc * fbm(n, 3, 2) + 0.15 * crumb
+    det = 0.5 + 0.2 * (lf - 0.25) - 0.08 * blur(lf, 2) * (1 - lf) + 0.1 * tw - 0.05 * mossc + 0.12 * st + 0.05 * crumb
+    rgb = np.repeat(np.clip(det, 0, 1)[..., None], 3, -1)
+    save("ex_sploam_d", rgb, 86)
+    save("ex_sploam_n", normal_from_height(blur(h, 1), 5.0), 88)
+
+
 if __name__ == "__main__":
     os.makedirs(OUT, exist_ok=True)
     which = sys.argv[1:] or ["adobe", "rock", "block", "roof", "grit"]

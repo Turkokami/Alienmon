@@ -53,9 +53,11 @@ vec3 triW(vec3 n) { vec3 b = pow(abs(n), vec3(4.0)); return b / (b.x + b.y + b.z
   // replace: the texture is the colour (times the material colour, and the merged statics' per-vertex colour after it)
   const FRAG_REPLACE = FRAG_UV + "  diffuseColor *= trC;\n";
   // detail: whatever colour the surface already worked out (its painted map, or a world's own swatch) times the texture's light and shade
-  const FRAG_DETAIL = FRAG_UV + `  float trL = dot(trC.rgb, vec3(0.299, 0.587, 0.114));
-  diffuseColor.rgb *= clamp(1.0 + (trL - triDetailMid) * triDetail, 0.35, 1.6);
+  const FRAG_DETAIL = FRAG_UV + `  float trL = dot(trC.rgb, vec3(0.299, 0.587, 0.114)); float trF = clamp(1.0 + (trL - triDetailMid) * triDetail, 0.35, 1.6);
+  diffuseColor.rgb *= trF;
 `;
+  // Nov 26: self-lit surfaces (Sporeholm's glowing caps and night ground) take the same light and shade on their glow, or the detail only shows in daylight
+  const FRAG_EMI = "#include <emissivemap_fragment>\n  totalEmissiveRadiance *= mix(1.0, trF, triEmiD);\n";
   // the Dustara and Ferrox swatch shaders (DXTRI / FXTRI in world.js) put their own triplanar block where <map_fragment> was
   const SWATCH_BLOCK = /\{ vec3 bw = pow\(abs\(fxN\)[\s\S]*?diffuseColor \*= tx; \}/;
   // normal: whiteout-blended triplanar normal map, built in world space, then turned into view space
@@ -91,13 +93,13 @@ vec3 triW(vec3 n) { vec3 b = pow(abs(n), vec3(4.0)); return b / (b.x + b.y + b.z
       sh.uniforms.triMap = { value: dT }; sh.uniforms.triNorm = { value: nT };
       sh.vertexShader = VERT_DECL + sh.vertexShader.replace("#include <project_vertex>", "#include <project_vertex>" + VERT_BODY);
       let f = sh.fragmentShader;
-      if (o.detail) f = f.replace("#include <color_fragment>", FRAG_DETAIL + "#include <color_fragment>");
+      if (o.detail) { f = f.replace("#include <color_fragment>", FRAG_DETAIL + "#include <color_fragment>"); if (o.emid) f = f.replace("#include <emissivemap_fragment>", FRAG_EMI); }
       else if (f.indexOf("#include <map_fragment>") >= 0) f = f.replace("#include <map_fragment>", FRAG_REPLACE);
       else if (SWATCH_BLOCK.test(f)) f = f.replace(SWATCH_BLOCK, FRAG_REPLACE);
       else f = f.replace("#include <color_fragment>", FRAG_REPLACE + "#include <color_fragment>");
-      sh.fragmentShader = FRAG_DECL + "#define triDetailMid " + mid.toFixed(3) + "\n" + f.replace("#include <normal_fragment_maps>", FRAG_NORMAL);
+      sh.fragmentShader = FRAG_DECL + "#define triDetailMid " + mid.toFixed(3) + "\n#define triEmiD " + (o.emid || 0).toFixed(2) + "\n" + f.replace("#include <normal_fragment_maps>", FRAG_NORMAL);
     };
-    mat.customProgramCacheKey = () => "surf" + (o.detail ? "D" : "R") + mid.toFixed(3) + "|" + (prevKey ? prevKey.call(mat) : "");
+    mat.customProgramCacheKey = () => "surf" + (o.detail ? "D" : "R") + mid.toFixed(3) + "e" + (o.emid || 0) + "|" + (prevKey ? prevKey.call(mat) : "");
     mat.needsUpdate = true;
     return mat;
   };
@@ -133,6 +135,15 @@ vec3 triW(vec3 n) { vec3 b = pow(abs(n), vec3(4.0)); return b / (b.x + b.y + b.z
     dx_wood: { d: "ex_dxwood", size: 1.6, ns: 1.0 },
     dx_rock: { d: "ex_rock", size: 6, detail: true, amt: 0.55, ns: 1.2, mid: 0.42 },
     dx_sand: { d: "ex_grit", size: 3, detail: true, amt: 0.9, ns: 0.8 },
+    // Sporeholm (Nov 26): the painted colours stay; each surface gains its own light and shade and relief (rigtools/make_ex_textures.py sp*)
+    s_cap: { d: "ex_spcap", size: 1.6, detail: true, amt: 1.4, ns: 1.4, mid: 0.467, emid: 1 },
+    s_stalk: { d: "ex_spfibre", size: 1.2, detail: true, amt: 0.9, ns: 0.9, mid: 0.471 },
+    s_bark: { d: "ex_spbark", size: 1.4, detail: true, amt: 0.9, ns: 1.2, mid: 0.416 },
+    s_stone: { d: "ex_rock", size: 3, detail: true, amt: 0.7, ns: 1.0, mid: 0.384 },
+    s_wood: { d: "ex_dxwood", size: 1.6, detail: true, amt: 0.5, ns: 0.9, mid: 0.45 },
+    s_thatch: { d: "ex_spfibre", size: 0.8, detail: true, amt: 0.8, ns: 1.0, mid: 0.471 },
+    s_moss: { d: "ex_sploam", size: 2, detail: true, amt: 0.9, ns: 0.8, mid: 0.448, emid: 1 },
+    s_ground: { d: "ex_sploam", size: 3, detail: true, amt: 1.1, ns: 0.9, mid: 0.448, emi: 0.85, emid: 1 },
   };
   const keyOf = (mat, mesh) => (mesh.userData && mesh.userData.surfKey) || mat.userData.surfKey || (mat.map && mat.map.userData && mat.map.userData.surfKey) || null;
   const scan = (root) => {

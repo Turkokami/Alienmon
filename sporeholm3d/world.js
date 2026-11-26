@@ -170,6 +170,7 @@ const MK = {}; const mk = () => { if (MK.ok) return MK; MK.ok = true;
     plank: std({ map: rep(boards(512, 512, 6, false, 26, 34), 0.5, 0.5) }), door: std({ map: boards(256, 512, 4, true, 22, 30) }), rope: std({ color: "#c8a868", roughness: 0.9 }), iron: std({ color: "#2e2a26", roughness: 0.45, metalness: 1 }),
     amber: glowM("#ffb347", 1.6), amberSoft: std({ color: "#ffd27a", emissive: "#ffb347", emissiveIntensity: 0.9 }), moss: std({ map: MK.mossT, roughness: 1 }), moss2: std({ map: MK.mossT, color: "#c8ffb0", roughness: 1 }), leaf: std({ color: "#3e8a2e", side: THREE.DoubleSide, roughness: 0.8 }),
     glass: std({ color: "#bfe8ff", transparent: true, opacity: 0.28, roughness: 0.05, metalness: 0, side: THREE.DoubleSide, depthWrite: false }), jar: std({ color: "#c8fff0", emissive: "#7af0d8", emissiveIntensity: 1.4, transparent: true, opacity: 0.85, roughness: 0.1 }) };
+  for (const [t, k] of [[MK.stalkT, "s_stalk"], [MK.barkT, "s_bark"], [MK.stoneT, "s_stone"], [MK.shingleT, "s_wood"], [MK.thatchT, "s_thatch"], [MK.mossT, "s_moss"], [MK.M.plank.map, "s_wood"], [MK.M.door.map, "s_wood"]]) if (t) t.userData.surfKey = k; if (ASSETS.surf) ASSETS.surf.init(THREE); // Nov 26: outdoor relief (surfaces.js)
   MK.cap = {}; MK.capM = (c) => MK.cap[c] || (MK.cap[c] = (() => { const C = new THREE.Color(c), sh = (k, l = 0) => { const q = C.clone(); const h = {}; q.getHSL(h); q.setHSL((h.h + l + 1) % 1, Math.min(1, h.s * 1.15), Math.min(0.92, Math.max(0.05, h.l * k))); return "#" + q.getHexString(); };
     const t = tex(512, 512, (g, W, Hh) => { const T = Hh * 0.6; // top surface: crown at y = 0, rim at y = T; underside below
       const gr = g.createLinearGradient(0, 0, 0, T); gr.addColorStop(0, sh(1.45, 0.02)); gr.addColorStop(0.25, sh(1.15)); gr.addColorStop(0.7, sh(0.9)); gr.addColorStop(0.93, sh(0.55, -0.03)); gr.addColorStop(1, sh(0.42, -0.04)); g.fillStyle = gr; g.fillRect(0, 0, W, T + 6);
@@ -180,7 +181,7 @@ const MK = {}; const mk = () => { if (MK.ok) return MK; MK.ok = true;
       const rl = g.createLinearGradient(0, T - 14, 0, T); rl.addColorStop(0, "rgba(255,255,255,0)"); rl.addColorStop(1, "rgba(255,255,255,0.35)"); g.fillStyle = rl; g.fillRect(0, T - 14, W, 14);
       // underside: pale gills fanning from the stalk (bottom of the image) out to the rim
       const ug = g.createLinearGradient(0, T, 0, Hh); ug.addColorStop(0, "#e8d4b8"); ug.addColorStop(1, "#b89878"); g.fillStyle = ug; g.fillRect(0, T + 6, W, Hh - T); for (let x = 0; x < W; x += 4 + R() * 4) { g.strokeStyle = `rgba(110,75,50,${0.25 + R() * 0.3})`; g.lineWidth = 1.5; g.beginPath(); g.moveTo(x, T + 6); g.lineTo(x + (R() - 0.5) * 4, Hh); g.stroke(); } g.fillStyle = sh(0.4); g.fillRect(0, T, W, 7); hp(g, W, Hh, false, 0.7); });
-    return std({ map: t, emissive: "#ffffff", emissiveMap: t, emissiveIntensity: 0.34, roughness: 0.55 }); })());
+    t.userData.surfKey = "s_cap"; return std({ map: t, emissive: "#ffffff", emissiveMap: t, emissiveIntensity: 0.34, roughness: 0.55 }); })());
   MK.glow = {}; MK.glowC = (c, i = 1.6) => MK.glow[c + i] || (MK.glow[c + i] = glowM(c, i));
   MK.icons = {}; return MK; };
 // ---------- icon signs (pictures only, no writing) ----------
@@ -306,7 +307,7 @@ const PATC = {}; const groundFor = (sx, sy) => { const GGstart = GG.length; cons
       for (const f of PAINT) f.glow && f.glow(g, sx, sy, S); });
   // the ground itself: a displaced heightfield (hills, basins, rolling paths)
   const SEGS = 90, pg = new THREE.PlaneGeometry(30, 30, SEGS, SEGS); pg.rotateX(-Math.PI / 2); { const P = pg.attributes.position; for (let i = 0; i < P.count; i++) P.setY(i, GHTG(sx + 15 + P.getX(i), sy + 15 + P.getZ(i))); pg.computeVertexNormals(); }
-  if (H && H.bakeOut) H.bakeOut[sx + "," + sy] = { map: map.image, emi: emi.image }; const m = new THREE.Mesh(pg, std({ map, emissive: "#ffffff", emissiveMap: emi, emissiveIntensity: 0.6, roughness: 0.85 })); m.position.set(sx + 15, 0, sy + 15); m.receiveShadow = true; m.name = "ground"; m.userData.rect = [sx, sy]; root.add(m); if (H && H.stand) return;
+  if (H && H.bakeOut) H.bakeOut[sx + "," + sy] = { map: map.image, emi: emi.image }; const m = new THREE.Mesh(pg, std({ map, emissive: "#ffffff", emissiveMap: emi, emissiveIntensity: 0.6, roughness: 0.85 })); m.position.set(sx + 15, 0, sy + 15); m.receiveShadow = true; m.name = "ground"; m.userData.rect = [sx, sy]; m.userData.surfKey = "s_ground"; if (m.material.map) m.material.map.userData.surfKey = "s_ground"; root.add(m); if (H && H.stand) return;
   for (let y = 0; y < 30; y++) for (let x = 0; x < 30; x++) { const c = tt(x, y); if (c !== "." ) continue; let edge = false; for (const [dx, dy] of [[1, 0], [-1, 0], [0, 1], [0, -1]]) if (isPathLike(tt(x + dx, y + dy))) edge = true; if (edge && R() < 0.3) glowcaps(sx + x + 0.5, sy + y + 0.5, 3 + Math.floor(R() * 4), bio ? BIOCAPS[bio] : undefined, 0.7); }
   // glowgrass blades on every g tile, boardwalk planks on every k tile
   for (let y = 0; y < 30; y++) for (let x = 0; x < 30; x++) if (tt(x, y) === "g") glowgrassTile(sx + x, sy + y);

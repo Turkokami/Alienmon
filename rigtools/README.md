@@ -214,3 +214,11 @@ index.html loads world.js?v=wd14ob, game.js?v=bt8ob, linker-data.js?v=cl1ob. The
     - Those walls are now three rows high with a talus that flares out toward the ground, noise relief that matches at shared corners, red rock strata bands that darken toward the foot, and the far-rock surface texture ("d_far" in surfaces.js). Building walls (cream, not red) keep their own colour with the same light-to-dark shading.
     - No new meshes or draw calls; the stand-ins use about three times the vertices on their sides only. Frame rate in the market test view unchanged.
     - index.html: world.js?v=wd30rk1.
+
+75. Sporeholm outdoor surfaces (first world after Dustara in the outdoor detail pass):
+    - Four new painted-and-bumped surface textures made in house by make_ex_textures.py (tex/ex_spcap, ex_spfibre, ex_spbark, ex_sploam, 1024 px, diffuse plus normal): mushroom-cap felt with pores and dents, stalk fibre with long grooves, bark furrows with cross cracks, and forest loam with fallen leaves, twigs, pebbles and moss.
+    - surfaces.js rules s_cap, s_stalk, s_bark, s_stone, s_wood, s_thatch, s_moss, s_ground. They keep each mesh's own painted colour and spots and add the surface relief on top (detail mode), so no designs change.
+    - New emid option: the glow (emissive) of a self-lit surface takes the same light/dark relief, otherwise Sporeholm's glowing caps washed the relief out at night. Used on caps, moss and ground.
+    - world.js (Sporeholm kit only, the map function): the kit's stalk, bark, stone, shingle, thatch, moss, plank and door textures, every cap texture and the ground mesh are tagged with those rules.
+    - Seen while testing, already there before this change: black jagged speckles on the grass east of (137, 74), next to the blue tall grass.
+    - index.html: surfaces.js?v=ex9, world.js?v=wd31sp1.
