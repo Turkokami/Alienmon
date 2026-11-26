@@ -193,3 +193,12 @@ index.html loads world.js?v=wd14ob, game.js?v=bt8ob, linker-data.js?v=cl1ob. The
     - world.js horizon (stand pass): the purple Sunset Range east of town is a third of its old height (front row 14-42 m, was 45-130 m; back row 12-20 m, was 26-44 m), so it sits low on the skyline and the pink sky shows above it when you look east or up.
     - Found while checking: from the plaza the camera's default tilt shows only about 9° above the horizon, and the town's own ring of mesa cliffs (22-30 m, 70-110 m away) fills that. Dragging the view up shows the sky; the cliffs themselves are town layout and stay.
     - index.html: world.js?v=wd30sk1.
+
+72. Map screen (M, or the Map button):
+    - New mapview.js: the map is now a real top-down picture of the whole world, baked from the game itself (map/<world>/: overview.webp plus 30 m tiles at 16 px per metre, about 30 KB each). Drag to look around; pinch, the wheel, + and − zoom from the whole world down to about 28 px per metre, and the sharp tiles load only for the part you're looking at. The target button jumps back to you.
+    - Fog of war: everything is dark until you've walked within about 24 m of it outdoors; it's saved per world (localStorage am_fog_<world>).
+    - Your arrow points the way you face. Inside a building or cave you show at its door.
+    - Key places are named once found, coloured by kind: Home (teal), shops (gold), arenas and the tower (coral), the Recovery Bay (green), caves and tunnels (violet). Names come from each door's label or the place's own name.
+    - linker.js opens it in place of the old block map (mode "map2"; M, Enter or Back closes, arrows/WASD pan, Q/R or +/− zoom) and keeps the old map for any world without a baked picture.
+    - Baked so far: Dustara (9 × 12 tiles, 2.3 MB of tiles, 0.6 MB overview). The baker (bake.js / stitch.py) stays outside the repo.
+    - index.html: mapview.js?v=1, linker.js?v=mv1.

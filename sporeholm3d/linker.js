@@ -67,7 +67,7 @@
     const ld = document.getElementById("load"); if (ld && ld.style.display !== "none" && ld.getClientRects().length && getComputedStyle(ld).display !== "none") return true;
     return false;
   };
-  const close = () => { mode = null; ov.style.display = "none"; ov.innerHTML = ""; if (voice) { try { voice.pause() } catch {} voice = null } };
+  const close = () => { if (window.MAPVIEW) window.MAPVIEW.hide(); mode = null; ov.style.display = "none"; ov.innerHTML = ""; if (voice) { try { voice.pause() } catch {} voice = null } };
   const typeChips = sp => types(sp).map(t => `<span class="lk-type" style="background:${TYPE_COL[t] || "#9fb8c8"}">${t}</span>`).join("");
   const counts = () => { const L = LOG(), S = SEEN(); const caught = Object.keys(L).filter(k => L[k] > 0).length; const seen = new Set([...Object.keys(S), ...Object.keys(L)]).size; return { caught, seen } };
   const entry = (sp, isNew) => {
@@ -174,6 +174,7 @@
   const ZCOL = ["#2f6f5a", "#6a5a2f", "#3a4f7a", "#7a3f4f", "#4f6a2f", "#5a3f7a", "#2f5f7a", "#7a5f2f", "#3f7a6a", "#6a2f5a"];
   const openMap = () => {
     if (!window.GAME || !window.GAME.res) return;
+    if (window.MAPVIEW && window.MAPVIEW.open()) { mode = "map2"; ov.style.display = "none"; ov.innerHTML = ""; return }
     mode = "map";
     const R = window.GAME.res.rects, P = window.GAME.P.position;
     const keys = Object.keys(R).filter(k => Array.isArray(R[k]));
@@ -224,6 +225,7 @@
       if (mode === "entry") { if (ok || back) { close(); setTimeout(poll, 50) } return }
       if (mode === "dexEntry") { if (ok || back) openDex(); return }
       if (mode === "map") { if (c === "KeyM" || back || ok) close(); return }
+      if (mode === "map2") { if (c === "KeyM" || back || ok) close(); else window.MAPVIEW.key(c); return }
       if (mode === "help") { if (back || ok) openMenu(); return }
       if (mode === "newgame") {
         if (/Arrow(Up|Down)|Key[WS]/.test(c)) { ngSel = 1 - ngSel; sfx("ui/ui_move.mp3", 0.4); drawNewGame() }
