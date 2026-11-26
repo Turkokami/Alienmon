@@ -289,3 +289,19 @@ index.html loads world.js?v=wd14ob, game.js?v=bt8ob, linker-data.js?v=cl1ob. The
 - Sola (DB4, `ae(105.2,44.5)`): checked, she stands on open walkable ground; the play bot's flag came from `canStand`, not from walking. No change.
 - game.js: `GAME.IP(x,z,y,dx,dz)` exposes the move check (debug). `window.__unstuck` counts rescues.
 - index.html: game.js?v=bt21bv.
+
+## 86. Dustara play-test fixes: doors, walls, bridge, Stargazers' Hill, Sola, EXP Link (Nov 26)
+- House exit: the door and its surround are solid, so the exit trigger sits on the doorstep and Rook comes out in front of his own door (it used to drop him at the Alienmon center).
+- Seedpod Fountain paving: each corner of the overlay goes to the bent ground at its own spot (no more floating rim).
+- Doors game-wide (world.js portals): every door that leads inside gets a blacked-out doorway in its wall with a solid surround, plus a glowing ring on the ground in front. Step on the ring to go in. The observatory door now meets its curved wall (surround runs 4.4 m back).
+- Walls game-wide (game.js `cu` walls): building shells and surrounds count as walls for movement, so you can't walk through the observatory or other shells.
+- Bridges and paths: long thin pieces (rails, ropes, cables, fences, kerbs) follow the terrain bend vertex by vertex so they stay on their posts; moved pieces also turn with the bend so steps and fence runs stay square (no saw-tooth). Canyon stairs to the bridge use the same helper.
+- Dustmere Bridge (DB3): the book's night picture: carved spirals glow at night; by day they are plain carvings in the stone.
+- Stargazers' Hill (DB1 terrace, about 8.2, 39.1): a big brass refractor in the middle aimed at the observatory mesa, 4 smaller telescopes round the rim, 4 benches set inward between them.
+- Sola (both battles): `mustLose`, `plazmo` flags. Plazmo always leads, no Team button, no "choose who goes next", the foe can't be knocked out (damage, recoil and burn stop at 1 HP), and the loss goes straight to the lose lines and cutscene. Both battles had win branches before. Play bot: lost=1 after 4 turns, no menus after the faint.
+- Dr. Vashti (game.js `J`): a story character that spawned before its room loaded took the wrong floor height. It now settles on the real floor once the room is there (skips sitting actors and anyone with `noSnap`; Tamsin has `noSnap`).
+- Tamsin (tamsin-seat.js): both hands rest in her lap, apple in the right hand. Lifting the hand to her chin pulled her face and chest out of shape. Two UniRig rebuilds of her model failed ("no skeleton"), so she keeps her current rig.
+- EXP Link (game.js `An`), as in the original game: the Alienmon in battle gets the full XP, every other partner that hasn't fainted gets half. "The rest of your team gained XP through EXP Link." shows once per battle, then each partner's own level-ups and new moves. Play bot: passed.
+- Wall check (play bot, 7 Dustara areas, 3,408 test walks toward nearby objects): no walk-through on any solid wall or building shell. The only flags were ground overlays that are meant to be walked over, and points inside the observatory dome's own floor, which you can't reach from outside.
+- Cactling scene: the graphic novel has no Chapter 4 pages (art/gn has E01-E14 except E04), so no comic panels were added.
+- index.html: world.js?v=wd37, game.js?v=bt22bv, tamsin-seat.js?v=2.

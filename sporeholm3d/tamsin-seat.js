@@ -122,11 +122,12 @@
     aim(T, b.R_Thigh, b.R_Calf, fw.clone().add(new T.Vector3(0, -0.12, 0)).addScaledVector(rt, -0.08));
     aim(T, b.L_Calf, b.L_Foot, down.clone().addScaledVector(fw, 0.18));
     aim(T, b.R_Calf, b.R_Foot, down.clone().addScaledVector(fw, 0.05));
-    // left hand rests on the knee, right hand holds the apple up near the chin
-    aim(T, b.L_Upperarm, b.L_Forearm, down.clone().addScaledVector(fw, 0.55).addScaledVector(rt, 0.15));
-    aim(T, b.L_Forearm, b.L_Hand, fw.clone().add(new T.Vector3(0, -0.35, 0)));
-    aim(T, b.R_Upperarm, b.R_Forearm, down.clone().addScaledVector(fw, 0.35).addScaledVector(rt, -0.12));
-    aim(T, b.R_Forearm, b.R_Hand, new T.Vector3(0, 1, 0).addScaledVector(fw, 0.55).addScaledVector(rt, 0.2));
+    // README 86: both hands rest in her lap, the apple in her right hand. Lifting the hand to her chin pulled the face and chest
+    // of the skinned model out of shape, so the arms now only swing a little forward from where the rig holds them.
+    aim(T, b.L_Upperarm, b.L_Forearm, down.clone().addScaledVector(fw, 0.32).addScaledVector(rt, 0.1));
+    aim(T, b.L_Forearm, b.L_Hand, fw.clone().add(new T.Vector3(0, -0.45, 0)).addScaledVector(rt, -0.15));
+    aim(T, b.R_Upperarm, b.R_Forearm, down.clone().addScaledVector(fw, 0.32).addScaledVector(rt, -0.1));
+    aim(T, b.R_Forearm, b.R_Hand, fw.clone().add(new T.Vector3(0, -0.4, 0)).addScaledVector(rt, 0.15));
     var hip = b.L_Thigh || b.Hip;
     if (hip) { G.updateMatrixWorld(true); var hy = hip.getWorldPosition(new T.Vector3()).y; G.position.y += (ground + 0.46) - hy; G.updateMatrixWorld(true); }
     if (rock && hip) {
