@@ -135,3 +135,11 @@ index.html loads world.js?v=wd14ob, game.js?v=bt8ob, linker-data.js?v=cl1ob. The
     - cutaway.js: hides the tagged pieces on the camera's side (world-space boxes); restores them when the camera moves.
     - index.html loads roomkit.js?v=rk7, world.js?v=wd20ob, game.js?v=bt9ob, cutaway.js?v=3.
 
+
+## Nov 26 Dustara outdoor surfaces (now live; port into the PC source)
+
+61. Outdoor surfaces at the interiors' level of detail, with no new meshes or draw calls:
+    - new `sporeholm3d/surfaces.js` (loaded before world.js): a world-space (triplanar) shader patch with colour and normal maps. It finds tagged surfaces in the scene every 1.5 s and upgrades their material once, so streamed scenes, walk-ins and merged statics all get it. It chains any patch a material already has (the merged statics' per-vertex glow, Dustara's swatch shader). Phones load the textures at 512 px.
+    - new textures `sporeholm3d/tex/ex_*.webp` (adobe, rock, block, roof, grit, dxstone, dxwood; colour + normal), all drawn from noise by `rigtools/make_ex_textures.py`. No photos, no outside art.
+    - world.js (Dustara `dmap` only): tags the painted textures in `mk()` (adobe, stone, rock, stalk, shingle), the canyon wall canvas, each ground mesh and its map, the far mesa material (`OBS2.stand`), and the swatch textures through `DXSURF` in `dxT()`. Sandstone domes and walls and the boards are redrawn at full detail in the swatches' own colours; the red rock and canyon keep their own colours and gain rock bedding and relief; the ground gains grain, pebbles and small cracks.
+    - index.html loads surfaces.js?v=ex7 and world.js?v=wd23ex.
