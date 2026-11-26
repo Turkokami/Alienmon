@@ -253,3 +253,25 @@ index.html loads world.js?v=wd14ob, game.js?v=bt8ob, linker-data.js?v=cl1ob. The
 - game.js (the shared wind shader `windify`): mode 0 swayed by `pow(clamp(wp.y,0,8),2)*0.05` of WORLD height, so any bush or tuft standing on raised ground (terraces, mesas: y up to 8+) swung up to ~3 m. It now uses height above the plant's own base (`wp.y - wb.y`, base from instanceMatrix/modelMatrix), clamped to 3 m, times 0.012: bases stay locked to the ground and tops move a few cm. Mode 1 (tall grass) cut from `pow(y,1.5)*0.14` to `pow(clamp(y,0,2),1.5)*0.04`.
 - world.js (DA6 observatory): the fitted door sat inside the 2.2x walls, so the wall under the telescope sign was blank. A gold-framed arched double door (2.5 x 3.5 m, brass bar, ring handles, hinge straps, turquoise glass diamonds) and a sandstone step now stand at x 168.46, z 15.75 (the wall leans out at its foot), on a 1.4 m deep sandstone surround. The group is `noLift` and placed at GHT height, so the path guard does not strip it.
 - index.html: world.js?v=wd34b, game.js?v=bt17bv.
+
+## 81. Canyon water, canyon steps, Canyon Garden, Rook's house moved, Vashti's scope scene, wider switchbacks (Nov 26)
+- world.js `canyonFloor`: the canyon floor is water now, a slow turquoise river (scrolling ripple texture, merged quads over the c / deep-k / fissure tiles at CANYON_Y + 0.14; the fissure runs deeper at CANYON_Y - 0.95) with a few teal lights. It was an orange glow. Name "water", noLift.
+- world.js dRim falls: each fall runs down to the water and lands in foam (new `D.foam`: two pulsing radial-gradient discs). The fall texture's bottom is white-teal water, not orange. Fissure glow discs and lights recoloured teal.
+- Canyon steps: `cIsStep` now includes row 49, so the top step meets the bridge deck (it stopped one canyon tile short and you hit a wall). The deck's south rail stops 2.9 m short of its west end, so its posts no longer stand across the top step. Walk-tested both ways.
+- Canyon Garden (DC3, `DXPARK`): four patches of tall grass ("oasis" table: wild Alienmon) on the canyon floor along the water, six stone-and-wood benches facing the fissure stream, ferns and tufts, four blue lamps and a CANYON GARDEN sign. Floor clutter skips the grass. Walk-tested on the floor and over the carved bridge.
+- Rook's house (Your House) moved from the plaza (DB2) to DB1 (it swapped places with the Scholar's Home and Cottage), so the sneak to the canyon bridge crosses the whole town (about 48 tiles, was 27). OUTPORTALS, map/dustara/info.json, game.js objectives, markers, Mom's outdoor spot, the door manifest, the new-game spawn and "west of the plaza" wording all point at DB1 (door at 22.68, 54.62). Door portal tested.
+- game.js: Vashti's telescope scene (watching Rook) now plays once, right after Rook leaves the lab (`r.flags.scopeDue`), not when he first steps on the bridge.
+- world.js DA5 switchbacks: trail half-width 1.25 -> 1.55 with a softer edge blend, and the crystals on the trail scenes (DA5/DA6 top row) are 0.42x size so the path stays in view.
+- index.html: world.js?v=wd35c, game.js?v=bt18bv.
+
+## 82. Seedpod Fountain rebuilt (Nov 26)
+- world.js (DB2 plaza): the egg-shaped seedpod statue is replaced by a landmark fountain on the same 3.1 m footprint: an eight-sided carved sandstone basin with a brass lip and glowing turquoise swirl panels, a fluted column, a brass upper bowl spilling eight thin falls, and on top a golden Starfall seedpod opening in six petals round a glowing violet crystal heart, circled by a tilted brass ring.
+
+## 83. Bigger Dustara houses, crystals kept out of walls (Nov 26)
+- world.js `dHouse` (Dustara only): walk-in houses with a fixed front now build at 1.45x (about 2.1x the floor area). The front door stays where it was; the house grows back and to the sides (`fungal` option `grow`, applied after the walk-in scale, cz moved back by the extra depth), so doors, door portals, OUTPORTALS, paths and NPC spots are unchanged. Interiors are separate rooms and do not change.
+- Not grown: the observatory, the tower, the Courier Relay Hut and other `walkin: false` stalls, houses placed with `dirFixed: false`, and twelve houses packed against a neighbour where there is no room (Dustmere Shop, Reyes House, Scholar's Home, Scholar's Cottage, Farm Store, Farm Kid's Family Home, the Port Ember row of four, Palm Isle Recovery Hut, Islander's Stilt Hut): these pass `grow: 1`.
+- Overlap check (`GAME.WK()` walk-in shells over every loaded chunk): no new overlaps; the two touching pairs that remain (Dustmere Shop / Reyes House, Farm Store / Farm Kid's Family Home) already touched before.
+- `?dgrow=N` overrides the scale for testing (`?dgrow=1` = old sizes).
+- world.js dxPass crystals: every building group registers in `D.BLD`; a crystal cluster whose footprint (size x 1.1 + 0.2 m) reaches a building's box is skipped, so no crystal pokes through a wall. The random stream is unchanged, so the other crystals stay where they were.
+- game.js: `GAME.WK()` returns the loaded walk-in shells (debug).
+- index.html: world.js?v=wd36d, game.js?v=bt19bv (also covers 81 and 82).
