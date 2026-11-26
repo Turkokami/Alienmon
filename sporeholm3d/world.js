@@ -4942,12 +4942,14 @@ const wildSign = (x, z, ry = 0, c = "#c8f06a") => { const G = grp(x, 0, z, ry), 
 // Each place is its own small world far from the region (x >= 400), built on a tile grid of its own.
 // Tiles: '#' wall, ' ' void (a drop), '.' floor, ',' stone floor, 'g' glowgrass, 'b' bridge, 'v' violet safe-path moss,
 //        'w' water, 'o' solid obstacle, 'S' stairs / hatch / doorway (walkable).
-const PLACE = {}; const PLW = (w, d, c = "#") => Array.from({ length: d }, () => Array(w).fill(c));
-const pRect = (g, x0, y0, x1, y1, c = ".") => { for (let y = Math.max(0, y0); y <= Math.min(g.length - 1, y1); y++) for (let x = Math.max(0, x0); x <= Math.min(g[0].length - 1, x1); x++) g[y][x] = c; };
-const pCirc = (g, cx, cy, r, c = ".", ry = r) => { for (let y = 0; y < g.length; y++) for (let x = 0; x < g[0].length; x++) if (((x + 0.5 - cx) / r) ** 2 + ((y + 0.5 - cy) / ry) ** 2 < 1) g[y][x] = c; };
-const pPath = (g, pts, w = 4, c = ".") => { for (let k = 0; k + 1 < pts.length; k++) { const [x0, y0] = pts[k], [x1, y1] = pts[k + 1], n = Math.ceil(Math.hypot(x1 - x0, y1 - y0) * 2); for (let i = 0; i <= n; i++) { const x = x0 + ((x1 - x0) * i) / n, y = y0 + ((y1 - y0) * i) / n; pCirc(g, x, y, w / 2, c); } } };
+const PLACE = {}; let PSC = 1; /* grid scale while a grown place draws its grid */ const PLW = (w, d, c = "#") => Array.from({ length: Math.round(d * PSC) }, () => Array(Math.round(w * PSC)).fill(c));
+const pRect = (g, x0, y0, x1, y1, c = ".") => { if (PSC !== 1) { x0 = Math.floor(x0 * PSC); y0 = Math.floor(y0 * PSC); x1 = Math.ceil((x1 + 1) * PSC) - 1; y1 = Math.ceil((y1 + 1) * PSC) - 1; } for (let y = Math.max(0, y0); y <= Math.min(g.length - 1, y1); y++) for (let x = Math.max(0, x0); x <= Math.min(g[0].length - 1, x1); x++) g[y][x] = c; };
+const pCirc = (g, cx, cy, r, c = ".", ry = r) => { if (PSC !== 1) { cx *= PSC; cy *= PSC; r *= PSC; ry *= PSC; } for (let y = 0; y < g.length; y++) for (let x = 0; x < g[0].length; x++) if (((x + 0.5 - cx) / r) ** 2 + ((y + 0.5 - cy) / ry) ** 2 < 1) g[y][x] = c; };
+const pPath = (g, pts, w = 4, c = ".") => { if (PSC !== 1) { const s0 = PSC; pts = pts.map(([x, y]) => [x * s0, y * s0]); w *= s0; PSC = 1; try { return pPath(g, pts, w, c); } finally { PSC = s0; } } for (let k = 0; k + 1 < pts.length; k++) { const [x0, y0] = pts[k], [x1, y1] = pts[k + 1], n = Math.ceil(Math.hypot(x1 - x0, y1 - y0) * 2); for (let i = 0; i <= n; i++) { const x = x0 + ((x1 - x0) * i) / n, y = y0 + ((y1 - y0) * i) / n; pCirc(g, x, y, w / 2, c); } } };
 // wobble the carved edges so caves never look like rooms
-const pRough = (g, amt = 0.35, seed = 1) => { const H = g.length, W = g[0].length, o = g.map((r) => r.slice()); for (let y = 1; y < H - 1; y++) for (let x = 1; x < W - 1; x++) { if (o[y][x] !== "#") continue; let n = 0; for (const [dx, dy] of [[1, 0], [-1, 0], [0, 1], [0, -1]]) if (o[y + dy][x + dx] === ".") n++; if (n >= 2 && fbm(x * 0.4 + seed, y * 0.4, seed) > 0.5 - amt) g[y][x] = "."; } };
+const oCirc = (g, x, y, r) => { const s = PSC; PSC = 1; try { pCirc(g, x * s, y * s, r, "o"); } finally { PSC = s; } };
+const oRect = (g, x0, y0, x1, y1) => { const s = PSC, cx = ((x0 + x1 + 1) / 2) * s, cy = ((y0 + y1 + 1) / 2) * s, hw = (x1 - x0 + 1) / 2, hh = (y1 - y0 + 1) / 2; PSC = 1; try { pRect(g, Math.round(cx - hw), Math.round(cy - hh), Math.round(cx + hw) - 1, Math.round(cy + hh) - 1, "o"); } finally { PSC = s; } };
+const pRough = (g, amt = 0.35, seed = 1) => { const H = g.length, W = g[0].length, o = g.map((r) => r.slice()); for (let y = 1; y < H - 1; y++) for (let x = 1; x < W - 1; x++) { if (o[y][x] !== "#") continue; let n = 0; for (const [dx, dy] of [[1, 0], [-1, 0], [0, 1], [0, -1]]) if (o[y + dy][x + dx] === ".") n++; if (n >= 2 && fbm((x * 0.4) / PSC + seed, (y * 0.4) / PSC, seed) > 0.5 - amt) g[y][x] = "."; } };
 const PX0 = 400, PZ0 = 400; let PK = 0;
 const defPlace = (id, o) => { o.id = id; o.ox = PX0 + PK * 80; o.oz = PZ0; PK++; PLACE[id] = o; };
 
@@ -4956,7 +4958,7 @@ const defPlace = (id, o) => { o.id = id; o.ox = PX0 + PK * 80; o.oz = PZ0; PK++;
 
 // where the doors are out in the world (authored grid coordinates; the game bends them onto the ground)
 const OUTPORTALS = [];
-const placeMeta = () => Object.fromEntries(Object.values(PLACE).map((p) => [p.id, { id: p.id, name: p.name, ox: p.ox, oz: p.oz, w: p.w, d: p.d, indoor: p.indoor, style: p.style, arrive: Object.fromEntries(Object.entries(p.arrive).map(([k, [x, y, yw]]) => [k, [p.ox + x, p.oz + y, yw]])), portals: p.portals.map((q) => ({ x: p.ox + q.t[0], z: p.oz + q.t[1], to: q.to, label: q.label })) }]));
+const placeMeta = () => Object.fromEntries(Object.values(PLACE).map((p) => [p.id, { id: p.id, name: p.name, ox: p.ox, oz: p.oz, w: p.w, d: p.d, indoor: p.indoor, style: p.style, scg: p.sc || 1, arrive: Object.fromEntries(Object.entries(p.arrive).map(([k, [x, y, yw]]) => [k, [p.ox + x, p.oz + y, yw]])), portals: p.portals.map((q) => ({ x: p.ox + q.t[0], z: p.oz + q.t[1], to: q.to, label: q.label })) }]));
 
 // ---------- building a place ----------
 const PSTY = {
@@ -5027,13 +5029,13 @@ const doorNotches = (P, S, at, ox, oz, W, D, wallM, room) => { if (!P.indoor || 
       const l = new THREE.PointLight(0xffd090, 2.6, 6.5, 1.6); l.position.set(0, ly - 0.2, 0.75); G.add(l); }
     add(new THREE.PlaneGeometry(Math.min(1.6, w - 0.2), 0.62), M.mat, [0, fy0 + 0.012, 0.62], [-Math.PI / 2, 0, 0], "nocol", G);
     if (P.fine) G.traverse((m) => { if (m.isMesh && m.material !== M.mat) m.userData.rkEdge = e; }); } }; // Nov 25: the cutaway hides the doorway with its wall
-const buildPlace = (id) => { const P = PLACE[id], S = PSTY[P.style], g = P.grid(), W = P.w, D = P.d, ox = P.ox, oz = P.oz, at = (x, y) => (y >= 0 && y < D && x >= 0 && x < W ? g[y][x] : "#"); P.g = g;
+const buildPlace = (id) => { const P = PLACE[id], S = PSTY[P.style], PSK = P.sc || 1, g = P.grid(), W = P.w, D = P.d, ox = P.ox, oz = P.oz, at = (x, y) => (y >= 0 && y < D && x >= 0 && x < W ? g[y][x] : "#"); P.g = g;
   const isFloor = (c) => ".,gbvS".includes(c);
   // finished rooms (roomkit.js): real floor, thin walls with trim and windows, dense props; the old painted floor and block walls are skipped
   const FINE = P.fine && ASSETS.roomKit ? P.fine : null, FY = FINE ? 0.065 : 0, RKIT = FINE ? ASSETS.roomKit(THREE, { add, std, root, seed: 4000 + PK }) : null;
   // painted floor
   if (!FINE) {
-  const px = W * D > 1500 ? 24 : 32, cvs = document.createElement("canvas"); cvs.width = W * px; cvs.height = D * px; const c2 = cvs.getContext("2d"); const ecv = document.createElement("canvas"); ecv.width = W * px; ecv.height = D * px; const e2 = ecv.getContext("2d"); e2.fillStyle = S.ebase || (P.indoor ? (P.style === "bunker" ? "#24262c" : "#16282a") : "#000"); e2.fillRect(0, 0, W * px, D * px);
+  const px = W * D > 9000 ? 12 : W * D > 1500 ? 24 : 32, cvs = document.createElement("canvas"); cvs.width = W * px; cvs.height = D * px; const c2 = cvs.getContext("2d"); const ecv = document.createElement("canvas"); ecv.width = W * px; ecv.height = D * px; const e2 = ecv.getContext("2d"); e2.fillStyle = S.ebase || (P.indoor ? (P.style === "bunker" ? "#24262c" : "#16282a") : "#000"); e2.fillRect(0, 0, W * px, D * px);
   { const tc = document.createElement("canvas"); tc.width = W * px; tc.height = D * px; const t2 = tc.getContext("2d"); for (let y = 0; y < D; y++) for (let x = 0; x < W; x++) { const c = g[y][x], nv = fbm(x * 0.22 + PK, y * 0.22, 3.1, 2) * 0.5 + 0.5; t2.fillStyle = c === "," || c === "S" ? S.stone : c === "v" ? "#6a3aa0" : c === "g" ? "#3a9a4a" : c === "w" ? "#0e3a4a" : S.floor[Math.min(2, Math.floor(nv * 3))]; t2.fillRect(x * px, y * px, px, px); } c2.filter = "blur(" + Math.round(px * 0.45) + "px)"; c2.drawImage(tc, 0, 0); c2.filter = "none"; }
   if (P.style === "root" || P.style === "stalk" || P.style === "loft" || S.planks) { c2.globalAlpha = 0.35; c2.strokeStyle = P.style === "stalk" ? "#8a7050" : "#3a2210"; c2.lineWidth = 2; for (let y = 0; y < D * px; y += px * 0.5) { c2.beginPath(); c2.moveTo(0, y); c2.lineTo(W * px, y + (R() - 0.5) * 6); c2.stroke(); for (let x = (y / (px * 0.5)) % 2 ? 0 : px; x < W * px; x += px * 2.5) { c2.beginPath(); c2.moveTo(x, y); c2.lineTo(x, y + px * 0.5); c2.stroke(); } } c2.globalAlpha = 1; }
   for (let k = 0; k < W * D * 6; k++) { const x = R() * W * px, y = R() * D * px, c = at(Math.floor(x / px), Math.floor(y / px)); if (!isFloor(c)) continue; c2.globalAlpha = 0.25 + R() * 0.35; c2.fillStyle = c === "," ? (R() < 0.5 ? "#2a2a2e" : "#8a8a86") : c === "v" ? (R() < 0.5 ? "#b06ad8" : "#4a2a7a") : R() < 0.5 ? S.moss : S.floor[(k % 3)]; c2.beginPath(); c2.arc(x, y, 2 + R() * 7, 0, TAU); c2.fill(); } c2.globalAlpha = 1;
@@ -5044,9 +5046,9 @@ const buildPlace = (id) => { const P = PLACE[id], S = PSTY[P.style], g = P.grid(
   if (P.style === "arena" || S.lines) { e2.strokeStyle = "rgba(230,255,220,0.9)"; e2.lineWidth = 10; e2.beginPath(); e2.ellipse(15 * px, 11.5 * px, 6.4 * px, 5.6 * px, 0, 0, TAU); e2.stroke(); e2.beginPath(); e2.arc(15 * px, 11.5 * px, 1.2 * px, 0, TAU); e2.stroke(); c2.strokeStyle = "#e8f0d8"; c2.lineWidth = 10; c2.beginPath(); c2.ellipse(15 * px, 11.5 * px, 6.4 * px, 5.6 * px, 0, 0, TAU); c2.stroke(); }
   if (S.dots) for (let k = 0; k < 50; k++) { const x = R() * W, y = R() * D; if (!isFloor(at(Math.floor(x), Math.floor(y)))) continue; e2.fillStyle = `rgba(${S.dots[k % S.dots.length]},${0.18 + R() * 0.25})`; e2.beginPath(); e2.arc(x * px, y * px, 2 + R() * 5, 0, TAU); e2.fill(); }
   if (P.style === "cave" || P.style === "crystal-cave") for (let k = 0; k < 40; k++) { const x = R() * W, y = R() * D; if (!isFloor(at(Math.floor(x), Math.floor(y)))) continue; e2.fillStyle = `rgba(${R() < 0.5 ? "90,240,255" : "150,255,150"},${0.25 + R() * 0.3})`; e2.beginPath(); e2.arc(x * px, y * px, 3 + R() * 6, 0, TAU); e2.fill(); }
-  P.bake && P.bake(e2, px); const ft = new THREE.CanvasTexture(cvs), et = new THREE.CanvasTexture(ecv); ft.colorSpace = THREE.SRGBColorSpace; et.colorSpace = THREE.SRGBColorSpace; ft.anisotropy = 8;
+  P.bake && P.bake(e2, px * PSK); const ft = new THREE.CanvasTexture(cvs), et = new THREE.CanvasTexture(ecv); ft.colorSpace = THREE.SRGBColorSpace; et.colorSpace = THREE.SRGBColorSpace; ft.anisotropy = 8;
   const fm = std({ map: ft, emissive: "#ffffff", emissiveMap: et, emissiveIntensity: 1, roughness: P.style === "crystal" ? 0.35 : 0.9 });
-  if (P.style !== "canopy" && P.style !== "crown") { const pg = new THREE.PlaneGeometry(W, D, W * 2, D * 2); pg.rotateX(-Math.PI / 2); { const Pp = pg.attributes.position; for (let i = 0; i < Pp.count; i++) { const x = Pp.getX(i) + W / 2, z = Pp.getZ(i) + D / 2, c = at(Math.floor(Math.min(W - 0.01, x)), Math.floor(Math.min(D - 0.01, z))); Pp.setY(i, c === "w" ? -0.45 : c === " " ? -14 : 0.02 * Math.sin(x * 1.3) * Math.cos(z * 1.1)); } pg.computeVertexNormals(); } const m = add(pg, fm, [ox + W / 2, 0, oz + D / 2]); m.name = "ground"; m.receiveShadow = true; }
+  if (P.style !== "canopy" && P.style !== "crown") { const pg = new THREE.PlaneGeometry(W, D, PSK > 1 ? W : W * 2, PSK > 1 ? D : D * 2); pg.rotateX(-Math.PI / 2); { const Pp = pg.attributes.position; for (let i = 0; i < Pp.count; i++) { const x = Pp.getX(i) + W / 2, z = Pp.getZ(i) + D / 2, c = at(Math.floor(Math.min(W - 0.01, x)), Math.floor(Math.min(D - 0.01, z))); Pp.setY(i, c === "w" ? -0.45 : c === " " ? -14 : 0.02 * Math.sin(x * 1.3) * Math.cos(z * 1.1)); } pg.computeVertexNormals(); } const m = add(pg, fm, [ox + W / 2, 0, oz + D / 2]); m.name = "ground"; m.receiveShadow = true; }
   } // end painted floor
   // water
   let hasW = false; for (const r of g) if (r.includes("w")) hasW = true; if (hasW) { const wm = add(new THREE.PlaneGeometry(W, D), std({ color: "#0e5262", roughness: 0.05, metalness: 0.4, emissive: "#0a4a5a", emissiveIntensity: 0.8, transparent: true, opacity: 0.8 }), [ox + W / 2, -0.12, oz + D / 2], [-Math.PI / 2, 0, 0]); wm.name = "water"; }
@@ -5059,17 +5061,17 @@ const buildPlace = (id) => { const P = PLACE[id], S = PSTY[P.style], g = P.grid(
     for (let k = 0; k < n; k++) { const a0 = (k / n) * TAU, a1 = ((k + 1) / n) * TAU, am = (a0 + a1) / 2, x0 = rcx + Math.cos(a0) * rrx, y0 = rcy + Math.sin(a0) * rry, x1 = rcx + Math.cos(a1) * rrx, y1 = rcy + Math.sin(a1) * rry, xm = (x0 + x1) / 2, ym = (y0 + y1) / 2; if (P.portals.some((q) => Math.hypot(q.t[0] - xm, q.t[1] - ym) < 1.7)) continue;
       const L = Math.hypot(x1 - x0, y1 - y0) + 0.06, seg = add(soft(new THREE.BoxGeometry(L, h, 0.45, 1, 4, 1), { warp: 0.02 }), inner, [ox + xm, h / 2, oz + ym], [0, -Math.atan2(y1 - y0, x1 - x0), 0]); if (k % 6 === 0) limb([[ox + xm, 0, oz + ym], [ox + xm * 0.999 + rcx * 0.001, h * 0.6, oz + ym], [ox + rcx + (xm - rcx) * 0.92, h, oz + rcy + (ym - rcy) * 0.92]], 0.18, 0.12, ribM, { seg: 6, rad: 6 }); } }
   if (FINE) RKIT.shell({ P, g, at, isFloor, S, ox, oz, W, D, fy: FY, wallH: FINE.wallH || S.wallH, floor: FINE.floor, wins: FINE.wins, tint: FINE.tint, panel: FINE.panel, trimC: FINE.trimC, wains: FINE.wains });
-  for (let y = -1; y <= D; y++) for (let x = -1; x <= W; x++) { if (FINE || P.ring || !edge(x, y) || at(x, y) === "o") continue; const cx = ox + x + 0.5, cz = oz + y + 0.5, h = S.flat ? S.wallH : S.wallH * (0.85 + R() * 0.3);
+  for (let y = -1; y <= D; y++) for (let x = -1; x <= W; x++) { if (FINE || P.ring || !edge(x, y) || at(x, y) === "o") continue; const cx = ox + x + 0.5, cz = oz + y + 0.5, h = (S.flat ? S.wallH : S.wallH * (0.85 + R() * 0.3)) * (PSK > 1 ? 1.7 : 1);
     if (room) { const b = add(soft(new THREE.BoxGeometry(1.04, h, 1.04, 2, 4, 2), { warp: P.style === "bunker" ? 0.005 : 0.03 }), wallM, [cx, h / 2, cz]); if ((x + y) % 4 === 0 && P.style !== "bunker") limb([[cx, 0, cz], [cx + 0.05, h * 0.5, cz], [cx, h, cz]], 0.16, 0.12, ribM, { seg: 4, rad: 6 }); }
     else if (P.style === "glade") { mossRock(cx, cz, 1.4 + R() * 0.8); if (R() < 0.1) { const gm = giantMush(cx + (R() - 0.5), cz + (R() - 0.5), 5 + R() * 6, 1.6 + R() * 1.6, S.glow[Math.floor(R() * S.glow.length)], (R() - 0.5) * 0.3, 0); } }
     else { const b = add(warp(new THREE.IcosahedronGeometry(1, 1), 0.28, 1.1), wallM, [cx, h * 0.45, cz], S.rockWall ? [(R() - 0.5) * 0.3, R() * TAU, (R() - 0.5) * 0.3] : [R(), R(), R()]); b.scale.set(0.95, h * 0.55, 0.95); { let fx = 0, fz = 0; for (let dy = -1; dy <= 1; dy++) for (let dx = -1; dx <= 1; dx++) if (isFloor(at(x + dx, y + dy)) || at(x + dx, y + dy) === "w") { fx += dx; fz += dy; } const fl = Math.hypot(fx, fz); if (fl > 0) { b.position.x -= (fx / fl) * 0.6; b.position.z -= (fz / fl) * 0.6; } b.scale.x = b.scale.z = S.rockWall ? 1.0 : 0.68; } if (R() < (S.cave ? 0.05 : 0.12)) glowcaps(cx, cz, 4, S.glow, 0.6); if (R() < 0.08) { const sh = add(olathe([[0.001, 0.08], [0.35, 0.05], [0.5, 0], [0.001, -0.04]], 12), MK.glowC(S.glow[Math.floor(R() * S.glow.length)], 1.4), [cx, 1 + R() * 2.5, cz]); sh.scale.z = 0.6; } } }
   // portal markers: stone steps / hatches / doorways
   for (const q of P.portals) { const x = ox + q.t[0], z = oz + q.t[1]; const r = add(new THREE.RingGeometry(0.7, 0.95, 28), MK.glowC("#7af0e0", 1.2), [x, FY + 0.03, z], [-Math.PI / 2, 0, 0]); r.name = "nocol"; const l = new THREE.PointLight(0x9af0e8, 2.2, 6, 1.6); l.position.set(x, 1.4, z); root.add(l); if (P.indoor && P.style !== "bunker" && !q.flat) for (let k = 0; k < 4; k++) add(warp(new THREE.BoxGeometry(2, 0.18, 0.5, 2, 1, 1), 0.02, 2), ribM, [x, -0.1 - k * 0.2, z + (q.t[1] > D / 2 ? 0.3 + k * 0.45 : -0.3 - k * 0.45)]); }
   doorNotches(P, S, at, ox, oz, W, D, wallM, room);
-  if (P.indoor && (S.cave || P.style === "cave" || P.style === "crystal-cave" || P.style === "deep")) for (let y = 3; y < D; y += 6) for (let x = 3; x < W; x += 6) if (isFloor(at(x, y))) { const l = new THREE.PointLight(new THREE.Color(S.glow[(x + y) % S.glow.length]), 2.4, 11, 1.5); l.position.set(ox + x, 2.6, oz + y); root.add(l); glowcaps(ox + x + 1.2, oz + y - 0.8, 3, S.glow, 0.4); }
-  const lite = (x, y, c, i = 3, d = 9, h = 2) => { const l = new THREE.PointLight(new THREE.Color(c), i, d, 1.5); l.position.set(ox + x, h, oz + y); root.add(l); };
+  if (P.indoor && (S.cave || P.style === "cave" || P.style === "crystal-cave" || P.style === "deep")) for (let y = 3; y < D; y += 6 * PSK) for (let x = 3; x < W; x += 6 * PSK) if (isFloor(at(x, y))) { const l = new THREE.PointLight(new THREE.Color(S.glow[(x + y) % S.glow.length]), 2.4, 11 * PSK, 1.5); l.position.set(ox + x, 2.6, oz + y); root.add(l); glowcaps(ox + x + 1.2, oz + y - 0.8, 3, S.glow, 0.4); }
+  const lite = (x, y, c, i = 3, d = 9, h = 2) => { const l = new THREE.PointLight(new THREE.Color(c), i, d * PSK, 1.5); l.position.set(ox + x * PSK, h * (PSK > 1 ? 1.4 : 1), oz + y * PSK); root.add(l); };
   // the furniture of each place
-  const X = (x) => ox + x, Z = (y) => oz + y; if (FINE && FINE.dress) { FINE.dress({ K: RKIT, X, Z, S, g, lite, fy: FY, Y: dIn.Y }); RKIT.flush(); } else P.dress && P.dress({ X, Z, S, g, lite });
+  const X = (x) => ox + x * PSK, Z = (y) => oz + y * PSK; if (FINE && FINE.dress) { FINE.dress({ K: RKIT, X, Z, S, g, lite, fy: FY, Y: dIn.Y }); RKIT.flush(); } else P.dress && P.dress({ X, Z, S, g, lite });
   PLACEDRESS[id] && PLACEDRESS[id]({ P, X, Z, S, g, lite, at });
   return { P, g }; };
 
@@ -5107,7 +5109,7 @@ const dpPool = (x, z, rx, rz, c = "#2fb0b8") => { const m = add(new THREE.Circle
 // The original 40 x 30 tunnels keep every tile (all story spots, the Pell ambush, both stairs); the new galleries open off them.
 // ---- grid carving for the expansion (pasted into world.js by patch_caves.py) ----
 const dcOld = (x, y) => x < 40 && y < 30; // the original 40 x 30 tunnel: its tiles are never re-roughened
-const dcRough = (g, amt, seed, keep) => { const H = g.length, W = g[0].length, o = g.map((r) => r.slice()); for (let y = 1; y < H - 1; y++) for (let x = 1; x < W - 1; x++) { if (o[y][x] !== "#" || keep(x, y)) continue; let n = 0; for (const [dx, dy] of [[1, 0], [-1, 0], [0, 1], [0, -1]]) if (o[y + dy][x + dx] === ".") n++; if (n >= 2 && fbm(x * 0.4 + seed, y * 0.4, seed) > 0.5 - amt) g[y][x] = "."; } };
+const dcRough = (g, amt, seed, keep) => { const H = g.length, W = g[0].length, o = g.map((r) => r.slice()); for (let y = 1; y < H - 1; y++) for (let x = 1; x < W - 1; x++) { if (o[y][x] !== "#" || keep(x / PSC, y / PSC)) continue; let n = 0; for (const [dx, dy] of [[1, 0], [-1, 0], [0, 1], [0, -1]]) if (o[y + dy][x + dx] === ".") n++; if (n >= 2 && fbm((x * 0.4) / PSC + seed, (y * 0.4) / PSC, seed) > 0.5 - amt) g[y][x] = "."; } };
 // B1 (sunset1, 78 x 56): east galleries, the southern drifts, and the hidden Still Water Shrine
 const DCX1 = {
   pillars: [[51, 9.5, 1.1], [57.5, 14.5, 1.0], [23, 41, 1.2], [30.5, 44.5, 0.9], [49, 46, 1.0]],
@@ -5136,9 +5138,9 @@ const dcGrid1 = (g) => { const keep = (x, y) => dcOld(x, y) || (x >= 64 && y >= 
   dcRough(g, 0.3, 21, keep);
   // the Still Water Shrine: a round chamber, the pond in the middle, the altar dais beyond it (south)
   pCirc(g, 70, 37, 6.2, ".", 5.2); pPath(g, [[73.6, 30], [72.4, 34]], 2.4); pCirc(g, 70, 36.6, 3.3, "w", 2.3); pRect(g, 67, 40, 73, 41, ",");
-  for (const [x, y, r] of DCX1.pillars) pCirc(g, x, y, r * 0.85, "o");
-  pRect(g, 69, 40, 70, 41, "o"); pRect(g, 66, 40, 66, 40, "o"); pRect(g, 73, 40, 73, 40, "o"); // the altar and its two waystones are solid
-  pRect(g, 43, 30, 44, 32, "o"); // the flood pump
+  for (const [x, y, r] of DCX1.pillars) oCirc(g, x, y, r * 0.85);
+  oRect(g, 69, 40, 70, 41); oRect(g, 66, 40, 66, 40); oRect(g, 73, 40, 73, 40); // the altar and its two waystones are solid
+  oRect(g, 43, 30, 44, 32); // the flood pump
 };
 // B2 (sunset2, 78 x 56): the drowned east caverns, the steam galleries toward the Frontier and the Sunken Rail Station
 const DCX2 = { pillars: [[47, 37.5, 1.0], [16, 45.5, 0.9], [67.6, 19.4, 0.9]] };
@@ -5153,7 +5155,7 @@ const dcGrid2 = (g) => { const keep = (x, y) => dcOld(x, y) || (x >= 32 && x <= 
   pPath(g, [[6, 25], [8, 31], [12, 40]], 3.4); // the old dead end now runs on down to the station
   dcRough(g, 0.25, 31, keep);
   pCirc(g, 57.5, 8, 3, "w", 2); pCirc(g, 68.5, 42, 1.6, "w", 1.2); // the tide pool and a warm spring
-  for (const [x, y, r] of DCX2.pillars) pCirc(g, x, y, r * 0.85, "o");
+  for (const [x, y, r] of DCX2.pillars) oCirc(g, x, y, r * 0.85);
 };
 // ---- props, lights and baked floor glow for the expansion ----
 // Lanterns are timber posts with an emissive lantern; only a few per chamber carry a real PointLight (the game pools those),
@@ -5285,7 +5287,7 @@ defPlace("sunset1", { name: "Sunset Tunnel B1", w: 78, d: 56, style: "mine", ind
   grid() { const g = PLW(78, 56); pPath(g, [[4, 26], [4, 20], [12, 18], [20, 20], [28, 16], [33, 10], [35, 4]], 4); pPath(g, [[12, 18], [14, 10], [22, 7], [30, 7], [33, 10]], 4); pCirc(g, 12, 18.5, 3.4);
     pPath(g, [[20, 20], [22, 27]], 3.4); pPath(g, [[14, 10], [6, 6]], 3.4); // the two dead ends (stash slabs)
     pPath(g, [[28, 16], [33, 21]], 3.4); pPath(g, [[22, 7], [22, 2.5]], 3.4); // two side tunnels, sealed by boulders
-    pRough(g, 0.3, 11); pCirc(g, 33.6, 21.6, 1.9, "o"); pCirc(g, 22, 2.2, 1.9, "o"); pRect(g, 2, 27, 5, 28, "S"); pRect(g, 34, 1, 37, 2, "S"); dcGrid1(g); return g; },
+    pRough(g, 0.3, 11); oCirc(g, 33.6, 21.6, 1.9); oCirc(g, 22, 2.2, 1.9); pRect(g, 2, 27, 5, 28, "S"); pRect(g, 34, 1, 37, 2, "S"); dcGrid1(g); return g; },
   arrive: { in: [4, 24.5, 0], up: [33.5, 6.5, 2.4] },
   portals: [{ t: [3.5, 28.4], to: "out:DB8", label: "Climb out to the Tunnel Mouth" }, { t: [35.5, 1.6], to: "sunset2:in", label: "Go down to B2" }],
   stash: [[22, 26], [6, 6]], boulders: [[33.6, 21.6], [22, 2.2]], trainers: [],
@@ -5321,6 +5323,17 @@ defPlace("sunset2", { name: "Sunset Tunnel B2", w: 78, d: 56, style: "basalt", i
     tallGrass(X(20), Z(20.6), 3, 1.2, "cavedeep", { any: true, name: "Sunset Tunnel B2 pool shore" }); tallGrass(X(9.4), Z(22.4), 1.8, 1.6, "cavedeep", { any: true, name: "Sunset Tunnel B2 dead end" }); dcDress2({ X, Z, lite }); } });
 
 // ---------- Red Rock Caves ----------
+// grow a place by a factor (Nov 26: the Sunset Tunnel becomes a broad cavern): the grid, arrival points and portals scale; furniture and lights
+// scale their spots through X/Z/lite and keep their own size; solid props carve at their drawn size (oCirc/oRect). A grown place moves out
+// past the others (its bigger footprint would overlap the next place), and placeMeta passes the scale to the game as scg.
+const scalePlace = (id, k, ox) => { const o = PLACE[id]; if (!o || o.sc) return; o.sc = k; o.w = Math.round(o.w * k); o.d = Math.round(o.d * k); o.ox = ox; for (const a of Object.values(o.arrive)) { a[0] *= k; a[1] *= k; } for (const q of o.portals) q.t = [q.t[0] * k, q.t[1] * k];
+  const g0 = o.grid; o.grid = function () { PSC = k; try { return g0.call(this); } finally { PSC = 1; } };
+  const d0 = o.dress; o.dress = function (a) { d0 && d0.call(this, a); const g = a.g, H = g.length, Wd = g[0].length, fl = (x, y) => y >= 0 && y < H && x >= 0 && x < Wd && ".,gS".includes(g[y][x]);
+    const keep = [...Object.values(this.arrive), ...this.portals.map((q) => q.t), ...(this.stash || []).map(([x, y]) => [x * k, y * k])], cols = ["#a04cf0", "#7ff0e6", "#b868ff", "#5af0e0"]; let n = 0, lit = 0;
+    for (let y = 2; y < H - 2; y += 2) for (let x = 2; x < Wd - 2; x += 2) { if (!fl(x, y) || R() > 0.22 || n > 50) continue; let wall = 0; for (let dy = -2; dy <= 2; dy++) for (let dx = -2; dx <= 2; dx++) if (!fl(x + dx, y + dy)) wall++; if (wall < 3 || wall > 14) continue;
+      if (keep.some((q) => Math.hypot(q[0] - x, q[1] - y) < 7)) continue; const c = cols[(x * 7 + y * 3) % cols.length], big = R() < 0.25; dpCrystals(this.ox + x + 0.5, this.oz + y + 0.5, c, big ? 1.2 + R() * 0.6 : 0.6 + R() * 0.4, big ? 6 : 4); n++;
+      if (big && lit < 8 && (x + y) % 3 === 0) { const l = new THREE.PointLight(new THREE.Color(c), 2.6, 12, 1.5); l.position.set(this.ox + x + 0.5, 2.4, this.oz + y + 0.5); root.add(l); lit++; } else if (R() < 0.35) glowcaps0(this.ox + x + 1.1, this.oz + y - 0.6, 3, ["#b868ff", "#7ff0e6"], 0.5); } }; };
+scalePlace("sunset1", 2, 5000); scalePlace("sunset2", 2, 5400);
 defPlace("redcave1", { name: "Red Rock Caves B1", w: 40, d: 30, style: "redcave", indoor: true,
   grid() { const g = PLW(40, 30); pPath(g, [[19.5, 26], [19, 20], [12, 16], [8, 8], [4, 4]], 4); pPath(g, [[19, 20], [28, 16], [26, 8], [14, 6], [8, 8]], 4); pCirc(g, 12, 17, 3.4);
     pPath(g, [[28, 16], [35.5, 22]], 3.4); pPath(g, [[26, 8], [35, 4]], 3.4); // two dead ends (stash slabs)
