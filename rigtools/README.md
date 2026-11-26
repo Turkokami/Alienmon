@@ -253,3 +253,8 @@ index.html loads world.js?v=wd14ob, game.js?v=bt8ob, linker-data.js?v=cl1ob. The
 - game.js (the shared wind shader `windify`): mode 0 swayed by `pow(clamp(wp.y,0,8),2)*0.05` of WORLD height, so any bush or tuft standing on raised ground (terraces, mesas: y up to 8+) swung up to ~3 m. It now uses height above the plant's own base (`wp.y - wb.y`, base from instanceMatrix/modelMatrix), clamped to 3 m, times 0.012: bases stay locked to the ground and tops move a few cm. Mode 1 (tall grass) cut from `pow(y,1.5)*0.14` to `pow(clamp(y,0,2),1.5)*0.04`.
 - world.js (DA6 observatory): the fitted door sat inside the 2.2x walls, so the wall under the telescope sign was blank. A gold-framed arched double door (2.5 x 3.5 m, brass bar, ring handles, hinge straps, turquoise glass diamonds) and a sandstone step now stand at x 168.46, z 15.75 (the wall leans out at its foot), on a 1.4 m deep sandstone surround. The group is `noLift` and placed at GHT height, so the path guard does not strip it.
 - index.html: world.js?v=wd34b, game.js?v=bt17bv.
+
+## 81. Vashti's telescope moment told in the book's own words (Nov 26)
+- The narrator line before Vashti's "After twenty years... hello again, little one" was a short summary in the game voice. It is now three lines taken word for word from the end of Book 1 chapter 2, played straight from the audiobook (bookvoice-data.js, chapter 2).
+- Files: game.js (scene text + text-to-voice map), comic-data.js (same three lines on panel E02_P52), bookvoice-data.js (3 new entries), bookvoice-check.html, index.html versions.
+- Offline (PC download) the first line falls back to the old narrator clip; the other two (bv_dus_0042b/c) have no clip of their own and stay silent.
