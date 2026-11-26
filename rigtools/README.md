@@ -208,3 +208,9 @@ index.html loads world.js?v=wd14ob, game.js?v=bt8ob, linker-data.js?v=cl1ob. The
     - Baker fix: in a long page session Sporeholm's mushroom houses and gardens dropped out of the picture, so the baker now loads a fresh page every 5 tiles and re-bakes any tile that comes out as unloaded night-blue.
     - Labels: a door that isn't "Enter ..." (Climb the stair to ..., Crawl through ..., Open the ... door) is named by the place it leads to, with floor words dropped (Music Hall, Library, Clinic, Co-op Hall, Guesthouse). Places with "secret" in their name never get a label, so Ferrox's Helix Secret Lab stays hidden.
     - index.html: mapview.js?v=2.
+
+74. Dustara's far-off rock reads as rock:
+    - The flat salmon "mesas" on the skyline were the far-view stand-ins for town scenes that aren't loaded yet (OBS2.town in world.js): each one dropped a single flat-coloured wall from its roof sheet to the ground.
+    - Those walls are now three rows high with a talus that flares out toward the ground, noise relief that matches at shared corners, red rock strata bands that darken toward the foot, and the far-rock surface texture ("d_far" in surfaces.js). Building walls (cream, not red) keep their own colour with the same light-to-dark shading.
+    - No new meshes or draw calls; the stand-ins use about three times the vertices on their sides only. Frame rate in the market test view unchanged.
+    - index.html: world.js?v=wd30rk1.

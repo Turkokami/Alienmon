@@ -7081,16 +7081,29 @@ OBS2.town = () => { const I = OBS2.IMPD; if (!I || !I.d) return; const raw = ato
   const cell = (i, j) => (i >= 0 && j >= 0 && i < I.w && j < I.h ? j * I.w + i : -1);
   const corner = (ci, cj) => { let h = -1e9, r = 0, g = 0, b = 0, k = 0; for (const [di, dj] of [[-1, -1], [0, -1], [-1, 0], [0, 0]]) { const n = cell(ci + di, cj + dj); if (n < 0 || !hq[n]) continue; h = Math.max(h, top(n)); r += lin(C[n * 3]); g += lin(C[n * 3 + 1]); b += lin(C[n * 3 + 2]); k++; } return [h, r / k, g / k, b / k]; };
   const per = rects.map(() => []); for (let n = 0; n < N; n++) if (owner[n] >= 0) per[owner[n]].push(n);
-  per.forEach((list, s) => { if (!list.length) return; const vid = new Map(), P = [], Cc = [], idx = [], SP = [], SN = [], SC = [];
+  const rocky = (n) => (C[n * 3] > C[n * 3 + 1] * 1.18 && C[n * 3] > C[n * 3 + 2] * 1.25 ? 1 : 0), ROWS = [0, 0.3, 0.62, 1], hx = (v) => lin(v), BAND = [[hx(222), hx(146), hx(98)], [hx(184), hx(96), hx(62)], [hx(140), hx(64), hx(44)]].map(([r, g, b]) => [r, g, b]);
+  const hn = (x, y, z) => { const f = (a, b, c) => { const v = Math.sin(a * 127.1 + b * 311.7 + c * 74.7) * 43758.5453; return v - Math.floor(v); }, X0 = Math.floor(x), Y0 = Math.floor(y), Z0 = Math.floor(z), u = x - X0, w = y - Y0, e = z - Z0, s3 = (q) => q * q * (3 - 2 * q), su = s3(u), sw = s3(w), se = s3(e);
+    let r = 0; for (let a = 0; a < 2; a++) for (let b = 0; b < 2; b++) for (let c = 0; c < 2; c++) r += f(X0 + a, Y0 + b, Z0 + c) * (a ? su : 1 - su) * (b ? sw : 1 - sw) * (c ? se : 1 - se); return r; };
+  const matS = std({ vertexColors: true, roughness: 0.95 }); matS.userData.surfKey = "d_far";
+  per.forEach((list, s) => { if (!list.length) return; const vid = new Map(), P = [], Cc = [], idx = [], SP = [], SN = [], SC = []; const EG = [], KO = new Map();
     const v = (ci, cj) => { const key = cj * W1 + ci; let id = vid.get(key); if (id === undefined) { const [h, r, g, b] = corner(ci, cj); id = P.length / 3; P.push(I.x0 + ci, h, I.z0 + cj); Cc.push(r, g, b); vid.set(key, id); } return id; };
     for (const n of list) { const i = n % I.w, j = (n / I.w) | 0, a = v(i, j), b = v(i, j + 1), c = v(i + 1, j + 1), d = v(i + 1, j); idx.push(a, b, c, a, c, d);
       for (const [di, dj, e0, e1] of [[1, 0, [i + 1, j + 1], [i + 1, j]], [-1, 0, [i, j], [i, j + 1]], [0, 1, [i, j + 1], [i + 1, j + 1]], [0, -1, [i + 1, j], [i, j]]]) { const m = cell(i + di, j + dj); if (m >= 0 && hq[m]) continue;
-        const A = vid.get(e0[1] * W1 + e0[0]), Bv = vid.get(e1[1] * W1 + e1[0]), lo = gnd[n] - 0.4, f = 0.72, rr = lin(C[n * 3]) * f, gg = lin(C[n * 3 + 1]) * f, bb = lin(C[n * 3 + 2]) * f;
-        const pA = [P[A * 3], P[A * 3 + 1], P[A * 3 + 2]], pB = [P[Bv * 3], P[Bv * 3 + 1], P[Bv * 3 + 2]], Q = [[pA[0], lo, pA[2]], [pB[0], lo, pB[2]], [pB[0], pB[1], pB[2]], [pA[0], pA[1], pA[2]]];
-        for (const t of [0, 1, 2, 0, 2, 3]) { SP.push(...Q[t]); SN.push(di, 0, dj); SC.push(rr, gg, bb); } } }
+        const ka = e0[1] * W1 + e0[0], kb = e1[1] * W1 + e1[0], lo = gnd[n] - 0.4, rk = rocky(n); EG.push([n, di, dj, ka, kb]);
+        for (const k of [ka, kb]) { const o = KO.get(k) || { x: 0, z: 0, lo: 1e9, rk: 0 }; o.x += di; o.z += dj; o.lo = Math.min(o.lo, lo); o.rk = Math.max(o.rk, rk); KO.set(k, o); } } }
+    // Nov 26: the skirts read as rock, not cardboard: three rows per face, a talus that flares out toward the ground, noise relief that
+    // matches at shared corners (it is a function of the corner and the height only), strata bands in the rock's own reds, darker at the
+    // foot, and the far-rock surface (surfaces.js "d_far") over the top
+    for (const [n, di, dj, ka, kb] of EG) { const rkC = rocky(n), cr = lin(C[n * 3]), cg = lin(C[n * 3 + 1]), cb = lin(C[n * 3 + 2]);
+      const at = (k, t) => { const id = vid.get(k), x = P[id * 3], h = P[id * 3 + 1], z = P[id * 3 + 2], o = KO.get(k), hh = Math.max(0.5, h - o.lo), y = o.lo + hh * t, L = Math.hypot(o.x, o.z) || 1;
+        const fl = o.rk * (0.75 * Math.pow(1 - t, 1.7) * Math.min(1, hh / 6) + 0.32 * (hn(x, y * 0.9, z) - 0.5) * Math.min(1, t * 4) * (t < 0.98 ? 1 : 0.3)); return [x + (o.x / L) * fl, y, z + (o.z / L) * fl]; };
+      const col = (q, t) => { const sh = 0.58 + 0.36 * t; if (!rkC) return [cr * sh, cg * sh, cb * sh]; const bd = Math.sin(q[1] * 1.55 + hn(q[0] * 0.2, 3.1, q[2] * 0.2) * 3.2), bc = bd > 0.45 ? BAND[0] : bd < -0.35 ? BAND[2] : BAND[1];
+        return [(cr * 0.45 + bc[0] * 0.55) * sh, (cg * 0.45 + bc[1] * 0.55) * sh, (cb * 0.45 + bc[2] * 0.55) * sh]; };
+      for (let r = 0; r < ROWS.length - 1; r++) { const t0 = ROWS[r], t1 = ROWS[r + 1], Q = [at(ka, t0), at(kb, t0), at(kb, t1), at(ka, t1)], TT = [t0, t0, t1, t1];
+        for (const t of [0, 1, 2, 0, 2, 3]) { SP.push(...Q[t]); SC.push(...col(Q[t], TT[t])); } } }
     const g = new THREE.BufferGeometry(); g.setAttribute("position", new THREE.Float32BufferAttribute(P, 3)); g.setAttribute("color", new THREE.Float32BufferAttribute(Cc, 3)); g.setIndex(idx); g.computeVertexNormals();
-    const g2 = new THREE.BufferGeometry(); g2.setAttribute("position", new THREE.Float32BufferAttribute(SP, 3)); g2.setAttribute("normal", new THREE.Float32BufferAttribute(SN, 3)); g2.setAttribute("color", new THREE.Float32BufferAttribute(SC, 3));
-    for (const gg of SP.length ? [g, g2] : [g]) { const m = new THREE.Mesh(gg, mat); m.name = "townimp"; m.userData.rect = rects[s]; m.userData.noLift = true; m.castShadow = false; m.receiveShadow = true; root.add(m); } }); };
+    const g2 = new THREE.BufferGeometry(); g2.setAttribute("position", new THREE.Float32BufferAttribute(SP, 3)); g2.setAttribute("color", new THREE.Float32BufferAttribute(SC, 3)); g2.computeVertexNormals();
+    for (const gg of SP.length ? [g, g2] : [g]) { const m = new THREE.Mesh(gg, gg === g2 ? matS : mat); m.name = "townimp"; m.userData.rect = rects[s]; m.userData.noLift = true; m.castShadow = false; m.receiveShadow = true; root.add(m); } }); };
 FLORAK.DA5 = 0.12; FLORAK.DA6 = 0.25;
 // the mesa's slopes get far fewer rock stacks and boulders than the town's edge bands, and none west of the balcony, so the view over the town stays open
 D.XLITE = { DA5: 0.3, DA6: 0.2 }; D.xClear = (x, z) => x >= 145 && x <= 159 && z >= -1 && z <= 15.5;
