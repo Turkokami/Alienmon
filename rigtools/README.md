@@ -143,3 +143,27 @@ index.html loads world.js?v=wd14ob, game.js?v=bt8ob, linker-data.js?v=cl1ob. The
     - new textures `sporeholm3d/tex/ex_*.webp` (adobe, rock, block, roof, grit, dxstone, dxwood; colour + normal), all drawn from noise by `rigtools/make_ex_textures.py`. No photos, no outside art.
     - world.js (Dustara `dmap` only): tags the painted textures in `mk()` (adobe, stone, rock, stalk, shingle), the canyon wall canvas, each ground mesh and its map, the far mesa material (`OBS2.stand`), and the swatch textures through `DXSURF` in `dxT()`. Sandstone domes and walls and the boards are redrawn at full detail in the swatches' own colours; the red rock and canyon keep their own colours and gain rock bedding and relief; the ground gains grain, pebbles and small cracks.
     - index.html loads surfaces.js?v=ex7 and world.js?v=wd23ex.
+
+
+## Nov 26 blocking fixes and ground seating (now live; port into the PC source)
+
+62. The Crater Observatory door could not be reached: the far-view stand-in pieces that a real scene hides (`K.grounds` with a matching `userData.rect`) were taken out of the floor list but stayed in the wall list, so an invisible stand-in wall sat in front of the door. game.js now removes them from the walls too (both load paths) and puts them back on unload. Walked from the summit courtyard into the lab on a phone-size screen.
+63. The market row in Dustmere's south lane (DB4) parted round the rope bridge's head: three stalls west, two east, lemonade stand past the copper stall, so the walk from the road onto the bridge is clear. Walked market → bridge → Oasis Fork end to end along the deck's centre.
+64. New `sporeholm3d/seat.js` (loaded before world.js): keeps scattered plants, pebbles and small props on the ground in every world.
+    - Each world builder calls `SEAT.run(root, GHT, THREE)` before it returns; game.js calls it again on each assembled scene group 1.5 s and 6 s after it loads (`SEAT.later`), because the scatter fills in over the first frames.
+    - Surface = terrain height, or the rock skin where one covers a steep face (skins are tagged `userData.skin`; their raster is kept on the root as `userData.seatSkin`).
+    - A plant's parts share one origin across meshes (stem, leaves, bloom, seed tip), so they move together, by the amount the lowest part needs. Tiny things only follow, unless they sit low (pebbles); motes in the air are left alone.
+    - Small props are lowered only when they hover over sloped ground, so things set on tables, shelves or walls stay put.
+    - The automatic check: `SEAT.check(group, GHT)` counts what still floats (instances and props) and lists the worst. The test page probe (`rigtools/ground_check.js`) runs it on every loaded scene group.
+    - index.html: seat.js?v=s4, world.js?v=wd24seat, game.js?v=bt11seat.
+65. Feet on the floor, in every world:
+    - game.js static-mesh merge (`P`): a new mesh name "floor" means "the player stands on it, it is never a wall". It joins the floor list even when its material has a custom shader (Dustara's swatch shader made the mesa rock and the sandstone terrace count as neither floor nor wall, so feet sank 0.3 to 0.5 m into them).
+    - world.js: named "floor": the DA5/DA6 mesa rock skin (near view), the DA6 grand stair slabs, the switchback kerb stones, the observatory terrace, a 6-step sandstone stair in Dustara, the Ferrox wide iron steps.
+    - seat.js: the player model's boot soles sat 4 cm under the player's origin; each model under the player is lifted 4 cm once (`userData.__lift`).
+    - Checked with a probe that compares the visible floor top under every walkable spot with where the feet land (rigtools/ground_check.js covers the plants and props).
+66. Dr. Vashti's Crater Observatory is about 2.2x bigger outside (DA6 build): radius 6.7 m, walls 6.2 m, dome and great telescope scaled to match (FSPEC `d_obsXL`, no walk-in; the lab is its own place). Closed arched double doors replace the open leaves. A sandstone terrace rings it and a red-rock plinth runs down the cliff on its north side. The SE turret came off; the dish moved to (177, 7.6); the planters flank the door at z 13.6. The door is now at [168.46, 13.4] (world.js OUTPORTALS and the game.js map manifest), arrival [168.64, 15.3]; Dr. Vashti's courtyard spot moves to (171.6, 15.6). The far view (`OBS2.stand`) uses the same size.
+    - index.html: seat.js?v=s5, world.js?v=wd25fl3, game.js?v=bt12fl2.
+67. Route to Dr. Vashti's lab checked end to end (town → canyon bridge → five switchback legs → grand stair → courtyard → the observatory's front door → inside the lab):
+    - world.js DA5 ground: every switchback bend gets a round walkable landing (radius 2 tiles), so the bend never pinches the walk.
+    - The lab door marker and arrival point moved to the new front door (OUTPORTALS DA6 at 168.46, 13.4; map manifest "Crater Observatory door").
+    - index.html: surfaces.js?v=ex8 (adds `three()` for the ground check), world.js?v=wd26turn.

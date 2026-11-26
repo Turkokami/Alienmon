@@ -149,5 +149,5 @@ vec3 triW(vec3 n) { vec3 b = pow(abs(n), vec3(4.0)); return b / (b.x + b.y + b.z
     setInterval(tick, 1500);
   };
   if (typeof window !== "undefined") watch();
-  return { apply, upgrade, scan, RULES, init: (T) => { THREE = T; }, tex: (T, name, srgb, fill) => { THREE = T; return tex(name, srgb, fill); } };
+  return { apply, upgrade, scan, RULES, three: () => THREE, init: (T) => { THREE = T; }, tex: (T, name, srgb, fill) => { THREE = T; return tex(name, srgb, fill); } };
 })();

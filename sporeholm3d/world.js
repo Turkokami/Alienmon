@@ -2708,7 +2708,8 @@ PROF.pre = performance.now(); buildAll(); if (H && H.all && H.flora !== false) b
 if (WALKINS.length) { // last net: no instanced blade, crop or plant may stand in a room or on a doorstep
   const m4 = new THREE.Matrix4(), v = new THREE.Vector3(), z0 = new THREE.Matrix4().makeScale(0, 0, 0), hit = (x, z) => WALKINS.some((w) => { const px = w.G.position.x + w.ox, pz = w.G.position.z + w.oz; return ((x - px) / (w.rx + 0.75)) ** 2 + ((z - pz) / (w.rz + 0.75)) ** 2 < 1 || (Math.abs(x - px) < w.dw / 2 + 0.6 && Math.abs(z - pz) < w.r + 2.4 && ((z - pz) * w.d > 0 || w.back)); });
   root.updateMatrixWorld(true); root.traverse((o) => { if (!o.isInstancedMesh || o.userData.int) return; let n = 0; for (let i = 0; i < o.count; i++) { o.getMatrixAt(i, m4); v.setFromMatrixPosition(m4).applyMatrix4(o.matrixWorld); if (hit(v.x, v.z)) { o.setMatrixAt(i, z0); n++; } } if (n) o.instanceMatrix.needsUpdate = true; }); }
-return { prof: PROF, pathguard: PATHGUARD, patches: TGP, places: placeMeta(), outPortals: OUTPORTALS, walkins: WALKINS.map((w) => ({ name: w.name, key: w.key, x: (w.G.position.x + w.ox), y: w.G.position.y, z: (w.G.position.z + w.oz), rx: w.rx, rz: w.rz, dw: w.dw, fh: w.fh, d: w.d, back: !!w.back })), atW, warpXY, unwarp, ght: GHT, deck: (x, z) => { if (!MIRED) return 0.4; const [a, b] = warpXY(x, z); return MIRED(a, b); }, flora: FLC.n, object: root, rect: SCN[ids[0] || want].rect, grid: GRID.map((r) => r.join("")), oy: GOY, bounds: [BX0, BZ0, BX1, BZ1], rects: Object.fromEntries(Object.keys(SCN).map((k) => [k, SCN[k].rect])) };
+const SEATED = window.SEAT && !(H && H.bakeOnly) ? window.SEAT.run(root, GHT, THREE) : null; /* Nov 26: plants, pebbles and small props sit on the ground */
+return { seated: SEATED, prof: PROF, pathguard: PATHGUARD, patches: TGP, places: placeMeta(), outPortals: OUTPORTALS, walkins: WALKINS.map((w) => ({ name: w.name, key: w.key, x: (w.G.position.x + w.ox), y: w.G.position.y, z: (w.G.position.z + w.oz), rx: w.rx, rz: w.rz, dw: w.dw, fh: w.fh, d: w.d, back: !!w.back })), atW, warpXY, unwarp, ght: GHT, deck: (x, z) => { if (!MIRED) return 0.4; const [a, b] = warpXY(x, z); return MIRED(a, b); }, flora: FLC.n, object: root, rect: SCN[ids[0] || want].rect, grid: GRID.map((r) => r.join("")), oy: GOY, bounds: [BX0, BZ0, BX1, BZ1], rects: Object.fromEntries(Object.keys(SCN).map((k) => [k, SCN[k].rect])) };
 
 },cap:function(THREE,H){
 // ---- Squatch in-house building kit: seeded random, painted canvas textures, mesh helpers ----
@@ -5383,7 +5384,7 @@ defPlace("trial", { name: "Relay Tower Trial Floor", w: 24, d: 30, style: "tower
     for (let a = 0; a < 16; a++) { const t = (a / 16) * TAU, x = 12 + Math.cos(t) * 11.25, y = 15 + Math.sin(t) * 14.25; if (Math.abs(x - 11.5) < 2 && y > 26) continue; add(new THREE.BoxGeometry(0.06, 4.6, 0.06), MK.glowC("#7ff0e6", 1.3), [X(12 + Math.cos(t) * 11.1), 3, Z(15 + Math.sin(t) * 14.1)]).name = "nocol"; } // turquoise rune lines up the walls
     for (const [x, y, ry] of [[3.5, 9, Math.PI / 2], [20.5, 21, -Math.PI / 2], [20.5, 10, -Math.PI / 2]]) { const B = grp(X(x), 3.4, Z(y), ry); add(warp(new THREE.BoxGeometry(4, 0.3, 1.6, 3, 1, 2), 0.02, 2), D.adobe(), [0, 0, 0], [0, 0, 0], null, B); add(new THREE.BoxGeometry(4, 0.7, 0.12), D.turq(), [0, 0.5, 0.75], [0, 0, 0], null, B); } // adobe balconies built inside by the canyon folk
     for (const [x, y] of [[8.6, 27.4], [15.6, 26.6]]) D.urn(X(x), Z(y), 1); capBench(X(15.6), Z(25), Math.PI); capBench(X(3.2), Z(17), Math.PI / 2);
-    { const S = grp(X(16), 0, Z(2.6)); for (let k = 0; k < 6; k++) add(new THREE.BoxGeometry(3, 0.3, 0.6), D.sandstone(), [0, 0.15 + k * 0.3, -k * 0.5 + 1], [0, 0, 0], null, S).name = "nocol"; } // stairs up
+    { const S = grp(X(16), 0, Z(2.6)); for (let k = 0; k < 6; k++) add(new THREE.BoxGeometry(3, 0.3, 0.6), D.sandstone(), [0, 0.15 + k * 0.3, -k * 0.5 + 1], [0, 0, 0], null, S).name = "floor"; } // stairs up
     for (const [x, y] of [[12, 22], [8, 13], [16, 8], [12, 4]]) lite(x, y, "#ffe0b0", 3, 12, 4.6); } });
 
 defPlace("summit", { name: "Relay Tower Summit", w: 20, d: 20, style: "summit", indoor: false, ring: [10, 10, 9.6, 9.6],
@@ -5456,7 +5457,7 @@ OUTPORTALS.push(
   { scene: "DC2", at: [53.55, 85.2], arrive: [53.15, 87.0], to: "linkerLobby:in", label: "Enter the Linker Arena", replacesWalkin: "d_arena" },
   { scene: "DB2", at: [34.68, 53.82], arrive: [34.38, 55.62], to: "house1f:in", label: "Go inside", replacesWalkin: "Your House" },
   { scene: "DB2", at: [36.43, 37.54], arrive: [36.76, 39.53], to: "recoveryBay:in", label: "Enter the Recovery Bay", replacesWalkin: "Dustmere Recovery Bay" },
-  { scene: "DA6", at: [168.46, 11.41], arrive: [168.64, 13.36], to: "vashtiLab:in", label: "Enter the Observatory", replacesWalkin: "Crater Observatory" });
+  { scene: "DA6", at: [168.46, 13.4], arrive: [168.64, 15.3], to: "vashtiLab:in", label: "Enter the Observatory", replacesWalkin: "Crater Observatory" });
 
 // ---------- the story rooms at full size (pack section 15), reached through their front doors; they replace those buildings' walk-in rooms ----
 // When several doors share a scene (Your House and the Recovery Bay are both in DB2), a place's "out:DB2" returns to the OUTPORTALS entry whose "to" names that place.
@@ -6172,9 +6173,10 @@ SCN.DB4 = { rect: [90, 30],
       { const st = grp(cx, 0, cz - r - 1.0); for (const [a, b] of [[-0.4, -0.4], [0.4, -0.4], [-0.4, 0.4], [0.4, 0.4]]) add(new THREE.CylinderGeometry(0.05, 0.06, 1.8, 5), D.wood(), [a, 0.9, b], [0, 0, 0], null, st); add(new THREE.BoxGeometry(1.0, 0.1, 1.0), D.wood(), [0, 1.8, 0], [0, 0, 0], null, st); add(new THREE.CylinderGeometry(0.25, 0.25, 0.5, 10), D.wood(), [0, 2.1, 0], [0, 0, 0], null, st); }
       barrelP(cx + 4.6, cz - 4.2, 0.8); for (let k = 0; k < 3; k++) { const dm = grp(cx + 6.6 + k * 0.9, 0, cz - 3.8 - (k % 2) * 0.4); add(new THREE.CylinderGeometry(0.05, 0.05, 1.5, 5), D.wood(), [0, 0.75, 0], [0, 0, 0], null, dm); add(olathe([[0.001, 0.6], [0.24, 0.68], [0.28, 1.1], [0.2, 1.4], [0.001, 1.5]], 10, 0.03, 4), mk().M.thatch, [0, 0, 0], [0, 0, 0], null, dm); add(new THREE.SphereGeometry(0.17, 8, 6), mk().M.thatch, [0, 1.62, 0], [0, 0, 0], null, dm); } }
     // ---- the market row: five open stalls under shade sails (roasted cactus nuts, rugs, spices, copper pots, Fenna's glowing Sporeholm spore jars) ----
-    [["nuts", "#f08a3c"], ["rugs", "#7a4ab0"], ["spice", "#c8402a"], ["copper", "#3fc6c0"], ["spores", "#8a5ad0"]].forEach(([k, c], i) => dStall(X + 2.4 + i * 3.1, Y + 20.6, k, c, Math.PI));
+    // Nov 26: the row parts round the rope bridge's head (deck x 100.3-102.7), so the walk from the road onto the bridge is clear: three stalls west of it, two east
+    [["nuts", "#f08a3c", 2.0], ["rugs", "#7a4ab0", 5.0], ["spice", "#c8402a", 8.0], ["copper", "#3fc6c0", 14.7], ["spores", "#8a5ad0", 17.6]].forEach(([k, c, dx]) => dStall(X + dx, Y + 20.6, k, c, Math.PI));
     // ---- the lemonade stand, slightly crooked ----
-    { const L = grp(X + 18.0, 0, Y + 21.4, 0.12); add(warp(new THREE.BoxGeometry(1.4, 0.95, 0.7, 2, 1, 1), 0.03, 2), D.wood(), [0, 0.48, 0], [0, 0, 0.04], null, L); for (const s of [-0.6, 0.6]) add(new THREE.CylinderGeometry(0.03, 0.03, 1.2, 5), D.wood(), [s, 1.5, 0.2], [0, 0, 0], null, L); add(new THREE.PlaneGeometry(1.5, 0.9), D.awningM("#ffd84a", "#f4f0e0"), [0, 2.1, 0.25], [-1.1, 0, 0], null, L); for (let k = 0; k < 3; k++) add(olathe([[0.001, 0], [0.08, 0], [0.1, 0.18], [0.06, 0.28], [0.001, 0.28]], 10), std({ color: "#fff6a0", transparent: true, opacity: 0.8 }), [-0.4 + k * 0.4, 0.96, 0], [0, 0, 0], null, L); }
+    { const L = grp(X + 19.7, 0, Y + 21.6, 0.12); add(warp(new THREE.BoxGeometry(1.4, 0.95, 0.7, 2, 1, 1), 0.03, 2), D.wood(), [0, 0.48, 0], [0, 0, 0.04], null, L); for (const s of [-0.6, 0.6]) add(new THREE.CylinderGeometry(0.03, 0.03, 1.2, 5), D.wood(), [s, 1.5, 0.2], [0, 0, 0], null, L); add(new THREE.PlaneGeometry(1.5, 0.9), D.awningM("#ffd84a", "#f4f0e0"), [0, 2.1, 0.25], [-1.1, 0, 0], null, L); for (let k = 0; k < 3; k++) add(olathe([[0.001, 0], [0.08, 0], [0.1, 0.18], [0.06, 0.28], [0.001, 0.28]], 10), std({ color: "#fff6a0", transparent: true, opacity: 0.8 }), [-0.4 + k * 0.4, 0.96, 0], [0, 0, 0], null, L); }
     // ---- the Wayfarers' Inn: two storeys, a wooden balcony, a hitching rail and water trough ----
     dHouse("d_inn", X + 20.8, Y + 18.4, 7.6, 5.0, { name: "Wayfarers' Inn", dir: -1 });
     // ---- the well with a copper bucket, carts with big spoked wheels, melons, rune lamps (two tall ones flank the east exit) ----
@@ -6968,12 +6970,14 @@ const o2 = (() => { const { h, rng } = OBS2;
       if ((dh > 0.42 && !walk) || outside(cx, cz)) idx.push(q[0], q[2], q[1], q[1], q[2], q[3]); }
     if (!idx.length) return null; const g = new THREE.BufferGeometry(); g.setAttribute("position", new THREE.BufferAttribute(V, 3)); g.setIndex(idx);
     if (stand) { const C = new Float32Array(V.length), cl = new THREE.Color(), BANDS = ["#b0583a", "#c87048", "#9a4a32", "#d88a5a", "#a8503a", "#c06a44"]; for (let n = 0; n < V.length / 3; n++) { const y = V[n * 3 + 1], bi = Math.floor(y * 0.9 + fbm(V[n * 3] * 0.05, V[n * 3 + 2] * 0.05, 3.1, 1) * 1.4); cl.set(BANDS[((bi % 6) + 6) % 6]); C[n * 3] = cl.r; C[n * 3 + 1] = cl.g; C[n * 3 + 2] = cl.b; } g.setAttribute("color", new THREE.BufferAttribute(C, 3)); }
-    g.computeVertexNormals(); const m = add(g, mat, [0, 0, 0], [0, 0, 0], stand ? "obsrock" : "nocol"); m.userData.noLift = true; m.castShadow = !stand; return m; };
+    g.computeVertexNormals(); const m = add(g, mat, [0, 0, 0], [0, 0, 0], stand ? "obsrock" : "floor"); m.userData.noLift = true; m.userData.skin = true; /* Nov 26: "floor" = feet stand on it, never a wall */ m.castShadow = !stand; return m; };
   return { lampPillar, banner, cypress, turret, coinScope, ropeRun, skin }; })();
 // ---- DA5 THE OBSERVATORY SWITCHBACKS (x 120-149): five rope-railed legs up the banded red hillside, then the grand stair ----
 SCN.DA5 = { rect: [120, 0],
   ground() { const X = 120, Y = 0; fillT(X, Y, X + 29, Y + 29, "x");
-    for (let y = Y; y < Y + 30; y++) for (let x = X; x < X + 30; x++) { const [d, , si] = OBS2.near(x + 0.5, y + 0.5); if (d < OBS2.HW + 0.1) fillT(x, y, x, y, si === OBS2.STAIR ? "s" : "p"); } },
+    for (let y = Y; y < Y + 30; y++) for (let x = X; x < X + 30; x++) { const [d, , si] = OBS2.near(x + 0.5, y + 0.5); if (d < OBS2.HW + 0.1) fillT(x, y, x, y, si === OBS2.STAIR ? "s" : "p"); }
+    // the turns get a full round landing, so the walk never pinches at a bend
+    for (const [px, py] of OBS2.PTS.slice(2, 10)) for (let y = Math.floor(py - 2.2); y <= py + 2.2; y++) for (let x = Math.floor(px - 2.2); x <= px + 2.2; x++) if (x >= X && x < X + 30 && y >= Y && y < Y + 30 && Math.hypot(x + 0.5 - px, y + 0.5 - py) < 2.0) fillT(x, y, x, y, "p"); },
   build() { const X = 120, Y = 0, { SEG, HW, h, ropeRun, near } = { ...OBS2, ...o2 }, q = OBS2.rng(5120);
     // rope rails on the downhill side of every leg and landing, blue lanterns every few posts
     const side = (g) => { const dx = g.b[0] - g.a[0], dz = g.b[1] - g.a[1]; if (Math.abs(dz) > Math.abs(dx)) return [-1, 0]; return g.a[1] > 15 ? [0, 1] : [0, -1]; };
@@ -6982,7 +6986,7 @@ SCN.DA5 = { rect: [120, 0],
       o2.ropeRun(pts, 1.8, 4); }
     // low sandstone kerbs along the uphill side, tilted with the grade
     for (const g of SEG) { if (g.i < 1 || g.i > 10) continue; const [nx, nz] = side(g), dx = (g.b[0] - g.a[0]) / g.L, dz = (g.b[1] - g.a[1]) / g.L, sl = Math.atan2(g.b[2] - g.a[2], g.L);
-      for (let s = 0.5; s < g.L - 0.4; s += 1.05) { const x = g.a[0] + dx * s - nx * (HW + 0.15), z = g.a[1] + dz * s - nz * (HW + 0.15), K = grp(x, 0, z, Math.atan2(dx, dz)); add(warp(new THREE.BoxGeometry(0.34, 0.42, 1.0, 1, 1, 2), 0.03, 2, s + g.i), q() < 0.2 ? D.paleStone() : D.sandstone(), [0, 0.12, 0], [sl, 0, 0], "nocol", K); } }
+      for (let s = 0.5; s < g.L - 0.4; s += 1.05) { const x = g.a[0] + dx * s - nx * (HW + 0.15), z = g.a[1] + dz * s - nz * (HW + 0.15), K = grp(x, 0, z, Math.atan2(dx, dz)); add(warp(new THREE.BoxGeometry(0.34, 0.42, 1.0, 1, 1, 2), 0.03, 2, s + g.i), q() < 0.2 ? D.paleStone() : D.sandstone(), [0, 0.12, 0], [sl, 0, 0], "floor", K); } }
     // a cairn and a bench on each turn, flowering cacti on the shoulders
     for (const [x, z] of [[128, 25.2], [133, 3.8], [138, 25.2], [143, 3.8]]) { const C = grp(x + (z > 15 ? 1.6 : -1.6), 0, z + (z > 15 ? 0.9 : -0.9)); for (let k = 0; k < 4; k++) add(warp(new THREE.IcosahedronGeometry(0.34 - k * 0.06, 1), 0.06, 2, x + k), k % 2 ? D.paleStone() : D.rock(), [0, 0.22 + k * 0.42, 0], [q(), q(), q()], null, C); }
     capBench(130.6, 26.4, Math.PI); capBench(140.4, 2.6, 0);
@@ -7000,7 +7004,7 @@ SCN.DA6 = { rect: [150, 0],
   build() { const X = 150, Y = 0, { OBSX, OBSY, SEG, HW } = OBS2, q = OBS2.rng(6150), S0 = D.sandstone(), S1 = D.paleStone();
     // ---- the grand stair (p44): slabs with a pale worn lip, sandstone balustrades both sides, lamp pillars, banners and cypress at the top ----
     { const g = SEG[OBS2.STAIR], n = 34, run = g.L / n, W = HW * 2;
-      for (let i = 0; i < n; i++) { const x = g.a[0] + (i + 0.5) * run, G = grp(x, 0, g.a[1], Math.PI / 2); add(warp(new THREE.BoxGeometry(W * 0.98, 0.5, run * 1.06, 2, 1, 1), 0.01, 7, i), i % 7 === 3 ? S1 : S0, [0, -0.16, 0], [0, 0, 0], "nocol", G); add(new THREE.BoxGeometry(W * 0.96, 0.04, 0.035), S1, [0, 0.09, run * 0.46], [0, 0, 0], "nocol", G); }
+      for (let i = 0; i < n; i++) { const x = g.a[0] + (i + 0.5) * run, G = grp(x, 0, g.a[1], Math.PI / 2); add(warp(new THREE.BoxGeometry(W * 0.98, 0.5, run * 1.06, 2, 1, 1), 0.01, 7, i), i % 7 === 3 ? S1 : S0, [0, -0.16, 0], [0, 0, 0], "floor", G); add(new THREE.BoxGeometry(W * 0.96, 0.04, 0.035), S1, [0, 0.09, run * 0.46], [0, 0, 0], "nocol", G); }
       for (const sz of [-1, 1]) { const z = g.a[1] + sz * (HW + 0.2); for (let x = g.a[0] + 0.3; x < g.b[0] - 0.2; x += 1.15) { const x2 = Math.min(g.b[0] - 0.1, x + 1.15), y0 = g.a[2] + ((x - g.a[0]) / g.L) * (g.b[2] - g.a[2]), y1 = g.a[2] + ((x2 - g.a[0]) / g.L) * (g.b[2] - g.a[2]);
           const B = grp(x, 0, z); add(new THREE.BoxGeometry(0.3, 0.95, 0.3), S0, [0, 0.47, 0], [0, 0, 0], null, B); add(new THREE.BoxGeometry(0.36, 0.08, 0.36), S1, [0, 0.96, 0], [0, 0, 0], null, B);
           for (let k = 1; k < 4; k++) { const xb = x + (x2 - x) * (k / 4), Bb = grp(xb, 0, z); add(olathe([[0.001, 0], [0.09, 0], [0.06, 0.18], [0.1, 0.45], [0.06, 0.72], [0.09, 0.8], [0.001, 0.8]], 8), S1, [0, 0, 0], [0, 0, 0], "nocol", Bb); }
@@ -7008,23 +7012,36 @@ SCN.DA6 = { rect: [150, 0],
       for (const t of [0.34, 0.68]) for (const sz of [-1, 1]) o2.lampPillar(g.a[0] + g.L * t, g.a[1] + sz * (HW + 0.25), 0.8);
       for (const sz of [-1, 1]) { o2.lampPillar(g.b[0] + 0.3, g.a[1] + sz * (HW + 0.3)); o2.banner(g.b[0] + 1.3, g.a[1] + sz * (HW + 0.6), sz > 0 ? Math.PI : 0); o2.cypress(g.b[0] + 0.4, g.a[1] + sz * (HW + 1.6), 5.2); o2.cypress(g.b[0] - 2.0, g.a[1] + sz * (HW + 1.5), 4.2); } }
     // ---- the Crater Observatory (moved here from Observatory Hill): white dome, turquoise band, roof slot, the great brass telescope aimed north at the crater ----
-    const cx = OBSX + 5.6, cz = OBSY + 5.4; // the dome's centre (the old 7.6, 39.0)
-    add(olathe([[0.001, 0.0], [6.4, 0.0], [6.4, 0.32], [6.0, 0.36], [0.001, 0.36]], 48, 0.04, 2, 3.3), S0, [cx, -0.1, cz]).scale.z = 0.86;
-    dHouse("d_obs", OBSX, OBSY, 11.4, 8.6, { name: "Crater Observatory" });
-    { const T = grp(cx, 0, cz - 1.4, 0); add(new THREE.BoxGeometry(1.3, 0.25, 6.2), std({ color: "#2a2a3a", roughness: 0.6 }), [0, 6.35, 0.4], [0.35, 0, 0], null, T);
+    // Nov 26: the observatory is about 2.2x bigger outside (wider, and walls twice as tall); its front door moves 2 m south into the courtyard.
+    // The lab inside is its own place (OUTPORTALS), so only the outside grows. A sandstone plinth runs down the cliff under its north side.
+    const OBF = 2.2, OBR = 1.3 * 2.33 * OBF, cx = OBSX + 5.7, cz = 12.5 - OBR; // OBR: the big dome's radius; cz: its centre (front wall at z 12.5)
+    { const tr = add(olathe([[0.001, 0.0], [OBR * 1.08 + 1.2, 0.0], [OBR * 1.08 + 1.2, 0.32], [OBR * 1.08 + 0.8, 0.36], [0.001, 0.36]], 56, 0.04, 2, 3.3), S0, [cx, -0.1, cz]); tr.scale.z = 0.9; tr.name = "floor";
+      const pl = add(new THREE.CylinderGeometry(OBR * 1.08 + 1.1, OBR * 1.08 + 1.9, 12, 40, 3, true), (() => { const m = DXTRI(std({ map: dxT("redrock"), color: "#ffd8c0", roughness: 0.9 }), 0.22); m.customProgramCacheKey = () => "dxtri0.22"; return m; })(), [cx, -6.05, cz]); pl.scale.z = 0.9; pl.name = "nocol"; pl.userData.noSeat = true; }
+    FSPEC.d_obsXL = { ...FSPEC.d_obs, units: [du({ r: 1.3, sx: 1.08, fh: 6.2, win: 5, winW: 1.0, door: "double", doorW: 2.6, doorC: "#2a6a8a", tint: "#ffffff", cap: { c: "#ffffff", r: 1.0, h: 1.0 } })] };
+    { const sK = 2.33 * OBF, w = 2 * (sK * 2.4 + 0.1), d = sK * 2.3 - 1.2; const n0 = root.children.length; dHouse("d_obsXL", cx - w / 2, cz + 0.2 - d / 2, w, d, { name: "Crater Observatory", walkin: false, maxS: 6 });
+      // the lab inside is its own place, so the doorway gets closed doors: the open door leaves come off, and an arched double door fills the frame
+      root.updateMatrixWorld(true); const doorMap = mk().M.door.map, leaves = [], frames = [], bb = new THREE.Box3();
+      for (const ch of root.children.slice(n0)) ch.traverse((o) => { if (!o.isMesh) return; if (o.material && o.material.map === doorMap) leaves.push(o); else if (o.geometry && o.geometry.type === "ExtrudeGeometry" && o.material === fbMats().frame) frames.push(o); });
+      for (const o of leaves) o.parent.remove(o);
+      const fr = frames.map((o) => bb.setFromObject(o).clone()).sort((a, b) => b.max.z - a.max.z)[0];
+      if (fr) { const fw = fr.max.x - fr.min.x, fhh = fr.max.y - fr.min.y, dw = fw - 0.9 + 0.12, dh = fhh - 0.45 + 0.06, x = (fr.min.x + fr.max.x) / 2, z = fr.min.z + 0.12, y = fr.min.y;
+        const dm = std({ map: doorMap, color: new THREE.Color("#2a6a8a").lerp(new THREE.Color("#f0d0a8"), 0.38), emissive: "#2a6a8a", emissiveIntensity: 0.12 });
+        add(new THREE.ExtrudeGeometry(archShape(dw, dh), { depth: 0.12, bevelEnabled: false }), dm, [x, y, z], [0, 0, 0], "nocol");
+        add(new THREE.BoxGeometry(0.06, dh - 0.1, 0.05), D.brass(), [x, y + (dh - 0.1) / 2, z + 0.14], [0, 0, 0], "nocol");
+        for (const sd of [-1, 1]) add(new THREE.TorusGeometry(0.12, 0.025, 6, 14), D.brass(), [x + sd * 0.22, y + 1.15, z + 0.16], [0, 0, 0], "nocol"); } }
+    { const T = grp(cx, OBS2.TELY || 0, cz - 1.4 * OBF, 0); T.scale.setScalar(OBF * 0.85); add(new THREE.BoxGeometry(1.3, 0.25, 6.2), std({ color: "#2a2a3a", roughness: 0.6 }), [0, 6.35, 0.4], [0.35, 0, 0], null, T);
       const tb = grp(0, 6.0, 0, 0, T); const tube2 = add(olathe([[0.001, -0.5], [0.42, -0.5], [0.48, 0], [0.5, 4.2], [0.62, 4.4], [0.62, 4.8], [0.001, 4.8]], 20, 0.0), D.brass(), [0, 0, 0], [0, 0, 0], null, tb); tube2.rotation.x = -1.05;
       for (const y of [0.8, 2.0, 3.2]) { const r2 = add(new THREE.TorusGeometry(0.5, 0.06, 6, 20), D.copper(), [0, 0, 0], [0, 0, 0], null, tb); r2.position.set(0, Math.cos(1.05) * y, -Math.sin(1.05) * y); r2.rotation.x = -1.05 + Math.PI / 2; }
       add(new THREE.CylinderGeometry(0.5, 0.7, 1.2, 12), D.copper(), [0, 5.5, 0], [0, 0, 0], null, T); }
-    { const P2 = grp(cx + 4.0, 0.3, cz + 4.6); add(new THREE.CylinderGeometry(0.05, 0.05, 1.6, 6), D.copper(), [0, 0.8, 0], [0, 0, 0], null, P2); add(new THREE.SphereGeometry(0.7, 16, 8, 0, TAU, 0, Math.PI / 3), std({ color: "#f0f0f4", roughness: 0.4, side: THREE.DoubleSide }), [0, 1.7, 0], [-0.9, 0, 0], null, P2); }
-    for (const sx of [-1, 1]) limb([[cx + sx * 3.6, 0.3, cz + 4.6], [cx + sx * 4.6, 0.6, cz + 3.2], [cx + sx * 5.2, 0.6, cz + 1.0]], 0.07, 0.07, D.copper(), { seg: 10, rad: 6 });
-    planterPair(cx, cz + 6.9, 2.6);
+    { const P2 = grp(177.0, 0.3, 7.6); P2.scale.setScalar(1.7); add(new THREE.CylinderGeometry(0.05, 0.05, 1.6, 6), D.copper(), [0, 0.8, 0], [0, 0, 0], null, P2); add(new THREE.SphereGeometry(0.7, 16, 8, 0, TAU, 0, Math.PI / 3), std({ color: "#f0f0f4", roughness: 0.4, side: THREE.DoubleSide }), [0, 1.7, 0], [-0.9, 0, 0], null, P2); }
+    planterPair(cx, 13.6, 3.6);
     // ---- the courtyard: a star-map mosaic, lamp pillars, banners, domed turrets at the corners, cypress and flowering cacti ----
     { const t = tex(512, 512, (g, W) => { g.fillStyle = "#e8d4b0"; g.fillRect(0, 0, W, W); g.translate(W / 2, W / 2); g.fillStyle = "#1e2a5a"; g.beginPath(); g.arc(0, 0, W * 0.46, 0, TAU); g.fill(); g.strokeStyle = "#d8a840"; g.lineWidth = 8; for (const r of [0.46, 0.3]) { g.beginPath(); g.arc(0, 0, W * r, 0, TAU); g.stroke(); }
         g.fillStyle = "#5af0e0"; for (let k = 0; k < 8; k++) { const a = (k / 8) * TAU, L = W * (k % 2 ? 0.2 : 0.42); g.beginPath(); g.moveTo(0, 0); g.lineTo(Math.cos(a - 0.08) * W * 0.06, Math.sin(a - 0.08) * W * 0.06); g.lineTo(Math.cos(a) * L, Math.sin(a) * L); g.lineTo(Math.cos(a + 0.08) * W * 0.06, Math.sin(a + 0.08) * W * 0.06); g.fill(); }
         const q2 = OBS2.rng(77); g.fillStyle = "#ffffff"; for (let k = 0; k < 60; k++) { const a = q2() * TAU, r = W * (0.08 + q2() * 0.36); g.beginPath(); g.arc(Math.cos(a) * r, Math.sin(a) * r, 1.5 + q2() * 2.5, 0, TAU); g.fill(); } });
       add(new THREE.CircleGeometry(2.9, 40), std({ map: t, roughness: 0.6, emissive: "#3a4a9a", emissiveIntensity: 0.25, emissiveMap: t }), [167.8, 0.04, 17.6], [-Math.PI / 2, 0, 0], "nocol"); }
     for (const [x, z] of [[161.2, 14.6], [161.2, 20.6], [174.8, 14.6], [174.8, 20.6]]) o2.lampPillar(x, z);
-    o2.turret(159.6, 22.6); o2.turret(176.2, 22.4); o2.turret(176.6, 6.2, 1.1, 3.0);
+    o2.turret(159.6, 22.6); o2.turret(176.2, 22.4);
     for (const [x, z, r] of [[163.6, 13.4, 0], [172.6, 13.4, 0], [165.8, 21.8, Math.PI], [170.4, 21.8, Math.PI]]) o2.banner(x, z, r, 4.6);
     for (const [x, z, hh] of [[160.2, 2.6, 5.6], [175.4, 10.6, 5.0], [175.0, 17.6, 4.6], [163.4, 23.6, 4.4], [172.4, 23.4, 5.2], [176.4, 4.0, 4.2]]) o2.cypress(x, z, hh);
     for (const [x, z] of [[160.6, 16.0], [174.4, 19.0], [166.0, 23.4], [176.8, 13.4]]) { const G = grp(x, 0, z); add(olathe([[0.001, 0], [0.42, 0], [0.48, 0.12], [0.42, 0.18], [0.48, 0.6], [0.52, 0.66], [0.001, 0.66]], 10, 0.01, 3, 1), D.sandstone(), [0, 0, 0], [0, 0, 0], null, G); const DG = D.geo(); add(DG.barrel, D.cactus(), [0, 0.64, 0], [0, 0, 0], null, G).scale.set(1.6, 1.9, 1.6); add(DG.bloom, MK.glowC("#ff6ab0", 0.8), [0, 1.18, 0], [0, 0, 0], null, G).scale.set(1.3, 1.3, 1.3); }
@@ -7067,10 +7084,10 @@ D.XLITE = { DA5: 0.3, DA6: 0.2 }; D.xClear = (x, z) => x >= 145 && x <= 159 && z
 // ---- the far view of the mesa (stand pass): rock faces in plain banded colours, and the observatory as a plain landmark ----
 OBS2.stand = () => { const n0 = root.children.length, V = std({ vertexColors: true, roughness: 0.95 }); V.userData.surfKey = "d_far"; // surfaces.js: rock bedding and relief on the far mesa faces
   const s5 = o2.skin(120, -4.5, 150, 30, V, true), s6 = o2.skin(150, -4.5, 184.5, 30, V, true); if (s5) s5.userData.rect = [120, 0]; if (s6) s6.userData.rect = [150, 0];
-  const cx = OBS2.OBSX + 5.6, cz = OBS2.OBSY + 5.4, [ux, uz] = unwarp(cx, cz), y = GHT(ux, uz, true), G = new THREE.Group(); G.position.set(ux, y, uz); root.add(G); G.userData.noLift = true;
+  const OBR = 1.3 * 2.33 * 2.2, cx = OBS2.OBSX + 5.7, cz = 12.5 - OBR, [ux, uz] = unwarp(cx, cz), y = GHT(ux, uz, true), G = new THREE.Group(); // Nov 26: matches the bigger dome G.position.set(ux, y, uz); root.add(G); G.userData.noLift = true;
   const W = std({ color: "#f4ece0", roughness: 0.7 }), B = std({ color: "#c8923a", roughness: 0.4, metalness: 0.6 }), T = std({ color: "#3ab8b0", roughness: 0.5 });
-  const m1 = add(new THREE.CylinderGeometry(5.3, 5.5, 3.0, 28), W, [0, 1.5, 0], [0, 0, 0], "obsmark", G), m2 = add(new THREE.SphereGeometry(5.3, 28, 12, 0, TAU, 0, Math.PI / 2), W, [0, 3.0, 0], [0, 0, 0], "obsmark", G), m3 = add(new THREE.CylinderGeometry(5.42, 5.42, 0.4, 28), T, [0, 2.9, 0], [0, 0, 0], "obsmark", G);
-  const tb = grp(0, 7.4, -1.4, 0, G); const m4 = add(new THREE.CylinderGeometry(0.55, 0.5, 4.8, 12), B, [0, 2.0, 0], [0, 0, 0], "obsmark", tb); tb.rotation.x = -1.05;
+  const m1 = add(new THREE.CylinderGeometry(OBR * 1.04, OBR * 1.08, 6.2, 28), W, [0, 3.1, 0], [0, 0, 0], "obsmark", G), m2 = add(new THREE.SphereGeometry(OBR * 1.04, 28, 12, 0, TAU, 0, Math.PI / 2), W, [0, 6.2, 0], [0, 0, 0], "obsmark", G), m3 = add(new THREE.CylinderGeometry(OBR * 1.06, OBR * 1.06, 0.5, 28), T, [0, 6.0, 0], [0, 0, 0], "obsmark", G); G.scale.z = 0.93;
+  const tb = grp(0, 12.6, -2.6, 0, G); const m4 = add(new THREE.CylinderGeometry(1.0, 0.9, 8.6, 12), B, [0, 3.6, 0], [0, 0, 0], "obsmark", tb); tb.rotation.x = -1.05;
   for (const m of [m1, m2, m3, m4]) { m.userData.rect = [150, 0]; m.castShadow = false; } };
 // ======== DX PASS BEGIN ========
 // ================= DUSTARA STORY + DETAIL PASS (shared detail kit) =================
@@ -7488,8 +7505,9 @@ buildAll(); if (H && H.all && H.flora !== false) buildFlora();
 if (WALKINS.length) { // last net: no instanced blade, crop or plant may stand in a room or on a doorstep
   const m4 = new THREE.Matrix4(), v = new THREE.Vector3(), z0 = new THREE.Matrix4().makeScale(0, 0, 0), hit = (x, z) => WALKINS.some((w) => { const px = w.G.position.x + w.ox, pz = w.G.position.z + w.oz; return ((x - px) / (w.rx + 0.75)) ** 2 + ((z - pz) / (w.rz + 0.75)) ** 2 < 1 || (Math.abs(x - px) < w.dw / 2 + 0.6 && Math.abs(z - pz) < w.r + 2.4 && ((z - pz) * w.d > 0 || w.back)); });
   root.updateMatrixWorld(true); root.traverse((o) => { if (!o.isInstancedMesh || o.userData.int) return; let n = 0; for (let i = 0; i < o.count; i++) { o.getMatrixAt(i, m4); v.setFromMatrixPosition(m4).applyMatrix4(o.matrixWorld); if (hit(v.x, v.z)) { o.setMatrixAt(i, z0); n++; } } if (n) o.instanceMatrix.needsUpdate = true; }); }
+const SEATED = window.SEAT && !(H && H.bakeOnly) ? window.SEAT.run(root, GHT, THREE) : null; /* Nov 26: plants, pebbles and small props sit on the ground */
 
-return { pathguard: PATHGUARD, patches: TGP, places: placeMeta(), outPortals: OUTPORTALS, walkins: WALKINS.map((w) => ({ name: w.name, key: w.key, x: (w.G.position.x + w.ox), y: w.G.position.y, z: (w.G.position.z + w.oz), rx: w.rx, rz: w.rz, dw: w.dw, fh: w.fh, d: w.d, back: !!w.back })), atW, warpXY, unwarp, ght: GHT, flora: FLC.n, object: root, rect: SCN[ids[0] || want].rect, grid: GRID.map((r) => r.join("")), oy: GOY, bounds: [BX0, BZ0, BX1, BZ1], rects: Object.fromEntries(Object.keys(SCN).map((k) => [k, SCN[k].rect])) };
+return { seated: SEATED, pathguard: PATHGUARD, patches: TGP, places: placeMeta(), outPortals: OUTPORTALS, walkins: WALKINS.map((w) => ({ name: w.name, key: w.key, x: (w.G.position.x + w.ox), y: w.G.position.y, z: (w.G.position.z + w.oz), rx: w.rx, rz: w.rz, dw: w.dw, fh: w.fh, d: w.d, back: !!w.back })), atW, warpXY, unwarp, ght: GHT, flora: FLC.n, object: root, rect: SCN[ids[0] || want].rect, grid: GRID.map((r) => r.join("")), oy: GOY, bounds: [BX0, BZ0, BX1, BZ1], rects: Object.fromEntries(Object.keys(SCN).map((k) => [k, SCN[k].rect])) };
 
 },fmap:function(THREE,H){
 // ---- Squatch in-house building kit: seeded random, painted canvas textures, mesh helpers ----
@@ -10413,7 +10431,7 @@ const fxSpear = (x, z) => { const G = grp(x, 0, z, 0), iron = FXN.iron(), ironD 
     for (let k = 0; k < 8; k++) { const a = (k / 8) * TAU; add(new THREE.BoxGeometry(0.12, 1.45, 0.06), fr, [Math.sin(a) * 1.0, 2.15 + Math.cos(a) * 1.0, 0.5], [0, 0, -a], "nocol", D); bolts.push([new THREE.Vector3(Math.sin(a) * 1.68, 2.15 + Math.cos(a) * 1.68, 5.05), new THREE.Vector3(0, 0, 1), 0.1]); }
     add(new THREE.BoxGeometry(6.0, 0.8, 1.0), st, [0, 4.75, 0.2], [0, 0, 0], null, D); // the stone lintel
     for (const [sx, r, k] of [[-1.9, 0.26, 0], [-0.62, 0.22, 1], [0.62, 0.22, 2], [1.9, 0.26, 3]]) { const S = grp(sx, 4.75, 0.72, 0, D); add(new THREE.TorusGeometry(r, 0.035, 4, 18, Math.PI * 1.6), FXN.swirl(), [0, 0, 0], [0, 0, k * 1.3], "nocol", S); add(new THREE.TorusGeometry(r * 0.52, 0.03, 4, 12, Math.PI * 1.5), FXN.swirl(), [0, 0, 0], [0, 0, k * 1.3 + 2.4], "nocol", S); }
-    for (let k = 0; k < 3; k++) add(new THREE.BoxGeometry(6.6 - k * 0.6, 0.14, 0.62), fr, [0, 0.07 + k * 0.14, 1.95 - k * 0.55], [0, 0, 0], "nocol", D); // wide iron steps
+    for (let k = 0; k < 3; k++) add(new THREE.BoxGeometry(6.6 - k * 0.6, 0.14, 0.62), fr, [0, 0.07 + k * 0.14, 1.95 - k * 0.55], [0, 0, 0], "floor", D); // wide iron steps
     for (const s of [-1, 1]) { const L = grp(s * 3.7, 0, 2.3, 0, D); add(new THREE.CylinderGeometry(0.09, 0.14, 3.6, 8), fr, [0, 1.8, 0], [0, 0, 0], "nocol", L); add(new THREE.BoxGeometry(0.42, 0.5, 0.42), fr, [0, 3.75, 0], [0, 0, 0], "nocol", L); add(new THREE.BoxGeometry(0.32, 0.36, 0.44), FXA.amber(), [0, 3.75, 0], [0, 0, 0], "nocol", L); add(new THREE.ConeGeometry(0.34, 0.3, 4), fr, [0, 4.15, 0], [0, Math.PI / 4, 0], "nocol", L); } }
   // the service ladder: 34 rungs up the shell petal, a landing on the collar, then 206 rungs up the shaft to a hatch under the Crystal Room
   { const a = 1.93, ux = Math.sin(a), uz = Math.cos(a), tx = Math.cos(a), tz = -Math.sin(a), rungs = [], hoops = [], segs = [[0.25, 7.65, 5.62, 5.62, 34], [8.45, y1 - 0.25, r0 + 0.32, r1 + 0.32, 206]];
@@ -10669,7 +10687,8 @@ buildAll(); if (H && H.all && H.flora !== false) buildFlora(); fxGrassTone();
 if (WALKINS.length) { // last net: no instanced blade, crop or plant may stand in a room or on a doorstep
   const m4 = new THREE.Matrix4(), v = new THREE.Vector3(), z0 = new THREE.Matrix4().makeScale(0, 0, 0), hit = (x, z) => WALKINS.some((w) => { const px = w.G.position.x + w.ox, pz = w.G.position.z + w.oz; return ((x - px) / (w.rx + 0.75)) ** 2 + ((z - pz) / (w.rz + 0.75)) ** 2 < 1 || (Math.abs(x - px) < w.dw / 2 + 0.6 && Math.abs(z - pz) < w.r + 2.4 && ((z - pz) * w.d > 0 || w.back)); });
   root.updateMatrixWorld(true); root.traverse((o) => { if (!o.isInstancedMesh || o.userData.int) return; let n = 0; for (let i = 0; i < o.count; i++) { o.getMatrixAt(i, m4); v.setFromMatrixPosition(m4).applyMatrix4(o.matrixWorld); if (hit(v.x, v.z)) { o.setMatrixAt(i, z0); n++; } } if (n) o.instanceMatrix.needsUpdate = true; }); }
-return { pathguard: PATHGUARD, patches: TGP, places: placeMeta(), outPortals: OUTPORTALS, walkins: WALKINS.map((w) => ({ name: w.name, key: w.key, x: (w.G.position.x + w.ox), y: w.G.position.y, z: (w.G.position.z + w.oz), rx: w.rx, rz: w.rz, dw: w.dw, fh: w.fh, d: w.d, back: !!w.back })), atW, warpXY, unwarp, ght: GHT, flora: FLC.n, object: root, rect: SCN[ids[0] || want].rect, grid: GRID.map((r) => r.join("")), oy: GOY, bounds: [BX0, BZ0, BX1, BZ1], rects: Object.fromEntries(Object.keys(SCN).map((k) => [k, SCN[k].rect])) };
+const SEATED = window.SEAT && !(H && H.bakeOnly) ? window.SEAT.run(root, GHT, THREE) : null; /* Nov 26: plants, pebbles and small props sit on the ground */
+return { seated: SEATED, pathguard: PATHGUARD, patches: TGP, places: placeMeta(), outPortals: OUTPORTALS, walkins: WALKINS.map((w) => ({ name: w.name, key: w.key, x: (w.G.position.x + w.ox), y: w.G.position.y, z: (w.G.position.z + w.oz), rx: w.rx, rz: w.rz, dw: w.dw, fh: w.fh, d: w.d, back: !!w.back })), atW, warpXY, unwarp, ght: GHT, flora: FLC.n, object: root, rect: SCN[ids[0] || want].rect, grid: GRID.map((r) => r.join("")), oy: GOY, bounds: [BX0, BZ0, BX1, BZ1], rects: Object.fromEntries(Object.keys(SCN).map((k) => [k, SCN[k].rect])) };
 
 },tmap:function(THREE,H){
 // ---- Squatch in-house building kit: seeded random, painted canvas textures, mesh helpers ----
@@ -13929,7 +13948,8 @@ buildAll(); if (H && H.all && H.flora !== false) buildFlora(); thUVfix(root);
 if (WALKINS.length) { // last net: no instanced blade, crop or plant may stand in a room or on a doorstep
   const m4 = new THREE.Matrix4(), v = new THREE.Vector3(), z0 = new THREE.Matrix4().makeScale(0, 0, 0), hit = (x, z) => WALKINS.some((w) => { const px = w.G.position.x + w.ox, pz = w.G.position.z + w.oz; return ((x - px) / (w.rx + 0.75)) ** 2 + ((z - pz) / (w.rz + 0.75)) ** 2 < 1 || (Math.abs(x - px) < w.dw / 2 + 0.6 && Math.abs(z - pz) < w.r + 2.4 && ((z - pz) * w.d > 0 || w.back)); });
   root.updateMatrixWorld(true); root.traverse((o) => { if (!o.isInstancedMesh || o.userData.int) return; let n = 0; for (let i = 0; i < o.count; i++) { o.getMatrixAt(i, m4); v.setFromMatrixPosition(m4).applyMatrix4(o.matrixWorld); if (hit(v.x, v.z)) { o.setMatrixAt(i, z0); n++; } } if (n) o.instanceMatrix.needsUpdate = true; }); }
-return { pathguard: PATHGUARD, patches: TGP, places: placeMeta(), outPortals: OUTPORTALS, walkins: WALKINS.map((w) => ({ name: w.name, key: w.key, x: (w.G.position.x + w.ox), y: w.G.position.y, z: (w.G.position.z + w.oz), rx: w.rx, rz: w.rz, dw: w.dw, fh: w.fh, d: w.d, back: !!w.back })), atW, warpXY, unwarp, ght: GHT, flora: FLC.n, object: root, rect: SCN[ids[0] || want].rect, grid: GRID.map((r) => r.join("")), oy: GOY, bounds: [BX0, BZ0, BX1, BZ1], rects: Object.fromEntries(Object.keys(SCN).map((k) => [k, SCN[k].rect])) };
+const SEATED = window.SEAT && !(H && H.bakeOnly) ? window.SEAT.run(root, GHT, THREE) : null; /* Nov 26: plants, pebbles and small props sit on the ground */
+return { seated: SEATED, pathguard: PATHGUARD, patches: TGP, places: placeMeta(), outPortals: OUTPORTALS, walkins: WALKINS.map((w) => ({ name: w.name, key: w.key, x: (w.G.position.x + w.ox), y: w.G.position.y, z: (w.G.position.z + w.oz), rx: w.rx, rz: w.rz, dw: w.dw, fh: w.fh, d: w.d, back: !!w.back })), atW, warpXY, unwarp, ght: GHT, flora: FLC.n, object: root, rect: SCN[ids[0] || want].rect, grid: GRID.map((r) => r.join("")), oy: GOY, bounds: [BX0, BZ0, BX1, BZ1], rects: Object.fromEntries(Object.keys(SCN).map((k) => [k, SCN[k].rect])) };
 
 },nmap:function(THREE,H){
 },nmap:function(THREE,H){
@@ -18578,6 +18598,6 @@ buildAll(); if (H && H.all && H.flora !== false) buildFlora();
 if (WALKINS.length) { // last net: no instanced blade, crop or plant may stand in a room or on a doorstep
   const m4 = new THREE.Matrix4(), v = new THREE.Vector3(), z0 = new THREE.Matrix4().makeScale(0, 0, 0), hit = (x, z) => WALKINS.some((w) => { const px = w.G.position.x + w.ox, pz = w.G.position.z + w.oz; return ((x - px) / (w.rx + 0.75)) ** 2 + ((z - pz) / (w.rz + 0.75)) ** 2 < 1 || (Math.abs(x - px) < w.dw / 2 + 0.6 && Math.abs(z - pz) < w.r + 2.4 && ((z - pz) * w.d > 0 || w.back)); });
   root.updateMatrixWorld(true); root.traverse((o) => { if (!o.isInstancedMesh || o.userData.int) return; let n = 0; for (let i = 0; i < o.count; i++) { o.getMatrixAt(i, m4); v.setFromMatrixPosition(m4).applyMatrix4(o.matrixWorld); if (hit(v.x, v.z)) { o.setMatrixAt(i, z0); n++; } } if (n) o.instanceMatrix.needsUpdate = true; }); }
-nnDetailFlush(); return { quests: NNQ, storySpots: NNSTORY, pathguard: PATHGUARD, patches: TGP, places: placeMeta(), outPortals: OUTPORTALS, walkins: WALKINS.map((w) => ({ name: w.name, key: w.key, x: (w.G.position.x + w.ox), y: w.G.position.y, z: (w.G.position.z + w.oz), rx: w.rx, rz: w.rz, dw: w.dw, fh: w.fh, d: w.d, back: !!w.back })), atW, warpXY, unwarp, ght: GHT, flora: FLC.n, object: root, rect: SCN[ids[0] || want].rect, grid: GRID.map((r) => r.join("")), oy: GOY, bounds: [BX0, BZ0, BX1, BZ1], rects: Object.fromEntries(Object.keys(SCN).map((k) => [k, SCN[k].rect])) };
+nnDetailFlush(); const SEATED = window.SEAT && !(H && H.bakeOnly) ? window.SEAT.run(root, GHT, THREE) : null; /* Nov 26: plants, pebbles and small props sit on the ground */ return { seated: SEATED, quests: NNQ, storySpots: NNSTORY, pathguard: PATHGUARD, patches: TGP, places: placeMeta(), outPortals: OUTPORTALS, walkins: WALKINS.map((w) => ({ name: w.name, key: w.key, x: (w.G.position.x + w.ox), y: w.G.position.y, z: (w.G.position.z + w.oz), rx: w.rx, rz: w.rz, dw: w.dw, fh: w.fh, d: w.d, back: !!w.back })), atW, warpXY, unwarp, ght: GHT, flora: FLC.n, object: root, rect: SCN[ids[0] || want].rect, grid: GRID.map((r) => r.join("")), oy: GOY, bounds: [BX0, BZ0, BX1, BZ1], rects: Object.fromEntries(Object.keys(SCN).map((k) => [k, SCN[k].rect])) };
 
 }};
