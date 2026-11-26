@@ -1,3 +1,4 @@
+if (typeof location !== "undefined" && /dbgsrc=1/.test(location.search)) window.__DBGSRC = 1; // test probes: remember what each merged mesh was made from
 // seat.js: keeps scattered plants, pebbles and small props on the ground in every world (Nov 26).
 // Called by each world builder just before it returns: SEAT.run(root, GHT, THREE).
 // Surface = the terrain height (GHT) or, where a rock skin covers a steep face, the skin, whichever is higher.

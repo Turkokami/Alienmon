@@ -167,3 +167,9 @@ index.html loads world.js?v=wd14ob, game.js?v=bt8ob, linker-data.js?v=cl1ob. The
     - world.js DA5 ground: every switchback bend gets a round walkable landing (radius 2 tiles), so the bend never pinches the walk.
     - The lab door marker and arrival point moved to the new front door (OUTPORTALS DA6 at 168.46, 13.4; map manifest "Crater Observatory door").
     - index.html: surfaces.js?v=ex8 (adds `three()` for the ground check), world.js?v=wd26turn.
+68. Feet on the floor on Sporeholm, Ferrox, Thalassa and Neonis (same check as item 65, spots where the drawn floor sat above the feet near each world's start: Sporeholm 80 → 4, Ferrox 141 → 3, Thalassa 251 → 9, Neonis 292 → 4; what's left is crate and rock tops beside the path):
+    - game.js merge: a thin flat piece (named "" or "nocol", opaque, under 0.32 m tall, at least 0.5 m across and 0.8 m² in area) becomes "floor": house plinths, plaza discs, dock boards and stepping stones. Floor buckets are solid even when they hold a single small piece (the 30-vertex minimum skipped lone slabs).
+    - game.js: meshes kept out of the merge (custom shaders such as Neonis' PBR stone) are solid too when opaque and not grass, water or "nocol" (Dustara 14 of them, Neonis none).
+    - world.js Sporeholm mushrooms: the walkable cap top and the cap's rim lip are "floor", so you stand on the cap you see.
+    - Debug only: `?dbgsrc=1` records what went into each merged mesh (userData.src) for the probes.
+    - index.html: seat.js?v=s6, world.js?v=wd27ft2, game.js?v=bt13ft3.

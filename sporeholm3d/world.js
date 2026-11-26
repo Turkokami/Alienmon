@@ -1700,9 +1700,9 @@ MF.mushroom = (c) => { const h = c.h, col = c.c, rs = Math.min(c.hx, c.hz) * (c.
     for (let k = 0; k < NA; k++) idx.push(0, 1 + ((k + 1) % NA), 1 + k);
     for (let i = 1; i < NR; i++) for (let k = 0; k < NA; k++) { const a = 1 + (i - 1) * NA + k, b = 1 + (i - 1) * NA + ((k + 1) % NA), cc = a + NA, d = b + NA; idx.push(a, b, cc, b, d, cc); }
     const g = new THREE.BufferGeometry(); g.setAttribute("position", new THREE.Float32BufferAttribute(pos, 3)); g.setAttribute("uv", new THREE.Float32BufferAttribute(uv, 2)); g.setIndex(idx); g.computeVertexNormals();
-    const m = add(g, gm ? gm.material : mk().M.moss, [0, 0, 0], [0, 0, 0], "nocol"); m.userData.noLift = true; m.receiveShadow = true; m.userData.capTop = () => -9; }
+    const m = add(g, gm ? gm.material : mk().M.moss, [0, 0, 0], [0, 0, 0], "floor"); m.userData.noLift = true; m.receiveShadow = true; m.userData.capTop = () => -9; }
   // the cap: a glowing domed lip round the edge overhanging well past it, and a wide gilled underside sweeping in to the stalk
-  MF.put(MF.ringGeo(c, [[-0.7, h + 0.03], [-0.2, h + 0.08], [0.5, h + 0.02], [1.3, h - 0.25], [2.0, h - 0.7], [2.25, h - 1.0]]), MF.capMat(col));
+  MF.put(MF.ringGeo(c, [[-0.7, h + 0.03], [-0.2, h + 0.08], [0.5, h + 0.02], [1.3, h - 0.25], [2.0, h - 0.7], [2.25, h - 1.0]]), MF.capMat(col), "floor");
   { const prof = []; for (let k = 0; k <= 8; k++) { const t = k / 8; prof.push([2.25 - t * 2.25, h - 1.0 + t * 0.45]); } MF.put(MF.ringGeo(c, prof), MF.gillMat(col)); }
   { const N = 96, pos = [], idx = []; for (let k = 0; k <= N; k++) { const th = (k / N) * TAU, R0 = MF.capR(c, th); for (const [r, y] of [[rs * 1.5, h - 1.0], [R0 * 0.55, h - 0.62], [R0, h - 0.56]]) pos.push(c.x + Math.cos(th) * r, y, c.z + Math.sin(th) * r); } for (let k = 0; k < N; k++) for (let j = 0; j < 2; j++) { const a = k * 3 + j, b = a + 3; idx.push(a, b, a + 1, a + 1, b, b + 1); } const g = new THREE.BufferGeometry(); g.setAttribute("position", new THREE.Float32BufferAttribute(pos, 3)); g.setIndex(idx); MF.put(g, MF.gillMat(col)); }
   // radial gill ribs under the cap
