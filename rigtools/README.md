@@ -268,10 +268,16 @@ index.html loads world.js?v=wd14ob, game.js?v=bt8ob, linker-data.js?v=cl1ob. The
 - world.js (DB2 plaza): the egg-shaped seedpod statue is replaced by a landmark fountain on the same 3.1 m footprint: an eight-sided carved sandstone basin with a brass lip and glowing turquoise swirl panels, a fluted column, a brass upper bowl spilling eight thin falls, and on top a golden Starfall seedpod opening in six petals round a glowing violet crystal heart, circled by a tilted brass ring.
 
 ## 83. Bigger Dustara houses, crystals kept out of walls (Nov 26)
-- world.js `dHouse` (Dustara only): walk-in houses with a fixed front now build at 1.45x (about 2.1x the floor area). The front door stays where it was; the house grows back and to the sides (`fungal` option `grow`, applied after the walk-in scale, cz moved back by the extra depth), so doors, door portals, OUTPORTALS, paths and NPC spots are unchanged. Interiors are separate rooms and do not change.
+- world.js `dHouse` (Dustara only): walk-in houses with a fixed front now build at 1.45x (about 2.1x the floor area). The front door stays where it was; the house grows back and to the sides (`fungal` option `grow`, applied after the walk-in scale, cz moved back by the extra depth), so doors, door portals, OUTPORTALS, paths and NPC spots are unchanged. The rooms inside are furnished from the shell size, so they grow with the house; keepers stay at their spots inside.
 - Not grown: the observatory, the tower, the Courier Relay Hut and other `walkin: false` stalls, houses placed with `dirFixed: false`, and twelve houses packed against a neighbour where there is no room (Dustmere Shop, Reyes House, Scholar's Home, Scholar's Cottage, Farm Store, Farm Kid's Family Home, the Port Ember row of four, Palm Isle Recovery Hut, Islander's Stilt Hut): these pass `grow: 1`.
 - Overlap check (`GAME.WK()` walk-in shells over every loaded chunk): no new overlaps; the two touching pairs that remain (Dustmere Shop / Reyes House, Farm Store / Farm Kid's Family Home) already touched before.
 - `?dgrow=N` overrides the scale for testing (`?dgrow=1` = old sizes).
 - world.js dxPass crystals: every building group registers in `D.BLD`; a crystal cluster whose footprint (size x 1.1 + 0.2 m) reaches a building's box is skipped, so no crystal pokes through a wall. The random stream is unchanged, so the other crystals stay where they were.
 - game.js: `GAME.WK()` returns the loaded walk-in shells (debug).
 - index.html: world.js?v=wd36d, game.js?v=bt19bv (also covers 81 and 82).
+
+## 84. DX-4 follows Rook's house; bonfire spot moved out of the cottage
+- game.js `P("dx4")`: was scene DB2 at `ae(41,56.5)` (the old house spot). Now scene DB1 at `ae(20.6,56.6)`, beside Your House (door 22.68,54.62; Mom 24.4,56.2).
+- game.js `P("dxFire")`: was `ae(38.8,50.8)`, which sat inside the Scholar's Cottage shell after the README 81 swap. Now `ae(44.4,51.6)`, beside Old Dusty.
+- Both spots checked: standable, open on all 4 sides, not inside a shell.
+- index.html: game.js?v=bt20bv.
