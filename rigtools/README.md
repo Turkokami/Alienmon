@@ -173,3 +173,10 @@ index.html loads world.js?v=wd14ob, game.js?v=bt8ob, linker-data.js?v=cl1ob. The
     - world.js Sporeholm mushrooms: the walkable cap top and the cap's rim lip are "floor", so you stand on the cap you see.
     - Debug only: `?dbgsrc=1` records what went into each merged mesh (userData.src) for the probes.
     - index.html: seat.js?v=s6, world.js?v=wd27ft2, game.js?v=bt13ft3.
+69. Dustara restyle toward Kristofer's 12 reference frames (environment look only, no creature designs copied):
+    - game.js Dustara day sky: purple-to-pink gradient into a golden horizon; a big ringed planet low in the north-east sky, two small moons and a band of pink clouds (all day-only, no fog). Haze turns lavender pink (#c99ac6); warmer, pinker hemisphere, ambient and sun light. Other worlds untouched.
+    - world.js DX pass section 13 "the reference look": violet, teal and pink crystal clusters (instanced, one mesh per colour, never solid) at the foot of the rock, along trail edges and on the deep canyon floor; violet agaves with glowing hearts, cyan glow mushrooms, teal fiddlehead curls and turquoise glow cracks in the dirt; purple banners on the town's wider walkways.
+    - world.js Dustara banner texture: a gold ringed planet with teal diamonds (replaces the three diamonds).
+    - Speed: software-render test 6.0 → 5.6 fps at the plaza; ground check unchanged (crystals stay out of the solid list).
+    - Still to do for the look: the tall rock walls around town hide most of the sky; lowering the far mesas comes next.
+    - index.html: world.js?v=wd28st6, game.js?v=bt14st2.
