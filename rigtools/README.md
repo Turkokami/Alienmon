@@ -188,3 +188,8 @@ index.html loads world.js?v=wd14ob, game.js?v=bt8ob, linker-data.js?v=cl1ob. The
     - game.js: arrivals, portals, item spots, NPC spots and door targets inside a place multiply by the place's scale (placeMeta scg), so a scale-1 place is unchanged.
     - Checked: both arrivals and all four portals stand on floor. Software-render test 24 → 21 fps in B2.
     - index.html: world.js?v=wd29tn4, game.js?v=bt15tn1.
+
+71. Dustara sky over town:
+    - world.js horizon (stand pass): the purple Sunset Range east of town is a third of its old height (front row 14-42 m, was 45-130 m; back row 12-20 m, was 26-44 m), so it sits low on the skyline and the pink sky shows above it when you look east or up.
+    - Found while checking: from the plaza the camera's default tilt shows only about 9° above the horizon, and the town's own ring of mesa cliffs (22-30 m, 70-110 m away) fills that. Dragging the view up shows the sky; the cliffs themselves are town layout and stay.
+    - index.html: world.js?v=wd30sk1.

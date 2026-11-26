@@ -7241,8 +7241,8 @@ const dxPass = (ids) => {
       const peak = (px, pz, h, r) => { const n = 9, rs = [], as = []; for (let k = 0; k < n; k++) { as.push((k / n) * Math.PI * 2 + (q() - 0.5) * 0.4); rs.push(r * (0.65 + q() * 0.6)); }
         const tip = [px + (q() - 0.5) * r * 0.3, h, pz + (q() - 0.5) * r * 0.3]; for (let k = 0; k < n; k++) { const a0 = as[k], a1 = as[(k + 1) % n], r0 = rs[k], r1 = rs[(k + 1) % n], b0 = [px + Math.cos(a0) * r0, -8, pz + Math.sin(a0) * r0], b1 = [px + Math.cos(a1) * r1, -8, pz + Math.sin(a1) * r1], m0 = [px + Math.cos(a0) * r0 * 0.5, h * (0.45 + q() * 0.2), pz + Math.sin(a0) * r0 * 0.5], m1 = [px + Math.cos(a1) * r1 * 0.5, h * (0.45 + q() * 0.2), pz + Math.sin(a1) * r1 * 0.5];
           for (const [A, B2, C2] of [[b0, m0, b1], [m0, m1, b1], [m0, tip, m1]]) for (const v of [A, B2, C2]) { Pp.push(...v); const t = Math.max(0, v[1]) / h; col.copy(low).lerp(mid, Math.min(1, t * 1.6)).lerp(top, Math.max(0, t - 0.6) * 2.2); Cc.push(col.r, col.g, col.b); } } };
-      for (let k = 0; k < 34; k++) { const z = -70 + k * 6.2 + (q() - 0.5) * 4, x = 286 + q() * 30 + (k % 3) * 8, h = 45 + q() * 55 + (k % 4 === 1 ? 30 : 0); peak(x, z, h, 14 + q() * 12); }
-      for (let k = 0; k < 18; k++) { const z = -60 + k * 11 + (q() - 0.5) * 5; peak(272 + q() * 8, z, 26 + q() * 18, 12 + q() * 6); }
+      for (let k = 0; k < 34; k++) { const z = -70 + k * 6.2 + (q() - 0.5) * 4, x = 286 + q() * 30 + (k % 3) * 8, h = (45 + q() * 55 + (k % 4 === 1 ? 30 : 0)) * 0.32; peak(x, z, h, 14 + q() * 12); } // Nov 26: a third of the old height, so the sky shows over town
+      for (let k = 0; k < 18; k++) { const z = -60 + k * 11 + (q() - 0.5) * 5; peak(272 + q() * 8, z, (26 + q() * 18) * 0.45, 12 + q() * 6); }
       g.setAttribute("position", new THREE.Float32BufferAttribute(Pp, 3)); g.setAttribute("color", new THREE.Float32BufferAttribute(Cc, 3)); g.computeVertexNormals();
       const m = new THREE.Mesh(g, std({ vertexColors: true, roughness: 1, flatShading: true })); m.name = "nocol"; hz.add(m); } }
   // ---- 4. the Gateposts: two big red boulders where the path leaves town for the Cactus Gardens (DB6 / DB7 seam) ----
