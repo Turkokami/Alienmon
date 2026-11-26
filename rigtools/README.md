@@ -235,3 +235,8 @@ index.html loads world.js?v=wd14ob, game.js?v=bt8ob, linker-data.js?v=cl1ob. The
     - The canyon cliffs inside the map (Observatory hill, the cliff dwellings) keep their height: they're walkable terrain.
     - Picture: alienmon-reference/dustara-style/dustara_town_sky_before_after.jpg (plaza, looking north-east).
     - index.html: world.js?v=wd33sky, game.js?v=bt16sky.
+
+## 78. Map screen: Close button, back gesture, opens centred (Nov 26)
+- mapview.js: the "✕ Close" button on the map screen was hidden by CSS (`#mv .x{display:none}`), so on phone there was no way out. It now shows top right (52 px tall), and Esc and the phone back gesture close the map too (opening pushes a history entry; popstate closes it; closing by button steps that entry back).
+- The view re-centres on the player one frame after opening, once the canvas has its final size.
+- index.html: mapview.js?v=3.

@@ -66,16 +66,19 @@
   // ---- the panel
   const css = document.createElement("style"); css.textContent = `#mv{position:fixed;inset:0;z-index:41;display:none;background:#060c14;touch-action:none;font:14px system-ui;color:#eafff4}
   #mv canvas{position:absolute;inset:0;width:100%;height:100%}
-  #mv .top{position:absolute;left:12px;top:10px;right:12px;display:flex;gap:10px;align-items:center;pointer-events:none}
+  #mv .top{position:absolute;left:12px;top:10px;right:122px;display:flex;gap:10px;align-items:center;pointer-events:none}
   #mv .ttl{background:rgba(8,16,26,.85);border:2px solid #5af0e0;border-radius:12px;padding:6px 12px;font:800 15px system-ui}
   #mv .ttl small{display:block;font:600 12px system-ui;color:#9fd8d0}
   #mv .btns{position:absolute;left:12px;bottom:14px;display:flex;flex-direction:column;gap:8px}
   #mv button{width:48px;height:48px;border-radius:12px;border:2px solid #5af0e0;background:rgba(8,16,26,.88);color:#eafff4;font:800 22px system-ui}
-  #mv .x{position:absolute;right:12px;top:10px;width:auto;padding:0 14px;font:800 15px system-ui}html.tc #mv .x{display:none}`;
+  #mv .x{position:absolute;right:12px;top:10px;width:auto;min-width:96px;height:52px;padding:0 16px;font:800 17px system-ui;z-index:2;background:#0d2a30}html.tc `;
   document.head.appendChild(css);
-  const build = () => { el = document.createElement("div"); el.id = "mv"; el.innerHTML = `<canvas></canvas><div class="top"><div class="ttl"></div></div><button class="x">Close</button><div class="btns"><button data-z="1.5">+</button><button data-z="0.667">−</button><button data-me="1">◎</button></div>`; document.body.appendChild(el);
+  const build = () => { el = document.createElement("div"); el.id = "mv"; el.innerHTML = `<canvas></canvas><div class="top"><div class="ttl"></div></div><button class="x" aria-label="Close map">✕ Close</button><div class="btns"><button data-z="1.5">+</button><button data-z="0.667">−</button><button data-me="1">◎</button></div>`; document.body.appendChild(el);
     cv = el.querySelector("canvas"); g = cv.getContext("2d");
-    el.querySelector(".x").onclick = () => (window.LINKER ? window.LINKER.close() : hide());
+    el.querySelector(".x").onclick = () => shut();
+    // phone back gesture / Esc closes the map too (README 78)
+    addEventListener("popstate", () => { if (el && el.style.display !== "none") { pushed = false; shut(true) } });
+    addEventListener("keydown", (e) => { if (e.key === "Escape" && el && el.style.display !== "none") shut() });
     for (const b of el.querySelectorAll("[data-z]")) b.onclick = () => zoom(+b.dataset.z, cv.clientWidth / 2, cv.clientHeight / 2);
     el.querySelector("[data-me]").onclick = () => { view.cx = view.me.x; view.cz = view.me.z; draw() };
     const pts = new Map(); let pinch = null;
@@ -93,8 +96,11 @@
     view = { cx: me.x, cz: me.z, s: Math.max(fitS(), Math.min(cv.clientWidth, cv.clientHeight) / 110), me };
     const zn = "", nm = W.charAt(0).toUpperCase() + W.slice(1);
     el.querySelector(".ttl").innerHTML = `Linker map · ${nm}<small>${me.in ? "You're inside " + me.in : "Drag to look around, pinch or + to zoom"}${zn}</small>`;
-    fogC = null; draw(); return true };
-  const hide = () => { if (el) el.style.display = "none" };
+    fogC = null; draw(); requestAnimationFrame(() => { size(); view.cx = me.x; view.cz = me.z; clampView(); draw() });
+    if (!pushed) { try { history.pushState({ mv: 1 }, ""); pushed = true } catch {} } return true };
+  const hide = () => { if (el) el.style.display = "none"; if (pushed) { pushed = false; try { history.back() } catch {} } };
+  let pushed = false;
+  const shut = () => { if (window.LINKER && window.LINKER.mode === "map2") window.LINKER.close(); else hide() };
   const key = (c) => { if (!view) return; const st = 60 / view.s;
     if (c === "ArrowLeft" || c === "KeyA") view.cx -= st; else if (c === "ArrowRight" || c === "KeyD") view.cx += st; else if (c === "ArrowUp" || c === "KeyW") view.cz -= st; else if (c === "ArrowDown" || c === "KeyS") view.cz += st;
     else if (c === "Equal" || c === "NumpadAdd" || c === "KeyQ" || c === "PageUp") return zoom(1.4, cv.clientWidth / 2, cv.clientHeight / 2);
