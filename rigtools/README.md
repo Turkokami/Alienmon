@@ -305,3 +305,15 @@ index.html loads world.js?v=wd14ob, game.js?v=bt8ob, linker-data.js?v=cl1ob. The
 - Wall check (play bot, 7 Dustara areas, 3,408 test walks toward nearby objects): no walk-through on any solid wall or building shell. The only flags were ground overlays that are meant to be walked over, and points inside the observatory dome's own floor, which you can't reach from outside.
 - Cactling scene: the graphic novel has no Chapter 4 pages (art/gn has E01-E14 except E04), so no comic panels were added.
 - index.html: world.js?v=wd37, game.js?v=bt22bv, tamsin-seat.js?v=2.
+
+## 87. Lantern light for Dustara (Nov 27, from Kristofer's lantern and glow inspiration pictures)
+- world.js (`dmap`, the `LANTERNS` block just before the builder returns): warm lantern light in Dustara's own colours (amber lanterns against the turquoise runes and the blue night).
+  - Path lanterns: an iron crook post on the sand beside each trail and town lane, about every 7.5 m, the lantern hanging out over the path. Skips doorsteps, buildings, water, the canyon, tall grass and the old rune lamps. Each has a soft glow and a pool of light on the ground at night.
+  - Dustmere Bridge: a brass-spiked lantern on every other rail post, both sides (the west end of the south rail stays open for the canyon steps).
+  - Sky lanterns: 150 paper lanterns rise from the canyon floor past the bridge at night only, drifting and fading out high above the rim.
+  - Canyon mist: two slow haze layers under the bridge, pale by day and blue at night.
+  - Everything is instanced (a handful of draw calls), named `nocol` (no collision), `noSeat` and `noLift`. The glows are camera-facing sprites, so lanterns still glow on phones where bloom is off. By day the lantern glass shows a faint amber; the halos, light pools and sky lanterns switch on with the game's night.
+- `H.lanterns === false` turns the block off for tests.
+- Bridge carvings (DB3): the night glow from 86 never showed in game, because the merge pass joined those meshes and dropped their day/night switch. The carving material now has an `onBeforeCompile` so it stays out of the merge; at night it glows a soft turquoise (#8fe6dc, 1.15) instead of white.
+- game.js `U()`: Dustara's night is a little darker (hemisphere .6, sun .72, other worlds unchanged) so the lantern light reads.
+- index.html: world.js?v=wd38, game.js?v=bt22bw.
