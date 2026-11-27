@@ -2739,6 +2739,44 @@ PROF.pre = performance.now(); buildAll(); if (H && H.all && H.flora !== false) b
 if (WALKINS.length) { // last net: no instanced blade, crop or plant may stand in a room or on a doorstep
   const m4 = new THREE.Matrix4(), v = new THREE.Vector3(), z0 = new THREE.Matrix4().makeScale(0, 0, 0), hit = (x, z) => WALKINS.some((w) => { const px = w.G.position.x + w.ox, pz = w.G.position.z + w.oz; return ((x - px) / (w.rx + 0.75)) ** 2 + ((z - pz) / (w.rz + 0.75)) ** 2 < 1 || (Math.abs(x - px) < w.dw / 2 + 0.6 && Math.abs(z - pz) < w.r + 2.4 && ((z - pz) * w.d > 0 || w.back)); });
   root.updateMatrixWorld(true); root.traverse((o) => { if (!o.isInstancedMesh || o.userData.int) return; let n = 0; for (let i = 0; i < o.count; i++) { o.getMatrixAt(i, m4); v.setFromMatrixPosition(m4).applyMatrix4(o.matrixWorld); if (hit(v.x, v.z)) { o.setMatrixAt(i, z0); n++; } } if (n) o.instanceMatrix.needsUpdate = true; }); }
+const LANTERNS = (() => { if (!(H && H.all) || (H && H.lanterns === false) || (H && H.bakeOnly)) return null; const CFG = { gap: 6, post: "#e2d6bc", trim: "#8e5fd0", metal: 0, glassDay: "#d9fff0", glow: "#3fffb4", halo: "#78ffd2", pool: "#46e8b2", mote: "#dcff6e", motes: 260, rise: false, reach: 0, lampY: 1.78, haloS: 3.4,
+    postGeo: () => new THREE.CylinderGeometry(0.055, 0.1, 1.7, 7).translate(0, 0.85, 0), lampGeo: () => new THREE.SphereGeometry(0.17, 12, 8).translate(0, 1.78, 0), capGeo: () => new THREE.SphereGeometry(0.34, 14, 6, 0, Math.PI * 2, 0, Math.PI / 2).scale(1, 0.5, 1).translate(0, 1.9, 0) }; const out = { path: 0, motes: 0 };
+  /* Nov 27: night lamps in this world's own colours (from Kristofer's lantern and glow pictures). Same build as Dustara's LANTERNS: instanced, nocol/noSeat/noLift, camera-facing glows so phones without bloom still glow. */
+  const isN = () => typeof window !== "undefined" && window.ISNIGHT && window.ISNIGHT(), M4 = new THREE.Matrix4(), Q = new THREE.Quaternion(), V = new THREE.Vector3(), S3 = new THREE.Vector3(), UP = new THREE.Vector3(0, 1, 0);
+  const glowMat = (col, flat) => new THREE.ShaderMaterial({ transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, uniforms: { uC: { value: new THREE.Color(col) }, uI: { value: 1 } },
+    vertexShader: "varying vec2 vUv; varying float vD; void main(){ vUv = uv; " + (flat ? "vec4 w = modelMatrix * instanceMatrix * vec4(position.x, 0.0, -position.y, 1.0); vec4 c = viewMatrix * w;" : "vec4 c = modelViewMatrix * instanceMatrix * vec4(0.0, 0.0, 0.0, 1.0); float s = length(instanceMatrix[0].xyz); c.xy += position.xy * s;") + " vD = -c.z; gl_Position = projectionMatrix * c; }",
+    fragmentShader: "uniform vec3 uC; uniform float uI; varying vec2 vUv; varying float vD; void main(){ float d = length(vUv - 0.5) * 2.0; float a = pow(max(0.0, 1.0 - d), " + (flat ? "2.2" : "2.6") + ") * uI * clamp(1.0 - (vD - 60.0) / 90.0, 0.0, 1.0); gl_FragColor = vec4(uC * a, a); }" });
+  const inst = (geo, mat, n, name) => { const m = new THREE.InstancedMesh(geo, mat, Math.max(1, n)); m.name = "nocol"; m.userData.noSeat = m.userData.noLift = m.userData.lantern = true; m.castShadow = false; m.receiveShadow = false; m.frustumCulled = false; m.count = n; if (name) m.userData.what = name; root.add(m); return m; };
+  const pts = []; const near = (arr, x, z, d) => arr.some((p) => (p[0] - x) ** 2 + (p[1] - z) ** 2 < d * d);
+  const doors = (typeof WALKINS !== "undefined" ? WALKINS : []).map((w) => [w.G.position.x + w.ox, w.G.position.z + w.oz]);
+  const tall = (x, z) => (typeof TGP !== "undefined" ? TGP : []).some((q) => ((x - q.x) / (q.rx + 1)) ** 2 + ((z - q.z) / (q.rz + 1)) ** 2 < 1);
+  const soft = new Set([".", ",", "g"]), bNear = (x, y) => { for (let j = -1; j <= 1; j++) for (let i = -1; i <= 1; i++) { const c = at(x + i, y + j); if (c === "b" || c === "c" || c === "x") return true; } return false; };
+  for (const id of ids) { const sc = SCN[id]; if (!sc || !sc.rect) continue; const [x0, y0] = sc.rect;
+    for (let y = y0; y < y0 + 30; y++) for (let x = x0; x < x0 + 30; x++) { const c = at(x, y); if (c !== "p" && c !== "s" && c !== "P") continue;
+      for (const [dx, dy] of [[1, 0], [-1, 0], [0, 1], [0, -1]]) { const nx = x + dx, ny = y + dy; if (!soft.has(at(nx, ny)) || bNear(nx, ny)) continue;
+        const gx = nx + 0.5 - dx * 0.2, gz = ny + 0.5 - dy * 0.2; if (near(pts, gx, gz, CFG.gap) || tall(gx, gz)) continue; pts.push([gx, gz, Math.atan2(-dx, -dy)]); } } }
+  const skin = []; root.traverse((o) => { if (o.isMesh && !o.isInstancedMesh && o.userData.skin) skin.push(o); }); const ray = new THREE.Raycaster(); root.updateMatrixWorld(true);
+  const ground = (x, z) => { let y = GHT(x, z); if (skin.length) { ray.set(new THREE.Vector3(x, y + 40, z), new THREE.Vector3(0, -1, 0)); const h = ray.intersectObjects(skin, false)[0]; if (h && h.point.y > y && h.point.y < y + 6) y = h.point.y; } return y; };
+  const P = []; for (const [gx, gz, a] of pts) { const [wx, wz] = unwarp(gx, gz), c = atW(wx, wz); if (!soft.has(c)) continue; if (near(doors, wx, wz, 3.2)) continue; P.push([wx, ground(wx, wz), wz, a]); if (P.length >= 420) break; }
+  const n = P.length; out.path = n;
+  if (n) { const iron = std({ color: CFG.post, roughness: 0.6, metalness: CFG.metal }), trim = std({ color: CFG.trim, roughness: 0.4, metalness: CFG.metal });
+    const lampM = std({ color: CFG.glassDay, emissive: CFG.glow, emissiveIntensity: 0.5, roughness: 0.35 });
+    const post = inst(CFG.postGeo(), iron, n, "lantern posts"), lamp = inst(CFG.lampGeo(), lampM, n, "lantern glass"), cap = inst(CFG.capGeo(), trim, n),
+      halo = inst(new THREE.PlaneGeometry(1, 1), glowMat(CFG.halo), n, "lantern halos"), pool = inst(new THREE.PlaneGeometry(1, 1), glowMat(CFG.pool, true), n, "lantern light pools");
+    P.forEach(([x, y, z, a], i) => { Q.setFromAxisAngle(UP, a); M4.compose(V.set(x, y, z), Q, S3.set(1, 1, 1)); post.setMatrixAt(i, M4); lamp.setMatrixAt(i, M4); cap.setMatrixAt(i, M4);
+      const ox = Math.sin(a) * CFG.reach, oz = Math.cos(a) * CFG.reach; M4.compose(V.set(x + ox, y + CFG.lampY, z + oz), Q.identity(), S3.setScalar(CFG.haloS)); halo.setMatrixAt(i, M4); M4.compose(V.set(x + ox * 1.6, y + 0.06, z + oz * 1.6), Q, S3.setScalar(6.2)); pool.setMatrixAt(i, M4); });
+    halo.onBeforeRender = function () { const nn = isN(); this.material.uniforms.uI.value = nn ? 1.0 : 0.0; lampM.emissiveIntensity = nn ? 2.6 : 0.5; }; pool.onBeforeRender = function () { this.material.uniforms.uI.value = isN() ? 0.42 : 0.0; };
+    // ---- night motes (fireflies, spores or embers) drifting around the lamps ----
+    const N = Math.min(CFG.motes, n * 6); if (N) { out.motes = N; let sd = 9133; const q = () => { sd = (sd * 16807) % 2147483647; return sd / 2147483647; };
+      const L = []; for (let k = 0; k < N; k++) { const [x, y, z] = P[Math.floor(q() * n)]; L.push({ x: x + (q() - 0.5) * 9, y: y + 0.4 + q() * 2.2, z: z + (q() - 0.5) * 9, ph: q() * 6.28, sp: 0.3 + q() * 0.6, r: 0.5 + q() * 1.2 }); }
+      const mote = inst(new THREE.PlaneGeometry(1, 1), glowMat(CFG.mote), N, "night motes");
+      const tick = function () { const nn = isN(); this.count = nn ? N : 0; if (!nn) return; const t = performance.now() / 1000;
+        L.forEach((l, i) => { let yy, s; if (CFG.rise) { const f = (t * l.sp * 0.12 + l.ph / 6.28) % 1; yy = l.y - 0.4 + f * 7; s = 0.22 * Math.min(1, f * 6) * Math.min(1, (1 - f) * 3); } else { yy = l.y + Math.sin(t * l.sp + l.ph) * 0.5; s = 0.26 * (0.55 + 0.45 * Math.sin(t * (1.3 + l.sp) + l.ph * 3)); }
+          M4.compose(V.set(l.x + Math.sin(t * l.sp * 0.7 + l.ph) * l.r, yy, l.z + Math.cos(t * l.sp * 0.6 + l.ph) * l.r), Q.identity(), S3.setScalar(Math.max(0.001, s))); mote.setMatrixAt(i, M4); });
+        mote.instanceMatrix.needsUpdate = true; this.material.uniforms.uI.value = 1.0; };
+      mote.onBeforeRender = tick; } }
+  return out; })();
+if (LANTERNS) window.__LANTERNS = LANTERNS;
 const SEATED = window.SEAT && !(H && H.bakeOnly) ? window.SEAT.run(root, GHT, THREE) : null; /* Nov 26: plants, pebbles and small props sit on the ground */
 return { seated: SEATED, prof: PROF, pathguard: PATHGUARD, patches: TGP, places: placeMeta(), outPortals: OUTPORTALS, walkins: WALKINS.map((w) => ({ name: w.name, key: w.key, x: (w.G.position.x + w.ox), y: w.G.position.y, z: (w.G.position.z + w.oz), rx: w.rx, rz: w.rz, dw: w.dw, fh: w.fh, d: w.d, back: !!w.back })), atW, warpXY, unwarp, ght: GHT, deck: (x, z) => { if (!MIRED) return 0.4; const [a, b] = warpXY(x, z); return MIRED(a, b); }, flora: FLC.n, object: root, rect: SCN[ids[0] || want].rect, grid: GRID.map((r) => r.join("")), oy: GOY, bounds: [BX0, BZ0, BX1, BZ1], rects: Object.fromEntries(Object.keys(SCN).map((k) => [k, SCN[k].rect])) };
 
@@ -11117,6 +11155,44 @@ buildAll(); if (H && H.all && H.flora !== false) buildFlora(); fxGrassTone();
 if (WALKINS.length) { // last net: no instanced blade, crop or plant may stand in a room or on a doorstep
   const m4 = new THREE.Matrix4(), v = new THREE.Vector3(), z0 = new THREE.Matrix4().makeScale(0, 0, 0), hit = (x, z) => WALKINS.some((w) => { const px = w.G.position.x + w.ox, pz = w.G.position.z + w.oz; return ((x - px) / (w.rx + 0.75)) ** 2 + ((z - pz) / (w.rz + 0.75)) ** 2 < 1 || (Math.abs(x - px) < w.dw / 2 + 0.6 && Math.abs(z - pz) < w.r + 2.4 && ((z - pz) * w.d > 0 || w.back)); });
   root.updateMatrixWorld(true); root.traverse((o) => { if (!o.isInstancedMesh || o.userData.int) return; let n = 0; for (let i = 0; i < o.count; i++) { o.getMatrixAt(i, m4); v.setFromMatrixPosition(m4).applyMatrix4(o.matrixWorld); if (hit(v.x, v.z)) { o.setMatrixAt(i, z0); n++; } } if (n) o.instanceMatrix.needsUpdate = true; }); }
+const LANTERNS = (() => { if (!(H && H.all) || (H && H.lanterns === false) || (H && H.bakeOnly)) return null; const CFG = { gap: 6.5, post: "#3a3e46", trim: "#8a4f2c", metal: 0.7, glassDay: "#ffc890", glow: "#ff7a1e", halo: "#ffa24a", pool: "#ff8a30", mote: "#ffb048", motes: 200, rise: true, reach: 0, lampY: 2.2, haloS: 4.4,
+    postGeo: () => new THREE.CylinderGeometry(0.06, 0.09, 2.05, 6).translate(0, 1.02, 0), lampGeo: () => new THREE.CylinderGeometry(0.14, 0.14, 0.34, 6).translate(0, 2.2, 0), capGeo: () => new THREE.ConeGeometry(0.23, 0.2, 6).translate(0, 2.47, 0) }; const out = { path: 0, motes: 0 };
+  /* Nov 27: night lamps in this world's own colours (from Kristofer's lantern and glow pictures). Same build as Dustara's LANTERNS: instanced, nocol/noSeat/noLift, camera-facing glows so phones without bloom still glow. */
+  const isN = () => typeof window !== "undefined" && window.ISNIGHT && window.ISNIGHT(), M4 = new THREE.Matrix4(), Q = new THREE.Quaternion(), V = new THREE.Vector3(), S3 = new THREE.Vector3(), UP = new THREE.Vector3(0, 1, 0);
+  const glowMat = (col, flat) => new THREE.ShaderMaterial({ transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, uniforms: { uC: { value: new THREE.Color(col) }, uI: { value: 1 } },
+    vertexShader: "varying vec2 vUv; varying float vD; void main(){ vUv = uv; " + (flat ? "vec4 w = modelMatrix * instanceMatrix * vec4(position.x, 0.0, -position.y, 1.0); vec4 c = viewMatrix * w;" : "vec4 c = modelViewMatrix * instanceMatrix * vec4(0.0, 0.0, 0.0, 1.0); float s = length(instanceMatrix[0].xyz); c.xy += position.xy * s;") + " vD = -c.z; gl_Position = projectionMatrix * c; }",
+    fragmentShader: "uniform vec3 uC; uniform float uI; varying vec2 vUv; varying float vD; void main(){ float d = length(vUv - 0.5) * 2.0; float a = pow(max(0.0, 1.0 - d), " + (flat ? "2.2" : "2.6") + ") * uI * clamp(1.0 - (vD - 60.0) / 90.0, 0.0, 1.0); gl_FragColor = vec4(uC * a, a); }" });
+  const inst = (geo, mat, n, name) => { const m = new THREE.InstancedMesh(geo, mat, Math.max(1, n)); m.name = "nocol"; m.userData.noSeat = m.userData.noLift = m.userData.lantern = true; m.castShadow = false; m.receiveShadow = false; m.frustumCulled = false; m.count = n; if (name) m.userData.what = name; root.add(m); return m; };
+  const pts = []; const near = (arr, x, z, d) => arr.some((p) => (p[0] - x) ** 2 + (p[1] - z) ** 2 < d * d);
+  const doors = (typeof WALKINS !== "undefined" ? WALKINS : []).map((w) => [w.G.position.x + w.ox, w.G.position.z + w.oz]);
+  const tall = (x, z) => (typeof TGP !== "undefined" ? TGP : []).some((q) => ((x - q.x) / (q.rx + 1)) ** 2 + ((z - q.z) / (q.rz + 1)) ** 2 < 1);
+  const soft = new Set([".", ",", "g"]), bNear = (x, y) => { for (let j = -1; j <= 1; j++) for (let i = -1; i <= 1; i++) { const c = at(x + i, y + j); if (c === "b" || c === "c" || c === "x") return true; } return false; };
+  for (const id of ids) { const sc = SCN[id]; if (!sc || !sc.rect) continue; const [x0, y0] = sc.rect;
+    for (let y = y0; y < y0 + 30; y++) for (let x = x0; x < x0 + 30; x++) { const c = at(x, y); if (c !== "p" && c !== "s" && c !== "P") continue;
+      for (const [dx, dy] of [[1, 0], [-1, 0], [0, 1], [0, -1]]) { const nx = x + dx, ny = y + dy; if (!soft.has(at(nx, ny)) || bNear(nx, ny)) continue;
+        const gx = nx + 0.5 - dx * 0.2, gz = ny + 0.5 - dy * 0.2; if (near(pts, gx, gz, CFG.gap) || tall(gx, gz)) continue; pts.push([gx, gz, Math.atan2(-dx, -dy)]); } } }
+  const skin = []; root.traverse((o) => { if (o.isMesh && !o.isInstancedMesh && o.userData.skin) skin.push(o); }); const ray = new THREE.Raycaster(); root.updateMatrixWorld(true);
+  const ground = (x, z) => { let y = GHT(x, z); if (skin.length) { ray.set(new THREE.Vector3(x, y + 40, z), new THREE.Vector3(0, -1, 0)); const h = ray.intersectObjects(skin, false)[0]; if (h && h.point.y > y && h.point.y < y + 6) y = h.point.y; } return y; };
+  const P = []; for (const [gx, gz, a] of pts) { const [wx, wz] = unwarp(gx, gz), c = atW(wx, wz); if (!soft.has(c)) continue; if (near(doors, wx, wz, 3.2)) continue; P.push([wx, ground(wx, wz), wz, a]); if (P.length >= 420) break; }
+  const n = P.length; out.path = n;
+  if (n) { const iron = std({ color: CFG.post, roughness: 0.6, metalness: CFG.metal }), trim = std({ color: CFG.trim, roughness: 0.4, metalness: CFG.metal });
+    const lampM = std({ color: CFG.glassDay, emissive: CFG.glow, emissiveIntensity: 0.5, roughness: 0.35 });
+    const post = inst(CFG.postGeo(), iron, n, "lantern posts"), lamp = inst(CFG.lampGeo(), lampM, n, "lantern glass"), cap = inst(CFG.capGeo(), trim, n),
+      halo = inst(new THREE.PlaneGeometry(1, 1), glowMat(CFG.halo), n, "lantern halos"), pool = inst(new THREE.PlaneGeometry(1, 1), glowMat(CFG.pool, true), n, "lantern light pools");
+    P.forEach(([x, y, z, a], i) => { Q.setFromAxisAngle(UP, a); M4.compose(V.set(x, y, z), Q, S3.set(1, 1, 1)); post.setMatrixAt(i, M4); lamp.setMatrixAt(i, M4); cap.setMatrixAt(i, M4);
+      const ox = Math.sin(a) * CFG.reach, oz = Math.cos(a) * CFG.reach; M4.compose(V.set(x + ox, y + CFG.lampY, z + oz), Q.identity(), S3.setScalar(CFG.haloS)); halo.setMatrixAt(i, M4); M4.compose(V.set(x + ox * 1.6, y + 0.06, z + oz * 1.6), Q, S3.setScalar(6.2)); pool.setMatrixAt(i, M4); });
+    halo.onBeforeRender = function () { const nn = isN(); this.material.uniforms.uI.value = nn ? 1.7 : 0.0; lampM.emissiveIntensity = nn ? 2.6 : 0.5; }; pool.onBeforeRender = function () { this.material.uniforms.uI.value = isN() ? 0.75 : 0.0; };
+    // ---- night motes (fireflies, spores or embers) drifting around the lamps ----
+    const N = Math.min(CFG.motes, n * 6); if (N) { out.motes = N; let sd = 9133; const q = () => { sd = (sd * 16807) % 2147483647; return sd / 2147483647; };
+      const L = []; for (let k = 0; k < N; k++) { const [x, y, z] = P[Math.floor(q() * n)]; L.push({ x: x + (q() - 0.5) * 9, y: y + 0.4 + q() * 2.2, z: z + (q() - 0.5) * 9, ph: q() * 6.28, sp: 0.3 + q() * 0.6, r: 0.5 + q() * 1.2 }); }
+      const mote = inst(new THREE.PlaneGeometry(1, 1), glowMat(CFG.mote), N, "night motes");
+      const tick = function () { const nn = isN(); this.count = nn ? N : 0; if (!nn) return; const t = performance.now() / 1000;
+        L.forEach((l, i) => { let yy, s; if (CFG.rise) { const f = (t * l.sp * 0.12 + l.ph / 6.28) % 1; yy = l.y - 0.4 + f * 7; s = 0.22 * Math.min(1, f * 6) * Math.min(1, (1 - f) * 3); } else { yy = l.y + Math.sin(t * l.sp + l.ph) * 0.5; s = 0.26 * (0.55 + 0.45 * Math.sin(t * (1.3 + l.sp) + l.ph * 3)); }
+          M4.compose(V.set(l.x + Math.sin(t * l.sp * 0.7 + l.ph) * l.r, yy, l.z + Math.cos(t * l.sp * 0.6 + l.ph) * l.r), Q.identity(), S3.setScalar(Math.max(0.001, s))); mote.setMatrixAt(i, M4); });
+        mote.instanceMatrix.needsUpdate = true; this.material.uniforms.uI.value = 1.0; };
+      mote.onBeforeRender = tick; } }
+  return out; })();
+if (LANTERNS) window.__LANTERNS = LANTERNS;
 const SEATED = window.SEAT && !(H && H.bakeOnly) ? window.SEAT.run(root, GHT, THREE) : null; /* Nov 26: plants, pebbles and small props sit on the ground */
 return { seated: SEATED, pathguard: PATHGUARD, patches: TGP, places: placeMeta(), outPortals: OUTPORTALS, walkins: WALKINS.map((w) => ({ name: w.name, key: w.key, x: (w.G.position.x + w.ox), y: w.G.position.y, z: (w.G.position.z + w.oz), rx: w.rx, rz: w.rz, dw: w.dw, fh: w.fh, d: w.d, back: !!w.back })), atW, warpXY, unwarp, ght: GHT, flora: FLC.n, object: root, rect: SCN[ids[0] || want].rect, grid: GRID.map((r) => r.join("")), oy: GOY, bounds: [BX0, BZ0, BX1, BZ1], rects: Object.fromEntries(Object.keys(SCN).map((k) => [k, SCN[k].rect])) };
 
