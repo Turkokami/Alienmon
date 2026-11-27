@@ -317,3 +317,13 @@ index.html loads world.js?v=wd14ob, game.js?v=bt8ob, linker-data.js?v=cl1ob. The
 - Bridge carvings (DB3): the night glow from 86 never showed in game, because the merge pass joined those meshes and dropped their day/night switch. The carving material now has an `onBeforeCompile` so it stays out of the merge; at night it glows a soft turquoise (#8fe6dc, 1.15) instead of white.
 - game.js `U()`: Dustara's night is a little darker (hemisphere .6, sun .72, other worlds unchanged) so the lantern light reads.
 - index.html: world.js?v=wd38, game.js?v=bt22bw.
+
+## 88. Chapter 4 comic panels: the Cactus Garden catch (Nov 27, from Kristofer's own Chapter 4 renders)
+- art/gn/E04_P01 … E04_P52 (31 used, WebP at 768 px high, same as the other chapters). The full 52-panel set and his PDF are kept at /mnt/project-files/alienmon-reference/graphic-novel/chapter-04/.
+- comic-data.js: 31 lines mapped, inserted in story order in place of the old Vashti null line:
+  - Vashti fits the Linker (P01, P02, P10 "LINKER SYNCED", P03 the road east).
+  - Tamsin on her rock (S28): apple P07, upside-down Linker P09/P08, patch P12, rules one to three P13/P14/P16, drift grass P17.
+  - After the first wild catch (S29): P23, P27.
+  - The Cactling scene (S30): barrel cactus P28, hello P29, darts P31, Rook holds back P33/P34, Pip P35, rockfall P37/P38, the shield P40, scuffed P42, the ask P45/P46, PARTNER CONFIRMED P49, Tamsin P51/P52.
+  - Too early at the barrel cactus (S44): glare P48, Tamsin's "not that one" P11.
+- index.html: comic-data.js?v=gn4c1.
