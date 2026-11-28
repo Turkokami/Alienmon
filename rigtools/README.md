@@ -334,4 +334,89 @@ index.html loads world.js?v=wd14ob, game.js?v=bt8ob, linker-data.js?v=cl1ob. The
 - game.js `U()` end: `le.intensity=v?.25:1.6;__ENV&&__ENV.use(v?2:ts&&he?1:0)` picks indoor, night or day each time the lighting changes.
 - Tests: `?noenv` turns it off; `ENV.set(false)` / `ENV.set(true)` in the console switches it live for a side-by-side.
 - PC source: copy the `__ENV` block and the one-line `U()` change into the same two places (the minified names are the bundled three.js classes: Wc PMREMGenerator, _u WebGLCubeRenderTarget, yu CubeCamera, wl Scene, Jt Group).
-- index.html: game.js?v=bt22env1.
+- index.html: game.js?v=bt23mw (shipped together with items 91-94).
+
+## 91. Neonis: no grey squares behind tree leaves; battle buttons stay bright in the dark lantern tunnel (Nov 28, from neonis-leaf-fix)
+- world.js (`nmap`): the tree-leaf material gets `side: THREE.DoubleSide`, so the back of each leaf card no longer shows as a grey square.
+- game.js, the battle flash vignette function `bi=X=>{...radial-gradient...}`: while a dark vignette shows it sets `_.style.zIndex="14"` (under the battle UI `#btUI`, z-index 15), and the reset timeout clears it with `_.style.zIndex=""`. Battle buttons in the Neonis lantern tunnel were being covered by the vignette.
+
+## 92. Thalassa: restyle on the live map, nine interiors, Thalassa natives in the grass (Nov 28, branch md-thalassa)
+- world.js (`tmap`): the Thalassa restyle (e27e7ca4 + 9a88c374) is ported onto the live closure and merged with the ad179366 jungle: warm whitewash, terracotta roofs, blue-tile trim, the lost-boys jungle, and alien flora left as the jungle had it. The ground textures (sporeholm3d/ground/T_*.webp, 216 files) are rebaked for it.
+- world.js (`tmap`, the THALASSA INTERIORS block just before `// ================= assemble =================`): nine places made with `defPlace`/`buildPlace`. Each opens from its building, ship or cave and leads back out the same way.
+  - Harbor Tower (TD door): the book's round white room. It has blue wave tiles, round windows, a spiral stair with a brass rail, the crystal core held by big brass bolts, a glowing ceiling ring, a chart table and lanterns.
+  - Keeper's quarters (the tower stair): the kitchen with a stove and kettle, a table, stools and mugs. It also has two palm-frond hammocks, a writing desk with the log, a sea chest, a coat on its hook and the round balcony door.
+  - Ghost ship deck (TH rope ladder): a hull-shaped grey deck, rail and bulwark, fog. The wheelhouse has the wheel turning by itself, a coat on the hook by the door, a chart table and a console. On deck are rust-red cranes, containers, rope and the hatch.
+  - Ghost ship below decks (the hatch): the metal stair down to a low corridor with dripping pipes, closed doors and caged bulbs. Hazard-striped stairs lead to the hold, with cages (big ones at the bottom, small ones on top). The desk sits under one bare bulb with the black logbook (orange ring-and-slash), and the folded yellow wool blanket is there too.
+  - Sea Cave 1-3 (D6 cave mouth): rock walls, a ceiling, tide pools with sand lips and pebbles, kelp, anemones, barnacles, crystals, starfish and shells. Cave 3 holds the clam with the pearl and a chest.
+  - Harbormaster's Office (TB, new building): a fine room with a desk, ledgers, a chart, an inkwell, a lamp and a bell. It also has a bookcase, a cabinet with a ship model, a cork board, a globe, a chart barrel, a clock, a ship's wheel, portholes and a compass runner.
+  - Captain's Cabin (S5 gangplank): "maps, compasses, and lots of seashells", with a striped hammock, a sea chest, a map table with compasses, framed charts, a bottle-and-shell shelf, a barrel and rope.
+- Outdoor pieces for those doors (no `R()`, so every scene keeps its random sequence):
+  - TB gets the harbourmaster's office from build pack 04: two storeys, a hip roof, a belfry with a bell and a flagpole with a blank flag. It also has an anchor sign, shutters, a balcony and a lantern. It stands on open sand east of the street.
+  - S5 gets a gangplank with rope rails, TH a rope ladder over the side, and D6 five stepping stones to the cave.
+- Fixes:
+  - The Harbor Tower door arch was turned edge-on. It now stands upright over the door.
+  - Below decks, `buildPlace` skips walls next to `o` tiles. A hand-placed hull wall closes the gap behind the side cages.
+- newmons.js, `NM_AREA`: `if(w==="thalassa"&&/^T/.test(s))` became `if(w==="thalassa")`.
+  - Before, all 23 Thalassa tall-grass patches sit in N/R/M/S/D/F scenes, so none reached the `t_wild` pool. They fell back to Sporeholm habitat monsters.
+  - Now they spawn the 35 Thalassa natives (Bubbub, Crabot, Zapfin, Inklet, Fogwisp, Gullwhistle, Brineback, Fiddlesnap, …) at levels 13-31.
+  - Thalassa D1 and D2 still match Sporeholm's Amberwood area ids first in game.js `q0`. Fixing them needs `q0` to check the world.
+- game.js: Thalassa's day hemisphere light is warm (`rr?"#ece2d0"`).
+- assets.js: `groundV` "thsty3" (new ground textures).
+- game.js `q0`: on Thalassa the area lookup asks `NM_AREA` first (`if(window.WORLD==="thalassa"&&window.NM_AREA)return window.NM_AREA(s);`), so the D1/D2 grass no longer falls back to Sporeholm's Amberwood list. newmons.js is generated by wire/build_newmons.py (not in this repo): make the same NM_AREA change there.
+- index.html: world.js?v=wd39, assets.js?v=wd5t, newmons.js?v=nm3, game.js?v=bt23mw.
+
+## 93. The Dustmere Schoolhouse, and Ferrox City's name (Nov 28, from Book 1)
+- Book 1 on the school: "Helix had paid for the new roof on the schoolhouse, and there was a shiny brass plaque by the door that said so, with the orange ring and the slash." (ch. 5) and Rook's "We learned it at school. Dustara's the red one. Third ring." (ch. 4, at Vashti's map). The book never says where the schoolhouse stands and has no scene inside it.
+- world.js (`dmap`, one self-contained block between `DX PASS END` and `assemble`, marked `SCHOOL BEGIN` / `SCHOOL END`):
+  - Where: the open north side of the Quiet Court (DA1), between the Rune Workshop and the Old Resident's Home, the door facing the Old Well (door at about 16.1, 7.2). The plaza (DB2), the house row (DC3) and the farm lots had no free lot.
+  - Outside: FSPEC `d_school`, a two-storey walk-in dome (`dHouse`, `grow: 1`, no room to grow) with a fresh terracotta tile roof (the book's new roof), a book sign, a double door. East of the door, the Helix brass plaque (ring-and-slash, "THE NEW ROOF WAS GIVEN BY HELIX"), set on the real wall with a ray. A bell post with a little tiled gable to the west, a Dustmere flag (purple, gold ringed planet) to the east, chalk hopscotch on the court.
+  - The `dHouse` call runs on its own seed (`seed` is saved and restored), so no existing R() sequence changes. New fittings use their own hash.
+  - Inside: a new place `schoolIn` (16x13, plank floor, roomkit, the same pattern as `bakeryIn`) and an OUTPORTAL on DA1 (`at` 15.14, 6.18, `arrive` 15.19, 7.98, "Enter the Schoolhouse", replaces the walk-in). A one-room classroom: the chalkboard ("Dustara - the third ring", a chalk sketch of the rings, sums), the teacher's desk (hand bell, red globe with a ring, slates, lamp), 12 pupils' desks with chairs either side of a middle aisle, the Kessler system chart (14 rings, Dustara red on the third), a Dustara map, two bookcases, a cork board, a nature table, coat pegs with satchels and caps, the pupils' drawings, paper bunting, ceiling beams, a reading corner by the purple-curtained west windows. 4 pendant lamps (unlit), 2 lights. No NPC. The old classroom furniture (`FURN.school`) is the fallback.
+  - The walk-in's own clearing took one saguaro, a few wild bushes and rocks and one cliff-foot boulder off the lot. The sundial, the well, the rune lamp and the paths stay. The path lantern that stood 1.2 m in front of the new door is skipped by the lantern block's own doorstep rule.
+  - Vertices: DA1 1,716,939 -> 1,710,908 (the school is 80.6k, the cleared lot gave back more); schoolIn 90.4k (bakeryIn is 130.7k).
+- Ferrox: the book only says "Ferrox City" ("It rose up out of the middle of Ferrox City like a giant iron spear", "Hank Briggs's hangar was at the far end of Ferrox City"). "Rustvale" was never in the book. It is one place, and the game's labels now use the book's name:
+  - world.js (`fmap`): "Ferrox City Square", "Ferrox City Recovery Bay", "Ferrox City Shop", "Ferrox City Works Office", "Ferrox City Lane Homes", "Ferrox City Quiet Court", "Ferrox City Farmstead", "Ferrox City Back Lot".
+  - game.js: the f_town region name, the "Ferrox — Ferrox City" title, the loading line "Welding Ferrox City together…", and the two Scrap Route directions.
+  - linker-data.js: `f_town` -> "Ferrox City". Internal ids are unchanged.
+  - Still "Rustvale": 8 voiced Ferrox NPC lines (v3d_fer_*.mp3). They need new voice files before their text changes.
+
+## 94. Glyphos goes live, with a detail pass from Book 1 Ch23-25 (Nov 28, from the book, build pack 06 and the Nov 20 audit)
+- Glyphos is the sixth world. It is reached like Thalassa and Neonis: `?world=glyphos` (remembered in localStorage am_world) or the F9 tester-travel list ("Glyphos (preview)"). Spawn is YL Sunken Landing at 55.5, 166.
+- Source lives in tools/glyphos3d/ (gy_ground, gy_thmat, gy_mats, gy_kit, gy_jungle, gy_scenes, gy_places and the new gy_detail.js). `python3 tools/glyphos3d/build.py` builds them into sporeholm3d/glyphos.js (`ASSETS.fn.gmap`) from the Neonis nmap closure in world.js. world.js and detailkit.js are not changed.
+- index.html: one small inline script after detailkit.js loads `glyphos.js?v=gy1` only when the game is going to Glyphos (1.5 MB, so the other worlds don't pay for it).
+- game.js: the GY1 flag (set only when glyphos.js loaded) also sets Ne0X, so Glyphos runs on the Neonis scene-streaming pipeline with its own map function, spawn, sky, fog and light. tools/glyphos3d/patch_game.py makes every change with a count-checked exact replacement; re-run it on a newer game.js and it fails loudly if a pattern moved.
+- Golden dusk (map guide: "an ancient ruins world at golden dusk"), GY1 branches only:
+  - sky gradient #3a5a8a → #7a9ac0 → #e8c890 → #ffd890 at the horizon → #e0b070 → #a89060 → #4a5a38;
+  - warm fog #d8c49a, exposure 1.12, sun #ffd9a0 at 2.3, hemisphere ground #6a6040;
+  - the sun disc instead of Neonis's two moons, and no daytime stars.
+  - build.py also turns the shallow water from teal to green ("a calm green glassy sea").
+- New place gyFerry, the Deep Sea Ferry (Ch23). Board it at the end of the YL jetty ("Board the Deep Sea Ferry"); leave by the hatch at the back. Inside:
+  - The glass bubble with gleaming brass ribs, brass benches with red velvet cushions, and the brass wheelhouse with the big wheel, bell and lever. The wheelhouse is left empty: the Squid Sailor actor stays where story3 puts it.
+  - A see-through glass window in the floor.
+  - Outside the glass, the dive: sunbeams, plankton glittering like a night sky, schools of silver fish, and jellyfish domes in pink, violet and pale gold (two bigger than the ferry).
+  - Below, the Old One's long gray back with a sail-sized fin and rows of pale blue glowing spots.
+  - On the sandy seabed, the Sunken Gate: a ring of pale stone standing on its edge, crusted with barnacles, coral and sea-grass, every carving glowing.
+  - 62k verts, 119 draw calls, two lights.
+- YL Sunken Landing:
+  - the half-sunk GLYPHOS stone tablet in the water off the jetty, with the letters in gold and a swirl of glyphs under them;
+  - the moored ferry with its sign "DEEP SEA FERRY. DIVES DAILY.";
+  - two lantern poles;
+  - the old boat moved off the jetty end into open water.
+- Sea-temple lagoon (YN, Y7, YI): temples with wave-carved roofs, standing, half-sunk and leaning, and tops of pillars poking out of the water "like the fingers of giants". Pillars lean against each other in pairs. Gold lines run on the stone. Archaeologist work spots have brushes, string lines, notebooks and magnifying glasses. Coral grows in the shallows.
+- YD Dig Camp: lanterns hanging from poles, map tables with notebooks and tools, two more flags, and a work spot.
+- Y9 Temple of Voices front:
+  - a gold-covered facade (painted gold swirl panels), with two tall columns carved like tree trunks whose stone branches spread across the top;
+  - Liss's small clear crystal by the door at the top;
+  - side flights of steps up the wall row;
+  - two unnamed stone guardian figures at the foot.
+- YM Mural Overlook:
+  - the Ancient Obelisk, a black monolith with glowing glyphs (map guide landmark);
+  - two painted wall murals, the Seedmother and the shadow eating the sky like ink (Ch25);
+  - the arch curtain of vines replaced by two pier vines, so the north path to YA is open again.
+- YY Glyph Hollow: two small humming obelisks (world.json: "obelisks in Glyph Hollow hum").
+- YO is renamed "Coral Ruins" (world page and 2D maps). The quest id coral-grove is kept.
+- Every Glyphos scene gets a density pass: pale drift grass with glyph-shaped seed heads (glow) on grass tiles, broken paving at path edges, fallen carved blocks only on rubble tiles, pebbles in clearings, and shore stones. All of it uses its own hash (gh), never R().
+- Version notes:
+  - glyphos.js?v=gy1 is new;
+  - game.js and index.html need the main session's usual ?v= bump at push time;
+  - world.js and detailkit.js are untouched.
