@@ -427,3 +427,14 @@ index.html loads world.js?v=wd14ob, game.js?v=bt8ob, linker-data.js?v=cl1ob. The
   - glyphos.js?v=gy1 is new;
   - game.js and index.html need the main session's usual ?v= bump at push time;
   - world.js and detailkit.js are untouched.
+
+## 95. Picture finish: glow bloom, colour grade, smoothing, cutscene focus (Nov 28, graphics plan step 2)
+- game.js, a new `__PP` block just before the window `resize` listener, plus a `uLift`/`uGain` pair added to the existing grade-and-vignette pass (`__GRP`).
+- Glow bloom: the bloom only catches what is truly bright now (threshold .95, was .82; strength .62, radius .5, softer knee .35), so the self-lit sand, walls and sky no longer haze over. Every 1.5 s the block tags glowing materials: coloured emissive ones without a texture (lantern glass, runes, neon, crystals) get a x2.2 boost and additive glows (halos, sprites, sky lanterns) a x1.6 boost, only while bloom is on, so they bloom and the rest stays crisp. Shader materials are left alone. Low (no bloom) keeps them at x1.
+- Colour grade per world, day and night, applied after tone mapping: a small lift (shadows) and gain (highlights) per channel. Dustara warm sand by day and blue night, Ferrox copper and smoke, Thalassa sea-green shade and teal night, Neonis magenta-violet, Glyphos warm parchment gold, Sporeholm a soft green, rooms warm. `U()` picks the preset each time the lighting changes (`__PP.grade(st)`).
+- Smoothing: an FXAA pass at the very end, on whenever the picture has no MSAA (Medium, Low and phones); High keeps its 4x MSAA and skips it.
+- Cutscene focus: Medium and High fade in a light depth-of-field blur (edges and corners, the centre stays sharp) over about half a second while a dialog or cutscene box is up, and fade it out after; the pass is switched off completely between scenes.
+- `U()` end now also calls `__PP&&__PP.grade(...)`.
+- Tests: `?noglow`, `?nograde`, `?nodof`, `?nofxaa`, `?oldbloom` turn each part off; `PP` in the console holds the live settings.
+- PC source: copy the `__PP` block, the grade pass change and the `U()` line into the same places.
+- index.html: game.js?v=bt24pp1.
