@@ -25,19 +25,19 @@ rep('Z0=Ne0X?"nmap"', 'Z0=GY1?"gmap":Ne0X?"nmap"')
 rep('sc=Ne0X?[85.5,49]', 'sc=GY1?[55.5,166]:Ne0X?[85.5,49]')
 rep('window.NEO=Ne0X;', 'window.NEO=Ne0X;window.GLY=GY1;')
 # exposure, fog colour, no Neonis baked ground pictures
-rep('s.toneMappingExposure=gs?1.32:Ne0X?1.25', 's.toneMappingExposure=gs?1.32:GY1?1.18:Ne0X?1.25')
-rep('e.fog=new xl(Ne0X?"#2a1a4a"', 'e.fog=new xl(GY1?"#b4ccb0":Ne0X?"#2a1a4a"')
+rep('s.toneMappingExposure=gs?1.32:Ne0X?1.25', 's.toneMappingExposure=gs?1.32:GY1?1.12:Ne0X?1.25')
+rep('e.fog=new xl(Ne0X?"#2a1a4a"', 'e.fog=new xl(GY1?"#d8c49a":Ne0X?"#2a1a4a"')
 rep('c=Ne0X?$n.groundN||null', 'c=GY1?null:Ne0X?$n.groundN||null')
-# jungle day sky instead of the Neonis neon dusk, no daytime stars, the sun disc instead of the two Neonis moons
+# golden dusk over the ruins (map guide: "ancient ruins world at golden dusk") instead of the Neonis neon dusk, no daytime stars, the sun disc instead of the two Neonis moons
 rep('L=D.createLinearGradient(0,0,0,512);Ne0X?(L.addColorStop(0,"#0c0628")',
-    'L=D.createLinearGradient(0,0,0,512);GY1?(L.addColorStop(0,"#4a8ac8"),L.addColorStop(.3,"#8ac0e0"),L.addColorStop(.45,"#d8ecd8"),L.addColorStop(.5,"#f4f0c8"),L.addColorStop(.55,"#b8d0a0"),L.addColorStop(1,"#4a6a48")):Ne0X?(L.addColorStop(0,"#0c0628")')
+    'L=D.createLinearGradient(0,0,0,512);GY1?(L.addColorStop(0,"#3a5a8a"),L.addColorStop(.28,"#7a9ac0"),L.addColorStop(.42,"#e8c890"),L.addColorStop(.5,"#ffd890"),L.addColorStop(.54,"#e0b070"),L.addColorStop(.6,"#a89060"),L.addColorStop(1,"#4a5a38")):Ne0X?(L.addColorStop(0,"#0c0628")')
 rep('!ts||Ne0X){let I=[];for(let oe=0;oe<1800;', '!ts||Ne0X&&!GY1){let I=[];for(let oe=0;oe<1800;')
 rep('ts&&!Ne0X?[[-210,70,-150,16,"#fff2c8"]]', 'ts&&(!Ne0X||GY1)?[[-210,70,-150,16,"#fff2c8"]]')
 # day light (U(): fog colour, hemisphere ground colour, sun strength and colour)
-rep('gs?"#8a5a44":Ne0X?"#3a2860"', 'gs?"#8a5a44":GY1?"#b4ccb0":Ne0X?"#3a2860"')
-rep('gs?"#605058":Ne0X?"#3a2a5a"', 'gs?"#605058":GY1?"#6a7a48":Ne0X?"#3a2a5a"')
-rep('gs?2.4:Ne0X?1.5:2.6', 'gs?2.4:GY1?2.4:Ne0X?1.5:2.6')
-rep('gs?"#ffe0c4":Ne0X?"#d0b8ff"', 'gs?"#ffe0c4":GY1?"#fff0cc":Ne0X?"#d0b8ff"')
+rep('gs?"#8a5a44":Ne0X?"#3a2860"', 'gs?"#8a5a44":GY1?"#d8c49a":Ne0X?"#3a2860"')
+rep('gs?"#605058":Ne0X?"#3a2a5a"', 'gs?"#605058":GY1?"#6a6040":Ne0X?"#3a2a5a"')
+rep('gs?2.4:Ne0X?1.5:2.6', 'gs?2.4:GY1?2.3:Ne0X?1.5:2.6')
+rep('gs?"#ffe0c4":Ne0X?"#d0b8ff"', 'gs?"#ffe0c4":GY1?"#ffd9a0":Ne0X?"#d0b8ff"')
 # help title and the F9 tester-travel world list
 rep('v.textContent=Ne0X?"Neonis \\u2014 Neon City"', 'v.textContent=GY1?"Glyphos \\u2014 Sunken Landing":Ne0X?"Neonis \\u2014 Neon City"')
 rep('["neonis","Neonis (preview)"]]', '["neonis","Neonis (preview)"],["glyphos","Glyphos (preview)"]]')
