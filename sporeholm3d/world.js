@@ -10293,9 +10293,9 @@ const xBuild = (o) => { const X = o.gx, Y = o.gy; xEdges(X, Y, { wall: !!o.town,
 // ================= FERROX PART 1: RUSTVALE (pack cards B6, B7, B8, B5, A6, A7, A8, A5, C6, C5, C7, C8) =================
 const C6x = [12, 17];
 // ---- B6 Rustvale Square: the heart of Rustvale, the Great Gear fountain on a round plaza of riveted deck plates ----
-XS({ id: "FB6", gx: 150, gy: 30, name: "Rustvale Square", town: true, cross: { n: C6x, s: C6x, e: C6x, w: C6x },
+XS({ id: "FB6", gx: 150, gy: 30, name: "Ferrox City Square", town: true, cross: { n: C6x, s: C6x, e: C6x, w: C6x },
   z: ["X B B P B X", "B B D P B B", "P P L L P P", "P P L L P P", "B D P P D B", "X B D P B X"],
-  bld: [["x_bay", 1, 1, 10, 7, "Rustvale Recovery Bay"], ["x_shop", 18, 1, 6, 6, "Rustvale Shop"], ["x_canteen", 24, 1, 5, 6, "Scrap Stew Canteen"], ["x_grub", 1, 20, 7, 7, "Grub's Workshop"], ["x_boiler", 8, 21, 4, 5, "Boiler House"], ["x_office", 19, 20, 10, 7, "Rustvale Works Office"]],
+  bld: [["x_bay", 1, 1, 10, 7, "Ferrox City Recovery Bay"], ["x_shop", 18, 1, 6, 6, "Ferrox City Shop"], ["x_canteen", 24, 1, 5, 6, "Scrap Stew Canteen"], ["x_grub", 1, 20, 7, 7, "Grub's Workshop"], ["x_boiler", 8, 21, 4, 5, "Boiler House"], ["x_office", 19, 20, 10, 7, "Ferrox City Works Office"]],
   ground(F, X, Y) { ellT(X + 15, Y + 15, 7.2, 7.2, "P"); },
   paint(g, S) { g.strokeStyle = "rgba(242,194,48,0.55)"; g.lineWidth = S * 0.14; for (const r of [6.6, 6.95]) { g.beginPath(); g.arc(15 * S, 15 * S, r * S, 0, TAU); g.stroke(); } g.strokeStyle = "rgba(30,22,18,0.5)"; g.lineWidth = S * 0.06; for (let r = 3.6; r < 6.5; r += 0.95) { g.beginPath(); g.arc(15 * S, 15 * S, r * S, 0, TAU); g.stroke(); } },
   build(X, Y) { xGreatGear(X + 15, Y + 15); for (const [dx, dz, ry] of [[0, -4.6, 0], [0, 4.6, Math.PI], [-4.6, 0, Math.PI / 2], [4.6, 0, -Math.PI / 2]]) xBench(X + 15 + dx, Y + 15 + dz, ry + Math.PI);
@@ -10305,7 +10305,7 @@ XS({ id: "FB6", gx: 150, gy: 30, name: "Rustvale Square", town: true, cross: { n
     xWelder(X + 9.6, Y + 27.6, 0.4); xTyres(X + 0.9, Y + 18.8, 3); xDrums(X + 11.1, Y + 19.2, 3); xVent(X + 28.0, Y + 19.0); xWash(X + 1.2, Y + 19.6, X + 7.4, Y + 19.4, 2.4);
     xRails(X + 24.5, Y + 9.2, X + 28.6, Y + 9.2); { const C = grp(X + 26.4, 0, Y + 9.2, Math.PI / 2); add(new THREE.BoxGeometry(1.3, 0.3, 1.8), XM.iron(), [0, 0.45, 0], [0, 0, 0], null, C); add(new THREE.BoxGeometry(0.1, 0.9, 0.1), XM.iron(), [0, 1.0, 0], [0, 0, 0], null, C); add(new THREE.BoxGeometry(1.4, 0.08, 0.08), XM.iron(), [0, 1.45, 0], [0, 0, 0.3], null, C); } } });
 // ---- B7 Rustvale Lane Homes: boilers, boxcars and domes along the street, the Old Locomotive play area, the Robot Yard ----
-XS({ id: "FB7", gx: 180, gy: 30, name: "Rustvale Lane Homes", town: true, cross: { n: C6x, s: [13, 16], e: C6x, w: C6x },
+XS({ id: "FB7", gx: 180, gy: 30, name: "Ferrox City Lane Homes", town: true, cross: { n: C6x, s: [13, 16], e: C6x, w: C6x },
   z: ["B B P P B B", "B D P P D B", "P P L P P P", "P P P P P P", "B D B P B B", "B B X P D B"],
   bld: [["x_dome2", 1, 1, 5, 5, "Dome House"], ["x_boiler", 6, 1, 4, 5, "Boiler House"], ["x_boiler2", 20, 1, 4, 5, "Boiler House"], ["x_dome", 24, 1, 5, 5, "Dome House"], ["x_car2", 1, 21, 6, 5, "Railcar House"], ["x_post", 8, 20, 4, 4, "Tinker Lane Post"], ["x_boiler", 20, 20, 4, 5, "Boiler House"], ["x_dome3", 24, 20, 5, 5, "Dome House"]],
   ground(F) { F(5, 10, 13, 11, "b"); },
@@ -10345,7 +10345,7 @@ XS({ id: "FB5", gx: 120, gy: 30, name: "Scrapyard Crossing", cross: { n: C6x, s:
     // the broken ore cart: tipped, a wheel off, ore spilled (the hauler stands beside it)
     { const G = grp(X + 11.2, 0, Y + 26.4, 0.3); add(new THREE.BoxGeometry(1.4, 0.8, 1.0), XM.iron(), [0, 0.6, 0], [0, 0, 0.5], null, G); add(new THREE.CylinderGeometry(0.22, 0.22, 0.08, 10), XM.iron(), [1.2, 0.08, 0.5], [Math.PI / 2, 0, 0], null, G); for (let k = 0; k < 7; k++) add(new THREE.DodecahedronGeometry(0.18, 0), std({ color: "#5a4a6a", roughness: 0.5, metalness: 0.4 }), [-0.9 - R() * 0.8, 0.12, (R() - 0.5) * 1.0], [R(), R(), R()], null, G); xRails(X + 10.2, Y + 22.0, X + 10.8, Y + 29.8); } } });
 // ---- A6 Rustvale Quiet Court: the First Shell monument, weathered homes, the fortune teller's caravan, the assay office ----
-XS({ id: "FA6", gx: 150, gy: 0, name: "Rustvale Quiet Court", town: true, cross: { s: C6x, w: C6x, e: C6x },
+XS({ id: "FA6", gx: 150, gy: 0, name: "Ferrox City Quiet Court", town: true, cross: { s: C6x, w: C6x, e: C6x },
   z: ["X X L L X X", "B D L L D B", "P P P P P P", "B B D P B B", "B D B P B D", "X B D P D X"], hub: [15, 13],
   bld: [["x_caravan", 22, 4, 7, 5, "Fortune Teller's Caravan"], ["x_shellh", 1, 16, 5, 5, "Shell House"], ["x_dome", 6, 16, 5, 4, "Dome House"], ["x_dome2", 1, 23, 5, 4, "Dome House"], ["x_assay", 7, 22, 5, 5, "Ore Assay Office"], ["x_shellh", 20, 16, 4, 5, "Shell House"], ["x_dome3", 24, 16, 5, 5, "Dome House"], ["x_dome", 20, 23, 5, 4, "Dome House"]],
   ground(F, X, Y) { F(10, 2, 19, 9, "."); ellT(X + 15, Y + 6, 3.6, 3.4, "P"); },
@@ -10411,7 +10411,7 @@ XS({ id: "FC5", gx: 120, gy: 60, name: "Coolant Pond", cross: { n: C6x, e: C6x }
     { const G = grp(X + 17.6, 0, Y + 22.4, 0.3); add(warp(new THREE.BoxGeometry(2.6, 1.6, 1.8, 3, 2, 2), 0.12, 1.2), std({ color: "#2a2428", roughness: 0.4, metalness: 0.5, flatShading: true }), [0, 0.9, 0], [0, 0, 0], null, G); add(new THREE.BoxGeometry(3.2, 0.5, 2.0), std({ color: "#2a2428", roughness: 0.4, metalness: 0.5 }), [0, 1.85, 0], [0, 0, 0], null, G); for (let k = 0; k < 6; k++) add(new THREE.CircleGeometry(0.18, 8), MK.glowC("#ff8a3a", 0.9), [(R() - 0.5) * 2.4, 2.11, (R() - 0.5) * 1.4], [-Math.PI / 2, 0, 0], "nocol", G); } // the Forge Rock: hammer dents and scorch marks
     for (const [x, z] of [[3.2, 20.6], [8.4, 23.4], [2.0, 12.0]]) { add(new THREE.TorusGeometry(0.3, 0.05, 4, 12), XM.paint("#c83a2a"), [X + x, 0.4, Y + z], [Math.PI / 2, 0, 0]); } xSign(X + 18.2, Y + 18.6, "drop", -0.4); } });
 // ---- C7 Rustvale Farmstead: turnip and iron-bean plots edged with old rails, the Windpump, the Glasshouse; Gleamgrub in the drift grass ----
-XS({ id: "FC7", gx: 180, gy: 60, name: "Rustvale Farmstead", town: true, cross: { n: [13, 16], w: C6x, e: C6x, s: C6x },
+XS({ id: "FC7", gx: 180, gy: 60, name: "Ferrox City Farmstead", town: true, cross: { n: [13, 16], w: C6x, e: C6x, s: C6x },
   z: ["F F B P B F", "F D D P D B", "P P P P P P", "B B L P B B", "F B F P G G", "X F D P G X"],
   bld: [["x_farm", 7, 1, 6, 4, "Farmhouse"], ["x_farm", 19, 1, 7, 4, "Farmhouse"], ["x_barn", 1, 15, 8, 5, "Feed Barn"], ["x_glass", 20, 15, 8, 5, "The Glasshouse"], ["x_farm", 4, 21, 6, 4, "Farmhouse"], ["x_farm", 24, 5, 5, 4, "Farmhouse"]],
   ground(F) { F(1, 1, 5, 9, "f"); F(26, 1, 28, 4, "f"); F(11, 21, 13, 26, "f"); F(1, 26, 8, 27, "f"); },
@@ -10492,7 +10492,7 @@ XS({ id: "FC3", gx: 60, gy: 60, name: "Back Lot Siding", cross: { e: C6x, w: C6x
     { const G = grp(X + 12.4, 0, Y + 17.6, 0); for (const [sx, sz] of [[-1.6, -1.2], [1.6, -1.2], [-1.6, 1.2], [1.6, 1.2]]) add(new THREE.BoxGeometry(0.3, 2.0, 0.3), XM.wood(), [sx, 1.0, sz], [0, 0, 0], null, G); add(new THREE.BoxGeometry(3.8, 0.3, 2.8), XM.wood(), [0, 2.1, 0], [0, 0, 0], null, G); add(new THREE.BoxGeometry(0.9, 0.12, 2.4), XM.iron(), [1.9, 1.6, 0], [0, 0, -0.6], null, G); for (let k = 0; k < 6; k++) add(new THREE.DodecahedronGeometry(0.2, 0), std({ color: "#1a1614", roughness: 0.9 }), [(R() - 0.5) * 2.8, 2.4, (R() - 0.5) * 2], [R(), R(), R()], null, G); } // the coal stage
     xRailcar(X + 12.0, Y + 24.2, Math.PI / 2 + 0.15, "box", { L: 6, c: "#6a4a3a" }); xStash(X + 15.6, Y + 23.6); } });
 // ---- C2 Rustvale Back Lot: where Rustvale's junk goes to sleep; the sagging Old Warehouse with its suspiciously clean Helix door ----
-XS({ id: "FC2", gx: 30, gy: 60, name: "Rustvale Back Lot", cross: { e: C6x }, base: ",", hub: [15, 14],
+XS({ id: "FC2", gx: 30, gy: 60, name: "Ferrox City Back Lot", cross: { e: C6x }, base: ",", hub: [15, 14],
   z: ["X X L L X X", "X G L L D X", "X D P P P P", "X G P S G X", "X D D P G X", "X X X X X X"],
   ground(F) { F(7, 1, 23, 8, "b"); F(12, 9, 17, 17, "p"); },
   paint(g, S) { g.strokeStyle = "rgba(20,14,10,0.5)"; g.lineWidth = S * 0.18; for (const dx of [-0.5, 0.5]) { g.beginPath(); g.moveTo((29 + dx) * S, (14.6 + dx) * S); g.bezierCurveTo(22 * S, (15 + dx) * S, (16 + dx) * S, 13 * S, (15 + dx) * S, 9.2 * S); g.stroke(); } },
