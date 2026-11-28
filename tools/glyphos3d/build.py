@@ -63,7 +63,9 @@ cut("// ================= MOUNT LUMEN", "// ================= WILD DETAIL PASS")
 cut("// ================= NEONIS STORY PLACES", "// small helpers for the new scenes", "const NNSTORY = [];\n")
 # (j) the Glyphos kit, jungle and scenes go in just before the assembly
 rep("// ================= assemble =================",
-    piece("gy_kit.js") + "\n" + piece("gy_jungle.js") + "\n" + piece("gy_scenes.js") + "\n" + piece("gy_places.js") + "\n// ================= assemble =================")
+    piece("gy_kit.js") + "\n" + piece("gy_jungle.js") + "\n" + piece("gy_scenes.js") + "\n" + piece("gy_places.js") + "\n" + piece("gy_detail.js") + "\n// ================= assemble =================")
+# (j1) the lagoon: the shared canal water in the calm green of a glassy sea instead of the Neonis blue
+rep('"#0e7fa0"', '"#127a6a"'); rep('"#5ee6dc"', '"#7ee0b4"'); rep('e: "#0a3a4a"', 'e: "#0a4a3a"')
 # (j2) interiors: a room may set its own wall height; sandstone rooms get sandstone ribs or none; a place flushes its merged furniture batches
 rep("h = S.flat ? S.wallH : S.wallH * (0.85 + R() * 0.3);", "h = P.wallH || (S.flat ? S.wallH : S.wallH * (0.85 + R() * 0.3));")
 rep("const ribM = S.fxWall ? FXA.frame() :", "const ribM = S.ribM ? FXA[S.ribM]() : S.fxWall ? FXA.frame() :")

@@ -4,7 +4,7 @@
 // r1  Q4 Fern Hollow - F3 Chime Falls Basin - F4 Chime Falls Pool - S3 Sunspire West - S4 Sunspire Trailhead - V2 Canopy Walk Landing - Y8 Temple Steps
 // r2  YK Grotto Deep Chamber - YE Grotto Lower Hall - YB Grotto Upper Hall - YX Sunken Channel - YZ Forgotten Forum - YV Temple of Trials - YY Glyph Hollow
 // r3  Q1 Vine Bridge Canopy - Q2 Heron Pools - Q3 Old Quarry - YG Drowned Grotto - Q6 Monolet Garden - YA Pillar Hollows - Y4 Storehouse - E1 Excavation Pits
-// r4  YO Coral Grove - Y7 Sunken Temple Court - YU Tidepool Ruins - YS Glyph Steps - YQ Quiet Court - YM Mural Overlook - E2 Sunwell Terraces - E3 Orchid Ravine
+// r4  YO Coral Ruins - Y7 Sunken Temple Court - YU Tidepool Ruins - YS Glyph Steps - YQ Quiet Court - YM Mural Overlook - E2 Sunwell Terraces - E3 Orchid Ravine
 // r5  YI Island Chain - YN Sunken Shallows - YT Tidepool Fork - YJ Glyph Junction - YC Ruin Crossroads - YW Landing Causeway - YP Spaceport - E4 Beacon Point
 // r6  EC Shipwreck Cove - YL Sunken Landing (spawn) - YD Dig Camp - YH Lane Homes - YF Farmstead - YR Relay Tower - EB Turtle Beach
 const gyO = (X, Y, x, z, ry = 0) => ({ x: X + x, z: Y + z, ry });
@@ -37,7 +37,7 @@ gyW("YL", 40, 150, "Sunken Landing", { town: true, hub: [15, 13], r: 13, palms: 
   ground(X, Y) { ellT(X + 15, Y + 13, 7, 5.5, "P"); fillT(X + 1, Y + 9, X + 28, Y + 17, "g"); tLine(X + 2, Y + 13, X + 28, Y + 13, 5, "p"); fillT(X, Y + 24, X + 29, Y + 29, "w"); tBlob(X + 8, Y + 21, 5, ".", 0.25, 3); tBlob(X + 15, Y + 22, 4, ".", 0.2, 4); },
   after(X, Y) { tLine(X + 15, Y + 18, X + 15, Y + 29, 3.4, "k", "w"); tLine(X + 15, Y + 27, X + 24, Y + 27, 3.4, "k", "w"); },
   grass: [[6, 21, 3, 2, "tide", "Landing shore grass"]],
-  build(X, Y) { gyChimeTower(gyO(X, Y, 15, 13), 6); for (const [x, z] of [[10, 9.5], [20, 9.5], [10, 16.8], [20, 16.8]]) gyBrazier(gyO(X, Y, x, z)); gyBoat(X + 11.5, Y + 27.5, 0.2); gyBoat(X + 20, Y + 29, -0.3); gyFlag(gyO(X, Y, 13.2, 20.5), 4.5, GYC.turq); gyFlag(gyO(X, Y, 16.8, 20.5), 4.5, GYC.gold);
+  build(X, Y) { gyChimeTower(gyO(X, Y, 15, 13), 6); for (const [x, z] of [[10, 9.5], [20, 9.5], [10, 16.8], [20, 16.8]]) gyBrazier(gyO(X, Y, x, z)); gyBoat(X + 27.9, Y + 26.2, Math.PI / 2); gyBoat(X + 20, Y + 29, -0.3); gyFlag(gyO(X, Y, 13.2, 20.5), 4.5, GYC.turq); gyFlag(gyO(X, Y, 16.8, 20.5), 4.5, GYC.gold);
     gyCrates(gyO(X, Y, 18, 21.5, 0.3), 4); gyAwning(gyO(X, Y, 6, 18.5, 0.1), 4.5, 2.6, 2.4, "#e8dcc0"); gyTable(gyO(X, Y, 6, 18.8)); gyBench(gyO(X, Y, 9.5, 9.3, Math.PI)); gyBench(gyO(X, Y, 20.5, 9.3, Math.PI)); } });
 
 gyW("YD", 70, 150, "Dig Camp", { town: true, hub: [15, 13], r: 13,
@@ -120,8 +120,8 @@ gyW("E4", 220, 120, "Beacon Point", { hub: [12, 15], r: 10, palms: 0.5, blobs: [
   build(X, Y) { gyLookout(gyO(X, Y, 23, 15), 7); gyBrazier({ x: X + 23, z: Y + 15, floor: 7.2 }); gyRuinRing(X, Y, 23, 15, 4.2, 6, 2.6, 0.5); } });
 
 // ---------------- row 4 ----------------
-gyW("YO", 10, 90, "Coral Grove", { hub: [15, 16], r: 9, palms: 0.4, blobs: [[15, 8, 5, "w", 0.25], [7, 20, 4, "."], [23, 22, 5, "g"]],
-  grass: [[22, 21, 3.4, 3, "orchid", "Coral Grove orchids"], [7, 20, 2.6, 2, "tide", "Grove pool reeds"]], quest: [10, 14, "coral-grove", "Find the secret of the Coral Grove", 0.5],
+gyW("YO", 10, 90, "Coral Ruins", { hub: [15, 16], r: 9, palms: 0.4, blobs: [[15, 8, 5, "w", 0.25], [7, 20, 4, "."], [23, 22, 5, "g"]],
+  grass: [[22, 21, 3.4, 3, "orchid", "Coral Ruins orchids"], [7, 20, 2.6, 2, "tide", "Ruins pool reeds"]], quest: [10, 14, "coral-grove", "Find the secret of the Coral Ruins", 0.5],
   build(X, Y) { for (let k = 0; k < 9; k++) { const a = (k / 9) * TAU; thCoral(X + 15 + Math.cos(a) * 3.6, Y + 8 + Math.sin(a) * 3, 0.8 + R() * 0.6); } gyArch(gyO(X, Y, 15, 12.5), 3.6, 4, 0.8); gyVines(gyO(X, Y, 15, 12.6), 3.6, 4); } });
 
 gyW("Y7", 40, 90, "Sunken Temple Court", { hub: [15, 17], r: 0, base: "w", wk: 0.3,
@@ -151,7 +151,7 @@ gyW("YQ", 130, 90, "Quiet Court", { town: true, hub: [15, 15], r: 12,
 
 gyW("YM", 160, 90, "Mural Overlook", { hub: [15, 18], r: 10, blobs: [[15, 8, 6, "."], [25, 24, 4, "g"]],
   grass: [[24, 23, 3, 2.6, "ruin", "Overlook grass"], [6, 24, 3, 2.4, "jungle", "Overlook thicket"]], quest: [10, 12, "faded-mural", "Restore the faded mural", 0],
-  build(X, Y) { gyWall(gyO(X, Y, 6, 5.5), 18, 3.6, 0.9, 0.15); for (let k = 0; k < 8; k++) gyGlyph(gyO(X, Y, 7 + k * 2.2, 6.1), 0, 1.4 + (k % 2) * 0.8, 0.5, 0.9, 0.8, 0, [GYC.gold, GYC.turq, GYC.jade][k % 3]); gyBench(gyO(X, Y, 12, 11, Math.PI)); gyBench(gyO(X, Y, 18, 11, Math.PI)); gyVines(gyO(X, Y, 10, 6), 6, 3.6); } });
+  build(X, Y) { gyWall(gyO(X, Y, 6, 5.5), 4.0, 3.6, 0.9, 0.15); gyWall(gyO(X, Y, 18.2, 5.5), 5.8, 3.6, 0.9, 0.15); gyArch(gyO(X, Y, 14.1, 5.5), 6.4, 3.8, 0.9); gyBench(gyO(X, Y, 12, 11, Math.PI)); gyBench(gyO(X, Y, 18, 11, Math.PI)); gyVines(gyO(X, Y, 10.45, 6.0), 1.0, 3.8); gyVines(gyO(X, Y, 17.75, 6.0), 1.0, 3.8); } });
 
 gyW("E2", 190, 90, "Sunwell Terraces", { hub: [15, 18], r: 10, blobs: [[22, 10, 6, "."], [6, 6, 4, "g"], [8, 26, 4, "g"]],
   ground(X, Y) { ellT(X + 22, Y + 10, 2.6, 2.6, "w"); },
