@@ -202,7 +202,7 @@ const gdGiant = (O, x, z, y0, s = 1) => { const c = stc(O, 90 + (s > 0)), c2 = s
   for (let i = 0; i < 3; i++) nnBx("carve", O, x, y0 + 5.02 + i * 0.18, z, 0.8 - i * 0.18, 0.18, 0.72 - i * 0.16, c2); nnSp("glow", O, x, y0 + 5.62, z, 0.08, GYC.gold); gyMoss(O, x + s * 0.55, y0 + 4.05, z, 0.3); gyMoss(O, x, y0 + 0.4, z + 0.6, 0.35); };
 const gdVoicesFront = (X, Y) => { const O = gyO(X, Y, 15, 11), [ux, uz] = unwarp(O.x, O.z), by = Math.max(GHT(ux, uz), -9), hh = 4.8;
   // the stairs: up the first terrace from both sides, two flights up the second face either side of the carved face, one up the third to the door
-  for (const s of [-1, 1]) { gdSideFlight(O, s * 11, s * 5.4, 0, hh, 10, 0.9); gdFlight(O, s * 4.2, 2.4, hh, 2 * hh, 10, 8); }
+  for (const s of [-1, 1]) { gdSideFlight(O, s * 11, s * 5.4, 0, hh, 10, 0.45); gdFlight(O, s * 4.2, 2.4, hh, 2 * hh, 10, 8); }
   gdFlight(O, 0, 3.0, 2 * hh, 3 * hh, 8, 6); nnBx("carve", O, 0, 3 * hh, 5.45, 2.6, 0.4, 0.9, stc(O, 170)); nnBx("gold", O, 0, 3 * hh + 0.33, 5.91, 2.5, 0.06, 0.03, GDGOLD);
   // gold over every face: tier fronts at z = 10, 8, 6, 5 (the ground door and the top door left open)
   gdGoldPanels(ux, by, uz, [[-11, -2.9, 0, 4.35, 10.035], [2.9, 11, 0, 4.35, 10.035], [-9, 9, hh, 2 * hh - 0.45, 8.035], [-7, 7, 2 * hh, 3 * hh - 0.45, 6.035],

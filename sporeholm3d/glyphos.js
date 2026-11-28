@@ -4038,7 +4038,7 @@ gyW("YL", 40, 150, "Sunken Landing", { town: true, hub: [15, 13], r: 13, palms: 
   ground(X, Y) { ellT(X + 15, Y + 13, 7, 5.5, "P"); fillT(X + 1, Y + 9, X + 28, Y + 17, "g"); tLine(X + 2, Y + 13, X + 28, Y + 13, 5, "p"); fillT(X, Y + 24, X + 29, Y + 29, "w"); tBlob(X + 8, Y + 21, 5, ".", 0.25, 3); tBlob(X + 15, Y + 22, 4, ".", 0.2, 4); },
   after(X, Y) { tLine(X + 15, Y + 18, X + 15, Y + 29, 3.4, "k", "w"); tLine(X + 15, Y + 27, X + 24, Y + 27, 3.4, "k", "w"); },
   grass: [[6, 21, 3, 2, "tide", "Landing shore grass"]],
-  build(X, Y) { gyChimeTower(gyO(X, Y, 15, 13), 6); for (const [x, z] of [[10, 9.5], [20, 9.5], [10, 16.8], [20, 16.8]]) gyBrazier(gyO(X, Y, x, z)); gyBoat(X + 27.9, Y + 26.2, Math.PI / 2); gyBoat(X + 20, Y + 29, -0.3); gyFlag(gyO(X, Y, 13.2, 20.5), 4.5, GYC.turq); gyFlag(gyO(X, Y, 16.8, 20.5), 4.5, GYC.gold);
+  build(X, Y) { gyChimeTower(gyO(X, Y, 15, 13), 6); for (const [x, z] of [[10, 9.5], [20, 9.5], [10, 16.8], [20, 16.8]]) gyBrazier(gyO(X, Y, x, z)); gyBoat(X + 28.25, Y + 26.2, Math.PI / 2); gyBoat(X + 20, Y + 29, -0.3); gyFlag(gyO(X, Y, 13.2, 20.5), 4.5, GYC.turq); gyFlag(gyO(X, Y, 16.8, 20.5), 4.5, GYC.gold);
     gyCrates(gyO(X, Y, 18, 21.5, 0.3), 4); gyAwning(gyO(X, Y, 6, 18.5, 0.1), 4.5, 2.6, 2.4, "#e8dcc0"); gyTable(gyO(X, Y, 6, 18.8)); gyBench(gyO(X, Y, 9.5, 9.3, Math.PI)); gyBench(gyO(X, Y, 20.5, 9.3, Math.PI)); } });
 
 gyW("YD", 70, 150, "Dig Camp", { town: true, hub: [15, 13], r: 13,
@@ -4899,7 +4899,7 @@ const gdGiant = (O, x, z, y0, s = 1) => { const c = stc(O, 90 + (s > 0)), c2 = s
   for (let i = 0; i < 3; i++) nnBx("carve", O, x, y0 + 5.02 + i * 0.18, z, 0.8 - i * 0.18, 0.18, 0.72 - i * 0.16, c2); nnSp("glow", O, x, y0 + 5.62, z, 0.08, GYC.gold); gyMoss(O, x + s * 0.55, y0 + 4.05, z, 0.3); gyMoss(O, x, y0 + 0.4, z + 0.6, 0.35); };
 const gdVoicesFront = (X, Y) => { const O = gyO(X, Y, 15, 11), [ux, uz] = unwarp(O.x, O.z), by = Math.max(GHT(ux, uz), -9), hh = 4.8;
   // the stairs: up the first terrace from both sides, two flights up the second face either side of the carved face, one up the third to the door
-  for (const s of [-1, 1]) { gdSideFlight(O, s * 11, s * 5.4, 0, hh, 10, 0.9); gdFlight(O, s * 4.2, 2.4, hh, 2 * hh, 10, 8); }
+  for (const s of [-1, 1]) { gdSideFlight(O, s * 11, s * 5.4, 0, hh, 10, 0.45); gdFlight(O, s * 4.2, 2.4, hh, 2 * hh, 10, 8); }
   gdFlight(O, 0, 3.0, 2 * hh, 3 * hh, 8, 6); nnBx("carve", O, 0, 3 * hh, 5.45, 2.6, 0.4, 0.9, stc(O, 170)); nnBx("gold", O, 0, 3 * hh + 0.33, 5.91, 2.5, 0.06, 0.03, GDGOLD);
   // gold over every face: tier fronts at z = 10, 8, 6, 5 (the ground door and the top door left open)
   gdGoldPanels(ux, by, uz, [[-11, -2.9, 0, 4.35, 10.035], [2.9, 11, 0, 4.35, 10.035], [-9, 9, hh, 2 * hh - 0.45, 8.035], [-7, 7, 2 * hh, 3 * hh - 0.45, 6.035],

@@ -37,7 +37,7 @@ gyW("YL", 40, 150, "Sunken Landing", { town: true, hub: [15, 13], r: 13, palms: 
   ground(X, Y) { ellT(X + 15, Y + 13, 7, 5.5, "P"); fillT(X + 1, Y + 9, X + 28, Y + 17, "g"); tLine(X + 2, Y + 13, X + 28, Y + 13, 5, "p"); fillT(X, Y + 24, X + 29, Y + 29, "w"); tBlob(X + 8, Y + 21, 5, ".", 0.25, 3); tBlob(X + 15, Y + 22, 4, ".", 0.2, 4); },
   after(X, Y) { tLine(X + 15, Y + 18, X + 15, Y + 29, 3.4, "k", "w"); tLine(X + 15, Y + 27, X + 24, Y + 27, 3.4, "k", "w"); },
   grass: [[6, 21, 3, 2, "tide", "Landing shore grass"]],
-  build(X, Y) { gyChimeTower(gyO(X, Y, 15, 13), 6); for (const [x, z] of [[10, 9.5], [20, 9.5], [10, 16.8], [20, 16.8]]) gyBrazier(gyO(X, Y, x, z)); gyBoat(X + 27.9, Y + 26.2, Math.PI / 2); gyBoat(X + 20, Y + 29, -0.3); gyFlag(gyO(X, Y, 13.2, 20.5), 4.5, GYC.turq); gyFlag(gyO(X, Y, 16.8, 20.5), 4.5, GYC.gold);
+  build(X, Y) { gyChimeTower(gyO(X, Y, 15, 13), 6); for (const [x, z] of [[10, 9.5], [20, 9.5], [10, 16.8], [20, 16.8]]) gyBrazier(gyO(X, Y, x, z)); gyBoat(X + 28.25, Y + 26.2, Math.PI / 2); gyBoat(X + 20, Y + 29, -0.3); gyFlag(gyO(X, Y, 13.2, 20.5), 4.5, GYC.turq); gyFlag(gyO(X, Y, 16.8, 20.5), 4.5, GYC.gold);
     gyCrates(gyO(X, Y, 18, 21.5, 0.3), 4); gyAwning(gyO(X, Y, 6, 18.5, 0.1), 4.5, 2.6, 2.4, "#e8dcc0"); gyTable(gyO(X, Y, 6, 18.8)); gyBench(gyO(X, Y, 9.5, 9.3, Math.PI)); gyBench(gyO(X, Y, 20.5, 9.3, Math.PI)); } });
 
 gyW("YD", 70, 150, "Dig Camp", { town: true, hub: [15, 13], r: 13,
