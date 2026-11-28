@@ -7644,6 +7644,126 @@ const dxPass = (ids) => {
       L.forEach(([M, cc], i) => { IM.setMatrixAt(i, M); IM.setColorAt(i, col.set(cc)); }); IM.instanceMatrix.needsUpdate = true; if (IM.instanceColor) IM.instanceColor.needsUpdate = true; IM.name = "nocol"; IM.userData.detail = 1; IM.userData.noLift = 1; IM.castShadow = false; IM.receiveShadow = false; IM.frustumCulled = false; root.add(IM); st.x13[k] = L.length; } }
   const made = K.flush(root); let nv = 0; for (const m of made) nv += m.geometry.attributes.position.count; st.verts = nv; st.meshes = made.length; return st; };
 // ======== DX PASS END ========
+// ======== SCHOOL BEGIN (Dustmere Schoolhouse, Book 1 ch 5: "Helix had paid for the new roof on the schoolhouse, and there was a shiny
+// brass plaque by the door that said so, with the orange ring and the slash"; ch 4: "We learned it at school. Dustara's the red one. Third ring.")
+// The book does not say where the schoolhouse stands. It goes on the open north side of the Quiet Court (DA1), between the Rune Workshop and
+// the Old Resident's Home, its door facing the Old Well. Self-contained: no existing prop moves, and the dHouse call runs on its own seed so
+// every existing R() sequence stays the same. New fittings use their own hash, never R().
+Object.assign(FSPEC, { d_school: { half: 2.4, sign: "book", units: [du({ r: 1.0, sx: 1.5, floors: 2, fh: 2.6, win: [1, 3], winW: 0.75, door: "double", doorW: 1.7, doorC: "#2a6a8a", cap: { t: "tile", c: "#d8643a", r: 1.0, h: 1.15 } })] } });
+FURN.d_school = FURN.school || FURN.home;
+const SCHOOL = (() => { const hq = (n) => { const v = Math.sin(n * 127.1 + 311.7) * 43758.5453; return v - Math.floor(v); };
+  const plaqueT = () => tex(256, 352, (g, W, Hh) => { const gr = g.createLinearGradient(0, 0, W, Hh); gr.addColorStop(0, "#f2d488"); gr.addColorStop(0.5, "#c89a3a"); gr.addColorStop(1, "#e8c070"); g.fillStyle = gr; g.fillRect(0, 0, W, Hh);
+    g.strokeStyle = "#7a5a1a"; g.lineWidth = 8; g.strokeRect(12, 12, W - 24, Hh - 24); g.lineWidth = 2; g.strokeRect(24, 24, W - 48, Hh - 48);
+    g.strokeStyle = "#ff7a1a"; g.lineWidth = 16; g.beginPath(); g.arc(W / 2, 108, 54, 0, Math.PI * 2); g.stroke(); g.save(); g.translate(W / 2, 108); g.rotate(-0.6); g.fillStyle = "#ff7a1a"; g.fillRect(-9, -74, 18, 148); g.restore();
+    g.fillStyle = "#4a3410"; g.textAlign = "center"; g.font = "bold 26px sans-serif"; g.fillText("THE NEW ROOF", W / 2, 214); g.fillText("WAS GIVEN BY", W / 2, 248); g.font = "bold 40px sans-serif"; g.fillText("HELIX", W / 2, 296); });
+  const flagT = () => tex(256, 160, (g, W, Hh) => { g.fillStyle = "#6a2aa8"; g.fillRect(0, 0, W, Hh); g.fillStyle = "#e8b84a"; g.beginPath(); g.arc(W / 2, Hh / 2, 34, 0, Math.PI * 2); g.fill(); g.strokeStyle = "#e8b84a"; g.lineWidth = 7; g.beginPath(); g.ellipse(W / 2, Hh / 2, 66, 16, -0.3, 0, Math.PI * 2); g.stroke(); g.strokeStyle = "#6a2aa8"; g.lineWidth = 3; g.beginPath(); g.ellipse(W / 2, Hh / 2, 66, 16, -0.3, Math.PI * 1.05, Math.PI * 1.95); g.stroke(); });
+  const hopT = () => tex(128, 384, (g, W, Hh) => { g.clearRect(0, 0, W, Hh); g.strokeStyle = "rgba(255,250,236,0.9)"; g.lineWidth = 4; g.fillStyle = "rgba(255,250,236,0.85)"; g.font = "bold 22px sans-serif"; g.textAlign = "center"; let n = 1;
+    const sq = (x, y, s) => { g.strokeRect(x, y, s, s); g.fillText(String(n++), x + s / 2, y + s / 2 + 8); }; const s = 46;
+    sq(W / 2 - s / 2, Hh - 8 - s, s); sq(W / 2 - s / 2, Hh - 8 - 2 * s, s); sq(W / 2 - s, Hh - 8 - 3 * s, s); sq(W / 2, Hh - 8 - 3 * s, s); sq(W / 2 - s / 2, Hh - 8 - 4 * s, s); sq(W / 2 - s, Hh - 8 - 5 * s, s); sq(W / 2, Hh - 8 - 5 * s, s);
+    g.beginPath(); g.arc(W / 2, Hh - 8 - 5 * s - 18, 26, Math.PI, 0); g.stroke(); });
+  // the outside: dHouse on a borrowed seed, then the plaque on the door frame, a bell post, a Dustmere flag and a chalk hopscotch
+  cBuild("DA1", () => { const X = 0, Y = 0, s0 = seed; seed = 913127; const n0 = WALKINS.length; dHouse("d_school", X + 11.2, Y + 1.38, 7.6, 5.0, { name: "Dustmere Schoolhouse", grow: 1 /* no room to grow: the Rune Workshop and the Old Resident's Home sit close on both sides */ }); seed = s0;
+    const w = WALKINS.length > n0 ? WALKINS[WALKINS.length - 1] : null; if (!w || w.name !== "d_school") return; const G = w.G, r = w.r, brass = std({ color: "#c8a040", metalness: 0.7, roughness: 0.32 }), wood = std({ color: "#7a4a2a", roughness: 0.9 });
+    // the brass plaque on the wall just east of the door (past the open door leaf), set on the real wall surface found by a ray
+    { G.updateMatrixWorld(true); const T = []; G.children[0].traverse((o) => { if (o.isMesh) T.push(o); }); const a = 0.64, yP = 1.5, o0 = G.localToWorld(new THREE.Vector3(Math.sin(a) * 9, yP, Math.cos(a) * 6)), rc = new THREE.Raycaster(o0, G.localToWorld(new THREE.Vector3(0, yP, 0)).sub(o0).normalize());
+      const hit = rc.intersectObjects(T, false)[0]; if (hit) { const n = hit.face.normal.clone().applyMatrix3(new THREE.Matrix3().getNormalMatrix(hit.object.matrixWorld)); n.y = 0; n.normalize(); const q = G.worldToLocal(hit.point.clone()).addScaledVector(n, 0.03), ry = Math.atan2(n.x, n.z);
+        const P = grp(q.x, q.y, q.z, ry, G); add(new THREE.BoxGeometry(0.4, 0.54, 0.03), brass, [0, 0, 0], [0, 0, 0], "nocol", P).castShadow = false; const f = add(new THREE.PlaneGeometry(0.36, 0.5), std({ map: plaqueT(), metalness: 0.5, roughness: 0.32, emissive: "#3a2a10", emissiveIntensity: 0.18 }), [0, 0, 0.017], [0, 0, 0], "nocol", P); f.castShadow = false;
+        for (const [sx, sy] of [[-1, -1], [1, -1], [-1, 1], [1, 1]]) add(new THREE.SphereGeometry(0.014, 6, 4), brass, [sx * 0.17, sy * 0.235, 0.02], [0, 0, 0], "nocol", P); } }
+    // the school bell: two posts, a crossbeam under a little tiled gable, a brass bell and its pull rope
+    { const B = grp(-2.95, 0, r + 0.2, 0.25, G); for (const sd of [-1, 1]) add(new THREE.BoxGeometry(0.14, 2.5, 0.14), wood, [sd * 0.42, 1.25, 0], [0, 0, 0], "nocol", B); add(new THREE.BoxGeometry(1.06, 0.14, 0.18), wood, [0, 2.45, 0], [0, 0, 0], "nocol", B);
+      for (const sd of [-1, 1]) add(new THREE.BoxGeometry(0.62, 0.05, 0.5), std({ color: "#d8643a", roughness: 0.8 }), [sd * 0.27, 2.68, 0], [0, 0, -sd * 0.55], "nocol", B);
+      add(olathe([[0.001, 0.32], [0.08, 0.31], [0.13, 0.22], [0.16, 0.06], [0.22, 0.0], [0.2, -0.02], [0.001, 0.02]], 14), brass, [0, 2.0, 0], [0, 0, 0], "nocol", B); add(new THREE.SphereGeometry(0.04, 6, 5), brass, [0, 1.98, 0], [0, 0, 0], "nocol", B);
+      add(new THREE.CylinderGeometry(0.015, 0.015, 1.3, 4), std({ color: "#d8c8a0" }), [0.08, 1.33, 0], [0, 0, 0], "nocol", B); add(new THREE.SphereGeometry(0.05, 6, 5), std({ color: "#c8a070" }), [0.08, 0.66, 0], [0, 0, 0], "nocol", B); }
+    // a Dustmere flag (purple, a gold ringed planet) on a pole to the east of the door
+    { const F = grp(2.95, 0, r + 0.1, 0, G); add(new THREE.CylinderGeometry(0.04, 0.05, 3.9, 6), wood, [0, 1.95, 0], [0, 0, 0], "nocol", F); add(new THREE.SphereGeometry(0.07, 8, 6), brass, [0, 3.93, 0], [0, 0, 0], "nocol", F);
+      const fg = new THREE.PlaneGeometry(1.1, 0.68, 6, 2), P = fg.attributes.position; for (let i = 0; i < P.count; i++) { const x = P.getX(i) + 0.55; P.setZ(i, 0.06 * Math.sin(x * 5.2) * x); } fg.computeVertexNormals();
+      add(fg, std({ map: flagT(), side: THREE.DoubleSide, roughness: 0.9 }), [0.58, 3.5, 0], [0, -0.15, 0], "nocol", F); }
+    // chalk hopscotch on the court paving, beside the way in
+    { const h = add(new THREE.PlaneGeometry(0.95, 2.85), new THREE.MeshStandardMaterial({ map: hopT(), transparent: true, depthWrite: false, roughness: 1 }), [G.position.x + 2.0, 0.05, G.position.z + r + 2.6], [-Math.PI / 2, 0, 0.12], "nocol"); h.castShadow = false; h.renderOrder = 2; } });
+  // the inside (roomkit): a one-room schoolhouse. Plank floor, cream plaster over a wood wainscot, the chalkboard and the teacher's desk at the
+  // north end, three rows of four pupils' desks either side of a middle aisle, the Kessler system chart (Dustara red, on the third ring),
+  // bookcases and a nature table on the east wall, coat pegs with satchels by the door, a reading corner by the west windows
+  const boardT = () => tex(1024, 400, (g, W, Hh) => { g.fillStyle = "#2c3a34"; g.fillRect(0, 0, W, Hh); for (let k = 0; k < 40; k++) { g.fillStyle = `rgba(230,236,230,${0.02 + hq(k) * 0.04})`; g.beginPath(); g.ellipse(hq(k + 50) * W, hq(k + 90) * Hh, 40 + hq(k + 7) * 120, 12 + hq(k + 3) * 30, hq(k + 11) * 3, 0, Math.PI * 2); g.fill(); }
+    g.strokeStyle = "rgba(244,240,228,0.92)"; g.fillStyle = "rgba(244,240,228,0.92)"; g.lineWidth = 4; g.lineCap = "round"; g.font = "44px sans-serif"; g.textAlign = "left"; g.fillText("Dustara - the third ring", 48, 76);
+    // a chalk sketch of the system: the sun, three rings, a dot on the third
+    const cx = 250, cy = 250; g.beginPath(); g.arc(cx, cy, 18, 0, Math.PI * 2); g.stroke(); for (let k = 1; k <= 3; k++) { g.beginPath(); g.ellipse(cx, cy, 44 + k * 38, 22 + k * 19, 0, 0, Math.PI * 2); g.stroke(); }
+    g.fillStyle = "rgba(240,120,100,0.95)"; g.beginPath(); g.arc(cx + 158, cy - 10, 11, 0, Math.PI * 2); g.fill(); g.fillStyle = "rgba(244,240,228,0.92)"; g.beginPath(); g.moveTo(cx + 172, cy - 22); g.lineTo(cx + 230, cy - 66); g.stroke();
+    // a sum and a few lines of chalk writing (scribbles)
+    g.font = "52px sans-serif"; g.fillText("3 + 4 = 7", 560, 160); g.fillText("12 - 5 = 7", 560, 236);
+    for (let k = 0; k < 3; k++) { g.beginPath(); let x = 560; g.moveTo(x, 300 + k * 30); while (x < 560 + 240 + hq(k) * 160) { x += 8; g.lineTo(x, 300 + k * 30 + Math.sin(x * 0.35 + k) * 5 + (hq(x) - 0.5) * 3); } g.stroke(); }
+    g.font = "30px sans-serif"; g.fillText("Today:", 48, 360); g.beginPath(); g.moveTo(150, 352); for (let x = 150; x < 420; x += 8) g.lineTo(x, 352 + Math.sin(x * 0.4) * 5); g.stroke(); });
+  const chartT = () => tex(512, 560, (g, W, Hh) => { g.fillStyle = "#14183a"; g.fillRect(0, 0, W, Hh); for (let k = 0; k < 120; k++) { g.fillStyle = `rgba(255,255,255,${0.2 + hq(k + 300) * 0.6})`; g.fillRect(hq(k + 400) * W, hq(k + 500) * Hh, 2, 2); }
+    g.fillStyle = "#f4e6c0"; g.font = "bold 34px sans-serif"; g.textAlign = "center"; g.fillText("THE KESSLER SYSTEM", W / 2, 46);
+    const cx = W / 2, cy = 300, PC = ["#c8c0b0", "#e8d088", "#e05a3a", "#5ab8e0", "#6ac87a", "#d8a860", "#a07ae0", "#7ad8d0", "#e8a0c0", "#b0c8f0", "#e8c870", "#8aa0b0", "#c87a5a", "#d0e0f0"];
+    const gr = g.createRadialGradient(cx, cy, 2, cx, cy, 26); gr.addColorStop(0, "#fff8d0"); gr.addColorStop(0.5, "#ffd050"); gr.addColorStop(1, "rgba(255,180,40,0)"); g.fillStyle = gr; g.beginPath(); g.arc(cx, cy, 26, 0, Math.PI * 2); g.fill();
+    for (let k = 0; k < 14; k++) { const rx = 34 + k * 15.5, ry = rx * 0.98, a = hq(k + 20) * Math.PI * 2, me = k === 2; g.strokeStyle = me ? "rgba(255,150,120,0.9)" : "rgba(200,210,255,0.35)"; g.lineWidth = me ? 3 : 1.5; g.beginPath(); g.ellipse(cx, cy, rx, ry, 0, 0, Math.PI * 2); g.stroke();
+      g.fillStyle = PC[k]; g.beginPath(); g.arc(cx + Math.cos(a) * rx, cy + Math.sin(a) * ry, me ? 9 : 4 + hq(k + 60) * 3, 0, Math.PI * 2); g.fill();
+      if (me) { const px = cx + Math.cos(a) * rx, py = cy + Math.sin(a) * ry; g.strokeStyle = "#ffd0c0"; g.lineWidth = 2; g.beginPath(); g.arc(px, py, 14, 0, Math.PI * 2); g.stroke(); g.beginPath(); g.moveTo(px - 10, py + 10); g.lineTo(96, 520); g.lineTo(150, 520); g.stroke(); g.fillStyle = "#ffd0c0"; g.font = "bold 26px sans-serif"; g.textAlign = "left"; g.fillText("DUSTARA", 26, 512); g.textAlign = "center"; } } });
+  defPlace("schoolIn", { name: "Dustmere Schoolhouse", w: 16, d: 13, style: "adobe", indoor: true,
+    fine: { floor: "plank", panel: "#8a5a34", trimC: "#5a361c", tint: "#fff4e0", wallH: 3.6,
+      wins: [{ e: "w", at: 4.4, w: 1.4, curtains: "#7a3aa8" }, { e: "w", at: 8.6, w: 1.4, curtains: "#7a3aa8" }, { e: "e", at: 6.4, w: 1.2 }, { e: "s", at: 3.0, w: 1.1 }, { e: "s", at: 13.0, w: 1.1 }],
+      dress({ K, X, Z, lite, fy }) { const { box, cyl, ball, lathe } = K, WD = "#8a5a34", DK = "#5a361c";
+        // ---- the chalkboard across the north wall: a wood frame, a chalk ledge with chalk and a duster; the clock above it
+        K.at(X(8.0), fy, Z(1.0), 0, () => { box("trim", 4.1, 0.08, 0.06, 0, 2.63, 0.03, DK); box("trim", 4.1, 0.08, 0.06, 0, 0.97, 0.03, DK); for (const sd of [-1, 1]) box("trim", 0.08, 1.74, 0.06, sd * 2.01, 1.8, 0.03, DK); box("wood", 4.0, 0.04, 0.14, 0, 0.95, 0.09, WD);
+          for (let k = 0; k < 5; k++) cyl("paint", 0.01, 0.01, 0.08, -1.6 + k * 0.09, 0.985, 0.1, ["#f4f0e4", "#f4f0e4", "#ffd0a0", "#c8e8ff", "#f4f0e4"][k], 6, 0, Math.PI / 2); box("wood", 0.16, 0.05, 0.07, 1.4, 0.995, 0.1, "#8a6a4a"); box("cloth", 0.15, 0.02, 0.06, 1.4, 0.975, 0.1, "#5a5a5a"); });
+        { const b = add(new THREE.PlaneGeometry(3.94, 1.6), std({ map: boardT(), roughness: 0.95 }), [X(8.0), fy + 1.8, Z(1.0) + 0.035]); b.name = "nocol"; b.castShadow = false; }
+        K.clock(X(8.0), 3.05, Z(1.0), 0, 0.22);
+        // ---- the Kessler system chart east of the board, a map of Dustara west of it
+        { const m = K.frame(X(12.2), 1.95, Z(1.0), 0, 1.4, 1.53, std({ map: chartT(), roughness: 0.9 }), "#3a2414", false); }
+        K.frame(X(3.8), 1.9, Z(1.0), 0, 1.3, 0.9, K.art("map"), "#3a2414");
+        // ---- the teacher's desk: drawers, a chair behind, a hand bell, books, a planet globe, a mug, a stack of slates, a table lamp
+        K.at(X(8.0), fy, Z(3.0), 0, () => { box("fwood", 1.8, 0.06, 0.8, 0, 0.78, 0, "#a8784a"); for (const sd of [-1, 1]) { box("fwood", 0.5, 0.75, 0.74, sd * 0.62, 0.375, 0, WD); for (let k = 0; k < 3; k++) { box("trim", 0.42, 0.18, 0.01, sd * 0.62, 0.15 + k * 0.22, 0.375, "#6a4024"); ball("metal", 0.015, sd * 0.62, 0.17 + k * 0.22, 0.385, "#d8a838"); } }
+          box("fwood", 0.72, 0.5, 0.03, 0, 0.5, 0.36, "#7a4a2a");
+          K.books(-0.8, -0.45, 0.81, -0.22, 0.2); lathe("gloss", [[0.001, 0], [0.05, 0], [0.07, 0.03], [0.05, 0.04], [0.04, 0.1], [0.02, 0.14], [0.001, 0.15]], -0.25, 0.81, 0.1, "#c8a040", 12); cyl("wood", 0.014, 0.014, 0.12, -0.25, 1.01, 0.1, "#5a361c", 6);
+          cyl("wood", 0.06, 0.08, 0.04, 0.35, 0.83, -0.15, DK, 12); cyl("metal", 0.008, 0.008, 0.2, 0.35, 0.95, -0.15, "#c8a040", 6); ball("gloss", 0.13, 0.35, 1.18, -0.15, "#d8643a"); K.put("metal", new THREE.TorusGeometry(0.19, 0.012, 4, 24), [0.35, 1.18, -0.15], [1.05, 0.4, 0.3], 1, "#e8c870");
+          K.mug(0.7, 0.81, 0.15, "#2a9a96"); for (let k = 0; k < 5; k++) box("paint", 0.32, 0.018, 0.24, 0.05 + (hq(k) - 0.5) * 0.04, 0.82 + k * 0.02, 0.12, k % 2 ? "#3a4440" : "#4a5450", (hq(k + 9) - 0.5) * 0.3);
+          K.tableLamp(0.72, 0.81, -0.25, "#efe0c0", false, "#2a7a76");
+          K.at(0, 0, -0.65, 0, () => { box("fwood", 0.46, 0.05, 0.44, 0, 0.47, 0, WD); box("fwood", 0.46, 0.5, 0.05, 0, 0.74, -0.2, WD); for (const [a, c] of [[-1, -1], [1, -1], [-1, 1], [1, 1]]) box("fwood", 0.04, 0.47, 0.04, a * 0.19, 0.235, c * 0.18, DK); K.cushion(0, 0.51, 0.02, 0.4, 0.06, 0.38, "#7a3aa8"); }); });
+        // ---- twelve pupils' desks in three rows, a clear aisle up the middle; each with a slate or an open book, a pencil, a chair behind
+        let n = 0; for (const z of [5.1, 6.9, 8.7]) for (const x of [3.0, 5.2, 10.8, 13.0]) { const q = (k) => hq(n * 13 + k), ry = (q(1) - 0.5) * 0.08; n++;
+          K.at(X(x), fy, Z(z), ry, () => { box("fwood", 1.0, 0.05, 0.56, 0, 0.72, 0, "#b08458"); box("wood", 0.92, 0.03, 0.46, 0, 0.5, -0.02, "#8a5a34"); for (const [a, c] of [[-1, -1], [1, -1], [-1, 1], [1, 1]]) box("fwood", 0.05, 0.72, 0.05, a * 0.45, 0.36, c * 0.24, DK);
+            if (q(2) < 0.55) { box("paint", 0.34, 0.012, 0.25, -0.18 + q(3) * 0.1, 0.752, 0.02, "#3a4440", (q(4) - 0.5) * 0.4); box("trim", 0.37, 0.008, 0.28, -0.18 + q(3) * 0.1, 0.749, 0.02, "#a87a4a", (q(4) - 0.5) * 0.4); }
+            else { for (const sd of [-1, 1]) box("paint", 0.17, 0.012, 0.24, -0.1 + sd * 0.085, 0.752, 0.03, "#f4ecd8", (q(4) - 0.5) * 0.3, 0, sd * 0.06); box("paint", 0.36, 0.008, 0.26, -0.1, 0.746, 0.03, ["#8a2e2a", "#2a5a7a", "#3a6a3a", "#c8a24a"][Math.floor(q(5) * 4)], (q(4) - 0.5) * 0.3); }
+            cyl("paint", 0.006, 0.006, 0.16, 0.26, 0.755, 0.05 + q(6) * 0.1, "#e8c040", 5, Math.PI / 2, q(7) * 3); if (q(8) < 0.5) K.books(0.18, 0.4, 0.515, -0.02, 0.18);
+            K.at(0, 0, 0.5, (q(9) - 0.5) * 0.3, () => { box("fwood", 0.4, 0.04, 0.38, 0, 0.44, 0, WD); box("fwood", 0.4, 0.34, 0.04, 0, 0.66, 0.18, WD); for (const [a, c] of [[-1, -1], [1, -1], [-1, 1], [1, 1]]) box("fwood", 0.035, 0.44, 0.035, a * 0.17, 0.22, c * 0.16, DK); }); }); }
+        // ---- east wall: two bookcases, the cork board of drawings, and a nature table of crater rocks, a seed jar and a little cactus
+        K.bookcase(X(14.8), Z(2.6), -Math.PI / 2, 1.1, 1.9, 0.36, WD); K.bookcase(X(14.8), Z(3.8), -Math.PI / 2, 1.1, 1.9, 0.36, WD);
+        K.cork(X(15.0), 1.75, Z(8.6), -Math.PI / 2, 1.3, 0.8);
+        K.at(X(14.7), fy, Z(10.4), -Math.PI / 2, () => { box("fwood", 1.3, 0.05, 0.5, 0, 0.82, 0, "#a8784a"); for (const [a, c] of [[-1, -1], [1, -1], [-1, 1], [1, 1]]) box("fwood", 0.05, 0.8, 0.05, a * 0.6, 0.4, c * 0.2, DK);
+          for (let k = 0; k < 6; k++) ball("paint", 0.05 + hq(k + 70) * 0.04, -0.5 + k * 0.13, 0.88, (hq(k + 80) - 0.5) * 0.25, ["#c8603a", "#a8783a", "#d8b878", "#8a4a3a", "#e0c8a0", "#b05a3a"][k], 1.2, 0.7, 1); ball("glow", 0.04, 0.32, 0.88, 0.1, "#9a50f0");
+          lathe("gloss", [[0.001, 0], [0.08, 0], [0.09, 0.2], [0.06, 0.24], [0.001, 0.24]], 0.45, 0.845, -0.05, "#dff6ff", 14); for (let k = 0; k < 8; k++) ball("paint", 0.018, 0.45 + (hq(k + 90) - 0.5) * 0.08, 0.87 + k * 0.012, -0.05 + (hq(k + 95) - 0.5) * 0.08, "#c89a3a"); K.plant(-0.45, 0.845, 0.1, 0.8, "cactus", "#c4572e"); });
+        // ---- by the door: coat pegs with satchels and caps, a bench under each row, a mat
+        for (const [x0, x1] of [[4.2, 6.7], [9.3, 11.8]]) { box("trim", x1 - x0, 0.1, 0.03, X((x0 + x1) / 2), 1.5, Z(12.0) - 0.02, DK); let k = 0;
+          for (let x = x0 + 0.25; x < x1 - 0.1; x += 0.5) { const q = (j) => hq(x * 17 + j); cyl("wood", 0.018, 0.018, 0.12, X(x), 1.5, Z(12.0) - 0.08, DK, 6, Math.PI / 2 - 0.3); k++;
+            if (q(1) < 0.55) { const c = ["#c4572e", "#2a5a7a", "#3a6a3a", "#7a3aa8", "#a8783a"][Math.floor(q(2) * 5)], zz = Z(12.0) - 0.1; // a satchel: body, flap, buckle, strap up to the peg
+              box("cloth", 0.32, 0.26, 0.1, X(x), 1.08, zz, c); box("cloth", 0.33, 0.14, 0.012, X(x), 1.15, zz - 0.056, c, 0, -0.06); box("metal", 0.05, 0.04, 0.01, X(x), 1.09, zz - 0.064, "#d8a838"); for (const sd of [-1, 1]) box("cloth", 0.025, 0.36, 0.01, X(x) + sd * 0.07, 1.35, zz + 0.01, "#3a2a1e", 0, 0, sd * 0.18); }
+            else if (q(1) < 0.8) { const c = ["#e8b84a", "#2a9a96", "#c4572e"][Math.floor(q(3) * 3)]; K.put("cloth", new THREE.SphereGeometry(0.5, 12, 6, 0, Math.PI * 2, 0, Math.PI / 2), [X(x), 1.36, Z(12.0) - 0.15], [-1.25, 0, 0], [0.2, 0.2, 0.12], c); box("cloth", 0.2, 0.012, 0.1, X(x), 1.27, Z(12.0) - 0.2, c, 0, -0.3); } }
+          box("fwood", x1 - x0 - 0.2, 0.05, 0.36, X((x0 + x1) / 2), fy + 0.45, Z(12.0) - 0.2, "#a8784a"); for (const sd of [-1, 1]) box("fwood", 0.05, 0.43, 0.3, X((x0 + x1) / 2) + sd * ((x1 - x0) / 2 - 0.3), fy + 0.215, Z(12.0) - 0.2, DK); }
+        // ---- the reading corner by the west windows: a rug, floor cushions, a low book box, a big leafy plant
+        K.rug(X(2.5), Z(10.6), 2.4, 1.7, 0, "rk_rug2_d", fy); for (const [x, z, c] of [[2.0, 10.3, "#c4572e"], [2.8, 11.0, "#e8b84a"], [3.4, 10.4, "#2a9a96"]]) K.cushion(X(x), fy + 0.1, Z(z), 0.5, 0.16, 0.5, c);
+        K.at(X(1.35), fy, Z(10.2), Math.PI / 2, () => { box("fwood", 1.4, 0.5, 0.4, 0, 0.25, 0, WD); box("wood", 1.3, 0.02, 0.32, 0, 0.26, 0, "#6a4024"); K.books(-0.62, 0.62, 0.5, 0, 0.26); K.books(-0.62, 0.62, 0.035, 0, 0.26); });
+        K.plant(X(1.6), fy, Z(11.4), 1.4, "palm", "#b0603a"); K.plant(X(14.4), fy, Z(11.4), 1.2, "leafy", "#c4572e"); K.plant(X(1.6), fy, Z(1.6), 1.1, "snake", "#efe3cc"); K.plant(X(14.4), fy, Z(5.2), 1.0, "trail", "#2a9a96");
+        K.wallShelf(X(1.0), 2.1, Z(6.6), Math.PI / 2, 1.2, "books");
+        // ---- ceiling beams across the room, paper bunting over the chalkboard, the pupils' drawings pinned up by the door, a picture on the east wall
+        for (const z of [3.4, 6.6, 9.8]) box("wood", 14.0, 0.2, 0.2, X(8.0), 3.5, Z(z), "#7a4a2a");
+        { const C = ["#7a3aa8", "#e8b84a", "#2a9a96", "#d8643a"]; let k = 0; for (const [x0, x1] of [[2.2, 7.9], [8.1, 13.8]]) for (let i = 0; i <= 12; i++) { const t = i / 12, x = x0 + (x1 - x0) * t, y = 3.28 - Math.sin(Math.PI * t) * 0.32;
+          if (i < 12) { const t2 = (i + 1) / 12, xb = x0 + (x1 - x0) * t2, yb = 3.28 - Math.sin(Math.PI * t2) * 0.32; box("paint", Math.hypot(xb - x, yb - y), 0.008, 0.008, X((x + xb) / 2), (y + yb) / 2, Z(1.0) + 0.1, "#efe3cc", 0, 0, Math.atan2(yb - y, xb - x)); }
+          if (i > 0 && i < 12) K.put("paint", new THREE.CircleGeometry(0.11, 3), [X(x), y - 0.09, Z(1.0) + 0.1], [0, 0, -Math.PI / 2], [1, 1.25, 1], C[k++ % 4]); } }
+        for (let i = 0; i < 6; i++) { const x = [4.4, 5.3, 6.2, 9.6, 10.5, 11.4][i], q = (j) => hq(i * 7 + j + 200), y = 2.15 + (q(1) - 0.5) * 0.12, zz = Z(12.0) - 0.02;
+          box("paint", 0.42, 0.32, 0.006, X(x), y, zz, ["#fff8e8", "#f4ecdc", "#e8f4ff", "#fff0e0"][i % 4], 0, 0, (q(2) - 0.5) * 0.12); ball("gloss", 0.012, X(x), y + 0.13, zz - 0.006, "#c4572e");
+          K.put("paint", new THREE.CircleGeometry(0.06 + q(3) * 0.04, 10), [X(x) - 0.06, y - 0.02, zz - 0.005], [0, Math.PI, 0], 1, ["#e05a3a", "#e8b84a", "#5ab8e0", "#6ac87a"][Math.floor(q(4) * 4)]);
+          box("paint", 0.2, 0.025, 0.003, X(x) + 0.06, y - 0.1, zz - 0.006, ["#3a6a3a", "#2a5a7a", "#7a3aa8"][Math.floor(q(5) * 3)], 0, 0, (q(6) - 0.5) * 0.5); box("paint", 0.025, 0.12, 0.003, X(x) + 0.12, y + 0.02, zz - 0.006, "#8a5a34"); }
+        K.frame(X(14.98), 1.95, Z(6.2), -Math.PI / 2, 0.9, 0.65, K.art("stars"), "#3a2414");
+        // ---- light: four pendant lamps over the desks, warm fill from the windows' side
+        for (const [x, z] of [[4.1, 5.6], [11.9, 5.6], [4.1, 8.4], [11.9, 8.4]]) hangLamp(X(x), Z(z), "#ffd27a", 2.95, false);
+        lite(8, 5.0, "#fff0d8", 2.2, 12, 3.0); lite(8, 8.2, "#ffe8c8", 1.4, 9, 3.0); } },
+    grid() { const g = PLW(16, 13); pRect(g, 1, 1, 14, 11, "."); pRect(g, 7, 12, 8, 12, "S"); return g; },
+    arrive: { in: [8.0, 10.6, 0] },
+    portals: [{ t: [8.0, 12.4], to: "out:DA1", label: "Go outside" }],
+    dress({ X, Z, lite }) { (FURN.school || FURN.home)(X(8), Z(6.5), 6.6, 5.2, 3.6); lite(8, 6, "#fff0d8", 2.4, 12, 3.2); } });
+  OUTPORTALS.push({ scene: "DA1", at: [15.14, 6.18], arrive: [15.19, 7.98], to: "schoolIn:in", label: "Enter the Schoolhouse", replacesWalkin: "Dustmere Schoolhouse" });
+  return { plaqueT, flagT }; })();
+// ======== SCHOOL END ========
 // ================= assemble =================
 // map mode: grids for every scene, ground + objects for one scene and its neighbours
 // world mode (H.all): the whole 120x90 region in 3D — every scene's ground and objects
