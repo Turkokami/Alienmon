@@ -87,10 +87,10 @@ const gdLeanPair = (x, z, dirX, k, L = 4.8) => { const r = 0.34, th = Math.asin(
   const M = gdB(x, z, { y: y0, yaw: dirX ? 0 : Math.PI / 2 }); gdBx("carve", M, 0, L * Math.cos(th) + 0.25, 0, 1.5, 0.5, 1.0, stc(M.O, k + 3)); gdBx("gold", M, 0, L * Math.cos(th) + 0.5, 0.51, 1.4, 0.07, 0.02, GDGOLD); gdMoss(M, 0.3, L * Math.cos(th) + 0.75, 0, 0.4); };
 // coral heads: branching coral, a brain coral and fans, for the Coral Ruins and the lagoon
 const GDCORAL = ["#ff7a6a", "#ff5a8a", "#c86ad8", "#ffb060", "#f0d8c0", "#e8506a"];
-const gdCoral = (x, z, k, s = 1) => { const [ux, uz] = unwarp(x, z), B = gdB(x, z, { y: Math.max(-1.1, Math.min(-0.5, GHT(ux, uz))) }), q = gyQ({ x, z }, k), c0 = GDCORAL[Math.floor(q() * GDCORAL.length)];
-  gdP("rocky", B, "blob", 0, 0.15 * s, 0, 0.9 * s, 0.6 * s, 0.8 * s, GDCORAL[Math.floor(q() * GDCORAL.length)]);
-  for (let i = 0; i < 6; i++) { const a = q() * TAU, l = (0.5 + q() * 0.5) * s, ex = Math.cos(a) * l * 0.5, ez = Math.sin(a) * l * 0.5, ey = 0.3 * s + l * 0.9; gdBeam("rocky", B, [0, 0.2 * s, 0], [ex, ey, ez], 0.05 * s, c0, "limb"); gdP("rocky", B, "sph", ex, ey, ez, 0.12 * s, 0.12 * s, 0.12 * s, c0); }
-  for (let i = 0; i < 2; i++) { const a = q() * TAU; gdP("deco", B, "box", Math.cos(a) * 0.4 * s, 0.45 * s, Math.sin(a) * 0.4 * s, 0.7 * s, 0.6 * s, 0.02, GDCORAL[(i + 2) % GDCORAL.length], 0, a, 0); } };
+const gdCoral = (x, z, k, s = 1) => { const [ux, uz] = unwarp(x, z), B = gdB(x, z, { y: Math.max(-1.2, Math.min(-0.75, GHT(ux, uz))) }), q = gyQ({ x, z }, k), c0 = GDCORAL[Math.floor(q() * GDCORAL.length)];
+  gdP("deco", B, "blob", 0, 0.15 * s, 0, 0.9 * s, 0.6 * s, 0.8 * s, GDCORAL[Math.floor(q() * GDCORAL.length)]);
+  for (let i = 0; i < 5; i++) { const a = q() * TAU, l = (0.45 + q() * 0.45) * s, ex = Math.cos(a) * l * 0.5, ez = Math.sin(a) * l * 0.5, ey = 0.3 * s + l * 0.9; gdBeam("deco", B, [0, 0.2 * s, 0], [ex, ey, ez], 0.05 * s, c0, "limb"); gdP("deco", B, "sph", ex, ey, ez, 0.09 * s, 0.09 * s, 0.09 * s, c0); }
+  const a = q() * TAU; gdP("deco", B, "blob", Math.cos(a) * 0.45 * s, 0.25 * s, Math.sin(a) * 0.45 * s, 0.55 * s, 0.4 * s, 0.5 * s, GDCORAL[(Math.floor(q() * 6) + 2) % GDCORAL.length]); };
 
 // ---- the GLYPHOS tablet: carved on a great stone tablet half-sunk in the water, in letters as tall as Rook, a swirl of marks under it ----
 const gdTabletTex = () => thM("gdTabletTex", () => { const W = 1024, Hh = 692, rnd = nnXR(4407), mk = () => { const c = document.createElement("canvas"); c.width = W; c.height = Hh; return c; }, cv = mk(), ev = mk(), g = cv.getContext("2d"), e = ev.getContext("2d");
@@ -299,7 +299,7 @@ const gdDensity = (X, Y, wild) => { const dg = wild ? 0.16 : 0.07;
     else if ((t === "p" || t === ",") && h < 0.07 && gdNear(x, y, "gx.")) { const O = { x: x + 0.15 + gh(x, y, 904) * 0.7, z: y + 0.15 + gh(x, y, 905) * 0.7, ry: gh(x, y, 906) * 3 }; nnXP("deco", O, "box", 0, 0.025, 0, 0.36, 0.05, 0.26, stc(O, 7)); if (h < 0.035) nnXP("glow", O, "box", 0, 0.052, 0, 0.22, 0.008, 0.03, GYC.turq); else nnXP("glow", O, "oct", 0.22, 0.04, 0.1, 0.06, 0.09, 0.05, GYC.turq); }
     else if (t === "x" && h < 0.12 && gdNear(x, y, ".g") && ![at(x - 1, y), at(x + 1, y), at(x, y - 1), at(x, y + 1)].some((c) => "pPks,S".includes(c))) { const O = { x: x + 0.5, z: y + 0.5, ry: gh(x, y, 907) * 3 }; nnBx(h < 0.05 ? "carve" : "stone", O, 0, -0.1, 0, 0.62, 0.55, 0.5, stc(O, 8)); nnP("stone", O, "box", 0.08, 0.6, 0.04, 0.42, 0.28, 0.36, stc(O, 9), 0.1, 0.4, 0.15); gyMoss(O, 0, 0.5, 0, 0.32); }
     else if (t === "." && h < 0.08) { const O = { x: x + 0.5, z: y + 0.5 }, q = gyQ(O, 5); for (let i = 0; i < 4; i++) nnXP("deco", O, "box", (q() - 0.5) * 0.8, 0.02, (q() - 0.5) * 0.8, 0.06 + q() * 0.08, 0.04, 0.05 + q() * 0.06, ["#d8ccb4", "#b8a888", "#e8dcc4", "#8a8070"][i % 4], 0, q() * 3, 0); }
-    else if (t === "w" && h < 0.09 && gdNear(x, y, ".gx")) { const px = x + 0.5, pz = y + 0.5, B = gdB(px, pz, { y: -0.35, yaw: h * 40 }); gdP("stone", B, "rock", 0, 0, 0, 0.5 + gh(x, y, 908) * 0.5, 0.45, 0.45 + gh(x, y, 909) * 0.4, ["#b8a888", "#a89878", "#c8b896"][Math.floor(gh(x, y, 910) * 3)]); } } };
+    else if (t === "w" && h < 0.09 && gdNear(x, y, ".gx")) { const px = x + 0.5, pz = y + 0.5, B = gdB(px, pz, { y: -0.35, yaw: h * 40 }); gdP("deco", B, "rock", 0, 0, 0, 0.45 + gh(x, y, 908) * 0.35, 0.45, 0.4 + gh(x, y, 909) * 0.3, ["#b8a888", "#a89878", "#c8b896"][Math.floor(gh(x, y, 910) * 3)]); } } };
 
 // ---- the pieces, scene by scene ----
 gdAfter("YL", (X, Y) => { gdTablet(X + 4.2, Y + 27.6, 2.498); gdFerryOut(X + 10.2, Y + 27.6);
@@ -318,7 +318,7 @@ gdAfter("YD", (X, Y) => { for (const [x, z] of [[2.5, 16.4], [8.5, 16.4], [20.0,
 gdAfter("Y9", (X, Y) => { gdVoicesFront(X, Y); gdWork(X + 9.5, Y + 21.6, Math.PI * 0.9); gdWork(X + 20.6, Y + 22.0, Math.PI * 1.1); });
 gdAfter("YM", (X, Y) => { gdObelisk(X + 20.6, Y + 8.0); gdMural(gyO(X, Y, 6, 5.5), 2.0, 3.5, 2.2, "seed", 1024, 640, gdSeedMural); gdMural(gyO(X, Y, 18.2, 5.5), 2.9, 5.2, 2.3, "shadow", 1280, 566, gdShadowMural); });
 gdAfter("YY", (X, Y) => { gdHumObelisk(X + 8.6, Y + 8.6, 500); gdHumObelisk(X + 21.4, Y + 21.4, 510); });
-gdAfter("YO", (X, Y) => { for (let y = Y; y < Y + 30; y++) for (let x = X; x < X + 30; x++) if (at(x, y) === "w" && gh(x, y, 520) < 0.3 && gdWet(x + 0.5, y + 0.5, 0.7)) gdCoral(x + 0.5, y + 0.5, 530 + x * 7 + y, 0.7 + gh(x, y, 521) * 0.5); });
+gdAfter("YO", (X, Y) => { for (let y = Y; y < Y + 30; y++) for (let x = X; x < X + 30; x++) if (at(x, y) === "w" && gh(x, y, 520) < 0.16 && gdWet(x + 0.5, y + 0.5, 0.8)) gdCoral(x + 0.5, y + 0.5, 530 + x * 7 + y, 0.7 + gh(x, y, 521) * 0.5); });
 for (const id of Object.keys(TSCN)) gdAfter(id, (X, Y) => gdDensity(X, Y, !(TSCN[id].wild === false)));
 
 // ================= THE DEEP SEA FERRY (place gyFerry): inside the glass bubble, diving =================
@@ -378,7 +378,7 @@ defPlace("gyFerry", { name: "Deep Sea Ferry", w: 14, d: 14, style: "gyferry", in
     { const bell = new THREE.SphereGeometry(1, 20, 10, 0, TAU, 0, Math.PI * 0.55), q = nnXR(8831), cols = ["#ff8ac8", "#b48aff", "#ffe0a0"];
       const jm = cols.map((c, i) => thM("gdJelly" + i, () => { const m = std({ color: c, emissive: c, emissiveIntensity: 0.5, transparent: true, opacity: 0.38, roughness: 0.3, side: THREE.DoubleSide, depthWrite: false }); m.fog = false; return m; }));
       const lm = cols.map((c, i) => thM("gdJellyL" + i, () => new THREE.LineBasicMaterial({ color: c, transparent: true, opacity: 0.55, fog: false })));
-      for (const [a, r, y, s, k] of [[0.3, 10, 3, 0.8, 0], [1.2, 12, -2, 1.1, 1], [2.0, 9, 5, 0.6, 2], [2.9, 13, 1, 1.3, 0], [3.8, 10, -3, 0.9, 2], [4.6, 12, 4, 0.7, 1], [5.5, 11, -1, 1.0, 0], [1.6, 38, 12, 9, 1], [4.1, 44, 6, 11, 2]]) {
+      for (const [a, r, y, s, k] of [[0.3, 10, 3, 0.8, 0], [1.2, 12, -2, 1.1, 1], [2.0, 9, 5, 0.6, 2], [2.9, 13, 1, 1.3, 0], [3.8, 10, -3, 0.9, 2], [4.6, 12, 4, 0.7, 1], [5.5, 11, -1, 1.0, 0], [1.6, 40, 13, 7, 1], [4.1, 46, 15, 8, 0]]) {
         const x = cx + Math.cos(a) * r, z = cz + Math.sin(a) * r; gdDeep(bell, jm[k], [x, y, z], [(q() - 0.5) * 0.4, 0, (q() - 0.5) * 0.4], [s, s * 0.8, s]).renderOrder = 5;
         const P = []; for (let t = 0; t < 10; t++) { const ta = (t / 10) * TAU, tr = s * 0.75; let px = x + Math.cos(ta) * tr, pz = z + Math.sin(ta) * tr, py = y; for (let j = 0; j < 8; j++) { const nx = px + Math.sin(j * 0.9 + t) * s * 0.12, ny = py - s * 0.45, nz = pz + Math.cos(j * 0.8 + t) * s * 0.12; P.push(px, py, pz, nx, ny, nz); px = nx; py = ny; pz = nz; } }
         const lg = new THREE.BufferGeometry(); lg.setAttribute("position", new THREE.Float32BufferAttribute(P, 3)); const ls = new THREE.LineSegments(lg, lm[k]); ls.name = "nocol"; root.add(ls); } }
