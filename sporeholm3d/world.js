@@ -14512,6 +14512,8 @@ defPlace("ghostBelow", { name: "Ghost Ship, Below Decks", w: 30, d: 19, style: "
       rod([0, 2.5, 0], [0, 1.75, 0], 0.008, TM.iron(), "nocol", G); add(new THREE.SphereGeometry(0.07, 10, 8), TM.basic("#fff6d8"), [0, 1.7, 0], [0, 0, 0], "nocol", G).material.toneMapped = false; }
     ilight(X(25.5), 1.6, Z(16.0), "#fff2d0", 3.6, 8);
     for (let k = 0; k < 3; k++) rod([X(12 + k * 5), 2.6, Z(10 + k * 2)], [X(12 + k * 5), 1.4 + k * 0.2, Z(10 + k * 2)], 0.02, TM.iron("#5a5e62"));
+    // buildPlace skips walls next to "o" tiles, so close the hull behind the side cages by hand
+    tB(1.04, 2.5, 8.0, TM.rust("#a8aaa8"), [X(29.5), 1.25, Z(13.0)], [0, 0, 0], "nocol");
     lite(17, 12, "#7aff9a", 0.8, 9, 2.2); } });
 
 // ================= the Sea Cave (2D maps 773-775): B1, B2 and the Deep Chamber =================
