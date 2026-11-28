@@ -1,0 +1,25 @@
+const thTex = {
+  plaster: () => thM("plasterT", () => tex(256, 256, (g, W) => { g.fillStyle = "#d8c49a"; g.fillRect(0, 0, W, W); for (let k = 0; k < 900; k++) { g.fillStyle = `rgba(${R() < 0.5 ? "255,246,220" : "120,90,50"},${0.05 + R() * 0.1})`; g.fillRect(R() * W, R() * W, 2 + R() * 6, 1 + R() * 3); } for (let y = 0; y < W; y += 64) { g.fillStyle = "rgba(90,64,34,0.18)"; g.fillRect(0, y, W, 2); } }, [1, 1])),
+  tile: () => thM("tileT", () => tex(256, 256, (g, W) => { g.fillStyle = "#8a7a58"; g.fillRect(0, 0, W, W); for (let y = 0; y < W; y += 32) for (let x = (y / 32) % 2 * 16; x < W; x += 32) { g.fillStyle = `hsl(${170 + R() * 14},${30 + R() * 14}%,${40 + R() * 10}%)`; g.fillRect(x + 2, y + 2, 28, 28); } }, [1, 1])),
+  wood: () => thM("woodT", () => tex(256, 256, (g, W) => { g.fillStyle = "#5a3e24"; g.fillRect(0, 0, W, W); for (let x = 0; x < W; x += 32) { g.fillStyle = `hsl(${26 + R() * 10},${34 + R() * 12}%,${30 + R() * 12}%)`; g.fillRect(x + 1, 0, 30, W); for (let k = 0; k < 14; k++) { g.strokeStyle = "rgba(30,18,8,0.3)"; g.lineWidth = 1; const y = R() * W; g.beginPath(); g.moveTo(x + 2, y); g.bezierCurveTo(x + 10, y + 6, x + 20, y - 6, x + 30, y + 2); g.stroke(); } } }, [1, 1])),
+  stone: () => thM("stoneT", () => tex(256, 256, (g, W) => { g.fillStyle = "#6a5e44"; g.fillRect(0, 0, W, W); for (let y = 0, r = 0; y < W; y += 36, r++) for (let x = -(r % 2) * 32; x < W; x += 64) { g.fillStyle = `hsl(${38 + R() * 10},${24 + R() * 12}%,${54 + R() * 12}%)`; g.fillRect(x + 2, y + 2, 60, 32); if (R() < 0.3) { g.fillStyle = "rgba(80,110,50,0.35)"; g.fillRect(x + 2 + R() * 40, y + 20, 18, 14); } } }, [1, 1])),
+  sail: () => thM("sailT", () => tex(128, 128, (g, W) => { g.fillStyle = "#e6dcc2"; g.fillRect(0, 0, W, W); for (let k = 0; k < W; k += 4) { g.fillStyle = "rgba(120,100,70,0.06)"; g.fillRect(0, k, W, 1); g.fillRect(k, 0, 1, W); } }, [1, 1])),
+};
+const thMat = {
+  plaster: () => thM("plaster", () => std({ map: thTex.plaster(), color: "#ffffff", roughness: 0.92, metalness: 0 })),
+  plasterB: () => thM("plasterB", () => std({ map: thTex.plaster(), color: "#9ad8cc", roughness: 0.9, metalness: 0 })),
+  tile: () => thM("tile", () => std({ map: thTex.tile(), color: "#ffffff", roughness: 0.7 })),
+  wood: () => thM("wood", () => std({ map: thTex.wood(), color: "#ffffff", roughness: 0.85, metalness: 0 })),
+  woodD: () => thM("woodD", () => std({ map: thTex.wood(), color: "#8a7458", roughness: 0.9, metalness: 0 })),
+  blue: () => thM("blue", () => std({ color: "#3fbfb0", roughness: 0.6 })),
+  teal: () => thM("teal", () => std({ color: "#2a8a80", roughness: 0.7 })),
+  stone: () => thM("stone", () => std({ map: thTex.stone(), color: "#ffffff", roughness: 0.92 })),
+  brass: () => thM("brass", () => std({ color: "#c89a48", metalness: 0.85, roughness: 0.32 })),
+  sail: () => thM("sail", () => std({ map: thTex.sail(), color: "#ffffff", roughness: 0.95, side: THREE.DoubleSide })),
+  rope: () => thM("rope", () => std({ color: "#b89a68", roughness: 0.95 })),
+  white: () => thM("white", () => std({ color: "#e8dcc0", roughness: 0.85 })),
+  red: () => thM("red", () => std({ color: "#c8502e", roughness: 0.7 })),
+  leaf: () => thM("leaf", () => std({ color: "#3a7a30", roughness: 0.8, side: THREE.DoubleSide })),
+  palm: () => thM("palm", () => std({ map: thTex.wood(), color: "#b09a7a", roughness: 0.9 })),
+  glow: (c, i = 1.4) => thM("glow" + c + i, () => std({ color: c, emissive: c, emissiveIntensity: i, roughness: 0.4 })),
+};
