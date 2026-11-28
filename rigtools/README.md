@@ -327,3 +327,11 @@ index.html loads world.js?v=wd14ob, game.js?v=bt8ob, linker-data.js?v=cl1ob. The
   - The Cactling scene (S30): barrel cactus P28, hello P29, darts P31, Rook holds back P33/P34, Pip P35, rockfall P37/P38, the shield P40, scuffed P42, the ask P45/P46, PARTNER CONFIRMED P49, Tamsin P51/P52.
   - Too early at the barrel cactus (S44): glare P48, Tamsin's "not that one" P11.
 - index.html: comic-data.js?v=gn4c1.
+
+## 90. Sky lighting: each world's own sky lights the scene (Nov 28, graphics plan step 1)
+- game.js, right after the sun's shadow settings (`le.shadow.normalBias=.04;`): a new `__ENV` block. At start it photographs the world's own sky group (`se`, plus the night sky `re` on Dustara, Ferrox, Thalassa and Neonis) into a small cube and turns it into a blurred reflection map (PMREM), one for day, one for night, and one warm room light for indoors. 64 px on Low, 128 px on Medium and High, all three the same size so switching never recompiles shaders. Stars, sprites and lines are left out of the photo.
+- Each map's brightness is measured once from a 16 px copy. The hemisphere light is turned down and `scene.environmentIntensity` set so the sky map gives about half of the old fill light and the total stays the same, so no world gets brighter or darker. Painted and PBR (MeshStandard) surfaces now pick up the sky's colour from the right direction and show soft sky reflections; the sun light and shadows are unchanged.
+- game.js `U()` end: `le.intensity=v?.25:1.6;__ENV&&__ENV.use(v?2:ts&&he?1:0)` picks indoor, night or day each time the lighting changes.
+- Tests: `?noenv` turns it off; `ENV.set(false)` / `ENV.set(true)` in the console switches it live for a side-by-side.
+- PC source: copy the `__ENV` block and the one-line `U()` change into the same two places (the minified names are the bundled three.js classes: Wc PMREMGenerator, _u WebGLCubeRenderTarget, yu CubeCamera, wl Scene, Jt Group).
+- index.html: game.js?v=bt22env1.
